@@ -116,7 +116,7 @@ ready_after = false
 
 [design]
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
-daily_cap = 2
+daily_cap = 6
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
