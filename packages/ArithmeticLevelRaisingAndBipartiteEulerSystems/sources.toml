@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SelmerIwasawaCohomologyPartII"
+
+[[source]]
+id = "ltxzz"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
+year = 2019
+arxiv = "1912.11942v3"
+locator_scheme = "theorem"
+locator = "Definition 8.1.1; Hypothesis 3.2.10; Theorems 6.2.3, 6.3.5, 7.2.8, 7.3.4, 8.2.2, 8.3.2; equation (8.10); Remark 1.1.10"
+url = "https://arxiv.org/abs/1912.11942v3"
+fetched_from = "https://arxiv.org/pdf/1912.11942v3"
+fetched_at = "2026-10-20T21:28:53Z"
+sha256 = "84dc7c8369298314bd4e7ece5a45e5e096f39bd376f08c4c489950873c46fe86"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v3"
+cited_for = ["Arithmetic level raising, explicit reciprocity laws and rank theorems"]
+
+[[source]]
+id = "liu-tian"
+authors = "Yifeng Liu, Yichao Tian"
+title = "Supersingular locus of Hilbert modular varieties, arithmetic level raising and Selmer groups"
+year = 2017
+venue = "Alg. Number Th. 14 (2020) 2059-2119"
+doi = "10.2140/ant.2020.14.2059"
+arxiv = "1710.11492v2"
+locator_scheme = "theorem"
+locator = "Section 4.1, Assumption 4.1, Definition 4.5 and Theorem 4.7, pages 30-32"
+url = "https://arxiv.org/abs/1710.11492v2"
+fetched_from = "https://arxiv.org/pdf/1710.11492v2"
+fetched_at = "2026-10-20T21:28:58Z"
+sha256 = "a1ac39e45749b13718d11a2850a54fc8f3308867b3bf5d446239b9282402e739"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["Hilbert modular geometric and level raising precursor"]
+
+[[source]]
+id = "ltxzz-deformation"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "Deformation of rigid conjugate self-dual Galois representations"
+year = 2021
+arxiv = "2108.06998v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.6.3, page 30; Theorem 4.2.6"
+url = "https://arxiv.org/abs/2108.06998v1"
+fetched_from = "https://arxiv.org/pdf/2108.06998v1"
+fetched_at = "2026-10-20T21:30:37Z"
+sha256 = "fce1c9ae227dc1fcbc2fa712ae0034f7454b77595f63b927a7bdc7237f81292a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Rigid polarized residual representations and R=T input; imported ownership only"]
