@@ -1,0 +1,2122 @@
+{
+  "roadmap": "ColemanIntegrationPartII",
+  "title": "Coleman integration, Part II: harmonic realizations, integration indices and descent",
+  "parent": "ColemanIntegration",
+  "summary": "Extend the single-integration interface by harmonic realizations on arbitrary-reduction curves, local double and triple indices, wide-open pairings, corrected global double pairings, and branch/trace/descent laws.",
+  "baseline": {
+    "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
+    "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+  },
+  "layers": [
+    {
+      "key": "1",
+      "title": "Finite graph cochains and harmonic normalization",
+      "targets": [
+        {
+          "id": "1.1",
+          "kind": "definition",
+          "name": "Graph.LengthCochains",
+          "statement": "For a finite graph Γ, retain both flags of every edge, including a loop, and an orientation-reversing fixed-point-free involution e ↦ −e on its darts. For a field k of characteristic zero and positive rational lengths ℓ(e)=ℓ(−e), define C⁰=V→k, C¹={c:E→k | c(−e)=−c(e)}, d f(e)=f(tail e)−f(head e), div_ℓ(c)(v)=Σ_{tail(e)=v} c(e)/ℓ(e), Harm_ℓ=ker(div_ℓ), and (c,d)_ℓ=Σ_{E/±} c(e)d(e)/ℓ(e). These are modules, linear maps, a submodule and a bilinear form on the native graph carrier; the flag presentation has an explicit forgetful comparison to Graph.IsLink.",
+          "hypotheses": [
+            "Γ has finite actual vertex and edge sets; ambient types need not be finite",
+            "k is a field with CharZero",
+            "ℓ(e) is a strictly positive rational number, interpreted through ℚ→k"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Definitions 4.1–4.3, p. 12, besser2017 line 528; rational-length extension by subdivision from Proposition 4.12(3), besser2017 line 768"
+          },
+          "prerequisites": [
+            "mathlib:Graph",
+            "mathlib:Graph.IsLoopAt",
+            "mathlib:SimpleGraph.lapMatrix"
+          ],
+          "api": [
+            {
+              "name": "LengthCochains.mk",
+              "role": "constructor",
+              "statement": "A native graph, a choice of its two flags per edge and positive reversal-invariant rational lengths give this presentation; reversing the chosen orientation gives a canonically isomorphic complex."
+            },
+            {
+              "name": "LengthCochains.ext",
+              "role": "extensionality",
+              "statement": "Two cochains are equal exactly when their values on every dart agree; values on one dart of each edge suffice."
+            },
+            {
+              "name": "LengthCochains.div_d_adjoint",
+              "role": "compatibility",
+              "statement": "Σ_v f(v) div_ℓ(c)(v)=(d f,c)_ℓ; loops contribute two opposite values."
+            },
+            {
+              "name": "LengthCochains.map",
+              "role": "functoriality",
+              "statement": "Graph isomorphisms preserving lengths and characteristic-zero coefficient embeddings commute with d, divergence and the edge pairing; unit lengths recover Definitions 4.1–4.3."
+            },
+            {
+              "name": "LengthCochains.simple_laplacian",
+              "role": "compatibility",
+              "statement": "For a finite simple graph with unit lengths, div(d f) is SimpleGraph.lapMatrix acting on f. The multigraph extension retains parallel edges and two loop flags."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Graph.LengthCochains_1",
+              "kind": "computation",
+              "statement": "On one oriented edge v→w, f(v)=2,f(w)=5 gives d f=−3; a head-minus-tail differential would give +3."
+            },
+            {
+              "name": "Graph.LengthCochains_2",
+              "kind": "degenerate",
+              "statement": "For one vertex and no edges C¹=0 and Harm_ℓ=0; the empty graph has C⁰=C¹=0."
+            },
+            {
+              "name": "Graph.LengthCochains_3",
+              "kind": "non-example",
+              "statement": "A loop at v carrying c(e)=1,c(−e)=−1 has divergence zero and is a nonzero harmonic cochain. Giving the loop only one dart incorrectly excludes it."
+            },
+            {
+              "name": "LengthCochains_pairing_weight",
+              "kind": "computation",
+              "statement": "On one edge of length 1/2, c=2,d=3 give (c,d)_ℓ=12; using an unweighted product gives 6."
+            },
+            {
+              "name": "LengthCochains_pairing_reverse",
+              "kind": "compatibility",
+              "statement": "Reversing the selected orientation replaces both c,d by their negatives and leaves the value 12. A zero argument gives zero."
+            },
+            {
+              "name": "LengthCochains_divergence_bridge",
+              "kind": "computation",
+              "statement": "For one edge of length 1/2 with c=2, divergence is +4 at its tail and −4 at its head; it is not harmonic. An outgoing sum omitting the inverse length gives the wrong values."
+            },
+            {
+              "name": "LengthCochains_cochain_antisymmetry",
+              "kind": "non-example",
+              "statement": "A cochain assigning 1 to both directions of a nonloop edge is not in C¹ in characteristic zero. On no edges C¹ is the zero module; on one loop C¹ is k."
+            },
+            {
+              "name": "LengthCochains_degree_zero",
+              "kind": "degenerate",
+              "statement": "The empty graph has only the zero 0-cochain; on one isolated vertex C⁰=k and d=0. On two isolated vertices its kernel has two independent constants."
+            }
+          ],
+          "proofSketch": "Use submodules of function modules and finite sums. Define the two flags separately even when their incident vertices coincide; the involution has no fixed dart. The adjoint identity follows by grouping the two flags of each edge.",
+          "usedBy": [
+            "target:1.2",
+            "target:3.2",
+            "target:3.4",
+            "target:4.1"
+          ],
+          "title": "Cochains with edge identities"
+        },
+        {
+          "id": "1.2",
+          "kind": "theorem",
+          "name": "Graph.harmonic_exact_decomposition",
+          "statement": "For Γ,k,ℓ as in §1.1, C¹=Harm_ℓ ⊕ im(d). Thus every graph cohomology class has one harmonic representative. The kernel of d consists of the functions constant on each connected component. If Γ is connected and nonempty, a potential for the exact part is unique modulo one common constant. Harmonic and exact cochains are orthogonal for ( , )_ℓ; the induced form on harmonic cochains is nondegenerate. All these decompositions commute with coefficient extension.",
+          "hypotheses": [
+            "The hypotheses of §1.1; connectedness and nonemptiness only for a single common constant"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Theorem 4.4 and following orthogonality statement, p. 12, besser2017 line 553; rational-length consequence"
+          },
+          "prerequisites": [
+            "target:1.1"
+          ],
+          "api": [
+            {
+              "name": "harmonicProjection",
+              "role": "construction",
+              "statement": "The unique harmonic projection C¹→ₗ[k]Harm_ℓ has kernel im(d), is identity on Harm_ℓ and is idempotent."
+            },
+            {
+              "name": "harmonicProjection_changePotential",
+              "role": "evaluation",
+              "statement": "harmonicProjection(c+d a)=harmonicProjection(c)."
+            },
+            {
+              "name": "rationalLaplacian_rank",
+              "role": "proof lemma",
+              "statement": "For each connected component with r vertices, the rational weighted Laplacian has rank r−1, preserved over k."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Graph.harmonic_exact_decomposition_1",
+              "kind": "computation",
+              "statement": "On a cyclic triangle with unit lengths and cyclic edge values (3,0,0), the harmonic part is (1,1,1) and the exact part is (2,−1,−1)."
+            },
+            {
+              "name": "Graph.harmonic_exact_decomposition_2",
+              "kind": "degenerate",
+              "statement": "On a tree the harmonic part is zero; on two isolated vertices the ambiguity is two constants, not one."
+            },
+            {
+              "name": "Graph.harmonic_exact_decomposition_3",
+              "kind": "non-example",
+              "statement": "In characteristic 3 on a triangle, the constant cyclic cochain (1,1,1) is both exact and harmonic. Characteristic zero is essential; p=3 coefficients ℚ₃ are still allowed."
+            }
+          ],
+          "proofSketch": "Over ℚ, the adjoint identity identifies the Laplacian kernel after embedding into ℝ: Σ_edges (f(v)−f(w))²/ℓ=0 forces componentwise constants. A maximal minor is a nonzero rational, so the same rank holds over every characteristic-zero k. Rank-nullity and orthogonality give the direct sum, uniqueness, nondegeneracy and extension compatibility.",
+          "usedBy": [
+            "target:1.3",
+            "target:3.2",
+            "target:3.4"
+          ],
+          "title": "The harmonic representative"
+        },
+        {
+          "id": "1.3",
+          "kind": "theorem",
+          "name": "Graph.harmonic_subdivision",
+          "statement": "If an edge of length ℓ is subdivided into consecutive positive rational lengths ℓ_i with Σℓ_i=ℓ, a harmonic jump c on that edge extends by c_i=(ℓ_i/ℓ)c. Restriction adds the jumps along the chain, and these operations identify graph cohomology and its harmonic representatives. Pairings ( , )_ℓ are preserved when both arguments are extended this way. If a residue current r is constant along the chain, Σ_i c_i r=c r. Attaching a tree contributes zero harmonic current. Uniform subdivision into m pieces gives c/m on each new edge, for m≥1.",
+          "hypotheses": [
+            "Finite graphs and positive rational lengths as in §1.1",
+            "m is positive; no division by zero",
+            "New degree-two vertices have no additional attached marked source terms"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Corollary 1.2 and preceding subdivision argument, p. 3, besser-zerbes2017 line 99; compare besser2017 Proposition 4.12(3), line 768"
+          },
+          "prerequisites": [
+            "target:1.2"
+          ],
+          "api": [
+            {
+              "name": "harmonic_subdivision_comp",
+              "role": "functoriality",
+              "statement": "Successive subdivisions give the same extension as their common refinement."
+            },
+            {
+              "name": "harmonic_subdivision_residue",
+              "role": "compatibility",
+              "statement": "The jump-residue contribution is invariant under subdivision; reversing every dart preserves it."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Graph.harmonic_subdivision_1",
+              "kind": "computation",
+              "statement": "Splitting a jump 6 into lengths 1/3 and 2/3 of its original length gives jumps 2 and 4, total 6."
+            },
+            {
+              "name": "Graph.harmonic_subdivision_2",
+              "kind": "degenerate",
+              "statement": "m=1 is identity; a rational tail carries zero current."
+            },
+            {
+              "name": "Graph.harmonic_subdivision_3",
+              "kind": "non-example",
+              "statement": "For a triangle with jumps (1,1,1), dividing one edge into two halves gives (1/2,1/2) on that edge. Treating all four resulting lengths as 1 changes the harmonic representative and is not the same metric realization."
+            }
+          ],
+          "proofSketch": "Divergence at each new vertex forces constant c_i/ℓ_i. Summing along the chain determines that current. Direct substitution proves the energy and residue identities; the cohomology isomorphism follows by extending potentials and applying §1.2.",
+          "usedBy": [
+            "target:4.3",
+            "target:7.6",
+            "target:3.4"
+          ],
+          "title": "Subdivision with a fixed metric"
+        }
+      ],
+      "examples": "A single vertex, a bridge, a two-edge cycle, a loop and a triangle distinguish graph incidence from simple adjacency.",
+      "dependencies": "Pinned Mathlib Graph; finite linear algebra over a characteristic-zero field. No analytic or cohomological comparison is a premise."
+    },
+    {
+      "key": "2",
+      "title": "Logarithmic annular functions and the double index",
+      "targets": [
+        {
+          "id": "2.1",
+          "kind": "definition",
+          "name": "Annulus.LogarithmicFunctions",
+          "statement": "For a characteristic-zero field k put A_log=k((z))[L], dL=dz/z, and A_log,1=k((z))+kL. On an open annulus over a complete characteristic-zero nonarchimedean field use its analytic Laurent functions in place of k((z)) and a fixed logarithm branch for L=log z. The derivative maps A_log,1 onto the analytic one-forms on the open annulus (and onto k((z))dz in the formal case), with kernel k. Res(d(f+aL))=a when Res(dz/z)=1. All annular restrictions are taken inside a common domain of convergence.",
+          "hypotheses": [
+            "k is a field of characteristic zero",
+            "Analytic case: complete nontrivially normed ultrametric k and a genuine open annulus",
+            "A common logarithm branch and an orientation with Res(dz/z)=1"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Definition 3.1, pp. 9–10, besser2017 line 402; formal polynomial logarithms in besser-dejeu2012 §7, pp. 355–356, line 2232"
+          },
+          "prerequisites": [
+            "gap:base-annuli",
+            "roadmap:RigidAnalyticGeometry §6.2",
+            "mathlib:LaurentSeries",
+            "mathlib:LaurentSeries.derivative",
+            "mathlib:LaurentSeries.hasseDeriv_coeff"
+          ],
+          "api": [
+            {
+              "name": "LogarithmicFunctions.mk",
+              "role": "constructor",
+              "statement": "Construct f+aL from an analytic or formal Laurent f and scalar a; add, scale, differentiate and restrict coefficientwise."
+            },
+            {
+              "name": "LogarithmicFunctions.ext",
+              "role": "extensionality",
+              "statement": "Equality in a fixed parameter is equality of the Laurent part and the coefficient a."
+            },
+            {
+              "name": "LogarithmicFunctions.residue_zero_iff",
+              "role": "characterisation",
+              "statement": "F is Laurent without L exactly when Res(dF)=0."
+            },
+            {
+              "name": "LogarithmicFunctions.changeParameter",
+              "role": "compatibility",
+              "statement": "In the analytic case, for an orientation-preserving parameter u transport log u=log z+log(u/z) with the fixed branch and analytic unit logarithm. Formally, for u=az(1+h), h∈zk[[z]], choose a scalar δ for the logarithm of a and transport L_u=L_z+δ+log(1+h) by its formal power series; use the full differential-algebra map. Orientation reversal transports both residue and logarithm."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.LogarithmicFunctions_1",
+              "kind": "computation",
+              "statement": "d(2+3L)=3 dz/z and Res=3; replacing the residue by the constant term of F fails."
+            },
+            {
+              "name": "Annulus.LogarithmicFunctions_2",
+              "kind": "degenerate",
+              "statement": "dC=0 for every constant C and dL≠0, including over ℚ₂."
+            },
+            {
+              "name": "Annulus.LogarithmicFunctions_3",
+              "kind": "non-example",
+              "statement": "L² is in A_log but not A_log,1, since d(L²)=2L dz/z is not an analytic differential. Characteristic p would also make d(z^p)=0."
+            }
+          ],
+          "proofSketch": "Use native Laurent series and polynomial carriers. Integrate Laurent monomials with denominator n+1 away from n=−1, whose primitive is L; in the analytic case polynomial denominator growth preserves convergence on every strictly smaller closed subannulus. The residue criterion proves uniqueness of the decomposition.",
+          "usedBy": [
+            "target:2.2",
+            "target:5.1",
+            "target:3.2"
+          ],
+          "title": "Functions with one logarithmic term"
+        },
+        {
+          "id": "2.2",
+          "kind": "definition",
+          "name": "Annulus.doubleIndex",
+          "statement": "For the oriented formal punctured disc or open annulus of §2.1 define B_e(f+aL,g+bL)=Res_e(f dg)+b Res_e(f dz/z)−a Res_e(g dz/z), using a parameter compatible with the orientation. This is the unique alternating k-bilinear pairing with B_e(F,G)=Res_e(F dG) when F has no logarithmic term. In particular B_e(C,G)=C Res_e(dG). This definition owns the index; the underlying residue is supplied by the base.",
+          "hypotheses": [
+            "The field, function spaces, orientation and branch hypotheses of §2.1"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Definition 3.2 and Lemma 3.3, p. 9, besser2017 line 421; besser-dejeu2012 Definition 7.1 and construction, p. 356, line 2243"
+          },
+          "prerequisites": [
+            "target:2.1"
+          ],
+          "api": [
+            {
+              "name": "doubleIndex_ext",
+              "role": "uniqueness",
+              "statement": "An alternating bilinear pairing with the analytic-first residue rule equals B_e."
+            },
+            {
+              "name": "doubleIndex_add_left",
+              "role": "structure",
+              "statement": "B_e(F+F′,G)=B_e(F,G)+B_e(F′,G), with analogous scalar and right-variable laws."
+            },
+            {
+              "name": "doubleIndex_reverse",
+              "role": "orientation",
+              "statement": "B_{−e}(F,G)=−B_e(F,G)."
+            },
+            {
+              "name": "doubleIndex_add_constants",
+              "role": "evaluation",
+              "statement": "B_e(F+A,G+B)−B_e(F,G)=A Res_e(dG)−B Res_e(dF)."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.doubleIndex_1",
+              "kind": "computation",
+              "statement": "B_e(1,L)=1, B_e(L,1)=−1 and B_e(z,z⁻¹)=−1; both residue order and logarithmic constant terms are detected."
+            },
+            {
+              "name": "Annulus.doubleIndex_2",
+              "kind": "degenerate",
+              "statement": "B_e(L,L)=0 and B_e(C,D)=0 for constants C,D; the expression Res(F dG) alone is undefined when F=L."
+            },
+            {
+              "name": "Annulus.doubleIndex_3",
+              "kind": "compatibility",
+              "statement": "If a=0 the formula is Res(f dG); if b=0 it is −Res(g dF). These agree when both are Laurent because Res d(fg)=0."
+            }
+          ],
+          "proofSketch": "Expand in the direct sum of the Laurent subspace and kL. Residues of exact Laurent differentials vanish, proving alternation. The residue rule determines all terms except B(L,L), which is zero by alternation.",
+          "usedBy": [
+            "target:2.3",
+            "target:3.1",
+            "target:5.2",
+            "target:3.3",
+            "target:7.1"
+          ],
+          "title": "The alternating local index"
+        },
+        {
+          "id": "2.3",
+          "kind": "theorem",
+          "name": "Annulus.doubleIndex_pullback",
+          "statement": "Let φ:e′→e be a finite map of annuli with positive degree n and compatible orientation, or a formal parameter substitution of ramification order n. For pulled-back functions and branch, B_e′(φ*F,φ*G)=n B_e(F,G). In particular the index is invariant under orientation-preserving parameter isomorphisms, and reverses sign with orientation. Scalar extension commutes with B; restricting to smaller annuli preserves B. For a finite separable coefficient extension L/k, the residue trace commutes with Laurent coefficient trace.",
+          "hypotheses": [
+            "The hypotheses of §2.1",
+            "φ finite of positive degree with no poles in its analytic domain; formal substitution has positive order",
+            "Branches and coefficient embeddings agree on the source field"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Definition 7.1, p. 356, line 2243; §8 and residue-degree argument in Lemma 8.1, p. 361, line 2524; double-index consequence"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "mathlib:Algebra.trace"
+          ],
+          "api": [
+            {
+              "name": "doubleIndex_scalarExtension",
+              "role": "compatibility",
+              "statement": "The embedded value of B_k(F,G) equals B_L(F_L,G_L)."
+            },
+            {
+              "name": "doubleIndex_shrink",
+              "role": "restriction",
+              "statement": "Analytic continuation to a common end annulus identifies the values."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.doubleIndex_pullback_1",
+              "kind": "computation",
+              "statement": "Under z=t², B(1,log(z)) pulls back to B(1,2log(t))=2."
+            },
+            {
+              "name": "Annulus.doubleIndex_pullback_2",
+              "kind": "degenerate",
+              "statement": "The identity map has degree 1; there is no degree-zero constant-map residue identity here."
+            },
+            {
+              "name": "Annulus.doubleIndex_pullback_3",
+              "kind": "computation",
+              "statement": "Under z=t⁻¹ with reversed orientation B(1,log(z))=−1 in the t orientation. Counting absolute degree without an orientation loses this sign."
+            }
+          ],
+          "proofSketch": "Apply the imported residue pullback law to the analytic-first rule; uniqueness in §2.2 supplies all logarithmic terms. Coefficient trace commutes with coefficient extraction. The same argument handles shrinking and scalar extension.",
+          "usedBy": [
+            "target:3.1",
+            "target:5.4",
+            "target:7.5",
+            "target:5.5"
+          ],
+          "title": "Coordinate changes, degrees and coefficients"
+        }
+      ],
+      "examples": "The values B(1,log z)=1 and B(z,z⁻¹)=−1 fix the residue order; z↦z² fixes the degree convention.",
+      "dependencies": "Layer 1 is independent. This layer uses the base analytic/residue contract and RigidAnalyticGeometry §§6.2, 1.3."
+    },
+    {
+      "key": "3",
+      "title": "Wide-open pairings and semistable graph corrections",
+      "targets": [
+        {
+          "id": "3.1",
+          "kind": "definition",
+          "name": "ColemanWideOpen.doublePairing",
+          "statement": "For a connected Coleman wide open U, ω,η analytic one-forms on U and their Coleman primitives F,G, define B_U(ω,η)=Σ_{e∈End(U)} B_e(F|e,G|e), orienting each end by a parameter vanishing in its omitted disc. The value is independent of the two global primitive constants, alternating, annihilates d f in either slot for f analytic on U, and therefore factors through H¹_dR(U). It agrees under common shrinking of ends and is zero if U has rational good-reduction compactification. The same construction allows finitely many punctures by replacing them by sufficiently small omitted discs.",
+          "hypotheses": [
+            "U is a connected Coleman wide open over a finite extension K/ℚ_p or its complete algebraically closed extension",
+            "F,G are global Coleman primitives of analytic differentials, with one branch",
+            "For cohomology factorization use the algebraic/rigid de Rham comparison contract",
+            "Over K the wide open is geometrically connected with Coleman constant field K; a larger finite constant field is treated over that field and then by trace",
+            "The construction is first made after splitting the finite family of ends over the coefficient field; nonsplit ends are traced by §7.5 and descended by §7.6"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Definition 3.8, Proposition 3.9 and Remark 3.10, p. 11, besser2017 line 492"
+          },
+          "prerequisites": [
+            "target:2.3",
+            "gap:base-coleman",
+            "gap:base-reciprocity",
+            "gap:curve-comparison"
+          ],
+          "api": [
+            {
+              "name": "doublePairing_eq_sum",
+              "role": "evaluation",
+              "statement": "The function-level notation B_U(F,G) means the pairing of their differentials, evaluated by the end-sum."
+            },
+            {
+              "name": "doublePairing_constant_independent",
+              "role": "compatibility",
+              "statement": "Changing either global primitive constant changes the sum by a constant times Σ_ends Res(ω) or Σ_ends Res(η), hence zero."
+            },
+            {
+              "name": "doublePairing_restrict",
+              "role": "functoriality",
+              "statement": "Restriction to a smaller wide open preserving the core gives the same pairing, including newly excised discs on which both differentials extend analytically."
+            }
+          ],
+          "tests": [
+            {
+              "name": "ColemanWideOpen.doublePairing_1",
+              "kind": "degenerate",
+              "statement": "If either differential is zero then B_U=0; a proper domain with no ends has zero end-sum for its analytic global one-forms."
+            },
+            {
+              "name": "ColemanWideOpen.doublePairing_2",
+              "kind": "compatibility",
+              "statement": "For ℙ¹ minus discs, B_U=0 even if a local end index B_e(1,log z)=1; cancellation over ends is essential."
+            },
+            {
+              "name": "ColemanWideOpen.doublePairing_3",
+              "kind": "non-example",
+              "statement": "On a positive-genus good-reduction curve choose second-kind de Rham representatives α,β with α∪β=1 and delete their pole discs; B_U(∫α,∫β)=1. An identically zero definition fails."
+            }
+          ],
+          "proofSketch": "Global residue cancellation kills primitive constants. Coleman double-index reciprocity identifies the end pairing with the cup product of the Frobenius projection onto compact cohomology; it kills analytic exact forms and is zero on rational compactification. The same residue characterization and local disc reciprocity prove shrinking.",
+          "usedBy": [
+            "target:3.3",
+            "target:3.4",
+            "target:6.1"
+          ],
+          "title": "The end-sum on a wide open"
+        },
+        {
+          "id": "3.2",
+          "kind": "definition",
+          "name": "Semistable.HarmonicPrimitiveData",
+          "statement": "For a smooth proper geometrically connected curve X/K with a split regular nodal model and meromorphic ω, remove the poles and choose Coleman primitives F_v on the connected component wide opens. Their differences c_ω(e)=F_head|e−F_tail|e are constants and antisymmetric. Normalize by adding component constants until c_ω is harmonic. At a regular model use unit edge lengths; for subdivisions use the compatible rational metric of §1.3. For a self-node, first take a compatible subdivision giving Coleman component domains; coarsening then adds jumps along its chain, rather than subtracting a primitive from itself. The normalized family exists and is unique up to one common constant, and c_ω is independent of that common constant. The family is a torsor under K, not a distinguished primitive with an invented zero value.",
+          "hypotheses": [
+            "K/ℚ_p finite, p any prime; a fixed branch",
+            "X smooth, proper, geometrically connected, dimension one",
+            "Chosen split regular nodal realization; pole support separated from the connecting annuli",
+            "Component wide opens and their Coleman primitives are those in the base contract"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Equation (1.4) and normalization preceding Theorem 1.1, p. 2, besser-zerbes2017 line 74"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.1",
+            "gap:base-coleman",
+            "roadmap:StableReduction Layers 0–1",
+            "roadmap:RigidAnalyticGeometry §§2.3, 6.2",
+            "gap:curve-comparison"
+          ],
+          "api": [
+            {
+              "name": "HarmonicPrimitiveData.mk",
+              "role": "constructor",
+              "statement": "Normalize any family by projecting its jump cochain and solving for a component potential; no basepoint is selected."
+            },
+            {
+              "name": "HarmonicPrimitiveData.ext_mod_constant",
+              "role": "extensionality",
+              "statement": "Two normalized families for the same ω differ by the same scalar on every component."
+            },
+            {
+              "name": "HarmonicPrimitiveData.linear",
+              "role": "structure",
+              "statement": "Sums and scalar multiples of normalized families normalize the corresponding forms."
+            },
+            {
+              "name": "HarmonicPrimitiveData.jump_change",
+              "role": "evaluation",
+              "statement": "Replacing F_v by F_v+a_v replaces c by c−d a, with d from §1.1."
+            },
+            {
+              "name": "HarmonicPrimitiveData.jump_class",
+              "role": "compatibility",
+              "statement": "The class of c is the χ([ω]) class of the Čech–de Rham comparison contract, with the signs fixed in the conventions."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.HarmonicPrimitiveData_1",
+              "kind": "computation",
+              "statement": "A two-component bridge with F_head−F_tail=2 is normalized by subtracting 2 from F_head, giving jump zero; this tests c↦c−d a."
+            },
+            {
+              "name": "Semistable.HarmonicPrimitiveData_2",
+              "kind": "degenerate",
+              "statement": "A smooth irreducible special fibre has one primitive modulo one constant and no graph jumps."
+            },
+            {
+              "name": "Semistable.HarmonicPrimitiveData_3",
+              "kind": "non-example",
+              "statement": "On a unit-length triangle a cyclic jump cochain (1,1,1) is already normalized and cannot be made zero by component constants. Harmonic gluing does not identify functions on overlaps."
+            }
+          ],
+          "proofSketch": "Kernel-of-d equals constants on each connected annulus by Coleman uniqueness. Apply §1.2 to c=h+d a and add a_v to the primitives, producing c−d a=h. Connectedness of the dual graph gives uniqueness modulo one scalar.",
+          "usedBy": [
+            "target:3.3",
+            "target:4.2",
+            "target:4.3",
+            "target:4.1"
+          ],
+          "title": "Normalized component primitives"
+        },
+        {
+          "id": "3.3",
+          "kind": "theorem",
+          "name": "Semistable.auxiliaryDoubleIndex_formula",
+          "statement": "In the split setup of §3.2 let Z contain the poles of ω,η and let F_v,G_v be any component Coleman primitives with jumps c,d. Then Σ_v Σ_{x∈Z∩U_v} B_x(F_v,G_v)=Σ_v B_{U_v−Z}(ω,η)+Σ_{e∈E/±}(c(e)Res_e η−d(e)Res_e ω). The ends at Z use the point orientation; connecting annuli are oriented as ends of the tail component. The formula holds before harmonic normalization; neither side is claimed independent of arbitrary component constants.",
+          "hypotheses": [
+            "Hypotheses of §3.2; ω and η regular on X−Z",
+            "Z consists of rational points in separated smooth residue domains in this realization",
+            "No pole lies on a connecting annulus"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Theorem 4.10 and its expansion, pp. 14–15, besser2017 line 700"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:3.1",
+            "target:3.2"
+          ],
+          "api": [
+            {
+              "name": "auxiliaryDoubleIndex_edgeReverse",
+              "role": "orientation",
+              "statement": "Each summand c Res η−d Res ω is invariant under e↦−e."
+            },
+            {
+              "name": "auxiliaryDoubleIndex_changeConstants",
+              "role": "evaluation",
+              "statement": "Changing component primitives changes both sides by the same residue-weighted sum."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.auxiliaryDoubleIndex_formula_1",
+              "kind": "computation",
+              "statement": "On one paired overlap take c=2,d=3,Res η=5,Res ω=7. The correction is 10−21=−11, and reversing all four signs still gives −11."
+            },
+            {
+              "name": "Semistable.auxiliaryDoubleIndex_formula_2",
+              "kind": "degenerate",
+              "statement": "If c=d=0 the correction is zero. Zero forms give zero on both sides."
+            },
+            {
+              "name": "Semistable.auxiliaryDoubleIndex_formula_3",
+              "kind": "non-example",
+              "statement": "Adding a constant only on one component can change the point-sum when that component has nonzero total puncture residue. Independence is not valid before normalization."
+            }
+          ],
+          "proofSketch": "Expand every component end-sum, separating puncture ends from connecting ends. Each connecting annulus occurs twice with opposite orientation. Substitute F_head=F_tail+c and G_head=G_tail+d; §2.2 gives the stated sign. This proof uses no harmonic/Vologodsky comparison.",
+          "usedBy": [
+            "target:3.4",
+            "target:4.2",
+            "target:4.4"
+          ],
+          "title": "The graph correction before identification"
+        },
+        {
+          "id": "3.4",
+          "kind": "definition",
+          "name": "Semistable.correctedDoublePairing",
+          "statement": "For X,Z and a split separated semistable realization define on H¹_dR(X−Z/K) the alternating pairing B_h(α,β)=Σ_v B_{U_v−Z}(res_v α,res_v β)+(χ α,N_ℓ β)_ℓ−(χ β,N_ℓ α)_ℓ. Here χ is the graph retraction of the comparison contract, graph representatives of χ are harmonic, and N_ℓ is represented by ℓ(e)Res_e of the differential in a Čech representative. For global meromorphic forms this equals §3.3 with harmonic component jumps. It annihilates algebraic exact forms, restricts to α∪β in that order on proper H¹_dR(X), and is unchanged by refinements between admissible nodal realizations, using the metric when edge lengths change; modifications outside that class are compared after finite extension and regularization. If Z is empty use Čech hypercohomology, rather than pretending all proper classes have global regular representatives.",
+          "hypotheses": [
+            "X/K smooth proper geometrically connected curve, K/ℚ_p finite with fixed branch",
+            "Z finite reduced and split in this realization; points separated in the model",
+            "The full Čech, cup, χ and monodromy comparison contract is supplied",
+            "Lengths have one fixed valuation normalization",
+            "Every model at which the displayed formula is evaluated is an admissible split nodal realization; a modification outside that class is compared after finite extension and regularization"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Definition 4.11 and Proposition 4.12(1)–(3), pp. 15–16, besser2017 line 738; metric formulation is the subdivision consequence"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:3.3",
+            "gap:curve-comparison"
+          ],
+          "api": [
+            {
+              "name": "correctedDoublePairing_eq_aux",
+              "role": "evaluation",
+              "statement": "For harmonic F_v,G_v, B_h([ω],[η])=Σ_{x∈Z} B_x(F_v,G_v)."
+            },
+            {
+              "name": "correctedDoublePairing_cup",
+              "role": "compatibility",
+              "statement": "For proper classes α,β, B_h(j*α,j*β)=α∪β."
+            },
+            {
+              "name": "correctedDoublePairing_refinement",
+              "role": "functoriality",
+              "statement": "Transport through the canonical cohomology maps of refinements preserves the pairing; rational tails contribute zero."
+            },
+            {
+              "name": "correctedDoublePairing_ext",
+              "role": "extensionality",
+              "statement": "Equal de Rham classes give equal values in either argument; changing Čech representatives by a total coboundary does not change B_h."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.correctedDoublePairing_1",
+              "kind": "computation",
+              "statement": "The graph contribution on harmonic/residue values c_ω=2,c_η=3,r_η=5,r_ω=7 is −11 in the chosen order; exchanging α and β gives +11."
+            },
+            {
+              "name": "Semistable.correctedDoublePairing_2",
+              "kind": "degenerate",
+              "statement": "For X=ℙ¹ and Z empty, H¹_dR=0 and B_h=0; for good reduction there is no graph contribution."
+            },
+            {
+              "name": "Semistable.correctedDoublePairing_3",
+              "kind": "compatibility",
+              "statement": "For second-kind representatives with proper classes α∪β=1, the normalized point-sum is 1. Defining the proper pairing only from global holomorphic forms would miss these classes."
+            }
+          ],
+          "proofSketch": "The comparison contract makes res,χ,N_ℓ maps on hypercohomology, so the expression is defined on classes. §1.2 makes the graph products independent of exact representatives. §3.3 identifies forms; the local second-kind residue formula in the cup contract proves the proper restriction. Subdivision and rational-tail invariance follow from §§1.3 and 3.1; the model comparison transports this to common refinements.",
+          "usedBy": [
+            "target:3.5",
+            "target:4.2",
+            "target:4.4",
+            "target:7.6"
+          ],
+          "title": "The cohomological pairing with graph terms"
+        },
+        {
+          "id": "3.5",
+          "kind": "theorem",
+          "name": "Semistable.correctedDoublePairing_phi_N",
+          "statement": "For the linear q-Frobenius φ and geometric monodromy N in the curve-comparison contract, B_h(φ α,φ β)=q B_h(α,β) and B_h(Nα,β)+B_h(α,Nβ)=0. The geometric N here is distinct from differentiation in the universal logarithm variable. When using metric cochains, the comparison maps must identify that geometric N with N_ℓ using the same valuation scale.",
+          "hypotheses": [
+            "Hypotheses of §3.4",
+            "q is a positive power of the residue prime with q≥2",
+            "Operators are the supplied comparison operators, not arbitrary endomorphisms",
+            "χφ=χ, Nφ=qN, χN=N, N²=0; wide-open pairing has Frobenius weight 2"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Proposition 4.12(4) and proof, pp. 15–16, besser2017 line 754"
+          },
+          "prerequisites": [
+            "target:3.4",
+            "gap:curve-comparison"
+          ],
+          "api": [
+            {
+              "name": "correctedDoublePairing_phi_iterate",
+              "role": "functoriality",
+              "statement": "Replacing φ by its a-th positive iterate multiplies the pairing by q^a."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.correctedDoublePairing_phi_N_1",
+              "kind": "degenerate",
+              "statement": "For N=0 the skew-adjointness equation is 0=0; this does not force B_h=0."
+            },
+            {
+              "name": "Semistable.correctedDoublePairing_phi_N_2",
+              "kind": "computation",
+              "statement": "On a symplectic two-dimensional test space, φ=diag(1,q), N(e₂)=e₁,N(e₁)=0 and B(e₁,e₂)=1 give B(φe₁,φe₂)=q and B(Ne₂,e₂)+B(e₂,Ne₂)=1−1=0."
+            },
+            {
+              "name": "Semistable.correctedDoublePairing_phi_N_3",
+              "kind": "non-example",
+              "statement": "An arbitrary identity operator on a nonzero symplectic pairing cannot be called a q-Frobenius when q≥2: it scales by 1, not q."
+            }
+          ],
+          "proofSketch": "Apply wide-open Frobenius scaling and χφ=χ, Nφ=qN to §3.4. For monodromy the component restrictions of N vanish, χN=N and N²=0; the two remaining symmetric graph products cancel. No reference to the later harmonic identification is needed.",
+          "usedBy": [
+            "target:4.4"
+          ],
+          "title": "Frobenius and monodromy compatibility"
+        }
+      ],
+      "examples": "A rational wide open has zero double pairing. A positive-genus wide open can have nonzero pairing, and a cycle forces the graph correction to be retained.",
+      "dependencies": "Layers 1–2; the base Coleman-function and residue contracts; the unbound curve-comparison contract for de Rham assertions. The harmonic identification with arbitrary-reduction integration is not a premise."
+    },
+    {
+      "key": "4",
+      "title": "Harmonic realization of arbitrary-reduction single integration",
+      "targets": [
+        {
+          "id": "4.1",
+          "kind": "theorem",
+          "name": "Semistable.dlog_residue_is_exact",
+          "statement": "In a split regular semistable model, if f is a nonzero rational function whose divisor has support away from all connecting annuli, then Res_e(dlog f)=ord_head(f)−ord_tail(f)=−d(ord)(e), where ord_v is the multiplicity of the vertical component in div(f). Thus the residue cochain of dlog f is exact. The functions f and log_λ f are global component primitives of df and dlog f respectively, so both have zero harmonic jumps wherever defined.",
+          "hypotheses": [
+            "Hypotheses of §3.2",
+            "f≠0 and has neither zero nor pole on a connecting annulus",
+            "At a node xy=π, tail=(y), head=(x), Res_e(dx/x)=1"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Lemma 2.1 and proof, p. 5, besser-zerbes2017 line 218; exact/log primitives in §2, line 135"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:3.2",
+            "gap:base-annuli",
+            "gap:base-single"
+          ],
+          "api": [
+            {
+              "name": "dlog_residue_orthogonal_harmonic",
+              "role": "compatibility",
+              "statement": "For harmonic c, Σ_e c(e)Res_e(dlog f)=0 at unit lengths; in a metric realization use the associated weighted exact cochain."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.dlog_residue_is_exact_1",
+              "kind": "computation",
+              "statement": "For xy=π, tail=(y), head=(x), f=x gives ord_tail=0,ord_head=1 and Res_e(dlog x)=1=−d(ord)(e). Identifying the residue with +d(ord) under this differential convention gives the wrong sign."
+            },
+            {
+              "name": "Semistable.dlog_residue_is_exact_2",
+              "kind": "degenerate",
+              "statement": "A nonzero constant f has zero residue and zero jumps; f=0 is excluded from dlog."
+            },
+            {
+              "name": "Semistable.dlog_residue_is_exact_3",
+              "kind": "compatibility",
+              "statement": "For a rational f on a proper curve, ∫df=f plus a constant and ∫dlog f=log f plus a constant on every component; no new cycle class is created."
+            }
+          ],
+          "proofSketch": "The local node computation determines the order sign; factor f by its two vertical powers. The remaining unit has zero annular logarithmic residue by the no-zero/no-pole hypothesis and the annular residue theorem. Global f and log f have matching restrictions, proving zero jumps.",
+          "usedBy": [
+            "target:4.2"
+          ],
+          "title": "Rational logarithms and graph residues"
+        },
+        {
+          "id": "4.2",
+          "kind": "theorem",
+          "name": "Semistable.harmonicPrimitive_eq_singleIntegral",
+          "statement": "Let F be a primitive from the imported natural single-integration theory for a meromorphic ω on a smooth proper geometrically connected X/K. In the split regular semistable realization of §3.2, its values away from poles on residue domains of smooth special-fibre points agree, modulo one common constant, with the normalized component Coleman primitives. This comparison holds for every prime and every genus. Loops and parallel edges are retained through their flags or a compatible subdivision.",
+          "hypotheses": [
+            "K/ℚ_p finite, p any prime, with a fixed branch",
+            "ω meromorphic; every evaluated point lies outside its poles",
+            "A split regular semistable realization with separated supports is chosen for the comparison"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Theorem 1.1, p. 2, besser-zerbes2017 line 88; §2, pp. 3–5, line 130; all-prime integration supplied by colmez1998 Theorem II.1.4"
+          },
+          "prerequisites": [
+            "target:3.4",
+            "target:4.1",
+            "gap:base-single",
+            "gap:base-reciprocity",
+            "roadmap:JacobianChallenge Layers D–F",
+            "gap:base-jacobian"
+          ],
+          "api": [
+            {
+              "name": "harmonicPrimitive_divisor_eq",
+              "role": "evaluation",
+              "statement": "For a split degree-zero divisor D disjoint from the poles, Σ n_P F(P)=Σ n_P F_v(P), with P in its smooth residue domain."
+            },
+            {
+              "name": "harmonicPrimitive_goodReduction",
+              "role": "compatibility",
+              "statement": "For a smooth proper model this is the base Coleman single-integral comparison."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.harmonicPrimitive_eq_singleIntegral_1",
+              "kind": "degenerate",
+              "statement": "On a tree every harmonic jump is zero; with a single component the comparison is equality of Coleman primitives modulo one constant."
+            },
+            {
+              "name": "Semistable.harmonicPrimitive_eq_singleIntegral_2",
+              "kind": "non-example",
+              "statement": "On a cycle the harmonic cochain may be nonzero, so analytic equality of primitives on connecting overlaps is not a conclusion."
+            },
+            {
+              "name": "Semistable.harmonicPrimitive_eq_singleIntegral_3",
+              "kind": "compatibility",
+              "statement": "For df and dlog f the identification follows from their global primitives. This includes p=2 through the Colmez single-integration contract, without invoking all-prime iterated transport."
+            }
+          ],
+          "proofSketch": "The base theorem gives Coleman restrictions on components and the natural principal-divisor reciprocity. For principal D=(f), compare the point double-index reciprocity for F and log f with §3.3 for the harmonic family. Component Coleman reciprocity kills the component pairings, and §4.1 with harmonic-exact orthogonality kills the correction. The difference of the two divisor evaluations therefore factors through Jac(X)(K), is additive and locally constant, and vanishes because a homomorphism from this compact group into the torsion-free additive field with open kernel has finite, hence zero, image. The Jacobian/compactness bridge is an explicit base-contract gap.",
+          "usedBy": [
+            "target:4.3",
+            "target:4.4",
+            "target:7.6"
+          ],
+          "title": "Identification on smooth residue domains"
+        },
+        {
+          "id": "4.3",
+          "kind": "theorem",
+          "name": "Semistable.singleIntegral_on_annulus",
+          "statement": "For the oriented node xy=π with tail component (y), head component (x), set t=ν_π(x), so the tail has t=0 and the head t=1. If c=F_head−F_tail is the normalized jump, then on algebraic points of the connecting annulus the single-integral primitive equals F_tail+c t, after the same global constant is fixed. In a metric segment of length ℓ, use the relative affine coordinate t/ℓ. With y=π/x the reverse expression is F_head−c ν_π(y), giving the same value.",
+          "hypotheses": [
+            "Hypotheses of §4.2",
+            "ν_π(π)=1 and endpoints avoid poles",
+            "Points may be rational over any finite extension; their branches extend the chosen one"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Corollary 1.2, p. 3, besser-zerbes2017 line 108"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:4.2",
+            "gap:base-single"
+          ],
+          "api": [
+            {
+              "name": "singleIntegral_annulus_reverse",
+              "role": "orientation",
+              "statement": "F_tail+c t=F_head−c(1−t)."
+            },
+            {
+              "name": "singleIntegral_annulus_baseChange",
+              "role": "functoriality",
+              "statement": "Under ramification m, the new component constants interpolate with increments c/m; the old ν_π equals ν_ϖ/m."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.singleIntegral_on_annulus_1",
+              "kind": "computation",
+              "statement": "With F_tail=2,c=6,t=1/3, the value is 4; the reverse expression is 8−6·(2/3)=4."
+            },
+            {
+              "name": "Semistable.singleIntegral_on_annulus_2",
+              "kind": "degenerate",
+              "statement": "If c=0 the formula is the Coleman function; t=0 and t=1 give the two boundary values by continuation to the adjacent smooth residue domains."
+            },
+            {
+              "name": "Semistable.singleIntegral_on_annulus_3",
+              "kind": "non-example",
+              "statement": "For c=6, a quadratic ramified refinement has two jumps 3,3. Assigning 6 to each new edge gives total 12 and violates the formula."
+            }
+          ],
+          "proofSketch": "Choose a finite ramified extension in which the point reduces to a newly inserted component. Theorem §4.2 and harmonicity at its degree-two vertices force the constants given by §1.3. The new component lies at rational position t, giving the formula. Finite-extension compatibility identifies it with the original single integral.",
+          "usedBy": [
+            "target:7.6",
+            "target:7.7"
+          ],
+          "title": "The valuation term and its sign"
+        },
+        {
+          "id": "4.4",
+          "kind": "theorem",
+          "name": "Semistable.globalDoublePairing_eq_pointSum",
+          "statement": "In the split setup, for meromorphic ω,η regular on X−Z and single-integral primitives F,G, Σ_{x∈Z} B_x(F,G)=B_h([ω],[η]). The sum is independent of the two global constants and descends to H¹_dR(X−Z). It extends the ordered proper cup product and has the Frobenius/monodromy compatibilities of §3.5. The nonsplit formulation is the residue-field trace construction of §7.5; its validity is not a rational-pole hypothesis on the final theorem.",
+          "hypotheses": [
+            "X/K and branch as in §4.2",
+            "Z finite reduced and contains all poles",
+            "For this split formula points of Z are rational and separated in the chosen realization"
+          ],
+          "locator": {
+            "source": "besser2017",
+            "where": "Corollary 5.3, p. 16, besser2017 line 807; Proposition 3.5, p. 10, line 449"
+          },
+          "prerequisites": [
+            "target:3.3",
+            "target:3.4",
+            "target:3.5",
+            "target:4.2"
+          ],
+          "api": [
+            {
+              "name": "globalDoublePairing_exact",
+              "role": "evaluation",
+              "statement": "If ω=df with f rational regular off Z, the point-sum is zero for every η regular off Z."
+            },
+            {
+              "name": "globalDoublePairing_constants",
+              "role": "compatibility",
+              "statement": "Adding A to F changes the sum by AΣ_x Res_x η=0, and similarly in the other slot."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Semistable.globalDoublePairing_eq_pointSum_1",
+              "kind": "degenerate",
+              "statement": "For Z empty the point-sum on global regular forms is zero, compatible with the isotropic holomorphic subspace. Proper cohomology is handled through §3.4, not this representation."
+            },
+            {
+              "name": "Semistable.globalDoublePairing_eq_pointSum_2",
+              "kind": "compatibility",
+              "statement": "For second-kind representatives α,β the sum is α∪β, with primitive of α placed first."
+            },
+            {
+              "name": "Semistable.globalDoublePairing_eq_pointSum_3",
+              "kind": "non-example",
+              "statement": "Omitting the jump-residue term from §3.3 need not reproduce this point-sum on a graph with cycles."
+            }
+          ],
+          "proofSketch": "Near a pole in a smooth residue domain, §4.2 identifies the single-integral germ with its component Coleman germ up to the common constants. §3.3 and §3.4 give the equality; global residue cancellation handles constants. Import the class-level and operator properties from §§3.4–3.5.",
+          "usedBy": [
+            "target:7.5",
+            "target:7.6"
+          ],
+          "title": "The Vologodsky point-sum"
+        }
+      ],
+      "examples": "Exact and logarithmic differentials have zero jumps; a Tate curve has a nonzero harmonic cycle jump.",
+      "dependencies": "Layers 1–3; the full imported single-integration theorem and the base reciprocity/Abel–Jacobi contract. There is no use of a height or regulator theorem."
+    },
+    {
+      "key": "5",
+      "title": "Auxiliary primitives and the local triple index",
+      "targets": [
+        {
+          "id": "5.1",
+          "kind": "definition",
+          "name": "Annulus.TripleIndexData",
+          "statement": "For three labelled functions F,G,H in A_log,1, define TripleIndexData to consist of primitives I_{R dS} in A_log for every labelled pair, with dI_{R dS}=R dS and I_{R dS}+I_{S dR}=RS. On the diagonal set I_{R dR}=R²/2. Distinct labels retain their choices even when their functions happen to coincide. Such data exist. Choices for each unordered off-diagonal pair form a torsor under k, acting by I_{R dS}↦I_{R dS}+C and I_{S dR}↦I_{S dR}−C. Data may be permuted, pulled back and combined linearly with their functions; no arbitrary primitive choices are silently identified.",
+          "hypotheses": [
+            "Characteristic-zero field k and the formal ring of §2.1; or its analytic open-annulus version",
+            "All differential and product equations are imposed on the actual functions",
+            "In the analytic case all functions and primitives share a domain of convergence"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "§7, equation (7.2) and the data before Proposition 7.3, pp. 355–356, besser-dejeu2012 line 2232 and line 2251"
+          },
+          "prerequisites": [
+            "target:2.1"
+          ],
+          "api": [
+            {
+              "name": "TripleIndexData.mk",
+              "role": "constructor",
+              "statement": "Choose a primitive for one direction of each unordered pair and set the reverse to RS−I; use R²/2 on the diagonal."
+            },
+            {
+              "name": "TripleIndexData.ext",
+              "role": "extensionality",
+              "statement": "Equality is equality of the three functions and their labelled primitive entries."
+            },
+            {
+              "name": "TripleIndexData.changeConstant",
+              "role": "torsor action",
+              "statement": "The indicated opposite shifts preserve all derivative and integration-by-parts equations; any two choices are related by unique pair constants."
+            },
+            {
+              "name": "TripleIndexData.pullback",
+              "role": "functoriality",
+              "statement": "Differential-compatible annular or formal substitutions pull back every entry, preserving products and pair equations."
+            },
+            {
+              "name": "TripleIndexData.linearCombination",
+              "role": "structure",
+              "statement": "Mixed-pair auxiliary primitives for a linear combination are the same linear combination of the original mixed entries; reverse entries satisfy integration by parts, and a new diagonal entry is recomputed as R²/2."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.TripleIndexData_1",
+              "kind": "computation",
+              "statement": "For all three functions equal to L and all auxiliary integrals L²/2, d(L²/2)=L dz/z and each pair sums to L²."
+            },
+            {
+              "name": "Annulus.TripleIndexData_2",
+              "kind": "degenerate",
+              "statement": "For all functions zero, choosing all auxiliary integrals zero is valid; independent opposite constants on off-diagonal pairs are also valid."
+            },
+            {
+              "name": "Annulus.TripleIndexData_3",
+              "kind": "non-example",
+              "statement": "If G=0,H=L, the choices I_{G dH}=1,I_{H dG}=0 fail because their sum is 1 rather than GH=0. The compatible pair is (1,−1)."
+            }
+          ],
+          "proofSketch": "Integration by parts recursively integrates z^n L^j dz in k((z))[L]; n=−1 raises log degree and divides by j+1, while n≠−1 lowers log degree after division by n+1. Characteristic zero makes all these denominators nonzero. Kernel-of-d is k, giving the torsor and functoriality laws.",
+          "usedBy": [
+            "target:5.2",
+            "target:5.3",
+            "target:6.1"
+          ],
+          "title": "Compatible labelled auxiliary primitives"
+        },
+        {
+          "id": "5.2",
+          "kind": "definition",
+          "name": "Annulus.tripleIndex",
+          "statement": "For compatible TripleIndexData define T_e(F,G;H) as the unique scalar operation that is trilinear under the compatible linear combinations of §5.1, symmetric in F,G, satisfies T(F,G;H)+T(F,H;G)+T(G,H;F)=0 with the same permuted auxiliary entries, and equals B_e(F,I_{G dH}) when G has no logarithmic term. Existence and uniqueness hold in the formal and analytic annular settings. T is an operation on the full auxiliary data, not a trilinear map on three bare functions.",
+          "hypotheses": [
+            "Hypotheses and actual primitive equations of §5.1",
+            "The analytic-first reduction uses Res(dG)=0"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Proposition 7.3, Lemma 7.5 and equation (7.6), pp. 356–359, besser-dejeu2012 line 2277 and line 2327"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:5.1"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_unique",
+              "role": "universal property",
+              "statement": "Any scalar operation on the same data satisfying the four stated laws equals T."
+            },
+            {
+              "name": "tripleIndex_symm",
+              "role": "symmetry",
+              "statement": "T(F,G;H)=T(G,F;H) with the natural permutation of primitive entries."
+            },
+            {
+              "name": "tripleIndex_threeTerm",
+              "role": "identity",
+              "statement": "The three cyclic placements of the distinguished third slot sum to zero with common auxiliary data."
+            },
+            {
+              "name": "tripleIndex_meromorphic",
+              "role": "evaluation",
+              "statement": "If F,G have no logarithmic term then T(F,G;H)=Res_e(FG dH)."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.tripleIndex_1",
+              "kind": "computation",
+              "statement": "T(1,1;L)=1 and T(z,z;z⁻²)=−2 by the Laurent-first rule. These computed values detect the order of the differentiated third slot; the three-term identity uses one common labelled primitive data set."
+            },
+            {
+              "name": "Annulus.tripleIndex_2",
+              "kind": "degenerate",
+              "statement": "With F=G=H=L and all I=L²/2, T=0, since three equal summands give 3T=0. This holds over ℚ₃ because 3 is nonzero."
+            },
+            {
+              "name": "Annulus.tripleIndex_3",
+              "kind": "compatibility",
+              "statement": "For Laurent F=z,G=z⁻¹,H=L, T=Res(dz/z)=1; an index that always vanishes on rational-function slots fails."
+            }
+          ],
+          "proofSketch": "Expand each function into Laurent part plus scalar L. If one slot is Laurent, the reduction, symmetry and three-term identity determine the value; integration by parts proves consistency on intersections of those cases. For three L slots choose all half squares, making the value zero. Extend by compatible trilinearity and derive the conditional choice-change formulas from these axioms and use them to compare arbitrary primitive choices; §5.3 exports those formulas after existence.",
+          "usedBy": [
+            "target:5.3",
+            "target:5.4",
+            "target:5.5",
+            "target:6.1"
+          ],
+          "title": "Existence and characterization of the local index"
+        },
+        {
+          "id": "5.3",
+          "kind": "theorem",
+          "name": "Annulus.tripleIndex_changeConstant",
+          "statement": "Increasing I_{G dH} by C and decreasing I_{H dG} by C changes T(F,G;H) by −C Res_e(dF). Changing the F,H pair similarly changes it by −C Res_e(dG). It is independent of the F,G pair. Simultaneous pair changes add these effects. In particular zero in a function slot does not force the local value to vanish when its associated auxiliary data are not the compatible zero data.",
+          "hypotheses": [
+            "TripleIndexData as in §5.1",
+            "C∈k; the opposite primitive is shifted by −C",
+            "Functions and all other primitive entries are fixed"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Lemma 7.4, p. 357, besser-dejeu2012 line 2299"
+          },
+          "prerequisites": [
+            "target:5.2"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_changeBoth",
+              "role": "evaluation",
+              "statement": "Changing the G,H pair by C and the F,H pair by D changes the value by −C Res(dF)−D Res(dG)."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.tripleIndex_changeConstant_1",
+              "kind": "computation",
+              "statement": "For F=L,G=0,H=L with the G,H pair (1,−1), T=−1; the all-zero G,H primitive pair gives 0."
+            },
+            {
+              "name": "Annulus.tripleIndex_changeConstant_2",
+              "kind": "degenerate",
+              "statement": "If Res(dF)=0 the G,H constant change has no effect. Changing only the F,G pair never changes T."
+            },
+            {
+              "name": "Annulus.tripleIndex_changeConstant_3",
+              "kind": "non-example",
+              "statement": "For Res(dF)=1 and C=2, the change is −2. The local index cannot be exported as independent of auxiliary primitives."
+            }
+          ],
+          "proofSketch": "Use the reduction rule on the added data (F,0;H), where I_{0 dH}=C. Then T(F,0;H)=B(F,C)=−C Res(dF). Symmetry gives the other law, and changing the unused F,G pair has no effect in the generating cases, hence in general.",
+          "usedBy": [
+            "target:5.4",
+            "target:6.2",
+            "target:7.1",
+            "target:5.5"
+          ],
+          "title": "The actual choice laws"
+        },
+        {
+          "id": "5.4",
+          "kind": "theorem",
+          "name": "Annulus.tripleIndex_simplePoles",
+          "statement": "In the formal case assume dF,dG,dH have at most simple poles at z=0. Write c_z for the constant coefficient of the L⁰ Laurent coefficient in A_log. Then T(F,G;H)=c_z(F)c_z(G)Res(dH)−Res(dF)c_z(I_{G dH})−Res(dG)c_z(I_{F dH}). The coefficient c_z is parameter dependent; the whole expression, with all functions and primitive data transported, is parameter independent.",
+          "hypotheses": [
+            "k a characteristic-zero field",
+            "TripleIndexData of §5.1",
+            "dF,dG,dH have no poles of order greater than one at the formal origin"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Definition 7.7 and Proposition 7.8, pp. 359–360, besser-dejeu2012 line 2413 and line 2430"
+          },
+          "prerequisites": [
+            "target:5.3"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_simplePoles_zeroConstantPrimitives",
+              "role": "evaluation",
+              "statement": "If the two relevant primitive constant terms are zero, the value is c_z(F)c_z(G)Res(dH)."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.tripleIndex_simplePoles_1",
+              "kind": "computation",
+              "statement": "For F=2+L,G=3,H=L and I_{G dH}=3L, I_{F dH}=2L+L²/2, the value is 6."
+            },
+            {
+              "name": "Annulus.tripleIndex_simplePoles_2",
+              "kind": "degenerate",
+              "statement": "For three L functions and all half-square primitives every constant term is zero, hence T=0."
+            },
+            {
+              "name": "Annulus.tripleIndex_simplePoles_3",
+              "kind": "non-example",
+              "statement": "Over an analytic coefficient field with its fixed branch, under u=az one has c_u(log z)=−log a while c_z(log z)=0. Formally the same value is −δ for the chosen logarithmic lift δ. A formula asserting constant-term invariance alone is false."
+            }
+          ],
+          "proofSketch": "First normalize the two relevant primitives to constant term zero. By trilinearity reduce to analytic power series and L. The residue characterization gives the displayed product in these generating cases. Apply §5.3 to restore arbitrary primitive constants.",
+          "usedBy": [
+            "target:5.5"
+          ],
+          "title": "A local normalization formula"
+        },
+        {
+          "id": "5.5",
+          "kind": "theorem",
+          "name": "Annulus.tripleIndex_pullback",
+          "statement": "Orientation reversal negates the triple index with fixed functions and auxiliary data. For an orientation-preserving finite map φ:e′→e of annuli of degree n≥1, or a formal substitution of positive order n, T_e′(φ*F,φ*G;φ*H)=n T_e(F,G;H), provided every auxiliary primitive is pulled back. In particular parameter isomorphisms preserve T. Restrictions of ends and scalar embeddings also preserve the index on transported data.",
+          "hypotheses": [
+            "Hypotheses of §5.1",
+            "φ finite with positive degree and compatible orientations",
+            "All functions, branches and primitive entries are transported together"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "§8 parameter independence and Lemma 8.1, p. 361, besser-dejeu2012 line 2524; orientation/scalar consequences of the characterization"
+          },
+          "prerequisites": [
+            "target:2.3",
+            "target:5.2",
+            "target:5.3"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_pullback_comp",
+              "role": "functoriality",
+              "statement": "Degrees multiply under composable pullbacks and scalar embeddings commute with the degree law."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Annulus.tripleIndex_pullback_1",
+              "kind": "computation",
+              "statement": "z=t² sends (1,1;log z) with its primitives to (1,1;2log t), and T changes from 1 to 2."
+            },
+            {
+              "name": "Annulus.tripleIndex_pullback_2",
+              "kind": "degenerate",
+              "statement": "An orientation-preserving identity has degree 1; reversal sends the same value 1 to −1."
+            },
+            {
+              "name": "Annulus.tripleIndex_pullback_3",
+              "kind": "non-example",
+              "statement": "Pulling back F,G,H but replacing I_{G dH} by its pullback plus 1 changes T by −Res(dφ*F). Function pullback alone does not imply the degree formula."
+            }
+          ],
+          "proofSketch": "Compose the index with pullback and divide by the nonzero scalar n. The residue degree law of §2.3 and uniqueness of §5.2 recover the original index; reversal and scalar extension use the same characterization. Restricting Laurent expansions to a common annulus preserves every term.",
+          "usedBy": [
+            "target:6.2",
+            "target:7.5",
+            "target:6.3"
+          ],
+          "title": "Orientation, parameter and degree laws"
+        }
+      ],
+      "examples": "The triple (1,1;log z) has value 1. The triple (log z,0;log z) with a nonzero auxiliary constant has value −1.",
+      "dependencies": "Layer 2, characteristic-zero polynomial-logarithm calculus and the base annular residue laws. Global integration and semistable models are not prerequisites for the formal theory."
+    },
+    {
+      "key": "6",
+      "title": "Wide-open triple sums and Coleman one-form pairings",
+      "targets": [
+        {
+          "id": "6.1",
+          "kind": "definition",
+          "name": "ColemanWideOpen.tripleIndex",
+          "statement": "For a connected Coleman wide open U and global Coleman functions F,G,H with analytic differentials, choose all I_{R dS} as global Coleman primitives with I_{R dS}+I_{S dR}=RS, and define T_U(F,G;H)=Σ_{e∈End(U)}T_e(F,G;H). Restrictions of these global choices, rather than unrelated local choices at each end, are part of the construction. Over a finite extension K/ℚ_p use functions and auxiliary data defined over K or scalar extension with descent as in §7.6; over ℂ_p take the same end-sum.",
+          "hypotheses": [
+            "U connected and a Coleman wide open with finitely many ends",
+            "F,G,H global Coleman functions with dF,dG,dH analytic on U",
+            "A common branch and global compatible Coleman auxiliary primitives",
+            "Over K the wide open is geometrically connected with Coleman constant field K; a larger finite constant field is treated over that field and then by trace",
+            "The construction is first made after splitting the finite family of ends over the coefficient field; nonsplit ends are traced by §7.5 and descended by §7.6"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "§8 global construction and Lemma 8.2, p. 361, besser-dejeu2012 line 2533"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:5.2",
+            "gap:base-coleman"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_eq_endSum",
+              "role": "evaluation",
+              "statement": "The global value is the finite end-sum of local indices using the restrictions of any global compatible primitive family."
+            },
+            {
+              "name": "tripleIndex_globalChoices",
+              "role": "constructor",
+              "statement": "Global Coleman integration supplies a primitive of each Coleman form R dS; integration by parts supplies the opposite primitive."
+            },
+            {
+              "name": "tripleIndex_congr",
+              "role": "extensionality",
+              "statement": "Equal global Coleman functions give equal values after independence of global auxiliary choices in §6.2; functions are not replaced by their differential classes."
+            }
+          ],
+          "tests": [
+            {
+              "name": "ColemanWideOpen.tripleIndex_1",
+              "kind": "degenerate",
+              "statement": "The zero triple with all global auxiliary primitives zero has value 0; global auxiliary changes still give 0 by residue cancellation."
+            },
+            {
+              "name": "ColemanWideOpen.tripleIndex_2",
+              "kind": "compatibility",
+              "statement": "On a rational wide open T_U(F,1;H)=B_U(F,H)=0, although individual end indices can be nonzero."
+            },
+            {
+              "name": "ColemanWideOpen.tripleIndex_3",
+              "kind": "non-example",
+              "statement": "On a positive-genus wide open with B_U(F,H)=1, T_U(F,1;H)=1. A construction factoring through [dG] would give 0 since d1=0."
+            }
+          ],
+          "proofSketch": "Use the global Coleman algebra and integration of its one-forms to construct the pair primitives, then restrict to ends and apply §5.2. Finite end sets make the sum algebraic. Auxiliary-choice independence is proved in §6.2 rather than encoded as an assumed field of the data.",
+          "usedBy": [
+            "target:6.2",
+            "target:6.3",
+            "target:6.4"
+          ],
+          "title": "The global end-sum"
+        },
+        {
+          "id": "6.2",
+          "kind": "theorem",
+          "name": "ColemanWideOpen.tripleIndex_laws",
+          "statement": "The end-sum of §6.1 is independent of the global auxiliary primitives, is k-trilinear in the actual functions, is symmetric in the first two slots and satisfies the three-term identity. For a scalar C, T_U(F,C;H)=C B_U(F,H) and T_U(F,G;C)=0. Hence replacing G by G+C changes the value by C B_U(F,H). It is preserved on common smaller end annuli and on deleting discs across which all three functions and their global auxiliary data extend as Coleman data with analytic differentials. A restriction theorem carries that extension hypothesis; it does not allow arbitrary singular excisions.",
+          "hypotheses": [
+            "Hypotheses of §6.1",
+            "Auxiliary changes are global constants on connected U",
+            "Shrinking preserves the core, or has the stated extension across added discs"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Lemmas 8.2–8.3, pp. 361–362, besser-dejeu2012 line 2546; introduction p. 310, line 250, for shrinking"
+          },
+          "prerequisites": [
+            "target:5.3",
+            "target:5.5",
+            "target:6.1",
+            "gap:base-reciprocity"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_add_const_second",
+              "role": "evaluation",
+              "statement": "T_U(F,G+C;H)−T_U(F,G;H)=C B_U(F,H)."
+            },
+            {
+              "name": "tripleIndex_const_third",
+              "role": "evaluation",
+              "statement": "T_U(F,G;C)=0 for any constant C."
+            },
+            {
+              "name": "tripleIndex_restrict",
+              "role": "functoriality",
+              "statement": "Compatible repeated shrinking gives the same value, including any finite chain of common end restrictions."
+            }
+          ],
+          "tests": [
+            {
+              "name": "ColemanWideOpen.tripleIndex_laws_1",
+              "kind": "computation",
+              "statement": "For B_U(F,H)=1, adding 2 to G adds 2 to T_U; it is not a pairing of three differential classes."
+            },
+            {
+              "name": "ColemanWideOpen.tripleIndex_laws_2",
+              "kind": "degenerate",
+              "statement": "A global shift C in I_{G dH} changes the sum by −CΣ_e Res_e(dF)=0, even if individual residues are nonzero."
+            },
+            {
+              "name": "ColemanWideOpen.tripleIndex_laws_3",
+              "kind": "non-example",
+              "statement": "On an annular rational wide open with end residues +1 and −1, changing the auxiliary primitive only at the first end by 1 changes the sum by −1. Local choices do not cancel without global compatibility."
+            }
+          ],
+          "proofSketch": "Sum §5.3 and use the residue theorem for the analytic one-form dF. This gives auxiliary independence and ordinary trilinearity. Reduction with G=C gives C B_U(F,H); the three-term identity and alternation of B_U give zero in the third slot. Restriction uses §5.5; an added filled disc has total zero index from analytic local primitives and the residue theorem.",
+          "usedBy": [
+            "target:6.3",
+            "target:6.4",
+            "target:7.1",
+            "target:7.6"
+          ],
+          "title": "Choice cancellation, constants and shrinking"
+        },
+        {
+          "id": "6.3",
+          "kind": "theorem",
+          "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing",
+          "statement": "Let U be a Coleman wide open defined over a finite p-adic field with a degree-q Frobenius lift in the supplied rigid-cohomology sense, q≥2. If φ*[dF]=q[dF] and φ*[dG]=q[dG] in H¹_dR(U), then T_U(F,G;H)=0 for every global Coleman H with analytic differential. The assertion also includes zero classes. It uses the supplied spectrum theorem excluding 1/q from Frobenius on H¹_dR(U), and the fact that the q-eigenspace is in the radical of B_U.",
+          "hypotheses": [
+            "Hypotheses of §6.1; U and data descend to a finite p-adic field",
+            "A compatible Frobenius lift of positive degree q, with q a power of p",
+            "Both stated q-eigenclass equations",
+            "Rigid comparison supplies the spectrum and double-pairing radical properties"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Proposition 8.4 and proof, p. 362, besser-dejeu2012 line 2591"
+          },
+          "prerequisites": [
+            "target:5.5",
+            "target:6.2",
+            "gap:curve-comparison",
+            "gap:base-coleman"
+          ],
+          "api": [
+            {
+              "name": "tripleIndex_frobenius_iterate",
+              "role": "compatibility",
+              "statement": "A positive iterate uses q^a and its corresponding eigenclass hypotheses, giving the same vanishing conclusion."
+            }
+          ],
+          "tests": [
+            {
+              "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing_1",
+              "kind": "degenerate",
+              "statement": "F=0 satisfies the eigenclass condition and gives zero; p=2 and q=2 are admitted."
+            },
+            {
+              "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing_2",
+              "kind": "non-example",
+              "statement": "A general F with B_U(F,H)=1 and G=1 gives T_U=1. The theorem cannot drop the q-eigenclass hypothesis on F."
+            },
+            {
+              "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing_3",
+              "kind": "computation",
+              "statement": "The proof produces L(φ*γ)=q⁻¹L(γ). At q=2 this is eigenvalue 1/2, not 2 or 1; the excluded reciprocal is essential."
+            }
+          ],
+          "proofSketch": "Write φ*F=qF+r and φ*G=qG+s with analytic r,s, absorbing global constants into r,s. If a slot is analytic, reduce the triple index to the double pairing and use the q-radical property to kill its value when paired with the other q-eigenclass; the three-term identity handles an analytic third slot. Thus the functional H↦T_U(F,G;H) factors through [dH]. The degree law gives qT=q²T(F,G;φ*H), so its functional has reciprocal eigenvalue 1/q. The spectrum exclusion forces it to vanish.",
+          "usedBy": [],
+          "title": "The q-eigenspace vanishing theorem"
+        },
+        {
+          "id": "6.4",
+          "kind": "construction",
+          "name": "ColemanWideOpen.colemanFormPairing",
+          "statement": "Let Ω¹_col,1(U) be the submodule of actual Coleman one-forms generated by G dH for global Coleman G,H with analytic differentials, using the base Coleman algebra and its multiplication relations. There is a unique k-bilinear pairing P_U:A_col,1(U)×Ω¹_col,1(U)→k with P_U(F,G dH)=T_U(F,G;H). In particular P_U(F,dH)=B_U(F,H). The pairing respects equalities of actual Coleman forms, not only chosen expressions as sums of symbols.",
+          "hypotheses": [
+            "Hypotheses of §6.1",
+            "The base exports the actual Coleman one-form module and the relation/symbol map of Lemma 9.1",
+            "No free module on unrelated formal symbols replaces the Coleman form module"
+          ],
+          "locator": {
+            "source": "besser-dejeu2012",
+            "where": "Lemma 9.1 and Proposition 9.2, p. 364, besser-dejeu2012 line 2769 and line 2776"
+          },
+          "prerequisites": [
+            "target:6.2",
+            "gap:coleman-form-relations"
+          ],
+          "api": [
+            {
+              "name": "colemanFormPairing_unique",
+              "role": "universal property",
+              "statement": "The values on generators G dH uniquely determine the bilinear pairing."
+            },
+            {
+              "name": "colemanFormPairing_relation",
+              "role": "compatibility",
+              "statement": "If Σ_i G_i dH_i=0 as a Coleman one-form, then Σ_i T_U(F,G_i;H_i)=0 for every F."
+            },
+            {
+              "name": "colemanFormPairing_restrict",
+              "role": "functoriality",
+              "statement": "Compatible restriction of the functions and actual forms to a smaller wide open preserves P_U."
+            }
+          ],
+          "tests": [
+            {
+              "name": "ColemanWideOpen.colemanFormPairing_1",
+              "kind": "computation",
+              "statement": "P_U(F,1·dH)=B_U(F,H); for B_U(F,H)=1 this gives 1."
+            },
+            {
+              "name": "ColemanWideOpen.colemanFormPairing_2",
+              "kind": "degenerate",
+              "statement": "P_U(F,G dC)=0 for a constant C, as the one-form is zero."
+            },
+            {
+              "name": "ColemanWideOpen.colemanFormPairing_3",
+              "kind": "compatibility",
+              "statement": "G dH+H dG=d(GH) is one and the same actual form when GH is a Coleman function. Where it lies in the stated module, the two presentations give the same pairing; bilinearity on a free symbol module alone would not prove this."
+            }
+          ],
+          "proofSketch": "By §6.2 the generator formula depends on dH, not its primitive constant. The base relation theorem gives the map Ω¹_col,1→H¹_dR(U)⊗Ω¹(U), G dH↦[dG]⊗dH, and says the kernel of the product presentation is generated inside analytic-function tensors. On those tensors the double-index reduction depends only on the actual product form. Therefore the generator prescription kills all relations and descends; generators prove uniqueness.",
+          "usedBy": [
+            "target:7.6"
+          ],
+          "title": "A pairing on actual Coleman one-forms"
+        }
+      ],
+      "examples": "A local auxiliary change survives at an end, while a global change cancels by the residue theorem. Constants in the first two slots can survive globally.",
+      "dependencies": "Layers 2–3 and 5; the base global Coleman algebra and its one-form relation module; the unbound curve Frobenius contract for §6.3."
+    },
+    {
+      "key": "7",
+      "title": "Branch transport, traces and arbitrary-reduction descent",
+      "targets": [
+        {
+          "id": "7.1",
+          "kind": "theorem",
+          "name": "SingleIntegral.branchTransport",
+          "statement": "Write the imported universal single integral as I_univ(a,b;ω)=A+B T in K[T], with T=Log(p). For λ,λ′∈K, I_λ′−I_λ=(λ′−λ)B. For u∈K×, log_λ′(u)−log_λ(u)=(λ′−λ)v_p(u), where v_p(p)=1. For local double or triple indices, changing a branch transports the functions and every auxiliary primitive; the new value is computed by the same residue characterization and the change-of-constant laws. When F and G change by constants A₀,B₀ on a fixed end, ΔB=A₀ Res(dG)−B₀ Res(dF). A branch change with nonconstant valuation term on an annulus is not assumed to be such a constant shift.",
+          "hypotheses": [
+            "p prime, K/ℚ_p finite",
+            "Closed regular one-form on a smooth geometrically connected variety, endpoints outside poles",
+            "The universal affine-in-T integral is the base contract",
+            "λ and λ′ belong to K; extensions use their images"
+          ],
+          "locator": {
+            "source": "colmez1998",
+            "where": "Definition II.1.3 and Theorem II.1.4, p. 74, colmez1998 line 2986; §II.2.5, p. 97, line 3950; index transport from besser-dejeu2012 Lemma 7.4, line 2299"
+          },
+          "prerequisites": [
+            "gap:base-single",
+            "target:2.2",
+            "target:5.3",
+            "target:6.2"
+          ],
+          "api": [
+            {
+              "name": "branchTransport_comp",
+              "role": "functoriality",
+              "statement": "Transport from λ to λ″ is the composite of transport from λ to λ′ and λ′ to λ″, on the full functions and primitive data."
+            },
+            {
+              "name": "branchTransport_exact",
+              "role": "evaluation",
+              "statement": "For df the coefficient B is zero; for dlog f it is v_p(f(b)/f(a))."
+            }
+          ],
+          "tests": [
+            {
+              "name": "SingleIntegral.branchTransport_1",
+              "kind": "computation",
+              "statement": "For u=p, branch change from 0 to 2 changes log(u) by 2; for a ramified uniformizer ϖ with v_p(ϖ)=1/e it changes it by 2/e."
+            },
+            {
+              "name": "SingleIntegral.branchTransport_2",
+              "kind": "degenerate",
+              "statement": "For λ′=λ or ω=0 the change is zero; for a unit u the logarithm change is zero."
+            },
+            {
+              "name": "SingleIntegral.branchTransport_3",
+              "kind": "non-example",
+              "statement": "B_e(F+A₀,G+B₀) need not equal B_e(F,G); F=0,G=L,A₀=1,B₀=0 changes it by 1. Index branch independence cannot be inferred from the derivative alone."
+            }
+          ],
+          "proofSketch": "Evaluate the affine polynomial at λ′ and λ and subtract. Apply the universal logarithm formula for the multiplicative case. For indices, transport formal/analytic logarithms and products and apply the local characterizations; when the transported changes are constants the explicit constant laws apply. No assertion that arbitrary index data are affine in T is made.",
+          "usedBy": [
+            "target:7.2",
+            "target:7.3",
+            "target:7.7"
+          ],
+          "title": "Specializing the universal branch"
+        },
+        {
+          "id": "7.2",
+          "kind": "theorem",
+          "name": "SingleIntegral.properHolomorphic_branchIndependent",
+          "statement": "For a smooth proper geometrically connected curve X/K, a holomorphic one-form ω and algebraic endpoints a,b, its single integral I_λ(a,b;ω) is independent of λ. After a finite extension containing a,b and a temporary basepoint, this is the abelian logarithm on Jac(X) paired with the invariant differential corresponding to ω. Descent eliminates the temporary basepoint; the statement does not require X(K) to be nonempty.",
+          "hypotheses": [
+            "K/ℚ_p finite, all primes",
+            "X smooth proper geometrically connected of dimension one",
+            "ω regular everywhere; endpoints algebraic over K"
+          ],
+          "locator": {
+            "source": "colmez1998",
+            "where": "Lemma II.1.13 and Remark II.1.18, pp. 78–79, colmez1998 line 3147 and line 3213; curve illustration besser-zerbes2017 §3, line 245"
+          },
+          "prerequisites": [
+            "target:7.1",
+            "gap:base-single",
+            "gap:base-jacobian",
+            "roadmap:JacobianChallenge Layers D–F"
+          ],
+          "api": [
+            {
+              "name": "properHolomorphic_universalCoefficient_zero",
+              "role": "evaluation",
+              "statement": "The T coefficient of the universal integral is zero for holomorphic forms on proper curves."
+            }
+          ],
+          "tests": [
+            {
+              "name": "SingleIntegral.properHolomorphic_branchIndependent_1",
+              "kind": "degenerate",
+              "statement": "On ℙ¹ all holomorphic one-forms vanish and so do all their integrals."
+            },
+            {
+              "name": "SingleIntegral.properHolomorphic_branchIndependent_2",
+              "kind": "compatibility",
+              "statement": "For an elliptic curve the value from the identity is the unique locally analytic group logarithm with differential ω, and is branch independent."
+            },
+            {
+              "name": "SingleIntegral.properHolomorphic_branchIndependent_3",
+              "kind": "non-example",
+              "statement": "On the nonproper curve G_m the form dz/z integrates from 1 to p to λ. Properness cannot be dropped."
+            }
+          ],
+          "proofSketch": "Use the base Abel–Jacobi and invariant-differential comparison after finite extension. The abelian logarithm is characterized by its differential and group law, independently of a branch. Subtract endpoint values and use finite-extension compatibility; this also removes the choice of the temporary Abel–Jacobi basepoint.",
+          "usedBy": [
+            "target:7.7"
+          ],
+          "title": "Holomorphic integration on a proper curve"
+        },
+        {
+          "id": "7.3",
+          "kind": "theorem",
+          "name": "SingleIntegral.coefficientTrace",
+          "statement": "For a finite extension L/K of p-adic fields with compatible branches, base change sends I_K(a,b;ω) to I_L(a,b;ω_L). For an L-valued regular closed form ω on U_L and K-rational endpoints a,b, Tr_{L/K}(I_L(a,b;ω))=I_K(a,b;Tr_{L/K}ω), where the form trace uses Ω¹(U_L)=Ω¹(U)⊗_K L. Both identities hold coefficientwise for universal affine polynomials with T fixed. The constructions commute with field embeddings, Galois conjugation and towers.",
+          "hypotheses": [
+            "U/K smooth geometrically connected finite-type algebraic variety",
+            "ω regular and closed on U_L; curves may use the complement of their poles",
+            "a,b∈U(K) for the trace formula",
+            "L/K finite; the branches are restrictions of one branch with parameter in K"
+          ],
+          "locator": {
+            "source": "colmez1998",
+            "where": "Theorem II.1.4, p. 74, colmez1998 line 2996; Galois descent Remark 2(iv), pp. 2–3, line 246; trace consequence, not a quoted trace theorem. Compare vologodsky2001 Theorem B(4), line 195, only under p>2"
+          },
+          "prerequisites": [
+            "gap:base-single",
+            "target:7.1",
+            "mathlib:Algebra.trace",
+            "mathlib:trace_eq_sum_embeddings",
+            "mathlib:Algebra.trace_trace",
+            "mathlib:Algebra.trace_algebraMap"
+          ],
+          "api": [
+            {
+              "name": "coefficientTrace_tower",
+              "role": "functoriality",
+              "statement": "Tr_{M/K}I_M=Tr_{L/K}(Tr_{M/L}I_M) in every finite tower M/L/K, with the same coefficient trace on forms."
+            },
+            {
+              "name": "singleIntegral_galois",
+              "role": "compatibility",
+              "statement": "σ(I(a,b;ω))=I(σa,σb;σω), with σ fixing the universal T."
+            },
+            {
+              "name": "primitive_galois_average",
+              "role": "construction",
+              "statement": "After a finite Galois extension containing a point a, averaging the conjugates of P↦I(a,P;ω) gives a K-defined primitive torsor representative; any two such representatives differ by a K-constant."
+            }
+          ],
+          "tests": [
+            {
+              "name": "SingleIntegral.coefficientTrace_1",
+              "kind": "computation",
+              "statement": "If ω is defined over K and [L:K]=n, Tr(I_L(a,b;ω))=n I_K(a,b;ω), not I_K(a,b;ω)."
+            },
+            {
+              "name": "SingleIntegral.coefficientTrace_2",
+              "kind": "degenerate",
+              "statement": "L=K is identity, and a=b gives zero. Every finite extension of p-adic fields is separable, including ramified quadratic extensions at p=2."
+            },
+            {
+              "name": "SingleIntegral.coefficientTrace_3",
+              "kind": "non-example",
+              "statement": "Trace is not multiplicative: for α²=π in a quadratic extension, Tr(α)=0 but Tr(α²)=2π≠0. Do not trace each factor of an index separately."
+            }
+          ],
+          "proofSketch": "Finite scalar extension of forms and K-linearity reduce the coefficient trace formula to ω=αη with η over K. Trace linearity and the base-change identity then prove it. Equivalently sum over embeddings in a normal closure using the pinned embedding formula and descend. The pinned tower theorem gives transitivity. Average over the finite Galois group, dividing by its nonzero order, to obtain a descended primitive; its constant ambiguity follows from the natural theory.",
+          "usedBy": [
+            "target:7.4",
+            "target:7.5",
+            "target:7.6"
+          ],
+          "title": "Finite extension and coefficient trace"
+        },
+        {
+          "id": "7.4",
+          "kind": "definition",
+          "name": "Curve.divisorSingleIntegral",
+          "statement": "For a smooth proper geometrically connected curve X/K, meromorphic ω, and a degree-zero K-divisor D=Σ_x n_x[x] disjoint from its poles, choose a finite Galois extension L splitting the support and containing a point a outside the poles. Define ∫_D ω=Σ_x n_x Σ_{σ:κ(x)→L} I_L(a,σx;ω). Its value is independent of a, L and the embeddings used to display the geometric support, belongs to K and is additive in D and K-linear in ω. Degree means Σ_x n_x[κ(x):K]=0. No K-rational basepoint is part of the exported object.",
+          "hypotheses": [
+            "K/ℚ_p finite, any prime, fixed branch",
+            "X smooth proper geometrically connected curve",
+            "D integral divisor of degree zero; support disjoint from poles of ω",
+            "L is a finite Galois extension splitting the support and containing a permissible temporary point"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Degree-zero divisor evaluation and splitting argument, §2, p. 4, besser-zerbes2017 line 142; Galois consequence of colmez1998 Remark 2(iv), line 246"
+          },
+          "prerequisites": [
+            "target:7.3",
+            "gap:base-single",
+            "roadmap:StableReduction Layer 0"
+          ],
+          "api": [
+            {
+              "name": "divisorSingleIntegral_split",
+              "role": "evaluation",
+              "statement": "For D=b−a with a,b rational, the value is I_K(a,b;ω)."
+            },
+            {
+              "name": "divisorSingleIntegral_ext",
+              "role": "extensionality",
+              "statement": "Equal divisors, evaluated as finite sums over closed points, give equal values; regrouping the support changes nothing."
+            },
+            {
+              "name": "divisorSingleIntegral_add",
+              "role": "structure",
+              "statement": "The evaluation is a homomorphism on divisors of degree zero disjoint from the pole support."
+            },
+            {
+              "name": "divisorSingleIntegral_baseChange",
+              "role": "functoriality",
+              "statement": "Ordinary divisor pullback to a finite field extension preserves the value after scalar extension; closed points split with their usual multiplicities."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Curve.divisorSingleIntegral_1",
+              "kind": "computation",
+              "statement": "For α²=π in a ramified quadratic extension, D=[t²−π]−2[0] on ℙ¹ and ω=t dt give ∫_D ω=π, since each geometric point contributes π/2. This works at p=2 as a field identity."
+            },
+            {
+              "name": "Curve.divisorSingleIntegral_2",
+              "kind": "degenerate",
+              "statement": "D=0 gives zero even when X(K) is empty; changing the temporary basepoint contributes deg(D) times one integral, hence zero."
+            },
+            {
+              "name": "Curve.divisorSingleIntegral_3",
+              "kind": "non-example",
+              "statement": "A single quadratic closed point has degree 2, not 1. Subtracting one rational point does not make degree zero and the putative evaluation depends on the basepoint."
+            }
+          ],
+          "proofSketch": "Chasles makes a basepoint change contribute deg(D)·I(a′,a;ω)=0. Scalar extension and a common finite Galois overfield compare any two splitting fields. Galois equivariance permutes the geometric points and changes the basepoint only, so the scalar is fixed and lies in K. Finite-sum linearity gives the API.",
+          "usedBy": [
+            "target:7.6"
+          ],
+          "title": "Degree-zero divisors without a rational basepoint"
+        },
+        {
+          "id": "7.5",
+          "kind": "definition",
+          "name": "Curve.tracedLocalIndexSum",
+          "statement": "For X/K smooth proper geometrically connected and a finite reduced Z, use K-defined primitive representatives from §7.3 for ω,η regular off Z. At a closed point x the formal germs lie over κ(x); define its double contribution as Tr_{κ(x)/K} B_x(F,G), and sum over Z. This sum is independent of the two global primitive constants and extends the corrected pairing to nonsplit poles. For triple-index data that themselves descend to κ(x), define the local traced contribution Tr_{κ(x)/K} T_x(F,G;H) with the full auxiliary data. No auxiliary independence is asserted for a local triple index. For any expression already defined over K, extension to L followed by scalar trace multiplies its value by [L:K]. For a finite Galois-stable family of annular ends with end fields κ(e), define the corresponding end-sums by Σ_e Tr_{κ(e)/K} B_e or Σ_e Tr_{κ(e)/K} T_e, using descended functions and, for triples, the full compatible auxiliary data. Their scalar extension is the sum over geometric ends.",
+          "hypotheses": [
+            "K/ℚ_p finite; a compatible branch",
+            "Z finite reduced, all residue fields finite separable over K",
+            "F,G are descended representatives of the global single-integral primitive torsors",
+            "For a traced triple contribution, functions and auxiliary primitives are all defined over κ(x)"
+          ],
+          "locator": {
+            "source": "colmez1998",
+            "where": "Galois descent Remark 2(iv), line 246, and §II.2.5, line 3950; consequence of besser2017 Definition 3.4/Corollary 5.3, lines 435/807 and besser-dejeu2012 §8, line 2524"
+          },
+          "prerequisites": [
+            "target:2.3",
+            "target:4.4",
+            "target:5.5",
+            "target:7.3",
+            "mathlib:trace_eq_sum_embeddings",
+            "mathlib:Algebra.trace_trace"
+          ],
+          "api": [
+            {
+              "name": "tracedLocalIndexSum_split",
+              "role": "compatibility",
+              "statement": "In a normal splitting extension the embedded traced contribution is the sum of the conjugate point contributions, and the global sum equals the split corrected pairing."
+            },
+            {
+              "name": "tracedLocalIndexSum_tower",
+              "role": "functoriality",
+              "statement": "Computing residue traces through an intermediate residue field gives the same contribution."
+            },
+            {
+              "name": "tracedLocalIndexSum_congr",
+              "role": "extensionality",
+              "statement": "Parameter changes preserving the formal point orientation and equal local germs preserve the traced values."
+            },
+            {
+              "name": "tracedLocalIndexSum_bilinear",
+              "role": "structure",
+              "statement": "The global double sum is alternating and K-bilinear in the forms; it factors through de Rham classes and extends the proper cup product after descent."
+            },
+            {
+              "name": "tracedEndIndexSum",
+              "role": "construction",
+              "statement": "Taking the index over each end field and then its field trace gives the same scalar as splitting all ends and summing their conjugate contributions; traces compose in towers."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Curve.tracedLocalIndexSum_1",
+              "kind": "computation",
+              "statement": "At the quadratic closed point t²−π=0, B_x(1,log(t²−π))=1 over κ(x), so its trace is 2; at infinity the residue is −2, and the global constant-first sum is 0."
+            },
+            {
+              "name": "Curve.tracedLocalIndexSum_2",
+              "kind": "degenerate",
+              "statement": "A K-rational point uses the identity trace; an empty point set contributes zero for global regular forms."
+            },
+            {
+              "name": "Curve.tracedLocalIndexSum_3",
+              "kind": "non-example",
+              "statement": "In a quadratic extension α²=π, replacing Tr(B) by a product of traces of its input coefficients can turn Tr(α²)=2π into 0. Only the whole scalar index is traced."
+            }
+          ],
+          "proofSketch": "Scalar extension of local indices and the pinned trace-as-embeddings identity identify each closed-point contribution with its geometric conjugate sum. Apply §4.4 after splitting. Faithful scalar embedding proves constant independence, cohomology factorization and cup compatibility over K. Transitivity is the pinned trace tower theorem. For triple data the same proof yields descent of values, retaining local choice dependence.",
+          "usedBy": [
+            "target:7.6"
+          ],
+          "title": "Closed-point indices and traced sums"
+        },
+        {
+          "id": "7.6",
+          "kind": "theorem",
+          "name": "Curve.integrationRealization_descent",
+          "statement": "For every smooth proper geometrically connected X/K, every meromorphic ω and every degree-zero divisor away from its poles, choose any finite extension giving a split regular nodal model with separated pole and divisor support. The harmonic formula of §§4.2–4.3 evaluates the imported single integral and §7.4, and the corrected double formula evaluates §7.5. These values agree after any further coefficient extension, common model refinement, node subdivision or pole separation, hence descend to the original arbitrary-reduction curve. For a connected Coleman wide open with F,G,H and global compatible auxiliary data defined over K, T_U and P_U are K-valued and commute with scalar extension and admissible shrinking. This last assertion is about a wide open; it does not construct a triple pairing of three arbitrary whole-curve Vologodsky primitives by summing components. A connected wide open whose constant field is a finite extension k₀/K is treated over k₀, and its K-valued end-sum is the field trace, equivalently the sum over geometric components.",
+          "hypotheses": [
+            "K/ℚ_p finite, p any prime; fixed branch parameter in K",
+            "X/K smooth proper geometrically connected curve; no reduction or genus restriction",
+            "Meromorphic forms evaluated off poles; divisor degree zero where a divisor is evaluated",
+            "Triple assertions require actual global Coleman wide-open data and descended auxiliary choices"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "Corollary 1.2 and §2 finite-extension argument, p. 3, besser-zerbes2017 line 95 and line 130; besser2017 Proposition 4.12(3), line 753; besser-dejeu2012 introduction p. 310, line 250"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:4.3",
+            "target:4.4",
+            "target:6.4",
+            "target:7.3",
+            "target:7.4",
+            "target:7.5",
+            "roadmap:StableReduction Layers 0–1, 4–5, 7, 9",
+            "roadmap:RigidAnalyticGeometry §§1.3, 6.2, 8.1",
+            "roadmap:JacobianChallenge Layers D–F",
+            "roadmap:StableReduction Layer 2"
+          ],
+          "api": [
+            {
+              "name": "integrationRealization_commonExtension",
+              "role": "functoriality",
+              "statement": "Two realization fields and models are compared in one common finite extension with compatible generic-fibre identifications."
+            },
+            {
+              "name": "integrationRealization_divisor",
+              "role": "evaluation",
+              "statement": "The harmonic evaluation equals the K-valued degree-zero divisor integral without a chosen K-point."
+            },
+            {
+              "name": "wideOpenIndex_galoisDescent",
+              "role": "compatibility",
+              "statement": "If the wide-open functions and auxiliary data descend, their end-sums are fixed by Galois and belong to the coefficient field; local end values may require their residue fields."
+            }
+          ],
+          "tests": [
+            {
+              "name": "Curve.integrationRealization_descent_1",
+              "kind": "degenerate",
+              "statement": "Good reduction uses a single component and gives Coleman integration, with no graph correction."
+            },
+            {
+              "name": "Curve.integrationRealization_descent_2",
+              "kind": "compatibility",
+              "statement": "A ramified extension splitting a quadratic divisor gives the value π of §7.4 and traced local residue 2 of §7.5, independent of further ramification."
+            },
+            {
+              "name": "Curve.integrationRealization_descent_3",
+              "kind": "non-example",
+              "statement": "A whole-curve sum of local triple indices changes under unrelated component auxiliary shifts by the residue change laws. Wide-open global-choice independence does not certify that construction."
+            },
+            {
+              "name": "wideOpen_larger_constant_field",
+              "kind": "compatibility",
+              "statement": "A connected wide open with quadratic constant field L has K-valued end-sum Tr_{L/K} of its L-valued sum; the scalar 1 contributes 2, not 1. Geometric connectedness cannot be inferred from connectedness alone."
+            }
+          ],
+          "proofSketch": "StableReduction supplies finite nodal reduction in all genera, regularization, splitting of branches and separation of marked sections, together with common refinements. Apply the split comparison and then §7.3. Since each harmonic evaluation equals the intrinsic base integral, two realizations agree in a common field; trace/embedding descent gives the K-value. §1.3 handles the metric under refinement, and §7.5 handles nonsplit local terms. For global triple data use §5.5 and §6.2 and descend the resulting scalar, without asserting a new global bad-reduction triple construction.",
+          "usedBy": [],
+          "title": "Independence of semistable extensions and models"
+        },
+        {
+          "id": "7.7",
+          "kind": "example",
+          "name": "TateCurve.singleIntegral_normalization",
+          "statement": "For a Tate curve E_q/K with q∈K× and n=ν_π(q)>0, the invariant differential dz/z has primitive on K×/q^ℤ given by F(z)=log_λ(z)−(ν_π(z)/n)log_λ(q), normalized by F(1)=0. In the regular n-gon presentation its cyclic harmonic jump is −log_λ(q)/n. For n=1 use the loop presentation and for n=2 the two parallel edges, or a compatible regular subdivision. The expression is invariant under z↦qz and under a change of logarithm branch.",
+          "hypotheses": [
+            "K/ℚ_p finite, fixed uniformizer π and any logarithm branch",
+            "q≠0, ν_π(q)=n>0; this hypothesis makes n invertible in K",
+            "The point-level Tate uniformization is supplied by EllipticCurves Layer 4; its differential normalization is gap:tate-differential",
+            "Algebraic points are interpreted after compatible finite coefficient extension"
+          ],
+          "locator": {
+            "source": "besser-zerbes2017",
+            "where": "§3, pp. 5–6, besser-zerbes2017 line 245 and line 265"
+          },
+          "prerequisites": [
+            "target:4.3",
+            "target:7.1",
+            "target:7.2",
+            "gap:tate-differential",
+            "roadmap:EllipticCurves Layer 4"
+          ],
+          "api": [
+            {
+              "name": "TateCurve.singleIntegral_q_periodic",
+              "role": "evaluation",
+              "statement": "F(qz)−F(z)=log(q)−(n/n)log(q)=0."
+            },
+            {
+              "name": "TateCurve.singleIntegral_branch",
+              "role": "compatibility",
+              "statement": "The branch change is (λ′−λ)(v_p(z)−ν_π(z)v_p(q)/n)=0 since v_p=ν_π/e."
+            }
+          ],
+          "tests": [
+            {
+              "name": "TateCurve.singleIntegral_normalization_1",
+              "kind": "computation",
+              "statement": "Over ℚ_p take π=p, q=p³ and log(p)=1. Then n=3, every cyclic jump is −1 and F(z)=log(z)−ν_π(z); enforcing zero jumps fails."
+            },
+            {
+              "name": "TateCurve.singleIntegral_normalization_2",
+              "kind": "degenerate",
+              "statement": "For n=1 or n=2 the same formula holds on loops or parallel edges. The case q=1 is excluded because n=0 and the quotient is not this Tate curve."
+            },
+            {
+              "name": "TateCurve.singleIntegral_normalization_3",
+              "kind": "compatibility",
+              "statement": "At p=2 the cancellation uses only characteristic-zero division by n and v_p=ν_π/e; it imposes no odd-prime condition."
+            }
+          ],
+          "proofSketch": "On successive fundamental annuli use log(z) as the Coleman primitive. Crossing the final q-identification contributes −log(q). Project this cochain to the constant cyclic harmonic cochain, using §1.2. Subtract the vertex potential and apply §4.3. The displayed two-term computations verify q-periodicity and branch independence.",
+          "usedBy": [],
+          "title": "A cycle with nonzero jump and branch cancellation"
+        }
+      ],
+      "examples": "A ramified quadratic closed point tests residue-field traces; a degree-zero divisor tests basepoint cancellation; the Tate curve tests branch cancellation with a nonzero cycle.",
+      "dependencies": "All previous layers; the imported universal single-integration theorem; StableReduction Layers 0–1, 4–5, 7 and 9; finite-dimensional field trace at the pins. No regulator construction is used."
+    }
+  ],
+  "suppliers": [
+    {
+      "roadmap": "ColemanIntegration",
+      "sections": [
+        "§7.7 (requested import locator; contract gap base-single)"
+      ],
+      "what": "General natural all-prime universal single integration, finite-extension and good-reduction compatibility; additional Coleman analytic, reciprocity and abelian-logarithm interfaces are explicit gaps with no invented section numbers."
+    },
+    {
+      "roadmap": "RigidAnalyticGeometry",
+      "sections": [
+        "§1.3",
+        "§2.3",
+        "§6.2",
+        "§8.1"
+      ],
+      "what": "Complete field extension, reduction, classical rigid spaces with discs/annuli and gluing, quasi-separated base change, and algebraic analytification. These sections do not supply Coleman integration, wide-open reciprocity or the curve cohomology comparison."
+    },
+    {
+      "roadmap": "StableReduction",
+      "sections": [
+        "Layer 0",
+        "Layer 1",
+        "Layer 2",
+        "Layers 4–5",
+        "Layer 7",
+        "Layer 9"
+      ],
+      "what": "Finite DVR extensions and common refinements; nodal charts, split branches and dual graphs with loops; curve positivity; regularization and common model resolutions; all-genus finite-extension nodal reduction; separation of marked sections."
+    },
+    {
+      "roadmap": "JacobianChallenge",
+      "sections": [
+        "Layer D",
+        "Layer E",
+        "Layer F"
+      ],
+      "what": "Proper curves are projective; Jacobian and Picard degree/divisor interface; abelian-variety carrier; pointed Abel–Jacobi and base change after a temporary splitting extension. No unpointed Abel–Jacobi morphism is assumed."
+    },
+    {
+      "roadmap": "EllipticCurves",
+      "sections": [
+        "Layer 4 (analytic Tate strand)"
+      ],
+      "what": "Tate curve for q a unit with |q|<1 and its point-level, finite-extension and Galois-compatible uniformization; the analytic invariant-differential comparison remains gap:tate-differential."
+    }
+  ],
+  "consumers": [
+    {
+      "roadmap": "PadicHodgeRegulators",
+      "what": "Intended consumer of double/triple index characterizations, global Coleman one-form pairing, degree-zero divisor integration and branch/trace/descent; regulator and symbol relations are owned there. Its exact consuming section is not supplied."
+    },
+    {
+      "roadmap": "EllipticRegulators",
+      "what": "Intended elliptic specialization of the same producer, including the Tate normalization; its precise consuming section is not supplied."
+    },
+    {
+      "roadmap": "EffectiveDiophantineMethods",
+      "what": "Potential consumer of harmonic arbitrary-reduction single integration and divisor evaluations. No effective procedure is specified here."
+    },
+    {
+      "roadmap": "ArithmeticDynamics",
+      "what": "Indirect consumer through EffectiveDiophantineMethods ED.4 for Chabauty–Coleman point sets in §§3.58 and 3.60; supplies no integration or index theorem to this roadmap."
+    }
+  ],
+  "gaps": [
+    {
+      "slug": "base-single",
+      "title": "The universal single-integration import",
+      "neededBy": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "7.1",
+        "7.2",
+        "7.3",
+        "7.4"
+      ],
+      "detail": "The section binding and its declaration names are required by this contract. The theorem must cover all primes, smooth geometrically connected varieties, closed regular one-forms, affine universal values A+B T, exact/logarithmic formulas, Chasles, naturality under algebraic pullback, local analyticity, natural-theory uniqueness, good-reduction comparison, and scalar extension of forms. This is an import contract, not a new theorem to construct here. Source: colmez1998 Definitions II.1.2–II.1.3/Theorem II.1.4, lines 2982–2997; Remark 2, lines 229–255. Vologodsky2001 Proposition 52 is read only at its p>2 standing convention.",
+      "needs": "Provide the natural universal single-integration theorem for all finite p-adic fields, with its actual carriers and finite-extension/Galois compatibilities.",
+      "supplier": "ColemanIntegration",
+      "section": "§7.7 (requested, text unavailable)"
+    },
+    {
+      "slug": "base-annuli",
+      "title": "Annular differential and residue interfaces",
+      "neededBy": [
+        "2.1",
+        "4.1"
+      ],
+      "detail": "RigidAnalyticGeometry §6.2 supplies the spaces, not these residue theorems. Require the two orientations, Res(dz/z)=1, vanishing on exact differentials, residue degree under finite maps and formal substitutions, analytic unit logarithms, shrink compatibility, coefficient extension and trace, and expansion at closed points. Formal Laurent differentiation uses the pinned LaurentSeries.derivative rather than a replacement. Source: besser2017 Definition 3.1, lines 402–420; besser-dejeu2012 §7, lines 2232–2242.",
+      "needs": "Provide analytic annular Laurent expansions, residue and substitution laws, logarithm branches, and their compatibility with formal Laurent differential germs.",
+      "supplier": "ColemanIntegration",
+      "section": "Analytic residue and annular integration section (exact locator unavailable)"
+    },
+    {
+      "slug": "base-coleman",
+      "title": "Global Coleman functions on wide opens",
+      "neededBy": [
+        "3.1",
+        "3.2",
+        "6.1",
+        "6.3"
+      ],
+      "detail": "Include analytic one-forms and their Coleman primitives with A_log,1 end restrictions, integration by parts and base change/Galois equivariance. Require functions with analytic differential as a subspace of the actual Coleman algebra, compatible global primitives of R dS and a common branch; do not replace these objects by a record containing the desired identities. Source: besser2017 lines 475–501; besser-dejeu2012 lines 2533–2545.",
+      "needs": "Provide connected Coleman wide opens, their finite end sets, the actual Coleman function/form algebra, uniqueness of primitives up to a scalar and integration of Coleman one-forms.",
+      "supplier": "ColemanIntegration",
+      "section": "Coleman wide opens and Coleman-function algebra section (exact locator unavailable)"
+    },
+    {
+      "slug": "base-reciprocity",
+      "title": "Local restriction and reciprocity contracts",
+      "neededBy": [
+        "3.1",
+        "4.2",
+        "6.2"
+      ],
+      "detail": "For a global natural primitive F and a rational f with disjoint divisor/pole supports require Σ_x B_x(F,log f)=0. For a connected Coleman wide open require B_U(F,log f)=0 for an invertible analytic f, and the double-index identification with compact-cohomology projection, analytic-exact vanishing and rational-core vanishing used in §3.1. Require restriction of a natural single primitive on a component to a Coleman primitive, without any harmonic-jump conclusion; §4.2 proves that conclusion. The principal-divisor/Jacobian argument must allow moving divisors away from poles. Residue cancellation is Σ_ends Res(ω)=0. These are the precise source inputs used at besser-zerbes2017 lines 140–150, 161, 212 and besser2017 lines 503–520; their ownership cannot be certified without the base text.",
+      "needs": "Provide Coleman and natural-single-integral double-index reciprocity together with global residue cancellation and local Coleman restriction before harmonic normalization.",
+      "supplier": "ColemanIntegration",
+      "section": "Single/double integration reciprocity section (exact locator unavailable)"
+    },
+    {
+      "slug": "curve-comparison",
+      "title": "Unbound curve comparison producer",
+      "neededBy": [
+        "3.1",
+        "3.2",
+        "3.4",
+        "3.5",
+        "6.3"
+      ],
+      "detail": "The comparison producer must have an earlier place in the supply order and a concrete section exporting these maps. Required contract: hypercohomology and algebraic/rigid comparison for X−Z with arbitrary finite étale boundary and finite scalar extension; the Čech representative ((ω_v),(f_e)) with d f_e=ω_tail−ω_head, χ represented by f_e−(F_tail−F_head), graph exact sequence (4.5), monodromy represented by ℓ(e)Res_e(ω_tail), restriction and proper ordered cup residue formula, model/refinement compatibility, q-linear Frobenius with χφ=χ,Nφ=qN,χN=N,N²=0, weight-q scaling for compact/wide-open cup pairing, q-eigenspace radical of the wide-open pairing and absence of eigenvalue 1/q on H¹. The graph algebra and index identities are owned here; their comparison to cohomology is not reconstructed. Locators: besser2017 lines 586–658, 671–689, 738–759; besser-dejeu2012 lines 2591–2617. This contract is not attributed to an unspecified section of the base comparison roadmap.",
+      "needs": "Bind an allowed earlier producer and exact section for the full curve de Rham/rigid/semistable comparison, including ordered cup products, trace and Frobenius normalizations.",
+      "supplier": "none",
+      "section": "Curve Čech–de Rham, cup, graph projection and Frobenius/monodromy contract (no producing section bound)"
+    },
+    {
+      "slug": "coleman-form-relations",
+      "title": "The actual Coleman one-form relations",
+      "neededBy": [
+        "6.4"
+      ],
+      "detail": "Need the well-defined map Ω¹_col,1(U)→H¹_dR(U)⊗Ω¹(U), sending G dH to [dG]⊗dH, with kernel of the tensor-product presentation contained in analytic-function tensors. This is a base Coleman-algebra extension if absent, not an index theorem and not a regulator relation to import from a consumer. Source: besser-dejeu2012 Lemma 9.1 and proof of Proposition 9.2, lines 2769–2789; the proof there cites the Tannakian Coleman-function theory. The index pairing of §6.4 is the new output here.",
+      "needs": "Provide the actual Coleman one-form product module and the symbol/connection relation theorem used by Besser–de Jeu Lemma 9.1.",
+      "supplier": "ColemanIntegration",
+      "section": "Coleman one-form symbol/connection section (exact locator unavailable)"
+    },
+    {
+      "slug": "base-jacobian",
+      "title": "Abelian logarithm and p-adic point topology bridge",
+      "neededBy": [
+        "4.2",
+        "7.2"
+      ],
+      "detail": "JacobianChallenge Layers D–F supply the Jacobian and pointed Abel–Jacobi only after choosing a rational point, which may be supplied over a finite extension. Require pullback identification of invariant differentials with holomorphic curve forms, the locally analytic abelian logarithm characterized by its differential, compatibility with natural single integration, compactness of Jac(X)(K), and the divisor evaluation comparison on the open complement of poles. These are genuine missing analytic bridges, not properties asserted by the algebraic Jacobian roadmap. Source: colmez1998 Lemma II.1.13/Remark II.1.18, lines 3147–3159 and 3213; besser-zerbes2017 lines 142–150.",
+      "needs": "Provide the abelian-logarithm/invariant-differential comparison and compact p-adic Jacobian point topology required by the curve integration comparison.",
+      "supplier": "ColemanIntegration",
+      "section": "Abelian logarithm and curve restriction section (exact locator unavailable)"
+    },
+    {
+      "slug": "tate-differential",
+      "title": "Tate uniformization differential comparison",
+      "neededBy": [
+        "7.7"
+      ],
+      "detail": "EllipticCurves Layer 4 explicitly supplies point-level Galois-compatible uniformization, not a rigid-space quotient. The integration witness needs local analyticity, pullback of the invariant differential, and the n-gon/loop/parallel-edge annular chart comparison. This belongs to an EllipticCurves Part II extension if the analytic comparison is not exported by that base. This plan records the missing contract without planning a second Tate uniformization. Source: besser-zerbes2017 §3, lines 245–278.",
+      "needs": "Provide the pullback of the normalized Tate invariant differential to dz/z and its compatibility with annular charts of a regular Tate model.",
+      "supplier": "none",
+      "section": "Analytic differential comparison extending EllipticCurves Layer 4 (producing extension unbound)"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["Final targets 1 and 5; Risks: preprint prime convention"]
+cited_for = ["7.3 (comparison under p>2 only)", "Exact supplier contracts: p>2 preprint comparison and finite-extension compatibility"]
 
 [[source]]
 id = "besser-zerbes2017"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["Final targets 2 and 5; Risks: acyclic proof direction"]
+cited_for = ["1.3", "3.2", "4.1", "4.2", "4.3", "7.2", "7.4", "7.6", "7.7"]
 
 [[source]]
 id = "besser2017"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["Final targets 2 and 3"]
+cited_for = ["1.1", "1.2", "1.3", "2.1", "2.2", "3.1", "3.3", "3.4", "3.5", "4.4", "7.5", "7.6"]
 
 [[source]]
 id = "besser-dejeu2012"
@@ -69,22 +69,7 @@ sha256 = "8f68b8dc412ce56a4be8902f472924ad486bc99a52d97ddc7eacd3264e5c4ba0"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-20"
-cited_for = ["Final target 4: local and global triple indices"]
-
-[[source]]
-id = "coleman-deshalit1988"
-authors = "Robert Coleman, Ehud de Shalit"
-title = "p-adic regulators on curves and special values of p-adic L-functions"
-year = 1988
-venue = "Inventiones mathematicae 93"
-doi = "10.1007/BF01394332"
-locator_scheme = "section"
-locator = "Section 2"
-url = "https://doi.org/10.1007/BF01394332"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Sources: historical integration normalization only"]
+cited_for = ["2.1", "2.2", "2.3", "5.1", "5.2", "5.3", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "7.1", "7.5", "7.6"]
 
 [[source]]
 id = "colmez1998"
@@ -100,4 +85,4 @@ sha256 = "ac8ce2ab4f1a2b13e0dfddf23f1669c4ab34636236835eb072da31a13be582d3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-cited_for = ["Final targets 1 and 5: arbitrary reduction, all residue primes, trace"]
+cited_for = ["4.2", "7.1", "7.2", "7.3", "7.4", "7.5", "Exact supplier contracts: all-prime natural single integration"]
