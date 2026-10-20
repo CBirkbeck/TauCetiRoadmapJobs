@@ -1,0 +1,10 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-REV-DESIGN-QWittVectors",
+    "date": "2026-10-20",
+    "findings": 8,
+    "blocking": 5,
+    "notes": "Read all 51 targets, 159 API claims and 153 Checks; recorded a complete target-by-target adversarial table. Verified all 15 seeded source locators against legal cached texts; no explicitly unverified source locators or unreadable sampled texts. Audited pinned Mathlib and Tau Ceti objects, main roadmaps, both named open roadmap heads, all Needs lines and local target dependencies. Found a false relative-ghost tensor-balancing Check, five unresolved supplier contracts, route-specific narrowing, an uncertifiable merge position and DGA supplier drift. The package README is absent; diagnostic depcheck on the design exits 1 with NOT IN ORDER for QWittVectors and no UPWARD or CYCLE line. Lean elaboration: not available; no Suggested.lean or usable elaboration command supplied, so no Lean command was run and the warning/signature/example conditions cannot be certified. Design and source-manifest files were left unchanged. Full witnesses, source pages, dependency output and repair instructions are in packages/QWittVectors/reports/REV-DESIGN-QWittVectors.md."
+  }
+}
