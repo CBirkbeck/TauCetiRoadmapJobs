@@ -1,0 +1,131 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QWittVectors"
+
+[[source]]
+id = "pridham"
+authors = "J. P. Pridham"
+title = "On $q$-de Rham cohomology via $Λ$-rings"
+year = 2016
+arxiv = "1608.07142v4"
+locator_scheme = "section"
+locator = "Definition 1.22; Theorem 1.23; Definition 2.1; Theorem 2.8; Lemma 2.9 (v4 pp. 8–9, 12, 14–15; lines 371, 386, 506, 599, 635)"
+url = "https://arxiv.org/abs/1608.07142v4"
+fetched_from = "https://arxiv.org/pdf/1608.07142v4"
+fetched_at = "2026-10-20T20:50:45Z"
+sha256 = "f00412c88e3713dab6089c4e470e2af42ee04cdfbf151a9ea8b800ce3cc4f62f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v4"
+cited_for = ["QW.0", "QW.6"]
+
+[[source]]
+id = "wagner"
+authors = "Ferdinand Wagner"
+title = "$q$-Witt vectors and $q$-Hodge complexes"
+year = 2024
+arxiv = "2410.23078v5"
+locator_scheme = "section"
+locator = "Sections 2.2–2.6 and 3.1–3.4; Proposition 4.1; Lemma 4.6; Sections 4.7–4.9 and 4.28; Theorem 5.1 (v5 lines 475, 1504, 1621, 1651, 1822, 1956, 2053, 2552, 2690, 2810, 2830, 3292, 3846)"
+url = "https://arxiv.org/abs/2410.23078v5"
+fetched_from = "https://arxiv.org/pdf/2410.23078v5"
+fetched_at = "2026-10-20T20:51:30Z"
+sha256 = "c1c7426f374a9f56d5ad6fb743f6cfc95e74ba9c35a96babd7ae5101a9dded01"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v5"
+cited_for = ["QW.0", "QW.1", "QW.2", "QW.3", "QW.5", "QW.6", "Risks"]
+
+[[source]]
+id = "scholze"
+authors = "Peter Scholze"
+title = "Canonical q-deformations in arithmetic geometry"
+year = 2016
+arxiv = "1606.01796v1"
+locator_scheme = "section"
+locator = "Section 3, v1 pp. 6–7, lines 296–340 (framed construction; Conjecture 3.1 remains distinguished)"
+url = "https://arxiv.org/abs/1606.01796v1"
+fetched_from = "https://arxiv.org/pdf/1606.01796v1"
+fetched_at = "2026-10-20T20:51:16Z"
+sha256 = "ce060b41e28fef16c011d3d3455c53a8bdc11cd8c98dc4dc6c2be178e1567273"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["QW.6"]
+
+[[source]]
+id = "bhatt-scholze"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prisms and Prismatic Cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "section"
+locator = "Lemma 2.28 (v4 p. 20, line 778); Construction 16.19 and Theorem 16.22 (v4 pp. 114–115, lines 4316 and 4378)"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-10-20T20:51:42Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v4"
+cited_for = ["QW.1", "QW.6", "Suppliers"]
+
+[[source]]
+id = "wagner-habiro"
+authors = "Ferdinand Wagner"
+title = "$q$-Hodge complexes over the Habiro ring"
+year = 2025
+arxiv = "2510.04782v2"
+locator_scheme = "section"
+locator = "Section 1.22(e), v2 p. 12, line 493; Section 2.7, pp. 15–16, lines 647–658; proof of Theorem 2.9, pp. 16–17, lines 679–723, with standing etale hypothesis from Section 2.2"
+url = "https://arxiv.org/abs/2510.04782v2"
+fetched_from = "https://arxiv.org/pdf/2510.04782v2"
+fetched_at = "2026-10-20T20:51:59Z"
+sha256 = "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["QW.1", "QW.4"]
+
+[[source]]
+id = "hesselholt"
+authors = "Lars Hesselholt"
+title = "The big de Rham-Witt complex"
+year = 2010
+venue = "Acta Math. 214 (2015), 135-207"
+doi = "10.1007/s11511-015-0124-y"
+arxiv = "1006.3125v3"
+locator_scheme = "theorem"
+locator = "Section 1: Proposition 1.2; Lemmas 1.3–1.5; Proposition 1.19; Definitions 1.21 and 1.23; Lemma 1.24; Theorem 1.25 (v3 pp. 7–9, 17–20; lines 268, 301, 315, 354, 711, 753, 787, 798, 811)"
+url = "https://arxiv.org/abs/1006.3125v3"
+fetched_from = "https://arxiv.org/pdf/1006.3125v3"
+fetched_at = "2026-10-20T20:52:43Z"
+sha256 = "1b21e5adf08ea73ea1aac471100d6b191d57d47d95ff27ae0f25ee5e1d9f2973"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v3"
+cited_for = ["QW.0"]
+
+[[source]]
+id = "borger"
+authors = "James Borger"
+title = "The basic geometry of Witt vectors, I: The affine case"
+year = 2008
+venue = "Algebra & Number Theory 5 (2011), no. 2, pp 231-285"
+arxiv = "0801.1691v6"
+locator_scheme = "section"
+locator = "Sections 1.16–1.18 (v6 pp. 12–13, lines 603–638); Corollary 5.4 (p. 26, line 1323); Theorem 9.2 (p. 39, line 1995); Corollary 9.4 (p. 40, line 2095)"
+url = "https://arxiv.org/abs/0801.1691v6"
+fetched_from = "https://arxiv.org/pdf/0801.1691v6"
+fetched_at = "2026-10-20T20:53:03Z"
+sha256 = "d8d7c8f62311b4b60cf4d298af4e8519460e33b69ce9a34da4641488e6766019"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v6"
+cited_for = ["QW.0"]
