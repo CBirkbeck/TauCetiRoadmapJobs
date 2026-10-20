@@ -7,9 +7,10 @@ authors = "George Gasper and Mizan Rahman"
 title = "Basic Hypergeometric Series, second edition"
 year = 2004
 locator_scheme = "section"
-locator = "Sections 1.2 and 5.1, corroborated by Gasper1995 lines 110–117"
+locator = "Sections 1.2 and 5.1 (inherited bibliographic locators, not independently checked)"
 licence_class = "none"
 status = "waived"
+cited_for = ["Optional filed background; endpoints use certified alternatives"]
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1#issuecomment-6299988600"
 
 [[source]]
@@ -21,4 +22,140 @@ locator_scheme = "section"
 locator = "Exact section/theorem locator unresolved; requires legal text or an alternative reference"
 licence_class = "none"
 status = "waived"
+cited_for = ["Optional filed background; endpoints use certified alternatives"]
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1#issuecomment-6299988600"
+
+[[source]]
+id = "Zwegers2002"
+authors = "Sander Zwegers"
+title = "Mock Theta Functions"
+year = 2008
+arxiv = "0807.4834v1"
+locator_scheme = "theorem"
+locator = "Proposition 1.5, Theorems 1.11 and 1.16, Chapters 2–4"
+url = "https://arxiv.org/abs/0807.4834v1"
+fetched_from = "https://arxiv.org/pdf/0807.4834v1"
+fetched_at = "2026-10-20T21:36:56Z"
+sha256 = "ca2b841ad716a16eb380893e6686f67f65e5506a9375de7a3c8f96ec58e8280d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Appell–Lerch completion and mock theta transformations"]
+
+[[source]]
+id = "Gasper1995"
+authors = "George Gasper"
+title = "Lecture notes for an introductory minicourse on q-series"
+year = 1995
+arxiv = "math/9509223v1"
+locator_scheme = "equation"
+locator = "Equations (1.2.3), (1.2.7)–(1.2.8), (1.3.6)–(1.3.11), (2.1.3), (2.1.9), (2.2.1), (2.2.10), (3.1.6), (3.1.11)–(3.1.12), (4.2.11)–(4.2.12)"
+url = "https://arxiv.org/abs/math/9509223v1"
+fetched_from = "https://arxiv.org/pdf/math/9509223v1"
+fetched_at = "2026-10-20T21:37:15Z"
+sha256 = "ea5f3d8fe15dc47902f4bdf8ad630c7044e495d5c0934d247aa1a81f1be819bb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["q-Pochhammer calculus and basic hypergeometric summations"]
+
+[[source]]
+id = "Zagier2009"
+authors = "Don Zagier"
+title = "Ramanujan’s Mock Theta Functions and Their Applications"
+year = 2009
+locator_scheme = "section"
+locator = "Sections 2, 5 and 7; Theorems 2.1 and 7.1; pp. 986–07, 986–12–14 and 986–16–18"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/aster/326/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/aster/326/fulltext.pdf"
+fetched_at = "2026-10-20T21:37:35Z"
+sha256 = "135c9aba4a3a5e60893b655d0119cfeb560d74546140ac2e7185329b343fdaa9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-20"
+cited_for = ["Mock modular forms, shadows, completions and rank applications"]
+
+[[source]]
+id = "Pak2002"
+authors = "Igor Pak"
+title = "Partition bijections, a survey"
+year = 2002
+version_note = "Author draft dated September 18, 2002; cite its pagination and numbering"
+locator_scheme = "section"
+locator = "Sections 2.2, 6 and 7"
+url = "https://www.math.ucla.edu/~pak/papers/psurvey.pdf"
+fetched_from = "https://www.math.ucla.edu/~pak/papers/psurvey.pdf"
+fetched_at = "2026-10-20T21:38:00Z"
+sha256 = "a65746dc070e19c40a52660b55f9263e8b8da4744fbb6745d16be34397f36503"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-20"
+cited_for = ["Partition generating functions and Rogers–Ramanujan identities"]
+
+[[source]]
+id = "BruinierFunke2003"
+authors = "Jan Hendrik Bruinier, Jens Funke"
+title = "On Two Geometric Theta Lifts"
+year = 2002
+arxiv = "math/0212286v4"
+locator_scheme = "theorem"
+locator = "Section 3, Proposition 3.2, Theorem 3.7 and Corollary 3.8"
+url = "https://arxiv.org/abs/math/0212286v4"
+fetched_from = "https://arxiv.org/pdf/math/0212286v4"
+fetched_at = "2026-10-20T21:38:11Z"
+sha256 = "9094db44c13fde548a576dfcb4bd04cd25b4563153ea1457afd45961fd1c67a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v4"
+cited_for = ["General harmonic weak Maass forms and the xi operator"]
+
+[[source]]
+id = "AndrewsGarvan1988"
+authors = "George E. Andrews and Frank G. Garvan"
+title = "Dyson’s crank of a partition"
+year = 1988
+locator_scheme = "theorem"
+locator = "Section 1, equations (1.1)–(1.15), crank definition, Theorem 1 and Section 2; pp. 167–170"
+url = "https://www.ams.org/journals/bull/1988-18-02/S0273-0979-1988-15637-6/S0273-0979-1988-15637-6.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1988-18-02/S0273-0979-1988-15637-6/S0273-0979-1988-15637-6.pdf"
+fetched_at = "2026-10-20T21:38:35Z"
+sha256 = "db6ec9868b62ba642f94838103777e2c64fc93b8b1442459070fe0c523fb2920"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-20"
+cited_for = ["Crank definition, generating function and equidistribution"]
+
+[[source]]
+id = "BevilacquaChandranChoi2019"
+authors = "Erin Bevilacqua, Kapil Chandran, Yunseo Choi"
+title = "Ramanujan Congruences for Fractional Partition Functions"
+year = 2019
+arxiv = "1907.06716v1"
+locator_scheme = "equation"
+locator = "Introduction, p. 1, unnumbered prime-power congruences; lines 36–44"
+url = "https://arxiv.org/abs/1907.06716v1"
+fetched_from = "https://arxiv.org/pdf/1907.06716v1"
+fetched_at = "2026-10-20T21:39:57Z"
+sha256 = "efb36ae8c3eba4bd7f50f7c334e77e5e4745f8f127e535fc5e7f57e5fe2aef04"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Ramanujan–Watson–Atkin prime-power partition congruences"]
+
+[[source]]
+id = "Andrews1976"
+authors = "George E. Andrews"
+title = "The Theory of Partitions"
+year = 1976
+locator_scheme = "chapter"
+locator = "Chapters 1, 7 and 10 (bibliographic locators only)"
+cited_for = ["Optional filed background; replaced by Pak2002, Gasper1995, AndrewsGarvan1988 and BevilacquaChandranChoi2019"]
+doi = "10.1017/CBO9780511608650"
+url = "https://doi.org/10.1017/CBO9780511608650"
+licence_class = "none"
+status = "uncertified"
+version_note = "1976 original; Cambridge reprints. Sources service found no legal readable full text; no endpoint relies on unread contents."
