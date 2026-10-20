@@ -1,20 +1,20 @@
 # Roadmap: coleman integration, part ii — harmonic realizations, indices and descent
 
-**Summary.** Extend natural p-adic single integration by a harmonic realization on curves, logarithmic annular double and triple indices, the corrected global double pairing, wide-open triple sums and their Coleman one-form pairing. The end theorems identify the harmonic realization with the arbitrary-reduction integral over every finite extension of ℚ_p, descend nonsplit poles and degree-zero divisors, and state branch, trace and refinement compatibilities with their actual choice laws. The formal local index theory is developed over every characteristic-zero field. Graphs retain loops and parallel edges; p=2 and p=3 are included.
+**Summary.** Extend good-reduction Coleman integration to natural p-adic single integration in arbitrary reduction, followed by a harmonic realization on curves, logarithmic annular double and triple indices, the corrected global double pairing, wide-open triple sums and their Coleman one-form pairing. The end theorems identify the harmonic realization with the arbitrary-reduction integral over every finite extension of ℚ_p, descend nonsplit poles and degree-zero divisors, and state branch, trace and refinement compatibilities with their actual choice laws. The formal local index theory is developed over every characteristic-zero field. Graphs retain loops and parallel edges; p=2 and p=3 are included.
 
 ## Scope and ownership
 
-This is a continuation of **ColemanIntegration**. The boundary of the continuation is its requested §7.7 natural single-integration theorem, imported in full below. Its requested §§7.10–7.11 graph realizations are special-case checks, not restrictions on the natural integral. The base text is an unresolved ownership contract: its section contents and its overlap with the interfaces below are represented by explicit gaps, not attributed invented statements.
+This continues **ColemanIntegration**, whose L0 supplies analytic Laurent/logarithmic functions and whose L1 constructs good-reduction Coleman integration. Its polylogarithms and special-value applications remain there. This Part II constructs natural single integration in arbitrary reduction over every finite p-adic field, using the abelian logarithm of AnabelianGeometryAndNonabelianChabauty §5.8 and the Colmez construction of §§4.0a–4.0c.
 
-This roadmap owns harmonic graph normalization and its metric refinement, the index constructions and their complete choice laws, the comparison of harmonic component primitives with natural single integration, traced closed-point contributions, divisor evaluation and descent of these realizations. A definition or index theorem identified in the base belongs to that base, and the corresponding interface here is an import boundary. The ownership question is recorded in the contracts, rather than solved by recreating the base theory.
+This roadmap owns harmonic graph normalization and metric refinement, formal logarithmic local algebra and the degree-one index subspace, double/triple indices and their choice laws, wide-open reciprocity, curve cohomology/graph comparisons, harmonic realization, traced local contributions, divisor evaluation and descent. The additional full-analytic-coefficient Coleman extension is §3.0b; the analytic logarithmic algebra on complete subfields of ℂ_p is imported from ColemanIntegration L0.20–L0.23. The general analytic coefficient extension is §2.1a. Jacobian logarithms are imported; their natural integration/topology bridge is §4.0e. Tate point uniformization is imported; its differential and chart bridge is §7.0.
 
-Already in the library are Mathlib's p-adic field, general multigraph, simple-graph Laplacian, Laurent-series derivative and field trace, and Tau Ceti's normed restricted-series carrier. Their exact declarations appear below. RigidAnalyticGeometry §§1.3, 2.3, 6.2 and 8.1 own the analytic spaces, reduction, extension and analytification. StableReduction Layers 0–2, 4–5, 7 and 9 own models, branches, dual graphs, positivity, common resolutions, all-genus nodal reduction and section separation. JacobianChallenge Layers D–F own the algebraic Jacobian and pointed Abel–Jacobi after finite extension. EllipticCurves Layer 4 owns point-level Tate uniformization. None is developed a second time here.
+Already in the library are Mathlib's p-adic field, general multigraph, simple-graph Laplacian, Laurent-series derivative and field trace, and Tau Ceti's simple-graph cochain/cohomology quotients, native Albanese universal-property carrier and normed restricted-series carrier. Their exact declarations appear below. RigidAnalyticGeometry §§1.3, 2.3, 6.2 and 8.1 own the analytic spaces, reduction, extension and analytification. StableReduction Layers 0–2, 4–5, 7 and 9 own models, branches, dual graphs, positivity, common resolutions, all-genus nodal reduction and section separation. JacobianChallenge Layers D–F own the algebraic Jacobian and pointed Abel–Jacobi after finite extension. EllipticCurves Layer 4 owns point-level Tate uniformization. PadicDifferentialEquationsAndRigidCohomology §§RD.4.31–RD.4.33, RD.5.76 and RD.6.1, RD.6.86, RD.6.88, RD.6.92 own the generic rigid comparisons, finite dimensionality and component Frobenius weights. ResolutionOfSingularitiesCharacteristicZero §6.2 supplies smooth projective compactifications of smooth quasi-projective varieties. These constructions are imported by their exact sections.
 
-The curve cohomology comparison and the analytic bridges beyond those algebraic suppliers have explicit unbound contracts. K-theory symbols, regulator maps, motivic relations, height pairings, special values and effective procedures belong to their consumers. The triple end-sum here is defined on a Coleman wide open with global auxiliary data. There is no whole-curve triple pairing obtained by a choice-free sum of arbitrary bad-reduction Vologodsky component primitives.
+K-theory symbols, regulator maps, motivic relations, height pairings, special values and effective procedures belong to their consumers. The triple end-sum here is defined on a Coleman wide open with global auxiliary data. There is no whole-curve triple pairing obtained by a choice-free sum of arbitrary bad-reduction Vologodsky component primitives.
 
 ## Conventions
 
-Work in universes u,v with native field, module, submodule, linear-map, polynomial, Laurent-series and Graph carriers. The geometric coefficient field is any finite extension K/ℚ_p, p prime. No odd-prime, unramified or good-reduction hypothesis is standing. Formal graph and local index algebra need only a characteristic-zero coefficient field k. Complete ultrametric coefficients enter analytic annuli. A connected Coleman wide open over K has constant field K and is geometrically connected; a larger finite constant field is treated over that field with its trace, as in §7.6. Over ℂ_p use connected wide opens.
+A variety is a separated finite-type geometrically integral scheme; smooth geometrically connected varieties here are geometrically integral. Work in universes u,v with native field, module, submodule, linear-map, polynomial, Laurent-series and Graph carriers. The geometric coefficient field is any finite extension K/ℚ_p, p prime. No odd-prime, unramified or good-reduction hypothesis is standing. Formal graph and local index algebra need only a characteristic-zero coefficient field k. Complete ultrametric coefficients enter analytic annuli. A connected Coleman wide open over K has constant field K and is geometrically connected; a larger finite constant field is treated over that field with its trace, as in §7.6. Over ℂ_p use connected wide opens.
 
 Fix the logarithm by λ=log(p). Its universal parameter T is fixed by scalar extension and Galois, and log_univ(u)=log₀(u)+v_p(u)T with v_p(p)=1. If π is a uniformizer of ramification index e over ℚ_p, ν_π(π)=1 and v_p=ν_π/e. These normalizations differ: a branch change of size 2 changes log(π) by 2/e, including e=2 at p=2. The affine-in-T assertion concerns single integrals; no degree-one-in-T assertion is made for arbitrary triple auxiliary data.
 
@@ -45,11 +45,26 @@ The baseline is Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a`. The followin
 
 The baseline is Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. In `TauCeti/RingTheory/MvPowerSeries/TateAlgebra/Basic.lean`, `MvPowerSeries.norm_eq_gaussNorm` identifies the native restricted-series norm with its Gauss norm for positive polyradii over an ultrametric normed ring. Its `CompleteSpace` instance requires complete coefficients. RigidAnalyticGeometry consumes this native floor. It supplies no p-adic integration or index theorem.
 
+- In `TauCeti/Combinatorics/SimpleGraph/Cohomology/Basic.lean`, `SimpleGraph.oneCochains`, `SimpleGraph.coboundary` and `SimpleGraph.FirstCohomology` use a commutative multiplicative coefficient group. `SimpleGraph.coboundary_apply` is target divided by source. Use `Multiplicative k`, so additive translation gives head minus tail. The value-preserving module and quotient bridges in §§1.1–1.2 account for the opposite differential. Import `SimpleGraph.FirstCohomology.lift`, `.mk_eq_mk_iff` and `.congr`; coefficient functoriality comes from `SimpleGraph.oneCochainsMap_coboundary` and `SimpleGraph.firstCohomologyMap` in `Cohomology/Map.lean`; relabelling comes from `SimpleGraph.oneCochainsRelabel_coboundary` and `SimpleGraph.firstCohomologyRelabel` in `Cohomology/Relabel.lean`. Their hypotheses are commutative groups, coefficient homomorphisms and graph isomorphisms, respectively.
+- In `TauCeti/AlgebraicGeometry/AbelianVariety/Albanese.lean`, `TauCeti.AlgebraicGeometry.AbelianVariety.IsAlbanese`, its `.homEquiv` and `.uniqueUpToIso` supply the pointed universal property on the native abelian-variety carrier. §4.0b constructs the additional higher-dimensional proper Albanese existence and rational-form comparison on this predicate; it does not redefine the universal property.
+
 ### From TauCetiRoadmap.ColemanIntegration
 
-**The imported headline, `gap:base-single`.** For every prime p, finite K/ℚ_p, smooth geometrically connected finite-type algebraic U/K, regular closed one-form ω and a,b∈U(K), there is the unique natural single-integration theory with universal value A+B T in K[T]. At branch λ the integral is K-linear in ω, locally analytic in its endpoints, has differential ω in the second endpoint, has I(a,a)=0, and satisfies I(a,c)=I(a,b)+I(b,c). For an algebraic map f:U→V it sends f*ω to the integral on endpoints f(a),f(b). It integrates df to f(b)−f(a) and dlog f to log_λ(f(b)/f(a)) on their domains. It agrees with Coleman single integration in good reduction and commutes with finite coefficient extension and Galois conjugation. On any smooth proper geometrically connected curve apply it to the complement of the poles of **any meromorphic** one-form. No graph, model, genus or reduction condition is a hypothesis. Endpoints over finite extensions are included by base change. Uniqueness is of the natural theory across varieties, not of solutions to a differential equation on disconnected p-adic point sets (colmez1998 Definitions II.1.2–II.1.3 and Theorem II.1.4, p. 74, line 2982; comparison and descent in Remark 2, pp. 2–3, line 229).
+Import L0.A1–L0.A2: `LaurentOn`, `LaurentOn.derivative`, `.restrict`, `.endGerm`, `.pullback`, `laurentSeriesEval` and `LaurentOn.eval_injective`. The coefficient carrier uses complete nontrivially normed ultrametric fields; point evaluation is into ℂ_p and faithfulness retains the radius hypotheses. L0.11–L0.12 supply `annulusResidue`, `exists_laurent_primitive_iff` and vanishing residue for exact forms on genuine open annuli/end germs. L0.15–L0.19 supply `padicLogBranch`, `logBranch_sub`, finite-extension/Galois compatibility and its local derivative. L0.20–L0.23 supply `AnnulusLogRing`, `.changeParam`, `.restrict`, `.realize_branch`, `exists_logLaurent_primitive` and `logLaurent_derivative_eq_zero_iff`. Their analytic logarithmic ring has coefficients in a complete subfield of ℂ_p; parameter change retains a unit scale and a strictly small perturbation on the chosen annulus. Its extension beyond that coefficient scope is §2.1a.
 
-The ColemanIntegration §7.7 contract requires an exact exported declaration for natural single integration and exact section bindings for its analytic interfaces. Vologodsky2001 Proposition 52, §17.2, p. 42, line 1806 identifies his single integral with Colmez's under that preprint's p>2 convention (line 51); the all-prime headline uses Colmez, not an unproved all-prime iterated transport theorem.
+Import L1.2–L1.3 for `wideOpen`, `daggerAlgebra`, `daggerDifferentials` and their ordinary/end restrictions on a good-reduction pair and a cofinal system of strict neighborhoods. Import L1.17–L1.19 for `ColemanFunctions`, `.d_mem`, `.ker_d`, `colemanIntegral`, `d_colemanIntegral`, `colemanIntegral_d`, `definiteIntegral`, `definiteIntegral_add`, `definiteIntegral_tiny` and `definiteIntegral_d`. Their datum carries the base's `(H0)`, `(H1)` and `(Hi)` conditions. L1.17a supplies `colemanCoefficients_exact`, `colemanCoefficients_meromorphicPrimitive` and `colemanCoefficients_restrict_injective` for algebraic coefficient extension. No equality with the full analytic ℂ_p algebra follows from this extension. L1.43 supplies `ColemanFunctions.pullback` and `definiteIntegral_pullback` under its common Frobenius-power, same-reduction cross-map and uniform strict-neighborhood bounds. §§3.0a–3.0b supply the extra component and full-analytic-coefficient comparisons required here.
+
+### From TauCetiRoadmap.AnabelianGeometryAndNonabelianChabauty
+
+Import §5.8, “Abelian logarithms”: `abelianLog.add`, `.derivative`, `.unique`, `.baseChange`, `.functorial` and `.cp` for any abelian variety over finite K/ℚ_p, without a good-reduction hypothesis. Its `colemanAbelian.integral` comparison has good-reduction hypotheses. The additional natural arbitrary-reduction comparison and compact divisor-topology bridge are §4.0e.
+
+### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
+
+Import §RD.4.31 for finite rigid coefficient extension with compatible Frobenius; §RD.4.32 for dagger de Rham cohomology of a smooth affine lift and its lift-independent Frobenius; §RD.4.33 for the proper tube comparison; and §RD.5.76 for finite dimensionality with F-isocrystal coefficients. Use §RD.6.1 `linearFrobenius` with residue field 𝔽_q, q-power Frobenius and coefficient lift the identity, and its naturality/base-change laws. §§RD.6.86, RD.6.88 and RD.6.92 supply proper weight-one H¹, the curve Gysin sequence and affine-curve weights: boundary eigenvalues are qζ, becoming q after splitting the boundary. The additional semistable Čech/graph comparison is §3.0c; the index/compact-cup comparison is §3.1a.
+
+### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
+
+Import §6.2 `sncCompactification`: for a smooth quasi-projective finite-type variety over a characteristic-zero field, a smooth projective compactification preserving that variety, with strict-SNC boundary. §4.0b uses it on a dense quasi-projective open and proves the extension of the proper Albanese map to the whole smooth variety. General compactification and resolution are not reconstructed here.
 
 ### From TauCetiRoadmap.RigidAnalyticGeometry
 
@@ -61,56 +76,33 @@ Use Layer 0 for model generic-fibre identifications, finite DVR extensions, towe
 
 ### From TauCetiRoadmap.JacobianChallenge
 
-Use Layers D–F: proper smooth curves are projective, divisor classes and the Jacobian, its abelian-variety structure, pointed Abel–Jacobi and base change. The pointed theorem is applied over an extension containing a temporary point. It supplies no K-rational point on X and no unpointed Abel–Jacobi morphism. The analytic logarithm and compactness bridge is `gap:base-jacobian`.
+Use Layers D–F: proper smooth curves are projective, divisor classes and the Jacobian, its abelian-variety structure, pointed Abel–Jacobi and base change. The pointed theorem is applied over an extension containing a temporary point. It supplies no K-rational point on X and no unpointed Abel–Jacobi morphism. The extra natural integration and compactness bridge is §4.0e.
 
 ### From TauCetiRoadmap.EllipticCurves
 
-Use Layer 4's analytic Tate strand: q is a **unit** with |q|<1, and the point-level isomorphisms L×/q^ℤ≃E_q(L) commute with finite extensions and Galois. The differential and annular realization comparison is `gap:tate-differential`; no rigid quotient is attributed to the point-level theorem.
-
-### Contracts requiring an exact producing section
-
-A gap names missing mathematical output, not a replacement theory or a hypothesis containing a desired conclusion. `gap:curve-comparison` and `gap:tate-differential` have no bound supplier. Their unplaced candidate extensions are described in the design report; neither is used as a roadmap prerequisite. The other gaps are additional exact interfaces required of the named base roadmap.
-
-
-- **`gap:base-single` — The universal single-integration import.** ColemanIntegration; §7.7 (requested, text unavailable). Provide the natural universal single-integration theorem for all finite p-adic fields, with its actual carriers and finite-extension/Galois compatibilities. The section binding and its declaration names are required by this contract. The theorem must cover all primes, smooth geometrically connected varieties, closed regular one-forms, affine universal values A+B T, exact/logarithmic formulas, Chasles, naturality under algebraic pullback, local analyticity, natural-theory uniqueness, good-reduction comparison, and scalar extension of forms. This is an import contract, not a new theorem to construct here. Source: colmez1998 Definitions II.1.2–II.1.3/Theorem II.1.4, lines 2982–2997; Remark 2, lines 229–255. Vologodsky2001 Proposition 52 is read only at its p>2 standing convention.
-
-- **`gap:base-annuli` — Annular differential and residue interfaces.** ColemanIntegration; Analytic residue and annular integration section (exact locator unavailable). Provide analytic annular Laurent expansions, residue and substitution laws, logarithm branches, and their compatibility with formal Laurent differential germs. RigidAnalyticGeometry §6.2 supplies the spaces, not these residue theorems. Require the two orientations, Res(dz/z)=1, vanishing on exact differentials, residue degree under finite maps and formal substitutions, analytic unit logarithms, shrink compatibility, coefficient extension and trace, and expansion at closed points. Formal Laurent differentiation uses the pinned LaurentSeries.derivative rather than a replacement. Source: besser2017 Definition 3.1, lines 402–420; besser-dejeu2012 §7, lines 2232–2242.
-
-- **`gap:base-coleman` — Global Coleman functions on wide opens.** ColemanIntegration; Coleman wide opens and Coleman-function algebra section (exact locator unavailable). Provide connected Coleman wide opens, their finite end sets, the actual Coleman function/form algebra, uniqueness of primitives up to a scalar and integration of Coleman one-forms. Include analytic one-forms and their Coleman primitives with A_log,1 end restrictions, integration by parts and base change/Galois equivariance. Require functions with analytic differential as a subspace of the actual Coleman algebra, compatible global primitives of R dS and a common branch; do not replace these objects by a record containing the desired identities. Source: besser2017 lines 475–501; besser-dejeu2012 lines 2533–2545.
-
-- **`gap:base-reciprocity` — Local restriction and reciprocity contracts.** ColemanIntegration; Single/double integration reciprocity section (exact locator unavailable). Provide Coleman and natural-single-integral double-index reciprocity together with global residue cancellation and local Coleman restriction before harmonic normalization. For a global natural primitive F and a rational f with disjoint divisor/pole supports require Σ_x B_x(F,log f)=0. For a connected Coleman wide open require B_U(F,log f)=0 for an invertible analytic f, and the double-index identification with compact-cohomology projection, analytic-exact vanishing and rational-core vanishing used in §3.1. Require restriction of a natural single primitive on a component to a Coleman primitive, without any harmonic-jump conclusion; §4.2 proves that conclusion. The principal-divisor/Jacobian argument must allow moving divisors away from poles. Residue cancellation is Σ_ends Res(ω)=0. These are the precise source inputs used at besser-zerbes2017 lines 140–150, 161, 212 and besser2017 lines 503–520; their ownership cannot be certified without the base text.
-
-- **`gap:curve-comparison` — Unbound curve comparison producer.** Unbound producer; Curve Čech–de Rham, cup, graph projection and Frobenius/monodromy contract (no producing section bound). Bind an allowed earlier producer and exact section for the full curve de Rham/rigid/semistable comparison, including ordered cup products, trace and Frobenius normalizations. The comparison producer must have an earlier place in the supply order and a concrete section exporting these maps. Required contract: hypercohomology and algebraic/rigid comparison for X−Z with arbitrary finite étale boundary and finite scalar extension; the Čech representative ((ω_v),(f_e)) with d f_e=ω_tail−ω_head, χ represented by f_e−(F_tail−F_head), graph exact sequence (4.5), monodromy represented by ℓ(e)Res_e(ω_tail), restriction and proper ordered cup residue formula, model/refinement compatibility, q-linear Frobenius with χφ=χ,Nφ=qN,χN=N,N²=0, weight-q scaling for compact/wide-open cup pairing, q-eigenspace radical of the wide-open pairing and absence of eigenvalue 1/q on H¹. The graph algebra and index identities are owned here; their comparison to cohomology is not reconstructed. Locators: besser2017 lines 586–658, 671–689, 738–759; besser-dejeu2012 lines 2591–2617. This contract is not attributed to an unspecified section of the base comparison roadmap.
-
-- **`gap:coleman-form-relations` — The actual Coleman one-form relations.** ColemanIntegration; Coleman one-form symbol/connection section (exact locator unavailable). Provide the actual Coleman one-form product module and the symbol/connection relation theorem used by Besser–de Jeu Lemma 9.1. Need the well-defined map Ω¹_col,1(U)→H¹_dR(U)⊗Ω¹(U), sending G dH to [dG]⊗dH, with kernel of the tensor-product presentation contained in analytic-function tensors. This is a base Coleman-algebra extension if absent, not an index theorem and not a regulator relation to import from a consumer. Source: besser-dejeu2012 Lemma 9.1 and proof of Proposition 9.2, lines 2769–2789; the proof there cites the Tannakian Coleman-function theory. The index pairing of §6.4 is the new output here.
-
-- **`gap:base-jacobian` — Abelian logarithm and p-adic point topology bridge.** ColemanIntegration; Abelian logarithm and curve restriction section (exact locator unavailable). Provide the abelian-logarithm/invariant-differential comparison and compact p-adic Jacobian point topology required by the curve integration comparison. JacobianChallenge Layers D–F supply the Jacobian and pointed Abel–Jacobi only after choosing a rational point, which may be supplied over a finite extension. Require pullback identification of invariant differentials with holomorphic curve forms, the locally analytic abelian logarithm characterized by its differential, compatibility with natural single integration, compactness of Jac(X)(K), and the divisor evaluation comparison on the open complement of poles. These are genuine missing analytic bridges, not properties asserted by the algebraic Jacobian roadmap. Source: colmez1998 Lemma II.1.13/Remark II.1.18, lines 3147–3159 and 3213; besser-zerbes2017 lines 142–150.
-
-- **`gap:tate-differential` — Tate uniformization differential comparison.** Unbound producer; Analytic differential comparison extending EllipticCurves Layer 4 (producing extension unbound). Provide the pullback of the normalized Tate invariant differential to dz/z and its compatibility with annular charts of a regular Tate model. EllipticCurves Layer 4 explicitly supplies point-level Galois-compatible uniformization, not a rigid-space quotient. The integration witness needs local analyticity, pullback of the invariant differential, and the n-gon/loop/parallel-edge annular chart comparison. This belongs to an EllipticCurves Part II extension if the analytic comparison is not exported by that base. This plan records the missing contract without planning a second Tate uniformization. Source: besser-zerbes2017 §3, lines 245–278.
-
+Use Layer 4's analytic Tate strand: q is a **unit** with |q|<1, and the point-level isomorphisms L×/q^ℤ≃E_q(L) commute with finite extensions and Galois. The differential and annular realization comparison is §7.0; no rigid quotient is attributed to the point-level theorem.
 
 ## How to read the build
 
-Layer 1 constructs the finite graph algebra independently of geometry. Layer 2 constructs local double indices. Layer 3 constructs wide-open and corrected cohomological double pairings before the harmonic/Vologodsky identification. Layer 4 proves that identification and the point-sum formula, using only the earlier pairing theory and the imported integration reciprocity. Layer 5 constructs the local triple index with its genuine auxiliary data; Layer 6 cancels only globally compatible auxiliary constants and descends the pairing to actual Coleman one-forms. Layer 7 exports branch, trace, divisor and arbitrary-reduction descent, with the Tate curve fixing all normalizations. Thus Besser §§3–4 precede Besser–Zerbes, and Besser §5 follows it. Each subsection names the output, its proof ingredients and discriminating checks. A `gap:` premise is an unresolved supplier contract, never a claimed theorem.
-
+Layer 1 constructs the metric multigraph theory and its signed bridge to pinned simple-graph cohomology. Layer 2 imports the analytic logarithmic algebra, adds formal/general-coefficient extensions and defines local double indices. Layer 3 constructs component/full-coefficient/cohomology comparisons and wide-open reciprocity before the corrected pairing. Layer 4 first constructs Colmez natural integration independently of a curve model, then proves its harmonic realization and point-sum formula. Layer 5 constructs labelled triple-index choices using the supplied analytic primitives; Layer 6 proves global cancellation and the relation theorem before descending to actual Coleman forms. Layer 7 supplies Tate differential charts, branch, trace, divisor and arbitrary-reduction descent. The pairing theory precedes harmonic identification, which precedes its point-sum consequences.
 
 ## Layer 1: Finite graph cochains and harmonic normalization
 
 ### 1.1 Cochains with edge identities
 
-Define `Graph.LengthCochains` as follows. For a finite graph Γ, retain both flags of every edge, including a loop, and an orientation-reversing fixed-point-free involution e ↦ −e on its darts. For a field k of characteristic zero and positive rational lengths ℓ(e)=ℓ(−e), define C⁰=V→k, C¹={c:E→k | c(−e)=−c(e)}, d f(e)=f(tail e)−f(head e), div_ℓ(c)(v)=Σ_{tail(e)=v} c(e)/ℓ(e), Harm_ℓ=ker(div_ℓ), and (c,d)_ℓ=Σ_{E/±} c(e)d(e)/ℓ(e). These are modules, linear maps, a submodule and a bilinear form on the native graph carrier; the flag presentation has an explicit forgetful comparison to Graph.IsLink. (besser2017, Definitions 4.1–4.3, p. 12, besser2017 line 528; rational-length extension by subdivision from Proposition 4.12(3), besser2017 line 768).
+Define `Graph.LengthCochains` as follows. For a finite graph Γ, retain both flags of every edge, including a loop, and an orientation-reversing fixed-point-free involution e ↦ −e on its darts. For a field k of characteristic zero and positive rational lengths ℓ(e)=ℓ(−e), define C⁰=V→k, C¹={c:E→k | c(−e)=−c(e)}, d f(e)=f(tail e)−f(head e), div_ℓ(c)(v)=Σ_{tail(e)=v} c(e)/ℓ(e), Harm_ℓ=ker(div_ℓ), and (c,d)_ℓ=Σ_{E/±} c(e)d(e)/ℓ(e). These are modules, linear maps, a submodule and a bilinear form on the native graph carrier; the flag presentation has an explicit forgetful comparison to Graph.IsLink. (besser2017, Definitions 4.1–4.3, printed pp. 11–12, besser2017 line 528; rational-length extension by subdivision from Proposition 4.12(3), besser2017 line 768).
 
 Assume Γ has finite actual vertex and edge sets; ambient types need not be finite; k is a field with CharZero; ℓ(e) is a strictly positive rational number, interpreted through ℚ→k.
 
-Construct `LengthCochains.mk`: A native graph, a choice of its two flags per edge and positive reversal-invariant rational lengths give this presentation; reversing the chosen orientation gives a canonically isomorphic complex. Prove `LengthCochains.ext`: Two cochains are equal exactly when their values on every dart agree; values on one dart of each edge suffice. Prove `LengthCochains.div_d_adjoint`: Σ_v f(v) div_ℓ(c)(v)=(d f,c)_ℓ; loops contribute two opposite values. Prove `LengthCochains.map`: Graph isomorphisms preserving lengths and characteristic-zero coefficient embeddings commute with d, divergence and the edge pairing; unit lengths recover Definitions 4.1–4.3. Prove `LengthCochains.simple_laplacian`: For a finite simple graph with unit lengths, div(d f) is SimpleGraph.lapMatrix acting on f. The multigraph extension retains parallel edges and two loop flags.
+Construct `LengthCochains.mk`: A native graph, a choice of its two flags per edge and positive reversal-invariant rational lengths give this presentation; reversing the chosen orientation gives a canonically isomorphic complex. Prove `LengthCochains.ext`: Two cochains are equal exactly when their values on every dart agree; values on one dart of each edge suffice. Prove `LengthCochains.div_d_adjoint`: Σ_v f(v) div_ℓ(c)(v)=(d f,c)_ℓ; loops contribute two opposite values. Prove `LengthCochains.map`: Graph isomorphisms preserving lengths and characteristic-zero coefficient embeddings commute with d, divergence and the edge pairing; unit lengths recover Definitions 4.1–4.3. Prove `LengthCochains.simple_laplacian`: For a finite simple graph with unit lengths, div(d f) is SimpleGraph.lapMatrix acting on f. The multigraph extension retains parallel edges and two loop flags. Prove `LengthCochains.simpleCochainsEquiv`: For a finite simple graph G and characteristic-zero field k, the identity on dart values identifies C¹ with Additive (G.oneCochains (Multiplicative k)). Give the latter its pointwise k-module structure. Under this k-linear equivalence d f is the negative of the additive translation of G.coboundary (Multiplicative k) (Multiplicative.ofAdd ∘ f). Thus the identity on C⁰ and the negative of this equivalence on C¹ is a chain comparison. Coefficient maps and graph relabelling are the supplied maps through this bridge.
 
 The proof uses the following argument. Use submodules of function modules and finite sums. Define the two flags separately even when their incident vertices coincide; the involution has no fixed dart. The adjoint identity follows by grouping the two flags of each edge.
 
-*Needs:* Mathlib `Graph`, Mathlib `Graph.IsLoopAt`, Mathlib `SimpleGraph.lapMatrix`.
+*Needs:* Mathlib `Graph`, Mathlib `Graph.IsLoopAt`, Mathlib `SimpleGraph.lapMatrix`, Tau Ceti `SimpleGraph.oneCochains`, Tau Ceti `SimpleGraph.coboundary`, Tau Ceti `SimpleGraph.FirstCohomology`, Tau Ceti `SimpleGraph.oneCochainsMap_coboundary`, Tau Ceti `SimpleGraph.oneCochainsRelabel_coboundary`.
 
 **Checks.**
 
-- On one oriented edge v→w, f(v)=2,f(w)=5 gives d f=−3; a head-minus-tail differential would give +3.
+- On one oriented edge v→w with f(v)=2,f(w)=5, this roadmap has d f=−3; the additive value of the pinned coboundary on Multiplicative.ofAdd ∘ f is +3. Negating the degree-one comparison makes the chain square commute.
 - For one vertex and no edges C¹=0 and Harm_ℓ=0; the empty graph has C⁰=C¹=0.
 - A loop at v carrying c(e)=1,c(−e)=−1 has divergence zero and is a nonzero harmonic cochain. Giving the loop only one dart incorrectly excludes it.
 - On one edge of length 1/2, c=2,d=3 give (c,d)_ℓ=12; using an unweighted product gives 6.
@@ -125,17 +117,18 @@ Prove `Graph.harmonic_exact_decomposition` as follows. For Γ,k,ℓ as in §1.1,
 
 Assume The hypotheses of §1.1; connectedness and nonemptiness only for a single common constant.
 
-Construct `harmonicProjection`: The unique harmonic projection C¹→ₗ[k]Harm_ℓ has kernel im(d), is identity on Harm_ℓ and is idempotent. Prove `harmonicProjection_changePotential`: harmonicProjection(c+d a)=harmonicProjection(c). Prove `rationalLaplacian_rank`: For each connected component with r vertices, the rational weighted Laplacian has rank r−1, preserved over k.
+Construct `harmonicProjection`: The unique harmonic projection C¹→ₗ[k]Harm_ℓ has kernel im(d), is identity on Harm_ℓ and is idempotent. Prove `harmonicProjection_changePotential`: harmonicProjection(c+d a)=harmonicProjection(c). Prove `rationalLaplacian_rank`: For each connected component with r vertices, the rational weighted Laplacian has rank r−1, preserved over k. Prove `harmonicProjection_simpleCohomologyEquiv`: The value-preserving cochain equivalence of §1.1 sends im(d) onto the additive translation of the pinned coboundary range, since negation preserves that range. Transport scalar multiplication to Additive (G.FirstCohomology (Multiplicative k)); the induced quotient equivalence is k-linear and identifies harmonic representatives with this existing quotient. Import FirstCohomology.lift, mk_eq_mk_iff, firstCohomologyMap and firstCohomologyRelabel through the bridge; do not redefine their simple-graph universal properties or functoriality.
 
 The proof uses the following argument. Over ℚ, the adjoint identity identifies the Laplacian kernel after embedding into ℝ: Σ_edges (f(v)−f(w))²/ℓ=0 forces componentwise constants. A maximal minor is a nonzero rational, so the same rank holds over every characteristic-zero k. Rank-nullity and orthogonality give the direct sum, uniqueness, nondegeneracy and extension compatibility.
 
-*Needs:* §1.1.
+*Needs:* §1.1, Tau Ceti `SimpleGraph.FirstCohomology.lift`, Tau Ceti `SimpleGraph.firstCohomologyMap`, Tau Ceti `SimpleGraph.firstCohomologyRelabel`.
 
 **Checks.**
 
 - On a cyclic triangle with unit lengths and cyclic edge values (3,0,0), the harmonic part is (1,1,1) and the exact part is (2,−1,−1).
 - On a tree the harmonic part is zero; on two isolated vertices the ambiguity is two constants, not one.
 - In characteristic 3 on a triangle, the constant cyclic cochain (1,1,1) is both exact and harmonic. Characteristic zero is essential; p=3 coefficients ℚ₃ are still allowed.
+- On a simple triangle the cochain (1,1,1) has nonzero cycle class in both quotients; on a one-edge tree ±3 are coboundaries in both. The quotient bridge preserves cochain values, while the signed chain comparison negates them.
 
 ### 1.3 Subdivision with a fixed metric
 
@@ -165,17 +158,35 @@ Pinned Mathlib Graph; finite linear algebra over a characteristic-zero field. No
 
 ## Layer 2: Logarithmic annular functions and the double index
 
+### 2.0 Residues, finite maps and meromorphic germs
+
+Prove `Annulus.residueTransport` as follows. Extend the supplied annular residue to differential-compatible finite maps of oriented open annuli: for a finite map of positive oriented degree n, Res(φ*ω)=n Res(ω). Reversal changes the sign. Residue commutes with finite separable coefficient extension, coefficient trace and restriction to smaller end annuli. At a smooth closed point x of a curve over a characteristic-zero field, a uniformizer identifies its completed local ring with κ(x)[[z]] and its meromorphic differential germs with κ(x)((z))dz; residue is coefficient −1. For a meromorphic differential converging on a punctured disc, its formal and analytic residues agree. There is no map from every analytic annular Laurent family to a bounded-below formal Laurent series. (besser2017, Definition 3.1 and (3.1), p. 9, besser2017 line 402; degree consequence as in besser-dejeu2012 Lemma 8.1, p. 361, line 2529).
+
+Assume Formal coefficients are characteristic-zero fields; analytic coefficients are complete nontrivially normed ultrametric fields; A finite analytic map has positive degree and compatible orientation; coefficient trace is for finite separable extensions; Formal/analytic germ comparison requires a meromorphic germ with finitely many negative powers.
+
+Prove `residueTransport_degree`: Res of the pullback of dz/z under z=t^n is n. Prove `residueTransport_germ`: Meromorphic point expansions preserve differentiation, residue, finite scalar extension and the two compatible residue computations.
+
+The proof uses the following argument. Use the supplied coefficient residue and restriction. Factor a finite annular map locally as a monomial times a unit, apply the logarithmic derivative and the exact-residue law, and extend by the residue/exact decomposition. Formal substitution is coefficientwise. The smooth completed-local-ring parameter theorem gives point expansions; the finite negative part makes the analytic/formal comparison legitimate. Coefficient extraction commutes with linear trace.
+
+*Needs:* ColemanIntegration L0.A1–L0.A2, L0.11–L0.12, RigidAnalyticGeometry §§1.3, 6.2, 8.1, Mathlib `LaurentSeries.derivative`, Mathlib `Algebra.trace`.
+
+**Checks.**
+
+- For z=t² the residue of dz/z is 2; for z=t⁻¹ it is −1 in the t orientation.
+- The identity map gives residue 1 on dz/z; constants have derivative residue zero. A constant map is excluded from the positive-degree claim.
+- At a quadratic closed point a residue 1 traces to 2. An analytic Laurent family with infinitely many negative terms is not a formal Laurent germ.
+
 ### 2.1 Functions with one logarithmic term
 
-Define `Annulus.LogarithmicFunctions` as follows. For a characteristic-zero field k put A_log=k((z))[L], dL=dz/z, and A_log,1=k((z))+kL. On an open annulus over a complete characteristic-zero nonarchimedean field use its analytic Laurent functions in place of k((z)) and a fixed logarithm branch for L=log z. The derivative maps A_log,1 onto the analytic one-forms on the open annulus (and onto k((z))dz in the formal case), with kernel k. Res(d(f+aL))=a when Res(dz/z)=1. All annular restrictions are taken inside a common domain of convergence. (besser2017, Definition 3.1, pp. 9–10, besser2017 line 402; formal polynomial logarithms in besser-dejeu2012 §7, pp. 355–356, line 2232).
+Define `Annulus.LogarithmicFunctions` as follows. For a characteristic-zero field k define the formal extension A_log=k((z))[L], dL=dz/z, and its degree-at-most-one subspace A_log,1=k((z))+kL. In the analytic case take the degree-at-most-one subspace O_k(A)+kL inside the supplied AnnulusLogRing on an open annulus over a complete subfield of ℂ_p, with its fixed logarithm realization. This subspace, its coefficient decomposition and the index data are the additions here; the analytic polynomial ring, its derivation, changeParam, primitive existence and constant kernel are imported. The formal derivative maps A_log,1 onto k((z))dz with kernel k, and Res(d(f+aL))=a. The analytic version has the same residue criterion using the supplied primitive theorem. The extension to general complete ultrametric characteristic-zero analytic coefficients is §2.1a. (besser2017, Definition 3.1, pp. 9–10, besser2017 line 402; formal polynomial logarithms in besser-dejeu2012 §7, pp. 355–356, line 2232).
 
-Assume k is a field of characteristic zero; Analytic case: complete nontrivially normed ultrametric k and a genuine open annulus; A common logarithm branch and an orientation with Res(dz/z)=1.
+Assume Formal k is a characteristic-zero field; Analytic imported case: k a complete subfield of ℂ_p, A a genuine open annulus or end germ, branch as in ColemanIntegration L0.20; A common branch for realization and orientation with Res(dz/z)=1; all restrictions share a convergence domain.
 
-Construct `LogarithmicFunctions.mk`: Construct f+aL from an analytic or formal Laurent f and scalar a; add, scale, differentiate and restrict coefficientwise. Prove `LogarithmicFunctions.ext`: Equality in a fixed parameter is equality of the Laurent part and the coefficient a. Prove `LogarithmicFunctions.residue_zero_iff`: F is Laurent without L exactly when Res(dF)=0. Prove `LogarithmicFunctions.changeParameter`: In the analytic case, for an orientation-preserving parameter u transport log u=log z+log(u/z) with the fixed branch and analytic unit logarithm. Formally, for u=az(1+h), h∈zk[[z]], choose a scalar δ for the logarithm of a and transport L_u=L_z+δ+log(1+h) by its formal power series; use the full differential-algebra map. Orientation reversal transports both residue and logarithm.
+Construct `LogarithmicFunctions.mk`: Construct f+aL from an analytic or formal Laurent f and scalar a; add, scale, differentiate and restrict coefficientwise. Prove `LogarithmicFunctions.ext`: Equality in a fixed parameter is equality of the Laurent part and the coefficient a. Prove `LogarithmicFunctions.residue_zero_iff`: F is Laurent without L exactly when Res(dF)=0. Prove `LogarithmicFunctions.changeParameter`: On the analytic subspace restrict the supplied AnnulusLogRing.changeParam, retaining u=az(1+h), |a|=1 and |h|<1. Formally, for u=az(1+h), a≠0 and h∈zk[[z]], choose a scalar δ and transport L_u=L_z+δ+log(1+h) through the full differential-algebra substitution. The broader analytic coefficient/radius-transport statement is §2.1a. Orientation reversal changes both residue and the logarithmic generator.
 
-The proof uses the following argument. Use native Laurent series and polynomial carriers. Integrate Laurent monomials with denominator n+1 away from n=−1, whose primitive is L; in the analytic case polynomial denominator growth preserves convergence on every strictly smaller closed subannulus. The residue criterion proves uniqueness of the decomposition.
+The proof uses the following argument. Use Polynomial (LaurentSeries k) for the formal ring, with dL=z⁻¹. Integrate formal monomials by nonzero integer denominators; residues prove the direct-sum decomposition and constant kernel. On the supplied analytic ring take the degree-one subspace and use exists_logLaurent_primitive and logLaurent_derivative_eq_zero_iff; do not reconstruct analytic integration. The formal and analytic carriers are compared only for convergent meromorphic germs, via §2.0.
 
-*Needs:* `gap:base-annuli`, RigidAnalyticGeometry §6.2, Mathlib `LaurentSeries`, Mathlib `LaurentSeries.derivative`, Mathlib `LaurentSeries.hasseDeriv_coeff`.
+*Needs:* RigidAnalyticGeometry §6.2, Mathlib `LaurentSeries`, Mathlib `LaurentSeries.derivative`, Mathlib `LaurentSeries.hasseDeriv_coeff`, §2.0, ColemanIntegration L0.A1–L0.A2, L0.11–L0.12, L0.20–L0.23.
 
 **Checks.**
 
@@ -183,9 +194,27 @@ The proof uses the following argument. Use native Laurent series and polynomial 
 - dC=0 for every constant C and dL≠0, including over ℚ₂.
 - L² is in A_log but not A_log,1, since d(L²)=2L dz/z is not an analytic differential. Characteristic p would also make d(z^p)=0.
 
+### 2.1a The analytic coefficient extension
+
+Prove `AnnulusLogRing.generalCoefficients` as follows. For every complete nontrivially normed ultrametric characteristic-zero field k and genuine open annulus A, extend the supplied polynomial-logarithm differential algebra to O_k(A)[L], dL=dz/z, using the supplied LaurentOn carrier. Its differential is surjective onto O_k(A)[L]dz and its kernel is k. Its degree-at-most-one part has image Ω¹(A). Restriction, isometric coefficient extension and differential-compatible parameter substitution commute with these operations. For complete subfields of ℂ_p identify this algebra with the supplied AnnulusLogRing, including its changeParam under the supplied unit/small-perturbation hypotheses; do not reconstruct that special case. Pointwise realization is asserted only when a compatible logarithm branch and a faithful analytic evaluation are supplied. (besser2017, Definition 3.1, p. 9, besser2017 line 404; polynomial-log extension of besser-dejeu2012 §7, p. 355, line 2232).
+
+Assume k complete, nontrivially normed, ultrametric and characteristic zero; A is an open annulus with nonempty interval of positive radii; restrictions stay in a common domain; Parameter change u=az(1+h) has a≠0 and |h|<1 on the domain, transports radii, and includes a chosen logarithm δ of a.
+
+Prove `generalCoefficients_primitive`: Every logarithmic polynomial differential has a primitive, unique modulo k. Prove `generalCoefficients_base`: For complete subfields of ℂ_p these maps agree with exists_logLaurent_primitive, logLaurent_derivative_eq_zero_iff and AnnulusLogRing.changeParam.
+
+The proof uses the following argument. Reuse the supplied Laurent coefficient algebra. The ultrametric absolute value restricted to ℚ bounds inverse integers by a fixed power of their real size. An interior-radius margin absorbs this growth. Integrate by parts in L, and prove the kernel coefficientwise by descending degree and the residue obstruction. This is the general-coefficient extension of the supplied analytic theorem; the formal argument stays in §2.1.
+
+*Needs:* §2.1, ColemanIntegration L0.A1, L0.12, L0.20–L0.23.
+
+**Checks.**
+
+- d(L²/2)=L dz/z also over ℚ₂, and d(L³/3)=L² dz/z over ℚ₃.
+- A scalar has zero derivative; L and every nonconstant Laurent monomial do not. Characteristic p would make z^p a counterexample.
+- For u=az with chosen δ, L_u maps to L_z+δ. On a closed annulus boundary, division by integers can lose convergence; openness is required.
+
 ### 2.2 The alternating local index
 
-Define `Annulus.doubleIndex` as follows. For the oriented formal punctured disc or open annulus of §2.1 define B_e(f+aL,g+bL)=Res_e(f dg)+b Res_e(f dz/z)−a Res_e(g dz/z), using a parameter compatible with the orientation. This is the unique alternating k-bilinear pairing with B_e(F,G)=Res_e(F dG) when F has no logarithmic term. In particular B_e(C,G)=C Res_e(dG). This definition owns the index; the underlying residue is supplied by the base. (besser2017, Definition 3.2 and Lemma 3.3, p. 9, besser2017 line 421; besser-dejeu2012 Definition 7.1 and construction, p. 356, line 2243).
+Define `Annulus.doubleIndex` as follows. For the oriented formal punctured disc or open annulus of §2.1 define B_e(f+aL,g+bL)=Res_e(f dg)+b Res_e(f dz/z)−a Res_e(g dz/z), using a parameter compatible with the orientation. This is the unique alternating k-bilinear pairing with B_e(F,G)=Res_e(F dG) when F has no logarithmic term. In particular B_e(C,G)=C Res_e(dG). This definition owns the index; analytic residue is imported and its additional transport/germ laws are §2.0. (besser2017, Definition 3.2 and Lemma 3.3, p. 9, besser2017 line 421; besser-dejeu2012 Definition 7.1 and construction, p. 356, line 2243).
 
 Assume The field, function spaces, orientation and branch hypotheses of §2.1.
 
@@ -193,7 +222,7 @@ Prove `doubleIndex_ext`: An alternating bilinear pairing with the analytic-first
 
 The proof uses the following argument. Expand in the direct sum of the Laurent subspace and kL. Residues of exact Laurent differentials vanish, proving alternation. The residue rule determines all terms except B(L,L), which is zero by alternation.
 
-*Needs:* §2.1.
+*Needs:* §2.1, §2.1a.
 
 **Checks.**
 
@@ -209,9 +238,9 @@ Assume The hypotheses of §2.1; φ finite of positive degree with no poles in it
 
 Prove `doubleIndex_scalarExtension`: The embedded value of B_k(F,G) equals B_L(F_L,G_L). Prove `doubleIndex_shrink`: Analytic continuation to a common end annulus identifies the values.
 
-The proof uses the following argument. Apply the imported residue pullback law to the analytic-first rule; uniqueness in §2.2 supplies all logarithmic terms. Coefficient trace commutes with coefficient extraction. The same argument handles shrinking and scalar extension.
+The proof uses the following argument. Apply the residue pullback law of §2.0 to the analytic-first rule; uniqueness in §2.2 supplies all logarithmic terms. Coefficient trace commutes with coefficient extraction. The same argument handles shrinking and scalar extension.
 
-*Needs:* §2.2, Mathlib `Algebra.trace`.
+*Needs:* §2.2, Mathlib `Algebra.trace`, §2.0.
 
 **Checks.**
 
@@ -225,21 +254,75 @@ The values B(1,log z)=1 and B(z,z⁻¹)=−1 fix the residue order; z↦z² fixe
 
 ### Dependencies
 
-Layer 1 is independent. This layer uses the base analytic/residue contract and RigidAnalyticGeometry §§6.2, 1.3.
+Imported ColemanIntegration L0 analytic/logarithmic theory; additional residue transport and formal/general-coefficient extensions in §§2.0–2.1a; RigidAnalyticGeometry §§1.3, 6.2.
 
 ## Layer 3: Wide-open pairings and semistable graph corrections
 
+### 3.0a Coleman domains of a nodal model
+
+Define `Semistable.colemanCover` as follows. For a split regular nodal model of a smooth proper geometrically connected curve over finite K/ℚ_p, construct the component wide opens, their smooth residue domains, paired end annuli and restriction maps for forms. After separating pole sections and making a compatible finite extension and regular subdivision for self-nodes when necessary, compare each component core and a cofinal system of strict neighborhoods with a Coleman good-reduction wide-open presentation. Transfer the supplied Coleman algebra and integration through these identifications; coordinate changes preserve germs and primitive constants. The overlap differential equations give constant differences of two Coleman primitives on a connecting annulus. This constructs no restriction of a natural primitive. (besser2017, §4, pp. 12–13, besser2017 line 562; besser-zerbes2017 §1, pp. 1–2, lines 49–85).
+
+Assume p any prime; K/ℚ_p finite; model split, regular and nodal; Finite pole support is separated from nodes and connecting annuli; Use cofinal strict neighborhoods and compatible refinements; a self-node is subdivided before choosing Coleman domains; All cover assertions are over the chosen realization field; refinements compare in a common finite extension.
+
+Prove `colemanCover_restrict`: Ordinary and paired-end restrictions commute with d and the supplied Coleman realization on common strict neighborhoods. Prove `colemanCover_refinement`: Subdivisions give compatible Coleman domains; forgetting inserted domains adds the jumps along the chain.
+
+The proof uses the following argument. Use the formal tubes of the smooth affine component cores and their good-reduction lifts, compare their cofinal strict neighborhoods, and glue the nodal charts along annuli. Import Coleman pullback only where its same-reduction and common-Frobenius-power bounds hold. Integration and the constant kernel transfer through those comparisons; §1.3 handles coarsening.
+
+*Needs:* StableReduction Layers 0–1, 4–5, 7, 9, RigidAnalyticGeometry §§2.3, 6.2, 8.1, ColemanIntegration L1.2–L1.3, L1.17–L1.19, L1.43, §2.1a.
+
+**Checks.**
+
+- A smooth special fibre has one core and no connecting ends; its presentation is the supplied good-reduction one.
+- A node xy=π has two opposite end orientations, residues +1 and −1 for dx/x.
+- For a self-node a subdivision gives two genuinely different neighboring domains. The expression F_v−F_v cannot encode a nonzero loop period.
+
+### 3.0b Full analytic Coleman coefficients
+
+Prove `ColemanWideOpen.fullAnalyticExtension` as follows. For a geometrically connected Coleman wide open U with finite end set, extend the supplied good-reduction dagger Coleman algebra to the actual Coleman function and one-form algebra with full analytic coefficients on U over ℂ_p. Construct its derivation, analytic-function inclusion, products, integration of Coleman one-forms modulo constants, and differential-compatible end restrictions. Define A_col,1 as the subspace of actual Coleman functions with analytic differential. Over finite K/ℚ_p construct the K-defined subalgebra and its finite-extension and Galois maps, whose scalar extensions inject into the full ℂ_p algebra. No equality between an algebraic tensor extension and all analytic ℂ_p coefficients is asserted. (besser-dejeu2012, §8, p. 361, besser-dejeu2012 lines 2520–2547; §9, p. 364, line 2766).
+
+Assume U is a Coleman wide open presented on a cofinal strict-neighborhood system; constant field is the geometric coefficient field; For K-valued assertions K/ℚ_p is finite and the branch and data are K-defined; Pullbacks carry compatible Coleman presentations; restrictions preserve a common domain of convergence.
+
+Prove `fullAnalyticExtension_ker`: The differential kernel on the full Coleman algebra is the scalar field, so two global primitives differ by one constant. Prove `fullAnalyticExtension_integrate`: Every actual Coleman one-form has a global Coleman primitive modulo constants; restrictions of a primitive of an analytic form lie in A_log,1. Prove `fullAnalyticExtension_map`: The inclusion from algebraically extended base coefficients is injective and commutes with products, d, primitive classes and end restriction.
+
+The proof uses the following argument. Extend the existing word/connection realization using full analytic strict-neighborhood sections and their de Rham basis, rather than completing a tensor product by fiat. Reprove faithfulness and the constant kernel on this enlarged coefficient ring by meromorphic pole removal and minimal differential relations. Construct primitive classes in the same unipotent realization. For K-defined data compare local realizations with the supplied algebra by uniqueness. This is the additional full-analytic-coefficient theorem; the base finite/algebraic-coefficient construction is imported.
+
+*Needs:* §3.0a, ColemanIntegration L1.2, L1.17, L1.17a, L1.18–L1.19, L1.43.
+
+**Checks.**
+
+- For U an affine-line wide open and α transcendental over K with |α|<1, (1−αz)⁻¹ on a suitable strict neighborhood is full analytic data but not a finite K-coefficient tensor sum.
+- A scalar has zero differential; log z has differential dz/z and is not scalar. A locally constant indicator on two residue discs is not a Coleman function.
+- Global primitives of R dS and S dR can be shifted to sum to RS. Unrelated constants at different ends need not come from a global primitive.
+
+### 3.0c Curve cohomology and the graph maps
+
+Prove `Curve.semistableDeRhamComparison` as follows. For X/K smooth proper geometrically connected with finite reduced boundary Z and a split separated regular nodal realization, using the supplied rigid cohomology, finite-dimensionality, scalar-extension and component dagger comparisons, construct the additional curve algebraic/rigid de Rham comparison with the component-annulus Čech total complex. Its degree-one representatives ((ω_v),(f_e)) satisfy d f_e=ω_tail−ω_head and its coboundaries are ((d a_v),(a_tail−a_head)). Prove the graph exact sequence (4.5), restriction maps, and the graph retraction χ represented by f_e−(F_tail−F_head). Define N_ℓ by the harmonic class of ℓ(e)Res_e(ω_tail) using one fixed rational metric, and identify it with geometric monodromy at that valuation scale. Construct the K-linear q-Frobenius via rigid component cohomology and its weight splitting: χφ=χ, Nφ=qN, χN=N, N²=0. Construct ordered proper cup product and its second-kind local-primitive residue formula. All maps respect coefficient extension and admissible common refinements. For nonsplit Z the scalar-extension maps of complexes are defined before choosing a splitting field. (besser2017, §4, (4.2)–(4.7), pp. 13–14, besser2017 lines 586–658; Lemma 4.8, p. 14, line 671; Proposition 4.12 proof, pp. 15–16, lines 777–782).
+
+Assume K/ℚ_p finite, p any prime; X smooth proper geometrically connected of dimension one; a fixed logarithm branch and valuation normalization; Z finite reduced; for displayed split Frobenius charts its points are rational and lie in distinct smooth sections; A split regular nodal model and compatible Coleman cover from §3.0a; common rational metric and fixed valuation scale; q is a positive power of p, q≥2; the operators are the constructed comparison operators.
+
+Prove `semistableDeRhamComparison_exact`: The injection H¹(Γ,K)→H¹_dR(X−Z) and restriction fit the exact sequence (4.5), with χ a retraction. Prove `semistableDeRhamComparison_cup`: Second-kind representatives α,β have α∪β=Σ_x Res_x((∫α)β), with α first. Prove `semistableDeRhamComparison_operators`: The constructed operators obey χφ=χ, Nφ=qN, χN=N and N²=0; inserted edges and residue currents carry the same valuation normalization.
+
+The proof uses the following argument. Prove the curve algebraic/logarithmic de Rham and rigid comparison and compute its Mayer–Vietoris complex on the constructed cover. The imported rigid finite-dimensionality theorem and component Frobenius weight decomposition give the weight-zero retraction and linear q-Frobenius. Residue defines monodromy; the metric convention transports the unit-length formula through §1.3. Compute ordered cup by local second-kind primitives. Prove extension and model maps on these complexes and their agreement on refinements; no index identity or §4.2 is used.
+
+*Needs:* §1.3, §3.0a, §3.0b, RigidAnalyticGeometry §§1.3, 6.2, 8.1, StableReduction Layers 0–1, 4–5, 9, PadicDifferentialEquationsAndRigidCohomology §§RD.4.31–RD.4.33, RD.5.76, RD.6.1, RD.6.86, RD.6.88, RD.6.92.
+
+**Checks.**
+
+- For a smooth model χ=N=0 but proper H¹ can be nonzero. A graph-only replacement loses positive-genus cohomology.
+- For a global form f_e=0, χ is the class of F_head−F_tail, with the roadmap sign. A total coboundary gives zero class.
+- For φ=diag(1,q), N(e₂)=e₁, Nφ=qN. Replacing φ by the identity violates this relation for N≠0; arbitrary endomorphisms are not comparison operators.
+
 ### 3.1 The end-sum on a wide open
 
-Define `ColemanWideOpen.doublePairing` as follows. For a connected Coleman wide open U, ω,η analytic one-forms on U and their Coleman primitives F,G, define B_U(ω,η)=Σ_{e∈End(U)} B_e(F|e,G|e), orienting each end by a parameter vanishing in its omitted disc. The value is independent of the two global primitive constants, alternating, annihilates d f in either slot for f analytic on U, and therefore factors through H¹_dR(U). It agrees under common shrinking of ends and is zero if U has rational good-reduction compactification. The same construction allows finitely many punctures by replacing them by sufficiently small omitted discs. (besser2017, Definition 3.8, Proposition 3.9 and Remark 3.10, p. 11, besser2017 line 492).
+Define `ColemanWideOpen.doublePairing` as follows. For a connected Coleman wide open U, ω,η analytic one-forms on U and their Coleman primitives F,G, define B_U(ω,η)=Σ_{e∈End(U)} B_e(F|e,G|e), orienting each end by a parameter vanishing in its omitted disc. The value is independent of the two global primitive constants, alternating and agrees under common shrinking of ends. Cohomology factorization, analytic-exact vanishing, rational-core vanishing and logarithmic-unit reciprocity are the subsequent theorems of §3.1a. The same construction allows finitely many punctures by replacing them by sufficiently small omitted discs. (besser2017, Definition 3.8, Proposition 3.9 and Remark 3.10, p. 11, besser2017 line 492).
 
-Assume U is a connected Coleman wide open over a finite extension K/ℚ_p or its complete algebraically closed extension; F,G are global Coleman primitives of analytic differentials, with one branch; For cohomology factorization use the algebraic/rigid de Rham comparison contract; Over K the wide open is geometrically connected with Coleman constant field K; a larger finite constant field is treated over that field and then by trace; The construction is first made after splitting the finite family of ends over the coefficient field; nonsplit ends are traced by §7.5 and descended by §7.6.
+Assume U is a connected Coleman wide open over a finite extension K/ℚ_p or its complete algebraically closed extension; F,G are global Coleman primitives of analytic differentials, with one branch; Use the actual Coleman algebras and end maps of §§3.0a–3.0b; Over K the wide open is geometrically connected with Coleman constant field K; a larger finite constant field is treated over that field and then by trace; The construction is first made after splitting the finite family of ends over the coefficient field; nonsplit ends are traced by §7.5 and descended by §7.6.
 
-Prove `doublePairing_eq_sum`: The function-level notation B_U(F,G) means the pairing of their differentials, evaluated by the end-sum. Prove `doublePairing_constant_independent`: Changing either global primitive constant changes the sum by a constant times Σ_ends Res(ω) or Σ_ends Res(η), hence zero. Prove `doublePairing_restrict`: Restriction to a smaller wide open preserving the core gives the same pairing, including newly excised discs on which both differentials extend analytically.
+Prove `doublePairing_eq_sum`: The function-level notation B_U(F,G) means the pairing of their differentials, evaluated by the end-sum. Prove `doublePairing_constant_independent`: Changing either global primitive constant changes the sum by a constant times Σ_ends Res(ω) or Σ_ends Res(η), hence zero. Prove `doublePairing_restrict`: Restriction to a smaller wide open preserving the core gives the same pairing, including newly excised discs on which both differentials extend analytically. Prove `wideOpen_residue_sum_zero`: For an analytic one-form extending on the specified strict neighborhood, the sum of its oriented end residues is zero. This supplies the global constant cancellation.
 
-The proof uses the following argument. Global residue cancellation kills primitive constants. Coleman double-index reciprocity identifies the end pairing with the cup product of the Frobenius projection onto compact cohomology; it kills analytic exact forms and is zero on rational compactification. The same residue characterization and local disc reciprocity prove shrinking.
+The proof uses the following argument. Prove global residue cancellation on these Coleman wide opens using the proper residue theorem and the annular restriction maps. Then §2.2 kills global primitive constants and proves alternation. Local analytic disc primitives and the residue theorem prove shrinking across newly filled nonsingular discs. The cohomological and reciprocity properties are proved after this definition in §3.1a.
 
-*Needs:* §2.3, `gap:base-coleman`, `gap:base-reciprocity`, `gap:curve-comparison`.
+*Needs:* §2.3, §3.0a, §3.0b.
 
 **Checks.**
 
@@ -247,17 +330,36 @@ The proof uses the following argument. Global residue cancellation kills primiti
 - For ℙ¹ minus discs, B_U=0 even if a local end index B_e(1,log z)=1; cancellation over ends is essential.
 - On a positive-genus good-reduction curve choose second-kind de Rham representatives α,β with α∪β=1 and delete their pole discs; B_U(∫α,∫β)=1. An identically zero definition fails.
 
+### 3.1a Cohomology and wide-open reciprocity
+
+Prove `ColemanWideOpen.doublePairing_reciprocity` as follows. For a geometrically connected Coleman wide open U with good-reduction compactification C, let B_U be §3.1. Construct the Frobenius-equivariant projection p_U:H¹_dR(U)→H¹_dR(C) splitting proper restriction, and prove B_U(ω,η)=p_U[ω]∪p_U[η]. Hence B_U kills analytic exact forms, factors through H¹_dR(U), vanishes for rational C, and satisfies B_U(F,log f)=0 for every invertible analytic f on U. The supplied component Frobenius spectrum, transported to H¹_dR(U), consists of Weil weight-one eigenvalues and boundary eigenvalues qζ with ζ a root of unity (ζ=1 when the boundary is split); in particular 1/q is absent, the q-eigenspace is in the radical of B_U, and B_U(φ α,φ β)=q B_U(α,β). The assertions hold for full ℂ_p coefficients by comparison, and for K-defined data over finite K. (besser2017, Proposition 3.9 and proof, p. 11, besser2017 lines 503–515; besser-dejeu2012 Proposition 8.4 proof, p. 362, lines 2594–2617; besser-zerbes2017 §2, p. 4, line 212).
+
+Assume U and its Coleman presentation as in §§3.0a–3.1; finite end set and analytic differentials; For Frobenius assertions U descends to finite K/ℚ_p, with a compatible degree-q lift and q≥2; The invertible analytic f and its logarithmic primitive share the given Coleman domain and branch.
+
+Prove `doublePairing_analyticExact`: B_U(df,η)=0 for analytic f, and the same holds in the other slot. Prove `doublePairing_logUnit`: B_U(F,log f)=0 for an invertible analytic f. Prove `doublePairing_qRadical`: Every q-eigenclass is in the radical. The supplied weight spectrum has no eigenvalue 1/q, including when nonsplit ends contribute qζ.
+
+The proof uses the following argument. Use the proper/boundary de Rham sequence and disjoint Frobenius weights to construct p_U. Compute the end-sum by second-kind representatives and prove the compact cup comparison using the local double index, then kill analytic exacts by residue reciprocity. A logarithmic unit has only weight-two boundary class, giving its vanishing. Import the component rigid weight theorem and Gysin sequence, with boundary eigenvalues qζ for nonsplit ends. The cup projection gives the radical and scaling assertions; the positive weights exclude 1/q. This proves the index-dependent claims after the index is defined.
+
+*Needs:* §3.1, §3.0c, PadicDifferentialEquationsAndRigidCohomology §§RD.6.86, RD.6.88, RD.6.92.
+
+**Checks.**
+
+- On ℙ¹ minus discs p_U has zero target and B_U=0 although one local index can equal 1.
+- For a proper second-kind cup value 1, B_U=1. Analytic exact df instead gives 0.
+- On G_m, [dlog z] is a q-eigenclass and is radical. At q=2 the forbidden reciprocal is 1/2, not 2.
+- For P¹ minus one degree-two closed point, H¹ has dimension one with Frobenius −q. The assertion that every boundary eigenvalue equals q needs split ends; the positive-weight exclusion of 1/q still holds.
+
 ### 3.2 Normalized component primitives
 
 Define `Semistable.HarmonicPrimitiveData` as follows. For a smooth proper geometrically connected curve X/K with a split regular nodal model and meromorphic ω, remove the poles and choose Coleman primitives F_v on the connected component wide opens. Their differences c_ω(e)=F_head|e−F_tail|e are constants and antisymmetric. Normalize by adding component constants until c_ω is harmonic. At a regular model use unit edge lengths; for subdivisions use the compatible rational metric of §1.3. For a self-node, first take a compatible subdivision giving Coleman component domains; coarsening then adds jumps along its chain, rather than subtracting a primitive from itself. The normalized family exists and is unique up to one common constant, and c_ω is independent of that common constant. The family is a torsor under K, not a distinguished primitive with an invented zero value. (besser-zerbes2017, Equation (1.4) and normalization preceding Theorem 1.1, p. 2, besser-zerbes2017 line 74).
 
-Assume K/ℚ_p finite, p any prime; a fixed branch; X smooth, proper, geometrically connected, dimension one; Chosen split regular nodal realization; pole support separated from the connecting annuli; Component wide opens and their Coleman primitives are those in the base contract.
+Assume K/ℚ_p finite, p any prime; a fixed branch; X smooth, proper, geometrically connected, dimension one; Chosen split regular nodal realization; pole support separated from the connecting annuli; Component wide opens and their Coleman primitives are those in §§3.0a–3.0b.
 
-Construct `HarmonicPrimitiveData.mk`: Normalize any family by projecting its jump cochain and solving for a component potential; no basepoint is selected. Prove `HarmonicPrimitiveData.ext_mod_constant`: Two normalized families for the same ω differ by the same scalar on every component. Prove `HarmonicPrimitiveData.linear`: Sums and scalar multiples of normalized families normalize the corresponding forms. Prove `HarmonicPrimitiveData.jump_change`: Replacing F_v by F_v+a_v replaces c by c−d a, with d from §1.1. Prove `HarmonicPrimitiveData.jump_class`: The class of c is the χ([ω]) class of the Čech–de Rham comparison contract, with the signs fixed in the conventions.
+Construct `HarmonicPrimitiveData.mk`: Normalize any family by projecting its jump cochain and solving for a component potential; no basepoint is selected. Prove `HarmonicPrimitiveData.ext_mod_constant`: Two normalized families for the same ω differ by the same scalar on every component. Prove `HarmonicPrimitiveData.linear`: Sums and scalar multiples of normalized families normalize the corresponding forms. Prove `HarmonicPrimitiveData.jump_change`: Replacing F_v by F_v+a_v replaces c by c−d a, with d from §1.1. Prove `HarmonicPrimitiveData.jump_class`: The class of c is the χ([ω]) class of §3.0c, with the signs fixed in the conventions.
 
 The proof uses the following argument. Kernel-of-d equals constants on each connected annulus by Coleman uniqueness. Apply §1.2 to c=h+d a and add a_v to the primitives, producing c−d a=h. Connectedness of the dual graph gives uniqueness modulo one scalar.
 
-*Needs:* §1.2, §2.1, `gap:base-coleman`, StableReduction Layers 0–1, RigidAnalyticGeometry §§2.3, 6.2, `gap:curve-comparison`.
+*Needs:* §1.2, §2.1, §3.0b, StableReduction Layers 0–1, RigidAnalyticGeometry §§2.3, 6.2, §3.0c.
 
 **Checks.**
 
@@ -285,15 +387,15 @@ The proof uses the following argument. Expand every component end-sum, separatin
 
 ### 3.4 The cohomological pairing with graph terms
 
-Define `Semistable.correctedDoublePairing` as follows. For X,Z and a split separated semistable realization define on H¹_dR(X−Z/K) the alternating pairing B_h(α,β)=Σ_v B_{U_v−Z}(res_v α,res_v β)+(χ α,N_ℓ β)_ℓ−(χ β,N_ℓ α)_ℓ. Here χ is the graph retraction of the comparison contract, graph representatives of χ are harmonic, and N_ℓ is represented by ℓ(e)Res_e of the differential in a Čech representative. For global meromorphic forms this equals §3.3 with harmonic component jumps. It annihilates algebraic exact forms, restricts to α∪β in that order on proper H¹_dR(X), and is unchanged by refinements between admissible nodal realizations, using the metric when edge lengths change; modifications outside that class are compared after finite extension and regularization. If Z is empty use Čech hypercohomology, rather than pretending all proper classes have global regular representatives. (besser2017, Definition 4.11 and Proposition 4.12(1)–(3), pp. 15–16, besser2017 line 738; metric formulation is the subdivision consequence).
+Define `Semistable.correctedDoublePairing` as follows. For X,Z and a split separated semistable realization define on H¹_dR(X−Z/K) the alternating pairing B_h(α,β)=Σ_v B_{U_v−Z}(res_v α,res_v β)+(χ α,N_ℓ β)_ℓ−(χ β,N_ℓ α)_ℓ. Here χ is the graph retraction constructed in §3.0c, graph representatives of χ are harmonic, and N_ℓ is represented by ℓ(e)Res_e of the differential in a Čech representative. For global meromorphic forms this equals §3.3 with harmonic component jumps. It annihilates algebraic exact forms, restricts to α∪β in that order on proper H¹_dR(X), and is unchanged by refinements between admissible nodal realizations, using the metric when edge lengths change; modifications outside that class are compared after finite extension and regularization. If Z is empty use Čech hypercohomology, rather than pretending all proper classes have global regular representatives. (besser2017, Definition 4.11 and Proposition 4.12(1)–(3), pp. 15–16, besser2017 line 738; metric formulation is the subdivision consequence).
 
-Assume X/K smooth proper geometrically connected curve, K/ℚ_p finite with fixed branch; Z finite reduced and split in this realization; points separated in the model; The full Čech, cup, χ and monodromy comparison contract is supplied; Lengths have one fixed valuation normalization; Every model at which the displayed formula is evaluated is an admissible split nodal realization; a modification outside that class is compared after finite extension and regularization.
+Assume X/K smooth proper geometrically connected curve, K/ℚ_p finite with fixed branch; Z finite reduced and split in this realization; points separated in the model; Use the Čech, cup, χ and monodromy maps constructed in §3.0c; Lengths have one fixed valuation normalization; Every model at which the displayed formula is evaluated is an admissible split nodal realization; a modification outside that class is compared after finite extension and regularization.
 
 Prove `correctedDoublePairing_eq_aux`: For harmonic F_v,G_v, B_h([ω],[η])=Σ_{x∈Z} B_x(F_v,G_v). Prove `correctedDoublePairing_cup`: For proper classes α,β, B_h(j*α,j*β)=α∪β. Prove `correctedDoublePairing_refinement`: Transport through the canonical cohomology maps of refinements preserves the pairing; rational tails contribute zero. Prove `correctedDoublePairing_ext`: Equal de Rham classes give equal values in either argument; changing Čech representatives by a total coboundary does not change B_h.
 
-The proof uses the following argument. The comparison contract makes res,χ,N_ℓ maps on hypercohomology, so the expression is defined on classes. §1.2 makes the graph products independent of exact representatives. §3.3 identifies forms; the local second-kind residue formula in the cup contract proves the proper restriction. Subdivision and rational-tail invariance follow from §§1.3 and 3.1; the model comparison transports this to common refinements.
+The proof uses the following argument. §3.0c makes res,χ,N_ℓ maps on hypercohomology, so the expression is defined on classes. §1.2 makes the graph products independent of exact representatives. §3.3 identifies forms; the local second-kind residue formula in §3.0c proves the proper restriction. Subdivision and rational-tail invariance follow from §§1.3 and 3.1; the model comparison transports this to common refinements.
 
-*Needs:* §1.3, §3.3, `gap:curve-comparison`.
+*Needs:* §1.3, §3.3, §3.0c, §3.1a.
 
 **Checks.**
 
@@ -303,15 +405,15 @@ The proof uses the following argument. The comparison contract makes res,χ,N_�
 
 ### 3.5 Frobenius and monodromy compatibility
 
-Prove `Semistable.correctedDoublePairing_phi_N` as follows. For the linear q-Frobenius φ and geometric monodromy N in the curve-comparison contract, B_h(φ α,φ β)=q B_h(α,β) and B_h(Nα,β)+B_h(α,Nβ)=0. The geometric N here is distinct from differentiation in the universal logarithm variable. When using metric cochains, the comparison maps must identify that geometric N with N_ℓ using the same valuation scale. (besser2017, Proposition 4.12(4) and proof, pp. 15–16, besser2017 line 754).
+Prove `Semistable.correctedDoublePairing_phi_N` as follows. For the linear q-Frobenius φ and geometric monodromy N in §3.0c, B_h(φ α,φ β)=q B_h(α,β) and B_h(Nα,β)+B_h(α,Nβ)=0. The geometric N here is distinct from differentiation in the universal logarithm variable. When using metric cochains, the comparison maps must identify that geometric N with N_ℓ using the same valuation scale. (besser2017, Proposition 4.12(4) and proof, pp. 15–16, besser2017 line 754).
 
-Assume Hypotheses of §3.4; q is a positive power of the residue prime with q≥2; Operators are the supplied comparison operators, not arbitrary endomorphisms; χφ=χ, Nφ=qN, χN=N, N²=0; wide-open pairing has Frobenius weight 2.
+Assume Hypotheses of §3.4; q is a positive power of the residue prime with q≥2; Operators are the comparison operators of §3.0c, not arbitrary endomorphisms; χφ=χ, Nφ=qN, χN=N, N²=0; the wide-open scaling theorem is §3.1a.
 
 Prove `correctedDoublePairing_phi_iterate`: Replacing φ by its a-th positive iterate multiplies the pairing by q^a.
 
 The proof uses the following argument. Apply wide-open Frobenius scaling and χφ=χ, Nφ=qN to §3.4. For monodromy the component restrictions of N vanish, χN=N and N²=0; the two remaining symmetric graph products cancel. No reference to the later harmonic identification is needed.
 
-*Needs:* §3.4, `gap:curve-comparison`.
+*Needs:* §3.4, §3.0c.
 
 **Checks.**
 
@@ -325,9 +427,99 @@ A rational wide open has zero double pairing. A positive-genus wide open can hav
 
 ### Dependencies
 
-Layers 1–2; the base Coleman-function and residue contracts; the unbound curve-comparison contract for de Rham assertions. The harmonic identification with arbitrary-reduction integration is not a premise.
+Layers 1–2; ColemanIntegration L1 good-reduction theory; the component/full-coefficient/cohomology constructions in §§3.0a–3.0c and index reciprocity in §3.1a.
 
 ## Layer 4: Harmonic realization of arbitrary-reduction single integration
+
+### 4.0a Natural primitives on abelian varieties
+
+Prove `NaturalIntegration.abelianPrimitive` as follows. For an abelian variety A over a finite p-adic field or ℂ_p and every closed rational one-form ω, construct a locally log-meromorphic primitive F_ω modulo one affine scalar constant. Let Δ_h F(x)=F(x+h)−F(x). The algebraic theorem of the square makes Δ_hΔ_kω exact in rational functions and logarithms; normalize its primitive to vanish when h=k=0. Require Δ_hΔ_k F_ω to be that primitive. Prove existence, uniqueness, linearity, compatibility with homomorphisms and evaluation of rational exact and logarithmic forms. Prove the finite-difference splitting theorem for symmetric locally log-meromorphic additive cocycles needed for this construction. On invariant holomorphic forms use the supplied abelian logarithm, rather than constructing another logarithm. (colmez1998, Theorem II.1.16 and Proposition II.1.17, pp. 78–79, colmez1998 lines 3169–3214; logarithm uniqueness Lemma II.1.13, p. 78, line 3147).
+
+Assume p any prime; K/ℚ_p finite, or coefficients in ℂ_p with the same universal logarithm; A is an abelian variety; ω closed rational; all evaluations avoid its poles; Universal values lie in K+K T (respectively ℂ_p+ℂ_p T), with log_univ(p)=T.
+
+Prove `abelianPrimitive_differenceSplitting`: For n≥1, on A a symmetric additive n-cocycle of locally log-meromorphic functions has a finite-difference primitive modulo polynomials of degree <n in abelian logarithms, with the same allowed singularities (Theorem II.1.16). Prove `abelianPrimitive_square`: For each closed rational ω construct the normalized rational-logarithmic primitive of its second difference and the uniquely rigidified F_ω modulo constants (Proposition II.1.17). Prove `abelianPrimitive_invariant`: For invariant holomorphic ω, F_ω(b)−F_ω(a)=ω(abelianLog(b−a)) and its universal T coefficient is zero.
+
+The proof uses the following argument. Establish the algebraic square identity for closed rational forms and its normalized rational-logarithmic primitive. Prove the symmetric cocycle splitting theorem by convergent local analytic differences and division in the coefficient field, then use it at n=2. Subtract the invariant differential error with the imported abelian logarithm. Uniqueness gives linearity, exact evaluation and algebraic pullback, without any semistable-graph input.
+
+*Needs:* AnabelianGeometryAndNonabelianChabauty §5.8 abelianLog, JacobianChallenge Layer E, ColemanIntegration L0.15–L0.19.
+
+**Checks.**
+
+- For dimension-zero A every form and every normalized integral is zero.
+- An invariant form has second difference zero and its based primitive is the abelian logarithm pairing. An unrelated locally constant function with zero derivative need not obey the finite-difference condition.
+- For a rational function f, F_df=f modulo constants; the zero form has only scalar constant ambiguity, not arbitrary residue-disc constants.
+
+### 4.0b Reduction of closed rational forms to the Albanese
+
+Prove `NaturalIntegration.albaneseReduction` as follows. For a smooth geometrically connected variety X in characteristic zero with a chosen rational point, construct its proper Albanese on the native IsAlbanese predicate via a smooth projective compactification of a dense quasi-projective open and extension of rational maps to abelian varieties, and the induced isomorphism from the Albanese to X on closed rational one-forms modulo the span of df and dlog f. Thus write ω=a_X*η+df₀+Σ_i c_i dlog f_i, with η closed rational on Alb(X). Prove functoriality of this reduction and moving of apparent poles away from any finite set of regular evaluation points. Pullback of the primitive in §4.0a plus f₀+Σ_i c_i log_univ(f_i) extends over every apparent pole where ω is regular, independently of the decomposition modulo one scalar constant. This comparison is about rational forms and a proper Albanese, not a generalized-Jacobian reconstruction. (colmez1998, Lemma II.1.26 and Lemma II.1.27, pp. 83–85, colmez1998 lines 3370–3431; proper Albanese §I.5, pp. 45–49, lines 1938–2100).
+
+Assume Characteristic-zero field for the algebraic construction; finite p-adic field or ℂ_p for the primitive assertion; X smooth geometrically connected finite type with a rational point a, and ω closed rational; Evaluation points are outside the poles of ω; the decomposition may initially have additional poles.
+
+Prove `albaneseReduction_rationalForms`: Pullback is an isomorphism on closed rational forms modulo rational exact and logarithmic forms. Prove `albaneseReduction_removeApparentPoles`: At a regular point choose a decomposition with no apparent pole; the resulting based primitive extends and is independent of that choice. Prove `albaneseReduction_functorial`: An algebraic morphism induces the Albanese comparison and respects the rational-form quotient and based pullback.
+
+The proof uses the following argument. Import the smooth projective compactification of a dense quasi-projective open from ResolutionOfSingularitiesCharacteristicZero §6.2. Construct its proper Albanese on the native universal-property predicate, prove extension of rational maps from smooth varieties to abelian varieties, prove the rational residue/Picard exact sequence and compare it with that of the Albanese. This proves the quotient isomorphism. The rational-logarithmic constant-kernel argument and §4.0a give decomposition independence. Moving divisors removes apparent poles near each regular point. Curve Albanese is identified with the supplied pointed Jacobian; this does not re-plan JacobianChallenge.
+
+*Needs:* §4.0a, JacobianChallenge Layers D–F, ResolutionOfSingularitiesCharacteristicZero §6.2 sncCompactification, Tau Ceti `TauCeti.AlgebraicGeometry.AbelianVariety.IsAlbanese`.
+
+**Checks.**
+
+- For A¹ with ω=dt use f₀=t and no Albanese contribution; its proper Albanese is zero.
+- For G_m with ω=dt/t use f₁=t; a proper-Albanese-only differential would miss its logarithmic term.
+- For a proper curve use its pointed Jacobian as Albanese; for a point every term is zero. A decomposition with cancelling apparent poles must still give a regular primitive where ω is regular.
+
+### 4.0c The all-prime natural single integral
+
+Prove `SingleIntegral.naturalIntegration` as follows. For every prime p, every finite K/ℚ_p, every smooth geometrically connected finite-type variety U/K, closed regular one-form ω and a,b∈U(K), construct the unique natural single-integration theory with universal value A+B T in K[T]. It is K-linear in ω, locally analytic in endpoints, differentiates to ω in the second endpoint, vanishes at a=b and satisfies Chasles. It commutes with algebraic pullback, integrates df and dlog f by endpoint differences and the universal logarithm, agrees with the supplied Coleman single integral under good reduction, and respects finite scalar extension and Galois conjugation with T fixed. Apply this to complements of poles of any meromorphic curve form. No graph, genus or reduction condition enters existence or uniqueness. Uniqueness concerns the whole natural theory across varieties. Vologodsky2001 Proposition 52, §17.2, p. 42, line 1806 identifies this with that preprint’s single integral under its p>2 standing convention (line 51); the all-prime theorem uses Colmez. (colmez1998, Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74, colmez1998 lines 2982–2997; proof pp. 83–85, lines 3395–3431; Remark 2, pp. 2–3, lines 229–258).
+
+Assume p any prime, including 2 and 3; K/ℚ_p finite; U smooth geometrically connected finite type; ω regular and closed; endpoints K-rational and off all excluded poles; For extended endpoints and forms use the specified finite scalar extension; the branch λ lies in K.
+
+Prove `singleIntegral_universalAffine`: The natural integral belongs to the affine subspace K+K T; evaluate T=λ for the chosen branch. Prove `singleIntegral_baseChange`: For finite L/K the pullback form and embedded endpoints have the coefficientwise embedded universal integral; the maps compose in towers. Prove `singleIntegral_goodReduction`: For a good-reduction Coleman presentation and a fixed branch, natural and supplied Coleman integration agree. Prove `singleIntegral_exact_log`: For df the integral is f(b)−f(a); for dlog f it is log_univ(f(b)/f(a)), on their domains.
+
+The proof uses the following argument. Apply §4.0b and the rigidified abelian primitives of §4.0a, subtract the endpoint values, and use moving to remove artificial poles. Decomposition independence gives linearity and naturality; endpoint differences give Chasles. The construction is affine in the universal logarithm. Compare the same auxiliary varieties and primitives in good reduction with the supplied Coleman theory. Construct coefficient maps and use natural-theory uniqueness for finite-extension and Galois compatibility; this is not uniqueness from derivatives alone.
+
+*Needs:* §4.0a, §4.0b, ColemanIntegration L1.19, L1.43.
+
+**Checks.**
+
+- On A¹ with df=dt, I(0,1)=1 and the universal T coefficient is zero; I(a,a)=0.
+- On G_m with dlog t, I(1,p)=T, so a branch-independent replacement fails, including at p=2.
+- Two residue-disc-wise primitives of the zero form can differ by a nonconstant locally constant function; the derivative alone does not characterize the natural theory.
+
+### 4.0d Natural principal-divisor reciprocity
+
+Prove `Curve.naturalIndexReciprocity` as follows. For X/K smooth proper geometrically connected, a meromorphic ω, its natural primitive F from §4.0c and f∈K(X)× with divisor disjoint from the poles of ω, prove Σ_x B_x(F,log f)=0, summing over the singularities of the two primitives after splitting. Local germs are taken in smooth point parameters, not on entire component wide opens. Consequently the natural integral on (f) equals Σ_{x at a pole of ω} Res_x(log f·ω), with log f analytic near those poles. The result uses no harmonic realization theorem. (besser-zerbes2017, §2 proof, p. 4, besser-zerbes2017 lines 151–167; natural reciprocity identity used there; natural integration from colmez1998 Theorem II.1.4).
+
+Assume p any prime; finite K/ℚ_p; X smooth proper geometrically connected; ω meromorphic; f nonzero rational and div(f) disjoint from poles of ω; First take a finite extension splitting the finite supports; local logarithm branches and F are compatible.
+
+Prove `naturalIndexReciprocity_principal`: The principal-divisor natural integral equals the residue expression, with F in the first local-index slot. Prove `naturalIndexReciprocity_constants`: Changing F by a global scalar changes the total by that scalar times the degree of div(f), hence zero.
+
+The proof uses the following argument. Prove the natural integration reciprocity law using the abelian rigidification and algebraic residue reciprocity, then specialize one primitive to log f. At zeros and poles of f the local index contributes ord_x(f)F(x); at poles of ω alternation gives −Res_x(log f·ω). This proof follows the natural principal-divisor reciprocity in the cited argument and precedes any identification with harmonic component primitives.
+
+*Needs:* §2.2, §2.0, §4.0c.
+
+**Checks.**
+
+- For f a nonzero constant both the divisor term and the reciprocity sum vanish.
+- On P¹ with ω=dt and f=(t−a)/(t−b), the divisor integral is a−b; at infinity Res(log f·dt)=a−b and its local index contribution is b−a.
+- For f=0 log f is undefined. If a pole of ω meets div(f), the displayed separated-support formula is not asserted.
+
+### 4.0e Jacobian differentials and point topology
+
+Prove `Curve.jacobianIntegrationBridge` as follows. For X/K smooth proper geometrically connected with a chosen b∈X(K), identify holomorphic curve forms with pullbacks of invariant differentials on J=Jac(X) and prove I_univ(a,c;ω)=ω_J(abelianLog([c−a])). Prove J(K) is compact. The subgroup H generated by differences of K-rational points is open and compact: the differential of an Abel–Jacobi sum X^g→J is surjective at a suitable tuple of K-points. An additive locally constant map H→K is therefore zero. Prove moving of divisors away from a fixed finite pole set for the divisor-class argument. When X has no K-point, apply these assertions after a finite extension containing a temporary point; do not manufacture an unpointed Abel–Jacobi morphism. (colmez1998, Lemma II.1.13 and Remark II.1.18, pp. 78–79, colmez1998 lines 3147–3159 and 3213–3214; besser-zerbes2017 §2, pp. 3–4, lines 142–150).
+
+Assume K/ℚ_p finite, p any prime; X smooth proper geometrically connected; A temporary K-rational base point for the pointed assertions; holomorphic ω for the logarithm identity; The vanishing assertion requires an additive locally constant map on the compact subgroup H, not on an arbitrary noncompact group.
+
+Prove `jacobianIntegrationBridge_natural`: Natural integration of holomorphic forms is evaluation of the supplied abelian logarithm on the degree-zero Abel–Jacobi class. Prove `jacobianIntegrationBridge_compact`: J(K) and its open subgroup H are compact, and additive locally constant H→K maps vanish. Prove `jacobianIntegrationBridge_moving`: Divisor representatives can be moved away from the pole set; local sections of Abel–Jacobi sums make a divisor functional with zero derivative locally constant on H.
+
+The proof uses the following argument. Use the supplied Abel–Jacobi differential identification and §4.0c naturality, comparing invariant forms with §4.0a and the supplied abelian logarithm. Properness over a locally compact field gives compact rational points. Nonzero holomorphic forms cannot vanish at every point of a residue disc, so choose g evaluation points giving an invertible differential matrix; the analytic inverse theorem makes H open. A locally constant homomorphism from compact H has finite image, which is zero in characteristic zero. Moving and these local sections supply the divisor-topology bridge used in §4.2.
+
+*Needs:* §4.0c, JacobianChallenge Layers D–F, AnabelianGeometryAndNonabelianChabauty §5.8 abelianLog.add, abelianLog.derivative, abelianLog.unique, abelianLog.baseChange.
+
+**Checks.**
+
+- For P¹, J and H are trivial and every holomorphic integral is zero.
+- For an elliptic curve with split multiplicative reduction, J(K) remains compact; good reduction is unnecessary.
+- The valuation K×→K is locally constant and additive but nonzero. Its source is noncompact, so it cannot justify vanishing on general groups.
 
 ### 4.1 Rational logarithms and graph residues
 
@@ -339,7 +531,7 @@ Prove `dlog_residue_orthogonal_harmonic`: For harmonic c, Σ_e c(e)Res_e(dlog f)
 
 The proof uses the following argument. The local node computation determines the order sign; factor f by its two vertical powers. The remaining unit has zero annular logarithmic residue by the no-zero/no-pole hypothesis and the annular residue theorem. Global f and log f have matching restrictions, proving zero jumps.
 
-*Needs:* §1.1, §3.2, `gap:base-annuli`, `gap:base-single`.
+*Needs:* §1.1, §3.2, §2.0, ColemanIntegration L0.11–L0.12, §4.0c.
 
 **Checks.**
 
@@ -349,21 +541,22 @@ The proof uses the following argument. The local node computation determines the
 
 ### 4.2 Identification on smooth residue domains
 
-Prove `Semistable.harmonicPrimitive_eq_singleIntegral` as follows. Let F be a primitive from the imported natural single-integration theory for a meromorphic ω on a smooth proper geometrically connected X/K. In the split regular semistable realization of §3.2, its values away from poles on residue domains of smooth special-fibre points agree, modulo one common constant, with the normalized component Coleman primitives. This comparison holds for every prime and every genus. Loops and parallel edges are retained through their flags or a compatible subdivision. (besser-zerbes2017, Theorem 1.1, p. 2, besser-zerbes2017 line 88; §2, pp. 3–5, line 130; all-prime integration supplied by colmez1998 Theorem II.1.4).
+Prove `Semistable.harmonicPrimitive_eq_singleIntegral` as follows. Let F be a primitive from the natural single-integration theory of §4.0c for a meromorphic ω on a smooth proper geometrically connected X/K. In the split regular semistable realization of §3.2, its values away from poles on residue domains of smooth special-fibre points agree, modulo one common constant, with the normalized component Coleman primitives. This comparison holds for every prime and every genus. Loops and parallel edges are retained through their flags or a compatible subdivision. (besser-zerbes2017, Theorem 1.1, p. 2, besser-zerbes2017 line 88; §2, pp. 3–5, line 130; all-prime integration supplied by colmez1998 Theorem II.1.4).
 
 Assume K/ℚ_p finite, p any prime, with a fixed branch; ω meromorphic; every evaluated point lies outside its poles; A split regular semistable realization with separated supports is chosen for the comparison.
 
 Prove `harmonicPrimitive_divisor_eq`: For a split degree-zero divisor D disjoint from the poles, Σ n_P F(P)=Σ n_P F_v(P), with P in its smooth residue domain. Prove `harmonicPrimitive_goodReduction`: For a smooth proper model this is the base Coleman single-integral comparison.
 
-The proof uses the following argument. The base theorem gives Coleman restrictions on components and the natural principal-divisor reciprocity. For principal D=(f), compare the point double-index reciprocity for F and log f with §3.3 for the harmonic family. Component Coleman reciprocity kills the component pairings, and §4.1 with harmonic-exact orthogonality kills the correction. The difference of the two divisor evaluations therefore factors through Jac(X)(K), is additive and locally constant, and vanishes because a homomorphism from this compact group into the torsion-free additive field with open kernel has finite, hence zero, image. The Jacobian/compactness bridge is an explicit base-contract gap.
+The proof uses the following argument. For principal D=(f), compare the natural reciprocity of §4.0d with §3.3 for the harmonic family; no Coleman restriction of the natural primitive is assumed. §3.1a kills the component pairings, and §4.1 with harmonic-exact orthogonality kills the correction. Thus the difference of the two split divisor evaluations factors through the subgroup H generated by K-rational point differences in the Jacobian. Its derivative is zero on smooth residue domains. The moving and local-section theorem of §4.0e makes it locally constant on H; compactness of H gives finite image, hence zero in the torsion-free additive field. This proves smooth-residue comparison. Annular values are proved separately in §4.3.
 
-*Needs:* §3.4, §4.1, `gap:base-single`, `gap:base-reciprocity`, JacobianChallenge Layers D–F, `gap:base-jacobian`.
+*Needs:* §3.4, §4.1, §4.0c, §3.1, §3.1a, JacobianChallenge Layers D–F, §4.0e, AnabelianGeometryAndNonabelianChabauty §5.8, §4.0d.
 
 **Checks.**
 
 - On a tree every harmonic jump is zero; with a single component the comparison is equality of Coleman primitives modulo one constant.
 - On a cycle the harmonic cochain may be nonzero, so analytic equality of primitives on connecting overlaps is not a conclusion.
-- For df and dlog f the identification follows from their global primitives. This includes p=2 through the Colmez single-integration contract, without invoking all-prime iterated transport.
+- For df and dlog f the identification follows from their global primitives. This includes p=2 through §4.0c, without invoking all-prime iterated transport.
+- For q=p³ and log(p)=1 on the Tate curve, F(z)=log(z)−ν_p(z). On 0<ν_p(z)<1 its differences from the same Coleman primitive log(z) at valuations 1/3 and 2/3 are −1/3 and −2/3. Whole-component-wide-open comparison by one constant is false.
 
 ### 4.3 The valuation term and its sign
 
@@ -375,13 +568,14 @@ Prove `singleIntegral_annulus_reverse`: F_tail+c t=F_head−c(1−t). Prove `sin
 
 The proof uses the following argument. Choose a finite ramified extension in which the point reduces to a newly inserted component. Theorem §4.2 and harmonicity at its degree-two vertices force the constants given by §1.3. The new component lies at rational position t, giving the formula. Finite-extension compatibility identifies it with the original single integral.
 
-*Needs:* §1.3, §4.2, `gap:base-single`.
+*Needs:* §1.3, §4.2, §4.0c.
 
 **Checks.**
 
 - With F_tail=2,c=6,t=1/3, the value is 4; the reverse expression is 8−6·(2/3)=4.
 - If c=0 the formula is the Coleman function; t=0 and t=1 give the two boundary values by continuation to the adjacent smooth residue domains.
 - For c=6, a quadratic ramified refinement has two jumps 3,3. Assigning 6 to each new edge gives total 12 and violates the formula.
+- For q=p³, log(p)=1 and valuations 1/3,2/3 in the first connecting annulus, the valuation corrections are −1/3,−2/3. A constant correction on that annulus is wrong.
 
 ### 4.4 The Vologodsky point-sum
 
@@ -407,7 +601,7 @@ Exact and logarithmic differentials have zero jumps; a Tate curve has a nonzero 
 
 ### Dependencies
 
-Layers 1–3; the full imported single-integration theorem and the base reciprocity/Abel–Jacobi contract. There is no use of a height or regulator theorem.
+Layers 1–3; the natural integration construction and reciprocity of §§4.0a–4.0d; JacobianChallenge Layers D–F and the abelian logarithm of AnabelianGeometryAndNonabelianChabauty §5.8 via §4.0e. No height or regulator theorem is used.
 
 ## Layer 5: Auxiliary primitives and the local triple index
 
@@ -419,9 +613,9 @@ Assume Characteristic-zero field k and the formal ring of §2.1; or its analytic
 
 Construct `TripleIndexData.mk`: Choose a primitive for one direction of each unordered pair and set the reverse to RS−I; use R²/2 on the diagonal. Prove `TripleIndexData.ext`: Equality is equality of the three functions and their labelled primitive entries. Prove `TripleIndexData.changeConstant`: The indicated opposite shifts preserve all derivative and integration-by-parts equations; any two choices are related by unique pair constants. Prove `TripleIndexData.pullback`: Differential-compatible annular or formal substitutions pull back every entry, preserving products and pair equations. Prove `TripleIndexData.linearCombination`: Mixed-pair auxiliary primitives for a linear combination are the same linear combination of the original mixed entries; reverse entries satisfy integration by parts, and a new diagonal entry is recomputed as R²/2.
 
-The proof uses the following argument. Integration by parts recursively integrates z^n L^j dz in k((z))[L]; n=−1 raises log degree and divides by j+1, while n≠−1 lowers log degree after division by n+1. Characteristic zero makes all these denominators nonzero. Kernel-of-d is k, giving the torsor and functoriality laws.
+The proof uses the following argument. On the imported analytic AnnulusLogRing use exists_logLaurent_primitive and logLaurent_derivative_eq_zero_iff; on the general-coefficient extension use §2.1a. Only the formal case uses the integration-by-parts induction in k((z))[L], dividing by n+1 or j+1 as appropriate. Choose one entry per unordered labelled pair and define the reverse as RS−I; set the diagonal to R²/2. The constant kernel gives the torsor law. These are new compatible choice data, not another construction of the analytic primitive theorem.
 
-*Needs:* §2.1.
+*Needs:* §2.1, §2.1a, ColemanIntegration L0.22 exists_logLaurent_primitive, logLaurent_derivative_eq_zero_iff.
 
 **Checks.**
 
@@ -511,6 +705,24 @@ Layer 2, characteristic-zero polynomial-logarithm calculus and the base annular 
 
 ## Layer 6: Wide-open triple sums and Coleman one-form pairings
 
+### 6.0 Relations among actual Coleman forms
+
+Prove `ColemanWideOpen.formSymbolRelations` as follows. Let A_col,1(U) be the actual Coleman functions with analytic differential in §3.0b, and let Ω¹_col,1(U) be the submodule of actual Coleman forms generated by Gη with G∈A_col,1(U), η analytic. Construct the well-defined symbol map Ω¹_col,1(U)→H¹_dR(U)⊗Ω¹(U), Gη↦[dG]⊗η. For the product presentation m:A_col,1(U)⊗Ω¹(U)→Ω¹_col,1(U), prove ker(m) is contained in the image of A(U)⊗Ω¹(U). Thus equal actual forms have equal symbols. This is a theorem about the actual connection/word realization, not a defining relation imposed on a free module. (besser-dejeu2012, Lemma 9.1 and Proposition 9.2 proof, p. 364, besser-dejeu2012 lines 2769–2789).
+
+Assume U geometrically connected Coleman wide open with finite ends; coefficients ℂ_p or K-defined data as in §3.0b; All tensors are over the coefficient field; η is analytic; The function/form products and equalities are those of the constructed full Coleman algebra.
+
+Prove `formSymbolRelations_kernel`: Every tensor relation among actual products lies in the analytic-function tensors. Prove `formSymbolRelations_restrict`: The symbol map respects admissible restriction and finite scalar extension.
+
+The proof uses the following argument. Use the analytic-differential/depth-one part of the full Coleman connection realization. Differentiate a relation Σ_i G_iη_i=0 in its coefficient word expansion; independence of the degree-one de Rham letters gives Σ_i[dG_i]⊗η_i=0. Since G↦[dG] has kernel A(U), exactness of tensoring over a field gives the kernel containment. This supplies the additional relation theorem before the index pairing descends in §6.4.
+
+*Needs:* §3.0b, §3.1a.
+
+**Checks.**
+
+- For analytic g, [dg]=0, so gη has symbol zero.
+- If [dG]⊗η≠0, then Gη cannot be the zero actual form. A freely declared zero product would contradict the connection realization.
+- The actual zero form G dC has symbol zero for scalar C. Linearity in a free symbol presentation alone does not prove the kernel containment.
+
 ### 6.1 The global end-sum
 
 Define `ColemanWideOpen.tripleIndex` as follows. For a connected Coleman wide open U and global Coleman functions F,G,H with analytic differentials, choose all I_{R dS} as global Coleman primitives with I_{R dS}+I_{S dR}=RS, and define T_U(F,G;H)=Σ_{e∈End(U)}T_e(F,G;H). Restrictions of these global choices, rather than unrelated local choices at each end, are part of the construction. Over a finite extension K/ℚ_p use functions and auxiliary data defined over K or scalar extension with descent as in §7.6; over ℂ_p take the same end-sum. (besser-dejeu2012, §8 global construction and Lemma 8.2, p. 361, besser-dejeu2012 line 2533).
@@ -521,7 +733,7 @@ Prove `tripleIndex_eq_endSum`: The global value is the finite end-sum of local i
 
 The proof uses the following argument. Use the global Coleman algebra and integration of its one-forms to construct the pair primitives, then restrict to ends and apply §5.2. Finite end sets make the sum algebraic. Auxiliary-choice independence is proved in §6.2 rather than encoded as an assumed field of the data.
 
-*Needs:* §3.1, §5.2, `gap:base-coleman`.
+*Needs:* §3.1, §5.2, §3.0b, §3.1a.
 
 **Checks.**
 
@@ -539,7 +751,7 @@ Prove `tripleIndex_add_const_second`: T_U(F,G+C;H)−T_U(F,G;H)=C B_U(F,H). Prov
 
 The proof uses the following argument. Sum §5.3 and use the residue theorem for the analytic one-form dF. This gives auxiliary independence and ordinary trilinearity. Reduction with G=C gives C B_U(F,H); the three-term identity and alternation of B_U give zero in the third slot. Restriction uses §5.5; an added filled disc has total zero index from analytic local primitives and the residue theorem.
 
-*Needs:* §5.3, §5.5, §6.1, `gap:base-reciprocity`.
+*Needs:* §5.3, §5.5, §6.1, §3.1, §3.1a.
 
 **Checks.**
 
@@ -551,13 +763,13 @@ The proof uses the following argument. Sum §5.3 and use the residue theorem for
 
 Prove `ColemanWideOpen.tripleIndex_frobenius_vanishing` as follows. Let U be a Coleman wide open defined over a finite p-adic field with a degree-q Frobenius lift in the supplied rigid-cohomology sense, q≥2. If φ*[dF]=q[dF] and φ*[dG]=q[dG] in H¹_dR(U), then T_U(F,G;H)=0 for every global Coleman H with analytic differential. The assertion also includes zero classes. It uses the supplied spectrum theorem excluding 1/q from Frobenius on H¹_dR(U), and the fact that the q-eigenspace is in the radical of B_U. (besser-dejeu2012, Proposition 8.4 and proof, p. 362, besser-dejeu2012 line 2591).
 
-Assume Hypotheses of §6.1; U and data descend to a finite p-adic field; A compatible Frobenius lift of positive degree q, with q a power of p; Both stated q-eigenclass equations; Rigid comparison supplies the spectrum and double-pairing radical properties.
+Assume Hypotheses of §6.1; U and data descend to a finite p-adic field; A compatible Frobenius lift of positive degree q, with q a power of p; Both stated q-eigenclass equations; §3.1a supplies the spectrum and double-pairing radical properties.
 
 Prove `tripleIndex_frobenius_iterate`: A positive iterate uses q^a and its corresponding eigenclass hypotheses, giving the same vanishing conclusion.
 
 The proof uses the following argument. Write φ*F=qF+r and φ*G=qG+s with analytic r,s, absorbing global constants into r,s. If a slot is analytic, reduce the triple index to the double pairing and use the q-radical property to kill its value when paired with the other q-eigenclass; the three-term identity handles an analytic third slot. Thus the functional H↦T_U(F,G;H) factors through [dH]. The degree law gives qT=q²T(F,G;φ*H), so its functional has reciprocal eigenvalue 1/q. The spectrum exclusion forces it to vanish.
 
-*Needs:* §5.5, §6.2, `gap:curve-comparison`, `gap:base-coleman`.
+*Needs:* §5.5, §6.2, §3.0c, §3.0b, §3.1a.
 
 **Checks.**
 
@@ -567,15 +779,15 @@ The proof uses the following argument. Write φ*F=qF+r and φ*G=qG+s with analyt
 
 ### 6.4 A pairing on actual Coleman one-forms
 
-Construct `ColemanWideOpen.colemanFormPairing` as follows. Let Ω¹_col,1(U) be the submodule of actual Coleman one-forms generated by G dH for global Coleman G,H with analytic differentials, using the base Coleman algebra and its multiplication relations. There is a unique k-bilinear pairing P_U:A_col,1(U)×Ω¹_col,1(U)→k with P_U(F,G dH)=T_U(F,G;H). In particular P_U(F,dH)=B_U(F,H). The pairing respects equalities of actual Coleman forms, not only chosen expressions as sums of symbols. (besser-dejeu2012, Lemma 9.1 and Proposition 9.2, p. 364, besser-dejeu2012 line 2769 and line 2776).
+Prove `ColemanWideOpen.colemanFormPairing` as follows. Let Ω¹_col,1(U) be the submodule of actual Coleman one-forms generated by G dH for global Coleman G,H with analytic differentials, using the actual Coleman algebra of §3.0b and its multiplication relations. There is a unique k-bilinear pairing P_U:A_col,1(U)×Ω¹_col,1(U)→k with P_U(F,G dH)=T_U(F,G;H). In particular P_U(F,dH)=B_U(F,H). The pairing respects equalities of actual Coleman forms, not only chosen expressions as sums of symbols. (besser-dejeu2012, Lemma 9.1 and Proposition 9.2, p. 364, besser-dejeu2012 line 2769 and line 2776).
 
-Assume Hypotheses of §6.1; The base exports the actual Coleman one-form module and the relation/symbol map of Lemma 9.1; No free module on unrelated formal symbols replaces the Coleman form module.
+Assume Hypotheses of §6.1; Use the actual Coleman one-form module of §3.0b and symbol/relation theorem of §6.0; No free module on unrelated formal symbols replaces the Coleman form module.
 
 Prove `colemanFormPairing_unique`: The values on generators G dH uniquely determine the bilinear pairing. Prove `colemanFormPairing_relation`: If Σ_i G_i dH_i=0 as a Coleman one-form, then Σ_i T_U(F,G_i;H_i)=0 for every F. Prove `colemanFormPairing_restrict`: Compatible restriction of the functions and actual forms to a smaller wide open preserves P_U.
 
-The proof uses the following argument. By §6.2 the generator formula depends on dH, not its primitive constant. The base relation theorem gives the map Ω¹_col,1→H¹_dR(U)⊗Ω¹(U), G dH↦[dG]⊗dH, and says the kernel of the product presentation is generated inside analytic-function tensors. On those tensors the double-index reduction depends only on the actual product form. Therefore the generator prescription kills all relations and descends; generators prove uniqueness.
+The proof uses the following argument. By §6.2 the generator formula depends on dH, not its primitive constant. §6.0 gives the map Ω¹_col,1→H¹_dR(U)⊗Ω¹(U), G dH↦[dG]⊗dH, and says the kernel of the product presentation is generated inside analytic-function tensors. On those tensors the double-index reduction depends only on the actual product form. Therefore the generator prescription kills all relations and descends; generators prove uniqueness.
 
-*Needs:* §6.2, `gap:coleman-form-relations`.
+*Needs:* §6.2, §6.0.
 
 **Checks.**
 
@@ -589,21 +801,39 @@ A local auxiliary change survives at an end, while a global change cancels by th
 
 ### Dependencies
 
-Layers 2–3 and 5; the base global Coleman algebra and its one-form relation module; the unbound curve Frobenius contract for §6.3.
+Layers 2–3 and 5; full analytic Coleman algebra §3.0b, wide-open Frobenius theorem §3.1a and actual-form relation theorem §6.0.
 
 ## Layer 7: Branch transport, traces and arbitrary-reduction descent
 
+### 7.0 Tate invariant differential and annular charts
+
+Prove `TateCurve.uniformizationDifferential` as follows. For q∈K× with n=ν_π(q)>0, let u_q:K×/q^ℤ→E_q(K) be the supplied point uniformization. Prove its covering map K×→E_q(K) is locally analytic. Normalize the invariant differential ω_q on E_q by the standard Tate Weierstrass model and prove u_q*ω_q=dz/z. Compare the valuation strips v−1<ν_π(z)<v+1 and connecting annuli v<ν_π(z)<v+1 with the component and annular charts of the regular Tate model. The q-identification gives the final edge. For n=1,2 use loop/parallel-edge charts or a regular subdivision; maps respect coefficient extensions and orientation. This adds differential and chart comparisons to the point theorem, without reconstructing that theorem. (besser-zerbes2017, §3, pp. 5–6, besser-zerbes2017 lines 245–270; differential pullback also colmez1998 Remark 2(iii), p. 2, lines 237–244).
+
+Assume Finite K/ℚ_p, any prime p; π a uniformizer; q≠0, n=ν_π(q)>0; The invariant differential is normalized by the Tate Weierstrass model; Algebraic points and charts over finite extensions use compatible valuation scales.
+
+Prove `uniformizationDifferential_pullback`: The normalized invariant differential pulls back to dz/z; q multiplication preserves that differential. Prove `uniformizationDifferential_charts`: Valuation-strip charts identify the component/end restrictions and the final gluing z↦z/q, also after a compatible regular subdivision.
+
+The proof uses the following argument. Differentiate the convergent Tate coordinate functions of the supplied uniformization to identify the invariant differential, then compare reduction of those coordinates on the valuation strips. Use nodal charts and common refinements for n=1,2. This local analytic comparison proves no equality of natural and Coleman primitives on entire connecting annuli.
+
+*Needs:* §3.0a, EllipticCurves Layer 4, RigidAnalyticGeometry §§6.2, 8.1, StableReduction Layers 0–1, 4–5.
+
+**Checks.**
+
+- For q=p³ the last gluing changes log z by −log q, while dlog(z/q)=dz/z.
+- For n=1 and n=2 the graph has a loop or parallel edges; replacing it by a simple adjacency graph loses the period.
+- q=1 has n=0 and is excluded. At p=2 all convergent Tate charts and the same differential normalization apply.
+
 ### 7.1 Specializing the universal branch
 
-Prove `SingleIntegral.branchTransport` as follows. Write the imported universal single integral as I_univ(a,b;ω)=A+B T in K[T], with T=Log(p). For λ,λ′∈K, I_λ′−I_λ=(λ′−λ)B. For u∈K×, log_λ′(u)−log_λ(u)=(λ′−λ)v_p(u), where v_p(p)=1. For local double or triple indices, changing a branch transports the functions and every auxiliary primitive; the new value is computed by the same residue characterization and the change-of-constant laws. When F and G change by constants A₀,B₀ on a fixed end, ΔB=A₀ Res(dG)−B₀ Res(dF). A branch change with nonconstant valuation term on an annulus is not assumed to be such a constant shift. (colmez1998, Definition II.1.3 and Theorem II.1.4, p. 74, colmez1998 line 2986; §II.2.5, p. 97, line 3950; index transport from besser-dejeu2012 Lemma 7.4, line 2299).
+Prove `SingleIntegral.branchTransport` as follows. Write the universal single integral of §4.0c as I_univ(a,b;ω)=A+B T in K[T], with T=Log(p). For λ,λ′∈K, I_λ′−I_λ=(λ′−λ)B. For u∈K×, log_λ′(u)−log_λ(u)=(λ′−λ)v_p(u), where v_p(p)=1. For local double or triple indices, changing a branch transports the functions and every auxiliary primitive; the new value is computed by the same residue characterization and the change-of-constant laws. When F and G change by constants A₀,B₀ on a fixed end, ΔB=A₀ Res(dG)−B₀ Res(dF). A branch change with nonconstant valuation term on an annulus is not assumed to be such a constant shift. (colmez1998, Definition II.1.3 and Theorem II.1.4, p. 74, colmez1998 line 2986; §II.2.5, p. 97, line 3950; index transport from besser-dejeu2012 Lemma 7.4, line 2299).
 
-Assume p prime, K/ℚ_p finite; Closed regular one-form on a smooth geometrically connected variety, endpoints outside poles; The universal affine-in-T integral is the base contract; λ and λ′ belong to K; extensions use their images.
+Assume p prime, K/ℚ_p finite; Closed regular one-form on a smooth geometrically connected variety, endpoints outside poles; The universal affine-in-T integral is §4.0c; λ and λ′ belong to K; extensions use their images.
 
 Prove `branchTransport_comp`: Transport from λ to λ″ is the composite of transport from λ to λ′ and λ′ to λ″, on the full functions and primitive data. Prove `branchTransport_exact`: For df the coefficient B is zero; for dlog f it is v_p(f(b)/f(a)).
 
 The proof uses the following argument. Evaluate the affine polynomial at λ′ and λ and subtract. Apply the universal logarithm formula for the multiplicative case. For indices, transport formal/analytic logarithms and products and apply the local characterizations; when the transported changes are constants the explicit constant laws apply. No assertion that arbitrary index data are affine in T is made.
 
-*Needs:* `gap:base-single`, §2.2, §5.3, §6.2.
+*Needs:* §4.0c, §2.2, §5.3, §6.2, ColemanIntegration L0.16 logBranch_sub, L0.23.
 
 **Checks.**
 
@@ -621,7 +851,7 @@ Prove `properHolomorphic_universalCoefficient_zero`: The T coefficient of the un
 
 The proof uses the following argument. Use the base Abel–Jacobi and invariant-differential comparison after finite extension. The abelian logarithm is characterized by its differential and group law, independently of a branch. Subtract endpoint values and use finite-extension compatibility; this also removes the choice of the temporary Abel–Jacobi basepoint.
 
-*Needs:* §7.1, `gap:base-single`, `gap:base-jacobian`, JacobianChallenge Layers D–F.
+*Needs:* §7.1, §4.0c, §4.0e, AnabelianGeometryAndNonabelianChabauty §5.8, JacobianChallenge Layers D–F.
 
 **Checks.**
 
@@ -639,7 +869,7 @@ Prove `coefficientTrace_tower`: Tr_{M/K}I_M=Tr_{L/K}(Tr_{M/L}I_M) in every finit
 
 The proof uses the following argument. Finite scalar extension of forms and K-linearity reduce the coefficient trace formula to ω=αη with η over K. Trace linearity and the base-change identity then prove it. Equivalently sum over embeddings in a normal closure using the pinned embedding formula and descend. The pinned tower theorem gives transitivity. Average over the finite Galois group, dividing by its nonzero order, to obtain a descended primitive; its constant ambiguity follows from the natural theory.
 
-*Needs:* `gap:base-single`, §7.1, Mathlib `Algebra.trace`, Mathlib `trace_eq_sum_embeddings`, Mathlib `Algebra.trace_trace`, Mathlib `Algebra.trace_algebraMap`.
+*Needs:* §4.0c, §7.1, Mathlib `Algebra.trace`, Mathlib `trace_eq_sum_embeddings`, Mathlib `Algebra.trace_trace`, Mathlib `Algebra.trace_algebraMap`.
 
 **Checks.**
 
@@ -657,7 +887,7 @@ Prove `divisorSingleIntegral_split`: For D=b−a with a,b rational, the value is
 
 The proof uses the following argument. Chasles makes a basepoint change contribute deg(D)·I(a′,a;ω)=0. Scalar extension and a common finite Galois overfield compare any two splitting fields. Galois equivariance permutes the geometric points and changes the basepoint only, so the scalar is fixed and lies in K. Finite-sum linearity gives the API.
 
-*Needs:* §7.3, `gap:base-single`, StableReduction Layer 0.
+*Needs:* §7.3, §4.0c, StableReduction Layer 0.
 
 **Checks.**
 
@@ -685,13 +915,13 @@ The proof uses the following argument. Scalar extension of local indices and the
 
 ### 7.6 Independence of semistable extensions and models
 
-Prove `Curve.integrationRealization_descent` as follows. For every smooth proper geometrically connected X/K, every meromorphic ω and every degree-zero divisor away from its poles, choose any finite extension giving a split regular nodal model with separated pole and divisor support. The harmonic formula of §§4.2–4.3 evaluates the imported single integral and §7.4, and the corrected double formula evaluates §7.5. These values agree after any further coefficient extension, common model refinement, node subdivision or pole separation, hence descend to the original arbitrary-reduction curve. For a connected Coleman wide open with F,G,H and global compatible auxiliary data defined over K, T_U and P_U are K-valued and commute with scalar extension and admissible shrinking. This last assertion is about a wide open; it does not construct a triple pairing of three arbitrary whole-curve Vologodsky primitives by summing components. A connected wide open whose constant field is a finite extension k₀/K is treated over k₀, and its K-valued end-sum is the field trace, equivalently the sum over geometric components. (besser-zerbes2017, Corollary 1.2 and §2 finite-extension argument, p. 3, besser-zerbes2017 line 95 and line 130; besser2017 Proposition 4.12(3), line 753; besser-dejeu2012 introduction p. 310, line 250).
+Prove `Curve.integrationRealization_descent` as follows. For every smooth proper geometrically connected X/K, every meromorphic ω and every degree-zero divisor away from its poles, choose any finite extension giving a split regular nodal model with separated pole and divisor support. The harmonic formula of §§4.2–4.3 evaluates the single integral of §4.0c and §7.4, and the corrected double formula evaluates §7.5. These values agree after any further coefficient extension, common model refinement, node subdivision or pole separation, hence descend to the original arbitrary-reduction curve. For a connected Coleman wide open with F,G,H and global compatible auxiliary data defined over K, T_U and P_U are K-valued and commute with scalar extension and admissible shrinking. This last assertion is about a wide open; it does not construct a triple pairing of three arbitrary whole-curve Vologodsky primitives by summing components. A connected wide open whose constant field is a finite extension k₀/K is treated over k₀, and its K-valued end-sum is the field trace, equivalently the sum over geometric components. (besser-zerbes2017, Corollary 1.2 and §2 finite-extension argument, p. 3, besser-zerbes2017 line 95 and line 130; besser2017 Proposition 4.12(3), line 753; besser-dejeu2012 introduction p. 310, line 250).
 
 Assume K/ℚ_p finite, p any prime; fixed branch parameter in K; X/K smooth proper geometrically connected curve; no reduction or genus restriction; Meromorphic forms evaluated off poles; divisor degree zero where a divisor is evaluated; Triple assertions require actual global Coleman wide-open data and descended auxiliary choices.
 
 Prove `integrationRealization_commonExtension`: Two realization fields and models are compared in one common finite extension with compatible generic-fibre identifications. Prove `integrationRealization_divisor`: The harmonic evaluation equals the K-valued degree-zero divisor integral without a chosen K-point. Prove `wideOpenIndex_galoisDescent`: If the wide-open functions and auxiliary data descend, their end-sums are fixed by Galois and belong to the coefficient field; local end values may require their residue fields.
 
-The proof uses the following argument. StableReduction supplies finite nodal reduction in all genera, regularization, splitting of branches and separation of marked sections, together with common refinements. Apply the split comparison and then §7.3. Since each harmonic evaluation equals the intrinsic base integral, two realizations agree in a common field; trace/embedding descent gives the K-value. §1.3 handles the metric under refinement, and §7.5 handles nonsplit local terms. For global triple data use §5.5 and §6.2 and descend the resulting scalar, without asserting a new global bad-reduction triple construction.
+The proof uses the following argument. StableReduction supplies finite nodal reduction in all genera, regularization, splitting of branches and separation of marked sections, together with common refinements. Apply the split comparison and then §7.3. Since each harmonic evaluation equals the intrinsic natural integral of §4.0c, two realizations agree in a common field; trace/embedding descent gives the K-value. §1.3 handles the metric under refinement, and §7.5 handles nonsplit local terms. For global triple data use §5.5 and §6.2 and descend the resulting scalar, without asserting a new global bad-reduction triple construction.
 
 *Needs:* §1.3, §4.3, §4.4, §6.4, §7.3, §7.4, §7.5, StableReduction Layers 0–1, 4–5, 7, 9, RigidAnalyticGeometry §§1.3, 6.2, 8.1, JacobianChallenge Layers D–F, StableReduction Layer 2.
 
@@ -704,15 +934,15 @@ The proof uses the following argument. StableReduction supplies finite nodal red
 
 ### 7.7 A cycle with nonzero jump and branch cancellation
 
-Establish `TateCurve.singleIntegral_normalization` as follows. For a Tate curve E_q/K with q∈K× and n=ν_π(q)>0, the invariant differential dz/z has primitive on K×/q^ℤ given by F(z)=log_λ(z)−(ν_π(z)/n)log_λ(q), normalized by F(1)=0. In the regular n-gon presentation its cyclic harmonic jump is −log_λ(q)/n. For n=1 use the loop presentation and for n=2 the two parallel edges, or a compatible regular subdivision. The expression is invariant under z↦qz and under a change of logarithm branch. (besser-zerbes2017, §3, pp. 5–6, besser-zerbes2017 line 245 and line 265).
+Prove `TateCurve.singleIntegral_normalization` as follows. For a Tate curve E_q/K with q∈K× and n=ν_π(q)>0, the invariant differential dz/z has primitive on K×/q^ℤ given by F(z)=log_λ(z)−(ν_π(z)/n)log_λ(q), normalized by F(1)=0. In the regular n-gon presentation its cyclic harmonic jump is −log_λ(q)/n. For n=1 use the loop presentation and for n=2 the two parallel edges, or a compatible regular subdivision. The expression is invariant under z↦qz and under a change of logarithm branch. (besser-zerbes2017, §3, pp. 5–6, besser-zerbes2017 line 245 and line 265).
 
-Assume K/ℚ_p finite, fixed uniformizer π and any logarithm branch; q≠0, ν_π(q)=n>0; this hypothesis makes n invertible in K; The point-level Tate uniformization is supplied by EllipticCurves Layer 4; its differential normalization is gap:tate-differential; Algebraic points are interpreted after compatible finite coefficient extension.
+Assume K/ℚ_p finite, fixed uniformizer π and any logarithm branch; q≠0, ν_π(q)=n>0; this hypothesis makes n invertible in K; The point-level Tate uniformization is supplied by EllipticCurves Layer 4; its differential normalization is §7.0; Algebraic points are interpreted after compatible finite coefficient extension.
 
 Prove `TateCurve.singleIntegral_q_periodic`: F(qz)−F(z)=log(q)−(n/n)log(q)=0. Prove `TateCurve.singleIntegral_branch`: The branch change is (λ′−λ)(v_p(z)−ν_π(z)v_p(q)/n)=0 since v_p=ν_π/e.
 
 The proof uses the following argument. On successive fundamental annuli use log(z) as the Coleman primitive. Crossing the final q-identification contributes −log(q). Project this cochain to the constant cyclic harmonic cochain, using §1.2. Subtract the vertex potential and apply §4.3. The displayed two-term computations verify q-periodicity and branch independence.
 
-*Needs:* §4.3, §7.1, §7.2, `gap:tate-differential`, EllipticCurves Layer 4.
+*Needs:* §4.3, §7.1, §7.2, §7.0, EllipticCurves Layer 4.
 
 **Checks.**
 
@@ -726,18 +956,18 @@ A ramified quadratic closed point tests residue-field traces; a degree-zero divi
 
 ### Dependencies
 
-All previous layers; the imported universal single-integration theorem; StableReduction Layers 0–1, 4–5, 7 and 9; finite-dimensional field trace at the pins. No regulator construction is used.
+All previous layers; the universal single-integration theorem of §4.0c; StableReduction Layers 0–1, 4–5, 7 and 9; finite-dimensional field trace at the pins. No regulator construction is used.
 
 ## Downstream consumers
 
-**PadicHodgeRegulators** is the intended consumer of the double/triple index laws, the Coleman one-form pairing, divisor integration and descent. It constructs regulator maps and proves symbol relations; none is a premise here. Its exact consuming section is an external interface to bind. **EllipticRegulators** consumes elliptic specializations and the Tate witness with the same boundary; its consuming section is also unbound. **EffectiveDiophantineMethods** can consume the general harmonic single-integral and divisor interface. **ArithmeticDynamics** consumes Chabauty–Coleman point results through EffectiveDiophantineMethods ED.4 in its §§3.58 and 3.60, and has no producer role here. ErdosProgressionPowers imports rational-point finiteness, not this index producer; no supplier edge is introduced from it.
+**PadicHodgeRegulators** is the intended consumer of the double/triple index laws, the Coleman one-form pairing, divisor integration and descent. It constructs regulator maps and proves symbol relations; none is a premise here. The consumer description does not supply a mathematical prerequisite. **EllipticRegulators** consumes elliptic specializations and the Tate witness with the same boundary; this describes its intended application. **EffectiveDiophantineMethods** can consume the general harmonic single-integral and divisor interface. **ArithmeticDynamics** §3.58, “No rational 5-cycles”, target `noRationalFiveCycle`, consumes EffectiveDiophantineMethods ED.3/`fps-genus-two-mordell-weil` (Jacobian rank 1) and ED.4/`fps-quintic-cycle-curve` (the genus-two rational-point result). Its Chabauty application retains rank 1<2; it has no producer role here. ErdosProgressionPowers imports rational-point finiteness, not this index producer; no supplier edge is introduced from it.
 
 ## References
 
 All statements are paraphrases; line numbers refer to the versioned source extractions. The manifest records the legal acquisition and version of each work. Derived metric, trace and descent statements cite their source ingredients and are explicitly presented as consequences, rather than assigned nonexistent theorem numbers.
 
-- **colmez1998**, Pierre Colmez, *Intégration sur les variétés p-adiques*, Astérisque 248 (1998), [Numdam open archive](https://www.numdam.org/item/AST_1998__248__R1_0.pdf). Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74, line 2982; Remark 2, pp. 2–3, line 225; Lemma II.1.13 and Remark II.1.18, pp. 78–79, lines 3147 and 3213; §II.2.5, p. 97, line 3950.
+- **colmez1998**, Pierre Colmez, *Intégration sur les variétés p-adiques*, Astérisque 248 (1998), [Numdam open archive](https://www.numdam.org/item/AST_1998__248__R1_0.pdf). Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74, line 2982; Remark 2, pp. 2–3, line 225; Theorem II.1.16 and Proposition II.1.17, pp. 78–79, lines 3169/3193; Lemmas II.1.26–II.1.27, pp. 83–85, lines 3376/3399; Lemma II.1.13 and Remark II.1.18, pp. 78–79, lines 3147 and 3213; §II.2.5, p. 97, line 3950.
 - **vologodsky2001**, Vadim Vologodsky, *Hodge structure on the fundamental group and its application to p-adic integration*, [arXiv:math/0108109v1](https://arxiv.org/abs/math/0108109v1). Standing p>2 convention §1.1, p. 2, line 51; Theorem B(4), §1.17, p. 5, line 195; Proposition 52, §17.2, p. 42, line 1806. These are v1 locators, not unchecked published numbering.
-- **besser2017**, Amnon Besser, *p-adic heights and Vologodsky integration*, [arXiv:1711.06957v1](https://arxiv.org/abs/1711.06957v1). Definitions 3.1–3.2/Lemma 3.3, p. 9, line 402; Definitions 3.4/3.8 and Propositions 3.5/3.9, pp. 9–11, lines 435/492; graph theory and Theorem 4.4, p. 12, line 528; Theorem 4.10, Definition 4.11 and Proposition 4.12, pp. 14–16, lines 700/738/747; Corollary 5.3, p. 16, line 807. The height construction and comparison are outside scope.
+- **besser2017**, Amnon Besser, *p-adic heights and Vologodsky integration*, [arXiv:1711.06957v1](https://arxiv.org/abs/1711.06957v1). Definitions 3.1–3.2/Lemma 3.3, p. 9, line 402; Definitions 3.4/3.8 and Propositions 3.5/3.9, pp. 9–11, lines 435/492; graph Definitions 4.1–4.3, printed pp. 11–12, line 528, and Theorem 4.4, p. 12, line 553; Theorem 4.10, Definition 4.11 and Proposition 4.12, pp. 14–16, lines 700/738/747; Corollary 5.3, p. 16, line 807. The height construction and comparison are outside scope.
 - **besser-zerbes2017**, Amnon Besser and Sarah Livia Zerbes, *Vologodsky integration on curves with semi-stable reduction*, [arXiv:1711.06950v1](https://arxiv.org/abs/1711.06950v1). Theorem 1.1, p. 2, line 88; Corollary 1.2, p. 3, line 108; §2 and Lemma 2.1, pp. 3–5, lines 130/218; Tate example §3, pp. 5–6, line 245. The n≥3 presentation is replaced by a flag graph or subdivision in the general example.
 - **besser-dejeu2012**, Amnon Besser and Rob de Jeu, *The syntomic regulator for K4 of curves*, Pacific Journal of Mathematics 260 (2012), 305–380, [publisher open archive](https://msp.org/pjm/2012/260-2/pjm-v260-n2-p03-p.pdf). Published §§7–8, pp. 355–362, lines 2227/2519; Lemma 9.1 and Proposition 9.2, p. 364, lines 2769/2776; shrinking and field descent in the introduction, p. 310, line 250. The regulator itself is not imported or constructed here.

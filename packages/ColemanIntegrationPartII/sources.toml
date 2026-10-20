@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["7.3 (comparison under p>2 only)", "Exact supplier contracts: p>2 preprint comparison and finite-extension compatibility"]
+cited_for = ["4.0c (comparison under p>2 only)", "7.3 (finite-extension comparison under p>2 only)"]
 
 [[source]]
 id = "besser-zerbes2017"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["1.3", "3.2", "4.1", "4.2", "4.3", "7.2", "7.4", "7.6", "7.7"]
+cited_for = ["3.0a", "3.1a", "4.0d", "4.0e", "7.0", "1.3", "3.2", "4.1", "4.2", "4.3", "7.2", "7.4", "7.6", "7.7"]
 
 [[source]]
 id = "besser2017"
@@ -44,7 +44,7 @@ title = "p-adic heights and Vologodsky integration"
 year = 2017
 arxiv = "1711.06957v1"
 locator_scheme = "theorem"
-locator = "Definitions 3.1–3.8, Lemma 3.3, Propositions 3.5 and 3.9, pp. 9–11; Theorem 4.4, p. 12; Theorem 4.10, Definition 4.11, Proposition 4.12 and Corollary 5.3, pp. 14–16 (arXiv v1)"
+locator = "Definitions 3.1–3.8, Lemma 3.3, Propositions 3.5 and 3.9, pp. 9–11; Definitions 4.1–4.3, printed pp. 11–12; Theorem 4.4, p. 12; Theorem 4.10, Definition 4.11, Proposition 4.12 and Corollary 5.3, pp. 14–16 (arXiv v1)"
 url = "https://arxiv.org/abs/1711.06957v1"
 fetched_from = "https://arxiv.org/pdf/1711.06957v1"
 fetched_at = "2026-10-20T21:00:30Z"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["1.1", "1.2", "1.3", "2.1", "2.2", "3.1", "3.3", "3.4", "3.5", "4.4", "7.5", "7.6"]
+cited_for = ["2.0", "2.1a", "3.0a", "3.0c", "3.1a", "1.1", "1.2", "1.3", "2.1", "2.2", "3.1", "3.3", "3.4", "3.5", "4.4", "7.5", "7.6"]
 
 [[source]]
 id = "besser-dejeu2012"
@@ -61,7 +61,7 @@ authors = "Amnon Besser and Rob de Jeu"
 title = "The syntomic regulator for K4 of curves"
 year = 2012
 locator_scheme = "section"
-locator = "Sections 7–8: Definition 7.1, Proposition 7.3, Lemma 7.4, pp. 355–357; Lemmas 8.1–8.3 and Proposition 8.4, pp. 361–362; Proposition 9.2, p. 364; introduction p. 310"
+locator = "Sections 7–8: Definition 7.1, Proposition 7.3, Lemma 7.4, pp. 355–357; Lemmas 8.1–8.3 and Proposition 8.4, pp. 361–362; Lemma 9.1 and Proposition 9.2, p. 364; introduction p. 310"
 url = "https://msp.org/pjm/2012/260-2/pjm-v260-n2-p03-p.pdf"
 fetched_from = "https://msp.org/pjm/2012/260-2/pjm-v260-n2-p03-p.pdf"
 fetched_at = "2026-10-20T21:00:41Z"
@@ -69,7 +69,7 @@ sha256 = "8f68b8dc412ce56a4be8902f472924ad486bc99a52d97ddc7eacd3264e5c4ba0"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-20"
-cited_for = ["2.1", "2.2", "2.3", "5.1", "5.2", "5.3", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "7.1", "7.5", "7.6"]
+cited_for = ["2.0", "2.1a", "3.0b", "3.1a", "6.0", "2.1", "2.2", "2.3", "5.1", "5.2", "5.3", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "7.1", "7.5", "7.6"]
 
 [[source]]
 id = "colmez1998"
@@ -77,7 +77,7 @@ authors = "Pierre Colmez"
 title = "Intégration sur les variétés p-adiques"
 year = 1998
 locator_scheme = "section"
-locator = "Introduction Theorem 1 and Remark 2, pp. 1–3; Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74; Lemma II.1.13 and Remark II.1.18, pp. 78–79; Section II.2.5, p. 97"
+locator = "Introduction Theorem 1 and Remark 2, pp. 1–3; Section I.5, pp. 45–49; Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74; Theorem II.1.16 and Proposition II.1.17, pp. 78–79; Lemmas II.1.26–II.1.27, pp. 83–85; Lemma II.1.13 and Remark II.1.18, pp. 78–79; Section II.2.5, p. 97"
 url = "https://www.numdam.org/item/AST_1998__248__R1_0.pdf"
 fetched_from = "https://www.numdam.org/item/AST_1998__248__R1_0.pdf"
 fetched_at = "2026-10-20T21:01:11Z"
@@ -85,4 +85,4 @@ sha256 = "ac8ce2ab4f1a2b13e0dfddf23f1669c4ab34636236835eb072da31a13be582d3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-cited_for = ["4.2", "7.1", "7.2", "7.3", "7.4", "7.5", "Exact supplier contracts: all-prime natural single integration"]
+cited_for = ["4.2", "7.1", "7.2", "7.3", "7.4", "7.5", "4.0a", "4.0b", "4.0c", "4.0e", "7.0"]
