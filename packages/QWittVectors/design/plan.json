@@ -177,7 +177,7 @@
             {
               "name": "BigWitt_3",
               "kind": "compatibility",
-              "statement": "The unitization kernel gives the same operations on a nonunital square-zero ring."
+              "statement": "For the nonunital ring R=(ℤ,+) with zero multiplication, W_Div(2)(R) has componentwise addition and zero multiplication: (a,b)+(c,d)=(a+c,b+d) and (a,b)(c,d)=(0,0). A spurious unit in R would change these operations."
             }
           ],
           "proofSketch": "Apply 1.2 over the torsion-free polynomial ring in universal coordinates to obtain integral addition, multiplication and negatives. Verify identities there by ghosts and specialize. The kernel model handles nonunital inputs without a fictitious unit.",
@@ -411,7 +411,7 @@
             {
               "name": "QWitt.commutingEndomorphismKoszul_3",
               "kind": "non-example",
-              "statement": "If D₁D₂≠D₂D₁, d²m=(D₁D₂−D₂D₁)m e₁∧e₂ can be nonzero; arbitrary endomorphisms are excluded."
+              "statement": "On M=ℤ² with basis u₁,u₂, take D₁(u₁)=0, D₁(u₂)=u₁, D₂(u₁)=u₂, D₂(u₂)=0. Then d²(u₁)=u₁⊗(e₁∧e₂)≠0; omitting commutativity of the endomorphisms would not give a complex."
             }
           ],
           "proofSketch": "Give M its B[X_i]-module structure with X_i acting by D_i. Tensor with the supplied finite scalar Koszul resolution, using the cochain wedge convention, and compare termwise. This is the module-action bridge to the supplier complex, not a second scalar Koszul construction.",
@@ -1298,7 +1298,7 @@
             {
               "name": "QWitt.RelativeFVSystem_1",
               "kind": "computation",
-              "statement": "For R=A, E_m=A[q]/(q^m−1), reduction F and multiplication V satisfy the definition."
+              "statement": "For R=A, E_m=A[q]/(q^m−1), reduction F and multiplication V satisfy the definition. At m=2,d=1, F_2V_2(1)=2 and V_2F_2(1)=1+q; replacing the latter q-integer by 2 fails."
             },
             {
               "name": "QWitt.RelativeFVSystem_2",
@@ -1308,7 +1308,7 @@
             {
               "name": "QWitt.RelativeFVSystem_3",
               "kind": "non-example",
-              "statement": "Replacing A[q]-linearity by ψ-semi-linearity would give the wrong relative category; F fixes the base coefficient a and q."
+              "statement": "For toric A=R=ℤ[T], m=2,d=1, F_2 sends the right-hand scalar T to T in E_1=ℤ[T], whereas a ψ_2-semilinear substitute sends it to T². Thus the relative F is A[q]-linear."
             }
           ],
           "proofSketch": "Use c_m to specify the scalar action; requiring compatibility with every V is additional data beyond the tensor product at a single level.",
@@ -1911,7 +1911,7 @@
             {
               "name": "QWitt.completedGhostFrobenius_3",
               "kind": "non-example",
-              "statement": "Sending q↦q^p here would not be the A[q]-linear map specified by the étale deformation square."
+              "statement": "For A=R=ℤ,p=2,d=1,m=2, the deformed bottom map sends q=1+h to 1+h in ℤ₂[[h]]. Substitution q↦q² instead gives 1+2h+h², a different value; the deformation must fix q."
             }
           ],
           "proofSketch": "The ordinary Witt ghosts in characteristic p satisfy w_{pn}=w_n^p. Descend this identity through the relative presentation and the cyclotomic quotient. Use 5.2 for the étale ghost algebras and unique formal lifting to identify the completed map.",
@@ -2103,7 +2103,7 @@
             {
               "name": "QWitt.DifferentialFVSystem_3",
               "kind": "non-example",
-              "statement": "Replacing dF_n=nF_nd by the printed dF_n=n dV_n is ill-typed: dV_n has the opposite domain and codomain."
+              "statement": "At m=d=1, F_1=id on Ω*_{ℤ[T]/ℤ}, so dF_1(T)=F_1d(T)=dT. This boundary has scale factor 1 and requires no prime Frobenius step."
             }
           ],
           "proofSketch": "Store exactly the graded identities and prove the differential formula by FdV and VF; (q^d−1)=0 on the target converts the q-integer to n. The source proof, rather than its misprinted display, fixes the formula.",
@@ -2208,12 +2208,12 @@
             {
               "name": "QWitt.frobeniusDifferential_1",
               "kind": "computation",
-              "statement": "For p=2, θ_2τ_2(T)=T dT without division by 2."
+              "statement": "For R=ℤ[T] at m=p=2, θ_2(τ_2(T))=T dT without division by 2, and θ_2(V_2(T))=dT rather than 2dT."
             },
             {
               "name": "QWitt.frobeniusDifferential_2",
               "kind": "compatibility",
-              "statement": "For ℓ≠p, Bézout for p and ℓ makes the two equations determine θ_pV_ℓ uniquely."
+              "statement": "For R=ℤ[T] at m=p=2, F_2(τ_2(T))=T², hence θ_2(τ_2(T)²)=2T³dT. An ordinary derivation with the same value on τ_2(T) would instead give 2T²dT; the F_2-semilinear product rule is essential."
             },
             {
               "name": "QWitt.frobeniusDifferential_3",
@@ -2273,7 +2273,7 @@
             {
               "name": "QWitt.differentialGhost_3",
               "kind": "compatibility",
-              "statement": "In degree zero it is 4.4 with coefficient n rather than n^(i+1) for an unspecified i."
+              "statement": "For A=ℤ,R=ℤ[T],m=2,d=1, gh_2(V_2(T))=2T in degree zero, whereas gh_2(V_2(dT))=4dT in degree one. A degree-independent coefficient 2 fails."
             }
           ],
           "proofSketch": "Give the product of twisted de Rham algebras the q-V system whose degree-i V acts as n^(i+1) on surviving components; apply initiality 7.2. Compatibility with F follows from 7.5 and its Teichmüller and V generators.",
@@ -2324,7 +2324,7 @@
             {
               "name": "QWitt.differential_baseChange_3",
               "kind": "non-example",
-              "statement": "The differential on S⊗P is not generally s⊗ω↦s⊗dω: étale elements s can have nonzero differentials over A[q]."
+              "statement": "For A=ℤ,m=1, the étale localization ℤ[T]→ℤ[T,T⁻¹] has d(T⁻¹)=−T⁻²dT≠0. Defining the extended differential by s⊗ω↦s⊗dω would instead give zero on T⁻¹."
             }
           ],
           "proofSketch": "Λ-base change follows from initiality and 4.5. For étale scalar extension use Ω*_{S/A[q]}⊗_{Ω*_{P⁰/A[q]}}P to define the differential. Transfer F and V using 5.1 and verify the Teichmüller and FdV identities by uniqueness of étale derivations. Module descent gives the degreewise sheaf property.",
@@ -2747,7 +2747,7 @@
             {
               "name": "framedBockstein_notScaled",
               "kind": "non-example",
-              "statement": "β_1 is the ordinary de Rham differential, even though the differential on H□/h is zero; confusing them would give β_1(T)=0."
+              "statement": "For A=ℤ,R=ℤ[T] with its one-variable frame and m=2, d_H(T²)=(q²−1)T dT, so β_2([T²])=[T dT]≠0. Specialization of H□/(q²−1) at q=1 has zero differential and sends this class to the nonzero form T dT. Using the quotient differential in place of the Bockstein would give zero."
             }
           ],
           "proofSketch": "Perfect coverage makes R integer torsion-free; the first h-coefficient of f_m is m, so f_m acts injectively on R[[h]] and all finite free differential terms. Apply the generic Bockstein supplier to H□ and f_m. Its cycle-lift equation fixes the sign, and its change-of-parameter identity for f_d dividing f_m gives Fβ_mV=β_d. This specializes the generic theorem rather than constructing a second DGA Bockstein theory.",
@@ -2801,7 +2801,7 @@
             {
               "name": "QWitt.framedCohomologySystem_2",
               "kind": "non-example",
-              "statement": "In E_m the skew multiplication becomes graded commutative only on cohomology; this does not turn H□ itself into a commutative DGA."
+              "statement": "For A=ℤ,R=ℤ[T],m=2, T² is a degree-zero cocycle and dT·T²=q²T²dT=T²dT modulo q²−1. In contrast, dT·T=qT dT differs from T dT and T is not a cocycle. Commutativity on cohomology does not imply commutativity of H□."
             },
             {
               "name": "QWitt.framedCohomologySystem_3",

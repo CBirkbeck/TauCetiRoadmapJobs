@@ -137,7 +137,7 @@ This interface is used by Layer 1.4 `BigWitt.frobenius`.
 
 - In W_Div(2)(ℤ), τ(1)+τ(1) has coordinates (2,−1), not (2,0).
 - W_∅(R) and W_S(0) are zero rings; W_{1}(R) ≅ R.
-- The unitization kernel gives the same operations on a nonunital square-zero ring.
+- For the nonunital ring R=(ℤ,+) with zero multiplication, W_Div(2)(R) has componentwise addition and zero multiplication: (a,b)+(c,d)=(a+c,b+d) and (a,b)(c,d)=(0,0). A spurious unit in R would change these operations.
 
 ### 1.4 Frobenius, Verschiebung and Teichmüller maps
 
@@ -205,7 +205,7 @@ This interface is used by Layer 3.4 `QWitt.absolute_verschiebungResolution`, Lay
 
 - For r=2, d⁰(m)=(D₁m,D₂m) and d¹(a,b)=D₁b−D₂a; using a plus in both positions fails d²=0.
 - For r=0 the complex is M in degree zero; for M=0 it vanishes.
-- If D₁D₂≠D₂D₁, d²m=(D₁D₂−D₂D₁)m e₁∧e₂ can be nonzero; arbitrary endomorphisms are excluded.
+- On M=ℤ² with basis u₁,u₂, take D₁(u₁)=0, D₁(u₂)=u₁, D₂(u₁)=u₂, D₂(u₂)=0. Then d²(u₁)=u₁⊗(e₁∧e₂)≠0; omitting commutativity of the endomorphisms would not give a complex.
 
 ### 1.8 Arithmetic fracture
 
@@ -493,9 +493,9 @@ This interface is used by Layer 4.3 `QWitt.relative`.
 
 **Checks.**
 
-- For R=A, E_m=A[q]/(q^m−1), reduction F and multiplication V satisfy the definition.
+- For R=A, E_m=A[q]/(q^m−1), reduction F and multiplication V satisfy the definition. At m=2,d=1, F_2V_2(1)=2 and V_2F_2(1)=1+q; replacing the latter q-integer by 2 fails.
 - For R=0 all components may be zero rings, over any A.
-- Replacing A[q]-linearity by ψ-semi-linearity would give the wrong relative category; F fixes the base coefficient a and q.
+- For toric A=R=ℤ[T], m=2,d=1, F_2 sends the right-hand scalar T to T in E_1=ℤ[T], whereas a ψ_2-semilinear substitute sends it to T². Thus the relative F is A[q]-linear.
 
 ### 4.3 Relative q-Witt rings
 
@@ -697,7 +697,7 @@ The public laws are `completedGhostFrobenius_teichmuller`: The two paths on τ_m
 
 - For m=p,d=1, the upper Teichmüller value r maps to r^p, matching the bottom ghost.
 - For A=R=ℤ and p=2 this is the q-fixed overlap between q=−1 and q=1 modulo 2.
-- Sending q↦q^p here would not be the A[q]-linear map specified by the étale deformation square.
+- For A=R=ℤ,p=2,d=1,m=2, the deformed bottom map sends q=1+h to 1+h in ℤ₂[[h]]. Substitution q↦q² instead gives 1+2h+h², a different value; the deformation must fix q.
 
 ### Examples
 
@@ -761,7 +761,7 @@ This interface is used by Layer 7.5 `QWitt.frobeniusDifferential`.
 
 - At m=2,R=ℤ[T], F_2(dτ_2(T))=T dT but d(F_2τ_2(T))=2T dT.
 - For A=ℤ, R=ℤ[T], m=3 and d=1, F_3(dτ_3(T))=T²dT whereas d(F_3τ_3(T))=3T²dT. Reducing these values modulo 3 gives the nonzero form T²dT and zero, respectively; the scaled differential law cannot be replaced by the chain-map law.
-- Replacing dF_n=nF_nd by the printed dF_n=n dV_n is ill-typed: dV_n has the opposite domain and codomain.
+- At m=d=1, F_1=id on Ω*_{ℤ[T]/ℤ}, so dF_1(T)=F_1d(T)=dT. This boundary has scale factor 1 and requires no prime Frobenius step.
 
 ### 7.4 Prime Verschiebung differential identities
 
@@ -793,8 +793,8 @@ This interface is used by Layer 7.6 `QWitt.differentialGhost`.
 
 **Checks.**
 
-- For p=2, θ_2τ_2(T)=T dT without division by 2.
-- For ℓ≠p, Bézout for p and ℓ makes the two equations determine θ_pV_ℓ uniquely.
+- For R=ℤ[T] at m=p=2, θ_2(τ_2(T))=T dT without division by 2, and θ_2(V_2(T))=dT rather than 2dT.
+- For R=ℤ[T] at m=p=2, F_2(τ_2(T))=T², hence θ_2(τ_2(T)²)=2T³dT. An ordinary derivation with the same value on τ_2(T) would instead give 2T²dT; the F_2-semilinear product rule is essential.
 - At m=1 there is no prime step and F_1=id.
 
 ### 7.6 Differential ghosts
@@ -813,7 +813,7 @@ This interface is used by Layer 7.7 `QWitt.differential_baseChange`.
 
 - At m=2, the degree-one d=1 component of V_2(dT) is 4dT, not 2dT.
 - At m=1 the differential ghost is identity on Ω*_{R/A}.
-- In degree zero it is 4.4 with coefficient n rather than n^(i+1) for an unspecified i.
+- For A=ℤ,R=ℤ[T],m=2,d=1, gh_2(V_2(T))=2T in degree zero, whereas gh_2(V_2(dT))=4dT in degree one. A degree-independent coefficient 2 fails.
 
 ### 7.7 Differential base change
 
@@ -829,7 +829,7 @@ The public laws are `QWitt.differential_etaleDescent`: The degreewise functors o
 
 - A′=A and R′=R give identity isomorphisms.
 - At m=1 both results are ordinary de Rham base change.
-- The differential on S⊗P is not generally s⊗ω↦s⊗dω: étale elements s can have nonzero differentials over A[q].
+- For A=ℤ,m=1, the étale localization ℤ[T]→ℤ[T,T⁻¹] has d(T⁻¹)=−T⁻²dT≠0. Defining the extended differential by s⊗ω↦s⊗dω would instead give zero on T⁻¹.
 
 ### Examples
 
@@ -973,7 +973,7 @@ This interface is used by Layer 9.5 `QWitt.framedCohomologySystem`.
 
 - For the one-variable frame, d_H(T)=h dT and β_1(T)=dT.
 - For a zero-variable frame H□ is concentrated in degree zero and β_m=0.
-- β_1 is the ordinary de Rham differential, even though the differential on H□/h is zero; confusing them would give β_1(T)=0.
+- For A=ℤ,R=ℤ[T] with its one-variable frame and m=2, d_H(T²)=(q²−1)T dT, so β_2([T²])=[T dT]≠0. Specialization of H□/(q²−1) at q=1 has zero differential and sends this class to the nonzero form T dT. Using the quotient differential in place of the Bockstein would give zero.
 
 ### 9.5 The framed cohomology system
 
@@ -988,7 +988,7 @@ The public laws are `framedCohomologySystem_degreeZero`: For polynomial R the de
 **Checks.**
 
 - For m=1, β_1(T_i)=dT_i, although the differential of H□/h is zero.
-- In E_m the skew multiplication becomes graded commutative only on cohomology; this does not turn H□ itself into a commutative DGA.
+- For A=ℤ,R=ℤ[T],m=2, T² is a degree-zero cocycle and dT·T²=q²T²dT=T²dT modulo q²−1. In contrast, dT·T=qT dT differs from T dT and T is not a cocycle. Commutativity on cohomology does not imply commutativity of H□.
 - For zero variables E_m=R[[h]]/(q^m−1) in degree zero and β_m=0.
 
 ### 9.6 The simultaneous prime-power induction
