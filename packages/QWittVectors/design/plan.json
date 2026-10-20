@@ -2,7 +2,7 @@
   "roadmap": "QWittVectors",
   "title": "Arithmetic Λ-rings, relative q-Witt vectors and complete framed calculus",
   "parent": null,
-  "summary": "Build the general big Witt and arithmetic Λ library, absolute and relative q-Witt rings, completed étale coefficient Frobenius, positive-degree systems and complete framed difference calculus, culminating in smooth torsion and completion theorems.",
+  "summary": "Build the general big Witt and arithmetic Λ library, absolute and relative q-Witt rings, completed étale coefficient Frobenius, positive-degree systems and complete framed difference calculus, culminating in smooth torsion and completion theorems. Export the functorial p-complete E∞ de Rham comparison for all smooth algebras, primes and positive indices.",
   "baseline": {
     "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
     "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
@@ -23,7 +23,7 @@
           ],
           "locator": {
             "source": "hesselholt",
-            "where": "§1 before Proposition 1.2, lines 217–268; Wagner §2.6, wagner line 435"
+            "where": "§1 before Proposition 1.2, lines 217–268; Wagner §2.6, wagner line 435; printed hesselholt v3 pp. 6–7; wagner v5 p. 10"
           },
           "prerequisites": [],
           "api": [
@@ -81,7 +81,7 @@
           ],
           "locator": {
             "source": "hesselholt",
-            "where": "Lemma 1.1, lines 217–267; Lemma 1.9"
+            "where": "Lemma 1.1, lines 217–267; Lemma 1.9; printed hesselholt v3 pp. 6–7, 11"
           },
           "prerequisites": [
             "target:1.1"
@@ -130,7 +130,7 @@
           ],
           "locator": {
             "source": "hesselholt",
-            "where": "Proposition 1.2, lines 268–298; Proposition 1.6 proof, lines 383–397; wagner §2.6"
+            "where": "Proposition 1.2, lines 268–298; Proposition 1.6 proof, lines 383–397; wagner §2.6; printed hesselholt v3 pp. 7, 10; wagner v5 pp. 10–11"
           },
           "prerequisites": [
             "target:1.1",
@@ -195,7 +195,7 @@
           ],
           "locator": {
             "source": "hesselholt",
-            "where": "Lemmas 1.3–1.5, lines 301–371"
+            "where": "Lemmas 1.3–1.5, lines 301–371; printed hesselholt v3 pp. 8–9"
           },
           "prerequisites": [
             "target:1.3"
@@ -266,7 +266,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Remark 2.7, lines 471–473"
+            "where": "Remark 2.7, lines 471–473; printed wagner v5 p. 11"
           },
           "prerequisites": [
             "target:1.4",
@@ -322,7 +322,7 @@
           ],
           "locator": {
             "source": "hesselholt",
-            "where": "Theorem 1.25, lines 811–827; borger Corollary 5.4, borger line 1323"
+            "where": "Theorem 1.25, lines 811–827; borger Corollary 5.4, borger line 1323; printed hesselholt v3 p. 19; borger v6 p. 26"
           },
           "prerequisites": [
             "target:1.5",
@@ -369,7 +369,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Remark 2.16, lines 603–619; §4.7, lines 2847–2857"
+            "where": "Remark 2.16, lines 603–619; §4.7, lines 2847–2857; printed wagner v5 pp. 13–14, 57"
           },
           "prerequisites": [
             "roadmap:DerivedModuleAlgebra §0.K.1",
@@ -431,7 +431,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemma 2.4, Remark 2.5, lines 366–430; §4.18, lines 3081–3095"
+            "where": "Lemma 2.4, Remark 2.5, lines 366–430; §4.18, lines 3081–3095; printed wagner v5 pp. 9–10, 62"
           },
           "prerequisites": [
             "roadmap:EnhancedDerivedSheaves §0.3",
@@ -485,7 +485,7 @@
           ],
           "locator": {
             "source": "hesselholt",
-            "where": "Proposition 1.19 and Definitions 1.21, 1.23, lines 711–801"
+            "where": "Proposition 1.19 and Definitions 1.21, 1.23, lines 711–801; printed hesselholt v3 pp. 17–19"
           },
           "prerequisites": [
             "target:1.4"
@@ -555,7 +555,7 @@
           ],
           "locator": {
             "source": "borger",
-            "where": "§§1.16–1.18, lines 603–638; pridham Definition 2.1, pridham line 506; wagner Remarks 2.32 and 2.43"
+            "where": "§§1.16–1.18, lines 603–638; pridham Definition 2.1, pridham line 506; wagner Remarks 2.32 and 2.43; printed borger v6 pp. 12–13; pridham v4 p. 12; wagner v5 pp. 26, 31"
           },
           "prerequisites": [
             "target:2.1",
@@ -626,7 +626,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Remark 2.47 and footnote 2.3, lines 1621–1643; bhatt-scholze Remark 2.27, bhatt-scholze line 775"
+            "where": "Remark 2.47 and footnote 2.3, lines 1621–1643; bhatt-scholze Remark 2.27, bhatt-scholze line 775; printed wagner v5 p. 32; bhatt-scholze v4 p. 20"
           },
           "prerequisites": [
             "target:2.2"
@@ -690,7 +690,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Remark 2.47 and footnote 2.3, lines 1621–1643; wagner-habiro §1.22(e), wagner-habiro line 493; bhatt-scholze Lemma 2.28, bhatt-scholze line 778"
+            "where": "Remark 2.47 and footnote 2.3, lines 1621–1643; wagner-habiro §1.22(e), wagner-habiro line 493; bhatt-scholze Lemma 2.28, bhatt-scholze line 778; printed wagner v5 p. 32; wagner-habiro v2 p. 12; bhatt-scholze v4 p. 20"
           },
           "prerequisites": [
             "target:2.3"
@@ -756,7 +756,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§2.45 and Remark 2.47, lines 1573–1628"
+            "where": "§2.45 and Remark 2.47, lines 1573–1628; printed wagner v5 pp. 31–32"
           },
           "prerequisites": [
             "target:2.1",
@@ -830,7 +830,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Definition 2.8 and Remark 2.12, lines 475–549"
+            "where": "Definition 2.8 and Remark 2.12, lines 475–549; printed wagner v5 pp. 11–12"
           },
           "prerequisites": [
             "target:1.4"
@@ -884,7 +884,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemmas 2.9–2.10 and Remark 2.12, lines 483–549"
+            "where": "Lemmas 2.9–2.10 and Remark 2.12, lines 483–549; printed wagner v5 pp. 11–12"
           },
           "prerequisites": [
             "target:3.1"
@@ -948,7 +948,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§2.13, lines 552–580"
+            "where": "§2.13, lines 552–580; printed wagner v5 pp. 12–13"
           },
           "prerequisites": [
             "target:3.2",
@@ -1009,7 +1009,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Proposition 2.15, Remark 2.16, Lemmas 2.17–2.18 and Corollary 2.19, lines 591–1004"
+            "where": "Proposition 2.15, Remark 2.16, Lemmas 2.17–2.18 and Corollary 2.19, lines 591–1004; printed wagner v5 pp. 13–19"
           },
           "prerequisites": [
             "target:3.3",
@@ -1045,7 +1045,7 @@
             {
               "name": "QWitt.absolute_verschiebungResolution_3",
               "kind": "compatibility",
-              "statement": "For m=2^a, the resolution is 0→Q_{2^(a−1)}→Q_{2^a}→R[ζ_{2^a}]→0."
+              "statement": "For m=2^a with a≥1, the resolution is 0→Q_{2^(a−1)}→Q_{2^a}→R[ζ_{2^a}]→0; a=0 is the separate m=1 augmentation, not a level with index 2^(−1)."
             }
           ],
           "proofSketch": "Prove the prime-power short exact sequence from the explicit ideal. For the general complex, use iterated mapping cones of its finite cube; split the prime-to-p V-directions after p-localization and compare the remaining direction with the prime-power case. Rational and prime-completed detection prove exactness; apply the same cube argument to kernels of V. The terminal object removed from the reverse-inclusion cube is ∅.",
@@ -1065,7 +1065,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Corollaries 2.20, 2.22 and Lemmas 2.21, 2.23, lines 1006–1080"
+            "where": "Corollaries 2.20, 2.22 and Lemmas 2.21, 2.23, lines 1006–1080; printed wagner v5 pp. 19–21"
           },
           "prerequisites": [
             "target:3.4"
@@ -1114,7 +1114,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Corollaries 2.24, 2.26 and Lemma 2.27, lines 1083–1190"
+            "where": "Corollaries 2.24, 2.26 and Lemma 2.27, lines 1083–1190; printed wagner v5 pp. 21–23"
           },
           "prerequisites": [
             "target:3.5",
@@ -1164,7 +1164,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Proposition 2.28, Corollary 2.29 and Lemma 2.30, lines 1194–1303"
+            "where": "Proposition 2.28, Corollary 2.29 and Lemma 2.30, lines 1194–1303; printed wagner v5 pp. 23–26"
           },
           "prerequisites": [
             "target:3.6",
@@ -1216,7 +1216,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemmas 2.33–2.34, Corollary 2.35, Proposition 2.36 and Corollary 2.37, lines 1348–1468"
+            "where": "Lemmas 2.33–2.34, Corollary 2.35, Proposition 2.36 and Corollary 2.37, lines 1348–1468; printed wagner v5 pp. 27–29"
           },
           "prerequisites": [
             "target:2.2",
@@ -1272,7 +1272,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Definition 2.40, lines 1504–1512"
+            "where": "Definition 2.40, lines 1504–1512; printed wagner v5 p. 30"
           },
           "prerequisites": [
             "target:4.1"
@@ -1326,7 +1326,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemmas 2.41–2.42 and Remark 2.43, lines 1513–1559"
+            "where": "Lemmas 2.41–2.42 and Remark 2.43, lines 1513–1559; printed wagner v5 pp. 30–31"
           },
           "prerequisites": [
             "target:4.2"
@@ -1372,7 +1372,7 @@
             {
               "name": "QWitt.relative_3",
               "kind": "non-example",
-              "statement": "The tensor product without the displayed ideal need not make V A[q]-linear; the generators test precisely this failure."
+              "statement": "Take toric A=ℤ[T], R=A[X], m=2 and d=1. In B=Q_2(R)⊗_{Q_2(A),c_2}A[q]/(q²−1), the two expressions V_2(TX)⊗1 and V_2(X)⊗T differ. A map B→𝔽₂[ε]/(ε²) sends them to ε and 0: on Q_2(R) use the polynomial image in 4.1 and send b to b(0,0,1) mod 2 plus ε times half the TX-coefficient of b(T,X,1), modulo 2; on A[q] send T to 0 and q to 1. Coefficients of monomials with an odd exponent are even; the cross terms in the TX-coefficient of a product are divisible by 4, so this is a ring map and agrees with c_2 on Q_2(A). The defining ideal contains exactly their difference, from x=X,y=T, so it enforces V-linearity."
             }
           ],
           "proofSketch": "Check that all F and V preserve the ideal, using the comparison compatibilities in 4.1 and separate cases p|m/d and p∤m/d. The universal property gives maps and laws without requiring flatness of A.",
@@ -1391,7 +1391,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§2.44, lines 1565–1572"
+            "where": "§2.44, lines 1565–1572; printed wagner v5 p. 31"
           },
           "prerequisites": [
             "target:4.3",
@@ -1419,7 +1419,7 @@
             {
               "name": "QWitt.relativeGhost_1",
               "kind": "computation",
-              "statement": "At d=m the structural coaction s_m(a) maps to ψ_m(a)⊗1=1⊗a; erasing the twist makes this equality false."
+              "statement": "At d=m, gh_1(s_m(a))=a⊗1=1⊗ψ_m(a). For toric A=R=ℤ[T] and m=2, the identification r⊗b↦ψ_2(r)b sends both sides to T², also after adjoining ζ_2. The reversed formula would assert T⁴=T, which is false."
             },
             {
               "name": "QWitt.relativeGhost_2",
@@ -1449,7 +1449,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemma 2.46, lines 1583–1620"
+            "where": "Lemma 2.46, lines 1583–1620; printed wagner v5 pp. 31–32"
           },
           "prerequisites": [
             "target:4.4"
@@ -1500,7 +1500,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§2.45 and Remark 2.47, lines 1573–1643"
+            "where": "§2.45 and Remark 2.47, lines 1573–1643; printed wagner v5 pp. 31–32"
           },
           "prerequisites": [
             "target:4.5",
@@ -1558,7 +1558,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Proposition 2.48 and Lemma 2.50, lines 1651–1712"
+            "where": "Proposition 2.48 and Lemma 2.50, lines 1651–1712; printed wagner v5 pp. 33–34"
           },
           "prerequisites": [
             "target:4.5",
@@ -1609,7 +1609,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Corollary 2.51, lines 1715–1730"
+            "where": "Corollary 2.51, lines 1715–1730; printed wagner v5 p. 34"
           },
           "prerequisites": [
             "target:5.1",
@@ -1655,7 +1655,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Remark 2.47, lines 1621–1643, with Corollaries 2.22, 2.24, 2.26; §4.19 proof, lines 3123–3127"
+            "where": "Remark 2.47, lines 1621–1643, with Corollaries 2.22, 2.24, 2.26; §4.19 proof, lines 3123–3127; printed wagner v5 pp. 20–22, 32, 63"
           },
           "prerequisites": [
             "target:4.6",
@@ -1703,7 +1703,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Corollary 2.39 and proof, lines 1485–1495; Lemma 2.46 proof, lines 1588–1620"
+            "where": "Corollary 2.39 and proof, lines 1485–1495; Lemma 2.46 proof, lines 1588–1620; printed wagner v5 pp. 29, 31–32"
           },
           "prerequisites": [
             "target:4.5",
@@ -1758,7 +1758,7 @@
           ],
           "locator": {
             "source": "wagner-habiro",
-            "where": "§2.7, lines 647–658"
+            "where": "§2.7, lines 647–658; printed wagner-habiro v2 pp. 15–16"
           },
           "prerequisites": [
             "target:2.4",
@@ -1823,7 +1823,7 @@
           ],
           "locator": {
             "source": "wagner-habiro",
-            "where": "§2.7 and Theorem 2.9 proof, lines 647–661 and 709–716"
+            "where": "§2.7 and Theorem 2.9 proof, lines 647–661 and 709–716; printed wagner-habiro v2 pp. 15–17"
           },
           "prerequisites": [
             "target:6.1",
@@ -1879,7 +1879,7 @@
           ],
           "locator": {
             "source": "wagner-habiro",
-            "where": "Theorem 2.9 proof, lines 679–721"
+            "where": "Theorem 2.9 proof, lines 679–721; printed wagner-habiro v2 pp. 16–17"
           },
           "prerequisites": [
             "target:6.2",
@@ -1933,13 +1933,13 @@
           "id": "7.1",
           "kind": "definition",
           "name": "QWitt.DifferentialVSystem",
-          "statement": "For A a Λ-ring and R/A define a q-V system of nonnegative differential graded A[q]-algebras P_m: each is graded commutative with odd squares zero, receives Q_m(R/A)→P_m⁰, and has graded A[q]-linear V_{m/d} extending degree-zero V, with identity and composition laws, V(ω dη)=V(ω)dV(η), and V(ω)dτ_m(r)=V(ωτ_d(r)^(m/d−1))dV(τ_d(r)). Morphisms preserve all data.",
+          "statement": "For A a Λ-ring and R/A define a q-V system of nonnegative differential graded A[q]-algebras P_m: each has xy=(−1)^(ij)yx for homogeneous x∈P_m^i,y∈P_m^j, and x²=0 whenever i is odd, receives Q_m(R/A)→P_m⁰, and has graded A[q]-linear V_{m/d} extending degree-zero V, with identity and composition laws, V(ω dη)=V(ω)dV(η), and V(ω)dτ_m(r)=V(ωτ_d(r)^(m/d−1))dV(τ_d(r)). Morphisms preserve all data.",
           "hypotheses": [
             "A any arithmetic Λ-ring; R any A-algebra; homogeneous ω,η in the indicated source; r∈R; d|m."
           ],
           "locator": {
             "source": "wagner",
-            "where": "Definition 3.1, lines 1822–1838"
+            "where": "Definition 3.1, lines 1822–1838; printed wagner v5 p. 37"
           },
           "prerequisites": [
             "target:4.3",
@@ -1973,7 +1973,7 @@
             {
               "name": "QWitt.DifferentialVSystem_1",
               "kind": "degenerate",
-              "statement": "The system truncated to {1} receives Ω*_{R/A}, with q=1 and V_1=id."
+              "statement": "At level 1, the exterior de Rham algebra Ω*_{A[T]/A}, with q=1 and V_1=id, satisfies the multiplication conditions: dT∧dT=0 and d(T²)=2T dT. A symmetric algebra on dT with nonzero square would fail."
             },
             {
               "name": "QWitt.DifferentialVSystem_2",
@@ -1983,10 +1983,10 @@
             {
               "name": "QWitt.DifferentialVSystem_3",
               "kind": "compatibility",
-              "statement": "A graded quotient by a differential graded ideal preserving the V-relations again gives a system; a quotient only by the degree-zero relations need not."
+              "statement": "For A=R=ℤ and m=1, take P=ℤ[u] with |u|=2 and zero differential. The quotient by (u²) retains u≠0 and has u²=0; it satisfies both multiplication conditions. In Ω*_{ℤ[T]/ℤ}, the graded ideal (T) is not differential because dT is outside it, so quotienting only by (T) cannot induce a differential."
             }
           ],
-          "proofSketch": "Use the supplied DG hierarchy and impose strict alternation as a predicate. The projection identity with ω=1 and the relation (q^d−1)P_d=0 prove V_n d=n dV_n; no integer is inverted.",
+          "proofSketch": "Use the associative DG carriers, imposing the displayed graded commutativity and strict odd alternation as conditions on their multiplication. The projection identity with ω=1 and the relation (q^d−1)P_d=0 prove V_n d=n dV_n; no integer is inverted.",
           "usedBy": [
             "target:7.2"
           ]
@@ -2001,10 +2001,11 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Proposition 3.12, Definition 3.13 and Remark 3.14, lines 1956–2010"
+            "where": "Proposition 3.12, Definition 3.13 and Remark 3.14, lines 1956–2010; printed wagner v5 pp. 40–41"
           },
           "prerequisites": [
-            "target:7.1"
+            "target:7.1",
+            "gap:dga-quotient"
           ],
           "api": [
             {
@@ -2061,7 +2062,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Definition 3.6 and Lemma 3.7 proof, lines 1893–1929"
+            "where": "Definition 3.6 and Lemma 3.7 proof, lines 1893–1929; printed wagner v5 p. 39"
           },
           "prerequisites": [
             "target:7.2"
@@ -2097,7 +2098,7 @@
             {
               "name": "QWitt.DifferentialFVSystem_2",
               "kind": "degenerate",
-              "statement": "F_1 is a chain map because its differential factor is 1."
+              "statement": "For A=ℤ, R=ℤ[T], m=3 and d=1, F_3(dτ_3(T))=T²dT whereas d(F_3τ_3(T))=3T²dT. Reducing these values modulo 3 gives the nonzero form T²dT and zero, respectively; the scaled differential law cannot be replaced by the chain-map law."
             },
             {
               "name": "QWitt.DifferentialFVSystem_3",
@@ -2120,7 +2121,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§3.3 and Lemma 3.4, lines 1849–1874; langer-zink Lemma 1.5, langer-zink line 601"
+            "where": "§3.3 and Lemma 3.4, lines 1849–1874; langer-zink Lemma 1.5, langer-zink line 601; printed wagner v5 p. 38; langer-zink July 2003 pp. 19–20"
           },
           "prerequisites": [
             "target:7.2",
@@ -2175,7 +2176,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Proposition 3.17, §§3.20–3.30, lines 2053–2549; langer-zink Proposition 1.3, langer-zink line 453 (July 2003 preprint)"
+            "where": "Proposition 3.17, §§3.20–3.30, lines 2053–2549; langer-zink Proposition 1.3, langer-zink line 453 (July 2003 preprint); printed wagner v5 pp. 42–50; langer-zink July 2003 pp. 14–16"
           },
           "prerequisites": [
             "target:7.3",
@@ -2235,7 +2236,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§3.15, lines 2011–2041"
+            "where": "§3.15, lines 2011–2041; printed wagner v5 pp. 41–42"
           },
           "prerequisites": [
             "target:7.5",
@@ -2290,7 +2291,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemma 3.16 and Proposition 3.31, Lemma 3.32, lines 2044–2050 and 2552–2595"
+            "where": "Lemma 3.16 and Proposition 3.31, Lemma 3.32, lines 2044–2050 and 2552–2595; printed wagner v5 pp. 42, 50–51"
           },
           "prerequisites": [
             "target:7.6",
@@ -2351,7 +2352,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§4.7, lines 2830–2848; pridham Definition 1.22, pridham line 371; scholze §3, scholze line 319"
+            "where": "§4.7, lines 2830–2848; pridham Definition 1.22, pridham line 371; scholze §3, scholze line 319; printed wagner v5 p. 57; pridham v4 p. 9; scholze v1 p. 6"
           },
           "prerequisites": [
             "target:1.7",
@@ -2412,7 +2413,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§§4.7–4.8, lines 2842–2872; scholze §3, scholze lines 291–304"
+            "where": "§§4.7–4.8, lines 2842–2872; scholze §3, scholze lines 291–304; printed wagner v5 p. 57; scholze v1 p. 6"
           },
           "prerequisites": [
             "target:8.2"
@@ -2471,7 +2472,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§§4.7–4.8, lines 2849–2872; pridham Definition 1.22, pridham line 371"
+            "where": "§§4.7–4.8, lines 2849–2872; pridham Definition 1.22, pridham line 371; printed wagner v5 p. 57; pridham v4 p. 9"
           },
           "prerequisites": [
             "target:8.3",
@@ -2533,7 +2534,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§4.9, lines 2882–2891; §4.28, lines 3292–3332; §4.31, lines 3452–3458; pridham Lemma 2.9, pridham line 635"
+            "where": "§4.9, lines 2882–2891; §4.28, lines 3292–3332; §4.31, lines 3452–3458; pridham Lemma 2.9, pridham line 635; printed wagner v5 pp. 58, 67, 70; pridham v4 p. 15"
           },
           "prerequisites": [
             "target:8.4",
@@ -2601,7 +2602,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§§4.10–4.12, lines 2892–2972"
+            "where": "§§4.10–4.12, lines 2892–2972; printed wagner v5 pp. 58–60"
           },
           "prerequisites": [
             "target:8.5",
@@ -2657,7 +2658,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemmas 4.13–4.14 and Corollary 4.15, lines 2950–3012"
+            "where": "Lemmas 4.13–4.14 and Corollary 4.15, lines 2950–3012; printed wagner v5 pp. 59–60"
           },
           "prerequisites": [
             "target:9.2",
@@ -2707,7 +2708,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§4.16 and §4.23, lines 3026–3032 and 3178–3194"
+            "where": "§4.16 and §4.23, lines 3026–3032 and 3178–3194; printed wagner v5 pp. 61, 64"
           },
           "prerequisites": [
             "target:8.4",
@@ -2764,7 +2765,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§§4.16–4.26, lines 3022–3277"
+            "where": "§§4.16–4.26, lines 3022–3277; printed wagner v5 pp. 61–66"
           },
           "prerequisites": [
             "target:1.8",
@@ -2823,7 +2824,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "§4.3, lines 2703–2720; Lemma 4.5, lines 2756–2808; §§4.29–4.33 and §4.4 proof, lines 3341–3608"
+            "where": "§4.3, lines 2703–2720; Lemma 4.5, lines 2756–2808; §§4.29–4.33 and §4.4 proof, lines 3341–3608; printed wagner v5 pp. 54–56, 67–73"
           },
           "prerequisites": [
             "target:9.5",
@@ -2865,9 +2866,74 @@
               "statement": "The quotient by im V_p alone in positive degrees is insufficient; dV_p must also be killed."
             }
           ],
-          "proofSketch": "Treat (a)–(d) as one simultaneous induction, not four circular prerequisites. For (a), use the first-ghost quotient and (d at α−1) to kill a putative p-torsion form; extend from polynomial to smooth by 7.7. For (b), compare the short exact sequences with kernel im V_p+im dV_p using 9.3 and the zero-index Frobenius summand. For (c), use the prismatic Frobenius/décalage comparison gap with the explicit C□ map in 8.5, then identify it through (b). For (d), decompose polynomial de Rham cycles modulo p into Cartier monomials and exact forms; Teichmüller identities and FdV=d lift both. No global functorial de Rham comparison is needed for this induction.",
+          "proofSketch": "Treat (a)–(d) as one simultaneous induction, not four circular prerequisites. For (a), use the first-ghost quotient and (d at α−1) to kill a putative p-torsion form; extend from polynomial to smooth by 7.7. For (b), compare the short exact sequences with kernel im V_p+im dV_p using 9.3 and the zero-index Frobenius summand. For (c), use the prismatic Frobenius/décalage comparison gap with the explicit C□ map in 8.5, then identify it through (b). For (d), decompose polynomial de Rham cycles modulo p into Cartier monomials and exact forms; Teichmüller identities and FdV=d lift both. The functorial comparison of §9.7 extends this framed milestone by PD presentations and étale descent.",
           "usedBy": [
-            "target:10.1"
+            "target:10.1",
+            "target:9.7"
+          ]
+        },
+        {
+          "id": "9.7",
+          "kind": "theorem",
+          "name": "QWitt.smoothDeRhamComparison",
+          "statement": "For a perfectly covered arithmetic Λ-ring A, every smooth A-algebra R, every prime p and every positive integer m=p^αn with α≥0 and gcd(n,p)=1, construct a natural equivalence of p-complete E∞-A[q]-algebras ∏_{d|n}(Ω*_{R/A}⊗ᴸ_{A,ψ_{p^αd}}A[q]/Φ_d(q^(p^α)))^∧_p ≃ (Q_mΩ*_{R/A})^∧_p. The tensor is derived and uses ψ_{p^αd} on the right A-factor; Ω* denotes the ordinary de Rham algebra viewed in the enhanced derived category. The equivalence is functorial for every A-algebra map between smooth A-algebras, without a framing choice.",
+          "hypotheses": [
+            "A perfectly covered; R smooth over A; p any prime, including 2; m>0; α=v_p(m); n=m/p^α; gcd(n,p)=1. No Noetherian, perfectness or global framing hypothesis is imposed on R."
+          ],
+          "locator": {
+            "source": "wagner",
+            "where": "Proposition 4.2, p. 54, lines 2692–2702; §§4.34–4.35 and proof of (bα)⇒(cα), pp. 71–73, lines 3491–3583; Lemma 4.36 and proof of Proposition 4.2, pp. 74–75, lines 3644–3697 (arXiv v5)"
+          },
+          "prerequisites": [
+            "target:9.6",
+            "target:7.7",
+            "target:3.7",
+            "target:4.6",
+            "gap:ordinary-derham",
+            "gap:prismatic-frobenius",
+            "gap:cyclotomic-contract",
+            "roadmap:EnhancedDerivedSheaves §E5:abstract",
+            "roadmap:DerivedModuleAlgebra §0.2"
+          ],
+          "api": [
+            {
+              "name": "QWitt.smoothDeRhamComparison_primePower",
+              "role": "specialization",
+              "statement": "For n=1, the sole d=1 factor is (Ω*_{R/A}⊗ᴸ_{A,ψ_{p^α}}A[q]/(q^(p^α)−1))^∧_p, and on a finite étale frame its equivalence agrees with §9.6(c)."
+            },
+            {
+              "name": "QWitt.smoothDeRhamComparison_natural",
+              "role": "naturality",
+              "statement": "Every A-algebra map R→S between smooth A-algebras gives a commuting square of equivalences in the ∞-category of p-complete E∞-A[q]-algebras, coherently with identities and composition."
+            },
+            {
+              "name": "QWitt.differential_pLocalDecomposition",
+              "role": "comparison",
+              "statement": "For every A-algebra R and m=p^αn with gcd(n,p)=1, put C_α=A[q]/(q^(p^α)−1). Then (Q_mΩ*)_(p) ≅ ∏_{d|n}(Q_{p^α}Ω*⊗_{C_α,σ_d}A_(p)[q]/Φ_d(q^(p^α))) as DG A_(p)[q]-algebras, where σ_d(a)=ψ_d(a) and σ_d(q)=q^d. For perfectly covered A these maps out of C_α are flat, so the ordinary tensors agree with derived tensors over C_α."
+            }
+          ],
+          "tests": [
+            {
+              "name": "QWitt.smoothDeRhamComparison_1",
+              "kind": "degenerate",
+              "statement": "For m=1, α=0 and n=1, the equivalence is (Ω*_{R/A})^∧_p≃(Q_1Ω*_{R/A})^∧_p with q=1. For R=0 it is the zero algebra equivalence."
+            },
+            {
+              "name": "QWitt.smoothDeRhamComparison_2",
+              "kind": "computation",
+              "statement": "For p=2,m=6, the factors d=1,3 use ψ_2 with Φ_1(q²)=q²−1 and ψ_6 with Φ_3(q²)=q⁴+q²+1. For A=R=ℤ[U] with toric structure, U⊗1 in the second factor equals 1⊗U⁶; using ψ_2 in both factors would give U² instead."
+            },
+            {
+              "name": "QWitt.smoothDeRhamComparison_3",
+              "kind": "computation",
+              "statement": "For p=3,m=2, α=0 and n=2, the factors are Φ_1(q)=q−1 with ψ_1 and Φ_2(q)=q+1 with ψ_2. For A=R=ℤ their product is ℤ_3[q]/(q²−1) by Chinese remainders; at p=2 the two factors are not comaximal, so m=2 instead has the single prime-power factor q²−1. In the intermediate decomposition use derived tensor over C_α: for n=1,A=R=ℤ, replacing it by tensor over ℤ[q] with C_α produces the extra Tor₁=C_α, since q^(p^α)−1 is regular in ℤ[q]."
+            }
+          ],
+          "proofSketch": "For a prime power choose a surjection P→R̂_p with P p-completely ind-smooth over Â_p and carrying a compatible δ-structure. Use its δ-compatible PD envelope D(P→R̂_p), the PD de Rham complex and its multiplicative crystalline Poincaré equivalence to (Ω*_{R/A})^∧_p. The relative comparison of §4.6 induces a map from the PD de Rham complex after killing p-primary torsion on the q-Witt side. Section 9.6(a) allows descent to Q_{p^α}Ω*. Compare different presentations via their completed tensor coproducts: the presentation category is weakly contractible, and a functorial free δ-presentation gives coherent naturality. On an étale frame this map is §9.6(c), so §7.7 and ordinary de Rham étale descent prove equivalence for arbitrary smooth R. For general m, construct the displayed p-local product by the differential q-FV universal property, as in §3.7; flat Adams twists and cyclotomic scalar maps identify ordinary and derived tensors over C_α=A[q]/(q^(p^α)−1). Apply the prime-power comparison to its factors and p-complete.",
+          "usedBy": [
+            "consumer:HabiroCohomologyFoundations",
+            "consumer:HabiroRings",
+            "consumer:RefinedTraceMethods"
           ]
         }
       ],
@@ -2887,7 +2953,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Proposition 4.1, line 2690 and proof, lines 3613–3643"
+            "where": "Proposition 4.1, line 2690 and proof, lines 3613–3643; printed wagner v5 pp. 54, 73–74"
           },
           "prerequisites": [
             "target:9.6",
@@ -2939,7 +3005,7 @@
           ],
           "locator": {
             "source": "wagner",
-            "where": "Lemma 4.6, lines 2810–2822"
+            "where": "Lemma 4.6, lines 2810–2822; printed wagner v5 p. 56"
           },
           "prerequisites": [
             "target:10.1",
@@ -3010,7 +3076,7 @@
         "Layer 0",
         "Layer 1"
       ],
-      "what": "Signed graded modules, Koszul braiding, associative and commutative DG carriers, maps, quotients and cohomology multiplication. q-Witt relations and strict alternation are specified here. The generic multiplicative Bockstein extension is gap:dga-bockstein."
+      "what": "Signed graded modules, Koszul braiding, associative nonunital, unital and augmented DG algebras, maps, opposites, tensors, cycles, boundaries and cohomology multiplication. The multiplication conditions of §7.1 specialize these carriers. Differential-ideal quotients and regular-parameter multiplicative Bocksteins require separate supplier extensions."
     },
     {
       "roadmap": "EnhancedDerivedSheaves",
@@ -3032,23 +3098,23 @@
     {
       "roadmap": "HabiroCyclotomicCompletions",
       "sections": [],
-      "what": "gap:cyclotomic-contract; the cyclotomic and completion section identifiers are absent."
+      "what": "Required interface: Cyclotomic integer ideals and completion topology. See gap:cyclotomic-contract."
     },
     {
       "roadmap": "DerivedDeRhamCohomology",
       "sections": [],
-      "what": "gap:ordinary-derham; the ordinary exterior de Rham and Cartier section identifiers are absent."
+      "what": "Required interface: Ordinary de Rham DGA, étale differentials and polynomial Cartier cycles. See gap:ordinary-derham."
     },
     {
       "roadmap": "PrismaticCohomology",
       "sections": [],
-      "what": "gap:prismatic-frobenius; the q-PD, framed comparison and iterated Frobenius section identifiers are absent."
+      "what": "Required interface: Frobenius-compatible framed q-prismatic comparison. See gap:prismatic-frobenius."
     }
   ],
   "consumers": [
     {
       "roadmap": "HabiroCohomologyFoundations",
-      "what": "Layers 2–6 supply relative arithmetic Λ and degree-zero q-Witt theory, especially the completed overlap in Layer 6 for the filed §0.3 interface; Layers 7–10 supply the shared positive-degree operators, complete framed calculus and smooth completion. Consumer text is absent, so §0.3 is an input label, not a verified section contract."
+      "what": "Layers 2–6 supply relative arithmetic Λ and degree-zero q-Witt theory, especially the completed overlap in Layer 6; Layers 7–10 supply positive-degree operators, complete framed calculus, the functorial smooth de Rham comparison and smooth completion."
     },
     {
       "roadmap": "HabiroRings",
@@ -3074,12 +3140,13 @@
         "6.2",
         "7.5",
         "9.3",
-        "10.1"
+        "10.1",
+        "9.7"
       ],
-      "detail": "The earlier HabiroCyclotomicCompletions roadmap has no text in the supplied main checkout or board. Required: Polynomial.cyclotomic compatibility, q^m−1 factorization for m>0; for m>1 the ideal generated by [p]_{q^(m/p)} for p|m is (Φ_m); distinct cyclotomic factors meet only at a prime-power ratio, with the stated characteristic-p quotient; p-local factorization and Chinese remainders; √(p,Φ_d)=√(p,Φ_{pd}) for every d>0, including p|d. Equality of completion functors is by radical, not equality of these ideals. Do not apply the prime-generator formula at m=1 or the distinct-factor formula at equal indices.",
-      "needs": "HabiroCyclotomicCompletions must bind these integral cyclotomic and completion statements to an actual section.",
+      "detail": "Beyond the Mathlib polynomial and factorization declarations above, require: for m>1 the ideal generated by [p]_{q^(m/p)} for p|m is (Φ_m); distinct cyclotomic factors meet only at a prime-power ratio, with the stated characteristic-p quotient; p-local factorization and Chinese remainders; √(p,Φ_d)=√(p,Φ_{pd}) for every d>0, including p|d. Equality of completion functors is by radical, not equality of these ideals. Do not apply the prime-generator formula at m=1 or the distinct-factor formula at equal indices. (wagner v5 §§2.1–2.3, pp. 8–23, wagner lines 305–1190; wagner-habiro v2 §2.7, pp. 15–16, wagner-habiro lines 647–661).",
+      "needs": "Required from HabiroCyclotomicCompletions: integral cyclotomic ideal and completion contracts.",
       "supplier": "HabiroCyclotomicCompletions",
-      "section": "Cyclotomic polynomial and ideal contracts; section identifier absent"
+      "section": "Integral cyclotomic ideal and completion interface"
     },
     {
       "slug": "ordinary-derham",
@@ -3088,34 +3155,36 @@
         "7.1",
         "7.7",
         "8.4",
-        "9.6"
+        "9.6",
+        "9.7"
       ],
-      "detail": "DerivedDeRhamCohomology is earlier in the merge order but its roadmap text is absent. Required over every commutative unital base: Ω* as exterior algebra of Mathlib KaehlerDifferential with its universal differential, strict odd alternation, base change, localization and unique extension through étale algebras, and the finite-coordinate basis for an étale polynomial framing. Required over characteristic p: the polynomial Cartier description of cycles as sums of Frobenius monomials times T_i^(p−1)dT_i and exact forms, with coefficients in an arbitrary characteristic-p algebra, without perfectness of the base. A relative twist is required in the general Cartier statement.",
-      "needs": "DerivedDeRhamCohomology must identify its ordinary de Rham and polynomial Cartier section at this generality.",
+      "detail": "Required over every commutative unital base: Ω* as exterior algebra of Mathlib KaehlerDifferential with its universal differential, strict odd alternation, base change, localization and unique extension through étale algebras; the finite-coordinate basis is the Tau Ceti interface above. Required over characteristic p: the polynomial Cartier description of cycles as sums of Frobenius monomials times T_i^(p−1)dT_i and exact forms, with coefficients in an arbitrary characteristic-p algebra, without perfectness of the base. A relative twist is required in the general Cartier statement. (wagner v5 Definition 3.1, p. 37, wagner line 1822; proof of (cα)⇒(dα), p. 73, wagner lines 3584–3608).",
+      "needs": "Required from DerivedDeRhamCohomology: ordinary exterior de Rham and relative Cartier interfaces.",
       "supplier": "DerivedDeRhamCohomology",
-      "section": "Ordinary de Rham and polynomial Cartier API; section identifier absent"
+      "section": "Ordinary exterior de Rham and relative polynomial Cartier interface"
     },
     {
       "slug": "cohomology-completion",
-      "title": "Cohomology and completion under simultaneous torsion bounds",
+      "title": "Unbounded cochain completion under degreewise torsion bounds",
       "neededBy": [
         "9.5"
       ],
-      "detail": "DerivedModuleAlgebra §§1.5 and 1.8 supply module completion and complete flatness, but not the cochain comparison used here. Needed: for a bounded complex M of ℤ[q]-modules and a prime p, if each term and H^i(M) has bounded h-power torsion and is p-torsion-free, and each corresponding reduction modulo p has bounded h-power torsion, then degreewise ordinary h-completion represents derived completion, preserves these conditions, and H^i commutes with h- and (p,h)-completion, for h=q−1. This is Wagner Lemma 4.25, lines 3198–3227. It is an extension in the supplier direction and is proposed for DerivedModuleAlgebra, Part II rather than rebuilt here.",
-      "needs": "A DerivedModuleAlgebra Part II contract must supply the bounded cochain completion comparison beyond §§1.5 and 1.8.",
+      "detail": "For an arbitrary, possibly unbounded, cochain complex M of ℤ[q]-modules and a prime p, if each term and H^i(M) has bounded h-power torsion and is p-torsion-free, and each corresponding reduction modulo p has bounded h-power torsion, then degreewise ordinary h-completion represents derived completion, preserves these conditions, and H^i commutes with h- and (p,h)-completion, for h=q−1. This is Wagner Lemma 4.25, v5 pp. 64–65, wagner lines 3198–3227; bounds may depend on the degree. Required extension: DerivedModuleAlgebra, Part II.",
+      "needs": "Required extension of DerivedModuleAlgebra §§1.5 and 1.8: cochain completion commuting with cohomology.",
       "supplier": "DerivedModuleAlgebra",
-      "section": "§§1.5, 1.8 extension: bounded cochain completion (Part II contract absent)"
+      "section": "Part II: unbounded cochain completion interface"
     },
     {
       "slug": "prismatic-frobenius",
       "title": "Frobenius-compatible framed q-prismatic comparison",
       "neededBy": [
-        "9.6"
+        "9.6",
+        "9.7"
       ],
-      "detail": "PrismaticCohomology is earlier but its text is absent. For perfectly covered A, p prime and a finite étale framing, D=Â_p[[h]], q=1+h, I=([p]_q) is the bounded q-de Rham prism. Supply the q-PD envelope and comparison with C□^∧_p, identify the explicit coordinate map from 8.5 with prismatic Frobenius, and supply φ^{α*}Δ≃Lη_{Iφ(I)⋯φ^{α−1}(I)}Δ for α≥0, with completed scalar extension, plus its reduction/Bockstein comparison. The general Lη and q-PD theory belongs to that supplier and its existing dependencies. Read sources: bhatt-scholze Theorem 15.3 line 3898; Constructions 16.19–16.20 line 4316; Theorem 16.22 line 4378; wagner Lemma 4.32 line 3459. This input is not the q-fixed coefficient equivalence of Layer 6.",
-      "needs": "PrismaticCohomology must bind the q-prism, explicit framed Frobenius and iterated décalage comparison to named sections.",
+      "detail": "For perfectly covered A, p prime and a finite étale framing, D=Â_p[[h]], q=1+h, I=([p]_q) is the bounded q-de Rham prism. Supply the q-PD envelope and comparison with C□^∧_p, identify the explicit coordinate map from 8.5 with prismatic Frobenius, and supply φ^{α*}Δ≃Lη_{Iφ(I)⋯φ^{α−1}(I)}Δ for α≥0, with completed scalar extension, plus its reduction/Bockstein comparison. The general Lη and q-PD theory belongs to that supplier and its existing dependencies. Sources: bhatt-scholze v4 Theorem 15.3, p. 103, bhatt-scholze line 3898; Constructions 16.19–16.20, p. 114, bhatt-scholze line 4316; Theorem 16.22, p. 115, bhatt-scholze line 4378; wagner v5 Lemma 4.32, p. 70, wagner line 3459. This input is not the q-fixed coefficient equivalence of Layer 6. For §9.7 require also p-completely ind-smooth δ-presentations, their δ-compatible PD envelopes, and the multiplicative crystalline Poincaré comparison from the completed PD de Rham complex to (Ω*_{R/A})^∧_p, functorial in presentations (wagner v5 §4.34, p. 71, wagner lines 3492–3517).",
+      "needs": "Required from PrismaticCohomology: Frobenius-compatible framed q-prismatic comparison and the PD-presentation comparison.",
       "supplier": "PrismaticCohomology",
-      "section": "q-PD/framed comparison and iterated Frobenius décalage; section identifiers absent"
+      "section": "q-PD, framed Frobenius and PD-presentation interfaces"
     },
     {
       "slug": "dga-bockstein",
@@ -3123,10 +3192,21 @@
       "neededBy": [
         "9.4"
       ],
-      "detail": "DGAInfinity Layer 1 supplies DGA carriers and cohomology multiplication but its supplied contract does not state the Bockstein theory needed here. Required for an associative cochain DGA P over a commutative B and central degree-zero f regular in every term: β_f on H*(P/f), computed by dx=fy, is independent of lifts, satisfies β_f²=0 and the signed Leibniz rule, is natural, and obeys Fβ_fV=β_g for g|f with F reduction and V multiplication by f/g when both scalars are termwise regular. The maps F and V in this last identity are graded additive maps; F is multiplicative. Source: wagner lines 3026–3032 and 3178–3194, with the cycle-lift proof. The pinned group-cohomology Bocksteins have different carriers and codomains.",
-      "needs": "DGAInfinity, Part II must supply the generic multiplicative Bockstein theorem beyond Layer 1.",
+      "detail": "Required for an associative cochain DGA P over a commutative B and central degree-zero f regular in every term: β_f on H*(P/f), computed by dx=fy, is independent of lifts, satisfies β_f²=0 and the signed Leibniz rule, is natural, and obeys Fβ_fV=β_g for g|f with F reduction and V multiplication by f/g when both scalars are termwise regular. The maps F and V in this last identity are graded additive maps; F is multiplicative. Source: wagner v5 pp. 61, 64, wagner lines 3026–3032 and 3178–3194, with the cycle-lift proof. The pinned group-cohomology Bocksteins have different carriers and codomains.",
+      "needs": "Required extension of DGAInfinity Layer 1: regular-parameter multiplicative Bocksteins.",
       "supplier": "DGAInfinity",
-      "section": "Layer 1 extension: multiplicative Bocksteins (Part II contract absent)"
+      "section": "Part II: regular-parameter DGA Bockstein interface"
+    },
+    {
+      "slug": "dga-quotient",
+      "title": "Differential-ideal quotients of associative DG algebras",
+      "neededBy": [
+        "7.2"
+      ],
+      "supplier": "DGAInfinity",
+      "section": "Part II: differential-ideal quotient interface",
+      "needs": "Required extension of DGAInfinity Layer 1: differential-ideal quotients.",
+      "detail": "For an associative cochain B-DGA P over a commutative ring B and a homogeneous two-sided ideal J with d(J)⊆J, construct the degreewise quotient DGA P/J and projection. DGA maps P/J→E correspond to DGA maps P→E killing J. The quotient retains graded commutativity and strict odd alternation when P has these properties. A generated differential ideal is the least differential two-sided graded ideal containing the specified homogeneous relations. This interface concerns algebra ideals. (wagner v5 Proposition 3.12 and Definition 3.13, pp. 40–41, wagner lines 1956–2010, using the differential-ideal quotient universal property)."
     }
   ]
 }
