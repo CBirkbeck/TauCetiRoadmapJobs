@@ -140,3 +140,5 @@ CompletedCohomologyAndLocalGlobalCompatibility
 CrystallineLocalGlobalCompatibilityCM
 EllipticCurveModularityImaginaryQuadratic
 ModularityAndLanglandsExtensions
+ArithmeticDynamics
+ErdosProgressionPowers
