@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ErdosProgressionPowers"
+
+[[source]]
+id = "Faltings1983"
+authors = "Gerd Faltings"
+title = "Endlichkeitssätze für abelsche Varietäten über Zahlkörpern"
+year = 1983
+doi = "10.1007/BF01389361"
+locator_scheme = "theorem"
+locator = "Mordell-conjecture consequence; exact primary locator not certified"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/30#issuecomment-6303410090"
