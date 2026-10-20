@@ -143,7 +143,7 @@ uncertified_ok = true
 # Directories holding texts the operator already has (licence class "operator-local"). `sources
 # fetch` looks here first (by arXiv id, DOI, title words or content hash). Never commit a path here
 # that names a person's home directory: use "~/..." — it is expanded on each host.
-local_dirs = []
+local_dirs = ["~/tauceti-sources"]
 # Paywalled hosts: never fetched. A citation that resolves only to one of them is recorded as
 # `uncertified` with its DOI and locator. DOIs with these prefixes are not resolved at all (the
 # service still looks for an arXiv or HAL version).
