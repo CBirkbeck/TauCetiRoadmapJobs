@@ -1,0 +1,24 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QSeriesPartitionsAndMockModularForms"
+
+[[source]]
+id = "GasperRahman2004"
+authors = "George Gasper and Mizan Rahman"
+title = "Basic Hypergeometric Series, second edition"
+year = 2004
+locator_scheme = "section"
+locator = "Sections 1.2 and 5.1, corroborated by Gasper1995 lines 110–117"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1#issuecomment-6299988600"
+
+[[source]]
+id = "BFOR2017"
+authors = "Kathrin Bringmann, Amanda Folsom, Ken Ono and Larry Rolen"
+title = "Harmonic Maass Forms and Mock Modular Forms: Theory and Applications"
+year = 2017
+locator_scheme = "section"
+locator = "Exact section/theorem locator unresolved; requires legal text or an alternative reference"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1#issuecomment-6299988600"
