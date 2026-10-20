@@ -1,0 +1,149 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GanGrossPrasadConjecturesForClassicalGroups"
+
+[[source]]
+id = "ggp"
+authors = "Wee Teck Gan, Benedict H. Gross, Dipendra Prasad"
+title = "Symplectic local root numbers, central critical L-values, and restriction problems in the representation theory of classical groups"
+year = 2009
+arxiv = "0909.2999v1"
+locator_scheme = "section"
+locator = "Sections 2, 4-6, 12, 14-19, 22-24; Theorems 6.1, 6.2, 14.1, 15.1, 16.1, 17.2, 19.1; Conjectures 17.1, 17.3, 24.1"
+url = "https://arxiv.org/abs/0909.2999v1"
+fetched_from = "https://arxiv.org/pdf/0909.2999v1"
+fetched_at = "2026-10-20T21:20:08Z"
+sha256 = "97c28b21ece4cec640a43dc8c7136ec925001d46e9555e413df1b3f9865daae7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Local and global GGP endpoints"]
+
+[[source]]
+id = "ichino-ikeda"
+authors = "Atsushi Ichino, Tamotsu Ikeda"
+title = "On the Periods of Automorphic Forms on Special Orthogonal Groups and the Gross–Prasad Conjecture"
+year = 2010
+venue = "Geometric and Functional Analysis 19"
+doi = "10.1007/s00039-009-0040-4"
+locator_scheme = "theorem"
+locator = "Section 1, Proposition 1.1, Theorem 1.2, Conjectures 1.4 and 1.5; Section 2, Conjecture 2.1; author-version pages 4-10"
+url = "https://www.math.kyoto-u.ac.jp/~ikeda/gp_revised.pdf"
+fetched_from = "https://www.math.kyoto-u.ac.jp/~ikeda/gp_revised.pdf"
+fetched_at = "2026-10-20T21:21:19Z"
+sha256 = "495d45887b38b2cbc05c1b6ff1b6345adadfe71c9f56b63def2eb1fc852e8f76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "60-page author revision; locators refer to this text, not unverified published pagination"
+cited_for = ["Orthogonal refined period identity"]
+
+[[source]]
+id = "bplzz"
+authors = "Raphaël Beuzart-Plessis, Yifeng Liu, Wei Zhang, Xinwen Zhu"
+title = "Isolation of cuspidal spectrum, with application to the Gan--Gross--Prasad conjecture"
+year = 2019
+arxiv = "1912.07169v3"
+locator_scheme = "theorem"
+locator = "Definition 1.5; Theorems 1.8 and 1.10; version v3 pages 3-5"
+url = "https://arxiv.org/abs/1912.07169v3"
+fetched_from = "https://arxiv.org/pdf/1912.07169v3"
+fetched_at = "2026-10-20T21:20:52Z"
+sha256 = "f2834146d4fee02b38c4849ee9a7ef76a3dbc1131e7eef799e6f95b0f0d0ac13"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v3"
+cited_for = ["Unitary period identity and known-case hypotheses"]
+
+[[source]]
+id = "bpcz"
+authors = "Raphaël Beuzart-Plessis, Pierre-Henri Chaudouard, Michał Zydor"
+title = "The global Gan-Gross-Prasad conjecture for unitary groups: the endoscopic case"
+year = 2020
+arxiv = "2007.05601v1"
+locator_scheme = "theorem"
+locator = "Sections 1.1.2-1.1.6; Theorems 1.1.5.1 and 1.1.6.1, pages 2-5; Section 2.3"
+url = "https://arxiv.org/abs/2007.05601v1"
+fetched_from = "https://arxiv.org/pdf/2007.05601v1"
+fetched_at = "2026-10-20T21:21:03Z"
+sha256 = "5c23180ed16b06a514a86b24d3cc9643ef4a4a4292af4b7b72c5dbf714a5483e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Global unitary GGP and GGP.8"]
+
+[[source]]
+id = "gan-ichino"
+authors = "Wee Teck Gan, Atsushi Ichino"
+title = "The Gross-Prasad conjecture and local theta correspondence"
+year = 2014
+arxiv = "1409.6824v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.3; Corollary 1.4; Section 3.2; Proposition 9.3; pages 1-4, 9-10, 50"
+url = "https://arxiv.org/abs/1409.6824v2"
+fetched_from = "https://arxiv.org/pdf/1409.6824v2"
+fetched_at = "2026-10-20T21:21:52Z"
+sha256 = "4aaf7bd6281dd8726cdfca2de32b6f515924a8277865684fc9e011770ec0be5e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["Proved nonarchimedean unitary local packet criterion"]
+
+[[source]]
+id = "sun-zhu"
+authors = "Binyong Sun, Chen-Bo Zhu"
+title = "Multiplicity one theorems: the Archimedean case"
+year = 2009
+venue = "Ann. of Math. (2) 175 (2012), no. 1, 23-44"
+doi = "10.4007/annals.2012.175.1.2"
+arxiv = "0903.1413v2"
+locator_scheme = "theorem"
+locator = "Theorems B and C; version v2 pages 2-3"
+url = "https://arxiv.org/abs/0903.1413v2"
+fetched_from = "https://arxiv.org/pdf/0903.1413v2"
+fetched_at = "2026-10-20T21:22:09Z"
+sha256 = "032c6e55c9bcb1dd89f770c5edfcb6d1b8318948e7b633228aad587a1befb874"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["Archimedean restriction and Jacobi multiplicity one"]
+
+[[source]]
+id = "sun"
+authors = "Binyong Sun"
+title = "Multiplicity one theorems for Fourier-Jacobi models"
+year = 2009
+arxiv = "0903.1417v3"
+locator_scheme = "theorem"
+locator = "Theorems A, B and C; version v3 pages 1-3"
+url = "https://arxiv.org/abs/0903.1417v3"
+fetched_from = "https://arxiv.org/pdf/0903.1417v3"
+fetched_at = "2026-10-20T21:23:33Z"
+sha256 = "f9cbc6a22c785f67c5fcf1452e93f3b0b43b09235ae13b9882addb66e1ab75af"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v3"
+cited_for = ["Nonarchimedean Fourier-Jacobi multiplicity one"]
+
+[[source]]
+id = "waldspurger"
+authors = "Jean-Loup Waldspurger"
+title = "Une variante d'un résultat de Aizenbud, Gourevitch, Rallis et Schiffmann"
+year = 2009
+arxiv = "0911.1618v1"
+locator_scheme = "theorem"
+locator = "Theorem 1, page 1"
+url = "https://arxiv.org/abs/0911.1618v1"
+fetched_from = "https://arxiv.org/pdf/0911.1618v1"
+fetched_at = "2026-10-20T21:23:40Z"
+sha256 = "88734d29402afece90f0ee36e0b80f83b99ad8f6bdb27eb6b20878aabf2a5564"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Special orthogonal nonarchimedean multiplicity one"]
