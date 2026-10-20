@@ -100,8 +100,8 @@ require_depcheck = true
 rounds = 2
 # The passes of one round: two different agents, so that the reviews are independent.
 passes = [
-  { agent = "codex", model = "" },
-  { agent = "claude", model = "" },
+  { agent = "codex", model = "gpt-6-astra" },
+  { agent = "claude", model = "fable" },
 ]
 # Add section-sharded passes: after its whole-document pass, every red-team job runs one more pass
 # per top-level README section that states targets (`## Layer ...`), instantiating every statement
@@ -126,10 +126,21 @@ codex_model = "gpt-6.1-sol"
 claude_model = "claude-opus-5-5"
 # Wall-clock limit of one agent run.
 timeout_minutes = 360
-# Per-lane overrides, e.g. reviews on a different agent family from authoring:
-# [agents.lanes.review]
-# agent = "claude"
-# model = ""
+# Per-lane overrides: `agent` pins the family, `model` its model; `codex_model` and `claude_model` pin
+# the model per family and leave the family to the worker. Reviews run only on the review models.
+[agents.lanes.review]
+codex_model = "gpt-6-astra"
+claude_model = "fable"
+
+[review]
+# Who counts as independent of an author. "operator": another operator login (projects with several
+# operators keep this). "agent": also the same operator, when the reviewing agent and model differ
+# from the authoring agent and model recorded for the job (a single-operator project). The worker
+# checks it before a review and the intake again before it merges one.
+separation = "agent"
+# Logins whose review comments on a board pull request count, besides the board's bots and the
+# project's own workers (for example a maintainer reviewing from a browser model).
+comment_reviewers = []
 
 [sources]
 # Hosts that are refused outright (pirate mirrors). The sandbox proxy refuses them as well, through
