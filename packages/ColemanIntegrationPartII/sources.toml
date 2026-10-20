@@ -1,0 +1,103 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ColemanIntegrationPartII"
+
+[[source]]
+id = "vologodsky2001"
+authors = "Vadim Vologodsky"
+title = "Hodge structure on the fundamental group and its application to p-adic integration"
+year = 2001
+arxiv = "math/0108109v1"
+locator_scheme = "theorem"
+locator = "Theorem B, Section 1.17, p. 5; Proposition 52, Section 17.2, p. 42; standing convention Section 1.1, p. 2 (arXiv v1)"
+url = "https://arxiv.org/abs/math/0108109v1"
+fetched_from = "https://arxiv.org/pdf/math/0108109v1"
+fetched_at = "2026-10-20T20:59:50Z"
+sha256 = "d22f19b2cfe65ef3eb8cecf0b8fed4927b7a90239e22fc5128072e9a56ccd12d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Final targets 1 and 5; Risks: preprint prime convention"]
+
+[[source]]
+id = "besser-zerbes2017"
+authors = "Amnon Besser, Sarah Livia Zerbes"
+title = "Vologodsky integration on curves with semi-stable reduction"
+year = 2017
+arxiv = "1711.06950v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2, pp. 2–3; Section 2, pp. 3–5; Section 3, pp. 5–6 (arXiv v1)"
+url = "https://arxiv.org/abs/1711.06950v1"
+fetched_from = "https://arxiv.org/pdf/1711.06950v1"
+fetched_at = "2026-10-20T21:00:01Z"
+sha256 = "328f2ec7fe96263f85d06361e3626709627f008ea61aaf12442a798ddfd36cdb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Final targets 2 and 5; Risks: acyclic proof direction"]
+
+[[source]]
+id = "besser2017"
+authors = "Amnon Besser"
+title = "p-adic heights and Vologodsky integration"
+year = 2017
+arxiv = "1711.06957v1"
+locator_scheme = "theorem"
+locator = "Definitions 3.1–3.8, Lemma 3.3, Propositions 3.5 and 3.9, pp. 9–11; Theorem 4.4, p. 12; Theorem 4.10, Definition 4.11, Proposition 4.12 and Corollary 5.3, pp. 14–16 (arXiv v1)"
+url = "https://arxiv.org/abs/1711.06957v1"
+fetched_from = "https://arxiv.org/pdf/1711.06957v1"
+fetched_at = "2026-10-20T21:00:30Z"
+sha256 = "8300392ed677be276f5c4f01d2280e3c4ac5767f5605f4c71a6bdcb9d40d95db"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["Final targets 2 and 3"]
+
+[[source]]
+id = "besser-dejeu2012"
+authors = "Amnon Besser and Rob de Jeu"
+title = "The syntomic regulator for K4 of curves"
+year = 2012
+locator_scheme = "section"
+locator = "Sections 7–8: Definition 7.1, Proposition 7.3, Lemma 7.4, pp. 355–357; Lemmas 8.1–8.3 and Proposition 8.4, pp. 361–362; Proposition 9.2, p. 364; introduction p. 310"
+url = "https://msp.org/pjm/2012/260-2/pjm-v260-n2-p03-p.pdf"
+fetched_from = "https://msp.org/pjm/2012/260-2/pjm-v260-n2-p03-p.pdf"
+fetched_at = "2026-10-20T21:00:41Z"
+sha256 = "8f68b8dc412ce56a4be8902f472924ad486bc99a52d97ddc7eacd3264e5c4ba0"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-20"
+cited_for = ["Final target 4: local and global triple indices"]
+
+[[source]]
+id = "coleman-deshalit1988"
+authors = "Robert Coleman, Ehud de Shalit"
+title = "p-adic regulators on curves and special values of p-adic L-functions"
+year = 1988
+venue = "Inventiones mathematicae 93"
+doi = "10.1007/BF01394332"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.1007/BF01394332"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Sources: historical integration normalization only"]
+
+[[source]]
+id = "colmez1998"
+authors = "Pierre Colmez"
+title = "Intégration sur les variétés p-adiques"
+year = 1998
+locator_scheme = "section"
+locator = "Introduction Theorem 1 and Remark 2, pp. 1–3; Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74; Lemma II.1.13 and Remark II.1.18, pp. 78–79; Section II.2.5, p. 97"
+url = "https://www.numdam.org/item/AST_1998__248__R1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1998__248__R1_0.pdf"
+fetched_at = "2026-10-20T21:01:11Z"
+sha256 = "ac8ce2ab4f1a2b13e0dfddf23f1669c4ab34636236835eb072da31a13be582d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+cited_for = ["Final targets 1 and 5: arbitrary reduction, all residue primes, trace"]
