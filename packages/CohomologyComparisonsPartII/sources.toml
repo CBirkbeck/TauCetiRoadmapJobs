@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CohomologyComparisonsPartII"
+
+[[source]]
+id = "BesserI"
+authors = "Amnon Besser"
+title = "Syntomic regulators and p-adic integration I: Rigid syntomic regulators"
+year = 2000
+locator_scheme = "page"
+locator = "pp. 291–334; Remark 8.7(3) indirectly located by AM line 1321"
+sha256 = "b152f1e224e5f310d733304ed773cf76fd949240c598a1489fd9253f4e68907a"
+licence_class = "operator-local"
+status = "certified"
+local_name = "besser-2000-syntomic-regulators-I-rigid.txt"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3#issuecomment-6301551849"
