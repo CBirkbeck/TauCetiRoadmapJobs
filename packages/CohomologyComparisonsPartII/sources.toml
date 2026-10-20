@@ -7,9 +7,118 @@ authors = "Amnon Besser"
 title = "Syntomic regulators and p-adic integration I: Rigid syntomic regulators"
 year = 2000
 locator_scheme = "page"
-locator = "pp. 291–334; Remark 8.7(3) indirectly located by AM line 1321"
+locator = "Sections 4–6; Definition 6.1; Propositions 6.2–6.3; Remark 8.7(3), manuscript p. 28 (BesserI line 1073)"
+cited_for = ["Final target 1: rigid syntomic realization and mapping-fibre comparison"]
 sha256 = "b152f1e224e5f310d733304ed773cf76fd949240c598a1489fd9253f4e68907a"
 licence_class = "operator-local"
 status = "certified"
 local_name = "besser-2000-syntomic-regulators-I-rigid.txt"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3#issuecomment-6301551849"
+
+[[source]]
+id = "NN"
+authors = "Jan Nekovář, Wiesława Nizioł"
+title = "Syntomic cohomology and regulators for varieties over p-adic fields"
+year = 2013
+venue = "Algebra Number Theory 10 (2016) 1695-1790"
+doi = "10.2140/ant.2016.10.1695"
+arxiv = "1309.7620v5"
+locator_scheme = "theorem"
+locator = "Theorem A(1),(4); Section 3.2, equation (32); Proposition 3.8; Section 4.1; Proposition 4.6; Corollary 4.11"
+url = "https://arxiv.org/abs/1309.7620v5"
+fetched_from = "https://arxiv.org/pdf/1309.7620v5"
+fetched_at = "2026-10-20T21:11:07Z"
+sha256 = "97f319e286aa4cf5be1b9c8d100efd1ac779e985d91d8cd6b70e2a3d0870ebd0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v5"
+cited_for = ["Final targets 2–4: rational log-syntomic complexes, Hyodo–Kato assembly, period maps and truncated h-descent comparisons"]
+
+[[source]]
+id = "AM"
+authors = "Masanori Asakura, Kazuaki Miyatani"
+title = "Milnor K-theory, F-isocrystals and Syntomic Regulators"
+year = 2020
+venue = "J. Inst. Math. Jussieu 23 (2024) 1357-1415"
+doi = "10.1017/S1474748023000208"
+arxiv = "2007.14255v2"
+locator_scheme = "section"
+locator = "Definitions 2.1, 2.3, 2.4, 2.12; Lemma 2.5; Settings 2.14, 2.16; Propositions 2.15, 2.17, 2.18; Lemma 2.19; Assumption 2.20; equation (2.22); Theorem 3.7; Lemmas 3.8–3.10; Section 4.1, Lemma 4.2, Theorem 4.5"
+url = "https://arxiv.org/abs/2007.14255v2"
+fetched_from = "https://arxiv.org/pdf/2007.14255v2"
+fetched_at = "2026-10-20T21:11:24Z"
+sha256 = "d4e618564f25fc5b1a69bbd07296593b08dd696972ab468d29b3d6948ab531be"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["Final targets 5–7: Fil-F-MIC, Yoneda Ext evaluation, relative coherence and comparison, open-curve residues and Frobenius-point specialization"]
+
+[[source]]
+id = "HK"
+authors = "Osamu Hyodo, Kazuya Kato"
+title = "Semi-stable reduction and crystalline cohomology with logarithmic poles"
+year = 1994
+venue = "Astérisque 223, Exposé V, 221–268"
+locator_scheme = "section"
+locator = "Sections 3.2–3.6, pp. 243–246; Theorem 5.1, pp. 262–263"
+url = "https://www.numdam.org/item/AST_1994__223__221_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1994__223__221_0.pdf"
+fetched_at = "2026-10-20T21:11:58Z"
+sha256 = "220873e91f89094d14f1a82631c6887a40ec362139990928236ca0525b1050cf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+cited_for = ["Final target 4: Hyodo–Kato Frobenius, monodromy, de Rham comparison and uniformizer-change law"]
+
+[[source]]
+id = "CN"
+authors = "Pierre Colmez, Wieslawa Niziol"
+title = "Syntomic complexes and p-adic nearby cycles"
+year = 2015
+arxiv = "1505.06471v4"
+locator_scheme = "theorem"
+locator = "Section 1.1.1, Theorem 1.1, p. 2; Section 5.1.2, Theorem 5.4, p. 54"
+url = "https://arxiv.org/abs/1505.06471v4"
+fetched_from = "https://arxiv.org/pdf/1505.06471v4"
+fetched_at = "2026-10-20T21:12:38Z"
+sha256 = "3ab4456e31b5a6c7f21349b34fe020f619f4233a92a2f0105a1ffe2c3e1733ec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v4"
+cited_for = ["Final target 3: all-weight bounded-error nearby-cycle period map with ramification and p=2 qualifications"]
+
+[[source]]
+id = "BesserII"
+authors = "Amnon Besser"
+title = "Syntomic regulators and p-adic integration II: K2 of curves"
+year = 2000
+venue = "Israel Journal of Mathematics 120"
+doi = "10.1007/BF02834844"
+locator_scheme = "page"
+locator = "pp. 335–359"
+url = "https://doi.org/10.1007/BF02834844"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Optional integration/regulator context; no final target depends on unread text"]
+
+[[source]]
+id = "EN"
+authors = "Veronika Ertl, Wieslawa Niziol"
+title = "Syntomic cohomology and $p$-adic motivic cohomology"
+year = 2016
+arxiv = "1603.01705v2"
+locator_scheme = "section"
+locator = "Sections 2.1–2.2, pp. 4–9; Proposition 2.1; Theorems 2.2 and 2.5"
+url = "https://arxiv.org/abs/1603.01705v2"
+fetched_from = "https://arxiv.org/pdf/1603.01705v2"
+fetched_at = "2026-10-20T21:13:21Z"
+sha256 = "131f6cf4ef32b15ceed8951eb48068c4f01fd13e6d3f42972b20e23b643c0d14"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["Final targets 2–3: divided versus undivided complexes, comparison maps, product caveat, exact small-weight comparison and syntomic-étale gluing"]
