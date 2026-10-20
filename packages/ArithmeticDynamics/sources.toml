@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticDynamics"
+
+[[source]]
+id = "poonen-corrected-descent-certificates"
+authors = "Bjorn Poonen"
+title = "Corrected local descent data for C_1(3_2)"
+year = 1998
+locator_scheme = "section"
+locator = "Correction to Proposition 1 in Section 4 of the 1998 preperiodic-points paper"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6303523539"
