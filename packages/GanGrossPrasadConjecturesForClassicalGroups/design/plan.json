@@ -755,55 +755,6 @@
         {
           "id": "3.6",
           "kind": "theorem",
-          "name": "GGP.higherCodimensionMultiplicityOne",
-          "title": "Higher-codimension uniqueness supplied by the reductions",
-          "statement": "For a nonarchimedean characteristic-zero field, prove dim Model(pi,nu) ≤ 1 for every irreducible smooth admissible representation of a special orthogonal or Hermitian relevant pair of arbitrary odd codimension, or a symplectic/metaplectic or skew-Hermitian relevant pair of arbitrary even codimension; include split quadratic algebras in both unitary cases and require exactly one genuine ambient factor in the symplectic/metaplectic case. The basic cases use §3.1; for nonbasic pairs the auxiliary supercuspidal is chosen so the corresponding induced representation is irreducible and the Bernstein exclusion holds. This choice is part of the proof, not a restriction on pi.",
-          "hypotheses": [
-            "F is nonarchimedean of characteristic zero, with no restriction on its residue characteristic",
-            "The indicated special orthogonal, Hermitian, symplectic/metaplectic or skew-Hermitian pair, actual model data and irreducible smooth admissible pi"
-          ],
-          "locator": {
-            "source": "ggp",
-            "where": "§§15–16, pp. 60–67, ggp line 2116, ggp line 2158, ggp line 2293; §19, pp. 76–77, ggp line 2661–2700, with the owned SO and skew-unitary reductions §§3.7–3.8; sun Theorems B–C, pp. 1–3, sun line 31, sun line 102; waldspurger Theorem 1, p. 1, waldspurger line 10–18"
-          },
-          "prerequisites": [
-            "target:3.1",
-            "target:3.3",
-            "target:3.4",
-            "target:3.7",
-            "target:3.8",
-            "gap:smooth-functors",
-            "gap:induction-jacquet",
-            "gap:bernstein-exclusions"
-          ],
-          "api": [],
-          "tests": [
-            {
-              "name": "higher_model_basic_boundary",
-              "kind": "degenerate",
-              "statement": "At codimension one in the Hermitian case and zero in the symplectic case, use §3.1 directly; X is zero and the nonbasic reduction is not applied."
-            },
-            {
-              "name": "higher_no_aux_prime",
-              "kind": "compatibility",
-              "statement": "The auxiliary representation is chosen over the same local field, including Q2; the theorem imposes no good-prime condition on pi."
-            },
-            {
-              "name": "higher_SO3_SO0",
-              "kind": "degenerate",
-              "statement": "For V = hyperbolic plane ⊥ L with L nonisotropic and W = 0, the SO(3)/SO(0) Bessel pair has rank X = 1; §3.7 uses Vplus = V ⊥ (−L), split of dimension four, and a maximal-isotropic-plane parabolic with Levi GL(2) × SO(0). The resulting SO(4)/SO(3) basic Hom has dimension at most one by Waldspurger, including both choices of maximal-isotropic component."
-            },
-            {
-              "name": "higher_skew_unitary_plane",
-              "kind": "compatibility",
-              "statement": "For E/F quadratic field, a skew-Hermitian line W0 and W = W0 ⊥ hyperbolic plane, §3.8 reduces the codimension-two U(W)/U(W0) model using GL_E(1) × U(W0) induction to the equal-rank U(W) oscillator Hom bounded by Sun’s Theorems B–C; use the same psi and mu on both spaces, since changing only one splitting does not give this comparison."
-            }
-          ],
-          "proofSketch": "Choose a supercuspidal outside the finite supports of pi and its Jacquet constituents, with irreducible auxiliary induction. Apply §3.3 for Hermitian Bessel pairs, §3.4 for symplectic/metaplectic pairs, §3.7 for SO Bessel pairs, and §3.8 for nonsplit skew-unitary pairs; split unitary pairs use the GL versions of §§3.3–3.4. Each Hom reduces to the corresponding basic Hom of §3.1, including Waldspurger’s SO bound and Sun’s unitary oscillator bound. Transport the character and oscillator dual conventions through §2.4."
-        },
-        {
-          "id": "3.7",
-          "kind": "theorem",
           "name": "GGP.specialOrthogonalBesselInductionReduction",
           "title": "Connected orthogonal Bessel induction",
           "statement": "Let W ⊂ V be a relevant quadratic pair over F with V = X ⊕ W ⊕ L ⊕ X∨, rank X > 0, L = Fe and B(e,e) ≠ 0. Put Vplus = V ⊥ (−L), choose f in −L with the opposite norm and Y = X ⊕ F(e+f). Use the parabolic P(Y) in SO(Vplus), Levi GL(Y) × SO(W), irreducible smooth admissible piV of SO(V) and piW of SO(W), and supercuspidal tau of GL(Y). Set I = unnormalized Ind_P(Y)^SO(Vplus)(tau external-tensor piW). If piV∨ avoids every Bernstein inertial class [GL(Yprime) × SO(Vprime), tau external-tensor rho] with Yprime ⊂ V isotropic of rank dim Y and rho arbitrary irreducible smooth on SO(Vprime), interpreting the displayed exclusion by its cuspidal support, prove Hom_SO(V)(I tensor piV,C) ≅ Hom_H(piV tensor piW,nu_B). Here H = N ⋊ SO(W), nu_B is the character of §2.1, and its Hom-to-character convention is compared with Model(piV tensor piW,nu_B∨) by §2.4. Choosing the conjugate dual Bessel data gives the Model convention used in §4.8.",
@@ -847,7 +798,7 @@
           "proofSketch": "Compute SO(V)-orbits on the selected SO(Vplus)/P(Y) component directly, including the maximal-isotropic and SO(0) boundary cases. Identify the open stabilizer as (GL(X) × SO(W)) ⋉ N_V(X) by its determinant-one condition; its image on Y is the mirabolic stabilizing e+f modulo X. Kill all closed strata by their actual SO Jacquet supports, including Ext terms in the disjoint Bernstein blocks. Apply unnormalized reciprocity and the Whittaker derivative of tau. Track modular characters and the nu_B/nu_B∨ conjugacy explicitly. This is an owned extension proof, not restriction of an O theorem."
         },
         {
-          "id": "3.8",
+          "id": "3.7",
           "kind": "theorem",
           "name": "GGP.skewUnitaryFourierJacobiInductionReduction",
           "title": "Skew-unitary Fourier–Jacobi induction",
@@ -890,6 +841,55 @@
             }
           ],
           "proofSketch": "Use the supplied mixed model of omega_W,psi,mu∨, whose evaluation at zero has Levi action (mu⁻¹ composed with det_E) abs(det_E)_E^(1/2) tensor omega_W0,psi,mu∨. The nonzero-vector orbit is the mirabolic orbit over E. Tensor with I_mu: the two mu characters cancel. Bernstein separation kills the zero-evaluation quotient and its Ext terms; unnormalized reciprocity and the generic mirabolic quotient identify the nonzero orbit with the actual H model, including its flag character. Compute the modular factors to retain the displayed abs(det_E)^(1/2) evaluation law. This establishes the omitted unitary argument, rather than substituting U for Mp in a statement."
+        },
+        {
+          "id": "3.8",
+          "kind": "theorem",
+          "name": "GGP.higherCodimensionMultiplicityOne",
+          "title": "Higher-codimension uniqueness supplied by the reductions",
+          "statement": "For a nonarchimedean characteristic-zero field, prove dim Model(pi,nu) ≤ 1 for every irreducible smooth admissible representation of a special orthogonal or Hermitian relevant pair of arbitrary odd codimension, or a symplectic/metaplectic or skew-Hermitian relevant pair of arbitrary even codimension; include split quadratic algebras in both unitary cases and require exactly one genuine ambient factor in the symplectic/metaplectic case. The basic cases use §3.1; for nonbasic pairs the auxiliary supercuspidal is chosen so the corresponding induced representation is irreducible and the Bernstein exclusion holds. This choice is part of the proof, not a restriction on pi.",
+          "hypotheses": [
+            "F is nonarchimedean of characteristic zero, with no restriction on its residue characteristic",
+            "The indicated special orthogonal, Hermitian, symplectic/metaplectic or skew-Hermitian pair, actual model data and irreducible smooth admissible pi"
+          ],
+          "locator": {
+            "source": "ggp",
+            "where": "§§15–16, pp. 60–67, ggp line 2116, ggp line 2158, ggp line 2293; §19, pp. 76–77, ggp line 2661–2700, with the owned SO and skew-unitary reductions §§3.6–3.7; sun Theorems B–C, pp. 1–3, sun line 31, sun line 102; waldspurger Theorem 1, p. 1, waldspurger line 10–18"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:3.3",
+            "target:3.4",
+            "target:3.6",
+            "target:3.7",
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "higher_model_basic_boundary",
+              "kind": "degenerate",
+              "statement": "At codimension one in the Hermitian case and zero in the symplectic case, use §3.1 directly; X is zero and the nonbasic reduction is not applied."
+            },
+            {
+              "name": "higher_no_aux_prime",
+              "kind": "compatibility",
+              "statement": "The auxiliary representation is chosen over the same local field, including Q2; the theorem imposes no good-prime condition on pi."
+            },
+            {
+              "name": "higher_SO3_SO0",
+              "kind": "degenerate",
+              "statement": "For V = hyperbolic plane ⊥ L with L nonisotropic and W = 0, the SO(3)/SO(0) Bessel pair has rank X = 1; §3.6 uses Vplus = V ⊥ (−L), split of dimension four, and a maximal-isotropic-plane parabolic with Levi GL(2) × SO(0). The resulting SO(4)/SO(3) basic Hom has dimension at most one by Waldspurger, including both choices of maximal-isotropic component."
+            },
+            {
+              "name": "higher_skew_unitary_plane",
+              "kind": "compatibility",
+              "statement": "For E/F quadratic field, a skew-Hermitian line W0 and W = W0 ⊥ hyperbolic plane, §3.7 reduces the codimension-two U(W)/U(W0) model using GL_E(1) × U(W0) induction to the equal-rank U(W) oscillator Hom bounded by Sun’s Theorems B–C; use the same psi and mu on both spaces, since changing only one splitting does not give this comparison."
+            }
+          ],
+          "proofSketch": "Choose a supercuspidal outside the finite supports of pi and its Jacquet constituents, with irreducible auxiliary induction. Apply §3.3 for Hermitian Bessel pairs, §3.4 for symplectic/metaplectic pairs, §3.6 for SO Bessel pairs, and §3.7 for nonsplit skew-unitary pairs; split unitary pairs use the GL versions of §§3.3–3.4. Each Hom reduces to the corresponding basic Hom of §3.1, including Waldspurger’s SO bound and Sun’s unitary oscillator bound. Transport the character and oscillator dual conventions through §2.4."
         }
       ],
       "examples": "Ranks zero and one test the category conventions; no positive-residue-characteristic or larger archimedean assertion is inferred from the nonarchimedean reductions."
@@ -1284,8 +1284,8 @@
             "gap:smooth-functors",
             "gap:induction-jacquet",
             "gap:bernstein-exclusions",
+            "target:3.6",
             "target:3.7",
-            "target:3.8",
             "target:4.7"
           ],
           "api": [],
@@ -1296,7 +1296,7 @@
               "statement": "This implication is not applied at R or C, where Bernstein components of this form are unavailable."
             }
           ],
-          "proofSketch": "Choose an auxiliary supercuspidal outside all forbidden supports, apply §3.7 for SO, §3.3 for Hermitian U, §3.4 for Sp/Mp and §3.8 for skew-Hermitian U, and compare added parameter summands using root-number multiplicativity and the enhanced induction laws. Convert unnormalized induction through its exact modulus twist before invoking normalized Langlands labeling. The split quadratic-algebra branch is §4.7; the two new connected comparisons do not restrict that branch."
+          "proofSketch": "Choose an auxiliary supercuspidal outside all forbidden supports, apply §3.6 for SO, §3.3 for Hermitian U, §3.4 for Sp/Mp and §3.7 for skew-Hermitian U, and compare added parameter summands using root-number multiplicativity and the enhanced induction laws. Convert unnormalized induction through its exact modulus twist before invoking normalized Langlands labeling. The split quadratic-algebra branch is §4.7; the two new connected comparisons do not restrict that branch."
         }
       ],
       "examples": "The empty component group, a connected GL centralizer, a two-generator component group, and the extra trivial parameter line distinguish the character recipe from an existence assertion."
@@ -1611,15 +1611,15 @@
           "kind": "construction",
           "name": "GGP.globalFourierJacobiPeriod",
           "title": "Adelic Fourier–Jacobi periods",
-          "statement": "For a global relevant skew pair construct Pnu(f,phi) = integral over H(F) quotient H(A_F) of f(j(h)) theta_nu(phi)(h) dh. Use the global Weil theta realization and flag character with compatible local psi and mu, and the rational splitting of the cover when present. Prove absolute convergence for cuspidal f and Schwartz oscillator phi, C-bilinearity, and the invariant functional property on the completed or restricted tensor representation.",
+          "statement": "For a global relevant skew pair construct Pnu(f,phi) = integral over H(F) quotient H(A_F) of f(j(h)) theta_nu(phi)(h) dh. Use the global Weil theta realization and flag character with compatible local psi and mu, and the rational splitting of the cover when present. Prove absolute convergence for cuspidal f and Schwartz oscillator phi when A is not the split quadratic algebra, or when A = F × F and rank V > rank W, or when V = W = 0. On these domains prove C-bilinearity and the invariant functional property on the completed or restricted tensor representation. For split positive equal rank the full-quotient formula is only an ordinary integral on its actual convergence locus; the period used for general cusp inputs is §6.2a.",
           "hypotheses": [
-            "F is a global field of characteristic different from 2, A/F is trivial or quadratic étale, and the pair is relevant; in the orthogonal case neither space is a split plane",
-            "epsilon = −1; psi is a nontrivial automorphic additive character; mu|A_Fˣ = omega(A/F) and mu|Aˣ = 1 when required; f cuspidal and phi in the actual oscillator Schwartz space",
-            "For split GL groups use cuspidal realizations with fixed unitary central character, square-integrable modulo the split center; no finite-volume claim is made for the full GL adelic quotient."
+            "F is a global field of characteristic different from 2; A/F trivial or quadratic étale; a relevant skew pair and compatible global psi, mu and rational splitting as in §2.3",
+            "f cuspidal with fixed unitary central characters and phi in the actual oscillator Schwartz space; use center-quotient Petersson norms for split GL",
+            "The unconditional ordinary convergence theorem has A nonsplit, or split rank V > rank W, or V = W = 0; split positive equal rank uses §6.2a outside the actual ordinary convergence locus"
           ],
           "locator": {
             "source": "ggp",
-            "where": "§23, pp. 88–89; ggp line 3094, ggp line 3119, ggp line 3123, ggp line 3131"
+            "where": "§23, pp. 88–89, ggp line 3094–3146; split unequal rank: liu-relative Definition 3.4 and Theorem 3.5, pp. 19, 23, liu-relative line 1179–1189, liu-relative line 1478–1491; equal rank: liu-relative Remark 3.6, pp. 23–24, liu-relative line 1492–1543"
           },
           "prerequisites": [
             "target:2.3",
@@ -1636,17 +1636,17 @@
             {
               "name": "GGP.globalFourierJacobiPeriod_bilinear",
               "role": "basic API",
-              "statement": "The functional is separately C-linear in f and phi, and continuous on the archimedean completed tensor factors."
+              "statement": "On the stated ordinary convergence domains the functional is separately C-linear in f and phi and continuous on the archimedean completed tensor factors."
             },
             {
               "name": "GGP.globalFourierJacobiPeriod_invariant",
               "role": "basic API",
-              "statement": "Simultaneous H(A_F) translation of f and the oscillator input preserves the value."
+              "statement": "On those domains simultaneous H(A_F) translation of f and the oscillator input preserves the value, by absolute convergence and quotient Haar invariance."
             },
             {
               "name": "GGP.globalFourierJacobiPeriod_localization",
               "role": "basic API",
-              "statement": "Any nonzero global functional gives a nonzero local §2.4 model after fixing vectors at the other places."
+              "statement": "On those domains any nonzero global functional gives a nonzero local §2.4 model after fixing vectors at the other places; the regularized split analogue is proved in §6.2a."
             }
           ],
           "tests": [
@@ -1664,9 +1664,102 @@
               "name": "global_fj_rational_character",
               "kind": "non-example",
               "statement": "An additive character not trivial on the rational field does not descend to the quotient; it is rejected."
+            },
+            {
+              "name": "global_fj_split_GL1_divergence",
+              "kind": "non-example",
+              "statement": "For F = Q, A = Q × Q and V = W a skew-Hermitian line, trivial cusp characters are allowed. With unitary inverse-coordinate oscillator and Gaussian/integral Schwartz input, theta(t) = t^(−1/2) sum_(k in Z) exp(−pi(k/t)^2) ≥ t^(−1/2). On the finite-unit subset of positive measure, the truncated integral from epsilon to 1 is at least 2(epsilon^(−1/2)−1), hence diverges as epsilon tends to zero. In the unnormalized ggp split action the zero term is 1 and already gives logarithmic divergence."
             }
           ],
-          "proofSketch": "Apply the supplied theta realization and its rational invariance; multiply by cusp decay estimates to prove absolute convergence. Genuine signs cancel on the common cover. Change of global data is compatible with each local comparison of §4.5."
+          "proofSketch": "Apply rational invariance and compact normal convergence of theta. For nonsplit classical groups combine polynomial theta growth with cusp decay; for split unequal ranks use the relative flag Fourier coefficient and cusp decay in the remaining norm direction. The zero-rank quotient is a point. Genuine signs cancel; quotient translation gives invariance on the ordinary convergence domain. No equal-rank full-quotient convergence is inferred from the Petersson norm."
+        },
+        {
+          "id": "6.2a",
+          "kind": "construction",
+          "name": "GGP.splitEqualRankFourierJacobiPeriod",
+          "title": "Split equal-rank central theta regularization",
+          "statement": "For A = F × F and rank V = rank W = n > 0 construct a meromorphic family Z(s;f,Phi) on the actual cuspidal GL(n) × GL(n) realization. Choose the row Schwartz model of the oscillator occurring in the integrand, Omega(g)Phi(x) = beta(det g) abs(det g)^(1/2) Phi(xg), with beta the actual splitting/dual character transported from §§1.4,2.4. Under Fourier transport of the inverse-coordinate action gamma(det g) abs(det g)^(−1/2) Phi(g⁻¹w), beta = gamma; for the unnormalized inverse action gamma0(det g) Phi(g⁻¹w), beta = gamma0 abs(.)^(1/2). Put chi equal to the product of the two cuspidal central characters. Define ThetaStar(s;g,Phi,chi) = abs(det g)^(s−1/2) integral_[Gm] sum_(x in F^n, x ≠ 0) (Omega(ag)Phi)(x) abs(a)^(n(s−1/2)) chi(a) da, initially in its convergence half-plane. Define Z(s;f,Phi) as the integral of f(g,g) ThetaStar(s;g,Phi,chi) over Z_n(A_F) GL(n,F) quotient GL(n,A_F), by meromorphic continuation. At a regular s = 1/2 define the regularized period as Z(1/2;f,Phi). For unitary beta and cuspidal data prove regularity there for all vectors. For arbitrary automorphic quasicharacter beta retain the meromorphic family and its polar coefficients; the scalar functional is defined on representations where the family is holomorphic at 1/2, and a polar finite part is not automatically invariant.",
+          "hypotheses": [
+            "F is a global field of characteristic different from 2; A = F × F; n > 0; actual irreducible cuspidal realizations with fixed unitary central characters and compatible automorphic splitting data",
+            "Phi is Schwartz; row-model beta includes every inverse splitting/dual twist, so switching from the ggp inverse-coordinate convention must transport the character as well as the Schwartz function",
+            "Fix da on Fˣ quotient A_Fˣ and the center-quotient measure dbar_g compatibly with dh through quotient integration; use the same measures in the ordinary comparison",
+            "Writing abs(beta) = abs(.)^b with b real, the central nonzero-vector Mellin integral converges for Re(s)+b > 1; unitary beta has b = 0. The center-quotient cusp pairing converges locally uniformly on compact subsets avoiding poles of the continued theta family"
+          ],
+          "locator": {
+            "source": "liu-relative",
+            "where": "§3.2, Remark 3.6 and (3.12)–(3.13), pp. 23–24, liu-relative line 1492–1543; model normalization §3.1, p. 17, liu-relative line 1029–1036; number-field construction, with the odd-characteristic function-field analogue an owned extension target"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:2.3",
+            "target:2.4",
+            "target:6.2",
+            "gap:global-theta",
+            "gap:period-growth",
+            "gap:cuspidal-tensors",
+            "gap:quotient-integration",
+            "gap:tamagawa-factorization"
+          ],
+          "api": [
+            {
+              "name": "GGP.splitEqualRankFourierJacobiPeriod_meromorphic",
+              "role": "basic API",
+              "statement": "ThetaStar has central character chi inverse; Z is meromorphic and bilinear, and simultaneous translation by k satisfies Z(s;R(k)f,Omega(k)Phi) = abs(det k)^(−(s−1/2)) Z(s;f,Phi) as an identity of meromorphic germs."
+            },
+            {
+              "name": "GGP.splitEqualRankFourierJacobiPeriod_invariant",
+              "role": "basic API",
+              "statement": "If the family is holomorphic at 1/2 on the representation, its central value is an H(A_F)-invariant bilinear functional, continuous in the archimedean Schwartz and smooth-vector topologies; prove this regularity for unitary beta and cuspidal inputs. A nonzero such functional localizes to each §2.4 model."
+            },
+            {
+              "name": "GGP.splitEqualRankFourierJacobiPeriod_agrees",
+              "role": "basic API",
+              "statement": "Whenever the full-quotient ordinary integral in §6.2 is absolutely convergent and the family is regular at 1/2, the continued value equals that integral with the compatible measures; establish this by central unfolding and Poisson summation, including the zero-vector term, rather than replacing the full theta by its nonzero-vector part without comparison."
+            },
+            {
+              "name": "GGP.splitEqualRankFourierJacobiPeriod_choices",
+              "role": "basic API",
+              "statement": "The continued germ is independent of the chosen splitting point of the Mellin integral and of bases after transporting the actual Schwartz model, beta and measures. No auxiliary truncation constant is part of the regular value. Rescaling da by c and dbar_g by d multiplies Z by cd; preserving dh requires cd = 1."
+            },
+            {
+              "name": "GGP.splitEqualRankFourierJacobiPeriod_polar",
+              "role": "basic API",
+              "statement": "For a simple pole Z(s) = R/(s−1/2)+C+..., simultaneous translation by k fixes R and changes C to C−log(abs(det k)) R. For higher poles give the coefficient law obtained by multiplying the Laurent series by exp(−(s−1/2) log(abs(det k))); no invariant scalar finite part is exported at a pole."
+            }
+          ],
+          "tests": [
+            {
+              "name": "split_fj_GL1_Tate",
+              "kind": "computation",
+              "statement": "For F = Q, n = 1, trivial cusp characters, beta = 1 and Gaussian/integral Phi, central unfolding gives the Tate zeta integral at s = 1/2. Its possible poles are at 0 and 1, so the continued central value is regular although the full theta integral of global_fj_split_GL1_divergence diverges."
+            },
+            {
+              "name": "split_fj_row_transport",
+              "kind": "computation",
+              "statement": "For F = Q and a = 2 at the real place, Fourier transform sends 2^(−1/2) Phi(w/2) to 2^(1/2) Fourier(Phi)(2x). The unnormalized Phi(w/2) instead gives 2 Fourier(Phi)(2x), hence beta(2) = 2^(1/2); dropping that character shift changes the central specialization."
+            },
+            {
+              "name": "split_fj_polar_twist",
+              "kind": "non-example",
+              "statement": "For F = Q, n = 1, trivial cusp characters and beta = abs(.)^(−1/2), the same family is the Tate zeta integral at s−1/2, with a nonzero residue at s = 1/2. A determinant-norm translation of size e changes its finite part by −R; using that finite part as an invariant scalar fails."
+            },
+            {
+              "name": "split_fj_zero_constant_terms",
+              "kind": "compatibility",
+              "statement": "For unitary beta and Phi with Phi(0) = Fourier(Phi)(0) = 0, Poisson summation gives rapid decay at both central ends; the ordinary full-quotient integral converges and equals the regularized value. Subtracting only Phi(0) would leave the other divergent end for a general Phi."
+            },
+            {
+              "name": "split_fj_compensated_measures",
+              "kind": "computation",
+              "statement": "Replacing da by 2 da and dbar_g by dbar_g/2 leaves Z and the ordinary comparison unchanged; rescaling only da doubles Z and breaks the fixed-dh comparison."
+            },
+            {
+              "name": "split_fj_rank_zero",
+              "kind": "degenerate",
+              "statement": "For n = 0 the group and quotient are a point and §6.2 gives the scalar theta evaluation; no center Mellin integral over Gm is inserted."
+            }
+          ],
+          "proofSketch": "First compare the actual split oscillator with the row model, retaining its character and half-density. Separate the zero orbit, unfold the nonzero orbit in Re(s)+b > 1, and apply Poisson summation at the other central end to continue ThetaStar and Z. Pair on the center quotient using cusp decay, proving local uniform bounds for continuity and specialization. Check the translation identity before specializing, prove regularity in the unitary cuspidal domain from the possible Rankin–Selberg poles on Re(s) = 0 or 1, and prove the ordinary comparison by the same central decomposition. Track meromorphic polar data under quasicharacter twists; do not replace a pole by a field-division value. Over function fields prove the corresponding rational-in-q^(−s) continuation with the discrete norm measure; the number-field locator is a model for this extension, not its citation as a proved theorem."
         },
         {
           "id": "6.3",
@@ -1732,12 +1825,13 @@
           "kind": "definition",
           "name": "GGP.GlobalNonvanishingAssertion",
           "title": "Classical global nonvanishing as a proposition",
-          "statement": "For every irreducible everywhere tempered pi realized with multiplicity one in the cuspidal spectrum of a global relevant pair, define the assertion that Pnu is nonzero on pi (and the oscillator input when present) iff every local model Model(pi_v,nu_v) is nonzero and the completed L(1/2,pi,R) is nonzero. The value is interpreted through the supplier’s continuation, with regularity at the center stated in the assertion’s analytic hypotheses. Include as a separate clause of the conjecture equivalence with nonzero adelic relative Hom together with the same nonzero central value. An unconditional equivalence of arbitrary local models with a nonzero restricted-tensor functional is not asserted; it needs compatible almost-everywhere nonzero reference evaluations.",
+          "statement": "For every irreducible everywhere tempered pi realized with multiplicity one in the cuspidal spectrum of a global relevant pair, define the assertion that Pnu is nonzero on pi (and the oscillator input when present) iff every local model Model(pi_v,nu_v) is nonzero and the completed L(1/2,pi,R) is nonzero. The value is interpreted through the supplier’s continuation, with regularity at the center stated in the assertion’s analytic hypotheses. Include as a separate clause of the conjecture equivalence with nonzero adelic relative Hom together with the same nonzero central value. An unconditional equivalence of arbitrary local models with a nonzero restricted-tensor functional is not asserted; it needs compatible almost-everywhere nonzero reference evaluations. In the Fourier–Jacobi branch Pnu means §6.2’s ordinary period on its convergence domains and §6.2a’s continued central value for split positive equal rank. In the latter case require holomorphy of the family at 1/2 on the actual representation, proved in §6.2a for unitary beta; at a pole only the Laurent family is exported, not this scalar-period assertion.",
           "hypotheses": [
             "F is a global field of characteristic different from 2, A/F is trivial or quadratic étale, and the pair is relevant; in the orthogonal case neither space is a split plane",
             "pi irreducible, cuspidal, everywhere tempered, multiplicity one in the specified realization",
             "The completed R-L-function has the continuation and central value used in the source",
-            "For split GL groups use cuspidal realizations with fixed unitary central character, square-integrable modulo the split center; no finite-volume claim is made for the full GL adelic quotient."
+            "For split GL groups use cuspidal realizations with fixed unitary central character, square-integrable modulo the split center; no finite-volume claim is made for the full GL adelic quotient.",
+            "For split positive equal-rank Fourier–Jacobi data the §6.2a family on pi tensor the oscillator is holomorphic at 1/2; unitary beta and the stated cusp data imply this, while a polar finite part is not an invariant scalar period"
           ],
           "locator": {
             "source": "ggp",
@@ -1746,6 +1840,7 @@
           "prerequisites": [
             "target:6.1",
             "target:6.2",
+            "target:6.2a",
             "target:6.3",
             "gap:cuspidal-tensors",
             "gap:global-completed-factors"
@@ -2439,7 +2534,7 @@
           "kind": "theorem",
           "name": "GGP.unitaryEndoscopicNonvanishing",
           "title": "Unitary global nonvanishing including endoscopy",
-          "statement": "For every quadratic extension E/F of number fields, n ≥ 1, and Hermitian discrete Arthur Pi_n,Pi_(n+1), prove that the completed L(1/2,Pi_n × Pi_(n+1)) is nonzero iff there exist a nondegenerate n-dimensional Hermitian h and an irreducible cuspidal automorphic subrepresentation sigma of U(h) × U(h ⊥ norm-line), with Pi as its weak base change, such that Ph is a nonzero functional on sigma. A degree-m Hermitian parameter is the full parabolic induction of pairwise distinct conjugate-selfdual cuspidal constituents with Asai sign (−1)^(m+1) pole at 1, as supplied by classification. No temperedness is imposed on this theorem.",
+          "statement": "For every quadratic extension E/F of number fields, n ≥ 1, and Hermitian discrete Arthur Pi_n,Pi_(n+1), prove that the completed L(1/2,Pi_n × Pi_(n+1)) is nonzero iff there exist a nondegenerate n-dimensional Hermitian h and an irreducible cuspidal automorphic subrepresentation sigma of U(h) × U(h ⊥ norm-line), with Pi as its weak base change, such that Ph is a nonzero functional on sigma. Here the source’s degree-m Hermitian discrete Arthur parameter is generic (trivial Arthur SL2): it is the full parabolic induction of pairwise distinct conjugate-selfdual cuspidal constituents of degrees d_i summing to m, each with Asai sign (−1)^(m+1) pole at 1. No temperedness is imposed on this theorem.",
           "hypotheses": [
             "E/F quadratic field extension of number fields; n ≥ 1; Pi_n and Pi_(n+1) actual Hermitian discrete Arthur parameters with the displayed Asai-pole condition"
           ],
@@ -2464,6 +2559,11 @@
               "name": "unitary_Asai_signs",
               "kind": "computation",
               "statement": "Degree m = 1 uses Asai+, degree m = 2 uses Asai−; a fixed sign for all degrees fails."
+            },
+            {
+              "name": "unitary_Asai_endoscopic_partition",
+              "kind": "computation",
+              "statement": "For ambient m = 2 and partition d1+d2 = 1+1, both distinct conjugate-selfdual degree-one constituents must have an Asai− pole at 1; assigning Asai+ from each constituent degree gives the wrong Hermitian class."
             },
             {
               "name": "unitary_nonvanishing_not_fixed_h",
@@ -2771,7 +2871,7 @@
         "1.2",
         "1.4",
         "2.2",
-        "3.8"
+        "3.7"
       ],
       "detail": "For finite free nondegenerate epsilon-Hermitian forms over a quadratic étale A/F including split A, with F a field and 2 invertible, supply their smooth connected unitary group schemes, isometry point functors and base changes, and their topological identification with the local isometry groups over every local field of characteristic different from 2, using the pinned symplectic schemes and symplectic-basis theorem for alternating forms with trivial involution instead of rebuilding them.",
       "needs": "For finite free nondegenerate epsilon-Hermitian forms over a quadratic étale A/F including split A, with F a field and 2 invertible, supply their smooth connected unitary group schemes, isometry point functors and base changes, and their topological identification with the local isometry groups over every local field of characteristic different from 2, using the pinned symplectic schemes and symplectic-basis theorem for alternating forms with trivial involution instead of rebuilding them.",
@@ -2783,7 +2883,7 @@
       "title": "quadratic constant-form point comparison",
       "neededBy": [
         "1.2",
-        "3.7",
+        "3.6",
         "6.1",
         "7.2"
       ],
@@ -2798,8 +2898,8 @@
       "neededBy": [
         "1.2",
         "2.2",
-        "3.7",
-        "3.8"
+        "3.6",
+        "3.7"
       ],
       "detail": "For the preceding arbitrary nondegenerate classical forms and each complete isotropic flag, supply its parabolic stabilizer, Levi and unipotent radical identified with the explicit form-coordinate subgroups, compatible with scalar extension and with the SO point comparison, including maximal-isotropic SO components and empty flags.",
       "needs": "For the preceding arbitrary nondegenerate classical forms and each complete isotropic flag, supply its parabolic stabilizer, Levi and unipotent radical identified with the explicit form-coordinate subgroups, compatible with scalar extension and with the SO point comparison, including maximal-isotropic SO components and empty flags.",
@@ -2985,8 +3085,8 @@
         "8.4",
         "8.5"
       ],
-      "detail": "For E/F a quadratic number-field extension, supply weak and strong all-place base change of actual cuspidal unitary representations, their discrete Hermitian Arthur constituent decomposition and automorphic multiplicity formula, with pairwise distinct conjugate-selfdual cuspidal degree-m constituents having Asai sign (−1)^(m+1) pole at 1 and compatibility with tempered local enhancements; for classical conjecture formulations supply parameter domains without assuming unproved global classification.",
-      "needs": "For E/F a quadratic number-field extension, supply weak and strong all-place base change of actual cuspidal unitary representations, their discrete Hermitian Arthur constituent decomposition and automorphic multiplicity formula, with pairwise distinct conjugate-selfdual cuspidal degree-m constituents having Asai sign (−1)^(m+1) pole at 1 and compatibility with tempered local enhancements; for classical conjecture formulations supply parameter domains without assuming unproved global classification.",
+      "detail": "For E/F a quadratic number-field extension and actual cuspidal representations of a degree-m unitary group with generic global Arthur parameter (trivial Arthur SL2), supply weak and strong all-place base change and the generic discrete automorphic multiplicity formula. Write BC(sigma) as the full parabolic induction of pairwise distinct conjugate-selfdual cuspidal constituents Pi_i of degrees d_i with sum_i d_i = m; every Pi_i has an Asai sign (−1)^(m+1) pole at 1, independently of d_i. Supply this generic base change for every everywhere-tempered cuspidal sigma and compatibility with its tempered local enhancements; no such decomposition is required for nongeneric Arthur parameters with nontrivial Arthur blocks. For classical conjecture formulations supply parameter domains without assuming unproved global classification (bpcz §§1.1.3–1.1.4, p. 3, bpcz line 93–118; §1.1.6, p. 4, bpcz line 148–151).",
+      "needs": "For E/F a quadratic number-field extension and actual cuspidal representations of a degree-m unitary group with generic global Arthur parameter (trivial Arthur SL2), supply weak and strong all-place base change and the generic discrete automorphic multiplicity formula. Write BC(sigma) as the full parabolic induction of pairwise distinct conjugate-selfdual cuspidal constituents Pi_i of degrees d_i with sum_i d_i = m; every Pi_i has an Asai sign (−1)^(m+1) pole at 1, independently of d_i. Supply this generic base change for every everywhere-tempered cuspidal sigma and compatibility with its tempered local enhancements; no such decomposition is required for nongeneric Arthur parameters with nontrivial Arthur blocks. For classical conjecture formulations supply parameter domains without assuming unproved global classification (bpcz §§1.1.3–1.1.4, p. 3, bpcz line 93–118; §1.1.6, p. 4, bpcz line 148–151).",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "missing: unitary base change and discrete multiplicity"
     },
@@ -3063,7 +3163,7 @@
         "3.1",
         "3.2",
         "3.4",
-        "3.8",
+        "3.7",
         "4.5"
       ],
       "detail": "For symplectic and skew-Hermitian local spaces over F with characteristic different from 2, supply the metaplectic double cover, genuine oscillator and unitary splittings indexed by psi and mu|Fˣ = omega(A/F), their dual and change-of-data laws and mixed-model Jacquet evaluation with exact Levi multipliers, including the dual unitary multiplier mu(det_E)⁻¹ abs(det_E)_E^(1/2) and compatible smaller-space splitting.",
@@ -3075,10 +3175,11 @@
       "slug": "global-theta",
       "title": "global theta realization and convergence",
       "neededBy": [
-        "6.2"
+        "6.2",
+        "6.2a"
       ],
-      "detail": "For the global fields of characteristic different from 2 and classical dual pairs of §6.2 with rationally trivial psi and compatible splitting characters, supply the actual Schwartz theta series, rational invariance and convergence with cusp inputs in the stated theta-cusp growth domain, including genuine covers and the split algebra.",
-      "needs": "For the global fields of characteristic different from 2 and classical dual pairs of §6.2 with rationally trivial psi and compatible splitting characters, supply the actual Schwartz theta series, rational invariance and convergence with cusp inputs in the stated theta-cusp growth domain, including genuine covers and the split algebra.",
+      "detail": "For the global fields of characteristic different from 2 and classical dual pairs of §6.2 with rationally trivial psi and compatible splitting characters, supply the actual Schwartz theta series, rational invariance, normal convergence on compacta and polynomial growth on Siegel sets, including genuine covers and the split algebra. Supply Poisson summation with compatible self-dual measures and the zero-vector and dual zero-vector asymptotics used by §6.2a. Convergence of a theta series at each group element does not assert convergence of its relative period. The central Mellin theta family and its pairing with cusp forms are constructed in §6.2a.",
+      "needs": "For the global fields of characteristic different from 2 and classical dual pairs of §6.2 with rationally trivial psi and compatible splitting characters, supply the actual Schwartz theta series, rational invariance, normal convergence on compacta and polynomial growth on Siegel sets, including genuine covers and the split algebra. Supply Poisson summation with compatible self-dual measures and the zero-vector and dual zero-vector asymptotics used by §6.2a. Convergence of a theta series at each group element does not assert convergence of its relative period. The central Mellin theta family and its pairing with cusp forms are constructed in §6.2a.",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "missing: global theta realization and convergence"
     },
@@ -3137,6 +3238,7 @@
       "neededBy": [
         "6.1",
         "6.2",
+        "6.2a",
         "6.5",
         "7.2",
         "7.4"
@@ -3152,6 +3254,7 @@
       "neededBy": [
         "6.1",
         "6.2",
+        "6.2a",
         "6.5",
         "7.2",
         "7.4",
@@ -3172,6 +3275,7 @@
       "neededBy": [
         "6.1",
         "6.2",
+        "6.2a",
         "6.4",
         "6.5",
         "7.6"
@@ -3201,10 +3305,11 @@
       "neededBy": [
         "6.1",
         "6.2",
+        "6.2a",
         "6.5"
       ],
-      "detail": "For the actual cusp and theta inputs of §6.1–§6.2 supply rapid decay on reductive quotients and theta-cusp growth estimates implying absolute convergence of their displayed Bessel and Fourier–Jacobi integrals, including split GL with fixed unitary central character and norms modulo the split center, without assuming finite volume of the full GL quotient or integrability as the conclusion hypothesis.",
-      "needs": "For the actual cusp and theta inputs of §6.1–§6.2 supply rapid decay on reductive quotients and theta-cusp growth estimates implying absolute convergence of their displayed Bessel and Fourier–Jacobi integrals, including split GL with fixed unitary central character and norms modulo the split center, without assuming finite volume of the full GL quotient or integrability as the conclusion hypothesis.",
+      "detail": "For the actual cusp and theta inputs of §6.1–§6.2 supply rapid decay modulo the split center and theta growth bounds implying absolute convergence of the Bessel periods and of Fourier–Jacobi periods for nonsplit classical groups, split pairs of unequal ranks and the rank-zero trivial pair. For split positive equal rank supply center-quotient rapid-decay estimates against polynomially bounded automorphic kernels, locally uniformly on regular meromorphic parameter domains; §6.2a applies these estimates to its central theta family. Do not assert convergence of the full-quotient equal-rank theta integral from a fixed unitary central character or a center-quotient Petersson norm. Section 6.2a owns the relative regularization and its comparison, rather than assuming integrability.",
+      "needs": "For the actual cusp and theta inputs of §6.1–§6.2 supply rapid decay modulo the split center and theta growth bounds implying absolute convergence of the Bessel periods and of Fourier–Jacobi periods for nonsplit classical groups, split pairs of unequal ranks and the rank-zero trivial pair. For split positive equal rank supply center-quotient rapid-decay estimates against polynomially bounded automorphic kernels, locally uniformly on regular meromorphic parameter domains; §6.2a applies these estimates to its central theta family. Do not assert convergence of the full-quotient equal-rank theta integral from a fixed unitary central character or a center-quotient Petersson norm. Section 6.2a owns the relative regularization and its comparison, rather than assuming integrability.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "missing: cusp and theta-cusp period estimates"
     },
