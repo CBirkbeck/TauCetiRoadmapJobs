@@ -214,7 +214,7 @@ version_note = "Undated author PDF read; locators use its 23-page pagination and
 [[source]]
 id = "Garvan1988"
 locator_scheme = "equation"
-locator = "(1.27)–(1.29), pp. 50–51, lines 154–163; §§2–6 for vector-crank dissections; §8 for the rank-five comparison"
+locator = "(1.27)–(1.29), pp. 50–51, lines 154–163; §§2–6 for vector-crank dissections; (6.4), (6.6), (6.15)–(6.16), pp. 63–65, lines 668–684 and 709–729, for the eleven-dissection derivation; (6.24), p. 65, lines 747–749, for the residue-five product; §8 for the rank-five comparison"
 url = "https://www.ams.org/journals/tran/1988-305-01/S0002-9947-1988-0920146-8/S0002-9947-1988-0920146-8.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1988-305-01/S0002-9947-1988-0920146-8/S0002-9947-1988-0920146-8.pdf"
 fetched_at = "2026-10-21T09:10:14Z"
@@ -226,6 +226,7 @@ cited_for = ["4.2", "4.5", "4.4a"]
 authors = "Frank G. Garvan"
 title = "New combinatorial interpretations of Ramanujan’s partition congruences mod 5, 7 and 11"
 year = 1988
+version_note = "In (6.8), p. 64, line 695, the residue-five term prints A8. Use A9, as derived from (6.15)–(6.16) with (6.4), (6.6), and independently corroborated by the product in (6.24), p. 65, lines 747–749."
 
 [[source]]
 id = "Hickerson1988"

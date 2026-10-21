@@ -251,7 +251,8 @@ A proof uses the following steps. Use the exact adjacent-term ratios, taking deg
 
 **Checks.**
 
-- `largeBaseRadius`: q=2,a=1/2,r=1,s=0 gives radius 4, rather than 2; z=3 is admissible.
+- `largeBaseRadius`: q=2,a=−1/2,r=1,s=0 is nonterminating: for cₙ=Pₙ(a;2)/Pₙ(2;2), |cₙ₊₁/cₙ|→1/4, giving radius 4; z=3 is admissible.
+- `largeBaseTermination`: At q=2,a=1/2,r=1,s=0, P₂(a;2)=0 and Φ=1−z/2 is entire; the nonterminating radius formula does not apply.
 - `bilateralAnnulus`: For r=s with all parameters nonzero, 0<|q|<1 gives |∏B/∏A|<|z|<1.
 - `zeroParameter`: At |q|>1 a zero numerator changes d and may enlarge the radius; the generic product formula cannot be used blindly.
 
@@ -320,7 +321,7 @@ A proof uses the following steps. Substitute the finite β relation, exchange th
 
 ### Examples
 
-At q=0 the unilateral binomial sum is 1+(1−a)z/(1−z); at q=2,a=1/2 its nonterminating radius is 4. Bilateral termination is tested through quotient coefficients.
+At q=0 the unilateral binomial sum is 1+(1−a)z/(1−z); at q=2,a=−1/2 its nonterminating radius is 4, whereas a=1/2 gives the polynomial 1−z/2. Bilateral termination is tested through quotient coefficients.
 
 ### Dependencies
 
@@ -485,13 +486,15 @@ A proof uses the following steps. Partition the finite native type by the residu
 
 Prove `rankCrankDissections` as follows. For a primitive ℓth root ζ and |q|<1, construct the complete identities R(ζ;q)=Σ_{r=0}^{ℓ−1}qʳD^R_(ℓ,r)(q^ℓ) for ℓ=5,7 and V(ζ;q)=Σ_{r=0}^{ℓ−1}qʳD^V_(ℓ,r)(q^ℓ) for ℓ=5,7,11. The coefficient of Xⁿ in D^R is Σ_a ζ^a N(a,ℓ,ℓn+r), and the analogous signed vector count gives D^V. Identify every D with its theta-product and, for rank, Lambert-series expression, not only its zero classes. The rank expressions are the complete rank-difference identities of AtkinSwinnertonDyer1954 pp. 84–106, with the empty partition convention of §4.3; the crank expressions are Garvan1988 (3.1), (5.2), (6.8) and their product definitions (3.4)–(3.7), (5.3), (6.1)–(6.14). In particular put J_(a,m)(X)=P(X^a,X^(m−a),X^m;X^m), E(X)=P(X;X), A=J_(2,5)/P(X,X^4;X^5)², B=E(X^5)/P(X,X^4;X^5), C=E(X^5)/P(X²,X³;X^5), D=J_(1,5)/P(X²,X³;X^5)². Then V(ζ₅;q)=A(q⁵)−(ζ₅+ζ₅⁻¹)²qB(q⁵)+(ζ₅²+ζ₅⁻²)q²C(q⁵)−(ζ₅+ζ₅⁻¹)q³D(q⁵). The D-functions are analytic on the disc and all sums used to obtain them are absolutely summable there. Prove D^R_(5,4)=D^R_(7,5)=D^V_(5,4)=D^V_(7,5)=D^V_(11,6)=0. (Garvan1988, §§2–6, (3.1), (3.4)–(3.7), Theorems (5.1), (6.7), lines 419–443, 609–627, 687–708; rank: AtkinSwinnertonDyer1954 pp. 84–106; rank-five comparison Garvan1988 §8.)
 
-For the complete seven-dissection, put c_j=ζ₇ʲ+ζ₇^(−j), U(X)=P(X,X²,X⁵,X⁶;X⁷)⁻¹, V₇(X)=P(X,X³,X⁴,X⁶;X⁷)⁻¹ and W(X)=P(X²,X³,X⁴,X⁵;X⁷)⁻¹. The ordered tuple (D^V_(7,r))_(r=0,…,6) is E(X)·(U²,(c₁−1)UV₇,c₂V₇²,(c₃+1)UW,−c₁V₇W,0,−(c₂+1)W²), all functions evaluated at X. For eleven put c_j=ζ₁₁ʲ+ζ₁₁^(−j), Q_b=J_(b,33)(X), (A₀,A₃,A₇,A₈,A₉)=(Q₁₅,Q₁₂,Q₆,Q₃,Q₉), and (B₀,B₁,B₂,B₄,B₇)=(Q₁₆−X²Q₅,Q₁₄−XQ₈,Q₁₃−X³Q₂,Q₇+XQ₄,Q₁₀+X³Q₁). Then E(X)·(D^V_(11,r))_(r=0,…,10) equals (A₀B₀−X³A₇B₄, (c₁−1)(A₀B₁−X⁴A₈B₄), c₂(A₀B₂−X²A₉B₄), (c₃+1)(A₃B₀−X²A₇B₇), (c₂+c₄+1)(A₃B₁−X³A₈B₇), −(c₂+c₄)(A₃B₂−XA₈B₇), 0, (c₁+c₄)(A₀B₇−XA₃B₄), −(c₂+c₅+1)X(A₇B₁−XA₈B₀), −(c₄+1)(A₉B₀−XA₇B₂), −c₃(A₉B₁−X²A₈B₂)). Cyclotomic Galois transport gives these identities for every primitive root, not just exp(2πi/ℓ). (Garvan1988 Theorems (5.1), (6.7), lines 609–627, 687–708.)
+For the complete seven-dissection, put c_j=ζ₇ʲ+ζ₇^(−j), U(X)=P(X,X²,X⁵,X⁶;X⁷)⁻¹, V₇(X)=P(X,X³,X⁴,X⁶;X⁷)⁻¹ and W(X)=P(X²,X³,X⁴,X⁵;X⁷)⁻¹. The ordered tuple (D^V_(7,r))_(r=0,…,6) is E(X)·(U²,(c₁−1)UV₇,c₂V₇²,(c₃+1)UW,−c₁V₇W,0,−(c₂+1)W²), all functions evaluated at X. For eleven put c_j=ζ₁₁ʲ+ζ₁₁^(−j), Q_b=J_(b,33)(X), (A₀,A₃,A₇,A₈,A₉)=(Q₁₅,Q₁₂,Q₆,Q₃,Q₉), and (B₀,B₁,B₂,B₄,B₇)=(Q₁₆−X²Q₅,Q₁₄−XQ₈,Q₁₃−X³Q₂,Q₇+XQ₄,Q₁₀+X³Q₁). Then E(X)·(D^V_(11,r))_(r=0,…,10) equals (A₀B₀−X³A₇B₄, (c₁−1)(A₀B₁−X⁴A₈B₄), c₂(A₀B₂−X²A₉B₄), (c₃+1)(A₃B₀−X²A₇B₇), (c₂+c₄+1)(A₃B₁−X³A₈B₇), −(c₂+c₄)(A₃B₂−XA₉B₇), 0, (c₁+c₄)(A₀B₇−XA₃B₄), −(c₂+c₅+1)X(A₇B₁−XA₈B₀), −(c₄+1)(A₉B₀−XA₇B₂), −c₃(A₉B₁−X²A₈B₂)). Cyclotomic Galois transport gives these identities for every primitive root, not just exp(2πi/ℓ). (Garvan1988 Theorems (5.1), (6.7), lines 609–627, 687–708.) The residue-five term corrects A₈ in the printed (6.8) to A₉: the product derivation below and (6.24) give A₉ (Garvan1988 line 695, p. 64; lines 719–729 and 747–749, p. 65).
 
 For rank, put Δ_(a,r)(X)=Σ_{n≥0}(N(a,ℓ,ℓn+r)−N(0,ℓ,ℓn+r))Xⁿ. The complete rank target is D^R_(ℓ,r)=Σ_{a=1}^{ℓ−1}ζ^aΔ_(a,r) for every 0≤r<ℓ, together with the product/Lambert evaluations of every Δ in AtkinSwinnertonDyer1954 pp. 84–106. This identity fixes the interface without adding the ordinary partition term, since Σ_{a=0}^{ℓ−1}ζ^a=0. The Lambert terms in the nonzero rank residues remain part of the target.
 
 The public laws are `rankCrankDissections_coeff`: The displayed residue coefficient formulas identify all components; `rankCrankDissections_products`: The complete product/Lambert expressions with their actual pole and convergence domains; `rankCrankDissections_vanish`: The five displayed zero components; `rankCrankDissections_thetaAddition`: For a,b∈ℂ with ab≠0 and 0<|q|<1, put J(z;Q)=P(z,Q/z,Q;Q). Prove P(a,q/a,b,q/b,ab,q/(ab),a/b,bq/a,q,q;q)=J(a³;q³)(J(b³q;q³)−bJ(b³q²;q³))−(a/b)J(b³;q³)(J(a³q;q³)−aJ(a³q²;q³)); extend to q=0 using the limits of the displayed P factors. This is the theta addition input of the eleven-dissection (Garvan1988 (6.15), lines 709–716).
 
 A proof uses the following steps. Prove `rankCrankDissections_thetaAddition` from the absolutely convergent triple-product double sums by residue-class regrouping, then specialize it for the eleven-dissection. Use Euler and Jacobi products for five and seven, retaining every residue component. For rank, use the full rank-difference identities, including their Lambert terms, and translate the source’s empty-partition convention. Product nonvanishing and geometric majorants justify coefficient extraction.
+
+For 0<|q|<1, derive the residue-five correction by setting ζ=ζ₁₁, K=(1−ζ⁹)(1−ζ⁵)(1−ζ³)(1−ζ⁴) and N(q)=J(ζ⁵;q³)(J(ζ⁴q;q³)−ζ⁵J(ζ⁴q²;q³))−ζ⁴J(ζ⁴;q³)(J(ζ⁵q;q³)−ζ⁹J(ζ⁵q²;q³)). Substituting a=ζ⁹,b=ζ⁵ in the theta addition law gives N(q)=K E(q¹¹)V(ζ;q); K≠0 since ζ is primitive. Split each triple-product sum into its eleven index classes, equivalently using (6.4) and (6.6). The part of N with exponents congruent to 5 modulo 11 is −K(c₂+c₄)(q⁵Q₁₂Q₁₃−q³⁸Q₁₂Q₂−q¹⁶Q₉Q₁₀−q⁴⁹Q₉Q₁), where every Q is evaluated at q¹¹; the Q₁₅Q₁₁ term cancels. Factoring and dividing by the nonzero K E(q¹¹) yields −q⁵(c₂+c₄)(A₃B₂−q¹¹A₉B₇)/E(q¹¹). Thus the correction follows for every coefficient, independently of a finite coefficient comparison; q=0 follows by the disc limit (Garvan1988 (6.4), (6.6), (6.15)–(6.16), lines 668–684 and 709–729).
 
 *Needs:* §4.3; §4.4; §2.4; ClassicalArithmeticCompletion §§4.40, 4.61.
 
@@ -500,6 +503,7 @@ A proof uses the following steps. Prove `rankCrankDissections_thetaAddition` fro
 - `dissectionCrankFour`: At size 4, V(ζ₅;q) has coefficient Σ_{a=0}⁴ζ₅^a=0; the target residue is absent.
 - `dissectionNonzero`: At size 1, V has coefficient ζ₅+ζ₅⁻¹−1≠0; the entire series is not zero.
 - `dissectionThetaConstant`: At q=0 the theta addition law becomes (1−a)(1−b)(1−ab)(1−a/b)=(1−a³)(1−b)−(a/b)(1−b³)(1−a), fixing both the sign and a/b factor.
+- `dissectionCrankFortyNine`: At size 49, all eleven ordinary crank counts are 15775, so [q⁴⁹]V(ζ₁₁;q)=0. The corrected numerator A₃B₂−XA₉B₇ is 1−X−X³−X⁴+O(X⁵), whose X⁴ coefficient after division by E(X) is 5−3−1−1=0; A₈ instead gives coefficient 1 and the false value −(c₂+c₄)≠0.
 - `dissectionRankEleven`: At size 6, rank 1 occurs twice modulo 11; the rank-five/seven zero-class law does not extend to 11.
 
 ### 4.5 partition equidistribution
