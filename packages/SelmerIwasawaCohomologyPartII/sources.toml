@@ -8,7 +8,7 @@ title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
 year = 2019
 arxiv = "1912.11942v3"
 locator_scheme = "theorem"
-locator = "Definitions 2.1.2, 2.1.6, 2.2.4–2.2.5, 3.1.5, 3.3.4, 4.3.1–4.3.4, 6.3.4, 8.1.1, D.1.1; Hypothesis 3.2.10; Constructions 4.6.1(3) (p. 54), 5.8.3, 5.9.4, 5.11.7; Lemmas 2.2.7, 4.2.4; Propositions 3.2.4(2), D.2.3; Theorems 4.3.5, 4.6.2, 5.2.5, 5.3.4, 5.4.4, 5.5.3, 5.7.7–5.7.8, 5.11.5, 6.2.3, 6.3.5, 7.2.8, 7.3.4, 8.2.2, 8.3.2; equations (5.28), (8.5), (8.10), (8.14); Remarks 1.1.10, 5.2.8; §6.4; pp. 13–14, 27, 38–41, 54, 59, 79–80, 87, 104–105, 115–116, 131, 136–137, 141–142, 174–177"
+locator = "Definitions 2.1.2, 2.1.6, 2.2.4–2.2.5, 3.1.5, 3.3.4, 4.3.1–4.3.4, 6.3.4, 8.1.1, D.1.1; Hypothesis 3.2.10; Constructions 4.6.1(3) (p. 54), 5.8.3, 5.9.4(1)–(2) (p. 87), 5.11.7; Lemmas 2.2.7, 4.2.4, 5.9.2–5.9.3 (pp. 84–87), 5.11.2, 5.11.3(1)–(4) (pp. 97–98); Remark 5.9.5 (p. 87); Propositions 3.2.4(2), D.2.3; Theorems 4.3.5, 4.6.2, 5.2.5, 5.3.4, 5.4.4, 5.5.3, 5.7.7–5.7.8, 5.11.5, 6.2.3, 6.3.5, 7.2.8, 7.3.4, 8.2.2, 8.3.2; equations (5.28), (8.5), (8.10), (8.14); Remarks 1.1.10, 5.2.8; §6.4; pp. 13–14, 27, 38–41, 54, 59, 79–80, 87, 104–105, 115–116, 131, 136–137, 141–142, 174–177"
 url = "https://arxiv.org/abs/1912.11942v3"
 fetched_from = "https://arxiv.org/pdf/1912.11942v3"
 fetched_at = "2026-10-20T21:28:53Z"
@@ -82,7 +82,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Divisors"
 year = 2026
 locator_scheme = "tag"
-locator = "0806"
+locator = "0B3V (Lemma 32.6, p. 80); 0806 (Lemma 33.5, p. 82); 080D–080E (Definition 34.1 and Lemma 34.2, pp. 85–86)"
 url = "https://stacks.math.columbia.edu/tag/0806"
 fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf#nameddest=0806"
 fetched_at = "2026-10-21T08:35:19Z"
@@ -90,4 +90,20 @@ sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
-cited_for = ["2.6; one-way effective-Cartier lifting property"]
+cited_for = ["2.6; section normal lines, one-way effective-Cartier lifting and ordinary strict transforms"]
+
+[[source]]
+id = "stacks-projective"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chow Homology and Chern Classes"
+year = 2026
+locator_scheme = "tag"
+locator = "02TV (projective-bundle convention, p. 70); 02TW–02TX (Lemmas 36.1–36.2, pp. 70–72); 02U1 (equation (37.1.1), p. 73)"
+url = "https://stacks.math.columbia.edu/tag/02TV"
+fetched_from = "https://stacks.math.columbia.edu/download/chow.pdf#nameddest=02TV"
+fetched_at = "2026-10-21T15:20:35Z"
+sha256 = "28aaf3c7a76d359c3be56f1c86167ab42fcb40bc35b1ae6ef3b47cb41f9a41f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.6; split normal-bundle projectivization and its Chern relation"]
