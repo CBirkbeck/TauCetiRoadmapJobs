@@ -227,7 +227,7 @@
           "hypotheses": [],
           "locator": {
             "source": "ltxzz",
-            "where": "Definitions 4.3.1–4.3.4 and Theorem 4.3.5, pp. 38–41; ltxzz line 1788; ltxzz line 1871"
+            "where": "Definitions 4.3.1–4.3.4 and Theorem 4.3.5, pp. 39–41; ltxzz line 1788; ltxzz line 1871"
           },
           "prerequisites": [
             "gap:native-shimura",
@@ -1389,16 +1389,16 @@
           "id": "7.3",
           "kind": "theorem",
           "name": "rankinSelbergLevelRaisingSystem",
-          "statement": "For admissible λ and H(n),H(n+1), on the native data satisfying the first- and second-law hypotheses, prove `onePlaceAnnihilator`: given a nonzero definite period with valuation mper and the fixed cohomology-to-lattice comparison error mlat, construct c₁∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p loc_p(c₁))≥m−mper−mlat and loc_w(c₁) nonsingular for w outside Σ⁺min∪Σ⁺ℓ∪{p}. Prove `twoPlaceAnnihilator`: for the diagonal regulator and a detecting pair p₁,p₂ from 7.2 with uniform loss c, construct c₂∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p₂ loc_p₂(c₂))≥m−mper−c−mlat and nonsingular localizations outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂}. Here z=π^mper z_prim is a chosen nonzero projected diagonal Selmer coordinate with z_prim primitive in a saturated integral lattice T, and m₀ is the fixed bad-place killing exponent. Put S=π^m₀T modulo λᵐ and v=π^m₀z_prim; for k=m−m₀>c use the primitive-kernel pair (v,t) of 7.2. Then expλ(loc_p₁(z))≥m−mper−c, loc_p₁(t)=0 and expλ(loc_p₂(t))≥m−m₀−c. No basis or unit coefficient in the scaled-inverse columns is used. The singular edge uses 5.6 and the first absolute-cycle edge uses 6.4; all maps retain the tensor polarization R^c≃R∨(1). These constructions supply the annihilators for 8.1–8.2. Nondetecting-place unramifiedness and the extending-cycle specialization comparisons are the explicit inputs below; rigidity at the added place is derived by rigid_of_levelRaisingSpecial from L6 and residual PII4.",
+          "statement": "For admissible λ and H(n),H(n+1), on the native data satisfying the first- and second-law hypotheses, prove `onePlaceAnnihilator`: given a nonzero definite period with valuation mper and the fixed cohomology-to-lattice comparison error mlat, construct c₁∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p loc_p(c₁))≥m−mper−mlat and loc_w(c₁) nonsingular for w outside Σ⁺min∪Σ⁺ℓ∪{p}. Prove `twoPlaceAnnihilator`: for the diagonal regulator and a detecting pair p₁,p₂ from 7.2 with uniform loss c, construct c₂∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p₂ loc_p₂(c₂))≥m−mper−c−mlat and nonsingular localizations outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂}. Both constructions also satisfy loc_w(c_i)∈H¹_ns(F_w,R̄⁽ᵐ⁾,c) at every w|ℓ, the integral finite submodule defined by torsion crystalline extensions in SelmerIwasawaCohomology §§4.8–4.10 (ltxzz Definition 2.2.5, lines 600–610). Here z=π^mper z_prim is a chosen nonzero projected diagonal Selmer coordinate with z_prim primitive in a saturated integral lattice T, and m₀ is the fixed bad-place killing exponent. Put S=π^m₀T modulo λᵐ and v=π^m₀z_prim; for k=m−m₀>c use the primitive-kernel pair (v,t) of 7.2. Then expλ(loc_p₁(z))≥m−mper−c, loc_p₁(t)=0 and expλ(loc_p₂(t))≥m−m₀−c. No basis or unit coefficient in the scaled-inverse columns is used. The singular edge uses 5.6 and the first absolute-cycle edge uses 6.4; all maps retain the tensor polarization R^c≃R∨(1). These constructions supply the annihilators for 8.1–8.2. Nondetecting-place unramifiedness and the extending-cycle specialization comparisons are the explicit inputs below; rigidity at the added place is derived by rigid_of_levelRaisingSpecial from L6 and residual PII4.",
           "hypotheses": [
             "At each edge use actual data satisfying 5.1 or 6.1 and the hypotheses of 5.6 or 6.4; all cohomology-to-lattice kernels and cokernels have a fixed λ-power bound mlat. The detecting pair satisfies 7.2 with loss c independent of m.",
             "For the two-place argument S=π^m₀T modulo λᵐ with T saturated rank two, z=π^mper z_prim, v=π^m₀z_prim primitive in S, and k=m−m₀>c; use loc_p₁(t)=0 and exp(loc_p₂(t))≥k−c, not a detecting basis.",
-            "For each annihilator let C_m=H²ⁿ⁻¹ét((Sh′_n₀×Sh′_n₁)_Fbar,Oλ(n))/(n₀,n₁) be its actual projected geometric coefficient module. For every finite place w of F whose restriction to F⁺ lies outside Σ⁺min∪Σ⁺ℓ∪{p} for c₁, or outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂} for c₂, require that C_m is unramified at w. This includes every other place above the rational primes p, p₁ and p₂. The smooth-model specialization input consists of the two smooth native models, their extending graph cycle and the Hecke-compatible ordinary/compact specialization isomorphisms; for F⁺≠ℚ use proper smooth base change, including the models of Remark 5.2.8, and for the nonproper domain use gap native-shimura. Smoothness alone without the nonproper specialization comparison does not suffice (ltxzz Lemma 4.2.4, p. 38; Remark 5.2.8, p. 59; proofs of (8.5), (8.14), pp. 137,141; ltxzz lines 1744–1754, 2754–2768, 6700–6701, 6901–6902).",
+            "For each annihilator let C_m=H²ⁿ⁻¹ét((Sh′_n₀×Sh′_n₁)_Fbar,Oλ(n))/(n₀,n₁) be its actual projected geometric coefficient module. For every finite place w of F whose restriction to F⁺ lies outside Σ⁺min∪Σ⁺ℓ∪{p} for c₁, or outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂} for c₂, require that C_m is unramified at w. This includes every other place above the rational primes p, p₁ and p₂. The smooth-model specialization input consists of the two smooth native models, their extending graph cycle and the Hecke-compatible ordinary/compact specialization isomorphisms; for F⁺≠ℚ use proper smooth base change, including the models of Remark 5.2.8, and for the nonproper domain use gap native-shimura. Smoothness alone without the nonproper specialization comparison does not suffice (ltxzz Lemma 4.2.4, p. 38; Remark 5.2.8, p. 59; proofs of (8.5), (8.14), pp. 137,141; ltxzz lines 1744–1754, 2754–2768, 6700–6701, 6901–6902). At every w|ℓ, L1 and L2 give unramified F_w/ℚℓ and hyperspecial levels for both Sh′_n₀ and Sh′_n₁; use their smooth models from PELModuli §§M2.8, M4.3 and the extending graph cycle. Gap purity-crystalline-regulator supplies torsion crystalline nonsingularity of its integral Abel–Jacobi class on this smooth-model domain, including the ordinary/compact comparison when nonproper, and compatibility with the quotient by (n₀,n₁). Each c_i is the image of that projected class under the Oλ[ΓF]-linear map C_m→R̄⁽ᵐ⁾,c obtained from (8.8) and a multiplicity coordinate (ltxzz lines 6681–6693); the same gap and crystallineNonsingular_map preserve its finite condition. This input concerns the integral congruence-level class, not merely its rationalization.",
             "At the second-law edge p₁, PII4 implies residual level-raising specialness. Apply rigid_of_levelRaisingSpecial to L6 and this residual polynomial before using first reciprocity at p₂ with Σ⁺lr,I={p₁}; the odd representation and the cyclotomic absolute irreducibility clause retain their original hypotheses."
           ],
           "locator": {
             "source": "ltxzz",
-            "where": "§1.2 and proofs of Theorems 8.2.2/8.3.2, pp. 5–6,135–143; ltxzz line 200; ltxzz line 6633; ltxzz line 6879; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2; rigidity: Definition 6.3.4(2),(4), pp. 115–116, lines 5623–5632, 5660–5661; nondetecting places: Lemma 4.2.4 and Remark 5.2.8, lines 1744–1754, 2754–2768, 6700–6701, 6901–6902"
+            "where": "§1.2 and proofs of Theorems 8.2.2/8.3.2, pp. 5–6,135–143; ltxzz line 200; ltxzz line 6633; ltxzz line 6879; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2; rigidity: Definition 6.3.4(2),(4), pp. 115–116, lines 5623–5632, 5660–5661; nondetecting places: Lemma 4.2.4 and Remark 5.2.8, lines 1744–1754, 2754–2768, 6700–6701, 6901–6902; coefficient places: Definitions 2.2.4–2.2.5 and Lemma 2.2.7, pp. 13–14, lines 591–623; L1–L2, lines 6370–6371; equations (8.5), (8.14), lattice map and pairing bounds, lines 6637–6649, 6681–6693, 6891–6910"
           },
           "prerequisites": [
             "target:3.6",
@@ -1407,7 +1407,7 @@
             "target:5.6",
             "target:6.4",
             "target:7.2",
-            "roadmap:SelmerIwasawaCohomology §§2.6–2.7, 4.9–4.10, 4.24–4.25",
+            "roadmap:SelmerIwasawaCohomology §§2.6–2.7, 4.8–4.10, 4.24–4.25",
             "roadmap:EulerSystemsAndKolyvaginSystems §1.2",
             "roadmap:ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7",
             "roadmap:SelmerIwasawaCohomology §§4.11, 4.24–4.25",
@@ -1417,18 +1417,19 @@
             "gap:native-shimura",
             "gap:rigidity",
             "roadmap:SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity)",
-            "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5 (local–global compatibility)"
+            "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations)",
+            "gap:purity-crystalline-regulator"
           ],
           "api": [
             {
               "name": "onePlaceAnnihilator",
               "role": "construction",
-              "statement": "The class c₁ has the singular exponent and nonsingular localizations stated above (ltxzz equations (8.4)–(8.5), lines 6633–6638)."
+              "statement": "The class c₁ has the singular exponent and nonsingular localizations away from ℓ stated above, and lies in H¹_ns(F_w,R̄⁽ᵐ⁾,c) at every w|ℓ (ltxzz equations (8.4)–(8.5), lines 6633–6638)."
             },
             {
               "name": "twoPlaceAnnihilator",
               "role": "construction",
-              "statement": "The class c₂ has the second-place singular exponent and nonsingular localizations stated above (ltxzz equations (8.13)–(8.14), lines 6887–6892); the source loss 4rR is replaced by the actual loss c of 7.2."
+              "statement": "The class c₂ has the second-place singular exponent and nonsingular localizations away from ℓ stated above, and lies in H¹_ns(F_w,R̄⁽ᵐ⁾,c) at every w|ℓ (ltxzz equations (8.13)–(8.14), lines 6887–6892); the source loss 4rR is replaced by the actual loss c of 7.2."
             },
             {
               "name": "rigid_of_levelRaisingSpecial",
@@ -1453,6 +1454,11 @@
               "statement": "For a perfect A_m-bilinear pairing of free rank-one A_m-modules, elements of exponents a,b have pairing exponent max(0,a+b−m): in bases the pairing scalar is a unit and their truncated valuations are m−a,m−b. In A₅, π and π² have exponents 4,3 and product exponent 2. With the nonperfect pairing (x,y)↦πxy the exponent is 1 instead. Zero arguments give exponent 0."
             },
             {
+              "name": "system_coefficient_place_finite",
+              "kind": "non-example",
+              "statement": "Unramifiedness of c_i at every w∤ℓ gives no different-ideal bound for an arbitrary localization at w|ℓ. For K=ℚ₁₁, Oλ=ℤ₁₁ and m=1, a nonzero unramified class in H¹(K,ℤ/11) is finite, but its Tate pairing with the uniformizer Kummer class in H¹(K,μ₁₁) has order 11. The latter class is not finite, while dλ=Oλ would require zero. Thus both arguments must satisfy the crystalline finite condition (ltxzz Lemma 2.2.7, lines 620–623; SelmerIwasawaCohomology §§4.9–4.11)."
+            },
+            {
               "name": "system_other_place_above_p1",
               "kind": "non-example",
               "statement": "For F⁺≠ℚ, a place w above p₁ other than the detecting place lies in Σ⁺I because Σ⁺I⊇Σ⁺_p₁. Repeating the first-edge argument outside Σ⁺I gives no nonsingularity there; the stronger final assertion (8.14) uses the proper smooth models of Remark 5.2.8 and specialization."
@@ -1473,8 +1479,8 @@
               "statement": "A place already in Σ gives no enlargement; a place in Σ⁺min or above ℓ is outside this inference and cannot replace the minimal or Fontaine–Laffaille condition by a raising eigenpair. For p²=1 modulo λ the two Satake roots collide, so the imposed ℓ∤p(p²−1) cannot be omitted from this simple-pair argument."
             }
           ],
-          "proofSketch": "At one place combine first reciprocity with 3.6 and an integral lattice map. At two places apply second reciprocity to the detected diagonal coordinate z at p₁; it gives the definite period exponent ≥m−mper−c. Use rigid_of_levelRaisingSpecial with L6 and residual PII4 at p₁ to obtain rigidity for (Σ⁺min,{p₁}). Change the odd special level by 3.7 and apply first reciprocity at p₂ with Σ⁺lr,I={p₁}, losing at most mlat. Pair c₂ with the primitive t from 7.2: the p₁ term is zero, the p₂ term has exponent at least max(0,m−m₀−mper−2c−mlat) by the perfect rank-one finite/singular pairing. All other terms vanish or are killed by the fixed different-ideal power π^mdif, using Selmer reduction and the dual local conditions. Thus m>m₀+mper+2c+mlat+mdif contradicts global sum-zero reciprocity. All constants are independent of m. At each nondetecting good place, specialize the extending graph cycle and its projected absolute class over the unramified trait. The edge class is inflated from the residue Galois group and hence is nonsingular; push it through the equivariant integral lattice map. Unramifiedness of C_m alone is not a claim that every class in H¹(F_w,C_m) is nonsingular.",
-          "adversarial": "Arithmetic realization only; generic bipartite definitions and norm-compatible Euler systems are not redefined here. Edge II is an inequality, so any generic theorem demanding two equalities is insufficient. Rigidity transport uses the actual untwisted automorphic residual extension, a simple residual Satake pair, and p²≠1 modulo λ. Other places above the detecting rational primes require the extending-cycle specialization, not merely the final edge hypotheses."
+          "proofSketch": "At one place combine first reciprocity with 3.6 and an integral lattice map. At two places apply second reciprocity to the detected diagonal coordinate z at p₁; it gives the definite period exponent ≥m−mper−c. Use rigid_of_levelRaisingSpecial with L6 and residual PII4 at p₁ to obtain rigidity for (Σ⁺min,{p₁}). Change the odd special level by 3.7 and apply first reciprocity at p₂ with Σ⁺lr,I={p₁}, losing at most mlat. Pair c₂ with the primitive t from 7.2: the p₁ term is zero, the p₂ term has exponent at least max(0,m−m₀−mper−2c−mlat) by the perfect rank-one finite/singular pairing. At w|ℓ, R has crystalline Hodge–Tate weights in [−n,n−1], of width 2n−1. L1 gives ℓ>4n, hence 2n−1≤(ℓ−2)/2. SelmerIwasawaCohomology §§4.10, 4.24 put the reduced Selmer argument in H¹_ns, and the integral construction above puts c_i there. Apply §4.11, or ltxzz Lemma 2.2.7 (lines 620–623), to bound their pairing by dλ⁻¹/Oλ, annihilated by π^mdif when dλ=(π^mdif). Bad-place terms are zero after π^m₀ and the remaining nondetecting terms away from ℓ vanish by nonsingular duality. Thus m>m₀+mper+2c+mlat+mdif contradicts global sum-zero reciprocity. All constants are independent of m. At each nondetecting good place, specialize the extending graph cycle and its projected absolute class over the unramified trait. The edge class is inflated from the residue Galois group and hence is nonsingular; push it through the equivariant integral lattice map. Unramifiedness of C_m alone is not a claim that every class in H¹(F_w,C_m) is nonsingular.",
+          "adversarial": "Arithmetic realization only; generic bipartite definitions and norm-compatible Euler systems are not redefined here. Edge II is an inequality, so any generic theorem demanding two equalities is insufficient. Rigidity transport uses the actual untwisted automorphic residual extension, a simple residual Satake pair, and p²≠1 modulo λ. Other places above the detecting rational primes require the extending-cycle specialization, not merely the final edge hypotheses. At w|ℓ both local classes must be torsion crystalline; m=1, ℓ=11 and a uniformizer Kummer class refute a bound for an arbitrary second argument. For n=2 the width is 3 and the least admissible ℓ=11 gives half-width 9/2; for ℓ≤4n no such inference is made. Unramified coefficient fields have mdif=0, while ramified coefficient fields retain the inverse-different bound."
         },
         {
           "id": "7.4",
@@ -1515,12 +1521,12 @@
           ],
           "locator": {
             "source": "ltxzz",
-            "where": "Lemma 8.2.1 witness and proof of Theorem 8.2.2 after that witness, pp. 134–137; ltxzz line 6548; ltxzz line 6571; corrected CM detection as in EulerSystemsAndKolyvaginSystems §1.15; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2"
+            "where": "Lemma 8.2.1 witness and proof of Theorem 8.2.2 after that witness, pp. 134–137; ltxzz line 6548; ltxzz line 6571; corrected CM detection as in EulerSystemsAndKolyvaginSystems §1.15; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2; the coefficient-place pairing uses (8.5), (8.14) and Lemma 2.2.7, lines 620–623, 6646–6649, 6907–6910"
           },
           "prerequisites": [
             "target:4.4",
             "target:7.3",
-            "roadmap:SelmerIwasawaCohomology §§4.11, 4.24–4.25",
+            "roadmap:SelmerIwasawaCohomology §§4.10–4.11, 4.24–4.25",
             "roadmap:ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7",
             "roadmap:EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15",
             "roadmap:EndoscopicTransferAndUnitaryTraceComparison §13.7",
@@ -1532,7 +1538,7 @@
           ],
           "api": [],
           "tests": [],
-          "proofSketch": "The period witness gives a nonzero definite diagonal period and a finite valuation mper. If a nonzero Selmer class exists, reduce a saturated rank-one lattice and kill bad-place localizations by π^m₀. Detection in 7.2 gives nonsingular exponent ≥m−m₀−c. First reciprocity produces a dual class with singular exponent ≥m−mper−mlat. Their local pairing has exponent ≥max(0,m−m₀−c−mper−mlat); all other terms are killed by π^mdif. Thus m>m₀+c+mper+mlat+mdif contradicts global reciprocity, since all constants are independent of m.",
+          "proofSketch": "The period witness gives a nonzero definite diagonal period and a finite valuation mper. If a nonzero Selmer class exists, reduce a saturated rank-one lattice and kill bad-place localizations by π^m₀. Detection in 7.2 gives nonsingular exponent ≥m−m₀−c. The onePlaceAnnihilator construction of 7.3 produces c₁ with singular exponent ≥m−mper−mlat and finite torsion crystalline localization at every w|ℓ. Their local pairing has exponent ≥max(0,m−m₀−c−mper−mlat); at every w|ℓ, the reduced Selmer argument and c₁ are both in H¹_ns by 7.3 and SelmerIwasawaCohomology §§4.10, 4.24. L1 gives 2n−1≤(ℓ−2)/2 for [−n,n−1], so §4.11 bounds their pairing by dλ⁻¹/Oλ, killed by π^mdif. Bad-place terms and all other nondetecting terms vanish. Thus m>m₀+c+mper+mlat+mdif contradicts global reciprocity, since all constants are independent of m.",
           "adversarial": "Zero Selmer already satisfies the conclusion; no fixed bound on m is assumed; no rational-base-field exclusion in the conditional theorem."
         },
         {
@@ -1542,17 +1548,17 @@
           "statement": "For the same standing pair, admissible λ and H(n),H(n+1), assume the uniform rank-two span hypothesis below and suppose a diagonal datum 4.1 has even local levels transferable at Σ⁺min and AJλ(Δ)≠0. Then dim_Eλ H¹_f(F,Vλ)=1.",
           "hypotheses": [
             "For every saturated rank-two Oλ-sublattice containing a primitive chosen diagonal Selmer coordinate modulo torsion, assume the reduced submodules after the fixed bad-place killing power satisfy the realised Frobenius span condition of 7.2, for choices of γ from 7.1 with a loss c independent of m.",
-            "The first-law edge at p₂ uses rigidity for (Σ⁺min,{p₁}), derived from L6 and residual PII4 at p₁ by rigid_of_levelRaisingSpecial of 7.3, and the nondetecting-place specialization input of 7.3."
+            "The first-law edge at p₂ uses rigidity for (Σ⁺min,{p₁}), derived from L6 and residual PII4 at p₁ by rigid_of_levelRaisingSpecial of 7.3, and the nondetecting-place specialization input of 7.3. At w|ℓ use the smooth hyperspecial models, extending graph cycle and integral regulator compatibility of 7.3, not unramifiedness of C_m."
           ],
           "locator": {
             "source": "ltxzz",
-            "where": "Theorem 8.3.2 and proof, pp. 139–143; ltxzz line 6773; ltxzz line 6828; ltxzz line 6887; corrected CM detection as in EulerSystemsAndKolyvaginSystems §1.15; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2"
+            "where": "Theorem 8.3.2 and proof, pp. 139–143; ltxzz line 6773; ltxzz line 6828; ltxzz line 6887; corrected CM detection as in EulerSystemsAndKolyvaginSystems §1.15; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2; the coefficient-place pairing uses (8.5), (8.14) and Lemma 2.2.7, lines 620–623, 6646–6649, 6907–6910"
           },
           "prerequisites": [
             "target:4.4",
             "target:4.5",
             "target:7.3",
-            "roadmap:SelmerIwasawaCohomology §§4.11, 4.24–4.25",
+            "roadmap:SelmerIwasawaCohomology §§4.10–4.11, 4.24–4.25",
             "roadmap:ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7",
             "roadmap:EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15",
             "roadmap:EulerSystemsAndKolyvaginSystems §4.4",
@@ -1563,7 +1569,7 @@
           ],
           "api": [],
           "tests": [],
-          "proofSketch": "4.5 gives the lower bound. If the dimension were at least 2, take a saturated rank-two T containing the primitive diagonal coordinate z_prim, let z=π^mper z_prim and use S=π^m₀T modulo λᵐ after fixed bad-place annihilation. The uniform span and 7.2 detect v=π^m₀z_prim at p₁ and give primitive t∈ker loc_p₁ with second exponent ≥m−m₀−c. PII4 at p₁ and rigid_of_levelRaisingSpecial of 7.3 upgrade L6 to rigidity for (Σ⁺min,{p₁}); first reciprocity at p₂ now has A7.2.2. By 7.3, with its good-reduction specialization input at every nondetecting place, the dual c₂ has singular exponent ≥m−mper−c−mlat at p₂. The p₂ pairing exponent is ≥max(0,m−m₀−mper−2c−mlat); all other terms are killed by π^mdif. Choosing m>m₀+mper+2c+mlat+mdif contradicts global reciprocity. No simultaneous diagonalizing basis is required.",
+          "proofSketch": "4.5 gives the lower bound. If the dimension were at least 2, take a saturated rank-two T containing the primitive diagonal coordinate z_prim, let z=π^mper z_prim and use S=π^m₀T modulo λᵐ after fixed bad-place annihilation. The uniform span and 7.2 detect v=π^m₀z_prim at p₁ and give primitive t∈ker loc_p₁ with second exponent ≥m−m₀−c. PII4 at p₁ and rigid_of_levelRaisingSpecial of 7.3 upgrade L6 to rigidity for (Σ⁺min,{p₁}); first reciprocity at p₂ now has A7.2.2. By twoPlaceAnnihilator of 7.3, with its good-reduction specialization input away from ℓ and its integral crystalline regulator input at every w|ℓ, the dual c₂ has singular exponent ≥m−mper−c−mlat at p₂ and finite torsion crystalline localization at every w|ℓ. The p₂ pairing exponent is ≥max(0,m−m₀−mper−2c−mlat); at every w|ℓ, the reduced Selmer argument and c₂ are both in H¹_ns by 7.3 and SelmerIwasawaCohomology §§4.10, 4.24. L1 gives 2n−1≤(ℓ−2)/2 for [−n,n−1], so §4.11 bounds their pairing by dλ⁻¹/Oλ, killed by π^mdif. Bad-place terms and all other nondetecting terms vanish. Choosing m>m₀+mper+2c+mlat+mdif contradicts global reciprocity. No simultaneous diagonalizing basis is required.",
           "adversarial": "AJ=0 gives no rank bound here; multiplicity μ>1 retained; L′ nonvanishing alone is not substituted for AJ nonvanishing."
         },
         {
@@ -1679,10 +1685,10 @@
       "sections": [
         "§§0.12–0.13",
         "§§2.6–2.7",
-        "§§4.9–4.11",
+        "§§4.8–4.11",
         "§§4.24–4.25"
       ],
-      "what": "IsWeaklySemisimple, invariantCoinvariantMap, weaklySemisimple_of_surjective and weaklySemisimple_integral_lift; propagated finite conditions, global integral Selmer images, conjugation, crystalline annihilators and localAnnihilation_uniform with both H⁰ vanishings."
+      "what": "IsWeaklySemisimple, invariantCoinvariantMap, weaklySemisimple_of_surjective and weaklySemisimple_integral_lift; propagated finite conditions, global integral Selmer images, conjugation, crystalline annihilators and localAnnihilation_uniform with both H⁰ vanishings. Section 4.8 supplies crystallineNonsingular and crystallineNonsingular_map for torsion crystalline extensions and equivariant coefficient pushout."
     },
     {
       "roadmap": "EulerSystemsAndKolyvaginSystems",
@@ -1709,14 +1715,14 @@
         "§D7.4",
         "§D7.7"
       ],
-      "what": "Defined local Tate pairings, global sum-zero reciprocity and coefficient/dual-local-condition compatibilities; gap purity-crystalline-regulator records the additional all-place regulator theorem."
+      "what": "Defined local Tate pairings, global sum-zero reciprocity and coefficient/dual-local-condition compatibilities; gap purity-crystalline-regulator records the additional all-place regulator theorem and its torsion crystalline good-reduction conclusion, compatible with Hecke quotients and equivariant integral lattice maps."
     },
     {
       "roadmap": "AutomorphicGaloisRepresentationsPartII",
       "sections": [
         "AG2.1b (The actual Galois constituent of cohomology; The archimedean packet multiplicity)",
         "AG2.2 (Galois assembly for discrete unitary transfer; Attachment under cuspidal solvable base change)",
-        "AG2.5 (Published RACSDC comparison specializations)",
+        "AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations)",
         "AG2.6 (Strong coefficient field; Uniform strong realization of polarized systems; Purity and polarization of the polarized system)",
         "AG2.7 (Residual representation of π; Residual genericity outside finitely many λ; Unitary discrete-parameter export; Lattice and residual polynomial export)"
       ],
@@ -2014,10 +2020,11 @@
       "slug": "purity-crystalline-regulator",
       "title": "All-place purity and finite regulator theorem",
       "neededBy": [
-        "4.4"
+        "4.4",
+        "7.3"
       ],
-      "detail": "Need tempered local-global purity of weight −1, local Euler characteristic with dual invariants, and crystalline regulator at good smooth integral reduction above ℓ, including nonproper projected cohomology; separate general purity belongs to DeligneWeightsAndPurity and crystalline comparison to PadicHodgeTheory. ltxzz line 6484, ltxzz line 6796.",
-      "needs": "Bind the rational all-place finite regulator theorem and its compatible integral-lattice realization.",
+      "detail": "Need tempered local-global purity of weight −1, local Euler characteristic with dual invariants, and crystalline regulator at good smooth integral reduction above ℓ, including nonproper projected cohomology; separate general purity belongs to DeligneWeightsAndPurity and crystalline comparison to PadicHodgeTheory. ltxzz line 6484, ltxzz line 6796. The integral conclusion includes the congruence-level graph-cycle class and its lattice-map image at every w|ℓ, with the native ordinary/compact comparison in the nonproper case (ltxzz Definitions 2.2.4–2.2.5, lines 591–610; equations (8.5), (8.14) and their construction, lines 6637–6638, 6681–6701, 6891–6897).",
+      "needs": "Bind the rational all-place finite regulator theorem and its compatible integral-lattice realization, and the torsion crystalline nonsingularity at every w|ℓ of the integral Abel–Jacobi class of a cycle with good smooth reduction on the model and support domain used here, compatible with Hecke quotients and Oλ[ΓF]-linear maps.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "new obligation: ltxzz Lemma 8.1.6 and rank-one Selmer membership"
     },
