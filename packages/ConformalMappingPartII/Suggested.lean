@@ -1,5 +1,4 @@
 import Mathlib
-import TauCeti.Analysis.Complex.Conformal.Moebius
 
 /-!
 # ConformalMappingPartII: representative target signatures
@@ -9,8 +8,8 @@ signatures statable against the pinned APIs; it is not exhaustive. Coverings use
 actual disc/domain subtypes, derivatives are complex, and the characteristic uses
 native proximity with a local divisor. Positive orientation fixes inverse germs.
 Continued hypergeometric branches and geometric group constructions are specified
-in the README. The examples distinguish boundary factors, centre poles, scalar
-representatives and totalized formulas from their analytic interpretations.
+in the README. Proved examples test the light definitions; named boundary targets
+record checks whose analytic proofs remain part of the roadmap.
 -/
 
 open scoped BigOperators Topology
@@ -43,7 +42,8 @@ def LinearEquation.IsSolution {Ω : Set ℂ} {n : ℕ}
     iteratedDeriv n y x + ∑ j, E.coefficient j x * iteratedDeriv j.val y x = 0
 
 /-- Every initial jet determines one analytic solution germ at an ordinary point
-(CDT §1.1.6, p.632). Uniqueness is equality of germs, not of arbitrary extensions. -/
+(DiophantineApproximationAndTranscendence §5.1). This is the scalar-germ
+ comparison with the supplied disc initial-value theorem; uniqueness is germ equality. -/
 theorem LinearEquation.initial_value {Ω : Set ℂ} {n : ℕ}
     (E : LinearEquation Ω n) {x : ℂ} (hx : x ∈ Ω) (v : Fin n → ℂ) :
     ∃ y : ℂ → ℂ, AnalyticAt ℂ y x ∧ E.initialJet y x = v ∧
@@ -55,7 +55,7 @@ theorem LinearEquation.initial_value {Ω : Set ℂ} {n : ℕ}
         w =ᶠ[nhds x] y := by sorry
 
 /-- On a simply connected domain every jet has a unique global solution on that
- domain. The linear equivalence of the solution space is a README target. -/
+ domain (TeschlODE, Theorem 4.7, p.130). The linear equivalence is a README target. -/
 theorem LinearEquation.global_initial_value {Ω : Set ℂ} {n : ℕ}
     (E : LinearEquation Ω n) (hΩ : SimplyConnectedSpace Ω)
     {x : ℂ} (hx : x ∈ Ω) (v : Fin n → ℂ) :
@@ -63,26 +63,36 @@ theorem LinearEquation.global_initial_value {Ω : Set ℂ} {n : ℕ}
       ∀ w : ℂ → ℂ, E.IsSolution w → E.initialJet w x = v → EqOn w y Ω := by sorry
 
 /-- Zero coefficients in order one force constants on the connected domain. -/
-example {Ω : Set ℂ} (E : LinearEquation Ω 1)
+theorem LinearEquation.orderOne_constants {Ω : Set ℂ} (E : LinearEquation Ω 1)
     (ha : ∀ x ∈ Ω, E.coefficient 0 x = 0) {y : ℂ → ℂ}
     (hy : E.IsSolution y) : E.IsSolution (fun _ ↦ 0) ∧
       ∃ c, ∀ x ∈ Ω, y x = c := by sorry
 
 /-- In order two the affine solution and its unscaled jet agree. -/
-example {Ω : Set ℂ} (E : LinearEquation Ω 2)
+theorem LinearEquation.orderTwo_affine {Ω : Set ℂ} (E : LinearEquation Ω 2)
     (ha : ∀ j x, x ∈ Ω → E.coefficient j x = 0) {y : ℂ → ℂ}
     (hy : E.IsSolution y) : ∃ a b : ℂ, ∀ x ∈ Ω,
       y x = a * x + b ∧ E.initialJet y x 0 = y x ∧ E.initialJet y x 1 = a := by sorry
 
 /-- In order three, the unscaled second derivative is two, not one. -/
 example {Ω : Set ℂ} (E : LinearEquation Ω 3) :
-    E.initialJet (fun z ↦ z ^ 2) 0 2 = 2 := by sorry
+    E.initialJet (fun z ↦ z ^ 2) 0 2 = 2 := by
+  norm_num [LinearEquation.initialJet, iteratedDeriv_pow]
 
-/-- A pole cannot be an analytic coefficient at an ordinary point. -/
-example : ¬ AnalyticAt ℂ (fun z : ℂ ↦ 1 / z) 0 := by sorry
-
-/-- Identity continuation around a puncture does not exclude an essential singularity. -/
-example : ¬ MeromorphicAt (fun z : ℂ ↦ Complex.exp (1 / z)) 0 := by sorry
+/-- For coefficient one, exp(-z) solves the equation and the constant one fails it
+ on a pointed domain; this tests both analyticity and the differential equation. -/
+example {Ω : Set ℂ} (E : LinearEquation Ω 1)
+    (ha : ∀ x ∈ Ω, E.coefficient 0 x = 1) {x : ℂ} (hx : x ∈ Ω) :
+    E.IsSolution (fun z ↦ Complex.exp (-z)) ∧ ¬ E.IsSolution (fun _ ↦ 1) := by
+  have hd (z : ℂ) : deriv (fun w : ℂ ↦ Complex.exp (-w)) z = -Complex.exp (-z) := by
+    simpa using ((hasDerivAt_id z).neg.cexp).deriv
+  constructor
+  · refine ⟨analyticOnNhd_id.neg.cexp, ?_⟩
+    intro z hz
+    simp [iteratedDeriv_one, iteratedDeriv_zero, ha z hz, hd]
+  · intro h
+    have hc := h.2 x hx
+    simpa [iteratedDeriv_one, iteratedDeriv_zero, ha x hx] using hc
 
 /-! ## Layer 1: analytic universal covers and pointed radius -/
 
@@ -97,13 +107,21 @@ structure PointedCover (Ω : Set ℂ) (a : ℂ) where
     (⟨toFun (z : ℂ), mapsTo (by simpa using z.norm_lt_one)⟩ : Ω))
   surjective : SurjOn toFun (ball 0 1) Ω
 
+/-- Every connected open plane domain omitting two distinct points has a based
+ holomorphic universal cover by the disc (noncompact surface uniformization and Little Picard). -/
+theorem PointedCover.exists_cover {Ω : Set ℂ} {a : ℂ}
+    (ho : IsOpen Ω) (hc : IsConnected Ω) (ha : a ∈ Ω)
+    (hmiss : ∃ b c : ℂ, b ≠ c ∧ b ∉ Ω ∧ c ∉ Ω) :
+    Nonempty (PointedCover Ω a) := by sorry
+
 /-- The derivative-norm set is a nonempty singleton when a pointed cover exists.
- The totalized infimum has a geometric interpretation only on such domains. -/
+ This extends ClassicalArithmeticCompletion §6.20 on proper simply connected domains.
+ The totalizations outside that common class are kept distinct. -/
 def conformalRadius (Ω : Set ℂ) (a : ℂ) : ℝ :=
   sInf {r : ℝ | ∃ F : PointedCover Ω a, r = ‖deriv F.toFun 0‖}
 
 /-- A based disc map lifts uniquely through the covering, and equality in the
- derivative bound is exactly a rotation of that based lift (CDT §1.1.6, p.632). -/
+ derivative bound is exactly a rotation of that based lift (Schwarz equality case). -/
 theorem PointedCover.extremal {Ω : Set ℂ} {a : ℂ}
     (F : PointedCover Ω a) (hΩ : IsOpen Ω) {f : ℂ → ℂ}
     (hf : DifferentiableOn ℂ f (ball 0 1)) (hmaps : MapsTo f (ball 0 1) Ω)
@@ -120,22 +138,18 @@ theorem PointedCover.extremal {Ω : Set ℂ} {a : ℂ}
         ∃ ζ : ℂ, ‖ζ‖ = 1 ∧ ∀ z ∈ ball (0 : ℂ) 1, l z = ζ * z) := by sorry
 
 /-- The identity disc map is a pointed holomorphic cover. -/
-example : ∃ F : PointedCover (ball (0 : ℂ) 1) 0,
+theorem PointedCover.identity_exists : ∃ F : PointedCover (ball (0 : ℂ) 1) 0,
     EqOn F.toFun id (ball 0 1) := by sorry
 
 /-- Ramification at zero prevents the square map from being a disc cover. -/
-example : ¬ ∃ F : PointedCover (ball (0 : ℂ) 1) 0,
+theorem PointedCover.square_not_cover : ¬ ∃ F : PointedCover (ball (0 : ℂ) 1) 0,
     ∀ z ∈ ball (0 : ℂ) 1, F.toFun z = z ^ 2 := by sorry
 
 /-- The unit-disc radius fixes the normalization. -/
-example : conformalRadius (ball (0 : ℂ) 1) 0 = 1 := by sorry
+theorem conformalRadius.unitDisc : conformalRadius (ball (0 : ℂ) 1) 0 = 1 := by sorry
 
 /-- Dilation multiplies the radius by its norm. -/
-example : conformalRadius (ball (0 : ℂ) 2) 0 = 2 := by sorry
-
-/-- A once-punctured plane fails the two-omitted-point hyperbolicity hypothesis. -/
-example : ¬ ∃ a b : ℂ, a ≠ b ∧ a ∉ {z : ℂ | z ≠ 0} ∧
-    b ∉ {z : ℂ | z ≠ 0} := by sorry
+theorem conformalRadius.radiusTwo : conformalRadius (ball (0 : ℂ) 2) 0 = 2 := by sorry
 
 /-- The oriented roots cover fixes the phase of the inverse germ. Cusp limits are
  proved separately, not stored as fields (CDT Definition 5.1.1, p.667). -/
@@ -148,7 +162,7 @@ structure RootsCover (N : ℕ) extends PointedCover {x : ℂ | x ^ N ≠ 1} 0 wh
 theorem RootsCover.exists_cover (N : ℕ) (hN : 2 ≤ N) : Nonempty (RootsCover N) := by sorry
 
 /-- Root descent gives a holomorphic scalar map on the disc with the stated
- derivative. This existence theorem does not choose an admitted data definition. -/
+ derivative. -/
 theorem RootsCover.power_descent {N : ℕ} (F : RootsCover N) :
     ∃ G : ℂ → ℂ, DifferentiableOn ℂ G (ball 0 1) ∧ G 0 = 0 ∧
       (∀ z ∈ ball (0 : ℂ) 1, G z ≠ 1) ∧
@@ -158,18 +172,19 @@ theorem RootsCover.power_descent {N : ℕ} (F : RootsCover N) :
         (∀ z ∈ ball (0 : ℂ) 1, H (z ^ N) = F.toFun z ^ N) →
         EqOn H G (ball 0 1) := by sorry
 
-/-- At N=2 the omitted set consists of exactly the two indicated roots. -/
-example : {x : ℂ | x ^ 2 ≠ 1} = {x | x ≠ -1 ∧ x ≠ 1} := by sorry
-
 /-- The root-one normalization is a boundary limit and an interior omission. -/
-example {N : ℕ} (F : RootsCover N) :
+theorem RootsCover.realRadialLimit {N : ℕ} (F : RootsCover N) :
     Filter.Tendsto (fun r : ℝ ↦ F.toFun r) (nhdsWithin 1 (Iio 1)) (nhds (1 : ℂ)) ∧
       ∀ z ∈ ball (0 : ℂ) 1, F.toFun z ≠ 1 := by sorry
 
 /-- A quarter-turn keeps the derivative norm but violates positive real orientation. -/
-example {N : ℕ} (F : RootsCover N) :
+theorem RootsCover.quarterTurn {N : ℕ} (F : RootsCover N) :
     deriv (fun z ↦ F.toFun (I * z)) 0 = I * deriv F.toFun 0 ∧
       0 < (deriv (fun z ↦ F.toFun (I * z)) 0).im := by sorry
+
+/-- A disconnected union cannot be the surjective image of the connected disc. -/
+theorem PointedCover.disconnected_not_cover :
+    IsEmpty (PointedCover (ball (0 : ℂ) 1 ∪ ball (3 : ℂ) 1) 0) := by sorry
 
 /-! ## Layer 2: Schwarzians and accessory parameters -/
 
@@ -194,11 +209,22 @@ theorem roots_inverse_schwarzian {N : ℕ} (F : RootsCover N) {w : ℂ → ℂ} 
       (2 * (x ^ N - 1) ^ 2) := by sorry
 
 /-- An affine map has zero Schwarzian. -/
-example (x : ℂ) : schwarzian (fun z ↦ 2 * z + 1) x = 0 := by sorry
+example (x : ℂ) : schwarzian (fun z ↦ 2 * z + 1) x = 0 := by
+  have hd : deriv (fun z : ℂ ↦ 2 * z + 1) = fun _ ↦ 2 := by
+    ext z
+    simp [deriv_add_const, deriv_const_mul_id]
+  simp [schwarzian, iteratedDeriv_succ', iteratedDeriv_zero, hd, iteratedDeriv_const]
 
 /-- The square map detects both the sign and the factor three halves. -/
 example {x : ℂ} (hx : x ≠ 0) :
-    schwarzian (fun z ↦ z ^ 2) x = -3 / (2 * x ^ 2) := by sorry
+    schwarzian (fun z ↦ z ^ 2) x = -3 / (2 * x ^ 2) := by
+  norm_num [schwarzian, iteratedDeriv_pow, deriv_pow_field]
+  <;> field_simp [hx]
+  <;> ring
+
+/-- Inversion has zero Schwarzian away from its pole (CDT Remark 5.1.10). -/
+theorem schwarzian.inverse {x : ℂ} (hx : x ≠ 0) :
+    schwarzian (fun z ↦ 1 / z) x = 0 := by sorry
 
 /-! ## Layer 3: finite Blaschke products and quotient representation -/
 
@@ -211,18 +237,22 @@ def finiteBlaschke (k : ℕ) (a : Fin k → ℂ) (n : Fin k → ℕ) (z : ℂ) :
   ∏ i, blaschkeFactor (a i) z ^ n i
 
 /-- At zero the factor is the identity. -/
-example (z : ℂ) : blaschkeFactor 0 z = z := by sorry
+example (z : ℂ) : blaschkeFactor 0 z = z := by
+  simp [blaschkeFactor]
 
 /-- The removable boundary factor is a constant, including at the cancelled pole. -/
-example (z : ℂ) : blaschkeFactor 1 z = -1 := by sorry
+example (z : ℂ) : blaschkeFactor 1 z = -1 ∧ blaschkeFactor (-1) z = 1 := by
+  norm_num [blaschkeFactor]
 
 /-- Empty and boundary-only zero data do not give open-disc-valued functions. -/
 example (z : ℂ) :
     finiteBlaschke 0 (fun i ↦ Fin.elim0 i) (fun i ↦ Fin.elim0 i) z = 1 ∧
-      finiteBlaschke 1 (fun _ ↦ 1) (fun _ ↦ 1) z = -1 := by sorry
+      finiteBlaschke 1 (fun _ ↦ 1) (fun _ ↦ 1) z = -1 := by
+  simp [finiteBlaschke, blaschkeFactor]
 
 /-- Positive multiplicity changes the actual product, not merely its zero set. -/
-example (z : ℂ) : finiteBlaschke 1 (fun _ ↦ 0) (fun _ ↦ 2) z = z ^ 2 := by sorry
+example (z : ℂ) : finiteBlaschke 1 (fun _ ↦ 0) (fun _ ↦ 2) z = z ^ 2 := by
+  simp [finiteBlaschke, blaschkeFactor]
 
 /-- A zero-free closed-disc function normalized to one has this analytic logarithm
  (CDT (6.1.10), p.680). The integral uses probability circle means. -/
@@ -243,12 +273,6 @@ theorem quotient_representation {g : ℂ → ℂ}
         Real.log ‖h z‖ ≤ ValueDistribution.proximity g ⊤ 1 + ε ∧
         Real.log ‖h z * g z‖ ≤ ValueDistribution.proximity g ⊤ 1 + ε := by sorry
 
-/-- The missing phase is visible on a constant unimodular function. -/
-example {R : ℝ} (hR : 0 < R) {z : ℂ} (hz : ‖z‖ < R) :
-    Complex.exp (Real.circleAverage
-      (fun w : ℂ ↦ (Real.log ‖(I : ℂ)‖ : ℂ) * (w + z) / (w - z)) 0 R) = 1 ∧
-      (I : ℂ) / (‖(I : ℂ)‖ : ℂ) = I := by sorry
-
 /-! ## Layer 4: hypergeometric inverse germs and continuation -/
 
 /-- A native-series germ at zero, not a globally continued hypergeometric function. -/
@@ -259,13 +283,24 @@ def inverseRatio (N : ℕ) (u : ℂ) : ℂ :=
     ordinaryHypergeometric aMinus aMinus (2 * aMinus) (u ^ N)
 
 /-- On its convergence disc the native series satisfies Gauss's equation
- (CDT proof of Lemma 5.1.16, p.672). The parameter restrictions match the README. -/
+ (CDT proof of Lemma 5.1.16, p.672). Numerator parameters may terminate. -/
 theorem gauss_equation (a b c x : ℂ)
-    (ha : ∀ k : ℕ, a ≠ -(k : ℂ)) (hb : ∀ k : ℕ, b ≠ -(k : ℂ))
     (hc : ∀ k : ℕ, c ≠ -(k : ℂ)) (hx : ‖x‖ < 1) :
     x * (1 - x) * iteratedDeriv 2 (ordinaryHypergeometric a b c) x +
       (c - (a + b + 1) * x) * deriv (ordinaryHypergeometric a b c) x -
       a * b * ordinaryHypergeometric a b c x = 0 := by sorry
+
+/-- A terminating numerator yields the same Gauss equation on the whole plane. -/
+theorem gauss_equation_terminating (a b c x : ℂ)
+    (hc : ∀ k : ℕ, c ≠ -(k : ℂ))
+    (ht : (∃ k : ℕ, a = -(k : ℂ)) ∨ ∃ k : ℕ, b = -(k : ℂ)) :
+    x * (1 - x) * iteratedDeriv 2 (ordinaryHypergeometric a b c) x +
+      (c - (a + b + 1) * x) * deriv (ordinaryHypergeometric a b c) x -
+      a * b * ordinaryHypergeometric a b c x = 0 := by sorry
+
+/-- The terminating checks give 1 and 1-x, including outside the unit disc. -/
+theorem gauss_terminating_checks (x : ℂ) :
+    ordinaryHypergeometric 0 1 1 x = 1 ∧ ordinaryHypergeometric (-1) 1 1 x = 1 - x := by sorry
 
 /-- The oriented inverse germ is the scalar prefactor times J_N
  (CDT Lemma 5.1.16, pp.671–672); both inverse compositions are germ equalities. -/
@@ -275,10 +310,15 @@ theorem inverseRatio.cover_inverse {N : ℕ} (F : RootsCover N) :
       (fun z ↦ (deriv F.toFun 0)⁻¹ * inverseRatio N (F.toFun z)) =ᶠ[nhds 0] id := by sorry
 
 /-- The germ has zero constant coefficient and derivative one. -/
-example : inverseRatio 2 0 = 0 ∧ deriv (inverseRatio 2) 0 = 1 := by sorry
+theorem inverseRatio.levelTwo_initial : inverseRatio 2 0 = 0 ∧ deriv (inverseRatio 2) 0 = 1 := by sorry
+
+/-- The scalar germ formula has zero constant term for every positive level. -/
+example {N : ℕ} (hN : 2 ≤ N) : inverseRatio N 0 = 0 := by
+  have hpos : 0 < N := lt_of_lt_of_le (by decide : 0 < 2) hN
+  simp [inverseRatio, zero_pow (Nat.ne_of_gt hpos)]
 
 /-- The cubic coefficient 1/4 rules out replacing J_2 by the identity germ. -/
-example : iteratedDeriv 3 (inverseRatio 2) 0 = (3 / 2 : ℂ) := by sorry
+theorem inverseRatio.levelTwo_cubic : iteratedDeriv 3 (inverseRatio 2) 0 = (3 / 2 : ℂ) := by sorry
 
 /-! ## Layer 5: exact conformal radius and its expansion -/
 
@@ -296,7 +336,7 @@ theorem roots_conformal_radius {N : ℕ} (hN : 2 ≤ N)
       conformalRadius {x : ℂ | x ^ N ≠ 1} 0 = gammaRadius N := by sorry
 
 /-- The positive remainder is bounded by an effective absolute N⁻⁶ term.
- The README specifies how to produce a numerical constant (CDT (5.1.6), p.668). -/
+ The README specifies the numerical estimate (CDT (5.1.6), p.668). -/
 theorem gammaRadius.positive_expansion :
     ∃ C : ℝ, 0 < C ∧ ∀ N : ℕ, 2 ≤ N → ∃ E : ℝ, 0 < E ∧ E ≤ C / (N : ℝ) ^ 6 ∧
       gammaRadius N = (16 : ℝ) ^ (1 / (N : ℝ)) *
@@ -304,11 +344,12 @@ theorem gammaRadius.positive_expansion :
           3 * (riemannZeta (5 : ℂ)).re / (8 * (N : ℝ) ^ 5) + E) := by sorry
 
 /-- Levels two and three have the indicated explicit Gamma values. -/
-example : gammaRadius 2 = Real.Gamma (1 / 4) ^ 4 / (4 * Real.pi ^ 2) ∧
+theorem gammaRadius.smallLevels : gammaRadius 2 = Real.Gamma (1 / 4) ^ 4 / (4 * Real.pi ^ 2) ∧
     gammaRadius 3 = Real.Gamma (1 / 6) ^ 3 / (12 * Real.pi ^ (3 / 2 : ℝ)) := by sorry
 
 /-- The totalized level-one value is not a positive hyperbolic radius. -/
-example : gammaRadius 1 = 0 := by sorry
+example : gammaRadius 1 = 0 := by
+  norm_num [gammaRadius, Real.Gamma_zero]
 
 /-! ## Layer 6: symmetric covering groups and their domains -/
 
@@ -318,17 +359,6 @@ theorem half_rotation_involution {N : ℕ} (F : RootsCover N) {z : ℂ}
     (hz : z ∈ ball (0 : ℂ) 1) :
     1 - F.toFun (Complex.exp (Real.pi * I / (N : ℂ)) * z) ^ N =
       1 / (1 - F.toFun z ^ N) := by sorry
-
-/-- The displayed real rotation matrix acts by the inverse disc rotation in the
- standard left action; τ=2i detects the sign, whereas the fixed point i cannot. -/
-example :
-    let τ : ℂ := 2 * I
-    let θ : ℝ := Real.pi / 3
-    let rτ : ℂ := ((Real.cos θ : ℂ) * τ - (Real.sin θ : ℂ)) /
-      ((Real.sin θ : ℂ) * τ + (Real.cos θ : ℂ))
-    (rτ - I) / (rτ + I) =
-      Complex.exp (-2 * Real.pi * I / 3) * ((τ - I) / (τ + I)) ∧
-    (rτ - I) / (rτ + I) = -1 / 6 - (Real.sqrt 3 : ℂ) / 6 * I := by sorry
 
 /-! ## Layer 7: value distribution on the open disc -/
 
@@ -358,30 +388,40 @@ theorem local_first_main_translation {f : ℂ → ℂ} (hf : MeromorphicOn f (ba
       Real.log ‖meromorphicTrailingCoeffAt (fun z ↦ f z - a) 0‖| ≤
       Real.posLog ‖a‖ + Real.log 2 := by sorry
 
+/-- Constants have no pole divisor, including the identically zero representative. -/
+example (c : ℂ) (r : ℝ) : discCounting (fun _ ↦ c) r = 0 := by
+  simp [discCounting, MeromorphicOn.divisor_const]
+
+/-- A constant characteristic is its positive logarithmic norm. -/
+example (c : ℂ) (r : ℝ) :
+    discCharacteristic (fun _ ↦ c) r = Real.posLog ‖c‖ := by
+  simp [discCharacteristic, discCounting, MeromorphicOn.divisor_const]
+
 /-- A centre pole gives a negative local counting function. -/
-example {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
+theorem discCounting.centrePole {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
     discCounting (fun z ↦ 1 / z) r = Real.log r ∧ Real.log r < 0 := by sorry
 
 /-- A pole on the circle has zero weight and invalidates a closed-disc criterion. -/
-example {a : ℂ} (ha : a ≠ 0) (ha1 : ‖a‖ < 1) :
+theorem discCounting.boundaryPole {a : ℂ} (ha : a ≠ 0) (ha1 : ‖a‖ < 1) :
     discCounting (fun z ↦ 1 / (z - a)) ‖a‖ = 0 := by sorry
 
 /-- The holomorphic identity has zero characteristic below radius one. -/
-example {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
+theorem discCharacteristic.identity {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
     discCharacteristic (fun z ↦ z) r = 0 := by sorry
 
 /-- The centre-pole counting term cancels its proximity. -/
-example {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
+theorem discCharacteristic.centrePole {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
     discCharacteristic (fun z ↦ 1 / z) r = 0 := by sorry
 
 /-- A scalar representative whose removable punctured germ has the wrong point value. -/
 def scalarSpike (z : ℂ) : ℂ := if z = 0 then 2 else 1
 
 /-- The point value differs from its punctured-germ limit. -/
-example : scalarSpike 0 = 2 ∧ ∀ z : ℂ, z ≠ 0 → scalarSpike z = 1 := by sorry
+example : scalarSpike 0 = 2 ∧ ∀ z : ℂ, z ≠ 0 → scalarSpike z = 1 := by
+  simp [scalarSpike]
 
 /-- Zero divisor and pole count do not imply pointwise analytic regularity. -/
-example {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
+theorem scalarSpike.removable_not_continuous {r : ℝ} (hr : 0 < r) (hr1 : r < 1) :
     Meromorphic scalarSpike ∧ (∀ z : ℂ, meromorphicOrderAt scalarSpike z = 0) ∧
       discCounting scalarSpike r = 0 ∧ ¬ ContinuousAt scalarSpike 0 ∧
       ¬ AnalyticAt ℂ scalarSpike 0 := by sorry
@@ -393,11 +433,16 @@ def ExceptionalCuspSet {N : ℕ} (F : RootsCover N) (M : ℝ) : Set ℂ :=
   {z | ‖z‖ < 1 ∧ ‖F.toFun z ^ N - 1‖ < Real.exp (-M * (N : ℝ))}
 
 /-- Zero is outside the exceptional set for every positive M. -/
-example {N : ℕ} (F : RootsCover N) {M : ℝ} (hM : 0 < M) :
+theorem ExceptionalCuspSet.zero_not_mem {N : ℕ} (F : RootsCover N) {M : ℝ} (hM : 0 < M) :
     0 ∉ ExceptionalCuspSet F M := by sorry
 
+/-- Surjectivity supplies actual small cusp values, so the exceptional set is nonempty
+ for every positive M (CDT Definition in the proof of Lemma 5.2.18). -/
+theorem ExceptionalCuspSet.nonempty {N : ℕ} (F : RootsCover N) {M : ℝ} (hM : 0 < M) :
+    (ExceptionalCuspSet F M).Nonempty := by sorry
+
 /-- Large values enter the rotated set, rather than the small-value set itself. -/
-example {N : ℕ} (F : RootsCover N) {M : ℝ} (hM : 0 < M) {z : ℂ}
+theorem ExceptionalCuspSet.rotated_large {N : ℕ} (F : RootsCover N) {M : ℝ} (hM : 0 < M) {z : ℂ}
     (hz : ‖z‖ < 1) (hlarge : Real.exp M + 1 < ‖F.toFun z‖) :
     z ∈ (fun w : ℂ ↦ Complex.exp (Real.pi * I / (N : ℂ)) * w) ''
       ExceptionalCuspSet F M ∧ z ∉ ExceptionalCuspSet F M := by sorry
@@ -415,10 +460,16 @@ theorem large_n_max_growth :
 def pivotMap (N : ℕ) (x : ℂ) : ℂ := x ^ N / (x ^ N - 1)
 
 /-- A concrete nonzero input pins the rational expression. -/
-example : pivotMap 2 2 = (4 / 3 : ℂ) := by sorry
+example : pivotMap 2 2 = (4 / 3 : ℂ) := by
+  norm_num [pivotMap]
+
+/-- Zero and a root distinguish the regular germ from a totalized pole value. -/
+example {N : ℕ} (hN : 2 ≤ N) : pivotMap N 0 = 0 ∧ pivotMap N 1 = 0 := by
+  have hpos : 0 < N := lt_of_lt_of_le (by decide : 0 < 2) hN
+  simp [pivotMap, zero_pow (Nat.ne_of_gt hpos)]
 
 /-- A totalized field value at a root does not remove its genuine analytic pole. -/
-example : pivotMap 2 1 = 0 ∧
+theorem pivotMap.levelTwo_pole : pivotMap 2 1 = 0 ∧
     meromorphicOrderAt (pivotMap 2) 1 = ((-1 : ℤ) : WithTop ℤ) := by sorry
 
 /-- The zero-free logarithmic derivative estimate has an explicit absolute constant
@@ -433,7 +484,7 @@ theorem normalized_log_derivative {g : ℂ → ℂ} {R : ℝ} (hR : 0 < R)
 
 /-- Uniform mean growth for all three covering powers (CDT Theorem 6.0.1, p.679).
  The README's effectivity target additionally requires explicit large-level constants
- and explicit constants for the finite list of smaller levels. -/
+ and constants for the finite list of smaller levels. -/
 theorem uniform_mean_growth :
     ∃ C : ℝ, 0 < C ∧ ∀ N : ℕ, 2 ≤ N →
       ∀ F : PointedCover {x : ℂ | x ^ N ≠ 1} 0, ∀ r : ℝ, 0 < r → r < 1 →
@@ -444,15 +495,5 @@ theorem uniform_mean_growth :
         ValueDistribution.proximity (fun z ↦ 1 / (F.toFun z ^ N - 1)) ⊤ r ≤
           C * Real.log (N / (1 - r)) := by sorry
 
-/- The README also specifies LinearEquation.solutionGerms, initialJetEquiv and
-companion; PuncturedSolutionGerms and MeromorphicBasisMonodromy with pole clearing;
-PowerDescent as a chosen map; PowerStabilizer and TriangleSupergroup with their actual
-regions and measure comparisons; hyperbolic surface uniformization and projective deck realization;
-Hempel's general accessory parameters; zero removal and quotient optimality; continued
-zero-balanced branches and parameter-differentiated tails; the log-Gamma and odd-zeta
-series; the actual polygon, subgroup, primitive cusp and measured triangle interfaces;
-local Jensen and continuity comparisons; cusp height, transported horoballs and
-exceptional-set exclusion; and effective fixed-level completion. These are mathematical
-construction targets, without admitted carrier definitions in this file. -/
 
 end TauCetiRoadmap.ConformalMappingPartII

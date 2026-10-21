@@ -1,6 +1,6 @@
 # Roadmap: conformal mapping and the geometric theory of holomorphic functions, part II
 
-**Summary.** This roadmap develops analytic covering maps of punctured plane domains, their Schwarzian equations, and quantitative growth on the disc. Its principal example is the universal cover of the plane with the Nth roots of unity removed. The two summits are the Gamma formula for its conformal radius and an effective circle-mean bound uniform in N. Along the way it builds reusable complex linear ODE theory, meromorphic local bases, finite Blaschke products, normalized Herglotz formulas, hypergeometric continuation and disc-local Nevanlinna theory.
+**Summary.** This roadmap develops analytic covering maps of punctured plane domains, their Schwarzian equations, and quantitative growth on the disc. Its principal example is the universal cover of the plane with the Nth roots of unity removed. The two summits are the Gamma formula for its conformal radius and an effective circle-mean bound uniform in N. Along the way it builds complex linear ODE comparisons and continuation, meromorphic local bases, finite Blaschke products, normalized Herglotz formulas, hypergeometric continuation and disc-local Nevanlinna theory.
 
 ## Scope and ownership
 
@@ -12,7 +12,7 @@ Reuse [FuchsianOrbifolds](https://github.com/TauCetiProject/TauCetiRoadmap/tree/
 
 Mathlib supplies analytic functions, iterated complex derivatives, meromorphic order, divisors, trailing coefficients, circle averages, proximity and characteristic functions, the ordinary hypergeometric series, Gamma and digamma functions, and elementary special-function identities. Import those interfaces and extend them. In particular, use `MeromorphicOn.divisor`, `Real.circleAverage`, `ValueDistribution.proximity` and `meromorphicTrailingCoeffAt`. Do not replace a meromorphic scalar representative by a projective-valued function without a comparison theorem.
 
-Logarithmic circle integrability is supplied by Mathlib's `MeromorphicOn.circleIntegrable_log_norm` and `MeromorphicOn.circleIntegrable_posLog_norm` in `Analysis.SpecialFunctions.Integrability.LogMeromorphic`; it is not a separate target here. The current Tau Ceti library also supplies generic power descent in `TauCeti.Analysis.Complex.RootsOfUnity.Descent` and the complex Herglotz formula in `TauCeti.Analysis.Complex.Herglotz`. Layer 1 specializes descent to the roots cover, including its derivative and omitted-value properties; Layer 3 constructs the normalized analytic logarithm to which the native Herglotz formula is applied. Neither layer rebuilds those general inputs.
+Logarithmic circle integrability is supplied by Mathlib's `MeromorphicOn.circleIntegrable_log_norm` and `MeromorphicOn.circleIntegrable_posLog_norm` in `Mathlib/Analysis/SpecialFunctions/Integrability/Log.lean` and `Mathlib/Analysis/SpecialFunctions/Integrability/PosLog.lean`, respectively; it is not a separate target here. Tau Ceti also supplies generic power descent in `TauCeti.Analysis.Complex.RootsOfUnity.Descent` and the complex Herglotz formula in `TauCeti.Analysis.Complex.Herglotz`. Layer 1 specializes descent to the roots cover, including its derivative and omitted-value properties; Layer 3 constructs the normalized analytic logarithm to which the native Herglotz formula is applied. Neither layer rebuilds those general inputs.
 
 The native disc–half-plane coordinate is C(z)=i(1+z)/(1−z) on |z|<1 and C⁻¹(τ)=(τ−i)/(τ+i) on Im τ>0. These are inverse holomorphic maps, C(0)=i, and z→1 corresponds to the cusp at infinity; no value at the boundary point 1 is part of the interior map.
 
@@ -48,6 +48,12 @@ The atlas agreements consumed here are:
 
 (Source: CDT, §5.1, setup preceding Definition 5.1.1, p.667.) *Needs:* Tau Ceti `TauCeti.UniversalCover`; `TauCeti.UniversalCover.isCoveringMap`; `TauCeti.UniversalCover.simplyConnectedSpace`; `TauCeti.UniversalCover.instChartedSpace`, `instIsManifold` and `isLocalDiffeomorph_proj` in `TauCeti.Geometry.Manifold.Instances.UniversalCover`; `IsLocalHomeomorph.chartAt_chartedSpaceComap_apply` in `TauCeti.Geometry.Manifold.Instances.Comap`; [UniversalCovers — Stage 0: port the foundations](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-0-port-the-foundations-into-tauceti); [DifferentialGeometry — Layer 2.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DifferentialGeometry/README.md#layer-2-orientations-and-the-orientation-double-cover).
 
+Reuse [ClassicalArithmeticCompletion §6.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ClassicalArithmeticCompletion/README.md#layer-6-topic-20) for the conformal radius on proper simply connected open domains, its reciprocal Riemann-map derivative, monotonicity and affine covariance. The radius here extends that object to pointed hyperbolic domains using universal covers; §1.3 compares them on their common domain. Their totalizations outside that domain remain distinct.
+
+Reuse [DiophantineApproximationAndTranscendence §5.1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md) for holomorphic matrix and scalar initial-value existence, uniqueness and solution-space dimension on positive-radius discs. Layer 0 owns the equation/germ and unscaled-jet comparison and continuation on general domains.
+
+Reuse [ComplexCurveModuli D0.4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ComplexCurveModuli/README.md#d0-smooth-curves-finite-type-and-the-classification-floor) for complete finite-area curvature −1 metrics on stable punctured components and their cusp-end expansion. Section 1.12 compares that metric to the actual covering and the Fuchsian cusp compactification; arbitrary infinitely connected plane domains still require §1.1. Little Picard belongs to ModularForms in ConformalMapping's relationship specification; its missing exact export is the supplier gap below.
+
 ## Conventions
 
 * Write 𝔻 = {z∈ℂ : |z|<1}, ℍ = {τ∈ℂ : Im τ>0}, μ_N = {ζ∈ℂ : ζ^N=1}, and ζ_N = exp(2πi/N). Every roots-cover statement assumes an integer N≥2.
@@ -58,7 +64,7 @@ The atlas agreements consumed here are:
 * Integrals over circles are probability Haar means, equivalently `(2π)⁻¹` times the angular integral. Write m(r,f) for the mean of log⁺|f|. T_D and N_D are the disc-local characteristic and pole count defined in Layer 7; their centre contribution uses log r and can be negative for a centre pole.
 * Meromorphic order describes a punctured germ. Nonnegative order permits a removable singularity with an incorrectly assigned scalar value. Pointwise holomorphy requires continuity of that representative. A finite scalar value at zero never substitutes for a nonnegative centre order.
 * Native rational expressions are totalized by Lean's division. Analytic and inverse statements retain their nonzero-denominator guards. Native hypergeometric series values outside their convergence disc never stand for analytic continuation.
-* Constants labelled effective must come from explicit estimates or algorithms. An absolute constant is independent of N and r. The fixed-level constant C_N may depend on N; it is used only for the finite completion in Layer 9. Existential real constants in `Suggested.lean` state the analytic bounds; effectivity additionally requires producing the constants and thresholds specified here.
+* Constants labelled effective must come from explicit numerical estimates. An absolute constant is independent of N and r. The fixed-level constant C_N may depend on N; it is used only for the finite completion in Layer 9. Existential real constants in `Suggested.lean` state the analytic bounds; effectivity additionally requires producing the constants and thresholds specified here.
 
 ## Exact supplier contracts
 
@@ -66,23 +72,33 @@ From Mathlib, use complex differentiability and `AnalyticAt`/`AnalyticOnNhd` on 
 
 For the disc-local value-distribution interfaces, `MeromorphicOn.divisor f K` uses the native punctured meromorphic order on K. `divisor_restrict`, `divisor_fun_inv` and `divisor_fun_pow` are consumed only under genuine `MeromorphicOn` hypotheses. Compactness of a closed subdisc inside 𝔻 gives the finite divisor support; `divisor_ball_support_finite` supplies the corresponding open-ball statement. `MeromorphicOn.circleAverage_log_norm` is the closed-disc Jensen formula with `meromorphicTrailingCoeffAt`. Its finite nonzero trailing coefficient, rather than the assigned value at a pole or removable singularity, is the centre constant. `Real.circleAverage` and `ValueDistribution.proximity f ⊤ r` use the same probability normalization; `ValueDistribution.proximity_pow_top` supplies m(r,f^n)=n m(r,f) for natural n, leaving the local pole-divisor scaling to Layer 7. The native global `logCounting` and `characteristic` are used only for globally meromorphic comparison tests, not through a fabricated global extension of a disc function.
 
-Already at the pinned Mathlib, `MeromorphicOn.circleIntegrable_log_norm` and `MeromorphicOn.circleIntegrable_posLog_norm` require only meromorphicity on `sphere c |R|` and yield circle integrability at centre c and radius R. Their hypotheses permit zeros, poles, the identically zero function and R=0, using native totalized logarithms. For 0<r<1, restriction of disc meromorphicity to `sphere 0 r` discharges this contract. Changing finitely many circle values preserves the circle averages for r>0.
+From Mathlib, `MeromorphicOn.circleIntegrable_log_norm` and `MeromorphicOn.circleIntegrable_posLog_norm` require only meromorphicity on `sphere c |R|` and yield circle integrability at centre c and radius R. Their hypotheses permit zeros, poles, the identically zero function and R=0, using native totalized logarithms. For 0<r<1, restriction of disc meromorphicity to `sphere 0 r` discharges this contract. Changing finitely many circle values preserves the circle averages for r>0.
 
-For special functions, `ordinaryHypergeometric_eq_tsum`, `ordinaryHypergeometric_zero` and `ordinaryHypergeometricSeries_radius_eq_one` supply the native coefficient series, value one at zero and convergence disc when a,b,c avoid nonpositive integers. Termwise differentiation, the Gauss equation, continuation near one and the uniform parameter estimates are targets below. `Complex.digamma_one`, `digamma_one_sub` and `digamma_apply_add_nat` fix the Euler constant, reflection and finite reciprocal-sum conventions, with poles excluded. `Real.Gamma_pos_of_pos`, `Real.Gamma_mul_Gamma_one_sub` and `Real.Gamma_mul_Gamma_add_half` supply positivity, reflection and duplication on their stated domains. `Complex.Gamma_ne_zero_of_re_pos`, `Complex.Gamma_ofReal` and `Real.BohrMollerup.tendsto_log_gamma` are inputs to the locally uniform log-Gamma expansion, not that expansion itself.
+For special functions, `ordinaryHypergeometric_radius_top_of_neg_nat₁` and `ordinaryHypergeometric_radius_top_of_neg_nat₂` in `Mathlib/Analysis/SpecialFunctions/OrdinaryHypergeometric.lean` supply entire convergence for terminating numerator parameters. `ordinaryHypergeometric_eq_tsum`, `ordinaryHypergeometric_zero` and `ordinaryHypergeometricSeries_radius_eq_one` supply the native coefficient series, value one at zero and convergence disc when a,b,c avoid nonpositive integers. Termwise differentiation, the Gauss equation, continuation near one and the uniform parameter estimates are targets below. `Complex.digamma_one`, `digamma_one_sub` and `digamma_apply_add_nat` fix the Euler constant, reflection and finite reciprocal-sum conventions, with poles excluded. `Real.Gamma_pos_of_pos`, `Real.Gamma_mul_Gamma_one_sub` and `Real.Gamma_mul_Gamma_add_half` supply positivity, reflection and duplication on their stated domains. `Complex.Gamma_ne_zero_of_re_pos`, `Complex.Gamma_ofReal` and `Real.BohrMollerup.tendsto_log_gamma` are inputs to the locally uniform log-Gamma expansion, not that expansion itself.
 
 From Tau Ceti, `TauCeti.IsAnalyticContinuationAlong` supplies a family of analytic germs transported continuously along a path; ODE continuation existence is proved here. Use `TauCeti.unitDiscMoebius` and `TauCeti.coe_unitDiscMoebius` for the interior Blaschke factor. The boundary-parameter extension in Layer 3 is the additional interface. The Cayley coordinate, lifted cover manifold and native Shimizu inequality have their ownership and compatibility agreements stated above.
 
-From current Tau Ceti, `TauCeti.descendPow` requires a nonzero natural exponent m. `descendPow_pow` gives the factorization at u under invariance by all mth roots of unity at u; `differentiableOn_descendPow` requires an open set s, holomorphy on s and that invariance at every u∈s, and yields holomorphy on `(· ^ m) '' s`. `TauCeti.image_pow_ball` identifies this image with the ball of radius r^m for r≥0. Apply these to f=F_N^N and s=𝔻. The derivative at zero and ramification away from the selected branch are the additional roots-cover assertions. In `TauCeti.Analysis.Complex.Herglotz`, `DiffContOnCl.circleAverage_herglotzRieszKernel_smul_re_add` assumes `DiffContOnCl ℂ L (ball c R)` and w∈ball c R; its conclusion is the boundary-real-part integral plus `(L c).im * I = L w`. For an analytic log L with L(0)=0 the imaginary constant vanishes. These current-library inputs are ownership deferrals; `Suggested.lean` uses only interfaces available at the pins.
+From Tau Ceti, `TauCeti.descendPow` requires a nonzero natural exponent m. `descendPow_pow` gives the factorization at u under invariance by all mth roots of unity at u; `differentiableOn_descendPow` requires an open set s, holomorphy on s and that invariance at every u∈s, and yields holomorphy on `(· ^ m) '' s`. `TauCeti.image_pow_ball` identifies this image with the ball of radius r^m for r≥0. Apply these to f=F_N^N and s=𝔻. The derivative at zero and ramification away from the selected branch are the additional roots-cover assertions. In `TauCeti.Analysis.Complex.Herglotz`, `DiffContOnCl.circleAverage_herglotzRieszKernel_smul_re_add` assumes `DiffContOnCl ℂ L (ball c R)` and w∈ball c R; its conclusion is the boundary-real-part integral plus `(L c).im * I = L w`. For an analytic log L with L(0)=0 the imaginary constant vanishes. These inputs are consumed from the pinned Tau Ceti modules named above.
 
 From ConformalMapping L2 consume the classification of automorphisms fixing zero as rotations and the equality case of the derivative Schwarz inequality. From L3 consume normalized planar Riemann maps, their holomorphic inverses, and analytic logarithm and root branches on simply connected plane domains. Use the native `TauCeti.IsNormalizedRiemannMapOn φ Ω a` in `TauCeti.Analysis.Complex.Conformal.RiemannMapping.Normalization`: it requires a∈Ω, holomorphy, a bijection Ω→𝔻, φ(a)=0 and positive real φ′(a). Its direction is domain to disc. From L4 consume path monodromy and reflection across analytic circle sides. In particular, a planar Riemann map cannot supply the uniformization theorem for the abstract universal-cover surface in Layer 1.
 
 From UniversalCovers Stage 0 consume its existing carrier, covering projection, local sheets and simply connected total space, after verifying the local path-connectedness and semilocal simple connectedness of a connected plane domain. Stage 1 supplies the deck action; Stage 2 supplies the unique based lift from a simply connected source and the identification of two lifts by a deck transformation. The regularity criterion for the native analytic atlas, listed under ownership, makes the continuous based lift holomorphic when its projection is holomorphic.
 
-From FuchsianOrbifolds Layer 0 consume the effective `PSL(2, ℝ)` action, discreteness and proper discontinuity, and the local biholomorphic quotient on the free locus. Its Layer 2 supplies actual geodesic regions, paired sides, the Poincaré polygon theorem, presentations and the native hyperbolic measure/area formula. A region with named vertices alone is not a fundamental-domain witness. Layer 3 supplies the full primitive parabolic stabilizer, normalized cusp charts and horoball transport. Near a puncture those charts must give a nonzero leading q coefficient, so the inverse has the logarithmic expansion needed for the Schwarzian principal parts. The paper-specific subgroups in Layer 6 are subgroups of this effective projective group; their regions are measurable subsets of its native hyperbolic plane, and their areas use `(MeasureTheory.volume : Measure UpperHalfPlane)` after Cayley transport. `UpperHalfPlane.volume_def` in Mathlib's `Analysis.Complex.UpperHalfPlane.Measure` fixes its density dx dy/y². No free area parameter or predicate storing the desired presentation is introduced.
+From FuchsianOrbifolds Layer 0 consume the effective `PSL(2, ℝ)` action, discreteness and proper discontinuity, and the local biholomorphic quotient on the free locus. Its Layer 2 supplies actual geodesic regions, paired sides, the Poincaré polygon theorem, presentations and the native hyperbolic measure/area formula. A region with named vertices alone is not a fundamental-domain witness. Layer 3 supplies the full primitive parabolic stabilizer, normalized cusp charts and horoball transport. Layer 4 supplies the cusp compactification for a cofinite group. Neither contract identifies a puncture of a specified sphere with a parabolic cusp: `FinitePuncturedCover.cuspComparison` in §1.12 proves that identification and its nonzero leading coefficient. The paper-specific subgroups in Layer 6 are subgroups of this effective projective group; their regions are measurable subsets of its native hyperbolic plane, and their areas use `(MeasureTheory.volume : Measure UpperHalfPlane)` after Cayley transport. `UpperHalfPlane.volume_def` in Mathlib's `Analysis.Complex.UpperHalfPlane.Measure` fixes its density dx dy/y². No free area parameter or predicate storing the desired presentation is introduced.
+
+From Tau Ceti, consume `TauCeti.exists_eqOn_const_mul_of_leftInvOn_ball_of_map_zero` in `TauCeti.Analysis.Complex.Conformal.UnitDisc.Automorphism.Rotation`, re-exported by `.Classification`, for rotation uniqueness; `TauCeti.logDeriv_deriv_comp` in `TauCeti.Analysis.Complex.Conformal.PreSchwarzian` for the pre-Schwarzian; and `Subgroup.isFundamentalDomain_dirichletDomain` in `TauCeti.Analysis.Complex.Fuchsian.DirichletDomain` for the measurable domain `TauCeti.dirichletDomain Γ p` at a free point. `MeasureTheory.covolume` and `Subgroup.IsCofinite` in `TauCeti.Analysis.Complex.Fuchsian.Covolume` measure the actual quotient. `Subgroup.CuspDatum` in `TauCeti.Analysis.Complex.Fuchsian.Cusp.Datum` records the width and full stabilizer. Consume its `disjoint_smul_horodisc_horodisc` and `mem_stabilizer_of_mem_horodisc_of_smul_mem_horodisc` in `TauCeti.Analysis.Complex.Fuchsian.Cusp.Horodisc`; `Subgroup.im_smul_mul_im_le_sq_of_upperRightHom_mem` and `Subgroup.im_smul_mul_im_le_abs_mul_of_upperRightHom_mem` in `TauCeti.Analysis.Complex.Fuchsian.Shimizu` provide the height bounds. `TauCeti.UpperHalfPlane.volume_triangle` and `volume_idealRegion_neg_one_one` in `TauCeti.Analysis.Complex.UpperHalfPlane.Triangle` and `.IdealRegion` fix Gauss–Bonnet area and its ideal limit. Layer 6 identifies the particular regions and groups, rather than reconstructing this geometry.
+
+From TauCetiRoadmap.ClassicalArithmeticCompletion §6.20 consume `TauCetiRoadmap.ClassicalArithmeticCompletion.conformalRadius_deriv`, `TauCetiRoadmap.ClassicalArithmeticCompletion.conformalRadius_mono` and `TauCetiRoadmap.ClassicalArithmeticCompletion.conformalRadius_affine` on proper simply connected pointed open domains, with the supplier's zero value outside its eligible class.
+
+From TauCetiRoadmap.DiophantineApproximationAndTranscendence §5.1 consume the holomorphic linear-system and scalar initial-value theorems on discs, including the evaluation linear equivalence and dimension equal to the order. Restriction to a disc around an ordinary point supplies the germ comparison in §0.2.
+
+From TauCetiRoadmap.ComplexCurveModuli D0.4 consume the complete finite-area conformal metric and its cusp-end expansion for a sphere with at least three punctures. Section 1.12 supplies the comparison with the disc-cover metric and the primitive Fuchsian q-coordinate; the supplier does not itself assert that comparison.
+
+What ModularForms must provide (gap:little-picard): in Layer 10, the modular-uniformization branch assigned to ModularForms by ConformalMapping, supply Little Picard: a holomorphic map ℂ→ℂ omitting two distinct finite values is constant. No such exact target is asserted to be present in that layer. Section 1.1 uses this contract solely to exclude the plane alternative; it follows from the twice-punctured-plane disc cover by lifting and Liouville (McMullenRS, Theorem 2.9, p.9).
 
 ## How to read the build
 
-The layers are arranged by mathematical dependencies. Layer 0 supplies complex differential equations; Layer 1 supplies analytic covers; Layer 2 gives the inverse equation; Layer 3 supplies logarithmic integrals; Layer 4 and Layer 5 evaluate the inverse and radius; Layer 6 identifies the covering groups; Layer 7 localizes value distribution; Layer 8 bounds large values geometrically; Layer 9 proves uniform mean growth. Read the targets as library specifications, including the APIs and examples attached to each construction. The compact `Suggested.lean` records only real-bodied scalar interfaces and endpoint statements whose carriers already exist. Germ-space linear equivalences, chosen descended maps, continued special-function branches and geometric fundamental-domain constructions retain their full specifications here.
+The layers are arranged by mathematical dependencies. Layer 0 supplies complex differential equations; Layer 1 supplies analytic covers; Layer 2 gives the inverse equation; Layer 3 supplies logarithmic integrals; Layer 4 and Layer 5 evaluate the inverse and radius; Layer 6 identifies the covering groups; Layer 7 localizes value distribution; Layer 8 bounds large values geometrically; Layer 9 proves uniform mean growth. Read the targets as library specifications, including the APIs and examples attached to each construction. The compact `Suggested.lean` records only real-bodied scalar interfaces and endpoint statements on the pinned carriers. Germ-space linear equivalences, chosen descended maps, continued special-function branches and geometric fundamental-domain constructions retain their full specifications here.
 
 ## Layer 0: Complex linear equations and meromorphic local bases
 
@@ -90,9 +106,9 @@ Begin with analytic complex linear equations. Their initial jets, continuation a
 
 ### 0.1 Analytic complex linear differential equations
 
-For a connected open Ω⊆ℂ and n≥1, an analytic monic linear equation is y^(n)+Σ_{j<n} a_j y^(j)=0 with each a_j holomorphic on Ω; its initial-value map at x₀∈Ω records the n derivatives 0 through n−1. The corresponding companion first-order system is over ℂ, with complex-analytic coefficients.
+For a connected open Ω⊆ℂ and n≥1, an analytic monic linear equation is y^(n)+Σ (0≤j<n) a_j y^(j)=0 with each a_j holomorphic on Ω; its initial-value map at x₀∈Ω records the n derivatives 0 through n−1. The corresponding companion first-order system is over ℂ, with complex-analytic coefficients.
 
-Use `LinearEquation Ω n` for the coefficient record and `LinearEquation.IsSolution E y` for the analytic solution predicate on Ω. Its scalar representatives are compared only on Ω or as germs, so their values outside the domain do not enter uniqueness. Define the companion matrix on `Fin n`: its superdiagonal entries are one, its last row is −a_j(x), and all other entries are zero. For an analytic vector v, the equation v′=A(x)v is equivalent to `E.IsSolution (fun x ↦ v x 0)` together with v_j=y^(j). This is the full `LinearEquation.companion_equiv` correspondence, preserving the unscaled jet, not only a one-way differentiation identity.
+Use `LinearEquation Ω n` for the coefficient record and `LinearEquation.IsSolution E y` for the analytic solution predicate on Ω. Its scalar representatives are compared only on Ω or as germs, so their values outside the domain do not enter uniqueness. Define the companion matrix on `Fin n`: its superdiagonal entries are one, its last row is −a_j(x), and all other entries are zero. For an analytic vector v, the equation v′=A(x)v is equivalent to `E.IsSolution (fun x ↦ v x 0)` together with v_j=y^(j). The README target `theorem LinearEquation.companion_equiv` specifies this full correspondence, preserving the unscaled jet, not only a one-way differentiation identity.
 
 The required API is:
 
@@ -110,13 +126,16 @@ The required API is:
 * With n=3 and y(x)=x² at zero, `initialJet` is (0,0,2), not (0,0,1); this distinguishes derivatives from Taylor coefficients.
 * For y″=0, the companion matrix is [[0,1],[0,0]], and v=(u+vx,v) satisfies v′=Av. The constant vector (0,1) does not, despite its first coordinate solving the scalar equation.
 
-(Source: CDT, p.632; 1.1.6.) *Needs:* Tau Ceti `TauCeti.IsAnalyticContinuationAlong`.
+(Source: TeschlODE, §1.2, equation (1.18), p.7.) *Needs:* DiophantineApproximationAndTranscendence §5.1; Tau Ceti `TauCeti.IsAnalyticContinuationAlong`.
+
+
+`LinearEquation.orderOne_constants` and `LinearEquation.orderTwo_affine` state the zero-coefficient checks with E on a connected open domain and the displayed coefficient equalities. The paired solution-predicate example proves, for E of order one with coefficient one and x∈Ω, that exp(−z) is a solution and the constant one is not. The last pointedness hypothesis excludes the empty-domain negative control (TeschlODE, Theorem 4.7, p.130).
 
 ### 0.2 Analytic linear initial-value theorem
 
 For the equation above and x₀∈Ω, every complex initial jet has a unique holomorphic solution germ at x₀; the solution-germ space is linearly isomorphic to ℂ^n.
 
-Construct `LinearEquation.solutionGerms E x₀` as the complex solution subspace of analytic germs at x₀. The induced `LinearEquation.initialJetEquiv` has intended type `solutionGerms E x₀ ≃ₗ[ℂ] (Fin n → ℂ)`, under x₀∈Ω. Its inverse must be complex linear, and its evaluation at the standard coordinate vectors supplies the normalized fundamental basis. The scalar existence/uniqueness signature `LinearEquation.initial_value` is one consequence of this stronger interface.
+Construct `LinearEquation.solutionGerms E x₀` as the complex solution subspace of analytic germs at x₀. The induced `LinearEquation.initialJetEquiv` has intended type `solutionGerms E x₀ ≃ₗ[ℂ] (Fin n → ℂ)`, under x₀∈Ω. Its inverse must be complex linear, and its evaluation at the standard coordinate vectors supplies the normalized fundamental basis. Restrict Ω to a positive-radius disc about x₀ and apply DiophantineApproximationAndTranscendence §5.1; local existence, uniqueness and disc dimension are consumed. `LinearEquation.initial_value` is the scalar-germ comparison corollary of that supplier, not a second local existence theorem.
 
 The germ-space API comprises `solutionGerms.linearCombination`, which descends addition and scalar multiplication through germ equality; `initialJetEquiv.apply`, which evaluates the n derivatives; and `initialJetEquiv.symm_apply`, which solves the equation with that jet.
 
@@ -126,19 +145,19 @@ The germ-space API comprises `solutionGerms.linearCombination`, which descends a
 * For y″=0, the inverse sends (u,v) to the germ u+v(x−x₀), so a nonzero second entry cannot be discarded.
 * For y‴=0 at zero, the jet (0,0,2) corresponds to x²; a factorial-rescaled inverse would return 2x² instead.
 
-(Source: CDT, p.632; 1.1.6.) *Needs:* Layer 0, analytic complex linear differential equations.
+(Source: TeschlODE, §4.3, Theorem 4.7, p.130.) *Needs:* DiophantineApproximationAndTranscendence §5.1; Layer 0, analytic complex linear differential equations.
 
 ### 0.3 Continuation of linear ODE solutions
 
 On a connected open Ω, each local solution germ of an analytic monic order-n equation continues along every continuous path in Ω; continuation is in TauCeti.IsAnalyticContinuationAlong and preserves the differential equation.
 
-(Source: CDT, p.632; 1.1.6.) *Needs:* Layer 0, analytic linear initial-value theorem; Tau Ceti `TauCeti.IsAnalyticContinuationAlong`; [ConformalMapping — milestone l4 / analytic continuation / the reflection principle](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l4--analytic-continuation--the-reflection-principle).
+(Source: TeschlODE, §4.3, Theorem 4.7 and its proof, p.130.) *Needs:* DiophantineApproximationAndTranscendence §5.1; Layer 0, analytic linear initial-value theorem; Tau Ceti `TauCeti.IsAnalyticContinuationAlong`; [ConformalMapping, Layers list, L4 analytic continuation and reflection](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
 
 ### 0.4 Global solutions on simply connected domains
 
-For a simply connected open Ω and analytic monic order-n equation, the space of holomorphic solutions on Ω has complex dimension n, and evaluation of the initial jet at any x₀∈Ω is a linear isomorphism.
+The representative target is `LinearEquation.global_initial_value`. For a simply connected open Ω and analytic monic order-n equation, the space of holomorphic solutions on Ω has complex dimension n, and evaluation of the initial jet at any x₀∈Ω is a linear isomorphism.
 
-(Source: CDT, p.632; 1.1.6.) *Needs:* Layer 0, continuation of linear ode solutions; Layer 0, analytic linear initial-value theorem; [ConformalMapping — milestone l4 / analytic continuation / the reflection principle](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l4--analytic-continuation--the-reflection-principle).
+(Source: TeschlODE, §4.3, Theorem 4.7 and its proof, p.130.) *Needs:* DiophantineApproximationAndTranscendence §5.1; Layer 0, continuation of linear ode solutions; Layer 0, analytic linear initial-value theorem; [ConformalMapping, Layers list, L4 analytic continuation and reflection](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
 
 ### 0.5 Meromorphic trivial local monodromy
 
@@ -173,7 +192,7 @@ For y″=0, the jet (u,v) at x₀ gives y(x)=u+v(x−x₀); thus the jet convent
 
 ### Dependencies
 
-Complex analytic derivatives and finite-dimensional linear algebra; the existing analytic-continuation and path-monodromy interfaces. The initial-value construction must be complex analytic, for example a locally uniformly convergent coefficient recursion or analytic Picard construction. A real-time existence theorem does not supply it.
+Complex analytic derivatives and finite-dimensional linear algebra; the existing analytic-continuation and path-monodromy interfaces. The local complex analytic theorem is supplied by DiophantineApproximationAndTranscendence §5.1; this layer compares its disc solutions with germs and transports them along paths (TeschlODE, Theorem 4.7, p.130).
 
 ## Layer 1: Analytic universal covers and pointed radius
 
@@ -183,9 +202,19 @@ Establish hyperbolic uniformization and make based holomorphic covers usable thr
 
 ### 1.1 Hyperbolic uniformization of the cover
 
-For a connected open Ω⊆ℂ whose complement has at least two points, its analytic universal cover is biholomorphic to the unit disc. The plane and sphere alternatives of simply connected Riemann-surface uniformization must be excluded; the simply connected planar Riemann mapping theorem alone does not prove this assertion.
+Prove `SurfaceUniformization.noncompactCoordinate`: a connected, noncompact, simply connected, Hausdorff second-countable one-dimensional complex analytic manifold admits a biholomorphism onto an open subset of ℂ. This is analytic existence on the native abstract manifold carrier, including injectivity and a holomorphic inverse. The planar Riemann mapping theorem is applied only after that coordinate exists (Uniformization, arXiv:2008.12189v2, Theorem 1, p.2).
 
-(Source: CDT, §5.1, setup preceding Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; Tau Ceti `TauCeti.UniversalCover.simplyConnectedSpace`; Tau Ceti `TauCeti.riemannMapping`.
+The proof owns its surface-analytic prerequisites at the same generality. `SurfaceUniformization.perron` states that the supremum of a nonempty locally bounded above family of continuous subharmonic functions, closed under maxima and harmonic replacement on coordinate discs, is harmonic (Uniformization, Theorem 6 and Appendix A, pp.4,11). `SurfaceUniformization.greenFunction` gives, on a compact connected smooth bordered subsurface with nonempty boundary and a specified interior point, a positive harmonic function off that point, zero on the boundary, whose sum with log of the coordinate modulus extends harmonically at the point (Proposition 9, pp.5–6). Its boundary Dirichlet input for bounded continuous data is included (Theorem 6 and Appendix B, pp.4,11–12). `SurfaceUniformization.discEmbedding` gives a biholomorphism from the interior of a compact simply connected smooth bordered subsurface with one boundary circle to 𝔻 (Theorem 10, pp.6–8). `SurfaceUniformization.exhaustion` exhausts a noncompact simply connected surface by such subsurfaces with nested interiors (Theorem 12, pp.8–10). Normalize these embeddings at one point in one fixed coordinate. `SurfaceUniformization.limitEmbedding` uses the compactness of normalized univalent disc functions and a diagonal compact limit to give a nonconstant injective global map; the argument principle rules out collisions in the limit (Lemma 13 and §7, pp.10–11, Appendix D, pp.13–14). These are construction theorems, not hypotheses asserting that a uniformizing map exists.
+
+**Checks.**
+
+* On the closed radius-R disc with pole zero, the Green function is log(R/|z|); its regular part is log R. This fixes both the logarithmic sign and boundary value.
+* ℂ admits the coordinate id, and exp:ℂ→ℂ∖{0} is nonconstant; one omitted finite value cannot force the disc alternative.
+* 𝔻 admits the coordinate id and its normalized radius-r exhaustion maps tend to id; the Riemann sphere fails the noncompactness hypothesis and cannot admit a nonconstant global map to ℂ.
+
+For a connected open Ω⊆ℂ with two distinct omitted points and a∈Ω, apply `SurfaceUniformization.noncompactCoordinate` to the lifted analytic atlas on its native universal cover. Establish Hausdorffness and second countability there from the countable plane-domain atlas and countability of its fundamental group (a countable cover by rational discs contained in Ω encodes loops by finite chains, with convex overlaps); this topological verification is included in `PointedCover.exists_cover`. The cover is noncompact because its surjective continuous projection has noncompact image Ω. In its plane coordinate the projection is nonconstant and omits two values, so gap:little-picard excludes a coordinate image equal to all ℂ. Planar Riemann mapping then identifies that image with 𝔻. Choosing a source automorphism sending zero to the based lift gives `PointedCover.exists_cover : Nonempty (PointedCover Ω a)` under `IsOpen Ω`, `IsConnected Ω`, `a ∈ Ω` and two distinct omitted points. The general domain may have infinitely many complementary components.
+
+(Source: Uniformization, Theorem 1 and §§3–7, pp.2–11; McMullenRS, Theorem 2.9, p.9 for the omitted-values input; CDT, §5.1, setup before Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; UniversalCovers Stage 0; ConformalMapping L1 normal families and L3 planar Riemann maps; ModularForms Layer 10 contract gap:little-picard.
 
 ### 1.2 Pointed analytic cover uniqueness
 
@@ -195,9 +224,9 @@ The light scalar record `PointedCover Ω a` bundles `toFun : ℂ → ℂ`, holom
 
 The required API is:
 
-* `PointedCover.rotation_unique`: A unique ζ with |ζ|=1 satisfies G(z)=F(ζz) for all |z|<1.
-* `PointedCover.based_lift`: For a holomorphic f:𝔻→Ω with f(0)=a, there is a unique holomorphic l:𝔻→𝔻 with l(0)=0 and F∘l=f; uniqueness is equality on 𝔻.
-* `PointedCover.deriv_ne_zero`: For Ω open, F′(z)≠0 at every |z|<1.
+* README target `theorem PointedCover.rotation_unique`: A unique ζ with |ζ|=1 satisfies G(z)=F(ζz) for all |z|<1.
+* README target `theorem PointedCover.based_lift`: For a holomorphic f:𝔻→Ω with f(0)=a, there is a unique holomorphic l:𝔻→𝔻 with l(0)=0 and F∘l=f; uniqueness is equality on 𝔻.
+* README target `theorem PointedCover.deriv_ne_zero`: For Ω open, F′(z)≠0 at every |z|<1.
 
 **Checks.**
 
@@ -205,7 +234,10 @@ The required API is:
 * The square map is not a pointed disc cover, because its derivative at zero vanishes.
 * A cover of one component of a disconnected Ω is not surjective onto Ω and cannot satisfy this record.
 
-(Source: CDT, §5.1, normalization discussion after Lemma 5.1.2, p.668.) *Needs:* Layer 1, hyperbolic uniformization of the cover; [UniversalCovers — stage 2 lifting criterion and galois correspondence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-2-lifting-criterion-and-galois-correspondence); [ConformalMapping — milestone l2 / schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l2--schwarz-lemma-extensions).
+(Source: CDT, §5.1, normalization discussion after Lemma 5.1.2, p.668.) *Needs:* Tau Ceti `TauCeti.exists_eqOn_const_mul_of_leftInvOn_ball_of_map_zero` in `TauCeti.Analysis.Complex.Conformal.UnitDisc.Automorphism.Classification`; Layer 1, hyperbolic uniformization of the cover; [UniversalCovers — stage 2 lifting criterion and galois correspondence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-2-lifting-criterion-and-galois-correspondence); [ConformalMapping, Layers list, L2 Schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
+
+
+`PointedCover.identity_exists` and `PointedCover.square_not_cover` state the first two boundary checks on `ball 0 1`; `PointedCover.disconnected_not_cover` states emptiness of the record on `ball 0 1 ∪ ball 3 1` at zero. The disconnected union cannot be the surjective continuous image of the connected disc (connected-image theorem).
 
 ### 1.3 The pointed conformal radius
 
@@ -217,8 +249,8 @@ The required API is:
 
 * `conformalRadius.coverDerivative`: R(Ω,a)=|F′(0)| for every pointed holomorphic universal cover.
 * `conformalRadius.positive`: R(Ω,a)>0.
-* `conformalRadius.riemannMap`: If Ω is simply connected and φ is the normalized Tau Ceti map Ω→𝔻 at a, then R(Ω,a)=1/|φ′(a)|.
-* `conformalRadius.affineChange`: For b≠0, R(bΩ+c,ba+c)=|b|R(Ω,a).
+* README target `theorem conformalRadius.eq_classical`: If Ω is proper, open and simply connected and a∈Ω, R(Ω,a) equals ClassicalArithmeticCompletion §6.20’s cr(Ω,a). Its derivative comparison and simply connected affine-change laws are transported through this equality.
+* `conformalRadius.affineChange`: For hyperbolic Ω, a∈Ω and b≠0, R(bΩ+c,ba+c)=|b|R(Ω,a); on simply connected domains this agrees with the supplied affine-change law.
 
 **Checks.**
 
@@ -227,23 +259,26 @@ The required API is:
 * ℂ∖{0} does not satisfy the two-omitted-point hyperbolic-domain hypothesis.
 * For φ(z)=z/2 on D(0,2), the comparison with the normalized domain-to-disc Riemann map gives 1/|φ′(0)|=2, fixing the direction of the reciprocal.
 
-(Source: CDT, §5.1, discussion preceding Theorem 5.1.4, p.668.) *Needs:* Layer 1, pointed analytic cover uniqueness; Layer 1, hyperbolic uniformization of the cover.
+(Source: CDT, §5.1, discussion preceding Theorem 5.1.4, p.668.) *Needs:* ClassicalArithmeticCompletion §6.20; Layer 1, pointed analytic cover uniqueness; Layer 1, hyperbolic uniformization of the cover.
+
+
+`conformalRadius.unitDisc` and `conformalRadius.radiusTwo` state the radius-one and radius-two checks above, using the cover-derivative comparison and dilations (ClassicalArithmeticCompletion §6.20; CDT, p.668).
 
 ### 1.4 Extremality of the pointed cover
 
-For a pointed holomorphic universal cover F:𝔻→Ω and a holomorphic φ:𝔻→Ω with φ(0)=F(0)=a, |φ′(0)|≤R(Ω,a). Equality holds exactly when the based lift of φ is a rotation, equivalently when φ is a holomorphic universal cover.
+The representative target is `PointedCover.extremal`. For a pointed holomorphic universal cover F:𝔻→Ω and a holomorphic φ:𝔻→Ω with φ(0)=F(0)=a, |φ′(0)|≤R(Ω,a). Equality holds exactly when the based lift of φ is a rotation, equivalently when φ is a holomorphic universal cover.
 
-(Source: CDT, p.632; 1.1.6.) *Needs:* Layer 1, pointed analytic cover uniqueness; Layer 1, the pointed conformal radius; Mathlib `Complex.norm_deriv_le_one_of_mapsTo_ball`; [ConformalMapping — milestone l2 / schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l2--schwarz-lemma-extensions).
+(Source: Mathlib `Complex.affine_of_mapsTo_ball_of_norm_dslope_eq_div`, `Mathlib/Analysis/Complex/Schwarz.lean`, equality case after a based lift.) *Needs:* Layer 1, pointed analytic cover uniqueness; Layer 1, the pointed conformal radius; Mathlib `Complex.norm_deriv_le_one_of_mapsTo_ball`; [ConformalMapping, Layers list, L2 Schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
 
 ### 1.5 Monotonicity of conformal radius
 
-For connected hyperbolic domains Ω⊆Ω′ and a∈Ω, R(Ω,a)≤R(Ω′,a). Apply the preceding extremal inequality to the pointed covering of Ω followed by inclusion.
+For connected hyperbolic domains Ω⊆Ω′ and a∈Ω, R(Ω,a)≤R(Ω′,a). Apply the preceding extremal inequality to the pointed covering of Ω followed by inclusion. This is the extension to hyperbolic domains; on the common simply connected class it agrees through `theorem conformalRadius.eq_classical` with ClassicalArithmeticCompletion §6.20’s `TauCetiRoadmap.ClassicalArithmeticCompletion.conformalRadius_mono`.
 
-(Source: CDT, p.632; 1.1.6.) *Needs:* Layer 1, extremality of the pointed cover.
+(Source: Mathlib `Complex.affine_of_mapsTo_ball_of_norm_dslope_eq_div`, `Mathlib/Analysis/Complex/Schwarz.lean`, equality case after a based lift.) *Needs:* Layer 1, extremality of the pointed cover.
 
 ### 1.6 The normalized roots-of-unity covering
 
-For an integer N≥2 choose a holomorphic universal cover F_N:𝔻→ℂ∖μ_N with F_N(0)=0. For the explicit inverse-germ calculations orient it with F_N′(0)>0 real. Its half-plane form is F̃_N=F_N∘C⁻¹; the standard cusp chart is chosen so that its limit at i∞ is 1. The notation F_N(1)=1 denotes that cusp limit, not evaluation in the disc.
+The representative target is `RootsCover.exists_cover`. For an integer N≥2 choose a holomorphic universal cover F_N:𝔻→ℂ∖μ_N with F_N(0)=0. For the explicit inverse-germ calculations orient it with F_N′(0)>0 real. Its half-plane form is F̃_N=F_N∘C⁻¹; the standard cusp chart is chosen so that its limit at i∞ is 1. The notation F_N(1)=1 denotes that cusp limit, not evaluation in the disc.
 
 The required API is:
 
@@ -259,7 +294,10 @@ The required API is:
 * F_N(1)=1 is a cusp limit and 1 is omitted from all interior values.
 * Precomposing the positively oriented cover with z↦iz gives derivative iF_N′(0), which has the same norm but is not positive real. It fails the orientation required by the inverse-germ formula.
 
-(Source: CDT, p.667; Definition 5.1.1.) *Needs:* Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; Layer 1, pointed analytic cover uniqueness; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, p.667; Definition 5.1.1.) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.12); Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; Layer 1, pointed analytic cover uniqueness; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+
+
+`RootsCover.realRadialLimit` states the real radial limit at 1 and interior omission for every oriented `RootsCover N`. `RootsCover.quarterTurn` states that precomposition by iz has derivative iF_N′(0), with positive imaginary part. The radial endpoint is fixed by conjugation symmetry, local inverse continuation on [0,1), and the puncture comparison, not by assigning a boundary value (CDT, Definition 5.1.1, p.667).
 
 ### 1.7 Nonvanishing derivative of the cover
 
@@ -269,13 +307,13 @@ For every N≥2 and |z|<1, F_N′(z)≠0. A holomorphic covering between one-dim
 
 ### 1.8 Rotation equivariance of the covering
 
-For N≥2 and ζ^N=1, F_N(ζz)=ζF_N(z) for |z|<1. For the standard left action τ↦(aτ+b)/(cτ+d), the matrix r̃_N=[cos(π/N),−sin(π/N);sin(π/N),cos(π/N)] corresponds through C to multiplication by ζ_N⁻¹. Its inverse corresponds to ζ_N. Both have projective order N; use the displayed r̃_N in the subgroup presentations below.
+For N≥2 and ζ^N=1, F_N(ζz)=ζF_N(z) for |z|<1. For the standard left action τ↦(aτ+b)/(cτ+d), the matrix r̃_N=[cos(π/N),−sin(π/N);sin(π/N),cos(π/N)] corresponds through C to multiplication by ζ_N⁻¹. Its inverse corresponds to ζ_N. In Tau Ceti’s convention `Matrix.SpecialLinearGroup.rotation θ = !![cos θ, sin θ; -sin θ, cos θ]`, this r̃_N is `rotation (-Real.pi / N)`. CDT Lemma 5.1.2 displays this matrix with ζ_N on the left; under the standard left action that relation holds for r̃_N⁻¹, as the N=3 computation in Layer 6 shows. Both have projective order N; use the displayed r̃_N in the subgroup presentations below.
 
 (Source: CDT, p.668; Lemma 5.1.2.) *Needs:* Layer 1, the normalized roots-of-unity covering; Layer 1, pointed analytic cover uniqueness; Layer 1, nonvanishing derivative of the cover; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action).
 
 ### 1.9 The descended power map
 
-For N≥2 there is a unique holomorphic G_N:𝔻→ℂ∖{1} with G_N(z^N)=F_N(z)^N. Specialize the native `TauCeti.descendPow` to F_N^N and use equivariance for root independence; unlike generic descent, this target identifies its derivative, omitted value and ramification for the roots cover. G_N(0)=0. It is ramified at the lifts of zero other than the chosen local branch and is not asserted to be a universal covering.
+The representative target is `RootsCover.power_descent`. For N≥2 there is a unique holomorphic G_N:𝔻→ℂ∖{1} with G_N(z^N)=F_N(z)^N. Specialize the native `TauCeti.descendPow` to F_N^N and use equivariance for root independence; unlike generic descent, this target identifies its derivative, omitted value and ramification for the roots cover. G_N(0)=0. It is ramified at the lifts of zero other than the chosen local branch and is not asserted to be a universal covering.
 
 The required API is:
 
@@ -292,7 +330,7 @@ The required API is:
 * For N=2, choosing z or −z gives the same G_2(z²).
 * At a nonzero lift z of the target zero, G_N′(z^N)=0 for N≥2. This rules out treating the descended map as an unramified universal cover.
 
-(Source: CDT, p.671; Definition 5.1.15.) *Needs:* Layer 1, rotation equivariance of the covering; current Tau Ceti `TauCeti.descendPow`, `descendPow_pow`, `differentiableOn_descendPow` and `image_pow_ball`.
+(Source: CDT, p.671; Definition 5.1.15.) *Needs:* Layer 1, rotation equivariance of the covering; Tau Ceti `TauCeti.descendPow`, `descendPow_pow`, `differentiableOn_descendPow` and `image_pow_ball`.
 
 ### 1.10 Derivative of the descended power map
 
@@ -304,7 +342,24 @@ G_N′(0)=F_N′(0)^N and |G_N′(0)|=|F_N′(0)|^N for N≥2.
 
 For a connected hyperbolic plane domain Ω and a pointed holomorphic universal cover F:𝔻→Ω, its existing topological deck transformations are holomorphic disc automorphisms. Conjugation through C identifies their action with a discrete subgroup of PSL₂(ℝ), acting freely on ℍ, and the analytic quotient is Ω. For a finite punctured plane this is its Fuchsian covering group.
 
-(Source: CDT, §5.1, setup preceding Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; [UniversalCovers — stage 2 lifting criterion and galois correspondence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-2-lifting-criterion-and-galois-correspondence); [ConformalMapping — milestone l2 / schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l2--schwarz-lemma-extensions); [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action).
+(Source: CDT, §5.1, setup preceding Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; [UniversalCovers — stage 2 lifting criterion and galois correspondence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-2-lifting-criterion-and-galois-correspondence); [ConformalMapping, Layers list, L2 Schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md); [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action).
+
+
+### 1.12 Finite-puncture cusp comparison
+
+For a finite set S⊂ℙ¹ with |S|≥3 and a holomorphic universal disc cover of ℙ¹∖S, prove `FinitePuncturedCover.cuspComparison`: the effective deck subgroup of PSL₂(ℝ) is cofinite, its parabolic cusp orbits correspond bijectively to S, and the quotient identification extends to a biholomorphism from the cusp compactification to ℙ¹. At a finite puncture p and a primitive positive cusp coordinate q=exp(2πiστ/w), the covering is p+cq+O(q²) with c≠0. At infinity the same assertion holds for its reciprocal in the local coordinate 1/X. A nonprimitive generator does not give a uniformizing coordinate.
+
+Compare ComplexCurveModuli D0.4’s complete finite-area conformal metric on ℙ¹∖S with the disc-cover metric: pull back to the universal cover and use the uniqueness of the complete curvature −1 metric. The metric cusp ends identify parabolic ends; apply the FuchsianOrbifolds Layers 3–4 charts and compactification. The extended quotient map is biholomorphic in the puncture coordinate, so its first coefficient is nonzero. This proves the logarithmic inverse expansion used by the accessory parameters without a roots-specific polygon or a dependency on Layer 6 (Hem88, Theorem 3.1, pp.97–115, uncertified primary locator; CDT-journal, proof of Lemma 5.1.8, (5.1.13), p.670).
+
+Its API comprises `FinitePuncturedCover.cofinite`, asserting finite native covolume; `FinitePuncturedCover.punctureEquivCusp`, the bijection of ends; `FinitePuncturedCover.compactificationEquiv`, the extended holomorphic equivalence; and `FinitePuncturedCover.simpleQ`, the nonzero linear coefficient at each puncture.
+
+**Checks.**
+
+* For S={0,1,∞}, there are three cusp orbits and area 2π in curvature −1; a comparison counting only finite punctures would give two.
+* In a primitive chart, X(q)=p+cq+O(q²) gives inverse τ=(w/(2πi))log(X−p)+a holomorphic term; its Schwarzian has double-pole coefficient 1/2, independent of w and c≠0.
+* On the intermediate cusp cover, replacing the primitive translation by its mth power for m≥2 gives X−p=cq_m^m+O(q_m^(2m)); the vanishing first coefficient detects the wrong cusp coordinate.
+
+(Source: Hem88, Theorem 3.1, uncertified; CDT-journal, (5.1.13), p.670.) *Needs:* §1.11 projective deck realization; ComplexCurveModuli D0.4 complete finite-area metrics and cusp ends; FuchsianOrbifolds Layers 3–4 cusp charts and compactification.
 
 
 ### Examples
@@ -321,14 +376,14 @@ The Schwarzian makes the inverse covering independent of projective coordinates.
 
 ### 2.1 The Schwarzian derivative
 
-For a holomorphic f with f′≠0 on an open set, define S(f)(x)=f‴(x)/f′(x)−(3/2)(f″(x)/f′(x))². This equals (f″/f′)′−(1/2)(f″/f′)². The totalized native derivative expression carries no Schwarzian claims at points where f′=0.
+For a holomorphic f with f′≠0 on an open set, define S(f)(x)=f‴(x)/f′(x)−(3/2)(f″(x)/f′(x))². With P(f)=`logDeriv (deriv f)`, the native pre-Schwarzian, this equals (P(f))′−(1/2)P(f)². The totalized native derivative expression carries no Schwarzian claims at points where f′=0.
 
 The required API is:
 
-* `schwarzian_affine`: For a≠0, S(x↦ax+b)=0.
-* `schwarzian_expanded`: For holomorphic f with f′≠0, S(f)=(f″/f′)′−(1/2)(f″/f′)².
+* README target `theorem schwarzian_affine`: For a≠0, S(x↦ax+b)=0.
+* README target `theorem schwarzian_expanded`: For holomorphic f with f′≠0, S(f)=(P(f))′−(1/2)P(f)², using the native pre-Schwarzian P(f).
 * `schwarzian_comp_apply`: S(f∘g)=(S(f)∘g)(g′)²+S(g) when f,g are holomorphic with the relevant derivatives nonzero.
-* `schwarzian_moebius`: Postcomposition by a Möbius map with nonzero determinant leaves S unchanged wherever its denominator is nonzero.
+* README target `theorem schwarzian_moebius`: Postcomposition by a Möbius map with nonzero determinant leaves S unchanged wherever its denominator is nonzero.
 
 **Checks.**
 
@@ -336,7 +391,10 @@ The required API is:
 * For x≠0, S(x↦x²)(x)=−3/(2x²).
 * For x≠0, S(x↦1/x)(x)=0.
 
-(Source: CDT, p.669; Remark 5.1.10.) *Needs:* Mathlib `iteratedDeriv` and `deriv`.
+(Source: CDT, p.669; Remark 5.1.10.) *Needs:* Mathlib `iteratedDeriv` and `deriv`; Tau Ceti `TauCeti.Analysis.Complex.Conformal.PreSchwarzian`.
+
+
+The square check is a proved example. `schwarzian.inverse` states the inverse check with x≠0 as a boundary target requiring the derivative identities and cancellation away from the pole (CDT, Remark 5.1.10, p.669).
 
 ### 2.2 Schwarzian chain rule
 
@@ -354,7 +412,7 @@ For ad−bc≠0 and M(w)=(aw+b)/(cw+d), S(M∘f)=S(f) where f is locally univale
 
 On a sufficiently small simply connected neighbourhood where w′≠0, choose an analytic square root of w′. Then v₁=w/√w′ and v₂=1/√w′ are independent solutions of y″+(1/2)S(w)y=0 and w=v₁/v₂. Conversely a quotient of independent solutions of y″+Qy=0 has Schwarzian 2Q wherever its denominator is nonzero.
 
-(Source: CDT, p.669; (5.1.11).) *Needs:* Layer 2, the schwarzian derivative; Layer 0, analytic linear initial-value theorem; [ConformalMapping — milestone l3 / the riemann mapping theorem summit](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l3--the-riemann-mapping-theorem-summit).
+(Source: CDT, p.669; (5.1.11).) *Needs:* Layer 2, the schwarzian derivative; Layer 0, analytic linear initial-value theorem; [ConformalMapping, Layers list, L3 Riemann mapping theorem](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
 
 ### 2.5 Hempel’s accessory-parameter formula
 
@@ -362,23 +420,23 @@ Let S={p₀,…,p_N}⊂ℂ consist of distinct finite points, |S|≥3; thus infi
 
 Construct this punctured-sphere cover by moving one p_k to infinity with a Möbius chart and applying Layer 1 to the resulting plane with at least two omitted points. Transport the cover back through that chart. The local cusp expansion supplies the double-pole coefficient 1/2, and Möbius invariance makes the continued Schwarzian single valued; regularity at the unpunctured infinity gives the constraints below. This proof supplies the accessory-parameter input invoked by CDT.
 
-(Source: CDT, proof of Lemma 5.1.8, equations (5.1.12)–(5.1.14), p.670; Hempel [Hem88].) *Needs:* Layer 2, möbius invariance of the schwarzian; Layer 1, hyperbolic uniformization of the cover; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, proof of Lemma 5.1.8, equation (5.1.13), p.670; Hem88, Theorem 3.1 (uncertified primary locator).) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.12); Layer 2, möbius invariance of the schwarzian; Layer 1, hyperbolic uniformization of the cover; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
 ### 2.6 Accessory-parameter constraints at infinity
 
 With Hempel’s finite set S and infinity unpunctured, Σ m_k=0, Σ(2m_kp_k+1)=0, and Σ(m_kp_k²+p_k)=0. These are exactly cancellation of the X⁻¹, X⁻² and X⁻³ coefficients, so the Schwarzian is O(X⁻⁴) at infinity.
 
-(Source: CDT, proof of Lemma 5.1.8, equations (5.1.12)–(5.1.14), p.670.) *Needs:* Layer 2, hempel’s accessory-parameter formula; Layer 2, schwarzian chain rule.
+(Source: CDT, equation (5.1.14), p.670.) *Needs:* Layer 2, hempel’s accessory-parameter formula; Layer 2, schwarzian chain rule.
 
 ### 2.7 Accessory parameters for the symmetric punctures
 
 For the companion cover 1/F̃_N of ℙ¹∖({0}∪μ_N), in coordinate X its accessory parameters are m₀=0 and m_k=−(1/2+1/(2N))ζ_N^(−k), k=1,…,N. Rotational symmetry and the three infinity constraints determine them.
 
-(Source: CDT, proof of Lemma 5.1.8, equations (5.1.12)–(5.1.14), p.670.) *Needs:* Layer 2, accessory-parameter constraints at infinity; Layer 1, rotation equivariance of the covering.
+(Source: CDT, proof of Lemma 5.1.8 following (5.1.14), pp.670–671.) *Needs:* Layer 2, accessory-parameter constraints at infinity; Layer 1, rotation equivariance of the covering.
 
 ### 2.8 The rational Schwarzian for the roots cover
 
-For the local inverse ψ_N of F_N, S(ψ_N)(x)=((N²−1)x^(N−2)+x^(2N−2))/(2(x^N−1)²) near zero. Obtain this by changing the companion coordinate X=1/x; S(1/x)=0 and the squared derivative factor is essential.
+The representative target is `roots_inverse_schwarzian`. For the local inverse ψ_N of F_N, S(ψ_N)(x)=((N²−1)x^(N−2)+x^(2N−2))/(2(x^N−1)²) near zero. Obtain this by changing the companion coordinate X=1/x; S(1/x)=0 and the squared derivative factor is essential.
 
 (Source: CDT, p.669; Lemma 5.1.8.) *Needs:* Layer 2, accessory parameters for the symmetric punctures; Layer 2, schwarzian chain rule.
 
@@ -410,7 +468,7 @@ The required API is:
 * `blaschkeFactor.interior`: For |a|<1, b_a(z)=(z−a)/(1−āz).
 * `blaschkeFactor.boundary`: For |a|=1, b_a is the constant −a.
 * `blaschkeFactor.normOnCircle`: For |a|≤1 and |z|=1, |b_a(z)|=1.
-* `blaschkeFactor.discAutomorphism`: For a,z∈Complex.UnitDisc, b_(a:ℂ)(z:ℂ)=(TauCeti.unitDiscMoebius a z:ℂ). The wrapper only extends the already available interior factor to boundary parameters.
+* `blaschkeFactor.discAutomorphism`: For a,z∈Complex.UnitDisc, b_(a:ℂ)(z:ℂ)=(TauCeti.unitDiscMoebius a z:ℂ). The wrapper extends the native interior factor to boundary parameters.
 
 **Checks.**
 
@@ -447,9 +505,9 @@ Let g be holomorphic near the closed unit disc with a nonzero analytic germ on t
 
 ### 3.4 Herglotz representation of a normalized logarithm
 
-For R>0 and g holomorphic and zero-free on a neighbourhood of the closed disc |z|≤R, with g(0)=1, construct the unique analytic log L with L(0)=0 and exp L=g. Unlike the native formula for an already given holomorphic L, this target supplies that normalized logarithm and the identity Re L=log|g|. For |z|<R, L(z)=∫_(|w|=R) log|g(w)|(w+z)/(w−z) dμ_Haar(w).
+The representative target is `herglotz_log`. For R>0 and g holomorphic and zero-free on a neighbourhood of the closed disc |z|≤R, with g(0)=1, construct the unique analytic log L with L(0)=0 and exp L=g. Unlike the native formula for an already given holomorphic L, this target supplies that normalized logarithm and the identity Re L=log|g|. For |z|<R, L(z)=∫_(|w|=R) log|g(w)|(w+z)/(w−z) dμ_Haar(w).
 
-(Source: CDT, proof of Lemma 2.3.1, p.640; equations (6.1.9)–(6.1.10), p.680.) *Needs:* current Tau Ceti `DiffContOnCl.circleAverage_herglotzRieszKernel_smul_re_add`; Mathlib `DiffContOnCl.circleAverage_re_herglotzRieszKernel_smul`; [ConformalMapping — milestone l3 / the riemann mapping theorem summit](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l3--the-riemann-mapping-theorem-summit).
+(Source: CDT, proof of Lemma 2.3.1, p.640; equations (6.1.9)–(6.1.10), p.680.) *Needs:* Tau Ceti `DiffContOnCl.circleAverage_herglotzRieszKernel_smul_re_add`; Mathlib `DiffContOnCl.circleAverage_re_herglotzRieszKernel_smul`; [ConformalMapping, Layers list, L3 Riemann mapping theorem](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
 
 ### 3.5 The derivative Herglotz formula
 
@@ -471,7 +529,7 @@ If g is holomorphic near the closed unit disc, the radius-r Blaschke/Herglotz co
 
 ### 3.8 Nevanlinna’s quotient representation
 
-For ε>0 and g holomorphic near the closed unit disc, there is h holomorphic near that disc with h(0)=1 and max{sup_(|z|=1) log|h(z)|,sup_(|z|=1) log|h(z)g(z)|}≤m(1,g)+ε. The zero function g is handled separately. Use logarithmic suprema, not suprema of |h|.
+The representative target is `quotient_representation`. For ε>0 and g holomorphic near the closed unit disc, there is h holomorphic near that disc with h(0)=1 and max{sup_(|z|=1) log|h(z)|,sup_(|z|=1) log|h(z)g(z)|}≤m(1,g)+ε. The zero function g is handled separately. Use logarithmic suprema, not suprema of |h|.
 
 (Source: CDT, Lemma 2.3.1 and its proof, pp.639–641.) *Needs:* Layer 3, radial smoothing of the quotient multiplier; Layer 3, the phase in the complex quotient identity; Mathlib `ValueDistribution.proximity`.
 
@@ -496,9 +554,16 @@ Connect the rational Schwarzian equation to the native Gauss series. Distinguish
 
 ### 4.1 The Gauss hypergeometric equation
 
-For parameters a,b,c with none of a,b,c a nonpositive integer and |x|<1, the native ₂F₁(a,b;c;x) satisfies x(1−x)y″+(c−(a+b+1)x)y′−aby=0. The value and first Taylor coefficient at 0 are 1 and ab/c. Use analytic differentiation of the convergent native series, not its junk values outside radius one.
+The representative target is `gauss_equation`. For arbitrary complex numerator parameters a,b, denominator parameter c outside the nonpositive integers and |x|<1, the native ₂F₁(a,b;c;x) satisfies x(1−x)y″+(c−(a+b+1)x)y′−aby=0. The value and first Taylor coefficient at 0 are 1 and ab/c. If a or b is a nonpositive integer the series terminates and the polynomial Gauss identity `gauss_equation_terminating` holds on all ℂ. Use the supplied entire-radius theorems for these cases; c must still avoid denominator poles. `gauss_terminating_checks` states ₂F₁(0,1;1;x)=1 and ₂F₁(−1,1;1;x)=1−x for every x∈ℂ, both of which solve the equation.
 
-(Source: CDT, proof of Lemma 5.1.16, p.672 (verification of the solutions in (5.1.18) using the Gauss equation).) *Needs:* Mathlib `ordinaryHypergeometric`; Mathlib `ordinaryHypergeometric_eq_tsum`; Mathlib `ordinaryHypergeometric_zero`; Mathlib `ordinaryHypergeometricSeries_radius_eq_one`.
+(Source: DLMF, equation 15.10.1; CDT, proof of Lemma 5.1.16, p.672.) *Needs:* Mathlib `ordinaryHypergeometric`; Mathlib `ordinaryHypergeometric_eq_tsum`; Mathlib `ordinaryHypergeometric_zero`; Mathlib `ordinaryHypergeometricSeries_radius_eq_one`; `ordinaryHypergeometric_radius_top_of_neg_nat₁` and `ordinaryHypergeometric_radius_top_of_neg_nat₂`.
+
+
+**Checks.**
+
+* At a=0,b=c=1, the series is 1 on all ℂ, and every term of Gauss’s equation vanishes.
+* At a=−1,b=c=1, the series is 1−x on all ℂ; the equation reduces to −1+x+1−x=0. This tests the terminating case without imposing |x|<1.
+* c=0 is excluded: the classical ordinary hypergeometric function has a denominator-parameter pole; Lean’s totalized ab/c is not a classical analytic initial-value assertion there.
 
 ### 4.2 The descended inverse differential equation
 
@@ -531,15 +596,18 @@ The required API is:
 
 (Source: CDT, p.671; Lemma 5.1.16.) *Needs:* Mathlib `ordinaryHypergeometric`; Mathlib `ordinaryHypergeometric_zero`; Mathlib `ordinaryHypergeometricSeries_radius_eq_one`; Layer 4, the two hypergeometric solutions.
 
+
+`inverseRatio.levelTwo_initial` states J₂(0)=0 and J₂′(0)=1; `inverseRatio.levelTwo_cubic` states J₂‴(0)=3/2. These coefficient comparisons follow from the first native series coefficients (CDT, Lemma 5.1.16, p.671).
+
 ### 4.5 Matching the actual covering inverse
 
-For the oriented cover with F_N′(0)>0, ψ_N(u)=|F_N′(0)|⁻¹J_N(u) as germs at zero. The inverse of G_N is φ_N(x)=|F_N′(0)|^(−N)x(₂F₁(a_+,a_+;2a_+;x)/₂F₁(a_−,a_−;2a_−;x))^N. For an unoriented cover replace the real prefactor by F_N′(0)⁻¹ and its Nth power.
+The representative target is `inverseRatio.cover_inverse`. For the oriented cover with F_N′(0)>0, ψ_N(u)=|F_N′(0)|⁻¹J_N(u) as germs at zero. The inverse of G_N is φ_N(x)=|F_N′(0)|^(−N)x(₂F₁(a_+,a_+;2a_+;x)/₂F₁(a_−,a_−;2a_−;x))^N. For an unoriented cover replace the real prefactor by F_N′(0)⁻¹ and its Nth power.
 
 (Source: CDT, proof of Lemma 5.1.16, pp.671–672.) *Needs:* Layer 4, the normalized inverse-ratio germ; Layer 4, the two hypergeometric solutions; Layer 1, derivative of the descended power map; Layer 2, the linear equation of the inverse covering.
 
 ### 4.6 Zero-balanced hypergeometric continuation
 
-For positive real a and 0<|x|<1 on a fixed compatible branch of log x, the analytic continuation of ₂F₁(a,a;2a;1−x) equals Γ(2a)/Γ(a)² times Σ_{k≥0}(a)_k² x^k/(k!)²·(−log x+2(ψ(k+1)−ψ(k+a))). This refers to the continued analytic function, not the native series junk value outside its disc. The proof needs only a∈[1/4,3/4]. A more general finite-valued parameter statement must also exclude poles of 2a.
+For positive real a and 0<|x|<1 on a fixed compatible branch of log x, the analytic continuation of ₂F₁(a,a;2a;1−x) equals Γ(2a)/Γ(a)² times Σₖ≥₀(a)_k² x^k/(k!)²·(−log x+2(ψ(k+1)−ψ(k+a))). This refers to the continued analytic function, not the native series junk value outside its disc. The proof needs only a∈[1/4,3/4]. A more general finite-valued parameter statement must also exclude poles of 2a.
 
 (Source: CDT, p.672; Lemma 5.1.20; [DLMF 15.8.10](https://dlmf.nist.gov/15.8.E10), specialized to m=0 and b=a, with the normalization in [15.2.2](https://dlmf.nist.gov/15.2.E2).) *Needs:* Mathlib `ordinaryHypergeometric`; Mathlib `ordinaryHypergeometric_eq_tsum`; Mathlib `Complex.digamma`.
 
@@ -553,7 +621,7 @@ For a∈[1/4,3/4] and k≥1, 0≤ψ(k+1)−ψ(k+a)≤ψ(2)−ψ(5/4), and the di
 
 ### 4.8 Uniform zero-balanced remainder
 
-For each fixed M₀>0, a∈[1/4,3/4] and 0<|x|≤e^(−M₀N), N≥2, the k≥1 part of the zero-balanced series and its a-derivative have bounds uniform in a,N, with size O_{M₀}(|x|(1+|log x|)). The derivative control is required to gain the factor 1/N when comparing a_+ and a_−.
+For each fixed M₀>0, a∈[1/4,3/4] and 0<|x|≤e^(−M₀N), N≥2, the k≥1 part of the zero-balanced series and its a-derivative have bounds uniform in a,N, with size O₍M₀₎(|x|(1+|log x|)). The derivative control is required to gain the factor 1/N when comparing a_+ and a_−.
 
 (Source: CDT, p.676; Lemma 5.2.9.) *Needs:* Layer 4, zero-balanced hypergeometric continuation; Layer 4, uniform digamma coefficient control.
 
@@ -589,6 +657,9 @@ The required API is:
 
 (Source: CDT, p.668; Theorem 5.1.4.) *Needs:* Mathlib `Real.Gamma`; Mathlib `Real.Gamma_pos_of_pos`.
 
+
+`gammaRadius.smallLevels` states the two displayed evaluations; they use reflection and duplication with positive arguments (CDT, proof of Theorem 5.1.4, pp.672–673).
+
 ### 5.2 Positivity of the Gamma radius
 
 For every N≥2, γ_N>0 and every Gamma factor in its denominator is nonzero.
@@ -605,29 +676,29 @@ For N≥2, γ_N=Γ((N−1)/(2N))²Γ(1+1/N)/(Γ((N+1)/(2N))²Γ(1−1/N)).
 
 Along the compatible real branch x→1 from below, the ratio s_N(x)=x^(1/N)₂F₁(a_+,a_+;2a_+;x)/₂F₁(a_−,a_−;2a_−;x) tends to Γ(1+1/N)Γ(a_−)²/(Γ(1−1/N)Γ(a_+)²). The inverse cover approaches a boundary point of modulus one.
 
-(Source: CDT, p.672; Proof of Theorem 5.1.4.) *Needs:* Layer 4, zero-balanced hypergeometric continuation; Layer 4, matching the actual covering inverse; Layer 1, the normalized roots-of-unity covering; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, p.672; Proof of Theorem 5.1.4.) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.12); Layer 4, zero-balanced hypergeometric continuation; Layer 4, matching the actual covering inverse; Layer 1, the normalized roots-of-unity covering; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
 ### 5.5 The conformal radius of the punctured plane
 
-For N≥2 and every holomorphic universal cover F_N:𝔻→ℂ∖μ_N with F_N(0)=0, |F_N′(0)|=R(ℂ∖μ_N,0)=γ_N. In particular |F_2′(0)|=Γ(1/4)^4/(4π²) and |F_3′(0)|=Γ(1/6)^3/(12π^(3/2)).
+The representative target is `roots_conformal_radius`. For N≥2 and every holomorphic universal cover F_N:𝔻→ℂ∖μ_N with F_N(0)=0, |F_N′(0)|=R(ℂ∖μ_N,0)=γ_N. In particular |F_2′(0)|=Γ(1/4)^4/(4π²) and |F_3′(0)|=Γ(1/6)^3/(12π^(3/2)).
 
 (Source: CDT, p.668; Theorem 5.1.4.) *Needs:* Layer 5, the boundary limit of the inverse ratio; Layer 5, the alternative gamma expression; Layer 1, the pointed conformal radius; Layer 1, pointed analytic cover uniqueness; Mathlib `Real.Gamma_mul_Gamma_one_sub`; Mathlib `Real.Gamma_mul_Gamma_add_half`.
 
 ### 5.6 The local log-Gamma Taylor series
 
-For |z|<1, the analytic branch of log Γ(1+z) vanishing at z=0 is −γz+Σ_{k≥2}(−1)^kζ(k)z^k/k. For real −1<z<1 this is the ordinary log of the positive real Gamma function.
+For |z|<1, the analytic branch of log Γ(1+z) vanishing at z=0 is −γz+Σₖ≥₂(−1)^kζ(k)z^k/k. For real −1<z<1 this is the ordinary log of the positive real Gamma function.
 
-(Source: CDT, p.673; proof of Theorem 5.1.4, reference [AS92, 6.1.33]; [DLMF 5.7.3](https://dlmf.nist.gov/5.7.E3), combined with the log(1+z) Taylor series for |z|<1.) *Needs:* Mathlib `Real.Gamma`; Mathlib `Complex.Gamma`; Mathlib `Complex.Gamma_ne_zero_of_re_pos`; Mathlib `Complex.Gamma_ofReal`; Mathlib `Real.BohrMollerup.tendsto_log_gamma`; Mathlib `Complex.digamma`.
+(Source: CDT, p.673; proof of Theorem 5.1.4; [DLMF 5.7.3](https://dlmf.nist.gov/5.7.E3), combined with the log(1+z) Taylor series for |z|<1.) *Needs:* Mathlib `Real.Gamma`; Mathlib `Complex.Gamma`; Mathlib `Complex.Gamma_ne_zero_of_re_pos`; Mathlib `Complex.Gamma_ofReal`; Mathlib `Real.BohrMollerup.tendsto_log_gamma`; Mathlib `Complex.digamma`.
 
 ### 5.7 The odd-zeta radius series
 
-For every integer N≥2, log γ_N=(log 16)/N+Σ_{k≥1}(2^(2k)−1)ζ(2k+1)/(2^(2k−1)(2k+1)N^(2k+1)), with an absolutely convergent series of positive terms.
+For every integer N≥2, log γ_N=(log 16)/N+Σₖ≥₁(2^(2k)−1)ζ(2k+1)/(2^(2k−1)(2k+1)N^(2k+1)), with an absolutely convergent series of positive terms.
 
 (Source: CDT, proof of Theorem 5.1.4, p.673 (the log-Gamma expansion).) *Needs:* Layer 5, the local log-gamma taylor series; Layer 5, the explicit gamma radius; Layer 5, positivity of the gamma radius.
 
 ### 5.8 The positive radius expansion
 
-For N≥2 write γ_N=16^(1/N)(1+ζ(3)/(2N³)+3ζ(5)/(8N⁵)+E_N). Then E_N>0 and there is an absolute effectively computable C with E_N≤C/N⁶. Consequently this is the positive O(N⁻⁶) remainder of CDT (5.1.6).
+The representative target is `gammaRadius.positive_expansion`. For N≥2 write γ_N=16^(1/N)(1+ζ(3)/(2N³)+3ζ(5)/(8N⁵)+E_N). Then E_N>0 and there is an absolute effectively computable C with E_N≤C/N⁶. Consequently this is the positive O(N⁻⁶) remainder of CDT (5.1.6).
 
 (Source: CDT, p.668; Theorem 5.1.4.) *Needs:* Layer 5, the odd-zeta radius series.
 
@@ -646,13 +717,13 @@ Apply the projective-action and polygon theory of FuchsianOrbifolds to the speci
 
 ### 6.1 The symmetric ideal polygon
 
-For N≥2 the deck group Γ_N of F_N has the ideal 2N-gon centred at zero with vertices exp(πik/N), k=0,…,2N−1, as a Dirichlet fundamental domain. Its sides join adjacent vertices by hyperbolic geodesics; the prescribed side pairings recover the roots-of-unity quotient.
+For N≥2 the deck group Γ_N of F_N has the ideal 2N-gon centred at zero with vertices exp(πik/N), k=0,…,2N−1, as the Cayley transport of `TauCeti.dirichletDomain Γ̃_N UpperHalfPlane.I`; its measurable fundamental-domain theorem is consumed from `TauCeti.Analysis.Complex.Fuchsian.DirichletDomain`. Its sides join adjacent vertices by hyperbolic geodesics; the prescribed side pairings recover the roots-of-unity quotient.
 
-(Source: CDT, p.674; Proposition 5.2.1.) *Needs:* Layer 1, the normalized roots-of-unity covering; Layer 1, rotation equivariance of the covering; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 2 hyperbolic polygons and cofinite groups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-2-hyperbolic-polygons-and-cofinite-groups); [ConformalMapping — milestone l3 / the riemann mapping theorem summit](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l3--the-riemann-mapping-theorem-summit); [ConformalMapping — milestone l4 / analytic continuation / the reflection principle](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l4--analytic-continuation--the-reflection-principle).
+(Source: CDT, p.674; Proposition 5.2.1.) *Needs:* Layer 1, the normalized roots-of-unity covering; Layer 1, rotation equivariance of the covering; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 2 hyperbolic polygons and cofinite groups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-2-hyperbolic-polygons-and-cofinite-groups); [ConformalMapping, Layers list, L3 Riemann mapping theorem](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md); [ConformalMapping, Layers list, L4 analytic continuation and reflection](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md).
 
 ### 6.2 The primitive cusp translation
 
-The full stabilizer of i∞ in Γ̃_N is generated by τ↦τ+h_N where h_N=2cot(π/(2N))>0. This is the primitive positive generator in the chosen normalized cusp datum.
+The full stabilizer of i∞ in Γ̃_N is generated by τ↦τ+h_N where h_N=2cot(π/(2N))>0. This is the primitive positive generator, packaged as a native `Subgroup.CuspDatum` of width h_N with its full-stabilizer equality.
 
 (Source: CDT, p.674; Proposition 5.2.1.) *Needs:* Layer 6, the symmetric ideal polygon; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
@@ -691,21 +762,21 @@ F̃_N^N is invariant under Φ̃_N, and any g∈PSL₂(ℝ) satisfying F̃_N(gτ)
 
 ### 6.6 The fundamental quadrilateral
 
-The fundamental domain of Φ_N is the hyperbolic quadrilateral with vertices 0,exp(−πi/N),1,exp(πi/N), in that cyclic order. Its half-plane image has vertices i,−cot(π/(2N)),i∞,cot(π/(2N)), up to boundary orientation, and area 2π−2π/N.
+The fundamental domain of Φ_N is the hyperbolic quadrilateral with vertices 0,exp(−πi/N),1,exp(πi/N), in that cyclic order. Its half-plane image has vertices i,−cot(π/(2N)),i∞,cot(π/(2N)), up to boundary orientation, and area 2π−2π/N, by the native `TauCeti.UpperHalfPlane.volume_triangle` Gauss–Bonnet theorem and its ideal-vertex limit.
 
 (Source: CDT, p.675; Corollary 5.2.4.) *Needs:* Layer 6, the power-map stabilizer group; Layer 6, the symmetric ideal polygon; the native Cayley coordinate; [FuchsianOrbifolds — layer 2 hyperbolic polygons and cofinite groups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-2-hyperbolic-polygons-and-cofinite-groups).
 
 ### 6.7 The half-rotation involution
 
-Let s̃ be the rotation about i of projective order 2N satisfying s̃²=r̃_N, and let s be its disc conjugate. Then 1−F̃_N(s̃τ)^N=1/(1−F̃_N(τ)^N) for τ∈ℍ. All denominators are nonzero because the covering omits μ_N.
+The representative target is `half_rotation_involution`. Let s̃ be the rotation about i of projective order 2N satisfying s̃²=r̃_N, and let s be its disc conjugate. Then 1−F̃_N(s̃τ)^N=1/(1−F̃_N(τ)^N) for τ∈ℍ. All denominators are nonzero because the covering omits μ_N.
 
-(Source: CDT, p.675; Lemma 5.2.6.) *Needs:* Layer 6, the fundamental quadrilateral; Layer 1, the descended power map; Layer 1, rotation equivariance of the covering; [ConformalMapping — milestone l4 / analytic continuation / the reflection principle](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md#milestone-l4--analytic-continuation--the-reflection-principle); [FuchsianOrbifolds — layer 2 hyperbolic polygons and cofinite groups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-2-hyperbolic-polygons-and-cofinite-groups).
+(Source: CDT, p.675; Lemma 5.2.6.) *Needs:* Layer 6, the fundamental quadrilateral; Layer 1, the descended power map; Layer 1, rotation equivariance of the covering; [ConformalMapping, Layers list, L4 analytic continuation and reflection](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md); [FuchsianOrbifolds — layer 2 hyperbolic polygons and cofinite groups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-2-hyperbolic-polygons-and-cofinite-groups).
 
 ### 6.8 The index-two triangle supergroup
 
 Set Ψ̃_N=⟨s̃,t̃_N⟩. Then Φ̃_N is normal of index two in Ψ̃_N, and a fundamental domain for the disc action is the geometric triangle with vertices 0,1,exp(πi/N) and angles π/N,0,0. Distinguish this geometric triangle from Φ̃_N’s (N,∞,∞) orbifold signature; the full reflection group is not a subgroup of PSL₂(ℝ).
 
-Define s̃ by the determinant-one matrix [cos(π/(2N)),−sin(π/(2N));sin(π/(2N)),cos(π/(2N))], so its projective square is the displayed r̃_N. The triangle region is the intersection in 𝔻 of the geodesic half-planes bounded by its three sides. The intended `TriangleSupergroup.triangle` statement proves measurability, covering of 𝔻 by its Ψ_N-translates and almost-everywhere disjointness of the interiors of distinct translates. After transport by C its native hyperbolic volume is π−π/N; the Φ_N quadrilateral has volume 2π−2π/N. The `orientation` statement uses the actual holomorphic projective action and excludes the antiholomorphic reflection τ↦−conj τ from that group.
+Define s̃ by the determinant-one matrix [cos(π/(2N)),−sin(π/(2N));sin(π/(2N)),cos(π/(2N))], so its projective square is the displayed r̃_N. The triangle region is the intersection in 𝔻 of the geodesic half-planes bounded by its three sides. The intended `TriangleSupergroup.triangle` statement proves measurability, covering of 𝔻 by its Ψ_N-translates and almost-everywhere disjointness of the interiors of distinct translates. After transport by C its native hyperbolic volume, computed by `TauCeti.UpperHalfPlane.volume_triangle` and the ideal-vertex limit, is π−π/N; the Φ_N quadrilateral has volume 2π−2π/N. The `orientation` statement uses the actual holomorphic projective action and excludes the antiholomorphic reflection τ↦−conj τ from that group.
 
 The required API is:
 
@@ -754,6 +825,9 @@ The required API is:
 
 (Source: CDT, p.679; 6.1.1.) *Needs:* Mathlib `MeromorphicOn.divisor`; Mathlib `MeromorphicOn.divisor_ball_support_finite`; Mathlib `MeromorphicOn.divisor_restrict`; Mathlib `ValueDistribution.logCounting`.
 
+
+`discCounting.centrePole` states the negative log-r centre-pole check for 0<r<1. `discCounting.boundaryPole` states the zero boundary-weight check for a≠0 and |a|<1. These use the local divisor and totalized logarithm (Mathlib `MeromorphicOn.circleAverage_log_norm`; CDT, (6.1.3), p.679).
+
 ### 7.2 The disc-local characteristic
 
 For f meromorphic on 𝔻 and 0<r<1 define T_D(r,f)=ValueDistribution.proximity f ∞ r+N_D(r,f). Reuse the native proximity function exactly. The local divisor wrapper is the only change from the native global characteristic; do not assert nonnegativity for a general centre pole or manufacture a global meromorphic extension.
@@ -773,6 +847,9 @@ The required API is:
 
 (Source: CDT, p.679; 6.1.1.) *Needs:* Layer 7, the disc-local pole-counting function; Mathlib `ValueDistribution.proximity`; Mathlib `ValueDistribution.characteristic`.
 
+
+`discCharacteristic.identity` and `discCharacteristic.centrePole` state the identity and reciprocal checks for 0<r<1; the latter cancels −log r from proximity with log r from counting (CDT, §6.1.1, p.679).
+
 ### 7.3 Pole-counting positivity at a regular centre
 
 For f meromorphic on 𝔻 whose meromorphic germ at 0 has no pole (meromorphicOrderAt f 0≥0, including infinite order), N_D(r,f)≥0 whenever 0<r<1. A totalized scalar value at 0 is not a regularity hypothesis.
@@ -781,7 +858,7 @@ For f meromorphic on 𝔻 whose meromorphic germ at 0 has no pole (meromorphicOr
 
 ### 7.4 Vanishing of the local pole count
 
-For f meromorphic on 𝔻 with no pole in its meromorphic germ at 0, N_D(r,f)=0 iff every germ at |z|<r has nonnegative meromorphic order, equivalently admits a holomorphic removable extension. For a scalar representative also continuous on this open disc, this is equivalent to pointwise holomorphicity of f there. Without that continuity guard, arbitrary isolated point values need not agree with the extensions. A pole on |z|=r has zero weight and is permitted; no closed-disc conclusion is inferred.
+The representative target is `discCounting.zero_iff`. For f meromorphic on 𝔻 with no pole in its meromorphic germ at 0, N_D(r,f)=0 iff every germ at |z|<r has nonnegative meromorphic order, equivalently admits a holomorphic removable extension. For a scalar representative also continuous on this open disc, this is equivalent to pointwise holomorphicity of f there. Without that continuity guard, arbitrary isolated point values need not agree with the extensions. A pole on |z|=r has zero weight and is permitted; no closed-disc conclusion is inferred.
 
 (Source: CDT, p.679; Lemma 6.1.2.) *Needs:* Layer 7, pole-counting positivity at a regular centre; Mathlib `MeromorphicOn.divisor`; Mathlib `MeromorphicAt`; Mathlib `MeromorphicAt.meromorphicOrderAt_nonneg_iff`; Mathlib `MeromorphicAt.analyticAt`.
 
@@ -794,6 +871,9 @@ The light test function `scalarSpike z = if z=0 then 2 else 1` makes this distin
 * Its assigned value at zero is two, whereas its punctured limit is one.
 * At every nonzero point it is locally the constant one, and at zero it is meromorphic with order zero in the native punctured-germ convention.
 * For 0<r<1 its pole count is zero, but it is neither continuous nor analytic at zero; omitting continuity from the pointwise analytic criterion would admit this counterexample.
+
+
+`scalarSpike.removable_not_continuous` states that the native meromorphic scalar function has order zero everywhere and zero local pole count for 0<r<1, but fails continuity and analyticity at zero; this uses punctured-germ equality with the constant one (Mathlib `meromorphicOrderAt_congr`, `MeromorphicOn.divisor_def`).
 
 ### 7.5 The disc-local Jensen identity
 
@@ -815,7 +895,7 @@ For a∈ℂ and circle-integrable local meromorphic f, |m(r,f−a)−m(r,f)|≤l
 
 ### 7.8 The translated local first main theorem
 
-For f meromorphic on 𝔻 with f−a having a nonzero germ at 0, and 0<r<1, |T_D(r,f)−T_D(r,1/(f−a))−log|c(f,a)||≤log⁺|a|+log 2. The coefficient is the nonzero leading meromorphic coefficient of f−a; the identically constant f=a case is excluded.
+The representative target is `local_first_main_translation`. For f meromorphic on 𝔻 with f−a having a nonzero germ at 0, and 0<r<1, |T_D(r,f)−T_D(r,1/(f−a))−log|c(f,a)||≤log⁺|a|+log 2. The coefficient is the nonzero leading meromorphic coefficient of f−a; the identically constant f=a case is excluded.
 
 (Source: CDT, p.679; equation (6.1.3), with proof on p.680.) *Needs:* Layer 7, the local first main inversion identity; Layer 7, translation bound for proximity; Layer 7, the disc-local pole-counting function.
 
@@ -862,7 +942,7 @@ For D>0 and a projective real determinant-one matrix g=[a b;c d], C⁻¹(g{Im τ
 
 As a subset of 𝔻 this is the intersection with the closed Euclidean disc of centre (1−E/2)(a−ic)/(a+ic) and radius E/2; its tangency point on the unit circle is excluded. Determinant one gives a²+c²>0, so the tangent-point and diameter denominators are nonzero.
 
-(Source: CDT, p.677; Lemma 5.2.16.) *Needs:* the native Cayley coordinate; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, p.677; Lemma 5.2.16.) *Needs:* Tau Ceti `TauCeti.Analysis.Complex.Fuchsian.Cusp.Horodisc` precise invariance; the native Cayley coordinate; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
 ### 8.4 Shimizu for the power-map group
 
@@ -870,7 +950,7 @@ For N≥2 and every determinant-one representative [a b;c d] of an element of th
 
 (Source: CDT, proof of Lemma 5.2.18, p.678 (Shimizu applied to the full power stabilizer).) *Needs:* Layer 6, the largest invariance group of the power cover; Layer 6, the primitive cusp translation; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
-Use the native Shimizu theorem in `TauCeti.Analysis.Complex.Fuchsian.Shimizu`. For a lift with c≠0 it gives h_N|c|≥1. Handle c=0 from the full primitive cusp stabilizer, and use the rotation generator when the a entry is needed. The result is invariant under changing the sign of the lift.
+The geometric height form is `Subgroup.im_smul_mul_im_le_sq_of_upperRightHom_mem`; the two-width form is `Subgroup.im_smul_mul_im_le_abs_mul_of_upperRightHom_mem`. Use the native Shimizu theorem in `TauCeti.Analysis.Complex.Fuchsian.Shimizu`. For a lift with c≠0 it gives h_N|c|≥1. Handle c=0 from the full primitive cusp stabilizer, and use the rotation generator when the a entry is needed. The result is invariant under changing the sign of the lift.
 
 ### 8.5 The paper-specific exceptional cusp set
 
@@ -886,13 +966,16 @@ The required API is:
 **Checks.**
 
 * For M>0, 0∉S(M,N), since |F_N(0)^N−1|=1>e^(−MN).
-* For any z, |sz|=|z|.
+* For M>0 choose t∈(0,1) with t^N=1−exp(−MN)/2. It is not an omitted root; surjectivity supplies z∈𝔻 with F_N(z)=t, and z∈S(M,N). This positive membership witness rules out the empty-set definition (`ExceptionalCuspSet.nonempty`).
 * If |F_N(z)|^N>1+e^(MN), then |1−F_N(s⁻¹z)^N|<e^(−MN).
 
 More precisely, for each M₀>0 and 0<ε<1 produce an effective N₀(ε,M₀)≥2 such that for N≥N₀ and M≥M₀,
-S(M,N)⊆⋃_{g∈Φ̃_N} C⁻¹(g{τ∈ℍ : Im τ≥2N²M(1−ε)/π²}). This uses the actual half-plane region and its projective translates. For exclusion take M₀=2, ε=1/2 and D=N²M/π², as in the proof of Lemma 5.2.18; the union is not a generic set of unspecified small discs.
+S(M,N)⊆⋃ (g∈Φ̃_N) C⁻¹(g{τ∈ℍ : Im τ≥2N²M(1−ε)/π²}). This uses the actual half-plane region and its projective translates. For exclusion take M₀=2, ε=1/2 and D=N²M/π², as in the proof of Lemma 5.2.18; the union is not a generic set of unspecified small discs.
 
-(Source: CDT, p.678; Lemma 5.2.18.) *Needs:* Layer 8, height near a small cusp value; Layer 8, disc diameter of a transformed horoball; Layer 8, shimizu for the power-map group; Layer 6, the half-rotation involution; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, p.678; Lemma 5.2.18.) *Needs:* Tau Ceti `TauCeti.Analysis.Complex.Fuchsian.Cusp.Horodisc` precise invariance; Layer 8, height near a small cusp value; Layer 8, disc diameter of a transformed horoball; Layer 8, shimizu for the power-map group; Layer 6, the half-rotation involution; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+
+
+`ExceptionalCuspSet.zero_not_mem` states zero exclusion for M>0. `ExceptionalCuspSet.rotated_large` states both z∈sS and z∉S for |z|<1 and exp M+1<|F_N(z)|. Together with `ExceptionalCuspSet.nonempty` these are named boundary targets (CDT, proof of Lemma 5.2.18, p.678).
 
 ### 8.6 Excluding the cusp horoballs
 
@@ -904,7 +987,7 @@ The transported horoball has diameter at most 4h_N²/D after the matrix-entry es
 
 ### 8.7 The large-N maximum growth bound
 
-There exist effectively computable absolute C,N₀ such that for all integers N≥N₀ and 0<r<1, sup_(|z|=r)log|F_N(z)|≤CN/(1−r). This is the large-N statement of Lemma 5.2.18; the proof does not establish it for every N≥2.
+The representative target is `large_n_max_growth`. There exist effectively computable absolute C,N₀ such that for all integers N≥N₀ and 0<r<1, sup_(|z|=r)log|F_N(z)|≤CN/(1−r). This is the large-N statement of Lemma 5.2.18; the proof does not establish it for every N≥2.
 
 (Source: CDT, p.678; Lemma 5.2.18.) *Needs:* Layer 8, excluding the cusp horoballs.
 
@@ -941,7 +1024,7 @@ For nonnegative circle-integrable H and normalized Haar measure, ∫log⁺H≤lo
 
 ### 9.4 The zero-free logarithmic derivative estimate
 
-For g holomorphic and zero-free near the closed radius-R disc, g(0)=1 and 0<r<R, m(r,g′/g)≤log⁺((m(R,g)/r)·R/(R−r))+log 2+1/e. Use ≤ in the reusable signature; the source states the corresponding strict bound.
+The representative target is `normalized_log_derivative`. For g holomorphic and zero-free near the closed radius-R disc, g(0)=1 and 0<r<R, m(r,g′/g)≤log⁺((m(R,g)/r)·R/(R−r))+log 2+1/e. Use ≤ in the reusable signature; the source states the corresponding strict bound.
 
 (Source: CDT, p.680; Lemma 6.1.7.) *Needs:* Layer 3, the derivative herglotz formula; Layer 9, the inverse-square kernel mean; Layer 9, boundary l1 control of the logarithm; Layer 9, the logarithmic mean estimate; Mathlib `ValueDistribution.proximity`.
 
@@ -976,6 +1059,9 @@ The required API is:
 
 (Source: CDT, p.682; (6.2.4).) *Needs:* Mathlib field division, complex powers and meromorphic order.
 
+
+`pivotMap.levelTwo_pole` states p₂(1)=0 in the totalized field and meromorphicOrderAt p₂ 1=−1 for the punctured germ; a root value is not an analytic extension (CDT, (6.2.4), p.682).
+
 ### 9.8 The pivot partial-fraction identity
 
 For N≥2 and x^N≠1, p_N(x)=(x/N)Σ_(ζ∈μ_N)1/(x−ζ). The roots are distinct over ℂ and the sum is finite.
@@ -1000,13 +1086,13 @@ For each fixed N≥2 there is an effectively computable C_N such that T_D(r,F_N^
 
 (Source: CDT, §6 opening, pp.678–679, citing [Tsu52, Theorem 11]; §5 opening, p.667, for [KR16].) *Needs:* Layer 1, the normalized roots-of-unity covering; Layer 7, the disc-local characteristic.
 
-Construct C_N from fixed-puncture geometry or the Tsuji/Kraus–Roth argument, retaining a bound on 0<r≤1/4. An asymptotic assertion as r→1 alone does not discharge this target. The proof must produce the number used by finite-level completion.
+Prove the bound with C_N from fixed-puncture geometry or the Tsuji/Kraus–Roth argument, retaining a bound on 0<r≤1/4. An asymptotic assertion as r→1 alone does not discharge this target. The proof must produce the number used by finite-level completion.
 
 ### 9.12 Equivalence of the three mean estimates
 
 For N≥2 and each 0<r<1, the characteristics of F_N^N, F_N^N/(F_N^N−1), and 1/(F_N^N−1) differ by an absolute additive constant at most log 4. The translated first main theorem uses c(F_N^N,1)=−1, of modulus one.
 
-(Source: CDT, p.682; Theorem 6.0.1.) *Needs:* Layer 9, the pivot characteristic lower bound; Layer 7, the translated local first main theorem; Layer 7, translation bound for proximity; Layer 1, the normalized roots-of-unity covering.
+(Source: CDT, §6.2.2 and equation (6.2.3), p.682; first main theorem (6.1.3), p.679.) *Needs:* Layer 9, the pivot characteristic lower bound; Layer 7, the translated local first main theorem; Layer 7, translation bound for proximity; Layer 1, the normalized roots-of-unity covering.
 
 ### 9.13 The logarithmic derivative at the omitted value one
 
@@ -1046,7 +1132,7 @@ Given the large-N effective constants C,N₀ and effective fixed-level constants
 
 ### 9.19 Uniform mean growth of the covering powers
 
-There is an effectively computable absolute C such that for every integer N≥2, 0<r<1 and p∈{x↦x^N,x↦x^N/(x^N−1),x↦1/(x^N−1)}, the normalized circle mean ∫_(|z|=r)log⁺|p(F_N(z))|dμ_Haar(z)≤C log(N/(1−r)). The cover is normalized at zero; the bound is independent of its source rotation.
+The representative target is `uniform_mean_growth`. There is an effectively computable absolute C such that for every integer N≥2, 0<r<1 and p∈{x↦x^N,x↦x^N/(x^N−1),x↦1/(x^N−1)}, the normalized circle mean ∫_(|z|=r)log⁺|p(F_N(z))|dμ_Haar(z)≤C log(N/(1−r)). The cover is normalized at zero; the bound is independent of its source rotation.
 
 (Source: CDT, p.679; Theorem 6.0.1.) *Needs:* Layer 9, completing the finitely many small levels; Layer 9, equivalence of the three mean estimates; Layer 1, pointed analytic cover uniqueness; Mathlib `ValueDistribution.proximity`.
 
@@ -1065,8 +1151,14 @@ The conformal-radius formula supplies explicit analytic sizes for arithmetic hol
 
 ## References
 
-**CDT**: Frank Calegari, Vesselin Dimitrov and Yunqing Tang, [*The unbounded denominators conjecture*](https://www.math.uchicago.edu/~fcale/papers/UDC.pdf), *Journal of the American Mathematical Society* **38** (2025), 627–702, [DOI 10.1090/jams/1053](https://doi.org/10.1090/jams/1053). Page references below are the printed journal pages. Section 1.1.6 and the proof of Corollary 2.0.5 motivate the ODE interfaces; Lemma 2.3.1 supplies the quotient representation; §§5–6 supply the quantitative covering theory. Where CDT invokes Hempel's accessory parameters, special-function connection formulas or fixed-puncture growth theory, the target includes the proof of that input, with its hypotheses stated here. A citation to that invocation does not identify it as a theorem already present in the libraries.
+**CDT**: Frank Calegari, Vesselin Dimitrov and Yunqing Tang, [*The unbounded denominators conjecture*](https://www.math.uchicago.edu/~fcale/papers/UDC.pdf), *Journal of the American Mathematical Society* **38** (2025), 627–702, [DOI 10.1090/jams/1053](https://doi.org/10.1090/jams/1053). Page references below are the printed journal pages. Section 1.1.6 and the proof of Corollary 2.0.5 motivate the ODE interfaces; Lemma 2.3.1 supplies the quotient representation; §§5–6 supply the quantitative covering theory. Where CDT invokes Hempel's accessory parameters, special-function connection formulas or fixed-puncture growth theory, the target includes the proof of that input, with its hypotheses stated here. The source invocation supplies the mathematical locator, while the targets specify the required proofs.
 
-The original references used by CDT include Hempel [Hem88] for accessory parameters, Abramowitz–Stegun [AS92, 15.3.10, 6.1.33] for hypergeometric continuation and log-Gamma, and Tsuji [Tsu52, Theorem 11] for fixed-puncture growth. Their exact roles are specified at the relevant targets. The effective fixed-level assertion in Layer 9 includes its own proof and small-radius estimates.
+**Hem88**: Joachim A. Hempel, *On the uniformization of the n-punctured sphere*, Bull. London Math. Soc. 20 (1988), 97–115, DOI 10.1112/blms/20.2.97, Theorem 3.1 and Lemma 3.3 (uncertified primary locators). **Tsu52**: Masatsugu Tsuji, *Theory of Fuchsian groups*, Jpn. J. Math. 21 (1951/1952), 1–27, DOI 10.4099/jjm1924.21.0_1, Theorem 11. **KR16**: Daniela Kraus and Oliver Roth, *Sharp lower bounds for the hyperbolic metric of the complement of a closed subset of the unit circle and theorems of Schwarz-Pick-, Schottky- and Landau-type for analytic functions*, Constr. Approx. 43 (2016), 47–69, DOI 10.1007/s00365-015-9313-3 (uncertified locator: §1). These provide background for the stated accessory and fixed-puncture growth targets; the effective fixed-level assertion in Layer 9 includes its own proof and small-radius estimates.
 
-**DLMF**: NIST, [*Digital Library of Mathematical Functions*](https://dlmf.nist.gov/), equations 15.8.10 and 15.2.2 for the ordinary zero-balanced continuation after restoring normalization, and 5.7.3 and 5.7.6 for log-Gamma and digamma series. These supply accessible formula locators; the convergence, parameter differentiation and effective estimates specified above remain proof targets.
+**TeschlODE**: Gerald Teschl, *Ordinary Differential Equations and Dynamical Systems*, author's preliminary version, §1.2, equation (1.18), p.7, and §4.3, Theorem 4.7 and its proof, p.130.
+
+**McMullenRS**: Curtis T. McMullen, *Riemann Surfaces*, Harvard Math 213b course notes, April 28, 2026, Theorem 2.9, p.9, and Theorem 17.1, p.157. The former gives the triply punctured sphere model; the latter states the abstract classification developed in §1.1.
+
+**Uniformization**: Cipriana Anghel and Rareș Stan, *Uniformization of Riemann surfaces revisited*, arXiv:2008.12189v2 (2021), Theorem 1, p.2; Theorem 6, p.4; Proposition 9, pp.5–6; Theorem 10, pp.6–8; Theorem 12, pp.8–10; Lemma 13 and §7, pp.10–11; Appendices A–D, pp.11–14.
+
+**DLMF**: NIST, [*Digital Library of Mathematical Functions*](https://dlmf.nist.gov/), equations 15.8.10 and 15.2.2 for the ordinary zero-balanced continuation after restoring normalization, and 5.7.3 and 5.7.6 for log-Gamma and digamma series; equation 15.10.1 specifies Gauss’s equation. These supply accessible formula locators; the convergence, parameter differentiation and effective estimates specified above remain proof targets.

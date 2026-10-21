@@ -145,3 +145,4 @@ EllipticCurveModularityImaginaryQuadratic
 ModularityAndLanglandsExtensions
 ArithmeticDynamics
 ErdosProgressionPowers
+ConformalMappingPartII

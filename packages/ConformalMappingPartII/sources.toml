@@ -1,0 +1,178 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ConformalMappingPartII"
+
+[[source]]
+id = "CDT-journal"
+authors = "Frank Calegari; Vesselin Dimitrov; Yunqing Tang"
+title = "The unbounded denominators conjecture"
+year = 2025
+locator_scheme = "section"
+locator = "1.1.6; Corollary 2.0.5; Lemma 2.3.1; Sections 5–6, pp.667–684"
+url = "https://www.math.uchicago.edu/~fcale/papers/UDC.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/UDC.pdf"
+fetched_at = "2026-10-21T12:11:43Z"
+sha256 = "867026fbcc5592728173e5c4d6a87f58d57a55b0d0d8b0109b9774e84290ee1e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["Layers 0–9"]
+
+[[source]]
+id = "McMullenRS"
+authors = "Curtis T. McMullen"
+title = "Riemann Surfaces, Math 213b course notes"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 2.9, p.9; Theorem 17.1, p.157"
+url = "https://abel.math.harvard.edu/~ctm/math213b/%68ome/course/course.pdf"
+fetched_from = "https://abel.math.harvard.edu/~ctm/math213b/%68ome/course/course.pdf"
+fetched_at = "2026-10-21T12:15:17Z"
+sha256 = "1442374a6f3a389a426d966103adb689e5947e80efb4bcee34b6018383a30406"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.1", "Exact supplier contracts: gap:little-picard"]
+
+[[source]]
+id = "KR16"
+authors = "Daniela Kraus, Oliver Roth"
+title = "Sharp Lower Bounds for the Hyperbolic Metric of the Complement of a Closed Subset of the Unit Circle and Theorems of Schwarz–Pick-, Schottky- and Landau-type for Analytic Functions"
+year = 2016
+venue = "Constructive Approximation 43"
+doi = "10.1007/s00365-015-9313-3"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://doi.org/10.1007/s00365-015-9313-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.11"]
+
+[[source]]
+id = "Uniformization"
+authors = "Cipriana Anghel; Rareș Stan"
+title = "Uniformization of Riemann surfaces revisited, arXiv:2008.12189v2"
+year = 2021
+arxiv = "2008.12189"
+locator_scheme = "theorem"
+locator = "Theorem 1, p.2; Theorem 6, p.4; Proposition 9, pp.5–6; Theorem 10, pp.6–8; Theorem 12, pp.8–10; Lemma 13 and Section 7, pp.10–11; Appendices A–D, pp.11–14"
+url = "https://arxiv.org/abs/2008.12189"
+fetched_from = "https://arxiv.org/pdf/2008.12189"
+fetched_at = "2026-10-21T12:19:12Z"
+sha256 = "a706338ae36e35e2b9daf3ebb8b24fa0586615366e8c19f0b1367ab2584882e0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv:2008.12189v2, 3 September 2021; locators refer to this version"
+cited_for = ["1.1"]
+
+[[source]]
+id = "DLMF-15-8"
+authors = "NIST"
+title = "Digital Library of Mathematical Functions, Section 15.8"
+year = 2026
+locator_scheme = "equation"
+locator = "15.8.10"
+url = "https://dlmf.nist.gov/15.8"
+fetched_from = "https://dlmf.nist.gov/15.8"
+fetched_at = "2026-10-21T12:22:03Z"
+sha256 = "e60090cc23360e48813c0e819dee250d0d621efd70023deb5d3c5903c4115f60"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.6"]
+
+[[source]]
+id = "DLMF-15-2"
+authors = "NIST"
+title = "Digital Library of Mathematical Functions, Section 15.2"
+year = 2026
+locator_scheme = "equation"
+locator = "15.2.2"
+url = "https://dlmf.nist.gov/15.2"
+fetched_from = "https://dlmf.nist.gov/15.2"
+fetched_at = "2026-10-21T12:22:04Z"
+sha256 = "965c4be601796d35218724296848db82570b13b1389fc96a41c17da06c48a8b4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.6"]
+
+[[source]]
+id = "DLMF-5-7"
+authors = "NIST"
+title = "Digital Library of Mathematical Functions, Section 5.7"
+year = 2026
+locator_scheme = "equation"
+locator = "5.7.3; 5.7.6"
+url = "https://dlmf.nist.gov/5.7"
+fetched_from = "https://dlmf.nist.gov/5.7"
+fetched_at = "2026-10-21T12:22:04Z"
+sha256 = "9ee2b7051ae233ef54ff85703508558f210c1167e3db1fce25e753ad98cd3ea1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.7; 5.6"]
+
+[[source]]
+id = "Tsu52"
+authors = "Masatsugu Tsuji"
+title = "Theory of Fuchsian groups"
+year = 1952
+doi = "10.4099/jjm1924.21.0_1"
+locator_scheme = "theorem"
+locator = "Theorem 11"
+url = "https://www.jstage.jst.go.jp/article/jjm1924/21/0/21_0_1/_pdf"
+fetched_from = "https://www.jstage.jst.go.jp/article/jjm1924/21/0/21_0_1/_pdf"
+fetched_at = "2026-10-21T12:22:14Z"
+sha256 = "8100f28c1592616d383113147d952abfebf6ef5996ff6d7feb84376f913549f3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["9.11"]
+
+[[source]]
+id = "TeschlODE"
+authors = "Gerald Teschl"
+title = "Ordinary Differential Equations and Dynamical Systems, author preliminary version"
+year = 2012
+locator_scheme = "theorem"
+locator = "Section 1.2, equation (1.18), p.7; Section 4.3, Theorem 4.7 and proof, p.130"
+url = "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf"
+fetched_at = "2026-10-21T09:28:52Z"
+sha256 = "362433156525216abf596c17ce843204510e96d57afa4284a37c7aa5a9ffc36e"
+licence_class = "author-page"
+status = "certified"
+version_note = "Read the sources-service cached author-page extraction, with 364 pages. A live refetch returned HTTP 502; the fetch time is the cache timestamp."
+cited_for = ["0.1", "0.2", "0.3", "0.4"]
+
+[[source]]
+id = "Hem88"
+authors = "Joachim A. Hempel"
+title = "On the uniformization of the n-punctured sphere"
+year = 1988
+doi = "10.1112/blms/20.2.97"
+locator_scheme = "theorem"
+locator = "Theorem 3.1; Lemma 3.3; Section 6, pp.97–115"
+url = "https://doi.org/10.1112/blms/20.2.97"
+licence_class = "none"
+status = "uncertified"
+version_note = "Publisher page restricts the article PDF to subscribers; primary locators are cited without its text. CDT-journal (5.1.13)–(5.1.14) provides the read secondary formula."
+cited_for = ["1.12", "2.4", "2.5", "2.6", "2.7"]
+
+[[source]]
+id = "DLMF-15-10"
+authors = "NIST"
+title = "Digital Library of Mathematical Functions, Section 15.10"
+year = 2026
+locator_scheme = "equation"
+locator = "15.10.1"
+url = "https://dlmf.nist.gov/15.10"
+fetched_from = "https://dlmf.nist.gov/15.10"
+fetched_at = "2026-10-21T12:25:56Z"
+sha256 = "8348ba6d6ede465f04bf15ecafc37e70e871ed41c5c05fb5e383c8a4e823e2c1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.1"]
