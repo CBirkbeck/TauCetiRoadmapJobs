@@ -39,3 +39,53 @@ locator = "Lemmas 6, 9, 12; Proposition 10; §§3–7, preprint pp. 7–11"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
+
+[[source]]
+id = "yokoyama"
+title = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf/-char/ja"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf"
+fetched_from = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf"
+fetched_at = "2026-10-21T13:02:26Z"
+sha256 = "241d16ad2bce2aff802a94c3bb72758453b6211283cd5dd7756442c19a6c0f18"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
+
+[[source]]
+id = "mitchell"
+title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mitchell-LQ.pdf"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
+
+[[source]]
+id = "quillen"
+title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/bass-seattle.pdf"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
+
+[[source]]
+id = "bass-tate"
+title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/SLN342.pdf"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
+
+[[source]]
+id = "serre"
+title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Serre-HSEF.pdf"
+locator_scheme = "section"
+locator = "V §§1-2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
