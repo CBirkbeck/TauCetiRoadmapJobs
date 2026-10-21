@@ -50,7 +50,7 @@ title = "Lecture notes for an introductory minicourse on q-series"
 year = 1995
 arxiv = "math/9509223v1"
 locator_scheme = "equation"
-locator = "Equations (1.2.3), (1.2.7)–(1.2.8), (1.3.6)–(1.3.11), (2.1.3), (2.1.9), (2.2.1), (2.2.10), (3.1.6), (3.1.11)–(3.1.12), (4.2.11)–(4.2.12)"
+locator = "Equations (1.2.3), (1.2.7)–(1.2.8), (1.3.6)–(1.3.11), (2.1.3), (2.1.8)–(2.1.9), (2.2.1), (2.2.10), (3.1.6), (3.1.11)–(3.1.12), (4.2.11)–(4.2.12)"
 url = "https://arxiv.org/abs/math/9509223v1"
 fetched_from = "https://arxiv.org/pdf/math/9509223v1"
 fetched_at = "2026-10-20T21:37:15Z"
@@ -58,7 +58,7 @@ sha256 = "ea5f3d8fe15dc47902f4bdf8ad630c7044e495d5c0934d247aa1a81f1be819bb"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-version_note = "arXiv v1"
+version_note = "arXiv v1. Section 2.3 derives the negative-tail ratio with exponent d(n+1) from (3.1.11), line 820; the large-base negative tail has exponent (s-r)(n+1). The radius boundary is unchanged. The large-base unilateral radius follows from the exact finite inversion, (1.3.10)-(1.3.11)."
 cited_for = ["q-Pochhammer calculus and basic hypergeometric summations"]
 
 [[source]]
@@ -164,7 +164,7 @@ cited_for = ["Retained bibliographic background; replaced by Pak2002, Gasper1995
 [[source]]
 id = "Watson1938"
 locator_scheme = "theorem"
-locator = "Hauptsätze 1, 3–4, pp. 98–99, lines 76 and 123–126; §§2–5, (3.41)–(3.44) and (5.41)–(5.42), for proof filtrations; p. 98, line 108 for p(243) modulo 343"
+locator = "Hauptsätze 1, 3–4, pp. 98–99, lines 76 and 123–126; §2 and (3.2), p. 105, line 417; §4 and (5.2), p. 118, lines 1127–1128; §§2–5, (3.41)–(3.44) and (5.41)–(5.42), for proof filtrations; p. 98, line 108 for p(243) modulo 343"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0179/LOG_0012.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0179/LOG_0012.pdf"
 fetched_at = "2026-10-21T09:31:50Z"
@@ -205,7 +205,7 @@ sha256 = "c9a38541fb6c655a1525c4c5115cf4ac7cad0177fa363c0d2c29da7bbabf5d2e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-21"
-cited_for = ["10.1", "10.2", "11.2"]
+cited_for = ["10.1", "10.1a (unilateral omega definition only; the bilateral bridge is the author’s derivation)", "10.2", "11.2"]
 authors = "Kathrin Bringmann and Ken Ono"
 title = "The f(q) mock theta function conjecture and partition ranks"
 year = 2006
@@ -246,7 +246,7 @@ cited_for = ["10.4", "10.3a"]
 [[source]]
 id = "Andrews1986"
 locator_scheme = "theorem"
-locator = "Bailey’s Lemma (2.3)–(2.6), pp. 114–115, lines 93–110; Theorems 3–4, 9 and 13, pp. 117–118, 125 and 132–133, lines 241, 266, 450, 698; corrections specified by Zwegers2002 lines 4123–4124"
+locator = "Bailey’s Lemma (2.3)–(2.6), pp. 114–115, lines 93–110; Theorems 3–4, 9 and 13, pp. 118–119, 125 and 132–133, lines 241, 266, 450, 698; corrections specified by Zwegers2002 lines 4123–4124"
 url = "https://www.ams.org/journals/tran/1986-293-01/S0002-9947-1986-0814916-2/S0002-9947-1986-0814916-2.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1986-293-01/S0002-9947-1986-0814916-2/S0002-9947-1986-0814916-2.pdf"
 fetched_at = "2026-10-21T09:47:12Z"
@@ -258,6 +258,8 @@ cited_for = ["2.6", "2.7", "10.3", "10.4", "10.3a"]
 authors = "George E. Andrews"
 title = "The fifth and seventh order mock theta functions"
 year = 1986
+
+version_note = "The finite Bailey transform is read on its unit-denominator domain; the additional factors (aq/rho_i;q)_n are required to be units over a general commutative ring. The fifth-order identities retain the corrections at Zwegers2002 lines 4123-4124."
 
 [[source]]
 id = "AtkinSwinnertonDyer1954"
@@ -290,3 +292,21 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
 cited_for = ["8.4a"]
+
+[[source]]
+id = "Warnaar2001"
+authors = "S. Ole Warnaar"
+title = "Partial-sum analogues of the Rogers–Ramanujan identities"
+year = 2001
+version_note = "arXiv v1; the roadmap uses D_n=e_(n+1) and E_n=d_(n+2), rather than the source’s unshifted indexing."
+arxiv = "math/0108193v1"
+locator_scheme = "equation"
+locator = "arXiv v1 (1.3)–(1.4), pp. 1–2, lines 45–65; (1.6), p. 2, lines 92–108"
+url = "https://arxiv.org/abs/math/0108193v1"
+fetched_from = "https://arxiv.org/pdf/math/0108193v1"
+fetched_at = "2026-10-21T17:12:42Z"
+sha256 = "10ba2e2ce57fb7ad008f90f860d00867086dc1f41dd05d82f48a7c25cc67b95b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.2"]
