@@ -87,6 +87,7 @@ ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
 ArithmeticStatisticsPartV
 PELModuli
+AbelianSchemesAndArithmeticModuliPartII
 ShimuraData
 FarguesFontaineDiamonds
 ModularSymbolsPadicLFunctions

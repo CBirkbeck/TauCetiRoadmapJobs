@@ -1,10 +1,10 @@
-# Abelian schemes and arithmetic moduli, Part II
+# Roadmap: abelian schemes and arithmetic moduli, part II
 
-This roadmap builds three interfaces for abelian varieties: integral coefficients
+**Summary.** This roadmap builds three interfaces for abelian varieties: integral coefficients
 for completed Poincaré bundles, real analytic Betti coordinates in families, and
 integral realizations over finite fields. These interfaces connect the geometry
 of a family to computations that retain its arithmetic information. The first
-part constructs universal connections, moments and ordinary CM trivializations.
+part uses universal connections to construct moments and ordinary CM trivializations.
 The second turns Betti rank into a geometric condition on subvarieties and their
 fibre powers. The third passes from Frobenius and Tate modules to isogeny classes,
 integral lattice orbits and counts of polarized and unpolarized varieties.
@@ -16,11 +16,12 @@ lattice classification needs integral morphisms at every prime, including the
 characteristic prime. The counting statements use those interfaces rather than
 replacing them by finiteness assertions.
 
-## Scope and dependencies
+## Scope and ownership
 
 The parent **AbelianSchemesAndArithmeticModuli** owns abelian schemes and their
-group laws (A1), duality, Picard and Poincaré geometry, polarizations and Rosati
-involutions (A2), isogenies and finite subgroup quotients (A3), relative de Rham
+group laws (A1), duality, Picard and Poincaré geometry, polarizations (A2), isogenies, finite subgroup quotients and
+`Polarization.rosati` (A3.9), the universal vector extension `AbelianVectorExtension`
+(A4.2), relative de Rham
 cohomology, its Hodge sequence and Tate systems (A4), complex uniformization and
 the Hodge dictionary (A5), and finite-rank Hom groups, characteristic polynomials,
 semisimple endomorphism algebras and complete reducibility (A6). These objects
@@ -38,35 +39,43 @@ argument, rather than a second general theory of forms or distributions.
 
 **SchemeAndStackFoundations**, SF.2 and SF.4, supplies coherent direct images,
 formal functions, thickenings and formal completion. **ComplexComparisonPartII**,
-C0, supplies analytification and bundle-valued Dolbeault comparison.
+C0, supplies analytic sheaf and bundle carriers; C1.1 `localDolbeault` supplies
+the bundle-valued Dolbeault comparison.
 **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1 and R07.2, supplies the
 connected–étale decomposition, finite flat groups, their descent, p-divisible
 groups and the contravariant Dieudonné equivalence. The completed Poincaré,
 ordinary CM and abelian-variety realization adapters are constructed here.
 
-**PELModuli**, M5–M6, supplies period uniformization and polarized moduli with
-level. **HodgeStructuresPartII**, H.2, supplies polarized variations, the fixed
-part and equivariant Hodge morphisms. **LogicAndDefinabilityInNumberTheory**,
-LD.6, owns the o-minimal, mixed Ax–Schanuel and weakly special theory. B2 and B3
-specify its exact uses for abelian families; they do not introduce a competing
-mixed Shimura theory. **JacobianChallengePartII**, JC2 and JC7, supplies the
-curve difference map and universal-curve setting. The existing **JacobianChallenge**
-roadmap supplies the underlying Jacobian and curve Picard geometry.
+**PELModuli**, M3.5–M3.6, supplies period uniformization; M5 supplies the
+Siegel family and M6 the arithmetic coarse-moduli and level interfaces.
+**Completed/HodgeStructures**, L0–L3, supplies the linear Hodge carriers.
+**ShimuraVarieties**, §§3.5a–3.5d, supplies the real o-minimal and definable-Chow
+foundations; the precise additional fixed-part, equivariant Hodge-Hom and mixed
+Kuga/counting inputs are the extension contracts below. B2–B3 construct the
+abelian-family adapters to those inputs. **JacobianChallengePartII**, §2.6
+`RelativeJacobian.CurveDifference`, §§5.3–5.4 and §7.2
+`RelativeJacobian.levelFaltingsZhang`, supplies differences for a given curve
+family. The fine full-level curve moduli and universal family require the
+separate PELModuli extension contract. **JacobianChallenge** supplies the
+underlying Jacobian and curve Picard geometry.
 
-For arithmetic groups use the current **AdelicAlgebraicGroups** roadmap:
+For arithmetic groups use **AdelicAlgebraicGroups**:
 AA.1 constructs adelic points and compact open levels, AA.3 supplies reduction
 theory and finite class sets, and AA.4 supplies approximation and level double
 quotients. F4 specializes these constructions to the units of an endomorphism
-algebra. **GeometryOfNumbersAndQuadraticArithmetic**, GN.2–GN.3, supplies the
-local lattice estimates and Hermitian mass estimates. **ClassFieldTheory**,
+algebra. **GeometryOfNumbersAndQuadraticArithmetic**, §2.5 and §3.3, supplies
+invariant-factor and quadratic genus-mass prerequisites. Semisimple stable-lattice
+bounds and the unitary CM mass asymptotic require the distinct extension contracts below. **ClassFieldTheory**,
 layers 5, 10 and 13, supplies Brauer invariants, their global compatibility and
 norm theorems. **RepresentationTheory/SemisimpleAlgebras**, layers 4–5, supplies
 central simplicity and centralizers. **Completed/EffectiveBounds**, layer 1,
 supplies number-field discriminant, class-number and unit-index bounds;
-**Chebotarev**, layer 14, supplies natural density.
-**DeligneWeightsAndPurity**, DWP.0 targets 0.1–0.3 and DWP.1 target 1.4,
+**Chebotarev**, layer 14, supplies natural density;
+**ImaginaryQuadraticClassNumber**, H3.6, supplies the nine maximal-order
+class-number-one cases.
+**DeligneWeightsAndPurity**, DWP.0 targets 0.1–0.3 and DWP.1 targets 1.4–1.5,
 supplies pure algebraic numbers and the independent Rosati proof of the abelian
-Frobenius root bound. F0 adds integrality and the finite-field classification adapter. None of these general theories
+Frobenius root bound and the extension-field point-count identity. F0 adds integrality and the finite-field classification adapter. None of these general theories
 is rebuilt here.
 
 The outputs are the completed-bundle and Betti-rank interfaces used in
@@ -131,15 +140,23 @@ numerical exponent for the number of unpolarized varieties.
   prime or prime power; an error used uniformly across isogeny classes must be
   stated uniformly.
 
-## Library interfaces
+## Exact supplier contracts
+
+### From Mathlib
 
 Use Mathlib's `TensorPower`, `PiTensorProduct.reindex`, `reindex_tprod` and
 `map_reindex` for permutations and tensor functoriality. Form invariant
 submodules with `LinearMap.eqLocus` and `Submodule.mem_iInf`. The existing
 `DividedPowerAlgebra` is the source of the comparison in P0, rather than a new
-presentation of the divided power algebra. Tau Ceti's `symmetricTensors` is the
+presentation of the divided power algebra.
+
+### From Tau Ceti
+
+Tau Ceti's `symmetricTensors` is the
 flip-fixed tensor square; P0 compares it with the degree-two instance of the
 all-degree construction.
+
+### From Mathlib: analytic and arithmetic carriers
 
 `AddCircle (1 : ℝ)` is the real circle used in Betti tori. It supplies a torus
 fibre, while the period charts and transition maps are constructed in B0.
@@ -150,7 +167,102 @@ zero, so recognition statements explicitly exclude zero resultants. For F6
 evaluate `MvPolynomial.mul_esymm_eq_sum` on the root occurrences; the new work
 is the coefficient and reciprocity adapter, not another Newton-identity proof.
 
-## The build
+### From Tau Ceti: tensor, discriminant and abelian-variety carriers
+
+At `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`,
+`TauCeti/LinearAlgebra/TensorPower/Basic.lean` supplies
+`TauCeti.TensorPower.oneEquiv` and `TensorPower.splitAt`.
+`TauCeti/RingTheory/Polynomial/Resultant/Discriminant.lean` supplies
+`Polynomial.Monic.resultant_deriv`, `Polynomial.Monic.discr_eq_prod_roots_sub_sq`,
+`Polynomial.Monic.discr_mul` and `Algebra.discr_powerBasis_eq_minpoly_discr`.
+F4 compares the latter power-basis discriminant with the maximal-order
+number-field discriminant, retaining the square of the order index.
+`TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`, `Isogeny.lean` and
+`End/Basic.lean` supply `TauCeti.AlgebraicGeometry.AbelianVariety`, its homomorphisms,
+`TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny` and endomorphisms. These field carriers do not
+supply the relative universal extensions, completed coefficient sheaves or
+Dieudonné functors required by P1–P4 and F1.
+
+### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
+
+Consume A2's dual and rigidified Poincaré bundle, A3's isogeny/quotient and
+Tate-product maps, A3.9 `Polarization.rosati`, A4.2 `AbelianVectorExtension`
+with its connection-moduli representation and universal bundle, and A4.3
+`AbelianH1dR.hodgeSequence`, `baseChange` and `dualPairing`. In particular
+A♮ is `AbelianVectorExtension (A∨)`; neither representability nor its vector
+kernel is constructed here. Consume A5's complex Hodge dictionary and A6.2
+`homTateInjective`, A6.5 `poincareReducibility`, A6.7 `homFreeFinite`, A6.8
+`endQ_isSemisimple`, A6.10 `End.charpoly`, A6.11 `charpolyTate`, A6.14
+`rosatiPositivity`, A6.18 `polarizedAutomorphisms` and A6.21
+`frobeniusSemisimple`. F1 only transports the last theorem to its faithful
+contravariant realization and identifies the polynomial.
+
+### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
+
+Consume R07.1.2 `etaleGroupEquivContAction`, R07.2.10
+`dieudonnePDivisible` with its contravariant exactness and F,V conventions,
+and R07.2.19 `exists_padic_charpoly`: a Witt-integral matrix invariant under
+Frobenius conjugation over the isocrystal has its polynomial over ℤ_p.
+F1 applies this descent and proves agreement with the parent's integer polynomial.
+
+### From TauCetiRoadmap.ComplexComparisonPartII
+
+Consume C0's coherent analytic modules and holomorphic bundles, C1.1
+`localDolbeault`, and C5's relative de Rham–Betti comparison. The Dolbeault
+resolution includes holomorphic finite-rank bundle coefficients and its frame
+and pullback comparisons.
+
+### From TauCetiRoadmap.ShimuraVarieties and Completed/HodgeStructures
+
+Consume Completed/HodgeStructures L0–L3 for pure, mixed and polarized linear
+Hodge objects and their morphisms. Consume ShimuraVarieties §§3.5a–3.5d for
+`R_an,exp`, finite definable charts, polarized variation carriers and definable
+Chow. The following stronger inputs are supplier requirements, not claims
+that the cited sections already prove them.
+
+What ShimuraVarieties must provide (gap:fixed-part-theorem): extend §3.5b.1 to the fixed-part theorem for polarized integral variations arising from smooth proper complex algebraic families over a smooth connected quasi-projective base S, semisimplicity of their rational monodromy, and the weight −1 abelian-scheme Hom comparison: for polarized abelian schemes A,B/S, integral flat Hodge morphisms R₁π_A,*ℤ→R₁π_B,*ℤ are exactly homomorphisms A→B; after any connected finite étale cover, the invariant subvariation is constant and its abelian realization is the constant part up to isogeny. Use Deligne Corollary 4.1.2, Theorem 4.2.6 and Rappel 4.4.3, printed pp.42,45,51 (Deligne line 1377, Deligne line 1698), with Hodge type required at every fibre.
+
+What ShimuraVarieties must provide (gap:kuga-definable-inputs): extend §§P.1 and 3.5a–3.5d to connected Kuga data (P=V⋊G,X⁺), congruence Γ, quasi-projective Γ∖X⁺ and its universal abelian family, an `R_an,exp`-definable fundamental set and uniformization, the parameter-uniform semirational Pila–Wilkie block theorem for a definable Z⊂ℝᵃ×ℝᵇ with bounded-height rational coordinates and unrestricted remaining coordinates, and the bi-algebraic/weakly-special closure and connected normal rational quotient dictionary, including algebraic monodromy normality for a Hodge-generic subvariety; these are the carriers and counting inputs to the growth, stabilizer, quotient and finite weakly optimal targets of B3, not those targets' Ax–Schanuel conclusion (GH Lemma 5.2 proof pp.19–20; Gao–Ax §§2–4.1, pp.5–15).
+
+### From TauCetiRoadmap.PELModuli and JacobianChallengePartII
+
+Consume PELModuli M3.5–M3.6's complex uniformization, M5's Siegel family and
+M6's finite-field polarized-moduli finiteness. Consume
+JacobianChallengePartII §2.6 `RelativeJacobian.CurveDifference` and §7.2
+`RelativeJacobian.levelFaltingsZhang` with their section-free base-change maps
+for a supplied smooth projective genus-g family with full symplectic level.
+
+What PELModuli must provide (gap:fine-curve-level-moduli): extend M6's level-moduli interface to the fine quasi-projective scheme M_g[ℓ] of smooth projective genus g≥2 curves with full symplectic level ℓ≥3 in characteristic zero over ℚ(ζ_ℓ), its universal curve, the quasi-finite Torelli map to A_g[ℓ] compatible with the Jacobian and polarization, and finite étale level-change comparisons that allow descent of the level-independent Betti-rank assertion; JacobianChallengePartII §7.2 supplies the difference morphism only once this family is given (DGH §6.1, pp.23–25).
+
+### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
+
+Consume §2.5's DVR invariant factors and §3.3's quadratic genus/mass
+notions only in their stated orthogonal scope. The following are additional
+semisimple-linear and unitary requirements.
+
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:local-semisimple-lattice-bounds): extend §2.5 to a semisimple operator γ on a finite-dimensional ℚ_ℓ-space with characteristic polynomial `∏f_i^{n_i}`, distinct monic irreducible f_i∈ℤ_ℓ[X], and `Δ_ℓ=Σn_i²v_ℓ(disc f_i)+2Σ_{i<j}n_in_jv_ℓRes(f_i,f_j)`: its linear centralizer has at most `ℓ^{2Δ_ℓ}` orbits of γ-stable full ℤ_ℓ-lattices and each stabilizer lies in a conjugate of a fixed maximal compact with index `≤ℓ^{Δ_ℓ}`; the proof must use successive projected lattices pr_i(M∩V_≤i), including repeated factors and ℓ=2 (LT §§3.1–3.2.1, pp.7–14, especially Lemma 3.1 and (15)–(20), as a strengthened local adaptation).
+
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:cm-hermitian-mass-asymptotic): extend §3.3 to fixed imaginary quadratic class-number-one K and positive-definite unimodular rank-g O_K-Hermitian lattices, with the unitary mass formula under specified measures including all ramified and dyadic local factors, a bound exp(O_K(g²)) for the number of genera and uniform local-factor errors, log M_K(g)=½g²log g+O_K(g²) for the sum of the weighted genus masses, |Aut L|≤exp(O_K(g log(g+1))), and M_K(g)≤H_K(g)≤(max_L|Aut L|)M_K(g) for the unweighted GL_g(O_K)-class count, hence log H_K(g)=½g²log g+O_K(g²) as g→∞; g=0 has one class and mass one (LT §§5.3–5.5, (38)–(40), (42), (50), Lemma 5.8 and (52)–(55), pp.26–33, with the factorial correction specified in F5).
+
+### From the remaining arithmetic and geometric suppliers
+
+Consume SchemeAndStackFoundations SF.2 and SF.4 for coherent direct images,
+formal functions and unit thickenings; AlgebraicVectorBundles L0B and L2B for
+finite locally free sheaves, their tensor operations and vector groups;
+DifferentialGeometry Layers 0–1 for forms and exterior differentiation;
+AdelicAlgebraicGroups AA.1, AA.3 and AA.4 for restricted products, compact
+open levels, class-set finiteness and level double quotients with the group
+hypotheses retained; ClassFieldTheory Layers 5,10,13 for local Brauer invariants
+and norms; RepresentationTheory/SemisimpleAlgebras Layers 4–5 for central
+simple algebras and centralizers; Completed/EffectiveBounds Layer 1 for
+number-field bounds; Chebotarev Layer 14 for natural density; and
+ImaginaryQuadraticClassNumber H3.6 for the maximal-order class-number-one
+certificates of discriminants −4,−8,−3,−7,−11,−19,−43,−67,−163.
+Consume DeligneWeightsAndPurity DWP.0 targets 0.1–0.3 and DWP.1 targets
+1.4–1.5 for purity, root bounds and `#A(𝔽_(q^r))=det(1−π^r)` for every r≥1.
+F0 keeps only its isogeny and product corollaries.
+
+## How to read the build
 
 The geometric branches run P0 → P1 → P2 → P3 and P4, and B0 → B1 → B2 → B3 → B4.
 The arithmetic branch starts with F0 and the independent polynomial layer F2,
@@ -169,7 +281,8 @@ these modules, so it remains meaningful in positive characteristic.
 
 ### Invariant tensor powers
 
-For a commutative ring R, an R-module M and n≥0, TSymⁿ_R(M) is the submodule of TensorPower R n
+For a commutative ring R, an R-module M and n≥0, define `tensorSymmetricPower`:
+TSymⁿ_R(M) is the submodule of TensorPower R n
 M fixed by every permutation of Fin n, acting by PiTensorProduct.reindex. It is an invariant
 submodule, not the symmetric-power quotient.
 
@@ -177,43 +290,45 @@ submodule, not the symmetric-power quotient.
 
 - `tensorSymmetricPower_mem`: t∈TSymⁿ(M) iff reindex σ(t)=t for every σ.
 - `tensorSymmetricPower_diagonal`: The pure tensor with every factor v lies in TSymⁿ(M).
-- `tensorSymmetricPower_map`: An R-linear f:M→N induces TSymⁿ(f):TSymⁿ(M)→ₗ[R]TSymⁿ(N) by
-tensoring every factor.
-- `tensorSymmetricPower_ext`: Two elements of TSymⁿ(M) are equal iff their ambient tensors are
-equal.
+- `tensorSymmetricPower_map (f : M →ₗ[R] N) : TSymⁿ(M) →ₗ[R] TSymⁿ(N)` is the
+induced map obtained by tensoring every factor.
+Use the native subtype extensionality for equality of invariant tensors.
 
 **Checks.**
 
-- `tensorSymmetricPower_zero`: TSym⁰(M)=⊤ in TensorPower R 0 M.
-- `tensorSymmetricPower_one`: TSym¹(M)=⊤ in TensorPower R 1 M, hence agrees with M through the
-native singleton tensor equivalence.
+- In degree zero, TSym⁰(M)=⊤ in TensorPower R 0 M.
+- In degree one, TSym¹(M)=⊤ in TensorPower R 1 M, hence agrees with M through the
+`TauCeti.TensorPower.oneEquiv`.
 - `tensorSymmetricPower_nonfixed`: For M=ℤ² the pure tensor e₀⊗e₁ is not in TSym²(M); swapping
 it gives e₁⊗e₀, distinguished by the coordinate functional.
 
-**Source.** [KS][KS], Definition 1.6, PDF pp.8–9.
+**Source.** [Roby][Roby], Chapter III §5, printed pp.251–254 (Roby line 1416).
 
 **Needs.** `TensorPower`; `PiTensorProduct.reindex`; `LinearMap.eqLocus`; `Submodule.mem_iInf`;
 `PiTensorProduct.reindex_tprod`; `PiTensorProduct.map_reindex`.
 
 ### Degree completion of symmetric tensors
 
-Define the degree-completed module TSym̂_degree(M)=∏_{n≥0} TSymⁿ(M), with the product/degree
-filtration, and finite truncation ∏_{n≤N}TSymⁿ(M). No identification with I-adic completion over
+Define `degreeCompletion`, the degree-completed module `TSym̂_degree(M)=∏_{n≥0} TSymⁿ(M)`, with the product/degree
+filtration, and finite truncation `∏_{n≤N}TSymⁿ(M)`. No identification with I-adic completion over
 an arbitrary integral base is part of this definition.
 
-**API.**
-
-- `degreeCompletion_component`: For c:∏n TSymⁿ(M), component_n(c)=c(n).
-- `degreeCompletion_ext`: c=d iff c(n)=d(n) for every n.
-- `degreeCompletion_zero`: Every component of the zero completed sequence is zero.
+Evaluation is the native function application c(n); extensionality and zero
+components use the Pi-module API. Define finite truncation by restriction to
+`Fin (N+1)`: the intended signature is
+`degreeCompletion_truncate (N : ℕ) : degreeCompletion R M →ₗ[R] (∀ j : Fin (N+1), ↥(tensorSymmetricPower R M j.val))`.
+Prove compatibility as N increases.
 
 **Checks.**
 
-- `degreeCompletion_zero_component`: The component in degree zero of the zero sequence is zero.
-- `degreeCompletion_single`: For a sequence supported in degree n with value x, its n-th
-component is x and every other component is zero.
-- `degreeCompletion_product`: The carrier and module operations agree with the native dependent
-Pi module on n↦TSymⁿ(M).
+- A sequence supported in one degree: Updating the zero sequence at n with x gives x at n
+  and zero at all other degrees; the proved example tests both clauses.
+- Loss under truncation: A nonzero coefficient in degree N+1 gives a
+  nonzero completed sequence whose restriction through N is zero; a finite-sum
+  replacement for completion would lose such coefficients.
+- `degreeCompletion_nonzero_degree_zero`: A sequence with degree-zero coefficient
+  1 over ℤ is nonzero, through the native empty-tensor equivalence; this is a
+  named boundary theorem in `Suggested.lean`.
 
 **Source.** [KS][KS], Equation(2.1.3), PDF p.14.
 
@@ -238,10 +353,11 @@ equivalence.
 - `tensorSymmetricAlgebra_zero_degree`: The degree-zero subalgebra is the native base ring R.
 - `tensorSymmetricAlgebra_char_two`: For M=F₂·v, the shuffle square v·v is zero, but v^[2] is
 nonzero; ordinary tensor concatenation would fail this test.
-- `tensorSymmetricAlgebra_free`: For a free module, the construction agrees with the existing
-DividedPowerAlgebra via the diagonal comparison below.
+- `tensorSymmetricAlgebra_mixed_square`: For a free rank-two module with basis x,y,
+  `(x+y)^[2]=x^[2]+x*y+y^[2]`; the middle coefficient is 1, including over 𝔽₂.
 
-**Source.** [KS][KS], Definition 1.6 continuation, PDF p.9.
+**Source.** [Roby][Roby], Chapter III §§5–6, Proposition III.1, printed pp.251–255
+(Roby line 1476, Roby line 1526); [Kings][Kings], §2.2, equation (2.2.2), PDF p.10.
 
 **Needs.** [P0](#p0-symmetric-tensors-and-moment-coefficients), Invariant tensor powers.
 
@@ -252,7 +368,7 @@ TauCeti.symmetricTensors R M, the eqLocus of TensorProduct.comm and identity. Th
 invariant submodules; it does not identify the invariant lattice with the coinvariant
 SymmetricPower quotient integrally.
 
-**Source.** [KS][KS], Definition 1.6, PDF pp.8–9.
+**Source.** [Roby][Roby], Chapter III §5, printed pp.251–254 (Roby line 1416).
 
 **Needs.** [P0](#p0-symmetric-tensors-and-moment-coefficients), Invariant tensor powers;
 `TauCeti.symmetricTensors`.
@@ -263,7 +379,8 @@ For a free R-module M, the diagonal divided tensors extend to a graded algebra i
 DividedPowerAlgebra R M≃TSym_R(M), using shuffle multiplication. For nonfree M only the natural
 comparison is asserted, with its universal-property hypotheses.
 
-**Source.** [KS][KS], Definition 1.6 continuation, PDF p.9.
+**Source.** [Roby][Roby], Chapter III §6, Proposition III.1, and Chapter IV §5,
+Proposition IV.5, printed pp.254–255,272–273 (Roby line 1526, Roby line 2226).
 
 **Needs.** [P0](#p0-symmetric-tensors-and-moment-coefficients), Shuffle multiplication and
 divided powers; `DividedPowerAlgebra`.
@@ -271,7 +388,7 @@ divided powers; `DividedPowerAlgebra`.
 ### Multigrading of invariant tensors
 
 For a finite family of finitely generated projective R-modules Mσ and M=⊕σ Mσ, there is a
-natural multigraded isomorphism TSym^k(M)≃⊕_{|α|=k}⊗σ TSym^{α(σ)}(Mσ). For a vector v with
+natural multigraded isomorphism `TSym^k(M)≃⊕_{|α|=k}⊗σ TSym^{α(σ)}(Mσ)`. For a vector v with
 components vσ, its α-component is ⊗σ vσ^[α(σ)]. The corresponding sheaf statement holds for
 finite locally free summands. No such isomorphism for arbitrary nonflat summands is asserted.
 
@@ -294,66 +411,38 @@ algebra. The integral moment constructions below only use degree truncations.
 
 ## P1: Universal vector extensions
 
-The underlying dual and rigidified Poincaré bundle come from A2. The new object represents the
-extra datum of a relative integrable connection. Its universal property determines the vector
-extension and its functoriality; the Hodge identification then determines the connection on its
-cotangent sheaf.
+Compare the connection and cotangent notation with the completed Poincaré
+coefficients; the vector extension itself is supplied as specified in Scope and ownership.
 
-### Universal vector extension of the dual
+### Connection and cotangent notation
 
-Let A/S be an abelian scheme over a noetherian base. Construct a smooth commutative S-group A♮
-representing rigidified line bundles on A_T equipped with an integrable T-relative connection
-and satisfying the theorem of the square. Forgetting the connection gives an exact sequence 0 →
-V(ω_A) → A♮ → A∨ → 0. The universal line bundle with connection P♮ has underlying rigidified
-bundle (id_A × p)^*P. Thus the represented extension has quotient A∨ and vector kernel ω_A.
+For an abelian scheme A/S over a noetherian base, put A♮=E(A∨) and let
+p:A♮→A∨ be its forgetful map. Prove `completedPoincare_connectionNotation`:
+the pulled-back rigidified bundle `(id_A×p)^*P` with its universal relative
+integrable connection is the P♮ used in P2. Under the duality pairing for A and
+A∨, transport the parent's invariant-form comparison to
+`Lie(A♮)≃H¹_dR(A/S)` and `ω_A♮≃H=(H¹_dR(A/S))∨`, with the Hodge sequences,
+rigidifications and base change. This fixes notation and variance for P2,
+without a new extension or representability construction.
 
-**API.**
-
-- `universalVectorExtension_forget`: p sends a rigidified pair (L,∇) to the class of L in A∨.
-- `universalVectorExtension_kernel`: ker p is the vector group associated to ω_A.
-- `universalVectorExtension_represent`: Hom_S(T,A♮) is naturally the group of rigidified
-square-compatible line bundles with integrable relative connection on A_T.
-- `universalPoincare_pullback`: The underlying line bundle of P♮ equals (id×p)^*P with its
-rigidification.
+**API.** `completedPoincare_connectionNotation_forget` identifies the underlying
+rigidified Poincaré bundle; `completedPoincare_connectionNotation_hodge` fixes
+both cotangent and Lie identifications;
+`completedPoincare_connectionNotation_baseChange` commutes with base change.
 
 **Checks.**
 
-- `universalVectorExtension_zero`: For the zero-dimensional abelian scheme the representing
-group and vector kernel are trivial.
-- `universalVectorExtension_elliptic`: For an elliptic scheme the vector kernel has rank one and
-Lie(A♮) has rank two.
-- `universalVectorExtension_dual`: The forgetful target is the imported dual A∨ and the
-underlying universal sheaf is the imported Poincaré sheaf, not a newly defined Picard functor.
+- In dimension zero the coefficient space H is zero and P♮ is the rigidified
+  trivial line with its trivial relative connection.
+- For an elliptic scheme the vector kernel has rank one and Lie(A♮) rank two;
+  confusing E(A) and E(A∨) loses the specified forgetful target.
+- On a square-zero test base `k⊕M` the tangent comparison has domain
+  `Hom_k(H,M)`, fixing the dual in the identity-class construction of P3.
 
-**Source.** [KS][KS], Notation 2.2, PDF p.13.
+**Source.** [KS][KS], Notation 2.2 and equation (2.1.1), PDF p.13.
 
-**Needs.** **AbelianSchemesAndArithmeticModuli**, A1; **AbelianSchemesAndArithmeticModuli**, A2;
-**AbelianSchemesAndArithmeticModuli**, A4; [AlgebraicVectorBundles,
-L0B](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AlgebraicVectorBundles/README.md#l0b--quasicoherent-and-finite-locally-free-sheaves);
-[AlgebraicVectorBundles,
-L2A](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AlgebraicVectorBundles/README.md#l2a--structured-linear-schemes).
-
-### Lie and cotangent identifications
-
-Lie(A♮/S)≃H¹_dR(A/S) identifies 0→ω_A→Lie(A♮)→Lie(A∨)→0 with the Hodge exact sequence. Its dual
-identifies H=(H¹_dR)∨ with ω_A♮ and the dual Gauss–Manin connection.
-
-**Source.** [KS][KS], Notation 2.2 and equation(2.1.1), PDF p.13.
-
-**Needs.** [P1](#p1-universal-vector-extensions), Universal vector extension of the dual;
-**AbelianSchemesAndArithmeticModuli**, A4.
-
-### Construction requirements
-
-Construct the fppf moduli functor of rigidified line bundles with relative integrable connection
-and the square condition. Prove its representability, the universal connection and the
-identification of the forgetful kernel with the vector group of ω_A. The representability
-theorem and the universal-class comparison are part of this construction, not consequences of
-assigning a name to the functor. Differentiate the extension and identify its class with the de
-Rham Hodge extension, including rigidifications, the sign of the universal class and base-change
-compatibility. Dualize only after establishing that the sheaves are finite locally free.
-Kings–Sprang, Notation 2.2 and equation (2.1.1), p.13, locates the resulting interface and cites
-the Mazur–Messing/Laumon construction.
+**Needs.** AbelianSchemesAndArithmeticModuli A4.2–A4.3, A2.2;
+AlgebraicVectorBundles L0B and L2B.
 
 ## P2: Completed Poincaré bundles
 
@@ -366,7 +455,7 @@ functions.
 
 For a separated smooth commutative group G/S of finite presentation, with closed unit section e,
 its unit ideal J has J^n/J^(n+1)≃Sym^n(ω_G). Iterating the coproduct and projecting each factor
-O_G/J²→ω_G gives mom_n:O_G/J^(n+1)→⊕_{b≤n}TSym^b(ω_G), compatible with truncation; their inverse
+O_G/J²→ω_G gives `mom_n:O_G/J^(n+1)→⊕_{b≤n}TSym^b(ω_G)`, compatible with truncation; their inverse
 limit lands in degree completion. Over a Q-algebra the moment maps are isomorphisms.
 
 **API.**
@@ -425,7 +514,7 @@ replacement.
 
 **Source.** [KS][KS], Definitions 2.4/2.7 and equations(2.1.4)–(2.1.5), PDF pp.14–16.
 
-**Needs.** [P1](#p1-universal-vector-extensions), Universal vector extension of the dual;
+**Needs.** [P1](#p1-universal-vector-extensions), Connection and cotangent notation;
 [P2](#p2-completed-poincaré-bundles), Moments of a formal smooth group.
 
 ### Fourier–Mukai input for completed Poincaré cohomology
@@ -444,8 +533,8 @@ completed, rather than only finite-level, cohomology.
 ### Isogeny functoriality of completed Poincaré sheaves
 
 For an isogeny φ : 𝒜 → ℬ, the isomorphisms (φ × id)^*𝒫_ℬ ≅ (id × φ^∨)^*𝒫_𝒜 and their ♮-versions
-(equation (2.2.1)) give canonical maps φ^{(n)}_# : 𝒫^{(n)}_𝒜 → φ^*𝒫^{(n)}_ℬ and 𝒫^{♮(n)}_𝒜 →
-φ^*𝒫^{♮(n)}_ℬ, isomorphisms if φ^∨ (resp. φ^♮) is étale (e.g. if deg φ is invertible), and in
+(equation (2.2.1)) give canonical maps `φ^{(n)}_#` : `𝒫^{(n)}_𝒜` → `φ^*𝒫^{(n)}_ℬ` and `𝒫^{♮(n)}_𝒜` →
+`φ^*𝒫^{♮(n)}_ℬ`, isomorphisms if φ^∨ (resp. φ^♮) is étale (e.g. if deg φ is invertible), and in
 the limit φ_# : 𝒫̂_𝒜 → φ^*𝒫̂_ℬ, 𝒫̂^♮_𝒜 → φ^*𝒫̂^♮_ℬ.
 
 **Source.** [KS][KS], Theorem 2.8 and proof, PDF p.16.
@@ -455,10 +544,10 @@ the limit φ_# : 𝒫̂_𝒜 → φ^*𝒫̂_ℬ, 𝒫̂^♮_𝒜 → φ^*𝒫̂^
 
 ### Canonical torsion splittings and moments
 
-For an isogeny φ : 𝒜 → ℬ and a φ-torsion section x, φ_# induces φ_{#x} : x^*𝒫̂_𝒜 → x^*φ^*𝒫̂_ℬ ≅
-e^*𝒫̂_ℬ ≅ 𝒪_{ℬ̂^∨}; if φ^∨ is étale, 𝒫̂_𝒜|_{ker φ} ≅ π^*_{ker φ}𝒪_{ℬ̂^∨} and there is a
-canonical ϱ_x : x^*𝒫̂_𝒜 ≅ 𝒪_{𝒜̂^∨}; the same for 𝒫̂^♮ when φ^♮ is étale. Composing with the
-moment map gives _ϱmom_x : x^*𝒫̂_𝒜 → TSym^̂(ω_{𝒜^∨}) and x^*𝒫̂^♮_𝒜 → TSym^̂(ℋ), with components
+For an isogeny φ : 𝒜 → ℬ and a φ-torsion section x, φ_# induces `φ_{#x}` : x^*𝒫̂_𝒜 → x^*φ^*𝒫̂_ℬ ≅
+e^*𝒫̂_ℬ ≅ `𝒪_{ℬ̂^∨}`; if φ^∨ is étale, `𝒫̂_𝒜|_{ker φ}` ≅ `π^*_{ker φ}𝒪_{ℬ̂^∨}` and there is a
+canonical ϱ_x : x^*𝒫̂_𝒜 ≅ `𝒪_{𝒜̂^∨}`; the same for 𝒫̂^♮ when φ^♮ is étale. Composing with the
+moment map gives _ϱmom_x : x^*𝒫̂_𝒜 → `TSym^̂(ω_{𝒜^∨})` and x^*𝒫̂^♮_𝒜 → TSym^̂(ℋ), with components
 _ϱmom^b_x.
 
 **Source.** [KS][KS], Corollary 2.9 and Definition 2.10, PDF p.17.
@@ -468,7 +557,7 @@ sheaves; [P2](#p2-completed-poincaré-bundles), Moments of a formal smooth group
 
 ### Equivariant structure under relative automorphisms
 
-If a discrete group Γ acts on 𝒜/𝒮 by automorphisms, (γ_#)^{-1} : γ^*𝒫̂ ≅ 𝒫̂ and γ^*𝒫̂^♮ ≅ 𝒫̂^♮
+If a discrete group Γ acts on 𝒜/𝒮 by automorphisms, `(γ_#)^{-1}` : γ^*𝒫̂ ≅ 𝒫̂ and γ^*𝒫̂^♮ ≅ 𝒫̂^♮
 make 𝒫̂ and 𝒫̂^♮ Γ-equivariant sheaves.
 
 **Source.** [KS][KS], Corollary 2.11, PDF p.17.
@@ -478,10 +567,10 @@ sheaves; **SchemeAndStackFoundations**, SF.2.
 
 ### Poincaré comultiplication and symmetric levels
 
-There are canonical 𝒫^{(n+m)} → 𝒫^{(n)} ⊗_{𝒪_𝒜} 𝒫^{(m)} and 𝒫̂ → 𝒫̂ ⊗̂ 𝒫̂, co-commutative, whose
-associated graded is induced by the diagonal of ω_{𝒜^∨} (Proposition 2.12, reflecting the
-partial group law of the Poincaré torsor, Remark 2.13); likewise for 𝒫^♮. Hence 𝒫^{(n)} →
-TSym^n_{𝒪_𝒜}(𝒫^{(1)}) and 𝒫^{♮(n)} → TSym^n(𝒫^{♮(1)}), isomorphisms if n! is invertible on 𝒮
+There are canonical `𝒫^{(n+m)} → 𝒫^{(n)} ⊗_{𝒪_𝒜} 𝒫^{(m)}` and 𝒫̂ → 𝒫̂ ⊗̂ 𝒫̂, co-commutative, whose
+associated graded is induced by the diagonal of `ω_{𝒜^∨}` (Proposition 2.12, reflecting the
+partial group law of the Poincaré torsor, Remark 2.13); likewise for 𝒫^♮. Hence `𝒫^{(n)}` →
+`TSym^n_{𝒪_𝒜}(𝒫^{(1)})` and `𝒫^{♮(n)}` → `TSym^n(𝒫^{♮(1)})`, isomorphisms if n! is invertible on 𝒮
 (Corollary 2.14).
 
 **Source.** [KS][KS], Proposition 2.12 and Corollary 2.14, PDF pp.17–18.
@@ -532,13 +621,13 @@ compatibly with the split unit. Taking M=H and id_H gives Log¹.
 
 **Source.** [KS][KS], Theorem 2.36 proof and equation(2.7.2), PDF pp.28–29.
 
-**Needs.** [P1](#p1-universal-vector-extensions), Universal vector extension of the dual;
-[P1](#p1-universal-vector-extensions), Lie and cotangent identifications.
+**Needs.** [P1](#p1-universal-vector-extensions), Connection and cotangent notation;
+[P1](#p1-universal-vector-extensions), Connection and cotangent notation.
 
 ### The smooth d+ν connection
 
 Over C, for the Hodge/CM component conventions of §3.1, ν is the identity tensor in H⊗(ω⊕conj
-ω). On ⊕_{k≤n}TSym^k(H) the connection d+ν has the same rigidified first extension as P♮(1) and
+ω). On `⊕_{k≤n}TSym^k(H)` the connection d+ν has the same rigidified first extension as P♮(1) and
 induces the higher symmetric constructions.
 
 **Source.** [KS][KS], Definitions 3.2–3.3 and Theorem 3.5, PDF pp.30–32.
@@ -558,6 +647,18 @@ Log^(1) ≃ P♮^(1), and hence Log ≃ P̂♮. The square-zero tangent comparis
 A♮(k)) ≃ Lie(A♮) ⊗ M ≃ Hom_k(H,M) to the corresponding rigidified Ext class; at M = H it sends
 id_H to the first logarithm class.
 
+**API.** `logarithmFirst_class` is id_H, `logarithmFirst_unit` is the chosen
+splitting, and `logarithmFirst_poincare` is the rigidified horizontal comparison.
+
+**Checks.**
+
+- `logarithmFirst_zero`: For A of dimension zero, H=0 and Log^(1)=O_A with its
+  unique unit splitting; no positive-rank kernel may be inserted.
+- `logarithmFirst_identity`: For dim A>0, the extension maps to id_H≠0;
+  its rigidified connection extension is nonsplit.
+- `logarithmFirst_split_not`: The split connection O_A⊕π^*H maps to zero,
+  so for dim A>0 it fails the defining identity-class condition.
+
 **Source.** [KS][KS], Theorem 2.36, PDF pp.28–29.
 
 **Needs.** [P3](#p3-logarithm-and-smooth-realizations), Square-zero deformation and the
@@ -567,18 +668,17 @@ levels.
 ### Smooth tensor model and Dolbeault resolutions
 
 Over ℂ, with ℂ-bases (ū_1, …, ū_d, u_1, …, u_d) of ℋ ≅ conj(Lie(𝒜/ℂ)) ⊕ Lie(𝒜/ℂ) corresponding
-to ∂/∂z̄_i, ∂/∂z_i (the differential forms are the dual basis) (Definition 3.3), ν = ν^{1,0} +
-ν^{0,1} ∈ ℋ ⊗ (ω ⊕ ω̄) the identity (Definition 3.2), and the smooth pro-bundles 𝒫^{(n)},
-𝒫^{♮(n)} ⊗ 𝒞^∞ (Notation 3.4): there is a compatible system of horizontal isomorphisms
-(𝒫^{♮(n)}, ∇_{𝒞^∞}) ≅ (⊕_{k≤n} TSym^k(ℋ), d + ν) restricting to 𝒫^{(n)} ≅ ⊕_{k≤n} TSym^k(ℋ(Σ̄))
-and compatible with the moment map along e. Corollary 3.6: 𝒫^{(n),an}[0] ≅ (𝒫^{(n)} ⊗ ℰ^{0,•},
-∇″) and (𝒫^{(n),an} ⊗ Ω^p)[0] ≅ (𝒫^{(n)} ⊗ ℰ^{p,•}, ∇″) (Dolbeault resolutions).
+to ∂/∂z̄_i, ∂/∂z_i (the differential forms are the dual basis) (Definition 3.3), ν = `ν^{1,0}` +
+`ν^{0,1}` ∈ ℋ ⊗ (ω ⊕ ω̄) the identity (Definition 3.2), and the smooth pro-bundles `𝒫^{(n)}`,
+`𝒫^{♮(n)}` ⊗ 𝒞^∞ (Notation 3.4): there is a compatible system of horizontal isomorphisms
+`(𝒫^{♮(n)}, ∇_{𝒞^∞}) ≅ (⊕_{k≤n} TSym^k(ℋ), d + ν)` restricting to `𝒫^{(n)} ≅ ⊕_{k≤n} TSym^k(ℋ(Σ̄))`
+and compatible with the moment map along e. Corollary 3.6: `𝒫^{(n),an}[0] ≅ (𝒫^{(n)} ⊗ ℰ^{0,•}, ∇″)` and `(𝒫^{(n),an} ⊗ Ω^p)[0] ≅ (𝒫^{(n)} ⊗ ℰ^{p,•}, ∇″)` (Dolbeault resolutions).
 
 **Source.** [KS][KS], Definition 3.3, Theorem 3.5 and Corollary 3.6, PDF pp.31–33.
 
 **Needs.** [P3](#p3-logarithm-and-smooth-realizations), The smooth d+ν connection;
 [P3](#p3-logarithm-and-smooth-realizations), Comparison with the logarithm sheaf;
-**ComplexComparisonPartII**, C0.
+**ComplexComparisonPartII**, C1.1 `localDolbeault`.
 
 ### Construction requirements
 
@@ -588,7 +688,7 @@ abstract vector spaces alone. Propagate the first-level comparison through facto
 symmetric powers and their transition maps. In the complex model the chosen H-basis consists of
 tangent vectors; forms belong to the dual basis. Compute both Hodge components of the identity
 tensor ν and show that ∇″ preserves the ordinary Poincaré subbundle. The bundle-valued ∂̄
-Poincaré lemma and analytification comparison from C0 then give the Dolbeault
+Poincaré lemma from C1.1 and analytic-bundle carriers from C0 then give the Dolbeault
 quasi-isomorphisms. Kings–Sprang, Theorem 2.36 and equations (2.7.1)–(2.7.2), pp.28–29, and
 Theorem 3.5/Corollary 3.6, pp.31–33, fix these comparison requirements.
 
@@ -604,8 +704,8 @@ and translation diagrams retain that distinction.
 Start with the noetherian CM model (A/R,Σ,ω(A),ω(A∨),x) of Notation 5.1: Frac(R) is a number
 field containing L^Gal, p is prime and not a unit in R, d_L is a unit, Σ_p and conjugate Σ_p are
 disjoint, and x is killed by an ideal prime to p. Fix the indicated map R→O_Cp, base change and
-complete. The ordinary connected p-divisible subgroup is the formal part used by the
-infinitesimal trivialization; no noetherian assertion about O_Cp is used.
+complete. The connected ordinary kernels are compared with unit thickenings modulo p^r
+before a p-adic inverse limit; no noetherian assertion about O_Cp is used.
 
 **Source.** [KS][KS], Notation 5.1 and Proposition 5.9, PDF pp.55–56,59–60.
 
@@ -614,30 +714,53 @@ infinitesimal trivialization; no noetherian assertion about O_Cp is used.
 
 ### Ordinary infinitesimal trivialization and projected connection
 
-In the ordinary CM setting over O_Cp, let C_n = A[𝔭_Σ^n]. Its formal filtered union is Â, while
-coordinate rings have the inverse-limit direction. Dual étaleness of [𝔭_Σ^n] permits the
-diagonal torsion splitting over A × C_n. Passing compatibly to the limit trivializes P̂ on Â
-with coefficient ring O_((A×A∨)^∧). The first levels become O_Â ⊗ (O_Cp ⊕ ω_A∨) and O_Â ⊗
+In the ordinary CM setting over O_Cp, let C_n=A[𝔭_Σ^n] and r≥1.
+Prove `ordinaryTorsionThickeningCofinal`: over O_Cp/p^r the C_n and the
+unit-ideal thickenings of A are cofinal as formal functors on nilpotent
+unit neighbourhoods. For each finite C_n, its unit ideal is nilpotent after
+reduction modulo p^r; conversely every fixed unit thickening is killed by
+some connected CM power over that base. Dual étaleness of [𝔭_Σ^n] permits
+the diagonal torsion splitting over A×C_n. Prove
+`ordinaryTrivialization_modPow` for the resulting compatible splittings modulo
+p^r and `ordinaryTrivialization_padicLimit` for their inverse limit in r,
+including its comparison with the p-adically completed unit-completed
+coefficient sheaf. Thus P̂ on the p-adic formal unit neighbourhood has the
+coefficient ring O_((A×A∨)^∧) with this double completion understood. The first levels become O_Â ⊗ (O_Cp ⊕ ω_A∨) and O_Â ⊗
 (O_Cp ⊕ H). Moments give integral injections into the corresponding completed invariant-tensor
 coefficient modules. On the Cp generic fibre these are isomorphisms; on that fibre construct the
 Hodge retraction r of i : P̂ → P̂♮ and show that r ∇ i becomes the ordinary differential on the
 formal coefficient ring. The [p]_# calculation eliminates the unwanted Hodge component; the
 symbol for the retraction is distinct from the prime p.
 
-**Source.** [KS][KS], Proposition 5.9, equations(5.2.1)–(5.2.4), Lemma 5.11, PDF pp.59–61.
+**Checks.**
+
+- `ordinaryTorsion_dualNumbers`: In the multiplicative formal group over
+  O_Cp[ε]/(ε²), 1+ε belongs to the unit completion but
+  `[p^n](1+ε)=1+p^nε≠1` for every n. The torsion union over O_Cp is smaller.
+- Modulo p^r the same point is killed by p^r. In d multiplicative formal
+  coordinates a unit thickening with nilpotent ideal J is killed by a
+  sufficiently large p-power: coefficients of low-degree terms vanish
+  modulo p^r and high-degree terms vanish by nilpotence of J.
+- For a fixed C_n, modulo p its coordinate augmentation ideal is nilpotent;
+  lifting through the nilpotent ideal (p)/(p^r) makes it nilpotent modulo
+  p^r. This is the reverse cofinality and applies at p=2 as well.
+
+**Source.** [KS][KS], Proposition 5.9, equations(5.2.1)–(5.2.4), Lemma 5.11,
+PDF pp.59–61 (KS line 2783); the modulo-p^r cofinality specifies the
+formal-topology interpretation needed for the compatible p-adic limit.
 
 **Needs.** [P4](#p4-ordinary-cm-formal-trivializations), Ordinary CM completion and completed
 base change; [P2](#p2-completed-poincaré-bundles), Canonical torsion splittings and moments;
-[P1](#p1-universal-vector-extensions), Lie and cotangent identifications;
+[P1](#p1-universal-vector-extensions), Connection and cotangent notation;
 [P2](#p2-completed-poincaré-bundles), Poincaré comultiplication and symmetric levels.
 
 ### Torsion translations of the ordinary trivialization
 
-For y ∈ 𝒜(𝒪_{ℂ_p}) in the kernel of an isogeny φ with étale dual, T_y^*𝒫̂ ≅ 𝒫̂ (always on the
-generic fibre; Lemma 5.12), and ϱ̂_y : T_y^*𝒫̂|_{𝒜̂} ≅ 𝒫̂|_{𝒜̂} ≅ 𝒪_{(𝒜×𝒜^∨)^∧} (Definition
-5.13). Lemma 5.14: (1) mom_{Â^∨} ∘ e^*ϱ̂_y = mom_{Â^∨} ∘ ϱ_y = ϱmom_y; (2) ϱ̂_y ∘ p ∘ ∇ ∘ i =
-d_Â ∘ ϱ̂_y; (3) for s ∈ 𝒜̂[p^n](𝒪_{ℂ_p}) = 𝒜[𝔭_Σ^n](𝒪_{ℂ_p}), translation by s intertwines ϱ̂_y
-and ϱ̂_{y+s} with (T_s × id)^* (integrally). Integral translation assumes y killed by an isogeny
+For y ∈ `𝒜(𝒪_{ℂ_p})` in the kernel of an isogeny φ with étale dual, T_y^*𝒫̂ ≅ 𝒫̂ (always on the
+generic fibre; Lemma 5.12), and ϱ̂_y : `T_y^*𝒫̂|_{𝒜̂}` ≅ `𝒫̂|_{𝒜̂}` ≅ `𝒪_{(𝒜×𝒜^∨)^∧}` (Definition
+5.13). Lemma 5.14: (1) `mom_{Â^∨}` ∘ e^*ϱ̂_y = `mom_{Â^∨}` ∘ ϱ_y = ϱmom_y; (2) ϱ̂_y ∘ p ∘ ∇ ∘ i =
+d_Â ∘ ϱ̂_y; (3) for s ∈ `𝒜̂[p^n](𝒪_{ℂ_p})` = `𝒜[𝔭_Σ^n](𝒪_{ℂ_p})`, translation by s intertwines ϱ̂_y
+and `ϱ̂_{y+s}` with (T_s × id)^* (integrally). Integral translation assumes y killed by an isogeny
 with étale dual; the generic-fibre extension here is for torsion y, not for every point.
 
 **Source.** [KS][KS], Lemmas 5.12/5.14 and Definition 5.13, PDF pp.62–63.
@@ -648,8 +771,9 @@ moments.
 
 ### Construction requirements
 
-Identify the formal functor with the filtered union of the connected CM kernels C_n, and
-identify its coordinate ring with the corresponding inverse limit. Prove the completed
+Prove the cofinality modulo each p^r, take inverse limits of coordinate rings
+there, and then the compatible inverse limit in r. The torsion union over
+O_Cp itself is not identified with the unit-completion functor. Prove the completed
 base-change comparison from the chosen noetherian model to O_Cp; ordinary tensoring need not
 commute with the limit. Apply the splitting principle to the diagonal section over each C_n and
 pass to the compatible limit. On the generic fibre use factorial invertibility, the ordinary
@@ -695,8 +819,8 @@ annihilates the base directions although d(b_U,π) is invertible.
 
 **Source.** [DGH][DGH], Proposition 2.1 and PropositionB.2 proof, PDF pp.8–9,41–42.
 
-**Needs.** **AbelianSchemesAndArithmeticModuli**, A5; `AddCircle`; **PELModuli**, M5;
-**PELModuli**, M6; **ComplexComparisonPartII**, C0.
+**Needs.** **AbelianSchemesAndArithmeticModuli**, A5; `AddCircle`; **PELModuli**, M3.5–M3.6 and M5;
+**ComplexComparisonPartII**, C0.
 
 ### Birational invariance of generic Betti rank
 
@@ -710,7 +834,7 @@ the corresponding dominating subvarieties.
 ### Construction requirements
 
 Build the relative period chart on the imported complex abelian-family carrier, using A5, C0 and
-the moduli uniformizations M5–M6. Prove that the combined map (b_U,π) is invertible while b_U
+the moduli uniformizations M3.5–M3.6. Prove that the combined map (b_U,π) is invertible while b_U
 alone forgets the base coordinate. Check the polarization matrix in the lattice and torus
 coordinates. Birational rank invariance is proved on the common dense open where the maps agree;
 no rank statement is propagated across exceptional loci.
@@ -749,7 +873,7 @@ translation-invariant positive (1,1) form representing the principal polarizatio
 coordinates the two coordinate real two-tori have ω-periods 2 and 4; replacing D by the identity
 fails.
 
-**Source.** [DGH][DGH], Lemmas 2.3–2.6, PDF pp.9–11.
+**Source.** [DGH][DGH], Lemmas 2.3, 2.4 and 2.6, Corollary 2.5, PDF pp.9–11.
 
 **Needs.** [B0](#b0-period-coordinates-and-betti-maps), Period-coordinate trivializations.
 
@@ -829,7 +953,7 @@ Use Y = Im Z > 0 in the Hessian calculation. Its null directions satisfy dw − 
 tangent space of X to obtain the real rank equality and wedge criterion. Use real analyticity
 and the identity theorem on the regular locus to pass from one nonzero top wedge to generic
 maximal rank. Keep the regular-base restriction when selecting a full-rank smooth point. DGH,
-Lemmas 2.3–2.6 and Proposition 2.7, pp.9–12, provide the local computations and generic-rank
+Lemmas 2.3, 2.4 and 2.6, Corollary 2.5 and Proposition 2.7, pp.9–12, provide the local computations and generic-rank
 argument.
 
 ## B2: Curve monodromy and constant traces
@@ -894,19 +1018,39 @@ is zero even though its complex fibres are nonzero elliptic curves.
 
 **Source.** [GH][GH], Trace conventions; Lemma 5.6 and §5.4, PDF pp.2,25,28–29.
 
-**Needs.** **AbelianSchemesAndArithmeticModuli**, A6/poincare-complete-reducibility.
+**Needs.** **AbelianSchemesAndArithmeticModuli**, A6.5 `poincareReducibility`.
 
 ### Integer characters and countably many closed torus subgroups
 
-Every closed subgroup H of (R/Z)^n is the intersection of kernels of integer characters in its
+Define `BettiTorus n = Fin n → AddCircle (1 : ℝ)` and
+`torusCharacter m x = ∑ i, m_i • x_i`; define `torusAnnihilator H` as
+the subgroup of weights vanishing on every x∈H.
+Prove `closedTorusSubgroup_characters` and `countableClosedTorusSubgroups`:
+every closed subgroup H of (R/Z)^n is the intersection of kernels of integer characters in its
 annihilator L⊂Z^n. Since subgroups of Z^n are finitely generated, there are countably many such
 H. L need not be saturated: H may be disconnected.
+
+The character API is evaluation, addition in either variable and continuity;
+the annihilator API is membership, reversal of inclusions and the character
+kernel intersection. These use the native subgroup operations.
+
+**Checks.**
+
+- The weights (1,−1) on (a,b) give a−b, fixing the character convention;
+  the zero weight pairs to zero even for n=0. Both are proved examples.
+- The trivial subgroup has annihilator ℤⁿ; `torusAnnihilator_top` says the
+  whole torus has annihilator {0}. Reversing these gives the wrong duality.
+- `torusAnnihilator_orderTwo`: the subgroup generated by 1/2 in the circle
+  has annihilator 2ℤ. It is nonsaturated, so a connected-only construction
+  fails this boundary theorem.
 
 **Source.** [GH][GH], Lemma 5.2/Proposition 5.3 proofs, PDF pp.20–22.
 
 **Needs.** `AddCircle`.
 
 ### Free matrix word growth at bounded height
+
+Prove `freeMatrixWordGrowth` in the following generality.
 
 Let Γ⊂GL_n(Z) be freely generated by two matrices. Fix c>1 bounding the submultiplicative norms
 of both generators and both inverses. There are at least 2^k distinct Γ matrices of norm at most
@@ -920,15 +1064,20 @@ argument.
 
 ### Tits: free subgroups of linear groups
 
+Prove `titsFreeSubgroup` in the following generality.
+
 A subgroup of GL_n over a field of characteristic 0 that is not virtually solvable contains a
 free subgroup on two generators; in particular a Zariski-dense subgroup of a non-trivial
-connected semisimple group does ([Tit72, Thm. 3]).
+connected semisimple group does.
 
-**Source.** [GH][GH], Lemma 5.5 citing Tits Theorem 3, PDF p.25.
+**Source.** [Tits][Tits], Theorem 3 (uncertified, cited by locator);
+[GH][GH], Lemma 5.5, PDF p.25, for the monodromy application.
 
 **Needs.** `Matrix.GeneralLinearGroup`; `Subgroup.FiniteIndex`; `Group.IsSolvable`; `FreeGroup`.
 
 ### Invariance of domain in equal real dimension
+
+Prove `invarianceOfDomain` in the following generality.
 
 A continuous injective map f:U→ℝ^m from an open subset U⊆ℝ^m is open and is a homeomorphism onto
 its image. Consequently the same local assertion holds between real m-manifolds.
@@ -938,6 +1087,8 @@ its image. Consequently the same local assertion holds between real m-manifolds.
 **Needs.** `Topology.IsOpenEmbedding`.
 
 ### Real constant-rank theorem for Betti fibres
+
+Prove `constantRankLocal` in the following generality.
 
 For a C^k map f:M^m→N^n of finite-dimensional real manifolds, 1≤k≤∞, with differential of
 constant rank r on an open neighbourhood, local C^k coordinates put f in projection form. Each
@@ -950,12 +1101,14 @@ real-analytic Betti map on its smooth maximal-rank locus, where m=2 dim X.
 
 ### Good-cover refinement on a Riemann surface
 
+Prove `riemannGoodCover` in the following generality.
+
 Every open cover of a second-countable Hausdorff Riemann surface has a locally finite refinement
 by relatively compact coordinate neighbourhoods such that every nonempty finite intersection is
 contractible. In the connected noncompact intersections used here these are topological open
 discs.
 
-**Source.** [GH][GH], §5.2, PDF p.22, citing Weil §1.
+**Source.** [GH][GH], §5.2, PDF p.22, for the good-cover refinement used in the proof.
 
 **Needs.** `ChartedSpace`; `LocallyFinite`; `ContractibleSpace`.
 
@@ -971,7 +1124,7 @@ unrestricted Hom of a single Hodge fibre is insufficient.
 **Source.** [GH][GH], Lemma 5.6 proof, PDF p.25.
 
 **Needs.** [B2](#b2-curve-monodromy-and-constant-traces), Function-field trace and constant
-part; **HodgeStructuresPartII**, H.2; **AbelianSchemesAndArithmeticModuli**, A5.
+part; **ShimuraVarieties**, §3.5b.1 extension `gap:fixed-part-theorem`; **AbelianSchemesAndArithmeticModuli**, A5.
 
 ### Generically special subvarieties
 
@@ -1008,6 +1161,9 @@ part.
 
 ### Invariant definable sets of Ax-type
 
+Use `axType_arc` for the defining arc implication, `axType_translate` for
+translation invariance and `axType_subtorus` for torus cosets.
+
 Let X ⊆ T^n be closed, definable and of Ax-type, and Γ ⊆ GL_n(ℤ) free on two generators with
 γ(X) = X for all γ ∈ Γ. Then either X lies in a finite union of proper closed subgroups of T^n,
 or there are a non-empty open U ⊆ X and a closed connected infinite subgroup G with U + G ⊆ X.
@@ -1015,11 +1171,23 @@ Here definable means that the lift X̃=exp⁻¹(X)∩[0,1]^n is definable in the
 structure. Ax-type means that every continuous semialgebraic y:[0,1]→X̃, real analytic on (0,1),
 has exp(y([0,1])) contained in exp(y(0))+G⊆X for some closed subgroup G.
 
+**Checks.**
+
+- A singleton has Ax-type: every arc in its lift is constant and G={0} works.
+- A translate a+H of a closed connected real subtorus has Ax-type: every
+  lifted arc maps into a+H and the same H supplies the required coset.
+- The image of t↦(t,t²), 0≤t≤1/4, in (ℝ/ℤ)² is closed and definable but
+  fails Ax-type. Its displayed lift is semialgebraic and analytic and is
+  nonconstant. A positive-dimensional subgroup coset would give a line
+  segment locally; a line with t² linear on an interval has second
+  derivative both 2 and 0. A zero-dimensional compact subgroup is finite
+  and cannot contain this arc, so no permitted G exists.
+
 **Source.** [GH][GH], Ax-type definition and Lemma 5.2, PDF pp.18–20.
 
 **Needs.** [B2](#b2-curve-monodromy-and-constant-traces), Free matrix word growth at bounded
 height; [B2](#b2-curve-monodromy-and-constant-traces), Integer characters and countably many
-closed torus subgroups; **LogicAndDefinabilityInNumberTheory**, LD.6.
+closed torus subgroups; **ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
 
 ### Transport along nonisolated Betti fibres
 
@@ -1045,7 +1213,7 @@ subgroup of Γ_s contains a free subgroup on two generators.
 **Source.** [GH][GH], Lemma 5.5, PDF p.25.
 
 **Needs.** [B2](#b2-curve-monodromy-and-constant-traces), Tits: free subgroups of linear groups;
-**HodgeStructuresPartII**, H.2.
+**ShimuraVarieties**, §3.5b.1 extension `gap:fixed-part-theorem`.
 
 ### Integer-character description of closed subgroups of a real torus
 
@@ -1061,9 +1229,9 @@ closed torus subgroups.
 
 ### Monodromy-invariant subvarieties of a fibre
 
-Let A be a complex abelian variety and Γ ⊆ GL_{2g}(ℤ) act continuously on A^an via a Betti
+Let A be a complex abelian variety and Γ ⊆ `GL_{2g}(ℤ)` act continuously on A^an via a Betti
 isomorphism, of monodromy type (every abelian subvariety is Γ-stable), containing a free
-subgroup of rank 2 and with no non-zero invariant vector in ℤ^{2g}. If Z ⊆ A is irreducible
+subgroup of rank 2 and with no non-zero invariant vector in `ℤ^{2g}`. If Z ⊆ A is irreducible
 closed with Γ(Z(ℂ)) = Z(ℂ), then Z lies in a proper torsion coset, or Z + B = Z for some abelian
 subvariety B of positive dimension.
 
@@ -1122,7 +1290,7 @@ subvariety Y dominating S which is curve-degenerate is GH generically special.
 
 Let F⊂C be algebraically closed, S/F a smooth irreducible curve, A→S an abelian scheme, and X⊂A
 an irreducible closed subvariety dominating S. If X is not GH generically special and Δ⊂S^an is
-any nonempty Betti neighborhood, there exists P∈X^sm(F) with π(P)∈Δ and P∈(X_{π(P)})^sm(F) such
+any nonempty Betti neighborhood, there exists P∈X^sm(F) with π(P)∈Δ and `P∈(X_{π(P)})^sm(F)` such
 that rank_R d(b|X)_P=2 dim_C X.
 
 **Source.** [GH][GH], §6 hypotheses and Lemma 6.2, PDF pp.30–31.
@@ -1147,18 +1315,18 @@ is not a substitute for either assertion.
 
 For the definable argument, prove integer-character separation for closed torus subgroups
 including disconnected ones. Bound free words as matrices; exclude the proper collision kernels
-before counting distinct orbit points. Apply the semirational/block theorem of LD.6 and then
+before counting distinct orbit points. Apply the semirational/block supplier contract `gap:kuga-definable-inputs` and then
 Baire with the countable subgroup family. For monodromy transport construct the Riemann-surface
 good-cover refinement, glue Betti transitions along loops and prove analytic continuation of a
 nonisolated leaf inside the closed Y. Tits's free-subgroup theorem and connected-monodromy
 semisimplicity give free subgroups at every finite index; the fixed-part and equivariant Hom
-theorem H.2 gives the constant trace. The equal-dimensional invariance-of-domain and
+supplier contract `gap:fixed-part-theorem` gives the constant trace. The equal-dimensional invariance-of-domain and
 constant-rank assertions below are prerequisites of the dimension argument, with constant
 maximal rank chosen on a neighbourhood before computing a fibre dimension.
 
 ## B3: Degeneracy loci and quotient criteria
 
-Use the mixed Kuga interfaces of LD.6 in four forms: growth, stabilizer, normal quotient and
+Use the mixed Kuga interfaces of `gap:kuga-definable-inputs` in four forms: growth, stabilizer, normal quotient and
 finite weakly optimal data. Then construct special-generically closures and degeneracy loci in
 the abelian family. The quotient criterion concerns generic Betti rank; it does not identify
 every critical point with a degeneracy locus.
@@ -1173,19 +1341,19 @@ connected semialgebraic block in Θ contains at least T_i^ε points of Γ of hei
 
 **Source.** [Gao–Ax][Gao–Ax], Theorem 4.1 setting and Theorem 5.2, PDF pp.14–19.
 
-**Needs.** **LogicAndDefinabilityInNumberTheory**, LD.6.
+**Needs.** **ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
 
 ### Bigness of the rational stabilizer
 
 Let M=Γ\X⁺ be a connected Kuga mixed Shimura variety with uniformization u, Δ=graph(u), and Z an
 irreducible analytic component of B∩Δ where B=Z^Zar. Replace the ambient datum (P,X⁺) by the
-smallest Kuga subdatum containing pr_X⁺Z. Put H=(Γ∩Stab_{P(R)⁺}(B))^{Zar,0}, with rational
+smallest Kuga subdatum containing pr_X⁺Z. Put `H=(Γ∩Stab_{P(R)⁺}(B))^{Zar,0}`, with rational
 Zariski closure. Either dim B−dim Z≥dim(pr_X⁺Z)^biZar, or dim H>0.
 
 **Source.** [Gao–Ax][Gao–Ax], Equation(5.1), Proposition 5.1 and proof, PDF pp.16,19–20.
 
 **Needs.** [B3](#b3-degeneracy-loci-and-quotient-criteria), Horizontal and vertical growth in
-mixed Ax–Schanuel; **LogicAndDefinabilityInNumberTheory**, LD.6.
+mixed Ax–Schanuel; **ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
 
 ### Normality and quotient induction
 
@@ -1201,7 +1369,7 @@ asserted for every original pair without this reduction.
 **Source.** [Gao–Ax][Gao–Ax], Proposition 6.1, §§6–7, PDF pp.20–27.
 
 **Needs.** [B3](#b3-degeneracy-loci-and-quotient-criteria), Bigness of the rational stabilizer;
-**LogicAndDefinabilityInNumberTheory**, LD.6.
+**ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
 
 ### Finite weakly optimal quotient data
 
@@ -1215,7 +1383,7 @@ from a finite set.
 **Source.** [Gao–Ax][Gao–Ax], Definition 8.1, Theorem 8.2 and §§8.1–8.3, PDF pp.27–32.
 
 **Needs.** [B3](#b3-degeneracy-loci-and-quotient-criteria), Normality and quotient induction;
-**LogicAndDefinabilityInNumberTheory**, LD.6.
+**ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
 
 ### Gao t-degeneracy loci
 
@@ -1278,12 +1446,12 @@ pp.2,15–24.
 
 **Needs.** [B3](#b3-degeneracy-loci-and-quotient-criteria), Zariski closedness of degeneracy
 loci; [B3](#b3-degeneracy-loci-and-quotient-criteria), Finite weakly optimal quotient data;
-**HodgeStructuresPartII**, H.2.
+**ShimuraVarieties**, §3.5b.1 extension `gap:fixed-part-theorem`.
 
 ### Construction requirements
 
 The mixed Ax–Schanuel uses require hyperbolic-volume growth, the Pila–Wilkie connected-block
-theorem, o-minimal Chow and mixed bi-algebraic monodromy from LD.6. Normality requires the very
+theorem, o-minimal Chow and mixed bi-algebraic monodromy from `gap:kuga-definable-inputs`. Normality requires the very
 general Hilbert-family replacement, the G-stability of the vector part and the trivial reductive
 action on its quotient. Normality in an intermediate subgroup alone is not enough. Normalize the
 rational conjugating parameters in the finite-data argument, retaining moving orbit points (Gao,
@@ -1298,13 +1466,14 @@ Quotient-jump loci also retain the positive-dimensional-subvariety condition whe
 numerical threshold is negative. If a field-of-definition statement is used, prove invariance
 under Aut(ℂ/ℚbar) and effective descent of the resulting closed subset separately. The
 abelian-subscheme/monodromy-submodule and quotient-modular-map dictionary is supplied by the
-polarized fixed-part theory H.2 and the Kuga interface, with finite covers explicit.
+polarized fixed-part contract `gap:fixed-part-theorem` and the Kuga interface, with finite covers explicit.
 
 ## B4: Fibre powers and differences
 
 Fibre powers and difference images are taken componentwise when necessary. First prove the
 product lemma by tangent kernels. The main induction uses the quotient criterion with the full
-generic-finiteness, generating-fibre and finite-stabilizer hypotheses. The universal curve is
+generating-fibre and non-isotrivial-stabilizer hypotheses; generic finiteness
+and finite stabilizers specify the full-rank corollaries. The universal curve is
 then a specialization through the Jacobian and Torelli maps.
 
 ### Non-degeneracy of a dominant fibre product
@@ -1320,35 +1489,59 @@ assertion to each dominating component after the requisite finite cover.
 
 ### The fibre-power dimension induction
 
-Let A→S be an abelian scheme over an irreducible complex quasi-projective variety, and X⊂A
-closed irreducible and dominant, with geometrically irreducible generic fibre, positive relative
-dimension, generating fibres and finite geometric generic stabilizer. For m≥1: (i) if m≥dim S
-and the modular map on X^[m] is generically finite, X^[m] has full total-dimension Betti rank;
-(ii) if m≥dim X and the modular map on D_m(X^[m+1]) is generically finite, that difference image
-has full total-dimension Betti rank. The exact dimension induction for both statements is the
-target.
+Let A→S be an abelian scheme over an irreducible complex quasi-projective
+variety and X⊂A closed irreducible and dominant, of positive relative
+dimension, with every fibre generating A_s. Require X+A′⊄X for each
+non-isotrivial abelian subscheme A′⊂A; a positive-dimensional isotrivial
+stabilizer is allowed. Write ι for the modular map and D_m for fibrewise
+differences. Prove `fibrePowerBettiRank`: for every integer t≥0 and m≥1,
+`rank_R(db^[m]|X^[m])≥2(dim ι^[m](X^[m])−t)` if m≥dim S−t.
+Prove `differencePowerBettiRank`:
+`rank_R(db^[m]|D_m^A(X^[m+1]))≥2(dim D_m(ι^[m+1](X^[m+1]))−t)`
+if m≥dim X−t. The differences commute with the modular maps.
+Apply componentwise after a finite cover when geometric irreducibility is
+needed. The finite-stabilizer, generically-finite modular-image, t=0 cases
+give the full total-dimension rank corollaries for both powers and differences.
+
+**Checks.**
+
+- For X=A=B×S with B a constant positive-dimensional abelian variety, the
+  stabilizer is B. The modular image of X^[m] has dimension m dim B and
+  Betti rank 2m dim B. The theorem applies, while total dimension also
+  includes dim S; generic finiteness is needed for the latter corollary.
+- If t≥dim S, the power bound applies already at m=1; a negative lower
+  bound on rank remains an inequality and does not force non-degeneracy.
+- A multisection has relative dimension zero and fails the hypothesis;
+  its fibre powers do not gain independent positive-dimensional fibres.
 
 **Source.** [Gao–Betti][Gao–Betti], Theorem 10.1(i)–(ii), AppendixB, PDF pp.26–29,33–35.
 
 **Needs.** [B3](#b3-degeneracy-loci-and-quotient-criteria), Gao quotient criterion for Betti
-rank; **AbelianSchemesAndArithmeticModuli**, A6/poincare-complete-reducibility.
+rank; **AbelianSchemesAndArithmeticModuli**, A6.5 `poincareReducibility`.
 
 ### Non-degeneracy of universal-curve difference images
 
-Let S be an irreducible variety over ℚ̄ with a quasi-finite morphism S → M_g, g ≥ 2, M ≥ 3g − 2
-(Gao's theorem is stated over ℂ). Then D_M(C_S^{[M+1]}) ⊆ 𝔄_g^{[M]} ×_{A_g} S is non-degenerate.
+Fix g≥2 and full symplectic level ℓ≥3 over ℚ(ζ_ℓ). For an irreducible
+ℚ̄-variety S with a quasi-finite morphism S→M_g[ℓ], take the pullback C_S
+of the universal curve from `gap:fine-curve-level-moduli`. For M≥3g−2,
+`D_M(C_S^[M+1])⊂𝔄_g[ℓ]^[M]×_(A_g[ℓ])S` is non-degenerate after a
+complex embedding. Prove `universalCurveDifference_levelChange`: the rank
+assertion is unchanged under finite étale level refinements and descends
+where a curve family is given without level. A coarse-moduli morphism
+alone does not specify a universal curve.
 
 **Source.** [DGH][DGH], Theorem 6.2 and proof, PDF pp.26–28.
 
 **Needs.** [B4](#b4-fibre-powers-and-differences), The fibre-power dimension induction;
-**JacobianChallengePartII**, JC7/universal-faltings-zhang.
+**JacobianChallengePartII**, §7.2 `RelativeJacobian.levelFaltingsZhang`;
+PELModuli M6 extension `gap:fine-curve-level-moduli`.
 
 ### Non-degeneracy criterion for fibre powers
 
 Let A → S be an abelian scheme over an irreducible complex quasi-projective base and X ⊆ A an
 irreducible subvariety dominating S with (a) relative dimension ≥ 1, (b) X_s generating A_s for
-all s, (c) X_η of finite stabilizer. If m ≥ 1, m ≥ dim S and ι^{[m]}|_{X^{[m]}} (the moduli map
-to 𝔄_g^{[m]}) is generically finite, then X^{[m]} ⊆ A^{[m]} is non-degenerate. Work with a
+all s, (c) X_η of finite stabilizer. If m ≥ 1, m ≥ dim S and `ι^{[m]}|_{X^{[m]}}` (the moduli map
+to `𝔄_g^{[m]}`) is generically finite, then `X^{[m]}` ⊆ `A^{[m]}` is non-degenerate. Work with a
 geometrically irreducible generic fibre, or select a dominating component after the quasi-finite
 étale cover in survey footnote 6; the whole reducible fibre product is not called irreducible.
 
@@ -1358,15 +1551,15 @@ geometrically irreducible generic fibre, or select a dominating component after 
 
 ### Non-degeneracy is preserved by the difference construction
 
-If X^{[m]}_{S′} is non-degenerate, then so is D(X^{[m(M+2)]}_{S′}) = X^{[m]}_{S′} ×_{S′}
-D₀((X^{[m]}_{S′})^{[M+1]}) ⊆ A^{[m(M+1)]}_{S′}. For arbitrary abelian families the group-valued
+If `X^{[m]}_{S′}` is non-degenerate, then so is `D(X^{[m(M+2)]}_{S′})` = `X^{[m]}_{S′}` `×_{S′}`
+`D₀((X^{[m]}_{S′})^{[M+1]})` ⊆ `A^{[m(M+1)]}_{S′}`. For arbitrary abelian families the group-valued
 difference is the native group-law specialization; the curve case uses the imported Jacobian
 map. Choose the dominating irreducible components when needed.
 
 **Source.** [Gao–Survey][Gao–Survey], Lemma 6.2 and §8.3 Step 1, PDF pp.15,22.
 
 **Needs.** [B4](#b4-fibre-powers-and-differences), Non-degeneracy of a dominant fibre product;
-**JacobianChallengePartII**, JC2/curve-difference.
+**JacobianChallengePartII**, §2.6 `RelativeJacobian.CurveDifference`.
 
 ### Construction requirements
 
@@ -1387,11 +1580,23 @@ interface and the Weil absolute-value theorem.
 
 ### Compact preimages and exact lattice limits
 
-Let L be a finite free Z_ℓ-lattice and u_j∈End_Zℓ(L) converge to u, with the compact images
+Prove `compactLatticeImageLimit`. For a prime ℓ, let L be a finite free
+Z_ℓ-lattice and u_j∈End_Zℓ(L) converge to u, with the compact images
 L_j=u_j(L) forming a decreasing sequence. Then u(L)=⋂_j L_j. In Tate Proposition 1, after
 passing to infinitely many isomorphic fixed-polarization models, L=X_n, L_j=X_j=(T∩W)+ℓ^jT along
 a cofinal subsequence, and u belongs to the closed finite-dimensional algebra E_ℓ. Finiteness of
 the models is a separate hypothesis, established over finite fields using polarized moduli.
+
+**Checks.**
+
+- Rank zero gives the singleton lattice and singleton intersection.
+- A constant matrix sequence gives its fixed image, including the zero matrix.
+- For `u_n=ℓ^n·id`, the limit is zero and `⋂n ℓ^n L={0}`; replacing
+  the intersection by a union would give all of L.
+
+These boundary cases are named `compactLatticeImageLimit_rankZero`,
+`compactLatticeImageLimit_constant` and `compactLatticeImageLimit_powers`
+in `Suggested.lean`.
 
 **Source.** [Tate][Tate], Hyp(k,A,d,ℓ) and Proposition 1 proof, printed pp.136–137 (PDF pp.3–4).
 
@@ -1410,7 +1615,6 @@ P_A=∑_(i=0)^(2g) a_i X^(2g−i), with a_0=1 and a_(2g)=q^g.
 - `frobeniusPolynomial_reciprocal`: Writing P_A=∑a_i X^(2g−i), a_(2g−i)=q^(g−i)a_i for 0≤i≤g,
 a_0=1 and a_(2g)=q^g.
 - `frobeniusPolynomial_product`: P_(A×B)=P_A P_B.
-- `frobeniusPolynomial_points`: #A(F_(q^r))=det(1−π^r) on V_ℓA.
 
 **Checks.**
 
@@ -1422,8 +1626,8 @@ polynomial of the Frobenius action on V_ℓA.
 
 **Source.** [Waterhouse][Waterhouse], Chapter 2 opening, printed pp.526–528 (PDF pp.7–9).
 
-**Needs.** **AbelianSchemesAndArithmeticModuli**, A6/characteristic-polynomial-on-tate-module;
-**DeligneWeightsAndPurity**, DWP.1 (target 1.4).
+**Needs.** **AbelianSchemesAndArithmeticModuli**, A6.11 `charpolyTate`;
+**DeligneWeightsAndPurity**, DWP.1 (targets 1.4–1.5).
 
 ### Weil q-numbers
 
@@ -1463,16 +1667,18 @@ some u∈End_k(A)⊗Q_ℓ.
 **Needs.** [F0](#f0-finite-field-frobenius-and-tate), Compact preimages and exact lattice
 limits.
 
-### Point counts are isogeny invariant
+### Point-count corollaries
 
-For A/F_q, #A(F_(q^r))=det(1−Frob_q^r|V_ℓA), so point counts are invariant under F_q-isogeny and
-multiply on products.
+Prove `pointCount_isogeny` and `pointCount_product`: for every r≥1,
+F_q-isogenous abelian varieties have the same number of F_(q^r)-points,
+and the point counts multiply on products. Apply the supplied point-count
+identity to the isomorphism of rational Tate modules and to the direct-sum
+product action, respectively.
 
-**Source.** [Tate][Tate], Theorem 1(c), printed p.139 (PDF p.6), with the determinant
-calculation from the parent characteristic-polynomial API.
+**Source.** [Tate][Tate], Theorem 1(c), printed p.139 (PDF p.6).
 
-**Needs.** [F0](#f0-finite-field-frobenius-and-tate), Frobenius polynomial and reciprocity;
-**AbelianSchemesAndArithmeticModuli**, A3.
+**Needs.** DeligneWeightsAndPurity DWP.1 target 1.5;
+AbelianSchemesAndArithmeticModuli A3 and A4.1 (Tate isogeny and product maps).
 
 ### Tate at a split Frobenius prime
 
@@ -1486,9 +1692,9 @@ k-rational Hom spaces, not unrestricted geometric Hom.
 (PDF pp.2–6).
 
 **Needs.** [F0](#f0-finite-field-frobenius-and-tate), Compact preimages and exact lattice
-limits; **AbelianSchemesAndArithmeticModuli**, A6/hom-to-tate-module-homs-is-injective;
-**AbelianSchemesAndArithmeticModuli**, A6/hom-is-free-of-finite-rank;
-**AbelianSchemesAndArithmeticModuli**, A6/endomorphism-algebra-is-semisimple;
+limits; **AbelianSchemesAndArithmeticModuli**, A6.2 `homTateInjective`;
+**AbelianSchemesAndArithmeticModuli**, A6.7 `homFreeFinite`;
+**AbelianSchemesAndArithmeticModuli**, A6.8 `endQ_isSemisimple`;
 [F0](#f0-finite-field-frobenius-and-tate), Tate’s isotropic image lemma.
 
 ### Tate full faithfulness over finite fields
@@ -1523,9 +1729,12 @@ inseparable factors.
 
 ### Monic coefficient lifting
 
-Let ι:D→O be a ring homomorphism surjective modulo (π^N). For monic R∈O[X], lift every
-coefficient below degree d=natDegree R modulo π^N and set the leading coefficient to 1; this
-gives a monic ψ∈D[X] of degree d with ψ≡R mod π^N.
+Prove `monicCoefficientLift` in the following generality.
+
+For commutative rings D,O, an ideal I⊂O and a ring homomorphism ι:D→O
+surjective modulo I, every monic R∈O[X] has a monic lift ψ∈D[X] of the
+same natural degree with ψ.map ι≡R mod I. Specialize I=(π^N) for the DVR
+applications; neither O being a DVR nor I being principal is needed here.
 
 **Source.** [Milne][Milne], §1, characteristic-polynomial uniqueness criterion, printed p.65
 (PDF p.3), scan; DVR polynomial adapter.
@@ -1533,6 +1742,8 @@ gives a monic ψ∈D[X] of degree d with ψ≡R mod π^N.
 **Needs.** `Polynomial.Monic`; `Ideal`.
 
 ### Fixed-size resultant congruence
+
+Prove `fixedResultantCongruence` in the following generality.
 
 For polynomials P,Q,Q′ with Q≡Q′ mod I, the fixed-size Sylvester resultants Res_(m,n)(P,Q) and
 Res_(m,n)(P,Q′) are congruent mod I. For the default resultant preserve the actual degrees m,n;
@@ -1545,6 +1756,8 @@ degree dropping is not silently allowed.
 
 ### Multiplicity detected by shifted factors
 
+Prove `shiftedFactorSlope` in the following generality.
+
 Let O be a DVR, R,S monic with gcd(R,S)=1 over Frac(O), d=degR>0, and P=R^e S. If monic
 ψ_n≡R+π^n mod π^(2n) and degψ_n=d, then eventually Res(P,ψ_n)≠0 and v Res(P,ψ_n)=nde+v Res(S,R).
 
@@ -1555,6 +1768,8 @@ Let O be a DVR, R,S monic with gcd(R,S)=1 over Frac(O), d=degR>0, and P=R^e S. I
 [F2](#f2-resultant-recognition), Fixed-size resultant congruence.
 
 ### Recognition from nonzero monic resultant tests
+
+Prove `resultantRecognition` in the following generality.
 
 Let O be a nonfield discrete valuation ring with uniformizer π and normalized valuation on its
 nonzero elements, and let D be a commutative ring with a unital map to O. If monic P,Q∈O[X] have
@@ -1568,6 +1783,8 @@ characteristic zero and finite residue field are unnecessary.
 **Needs.** [F2](#f2-resultant-recognition), Multiplicity detected by shifted factors.
 
 ### Integer tests for a p-adic polynomial
+
+Prove `padicResultantRecognition` in the following generality.
 
 For prime p and monic P,Q∈Z_p[X], equality of v_p Res(P,ψ) and v_p Res(Q,ψ) for all monic ψ∈Z[X]
 with both resultants nonzero implies P=Q.
@@ -1604,7 +1821,7 @@ endomorphism its determinant valuation gives the same value.
 
 **Source.** [Milne][Milne], §1, printed pp.64–66 (PDF pp.2–4), scanned page images.
 
-**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible.
+**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`.
 
 ### Saturated injection on integral p-realization Hom groups
 
@@ -1614,22 +1831,26 @@ p-saturated image. This statement does not assume rational p-Tate or equality of
 **Source.** [WM][WM], PartI Theorems 3/5 and opening proof of Theorem 6, printed pp.55–57 (PDF
 pp.3–5), scans.
 
-**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
-**AbelianSchemesAndArithmeticModuli**, A6/hom-is-free-of-finite-rank;
+**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
+**AbelianSchemesAndArithmeticModuli**, A6.7 `homFreeFinite`;
 **AbelianSchemesAndArithmeticModuli**, A3.
 
 ### Characteristic polynomial on the p-realization
 
 For an abelian variety A over a perfect field k of characteristic p>0 and every u∈End_k(A), the
-W(k)-linear map C(u) on its contravariant Dieudonné module has characteristic polynomial in
-Z_p[X] equal to the image of the imported integer characteristic polynomial of u. No
+W(k)-linear map C(u) on its contravariant Dieudonné module has characteristic
+polynomial equal to the image of the parent's integer characteristic polynomial
+of u. Its descent to Z_p is supplied by R07.2.19 `exists_padic_charpoly`,
+applied to the conjugation identity from the invertible semilinear Frobenius
+commuting with C(u). Only agreement with the integer polynomial is proved here. No
 semisimplicity of arbitrary u is assumed.
 
 **Source.** [Milne][Milne], §1, printed pp.65–66 (PDF pp.3–4), scanned page images.
 
 **Needs.** [F1](#f1-characteristic-prime-realization), Degree from Dieudonné cokernel length;
 [F2](#f2-resultant-recognition), Integer tests for a p-adic polynomial;
-**AbelianSchemesAndArithmeticModuli**, A6/characteristic-polynomial-of-an-endomorphism.
+**AbelianSchemesAndArithmeticModuli**, A6.10 `End.charpoly`;
+**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.19 `exists_padic_charpoly`.
 
 ### Algebra acting on a Frobenius polynomial block
 
@@ -1659,21 +1880,23 @@ field.
 
 **Source.** [WM][WM], PartII proofs, printed pp.60–61 (PDF pp.8–9), scans.
 
-**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
+**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
 [F1](#f1-characteristic-prime-realization), Characteristic polynomial on the p-realization.
 
-### Semisimplicity of the linear q-Frobenius realization
+### Frobenius adapter on the isocrystal
 
-For A/F_(p^a), C(π_A)=F^a is an L-linear semisimple endomorphism of C(A)[1/p], where π_A is the
-q-power Frobenius. Its characteristic polynomial is P_A. No semisimplicity claim for arbitrary
-endomorphisms is included.
+For A/F_(p^a), identify C(π_A)=F^a on C(A)[1/p], where
+L=W(F_(p^a))[1/p]. Apply A6.21 `frobeniusSemisimple` to its faithful
+End⁰(A)^op action, and prove `isocrystalFrobenius_charpoly` identifying
+its characteristic polynomial with P_A using the preceding comparison.
+This specializes the supplied semisimplicity theorem; it asserts no
+semisimplicity for arbitrary endomorphisms.
 
-**Source.** [Milne][Milne], §1, printed p.66 (PDF p.4), scan.
+**Source.** [Milne][Milne], §1, printed pp.65–66 (PDF pp.3–4).
 
-**Needs.** [F1](#f1-characteristic-prime-realization), Characteristic polynomial on the
-p-realization; **AbelianSchemesAndArithmeticModuli**, A6/endomorphism-algebra-is-semisimple;
-[F1](#f1-characteristic-prime-realization), Saturated injection on integral p-realization Hom
-groups.
+**Needs.** AbelianSchemesAndArithmeticModuli A6.21 `frobeniusSemisimple`;
+[F1](#f1-characteristic-prime-realization), Characteristic polynomial on the
+p-realization; Saturated injection on integral p-realization Hom groups.
 
 ### Central simplicity of a Frobenius block algebra
 
@@ -1698,8 +1921,7 @@ For V=C(A)[1/p] and R=L[F,F^(-1)], dim_Qp End_R(V)=Σ_i d_i e_i².
 block; [F1](#f1-characteristic-prime-realization), Central simplicity of a Frobenius block
 algebra; [RepresentationTheory/SemisimpleAlgebras, layer
 5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/SemisimpleAlgebras/README.md#layer-5-skolem-noether-and-the-centralizer-theorem);
-[F1](#f1-characteristic-prime-realization), Semisimplicity of the linear q-Frobenius
-realization.
+[F1](#f1-characteristic-prime-realization), Frobenius adapter on the isocrystal.
 
 ### Rational and integral p-Tate comparison
 
@@ -1709,21 +1931,20 @@ onto the F,V-compatible integral morphisms after its injectivity and p-saturatio
 **Source.** [WM][WM], PartI Theorems 5–6 and PartII Theorem 1 proof, printed pp.56–57,60–61 (PDF
 pp.4–5,8–9), scans.
 
-**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
+**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
 [F1](#f1-characteristic-prime-realization), Characteristic polynomial on the p-realization;
 [F0](#f0-finite-field-frobenius-and-tate), Tate at a split Frobenius prime;
-**AbelianSchemesAndArithmeticModuli**, A6/endomorphism-algebra-is-semisimple;
+**AbelianSchemesAndArithmeticModuli**, A6.8 `endQ_isSemisimple`;
 [F1](#f1-characteristic-prime-realization), Saturated injection on integral p-realization Hom
 groups; [F1](#f1-characteristic-prime-realization), Central simplicity of a Frobenius block
 algebra; [F1](#f1-characteristic-prime-realization), Dimension of the semilinear Frobenius
-commutant; [F1](#f1-characteristic-prime-realization), Semisimplicity of the linear q-Frobenius
-realization.
+commutant; [F1](#f1-characteristic-prime-realization), Frobenius adapter on the isocrystal.
 
 ### Integral Tate full faithfulness at the characteristic prime
 
 For abelian varieties A,B/F_q, let C(A),C(B) be the contravariant Dieudonné modules of their
 p-divisible groups over W(F_q), with their F,V actions. The natural map
-Hom_Fq(A,B)⊗Z_p→Hom_{W(F_q),F,V}(C(B),C(A)) is an isomorphism.
+`Hom_Fq(A,B)⊗Z_p→Hom_{W(F_q),F,V}(C(B),C(A))` is an isomorphism.
 
 **Source.** [WM][WM], PartI saturation and PartII Theorem 1, printed pp.56–57,60–61 (PDF
 pp.4–5,8–9), scans.
@@ -1797,8 +2018,8 @@ is excluded from the finite-support space.
 
 **Source.** [Waterhouse][Waterhouse], §1.2 and §3.1, printed pp.525,530–531 (PDF pp.6,11–12).
 
-**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
-**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1/etale-groups-as-galois-modules.
+**Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
+**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1.2 `etaleGroupEquivContAction`.
 
 ### Honda–Tate simple isogeny classification
 
@@ -1844,9 +2065,8 @@ P_A(T)∈Z[T] occurring on every V_ℓ(A), ℓ≠p.
 **Source.** [WM][WM], PartII, printed pp.60–61 (PDF pp.8–9), scans.
 
 **Needs.** [F1](#f1-characteristic-prime-realization), Characteristic polynomial on the
-p-realization; **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
-[F1](#f1-characteristic-prime-realization), Semisimplicity of the linear q-Frobenius
-realization.
+p-realization; **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
+[F1](#f1-characteristic-prime-realization), Frobenius adapter on the isocrystal.
 
 ### Marked quasi-isogenies classified by lattices
 
@@ -1858,8 +2078,8 @@ specified in the prime-to-p and p lattice spaces above.
 **Source.** [Waterhouse][Waterhouse], §1.2 and §3.1, printed pp.525,530–531 (PDF pp.6,11–12).
 
 **Needs.** [F3](#f3-hondatate-and-lattice-classifications), Prime-to-p and p lattice spaces;
-**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1/etale-groups-as-galois-modules;
-**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
+**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1.2 `etaleGroupEquivContAction`;
+**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
 **AbelianSchemesAndArithmeticModuli**, A3; [F0](#f0-finite-field-frobenius-and-tate), Tate full
 faithfulness over finite fields; [F1](#f1-characteristic-prime-realization), Integral Tate full
 faithfulness at the characteristic prime.
@@ -1875,8 +2095,8 @@ lattices f_ℓ(T_ℓB)=M_ℓ, including D^lin at p.
 (PDF pp.11–12,31–32).
 
 **Needs.** [F3](#f3-hondatate-and-lattice-classifications), Prime-to-p and p lattice spaces;
-**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1/etale-groups-as-galois-modules;
-**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2/dieudonne-p-divisible;
+**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1.2 `etaleGroupEquivContAction`;
+**FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
 [F3](#f3-hondatate-and-lattice-classifications), Prime-field p-realization Frobenius polynomial;
 [F1](#f1-characteristic-prime-realization), Integral Tate full faithfulness at the
 characteristic prime; **AbelianSchemesAndArithmeticModuli**, A3.
@@ -1894,7 +2114,7 @@ lattice tuples are realized over the prime field.
 
 ### Isomorphism classes as rational orbits
 
-The underlying F_q-isomorphism classes in the isogeny class of A₀ are End⁰(A₀)^×\(X_p×X^p).
+The underlying F_q-isomorphism classes in the isogeny class of A₀ are End⁰(A₀)^×∖(X_p×X^p).
 
 **Source.** [Waterhouse][Waterhouse], §3.1, printed pp.530–532 (PDF pp.11–13).
 
@@ -1978,10 +2198,12 @@ lattices.
 
 ### Discriminant and ordered-root bounds
 
+Prove `weilGeneratorDiscriminantBound` and `orderedRootProductBound` in the following generality.
+
 If K=Q(π), π is an integral p-Weil number of degree d, then |D_K|≤|disc
 minpoly(π)|≤(2√p)^(d(d−1)). More generally, for a monic integral polynomial of degree m all of
-whose root occurrences λ_i have modulus √p, the positive integer D_*=|∏_{i,j:λ_i≠λ_j}(λ_i−λ_j)|
-satisfies D_*≤(2√p)^{m(m−1)}. Unequal root values retain occurrence multiplicities; the ordinary
+whose root occurrences λ_i have modulus √p, the positive integer `D_*=|∏_{i,j:λ_i≠λ_j}(λ_i−λ_j)|`
+satisfies `D_*≤(2√p)^{m(m−1)}`. Unequal root values retain occurrence multiplicities; the ordinary
 discriminant may vanish.
 
 **Source.** [Lee][Lee], §2.1 and §3.1–3.2, PDF pp.3,5–6, especially equation(11).
@@ -1992,7 +2214,7 @@ discriminant may vanish.
 
 For A₀/F_p and the prime-field lattice space X, use Tate full faithfulness at all primes to
 identify G(Q_ℓ), G the Q-algebraic unit group of End⁰_Fp(A₀), with the linear Frobenius
-centralizer. If λ₁,…,λ_m are all Frobenius root occurrences, let D_*=|∏_{i,j:λ_i≠λ_j}(λ_i−λ_j)|,
+centralizer. If λ₁,…,λ_m are all Frobenius root occurrences, let `D_*=|∏_{i,j:λ_i≠λ_j}(λ_i−λ_j)|`,
 a positive integer; equal values are omitted and unequal values retain their occurrence
 multiplicities. There is a compact open K₀=∏H₀,ℓ of G(A_f) such that every M∈X has
 Stab(M)=∏S_M,ℓ contained in a conjugate K_M=a_M K₀a_M^(−1), with a_M∈G(A_f) supported at
@@ -2005,7 +2227,8 @@ finitely many places, S_M,ℓ=H_M,ℓ almost everywhere, and [K_M:Stab(M)]≤D_*
 group; [F3](#f3-hondatate-and-lattice-classifications), Prime-to-p and p lattice spaces;
 [F3](#f3-hondatate-and-lattice-classifications), Prime-field marked and unmarked classification;
 [F4](#f4-adelic-class-sets-and-local-bounds), The prime-field p-component reduction;
-**GeometryOfNumbersAndQuadraticArithmetic**, GN.2; [AdelicAlgebraicGroups,
+**GeometryOfNumbersAndQuadraticArithmetic**, §2.5 extension
+`gap:local-semisimple-lattice-bounds`; [AdelicAlgebraicGroups,
 AA.1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AdelicAlgebraicGroups/README.md#layer-1-adelic-points-of-algebraic-groups);
 [AdelicAlgebraicGroups,
 AA.4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AdelicAlgebraicGroups/README.md#layer-4-approximation-neat-levels-and-hecke-maps);
@@ -2024,17 +2247,19 @@ mixed class set. The d=1 quaternion factor remains its own class set; d=0 omits 
 **Source.** [LT][LT], §3.2.2(21), v1 p.14, maximal-compact and narrow-class conventions.
 
 **Needs.** [F4](#f4-adelic-class-sets-and-local-bounds), Adelic class set of the endomorphism
-group; **GeometryOfNumbersAndQuadraticArithmetic**, GN.2; [AdelicAlgebraicGroups,
+group; **GeometryOfNumbersAndQuadraticArithmetic**, §2.5; [AdelicAlgebraicGroups,
 AA.4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AdelicAlgebraicGroups/README.md#layer-4-approximation-neat-levels-and-hecke-maps).
 
 ### Conditional rational-orbit bound from local lattices
 
+Prove `rationalOrbitCount` in the following generality.
+
 Let a group G_f with subgroup Γ act on a lattice space X, with at most D_*² G_f-orbits. Suppose
 h=#(Γ\G_f/K₀)<∞ for a fixed compact level K₀. For every orbit representative M assume
-Stab(M)=∏S_{M,ℓ}, contained in K_M=∏H_{M,ℓ}=a_M K₀ a_M⁻¹ with a_M∈G_f, equality S_{M,ℓ}=H_{M,ℓ}
-away from finitely many primes, and ∏[H_{M,ℓ}:S_{M,ℓ}]≤D_*. Then Γ\X is finite and #Γ\X≤D_*³h.
-If the relevant Weil-lattice tuple satisfies these assumptions and D_*≤(2√p)^{m(m−1)}, the
-resulting conditional bound is #Γ\X≤(2√p)^{3m(m−1)}h.
+`Stab(M)=∏S_{M,ℓ}`, contained in `K_M=∏H_{M,ℓ}=a_M K₀ a_M⁻¹` with a_M∈G_f, equality `S_{M,ℓ}=H_{M,ℓ}`
+away from finitely many primes, and `∏[H_{M,ℓ}:S_{M,ℓ}]≤D_*`. Then Γ\X is finite and #Γ\X≤D_*³h.
+If the relevant Weil-lattice tuple satisfies these assumptions and `D_*≤(2√p)^{m(m−1)}`, the
+resulting conditional bound is `#Γ\X≤(2√p)^{3m(m−1)}h`.
 
 The abstract counting lemma needs only a group action, finitely many G_f-orbits and double
 cosets, and stabilizers contained with finite index at most D_* in conjugates of K₀. The local
@@ -2051,7 +2276,7 @@ AA.4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/
 
 For A₀/F_p of dimension g>0, put m=2g, take D_* and K₀ from the finite-support adelic stabilizer
 theorem above, and suppose h=#(G(Q)\G(A_f)/K₀) is finite. Then the number of F_p-isomorphism
-classes in the isogeny class of A₀ is at most D_*³h≤(2√p)^{3m(m−1)}h. Class-set finiteness is
+classes in the isogeny class of A₀ is at most `D_*³h≤(2√p)^{3m(m−1)}h`. Class-set finiteness is
 imported from AA.3 with its exact group hypotheses; no numerical bound on h is included.
 
 **Source.** [Lee][Lee], §3.1(5)–(10), PDF pp.4–5; coarse orbit-count adaptation.
@@ -2065,10 +2290,10 @@ AA.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/
 
 ### Construction requirements
 
-The GN.2 local suppliers must use the successive projected lattices pr_i(M ∩ V_≤i), with their
+The local contract `gap:local-semisimple-lattice-bounds` requires the successive projected lattices pr_i(M ∩ V_≤i), with their
 induced quotient profiles, rather than the generally smaller intersections M ∩ V_i. Factor the
 local characteristic polynomial as ∏ f_i^n_i with distinct monic irreducibles, put δ_i = v_ℓ
-disc(f_i), ρ_ij = v_ℓ Res(f_i,f_j), and Δ_ℓ = ∑ n_i² δ_i + 2∑_{i<j} n_i n_j ρ_ij. Bound local
+disc(f_i), ρ_ij = v_ℓ Res(f_i,f_j), and Δ_ℓ = ∑ n_i² δ_i + `2∑_{i<j}` n_i n_j ρ_ij. Bound local
 orbit counts by ℓ^(2Δ_ℓ) and stabilizer indices by ℓ^Δ_ℓ. AA.1 and AA.4 assemble only finitely
 many nontrivial local conjugators; obtain globally at most D_*² orbits and total stabilizer
 index at most D_*. At p use the prime-field linear-dual centralizer, while keeping F- and
@@ -2115,7 +2340,8 @@ primes splitting in at least one field have natural density 1−2^(−9).
 
 **Source.** [LT][LT], Lemma 5.11, v1 p.33.
 
-**Needs.** [Chebotarev, layer
+**Needs.** **ImaginaryQuadraticClassNumber**, H3.6 (maximal-order certificates);
+[Chebotarev, layer
 14](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/Chebotarev/README.md#layer-14-natural-density-and-consistency-theorems).
 
 ### Elliptic curve with class-number-one endomorphisms
@@ -2124,7 +2350,7 @@ If a prime p splits in an imaginary quadratic class-number-one field L, there ex
 End_Fp(E)=O_L, obtained from a norm-p algebraic integer and Waterhouse order realization.
 
 **Source.** [Waterhouse][Waterhouse], Chapter 2, Porism 4.3 and Theorem 6.1, printed
-pp.527–528,540,550–551.
+pp.527–528,541,550–551.
 
 **Needs.** [F0](#f0-finite-field-frobenius-and-tate), Weil q-numbers;
 [F3](#f3-hondatate-and-lattice-classifications), Honda–Tate simple isogeny classification;
@@ -2138,7 +2364,8 @@ y²+xy = x³+x²+1 (a = 1), with #E(F_2) = 2 and #E(F_4) = 8.
 
 **Source.** [LT][LT], Lemma 5.19, v1 p.36, with the odd-characteristic restriction.
 
-**Needs.** [F0](#f0-finite-field-frobenius-and-tate), Frobenius polynomial and reciprocity.
+**Needs.** [F0](#f0-finite-field-frobenius-and-tate), Frobenius polynomial and reciprocity;
+**DeligneWeightsAndPurity**, DWP.1 target 1.5 (extension-field point counts).
 
 ### Line-bundle realization over a finite field
 
@@ -2156,16 +2383,32 @@ Fix a prime p splitting in one of the imaginary quadratic fields K = Q(√−d) 
 {1,2,3,7,11,19,43,67,163}. Construct E/F_p with End_Fp(E) = O_K. If N_p(g) counts
 F_p-isomorphism classes of principal polarizations on E^g, prove log N_p(g) = (1/2)g² log g +
 O_p(g²). The count is unweighted and uses the Hermitian orbit dictionary and its mass
-comparison.
+comparison. The endpoint consumed from the unitary contract is
+`cmHermitianUnimodularClassAsymptotic`: for fixed class-number-one K,
+`log H_K(g)=½g²log g+O_K(g²)`. The polarization theorem proves its transport
+through the Rosati/Hermitian orbit dictionary.
 
-**Source.** [LT][LT], §§5.3–5.5, equations(39),(51)–(56), v1 pp.26–33.
+LT (51) and (56) print coefficient 1. The factorial product in (39) gives
+`Σ_(j=1)^g log((j−1)!)=½g²log g+O(g²)`; this is the coefficient required
+here. The ramified local factors, genus count and automorphism bound enter
+through `gap:cm-hermitian-mass-asymptotic`, not an orthogonal mass formula.
+
+**Checks.** Rank zero has one form and one polarization, with logarithm zero.
+For K=ℚ(i), the rank-one unimodular positive form is [1] and its
+unitary automorphism group has order 4, so its weighted mass is 1/4 while
+its unweighted class count is 1. Finally the factorial product for g=2 is
+0!1!=1, and for general g its logarithm is
+`Σ_(k=1)^(g−1)(g−k)log k`; summing this gives the coefficient 1/2.
+
+**Source.** [LT][LT], §§5.3–5.5, equations(39),(51)–(56), v1 pp.26–33
+(LT line 1067, LT line 1243, LT line 1418).
 
 **Needs.** [F5](#f5-polarizations-and-cm-powers), Elliptic curve with class-number-one
 endomorphisms; [F5](#f5-polarizations-and-cm-powers), Density of primes splitting in a
-class-number-one CM field; **GeometryOfNumbersAndQuadraticArithmetic**, GN.3;
-**AbelianSchemesAndArithmeticModuli**, A6/rosati-positivity;
-**AbelianSchemesAndArithmeticModuli**, A6/automorphisms-of-polarized-abelian-varieties;
-**AbelianSchemesAndArithmeticModuli**, A2/rosati-involution.
+class-number-one CM field; **GeometryOfNumbersAndQuadraticArithmetic**, §3.3 extension `gap:cm-hermitian-mass-asymptotic`;
+**AbelianSchemesAndArithmeticModuli**, A6.14 `rosatiPositivity`;
+**AbelianSchemesAndArithmeticModuli**, A6.18 `polarizedAutomorphisms`;
+**AbelianSchemesAndArithmeticModuli**, A3.9 `Polarization.rosati`.
 
 ### Squarefree nonreal polarization bound
 
@@ -2182,9 +2425,9 @@ prime-field case; [F5](#f5-polarizations-and-cm-powers), Units that are norms mo
 units (Lemmermeyer); [F4](#f4-adelic-class-sets-and-local-bounds), Discriminant and ordered-root
 bounds; [Completed/EffectiveBounds, layer
 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/EffectiveBounds/README.md#layer-1-effective-upper-bounds-the-first-migration-targets);
-**AbelianSchemesAndArithmeticModuli**, A6/rosati-positivity;
-**AbelianSchemesAndArithmeticModuli**, A6/automorphisms-of-polarized-abelian-varieties;
-**AbelianSchemesAndArithmeticModuli**, A2/rosati-involution;
+**AbelianSchemesAndArithmeticModuli**, A6.14 `rosatiPositivity`;
+**AbelianSchemesAndArithmeticModuli**, A6.18 `polarizedAutomorphisms`;
+**AbelianSchemesAndArithmeticModuli**, A3.9 `Polarization.rosati`;
 [F4](#f4-adelic-class-sets-and-local-bounds), Finite-support adelic stabilizers in a prime-field
 isogeny class.
 
@@ -2201,8 +2444,8 @@ bounds, in the CM field rather than its real subfield.
 The CM existence application must supply an element of norm p and its realizable endomorphism
 order. Treat p = 3 separately in the odd-characteristic p-group test; characteristic two has the
 indicated counterexample. For E^g prove the exact Rosati/Hermitian orbit dictionary, including
-integral positivity and unimodularity, then use GN.3's local genus factors, residue bounds and
-conversion from weighted masses to unweighted counts. The leading logarithmic coefficient is
+integral positivity and unimodularity, then use the explicit unitary contract `gap:cm-hermitian-mass-asymptotic`
+for all local factors and conversion from weighted masses to unweighted counts. The leading logarithmic coefficient is
 1/2, with an O_p(g²) error; the mass alone is not the unweighted count.
 
 ## F6: Counting isogeny and isomorphism classes
@@ -2215,6 +2458,8 @@ classes.
 
 ### Reconstruction from integer power sums
 
+Prove `powerSumReconstruction` in the following generality.
+
 For a monic degree-2g integer polynomial satisfying q-reciprocity in descending coefficient
 convention, its first g power sums determine the entire polynomial. Newton recurrence
 i·a_i=−∑_(j=1)^i a_(i−j)s_j determines a_i over Q, and reciprocity determines the remaining
@@ -2225,6 +2470,8 @@ coefficients.
 **Needs.** `MvPolynomial.mul_esymm_eq_sum`.
 
 ### Counting Weil polynomials by power sums
+
+Prove `weilPolynomialCount` in the following generality.
 
 For q≥2 and g≥1, the number of monic q-reciprocal integer polynomials (q^gP(X)=X^(2g)P(q/X)) of
 degree 2g with constant q^g and all roots of absolute value √q is at most (4g+1)^g q^(g(g+1)/4).
@@ -2313,11 +2560,16 @@ proportion retain both excluded factors: repeated F_p-simple factors and the rea
 Page numbers above refer to the linked version. Printed journal pages are identified
 explicitly when they differ from PDF page numbers. The v1 counting arguments are used
 with the separate polynomial, repeated-root, small-characteristic and mass hypotheses
-stated in F4–F6.
+stated in F4–F6. LT v1 (51) and (56) have a leading-coefficient
+misprint; F5 derives 1/2 from (39) rather than using the printed 1.
+
+- **Tits**: Jacques Tits, *Free subgroups in linear groups*. Journal of Algebra 20 (1972), 250–270, Theorem 3; uncertified, cited by locator. [Tits][Tits].
+
+- **Roby**: Norbert Roby, *Lois polynomes et lois formelles en théorie des modules*. Annales ENS (3) 80 (1963), 213–348. Chapter III §§5–6, Proposition III.1 and Proposition IV.5, printed pp.251–255,272–273. [Roby][Roby].
+- **Kings**: Guido Kings, *Eisenstein classes, elliptic Soulé elements and the ℓ-adic elliptic polylogarithm*. arXiv:1304.7161v2 (2013), §2.2, pp.9–11. [Kings][Kings].
+- **Deligne**: Pierre Deligne, *Théorie de Hodge : II*. Publications Mathématiques de l'IHÉS 40 (1971), 5–57; Corollary 4.1.2, Theorem 4.2.6 and Rappel 4.4.3, printed pp.42,45,51. [Deligne][Deligne].
 
 - **KS**: Guido Kings and Johannes Sprang, *Eisenstein–Kronecker classes, integrality of critical values of Hecke L-functions and p-adic interpolation*. Annals of Mathematics (2) 202 (2025), no. 1, 1–109. [KS][KS].
-
-- **Smith**: Alexander Smith, *Algebraic integers with conjugates in a prescribed distribution*. Annals of Mathematics 200 (2024), no. 1. [Smith][Smith].
 
 - **DGH**: Vesselin Dimitrov, Ziyang Gao and Philipp Habegger, *Uniformity in Mordell–Lang for curves*. Annals of Mathematics 194 (2021), no. 1, 237–298. [DGH][DGH].
 
@@ -2348,8 +2600,11 @@ stated in F4–F6.
 - **Milne**: James S. Milne, *Extensions of abelian varieties defined over a finite field*. Inventiones Mathematicae 5(1968), 63–84; author-hosted published scan. [Milne][Milne].
 
 - **Gao–Survey**: Ziyang Gao, *Recent developments of the Uniform Mordell–Lang Conjecture*. arXiv:2104.03431v5. [Gao–Survey][Gao–Survey].
+[Tits]: https://doi.org/10.1016/0021-8693(72)90058-0
+[Roby]: https://www.numdam.org/item/10.24033/asens.1124.pdf
+[Kings]: https://arxiv.org/pdf/1304.7161v2
+[Deligne]: https://www.numdam.org/item/PMIHES_1971__40__5_0.pdf
 [KS]: https://arxiv.org/pdf/1912.03657v4
-[Smith]: https://arxiv.org/pdf/2111.12660v2
 [DGH]: https://arxiv.org/pdf/2001.10276v3
 [GH]: https://arxiv.org/pdf/1801.05762v3
 [LT]: https://arxiv.org/pdf/1511.02212v1
@@ -2368,16 +2623,22 @@ stated in F4–F6.
 
 Library declaration locations:
 
-- [`TensorPower`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/TensorPower/Basic.lean).
-- [`PiTensorProduct.reindex`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean).
-- [`PiTensorProduct.reindex_tprod`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean).
-- [`PiTensorProduct.map_reindex`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean).
-- [`LinearMap.eqLocus`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/Module/Submodule/EqLocus.lean).
-- [`Submodule.mem_iInf`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/Module/Submodule/Lattice.lean).
-- [`DividedPowerAlgebra`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/DividedPowerAlgebra/Init.lean).
-- [`AddCircle`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Topology/Instances/AddCircle/Defs.lean).
-- [`Polynomial.resultant`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/Polynomial/Resultant/Basic.lean).
-- [`PadicInt.appr_spec`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/NumberTheory/Padics/RingHoms.lean).
-- [`TauCeti.symmetricTensors`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/LinearAlgebra/TensorProduct/Symmetric.lean).
-- [`PadicInt.valuation`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/NumberTheory/Padics/PadicIntegers.lean).
-- [`MvPolynomial.mul_esymm_eq_sum`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/MvPolynomial/Symmetric/NewtonIdentities.lean).
+- [`TensorPower`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/TensorPower/Basic.lean).
+- [`PiTensorProduct.reindex`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean).
+- [`PiTensorProduct.reindex_tprod`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean).
+- [`PiTensorProduct.map_reindex`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/PiTensorProduct/Basic.lean).
+- [`LinearMap.eqLocus`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Module/Submodule/EqLocus.lean).
+- [`Submodule.mem_iInf`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Module/Submodule/Lattice.lean).
+- [`DividedPowerAlgebra`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/DividedPowerAlgebra/Init.lean).
+- [`AddCircle`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Topology/Instances/AddCircle/Defs.lean).
+- [`Polynomial.resultant`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Polynomial/Resultant/Basic.lean).
+- [`PadicInt.appr_spec`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/RingHoms.lean).
+- [`TauCeti.symmetricTensors`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/LinearAlgebra/TensorProduct/Symmetric.lean).
+- [`PadicInt.valuation`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/PadicIntegers.lean).
+- [`MvPolynomial.mul_esymm_eq_sum`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/MvPolynomial/Symmetric/NewtonIdentities.lean).
+
+- [`TauCeti.TensorPower.oneEquiv`, `TensorPower.splitAt`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/LinearAlgebra/TensorPower/Basic.lean).
+- [`Polynomial.Monic.resultant_deriv`, `Algebra.discr_powerBasis_eq_minpoly_discr`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RingTheory/Polynomial/Resultant/Discriminant.lean).
+- [`TauCeti.AlgebraicGeometry.AbelianVariety`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean).
+- [`TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/AlgebraicGeometry/AbelianVariety/Isogeny.lean).
+- [`PadicInt.compactSpace`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/ProperSpace.lean).

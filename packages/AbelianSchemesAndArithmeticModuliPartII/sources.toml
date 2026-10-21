@@ -1,0 +1,354 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AbelianSchemesAndArithmeticModuliPartII"
+
+[[source]]
+id = "KS"
+authors = "Guido Kings, Johannes Sprang"
+title = "Eisenstein-Kronecker classes, integrality of critical values of Hecke L-functions and p-adic interpolation"
+year = 2019
+venue = "Annals of Mathematics 202 (2025), 1-109"
+arxiv = "1912.03657v4"
+locator_scheme = "theorem"
+locator = "Definition 1.6; Sections 2–3, 5"
+url = "https://arxiv.org/abs/1912.03657v4"
+fetched_from = "https://arxiv.org/pdf/1912.03657v4"
+fetched_at = "2026-10-21T11:45:09Z"
+sha256 = "fab8e605123cf9c399753b7114c4fd65000e1863e3507abdd4129c8c940fbb72"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v4"
+cited_for = ["P0–P4"]
+
+[[source]]
+id = "DGH"
+authors = "Vesselin Dimitrov, Ziyang Gao, Philipp Habegger"
+title = "Uniformity in Mordell-Lang for curves"
+year = 2020
+arxiv = "2001.10276v3"
+locator_scheme = "theorem"
+locator = "Lemmas 2.3, 2.4, 2.6; Corollary 2.5; Proposition 2.7; Theorem 6.2"
+url = "https://arxiv.org/abs/2001.10276v3"
+fetched_from = "https://arxiv.org/pdf/2001.10276v3"
+fetched_at = "2026-10-21T11:45:14Z"
+sha256 = "5fc8e86f53ee43e9d18e8239a8db986bff74115ddb947abef4902a72dde338a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v3"
+cited_for = ["B0–B4"]
+
+[[source]]
+id = "GH"
+authors = "Ziyang Gao, Philipp Habegger"
+title = "Heights in families of abelian varieties and the Geometric Bogomolov Conjecture"
+year = 2018
+arxiv = "1801.05762v3"
+locator_scheme = "theorem"
+locator = "Definition 1.2; Sections 4–5"
+url = "https://arxiv.org/abs/1801.05762v3"
+fetched_from = "https://arxiv.org/pdf/1801.05762v3"
+fetched_at = "2026-10-21T11:45:20Z"
+sha256 = "ffe408dc6ba034b2a635488600decace1e89d61ad04860c391bef9409f2fd34e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v3"
+cited_for = ["B0–B2"]
+
+[[source]]
+id = "LT"
+authors = "Michael Lipnowski, Jacob Tsimerman"
+title = "How large is A_g(F_q)?"
+year = 2015
+venue = "Duke Math. J. 167, no. 18 (2018), 3403-3453"
+doi = "10.1215/00127094-2018-0029"
+arxiv = "1511.02212v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1; Sections 3–5, equations (15)–(20), (39), (51)–(56)"
+url = "https://arxiv.org/abs/1511.02212v1"
+fetched_from = "https://arxiv.org/pdf/1511.02212v1"
+fetched_at = "2026-10-21T11:45:25Z"
+sha256 = "5ceed8168ce37b75da67699189e7e8730527c31f3339dce979a1a1901243f81a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["F2–F6"]
+
+[[source]]
+id = "Gao-Betti"
+authors = "Ziyang Gao"
+title = "Generic rank of Betti map and unlikely intersections"
+year = 2018
+venue = "Compositio Math. 156 (2020) 2469-2509"
+doi = "10.1112/S0010437X20007435"
+arxiv = "1810.12929v6"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.7, 10.1; Sections 8–10"
+url = "https://arxiv.org/abs/1810.12929v6"
+fetched_from = "https://arxiv.org/pdf/1810.12929v6"
+fetched_at = "2026-10-21T11:45:32Z"
+sha256 = "82f37b3f0357a792bdd9d26bb7cf8b9e644f3339dec4490ee76c1fbab833d1ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v6"
+cited_for = ["B1, B3–B4"]
+
+[[source]]
+id = "Gao-Ax"
+authors = "Ziyang Gao"
+title = "Mixed Ax-Schanuel for the universal abelian varieties and some applications"
+year = 2018
+arxiv = "1806.01408v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.1; Theorem 5.2; Proposition 6.1; Theorem 8.2"
+url = "https://arxiv.org/abs/1806.01408v2"
+fetched_from = "https://arxiv.org/pdf/1806.01408v2"
+fetched_at = "2026-10-21T11:45:38Z"
+sha256 = "29e85eda3c0f5c92d706ef4b65cb7b8ef92e76fb353a7ada231698f4b617988c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["B3"]
+
+[[source]]
+id = "Lee"
+authors = "Jungin Lee"
+title = "On the lower bound of the number of abelian varieties over F_p"
+year = 2020
+venue = "International Mathematics Research Notices (2022), no. 6, 4290-4317"
+doi = "10.1093/imrn/rnaa153"
+arxiv = "2002.04420v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Section 3.1 (5)–(10); Section 3.2 (11)"
+url = "https://arxiv.org/abs/2002.04420v3"
+fetched_from = "https://arxiv.org/pdf/2002.04420v3"
+fetched_at = "2026-10-21T11:45:43Z"
+sha256 = "2521898dfcd96c22950c026058b0b4e68e147aa89989964649eb317718fbbd3b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v3"
+cited_for = ["F4, F6"]
+
+[[source]]
+id = "DPH"
+authors = "Stephen A. DiPippo, Everett W. Howe"
+title = "Real polynomials with all roots on the unit circle and abelian varieties over finite fields"
+year = 1998
+venue = "J. Number Theory 73 (1998) 426--450; Corrigendum, J. Number Theory 83 (2000) 182"
+arxiv = "math/9803097v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.3; Lemmas 2.1.1, 2.1.3, 2.5.1–3; Proposition 3.1.1; Section 3.2"
+url = "https://arxiv.org/abs/math/9803097v3"
+fetched_from = "https://arxiv.org/pdf/math/9803097v3"
+fetched_at = "2026-10-21T11:45:49Z"
+sha256 = "e72551cc19790a83c516623dcc618e72765dad3eff083294d64115d3fb4642a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v3"
+cited_for = ["F6"]
+
+[[source]]
+id = "Lemmermeyer"
+authors = "Franz Lemmermeyer"
+title = "The Ambiguous Class Number Formula Revisited"
+year = 2013
+arxiv = "1309.1071v1"
+locator_scheme = "theorem"
+locator = "Proposition 1 and proof, pp.1–3"
+url = "https://arxiv.org/abs/1309.1071v1"
+fetched_from = "https://arxiv.org/pdf/1309.1071v1"
+fetched_at = "2026-10-21T11:45:55Z"
+sha256 = "53a80b00b693203386df6ca3350b4d5891159580037ca72a2096d59776300065"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["F5"]
+
+[[source]]
+id = "Conrad"
+authors = "Brian Conrad"
+title = "Polarizations"
+year = 2004
+locator_scheme = "theorem"
+locator = "Lemma 2.3; Theorem 2.6, pp.6–8"
+url = "https://virtualmath1.stanford.edu/~conrad/vigregroup/vigre04/polarization.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/vigregroup/vigre04/polarization.pdf"
+fetched_at = "2026-10-21T11:45:57Z"
+sha256 = "7156a718e879f7cc752a460ad61c14dbcfd2978a13149b7024c9809ac487af6b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["F5"]
+
+[[source]]
+id = "Tate"
+authors = "John Tate"
+title = "Endomorphisms of abelian varieties over finite fields"
+year = 1966
+locator_scheme = "theorem"
+locator = "Theorem 1, pp.134–139"
+url = "https://pazuki.perso.math.cnrs.fr/index_fichiers/Tate66.pdf"
+fetched_from = "https://pazuki.perso.math.cnrs.fr/index_fichiers/Tate66.pdf"
+fetched_at = "2026-10-21T11:45:57Z"
+sha256 = "47f284526522fb48840e1a1383b9bfc0bfc3f6aded39db6119a34a6e02214b87"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["F1, F3"]
+
+[[source]]
+id = "Waterhouse"
+authors = "William C. Waterhouse"
+title = "Abelian varieties over finite fields"
+year = 1969
+locator_scheme = "theorem"
+locator = "Section 1.2; Chapter 2; Section 3.1; Porism 4.3, p.541; Theorem 6.1"
+url = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_at = "2026-10-21T11:45:58Z"
+sha256 = "7be2bf9dde45454afa3dd9a0ea1ba05acbe952b6b573a0c37c2b1b8f0cccbb47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["F3, F5"]
+
+[[source]]
+id = "WM"
+authors = "William C. Waterhouse and James S. Milne"
+title = "Abelian varieties over finite fields"
+year = 1971
+locator_scheme = "theorem"
+locator = "Part I Theorems 3, 5, 6; Part II Theorems 1, 2, pp.60–61"
+url = "https://jmilne.org/math/articles/1971a.pdf"
+fetched_from = "https://jmilne.org/math/articles/1971a.pdf"
+fetched_at = "2026-10-21T11:46:40Z"
+sha256 = "e482e1c60ccd76a068057b18ac28cec02f2746f87048947d8c2a4c328f6c88a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["F1, F3"]
+
+[[source]]
+id = "Milne"
+authors = "James S. Milne"
+title = "Extensions of abelian varieties defined over a finite field"
+year = 1968
+locator_scheme = "theorem"
+locator = "Section 1, pp.63–65"
+url = "https://jmilne.org/math/articles/1968a.pdf"
+fetched_from = "https://jmilne.org/math/articles/1968a.pdf"
+fetched_at = "2026-10-21T11:47:32Z"
+sha256 = "8abdaf4fa604d5ed7faee3f9d4e9dc9382dc35d7b79382fe3540f495fe98fc35"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["F1"]
+
+[[source]]
+id = "Gao-Survey"
+authors = "Ziyang Gao"
+title = "Recent developments of the Uniform Mordell-Lang Conjecture"
+year = 2021
+arxiv = "2104.03431v5"
+locator_scheme = "theorem"
+locator = "Theorem 6.2"
+url = "https://arxiv.org/abs/2104.03431v5"
+fetched_from = "https://arxiv.org/pdf/2104.03431v5"
+fetched_at = "2026-10-21T11:47:36Z"
+sha256 = "f210cf079e6a6f361cacec1c262719a23ff190091d4ab62aba777efc44fad8b3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v5"
+cited_for = ["B4"]
+
+[[source]]
+id = "Kings"
+authors = "Guido Kings"
+title = "Eisenstein classes, elliptic Soulé elements and the ℓ-adic elliptic polylogarithm"
+year = 2013
+venue = "London Math. Soc. Lecture Note Ser., 418, Cambridge Univ. Press, 2015"
+arxiv = "1304.7161v2"
+locator_scheme = "theorem"
+locator = "Section 2.2"
+url = "https://arxiv.org/abs/1304.7161v2"
+fetched_from = "https://arxiv.org/pdf/1304.7161v2"
+fetched_at = "2026-10-21T11:47:42Z"
+sha256 = "b7546afb8854eac4f921a183eec344dfc5dac000609e8e25625068c0fb5cfec0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["P0"]
+
+[[source]]
+id = "Deligne"
+authors = "Pierre Deligne"
+title = "Théorie de Hodge : II"
+year = 1971
+locator_scheme = "theorem"
+locator = "Corollary 4.1.2, p.42; Theorem 4.2.6, p.45; Rappel 4.4.3, p.51"
+url = "https://www.numdam.org/item/PMIHES_1971__40__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1971__40__5_0.pdf"
+fetched_at = "2026-10-21T11:47:43Z"
+sha256 = "748edefb44fded8af67869abfed87062d66977d25b5d12f7d014f1810a063c3f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["B2"]
+
+[[source]]
+id = "GGK"
+authors = "Ziyang Gao, Tangli Ge and Lars Kühne"
+title = "The Uniform Mordell–Lang Conjecture"
+year = 2026
+locator_scheme = "theorem"
+locator = "Proposition 5.2, Step 1, equation (5.4), printed pp.212–213"
+url = "https://pmihes.centre-mersenne.org/item/10.5802/pmihes.26.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.5802/pmihes.26.pdf"
+fetched_at = "2026-10-21T11:49:12Z"
+sha256 = "4ee5a38b327807289885a1d7292bddc3341b7fc3e0aa8a3682d995d13237834f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["B4"]
+
+[[source]]
+id = "Roby"
+authors = "Norbert Roby"
+title = "Lois polynomes et lois formelles en théorie des modules"
+year = 1963
+venue = "Annales scientifiques de l'École normale supérieure 80"
+doi = "10.24033/asens.1124"
+locator_scheme = "chapter"
+locator = "Chapter III sections 5–6, Proposition III.1, pp.251–255; Chapter IV section 5, Proposition IV.5, pp.272–273"
+url = "https://doi.org/10.24033/asens.1124"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1124.pdf"
+fetched_at = "2026-10-21T11:50:11Z"
+sha256 = "1679797ecbd2a655d8d0dfe38ffe28bc8c49b881bf84bb965d018190c331e330"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["P0"]
+
+[[source]]
+id = "Tits"
+authors = "J Tits"
+title = "Free subgroups in linear groups"
+year = 1972
+venue = "Journal of Algebra 20"
+doi = "10.1016/0021-8693(72)90058-0"
+locator_scheme = "theorem"
+locator = "Theorem 3, pp.250–270"
+url = "https://doi.org/10.1016/0021-8693(72)90058-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["B2: Tits free subgroup theorem"]

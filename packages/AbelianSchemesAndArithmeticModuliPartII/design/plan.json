@@ -1,0 +1,34 @@
+{
+  "gaps": [
+    {
+      "slug": "fixed-part-theorem",
+      "supplier": "ShimuraVarieties",
+      "section": "3.5b.1",
+      "needs": "Fixed part and rational monodromy semisimplicity for geometric polarized integral variations on smooth complex quasi-projective bases, with the integral flat Hodge-Hom and finite-cover constant-part comparison for abelian schemes."
+    },
+    {
+      "slug": "kuga-definable-inputs",
+      "supplier": "ShimuraVarieties",
+      "section": "P.1; 3.5a–3.5d",
+      "needs": "Connected Kuga data, definable uniformization and fundamental sets, parameter-uniform semirational block counting, and the bi-algebraic, weakly-special and normal-quotient dictionary consumed by B2–B3."
+    },
+    {
+      "slug": "fine-curve-level-moduli",
+      "supplier": "PELModuli",
+      "section": "M6",
+      "needs": "Fine full symplectic level ℓ≥3 genus g≥2 curve moduli in characteristic zero, its universal curve, quasi-finite Torelli map and compatible finite étale level-change descent."
+    },
+    {
+      "slug": "local-semisimple-lattice-bounds",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "2.5",
+      "needs": "For a semisimple integral-characteristic-polynomial operator over ℚ_ℓ, bound centralizer lattice orbits by ℓ^(2Δ_ℓ) and stabilizer indices in conjugate maximal compacts by ℓ^Δ_ℓ using successive projected lattices, with Δ_ℓ as specified in the exact supplier contract."
+    },
+    {
+      "slug": "cm-hermitian-mass-asymptotic",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "3.3",
+      "needs": "For fixed imaginary quadratic class-number-one K, supply the unitary mass formula including ramified and dyadic factors, genus and automorphism bounds and weighted-to-unweighted comparison proving log H_K(g)=½g²log g+O_K(g²)."
+    }
+  ]
+}
