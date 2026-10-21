@@ -13,7 +13,7 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "besser-2000-syntomic-regulators-I-rigid.txt"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3#issuecomment-6301551849"
-cited_for = ["2.1", "2.2", "2.3", "7.4", "7.5", "rigid-syntomic-etale-period"]
+cited_for = ["2.1", "2.2", "2.3", "7.4", "7.5", "rigid-syntomic-etale-period", "relative-hodge"]
 
 [[source]]
 id = "NN"
@@ -44,7 +44,7 @@ venue = "J. Inst. Math. Jussieu 23 (2024) 1357-1415"
 doi = "10.1017/S1474748023000208"
 arxiv = "2007.14255v2"
 locator_scheme = "section"
-locator = "Definitions 2.1, 2.3, 2.4, 2.12; Lemma 2.5; Settings 2.14, 2.16; Propositions 2.15, 2.17, 2.18; Lemma 2.19; Assumption 2.20; equation (2.22); Theorem 3.7; Lemmas 3.8–3.10; Section 4.1, Lemma 4.2, Theorem 4.5"
+locator = "Definitions 2.1, 2.3, 2.4, 2.12; Lemma 2.5; Settings 2.14, 2.16; Propositions 2.15, 2.17, 2.18; Lemma 2.19; Assumption 2.20; Remark 2.21(3), pp. 14–15; equation (2.22); Theorem 3.7; Lemmas 3.8–3.10; Section 4.1, Lemma 4.2, Theorem 4.5"
 url = "https://arxiv.org/abs/2007.14255v2"
 fetched_from = "https://arxiv.org/pdf/2007.14255v2"
 fetched_at = "2026-10-20T21:11:24Z"
@@ -79,7 +79,7 @@ title = "Syntomic complexes and p-adic nearby cycles"
 year = 2015
 arxiv = "1505.06471v4"
 locator_scheme = "theorem"
-locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3/Lemma 2.23, pp. 23–24; Section 2.6.2/Lemma 2.37, pp. 28–29 (CN line 1234–1239); Section 3/Proposition 3.3/Corollary 3.9/Proposition 3.10/Lemma 3.11, pp. 32–35; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.6/Lemmas 5.8–5.9, pp. 54–58; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
+locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3/Lemma 2.23, pp. 23–24; Section 2.6.2/Lemma 2.37, pp. 28–29 (CN line 1234–1239); Section 3/Proposition 3.3/Corollary 3.9/Proposition 3.10/Lemma 3.11, pp. 32–35; Section 4.2, pp. 39–41, CN line 1824–1942; Section 4.3, CN line 1943–1954; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.6/Lemmas 5.8–5.9, pp. 54–58; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
 url = "https://arxiv.org/abs/1505.06471v4"
 fetched_from = "https://arxiv.org/pdf/1505.06471v4"
 fetched_at = "2026-10-20T21:12:38Z"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v4"
-cited_for = ["4.1", "4.2", "4.4", "local-period-fundamental-sequences", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent"]
+cited_for = ["4.1", "4.2", "4.4", "local-period-fundamental-sequences", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent", "local-period-koszul-resolution"]
 
 [[source]]
 id = "BesserII"
@@ -355,7 +355,7 @@ authors = "Robert Y. Lewis, Mario Carneiro, Johan Commelin and the Mathlib commu
 title = "Mathlib: p-adic integer scalar action (pinned Lean source)"
 year = 2018
 locator_scheme = "section"
-locator = "PadicInt.algebra, PadicInt.algebraMap_apply and PadicInt.isFractionRing; MathlibPadicLattice line 580–588"
+locator = "PadicInt.algebra, PadicInt.algebraMap_apply and PadicInt.isFractionRing; MathlibPadicLattice line 580–588; PadicInt.norm_natCast_eq_one_iff and PadicInt.isUnit_iff, MathlibPadicLattice line 317–319, MathlibPadicLattice line 389"
 url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/PadicIntegers.lean"
 fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/PadicIntegers.lean"
 fetched_at = "2026-10-21T05:39:46Z"
@@ -396,3 +396,35 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["exact-yoneda duplication audit"]
+
+[[source]]
+id = "MathlibSpanReview"
+authors = "Johannes Hölzl, Mario Carneiro, Kevin Buzzard, Yury Kudryashov, Frédéric Dupuis, Heather Macbeth and the Mathlib community"
+title = "Mathlib: spans of vectors and generator coordinates (pinned Lean source)"
+year = 2017
+locator_scheme = "section"
+locator = "Submodule.span_singleton_eq_span_singleton; LinearEquiv.toSpanNonzeroSingleton"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Span/Basic.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Span/Basic.lean"
+fetched_at = "2026-10-21T09:38:18Z"
+sha256 = "67d58cc2deecfbbf7a2f8c68741db656174d3fef1d626737d6a4b3ca97d22926"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.1 coordinate lattice unit and reduction Checks"]
+
+[[source]]
+id = "MathlibPadicReductionReview"
+authors = "Johan Commelin, Robert Y. Lewis and the Mathlib community"
+title = "Mathlib: reduction of p-adic integers (pinned Lean source)"
+year = 2020
+locator_scheme = "section"
+locator = "PadicInt.toZMod; PadicInt.ker_toZMod; PadicInt.toZModPow; PadicInt.ker_toZModPow"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/RingHoms.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/RingHoms.lean"
+fetched_at = "2026-10-21T09:38:25Z"
+sha256 = "32bd91dadffb4ac06342f9d01f008467a4ff154a36cc9b9a9705cc52b13fc1c7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.1 coordinate lattice reduction Check"]

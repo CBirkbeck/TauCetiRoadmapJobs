@@ -2177,7 +2177,8 @@
       "slug": "hyodo-kato-proper",
       "title": "Proper Cartier-type Hyodo–Kato transport",
       "neededBy": [
-        "5.1"
+        "5.1",
+        "5.2"
       ],
       "detail": "The uniformizer comparison and its change law are on the supplied proper cohomology carrier; HK line 698, HK line 715, HK line 770, HK line 1321, HK line 1340.",
       "needs": "For proper fine log-smooth X over the canonical log mixed-characteristic DVR V with perfect residue field and Cartier-type special fibre, supply finite-dimensional H^q_HK over K0 with bijective semilinear φ, nilpotent N satisfying Nφ=pφN, and ι_π:H^q_HK⊗K≃H^q_log-dR with ι_(πu)=ι_π∘exp(log(u)N) for every q≥0 and u∈V×.",
@@ -2209,7 +2210,7 @@
     },
     {
       "slug": "rigid-realizations",
-      "title": "Absolute rigid and filtered algebraic de Rham realization",
+      "title": "Absolute rigid realizations",
       "neededBy": [
         "2.1",
         "2.3",
@@ -2217,8 +2218,8 @@
         "6.4",
         "7.4"
       ],
-      "detail": "The filtration is on algebraic logarithmic de Rham compactification complexes; no Hodge filtration on general rigid cohomology is asserted. Scalar-extension maps retain K0 and K, and Frobenius is semilinear on the K0 realization (BesserI §4 and §5, BesserI line 625–636, BesserI line 648–688).",
-      "needs": "For every separated finite-type k-scheme Z with k perfect of characteristic p and coefficient fields K0=Frac(W(k))⊂K=Frac(V) for a complete mixed-characteristic DVR V, supply functorial enhanced RΓ_rig(Z/K0), RΓ_rig(Z/K), K⊗K0 RΓ_rig(Z/K0)≃RΓ_rig(Z/K), semilinear Frobenius on the K0 complex, products, finite Zariski Čech descent, independence of frames and strict neighbourhoods and finite coefficient-extension/trace comparisons, and for smooth separated finite-type T over a characteristic-zero field L supply F^rRΓ_dR(T/L) for r∈ℤ from smooth proper normal-crossings compactifications, with filtered independence, products, finite Čech descent and scalar-extension compatibility.",
+      "detail": "Scalar-extension maps retain K0 and K, and Frobenius is semilinear on the K0 realization (BesserI §4, BesserI line 625–636). Algebraic filtered de Rham realizations belong to `relative-hodge`.",
+      "needs": "For every separated finite-type k-scheme Z with k perfect of characteristic p and coefficient fields K0=Frac(W(k))⊂K=Frac(V) for a complete mixed-characteristic DVR V, supply functorial enhanced RΓ_rig(Z/K0), RΓ_rig(Z/K), K⊗K0 RΓ_rig(Z/K0)≃RΓ_rig(Z/K), semilinear Frobenius on the K0 complex, products, finite Zariski Čech descent, independence of frames and strict neighbourhoods and finite coefficient-extension/trace comparisons.",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
       "section": "accepted sections unavailable; BesserI §§4–5, manuscript pp. 9–18"
     },
@@ -2250,9 +2251,9 @@
         "7.3"
       ],
       "detail": "Relative rigid derived pushforwards, their induced Gauss–Manin connection and Frobenius, and frame-independent realization are used before coherence is asserted (AM Definition 2.12 and Remark 2.13, AM line 451–505); no direct-image finiteness follows merely from smoothness.",
-      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and F_V(x)≡x^p modulo pV, S=Spec(B) smooth affine over V and a compatible p-Frobenius σ on B†, supply the horizontal B†_K realization of overconvergent F-isocrystals with continuous connection, its tensor equivalence under change of σ with identity and cocycle laws, and exact pullback for morphisms of smooth affine bases, together with frame-independent relative rigid derived pushforwards and their connection and Frobenius for smooth quasi-projective u:U→S, without a finiteness assertion.",
+      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and F_V(x)≡x^p modulo pV, S=Spec(B) smooth affine over V and a compatible p-Frobenius σ on B†, supply the horizontal B†_K realization of overconvergent F-isocrystals with continuous connection, its tensor equivalence under change of σ with identity and cocycle laws, and exact pullback for morphisms of smooth affine bases, together with frame-independent relative rigid derived pushforwards and their connection and Frobenius for smooth quasi-projective u:U→S, without a finiteness assertion. For smooth affine Z/V and a coherent j†O-module, supply finite coherent models on a cofinal system of affinoid strict neighbourhoods and the derived-colimit comparison with global sections (AM Lemma 2.19, AM line 612–620).",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
-      "section": "accepted sections unavailable; AM Remark 2.2, pp. 4–5"
+      "section": "accepted sections unavailable; AM Remark 2.2, pp. 4–5; AM Lemma 2.19, affine proof domain, pp. 14–15"
     },
     {
       "slug": "relative-rigid-projective-finiteness",
@@ -2291,13 +2292,19 @@
       "slug": "relative-hodge",
       "title": "Geometric filtered de Rham input",
       "neededBy": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "6.2",
         "6.4",
-        "6.6"
+        "6.6",
+        "6.7",
+        "7.4"
       ],
       "detail": "On the two geometric domains of 6.4, establish the independent algebraic hypotheses of 6.2 on actual algebraic de Rham cohomology, using the proper or logarithmic compactification complex; AM Assumption 2.20 alone gives none of these algebraic finiteness conclusions. For the smooth projective curve X/S with finite étale D of 6.6, require the logarithmic de Rham residue/Gysin sequence to be strict for the Hodge filtration, horizontal, compatible with scalar extension and traces. AM Definition 2.1, Propositions 2.15,2.17,2.18, AM line 131, AM line 510–607. The full-domain datum of 6.1 needs no finiteness theorem.",
-      "needs": "For smooth affine S over an AM base and either projective smooth u or the full goodCompactification of 6.3, supply finite algebraic H^i_dR, a finite exhaustive separated Hodge filtration with finite locally free graded pieces, integrable Gauss–Manin connection, Griffiths transversality, horizontal comparison and filtered base change for every i≥0; for projective smooth relative curves X/S with finite étale boundary D, supply the strict horizontal filtered logarithmic residue/Gysin sequence with traces and scalar extension.",
+      "needs": "For smooth affine S over an AM base and either projective smooth u or the full goodCompactification of 6.3, supply finite algebraic H^i_dR, a finite exhaustive separated Hodge filtration with finite locally free graded pieces, integrable Gauss–Manin connection, Griffiths transversality, horizontal comparison and filtered base change for every i≥0; for projective smooth relative curves X/S with finite étale boundary D, supply the strict horizontal filtered logarithmic residue/Gysin sequence with traces and scalar extension. For smooth separated finite-type T over any characteristic-zero field L, supply F^rRΓ_dR(T/L), r∈ℤ, from smooth proper normal-crossings compactifications, with filtered independence, products, finite Čech descent and scalar extension; over L=K this is the absolute specialization S=Spec(V) of the relative realization (BesserI Definition 5.1, BesserI line 648–662).",
       "supplier": "CohomologyComparisons",
-      "section": "accepted sections unavailable; relative filtered-realization extension requires ownership resolution"
+      "section": "CohomologyComparisons §§2.14,6.3, absolute and relative filtered-realization extension; BesserI Definition 5.1, manuscript p. 17; AM Definitions 2.1,2.12"
     },
     {
       "slug": "nearby-cycle-inputs",
@@ -2428,7 +2435,7 @@
       "neededBy": [
         "4.4"
       ],
-      "detail": "These are intermediate cohomology comparisons, not the syntomic period theorem; generic Koszul carriers remain DerivedModuleAlgebra §0.K.1.",
+      "detail": "These are intermediate cohomology comparisons; local-period-koszul-resolution separately supplies the twisted Koszul-to-continuous-cohomology bridge, using QWittVectors §1.7 for the commuting directions.",
       "needs": "For r≥0 on CN §2.2.2 completed étale semistable charts with horizontal normal-crossings boundary over a complete mixed-characteristic DVR with perfect residue field, assuming K has enough roots of unity in the sense of CN §2.2.1, supply the Artin–Schreier fibre identification with RΓ_cont(G_R,Z_p(r)), the inflation/completion comparisons through the toric tower and the decompletion quasi-isomorphism of Proposition 4.13(i)–(iii).",
       "supplier": "PadicHodgeTheory",
       "section": "accepted sections unavailable; CN Proposition 4.13, p. 48, CN line 2267–2277"
@@ -2494,12 +2501,13 @@
       "title": "Base-owned rational h-descent and period comparisons",
       "neededBy": [
         "3.4",
-        "5.3"
+        "5.3",
+        "5.2"
       ],
       "detail": "The h-topology on reduced separated finite-type K-varieties, arithmetic pairs as dense open interiors of reduced proper flat V-models with induced boundary log structure, semistable h-bases, enhanced rational syntomic h-realization and uniqueness, arithmetic and geometric period maps, product compatibility and equivalence after τ≤r for r≥0. The canonical classical-pair comparison for fine log-smooth Cartier-type arithmetic pairs and r≥0 is NN Proposition 3.18, p. 33, NN line 1688–1691. NN Theorem A(1),(4), Proposition 4.6 and Corollary 4.11 are reserved to the base owner. This extension compares its classical producers to that realization; it does not rebuild h-descent or prove a second semistable comparison theorem.",
-      "needs": "For fine log-smooth Cartier-type arithmetic pairs and r≥0, supply the canonical classical-to-h quasi-isomorphism of NN Proposition 3.18; for reduced separated finite-type K-varieties, supply rational syntomic h-descent and the product-compatible arithmetic/geometric τ≤r period comparisons of NN Theorem A(1),(4), Proposition 4.6 and Corollary 4.11.",
+      "needs": "For fine log-smooth Cartier-type arithmetic pairs and r≥0, supply the canonical classical-to-h quasi-isomorphism of NN Proposition 3.18; for reduced separated finite-type K-varieties, supply rational syntomic h-descent and the product-compatible arithmetic/geometric τ≤r period comparisons of NN Theorem A(1),(4), Proposition 4.6 and Corollary 4.11. On the shared semistable carrier, supply the identification with the negative normalized convention N_base,norm=−N_c/e and its change law exp(−e log(u)N_base,norm)=exp(log(u)N_c), compatible with φ and the de Rham projection; N_c is the positive-Taylor operator of HK Theorem 5.1 (HK line 1340).",
       "supplier": "CohomologyComparisons",
-      "section": "accepted sections unavailable; NN Theorem A(1),(4) ownership contract; NN Proposition 3.18, p. 33"
+      "section": "accepted sections unavailable; NN Theorem A(1),(4) ownership contract; NN Proposition 3.18, p. 33; shared semistable convention identification for §4.5"
     },
     {
       "slug": "local-period-fundamental-sequences",
@@ -2512,6 +2520,12 @@
       "needs": "On the completed étale semistable charts with horizontal boundary of CN §2.2.2, require the Artin–Schreier exact sequences of CN Lemma 2.23(i) for v>0; the p^r-exact crystalline sequence and the p^(4r)-exact annular sequence of Lemma 2.23(ii)–(iii), with their stated Tate lattices and 0<u≤1≤v in (iii); and the continuous sections of their surjections. For S=R_PD or R^[u,v] of CN §2.6, a p-adically complete filtered O_F-algebra Λ and a continuous injective filtered map S→Λ, require F^rΛ→F^rΩ•_(S_Λ^s/Λ) to be a p^s-quasi-isomorphism for s≥0, where S_Λ^s is the p-adically completed log-PD envelope with partial powers of level s.",
       "supplier": "PadicHodgeTheory",
       "section": "accepted sections unavailable; CN Lemma 2.23, pp. 23–24, CN line 973–980; Lemma 2.37, pp. 28–29, CN line 1234–1239"
+    },
+    {
+      "slug": "local-period-koszul-resolution",
+      "needs": "On the completed étale semistable charts with horizontal boundary of CN §2.2.2 over the standing mixed-characteristic DVR, with enough roots of unity in the sense of CN §2.2.1, r≥0 and n≥1, for the chart group Γ_R and period modules M=S(r), with S=A_R, A_R^[u,v] or A_R^(0,v]+ and their finite reductions, supply the twisted arithmetic-direction Koszul totalization and the natural quasi-isomorphism λ:Kos(Γ_R,M)≃RΓ_cont(Γ_R,M), compatible with coefficient maps, Frobenius and reduction, using QWittVectors §1.7 for the commuting Γ′_R directions, and the resulting comparison of the Frobenius fibres Kos(φ,Γ_R,S(r)) with Fib(1−φ:RΓ_cont(Γ_R,S(r))→RΓ_cont(Γ_R,S′(r))), where S′ is the Frobenius target of CN §4.3 and 1 denotes coefficient restriction.",
+      "supplier": "PadicHodgeTheory",
+      "section": "CN §4.2, pp. 39–41, CN line 1824–1942; §4.3, CN line 1943–1954"
     }
   ]
 }

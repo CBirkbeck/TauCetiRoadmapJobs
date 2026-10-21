@@ -33,13 +33,12 @@ example :
       ((2 : ℚ) • LinearMap.id) (0, 1) = (0, -1) := by
   norm_num [fiberCoordinatesDifferential]
 
-/-- Zero coordinates give zero under the actual fibre-coordinate map. -/
-example {A A' B B' : Type*}
-    [AddCommGroup A] [Module ℚ A] [AddCommGroup A'] [Module ℚ A']
-    [AddCommGroup B] [Module ℚ B] [AddCommGroup B'] [Module ℚ B']
-    (dA : A →ₗ[ℚ] A') (dB : B →ₗ[ℚ] B') (f : A →ₗ[ℚ] B') :
-    fiberCoordinatesDifferential dA dB f (0, 0) = (0, 0) := by
-  simp [fiberCoordinatesDifferential]
+/-- A nonzero first differential survives alongside both terms of the second
+coordinate. Deleting the first differential changes the first output. -/
+example :
+    fiberCoordinatesDifferential (LinearMap.id : ℚ →ₗ[ℚ] ℚ)
+      ((2 : ℚ) • LinearMap.id) ((3 : ℚ) • LinearMap.id) (2, 5) = (2, -4) := by
+  norm_num [fiberCoordinatesDifferential]
 
 end TauCetiRoadmap.CohomologyComparisonsPartII.FilFMIC
 
@@ -55,7 +54,7 @@ def enLattice (p r : ℕ) [Fact p.Prime] : Submodule (PadicInt p) (Padic p) :=
       (Nat.factorial (r / (p - 1)) : Padic p))⁻¹}
 
 /-- The CN lattice in a Tate coordinate for the specified decomposition exponent `a`.
-The inclusive endpoint convention is retained in the choice of exponent.
+The period lattice at weight `r` always uses `a = r / (p - 1)`.
 CN Section 2.4.3, CN line 968–979. -/
 def cnLattice (p a : ℕ) [Fact p.Prime] : Submodule (PadicInt p) (Padic p) :=
   Submodule.span (PadicInt p) {((p : Padic p) ^ a)⁻¹}
@@ -75,21 +74,77 @@ theorem modifiedLattice_generator (p r : ℕ) [Fact p.Prime] :
           (Nat.factorial (r / (p - 1)) : Padic p))⁻¹ := by
   sorry
 
-/-- At weight zero both coordinate lattices are the ordinary integer lattice. -/
+/-- Weight zero gives the integer lattice; at `p = 3`, weight four has a
+nontrivial factorial coordinate but the two lattices agree because two is a unit. -/
 example (p : ℕ) [Fact p.Prime] :
     enLattice p 0 = Submodule.span (PadicInt p) {(1 : Padic p)} ∧
-      cnLattice p 0 = Submodule.span (PadicInt p) {(1 : Padic p)} := by
-  constructor <;> simp [enLattice, cnLattice]
+    cnLattice p 0 = Submodule.span (PadicInt p) {(1 : Padic p)} ∧
+    enLattice 3 4 = Submodule.span (PadicInt 3) {(18 : Padic 3)⁻¹} ∧
+    enLattice 3 4 = cnLattice 3 2 := by
+  have hEN : enLattice 3 4 = Submodule.span (PadicInt 3) {(18 : Padic 3)⁻¹} := by
+    norm_num [enLattice]
+  have hCN : cnLattice 3 2 = Submodule.span (PadicInt 3) {(9 : Padic 3)⁻¹} := by
+    norm_num [cnLattice]
+  refine ⟨by simp [enLattice], by simp [cnLattice], hEN, ?_⟩
+  rw [hEN, hCN]
+  have hu : IsUnit (2 : PadicInt 3) :=
+    PadicInt.isUnit_iff.mpr (PadicInt.norm_natCast_eq_one_iff.mpr (by norm_num))
+  apply Submodule.span_singleton_eq_span_singleton.mpr
+  refine ⟨hu.unit, ?_⟩
+  change ((hu.unit : PadicInt 3) : Padic 3) * (18 : Padic 3)⁻¹ = (9 : Padic 3)⁻¹
+  rw [hu.unit_spec]
+  norm_num
 
-/-- At `p = 2`, weight two detects the factorial; exponents one and zero detect
-the two CN decompositions of weight one. -/
+/-- The actual generators give coordinate two for both inclusions, whose
+induced maps on the nonzero quotient `ZMod 2` are zero. The displayed kernel of
+reduction identifies that model with each generator-coordinate quotient by two.
+The weight-one product also detects an incorrectly chosen weight-two lattice. -/
 example :
     enLattice 2 2 = Submodule.span (PadicInt 2) {(8 : Padic 2)⁻¹} ∧
-      cnLattice 2 2 = Submodule.span (PadicInt 2) {(4 : Padic 2)⁻¹} ∧
-      cnLattice 2 1 = Submodule.span (PadicInt 2) {(2 : Padic 2)⁻¹} ∧
-      cnLattice 2 0 = Submodule.span (PadicInt 2) {(1 : Padic 2)} ∧
-      (4 : Padic 2)⁻¹ = 2 * (8 : Padic 2)⁻¹ := by
-  norm_num [enLattice, cnLattice]
+    cnLattice 2 2 = Submodule.span (PadicInt 2) {(4 : Padic 2)⁻¹} ∧
+    cnLattice 2 1 = Submodule.span (PadicInt 2) {(2 : Padic 2)⁻¹} ∧
+    cnLattice 2 0 = Submodule.span (PadicInt 2) {(1 : Padic 2)} ∧
+    (∀ z : PadicInt 2,
+      z • (4 : Padic 2)⁻¹ = (2 * z) • (8 : Padic 2)⁻¹ ∧
+      z • (1 : Padic 2) = (2 * z) • (2 : Padic 2)⁻¹ ∧
+      PadicInt.toZModPow 1 (2 * z) = (2 : ZMod 2) * PadicInt.toZModPow 1 z) ∧
+    RingHom.ker (PadicInt.toZModPow 1 : PadicInt 2 →+* ZMod 2) =
+      Ideal.span {(2 : PadicInt 2)} ∧
+    ((2 : ZMod 2) • (LinearMap.id : ZMod 2 →ₗ[ZMod 2] ZMod 2)) = 0 ∧
+    PadicInt.toZModPow 1 (1 : PadicInt 2) ≠ (0 : ZMod 2) ∧
+    (2 : Padic 2)⁻¹ * (2 : Padic 2)⁻¹ = (4 : Padic 2)⁻¹ ∧
+    (2 : Padic 2)⁻¹ * (2 : Padic 2)⁻¹ ∉ cnLattice 2 1 := by
+  have hbad : (2 : Padic 2)⁻¹ * (2 : Padic 2)⁻¹ ∉ cnLattice 2 1 := by
+    intro hmem
+    obtain ⟨z, hz⟩ := Submodule.mem_span_singleton.mp hmem
+    change (z : Padic 2) * ((2 : Padic 2) ^ 1)⁻¹ =
+      (2 : Padic 2)⁻¹ * (2 : Padic 2)⁻¹ at hz
+    norm_num only [pow_one] at hz
+    have hz' : (z : Padic 2) * 2 = 1 := by
+      field_simp at hz
+      linear_combination hz
+    have hzInt : z * 2 = (1 : PadicInt 2) := by
+      apply Subtype.coe_injective
+      simpa using hz'
+    have hred := congrArg (PadicInt.toZModPow 1 : PadicInt 2 →+* ZMod 2) hzInt
+    norm_num at hred
+  refine ⟨by norm_num [enLattice], by norm_num [cnLattice],
+    by norm_num [cnLattice], by norm_num [cnLattice], ?_, ?_, ?_, ?_, ?_, hbad⟩
+  · intro z
+    refine ⟨?_, ?_, ?_⟩
+    · change (z : Padic 2) * (4 : Padic 2)⁻¹ =
+        ((2 * z : PadicInt 2) : Padic 2) * (8 : Padic 2)⁻¹
+      push_cast
+      field_simp <;> ring
+    · change (z : Padic 2) * 1 =
+        ((2 * z : PadicInt 2) : Padic 2) * (2 : Padic 2)⁻¹
+      push_cast
+      field_simp <;> ring
+    · simp
+  · simpa using (PadicInt.ker_toZModPow (p := 2) 1)
+  · norm_num
+  · simp
+  · norm_num
 
 end TauCetiRoadmap.CohomologyComparisonsPartII.Syntomic
 
@@ -124,14 +179,17 @@ theorem semistable_d_squared (p r : ℕ) [Fact p.Prime]
   sorry
 
 /-- Transporting classical monodromy to the negative p-normalized convention
-scales the third and final terms by `-1/e`. These two chain-map equations hold
+has chain maps (identity, diag(1,1,-1/e), -1/e). The two conjuncts are its
+degree-zero and degree-one chain-map squares. These equations hold
 for every natural `e`, including zero; invertibility requires `e ≠ 0`. -/
 theorem semistable_baseConvention_differentials (p r e : ℕ)
     {D E : Type*} [AddCommGroup D] [Module ℚ D]
     [AddCommGroup E] [Module ℚ E]
     (phi N : D →ₗ[ℚ] D) (iota : D →ₗ[ℚ] E) (x : D) (a c : D) (b : E) :
     semistableD0 p r phi ((-(e : ℚ)⁻¹) • N) iota x =
-      (x - (p : ℚ) ^ (-(r : ℤ)) • phi x, iota x, (-(e : ℚ)⁻¹) • N x) ∧
+      ((semistableD0 p r phi N iota x).1,
+        (semistableD0 p r phi N iota x).2.1,
+        (-(e : ℚ)⁻¹) • (semistableD0 p r phi N iota x).2.2) ∧
     semistableD1 p r phi ((-(e : ℚ)⁻¹) • N) (a, b, (-(e : ℚ)⁻¹) • c) =
       (-(e : ℚ)⁻¹) • semistableD1 p r phi N (a, b, c) := by
   sorry
@@ -145,6 +203,7 @@ example (p r : ℕ) {D E : Type*}
   constructor <;> simp [semistableD0, semistableD1]
 
 /-- On the rank-two block, weights zero and one fix the lower exponent.
+Independent nonzero second-differential values test both summands.
 The ramification-two computations fix the adapter sign and factor; at zero index
 the scalar equations still hold but the scaled terms vanish. -/
 example :
@@ -155,6 +214,11 @@ example :
     semistableD0 2 0 phi N LinearMap.id (0, 1) = ((0, -1), (0, 1), (1, 0)) ∧
     semistableD0 2 1 phi N LinearMap.id (0, 1) = ((0, 0), (0, 1), (1, 0)) ∧
     semistableD1 2 0 phi N ((0, -1), (0, 1), (1, 0)) = (0, 0) ∧
+    semistableD1 2 0 phi N ((0, 1), (0, 0), (0, 0)) = (1, 0) ∧
+    semistableD1 2 0 phi N ((0, 0), (0, 0), (1, 0)) = (1, 0) ∧
+    semistableD1 2 1 phi N ((0, 0), (0, 0), (0, 1)) = (0, 1) ∧
+    semistableD1 2 0 phi ((-(2 : ℚ)⁻¹) • N)
+      ((0, 1), (0, 0), (0, 0)) = (-(1 / 2), 0) ∧
     semistableD1 2 1 phi N ((0, 0), (0, 1), (1, 0)) = (0, 0) ∧
     semistableD0 2 0 phi ((-(2 : ℚ)⁻¹) • N) LinearMap.id (0, 1) =
       ((0, -1), (0, 1), (-(1 / 2), 0)) ∧
