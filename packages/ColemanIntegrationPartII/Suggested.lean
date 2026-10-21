@@ -1,4 +1,5 @@
 import Mathlib
+import TauCeti.AlgebraicGeometry.AbelianVariety.Albanese
 import TauCeti.Combinatorics.SimpleGraph.Cohomology.Basic
 
 /-!
@@ -32,6 +33,8 @@ primitive-data construction in the README.
 
 namespace TauCetiRoadmap.ColemanIntegrationPartII
 
+universe u
+
 /-! ## Layer 1: Finite graph cochains and harmonic normalization -/
 
 namespace Graph
@@ -43,7 +46,7 @@ noncomputable def simpleDivergence {V k : Type*} [Fintype V] [AddCommGroup k]
     (G : SimpleGraph V) (c : G.oneCochains (Multiplicative k)) (v : V) : k := by
   classical
   exact ∑ w : V, if h : G.Adj v w then
-    Multiplicative.toAdd (c ⟨(v, w), h⟩) else 0
+    Multiplicative.toAdd ((c : G.Dart → Multiplicative k) ⟨(v, w), h⟩) else 0
 
 /-- Divergence of the pinned head-minus-tail coboundary is the negative
 Laplacian. Negating that coboundary gives the roadmap's positive Laplacian. -/
@@ -73,31 +76,84 @@ example :
     let f : Fin 2 → ℚ := ![2, 5]
     let c := G.coboundary (Multiplicative ℚ) (fun v ↦ Multiplicative.ofAdd (f v))
     simpleDivergence G c 0 = 3 ∧ simpleDivergence G c 1 = -3 ∧
-      -Multiplicative.toAdd (c ⟨(0, 1), by decide⟩) = -3 ∧
+      -Multiplicative.toAdd ((c : G.Dart → Multiplicative ℚ)
+        ⟨(0, 1), by decide⟩) = -3 ∧
       simpleDivergence (⊥ : SimpleGraph (Fin 1))
         (1 : (⊥ : SimpleGraph (Fin 1)).oneCochains (Multiplicative ℚ)) 0 = 0 := by
   norm_num [simpleDivergence, SimpleGraph.coboundary, Fin.sum_univ_succ]
 
-/-- The cyclic unit cochain on a triangle is nonzero and harmonic; reversal
-negates its values, so a cochain constant on all six darts would fail. -/
+/-- On a rational triangle, `(3,0,0)` is the sum of the cyclic harmonic
+cochain `(1,1,1)` and the coboundary of `(0,2,1)`, whose cyclic values are
+`(2,-1,-1)`. Over `ZMod 3`, the coboundary of `(0,1,2)` is itself the nonzero
+cyclic harmonic cochain: characteristic zero is essential for the direct sum. -/
 example :
-    ∃ c : (⊤ : SimpleGraph (Fin 3)).oneCochains (Multiplicative ℚ),
+    (∃ c : (⊤ : SimpleGraph (Fin 3)).oneCochains (Multiplicative ℚ),
       (∀ v, simpleDivergence (⊤ : SimpleGraph (Fin 3)) c v = 0) ∧
-      Multiplicative.toAdd (c ⟨(0, 1), by decide⟩) = 1 ∧
-      Multiplicative.toAdd (c ⟨(1, 0), by decide⟩) = -1 := by
-  let c : (⊤ : SimpleGraph (Fin 3)).oneCochains (Multiplicative ℚ) :=
-    ⟨fun d ↦ Multiplicative.ofAdd
-      (if (d.fst = 0 ∧ d.snd = 1) ∨ (d.fst = 1 ∧ d.snd = 2) ∨
-          (d.fst = 2 ∧ d.snd = 0) then (1 : ℚ) else -1), by
-        intro d
-        rcases d with ⟨⟨i, j⟩, h⟩
-        fin_cases i <;> fin_cases j <;>
-          norm_num [SimpleGraph.Dart.symm] at h ⊢⟩
-  refine ⟨c, ?_, ?_, ?_⟩
-  · intro v
-    fin_cases v <;> norm_num [simpleDivergence, c, Fin.sum_univ_succ]
-  · norm_num [c]
-  · norm_num [c]
+      Multiplicative.toAdd ((c : (⊤ : SimpleGraph (Fin 3)).Dart → Multiplicative ℚ)
+        ⟨(0, 1), by decide⟩) = 1 ∧
+      Multiplicative.toAdd ((c : (⊤ : SimpleGraph (Fin 3)).Dart → Multiplicative ℚ)
+        ⟨(1, 0), by decide⟩) = -1 ∧
+      (let G : SimpleGraph (Fin 3) := ⊤
+       let r := G.coboundary (Multiplicative ℚ)
+         (fun v ↦ Multiplicative.ofAdd ((![0, 2, 1] : Fin 3 → ℚ) v))
+       Multiplicative.toAdd ((r : G.Dart → Multiplicative ℚ)
+         ⟨(0, 1), by decide⟩) = 2 ∧
+       Multiplicative.toAdd ((r : G.Dart → Multiplicative ℚ)
+         ⟨(1, 2), by decide⟩) = -1 ∧
+       Multiplicative.toAdd ((r : G.Dart → Multiplicative ℚ)
+         ⟨(2, 0), by decide⟩) = -1 ∧
+       ∀ d : G.Dart,
+         Multiplicative.toAdd ((c * r : G.Dart → Multiplicative ℚ) d) =
+           if d.fst = 0 ∧ d.snd = 1 then 3
+           else if d.fst = 1 ∧ d.snd = 0 then -3 else 0)) ∧
+    (let G : SimpleGraph (Fin 3) := ⊤
+     let f : Fin 3 → ZMod 3 := ![0, 1, 2]
+     let c := G.coboundary (Multiplicative (ZMod 3))
+       (fun v ↦ Multiplicative.ofAdd (f v))
+     (∀ v, simpleDivergence G c v = 0) ∧ c ≠ 1 ∧
+       Multiplicative.toAdd ((c : G.Dart → Multiplicative (ZMod 3))
+         ⟨(0, 1), by decide⟩) = 1 ∧
+       Multiplicative.toAdd ((c : G.Dart → Multiplicative (ZMod 3))
+         ⟨(1, 2), by decide⟩) = 1 ∧
+       Multiplicative.toAdd ((c : G.Dart → Multiplicative (ZMod 3))
+         ⟨(2, 0), by decide⟩) = 1) := by
+  constructor
+  · let c : (⊤ : SimpleGraph (Fin 3)).oneCochains (Multiplicative ℚ) :=
+      ⟨fun d ↦ Multiplicative.ofAdd
+        (if (d.fst = 0 ∧ d.snd = 1) ∨ (d.fst = 1 ∧ d.snd = 2) ∨
+            (d.fst = 2 ∧ d.snd = 0) then (1 : ℚ) else -1), by
+          intro d
+          rcases d with ⟨⟨i, j⟩, h⟩
+          fin_cases i <;> fin_cases j <;>
+            norm_num [SimpleGraph.Dart.symm] at h ⊢⟩
+    refine ⟨c, ?_, ?_, ?_, ?_⟩
+    · intro v
+      fin_cases v <;> norm_num [simpleDivergence, c, Fin.sum_univ_succ]
+    · norm_num [c]
+    · norm_num [c]
+    · dsimp
+      refine ⟨by norm_num [SimpleGraph.coboundary],
+        by norm_num [SimpleGraph.coboundary],
+        by norm_num [SimpleGraph.coboundary], ?_⟩
+      intro d
+      rcases d with ⟨⟨i, j⟩, h⟩
+      fin_cases i <;> fin_cases j <;>
+        norm_num [c, SimpleGraph.coboundary] at h ⊢
+  · dsimp
+    refine ⟨?_, ?_, ?_, ?_, ?_⟩
+    · intro v
+      fin_cases v <;>
+        norm_num [simpleDivergence, SimpleGraph.coboundary, Fin.sum_univ_succ]
+    · intro h
+      have hval := congrArg
+        (fun c : (⊤ : SimpleGraph (Fin 3)).oneCochains (Multiplicative (ZMod 3)) ↦
+          Multiplicative.toAdd
+            ((c : (⊤ : SimpleGraph (Fin 3)).Dart → Multiplicative (ZMod 3))
+              ⟨(0, 1), by decide⟩)) h
+      norm_num [SimpleGraph.coboundary] at hval
+    · norm_num [SimpleGraph.coboundary]
+    · norm_num [SimpleGraph.coboundary]
+    · norm_num [SimpleGraph.coboundary]
 
 end Graph
 
@@ -296,6 +352,28 @@ example :
   · norm_num [doubleIndex, LaurentSeries.derivative]
 
 end Annulus
+
+/-! ## Layer 4: Harmonic realization of arbitrary-reduction single integration -/
+
+open CategoryTheory MonoidalCategory
+open AlgebraicGeometry
+
+namespace NaturalIntegration
+
+/-- Every pointed smooth geometrically connected separated finite-type variety
+over a characteristic-zero field has a proper Albanese variety
+(Serre, Exposé 10, §4, Theorems 5–6). -/
+theorem properAlbanese_exists {k : Type u} [Field k] [CharZero k]
+    (X : Over (Spec (.of k)))
+    [Smooth X.hom] [LocallyOfFiniteType X.hom] [QuasiCompact X.hom]
+    [IsSeparated X.hom]
+    [GeometricallyConnected X.hom]
+    (x₀ : 𝟙_ (Over (Spec (.of k))) ⟶ X) :
+    ∃ (A : TauCeti.AlgebraicGeometry.AbelianVariety k)
+      (a : X ⟶ A.toOver),
+      TauCeti.AlgebraicGeometry.AbelianVariety.IsAlbanese x₀ a := sorry
+
+end NaturalIntegration
 
 /-! ## Layer 7: Branch transport, traces and arbitrary-reduction descent -/
 
