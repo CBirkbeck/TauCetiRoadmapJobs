@@ -246,7 +246,7 @@ cited_for = ["10.4", "10.3a"]
 [[source]]
 id = "Andrews1986"
 locator_scheme = "theorem"
-locator = "Bailey’s Lemma (2.3)–(2.6), pp. 114–115, lines 93–110; Theorems 3–4, 9 and 13, pp. 117–118, 125 and 132–133, lines 241, 266, 450, 698; corrections specified by Zwegers2002 lines 4123–4124"
+locator = "Bailey’s Lemma (2.3)–(2.6), pp. 114–115, lines 93–110; Theorems 3–4, 9 and 13, pp. 118–119, 125 and 132–133, lines 241, 266, 450, 698; corrections specified by Zwegers2002 lines 4123–4124"
 url = "https://www.ams.org/journals/tran/1986-293-01/S0002-9947-1986-0814916-2/S0002-9947-1986-0814916-2.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1986-293-01/S0002-9947-1986-0814916-2/S0002-9947-1986-0814916-2.pdf"
 fetched_at = "2026-10-21T09:47:12Z"

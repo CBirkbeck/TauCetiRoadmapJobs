@@ -16,7 +16,7 @@ noncomputable section
 
 /-! ## Layer 1: finite, integer-indexed and formal q-products -/
 
-/-- The finite q-Pochhammer product retains the factor with index zero. -/
+/-- The finite q-Pochhammer product retains the factor with index zero. For parameter lists, `qPochhammerFin_list_append` identifies concatenation with multiplication of the corresponding products (README §1.1). -/
 def qPochhammerFin {K : Type*} [CommRing K] (a q : K) (n : ℕ) : K :=
   ∏ j ∈ Finset.range n, (1 - a * q ^ j)
 
@@ -75,7 +75,7 @@ def formalQPochhammerTail {K : Type*} [CommRing K] (a : K) : PowerSeries K :=
     (∏ j ∈ Finset.range (d + 1),
       (1 - PowerSeries.C a * (PowerSeries.X : PowerSeries K) ^ (j + 1)))
 
-/-- The full formal product includes its constant factor 1-a. -/
+/-- The full formal product includes its constant factor 1-a, as expressed by `formalQPochhammer_eq_factor_tail`. Its coefficients stabilize in finite prefixes (`formalQPochhammer_coeff_stable`), and coefficient ring homomorphisms preserve the product (`formalQPochhammer_map`); see README §1.4. -/
 def formalQPochhammer {K : Type*} [CommRing K] (a : K) : PowerSeries K :=
   PowerSeries.C (1 - a) * formalQPochhammerTail a
 
@@ -132,7 +132,7 @@ theorem qPochhammerFin_tendsto :
 
 /-! ## Layer 2: basic hypergeometric series on their actual domains -/
 
-/-- A Bailey pair includes the unit domain; normalization at index zero is separate. -/
+/-- A Bailey pair includes the unit domain; normalization at index zero is separate. On that domain, the finite sum constructs beta (`baileyPair_ofAlpha`) and makes it unique for fixed alpha (`baileyPair_ext`). Pairs form a module (`baileyPair_zero_add_smul`), and ring homomorphisms transport them (`baileyPair_map`); see README §2.6. -/
 noncomputable def baileyPair {K : Type*} [CommRing K]
     (a q : K) (α β : ℕ → K) : Prop :=
   (∀ n, IsUnit (qPochhammerFin q q n) ∧ IsUnit (qPochhammerFin (a * q) q n)) ∧
@@ -165,7 +165,7 @@ theorem baileyFirstRelation {K : Type*} [CommRing K]
       α 1 * Ring.inverse ((1 - a * q) * (1 - a * q ^ 2)) := by
   sorry
 
-/-- The q-binomial theorem on the open bidisc, in the normalization of Gasper (1.2.8). -/
+/-- The q-binomial theorem on the open bidisc, in the normalization of Gasper (1.2.8). The coefficient identity `qBinomial_formal` uses the denominator localization described in README §2.4. -/
 theorem qBinomial (a q z : ℂ) (hq : ‖q‖ < 1) (hz : ‖z‖ < 1) :
     HasSum (fun n : ℕ => qPochhammerFin a q n * z ^ n / qPochhammerFin q q n)
       ((∏' j : ℕ, (1 - a * z * q ^ j)) / (∏' j : ℕ, (1 - z * q ^ j))) ∧
@@ -191,7 +191,7 @@ theorem euler_qExponential (q z : ℂ) (hq : ‖q‖ < 1) :
     Summable (fun n : ℕ => ‖q ^ (n * (n - 1) / 2) * z ^ n / qPochhammerFin q q n‖) := by
   sorry
 
-/-- The bilateral quotient coefficient avoids division by b, including at b=0. -/
+/-- The bilateral quotient coefficient avoids division by b, including at b=0. The two branches give `ramanujanOnePsiOneTerm_nonneg` and `ramanujanOnePsiOneTerm_neg`; on the nonzero-base, nonzero-argument, pole-free domain, `ramanujanOnePsiOneTerm_recurrence` relates successive terms after clearing denominators (README §2.5). -/
 def ramanujanOnePsiOneTerm (a b q z : ℂ) (j : ℤ) : ℂ :=
   if 0 ≤ j then
     qPochhammerFin a q j.toNat / qPochhammerFin b q j.toNat * z ^ j
@@ -230,11 +230,11 @@ theorem partitionSeries_coeff {K : Type*} [CommSemiring K] (n : ℕ) :
       (Fintype.card (Nat.Partition n) : K) := by
   sorry
 
-/-- Increasingly sorted parts have pairwise gaps at least two, including multiplicities. -/
+/-- Increasingly sorted parts have pairwise gaps at least two, including multiplicities. The adjacent-gap characterization `isGapTwo_iff_adjacent` implies absence of repeated parts, `isGapTwo_nodup` (README §3.3). -/
 def IsGapTwo {n : ℕ} (p : Nat.Partition n) : Prop :=
   (p.parts.sort (· ≤ ·)).Pairwise (fun a b => a + 2 ≤ b)
 
-/-- Every part belongs to one of the two residues 1 and 4 modulo five. -/
+/-- Every part belongs to one of the two residues 1 and 4 modulo five. The equivalence `isPlusMinusOneMod5_iff_restricted` identifies this condition with the native restricted-partition predicate (README §3.3). -/
 def IsPlusMinusOneMod5 {n : ℕ} (p : Nat.Partition n) : Prop :=
   ∀ i ∈ p.parts, i % 5 = 1 ∨ i % 5 = 4
 
@@ -304,7 +304,7 @@ theorem quintupleProduct_hasSum (q z : ℂ)
 def partitionRank {n : ℕ} (p : Nat.Partition n) : ℤ :=
   ((p.parts.toFinset.sup id : ℕ) : ℤ) - (p.parts.card : ℤ)
 
-/-- Crank counts parts strictly greater than the number of ones when there are ones. -/
+/-- Crank counts parts strictly greater than the number of ones when there are ones. In their absence, `partitionCrank_noOnes` gives the largest part, with value zero for the empty partition (README §4.1). -/
 def partitionCrank {n : ℕ} (p : Nat.Partition n) : ℤ :=
   let o := p.parts.count 1
   if o = 0 then ((p.parts.toFinset.sup id : ℕ) : ℤ)
@@ -404,6 +404,34 @@ theorem rankElevenFails :
     partitionResidueCount (fun _ p => partitionRank p) 11 1 6 = 2 := by
   sorry
 
+/-- A bounded inverse-of-24 representative, used for every positive coprime modulus. -/
+def IsPartitionCongruenceOffset (M d : ℕ) : Prop :=
+  d < M ∧ Nat.ModEq M (24 * d) 1
+
+/-- Every positive modulus coprime to 24 has a unique bounded offset. -/
+theorem partitionCongruenceOffset_existsUnique (M : ℕ) (hM : 0 < M)
+    (hcop : Nat.Coprime 24 M) : ∃! d : ℕ, IsPartitionCongruenceOffset M d := by
+  sorry
+
+/-- Reduction along divisibility preserves the bounded inverse representative. -/
+theorem partitionCongruenceOffset_mod (M N d : ℕ) (hN : 0 < N)
+    (hdiv : N ∣ M) (hd : IsPartitionCongruenceOffset M d) :
+    IsPartitionCongruenceOffset N (d % N) := by
+  sorry
+
+/-- Modulus one and the prime thirteen are both in the bounded-offset domain. -/
+example : IsPartitionCongruenceOffset 1 0 ∧ IsPartitionCongruenceOffset 13 6 ∧
+    IsPartitionCongruenceOffset 5 4 ∧ IsPartitionCongruenceOffset 7 5 ∧
+    IsPartitionCongruenceOffset 11 6 ∧ IsPartitionCongruenceOffset 25 24 ∧
+    IsPartitionCongruenceOffset 343 243 ∧ IsPartitionCongruenceOffset 65 19 := by
+  norm_num [IsPartitionCongruenceOffset, Nat.ModEq]
+
+/-- Zero has no bounded representative; neither two nor three admits the inverse. -/
+example (d : ℕ) : ¬ IsPartitionCongruenceOffset 0 d ∧
+    ¬ IsPartitionCongruenceOffset 2 d ∧ ¬ IsPartitionCongruenceOffset 3 d := by
+  simp only [IsPartitionCongruenceOffset, Nat.ModEq]
+  omega
+
 /-- Prime-power partition congruences use any representative of the inverse of 24. -/
 theorem partition_primePowerCongruences (ℓ r δ n : ℕ)
     (hℓ : ℓ = 5 ∨ ℓ = 7 ∨ ℓ = 11) (hr : 1 ≤ r)
@@ -417,7 +445,7 @@ theorem sevenExponent :
     49 ∣ Fintype.card (Nat.Partition 243) ∧ ¬343 ∣ Fintype.card (Nat.Partition 243) := by
   sorry
 
-/-- Decimation extracts coefficients divisible by the index; it is a linear operator. -/
+/-- Decimation extracts coefficients divisible by the index; it is a linear operator. The coefficient identity `qSeriesDecimation_coeff` reads coefficient n at index t*n, and `qSeriesDecimation_map` commutes extraction with coefficient homomorphisms (README §4.7). -/
 def qSeriesDecimation {K : Type*} [CommSemiring K] (t : ℕ)
     (f : PowerSeries K) : PowerSeries K :=
   PowerSeries.mk fun n => PowerSeries.coeff (t * n) f
@@ -510,14 +538,31 @@ example (τ : ℂ) : wirtingerBar (fun z : ℂ => (z.im : ℂ)) τ = Complex.I /
   rw [wirtingerBar, h.fderiv]
   simp
 
-/-- Xi sends y at weight zero to one. -/
-example (τ : ℂ) : maassXi 0 (fun z : ℂ => (z.im : ℂ)) τ = 1 := by
-  have h : HasFDerivAt (fun z : ℂ => (z.im : ℂ))
-      (Complex.ofRealCLM.comp Complex.imCLM) τ :=
-    (Complex.ofRealCLM.comp Complex.imCLM).hasFDerivAt
-  rw [maassXi, wirtingerBar, h.fderiv]
-  norm_num
-  linear_combination (-1 : ℂ) * Complex.I_sq
+/-- Xi sends y at weight zero and log y at weight one to one; constants give zero. -/
+example (τ : ℂ) (hτ : 0 < τ.im) :
+    maassXi 0 (fun z : ℂ => (z.im : ℂ)) τ = 1 ∧
+    maassXi 1 (fun z : ℂ => (Real.log z.im : ℂ)) τ = 1 ∧
+    maassXi 1 (fun _ : ℂ => (1 : ℂ)) τ = 0 := by
+  constructor
+  · have h : HasFDerivAt (fun z : ℂ => (z.im : ℂ))
+        (Complex.ofRealCLM.comp Complex.imCLM) τ :=
+      (Complex.ofRealCLM.comp Complex.imCLM).hasFDerivAt
+    rw [maassXi, wirtingerBar, h.fderiv]
+    norm_num
+    linear_combination (-1 : ℂ) * Complex.I_sq
+  constructor
+  · have hlog : HasFDerivAt (fun z : ℂ => Real.log z.im)
+        (τ.im⁻¹ • Complex.imCLM) τ :=
+      Complex.imCLM.hasFDerivAt.log hτ.ne'
+    have h : HasFDerivAt (fun z : ℂ => (Real.log z.im : ℂ))
+        (Complex.ofRealCLM.comp (τ.im⁻¹ • Complex.imCLM)) τ :=
+      Complex.ofRealCLM.hasFDerivAt.comp τ hlog
+    have hy : (τ.im : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hτ.ne'
+    rw [maassXi, wirtingerBar, h.fderiv]
+    simp [ContinuousLinearMap.comp_apply, ContinuousLinearMap.smul_apply,
+      Complex.ofReal_inv, Real.rpow_one] <;>
+      field_simp [hy] <;> ring_nf <;> norm_num [Complex.I_sq]
+  · simp [maassXi, wirtingerBar]
 
 /-- Xi sends i times y to minus i, witnessing antilinearity. -/
 example (τ : ℂ) : maassXi 0 (fun z : ℂ => Complex.I * (z.im : ℂ)) τ = -Complex.I := by
