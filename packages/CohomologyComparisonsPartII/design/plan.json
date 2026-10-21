@@ -2203,9 +2203,9 @@
         "4.4"
       ],
       "detail": "Extend or specialize Mathlib BDeRhamPlus R p and BDeRham R p on the binders recorded above (MathlibBDeRhamReview line 55, MathlibBDeRhamReview line 79, MathlibBDeRhamReview line 92). Frobenius on crystalline and semistable rings satisfies φ(t)=pt; monodromy on B_st satisfies Nφ=pφN with the HK convention. No Frobenius or monodromy operator on B_dR is stipulated.",
-      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and the geometric period coefficients over a completed algebraic closure of K=Frac(V), supply A_cris, B_cris, B_st and their comparison embeddings into B_dR, the induced filtrations, t and Tate coordinates, Frobenius on A_cris, B_cris and B_st and monodromy on B_st; supply the Fontaine–Messing coefficient fundamental sequences inducing the divided period map with lattice Z_p(r) for 0≤r≤p−2 and the modified period map with lattice L_EN(r) for r≥0 (EN §2.2, p. 7, EN line 299–308); on the completed CN §2.2.2 semistable charts supply the Artin–Schreier exact sequences of CN Lemma 2.23(i), the p^r-exact crystalline and p^(4r)-exact annular sequences of Lemma 2.23(ii)–(iii) with their CN lattices, v>0 for (i) and 0<u≤1≤v for (iii); for S=R_PD or R^[u,v] of CN §2.6, p-adically complete filtered O_F-algebra Λ and a continuous injective filtered map S→Λ, supply the p^s quasi-isomorphism F^rΛ→F^rΩ•_(S_Λ^s/Λ) of Lemma 2.37, where S_Λ^s is the p-adically completed log-PD envelope of S⊗Λ→Λ with partial divided powers of level s≥0.",
+      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and the geometric period coefficients over a completed algebraic closure of K=Frac(V), supply A_cris, B_cris, B_st and their comparison embeddings into B_dR, the induced filtrations, t and Tate coordinates, Frobenius on A_cris, B_cris and B_st and monodromy on B_st; supply the Fontaine–Messing coefficient fundamental sequences inducing the divided period map with lattice Z_p(r) for 0≤r≤p−2 and the modified period map with lattice L_EN(r) for r≥0 (EN §2.2, p. 7, EN line 299–308).",
       "supplier": "PadicPeriodRings",
-      "section": "accepted sections unavailable; EN §2.2, p. 7; CN §2.4.3, Lemma 2.23, pp. 23–24, and §2.6.2, Lemma 2.37, pp. 28–29"
+      "section": "accepted sections unavailable; EN §2.2, p. 7, EN line 299–308"
     },
     {
       "slug": "rigid-realizations",
@@ -2500,6 +2500,18 @@
       "needs": "For fine log-smooth Cartier-type arithmetic pairs and r≥0, supply the canonical classical-to-h quasi-isomorphism of NN Proposition 3.18; for reduced separated finite-type K-varieties, supply rational syntomic h-descent and the product-compatible arithmetic/geometric τ≤r period comparisons of NN Theorem A(1),(4), Proposition 4.6 and Corollary 4.11.",
       "supplier": "CohomologyComparisons",
       "section": "accepted sections unavailable; NN Theorem A(1),(4) ownership contract; NN Proposition 3.18, p. 33"
+    },
+    {
+      "slug": "local-period-fundamental-sequences",
+      "title": "Local semistable period fundamental sequences",
+      "neededBy": [
+        "4.2",
+        "4.4"
+      ],
+      "detail": "",
+      "needs": "On the completed étale semistable charts with horizontal boundary of CN §2.2.2, require the Artin–Schreier exact sequences of CN Lemma 2.23(i) for v>0; the p^r-exact crystalline sequence and the p^(4r)-exact annular sequence of Lemma 2.23(ii)–(iii), with their stated Tate lattices and 0<u≤1≤v in (iii); and the continuous sections of their surjections. For S=R_PD or R^[u,v] of CN §2.6, a p-adically complete filtered O_F-algebra Λ and a continuous injective filtered map S→Λ, require F^rΛ→F^rΩ•_(S_Λ^s/Λ) to be a p^s-quasi-isomorphism for s≥0, where S_Λ^s is the p-adically completed log-PD envelope with partial powers of level s.",
+      "supplier": "PadicHodgeTheory",
+      "section": "accepted sections unavailable; CN Lemma 2.23, pp. 23–24, CN line 973–980; Lemma 2.37, pp. 28–29, CN line 1234–1239"
     }
   ]
 }

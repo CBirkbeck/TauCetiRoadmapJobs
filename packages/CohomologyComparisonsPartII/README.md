@@ -99,7 +99,7 @@ DerivedModuleAlgebra §0.K.1: General Koszul complexes, their signs, maps and te
 
 ### From TauCetiRoadmap.PadicPeriodRings
 
-**`period-rings`.** Extend or specialize Mathlib BDeRhamPlus R p and BDeRham R p on the binders recorded above (MathlibBDeRhamReview line 55, MathlibBDeRhamReview line 79, MathlibBDeRhamReview line 92). Frobenius on crystalline and semistable rings satisfies φ(t)=pt; monodromy on B_st satisfies Nφ=pφN with the HK convention. No Frobenius or monodromy operator on B_dR is stipulated. For V a complete mixed-characteristic DVR with perfect residue field and the geometric period coefficients over a completed algebraic closure of K=Frac(V), supply A_cris, B_cris, B_st and their comparison embeddings into B_dR, the induced filtrations, t and Tate coordinates, Frobenius on A_cris, B_cris and B_st and monodromy on B_st; supply the Fontaine–Messing coefficient fundamental sequences inducing the divided period map with lattice Z_p(r) for 0≤r≤p−2 and the modified period map with lattice L_EN(r) for r≥0 (EN §2.2, p. 7, EN line 299–308). Consume PadicPeriodRings §§3,4.1–4.3, with the integral Fontaine–Messing coefficient sequences. (EN §2.2, p.7, EN line 299–308).
+**`period-rings`.** Extend or specialize Mathlib BDeRhamPlus R p and BDeRham R p on the binders recorded above (MathlibBDeRhamReview line 55, MathlibBDeRhamReview line 79, MathlibBDeRhamReview line 92). Frobenius on crystalline and semistable rings satisfies φ(t)=pt; monodromy on B_st satisfies Nφ=pφN with the HK convention. No Frobenius or monodromy operator on B_dR is stipulated. What PadicPeriodRings must provide (gap:period-rings): For V a complete mixed-characteristic DVR with perfect residue field and the geometric period coefficients over a completed algebraic closure of K=Frac(V), supply A_cris, B_cris, B_st and their comparison embeddings into B_dR, the induced filtrations, t and Tate coordinates, Frobenius on A_cris, B_cris and B_st and monodromy on B_st; supply the Fontaine–Messing coefficient fundamental sequences inducing the divided period map with lattice Z_p(r) for 0≤r≤p−2 and the modified period map with lattice L_EN(r) for r≥0 (EN §2.2, p. 7, EN line 299–308). Consume PadicPeriodRings §§3,4.1–4.3, with the integral Fontaine–Messing coefficient sequences. (EN §2.2, p.7, EN line 299–308).
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
 
@@ -125,7 +125,7 @@ DerivedModuleAlgebra §0.K.1: General Koszul complexes, their signs, maps and te
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
-**`local-period-fundamental-sequences`.** On the completed étale semistable charts with horizontal boundary of CN §2.2.2, require the Artin–Schreier exact sequences of CN Lemma 2.23(i) for v>0; the p^r-exact crystalline sequence and the p^(4r)-exact annular sequence of Lemma 2.23(ii)–(iii), with their stated Tate lattices and 0<u≤1≤v in (iii); and the continuous sections of their surjections. For S=R_PD or R^[u,v] of CN §2.6, a p-adically complete filtered O_F-algebra Λ and a continuous injective filtered map S→Λ, require F^rΛ→F^rΩ•_(S_Λ^s/Λ) to be a p^s-quasi-isomorphism for s≥0, where S_Λ^s is the p-adically completed log-PD envelope with partial powers of level s. Consume PadicHodgeTheory §§1.1–1.5,2.1–2.4, local semistable chart extension. (CN Lemma 2.23, pp.23–24, CN line 973–980; Lemma 2.37, pp.28–29, CN line 1234–1239).
+**`local-period-fundamental-sequences`.** What PadicHodgeTheory must provide (gap:local-period-fundamental-sequences): On the completed étale semistable charts with horizontal boundary of CN §2.2.2, require the Artin–Schreier exact sequences of CN Lemma 2.23(i) for v>0; the p^r-exact crystalline sequence and the p^(4r)-exact annular sequence of Lemma 2.23(ii)–(iii), with their stated Tate lattices and 0<u≤1≤v in (iii); and the continuous sections of their surjections. For S=R_PD or R^[u,v] of CN §2.6, a p-adically complete filtered O_F-algebra Λ and a continuous injective filtered map S→Λ, require F^rΛ→F^rΩ•_(S_Λ^s/Λ) to be a p^s-quasi-isomorphism for s≥0, where S_Λ^s is the p-adically completed log-PD envelope with partial powers of level s. Consume PadicHodgeTheory §§1.1–1.5,2.1–2.4, local semistable chart extension. (CN Lemma 2.23, pp.23–24, CN line 973–980; Lemma 2.37, pp.28–29, CN line 1234–1239).
 
 **`local-period-pd-radius`.**  For r≥0 on CN §2.2.2 completed étale semistable charts with horizontal normal-crossings boundary over a complete mixed-characteristic DVR with perfect residue field, assuming K has enough roots of unity in the sense of CN §2.2.1, supply the natural p^(6r)-quasi-isomorphisms Kum(R_PD,r)→Kum(R^[u],r) for 1/(p−1)≤u≤1 and Kum(R^[u′],r)→Kum(R^[u],r) for u′≤u≤pu′ of Proposition 3.3. Consume PadicHodgeTheory §§1.1–1.5,2.1–2.4, local semistable chart extension. (CN Proposition 3.3, p. 32, CN line 1453–1456).
 
@@ -179,11 +179,11 @@ Use the supplied coefficient/connection realization and form the fibre product c
 
 **Checks.**
 
-- `FilFMIC_zero`: Both modules zero, the unique connection and finite zero filtration give the zero object; Φ:0≃0 is invertible.
-- `FilFMIC_unit`: Rank one with c natural, ∇=d, F⁰=B_K, F¹=0, Φ=σ is an object; its constant horizontal section 1 is fixed.
-- `FilFMIC_nonhorizontal`: Over V[t,t⁻¹] with σ(t)=t^p, trivial ∇ and Φ(e)=t e fail horizontality since ∇Φ(e)=dt⊗e≠0. Invertibility alone must not admit this datum.
-- `FilFMIC_ramifiedBaseObstruction`: For V=Z_p[π] with π²=p, a ring endomorphism fixing p sends π to valuation 1, while π^p has valuation at least 2. Their difference cannot lie in pV=(π²). Thus the required p-Frobenius modulo p does not exist, including at p=2. This base is admitted in the classical layers, not as an AM base.
-- `FilFMIC_genericOnlyRealization`: For S=Spec(K) as a smooth affine V-scheme, B†=0. The datum H_dR=K,H_rig=0 with the unit filtration is admitted, and its identity is nonzero on de Rham realization but zero on rigid realization. Only the de Rham realization is asserted faithful.
+- `FilFMIC.ofData_zero`: Both modules zero, the unique connection and finite zero filtration give the zero object; Φ:0≃0 is invertible.
+- `FilFMIC.ofData_unit`: Rank one with c natural, ∇=d, F⁰=B_K, F¹=0, Φ=σ is an object; its constant horizontal section 1 is fixed.
+- `FilFMIC.ofData_nonhorizontal`: Over V[t,t⁻¹] with σ(t)=t^p, trivial ∇ and Φ(e)=t e fail horizontality since ∇Φ(e)=dt⊗e≠0. Invertibility alone must not admit this datum.
+- `FilFMIC.ofData_ramifiedBaseObstruction`: For V=Z_p[π] with π²=p, a ring endomorphism fixing p sends π to valuation 1, while π^p has valuation at least 2. Their difference cannot lie in pV=(π²). Thus the required p-Frobenius modulo p does not exist, including at p=2. This base is admitted in the classical layers, not as an AM base.
+- `FilFMIC.ofData_genericOnlyRealization`: For S=Spec(K) as a smooth affine V-scheme, B†=0. The datum H_dR=K,H_rig=0 with the unit filtration is admitted, and its identity is nonzero on de Rham realization but zero on rigid realization. Only the de Rham realization is asserted faithful.
 
 ### 1.2 Tensor operations, Tate twists and transport
 
@@ -239,7 +239,7 @@ Griffiths transversality makes A a subcomplex, integrability gives d²=0, and Fr
 
 - `FilFMIC.fiberCoordinatesDifferential_positive`: With d_A=0, d_B=id and f=2 on ℚ, the input (1,0) maps to (0,2). Negating f would give (0,−2).
 - `FilFMIC.fiberCoordinatesDifferential_shift`: For the same coordinate maps, (0,1) maps to (0,−1). Forgetting the shift sign would give (0,1).
-- `FilFMIC.fiberCoordinatesDifferential_zero`: For arbitrary linear d_A,d_B,f, the input (0,0) maps to (0,0), including when a source or target is the zero module.
+- `FilFMIC.fiberCoordinatesDifferential_zeroInput`: For arbitrary linear d_A,d_B,f, the input (0,0) maps to (0,0), including when a source or target is the zero module.
 
 ### 1.5 Evaluation of extensions
 
@@ -442,7 +442,7 @@ Prove `Syntomic.period_reduce`: Coefficient reduction and the transition maps of
 
 Apply the filtered crystalline Poincaré lemma and the Fontaine–Messing coefficient fundamental sequences on the syntomic-étale site of the log-syntomic X/W(k), then push to X0_et using the supplied projection comparisons. Construct the modified map before using ω. Period-ring multiplication proves the cup square. The CN-normalized chart map additionally uses the local-period-fundamental-sequences contract on its semistable domain.
 
-*Needs:* §3.3; §3.4; §4.1; contract `period-rings`; contract `local-period-fundamental-sequences`; contract `nearby-cycle-inputs`.
+*Needs:* §3.3; §3.4; §4.1; contract `period-rings`; `gap:local-period-fundamental-sequences`; contract `nearby-cycle-inputs`.
 
 **Checks.**
 
@@ -476,7 +476,7 @@ Prove `Syntomic.boundedPeriod_uniform`: Quantifiers are ∃A(e,p,r), ∀X,n,q≤
 
 Use CN’s chart syntomic/PD realization, the separately specified local-period convergence, Frobenius-change, Lie, Lazard and continuous-Galois contracts, and its continuous Galois realization to obtain the local Lazard comparison. The period-ring Poincaré lemma compares that map to the Fontaine–Messing map (CN Theorems 4.14 and 4.16). Approximation, K(π,1) and rigid étale comparison transfer it to nearby cycles. Cyclotomic extension and ramified descent give A(e,p,r); with enough roots retain Nr+c_p instead. The intermediate estimates and comparison sections are separate supplier requirements; the desired period bound is not one of their premises.
 
-*Needs:* §4.2; §4.1; contract `local-period-fundamental-sequences`; contract `local-period-pd-radius`; contract `local-period-annulus-entry`; contract `local-period-frobenius-change`; contract `local-period-lie`; contract `local-period-lazard`; contract `local-period-annulus-change`; contract `local-period-phi-psi`; contract `local-period-disk-change`; contract `local-period-galois`; contract `local-period-approximation`; contract `local-period-kpi1`; contract `local-period-etale-gaga`; contract `local-period-descent`; contract `period-rings`; DerivedModuleAlgebra §0.K.1.
+*Needs:* §4.2; §4.1; `gap:local-period-fundamental-sequences`; contract `local-period-pd-radius`; contract `local-period-annulus-entry`; contract `local-period-frobenius-change`; contract `local-period-lie`; contract `local-period-lazard`; contract `local-period-annulus-change`; contract `local-period-phi-psi`; contract `local-period-disk-change`; contract `local-period-galois`; contract `local-period-approximation`; contract `local-period-kpi1`; contract `local-period-etale-gaga`; contract `local-period-descent`; contract `period-rings`; DerivedModuleAlgebra §0.K.1.
 
 **Checks.**
 
@@ -657,9 +657,9 @@ Apply the affine coefficient-vanishing contract on U and S. For U/S apply the Le
 
 **Checks.**
 
-- `RelativeCohomology.affineOverconvergentAcyclicity_affineLine`: For A=V[t], S=Spec(V), the dagger complex has H⁰=K and H¹=0, since overconvergent integration remains overconvergent.
-- `RelativeCohomology.affineOverconvergentAcyclicity_gM`: For A=V[t,t⁻¹], H¹=K dlog t. Replacing dagger forms by only exact forms would erase this class.
-- `RelativeCohomology.affineOverconvergentAcyclicity_properCounterexample`: For an elliptic curve E/V, H¹(E_K^an,O)=K. The unrestricted smooth-scheme wording of AM Lemma 2.19 would be false; its affine-embedding proof supplies the affine theorem used here.
+- `RelativeCohomology.continuousDifferentialComparison_affineLine`: For A=V[t], S=Spec(V), the dagger complex has H⁰=K and H¹=0, since overconvergent integration remains overconvergent.
+- `RelativeCohomology.continuousDifferentialComparison_gM`: For A=V[t,t⁻¹], H¹=K dlog t. Replacing dagger forms by only exact forms would erase this class.
+- `RelativeCohomology.continuousDifferentialComparison_properCounterexample`: For an elliptic curve E/V, H¹(E_K^an,O)=K. The unrestricted smooth-scheme wording of AM Lemma 2.19 would be false; its affine-embedding proof supplies the affine theorem used here.
 
 ### 6.6 Residues without a split-boundary hypothesis
 
