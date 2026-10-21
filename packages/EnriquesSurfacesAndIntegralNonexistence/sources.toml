@@ -1,0 +1,51 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EnriquesSurfacesAndIntegralNonexistence"
+
+[[source]]
+id = "Lang1983"
+authors = "William Lang"
+title = "On Enriques surfaces in characteristic p. I"
+year = 1983
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0265/LOG_0011.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0265/LOG_0011.pdf"
+fetched_at = "2026-10-21T21:51:11Z"
+sha256 = "f415bda7d29c6c2672ec090bb2187f54286e2e9ee1aeb261afe60cea97d549c1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/218#issuecomment-6327319428"
+
+[[source]]
+id = "BM1977"
+authors = "Enrico Bombieri and David Mumford"
+title = "Enriques classification of surfaces in characteristic p. II"
+year = 1977
+locator_scheme = "theorem"
+locator = "Theorem 3 and Proposition 11"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/218#issuecomment-6327319428"
+
+[[source]]
+id = "Fontaine"
+authors = "Jean-Marc Fontaine"
+title = "Schemas propres et lisses sur Z"
+year = 1991
+locator_scheme = "theorem"
+locator = "Theorem 1 and Remark (a), printed page 3, PDF page 4"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/218#issuecomment-6327319428"
+
+[[source]]
+id = "CDL2021"
+authors = "Francois Cossec, Igor Dolgachev and Christian Liedtke"
+title = "Enriques Surfaces I, 2021 draft"
+year = 2021
+locator_scheme = "theorem"
+locator = "Theorem 6.1.10"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/218#issuecomment-6327319428"
