@@ -83,20 +83,30 @@ example {k : Type*} [Field k] [CharZero k] :
 
 /-- The derivative of `2 + 3 L` has residue three. The polynomial comparison sends
 the nonzero Laurent constant to its constant polynomial and the logarithmic generator
-to `X`, while excluding `X²` from its image. -/
+to `X`, while excluding `X²` from its image. Over `ZMod 2`, the non-scalar
+monomial `z²` has zero differential, testing the characteristic-zero kernel hypothesis. -/
 example :
     (differential ((HahnSeries.single 0 2, 3) : LogarithmicFunctions ℚ)).coeff (-1) = 3 ∧
       toPolynomial ((HahnSeries.single 0 2, 0) : LogarithmicFunctions ℚ) =
         Polynomial.C (HahnSeries.single 0 2) ∧
       toPolynomial ((0, 1) : LogarithmicFunctions ℚ) = Polynomial.X ∧
-      ∀ F : LogarithmicFunctions ℚ, toPolynomial F ≠ Polynomial.X ^ 2 := by
-  refine ⟨?_, ?_, ?_, ?_⟩
+      (∀ F : LogarithmicFunctions ℚ, toPolynomial F ≠ Polynomial.X ^ 2) ∧
+      differential ((HahnSeries.single 2 1, 0) : LogarithmicFunctions (ZMod 2)) = 0 ∧
+      ∀ c : ZMod 2,
+        ((HahnSeries.single 2 1, 0) : LogarithmicFunctions (ZMod 2)) ≠
+          (HahnSeries.single 0 c, 0) := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
   · norm_num [differential, LaurentSeries.derivative]
   · simp [toPolynomial]
   · simp [toPolynomial]
   · intro F h
     have hc := congrArg (fun P : Polynomial (LaurentSeries ℚ) ↦ P.coeff 2) h
     simpa [toPolynomial] using hc
+  · norm_num [differential, LaurentSeries.derivative]
+  · intro c h
+    have hc := congrArg
+      (fun F : LogarithmicFunctions (ZMod 2) ↦ F.1.coeff 2) h
+    simpa using hc
 
 end LogarithmicFunctions
 

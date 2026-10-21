@@ -8,6 +8,8 @@ This continues **ColemanIntegration**, whose L0 supplies analytic Laurent/logari
 
 This roadmap owns harmonic graph normalization and metric refinement, formal logarithmic local algebra and the degree-one index subspace, double/triple indices and their choice laws, wide-open reciprocity, curve cohomology/graph comparisons, harmonic realization, traced local contributions, divisor evaluation and descent. The additional full-analytic-coefficient Coleman extension is §3.0b; the analytic logarithmic algebra on complete subfields of ℂ_p is imported from ColemanIntegration L0.20–L0.23. The general analytic coefficient extension is §2.1a. Jacobians over finite extensions of ℚ_p use the imported logarithms; their natural integration/topology bridge is §4.0e. The kept variant `NaturalIntegration.abelianLogCp` additionally allows abelian varieties defined over ℂ_p without a finite p-adic field model. Tate point uniformization is imported; its differential and chart bridge is §7.0.
 
+AlgebraicCurves Layers 5 and 9 own general DVR completions, point expansions, traced geometric residues and the proper residue theorem. FormalLaurentPuiseux L1–L3 own formal substitutions, differential rules, residue transport, residue-zero primitives and the characteristic-zero scalar kernel. Section 2.0 adds finite analytic-map transport and comparison adapters between these point expansions and convergent meromorphic analytic germs; the underlying formal/analytic residue agreement is ColemanIntegration L0.11 `annulusResidue_laurentSeries`. The polynomial-logarithm extension, its degree-one presentation and the indices remain here.
+
 Already in the library are Mathlib's p-adic field, general multigraph, simple-graph Laplacian, Laurent-series derivative and field trace, and Tau Ceti's simple-graph cochain/cohomology quotients, native Albanese universal-property carrier and normed restricted-series carrier. Their exact declarations appear below. RigidAnalyticGeometry §§1.3, 2.3, 6.2 and 8.1 own the analytic spaces, reduction, extension and analytification. StableReduction Layers 0–2, 4–5, 7 and 9 own models, branches, dual graphs, positivity, common resolutions, all-genus nodal reduction and section separation. JacobianChallenge Layers D–F own the algebraic Jacobian and pointed Abel–Jacobi after finite extension. EllipticCurves Layer 4 owns point-level Tate uniformization. PadicDifferentialEquationsAndRigidCohomology §§RD.4.31–RD.4.33, RD.5.76 and RD.6.1, RD.6.86, RD.6.88, RD.6.92 own the generic rigid comparisons, finite dimensionality and component Frobenius weights. ResolutionOfSingularitiesCharacteristicZero §6.2 supplies smooth projective compactifications of smooth quasi-projective varieties. These constructions are imported by their exact sections.
 
 K-theory symbols, regulator maps, motivic relations, height pairings, special values and effective procedures belong to their consumers. The triple end-sum here is defined on a Coleman wide open with global auxiliary data. There is no whole-curve triple pairing obtained by a choice-free sum of arbitrary bad-reduction Vologodsky component primitives.
@@ -39,7 +41,7 @@ The baseline is Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a`. The followin
 - `Padic` in `Mathlib/NumberTheory/Padics/PadicNumbers.lean` is the Cauchy completion of ℚ for the p-adic norm, with `[Fact p.Prime]`; the file supplies `Padic.normedField` and its `CompleteSpace` instance. It is a coefficient-field foundation, not an integration theorem.
 - `PadicAlgCl`, `PadicComplex`, `PadicComplex.norm_extends'`, `PadicComplex.isUltrametricDist`, `PadicComplex.charZero` and `PadicComplex.isAlgClosed` in `Mathlib/NumberTheory/Padics/Complex.lean` supply the geometric completed field and its algebraic closure, norm and coefficient structure. They supply no Galois fixed-field or natural-integration theorem.
 - `Graph`, `Graph.IsLoopAt`, `Graph.ext` and `Graph.banana` in `Mathlib/Combinatorics/Graph/Basic.lean` retain edge identities, loops and parallel edges. The cochain flags are compared to this incidence structure. `SimpleGraph.lapMatrix` and `SimpleGraph.lapMatrix_mulVec_apply'` in `Mathlib/Combinatorics/SimpleGraph/LapMatrix.lean` give the unit-length simple-graph case. The kept variant is a rational-length cochain theory on multigraphs; it does not reintroduce the simple-graph matrix.
-- `LaurentSeries`, `LaurentSeries.hasseDeriv_coeff`, `LaurentSeries.derivative` and `LaurentSeries.derivative_map` in `Mathlib/RingTheory/LaurentSeries.lean` provide the formal carrier and its derivative. The first Hasse derivative is the ordinary derivative. The formal residue used below is coefficient −1 of a differential on this carrier, rather than a second Laurent-series type.
+- `LaurentSeries`, `LaurentSeries.hasseDeriv_coeff`, `LaurentSeries.hasseDeriv_single`, `LaurentSeries.derivative` and `LaurentSeries.derivative_map` in `Mathlib/RingTheory/LaurentSeries.lean` provide the formal carrier and its derivative. The first Hasse derivative is the ordinary derivative. `HahnSeries.coeff_single_same` and `HahnSeries.coeff_single_of_ne` in `Mathlib/RingTheory/HahnSeries/Basic.lean` compute singleton coefficients. The formal residue used below is coefficient −1 of a differential on this carrier, rather than a second Laurent-series type.
 - `Algebra.trace` in `Mathlib/RingTheory/Trace/Defs.lean` is the linear map obtained from left multiplication. `Algebra.trace_algebraMap` says Tr(algebraMap x)=finrank·x under its free-module hypotheses. `Algebra.trace_trace` requires both finite free stages of a scalar tower. For finite extensions of fields these hypotheses hold. `trace_eq_sum_embeddings` in `Mathlib/RingTheory/Trace/Basic.lean` requires finite-dimensional separable L/K and an algebraically closed target E; it states algebraMap(Tr x)=Σ_σ σx. The name is at the root namespace. It is not a product formula and is not used for inseparable extensions.
 
 ### From Tau Ceti
@@ -49,9 +51,17 @@ The baseline is Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. In `TauCeti
 - In `TauCeti/Combinatorics/SimpleGraph/Cohomology/Basic.lean`, `SimpleGraph.oneCochains`, `SimpleGraph.coboundary` and `SimpleGraph.FirstCohomology` use a commutative multiplicative coefficient group. `SimpleGraph.coboundary_apply` is target divided by source. Use `Multiplicative k`, so additive translation gives head minus tail. The value-preserving module and quotient bridges in §§1.1–1.2 account for the opposite differential. Import `SimpleGraph.FirstCohomology.lift`, `.mk_eq_mk_iff` and `.congr`; coefficient functoriality comes from `SimpleGraph.oneCochainsMap_coboundary` and `SimpleGraph.firstCohomologyMap` in `Cohomology/Map.lean`; relabelling comes from `SimpleGraph.oneCochainsRelabel_coboundary` and `SimpleGraph.firstCohomologyRelabel` in `Cohomology/Relabel.lean`. Their hypotheses are commutative groups, coefficient homomorphisms and graph isomorphisms, respectively.
 - In `TauCeti/AlgebraicGeometry/AbelianVariety/Albanese.lean`, `TauCeti.AlgebraicGeometry.AbelianVariety.IsAlbanese`, its `.homEquiv` and `.uniqueUpToIso` supply the pointed universal property on the native abelian-variety carrier. §4.0b constructs the additional higher-dimensional proper Albanese existence and rational-form comparison on this predicate; it does not redefine the universal property.
 
+### From TauCetiRoadmap.AlgebraicCurves
+
+Import Layer 5's completion comparison milestone: complete a place's fraction field and DVR, preserving the normalized valuation, valuation ring, maximal ideal, residue field and chosen uniformizer, without a finite-residue-field hypothesis. Import Layer 9's “Local expansions and residues”: at a smooth closed point x with finite separable residue extension κ(x)/k, use its k-compatible coefficient-field lift and chosen uniformizer to identify the completed local ring with κ(x)[[z]] and the completed fraction field with κ(x)((z)). Consume the induced differential expansion, geometric coefficient residue, parameter independence and traced k-valued residue. Import Layer 9's residue theorem through its comparison theorem, Remark 4.3.7(d), and Layer 5's abstract residue theorem: for a smooth proper geometrically connected curve over a characteristic-zero field, the finite sum over closed points x of the traces from κ(x) to k of the geometric residues of ω is zero. Characteristic zero makes the residue extensions separable and the base field perfect; no rational-point or split-pole restriction is imposed.
+
+### From TauCetiRoadmap.FormalLaurentPuiseux
+
+Import L1's Laurent substitutions for nonzero parameter series of positive order, their composition, coefficient-extension and coordinate-isomorphism laws. Import L2's continuous Laurent derivation, product/inverse/quotient and chain rules, its one-form coefficient presentation and, in characteristic zero, its scalar kernel. Import L3's coefficient residue, exact-residue vanishing, integration by parts, residue transport of ramification order n>0, and residue-zero primitives unique modulo scalars. These contracts use the native Mathlib Laurent carrier over arbitrary coefficient fields where stated; primitive existence and the scalar-kernel assertion require characteristic zero. Geometric transport uses AlgebraicCurves Layer 9's completion charts and separable residue-field trace.
+
 ### From TauCetiRoadmap.ColemanIntegration
 
-Import L0.A1–L0.A2: `LaurentOn`, `LaurentOn.derivative`, `.restrict`, `.endGerm`, `.pullback`, `laurentSeriesEval` and `LaurentOn.eval_injective`. The coefficient carrier uses complete nontrivially normed ultrametric fields; point evaluation is into ℂ_p and faithfulness retains the radius hypotheses. L0.11–L0.12 supply `annulusResidue`, `exists_laurent_primitive_iff` and vanishing residue for exact forms on genuine open annuli/end germs. L0.15–L0.19 supply `padicLogBranch`, `logBranch_sub`, finite-extension/Galois compatibility and its local derivative. L0.20–L0.23 supply `AnnulusLogRing`, `.changeParam`, `.restrict`, `.realize_branch`, `exists_logLaurent_primitive` and `logLaurent_derivative_eq_zero_iff`. Their analytic logarithmic ring has coefficients in a complete subfield of ℂ_p; parameter change retains a unit scale and a strictly small perturbation on the chosen annulus. Its extension beyond that coefficient scope is §2.1a.
+Import L0.A1–L0.A2: `LaurentOn`, `LaurentOn.derivative`, `.restrict`, `.endGerm`, `.pullback`, `laurentSeriesEval` and `LaurentOn.eval_injective`. The coefficient carrier uses complete nontrivially normed ultrametric fields; point evaluation is into ℂ_p and faithfulness retains the radius hypotheses. L0.11–L0.12 supply `annulusResidue`, `exists_laurent_primitive_iff` and vanishing residue for exact forms on genuine open annuli/end germs. In particular L0.11 `annulusResidue_laurentSeries` identifies analytic residue with the formal coefficient −1 for a convergent meromorphic germ with finitely many negative powers on a punctured disc. L0.15–L0.19 supply `padicLogBranch`, `logBranch_sub`, finite-extension/Galois compatibility and its local derivative. L0.20–L0.23 supply `AnnulusLogRing`, `.changeParam`, `.restrict`, `.realize_branch`, `exists_logLaurent_primitive` and `logLaurent_derivative_eq_zero_iff`. Their analytic logarithmic ring has coefficients in a complete subfield of ℂ_p; parameter change retains a unit scale and a strictly small perturbation on the chosen annulus. Its extension beyond that coefficient scope is §2.1a.
 
 Import L1.2–L1.3 for `wideOpen`, `daggerAlgebra`, `daggerDifferentials` and their ordinary/end restrictions on a good-reduction pair and a cofinal system of strict neighborhoods. Import L1.17–L1.19 for `ColemanFunctions`, `.d_mem`, `.ker_d`, `colemanIntegral`, `d_colemanIntegral`, `colemanIntegral_d`, `definiteIntegral`, `definiteIntegral_add`, `definiteIntegral_tiny` and `definiteIntegral_d`. Their datum carries the base's `(H0)`, `(H1)` and `(Hi)` conditions. L1.17a supplies `colemanCoefficients_exact`, `colemanCoefficients_meromorphicPrimitive` and `colemanCoefficients_restrict_injective` for algebraic coefficient extension. No equality with the full analytic ℂ_p algebra follows from this extension. L1.43 supplies `ColemanFunctions.pullback` and `definiteIntegral_pullback` under its common Frobenius-power, same-reduction cross-map and uniform strict-neighborhood bounds. §§3.0a–3.0b supply the extra component and full-analytic-coefficient comparisons required here.
 
@@ -183,17 +193,17 @@ Pinned Mathlib Graph; finite linear algebra over a characteristic-zero field. No
 
 ### 2.0 Residues, finite maps and meromorphic germs
 
-Prove `Annulus.residueTransport`. Extend the supplied annular residue to differential-compatible finite maps of oriented open annuli: for a finite map of positive oriented degree n, Res(φ*ω)=n Res(ω). Reversal changes the sign. Residue commutes with finite separable coefficient extension, coefficient trace and restriction to smaller end annuli. At a smooth closed point x of a curve over a characteristic-zero field, a uniformizer identifies its completed local ring with κ(x)[[z]] and its meromorphic differential germs with κ(x)((z))dz; residue is coefficient −1. For a meromorphic differential converging on a punctured disc, its formal and analytic residues agree. There is no map from every analytic annular Laurent family to a bounded-below formal Laurent series. (besser2017, Definition 3.1 and (3.1), p. 9, besser2017 line 402; degree consequence as in besser-dejeu2012 Lemma 8.1, p. 361, line 2529).
+Prove `Annulus.residueTransport`. For differential-compatible finite maps of oriented open annuli of positive oriented degree n, prove Res(φ*ω)=n Res(ω), compatible with reversal, finite separable coefficient extension, coefficient trace and restriction to smaller end annuli. Combine the point-expansion and formal-calculus supplier contracts with analytic restriction for convergent meromorphic point germs. There is no map from every analytic annular Laurent family to a bounded-below formal Laurent series. This target adds analytic finite-map transport and formal/analytic comparison adapters. (besser2017, Definition 3.1 and (3.1), p. 9, besser2017 line 402; degree consequence as in besser-dejeu2012 Lemma 8.1, p. 361, line 2529).
 
 Assume Formal coefficients are characteristic-zero fields; analytic coefficients are complete nontrivially normed ultrametric fields; A finite analytic map has positive degree and compatible orientation; coefficient trace is for finite separable extensions; Formal/analytic germ comparison requires a meromorphic germ with finitely many negative powers.
 
 Prove `residueTransport_degree`: Res of the pullback of dz/z under z=t^n is n.
 
-Prove `residueTransport_germ`: Meromorphic point expansions preserve differentiation, residue, finite scalar extension and the two compatible residue computations.
+Prove `residueTransport_germ`: At a smooth closed point over a complete analytic coefficient field, for a chosen uniformizer and a meromorphic germ converging on a punctured disc, identify its transported point expansion with its analytic Laurent germ. This comparison commutes with differentiation, restriction and finite separable scalar extension. Apply `annulusResidue_laurentSeries` to identify the two residue computations; coefficient trace commutes with the comparison.
 
-Use the supplied coefficient residue and restriction. Factor a finite annular map locally as a monomial times a unit, apply the logarithmic derivative and the exact-residue law, and extend by the residue/exact decomposition. Formal substitution is coefficientwise. The smooth completed-local-ring parameter theorem gives point expansions; the finite negative part makes the analytic/formal comparison legitimate. Coefficient extraction commutes with linear trace.
+For the analytic finite-map law, factor the parameter pullback locally as a monomial times a unit, apply the logarithmic derivative and the supplied exact-residue law, and extend by the analytic residue/exact decomposition. Use the formal substitution and residue-degree laws through the point-completion charts. For convergent meromorphic germs, identify their coefficient families through these charts and analytic evaluation; apply `annulusResidue_laurentSeries` for residue agreement. The finite negative part is essential. Coefficient extraction commutes with linear trace.
 
-*Needs:* ColemanIntegration L0.A1–L0.A2, L0.11–L0.12, RigidAnalyticGeometry §§1.3, 6.2, 8.1, Mathlib `LaurentSeries.derivative`, Mathlib `Algebra.trace`.
+*Needs:* AlgebraicCurves Layers 5 and 9, FormalLaurentPuiseux L1–L3, ColemanIntegration L0.A1–L0.A2, L0.11–L0.12 `annulusResidue_laurentSeries`, RigidAnalyticGeometry §§1.3, 6.2, 8.1, Mathlib `LaurentSeries.derivative`, Mathlib `Algebra.trace`.
 
 **Checks.**
 
@@ -215,9 +225,9 @@ Prove `LogarithmicFunctions.residue_zero_iff`: F is Laurent without L exactly wh
 
 Prove `LogarithmicFunctions.changeParameter`: On the analytic subspace restrict the supplied AnnulusLogRing.changeParam, retaining u=az(1+h), |a|=1 and |h|<1. Formally, for u=az(1+h), a≠0 and h∈zk[[z]], choose a scalar δ and transport L_u=L_z+δ+log(1+h) through the full differential-algebra substitution. The broader analytic coefficient/radius-transport statement is §2.1a. Orientation reversal changes both residue and the logarithmic generator.
 
-Use Polynomial (LaurentSeries k) for the formal ring, with dL=z⁻¹. Integrate formal monomials by nonzero integer denominators; residues prove the direct-sum decomposition and constant kernel. On the supplied analytic ring take the degree-one subspace and use exists_logLaurent_primitive and logLaurent_derivative_eq_zero_iff; do not reconstruct analytic integration. The formal and analytic carriers are compared only for convergent meromorphic germs, via §2.0.
+Use Polynomial (LaurentSeries k) for the formal ring, extending the Laurent derivation by dL=z⁻¹. For w with residue a, apply the supplied residue-zero primitive theorem to w−a z⁻¹ and then add aL. The supplied exact-residue law and Laurent scalar kernel give the logarithmic coefficient and constant kernel. Polynomial coefficient uniqueness proves the degree-one presentation; integration by parts extends the supplied Laurent primitives to the polynomial-logarithm algebra. Restrict the supplied formal substitutions and chain rule after choosing the logarithmic lift δ. On the analytic ring take the degree-one subspace and use exists_logLaurent_primitive and logLaurent_derivative_eq_zero_iff. Compare formal and analytic carriers only for convergent meromorphic germs, via §2.0.
 
-*Needs:* RigidAnalyticGeometry §6.2, Mathlib `LaurentSeries`, Mathlib `LaurentSeries.derivative`, Mathlib `LaurentSeries.hasseDeriv_coeff`, §2.0, ColemanIntegration L0.A1–L0.A2, L0.11–L0.12, L0.20–L0.23.
+*Needs:* FormalLaurentPuiseux L1–L3, RigidAnalyticGeometry §6.2, Mathlib `LaurentSeries`, Mathlib `LaurentSeries.derivative`, Mathlib `LaurentSeries.hasseDeriv_coeff`, §2.0, ColemanIntegration L0.A1–L0.A2, L0.11–L0.12, L0.20–L0.23.
 
 **Checks.**
 
@@ -225,7 +235,7 @@ Use Polynomial (LaurentSeries k) for the formal ring, with dL=z⁻¹. Integrate 
 - dC=0 for every constant C and dL≠0, including over ℚ₂. In the coefficient presentation L=(0,1), a scalar is (C,0), and the residue of dL is 1, which a constant-only space would miss.
 - Over ℚ, `toPolynomial (single 0 2, 0) = Polynomial.C (single 0 2)`: the nonzero Laurent constant remains the same constant polynomial. A zero map would lose it.
 - Over ℚ, `toPolynomial (0, 1) = Polynomial.X`: the logarithmic generator maps to the polynomial variable. A map retaining only the Laurent part would send it to zero.
-- L² is in A_log but not A_log,1, since d(L²)=2L dz/z is not an analytic differential. Characteristic p would also make d(z^p)=0.
+- L² is in A_log but not A_log,1, since d(L²)=2L dz/z is not an analytic differential. Over ZMod 2, F=(single 2 1,0) represents z², has `differential F = 0`, and differs from every scalar pair (single 0 c,0): its coefficient at exponent 2 is 1, while each scalar's is 0. Thus the constant-kernel theorem needs characteristic zero.
 
 ### 2.1a The analytic coefficient extension
 
@@ -263,9 +273,9 @@ Prove `doubleIndex_reverse`: `B_{-e}`(F,G)=−B_e(F,G).
 
 Prove `doubleIndex_add_constants`: B_e(F+A,G+B)−B_e(F,G)=A Res_e(dG)−B Res_e(dF).
 
-Expand in the direct sum of the Laurent subspace and kL. Residues of exact Laurent differentials vanish, proving alternation. The residue rule determines all terms except B(L,L), which is zero by alternation.
+Expand in the direct sum of the Laurent subspace and kL. Apply the supplied Laurent integration-by-parts and exact-residue laws to prove alternation. The residue rule determines all terms except B(L,L), which is zero by alternation.
 
-*Needs:* §2.1, §2.1a.
+*Needs:* §2.1, §2.1a, FormalLaurentPuiseux L2–L3.
 
 **Checks.**
 
@@ -283,9 +293,9 @@ Prove `doubleIndex_scalarExtension`: The embedded value of B_k(F,G) equals B_L(F
 
 Prove `doubleIndex_shrink`: Analytic continuation to a common end annulus identifies the values.
 
-Apply the residue pullback law of §2.0 to the analytic-first rule; uniqueness in §2.2 supplies all logarithmic terms. Coefficient trace commutes with coefficient extraction. The same argument handles shrinking and scalar extension.
+Apply the analytic residue pullback adapter of §2.0, or the supplied formal substitution, chain rule and residue-degree law, to the Laurent-first rule; uniqueness in §2.2 supplies all logarithmic terms. Coefficient trace commutes with coefficient extraction. The same argument handles shrinking and scalar extension.
 
-*Needs:* §2.2, Mathlib `Algebra.trace`, §2.0.
+*Needs:* §2.2, FormalLaurentPuiseux L1–L3, Mathlib `Algebra.trace`, §2.0.
 
 **Checks.**
 
@@ -299,7 +309,7 @@ The values B(1,log z)=1 and B(z,z⁻¹)=−1 fix the residue order; z↦z² fixe
 
 ### Dependencies
 
-Imported ColemanIntegration L0 analytic/logarithmic theory; additional residue transport and formal/general-coefficient extensions in §§2.0–2.1a; RigidAnalyticGeometry §§1.3, 6.2.
+AlgebraicCurves Layers 5 and 9 for point completions and geometric residues; FormalLaurentPuiseux L1–L3 for formal differential calculus; ColemanIntegration L0 analytic/logarithmic theory; additional analytic finite-map/comparison adapters and formal logarithmic/general-coefficient extensions in §§2.0–2.1a; RigidAnalyticGeometry §§1.3, 6.2.
 
 ## Layer 3: Wide-open pairings and semistable graph corrections
 
@@ -386,7 +396,7 @@ Prove `wideOpen_residue_sum_zero`: For an analytic one-form extending on the spe
 
 Prove global residue cancellation on these Coleman wide opens using the proper residue theorem and the annular restriction maps. Then §2.2 kills global primitive constants and proves alternation. Local analytic disc primitives and the residue theorem prove shrinking across newly filled nonsingular discs. The cohomological and reciprocity properties are proved after this definition in §3.1a.
 
-*Needs:* §2.3, §3.0a, §3.0b.
+*Needs:* §2.3, §3.0a, §3.0b, AlgebraicCurves Layers 5 and 9 (proper residue theorem).
 
 **Checks.**
 
@@ -657,7 +667,7 @@ Prove `naturalIndexReciprocity_rationalLine`: On ℙ¹ over an algebraically clo
 
 First define the global natural double-index sum using §4.0c and prove finite-map degree scaling from the local ramification law of §2.3. Define the differential trace for the finite separable function-field extension. In a Galois closure, naturality makes the primitive of the trace the sum of conjugate primitives modulo a scalar; global residue cancellation removes that scalar. Divide the degree formula by the nonzero covering degree to obtain the projection formula. For nonconstant f the induced map X→ℙ¹ is finite and projection reduces B_X^nat(ω,dlog f) to B_ℙ¹^nat(Tr_f ω,dlog t). Over the algebraically closed coefficient field, partial fractions split Tr_f ω into an exact rational differential and scalar logarithmic derivatives. Compute the logarithmic pair at 0,a,∞; the exact term vanishes by the residue theorem. Use the ℂ_p export singleIntegral_cp and descend by singleIntegral_geometricPrimitiveDescent of §4.0c; for finite K this agrees with the early primitive compatibility in §4.0b. Constant f is handled separately. Finally, at div(f) the local term is ord_x(f)F(x), while at poles of ω it is −Res_x(log f·ω). This yields the separated-support formula before harmonic realization.
 
-*Needs:* §2.2, §2.0, §4.0c, §2.3.
+*Needs:* §2.2, §2.0, §4.0c, §2.3, AlgebraicCurves Layer 9 (proper residue theorem).
 
 **Checks.**
 
