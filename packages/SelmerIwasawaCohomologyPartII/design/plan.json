@@ -790,8 +790,10 @@
           "id": "4.3",
           "kind": "construction",
           "name": "projectedDiagonalAbelJacobi",
-          "statement": "For 4.1, localize at the two cuspidal Hecke characters and quotient by I=(ker φΠ₀,ker φΠ₁). Cuspidality gives rational geometric cohomology vanishing outside degree 2n−1, independently of H(n),H(n+1). The Hochschild–Serre edge map therefore sends each codimension-n cycle, in particular Δ, to H¹(F,Wλ), where Wλ=H²ⁿ⁻¹ét(X_Fbar,Eλ(n))/I. Define AJλ(Δ) by the absolute class followed by this edge identification; use the integral edge map at congruence levels only under the separate integral concentration/freeness hypotheses.",
-          "hypotheses": [],
+          "statement": "For 4.1, localize at the two cuspidal Hecke characters and quotient by I=(ker φΠ₀,ker φΠ₁). The rational cuspidal concentration input is AG2.1b on its compact ST/END domain and gap diagonal-concentration on the full native domain, including F⁺=ℚ: each projected factor is concentrated in degree nα−1, hence the product in degree 2n−1, independently of H(n),H(n+1). The Hochschild–Serre edge map therefore sends each codimension-n cycle, in particular Δ, to H¹(F,Wλ), where Wλ=H²ⁿ⁻¹ét(X_Fbar,Eλ(n))/I. Define AJλ(Δ) by the absolute class followed by this edge identification; use the integral edge map at congruence levels only under the separate integral concentration/freeness hypotheses, with A7.1.1 (residual absolute irreducibility of both factors) for the nonproper boundary-cohomology comparison.",
+          "hypotheses": [
+            "Rational concentration on the full native domain is the input of gap:diagonal-concentration; integral congruence edges additionally require integral concentration/freeness and, for F⁺=ℚ, A7.1.1 for gap:boundary-cohomology."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "§8.3 preceding (8.10); §7.2 preceding Corollary 7.2.9, pp. 126,139; ltxzz line 6152; ltxzz line 6767"
@@ -804,7 +806,10 @@
             "roadmap:EtaleCohomologyFoundations §F.4.5",
             "roadmap:MotivesAndAlgebraicCycles §§7.16–7.18",
             "roadmap:SchemeAndStackFoundations §2.15",
-            "roadmap:EtaleCohomologyFoundations §F.4.6"
+            "roadmap:EtaleCohomologyFoundations §F.4.6",
+            "roadmap:AutomorphicGaloisRepresentationsPartII AG2.1b (Weight separation into the middle degree; The archimedean packet multiplicity)",
+            "gap:diagonal-concentration",
+            "gap:boundary-cohomology"
           ],
           "api": [
             {
@@ -838,17 +843,24 @@
               "name": "aj_no_concentration",
               "kind": "non-example",
               "statement": "For ℙ¹, the degree-1 point class is not an Abel–Jacobi class in H¹(F,H¹(ℙ¹bar,Eλ(1)))=0; this prevents an edge construction for arbitrary cycles without concentration."
+            },
+            {
+              "name": "aj_nonproper_boundary_domain",
+              "kind": "boundary",
+              "statement": "For F⁺=ℚ a reducible residual system does not meet the integral boundary-cohomology contract, even if its characteristic-zero Πα is cuspidal. The rational AJ construction uses the distinct cuspidal boundary/concentration input of diagonal-concentration; compact ST/END concentration alone cannot supply that nonproper comparison."
             }
           ],
-          "proofSketch": "Use cohomological realization of the cuspidal Hecke quotient, Künneth and the arithmetic Hochschild–Serre spectral sequence. Its single nonzero geometric row identifies degree 2n with H¹ of degree 2n−1.",
-          "adversarial": "No arbitrary homologically nontrivial cycle is assigned an AJ class without the projected vanishing theorem; coefficient topology is adic, not discrete by fiat."
+          "proofSketch": "Apply AG2.1b on its stated compact ST/END domain and gap diagonal-concentration for the full rational native specialization, retaining its cuspidal boundary exclusion for F⁺=ℚ. At integral nonproper congruence levels use A7.1.1 and gap boundary-cohomology in addition to concentration/freeness. Then apply Künneth and the arithmetic Hochschild–Serre spectral sequence. Its single nonzero geometric row identifies degree 2n with H¹ of degree 2n−1.",
+          "adversarial": "No arbitrary homologically nontrivial cycle is assigned an AJ class without the projected vanishing theorem; coefficient topology is adic, not discrete by fiat. Compact ST/END concentration is not asserted on arbitrary native unitary levels; diagonal-concentration carries that supplier extension. Rational cuspidal boundary exclusion and integral residual boundary localization have different hypotheses."
         },
         {
           "id": "4.4",
           "kind": "theorem",
           "name": "rankinSelbergPurityAndSelmer",
-          "statement": "The standing representation Vλ is pure of weight −1 at every finite w∤ℓ. For the diagonal datum, H(n),H(n+1), and λ with Σ⁺min∩Σ⁺ℓ=∅, AJλ(Δ) belongs to H¹_f(F,Wλ). Away from ℓ use the weight −1 local vanishing with conjugate-dual polarization, and above ℓ use the crystalline regulator comparison for the actual smooth integral model.",
-          "hypotheses": [],
+          "statement": "The standing representation Vλ is pure of weight −1 at every finite w∤ℓ. For the diagonal datum and λ|ℓ satisfying L1 (ℓ>4n and ℓ unramified in F) and L2 (Σ⁺min∩Σ⁺ℓ=∅), AJλ(Δ) belongs to H¹_f(F,Wλ). H(n),H(n+1) enter the multiplicity realization in 4.5; membership here uses the actual projected cohomology Wλ. Away from ℓ use the weight −1 local vanishing with conjugate-dual polarization, and above ℓ use the crystalline regulator comparison for the actual smooth integral model.",
+          "hypotheses": [
+            "Membership assumes datum 4.1, L1 and L2 and the regulator/concentration domains of 4.3; purity of the standing Vλ is independent of these good-reduction hypotheses."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Lemma 8.1.6 and proof of Theorem 8.3.2, pp. 133,139–140; ltxzz line 6484; ltxzz line 6796"
@@ -858,12 +870,19 @@
             "roadmap:SelmerIwasawaCohomology §§2.6–2.7, 4.9–4.10, 4.24–4.25",
             "roadmap:EulerSystemsAndKolyvaginSystems §1.2",
             "gap:purity-crystalline-regulator",
-            "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7"
+            "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7",
+            "roadmap:PELModuli §§M2.8, M4.3"
           ],
           "api": [],
-          "tests": [],
-          "proofSketch": "Tempered local-global compatibility gives purity; (n₀−1)+(n₁−1)−2n=−1. The local finite regulator theorem and good reduction only at w|ℓ establish the finite conditions. At all other places the self-dual pure weight −1 representation has vanishing rational local H¹.",
-          "adversarial": "Ramified bad reduction w∤ℓ is included; Eλ can be ramified over ℚℓ; no global good-reduction hypothesis is introduced."
+          "tests": [
+            {
+              "name": "selmer_ramified_coefficient_prime",
+              "kind": "non-example",
+              "statement": "If ℓ ramifies in F, L1 fails and the stated smooth hyperspecial PEL model and crystalline-regulator contract do not apply. For the source minimum Σ⁺min⊇Σ⁺bad this also violates L2. Failure of these input hypotheses does not assert nonexistence of every smooth model at a ramified prime (ltxzz lines 434, 1038–1039)."
+            }
+          ],
+          "proofSketch": "Tempered local-global compatibility gives purity; (n₀−1)+(n₁−1)−2n=−1. L1 makes ℓ odd and unramified in F, and L2 makes both local levels hyperspecial above ℓ; the smooth integral PEL models on that domain and the local crystalline regulator comparison establish the finite conditions at w|ℓ. At all other places the self-dual pure weight −1 representation has vanishing rational local H¹.",
+          "adversarial": "Ramified bad reduction w∤ℓ is included; Eλ can be ramified over ℚℓ; no global good-reduction hypothesis is introduced. L1 supplies an explicit odd unramified coefficient-prime domain; for the source minimum containing Σ⁺bad, ramified coefficient primes also violate L2. No H(N) is required for membership on Wλ."
         },
         {
           "id": "4.5",
@@ -1323,7 +1342,7 @@
           "id": "7.2",
           "kind": "theorem",
           "name": "auxiliaryPlaceDetection",
-          "statement": "For an admissible λ, R=R₀⊗R₁ and m>m₀≥0, let S⊆H¹_f,R(F,R̄⁽ᵐ⁾) be free of rank r=1 or 2 over A_k, k=m−m₀. Choose γ as in 7.1 and c≥0, and assume the Oλ-span of θ_S(G_{S,γ}) contains λ^c Hom_Oλ(S,(R̄⁽ᵐ⁾)^{hγ}), where G_{S,γ} consists of actual γ-associated Frobenius elements. Outside every finite exceptional rational support choose r distinct very special inert places whose evaluation matrix D has image containing π^c A_k^r, identifying the λ^k-torsion fixed line with A_k. The supplied scaled inverse C satisfies DC=CD=π^c I; s_j=Ce_j satisfy loc_wᵢ(s_j)=0 for i≠j and expλ(loc_wⱼ(s_j))≥max(0,k−c), and their span contains π^c S. For c=0 these form a basis; positive loss gives only the stated submodule conclusion, and if c≥k take C=0. If r=2, k>c and v∈S is primitive, after reordering choose the first evaluation with expλ(loc_w₁(v))≥k−c and a primitive t∈S with loc_w₁(t)=0 and expλ(loc_w₂(t))≥k−c. The pair (v,t) need not be a basis. Preserve the individual/tensor Satake, CM-type, PI6/PI8 or PII8 conditions on the fixed native Hecke modules. In a family c is independent of m; when the supplier proves c=f(r)rR use f(1)=1 and f(2)=4.",
+          "statement": "For an admissible λ, R=R₀⊗R₁ and m>m₀≥0, let S⊆H¹_f,R(F,R̄⁽ᵐ⁾) be free of rank r=1 or 2 over A_k, k=m−m₀. Choose γ as in 7.1 and c≥0, and assume the Oλ-span of θ_S(G_{S,γ}) contains λ^c Hom_Oλ(S,(R̄⁽ᵐ⁾)^{hγ}), where G_{S,γ} consists of actual γ-associated Frobenius elements. Outside every finite exceptional rational support choose r distinct very special inert places whose evaluation matrix D has image containing π^c A_k^r, identifying the λ^k-torsion fixed line with A_k. The supplied scaled inverse C satisfies DC=CD=π^c I; s_j=Ce_j satisfy loc_wᵢ(s_j)=0 for i≠j and expλ(loc_wⱼ(s_j))≥max(0,k−c), and their span contains π^c S. For c=0 these form a basis; positive loss gives only the stated submodule conclusion, and if c≥k take C=0. If r=2, k>c and v∈S is primitive, after reordering choose the first evaluation with expλ(loc_w₁(v))≥k−c and a primitive t∈S with loc_w₁(t)=0 and expλ(loc_w₂(t))≥k−c. The pair (v,t) need not be a basis. Preserve the individual/tensor Satake, CM-type, PI6/PI8 or PII8 conditions on the fixed native Hecke modules. In a family c is independent of m; when the supplier proves c=𝔣(r)·d_R, with d_R the reducibility depth of EulerSystemsAndKolyvaginSystems §1.3 (ltxzz r_R), use 𝔣(1)=1 and 𝔣(2)=4.",
           "hypotheses": [
             "S is the actual reduced integral Selmer submodule; L5-1; γ has prime-to-ℓ order and a free rank-one hγ-fixed tensor line; the realised Frobenius span condition (v) of EulerSystemsAndKolyvaginSystems §1.15 with loss c; the fixed Hecke modules have the realization and genericity needed for PI6/PI8.",
             "For the rank-two primitive-kernel conclusion k=m−m₀>c and v is primitive in S. For c≥k only the zero lower bound and C=0 are asserted."
@@ -1370,14 +1389,16 @@
           "id": "7.3",
           "kind": "theorem",
           "name": "rankinSelbergLevelRaisingSystem",
-          "statement": "For admissible λ and H(n),H(n+1), on the native data satisfying the first- and second-law hypotheses, prove `onePlaceAnnihilator`: given a nonzero definite period with valuation mper and the fixed cohomology-to-lattice comparison error mlat, construct c₁∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p loc_p(c₁))≥m−mper−mlat and loc_w(c₁) nonsingular for w outside Σ⁺min∪Σ⁺ℓ∪{p}. Prove `twoPlaceAnnihilator`: for the diagonal regulator and a detecting pair p₁,p₂ from 7.2 with uniform loss c, construct c₂∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p₂ loc_p₂(c₂))≥m−mper−c−mlat and nonsingular localizations outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂}. Here z=π^mper z_prim is a chosen nonzero projected diagonal Selmer coordinate with z_prim primitive in a saturated integral lattice T, and m₀ is the fixed bad-place killing exponent. Put S=π^m₀T modulo λᵐ and v=π^m₀z_prim; for k=m−m₀>c use the primitive-kernel pair (v,t) of 7.2. Then expλ(loc_p₁(z))≥m−mper−c, loc_p₁(t)=0 and expλ(loc_p₂(t))≥m−m₀−c. No basis or unit coefficient in the scaled-inverse columns is used. The singular edge uses 5.6 and the first absolute-cycle edge uses 6.4; all maps retain the tensor polarization R^c≃R∨(1). These constructions supply the annihilators for 8.1–8.2.",
+          "statement": "For admissible λ and H(n),H(n+1), on the native data satisfying the first- and second-law hypotheses, prove `onePlaceAnnihilator`: given a nonzero definite period with valuation mper and the fixed cohomology-to-lattice comparison error mlat, construct c₁∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p loc_p(c₁))≥m−mper−mlat and loc_w(c₁) nonsingular for w outside Σ⁺min∪Σ⁺ℓ∪{p}. Prove `twoPlaceAnnihilator`: for the diagonal regulator and a detecting pair p₁,p₂ from 7.2 with uniform loss c, construct c₂∈H¹(F,R̄⁽ᵐ⁾,c) with expλ(∂_p₂ loc_p₂(c₂))≥m−mper−c−mlat and nonsingular localizations outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂}. Here z=π^mper z_prim is a chosen nonzero projected diagonal Selmer coordinate with z_prim primitive in a saturated integral lattice T, and m₀ is the fixed bad-place killing exponent. Put S=π^m₀T modulo λᵐ and v=π^m₀z_prim; for k=m−m₀>c use the primitive-kernel pair (v,t) of 7.2. Then expλ(loc_p₁(z))≥m−mper−c, loc_p₁(t)=0 and expλ(loc_p₂(t))≥m−m₀−c. No basis or unit coefficient in the scaled-inverse columns is used. The singular edge uses 5.6 and the first absolute-cycle edge uses 6.4; all maps retain the tensor polarization R^c≃R∨(1). These constructions supply the annihilators for 8.1–8.2. Nondetecting-place unramifiedness and the extending-cycle specialization comparisons are the explicit inputs below; rigidity at the added place is derived by rigid_of_levelRaisingSpecial from L6 and residual PII4.",
           "hypotheses": [
             "At each edge use actual data satisfying 5.1 or 6.1 and the hypotheses of 5.6 or 6.4; all cohomology-to-lattice kernels and cokernels have a fixed λ-power bound mlat. The detecting pair satisfies 7.2 with loss c independent of m.",
-            "For the two-place argument S=π^m₀T modulo λᵐ with T saturated rank two, z=π^mper z_prim, v=π^m₀z_prim primitive in S, and k=m−m₀>c; use loc_p₁(t)=0 and exp(loc_p₂(t))≥k−c, not a detecting basis."
+            "For the two-place argument S=π^m₀T modulo λᵐ with T saturated rank two, z=π^mper z_prim, v=π^m₀z_prim primitive in S, and k=m−m₀>c; use loc_p₁(t)=0 and exp(loc_p₂(t))≥k−c, not a detecting basis.",
+            "For each annihilator let C_m=H²ⁿ⁻¹ét((Sh′_n₀×Sh′_n₁)_Fbar,Oλ(n))/(n₀,n₁) be its actual projected geometric coefficient module. For every finite place w of F whose restriction to F⁺ lies outside Σ⁺min∪Σ⁺ℓ∪{p} for c₁, or outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂} for c₂, require that C_m is unramified at w. This includes every other place above the rational primes p, p₁ and p₂. The smooth-model specialization input consists of the two smooth native models, their extending graph cycle and the Hecke-compatible ordinary/compact specialization isomorphisms; for F⁺≠ℚ use proper smooth base change, including the models of Remark 5.2.8, and for the nonproper domain use gap native-shimura. Smoothness alone without the nonproper specialization comparison does not suffice (ltxzz Lemma 4.2.4, p. 38; Remark 5.2.8, p. 59; proofs of (8.5), (8.14), pp. 137,141; ltxzz lines 1744–1754, 2754–2768, 6700–6701, 6901–6902).",
+            "At the second-law edge p₁, PII4 implies residual level-raising specialness. Apply rigid_of_levelRaisingSpecial to L6 and this residual polynomial before using first reciprocity at p₂ with Σ⁺lr,I={p₁}; the odd representation and the cyclotomic absolute irreducibility clause retain their original hypotheses."
           ],
           "locator": {
             "source": "ltxzz",
-            "where": "§1.2 and proofs of Theorems 8.2.2/8.3.2, pp. 5–6,135–143; ltxzz line 200; ltxzz line 6633; ltxzz line 6879; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2"
+            "where": "§1.2 and proofs of Theorems 8.2.2/8.3.2, pp. 5–6,135–143; ltxzz line 200; ltxzz line 6633; ltxzz line 6879; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2; rigidity: Definition 6.3.4(2),(4), pp. 115–116, lines 5623–5632, 5660–5661; nondetecting places: Lemma 4.2.4 and Remark 5.2.8, lines 1744–1754, 2754–2768, 6700–6701, 6901–6902"
           },
           "prerequisites": [
             "target:3.6",
@@ -1390,7 +1411,13 @@
             "roadmap:EulerSystemsAndKolyvaginSystems §1.2",
             "roadmap:ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7",
             "roadmap:SelmerIwasawaCohomology §§4.11, 4.24–4.25",
-            "roadmap:EulerSystemsAndKolyvaginSystems §4.4"
+            "roadmap:EulerSystemsAndKolyvaginSystems §4.4",
+            "roadmap:PELModuli §§M2.8, M4.3",
+            "roadmap:EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6",
+            "gap:native-shimura",
+            "gap:rigidity",
+            "roadmap:SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity)",
+            "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5 (local–global compatibility)"
           ],
           "api": [
             {
@@ -1402,6 +1429,11 @@
               "name": "twoPlaceAnnihilator",
               "role": "construction",
               "statement": "The class c₂ has the second-place singular exponent and nonsingular localizations stated above (ltxzz equations (8.13)–(8.14), lines 6887–6892); the source loss 4rR is replaced by the actual loss c of 7.2."
+            },
+            {
+              "name": "rigid_of_levelRaisingSpecial",
+              "role": "rigidity transport",
+              "statement": "For even N≥2, a relevant rank-N Π, its strong coefficient field E and λ|ℓ, let r̄=ρ̄Π,λ,+ be the associated polarized residual representation with similitude η_(F/F⁺)^N ε̄ℓ^(1−N). Prove rigid_of_levelRaisingSpecial: if r̄ is rigid for (Σ⁺min,Σ), p is a special inert place outside Σ⁺min∪Σ∪Σ⁺ℓ with ℓ∤p(p²−1), and Pα(Π_p) modulo λ is level-raising special, then r̄ is rigid for (Σ⁺min,Σ∪{p}). Unramified local–global compatibility identifies the arithmetic-Frobenius multiset with p^(1−N)α(Π_p)⁻¹; its simple Satake pair {p,p⁻¹} therefore gives {p^(−N),p^(−N+2)} exactly once. Clauses (1) and (3) of rigidity are unchanged, clause (4) loses only p, and this pair proves the new clause (2). (ltxzz Definition 3.1.5 and Remark 3.1.6, pp. 23–24; Proposition 3.2.4(2), p. 27; Definition 6.3.4(2),(4) and §6.4, pp. 115–116; ltxzz lines 1044–1057, 1204–1217, 5623–5632, 5660–5661)."
             }
           ],
           "tests": [
@@ -1419,10 +1451,30 @@
               "name": "perfect_pairing_exponent",
               "kind": "computation",
               "statement": "For a perfect A_m-bilinear pairing of free rank-one A_m-modules, elements of exponents a,b have pairing exponent max(0,a+b−m): in bases the pairing scalar is a unit and their truncated valuations are m−a,m−b. In A₅, π and π² have exponents 4,3 and product exponent 2. With the nonperfect pairing (x,y)↦πxy the exponent is 1 instead. Zero arguments give exponent 0."
+            },
+            {
+              "name": "system_other_place_above_p1",
+              "kind": "non-example",
+              "statement": "For F⁺≠ℚ, a place w above p₁ other than the detecting place lies in Σ⁺I because Σ⁺I⊇Σ⁺_p₁. Repeating the first-edge argument outside Σ⁺I gives no nonsingularity there; the stronger final assertion (8.14) uses the proper smooth models of Remark 5.2.8 and specialization."
+            },
+            {
+              "name": "rigid_special_simple_pair",
+              "kind": "computation",
+              "statement": "For N=2 and p=3 modulo λ|11, P=(T−3)(T−4) has P(3)=0 and P′(3)=−1≠0. Arithmetic Frobenius has the pair {3⁻²,1}={5,1} in 𝔽₁₁. Thus the new raising-place clause holds, with both old minimal and Fontaine–Laffaille conditions unchanged."
+            },
+            {
+              "name": "rigid_special_double_pair",
+              "kind": "non-example",
+              "statement": "For N=4 and p=3 modulo λ|19, P=((T−3)(T−13))² is reciprocal, but P′(3)=0. Arithmetic Frobenius contains {3⁻⁴,3⁻²}={4,17} twice. PII4 and the new rigidity clause (2) both fail; adding a place is not automatic from L6."
+            },
+            {
+              "name": "rigid_special_excluded_place",
+              "kind": "boundary",
+              "statement": "A place already in Σ gives no enlargement; a place in Σ⁺min or above ℓ is outside this inference and cannot replace the minimal or Fontaine–Laffaille condition by a raising eigenpair. For p²=1 modulo λ the two Satake roots collide, so the imposed ℓ∤p(p²−1) cannot be omitted from this simple-pair argument."
             }
           ],
-          "proofSketch": "At one place combine first reciprocity with 3.6 and an integral lattice map. At two places apply second reciprocity to the detected diagonal coordinate z at p₁; it gives the definite period exponent ≥m−mper−c. Change the odd special level by 3.7 and apply first reciprocity at p₂, losing at most mlat. Pair c₂ with the primitive t from 7.2: the p₁ term is zero, the p₂ term has exponent at least max(0,m−m₀−mper−2c−mlat) by the perfect rank-one finite/singular pairing. All other terms vanish or are killed by the fixed different-ideal power π^mdif, using Selmer reduction and the dual local conditions. Thus m>m₀+mper+2c+mlat+mdif contradicts global sum-zero reciprocity. All constants are independent of m.",
-          "adversarial": "Arithmetic realization only; generic bipartite definitions and norm-compatible Euler systems are not redefined here. Edge II is an inequality, so any generic theorem demanding two equalities is insufficient."
+          "proofSketch": "At one place combine first reciprocity with 3.6 and an integral lattice map. At two places apply second reciprocity to the detected diagonal coordinate z at p₁; it gives the definite period exponent ≥m−mper−c. Use rigid_of_levelRaisingSpecial with L6 and residual PII4 at p₁ to obtain rigidity for (Σ⁺min,{p₁}). Change the odd special level by 3.7 and apply first reciprocity at p₂ with Σ⁺lr,I={p₁}, losing at most mlat. Pair c₂ with the primitive t from 7.2: the p₁ term is zero, the p₂ term has exponent at least max(0,m−m₀−mper−2c−mlat) by the perfect rank-one finite/singular pairing. All other terms vanish or are killed by the fixed different-ideal power π^mdif, using Selmer reduction and the dual local conditions. Thus m>m₀+mper+2c+mlat+mdif contradicts global sum-zero reciprocity. All constants are independent of m. At each nondetecting good place, specialize the extending graph cycle and its projected absolute class over the unramified trait. The edge class is inflated from the residue Galois group and hence is nonsingular; push it through the equivariant integral lattice map. Unramifiedness of C_m alone is not a claim that every class in H¹(F_w,C_m) is nonsingular.",
+          "adversarial": "Arithmetic realization only; generic bipartite definitions and norm-compatible Euler systems are not redefined here. Edge II is an inequality, so any generic theorem demanding two equalities is insufficient. Rigidity transport uses the actual untwisted automorphic residual extension, a simple residual Satake pair, and p²≠1 modulo λ. Other places above the detecting rational primes require the extending-cycle specialization, not merely the final edge hypotheses."
         },
         {
           "id": "7.4",
@@ -1473,7 +1525,10 @@
             "roadmap:EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15",
             "roadmap:EndoscopicTransferAndUnitaryTraceComparison §13.7",
             "roadmap:EulerSystemsAndKolyvaginSystems §4.4",
-            "gap:old-form-dimension"
+            "gap:old-form-dimension",
+            "roadmap:PELModuli §§M2.8, M4.3",
+            "roadmap:EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6",
+            "gap:native-shimura"
           ],
           "api": [],
           "tests": [],
@@ -1486,7 +1541,8 @@
           "name": "rankinSelbergSelmerRankOne",
           "statement": "For the same standing pair, admissible λ and H(n),H(n+1), assume the uniform rank-two span hypothesis below and suppose a diagonal datum 4.1 has even local levels transferable at Σ⁺min and AJλ(Δ)≠0. Then dim_Eλ H¹_f(F,Vλ)=1.",
           "hypotheses": [
-            "For every saturated rank-two Oλ-sublattice containing a primitive chosen diagonal Selmer coordinate modulo torsion, assume the reduced submodules after the fixed bad-place killing power satisfy the realised Frobenius span condition of 7.2, for choices of γ from 7.1 with a loss c independent of m."
+            "For every saturated rank-two Oλ-sublattice containing a primitive chosen diagonal Selmer coordinate modulo torsion, assume the reduced submodules after the fixed bad-place killing power satisfy the realised Frobenius span condition of 7.2, for choices of γ from 7.1 with a loss c independent of m.",
+            "The first-law edge at p₂ uses rigidity for (Σ⁺min,{p₁}), derived from L6 and residual PII4 at p₁ by rigid_of_levelRaisingSpecial of 7.3, and the nondetecting-place specialization input of 7.3."
           ],
           "locator": {
             "source": "ltxzz",
@@ -1500,11 +1556,14 @@
             "roadmap:ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7",
             "roadmap:EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15",
             "roadmap:EulerSystemsAndKolyvaginSystems §4.4",
-            "gap:old-form-dimension"
+            "gap:old-form-dimension",
+            "roadmap:PELModuli §§M2.8, M4.3",
+            "roadmap:EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6",
+            "gap:native-shimura"
           ],
           "api": [],
           "tests": [],
-          "proofSketch": "4.5 gives the lower bound. If the dimension were at least 2, take a saturated rank-two T containing the primitive diagonal coordinate z_prim, let z=π^mper z_prim and use S=π^m₀T modulo λᵐ after fixed bad-place annihilation. The uniform span and 7.2 detect v=π^m₀z_prim at p₁ and give primitive t∈ker loc_p₁ with second exponent ≥m−m₀−c. By 7.3 the dual c₂ has singular exponent ≥m−mper−c−mlat at p₂. The p₂ pairing exponent is ≥max(0,m−m₀−mper−2c−mlat); all other terms are killed by π^mdif. Choosing m>m₀+mper+2c+mlat+mdif contradicts global reciprocity. No simultaneous diagonalizing basis is required.",
+          "proofSketch": "4.5 gives the lower bound. If the dimension were at least 2, take a saturated rank-two T containing the primitive diagonal coordinate z_prim, let z=π^mper z_prim and use S=π^m₀T modulo λᵐ after fixed bad-place annihilation. The uniform span and 7.2 detect v=π^m₀z_prim at p₁ and give primitive t∈ker loc_p₁ with second exponent ≥m−m₀−c. PII4 at p₁ and rigid_of_levelRaisingSpecial of 7.3 upgrade L6 to rigidity for (Σ⁺min,{p₁}); first reciprocity at p₂ now has A7.2.2. By 7.3, with its good-reduction specialization input at every nondetecting place, the dual c₂ has singular exponent ≥m−mper−c−mlat at p₂. The p₂ pairing exponent is ≥max(0,m−m₀−mper−2c−mlat); all other terms are killed by π^mdif. Choosing m>m₀+mper+2c+mlat+mdif contradicts global reciprocity. No simultaneous diagonalizing basis is required.",
           "adversarial": "AJ=0 gives no rank bound here; multiplicity μ>1 retained; L′ nonvanishing alone is not substituted for AJ nonvanishing."
         },
         {
@@ -1579,6 +1638,7 @@
       "roadmap": "EtaleCohomologyFoundations",
       "sections": [
         "§F.0.3",
+        "§§F.2.1–F.2.3",
         "§F.2.6",
         "§F.2.7",
         "§F.3a",
@@ -1587,7 +1647,7 @@
         "§F.6",
         "§F.7"
       ],
-      "what": "Tate twists, trait inertia, stable lattices, finite/adic cohomology, derived reduction and rationalization, Künneth, Gysin, cycle classes, trace and blowups on their stated domains."
+      "what": "Tate twists, trait inertia, stable lattices, finite/adic cohomology, derived reduction and rationalization, Künneth, Gysin, cycle classes, trace and blowups on their stated domains. Proper/smooth base change and smooth local acyclicity, with adic passage and continuous actions on their stated domains, supply proper good-reduction unramifiedness in 7.3."
     },
     {
       "roadmap": "ProfiniteCohomology",
@@ -1633,7 +1693,7 @@
         "§1.15",
         "§4.4"
       ],
-      "what": "TauCeti.ErrorTolerant.expAt, ordAt and reducibilityDepth; finite/singular parts, both Res_ρ injectivity criteria, θ_S, abundance and the corrected realised Frobenius span condition (v), with f(1)=1 and f(2)=4. Section 4.4 supplies scaled_inverse and its arbitrary-loss submodule and rank-two primitive-kernel conclusions; a basis is guaranteed at zero loss, while positive loss gives the stated submodule conclusion."
+      "what": "TauCeti.ErrorTolerant.expAt, ordAt and reducibilityDepth; finite/singular parts, both Res_ρ injectivity criteria, θ_S, abundance and the corrected realised Frobenius span condition (v), with f(1)=1 and f(2)=4. Section 4.4 supplies scaled_inverse and its arbitrary-loss submodule and rank-two primitive-kernel conclusions; a basis is guaranteed at zero loss, while positive loss gives the stated submodule conclusion. The loss is c=𝔣(r)·d_R where d_R is the §1.3 reducibility depth, denoted r_R in ltxzz."
     },
     {
       "roadmap": "SmoothRepresentationsOfLocalGroups",
@@ -1660,7 +1720,7 @@
         "AG2.6 (Strong coefficient field; Uniform strong realization of polarized systems; Purity and polarization of the polarized system)",
         "AG2.7 (Residual representation of π; Residual genericity outside finitely many λ; Unitary discrete-parameter export; Lattice and residual polynomial export)"
       ],
-      "what": "General-rank attachment, local comparisons and temperedness in the relevant specialization, strong coefficient fields and stable polarized lattices; actual multiplicity identifications retain the distinct gap automorphic-multiplicity."
+      "what": "General-rank attachment, local comparisons and temperedness in the relevant specialization, strong coefficient fields and stable polarized lattices; actual multiplicity identifications retain the distinct gap automorphic-multiplicity. AG2.1b concentration has its compact ST/END hypotheses; gap diagonal-concentration records the rational native-unitary extension and nonproper cuspidal boundary exclusion consumed by 4.3."
     },
     {
       "roadmap": "EndoscopicTransferAndUnitaryTraceComparison",
@@ -1698,7 +1758,7 @@
         "§5.1",
         "§6.7"
       ],
-      "what": "CM types and reflex fields, and abelian-type canonical models; gaps native-shimura and unitary-special-compatibility state the additional models and diagrams."
+      "what": "CM types and reflex fields, and abelian-type canonical models; gaps native-shimura and unitary-special-compatibility state the additional models and diagrams. Gap native-shimura also requires every nondetecting-place smooth-model specialization and the other-place models of ltxzz Remark 5.2.8 used by 7.3 and 8.1–8.2."
     },
     {
       "roadmap": "LefschetzPencilsAndVanishingCycles",
@@ -1791,7 +1851,8 @@
       "slug": "rigidity",
       "title": "Minimal and regular Fontaine–Laffaille deformation predicates",
       "neededBy": [
-        "1.6"
+        "1.6",
+        "7.3"
       ],
       "detail": "Rigidity for (Σmin,Σlr) means every polarized lift at Σmin is minimally ramified; at each inert raising place the residual eigenpair {Nv^(−N),Nv^(−N+2)} occurs exactly once; above ℓ regular Fontaine–Laffaille crystallinity; unramified elsewhere. Similitude is η_(F/F⁺)^N εℓ^(1−N). ltxzz line 5623. General local deformation and FL theory stays with its earlier owners.",
       "needs": "Bind the exact normalized rigidity and local deformation-condition definitions.",
@@ -1807,12 +1868,15 @@
         "2.3",
         "2.6",
         "4.1",
-        "5.1"
+        "5.1",
+        "7.3",
+        "8.1",
+        "8.2"
       ],
-      "detail": "Beyond the PEL models and generic-fibre comparisons of PELModuli §§M2.8, M4.3, M4.5–M4.6 and the definite sets of EndoscopicTransferAndUnitaryTraceComparison §§13.1, 13.8, require the native strictly semistable unitary special-level model, its reduced components and link charts xy=p, and 𝔗-equivariant generic-fibre and ordinary/compact specialization comparisons on the nonproper domain (ltxzz lines 2653, 2744, 4725). Incidence identifications and normal bundles are conclusions of §2.3 here.",
-      "needs": "Supply the native strictly semistable models of ltxzz §5.2 with link charts, 𝔗-equivariant generic-fibre identification and nonproper ordinary/compact specialization maps.",
+      "detail": "Beyond the PEL models and generic-fibre comparisons of PELModuli §§M2.8, M4.3, M4.5–M4.6 and the definite sets of EndoscopicTransferAndUnitaryTraceComparison §§13.1, 13.8, require the native strictly semistable unitary special-level model, its reduced components and link charts xy=p, and 𝔗-equivariant generic-fibre and ordinary/compact specialization comparisons on the nonproper domain (ltxzz lines 2653, 2744, 4725). Incidence identifications and normal bundles are conclusions of §2.3 here. At every finite w away from Σ⁺min, ℓ and the detecting places, also require smooth hyperspecial models with the ordinary/compact specialization isomorphisms of ltxzz Lemma 4.2.4, compatible with the Hecke quotient and the extending graph cycle. For F⁺≠ℚ include the proper smooth models of Remark 5.2.8 at all places above Σ⁺_p∖{p}, including Σ⁺_p₁∖{p₁} in the two-place construction (ltxzz lines 1744–1754, 2754–2768, 6700–6701, 6901–6902). PELModuli §§M2.8, M4.3 supplies only its stated smooth hyperspecial domain; remaining native model and nonproper specialization comparisons are required here without an additional prime exclusion.",
+      "needs": "Supply the native strictly semistable models of ltxzz §5.2 with link charts and 𝔗-equivariant generic-fibre and nonproper ordinary/compact specialization comparisons, the smooth hyperspecial models and Lemma 4.2.4 specialization isomorphisms at every nondetecting w outside Σ⁺min and ℓ, compatible with the extending graph cycle and Hecke quotient, and the proper smooth models of Remark 5.2.8 above Σ⁺_p∖{p} for F⁺≠ℚ.",
       "supplier": "ShimuraVarieties",
-      "section": "§6.7; new obligation: special-level models of ltxzz §5.2"
+      "section": "§6.7; new obligation: ltxzz §5.2 special-level and §4.2 hyperspecial specialization models"
     },
     {
       "slug": "unitary-incidence",
@@ -1857,10 +1921,22 @@
       "section": "AG2.5 (Published RACSDC comparison specializations); residual H(N)"
     },
     {
+      "slug": "diagonal-concentration",
+      "title": "Rational cuspidal concentration on the native diagonal product",
+      "neededBy": [
+        "4.3"
+      ],
+      "supplier": "AutomorphicGaloisRepresentationsPartII",
+      "section": "AG2.1b (Weight separation into the middle degree; The archimedean packet multiplicity); residual native unitary specialization",
+      "detail": "AG2.1b supplies middle-degree concentration on its compact ST/END domain. Require the rational specialization to every standard indefinite native unitary level of 4.1 and each relevant cuspidal Πα: the Πα-projected rank-nα geometric cohomology vanishes outside degree nα−1, so Künneth concentrates the product in degree 2n−1. For F⁺=ℚ include rational cuspidal boundary exclusion and identification with ordinary cohomology, without residual absolute irreducibility or H(n),H(n+1). The separate boundary-cohomology gap supplies integral boundary localization only under residual absolute irreducibility. The general rational assertion is ltxzz lines 6767–6772, not an asserted enlargement of the compact ST/END target.",
+      "needs": "Extend AG2.1b middle-degree concentration and archimedean packet comparison to the native relevant cuspidal Hecke quotients of 4.1 in every rank and level, including rational cuspidal boundary exclusion for F⁺=ℚ, independently of H(n),H(n+1) and residual absolute irreducibility."
+    },
+    {
       "slug": "boundary-cohomology",
       "title": "Boundary localization at irreducible residual systems",
       "neededBy": [
-        "3.1"
+        "3.1",
+        "4.3"
       ],
       "detail": "Need toroidal compactification for rank-one nonproper unitary varieties and boundary Eisenstein/isobaric cohomology: residual absolute irreducibility kills the boundary in every degree. ltxzz line 5255. Compactness is not a silent premise.",
       "needs": "Bind the native boundary cohomology theorem identifying ordinary and compact supports after localization.",
