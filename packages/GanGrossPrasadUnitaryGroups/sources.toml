@@ -8,7 +8,7 @@ title = "Bessel models for real unitary groups: the tempered case"
 year = 2023
 doi = "10.1215/00127094-2022-0018"
 locator_scheme = "theorem"
-locator = "Theorem 2.2, published p. 1000; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001"
+locator = "Theorem 2.2, published p. 1000; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001; Section 2.4 and Sections 3-4, pp. 1002-1029"
 url = "https://par.nsf.gov/servlets/purl/10476094"
 fetched_from = "https://par.nsf.gov/servlets/purl/10476094"
 fetched_at = "2026-10-21T19:38:50Z"
@@ -16,10 +16,9 @@ sha256 = "2d9231a906ccc2d0fcd1c105efb4a74aa0f58d763f43c633401b81c4a2fe78a2"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-21"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
-
 version_note = "Published Duke Math. J. pagination in institutional copy; cached text recognised by OCR"
-cited_for = ["Tempered real distinguished-character theorem; arbitrary relevant odd codimension"]
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
+cited_for = ["3.8", "3.9", "2.1"]
 
 [[source]]
 id = "xue-bessel"
@@ -31,7 +30,6 @@ locator = "Main local GGP theorem in the introduction; exact theorem number and 
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
-
 cited_for = ["Retained human waiver; no theorem inferred from this unread work"]
 
 [[source]]
@@ -41,7 +39,7 @@ title = "Symplectic local root numbers, central critical L-values, and restricti
 year = 2009
 arxiv = "0909.2999v1"
 locator_scheme = "section"
-locator = "Sections 2, 6, 12, 14-15, 17-19, 23-24; Theorems 6.1, 14.1(ii), 15.1, 17.2; Conjectures 17.1, 17.3, 24.1; arXiv v1 pp. 5-7, 20-21, 58-63, 68-76, 86-91"
+locator = "Sections 2, 6, 12, 14-15, 17-19, 22-24; Theorems 6.1, 14.1(ii), 15.1, 17.2; Conjectures 17.1, 17.3, 24.1; arXiv v1 pp. 5-7, 20-21, 58-63, 68-76, 86-91"
 url = "https://arxiv.org/abs/0909.2999v1"
 fetched_from = "https://arxiv.org/pdf/0909.2999v1"
 fetched_at = "2026-10-21T19:42:27Z"
@@ -50,7 +48,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["Models, local distinguished character and global conjecture"]
+cited_for = ["1.1", "1.2", "1.3", "2.1", "2.4", "2.6", "3.1", "3.2", "3.10", "3.11", "4.1", "4.2", "4.3", "4.4"]
 
 [[source]]
 id = "agrs"
@@ -60,7 +58,7 @@ year = 2007
 venue = "Annals of Mathematics, Vol. 172 (2010), No. 2, 1407-1434"
 arxiv = "0709.4215v1"
 locator_scheme = "theorem"
-locator = "Theorem 1 prime (1'), arXiv v1 p. 2"
+locator = "Theorems 1 prime (1') and 2 prime (2'), arXiv v1 pp. 2-3"
 url = "https://arxiv.org/abs/0709.4215v1"
 fetched_from = "https://arxiv.org/pdf/0709.4215v1"
 fetched_at = "2026-10-21T19:42:32Z"
@@ -69,7 +67,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["Nonarchimedean multiplicity one"]
+cited_for = ["2.2", "2.3"]
 
 [[source]]
 id = "sun-zhu"
@@ -80,7 +78,7 @@ venue = "Ann. of Math. (2) 175 (2012), no. 1, 23-44"
 doi = "10.4007/annals.2012.175.1.2"
 arxiv = "0903.1413v2"
 locator_scheme = "theorem"
-locator = "Theorem B and Casselman-Wallach conventions, arXiv v2 p. 2"
+locator = "Theorems A-B and Casselman-Wallach conventions, arXiv v2 p. 2"
 url = "https://arxiv.org/abs/0903.1413v2"
 fetched_from = "https://arxiv.org/pdf/0903.1413v2"
 fetched_at = "2026-10-21T19:42:38Z"
@@ -89,7 +87,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
-cited_for = ["Archimedean multiplicity one"]
+cited_for = ["2.2", "2.3"]
 
 [[source]]
 id = "bp-unitary-tempered"
@@ -107,7 +105,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
-cited_for = ["Nonarchimedean tempered packet multiplicity"]
+cited_for = ["3.5", "3.7"]
 
 [[source]]
 id = "bp-arch"
@@ -116,7 +114,7 @@ title = "A local trace formula for the Gan-Gross-Prasad conjecture for unitary g
 year = 2015
 arxiv = "1506.01452v3"
 locator_scheme = "theorem"
-locator = "Theorem 12.4.1, arXiv v3 pp. 289-290; Sections 12.2-12.3"
+locator = "Proposition 4.5.1, p. 106; Proposition 7.1.1 and Lemma 7.1.2, pp. 177–180; Theorem 12.4.1, arXiv v3 pp. 289-290; Sections 7.1-7.4, 11.1-11.4, 12.2-12.3; Theorem 7.2.1, p. 181; Proposition 7.4.1, p. 192; Proposition 11.2.1, pp. 265-266; Theorems 11.4.1-11.4.3, p. 273"
 url = "https://arxiv.org/abs/1506.01452v3"
 fetched_from = "https://arxiv.org/pdf/1506.01452v3"
 fetched_at = "2026-10-21T19:42:55Z"
@@ -125,7 +123,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v3"
-cited_for = ["Archimedean tempered packet multiplicity"]
+cited_for = ["3.3", "3.4", "3.5", "3.7", "3.9"]
 
 [[source]]
 id = "bp-refined"
@@ -145,7 +143,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
-cited_for = ["Distinguished epsilon-factor character"]
+cited_for = ["3.6", "3.7"]
 
 [[source]]
 id = "harris"
@@ -163,7 +161,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
-cited_for = ["Refined unitary period conjecture"]
+cited_for = ["2.7", "5.3", "7.3", "5.1", "5.2"]
 
 [[source]]
 id = "bplzz"
@@ -181,7 +179,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v3"
-cited_for = ["Stable global GGP and refined identity"]
+cited_for = ["7.2", "7.4"]
 
 [[source]]
 id = "bpcz"
@@ -190,7 +188,7 @@ title = "The global Gan-Gross-Prasad conjecture for unitary groups: the endoscop
 year = 2020
 arxiv = "2007.05601v1"
 locator_scheme = "theorem"
-locator = "Sections 1.1.2-1.1.6, arXiv v1 pp. 2-5; Theorems 1.1.5.1 and 1.1.6.1; Section 2.3.2, p. 15"
+locator = "Sections 1.1.2-1.1.6, arXiv v1 pp. 2-5; Theorems 1.1.5.1 and 1.1.6.1; Section 2.3.2, p. 15; Sections 5.1.3-5.2, 8.1.2-8.1.4, 10.1-10.3; Theorems 5.2.1.1 and 8.1.4.1, pp. 59, 78; Proposition 10.1.6.1, pp. 88-89; equations 10.3.2.1 and 10.3.5.4, pp. 90-92"
 url = "https://arxiv.org/abs/2007.05601v1"
 fetched_from = "https://arxiv.org/pdf/2007.05601v1"
 fetched_at = "2026-10-21T19:43:18Z"
@@ -199,7 +197,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["Endoscopic global GGP and GGP.8"]
+cited_for = ["5.1", "5.2", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "6.5", "7.1", "7.4", "5.3", "7.3"]
 
 [[source]]
 id = "jsz-bessel"
@@ -210,7 +208,7 @@ venue = "Geom. Funct. Anal. 20 (2010), 690-709"
 doi = "10.1007/s00039-010-0077-4"
 arxiv = "0908.1728v2"
 locator_scheme = "theorem"
-locator = "Theorem A, arXiv v2 pp. 1-2; Sections 2.1-2.2"
+locator = "Theorem A, arXiv v2 pp. 1-2; Sections 2.1-2.2 and 3.2-3.4; Propositions 3.1, 3.3-3.4, pp. 6-8; Lemma 6.2, p. 18; Section 6.4, pp. 20–22"
 url = "https://arxiv.org/abs/0908.1728v2"
 fetched_from = "https://arxiv.org/pdf/0908.1728v2"
 fetched_at = "2026-10-21T19:44:39Z"
@@ -219,4 +217,92 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
-cited_for = ["General odd-codimension archimedean Bessel multiplicity one"]
+cited_for = ["2.5", "2.6"]
+
+[[source]]
+id = "bp-plancherel"
+authors = "Raphaël Beuzart-Plessis"
+title = "Plancherel formula for GL_n(F)\\GL_n(E) and applications to the Ichino–Ikeda and formal degree conjectures for unitary groups"
+year = 2018
+arxiv = "1812.00047v2"
+locator_scheme = "section"
+locator = "Theorem 2.8.2, p. 28; Sections 5.1–5.3, pp. 79–84; Theorem 5.3.1, p. 84; Theorem 5.5.1 and Remark 5.5.2, p. 89"
+url = "https://arxiv.org/abs/1812.00047v2"
+fetched_from = "https://arxiv.org/pdf/1812.00047v2"
+fetched_at = "2026-10-21T20:56:18Z"
+sha256 = "18c2f5a3de94aacfbd0090d84c05372e0b0592c21399ca05ec3254ab58a9828d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["relative-finite-transfer", "relative-archimedean-transfer", "relative-character-comparison"]
+
+[[source]]
+id = "zhang-period"
+authors = "Wei Zhang"
+title = "Automorphic period and the central value of Rankin--Selberg L-function"
+year = 2014
+arxiv = "1208.6280v4"
+locator_scheme = "section"
+locator = "Equation (3.2), pp. 13–14; Section 3.3, equations (3.23)–(3.25), p. 19; Section 4.5, Lemma 4.9 and Proposition 4.10, pp. 30–33; change of measures p. 29"
+url = "https://arxiv.org/abs/1208.6280v4"
+fetched_from = "https://arxiv.org/pdf/1208.6280v4"
+fetched_at = "2026-10-21T20:56:44Z"
+sha256 = "a50bc9d64fbe3ab0f016c746469cee5de56240d37706446805fce54db05e027d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v4"
+cited_for = ["5.1a", "5.2", "local-rankin-selberg", "whittaker-pairing-fourier", "gl-tempered-genericity"]
+
+[[source]]
+id = "bernstein-zelevinsky"
+year = 1977
+title = "Induced representations of reductive p-adic groups. I"
+authors = "I. N. Bernstein, A. V. Zelevinsky"
+locator_scheme = "section"
+locator = "Section 2.12, geometric lemma, published p. 448; Section 5.2, published pp. 458–459"
+url = "https://www.numdam.org/item/ASENS_1977_4_10_4_441_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1977_4_10_4_441_0.pdf"
+fetched_at = "2026-10-21T20:57:44Z"
+sha256 = "8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.10", "local-jacquet-filtration"]
+
+[[source]]
+id = "bp-fundamental"
+year = 2019
+title = "A new proof of Jacquet-Rallis’s fundamental lemma"
+authors = "Raphaël Beuzart-Plessis"
+arxiv = "1901.02653"
+locator_scheme = "theorem"
+locator = "Section 1, pp. 1–3; Theorem 1, p. 3, including small residue characteristic and the group comparison"
+url = "https://arxiv.org/abs/1901.02653"
+fetched_from = "https://arxiv.org/pdf/1901.02653"
+fetched_at = "2026-10-21T21:05:00Z"
+sha256 = "27fc28404ef150760f7b85da367aaffb367851d851b791e279d10d3ab47d3ce6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v3, dated December 2020; preprint pagination"
+cited_for = ["relative-fundamental-lemma"]
+
+[[source]]
+id = "ag-descent"
+year = 2009
+title = "Generalized Harish-Chandra descent, Gelfand pairs, and an Archimedean analog of Jacquet-Rallis’s theorem"
+authors = "Avraham Aizenbud, Dmitry Gourevitch"
+arxiv = "0812.5063"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.1, p. 9; Theorems 5.1.5 and 5.1.7 and Definition 5.1.6, p. 13; Theorem 8.1.5, p. 25"
+url = "https://arxiv.org/abs/0812.5063"
+fetched_from = "https://arxiv.org/pdf/0812.5063"
+fetched_at = "2026-10-21T21:05:17Z"
+sha256 = "1b987fadb187e930fa98ba419625889c835cb29938280d9de51e9066dee5300e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v6, dated October 2026; preprint pagination"
+cited_for = ["distribution-gk", "2.2", "2.3"]
