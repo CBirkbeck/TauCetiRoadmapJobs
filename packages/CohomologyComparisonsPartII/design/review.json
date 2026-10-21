@@ -1,0 +1,43 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-DESIGN-CohomologyComparisonsPartII~5",
+  "date": "2026-10-21",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by @CBirkbeck (claude) of 46f8e4b",
+  "conditional_gaps": [
+   "arithmetic-pair-deformation",
+   "crystalline-filtered-quotient",
+   "crystalline-inputs",
+   "exact-yoneda",
+   "hyodo-kato-proper",
+   "local-period-annulus-change",
+   "local-period-annulus-entry",
+   "local-period-approximation",
+   "local-period-descent",
+   "local-period-disk-change",
+   "local-period-etale-gaga",
+   "local-period-frobenius-change",
+   "local-period-galois",
+   "local-period-kpi1",
+   "local-period-lazard",
+   "local-period-lie",
+   "local-period-pd-radius",
+   "local-period-phi-psi",
+   "nearby-cycle-cartier",
+   "nearby-cycle-graded",
+   "nearby-cycle-inputs",
+   "period-rings",
+   "rational-descent",
+   "relative-hodge",
+   "relative-rigid-coefficients",
+   "relative-rigid-log-finiteness",
+   "relative-rigid-projective-finiteness",
+   "rigid-gysin",
+   "rigid-log-crystalline",
+   "rigid-realizations",
+   "rigid-syntomic-etale-period"
+  ]
+ }
+}
