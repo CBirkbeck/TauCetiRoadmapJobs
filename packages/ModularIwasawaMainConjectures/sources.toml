@@ -1,0 +1,25 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularIwasawaMainConjectures"
+
+[[source]]
+id = "Serre"
+authors = "Jean-Pierre Serre"
+title = "Abelian l-adic representations and elliptic curves"
+year = 1968
+locator_scheme = "theorem"
+locator = "IV.3.4 Lemma3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/189#issuecomment-6318397078"
+
+[[source]]
+id = "Jones"
+authors = "John W. Jones"
+title = "Iwasawa L-functions for multiplicative abelian varieties"
+year = 1989
+doi = "10.1215/s0012-7094-89-05918-8"
+locator_scheme = "section"
+locator = "Multiplicative case cited via Stein–Wuthrich Theorem 6.1; exact Jones theorem number not stated"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/189#issuecomment-6318397078"
