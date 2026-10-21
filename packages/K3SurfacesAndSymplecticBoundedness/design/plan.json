@@ -2579,7 +2579,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Lemma3.1.6, pp.11–12; rizov lines463–503"
+            "where": "Lemma3.1.6(i)–(ii), pp.11–12; rizov lines463–516, with the square-zero case supplied by Hodge index"
           },
           "prerequisites": [
             "target:1.5",
@@ -2589,9 +2589,10 @@
             "roadmap:SchemeAndStackFoundations §0.9",
             "roadmap:AlgebraicModuliForArithmeticGeometry §7.6.1–§7.6.1a",
             "roadmap:ComplexComparisonPartII C3.2d.2–C3.2d.5",
-            "roadmap:JacobianChallenge Layer D"
+            "roadmap:JacobianChallenge Layer D",
+            "roadmap:SchemeAndStackFoundations §5.10"
           ],
-          "proofSketch": "Torsion-freeness gives monomorphy. On finite-Hilbert-polynomial Picard pieces the valuative extension and intersection constraints make[n] proper, hence closed. A bounded-degree polarization has only finitely many possible proper divisibilities n²|d locally, so the nonprimitive loci are a finite union of these closed root loci.",
+          "proofSketch": "Torsion-freeness gives monomorphy. On finite-Hilbert-polynomial Picard pieces the valuative extension and intersection constraints make [n] proper, hence closed. For an arbitrary Picard section λ choose an auxiliary relative ample H from strong projectivity. Locally the integers d=λ²/2 and m=λ·H are constant, by the fibre Hilbert polynomials and integer RR. If d≠0, λ=nµ with n>1 forces n²∣d, leaving finitely many n. If d=0 and m≠0 it forces n∣m, again leaving finitely many n. If d=m=0, Hodge index makes λ numerically zero on every geometric fibre, and §1.5 makes λ=0 there; no point on that piece is primitive. In the first two cases the nonprimitive locus is a finite union of the closed root loci λ⁻¹([n]Pic); in the last it is the whole piece. These cases prove openness for every section, including square-zero and nonample sections.",
           "api": [],
           "tests": [
             {
@@ -2608,6 +2609,21 @@
               "name": "root_not_open",
               "kind": "non-example",
               "statement": "Existence of a cube root is imposed as a closed root condition, not an unconditional open condition."
+            },
+            {
+              "name": "primitive_isotropic_fibre",
+              "kind": "boundary",
+              "statement": "On an elliptic K3 with section C and fibre F, F²=0 and F·C=1, so F is primitive. For an ample H, F·H>0 bounds any possible root by n∣(F·H), even though n²∣0 gives no bound."
+            },
+            {
+              "name": "nonprimitive_isotropic_double",
+              "kind": "non-example",
+              "statement": "On the same surface, (2F)²=0 but 2F has the root F. The primitive locus for the constant section 2F is empty, whereas that for F is the whole base."
+            },
+            {
+              "name": "primitive_zero_piece",
+              "kind": "boundary",
+              "statement": "For λ=0, d=m=0 and λ=2·0 on every fibre; its primitive locus is empty and open. Hodge index and §1.5 give the same conclusion whenever d=m=0."
             }
           ]
         },
@@ -2630,10 +2646,9 @@
             "target:2.1",
             "target:7.1",
             "roadmap:StableReduction Layer 2",
-            "roadmap:SchemeAndStackFoundations §1.11",
-            "gap:ample-space-scheme"
+            "roadmap:SchemeAndStackFoundations §1.11"
           ],
-          "proofSketch": "Use the relative Picard sheaf rather than a chosen universal bundle. Étale locally choose a representative and obtain a projective scheme by the ample-space criterion; descent retains algebraic-space families globally.",
+          "proofSketch": "Use the relative Picard sheaf rather than a chosen universal bundle. Choose a line representative étale-locally, import StableReduction Layer 2 polarized scheme descent to obtain the scheme criterion, and restrict to affine base opens for projectivity. This retains families over every base scheme; descent of the Picard section retains the algebraic-space family globally.",
           "api": [
             {
               "name": "PolarizedK3Family.mk",
@@ -2653,7 +2668,7 @@
             {
               "name": "PolarizedK3Family.localRepresentative",
               "role": "construction",
-              "statement": "Étale locally the family is a projective scheme with an ample representative of λ."
+              "statement": "After an étale cover refined by affine base opens, the family is a projective scheme with an ample representative of λ."
             },
             {
               "name": "PolarizedK3Family.fieldComparison",
@@ -2862,7 +2877,7 @@
             {
               "name": "polarizedK3HilbertAtlas.frameTorsor",
               "role": "universal property",
-              "statement": "The pullback over a family is the torsor of projective frames of f_*L³, with PGL_(9d+2) action."
+              "statement": "The stack pullback over a prescribed family, retaining an isomorphism to that family, is the torsor of projective frames of f_*L³, with PGL_(9d+2) action."
             },
             {
               "name": "polarizedK3HilbertAtlas.baseChange",
@@ -2879,7 +2894,7 @@
             {
               "name": "frames_not_classes",
               "kind": "non-example",
-              "statement": "Different projective frames give distinct Hilbert points but the same polarized object."
+              "statement": "On the Fermat quartic over ℂ, swapping x₀ and x₁ permutes the independent cubic sections x₀³ and x₁³ and gives distinct projective frames with the same cubic Hilbert point. Its PGL stabilizer is Aut(X,[O_X(1)]), equal to Aut(X,[O_X(3)]) by Picard torsion-freeness. A frame change outside this stabilizer changes the Hilbert point. The frame torsor over a prescribed polarized family also retains its source identification, so these remain distinct torsor points."
             },
             {
               "name": "no_global_root_line",
@@ -2978,10 +2993,10 @@
             "target:8.1",
             "gap:matsusaka-mumford",
             "roadmap:SchemeAndStackFoundations §1.20",
-            "gap:ample-space-scheme",
+            "roadmap:StableReduction Layer 2",
             "gap:ruled-surface-two-forms"
           ],
-          "proofSketch": "Étale locally use actual ample representatives on schemes. A K3 has a nonzero regular two-form; a ruled smooth surface has none, so the special fibre is not geometrically ruled. Apply the general trait-extension theorem and descend uniqueness. The proper quasi-finite Isom diagonal is finite; its tangent is zero.",
+          "proofSketch": "Étale locally use actual ample representatives and StableReduction Layer 2 polarized descent for the scheme criterion. Over the quasi-compact quasi-separated DVR base, properness and relative ampleness give projectivity. A K3 has a nonzero regular two-form; a ruled smooth surface has none, so the special fibre is not geometrically ruled. Apply the general trait-extension theorem and descend uniqueness. The proper quasi-finite Isom diagonal is finite; its tangent is zero.",
           "api": [],
           "tests": [
             {
@@ -3083,7 +3098,7 @@
             "roadmap:AlgebraicModuliForArithmeticGeometry §7.6.1–§7.6.1a",
             "roadmap:ComplexComparisonPartII C3.2d.2–C3.2d.5",
             "roadmap:JacobianChallenge Layer D",
-            "gap:ample-space-scheme",
+            "roadmap:StableReduction Layer 2",
             "roadmap:SchemeAndStackFoundations §2.10",
             "roadmap:SchemeAndStackFoundations §2.15",
             "tauceti:TauCeti.brauerCohomologyEquiv",
@@ -3162,7 +3177,21 @@
       "sections": [
         "Layer 2"
       ],
-      "what": "Projective morphisms, relative ampleness and polarized descent. Its curve duality is not a surface input."
+      "what": "Projective morphisms, relative ampleness and effective étale polarized scheme descent; the ample algebraic-space scheme criterion and local/global projectivity are derived from these imports with the stated Stacks hypotheses.",
+      "tests": [
+        {
+          "name": "ample_space_field",
+          "statement": "Over Spec k an actual ample line on a proper algebraic space gives a scheme projective over k; the base is quasi-compact and quasi-separated."
+        },
+        {
+          "name": "ample_space_local_global",
+          "statement": "For S the disjoint union of points indexed by n≥0 and X the disjoint union of ℙⁿ over them, O(1) is relatively ample and every restriction is H-projective, but no fixed N embeds X into ℙᴺ_S. It is projective in the stated ℙ(E) convention via the unbounded-rank locally free E. Affine-local embeddings do not give one global finite-dimensional projective-space embedding."
+        },
+        {
+          "name": "ample_space_picard_section",
+          "statement": "A Picard section without a compatible global line does not supply polarized scheme descent data; §7.3 retains all algebraic-space families by working étale-locally and then on affine base opens."
+        }
+      ]
     },
     {
       "roadmap": "IntegralLattices",
@@ -3336,7 +3365,7 @@
       "supplier": "SchemeAndStackFoundations",
       "section": "proposed Part II §genus-one-fibrations",
       "needs": "Supply relatively minimal genus-one fibrations and their Jacobian fibrations over smooth curves over algebraically closed fields, with Kodaira–Néron fibre types in every characteristic, including quasi-elliptic characteristics 2 and 3. Include the fibre-component root-lattice quotient and finite-index identity d_M=a²d_R(φ), where a=[R(φ):image(M)] for a maximal negative definite vertical sublattice M, and unirationality of a quasi-elliptic surface over the rational base curve.",
-      "detail": "The index identity is dolgachev-keum equation (3.1), lines 424–443. The quasi-elliptic branch is restricted to characteristics 2 and 3 (huybrechts Chapter 2 §3.3, lines 1127–1132 and 1182–1183). Curve Jacobians do not supply this surface interface; the K3 p-torsion exclusion is §6.3a and the rank-five pencil construction is §6.0b. Include the genus-one/Jacobian canonical-bundle and coherent Euler-characteristic comparisons used to recognize a K3 Jacobian, preservation of the fibre-component root lattice, the section–fibre unimodular plane and the Shioda–Tate finite-index discriminant relation when the Mordell–Weil rank is zero (dolgachev-keum lines 493–505). The K3 recognition and rank consequences are stated in §6.0c.",
+      "detail": "For the general surface statements use Cossec–Dolgachev–Liedtke, Enriques Surfaces I, author draft dated 19 April 2024, Chapter 4. A genus-one fibration f:X→C is a proper morphism from a smooth surface X to a smooth curve C with f_*O_X=O_C, and is relatively minimal; the Euler and global canonical comparisons below take C proper. Theorem 4.1.6, pp.364–366, enriques-one lines 17528–17594, gives R¹f_*O_X=L⊕T and ω_X=f*(ω_C⊗L⁻¹)⊗O_X(Σa_t Fbar_t), where f⁻¹(t)=m_t Fbar_t, deg L=−χ(O_X)−length(T), 0≤a_t<m_t, and a_t=m_t−1 for a tame fibre. Keep T and the wild coefficients at characteristics 2 and 3. For its Jacobian j:J→C, Proposition 4.3.7, p.385, enriques-one lines 18462–18471, gives no multiple fibres, R¹j_*O_J invertible of degree −χ(O_J), and ω_J=j*(ω_C⊗(R¹j_*O_J)⁻¹). Proposition 4.3.14, p.389, enriques-one lines 18646–18657, proves χ(O_X)=χ(O_J) in every characteristic, using the equal torsion kernel and cokernel of the comparison on R¹O. Theorem 4.3.20, p.392, enriques-one lines 18799–18817, preserves the reduced Kodaira fibre type, hence its component root lattice, and identifies nonmultiple fibres. These are general genus-one surface statements, including quasi-elliptic fibrations. The section–fibre span on J has Gram [[−χ(O_J),1],[1,0]] and determinant −1 by Corollary 4.3.8, p.385, enriques-one lines 18466–18471. Its K3 instance is the even hyperbolic plane after replacing the section C₀ by C₀+F. The vertical finite-index identity d_M=a²d_R(φ) remains dolgachev-keum equation (3.1), lines 424–443; for Mordell–Weil rank zero, the discriminant is divided by the square of the torsion order by Enriques Surfaces I, Theorem 4.3.9(3), p.385, enriques-one lines 18472–18483, with the K3 application at dolgachev-keum lines 493–505. Liedtke, Algebraic Surfaces in Positive Characteristic, Theorem 8.3, p.34, liedtke-surfaces lines 1326–1335, supplies the purely inseparable dominant rational map from a ruled surface to any quasi-elliptic surface; over ℙ¹ it proves unirationality. The restriction to characteristics 2 and 3 is its Corollary 4.2 and Definition 4.3, pp.20–21, liedtke-surfaces lines 749–767, with the K3 application at huybrechts Chapter 2 §3.3, lines 1127–1132 and 1182–1183. Curve Jacobians do not supply this surface interface; the K3 p-torsion exclusion is §6.3a and the rank-five pencil construction is §6.0b. For the K3 Jacobian recognition in §6.0c, χ=2 and C=ℙ¹ give R¹j_*O_J=O(−2), hence ω_J=O and H¹(J,O_J)=0 by Leray. No unrestricted equality of the two canonical bundles is asserted.",
       "neededBy": [
         "6.0b",
         "6.0c",
@@ -3360,19 +3389,6 @@
       ]
     },
     {
-      "slug": "ample-space-scheme",
-      "title": "Ample algebraic spaces",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "proposed Part II §ample-algebraic-spaces",
-      "needs": "Supply the theorem that a proper algebraic space over a scheme with a relatively ample invertible sheaf is a projective scheme over that base.",
-      "detail": "Layer 1 supplies algebraic spaces and descent; this contract supplies their ample scheme criterion, including its base-change compatibility.",
-      "neededBy": [
-        "7.3",
-        "8.2",
-        "8.5"
-      ]
-    },
-    {
       "slug": "witt-formal-brauer",
       "title": "Formal Brauer comparison",
       "supplier": "CrystallineCohomology",
@@ -3392,10 +3408,27 @@
       "title": "Crystalline Euler characteristic",
       "supplier": "CrystallineCohomology",
       "section": "proposed Part II §crystalline-Gauss-Bonnet",
-      "needs": "Supply the crystalline Gauss–Bonnet identity for smooth proper varieties over perfect fields, equating the alternating rational crystalline rank with the degree of the top tangent Chern class.",
-      "detail": "For the general identity combine CrystallineCohomology CR.3:duality.1, Diagonal class and crystalline coevaluation (crysDiagonal_action, crysDiagonal_triangles and its test_crysDiagonal_euler), with the crystalline self-intersection formula. The latter is Gros, IV Theorem 2.1.1, p.78, gros-chern lines 2313–2318, transported to crystalline classes by III §2.1, pp.65–66, lines 1950–1979. Apply it to the diagonal, whose normal bundle is T_X: its self-intersection has trace deg c_top(T_X), while coevaluation and duality give the alternating rational crystalline rank. This works for smooth proper varieties over perfect fields; it needs neither projective lifting nor integral torsion-freeness. Deligne Proposition 1.1, deligne-lift line 29, is the surface application in §2.4.",
+      "needs": "Supply the crystalline Gauss–Bonnet identity for smooth proper varieties over perfect fields of characteristic p>0, equating the alternating rational crystalline rank with the degree of the top tangent Chern class, together with normal-bundle self-intersection in the positive Chern/Gysin convention.",
+      "detail": "For a closed immersion i:Z→Y of smooth proper pure-dimensional schemes over such a field, of codimension c with ideal J and normal sheaf E=(J/J²)∨, require i* i_*(a)=a∪c_c(E) for every rational crystalline class a. The Chern class of an effective Cartier divisor is c₁(O(D)), and Gysin is the trace-adjoint map of CrystallineCohomology CR.3:duality.1. Gros IV Theorem 2.1.1, p.78, gros-chern lines 2313–2318, prints N=J/J² with c_c(N) on the right. In these positive conventions that is a dual omission: c_c(E)=(−1)^c c_c(J/J²), by III Corollary 1.2.31(iii), gros-chern lines 1943–1948. Its printed formula cannot be transported unchanged; III §2.1, pp.65–66, gros-chern lines 1950–1979, compares Chern classes without reversing their signs. Derive the required formula independently using deformation to the normal bundle, whose geometric construction is SchemeAndStackFoundations §5.5 and whose cohomological specialization is Gros IV §2.1, pp.79–82, gros-chern lines 2373–2443. In the normal-bundle fibre, the zero-section supported class is its Euler class. For a line bundle this is c₁(E), by Gros II Proposition 4.2.1, p.51, gros-chern lines 1503–1508; supported cup products make Euler classes multiplicative for short exact sequences. Pullback to a full flag bundle is injective by the projective-bundle formula, so the filtration by line quotients identifies the rank-c Euler class with c_c(E), using III Theorem 1.1.1, p.60, gros-chern lines 1778–1809. Specialization and the projection formula give the displayed identity; the supported Gysin comparison with the trace-adjoint map is the supplied CR.3:duality.1 comparison. For the diagonal E=T_X. Its self-intersection trace is therefore deg c_top(T_X), while crysDiagonal_action, crysDiagonal_triangles and test_crysDiagonal_euler give the alternating rational crystalline rank. No projective lifting or integral torsion-freeness is assumed. Deligne Proposition 1.1, deligne-lift line 29, is the surface application in §2.4.",
       "neededBy": [
         "2.4"
+      ],
+      "tests": [
+        {
+          "name": "crystalline_self_intersection_point",
+          "kind": "boundary",
+          "statement": "For X=Spec k, c₀(T_X)=1 and the diagonal self-intersection has trace 1; rank zero uses the empty Chern product."
+        },
+        {
+          "name": "crystalline_diagonal_P1_positive",
+          "kind": "computation",
+          "statement": "For Δ⊂ℙ¹×ℙ¹, [Δ]=h₁+h₂, h₁²=h₂²=0 and tr(h₁h₂)=1, so tr([Δ]²)=2. The normal T_ℙ¹=O(2) gives +2; the conormal O(−2) would give −2, including over W(𝔽₂)[1/2]."
+        },
+        {
+          "name": "crystalline_line_P2_positive",
+          "kind": "computation",
+          "statement": "For a line i:ℙ¹→ℙ², the normal line is O(1), so tr(i* i_*(1))=+1. Using the conormal O(−1) would reverse the sign."
+        }
       ]
     },
     {
@@ -3438,7 +3471,7 @@
       "supplier": "ComplexKahlerGeometry",
       "section": "proposed Part II §integral-Chern-comparison",
       "needs": "Supply the analytic exponential sheaf sequence with map z↦exp(2πiz), identify its connecting map with the integral first Chern class, and identify cup-evaluation of Chern classes with analytic intersection, naturally for holomorphic pullback.",
-      "detail": "AlgebraicTopology Stage 6 supplies integral cohomology operations, universal coefficients and oriented duality; huybrechts Chapter 1 §3.2, lines 452–472, fixes the analytic comparison and complex orientation.",
+      "detail": "Arapura, Algebraic Geometry over the Complex Numbers, §7.5, Lemma 7.5.1 and Definition 7.5.2, p.150 (arapura-chern, uncertified published locator), specifies the normalized exponential and its connecting Chern class for every complex manifold. An explicit derivation fixes naturality and signs without a K3 hypothesis: on small charts take holomorphic logarithms u_ij with g_ij=exp(2πi u_ij), where local frames satisfy e_j=e_i g_ij. With the Čech differential (δu)_ijk=u_jk−u_ik+u_ij, the integers δu represent c₁(L). Refining the cover or changing logarithms changes this by an integral coboundary; composing the transition functions and their logarithms with a holomorphic map gives the pullback class. Local logarithms prove sheaf exactness, and the kernel is exactly ℤ. For L=O(D), the positive meridian around a simple holomorphic zero has logarithmic increment +1, so the class is the complex-oriented Thom class of D. AlgebraicTopology Stage 6 cup/cap products and oriented Poincaré–Lefschetz duality then identify c₁(O(D)) with PD[D] and cup-evaluation on a compact complex surface with analytic divisor intersection, including multiplicities by the local zero order. Additivity and differences of effective divisors cover Cartier divisors; transverse representatives and the same Thom classes give the general topological Chern intersection. Thus O(1) has degree +1 on ℙ¹. ComplexKahlerGeometry K6.1 supplies the analytic-cycle/fundamental-class integration comparison. Huybrechts Chapter 1 §3.2, pp.15–16, huybrechts lines 452–472, remains the K3 application, and §3.3 exponential_normalization is the winding-number Check. Neither a rescaling of the lattice ℤ nor a reversal of the connecting map is implicit.",
       "neededBy": [
         "3.3"
       ]

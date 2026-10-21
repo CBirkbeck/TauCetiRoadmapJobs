@@ -25,7 +25,7 @@ title = "Moduli Stacks of Polarized K3 Surfaces in Mixed Characteristic"
 year = 2005
 arxiv = "math/0506120v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.2.2 (p. 4, line 142); Proposition 2.2.1 and Remark 2.2.2 (p. 6, line 218); section 2.4 (p. 7, line 273); Definition 3.2.3 (p. 13, line 555); Proposition 3.3.3 (pp. 14-15, line 615); section 3.4 and Lemma 3.4.1 (p. 15, lines 656, 659); Theorem 4.3.3 (p. 20, line 898); Corollary 4.3.10 (p. 25, line 1099); §§3.1–3.2, Theorem3.1.1, Lemmas3.1.2 and3.1.6, Proposition3.1.3 (lines404,416,440,463); Proposition4.1.1, Theorem4.1.2, Lemma4.1.3 (lines756,770,779); Proposition4.2.1 and Theorem4.3.3 proof (lines807,917–1093)"
+locator = "Theorem 1.2.2 (p. 4, line 142); Proposition 2.2.1 and Remark 2.2.2 (p. 6, line 218); section 2.4 (p. 7, line 273); Definition 3.2.3 (p. 13, line 555); Proposition 3.3.3 (pp. 14-15, line 615); section 3.4 and Lemma 3.4.1 (p. 15, lines 656, 659); Theorem 4.3.3 (p. 20, line 898); Corollary 4.3.10 (p. 25, line 1099); §§3.1–3.2, Theorem3.1.1, Lemmas3.1.2 and3.1.6, Proposition3.1.3 (lines404,416,440,463); Proposition4.1.1, Theorem4.1.2, Lemma4.1.3 (lines756,770,779); Proposition4.2.1 and Theorem4.3.3 proof (lines807,917–1093); Lemma 3.1.6(i)–(ii), pp.11–12, lines463–516"
 url = "https://arxiv.org/abs/math/0506120v2"
 fetched_from = "https://arxiv.org/pdf/math/0506120v2"
 fetched_at = "2026-10-20T21:08:00Z"
@@ -387,7 +387,7 @@ cited_for = ["gap:tame-quotient-singularities"]
 [[source]]
 id = "gros-chern"
 locator_scheme = "section"
-locator = "III §2.1, pp.65–66, gros-chern lines 1950–1979; IV Theorem 2.1.1, p.78, lines 2313–2318"
+locator = "II Proposition 4.2.1, p.51, lines 1503–1508; III Theorem 1.1.1, p.60, lines 1778–1809; III Corollary 1.2.31(iii), p.65, lines 1943–1948; III §2.1, pp.65–66, lines 1950–1979; IV Theorem 2.1.1 and deformation argument §2.1, pp.78–82, lines 2313–2318 and 2373–2443; printed conormal/normal dual omission explicitly reconciled"
 url = "https://www.numdam.org/item/MSMF_1985_2_21__1_0.pdf"
 fetched_from = "https://www.numdam.org/item/MSMF_1985_2_21__1_0.pdf"
 fetched_at = "2026-10-21T04:57:17Z"
@@ -414,3 +414,82 @@ url = "https://doi.org/10.2307/2374678"
 licence_class = "none"
 status = "uncertified"
 version_note = "Published locator only; the sources service reached the JSTOR landing page but obtained no legal readable text; the proposition is not certified from secondary applications."
+
+[[source]]
+id = "stacks-relative-ample"
+authors = "The Stacks Project Authors"
+title = "Divisors on Algebraic Spaces"
+year = 2026
+locator_scheme = "tag"
+locator = "0D32–0D36, §14, pp.27–29"
+url = "https://stacks.math.columbia.edu/download/spaces-divisors.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-divisors.pdf"
+fetched_at = "2026-10-21T05:37:50Z"
+sha256 = "51d90e8a3058611785f756c163d700e762363e8ef69cbfc93b5aef7f9e1d0475"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["StableReduction supplier contract", "7.3", "8.2", "8.5"]
+
+[[source]]
+id = "liedtke-surfaces"
+year = 2013
+title = "Algebraic Surfaces in Positive Characteristic"
+authors = "Christian Liedtke"
+locator_scheme = "section"
+locator = "§4, Corollary 4.2 and Definition 4.3, pp.20–21, lines749–767; §8, Theorem 8.3, p.34, lines1326–1335; 55-page author notes, numbering as read"
+url = "https://cims.nyu.edu/~tschinke/books/simons12/lectures.pdf"
+fetched_from = "https://cims.nyu.edu/~tschinke/books/simons12/lectures.pdf"
+fetched_at = "2026-10-21T05:36:38Z"
+sha256 = "1f59795f87151b34d8d5c6a31a858592dad57d55ed0bf127cc5b1bf78e18e861"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["gap:elliptic-surface-geometry"]
+
+[[source]]
+id = "stacks-projective-morphisms"
+year = 2026
+title = "Morphisms of Schemes"
+authors = "The Stacks Project Authors"
+locator_scheme = "tag"
+locator = "01W8, Definition 44.1, pp.101–102, lines4633–4640; 01VW, Definition 41.1, p.93, lines4229–4238; 0B5N, Lemma 44.6, p.103, lines4688–4692; 0BCL, Lemma 44.13, p.105, lines4764–4777"
+url = "https://stacks.math.columbia.edu/download/morphisms.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf"
+fetched_at = "2026-10-21T05:36:39Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["StableReduction supplier contract", "7.3", "8.2", "8.5"]
+
+[[source]]
+id = "enriques-one"
+year = 2024
+title = "Enriques Surfaces I"
+authors = "François Cossec; Igor Dolgachev; Christian Liedtke"
+locator_scheme = "theorem"
+locator = "Author draft dated 19 April 2024: Theorem 4.1.6, pp.364–366, lines17528–17594; Proposition 4.3.7 and Corollary 4.3.8, p.385, lines18458–18471; Theorem 4.3.9(3), p.385, lines18472–18483; Proposition 4.3.14, p.389, lines18646–18657; Theorem 4.3.20, p.392, lines18799–18817"
+url = "https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf"
+fetched_from = "https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf"
+fetched_at = "2026-10-21T05:37:30Z"
+sha256 = "3c6bf1d54954e28728935bbe1f4b1e38435fe469cf2b8543d657087815a2f526"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["gap:elliptic-surface-geometry"]
+
+[[source]]
+id = "arapura-chern"
+authors = "Donu Arapura"
+title = "Algebraic Geometry over the Complex Numbers"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1809-2"
+locator_scheme = "section"
+locator = "§7.5, Lemma 7.5.1 and Definition 7.5.2, p.150"
+url = "https://doi.org/10.1007/978-1-4614-1809-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["gap:integral-topology"]
