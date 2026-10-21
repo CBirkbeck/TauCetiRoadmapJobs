@@ -1,0 +1,8 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-REV-PKG-HabiroRings~codex5",
+    "date": "2026-10-20",
+    "notes": "Independent review for #11499 accepts the #11490/#11498 fix. Codex4 R1 is closed through the authorized HR ownership alternative: §§0.1–0.6 retain all six general deformation targets, ten EtaleDeformation and fourteen CompletedEtaleLift operations, and seven named checks. Arbitrary-ideal existence, locally nilpotent rigidity, finitely generated ordinary completion, maps to arbitrary ordinary complete targets, and regular-principal derived marked universality have distinct correct hypotheses. Section 3.5 supplies general finite monoidal-localization descent with explicit coherent overlaps, exactness, tensor compatibility and joint conservativity. HCF's specialized constructions remain independently supplied; family inputs remain HC, QW.0–QW.4 and HCF I, with RT and HCF II downstream. Comparison with codex4's accepted mathematics found no weakening. Public sources, fifteen sampled legacy locator blocks, ten Lean signatures, the pinned libraries and current upstream roadmaps were independently checked. Restored and extended the closing Lean inventory of README-only definitions; no mathematical statement changed. Final lean-check exited 0 with exactly seven declaration-uses-sorry warnings and no errors or other warnings. All six unchanged packet checks, sorry-data and intake checks, JSON/TOML parsing, local-link and whitespace checks passed. Evidence and source receipts are in research/blueprint/handoff/REV-PKG-HabiroRings~codex5.md. No remaining finding."
+  }
+}
