@@ -2,7 +2,7 @@
 
 **Summary.** Extend SelmerIwasawaCohomology by unitary arithmetic level raising over arbitrary CM extensions, integral congruence cohomology, diagonal Abel–Jacobi classes and two explicit reciprocity laws. These give rank zero from a nonzero definite diagonal period and rank one from a nonzero diagonal regulator, under the explicit uniform realised Frobenius span premise and coefficient, level, multiplicity and realization hypotheses. The rank-(2,3) specialization retains all seven admissibility clauses.
 
-[Suggested.lean](Suggested.lean) records the finite diagonal period on existing function carriers, its coefficient and multiplicity laws, and proved controls. The unitary moduli, nearby-cycle, arithmetic regulator and Selmer carriers are specified in this README. Their headline theorems use those native objects; finite functions in the signature file describe only the actual definite period, not a replacement for a Shimura variety. API statements and Checks on those geometric carriers are named in mathematical prose.
+[Suggested.lean](Suggested.lean) records special inertness on existing number-field ideals, its boundary targets and proved controls, the coboundary-sign test, and the finite diagonal period on existing function carriers, its coefficient and multiplicity laws, and proved controls. The unitary moduli, nearby-cycle, arithmetic regulator and Selmer carriers are specified in this README. Their headline theorems use those native objects; finite functions in the signature file describe only the actual definite period, not a replacement for a Shimura variety. API statements and Checks on those geometric carriers are named in mathematical prose.
 
 ## Scope and ownership
 
@@ -14,19 +14,21 @@ LocalGaloisDeformationRings §§1.6, 2.3, 2.12 and 2.20 owns the general minimal
 
 General Gan–Gross–Prasad period nonvanishing, heights and derivative formulas are outside this continuation; §8.1 starts with the definite period witness itself. The L6/L7-free rank-(2,3) refinement announced in ltxzz Remark 1.1.10 (ltxzz line 196) is not a target because that passage provides no proof. The root-number consequence of ltxzz Remark 8.3.3 (ltxzz line 6793) is not exported. A nonzero L-derivative does not replace a nonzero cycle: that implication is Conjecture 8.3.1 (ltxzz line 6748). The conditional rank statements include F⁺=ℚ, and their H(N)-free domains and small-rank specialization retain the uniform CM span premise.
 
-General Rees blowups, strict transforms and Cartier lifting belong to StableReduction Layer 4 and the pinned affine charts; §2.6 keeps the additional two-factor unitary product calculation. General nearby cycles and the weight sequence belong to LefschetzPencilsAndVanishingCycles §§7a.7–7a.9; §2.5 keeps the incidence maps and their explicit Hecke matrices. General arithmetic duality belongs to ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4 and D7.7, and general Chow and Gysin theory to MotivesAndAlgebraicCycles §§7.16–7.18 and EtaleCohomologyFoundations §§0.9–0.11, F.6–F.7. General hermitian classification belongs to AdelicAlgebraicGroups §4.1 with its prescribed-invariant extension contract. The finite diagonal period in §5.1 is the summation functional on the supplied definite sets; it adds no second finite-function or pushforward theory.
+General Rees blowups, strict transforms and Cartier lifting belong to StableReduction Layer 4 and the pinned affine charts; §2.6 keeps the additional two-factor unitary product calculation. General nearby cycles and the weight sequence belong to LefschetzPencilsAndVanishingCycles §§7a.7–7a.9; §2.5 keeps the incidence maps and their explicit Hecke matrices. General arithmetic duality belongs to ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4 and D7.7, and general Chow and Gysin theory to MotivesAndAlgebraicCycles §§7.16–7.18 and EtaleCohomologyFoundations §§0.9–0.11, F.6–F.7. General hermitian classification is the declared gap hermitian-local-global on AdelicAlgebraicGroups, extending its §4.1 local-global machinery by the prescribed-invariant existence theorem. The finite diagonal period in §5.1 is the summation functional on the supplied definite sets; it adds no second finite-function or pushforward theory.
 
 ## Conventions
 
 F/F⁺ is a CM quadratic extension, F⁺ is totally real, and n≥2. Let n₀ and n₁ be the even and odd members of {n,n+1}, rα=⌊nα/2⌋, so r₀+r₁=n. A relevant representation Πα is irreducible cuspidal on GL(nα,A_F), is conjugate self-dual, and has archimedean principal-series characters arg^(1−nα),arg^(3−nα),…,arg^(nα−1), where arg(z)=z/|z|. E⊂ℂ is a common strong coefficient number field: it contains both rationality fields and realizes all the associated representations with scalar-extension compatibility at every λ. These general notions are supplier contracts, not new private definitions (ltxzz Definition 1.1.3, line 124; Definition 3.2.5, line 1222).
 
-Every exceptional or raising set Σ⁺min, Σ⁺lr, Σ⁺, Σ⁺lr,I, Σ⁺I, Σ⁺lr,II and Σ⁺II is a finite set of finite places of F⁺; Σ⁺min contains the ramification supports of the standing representations. Enlargements remain finite. Strong disjointness means disjoint underlying rational supports; the auxiliary rational support avoids every place in the chosen exceptional set, and Σ⁺min avoids places above ℓ whenever L2 is required (ltxzz line 5139–5142, 5839–5841, 6195–6197).
+Let Σ⁺bad consist of every place of F⁺ above a rational prime ramified in F, and let Σ⁺Πα be its union with the finite ramification support of Πα. Fix finite Σ⁺min⊇Σ⁺Π₀∪Σ⁺Π₁. For a single Π use Σ⁺min⊇Σ⁺Π with the same definition. All abstract unitary Hecke algebras and contracted ideals are taken away from sets containing Σ⁺min (ltxzz Notation 3.1.4 and Definition 3.1.9, ltxzz line 434, 1038–1039, 1112–1119). Every exceptional or raising set Σ⁺min, Σ⁺lr, Σ⁺, Σ⁺lr,I, Σ⁺I, Σ⁺lr,II and Σ⁺II is finite. Enlargements remain finite. Strong disjointness means disjoint underlying rational supports; the auxiliary rational support avoids every place in the chosen exceptional set, and Σ⁺min avoids places above ℓ whenever L2 is required (ltxzz line 5139–5142, 5839–5841, 6195–6197).
 
 For λ|ℓ write Oλ for the integers of Eλ, π for a chosen uniformizer only in computations, kλ=Oλ/λ and A_m=Oλ/λᵐ for m≥1. Congruence ideals are ideal powers, not rational-prime powers. Ramification of Eλ/ℚℓ is allowed. Hodge–Tate weight of Eλ(1) is −1. Put Vλ=(ρΠ₀,λ⊗ρΠ₁,λ)(n), and Rα⊂ρΠα,λ(rα). Then R=R₀⊗R₁ has generic fibre Vλ and polarization R^c≃R∨(1). The dimension and twist witness is n=2: ranks 2 and 3, r₀=r₁=1, tensor rank 6 and total twist 2. The weight is (2−1)+(3−1)−4=−1 (ltxzz line 914; line 5822; line 6484).
 
 Arithmetic Frobenius acts on residue coordinates by x↦x^q; geometric Frobenius is its inverse. Thus arithmetic Frobenius acts by 9 on Eλ(1) at the place of F above a special inert degree-one p=3 place of F⁺, and geometric Frobenius by 1/9. Its Hodge–Tate weight is still −1. For the polarized disconnected group, hγ is the GL component of γ²: for γ=(I,−1)c, hγ=−I, not I. Cohomology is cohomological, Hⁱ(K[a])=Hⁱ⁺ᵃ(K); a codimension-n class is in degree 2n with twist n, and its regulator is H¹ of degree 2n−1. The inhomogeneous coboundary is g·m−m: for the sign action of C₂ on ℤ and m=1 it takes the nontrivial element to −2. These witnesses fix all directions and dualities used below (ltxzz line 781–830; EtaleCohomologyFoundations §F.4.6; Tau Ceti d0).
 
-Use finite functions on native definite Shimura sets, with pushforward counting fibre multiplicity and period given by a sum, not an average. The spherical unit is 1_K. At a hyperspecial reference subgroup choose vol(K)=1; retain the fixed Haar measure at every other level, where the normalized idempotent is e_K=1_K/vol(K). Distinguish M_m (localization), M/I (quotient) and M[I] (annihilator submodule); residual and congruence kernels are contracted from the indicated Hecke algebra. All choices of embeddings, uniformizations and multiplicity decompositions have explicit domains and transport maps; no distinguished coordinate in a multiplicity space is canonical.
+Use finite functions on native definite Shimura sets, with pushforward counting fibre multiplicity and period given by a sum. Integral level algebras and mixed-level incidence maps use the permutation-module, coset-counting convention of SmoothRepresentationsOfLocalGroups §§SR.1.2, SR.4.4; their level units are 1_K. For comparison with convolution under a fixed Haar measure μ, assume μ(K) is a unit before writing e_K=μ(K)⁻¹1_K. With convolution action T_h(v)=∫h(g)ρ(g)v dμ, a coset-counting map from K-invariants to H-invariants with left-H, right-K invariant kernel h is represented by μ(K)⁻¹h, normalizing by the source subgroup; each mixed-level comparison uses this rescaling. Incidence matrices and reciprocity factors use ltxzz Definition 5.8.1 and Remark 5.8.2 (ltxzz line 3766–3778). Distinguish M_m (localization), M/I (quotient) and M[I] (annihilator submodule).
+
+For every away-set Σ, first form T_O^Σ=Oλ⊗_ℤT^Σ with the Oλ-algebra character φ_O(a⊗t)=aφΠ(t). Define n_(Π,m)^Σ=ker(T_O^Σ→A_m) and m_Π^Σ=n_(Π,1)^Σ. Contract only between these coefficient Hecke algebras when changing Σ. Thus n_(Π,m)^Σ contains λᵐT_O^Σ and every 1⊗t−φΠ(t); M/n_(Π,m)^ΣM is M⊗_(T_O^Σ,φ_O)A_m. The abbreviations nΠ and nα throughout denote these coefficient ideals at the stated m and away-set, and mΠ,mα denote their residual versions. For rational quotients use T_E^Σ=Eλ⊗_ℤT^Σ and ker(φ_E:T_E^Σ→Eλ). This is the coefficient extension of ltxzz Notations 6.1.3, 7.2.1 and 7.3.1 (ltxzz line 5195, 5899, 6250); contraction in the bare integral abstract algebra does not define the λᵐ eigenspecialization over ramified Oλ. All choices of embeddings, uniformizations and multiplicity decompositions have explicit domains and transport maps; no distinguished coordinate in a multiplicity space is canonical.
 
 
 Products ordered by n,n+1 and products ordered by n₀,n₁ are identified by exchanging factors when n is odd. In a graph evaluation f(s,sh↑(s)), each argument occupies its nα-labelled factor; for odd n this means f(sh↑(s),s) in the even-first order. The two-leg period of §5.1 expresses this without a parity-dependent convention on the type of f (ltxzz Construction 4.6.1(3), ltxzz line 2509; Theorem 7.2.8(3), ltxzz line 6044).
@@ -41,14 +43,16 @@ Schemes, modules and topological groups use the supplier universes without a cou
 
 **Checks.**
 
-- satake_reflect_sign: the imported reciprocal condition gives reflect 1 (T−1)=−(T−1) and reflect 2 (T²−3T+1)=T²−3T+1 over ℤ; the sign depends on degree.
+- Imported reciprocity sign controls: SmoothRepresentationsOfLocalGroups §SR.4.4, paired-unitary-parameter Checks, supplies reflect 1 (T−1)=−(T−1) and reflect 2 (T²−3T+1)=T²−3T+1 over ℤ.
 - hecke_rank2: under the imported even formula, r=1, q=3, a=3 give I°=16 and (q+1)R°−I°=0.
 - hecke_rank3: the imported odd formula at r=1, q=3, a=2 gives T°=9/2 and I°=105/2.
 - twist_rank_two_three: the rank, degree and weight calculations above distinguish a tensor twist n from twisting each factor by n.
 - frobenius_inert_three: arithmetic and geometric actions on Eλ(1) are 9 and 1/9; replacing p² by p fails at the inert place.
 - polarization_square: (I,−1)c squares to GL component −I; using γ instead of γ² loses the fixed-line condition.
 - torus_two_point_control: For a free C₂-orbit of two geometric points over an odd-characteristic field and L=𝔽₂, H⁰=L² but H⁰_𝔗={(a,a)}≃L. The invariant (1,1) has total trace 0 and orbit trace 1; 1/2 is unavailable.
-- cochain_sign: the sign-action coboundary of 1 is −2, pinning the connecting-map convention.
+- cochain_sign: the sign-action coboundary of 1 is −2, pinning the connecting-map convention; the proved formula test in Suggested.lean uses ℤˣ={±1} acting on ℤ and evaluates g·m−m as in Tau Ceti d0_apply.
+- Hecke nonunit volume: for C₂ with counting measure and 𝔽₂ coefficients, μ(C₂)=0 and 1_C₂*1_C₂=0. The normalized convolution idempotent is unavailable, while the coset-counting level algebra retains its identity 1_C₂.
+- Exceptional ramified field: for F=ℚ(i), the place 2 belongs to Σ⁺bad even for a representation unramified there. Omitting it would incorrectly treat a ramified unitary group as hyperspecial.
 
 ## Exact supplier contracts
 
@@ -56,6 +60,7 @@ Schemes, modules and topological groups use the supplier universes without a cou
 
 The baseline is 6b7abb3c7686292736be2955bd3eb9ebf63b456a. Read these as the exact pinned signatures, with the ring, group and topology instances in their Lean contexts:
 
+- NumberField and NumberField.inst_ringOfIntegersAlgebra in Mathlib/NumberTheory/NumberField/Basic.lean give the fields and the induced map on integers; Ideal.absNorm in Mathlib/RingTheory/Ideal/Norm/AbsNorm.lean and Ideal.map give prime norm and extension of ideals. Algebra.IsUnramifiedIn in Mathlib/RingTheory/Unramified/Locus.lean quantifies over every upper prime above a rational prime; CyclotomicField in Mathlib/NumberTheory/Cyclotomic/Basic.lean supplies the Gaussian-field control carrier.
 - Polynomial.eval in Mathlib/Algebra/Polynomial/Eval/Defs.lean evaluates R[X] at R; eval_X computes X at its argument. Polynomial.derivative in Mathlib/Algebra/Polynomial/Derivative.lean is an R-linear map under a semiring, and derivative_X is 1. SmoothRepresentationsOfLocalGroups §SR.4.4 supplies the parity and unit/root conditions on these carriers.
 - Polynomial.reflect and coeff_reflect in Mathlib/Algebra/Polynomial/Reverse.lean reverse coefficients through the given degree. For monic degree-N P the reciprocal condition is P = (-1 : L)^N • Polynomial.reflect N P; it uses no Laurent carrier.
 - Module.torsion_by_prime_power_decomposition in Mathlib/Algebra/Module/PID.lean decomposes finite prime-power torsion modules over a PID. Module.free_iff_isTorsionFree in Mathlib/LinearAlgebra/FreeModule/PID.lean applies to finite modules over a PID; neither is asserted over an arbitrary ring.
@@ -102,7 +107,7 @@ What SchemeAndStackFoundations must provide (gap:hochshild-serre-adic): Supply t
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
-§§SR.4.1, SR.4.4: Normalized Satake, unitary-genericity, paired-unitary-parameter, actual double-coset operators, unitary-even-formulas and unitary-odd-formulas, over coefficient rings with q invertible. On Mathlib’s carrier reciprocity is P = (−1)^N • Polynomial.reflect N P, with P monic of degree N.
+§§SR.1.1–SR.1.2: unit-volume convolution comparisons, coefficient-independent permutation level algebras, mixed-level coset traces and the inverse-double-coset anti-involution. §§SR.4.1, SR.4.4: Normalized Satake, unitary-genericity, paired-unitary-parameter, actual double-coset operators, unitary-even-formulas and unitary-odd-formulas, over coefficient rings with q invertible. On Mathlib’s carrier reciprocity is P = (−1)^N • Polynomial.reflect N P, with P monic of degree N.
 
 ### From TauCetiRoadmap.ArithmeticGaloisDuality
 
@@ -114,7 +119,7 @@ What ArithmeticGaloisDuality must provide (gap:purity-crystalline-regulator): Bi
 
 ### From TauCetiRoadmap.AutomorphicGaloisRepresentationsPartII
 
-AG2.1b (The actual Galois constituent of cohomology; The multiplicity of archimedean packets), AG2.2 (Galois assembly for discrete unitary transfer; Attachment under cuspidal solvable base change), AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations), AG2.6 (Strong coefficient field; Uniform strong realization of polarized systems; Purity and polarization of the polarized system), AG2.7 (Residual representation of π; Residual genericity outside finitely many λ; Unitary discrete-parameter export; Lattice and residual polynomial export): General-rank attachment, local comparisons and temperedness in the relevant specialization, strong coefficient fields and stable polarized lattices; actual multiplicity identifications retain the distinct gap automorphic-multiplicity. AG2.1b (Weight separation into the middle degree; The multiplicity of archimedean packets) has compact ST/END hypotheses; gap diagonal-concentration records the full rational native-unitary concentration and nonproper cuspidal boundary specialization needed in 4.3.
+AG2.1b (The actual Galois constituent of cohomology) and its archimedean multiplicity subsection, AG2.2 (Galois assembly for discrete unitary transfer; Attachment under cuspidal solvable base change), AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations), AG2.6 (Strong coefficient field; Uniform strong realization of polarized systems; Purity and polarization of the polarized system), AG2.7 (Residual representation of π; Residual genericity outside finitely many λ; Unitary discrete-parameter export; Lattice and residual polynomial export): General-rank attachment, local comparisons and temperedness in the relevant specialization, strong coefficient fields and stable polarized lattices; actual multiplicity identifications retain the distinct gap automorphic-multiplicity. AG2.1b (Weight separation into the middle degree) and its archimedean multiplicity subsection have compact ST/END hypotheses; gap diagonal-concentration records the full rational native-unitary concentration and nonproper cuspidal boundary specialization needed in 4.3.
 
 **Exact cohomological multiplicity H(N).** The contracts for actual constituents and packets in AG2.1b, AG2.2, AG2.5–AG2.7 do not identify every standard unitary isotypic multiplicity space. Require H(N) exactly as in Conventions and its proof on the domain N≤3 or F⁺≠ℚ of ltxzz Proposition 3.2.11 (ltxzz line 1259–1277); for F⁺=ℚ and N≥4 it remains an explicit premise, not an asserted theorem. Used by §§3.2, 3.6, 3.7, 4.5, 6.3, 8.3, 8.4.
 
@@ -132,7 +137,7 @@ What AutomorphicGaloisRepresentationsPartII must provide (gap:diagonal-concentra
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:old-form-dimension): Supply hyperspecial transfer at every allowed unramified place and transfer at sufficiently small exceptional levels in every residue characteristic, and extend the D.2.3 identity and ltxzz Lemma 6.4.2 to every transferable neat level and finite configuration permitted here, without S_FL or additional small-level endpoint restrictions.
 
-**Local unitary constituents and cohomological decomposition.** Use the contracts for local packets and actual tower cohomology on their own domains. The finite-field primitive link cohomology of ltxzz Proposition 5.6.4 still requires its specific unitary constituent and Frobenius comparison, rather than identification with Lubin–Tate tower cohomology (ltxzz line 3368–3376). Used by §§3.4, 6.3.
+**Local unitary constituents and cohomological decomposition.** Use the contracts for local packets and actual tower cohomology on their own domains. The finite-field primitive link cohomology of ltxzz Proposition 5.6.4 still requires its specific unitary constituent and Frobenius comparison, rather than identification with Lubin–Tate tower cohomology (ltxzz line 3368–3376). Used by §§3.2, 3.4, 6.3.
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:local-unitary-representations): Supply the primitive link-cohomology constituent/Frobenius comparison of ltxzz Proposition 5.6.4 beyond the bound interfaces for local packets and towers.
 
@@ -152,9 +157,9 @@ What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:local-unitary
 
 What ShimuraVarieties must provide (gap:native-shimura): Supply the native strictly semistable models of ltxzz §5.2 with link charts and 𝔗-equivariant generic-fibre and nonproper ordinary/compact specialization comparisons, the smooth hyperspecial models and Lemma 4.2.4 specialization isomorphisms at every nondetecting w outside Σ⁺min and ℓ, compatible with the extending graph cycle and Hecke quotient, and the proper smooth models of Remark 5.2.8 above Σ⁺_p∖{p} for F⁺≠ℚ.
 
-**Special homomorphism under basic uniformizations.** Need native maps under V→V⊕⟨1⟩, the basic and link Cartesian squares, the two definite special correspondence legs, and identification with their double-coset maps. Source-specific geometric reciprocity is 5.2/6.2; the moduli compatibilities are required with the lattice/polarization scaling by ϖ. ltxzz §§4.5 and 5.10, especially ltxzz line 2286, ltxzz line 4432, ltxzz line 4461. Used by §§2.6, 5.2, 6.1, 6.2.
+**Special homomorphism under basic uniformizations.** Supply addition-of-line maps V→V⊕⟨1⟩ and definite/indefinite uniformization compatibilities on the native level domains, including the two definite correspondence legs and their double-coset maps, with lattice/polarization scaling by ϖ. The basic square of Proposition 4.5.5 is Cartesian for even n only; the ground square of Proposition 5.10.6 is Cartesian for odd n; the link squares of Lemma 5.10.8(1)/(2) have respectively even/odd n. For §6.2 use the product square in the proof of Theorem 4.6.2, from Proposition 4.5.5 for even n and Lemma 4.5.2 for odd n (ltxzz line 2286–2297, 2552–2563, 4432, 4461–4479). Source-specific geometric reciprocity is proved in §§5.2/6.2. Used by §§2.6, 5.2, 6.1, 6.2.
 
-What ShimuraVarieties must provide (gap:unitary-special-compatibility): Bind the native special-map and definite/indefinite uniformization compatibility diagrams, with their isogeny scaling.
+What ShimuraVarieties must provide (gap:unitary-special-compatibility): Supply native addition-of-line and uniformization compatibilities with isogeny scaling by ϖ, the even-n Cartesian square of Proposition 4.5.5, odd-n ground square of Proposition 5.10.6, even/odd link squares of Lemma 5.10.8(1)/(2), and the all-parity product square of Theorem 4.6.2 using Lemma 4.5.2 in odd rank.
 
 ### From TauCetiRoadmap.LefschetzPencilsAndVanishingCycles
 
@@ -184,7 +189,7 @@ What MotivesAndAlgebraicCycles must provide (gap:chow-abel-jacobi): Supply the i
 
 §5.2, §§3.3–3.8: IsCyclotomicAbsIrred in its rank-two scope and global deformation rings. In higher rank L6 and A7.2.2 retain the literal absolute irreducibility of restriction to Γ_F(ζℓ); no rank-two equivalence with a dihedral condition is used. Gaps rigid-r-equals-t and eventual-rigidity are additional global obligations.
 
-**Rigid R=T, complete intersections and Hecke freeness.** For the polarized problem retain d0–D4 of ltxzz-deformation Theorem 3.6.3, including Fontaine–Laffaille width, ℓ>2(N+1), arbitrary-rank cyclotomic irreducibility, rigidity, residual concentration and a nonzero localized module; Σlr=∅ in odd rank. Require Runiv≃T_m, finite free middle cohomology, and the mixed-to-congruence maps, using local rings from LocalGaloisDeformationRings (ltxzz-deformation line 1444; ltxzz line 5662). Used by §§3.3, 3.6.
+**Rigid R=T, complete intersections and Hecke freeness.** For the polarized problem retain d0–D4 of ltxzz-deformation Theorem 3.6.3, including Fontaine–Laffaille width, ℓ≥2(N+1), arbitrary-rank cyclotomic irreducibility, rigidity, residual concentration and a nonzero localized module; Σlr=∅ in odd rank. Require Runiv≃T_m, finite free middle cohomology, and the mixed-to-congruence maps, using local rings from LocalGaloisDeformationRings (ltxzz-deformation line 1444; ltxzz line 5662; ltxzz-published Theorem 6.3.4(a), p. 277, line 6408). Used by §§3.3, 3.6.
 
 What GlobalGaloisDeformations must provide (gap:rigid-r-equals-t): Supply the polarized global rigid R=T and freeness theorem and its mixed-to-congruence deformation maps at full coefficient generality.
 
@@ -208,9 +213,9 @@ What ArithmeticGaloisRepresentations must provide (gap:eventual-images): Bind th
 
 ### From TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants
 
-**Finite Hecke-support contraction at chosen Frobenius.** Need finite support of localized native Hecke modules, distinction of nonisomorphic residual Galois systems by Frobenius, and contraction invariance after omitting an auxiliary rational support, simultaneously with the detecting conjugacy class. ltxzz line 5173, ltxzz line 5880, ltxzz line 6617, ltxzz line 6856. Chebotarev alone does not prove a Hecke quotient map is an isomorphism. Used by §§7.2.
+**Finite Hecke-support contraction at chosen Frobenius.** Need finite support of localized native Hecke modules, distinction of nonisomorphic residual Galois systems by Frobenius, and contraction invariance between T_O coefficient algebras after omitting an auxiliary rational support, simultaneously with the detecting conjugacy class; all residual and λᵐ quotients use n_(Π,m) of Conventions, including ramified Oλ. ltxzz line 5173, ltxzz line 5880, ltxzz line 6617, ltxzz line 6856. Chebotarev alone does not prove a Hecke quotient map is an isomorphism. Used by §§7.2.
 
-What IntegralHeckeAndGaloisDeterminants must provide (gap:hecke-finite-support): Bind the finite-support/Frobenius separation theorem proving the congruence Hecke quotient comparisons.
+What IntegralHeckeAndGaloisDeterminants must provide (gap:hecke-finite-support): Bind the finite-support/Frobenius separation theorem proving congruence quotient comparisons for the Oλ-extended Hecke algebras and their n_(Π,m) coefficient kernels, including ramified coefficients.
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
@@ -232,7 +237,7 @@ What HilbertModularVarietiesAndShimuraCurves must provide (gap:hilbert-precursor
 
 ### From TauCetiRoadmap.AdelicAlgebraicGroups
 
-§4.1; Extension: hermitian local-global classification: gap hermitian-local-global: Supply the Hasse classification and existence of global hermitian spaces with compatible prescribed local invariants.
+New obligation after §4.1: hermitian local-global classification, gap hermitian-local-global: Supply the Hasse classification and existence of global hermitian spaces with compatible prescribed local invariants.
 
 **Global hermitian spaces with prescribed invariants.** For CM F/F⁺, construct standard hermitian spaces with the specified real signatures and finite local invariants exactly when the determinant/Hasse product compatibility holds; include the definite/indefinite switch used in ltxzz §§3.2, 3.4 and 5.1. Used by §§2.1.
 
@@ -248,6 +253,8 @@ Layer 1 imports coefficient algebra and fixes the exact local/admissibility pred
 
 Define special inertness and very special inertness as predicates on finite places. For a CM extension F/F⁺ and a finite place v of F⁺, define special inertness by inertness in F, an odd underlying rational prime p unramified in F, and F⁺ᵥ≃ℚp. Define very special inertness by also requiring v to split completely in F⁺rflx, equivalently to have a place above v with completion ℚp; Fᵣflx is the compositum of F with the intersection of the reflex fields of all CM types of F. (ltxzz-published, Definitions 3.3.1–3.3.4 and Remark 3.3.3, p. 147; ltxzz-published line 1533; ltxzz-published line 1542; ltxzz-published line 1549).
 
+The real-bodied `specialInertPlace` in Suggested.lean is defined for every extension of number fields K⊆F and specialized here to CM F/F⁺: it requires v≠0, v prime, v.absNorm a prime p≠2, p unramified at every prime of 𝓞 F, and the extended ideal v𝓞 F prime. Prime absolute norm is equivalent to residue degree one; unramifiedness of p in F then makes F⁺ᵥ≃ℚp. The unramified clause quantifies over all primes above p, rather than only v. Very special inertness also uses the supplied reflexive closure.
+
 The basic API consists of the following named statements.
 
 - **Very special inert is special.** Very special inertness implies special inertness.
@@ -255,14 +262,16 @@ The basic API consists of the following named statements.
 - **Special inert residue.** A special inert place has Fᵥ the unramified quadratic extension of ℚp, with residue size p².
 - **Special inert transport.** Field isomorphisms preserving the CM involution transport both predicates and their local embeddings.
 
-The first two clauses are logical consequences; the local degree statement uses unramified local extensions and inertness. Reflexive closure is imported, not reconstructed.
+The first two clauses are logical consequences; the local degree statement uses unramified local extensions and inertness. The Gaussian boundary targets `specialInertPlace_Qi_three`, `specialInertPlace_Qi_five` and `specialInertPlace_Qi_two` use F=CyclotomicField 4 ℚ and v=(3),(5),(2) in 𝓞 ℚ; the first also states that the extended ideal has norm 9. Prove `specialInertPlace_not_square_norm`: for any number-field extension K⊆F, prime p and v with v.absNorm=p², special inertness fails because p² is not prime. These targets state the special-inert and residue-degree parts of the following Checks (ltxzz-published Definition 3.3.4, p. 147, line 1549–1556). Reflexive closure is imported, not reconstructed.
 
-*Needs:* ShimuraVarieties §5.1; PELModuli §§M0.25–M0.26, M4.7–M4.9.
+*Needs:* Mathlib NumberField, Ideal.absNorm, Ideal.map and Algebra.IsUnramifiedIn; ShimuraVarieties §5.1; PELModuli §§M0.25–M0.26, M4.7–M4.9.
 
 **Checks.**
 
 - Special Qi 3: For F=ℚ(i), v=(3) is very special inert, and the residue field in F has 9 elements. Using the residue size of F⁺ instead gives 3.
 - Special Qi split: For ℚ(i), v=(5) is split and v=(2) is ramified and even; neither is special inert. A predicate testing only oddness would accept the split prime 5.
+- Special norm two: the proved `specialInertPlace` example rejects any ideal of norm 2, independently of its other clauses. Dropping oddness accepts this forbidden value.
+- Special split ideal: the proved `specialInertPlace` example rejects a nonprime extended ideal, independently of parity; a predicate checking only the lower prime would accept a split place.
 - Special residue degree: An inert place with [F⁺ᵥ:ℚp]=2 fails special inertness even when p is odd and unramified; an empty excluded set does not remove this condition.
 
 ### 1.6 Rankin–Selberg admissible coefficient primes
@@ -300,16 +309,16 @@ ShimuraVarieties §5.1; PELModuli §§M0.25–M0.26, M4.7–M4.9; SmoothRepresen
 
 ### 2.1 Unitary level-raising data and contracted Hecke ideals
 
-Define a unitary level-raising datum with the following fields. For N≥2 put r=⌊N/2⌋. Bundle a relevant Π, strong E, a finite set Σ⁺min⊇Σ⁺Π of finite places and a finite set Σ⁺lr of inert places strongly disjoint from Σ⁺min (their underlying rational supports are disjoint), and a finite Σ⁺⊇Σ⁺min∪Σ⁺lr; λ|ℓ with no ℓ-adic place in Σ⁺min and ℓ∤Nv((Nv)²−1) for v∈Σ⁺lr; m≥1; a standard definite V° of rank N with self-dual lattice away from these sets and infinity; and neat K°, hyperspecial elsewhere, transferable at Σ⁺min and special maximal at Σ⁺lr in even rank, where V° is nonsplit. Include a special inert p, all auxiliary CM-moduli data of §§3.5/5.1 and an indefinite uniformization datum. Require P1: p-adic places avoid Σ⁺; P2: ℓ∤p(p²−1); P3: a CM type Φ containing τ∞ with Qp^Φ=ℚp²; P4: even PΠ,p is special modulo λᵐ, odd PΠ,p is Tate generic modulo λ; P5: PΠ,p is intertwining generic modulo λ; P6 in even rank: restriction of the congruence Hecke ideal away from p gives the same quotient of (OE/λᵐ)[Sh(V°,K°)] as the full ideal. Define mΠ and nΠ as contractions, to the algebra away from Σ⁺ and p, of the kernels of φΠ modulo λ and λᵐ. (ltxzz, §6.1 and Notation 6.1.3, pp. 106–107; ltxzz line 5136; ltxzz line 5164; ltxzz line 5195).
+Define a unitary level-raising datum with the following fields. For N≥2 put r=⌊N/2⌋. Bundle a relevant Π, strong E, a finite set Σ⁺min⊇Σ⁺Π of finite places and a finite set Σ⁺lr of inert places strongly disjoint from Σ⁺min (their underlying rational supports are disjoint), and a finite Σ⁺⊇Σ⁺min∪Σ⁺lr; λ|ℓ with no ℓ-adic place in Σ⁺min and ℓ∤Nv((Nv)²−1) for v∈Σ⁺lr; m≥1; a standard definite V° of rank N with self-dual lattice away from these sets and infinity; and neat K°, hyperspecial elsewhere, transferable at Σ⁺min and special maximal at Σ⁺lr in even rank, where V° is nonsplit. Include a special inert p, all auxiliary CM-moduli data of ltxzz §§3.5/5.1 and an indefinite uniformization datum. Require P1: p-adic places avoid Σ⁺; P2: ℓ∤p(p²−1); P3: a CM type Φ containing τ∞ with Qp^Φ=ℚp²; P4: even PΠ,p is special modulo λᵐ, odd PΠ,p is Tate generic modulo λ; P5: PΠ,p is intertwining generic modulo λ; P6 in even rank: restriction of the congruence Hecke ideal away from p gives the same quotient of (OE/λᵐ)[Sh(V°,K°)] as the full ideal. Define mΠ=m_Π^(Σ⁺∪Σ⁺p) and nΠ=n_(Π,m)^(Σ⁺∪Σ⁺p) in the coefficient Hecke algebra of Conventions; P6 compares these coefficient-kernel quotients before and after omitting p. (ltxzz, §6.1 and Notation 6.1.3, pp. 106–107; ltxzz line 5136; ltxzz line 5164; ltxzz line 5195).
 
 The basic API consists of the following named statements.
 
 - **Level datum ext.** Equality of the geometric, lattice, level, prime and coefficient fields determines equality; proof fields are irrelevant.
 - **Level datum reduce.** For 1≤a≤m, reduction to λᵃ preserves the Satake equations and P6 by right exactness, with the corresponding reduced ideals.
-- **Level datum ideal maps.** For a Hecke module M, M/nΠ is its actual quotient; M[mΠ] denotes the simultaneous annihilator and M_mΠ the localization, with distinct coercions and comparison maps.
+- **Level datum ideal maps.** For a Hecke module M, M/nΠ=M⊗_(T_O,φ_O)A_m is its coefficient eigenspecialization; M[mΠ] denotes the simultaneous annihilator and M_mΠ the localization, with distinct coercions and comparison maps.
 - **Level datum change level.** Pullback/trace are defined for compatible neat levels; the target datum must separately satisfy P6, rather than inheriting it without proof.
 
-Form a dependent structure using the native models and Hecke characters. Kernels and contractions produce its ideals. Reduction uses quotient tensor products, without identifying localization with the eigenspace.
+Form a dependent structure using the native models and Hecke characters. Coefficient extension followed by kernels and contraction between coefficient algebras produces its ideals. Reduction uses quotient tensor products, without identifying localization with the eigenspace.
 
 *Needs:* SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5; contract gap native-shimura; EndoscopicTransferAndUnitaryTraceComparison §13.7; ShimuraVarieties §5.1; PELModuli §§M0.25–M0.26, M4.7–M4.9; PELModuli §§M2.8, M4.3, M4.5–M4.9; EndoscopicTransferAndUnitaryTraceComparison §§13.1, 13.8; contract gap hermitian-local-global; contract gap old-form-dimension.
 
@@ -318,11 +327,12 @@ Form a dependent structure using the native models and Hecke characters. Kernels
 - Level positive exponent: m=0 is outside the datum; m=1 makes nΠ the residual contracted ideal. Allowing m=0 would turn the coefficient quotient into the zero ring.
 - Level empty lr: Σ⁺lr=∅ is permitted and imposes no nonsplit condition there; p must still satisfy P1–P6. Requiring a raising place would lose the base vertex.
 - Level not scalar: A congruence P(p)=0 modulo λ but not modulo λ² supplies an m=1 test datum and fails the m=2 condition; a wrong residual-only definition accepts it.
+- Level ramified quadratic: take T=ℤℓ, O=ℤℓ[π]/(π²−ℓ), M=O and m=1. The raw contraction is (ℓ), giving O/(π²) with nonzero π-action; T_O≃O has kernel (π), giving O/(π). Excluding ramified coefficients would discard a permitted strong-field extension.
 - Level infinite exclusion: Taking Σ⁺ to contain every auxiliary rational support is outside the finite-set domain and leaves no auxiliary prime. Finite enlargement preserves the Chebotarev supply; arbitrary set enlargement does not.
 
 ### 2.2 The basic isogeny correspondence
 
-For the smooth standard-indefinite integral PEL model M at a special inert p, over the CM auxiliary base Tp, realize the source S and isogeny correspondence S←π B→ι M of §4.3. Over any field κ containing the residue field and s∈S(κ), B_s is smooth projective geometrically irreducible of dimension ⌊(N−1)/2⌋; ι is locally a closed immersion of codimension ⌊N/2⌋. Its tangent bundle is Hom(ωA∨,τ∞,ker α*,τ∞/ωA∨,τ∞) and its normal bundle is Hom(ωA∨,τ∞,im α*,τ∞). The fibre is the hermitian Frobenius incidence variety DL(V_s,{,}_s,⌈(N+1)/2⌉). (ltxzz, Definitions 4.3.1–4.3.4 and Theorem 4.3.5, pp. 39–41; ltxzz line 1788; ltxzz line 1871).
+For the smooth standard-indefinite integral PEL model M at a special inert p, over the CM auxiliary base Tp, realize the source S and isogeny correspondence S←π B→ι M of ltxzz §4.3. Over any field κ containing the residue field and s∈S(κ), B_s is smooth projective geometrically irreducible of dimension ⌊(N−1)/2⌋; ι is locally a closed immersion of codimension ⌊N/2⌋. Its tangent bundle is Hom(ωA∨,τ∞,ker α*,τ∞/ωA∨,τ∞) and its normal bundle is Hom(ωA∨,τ∞,im α*,τ∞). The fibre is the hermitian Frobenius incidence variety DL(V_s,{,}_s,⌈(N+1)/2⌉). (ltxzz, Definitions 4.3.1–4.3.4 and Theorem 4.3.5, pp. 39–41; ltxzz line 1788; ltxzz line 1871).
 
 The basic API consists of the following named statements.
 
@@ -342,7 +352,7 @@ Use the native moduli problem to construct the quasi-isogeny, Grothendieck–Mes
 
 ### 2.3 Semistable incidence strata and their normal bundles
 
-For the definite datum and CM-moduli data of §5.1, take the native strictly semistable M, its reduced smooth components M°, M• and link M†=M°∩M• from gap native-shimura. Identify their source-specific incidence presentations and normal bundles as follows. The balloon correspondence B°→M° is an isomorphism, with fibres ℙ(V_s) over points of S° in perfect residue fields; the link in a balloon fibre is the degree-(p+1) hermitian Fermat hypersurface. The link normal in the balloon component is O(p+1); its normal in the ground component is the dual O(−(p+1)). Over perfect residue fields κ, ground fibres B•_s are the projective smooth incidence varieties DL•(V_s,{,}_s), of dimension ⌊N/2⌋. Retain the tangent and normal maps from the universal isogenies, and the link fibre projective bundles of §5.5. (ltxzz, Theorems 5.2.5, 5.3.4, 5.4.4 and 5.5.3; Corollary 5.3.5, pp. 57–69; ltxzz line 2653; ltxzz line 2823; ltxzz line 2901; ltxzz line 2985).
+For the definite datum and CM-moduli data of ltxzz §5.1, take the native strictly semistable M, its reduced smooth components M°, M• and link M†=M°∩M• from gap native-shimura. Identify their source-specific incidence presentations and normal bundles as follows. The balloon correspondence B°→M° is an isomorphism, with fibres ℙ(V_s) over points of S° in perfect residue fields; the link in a balloon fibre is the degree-(p+1) hermitian Fermat hypersurface. The link normal in the balloon component is O(p+1); its normal in the ground component is the dual O(−(p+1)). Over perfect residue fields κ, ground fibres B•_s are the projective smooth incidence varieties DL•(V_s,{,}_s), of dimension ⌊N/2⌋. Retain the tangent and normal maps from the universal isogenies, and the link fibre projective bundles of ltxzz §5.5. (ltxzz, Theorems 5.2.5, 5.3.4, 5.4.4 and 5.5.3; Corollary 5.3.5, pp. 57–69; ltxzz line 2653; ltxzz line 2823; ltxzz line 2901; ltxzz line 2985).
 
 The basic API consists of the following named statements.
 
@@ -442,11 +452,11 @@ SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5;
 
 ### 3.1 Localized cohomology and integral concentration
 
-For 2.1, residual absolute irreducibility identifies compactly supported and ordinary localized cohomology of the indefinite generic fibre and the ground stratum, in every degree. Under intertwining genericity the two special-maximal-level intertwiners on definite functions localized at mΠ are isomorphisms. Under cohomological genericity, localized nearby cohomology is concentrated in degree N−1 and free there; this latter conclusion uses the derived integral reduction comparison. (ltxzz, Lemmas 6.1.9–6.1.11 and Remark 6.1.5, pp. 107–109; ltxzz line 5206; ltxzz line 5221; ltxzz line 5247).
+Prove `localizedBoundaryComparison`: for Datum 2.1 and A6.1.6 (residual absolute irreducibility), the canonical compact-to-ordinary maps for the indefinite geometric generic fibre and the ground stratum are isomorphisms in every degree. Residual irreducibility excludes boundary isobaric constituents (ltxzz Lemmas 6.1.10–6.1.11, pp. 108–109, ltxzz line 5247, 5255). *Needs:* Layer 2 §2.1; Layer 2 §2.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; contract gap boundary-cohomology.
 
-Residual irreducibility excludes boundary isobaric constituents; the local intertwining factors are units by SmoothRepresentationsOfLocalGroups §SR.4.4. After localization at mΠ, the rank comparison runs only over Π-congruent standard pairs; P5 excludes the bad Satake pairs on this support (ltxzz line 5230–5245). The universal coefficient sequence and Nakayama convert residual concentration to integral concentration and freeness.
+Prove `localizedIntertwiner`: for Datum 2.1, whose P5 is intertwining genericity, the two special-maximal-level intertwiners on definite functions localized at mΠ are isomorphisms. Their composite is a unit; compare ranks only over Π-congruent standard pairs, where P5 excludes the bad Satake pairs (ltxzz Lemma 6.1.9, pp. 107–108, ltxzz line 5221–5245). *Needs:* Layer 2 §2.1; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4, including the local Hecke/rank comparison; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7.
 
-*Needs:* Layer 2 §2.1; Layer 2 §2.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap boundary-cohomology; EtaleCohomologyFoundations §F.4.4; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4.
+Prove `localizedIntegralConcentration`: for Datum 2.1 and cohomological genericity of its residual character, localized nearby cohomology is concentrated in degree N−1 and finite free there. Derived reduction, the universal coefficient sequence and Nakayama transfer residual concentration to the integral complex (ltxzz Remark 6.1.5, p. 107, ltxzz line 5204–5208). *Needs:* Layer 2 §2.1; contract gap native-shimura; IgusaVarietiesAndTorsionConcentration §IG.7.2; EtaleCohomologyFoundations §F.4.4.
 
 **Checks.**
 
@@ -454,19 +464,17 @@ Residual irreducibility excludes boundary isobaric constituents; the local inter
 
 ### 3.2 Odd-rank Tate cycles and Frobenius coinvariants
 
-For 2.1 with N=2r+1, ∇₁:E₂⁰,²ʳ_mΠ→Oλ[Sh(V°,K°)]_mΠ is surjective. Under A6.1.4 alone (integral nearby cohomology concentrated in degree N−1 and free there), E₂ is supported only at (0,2r) and is free there. Under A6.1.4, A6.1.6 (residual absolute irreducibility) and H(N), its arithmetic-Frobenius coinvariants map isomorphically to definite functions, the middle term is weakly semisimple, and its residual generalized Frobenius eigenvalues are roots of PΠ,p modulo λ. (ltxzz, Lemma 6.2.2 and Theorem 6.2.3, p. 109; ltxzz line 5295; ltxzz line 5304).
+Prove `oddTate_surjective`: for Datum 2.1 with N=2r+1, ∇₁:E₂⁰,²ʳ_mΠ→Oλ[Sh(V°,K°)]_mΠ is surjective. Compute the odd incidence determinant using Tate and intertwining genericity; no A6.1.4, A6.1.6 or H(N) is assumed (ltxzz Theorem 6.2.3, pp. 109–110, ltxzz line 5304–5307, 5314). *Needs:* Layer 2 §2.1; Layer 2 §2.5; SmoothRepresentationsOfLocalGroups §SR.4.4.
 
-Assume Surjectivity uses only datum 2.1; E₂ concentration and freeness require A6.1.4; the eigenvalue, weak-semisimplicity and coinvariant comparisons additionally require A6.1.6 and H(N).
+Prove `oddE2_concentration`: for Datum 2.1 with N=2r+1 and A6.1.4 (integral nearby cohomology concentrated in degree N−1 and finite free there), E₂ is supported only at (0,2r) and is free there. The link parity vanishing and A6.1.4 give the degeneration (ltxzz Lemmas 6.2.1–6.2.2, p. 109, ltxzz line 5280–5303). *Needs:* Layer 2 §§2.4–2.5; contract gap local-unitary-representations; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; SmoothRepresentationsOfLocalGroups §SR.4.4.
 
-Compute the odd incidence determinant using SmoothRepresentationsOfLocalGroups §SR.4.4 and 2.5 and Tate/intertwining genericity. Concentration kills all other E₂ terms. H(N) identifies the residual eigenvalues; the rank-one invariant factor and SelmerIwasawaCohomology §§0.12–0.13 give weak semisimplicity and the coinvariant isomorphism.
-
-*Needs:* SelmerIwasawaCohomology §§0.12–0.13; Layer 2 §2.5; Layer 3 §3.1; contract gap automorphic-multiplicity.
+Prove `oddFrobenius_comparison`: for Datum 2.1 with N=2r+1, A6.1.4, A6.1.6 (residual absolute irreducibility) and H(N), ∇₁ identifies the arithmetic-Frobenius coinvariants of E₂⁰,²ʳ_mΠ with definite functions; the middle term is weakly semisimple, and its residual generalized Frobenius eigenvalues are roots of PΠ,p modulo λ. H(N) identifies these eigenvalues, and the rank-one invariant factor gives the weak-semisimplicity and coinvariant comparison (ltxzz Theorem 6.2.3(1)–(3), pp. 109–112, ltxzz line 5307–5313). *Needs:* `oddTate_surjective`; `oddE2_concentration`; SelmerIwasawaCohomology §§0.12–0.13; contract gap automorphic-multiplicity; Layer 3 §3.1, `localizedBoundaryComparison`.
 
 ### 3.3 Even-rank integral freeness
 
-Under the even hypotheses, every Hⁱ_𝔗(M•,Oλ)_mΠ is free; E₂ᵃ,ᵇ_mΠ is free and zero outside {(-1,2r),(0,2r−1),(1,2r−2)}. (ltxzz, Theorem 6.3.5(1)–(2), pp. 115–116; ltxzz line 5634).
+Under the even hypotheses, every Hⁱ_𝔗(M•,Oλ)_mΠ is free; E₂ᵃ,ᵇ_mΠ is free and zero outside {(-1,2r),(0,2r−1),(1,2r−2)}. (ltxzz, Theorem 6.3.5(1)–(2), pp. 115–116; ltxzz line 5634; coefficient bound: ltxzz-published Theorem 6.3.4(a), p. 277, line 6408).
 
-Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ>2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
+Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ≥2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
 
 Use the rigid R=T isomorphisms for the unramified, mixed and ramified deformation problems. The common quotient Runr⊗Rmix Rram measures the congruence. Compare free multiplicities by §13.9 on its Σmin⊇S_FL, Σlr∩S_FL=∅ and sufficiently-small-level domain, and by gap old-form-dimension elsewhere; then eliminate integral torsion in the middle ground cohomology and read the three-column complex.
 
@@ -477,9 +485,9 @@ Use the rigid R=T isomorphisms for the unramified, mixed and ramified deformatio
 
 ### 3.4 Frobenius exclusions on the ground stratum
 
-Under the even hypotheses, if {aᵢ,aᵢ⁻¹} are the roots of residual PΠ,p, the residual generalized Frobenius eigenvalues of H²ʳ⁻¹_𝔗(M•,Oλ(r))_mΠ lie in {p aᵢ,p aᵢ⁻¹} with 1 and p² excluded. (ltxzz, Theorem 6.3.5(3), p. 116; ltxzz line 5647).
+Under the even hypotheses, if {aᵢ,aᵢ⁻¹} are the roots of residual PΠ,p, the residual generalized Frobenius eigenvalues of H²ʳ⁻¹_𝔗(M•,Oλ(r))_mΠ lie in {p aᵢ,p aᵢ⁻¹} with 1 and p² excluded. (ltxzz, Theorem 6.3.5(3), p. 116; ltxzz line 5647; coefficient bound: ltxzz-published Theorem 6.3.4(a), p. 277, line 6408).
 
-Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ>2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
+Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ≥2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
 
 Compare local constituents in the ground stratum with the supplied local unitary classification, and remove the level-raising eigenpair using the actual congruence deformation quotient.
 
@@ -487,9 +495,9 @@ Compare local constituents in the ground stratum with the supplied local unitary
 
 ### 3.5 The even singular comparison
 
-Under the even hypotheses, ∇₀ induces F₋₁H¹(Iℚp²,H²ʳ⁻¹_𝔗(M,RΨOλ(r))/nΠ)≃Oλ[Sh(V°,K°)]/nΠ. The natural map from this filtered inertia group to H¹sing(ℚp²,H²ʳ⁻¹_𝔗(M,RΨOλ(r))/nΠ) is also an isomorphism. Both use quotient nΠ, not an eigen-submodule or rational isotypic projection. (ltxzz, Theorem 6.3.5(4), p. 116; ltxzz line 5650).
+Under the even hypotheses, ∇₀ induces F₋₁H¹(Iℚp²,H²ʳ⁻¹_𝔗(M,RΨOλ(r))/nΠ)≃Oλ[Sh(V°,K°)]/nΠ. The natural map from this filtered inertia group to H¹sing(ℚp²,H²ʳ⁻¹_𝔗(M,RΨOλ(r))/nΠ) is also an isomorphism. Both use the coefficient eigenspecialization quotient nΠ of Conventions, which imposes λᵐ as well as the Hecke eigenvalues. (ltxzz, Theorem 6.3.5(4), p. 116; ltxzz line 5650; coefficient bound: ltxzz-published Theorem 6.3.4(a), p. 277, line 6408).
 
-Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ>2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
+Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ≥2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
 
 Use the monodromy presentation of 2.5, the congruence quotient in 3.3 and Frobenius exclusions in 3.4. The remaining ground-stratum coinvariants vanish, giving the singular comparison.
 
@@ -497,11 +505,11 @@ Use the monodromy presentation of 2.5, the congruence quotient in 3.3 and Froben
 
 ### 3.6 Congruence-level Galois realization
 
-Under the even hypotheses there is μ≥1 and an Oλ[ΓF]-isomorphism H²ʳ⁻¹ét(Sh(V′,jK^pK′p)_Fbar,Oλ(r))/nΠ≃(R̄⁽ᵐ⁾,c)^⊕μ, where R is a stable lattice in ρΠ,λ(r), unique up to homothety. The conclusion asserts existence of a multiplicity and an isomorphism; it does not select a canonical summand. (ltxzz, Theorem 6.3.5(5), p. 116; ltxzz line 5655).
+Under the even hypotheses there is μ≥1 and an Oλ[ΓF]-isomorphism H²ʳ⁻¹ét(Sh(V′,jK^pK′p)_Fbar,Oλ(r))/nΠ≃(R̄⁽ᵐ⁾,c)^⊕μ, where R is a stable lattice in ρΠ,λ(r), unique up to homothety. The conclusion asserts existence of a multiplicity and an isomorphism; it does not select a canonical summand. (ltxzz, Theorem 6.3.5(5), p. 116; ltxzz line 5655; coefficient bound: ltxzz-published Theorem 6.3.4(a), p. 277, line 6408).
 
-Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ>2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
+Assume N=2r; datum 2.1; A6.1.4 and A6.1.6; H(N); ℓ≥2(N+1), ℓ unramified in F; even residual extension rigid for (Σ⁺min,Σ⁺lr), absolutely irreducible over F(ζℓ); residual Hecke character cohomologically generic; localized definite functions nonzero.
 
-The free ramified Hecke cohomology module and its universal Galois representation specialize through nΠ. H(N) fixes complex conjugation and the twist; residual absolute irreducibility identifies its lattice up to homothety.
+The free ramified Hecke cohomology module and its universal Galois representation specialize through T_O/nΠ≃A_m, using the coefficient kernel of Conventions. H(N) fixes complex conjugation and the twist; residual absolute irreducibility identifies its lattice up to homothety.
 
 *Needs:* Layer 3 §3.5; contract gap rigid-r-equals-t; contract gap automorphic-multiplicity.
 
@@ -566,7 +574,7 @@ Use native graph closed immersion, cycle multiplicities, proper pushforward and 
 
 ### 4.3 The projected arithmetic Abel–Jacobi map
 
-For 4.1, localize at the two cuspidal Hecke characters and quotient by I=(ker φΠ₀,ker φΠ₁). The rational cuspidal concentration input is AG2.1b on its compact ST/END domain and gap diagonal-concentration on the full native domain, including F⁺=ℚ: each projected factor is concentrated in degree nα−1, hence the product in degree 2n−1, independently of H(n),H(n+1). The Hochschild–Serre edge map therefore sends each codimension-n cycle, in particular Δ, to H¹(F,Wλ), where Wλ=H²ⁿ⁻¹ét(X_Fbar,Eλ(n))/I. Define AJλ(Δ) by the absolute class followed by this edge identification; use the integral edge map at congruence levels only under the separate integral concentration/freeness hypotheses, with A7.1.1 (residual absolute irreducibility of both factors) for the nonproper boundary-cohomology comparison. (ltxzz, §8.3 preceding (8.10); §7.2 preceding Corollary 7.2.9, pp. 126,139; ltxzz line 6152; ltxzz line 6767).
+For 4.1, use the Eλ-coefficient Hecke algebras of Conventions, localize at the two cuspidal characters and quotient by I=(ker φΠ₀,E,ker φΠ₁,E). The rational cuspidal concentration input is AG2.1b on its compact ST/END domain and gap diagonal-concentration on the full native domain, including F⁺=ℚ: each projected factor is concentrated in degree nα−1, hence the product in degree 2n−1, independently of H(n),H(n+1). The Hochschild–Serre edge map therefore sends each codimension-n cycle, in particular Δ, to H¹(F,Wλ), where Wλ=H²ⁿ⁻¹ét(X_Fbar,Eλ(n))/I. Define AJλ(Δ) by the absolute class followed by this edge identification; use the integral edge map at congruence levels only under the separate integral concentration/freeness hypotheses, with A7.1.1 (residual absolute irreducibility of both factors) for the nonproper boundary-cohomology comparison. (ltxzz, §8.3 preceding (8.10); §7.2 preceding Corollary 7.2.9, pp. 126,139; ltxzz line 6152; ltxzz line 6767).
 
 The basic API consists of the following named statements.
 
@@ -576,7 +584,7 @@ The basic API consists of the following named statements.
 
 Apply AG2.1b on its stated compact ST/END domain and gap diagonal-concentration for the full rational native specialization, retaining its cuspidal boundary exclusion for F⁺=ℚ. At integral nonproper congruence levels use A7.1.1 and gap boundary-cohomology in addition to concentration/freeness. Then apply Künneth and the arithmetic Hochschild–Serre spectral sequence. Its single nonzero geometric row identifies degree 2n with H¹ of degree 2n−1.
 
-*Needs:* Layer 4 §4.2; contract gap chow-abel-jacobi; contract gap hochshild-serre-adic; EtaleCohomologyFoundations §F.2.6; EtaleCohomologyFoundations §F.4.5; MotivesAndAlgebraicCycles §§7.16–7.18; SchemeAndStackFoundations §2.15; EtaleCohomologyFoundations §F.4.6; AutomorphicGaloisRepresentationsPartII AG2.1b (Weight separation into the middle degree; The multiplicity of archimedean packets); contract gap diagonal-concentration; contract gap boundary-cohomology.
+*Needs:* Layer 4 §4.2; contract gap chow-abel-jacobi; contract gap hochshild-serre-adic; EtaleCohomologyFoundations §F.2.6; EtaleCohomologyFoundations §F.4.5; MotivesAndAlgebraicCycles §§7.16–7.18; SchemeAndStackFoundations §2.15; EtaleCohomologyFoundations §F.4.6; AutomorphicGaloisRepresentationsPartII AG2.1b (Weight separation into the middle degree) and its archimedean multiplicity subsection; contract gap diagonal-concentration; contract gap boundary-cohomology.
 
 **Checks.**
 
@@ -629,18 +637,19 @@ contract gap native-shimura; EndoscopicTransferAndUnitaryTraceComparison §13.7;
 
 ### 5.1 First-reciprocity data and the definite period
 
-Define a first-reciprocity datum as follows. Bundle the standing pair and its finite Σ⁺min; λ|ℓ with Σ⁺min avoiding ℓ, ℓ>2(n₀+1) and ℓ unramified in F; m≥1; a finite Σ⁺lr,I of inert places with rational support disjoint from Σ⁺min and ℓ∤Nv((Nv)²−1); a finite Σ⁺I containing both; definite V°_n⊂V°_n+1 with added line ⟨1⟩, self-dual lattices away from these sets; compatible neat K°_sp,K°_n,K°_n+1, with K°_sp=K°_n on Σ⁺min and K°_sp⊆K°_n on Σ⁺lr,I; even local V nonsplit and K special maximal at Σ⁺lr,I, transferable at Σ⁺min. Include special inert p and the CM-moduli and uniformization data of §§5.1/5.10. PI1: all p-adic places avoid Σ⁺I. PI2: ℓ∤p(p²−1). PI3: Φ contains τ∞ and Qp^Φ=ℚp². PI4: even Satake is special modulo λᵐ and odd Satake Tate generic modulo λ. PI5: both are intertwining generic modulo λ. PI6: restricting the two Hecke ideals away from p preserves the two nonzero congruence function quotients. PI7: the tensor Satake polynomial is special modulo λᵐ. Define mα,nα as the contracted residual and λᵐ kernels of the actual φΠα. (ltxzz, §7.2 and Notation 7.2.1, pp. 120–121; ltxzz line 5835; ltxzz line 5875; ltxzz line 5899).
+Define a first-reciprocity datum as follows. Bundle the standing pair and its finite Σ⁺min; λ|ℓ with Σ⁺min avoiding ℓ, ℓ≥2(n₀+1) and ℓ unramified in F; m≥1; a finite Σ⁺lr,I of inert places with rational support disjoint from Σ⁺min and ℓ∤Nv((Nv)²−1); a finite Σ⁺I containing both; definite V°_n⊂V°_n+1 with added line ⟨1⟩, self-dual lattices away from these sets; compatible neat K°_sp,K°_n,K°_n+1, with K°_sp=K°_n on Σ⁺min and K°_sp⊆K°_n on Σ⁺lr,I; even local V nonsplit and K special maximal at Σ⁺lr,I, transferable at Σ⁺min. Include special inert p and the CM-moduli and uniformization data of ltxzz §§5.1/5.10. PI1: all p-adic places avoid Σ⁺I. PI2: ℓ∤p(p²−1). PI3: Φ contains τ∞ and Qp^Φ=ℚp². PI4: even Satake is special modulo λᵐ and odd Satake Tate generic modulo λ. PI5: both are intertwining generic modulo λ. PI6: restricting the two Hecke ideals away from p preserves the two nonzero congruence function quotients. PI7: the tensor Satake polynomial is special modulo λᵐ. Define mα,nα as the contracted residual and λᵐ coefficient kernels of φΠα,O in T_O, as in Conventions and §2.1. (ltxzz, §7.2 and Notation 7.2.1, pp. 120–121; ltxzz line 5835; ltxzz line 5875; ltxzz line 5899; coefficient bound: ltxzz-published §7.2, p. 286, line 6746).
 
 The basic API consists of the following named statements.
 
 - **First datum to level datum.** Extract a rank-nα datum of 2.1, with the chosen compatible levels and actual contracted ideals.
 - **First datum ext.** Isometries preserving lattices, levels, CM data and Hecke characters transport the datum.
-- **First datum test module.** Define Aα=Oλ[Sh°_nα]/nα and Bα=(Oλ/λᵐ)[Sh°_nα][nα]; the summation pairing A₀⊗A₁ × B₀⊗B₁→Oλ/λᵐ uses no division by set cardinalities.
+- **First datum test module.** Put Mα=Oλ[Sh°_nα] with its geometric Hecke action and Aα=Mα/nαMα. On Hom_(A_m)(Mα/λᵐMα,A_m), give the commutative coefficient Hecke algebra the transpose action (t·f)(x)=f(tx), and define Bα as its nα-annihilator. Evaluation descends to Aα×Bα and, by tensoring, to A₀⊗A₁ × B₀⊗B₁→A_m; the delta basis identifies evaluation with finite summation.
+- **First datum adjoint comparison.** Prove `firstDatum_testModule_adjoint`: for every t in the coefficient spherical Hecke algebra, the function action obtained from the native convention by the inverse-double-coset involution is the transpose of the geometric action on Mα. Writing ι for that involution, evaluation satisfies ⟨tx,f⟩=⟨x,ι(t)f⟩ with the native action on functions. Hence Bα is the native function annihilator of ι(nα), with native character φΠα,O∘ι⁻¹ modulo λᵐ. Use this identification when translating the pairing of ltxzz Theorem 7.2.8(3) (ltxzz line 6044–6050; SmoothRepresentationsOfLocalGroups §SR.1.2). No self-adjointness of an arbitrary Hecke operator is assumed.
 - **First datum reduce.** Reduction to 1≤a≤m transports equations, nonzero quotients and PI6 with the corresponding ideals.
 
-Construct the levels and ideals on the native Shimura sets. Tensor Satake specialness is checked separately from the two factors. The finite-set pairing descends because nα annihilates the test module. Reduction preserves nonzero finite congruence quotients by Nakayama, with the corresponding contracted ideals.
+Construct the levels and ideals on the native Shimura sets. Tensor Satake specialness is checked separately from the two factors. The evaluation pairing descends because nα annihilates the dual under the transpose action: for t∈nα, f(tx)=(t·f)(x)=0. The adjoint comparison identifies this dual action with the native function convention before applying §5.5. Reduction preserves nonzero finite congruence quotients by Nakayama, with the corresponding contracted ideals.
 
-*Needs:* Layer 2 §2.1; Layer 2 §2.6; SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); contract gap native-shimura; EndoscopicTransferAndUnitaryTraceComparison §13.7; PELModuli §§M2.8, M4.3, M4.5–M4.9; EndoscopicTransferAndUnitaryTraceComparison §§13.1, 13.8; contract gap old-form-dimension.
+*Needs:* Layer 2 §2.1; Layer 2 §2.6; SmoothRepresentationsOfLocalGroups §§SR.1.2, SR.4.4 (unitary-genericity); contract gap native-shimura; EndoscopicTransferAndUnitaryTraceComparison §13.7; PELModuli §§M2.8, M4.3, M4.5–M4.9; EndoscopicTransferAndUnitaryTraceComparison §§13.1, 13.8; contract gap old-form-dimension.
 
 For a finite source S with its actual two legs a:S→X and b:S→Y, define `definiteDiagonalPeriod` by ∑_s f(a(s),b(s)). In §5.1 the two legs are the native graph maps; in §6.1 they are the two maps of the definite special correspondence. The definition uses an additive commutative monoid of coefficients, so it covers Oλ, A_m, Eλ and coefficient reduction. It requires no finiteness of X or Y and permits empty S. The Hecke test modules are the specified submodules of these function spaces, rather than arbitrary replacements for them (ltxzz Theorem 7.2.8(3), p. 124, ltxzz line 6044; Theorem 7.3.4, p. 129, ltxzz line 6312).
 
@@ -658,6 +667,7 @@ These are finite-sum identities for the period just defined, specialized to the 
 **Checks.**
 
 - First tensor not factors: Over 𝔽₁₁, q=3, let P₀ have even roots {3,4} and P₁ odd roots {1,9,5}. Then P₀(3)=0, P₀′(3)=10, P₀(−1)=9, P₁′(1)=10 and P₁(−3)=1, verifying individual specialness/Tate and intertwining genericity. The tensor eigenvalues are {3,5,4,4,3,9}; q=3 occurs twice, so the tensor polynomial has a double root at q and PI7 fails.
+- First adjoint negative control: over 𝔽₇ let Peᵢ=e_(i+1) on three cyclic points and f=(1,4,2). Then (P−2)f=0 for the same column-vector action, but ⟨(P−2)e₀,f⟩=4−2=2. The transpose gives Pᵗf=4f, excluding f from its (P−2)-annihilator; assuming self-adjointness would falsely descend the pairing.
 - First point pairing: For a singleton graph and f=1 the sum pairing equals 1; a two-point fibre pushed onto the same pair contributes 2. An average gives 1 on the two-point fibre and loses its multiplicity.
 - First zero localization: A zero congruence function quotient fails PI6; the datum cannot certify an arithmetic level-raising theorem using empty automorphic support.
 
@@ -673,7 +683,7 @@ The following controls also test the real-bodied period definition in [Suggested
 
 ### 5.2 The first geometric reciprocity law
 
-For compatible prime-to-p levels in the special subcategory of §5.10 and any p-coprime coefficient ring L, the intersection of the ground graph P•Δ with the incidence cycles has the following three descriptions. Pairing with inc•†!(f) equals the graph sum of T•°_n₁,p f; pairing with inc••!(f) equals the graph sum of T•_n₁,p f. Pairing with inc•†!((T•°_n₀,p⊗I°_n₁,p)f)+(p+1)² inc••!((T•°_n₀,p⊗T•°_n₁,p)f) equals the definite graph sum of (I°_n₀,p⊗T°_n₁,p)f. Each graph sum uses the source special level and the two maps sh•↓,sh•↑ or sh°↑, with the source T-trace. (ltxzz, Theorem 5.11.5(1)–(3), pp. 101–102; ltxzz line 4899).
+For compatible prime-to-p levels in the special subcategory of ltxzz §5.10 and any p-coprime coefficient ring L, the intersection of the ground graph P•Δ with the incidence cycles has the following three descriptions. Pairing with inc•†!(f) equals the graph sum of T•°_n₁,p f; pairing with inc••!(f) equals the graph sum of T•_n₁,p f. Pairing with inc•†!((T•°_n₀,p⊗I°_n₁,p)f)+(p+1)² inc••!((T•°_n₀,p⊗T•°_n₁,p)f) equals the definite graph sum of (I°_n₀,p⊗T°_n₁,p)f. Each graph sum uses the source special level and the two maps sh•↓,sh•↑ or sh°↑, with the source T-trace. (ltxzz, Theorem 5.11.5(1)–(3), pp. 101–102; ltxzz line 4899).
 
 Identify the Cartesian isogeny diagrams for the special homomorphism and use the excess intersection bundle. Pushforward/pullback and the Hecke correspondences turn each intersection into its actual fibre sum.
 
@@ -685,7 +695,7 @@ On Datum 5.1 use the contracted residual pair (m₀,m₁). Write A7.1.1 for resi
 
 Prove `productNearbyCohomology_vanish`: on Datum 5.1, under A7.2.3 alone, Hⁱ_𝔗(Q,RΨOλ)_(m₀,m₁)=0 for i≠2n−1. Use the native-shimura specialization comparison and the generic-fibre isomorphism of the blowup, then Künneth; factor freeness removes Tor terms. This argument does not use the single-factor Tate or even level-raising theorems. (ltxzz Lemma 7.2.5(5), p. 122, and Remark 7.2.6, p. 123; ltxzz line 5952; ltxzz line 6011.) *Needs:* Layer 2 §2.6; EtaleCohomologyFoundations §F.2.6; contract gap native-shimura.
 
-Prove `productStrata_compactSupport_iso`: on Datum 5.1, under A7.1.1 alone, the canonical maps Hⁱ_𝔗,c(Q(c),Oλ)_(m₀,m₁)→Hⁱ_𝔗(Q(c),Oλ)_(m₀,m₁) are isomorphisms for every c≥0 and every i. Here Q(c) is the disjoint union of the (c+1)-fold component intersections, with Q(c)=∅ for c≥3. Use residual boundary vanishing for the factor strata, derived Künneth and the projective-bundle and blowup comparisons of §2.6; no middle-degree freeness is presumed for this support comparison. (ltxzz Lemma 7.2.5(6), p. 122, and Remark 7.2.6, p. 123; ltxzz line 5953; ltxzz line 6011.) *Needs:* Layer 2 §2.6; Layer 3 §3.1, its residual boundary comparison only; EtaleCohomologyFoundations §F.2.6; contract gap boundary-cohomology.
+Prove `productStrata_compactSupport_iso`: on Datum 5.1, under A7.1.1 alone, the canonical maps Hⁱ_𝔗,c(Q(c),Oλ)_(m₀,m₁)→Hⁱ_𝔗(Q(c),Oλ)_(m₀,m₁) are isomorphisms for every c≥0 and every i. Here Q(c) is the disjoint union of the (c+1)-fold component intersections, with Q(c)=∅ for c≥3. Use residual boundary vanishing for the factor strata, derived Künneth and the projective-bundle and blowup comparisons of §2.6; no middle-degree freeness is presumed for this support comparison. (ltxzz Lemma 7.2.5(6), p. 122, and Remark 7.2.6, p. 123; ltxzz line 5953; ltxzz line 6011.) *Needs:* Layer 2 §2.6; Layer 3 §3.1, `localizedBoundaryComparison` only; EtaleCohomologyFoundations §F.2.6; contract gap boundary-cohomology.
 
 Prove `productWeightSequence_concentration` under Datum 5.1, A7.1.1, A7.2.2, A7.2.3, A7.2.4 and H(n),H(n+1): the localized product sequence has only E₂ positions (−1,2n),(0,2n−1),(1,2n−2), respectively the tensor products of the three even E₂ terms with the odd middle E₂ term. Under these same full hypotheses prove `productWeightSequence_frobenius_exclusion`: after twist −1 a trivial Frobenius subquotient can occur only in column 1; and `productStrata_weaklySemisimple`: every localized even-degree H²ⁱ_𝔗(P?₀,?₁,Oλ(i)) and H²ⁱ_𝔗(Q?₀,?₁,Oλ(i)) is weakly semisimple. (ltxzz Lemma 7.2.5(1)–(4), pp. 121–123; ltxzz line 5931; ltxzz line 5940; ltxzz line 5948; ltxzz line 5950.) Apply gap integral-nearby-complex on Q; compare its five-column E₁ complex with the tensor product using the additive blowup decomposition and exceptional generator η of §2.6. Freeness removes Tor terms, the single-factor results give E₂ concentration, PI7 excludes the unwanted eigenvalues, and SelmerIwasawaCohomology §§0.12–0.13 handles weak semisimplicity. *Needs:* SelmerIwasawaCohomology §§0.12–0.13; Layer 2 §2.6; Layer 3 §§3.2–3.4; EtaleCohomologyFoundations §F.2.6; contract gap integral-nearby-complex; GlobalGaloisDeformations §5.2 (rank-two IsCyclotomicAbsIrred specialization).
 
@@ -734,7 +744,7 @@ Under the first-law hypotheses, the map ∇ from the actual cycle-boundary targe
 
 Assume Datum 5.1; A7.1.1: both factors residually absolutely irreducible; A7.2.2: even polarized residual representation rigid for (Σ⁺min,Σ⁺lr,I) and absolutely irreducible over F(ζℓ); A7.2.3: for each α localized RΨOλ cohomology vanishes off nα−1 and is finite free there; A7.2.4: even residual Hecke character cohomologically generic; H(n),H(n+1).
 
-The even monodromy-incidence relations make ∇ descend modulo n₀; combine 3.5 with the odd coinvariant comparison. Compute the class of Q_sp using 5.2 and the strict-transform cycle formula, then descend the finite pairing.
+The even monodromy-incidence relations make ∇ descend modulo n₀; combine 3.5 with the odd coinvariant comparison. Compute the class of Q_sp using 5.2 and the strict-transform cycle formula, then descend the evaluation pairing using `firstDatum_testModule_adjoint` and its transpose annihilators from §5.1.
 
 *Needs:* Layer 5 §5.2; Layer 5 §5.3; Layer 5 §5.4; Layer 3 §3.5; Layer 3 §3.2.
 
@@ -764,7 +774,7 @@ Layer 2 §2.1; Layer 2 §2.6; SmoothRepresentationsOfLocalGroups §SR.4.4 (unita
 
 ### 6.1 Second-reciprocity data and the definite correspondence
 
-Define a second-reciprocity datum as follows. Bundle the standing pair and its finite Σ⁺min; λ|ℓ with Σ⁺min avoiding ℓ; m≥1; a finite Σ⁺lr,II of inert places with rational support disjoint from Σ⁺min and ℓ∤Nv((Nv)²−1); a finite Σ⁺II containing both; an indefinite V_n and V_n+1=V_n⊕⟨1⟩, self-dual lattices away from the exceptional sets; compatible neat K_sp,K_n,K_n+1 with K_sp=K_n at Σ⁺min and K_sp⊆K_n at Σ⁺lr,II; even local space nonsplit and level special maximal at raising places and transferable at Σ⁺min. Include the §4.1 moduli data, special inert p, CM type and definite uniformization data. PII1: p-adic places avoid Σ⁺II. PII2: ℓ∤p(p²−1). PII3: Φ contains τ∞ and Qp^Φ=ℚp². PII4: even Satake is special modulo λᵐ and odd Satake Tate generic modulo λ. PII7: tensor Satake is special modulo λᵐ. Construct the ideals by the same kernel contraction as 5.1 and the special level K⋆_sp,sp on the definite uniformization pair. There are no PII5 or PII6 clauses. (ltxzz, §7.3 and Notation 7.3.1, pp. 127–128; ltxzz line 6192; ltxzz line 6231).
+Define a second-reciprocity datum as follows. Bundle the standing pair and its finite Σ⁺min; λ|ℓ with Σ⁺min avoiding ℓ; m≥1; a finite Σ⁺lr,II of inert places with rational support disjoint from Σ⁺min and ℓ∤Nv((Nv)²−1); a finite Σ⁺II containing both; an indefinite V_n and V_n+1=V_n⊕⟨1⟩, self-dual lattices away from the exceptional sets; compatible neat K_sp,K_n,K_n+1 with K_sp=K_n at Σ⁺min and K_sp⊆K_n at Σ⁺lr,II; even local space nonsplit and level special maximal at raising places and transferable at Σ⁺min. Include the §4.1 moduli data, special inert p, CM type and definite uniformization data. PII1: p-adic places avoid Σ⁺II. PII2: ℓ∤p(p²−1). PII3: Φ contains τ∞ and Qp^Φ=ℚp². PII4: even Satake is special modulo λᵐ and odd Satake Tate generic modulo λ. PII7: tensor Satake is special modulo λᵐ. Construct the ideals in T_O by the same coefficient-kernel contraction as §5.1 and the special level K⋆_sp,sp on the definite uniformization pair. There are no PII5 or PII6 clauses. (ltxzz, §7.3 and Notation 7.3.1, pp. 127–128; ltxzz line 6192; ltxzz line 6231).
 
 The basic API consists of the following named statements.
 
@@ -779,16 +789,20 @@ Use the actual special homomorphism correspondence and the definite uniformizati
 **Checks.**
 
 - Second fibre multiplicity: Two source points mapping to one definite pair contribute 2 to its characteristic pushforward, even when the image set is a singleton. The characteristic function of the image alone contributes 1.
-- Second no extra assumptions: The truth of the second datum does not depend on a supplied even rigidity witness or on intertwining genericity: changing these extra labels cannot change the datum. Adding the first law’s rigidity and intertwining clauses would change the second law’s domain.
+- Second polynomial domain: over 𝔽₁₉ at q=3, take even roots {3,13,18,18} and odd roots {1,2,10,4,5}. Reciprocal pairs are (3,13),(18,18) and (2,10),(4,5), with odd middle root 1. The derivatives at 3 and 1 are respectively 11 and 13; the tensor root 3 is simple with derivative 4. Thus the polynomial clauses PII4 and PII7 hold, while P₀(−1)=0 violates first-law even intertwining genericity. This checks polynomial clauses, without asserting existence of a global automorphic datum.
 - Second level exponent: m=0 is rejected, and P(p)=0 modulo λ does not establish the m=2 condition. A residual-only polynomial test would accept an unsupported higher-depth datum.
 
 ### 6.2 The second geometric reciprocity law
 
 For compatible prime-to-p levels in the special subcategory and p-coprime L, let loc′p be localization of the absolute cycle class, pullback to the CM model and smooth specialization. Put A=(id×π_n₁)!∘(id×ι_n₁)*. Then T⋆_n₁,p A(loc′p[Δ])=A(inc⋆⋆!(1_Δ⋆)) in H²ʳ⁰_𝔗(M_n₀×Tp S_n₁,L(r₀)), where inc⋆⋆! is product pullback from the finite uniformization sets followed by Gysin. This equality retains T⋆ and the two correspondence legs. (ltxzz, Construction 4.6.1 and Theorem 4.6.2, pp. 53–54; ltxzz line 2488; ltxzz line 2517).
 
-Use the Cartesian basic-correspondence diagram under addition of the norm-one line, the excess intersection formula and the source Hecke identity. Smooth specialization identifies the actual local absolute class.
+Use the Cartesian product square displayed in the proof of ltxzz Theorem 4.6.2 (ltxzz line 2552–2563): Proposition 4.5.5 supplies it for even n and Lemma 4.5.2 for odd n. Apply the excess intersection formula and the source Hecke identity. Smooth specialization identifies the actual local absolute class.
 
 *Needs:* Layer 2 §2.2; Layer 4 §4.2; Layer 6 §6.1; contract gap unitary-special-compatibility; EtaleCohomologyFoundations §F.6.
+
+**Checks.**
+
+- Second odd-rank square: for n=3, the product square of Theorem 4.6.2 uses Lemma 4.5.2. Proposition 4.5.5 does not give a Cartesian basic square in this rank (ltxzz line 2297); using that square would apply an even-rank theorem to n=3.
 
 ### 6.3 Odd special-fibre coinvariants
 
@@ -855,7 +869,7 @@ For even N≥2, a relevant rank-N Π, its strong coefficient field E and λ|ℓ 
 
 At each edge use actual data satisfying 5.1 or 6.1 and the hypotheses of 5.6 or 6.4; all cohomology-to-lattice kernels and cokernels have a fixed λ-power bound mlat. The detecting pair satisfies 7.2 with loss c independent of m. At the second-law edge p₁, PII4 implies residual level-raising specialness. Apply the rigidity-from-specialness statement to L6 and this residual polynomial before using first reciprocity at p₂ with Σ⁺lr,I={p₁}; the odd representation and the cyclotomic absolute irreducibility clause retain their original hypotheses.
 
-For each annihilator let C_m=H²ⁿ⁻¹ét((Sh′_n₀×Sh′_n₁)_Fbar,Oλ(n))/(n₀,n₁) be its actual projected geometric coefficient module. For every finite place w of F whose restriction to F⁺ lies outside Σ⁺min∪Σ⁺ℓ∪{p} for c₁, or outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂} for c₂, require that C_m is unramified at w. This includes every other place above the rational primes p, p₁ and p₂. The smooth-model specialization input consists of the two smooth native models, their extending graph cycle and the Hecke-compatible ordinary/compact specialization isomorphisms; for F⁺≠ℚ use proper smooth base change, including the models of Remark 5.2.8, and for the nonproper domain use gap native-shimura. Smoothness alone without the nonproper specialization comparison does not suffice (ltxzz Lemma 4.2.4, p. 38; Remark 5.2.8, p. 59; proofs of (8.5), (8.14), pp. 137,141; ltxzz line 1744–1754, 2754–2768, 6700–6701, 6901–6902).
+For each annihilator use the Oλ-coefficient kernels n₀,n₁ of Conventions and let C_m=H²ⁿ⁻¹ét((Sh′_n₀×Sh′_n₁)_Fbar,Oλ(n))/(n₀,n₁) be its actual projected geometric coefficient module. For every finite place w of F whose restriction to F⁺ lies outside Σ⁺min∪Σ⁺ℓ∪{p} for c₁, or outside Σ⁺min∪Σ⁺ℓ∪{p₁,p₂} for c₂, require that C_m is unramified at w. This includes every other place above the rational primes p, p₁ and p₂. The smooth-model specialization input consists of the two smooth native models, their extending graph cycle and the Hecke-compatible ordinary/compact specialization isomorphisms; for F⁺≠ℚ use proper smooth base change, including the models of Remark 5.2.8, and for the nonproper domain use gap native-shimura. Smoothness alone without the nonproper specialization comparison does not suffice (ltxzz Lemma 4.2.4, p. 38; Remark 5.2.8, p. 59; proofs of (8.5), (8.14), pp. 137,141; ltxzz line 1744–1754, 2754–2768, 6700–6701, 6901–6902).
 
 At every w|ℓ, L1 and L2 give unramified F_w/ℚℓ and hyperspecial levels for both Sh′_n₀ and Sh′_n₁; use their smooth models from PELModuli §§M2.8, M4.3 and the extending graph cycle. Gap purity-crystalline-regulator supplies torsion crystalline nonsingularity of its integral Abel–Jacobi class on this smooth-model domain, including the ordinary/compact comparison when nonproper, and compatibility with the quotient by (n₀,n₁). Each c_i is the image of that projected class under the Oλ[ΓF]-linear map C_m→R̄⁽ᵐ⁾,c obtained from (8.8) and a multiplicity coordinate (ltxzz line 6681–6693); the same gap and crystallineNonsingular_map preserve its finite condition. This input concerns the integral congruence-level class, not merely its rationalization.
 
@@ -900,11 +914,11 @@ Layer 1 §1.6; contract gap polarized-image-lifting; Layer 7 §7.1; Chebotarev L
 
 ### 8.1 Rank zero from a nonzero definite period
 
-For every CM F/F⁺, n≥2, relevant Π₀,Π₁, common strong E and admissible λ, assume H(n),H(n+1) and the uniform rank-one span hypothesis below. Suppose there exist a standard definite V°_n, V°_n+1=V°_n⊕⟨1⟩, self-dual lattices away from Σ⁺min, compatible levels (K°_n,K°_n+1) in the special subcategory, hyperspecial away from Σ⁺min and with even levels transferable at Σ⁺min, and f∈O_E[Sh°_n₀][ker φΠ₀]⊗O_E O_E[Sh°_n₁][ker φΠ₁] whose finite diagonal sum ∑_s f(s,sh↑(s)) is nonzero. Then H¹_f(F,Vλ)=0. (ltxzz, Lemma 8.2.1 witness and proof of Theorem 8.2.2 after that witness, pp. 134–137; ltxzz line 6548; ltxzz line 6571; realised CM detection as in EulerSystemsAndKolyvaginSystems §1.15).
+For every CM F/F⁺, n≥2, relevant Π₀,Π₁, common strong E and admissible λ, assume H(n),H(n+1) and the uniform rank-one span hypothesis below. Suppose there exist a standard definite V°_n, V°_n+1=V°_n⊕⟨1⟩, self-dual lattices away from Σ⁺min, compatible levels (K°_n,K°_n+1) in the special subcategory, hyperspecial away from Σ⁺min and with even levels transferable at Σ⁺min, and f∈O_E[Sh°_n₀][ker φΠ₀]⊗O_E O_E[Sh°_n₁][ker φΠ₁] whose finite diagonal sum ∑_s f(s,sh↑(s)) is nonzero. Here the ideals are the kernels of the O_E-algebra characters O_E⊗_ℤT→O_E, and the function modules use the transpose action of §5.1 via `firstDatum_testModule_adjoint`. Then H¹_f(F,Vλ)=0. (ltxzz, Lemma 8.2.1 witness and proof of Theorem 8.2.2 after that witness, pp. 134–137; ltxzz line 6548; ltxzz line 6571; realised CM detection as in EulerSystemsAndKolyvaginSystems §1.15).
 
 For every saturated rank-one Oλ-sublattice of H¹_f(F,R) modulo torsion, assume there is c≥0 such that for all sufficiently large m its reduced submodule, multiplied by the fixed bad-place killing power, satisfies the realised Frobenius span condition of 7.2 for a choice of γ from 7.1; c is independent of m.
 
-The period witness gives a nonzero definite diagonal period and a finite valuation mper. If a nonzero Selmer class exists, reduce a saturated rank-one lattice and kill bad-place localizations by π^m₀. Detection in 7.2 gives nonsingular exponent ≥m−m₀−c. The the one-place annihilator construction of 7.3 produces c₁ with singular exponent ≥m−mper−mlat and finite torsion crystalline localization at every w|ℓ. Their local pairing has exponent ≥max(0,m−m₀−c−mper−mlat); at every w|ℓ, the reduced Selmer argument and c₁ are both in H¹_ns by 7.3 and SelmerIwasawaCohomology §§4.10, 4.24. L1 gives 2n−1≤(ℓ−2)/2 for [−n,n−1], so §4.11 bounds their pairing by dλ⁻¹/Oλ, killed by π^mdif. Bad-place terms and all other nondetecting terms vanish. Thus m>m₀+c+mper+mlat+mdif contradicts global reciprocity, since all constants are independent of m.
+The period witness, reduced in the transpose test modules B₀⊗B₁ of §5.1, gives a nonzero definite diagonal period and a finite valuation mper. If a nonzero Selmer class exists, reduce a saturated rank-one lattice and kill bad-place localizations by π^m₀. Detection in 7.2 gives nonsingular exponent ≥m−m₀−c. The the one-place annihilator construction of 7.3 produces c₁ with singular exponent ≥m−mper−mlat and finite torsion crystalline localization at every w|ℓ. Their local pairing has exponent ≥max(0,m−m₀−c−mper−mlat); at every w|ℓ, the reduced Selmer argument and c₁ are both in H¹_ns by 7.3 and SelmerIwasawaCohomology §§4.10, 4.24. L1 gives 2n−1≤(ℓ−2)/2 for [−n,n−1], so §4.11 bounds their pairing by dλ⁻¹/Oλ, killed by π^mdif. Bad-place terms and all other nondetecting terms vanish. Thus m>m₀+c+mper+mlat+mdif contradicts global reciprocity, since all constants are independent of m.
 
 *Needs:* Layer 4 §4.4; Layer 7 §7.3; SelmerIwasawaCohomology §§4.10–4.11, 4.24–4.25; ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7; EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15; EndoscopicTransferAndUnitaryTraceComparison §13.7; EulerSystemsAndKolyvaginSystems §4.4; contract gap old-form-dimension; PELModuli §§M2.8, M4.3; EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6; contract gap native-shimura.
 
@@ -966,5 +980,3 @@ PeriodsAndSpecialValues consumes §§1.6, 4.1–4.6, 5.5–6.4 and 8.1–8.4 for
 - **stacks-blowup** — The Stacks Project, *Divisors*, Lemma 32.6, [Tag 0B3V](https://stacks.math.columbia.edu/tag/0B3V) (stacks-blowup line 3632), for section conormal lines; Lemma 33.5, [Tag 0806](https://stacks.math.columbia.edu/tag/0806) (stacks-blowup line 3750), for effective-Cartier lifting; Definition 34.1 and Lemma 34.2, [Tags 080D](https://stacks.math.columbia.edu/tag/080D), [080E](https://stacks.math.columbia.edu/tag/080E) (stacks-blowup line 3906; stacks-blowup line 3918), for ordinary strict transforms.
 - **stacks-projective** — The Stacks Project, *Chow Homology and Chern Classes*, Lemmas 36.1–36.2, [Tags 02TW](https://stacks.math.columbia.edu/tag/02TW), [02TX](https://stacks.math.columbia.edu/tag/02TX), and equation (37.1.1), [Tag 02U1](https://stacks.math.columbia.edu/tag/02U1) (stacks-projective line 3361; stacks-projective line 3391; stacks-projective line 3479). Apply its quotient convention to the dual normal bundle to obtain the lines convention in §2.6.
 - **liu-tian** — Y. Liu and Y. Tian, *Supersingular locus of Hilbert modular varieties, arithmetic level raising and Selmer groups*, [arXiv:1710.11492v2](https://arxiv.org/abs/1710.11492v2), §4.1, Assumption 4.1, Definition 4.5 and Theorem 4.7 (liu-tian line 1384, 1407, 1477 and 1496). This supplies the comparison test's locator, not a replacement for unitary arithmetic level raising.
-
-The source manifest identifies the legal versions and hashes. Mathematical statements here are paraphrases, not transcriptions of source passages.

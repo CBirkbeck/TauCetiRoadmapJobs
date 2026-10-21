@@ -4,7 +4,7 @@ import Mathlib
 # SelmerIwasawaCohomologyPartII: representative target signatures
 
 The roadmap is README.md. This file records statements suggested against the pinned APIs
-and is not exhaustive. The finite diagonal period is evaluated on the native definite
+and is not exhaustive. Special inertness uses prime ideals and absolute norms. The finite diagonal period is evaluated on the native definite
 Shimura sets supplied in the roadmap; it retains the source of a correspondence and its
 fibre multiplicities. Geometric and arithmetic headline statements use the native carriers
 specified in README.md.
@@ -12,9 +12,67 @@ specified in README.md.
 
 namespace TauCetiRoadmap.SelmerIwasawaCohomologyPartII
 
-open scoped BigOperators
+open scoped BigOperators NumberField
 
 universe u v w z t
+
+/-! ## Layer 1: Coefficient algebra, local predicates and admissibility -/
+
+/-- Special inertness on ideals in a number-field extension: a nonzero prime of prime
+odd absolute norm, with prime extension ideal and underlying rational prime unramified
+at every prime of the upper field. On CM quadratic extensions this is the predicate of
+LTXZZ, published Definition 3.3.4; prime norm gives residue degree one. -/
+def specialInertPlace (K : Type u) (F : Type v) [Field K] [NumberField K]
+    [Field F] [NumberField F] [Algebra K F] (v : Ideal (𝓞 K)) : Prop :=
+  v ≠ ⊥ ∧ v.IsPrime ∧ v.absNorm.Prime ∧ v.absNorm ≠ 2 ∧
+    Algebra.IsUnramifiedIn (𝓞 F) (Ideal.span {(v.absNorm : ℤ)}) ∧
+    (Ideal.map (algebraMap (𝓞 K) (𝓞 F)) v).IsPrime
+
+/-- In the Gaussian field, the prime above 3 is special inert and its extension has norm 9.
+This is the special-inert part of the very-special control in README §1.5. -/
+theorem specialInertPlace_Qi_three :
+    specialInertPlace ℚ (CyclotomicField 4 ℚ) (Ideal.span {(3 : 𝓞 ℚ)}) ∧
+    (Ideal.map (algebraMap (𝓞 ℚ) (𝓞 (CyclotomicField 4 ℚ)))
+      (Ideal.span {(3 : 𝓞 ℚ)})).absNorm = 9 := by
+  sorry
+
+/-- The split prime 5 in the Gaussian field is not special inert. -/
+theorem specialInertPlace_Qi_five :
+    ¬ specialInertPlace ℚ (CyclotomicField 4 ℚ) (Ideal.span {(5 : 𝓞 ℚ)}) := by
+  sorry
+
+/-- The even ramified prime 2 in the Gaussian field is not special inert. -/
+theorem specialInertPlace_Qi_two :
+    ¬ specialInertPlace ℚ (CyclotomicField 4 ℚ) (Ideal.span {(2 : 𝓞 ℚ)}) := by
+  sorry
+
+/-- A residue-degree-two prime of norm p squared fails the degree-one clause,
+including when it is inert and unramified in a CM extension. -/
+theorem specialInertPlace_not_square_norm (K : Type u) (F : Type v)
+    [Field K] [NumberField K] [Field F] [NumberField F] [Algebra K F]
+    (v : Ideal (𝓞 K)) (p : ℕ) (hp : p.Prime) (hv : v.absNorm = p ^ 2) :
+    ¬ specialInertPlace K F v := by
+  sorry
+
+/-- A prime of norm two is rejected even if all the other clauses hold. -/
+example (K : Type u) (F : Type v) [Field K] [NumberField K]
+    [Field F] [NumberField F] [Algebra K F] (v : Ideal (𝓞 K))
+    (hv : v.absNorm = 2) : ¬ specialInertPlace K F v := by
+  intro h
+  exact h.2.2.2.1 hv
+
+/-- A split extension ideal is rejected independently of parity and unramifiedness. -/
+example (K : Type u) (F : Type v) [Field K] [NumberField K]
+    [Field F] [NumberField F] [Algebra K F] (v : Ideal (𝓞 K))
+    (hv : ¬ (Ideal.map (algebraMap (𝓞 K) (𝓞 F)) v).IsPrime) :
+    ¬ specialInertPlace K F v := by
+  intro h
+  exact hv h.2.2.2.2.2
+
+/-- The formula g • m - m for the roadmap's coboundary sends 1 to -2 at the
+nonidentity unit of ℤ. The units {1,-1} give the sign action of C₂. -/
+example : (-1 : ℤˣ) • (1 : ℤ) - 1 = -2 := by
+  norm_num
 
 /-! ## Layer 5: First geometric and explicit reciprocity laws -/
 
@@ -90,6 +148,10 @@ example :
         (fun q : Bool × PUnit => if q.1 then (1 : ℤ) else -1) = 0 ∧
     definiteDiagonalPeriod (fun _ : Bool => PUnit.unit)
         (fun _ : Bool => PUnit.unit) (fun _ => (1 : ZMod 2)) = 0 := by
-  norm_num [definiteDiagonalPeriod, Fintype.sum_bool]
+  constructor
+  · norm_num [definiteDiagonalPeriod, Fintype.sum_bool]
+  · change (∑ _ : Bool, (1 : ZMod 2)) = 0
+    simp only [Fintype.sum_bool]
+    decide
 
 end TauCetiRoadmap.SelmerIwasawaCohomologyPartII
