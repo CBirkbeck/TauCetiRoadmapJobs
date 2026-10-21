@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PeriodsAndSpecialValues"
+
+[[source]]
+id = "BV-final"
+authors = "David Burns and Otmar Venjakob"
+title = "On the leading terms of zeta isomorphisms and p-adic L-functions in non-commutative Iwasawa theory (author final version)"
+year = 2006
+venue = "Doc. Math. 2006, Extra Vol., 165--209"
+arxiv = "math/0511672v2"
+locator_scheme = "theorem"
+locator = "Corollary 5.7, internal p.27"
+url = "https://arxiv.org/abs/math/0511672v2"
+fetched_from = "https://arxiv.org/pdf/math/0511672v2"
+fetched_at = "2026-10-21T12:54:09Z"
+sha256 = "4b33fb11251340c88a8f8a590d9f9296a413aadf4fae98968ea7191a14c857bc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/183#issuecomment-6316507841"
