@@ -150,3 +150,14 @@ locator = "Lemma 3.3"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6305614781"
+
+[[source]]
+id = "liu"
+authors = "Qing Liu"
+title = "Algebraic Geometry and Arithmetic Curves"
+year = 2002
+locator_scheme = "chapter"
+locator = "Chapter 9, section 3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/66#issuecomment-6306636167"
