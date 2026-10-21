@@ -52,22 +52,32 @@ theorem qPochhammer_invert_base {K : Type*} [CommRing K] (a q : Kˣ) (n : ℕ) :
 /-- At base zero only the initial factor survives in a nonempty product. -/
 theorem zeroBase {K : Type*} [CommRing K] (a : K) (n : ℕ) :
     qPochhammerFin a 0 0 = 1 ∧ qPochhammerFin a 0 (n + 1) = 1 - a := by
-  sorry
+  constructor
+  · simp [qPochhammerFin]
+  · unfold qPochhammerFin
+    rw [Finset.prod_range_succ']
+    simp
 
 /-- In a subsingleton coefficient ring the empty product is also zero. -/
 theorem zeroRing {K : Type*} [CommRing K] [Subsingleton K] (a q : K) :
     qPochhammerFin a q 0 = 0 := by
-  sorry
+  exact Subsingleton.elim _ _
 
 /-- The index-zero factor is visible in the length-two expansion. -/
-example {K : Type*} [CommRing K] (a q : K) :
-    qPochhammerFin a q 2 = 1 - a - a * q + a ^ 2 * q := by
-  simp [qPochhammerFin, Finset.prod_range_succ]
-  ring
+example {K : Type*} [CommRing K] (a q : K) (n : ℕ) :
+    qPochhammerFin a q 2 = 1 - a - a * q + a ^ 2 * q ∧
+    qPochhammerFin a 0 0 = 1 ∧ qPochhammerFin a 0 (n + 1) = 1 - a := by
+  constructor
+  · simp [qPochhammerFin, Finset.prod_range_succ]
+    ring
+  · exact zeroBase a n
 
 /-- Base one remains legitimate for a finite product. -/
-example : qPochhammerFin (2 : ℤ) 1 2 = 1 := by
-  norm_num [qPochhammerFin, Finset.prod_range_succ]
+example : qPochhammerFin (2 : ℤ) 1 2 = 1 ∧
+    qPochhammerFin (0 : ZMod 1) 0 0 = 0 := by
+  constructor
+  · norm_num [qPochhammerFin, Finset.prod_range_succ]
+  · exact zeroRing _ _
 
 /-- Coefficient d of the positive formal tail uses the first d+1 positive factors. -/
 def formalQPochhammerTail {K : Type*} [CommRing K] (a : K) : PowerSeries K :=
@@ -90,23 +100,39 @@ theorem formalFirstCoefficients {K : Type*} [CommRing K] (a : K) :
     PowerSeries.coeff 0 (formalQPochhammer a) = 1 - a ∧
     PowerSeries.coeff 1 (formalQPochhammer a) = -a * (1 - a) ∧
     PowerSeries.coeff 2 (formalQPochhammer a) = -a * (1 - a) := by
-  sorry
+  norm_num [formalQPochhammer, formalQPochhammerTail, Finset.prod_range_succ,
+    PowerSeries.coeff_mul, PowerSeries.coeff_C_mul, PowerSeries.coeff_one,
+    PowerSeries.coeff_X_pow, Finset.Nat.antidiagonal_eq_map,
+    Finset.sum_range_succ] <;> ring
 
 /-- Reduction modulo two changes the signs but preserves the positive-tail coefficients. -/
 theorem formalModTwo :
     PowerSeries.coeff 0 (formalQPochhammerTail (1 : ZMod 2)) = 1 ∧
     PowerSeries.coeff 1 (formalQPochhammerTail (1 : ZMod 2)) = 1 ∧
     PowerSeries.coeff 2 (formalQPochhammerTail (1 : ZMod 2)) = 1 := by
-  sorry
+  norm_num [formalQPochhammerTail, Finset.prod_range_succ,
+    PowerSeries.coeff_mul, PowerSeries.coeff_C_mul, PowerSeries.coeff_one,
+    PowerSeries.coeff_X_pow, Finset.Nat.antidiagonal_eq_map,
+    Finset.sum_range_succ]
 
 /-- With parameter zero every factor of the positive tail is one. -/
-example {K : Type*} [CommRing K] : formalQPochhammerTail (0 : K) = 1 := by
-  ext d
-  simp [formalQPochhammerTail]
+example {K : Type*} [CommRing K] : formalQPochhammerTail (0 : K) = 1 ∧
+    PowerSeries.coeff 0 (formalQPochhammerTail (1 : ZMod 2)) = 1 ∧
+    PowerSeries.coeff 1 (formalQPochhammerTail (1 : ZMod 2)) = 1 ∧
+    PowerSeries.coeff 2 (formalQPochhammerTail (1 : ZMod 2)) = 1 := by
+  constructor
+  · ext d
+    simp [formalQPochhammerTail]
+  · exact formalModTwo
 
 /-- The full product at parameter one vanishes, rather than becoming a unit. -/
-example {K : Type*} [CommRing K] : formalQPochhammer (1 : K) = 0 := by
-  simp [formalQPochhammer]
+example {K : Type*} [CommRing K] (a : K) : formalQPochhammer (1 : K) = 0 ∧
+    PowerSeries.coeff 0 (formalQPochhammer a) = 1 - a ∧
+    PowerSeries.coeff 1 (formalQPochhammer a) = -a * (1 - a) ∧
+    PowerSeries.coeff 2 (formalQPochhammer a) = -a * (1 - a) := by
+  constructor
+  · simp [formalQPochhammer]
+  · exact formalFirstCoefficients a
 
 /-- The stabilized formal positive tail is the limit of the positive finite products. -/
 theorem formalQPochhammerTail_coeff_stable {K : Type*} [CommRing K]
@@ -139,6 +165,14 @@ noncomputable def baileyPair {K : Type*} [CommRing K]
   ∀ n, β n = ∑ r ∈ Finset.range (n + 1),
     α r * Ring.inverse (qPochhammerFin q q (n - r) * qPochhammerFin (a * q) q (n + r))
 
+/-- The first Bailey relation distinguishes the denominator index n+r from n-r. -/
+theorem baileyFirstRelation {K : Type*} [CommRing K]
+    (a q : K) (α β : ℕ → K) (h : baileyPair a q α β) :
+    β 1 = α 0 * Ring.inverse ((1 - q) * (1 - a * q)) +
+      α 1 * Ring.inverse ((1 - a * q) * (1 - a * q ^ 2)) := by
+  simpa [qPochhammerFin, Finset.sum_range_succ, Finset.prod_range_succ,
+    pow_succ, mul_assoc] using h.2 1
+
 /-- The zero pair is admitted on the same unit domain as every other pair. -/
 example {K : Type*} [CommRing K] (a q : K)
     (h : ∀ n, IsUnit (qPochhammerFin q q n) ∧
@@ -151,18 +185,36 @@ example {K : Type*} [CommRing K] (a q : K)
 
 /-- At a=q=0 the normalized delta sequence transforms to the constant sequence one. -/
 example {K : Type*} [CommRing K] :
-    baileyPair (0 : K) 0 (fun n => if n = 0 then 1 else 0) (fun _ => 1) := by
+    baileyPair (0 : K) 0 (fun n => if n = 0 then 1 else 0) (fun _ => 1) ∧
+    ¬ baileyPair (1 : ℚ) (1 / 2) (fun n => if n = 1 then 1 else 0)
+      (fun n => if n = 1 then 1 else 0) := by
   constructor
-  · intro n
-    simp [qPochhammerFin]
-  · intro n
-    simp [qPochhammerFin, Ring.inverse_one]
+  · constructor
+    · intro n
+      simp [qPochhammerFin]
+    · intro n
+      simp [qPochhammerFin, Ring.inverse_one]
+  · intro h
+    have h1 := baileyFirstRelation _ _ _ _ h
+    norm_num [Ring.inverse_eq_inv] at h1
 
-/-- The first Bailey relation distinguishes the denominator index n+r from n-r. -/
-theorem baileyFirstRelation {K : Type*} [CommRing K]
-    (a q : K) (α β : ℕ → K) (h : baileyPair a q α β) :
-    β 1 = α 0 * Ring.inverse ((1 - q) * (1 - a * q)) +
-      α 1 * Ring.inverse ((1 - a * q) * (1 - a * q ^ 2)) := by
+/-- The finite Bailey transformation preserves pairs over every commutative ring on the
+original unit domain and the additional transformed-denominator unit domain; Andrews (2.4)-(2.6). -/
+theorem baileyLemma_transform {K : Type*} [CommRing K]
+    (a q : K) (α β : ℕ → K) (h : baileyPair a q α β) (ρ₁ ρ₂ : Kˣ)
+    (hden : ∀ n : ℕ,
+      IsUnit (qPochhammerFin (a * q * ((ρ₁⁻¹ : Kˣ) : K)) q n) ∧
+      IsUnit (qPochhammerFin (a * q * ((ρ₂⁻¹ : Kˣ) : K)) q n)) :
+    let t := a * q * (((ρ₁ * ρ₂)⁻¹ : Kˣ) : K)
+    let D := fun n => qPochhammerFin (a * q * ((ρ₁⁻¹ : Kˣ) : K)) q n *
+      qPochhammerFin (a * q * ((ρ₂⁻¹ : Kˣ) : K)) q n
+    baileyPair a q
+      (fun n => qPochhammerFin (ρ₁ : K) q n * qPochhammerFin (ρ₂ : K) q n *
+        t ^ n * α n * Ring.inverse (D n))
+      (fun n => ∑ j ∈ Finset.range (n + 1),
+        qPochhammerFin (ρ₁ : K) q j * qPochhammerFin (ρ₂ : K) q j *
+          qPochhammerFin t q (n - j) * t ^ j * β j *
+          Ring.inverse (qPochhammerFin q q (n - j) * D n)) := by
   sorry
 
 /-- The q-binomial theorem on the open bidisc, in the normalization of Gasper (1.2.8). The coefficient identity `qBinomial_formal` uses the denominator localization described in README §2.4. -/
@@ -310,25 +362,33 @@ def partitionCrank {n : ℕ} (p : Nat.Partition n) : ℤ :=
   if o = 0 then ((p.parts.toFinset.sup id : ℕ) : ℤ)
   else ((p.parts.filter (fun j => o < j)).card : ℤ) - (o : ℤ)
 
-/-- Rank of the singleton partition is zero. -/
-example : partitionRank (Nat.Partition.ofSums 1 {1} (by decide)) = 0 := by decide
+/-- Both statistics of any partition of zero vanish. -/
+theorem rankCrankEmpty (p : Nat.Partition 0) :
+    partitionRank p = 0 ∧ partitionCrank p = 0 := by
+  simp [partitionRank, partitionCrank]
+
+/-- Rank of the singleton and of the empty partition is zero. -/
+example (p : Nat.Partition 0) :
+    partitionRank (Nat.Partition.ofSums 1 {1} (by decide)) = 0 ∧ partitionRank p = 0 := by
+  constructor
+  · decide
+  · exact (rankCrankEmpty p).1
 
 /-- The strict-filter witness has rank minus one. -/
 example : partitionRank (Nat.Partition.ofSums 7 {3, 2, 1, 1} (by decide)) = -1 ∧
     partitionRank (Nat.Partition.ofSums 6 {3, 3} (by decide)) = 1 ∧
     partitionRank (Nat.Partition.ofSums 6 {2, 2, 2} (by decide)) = -1 := by decide
 
-/-- The ordinary crank at size one is minus one. -/
-example : partitionCrank (Nat.Partition.ofSums 1 {1} (by decide)) = -1 := by decide
+/-- The ordinary crank at size one is minus one, while the empty crank is zero. -/
+example (p : Nat.Partition 0) :
+    partitionCrank (Nat.Partition.ofSums 1 {1} (by decide)) = -1 ∧ partitionCrank p = 0 := by
+  constructor
+  · decide
+  · exact (rankCrankEmpty p).2
 
 /-- The strict inequality and the no-ones branch give different largest-part behavior. -/
 example : partitionCrank (Nat.Partition.ofSums 7 {3, 2, 1, 1} (by decide)) = -1 ∧
     partitionCrank (Nat.Partition.ofSums 6 {3, 3} (by decide)) = 3 := by decide
-
-/-- Both statistics of any partition of zero vanish. -/
-theorem rankCrankEmpty (p : Nat.Partition 0) :
-    partitionRank p = 0 ∧ partitionCrank p = 0 := by
-  sorry
 
 /-- Native conjugation negates rank. -/
 theorem partitionRank_conjugate {n : ℕ} (p : Nat.Partition n) :
@@ -349,7 +409,9 @@ theorem partitionResidueCounts_sum
 /-- Modulo one the sole residue count is the ordinary partition count. -/
 theorem filterOne (s : (n : ℕ) → Nat.Partition n → ℤ) (n : ℕ) :
     partitionResidueCount s 1 0 n = Fintype.card (Nat.Partition n) := by
-  sorry
+  classical
+  unfold partitionResidueCount
+  rw [Finset.filter_true_of_mem (fun _ _ => Subsingleton.elim _ _), Finset.card_univ]
 
 /-- The multiplied character filter remains valid without dividing by the modulus. -/
 theorem partitionResidueCounts_filter_complex
@@ -360,23 +422,26 @@ theorem partitionResidueCounts_filter_complex
         ∑ p : Nat.Partition n, ζ ^ (s n p * (j : ℤ)) := by
   sorry
 
-/-- A constant-zero statistic has no partitions in the nonzero residue class. -/
-example (n : ℕ) : partitionResidueCount (fun _ _ => 0) 2 1 n = 0 := by
-  classical
-  simp [partitionResidueCount]
-
 /-- At size one rank lies in class zero and crank in class one modulo two. -/
 theorem filterTwo :
     partitionResidueCount (fun _ p => partitionRank p) 2 0 1 = 1 ∧
     partitionResidueCount (fun _ p => partitionCrank p) 2 1 1 = 1 := by
-  sorry
+  classical
+  norm_num [partitionResidueCount, partitionRank, partitionCrank]
+
+/-- A constant-zero statistic misses class one; rank and crank separate at size one. -/
+example (n : ℕ) : partitionResidueCount (fun _ _ => 0) 2 1 n = 0 ∧
+    partitionResidueCount (fun _ p => partitionRank p) 2 0 1 = 1 ∧
+    partitionResidueCount (fun _ p => partitionCrank p) 2 1 1 = 1 := by
+  constructor
+  · classical
+    simp [partitionResidueCount]
+  · exact filterTwo
 
 /-- Modulus one gives an empty residue fiber for no partition statistic. -/
-example (s : (n : ℕ) → Nat.Partition n → ℤ) :
-    partitionResidueCount s 1 0 0 = Fintype.card (Nat.Partition 0) := by
-  classical
-  unfold partitionResidueCount
-  rw [Finset.filter_true_of_mem (fun _ _ => Subsingleton.elim _ _), Finset.card_univ]
+example (s : (n : ℕ) → Nat.Partition n → ℤ) (n : ℕ) :
+    partitionResidueCount s 1 0 n = Fintype.card (Nat.Partition n) := by
+  exact filterOne s n
 
 /-- The rank dissections yield equidistribution in the two Ramanujan progressions. -/
 theorem rank_equidistribution_five_seven (n : ℕ) :
@@ -445,7 +510,9 @@ theorem sevenExponent :
     49 ∣ Fintype.card (Nat.Partition 243) ∧ ¬343 ∣ Fintype.card (Nat.Partition 243) := by
   sorry
 
-/-- Decimation extracts coefficients divisible by the index; it is a linear operator. The coefficient identity `qSeriesDecimation_coeff` reads coefficient n at index t*n, and `qSeriesDecimation_map` commutes extraction with coefficient homomorphisms (README §4.7). -/
+/-- Decimation extracts coefficients divisible by the index; it is a linear operator. The coefficient identity `qSeriesDecimation_coeff` reads coefficient n at index t*n, and `qSeriesDecimation_map` commutes extraction with coefficient homomorphisms (README §4.7).
+The README target `qSeriesDecimation_eq_cartier` identifies its Laurent-series embedding over a
+field, for t > 0, with `LaurentSeries.cartier t 0` from ClassicalArithmeticCompletion §2.10. -/
 def qSeriesDecimation {K : Type*} [CommSemiring K] (t : ℕ)
     (f : PowerSeries K) : PowerSeries K :=
   PowerSeries.mk fun n => PowerSeries.coeff (t * n) f
@@ -470,21 +537,56 @@ theorem qSeriesDecimation_pullout {K : Type*} [CommSemiring K]
       f * qSeriesDecimation t g := by
   sorry
 
-/-- The coefficient-one term of the decimated quadratic records its coefficient two. -/
-example : PowerSeries.coeff 1
-    (qSeriesDecimation 2 (1 + PowerSeries.X + 2 * (PowerSeries.X : PowerSeries ℤ) ^ 2)) = 2 := by
-  norm_num [qSeriesDecimation, PowerSeries.coeff_mul, PowerSeries.coeff_X,
-    PowerSeries.coeff_X_pow, PowerSeries.coeff_one, PowerSeries.coeff_C_mul]
-
-/-- Index one preserves every coefficient. -/
-example {K : Type*} [CommSemiring K] (f : PowerSeries K) : qSeriesDecimation 1 f = f := by
-  ext n
-  simp [qSeriesDecimation]
-
 /-- Decimation cannot be a ring homomorphism: it kills X but sends X squared to X. -/
 theorem decimationNotMultiplicative :
     qSeriesDecimation 2 (PowerSeries.X : PowerSeries ℤ) = 0 ∧
     qSeriesDecimation 2 ((PowerSeries.X : PowerSeries ℤ) ^ 2) = PowerSeries.X := by
+  constructor
+  · ext n
+    simp only [qSeriesDecimation, PowerSeries.coeff_mk, PowerSeries.coeff_X, map_zero]
+    split_ifs with h <;> omega
+  · ext n
+    simp only [qSeriesDecimation, PowerSeries.coeff_mk, PowerSeries.coeff_X_pow,
+      PowerSeries.coeff_X]
+    have h : 2 * n = 2 ↔ n = 1 := by omega
+    rw [h]
+
+/-- The coefficient-one term of the decimated quadratic records its coefficient two. -/
+example : PowerSeries.coeff 1
+    (qSeriesDecimation 2 (1 + PowerSeries.X + 2 * (PowerSeries.X : PowerSeries ℤ) ^ 2)) = 2 ∧
+    qSeriesDecimation 2 (PowerSeries.X : PowerSeries ℤ) = 0 ∧
+    qSeriesDecimation 2 ((PowerSeries.X : PowerSeries ℤ) ^ 2) = PowerSeries.X := by
+  constructor
+  · norm_num [qSeriesDecimation, PowerSeries.coeff_mul, PowerSeries.coeff_X,
+      PowerSeries.coeff_X_pow, PowerSeries.coeff_one, PowerSeries.coeff_C_mul]
+  · exact decimationNotMultiplicative
+
+/-- Index one preserves every coefficient; the zero-index coefficient adapter differs
+from the Laurent Cartier operator's stipulated zero value. -/
+example {K : Type*} [CommSemiring K] (f : PowerSeries K) : qSeriesDecimation 1 f = f ∧
+    PowerSeries.coeff 1 (qSeriesDecimation 0 (1 : PowerSeries K)) = 1 := by
+  constructor
+  · ext n
+    simp [qSeriesDecimation]
+  · simp [qSeriesDecimation]
+
+/-- Watson's degree-five eta equation, with nonzero denominators on the upper half-plane;
+Watson (3.2), derived in Section 2. -/
+theorem etaDecimation_modularEquation_five (τ : ℂ) (hτ : 0 < τ.im) :
+    let X := ModularForm.eta τ / ModularForm.eta (τ / 5)
+    let Y := ModularForm.eta (5 * τ) / ModularForm.eta τ
+    X ^ 5 - 25 * Y ^ 5 * X ^ 4 - 25 * Y ^ 4 * X ^ 3 -
+      15 * Y ^ 3 * X ^ 2 - 5 * Y ^ 2 * X - Y = 0 := by
+  sorry
+
+/-- Watson's degree-seven eta equation includes the three lower-degree coefficients;
+Watson (5.2), derived in Section 4. -/
+theorem etaDecimation_modularEquation_seven (τ : ℂ) (hτ : 0 < τ.im) :
+    let X := ModularForm.eta τ / ModularForm.eta (τ / 7)
+    let Y := ModularForm.eta (7 * τ) / ModularForm.eta τ
+    X ^ 7 - (343 * Y ^ 7 + 49 * Y ^ 3) * X ^ 6 -
+      (343 * Y ^ 6 + 35 * Y ^ 2) * X ^ 5 - (147 * Y ^ 5 + 7 * Y) * X ^ 4 -
+      49 * Y ^ 4 * X ^ 3 - 21 * Y ^ 3 * X ^ 2 - 7 * Y ^ 2 * X - Y = 0 := by
   sorry
 
 /-! ## Layer 5: theta normalizations, error kernels and completed Lerch sums -/
@@ -508,8 +610,6 @@ theorem oddThetaPair (z τ : ℂ) :
         Complex.exp (-(Real.pi : ℂ) * Complex.I * z)) := by
   sorry
 
-/-! ## Layer 8: harmonic weak Maass spaces, Fourier parts and shadows -/
-
 /-- The antiholomorphic Wirtinger derivative uses real derivatives in directions 1 and i. -/
 noncomputable def wirtingerBar (F : ℂ → ℂ) (τ : ℂ) : ℂ :=
   (fderiv ℝ F τ 1 + Complex.I * fderiv ℝ F τ Complex.I) / 2
@@ -518,25 +618,20 @@ noncomputable def wirtingerBar (F : ℂ → ℂ) (τ : ℂ) : ℂ :=
 noncomputable def maassXi (k : ℝ) (F : ℂ → ℂ) (τ : ℂ) : ℂ :=
   2 * Complex.I * (τ.im ^ k : ℝ) * star (wirtingerBar F τ)
 
-/-- The weight-k Laplacian in real coordinates on the upper half-plane. -/
-noncomputable def maassLaplacian (k : ℝ) (F : ℂ → ℂ) (τ : ℂ) : ℂ :=
-  -(τ.im : ℂ) ^ 2 *
-    (fderiv ℝ (fun z => fderiv ℝ F z 1) τ 1 +
-      fderiv ℝ (fun z => fderiv ℝ F z Complex.I) τ Complex.I) +
-    (k : ℂ) * Complex.I * (τ.im : ℂ) *
-      (fderiv ℝ F τ 1 + Complex.I * fderiv ℝ F τ Complex.I)
-
 /-- Constants have zero antiholomorphic derivative. -/
 example (c τ : ℂ) : wirtingerBar (fun _ => c) τ = 0 := by
   simp [wirtingerBar]
 
-/-- The imaginary coordinate has antiholomorphic derivative i/2. -/
-example (τ : ℂ) : wirtingerBar (fun z : ℂ => (z.im : ℂ)) τ = Complex.I / 2 := by
-  have h : HasFDerivAt (fun z : ℂ => (z.im : ℂ))
-      (Complex.ofRealCLM.comp Complex.imCLM) τ :=
-    (Complex.ofRealCLM.comp Complex.imCLM).hasFDerivAt
-  rw [wirtingerBar, h.fderiv]
-  simp
+/-- The imaginary coordinate has antiholomorphic derivative i/2; the identity has zero. -/
+example (τ : ℂ) : wirtingerBar (fun z : ℂ => (z.im : ℂ)) τ = Complex.I / 2 ∧
+    wirtingerBar (fun z : ℂ => z) τ = 0 := by
+  constructor
+  · have h : HasFDerivAt (fun z : ℂ => (z.im : ℂ))
+        (Complex.ofRealCLM.comp Complex.imCLM) τ :=
+      (Complex.ofRealCLM.comp Complex.imCLM).hasFDerivAt
+    rw [wirtingerBar, h.fderiv]
+    simp
+  · simp [wirtingerBar]
 
 /-- Xi sends y at weight zero and log y at weight one to one; constants give zero. -/
 example (τ : ℂ) (hτ : 0 < τ.im) :
@@ -573,13 +668,23 @@ example (τ : ℂ) : maassXi 0 (fun z : ℂ => Complex.I * (z.im : ℂ)) τ = -C
   norm_num
   ring
 
+/-- Constants have zero xi-image at every weight. -/
+theorem xiConstant (k : ℝ) (c τ : ℂ) : maassXi k (fun _ => c) τ = 0 := by
+  simp [maassXi, wirtingerBar]
+
+/-! ## Layer 8: harmonic weak Maass spaces, Fourier parts and shadows -/
+
+/-- The weight-k Laplacian in real coordinates on the upper half-plane. -/
+noncomputable def maassLaplacian (k : ℝ) (F : ℂ → ℂ) (τ : ℂ) : ℂ :=
+  -(τ.im : ℂ) ^ 2 *
+    (fderiv ℝ (fun z => fderiv ℝ F z 1) τ 1 +
+      fderiv ℝ (fun z => fderiv ℝ F z Complex.I) τ Complex.I) +
+    (k : ℂ) * Complex.I * (τ.im : ℂ) *
+      (fderiv ℝ F τ 1 + Complex.I * fderiv ℝ F τ Complex.I)
+
 /-- The Laplacian kills every constant. -/
 example (k : ℝ) (c τ : ℂ) : maassLaplacian k (fun _ => c) τ = 0 := by
   simp [maassLaplacian]
-
-/-- Constants have zero xi-image at every weight. -/
-theorem xiConstant (k : ℝ) (c τ : ℂ) : maassXi k (fun _ => c) τ = 0 := by
-  sorry
 
 /-- Holomorphicity forces the antiholomorphic Wirtinger derivative to vanish. -/
 theorem wirtingerBar_holomorphic (F : ℂ → ℂ) (τ : ℂ)
@@ -665,6 +770,30 @@ theorem thirdRankSigns : deriv thirdOrderF 0 = 1 ∧
 theorem thirdOrderF_rank (q : ℂ) (hq : ‖q‖ < 1) :
     HasSum (fun n : ℕ =>
       (∑ p : Nat.Partition n, (-1 : ℂ) ^ partitionRank p) * q ^ n) (thirdOrderF q) := by
+  sorry
+
+/-- The bilateral rank identity uses the meromorphic Durfee-square expression, with its
+actual nonzero-base and pole domain; Zagier, proof of Theorem 7.1. -/
+theorem rankSeries_bilateral_hasSum (q z : ℂ) (hq0 : q ≠ 0) (hq : ‖q‖ < 1)
+    (hz : z ≠ 0) (hpole : ∀ n : ℤ, 1 - z * q ^ n ≠ 0) :
+    HasSum (fun n : ℤ => (-1 : ℂ) ^ n * q ^ (n * (3 * n + 1) / 2) /
+      (1 - z * q ^ n))
+      ((∏' j : ℕ, (1 - q ^ (j + 1))) *
+        (∑' n : ℕ, q ^ (n * n) /
+          (qPochhammerFin (z * q) q n * qPochhammerFin (q / z) q n)) / (1 - z)) ∧
+    Summable (fun n : ℤ => ‖(-1 : ℂ) ^ n * q ^ (n * (3 * n + 1) / 2) /
+      (1 - z * q ^ n)‖) := by
+  sorry
+
+/-- The omega bilateral bridge is an identity on the punctured disc; omega is written as
+its unilateral sum from Bringmann-Ono (2.1), and the bridge is the q-binomial derivation of §10.1a. -/
+theorem thirdOrderOmega_bilateral (q : ℂ) (hq0 : q ≠ 0) (hq : ‖q‖ < 1) :
+    HasSum (fun n : ℤ => (-1 : ℂ) ^ n * q ^ (3 * n * (n + 1)) /
+      (1 - q ^ (2 * n + 1)))
+      ((∏' j : ℕ, (1 - (q ^ 2) ^ (j + 1))) *
+        ∑' n : ℕ, q ^ (2 * n * n + 2 * n) / qPochhammerFin q (q ^ 2) (n + 1) ^ 2) ∧
+    Summable (fun n : ℤ => ‖(-1 : ℂ) ^ n * q ^ (3 * n * (n + 1)) /
+      (1 - q ^ (2 * n + 1))‖) := by
   sorry
 
 end

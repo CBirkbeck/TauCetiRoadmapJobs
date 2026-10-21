@@ -164,7 +164,7 @@ cited_for = ["Retained bibliographic background; replaced by Pak2002, Gasper1995
 [[source]]
 id = "Watson1938"
 locator_scheme = "theorem"
-locator = "Hauptsätze 1, 3–4, pp. 98–99, lines 76 and 123–126; §§2–5, (3.41)–(3.44) and (5.41)–(5.42), for proof filtrations; p. 98, line 108 for p(243) modulo 343"
+locator = "Hauptsätze 1, 3–4, pp. 98–99, lines 76 and 123–126; §2 and (3.2), p. 105, line 417; §4 and (5.2), p. 118, lines 1127–1128; §§2–5, (3.41)–(3.44) and (5.41)–(5.42), for proof filtrations; p. 98, line 108 for p(243) modulo 343"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0179/LOG_0012.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0179/LOG_0012.pdf"
 fetched_at = "2026-10-21T09:31:50Z"
@@ -205,7 +205,7 @@ sha256 = "c9a38541fb6c655a1525c4c5115cf4ac7cad0177fa363c0d2c29da7bbabf5d2e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-21"
-cited_for = ["10.1", "10.2", "11.2"]
+cited_for = ["10.1", "10.1a (unilateral omega definition only; the bilateral bridge is the author’s derivation)", "10.2", "11.2"]
 authors = "Kathrin Bringmann and Ken Ono"
 title = "The f(q) mock theta function conjecture and partition ranks"
 year = 2006
@@ -292,3 +292,21 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
 cited_for = ["8.4a"]
+
+[[source]]
+id = "Warnaar2001"
+authors = "S. Ole Warnaar"
+title = "Partial-sum analogues of the Rogers–Ramanujan identities"
+year = 2001
+version_note = "arXiv v1; the roadmap uses D_n=e_(n+1) and E_n=d_(n+2), rather than the source’s unshifted indexing."
+arxiv = "math/0108193v1"
+locator_scheme = "equation"
+locator = "arXiv v1 (1.3)–(1.4), pp. 1–2, lines 45–65; (1.6), p. 2, lines 92–108"
+url = "https://arxiv.org/abs/math/0108193v1"
+fetched_from = "https://arxiv.org/pdf/math/0108193v1"
+fetched_at = "2026-10-21T17:12:42Z"
+sha256 = "10ba2e2ce57fb7ad008f90f860d00867086dc1f41dd05d82f48a7c25cc67b95b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.2"]

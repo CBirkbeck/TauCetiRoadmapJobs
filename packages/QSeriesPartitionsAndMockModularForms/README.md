@@ -4,11 +4,13 @@
 
 ## Scope and ownership
 
-This roadmap owns the finite and integer-indexed q-products, coefficientwise formal adapters, normalized basic hypergeometric calculus, partition rank/crank theory, the Zwegers error-function constructions, meromorphic Jacobi coefficient corrections, and harmonic/mock completion interfaces specified below. It is not a Part II of ModularForms or ThetaSeries: the former’s integral-weight arithmetic and the latter’s positive-definite lattice modularity retain their owners. The kept q-product variants are finite over arbitrary rings, or formal in native power series; the analytic product, its zero divisor, and its analytic shift law are imported from GeometryOfNumbersAndQuadraticArithmetic §4.3. Section 1.6 adds only convergence of the native finite-prefix adapter and the finite-prefix/tail comparison.
+This roadmap owns the finite and integer-indexed q-products, coefficientwise formal adapters, normalized basic hypergeometric calculus, partition rank/crank theory, the complex Zwegers smoothing kernel and its additional tail estimates, meromorphic Jacobi coefficient corrections, and harmonic/mock completion interfaces specified below. It is not a Part II of ModularForms or ThetaSeries: the former’s integral-weight arithmetic and the latter’s positive-definite lattice modularity retain their owners. The kept q-product variants are finite over arbitrary rings, or formal in native power series; the analytic product, its zero divisor, and its analytic shift law are imported from GeometryOfNumbersAndQuadraticArithmetic §4.3. Section 1.6 adds only convergence of the native finite-prefix adapter and the finite-prefix/tail comparison.
 
 Mathlib already supplies `Nat.Partition`, its weighted `genFun` and `hasProd_genFun`, Glaisher and odd/distinct partition theorems, native pentagonal identities, `jacobiTheta₂`, and `ModularForm.eta`. Tau Ceti already supplies conjugation of the native partition carrier and the integral-weight holomorphic Eichler integral; this roadmap’s nonholomorphic shadow primitive has different weight, conjugation and cusp growth. These objects are imported, without second carriers or duplicate targets. ClassicalArithmeticCompletion §§2.31, 4.20, 4.40, 4.60–4.61 retain formal specialization, the formal triple product, the cubic Euler product and its theta specializations. GeometryOfNumbersAndQuadraticArithmetic §4.3 retains the analytic q-product, triple product and Appell–Lerch difference identity. MetaplecticAutomorphicForms §§2.4b–2.6, 4.7, 6.18–6.20 and 7.1/7.49 retain the generic cover, finite Weil representation, holomorphic Jacobi decomposition, multiplier and unitary comparison. The new Maass spaces allow every half-integral weight and exponential cusp growth, distinct from its weight-1/2 square-integrable spectral space in §7.2.
 
 IntegralLattices Layer 1G–1H retains finite quadratic modules and Gauss invariants. Automorphic theta kernels, theta lifting and Siegel–Weil theory belong to MetaplecticAutomorphicForms Layers 5–6; the Siegel–Narain kernel is outside this roadmap. A general completed indefinite theta series or meromorphic Jacobi coefficient is not asserted to be harmonic. Habiro completions, evaluation at roots of unity as a completion operation, q-Witt vectors, geometric q-cohomology and Nahm-specific criteria belong to their own roadmaps. Analytic evaluation inside |q|<1 does not supply any boundary evaluation theorem.
+
+ClassicalArithmeticCompletion §2.10 owns field-valued Laurent-series Cartier extraction and its power-series restriction; §4.7 adds the general-semiring adapter and §4.8a the integral eta-module estimates. ModularForms, Worked examples, target η²⁴=Δ, owns eta’s SL₂(ℤ) transformation; §5.2 adds its normalized square-root cocycle and lifted-character comparison. Tau Ceti’s real `erf` and `erfc` API supplies the real kernel laws through the normalization in §5.3; the complex entire extension and sharper Gaussian-tail bounds are the kept variant.
 
 The three general upstream extensions are contracts for Part II of their respective owners: the classical pair model for the metaplectic cover; analytic elliptic regularity; and vector-bundle Dolbeault/Serre theory. Their exact extension contracts appear below. The dissection, eta-module, general parabolic Fourier and unilateral-to-Hecke theorems are targets of this roadmap. The ten fifth-order functions, the three seventh-order functions, and the third-order functions treated by the references are included; no universal completion criterion for arbitrary q-hypergeometric series is asserted.
 
@@ -51,9 +53,11 @@ Mathlib pin: `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
 
 Tau Ceti pin: `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. `TauCeti.conjugate`, `TauCeti.conjugate_parts`, `TauCeti.conjugate_conjugate` and `TauCeti.conjugate_parts_sort` in `TauCeti/Combinatorics/Enumerative/Partition/Conjugate.lean` give the native involution and row/column comparison used for rank. `TauCeti.CuspFormClass.eichlerIntegral_slash_apply` in `TauCeti/NumberTheory/ModularForms/EichlerIntegral/Transformation.lean` requires integral weight k=n+2, arithmetic level and positive strict periods; it fixes the boundary with the holomorphic integral-weight theory and is not a shadow-completion theorem.
 
+The module `TauCeti.Analysis.SpecialFunctions.Erf` in `TauCeti/Analysis/SpecialFunctions/Erf.lean` supplies `TauCeti.Real.erf`, `erfc`, `erf_zero`, `erfc_zero`, `erf_neg`, `hasDerivAt_erf`, `erf_pos`, `erf_lt_one` and `abs_erf_lt_one`. Its convention is erf(x)=(2/√π)∫₀ˣexp(−u²)du and erfc=1−erf. Section 5.3 uses the real adapters E(x)=erf(√π·x) and β(t)=erfc(√(πt)) for t≥0, including t=0.
+
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
-§2.31, §4.20, §4.40, §4.60, §4.61: Formal-to-analytic Taylor specialization; coefficientwise scalar change; the formal triple product; cubic Euler-product identity and theta specializations, with their stated coefficient rings and unit hypotheses.
+§2.10: `LaurentSeries.cartier`, `coeff_cartier`, `cartier_add`, `cartier_smul` and `cartier_ofPowerSeries` over a field K and modulus t>0. The coefficient at n∈ℤ is the input coefficient at tn+a; the power-series comparison requires 0≤a<t. No Frobenius law is used outside a finite field with t equal to its cardinality. §2.31, §4.20, §4.40, §4.60, §4.61: Formal-to-analytic Taylor specialization; coefficientwise scalar change; the formal triple product; cubic Euler-product identity and theta specializations, with their stated coefficient rings and unit hypotheses.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
@@ -73,7 +77,7 @@ Compare the imported real rank-one cover with pairs (g,φ), φ²=cτ+d, product 
 
 ### From TauCetiRoadmap.ModularForms
 
-Layer 0, Layer 10B: Native integral-weight scalar slash/character comparison and line-bundle cohomology/Serre duality on compact Riemann surfaces. The vector-bundle Dolbeault extension is a Part II extension contract.
+Layer 0, Layer 10B: Native integral-weight scalar slash/character comparison and line-bundle cohomology/Serre duality on compact Riemann surfaces. Worked examples, target η²⁴=Δ: eta’s product and SL₂(ℤ) transformation, including η(τ+1)=exp(πi/12)η(τ) and η(−1/τ)=√(−iτ)η(τ). The vector-bundle Dolbeault extension is a Part II extension contract.
 
 What ModularForms must provide (gap:vector-bundle-dolbeault): Supply vector-bundle duality, high-divisor vanishing and the growth-preserving global dbar solution used by Bruinier–Funke.
 
@@ -136,7 +140,7 @@ For the proof, invert finite products of supplied units; reduce mixed-sign conca
 
 ### 1.3 regular quotient coefficients
 
-Define regular quotient coefficients (`qPochhammerRatio`) as follows. For finite lists A,B and a unit q in a commutative ring, define the rational coefficient Qⱼ(A;B;q). For j≥0 it is Pⱼ(A;q)/Pⱼ(B;q); for j=−n<0 it is ∏_(j=1)^n∏_(b∈B)(1−bq^(−j))/∏_(a∈A)(1−aq^(−j)). Only the denominator in the appropriate expression must be a unit. This is the regular continuation of a quotient, even where an individual negative-index P for B has a pole. (Gasper1995, (2.1.8), p. 9, line 478; (3.1.13), p. 15, line 830; Gasper1995 line 478.)
+Define regular quotient coefficients (`qPochhammerRatio`) as follows. For finite lists A,B and a unit q in a commutative ring, define the rational coefficient Qⱼ(A;B;q). For j≥0 it is Pⱼ(A;q)/Pⱼ(B;q); for j=−n<0 it is ∏_(i=1)^n∏_(b∈B)(1−bq^(−i))/∏_(a∈A)(1−aq^(−i)). Only the denominator in the appropriate expression must be a unit. This is the regular continuation of a quotient, even where an individual negative-index P for B has a pole. (Gasper1995, (2.1.8), p. 9, line 478; (3.1.13), p. 15, line 830; Gasper1995 line 478.)
 
 The public laws are `qPochhammerRatio_zero`: Q₀=1; `qPochhammerRatio_neg_one`: Q₋₁([a];[b];q)=(q−b)/(q−a); `qPochhammerRatio_agrees`: Where both individual integer-index products are defined and the denominator is a unit, Q is their quotient; `qPochhammerRatio_step`: Qⱼ₊₁∏(1−bqʲ)=Qⱼ∏(1−aqʲ), on the common domain.
 
@@ -311,6 +315,7 @@ For the proof, define the finite linear transform directly and use extensionalit
 - bailey unit pair: For α₀=1 and αₙ=0 for n>0, βₙ=1/(Pₙ(q;q)Pₙ(aq;q)).
 - bailey zero pair: The two zero sequences form a pair, while the unit pair has β₀=1.
 - `baileyFirstRelation`: β₁=α₀/((1−q)(1−aq))+α₁/((1−aq)(1−aq²)); replacing n+r by n−r fails.
+- bailey non-example: Over ℚ at a=1,q=1/2, the pair α=β=δ₁ fails already at n=1: its right side is 8/3 rather than 1. Replacing n+r by n−r would incorrectly give 1 in that relation.
 
 ### 2.7 the Bailey transformation and its limits
 
@@ -357,9 +362,9 @@ For the proof, identify a rectangle partition with a strictly increasing subset 
 
 ### 3.2 finite Schur identities
 
-Prove finite Schur identities with the following hypotheses. For every n≥0 the following integral polynomial identities hold: Σ_(j≥0)Q^(j²)G(n−j,j)=Σ_(h∈ℤ)(−1)^h Q^(h(5h+1)/2)G(n,⌊(n−5h)/2⌋), and Σ_(j≥0)Q^(j²+j)G(n−j,j)=Σ_(h∈ℤ)(−1)^h Q^(h(5h+3)/2)G(n+1,⌊(n−5h)/2⌋). Terms with j>n or invalid lower Gaussian index are zero; thus both displayed sums are finite. (Gasper1995, (4.2.11)–(4.2.12), p. 29, line 1672; finite identities are the author’s Pascal derivation of these endpoints; Gasper1995 line 1672.)
+Prove finite Schur identities with the following hypotheses. For every n≥0 the following integral polynomial identities hold: Σ_(j≥0)Q^(j²)G(n−j,j)=Σ_(h∈ℤ)(−1)^h Q^(h(5h+1)/2)G(n,⌊(n−5h)/2⌋), and Σ_(j≥0)Q^(j²+j)G(n−j,j)=Σ_(h∈ℤ)(−1)^h Q^(h(5h+3)/2)G(n+1,⌊(n−5h)/2⌋). Terms with j>n or invalid lower Gaussian index are zero; thus both displayed sums are finite. These are e_(n+1) and d_(n+2) in Warnaar’s convention. (Warnaar2001, (1.4a)–(1.4b), p. 1, lines 49–65, and (1.6), p. 2, lines 92–108; Warnaar2001 line 49.)
 
-The public laws are `schur_finite_first`: The first displayed polynomial identity; `schur_finite_second`: The second displayed polynomial identity; `schur_finite_recurrences`: Write D_n and E_n for the two left sums. For n≥2, D_n=D_(n−1)+Q^(n−1)D_(n−2) and E_n=E_(n−1)+Q^n E_(n−2), with D₀=D₁=E₀=E₁=1. Each corresponding right sum satisfies the same recurrence and initial data..
+The public laws are `schur_finite_first`: The first displayed polynomial identity; `schur_finite_second`: The second displayed polynomial identity; `schur_finite_recurrences`: Write D_n and E_n for the two left sums. For n≥2, D_n=D_(n−1)+Q^(n−1)D_(n−2) and E_n=E_(n−1)+Q^n E_(n−2), with D₀=D₁=E₀=E₁=1. Each corresponding right sum satisfies the same recurrence and initial data (Warnaar2001, (1.3), p. 1, lines 45–48, with the same index shifts).
 
 For the proof, d_n counts gap-at-least-two partitions with largest part at most n−1; E_n counts such partitions with smallest part at least 2 and largest part at most n. Splitting on the largest allowed part gives exactly the displayed recurrences. Substitute the two q-Pascal expansions on the signed right sums, split n−5h by parity, and pair adjacent h terms to obtain these same recurrences with D₀=D₁=E₀=E₁=1. Induction proves both polynomial identities without a Watson transformation or denominator cancellation.
 
@@ -570,17 +575,21 @@ Define `qSeriesDecimation` as follows. For every commutative semiring K and inte
 
 The public laws are `qSeriesDecimation_coeff`: Coefficient n of U_t f equals coefficient tn of f; `qSeriesDecimation_comp`: U_s(U_t f)=U_(st)f; `qSeriesDecimation_pullout`: U_t(f(X^t)g(X))=f(X)U_t g(X); `qSeriesDecimation_map`: Coefficient ring homomorphisms commute with extraction.
 
-The representative `qSeriesDecimation_add_smul` states U_t(f+c·g)=U_t(f)+c·U_t(g) over every commutative semiring. Its coefficient function and its bundled linear map are identified by the same formula. The pullout signature also retains every commutative semiring: it writes f(X^t) as `PowerSeries.mk (fun n => if t ∣ n then PowerSeries.coeff (n / t) f else 0)`. Over a commutative ring this agrees with `PowerSeries.expand t ht f` by `PowerSeries.coeff_expand` in `Mathlib/RingTheory/PowerSeries/Expand.lean`; the pinned expansion API itself requires a commutative ring.
+Prove `qSeriesDecimation_eq_cartier`: for every field K, t>0 and f∈K⟦X⟧, its Laurent-series embedding satisfies ι(U_t f)=`LaurentSeries.cartier t 0`(ι f). For 0≤a<t, identify ι(E_(t,a)f) with `LaurentSeries.cartier t a`(ι f) by `cartier_ofPowerSeries`. These comparisons transport the field linearity laws; the general-semiring and integral variants retain their own coefficient proofs (ClassicalArithmeticCompletion §2.10, `coeff_cartier`, `cartier_ofPowerSeries`).
+
+The representative coefficient function is also defined at t=0 by (U₀f)_n=f₀ for every n; this differs from Cartier’s stipulated zero value at modulus zero. The representative `qSeriesDecimation_add_smul` states U_t(f+c·g)=U_t(f)+c·U_t(g) over every commutative semiring. Its coefficient function and its bundled linear map are identified by the same formula. The pullout signature also retains every commutative semiring: it writes f(X^t) as `PowerSeries.mk (fun n => if t ∣ n then PowerSeries.coeff (n / t) f else 0)`. Over a commutative ring this agrees with `PowerSeries.expand t ht f` by `PowerSeries.coeff_expand` in `Mathlib/RingTheory/PowerSeries/Expand.lean`; the pinned expansion API itself requires a commutative ring.
 
 For the proof, define the native power-series coefficients, then prove each identity by extensionality and the finite Cauchy coefficient formula. The pullout identity uses that f(X^t) is supported on multiples of t.
 
-*Needs:* Mathlib `Nat.Partition.genFun`; §3.5.
+*Needs:* Mathlib `Nat.Partition.genFun`; §3.5; TauCetiRoadmap.ClassicalArithmeticCompletion §2.10.
 
 **Checks.**
 
 - decimation monomial: U₂(1+X+2X²)=1+2X.
 - decimation identity: U₁=id and E_(1,0)=id.
 - `decimationNotMultiplicative`: Over ℤ, U₂(X)=0 but U₂(X²)=X≠0, so U₂ is not a ring homomorphism.
+- zero-index extraction: Over ℤ, coefficient 1 of U₀(1) is 1, whereas cartier 0 0(ι1)=0 by its stipulated value. The Cartier comparison and pullout formula retain t>0.
+- Cartier shift boundary: For t=2,a=1, E_(2,1)(X)=1 and cartier 2 1(ιX)=1. For a=t and f=1, the Laurent output is X⁻¹ whereas E_(t,t)(1)=0; the comparison must retain a<t.
 
 ### 4.8 alternating eta decimation
 
@@ -599,7 +608,11 @@ For the proof, apply the pullout identity from 4.7 and ΠP=1, alternating the tw
 
 ### 4.8a integral eta-decimation modules
 
+Prove `etaDecimation_modularEquation_five` and `etaDecimation_modularEquation_seven`. For τ∈ℍ and ℓ=5 or 7 set X=η(τ)/η(τ/ℓ) and Y=η(ℓτ)/η(τ). Every denominator is nonzero by `ModularForm.eta_ne_zero`. For ℓ=5 prove X⁵−25Y⁵X⁴−25Y⁴X³−15Y³X²−5Y²X−Y=0. For ℓ=7 prove X⁷−(343Y⁷+49Y³)X⁶−(343Y⁶+35Y²)X⁵−(147Y⁵+7Y)X⁴−49Y⁴X³−21Y³X²−7Y²X−Y=0. Prove the identities from the theta-product identities and finite product calculus before taking their Newton sums (Watson1938 §2, pp. 102–103, and (3.2), p. 105, Watson1938 line 417; §4, pp. 111–117, and (5.2), p. 118, Watson1938 line 1127).
+
 Prove integral eta-decimation modules with the following hypotheses. Construct the following integral modules with finite supports, independently of partition divisibility. For ℓ=5,7 use x=e(τ), B=xP(x²⁴;x²⁴)=η(24τ), C=x^ℓP(x^(24ℓ);x^(24ℓ))=η(24ℓτ), b_j=Cʲ/B^(j+1), and Ω_ℓ(Σ a_nxⁿ)=Σ a_(ℓn)xⁿ on Laurent series bounded below. Put O₅=span_ℤ{5^(5n)b_(12n+5),5^(5n+2)b_(12n+11)} and E₅=span_ℤ{5^(5n)b_(12n+6),5^(5n+3)b_(12n+12)} for n≥0. Prove Ω₅O₅⊆5E₅, Ω₅E₅⊆5O₅ and Ω₅(B⁻¹)=5b₅. Put E₇=span_ℤ{7^(7n)b_(16n+4),7^(7n+2)b_(16n+8),7^(7n+3)b_(16n+12),7^(7n+5)b_(16n+16)} and O₇=span_ℤ{7^(7n)b_(16n+3),7^(7n+2)b_(16n+7),7^(7n+4)b_(16n+11),7^(7n+6)b_(16n+15)}. Prove Ω₇E₇⊆O₇, Ω₇O₇⊆7E₇, Ω₇(B⁻¹)=7b₃+49b₇ and Ω₇²(B⁻¹)∈49E₇. The first seven-step is separate: Ω₇(B⁻¹)/7 need not lie in O₇. Transport these estimates to §4.8 by L_r(x²⁴)=CΩ_ℓʳ(B⁻¹) for odd r and BΩ_ℓʳ(B⁻¹) for even r. All b_j used have integral Laurent expansions since the Euler tails are units; their eta weights and multipliers are retained. For ℓ=11 use the modular-function basis below, rather than an eta-power basis on the genus-one curve. (Watson1938, §3 (3.2), (3.21)–(3.23), (3.41)–(3.44), pp. 105–110, lines 409–698; §5 (5.2), (5.21)–(5.23), (5.41)–(5.42), pp. 118–122, lines 1081–1390; Atkin1967 Lemmas 3–8, 11–14 and Appendix A, lines 95–121, 232–247, 414–484, 514–565.)
+
+Prove `etaDecimationOmega_eq_cartier`: after coefficient embedding ℤ⸨x⸩→ℚ⸨x⸩, Ω_ℓ agrees with `LaurentSeries.cartier ℓ 0` for every ℓ>0. Integrality is a property of the displayed eta modules and their coefficient embeddings; the rational Cartier comparison transports the field extraction laws (ClassicalArithmeticCompletion §2.10, `coeff_cartier`).
 
 For the level-11 module, let G₂,G₃ be functions on Γ₀(11), holomorphic on ℍ, with only a pole at infinity, vanishing at cusp 0, and principal parts q⁻²+2q⁻¹ and q⁻³−3q⁻²−5q⁻¹ respectively. Existence and uniqueness are part of `etaDecimationModules_basis`. Set G₄=G₂²−11G₃, G₅=(η(τ)/η(11τ))¹², G₆=G₂G₄, and G_(n+5)=G_nG₅ for n≥2. For n=5a+r, r=2,3,4,5,6, put θ(n)=6a+(2,3,4,6,6)_r and g_n=11^(−θ(n))G_n(−1/(11τ)). Set ξ(2)=0, ξ(3)=1 and ξ(5a+r)=5a+(1,3,3,4,5)_r for r=4,5,6,7,8; set ε(2)=0, ε(3)=1 and ε(n)=ξ(n)+1 for n≥4. Define X₁₁=span_ℤ{11^ξ(n)g_n:n≥2}, Y₁₁=span_ℤ{11^ε(n)g_n:n≥2}. Prove integral Fourier embeddings, U₁₁X₁₁⊆11Y₁₁, U₁₁(φ₁₁Y₁₁)⊆11X₁₁ and U₁₁φ₁₁∈11X₁₁. These are Atkin1967 Lemmas 3, 7, 13 and the base step at lines 481–484; Lemmas 8, 14 retain the unit leading-coordinate refinement. The basis has distinct orders at infinity 5a+(1,2,3,5,4)_r for r=2,3,4,5,6, so its finite expansions are unique.
 
@@ -607,12 +620,15 @@ The source witness is Watson1938 line 409.
 
 The public laws are `etaDecimationModules_basis`: The displayed weighted spans have injective integral Fourier embeddings; `etaDecimationModules_stable`: The displayed inclusions hold on every basis generator, with the separate seven-base steps; `etaDecimationModules_transport`: The displayed parity transport identifies Ω with the alternating U and U∘(φ·) recurrence.
 
-For the proof, derive the Newton-sum kernels from Watson’s degree-five and degree-seven modular equations and apply their coefficient valuation bounds to the displayed weighted spans; handle the first two seven-steps separately. For 11 use the genus-one basis, its cusp principal parts and Atkin’s coefficient bounds, including the exceptional low indices. Multiply by the parity Euler unit only after the estimates.
+For the proof, use `etaDecimation_modularEquation_five` and `etaDecimation_modularEquation_seven` at 24τ and the translated ℓth roots to derive the Newton-sum kernels. Their explicit polynomial coefficients give the five- and seven-adic valuation bounds by induction in the Newton recurrence; apply these bounds to every displayed weighted-span generator to prove `etaDecimationModules_stable`. Handle the first two seven-steps separately. For 11 use the genus-one basis, its cusp principal parts and Atkin’s coefficient bounds, including the exceptional low indices. Multiply by the parity Euler unit only after the estimates.
 
-*Needs:* §4.7; §4.8; §1.4.
+*Needs:* §4.7; §4.8; §1.4; §1.6; TauCetiRoadmap.ClassicalArithmeticCompletion §§2.10, 4.40, 4.61; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3; `etaDecimation_modularEquation_five`; `etaDecimation_modularEquation_seven` precede `etaDecimationModules_basis` and `etaDecimationModules_stable`.
 
 **Checks.**
 
+- modular equation cusp: With t=e(τ/ℓ), X=t^((ℓ−1)/24)(1+t+terms of degree ≥2) and Y=t^(ℓ(ℓ−1)/24)(1+terms of degree ≥ℓ). Thus X^ℓ and Y have the same leading coefficient 1; using η(ℓτ) in X’s denominator reverses the order and fails.
+- modular equation five: X⁵−Y begins 5t^(11/6), canceled by 5Y²X; changing its coefficient or sign fails at the first nonconstant term.
+- modular equation seven: X⁷−Y begins 7t^(11/4), canceled by 7YX⁴. Omitting the lower-degree 7Y part of the X⁴ coefficient fails before the 147Y⁵ part contributes.
 - eta module seven first: Ω₇(B⁻¹)=7b₃+49b₇; dividing by 7 leaves coefficient 7 of b₇, whereas O₇ requires 49.
 - eta module seven sharp: At r=3 the gain remains 49: p(243)≡245 mod 343, so a gain of 7 at every step is false.
 - eta module eleven base: L₁ begins 11q because p(6)=11; the first normalized module element is integral and nonzero.
@@ -638,7 +654,7 @@ At size 4 both rank and crank give one partition in each class modulo 5. At size
 
 ### Dependencies
 
-Mathlib `Nat.Partition.genFun`; Tau Ceti `TauCeti.conjugate_conjugate`; §3.5; §1.6; §2.4; §4.4a; §1.4; Mathlib `ModularForm.eta`; §4.8a; §4.7; §4.8; TauCetiRoadmap.ClassicalArithmeticCompletion §§4.40, 4.61.
+Mathlib `Nat.Partition.genFun`; Tau Ceti `TauCeti.conjugate_conjugate`; §3.5; §1.6; §2.4; §4.4a; §1.4; Mathlib `ModularForm.eta`; §4.8a; §4.7; §4.8; TauCetiRoadmap.ClassicalArithmeticCompletion §§2.10, 4.40, 4.61; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3.
 
 ## Layer 5: theta normalizations, error kernels and completed Lerch sums
 
@@ -660,13 +676,13 @@ For the proof, reindex the native theta and differentiate its locally uniform se
 
 ### 5.2 the eta multiplier
 
-Define the eta multiplier (`etaMultiplier`) as follows. Using native eta define ν_eta(γ)=η(γτ)/(√(cτ+d)η(τ)) for γ=[[a,b],[c,d]]∈SL₂(ℤ). Prove independence of τ, η(τ+1)=exp(πi/12)η(τ), and η(−1/τ)=√(−iτ)η(τ). The principal square root is used, with the metaplectic cocycle retained: ν_eta is a multiplier system, not an ordinary character of SL₂(ℤ). Its lift is a character on the square-root cover. (Zwegers2002, Theorem 1.11(2), pp. 15–17, lines 734–805; Zwegers2002 line 734.)
+Define the eta multiplier (`etaMultiplier`) as follows. Using native eta define ν_eta(γ)=η(γτ)/(√(cτ+d)η(τ)) for γ=[[a,b],[c,d]]∈SL₂(ℤ). Transport the eta transformation from ModularForms, Worked examples, target η²⁴=Δ, to this principal-root convention and prove independence of τ. Its S and T specializations are η(τ+1)=exp(πi/12)η(τ) and η(−1/τ)=√(−iτ)η(τ). Retain the metaplectic cocycle: ν_eta is a multiplier system, not an ordinary character of SL₂(ℤ). Its lift is a character on the square-root cover. (Zwegers2002, Theorem 1.11(2), pp. 15–17, lines 734–805; Zwegers2002 line 734.)
 
 The public laws are `etaMultiplier_eval`: η(γτ)=ν_eta(γ)√(cτ+d)η(τ); `etaMultiplier_cocycle`: The multiplier product includes the ratio of the three square roots; `etaMultiplier_lift`: On Mp₂(ℤ), the factor η(γτ)/(φ(τ)η(τ)) is a character.
 
-For the proof, use ϑ′(0)=−2πη³ and the theta S-law to obtain the cube of the eta S-law. Positivity of the defining eta product at τ=i fixes the cube root; connectedness fixes it on ℍ. T follows directly from the product. Compose S and T using the imported cover and its generator relations.
+For the proof, specialize the supplied eta transformation to S and T with the chosen roots. Eta nonvanishing makes the quotient well-defined; the root-preserving cover comparison identifies its cocycle. Compose the supplied transformation laws and use the cover multiplication to prove the lifted character law.
 
-*Needs:* §5.1; Mathlib `ModularForm.eta_ne_zero`; `gap:classical-metaplectic-model`.
+*Needs:* TauCetiRoadmap.ModularForms, Worked examples, target η²⁴=Δ; Mathlib `ModularForm.eta_ne_zero`; `gap:classical-metaplectic-model`.
 
 **Checks.**
 
@@ -676,19 +692,26 @@ For the proof, use ϑ′(0)=−2πη³ and the theta S-law to obtain the cube of
 
 ### 5.3 the error-function smoothing kernel
 
-Define the error-function smoothing kernel (`errorFunctionKernel`) as follows. Define E(w)=2∫₀ʷexp(−πt²)dt by its entire primitive. For real x≥0 define β(x)=∫_x^∞t^(−1/2)exp(−πt)dt. Prove E is odd, E′=2exp(−πw²), β(0)=1, and E(x)=sgn(x)(1−β(x²)) for real x, with sgn(0)=0. Supply Gaussian upper bounds for β and for every derivative used in the completion series. (Zwegers2002, Definition 1.6 and Lemma 1.7, p. 11, lines 485–505; Lemma 1.8 proof, lines 532–567; Zwegers2002 line 485.)
+Define the complex error-function smoothing kernel (`errorFunctionKernel`) as follows. Define E(w)=2∫₀ʷexp(−πt²)dt by its entire primitive. For real t≥0 define β(t)=∫_t^∞u^(−1/2)exp(−πu)du. Prove `errorFunction_eq_erf`: for real x, E(x)=`TauCeti.Real.erf`(√π·x), and `errorFunction_beta_eq_erfc`: β(t)=`TauCeti.Real.erfc`(√(πt)), including t=0. Transport the real zero, oddness, derivative and range laws through these adapters. Prove the complex extension is odd, E′(w)=2exp(−πw²), and E(x)=sgn(x)(1−β(x²)) for real x, with sgn(0)=0. Supply the additional Gaussian upper bounds for β and every derivative used in the completion series. (Zwegers2002, Definition 1.6 and Lemma 1.7, p. 11, lines 485–505; Lemma 1.8 proof, lines 532–567; Zwegers2002 line 485.)
 
 The public laws are `errorFunction_zero`: E(0)=0 and β(0)=1; `errorFunction_deriv`: E′(w)=2exp(−πw²); `errorFunction_odd`: E(−w)=−E(w); `errorFunction_tail_bound`: For x>0, 0≤β(x)≤exp(−πx)/(π√x).
 
-For the proof, take the entire primitive of a Gaussian; on the real line substitute t=u² and use its imported Gaussian integral. For x>0 bound t^(−1/2) by x^(−1/2); differentiating the Gaussian gives polynomial factors with Gaussian decay.
+For the proof, take the entire primitive of a Gaussian and compare its real restriction by the substitution u=√π·x. Use the pinned erf derivative and value at zero for uniqueness on ℝ; its oddness, positivity and strict upper bound transport directly. Substituting u=v² in the tail integral identifies β with erfc, with the Gaussian half-integral handling t=0. For t>0 bound u^(−1/2) by t^(−1/2); differentiating the Gaussian gives polynomial factors with Gaussian decay.
 
-*Needs:* TauCetiRoadmap.ThetaSeries Layer 1; TauCetiRoadmap.ContourIntegration Layer 3.
+The holomorphic-weight differential expressions are also defined here, before their use in completion formulas: `wirtingerBar` is ∂barτF=(∂xF+i∂yF)/2 and `maassXi` is ξ_kF=2iy^k conj(∂barτF), for real k and differentiable complex functions on ℍ. The real Fréchet derivative in directions 1 and i gives the representative definitions on ℂ; identities needing y>0 retain that hypothesis. The modular covariance, Laplacian and harmonic-space results are in §8.2 (BruinierFunke2003, (3.1), (3.3), Proposition 3.2, BruinierFunke2003 line 375).
+
+*Needs:* Tau Ceti `TauCeti.Real.erf`, `TauCeti.Real.erfc`, `TauCeti.Real.erf_zero`, `TauCeti.Real.erfc_zero`, `TauCeti.Real.erf_neg`, `TauCeti.Real.hasDerivAt_erf`, `TauCeti.Real.erf_pos`, `TauCeti.Real.erf_lt_one`; TauCetiRoadmap.ThetaSeries Layer 1; TauCetiRoadmap.ContourIntegration Layer 3.
 
 **Checks.**
 
 - error at zero: E(0)=0 and β(0)=1; assigning β(0)=0 fails.
 - error derivative: E′(0)=2; the probability-normalized erf has a different derivative.
 - error sign: For x>0, 0<E(x)<1 and E(−x)<0; a sign kernel alone is not the smoothing.
+- Wirtinger constant: ∂barτc=0; retaining the value c instead of its derivative fails for c=1.
+- Wirtinger coordinate: ∂barτy=i/2, whereas ∂barττ=0; changing +i to −i reverses the coordinate value.
+- `xiConstant`: ξ_k(c)=0 for every constant c and every real k, while ξ₀(y)=1.
+- xi weight one: On y>0, ξ₁(log y)=1 while ξ₁(1)=0; substituting y⁰ for the logarithmic correction would give zero shadow.
+- xi imaginary scalar: ξ₀(i y)=−i; a complex-linear xi fails.
 
 ### 5.4 the Mordell integral
 
@@ -761,7 +784,7 @@ The two half-integer terms of ϑ are i·exp(πiτ/4)(exp(πiz)−exp(−πiz)). 
 
 ### Dependencies
 
-Mathlib `jacobiTheta₂`; Mathlib `hasSum_jacobiTheta₂_term`; Mathlib `jacobiTheta₂_functional_equation`; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib `ModularForm.eta_ne_zero`; `gap:classical-metaplectic-model`; TauCetiRoadmap.ThetaSeries Layer 1; TauCetiRoadmap.ContourIntegration Layer 3; TauCetiRoadmap.ContourIntegration Layers 2–3.
+Mathlib `jacobiTheta₂`; Mathlib `hasSum_jacobiTheta₂_term`; Mathlib `jacobiTheta₂_functional_equation`; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib `ModularForm.eta_ne_zero`; `gap:classical-metaplectic-model`; TauCetiRoadmap.ThetaSeries Layer 1; TauCetiRoadmap.ContourIntegration Layer 3; TauCetiRoadmap.ContourIntegration Layers 2–3; Tau Ceti `TauCeti.Real.erf`, `TauCeti.Real.erfc`; TauCetiRoadmap.ModularForms, Worked examples, target η²⁴=Δ.
 
 ## Layer 6: unary theta periods and torsion specialization
 
@@ -771,7 +794,7 @@ Define unary theta characteristics and corrections (`unaryThetaCharacteristic`) 
 
 The public laws are `unaryTheta_shifts`: g(a+1,b)=g(a,b), g(a,b+1)=e(a)g(a,b), g(−a,−b)=−g(a,b); `unaryTheta_ST`: g(a,b;τ+1)=exp(−πia(a+1))g(a,a+b+1/2;τ); g(a,b;−1/τ)=i e(ab)(−iτ)^(3/2)g(b,−a;τ); `unaryCorrection_dbar`: ∂barτ C(a,b;τ)=−i g(a,−b;−conj τ)/√(2y); `unaryCorrection_xi`: ξ_(1/2) C(a,b)=−√2 g(a,b), and ξ_(1/2)[C(a,b;dτ)]=−√(2d)g(a,b;dτ) for real d>0; `unaryCorrection_period`: For 0<a<1, C(a,b)=−i∫_(−conj τ)^(i∞)g(a,−b;z)/√(−i(z+τ))dz.
 
-For the proof, reindex and use the Gaussian Poisson transform for S. Polynomial Gaussian majorants justify derivatives and cusp decay. Differentiate β termwise to obtain ∂barτ and the stated xi normalization; the period is the Gaussian substitution from Theorem 1.16. The xi formulas denote the explicit differential expression specified in §8.2, and here are proved as identities of derivatives without requiring that layer.
+For the proof, reindex and use the Gaussian Poisson transform for S. Polynomial Gaussian majorants justify derivatives and cusp decay. Differentiate β termwise to obtain ∂barτ and the xi normalization of §5.3; the period is the Gaussian substitution from Theorem 1.16.
 
 *Needs:* §5.1; §5.3; `gap:classical-metaplectic-model`; TauCetiRoadmap.ThetaSeries Layer 1.
 
@@ -804,7 +827,7 @@ The public laws are `torsionLerchCompletion_stabilizer`: The displayed explicit 
 
 For the proof, apply the modular law with u′,v′ given by right multiplication of characteristics by g, followed by the joint elliptic law. Expand the exponent; its τ derivative is zero using adγ−bc=1. The orbit is finite because all denominators divide a fixed integer; its principal congruence kernel has finite index. Use the shifted period formula and Gaussian estimates at each cusp. Normal convergence permits removable limits only after the Laurent principal parts cancel.
 
-*Needs:* §5.7; §6.1; §6.2; `gap:classical-metaplectic-model`.
+*Needs:* §5.3; §5.7; §6.1; §6.2; `gap:classical-metaplectic-model`.
 
 **Checks.**
 
@@ -932,26 +955,21 @@ For the proof, use the imported cover and native representations; define subspac
 
 ### 8.2 holomorphic-weight differential operators
 
-Define holomorphic-weight differential operators (`holomorphicWeightOperators`) as follows. For C² functions on ℍ put ∂τ=(∂x−i∂y)/2, ∂barτ=(∂x+i∂y)/2, R_k=2i∂τ+k/y, L_k=−2iy²∂barτ, and Δ_k=−y²(∂x²+∂y²)+iky(∂x+i∂y). Put ξ_k F=2iy^k conj(∂barτ F). Prove covariance R:A_k→A_(k+2), L:A_k→A_(k−2), ξ:A_k(ρ)→A_(2−k)(barρ), and Δ_k=−R_(k−2)L_k=−L_(k+2)R_k−k=−ξ_(2−k)ξ_k. In the unitary normalization Δ_unit,k=y^(k/2)Δ_k y^(−k/2)+(k/2)(1−k/2). (BruinierFunke2003, (3.1), (3.3), Proposition 3.2, lines 375–480; MetaplecticAutomorphicForms §7.49 supplies the weight-1/2 normalization comparison; BruinierFunke2003 line 375.)
+Define holomorphic-weight differential operators (`holomorphicWeightOperators`) as follows. For C² functions on ℍ put ∂τ=(∂x−i∂y)/2, R_k=2i∂τ+k/y, L_k=−2iy²∂barτ, and Δ_k=−y²(∂x²+∂y²)+iky(∂x+i∂y), using ∂barτ and ξ_k from §5.3. Prove covariance R:A_k→A_(k+2), L:A_k→A_(k−2), ξ:A_k(ρ)→A_(2−k)(barρ), and Δ_k=−R_(k−2)L_k=−L_(k+2)R_k−k=−ξ_(2−k)ξ_k. In the unitary normalization Δ_unit,k=y^(k/2)Δ_k y^(−k/2)+(k/2)(1−k/2). (BruinierFunke2003, (3.1), (3.3), Proposition 3.2, lines 375–480; MetaplecticAutomorphicForms §7.49 supplies the weight-1/2 normalization comparison; BruinierFunke2003 line 375.)
 
 The public laws are `holomorphicWeightOperators_covariant`: The displayed weight shifts and conjugate-representation law; `holomorphicWeightOperators_factor`: The three displayed factorizations of Δ; `xi_antilinear`: ξ_k(cF)=conj(c)ξ_k(F); `holomorphicWeightOperators_zeroMode`: Δ_k(yˢ)=−s(s+k−1)yˢ; `maassLaplacian_log`: at k=1, Δ₁(log y)=0.
 
-The representative definitions `wirtingerBar`, `maassXi` and `maassLaplacian` use the real Fréchet derivative on ℂ in directions 1 and i. Their identities concern the open set Im(τ)>0. The representative `maassLaplacian_eq_neg_xi_xi` states the xi factorization for C² functions on this open set; the raising/lowering factorizations retain their separate displayed targets. `wirtingerBar_holomorphic` states that complex differentiability implies ∂barτF=0. The operator identities allow every real weight k; the modular carriers specialize this to half-integral weights.
+The representative `maassLaplacian` uses the same real Fréchet derivatives as §5.3’s `wirtingerBar` and `maassXi`. Its identities concern the open set Im(τ)>0. The representative `maassLaplacian_eq_neg_xi_xi` states the xi factorization for C² functions on this open set; the raising/lowering factorizations retain their separate displayed targets. `wirtingerBar_holomorphic` states that complex differentiability implies ∂barτF=0. The operator identities allow every real weight k; the modular carriers specialize this to half-integral weights.
 
 For the proof, expand the real partial derivatives and use the chain rule for Möbius maps and their square-root factors. Mixed derivatives commute by C². The displayed y-power computation fixes all signs. Unitarity identifies conjugation with the dual Weil module, rather than making that identification for arbitrary ρ.
 
-*Needs:* §8.1; TauCetiRoadmap.MetaplecticAutomorphicForms §7.49.
+*Needs:* §5.3; §8.1; TauCetiRoadmap.MetaplecticAutomorphicForms §7.49.
 
 **Checks.**
 
-- `xiConstant`: ξ_k(1)=0, and ξ₀(y)=1.
-- xi weight one: On y>0, ξ₁(log y)=1 while ξ₁(1)=0; substituting y⁰ for the logarithmic correction would give zero shadow.
-- xi imaginary scalar: ξ₀(i y)=−i; a complex-linear xi fails.
 - `laplacianZeroModes`: Δ₀(y)=0, while Δ₀(y²)=−2y²; the first-order term depends on k.
 - unitary half weight: At k=1/2, the additive conjugation constant is 3/16.
 
-- Wirtinger constant: ∂barτc=0; retaining the value c instead of its derivative fails for c=1.
-- Wirtinger coordinate: ∂barτy=i/2, whereas ∂barττ=0 by `wirtingerBar_holomorphic`; changing +i to −i reverses the coordinate value.
 - Laplacian constant: Δ_k(c)=0 for every real k, including k=0 and k=1; a zeroth-order term would fail at c=1.
 
 ### 8.3 harmonic weak Maass spaces
@@ -1178,15 +1196,36 @@ For the proof, apply product bounds and the quadratic exponent for convergence. 
 - `thirdRankSigns`: f begins 1+q−2q²+3q³; these are the signed rank counts.
 - third omega: ω begins 1+2q+3q²+4q³; squaring the product is essential.
 
+### 10.1a bilateral bridges for rank, f and omega
+
+Prove the bilateral rank identity with the following hypotheses. For 0<|q|<1 and z≠0 with 1−zqⁿ≠0 for every n∈ℤ, R_rank(z;q)=(1−z)/P(q;q)·Σ_(n∈ℤ)(−1)^n q^(n(3n+1)/2)/(1−zqⁿ). At z=1 the right side has a removable singularity and equals Π(q). Here R_rank is the meromorphic Durfee-square expression of §4.3; equality with the series of rank counts is used in its absolute-convergence annulus, including |z|=1. The bilateral sum is absolutely convergent. The equality holds formally coefficientwise in the domains where each geometric expansion is locally finite, rather than as an unrestricted formal Laurent series in q. (Zagier2009, Proof of Theorem 7.1, p. 986–17, lines 937–945; Zagier2009 line 937.)
+
+The public laws are `rankSeries_bilateral_hasSum`: The displayed convergent equality; `rankSeries_at_one`: The removable value is 1/P(q;q).
+
+For the proof, apply the binomial theorem to the Durfee-square formula and regroup using the imported single-denominator Appell–Lerch identity; absolute summability justifies the bilateral expression. Isolate n=0 to prove the removable value at z=1.
+
+Prove `thirdOrderOmega_bilateral`: for 0<|q|<1,
+P(q²;q²)ω(q)=Σ_(n∈ℤ)(−1)^n q^(3n(n+1))/(1−q^(2n+1)), absolutely. This bridge is the author’s q-binomial derivation from the unilateral definition (BringmannOno2006, (2.1), p. 5, BringmannOno2006 line 270; q-binomial input Gasper1995, (1.2.8), Gasper1995 line 135). The source locator specifies ω’s definition, not a bilateral theorem. Expand the reciprocal odd products by §2.4, telescope the finite q-Pascal kernels of §2.7, and then pass to the limit using the quadratic majorants. Pair n with −n−1 to obtain the nonnegative sum Σ_(n≥0)(−1)^n q^(3n(n+1))(1+q^(2n+1))/(1−q^(2n+1)). The displayed paired form extends to q=0 with value 1. No odd exponent 2n+1 is zero, and |q|<1 excludes every denominator zero on the punctured disc.
+
+The representative `rankSeries_bilateral_hasSum` writes the Durfee-square expression using the finite q-products and states the equivalent HasSum value P(q;q)R_rank(z;q)/(1−z); `thirdOrderOmega_bilateral` writes ω directly as its unilateral sum. Neither signature assigns the bilateral summands at q=0.
+
+*Needs:* §4.3; §10.1; §2.4; §2.7; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3.
+
+**Checks.**
+
+- rank bilateral constant: As q→0 the n=0 term contributes (1−z)/(1−z)=1 and the other terms tend to zero; the value at q=0 is defined by analytic continuation, with the z=1 limit separately justified.
+- rank bilateral minus one: z=−1 gives P(q;q)f(q)=2Σ(−1)^n q^(n(3n+1)/2)/(1+qⁿ).
+- omega pairing: The n=0,−1 pair is (1+q)/(1−q); multiplying ω by P(q²;q²) begins 1+2q+2q²+2q³. Omitting negative indices would give 1/(1−q) and coefficient 1 at q.
+
 ### 10.2 the third-order completed vector
 
 Prove the third-order completed vector with the following hypotheses. Put g₀(τ)=Σ_(n∈ℤ)(−1)^n(n+1/3)exp(3πi(n+1/3)²τ), g₁(τ)=−Σ_(n∈ℤ)(n+1/6)exp(3πi(n+1/6)²τ), g₂(τ)=Σ_(n∈ℤ)(n+1/3)exp(3πi(n+1/3)²τ). Define G₃=2i√3∫_(−conj τ)^(i∞)(g₁,g₀,−g₂)(z)/√(−i(z+τ))dz and H₃=F₃−G₃. Then H₃(τ+1)=T₃H₃(τ), H₃(−1/τ)=√(−iτ)S₃H₃(τ), with T₃=[[ζ₂₄⁻¹,0,0],[0,0,ζ₃],[0,ζ₃,0]] and S₃=[[0,1,0],[1,0,0],[0,0,−1]]. It is harmonic of weight 1/2, has all-cusp exponential growth, and ξH₃=−2√6·conj((g₁,g₀,−g₂)(−conj τ)). G₃ is bounded on vertical approach to every rational cusp. (BringmannOno2006, (2.3)–(2.5), Theorem 2.1, pp. 5–6, lines 279–337; Zwegers2002 §4.5 lines 5104–5121; BringmannOno2006 line 279.)
 
 The public laws are `thirdOrder_T`: The displayed T₃ matrix; `thirdOrder_S`: The displayed S₃ matrix; `thirdOrder_xi`: The displayed exact shadow vector; `thirdOrder_cusps`: The correction is bounded on every vertical rational-cusp approach; `thirdOrder_relatedCompletions`: Put Q₃=(η(τ)/η(2τ))jacobiTheta₂(1/2,2τ), the weakly holomorphic theta quotient with its inherited rational-characteristic multiplier. The completions of q^(−1/24)φ and q^(−1/24)ψ are (H₃,₁+Q₃)/2 and (Q₃−H₃,₁)/4; their shadows are respectively 1/2 and −1/4 of ξH₃,₁. Their T and S laws are the direct-sum laws of H₃ and this explicit theta quotient, followed by these two projections..
 
-For the proof, express the functions through 5.6 using the Watson bilateral identity, then apply μHat S and T and rewrite the correction with 6.1. Differentiate G₃’s lower endpoint for its shadow and apply the factorization of Δ. The unary cusp-period estimates give bounded G₃ at rational cusps; modularity and the original q-expansion give the required growth of H₃. The coefficient is pinned by the explicit period integral and Theorem 2.1 in the author version of BringmannOno2006.
+For the proof, use `rankSeries_bilateral_hasSum` at z=−1 and `thirdOrderOmega_bilateral` from §10.1a to express all three components through §5.6, then apply μHat S and T and rewrite the correction with 6.1. Differentiate G₃’s lower endpoint for its shadow and apply the factorization of Δ. The unary cusp-period estimates give bounded G₃ at rational cusps; modularity and the original q-expansion give the required growth of H₃. The coefficient is pinned by the explicit period integral and Theorem 2.1 in the author version of BringmannOno2006.
 
-*Needs:* §10.1; §5.7; §6.1; §6.2; §8.2; §8.7; Mathlib `jacobiTheta₂`; §5.2; TauCetiRoadmap.ThetaSeries Layers 2–3.
+*Needs:* §10.1; §10.1a (`rankSeries_bilateral_hasSum`, `thirdOrderOmega_bilateral`); §5.7; §6.1; §6.2; §8.2; §8.7; Mathlib `jacobiTheta₂`; §5.2; TauCetiRoadmap.ThetaSeries Layers 2–3.
 
 **Checks.**
 
@@ -1312,24 +1351,9 @@ The third-order T-matrix exchanges its last two entries with factor ζ₃, rathe
 
 ### Dependencies
 
-§2.1; §1.4; §1.6; §4.3; §5.7; §6.1; §6.2; §8.2; §8.7; Mathlib `jacobiTheta₂`; §5.2; TauCetiRoadmap.ThetaSeries Layers 2–3; §1.1; §2.4; §7.2; §7.5; TauCetiRoadmap.ClassicalArithmeticCompletion §§4.40, 4.61; §10.3a; §2.7; §7.4; §2.6.
+§2.1; §1.4; §1.6; §4.3; §5.7; §6.1; §6.2; §8.2; §8.7; Mathlib `jacobiTheta₂`; §5.2; TauCetiRoadmap.ThetaSeries Layers 2–3; §1.1; §2.4; §7.2; §7.5; TauCetiRoadmap.ClassicalArithmeticCompletion §§4.40, 4.61; §10.3a; §2.7; §7.4; §2.6; §10.1a; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3.
 
 ## Layer 11: rank specializations at every root of unity
-
-### 11.1 the bilateral rank identity
-
-Prove the bilateral rank identity with the following hypotheses. For |q|<1 and z≠0 off the poles of the rank series, R_rank(z;q)=(1−z)/P(q;q)·Σ_(n∈ℤ)(−1)^n q^(n(3n+1)/2)/(1−zqⁿ). At z=1 the right side has a removable singularity and equals Π(q). The equality holds formally coefficientwise in the domains where each geometric expansion is locally finite, rather than as an unrestricted formal Laurent series in q. (Zagier2009, Proof of Theorem 7.1, p. 986–17, lines 937–945; Zagier2009 line 937.)
-
-The public laws are `rankSeries_bilateral_hasSum`: The displayed convergent equality; `rankSeries_at_one`: The removable value is 1/P(q;q).
-
-For the proof, apply the binomial theorem to the Durfee-square formula and regroup using the imported single-denominator Appell–Lerch identity; absolute summability justifies the bilateral expression. Isolate n=0 to prove the removable value at z=1.
-
-*Needs:* §4.3; §2.4; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3.
-
-**Checks.**
-
-- rank bilateral constant: At q=0 the n=0 term contributes (1−z)/(1−z)=1, with the z=1 limit separately justified.
-- rank bilateral minus one: z=−1 gives P(q;q)f(q)=2Σ(−1)^n q^(n(3n+1)/2)/(1+qⁿ).
 
 ### 11.2 completion at nontrivial roots of unity
 
@@ -1337,9 +1361,9 @@ Construct completion at nontrivial roots of unity (`rankRootCompletion`) as foll
 
 The public laws are `rankRootCompletion_lerch`: The displayed normalized Lerch expression, derived by splitting 1/(1−x) into (1+x+x²)/(1−x³); `rankRootCompletion_shadow`: ξ_(1/2)Fα=D/(2√6)·Σ_(n∈ℤ)χ₁₂(n)n exp(πinα)q^(n²/24), where χ₁₂ is the primitive quadratic character of conductor 12; `rankRootCompletion_allOrders`: Pole cancellation extends the identity to nonintegral α with 3α integral; `rankRootCompletion_level`: For every t>1 there exist a congruence subgroup Γ_t of finite index and a common weight-1/2 multiplier χ_t such that F_(j/t)(γτ)=χ_t(γ)√(cτ+d)F_(j/t)(τ) for every 1≤j<t and γ∈Γ_t, with the fixed square-root convention. The same subgroup works after reducing j/t to lowest terms and includes the removable order-three specializations. Induction exports the finite vector representation; no numerical level is prescribed..
 
-For the proof, split the denominator in 11.1 by 1/(1−x)=(1+x+x²)/(1−x³). The two noncentral terms give the μ functions with opposite theta signs; the central term uses the imported Kronecker identity. The native theta product gives ϑ_Z(τ;3τ)=−q^(−1/6)η(τ), fixing both signs and q^(−1/6). Replacing μ by μHat yields the stated correction. Express it as C(1/6,3α−1/2;3τ) and C(5/6,3α−1/2;3τ), differentiate using 6.1, and collect the two progressions to obtain χ₁₂ and the exact shadow. Apply the rational-characteristic law from 6.3, including the scaling τ↦3τ; Intersect the finitely many congruence stabilizers and the kernels of their finite rational-characteristic phase differences to obtain Γ_t and a common χ_t, including the central eta/theta quotient; use the full transformed Lerch expression of Zagier2009 Theorem 7.1, not only characteristic preservation. All-cusp growth follows from the transported expansions. The fractional prefactor and the opposite signs are determined by the bilateral identity and the ξ=−1 third-order witness.
+For the proof, split the denominator in §10.1a by 1/(1−x)=(1+x+x²)/(1−x³). The two noncentral terms give the μ functions with opposite theta signs; the central term uses the imported Kronecker identity. The native theta product gives ϑ_Z(τ;3τ)=−q^(−1/6)η(τ), fixing both signs and q^(−1/6). Replacing μ by μHat yields the stated correction. Express it as C(1/6,3α−1/2;3τ) and C(5/6,3α−1/2;3τ), differentiate using 6.1, and collect the two progressions to obtain χ₁₂ and the exact shadow. Apply the rational-characteristic law from 6.3, including the scaling τ↦3τ; Intersect the finitely many congruence stabilizers and the kernels of their finite rational-characteristic phase differences to obtain Γ_t and a common χ_t, including the central eta/theta quotient; use the full transformed Lerch expression of Zagier2009 Theorem 7.1, not only characteristic preservation. All-cusp growth follows from the transported expansions. The fractional prefactor and the opposite signs are determined by the bilateral identity and the ξ=−1 third-order witness.
 
-*Needs:* §11.1; §5.7; §6.3; §10.2; §8.7.
+*Needs:* §10.1a; §5.7; §6.3; §10.2; §8.7.
 
 **Checks.**
 
@@ -1371,7 +1395,7 @@ At ξ=−1 the rank completion is the first component of H₃, including its fac
 
 ### Dependencies
 
-§4.3; §2.4; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3; §5.7; §6.3; §10.2; §8.7; §4.4.
+§4.3; §2.4; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3; §5.7; §6.3; §10.2; §8.7; §4.4; §10.1a.
 
 ## Downstream consumers
 
@@ -1400,3 +1424,5 @@ Locators name the editions and versions listed in the roadmap’s sources manife
 - **AtkinSwinnertonDyer1954**: A. O. L. Atkin and P. Swinnerton-Dyer. *Some Properties of Partitions* (1954). pp. 84–106, complete rank dissections modulo 5 and 7. [DOI](https://doi.org/10.1112/plms/s3-4.1.84).
 
 - **KnoppMason2009**: Marvin Knopp and Geoffrey Mason. *Logarithmic vector-valued modular forms* (2009), arXiv v1 §2.2, Lemma 2.1, Theorem 2.2 and Lemma 2.3, pp. 4–6, KnoppMason2009 line 220 (and lines 188–241). [arXiv](https://arxiv.org/abs/0910.3976v1).
+
+- **Warnaar2001**: S. Ole Warnaar. *Partial-sum analogues of the Rogers–Ramanujan identities* (2001), arXiv v1, (1.3)–(1.4), pp. 1–2, and (1.6), p. 2; Warnaar2001 line 45 and Warnaar2001 line 92. [open-repository](https://arxiv.org/abs/math/0108193v1).
