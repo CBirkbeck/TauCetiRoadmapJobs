@@ -19,3 +19,15 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/183#issuecomment-6316507841"
+
+[[source]]
+id = "Tate-legal"
+authors = "John Tate"
+title = "Number theoretic background"
+year = 1979
+doi = "10.1090/pspum/033.2/546607"
+locator_scheme = "equation"
+locator = "(3.4.3)–(3.4.7), p.15"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/183#issuecomment-6317849326"
