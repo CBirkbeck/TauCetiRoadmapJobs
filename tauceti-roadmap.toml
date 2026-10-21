@@ -186,10 +186,11 @@ request_associations = ["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]
 open-repository = ["arxiv.org", ".arxiv.org", "hal.science", ".hal.science", ".archives-ouvertes.fr",
                    "numdam.org", ".numdam.org",
                    "gdz.sub.uni-goettingen.de", "eudml.org", ".eudml.org", "projecteuclid.org",
-                   "stacks.math.columbia.edu", "zbmath.org", ".zbmath.org"]
+                   "stacks.math.columbia.edu", "zbmath.org", ".zbmath.org",
+                   "mathnet.ru", ".mathnet.ru", "geodesic.mathdoc.fr"]
 publisher-open = ["doi.org"]   # subscription publishers are not open by default; add a host only when its content is open
 author-page = []
-institutional = []
+institutional = ["users.renyi.hu"]   # the Rényi Institute's archive of Erdős's papers
 
 [sandbox]
 # "off" (default): agents run directly on the host.
