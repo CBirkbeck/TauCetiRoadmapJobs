@@ -1,0 +1,433 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComputationalNumberTheory"
+
+[[source]]
+id = "Shoup"
+locator_scheme = "section"
+locator = "Version 2 (2008); Theorem 10.3, pp.309–312; Theorems 19.10, 19.14, pp.513–516; Exercise 20.2(a), p.524; §§20.3–20.5, pp.527–544; §21.2, Figure 21.1 and Lemmas 21.6–21.11, pp.549–558"
+url = "https://shoup.net/ntb/ntb-v2.pdf"
+fetched_from = "https://shoup.net/ntb/ntb-v2.pdf"
+fetched_at = "2026-10-21T17:26:40Z"
+sha256 = "8e1abc54f4510c3f274dfbed07ea602a6a439ee24b2c916e61abe829b402ec06"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["0.15 Rabin irreducibility certificate (`RabinCertificate`)", "0.16 Certified presentation of a finite field (`FiniteFieldPresentation`)", "0.17 Change of presentation with an explicit inverse (`presentationChange`)", "Layer CN.1: Primality and factorization certificates", "1.7 Strong Miller–Rabin liar (`StrongLiar`)", "1.8 Prime inputs pass every admissible base (`strongLiar_of_prime`)", "1.9 Miller–Rabin strong-liar bound (`strongLiar_card_le`)", "1.10 Error bound for independent Miller–Rabin rounds (`millerRabin_rounds_bound`)", "1.11 AKS order parameter (`aksParameter`)", "1.12 AKS polynomial congruences (`AKSIdentities`)", "1.13 AKS arithmetic predicate (`AKSAccepts`)", "1.14 AKS characterization of primes (`aks_correct`)", "1.22 Factorization certificate over a finite field (`FiniteFieldFactorCertificate`)", "1.23 Soundness of finite-field factorization certificates (`FiniteFieldFactorCertificate.sound`)", "1.24 Nonzero finite-field polynomials have factor presentations (`FiniteFieldFactorCertificate.complete`)", "1.25 Transport of certified finite-field factors (`transport_finite_factorization`)"]
+authors = "Victor Shoup"
+title = "A Computational Introduction to Number Theory and Algebra"
+year = 2008
+
+[[source]]
+id = "Stein"
+locator_scheme = "section"
+locator = "Author PDF; Algorithm 2.18, Lemma 2.20 and Remark 2.21, pp.19–21; Proposition 2.31, p.24; Theorem 9.18, pp.171–172"
+url = "https://wstein.org/books/modform/stein-modform.pdf"
+fetched_from = "https://wstein.org/books/modform/stein-modform.pdf"
+fetched_at = "2026-10-21T17:26:45Z"
+sha256 = "b50e81d48d2fb794948414fee625d1d3ca19c191a87430ca38c8713c8f466b75"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["Layer CN.3: Exact modular and elliptic arithmetic data", "3.1 Integral q-expansion lattice (`integralModularLattice`)", "3.2 Integral cusp-form lattice (`integralCuspLattice`)", "3.3 Integral Miller basis (`millerBasis`)", "3.4 Level-one congruence Sturm bound (`levelOne_congruence_sturm`)", "3.5 Exact equality of certified modular data (`modularDataEqual`)", "3.6 Level-one Hecke recurrence contract (`HasLevelOnePrimeRecurrence`)", "3.7 Integral Hecke matrix in the Miller basis (`integralHeckeMatrix`)"]
+authors = "William Stein"
+title = "Modular Forms: A Computational Approach"
+year = 2007
+
+[[source]]
+id = "Arb"
+authors = "Fredrik Johansson"
+title = "Arb: efficient arbitrary-precision midpoint-radius interval arithmetic"
+year = 2016
+arxiv = "1611.02831v1"
+locator_scheme = "section"
+locator = "arXiv:1611.02831v1; §2.3, pp.3–4; §§3.1–3.1.2, pp.4–6; §§5–6, pp.7–10"
+url = "https://arxiv.org/abs/1611.02831v1"
+fetched_from = "https://arxiv.org/pdf/1611.02831v1"
+fetched_at = "2026-10-21T17:26:49Z"
+sha256 = "44802d5cce02bf91a3d155870b8f315f2955866e283bfb48f6776a07f35f6ebf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["0.8 Isolated algebraic root certificate (`AlgebraicRootCertificate`)", "0.9 Exact rational root presentation (`rationalRootCertificate`)", "0.10 Addition of isolated algebraic numbers (`algebraic_add_certificate`)", "0.11 Multiplication of isolated algebraic numbers (`algebraic_mul_certificate`)", "0.12 Inversion of a nonzero algebraic number (`algebraic_inv_certificate`)", "0.13 Equality of isolated algebraic numbers (`algebraicEqual`)", "4.1 Rational interval multiplication (`intervalMul`)", "4.2 Enclosure under multiplication (`intervalMul_sound`)", "4.3 Partial interval reciprocal (`intervalInv`)", "4.4 Enclosure under reciprocal (`intervalInv_sound`)", "4.5 Outward dyadic rounding (`dyadicHull`)", "4.6 Width added by dyadic rounding (`dyadicHull_width`)", "4.7 Rational complex-box denotation (`complexBoxSet`)", "4.8 Unique integer extraction (`uniqueInteger`)", "4.9 Recovery of a known integral value (`uniqueInteger_sound`)", "4.18 Rational enclosures of CT scalars (`ctEnclosure`)", "4.19 Disjoint presentations of every distinct root (`exists_disjoint_root_certificates`)", "4.21 Enclosures of cusp-form values (`cuspLBox`)"]
+
+[[source]]
+id = "CT"
+locator_scheme = "section"
+locator = "Published open version; Remark 2.11, pp.281–282; §2.4.2, equation (2.4.4), p.278; §§2.4.3–2.4.6, pp.280–286; §§4.1–4.3 and Proposition 4.4, pp.295–299"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-020-00115-z.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-020-00115-z.pdf"
+fetched_at = "2026-10-21T17:26:50Z"
+sha256 = "ea90fb0faabeaaa56be15f2c6f9c22450e7891c2181130fd79fe356cd83ba3de"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["Layer CN.4: Quantitative analytic bounds and finite Gram data", "4.17 Closed scalar formulas for CT evaluation (`ctExplicitFormula`)", "4.18 Rational enclosures of CT scalars (`ctEnclosure`)", "4.25 Entrywise lower bounds on effective vectors (`effectiveGram_lower`)", "4.28 Loewner lower bounds on unrestricted vectors (`loewnerGram_lower`)", "4.29 Rational witness of Gram negativity (`NegativeGramCertificate`)", "4.30 Soundness of the negativity certificate (`NegativeGramCertificate.sound`)", "4.31 Effective vectors from a certified ellipsoid cover (`effectiveEllipsoidCover`)", "4.32 Validity of a rational Gram witness (`GramWitnessValid`)", "4.33 Validity of a finite Gram family (`GramDatasetValid`)", "4.34 Correct multiplicity lift for Gram witnesses (`multiplicityGram_lift`)", "Layer CN.5: Binding and replay of arithmetic datasets"]
+authors = "Gaëtan Chenevier, Olivier Taïbi"
+title = "Discrete series multiplicities for classical groups over Z and level 1 algebraic cusp forms"
+year = 2020
+
+[[source]]
+id = "BCG"
+locator_scheme = "section"
+locator = "Author PDF matching JAMS 38 (2025); Theorems 2.1, 2.4 and §2.3, pp.513–515; Corollary 3.2 and Remark 3.3, p.518"
+url = "https://math.uchicago.edu/~fcale/papers/WeightZero.pdf"
+fetched_from = "https://math.uchicago.edu/~fcale/papers/WeightZero.pdf"
+fetched_at = "2026-10-21T17:26:52Z"
+sha256 = "4d27afabbef371babf3a73dad19bc8ccee180636be27bd6ebee17f58f7150290"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["How to read the build", "Layer CN.3: Exact modular and elliptic arithmetic data", "3.8 The coefficient at 107 of ΔE₄²E₆ (`weight26_coeff_107`)", "3.9 Ordinary reduction at 107 (`weight26_ordinary_107`)", "3.10 Nonordinary determinant at weight 38 and prime 79 (`weight38_nonordinary_det`)", "3.11 Certified nonordinary weight-prime pair (`NonordinaryLevelOnePair`)", "3.12 The first two nonordinary level-one primes (`small_nonordinary_primes`)", "3.13 Nonordinary pairs below 200 (`nonordinary_pairs_lt_200`)", "3.14 Complete companion eigensystem at weight 82 (`weight82_companion_system`)", "3.15 Ordinary level-one companion pair (`OrdinaryCompanionPair`)", "3.16 Corrected ordinary companion witnesses (`corrected_ordinary_companion_list`)"]
+authors = "George Boxer, Frank Calegari, Toby Gee"
+title = "Cuspidal cohomology classes for GL_n(Z)"
+year = 2025
+
+[[source]]
+id = "NumberRings"
+locator_scheme = "section"
+locator = "§9, equation (9-2), Proposition 9.3 and proof, pp.233–235; §12, p.248"
+url = "https://library.slmath.org/books/Book44/files/08psh.pdf"
+fetched_from = "https://library.slmath.org/books/Book44/files/08psh.pdf"
+fetched_at = "2026-10-21T17:26:53Z"
+sha256 = "040ebae8ee54439c0e10480d2302c46c1ad465616dfbe2b68e449507c3a1bf17"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.1 Finite order basis certificate (`OrderBasisCertificate`)", "2.2 Multiplier ring of an integral lattice (`multiplierRing`)", "2.3 Local maximality of an order (`IsPMaximal`)", "2.4 Nilradical from a Frobenius kernel (`nilpotent_iff_frobenius_zero`)", "2.5 The p-radical in field coordinates (`pRadicalLattice`)", "2.6 Multiplier criterion for p-maximality (`pRadical_multiplier_eq_iff`)", "2.7 Integral basis certificate (`IntegralBasisCertificate`)", "2.8 Integral bases extending any full order (`exists_integralBasisCertificate_extending`)", "2.9 Prime-ideal decomposition certificate (`PrimeIdealFactorCertificate`)"]
+authors = "Peter Stevenhagen"
+title = "The arithmetic of number rings"
+year = 2008
+
+[[source]]
+id = "GMN"
+authors = "Jordi Guàrdia, Jesús Montes, Enric Nart"
+title = "Newton polygons of higher order in algebraic number theory"
+year = 2008
+arxiv = "0807.2620v2"
+locator_scheme = "section"
+locator = "arXiv:0807.2620v2; Definitions 1.6, 1.8–1.10, pp.7–8; Theorem 1.13, pp.10–11; Theorem 1.15, pp.11–12; Theorem 1.19 and Corollary 1.20, pp.14–15"
+url = "https://arxiv.org/abs/0807.2620v2"
+fetched_from = "https://arxiv.org/pdf/0807.2620v2"
+fetched_at = "2026-10-21T17:26:58Z"
+sha256 = "62b8f28d1839dbaac425ac17088b08070bf531aee9ffedae0bc80a1cb109d8ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["2.16 Exact φ-adic polynomial expansion (`phiExpansion`)", "2.17 Valuation of a φ-coefficient (`coefficientValuation`)", "2.18 A finite negative φ-Newton side (`IsPhiNewtonSide`)", "2.19 Residual polynomial of a φ-Newton side (`phiResidualPolynomial`)", "2.19a Products and factorization of φ-polygons", "2.20 Ore residual irreducibility criterion (`ore_residual_irreducible`)"]
+
+[[source]]
+id = "CarusoPublished"
+locator_scheme = "section"
+locator = "Published Numdam version; §2.1.1, Proposition 2.1.1 and Definition 2.1.2, pp.II-17–II-18; §2.1.2, Proposition 2.1.3, equations (2.1), (2.3), (2.5), pp.II-18–II-19"
+url = "https://www.numdam.org/item/10.5802/ccirm.25.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/ccirm.25.pdf"
+fetched_at = "2026-10-21T17:26:59Z"
+sha256 = "c6124267c5457166cb08b0baf645dfff37a4bcf838f13cb27ad1182dfe6fd0d0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["0.14 Canonical finite p-adic approximation (`PadicApproximation`)", "2.21 Finite local expansion certificate (`LocalExpansionCertificate`)", "4.10 Normalize a rational p-adic ball (`padicNormalize`)", "4.11 Certified p-adic addition (`padicAdd`)", "4.12 Certified p-adic multiplication (`padicMul`)", "4.13 Partial p-adic inversion (`padicInverse`)"]
+authors = "Xavier Caruso"
+title = "Computations with p-adic numbers"
+year = 2017
+
+[[source]]
+id = "BennettSiksek"
+locator_scheme = "section"
+locator = "§7, Proposition 7.2 and proof, pp.374–376"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_at = "2026-10-21T17:27:01Z"
+sha256 = "3920a7524a37870942fe3591ac858db23cb604f4331bccd2a6dc5f11a1671fbf"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.24 No real zeros for conductor at most 400000 (`small_conductor_no_real_zero`)"]
+authors = "Michael Bennett, Samir Siksek"
+title = "A conjecture of Erdős, supersingular primes and short character sums"
+year = 2020
+
+[[source]]
+id = "Thery"
+authors = "Laurent Théry"
+title = "Primality Tests and Prime Certificate"
+year = 2022
+arxiv = "2203.16341v1"
+locator_scheme = "section"
+locator = "arXiv:2203.16341v1; Theorems 6.1–6.2, p.9 (the size inequality in Theorem 6.2 is interpreted with the corrected square bound)"
+url = "https://arxiv.org/abs/2203.16341v1"
+fetched_from = "https://arxiv.org/pdf/2203.16341v1"
+fetched_at = "2026-10-21T17:27:04Z"
+sha256 = "f2cae5e07052046fddc01a9f94437e9df3bcbfcbba6fbea4d2a8578bf11bd0b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["1.15 Pocklington prime-divisor congruence (`pocklington_prime_divisor`)", "1.16 Pocklington primality criterion (`pocklington_prime`)", "1.17 Finite Pocklington certificate (`PocklingtonCertificate`)", "1.18 Soundness of finite Pocklington certificates (`PocklingtonCertificate.sound`)"]
+
+[[source]]
+id = "Platt"
+authors = "David Platt"
+title = "Numerical computations concerning the GRH"
+year = 2013
+arxiv = "1305.3087v1"
+locator_scheme = "section"
+locator = "arXiv:1305.3087v1, 15 pages; §§4–7, pp.3–15; Theorem 7.1, p.14; Theorem 7.2, p.15"
+url = "https://arxiv.org/abs/1305.3087v1"
+fetched_from = "https://arxiv.org/pdf/1305.3087v1"
+fetched_at = "2026-10-21T17:27:10Z"
+sha256 = "8fd109aa21345bc3feac4fde2faa7dfb51b4ef1fc9a430f643323612a39ef417"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["Roadmap: certified computational number theory and arithmetic data", "Scope and ownership", "Layer CN.4: Quantitative analytic bounds and finite Gram data", "4.20 Enclosures of continued Dirichlet values (`dirichletLBox`)", "4.22 Platt’s finite-conductor zero theorem (`platt_bounded_height`)", "4.23 Platt’s central nonvanishing target (`platt_central_nonvanishing`)", "4.24 No real zeros for conductor at most 400000 (`small_conductor_no_real_zero`)", "Layer CN.5: Binding and replay of arithmetic datasets"]
+
+[[source]]
+id = "PrattNotes"
+locator_scheme = "section"
+locator = "Undated five-page author notes; pp.1–4, Lucas criterion and proof-length bound"
+url = "https://users.encs.concordia.ca/~chvatal/notes/ppp.pdf"
+fetched_from = "https://users.encs.concordia.ca/~chvatal/notes/ppp.pdf"
+fetched_at = "2026-10-21T17:27:12Z"
+sha256 = "8eede94ec34bafd64d3fd6a882130b6cd30655800f28504e4d90919ab1f4fd85"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.1 Recursive Pratt certificate (`PrattCertificate`)", "1.2 Validity of a Pratt tree (`PrattCertificate.valid`)", "1.3 Soundness of Pratt certificates (`PrattCertificate.sound`)", "1.4 Completeness of Pratt certificates (`PrattCertificate.complete`)", "1.5 Bit size of a Pratt tree (`prattBitSize`)", "1.6 Quadratic bit-size bound for Pratt certificates (`pratt_small_certificate`)", "1.19 Integer factorization with prime certificates (`IntegerFactorCertificate`)", "1.20 Soundness of integer factorization certificates (`IntegerFactorCertificate.sound`)", "1.21 Every nonzero integer admits a factor certificate (`IntegerFactorCertificate.complete`)"]
+authors = "Vašek Chvátal"
+title = "Pratt’s primality proofs"
+year = "undated"
+
+[[source]]
+id = "CL"
+authors = "Gaëtan Chenevier and Jean Lannes"
+title = "Formes automorphes et voisins de Kneser des réseaux de Niemeier"
+year = 2014
+arxiv = "1409.7616v2"
+locator_scheme = "section"
+locator = "arXiv:1409.7616, French 461-page preprint; §3.16, Proposition 3.17 and numerical comments (3), pp.304–307"
+url = "https://arxiv.org/abs/1409.7616v2"
+fetched_from = "https://arxiv.org/pdf/1409.7616v2"
+fetched_at = "2026-10-21T17:27:21Z"
+sha256 = "ee20dcf191d37290a74c79c4b15d9fbfe5c2b3673bd6c53283ff44d19762708d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["4.14 Odlyzko tail kernel (`ctTailKernel`)", "4.15 Geometric bound for the Odlyzko tail (`ctTailKernel_tail`)", "4.16 Alternating Odlyzko tail bound (`ctTailKernel_alternating_tail`)", "4.17 Closed scalar formulas for CT evaluation (`ctExplicitFormula`)", "4.17a Explicit digamma and trigamma remainders", "4.18 Rational enclosures of CT scalars (`ctEnclosure`)"]
+
+[[source]]
+id = "CG13"
+authors = "Craig Citro and Alexandru Ghitza"
+title = "Computing level one Hecke eigensystems (mod p)"
+year = 2011
+venue = "LMS J. Comput. Math. 16 (2013) 246-270"
+doi = "10.1112/S1461157013000132"
+arxiv = "1102.3321v2"
+locator_scheme = "section"
+locator = "arXiv:1102.3321v2 (29 March 2011); §§6–7, pp.11–12; Appendix, Table of results, p.14, N- and C-marked entries"
+url = "https://arxiv.org/abs/1102.3321v2"
+fetched_from = "https://arxiv.org/pdf/1102.3321v2"
+fetched_at = "2026-10-21T17:27:24Z"
+sha256 = "bfa9d998d5399a97c7d877f01f81e3e23d7c75563034ab42c5fbecafb6347453"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["3.12 The first two nonordinary level-one primes (`small_nonordinary_primes`)", "3.13 Nonordinary pairs below 200 (`nonordinary_pairs_lt_200`)", "3.16 Corrected ordinary companion witnesses (`corrected_ordinary_companion_list`)"]
+
+[[source]]
+id = "MilneANT"
+locator_scheme = "section"
+locator = "Version 3.08 (19 July 2020); Theorem 7.32, p.120; Theorem 7.33 and Lemmas 7.34–7.35, pp.121–122; Proposition 8.2, p.136"
+url = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
+fetched_at = "2026-10-21T17:27:28Z"
+sha256 = "24b83c789a89f25aebffb3cbe4ae5ca29edd0075acc072de093d140770630847"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.26 Coprime factor lifting modulo prime powers (`henselLift`)", "2.19a Products and factorization of φ-polygons", "2.22 Squares of units in a finite extension of ℚ_p (`isSquare_iff_isSquare_mod`)", "2.23 Roots in ℚ_p from the decomposition of p (`card_padicRoots_eq`)"]
+authors = "J. S. Milne"
+title = "Algebraic Number Theory"
+year = 2020
+
+[[source]]
+id = "Sutherland"
+locator_scheme = "section"
+locator = "MIT 18.783 Lecture 7 (2023), §7.2, equation (1), p.2"
+url = "https://math.mit.edu/classes/18.783/2023/LectureNotes7.pdf"
+fetched_from = "https://math.mit.edu/classes/18.783/2023/LectureNotes7.pdf"
+fetched_at = "2026-10-21T17:27:28Z"
+sha256 = "14ca4694392d506c5a93b19b7c472f24a915c7298956189096a2607c4016bf7d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.17 Point counts over a finite field as a character sum (`pointCount_eq_charSum`)"]
+authors = "Andrew V. Sutherland"
+title = "18.783 Elliptic Curves, Lecture 7: Point counting"
+year = 2023
+
+[[source]]
+id = "Cremona"
+locator_scheme = "section"
+locator = "Second edition (1997), author Chapter III PDF; §3.3, Propositions 3.3.1–3.3.2, pp.69–70; §3.6, Checking local solubility, p.80; real components and discriminant signs, p.93"
+url = "https://johncremona.github.io/book/fulltext/chapter3.pdf"
+fetched_from = "https://johncremona.github.io/book/fulltext/chapter3.pdf"
+fetched_at = "2026-10-21T17:27:29Z"
+sha256 = "c4843b80ae1b6b91795b9952d782912542dd8d6b17c1940cd1a881fa6fdd9c26"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.18 Certified local image of the 2-descent map (`LocalImageCertificate`)", "3.21 Local images at good odd primes (`localImage_of_good_odd`)"]
+authors = "J. E. Cremona"
+title = "Algorithms for Modular Elliptic Curves, Chapter III"
+year = 1997
+
+[[source]]
+id = "FPS"
+authors = "E. V. Flynn, Bjorn Poonen, Edward F. Schaefer"
+title = "Cycles of quadratic polynomials and rational points on a genus-2 curve"
+year = 1995
+arxiv = "math/9508211v1"
+locator_scheme = "section"
+locator = "arXiv:math/9508211v1; §7, Lemmas 3–4 and proofs, pp.16–17; Lemma 4 used only as a concrete local-generator example"
+url = "https://arxiv.org/abs/math/9508211v1"
+fetched_from = "https://arxiv.org/pdf/math/9508211v1"
+fetched_at = "2026-10-21T17:27:33Z"
+sha256 = "95d4c96eb64febc9b4fc7cb980715777e27fa4d315a8e88cd20fc8d6cfb7577d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["From lower-tier roadmaps", "3.18 Certified local image of the 2-descent map (`LocalImageCertificate`)", "3.19 The size check completes a local image (`LocalImageCertificate.eq_range_of_isComplete`)", "3.20 Complete local images exist (`exists_complete_localImageCertificate`)", "3.21 Local images at good odd primes (`localImage_of_good_odd`)"]
+
+[[source]]
+id = "Siksek"
+locator_scheme = "section"
+locator = "Author preprint; §4, equations (39)–(41), pp.17–19"
+url = "https://samirsiksek.github.io/siksek.github.io/papers/infart2.pdf"
+fetched_from = "https://samirsiksek.github.io/siksek.github.io/papers/infart2.pdf"
+fetched_at = "2026-10-21T17:27:34Z"
+sha256 = "36b3079bb5277f819fbc0083d5020d774c8cb1cf6559fc82eebd5028510c31b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.22 p-saturated subgroups (`IsPSaturated`)", "3.23 p-saturation reduces to finitely many divisibility tests (`isPSaturated_iff_forall_not_dvd`)", "3.24 Exact test for divisibility of a rational point by p (`mem_nsmul_iff_exists_root`)", "3.25 The reduction sieve for p-saturation (`saturationSieve_sound`)", "3.26 Finite p-saturation criterion (`pSaturationCriterion`)", "4.24 No real zeros for conductor at most 400000 (`small_conductor_no_real_zero`)"]
+authors = "Samir Siksek"
+title = "Infinite descent on elliptic curves"
+year = 1995
+
+[[source]]
+id = "deWeger"
+locator_scheme = "section"
+locator = "CWI Tract 65 (1989); §3.6, Figure 2 and the translated-centre discussion, pp.51–53"
+url = "https://ir.cwi.nl/pub/13190/13190D.pdf"
+fetched_from = "https://ir.cwi.nl/pub/13190/13190D.pdf"
+fetched_at = "2026-10-21T17:27:47Z"
+sha256 = "581a3632f6b2467282bc912dc3d1a6ee651d3df011fe0e50518487e21e38499c"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.26 Integer points of a rational ellipsoid (`ellipsoidPoints`)", "4.27 Completeness of the ellipsoid set (`ellipsoidPoints_complete`)"]
+authors = "B. M. M. de Weger"
+title = "Algorithms for Diophantine Equations"
+year = 1989
+
+[[source]]
+id = "LLL82"
+locator_scheme = "section"
+locator = "CWI report (1982), Theorem 3.6, printed p.26; report pagination differs from Math. Ann. 261 (1982)"
+url = "https://ir.cwi.nl/pub/9304/9304D.pdf"
+fetched_from = "https://ir.cwi.nl/pub/9304/9304D.pdf"
+fetched_at = "2026-10-21T17:27:49Z"
+sha256 = "4cbffcec3caf292e7433646c5dfd0ddceb0b489c7dfcf431198ab711946082f2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.27 Rational polynomial factor certificate (`RationalFactorCertificate`)", "1.28 Existence of rational factor presentations (`exists_rationalFactorCertificate`)"]
+authors = "A. K. Lenstra, H. W. Lenstra Jr. and L. Lovász"
+title = "Factoring polynomials with rational coefficients"
+year = 1982
+
+[[source]]
+id = "DLMF"
+locator_scheme = "equation"
+locator = "Equation 5.7.6; series on the right half-plane"
+url = "https://dlmf.nist.gov/5.7"
+fetched_from = "https://dlmf.nist.gov/5.7"
+fetched_at = "2026-10-21T17:28:07Z"
+sha256 = "ab3cf3557a72eb4ce797571768fb260517973fe17960fcb50061f1aa4c0f3d8e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.17a Explicit digamma and trigamma remainders", "4.19a Uniform continued Dirichlet remainder (`dirichlet_eulerMaclaurin_remainder`)"]
+authors = "NIST"
+year = 2010
+title = "Digital Library of Mathematical Functions, Gamma Function"
+
+[[source]]
+id = "DLMF15"
+locator_scheme = "equation"
+locator = "Equation 5.15.1; reciprocal-square series"
+url = "https://dlmf.nist.gov/5.15"
+fetched_from = "https://dlmf.nist.gov/5.15"
+fetched_at = "2026-10-21T17:28:52Z"
+sha256 = "26b2dff6fcab914a37c35bcdd6e5deef14f6000a6f30cc0128a891a68a13f1ab"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.17a Explicit digamma and trigamma remainders"]
+authors = "NIST"
+year = 2010
+title = "Digital Library of Mathematical Functions, Polygamma Functions"
+
+[[source]]
+id = "DLMF25"
+locator_scheme = "equation"
+locator = "Equations 25.11.4 and 25.11.7; shifted even-order remainder obtained by integration by parts"
+url = "https://dlmf.nist.gov/25.11"
+fetched_from = "https://dlmf.nist.gov/25.11"
+fetched_at = "2026-10-21T17:30:25Z"
+sha256 = "d55124cf2f1c3f6a4547ae4e47dfec4a5b08732a783959c2f92dc87f6052e4aa"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.19a Uniform continued Dirichlet remainder (`dirichlet_eulerMaclaurin_remainder`)", "4.20 Enclosures of continued Dirichlet values (`dirichletLBox`)"]
+authors = "NIST"
+year = 2010
+title = "Digital Library of Mathematical Functions, Hurwitz Zeta Function"
+
+[[source]]
+id = "DLMF8"
+locator_scheme = "equation"
+locator = "Equation 8.2.2; upper incomplete-Gamma integral"
+url = "https://dlmf.nist.gov/8.2"
+fetched_from = "https://dlmf.nist.gov/8.2"
+fetched_at = "2026-10-21T17:30:38Z"
+sha256 = "65bff82516dc360664fae5d0dd0a2464c818057be53df1f5d3c3e5b59158d3b1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.20a Uniform two-tail bound for cusp forms (`cusp_mellin_tail`)", "4.21 Enclosures of cusp-form values (`cuspLBox`)"]
+authors = "NIST"
+year = 2010
+title = "Digital Library of Mathematical Functions, Incomplete Gamma Functions"
+
+[[source]]
+authors = "Arthur Mattuck"
+title = "Abelian varieties over p-adic ground fields"
+year = 1955
+venue = "The Annals of Mathematics 62"
+doi = "10.2307/2007101"
+id = "Mattuck"
+locator_scheme = "section"
+locator = "Theorem 7, printed p.114"
+cited_for = ["From lower-tier roadmaps", "3.19 The size check completes a local image (`LocalImageCertificate.eq_range_of_isComplete`)", "3.20 Complete local images exist (`exists_complete_localImageCertificate`)"]
+url = "https://doi.org/10.2307/2007101"
+status = "uncertified"
+licence_class = "none"
+version_note = "Published Annals of Mathematics 62 (1955); cited by locator only; the service resolved a paywalled JSTOR landing page and no text was fetched."

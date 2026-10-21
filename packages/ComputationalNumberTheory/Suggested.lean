@@ -4,137 +4,25 @@ import TauCeti.AlgebraicGeometry.EllipticCurve.MordellWeil.LocalCondition
 import TauCeti.AlgebraicGeometry.EllipticCurve.MordellWeil.TwoTorsion
 import TauCeti.AlgebraicGeometry.EllipticCurve.DivisionPolynomial.Descent
 import TauCeti.NumberTheory.ModularForms.SturmBound
-import TauCeti.LinearAlgebra.Matrix.Echelon.KernelBasis
+import TauCeti.NumberTheory.LocalField.Squares
 
 /-!
 # ComputationalNumberTheory: representative target signatures
 
-The roadmap is `README.md`; this file is not the roadmap and is not exhaustive. It records the
-definitions and the theorem signatures of the roadmap that can be stated against the pinned
-Mathlib and Tau Ceti APIs, so that contributors and reviewers converge on names and forms. Every
-`sorry` marks a target. Definitions here have real bodies; algorithms whose construction is the
-content of a target (root isolation, integral bases, Miller bases, enclosures of special
-functions, the Fincke–Pohst recursion, residual polynomials) are README targets only.
-
-Design choices made explicit here:
-* certificates are structures bundling finite data with the propositions a checker verifies;
-  executable checkers return `Bool`, and soundness theorems turn acceptance into the intrinsic
-  statement about Mathlib or Tau Ceti carriers;
-* a RAM step is a partial function: `none` is an error, `some none` a normal halt;
-* rational intervals are Mathlib's `NonemptyInterval ℚ`, with the signed product and the field
-  reciprocal defined here because Mathlib's operations are the monotone and group ones;
-* a finite field is presented as `AdjoinRoot f` over a finite field, with `f` certified
-  irreducible by Rabin's criterion;
-* elliptic curves over `ℚ` are in the form `a₁ = a₃ = 0`, and local images are subgroups of Tau
-  Ceti's square-class group `W.M`.
+The roadmap is README.md. This file records statements suggested against the pinned APIs;
+it is not exhaustive. Light definitions give mathematical presentations and predicates on
+native carriers. Theorems marked `sorry` are targets.
 -/
-
-set_option linter.unusedVariables false
-set_option linter.unusedSectionVars false
 
 noncomputable section
 
 open Polynomial
+open scoped MatrixGroups
 
 namespace TauCetiRoadmap.ComputationalNumberTheory
 
-/-! ## Layer CN.0: Exact presentations and computation models -/
+/-! ## Layer CN.0: Exact presentations -/
 
-section RAM
-
-/-- **RAM instruction** (README 0.1). Operands are integer literals or `(indirect, address)` pairs;
-operations `0, 1, 2, 3` are addition, subtraction, multiplication and floor division; comparisons
-`0, …, 5` are `=, ≠, <, >, ≤, ≥`. -/
-inductive RAMInstruction where
-  | arithmetic (op : Fin 4) (dst : Bool × ℕ) (a b : ℤ ⊕ (Bool × ℕ))
-  | branch (cmp : Fin 6) (a b : ℤ ⊕ (Bool × ℕ)) (target : ℕ)
-  | halt
-  deriving DecidableEq
-
-/-- **RAM operand evaluation** (README 0.2). A negative indirect address is an error, never
-truncated to zero. -/
-def ramRead (m : ℕ → ℤ) : ℤ ⊕ (Bool × ℕ) → Option ℤ
-  | .inl z => some z
-  | .inr (false, i) => some (m i)
-  | .inr (true, i) => if 0 ≤ m i then some (m (m i).toNat) else none
-
-/-- Resolution of a destination, with the same convention for indirect addresses. -/
-def ramDest (m : ℕ → ℤ) : Bool × ℕ → Option ℕ
-  | (false, i) => some i
-  | (true, i) => if 0 ≤ m i then some (m i).toNat else none
-
-/-- The arithmetic table; floor division rounds toward `−∞` and a zero denominator is an error. -/
-def ramArith (op : Fin 4) (x y : ℤ) : Option ℤ :=
-  if op.val = 0 then some (x + y) else if op.val = 1 then some (x - y)
-  else if op.val = 2 then some (x * y) else if y = 0 then none else some (Int.fdiv x y)
-
-/-- The comparison table. -/
-def ramCompare (cmp : Fin 6) (x y : ℤ) : Bool :=
-  if cmp.val = 0 then decide (x = y) else if cmp.val = 1 then decide (x ≠ y)
-  else if cmp.val = 2 then decide (x < y) else if cmp.val = 3 then decide (y < x)
-  else if cmp.val = 4 then decide (x ≤ y) else decide (y ≤ x)
-
-/-- **Partial RAM transition** (README 0.3): `none` is an error, `some none` is a normal halt and
-`some (some c)` is the next configuration. -/
-def ramStep (P : List RAMInstruction) (c : ℕ × (ℕ → ℤ)) : Option (Option (ℕ × (ℕ → ℤ))) :=
-  match P[c.1]? with
-  | none => none
-  | some .halt => some none
-  | some (.arithmetic op dst a b) =>
-      (ramDest c.2 dst).bind fun d => (ramRead c.2 a).bind fun x => (ramRead c.2 b).bind fun y =>
-        (ramArith op x y).map fun z => some (c.1 + 1, Function.update c.2 d z)
-  | some (.branch cmp a b t) =>
-      (ramRead c.2 a).bind fun x => (ramRead c.2 b).map fun y =>
-        some (if ramCompare cmp x y then t else c.1 + 1, c.2)
-
-example : ramRead (fun _ => 0) (.inl (-3)) = some (-3) := rfl
-
-example : ramRead (fun _ => -1) (.inr (true, 0)) = none := rfl
-
-/-- Floor division of `3` by `−2` writes `−2`, not `−1`. -/
-example : ramStep [.arithmetic 3 (false, 0) (.inl 3) (.inl (-2))] (0, fun _ => 0) =
-    some (some (1, Function.update (fun _ => 0) 0 (-2))) := rfl
-
-example (m : ℕ → ℤ) : ramStep [.halt] (0, m) = some none := rfl
-
-/-- **A finite successful RAM execution** (README 0.4). Its instruction count is `length`,
-including the final halt; magnitude bounds are separate predicates. -/
-structure RAMExecution (P : List RAMInstruction) where
-  length : ℕ
-  length_pos : 0 < length
-  config : Fin length → ℕ × (ℕ → ℤ)
-  first_pc : (config ⟨0, length_pos⟩).1 = 0
-  step : ∀ (i : ℕ) (h : i + 1 < length),
-    ramStep P (config ⟨i, by omega⟩) = some (some (config ⟨i + 1, h⟩))
-  final : ramStep P (config ⟨length - 1, by omega⟩) = some none
-
-/-- **Bit cost of an execution** (README 0.5): the sum of an explicit per-configuration charge. -/
-def RAMExecution.bitCost {P : List RAMInstruction} (e : RAMExecution P)
-    (C : ℕ × (ℕ → ℤ) → ℕ) : ℕ :=
-  ∑ i, C (e.config i)
-
-/-- **Bounded charges give a total bound** (README 0.6). -/
-theorem RAMExecution.bitCost_le {P : List RAMInstruction} (e : RAMExecution P)
-    (C : ℕ × (ℕ → ℤ) → ℕ) (B : ℕ) (h : ∀ i, C (e.config i) ≤ B) :
-    e.bitCost C ≤ e.length * B := by
-  sorry
-
-/-- The halt-only program has an execution of length one, and the unit charge recovers it. -/
-example : ∃ e : RAMExecution [.halt], e.length = 1 ∧ e.bitCost (fun _ => 1) = 1 :=
-  ⟨{ length := 1, length_pos := one_pos, config := fun _ => (0, fun _ => 0), first_pc := rfl,
-     step := fun i h => absurd h (by omega), final := rfl }, rfl, by simp [RAMExecution.bitCost]⟩
-
-/-- **Polynomial magnitude bound** (README 0.7): every stored integer of the execution, on `n`
-input cells, has absolute value at most `A·(n + length)^b + C`. -/
-def PolynomialRAMMagnitude {P : List RAMInstruction} (e : RAMExecution P) (n A b C : ℕ) : Prop :=
-  ∀ i j, ((e.config i).2 j).natAbs ≤ A * (n + e.length) ^ b + C
-
-/-- A halt trace with a stored `7` fails the uniform bound `6`, even in an unused cell. -/
-example : ∃ e : RAMExecution [.halt], e.length = 1 ∧
-    ¬ PolynomialRAMMagnitude e 0 0 0 6 := by
-  sorry
-
-end RAM
 
 section Algebraic
 
@@ -153,10 +41,12 @@ structure AlgebraicRootCertificate where
 def AlgebraicRootCertificate.value (c : AlgebraicRootCertificate) : ℂ :=
   c.isolates.exists.choose
 
+/-- The isolated rational-polynomial root lies in the native relative algebraic closure. -/
 theorem AlgebraicRootCertificate.value_mem_algebraicClosure (c : AlgebraicRootCertificate) :
     c.value ∈ algebraicClosure ℚ ℂ := by
   sorry
 
+/-- Every root in the isolating rectangle equals the decoded root. -/
 theorem AlgebraicRootCertificate.value_unique (c : AlgebraicRootCertificate) (z : ℂ)
     (hz : aeval z c.poly = 0) (hre : (c.re.fst : ℝ) ≤ z.re ∧ z.re ≤ c.re.snd)
     (him : (c.im.fst : ℝ) ≤ z.im ∧ z.im ≤ c.im.snd) : z = c.value := by
@@ -167,17 +57,57 @@ theorem algebraic_add_certificate (a b : AlgebraicRootCertificate) :
     ∃ c : AlgebraicRootCertificate, c.value = a.value + b.value := by
   sorry
 
+/-- The product of two presented algebraic values has an isolated-root presentation. -/
 theorem algebraic_mul_certificate (a b : AlgebraicRootCertificate) :
     ∃ c : AlgebraicRootCertificate, c.value = a.value * b.value := by
   sorry
 
+/-- The inverse of a nonzero presented algebraic value has an isolated-root presentation. -/
 theorem algebraic_inv_certificate (a : AlgebraicRootCertificate) (ha : a.value ≠ 0) :
     ∃ c : AlgebraicRootCertificate, c.value = a.value⁻¹ := by
   sorry
 
 /-- `X² − 1` has two roots in `[−2, 2] × [0, 0]`, so no certificate isolates it there. -/
-example : ¬ ∃ c : AlgebraicRootCertificate, c.poly = X ^ 2 - 1 ∧
+theorem AlgebraicRootCertificate.two_root_box_impossible : ¬ ∃ c : AlgebraicRootCertificate, c.poly = X ^ 2 - 1 ∧
     c.re = NonemptyInterval.pure (0 : ℚ) + ⟨(-2, 2), by norm_num⟩ ∧ c.im = NonemptyInterval.pure 0 := by
+  sorry
+
+/-- A rational number is presented by its linear polynomial and its singleton rectangle. -/
+def rationalRootCertificate (r : ℚ) : AlgebraicRootCertificate where
+  poly := X - C r
+  poly_ne_zero := by
+    intro h
+    have h1 := congrArg (fun f : ℚ[X] => f.coeff 1) h
+    simpa using h1
+  re := NonemptyInterval.pure r
+  im := NonemptyInterval.pure 0
+  isolates := by
+    refine ⟨(r : ℂ), ?_, ?_⟩
+    · simp [NonemptyInterval.pure]
+    · intro z hz
+      exact sub_eq_zero.mp (by simpa using hz.1)
+
+/-- Decoding the rational presentation is the usual rational embedding. -/
+theorem rationalRootCertificate_value (r : ℚ) : (rationalRootCertificate r).value = r := by
+  have h := (rationalRootCertificate r).isolates.exists.choose_spec.1
+  simpa [AlgebraicRootCertificate.value, rationalRootCertificate] using h
+
+/-- Equality of isolated algebraic presentations is equality of their decoded native values. -/
+def algebraicEqual (a b : AlgebraicRootCertificate) : Prop := a.value = b.value
+
+/-- Zero, rational addition and distinct expressions for five sixths decode correctly. -/
+example : (rationalRootCertificate 0).value = 0 ∧
+    (rationalRootCertificate (1 / 2)).value + (rationalRootCertificate (1 / 3)).value = 5 / 6 ∧
+    algebraicEqual (rationalRootCertificate (1 / 2 + 1 / 3)) (rationalRootCertificate (5 / 6)) := by
+  norm_num [algebraicEqual, rationalRootCertificate_value]
+
+/-- Distinct rational values are not made equal by their presentation data. -/
+example : ¬ algebraicEqual (rationalRootCertificate (1 / 2)) (rationalRootCertificate (1 / 3)) := by
+  norm_num [algebraicEqual, rationalRootCertificate_value]
+
+/-- The repeated polynomial root zero has a valid singleton presentation. -/
+theorem AlgebraicRootCertificate.repeated_zero : ∃ c : AlgebraicRootCertificate,
+    c.poly = X ^ 2 ∧ c.re = NonemptyInterval.pure 0 ∧ c.im = NonemptyInterval.pure 0 := by
   sorry
 
 end Algebraic
@@ -203,12 +133,15 @@ def PadicApproximation.denotation {p : ℕ} [Fact p.Prime] (a : PadicApproximati
     Set ℚ_[p] :=
   {x | ‖x - (a.center : ℚ_[p])‖ ≤ (p : ℝ) ^ (-a.precision)}
 
+/-- The rational centre belongs to its denoted p-adic ball. -/
 theorem PadicApproximation.center_mem {p : ℕ} [Fact p.Prime] (a : PadicApproximation p) :
     (a.center : ℚ_[p]) ∈ a.denotation := by
   sorry
 
 /-- At `p = 3`, `(N, v, s) = (0, −1, 1)` is canonical with centre `1/3`. -/
-example : (⟨0, -1, 1, Or.inr (by decide)⟩ : PadicApproximation 3).center = 1 / 3 := by
+example : (⟨0, -1, 1, Or.inr (by decide)⟩ : PadicApproximation 3).center = 1 / 3 ∧
+    ∀ N : ℤ, (⟨N, N, 0, Or.inl ⟨rfl, rfl⟩⟩ : PadicApproximation 3).valuation = N ∧
+      (⟨N, N, 0, Or.inl ⟨rfl, rfl⟩⟩ : PadicApproximation 3).center = 0 := by
   norm_num [PadicApproximation.center]
 
 /-- A nonzero mantissa divisible by `p` is not canonical. -/
@@ -224,9 +157,9 @@ section FiniteFields
 
 variable {F : Type*} [Field F] [Fintype F]
 
-/-- **Rabin irreducibility certificate** (README 0.15), as the proposition its checker verifies:
+/-- **Rabin irreducibility certificate** (README 0.15), as a finite family of mathematical conditions:
 `f` is monic of positive degree `n`, divides `X^(q^n) − X`, and is coprime to `X^(q^(n/s)) − X`
-for every prime `s ∣ n`. The executable certificate stores the residue and the Bézout pairs. -/
+for every prime `s ∣ n`. Coprimality expresses existence of Bézout identities. -/
 structure RabinCertificate (f : F[X]) : Prop where
   monic : f.Monic
   natDegree_pos : 0 < f.natDegree
@@ -234,24 +167,30 @@ structure RabinCertificate (f : F[X]) : Prop where
   coprime : ∀ s ∈ f.natDegree.primeFactors,
     IsCoprime (X ^ (Fintype.card F ^ (f.natDegree / s)) - X) f
 
+/-- The Frobenius divisibility and coprimality conditions imply irreducibility. -/
 theorem RabinCertificate.irreducible {f : F[X]} (h : RabinCertificate f) : Irreducible f := by
   sorry
 
-theorem RabinCertificate.of_irreducible {f : F[X]} (hm : f.Monic) (hf : Irreducible f) :
+/-- Every monic irreducible finite-field polynomial satisfies the Rabin conditions. -/
+theorem RabinCertificate.exists_of_irreducible {f : F[X]} (hm : f.Monic) (hf : Irreducible f) :
     RabinCertificate f := by
   sorry
 
-example : RabinCertificate (X ^ 2 + X + 1 : (ZMod 2)[X]) := by
+/-- The boundary comparison specified in README 0.15. -/
+theorem RabinCertificate.quadratic_two : RabinCertificate (X ^ 2 + X + 1 : (ZMod 2)[X]) := by
   sorry
 
 /-- `X² + 1 = (X − 2)(X − 3)` over `ZMod 5`: rejected. -/
-example [Fact (Nat.Prime 5)] : ¬ RabinCertificate (X ^ 2 + 1 : (ZMod 5)[X]) := fun h => by
+theorem RabinCertificate.quadratic_five_impossible [Fact (Nat.Prime 5)] : ¬ RabinCertificate (X ^ 2 + 1 : (ZMod 5)[X]) := fun h => by
   sorry
 
-/-- The linear Rabin test compares two reduced remainders, both equal to `2`. -/
-example [Fact (Nat.Prime 5)] :
-    (X ^ 5 %ₘ (X - C 2) : (ZMod 5)[X]) = C 2 ∧
-      (X %ₘ (X - C 2) : (ZMod 5)[X]) = C 2 := by
+/-- Every monic linear polynomial satisfies the Rabin predicate, including degree one. -/
+theorem RabinCertificate.linear (a : F) : RabinCertificate (X - C a) := by
+  sorry
+
+/-- The eighth cyclotomic polynomial has no irreducible reduction at any rational prime. -/
+theorem RabinCertificate.cyclotomic_eight_impossible (p : ℕ) [Fact p.Prime] :
+    ¬ RabinCertificate (X ^ 4 + 1 : (ZMod p)[X]) := by
   sorry
 
 /-- **Certified presentation of a finite field** (README 0.16). -/
@@ -267,6 +206,7 @@ def FiniteFieldPresentation.lift {K : Type*} [Field K] [Algebra F K]
     (P : FiniteFieldPresentation F K) : AdjoinRoot P.poly →ₐ[F] K :=
   AdjoinRoot.liftAlgHom P.poly (Algebra.ofId F K) P.root P.aeval_root
 
+/-- A root with the full degree induces a bijection from the root quotient. -/
 theorem FiniteFieldPresentation.bijective {K : Type*} [Field K] [Algebra F K]
     (P : FiniteFieldPresentation F K) : Function.Bijective P.lift := by
   sorry
@@ -276,18 +216,38 @@ def FiniteFieldPresentation.equiv {K : Type*} [Field K] [Algebra F K]
     (P : FiniteFieldPresentation F K) : AdjoinRoot P.poly ≃ₐ[F] K :=
   AlgEquiv.ofBijective P.lift P.bijective
 
+/-- The presentation equivalence sends the quotient root to the specified root. -/
 theorem FiniteFieldPresentation.equiv_root {K : Type*} [Field K] [Algebra F K]
     (P : FiniteFieldPresentation F K) : P.equiv (AdjoinRoot.root P.poly) = P.root := by
   simp only [FiniteFieldPresentation.equiv, FiniteFieldPresentation.lift, AlgEquiv.ofBijective_apply]
   exact AdjoinRoot.liftAlgHom_root _ _ _ _
 
+/-- Every finite extension of a finite field has a root presentation. -/
 theorem FiniteFieldPresentation.exists (K : Type*) [Field K] [Algebra F K] [FiniteDimensional F K] :
     Nonempty (FiniteFieldPresentation F K) := by
   sorry
 
 /-- The degree-one presentation over the prime field has the prescribed polynomial and root. -/
-example [Fact (Nat.Prime 5)] : ∃ P : FiniteFieldPresentation (ZMod 5) (ZMod 5),
+theorem FiniteFieldPresentation.prime_field_five [Fact (Nat.Prime 5)] : ∃ P : FiniteFieldPresentation (ZMod 5) (ZMod 5),
     P.poly = X - C 2 ∧ P.root = 2 := by
+  sorry
+
+/-- Every presentation polynomial is the minimal polynomial of its specified root. -/
+theorem FiniteFieldPresentation.minpoly_eq {K : Type*} [Field K] [Algebra F K]
+    (P : FiniteFieldPresentation F K) : minpoly F P.root = P.poly := by
+  sorry
+
+/-- The quadratic presentation in characteristic two sends the quotient generator and its
+translate to the expected roots, satisfying `α²=α+1`. -/
+theorem FiniteFieldPresentation.quadratic_two {K : Type*} [Field K] [Algebra (ZMod 2) K]
+    (P : FiniteFieldPresentation (ZMod 2) K) (hP : P.poly = X ^ 2 + X + 1) :
+    P.equiv (AdjoinRoot.root P.poly + 1) = P.root + 1 ∧ P.root ^ 2 = P.root + 1 := by
+  sorry
+
+/-- A degree-one presentation over the base field has the constant-polynomial inverse. -/
+theorem FiniteFieldPresentation.linear_inverse (P : FiniteFieldPresentation F F)
+    (a : F) (hP : P.poly = X - C a) (x : F) :
+    P.equiv.symm x = AdjoinRoot.mk P.poly (C x) := by
   sorry
 
 /-- **Change of presentation with an explicit inverse** (README 0.17). -/
@@ -298,13 +258,24 @@ structure PresentationChange (f g : F[X]) where
   dvd_c : f ∣ g.comp c
   dvd_inv : f ∣ b.comp c - X
 
+/-- Equal-degree monic irreducibles admit mutually inverse polynomial root substitutions. -/
 theorem exists_presentationChange {f g : F[X]} (hfm : f.Monic) (hgm : g.Monic) (hf : Irreducible f)
     (hg : Irreducible g) (hdeg : f.natDegree = g.natDegree) : Nonempty (PresentationChange f g) := by
   sorry
 
 /-- Over `ZMod 3`, `(X + 2, X + 1)` changes `X² + 1` into `X² + X + 2`. -/
-example : Nonempty (PresentationChange (X ^ 2 + 1 : (ZMod 3)[X]) (X ^ 2 + X + 2)) :=
-  ⟨⟨X + 2, X + 1, by sorry, by sorry, by sorry⟩⟩
+theorem PresentationChange.translate_three : Nonempty (PresentationChange (X ^ 2 + 1 : (ZMod 3)[X]) (X ^ 2 + X + 2)) := by
+  sorry
+
+/-- The identity substitutions give inverse presentation data. -/
+theorem PresentationChange.identity (f : F[X]) : Nonempty (PresentationChange f f) := by
+  exact ⟨⟨X, X, by simp, by simp, by simp⟩⟩
+
+/-- A root substitution need not be its own inverse: scaling by two over the field of seven elements. -/
+theorem PresentationChange.scaling_seven_impossible :
+    ¬ ∃ P : PresentationChange (X ^ 3 - 2 : (ZMod 7)[X]) (X ^ 3 - 2),
+      P.b = 2 * X ∧ P.c = 2 * X := by
+  sorry
 
 end FiniteFields
 
@@ -323,36 +294,39 @@ def PrattCertificate.value : PrattCertificate → ℕ
   | .two => 2
   | .node n _ _ => n
 
-/-- The local conditions at a node: `n ≥ 3`, `0 < a < n`, the child values multiply to `n − 1`,
-`a^(n−1) ≡ 1` and `a^((n−1)/q) ≢ 1 (mod n)` for every child value `q`. -/
-def PrattCertificate.nodeOK (n a : ℕ) (cs : List PrattCertificate) : Bool :=
-  decide (3 ≤ n) && decide (0 < a) && decide (a < n) &&
-    decide ((cs.map PrattCertificate.value).prod = n - 1) && decide (a ^ (n - 1) % n = 1) &&
-    cs.all fun c => decide (a ^ ((n - 1) / c.value) % n ≠ 1)
+/-- Raw trees retain their value even when they do not meet the validity conditions. -/
+example : PrattCertificate.two.value = 2 ∧ (PrattCertificate.node 3 2 [.two]).value = 3 ∧
+    (PrattCertificate.node 1 0 []).value = 1 := by decide
+
+/-- Arithmetic conditions at a Pratt node: bounds, child product, Lucas congruences. -/
+def PrattCertificate.nodeConditions (n a : ℕ) (cs : List PrattCertificate) : Prop :=
+  3 ≤ n ∧ 0 < a ∧ a < n ∧ (cs.map PrattCertificate.value).prod = n - 1 ∧
+    a ^ (n - 1) % n = 1 ∧ ∀ c ∈ cs, a ^ ((n - 1) / c.value) % n ≠ 1
 
 mutual
-/-- **Pratt certificate checker** (README 1.2), by structural recursion on the finite tree. -/
-def PrattCertificate.check : PrattCertificate → Bool
-  | .two => true
-  | .node n a cs => PrattCertificate.nodeOK n a cs && PrattCertificate.checkList cs
-/-- All children are accepted. -/
-def PrattCertificate.checkList : List PrattCertificate → Bool
-  | [] => true
-  | c :: cs => PrattCertificate.check c && PrattCertificate.checkList cs
+/-- Validity is the Lucas conditions at each node, and validity of all its children. -/
+def PrattCertificate.valid : PrattCertificate → Prop
+  | .two => (2 : ℕ).Prime
+  | .node n a cs => PrattCertificate.nodeConditions n a cs ∧ PrattCertificate.validList cs
+/-- Every member of a finite list of Pratt trees is valid. -/
+def PrattCertificate.validList : List PrattCertificate → Prop
+  | [] => ∀ c ∈ ([] : List PrattCertificate), c.value.Prime
+  | c :: cs => PrattCertificate.valid c ∧ PrattCertificate.validList cs
 end
 
-example : (PrattCertificate.node 3 2 [.two]).check = true := by decide
-
-/-- Three factors `2` and witness `2` do not certify `9`. -/
-example : (PrattCertificate.node 9 2 [.two, .two, .two]).check = false := by decide
+/-- The first odd-prime tree is valid, while the analogous candidate for nine fails. -/
+example : PrattCertificate.two.valid ∧ (PrattCertificate.node 3 2 [.two]).valid ∧
+    ¬ (PrattCertificate.node 9 2 [.two, .two, .two]).valid := by
+  norm_num [PrattCertificate.valid, PrattCertificate.validList,
+    PrattCertificate.nodeConditions, PrattCertificate.value]
 
 /-- **Soundness of Pratt certificates** (README 1.3). -/
-theorem PrattCertificate.sound (c : PrattCertificate) (h : c.check = true) : c.value.Prime := by
+theorem PrattCertificate.sound (c : PrattCertificate) (h : c.valid) : c.value.Prime := by
   sorry
 
 /-- **Completeness of Pratt certificates** (README 1.4). -/
 theorem PrattCertificate.complete (n : ℕ) (hn : n.Prime) :
-    ∃ c : PrattCertificate, c.check = true ∧ c.value = n := by
+    ∃ c : PrattCertificate, c.valid ∧ c.value = n := by
   sorry
 
 mutual
@@ -368,11 +342,13 @@ def prattBitSizeList : List PrattCertificate → ℕ
   | c :: cs => prattBitSize c + prattBitSizeList cs
 end
 
-example : prattBitSize (.node 3 2 [.two]) = 7 := by decide
+/-- Pratt size counts the tag and every repeated child. -/
+example : prattBitSize .two = 1 ∧ prattBitSize (.node 3 2 [.two]) = 7 ∧
+    prattBitSize (.node 5 2 [.two]) < prattBitSize (.node 5 2 [.two, .two]) := by decide
 
 /-- **Quadratic size of Pratt certificates** (README 1.6). -/
 theorem pratt_small_certificate : ∃ C : ℕ, ∀ n : ℕ, n.Prime →
-    ∃ c : PrattCertificate, c.check = true ∧ c.value = n ∧
+    ∃ c : PrattCertificate, c.valid ∧ c.value = n ∧
       prattBitSize c ≤ C * (Nat.log 2 n + 1) ^ 2 := by
   sorry
 
@@ -384,8 +360,11 @@ def StrongLiar (n a : ℕ) : Prop :=
       ∃ j < (n - 1).factorization 2,
         (a : ZMod n) ^ ((n - 1) / 2 ^ (n - 1).factorization 2 * 2 ^ j) = -1)
 
-/-- `2047 = 23 · 89` is composite and passes the strong test to base `2`. -/
-example : StrongLiar 2047 2 ∧ ¬ (2047).Prime := by
+/-- A prime base passes and input one fails the roadmap strong-liar predicate. -/
+example : StrongLiar 7 3 ∧ ¬ StrongLiar 1 1 := by decide
+
+/-- The composite `2047=23*89` passes the strong test at base two. -/
+theorem strongLiar_2047_composite : StrongLiar 2047 2 ∧ ¬ (2047).Prime := by
   sorry
 
 /-- **Prime inputs pass every admissible base** (README 1.8). -/
@@ -404,21 +383,23 @@ theorem millerRabin_rounds_bound (n k : ℕ) (hn : 1 < n) (hodd : Odd n) (hc : �
     4 ^ k * Nat.card {t : Fin k → ℕ // ∀ i, StrongLiar n (t i)} ≤ (n - 1) ^ k := by
   sorry
 
-/-- The least `k ≥ 1` with `n^k ≡ 1 (mod r)`, found by search below `r`; `0` when there is none. -/
-def aksOrder (n r : ℕ) : ℕ :=
-  (((List.range r).map (· + 1)).find? fun k => n ^ k % r == 1).getD 0
+/-- The multiplicative order of the residue class of `n` modulo `r`. -/
+def aksOrder (n r : ℕ) : ℕ := orderOf (n : ZMod r)
 
-/-- The binary length `⌊log₂ n⌋ + 1`. -/
+/-- Binary length, with length one assigned to zero. -/
 def aksLen (n : ℕ) : ℕ := Nat.log 2 n + 1
 
-/-- **AKS order parameter** (README 1.11): the least `r ≥ 2` with `gcd(n, r) > 1` or with the order
-of `n` modulo `r` above `4·len(n)²`; `r = n` always qualifies, and inputs `n ≤ 1` give `0`. -/
+/-- The least AKS-admissible modulus, with sentinel zero at `n ≤ 1`. -/
 def aksParameter (n : ℕ) : ℕ :=
-  if n ≤ 1 then 0 else
-    (((List.range (n + 1)).find? fun r =>
-      2 ≤ r && (Nat.gcd n r != 1 || 4 * aksLen n ^ 2 < aksOrder n r))).getD n
+  if hn : n ≤ 1 then 0 else
+    Nat.find (show ∃ r : ℕ, 2 ≤ r ∧ (1 < Nat.gcd n r ∨
+        (Nat.Coprime n r ∧ 4 * aksLen n ^ 2 < aksOrder n r)) from
+      ⟨n, by omega, Or.inl (by simpa using (show 1 < n by omega))⟩)
 
-example : aksParameter 2 = 2 ∧ aksParameter 9 = 3 := by decide
+/-- Two and nine have moduli two and three; one has the zero sentinel. -/
+theorem aksParameter_two_nine_one :
+    aksParameter 2 = 2 ∧ aksParameter 9 = 3 ∧ aksParameter 1 = 0 := by
+  sorry
 
 /-- **AKS polynomial congruences** (README 1.12): `(X + j)^n ≡ X^n + j` modulo `X^r − 1` over
 `ZMod n` for `1 ≤ j ≤ ℓ`. -/
@@ -427,20 +408,31 @@ def AKSIdentities (n r ℓ : ℕ) : Prop :=
     (X + C (j : ZMod n)) ^ n %ₘ (X ^ r - 1) = (X ^ n + C (j : ZMod n)) %ₘ (X ^ r - 1)
 
 /-- Characteristic five gives the prime identity; an empty range also passes at composite nine. -/
-example : AKSIdentities 5 2 3 ∧ AKSIdentities 9 2 0 := by
+theorem AKSIdentities.five_and_empty_nine : AKSIdentities 5 2 3 ∧ AKSIdentities 9 2 0 := by
   sorry
 
-/-- **Shoup's AKS test** (README 1.13), as the proposition its Boolean algorithm decides: reject
-`n ≤ 1` and perfect powers, accept when the parameter is `n`, reject a common factor, and
-otherwise run the identities up to `2·len(n)·⌊√r⌋ + 1`. -/
+/-- The characteristic-five congruence holds at every modulus and every finite length. -/
+theorem AKSIdentities.five_all (r ℓ : ℕ) : AKSIdentities 5 r ℓ := by
+  sorry
+
+/-- An empty family of AKS identities holds even at composite inputs. -/
+example (n r : ℕ) : AKSIdentities n r 0 := by
+  intro j hj h0
+  omega
+
+/-- **Shoup's AKS test** (README 1.13), as an arithmetic predicate excluding
+`n ≤ 1` and perfect powers, and imposing the finite congruence family up to `2·len(n)·⌊√r⌋ + 1`. -/
 def AKSAccepts (n : ℕ) : Prop :=
   1 < n ∧ (¬ ∃ a b : ℕ, 1 < a ∧ 1 < b ∧ a ^ b = n) ∧
     (aksParameter n = n ∨ (Nat.gcd n (aksParameter n) = 1 ∧
       AKSIdentities n (aksParameter n) (2 * aksLen n * Nat.sqrt (aksParameter n) + 1)))
 
 /-- The primality wrapper accepts `2` and rejects the perfect power `9`. -/
-example : AKSAccepts 2 ∧ ¬ AKSAccepts 9 := by
+theorem AKSAccepts.two_and_not_nine : AKSAccepts 2 ∧ ¬ AKSAccepts 9 := by
   sorry
+
+/-- Input one fails the arithmetic AKS predicate independently of its congruences. -/
+example : ¬ AKSAccepts 1 := by simp [AKSAccepts]
 
 /-- **Correctness of AKS** (README 1.14). -/
 theorem aks_correct (n : ℕ) : AKSAccepts n ↔ n.Prime := by
@@ -473,20 +465,23 @@ structure PocklingtonCertificate where
 def PocklingtonCertificate.factor (c : PocklingtonCertificate) : ℕ :=
   (c.entries.map fun e => e.1.value).prod
 
-/-- The finite checker: bounds, divisibility, recursive Pratt checks and the gcd tests. -/
-def PocklingtonCertificate.check (c : PocklingtonCertificate) (n : ℕ) : Bool :=
-  decide (1 < n) && decide (1 < c.factor) && decide (c.factor ∣ n - 1) &&
-    decide (n < c.factor ^ 2) &&
-    c.entries.all fun e => e.1.check && decide (e.2 ^ (n - 1) % n = 1) &&
-      decide (Nat.gcd (e.2 ^ ((n - 1) / e.1.value) - 1) n = 1)
+/-- Validity of Pocklington data: the certified part exceeds `√n` and its witnesses
+satisfy the prime-divisor congruences. -/
+def PocklingtonCertificate.valid (c : PocklingtonCertificate) (n : ℕ) : Prop :=
+  1 < n ∧ 1 < c.factor ∧ c.factor ∣ n - 1 ∧ n < c.factor ^ 2 ∧
+    ∀ e ∈ c.entries, e.1.valid ∧ e.2 ^ (n - 1) % n = 1 ∧
+      Nat.gcd (e.2 ^ ((n - 1) / e.1.value) - 1) n = 1
 
-/-- `F = 8` with witness `3` certifies `17`; the single factor `2` does not, since `2² ≤ 17`. -/
-example : (PocklingtonCertificate.mk [(.two, 3), (.two, 3), (.two, 3)]).check 17 = true ∧
-    (PocklingtonCertificate.mk [(.two, 3)]).check 17 = false := by decide
+/-- Three copies of two certify seventeen; one copy does not exceed its square root. -/
+example : (PocklingtonCertificate.mk [(.two, 3), (.two, 3), (.two, 3)]).valid 17 ∧
+    ¬ (PocklingtonCertificate.mk [(.two, 3)]).valid 17 ∧
+    ¬ (PocklingtonCertificate.mk []).valid 17 := by
+  norm_num [PocklingtonCertificate.valid, PocklingtonCertificate.factor,
+    PrattCertificate.valid, PrattCertificate.value]
 
 /-- **Soundness of Pocklington certificates** (README 1.18). -/
 theorem PocklingtonCertificate.sound (c : PocklingtonCertificate) (n : ℕ)
-    (h : c.check n = true) : n.Prime := by
+    (h : c.valid n) : n.Prime := by
   sorry
 
 /-- **Integer factorization with prime certificates** (README 1.19). -/
@@ -498,23 +493,29 @@ structure IntegerFactorCertificate where
 def IntegerFactorCertificate.value (c : IntegerFactorCertificate) : ℤ :=
   (if c.negative then -1 else 1) * (c.factors.map fun q => (q.value : ℤ)).prod
 
-/-- Acceptance: every tree is accepted and the product is `z`. -/
-def IntegerFactorCertificate.check (c : IntegerFactorCertificate) (z : ℤ) : Bool :=
-  c.factors.all PrattCertificate.check && decide (c.value = z)
+/-- Integer factor validity: every prime tree is valid and the signed product is `z`. -/
+def IntegerFactorCertificate.valid (c : IntegerFactorCertificate) (z : ℤ) : Prop :=
+  (∀ q ∈ c.factors, q.valid) ∧ c.value = z
 
-example : (IntegerFactorCertificate.mk false [.two, .two, .node 3 2 [.two]]).check 12 = true := by
-  decide
-
-example : (IntegerFactorCertificate.mk true []).check (-1) = true := by decide
+/-- The same prime trees present twelve and the empty negative product presents minus one. -/
+example : (IntegerFactorCertificate.mk false [.two, .two, .node 3 2 [.two]]).valid 12 ∧
+    (IntegerFactorCertificate.mk true []).valid (-1) := by
+  norm_num [IntegerFactorCertificate.valid, IntegerFactorCertificate.value,
+    PrattCertificate.valid, PrattCertificate.validList, PrattCertificate.nodeConditions,
+    PrattCertificate.value]
 
 /-- **Soundness** (README 1.20): an accepted certificate lists primes whose signed product is `z`. -/
 theorem IntegerFactorCertificate.sound (c : IntegerFactorCertificate) (z : ℤ)
-    (h : c.check z = true) : c.value = z ∧ z ≠ 0 ∧ ∀ q ∈ c.factors, q.value.Prime := by
+    (h : c.valid z) : c.value = z ∧ z ≠ 0 ∧ ∀ q ∈ c.factors, q.value.Prime := by
   sorry
 
 /-- **Completeness** (README 1.21). -/
 theorem IntegerFactorCertificate.complete (z : ℤ) (hz : z ≠ 0) :
-    ∃ c : IntegerFactorCertificate, c.check z = true := by
+    ∃ c : IntegerFactorCertificate, c.valid z := by
+  sorry
+
+/-- No valid signed prime product presents the integer zero. -/
+theorem IntegerFactorCertificate.zero_invalid (c : IntegerFactorCertificate) : ¬ c.valid 0 := by
   sorry
 
 end Primality
@@ -535,9 +536,24 @@ structure FiniteFieldFactorCertificate (f : F[X]) where
   eq_prod : f = C lead * (factors.map fun g => g.1 ^ g.2).prod
 
 /-- Multiplicity two is stored as an exponent on the single distinct linear factor. -/
-example [Fact (Nat.Prime 3)] :
+theorem FiniteFieldFactorCertificate.square_linear_three [Fact (Nat.Prime 3)] :
     ∃ c : FiniteFieldFactorCertificate ((X - 1) ^ 2 : (ZMod 3)[X]),
       c.factors = [(X - 1, 2)] ∧ c.lead = 1 := by
+  sorry
+
+/-- The unit polynomial has an empty finite-field factor presentation. -/
+example : ∃ c : FiniteFieldFactorCertificate (1 : F[X]), c.lead = 1 ∧ c.factors = [] := by
+  refine ⟨⟨1, one_ne_zero, [], ?_, ?_, ?_, ?_⟩, rfl, rfl⟩ <;> simp
+
+/-- The split quadratic over the field of five elements has its two distinct linear factors. -/
+theorem FiniteFieldFactorCertificate.five_split :
+    ∃ c : FiniteFieldFactorCertificate (X ^ 2 + 1 : (ZMod 5)[X]),
+      c.lead = 1 ∧ c.factors = [(X - C 2, 1), (X - C 3, 1)] := by
+  sorry
+
+/-- A nonzero scalar times monic factors cannot present the zero polynomial. -/
+theorem FiniteFieldFactorCertificate.zero_impossible :
+    ¬ Nonempty (FiniteFieldFactorCertificate (0 : F[X])) := by
   sorry
 
 /-- **Soundness** (README 1.23): the certified factors are Mathlib's normalized factors. -/
@@ -585,15 +601,34 @@ structure RationalFactorCertificate (f : ℚ[X]) where
 
 /-- The zero polynomial has no factor certificate. -/
 example (c : RationalFactorCertificate 0) : False := by
-  sorry
+  have hp : c.factors.prod ≠ 0 := List.prod_ne_zero_iff.mpr
+    (fun g hg => (c.monic g hg).ne_zero)
+  exact (mul_ne_zero (Polynomial.C_ne_zero.mpr c.lead_ne_zero) hp) c.eq_prod.symm
+
+/-- Units use an empty list, and repeated rational factors stay repeated in the presentation. -/
+example : (∃ c : RationalFactorCertificate 1, c.lead = 1 ∧ c.factors = []) ∧
+    (∃ c : RationalFactorCertificate ((X - 1) ^ 2), c.factors = [X - 1, X - 1]) := by
+  constructor
+  · refine ⟨⟨1, by norm_num, [], ?_, ?_, by simp⟩, rfl, rfl⟩
+    · simp
+    · simp
+  · refine ⟨⟨1, by norm_num, [X - 1, X - 1], ?_, ?_, by simp [pow_two]⟩, rfl⟩
+    · intro g hg
+      have hg1 : g = X - 1 := by simpa using hg
+      subst g
+      simpa using (monic_X_sub_C (1 : ℚ))
+    · intro g hg
+      have hg1 : g = X - 1 := by simpa using hg
+      subst g
+      simpa using (irreducible_X_sub_C (1 : ℚ))
 
 /-- **Certified rational factorization** (README 1.28): every nonzero rational polynomial has a
 certificate, and the scalar is its leading coefficient. -/
-theorem certifiedRationalFactorization (f : ℚ[X]) (hf : f ≠ 0) :
+theorem exists_rationalFactorCertificate (f : ℚ[X]) (hf : f ≠ 0) :
     ∃ c : RationalFactorCertificate f, c.lead = f.leadingCoeff := by
   sorry
 
-/-! ## Layer CN.2: Certified computations in number fields -/
+/-! ## Layer CN.2: Order presentations and local arithmetic -/
 
 section NumberFields
 
@@ -617,8 +652,20 @@ structure OrderBasisCertificate (K : Type*) [Field K] [NumberField K] (n : ℕ) 
 def OrderBasisCertificate.lattice {n : ℕ} (b : OrderBasisCertificate K n) : Submodule ℤ K :=
   Submodule.span ℤ (Set.range b.basis)
 
-theorem OrderBasisCertificate.mul_mem {n : ℕ} (b : OrderBasisCertificate K n) {x y : K}
+/-- The integer span of the basis is closed under multiplication. -/
+theorem OrderBasisCertificate.mul_mem {K : Type*} [Field K] [NumberField K] {n : ℕ} (b : OrderBasisCertificate K n) {x y : K}
     (hx : x ∈ b.lattice) (hy : y ∈ b.lattice) : x * y ∈ b.lattice := by
+  sorry
+
+/-- A full order cannot have rank zero. -/
+example {K : Type*} [Field K] [NumberField K] : ¬ Nonempty (OrderBasisCertificate K 0) := by
+  rintro ⟨b⟩
+  have h := b.one_eq
+  simp at h
+
+/-- A singleton half-basis is not closed under integral multiplication. -/
+theorem OrderBasisCertificate.half_basis_impossible :
+    ¬ ∃ b : OrderBasisCertificate ℚ 1, b.basis = fun _ => 1 / 2 := by
   sorry
 
 /-- **Multiplier ring of a lattice** (README 2.2): `{x ∈ K | x·I ⊆ I}` for any `ℤ`-submodule `I`;
@@ -631,19 +678,26 @@ def multiplierRing {L : Type*} [Field L] [CharZero L] (I : Submodule ℤ L) : Su
     rw [algebraMap_int_eq, eq_intCast, ← zsmul_eq_mul]
     exact I.smul_mem r hy
 
+/-- Multiplier membership means stabilizing every lattice element. -/
 theorem mem_multiplierRing {L : Type*} [Field L] [CharZero L] (I : Submodule ℤ L) (x : L) :
     x ∈ multiplierRing I ↔ ∀ y ∈ I, x * y ∈ I := Iff.rfl
 
+/-- Every field element stabilizes the zero lattice. -/
 example : multiplierRing (⊥ : Submodule ℤ ℚ) = ⊤ := by
   ext x; simp [mem_multiplierRing]
 
 /-- `1/2` does not stabilize `ℤ ⊆ ℚ`. -/
-example : (1 / 2 : ℚ) ∉ multiplierRing (Submodule.span ℤ {(1 : ℚ)}) := by
+theorem multiplierRing_half_impossible : (1 / 2 : ℚ) ∉ multiplierRing (Submodule.span ℤ {(1 : ℚ)}) := by
   sorry
 
 /-- The order certificate for `ℚ` has basis `[1]`, and its integer span excludes `1/2`. -/
-example : ∃ b : OrderBasisCertificate ℚ 1,
+theorem OrderBasisCertificate.rational_singleton : ∃ b : OrderBasisCertificate ℚ 1,
     b.basis = (fun _ => 1) ∧ (1 / 2 : ℚ) ∉ b.lattice := by
+  sorry
+
+/-- The multipliers of the integer lattice inside the rationals are exactly the integers. -/
+theorem multiplierRing_integer_lattice :
+    multiplierRing (Submodule.span ℤ {(1 : ℚ)}) = (⊥ : Subalgebra ℤ ℚ) := by
   sorry
 
 /-- **Local maximality of an order** (README 2.3): every integral element has a multiple prime to
@@ -657,6 +711,18 @@ example : ¬ IsPMaximal (⊥ : Subalgebra ℤ ℚ) 1 := by
   obtain ⟨a, ha, -⟩ := h 1 isIntegral_one
   simp at ha
 
+/-- The native integer order in the rationals is locally maximal at every rational prime. -/
+theorem isPMaximal_integer_order (p : ℕ) [Fact p.Prime] :
+    IsPMaximal (⊥ : Subalgebra ℤ ℚ) p := by
+  sorry
+
+/-- Enlargement preserves the prime-to-p denominator-clearing property. -/
+theorem isPMaximal_mono {K : Type*} [Field K] [NumberField K]
+    (R S : Subalgebra ℤ K) (p : ℕ) (hRS : R ≤ S) (hR : IsPMaximal R p) : IsPMaximal S p := by
+  intro x hx
+  obtain ⟨a, ha, hax⟩ := hR x hx
+  exact ⟨a, ha, hRS hax⟩
+
 /-- **Nilradical from a Frobenius kernel** (README 2.4). -/
 theorem nilpotent_iff_frobenius_zero (p : ℕ) [Fact p.Prime] {A : Type*} [CommRing A]
     [Algebra (ZMod p) A] [FiniteDimensional (ZMod p) A] (k : ℕ)
@@ -669,19 +735,25 @@ in `pR`. -/
 def pRadicalLattice (R : Subalgebra ℤ K) (p : ℕ) : Submodule ℤ K :=
   ((Ideal.span {(p : R)}).radical.restrictScalars ℤ).map (R.val.toLinearMap.restrictScalars ℤ)
 
-theorem mem_pRadicalLattice (R : Subalgebra ℤ K) (p : ℕ) (hp : p.Prime)
+/-- The radical lattice consists of elements with a positive power in pR. -/
+theorem mem_pRadicalLattice {K : Type*} [Field K] [NumberField K] (R : Subalgebra ℤ K) (p : ℕ) (hp : p.Prime)
     (hR : (Subalgebra.toSubmodule R).FG) (x : K) :
     x ∈ pRadicalLattice R p ↔ x ∈ R ∧ ∃ k ≥ 1, ∃ y ∈ R, x ^ k = (p : K) * y := by
   sorry
 
 /-- In the usual integer order of `ℚ`, the `3`-radical contains `3` and excludes `1`. -/
-example : (3 : ℚ) ∈ pRadicalLattice (⊥ : Subalgebra ℤ ℚ) 3 ∧
+theorem pRadicalLattice_integer_three : (3 : ℚ) ∈ pRadicalLattice (⊥ : Subalgebra ℤ ℚ) 3 ∧
     (1 : ℚ) ∉ pRadicalLattice (⊥ : Subalgebra ℤ ℚ) 3 := by
+  sorry
+
+/-- The zero radical of a characteristic-zero order is zero. -/
+theorem pRadicalLattice_zero {K : Type*} [Field K] [NumberField K]
+    (R : Subalgebra ℤ K) : pRadicalLattice R 0 = ⊥ := by
   sorry
 
 /-- **Multiplier criterion for `p`-maximality** (README 2.6), for an order `R` (finitely generated,
 spanning `K` over `ℚ`). -/
-theorem pRadical_multiplier_eq_iff (R : Subalgebra ℤ K)
+theorem pRadical_multiplier_eq_iff {K : Type*} [Field K] [NumberField K] (R : Subalgebra ℤ K)
     (hfg : (Subalgebra.toSubmodule R).FG) (hspan : Submodule.span ℚ (R : Set K) = ⊤)
     (p : ℕ) [Fact p.Prime] :
     multiplierRing (pRadicalLattice R p) = R ↔ IsPMaximal R p := by
@@ -694,11 +766,23 @@ structure IntegralBasisCertificate (K : Type*) [Field K] [NumberField K] (n : �
   maximal : ∀ x : K, IsIntegral ℤ x ↔ x ∈ toOrderBasisCertificate.lattice
 
 /-- The maximal order of `ℚ` is certified by the singleton basis `[1]`. -/
-example : ∃ b : IntegralBasisCertificate ℚ 1, b.basis = (fun _ => 1) := by
+theorem IntegralBasisCertificate.rational_singleton : ∃ b : IntegralBasisCertificate ℚ 1, b.basis = (fun _ => 1) := by
   sorry
 
-/-- **The integral-basis algorithm terminates with a certificate** (README 2.8). -/
-theorem integralBasisAlgorithm {n : ℕ} (b : OrderBasisCertificate K n) :
+/-- An integral basis has positive rank, including for the rational field. -/
+theorem IntegralBasisCertificate.rank_pos {K : Type*} [Field K] [NumberField K]
+    {n : ℕ} (c : IntegralBasisCertificate K n) : 0 < n := by
+  cases n with
+  | zero => have h := c.one_eq; simp at h
+  | succ n => omega
+
+/-- The rational half cannot lie in the native integral lattice of a certified integral basis. -/
+theorem IntegralBasisCertificate.half_not_mem (c : IntegralBasisCertificate ℚ 1) :
+    (1 / 2 : ℚ) ∉ c.lattice := by
+  sorry
+
+/-- **An integral basis extending any full order exists** (README 2.8). -/
+theorem exists_integralBasisCertificate_extending {K : Type*} [Field K] [NumberField K] {n : ℕ} (b : OrderBasisCertificate K n) :
     ∃ c : IntegralBasisCertificate K n, b.lattice ≤ c.lattice := by
   sorry
 
@@ -709,73 +793,25 @@ structure PrimeIdealFactorCertificate (K : Type*) [Field K] [NumberField K] (p :
   prime : ∀ x ∈ factors, x.1.IsPrime ∧ x.1 ≠ ⊥ ∧ 0 < x.2
   product : Ideal.span {(p : 𝓞 K)} = (factors.map fun x => x.1 ^ x.2).prod
 
-theorem PrimeIdealFactorCertificate.nonempty {p : ℕ} (hp : p.Prime)
+/-- A prime ideal product representing a rational prime has at least one factor. -/
+theorem PrimeIdealFactorCertificate.nonempty {K : Type*} [Field K] [NumberField K] {p : ℕ} (hp : p.Prime)
     (c : PrimeIdealFactorCertificate K p) : c.factors ≠ [] := by
   sorry
 
 /-- The rational prime `2` has exactly one prime ideal factor, with exponent one, in `ℚ`. -/
-example : ∃ c : PrimeIdealFactorCertificate ℚ 2,
+theorem PrimeIdealFactorCertificate.rational_two : ∃ c : PrimeIdealFactorCertificate ℚ 2,
     c.factors = [(Ideal.span {(2 : 𝓞 ℚ)}, 1)] := by
   sorry
 
-/-- **Checked class-group relation lattice** (README 2.10). -/
-def classRelationLattice {n : ℕ} (I : Fin n → (Ideal (𝓞 K))⁰) : AddSubgroup (Fin n → ℤ) where
-  carrier := {a | ∏ i, ClassGroup.mk0 (I i) ^ a i = 1}
-  zero_mem' := by simp
-  add_mem' {a b} ha hb := by
-    simp only [Set.mem_ofPred_eq, Pi.add_apply, zpow_add, Finset.prod_mul_distrib] at *
-    rw [ha, hb, one_mul]
-  neg_mem' {a} ha := by
-    simp only [Set.mem_ofPred_eq, Pi.neg_apply, zpow_neg, Finset.prod_inv_distrib] at *
-    rw [ha, inv_one]
-
-/-- A factor base containing only the unit ideal has every exponent as a checked relation. -/
-example : classRelationLattice (K := K) (n := 1) (fun _ => 1) = ⊤ := by
-  sorry
-
-/-- **Relation quotient covers the class group** (README 2.11). -/
-theorem classNumber_dvd_relation_index {n : ℕ} (I : Fin n → (Ideal (𝓞 K))⁰)
-    (L : AddSubgroup (Fin n → ℤ)) (hL : L ≤ classRelationLattice I)
-    (hgen : Subgroup.closure (Set.range fun i => ClassGroup.mk0 (I i)) = ⊤) (hfin : L.FiniteIndex) :
-    classNumber K ∣ L.index := by
-  sorry
-
-/-- **Minkowski factor bases generate** (README 2.12). -/
-theorem minkowski_factorBase_generates {n : ℕ} (I : Fin n → (Ideal (𝓞 K))⁰) (B : ℝ)
-    (hB : (4 / Real.pi) ^ InfinitePlace.nrComplexPlaces K *
-      ((Module.finrank ℚ K).factorial / (Module.finrank ℚ K : ℝ) ^ (Module.finrank ℚ K) *
-        Real.sqrt |(discr K : ℝ)|) ≤ B)
-    (hcover : ∀ P : (Ideal (𝓞 K))⁰, (P : Ideal (𝓞 K)).IsPrime →
-      (Ideal.absNorm (P : Ideal (𝓞 K)) : ℝ) ≤ B → P ∈ Set.range I) :
-    Subgroup.closure (Set.range fun i => ClassGroup.mk0 (I i)) = ⊤ := by
-  sorry
-
-/-- **Unit stopping bound** (README 2.13): the regulator quotient is the unit index, so a value
-below `2` proves generation together with the torsion. -/
-theorem units_complete_of_regulator_bound (u : Fin (Units.rank K) → (𝓞 K)ˣ)
-    (hu : Units.IsMaxRank u) (h : Units.regOfFamily u < 2 * Units.regulator K) :
-    Subgroup.closure (Set.range u) ⊔ Units.torsion K = ⊤ := by
-  sorry
-
-/-- **Joint class and unit stopping bound** (README 2.14). -/
-theorem joint_class_unit_bound (u : Fin (Units.rank K) → (𝓞 K)ˣ) (hu : Units.IsMaxRank u)
-    (h h' : ℕ) (hh : 0 < h) (hh' : 0 < h') (hd : h ∣ h')
-    (hb : (h' : ℝ) * Units.regOfFamily u < 2 * h * Units.regulator K) :
-    h' = h ∧ Subgroup.closure (Set.range u) ⊔ Units.torsion K = ⊤ := by
-  sorry
-
-/-- A zero purported relation quotient passes the scalar inequality but cannot have order one. -/
-example : (1 : ℕ) ∣ 0 ∧ (0 : ℝ) < 2 * 1 ∧ (0 : ℕ) ≠ 1 := by
-  norm_num
-
-/-- **Certified completion of class and unit computations** (README 2.15). -/
-theorem certified_class_unit_complete {n : ℕ} (I : Fin n → (Ideal (𝓞 K))⁰)
-    (L : AddSubgroup (Fin n → ℤ)) (hL : L ≤ classRelationLattice I)
-    (hgen : Subgroup.closure (Set.range fun i => ClassGroup.mk0 (I i)) = ⊤) (hfin : L.FiniteIndex)
-    (u : Fin (Units.rank K) → (𝓞 K)ˣ) (hu : Units.IsMaxRank u)
-    (hb : (L.index : ℝ) * Units.regOfFamily u < 2 * classNumber K * Units.regulator K) :
-    L.index = classNumber K ∧ Subgroup.closure (Set.range u) ⊔ Units.torsion K = ⊤ := by
-  sorry
+/-- Zero exponents and zero ideals cannot pad a prime-ideal decomposition. -/
+example {K : Type*} [Field K] [NumberField K] {p : ℕ}
+    (c : PrimeIdealFactorCertificate K p) :
+    (∀ I, (I, 0) ∉ c.factors) ∧ ∀ e, (⊥, e) ∉ c.factors := by
+  constructor
+  · intro I h
+    exact (Nat.lt_irrefl 0) (c.prime (I, 0) h).2.2
+  · intro e h
+    exact (c.prime (⊥, e) h).2.1 rfl
 
 end NumberFields
 
@@ -786,19 +822,37 @@ section Newton
 def phiExpansion {R : Type*} [CommRing R] (φ f : R[X]) (i : ℕ) : R[X] :=
   (f /ₘ φ ^ i) %ₘ φ
 
+/-- The finite sum of φ-coefficients times powers of φ reconstructs the polynomial. -/
 theorem phiExpansion_reconstruct {R : Type*} [CommRing R] (φ f : R[X]) (hφ : φ.Monic)
     (hm : 0 < φ.natDegree) :
     f = ∑ i ∈ Finset.range (f.natDegree / φ.natDegree + 1), phiExpansion φ f i * φ ^ i := by
   sorry
 
-example (f : ℤ[X]) (i : ℕ) : phiExpansion X f i = C (f.coeff i) := by
+/-- The boundary comparison specified in README 2.16. -/
+theorem phiExpansion_X (f : ℤ[X]) (i : ℕ) : phiExpansion X f i = C (f.coeff i) := by
+  sorry
+
+/-- Zero has only zero φ-coefficients. -/
+example (φ : ℤ[X]) (i : ℕ) : phiExpansion φ 0 i = 0 := by simp [phiExpansion]
+
+/-- Shifting the base from X to X−1 gives the three coefficients 1,2,1 for X². -/
+theorem phiExpansion_shifted_square :
+    phiExpansion (X - 1 : ℤ[X]) (X ^ 2) 0 = 1 ∧
+    phiExpansion (X - 1 : ℤ[X]) (X ^ 2) 1 = 2 ∧
+    phiExpansion (X - 1 : ℤ[X]) (X ^ 2) 2 = 1 := by
   sorry
 
 /-- **Gauss valuation of a coefficient** (README 2.17): `⊤` for the zero polynomial. -/
 def coefficientValuation (p : ℕ) (a : ℤ[X]) : WithTop ℕ :=
   a.support.inf fun i => ((padicValInt p (a.coeff i) : ℕ) : WithTop ℕ)
 
+/-- Zero coefficients give infinite Gauss valuation. -/
 example (p : ℕ) : coefficientValuation p 0 = ⊤ := by simp [coefficientValuation]
+
+/-- Coefficient support excludes zero coefficients from the Gauss valuation. -/
+theorem coefficientValuation_three_controls :
+    coefficientValuation 3 (3 * X + 9) = 1 ∧ coefficientValuation 3 (X ^ 2) = 0 := by
+  sorry
 
 /-- **A finite negative `φ`-Newton side** (README 2.18): from `(s, u)` to `(s + e·d, u − h·d)`,
 slope `−h/e`, `gcd(e, h) = 1`, endpoints on the line and every point on or above it. The theorems
@@ -811,15 +865,91 @@ def IsPhiNewtonSide (p : ℕ) (φ f : ℤ[X]) (s u e h d : ℕ) : Prop :=
       e * u + h * s ≤ e * v + h * i ∧ (e * v + h * i = e * u + h * s → s ≤ i ∧ i ≤ s + e * d)
 
 /-- `X² − 3` has slope `−1/2`; assigning slope `−1` fails the endpoint data. -/
-example : IsPhiNewtonSide 3 X (X ^ 2 - 3) 0 1 2 1 1 ∧
+theorem phiSide_X_sq_sub_three : IsPhiNewtonSide 3 X (X ^ 2 - 3) 0 1 2 1 1 ∧
     ¬ IsPhiNewtonSide 3 X (X ^ 2 - 3) 0 1 1 1 2 := by
   sorry
 
-/-- **Squares of units in `ℚ_p`** (README 2.22, the case `L = ℚ_p`): a unit is a square exactly
-when it is a square modulo `4p`. -/
-theorem isSquare_iff_isSquare_mod (p : ℕ) [Fact p.Prime] (u : ℤ_[p]ˣ) :
-    IsSquare (u : ℚ_[p]) ↔ ∃ w : ℤ_[p], (u : ℤ_[p]) - w ^ 2 ∈ Ideal.span {(4 * p : ℤ_[p])} := by
+/-- The zero polynomial has no finite φ-side at any displayed endpoints. -/
+example (p s u e h d : ℕ) (φ : ℤ[X]) : ¬ IsPhiNewtonSide p φ 0 s u e h d := by
+  simp [IsPhiNewtonSide, coefficientValuation, phiExpansion]
+
+/-- Normalize each integer φ-coefficient by the side ordinate before reducing in the
+residue quotient, then assemble the residual polynomial (README 2.19). -/
+def phiResidualPolynomial (p : ℕ) (φ f : ℤ[X]) (s u e h d : ℕ) :
+    Polynomial (AdjoinRoot (φ.map (Int.castRingHom (ZMod p)))) :=
+  ∑ j ∈ Finset.range (d + 1), Polynomial.monomial j
+    (AdjoinRoot.mk (φ.map (Int.castRingHom (ZMod p)))
+      ((∑ i ∈ (phiExpansion φ f (s + e * j)).support, Polynomial.monomial i
+        ((phiExpansion φ f (s + e * j)).coeff i / (p : ℤ) ^ (u - h * j))).map
+          (Int.castRingHom (ZMod p))))
+
+/-- A monic polynomial with one finite negative φ-side and irreducible residual polynomial
+is irreducible over `ℚ_p` (README 2.20). -/
+theorem ore_residual_irreducible (p : ℕ) [Fact p.Prime] (φ f : ℤ[X])
+    (hφ : φ.Monic) (hm : 0 < φ.natDegree)
+    (hirr : Irreducible (φ.map (Int.castRingHom (ZMod p)))) (hf : f.Monic)
+    (e h d : ℕ) (hside : IsPhiNewtonSide p φ f 0 (h * d) e h d)
+    (hred : f.map (Int.castRingHom (ZMod p)) =
+      (φ.map (Int.castRingHom (ZMod p))) ^ (e * d))
+    (hres : Irreducible (phiResidualPolynomial p φ f 0 (h * d) e h d)) :
+    Irreducible (f.map (Int.castRingHom ℚ_[p])) := by
   sorry
+
+/-- Zero input gives zero residual output even for raw, uncertified side data. -/
+example (p s u e h d : ℕ) (φ : ℤ[X]) : phiResidualPolynomial p φ 0 s u e h d = 0 := by
+  simp [phiResidualPolynomial, phiExpansion]
+
+/-- The slope minus one half of X²−3 has residual Y−1. -/
+theorem phiResidual_X_sq_sub_three : phiResidualPolynomial 3 X (X ^ 2 - 3) 0 1 2 1 1 = X - 1 := by
+  sorry
+
+/-- The repeated root in (X−3)² remains repeated in its residual polynomial. -/
+theorem phiResidual_repeated_linear :
+    phiResidualPolynomial 3 X ((X - 3) ^ 2) 0 2 1 1 2 = (X - 1) ^ 2 := by
+  sorry
+
+open ValuativeRel IsNonarchimedeanLocalField in
+/-- A unit in a characteristic-zero nonarchimedean local field is a square iff it is a
+square modulo `4π`, for any uniformizer `π` (README 2.22). -/
+theorem isSquare_iff_isSquare_mod (L : Type*) [Field L] [ValuativeRel L]
+    [TopologicalSpace L] [IsNonarchimedeanLocalField L] [CharZero L]
+    (π : 𝒪[L]) (hπ : Irreducible π) (u : (𝒪[L])ˣ) :
+    IsSquare ((u : 𝒪[L]) : L) ↔
+      ∃ w : 𝒪[L], (u : 𝒪[L]) - w ^ 2 ∈ Ideal.span {4 * π} := by
+  sorry
+
+/-- The degree-one primes above `p` count the roots in `ℚ_p`; a generating root identifies
+`K` with `ℚ[X]/(f)` (README 2.23). -/
+theorem card_padicRoots_eq (K : Type*) [Field K] [NumberField K]
+    (f : ℚ[X]) (hf : f.Monic) (hirr : Irreducible f) (θ : K)
+    (hθ : aeval θ f = 0) (hgen : Algebra.adjoin ℚ {θ} = ⊤)
+    (p : ℕ) [Fact p.Prime] :
+    Nat.card {x : ℚ_[p] // aeval x f = 0} =
+      Nat.card {P : Ideal (NumberField.RingOfIntegers K) //
+        P.IsPrime ∧ P ≠ ⊥ ∧ P ∣ Ideal.span {(p : NumberField.RingOfIntegers K)} ∧
+          P.ramificationIdx ℤ = 1 ∧ P.inertiaDeg ℤ = 1} := by
+  sorry
+
+/-- The native `ℤ_p` specialization of the unit-square criterion, including `p=2`. -/
+theorem isSquare_iff_isSquare_mod_padic (p : ℕ) [Fact p.Prime] (u : ℤ_[p]ˣ) :
+    IsSquare (u : ℚ_[p]) ↔
+      ∃ w : ℤ_[p], (u : ℤ_[p]) - w ^ 2 ∈ Ideal.span {(4 * p : ℤ_[p])} := by
+  sorry
+
+open ValuativeRel IsNonarchimedeanLocalField in
+/-- In a ramified dyadic field with `π²=2`, the unit `3+2π` passes the square-residue
+criterion, with square root `1+π`. -/
+theorem ramified_dyadic_unit_square (L : Type*) [Field L] [ValuativeRel L]
+    [TopologicalSpace L] [IsNonarchimedeanLocalField L] [CharZero L]
+    (π : 𝒪[L]) (hπ : Irreducible π) (hπsq : (π : L) ^ 2 = 2)
+    (u : (𝒪[L])ˣ) (hu : ((u : 𝒪[L]) : L) = 3 + 2 * (π : L)) :
+    IsSquare ((u : 𝒪[L]) : L) ∧
+      ∃ w : 𝒪[L], (u : 𝒪[L]) - w ^ 2 ∈ Ideal.span {4 * π} := by
+  have hs : IsSquare ((u : 𝒪[L]) : L) := by
+    refine ⟨1 + (π : L), ?_⟩
+    rw [hu]
+    linear_combination -hπsq
+  exact ⟨hs, (isSquare_iff_isSquare_mod L π hπ u).mp hs⟩
 
 end Newton
 
@@ -832,8 +962,24 @@ structure LocalExpansionCertificate (L : Type*) [NormedField L] (π x : L) (N : 
   digits_le : ∀ i, ‖digits i‖ ≤ 1
   error_le : ‖x - π ^ valuation * ∑ i, digits i * π ^ (i : ℕ)‖ ≤ ‖π‖ ^ (valuation + N)
 
-/-- Zero has an empty expansion at precision zero with the `3`-adic uniformizer. -/
-example : Nonempty (LocalExpansionCertificate ℚ_[3] 3 0 0) := by
+/-- Zero has a zero-digit expansion at every finite length and every supplied uniformizer. -/
+example {L : Type*} [NormedField L] (π : L) (hπ : π ≠ 0) (hπnorm : ‖π‖ < 1)
+    (N : ℕ) : Nonempty (LocalExpansionCertificate L π 0 N) := by
+  refine ⟨⟨hπ, hπnorm, 0, fun _ => 0, ?_, ?_⟩⟩
+  · intro i; simp
+  · simp only [zero_mul, Finset.sum_const_zero, mul_zero, sub_zero, norm_zero, zero_add]
+    positivity
+
+/-- A uniformizer inverse has the exact one-digit expansion with initial exponent minus one. -/
+theorem LocalExpansionCertificate.uniformizer_inverse {L : Type*} [NormedField L]
+    (π : L) (hπ : π ≠ 0) (hnorm : ‖π‖ < 1) :
+    ∃ c : LocalExpansionCertificate L π π⁻¹ 1, c.valuation = -1 ∧ c.digits 0 = 1 := by
+  sorry
+
+/-- A precision-one zero centre cannot enclose one when the uniformizer has norm below one. -/
+theorem LocalExpansionCertificate.one_not_zero_centre {L : Type*} [NormedField L]
+    (π : L) (hπ : π ≠ 0) (hnorm : ‖π‖ < 1) :
+    ¬ ∃ c : LocalExpansionCertificate L π 1 1, c.valuation = 0 ∧ ∀ i, c.digits i = 0 := by
   sorry
 
 /-! ## Layer CN.3: Exact modular and elliptic arithmetic data -/
@@ -849,22 +995,42 @@ It lives on the `q`-expansion side, distinct from the integral modular-symbol mo
 def integralModularLattice (k : ℤ) : Submodule ℤ (ModularForm 𝒮ℒ k) :=
   Submodule.span ℤ {f | ∀ n, ∃ a : ℤ, (qExpansion 1 f).coeff n = a}
 
+/-- The integer Fourier lattice consists exactly of coefficientwise integral forms. -/
 theorem mem_integralModularLattice (k : ℤ) (f : ModularForm 𝒮ℒ k) :
     f ∈ integralModularLattice k ↔ ∀ n, ∃ a : ℤ, (qExpansion 1 f).coeff n = a := by
+  sorry
+
+/-- The zero form belongs even to the weight-zero integral lattice. -/
+example : (0 : ModularForm 𝒮ℒ 0) ∈ integralModularLattice 0 := Submodule.zero_mem _
+
+/-- The constant coefficient of half E₄ obstructs integrality. -/
+theorem half_eisenstein_four_not_integral :
+    ((1 / 2 : ℂ) • ModularForm.E₄) ∉ integralModularLattice 4 := by
   sorry
 
 /-- **Integral cusp-form lattice** (README 3.2). -/
 def integralCuspLattice (k : ℤ) : Submodule ℤ (CuspForm 𝒮ℒ k) :=
   Submodule.span ℤ {f | ∀ n, ∃ a : ℤ, (qExpansion 1 f).coeff n = a}
 
+/-- The integer cusp lattice consists exactly of coefficientwise integral cusp forms. -/
 theorem mem_integralCuspLattice (k : ℤ) (f : CuspForm 𝒮ℒ k) :
     f ∈ integralCuspLattice k ↔ ∀ n, ∃ a : ℤ, (qExpansion 1 f).coeff n = a := by
   sorry
 
-example : ModularForm.E₄ ∈ integralModularLattice 4 := by
+/-- The boundary comparison specified in README 3.1. -/
+theorem eisenstein_four_integral : ModularForm.E₄ ∈ integralModularLattice 4 := by
   sorry
 
-example : ((1 / 2 : ℂ) • CuspForm.discriminant) ∉ integralCuspLattice 12 := by
+/-- The boundary comparison specified in README 3.2. -/
+theorem half_discriminant_not_integral : ((1 / 2 : ℂ) • CuspForm.discriminant) ∉ integralCuspLattice 12 := by
+  sorry
+
+/-- The normalized discriminant has integral Fourier coefficients. -/
+theorem discriminant_integral : CuspForm.discriminant ∈ integralCuspLattice 12 := by
+  sorry
+
+/-- The weight-zero cusp lattice has no nonzero element. -/
+theorem integralCuspLattice_weight_zero : integralCuspLattice 0 = ⊥ := by
   sorry
 
 /-- **The Miller basis exists** (README 3.3): for even `k` there is a `ℤ`-basis of the integral
@@ -888,12 +1054,18 @@ def HasLevelOnePrimeRecurrence (k p : ℕ) (T : Module.End ℂ (CuspForm 𝒮ℒ
   ∀ (f : CuspForm 𝒮ℒ (k : ℤ)) (m : ℕ), (qExpansion 1 (T f)).coeff m =
     (qExpansion 1 f).coeff (p * m) + if p ∣ m then (p : ℂ) ^ (k - 1) * (qExpansion 1 f).coeff (m / p) else 0
 
+/-- Width-one Fourier coefficients determine at most one endomorphism with the given recurrence. -/
 theorem heckeRecurrence_unique (k p : ℕ) (T U : Module.End ℂ (CuspForm 𝒮ℒ (k : ℤ)))
     (hT : HasLevelOnePrimeRecurrence k p T) (hU : HasLevelOnePrimeRecurrence k p U) : T = U := by
   sorry
 
 /-- At weight `12`, `T₂` acts on `Δ` by `−24`. -/
-example : HasLevelOnePrimeRecurrence 12 2 ((-24 : ℂ) • LinearMap.id) := by
+theorem heckeRecurrence_discriminant_two : HasLevelOnePrimeRecurrence 12 2 ((-24 : ℂ) • LinearMap.id) := by
+  sorry
+
+/-- Weight two has the zero recurrence, but the zero operator fails the weight-twelve recurrence. -/
+theorem heckeRecurrence_zero_controls :
+    HasLevelOnePrimeRecurrence 2 2 0 ∧ ¬ HasLevelOnePrimeRecurrence 12 2 0 := by
   sorry
 
 /-- **The coefficient at `107` of `ΔE₄²E₆`** (README 3.8). -/
@@ -917,13 +1089,21 @@ theorem pointCount_eq_charSum {F : Type*} [Field F] [Fintype F] [DecidableEq F]
       ∑ x : F, quadraticChar F (x ^ 3 + W.a₂ * x ^ 2 + W.a₄ * x + W.a₆) := by
   sorry
 
+/-- The projective trace in odd characteristic is the negative quadratic-character sum. -/
 theorem frobeniusTrace_eq_neg_charSum {F : Type*} [Field F] [Fintype F] [DecidableEq F]
     (hF : ringChar F ≠ 2) (W : WeierstrassCurve F) (h₁ : W.a₁ = 0) (h₃ : W.a₃ = 0) :
     W.frobeniusTrace = -∑ x : F, quadraticChar F (x ^ 3 + W.a₂ * x ^ 2 + W.a₄ * x + W.a₆) := by
   sorry
 
 /-- `y² = x³ + x + 1` over `ZMod 5` has `9` points. -/
-example [Fact (Nat.Prime 5)] : (⟨0, 0, 0, 1, 1⟩ : WeierstrassCurve (ZMod 5)).pointCount = 9 := by
+theorem pointCount_five_cubic [Fact (Nat.Prime 5)] : (⟨0, 0, 0, 1, 1⟩ : WeierstrassCurve (ZMod 5)).pointCount = 9 := by
+  sorry
+
+/-- Odd characteristic, singular models and characteristic two give discriminating point counts. -/
+theorem pointCount_small_character_controls :
+    (⟨0, 0, 0, 1, 0⟩ : WeierstrassCurve (ZMod 3)).pointCount = 4 ∧
+    (⟨0, 0, 0, 0, 0⟩ : WeierstrassCurve (ZMod 5)).pointCount = 6 ∧
+    (⟨0, 0, 0, 0, 1⟩ : WeierstrassCurve (ZMod 2)).pointCount = 3 := by
   sorry
 
 section LocalImage
@@ -939,7 +1119,7 @@ def localImageSpan (xs : List K) : Subgroup W.M :=
 
 /-- An empty abscissa list generates the trivial local-image subgroup. -/
 example : localImageSpan W [] = ⊥ := by
-  sorry
+  simp [localImageSpan]
 
 /-- Each abscissa with `f(x)` a nonzero square is the class of an actual point. -/
 theorem localImageSpan_le_range (xs : List K)
@@ -970,14 +1150,17 @@ theorem localImageSpan_eq_range_of_card_real [DecidableEq ℝ] (W : WeierstrassC
 def IsPSaturated {A : Type*} [AddCommGroup A] (G : AddSubgroup A) (p : ℕ) : Prop :=
   ∀ a : A, p • a ∈ G → a ∈ G
 
+/-- The full group is saturated for every natural multiplier. -/
 example {A : Type*} [AddCommGroup A] (p : ℕ) : IsPSaturated (⊤ : AddSubgroup A) p :=
   fun a _ => AddSubgroup.mem_top a
 
 /-- `6ℤ` is `5`-saturated and not `2`-saturated in `ℤ`. -/
-example : IsPSaturated (AddSubgroup.zmultiples (6 : ℤ)) 5 ∧
-    ¬ IsPSaturated (AddSubgroup.zmultiples (6 : ℤ)) 2 := by
+theorem isPSaturated_six_integers : IsPSaturated (AddSubgroup.zmultiples (6 : ℤ)) 5 ∧
+    ¬ IsPSaturated (AddSubgroup.zmultiples (6 : ℤ)) 2 ∧
+    ¬ IsPSaturated (AddSubgroup.zmultiples (6 : ℤ)) 3 := by
   sorry
 
+/-- A finite-index subgroup is p-saturated exactly when its index is prime to p. -/
 theorem isPSaturated_iff_not_dvd_index {A : Type*} [AddCommGroup A] (G : AddSubgroup A)
     (p : ℕ) (hp : p.Prime) (hG : G.FiniteIndex) : IsPSaturated G p ↔ ¬ p ∣ G.index := by
   sorry
@@ -1006,14 +1189,22 @@ theorem isPSaturated_iff_forall_not_dvd_of_span_quotient {A : Type*} [AddCommGro
       ∀ b : Fin m → ℤ, (∃ y ∈ G, ∑ i, b i • g i = p • y) → ∀ i, (p : ℤ) ∣ b i) := by
   sorry
 
-/-- Prime-to-`2` torsion needs no generator in the quotient criterion. -/
-example : IsPSaturated (⊤ : AddSubgroup (ZMod 3)) 2 ∧
-    AddSubgroup.closure (Set.range (Fin.elim0 : Fin 0 → ZMod 3)) ≠ ⊤ := by
-  sorry
-
 /-- An empty candidate space cannot compensate for omitted ambient `2`-torsion. -/
-example : ¬ IsPSaturated (⊥ : AddSubgroup (ZMod 2)) 2 := by
-  sorry
+example : (IsPSaturated (⊤ : AddSubgroup (ZMod 3)) 2 ∧
+      AddSubgroup.closure (Set.range (Fin.elim0 : Fin 0 → ZMod 3)) ≠ ⊤) ∧
+    ¬ IsPSaturated (⊥ : AddSubgroup (ZMod 2)) 2 ∧
+    ¬ IsPSaturated ((⊤ : AddSubgroup ℤ).prod (⊥ : AddSubgroup (ZMod 2))) 2 := by
+  constructor
+  · constructor
+    · intro a _; exact AddSubgroup.mem_top a
+    · simp
+  · constructor
+    · intro h
+      have h1 := h 1 (by norm_num)
+      norm_num at h1
+    · intro h
+      have h1 := h (0, 1) (by norm_num)
+      norm_num at h1
 
 /-- **Exact divisibility test** (README 3.24): `P = (x, y)` is divisible by `p` in `W(ℚ)` exactly
 when a rational root `x₀` of `Φ_p − x·ΨSq_p` carries a point `Q` with `p•Q = P`. -/
@@ -1024,17 +1215,9 @@ theorem mem_nsmul_iff_exists_root (W : WeierstrassCurve ℚ) [W.IsElliptic] (p :
         ∃ (y₀ : ℚ) (h₀ : W.toAffine.Nonsingular x₀ y₀), p • (.some x₀ y₀ h₀ : W.toAffine.Point) = .some x y h := by
   sorry
 
-/-- **The reduction sieve** (README 3.25), in the generality of any family of homomorphisms to
-groups killed by `p`: a `p`-divisible combination dies in every target. -/
-theorem saturationSieve_sound {A : Type*} [AddCommGroup A] (p : ℕ) {m : ℕ} (g : Fin m → A)
-    {ι : Type*} (C : ι → Type*) [∀ i, AddCommGroup (C i)] (ψ : ∀ i, A →+ C i)
-    (hC : ∀ i (c : C i), p • c = 0) (b : Fin m → ℤ) (hb : ∃ y : A, ∑ j, b j • g j = p • y) :
-    ∀ i, ∑ j, b j • ψ i (g j) = 0 := by
-  sorry
-
 end EllipticCurves
 
-/-! ## Layer CN.4: Validated numerics and finite analytic certificates -/
+/-! ## Layer CN.4: Quantitative analytic bounds and finite Gram data -/
 
 section Intervals
 
@@ -1052,8 +1235,16 @@ theorem intervalMul_sound (I J : NonemptyInterval ℚ) (x y : ℝ)
   sorry
 
 /-- `[−1, 1]·[−1, 1]` has lower endpoint `−1`, not `1`. -/
-example : (intervalMul ⟨(-1, 1), by norm_num⟩ ⟨(-1, 1), by norm_num⟩).fst = -1 := by
+example :
+    (intervalMul ⟨(-2, 3), by norm_num⟩ ⟨(-4, 5), by norm_num⟩).fst = -12 ∧
+    (intervalMul ⟨(-2, 3), by norm_num⟩ ⟨(-4, 5), by norm_num⟩).snd = 15 ∧
+    (intervalMul ⟨(-1, 1), by norm_num⟩ ⟨(-1, 1), by norm_num⟩).fst = -1 := by
   norm_num [intervalMul]
+
+/-- The singleton zero annihilates every signed interval. -/
+example (I : NonemptyInterval ℚ) : intervalMul (NonemptyInterval.pure 0) I =
+    NonemptyInterval.pure 0 := by
+  ext <;> simp [intervalMul]
 
 /-- **Partial interval reciprocal** (README 4.3): failure exactly when the interval contains `0`. -/
 def intervalInv (I : NonemptyInterval ℚ) : Option (NonemptyInterval ℚ) :=
@@ -1071,7 +1262,12 @@ theorem intervalInv_sound (I J : NonemptyInterval ℚ) (h : intervalInv I = some
     (hx : (I.fst : ℝ) ≤ x ∧ x ≤ I.snd) : x ≠ 0 ∧ (J.fst : ℝ) ≤ x⁻¹ ∧ x⁻¹ ≤ J.snd := by
   sorry
 
-example : intervalInv (NonemptyInterval.pure 0) = none := by simp [intervalInv]
+/-- Signed reciprocals reverse endpoints and the singleton zero is rejected. -/
+example :
+    intervalInv ⟨((2 : ℚ), 4), by norm_num⟩ = some ⟨(1 / 4, 1 / 2), by norm_num⟩ ∧
+    intervalInv ⟨((-4 : ℚ), -2), by norm_num⟩ = some ⟨(-1 / 2, -1 / 4), by norm_num⟩ ∧
+    intervalInv (NonemptyInterval.pure 0) = none := by
+  decide
 
 /-- **Outward dyadic rounding** (README 4.5): floor and ceiling on the `2^(−p)` grid. -/
 def dyadicHull (p : ℕ) (I : NonemptyInterval ℚ) : NonemptyInterval ℚ :=
@@ -1081,9 +1277,16 @@ def dyadicHull (p : ℕ) (I : NonemptyInterval ℚ) : NonemptyInterval ℚ :=
       ((mul_le_mul_of_nonneg_left I.fst_le_snd (by positivity)).trans (Int.le_ceil _))⟩
 
 /-- Outward rounding at precision zero sends `−1/3` to `[−1,0]`. -/
-example : (dyadicHull 0 (NonemptyInterval.pure (-1 / 3))).fst = -1 ∧
+example :
+    (dyadicHull 2 (NonemptyInterval.pure (1 / 3))).fst = 1 / 4 ∧
+    (dyadicHull 2 (NonemptyInterval.pure (1 / 3))).snd = 1 / 2 ∧
+    (dyadicHull 0 (NonemptyInterval.pure (-1 / 3))).fst = -1 ∧
     (dyadicHull 0 (NonemptyInterval.pure (-1 / 3))).snd = 0 := by
   norm_num [dyadicHull]
+
+/-- Exact zero is unchanged by outward rounding at every precision. -/
+example (p : ℕ) : dyadicHull p (NonemptyInterval.pure 0) = NonemptyInterval.pure 0 := by
+  ext <;> simp [dyadicHull]
 
 /-- **Width added by rounding** (README 4.6). -/
 theorem dyadicHull_width (p : ℕ) (I : NonemptyInterval ℚ) :
@@ -1096,8 +1299,17 @@ def complexBoxSet (R I : NonemptyInterval ℚ) : Set ℂ :=
 
 /-- The singleton imaginary box contains `i` and excludes zero. -/
 example : Complex.I ∈ complexBoxSet (NonemptyInterval.pure 0) (NonemptyInterval.pure 1) ∧
-    0 ∉ complexBoxSet (NonemptyInterval.pure 0) (NonemptyInterval.pure 1) := by
-  sorry
+    0 ∉ complexBoxSet ⟨(1, 2), by norm_num⟩ ⟨(-1, 1), by norm_num⟩ := by
+  norm_num [complexBoxSet]
+
+/-- The zero singleton rectangle denotes precisely the zero complex number. -/
+example : complexBoxSet (NonemptyInterval.pure 0) (NonemptyInterval.pure 0) = {0} := by
+  ext z
+  change ((0 ≤ z.re ∧ z.re ≤ 0) ∧ (0 ≤ z.im ∧ z.im ≤ 0)) ↔ z = 0
+  constructor
+  · rintro ⟨hr, hi⟩
+    apply Complex.ext <;> simp only [Complex.zero_re, Complex.zero_im] <;> linarith
+  · rintro rfl; norm_num
 
 /-- **Unique integer extraction** (README 4.8). -/
 def uniqueInteger (I : NonemptyInterval ℚ) : Option ℤ :=
@@ -1108,7 +1320,12 @@ theorem uniqueInteger_sound (I : NonemptyInterval ℚ) (z w : ℤ)
     (hz : (I.fst : ℝ) ≤ z ∧ (z : ℝ) ≤ I.snd) (h : uniqueInteger I = some w) : z = w := by
   sorry
 
-example : uniqueInteger (NonemptyInterval.pure 1) = some 1 := by simp [uniqueInteger]
+/-- Integer recovery distinguishes a unique integer, two integers, and no integer. -/
+example :
+    uniqueInteger ⟨((3 / 4 : ℚ), 5 / 4), by norm_num⟩ = some 1 ∧
+    uniqueInteger ⟨((0 : ℚ), 1), by norm_num⟩ = none ∧
+    uniqueInteger (NonemptyInterval.pure (1 / 2)) = none := by
+  norm_num [uniqueInteger]
 
 end Intervals
 
@@ -1122,10 +1339,18 @@ def ctTailKernel (x : ℝ) : ℝ :=
 
 /-- The kernel's normalization at zero is `2/π²`. -/
 example : ctTailKernel 0 = 2 / Real.pi ^ 2 := by
-  sorry
+  simp only [ctTailKernel, neg_zero, Real.exp_zero, zero_pow (by decide : 2 ≠ 0), zero_add, mul_one]
+  field_simp [Real.pi_ne_zero]
+  <;> ring
 
+/-- The Odlyzko kernel is strictly positive at every real argument. -/
 theorem ctTailKernel_pos (x : ℝ) : 0 < ctTailKernel x := by
   unfold ctTailKernel; positivity
+
+/-- The kernel decreases from zero to one and is not even. -/
+theorem ctTailKernel_strict_controls :
+    ctTailKernel 1 < ctTailKernel 0 ∧ ctTailKernel 1 < ctTailKernel (-1) := by
+  sorry
 
 /-- **Geometric tail bound** (README 4.15). -/
 theorem ctTailKernel_tail (α b : ℝ) (hα : 0 < α) (hb : 0 ≤ b) (N : ℕ) :
@@ -1133,13 +1358,83 @@ theorem ctTailKernel_tail (α b : ℝ) (hα : 0 < α) (hb : 0 ≤ b) (N : ℕ) :
       ∑' n : ℕ, ctTailKernel (α * (b + (N + n))) ≤ ctTailKernel (α * (b + N)) / (1 - exp (-α)) := by
   sorry
 
+/-- The alternating Odlyzko series differs from its first `N` terms by at most the
+first omitted positive term, including `N=0` (README 4.16). -/
+theorem ctTailKernel_alternating_tail (α b : ℝ)
+    (hα : 0 < α) (hb : 0 ≤ b) (N : ℕ) :
+    |(∑' n : ℕ, (-1 : ℝ) ^ n * ctTailKernel (α * (b + n))) -
+      ∑ n ∈ Finset.range N, (-1 : ℝ) ^ n * ctTailKernel (α * (b + n))| ≤
+        ctTailKernel (α * (b + N)) := by
+  sorry
+
+/-- A right-half-plane digamma truncation has an explicit vanishing tail (README 4.17a). -/
+theorem digamma_series_remainder (z : ℂ) (hz : 0 < z.re) (N : ℕ) (hN : 1 ≤ N) :
+    ‖Complex.digamma z - (-(Real.eulerMascheroniConstant : ℂ) +
+      ∑ n ∈ Finset.range N, ((n + 1 : ℂ)⁻¹ - (n + z)⁻¹))‖ ≤
+      ‖z - 1‖ / ((N : ℝ) - 1 + min 1 z.re) := by
+  sorry
+
+/-- The derivative of digamma has the corresponding reciprocal-square tail (README 4.17a). -/
+theorem trigamma_series_remainder (z : ℂ) (hz : 0 < z.re) (N : ℕ) (hN : 1 ≤ N) :
+    ‖deriv Complex.digamma z - ∑ n ∈ Finset.range N, (n + z)⁻¹ ^ 2‖ ≤
+      1 / ((N : ℝ) - 1 + min 1 z.re) := by
+  sorry
+
+/-- The weighted alternating kernel tail starts after `n=N`, on its decreasing range. -/
+theorem ctTailKernel_weighted_alternating_tail (α : ℝ) (hα : 0 < α) (N : ℕ)
+    (hN : 1 ≤ α * (N + 1)) :
+    |(∑' n : ℕ, (-1 : ℝ) ^ n * (n + 1) * ctTailKernel (α * (n + 1))) -
+      ∑ n ∈ Finset.range N, (-1 : ℝ) ^ n * (n + 1) * ctTailKernel (α * (n + 1))| ≤
+        (N + 1) * ctTailKernel (α * (N + 1)) := by
+  sorry
+
 end ExplicitFormula
 
 /-- **Complete isolation of the roots of a rational polynomial** (README 4.19). -/
-theorem isolatePolynomialRoots (f : ℚ[X]) (hf : f ≠ 0) :
+theorem exists_disjoint_root_certificates (f : ℚ[X]) (hf : f ≠ 0) :
     ∃ l : List AlgebraicRootCertificate, (∀ c ∈ l, c.poly = f) ∧ (l.map (·.value)).Nodup ∧
       l.Pairwise (fun c d => Disjoint (complexBoxSet c.re c.im) (complexBoxSet d.re d.im)) ∧
       ∀ z : ℂ, aeval z f = 0 ↔ z ∈ l.map (·.value) := by
+  sorry
+
+/-- Continued Dirichlet values away from a principal pole admit arbitrarily narrow
+rational complex rectangles (README 4.20). -/
+theorem exists_dirichletLBox {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q)
+    (hχ : χ.IsPrimitive) (z : ℂ) (hz : χ = 1 → z ≠ 1) (P : ℕ) :
+    ∃ R I : NonemptyInterval ℚ, χ.LFunction z ∈ complexBoxSet R I ∧
+      R.snd - R.fst ≤ 1 / (2 : ℚ) ^ P ∧ I.snd - I.fst ≤ 1 / (2 : ℚ) ^ P := by
+  sorry
+
+/-- Integral level-one cusp-form values have rational enclosures of every binary precision. -/
+theorem exists_cuspLBox (k : ℤ) (hk : 0 < k)
+    (f : CuspForm 𝒮ℒ k) (hf : f ∈ integralCuspLattice k) (z : ℂ) (P : ℕ) :
+    ∃ R I : NonemptyInterval ℚ, ModularForm.L hk f z ∈ complexBoxSet R I ∧
+      R.snd - R.fst ≤ 1 / (2 : ℚ) ^ P ∧ I.snd - I.fst ≤ 1 / (2 : ℚ) ^ P := by
+  sorry
+
+/-- A nonzero cusp-form value separates the two signs in enclosure arithmetic (README 4.21). -/
+theorem delta_L_twelve_bounds :
+    (1 / 2 : ℝ) < (ModularForm.L (by norm_num : (0 : ℤ) < 12) CuspForm.discriminant 12).re ∧
+    (ModularForm.L (by norm_num : (0 : ℤ) < 12) CuspForm.discriminant 12).re < 3 / 2 ∧
+    (ModularForm.L (by norm_num : (0 : ℤ) < 12) CuspForm.discriminant 12).im = 0 := by
+  sorry
+
+/-- Two continued conductor-one values have explicit rational complex enclosures. -/
+theorem dirichlet_conductor_one_controls :
+    (1 : DirichletCharacter ℂ 1).LFunction 2 ∈
+      complexBoxSet ⟨((8 / 5 : ℚ), 5 / 3), by norm_num⟩ (NonemptyInterval.pure 0) ∧
+    (1 : DirichletCharacter ℂ 1).LFunction 0 = -1 / 2 := by
+  sorry
+
+/-- Every native continued L-value of the zero cusp form is zero. -/
+theorem cuspLBox_zero (k : ℤ) (hk : 0 < k) (z : ℂ) :
+    ModularForm.L hk (0 : CuspForm 𝒮ℒ k) z = 0 := by
+  sorry
+
+/-- Negating the discriminant reflects its nonzero L-value into a negative rational rectangle. -/
+theorem delta_neg_L_twelve_bounds :
+    ModularForm.L (by norm_num : (0 : ℤ) < 12) (-CuspForm.discriminant) 12 ∈
+      complexBoxSet ⟨((-3 / 2 : ℚ), -1 / 2), by norm_num⟩ (NonemptyInterval.pure 0) := by
   sorry
 
 /-- **Platt's bounded-height theorem** (README 4.22): for primitive characters of modulus
@@ -1173,6 +1468,58 @@ theorem effectiveGram_lower (A B : Matrix (Fin n) (Fin n) ℝ) (hAB : ∀ i j, B
     ∑ i, ∑ j, B i j * x i * x j ≤ ∑ i, ∑ j, A i j * x i * x j := by
   sorry
 
+/-- Integer points of the rational quadratic sublevel set; finiteness requires positive
+ definiteness of the matrix (README 4.26). -/
+def ellipsoidPoints (G : Matrix (Fin n) (Fin n) ℚ) (t : Fin n → ℚ) (R : ℚ) :
+    Set (Fin n → ℤ) :=
+  {x | ∑ i, ∑ j, G i j * ((x i : ℚ) - t i) * ((x j : ℚ) - t j) ≤ R}
+
+/-- Coordinatewise bounds admit `(1,1)`, but the unit disk excludes it. -/
+example : (![0, 0] : Fin 2 → ℤ) ∈ ellipsoidPoints 1 0 1 ∧
+    (![1, 0] : Fin 2 → ℤ) ∈ ellipsoidPoints 1 0 1 ∧
+    (![1, 1] : Fin 2 → ℤ) ∉ ellipsoidPoints 1 0 1 := by
+  norm_num [ellipsoidPoints, Fin.sum_univ_two, Matrix.one_apply]
+
+/-- The hexagonal form and a half-integer centre distinguish true quadratic regions from boxes. -/
+example :
+    (![1, -1] : Fin 2 → ℤ) ∈ ellipsoidPoints (!![2, 1; 1, 2]) 0 2 ∧
+    (![1, 1] : Fin 2 → ℤ) ∉ ellipsoidPoints (!![2, 1; 1, 2]) 0 2 ∧
+    (![0] : Fin 1 → ℤ) ∈ ellipsoidPoints 1 (fun _ => 1 / 2) (1 / 4) ∧
+    (![1] : Fin 1 → ℤ) ∈ ellipsoidPoints 1 (fun _ => 1 / 2) (1 / 4) ∧
+    (![-1] : Fin 1 → ℤ) ∉ ellipsoidPoints 1 (fun _ => 1 / 2) (1 / 4) := by
+  norm_num [ellipsoidPoints, Fin.sum_univ_two, Fin.sum_univ_succ, Matrix.one_apply]
+
+/-- Positive-definite rational quadratic sublevels have finitely many integer points,
+with membership exactly the quadratic inequality (README 4.27). -/
+theorem ellipsoidPoints_complete (G : Matrix (Fin n) (Fin n) ℚ) (hG : G.PosDef)
+    (t : Fin n → ℚ) (R : ℚ) :
+    (ellipsoidPoints G t R).Finite ∧ ∀ x : Fin n → ℤ,
+      x ∈ ellipsoidPoints G t R ↔
+        ∑ i, ∑ j, G i j * ((x i : ℚ) - t i) * ((x j : ℚ) - t j) ≤ R := by
+  sorry
+
+/-- The two displayed positive-definite binary ellipsoids have five and seven integer points. -/
+theorem ellipsoidPoints_binary_counts :
+    (ellipsoidPoints (1 : Matrix (Fin 2) (Fin 2) ℚ) 0 1).ncard = 5 ∧
+    (ellipsoidPoints (!![2, 1; 1, 2] : Matrix (Fin 2) (Fin 2) ℚ) 0 2).ncard = 7 := by
+  sorry
+
+/-- A nonpositive-definite zero form admits infinitely many integer vectors at bound zero. -/
+theorem ellipsoidPoints_zero_form_infinite :
+    (ellipsoidPoints (0 : Matrix (Fin 1) (Fin 1) ℚ) 0 0).Infinite := by
+  sorry
+
+/-- In dimension zero, the empty vector has value zero independently of matrix and centre. -/
+theorem ellipsoidPoints_zero_dim (G : Matrix (Fin 0) (Fin 0) ℚ) (t : Fin 0 → ℚ)
+    (R : ℚ) (x : Fin 0 → ℤ) : x ∈ ellipsoidPoints G t R ↔ 0 ≤ R := by
+  simp [ellipsoidPoints]
+
+/-- The translated one-dimensional quadratic region consists exactly of zero and one. -/
+theorem ellipsoidPoints_shifted_one :
+    ellipsoidPoints (1 : Matrix (Fin 1) (Fin 1) ℚ) (fun _ => 1 / 2) (1 / 4) =
+      {(![0] : Fin 1 → ℤ), (![1] : Fin 1 → ℤ)} := by
+  sorry
+
 open Matrix in
 /-- **Loewner lower bounds** (README 4.28). -/
 theorem loewnerGram_lower (A B : Matrix (Fin n) (Fin n) ℝ) (h : (A - B).PosSemidef)
@@ -1190,7 +1537,25 @@ structure NegativeGramCertificate (I : Matrix (Fin n) (Fin n) (NonemptyInterval 
 /-- In dimension zero no nonzero negative Gram witness exists. -/
 example (I : Matrix (Fin 0) (Fin 0) (NonemptyInterval ℚ)) :
     ¬ Nonempty (NegativeGramCertificate I) := by
-  sorry
+  rintro ⟨c⟩
+  apply c.ne_zero
+  funext i
+  exact Fin.elim0 i
+
+/-- The negative interval admits a witness, whereas a straddling interval admits none. -/
+example : Nonempty (NegativeGramCertificate (n := 1) (fun _ _ => ⟨(-2, -1), by norm_num⟩)) ∧
+    ¬ Nonempty (NegativeGramCertificate (n := 1) (fun _ _ => ⟨(-1, 1), by norm_num⟩)) := by
+  constructor
+  · refine ⟨⟨fun _ => 1, ?_, ?_, ?_⟩⟩
+    · intro i; norm_num
+    · intro h
+      have h0 := congrFun h 0
+      norm_num at h0
+    · norm_num [Fin.sum_univ_succ]
+  · rintro ⟨c⟩
+    have h := c.upper_neg
+    norm_num [Fin.sum_univ_succ] at h
+    nlinarith [sq_nonneg (c.vector 0)]
 
 /-- **Soundness** (README 4.30): every real matrix inside the intervals is negative on the
 witness. -/
@@ -1200,34 +1565,39 @@ theorem NegativeGramCertificate.sound (I : Matrix (Fin n) (Fin n) (NonemptyInter
     ∑ i, ∑ j, A i j * c.vector i * c.vector j < 0 := by
   sorry
 
-/-- **Finite Gram-negativity checker** (README 4.32). -/
-def checkNegativeGram (I : Matrix (Fin n) (Fin n) (NonemptyInterval ℚ)) (t : Fin n → ℚ) : Bool :=
-  decide (∀ i, 0 ≤ t i) && decide (t ≠ 0) && decide (∑ i, ∑ j, (I i j).snd * t i * t j < 0)
+/-- Validity of a rational nonnegative Gram witness uses the upper interval endpoints. -/
+def GramWitnessValid (I : Matrix (Fin n) (Fin n) (NonemptyInterval ℚ))
+    (t : Fin n → ℚ) : Prop :=
+  (∀ i, 0 ≤ t i) ∧ t ≠ 0 ∧ ∑ i, ∑ j, (I i j).snd * t i * t j < 0
 
-/-- The one-dimensional interval `[−2, −1]` with vector `1` passes; `[−1, 1]` does not. -/
-example : checkNegativeGram (n := 1) (fun _ _ => ⟨(-2, -1), by norm_num⟩) (fun _ => 1) = true ∧
-    checkNegativeGram (n := 1) (fun _ _ => ⟨(-1, 1), by norm_num⟩) (fun _ => 1) = false := by
-  sorry
+/-- A negative interval admits the unit vector; a straddling interval and the zero vector fail. -/
+example : GramWitnessValid (n := 1) (fun _ _ => ⟨(-2, -1), by norm_num⟩) (fun _ => 1) ∧
+    ¬ GramWitnessValid (n := 1) (fun _ _ => ⟨(-1, 1), by norm_num⟩) (fun _ => 1) ∧
+    ¬ GramWitnessValid (n := 1) (fun _ _ => ⟨(-2, -1), by norm_num⟩) (fun _ => 0) := by
+  norm_num [GramWitnessValid, Fin.sum_univ_succ, funext_iff]
 
-theorem checkNegativeGram_certificate (I : Matrix (Fin n) (Fin n) (NonemptyInterval ℚ))
-    (t : Fin n → ℚ) (h : checkNegativeGram I t = true) :
+/-- A valid raw Gram witness gives the proof-bearing record with exactly that vector. -/
+theorem GramWitnessValid_certificate (I : Matrix (Fin n) (Fin n) (NonemptyInterval ℚ))
+    (t : Fin n → ℚ) (h : GramWitnessValid I t) :
     ∃ c : NegativeGramCertificate I, c.vector = t := by
-  sorry
+  exact ⟨⟨t, h.1, h.2.1, h.2.2⟩, rfl⟩
 
 end Gram
 
-/-- **Finite family of Gram certificates** (README 4.33): every row's checker passes. -/
-def checkGramDataset
-    (rows : List (Σ n : ℕ, Matrix (Fin n) (Fin n) (NonemptyInterval ℚ) × (Fin n → ℚ))) : Bool :=
-  rows.all fun r => checkNegativeGram r.2.1 r.2.2
+/-- A finite Gram family is valid when every row is a valid rational witness. -/
+def GramDatasetValid
+    (rows : List (Σ n : ℕ, Matrix (Fin n) (Fin n) (NonemptyInterval ℚ) × (Fin n → ℚ))) : Prop :=
+  ∀ r ∈ rows, GramWitnessValid r.2.1 r.2.2
 
-example : checkGramDataset [] = true := rfl
+/-- Empty families are valid without establishing completeness. -/
+example : GramDatasetValid [] := by simp [GramDatasetValid]
 
-/-- Appending a zero-vector row makes the entire dataset fail. -/
-example : checkGramDataset
-    [⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun _ => 1)⟩,
-     ⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun _ => 0)⟩] = false := by
-  sorry
+/-- One negative row is valid; adjoining a zero-vector row makes the family invalid. -/
+example : GramDatasetValid [⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun _ => 1)⟩] ∧
+    ¬ GramDatasetValid
+      [⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun _ => 1)⟩,
+       ⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun _ => 0)⟩] := by
+  norm_num [GramDatasetValid, GramWitnessValid, Fin.sum_univ_succ, funext_iff]
 
 /-- **The multiplicity lift** (README 4.34): `x_(i,r) = t_i/m_i` turns the block matrix
 `A·δ − K_(ij)` into `β = (A/m_i)δ_ij − K_ij`. -/
@@ -1238,35 +1608,16 @@ theorem multiplicityGram_lift {n : ℕ} (m : Fin n → ℕ) (hm : ∀ i, 0 < m i
       ∑ i, ∑ j, ((if i = j then A / m i else 0) - Kmat i j) * t i * t j := by
   sorry
 
-/-- The two-block witness has value `−34` in both normalizations. -/
+/-- The actual five-coordinate lift for blocks two and three has quadratic value minus 34. -/
 example :
-    (∑ i : Fin 2, ∑ j : Fin 2,
-      (!![2, -2; -2, -2] : Matrix (Fin 2) (Fin 2) ℚ) i j *
-        (![2, 3] : Fin 2 → ℚ) i * (![2, 3] : Fin 2 → ℚ) j) = -34 ∧
-    (30 - (4 + 24 + 36) : ℚ) = -34 := by
-  norm_num [Fin.sum_univ_two]
-
-/-!
-## Targets stated only in README.md
-
-The README states these targets with their hypotheses, sources and checks. Their statements
-need constructions that are themselves targets (root isolation, the Miller basis and integral
-Hecke matrices, residual polynomials, `p`-adic ball arithmetic, enclosures of special functions,
-the Fincke–Pohst recursion and the saturation algorithm), so they are not stated here.
-
-* `presentationChange` (0.17), `aks` (1.13), `millerBasis` (3.3): the executable maps and
-  chosen basis are README constructions; the predicates, certificates and existence signatures are above.
-* `rationalRootCertificate` (0.9), `algebraicEqual` (0.13), `phiResidualPolynomial` (2.19),
-  `ore_residual_irreducible` (2.20), `card_padicRoots_eq` (2.23), `modularDataEqual` (3.5),
-  `integralHeckeMatrix` (3.7), `weight38_nonordinary_det` (3.10),
-  `NonordinaryLevelOnePair` (3.11), `small_nonordinary_primes` (3.12),
-  `nonordinary_pairs_lt_200` (3.13), `weight82_companion_system` (3.14),
-  `OrdinaryCompanionPair` (3.15), `corrected_ordinary_companion_list` (3.16),
-  `LocalImageCertificate` (3.18), `exists_complete_localImageCertificate` (3.20), `localImage_of_good_odd` (3.21),
-  `pSaturationTest` (3.26), `padicNormalize` (4.10), `padicAdd` (4.11), `padicMul` (4.12),
-  `padicInverse` (4.13), `ctTailKernel_alternating_tail` (4.16), `ctExplicitFormula` (4.17),
-  `ctEnclosure` (4.18), `dirichletLBox` (4.20), `cuspLBox` (4.21), `fpEnumeration` (4.26),
-  `fpEnumeration_complete` (4.27), `effectiveEllipsoidCover` (4.31)
--/
+    ∑ a : (Σ i : Fin 2, Fin ((![(2 : ℕ), 3] : Fin 2 → ℕ) i)),
+      ∑ b : (Σ i : Fin 2, Fin ((![(2 : ℕ), 3] : Fin 2 → ℕ) i)),
+        ((if a = b then (6 : ℝ) else 0) -
+          (!![1, 2; 2, 4] : Matrix (Fin 2) (Fin 2) ℝ) a.1 b.1) *
+        ((![(2 : ℝ), 3] : Fin 2 → ℝ) a.1 / (![(2 : ℕ), 3] : Fin 2 → ℕ) a.1) *
+        ((![(2 : ℝ), 3] : Fin 2 → ℝ) b.1 / (![(2 : ℕ), 3] : Fin 2 → ℕ) b.1) = -34 := by
+  have h := multiplicityGram_lift (![(2 : ℕ), 3]) (by decide)
+    6 (!![1, 2; 2, 4]) (![(2 : ℝ), 3])
+  convert h using 1 <;> norm_num [Fin.sum_univ_two]
 
 end TauCetiRoadmap.ComputationalNumberTheory

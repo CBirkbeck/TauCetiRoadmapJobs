@@ -102,6 +102,7 @@ PrismaticCohomologyPartIV
 ColemanIntegration
 ArakelovGeometryAndAbelianHeights
 HeightsRationalPointsAndObstructions
+ComputationalNumberTheory
 EisensteinIdealAndRationalTorsion
 ArithmeticStatisticsPartVI
 ArithmeticStatisticsPartVII
