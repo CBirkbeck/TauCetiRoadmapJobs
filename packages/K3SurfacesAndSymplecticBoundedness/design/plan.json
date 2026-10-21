@@ -380,26 +380,30 @@
           ],
           "locator": {
             "source": "lang-nygaard",
-            "where": "Theorem 1.3 proof and following remark, p.172, lang-nygaard lines 93–104; nygaard-vectorfields Lemma 3.3; Rudakov–Shafarevich vector-field reduction as cited in lang-nygaard lines 101–103"
+            "where": "Theorem 1.3 proof, p.172, lang-nygaard lines 93–104; nygaard-vectorfields Lemma 3.3; rudakov-shafarevich-inseparable §2, Theorem 5 and Corollaries 1–2, pp.1216–1217, lines 438–497; shioda-unirational-primary Lemma p.234 and Corollary 2 p.235"
           },
           "prerequisites": [
             "target:1.4",
             "target:2.1",
             "gap:witt-formal-brauer",
             "roadmap:CrystallineCohomology CR.4.6–CR.4.7",
-            "roadmap:SchemeAndStackFoundations §5.10"
+            "roadmap:SchemeAndStackFoundations §5.10",
+            "gap:rational-surface-cohomology",
+            "roadmap:EtaleCohomologyFoundations F.6",
+            "roadmap:SchemeAndStackFoundations §5.4",
+            "roadmap:SchemeAndStackFoundations §5.8"
           ],
-          "proofSketch": "Prove the vector-field unirationality and rank-22 reduction used in Nygaard’s kernel argument, then the kernel assertion with the Witt and formal-Brauer comparisons. The rank here is the supplied Néron–Severi rank, so no later K3 lattice construction is a premise. In 2.2, a nonzero d on global one-forms produces a nonzero vector field by contraction. The dual d on H²(O) is then injective; FdV=d and V-separatedness would make the Witt differential injective, contradicting this target.",
+          "proofSketch": "Prove the Rudakov–Šafarevič vector-field unirationality reduction and apply the general unirational-surface cycle theorem to get rank 22 as in their Corollary 2, then the kernel assertion with the Witt and formal-Brauer comparisons. For this unirational surface, the general surface input gives H¹_et=H³_et=0 and ρ=b₂; Noether from χ(O)=2 and K=0 gives deg c₂=24, and étale Gauss–Bonnet gives b₂=22. This uses only the earlier coherent invariants and general surface theorems, not §2.4, §3.4 or the later K3 lattice. In 2.2, a nonzero d on global one-forms produces a nonzero vector field by contraction. The dual d on H²(O) is then injective; FdV=d and V-separatedness would make the Witt differential injective, contradicting this target.",
           "api": [
             {
               "name": "infiniteHeightDifferentialKernel.vectorField_unirational",
               "role": "proof interface",
-              "statement": "A nonzero global vector field on a geometric K3 surface makes X unirational."
+              "statement": "A nonzero global vector field on a geometric K3 surface makes X unirational. (rudakov-shafarevich-inseparable §2, Corollary 1, p.1217, lines 481–486.)"
             },
             {
               "name": "infiniteHeightDifferentialKernel.vectorField_rank",
               "role": "proof interface",
-              "statement": "The same hypothesis gives Néron–Severi rank 22."
+              "statement": "The same hypothesis gives Néron–Severi rank 22. (shioda-unirational-primary Corollary 2, p.235; rudakov-shafarevich-inseparable Corollary 2 proof, p.1217, lines 489–491.)"
             },
             {
               "name": "infiniteHeightDifferentialKernel.exists_nonzero",
@@ -903,7 +907,6 @@
             "roadmap:SchemeAndStackFoundations §2.11",
             "roadmap:JacobianChallenge Layer C",
             "roadmap:JacobianChallenge Layer D",
-            "gap:galois-brauer-descent",
             "roadmap:ComplexComparisonPartII C3.2d.4"
           ],
           "proofSketch": "Injectivity uses nonzero sections of L and L⁻¹. Field base change preserves the Euler-characteristic intersection formula. Over an algebraically closed base the discrete étale Picard scheme makes a spread-out class constant. Descent over finite extensions follows from finite presentation. The pⁿ-power cocycle descends through purely inseparable extensions. Hochschild–Serre and Hilbert90 give the Brauer obstruction, killed after tensoring ℚ.",
@@ -1197,7 +1200,7 @@
             "gap:galois-brauer-descent",
             "roadmap:ComplexComparisonPartII C3.2d.4"
           ],
-          "proofSketch": "The continuous Galois action on the finite free geometric Picard group has finite image. Reduction mod3 bounds its order in rank≤22; pad lower ranks with identity blocks. The fixed field of the kernel has bounded separable degree. Brauer obstructions are torsion and purely inseparable cokernels are p-primary, so rational descent gives the whole rank. Finite-field Brauer vanishing or a rational point in characteristic0 kills the integral obstruction. Descending finitely many generators gives the unconditional unbounded extension.",
+          "proofSketch": "By §4.1 each geometric Picard class descends to a finite extension, so its Galois stabilizer is open, also over imperfect k by taking the separable part of that extension. This proves continuity for the discrete Picard group. Intersect the stabilizers of a finite basis from §4.2 to obtain an open kernel, hence finite image. Reduction mod3 bounds its order in rank≤22; pad lower ranks with identity blocks. The fixed field of the kernel has bounded separable degree. Brauer obstructions are torsion and purely inseparable cokernels are p-primary, so rational descent gives the whole rank. Finite-field Brauer vanishing or a rational point in characteristic0 kills the integral obstruction. Descending finitely many generators gives the unconditional unbounded extension.",
           "api": [],
           "tests": [
             {
@@ -1626,7 +1629,8 @@
             "target:5.1",
             "roadmap:SchemeAndStackFoundations §2.23",
             "gap:surface-quotient-resolutions",
-            "gap:elliptic-surface-geometry"
+            "gap:elliptic-surface-geometry",
+            "gap:rational-surface-cohomology"
           ],
           "proofSketch": "Use the equivariant O-cohomology sequences to separate the finite fixed sets from the divisor case. In the divisor case prove the anticanonical quotient relation and connectedness, then apply RR and surface intersection theory to its three Kodaira dimensions. Keep all maps on the actual quotient, without a prime-to-p averaging operator.",
           "api": [
@@ -1638,7 +1642,7 @@
             {
               "name": "wildFixedLocusAlternatives.kappaZeroQuotient",
               "role": "proof interface",
-              "statement": "After contracting F in the κ=0 case, its quotient is rational with trivial canonical divisor and one elliptic Gorenstein singularity, using the refinement in dolgachev-keum Proposition 2.4."
+              "statement": "After contracting F in the κ=0 case, its quotient is rational with trivial canonical divisor and one elliptic Gorenstein singularity, using the refinement in dolgachev-keum Proposition 2.4. Its smooth projective resolution has algebraic H² by gap:rational-surface-cohomology; no cohomology claim is made for the singular contraction itself."
             },
             {
               "name": "wildFixedLocusAlternatives.kappaOneBase",
@@ -1669,7 +1673,7 @@
           "kind": "theorem",
           "name": "IsK3.wildCyclicQuotient",
           "title": "Wild quotient alternatives",
-          "statement": "For geometric K3 X/k in characteristic p>0 and g of order p, the minimal resolution of X/⟨g⟩ is rational, a nonclassical µ₂-type Enriques surface (only p=2 with empty fixed locus), or K3. The fixed locus is either finite with at most2 points or a connected divisor of Kodaira dimension0,1 or2. In the K3 quotient branch the exceptional locus increases Picard rank, and the rational transcendental cokernel H²_et/(Pic⊗ℚ_ℓ) of its resolution is the g-invariant cokernel of X. Rational and Enriques quotients have H²-invariants algebraic; in the Enriques branch their dimension is10.",
+          "statement": "For geometric K3 X/k in characteristic p>0 and g of order p, the minimal resolution of X/⟨g⟩ is rational, a nonclassical µ₂-type Enriques surface (only p=2 with empty fixed locus), or K3. The fixed locus is either finite with at most2 points or a connected divisor of Kodaira dimension0,1 or2. In the K3 quotient branch the exceptional locus increases Picard rank, and the rational transcendental cokernel H²_et/(Pic⊗ℚ_ℓ) of its resolution is the g-invariant cokernel of X. In the rational branch H²_et(X,ℚ_ℓ(1))^g is algebraic. In the free Enriques branch dim H²_et(X,ℚ_ℓ)^g=10; this assertion uses the second Betti number, without a Picard-rank identification.",
           "hypotheses": [
             "k algebraically closed of characteristic p>0",
             "IsK3(X/k)",
@@ -1687,9 +1691,13 @@
             "roadmap:SchemeAndStackFoundations §2.23",
             "gap:surface-quotient-resolutions",
             "target:6.2a",
-            "gap:quotient-transcendental-comparison"
+            "gap:quotient-transcendental-comparison",
+            "gap:rational-surface-cohomology",
+            "gap:finite-etale-quotient-invariants",
+            "roadmap:EtaleCohomologyFoundations F.6",
+            "roadmap:SchemeAndStackFoundations §5.4"
           ],
-          "proofSketch": "Analyze equivariant O-cohomology and the anticanonical quotient. Track rational versus rational-double-point singularities and the empty-fixed-locus characteristic2 case. Quotient correspondences with ℚ_ℓ coefficients and resolution contributions identify the algebraic and transcendental pieces. No tame linearization is used.",
+          "proofSketch": "Analyze equivariant O-cohomology and the anticanonical quotient. Track rational versus rational-double-point singularities and the empty-fixed-locus characteristic2 case. Quotient correspondences with ℚ_ℓ coefficients and resolution contributions identify the algebraic and transcendental pieces. No tame linearization is used. In the rational branch apply the general rational-surface cycle theorem, then the quotient transcendental comparison. In the Enriques branch q:X→Y is a finite étale C₂-torsor, even in characteristic 2. Rational quotient descent gives Hⁱ(Y,ℚ_ℓ)=Hⁱ(X,ℚ_ℓ)^g and H¹(Y)=H³(Y)=0. Since T_X=q* T_Y, the projection formula gives deg c₂(T_X)=2 deg c₂(T_Y). Gauss–Bonnet yields e(Y)=24/2=12 and b₂(Y)=12−2=10.",
           "api": [],
           "tests": [
             {
@@ -1700,12 +1708,17 @@
             {
               "name": "enriques_rank10",
               "kind": "computation",
-              "statement": "An identity action on a rank22 H² cannot have its invariant dimension10."
+              "statement": "The free characteristic-2 quotient has e=12 and b₂=10, hence cannot come from an identity action on H² of dimension 22; no equality ρ=b₂ is used."
             },
             {
               "name": "rdp_rank_increase",
               "kind": "characterisation",
               "statement": "The nontrivial exceptional root lattice makes the K3 resolution rank strictly larger than the quotient rank."
+            },
+            {
+              "name": "enriques_betti_not_picard",
+              "kind": "boundary",
+              "statement": "For the free C₂-torsor in characteristic 2, ℓ is odd and rational descent computes b₂=10 without computing ρ; replacing this with an unowned Picard-rank assertion fails."
             }
           ]
         },
@@ -1889,9 +1902,11 @@
             "target:6.3",
             "target:6.4",
             "gap:cross-realization",
-            "target:6.4a"
+            "target:6.4a",
+            "gap:rational-surface-cohomology",
+            "gap:finite-etale-quotient-invariants"
           ],
-          "proofSketch": "A cohomologically trivial automorphism fixes Pic and an ample class, so has finite order by5.3. In characteristic0 Hodge comparison makes it symplectic; the nonidentity tame trace table contradicts identity trace22 on H². In positive characteristic cross-realization makes it symplectic; remove the prime-to-p part using6.2 and reduce to order p. The rational quotient forces ρ=22, then the supersingular Picard-faithfulness theorem applies. The Enriques case has invariant dimension10; the K3-resolution case gives 22>22 by the strict exceptional-rank increase and invariant transcendental comparison. Integral freeness relates the two actions.",
+          "proofSketch": "A cohomologically trivial automorphism fixes Pic and an ample class, so has finite order by5.3. In characteristic0 Hodge comparison makes it symplectic; the nonidentity tame trace table contradicts identity trace22 on H². In positive characteristic cross-realization makes it symplectic; remove the prime-to-p part using6.2 and reduce to order p. The rational quotient has algebraic H² by the surface cycle contract; §6.3 and cohomological triviality force ρ=22, then the supersingular Picard-faithfulness theorem applies. The free Enriques quotient has invariant dimension 10 by the finite étale descent and Gauss–Bonnet calculation of §6.3; the K3-resolution case gives 22>22 by the strict exceptional-rank increase and invariant transcendental comparison. Integral freeness relates the two actions.",
           "api": [],
           "tests": [
             {
@@ -2000,6 +2015,175 @@
           ]
         },
         {
+          "id": "6.7a",
+          "kind": "theorem",
+          "name": "IsK3.artinHeightInequality",
+          "title": "Height and Picard rank",
+          "statement": "For a K3 surface X over an algebraically closed field of characteristic p>0 with finite one-dimensional formal Brauer height h, one has h≥1 and ρ(X)≤22−2h. Consequently ρ(X)=22 forces infinite height.",
+          "hypotheses": [
+            "k algebraically closed of characteristic p>0",
+            "IsK3(X/k)",
+            "finite formal Brauer height h for the inequality"
+          ],
+          "locator": {
+            "source": "artin-supersingular",
+            "where": "Theorem (0.1), pp.543–544, artin-supersingular lines 40–55; the projective lifting hypothesis is supplied by §2.7"
+          },
+          "prerequisites": [
+            "target:2.7",
+            "target:3.4",
+            "target:4.4",
+            "gap:witt-formal-brauer"
+          ],
+          "proofSketch": "Use a polarized projective characteristic-zero lift from §2.7, apply Artin’s surface height inequality with b₂=22, and use the one-dimensional finite-height alternative. The rank of the height-h Dieudonné module belongs to the formal-Brauer supplier contract.",
+          "api": [],
+          "tests": [
+            {
+              "name": "height_one_rank",
+              "kind": "boundary",
+              "statement": "At h=1 the bound is ρ≤20, excluding 21 and 22 in that branch."
+            },
+            {
+              "name": "height_ten_rank",
+              "kind": "boundary",
+              "statement": "At h=10 the bound is ρ≤2; h=11 would contradict the ample class and ρ≥1."
+            },
+            {
+              "name": "height_infinite_boundary",
+              "kind": "boundary",
+              "statement": "Infinite height is not substituted as an integer in 22−2h; only the contrapositive rank-22 implication is asserted."
+            }
+          ]
+        },
+        {
+          "id": "6.7b",
+          "kind": "theorem",
+          "name": "IsK3.genusOnePencil_of_rank_ge_five",
+          "title": "Rank-five genus-one pencils",
+          "statement": "For a K3 surface X over an algebraically closed field, ρ(X)≥5 implies a surjective genus-one fibration X→ℙ¹ with geometrically integral generic fibre. The fibration is elliptic outside characteristics 2 and 3; in those characteristics the quasi-elliptic alternative is retained.",
+          "hypotheses": [
+            "k algebraically closed",
+            "IsK3(X/k)"
+          ],
+          "locator": {
+            "source": "huybrechts",
+            "where": "Chapter 11 Proposition 1.3(ii), p.208, huybrechts lines 7879–7888; Chapter 2 §3.3 and Remark 3.13, pp.32–34, lines 1110–1132,1173–1183"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:4.2",
+            "roadmap:GlobalQuadraticForms §5.5",
+            "roadmap:QuadraticFormInvariants Layer 6D",
+            "gap:elliptic-surface-geometry"
+          ],
+          "proofSketch": "Hodge index makes Pic⊗ℚ indefinite. GlobalQuadraticForms §5.5 and the local rank-at-least-five criterion from QuadraticFormInvariants Layer 6D give a nonzero rational isotropic vector. Clear denominators and choose its primitive effective sign by RR. Reflection in effective (−2)-curves yields a primitive nef isotropic class; its complete linear system is a base-point-free genus-one pencil. Retain the possible cuspidal geometric generic fibre in characteristics 2 and 3.",
+          "api": [],
+          "tests": [
+            {
+              "name": "pencil_rank1_control",
+              "kind": "boundary",
+              "statement": "A rank-one positive lattice generated by H with H²=4 has no nonzero isotropic vector; the rank threshold cannot be dropped."
+            },
+            {
+              "name": "pencil_primitive_fibre",
+              "kind": "boundary",
+              "statement": "For a fibre F, (2F)²=0 but |2F| is composite with |F|; primitivity distinguishes the pencil from its multiples."
+            },
+            {
+              "name": "pencil_small_characteristic",
+              "kind": "boundary",
+              "statement": "A quasi-elliptic fibre has arithmetic genus one and rational cuspidal geometric generic fibre; isotropy alone does not prove smoothness in characteristics 2 and 3."
+            }
+          ]
+        },
+        {
+          "id": "6.7c",
+          "kind": "theorem",
+          "name": "IsK3.ellipticSupersingular_rank22",
+          "title": "Infinite height with a genus-one pencil",
+          "statement": "For a K3 surface X over an algebraically closed field of characteristic p>0, infinite formal Brauer height together with an elliptic fibration X→ℙ¹ implies ρ(X)=22; no section is assumed. A quasi-elliptic fibration also implies ρ(X)=22, without a height hypothesis.",
+          "hypotheses": [
+            "k algebraically closed of characteristic p>0",
+            "IsK3(X/k)",
+            "infinite formal Brauer height and an elliptic fibration for the first assertion; a quasi-elliptic fibration for the second"
+          ],
+          "locator": {
+            "source": "artin-supersingular",
+            "where": "Theorem (1.7)(i), p.547, artin-supersingular lines 192–210; quasi-elliptic alternative huybrechts Chapter 2 Remark 3.13, lines 1182–1183"
+          },
+          "prerequisites": [
+            "target:3.4",
+            "target:4.4",
+            "gap:witt-formal-brauer",
+            "gap:elliptic-surface-geometry",
+            "gap:rational-surface-cohomology"
+          ],
+          "proofSketch": "Apply Artin’s elliptic theorem in its formal-height convention, using the Jacobian-fibration comparison also when the pencil has no section. For a quasi-elliptic pencil over ℙ¹, use the general surface unirationality input and the unirational-surface cycle theorem. These alternatives close the small-characteristic branch without assuming every genus-one pencil is elliptic.",
+          "api": [],
+          "tests": [
+            {
+              "name": "elliptic_no_section",
+              "kind": "boundary",
+              "statement": "An elliptic genus-one fibration without a section satisfies the same height/rank assertion; adding a section would narrow Artin’s theorem."
+            },
+            {
+              "name": "elliptic_finite_height_control",
+              "kind": "boundary",
+              "statement": "At finite height h=1 the rank is at most 20 by §6.7a; the elliptic hypothesis alone does not imply rank 22."
+            },
+            {
+              "name": "quasi_elliptic_branch",
+              "kind": "boundary",
+              "statement": "The characteristic-2 or characteristic-3 quasi-elliptic case uses unirationality, not a claim of smooth elliptic generic fibre."
+            }
+          ]
+        },
+        {
+          "id": "6.7d",
+          "kind": "theorem",
+          "name": "IsK3.symplecticInvolution_genusOnePencil",
+          "title": "The involution pencil input",
+          "statement": "For a K3 surface X over an algebraically closed field of characteristic p>0 with p≠2 and a symplectic automorphism g of exact order two, ρ(X)≥5 and X admits a genus-one fibration. It is elliptic if p≠3; at p=3 a quasi-elliptic fibration suffices for the rank-22 deduction of §6.7c.",
+          "hypotheses": [
+            "k algebraically closed of characteristic p>0, p≠2",
+            "IsK3(X/k)",
+            "g symplectic of exact order 2"
+          ],
+          "locator": {
+            "source": "dolgachev-keum",
+            "where": "Lemma 4.3, pp.15–16, dolgachev-keum lines 597–648; the genus-one versus elliptic distinction is huybrechts lines 1127–1132,1173–1183"
+          },
+          "prerequisites": [
+            "target:3.4",
+            "target:4.2",
+            "target:6.1",
+            "target:6.2",
+            "target:6.7b",
+            "gap:surface-brauer-localization",
+            "gap:surface-brauer-kummer",
+            "gap:equivariant-brauer-descent"
+          ],
+          "proofSketch": "Prove the K3 involution rank estimate using the free locus, the eight exceptional curves on the quotient resolution, Brauer localization, integral Kummer and equivariant Hochschild–Serre. Track integral extension and torsion terms before deriving the dimension inequality; no assertion that every order-two integral matrix is identity modulo two is used. Apply §6.7b to the resulting ρ≥5.",
+          "api": [],
+          "tests": [
+            {
+              "name": "involution_exact_order",
+              "kind": "boundary",
+              "statement": "The identity is excluded: an arbitrary rank-one polarized K3 has no pencil forced by its identity automorphism."
+            },
+            {
+              "name": "involution_mod2_control",
+              "kind": "boundary",
+              "statement": "The integral involution interchanging the two basis vectors is nonidentity modulo 2. Rational ±1 eigenspaces do not justify integral splitting or mod-2 triviality."
+            },
+            {
+              "name": "involution_p3_control",
+              "kind": "boundary",
+              "statement": "At p=3 a quasi-elliptic pencil is retained, and §6.7c still gives rank 22 at infinite height; p=2 is excluded by tameness of the involution."
+            }
+          ]
+        },
+        {
           "id": "6.8",
           "kind": "definition",
           "name": "IsK3.IsArtinInvariantOne",
@@ -2086,9 +2270,13 @@
             "gap:witt-formal-brauer",
             "gap:artin-discriminant",
             "gap:cross-realization",
-            "roadmap:CrystallineCohomology CR.2.3, CR.3.2–CR.3.3, CR.3:duality.1, CR.4.7"
+            "roadmap:CrystallineCohomology CR.2.3, CR.3.2–CR.3.3, CR.3:duality.1, CR.4.7",
+            "target:6.7a",
+            "target:6.7b",
+            "target:6.7c",
+            "target:6.7d"
           ],
-          "proofSketch": "If Y is not rank-22 supersingular, the transcendental comparison and the K3 elliptic formal-Brauer height inequality rule out transcendental dimension one; add an invariant ample class and H⁰,H⁴. If Y is supersingular, use the formal-Brauer pullback with nonzero tangent, the elliptic reduction of Lemmas 4.3–4.4 and the separate order-7 and order-21 character calculations. For Artin invariant >1 the nonzero de Rham (1,1) cycle contribution supplies a third H² invariant, or the quotient root-lattice discriminant gives invariant Picard rank >2. Average only in |G|, which is a unit. The idempotent on crystalline cohomology commutes with reduction; characteristic-polynomial comparison transfers the rank to ℚ_ℓ. In characteristic zero the volume form, its conjugate and an averaged ample class give three H² invariants.",
+          "proofSketch": "If ρ(Y)<22, §6.7a rules out finite-height rank 21. If Y had rank 21 at infinite height, §6.7b would give a genus-one pencil and §6.7c would force rank 22. Thus the transcendental cokernel has dimension at least two; quotient comparison, an invariant ample class and H⁰,H⁴ give five invariants. If ρ(Y)=22, §6.7a gives infinite height; formal-Brauer pullback and trace, with nonzero tangent, and absence of homomorphisms between finite-height formal groups and the formal additive group transfer infinite height to X. For even |G| apply §6.7d and §6.7c. For odd |G| outside {7,21}, the element-order table and quotient root lattices give ρ(X)≥6 as in Lemma 4.4, so §§6.7b–6.7c apply. The separate order-7 and order-21 character averages each give six invariants. For Artin invariant >1 the nonzero de Rham (1,1) cycle contribution supplies a third H² invariant, or the quotient root-lattice discriminant gives invariant Picard rank >2. Average only in |G| in characteristic p; the crystalline idempotent commutes with reduction and cross-realization transfers its rank to every ℚ_ℓ. In characteristic zero the volume form, its conjugate and an averaged ample class give three H² invariants.",
           "api": [
             {
               "name": "tameInvariantDimension.nonsupersingularQuotient",
@@ -2098,12 +2286,12 @@
             {
               "name": "tameInvariantDimension.involutionPencil",
               "role": "proof interface",
-              "statement": "For p≠2 a symplectic involution on X implies existence of an elliptic fibration on X (Lemma 4.3)."
+              "statement": "For p≠2 a symplectic involution gives the genus-one pencil of §6.7d, with its quasi-elliptic alternative at p=3."
             },
             {
               "name": "tameInvariantDimension.supersingularTransfer",
               "role": "proof interface",
-              "statement": "If ρ(Y)=22 and |G|∉{7,21}, then ρ(X)=22; for elliptic K3 surfaces infinite formal-Brauer height implies rank 22, as used in Lemma 4.4."
+              "statement": "If ρ(Y)=22 and |G|∉{7,21}, then ρ(X)=22, by formal-height transfer and §§6.7a–6.7d; elliptic and quasi-elliptic pencils are both included."
             },
             {
               "name": "tameInvariantDimension.artinGreaterOne",
@@ -3007,6 +3195,20 @@
         "N6 mapping-torus example"
       ],
       "what": "Topological Lefschetz fixed-point formula and local fixed-point index."
+    },
+    {
+      "roadmap": "GlobalQuadraticForms",
+      "sections": [
+        "§5.5"
+      ],
+      "what": "Hasse–Minkowski isotropy for regular forms over number fields; combined here with local isotropy and real indefiniteness to obtain Meyer’s rational rank-five corollary."
+    },
+    {
+      "roadmap": "QuadraticFormInvariants",
+      "sections": [
+        "Layer 6D"
+      ],
+      "what": "Isotropy of every regular quadratic form of rank at least five over any nonarchimedean local field of characteristic zero, including ℚ₂."
     }
   ],
   "consumers": [
@@ -3067,7 +3269,7 @@
       "supplier": "CFSGStatement",
       "section": "proposed Part II §finite-linear-groups",
       "needs": "Supply cyclic, binary dihedral, tetrahedral, octahedral and icosahedral classification for finite prime-to-p subgroups of SL₂ over algebraically closed fields.",
-      "detail": "Dolgachev–Keum Lemma 3.1; retain characteristic-zero and tame positive-characteristic domains. The local groups, discriminants of their ADE resolutions and quaternion rational/2-adic representation obstructions are needed by the Mukai argument, not a bare presentation of each group.",
+      "detail": "Dolgachev–Keum Lemma 3.1, lines 399–402; retain characteristic-zero and tame positive-characteristic domains. ADE resolution discriminants belong to gap:tame-quotient-singularities and quaternion representation obstructions to gap:mukai-eleven-groups-recognition.",
       "neededBy": [
         "6.1",
         "6.10"
@@ -3078,12 +3280,14 @@
       "title": "Genus-one fibrations",
       "supplier": "SchemeAndStackFoundations",
       "section": "proposed Part II §genus-one-fibrations",
-      "needs": "Supply relatively minimal genus-one fibrations and their Jacobian fibrations over smooth curves over algebraically closed fields, with Kodaira–Néron fibre types in every characteristic, including quasi-elliptic characteristics 2 and 3.",
-      "detail": "Include the fibre-component root-lattice quotient and finite-index comparison d_M=a²d_R(φ) for a maximal negative definite vertical sublattice M, where a=[R(φ):image(M)] (dolgachev-keum §3, line 424–443). Curve Jacobians do not supply this surface interface; the elliptic K3 p-torsion exclusion and the K3 genus-one-pencil deductions are owned by §6.3a.",
+      "needs": "Supply relatively minimal genus-one fibrations and their Jacobian fibrations over smooth curves over algebraically closed fields, with Kodaira–Néron fibre types in every characteristic, including quasi-elliptic characteristics 2 and 3. Include the fibre-component root-lattice quotient and finite-index identity d_M=a²d_R(φ), where a=[R(φ):image(M)] for a maximal negative definite vertical sublattice M, and unirationality of a quasi-elliptic surface over the rational base curve.",
+      "detail": "The index identity is dolgachev-keum equation (3.1), lines 424–443. The quasi-elliptic branch is restricted to characteristics 2 and 3 (huybrechts Chapter 2 §3.3, lines 1127–1132 and 1182–1183). Curve Jacobians do not supply this surface interface; the K3 p-torsion exclusion is §6.3a and the rank-five pencil construction is §6.7b.",
       "neededBy": [
         "6.1",
         "6.2a",
         "6.3a",
+        "6.7b",
+        "6.7c",
         "6.8a"
       ]
     },
@@ -3092,8 +3296,8 @@
       "title": "Supersingular crystalline lattice calculation",
       "supplier": "CrystallineCohomology",
       "section": "proposed Part II §supersingular-cycle-lattices",
-      "needs": "Supply p-elementarity of the geometric Picard discriminant at rank22 and the crystalline cycle-lattice index computation.",
-      "detail": "Huybrechts Chapter 17 Proposition 2.19 explicitly leaves p Pic*⊂Pic to crystalline/flat duality. Require the crystalline cycle index and the nonzero de Rham (1,1) contribution of a primitive invariant ample class when the Artin invariant exceeds one (dolgachev-keum lines 737–755); the K3 formal-Brauer quotient deductions are §6.8a. Abstract lattice classification remains IntegralLattices; its K3 realization is target 6.7. At discriminant length 22 require that the rescaled form B/p is integral and even, also for p=2, as used in huybrechts line 14341; p-elementarity alone does not give this dyadic parity.",
+      "needs": "Supply p-elementarity of the rank-22 geometric Picard discriminant and the crystalline cycle-lattice index; at discriminant length 22 require integrality and evenness of B/p including p=2; for Artin invariant >1 require injectivity of Pic(X)/p→H¹(X,Ω¹_X) as an 𝔽_p-linear map, in particular nonvanishing on a primitive ample class.",
+      "detail": "Huybrechts Chapter 17 Proposition 2.19, lines 14328–14341, gives the index and parity requirements. Dolgachev–Keum lines 737–755 give the de Rham (1,1) requirement; this is not injectivity after tensoring Pic/p with k. Averaging a finite tame orbit gives an invariant ample class; divide by its maximal integral divisibility in Pic to obtain a primitive invariant ample class. Abstract lattice classification remains IntegralLattices; its K3 realization is §6.7.",
       "neededBy": [
         "6.7",
         "6.8a",
@@ -3114,13 +3318,12 @@
     },
     {
       "slug": "galois-brauer-descent",
-      "title": "Continuous arithmetic Picard descent",
+      "title": "Finite-field cohomological Brauer comparison",
       "supplier": "JacobianChallenge",
       "section": "proposed Part III §arithmetic-Picard-descent",
-      "needs": "Supply continuity of the discrete geometric Picard action for smooth proper geometrically integral varieties with finitely generated geometric Picard group, together with finite-field cohomological Brauer vanishing.",
-      "detail": "Layer D supplies the obstruction sequence on arbitrary test schemes over a field; JacobianChallengePartII concerns relative curve Jacobians and does not supply this arithmetic extension. For finite fields, the pinned littleWedderburn proves that a finite division algebra is commutative; the remaining input is the central-simple-algebra realization of field Brauer classes and its identification with H²_fppf(k,G_m). Rational invariant descent here uses the supplied obstruction sequence, whose classes are torsion over a field.",
+      "needs": "Supply, for a finite field k, the identification H²_fppf(Spec k,G_m)≅Br(k), hence its vanishing using the pinned Tau Ceti theorem TauCeti.subsingleton_brauerGroup_of_finite.",
+      "detail": "JacobianChallenge Layer D supplies the Picard–Brauer obstruction sequence; JacobianChallengePartII concerns relative curve Jacobians. The algebraic Brauer group already vanishes by TauCeti/Algebra/BrauerGroup/Trivial.lean; the missing input is its cohomological comparison. Continuity of the geometric Picard action follows in §4.6 from finite-extension descent in §4.1, without this gap.",
       "neededBy": [
-        "4.1",
         "4.6",
         "8.5"
       ]
@@ -3130,11 +3333,13 @@
       "title": "Formal Brauer comparison",
       "supplier": "CrystallineCohomology",
       "section": "proposed Part II §formal-Brauer",
-      "needs": "Supply Artin–Mazur prorepresentability of the formal Brauer functor for smooth proper surfaces with H¹(O)=H³(O)=0, its Dieudonné realization H²(WO), the finite-height/p-divisible versus infinite-height/unipotent alternative when it is one-dimensional, and Hodge–de Rham degeneration when it is p-divisible.",
-      "detail": "Nygaard Corollary 2.7 (nygaard-closedness line 286) supplies the last implication; de Rham–Witt operations and V-separatedness are consumed from CR.4.1, CR.4.6–CR.4.7. This contract includes pullback and trace on the formal Brauer functor; its K3 consequences are §2.2 and §6.8a.",
+      "needs": "Supply Artin–Mazur prorepresentability of the formal Brauer functor for smooth proper surfaces with H¹(O)=H³(O)=0, its Dieudonné realization H²(WO), the finite-height/p-divisible versus infinite-height/unipotent alternative when it is one-dimensional, and Hodge–de Rham degeneration when it is p-divisible. Include pullback and trace on the formal Brauer functor, with trace after pullback equal to the degree for finite flat maps, and their birational comparison on smooth proper surfaces; over a perfect field a p-divisible one-dimensional formal group of finite height h has a free rank-h Dieudonné module over W(k), and every homomorphism in either direction between it and the formal additive group is zero.",
+      "detail": "Nygaard Corollary 2.7 (nygaard-closedness line 286) supplies degeneration; de Rham–Witt operations and V-separatedness are consumed from CR.4.1, CR.4.6–CR.4.7. Pullback/trace and the formal-group separation are used in dolgachev-keum lines 652–661. For the latter, compose a homomorphism with [p]: the finite-height p-series is nonzero, whereas [p] on the formal additive group is zero. The K3 consequences are §§2.2, 6.7a, 6.7c and 6.8a.",
       "neededBy": [
         "2.1a",
         "2.2",
+        "6.7a",
+        "6.7c",
         "6.8a"
       ]
     },
@@ -3273,8 +3478,8 @@
       "title": "Mathieu subgroup recognition",
       "supplier": "CFSGStatement",
       "section": "proposed Part II §Mathieu-subgroup-recognition",
-      "needs": "Supply, for a finite group G admitting a 24-dimensional rational Mathieu representation with invariant dimension at least five and a Sylow 2-subgroup embedding into M₂₃, an embedding into one of Mukai’s eleven groups and an M₂₃ embedding with at least five orbits.",
-      "detail": "The Mathieu character is ε(n)=24/(n∏_(q|n,q prime)(1+1/q)), with n the element order. This is the finite-group implication (W)→(E)→(M) of Mukai (0.6), §§3–8, especially §8 lines 1503–1540, with the eleven groups of (0.4) and maximal order 960. Also require the ℚ_ℓ variant for compatible Mathieu representations over every ℚ_ℓ, ℓ≠p, with |G| prime to p and the quaternion obstruction over ℚ₂ when 2∣|G| (dolgachev-keum Theorem 4.7 proof, lines 793–808). The K3 argument giving the Sylow embedding remains in §6.10–§6.11.",
+      "needs": "Supply, for a finite group G admitting a 24-dimensional rational Mathieu representation with invariant dimension at least five and a Sylow 2-subgroup embedding into M₂₃, an embedding into one of Mukai’s eleven groups and an M₂₃ embedding with at least five orbits. Also supply the same conclusion for a compatible family of 24-dimensional Mathieu representations over every ℚ_ℓ with ℓ≠p, where |G| is prime to p, the invariant dimension is at least five and a Sylow 2-subgroup embeds in M₂₃; include exclusion of the faithful two-dimensional quaternion representation over ℚ and over ℚ₂, the latter used when 2 divides |G| (then p≠2).",
+      "detail": "The Mathieu character is ε(n)=24/(n∏_(q|n,q prime)(1+1/q)), with n the element order. The rational implication is Mukai (0.6), §§3–8, especially §8 lines 1503–1540, with the eleven groups of (0.4) and maximal order 960. The ℓ-adic implication is dolgachev-keum Theorem 4.7 proof, lines 793–808. The K3 argument giving the Sylow embedding remains in §§6.10–6.11; local SL₂ classification and ADE resolution discriminants have their separate contracts.",
       "neededBy": [
         "6.10",
         "6.11"
@@ -3312,6 +3517,66 @@
       "detail": "The hypotheses here identify the abstract groups, including their non-split extensions; Proposition 5.14 (dolgachev-keum line 1566) provides subgroup chains, not merely orders. The K3 deduction that an exceptional tame action has a group in that list belongs to §6.11.",
       "neededBy": [
         "6.11"
+      ]
+    },
+    {
+      "slug": "surface-brauer-localization",
+      "title": "Surface Brauer localization",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "proposed Part II §surface-Brauer-localization",
+      "needs": "Supply prime-to-characteristic Brauer purity and the residue localization sequence for smooth surfaces over algebraically closed fields, including invariance under deleting finitely many points and the restriction isomorphism across disjoint exceptional rational trees when the residue term vanishes.",
+      "detail": "Use the localization sequence with its residue term; restriction across an arbitrary divisor need not be an isomorphism. The eight disjoint exceptional curves of a tame K3 involution give the required vanishing (dolgachev-keum lines 616–626). Formal Brauer pullback and trace remain in gap:witt-formal-brauer.",
+      "neededBy": [
+        "6.7d"
+      ]
+    },
+    {
+      "slug": "surface-brauer-kummer",
+      "title": "Surface Brauer Kummer comparison",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "proposed Part II §surface-Brauer-Kummer",
+      "needs": "Supply, for smooth projective surfaces over algebraically closed fields and ℓ invertible, the Kummer identification of the ℓ-primary Brauer group with (ℚ_ℓ/ℤ_ℓ)^(b₂−ρ) up to the finite H³_et(ℤ_ℓ(1))-torsion contribution, with its functorial exact sequences and integral group actions.",
+      "detail": "Retain the finite torsion contribution until it is proved zero; for K3 surfaces §3.4 gives H³_et(ℤ_ℓ(1))=0. This supplies the ℓⁿ-torsion ranks used with equivariant descent (dolgachev-keum equations (4.3)–(4.4), lines 543–566, and lines 627–647).",
+      "neededBy": [
+        "6.7d"
+      ]
+    },
+    {
+      "slug": "equivariant-brauer-descent",
+      "title": "Equivariant Brauer descent",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "proposed Part II §equivariant-Brauer-descent",
+      "needs": "Supply the multiplicative Hochschild–Serre spectral sequence Hᵃ(G,Hᵇ_et(U,G_m))⇒Hᵃ⁺ᵇ_et(U/G,G_m) for a free finite constant-group action on a smooth surface, with edge maps and the low-degree Picard–Brauer exact sequences retaining units, differentials and group-cohomology terms.",
+      "detail": "Require compatibility with Kummer and restriction to the free locus. No exact sequence with omitted units terms is assumed without their vanishing (dolgachev-keum equation (4.7), lines 599–615).",
+      "neededBy": [
+        "6.7d"
+      ]
+    },
+    {
+      "slug": "rational-surface-cohomology",
+      "title": "Divisor classes on unirational surfaces",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "proposed Part II §birational-surface-cohomology",
+      "needs": "Supply, for every smooth projective unirational surface Y over an algebraically closed field and every invertible prime ℓ, surjectivity of NS(Y)⊗ℚ_ℓ→H²_et(Y,ℚ_ℓ(1)); also require H¹_et(Y,ℚ_ℓ)=H³_et(Y,ℚ_ℓ)=0, so in particular a smooth projective rational surface has algebraic H².",
+      "detail": "The general surface theorem uses resolution of dominant rational maps and pullback–pushforward, with purely inseparable degrees retained; main §4.11 modifications do not state it. Shioda, An example of unirational surfaces in characteristic p, Lemma p.234 and Corollary 2 p.235, shioda-unirational-primary lines 98–140; the K3 rank instance is also proved in rudakov-shafarevich-inseparable lines 489–491. Required for the rational quotient and κ=0 consequences and the vector-field rank reduction.",
+      "neededBy": [
+        "2.1a",
+        "6.2a",
+        "6.3",
+        "6.5",
+        "6.7c"
+      ]
+    },
+    {
+      "slug": "finite-etale-quotient-invariants",
+      "title": "Finite étale quotient invariants",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "proposed Part II §finite-etale-quotient-cohomology",
+      "needs": "Supply Hⁱ_et(Y,ℚ_ℓ)≅Hⁱ_et(X,ℚ_ℓ)^G for a finite étale G-torsor X→Y of smooth proper varieties over an algebraically closed field with ℓ invertible, naturally in degree, cup products and pullback.",
+      "detail": "Use finite étale descent and rational averaging by |G|, which is invertible in ℚ_ℓ even if ℓ divides |G|. No integral invariants equality is asserted. F.2 base change alone does not state this descent; F.6 supplies Gauss–Bonnet for the quotient Euler characteristic used in §6.3.",
+      "neededBy": [
+        "6.3",
+        "6.5"
       ]
     }
   ]
