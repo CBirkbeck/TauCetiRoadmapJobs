@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "K3BlochGroups"
+
+[[source]]
+id = "bloch"
+authors = "Spencer Bloch"
+title = "Spencer Bloch, Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves, 2000"
+year = 2000
+locator_scheme = "section"
+locator = "Lecture 6"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/193#issuecomment-6318384124"
