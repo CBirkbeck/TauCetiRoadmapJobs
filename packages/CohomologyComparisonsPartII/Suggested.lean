@@ -53,19 +53,20 @@ def enLattice (p r : ℕ) [Fact p.Prime] : Submodule (PadicInt p) (Padic p) :=
     {((p : Padic p) ^ (r / (p - 1)) *
       (Nat.factorial (r / (p - 1)) : Padic p))⁻¹}
 
-/-- The CN lattice in a Tate coordinate for the specified decomposition exponent `a`.
-The period lattice at weight `r` always uses `a = r / (p - 1)`.
-CN Section 2.4.3, CN line 968–979. -/
+/-- CN’s printed coordinate lattice `p^(-a) Z_p(r)` for the specified exponent `a`.
+At weight `r` use `a = r / (p - 1)`. The fundamental-sequence kernel lattice is
+`enLattice`; no period map into this printed lattice is asserted.
+CN Section 2.4.3, CN line 971; EN Section 2.2, EN line 306. -/
 def cnLattice (p a : ℕ) [Fact p.Prime] : Submodule (PadicInt p) (Padic p) :=
   Submodule.span (PadicInt p) {((p : Padic p) ^ a)⁻¹}
 
-/-- The floor-normalized CN lattice is contained in the EN lattice, for every prime
-and nonnegative weight, on the actual p-adic scalar carriers. -/
+/-- CN’s printed floor coordinate lattice is contained in the EN kernel lattice,
+for every prime and nonnegative weight, on the actual p-adic scalar carriers. -/
 theorem cnLattice_le_enLattice (p r : ℕ) [Fact p.Prime] :
     cnLattice p (r / (p - 1)) ≤ enLattice p r := by
   sorry
 
-/-- The CN generator has factorial coordinate in the EN generator, with no inverse
+/-- The printed CN generator has factorial coordinate in the EN generator, with no inverse
 asserted for the resulting finite-level coefficient inclusion. -/
 theorem modifiedLattice_generator (p r : ℕ) [Fact p.Prime] :
     ((p : Padic p) ^ (r / (p - 1)))⁻¹ =

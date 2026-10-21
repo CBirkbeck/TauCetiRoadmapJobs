@@ -2235,6 +2235,12 @@
       "section": "accepted sections unavailable; AM Lemma 3.10, equations (3.10)–(3.12), pp. 29–30"
     },
     {
+      "slug": "relative-rigid-realization",
+      "needs": "For a complete mixed-characteristic DVR V with perfect residue field, K=Frac(V), S smooth affine over V and u:U→S smooth quasi-projective, supply the frame-independent relative rigid complex, its identification with Ru_K^an,* j†Ω•_(U_K^an/S_K^an), and its Gauss–Manin connection, natural under morphisms of lifted families; no Frobenius lift is assumed. For any such V, smooth affine Z/V and coherent j†O-module, supply finite coherent models on a cofinal system of affinoid strict neighbourhoods and the derived-colimit comparison with global sections.",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "PadicDifferentialEquationsAndRigidCohomology §§RD.4.23–RD.4.24,RD.5.115, relative realization extension without Frobenius lifts; AM Definition 2.12 and Remark 2.13, pp. 11–12, AM line 451–496; Lemma 2.19, affine proof domain, pp. 14–15, AM line 612–620"
+    },
+    {
       "slug": "relative-rigid-coefficients",
       "title": "Relative rigid coefficient realization and lift transport",
       "neededBy": [
@@ -2250,10 +2256,10 @@
         "7.1",
         "7.3"
       ],
-      "detail": "Relative rigid derived pushforwards, their induced Gauss–Manin connection and Frobenius, and frame-independent realization are used before coherence is asserted (AM Definition 2.12 and Remark 2.13, AM line 451–505); no direct-image finiteness follows merely from smoothness.",
-      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and F_V(x)≡x^p modulo pV, S=Spec(B) smooth affine over V and a compatible p-Frobenius σ on B†, supply the horizontal B†_K realization of overconvergent F-isocrystals with continuous connection, its tensor equivalence under change of σ with identity and cocycle laws, and exact pullback for morphisms of smooth affine bases, together with frame-independent relative rigid derived pushforwards and their connection and Frobenius for smooth quasi-projective u:U→S, without a finiteness assertion. For smooth affine Z/V and a coherent j†O-module, supply finite coherent models on a cofinal system of affinoid strict neighbourhoods and the derived-colimit comparison with global sections (AM Lemma 2.19, AM line 612–620).",
+      "detail": "The relative rigid complexes and connection come from relative-rigid-realization; this contract adds Frobenius on AM bases before coherence is asserted (AM Definition 2.12 and Remark 2.13, AM line 451–505). No direct-image finiteness follows merely from smoothness.",
+      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and F_V(x)≡x^p modulo pV, S=Spec(B) smooth affine over V and a compatible p-Frobenius σ on B†, supply the horizontal B†_K realization of overconvergent F-isocrystals with continuous connection, its tensor equivalence under change of σ with identity and cocycle laws, and exact pullback for morphisms of smooth affine bases; supply the horizontal Frobenius enhancement of the relative rigid complexes of gap:relative-rigid-realization for smooth quasi-projective u:U→S, without a finiteness assertion.",
       "supplier": "PadicDifferentialEquationsAndRigidCohomology",
-      "section": "accepted sections unavailable; AM Remark 2.2, pp. 4–5; AM Lemma 2.19, affine proof domain, pp. 14–15"
+      "section": "PadicDifferentialEquationsAndRigidCohomology §§RD.3.13,RD.3.25,RD.3.28–RD.3.32,RD.5.115, relative Frobenius enhancement; AM Remark 2.2, pp. 4–5"
     },
     {
       "slug": "relative-rigid-projective-finiteness",
@@ -2513,7 +2519,6 @@
       "slug": "local-period-fundamental-sequences",
       "title": "Local semistable period fundamental sequences",
       "neededBy": [
-        "4.2",
         "4.4"
       ],
       "detail": "",
