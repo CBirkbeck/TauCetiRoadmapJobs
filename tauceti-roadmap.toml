@@ -189,7 +189,7 @@ open-repository = ["arxiv.org", ".arxiv.org", "hal.science", ".hal.science", ".a
                    "stacks.math.columbia.edu", "zbmath.org", ".zbmath.org",
                    "mathnet.ru", ".mathnet.ru", "geodesic.mathdoc.fr",
                    "e-periodica.ch", ".e-periodica.ch", "jmilne.org", ".jmilne.org"]
-publisher-open = ["doi.org", "www.ams.org/journals/mcom", "www.ams.org/journals/proc", "www.ams.org/journals/tran", "www.ams.org/journals/jams", "www.ams.org/journals/bull"]   # subscription publishers are not open by default; add a host only when its content is open
+publisher-open = ["doi.org"]   # subscription publishers are not open by default; add a host only when its content is open
 author-page = ["jmilne.org", ".jmilne.org", "users.renyi.hu"]
 institutional = ["users.renyi.hu"]   # the Rényi Institute's archive of Erdős's papers
 
