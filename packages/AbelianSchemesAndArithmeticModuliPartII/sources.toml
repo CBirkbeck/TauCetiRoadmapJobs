@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AbelianSchemesAndArithmeticModuliPartII"
+
+[[source]]
+id = "WM"
+authors = "William C. Waterhouse and James S. Milne"
+title = "Abelian varieties over finite fields"
+year = 1971
+locator_scheme = "theorem"
+locator = "Part II, Theorem 1"
+sha256 = "2aaafc6690dde91d1ca56688396eb444081ff6635ffd07bf70eb251f06cee2a0"
+licence_class = "operator-local"
+status = "certified"
+local_name = "waterhouse-milne-1971-abelian-varieties-over-finite-fields.txt"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/126#issuecomment-6310727674"
+
+[[source]]
+id = "Milne"
+authors = "James S. Milne"
+title = "Extensions of abelian varieties defined over a finite field"
+year = 1968
+locator_scheme = "section"
+locator = "Section 1"
+sha256 = "0f912e78c1902ec2cfeab6fa59d33b8fd55c1888a6a8cc81f56a3e58074b67b5"
+licence_class = "operator-local"
+status = "certified"
+local_name = "milne-1968-extensions-of-abelian-varieties-finite-field.txt"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/126#issuecomment-6310727674"
