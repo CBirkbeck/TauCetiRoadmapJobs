@@ -1,0 +1,40 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticKTheory"
+
+[[source]]
+id = "harder"
+authors = "Harder"
+title = "Harder, Die Kohomologie S-arithmetischer Gruppen über Funktionenkörpern, 1977"
+year = 1977
+locator_scheme = "theorem"
+locator = "finiteness theorem and reduction-theory input to the criterion in README 5.5"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0010.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0010.pdf"
+fetched_at = "2026-10-21T22:59:19Z"
+sha256 = "08109da41f4caccd334c333c91f28e7a1856d88e037f2a747a6b03ca6a205742"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/222#issuecomment-6328394935"
+
+[[source]]
+id = "bloch"
+authors = "S. Bloch"
+title = "Algebraic K-Theory and Zeta Functions of Elliptic Curves"
+year = 1980
+locator_scheme = "page"
+locator = "514, corrected-symbol construction"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/222#issuecomment-6328394935"
+
+[[source]]
+id = "young"
+authors = "M. A. Young"
+title = "K2 and L-series of elliptic curves over real quadratic fields"
+year = 1995
+locator_scheme = "theorem"
+locator = "Lemma 3.1, pages 37–38; Theorem 3.3, page 41"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/222#issuecomment-6328394935"
