@@ -1,0 +1,8 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-REV-PKG-ArithmeticKTheory~codex2",
+    "date": "2026-10-20",
+    "notes": "Independent review by Codex, session codex-Ut7za3, after both fixes and the earlier adversarial report. Verified U1's fixed-modulus/eventual distinction, U2's independent exceptional dyadic Picard-image and real-kernel proof, and U3's explicit Harris-Segal, Keune and finite cyclotomic supplier routes against primary sources. Named the still-open sextic arithmetic certificate and the conditional higher raw/symbol comparison; neither is asserted supplied. Checked 15 additional sampled locators, corrected Lemma VI.2.4 and author-version pagination/access links, and distinguished current ExactK0 from the older elaboration pin. Checked the effective 139-target inventory, current upstream/library overlap, generality and downstream-only ownership; all 62 Checks lists retain at least three tests. Independently recomputed 173 golden-field relations and 23 selected signed determinants. Removed two numerical examples that did not test a kept definition; all 13 theorem signatures and 12 retained proved examples agree with the README. lean-check exits 0 with only 13 intended sorry warnings; seven definitions have real bodies in 225 lines. Sorry-data, eight packet structural checks, intake and diff whitespace checks pass. Full findings and retained supplier/computational boundaries are in reviews/REV-PKG-ArithmeticKTheory~codex2.md."
+  }
+}
