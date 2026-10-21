@@ -7,13 +7,13 @@ authors = "Amnon Besser"
 title = "Syntomic regulators and p-adic integration I: Rigid syntomic regulators"
 year = 2000
 locator_scheme = "page"
-locator = "Sections 4–6; Definition 6.1; Propositions 6.2–6.3; Remark 8.7(3), manuscript p. 28 (BesserI line 1073)"
-cited_for = ["Final target 1: rigid syntomic realization and mapping-fibre comparison"]
+locator = "Sections 4–6; Definition 6.1; Propositions 6.2–6.3; Remark 8.7(3), manuscript p. 28 (BesserI line 1073); Corollary 9.10, manuscript p. 32 (BesserI line 1209–1216)"
 sha256 = "b152f1e224e5f310d733304ed773cf76fd949240c598a1489fd9253f4e68907a"
 licence_class = "operator-local"
 status = "certified"
 local_name = "besser-2000-syntomic-regulators-I-rigid.txt"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3#issuecomment-6301551849"
+cited_for = ["2.1", "2.2", "2.3", "7.4", "7.5", "rigid-syntomic-etale-period"]
 
 [[source]]
 id = "NN"
@@ -24,7 +24,7 @@ venue = "Algebra Number Theory 10 (2016) 1695-1790"
 doi = "10.2140/ant.2016.10.1695"
 arxiv = "1309.7620v5"
 locator_scheme = "theorem"
-locator = "Theorem A(1),(4); Section 3.2, equation (32); Proposition 3.8; Section 4.1; Proposition 4.6; Corollary 4.11"
+locator = "Theorem A(1),(4); Section 3.2, equation (32); Proposition 3.8; Proposition 3.18, p. 33, NN line 1688–1691; Section 4.1; Proposition 4.6; Corollary 4.11"
 url = "https://arxiv.org/abs/1309.7620v5"
 fetched_from = "https://arxiv.org/pdf/1309.7620v5"
 fetched_at = "2026-10-20T21:11:07Z"
@@ -33,7 +33,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v5"
-cited_for = ["Final targets 2–4: rational log-syntomic complexes, Hyodo–Kato assembly, period maps and truncated h-descent comparisons"]
+cited_for = ["3.4", "4.1", "5.2", "5.3", "rational-descent", "hyodo-kato-proper", "arithmetic-pair-deformation"]
 
 [[source]]
 id = "AM"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v2"
-cited_for = ["Final targets 5–7: Fil-F-MIC, Yoneda Ext evaluation, relative coherence and comparison, open-curve residues and Frobenius-point specialization"]
+cited_for = ["rigid-syntomic-etale-period", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "rigid-gysin", "7.1", "7.2", "7.3", "7.4", "7.5", "consumer symbol-comparison hypotheses"]
 
 [[source]]
 id = "HK"
@@ -70,7 +70,7 @@ sha256 = "220873e91f89094d14f1a82631c6887a40ec362139990928236ca0525b1050cf"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-cited_for = ["Final target 4: Hyodo–Kato Frobenius, monodromy, de Rham comparison and uniformizer-change law"]
+cited_for = ["5.1", "5.2", "hyodo-kato-proper", "arithmetic-pair-deformation"]
 
 [[source]]
 id = "CN"
@@ -79,7 +79,7 @@ title = "Syntomic complexes and p-adic nearby cycles"
 year = 2015
 arxiv = "1505.06471v4"
 locator_scheme = "theorem"
-locator = "Section 1.1.1, Theorem 1.1, p. 2; Section 5.1.2, Theorem 5.4, p. 54"
+locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3/Lemma 2.23, pp. 23–24; Section 2.6.2/Lemma 2.37, pp. 28–29 (CN line 1234–1239); Section 3/Proposition 3.3/Corollary 3.9/Proposition 3.10/Lemma 3.11, pp. 32–35; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.6/Lemmas 5.8–5.9, pp. 54–58; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
 url = "https://arxiv.org/abs/1505.06471v4"
 fetched_from = "https://arxiv.org/pdf/1505.06471v4"
 fetched_at = "2026-10-20T21:12:38Z"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v4"
-cited_for = ["Final target 3: all-weight bounded-error nearby-cycle period map with ramification and p=2 qualifications"]
+cited_for = ["period-rings", "4.1", "4.2", "4.4", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent", "period-rings"]
 
 [[source]]
 id = "BesserII"
@@ -103,12 +103,12 @@ url = "https://doi.org/10.1007/BF02834844"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Optional integration/regulator context; no final target depends on unread text"]
+cited_for = ["Uncertified consumer-context provenance; no producer target uses this work"]
 
 [[source]]
 id = "EN"
 authors = "Veronika Ertl, Wieslawa Niziol"
-title = "Syntomic cohomology and $p$-adic motivic cohomology"
+title = "Syntomic cohomology and p-adic motivic cohomology"
 year = 2016
 arxiv = "1603.01705v2"
 locator_scheme = "section"
@@ -121,4 +121,230 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v2"
-cited_for = ["Final targets 2–3: divided versus undivided complexes, comparison maps, product caveat, exact small-weight comparison and syntomic-étale gluing"]
+cited_for = ["period-rings", "3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "4.5", "nearby-cycle-inputs"]
+
+[[source]]
+id = "Buhler"
+year = 2009
+title = "Exact Categories"
+authors = "Theo Bühler"
+arxiv = "0811.1480v2"
+locator_scheme = "section"
+locator = "Definition 2.1, p. 5; Sections 10 and 12; Buhler line 195, Buhler line 2215"
+url = "https://arxiv.org/abs/0811.1480v2"
+fetched_from = "https://arxiv.org/pdf/0811.1480v2"
+fetched_at = "2026-10-21T00:08:32Z"
+sha256 = "b7eaa8df7b6e572e2615776be4ab1930907f6c64b6a6610286d9ea5abc51d295"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["1.3", "exact-yoneda"]
+
+[[source]]
+id = "MathlibPin"
+year = 2022
+title = "Mathlib: Witt vector isocrystals (pinned Lean source)"
+authors = "Heather Macbeth and the Mathlib community"
+locator_scheme = "section"
+locator = "WittVector.Isocrystal and equivariant maps; MathlibPin line 77, MathlibPin line 117, MathlibPin line 136, MathlibPin line 142, MathlibPin line 184"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/WittVector/Isocrystal.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/WittVector/Isocrystal.lean"
+fetched_at = "2026-10-21T00:10:07Z"
+sha256 = "e0786d0e5b5614179b9f6b968fb58dc6a1ef3d881eafa557584f0d6004f7fc36"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["5.1", "library baseline"]
+
+[[source]]
+id = "MathlibCone"
+year = 2023
+title = "Mathlib: Mapping cone of cochain complexes (pinned Lean source)"
+authors = "Joël Riou and the Mathlib community"
+locator_scheme = "section"
+locator = "CochainComplex.mappingCone; MathlibCone line 61, MathlibCone line 76, MathlibCone line 80, MathlibCone line 84, MathlibCone line 92"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Homology/HomotopyCategory/MappingCone.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Homology/HomotopyCategory/MappingCone.lean"
+fetched_at = "2026-10-21T00:10:29Z"
+sha256 = "4db6d463c22f0a35187a4f0d2c2868cd3142d8b1671fa63938476ae163b096b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.4", "2.2"]
+
+[[source]]
+id = "MathlibExt"
+year = 2024
+title = "Mathlib: Ext in abelian categories (pinned Lean source)"
+authors = "Joël Riou and the Mathlib community"
+locator_scheme = "section"
+locator = "CategoryTheory.HasExt and CategoryTheory.Abelian.Ext; MathlibExt line 53, MathlibExt line 59, MathlibExt line 122"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean"
+fetched_at = "2026-10-21T00:10:30Z"
+sha256 = "29ce1f37d45103df2925080eb5c152a0259fa24216b1cb47a8f446ed78a66d9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiCone"
+year = 2026
+title = "Tau Ceti: Contractibility of cones of homotopy equivalences (pinned Lean source)"
+authors = "The Tau Ceti contributors"
+locator_scheme = "section"
+locator = "CochainComplex.mappingCone.nonempty_homotopy_id_zero_of_homotopyEquiv; TauCetiCone line 40, TauCetiCone line 53"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/HomotopyCategory/MappingCone.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/HomotopyCategory/MappingCone.lean"
+fetched_at = "2026-10-21T00:10:30Z"
+sha256 = "4724cbd45307570748a74fa6948734e0ab410c8673a1c45ee78ac4f01e60c158"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.4", "library baseline"]
+
+[[source]]
+id = "TauCetiSyntomic"
+year = 2026
+title = "Tau Ceti: Standard syntomic algebras (pinned Lean source)"
+authors = "The Tau Ceti contributors"
+locator_scheme = "section"
+locator = "TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension; TauCetiSyntomic line 79, TauCetiSyntomic line 85"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RingTheory/Syntomic/StandardSyntomic.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RingTheory/Syntomic/StandardSyntomic.lean"
+fetched_at = "2026-10-21T00:10:30Z"
+sha256 = "7279ce4bc1feaf3c6183444d434b422aa4685f135ebc3f50f0b9ec843b565cae"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["ownership boundary"]
+
+[[source]]
+id = "MathlibBDeRhamReview"
+authors = "Jiedong Jiang and the Mathlib community"
+title = "Mathlib: De Rham period-ring carriers (pinned Lean source)"
+year = 2025
+locator_scheme = "section"
+locator = "Mathlib/RingTheory/Perfectoid/BDeRham.lean at 6b7abb3c7686292736be2955bd3eb9ebf63b456a; binders at MathlibBDeRhamReview line 55–56; global BDeRhamPlus at line 79 and BDeRham at line 92"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Perfectoid/BDeRham.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Perfectoid/BDeRham.lean"
+fetched_at = "2026-10-21T00:56:57Z"
+sha256 = "8e7ff96418b58146ee03aadde0d977657a14e49d171f70065bcbe0bb8f77f717"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["library baseline", "period-rings"]
+
+[[source]]
+id = "TauCetiExactReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Quillen exact structures (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti/CategoryTheory/Exact/ExactStructure.lean; TauCeti.ExactStructure, TauCetiExactReview line 245–267"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/ExactStructure.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/ExactStructure.lean"
+fetched_at = "2026-10-21T01:37:15Z"
+sha256 = "3560cfe1db6cff65d5702a2347f5eea767c6f8cc7dac1b37d2fd44cf67e316ca"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiExactFunctorReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Conflation-exact functors (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti/CategoryTheory/Exact/Functor.lean; TauCeti.ExactStructure.IsConflationExact, TauCetiExactFunctorReview line 68–81"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Functor.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Functor.lean"
+fetched_at = "2026-10-21T01:37:31Z"
+sha256 = "aeeb2efe7e63064706ee6b655667d62e30099fc01ed3d017222abb69dbd9952f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TsujiNearby"
+authors = "Takeshi Tsuji"
+title = "On p-adic nearby cycles of log smooth families"
+year = 2000
+locator_scheme = "theorem"
+locator = "Theorems A3–A4, p. 563; Lemmas 4.3–4.4 and proof of Theorem 4.2, pp. 551–555; Proposition A15, p. 570; Lemmas 3.2 and 5.2, pp. 547,555–557; proof of Theorem 5.1, pp. 558–561; TsujiNearby line 679, line 805, line 873, line 892, line 954, line 1074, line 1211, line 1231, line 1442"
+url = "https://www.numdam.org/article/BSMF_2000__128_4_529_0.pdf"
+fetched_from = "https://www.numdam.org/article/BSMF_2000__128_4_529_0.pdf"
+fetched_at = "2026-10-21T01:37:32Z"
+sha256 = "179e127c8248ebe54728ec026b8ac518b39bbeb19b0a430c2ea6be602ca92ec1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["nearby-cycle-cartier", "nearby-cycle-graded", "4.3"]
+
+[[source]]
+id = "StacksRlim"
+authors = "The Stacks Project authors"
+title = "The Stacks Project: More on Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 07KV, Lemmas 15.88.1–15.88.2 (Tags 07KW and 0H31); StacksRlim line 10638–10675"
+url = "https://stacks.math.columbia.edu/tag/07KV"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=07KV"
+fetched_at = "2026-10-21T01:39:10Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.4 tail-tower Check"]
+
+[[source]]
+id = "TauCetiExtReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Abelian Ext functoriality (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti/Algebra/Homology/Ext/Basic.lean; abelian-category and HasExt binders, TauCetiExtReview line 54"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/Ext/Basic.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/Ext/Basic.lean"
+fetched_at = "2026-10-21T01:39:21Z"
+sha256 = "0a1d68da1cdc2eaa66aa3f0f90ff7238e18338d33fe0a838fc768d8135e249a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiExactMonoidal"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Monoidal exact structures (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti.ExactStructure.IsMonoidal and its tensorLeft/tensorRight fields; TauCetiExactMonoidal line 48–57"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Monoidal.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Monoidal.lean"
+fetched_at = "2026-10-21T02:40:51Z"
+sha256 = "4d0adcb15c6b45a58d75b38145b47dea3ab4daebbc8902494de243d64a610e06"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiExactOpposite"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Opposite exact structures (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti.ExactStructure.op and op_conflation_op_iff; TauCetiExactOpposite line 150–155, line 201–203"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Opposite.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Opposite.lean"
+fetched_at = "2026-10-21T02:41:13Z"
+sha256 = "aab9a1587a08c1cf5ed8b41e9925bb304ac9c73f26ec6e7b495b69604a4371f8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
