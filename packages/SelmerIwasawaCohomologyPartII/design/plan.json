@@ -84,7 +84,7 @@
             "roadmap:SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity)",
             "target:1.5",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7",
-            "gap:rigidity",
+            "roadmap:LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`)",
             "roadmap:IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ)",
             "roadmap:GlobalGaloisDeformations §5.2 (rank-two IsCyclotomicAbsIrred specialization)"
@@ -888,8 +888,11 @@
           "id": "4.5",
           "kind": "theorem",
           "name": "diagonalMultiplicityRealization",
-          "statement": "Under H(n),H(n+1), realize Wλ as a finite direct sum of copies of Vλ^c, compatibly with the two Hecke characters and twists. Complex conjugation induces H¹_f(F,Vλ^c)≃H¹_f(F,Vλ), so H¹_f(F,Wλ) is isomorphic to a finite multiplicity of H¹_f(F,Vλ). When AJλ(Δ)≠0, some coordinate under any chosen such isomorphism is nonzero. No canonical single coordinate or canonical vector of H¹_f(F,Vλ) is asserted.",
-          "hypotheses": [],
+          "statement": "Under H(n),H(n+1), and assuming both ρΠ₀,λ and ρΠ₁,λ are absolutely irreducible after scalar extension to ℚℓbar, realize Wλ as a finite direct sum of copies of Vλ^c, compatibly with the two Hecke characters and twists. Complex conjugation induces H¹_f(F,Vλ^c)≃H¹_f(F,Vλ), so H¹_f(F,Wλ) is isomorphic to a finite multiplicity of H¹_f(F,Vλ). When AJλ(Δ)≠0, some coordinate under any chosen such isomorphism is nonzero. No canonical single coordinate or canonical vector of H¹_f(F,Vλ) is asserted.",
+          "hypotheses": [
+            "H(n) and H(n+1) as the conditional assertions of Hypothesis 3.2.10.",
+            "Both attached Galois representations ρΠ₀,λ and ρΠ₁,λ are absolutely irreducible after scalar extension to ℚℓbar; residual absolute irreducibility L4 is sufficient."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Hypothesis 3.2.10; §8.3, pp. 28,139–140; Lemma 2.4.5, p. 17; ltxzz line 1259; ltxzz line 745; ltxzz line 6805"
@@ -902,9 +905,15 @@
             "roadmap:EulerSystemsAndKolyvaginSystems §1.2"
           ],
           "api": [],
-          "tests": [],
-          "proofSketch": "Use the automorphic multiplicity spaces and Künneth, retaining the c in H(N). The Selmer functor preserves finite sums and conjugation; a nonzero tuple has a nonzero component.",
-          "adversarial": "Multiplicity zero, one and two; nonvanishing forces positive multiplicity but does not define a projection without a choice."
+          "tests": [
+            {
+              "name": "multiplicity_irreducibility_antecedent",
+              "kind": "non-example",
+              "statement": "If either attached representation is reducible over ℚℓbar, H(N) has a false antecedent for that factor and gives no multiplicity identification. Automorphic irreducibility and Galois semisimplicity alone do not discharge it (ltxzz Proposition 3.2.4(2), lines 1204–1217; Hypothesis 3.2.10, lines 1259–1272)."
+            }
+          ],
+          "proofSketch": "The two absolute-irreducibility hypotheses discharge the antecedents of H(n) and H(n+1). Use the resulting automorphic multiplicity identifications and Künneth, retaining the c in H(N). The Selmer functor preserves finite sums and conjugation; a nonzero tuple has a nonzero component. On the admissible domain, L4 supplies both hypotheses: a proper invariant subspace after a finite coefficient extension would intersect a stable lattice in a proper saturated sublattice and give a proper nonzero residual subrepresentation. Sections 4.3–4.4 retain their rational regulator and Selmer-membership domains without this extra irreducibility assumption.",
+          "adversarial": "Multiplicity zero, one and two; nonvanishing forces positive multiplicity but does not define a projection without a choice. Reducible attached representations do not activate H(N); residual absolute irreducibility L4 activates both instances on the admissible domain."
         },
         {
           "id": "4.6",
@@ -1415,7 +1424,7 @@
             "roadmap:PELModuli §§M2.8, M4.3",
             "roadmap:EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6",
             "gap:native-shimura",
-            "gap:rigidity",
+            "roadmap:LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`)",
             "roadmap:SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity)",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations)",
             "gap:purity-crystalline-regulator"
@@ -1434,7 +1443,7 @@
             {
               "name": "rigid_of_levelRaisingSpecial",
               "role": "rigidity transport",
-              "statement": "For even N≥2, a relevant rank-N Π, its strong coefficient field E and λ|ℓ, let r̄=ρ̄Π,λ,+ be the associated polarized residual representation with similitude η_(F/F⁺)^N ε̄ℓ^(1−N). Prove rigid_of_levelRaisingSpecial: if r̄ is rigid for (Σ⁺min,Σ), p is a special inert place outside Σ⁺min∪Σ∪Σ⁺ℓ with ℓ∤p(p²−1), and Pα(Π_p) modulo λ is level-raising special, then r̄ is rigid for (Σ⁺min,Σ∪{p}). Unramified local–global compatibility identifies the arithmetic-Frobenius multiset with p^(1−N)α(Π_p)⁻¹; its simple Satake pair {p,p⁻¹} therefore gives {p^(−N),p^(−N+2)} exactly once. Clauses (1) and (3) of rigidity are unchanged, clause (4) loses only p, and this pair proves the new clause (2). (ltxzz Definition 3.1.5 and Remark 3.1.6, pp. 23–24; Proposition 3.2.4(2), p. 27; Definition 6.3.4(2),(4) and §6.4, pp. 115–116; ltxzz lines 1044–1057, 1204–1217, 5623–5632, 5660–5661)."
+              "statement": "For even N≥2, a relevant rank-N Π, its strong coefficient field E and λ|ℓ with ℓ≥N on the coefficient Fontaine–Laffaille domain of LocalGaloisDeformationRings §§1.6, 2.20, let r̄=ρ̄Π,λ,+ be the associated polarized residual representation with similitude η_(F/F⁺)^N ε̄ℓ^(1−N). Prove rigid_of_levelRaisingSpecial: if r̄ is rigid for (Σ⁺min,Σ), p is a special inert place outside Σ⁺min∪Σ∪Σ⁺ℓ with ℓ∤p(p²−1), and Pα(Π_p) modulo λ is level-raising special, then r̄ is rigid for (Σ⁺min,Σ∪{p}). Unramified local–global compatibility identifies the arithmetic-Frobenius multiset with p^(1−N)α(Π_p)⁻¹; its simple Satake pair {p,p⁻¹} therefore gives {p^(−N),p^(−N+2)} exactly once. Apply LocalGaloisDeformationRings §2.20 `IsRigidFor.mono` to this eigenpair and ℓ∤p(p²−1); its projections retain the original minimal and regular Fontaine–Laffaille conditions and the fixed similitude. L1 gives ℓ≥N in every use in the level-raising system. (ltxzz Definition 3.1.5 and Remark 3.1.6, pp. 23–24; Proposition 3.2.4(2), p. 27; Definition 6.3.4(2),(4) and §6.4, pp. 115–116; ltxzz lines 1044–1057, 1204–1217, 5623–5632, 5660–5661)."
             }
           ],
           "tests": [
@@ -1569,7 +1578,7 @@
           ],
           "api": [],
           "tests": [],
-          "proofSketch": "4.5 gives the lower bound. If the dimension were at least 2, take a saturated rank-two T containing the primitive diagonal coordinate z_prim, let z=π^mper z_prim and use S=π^m₀T modulo λᵐ after fixed bad-place annihilation. The uniform span and 7.2 detect v=π^m₀z_prim at p₁ and give primitive t∈ker loc_p₁ with second exponent ≥m−m₀−c. PII4 at p₁ and rigid_of_levelRaisingSpecial of 7.3 upgrade L6 to rigidity for (Σ⁺min,{p₁}); first reciprocity at p₂ now has A7.2.2. By twoPlaceAnnihilator of 7.3, with its good-reduction specialization input away from ℓ and its integral crystalline regulator input at every w|ℓ, the dual c₂ has singular exponent ≥m−mper−c−mlat at p₂ and finite torsion crystalline localization at every w|ℓ. The p₂ pairing exponent is ≥max(0,m−m₀−mper−2c−mlat); at every w|ℓ, the reduced Selmer argument and c₂ are both in H¹_ns by 7.3 and SelmerIwasawaCohomology §§4.10, 4.24. L1 gives 2n−1≤(ℓ−2)/2 for [−n,n−1], so §4.11 bounds their pairing by dλ⁻¹/Oλ, killed by π^mdif. Bad-place terms and all other nondetecting terms vanish. Choosing m>m₀+mper+2c+mlat+mdif contradicts global reciprocity. No simultaneous diagonalizing basis is required.",
+          "proofSketch": "L4 supplies the two absolute-irreducibility hypotheses of 4.5, which gives the lower bound. If the dimension were at least 2, take a saturated rank-two T containing the primitive diagonal coordinate z_prim, let z=π^mper z_prim and use S=π^m₀T modulo λᵐ after fixed bad-place annihilation. The uniform span and 7.2 detect v=π^m₀z_prim at p₁ and give primitive t∈ker loc_p₁ with second exponent ≥m−m₀−c. PII4 at p₁ and rigid_of_levelRaisingSpecial of 7.3 upgrade L6 to rigidity for (Σ⁺min,{p₁}); first reciprocity at p₂ now has A7.2.2. By twoPlaceAnnihilator of 7.3, with its good-reduction specialization input away from ℓ and its integral crystalline regulator input at every w|ℓ, the dual c₂ has singular exponent ≥m−mper−c−mlat at p₂ and finite torsion crystalline localization at every w|ℓ. The p₂ pairing exponent is ≥max(0,m−m₀−mper−2c−mlat); at every w|ℓ, the reduced Selmer argument and c₂ are both in H¹_ns by 7.3 and SelmerIwasawaCohomology §§4.10, 4.24. L1 gives 2n−1≤(ℓ−2)/2 for [−n,n−1], so §4.11 bounds their pairing by dλ⁻¹/Oλ, killed by π^mdif. Bad-place terms and all other nondetecting terms vanish. Choosing m>m₀+mper+2c+mlat+mdif contradicts global reciprocity. No simultaneous diagonalizing basis is required.",
           "adversarial": "AJ=0 gives no rank bound here; multiplicity μ>1 retained; L′ nonvanishing alone is not substituted for AJ nonvanishing."
         },
         {
@@ -1799,9 +1808,12 @@
     {
       "roadmap": "LocalGaloisDeformationRings",
       "sections": [
-        "new obligation: ltxzz Definition 6.3.4"
+        "§1.6",
+        "§2.3",
+        "§2.12",
+        "§2.20"
       ],
-      "what": "gap rigidity: Bind the exact normalized rigidity and local deformation-condition definitions."
+      "what": "`FLDeformation` and `FLDeformation.coefficientRealization`, `IsMinimallyRamified` and `minimal_baseChange`, the fixed-multiplier `LevelRaising.mix`, `LevelRaising.unr`, `LevelRaising.ram` and `LevelRaising.unr_eq_minimal`, and `IsRigidFor` with `IsRigidFor.minimal`, `IsRigidFor.levelRaising`, `IsRigidFor.fontaineLaffaille`, `IsRigidFor.unramified` and `IsRigidFor.mono`. For polarized rank N≥2 retain ℓ≥N, the fixed similitude η_(F/F⁺)^N εℓ^(1−N), disjoint finite minimal and inert raising sets away from ℓ, and Σlr=∅ in odd rank. The minimal condition quantifies over every lift with that similitude. Above ℓ retain the unramified local-field domain and the regular coefficient Fontaine–Laffaille condition with labelled multiplicities at most one in [0,ℓ−2]. At each raising place v require unramified residual restriction, ℓ∤Nv((Nv)²−1), and the arithmetic-Frobenius pair {Nv^(−N),Nv^(−N+2)} exactly once; §2.12 uses the even multiplier exponent μ=N in the even-rank application. The generic enlargement is `IsRigidFor.mono`; §7.3 supplies its Satake specialization (ltxzz Definition 6.3.4, lines 5623–5632). L1 gives ℓ>4n≥N for N∈{n,n+1}; L1–L2 retain the unramified Fontaine–Laffaille domain."
     },
     {
       "roadmap": "IntegralHeckeAndGaloisDeterminants",
@@ -1853,18 +1865,6 @@
     }
   ],
   "gaps": [
-    {
-      "slug": "rigidity",
-      "title": "Minimal and regular Fontaine–Laffaille deformation predicates",
-      "neededBy": [
-        "1.6",
-        "7.3"
-      ],
-      "detail": "Rigidity for (Σmin,Σlr) means every polarized lift at Σmin is minimally ramified; at each inert raising place the residual eigenpair {Nv^(−N),Nv^(−N+2)} occurs exactly once; above ℓ regular Fontaine–Laffaille crystallinity; unramified elsewhere. Similitude is η_(F/F⁺)^N εℓ^(1−N). ltxzz line 5623. General local deformation and FL theory stays with its earlier owners.",
-      "needs": "Bind the exact normalized rigidity and local deformation-condition definitions.",
-      "supplier": "LocalGaloisDeformationRings",
-      "section": "new obligation: ltxzz Definition 6.3.4"
-    },
     {
       "slug": "native-shimura",
       "title": "Native unitary Shimura schemes and integral models",
