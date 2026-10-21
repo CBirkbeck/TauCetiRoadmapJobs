@@ -34,7 +34,7 @@
             "roadmap:AlgebraicVectorBundles L0C",
             "roadmap:SchemeAndStackFoundations §2.20"
           ],
-          "proofSketch": "Use the native module sheaf and its determinant; H¹ is the module cohomology supplied with duality. Smooth dimension2 makes det Ω¹=∧²Ω¹.",
+          "proofSketch": "Use the native module sheaf and its determinant; H¹ is the module cohomology supplied with duality. Smooth dimension 2 makes det Ω¹=∧²Ω¹.",
           "api": [
             {
               "name": "IsK3.mk",
@@ -54,7 +54,7 @@
             {
               "name": "IsK3.projective",
               "role": "structure",
-              "statement": "A K3 surface is projective by1.3, using the full general surface supplier contract."
+              "statement": "A K3 surface is projective by 1.3, using the full general surface supplier contract."
             }
           ],
           "tests": [
@@ -140,7 +140,7 @@
             "target:1.1",
             "gap:surface-projectivity"
           ],
-          "proofSketch": "Apply the general smooth proper surface projectivity theorem required from the scheme owner, with relative smoothness of dimension2 and geometric integrality supplied by1.1. The supplier contract retains its full arbitrary-field surface statement and its modification/ample-support proof. Projectivity is not inferred merely from projectivity after algebraic closure.",
+          "proofSketch": "Apply the general smooth proper surface projectivity theorem required from the scheme owner, with relative smoothness of dimension 2 and geometric integrality supplied by 1.1. The supplier contract retains its full arbitrary-field surface statement and its modification/ample-support proof. Projectivity is not inferred merely from projectivity after algebraic closure.",
           "api": [],
           "tests": [
             {
@@ -190,7 +190,7 @@
             {
               "name": "rr_unit",
               "kind": "degenerate",
-              "statement": "L=O gives 2χ=4, including characteristic2: division never occurs in k."
+              "statement": "L=O gives 2χ=4, including characteristic 2: division never occurs in k."
             },
             {
               "name": "rr_quartic",
@@ -200,7 +200,7 @@
             {
               "name": "contraction_frame",
               "kind": "computation",
-              "statement": "If σ(e₁,e₂)=1, e₁ maps to e₂* and e₂ to -e₁*; in characteristic2 the latter sign becomes plus."
+              "statement": "If σ(e₁,e₂)=1, e₁ maps to e₂* and e₂ to -e₁*; in characteristic 2 the latter sign becomes plus."
             }
           ]
         },
@@ -456,13 +456,13 @@
             "target:2.1a",
             "roadmap:CrystallineCohomology CR.4.1, CR.4.6–CR.4.7"
           ],
-          "proofSketch": "Extend to an algebraic closure, a perfect field. Finite-height formal Brauer gives Hodge–de Rham degeneration by Nygaard Corollary2.7. In infinite height, Serre duality turns a nonzero differential into injectivity on H²(O); FdV=d then forces any Witt differential kernel into every image of V, contradicting the separate kernel theorem. The kernel and its vector-field/unirationality reduction are the earlier target §2.1a `IsK3.infiniteHeightDifferentialKernel`.",
+          "proofSketch": "Extend to an algebraic closure, a perfect field. Finite-height formal Brauer gives Hodge–de Rham degeneration by Nygaard Corollary 2.7. In infinite height, Serre duality turns a nonzero differential into injectivity on H²(O); FdV=d then forces any Witt differential kernel into every image of V, contradicting the separate kernel theorem. The kernel and its vector-field/unirationality reduction are the earlier target §2.1a `IsK3.infiniteHeightDifferentialKernel`.",
           "api": [],
           "tests": [
             {
               "name": "closed_char_two",
               "kind": "compatibility",
-              "statement": "No division by2 or restriction p>2 occurs."
+              "statement": "No division by 2 or restriction p>2 occurs."
             },
             {
               "name": "zero_form",
@@ -539,11 +539,9 @@
             "target:2.3",
             "roadmap:SchemeAndStackFoundations §5.8",
             "roadmap:SchemeAndStackFoundations §5.10",
-            "roadmap:CrystallineCohomology CR.2.3, CR.3.2–CR.3.3, CR.3:duality.1, CR.4.7, CR.7.3",
-            "gap:crystalline-gauss-bonnet",
-            "gap:crystalline-picard-degree-one"
+            "roadmap:CrystallineCohomology CR.2.3, CR.3.2 (Proper smooth crystalline perfectness and reductions (3))"
           ],
-          "proofSketch": "Noether gives c₂=24. RR for Ω¹ gives χ(Ω¹)=-20; 2.3 and duality leave h¹¹=20. The positions in the diamond force all spectral differentials to vanish. Use the generic degree-one crystalline/Picard comparison and crystalline duality to get rational ranks0 in degrees1,3; crystalline Gauss–Bonnet gives rank22 in degree2. Apply the universal-coefficient sequence degree by degree to eliminate integral torsion; do not equate rational ranks with freeness.",
+          "proofSketch": "Noether gives c₂=24. RR for Ω¹ gives χ(Ω¹)=-20; §2.3 and coherent duality leave h¹¹=20. The positions in the diamond force all spectral differentials to vanish, giving de Rham dimensions (1,0,22,0,1). For perfect k of characteristic p>0, put W=W(k) and Mⁱ=Hⁱ_crys(X/W). CrystallineCohomology CR.3.2, Proper smooth crystalline perfectness and reductions (3), gives finite generation, vanishing outside [0,4] and derived reduction modulo p; CR.2.3 identifies this reduction with de Rham cohomology. Since W is a DVR with residue k, universal coefficients give 0→Mⁱ/pMⁱ→Hⁱ_dR(X/k)→M^(i+1)[p]→0 for every integer i. At i=3, Nakayama gives M³=0 and the right term gives M⁴[p]=0; at i=4, M⁴/pM⁴ has dimension 1. At i=1, M¹=0 and M²[p]=0; at i=2, M²/pM² has dimension 22. At i=−1, M⁰[p]=0; at i=0, M⁰/pM⁰ has dimension 1. A finite W-module without p-torsion is free, so the integral ranks are (1,0,22,0,1). This is the universal-coefficient argument of Deligne Proposition 1.1, deligne-lift lines 52–57.",
           "api": [],
           "tests": [
             {
@@ -560,6 +558,11 @@
               "name": "hodge_outside",
               "kind": "degenerate",
               "statement": "Exterior degree>2 and coherent degree>2 give zero."
+            },
+            {
+              "name": "crystalline_torsion_control",
+              "kind": "non-example",
+              "statement": "A summand W/p in M² would force a nonzero quotient M²[p] of H¹_dR, contradicting H¹_dR=0; a summand W/p in M⁰ would similarly force H⁻¹_dR≠0. Perfectness alone does not imply torsion-freeness, including at p=2."
             }
           ]
         },
@@ -586,7 +589,7 @@
             "roadmap:SchemeAndStackFoundations §4.3",
             "roadmap:SchemeAndStackFoundations §4.6"
           ],
-          "proofSketch": "The supplied cotangent/deformation theory has automorphisms H⁰(T)=0, tangent H¹(T) of dimension20 and obstruction H²(T)=0. Apply its prorepresentability and lifting criterion with the fixed marking.",
+          "proofSketch": "The supplied cotangent/deformation theory has automorphisms H⁰(T)=0, tangent H¹(T) of dimension 20 and obstruction H²(T)=0. Apply its prorepresentability and lifting criterion with the fixed marking.",
           "api": [],
           "tests": [
             {
@@ -606,7 +609,7 @@
           "kind": "theorem",
           "name": "IsK3.lineBundleDeformationDivisor",
           "title": "Line-bundle deformation loci",
-          "statement": "For geometric K3 X/k in characteristic p>0 and a nontrivial line-bundle class L, the marked pair deformation functor is a closed formal subfunctor of 2.5 defined by one equation and flat over W(k), of relative dimension19. If L is ample of square2d and p∤2d, it is formally smooth. In characteristic zero an ample L gives a formally smooth dimension19 locus.",
+          "statement": "For geometric K3 X/k in characteristic p>0 and a nontrivial line-bundle class L, the marked pair deformation functor is a closed formal subfunctor of 2.5 defined by one equation and flat over W(k), of relative dimension 19. If L is ample of square 2d and p∤2d, it is formally smooth. In characteristic zero an ample L gives a formally smooth dimension 19 locus.",
           "hypotheses": [
             "k algebraically closed",
             "IsK3(X/k)",
@@ -614,7 +617,7 @@
           ],
           "locator": {
             "source": "deligne-lift",
-            "where": "Proposition 1.5 and Theorem 1.6, pp.60–62; deligne-lift lines 78,131; rizov Lemma4.1.3 line779"
+            "where": "Proposition 1.5 and Theorem 1.6, pp.60–62; deligne-lift lines 78,131; rizov Lemma 4.1.3 line 779"
           },
           "prerequisites": [
             "target:2.4",
@@ -630,7 +633,7 @@
             {
               "name": "trivial_line_control",
               "kind": "non-example",
-              "statement": "L=O extends everywhere and has dimension20; nontriviality is essential."
+              "statement": "L=O extends everywhere and has dimension 20; nontriviality is essential."
             },
             {
               "name": "bad_degree_control",
@@ -640,7 +643,7 @@
             {
               "name": "good_degree_dim19",
               "kind": "computation",
-              "statement": "One nonzero linear obstruction cuts the tangent dimension from20 to19."
+              "statement": "One nonzero linear obstruction cuts the tangent dimension from 20 to 19."
             }
           ]
         },
@@ -690,13 +693,13 @@
           "kind": "definition",
           "name": "ComplexManifold.IsK3Analytic",
           "title": "The analytic comparison predicate",
-          "statement": "On the supplied Hausdorff second-countable native complex-manifold carrier, IsK3Analytic M means M is compact, nonempty and connected, of complex dimension2, with analytically trivial canonical line and H¹(M,O)=0.",
+          "statement": "On the supplied Hausdorff second-countable native complex-manifold carrier, IsK3Analytic M means M is compact, nonempty and connected, of complex dimension 2, with analytically trivial canonical line and H¹(M,O)=0.",
           "hypotheses": [
             "M a native complex manifold"
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter1 Definition3.1, p.14; huybrechts lines 405–407"
+            "where": "Chapter 1 Definition 3.1, p.14; huybrechts lines 405–407"
           },
           "prerequisites": [
             "roadmap:ComplexKahlerGeometry K3",
@@ -724,7 +727,7 @@
             {
               "name": "IsK3Analytic.canonicalSections",
               "role": "structure",
-              "statement": "The canonical section space has complex dimension1."
+              "statement": "The canonical section space has complex dimension 1."
             }
           ],
           "tests": [
@@ -757,7 +760,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter1 Proposition3.2 and ensuing paragraph, p.14; huybrechts lines 408–429"
+            "where": "Chapter 1 Proposition 3.2 and ensuing paragraph, p.14; huybrechts lines 408–429"
           },
           "prerequisites": [
             "target:1.3",
@@ -792,13 +795,13 @@
           "kind": "theorem",
           "name": "IsK3.complexIntegralBetti",
           "title": "Integral topology of projective complex K3 surfaces",
-          "statement": "For a projective analytic K3 M, Hⁱ(M,ℤ) is free of ranks (1,0,22,0,1), zero outside degrees0–4. Its Hodge decomposition has h²⁰=h⁰²=1 and h¹¹=20; c₁:Pic(M)→H²(M,ℤ) is injective, with image ker(H²(ℤ)→H²(O)), and intersection is cup product evaluated on the complex orientation.",
+          "statement": "For a projective analytic K3 M, Hⁱ(M,ℤ) is free of ranks (1,0,22,0,1), zero outside degrees 0–4. Its Hodge decomposition has h²⁰=h⁰²=1 and h¹¹=20; c₁:Pic(M)→H²(M,ℤ) is injective, with image ker(H²(ℤ)→H²(O)), and intersection is cup product evaluated on the complex orientation.",
           "hypotheses": [
             "M a projective analytic K3"
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter1 §§3.2–3.3, pp.15–17; huybrechts lines 452–511"
+            "where": "Chapter 1 §§3.2–3.3, pp.15–17; huybrechts lines 452–511"
           },
           "prerequisites": [
             "target:1.4",
@@ -811,7 +814,7 @@
             "roadmap:EtaleCohomologyFoundations F.6",
             "roadmap:AlgebraicTopology Stage 6 items 1–2, 4"
           ],
-          "proofSketch": "Hodge symmetry yields H¹(C)=0 and the exponential sequence gives integral H¹=0 and Pic injection. If nx lies in Pic, the map to H²(O), a complex vector space, detects nx=0; Pic has no torsion, eliminating torsion in H². Integral Poincaré duality and universal coefficients then eliminate torsion in H³ and force H³=0. Noether/Gauss–Bonnet gives b₂=22 and Hodge decomposition gives20.",
+          "proofSketch": "Hodge symmetry yields H¹(C)=0 and the exponential sequence gives integral H¹=0 and Pic injection. If nx lies in Pic, the map to H²(O), a complex vector space, detects nx=0; Pic has no torsion, eliminating torsion in H². Integral Poincaré duality and universal coefficients then eliminate torsion in H³ and force H³=0. Noether/Gauss–Bonnet gives b₂=22 and Hodge decomposition gives 20.",
           "api": [],
           "tests": [
             {
@@ -822,7 +825,7 @@
             {
               "name": "complex_orientation",
               "kind": "computation",
-              "statement": "For a quartic hyperplane c₁(H), its cup square integrates to4."
+              "statement": "For a quartic hyperplane c₁(H), its cup square integrates to 4."
             },
             {
               "name": "torsion_control",
@@ -841,7 +844,7 @@
           "kind": "theorem",
           "name": "IsK3.integralEtaleRanks",
           "title": "Integral geometric étale invariants",
-          "statement": "For every K3 X/k and prime ℓ invertible in k, Hⁱ_et(X_kbar,ℤ_ℓ) is free with ranks (1,0,22,0,1), vanishes outside 0≤i≤4, and its degree2 cup-trace pairing with the appropriate Tate twists is perfect.",
+          "statement": "For every K3 X/k and prime ℓ invertible in k, Hⁱ_et(X_kbar,ℤ_ℓ) is free with ranks (1,0,22,0,1), vanishes outside 0≤i≤4, and its degree 2 cup-trace pairing with the appropriate Tate twists is perfect.",
           "hypotheses": [
             "IsK3(X/k)",
             "ℓ prime and invertible in k"
@@ -862,7 +865,7 @@
             "roadmap:ComplexComparisonPartII C6.3, C6.6",
             "target:3.3"
           ],
-          "proofSketch": "Over C use target3.3, then integral singular/étale comparison. In positive characteristic lift by2.7 and compare compatible ℤ/ℓⁿ systems by smooth proper base change before taking the adic limit. Duality supplies the pairing.",
+          "proofSketch": "Over C use target 3.3, then integral singular/étale comparison. In positive characteristic lift by 2.7 and compare compatible ℤ/ℓⁿ systems by smooth proper base change before taking the adic limit. Duality supplies the pairing.",
           "api": [],
           "tests": [
             {
@@ -878,7 +881,7 @@
             {
               "name": "h0_trace",
               "kind": "computation",
-              "statement": "H⁰=ℤ_ℓ and the trace of the class of a geometric point in H⁴(2) is1."
+              "statement": "H⁰=ℤ_ℓ and the trace of the class of a geometric point in H⁴(2) is 1."
             }
           ]
         }
@@ -902,7 +905,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 Lemma2.2, Remark2.4, §2.2, pp.365–367; huybrechts lines 13964,13971,13995,14011–14025"
+            "where": "Chapter 17 Lemma 2.2, Remark 2.4, §2.2, pp.365–367; huybrechts lines 13964,13971,13995,14011–14025"
           },
           "prerequisites": [
             "target:1.2",
@@ -914,7 +917,7 @@
             "roadmap:JacobianChallenge Layer D",
             "roadmap:ComplexComparisonPartII C3.2d.4"
           ],
-          "proofSketch": "Injectivity uses nonzero sections of L and L⁻¹. Field base change preserves the Euler-characteristic intersection formula. Over an algebraically closed base the discrete étale Picard scheme makes a spread-out class constant. Descent over finite extensions follows from finite presentation. The pⁿ-power cocycle descends through purely inseparable extensions. Hochschild–Serre and Hilbert90 give the Brauer obstruction, killed after tensoring ℚ.",
+          "proofSketch": "Injectivity uses nonzero sections of L and L⁻¹. Field base change preserves the Euler-characteristic intersection formula. Over an algebraically closed base the discrete étale Picard scheme makes a spread-out class constant. Descent over finite extensions follows from finite presentation. The pⁿ-power cocycle descends through purely inseparable extensions. Hochschild–Serre and Hilbert 90 give the Brauer obstruction, killed after tensoring ℚ.",
           "api": [],
           "tests": [
             {
@@ -945,7 +948,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter1 Proposition2.4, p.12; Chapter17 §2, p.364; huybrechts lines335,13945"
+            "where": "Chapter 1 Proposition 2.4, p.12; Chapter 17 §2, p.364; huybrechts lines 335,13945"
           },
           "prerequisites": [
             "target:1.5",
@@ -957,7 +960,7 @@
             "roadmap:IntegralLattices Layer 1",
             "roadmap:IntegralLattices Completed Layers 1–5"
           ],
-          "proofSketch": "Over algebraically closed k use1.5 to identify Pic with Num, whose finiteness and Hodge index are supplied. Over k, inject Pic into geometric Pic to obtain finite freeness; its rational span contains a k-ample positive class, so its orthogonal complement is negative definite. Apply the pinned rational-ambient lattice constructor; the geometry supplies the pairing, not a new abstract carrier.",
+          "proofSketch": "Over algebraically closed k use 1.5 to identify Pic with Num, whose finiteness and Hodge index are supplied. Over k, inject Pic into geometric Pic to obtain finite freeness; its rational span contains a k-ample positive class, so its orthogonal complement is negative definite. Apply the pinned rational-ambient lattice constructor; the geometry supplies the pairing, not a new abstract carrier.",
           "api": [
             {
               "name": "picardLattice.carrierEquiv",
@@ -999,12 +1002,12 @@
             {
               "name": "trivial_lattice_vector",
               "kind": "degenerate",
-              "statement": "O is zero and pairs to0 with every class."
+              "statement": "O is zero and pairs to 0 with every class."
             },
             {
               "name": "rank_one_discriminant",
               "kind": "non-example",
-              "statement": "A rank-one lattice generated by a degree4 polarization has Gram [4] and discriminant4; it is not unimodular."
+              "statement": "A rank-one lattice generated by a degree 4 polarization has Gram [4] and discriminant 4; it is not unimodular."
             },
             {
               "name": "rational_curve_sign",
@@ -1029,7 +1032,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 Definition2.3, p.365; huybrechts lines13987–13994"
+            "where": "Chapter 17 Definition 2.3, p.365; huybrechts lines 13987–13994"
           },
           "prerequisites": [
             "target:4.1",
@@ -1067,12 +1070,12 @@
             {
               "name": "rank_not_h11",
               "kind": "non-example",
-              "statement": "In positive characteristic ρ_geom can be22 although h¹¹=20; rank is not defined as h¹¹."
+              "statement": "In positive characteristic ρ_geom can be 22 although h¹¹=20; rank is not defined as h¹¹."
             },
             {
               "name": "positive_rank",
               "kind": "degenerate",
-              "statement": "An ample line has positive square and infinite order, so rank0 is impossible."
+              "statement": "An ample line has positive square and infinite order, so rank 0 is impossible."
             }
           ]
         },
@@ -1088,7 +1091,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 §§2.1–2.2, pp.365–366; huybrechts lines13994,14001–14010; rizov §2.4, lines 296–300"
+            "where": "Chapter 17 §§2.1–2.2, pp.365–366; huybrechts lines 13994,14001–14010; rizov §2.4, lines 296–300"
           },
           "prerequisites": [
             "target:3.3",
@@ -1101,7 +1104,7 @@
             "roadmap:SchemeAndStackFoundations §2.11",
             "roadmap:SchemeAndStackFoundations §0.9"
           ],
-          "proofSketch": "Use the finite-level Kummer injections Pic/ℓⁿ→H²(µ_ℓⁿ), then the compatible inverse limit on the finite free Picard lattice. The bound22 uses3.4; characteristic zero spreads to C and uses the (1,1) image of c₁, of dimension20. Positivity gives the lower bound. Finite-level Kummer injectivity implies saturation: if ℓⁿy=c₁(x), then x=ℓⁿz, and freeness gives y=c₁(z). Equal rank 22 then gives an isomorphism.",
+          "proofSketch": "Use the finite-level Kummer injections Pic/ℓⁿ→H²(µ_ℓⁿ), then the compatible inverse limit on the finite free Picard lattice. The bound 22 uses 3.4; characteristic zero spreads to C and uses the (1,1) image of c₁, of dimension 20. Positivity gives the lower bound. Finite-level Kummer injectivity implies saturation: if ℓⁿy=c₁(x), then x=ℓⁿz, and freeness gives y=c₁(z). Equal rank 22 then gives an isomorphism.",
           "api": [
             {
               "name": "picardCycle_saturated",
@@ -1113,7 +1116,7 @@
             {
               "name": "rank20_vs22",
               "kind": "characterisation",
-              "statement": "The bound20 is explicitly restricted to characteristic0."
+              "statement": "The bound 20 is explicitly restricted to characteristic 0."
             },
             {
               "name": "cycle_quartic",
@@ -1139,7 +1142,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 proof of Lemma2.6, p.367; huybrechts lines14045–14049 (integral consequence); the p-adic version is derived"
+            "where": "Chapter 17 proof of Lemma 2.6, p.367; huybrechts lines 14045–14049 (integral consequence); the p-adic version is derived"
           },
           "prerequisites": [
             "mathlib:PadicInt.toZMod",
@@ -1169,17 +1172,17 @@
             {
               "name": "rank0_kernel",
               "kind": "degenerate",
-              "statement": "GL₀ has only1 and its kernel is trivial."
+              "statement": "GL₀ has only 1 and its kernel is trivial."
             },
             {
               "name": "rank1_prime3",
               "kind": "computation",
-              "statement": "The element -1 in GL₁(ℤ₃) reduces to2, not1."
+              "statement": "The element -1 in GL₁(ℤ₃) reduces to 2, not 1."
             },
             {
               "name": "prime2_negative",
               "kind": "non-example",
-              "statement": "At ℓ=2, -1 lies in the kernel and has order2; oddness is essential."
+              "statement": "At ℓ=2, -1 lies in the kernel and has order 2; oddness is essential."
             },
             {
               "name": "unipotent_two_term",
@@ -1200,7 +1203,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 Lemma2.6, p.367; huybrechts lines14038–14054"
+            "where": "Chapter 17 Lemma 2.6, p.367; huybrechts lines 14038–14054"
           },
           "prerequisites": [
             "target:4.1",
@@ -1213,13 +1216,13 @@
             "tauceti:TauCeti.brauerCohomologyEquiv",
             "tauceti:TauCeti.subsingleton_brauerGroup_of_finite"
           ],
-          "proofSketch": "By §4.1 each geometric Picard class descends to a finite extension, so its Galois stabilizer is open, also over imperfect k by taking the separable part of that extension. This proves continuity for the discrete Picard group. Intersect the stabilizers of a finite basis from §4.2 to obtain an open kernel, hence finite image. Reduction mod3 bounds its order in rank≤22; pad lower ranks with identity blocks. The fixed field of the kernel has bounded separable degree. Brauer obstructions are torsion and purely inseparable cokernels are p-primary, so rational descent gives the whole rank. The composite of SchemeAndStackFoundations §§2.10, 2.15 with the inverse of TauCeti.brauerCohomologyEquiv and TauCeti.subsingleton_brauerGroup_of_finite gives H²_fppf(Spec K,G_m)=0 for finite K. This vanishing, or a rational point in characteristic zero, kills the integral obstruction. Descending finitely many generators gives the unconditional unbounded extension.",
+          "proofSketch": "By §4.1 each geometric Picard class descends to a finite extension, so its Galois stabilizer is open, also over imperfect k by taking the separable part of that extension. This proves continuity for the discrete Picard group. Intersect the stabilizers of a finite basis from §4.2 to obtain an open kernel, hence finite image. Reduction mod 3 bounds its order in rank≤22; pad lower ranks with identity blocks. The fixed field of the kernel has bounded separable degree. Brauer obstructions are torsion and purely inseparable cokernels are p-primary, so rational descent gives the whole rank. The composite of SchemeAndStackFoundations §§2.10, 2.15 with the inverse of TauCeti.brauerCohomologyEquiv and TauCeti.subsingleton_brauerGroup_of_finite gives H²_fppf(Spec K,G_m)=0 for finite K. This vanishing, or a rational point in characteristic zero, kills the integral obstruction. Descending finitely many generators gives the unconditional unbounded extension.",
           "api": [],
           "tests": [
             {
               "name": "closed_field_degree1",
               "kind": "degenerate",
-              "statement": "An algebraically closed base needs degree1."
+              "statement": "An algebraically closed base needs degree 1."
             },
             {
               "name": "rank_vs_group",
@@ -1252,7 +1255,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter15 Definition1.1 and Remark1.3, pp.307–308; huybrechts lines11765–11788"
+            "where": "Chapter 15 Definition 1.1 and Remark 1.3, pp.307–308; huybrechts lines 11765–11788"
           },
           "prerequisites": [
             "target:1.2",
@@ -1307,7 +1310,7 @@
             {
               "name": "scalar_minus1_control",
               "kind": "non-example",
-              "statement": "In characteristic≠2 a map acting by -1 on the canonical line fails; in characteristic2 that scalar equals1."
+              "statement": "In characteristic≠2 a map acting by -1 on the canonical line fails; in characteristic 2 that scalar equals 1."
             }
           ]
         },
@@ -1316,14 +1319,14 @@
           "kind": "construction",
           "name": "IsK3.polarizedAut",
           "title": "Polarization stabilizers",
-          "statement": "For an ample L on K3 X/k, define Aut(X,[L]) as the stabilizer of its native Picard class under inverse pullback, and define SymplecticAut(X,[L]) by intersection with5.1. A member records f with f*L≅L as a property, not a chosen isomorphism.",
+          "statement": "For an ample L on K3 X/k, define Aut(X,[L]) as the stabilizer of its native Picard class under inverse pullback, and define SymplecticAut(X,[L]) by intersection with 5.1. A member records f with f*L≅L as a property, not a chosen isomorphism.",
           "hypotheses": [
             "IsK3(X/k)",
             "L ample"
           ],
           "locator": {
             "source": "rizov",
-            "where": "Definition3.3.2 and Proposition3.3.3, pp.14–15; rizov lines610–642"
+            "where": "Definition 3.3.2 and Proposition 3.3.3, pp.14–15; rizov lines 610–642"
           },
           "prerequisites": [
             "target:4.1",
@@ -1383,14 +1386,14 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter5 Proposition3.3 and Remark3.4, pp.91–92; huybrechts lines3372,3400; rizov Proposition3.3.3 line615"
+            "where": "Chapter 5 Proposition 3.3 and Remark 3.4, pp.91–92; huybrechts lines 3372,3400; rizov Proposition 3.3.3 line 615"
           },
           "prerequisites": [
             "target:2.3",
             "target:5.2",
             "roadmap:SchemeAndStackFoundations §4.14"
           ],
-          "proofSketch": "Use an embedding by a sufficiently high power of L and the graph Hilbert scheme to represent the stabilizer by a finite-type closed algebraic subgroup of PGL. Its tangent is H⁰(T_X)=0, hence it is unramified and dimension0. A finite-type dimension0 group scheme over a field with zero geometric tangent is finite étale. Intersect its k-points with the symplectic subgroup. The canonical section line gives a group-scheme character by inverse pullback and coherent field base change. Its scheme-theoretic kernel is a closed subgroup of a finite étale k-scheme, hence finite étale; its k-points recover5.1.",
+          "proofSketch": "Use an embedding by a sufficiently high power of L and the graph Hilbert scheme to represent the stabilizer by a finite-type closed algebraic subgroup of PGL. Its tangent is H⁰(T_X)=0, hence it is unramified and dimension 0. A finite-type dimension 0 group scheme over a field with zero geometric tangent is finite étale. Intersect its k-points with the symplectic subgroup. The canonical section line gives a group-scheme character by inverse pullback and coherent field base change. Its scheme-theoretic kernel is a closed subgroup of a finite étale k-scheme, hence finite étale; its k-points recover 5.1.",
           "api": [
             {
               "name": "polarizedAut.symplecticFiniteEtale",
@@ -1412,7 +1415,7 @@
             {
               "name": "all_characteristics",
               "kind": "compatibility",
-              "statement": "Zero tangent supplies étaleness even in characteristic2."
+              "statement": "Zero tangent supplies étaleness even in characteristic 2."
             }
           ]
         },
@@ -1428,7 +1431,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter15 §2.5(i), p.318; huybrechts lines12221–12231"
+            "where": "Chapter 15 §2.5(i), p.318; huybrechts lines 12221–12231"
           },
           "prerequisites": [
             "target:1.1",
@@ -1439,7 +1442,7 @@
             "gap:surface-quotient-resolutions",
             "roadmap:JacobianChallenge Layer C"
           ],
-          "proofSketch": "The open smooth finite-projection locus is nonempty in this complete-intersection family; adjunction and the Koszul sequence give K3. Deck involutions negate the canonical form by the double-cover formula. For pullback and column vectors in H₁,H₂, their matrices are S₁=[[1,4],[0,-1]], S₂=[[-1,0],[4,1]], while f*=S₂S₁=[[-1,-4],[4,15]]. Trace14 and eigenvalues7±4√3 imply infinite order.",
+          "proofSketch": "The open smooth finite-projection locus is nonempty in this complete-intersection family; adjunction and the Koszul sequence give K3. Deck involutions negate the canonical form by the double-cover formula. For pullback and column vectors in H₁,H₂, their matrices are S₁=[[1,4],[0,-1]], S₂=[[-1,0],[4,1]], while f*=S₂S₁=[[-1,-4],[4,15]]. Trace 14 and eigenvalues 7±4√3 imply infinite order.",
           "api": [],
           "tests": [
             {
@@ -1450,7 +1453,7 @@
             {
               "name": "wehler_product",
               "kind": "computation",
-              "statement": "S₂S₁ has trace14 and determinant1, hence is not finite order."
+              "statement": "S₂S₁ has trace 14 and determinant 1, hence is not finite order."
             },
             {
               "name": "wehler_symplectic",
@@ -1484,7 +1487,7 @@
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 Proposition2.19, pp.373–374; huybrechts lines14317–14342"
+            "where": "Chapter 17 Proposition 2.19, pp.373–374; huybrechts lines 14317–14342"
           },
           "prerequisites": [
             "target:4.2",
@@ -1495,7 +1498,7 @@
             "target:4.4 picardCycle_saturated",
             "roadmap:IntegralLattices Layer 1 (1I)"
           ],
-          "proofSketch": "The rank-22 integral isomorphism picardCycle_saturated and prime-to-p unimodular cycle comparison makes the discriminant a signed p-power. Crystalline cycle-lattice duality makes it p-elementary and forces an even exponent. Hodge index gives the negative sign; IntegralLattices Layer 1 (1I), Milgram’s congruence, excludes σ=0 and11; the latter uses evenness of B/p at discriminant length22, including the dyadic parity in the crystalline contract. Uniqueness follows from p>1.",
+          "proofSketch": "The rank-22 integral isomorphism picardCycle_saturated and prime-to-p unimodular cycle comparison makes the discriminant a signed p-power. Crystalline cycle-lattice duality makes it p-elementary and forces an even exponent. Hodge index gives the negative sign; IntegralLattices Layer 1 (1I), Milgram’s congruence, excludes σ=0 and 11; the latter uses evenness of B/p at discriminant length 22, including the dyadic parity in the crystalline contract. Uniqueness follows from p>1.",
           "api": [],
           "tests": [
             {
@@ -1676,7 +1679,7 @@
           ],
           "locator": {
             "source": "dolgachev-keum",
-            "where": "Lemmas3.1–3.2 and proof of Theorem3.3, pp.10–13; dolgachev-keum lines399,444,507"
+            "where": "Lemmas 3.1–3.2 and proof of Theorem 3.3, pp.10–13; dolgachev-keum lines 399,444,507"
           },
           "prerequisites": [
             "target:1.4",
@@ -1693,18 +1696,18 @@
             "target:6.0b",
             "target:6.0c"
           ],
-          "proofSketch": "Tame linearization makes a local symplectic stabilizer a finite subgroup of SL₂. Resolve its ADE singularities; discrepancy0 and coherent quotient formulas give canonical triviality and H¹=0 on Y. Use the prime-to-p local discriminants. In rank 20, the exceptional classes and an ample class give ρ(Y)≥21, hence ρ(Y)=22 by §6.0c. Use §6.0 to write |disc Pic(Y)|=p^(2σ). If det R is a square, the rank-two orthogonal complement has negative square determinant and a primitive isotropic vector. RR and reflections as in §6.0b give a genus-one pencil whose vertical root lattice contains an isometric copy M of R with finite index a; thus det M=a²det R(φ). Its Jacobian J is K3 with R(J)=R(φ), so ρ(J)≥21 and §6.0c gives ρ(J)=22. The section and fibre span a unimodular plane; since the Mordell–Weil rank is zero, det R(J)=m²|disc Pic(J)| for the finite Mordell–Weil torsion order m. By §6.0 this is divisible by p, contradicting p∤det R. The Jacobian construction and vertical-lattice comparison retain the quasi-elliptic alternative at p=2,3 (dolgachev-keum lines 465–505). G=1 has Y=X and zero root lattice.",
+          "proofSketch": "Tame linearization makes a local symplectic stabilizer a finite subgroup of SL₂. Resolve its ADE singularities; discrepancy 0 and coherent quotient formulas give canonical triviality and H¹=0 on Y. Use the prime-to-p local discriminants. In rank 20, the exceptional classes and an ample class give ρ(Y)≥21, hence ρ(Y)=22 by §6.0c. Use §6.0 to write |disc Pic(Y)|=p^(2σ). If det R is a square, the rank-two orthogonal complement has negative square determinant and a primitive isotropic vector. RR and reflections as in §6.0b give a genus-one pencil whose vertical root lattice contains an isometric copy M of R with finite index a; thus det M=a²det R(φ). Its Jacobian J is K3 with R(J)=R(φ), so ρ(J)≥21 and §6.0c gives ρ(J)=22. The section and fibre span a unimodular plane; since the Mordell–Weil rank is zero, det R(J)=m²|disc Pic(J)| for the finite Mordell–Weil torsion order m. By §6.0 this is divisible by p, contradicting p∤det R. The Jacobian construction and vertical-lattice comparison retain the quasi-elliptic alternative at p=2,3 (dolgachev-keum lines 465–505). G=1 has Y=X and zero root lattice.",
           "api": [],
           "tests": [
             {
               "name": "trivial_quotient",
               "kind": "degenerate",
-              "statement": "G=1 gives Y=X and rank R=0, with determinant1."
+              "statement": "G=1 gives Y=X and rank R=0, with determinant 1."
             },
             {
               "name": "involution_roots",
               "kind": "computation",
-              "statement": "A symplectic involution gives eight A₁ points, whose root lattice has determinant2⁸."
+              "statement": "A symplectic involution gives eight A₁ points, whose root lattice has determinant 2⁸."
             },
             {
               "name": "wild_not_linearized",
@@ -1788,7 +1791,7 @@
           ],
           "locator": {
             "source": "dolgachev-keum",
-            "where": "Theorem3.3, p.13; dolgachev-keum lines507–520; nikulin-symplectic §5; mukai (0.1), line53"
+            "where": "Theorem 3.3, p.13; dolgachev-keum lines 507–520; nikulin-symplectic §5; mukai (0.1), line 53"
           },
           "prerequisites": [
             "target:3.4",
@@ -1799,18 +1802,18 @@
             "gap:tame-lefschetz",
             "roadmap:MorseNovikov N6"
           ],
-          "proofSketch": "No eigenvalue1 at a tame nonidentity symplectic fixed point makes the fixed scheme reduced of dimension0. Apply §6.1a to every cyclic subgroup: its quotient Euler and orbit relations give the counts and exclude orders11 and15 by the square-discriminant or characteristic-zero root-rank argument.",
+          "proofSketch": "No eigenvalue 1 at a tame nonidentity symplectic fixed point makes the fixed scheme reduced of dimension 0. Apply §6.1a to every cyclic subgroup: its quotient Euler and orbit relations give the counts and exclude orders 11 and 15 by the square-discriminant or characteristic-zero root-rank argument.",
           "api": [],
           "tests": [
             {
               "name": "involution_eight",
               "kind": "computation",
-              "statement": "Order2 gives8 fixed points, hence total cohomological trace8 and H² trace6."
+              "statement": "Order 2 gives 8 fixed points, hence total cohomological trace 8 and H² trace 6."
             },
             {
               "name": "order7_three",
               "kind": "computation",
-              "statement": "Order7 gives3 points, not the value2 for order8."
+              "statement": "Order 7 gives 3 points, not the value 2 for order 8."
             },
             {
               "name": "identity_excluded",
@@ -1885,7 +1888,7 @@
           "kind": "theorem",
           "name": "IsK3.wildCyclicQuotient",
           "title": "Wild quotient alternatives",
-          "statement": "For geometric K3 X/k in characteristic p>0 and g of order p, the minimal resolution of X/⟨g⟩ is rational, a nonclassical µ₂-type Enriques surface (only p=2 with empty fixed locus), or K3. The fixed locus is either finite with at most2 points or a connected divisor of Kodaira dimension0,1 or2. In the K3 quotient branch the exceptional locus increases Picard rank, and the rational transcendental cokernel H²_et/(Pic⊗ℚ_ℓ) of its resolution is the g-invariant cokernel of X. In the rational branch H²_et(X,ℚ_ℓ(1))^g is algebraic. In the free Enriques branch dim H²_et(X,ℚ_ℓ)^g=10; this assertion uses the second Betti number, without a Picard-rank identification.",
+          "statement": "For geometric K3 X/k in characteristic p>0 and g of order p, the minimal resolution of X/⟨g⟩ is rational, a nonclassical µ₂-type Enriques surface (only p=2 with empty fixed locus), or K3. The fixed locus is either finite with at most 2 points or a connected divisor of Kodaira dimension 0,1 or 2. In the K3 quotient branch the exceptional locus increases Picard rank, and the rational transcendental cokernel H²_et/(Pic⊗ℚ_ℓ) of its resolution is the g-invariant cokernel of X. In the rational branch H²_et(X,ℚ_ℓ(1))^g is algebraic. In the free Enriques branch dim H²_et(X,ℚ_ℓ)^g=10; this assertion uses the second Betti number, without a Picard-rank identification.",
           "hypotheses": [
             "k algebraically closed of characteristic p>0",
             "IsK3(X/k)",
@@ -1894,7 +1897,7 @@
           ],
           "locator": {
             "source": "wild-cyclic",
-            "where": "Theorems1–4, pp.1–2; wild-cyclic lines14–44; keum §6, lines788–815"
+            "where": "Theorems 1–4, pp.1–2; wild-cyclic lines 14–44; keum §6, lines 788–815"
           },
           "prerequisites": [
             "target:3.4",
@@ -1910,7 +1913,7 @@
             "roadmap:SchemeAndStackFoundations §2.15",
             "roadmap:EtaleCohomologyFoundations F.4.2–F.4.6"
           ],
-          "proofSketch": "Analyze equivariant O-cohomology and the anticanonical quotient. Track rational versus rational-double-point singularities and the empty-fixed-locus characteristic2 case. Quotient correspondences with ℚ_ℓ coefficients and resolution contributions identify the algebraic and transcendental pieces. No tame linearization is used. In the rational branch apply the general rational-surface cycle theorem, then the quotient transcendental comparison. In the Enriques branch q:X→Y is a finite étale C₂-torsor, even in characteristic 2. Rational quotient descent gives Hⁱ(Y,ℚ_ℓ)=Hⁱ(X,ℚ_ℓ)^g and H¹(Y)=H³(Y)=0. Since T_X=q* T_Y, the projection formula gives deg c₂(T_X)=2 deg c₂(T_Y). Gauss–Bonnet yields e(Y)=24/2=12 and b₂(Y)=12−2=10.",
+          "proofSketch": "Analyze equivariant O-cohomology and the anticanonical quotient. Track rational versus rational-double-point singularities and the empty-fixed-locus characteristic 2 case. Quotient correspondences with ℚ_ℓ coefficients and resolution contributions identify the algebraic and transcendental pieces. No tame linearization is used. In the rational branch apply the general rational-surface cycle theorem, then the quotient transcendental comparison. In the Enriques branch q:X→Y is a finite étale C₂-torsor, even in characteristic 2. Rational quotient descent gives Hⁱ(Y,ℚ_ℓ)=Hⁱ(X,ℚ_ℓ)^g and H¹(Y)=H³(Y)=0. Since T_X=q* T_Y, the projection formula gives deg c₂(T_X)=2 deg c₂(T_Y). Gauss–Bonnet yields e(Y)=24/2=12 and b₂(Y)=12−2=10.",
           "api": [],
           "tests": [
             {
@@ -2018,7 +2021,7 @@
           ],
           "locator": {
             "source": "dolgachev-keum",
-            "where": "Theorem2.1, pp.4–10; dolgachev-keum lines138–139,160; keum line128"
+            "where": "Theorem 2.1, pp.4–10; dolgachev-keum lines 138–139,160; keum line 128"
           },
           "prerequisites": [
             "target:5.1",
@@ -2031,12 +2034,12 @@
             {
               "name": "large_p_tame",
               "kind": "characterisation",
-              "statement": "At p=13 every finite automorphism subgroup has order prime to13."
+              "statement": "At p=13 every finite automorphism subgroup has order prime to 13."
             },
             {
               "name": "p2_allowed",
               "kind": "compatibility",
-              "statement": "Characteristic2 is included, with no assertion that the subgroup is tame."
+              "statement": "Characteristic 2 is included, with no assertion that the subgroup is tame."
             }
           ]
         },
@@ -2102,7 +2105,7 @@
           ],
           "locator": {
             "source": "keum",
-            "where": "Theorem1.4 and §6, pp.3,19–20; keum lines120–123,767–815; characteristic-zero integral case rizov Lemma3.4.1 line659"
+            "where": "Theorem 1.4 and §6, pp.3,19–20; keum lines 120–123,767–815; characteristic-zero integral case rizov Lemma 3.4.1 line 659"
           },
           "prerequisites": [
             "target:3.2",
@@ -2120,7 +2123,7 @@
             "roadmap:SchemeAndStackFoundations §2.15",
             "roadmap:EtaleCohomologyFoundations F.4.2–F.4.6"
           ],
-          "proofSketch": "A cohomologically trivial automorphism fixes Pic and an ample class, so has finite order by5.3. In characteristic0 Hodge comparison makes it symplectic; the nonidentity tame trace table contradicts identity trace22 on H². In positive characteristic cross-realization makes it symplectic; remove the prime-to-p part using6.2 and reduce to order p. The rational quotient has algebraic H² by the surface cycle contract; §6.3 and cohomological triviality force ρ=22, then the supersingular Picard-faithfulness theorem applies. The free Enriques quotient has invariant dimension 10 by the finite étale descent and Gauss–Bonnet calculation of §6.3; the K3-resolution case gives 22>22 by the strict exceptional-rank increase and invariant transcendental comparison. Integral freeness relates the two actions.",
+          "proofSketch": "A cohomologically trivial automorphism fixes Pic and an ample class, so has finite order by 5.3. In characteristic 0 Hodge comparison makes it symplectic; the nonidentity tame trace table contradicts identity trace 22 on H². In positive characteristic cross-realization makes it symplectic; remove the prime-to-p part using 6.2 and reduce to order p. The rational quotient has algebraic H² by the surface cycle contract; §6.3 and cohomological triviality force ρ=22, then the supersingular Picard-faithfulness theorem applies. The free Enriques quotient has invariant dimension 10 by the finite étale descent and Gauss–Bonnet calculation of §6.3; the K3-resolution case gives 22>22 by the strict exceptional-rank increase and invariant transcendental comparison. Integral freeness relates the two actions.",
           "api": [],
           "tests": [
             {
@@ -2131,7 +2134,7 @@
             {
               "name": "ell_p_excluded",
               "kind": "non-example",
-              "statement": "There is no use of a rank22 ℤ_p étale realization in characteristic p."
+              "statement": "There is no use of a rank 22 ℤ_p étale realization in characteristic p."
             },
             {
               "name": "char2_enriques",
@@ -2152,25 +2155,25 @@
           ],
           "locator": {
             "source": "keum",
-            "where": "Derived from Theorem1.4, p.3, keum line120; integral ranks rizov §2.4 line273; congruence input huybrechts line14049"
+            "where": "Derived from Theorem 1.4, p.3, keum line 120; integral ranks rizov §2.4 line 273; congruence input huybrechts line 14049"
           },
           "prerequisites": [
             "target:3.4",
             "target:4.5",
             "target:6.5"
           ],
-          "proofSketch": "Choose ℓ=3 unless char k=3, then ℓ=5. A basis identifies rank22 integral cohomology with ℤ_ℓ²². Faithfulness and odd-prime congruence inject G into the finite GL₂₂. Finite groups of bounded order have finitely many multiplication tables up to isomorphism; this is a finiteness proof, not an enumeration procedure.",
+          "proofSketch": "Choose ℓ=3 unless char k=3, then ℓ=5. A basis identifies rank 22 integral cohomology with ℤ_ℓ²². Faithfulness and odd-prime congruence inject G into the finite GL₂₂. Finite groups of bounded order have finitely many multiplication tables up to isomorphism; this is a finiteness proof, not an enumeration procedure.",
           "api": [],
           "tests": [
             {
               "name": "trivial_bound",
               "kind": "degenerate",
-              "statement": "G=1 has order1 and satisfies both candidate bounds."
+              "statement": "G=1 has order 1 and satisfies both candidate bounds."
             },
             {
               "name": "p3_choose5",
               "kind": "compatibility",
-              "statement": "Characteristic3 uses ℓ=5."
+              "statement": "Characteristic 3 uses ℓ=5."
             },
             {
               "name": "wild_bound",
@@ -2229,14 +2232,14 @@
           "kind": "definition",
           "name": "IsK3.IsArtinInvariantOne",
           "title": "The exceptional-locus predicate",
-          "statement": "For geometric K3 in characteristic p>0 define IsArtinInvariantOne X to mean ρ(X)=22 and disc Pic(X)=-p². By6.0 this agrees with Artin invariant σ=1, using the bilinear intersection discriminant.",
+          "statement": "For geometric K3 in characteristic p>0 define IsArtinInvariantOne X to mean ρ(X)=22 and disc Pic(X)=-p². By 6.0 this agrees with Artin invariant σ=1, using the bilinear intersection discriminant.",
           "hypotheses": [
             "k algebraically closed of characteristic p>0",
             "IsK3(X/k)"
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 Proposition2.19, pp.373–374; huybrechts line14317; dolgachev-keum §5 line815"
+            "where": "Chapter 17 Proposition 2.19, pp.373–374; huybrechts line 14317; dolgachev-keum §5 line 815"
           },
           "prerequisites": [
             "target:6.0"
@@ -2246,7 +2249,7 @@
             {
               "name": "isArtinInvariantOne_iff_sigma",
               "role": "characterisation",
-              "statement": "For rank22, the predicate is equivalent to σ=1."
+              "statement": "For rank 22, the predicate is equivalent to σ=1."
             },
             {
               "name": "isArtinInvariantOne.congr",
@@ -2261,24 +2264,24 @@
             {
               "name": "isArtinInvariantOne.disc",
               "role": "evaluation",
-              "statement": "It implies rank22 and discriminant-p²."
+              "statement": "It implies rank 22 and discriminant-p²."
             }
           ],
           "tests": [
             {
               "name": "artin_one_numeric",
               "kind": "computation",
-              "statement": "For p=3 and lattice invariants rank22, disc=-9, the test returns true; replacing -9 by +9 fails. This checks the signed bilinear discriminant and the exponent2, without asserting realization of arbitrary numerical data."
+              "statement": "For p=3 and lattice invariants rank 22, disc=-9, the test returns true; replacing -9 by +9 fails. This checks the signed bilinear discriminant and the exponent 2, without asserting realization of arbitrary numerical data."
             },
             {
               "name": "artin_two_control",
               "kind": "non-example",
-              "statement": "At p=3, rank22 and discriminant-81 give σ=2 and fail."
+              "statement": "At p=3, rank 22 and discriminant -81 give σ=2 and fail."
             },
             {
               "name": "rank_control",
               "kind": "non-example",
-              "statement": "A rank20 lattice does not satisfy the predicate even if its discriminant happens to be-9."
+              "statement": "A rank 20 lattice does not satisfy the predicate even if its discriminant happens to be -9."
             }
           ]
         },
@@ -2363,7 +2366,7 @@
           "kind": "theorem",
           "name": "IsK3.tameMathieuCharacter",
           "title": "Tame characters and invariant dimensions",
-          "statement": "For a geometric K3 and finite tame symplectic G, total rational cohomology has dimension24 and character χ(g)=24/(n∏_{r|n,r prime}(1+1/r)), n=ord(g). This equals24 at identity. In characteristic0 its G-invariant dimension is at least5. In characteristic p>0 it is at least5 if either X or the K3 resolution Y of X/G fails IsArtinInvariantOne.",
+          "statement": "For a geometric K3 and finite tame symplectic G, total rational cohomology has dimension 24 and character χ(g)=24/(n∏_{r|n,r prime}(1+1/r)), n=ord(g). This equals 24 at identity. In characteristic 0 its G-invariant dimension is at least 5. In characteristic p>0 it is at least 5 if either X or the K3 resolution Y of X/G fails IsArtinInvariantOne.",
           "hypotheses": [
             "k algebraically closed",
             "IsK3(X/k)",
@@ -2372,7 +2375,7 @@
           ],
           "locator": {
             "source": "dolgachev-keum",
-            "where": "Propositions4.1,4.5 and Theorem4.7, pp.14–20; dolgachev-keum lines522,569,683,785; mukai Theorem(1.4)"
+            "where": "Propositions 4.1,4.5 and Theorem 4.7, pp.14–20; dolgachev-keum lines 522,569,683,785; mukai Theorem(1.4)"
           },
           "prerequisites": [
             "target:3.3",
@@ -2386,13 +2389,13 @@
             "gap:artin-discriminant",
             "gap:tame-lefschetz"
           ],
-          "proofSketch": "The tame trace formula and6.2 give the character values. The trivial representation contributes H⁰ and H⁴. In the complex projective case a volume form, its conjugate and an averaged ample class add3. In positive characteristic §6.8a supplies the invariant-dimension lower bound outside the stated exceptional case.",
+          "proofSketch": "The tame trace formula and 6.2 give the character values. The trivial representation contributes H⁰ and H⁴. In the complex projective case a volume form, its conjugate and an averaged ample class add 3. In positive characteristic §6.8a supplies the invariant-dimension lower bound outside the stated exceptional case.",
           "api": [],
           "tests": [
             {
               "name": "mathieu_identity",
               "kind": "degenerate",
-              "statement": "n=1 has empty prime product1, hence character24."
+              "statement": "n=1 has empty prime product 1, hence character 24."
             },
             {
               "name": "mathieu_order2",
@@ -2416,7 +2419,7 @@
           "kind": "theorem",
           "name": "IsK3.charZeroSymplectic_bound",
           "title": "The characteristic-zero sharp bound",
-          "statement": "For K3 X over a characteristic-zero field and finite symplectic G≤Aut_k(X), G embeds in M₂₃ with at least5 orbits on its induced24-point action and in one of Mukai’s eleven maximal groups. In particular |G|≤960.",
+          "statement": "For K3 X over a characteristic-zero field and finite symplectic G≤Aut_k(X), G embeds in M₂₃ with at least 5 orbits on its induced 24-point action and in one of Mukai’s eleven maximal groups. In particular |G|≤960.",
           "hypotheses": [
             "IsK3(X/k)",
             "char k=0",
@@ -2424,7 +2427,7 @@
           ],
           "locator": {
             "source": "mukai",
-            "where": "Theorems(0.3),(0.6), Example(0.4), pp.184–185; mukai lines70,76,102; huybrechts lines12268–12283"
+            "where": "Theorems(0.3),(0.6), Example(0.4), pp.184–185; mukai lines 70,76,102; huybrechts lines 12268–12283"
           },
           "prerequisites": [
             "target:5.1",
@@ -2435,23 +2438,23 @@
             "gap:mukai-eleven-groups-recognition",
             "gap:tame-linear-groups"
           ],
-          "proofSketch": "Spread the finite action and surface to a finitely generated characteristic-zero field and embed into C. Use the fixed-point and quotient-root configurations of §6.1–§6.2 to prove the Sylow 2-subgroup embedding: Mukai §6 first excludes the forbidden abelian and central-product configurations, then treats the order-128 central-involution action on its eight fixed points. This geometric deduction remains here; apply the finite-group (W)→(E) recognition contract only after establishing that embedding and the Mathieu representation with five invariants. The eleven groups have maximal order960. Only containment and the bound are endpoints here, not the converse realization of every group.",
+          "proofSketch": "Spread the finite action and surface to a finitely generated characteristic-zero field and embed into C. Use the fixed-point and quotient-root configurations of §6.1–§6.2 to prove the Sylow 2-subgroup embedding: Mukai §6 first excludes the forbidden abelian and central-product configurations, then treats the order-128 central-involution action on its eight fixed points. This geometric deduction remains here; apply the finite-group (W)→(E) recognition contract only after establishing that embedding and the Mathieu representation with five invariants. The eleven groups have maximal order 960. Only containment and the bound are endpoints here, not the converse realization of every group.",
           "api": [],
           "tests": [
             {
               "name": "trivial_orbits24",
               "kind": "degenerate",
-              "statement": "The trivial subgroup has24 orbits."
+              "statement": "The trivial subgroup has 24 orbits."
             },
             {
               "name": "involution_orbits16",
               "kind": "computation",
-              "statement": "Cycle type1⁸2⁸ has16 orbits on24 letters."
+              "statement": "Cycle type 1⁸2⁸ has 16 orbits on 24 letters."
             },
             {
               "name": "order23_rejected",
               "kind": "non-example",
-              "statement": "A23-cycle with one fixed letter has2 orbits and cannot satisfy the required five-orbit condition."
+              "statement": "A 23-cycle with one fixed letter has 2 orbits and cannot satisfy the required five-orbit condition."
             }
           ]
         },
@@ -2460,7 +2463,7 @@
           "kind": "theorem",
           "name": "IsK3.tameSymplectic_bound",
           "title": "Tame groups and the exceptional branch",
-          "statement": "For geometric K3 X/k in characteristic p>0 and finite tame symplectic G, there is an embedding G→M₂₃ and hence |G|≤10200960. If either X or the minimal resolution of X/G is not of Artin invariant1, G lies in Mukai’s list and |G|≤960. In the exceptional branch retain M₂₃ containment; the exceptional candidate list is a necessary classification, with no assertion all candidates occur. The embeddings and bounds for k-subgroups over nonclosed fields follow after base change.",
+          "statement": "For geometric K3 X/k in characteristic p>0 and finite tame symplectic G, there is an embedding G→M₂₃ and hence |G|≤10200960. If either X or the minimal resolution of X/G is not of Artin invariant 1, G lies in Mukai’s list and |G|≤960. In the exceptional branch retain M₂₃ containment; the exceptional candidate list is a necessary classification, with no assertion all candidates occur. The embeddings and bounds for k-subgroups over nonclosed fields follow after base change.",
           "hypotheses": [
             "IsK3(X/k)",
             "char k=p>0",
@@ -2469,7 +2472,7 @@
           ],
           "locator": {
             "source": "dolgachev-keum",
-            "where": "Theorem4.7, Theorem5.2, Proposition5.14, pp.19–22,37; dolgachev-keum lines785,862,1566"
+            "where": "Theorem 4.7, Theorem 5.2, Proposition 5.14, pp.19–22,37; dolgachev-keum lines 785,862,1566"
           },
           "prerequisites": [
             "target:6.1",
@@ -2479,18 +2482,18 @@
             "gap:mukai-eleven-groups-recognition",
             "gap:exceptional-mathieu-embeddings"
           ],
-          "proofSketch": "Outside the exceptional invariant-dimension4 branch establish the Sylow 2-subgroup embedding by the tame local-stabilizer and fixed-point argument, then apply finite-group recognition with at least5 invariants; the rational quaternion obstruction is replaced by the ℚ₂ obstruction when 2∣|G|. In the remaining branch the K3 calculations give the hypotheses EG1–EG4: Mathieu character over every ℚ_ℓ, invariant dimension4, exceptional-root rank20 and prime-to-p nonsquare determinant (dolgachev-keum lines 833–840). Prove the necessary group-list reduction of Theorem5.2 using those data and the local stabilizers here, then consume only the abstract embeddings of Proposition5.14. The 24-letter action, including the stabilized letter, is the action in the orbit statements.",
+          "proofSketch": "Outside the exceptional invariant-dimension 4 branch establish the Sylow 2-subgroup embedding by the tame local-stabilizer and fixed-point argument, then apply finite-group recognition with at least 5 invariants; the rational quaternion obstruction is replaced by the ℚ₂ obstruction when 2∣|G|. In the remaining branch the K3 calculations give the hypotheses EG1–EG4: Mathieu character over every ℚ_ℓ, invariant dimension 4, exceptional-root rank 20 and prime-to-p nonsquare determinant (dolgachev-keum lines 833–840). Prove the necessary group-list reduction of Theorem 5.2 using those data and the local stabilizers here, then consume only the abstract embeddings of Proposition 5.14. The 24-letter action, including the stabilized letter, is the action in the orbit statements.",
           "api": [],
           "tests": [
             {
               "name": "exceptional_orbits",
               "kind": "non-example",
-              "statement": "An exceptional candidate has4 orbits; no universal five-orbit claim is made."
+              "statement": "An exceptional candidate has 4 orbits; no universal five-orbit claim is made."
             },
             {
               "name": "tame_p2",
               "kind": "compatibility",
-              "statement": "In characteristic2 the tame hypothesis means odd group order."
+              "statement": "In characteristic 2 the tame hypothesis means odd group order."
             },
             {
               "name": "nonclosed_injection",
@@ -2518,7 +2521,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Definition3.2.3, p.13; rizov line555; Lemma3.1.6 line463"
+            "where": "Definition 3.2.3, p.13; rizov line 555; Lemma 3.1.6 line 463"
           },
           "prerequisites": [
             "target:2.1",
@@ -2545,14 +2548,14 @@
             {
               "name": "isPrimitivePicardClass.saturated",
               "role": "compatibility",
-              "statement": "For a nonzero geometric class, primitivity agrees with saturation of its generated rank1 sublattice."
+              "statement": "For a nonzero geometric class, primitivity agrees with saturation of its generated rank 1 sublattice."
             }
           ],
           "tests": [
             {
               "name": "primitive_zero",
               "kind": "degenerate",
-              "statement": "The zero class is divisible by2 and fails."
+              "statement": "The zero class is divisible by 2 and fails."
             },
             {
               "name": "primitive_generator",
@@ -2562,7 +2565,7 @@
             {
               "name": "primitive_squarefree",
               "kind": "characterisation",
-              "statement": "An ample class of square2d is primitive if d is squarefree: λ=nµ would force n²|d by evenness."
+              "statement": "An ample class of square 2d is primitive if d is squarefree: λ=nµ would force n²|d by evenness."
             }
           ]
         },
@@ -2579,7 +2582,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Lemma3.1.6(i)–(ii), pp.11–12; rizov lines463–516, with the square-zero case supplied by Hodge index"
+            "where": "Lemma 3.1.6(i)–(ii), pp.11–12; rizov lines 463–516, with the square-zero case supplied by Hodge index"
           },
           "prerequisites": [
             "target:1.5",
@@ -2603,7 +2606,7 @@
             {
               "name": "n_three_p3",
               "kind": "compatibility",
-              "statement": "[3] is a closed immersion also in characteristic3."
+              "statement": "[3] is a closed immersion also in characteristic 3."
             },
             {
               "name": "root_not_open",
@@ -2632,14 +2635,14 @@
           "kind": "definition",
           "name": "PolarizedK3Family",
           "title": "Families and Picard polarizations",
-          "statement": "For d>0 and scheme S, a degree2d polarized K3 family is a smooth proper finitely presented algebraic space X→S with native geometric K3 scheme fibres and a section λ of Pic_X/S that is étale-locally represented by a relatively ample line bundle and has geometric square2d. Arrows are Cartesian family isomorphisms preserving λ. The primitive subcategory imposes7.1 fibrewise.",
+          "statement": "For d>0 and scheme S, a degree 2d polarized K3 family is a smooth proper finitely presented algebraic space X→S with native geometric K3 scheme fibres and a section λ of Pic_X/S that is étale-locally represented by a relatively ample line bundle and has geometric square 2d. Arrows are Cartesian family isomorphisms preserving λ. The primitive subcategory imposes 7.1 fibrewise.",
           "hypotheses": [
             "d a positive integer",
             "S a scheme"
           ],
           "locator": {
             "source": "rizov",
-            "where": "Definitions1.1.1,3.2.1,3.2.3 and Lemma3.2.4, pp.2,12–13; rizov lines66,527,555,568"
+            "where": "Definitions 1.1.1,3.2.1,3.2.3 and Lemma 3.2.4, pp.2,12–13; rizov lines 66,527,555,568"
           },
           "prerequisites": [
             "target:1.2",
@@ -2673,7 +2676,7 @@
             {
               "name": "PolarizedK3Family.fieldComparison",
               "role": "compatibility",
-              "statement": "For an actual line L on a field-valued native K3, its class gives the same polarized object and stabilizer as5.2."
+              "statement": "For an actual line L on a field-valued native K3, its class gives the same polarized object and stabilizer as 5.2."
             }
           ],
           "tests": [
@@ -2712,7 +2715,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Theorem1.2.2, p.4; rizov line142; terakawa Theorem1.6, pp.191–192, terakawa line183"
+            "where": "Theorem 1.2.2, p.4; rizov line 142; terakawa Theorem 1.6, pp.191–192, terakawa line 183"
           },
           "prerequisites": [
             "target:1.4",
@@ -2720,18 +2723,18 @@
             "roadmap:JacobianChallenge Layer C",
             "roadmap:AlgebraicModuliForArithmeticGeometry §9.10 algebraicAdjointVanishing"
           ],
-          "proofSketch": "After algebraic closure use the general adjoint vanishing theorem: K_X=0, X has Kodaira dimension0, and mL is nef big. This is within Terakawa’s characteristic2 domain. Descend cohomology and use integer RR. In characteristic zero use AlgebraicModuliForArithmeticGeometry §9.10 algebraicAdjointVanishing with integral nef big A=mL and empty fractional support; in positive characteristic use Terakawa Theorem 1.6 with the K3 surface restrictions.",
+          "proofSketch": "After algebraic closure use the general adjoint vanishing theorem: K_X=0, X has Kodaira dimension 0, and mL is nef big. This is within Terakawa’s characteristic 2 domain. Descend cohomology and use integer RR. In characteristic zero use AlgebraicModuliForArithmeticGeometry §9.10 algebraicAdjointVanishing with integral nef big A=mL and empty fractional support; in positive characteristic use Terakawa Theorem 1.6 with the K3 surface restrictions.",
           "api": [],
           "tests": [
             {
               "name": "positive_only",
               "kind": "non-example",
-              "statement": "At m=0, H²(O)=k, so the vanishing must exclude0."
+              "statement": "At m=0, H²(O)=k, so the vanishing must exclude 0."
             },
             {
               "name": "quartic_sections",
               "kind": "computation",
-              "statement": "For d=2, h⁰(L),h⁰(L²),h⁰(L³) are4,10,20."
+              "statement": "For d=2, h⁰(L),h⁰(L²),h⁰(L³) are 4,10,20."
             },
             {
               "name": "negative_power",
@@ -2745,7 +2748,7 @@
           "kind": "theorem",
           "name": "IsK3.cubeVeryAmple",
           "title": "Uniform embeddings in all characteristics",
-          "statement": "For K3 X/k and ample L with L²=2d, d>0, L^m is globally generated for m≥2 and very ample for m≥3. The complete system of L³, after choosing a basis, embeds X into P^(9d+1) with Hilbert polynomial9dt²+2. For a K3 scheme family over a Noetherian base with a relatively ample representative L, f_*L³ is locally free of rank9d+2, commutes with arbitrary base change and gives the corresponding relative closed immersion.",
+          "statement": "For K3 X/k and ample L with L²=2d, d>0, L^m is globally generated for m≥2 and very ample for m≥3. The complete system of L³, after choosing a basis, embeds X into P^(9d+1) with Hilbert polynomial 9dt²+2. For a K3 scheme family over a Noetherian base with a relatively ample representative L, f_*L³ is locally free of rank 9d+2, commutes with arbitrary base change and gives the corresponding relative closed immersion.",
           "hypotheses": [
             "IsK3(X/k)",
             "L ample with L²=2d>0",
@@ -2753,7 +2756,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Theorem1.2.2 and Lemma1.2.5, pp.4–5; rizov lines142,169; terakawa Theorem2.4 line354"
+            "where": "Theorem 1.2.2 and Lemma 1.2.5, pp.4–5; rizov lines 142,169; terakawa Theorem 2.4 line 354"
           },
           "prerequisites": [
             "target:7.4",
@@ -2762,23 +2765,23 @@
             "roadmap:JacobianChallenge Layer C",
             "roadmap:StableReduction Layer 2"
           ],
-          "proofSketch": "Apply the general length-(r+1) separation criterion with r=0 for2L and r=1 for3L. For2L, A²≥8; a failure has 0<A·D<2, impossible because A=2L. For3L, A²≥18; failure gives 0<3L·D<4, hence L·D=1, D²≥1 and D²<3/2; evenness of the K3 lattice contradicts D²=1. Higher powers follow similarly. Relative vanishing and the finite-projective cohomology complex give local freeness and arbitrary base change, including nonreduced bases; fibrewise very ampleness gives the closed immersion.",
+          "proofSketch": "Apply the general length-(r+1) separation criterion with r=0 for 2L and r=1 for 3L. For 2L, A²≥8; a failure has 0<A·D<2, impossible because A=2L. For 3L, A²≥18; failure gives 0<3L·D<4, hence L·D=1, D²≥1 and D²<3/2; evenness of the K3 lattice contradicts D²=1. Higher powers follow similarly. Relative vanishing and the finite-projective cohomology complex give local freeness and arbitrary base change, including nonreduced bases; fibrewise very ampleness gives the closed immersion.",
           "api": [],
           "tests": [
             {
               "name": "quartic_cube",
               "kind": "computation",
-              "statement": "d=2 gives P¹⁹ and polynomial18t²+2."
+              "statement": "d=2 gives P¹⁹ and polynomial 18t²+2."
             },
             {
               "name": "degree_two_cube",
               "kind": "computation",
-              "statement": "d=1 gives P¹⁰ and polynomial9t²+2."
+              "statement": "d=1 gives P¹⁰ and polynomial 9t²+2."
             },
             {
               "name": "char2_cube",
               "kind": "compatibility",
-              "statement": "The same proof treats characteristic2 and needs no smooth member of|L|."
+              "statement": "The same proof treats characteristic 2 and needs no smooth member of|L|."
             }
           ]
         },
@@ -2787,14 +2790,14 @@
           "kind": "construction",
           "name": "k3HilbertLocus",
           "title": "The K3 locus inside the projective Hilbert family",
-          "statement": "In the universal flat projective Hilbert family of surfaces with polynomial9dt²+2, d>0, construct a finite-type locally closed subscheme U_K3 carrying exactly the smooth geometrically integral fibres with H¹(O)=0 and trivial canonical class. The construction and its family commute with base change; every embedded K3 with this polynomial factors through it. Use the scheme-theoretic equality locus of the canonical and zero Picard sections, not merely equality of their ranks.",
+          "statement": "In the universal flat projective Hilbert family of surfaces with polynomial 9dt²+2, d>0, construct a finite-type locally closed subscheme U_K3 carrying exactly the smooth geometrically integral fibres with H¹(O)=0 and trivial canonical class. The construction and its family commute with base change; every embedded K3 with this polynomial factors through it. Use the scheme-theoretic equality locus of the canonical and zero Picard sections, not merely equality of their ranks.",
           "hypotheses": [
             "d>0",
             "the Hilbert universal family with the specified polynomial"
           ],
           "locator": {
             "source": "rizov",
-            "where": "Proposition4.2.1 proof, p.19; rizov lines831–849"
+            "where": "Proposition 4.2.1 proof, p.19; rizov lines 831–849"
           },
           "prerequisites": [
             "target:1.1",
@@ -2827,7 +2830,7 @@
             {
               "name": "quartic_veronese_locus",
               "kind": "compatibility",
-              "statement": "The cube embedding of a smooth quartic (d=2) lies in the polynomial18t²+2 locus."
+              "statement": "The cube embedding of a smooth quartic (d=2) lies in the polynomial 18t²+2 locus."
             },
             {
               "name": "canonical_class_test",
@@ -2846,13 +2849,13 @@
           "kind": "construction",
           "name": "polarizedK3HilbertAtlas",
           "title": "An actual finite-type covering family",
-          "statement": "For every d>0 construct a finite-type scheme H_d over ℤ parametrizing linearly normal K3 embeddings into P^(9d+1) of polynomial9dt²+2 whose hyperplane Picard class is3λ for an ample section λ of square2d. It has an open primitive locus H_d^prim and a PGL_(9d+2)-action. Every geometric polarized object is a fibre; every polarized family lies étale-locally in its image after choosing its complete projective frame.",
+          "statement": "For every d>0 construct a finite-type scheme H_d over ℤ parametrizing linearly normal K3 embeddings into P^(9d+1) of polynomial 9dt²+2 whose hyperplane Picard class is 3λ for an ample section λ of square 2d. It has an open primitive locus H_d^prim and a PGL_(9d+2)-action. Every geometric polarized object is a fibre; every polarized family lies étale-locally in its image after choosing its complete projective frame.",
           "hypotheses": [
             "d>0"
           ],
           "locator": {
             "source": "rizov",
-            "where": "Proposition4.2.1 and Theorem4.3.3 Steps1–3, pp.19–24; rizov lines807,1004–1052"
+            "where": "Proposition 4.2.1 and Theorem 4.3.3 Steps 1–3, pp.19–24; rizov lines 807,1004–1052"
           },
           "prerequisites": [
             "target:7.2",
@@ -2862,7 +2865,7 @@
             "roadmap:SchemeAndStackFoundations §0.9",
             "target:7.6"
           ],
-          "proofSketch": "Start with the actual K3 locus7.6 and impose linear normality. Use the pullback of[3] along[O(1)] to impose the unique Picard cube-root section, then ampleness and square2d. The root locus is closed within the appropriate K3 Hilbert locus even at3; primitivity is open. Local representatives and frames of f_*L³ give the covering family and its smooth frame-torsor property.",
+          "proofSketch": "Start with the actual K3 locus 7.6 and impose linear normality. Use the pullback of[3] along[O(1)] to impose the unique Picard cube-root section, then ampleness and square 2d. The root locus is closed within the appropriate K3 Hilbert locus even at 3; primitivity is open. Local representatives and frames of f_*L³ give the covering family and its smooth frame-torsor property.",
           "api": [
             {
               "name": "polarizedK3HilbertAtlas.family",
@@ -2889,7 +2892,7 @@
             {
               "name": "root_p3",
               "kind": "compatibility",
-              "statement": "The characteristic3 root locus is justified by7.2, not division by3."
+              "statement": "The characteristic 3 root locus is justified by 7.2, not division by 3."
             },
             {
               "name": "frames_not_classes",
@@ -2915,13 +2918,13 @@
           "kind": "construction",
           "name": "polarizedK3ModuliStack",
           "title": "The polarized stacks",
-          "statement": "For every d>0 the étale stacks M_2d and F_2d of7.3 and its primitive subcategory are Deligne–Mumford stacks of finite type over Spec ℤ, with F_2d→M_2d an open immersion. There are quotient presentations [H_d/PGL_(9d+2)]≃M_2d and [H_d^prim/PGL_(9d+2)]≃F_2d.",
+          "statement": "For every d>0 the étale stacks M_2d and F_2d of 7.3 and its primitive subcategory are Deligne–Mumford stacks of finite type over Spec ℤ, with F_2d→M_2d an open immersion. There are quotient presentations [H_d/PGL_(9d+2)]≃M_2d and [H_d^prim/PGL_(9d+2)]≃F_2d.",
           "hypotheses": [
             "d>0"
           ],
           "locator": {
             "source": "rizov",
-            "where": "Definitions4.3.1–4.3.2 and Theorem4.3.3, pp.20–25; rizov lines879,898,917,964,1004"
+            "where": "Definitions 4.3.1–4.3.2 and Theorem 4.3.3, pp.20–25; rizov lines 879,898,917,964,1004"
           },
           "prerequisites": [
             "target:2.3",
@@ -2938,7 +2941,7 @@
             {
               "name": "polarizedK3ModuliStack.fibre",
               "role": "evaluation",
-              "statement": "The groupoid over S is the one in7.3, with exactly those objects and arrows."
+              "statement": "The groupoid over S is the one in 7.3, with exactly those objects and arrows."
             },
             {
               "name": "polarizedK3ModuliStack.quotientEquiv",
@@ -2948,12 +2951,12 @@
             {
               "name": "polarizedK3ModuliStack.pullback",
               "role": "functoriality",
-              "statement": "Its fibrewise pullback agrees with7.3 and respects compositions."
+              "statement": "Its fibrewise pullback agrees with 7.3 and respects compositions."
             },
             {
               "name": "polarizedK3ModuliStack.primitiveOpen",
               "role": "compatibility",
-              "statement": "The primitive substack is the open substack determined by7.1."
+              "statement": "The primitive substack is the open substack determined by 7.1."
             }
           ],
           "tests": [
@@ -2970,7 +2973,7 @@
             {
               "name": "all_primes_atlas",
               "kind": "compatibility",
-              "statement": "The finite-type atlas is over ℤ, including primes dividing2d."
+              "statement": "The finite-type atlas is over ℤ, including primes dividing 2d."
             }
           ]
         },
@@ -2987,7 +2990,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Theorem4.3.3 Step5, p.25; rizov lines1075–1085"
+            "where": "Theorem 4.3.3 Step 5, p.25; rizov lines 1075–1085"
           },
           "prerequisites": [
             "target:8.1",
@@ -3022,7 +3025,7 @@
           ],
           "locator": {
             "source": "rizov",
-            "where": "Corollary4.3.10, p.25; rizov lines1097–1101"
+            "where": "Corollary 4.3.10, p.25; rizov lines 1097–1101"
           },
           "prerequisites": [
             "target:8.2",
@@ -3048,21 +3051,21 @@
           "kind": "theorem",
           "name": "polarizedK3ModuliStack.smooth",
           "title": "The smooth open arithmetic base",
-          "statement": "For each d>0, M_2d and F_2d over Spec ℤ[1/(2d)] are smooth of relative dimension19.",
+          "statement": "For each d>0, M_2d and F_2d over Spec ℤ[1/(2d)] are smooth of relative dimension 19.",
           "hypotheses": [
             "d>0",
             "base restricted to Spec ℤ[1/(2d)]"
           ],
           "locator": {
             "source": "rizov",
-            "where": "Lemma4.1.3, p.18; rizov lines779–784; huybrechts Chapter5 Remark4.11, p.96, line3577"
+            "where": "Lemma 4.1.3, p.18; rizov lines 779–784; huybrechts Chapter 5 Remark 4.11, p.96, line 3577"
           },
           "prerequisites": [
             "target:2.6",
             "target:8.1",
             "roadmap:SchemeAndStackFoundations §4.6"
           ],
-          "proofSketch": "The polarized deformation loci are formally smooth of dimension19 at the stated geometric points. Combine their marked versal property with the atlas and the infinitesimal criterion for stack smoothness. This is a stack statement, not smoothness of its coarse space.",
+          "proofSketch": "The polarized deformation loci are formally smooth of dimension 19 at the stated geometric points. Combine their marked versal property with the atlas and the infinitesimal criterion for stack smoothness. This is a stack statement, not smoothness of its coarse space.",
           "api": [],
           "tests": [
             {
@@ -3082,14 +3085,14 @@
           "kind": "theorem",
           "name": "polarizedK3_finiteField_finite",
           "title": "Finiteness including forms over a finite field",
-          "statement": "For every finite field k and integer d>0, there are finitely many k-isomorphism classes of degree2d polarized K3 families over Spec k; the primitive subset is finite too. Forms and twists are counted separately unless k-isomorphic.",
+          "statement": "For every finite field k and integer d>0, there are finitely many k-isomorphism classes of degree 2d polarized K3 families over Spec k; the primitive subset is finite too. Forms and twists are counted separately unless k-isomorphic.",
           "hypotheses": [
             "k a finite field",
             "d>0"
           ],
           "locator": {
             "source": "huybrechts",
-            "where": "Chapter17 §3 preceding Proposition3.8, p.379; huybrechts lines14545–14548"
+            "where": "Chapter 17 §3 preceding Proposition 3.8, p.379; huybrechts lines 14545–14548"
           },
           "prerequisites": [
             "target:7.5",
@@ -3308,7 +3311,7 @@
       "supplier": "SchemeAndStackFoundations",
       "section": "proposed Part II §smooth-proper-surfaces",
       "needs": "Supply projectivity for every smooth proper geometrically integral surface over an arbitrary field.",
-      "detail": "Main §§4.11–4.12 supply modifications and Chow domination. The full surface theorem is Stacks, Resolution of Surfaces, Lemma 54.16.11 (tag 0C5P), p.51, stacks-surface-resolution line 2327: a proper regular two-dimensional scheme over a Noetherian base is projective. Smooth relative dimension two over any field gives regularity, including over imperfect fields. Lemmas 54.16.9–54.16.10, tags 0C2N and 0C5N, give the contraction/Chow-domination proof. Target1.3 is its K3 instance.",
+      "detail": "Main §§4.11–4.12 supply modifications and Chow domination. The full surface theorem is Stacks, Resolution of Surfaces, Lemma 54.16.11 (tag 0C5P), p.51, stacks-surface-resolution line 2327: a proper regular two-dimensional scheme over a Noetherian base is projective. Smooth relative dimension two over any field gives regularity, including over imperfect fields. Lemmas 54.16.9–54.16.10, tags 0C2N and 0C5N, give the contraction/Chow-domination proof. Target 1.3 is its K3 instance.",
       "neededBy": [
         "1.3"
       ]
@@ -3404,45 +3407,6 @@
       ]
     },
     {
-      "slug": "crystalline-gauss-bonnet",
-      "title": "Crystalline Euler characteristic",
-      "supplier": "CrystallineCohomology",
-      "section": "proposed Part II §crystalline-Gauss-Bonnet",
-      "needs": "Supply the crystalline Gauss–Bonnet identity for smooth proper varieties over perfect fields of characteristic p>0, equating the alternating rational crystalline rank with the degree of the top tangent Chern class, together with normal-bundle self-intersection in the positive Chern/Gysin convention.",
-      "detail": "For a closed immersion i:Z→Y of smooth proper pure-dimensional schemes over such a field, of codimension c with ideal J and normal sheaf E=(J/J²)∨, require i* i_*(a)=a∪c_c(E) for every rational crystalline class a. The Chern class of an effective Cartier divisor is c₁(O(D)), and Gysin is the trace-adjoint map of CrystallineCohomology CR.3:duality.1. Gros IV Theorem 2.1.1, p.78, gros-chern lines 2313–2318, prints N=J/J² with c_c(N) on the right. In these positive conventions that is a dual omission: c_c(E)=(−1)^c c_c(J/J²), by III Corollary 1.2.31(iii), gros-chern lines 1943–1948. Its printed formula cannot be transported unchanged; III §2.1, pp.65–66, gros-chern lines 1950–1979, compares Chern classes without reversing their signs. Derive the required formula independently using deformation to the normal bundle, whose geometric construction is SchemeAndStackFoundations §5.5 and whose cohomological specialization is Gros IV §2.1, pp.79–82, gros-chern lines 2373–2443. In the normal-bundle fibre, the zero-section supported class is its Euler class. For a line bundle this is c₁(E), by Gros II Proposition 4.2.1, p.51, gros-chern lines 1503–1508; supported cup products make Euler classes multiplicative for short exact sequences. Pullback to a full flag bundle is injective by the projective-bundle formula, so the filtration by line quotients identifies the rank-c Euler class with c_c(E), using III Theorem 1.1.1, p.60, gros-chern lines 1778–1809. Specialization and the projection formula give the displayed identity; the supported Gysin comparison with the trace-adjoint map is the supplied CR.3:duality.1 comparison. For the diagonal E=T_X. Its self-intersection trace is therefore deg c_top(T_X), while crysDiagonal_action, crysDiagonal_triangles and test_crysDiagonal_euler give the alternating rational crystalline rank. No projective lifting or integral torsion-freeness is assumed. Deligne Proposition 1.1, deligne-lift line 29, is the surface application in §2.4.",
-      "neededBy": [
-        "2.4"
-      ],
-      "tests": [
-        {
-          "name": "crystalline_self_intersection_point",
-          "kind": "boundary",
-          "statement": "For X=Spec k, c₀(T_X)=1 and the diagonal self-intersection has trace 1; rank zero uses the empty Chern product."
-        },
-        {
-          "name": "crystalline_diagonal_P1_positive",
-          "kind": "computation",
-          "statement": "For Δ⊂ℙ¹×ℙ¹, [Δ]=h₁+h₂, h₁²=h₂²=0 and tr(h₁h₂)=1, so tr([Δ]²)=2. The normal T_ℙ¹=O(2) gives +2; the conormal O(−2) would give −2, including over W(𝔽₂)[1/2]."
-        },
-        {
-          "name": "crystalline_line_P2_positive",
-          "kind": "computation",
-          "statement": "For a line i:ℙ¹→ℙ², the normal line is O(1), so tr(i* i_*(1))=+1. Using the conormal O(−1) would reverse the sign."
-        }
-      ]
-    },
-    {
-      "slug": "crystalline-picard-degree-one",
-      "title": "Crystalline degree one",
-      "supplier": "CrystallineCohomology",
-      "section": "proposed Part II §Picard-degree-one",
-      "needs": "Supply the rational degree-one crystalline comparison with the Dieudonné realization of the reduced Picard variety of a smooth proper variety over a perfect field.",
-      "detail": "Illusie, Complexe de de Rham–Witt et cohomologie cristalline, II Proposition 3.11 and Remark 3.11.2, pp.618–619, illusie-witt lines 4202–4223, gives the degree-one F-crystal and identifies it with the Dieudonné realization of the reduced Picard variety; the Albanese pullback is an isomorphism. Use the covariant Picard convention of that remark, equivalently the dual Albanese convention, and rationalize. Combined with crystalline duality this gives the rational degree-one and degree-three ranks in §2.4; integral freeness there uses derived reductions. Deligne Proposition 1.1, deligne-lift line 29, is the K3 application, not the general comparison.",
-      "neededBy": [
-        "2.4"
-      ]
-    },
-    {
       "slug": "crystalline-chern-derivative",
       "title": "Chern classes on formal deformations",
       "supplier": "CrystallineCohomology",
@@ -3487,7 +3451,7 @@
         "6.9"
       ],
       "needs": "Supply the proper tame étale Lefschetz equality for smooth projective varieties over algebraically closed fields of characteristic p>0.",
-      "detail": "For finite-order g prime to the positive characteristic and ℓ invertible, Fix(g) is smooth and its ℚ_ℓ Euler characteristic equals the alternating cohomology trace of g; isolated reduced fixed points each contribute1. Main F.6 proves the identity/Gauss–Bonnet case, not this verified arbitrary-automorphism statement. Keum Proposition2.4, lines336–341, gives the exact source-facing contract. The characteristic-zero topological formula is consumed from MorseNovikov N6."
+      "detail": "For finite-order g prime to the positive characteristic and ℓ invertible, Fix(g) is smooth and its ℚ_ℓ Euler characteristic equals the alternating cohomology trace of g; isolated reduced fixed points each contribute 1. Main F.6 proves the identity/Gauss–Bonnet case, not this verified arbitrary-automorphism statement. Keum Proposition 2.4, lines 336–341, gives the exact source-facing contract. The characteristic-zero topological formula is consumed from MorseNovikov N6."
     },
     {
       "slug": "surface-quotient-resolutions",
