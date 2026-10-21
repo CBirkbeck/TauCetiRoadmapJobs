@@ -26,7 +26,7 @@
             "where": "§2, pp. 5–7; ggp line 179, ggp line 229"
           },
           "prerequisites": [
-            "gap:classical-forms",
+            "gap:hermitian-witt",
             "roadmap:OrthogonalSpinGroups §Layer 0",
             "mathlib:LinearMap.IsSymm",
             "mathlib:LinearMap.IsAlt",
@@ -107,7 +107,10 @@
             "target:1.1",
             "roadmap:ReductiveGroups §Layer 0",
             "roadmap:ReductiveGroups §Layer 5",
-            "roadmap:ReductiveGroups §Layer 7"
+            "roadmap:ReductiveGroups §Layer 7",
+            "gap:classical-group-points",
+            "gap:orthogonal-scheme-points",
+            "gap:classical-flags"
           ],
           "api": [
             {
@@ -161,8 +164,10 @@
           },
           "prerequisites": [
             "target:1.1",
-            "gap:classical-forms",
-            "gap:parameters",
+            "target:1.2",
+            "gap:hermitian-witt",
+            "gap:marked-inner-forms",
+            "gap:enhanced-classification",
             "tauceti:TauCeti.equivalent_of_equivalent_prod"
           ],
           "api": [
@@ -206,7 +211,7 @@
           "kind": "theorem",
           "name": "GGP.splitPairEquiv",
           "title": "The split quadratic-algebra comparison",
-          "statement": "For A = F × F with swap involution, identify V with V0 ⊕ V0∨ as an A-module with its evaluation epsilon-form; restriction to V0 identifies G(V) with GL(V0), and identifies j(H) and the relative form constructions with the GL Bessel/Fourier–Jacobi constructions of §13.",
+          "statement": "For A = F × F with swap involution, identify V with V0 ⊕ V0∨ as an A-module with its evaluation epsilon-form; restriction to V0 identifies G(V) with GL(V0), and identifies j(H) and the relative form constructions with the GL Bessel/Fourier–Jacobi constructions of §13. Its character identification uses generating residual vectors and factorwise nontrivial additive characters as in §2.1, and unimodular Fourier–Jacobi functionals as in §2.2; it does not identify degenerate data with the generic GL model.",
           "hypotheses": [
             "F is a field with 2 invertible; A is F with identity involution or a quadratic étale F-algebra with its canonical involution; epsilon ∈ {1,−1}; all form modules are finite free and nondegenerate",
             "A = F × F, a chosen split-module decomposition and a relevant pair"
@@ -217,7 +222,8 @@
           },
           "prerequisites": [
             "target:1.2",
-            "gap:classical-forms"
+            "gap:hermitian-witt",
+            "gap:classical-group-points"
           ],
           "api": [],
           "tests": [
@@ -246,11 +252,11 @@
           "kind": "construction",
           "name": "GGP.besselCharacter",
           "title": "Bessel characters",
-          "statement": "For epsilon = +1 and complement X ⊕ L ⊕ X∨, choose e ∈ L nonzero, a basis v1,…,vr of X and dual vectors v′i. For r > 0 define l(u) = sum(i=1,…,r−1) B(u·v(i+1),v′i) + B(u·e,v′r) and nu(u,g) = psi(l(u)); for r = 0 put nu = 1. Construct this as a unitary character of H; for quadratic algebras use the additive character on A, equivalently its F-linear trace pairing.",
+          "statement": "For epsilon = +1 and complement X ⊕ L ⊕ X∨, choose e generating the free residual A-line L (so B(e,e) ∈ Fˣ), a basis v1,…,vr of X and dual vectors v′i. For r > 0 define l(u) = sum(i=1,…,r−1) B(u·v(i+1),v′i) + B(u·e,v′r) and nu(u,g) = psi(l(u)); for r = 0 put nu = 1. Construct this as a unitary character of H; for quadratic algebras use the additive character on A, equivalently its F-linear trace pairing. For quadratic A require psi_A(x) = psi_F(Tr(A/F)(c x)), with c ∈ Aˣ and psi_F nontrivial; equivalently psi_A is nontrivial on each simple factor. Before conjugacy prove that every flag simple-root coordinate, and both residual coordinates in the split GL description, has a nonzero coefficient.",
           "hypotheses": [
             "F is a field with 2 invertible; A is F with identity involution or a quadratic étale F-algebra with its canonical involution; epsilon ∈ {1,−1}; all form modules are finite free and nondegenerate",
             "F is a local field of characteristic different from 2; representations are complex smooth admissible nonarchimedeanly or Casselman–Wallach archimedeanly; all additive characters used are continuous unitary and nontrivial",
-            "epsilon = +1, a relevant pair, a Witt flag and the displayed nonzero character data"
+            "epsilon = +1, a relevant pair, a Witt flag and the displayed generating vector and factorwise nontrivial character data"
           ],
           "locator": {
             "source": "ggp",
@@ -258,7 +264,8 @@
           },
           "prerequisites": [
             "target:1.2",
-            "gap:local-categories"
+            "gap:smooth-functors",
+            "gap:casselman-wallach"
           ],
           "api": [
             {
@@ -269,12 +276,17 @@
             {
               "name": "GGP.besselCharacter_conjugate",
               "role": "basic API",
-              "statement": "Different admissible flags, e and nontrivial psi give conjugate pairs (H,nu)."
+              "statement": "Different admissible flags, generating e and factorwise nontrivial psi_A give conjugate pairs (H,nu); the simple-root coefficients are nonzero before applying torus conjugation."
             },
             {
               "name": "GGP.besselCharacter_baseChange",
               "role": "basic API",
               "statement": "Isometries commuting with the inclusion transport the character; restriction to local fields agrees with the algebraic l-map."
+            },
+            {
+              "name": "GGP.besselCharacter_simpleRoots",
+              "role": "basic API",
+              "statement": "For the displayed admissible data, the flag coordinates and, for A = F × F, both residual GL coordinates carry nontrivial additive characters; in rank-zero flag cases this assertion has no coordinates."
             }
           ],
           "tests": [
@@ -292,6 +304,21 @@
               "name": "bessel_nonzero_coordinate",
               "kind": "non-example",
               "statement": "In the same additive quotient, (x1,z) = (t,0) with psi(t) ≠ 1 gives nu ≠ 1; the identically trivial character is excluded for r > 0."
+            },
+            {
+              "name": "bessel_split_vector_rejected",
+              "kind": "non-example",
+              "statement": "For A = F × F, e = (1,0)e0 in a free residual line is nonzero but does not generate L; its norm is zero and in the W = 0, rank-A V = 3 model one GL3 simple-root character vanishes."
+            },
+            {
+              "name": "bessel_split_character_rejected",
+              "kind": "non-example",
+              "statement": "For A = F × F, psi_A(x,y) = psi_F(x) has trace coefficient c = (1,0), which is not a unit; in the GL3 model it kills one simple-root subgroup even with e = e0."
+            },
+            {
+              "name": "bessel_split_GL3_generic",
+              "kind": "computation",
+              "statement": "For W = 0, rank-A V = 3, e = e0 and psi_A(x,y) = psi_F(x+y), choose root coordinates so nu(u) = psi_F(u12+u23); both coefficients are 1 and both root restrictions are nontrivial."
             }
           ],
           "proofSketch": "Compute l on products modulo the radical commutator, show its G(W)-invariance, and extend over the semidirect product. Torus conjugation compares the nonzero coordinates."
@@ -301,10 +328,10 @@
           "kind": "construction",
           "name": "GGP.fourierJacobiQuotient",
           "title": "The relative Heisenberg quotient",
-          "statement": "For epsilon = −1 and rank X > 0, construct the G(W)-equivariant central quotient N(X) → Heis(W,b0), where b0 = 2B for A = F and b0 = Tr(A/F) B for quadratic A/F. The central map is dual to pullback of Hermitian forms along a nonzero functional X → A, and the vector quotient map is that functional tensor id_W. For X = 0 use the identity Jacobi action of G(W) on Heis(W,b0), with no nonexistent functional on X.",
+          "statement": "For epsilon = −1 and rank X > 0, construct the G(W)-equivariant central quotient N(X) → Heis(W,b0), where b0 = 2B for A = F and b0 = Tr(A/F) B for quadratic A/F. The central map is dual to pullback of Hermitian forms along an A-linear surjection ell : X → A (a unimodular functional), and the vector quotient map is that functional tensor id_W. For X = 0 use the identity Jacobi action of G(W) on Heis(W,b0), with no nonexistent functional on X. In the split algebra both component functionals must be nonzero. Prove that ell tensor id_W is onto W and that the F-linear central map is onto F; consequently the group map is surjective.",
           "hypotheses": [
             "F is a field with 2 invertible; A is F with identity involution or a quadratic étale F-algebra with its canonical involution; epsilon ∈ {1,−1}; all form modules are finite free and nondegenerate",
-            "A relevant skew pair and, when X ≠ 0, a nonzero linear functional and compatible isotropic flag"
+            "A relevant skew pair and, when X ≠ 0, an A-linear surjection ell : X → A and a complete isotropic flag whose maximal unipotent fixes ell"
           ],
           "locator": {
             "source": "ggp",
@@ -312,7 +339,9 @@
           },
           "prerequisites": [
             "target:1.2",
-            "gap:weil-theta"
+            "gap:heisenberg-svn",
+            "gap:classical-group-points",
+            "gap:classical-flags"
           ],
           "api": [
             {
@@ -329,6 +358,11 @@
               "name": "GGP.fourierJacobiQuotient_equivariant",
               "role": "basic API",
               "statement": "The map commutes with G(W); transport by an isometry is natural."
+            },
+            {
+              "name": "GGP.fourierJacobiQuotient_surjective",
+              "role": "basic API",
+              "statement": "For unimodular ell, both the vector map and central map are surjective, and hence so is N(X) → Heis(W,b0)."
             }
           ],
           "tests": [
@@ -346,16 +380,26 @@
               "name": "fj_no_functional_zero_X",
               "kind": "non-example",
               "statement": "For X = 0 no nonzero functional X → A exists; the codimension-zero construction uses the separate branch."
+            },
+            {
+              "name": "fj_split_idempotent_rejected",
+              "kind": "non-example",
+              "statement": "For A = F × F, X = A and ell(x) = (1,0)x, ell is nonzero but not onto; its vector image is (1,0)W and its central map is zero since (1,0)conjugate((1,0)) = 0. This is excluded."
+            },
+            {
+              "name": "fj_split_surjection",
+              "kind": "computation",
+              "statement": "For X = A and ell = id, both components are nonzero, the vector map is id_W, and pullback on Hermitian lines is the identity, so the central map is onto F."
             }
           ],
-          "proofSketch": "Identify N(X)/Z(X) with X ⊗ W and its center with Hermitian forms. Compute the commutator pairing before applying Stone–von Neumann."
+          "proofSketch": "Identify N(X)/Z(X) with X ⊗ W and its center with Hermitian forms. Compute the commutator pairing before applying Stone–von Neumann. Choose x with ell(x) = 1: w maps back to x tensor w. Pullback of the rank-one unit Hermitian form along ell is injective, so its finite-dimensional F-dual is surjective, including for F × F. Lift a vector coordinate and correct the remaining central coordinate to prove group surjectivity."
         },
         {
           "id": "2.3",
           "kind": "construction",
           "name": "GGP.fourierJacobiRepresentation",
           "title": "Oscillator restriction and auxiliary data",
-          "statement": "Construct nu = pullback(omega_psi) tensor lambda, with lambda(u) = psi(Tr(sum simple flag coordinates)), extended trivially across G(W). For A = F it is a genuine representation of Htilde = N ⋊ Mp(W); use exactly one genuine factor in the ambient product Sp(V) × Mp(W) or Mp(V) × Sp(W). For a quadratic algebra and a splitting character mu with mu|Fˣ = omega(A/F), obtain an ordinary representation of H. For X = 0 set nu equal to the oscillator representation itself.",
+          "statement": "Construct nu = pullback(omega_psi) tensor lambda, with lambda(u) = psi(Tr(sum simple flag coordinates)), extended trivially across G(W). For A = F it is a genuine representation of Htilde = N ⋊ Mp(W); use exactly one genuine factor in the ambient product Sp(V) × Mp(W) or Mp(V) × Sp(W). For a quadratic algebra and a splitting character mu with mu|Fˣ = omega(A/F), obtain an ordinary representation of H. For X = 0 set nu equal to the oscillator representation itself. For X ≠ 0 the pullback uses the surjective quotient of §2.2 and its compatible flag, so its Heisenberg central character is nontrivial.",
           "hypotheses": [
             "F is a field with 2 invertible; A is F with identity involution or a quadratic étale F-algebra with its canonical involution; epsilon ∈ {1,−1}; all form modules are finite free and nondegenerate",
             "F is a local field of characteristic different from 2; representations are complex smooth admissible nonarchimedeanly or Casselman–Wallach archimedeanly; all additive characters used are continuous unitary and nontrivial",
@@ -367,8 +411,10 @@
           },
           "prerequisites": [
             "target:2.2",
-            "gap:weil-theta",
-            "gap:local-categories"
+            "gap:heisenberg-svn",
+            "gap:oscillator-splittings",
+            "gap:smooth-functors",
+            "gap:casselman-wallach"
           ],
           "api": [
             {
@@ -426,7 +472,8 @@
             "mathlib:Representation.IntertwiningMap",
             "mathlib:ContIntertwiningMap",
             "tauceti:ContRepresentation.intertwiningMapEquiv",
-            "gap:local-categories"
+            "gap:smooth-functors",
+            "gap:casselman-wallach"
           ],
           "api": [
             {
@@ -507,8 +554,10 @@
           },
           "prerequisites": [
             "target:2.4",
-            "gap:local-categories",
-            "gap:weil-theta"
+            "gap:smooth-functors",
+            "gap:distribution-descent",
+            "gap:heisenberg-svn",
+            "gap:oscillator-splittings"
           ],
           "api": [],
           "tests": [
@@ -541,8 +590,10 @@
           },
           "prerequisites": [
             "target:2.4",
-            "gap:local-categories",
-            "gap:weil-theta"
+            "gap:casselman-wallach",
+            "gap:distribution-descent",
+            "gap:heisenberg-svn",
+            "gap:oscillator-splittings"
           ],
           "api": [],
           "tests": [
@@ -577,7 +628,9 @@
           "prerequisites": [
             "target:2.1",
             "target:2.4",
-            "gap:local-categories"
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions"
           ],
           "api": [],
           "tests": [
@@ -611,8 +664,10 @@
           "prerequisites": [
             "target:2.3",
             "target:2.4",
-            "gap:local-categories",
-            "gap:weil-theta"
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions",
+            "gap:oscillator-splittings"
           ],
           "api": [],
           "tests": [
@@ -700,7 +755,9 @@
             "target:3.1",
             "target:3.3",
             "target:3.4",
-            "gap:local-categories"
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions"
           ],
           "api": [],
           "tests": [
@@ -716,6 +773,94 @@
             }
           ],
           "proofSketch": "Choose a supercuspidal outside the finite supports of pi and its Jacquet constituents, with irreducible auxiliary induction. The relevant Hom is identified with a basic Hom by §3.3 or §3.4, so §3.1 gives the bound. No O-to-SO restriction argument is used."
+        },
+        {
+          "id": "3.7",
+          "kind": "theorem",
+          "name": "GGP.specialOrthogonalBesselInductionReduction",
+          "title": "Connected orthogonal Bessel induction",
+          "statement": "Let W ⊂ V be a relevant quadratic pair over F with V = X ⊕ W ⊕ L ⊕ X∨, rank X > 0, L = Fe and B(e,e) ≠ 0. Put Vplus = V ⊥ (−L), choose f in −L with the opposite norm and Y = X ⊕ F(e+f). Use the parabolic P(Y) in SO(Vplus), Levi GL(Y) × SO(W), irreducible smooth admissible piV of SO(V) and piW of SO(W), and supercuspidal tau of GL(Y). Set I = unnormalized Ind_P(Y)^SO(Vplus)(tau external-tensor piW). If piV∨ avoids every Bernstein inertial class [GL(Yprime) × SO(Vprime), tau external-tensor rho] with Yprime ⊂ V isotropic of rank dim Y and rho arbitrary irreducible smooth on SO(Vprime), interpreting the displayed exclusion by its cuspidal support, prove Hom_SO(V)(I tensor piV,C) ≅ Hom_H(piV tensor piW,nu_B). Here H = N ⋊ SO(W), nu_B is the character of §2.1, and its Hom-to-character convention is compared with Model(piV tensor piW,nu_B∨) by §2.4. Choosing the conjugate dual Bessel data gives the Model convention used in §4.8.",
+          "hypotheses": [
+            "F nonarchimedean of characteristic different from 2; quadratic spaces finite-dimensional nondegenerate; the displayed relevant inclusion and positive-rank X",
+            "All representations and the simultaneous SO Bernstein exclusions are as displayed; induction and compact induction are unnormalized; no metaplectic splitting occurs"
+          ],
+          "locator": {
+            "source": "ggp",
+            "where": "§19, pp. 75–77, ggp line 2661–2698; compare §15, Theorem 15.1, pp. 60–63, ggp line 2158 (the O theorem supplies the method, not this SO conclusion)"
+          },
+          "prerequisites": [
+            "target:3.3",
+            "target:2.4",
+            "gap:orthogonal-scheme-points",
+            "gap:classical-flags",
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "SO_reduction_components",
+              "kind": "non-example",
+              "statement": "An irreducible SO(W) representation need not extend uniquely to O(W); no arbitrary O-extension or O restriction is used to define either side."
+            },
+            {
+              "name": "SO_reduction_closed_support",
+              "kind": "non-example",
+              "statement": "A piV∨ in one of the displayed closed-orbit Bernstein classes is excluded; for maximal isotropic Yprime inspect each SO-orbit rather than merging O-orbits."
+            },
+            {
+              "name": "SO_reduction_absent_Levi",
+              "kind": "degenerate",
+              "statement": "If the Witt index of V is less than dim Y there is no such Yprime; the closed-orbit exclusion is empty and the open-orbit calculation still applies."
+            }
+          ],
+          "proofSketch": "Compute SO(V)-orbits on the selected SO(Vplus)/P(Y) component directly, including the maximal-isotropic and SO(0) boundary cases. Identify the open stabilizer as (GL(X) × SO(W)) ⋉ N_V(X) by its determinant-one condition; its image on Y is the mirabolic stabilizing e+f modulo X. Kill all closed strata by their actual SO Jacquet supports, including Ext terms in the disjoint Bernstein blocks. Apply unnormalized reciprocity and the Whittaker derivative of tau. Track modular characters and the nu_B/nu_B∨ conjugacy explicitly. This is an owned extension proof, not restriction of an O theorem."
+        },
+        {
+          "id": "3.8",
+          "kind": "theorem",
+          "name": "GGP.skewUnitaryFourierJacobiInductionReduction",
+          "title": "Skew-unitary Fourier–Jacobi induction",
+          "statement": "Let E/F be a quadratic field extension, W = X ⊕ W0 ⊕ X∨ a skew-Hermitian space with rank-E X > 0, P(X) ⊂ U(W) with Levi GL_E(X) × U(W0), psi a nontrivial unitary character of F, and mu : Eˣ → Cˣ with mu|Fˣ = omega(E/F). Use the compatible ordinary oscillator splittings omega_W,psi,mu and omega_W0,psi,mu. For supercuspidal tau of GL_E(X), smooth pi0 of U(W0) and irreducible smooth admissible pi of U(W), put I_mu = unnormalized Ind_P(X)^U(W)((tau tensor (mu composed with det_E)) external-tensor pi0). If pi∨ avoids all Bernstein inertial classes [GL_E(X) × U(W0), tau external-tensor rho], for rho with arbitrary irreducible cuspidal support on U(W0), prove Hom_U(W)(I_mu tensor pi,omega_W,psi,mu) ≅ Hom_H(pi tensor pi0,nu_W,W0,psi,mu). Construct the comparison with §2.4 through the smooth oscillator dual; no algebraic archimedean dual is used.",
+          "hypotheses": [
+            "F nonarchimedean of characteristic different from 2; E/F quadratic field, all form spaces nondegenerate and all representations as displayed",
+            "The displayed Bernstein exclusions, unnormalized induction, and common psi,mu and dual oscillator conventions; H and nu use the unimodular functional of §2.2"
+          ],
+          "locator": {
+            "source": "ggp",
+            "where": "§19, p. 77, ggp line 2699 (skew-unitary extension target); §16, Theorem 16.1 and mixed-model proof, pp. 64–67, ggp line 2293, ggp line 2311; unitary splitting §12, p. 51, ggp line 1823"
+          },
+          "prerequisites": [
+            "target:3.4",
+            "target:2.3",
+            "target:2.4",
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions",
+            "gap:oscillator-splittings",
+            "gap:classical-group-points",
+            "gap:classical-flags"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "unitary_reduction_mu_cancel",
+              "kind": "computation",
+              "statement": "On a Levi element with det_E = a, the inducing multiplier mu(a) cancels the dual oscillator multiplier mu(a)⁻¹; the remaining evaluation modulus is abs(a)_E^(1/2), not a hidden normalized-induction twist."
+            },
+            {
+              "name": "unitary_reduction_wrong_splitting",
+              "kind": "non-example",
+              "statement": "Replacing mu on only W0 by muprime changes the open-orbit Hom by the splitting ratio; the comparison with unchanged nu is not asserted."
+            },
+            {
+              "name": "unitary_reduction_zero_X",
+              "kind": "degenerate",
+              "statement": "For X = 0 use the basic equal-rank model; no positive-rank supercuspidal or mirabolic reduction exists."
+            }
+          ],
+          "proofSketch": "Use the supplied mixed model of omega_W,psi,mu∨, whose evaluation at zero has Levi action (mu⁻¹ composed with det_E) abs(det_E)_E^(1/2) tensor omega_W0,psi,mu∨. The nonzero-vector orbit is the mirabolic orbit over E. Tensor with I_mu: the two mu characters cancel. Bernstein separation kills the zero-evaluation quotient and its Ext terms; unnormalized reciprocity and the generic mirabolic quotient identify the nonzero orbit with the actual H model, including its flag character. Compute the modular factors to retain the displayed abs(det_E)^(1/2) evaluation law. This establishes the omitted unitary argument, rather than substituting U for Mp in a statement."
         }
       ],
       "examples": "Ranks zero and one test the category conventions; no positive-residue-characteristic or larger archimedean assertion is inferred from the nonarchimedean reductions."
@@ -739,9 +884,10 @@
             "where": "§4, pp. 13–15; ggp line 477, ggp line 495, ggp line 521, ggp line 527"
           },
           "prerequisites": [
-            "gap:parameters",
+            "gap:parameter-carriers",
             "roadmap:ReductiveGroups §Layer 3",
-            "gap:local-categories"
+            "gap:smooth-functors",
+            "gap:casselman-wallach"
           ],
           "api": [
             {
@@ -800,7 +946,7 @@
           },
           "prerequisites": [
             "target:4.1",
-            "gap:local-factors"
+            "gap:factor-change-laws"
           ],
           "api": [
             {
@@ -854,7 +1000,7 @@
           },
           "prerequisites": [
             "target:4.1",
-            "gap:local-factors",
+            "gap:factor-change-laws",
             "tauceti:TauCeti.hilbertSymbolOnSquareClasses"
           ],
           "api": [
@@ -916,7 +1062,8 @@
             "target:4.2",
             "target:4.3",
             "target:1.4",
-            "gap:parameters"
+            "gap:parameter-carriers",
+            "gap:enhanced-classification"
           ],
           "api": [
             {
@@ -971,9 +1118,9 @@
           "prerequisites": [
             "target:2.4",
             "target:4.4",
-            "gap:parameters",
-            "gap:weil-theta",
-            "gap:local-factors"
+            "gap:enhanced-classification",
+            "gap:oscillator-splittings",
+            "gap:factor-change-laws"
           ],
           "api": [],
           "tests": [
@@ -1013,7 +1160,8 @@
             "target:1.3",
             "target:2.4",
             "target:4.4",
-            "gap:parameters",
+            "gap:parameter-carriers",
+            "gap:enhanced-classification",
             "target:4.5"
           ],
           "api": [
@@ -1071,8 +1219,11 @@
             "target:3.3",
             "target:3.4",
             "target:4.6",
-            "gap:local-factors",
-            "gap:local-categories"
+            "gap:factor-change-laws",
+            "gap:smooth-functors",
+            "gap:casselman-wallach",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions"
           ],
           "api": [],
           "tests": [
@@ -1102,9 +1253,13 @@
             "target:3.3",
             "target:3.4",
             "target:4.6",
-            "gap:parameters",
-            "gap:local-categories",
-            "gap:connected-reductions"
+            "gap:enhanced-classification",
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions",
+            "target:3.7",
+            "target:3.8",
+            "target:4.7"
           ],
           "api": [],
           "tests": [
@@ -1114,7 +1269,7 @@
               "statement": "This implication is not applied at R or C, where Bernstein components of this form are unavailable."
             }
           ],
-          "proofSketch": "Choose an auxiliary supercuspidal outside the finite forbidden supports, apply the appropriate open-orbit comparison and compare the added parameter summands using root-number multiplicativity. For SO use the SO-compatible packet reduction in §19, not an unsupported reuse of the O-only theorem §3.3."
+          "proofSketch": "Choose an auxiliary supercuspidal outside all forbidden supports, apply §3.7 for SO, §3.3 for Hermitian U, §3.4 for Sp/Mp and §3.8 for skew-Hermitian U, and compare added parameter summands using root-number multiplicativity and the enhanced induction laws. Convert unnormalized induction through its exact modulus twist before invoking normalized Langlands labeling. The split quadratic-algebra branch is §4.7; the two new connected comparisons do not restrict that branch."
         }
       ],
       "examples": "The empty component group, a connected GL centralizer, a two-generator component group, and the extra trivial parameter line distinguish the character recipe from an existence assertion."
@@ -1131,17 +1286,19 @@
           "statement": "For E/F quadratic with F nonarchimedean of characteristic zero and a Hermitian relevant pair of any odd codimension, prove that every tempered parameter has exactly one distinguished relevant packet member, and its enhancement is the Bessel chi of §4.4.",
           "hypotheses": [
             "F is nonarchimedean of characteristic zero, with no restriction on its residue characteristic",
-            "E/F quadratic field; Hermitian relevant pair; tempered parameter"
+            "E/F quadratic field; Hermitian relevant pair; tempered parameter",
+            "The enhanced local classification satisfies bp-refined §7.2 (CLL, Stab, TE, TET), and its labels agree with §§7.7 and 8.3 and §4.4 under the specified Whittaker/additive-character normalization"
           ],
           "locator": {
-            "source": "gan-ichino",
-            "where": "§1.3 and §9.3, pp. 2 and 50; gan-ichino line 78, gan-ichino line 2494; §3.2, pp. 10–11; gan-ichino line 437"
+            "source": "bp-refined",
+            "where": "Theorem 8.5.1, printed p. 71 (extraction p. 72), bp-refined line 2891–2901; setup printed p. 70, bp-refined line 2877; §§7.2, 7.7, 8.3; uniqueness precursor bp-unitary-tempered Theorem 18.4.1, bp-unitary-tempered line 5429; gan-ichino §9.3, gan-ichino line 2494 for the generic reduction"
           },
           "prerequisites": [
             "target:4.6",
-            "gap:trace-transfer",
-            "gap:spectral-isolation",
-            "gap:parameters"
+            "gap:trace-distributions",
+            "gap:local-tempered-estimates",
+            "gap:schwartz-trace",
+            "gap:enhanced-classification"
           ],
           "api": [],
           "tests": [
@@ -1151,7 +1308,7 @@
               "statement": "A ramified quadratic extension of Q2 is in scope; no odd residual characteristic is used."
             }
           ],
-          "proofSketch": "Use the unitary local relative trace formula and its character expansion to identify the distinguished relative multiplicity with the epsilon-character selection. Its foundations are the trace and spectral contracts, not an assumed GGP theorem. This certified theorem is recalled in the source; its full local trace proof remains a required proof, not the theorem supplied as data."
+          "proofSketch": "Use the unitary local relative trace formula and its character expansion to identify the distinguished relative multiplicity with the epsilon-character selection. Its foundations are the trace and spectral contracts, not an assumed GGP theorem. The primary epsilon-labelled theorem is bp-refined Theorem 8.5.1, conditional there on §7.2 and its fixed labeling; import those classification and normalization laws as precise supplier inputs. The unlabelled uniqueness precursor alone does not determine chi."
         },
         {
           "id": "5.2",
@@ -1171,7 +1328,9 @@
           "prerequisites": [
             "target:3.3",
             "target:2.4",
-            "gap:local-categories"
+            "gap:smooth-functors",
+            "gap:induction-jacquet",
+            "gap:bernstein-exclusions"
           ],
           "api": [],
           "tests": [
@@ -1206,7 +1365,8 @@
             "target:5.1",
             "target:5.2",
             "target:4.8",
-            "gap:parameters"
+            "gap:enhanced-classification",
+            "gap:generic-standard-modules"
           ],
           "api": [],
           "tests": [
@@ -1223,7 +1383,7 @@
           "kind": "theorem",
           "name": "GGP.unitaryThetaBesselJacobiBridge",
           "title": "The theta bridge",
-          "statement": "For nonarchimedean characteristic-zero unitary groups and fixed compatible psi and splitting data, prove the following implication of families: the tempered Bessel selection statements (B) and the almost-equal-rank enhanced theta formula (P2) imply the equal-rank Fourier–Jacobi selection statements (FJ) and the equal-rank enhanced theta formula (P1). Here P1 and P2 are the actual parameter and enhancement formulas of the supplied theta correspondence, not unnamed relations or arbitrary functions.",
+          "statement": "For nonarchimedean characteristic-zero unitary groups and fixed compatible psi and splitting data, prove the relative implication of families: tempered Bessel selection (B), the supplied equal-rank theta parameter/nonvanishing laws and almost-equal-rank enhanced theta formula (P2), together with the supplied tempered big-theta irreducibility and seesaw identity, imply equal-rank Fourier–Jacobi selection (FJ) with the character of §4.4. General enhanced theta formulas, including P1, remain owned by MetaplecticAutomorphicForms; P1 is neither an output nor an enhancement prerequisite of this bridge.",
           "hypotheses": [
             "F is nonarchimedean of characteristic zero, with no restriction on its residue characteristic",
             "E/F quadratic field; compatible unitary dual pairs; the supplied P2 formula and tempered Bessel selection"
@@ -1235,8 +1395,9 @@
           "prerequisites": [
             "target:5.1",
             "target:4.4",
-            "gap:weil-theta",
-            "gap:parameters"
+            "gap:theta-seesaw",
+            "gap:theta-parameter-laws",
+            "gap:enhanced-classification"
           ],
           "api": [],
           "tests": [
@@ -1246,7 +1407,7 @@
               "statement": "A zero theta lift contributes no nonzero Hom; the argument uses the unique nonzero lift in its Witt tower, not all towers at once."
             }
           ],
-          "proofSketch": "Use the seesaw Hom equivalence with almost equal rank. Howe duality and irreducibility of the nonzero big tempered lifts identify its two Hom spaces; compare the P2 enhancement recipe with §4.4 and recover P1. All theta objects are constructed by the supplier."
+          "proofSketch": "Apply the supplied seesaw Hom equivalence. Use the supplied nonzero-lift laws and Howe duality to match the relevant towers, and P2 with §4.4 to identify the FJ enhancement. Take only the FJ conclusion of gan-ichino Proposition 1.2. No equal-rank theta enhancement theorem is proved here and the upstream theta contracts have no dependency on this relative selection theorem."
         },
         {
           "id": "5.5",
@@ -1266,8 +1427,10 @@
             "target:5.3",
             "target:5.4",
             "target:4.8",
-            "gap:weil-theta",
-            "gap:local-categories"
+            "gap:theta-seesaw",
+            "gap:theta-parameter-laws",
+            "gap:generic-standard-modules",
+            "gap:smooth-functors"
           ],
           "api": [],
           "tests": [
@@ -1282,7 +1445,7 @@
               "statement": "A ramified quadratic extension of Q2 with a valid mu satisfies the field hypotheses."
             }
           ],
-          "proofSketch": "Use the supplier’s P2 theorem in §5.4 for the tempered basic case. For generic equal-rank parameters apply the standard-module irreducibility and theta comparison of gan-ichino Propositions 9.1–9.2; §4.8 handles higher even codimension."
+          "proofSketch": "Use the supplier’s P2 and equal-rank parameter laws in §5.4 for the tempered basic case. For generic equal-rank parameters apply the standard-module irreducibility and theta comparison of gan-ichino Propositions 9.1–9.2; §4.8 handles higher even codimension."
         },
         {
           "id": "5.6",
@@ -1303,9 +1466,13 @@
             "target:3.2",
             "target:1.3",
             "target:4.7",
-            "gap:parameters",
-            "gap:trace-transfer",
-            "gap:spectral-isolation"
+            "gap:enhanced-classification",
+            "gap:tempered-stability",
+            "gap:tempered-transfer",
+            "gap:tempered-whittaker",
+            "gap:trace-distributions",
+            "gap:local-tempered-estimates",
+            "gap:schwartz-trace"
           ],
           "api": [],
           "tests": [
@@ -1351,8 +1518,13 @@
             "roadmap:RestrictedProducts §Layer 3",
             "roadmap:GlobalNumberFields §Layer 4",
             "roadmap:GlobalNumberFields §Layer 5",
-            "gap:adelic-measures",
-            "gap:automorphic-realizations"
+            "gap:adelic-points",
+            "gap:quotient-integration",
+            "gap:tamagawa-factorization",
+            "gap:cuspidal-tensors",
+            "gap:petersson-pairings",
+            "gap:period-growth",
+            "gap:orthogonal-scheme-points"
           ],
           "api": [
             {
@@ -1413,9 +1585,13 @@
           "prerequisites": [
             "target:2.3",
             "target:6.1",
-            "gap:weil-theta",
-            "gap:automorphic-realizations",
-            "gap:adelic-measures"
+            "gap:global-theta",
+            "gap:cuspidal-tensors",
+            "gap:petersson-pairings",
+            "gap:period-growth",
+            "gap:adelic-points",
+            "gap:quotient-integration",
+            "gap:tamagawa-factorization"
           ],
           "api": [
             {
@@ -1471,8 +1647,10 @@
             "target:4.4",
             "roadmap:GlobalNumberFields §Layer 8",
             "roadmap:GlobalNumberFields §Layer 9",
-            "gap:parameters",
-            "gap:local-factors"
+            "gap:parameter-carriers",
+            "gap:global-base-change",
+            "gap:factor-change-laws",
+            "gap:global-completed-factors"
           ],
           "api": [
             {
@@ -1530,8 +1708,8 @@
             "target:6.1",
             "target:6.2",
             "target:6.3",
-            "gap:automorphic-realizations",
-            "gap:local-factors"
+            "gap:cuspidal-tensors",
+            "gap:global-completed-factors"
           ],
           "api": [
             {
@@ -1585,9 +1763,13 @@
           "prerequisites": [
             "target:6.1",
             "target:1.3",
-            "gap:parameters",
-            "gap:adelic-measures",
-            "gap:automorphic-realizations"
+            "gap:global-base-change",
+            "gap:adelic-points",
+            "gap:quotient-integration",
+            "gap:tamagawa-factorization",
+            "gap:cuspidal-tensors",
+            "gap:petersson-pairings",
+            "gap:period-growth"
           ],
           "api": [
             {
@@ -1646,8 +1828,8 @@
             "where": "§1, p. 4; ichino-ikeda line 138, ichino-ikeda line 145; analytic-continuation convention, ichino-ikeda line 209"
           },
           "prerequisites": [
-            "gap:local-factors",
-            "gap:parameters",
+            "gap:factor-change-laws",
+            "gap:parameter-carriers",
             "roadmap:OrthogonalSpinGroups §Layer 0"
           ],
           "api": [
@@ -1713,9 +1895,12 @@
           "prerequisites": [
             "target:7.1",
             "target:2.4",
-            "gap:local-factors",
-            "gap:adelic-measures",
-            "gap:local-categories"
+            "gap:factor-change-laws",
+            "gap:quotient-integration",
+            "gap:tamagawa-factorization",
+            "gap:smooth-functors",
+            "gap:casselman-wallach",
+            "gap:orthogonal-scheme-points"
           ],
           "api": [
             {
@@ -1769,8 +1954,8 @@
           },
           "prerequisites": [
             "target:7.2",
-            "gap:spectral-isolation",
-            "gap:local-factors"
+            "gap:local-tempered-estimates",
+            "gap:tempered-factor-regularity"
           ],
           "api": [],
           "tests": [
@@ -1800,9 +1985,10 @@
           "prerequisites": [
             "target:6.1",
             "target:7.3",
-            "gap:parameters",
-            "gap:local-factors",
-            "gap:adelic-measures"
+            "gap:global-base-change",
+            "gap:global-completed-factors",
+            "gap:quotient-integration",
+            "gap:tamagawa-factorization"
           ],
           "api": [
             {
@@ -1867,9 +2053,11 @@
           },
           "prerequisites": [
             "target:6.5",
-            "gap:local-factors",
-            "gap:local-categories",
-            "gap:adelic-measures"
+            "gap:factor-change-laws",
+            "gap:tempered-factor-regularity",
+            "gap:smooth-functors",
+            "gap:casselman-wallach",
+            "gap:tamagawa-factorization"
           ],
           "api": [
             {
@@ -1929,10 +2117,10 @@
           },
           "prerequisites": [
             "target:7.5",
-            "gap:spectral-isolation",
-            "gap:local-factors",
-            "gap:adelic-measures",
-            "gap:automorphic-realizations"
+            "gap:local-tempered-estimates",
+            "gap:tempered-factor-regularity",
+            "gap:tamagawa-factorization",
+            "gap:cuspidal-tensors"
           ],
           "api": [],
           "tests": [
@@ -2003,8 +2191,8 @@
           },
           "prerequisites": [
             "target:6.5",
-            "gap:parameters",
-            "gap:local-factors"
+            "gap:global-base-change",
+            "gap:global-completed-factors"
           ],
           "api": [
             {
@@ -2059,11 +2247,13 @@
           "kind": "construction",
           "name": "GGP.relativeCharacters",
           "title": "The actual relative distributions",
-          "statement": "Construct the unitary cuspidal relative distribution J_sigma(f) = sum_e Ph(sigma(f)e) conjugate(Ph(e)), over an orthonormal smooth K-basis, and the sum J_X over cuspidal constituents in a specified spectral subset X. Construct the linear distributions I_P,pi and I_Pi from the actual induced automorphic and Whittaker realizations: I_P,pi(f) = sum_e I(Ind(f)e,0) conjugate(J_eta(e)), and I_Pi(f) = sum_W lambda(Pi(f)W) conjugate(beta_eta(W))/<W,W>_Whitt. Here I(e,0) is the regularized Rankin–Selberg period of its Eisenstein series, J_eta the Flicker–Rallis intertwining period, lambda is the continued Whittaker Rankin–Selberg integral at zero, beta_eta is the mirabolic Flicker–Rallis integral with its Asai residue factor, and the Whittaker norm uses the adjoint residue factor; these forms and their measures are the supplier’s constructed analytic objects. Prove the sums are basis-independent continuous distributions and identify their local analogues J_v(fv) = sum_e alpha_v(sigma_v(fv)e,e).",
+          "statement": "Construct the unitary cuspidal relative distribution J_sigma(f) = sum_e Ph(sigma(f)e) conjugate(Ph(e)), over an orthonormal smooth K-basis, and the sum J_X over cuspidal constituents in a specified spectral subset X. Construct the linear distributions I_P,pi and I_Pi from the actual induced automorphic and Whittaker realizations: I_P,pi(f) = sum_e I(Ind(f)e,0) conjugate(J_eta(e)), and I_Pi(f) = sum_W lambda(Pi(f)W) conjugate(beta_eta(W))/<W,W>_Whitt. Here I(e,0) is the regularized Rankin–Selberg period of its Eisenstein series, J_eta the Flicker–Rallis intertwining period, lambda is the continued Whittaker Rankin–Selberg integral at zero, beta_eta is the mirabolic Flicker–Rallis integral with its Asai residue factor, and the Whittaker norm uses the adjoint residue factor; these forms and their measures are the supplier’s constructed analytic objects. Prove the sums are basis-independent continuous distributions and retain this global construction for all the stated cuspidal data. Separately, for tempered sigma_v in the ordinary normalization domain of §7.5, define J_v(fv) = sum_e alpha_v(sigma_v(fv)e,e), using §7.6 and the local trace estimates for absolute convergence, continuity and Cv finite nonzero. Global cuspidality is not a local temperedness hypothesis. Fix dg_Tam on Gh(A), dt_Tam on Hh(A) and positive local measures with product dg_v = dg_Tam and product dt_v = dt_Tam in the convergent restricted-product convention. Define sigma_v(fv) = integral_Gh(Fv) fv(g)sigma_v(g) dg_v and sigma(f) with dg_Tam, so sigma(tensor fv) = tensor sigma_v(fv). The linear distributions use the source differential and finite-S corrections of §8.3; their convolution measure is fixed as part of that source convention.",
           "hypotheses": [
             "E/F is a quadratic field extension of number fields, n ≥ 1, h is any nondegenerate n-dimensional Hermitian E-space, h0 is the norm line, Gh = U(h) × U(h ⊥ h0), Hh = U(h) diagonally",
             "sigma is an actual irreducible cuspidal automorphic subrepresentation; Pi is a relevant generic Hermitian Arthur parameter induced from the actual cuspidal datum",
-            "For the linear branch use an actual ∗-generic cuspidal datum; define I_P,pi = 0 if it is irrelevant. I_Pi and its Whittaker realization are needed only for relevant data. Every form and measure is the constructed supplier object."
+            "For the linear branch use an actual ∗-generic cuspidal datum; define I_P,pi = 0 if it is irrelevant. I_Pi and its Whittaker realization are needed only for relevant data. Every form and measure is the constructed supplier object.",
+            "For the normalized local branch, sigma_v is tempered, the §7.5 integral is absolutely convergent, Cv is finite nonzero and the trace-integrated convolution is absolutely convergent as supplied in §7.6 and the trace estimates; the global branch has no local temperedness assumption",
+            "For unitary convolution use dg_v and dg_Tam with the displayed compatible ambient factorization, independently of dt_v and dt_Tam for the diagonal subgroup"
           ],
           "locator": {
             "source": "bpcz",
@@ -2072,9 +2262,14 @@
           "prerequisites": [
             "target:6.5",
             "target:7.5",
-            "gap:spectral-isolation",
-            "gap:trace-transfer",
-            "gap:local-factors"
+            "gap:local-tempered-estimates",
+            "gap:schwartz-trace",
+            "gap:eisenstein-periods",
+            "gap:trace-distributions",
+            "gap:tempered-factor-regularity",
+            "target:7.6",
+            "gap:tamagawa-factorization",
+            "gap:petersson-pairings"
           ],
           "api": [
             {
@@ -2095,7 +2290,7 @@
             {
               "name": "GGP.localRelativeCharacter_rankOne",
               "role": "basic API",
-              "statement": "For a smoothing rank-one operator v ↦ <v,f>f, its normalized local relative trace is alpha_v(f,f), with the actual operator convention verified."
+              "statement": "For tempered sigma_v, Cv finite nonzero, and the trace-convergent local domain of §7.6, evaluate the normalized relative trace on the smoothing rank-one operator w ↦ <w,f>f: the result is alpha_v(f,f). A test function realizes that operator only with the displayed dg_v convolution convention; the assertion is about the operator whenever no single such test function is chosen."
             }
           ],
           "tests": [
@@ -2113,6 +2308,11 @@
               "name": "relative_character_zero_period",
               "kind": "characterisation",
               "statement": "A representation with Ph = 0 has J_sigma = 0 even though its ordinary character can be nonzero."
+            },
+            {
+              "name": "relative_character_divergent_rejected",
+              "kind": "non-example",
+              "statement": "At a split place with n = 1, trivial unitary local representations give a constant coefficient on the diagonal Fvˣ, whose multiplicative Haar integral is infinite. Smoothness, unitarity and global cuspidality alone are not local convergence hypotheses."
             }
           ],
           "proofSketch": "Construct sums on smoothing operators using the imported absolute-convergence and trace estimates. Prove basis independence by the Hilbert pairing of the two continued forms. For the unitary distribution both forms are Ph, and positivity on f* tensor f detects a nonzero period."
@@ -2134,9 +2334,10 @@
           "prerequisites": [
             "target:8.1",
             "target:7.8",
-            "gap:spectral-isolation",
-            "gap:trace-transfer",
-            "gap:local-factors"
+            "gap:schwartz-trace",
+            "gap:eisenstein-periods",
+            "gap:trace-distributions",
+            "gap:global-completed-factors"
           ],
           "api": [],
           "tests": [
@@ -2169,10 +2370,14 @@
           },
           "prerequisites": [
             "target:8.2",
-            "gap:trace-transfer",
-            "gap:spectral-isolation",
-            "gap:parameters",
-            "gap:adelic-measures"
+            "gap:trace-distributions",
+            "gap:finite-smooth-transfer",
+            "gap:archimedean-transfer",
+            "gap:spherical-base-change",
+            "gap:schwartz-trace",
+            "gap:endoscopic-isolation",
+            "gap:global-base-change",
+            "gap:tamagawa-factorization"
           ],
           "api": [],
           "tests": [
@@ -2205,10 +2410,13 @@
           "prerequisites": [
             "target:8.3",
             "target:6.5",
-            "gap:local-factors",
-            "gap:parameters",
-            "gap:trace-transfer",
-            "gap:spectral-isolation"
+            "gap:global-completed-factors",
+            "gap:global-base-change",
+            "gap:trace-distributions",
+            "gap:finite-smooth-transfer",
+            "gap:archimedean-transfer",
+            "gap:schwartz-trace",
+            "gap:endoscopic-isolation"
           ],
           "api": [],
           "tests": [
@@ -2235,11 +2443,11 @@
           "kind": "theorem",
           "name": "GGP.unitaryRelativeCharacterFactorization",
           "title": "From isolated transfer to factorization",
-          "statement": "For an everywhere tempered irreducible cuspidal sigma in a fixed unitary datum, prove for every decomposable Schwartz f = tensor fv that J_sigma(f) = c(sigma) product_v J_v(fv), where J_v is the normalized local relative trace of §8.1 and c(sigma) is §7.8. The product uses the spherical volume factors and the Tamagawa decomposition of §7.6. If some local invariant functional space is zero, both sides vanish. Otherwise the actual nonarchimedean selection and archimedean packet-uniqueness theorems and automorphic multiplicity formula isolate sigma, and all local comparison constants have product 1.",
+          "statement": "For an everywhere tempered irreducible cuspidal sigma in a fixed unitary datum, prove for every decomposable Schwartz f = tensor fv that J_sigma(f) = c(sigma) product_v J_v(fv), where J_v is the normalized local relative trace of §8.1 and c(sigma) is §7.8. The product uses the spherical Hh volumes and both compatible Tamagawa decompositions of §8.1. If some local invariant functional space is zero, both sides vanish. Otherwise the actual nonarchimedean selection and archimedean packet-uniqueness theorems and automorphic multiplicity formula isolate sigma, and all local comparison constants have product 1.",
           "hypotheses": [
             "E/F is a quadratic field extension of number fields, n ≥ 1, h is any nondegenerate n-dimensional Hermitian E-space, h0 is the norm line, Gh = U(h) × U(h ⊥ h0), Hh = U(h) diagonally",
             "sigma cuspidal irreducible and tempered at every place; actual all-place base change Pi; factorizable Schwartz test functions",
-            "Tamagawa global measures and local measures factoring the diagonal Tamagawa measure"
+            "Tamagawa global measures dg_Tam and dt_Tam and positive local dg_v,dt_v with product dg_v = dg_Tam and product dt_v = dt_Tam, including convergence/leading-value normalization; sigma_v(fv) uses dg_v as in §8.1"
           ],
           "locator": {
             "source": "bpcz",
@@ -2251,11 +2459,15 @@
             "target:7.8",
             "target:5.3",
             "target:3.2",
-            "gap:parameters",
-            "gap:trace-transfer",
-            "gap:local-factors",
+            "gap:global-base-change",
+            "gap:finite-smooth-transfer",
+            "gap:archimedean-transfer",
+            "gap:relative-character-constants",
+            "gap:tempered-factor-regularity",
+            "gap:global-completed-factors",
             "target:5.6",
-            "target:4.7"
+            "target:4.7",
+            "gap:tamagawa-factorization"
           ],
           "api": [],
           "tests": [
@@ -2268,9 +2480,19 @@
               "name": "factorization_transfer_constant",
               "kind": "computation",
               "statement": "At two places with comparison constants k and k⁻¹, the global comparison constant is 1; arbitrary independent constants would spoil the formula."
+            },
+            {
+              "name": "factorization_G_single_rescaling",
+              "kind": "non-example",
+              "statement": "Keeping every H measure fixed and replacing one dg_v by 2 dg_v doubles sigma_v(fv) and every nonzero J_v(fv), while J_sigma and c(sigma) stay fixed. Such local measures no longer factor dg_Tam and are excluded."
+            },
+            {
+              "name": "factorization_G_compensated",
+              "kind": "computation",
+              "statement": "Replacing dg_v by 2 dg_v and dg_w by dg_w/2 preserves product dg_v, multiplies the two local traces by 2 and 1/2, and leaves their product and the factorization unchanged."
             }
           ],
-          "proofSketch": "Factor the linear Whittaker relative character into local factors, identify the Asai denominator with the adjoint denominator, and compare each matching local relative trace. At infinity extend the comparison from the dense transfer subspace by continuity. The real-place packet uniqueness is §5.6 and complex split-place uniqueness is §4.7; neither is inferred from multiplicity one alone."
+          "proofSketch": "Factor the linear Whittaker relative character into local factors, identify the Asai denominator with the adjoint denominator, and compare each matching local relative trace. At infinity extend the comparison from the dense transfer subspace by continuity. The real-place packet uniqueness is §5.6 and complex split-place uniqueness is §4.7; neither is inferred from multiplicity one alone. Convert source differential measures dK_v^src for K = Gh,Hh by dK_Tam = (Delta_K^*)⁻¹ product_v Delta_K,v dK_v^src (bpcz §2.3.2). Choose positive a_K,v with convergent product a_K,v = (Delta_K^*)⁻¹ and set dK_v = a_K,v Delta_K,v dK_v^src, standard outside a finite set after convergence factors. Write b_G,v = a_G,v Delta_G,v and b_H,v = a_H,v Delta_H,v. The normalized local distribution becomes b_G,v b_H,v Cv⁻¹ times the source unnormalized local trace. At finite S use dK_Tam = dK_S^src × (Delta_K^(S,*))⁻¹ product_(v outside S) Delta_K,v dK_v^src. The source special tensor is (Delta_Hh^(S,*))² times tensor_(v in S) fsrc_v times tensor_(v outside S) 1_KG,v, and its distribution equals abs(S_Pi)⁻¹ L^S(1/2,Pi_n × Pi_n+1)/L^S(1,sigma,Ad) times product_(v in S) J_sigma_v^raw(fsrc_v) (bpcz line 4891–4892); here the superscript S denotes the outside-S factor, with the leading value at zero on Delta. Passing through finite S and its spherical volumes gives the displayed product-normalized identity, rather than discarding the source leading-value factors. For unitary groups identify Delta_Gh Delta_Hh = Delta_(n+1) (Delta_Hh)², locally and globally; this converts the completed c(sigma) and source partial L-ratio with its squared Hh convergence factor into each other. At each finite S track the outside-S convergence factors as measures, not as an asserted absolutely convergent Euler product at the central point."
         },
         {
           "id": "8.6",
@@ -2293,7 +2515,7 @@
             "target:7.8",
             "target:7.6",
             "target:6.5",
-            "gap:spectral-isolation"
+            "gap:schwartz-trace"
           ],
           "api": [],
           "tests": [
@@ -2333,7 +2555,7 @@
             "target:8.4",
             "target:8.6",
             "target:7.8",
-            "gap:local-factors"
+            "gap:global-completed-factors"
           ],
           "api": [],
           "tests": [
@@ -2367,7 +2589,7 @@
         "Layer 2",
         "Layer 3"
       ],
-      "what": "Arbitrary quadratic-form SO, its local topological points and adelic points."
+      "what": "Quadratic-form O and SO point groups (Layer 0), ℝ/ℚ_p topology (Layer 2) and point-group restricted products (Layer 3); no general SO group-scheme comparison."
     },
     {
       "roadmap": "RestrictedProducts",
@@ -2391,43 +2613,91 @@
     },
     {
       "roadmap": "ReductiveGroupsPartII",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:classical-forms. No section number is certified."
+      "sections": [
+        "missing: epsilon-Hermitian operations and Witt comparison",
+        "missing: symplectic and unitary schemes and points",
+        "missing: SO extension of OrthogonalSpinGroups Layer 0",
+        "missing: classical flag stabilizers and radicals",
+        "missing: marked pure twists and forms"
+      ],
+      "what": "Required extension contracts: gap:hermitian-witt, gap:classical-group-points, gap:orthogonal-scheme-points, gap:classical-flags, gap:marked-inner-forms."
     },
     {
       "roadmap": "SmoothRepresentationsOfLocalGroups",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:local-categories. No section number is certified."
+      "sections": [
+        "missing: smooth representation categories and functors",
+        "missing: Casselman–Wallach tensor topology",
+        "missing: induction Jacquet and reciprocity",
+        "missing: Bernstein separation and auxiliary data",
+        "missing: distribution descent and Gelfand–Kazhdan"
+      ],
+      "what": "Required extension contracts: gap:smooth-functors, gap:casselman-wallach, gap:induction-jacquet, gap:bernstein-exclusions, gap:distribution-descent."
     },
     {
       "roadmap": "EndoscopicTransferAndUnitaryTraceComparison",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:parameters, gap:trace-transfer. No section number is certified."
+      "sections": [
+        "missing: Weil and classical parameter carriers",
+        "missing: enhanced local classification and labeling",
+        "missing: tempered STAB law",
+        "missing: tempered TRANS law",
+        "missing: tempered WHITT law",
+        "missing: unitary base change and discrete multiplicity",
+        "missing: Jacquet–Rallis trace distributions",
+        "missing: finite-place smooth transfer",
+        "missing: dense continuous archimedean transfer",
+        "missing: spherical transfer and base change",
+        "missing: normalized local character comparison constants"
+      ],
+      "what": "Required extension contracts: gap:parameter-carriers, gap:enhanced-classification, gap:tempered-stability, gap:tempered-transfer, gap:tempered-whittaker, gap:global-base-change, gap:trace-distributions, gap:finite-smooth-transfer, gap:archimedean-transfer, gap:spherical-base-change, gap:relative-character-constants."
     },
     {
       "roadmap": "AutomorphicLFunctionsAndLocalFactors",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:local-factors. No section number is certified."
+      "sections": [
+        "missing: local factor laws and character changes",
+        "missing: tempered local quotient regularity",
+        "missing: completed factors adjoint and Asai comparison"
+      ],
+      "what": "Required extension contracts: gap:factor-change-laws, gap:tempered-factor-regularity, gap:global-completed-factors."
     },
     {
       "roadmap": "MetaplecticAutomorphicForms",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:weil-theta. No section number is certified."
+      "sections": [
+        "missing: Heisenberg and Stone–von Neumann",
+        "missing: covers splittings and mixed models",
+        "missing: global theta realization and convergence",
+        "missing: Howe duality and tempered seesaw",
+        "missing: equal-rank parameters and enhanced P2",
+        "missing: generic standard-module irreducibility"
+      ],
+      "what": "Required extension contracts: gap:heisenberg-svn, gap:oscillator-splittings, gap:global-theta, gap:theta-seesaw, gap:theta-parameter-laws, gap:generic-standard-modules."
     },
     {
       "roadmap": "AdelicAlgebraicGroups",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:adelic-measures. No section number is certified."
+      "sections": [
+        "missing: group adeles and rational diagonals",
+        "missing: quotient integration and volumes",
+        "missing: differential measures and Tamagawa products"
+      ],
+      "what": "Required extension contracts: gap:adelic-points, gap:quotient-integration, gap:tamagawa-factorization."
     },
     {
       "roadmap": "AutomorphicFormsOnReductiveGroups",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:automorphic-realizations. No section number is certified."
+      "sections": [
+        "missing: ordinary and genuine cuspidal tensor realizations",
+        "missing: Petersson pairings and local tensors",
+        "missing: cusp and theta-cusp period estimates"
+      ],
+      "what": "Required extension contracts: gap:cuspidal-tensors, gap:petersson-pairings, gap:period-growth."
     },
     {
       "roadmap": "AutomorphicSpectralTheory",
-      "sections": [],
-      "what": "Unwritten contracts recorded in gap:spectral-isolation. No section number is certified."
+      "sections": [
+        "missing: local tempered restriction estimates",
+        "missing: Schwartz convolution and trace sums",
+        "missing: Eisenstein and regularized period interfaces",
+        "missing: cuspidal isolation without supercuspidal restriction"
+      ],
+      "what": "Required extension contracts: gap:local-tempered-estimates, gap:schwartz-trace, gap:eisenstein-periods, gap:endoscopic-isolation."
     }
   ],
   "consumers": [
@@ -2442,30 +2712,84 @@
   ],
   "gaps": [
     {
-      "slug": "classical-forms",
-      "title": "Arbitrary epsilon-Hermitian classical groups",
+      "slug": "hermitian-witt",
+      "title": "epsilon-Hermitian operations and Witt comparison",
       "neededBy": [
         "1.1",
         "1.3",
         "1.4"
       ],
-      "detail": "Supply finite projective modules over quadratic étale algebras, nondegenerate epsilon-Hermitian forms, orthogonal sums/complements, Witt decompositions and cancellation, symplectic and unitary group schemes and their local point topology, flags and parabolics, and identification of pure inner twists with forms. Include the trivial involution and the split algebra F × F; compare symmetric forms with OrthogonalSpinGroups and Mathlib polarization. The supplier text is absent; no numbered section is certified. Reuse the pinned quadratic Witt decomposition and cancellation in the symmetric trivial-involution specialization; the requested extension is their Hermitian and skew-Hermitian comparison, not another quadratic Witt theory.",
-      "needs": "Supply finite projective modules over quadratic étale algebras, nondegenerate epsilon-Hermitian forms, orthogonal sums/complements, Witt decompositions and cancellation, symplectic and unitary group schemes and their local point topology, flags and parabolics, and identification of pure inner twists with forms.",
+      "detail": "For a field F with 2 invertible and A = F with trivial involution or quadratic étale A/F including F × F, supply nondegenerate epsilon-Hermitian forms on finite projective A-modules, orthogonal sums and complements, conjugate duals, Witt decomposition and cancellation with isometry transport, reusing the pinned quadratic decomposition/cancellation for the symmetric trivial-involution specialization.",
+      "needs": "For a field F with 2 invertible and A = F with trivial involution or quadratic étale A/F including F × F, supply nondegenerate epsilon-Hermitian forms on finite projective A-modules, orthogonal sums and complements, conjugate duals, Witt decomposition and cancellation with isometry transport, reusing the pinned quadratic decomposition/cancellation for the symmetric trivial-involution specialization.",
       "supplier": "ReductiveGroupsPartII",
-      "section": "missing: classical forms and pure inner twists"
+      "section": "missing: epsilon-Hermitian operations and Witt comparison"
     },
     {
-      "slug": "local-categories",
-      "title": "Local representation categories and analysis",
+      "slug": "classical-group-points",
+      "title": "symplectic and unitary schemes and points",
+      "neededBy": [
+        "1.2",
+        "1.4",
+        "2.2",
+        "3.8"
+      ],
+      "detail": "For finite free nondegenerate alternating or epsilon-Hermitian forms over a field F with 2 invertible and quadratic étale A/F including split A, supply the smooth connected classical group schemes, their isometry point functors and base changes, identified as topological groups with their local-field isometries for every local field of characteristic different from 2.",
+      "needs": "For finite free nondegenerate alternating or epsilon-Hermitian forms over a field F with 2 invertible and quadratic étale A/F including split A, supply the smooth connected classical group schemes, their isometry point functors and base changes, identified as topological groups with their local-field isometries for every local field of characteristic different from 2.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "missing: symplectic and unitary schemes and points"
+    },
+    {
+      "slug": "orthogonal-scheme-points",
+      "title": "SO extension of OrthogonalSpinGroups Layer 0",
+      "neededBy": [
+        "1.2",
+        "3.7",
+        "6.1",
+        "7.2"
+      ],
+      "detail": "For every finite-dimensional nondegenerate quadratic Q over a field F with 2 invertible, supply affine O_Q and determinant-one SO_Q schemes with the rank-zero and rank-one cases explicit, identify their points with OrthogonalSpinGroups Layer 0 and prove scalar-extension compatibility and the local topological identification over every local field of characteristic different from 2, including finite extensions of Q2, extending rather than reconstructing its point-group theory.",
+      "needs": "For every finite-dimensional nondegenerate quadratic Q over a field F with 2 invertible, supply affine O_Q and determinant-one SO_Q schemes with the rank-zero and rank-one cases explicit, identify their points with OrthogonalSpinGroups Layer 0 and prove scalar-extension compatibility and the local topological identification over every local field of characteristic different from 2, including finite extensions of Q2, extending rather than reconstructing its point-group theory.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "missing: SO extension of OrthogonalSpinGroups Layer 0"
+    },
+    {
+      "slug": "classical-flags",
+      "title": "classical flag stabilizers and radicals",
+      "neededBy": [
+        "1.2",
+        "2.2",
+        "3.7",
+        "3.8"
+      ],
+      "detail": "For the preceding arbitrary nondegenerate classical forms and each complete isotropic flag, supply its parabolic stabilizer, Levi and unipotent radical identified with the explicit form-coordinate subgroups, compatible with scalar extension and with the SO point comparison, including maximal-isotropic SO components and empty flags.",
+      "needs": "For the preceding arbitrary nondegenerate classical forms and each complete isotropic flag, supply its parabolic stabilizer, Levi and unipotent radical identified with the explicit form-coordinate subgroups, compatible with scalar extension and with the SO point comparison, including maximal-isotropic SO components and empty flags.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "missing: classical flag stabilizers and radicals"
+    },
+    {
+      "slug": "marked-inner-forms",
+      "title": "marked pure twists and forms",
+      "neededBy": [
+        "1.3"
+      ],
+      "detail": "For these connected classical groups over F with 2 invertible, supply the classification of marked pure inner twists by form data with their discriminant, parity and marking restrictions, preserving orthogonal complements and isometries and proving that split GL groups have no nontrivial pure inner twists.",
+      "needs": "For these connected classical groups over F with 2 invertible, supply the classification of marked pure inner twists by form data with their discriminant, parity and marking restrictions, preserving orthogonal complements and isometries and proving that split GL groups have no nontrivial pure inner twists.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "missing: marked pure twists and forms"
+    },
+    {
+      "slug": "smooth-functors",
+      "title": "smooth representation categories and functors",
       "neededBy": [
         "2.1",
         "2.3",
         "2.4",
         "3.1",
-        "3.2",
         "3.3",
         "3.4",
         "3.6",
+        "3.7",
+        "3.8",
         "4.1",
         "4.7",
         "4.8",
@@ -2474,17 +2798,97 @@
         "7.2",
         "7.5"
       ],
-      "detail": "Supply smooth complex representations over every nonarchimedean local field, with their admissible and finite-length subcategories, and smooth Fréchet moderate-growth admissible Z-finite representations at real and complex places, with joint continuous actions, continuous intertwining maps, nuclear completed projective tensor products and their bilinear universal property. Supply contragredients, restriction, exact Jacquet functors, normalized and unnormalized induction, Frobenius reciprocity, Bernstein components and support avoidance, standard modules, distribution descent, Fourier transforms and the Gelfand–Kazhdan criterion. The text is absent; ContRepresentation alone only makes each operator continuous.",
-      "needs": "Supply smooth complex representations over every nonarchimedean local field, with their admissible and finite-length subcategories, and smooth Fréchet moderate-growth admissible Z-finite representations at real and complex places, with joint continuous actions, continuous intertwining maps, nuclear completed projective tensor products and their bilinear universal property.",
+      "detail": "For every nonarchimedean local field and complex representations of its classical point groups or required finite covers, supply the smooth category with admissible and finite-length subcategories, restriction, smooth contragredient and algebraic tensor functors and their intertwiner comparisons, allowing arbitrary smooth objects in model constructions.",
+      "needs": "For every nonarchimedean local field and complex representations of its classical point groups or required finite covers, supply the smooth category with admissible and finite-length subcategories, restriction, smooth contragredient and algebraic tensor functors and their intertwiner comparisons, allowing arbitrary smooth objects in model constructions.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "missing: smooth and Casselman–Wallach interfaces"
+      "section": "missing: smooth representation categories and functors"
     },
     {
-      "slug": "parameters",
-      "title": "Enhanced classical local Langlands and global unitary classification",
+      "slug": "casselman-wallach",
+      "title": "Casselman–Wallach tensor topology",
+      "neededBy": [
+        "2.1",
+        "2.3",
+        "2.4",
+        "3.2",
+        "4.1",
+        "4.7",
+        "7.2",
+        "7.5"
+      ],
+      "detail": "For real and complex reductive groups and the Jacobi oscillator extensions used here, supply jointly continuous smooth nuclear Frechet moderate-growth admissible Z-finite representations, continuous contragredients, restriction and completed projective tensors with their jointly continuous bilinear universal property, so the model Hom spaces use continuous functionals.",
+      "needs": "For real and complex reductive groups and the Jacobi oscillator extensions used here, supply jointly continuous smooth nuclear Frechet moderate-growth admissible Z-finite representations, continuous contragredients, restriction and completed projective tensors with their jointly continuous bilinear universal property, so the model Hom spaces use continuous functionals.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "missing: Casselman–Wallach tensor topology"
+    },
+    {
+      "slug": "induction-jacquet",
+      "title": "induction Jacquet and reciprocity",
+      "neededBy": [
+        "3.3",
+        "3.4",
+        "3.6",
+        "3.7",
+        "3.8",
+        "4.7",
+        "4.8",
+        "5.2"
+      ],
+      "detail": "For nonarchimedean reductive groups and their parabolics, supply unnormalized Ind and compact ind, normalized i_P(rho) = Ind_P(delta_P^(1/2) rho), exact Jacquet functors and reciprocity with each modulus stated, including the mirabolic generic quotient of supercuspidal GL data and the restriction filtrations used in ggp §§15–16.",
+      "needs": "For nonarchimedean reductive groups and their parabolics, supply unnormalized Ind and compact ind, normalized i_P(rho) = Ind_P(delta_P^(1/2) rho), exact Jacquet functors and reciprocity with each modulus stated, including the mirabolic generic quotient of supercuspidal GL data and the restriction filtrations used in ggp §§15–16.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "missing: induction Jacquet and reciprocity"
+    },
+    {
+      "slug": "bernstein-exclusions",
+      "title": "Bernstein separation and auxiliary data",
+      "neededBy": [
+        "3.3",
+        "3.4",
+        "3.6",
+        "3.7",
+        "3.8",
+        "4.7",
+        "4.8",
+        "5.2"
+      ],
+      "detail": "For finite-length smooth representations over nonarchimedean local fields of characteristic different from 2, supply inertial Bernstein decomposition, vanishing of Hom and Ext between disjoint blocks, finite Jacquet support and existence of supercuspidal GL data outside the finite forbidden supports with irreducible auxiliary classical induction, including each maximal-isotropic SO orbit.",
+      "needs": "For finite-length smooth representations over nonarchimedean local fields of characteristic different from 2, supply inertial Bernstein decomposition, vanishing of Hom and Ext between disjoint blocks, finite Jacquet support and existence of supercuspidal GL data outside the finite forbidden supports with irreducible auxiliary classical induction, including each maximal-isotropic SO orbit.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "missing: Bernstein separation and auxiliary data"
+    },
+    {
+      "slug": "distribution-descent",
+      "title": "distribution descent and Gelfand–Kazhdan",
+      "neededBy": [
+        "3.1",
+        "3.2"
+      ],
+      "detail": "For characteristic-zero local fields, the reductive and Jacobi groups of §§3.1–3.2 and their smooth or Casselman–Wallach categories, supply invariant distribution spaces, Fourier transforms and descent to the relevant linear slices together with the Gelfand–Kazhdan implication from anti-involution invariance to the continuous or smooth multiplicity bound.",
+      "needs": "For characteristic-zero local fields, the reductive and Jacobi groups of §§3.1–3.2 and their smooth or Casselman–Wallach categories, supply invariant distribution spaces, Fourier transforms and descent to the relevant linear slices together with the Gelfand–Kazhdan implication from anti-involution invariance to the continuous or smooth multiplicity bound.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "missing: distribution descent and Gelfand–Kazhdan"
+    },
+    {
+      "slug": "parameter-carriers",
+      "title": "Weil and classical parameter carriers",
+      "neededBy": [
+        "4.1",
+        "4.4",
+        "4.6",
+        "6.3",
+        "7.1"
+      ],
+      "detail": "For local fields of characteristic different from 2 supply Weil and Weil–Deligne groups, L-groups and actual continuous semisimple classical parameters with selfdual or conjugate-dual pairings and signs, complex centralizers, component groups and determinant-one subgroups with scalar extension and ordinary complex dual conventions.",
+      "needs": "For local fields of characteristic different from 2 supply Weil and Weil–Deligne groups, L-groups and actual continuous semisimple classical parameters with selfdual or conjugate-dual pairings and signs, complex centralizers, component groups and determinant-one subgroups with scalar extension and ordinary complex dual conventions.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: Weil and classical parameter carriers"
+    },
+    {
+      "slug": "enhanced-classification",
+      "title": "enhanced local classification and labeling",
       "neededBy": [
         "1.3",
-        "4.1",
         "4.4",
         "4.5",
         "4.6",
@@ -2492,71 +2896,222 @@
         "5.1",
         "5.3",
         "5.4",
-        "5.6",
+        "5.6"
+      ],
+      "detail": "For the characteristic-zero local unitary groups and their marked pure inner forms used in the proved theorems, supply actual enhanced classification with tempered and generic domains, normalized Langlands induction and component-label laws, contragredient and Whittaker-change laws, satisfying, at nonarchimedean places, bp-refined §7.2 CLL/Stab/TE/TET with its transfer-factor constants and the labeling of §§7.7,8.3 identified with ggp p.67 and §4.4, with the real-place stability, transfer and prescribed Whittaker model supplied separately below; in the general classical conjecture propositions these laws remain explicit classification hypotheses.",
+      "needs": "For the characteristic-zero local unitary groups and their marked pure inner forms used in the proved theorems, supply actual enhanced classification with tempered and generic domains, normalized Langlands induction and component-label laws, contragredient and Whittaker-change laws, satisfying, at nonarchimedean places, bp-refined §7.2 CLL/Stab/TE/TET with its transfer-factor constants and the labeling of §§7.7,8.3 identified with ggp p.67 and §4.4, with the real-place stability, transfer and prescribed Whittaker model supplied separately below; in the general classical conjecture propositions these laws remain explicit classification hypotheses.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: enhanced local classification and labeling"
+    },
+    {
+      "slug": "tempered-stability",
+      "title": "tempered STAB law",
+      "neededBy": [
+        "5.6"
+      ],
+      "detail": "For F = R or a finite extension of Qp, quasi-split unitary G, each tempered phi and every marked pure inner G_alpha, supply stability on regular semisimple elements of the sum of characters of the actual packet Pi_G_alpha(phi), including empty packets, as in bp-arch §12.3 STAB.",
+      "needs": "For F = R or a finite extension of Qp, quasi-split unitary G, each tempered phi and every marked pure inner G_alpha, supply stability on regular semisimple elements of the sum of characters of the actual packet Pi_G_alpha(phi), including empty packets, as in bp-arch §12.3 STAB.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: tempered STAB law"
+    },
+    {
+      "slug": "tempered-transfer",
+      "title": "tempered TRANS law",
+      "neededBy": [
+        "5.6"
+      ],
+      "detail": "For the same characteristic-zero local unitary data, supply transfer of the reference stable packet character multiplied by the Kottwitz sign e(G_alpha) to the stable packet character on each pure inner form, with the source transfer normalization in bp-arch §12.3 TRANS.",
+      "needs": "For the same characteristic-zero local unitary data, supply transfer of the reference stable packet character multiplied by the Kottwitz sign e(G_alpha) to the stable packet character on each pure inner form, with the source transfer normalization in bp-arch §12.3 TRANS.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: tempered TRANS law"
+    },
+    {
+      "slug": "tempered-whittaker",
+      "title": "tempered WHITT law",
+      "neededBy": [
+        "5.6"
+      ],
+      "detail": "For the quasi-split reference unitary group over R or a finite extension of Qp, each tempered phi and each regular nilpotent orbit determining a Whittaker datum, supply exactly one member of Pi_G(phi) with that Whittaker model, as in bp-arch §12.3 WHITT.",
+      "needs": "For the quasi-split reference unitary group over R or a finite extension of Qp, each tempered phi and each regular nilpotent orbit determining a Whittaker datum, supply exactly one member of Pi_G(phi) with that Whittaker model, as in bp-arch §12.3 WHITT.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: tempered WHITT law"
+    },
+    {
+      "slug": "global-base-change",
+      "title": "unitary base change and discrete multiplicity",
+      "neededBy": [
         "6.3",
         "6.5",
-        "7.1",
         "7.4",
         "7.8",
         "8.3",
         "8.4",
         "8.5"
       ],
-      "detail": "Supply actual Weil/Weil–Deligne and L-group carriers, selfdual and conjugate-dual parameters with their pairings and signs, Whittaker normalized enhanced Vogan packets across pure inner forms, genericity and temperedness, component centralizers and their determinant-one subgroups. Supply the change-of-Whittaker law, all-place unitary base change, discrete Hermitian Arthur parameters with pairwise distinct conjugate-selfdual cuspidal constituents and degree-m Asai pole sign (−1)^(m+1), and the unitary automorphic multiplicity formula. No packet is an arbitrary finite set furnished by a user. This supplier text is absent. Supply the STAB, TRANS and WHITT tempered-packet laws in bp-arch §12.3, bp-arch line 11132; packet stability and transfer alone do not identify a Whittaker model.",
-      "needs": "Supply actual Weil/Weil–Deligne and L-group carriers, selfdual and conjugate-dual parameters with their pairings and signs, Whittaker normalized enhanced Vogan packets across pure inner forms, genericity and temperedness, component centralizers and their determinant-one subgroups.",
+      "detail": "For E/F a quadratic number-field extension, supply weak and strong all-place base change of actual cuspidal unitary representations, their discrete Hermitian Arthur constituent decomposition and automorphic multiplicity formula, with pairwise distinct conjugate-selfdual cuspidal degree-m constituents having Asai sign (−1)^(m+1) pole at 1 and compatibility with tempered local enhancements; for classical conjecture formulations supply parameter domains without assuming unproved global classification.",
+      "needs": "For E/F a quadratic number-field extension, supply weak and strong all-place base change of actual cuspidal unitary representations, their discrete Hermitian Arthur constituent decomposition and automorphic multiplicity formula, with pairwise distinct conjugate-selfdual cuspidal degree-m constituents having Asai sign (−1)^(m+1) pole at 1 and compatibility with tempered local enhancements; for classical conjecture formulations supply parameter domains without assuming unproved global classification.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "missing: parameters, enhancements, base change and multiplicity"
+      "section": "missing: unitary base change and discrete multiplicity"
     },
     {
-      "slug": "local-factors",
-      "title": "Local constants and completed L-functions",
+      "slug": "factor-change-laws",
+      "title": "local factor laws and character changes",
       "neededBy": [
         "4.2",
         "4.3",
         "4.5",
         "4.7",
         "6.3",
-        "6.4",
         "7.1",
         "7.2",
+        "7.5"
+      ],
+      "detail": "For actual local Weil–Deligne or archimedean parameters supply meromorphic L and epsilon factors with geometric Frobenius q⁻¹, direct-sum/tensor/dual laws, conjugate-dual signs, additive-character scaling by the determinant and absolute-value factors at its stated s, and comparison with the pinned norm-equation Hilbert symbol rather than a second Hilbert symbol.",
+      "needs": "For actual local Weil–Deligne or archimedean parameters supply meromorphic L and epsilon factors with geometric Frobenius q⁻¹, direct-sum/tensor/dual laws, conjugate-dual signs, additive-character scaling by the determinant and absolute-value factors at its stated s, and comparison with the pinned norm-equation Hilbert symbol rather than a second Hilbert symbol.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "missing: local factor laws and character changes"
+    },
+    {
+      "slug": "tempered-factor-regularity",
+      "title": "tempered local quotient regularity",
+      "neededBy": [
         "7.3",
-        "7.4",
         "7.5",
         "7.6",
-        "7.8",
         "8.1",
+        "8.5"
+      ],
+      "detail": "For every place of a quadratic number-field extension and actual tempered sigma_v of the adjacent unitary pair with actual local base change, supply finiteness and nonvanishing of Cv = product_(i=1 to n+1) L_v(i,eta_v^i) L_v(1/2,Pi_n,v × Pi_n+1,v)/L_v(1,sigma_v,Ad), including dyadic, ramified and archimedean places; give the analogous local analytic inputs on the stated tempered orthogonal domain.",
+      "needs": "For every place of a quadratic number-field extension and actual tempered sigma_v of the adjacent unitary pair with actual local base change, supply finiteness and nonvanishing of Cv = product_(i=1 to n+1) L_v(i,eta_v^i) L_v(1/2,Pi_n,v × Pi_n+1,v)/L_v(1,sigma_v,Ad), including dyadic, ramified and archimedean places; give the analogous local analytic inputs on the stated tempered orthogonal domain.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "missing: tempered local quotient regularity"
+    },
+    {
+      "slug": "global-completed-factors",
+      "title": "completed factors adjoint and Asai comparison",
+      "neededBy": [
+        "6.3",
+        "6.4",
+        "7.4",
+        "7.8",
         "8.2",
         "8.4",
         "8.5",
         "8.7"
       ],
-      "detail": "Supply local L and epsilon factors at finite and infinite places, geometric Frobenius normalization, direct-sum and tensor compatibility, conjugate-dual root-number identities, determinant change under additive-character scaling, Hilbert symbols, completed global products and their continuation, and Rankin–Selberg, adjoint, Hecke and Asai factors. Include tempered regularity and nonvanishing of the local quotient at s = 1/2 used in §7.6, and the identification of the Asai adjoint quotient under base change. General classical continuation remains an explicit hypothesis of the orthogonal conjecture. The text is absent. Supply finite nonzero global adjoint value at 1 for the actual everywhere-tempered cuspidal unitary representations of §7.8, by the discrete-parameter Asai pole dichotomy. Use the pinned norm-equation Hilbert symbol and prove the epsilon-factor comparison in that normalization; constructing a second Hilbert symbol is outside this contract.",
-      "needs": "Supply local L and epsilon factors at finite and infinite places, geometric Frobenius normalization, direct-sum and tensor compatibility, conjugate-dual root-number identities, determinant change under additive-character scaling, Hilbert symbols, completed global products and their continuation, and Rankin–Selberg, adjoint, Hecke and Asai factors.",
+      "detail": "For actual global parameters on the stated global-field classical domain supply completed Hecke, Rankin–Selberg, Asai and adjoint factors with their meromorphic continuation domains, and for everywhere-tempered cuspidal unitary sigma over number fields prove L(1,sigma,Ad) finite nonzero and identify its base-change Asai quotient using the constituent pole dichotomy, retaining analytic-continuation hypotheses for the general orthogonal conjecture.",
+      "needs": "For actual global parameters on the stated global-field classical domain supply completed Hecke, Rankin–Selberg, Asai and adjoint factors with their meromorphic continuation domains, and for everywhere-tempered cuspidal unitary sigma over number fields prove L(1,sigma,Ad) finite nonzero and identify its base-change Asai quotient using the constituent pole dichotomy, retaining analytic-continuation hypotheses for the general orthogonal conjecture.",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "missing: epsilon, Rankin–Selberg, Asai and adjoint factors"
+      "section": "missing: completed factors adjoint and Asai comparison"
     },
     {
-      "slug": "weil-theta",
-      "title": "Weil representation and theta correspondence",
+      "slug": "heisenberg-svn",
+      "title": "Heisenberg and Stone–von Neumann",
       "neededBy": [
         "2.2",
         "2.3",
         "3.1",
-        "3.2",
-        "3.4",
-        "4.5",
-        "5.4",
-        "5.5",
-        "6.2"
+        "3.2"
       ],
-      "detail": "Supply the Heisenberg central extension with half-commutator law, Stone–von Neumann theorem, metaplectic double covers, smooth and archimedean oscillator representations, unitary splittings indexed by psi and mu, mixed models and evaluation-at-zero Jacquet maps, theta realization and convergence, seesaw identities, Howe duality and almost-equal-rank theta lifts including their enhanced-parameter P1/P2 formulas and generic standard-module irreducibility. The P1/P2 results are general theta theory, not a GGP conclusion. The text is absent.",
-      "needs": "Supply the Heisenberg central extension with half-commutator law, Stone–von Neumann theorem, metaplectic double covers, smooth and archimedean oscillator representations, unitary splittings indexed by psi and mu, mixed models and evaluation-at-zero Jacquet maps, theta realization and convergence, seesaw identities, Howe duality and almost-equal-rank theta lifts including their enhanced-parameter P1/P2 formulas and generic standard-module irreducibility.",
+      "detail": "For any finite-dimensional symplectic F-space over a field with 2 invertible supply the Heisenberg extension with product central term b/2 and commutator b, comparing the split plane to Tau Ceti HeisenbergGroup by z_half = z_matrix − xy/2, and for local F and nontrivial continuous unitary psi supply its irreducible oscillator with central character psi and Stone–von Neumann uniqueness.",
+      "needs": "For any finite-dimensional symplectic F-space over a field with 2 invertible supply the Heisenberg extension with product central term b/2 and commutator b, comparing the split plane to Tau Ceti HeisenbergGroup by z_half = z_matrix − xy/2, and for local F and nontrivial continuous unitary psi supply its irreducible oscillator with central character psi and Stone–von Neumann uniqueness.",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "missing: Heisenberg, Weil, theta and splitting interfaces"
+      "section": "missing: Heisenberg and Stone–von Neumann"
     },
     {
-      "slug": "adelic-measures",
-      "title": "Adelic groups, quotients and Tamagawa measures",
+      "slug": "oscillator-splittings",
+      "title": "covers splittings and mixed models",
+      "neededBy": [
+        "2.3",
+        "3.1",
+        "3.2",
+        "3.4",
+        "3.8",
+        "4.5"
+      ],
+      "detail": "For symplectic and skew-Hermitian local spaces over F with characteristic different from 2, supply the metaplectic double cover, genuine oscillator and unitary splittings indexed by psi and mu|Fˣ = omega(A/F), their dual and change-of-data laws and mixed-model Jacquet evaluation with exact Levi multipliers, including the dual unitary multiplier mu(det_E)⁻¹ abs(det_E)_E^(1/2) and compatible smaller-space splitting.",
+      "needs": "For symplectic and skew-Hermitian local spaces over F with characteristic different from 2, supply the metaplectic double cover, genuine oscillator and unitary splittings indexed by psi and mu|Fˣ = omega(A/F), their dual and change-of-data laws and mixed-model Jacquet evaluation with exact Levi multipliers, including the dual unitary multiplier mu(det_E)⁻¹ abs(det_E)_E^(1/2) and compatible smaller-space splitting.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "missing: covers splittings and mixed models"
+    },
+    {
+      "slug": "global-theta",
+      "title": "global theta realization and convergence",
+      "neededBy": [
+        "6.2"
+      ],
+      "detail": "For the global fields of characteristic different from 2 and classical dual pairs of §6.2 with rationally trivial psi and compatible splitting characters, supply the actual Schwartz theta series, rational invariance and convergence with cusp inputs in the stated theta-cusp growth domain, including genuine covers and the split algebra.",
+      "needs": "For the global fields of characteristic different from 2 and classical dual pairs of §6.2 with rationally trivial psi and compatible splitting characters, supply the actual Schwartz theta series, rational invariance and convergence with cusp inputs in the stated theta-cusp growth domain, including genuine covers and the split algebra.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "missing: global theta realization and convergence"
+    },
+    {
+      "slug": "theta-seesaw",
+      "title": "Howe duality and tempered seesaw",
+      "neededBy": [
+        "5.4",
+        "5.5"
+      ],
+      "detail": "For E/F quadratic with F nonarchimedean characteristic zero and compatible unitary dual pairs, supply Howe duality, irreducibility of nonzero tempered big lifts and the seesaw Hom equivalence of gan-ichino Proposition 1.1 and §1.3 with the same psi, splitting characters and ordinary/smooth dual convention, without using relative GGP selection as a hypothesis.",
+      "needs": "For E/F quadratic with F nonarchimedean characteristic zero and compatible unitary dual pairs, supply Howe duality, irreducibility of nonzero tempered big lifts and the seesaw Hom equivalence of gan-ichino Proposition 1.1 and §1.3 with the same psi, splitting characters and ordinary/smooth dual convention, without using relative GGP selection as a hypothesis.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "missing: Howe duality and tempered seesaw"
+    },
+    {
+      "slug": "theta-parameter-laws",
+      "title": "equal-rank parameters and enhanced P2",
+      "neededBy": [
+        "5.4",
+        "5.5"
+      ],
+      "detail": "For E/F quadratic with F nonarchimedean characteristic zero, fix psi, trace-zero delta ∈ Eˣ and chi_V|Fˣ = omega(E/F)^dim V, chi_W|Fˣ = omega(E/F)^dim W; supply equal-rank theta(phi) = phi tensor chi_V⁻¹chi_W with nonzero tower determined by epsilon(1/2,phi tensor chi_V⁻¹,psi composed with Tr(delta·)) = epsilon_V epsilon_W, and almost-equal-rank theta(phi) = (phi tensor chi_V⁻¹chi_W) ⊕ chi_W with P2 enhancement restricting to eta when chi_V is absent and equal to eta on the identified component groups when chi_V occurs, the extra sign fixed by the target inner form, using label character psi_E(x) = psi(Tr(delta x)/2) as in gan-ichino Theorems 4.1,4.4 and §4.6, with no downstream GGP hypothesis.",
+      "needs": "For E/F quadratic with F nonarchimedean characteristic zero, fix psi, trace-zero delta ∈ Eˣ and chi_V|Fˣ = omega(E/F)^dim V, chi_W|Fˣ = omega(E/F)^dim W; supply equal-rank theta(phi) = phi tensor chi_V⁻¹chi_W with nonzero tower determined by epsilon(1/2,phi tensor chi_V⁻¹,psi composed with Tr(delta·)) = epsilon_V epsilon_W, and almost-equal-rank theta(phi) = (phi tensor chi_V⁻¹chi_W) ⊕ chi_W with P2 enhancement restricting to eta when chi_V is absent and equal to eta on the identified component groups when chi_V occurs, the extra sign fixed by the target inner form, using label character psi_E(x) = psi(Tr(delta x)/2) as in gan-ichino Theorems 4.1,4.4 and §4.6, with no downstream GGP hypothesis.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "missing: equal-rank parameters and enhanced P2"
+    },
+    {
+      "slug": "generic-standard-modules",
+      "title": "generic standard-module irreducibility",
+      "neededBy": [
+        "5.3",
+        "5.5"
+      ],
+      "detail": "For nonarchimedean characteristic-zero unitary groups and a generic parameter in its actual Langlands classification, supply irreducibility of its normalized standard modules on the relevant pure inner forms and the standard-module theta comparison in gan-ichino Propositions 9.1–9.2, with their ordered real exponents and compatible splitting data.",
+      "needs": "For nonarchimedean characteristic-zero unitary groups and a generic parameter in its actual Langlands classification, supply irreducibility of its normalized standard modules on the relevant pure inner forms and the standard-module theta comparison in gan-ichino Propositions 9.1–9.2, with their ordered real exponents and compatible splitting data.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "missing: generic standard-module irreducibility"
+    },
+    {
+      "slug": "adelic-points",
+      "title": "group adeles and rational diagonals",
+      "neededBy": [
+        "6.1",
+        "6.2",
+        "6.5"
+      ],
+      "detail": "For affine classical group schemes over number fields or global function fields of odd characteristic, supply restricted-product adelic points with rational diagonals and functorial subgroup/base-change maps, using integral models outside finitely many places and the general SO scheme/point identification.",
+      "needs": "For affine classical group schemes over number fields or global function fields of odd characteristic, supply restricted-product adelic points with rational diagonals and functorial subgroup/base-change maps, using integral models outside finitely many places and the general SO scheme/point identification.",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "missing: group adeles and rational diagonals"
+    },
+    {
+      "slug": "quotient-integration",
+      "title": "quotient integration and volumes",
+      "neededBy": [
+        "6.1",
+        "6.2",
+        "6.5",
+        "7.2",
+        "7.4"
+      ],
+      "detail": "For these global groups supply quotient integration by counting measure on rational points, finite covolume for connected reductive groups with anisotropic connected center and finite volume modulo the split center otherwise, and volume one for F-split unipotent quotients with their Tamagawa measure, over both number fields and odd-characteristic global function fields.",
+      "needs": "For these global groups supply quotient integration by counting measure on rational points, finite covolume for connected reductive groups with anisotropic connected center and finite volume modulo the split center otherwise, and volume one for F-split unipotent quotients with their Tamagawa measure, over both number fields and odd-characteristic global function fields.",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "missing: quotient integration and volumes"
+    },
+    {
+      "slug": "tamagawa-factorization",
+      "title": "differential measures and Tamagawa products",
       "neededBy": [
         "6.1",
         "6.2",
@@ -2565,16 +3120,18 @@
         "7.4",
         "7.5",
         "7.6",
-        "8.3"
+        "8.1",
+        "8.3",
+        "8.5"
       ],
-      "detail": "Supply algebraic group adelic points with rational diagonals, quotient integration, invariant rational differential measures, convergence factors, Tamagawa measures including global normalizing L-values and their factorization. For connected reductive groups supply finite covolume when the connected center is anisotropic and finite volume modulo the split center otherwise; for F-split unipotent groups supply quotient volume one, including global function fields of odd characteristic. GlobalNumberFields alone supplies the number-field scalar adeles; RestrictedProducts supplies no measures. The earlier supplier text is absent; a number-field-only contract would require its Part II for the function-field half.",
-      "needs": "Supply algebraic group adelic points with rational diagonals, quotient integration, invariant rational differential measures, convergence factors, Tamagawa measures including global normalizing L-values and their factorization.",
+      "detail": "For the same global fields and smooth connected classical groups K, supply invariant rational differential local measures and convergence factors with the exact formula dK_Tam = (Delta_K^*)⁻¹ product_v Delta_K,v dK_v^src, finite-S decomposition and positive local rescalings whose product is dK_Tam, separately for ambient Gh convolution and diagonal Hh integration, identifying the unitary factors used in bpcz §2.3.",
+      "needs": "For the same global fields and smooth connected classical groups K, supply invariant rational differential local measures and convergence factors with the exact formula dK_Tam = (Delta_K^*)⁻¹ product_v Delta_K,v dK_v^src, finite-S decomposition and positive local rescalings whose product is dK_Tam, separately for ambient Gh convolution and diagonal Hh integration, identifying the unitary factors used in bpcz §2.3.",
       "supplier": "AdelicAlgebraicGroups",
-      "section": "missing: local points, global fields and Tamagawa contract"
+      "section": "missing: differential measures and Tamagawa products"
     },
     {
-      "slug": "automorphic-realizations",
-      "title": "Automorphic forms and period convergence estimates",
+      "slug": "cuspidal-tensors",
+      "title": "ordinary and genuine cuspidal tensor realizations",
       "neededBy": [
         "6.1",
         "6.2",
@@ -2582,57 +3139,157 @@
         "6.5",
         "7.6"
       ],
-      "detail": "Supply genuine and ordinary cuspidal automorphic realizations, Petersson pairings, restricted tensor factorizations and almost-everywhere spherical vectors, rapid decay estimates on reductive quotients, and theta-cusp growth estimates sufficient for absolute convergence of the relative Bessel and Fourier–Jacobi integrals of §6. The estimates must apply to the actual cuspidal and theta inputs, not be supplied as an integrability assumption on each conclusion. The text is absent. For split GL groups the realization has a fixed unitary central character and Petersson norm modulo the split center; supply convergence of the actual relative integrals without asserting finite volume of the full GL quotient.",
-      "needs": "Supply genuine and ordinary cuspidal automorphic realizations, Petersson pairings, restricted tensor factorizations and almost-everywhere spherical vectors, rapid decay estimates on reductive quotients, and theta-cusp growth estimates sufficient for absolute convergence of the relative Bessel and Fourier–Jacobi integrals of §6.",
+      "detail": "For the global classical groups and covers of §6 over number fields or odd-characteristic global function fields, supply actual irreducible ordinary and genuine cuspidal automorphic realizations with local restricted tensor factorization and almost-everywhere spherical vectors, using a fixed unitary central character and quotient by the split center for split GL norms.",
+      "needs": "For the global classical groups and covers of §6 over number fields or odd-characteristic global function fields, supply actual irreducible ordinary and genuine cuspidal automorphic realizations with local restricted tensor factorization and almost-everywhere spherical vectors, using a fixed unitary central character and quotient by the split center for split GL norms.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "missing: cuspidal realizations and restricted tensor products"
+      "section": "missing: ordinary and genuine cuspidal tensor realizations"
     },
     {
-      "slug": "spectral-isolation",
-      "title": "Schwartz spectral analysis and isolation",
+      "slug": "petersson-pairings",
+      "title": "Petersson pairings and local tensors",
+      "neededBy": [
+        "6.1",
+        "6.2",
+        "6.5",
+        "8.1"
+      ],
+      "detail": "For these actual cuspidal realizations supply positive Tamagawa Petersson pairings, modulo the split center when necessary, and their isometric restricted tensor identification with chosen invariant local pairings and norm-one spherical reference vectors, so global orthonormal expansions and local trace contractions use compatible Hilbert structures.",
+      "needs": "For these actual cuspidal realizations supply positive Tamagawa Petersson pairings, modulo the split center when necessary, and their isometric restricted tensor identification with chosen invariant local pairings and norm-one spherical reference vectors, so global orthonormal expansions and local trace contractions use compatible Hilbert structures.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "missing: Petersson pairings and local tensors"
+    },
+    {
+      "slug": "period-growth",
+      "title": "cusp and theta-cusp period estimates",
+      "neededBy": [
+        "6.1",
+        "6.2",
+        "6.5"
+      ],
+      "detail": "For the actual cusp and theta inputs of §6.1–§6.2 supply rapid decay on reductive quotients and theta-cusp growth estimates implying absolute convergence of their displayed Bessel and Fourier–Jacobi integrals, including split GL with fixed unitary central character and norms modulo the split center, without assuming finite volume of the full GL quotient or integrability as the conclusion hypothesis.",
+      "needs": "For the actual cusp and theta inputs of §6.1–§6.2 supply rapid decay on reductive quotients and theta-cusp growth estimates implying absolute convergence of their displayed Bessel and Fourier–Jacobi integrals, including split GL with fixed unitary central character and norms modulo the split center, without assuming finite volume of the full GL quotient or integrability as the conclusion hypothesis.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "missing: cusp and theta-cusp period estimates"
+    },
+    {
+      "slug": "local-tempered-estimates",
+      "title": "local tempered restriction estimates",
       "neededBy": [
         "5.1",
         "5.6",
         "7.3",
         "7.6",
+        "8.1"
+      ],
+      "detail": "For characteristic-zero local adjacent classical pairs supply Harish-Chandra matrix-coefficient and restriction bounds sufficient for the absolute H integrals and trace-integrated convolution in §§7.3,7.6,8.1 for tempered representations, on the actual finite-place or archimedean Schwartz spaces and with no dyadic or ramified exclusion.",
+      "needs": "For characteristic-zero local adjacent classical pairs supply Harish-Chandra matrix-coefficient and restriction bounds sufficient for the absolute H integrals and trace-integrated convolution in §§7.3,7.6,8.1 for tempered representations, on the actual finite-place or archimedean Schwartz spaces and with no dyadic or ramified exclusion.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "missing: local tempered restriction estimates"
+    },
+    {
+      "slug": "schwartz-trace",
+      "title": "Schwartz convolution and trace sums",
+      "neededBy": [
+        "5.1",
+        "5.6",
         "8.1",
         "8.2",
         "8.3",
         "8.4",
         "8.6"
       ],
-      "detail": "Supply local Harish-Chandra bounds and tempered matrix-coefficient estimates, Schwartz convolution and trace-class estimates, orthonormal-basis distribution expansions with absolute convergence, Eisenstein series and regularized periods, and cuspidal spectral isolation including endoscopic cuspidal data without a split-supercuspidal restriction. Supply the generic trace-formula truncation and continuous functional-analytic machinery used in bpcz §§3–9 and bplzz §§2–3. The text is absent.",
-      "needs": "Supply local Harish-Chandra bounds and tempered matrix-coefficient estimates, Schwartz convolution and trace-class estimates, orthonormal-basis distribution expansions with absolute convergence, Eisenstein series and regularized periods, and cuspidal spectral isolation including endoscopic cuspidal data without a split-supercuspidal restriction.",
+      "detail": "For the stated local tempered representations and global actual cuspidal realizations over number fields supply continuous Schwartz convolution, smoothing trace estimates and absolutely convergent K-finite orthonormal-basis expansions for the relative distributions of §8.1, with ambient Haar measure explicit, sufficient for basis changes, spectral summation and local rank-one extraction.",
+      "needs": "For the stated local tempered representations and global actual cuspidal realizations over number fields supply continuous Schwartz convolution, smoothing trace estimates and absolutely convergent K-finite orthonormal-basis expansions for the relative distributions of §8.1, with ambient Haar measure explicit, sufficient for basis changes, spectral summation and local rank-one extraction.",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "missing: full spectrum, multipliers and relative expansions"
+      "section": "missing: Schwartz convolution and trace sums"
     },
     {
-      "slug": "trace-transfer",
-      "title": "General relative trace formulas and transfer",
+      "slug": "eisenstein-periods",
+      "title": "Eisenstein and regularized period interfaces",
+      "neededBy": [
+        "8.1",
+        "8.2"
+      ],
+      "detail": "For actual star-generic Jacquet–Rallis cuspidal data over quadratic number-field extensions supply Eisenstein meromorphic continuation, regularized Rankin–Selberg and Flicker–Rallis periods with their regular parameter domains, generic truncation and continuous functional analysis used in bpcz §§3–9, without assuming the contribution identities proved in §8.2.",
+      "needs": "For actual star-generic Jacquet–Rallis cuspidal data over quadratic number-field extensions supply Eisenstein meromorphic continuation, regularized Rankin–Selberg and Flicker–Rallis periods with their regular parameter domains, generic truncation and continuous functional analysis used in bpcz §§3–9, without assuming the contribution identities proved in §8.2.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "missing: Eisenstein and regularized period interfaces"
+    },
+    {
+      "slug": "endoscopic-isolation",
+      "title": "cuspidal isolation without supercuspidal restriction",
+      "neededBy": [
+        "8.3",
+        "8.4"
+      ],
+      "detail": "For actual cuspidal spectral data and Hermitian discrete Arthur base changes over quadratic number-field extensions supply Schwartz spectral multipliers and convergent cuspidal isolation separating the required base-change spectrum as in bplzz §§2–3, including endoscopic constituents and with no split-supercuspidal hypothesis.",
+      "needs": "For actual cuspidal spectral data and Hermitian discrete Arthur base changes over quadratic number-field extensions supply Schwartz spectral multipliers and convergent cuspidal isolation separating the required base-change spectrum as in bplzz §§2–3, including endoscopic constituents and with no split-supercuspidal hypothesis.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "missing: cuspidal isolation without supercuspidal restriction"
+    },
+    {
+      "slug": "trace-distributions",
+      "title": "Jacquet–Rallis trace distributions",
       "neededBy": [
         "5.1",
         "5.6",
         "8.1",
         "8.2",
         "8.3",
+        "8.4"
+      ],
+      "detail": "For quadratic number-field extensions and actual linear and unitary Jacquet–Rallis Schwartz spaces supply their geometric and spectral distributions and the trace equality for matching regular orbital integrals with all convergence and regularization domains stated, and the local unitary relative trace expansion on tempered characteristic-zero local groups used in §5.",
+      "needs": "For quadratic number-field extensions and actual linear and unitary Jacquet–Rallis Schwartz spaces supply their geometric and spectral distributions and the trace equality for matching regular orbital integrals with all convergence and regularization domains stated, and the local unitary relative trace expansion on tempered characteristic-zero local groups used in §5.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: Jacquet–Rallis trace distributions"
+    },
+    {
+      "slug": "finite-smooth-transfer",
+      "title": "finite-place smooth transfer",
+      "neededBy": [
+        "8.3",
         "8.4",
         "8.5"
       ],
-      "detail": "Supply the linear and unitary Jacquet–Rallis geometric and spectral distributions on their actual Schwartz spaces, comparison for matching regular orbital integrals, smooth transfer at nonarchimedean places including dyadic places, dense archimedean transfer with continuity, unramified fundamental lemma and spherical base-change homomorphisms. Supply local relative character comparison with its explicit nonzero transfer constants and their global product one, as used in bpcz §10.3.5. These are general trace and transfer inputs; this roadmap owns isolation of the relevant contribution and the resulting period identities. The text is absent.",
-      "needs": "Supply the linear and unitary Jacquet–Rallis geometric and spectral distributions on their actual Schwartz spaces, comparison for matching regular orbital integrals, smooth transfer at nonarchimedean places including dyadic places, dense archimedean transfer with continuity, unramified fundamental lemma and spherical base-change homomorphisms.",
+      "detail": "For every nonarchimedean completion of a quadratic number-field extension including dyadic, ramified and split places, supply smooth transfer between the actual Jacquet–Rallis test spaces matching regular orbital integrals with the specified transfer factor and differential Haar normalization.",
+      "needs": "For every nonarchimedean completion of a quadratic number-field extension including dyadic, ramified and split places, supply smooth transfer between the actual Jacquet–Rallis test spaces matching regular orbital integrals with the specified transfer factor and differential Haar normalization.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "missing: Jacquet–Rallis trace and local comparison interfaces"
+      "section": "missing: finite-place smooth transfer"
     },
     {
-      "slug": "connected-reductions",
-      "title": "Connected and unitary forms of the induction reductions",
+      "slug": "archimedean-transfer",
+      "title": "dense continuous archimedean transfer",
       "neededBy": [
-        "4.8"
+        "8.3",
+        "8.4",
+        "8.5"
       ],
-      "detail": "Provide the SO analogue of §3.3 and the skew-unitary analogue of §3.4, with the exact Bernstein exclusions and normalization identifications used in ggp Theorem 19.1. The v1 proof of §19 invokes §15, whose orthogonal formulation explicitly uses O, and omits the skew-unitary details; these variants are not inferred just by dropping connected components. They are local proof obligations owned by this roadmap, with source ggp line 2661 and ggp line 2699 as their locator.",
-      "needs": "Provide the SO analogue of §3.3 and the skew-unitary analogue of §3.4, with the exact Bernstein exclusions and normalization identifications used in ggp Theorem 19.1.",
-      "supplier": "none",
-      "section": "§4.8 proof: SO and skew-unitary open-orbit comparisons"
+      "detail": "For real and complex completions supply a dense transferable subspace of the actual Jacquet–Rallis Schwartz spaces with continuous orbital-integral and relative-character distributions, so identities on matching functions extend by continuity in the stated Schwartz topology.",
+      "needs": "For real and complex completions supply a dense transferable subspace of the actual Jacquet–Rallis Schwartz spaces with continuous orbital-integral and relative-character distributions, so identities on matching functions extend by continuity in the stated Schwartz topology.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: dense continuous archimedean transfer"
+    },
+    {
+      "slug": "spherical-base-change",
+      "title": "spherical transfer and base change",
+      "neededBy": [
+        "8.3"
+      ],
+      "detail": "At every unramified hyperspecial place of the quadratic extension where spherical data exist, supply the Jacquet–Rallis unit fundamental lemma and spherical Hecke base-change homomorphism with its Satake eigenvalue relation and compact-volume normalization; this almost-everywhere input does not exclude any local integrals from the endpoints.",
+      "needs": "At every unramified hyperspecial place of the quadratic extension where spherical data exist, supply the Jacquet–Rallis unit fundamental lemma and spherical Hecke base-change homomorphism with its Satake eigenvalue relation and compact-volume normalization; this almost-everywhere input does not exclude any local integrals from the endpoints.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: spherical transfer and base change"
+    },
+    {
+      "slug": "relative-character-constants",
+      "title": "normalized local character comparison constants",
+      "neededBy": [
+        "8.5"
+      ],
+      "detail": "For tempered unitary sigma_v with actual base change Pi_v and convergent traces, supply on matching test functions the source-differential identity I_Pi_v(fv) = kappa_v J_sigma_v^raw(fhv) with specified kappa_v ∈ Cˣ, product_(v in S) kappa_v = 1 for globally compatible source data as in bpcz §10.3.5 (bpcz line 4939–4941), and its conversion J_v = b_G,v b_H,v Cv⁻¹ J_sigma_v^raw when Cv is finite nonzero and the ambient and diagonal measures are multiplied by b_G,v and b_H,v, including the resulting change of comparison constants.",
+      "needs": "For tempered unitary sigma_v with actual base change Pi_v and convergent traces, supply on matching test functions the source-differential identity I_Pi_v(fv) = kappa_v J_sigma_v^raw(fhv) with specified kappa_v ∈ Cˣ, product_(v in S) kappa_v = 1 for globally compatible source data as in bpcz §10.3.5 (bpcz line 4939–4941), and its conversion J_v = b_G,v b_H,v Cv⁻¹ J_sigma_v^raw when Cv is finite nonzero and the ambient and diagonal measures are multiplied by b_G,v and b_H,v, including the resulting change of comparison constants.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "missing: normalized local character comparison constants"
     }
   ]
 }

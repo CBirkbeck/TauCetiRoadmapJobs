@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v1"
-cited_for = ["1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4", "3.1", "3.3", "3.4", "3.5", "3.6", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "6.1", "6.2", "6.3", "6.4"]
+cited_for = ["1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4", "3.1", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "6.1", "6.2", "6.3", "6.4"]
 
 [[source]]
 id = "ichino-ikeda"
@@ -81,7 +81,7 @@ title = "The Gross-Prasad conjecture and local theta correspondence"
 year = 2014
 arxiv = "1409.6824v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.3; Corollary 1.4; Proposition 1.2; Sections 3.2 and 9; Propositions 9.1-9.4; gan-ichino line 19, 116, 119, 141, 437, 2476, 2494, 2502"
+locator = "Theorem 1.3; Corollary 1.4; Proposition 1.2; Sections 3.2, 4.1–4.6 and 9; Propositions 9.1-9.4; gan-ichino line 19, 116, 119, 141, 437, 2476, 2494, 2502"
 url = "https://arxiv.org/abs/1409.6824v2"
 fetched_from = "https://arxiv.org/pdf/1409.6824v2"
 fetched_at = "2026-10-20T21:21:52Z"
@@ -183,3 +183,39 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v3"
 cited_for = ["5.6"]
+
+[[source]]
+id = "bp-refined"
+authors = "R. Beuzart-Plessis"
+title = "Endoscopie et conjecture locale raffinée de Gan–Gross–Prasad pour les groupes unitaires"
+year = 2014
+venue = "Compositio Mathematica 151"
+doi = "10.1112/s0010437x14007891"
+locator_scheme = "theorem"
+locator = "Theorem 8.5.1, printed pp. 70–71; §§7.2, 7.7, 8.3"
+url = "https://hal.science/hal-00761084v2"
+fetched_from = "https://hal.science/hal-00761084/document"
+fetched_at = "2026-10-21T09:01:29Z"
+sha256 = "ad5eb4a7540d3026a60728122a8d880d78485d093ef2aac25abfbeb4849b2a86"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["5.1"]
+
+[[source]]
+id = "bp-unitary-tempered"
+authors = "Raphaël Beuzart-Plessis"
+title = "La conjecture locale de Gross-Prasad pour les représentations tempérées des groupes unitaires"
+year = 2012
+arxiv = "1205.2987v2"
+locator_scheme = "theorem"
+locator = "Theorem 18.4.1"
+url = "https://arxiv.org/abs/1205.2987v2"
+fetched_from = "https://arxiv.org/pdf/1205.2987v2"
+fetched_at = "2026-10-21T09:02:11Z"
+sha256 = "db61c2ef03e3c474ba8fd36e85612cc482fc6cea66c0b3a381e612a96d6d5932"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2"
+cited_for = ["5.1"]
