@@ -2046,6 +2046,7 @@
       "slug": "unitary-special-compatibility",
       "title": "Special homomorphism under basic uniformizations",
       "neededBy": [
+        "2.6",
         "5.2",
         "6.1",
         "6.2"
