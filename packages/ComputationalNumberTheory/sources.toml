@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComputationalNumberTheory"
+
+[[source]]
+id = "mattuck"
+authors = "Arthur Mattuck"
+title = "https://people.dm.unipi.it/lombardo/NonAbelianChabauty/Mat55.pdf"
+year = 1955
+locator_scheme = "theorem"
+locator = "Theorem 7"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/145#issuecomment-6315645206"
