@@ -139,3 +139,14 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "nikulin-1979-finite-automorphism-groups-k3.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304714828"
+
+[[source]]
+id = "nygaard-vectorfields"
+authors = "Niels O. Nygaard"
+title = "A p-adic proof of the non-existence of vector fields on K3 surfaces"
+year = 1979
+locator_scheme = "theorem"
+locator = "Lemma 3.3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6305614781"
