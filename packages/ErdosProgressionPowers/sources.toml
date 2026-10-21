@@ -31,3 +31,49 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "erdos-selfridge-1975-product-consecutive-integers.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/30#issuecomment-6304714505"
+
+[[source]]
+id = "IwaniecKowalski2004"
+authors = "Henryk Iwaniec and Emmanuel Kowalski"
+title = "Analytic Number Theory"
+year = 2004
+doi = "10.1090/coll/053"
+locator_scheme = "theorem"
+locator = "Theorems 5.26–5.28, 12.13; Proposition 5.25"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/65#issuecomment-6306906253"
+
+[[source]]
+id = "RosserSchoenfeld1962"
+authors = "J. Barkley Rosser and Lowell Schoenfeld"
+title = "Approximate formulas for some functions of prime numbers"
+year = 1962
+doi = "10.1215/ijm/1255631807"
+locator_scheme = "theorem"
+locator = "Theorems 1, 5, 6"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/65#issuecomment-6306906253"
+
+[[source]]
+id = "Tenenbaum1995"
+authors = "Gérald Tenenbaum"
+title = "Introduction to Analytic and Probabilistic Number Theory"
+year = 1995
+locator_scheme = "theorem"
+locator = "Theorems 5, 9 and following remark, as located in BS20 pp. 365, 384"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/65#issuecomment-6306906253"
+
+[[source]]
+id = "RahmanRoth"
+authors = "Mustazee Rahman"
+title = "Roth’s theorem on 3-term arithmetic progressions"
+year = "undated"
+locator_scheme = "theorem"
+locator = "Bound (36), as cited in BS20 §9, Theorem 8"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/65#issuecomment-6306906253"
