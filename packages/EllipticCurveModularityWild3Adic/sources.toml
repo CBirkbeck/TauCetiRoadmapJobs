@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularityWild3Adic"
+
+[[source]]
+id = "Serre"
+authors = "Jean-Pierre Serre"
+title = "Corps locaux"
+year = 1962
+locator_scheme = "section"
+locator = "Chapter XIV section 1 Proposition 3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/226#issuecomment-6328487307"
