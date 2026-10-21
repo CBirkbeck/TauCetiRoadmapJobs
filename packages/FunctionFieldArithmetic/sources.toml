@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FunctionFieldArithmetic"
+
+[[source]]
+id = "roquette"
+authors = "P. Roquette"
+title = "Class field theory in characteristic p, its origin and development"
+year = 2002
+locator_scheme = "section"
+locator = "§4.3.3, pp. 25–28; equation (4), p. 22; §8.1 (Witt's algebraic proof)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/215#issuecomment-6326740318"
