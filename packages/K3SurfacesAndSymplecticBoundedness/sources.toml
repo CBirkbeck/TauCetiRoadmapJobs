@@ -87,6 +87,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304566635"
+cited_for = ["2.2", "2.3", "2.1a"]
 
 [[source]]
 id = "mukai"
@@ -103,6 +104,8 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304566635"
+version_note = "1988 GDZ original; its main theorem is numbered (0.3), not an unchecked Theorem0.1"
+cited_for = ["6.2", "6.9", "6.10", "6.1a", "6.8a"]
 
 [[source]]
 id = "rudakov-shafarevich"
@@ -114,6 +117,7 @@ locator = "§8, Proposition 3"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6303902182"
+cited_for = ["2.2", "6.5", "2.1a", "6.4a"]
 
 [[source]]
 id = "matsusaka-mumford"
@@ -126,6 +130,7 @@ locator = "Theorem 2, as cited in rizov line 1084"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304566635"
+cited_for = ["8.2"]
 
 [[source]]
 id = "nikulin-symplectic"
@@ -139,6 +144,8 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "nikulin-1979-finite-automorphism-groups-k3.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304714828"
+version_note = "Operator-held Russian original, Trudy Moskovskogo Matematicheskogo Obshchestva38 (1979), pp.75–137; no numbering match to the 1980 translation is presumed"
+cited_for = ["6.2", "6.1a"]
 
 [[source]]
 id = "nygaard-vectorfields"
@@ -150,6 +157,345 @@ locator = "Lemma 3.3"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6305614781"
+cited_for = ["2.2", "2.1a"]
+
+[[source]]
+id = "oda"
+authors = "Tadao Oda"
+title = "The first de Rham cohomology group and Dieudonné modules"
+year = 1969
+venue = "Annales scientifiques de l’École Normale Supérieure, 4e série, 2, pp.63–135"
+doi = "10.24033/asens.1175"
+locator_scheme = "theorem"
+locator = "Corollary 5.12, p.131; oda line 2490"
+url = "https://www.numdam.org/item/ASENS_1969_4_2_1_63_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1969_4_2_1_63_0.pdf"
+fetched_at = "2026-10-21T01:37:54Z"
+sha256 = "a17490b6e1e1270199ac4b5c3a4937567a017ed1d9ae039bad0685a15a285684"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.3"]
+version_note = "1969 Numdam original; the rational-point hypothesis is retained by passage to an algebraically closed field"
+
+[[source]]
+id = "nygaard-closedness"
+authors = "Niels O. Nygaard"
+title = "Closedness of regular 1-forms on algebraic surfaces"
+year = 1979
+venue = "Annales scientifiques de l'École normale supérieure 12"
+doi = "10.24033/asens.1360"
+locator_scheme = "theorem"
+locator = "Corollary2.7, p.41; nygaard-closedness line286"
+url = "https://doi.org/10.24033/asens.1360"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1360.pdf"
+fetched_at = "2026-10-21T01:36:25Z"
+sha256 = "e54c84a51c69a947a4c5f5bc2de10c50474827f1ca2ff53a747d989a76c8e038"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.2", "2.1a"]
+
+[[source]]
+id = "wild-cyclic"
+authors = "I. Dolgachev, J. Keum"
+title = "Wild p-cyclic actions on K3 surfaces"
+year = 1998
+arxiv = "math/9812094v1"
+locator_scheme = "theorem"
+locator = "Theorems 1-4"
+url = "https://arxiv.org/abs/math/9812094v1"
+fetched_from = "https://arxiv.org/pdf/math/9812094v1"
+fetched_at = "2026-10-21T01:36:32Z"
+sha256 = "f57c7ec16c50f9e4415ef429d68232abec437d94875a6d673e40d50e3cbb2db5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["6.3", "6.2a"]
+
+[[source]]
+id = "deligne-lift"
+locator_scheme = "theorem"
+locator = "Proposition 1.1, Corollary 1.2, Proposition 1.5, Theorem 1.6, Corollaries 1.7–1.8, §2 and Appendix §3, pp.58–79; deligne-lift lines 29,58,78,131,140,157,188"
+url = "https://publications.ias.edu/sites/default/files/Number36.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number36.pdf"
+fetched_at = "2026-10-21T01:37:10Z"
+sha256 = "caea4d901d59143b5a005adbff0b6bb3b7a854ec9cc57c25adcde15ebbf26d79"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.4", "2.5", "2.6", "2.7"]
+authors = "Pierre Deligne; written by Luc Illusie"
+title = "Relèvement des surfaces K3 en caractéristique nulle"
+year = 1981
+version_note = "Institutional scan of the LNM 868 contribution, printed pages58–79"
+
+[[source]]
+id = "terakawa"
+locator_scheme = "theorem"
+locator = "Theorems 1.4–1.6, Lemma 2.2, Theorem 2.4, Corollary 2.5, pp.190–198; terakawa lines148,176,183,354,390"
+url = "https://msp.org/pjm/1999/187-1/pjm-v187-n1-p09-p.pdf"
+fetched_from = "https://msp.org/pjm/1999/187-1/pjm-v187-n1-p09-p.pdf"
+fetched_at = "2026-10-21T01:37:11Z"
+sha256 = "4c660b54e7f2757640055e495f56adafc525395cf97ce9669beea8ba9f8a605e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["7.4", "7.5"]
+authors = "Hiroyuki Terakawa"
+title = "The d-very ampleness on a projective surface in positive characteristic"
+year = 1999
+doi = "10.2140/pjm.1999.187.187"
+
+[[source]]
+id = "artin-supersingular"
+authors = "Michael Artin"
+title = "Supersingular K3 surfaces"
+year = 1974
+venue = "Annales scientifiques de l'École normale supérieure 7"
+doi = "10.24033/asens.1279"
+locator_scheme = "theorem"
+locator = "Theorem (0.1), pp.543–544, lines 40–55; Theorem (1.7)(i), p.547, lines 192–210"
+url = "https://www.numdam.org/item/ASENS_1974_4_7_4_543_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1974_4_7_4_543_0.pdf"
+fetched_at = "2026-10-21T03:52:13Z"
+sha256 = "f75d3f289a33ef139f6ca2eb2f7271375114465d5bc1423643038c7475d67eba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["6.0a", "6.0c", "6.8a"]
+
+[[source]]
+id = "rudakov-shafarevich-inseparable"
+title = "Inseparable morphisms of algebraic surfaces"
+year = 1976
+authors = "A. N. Rudakov; I. R. Shafarevich"
+locator_scheme = "section"
+locator = "§2, Theorem 5 and Corollaries 1–2, pp.1216–1217, lines 438–497"
+url = "https://m.mathnet.ru/php/getFT.phtml?jrnid=im&paperid=2260&what=fullteng"
+fetched_from = "https://m.mathnet.ru/links/ed00f6a3586e34ff2eb07cbaff557165/im2260_eng.pdf"
+fetched_at = "2026-10-21T03:53:43Z"
+sha256 = "0c16411ef53a678a9ef21a599b0b99903f53a0e4772ccdddad57423d3829a6fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.1a", "6.0b"]
+
+[[source]]
+id = "shioda-unirational-primary"
+authors = "Tetsuji Shioda"
+title = "An example of unirational surfaces in characteristic p"
+year = 1974
+venue = "Mathematische Annalen 211"
+doi = "10.1007/BF01350715"
+locator_scheme = "theorem"
+locator = "§2, Lemma p.234, Corollary 2 p.235; lines 98–140"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0211/LOG_0049.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0211/LOG_0049.pdf"
+fetched_at = "2026-10-21T03:55:45Z"
+sha256 = "dce94c4a92982b892104373613c29b3b55d81cf4a98bcc43d35a99cd23c7d6b0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.1a", "6.2a", "6.3", "6.5", "6.0c"]
+
+[[source]]
+id = "artin-mazur-formal"
+locator_scheme = "section"
+locator = "I §1, pp.95–96, lines 391–416; II (1.3)–(1.4), pp.102–104, lines 658–685; II Proposition (2.13), p.107, lines 808–821; II Corollaries (4.1)–(4.4), pp.109–110, lines 902–938"
+url = "https://www.numdam.org/item/ASENS_1977_4_10_1_87_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1977_4_10_1_87_0.pdf"
+fetched_at = "2026-10-21T04:52:38Z"
+sha256 = "8c71c34290534220de9adb0f53550407e3299b08c356439db9e70c6f735e7fe8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["gap:witt-formal-brauer"]
+authors = "Michael Artin; Barry Mazur"
+title = "Formal groups arising from algebraic varieties"
+year = 1977
+
+[[source]]
+id = "illusie-witt"
+locator_scheme = "section"
+locator = "II Proposition 3.11 and Remark 3.11.2, pp.618–619, illusie-witt lines 4202–4223"
+url = "https://www.numdam.org/item/ASENS_1979_4_12_4_501_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1979_4_12_4_501_0.pdf"
+fetched_at = "2026-10-21T04:53:13Z"
+sha256 = "bf9b783b4f5f255133c68ccb544aec029f25828aa943a744ccb6958d51f218d8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = []
+authors = "Luc Illusie"
+title = "Complexe de de Rham–Witt et cohomologie cristalline"
+year = 1979
+
+[[source]]
+id = "sga2"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux (SGA 2)"
+year = 2005
+arxiv = "math/0511279v1"
+locator_scheme = "section"
+locator = "Exposé XII Corollary 3.5, p.120, sga2 lines 4277–4287; 2005 arXiv v1 re-edition"
+url = "https://arxiv.org/abs/math/0511279v1"
+fetched_from = "https://arxiv.org/pdf/math/0511279v1"
+fetched_at = "2026-10-21T04:53:45Z"
+sha256 = "41ad02c57321a8d2200ff32a929bc93adbc3de0d59dcd5a284d28d859fb87a90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["gap:hypersurface-cohomology"]
+
+[[source]]
+id = "stacks-surface-resolution"
+locator_scheme = "tag"
+locator = "54.3.4 (0AGS), p.7, lines 289–295; 54.14.5 (0BGP), pp.41–42, lines 1880–1908; 54.16.9–54.16.11 (0C2N, 0C5N, 0C5P), pp.50–51, lines 2274–2329; 54.17.1–54.17.2 (0C5R, 0C5S), p.52, lines 2335–2399"
+url = "https://stacks.math.columbia.edu/download/resolve.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/resolve.pdf"
+fetched_at = "2026-10-21T04:54:14Z"
+sha256 = "6c6efffce73e982fa6c090792042a1842e7f53816a18c24ea172749571fa3db7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["gap:surface-projectivity", "gap:surface-quotient-resolutions", "gap:ruled-surface-two-forms", "gap:witt-formal-brauer"]
+authors = "The Stacks Project Authors"
+title = "Resolution of Surfaces"
+year = 2026
+version_note = "Version ed88ff78, compiled July 14, 2026; section numbers within Chapter 54"
+
+[[source]]
+id = "liedtke-mckay"
+authors = "Christian Liedtke"
+title = "A McKay Correspondence in Positive Characteristic"
+year = 2024
+venue = "Forum of Mathematics, Sigma 12"
+doi = "10.1017/fms.2024.98"
+arxiv = "2207.06286v2"
+locator_scheme = "section"
+locator = "arXiv v2 §4.2, p.15, lines 609–629; Theorem 4.5, p.16, line 650; §4.6, Definition 4.11 and Theorem 4.12, pp.19–20, lines 786–815"
+url = "https://arxiv.org/abs/2207.06286v2"
+fetched_from = "https://arxiv.org/pdf/2207.06286v2"
+fetched_at = "2026-10-21T04:55:56Z"
+sha256 = "72a331ee10d39160f37821e3ca5688d716e85e78910dbaa7979dbeb1b64bd148"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v2 dated 8 October 2024; locators refer to this version, not to an unchecked published numbering"
+cited_for = ["gap:tame-quotient-singularities"]
+
+[[source]]
+id = "gros-chern"
+locator_scheme = "section"
+locator = "II Proposition 4.2.1, p.51, lines 1503–1508; III Theorem 1.1.1, p.60, lines 1778–1809; III Corollary 1.2.31(iii), p.65, lines 1943–1948; III §2.1, pp.65–66, lines 1950–1979; IV Theorem 2.1.1 and deformation argument §2.1, pp.78–82, lines 2313–2318 and 2373–2443; printed conormal/normal dual omission explicitly reconciled"
+url = "https://www.numdam.org/item/MSMF_1985_2_21__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/MSMF_1985_2_21__1_0.pdf"
+fetched_at = "2026-10-21T04:57:17Z"
+sha256 = "fffa536be3bcf10a24f4e8679258dc37bcab13b8ed5f77da15852033e9def27a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = []
+authors = "Michel Gros"
+title = "Classes de Chern et classes de cycles en cohomologie de Hodge-Witt logarithmique"
+year = 1985
+
+[[source]]
+id = "shioda-transcendental"
+authors = "Tetsuji Shioda"
+title = "An explicit algorithm for computing the Picard number of certain algebraic surfaces"
+year = 1986
+venue = "American Journal of Mathematics 108, pp.415–432"
+doi = "10.2307/2374678"
+locator_scheme = "theorem"
+locator = "Proposition 5; application locators keum lines 305–325 and dolgachev-keum lines 590–594"
+cited_for = ["gap:quotient-transcendental-comparison"]
+url = "https://doi.org/10.2307/2374678"
+licence_class = "none"
+status = "uncertified"
+version_note = "Published locator only; the sources service reached the JSTOR landing page but obtained no legal readable text; the proposition is not certified from secondary applications."
+
+[[source]]
+id = "stacks-relative-ample"
+authors = "The Stacks Project Authors"
+title = "Divisors on Algebraic Spaces"
+year = 2026
+locator_scheme = "tag"
+locator = "0D32–0D36, §14, pp.27–29"
+url = "https://stacks.math.columbia.edu/download/spaces-divisors.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-divisors.pdf"
+fetched_at = "2026-10-21T05:37:50Z"
+sha256 = "51d90e8a3058611785f756c163d700e762363e8ef69cbfc93b5aef7f9e1d0475"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["StableReduction supplier contract", "7.3", "8.2", "8.5"]
+
+[[source]]
+id = "liedtke-surfaces"
+year = 2013
+title = "Algebraic Surfaces in Positive Characteristic"
+authors = "Christian Liedtke"
+locator_scheme = "section"
+locator = "§4, Corollary 4.2 and Definition 4.3, pp.20–21, lines749–767; §8, Theorem 8.3, p.34, lines1326–1335; 55-page author notes, numbering as read"
+url = "https://cims.nyu.edu/~tschinke/books/simons12/lectures.pdf"
+fetched_from = "https://cims.nyu.edu/~tschinke/books/simons12/lectures.pdf"
+fetched_at = "2026-10-21T05:36:38Z"
+sha256 = "1f59795f87151b34d8d5c6a31a858592dad57d55ed0bf127cc5b1bf78e18e861"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["gap:elliptic-surface-geometry"]
+
+[[source]]
+id = "stacks-projective-morphisms"
+year = 2026
+title = "Morphisms of Schemes"
+authors = "The Stacks Project Authors"
+locator_scheme = "tag"
+locator = "01W8, Definition 44.1, pp.101–102, lines4633–4640; 01VW, Definition 41.1, p.93, lines4229–4238; 0B5N, Lemma 44.6, p.103, lines4688–4692; 0BCL, Lemma 44.13, p.105, lines4764–4777"
+url = "https://stacks.math.columbia.edu/download/morphisms.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf"
+fetched_at = "2026-10-21T05:36:39Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["StableReduction supplier contract", "7.3", "8.2", "8.5"]
+
+[[source]]
+id = "enriques-one"
+year = 2024
+title = "Enriques Surfaces I"
+authors = "François Cossec; Igor Dolgachev; Christian Liedtke"
+locator_scheme = "theorem"
+locator = "Author draft dated 19 April 2024: Theorem 4.1.6, pp.364–366, lines17528–17594; Proposition 4.3.7 and Corollary 4.3.8, p.385, lines18458–18471; Theorem 4.3.9(3), p.385, lines18472–18483; Proposition 4.3.14, p.389, lines18646–18657; Theorem 4.3.20, p.392, lines18799–18817"
+url = "https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf"
+fetched_from = "https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf"
+fetched_at = "2026-10-21T05:37:30Z"
+sha256 = "3c6bf1d54954e28728935bbe1f4b1e38435fe469cf2b8543d657087815a2f526"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["gap:elliptic-surface-geometry"]
+
+[[source]]
+id = "arapura-chern"
+authors = "Donu Arapura"
+title = "Algebraic Geometry over the Complex Numbers"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1809-2"
+locator_scheme = "section"
+locator = "§7.5, Lemma 7.5.1 and Definition 7.5.2, p.150"
+url = "https://doi.org/10.1007/978-1-4614-1809-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["gap:integral-topology"]
 
 [[source]]
 id = "liu"
