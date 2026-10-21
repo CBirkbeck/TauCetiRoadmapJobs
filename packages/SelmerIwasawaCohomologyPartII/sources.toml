@@ -1,0 +1,93 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SelmerIwasawaCohomologyPartII"
+
+[[source]]
+id = "ltxzz"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
+year = 2019
+arxiv = "1912.11942v3"
+locator_scheme = "theorem"
+locator = "Definitions 2.2.4–2.2.5 and Lemma 2.2.7, pp. 13–14 (ltxzz lines 591–623); L1–L2, p. 131 (lines 6370–6371); equations (8.5), (8.14), the integral lattice map and coefficient-place pairings, pp. 136–137,141–142 (lines 6637–6649, 6681–6693, 6891–6910); Definitions 4.3.1–4.3.4 and Theorem 4.3.5, pp. 39–41 (lines 1788–1890); Proposition 3.2.4(2), p. 27 (ltxzz lines 1204–1217); Lemma 4.2.4, p. 38 (lines 1744–1754); Remark 5.2.8, p. 59 (lines 2754–2768); Definition 6.3.4(2),(4) and §6.4, pp. 115–116 (lines 5623–5632, 5660–5661); proofs of (8.5), (8.14), pp. 137,141 (lines 6700–6701, 6901–6902); Definitions 2.1.2, 2.1.6, 3.1.5, 3.3.4, 6.3.4, 8.1.1, D.1.1; Hypothesis 3.2.10; Proposition D.2.3, pp. 174–177 (ltxzz line 9631); Theorems 4.3.5, 4.6.2, 5.2.5, 5.3.4, 5.4.4, 5.5.3, 5.7.7, 5.7.8, 5.11.5, 6.2.3, 6.3.5, 7.2.8, 7.3.4, 8.2.2, 8.3.2; equation (5.28); equation (8.10); Remark 1.1.10; exact line locators in the plan"
+url = "https://arxiv.org/abs/1912.11942v3"
+fetched_from = "https://arxiv.org/pdf/1912.11942v3"
+fetched_at = "2026-10-20T21:28:53Z"
+sha256 = "84dc7c8369298314bd4e7ece5a45e5e096f39bd376f08c4c489950873c46fe86"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v3"
+cited_for = ["1.5–8.4; coefficient algebra, unitary geometry, diagonal regulators, two reciprocity laws and rank theorems"]
+
+[[source]]
+id = "liu-tian"
+authors = "Yifeng Liu, Yichao Tian"
+title = "Supersingular locus of Hilbert modular varieties, arithmetic level raising and Selmer groups"
+year = 2017
+venue = "Alg. Number Th. 14 (2020) 2059-2119"
+doi = "10.2140/ant.2020.14.2059"
+arxiv = "1710.11492v2"
+locator_scheme = "theorem"
+locator = "Section 4.1, Assumption 4.1, Definition 4.5 and Theorem 4.7, pages 30-32"
+url = "https://arxiv.org/abs/1710.11492v2"
+fetched_from = "https://arxiv.org/pdf/1710.11492v2"
+fetched_at = "2026-10-20T21:28:58Z"
+sha256 = "a1ac39e45749b13718d11a2850a54fc8f3308867b3bf5d446239b9282402e739"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v2"
+cited_for = ["8.5; Hilbert modular precursor comparison and upstream ownership"]
+
+[[source]]
+id = "ltxzz-deformation"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "Deformation of rigid conjugate self-dual Galois representations"
+year = 2021
+arxiv = "2108.06998v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.6.3, page 30 (ltxzz-deformation line 1444); Corollary 4.1.2 (line 1761); Theorem 4.2.6 (line 1880)"
+url = "https://arxiv.org/abs/2108.06998v1"
+fetched_from = "https://arxiv.org/pdf/2108.06998v1"
+fetched_at = "2026-10-20T21:30:37Z"
+sha256 = "fce1c9ae227dc1fcbc2fa712ae0034f7454b77595f63b927a7bdc7237f81292a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-20"
+version_note = "arXiv v1"
+cited_for = ["3.3–3.6, 7.4; rigid-r-equals-t and eventual-rigidity supplier contracts"]
+
+[[source]]
+id = "ltxzz-published"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
+year = 2021
+venue = "Invent. Math. 226 (2021), 107-419"
+doi = "10.1007/s00222-021-01088-4"
+version_note = "Published version; reflexive closure uses the intersection, unlike arXiv v3"
+locator_scheme = "theorem"
+locator = "Definitions 3.3.1-3.3.4 and Remark 3.3.3, p. 147; Definition 8.1.1 and Remark 8.1.2, pp. 303-304; ltxzz-published lines 1533-1556, 7345-7386"
+url = "https://par.nsf.gov/servlets/purl/10323568"
+fetched_from = "https://par.nsf.gov/servlets/purl/10323568"
+fetched_at = "2026-10-21T07:52:00Z"
+sha256 = "dd821abd2b06233cb69cdc88de242b689686d5f2ce0c2072128abcd54ec89d97"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["Conventions, 1.5-1.6, 7.1-7.4; published reflexive closure and compatibility with PELModuli M0.26"]
+
+[[source]]
+id = "stacks-blowup"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Divisors"
+year = 2026
+locator_scheme = "tag"
+locator = "0806"
+url = "https://stacks.math.columbia.edu/tag/0806"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf#nameddest=0806"
+fetched_at = "2026-10-21T08:35:19Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.6; one-way effective-Cartier lifting property"]
