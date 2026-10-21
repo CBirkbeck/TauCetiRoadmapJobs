@@ -8,7 +8,7 @@ title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
 year = 2019
 arxiv = "1912.11942v3"
 locator_scheme = "theorem"
-locator = "Definitions 2.1.2, 2.1.6, 3.1.5, 3.3.4, 6.3.4, 8.1.1, D.1.1; Hypothesis 3.2.10; Theorems 4.3.5, 4.6.2, 5.2.5, 5.3.4, 5.4.4, 5.5.3, 5.7.7, 5.7.8, 5.11.5, 6.2.3, 6.3.5, 7.2.8, 7.3.4, 8.2.2, 8.3.2; equation (5.28); equation (8.10); Remark 1.1.10; exact line locators in the plan"
+locator = "Definitions 2.1.2, 2.1.6, 3.1.5, 3.3.4, 6.3.4, 8.1.1, D.1.1; Hypothesis 3.2.10; Proposition D.2.3, pp. 174–177 (ltxzz line 9631); Theorems 4.3.5, 4.6.2, 5.2.5, 5.3.4, 5.4.4, 5.5.3, 5.7.7, 5.7.8, 5.11.5, 6.2.3, 6.3.5, 7.2.8, 7.3.4, 8.2.2, 8.3.2; equation (5.28); equation (8.10); Remark 1.1.10; exact line locators in the plan"
 url = "https://arxiv.org/abs/1912.11942v3"
 fetched_from = "https://arxiv.org/pdf/1912.11942v3"
 fetched_at = "2026-10-20T21:28:53Z"
@@ -75,3 +75,19 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["Conventions, 1.5-1.6, 7.1-7.4; published reflexive closure and compatibility with PELModuli M0.26"]
+
+[[source]]
+id = "stacks-blowup"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Divisors"
+year = 2026
+locator_scheme = "tag"
+locator = "0806"
+url = "https://stacks.math.columbia.edu/tag/0806"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf#nameddest=0806"
+fetched_at = "2026-10-21T08:35:19Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.6; one-way effective-Cartier lifting property"]
