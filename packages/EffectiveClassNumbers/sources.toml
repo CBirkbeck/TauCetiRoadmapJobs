@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EffectiveClassNumbers"
+
+[[source]]
+id = "O88"
+authors = "['Joseph Oesterlé']"
+title = "Le problème de Gauss sur le nombre de classes"
+year = 1988
+doi = "10.5169/seals-56588"
+locator_scheme = "page"
+locator = "§8 p. 66; §9 pp. 66–67"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/136#issuecomment-6310736898"
