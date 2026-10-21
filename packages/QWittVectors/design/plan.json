@@ -2307,7 +2307,7 @@
             {
               "name": "QWitt.differential_etaleDifferential",
               "role": "evaluation",
-              "statement": "For a nonnegative DGA P and an étale map P⁰→S, the graded scalar extension S⊗_{P⁰}P admits exactly one extending differential."
+              "statement": "For P=Q_mΩ*_{R/A}, B=A[q] and S=Q_m(R′/A) with R→R′ étale, S⊗_{P⁰}P has the unique B-linear differential extending d, by the nonnegative graded-commutative, strictly odd-alternating étale-extension contract in gap:ordinary-derham."
             }
           ],
           "tests": [
@@ -2325,9 +2325,14 @@
               "name": "QWitt.differential_baseChange_3",
               "kind": "non-example",
               "statement": "For A=ℤ,m=1, the étale localization ℤ[T]→ℤ[T,T⁻¹] has d(T⁻¹)=−T⁻²dT≠0. Defining the extended differential by s⊗ω↦s⊗dω would instead give zero on T⁻¹."
+            },
+            {
+              "name": "QWitt.differential_baseChange_skewExcluded",
+              "kind": "non-example",
+              "statement": "Over the commutative base ℤ, take the associative square-zero DGA with P⁰=ℤ[x], P¹=ℤ[x]u, d=0 and ub=b(0)u; the étale localization S=ℤ[x,x⁻¹] leaves S⊗_{P⁰}P¹=Su nonzero, but a compatible multiplication would give u=(ux)x⁻¹=0, so this noncentral-degree-zero DGA is excluded from the supplier contract."
             }
           ],
-          "proofSketch": "Λ-base change follows from initiality and 4.5. For étale scalar extension use Ω*_{S/A[q]}⊗_{Ω*_{P⁰/A[q]}}P to define the differential. Transfer F and V using 5.1 and verify the Teichmüller and FdV identities by uniqueness of étale derivations. Module descent gives the degreewise sheaf property.",
+          "proofSketch": "Λ-base change follows from initiality and 4.5. Apply the generic étale-extension contract of gap:ordinary-derham with B=A[q], P=Q_mΩ*_{R/A} and S=Q_m(R′/A); P is nonnegative, graded commutative and strictly odd alternating, and 5.1 makes P⁰→S étale. Transfer F and V using 5.1 and verify the Teichmüller and FdV identities by uniqueness of étale derivations. Module descent gives the degreewise sheaf property.",
           "usedBy": [
             "target:9.5",
             "target:9.6",
@@ -2526,7 +2531,8 @@
           "proofSketch": "Use 1.7 and the commuting derivatives. The skew coefficient rule and commuting γ_i prove associativity; 8.3 proves Leibniz. Finite free coordinate differential modules identify the terms and their h-specializations. The framed DGA is associative, not a commutative DGA.",
           "usedBy": [
             "target:8.5",
-            "target:9.4"
+            "target:9.4",
+            "target:9.4a"
           ]
         },
         {
@@ -2761,6 +2767,60 @@
           ]
         },
         {
+          "id": "9.4a",
+          "kind": "theorem",
+          "name": "QWitt.framedProductHomotopy",
+          "statement": "For a commutative ring A and an ordered finite-coordinate étale frame □ of R/A, put H□=K(R[[h]];hD_i), with its skew product from §8.4 and e_i=dT_i. Construct a continuous A[[h]]-bilinear map H of total degree −1 such that for homogeneous α of degree k and β of degree ℓ, αβ−(−1)^(kℓ)βα=d_H H(α,β)+H(d_Hα,β)+(−1)^k H(α,d_Hβ). The same identity holds after quotienting by q^m−1 for every m>0; consequently every signed commutator of closed forms is a boundary.",
+          "hypotheses": [
+            "A any commutative ring; R has a specified ordered finite-coordinate étale frame; h=q−1; k,ℓ≥0; m>0 for the quotient identity; no perfect-coverage or torsion hypothesis."
+          ],
+          "locator": {
+            "source": "wagner",
+            "where": "§4.8, pp. 57, lines 2858–2872; Lemma 4.17, p. 61, lines 3033–3052 (cohomology conclusion); the product homotopy follows from the skew rules by the displayed telescoping proof"
+          },
+          "prerequisites": [
+            "target:8.4"
+          ],
+          "api": [
+            {
+              "name": "QWitt.framedProductHomotopy_formula",
+              "role": "evaluation",
+              "statement": "On ordered basis forms a e_I,b e_J, set H=∑_i H_i, where H_i=0 unless i∈I∩J, and H_i(a e_I,b e_J)=(−1)^|I| T_i γ_{J<i}(a)γ_{I>i}(b) e_I∧ι_i(e_J); here γ_U=∏_{j∈U}γ_j, J<i={j∈J:j<i}, I>i={j∈I:j>i}, and ∧ and ι_i are the ordinary exterior-basis wedge and signed contraction, with all coefficients on the left."
+            },
+            {
+              "name": "QWitt.framedProductHomotopy_coordinate",
+              "role": "normalization",
+              "statement": "For every form ω, H(e_i,ω)=K_iω with K_i=−T_i(e_i∧ι_i), so e_iω−(−1)^|ω|ωe_i=d_HK_iω−K_i d_Hω."
+            },
+            {
+              "name": "QWitt.framedProductHomotopy_quotient",
+              "role": "compatibility",
+              "statement": "The A[[h]]-bilinearity makes H descend to H□/(q^m−1) for every positive m, and the product-homotopy identity descends without a torsion assumption or a choice of prime."
+            }
+          ],
+          "tests": [
+            {
+              "name": "QWitt.framedProductHomotopy_twoVariable",
+              "kind": "non-example",
+              "statement": "For A=ℤ,R=ℤ[X,Y],m=2 and ω=YdX+XdY, d_Hω=0 but (γ_X−id)ω=hXdY≠0 modulo h(h+2); H(dX,ω)=−XYdX and dX·ω+ω·dX=hX dX∧dY=d_H(−XYdX)≠0 as a cochain. Cancelling h would make vanishing imply X=2a₀ in ℤ[X,Y], which is impossible, so coefficientwise invariance cannot replace the boundary identity."
+            },
+            {
+              "name": "QWitt.framedProductHomotopy_lowRank",
+              "kind": "degenerate",
+              "statement": "For rank zero H=0 and both products agree; for rank one H(a dT,b dT)=−Tab dT, and the homotopy identity on (a dT,b) reads a(γ(b)−b)dT=Ta(hD b)dT, fixing the contraction sign."
+            },
+            {
+              "name": "QWitt.framedProductHomotopy_mixedDegrees",
+              "kind": "computation",
+              "statement": "For A=ℤ,R=ℤ[X,Y,Z], α=dX∧dY and β=ZdX+XdZ are closed in H□; H(α,β)=XZ dX∧dY and αβ−βα=hX dX∧dY∧dZ=d_H(XZ dX∧dY), testing closed inputs of degrees two and one."
+            }
+          ],
+          "proofSketch": "For 0≤s≤r define μ_s(a e_I,b e_J)=γ_{J≤s}(a)γ_{I>s}(b)e_I∧e_J, with ordinary exterior-basis wedge. The two equivalent twisted Leibniz formulas for hD_j show that every μ_s is a chain map. The displayed H_i satisfies μ_(i−1)−μ_i=d_H H_i+H_i(d_H⊗1+1⊗d_H), with the tensor differential carrying its cochain sign: in coordinate i use γ_i−id=T_i hD_i, and in each other coordinate use the twisted Leibniz rule and γ_jT_i=T_i for j≠i. Sum over i; μ_0 is the skew product and μ_r is its signed opposite. This proves the identity for all forms before any quotient, not just for degree-zero cocycles.",
+          "usedBy": [
+            "target:9.5"
+          ]
+        },
+        {
           "id": "9.5",
           "kind": "theorem",
           "name": "QWitt.framedCohomologySystem",
@@ -2776,6 +2836,7 @@
             "target:1.8",
             "target:9.3",
             "target:9.4",
+            "target:9.4a",
             "target:5.4",
             "target:7.7",
             "gap:cohomology-completion"
@@ -2814,7 +2875,7 @@
               "statement": "For zero variables E_m=R[[h]]/(q^m−1) in degree zero and β_m=0."
             }
           ],
-          "proofSketch": "Construct the degree-zero map by the finite arithmetic fracture square, using the polynomial comparison and the framed p-adic lifts on each completed factor. Lemma 4.25 is the cohomology/completion supplier gap. Reduce ℤ-torsion-freeness to 9.3 by finite-type and flat étale base change; commutativity follows because γ_i−id vanishes on cocycles modulo q^m−1. Torsion-freeness forces odd squares to zero, including at 2, and proves the Teichmüller relation. All constructions remain dependent on the specified frame.",
+          "proofSketch": "Construct the degree-zero map by the finite arithmetic fracture square, using the polynomial comparison and the framed p-adic lifts on each completed factor. Lemma 4.25 is the cohomology/completion supplier gap. Reduce ℤ-torsion-freeness to 9.3 by finite-type and flat étale base change; graded commutativity follows from §9.4a: the signed commutator of any two closed forms is d_H H(α,β), hence a boundary modulo q^m−1. Torsion-freeness forces odd squares to zero, including at 2, and proves the Teichmüller relation. All constructions remain dependent on the specified frame.",
           "usedBy": [
             "target:9.6"
           ]
@@ -2895,7 +2956,7 @@
             "target:3.7",
             "target:4.6",
             "gap:ordinary-derham",
-            "gap:prismatic-frobenius",
+            "gap:pd-presentation",
             "gap:cyclotomic-contract",
             "roadmap:EnhancedDerivedSheaves §E5:abstract",
             "roadmap:DerivedModuleAlgebra §0.2"
@@ -3113,7 +3174,7 @@
     {
       "roadmap": "PrismaticCohomology",
       "sections": [],
-      "what": "Required interface: Frobenius-compatible framed q-prismatic comparison. See gap:prismatic-frobenius."
+      "what": "Required interfaces: Frobenius-compatible framed q-prismatic comparison and multiplicative δ-compatible PD-presentation comparison. See gap:prismatic-frobenius and gap:pd-presentation."
     }
   ],
   "consumers": [
@@ -3148,8 +3209,8 @@
         "10.1",
         "9.7"
       ],
-      "detail": "Beyond the Mathlib polynomial and factorization declarations above, require: for m>1 the ideal generated by [p]_{q^(m/p)} for p|m is (Φ_m); distinct cyclotomic factors meet only at a prime-power ratio, with the stated characteristic-p quotient; p-local factorization and Chinese remainders; √(p,Φ_d)=√(p,Φ_{pd}) for every d>0, including p|d. Equality of completion functors is by radical, not equality of these ideals. Do not apply the prime-generator formula at m=1 or the distinct-factor formula at equal indices. (wagner v5 §§2.1–2.3, pp. 8–23, wagner lines 305–1190; wagner-habiro v2 §2.7, pp. 15–16, wagner-habiro lines 647–661).",
-      "needs": "Required from HabiroCyclotomicCompletions: integral cyclotomic ideal and completion contracts.",
+      "detail": "Beyond the Mathlib polynomial and factorization declarations above, require: for m>1 the ideal generated by [p]_{q^(m/p)} for p|m is (Φ_m); distinct cyclotomic factors meet only at a prime-power ratio, with the stated characteristic-p quotient; p-local factorization and Chinese remainders; √(p,Φ_d)=√(p,Φ_{pd}) for every d>0, including p|d. Equality of completion functors is by radical, not equality of these ideals. Do not apply the prime-generator formula at m=1 or the distinct-factor formula at equal indices. (wagner v5 §§2.1–2.3, pp. 8–23, wagner lines 305–1190; Lemma 2.30, pp. 24–25, wagner lines 1214–1282; wagner-habiro v2 §2.7, pp. 15–16, wagner-habiro lines 647–661).",
+      "needs": "Required from HabiroCyclotomicCompletions over ℤ[q]: for m>1 prove ([p]_{q^(m/p)} : p prime, p|m)=(Φ_m); for distinct positive a,b identify ℤ[q]/(Φ_a,Φ_b) as zero unless max(a,b)/min(a,b)=p^k with p prime and k≥1, and then as 𝔽_p[q]/Φ_min(a,b); for each prime p, α≥0 and n>0 with gcd(n,p)=1 and m=p^αn supply ℤ_(p)[q]/(q^m−1)≅∏_{d|n}ℤ_(p)[q]/Φ_d(q^(p^α)), and the radical identity √(p,Φ_d)=√(p,Φ_{pd}) for every d>0 giving the same derived completion topology, beyond the polynomial product identities imported from Mathlib.",
       "supplier": "HabiroCyclotomicCompletions",
       "section": "Integral cyclotomic ideal and completion interface"
     },
@@ -3163,8 +3224,8 @@
         "9.6",
         "9.7"
       ],
-      "detail": "Required over every commutative unital base: Ω* as exterior algebra of Mathlib KaehlerDifferential with its universal differential, strict odd alternation, base change, localization and unique extension through étale algebras; the finite-coordinate basis is the Tau Ceti interface above. Required over characteristic p: the polynomial Cartier description of cycles as sums of Frobenius monomials times T_i^(p−1)dT_i and exact forms, with coefficients in an arbitrary characteristic-p algebra, without perfectness of the base. A relative twist is required in the general Cartier statement. (wagner v5 Definition 3.1, p. 37, wagner line 1822; proof of (cα)⇒(dα), p. 73, wagner lines 3584–3608).",
-      "needs": "Required from DerivedDeRhamCohomology: ordinary exterior de Rham and relative Cartier interfaces.",
+      "detail": "Required over every commutative unital base: Ω* as exterior algebra of Mathlib KaehlerDifferential with its universal differential, strict odd alternation, base change, localization and unique B-linear differential extension on S⊗_{P⁰}P for nonnegative graded-commutative, strictly odd-alternating DG B-algebras P over a commutative base B and étale B-algebra maps P⁰→S, with the initial extension property; the finite-coordinate basis is the Tau Ceti interface above. Required over characteristic p: the polynomial Cartier description of cycles as sums of Frobenius monomials times T_i^(p−1)dT_i and exact forms, with coefficients in an arbitrary characteristic-p algebra, without perfectness of the base. A relative twist is required in the general Cartier statement. (wagner v5 Definition 3.1, p. 37, wagner line 1822; Lemma 3.32, p. 51, wagner lines 2561–2572; proof of (cα)⇒(dα), p. 73, wagner lines 3584–3608).",
+      "needs": "Required from DerivedDeRhamCohomology for every commutative unital base B: supply the exterior de Rham DGA Ω*_{R/B} for every commutative B-algebra R, with its universal differential, strict odd alternation, base change and localization; for each nonnegative graded-commutative, strictly odd-alternating DG B-algebra P and étale B-algebra map P⁰→S supply the unique B-linear differential on S⊗_{P⁰}P extending d and exhibit the resulting DGA as initial among nonnegative graded-commutative, strictly odd-alternating DG B-algebras receiving compatible maps from P and S; for every prime p and arbitrary characteristic-p B supply the relative polynomial Cartier isomorphism for B[T₁,…,T_r], with Frobenius-twisted source and cycle representatives given by B-linear combinations of T^(pv)∏_{i∈I}T_i^(p−1)dT_I modulo exact forms, without perfectness of B.",
       "supplier": "DerivedDeRhamCohomology",
       "section": "Ordinary exterior de Rham and relative polynomial Cartier interface"
     },
@@ -3175,7 +3236,7 @@
         "9.5"
       ],
       "detail": "For an arbitrary, possibly unbounded, cochain complex M of ℤ[q]-modules and a prime p, if each term and H^i(M) has bounded h-power torsion and is p-torsion-free, and each corresponding reduction modulo p has bounded h-power torsion, then degreewise ordinary h-completion represents derived completion, preserves these conditions, and H^i commutes with h- and (p,h)-completion, for h=q−1. This is Wagner Lemma 4.25, v5 pp. 64–65, wagner lines 3198–3227; bounds may depend on the degree. Required extension: DerivedModuleAlgebra, Part II.",
-      "needs": "Required extension of DerivedModuleAlgebra §§1.5 and 1.8: cochain completion commuting with cohomology.",
+      "needs": "Required from DerivedModuleAlgebra, Part II extending §§1.5 and 1.8: for every possibly unbounded ℤ[q]-cochain complex M, h=q−1 and prime p, if each M^i and H^i(M) has bounded h-power torsion, is p-torsion-free and has mod-p reduction with bounded h-power torsion, with bounds allowed to depend on i, identify degreewise ordinary h-completion with derived h-completion, preserve these conditions and identify H^i(LΛ_h M)≅LΛ_h H^i(M) and H^i(LΛ_(p,h) M)≅LΛ_(p,h) H^i(M).",
       "supplier": "DerivedModuleAlgebra",
       "section": "Part II: unbounded cochain completion interface"
     },
@@ -3183,13 +3244,23 @@
       "slug": "prismatic-frobenius",
       "title": "Frobenius-compatible framed q-prismatic comparison",
       "neededBy": [
-        "9.6",
+        "9.6"
+      ],
+      "detail": "For perfectly covered A, p prime and an étale framing with finitely many coordinates, D=Â_p[[h]], q=1+h, I=([p]_q) is the bounded q-de Rham prism. Supply the q-PD envelope and comparison with C□^∧_p, identify the explicit coordinate map from 8.5 with prismatic Frobenius, and supply φ^{α*}Δ≃Lη_{Iφ(I)⋯φ^{α−1}(I)}Δ for α≥0, with completed scalar extension, plus its reduction/Bockstein comparison. The general Lη and q-PD theory belongs to that supplier and its existing dependencies. Sources: bhatt-scholze v4 Theorem 15.3, p. 103, bhatt-scholze line 3898; Constructions 16.19–16.20, p. 114, bhatt-scholze line 4316; Theorem 16.22, p. 115, bhatt-scholze line 4378; wagner v5 Lemma 4.32, p. 70, wagner line 3459. This input is not the q-fixed coefficient equivalence of Layer 6.",
+      "needs": "Required from PrismaticCohomology for a perfectly covered Λ-ring A, prime p and finite-coordinate étale frame of R/A: with h=q−1, D=Â_p[[h]], I=([p]_q), φ|_{Â_p}=ψ_p, φ(q)=q^p, S=(R̂_p⊗_{Â_p}D/I)^∧_p and Δ=Δ_{S/D}, establish the bounded q-de Rham prism and q-PD comparison Δ≃C□^∧_p, identify the C□ coordinate Frobenius of §8.5 with prismatic Frobenius, and identify (Δ⊗ᴸ_{D,φ^α}D)^∧_(p,I)≃Lη_{Iφ(I)⋯φ^(α−1)(I)}Δ for every α≥0, including its reduction and Bockstein comparison.",
+      "supplier": "PrismaticCohomology",
+      "section": "q-PD and framed Frobenius interface"
+    },
+    {
+      "slug": "pd-presentation",
+      "title": "Multiplicative δ-compatible PD-presentation comparison",
+      "neededBy": [
         "9.7"
       ],
-      "detail": "For perfectly covered A, p prime and an étale framing with finitely many coordinates, D=Â_p[[h]], q=1+h, I=([p]_q) is the bounded q-de Rham prism. Supply the q-PD envelope and comparison with C□^∧_p, identify the explicit coordinate map from 8.5 with prismatic Frobenius, and supply φ^{α*}Δ≃Lη_{Iφ(I)⋯φ^{α−1}(I)}Δ for α≥0, with completed scalar extension, plus its reduction/Bockstein comparison. The general Lη and q-PD theory belongs to that supplier and its existing dependencies. Sources: bhatt-scholze v4 Theorem 15.3, p. 103, bhatt-scholze line 3898; Constructions 16.19–16.20, p. 114, bhatt-scholze line 4316; Theorem 16.22, p. 115, bhatt-scholze line 4378; wagner v5 Lemma 4.32, p. 70, wagner line 3459. This input is not the q-fixed coefficient equivalence of Layer 6. For §9.7 require also p-completely ind-smooth δ-presentations, their δ-compatible PD envelopes, and the multiplicative crystalline Poincaré comparison from the completed PD de Rham complex to (Ω*_{R/A})^∧_p, functorial in presentations (wagner v5 §4.34, p. 71, wagner lines 3492–3517).",
-      "needs": "Required from PrismaticCohomology: Frobenius-compatible framed q-prismatic comparison and the PD-presentation comparison.",
       "supplier": "PrismaticCohomology",
-      "section": "q-PD, framed Frobenius and PD-presentation interfaces"
+      "section": "δ-compatible PD-presentation and crystalline Poincaré interface",
+      "needs": "Required from PrismaticCohomology for a perfectly covered Λ-ring A, smooth A-algebra R and prime p: for every surjection π:P↠R̂_p from a p-completely ind-smooth δ-Â_p-algebra, supply the compatible δ-structure on the PD envelope D(π) of ker π and the multiplicative crystalline Poincaré equivalence (PDΩ*_{D(π)/Â_p})^∧_p≃(Ω*_{R/A})^∧_p of E∞-Â_p-algebras, functorially in δ-compatible maps of presentations.",
+      "detail": "For §9.7 require p-completely ind-smooth δ-presentations, their δ-compatible PD envelopes, and the multiplicative crystalline Poincaré comparison from the completed PD de Rham complex to (Ω*_{R/A})^∧_p, functorial in presentations (wagner v5 §4.34, p. 71, wagner lines 3492–3517)."
     },
     {
       "slug": "dga-bockstein",
@@ -3198,7 +3269,7 @@
         "9.4"
       ],
       "detail": "Required for an associative cochain DGA P over a commutative B and central degree-zero f regular in every term: β_f on H*(P/f), computed by dx=fy, is independent of lifts, satisfies β_f²=0 and the signed Leibniz rule, is natural, and obeys Fβ_fV=β_g for g|f with F reduction and V multiplication by f/g when both scalars are termwise regular. The maps F and V in this last identity are graded additive maps; F is multiplicative. Source: wagner v5 pp. 61, 64, wagner lines 3026–3032 and 3178–3194, with the cycle-lift proof. The pinned group-cohomology Bocksteins have different carriers and codomains.",
-      "needs": "Required extension of DGAInfinity Layer 1: regular-parameter multiplicative Bocksteins.",
+      "needs": "Required from DGAInfinity, Part II extending Layer 1: for an associative cochain B-DGA P over a commutative ring B and a central scalar f∈B regular on every term, construct β_f:H^i(P/f)→H^(i+1)(P/f) by dx=fy, with lift independence, square zero, the signed derivation law and naturality, and for termwise regular g,f with f=ag prove Fβ_fV=β_g where F:H*(P/f)→H*(P/g) is reduction and V:H*(P/g)→H*(P/f) is multiplication by a=f/g.",
       "supplier": "DGAInfinity",
       "section": "Part II: regular-parameter DGA Bockstein interface"
     },
@@ -3210,7 +3281,7 @@
       ],
       "supplier": "DGAInfinity",
       "section": "Part II: differential-ideal quotient interface",
-      "needs": "Required extension of DGAInfinity Layer 1: differential-ideal quotients.",
+      "needs": "Required from DGAInfinity, Part II extending Layer 1: for an associative cochain B-DGA P over a commutative ring B and a homogeneous two-sided ideal J with d(J)⊆J, construct the quotient DGA P/J and projection universal among DGA maps out of P killing J, construct the least homogeneous two-sided differential ideal generated by any homogeneous relations, and prove that the quotient preserves graded commutativity and strict odd alternation whenever P has them.",
       "detail": "For an associative cochain B-DGA P over a commutative ring B and a homogeneous two-sided ideal J with d(J)⊆J, construct the degreewise quotient DGA P/J and projection. DGA maps P/J→E correspond to DGA maps P→E killing J. The quotient retains graded commutativity and strict odd alternation when P has these properties. A generated differential ideal is the least differential two-sided graded ideal containing the specified homogeneous relations. This interface concerns algebra ideals. (wagner v5 Proposition 3.12 and Definition 3.13, pp. 40–41, wagner lines 1956–2010, using the differential-ideal quotient universal property)."
     }
   ]
