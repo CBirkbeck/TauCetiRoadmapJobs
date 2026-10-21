@@ -1,6 +1,6 @@
 import Mathlib
 
-/-!+# CohomologyComparisonsPartII: representative target signatures
+/-! # CohomologyComparisonsPartII: representative target signatures
 
 The roadmap is README.md. This file records statements suggested against the pinned APIs
 and is not exhaustive. The coordinate lattices use a chosen ordinary Tate generator.
@@ -88,8 +88,7 @@ example :
       cnLattice 2 2 = Submodule.span (PadicInt 2) {(4 : Padic 2)⁻¹} ∧
       cnLattice 2 1 = Submodule.span (PadicInt 2) {(2 : Padic 2)⁻¹} ∧
       cnLattice 2 0 = Submodule.span (PadicInt 2) {(1 : Padic 2)} ∧
-      (4 : Padic 2)⁻¹ = 2 * (8 : Padic 2)⁻¹ ∧
-      (2 : ZMod 2) = 0 := by
+      (4 : Padic 2)⁻¹ = 2 * (8 : Padic 2)⁻¹ := by
   norm_num [enLattice, cnLattice]
 
 end TauCetiRoadmap.CohomologyComparisonsPartII.Syntomic
@@ -125,8 +124,9 @@ theorem semistable_d_squared (p r : ℕ) [Fact p.Prime]
   sorry
 
 /-- Transporting classical monodromy to the negative p-normalized convention
-scales the third and final terms by `-1/e`. These are its two chain-map equations. -/
-theorem semistable_baseConvention_differentials (p r e : ℕ) (he : e ≠ 0)
+scales the third and final terms by `-1/e`. These two chain-map equations hold
+for every natural `e`, including zero; invertibility requires `e ≠ 0`. -/
+theorem semistable_baseConvention_differentials (p r e : ℕ)
     {D E : Type*} [AddCommGroup D] [Module ℚ D]
     [AddCommGroup E] [Module ℚ E]
     (phi N : D →ₗ[ℚ] D) (iota : D →ₗ[ℚ] E) (x : D) (a c : D) (b : E) :
@@ -145,7 +145,8 @@ example (p r : ℕ) {D E : Type*}
   constructor <;> simp [semistableD0, semistableD1]
 
 /-- On the rank-two block, weights zero and one fix the lower exponent.
-The third conjunction fixes the sign and factor of the ramification-two adapter. -/
+The ramification-two computations fix the adapter sign and factor; at zero index
+the scalar equations still hold but the scaled terms vanish. -/
 example :
     let phi : (ℚ × ℚ) →ₗ[ℚ] (ℚ × ℚ) :=
       (LinearMap.fst ℚ ℚ ℚ).prod (2 • LinearMap.snd ℚ ℚ ℚ)
@@ -158,7 +159,11 @@ example :
     semistableD0 2 0 phi ((-(2 : ℚ)⁻¹) • N) LinearMap.id (0, 1) =
       ((0, -1), (0, 1), (-(1 / 2), 0)) ∧
     semistableD1 2 0 phi ((-(2 : ℚ)⁻¹) • N)
-      ((0, -1), (0, 1), (-(1 / 2), 0)) = (0, 0) := by
+      ((0, -1), (0, 1), (-(1 / 2), 0)) = (0, 0) ∧
+    semistableD0 2 0 phi ((-(0 : ℚ)⁻¹) • N) LinearMap.id (0, 1) =
+      ((0, -1), (0, 1), (0, 0)) ∧
+    semistableD1 2 0 phi ((-(0 : ℚ)⁻¹) • N)
+      ((0, -1), (0, 1), (0, 0)) = (0, 0) := by
   norm_num [semistableD0, semistableD1]
 
 end TauCetiRoadmap.CohomologyComparisonsPartII.ClassicalSyntomic
