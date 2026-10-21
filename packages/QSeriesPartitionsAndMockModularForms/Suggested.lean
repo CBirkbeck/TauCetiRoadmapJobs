@@ -1,5 +1,4 @@
 import Mathlib
-import TauCeti.Combinatorics.Enumerative.Partition.Conjugate
 
 /-!
 # QSeriesPartitionsAndMockModularForms: representative target signatures
@@ -23,24 +22,24 @@ def qPochhammerFin {K : Type*} [CommRing K] (a q : K) (n : ℕ) : K :=
 /-- The empty finite product is one, including in the zero ring. -/
 theorem qPochhammerFin_zero {K : Type*} [CommRing K] (a q : K) :
     qPochhammerFin a q 0 = 1 := by
-  sorry
+  simp [qPochhammerFin]
 
 /-- Adjoining the last index gives the finite product recurrence. -/
 theorem qPochhammerFin_succ {K : Type*} [CommRing K] (a q : K) (n : ℕ) :
     qPochhammerFin a q (n + 1) = qPochhammerFin a q n * (1 - a * q ^ n) := by
-  sorry
+  simp [qPochhammerFin, Finset.prod_range_succ]
 
 /-- Ring homomorphisms preserve finite q-products. -/
 theorem qPochhammerFin_map {K L : Type*} [CommRing K] [CommRing L]
     (f : K →+* L) (a q : K) (n : ℕ) :
     f (qPochhammerFin a q n) = qPochhammerFin (f a) (f q) n := by
-  sorry
+  simp [qPochhammerFin, map_prod]
 
 /-- Concatenation shifts the initial parameter by the length of the first block. -/
 theorem qPochhammer_concat {K : Type*} [CommRing K] (a q : K) (n m : ℕ) :
     qPochhammerFin a q (n + m) =
       qPochhammerFin a q n * qPochhammerFin (a * q ^ n) q m := by
-  sorry
+  simp [qPochhammerFin, Finset.prod_range_add, pow_add, mul_assoc]
 
 /-- Inverting a unit parameter and unit base gives the triangular q-power. -/
 theorem qPochhammer_invert_base {K : Type*} [CommRing K] (a q : Kˣ) (n : ℕ) :
@@ -102,18 +101,28 @@ theorem formalFirstCoefficients {K : Type*} [CommRing K] (a : K) :
     PowerSeries.coeff 2 (formalQPochhammer a) = -a * (1 - a) := by
   norm_num [formalQPochhammer, formalQPochhammerTail, Finset.prod_range_succ,
     PowerSeries.coeff_mul, PowerSeries.coeff_C_mul, PowerSeries.coeff_one,
-    PowerSeries.coeff_X_pow, Finset.Nat.antidiagonal_eq_map,
-    Finset.sum_range_succ] <;> ring
+    PowerSeries.coeff_X_pow, Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk,
+    Finset.sum_range_succ]
+  simp [PowerSeries.coeff_X]
+  ring
 
 /-- Reduction modulo two changes the signs but preserves the positive-tail coefficients. -/
 theorem formalModTwo :
     PowerSeries.coeff 0 (formalQPochhammerTail (1 : ZMod 2)) = 1 ∧
     PowerSeries.coeff 1 (formalQPochhammerTail (1 : ZMod 2)) = 1 ∧
     PowerSeries.coeff 2 (formalQPochhammerTail (1 : ZMod 2)) = 1 := by
-  norm_num [formalQPochhammerTail, Finset.prod_range_succ,
-    PowerSeries.coeff_mul, PowerSeries.coeff_C_mul, PowerSeries.coeff_one,
-    PowerSeries.coeff_X_pow, Finset.Nat.antidiagonal_eq_map,
-    Finset.sum_range_succ]
+  have htail {K : Type} [CommRing K] (a : K) :
+      PowerSeries.coeff 0 (formalQPochhammerTail a) = 1 ∧
+      PowerSeries.coeff 1 (formalQPochhammerTail a) = -a ∧
+      PowerSeries.coeff 2 (formalQPochhammerTail a) = -a := by
+    norm_num [formalQPochhammerTail, Finset.prod_range_succ,
+      PowerSeries.coeff_mul, PowerSeries.coeff_C_mul, PowerSeries.coeff_one,
+      PowerSeries.coeff_X_pow, Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk,
+      Finset.sum_range_succ]
+    simp [PowerSeries.coeff_X]
+  obtain ⟨h0, h1, h2⟩ := htail (1 : ZMod 2)
+  have hneg : (-1 : ZMod 2) = 1 := by decide
+  exact ⟨h0, h1.trans hneg, h2.trans hneg⟩
 
 /-- With parameter zero every factor of the positive tail is one. -/
 example {K : Type*} [CommRing K] : formalQPochhammerTail (0 : K) = 1 ∧
@@ -280,7 +289,7 @@ theorem ramanujanOnePsiOne_hasSum (a b q z : ℂ)
 theorem partitionSeries_coeff {K : Type*} [CommSemiring K] (n : ℕ) :
     PowerSeries.coeff n (Nat.Partition.genFun (fun _ _ => (1 : K))) =
       (Fintype.card (Nat.Partition n) : K) := by
-  sorry
+  simp [Nat.Partition.coeff_genFun]
 
 /-- Increasingly sorted parts have pairwise gaps at least two, including multiplicities. The adjacent-gap characterization `isGapTwo_iff_adjacent` implies absence of repeated parts, `isGapTwo_nodup` (README §3.3). -/
 def IsGapTwo {n : ℕ} (p : Nat.Partition n) : Prop :=
@@ -293,13 +302,15 @@ def IsPlusMinusOneMod5 {n : ℕ} (p : Nat.Partition n) : Prop :=
 /-- Singleton and two-part gap partitions both satisfy the first counting condition. -/
 example : IsGapTwo (Nat.Partition.ofSums 4 {4} (by decide)) ∧
     IsGapTwo (Nat.Partition.ofSums 4 {3, 1} (by decide)) := by
-  unfold IsGapTwo
-  decide
+  simp only [IsGapTwo, Nat.Partition.ofSums_parts]
+  norm_num [Multiset.filter_cons, Multiset.filter_singleton, Multiset.sort_cons,
+    Multiset.pair_comm (3 : ℕ) 1]
 
 /-- Repeated parts fail the gap condition even when the underlying set is a singleton. -/
 example : ¬ IsGapTwo (Nat.Partition.ofSums 4 {2, 2} (by decide)) := by
-  unfold IsGapTwo
-  decide
+  simp only [IsGapTwo, Nat.Partition.ofSums_parts]
+  norm_num [Multiset.filter_cons, Multiset.filter_singleton, Multiset.sort_cons,
+    Multiset.pair_comm (3 : ℕ) 1]
 
 /-- A singleton four has allowed residue, whereas the gap partition 3+1 does not. -/
 example : IsPlusMinusOneMod5 (Nat.Partition.ofSums 4 {4} (by decide)) ∧
@@ -392,7 +403,7 @@ example : partitionCrank (Nat.Partition.ofSums 7 {3, 2, 1, 1} (by decide)) = -1 
 
 /-- Native conjugation negates rank. -/
 theorem partitionRank_conjugate {n : ℕ} (p : Nat.Partition n) :
-    partitionRank (TauCeti.conjugate p) = -partitionRank p := by
+    partitionRank p.conjugate = -partitionRank p := by
   sorry
 
 /-- Residue counts are finite fibers of an integer statistic on native partitions. -/
@@ -404,7 +415,12 @@ noncomputable def partitionResidueCount
 theorem partitionResidueCounts_sum
     (s : (n : ℕ) → Nat.Partition n → ℤ) (t : ℕ) [NeZero t] (n : ℕ) :
     (∑ r : ZMod t, partitionResidueCount s t r n) = Fintype.card (Nat.Partition n) := by
-  sorry
+  classical
+  simp only [partitionResidueCount]
+  rw [← Finset.card_univ]
+  exact (Finset.card_eq_sum_card_fiberwise
+    (f := fun p : Nat.Partition n => (s n p : ZMod t))
+    (fun _ _ => Finset.mem_univ _)).symm
 
 /-- Modulo one the sole residue count is the ordinary partition count. -/
 theorem filterOne (s : (n : ℕ) → Nat.Partition n → ℤ) (n : ℕ) :
@@ -427,7 +443,10 @@ theorem filterTwo :
     partitionResidueCount (fun _ p => partitionRank p) 2 0 1 = 1 ∧
     partitionResidueCount (fun _ p => partitionCrank p) 2 1 1 = 1 := by
   classical
-  norm_num [partitionResidueCount, partitionRank, partitionCrank]
+  norm_num [partitionResidueCount, partitionRank, partitionCrank, Multiset.filter_singleton]
+  change (if (-1 : ZMod 2) = 1 then ({default} : Finset (Nat.Partition 1)) else ∅).card = 1
+  rw [ite_eq_left (by decide)]
+  simp
 
 /-- A constant-zero statistic misses class one; rank and crank separate at size one. -/
 example (n : ℕ) : partitionResidueCount (fun _ _ => 0) 2 1 n = 0 ∧
@@ -511,8 +530,10 @@ theorem sevenExponent :
   sorry
 
 /-- Decimation extracts coefficients divisible by the index; it is a linear operator. The coefficient identity `qSeriesDecimation_coeff` reads coefficient n at index t*n, and `qSeriesDecimation_map` commutes extraction with coefficient homomorphisms (README §4.7).
-The README target `qSeriesDecimation_eq_cartier` identifies its Laurent-series embedding over a
-field, for t > 0, with `LaurentSeries.cartier t 0` from ClassicalArithmeticCompletion §2.10. -/
+For commutative rings and t > 0, `qSeriesDecimation_eq_powerSeriesCartier` compares it with
+`PowerSeries.cartier t 0` from PadicMeasuresIwasawaAlgebras §2.9; the ring laws transport through
+that comparison. The separate README target `qSeriesDecimation_eq_cartier` identifies its
+Laurent-series embedding over a field with ClassicalArithmeticCompletion §2.10’s operator. -/
 def qSeriesDecimation {K : Type*} [CommSemiring K] (t : ℕ)
     (f : PowerSeries K) : PowerSeries K :=
   PowerSeries.mk fun n => PowerSeries.coeff (t * n) f
@@ -521,13 +542,15 @@ def qSeriesDecimation {K : Type*} [CommSemiring K] (t : ℕ)
 theorem qSeriesDecimation_comp {K : Type*} [CommSemiring K]
     (s t : ℕ) (f : PowerSeries K) :
     qSeriesDecimation s (qSeriesDecimation t f) = qSeriesDecimation (s * t) f := by
-  sorry
+  ext n
+  simp [qSeriesDecimation, mul_assoc, mul_left_comm]
 
 /-- Decimation is linear over every commutative coefficient semiring. -/
 theorem qSeriesDecimation_add_smul {K : Type*} [CommSemiring K]
     (t : ℕ) (c : K) (f g : PowerSeries K) :
     qSeriesDecimation t (f + c • g) = qSeriesDecimation t f + c • qSeriesDecimation t g := by
-  sorry
+  ext n
+  simp [qSeriesDecimation]
 
 /-- Coefficient substitution by X^t gives the pullout formula over every commutative semiring. -/
 theorem qSeriesDecimation_pullout {K : Type*} [CommSemiring K]
@@ -549,7 +572,7 @@ theorem decimationNotMultiplicative :
     simp only [qSeriesDecimation, PowerSeries.coeff_mk, PowerSeries.coeff_X_pow,
       PowerSeries.coeff_X]
     have h : 2 * n = 2 ↔ n = 1 := by omega
-    rw [h]
+    simp only [h]
 
 /-- The coefficient-one term of the decimated quadratic records its coefficient two. -/
 example : PowerSeries.coeff 1
@@ -608,7 +631,24 @@ theorem oddThetaPair (z τ : ℂ) :
     Complex.I * Complex.exp ((Real.pi : ℂ) * Complex.I * τ / 4) *
       (Complex.exp ((Real.pi : ℂ) * Complex.I * z) -
         Complex.exp (-(Real.pi : ℂ) * Complex.I * z)) := by
-  sorry
+  have ht0 : jacobiTheta₂_term 0 (z + (τ + 1) / 2) τ = 1 := by
+    simp [jacobiTheta₂_term]
+  have htneg : jacobiTheta₂_term (-1) (z + (τ + 1) / 2) τ =
+      -Complex.exp (-2 * (Real.pi : ℂ) * Complex.I * z) := by
+    unfold jacobiTheta₂_term
+    push_cast
+    rw [show 2 * (Real.pi : ℂ) * Complex.I * (-1) * (z + (τ + 1) / 2) +
+        (Real.pi : ℂ) * Complex.I * (-1) ^ 2 * τ =
+        -2 * (Real.pi : ℂ) * Complex.I * z + -((Real.pi : ℂ) * Complex.I) by ring]
+    rw [Complex.exp_add, Complex.exp_neg_pi_mul_I, mul_neg_one]
+  rw [ht0, htneg, Complex.exp_add]
+  have hcancel : Complex.exp ((Real.pi : ℂ) * Complex.I * z) *
+      Complex.exp (-2 * (Real.pi : ℂ) * Complex.I * z) =
+      Complex.exp (-(Real.pi : ℂ) * Complex.I * z) := by
+    rw [← Complex.exp_add]
+    congr 1
+    ring
+  linear_combination -Complex.I * Complex.exp ((Real.pi : ℂ) * Complex.I * τ / 4) * hcancel
 
 /-- The antiholomorphic Wirtinger derivative uses real derivatives in directions 1 and i. -/
 noncomputable def wirtingerBar (F : ℂ → ℂ) (τ : ℂ) : ℂ :=
@@ -654,9 +694,10 @@ example (τ : ℂ) (hτ : 0 < τ.im) :
       Complex.ofRealCLM.hasFDerivAt.comp τ hlog
     have hy : (τ.im : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hτ.ne'
     rw [maassXi, wirtingerBar, h.fderiv]
-    simp [ContinuousLinearMap.comp_apply, ContinuousLinearMap.smul_apply,
-      Complex.ofReal_inv, Real.rpow_one] <;>
-      field_simp [hy] <;> ring_nf <;> norm_num [Complex.I_sq]
+    simp [ContinuousLinearMap.comp_apply, Complex.ofReal_inv, Real.rpow_one]
+    field_simp [hy]
+    ring_nf
+    norm_num [Complex.I_sq]
   · simp [maassXi, wirtingerBar]
 
 /-- Xi sends i times y to minus i, witnessing antilinearity. -/
@@ -692,10 +733,49 @@ theorem wirtingerBar_holomorphic (F : ℂ → ℂ) (τ : ℂ)
   sorry
 
 /-- At weight zero y is harmonic and y squared is not harmonic. -/
-theorem laplacianZeroModes (τ : ℂ) (hτ : 0 < τ.im) :
+theorem laplacianZeroModes (τ : ℂ) (_hτ : 0 < τ.im) :
     maassLaplacian 0 (fun z : ℂ => (z.im : ℂ)) τ = 0 ∧
     maassLaplacian 0 (fun z : ℂ => (z.im : ℂ) ^ 2) τ = -2 * (τ.im : ℂ) ^ 2 := by
-  sorry
+  let L : ℂ →L[ℝ] ℂ := Complex.ofRealCLM.comp Complex.imCLM
+  have hlin (z : ℂ) : HasFDerivAt (fun z : ℂ => (z.im : ℂ)) L z := L.hasFDerivAt
+  have hx : (fun z : ℂ => fderiv ℝ (fun z : ℂ => (z.im : ℂ)) z 1) =
+      (fun _ => 0) := by
+    funext z
+    rw [(hlin z).fderiv]
+    simp [L]
+  have hy : (fun z : ℂ => fderiv ℝ (fun z : ℂ => (z.im : ℂ)) z Complex.I) =
+      (fun _ => (1 : ℂ)) := by
+    funext z
+    rw [(hlin z).fderiv]
+    simp [L]
+  have hsq (z : ℂ) : fderiv ℝ (fun z : ℂ => (z.im : ℂ) ^ 2) z =
+      (2 * (z.im : ℂ)) • L := by
+    simpa [two_mul] using ((hlin z).pow 2).fderiv
+  have hx2 : (fun z : ℂ => fderiv ℝ (fun z : ℂ => (z.im : ℂ) ^ 2) z 1) =
+      (fun _ => 0) := by
+    funext z
+    simp [hsq, L]
+  have hy2 : (fun z : ℂ => fderiv ℝ (fun z : ℂ => (z.im : ℂ) ^ 2) z Complex.I) =
+      (fun z : ℂ => (2 : ℂ) * (z.im : ℂ)) := by
+    funext z
+    simp [hsq, L]
+  constructor
+  · simp [maassLaplacian, hx, hy]
+  · have hd := ((hlin τ).const_mul (2 : ℂ)).fderiv
+    simp [maassLaplacian, hx2, hy2, hd, L]
+    ring
+
+/-- The weight-zero modes include y but exclude y squared, whose value at i is minus two. -/
+example (τ : ℂ) (hτ : 0 < τ.im) :
+    (maassLaplacian 0 (fun z : ℂ => (z.im : ℂ)) τ = 0 ∧
+      maassLaplacian 0 (fun z : ℂ => (z.im : ℂ) ^ 2) τ = -2 * (τ.im : ℂ) ^ 2) ∧
+    (maassLaplacian 0 (fun z : ℂ => (z.im : ℂ) ^ 2) Complex.I = -2 ∧
+      maassLaplacian 0 (fun z : ℂ => (z.im : ℂ) ^ 2) Complex.I ≠ 0) := by
+  constructor
+  · exact laplacianZeroModes τ hτ
+  · have hi := (laplacianZeroModes Complex.I (by norm_num)).2
+    norm_num at hi
+    exact ⟨hi, by rw [hi]; norm_num⟩
 
 /-- Xi is antilinear where the underlying real derivative exists. -/
 theorem xi_antilinear (k : ℝ) (c : ℂ) (F : ℂ → ℂ) (τ : ℂ)

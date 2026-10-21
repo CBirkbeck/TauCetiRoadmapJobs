@@ -6,11 +6,11 @@
 
 This roadmap owns the finite and integer-indexed q-products, coefficientwise formal adapters, normalized basic hypergeometric calculus, partition rank/crank theory, the complex Zwegers smoothing kernel and its additional tail estimates, meromorphic Jacobi coefficient corrections, and harmonic/mock completion interfaces specified below. It is not a Part II of ModularForms or ThetaSeries: the former’s integral-weight arithmetic and the latter’s positive-definite lattice modularity retain their owners. The kept q-product variants are finite over arbitrary rings, or formal in native power series; the analytic product, its zero divisor, and its analytic shift law are imported from GeometryOfNumbersAndQuadraticArithmetic §4.3. Section 1.6 adds only convergence of the native finite-prefix adapter and the finite-prefix/tail comparison.
 
-Mathlib already supplies `Nat.Partition`, its weighted `genFun` and `hasProd_genFun`, Glaisher and odd/distinct partition theorems, native pentagonal identities, `jacobiTheta₂`, and `ModularForm.eta`. Tau Ceti already supplies conjugation of the native partition carrier and the integral-weight holomorphic Eichler integral; this roadmap’s nonholomorphic shadow primitive has different weight, conjugation and cusp growth. These objects are imported, without second carriers or duplicate targets. ClassicalArithmeticCompletion §§2.31, 4.20, 4.40, 4.60–4.61 retain formal specialization, the formal triple product, the cubic Euler product and its theta specializations. GeometryOfNumbersAndQuadraticArithmetic §4.3 retains the analytic q-product, triple product and Appell–Lerch difference identity. MetaplecticAutomorphicForms §§2.4b–2.6, 4.7, 6.18–6.20 and 7.1/7.49 retain the generic cover, finite Weil representation, holomorphic Jacobi decomposition, multiplier and unitary comparison. The new Maass spaces allow every half-integral weight and exponential cusp growth, distinct from its weight-1/2 square-integrable spectral space in §7.2.
+Mathlib already supplies `Nat.Partition`, its Young-diagram conjugation, its weighted `genFun` and `hasProd_genFun`, Glaisher and odd/distinct partition theorems, native pentagonal identities, `jacobiTheta₂`, and `ModularForm.eta`. Tau Ceti already supplies the integral-weight holomorphic Eichler integral; this roadmap’s nonholomorphic shadow primitive has different weight, conjugation and cusp growth. These objects are imported, without second carriers or duplicate targets. ClassicalArithmeticCompletion §§2.31, 4.20, 4.40, 4.60–4.61 retain formal specialization, the formal triple product, the cubic Euler product and its theta specializations. GeometryOfNumbersAndQuadraticArithmetic §4.3 retains the analytic q-product, triple product and Appell–Lerch difference identity. MetaplecticAutomorphicForms §§2.4b–2.6, 4.7, 6.18–6.20 and 7.1/7.49 retain the generic cover, finite Weil representation, holomorphic Jacobi decomposition, multiplier and unitary comparison. The new Maass spaces allow every half-integral weight and exponential cusp growth, distinct from its weight-1/2 square-integrable spectral space in §7.2.
 
 IntegralLattices Layer 1G–1H retains finite quadratic modules and Gauss invariants. Automorphic theta kernels, theta lifting and Siegel–Weil theory belong to MetaplecticAutomorphicForms Layers 5–6; the Siegel–Narain kernel is outside this roadmap. A general completed indefinite theta series or meromorphic Jacobi coefficient is not asserted to be harmonic. Habiro completions, evaluation at roots of unity as a completion operation, q-Witt vectors, geometric q-cohomology and Nahm-specific criteria belong to their own roadmaps. Analytic evaluation inside |q|<1 does not supply any boundary evaluation theorem.
 
-ClassicalArithmeticCompletion §2.10 owns field-valued Laurent-series Cartier extraction and its power-series restriction; §4.7 adds the general-semiring adapter and §4.8a the integral eta-module estimates. ModularForms, Worked examples, target η²⁴=Δ, owns eta’s SL₂(ℤ) transformation; §5.2 adds its normalized square-root cocycle and lifted-character comparison. Tau Ceti’s real `erf` and `erfc` API supplies the real kernel laws through the normalization in §5.3; the complex entire extension and sharper Gaussian-tail bounds are the kept variant.
+PadicMeasuresIwasawaAlgebras §2.9 owns power-series Cartier extraction over commutative rings, including integral coefficients and its residue-range pullout law. ClassicalArithmeticCompletion §2.10 owns the separate field-valued Laurent-series comparison; §4.7 adds the semiring extension and comparison adapters, and §4.8a the integral eta-module estimates. ModularForms, Worked examples, target η²⁴=Δ, owns eta’s SL₂(ℤ) transformation; §5.2 adds its normalized square-root cocycle and lifted-character comparison. Tau Ceti’s real `erf` and `erfc` API supplies the real kernel laws through the normalization in §5.3; the complex entire extension and sharper Gaussian-tail bounds are the kept variant. StandardDistributions Layer 2 owns the real incomplete-gamma theory supplied by Tau Ceti; §8.4 adds its Fourier-kernel comparison, contour extension and ODE basis.
 
 The three general upstream extensions are contracts for Part II of their respective owners: the classical pair model for the metaplectic cover; analytic elliptic regularity; and vector-bundle Dolbeault/Serre theory. Their exact extension contracts appear below. The dissection, eta-module, general parabolic Fourier and unilateral-to-Hecke theorems are targets of this roadmap. The ten fifth-order functions, the three seventh-order functions, and the third-order functions treated by the references are included; no universal completion criterion for arbitrary q-hypergeometric series is asserted.
 
@@ -46,14 +46,23 @@ Mathlib pin: `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
 | `ModularForm.eta`, `ModularForm.eta_ne_zero`, `ModularForm.multipliableLocallyUniformlyOn_one_sub_pow` | `Mathlib/NumberTheory/ModularForms/DedekindEta.lean`: eta’s product and nonvanishing on the upper half-plane; local uniformity of the positive Euler tail on the unit disc. These do not by themselves give the general eta multiplier. |
 | `multipliable_one_add_of_summable`, `tprod_one_add_ne_zero_of_summable` | `Mathlib/Analysis/SpecialFunctions/Log/Summable.lean`: summability of norms gives multipliability in a complete normed commutative ring; nonvanishing additionally requires every factor nonzero and multiplicative norm. Applied over ℂ. |
 | `ZMod.coe_mul_inv_eq_one`, `ZMod.val_lt`, `ZMod.natCast_zmod_val` | `Mathlib/Data/ZMod/Basic.lean`: the coprime residue-ring inverse, bounded representative for nonzero modulus, and its cast; §4.6 specializes these to the inverse of 24. |
+| `Real.Gamma_eq_integral`, `Real.GammaIntegral_convergent` | `Mathlib/Analysis/SpecialFunctions/Gamma/Basic.lean`: the complete Euler integral and its convergence for positive real shape; subtract the supplied lower integral in §8.4. |
 | `HasFDerivAt.log`, `Real.hasDerivAt_log` | `Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean`: logarithm differentiation away from zero, used with positive imaginary coordinate in the weight-one xi Check. |
 | `Finset.prod`, `map_prod` | `Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean`: native commutative finite products and homomorphism transport. |
 
+`Nat.Partition.conjugate` and `Nat.Partition.conjugate_conjugate` in `Mathlib/Combinatorics/Enumerative/Partition/YoungDiagram.lean` give the native Young-diagram transpose and its involution. `YoungDiagram.rowLens_ofPartition_eq_sort_parts` identifies its rows with the decreasing parts; §4.1 compares first row and first column lengths.
+
 ### From Tau Ceti
 
-Tau Ceti pin: `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. `TauCeti.conjugate`, `TauCeti.conjugate_parts`, `TauCeti.conjugate_conjugate` and `TauCeti.conjugate_parts_sort` in `TauCeti/Combinatorics/Enumerative/Partition/Conjugate.lean` give the native involution and row/column comparison used for rank. `TauCeti.CuspFormClass.eichlerIntegral_slash_apply` in `TauCeti/NumberTheory/ModularForms/EichlerIntegral/Transformation.lean` requires integral weight k=n+2, arithmetic level and positive strict periods; it fixes the boundary with the holomorphic integral-weight theory and is not a shadow-completion theorem.
+Tau Ceti pin: `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. `TauCeti.CuspFormClass.eichlerIntegral_slash_apply` in `TauCeti/NumberTheory/ModularForms/EichlerIntegral/Transformation.lean` requires integral weight k=n+2, arithmetic level and positive strict periods; it fixes the boundary with the holomorphic integral-weight theory and is not a shadow-completion theorem.
 
 The module `TauCeti.Analysis.SpecialFunctions.Erf` in `TauCeti/Analysis/SpecialFunctions/Erf.lean` supplies `TauCeti.Real.erf`, `erfc`, `erf_zero`, `erfc_zero`, `erf_neg`, `hasDerivAt_erf`, `erf_pos`, `erf_lt_one` and `abs_erf_lt_one`. Its convention is erf(x)=(2/√π)∫₀ˣexp(−u²)du and erfc=1−erf. Section 5.3 uses the real adapters E(x)=erf(√π·x) and β(t)=erfc(√(πt)) for t≥0, including t=0.
+
+The module `TauCeti.Analysis.SpecialFunctions.IncompleteGamma` in `TauCeti/Analysis/SpecialFunctions/IncompleteGamma.lean` supplies `TauCeti.lowerIncompleteGamma`, `lowerIncompleteGamma_eq_integral`, `hasDerivAt_lowerIncompleteGamma` and `tendsto_lowerIncompleteGamma_atTop`. For s>0 and x≥0 the value is ∫₀ˣt^(s−1)exp(−t)dt, its derivative formula requires x>0, and its limit at infinity is `Real.Gamma s`. Section 8.4 uses s=1−k>0 and x=−2w>0.
+
+### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
+
+§2.9: `PowerSeries.cartier`, `PowerSeries.coeff_cartier` and `PowerSeries.cartier_expand_mul` over every commutative ring. The coefficient at n is f_(tn+a) for every natural shift a; `cartier_expand_mul` requires t≠0 and a<t. Section 4.7 compares the semiring coefficient adapter with this K-linear map and transports its ring laws, including the integral case. No Frobenius identity is used without its finite-field hypotheses.
 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
@@ -366,7 +375,7 @@ Prove finite Schur identities with the following hypotheses. For every n≥0 the
 
 The public laws are `schur_finite_first`: The first displayed polynomial identity; `schur_finite_second`: The second displayed polynomial identity; `schur_finite_recurrences`: Write D_n and E_n for the two left sums. For n≥2, D_n=D_(n−1)+Q^(n−1)D_(n−2) and E_n=E_(n−1)+Q^n E_(n−2), with D₀=D₁=E₀=E₁=1. Each corresponding right sum satisfies the same recurrence and initial data (Warnaar2001, (1.3), p. 1, lines 45–48, with the same index shifts).
 
-For the proof, d_n counts gap-at-least-two partitions with largest part at most n−1; E_n counts such partitions with smallest part at least 2 and largest part at most n. Splitting on the largest allowed part gives exactly the displayed recurrences. Substitute the two q-Pascal expansions on the signed right sums, split n−5h by parity, and pair adjacent h terms to obtain these same recurrences with D₀=D₁=E₀=E₁=1. Induction proves both polynomial identities without a Watson transformation or denominator cancellation.
+For the proof, D_n counts gap-at-least-two partitions with largest part at most n−1; E_n counts such partitions with smallest part at least 2 and largest part at most n. Splitting on the largest allowed part gives exactly the displayed recurrences. Substitute the two q-Pascal expansions on the signed right sums, split n−5h by parity, and pair adjacent h terms to obtain these same recurrences with D₀=D₁=E₀=E₁=1. Induction proves both polynomial identities without a Watson transformation or denominator cancellation.
 
 *Needs:* §3.1.
 
@@ -444,11 +453,11 @@ The Rogers–Ramanujan series begin 1+X+X²+X³+2X⁴ and 1+X²+X³+X⁴. The or
 
 Define `partitionRank` and `partitionCrank` as follows. For λ:Nat.Partition n define rank(λ)=max(parts,default 0)−card(parts) in ℤ. Put o=count(1,parts) and g=card(filter (o<·) parts); define crank(λ)=max(parts,default 0) if o=0, and g−o otherwise. The empty statistics are zero. Define their Laurent-polynomial coefficient series by summing z^statistic over all λ at each n. (AndrewsGarvan1988, rank line 10; crank definition lines 80–88; Zagier2009 lines 898–922; AndrewsGarvan1988 line 10.)
 
-The public laws are `partitionRank_conjugate`: rank(conjugate λ)=−rank λ; `partitionRankCrank_ext`: Equal native partitions give equal statistics and equal Laurent monomials; `partitionRankCrank_coeff`: The degree-n Laurent coefficient is the finite sum over Nat.Partition n; `partitionCrank_noOnes`: With no ones crank is the largest part; with ones use the displayed strict filter.
+The public laws are `partitionRank_conjugate`: `partitionRank (Nat.Partition.conjugate p) = -partitionRank p`; `partitionRankCrank_ext`: Equal native partitions give equal statistics and equal Laurent monomials; `partitionRankCrank_coeff`: The degree-n Laurent coefficient is the finite sum over Nat.Partition n; `partitionCrank_noOnes`: With no ones crank is the largest part; with ones use the displayed strict filter.
 
 For the proof, use the existing partition and conjugation carrier. Compare first row and first column lengths for the rank sign. Finite sums define the Laurent coefficients, avoiding analytic z-convergence in the definition.
 
-*Needs:* Mathlib `Nat.Partition.genFun`; Tau Ceti `TauCeti.conjugate_conjugate`; §3.5.
+*Needs:* Mathlib `Nat.Partition.genFun`; Mathlib `Nat.Partition.conjugate_conjugate`; §3.5.
 
 **Checks.**
 
@@ -575,13 +584,15 @@ Define `qSeriesDecimation` as follows. For every commutative semiring K and inte
 
 The public laws are `qSeriesDecimation_coeff`: Coefficient n of U_t f equals coefficient tn of f; `qSeriesDecimation_comp`: U_s(U_t f)=U_(st)f; `qSeriesDecimation_pullout`: U_t(f(X^t)g(X))=f(X)U_t g(X); `qSeriesDecimation_map`: Coefficient ring homomorphisms commute with extraction.
 
-Prove `qSeriesDecimation_eq_cartier`: for every field K, t>0 and f∈K⟦X⟧, its Laurent-series embedding satisfies ι(U_t f)=`LaurentSeries.cartier t 0`(ι f). For 0≤a<t, identify ι(E_(t,a)f) with `LaurentSeries.cartier t a`(ι f) by `cartier_ofPowerSeries`. These comparisons transport the field linearity laws; the general-semiring and integral variants retain their own coefficient proofs (ClassicalArithmeticCompletion §2.10, `coeff_cartier`, `cartier_ofPowerSeries`).
+Prove `qSeriesDecimation_eq_powerSeriesCartier`: for every commutative ring K, t>0 and f∈K⟦X⟧, U_t f=`PowerSeries.cartier t 0 f`. Prove `qSeriesShiftedExtraction_eq_powerSeriesCartier`: for the same K and t and every natural a, E_(t,a)f=`PowerSeries.cartier t a f`. Transport the ring coefficient, linearity and pullout laws through these comparisons, including coefficients in ℤ; the pullout law uses a=0<t. The semiring extension retains its coefficient proof (PadicMeasuresIwasawaAlgebras §2.9, `coeff_cartier`, `cartier_expand_mul`).
+
+Prove `qSeriesDecimation_eq_cartier`: for every field K, t>0 and f∈K⟦X⟧, its Laurent-series embedding satisfies ι(U_t f)=`LaurentSeries.cartier t 0`(ι f). For 0≤a<t, identify ι(E_(t,a)f) with `LaurentSeries.cartier t a`(ι f) by `cartier_ofPowerSeries` (ClassicalArithmeticCompletion §2.10, `coeff_cartier`, `cartier_ofPowerSeries`). The integral eta-module estimates remain in §4.8a.
 
 The representative coefficient function is also defined at t=0 by (U₀f)_n=f₀ for every n; this differs from Cartier’s stipulated zero value at modulus zero. The representative `qSeriesDecimation_add_smul` states U_t(f+c·g)=U_t(f)+c·U_t(g) over every commutative semiring. Its coefficient function and its bundled linear map are identified by the same formula. The pullout signature also retains every commutative semiring: it writes f(X^t) as `PowerSeries.mk (fun n => if t ∣ n then PowerSeries.coeff (n / t) f else 0)`. Over a commutative ring this agrees with `PowerSeries.expand t ht f` by `PowerSeries.coeff_expand` in `Mathlib/RingTheory/PowerSeries/Expand.lean`; the pinned expansion API itself requires a commutative ring.
 
-For the proof, define the native power-series coefficients, then prove each identity by extensionality and the finite Cauchy coefficient formula. The pullout identity uses that f(X^t) is supported on multiples of t.
+For the proof, compare native power-series coefficients with the supplied ring Cartier map and transport its laws. Over semirings, extensionality and the finite Cauchy coefficient formula prove the extension; the pullout identity uses that f(X^t) is supported on multiples of t.
 
-*Needs:* Mathlib `Nat.Partition.genFun`; §3.5; TauCetiRoadmap.ClassicalArithmeticCompletion §2.10.
+*Needs:* Mathlib `Nat.Partition.genFun`; §3.5; TauCetiRoadmap.PadicMeasuresIwasawaAlgebras §2.9; TauCetiRoadmap.ClassicalArithmeticCompletion §2.10.
 
 **Checks.**
 
@@ -589,6 +600,7 @@ For the proof, define the native power-series coefficients, then prove each iden
 - decimation identity: U₁=id and E_(1,0)=id.
 - `decimationNotMultiplicative`: Over ℤ, U₂(X)=0 but U₂(X²)=X≠0, so U₂ is not a ring homomorphism.
 - zero-index extraction: Over ℤ, coefficient 1 of U₀(1) is 1, whereas cartier 0 0(ι1)=0 by its stipulated value. The Cartier comparison and pullout formula retain t>0.
+- Power-series shift beyond a residue: Over ℤ, E_(1,1)(X)=`PowerSeries.cartier 1 1 X`=1, whereas X·E_(1,1)(1)=0; the all-natural-shift comparison does not extend the pullout law beyond a<t.
 - Cartier shift boundary: For t=2,a=1, E_(2,1)(X)=1 and cartier 2 1(ιX)=1. For a=t and f=1, the Laurent output is X⁻¹ whereas E_(t,t)(1)=0; the comparison must retain a<t.
 
 ### 4.8 alternating eta decimation
@@ -654,7 +666,7 @@ At size 4 both rank and crank give one partition in each class modulo 5. At size
 
 ### Dependencies
 
-Mathlib `Nat.Partition.genFun`; Tau Ceti `TauCeti.conjugate_conjugate`; §3.5; §1.6; §2.4; §4.4a; §1.4; Mathlib `ModularForm.eta`; §4.8a; §4.7; §4.8; TauCetiRoadmap.ClassicalArithmeticCompletion §§2.10, 4.40, 4.61; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3.
+Mathlib `Nat.Partition.genFun`; Mathlib `Nat.Partition.conjugate_conjugate`; §3.5; §1.6; §2.4; §4.4a; §1.4; Mathlib `ModularForm.eta`; §4.8a; §4.7; §4.8; TauCetiRoadmap.PadicMeasuresIwasawaAlgebras §2.9; TauCetiRoadmap.ClassicalArithmeticCompletion §§2.10, 4.40, 4.61; TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic §4.3.
 
 ## Layer 5: theta normalizations, error kernels and completed Lerch sums
 
@@ -967,7 +979,7 @@ For the proof, expand the real partial derivatives and use the chain rule for M�
 
 **Checks.**
 
-- `laplacianZeroModes`: Δ₀(y)=0, while Δ₀(y²)=−2y²; the first-order term depends on k.
+- `laplacianZeroModes`: Δ₀(y)=0, while Δ₀(y²)=−2y² and its value at τ=i is −2≠0; an identically zero operator fails this Check. The first-order term depends on k.
 - unitary half weight: At k=1/2, the additive conjugation constant is 3/16.
 
 - Laplacian constant: Δ_k(c)=0 for every real k, including k=0 and k=1; a zeroth-order term would fail at c=1.
@@ -992,16 +1004,19 @@ For the proof, use the native C² calculus and the imported transformation equat
 
 Construct the branch-fixed scalar Fourier kernel (`maassFourierKernel`) as follows. For real k and real w≠0 define H_k(w)=exp(−w)Γ(1−k,−2w), using the upper-bank branch of the incomplete gamma integral. For w<0 this is the real integral from −2w to ∞. For w>0, integrate exp(−t)t^(−k) from −2w along the upper side of the negative axis, around an upper semicircle avoiding zero, and then along the positive axis to ∞; homotopy makes the value independent of the semicircle radius. Prove H solves b″−b+(k/w)(b′+b)=0 and is independent of exp(−w). At k≠1 the zero modes are 1,y^(1−k); at k=1 they are 1,log y. (BruinierFunke2003, §3, pp. 9–10, lines 395–423; BruinierFunke2003 line 395.)
 
+Prove `maassFourierKernel_eq_incompleteGamma`: for real k<1 and w<0, H_k(w)=exp(−w)·(Real.Gamma(1−k)−`TauCeti.lowerIncompleteGamma`(1−k)(−2w)), coerced to ℂ. Splitting the complete Euler integral at −2w identifies this range with the supplied real incomplete-gamma API; the contour construction retains every real weight and both half-lines (BruinierFunke2003, §3, p. 9, BruinierFunke2003 line 404; pinned `lowerIncompleteGamma_eq_integral` and `Real.Gamma_eq_integral`).
+
 The public laws are `maassFourierKernel_asymptotic`: H_k(w)~(2|w|)^(−k)exp(−|w|) at −∞, and ~(−2w)^(−k)exp(w) at +∞ with the fixed branch; `maassFourierKernel_basis`: Every nonzero-frequency solution is a unique combination of exp(−w) and H_k(w); `maassFourierKernel_zeroModes`: The displayed zero-frequency solutions with the logarithmic k=1 case.
 
-For the proof, define the contour integral on the slit plane and compare contours by Cauchy. Differentiate its moving endpoint to verify the ODE and its nonzero Wronskian. Integration by parts gives both asymptotics; elementary reduction of order gives the zero-frequency solutions. This builds the specialized ODE kernel, without assuming an incomplete-gamma library.
+For the proof, obtain the k<1, w<0 range from the supplied real incomplete-gamma integral, derivative and limit. Define the contour extension on the slit plane and compare contours by Cauchy, retaining the upper-bank branch for positive w and every real weight. Differentiate its moving endpoint to verify the ODE and its nonzero Wronskian. Integration by parts gives both asymptotics; elementary reduction of order gives the zero-frequency solutions.
 
-*Needs:* §5.3; §8.2; TauCetiRoadmap.ContourIntegration Layer 3.
+*Needs:* §5.3; §8.2; Tau Ceti `TauCeti.lowerIncompleteGamma`, `TauCeti.lowerIncompleteGamma_eq_integral`, `TauCeti.hasDerivAt_lowerIncompleteGamma`, `TauCeti.tendsto_lowerIncompleteGamma_atTop`; Mathlib `Real.Gamma_eq_integral`, `Real.GammaIntegral_convergent`; TauCetiRoadmap.ContourIntegration Layer 3.
 
 **Checks.**
 
-- fourier kernel weight zero: H₀(w)=exp(w) on both half-lines; it is independent of exp(−w).
+- fourier kernel weight zero: On w<0 the incomplete-gamma comparison gives Γ(1)−γ(1,−2w)=exp(2w), hence H₀(w)=exp(w); contour continuation gives the same value on w>0; it is independent of exp(−w).
 - fourier kernel negative: For w<0, H_k(w)=exp(−w)∫_(−2w)∞exp(−t)t^(−k)dt is real and nonzero.
+- incomplete-gamma parameter boundary: At k=1 the supplied lower function has shape 0 and is totalized to zero, while H₁(w)>0 for w<0. The complete-minus-lower comparison must retain k<1.
 - fourier kernel weight one: At k=1 the two proposed powers 1,y⁰ coincide, while log y is independent.
 
 ### 8.4a Fourier expansion with general parabolic monodromy
@@ -1084,7 +1099,7 @@ For the explicit differential expression, ξ_k(y^(1−k))=1−k and Δ_k(y^(1−
 
 ### Dependencies
 
-`gap:classical-metaplectic-model`; TauCetiRoadmap.ModularForms Layer 0; TauCetiRoadmap.MetaplecticAutomorphicForms §§4.7, 7.1, 7.49; §8.4a; TauCetiRoadmap.MetaplecticAutomorphicForms §7.49; `gap:analytic-elliptic-regularity`; §5.3; TauCetiRoadmap.ContourIntegration Layer 3; TauCetiRoadmap.MetaplecticAutomorphicForms §4.7; TauCetiRoadmap.IntegralLattices §§0G, 1G–1H; TauCetiRoadmap.ModularForms Layer 10B; `gap:vector-bundle-dolbeault`; §8.2; §8.3; §8.4.
+`gap:classical-metaplectic-model`; TauCetiRoadmap.ModularForms Layer 0; TauCetiRoadmap.MetaplecticAutomorphicForms §§4.7, 7.1, 7.49; §8.4a; TauCetiRoadmap.MetaplecticAutomorphicForms §7.49; `gap:analytic-elliptic-regularity`; §5.3; TauCetiRoadmap.ContourIntegration Layer 3; TauCetiRoadmap.MetaplecticAutomorphicForms §4.7; TauCetiRoadmap.IntegralLattices §§0G, 1G–1H; TauCetiRoadmap.ModularForms Layer 10B; `gap:vector-bundle-dolbeault`; §8.2; §8.3; §8.4; Tau Ceti `TauCeti.lowerIncompleteGamma`, `TauCeti.lowerIncompleteGamma_eq_integral`, `TauCeti.hasDerivAt_lowerIncompleteGamma`, `TauCeti.tendsto_lowerIncompleteGamma_atTop`; Mathlib `Real.Gamma_eq_integral`, `Real.GammaIntegral_convergent`.
 
 ## Layer 9: completed kernels and meromorphic Jacobi coefficients
 
