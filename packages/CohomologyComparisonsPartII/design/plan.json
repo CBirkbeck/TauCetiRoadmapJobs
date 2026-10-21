@@ -940,6 +940,11 @@
               "name": "Syntomic.fontaineMessingPeriod_site",
               "kind": "non-example",
               "statement": "For nonproper X no equation RΓ(X0,i*Rj_*−)=RΓ(X_tr,−) is inferred. Generic-fibre cohomology on X uses the glued complexes in 4.5."
+            },
+            {
+              "name": "Syntomic.fontaineMessingPeriod_trivialLogPoint",
+              "kind": "non-example",
+              "statement": "For trivial-log X=Spec(Z_p), admitted by the general nearby-cycle-inputs contract, X_tr=Spec(Z_p) but X_η=U=Spec(Q_p) and j′ is identity. The identity of X cannot factor through X_η, since p would become invertible in Z_p. After equipping the point with canonical vertical log structure, X_tr=U=Spec(Q_p), as required by the Layer 4 domain (EN line 292–300)."
             }
           ]
         },
@@ -2302,8 +2307,8 @@
         "4.3",
         "4.5"
       ],
-      "detail": "Write ε:X_se→X_et, εhat:Xhat_se→X0_et and ε_syn:X_n,syn→X0_et, identifying the étale sites of nilpotent thickenings; i_se and j_se are the formal-closed and generic syntomic-étale maps, a:X_n,syn→Xhat_se and u:X_tr,et→X_K,se are the canonical projections, j_K:X_K→X, j′:X_tr→X_K, and j=j_Kj′. The two projection comparisons are EN line 313–317 and EN line 336–357; the contract extends EtaleCohomologyFoundations F.1/F.3a.",
-      "needs": "For log-syntomic X/W(k), its p-adic completion Xhat, n≥1, i:X0→X, j_K:X_K→X, j′:X_tr→X_K and j=j_Kj′, supply the topoi and maps ε:X_se→X_et, εhat:Xhat_se→X0_et, ε_syn:X_n,syn→X0_et, a:X_n,syn→Xhat_se, u:X_tr,et→X_K,se, i_se:Xhat_se→X_se and j_se:X_K,se→X_se, recollement by formal-closed and generic parts, exact a_* and open extensions j_se! and j_K!, Rεhat_*a_*≃Rε_syn_*, and for Λ=Z/p^n(r) or L_EN(r)/p^n with r≥0 supply Rεhat_*i_se*Rj_se*Ru_*Λ≃i*Rj_*Λ and Rε_*j_se!Ru_*Λ≃j_K!Rj′_*Λ naturally under coefficient reduction and compatible base change.",
+      "detail": "For log-syntomic X/W(k), put X_η=X[1/p] and U=X_tr∩X_η, with open immersions j_η:X_η→X, j′:U→X_η and j=j_ηj′. Write ε:X_se→X_et, εhat:Xhat_se→X0_et and ε_syn:X_n,syn→X0_et, identifying the étale sites of nilpotent thickenings; i_se and j_se are the formal-closed and generic syntomic-étale maps, a:X_n,syn→Xhat_se and u:U_et→X_η,se are the canonical projections. With a structural V-morphism, X_η identifies with X_K=X×V K since p is a unit times a power of a uniformizer; on the canonical-vertical-log inputs of Layer 4, U=X_tr and j_η=j_K. Without that V-morphism, X×W(k)K is not used as the open generic fibre. EN line 292–300 uses the generic restriction of the trivial-log locus; the two projection comparisons are EN line 313–317 and EN line 336–357. The contract extends EtaleCohomologyFoundations F.1/F.3a.",
+      "needs": "For log-syntomic X/W(k), its p-adic completion Xhat, n≥1, i:X0→X, X_η=X[1/p], U=X_tr∩X_η, j_η:X_η→X, j′:U→X_η and j=j_ηj′, supply the topoi and maps ε:X_se→X_et, εhat:Xhat_se→X0_et, ε_syn:X_n,syn→X0_et, a:X_n,syn→Xhat_se, u:U_et→X_η,se, i_se:Xhat_se→X_se and j_se:X_η,se→X_se, recollement by formal-closed and generic parts, exact a_* and open extensions j_se! and j_η!, Rεhat_*a_*≃Rε_syn_*, and for Λ=Z/p^n(r) or L_EN(r)/p^n on U with r≥0 supply Rεhat_*i_se*Rj_se*Ru_*Λ≃i*Rj_*Λ and Rε_*j_se!Ru_*Λ≃j_η!Rj′_*Λ naturally under coefficient reduction and compatible base change.",
       "supplier": "EtaleCohomologyFoundations",
       "section": "extension beyond F.1/F.3a; proposed Part II, no accepted section; EN §2.2, pp. 7–8"
     },
