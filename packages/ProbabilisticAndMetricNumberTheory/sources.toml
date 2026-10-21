@@ -49,3 +49,47 @@ licence_class = "answered-by:CBirkbeck"
 status = "certified"
 accessed = "2026-10-21"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314176071"
+
+[[source]]
+id = "Falconer1990"
+authors = "Kenneth Falconer"
+title = "Fractal Geometry: Mathematical Foundations and Applications"
+year = 1990
+locator_scheme = "theorem"
+locator = "Proposition 1.7"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6316652639"
+
+[[source]]
+id = "PollingtonVaughan1990"
+authors = "A. D. Pollington and R. C. Vaughan"
+title = "The k-dimensional Duffin and Schaeffer conjecture"
+year = 1990
+locator_scheme = "theorem"
+locator = "Main theorem, Mathematika 37, 190–200"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6316652639"
+
+[[source]]
+id = "Rogozin1961a"
+authors = "B. A. Rogozin"
+title = "An estimate of the concentration functions"
+year = 1961
+locator_scheme = "page"
+locator = "Teor. Veroyatnost. i Primenen. 6(1), 103–105"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6316652639"
+
+[[source]]
+id = "Rogozin1961b"
+authors = "B. A. Rogozin"
+title = "On the increase of dispersion of sums of independent random variables"
+year = 1961
+locator_scheme = "page"
+locator = "Teor. Veroyatnost. i Primenen. 6(1), 106–108"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6316652639"
