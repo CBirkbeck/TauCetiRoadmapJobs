@@ -2,7 +2,7 @@
   "roadmap": "ColemanIntegrationPartII",
   "title": "Coleman integration, Part II: harmonic realizations, integration indices and descent",
   "parent": "ColemanIntegration",
-  "summary": "Extend good-reduction Coleman integration by all-prime natural single integration in arbitrary reduction, harmonic curve realizations, double/triple indices, corrected pairings and trace/divisor descent.",
+  "summary": "Extend good-reduction Coleman integration by all-prime natural single integration over every closed subfield of ℂ_p in arbitrary reduction, harmonic curve realizations over finite p-adic fields, double/triple indices, corrected pairings and finite-trace/divisor descent.",
   "baseline": {
     "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
     "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
@@ -887,7 +887,7 @@
             {
               "name": "doublePairing_nonsplit_spectrum",
               "kind": "non-example",
-              "statement": "For ℙ¹ minus one degree-two closed point, H¹ has dimension one. With r=1 its Frobenius eigenvalue is −Q_K=−q; for the r-th iterate it is (−1)^r q. The assertion that every boundary eigenvalue equals q requires split ends or a suitable iterate; exclusion of 1/q still holds."
+              "statement": "Take C_k=ℙ¹ over 𝔽₃ and D_k the degree-two point t²+1=0, with rigid coefficients K=ℚ₃; equivalently use its good-reduction Coleman wide-open lift omitting the two conjugate unramified discs. H¹ is one-dimensional: the residue quotient is the anti-diagonal of the two geometric boundary coordinates, and Frobenius is 3 times transposition. Its eigenvalue is −3, its square is 9, and its r-th iterate has eigenvalue (−1)^r 3^r. The generic quadratic point t²−3 over ℚ₃ is ramified and its conjugates collide modulo 3, so it is not this good-reduction boundary. General boundary eigenvalues remain qζ, and 1/q is still excluded."
             }
           ],
           "proofSketch": "Use the proper/boundary de Rham sequence and disjoint Frobenius weights to construct p_U. Compute the end-sum by second-kind representatives and prove the compact cup comparison using the local double index, then kill analytic exacts by residue reciprocity. A logarithmic unit has only weight-two boundary class, giving its vanishing. Import the component rigid weight theorem and Gysin sequence, with boundary eigenvalues qζ for nonsplit ends. The cup projection gives the radical and scaling assertions; the positive weights exclude 1/q. This proves the index-dependent claims after the index is defined.",
@@ -1224,7 +1224,8 @@
           ],
           "proofSketch": "Construct the normalized local analytic logarithm by integrating invariant forms near the identity; its differential is the identity, so it is an analytic group isomorphism after shrinking. Prove the open-quotient torsion theorem for arbitrary A/ℂ_p using the geometric deformation argument of Theorem II.1.9, including varieties without a finite p-adic field model. No compactness of A(ℂ_p) is assumed. For x choose n≥1 with [n]x in the local subgroup and set log_A(x)=n⁻¹ log_V([n]x). Local additivity and common multiples prove independence and additivity. Translation proves local analyticity. A competing homomorphism with the same differential agrees locally, and torsion of the quotient forces global agreement in the characteristic-zero Lie algebra. Apply the same argument to invariant-form evaluations to prove homomorphism compatibility. The transported finite-model logarithm has the required differential and analyticity, so uniqueness gives the comparison on all ℂ_p-points.",
           "usedBy": [
-            "target:4.0a"
+            "target:4.0a",
+            "target:4.0c"
           ]
         },
         {
@@ -1411,20 +1412,23 @@
           "kind": "theorem",
           "name": "SingleIntegral.naturalIntegration",
           "title": "The all-prime natural single integral",
-          "statement": "For every prime p, every finite K/ℚ_p, every smooth geometrically connected finite-type variety U/K, closed regular one-form ω and a,b∈U(K), construct the unique natural single-integration theory with universal value A+B T in K[T]. It is K-linear in ω, locally analytic in endpoints, differentiates to ω in the second endpoint, vanishes at a=b and satisfies Chasles. It commutes with algebraic pullback, integrates df and dlog f by endpoint differences and the universal logarithm, agrees with the supplied Coleman single integral under good reduction, and respects finite scalar extension and Galois conjugation with T fixed. Apply this to complements of poles of any meromorphic curve form. No graph, genus or reduction condition enters existence or uniqueness. Uniqueness concerns the whole natural theory across varieties. Vologodsky2001 Proposition 52, §17.2, p. 42, line 1806 identifies this with that preprint’s single integral under its p>2 standing convention (line 51); the all-prime theorem uses Colmez.",
+          "statement": "For every prime p, every closed subfield K⊆ℂ_p, every smooth geometrically connected finite-type variety U/K, closed regular one-form ω and a,b∈U(K), construct the unique natural single-integration theory with universal value A+B T in K+K T⊆K[T]. It is K-linear in ω, locally K-analytic in endpoints, differentiates to ω in the second endpoint, vanishes at a=b and satisfies Chasles. It commutes with algebraic pullback and integrates df and dlog f by endpoint differences and the universal logarithm. These theories commute with inclusions of closed coefficient subfields, including K⊆ℂ_p, and with continuous Galois conjugation with T fixed. For finite K/ℚ_p its specialization agrees with the finite-field primitives of §§4.0a–4.0b and with supplied Coleman integration in good reduction. Apply the general theorem to complements of poles of meromorphic curve forms. No graph, genus, local compactness or reduction condition enters existence or uniqueness. Uniqueness concerns the whole natural theory across varieties over each fixed K, rather than derivatives alone. Vologodsky2001 Proposition 52, §17.2, p. 42, line 1806 identifies the finite-K specialization with that preprint’s single integral under its p>2 standing convention (line 51); the all-prime theorem uses Colmez.",
           "hypotheses": [
-            "p any prime, including 2 and 3; K/ℚ_p finite",
+            "p any prime, including 2 and 3; K a closed subfield of ℂ_p with the induced complete ultrametric topology",
             "U smooth geometrically connected finite type; ω regular and closed; endpoints K-rational and off all excluded poles",
-            "For extended endpoints and forms use the specified finite scalar extension; the branch λ lies in K"
+            "Coefficient extension uses inclusions K⊆L of closed subfields of the same ℂ_p; a specialized branch λ lies in K and maps to its image in L; T is fixed"
           ],
           "locator": {
             "source": "colmez1998",
-            "where": "Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74, colmez1998 lines 2982–2997; proof pp. 83–85, lines 3395–3431; Remark 2, pp. 2–3, lines 229–258"
+            "where": "Closed coefficient scope p. 73, colmez1998 line 2957; Definitions II.1.2–II.1.3 and Theorem II.1.4, pp. 73–74, colmez1998 lines 2982–2997; proof pp. 83–85, lines 3395–3431; closed-field descent Remark 2(iv), pp. 2–3, lines 246–258; open-quotient restriction in Theorem II.1.9, pp. 76–77, lines 3102–3105"
           },
           "prerequisites": [
+            "target:4.0",
             "target:4.0a",
             "target:4.0b",
-            "roadmap:ColemanIntegration L1.19, L1.43"
+            "roadmap:PadicPeriodRings §§1.1–1.2 padicComplexGaloisAction_spec, padicComplexGaloisAction_continuous, padicComplex_fixed_closure_eq",
+            "roadmap:ColemanIntegration L1.19, L1.43",
+            "mathlib:PadicComplex"
           ],
           "api": [
             {
@@ -1435,17 +1439,37 @@
             {
               "name": "singleIntegral_baseChange",
               "role": "compatibility",
-              "statement": "For finite L/K the pullback form and embedded endpoints have the coefficientwise embedded universal integral; the maps compose in towers."
+              "statement": "For every inclusion K⊆L of closed subfields of ℂ_p, the pullback form and embedded endpoints have the coefficientwise embedded universal integral; the maps compose in towers. This includes infinite coefficient extensions and L=ℂ_p. Continuous Galois automorphisms transport the theory to the conjugate closed field, acting coefficientwise and fixing T."
             },
             {
               "name": "singleIntegral_goodReduction",
               "role": "compatibility",
-              "statement": "For a good-reduction Coleman presentation and a fixed branch, natural and supplied Coleman integration agree."
+              "statement": "For finite K/ℚ_p, the specialization of the general theory equals the based finite-field primitive of §§4.0a–4.0b. For a supplied good-reduction Coleman presentation and a fixed branch, it agrees with the supplied Coleman single integral; this equality also holds after the coefficient comparisons to ℂ_p."
             },
             {
               "name": "singleIntegral_exact_log",
               "role": "compatibility",
               "statement": "For df the integral is f(b)−f(a); for dlog f it is log_univ(f(b)/f(a)), on their domains."
+            },
+            {
+              "name": "singleIntegral_cp",
+              "role": "specialization",
+              "statement": "For K=ℂ_p this exports natural integration on every smooth geometrically connected finite-type U/ℂ_p, including varieties without any finite p-adic field model. The primitive is the geometric one from §§4.0a–4.0b. This is the ℂ_p theory used by the finite-map and rational-line APIs of §4.0d."
+            },
+            {
+              "name": "singleIntegral_closedFieldFixed",
+              "role": "descent",
+              "statement": "For closed K⊆ℂ_p let H_K⊆G_{ℚ_p} be the subgroup whose continuous action fixes every element of K, and let L_K=(ℚ̄_p)^{H_K}. Prove H_K is closed and identify the closure of L_K in ℂ_p with K. Apply PadicPeriodRings §1.2 padicComplex_fixed_closure_eq to obtain (ℂ_p)^{H_K}=K. With T fixed, the H_K-invariants of ℂ_p+ℂ_p T are K+K T. This is the closed-subfield adapter to the supplied fixed-closure theorem (colmez1998 Remark 2(iv), lines 246–258)."
+            },
+            {
+              "name": "singleIntegral_geometricPrimitiveDescent",
+              "role": "descent",
+              "statement": "For U,ω over a closed K⊆ℂ_p and a∈U(K), the based geometric primitive P↦F_ω(P)−F_ω(a) of §§4.0a–4.0b is H_K-equivariant on U(ℂ_p), with T fixed. At every b∈U(K) its value lies in K+K T. Its restriction is locally K-analytic with differential ω and is independent of the geometric decomposition. It commutes with inclusions of closed fields. No unbased primitive is claimed fixed without normalization at a K-point."
+            },
+            {
+              "name": "singleIntegral_abelianOpenQuotient",
+              "role": "rigidity",
+              "statement": "For every abelian variety A over a closed K⊆ℂ_p and every open subgroup V⊆A(K), A(K)/V is torsion. Choose a sufficiently small geometric analytic subgroup W⊆A(ℂ_p) with W∩A(K)⊆V and use abelianLogCp_openQuotient_torsion. Consequently a locally constant additive map A(K)→K+K T is zero; no finite-index or compactness claim is made (colmez1998 Theorem II.1.9, lines 3102–3105)."
             }
           ],
           "tests": [
@@ -1468,9 +1492,29 @@
               "name": "SingleIntegral.naturalIntegration_nonsplitPole",
               "kind": "boundary",
               "statement": "Over ℚ₃ the integral of dt/(t²−2) between rational endpoints away from its poles is the traced quadratic logarithm of §4.0b, with coefficients in ℚ₃+ℚ₃ T. Treating each geometric residue as a ℚ₃ scalar cannot construct it."
+            },
+            {
+              "name": "singleIntegral_cp_transcendentalModel",
+              "kind": "non-example",
+              "statement": "For transcendental t∈ℂ_p, the curve E_t of §4.0 has transcendental j and no finite p-adic field model. For a nonzero invariant differential ω and sufficiently small v with ω(v)≠0, I(O,exp_{E_t}(v);ω)=ω(v) and its T coefficient is zero. The ℂ_p integration theory therefore exceeds point extension of finite-field varieties."
+            },
+            {
+              "name": "singleIntegral_completedUnramified",
+              "kind": "boundary",
+              "statement": "Let K be the closure of ℚ_p^{nr} in ℂ_p and choose α∈K outside ℚ_p^{nr}. For U=A¹_K and ω=αdt, I(0,1;ω)=α∈K; on G_m,K, I(1,p;dlog t)=T. Here H_K is inertia, its completed fixed field is K, and the residue field is 𝔽̄_p, so K is not locally compact. A finite-field compactness argument cannot supply this case."
+            },
+            {
+              "name": "singleIntegral_finiteSpecialization",
+              "kind": "compatibility",
+              "statement": "For finite K/ℚ_p, the general integral on A¹ gives I(a,b;dt)=b−a and agrees with the earlier finite-field construction. An invariant differential on any abelian variety defined over K gives the supplied abelian logarithm pairing; after inclusion into ℂ_p there is no factor [L:K]."
+            },
+            {
+              "name": "singleIntegral_fixedField_boundary",
+              "kind": "non-example",
+              "statement": "For K=ℂ_p the stabilizer is trivial and all affine coefficients are fixed; for K=ℚ_p they are exactly ℚ_p+ℚ_p T. If the closedness hypothesis is dropped and K=ℚ̄_p, its stabilizer is still trivial and its ℂ_p-fixed field is ℂ_p, not ℚ̄_p. Normalizing the zero primitive at a makes it zero; an arbitrary non-K scalar added to an unbased geometric primitive need not descend."
             }
           ],
-          "proofSketch": "Apply the geometric reduction and descended logarithmic quotient of §4.0b with the rigidified abelian primitives of §4.0a, subtract endpoint values, and use moving to remove artificial poles. The named albaneseReduction_primitiveDescent supplies K-rationality and finite-extension independence before this construction. Decomposition independence gives linearity and naturality; endpoint differences give Chasles. The construction is affine in the universal logarithm. Compare the same auxiliary varieties and primitives in good reduction with the supplied Coleman theory. The coefficient and Galois maps are those already proved in §§4.0a–4.0b; natural-theory uniqueness identifies their induced integration laws, without using the later §7.3. This is not uniqueness from derivatives alone.",
+          "proofSketch": "First construct the geometric theory over ℂ_p using §§4.0a–4.0b, moving apparent poles and subtracting endpoint values. Its geometric rigidity gives equivariance under every continuous automorphism of ℂ_p. For a closed K, identify its pointwise stabilizer H_K and its completed algebraic fixed field as in Remark 2(iv); apply the imported padicComplex_fixed_closure_eq, coefficientwise with T fixed. The normalized geometric primitive is H_K-equivariant, so at K-points its coefficients lie in K. Its local Taylor coefficients at a K-point are fixed as well, giving local K-analyticity and the correct differential. This proves geometricPrimitiveDescent before defining the K-valued integral. Restricting the same geometric theory to nested closed fields proves base change; endpoint differences give Chasles, and the geometric construction gives linearity, exact/logarithmic evaluation and algebraic naturality. For uniqueness over each fixed K, naturality forces the rational-logarithmic second-difference identity on abelian varieties. The difference of two rigidified primitives is locally constant additive modulo a scalar; the torsion open-quotient theorem, obtained by restriction from §4.0, makes that difference constant over every closed K. Apply the descended Albanese quotient and moving of §4.0b to conclude uniqueness on U. This uses torsion, not compactness. For finite K, the early finite-field construction satisfies these rigidifications, giving agreement; compare the same auxiliary varieties and primitives in good reduction with the supplied Coleman theory. The semistable realization and compact Jacobian arguments remain over finite p-adic fields.",
           "usedBy": [
             "target:4.0d",
             "target:4.0e",
@@ -1553,7 +1597,7 @@
               "statement": "For h:ℙ¹_t→ℙ¹_z, z=t², pulling back dlog z gives 2dlog t: its local index with 1 at t=0 is 2. The global degree law includes this ramification multiplicity; the identity has degree 1, while a constant map cannot be used for the projection step."
             }
           ],
-          "proofSketch": "First define the global natural double-index sum using §4.0c and prove finite-map degree scaling from the local ramification law of §2.3. Define the differential trace for the finite separable function-field extension. In a Galois closure, naturality makes the primitive of the trace the sum of conjugate primitives modulo a scalar; global residue cancellation removes that scalar. Divide the degree formula by the nonzero covering degree to obtain the projection formula. For nonconstant f the induced map X→ℙ¹ is finite and projection reduces B_X^nat(ω,dlog f) to B_ℙ¹^nat(Tr_f ω,dlog t). Over the algebraically closed coefficient field, partial fractions split Tr_f ω into an exact rational differential and scalar logarithmic derivatives. Compute the logarithmic pair at 0,a,∞; the exact term vanishes by the residue theorem. Descend by the early primitive compatibility in §4.0b; constant f is handled separately. Finally, at div(f) the local term is ord_x(f)F(x), while at poles of ω it is −Res_x(log f·ω). This yields the separated-support formula before harmonic realization.",
+          "proofSketch": "First define the global natural double-index sum using §4.0c and prove finite-map degree scaling from the local ramification law of §2.3. Define the differential trace for the finite separable function-field extension. In a Galois closure, naturality makes the primitive of the trace the sum of conjugate primitives modulo a scalar; global residue cancellation removes that scalar. Divide the degree formula by the nonzero covering degree to obtain the projection formula. For nonconstant f the induced map X→ℙ¹ is finite and projection reduces B_X^nat(ω,dlog f) to B_ℙ¹^nat(Tr_f ω,dlog t). Over the algebraically closed coefficient field, partial fractions split Tr_f ω into an exact rational differential and scalar logarithmic derivatives. Compute the logarithmic pair at 0,a,∞; the exact term vanishes by the residue theorem. Use the ℂ_p export singleIntegral_cp and descend by singleIntegral_geometricPrimitiveDescent of §4.0c; for finite K this agrees with the early primitive compatibility in §4.0b. Constant f is handled separately. Finally, at div(f) the local term is ord_x(f)F(x), while at poles of ω it is −Res_x(log f·ω). This yields the separated-support formula before harmonic realization.",
           "usedBy": [
             "target:4.2"
           ]
@@ -1853,7 +1897,7 @@
         }
       ],
       "examples": "Exact and logarithmic differentials have zero jumps; a Tate curve has a nonzero harmonic cycle jump.",
-      "dependencies": "Layers 1–3; the geometric logarithm, natural integration construction and reciprocity of §§4.0–4.0d; JacobianChallenge Layers D–F and the abelian logarithm of AnabelianGeometryAndNonabelianChabauty §5.8 via §4.0e. No height or regulator theorem is used."
+      "dependencies": "Layers 1–3; the geometric logarithm, closed-field natural integration and reciprocity of §§4.0–4.0d; PadicPeriodRings §§1.1–1.2 for the continuous Galois action and fixed-closure theorem; JacobianChallenge Layers D–F and the finite-field abelian logarithm of AnabelianGeometryAndNonabelianChabauty §5.8 via §4.0e. Compactness and semistable-model comparisons retain finite K/ℚ_p. No height or regulator theorem is used."
     },
     {
       "key": "5",
@@ -3019,6 +3063,14 @@
         "§RD.6.92"
       ],
       "what": "Finite rigid coefficient extension, the component dagger/rigid and proper tube comparisons, finite dimensionality, linear Q_K-Frobenius for Q_K=#κ_K and identity coefficient lift, its positive iterates q=Q_K^r, and linearFrobenius_baseChange (residue extension of degree f uses the f-th iterate), proper weight one, curve Gysin and affine-curve weights (boundary q times roots of unity). Only the additional semistable curve Čech/graph and index/cup comparisons are built here."
+    },
+    {
+      "roadmap": "PadicPeriodRings",
+      "sections": [
+        "§1.1 padicComplexGaloisAction",
+        "§1.2 padicComplex_fixed_closure_eq"
+      ],
+      "what": "Continuous isometric Galois action on PadicComplex and Ax–Sen–Tate: fixed points for a closed subgroup H are the closure of its algebraic fixed field. The closed-subfield adapter and normalized geometric primitive descent belong to target 4.0c; no new Ax–Sen–Tate theorem is planned here."
     }
   ],
   "consumers": [
