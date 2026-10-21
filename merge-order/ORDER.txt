@@ -138,6 +138,7 @@ HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
 TorsionCohomologyInfrastructure
 IgusaVarietiesAndTorsionConcentration
+SelmerIwasawaCohomologyPartII
 BunGAndNewtonStrata
 HeckeStacksAndLocalShtukas
 PotentialAutomorphyInfrastructure
