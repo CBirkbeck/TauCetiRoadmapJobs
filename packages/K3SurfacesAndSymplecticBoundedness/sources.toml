@@ -126,3 +126,16 @@ locator = "Theorem 2, as cited in rizov line 1084"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304566635"
+
+[[source]]
+id = "nikulin-symplectic"
+authors = "V. V. Nikulin"
+title = "Finite automorphism groups of Kähler K3 surfaces"
+year = 1980
+locator_scheme = "section"
+locator = "§5, cyclic symplectic actions; numbering as cited in wild-cyclic line 52"
+sha256 = "e4bcedec3da7eb847d1fb363527b9c2161fb1efe7d12352c5a62b2a3c98762c6"
+licence_class = "operator-local"
+status = "certified"
+local_name = "nikulin-1979-finite-automorphism-groups-k3.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/17#issuecomment-6304714828"
