@@ -128,6 +128,7 @@ PotentialModularityAndCompatibleSystems
 AnabelianGeometryAndNonabelianChabauty
 ColemanIntegrationPartII
 EffectiveDiophantineMethods
+EffectiveClassNumbers
 CompletedCohomologyPartII
 CohomologyComparisons
 CohomologyComparisonsPartII
