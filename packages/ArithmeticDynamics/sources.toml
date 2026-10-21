@@ -17,8 +17,80 @@ id = "forster-riemann-surfaces"
 authors = "Otto Forster"
 title = "Lectures on Riemann Surfaces"
 year = 1981
+doi = "10.1007/978-1-4612-5961-9"
 locator_scheme = "section"
 locator = "1.5(c), 1.9, 1.12–1.16"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6304384749"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
+
+[[source]]
+id = "ms95"
+authors = "Patrick Morton; Joseph H. Silverman"
+title = "Periodic points, multiplicities, and dynamical units"
+year = 1995
+locator_scheme = "section"
+locator = "§3, including Proposition 3.2 and Lemma 3.4"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0461/LOG_0008.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0461/LOG_0008.pdf"
+fetched_at = "2026-10-21T00:42:54Z"
+sha256 = "35b2f17b54c7b9b4d408d423bf573b0105e7c52e345de92e7b19173ac50fce50"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
+
+[[source]]
+id = "Zieve1996"
+authors = "Michael E. Zieve"
+title = "Cycles of polynomial mappings"
+year = 1996
+locator_scheme = "theorem"
+locator = "Lemmas 29–30,39–42 and period-bound results"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
+
+[[source]]
+id = "mcmullen-1987"
+authors = "Curt McMullen"
+title = "Families of rational maps and iterative root-finding algorithms"
+year = 1987
+doi = "10.2307/1971408"
+locator_scheme = "theorem"
+locator = "Theorem 2.2; Corollary 2.3"
+url = "https://people.math.harvard.edu/~ctm/papers/home/text/papers/families/families.pdf"
+fetched_from = "https://people.math.harvard.edu/~ctm/papers/home/text/papers/families/families.pdf"
+fetched_at = "2026-10-21T00:42:55Z"
+sha256 = "5b16faae90a8306f645cd844b3c4a625a0a22d151f74f48f796a380530cc4751"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
+
+[[source]]
+id = "call-silverman-1993"
+authors = "Gregory S. Call; Joseph H. Silverman"
+title = "Canonical heights on varieties with morphisms"
+year = 1993
+locator_scheme = "theorem"
+locator = "Theorems 1.1,3.1,4.1"
+url = "http://www.numdam.org/item/CM_1993__89_2_163_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1993__89_2_163_0.pdf"
+fetched_at = "2026-10-21T00:42:58Z"
+sha256 = "01a4cd0c246182c6496dcddb1f43e4343d17db4f55a22d73f35d057190bc0586"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
+
+[[source]]
+id = "stoll-1992-quadratic-iterates"
+authors = "Michael Stoll"
+title = "Galois groups over Q of some iterated polynomials, blueprint reproduction"
+year = 1992
+locator_scheme = "theorem"
+locator = "Facts 1.0; Lemmas 1.1–2.2; Theorems in Sections 1 and 3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
