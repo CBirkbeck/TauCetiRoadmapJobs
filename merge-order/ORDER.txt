@@ -61,6 +61,7 @@ GeometryOfNumbersAndQuadraticArithmetic
 HermitianKTheoryOfPoincareCategories
 KTheoryFiniteLocalFields
 HabiroCyclotomicCompletions
+QWittVectors
 MotivesAndAlgebraicCycles
 ModularCurvesPartII
 LocalGaloisDeformationRings
