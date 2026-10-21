@@ -120,7 +120,7 @@ ready_after = false
 
 [design]
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
-daily_cap = 6
+daily_cap = 10
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
@@ -187,9 +187,10 @@ open-repository = ["arxiv.org", ".arxiv.org", "hal.science", ".hal.science", ".a
                    "numdam.org", ".numdam.org",
                    "gdz.sub.uni-goettingen.de", "eudml.org", ".eudml.org", "projecteuclid.org",
                    "stacks.math.columbia.edu", "zbmath.org", ".zbmath.org",
-                   "mathnet.ru", ".mathnet.ru", "geodesic.mathdoc.fr"]
-publisher-open = ["doi.org"]   # subscription publishers are not open by default; add a host only when its content is open
-author-page = []
+                   "mathnet.ru", ".mathnet.ru", "geodesic.mathdoc.fr",
+                   "e-periodica.ch", ".e-periodica.ch", "jmilne.org", ".jmilne.org"]
+publisher-open = ["doi.org", "www.ams.org/journals/"]   # subscription publishers are not open by default; add a host only when its content is open
+author-page = ["jmilne.org", ".jmilne.org", "users.renyi.hu"]
 institutional = ["users.renyi.hu"]   # the Rényi Institute's archive of Erdős's papers
 
 [sandbox]

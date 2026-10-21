@@ -1,0 +1,51 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ProbabilisticAndMetricNumberTheory"
+
+[[source]]
+id = "Koukoulopoulos2019"
+authors = "Dimitris Koukoulopoulos"
+title = "The Distribution of Prime Numbers"
+year = 2019
+locator_scheme = "theorem"
+locator = "Theorem 14.2, page 145"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314165218"
+
+[[source]]
+id = "Kubilius1964"
+authors = "Jonas Kubilius"
+title = "Probabilistic Methods in the Theory of Numbers"
+year = 1964
+locator_scheme = "theorem"
+locator = "Classical growing-prime total variation theorem"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314165218"
+
+[[source]]
+id = "RS1962"
+authors = "J. Barkley Rosser and Lowell Schoenfeld"
+title = "Approximate formulas for some functions of prime numbers"
+year = 1962
+locator_scheme = "theorem"
+locator = "Theorem 5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314165218"
+
+[[source]]
+id = "StrauchPorubsky2018"
+authors = "Oto Strauch and Stefan Porubsky"
+title = "Distribution of Sequences: A Sampler"
+year = 2018
+locator_scheme = "theorem"
+locator = "Theorems 1.9.0.3 and 1.11.2.1; physical pages 74 and 95"
+url = "https://musavsrv.mat.savba.sk/musav/O_Strauch-S_Porubsky_Distribution_of_Sequences_A_Sampler-20180118.pdf"
+fetched_from = "https://musavsrv.mat.savba.sk/musav/O_Strauch-S_Porubsky_Distribution_of_Sequences_A_Sampler-20180118.pdf"
+fetched_at = "2026-10-21T10:57:25Z"
+sha256 = "618e9de95cbcaa9cd1bb2a9a63f8ff108cdb2f96ce5a47192882985dcc403fb1"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314176071"

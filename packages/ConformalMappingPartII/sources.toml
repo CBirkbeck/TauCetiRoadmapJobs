@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ConformalMappingPartII"
+
+[[source]]
+id = "Hem88"
+authors = "Joachim A. Hempel"
+title = "On the Uniformization of the <i>n</i> -Punctured Sphere"
+year = 1988
+doi = "10.1112/blms/20.2.97"
+locator_scheme = "theorem"
+locator = "Theorem 3.1; Lemma 3.3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/140#issuecomment-6311982454"
