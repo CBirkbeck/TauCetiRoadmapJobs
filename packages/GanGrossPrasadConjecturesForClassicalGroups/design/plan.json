@@ -31,7 +31,8 @@
             "mathlib:LinearMap.IsSymm",
             "mathlib:LinearMap.IsAlt",
             "mathlib:QuadraticMap.polar_self",
-            "tauceti:QuadraticForm.exists_equivalent_hyperbolicPresentation_prod"
+            "tauceti:QuadraticForm.exists_equivalent_hyperbolicPresentation_prod",
+            "tauceti:LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J"
           ],
           "api": [
             {
@@ -84,7 +85,7 @@
             {
               "name": "alternating_orientation_witness",
               "kind": "computation",
-              "statement": "On the alternating plane B(e,f) = 1 and B(f,e) = −1; the reversed orientation changes the Heisenberg commutator sign in §2.2."
+              "statement": "On the alternating plane B(e,f) = 1 and B(f,e) = −1; the pinned Matrix.J basis is (f,e), with B(inr(0),inl(0)) = 1. Keeping (e,f) instead gives −Matrix.J and reverses the Heisenberg commutator sign in §2.2."
             }
           ],
           "proofSketch": "Take the complement through the perfect pairing and apply imported Witt decomposition; retain its isometry class, not merely its dimension."
@@ -110,7 +111,10 @@
             "roadmap:ReductiveGroups §Layer 7",
             "gap:classical-group-points",
             "gap:orthogonal-scheme-points",
-            "gap:classical-flags"
+            "gap:classical-flags",
+            "tauceti:TauCeti.Symplectic.schemePointsMulEquiv",
+            "tauceti:LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J",
+            "tauceti:TauCeti.ConstantForm.groupScheme"
           ],
           "api": [
             {
@@ -144,6 +148,16 @@
               "name": "relativeSubgroup_two_coordinates",
               "kind": "computation",
               "statement": "For n = 1 in the unipotent radical and any g, j(1,g) = (i(g),g), whereas j(u,1) = (u,1); this distinguishes product from diagonal projections."
+            },
+            {
+              "name": "classical_points_gram_orientation",
+              "kind": "computation",
+              "statement": "Over Q, let C = diag(1,4) and M = [[0,1/2], [−2,0]]. Then det M = 1 and M C Mᵀ = C, but Mᵀ C M = diag(16,1/4). Its column isometry is T = (Mᵀ)⁻¹ = [[0,2], [−1/2,0]], with Tᵀ C T = C; using M itself would fail the arbitrary-Gram comparison."
+            },
+            {
+              "name": "classical_points_low_ranks",
+              "kind": "degenerate",
+              "statement": "For n = 0 the constant-form point group and its determinant-one cut are trivial. In rank one with C = (a), a ≠ 0, the point equation is u² = 1 and the determinant-one cut forces u = 1; this agrees with pinned SO(0), SO(1) and Sp(0), rather than importing an extra low-rank scheme construction."
             }
           ],
           "proofSketch": "Restrict the imported parabolic Levi action to G(W); prove it normalizes Ru(P). Use the semidirect universal property and projection to prove injectivity."
@@ -153,10 +167,10 @@
           "kind": "definition",
           "name": "GGP.IsRelevantInnerForm",
           "title": "Relevance across pure inner forms",
-          "statement": "For a pure inner twist of G(V) × G(W) represented by form spaces (V′,W′), define relevance by existence of a nondegenerate isometric inclusion W′ ↪ V′ whose complement is isometric to C = W⊥. Retain pure-twist markings when constructing packet members; do not identify every form of equal rank.",
+          "statement": "For a pure inner twist of G(V) × G(W) represented by marked form spaces (V′,W′), define relevance by existence of a nondegenerate isometric inclusion W′ ↪ V′ whose complement is isometric to C = W⊥; equal rank alone does not identify twists.",
           "hypotheses": [
             "F is a field with 2 invertible; A is F with identity involution or a quadratic étale F-algebra with its canonical involution; epsilon ∈ {1,−1}; all form modules are finite free and nondegenerate",
-            "The original relevant pair and an actual pure inner twist supplied by the classification"
+            "The original relevant pair and an actual marked pure inner twist supplied by the marked-form contract"
           ],
           "locator": {
             "source": "ggp",
@@ -167,7 +181,6 @@
             "target:1.2",
             "gap:hermitian-witt",
             "gap:marked-inner-forms",
-            "gap:enhanced-classification",
             "tauceti:TauCeti.equivalent_of_equivalent_prod"
           ],
           "api": [
@@ -341,7 +354,9 @@
             "target:1.2",
             "gap:heisenberg-svn",
             "gap:classical-group-points",
-            "gap:classical-flags"
+            "gap:classical-flags",
+            "tauceti:TauCeti.Symplectic.pointsMulEquiv",
+            "tauceti:LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J"
           ],
           "api": [
             {
@@ -742,19 +757,21 @@
           "kind": "theorem",
           "name": "GGP.higherCodimensionMultiplicityOne",
           "title": "Higher-codimension uniqueness supplied by the reductions",
-          "statement": "For a nonarchimedean characteristic-zero field, prove dim Model(pi,nu) ≤ 1 for every irreducible smooth admissible representation of a Hermitian relevant pair of arbitrary odd codimension (including split quadratic algebra), or a symplectic/metaplectic relevant pair of arbitrary even codimension with exactly one genuine factor. The basic cases use §3.1; for nonbasic pairs the auxiliary supercuspidal is chosen so the corresponding induced representation is irreducible and the Bernstein exclusion holds. This choice is part of the proof, not a restriction on pi.",
+          "statement": "For a nonarchimedean characteristic-zero field, prove dim Model(pi,nu) ≤ 1 for every irreducible smooth admissible representation of a special orthogonal or Hermitian relevant pair of arbitrary odd codimension, or a symplectic/metaplectic or skew-Hermitian relevant pair of arbitrary even codimension; include split quadratic algebras in both unitary cases and require exactly one genuine ambient factor in the symplectic/metaplectic case. The basic cases use §3.1; for nonbasic pairs the auxiliary supercuspidal is chosen so the corresponding induced representation is irreducible and the Bernstein exclusion holds. This choice is part of the proof, not a restriction on pi.",
           "hypotheses": [
             "F is nonarchimedean of characteristic zero, with no restriction on its residue characteristic",
-            "The indicated Hermitian or symplectic/metaplectic pair, actual model data and irreducible smooth admissible pi"
+            "The indicated special orthogonal, Hermitian, symplectic/metaplectic or skew-Hermitian pair, actual model data and irreducible smooth admissible pi"
           ],
           "locator": {
             "source": "ggp",
-            "where": "§§15–16, pp. 60–67; ggp line 2116, ggp line 2158, ggp line 2293; sun pp. 2–3, sun line 46"
+            "where": "§§15–16, pp. 60–67, ggp line 2116, ggp line 2158, ggp line 2293; §19, pp. 76–77, ggp line 2661–2700, with the owned SO and skew-unitary reductions §§3.7–3.8; sun Theorems B–C, pp. 1–3, sun line 31, sun line 102; waldspurger Theorem 1, p. 1, waldspurger line 10–18"
           },
           "prerequisites": [
             "target:3.1",
             "target:3.3",
             "target:3.4",
+            "target:3.7",
+            "target:3.8",
             "gap:smooth-functors",
             "gap:induction-jacquet",
             "gap:bernstein-exclusions"
@@ -770,9 +787,19 @@
               "name": "higher_no_aux_prime",
               "kind": "compatibility",
               "statement": "The auxiliary representation is chosen over the same local field, including Q2; the theorem imposes no good-prime condition on pi."
+            },
+            {
+              "name": "higher_SO3_SO0",
+              "kind": "degenerate",
+              "statement": "For V = hyperbolic plane ⊥ L with L nonisotropic and W = 0, the SO(3)/SO(0) Bessel pair has rank X = 1; §3.7 uses Vplus = V ⊥ (−L), split of dimension four, and a maximal-isotropic-plane parabolic with Levi GL(2) × SO(0). The resulting SO(4)/SO(3) basic Hom has dimension at most one by Waldspurger, including both choices of maximal-isotropic component."
+            },
+            {
+              "name": "higher_skew_unitary_plane",
+              "kind": "compatibility",
+              "statement": "For E/F quadratic field, a skew-Hermitian line W0 and W = W0 ⊥ hyperbolic plane, §3.8 reduces the codimension-two U(W)/U(W0) model using GL_E(1) × U(W0) induction to the equal-rank U(W) oscillator Hom bounded by Sun’s Theorems B–C; use the same psi and mu on both spaces, since changing only one splitting does not give this comparison."
             }
           ],
-          "proofSketch": "Choose a supercuspidal outside the finite supports of pi and its Jacquet constituents, with irreducible auxiliary induction. The relevant Hom is identified with a basic Hom by §3.3 or §3.4, so §3.1 gives the bound. No O-to-SO restriction argument is used."
+          "proofSketch": "Choose a supercuspidal outside the finite supports of pi and its Jacquet constituents, with irreducible auxiliary induction. Apply §3.3 for Hermitian Bessel pairs, §3.4 for symplectic/metaplectic pairs, §3.7 for SO Bessel pairs, and §3.8 for nonsplit skew-unitary pairs; split unitary pairs use the GL versions of §§3.3–3.4. Each Hom reduces to the corresponding basic Hom of §3.1, including Waldspurger’s SO bound and Sun’s unitary oscillator bound. Transport the character and oscillator dual conventions through §2.4."
         },
         {
           "id": "3.7",
@@ -795,7 +822,9 @@
             "gap:classical-flags",
             "gap:smooth-functors",
             "gap:induction-jacquet",
-            "gap:bernstein-exclusions"
+            "gap:bernstein-exclusions",
+            "tauceti:TauCeti.ConstantForm.mem_definingPointsSubgroup_iff",
+            "tauceti:TauCeti.SpecialOrthogonal.definingHopfIdeal"
           ],
           "api": [],
           "tests": [
@@ -876,7 +905,7 @@
           "title": "Component signs and involutive representatives",
           "statement": "For a semisimple selfdual or conjugate-dual WD parameter (M,B), use its pairing-preserving centralizer C_M and A_M = pi0(C_M). Identify the independent signs with irreducible same-sign summands, one sign for each isomorphism class regardless of multiplicity; write A_M^+ for the image of det = 1. For each component choose an involutive representative and form its −1 eigenspace M^a. Require invariants used below to descend; no eigenspace assertion is made for an arbitrary unipotent element of C_M.",
           "hypotheses": [
-            "F is a local field of characteristic different from 2; representations are complex smooth admissible nonarchimedeanly or Casselman–Wallach archimedeanly; all additive characters used are continuous unitary and nontrivial",
+            "F is a local field of characteristic different from 2; M is a finite-dimensional complex WD representation",
             "M has a nondegenerate invariant duality pairing and is semisimple in the WD sense"
           ],
           "locator": {
@@ -885,9 +914,7 @@
           },
           "prerequisites": [
             "gap:parameter-carriers",
-            "roadmap:ReductiveGroups §Layer 3",
-            "gap:smooth-functors",
-            "gap:casselman-wallach"
+            "roadmap:ReductiveGroups §Layer 3"
           ],
           "api": [
             {
@@ -1287,11 +1314,12 @@
           "hypotheses": [
             "F is nonarchimedean of characteristic zero, with no restriction on its residue characteristic",
             "E/F quadratic field; Hermitian relevant pair; tempered parameter",
+            "Fix nu0 ∈ Fˣ: write d for the even dimension and dprime for the odd dimension, and require the complement of the smaller space to be a sum of hyperbolic planes and a line of norm +nu0 if d > dprime, or −nu0 if dprime > d, as in bp-refined 4.1(1); mu(G), the transfer normalization and the packet labels use this same nu0. Varying nu0 covers every residual-line norm class in Fˣ/N(Eˣ).",
             "The enhanced local classification satisfies bp-refined §7.2 (CLL, Stab, TE, TET), and its labels agree with §§7.7 and 8.3 and §4.4 under the specified Whittaker/additive-character normalization"
           ],
           "locator": {
             "source": "bp-refined",
-            "where": "Theorem 8.5.1, printed p. 71 (extraction p. 72), bp-refined line 2891–2901; setup printed p. 70, bp-refined line 2877; §§7.2, 7.7, 8.3; uniqueness precursor bp-unitary-tempered Theorem 18.4.1, bp-unitary-tempered line 5429; gan-ichino §9.3, gan-ichino line 2494 for the generic reduction"
+            "where": "Theorem 8.5.1, printed p. 71 (extraction p. 72), bp-refined line 2891–2901; setup printed p. 70, bp-refined line 2877; §§7.2, 7.7, 8.3; uniqueness precursor bp-unitary-tempered Theorem 18.4.1, bp-unitary-tempered line 5429; gan-ichino §9.3, gan-ichino line 2494 for the generic reduction; fixed norm and quasi-split sign, §3.1, printed p. 17, bp-refined line 713–719; complement condition §4.1(1), printed p. 20, bp-refined line 806–807; residual form §1.3, printed pp. 9–10, bp-refined line 381–399"
           },
           "prerequisites": [
             "target:4.6",
@@ -1306,6 +1334,16 @@
               "name": "unitary_tempered_ramified_two",
               "kind": "compatibility",
               "statement": "A ramified quadratic extension of Q2 is in scope; no odd residual characteristic is used."
+            },
+            {
+              "name": "unitary_norm_even_larger",
+              "kind": "computation",
+              "statement": "For larger even-dimensional V = W ⊥ ⟨a⟩ with a ∈ Fˣ and W odd-dimensional, take nu0 = a; then the residual norm is +nu0. For larger odd-dimensional Vprime = Wprime ⊥ ⟨a⟩ with Wprime even-dimensional, take nu0 = −a; then the residual norm is −nu0. Using +nu0 in both orders changes the prescribed datum whenever −1 is not a norm. For E = Q3(√3), −1 is not a norm: the residue of the norm of a unit is a square in F3, whereas −1 has residue 2."
+            },
+            {
+              "name": "unitary_norm_class_variation",
+              "kind": "non-example",
+              "statement": "Scaling a residual generator by t ∈ Eˣ multiplies its norm by N(E/F)(t). A norm multiple preserves the residual-line class; replacing nu0 by a nonnorm multiple changes that class and requires the corresponding mu(G) and packet-label normalization, rather than reusing fixed labels. In particular t = 2 multiplies the norm by 4 and preserves the class."
             }
           ],
           "proofSketch": "Use the unitary local relative trace formula and its character expansion to identify the distinguished relative multiplicity with the epsilon-character selection. Its foundations are the trace and spectral contracts, not an assumed GGP theorem. The primary epsilon-labelled theorem is bp-refined Theorem 8.5.1, conditional there on §7.2 and its fixed labeling; import those classification and normalization laws as precise supplier inputs. The unlabelled uniqueness precursor alone does not determine chi."
@@ -1524,7 +1562,8 @@
             "gap:cuspidal-tensors",
             "gap:petersson-pairings",
             "gap:period-growth",
-            "gap:orthogonal-scheme-points"
+            "gap:orthogonal-scheme-points",
+            "tauceti:TauCeti.ConstantForm.groupScheme"
           ],
           "api": [
             {
@@ -1900,7 +1939,8 @@
             "gap:tamagawa-factorization",
             "gap:smooth-functors",
             "gap:casselman-wallach",
-            "gap:orthogonal-scheme-points"
+            "gap:orthogonal-scheme-points",
+            "tauceti:TauCeti.ConstantForm.mem_definingPointsSubgroup_iff"
           ],
           "api": [
             {
@@ -2615,8 +2655,8 @@
       "roadmap": "ReductiveGroupsPartII",
       "sections": [
         "missing: epsilon-Hermitian operations and Witt comparison",
-        "missing: symplectic and unitary schemes and points",
-        "missing: SO extension of OrthogonalSpinGroups Layer 0",
+        "missing: unitary schemes and points",
+        "missing: quadratic constant-form point comparison",
         "missing: classical flag stabilizers and radicals",
         "missing: marked pure twists and forms"
       ],
@@ -2719,38 +2759,38 @@
         "1.3",
         "1.4"
       ],
-      "detail": "For a field F with 2 invertible and A = F with trivial involution or quadratic étale A/F including F × F, supply nondegenerate epsilon-Hermitian forms on finite projective A-modules, orthogonal sums and complements, conjugate duals, Witt decomposition and cancellation with isometry transport, reusing the pinned quadratic decomposition/cancellation for the symmetric trivial-involution specialization.",
-      "needs": "For a field F with 2 invertible and A = F with trivial involution or quadratic étale A/F including F × F, supply nondegenerate epsilon-Hermitian forms on finite projective A-modules, orthogonal sums and complements, conjugate duals, Witt decomposition and cancellation with isometry transport, reusing the pinned quadratic decomposition/cancellation for the symmetric trivial-involution specialization.",
+      "detail": "For a field F with 2 invertible and A = F with trivial involution or quadratic étale A/F including F × F, supply nondegenerate epsilon-Hermitian forms on finite projective A-modules, orthogonal sums and complements, conjugate duals, Witt decomposition and cancellation with isometry transport, reusing the pinned quadratic decomposition/cancellation for the symmetric trivial-involution specialization and LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J in TauCeti/LinearAlgebra/BilinearForm/SymplecticBasis.lean for the alternating trivial-involution specialization.",
+      "needs": "For a field F with 2 invertible and A = F with trivial involution or quadratic étale A/F including F × F, supply nondegenerate epsilon-Hermitian forms on finite projective A-modules, orthogonal sums and complements, conjugate duals, Witt decomposition and cancellation with isometry transport, reusing the pinned quadratic decomposition/cancellation for the symmetric trivial-involution specialization and LinearMap.BilinForm.IsAlt.exists_basis_toMatrix_eq_J in TauCeti/LinearAlgebra/BilinearForm/SymplecticBasis.lean for the alternating trivial-involution specialization.",
       "supplier": "ReductiveGroupsPartII",
       "section": "missing: epsilon-Hermitian operations and Witt comparison"
     },
     {
       "slug": "classical-group-points",
-      "title": "symplectic and unitary schemes and points",
+      "title": "unitary schemes and points",
       "neededBy": [
         "1.2",
         "1.4",
         "2.2",
         "3.8"
       ],
-      "detail": "For finite free nondegenerate alternating or epsilon-Hermitian forms over a field F with 2 invertible and quadratic étale A/F including split A, supply the smooth connected classical group schemes, their isometry point functors and base changes, identified as topological groups with their local-field isometries for every local field of characteristic different from 2.",
-      "needs": "For finite free nondegenerate alternating or epsilon-Hermitian forms over a field F with 2 invertible and quadratic étale A/F including split A, supply the smooth connected classical group schemes, their isometry point functors and base changes, identified as topological groups with their local-field isometries for every local field of characteristic different from 2.",
+      "detail": "For finite free nondegenerate epsilon-Hermitian forms over a quadratic étale A/F including split A, with F a field and 2 invertible, supply their smooth connected unitary group schemes, isometry point functors and base changes, and their topological identification with the local isometry groups over every local field of characteristic different from 2, using the pinned symplectic schemes and symplectic-basis theorem for alternating forms with trivial involution instead of rebuilding them.",
+      "needs": "For finite free nondegenerate epsilon-Hermitian forms over a quadratic étale A/F including split A, with F a field and 2 invertible, supply their smooth connected unitary group schemes, isometry point functors and base changes, and their topological identification with the local isometry groups over every local field of characteristic different from 2, using the pinned symplectic schemes and symplectic-basis theorem for alternating forms with trivial involution instead of rebuilding them.",
       "supplier": "ReductiveGroupsPartII",
-      "section": "missing: symplectic and unitary schemes and points"
+      "section": "missing: unitary schemes and points"
     },
     {
       "slug": "orthogonal-scheme-points",
-      "title": "SO extension of OrthogonalSpinGroups Layer 0",
+      "title": "quadratic constant-form point comparison",
       "neededBy": [
         "1.2",
         "3.7",
         "6.1",
         "7.2"
       ],
-      "detail": "For every finite-dimensional nondegenerate quadratic Q over a field F with 2 invertible, supply affine O_Q and determinant-one SO_Q schemes with the rank-zero and rank-one cases explicit, identify their points with OrthogonalSpinGroups Layer 0 and prove scalar-extension compatibility and the local topological identification over every local field of characteristic different from 2, including finite extensions of Q2, extending rather than reconstructing its point-group theory.",
-      "needs": "For every finite-dimensional nondegenerate quadratic Q over a field F with 2 invertible, supply affine O_Q and determinant-one SO_Q schemes with the rank-zero and rank-one cases explicit, identify their points with OrthogonalSpinGroups Layer 0 and prove scalar-extension compatibility and the local topological identification over every local field of characteristic different from 2, including finite extensions of Q2, extending rather than reconstructing its point-group theory.",
+      "detail": "For a finite-dimensional nondegenerate quadratic Q over a field F with 2 invertible and chosen Gram matrix C of its unhalved polar form, identify the points of TauCeti.ConstantForm.groupScheme at C and of its determinant-one cut, formed by joining the pinned constant-form Hopf ideal with the pinned determinant kernel as in TauCeti.SpecialOrthogonal.definingHopfIdeal, with OrthogonalSpinGroups Layer 0, compatibly with Gram-matrix changes and scalar extension and as topological groups over every local field of characteristic different from 2, including finite extensions of Q2, explicitly converting the pinned M C Mᵀ = C convention to column isometries by M ↦ (Mᵀ)⁻¹.",
+      "needs": "For a finite-dimensional nondegenerate quadratic Q over a field F with 2 invertible and chosen Gram matrix C of its unhalved polar form, identify the points of TauCeti.ConstantForm.groupScheme at C and of its determinant-one cut, formed by joining the pinned constant-form Hopf ideal with the pinned determinant kernel as in TauCeti.SpecialOrthogonal.definingHopfIdeal, with OrthogonalSpinGroups Layer 0, compatibly with Gram-matrix changes and scalar extension and as topological groups over every local field of characteristic different from 2, including finite extensions of Q2, explicitly converting the pinned M C Mᵀ = C convention to column isometries by M ↦ (Mᵀ)⁻¹.",
       "supplier": "ReductiveGroupsPartII",
-      "section": "missing: SO extension of OrthogonalSpinGroups Layer 0"
+      "section": "missing: quadratic constant-form point comparison"
     },
     {
       "slug": "classical-flags",
@@ -2790,7 +2830,6 @@
         "3.6",
         "3.7",
         "3.8",
-        "4.1",
         "4.7",
         "4.8",
         "5.2",
@@ -2811,7 +2850,6 @@
         "2.3",
         "2.4",
         "3.2",
-        "4.1",
         "4.7",
         "7.2",
         "7.5"
@@ -2888,7 +2926,6 @@
       "slug": "enhanced-classification",
       "title": "enhanced local classification and labeling",
       "neededBy": [
-        "1.3",
         "4.4",
         "4.5",
         "4.6",
@@ -2898,8 +2935,8 @@
         "5.4",
         "5.6"
       ],
-      "detail": "For the characteristic-zero local unitary groups and their marked pure inner forms used in the proved theorems, supply actual enhanced classification with tempered and generic domains, normalized Langlands induction and component-label laws, contragredient and Whittaker-change laws, satisfying, at nonarchimedean places, bp-refined §7.2 CLL/Stab/TE/TET with its transfer-factor constants and the labeling of §§7.7,8.3 identified with ggp p.67 and §4.4, with the real-place stability, transfer and prescribed Whittaker model supplied separately below; in the general classical conjecture propositions these laws remain explicit classification hypotheses.",
-      "needs": "For the characteristic-zero local unitary groups and their marked pure inner forms used in the proved theorems, supply actual enhanced classification with tempered and generic domains, normalized Langlands induction and component-label laws, contragredient and Whittaker-change laws, satisfying, at nonarchimedean places, bp-refined §7.2 CLL/Stab/TE/TET with its transfer-factor constants and the labeling of §§7.7,8.3 identified with ggp p.67 and §4.4, with the real-place stability, transfer and prescribed Whittaker model supplied separately below; in the general classical conjecture propositions these laws remain explicit classification hypotheses.",
+      "detail": "For the characteristic-zero local unitary groups and their marked pure inner forms used in the proved theorems, supply actual enhanced classification with tempered and generic domains, normalized Langlands induction and component-label laws, contragredient and Whittaker-change laws, satisfying, at nonarchimedean places, bp-refined §7.2 CLL/Stab/TE/TET with its transfer-factor constants and the labeling of §§7.7,8.3 relative to a fixed nu0 ∈ Fˣ with residual-line norm +nu0 when the larger space has even dimension and −nu0 when it has odd dimension as in bp-refined 4.1(1), with mu(G) relative to the same nu0 and these labels identified with ggp p.67 and §4.4, with the real-place stability, transfer and prescribed Whittaker model supplied separately below; in the general classical conjecture propositions these laws remain explicit classification hypotheses.",
+      "needs": "For the characteristic-zero local unitary groups and their marked pure inner forms used in the proved theorems, supply actual enhanced classification with tempered and generic domains, normalized Langlands induction and component-label laws, contragredient and Whittaker-change laws, satisfying, at nonarchimedean places, bp-refined §7.2 CLL/Stab/TE/TET with its transfer-factor constants and the labeling of §§7.7,8.3 relative to a fixed nu0 ∈ Fˣ with residual-line norm +nu0 when the larger space has even dimension and −nu0 when it has odd dimension as in bp-refined 4.1(1), with mu(G) relative to the same nu0 and these labels identified with ggp p.67 and §4.4, with the real-place stability, transfer and prescribed Whittaker model supplied separately below; in the general classical conjecture propositions these laws remain explicit classification hypotheses.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "missing: enhanced local classification and labeling"
     },
