@@ -549,7 +549,8 @@
           "usedBy": [
             "target:3.1",
             "target:5.5",
-            "target:7.5"
+            "target:7.5",
+            "target:4.0d"
           ],
           "title": "Coordinate changes, degrees and coefficients"
         }
@@ -688,12 +689,12 @@
           "kind": "theorem",
           "name": "Curve.semistableDeRhamComparison",
           "title": "Curve cohomology and the graph maps",
-          "statement": "For X/K smooth proper geometrically connected with finite reduced boundary Z and a split separated regular nodal realization, using the supplied rigid cohomology, finite-dimensionality, scalar-extension and component dagger comparisons, construct the additional curve algebraic/rigid de Rham comparison with the component-annulus Čech total complex. Its degree-one representatives ((ω_v),(f_e)) satisfy d f_e=ω_tail−ω_head and its coboundaries are ((d a_v),(a_tail−a_head)). Prove the graph exact sequence (4.5), restriction maps, and the graph retraction χ represented by f_e−(F_tail−F_head). Define N_ℓ by the harmonic class of ℓ(e)Res_e(ω_tail) using one fixed rational metric, and identify it with geometric monodromy at that valuation scale. Construct the K-linear q-Frobenius via rigid component cohomology and its weight splitting: χφ=χ, Nφ=qN, χN=N, N²=0. Construct ordered proper cup product and its second-kind local-primitive residue formula. All maps respect coefficient extension and admissible common refinements. For nonsplit Z the scalar-extension maps of complexes are defined before choosing a splitting field.",
+          "statement": "For X/K smooth proper geometrically connected with finite reduced boundary Z and a split separated regular nodal realization, using the supplied rigid cohomology, finite-dimensionality, scalar-extension and component dagger comparisons, construct the additional curve algebraic/rigid de Rham comparison with the component-annulus Čech total complex. Its degree-one representatives ((ω_v),(f_e)) satisfy d f_e=ω_tail−ω_head and its coboundaries are ((d a_v),(a_tail−a_head)). Prove the graph exact sequence (4.5), restriction maps, and the graph retraction χ represented by f_e−(F_tail−F_head). Define N_ℓ by the harmonic class of ℓ(e)Res_e(ω_tail) using one fixed rational metric, and identify it with geometric monodromy at that valuation scale. Writing Q_K=#κ_K, construct the K-linear q-Frobenius for q=Q_K^r with integer r≥1 and identity coefficient lift via rigid component cohomology and its weight splitting: χφ=χ, Nφ=qN, χN=N, N²=0. Construct ordered proper cup product and its second-kind local-primitive residue formula. The cohomology, cup, χ and N maps respect coefficient extension and admissible common refinements at one valuation scale; Frobenius extension distinguishes scalar extension of an operator from iteration for the enlarged residue field. For nonsplit Z the scalar-extension maps of complexes are defined before choosing a splitting field.",
           "hypotheses": [
             "K/ℚ_p finite, p any prime; X smooth proper geometrically connected of dimension one; a fixed logarithm branch and valuation normalization",
             "Z finite reduced; for displayed split Frobenius charts its points are rational and lie in distinct smooth sections",
             "A split regular nodal model and compatible Coleman cover from §3.0a; common rational metric and fixed valuation scale",
-            "q is a positive power of p, q≥2; the operators are the constructed comparison operators"
+            "Q_K=#κ_K and q=Q_K^r with integer r≥1, so the q-power residue map is the identity; coefficient lift is id_K; the operators are the constructed comparison operators"
           ],
           "locator": {
             "source": "besser2017",
@@ -721,7 +722,12 @@
             {
               "name": "semistableDeRhamComparison_operators",
               "role": "compatibility",
-              "statement": "The constructed operators obey χφ=χ, Nφ=qN, χN=N and N²=0; inserted edges and residue currents carry the same valuation normalization."
+              "statement": "With q=Q_K^r, r≥1, and identity coefficient lift, the constructed operators obey χφ=χ, Nφ=qN, χN=N and N²=0; inserted edges and residue currents carry the same valuation normalization. Positive a-th iteration replaces φ,q by φ^a,q^a and retains these identities."
+            },
+            {
+              "name": "semistableDeRhamComparison_baseChange",
+              "role": "compatibility",
+              "statement": "For finite L/K of residue degree f, let F_K be the Q_K-Frobenius and φ_{K,r}=F_K^r. Under the cohomology base-change comparison, F_L=F_K^f⊗1 and φ_{L,r}=φ_{K,r}^f⊗1 has degree Q_L^r=q^f. The L-linear endomorphism φ_{K,r}⊗1 always exists as scalar extension; it is an identity-coefficient q-Frobenius over L only when f divides r, when it equals F_L^{r/f}. For f=1 no iterate is needed. χ and N extend at the common valuation scale."
             }
           ],
           "tests": [
@@ -739,9 +745,14 @@
               "name": "Curve.semistableDeRhamComparison_check3",
               "kind": "boundary",
               "statement": "For φ=diag(1,q), N(e₂)=e₁, Nφ=qN. Replacing φ by the identity violates this relation for N≠0; arbitrary endomorphisms are not comparison operators."
+            },
+            {
+              "name": "Curve.semistableDeRhamComparison_residueField",
+              "kind": "boundary",
+              "statement": "For unramified quadratic K/ℚ₂, κ_K=𝔽₄ and α∈𝔽₄−𝔽₂ has α²≠α, whereas α⁴=α. Thus q=2 cannot have identity coefficient lift; q=4 can. Extending ℚ₂ to K scalar-extends its 2-Frobenius as an operator, while the geometric identity-coefficient 4-Frobenius is its square."
             }
           ],
-          "proofSketch": "Prove the curve algebraic/logarithmic de Rham and rigid comparison and compute its Mayer–Vietoris complex on the constructed cover. The imported rigid finite-dimensionality theorem and component Frobenius weight decomposition give the weight-zero retraction and linear q-Frobenius. Residue defines monodromy; the metric convention transports the unit-length formula through §1.3. Compute ordered cup by local second-kind primitives. Prove extension and model maps on these complexes and their agreement on refinements; no index identity or §4.2 is used.",
+          "proofSketch": "Prove the curve algebraic/logarithmic de Rham and rigid comparison and compute its Mayer–Vietoris complex on the constructed cover. The imported rigid finite-dimensionality theorem and component Frobenius weight decomposition give the weight-zero retraction and linear Q_K-Frobenius with identity coefficient lift; its r-th iterate gives q=Q_K^r. The supplier linearFrobenius_baseChange law gives F_L=F_K^f⊗1; a scalar-extended operator represents the same q-power geometric Frobenius with identity coefficient lift only if that power fixes κ_L. Residue defines monodromy; the metric convention transports the unit-length formula through §1.3. Compute ordered cup by local second-kind primitives. Prove extension and model maps on these complexes and their agreement on refinements; no index identity or §4.2 is used.",
           "usedBy": [
             "target:3.1a",
             "target:3.2",
@@ -828,7 +839,7 @@
           "statement": "For a geometrically connected Coleman wide open U with good-reduction compactification C, let B_U be §3.1. Construct the Frobenius-equivariant projection p_U:H¹_dR(U)→H¹_dR(C) splitting proper restriction, and prove B_U(ω,η)=p_U[ω]∪p_U[η]. Hence B_U kills analytic exact forms, factors through H¹_dR(U), vanishes for rational C, and satisfies B_U(F,log f)=0 for every invertible analytic f on U. The supplied component Frobenius spectrum, transported to H¹_dR(U), consists of Weil weight-one eigenvalues and boundary eigenvalues qζ with ζ a root of unity (ζ=1 when the boundary is split); in particular 1/q is absent, the q-eigenspace is in the radical of B_U, and B_U(φ α,φ β)=q B_U(α,β). The assertions hold for full ℂ_p coefficients by comparison, and for K-defined data over finite K.",
           "hypotheses": [
             "U and its Coleman presentation as in §§3.0a–3.1; finite end set and analytic differentials",
-            "For Frobenius assertions U descends to finite K/ℚ_p, with a compatible degree-q lift and q≥2",
+            "For Frobenius assertions U descends to finite K/ℚ_p, with a compatible degree-q lift, q=(#κ_K)^r for integer r≥1 and identity coefficient lift; full ℂ_p assertions extend this operator from K",
             "The invertible analytic f and its logarithmic primitive share the given Coleman domain and branch"
           ],
           "locator": {
@@ -876,7 +887,7 @@
             {
               "name": "doublePairing_nonsplit_spectrum",
               "kind": "non-example",
-              "statement": "For P¹ minus one degree-two closed point, H¹ has dimension one with Frobenius −q. The assertion that every boundary eigenvalue equals q needs split ends; the positive-weight exclusion of 1/q still holds."
+              "statement": "For ℙ¹ minus one degree-two closed point, H¹ has dimension one. With r=1 its Frobenius eigenvalue is −Q_K=−q; for the r-th iterate it is (−1)^r q. The assertion that every boundary eigenvalue equals q requires split ends or a suitable iterate; exclusion of 1/q still holds."
             }
           ],
           "proofSketch": "Use the proper/boundary de Rham sequence and disjoint Frobenius weights to construct p_U. Compute the end-sum by second-kind representatives and prove the compact cup comparison using the local double index, then kill analytic exacts by residue reciprocity. A logarithmic unit has only weight-two boundary class, giving its vanishing. Import the component rigid weight theorem and Gysin sequence, with boundary eigenvalues qζ for nonsplit ends. The cup projection gives the radical and scaling assertions; the positive weights exclude 1/q. This proves the index-dependent claims after the index is defined.",
@@ -1094,7 +1105,7 @@
           "statement": "For the linear q-Frobenius φ and geometric monodromy N in §3.0c, B_h(φ α,φ β)=q B_h(α,β) and B_h(Nα,β)+B_h(α,Nβ)=0. The geometric N here is distinct from differentiation in the universal logarithm variable. When using metric cochains, the comparison maps must identify that geometric N with N_ℓ using the same valuation scale.",
           "hypotheses": [
             "Hypotheses of §3.4",
-            "q is a positive power of the residue prime with q≥2",
+            "q=(#κ_K)^r with integer r≥1 and identity coefficient lift, as in §3.0c",
             "Operators are the comparison operators of §3.0c, not arbitrary endomorphisms",
             "χφ=χ, Nφ=qN, χN=N, N²=0; the wide-open scaling theorem is §3.1a"
           ],
@@ -1110,7 +1121,7 @@
             {
               "name": "correctedDoublePairing_phi_iterate",
               "role": "functoriality",
-              "statement": "Replacing φ by its a-th positive iterate multiplies the pairing by q^a."
+              "statement": "For a≥1, the a-th iterate φ^a has degree q^a=(#κ_K)^{ra} and scales the pairing by q^a. For finite L/K of residue degree f, the corresponding degree-q^f operator is φ^f⊗1 as in semistableDeRhamComparison_baseChange; simply extending φ scales the extended pairing by q and need not be a geometric identity-coefficient q-Frobenius over L."
             }
           ],
           "tests": [
@@ -1128,6 +1139,11 @@
               "name": "Semistable.correctedDoublePairing_phi_N_3",
               "kind": "non-example",
               "statement": "An arbitrary identity operator on a nonzero symplectic pairing cannot be called a q-Frobenius when q≥2: it scales by 1, not q."
+            },
+            {
+              "name": "Semistable.correctedDoublePairing_phi_N_residueIteration",
+              "kind": "boundary",
+              "statement": "For K/ℚ₂ unramified quadratic, use q=4 and scaling 4; q=2 with identity coefficient lift is excluded. Under the residue-degree-two extension from ℚ₂, iterating a symplectic test operator diag(1,2) gives diag(1,4) and scaling 4, whereas its scalar extension alone still scales by 2."
             }
           ],
           "proofSketch": "Apply wide-open Frobenius scaling and χφ=χ, Nφ=qN to §3.4. For monodromy the component restrictions of N vanish, χN=N and N²=0; the two remaining symmetric graph products cancel. No reference to the later harmonic identification is needed.",
@@ -1149,7 +1165,7 @@
           "kind": "theorem",
           "name": "NaturalIntegration.abelianPrimitive",
           "title": "Natural primitives on abelian varieties",
-          "statement": "For an abelian variety A over a finite p-adic field or ℂ_p and every closed rational one-form ω, construct a locally log-meromorphic primitive F_ω modulo one affine scalar constant. Let Δ_h F(x)=F(x+h)−F(x). The algebraic theorem of the square makes Δ_hΔ_kω exact in rational functions and logarithms; normalize its primitive to vanish when h=k=0. Require Δ_hΔ_k F_ω to be that primitive. Prove existence, uniqueness, linearity, compatibility with homomorphisms and evaluation of rational exact and logarithmic forms. Prove the finite-difference splitting theorem for symmetric locally log-meromorphic additive cocycles needed for this construction. On invariant holomorphic forms use the supplied abelian logarithm, rather than constructing another logarithm.",
+          "statement": "For an abelian variety A over a finite p-adic field or ℂ_p and every closed rational one-form ω, construct a locally log-meromorphic primitive F_ω modulo one affine scalar constant. Let Δ_h F(x)=F(x+h)−F(x). Over ℂ_p the algebraic theorem of the square makes Δ_hΔ_kω exact in rational functions and scalar logarithms; normalize its primitive to vanish when h=k=0. Over a finite p-adic field use the descended span of traces Tr_{L/K}(c dlog f), with L/K finite separable, c∈L and f∈L(A³)×, together with rational exact forms; its primitive uses Tr_{L/K}(c log_univ f). Require Δ_hΔ_k F_ω to be that primitive. Prove existence, uniqueness, linearity, compatibility with homomorphisms and evaluation of rational exact and logarithmic forms. Prove the finite-difference splitting theorem for symmetric locally log-meromorphic additive cocycles needed for this construction. On invariant holomorphic forms use the supplied abelian logarithm, rather than constructing another logarithm.",
           "hypotheses": [
             "p any prime; K/ℚ_p finite, or coefficients in ℂ_p with the same universal logarithm",
             "A is an abelian variety; ω closed rational; all evaluations avoid its poles",
@@ -1157,7 +1173,7 @@
           ],
           "locator": {
             "source": "colmez1998",
-            "where": "Theorem II.1.16 and Proposition II.1.17, pp. 78–79, colmez1998 lines 3169–3214; logarithm uniqueness Lemma II.1.13, p. 78, line 3147"
+            "where": "Theorem II.1.16 and Proposition II.1.17, pp. 78–79, colmez1998 lines 3169–3214; logarithm uniqueness Lemma II.1.13, p. 78, line 3147; geometric algebraic scope, Chapter I opening, p. 13, colmez1998 line 602; Galois descent, Remark 2(iv), pp. 2–3, colmez1998 lines 246–258"
           },
           "prerequisites": [
             "roadmap:AnabelianGeometryAndNonabelianChabauty §5.8 abelianLog",
@@ -1168,17 +1184,22 @@
             {
               "name": "abelianPrimitive_differenceSplitting",
               "role": "compatibility",
-              "statement": "For n≥1, on A a symmetric additive n-cocycle of locally log-meromorphic functions has a finite-difference primitive modulo polynomials of degree <n in abelian logarithms, with the same allowed singularities (Theorem II.1.16)."
+              "statement": "For n≥1, over ℂ_p a symmetric additive n-cocycle of locally log-meromorphic functions on A has a finite-difference primitive modulo polynomials of degree <n in abelian logarithms, with the same allowed singularities (Theorem II.1.16). Prove the finite K/ℚ_p version on A(K) for K+K T-valued cocycles, with traced scalar logarithms, and compatibility of the normalized differential rigidification with extension to ℂ_p."
             },
             {
               "name": "abelianPrimitive_square",
               "role": "compatibility",
-              "statement": "For each closed rational ω construct the normalized rational-logarithmic primitive of its second difference and the uniquely rigidified F_ω modulo constants (Proposition II.1.17)."
+              "statement": "Over ℂ_p construct the normalized rational-logarithmic primitive of the second difference of every closed rational ω. For finite K/ℚ_p its normalized primitive is Galois invariant, uses traced scalar logarithms, and rigidifies F_ω modulo constants with no rational-pole assumption (Proposition II.1.17 and descent)."
             },
             {
               "name": "abelianPrimitive_invariant",
               "role": "compatibility",
               "statement": "For invariant holomorphic ω, F_ω(b)−F_ω(a)=ω(abelianLog(b−a)) and its universal T coefficient is zero."
+            },
+            {
+              "name": "abelianPrimitive_descent",
+              "role": "compatibility",
+              "statement": "For A,ω defined over finite K/ℚ_p and regular endpoints a,b∈A(K), the rigidified ℂ_p primitive difference F_ω(b)−F_ω(a) belongs to K+K T. Continuous Galois conjugation acts coefficientwise with T fixed. For every finite L/K the same difference on embedded endpoints is its coefficientwise image; these comparisons compose in towers."
             }
           ],
           "tests": [
@@ -1196,9 +1217,14 @@
               "name": "NaturalIntegration.abelianPrimitive_check3",
               "kind": "boundary",
               "statement": "For a rational function f, F_df=f modulo constants; the zero form has only scalar constant ambiguity, not arbitrary residue-disc constants."
+            },
+            {
+              "name": "NaturalIntegration.abelianPrimitive_descent",
+              "kind": "boundary",
+              "statement": "For a K-defined rational f on A, the normalized primitive of df is f−f(a) and is fixed by G_K. Enlarging K to L does not multiply it by [L:K]; an averaged trace, rather than an unnormalized trace of the whole primitive, is needed for descent."
             }
           ],
-          "proofSketch": "Establish the algebraic square identity for closed rational forms and its normalized rational-logarithmic primitive. Prove the symmetric cocycle splitting theorem by convergent local analytic differences and division in the coefficient field, then use it at n=2. Subtract the invariant differential error with the imported abelian logarithm. Uniqueness gives linearity, exact evaluation and algebraic pullback, without any semistable-graph input.",
+          "proofSketch": "Establish the algebraic square identity and its normalized rational-logarithmic primitive geometrically; for K-defined data descend this finite algebraic expression by normalized trace, including traced scalar logarithms. Prove symmetric cocycle splitting by convergent local analytic differences and division in the coefficient field. Over finite K, apply it to this K-valued cocycle on A(K), obtaining a K+K T-valued primitive; completeness keeps the convergent coefficients in K. Subtract the K-defined invariant differential error with the imported abelian logarithm. Run the same construction over each finite L/K and over ℂ_p. The common square identity and differential rigidification identify restrictions modulo constants: their difference has zero differential and zero second difference. Its apparent singularities cancel, leaving a locally constant additive map modulo a scalar; properness makes A(K) compact, so this map has finite image and vanishes in the characteristic-zero target. Normalization at a regular K-point identifies the based values. Conjugating the construction transports every coefficient and logarithm, so uniqueness gives Galois equivariance with T fixed. Thus rationality and finite-extension independence precede natural integration, using the finite-field construction rather than an additional completed-field fixed-point theorem. The same uniqueness proves linearity, exact evaluation and algebraic pullback without a semistable graph.",
           "usedBy": [
             "target:4.0b",
             "target:4.0c"
@@ -1209,37 +1235,65 @@
           "kind": "theorem",
           "name": "NaturalIntegration.albaneseReduction",
           "title": "Reduction of closed rational forms to the Albanese",
-          "statement": "For a smooth geometrically connected variety X in characteristic zero with a chosen rational point, construct its proper Albanese on the native IsAlbanese predicate via a smooth projective compactification of a dense quasi-projective open and extension of rational maps to abelian varieties, and the induced isomorphism from the Albanese to X on closed rational one-forms modulo the span of df and dlog f. Thus write ω=a_X*η+df₀+Σ_i c_i dlog f_i, with η closed rational on Alb(X). Prove functoriality of this reduction and moving of apparent poles away from any finite set of regular evaluation points. Pullback of the primitive in §4.0a plus f₀+Σ_i c_i log_univ(f_i) extends over every apparent pole where ω is regular, independently of the decomposition modulo one scalar constant. This comparison is about rational forms and a proper Albanese, not a generalized-Jacobian reconstruction.",
+          "statement": "For a smooth geometrically connected variety X over a characteristic-zero field k with a chosen rational point, construct its proper Albanese on the native IsAlbanese predicate via a smooth projective compactification of a dense quasi-projective open and extension of rational maps to abelian varieties. Over algebraically closed k, pullback is an isomorphism on closed rational one-forms modulo the k-span of df and dlog f, giving ω=a_X*η+df₀+Σ_i c_i dlog f_i. Over arbitrary k, define `NaturalIntegration.descendedLogForms`, denoted LogDesc_k(X), as the k-span of Tr_{L(X)/k(X)}(c dlog f), for finite separable L/k, c∈L and f∈L(X)×; the differential trace is the coefficient trace under Ω¹_{L(X)/L}≃L⊗_k Ω¹_{k(X)/k}. Pullback gives the corresponding quotient isomorphism modulo d(k(X))+LogDesc_k(X). Thus over k the decomposition uses a finite sum of these traced logarithmic terms. Prove functoriality, compatibility with finite separable extension, and moving of apparent poles away from finite regular evaluation sets. Over finite p-adic k, pull back the abelian primitive and add f₀ and the traced scalar universal logarithms. Its based value is k-rational, independent of the decomposition and finite field of definition, and extends where ω is regular. This comparison concerns rational forms and the proper Albanese.",
           "hypotheses": [
-            "Characteristic-zero field for the algebraic construction; finite p-adic field or ℂ_p for the primitive assertion",
+            "k a characteristic-zero field; algebraic closedness only for the untraced geometric decomposition; finite p-adic k or ℂ_p for primitive assertions",
             "X smooth geometrically connected finite type with a rational point a, and ω closed rational",
-            "Evaluation points are outside the poles of ω; the decomposition may initially have additional poles"
+            "Evaluation points are outside the poles of ω; auxiliary decompositions may have additional poles; traces use finite separable constant extensions"
           ],
           "locator": {
             "source": "colmez1998",
-            "where": "Lemma II.1.26 and Lemma II.1.27, pp. 83–85, colmez1998 lines 3370–3431; proper Albanese §I.5, pp. 45–49, lines 1938–2100"
+            "where": "Lemmas II.1.26–II.1.27, pp. 83–85, colmez1998 lines 3376–3431; geometric algebraic scope, Chapter I opening, p. 13, colmez1998 line 602; Galois descent, Remark 2(iv), pp. 2–3, colmez1998 lines 246–258; proper Albanese §I.5, pp. 45–49, lines 1938–2100; trace-averaging consequence in characteristic zero"
           },
           "prerequisites": [
             "target:4.0a",
             "roadmap:JacobianChallenge Layers D–F",
             "roadmap:ResolutionOfSingularitiesCharacteristicZero §6.2 sncCompactification",
-            "tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.IsAlbanese"
+            "tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.IsAlbanese",
+            "mathlib:Algebra.trace",
+            "mathlib:Algebra.trace_trace",
+            "mathlib:trace_eq_sum_embeddings"
           ],
           "api": [
             {
               "name": "albaneseReduction_rationalForms",
               "role": "compatibility",
-              "statement": "Pullback is an isomorphism on closed rational forms modulo rational exact and logarithmic forms."
+              "statement": "Over algebraically closed k pullback identifies closed rational forms modulo d(k(X))+span_k{dlog f}. Over arbitrary characteristic-zero k it identifies the quotients modulo rational exact forms and LogDesc_k on X and its Albanese. These quotient comparisons commute with finite separable coefficient extension."
             },
             {
               "name": "albaneseReduction_removeApparentPoles",
               "role": "compatibility",
-              "statement": "At a regular point choose a decomposition with no apparent pole; the resulting based primitive extends and is independent of that choice."
+              "statement": "At any finite set of regular points, including the base point, choose a geometric decomposition with no apparent poles there and descend after a common finite extension. Its based primitive extends to the regular locus and is independent of that choice."
             },
             {
               "name": "albaneseReduction_functorial",
               "role": "compatibility",
-              "statement": "An algebraic morphism induces the Albanese comparison and respects the rational-form quotient and based pullback."
+              "statement": "An algebraic morphism induces the pointed Albanese comparison. On a dense open where the chosen rational expressions pull back, it respects rational exact forms and LogDesc_k; moving gives the based primitive pullback wherever the original form is regular."
+            },
+            {
+              "name": "albaneseReduction_primitiveDescent",
+              "role": "compatibility",
+              "statement": "For finite K/ℚ_p, a K-defined X,ω and regular a,b∈X(K), the based geometric primitive constructed from §4.0a, rational functions and scalar logarithms belongs to K+K T by the finite-field construction and traced logarithms; its geometric comparison is fixed by G_K with T fixed. Every finite L/K gives the coefficientwise embedded value, independent of splitting field, apparent-pole removal and decomposition; these identifications compose in towers. The assertion follows from abelianPrimitive_descent and geometric decomposition independence, without §7.3 or naturalIntegration."
+            },
+            {
+              "name": "descendedLogForms_add",
+              "role": "compatibility",
+              "statement": "For characteristic-zero k and X as above, LogDesc_k(X) is closed under addition: concatenate finite traced logarithmic presentations."
+            },
+            {
+              "name": "descendedLogForms_smul",
+              "role": "compatibility",
+              "statement": "For a∈k, scaling a traced generator gives Tr_{L(X)/k(X)}((ac)dlog f); in particular zero belongs to LogDesc_k(X)."
+            },
+            {
+              "name": "descendedLogForms_split",
+              "role": "compatibility",
+              "statement": "In an algebraically closed overfield, each traced generator becomes the sum of σ(c)dlog(σf) over k-embeddings σ of L; the geometric logarithmic subspace is spanned by these scalar-extended generators."
+            },
+            {
+              "name": "descendedLogForms_tower",
+              "role": "compatibility",
+              "statement": "For finite separable M/L/k, iterated differential traces agree with direct trace. Presentations computed in a larger normal closure therefore define the same k-subspace; averaging uses the reciprocal of the extension degree."
             }
           ],
           "tests": [
@@ -1257,9 +1311,24 @@
               "name": "NaturalIntegration.albaneseReduction_check3",
               "kind": "boundary",
               "statement": "For a proper curve use its pointed Jacobian as Albanese; for a point every term is zero. A decomposition with cancelling apparent poles must still give a regular primitive where ω is regular."
+            },
+            {
+              "name": "NaturalIntegration.albaneseReduction_quadraticPole",
+              "kind": "boundary",
+              "statement": "Over k=ℚ₃ take X=ℙ¹, α²=2 and ω=dt/(t²−2). Its residues ±1/(2α) are not in k, so no k-linear sum of dlog of k-rational functions, even with an exact term, represents it. Instead ω=Tr_{k(α)/k}((1/(2α))dlog(t−α)); its based primitive is the trace of (1/(2α))log_univ((t−α)/(a−α)), and further finite extension leaves this value unchanged."
+            },
+            {
+              "name": "NaturalIntegration.albaneseReduction_normalizedTrace",
+              "kind": "boundary",
+              "statement": "For ω=dt defined over k, averaging an expression over a quadratic extension gives (1/2)Tr(dt)=dt; using Tr without the factor 1/2 gives 2dt. For a point the quotient and based primitive are zero, over every constant extension."
+            },
+            {
+              "name": "NaturalIntegration.descendedLogForms_nonexample",
+              "kind": "boundary",
+              "statement": "On ℙ¹, dt has a double pole at infinity and is not in LogDesc_k(ℙ¹): every traced scalar logarithmic derivative has at most simple poles. In contrast dt/t is logarithmic, and the nonsplit quadratic form above belongs through its trace. Exact forms and descended logarithmic forms are distinct subspaces."
             }
           ],
-          "proofSketch": "Import the smooth projective compactification of a dense quasi-projective open from ResolutionOfSingularitiesCharacteristicZero §6.2. Construct its proper Albanese on the native universal-property predicate, prove extension of rational maps from smooth varieties to abelian varieties, prove the rational residue/Picard exact sequence and compare it with that of the Albanese. This proves the quotient isomorphism. The rational-logarithmic constant-kernel argument and §4.0a give decomposition independence. Moving divisors removes apparent poles near each regular point. Curve Albanese is identified with the supplied pointed Jacobian; this does not re-plan JacobianChallenge.",
+          "proofSketch": "Use the supplied compactification on a dense quasi-projective open, construct the proper Albanese on its native universal property and extend its rational map across the smooth variety. Prove the rational residue/Picard comparison over an algebraically closed characteristic-zero field, giving the geometric quotient isomorphism. Each expression has a finite field of definition. In a finite Galois extension containing that field, average conjugates: η and f₀ descend by normalized trace, and each logarithmic term becomes a trace of c dlog f divided by the extension degree. Conversely such a trace becomes a sum of scalar logarithmic derivatives after splitting; the same averaging proves injectivity. Division is legitimate in characteristic zero, and a non-Galois extension is handled in a normal closure by trace transitivity. This also proves coefficient-extension compatibility of the descended quotient. First prove geometric primitive independence using the rational-logarithmic constant kernel and §4.0a, and move apparent poles away from the finite regular evaluation set. Galois conjugation then preserves the based primitive; abelianPrimitive_descent and coefficientwise traced logarithms give rationality and finite-extension independence before §4.0c. Curve Albanese is the supplied pointed Jacobian.",
           "usedBy": [
             "target:4.0c"
           ]
@@ -1321,9 +1390,14 @@
               "name": "SingleIntegral.naturalIntegration_check3",
               "kind": "boundary",
               "statement": "Two residue-disc-wise primitives of the zero form can differ by a nonconstant locally constant function; the derivative alone does not characterize the natural theory."
+            },
+            {
+              "name": "SingleIntegral.naturalIntegration_nonsplitPole",
+              "kind": "boundary",
+              "statement": "Over ℚ₃ the integral of dt/(t²−2) between rational endpoints away from its poles is the traced quadratic logarithm of §4.0b, with coefficients in ℚ₃+ℚ₃ T. Treating each geometric residue as a ℚ₃ scalar cannot construct it."
             }
           ],
-          "proofSketch": "Apply §4.0b and the rigidified abelian primitives of §4.0a, subtract the endpoint values, and use moving to remove artificial poles. Decomposition independence gives linearity and naturality; endpoint differences give Chasles. The construction is affine in the universal logarithm. Compare the same auxiliary varieties and primitives in good reduction with the supplied Coleman theory. Construct coefficient maps and use natural-theory uniqueness for finite-extension and Galois compatibility; this is not uniqueness from derivatives alone.",
+          "proofSketch": "Apply the geometric reduction and descended logarithmic quotient of §4.0b with the rigidified abelian primitives of §4.0a, subtract endpoint values, and use moving to remove artificial poles. The named albaneseReduction_primitiveDescent supplies K-rationality and finite-extension independence before this construction. Decomposition independence gives linearity and naturality; endpoint differences give Chasles. The construction is affine in the universal logarithm. Compare the same auxiliary varieties and primitives in good reduction with the supplied Coleman theory. The coefficient and Galois maps are those already proved in §§4.0a–4.0b; natural-theory uniqueness identifies their induced integration laws, without using the later §7.3. This is not uniqueness from derivatives alone.",
           "usedBy": [
             "target:4.0d",
             "target:4.0e",
@@ -1348,13 +1422,14 @@
             "First take a finite extension splitting the finite supports; local logarithm branches and F are compatible"
           ],
           "locator": {
-            "source": "besser-zerbes2017",
-            "where": "§2 proof, p. 4, besser-zerbes2017 lines 151–167; natural reciprocity identity used there; natural integration from colmez1998 Theorem II.1.4"
+            "source": "besser2005",
+            "where": "arXiv math/0301029v1, Proposition 3.4 and Lemmas 3.5–3.7, pp. 8–9, besser2005 lines 355–380; application in besser-zerbes2017 §2, p. 4, lines 151–167; natural integration from colmez1998 Theorem II.1.4"
           },
           "prerequisites": [
             "target:2.2",
             "target:2.0",
-            "target:4.0c"
+            "target:4.0c",
+            "target:2.3"
           ],
           "api": [
             {
@@ -1366,6 +1441,21 @@
               "name": "naturalIndexReciprocity_constants",
               "role": "compatibility",
               "statement": "Changing F by a global scalar changes the total by that scalar times the degree of div(f), hence zero."
+            },
+            {
+              "name": "naturalIndexReciprocity_finiteDegree",
+              "role": "compatibility",
+              "statement": "For a finite surjective morphism h:X→Y of smooth proper geometrically connected curves over a finite p-adic field or ℂ_p, with one branch and meromorphic α,β on Y, define B_X^nat(α,β) as the sum of local indices of their natural primitives after splitting singularities. Then B_X^nat(h*α,h*β)=deg(h) B_Y^nat(α,β), with local ramification multiplicities included (besser2005 Lemma 3.6, line 365)."
+            },
+            {
+              "name": "naturalIndexReciprocity_projection",
+              "role": "compatibility",
+              "statement": "For the same h, meromorphic α on Y and β on X, the separable differential trace satisfies B_X^nat(h*α,β)=B_Y^nat(α,Tr_h β). Define Tr_h on rational differential germs through the finite separable function-field trace. In a Galois closure, h*Tr_h β is the sum of conjugate pullbacks; natural primitive sums have the same differential and rigidification modulo constants (besser2005 Lemma 3.7, line 369)."
+            },
+            {
+              "name": "naturalIndexReciprocity_rationalLine",
+              "role": "compatibility",
+              "statement": "On ℙ¹ over an algebraically closed p-adic coefficient field, B^nat(dlog t,dlog(t−a))=0 for every a, and B^nat(dg,dlog t)=0 for rational g. The first is a direct computation at 0,a,∞, with a=0 handled by alternation; the second is the proper residue theorem (besser2005 Lemma 3.5, line 358, and Proposition 3.4 proof, line 376)."
             }
           ],
           "tests": [
@@ -1383,9 +1473,14 @@
               "name": "Curve.naturalIndexReciprocity_check3",
               "kind": "boundary",
               "statement": "For f=0 log f is undefined. If a pole of ω meets div(f), the displayed separated-support formula is not asserted."
+            },
+            {
+              "name": "Curve.naturalIndexReciprocity_finiteDegree",
+              "kind": "boundary",
+              "statement": "For h:ℙ¹_t→ℙ¹_z, z=t², pulling back dlog z gives 2dlog t: its local index with 1 at t=0 is 2. The global degree law includes this ramification multiplicity; the identity has degree 1, while a constant map cannot be used for the projection step."
             }
           ],
-          "proofSketch": "Prove the natural integration reciprocity law using the abelian rigidification and algebraic residue reciprocity, then specialize one primitive to log f. At zeros and poles of f the local index contributes ord_x(f)F(x); at poles of ω alternation gives −Res_x(log f·ω). This proof follows the natural principal-divisor reciprocity in the cited argument and precedes any identification with harmonic component primitives.",
+          "proofSketch": "First define the global natural double-index sum using §4.0c and prove finite-map degree scaling from the local ramification law of §2.3. Define the differential trace for the finite separable function-field extension. In a Galois closure, naturality makes the primitive of the trace the sum of conjugate primitives modulo a scalar; global residue cancellation removes that scalar. Divide the degree formula by the nonzero covering degree to obtain the projection formula. For nonconstant f the induced map X→ℙ¹ is finite and projection reduces B_X^nat(ω,dlog f) to B_ℙ¹^nat(Tr_f ω,dlog t). Over the algebraically closed coefficient field, partial fractions split Tr_f ω into an exact rational differential and scalar logarithmic derivatives. Compute the logarithmic pair at 0,a,∞; the exact term vanishes by the residue theorem. Descend by the early primitive compatibility in §4.0b; constant f is handled separately. Finally, at div(f) the local term is ord_x(f)F(x), while at poles of ω it is −Res_x(log f·ω). This yields the separated-support formula before harmonic realization.",
           "usedBy": [
             "target:4.2"
           ]
@@ -2160,10 +2255,10 @@
           "id": "6.3",
           "kind": "theorem",
           "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing",
-          "statement": "Let U be a Coleman wide open defined over a finite p-adic field with a degree-q Frobenius lift in the supplied rigid-cohomology sense, q≥2. If φ*[dF]=q[dF] and φ*[dG]=q[dG] in H¹_dR(U), then T_U(F,G;H)=0 for every global Coleman H with analytic differential. The assertion also includes zero classes. It uses the supplied spectrum theorem excluding 1/q from Frobenius on H¹_dR(U), and the fact that the q-eigenspace is in the radical of B_U.",
+          "statement": "Let U be a Coleman wide open defined over a finite K/ℚ_p with a degree-q Frobenius lift in the supplied rigid-cohomology sense, q=(#κ_K)^r for integer r≥1 and identity coefficient lift. If φ*[dF]=q[dF] and φ*[dG]=q[dG] in H¹_dR(U), then T_U(F,G;H)=0 for every global Coleman H with analytic differential. The assertion also includes zero classes. It uses the supplied spectrum theorem excluding 1/q from Frobenius on H¹_dR(U), and the fact that the q-eigenspace is in the radical of B_U.",
           "hypotheses": [
             "Hypotheses of §6.1; U and data descend to a finite p-adic field",
-            "A compatible Frobenius lift of positive degree q, with q a power of p",
+            "A compatible degree-q Frobenius lift with q=(#κ_K)^r, integer r≥1 and identity coefficient lift, as in §3.0c",
             "Both stated q-eigenclass equations",
             "§3.1a supplies the spectrum and double-pairing radical properties"
           ],
@@ -2182,14 +2277,14 @@
             {
               "name": "tripleIndex_frobenius_iterate",
               "role": "compatibility",
-              "statement": "A positive iterate uses q^a and its corresponding eigenclass hypotheses, giving the same vanishing conclusion."
+              "statement": "For a≥1, use φ^a, degree q^a=(#κ_K)^{ra} and both corresponding q^a-eigenclass hypotheses. Under finite L/K of residue degree f the geometric operator is φ^f⊗1 with degree q^f, using §3.0c; q-eigenclasses extend to q^f-eigenclasses for it. A mere scalar extension of φ is not automatically that geometric operator."
             }
           ],
           "tests": [
             {
               "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing_1",
               "kind": "degenerate",
-              "statement": "F=0 satisfies the eigenclass condition and gives zero; p=2 and q=2 are admitted."
+              "statement": "F=0 satisfies the eigenclass condition and gives zero; p=2 and q=2 are admitted over ℚ₂. Over its unramified quadratic extension the identity-coefficient lift instead uses q=4; q=2 fails the residue condition."
             },
             {
               "name": "ColemanWideOpen.tripleIndex_frobenius_vanishing_2",
@@ -2370,7 +2465,7 @@
             {
               "name": "SingleIntegral.branchTransport_2",
               "kind": "degenerate",
-              "statement": "For λ′=λ or ω=0 the change is zero; for a unit u the logarithm change is zero."
+              "statement": "For λ′=λ or ω=0 the change is zero; for u∈O_K×, equivalently v_p(u)=0, the logarithm change is zero, as for u=1. The field unit p∈K× has v_p(p)=1 and changes by 2 when λ=0, λ′=2."
             },
             {
               "name": "SingleIntegral.branchTransport_3",
@@ -2850,7 +2945,7 @@
         "§RD.6.88",
         "§RD.6.92"
       ],
-      "what": "Finite rigid coefficient extension, the component dagger/rigid and proper tube comparisons, finite dimensionality, linear q-Frobenius, proper weight one, curve Gysin and affine-curve weights (boundary q times roots of unity). Only the additional semistable curve Čech/graph and index/cup comparisons are built here."
+      "what": "Finite rigid coefficient extension, the component dagger/rigid and proper tube comparisons, finite dimensionality, linear Q_K-Frobenius for Q_K=#κ_K and identity coefficient lift, its positive iterates q=Q_K^r, and linearFrobenius_baseChange (residue extension of degree f uses the f-th iterate), proper weight one, curve Gysin and affine-curve weights (boundary q times roots of unity). Only the additional semistable curve Čech/graph and index/cup comparisons are built here."
     }
   ],
   "consumers": [
