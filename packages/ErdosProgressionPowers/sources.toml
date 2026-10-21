@@ -17,3 +17,17 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/30#issuecomment-6303902602"
+
+[[source]]
+id = "ErdosSelfridge1975"
+authors = "Paul Erdős and John L. Selfridge"
+title = "The product of consecutive integers is never a power"
+year = 1975
+doi = "10.1215/ijm/1256050816"
+locator_scheme = "theorem"
+locator = "Main theorem"
+sha256 = "7d9dad5663378893272d41f118e51381d335b2bf23857ea74c9372011d41afb5"
+licence_class = "operator-local"
+status = "certified"
+local_name = "erdos-selfridge-1975-product-consecutive-integers.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/30#issuecomment-6304714505"
