@@ -16,7 +16,7 @@
           "id": "1.1",
           "kind": "definition",
           "name": "RelevantHermitianPair",
-          "statement": "For the algebraic hypotheses below, define RelevantHermitianPair(W,V,r,L) to mean an isometric inclusion i:W→V together with the property that i(W)⊥ is isometric to H^r orthogonal-sum L, where H has Gram matrix [[0,1],[1,0]] and L=<a> with a∈F×. A framed pair additionally chooses such an isometry, a hyperbolic basis and a nonzero vector of L; relevance itself forgets the frame.",
+          "statement": "For the algebraic hypotheses below, define RelevantHermitianPair(W,V,r,L) to mean an isometric inclusion i:W→V together with the property that i(W)⊥ is isometric to H^r orthogonal-sum L, where H has Gram matrix [[0,1],[1,0]] and L=<a> with a∈F×. A framed pair additionally chooses such an isometry, a hyperbolic basis and an E-basis vector e of L, meaning E→L, a↦ae is an isomorphism (equivalently h(e,e)∈F×); relevance itself forgets the frame.",
           "hypotheses": [
             "F is a field of characteristic different from 2",
             "E is a quadratic étale F-algebra with its nontrivial involution c",
@@ -25,7 +25,7 @@
           ],
           "locator": {
             "source": "ggp",
-            "where": "§2, pp. 5–7; ggp line 229; line 255"
+            "where": "§2, pp. 5–7; ggp line 229; line 255; §12, p. 44, ggp line 1567–1569"
           },
           "prerequisites": [
             "mathlib:LinearMap.Nondegenerate",
@@ -35,7 +35,7 @@
             {
               "name": "RelevantHermitianPair.mk",
               "role": "constructor",
-              "statement": "A complement isometry constructs relevance; a framed witness maps to the unframed predicate."
+              "statement": "A complement isometry constructs relevance; adjoining a hyperbolic basis and an E-basis vector e of L constructs a frame, which forgets to relevance."
             },
             {
               "name": "RelevantHermitianPair.rank",
@@ -45,7 +45,7 @@
             {
               "name": "RelevantHermitianPair.isometryCongr",
               "role": "functoriality",
-              "statement": "Isometries intertwining i preserve relevance and compose, with identity transport the identity."
+              "statement": "Isometries intertwining i preserve relevance and transport the hyperbolic basis and E-basis vector of a frame, with identity and composition laws."
             },
             {
               "name": "RelevantHermitianPair.baseChange",
@@ -55,7 +55,7 @@
             {
               "name": "RelevantHermitianPair.frame_ext",
               "role": "extensionality",
-              "statement": "Two framed witnesses with the same embedding, complement isometry and chosen basis vectors are equal; relevance itself is a proposition and does not retain those choices."
+              "statement": "Two framed witnesses with the same embedding, complement isometry, hyperbolic basis and E-basis vector e of L are equal; the basis and nonzero-norm proofs carry no extra choices."
             }
           ],
           "tests": [
@@ -73,6 +73,11 @@
               "name": "relevant_real_line_sign",
               "kind": "non-example",
               "statement": "A positive definite real Hermitian 3-space has no complement H orthogonal-sum L for W=0,r=1; both indefinite signatures (2,1) and (1,2) do."
+            },
+            {
+              "name": "relevant_split_line_generator",
+              "kind": "non-example",
+              "statement": "For E=F×F and L=E with h(x,y)=x c(y), e₀=(1,1) generates L and has norm 1, whereas e=(1,0) is nonzero with norm 0 and Ee=F×{0}≠L. A frame constructor accepting every nonzero vector fails."
             }
           ]
         },
@@ -85,7 +90,7 @@
             "F is a field of characteristic different from 2",
             "E is a quadratic étale F-algebra with its nontrivial involution c",
             "All Hermitian E-modules are finite free of constant rank and their forms are nondegenerate",
-            "A frame as in 1.1 is fixed; the character clause assumes F local and ψ nontrivial"
+            "A frame as in 1.1 with E-basis vector e of L is fixed; the character clause assumes F local and ψ nontrivial on each field factor"
           ],
           "locator": {
             "source": "ggp",
@@ -140,7 +145,7 @@
             {
               "name": "bessel_split_rank_three",
               "kind": "compatibility",
-              "statement": "For E=F×F,W=0,r=1, H is the maximal upper unipotent of GL₃ under the split identification, with two simple-root contributions encoded by b∈E. Taking only Tr(b) with an arbitrary fixed character loses the independent generic coordinates."
+              "statement": "For E=F×F,W=0,r=1, use the first-factor basis (v,e₀,v*) and u=[[1,x,z],[0,1,y],[0,0,1]]. The second action is J⁻¹(u⁻¹)ᵗJ for the hyperbolic-plus-line Gram matrix J. The valid e₀=(1,1) gives b(u)=(x,-y) and ν=ψ₁(x)ψ₂(-y), with both simple coordinates nonzero as functionals. Replacing e₀ by (1,0)e₀ gives b(u)=(x,0), norm 0 and a character trivial on the second simple root (ggp §12, pp. 44–45, line 1567–1569 and line 1624–1634)."
             }
           ]
         },
@@ -153,7 +158,7 @@
             "F is a field of characteristic different from 2",
             "E is a quadratic étale F-algebra with its nontrivial involution c",
             "All Hermitian E-modules are finite free of constant rank and their forms are nondegenerate",
-            "The two frames lie on isometric relevant pairs; local characters are nondegenerate on the indicated additive coordinates"
+            "The two frames lie on isometric relevant pairs and their line vectors are E-basis vectors; local characters are nondegenerate on the indicated additive coordinates"
           ],
           "locator": {
             "source": "ggp",
@@ -291,7 +296,7 @@
           ],
           "locator": {
             "source": "agrs",
-            "where": "Theorem 2′, p. 3, agrs line 80–95; sun-zhu Theorem A, pp. 1–2, line 49–54"
+            "where": "Theorem 2′, p. 3, agrs line 80–83; split Theorem 2, p. 2, agrs line 35–40; sun-zhu Theorem A, pp. 1–2, line 49–54"
           },
           "prerequisites": [
             "target:1.3",
@@ -586,7 +591,7 @@
           },
           "prerequisites": [
             "gap:enhanced-packets",
-            "gap:l-factors"
+            "gap:factor-epsilon-identities"
           ],
           "api": [
             {
@@ -619,12 +624,12 @@
             {
               "name": "epsilon_two_generators",
               "kind": "computation",
-              "statement": "A character with generator values -1 and +1 has value -1 on their sum and +1 on twice either generator."
+              "statement": "For E/F=C/R take φ_V=χ₁⊕χ₋₁, φ_W=1, with χ_j(z)=(z/|z|)^j and any fixed nontrivial ψ_E trivial on R. These have signs - and +. The two generator values are ε(χ₁,ψ_E), ε(χ₋₁,ψ_E), and their product is χ₁(-1)=-1 by epsilon duality. Hence ggpEpsilonCharacter gives χ_W(z_(φ_V))=-1; the constant character fails (ggp §5, p. 16, line 598–601)."
             },
             {
               "name": "epsilon_multiplicity_two",
               "kind": "non-example",
-              "statement": "An appropriate-sign summand of multiplicity 2 still contributes one generator; z_φ has zero coordinate there. Squaring the generator value in its definition loses possible sign -1."
+              "statement": "For E/F=C/R take φ_V=χ₁⊕χ₁ and φ_W=1, and choose the sign of ψ_E trivial on R giving ε(χ₁,ψ_E)=-1; scaling ψ_E by -1 reverses this sign since χ₁(-1)=-1. Then ggpEpsilonCharacter has value -1 on the single component generator but +1 on z_(φ_V)=0, whose multiplicity is even. Using the whole multiplicity at the generator would wrongly give +1 (ggp §5, p. 16, line 598–601; Theorem 6.1, p. 20)."
             }
           ]
         },
@@ -648,7 +653,7 @@
             "target:1.3",
             "target:3.1",
             "gap:enhanced-packets",
-            "gap:l-factors"
+            "gap:factor-epsilon-identities"
           ],
           "api": [],
           "tests": [
@@ -748,7 +753,7 @@
           ],
           "locator": {
             "source": "bp-arch",
-            "where": "§§11.1–11.3; Proposition 11.2.1, pp. 265–266, bp-arch line 10202; line 10248; Lemma 11.3.1, p. 272, line 10525; §4.5, Proposition 4.5.1(1)(i), p. 106, bp-arch line 3994–4000"
+            "where": "§11.1, pp. 259–260, bp-arch line 10054–10078 (Γ measure); equation (11.2.1), p. 263, line 10204–10208 (Δ); Proposition 11.2.1, pp. 265–266, line 10248; Lemma 11.3.1, p. 272, line 10525; §4.5, Proposition 4.5.1(1)(i), p. 106, line 3994–4000"
           },
           "prerequisites": [
             "target:1.2",
@@ -1092,7 +1097,7 @@
             "target:2.6",
             "target:2.4",
             "target:3.10",
-            "gap:l-factors",
+            "gap:local-rankin-selberg",
             "gap:local-categories",
             "gap:gl-tempered-genericity"
           ],
@@ -1111,7 +1116,7 @@
             {
               "name": "split_large_gap_infinite",
               "kind": "non-example",
-              "statement": "GL₄(R)×GL₁(R), r=1, has no proof exported by this target; neither are nongeneric arbitrary parameters covered."
+              "statement": "For F=R, E=F×F, W=F, r=1, order the first-factor basis as (v,w,e₀,v*). Then N consists of u=[[1,a,x,z],[0,1,0,b],[0,0,1,y],[0,0,0,1]] and H=N⋊F× embeds as (u diag(1,t,1,1),t). With e₀=(1,1), b(u)=(x,-y); for ψ(s₁,s₂)=exp(i(s₁+s₂)), ν(u,t)=exp(i(x-y)). Each of x and y has a nonzero coefficient, while a,b,z are killed. The two character coordinates define the real higher-codimension model (ggp §12, pp. 44–46, line 1624–1639)."
             }
           ]
         }
@@ -1245,7 +1250,7 @@
           "prerequisites": [
             "gap:enhanced-packets",
             "gap:global-parameters",
-            "gap:l-factors"
+            "gap:factor-epsilon-identities"
           ],
           "api": [
             {
@@ -1303,7 +1308,7 @@
             "target:4.1",
             "target:4.2",
             "target:4.3",
-            "gap:l-factors",
+            "gap:hermitian-global-values",
             "gap:global-parameters"
           ],
           "api": [
@@ -1361,7 +1366,9 @@
             "where": "§1.1.6, p. 4, bpcz line 148–167; harris Remark 1.4, p. 3, line 149–157"
           },
           "prerequisites": [
-            "gap:l-factors",
+            "gap:factor-epsilon-identities",
+            "gap:tempered-local-regularity",
+            "gap:hermitian-global-values",
             "gap:global-parameters"
           ],
           "api": [
@@ -1417,14 +1424,16 @@
           ],
           "locator": {
             "source": "zhang-period",
-            "where": "§4.5, Proposition 4.10, pp. 31–33, line 1505–1568; §3.3, equations (3.23)–(3.25), p. 19, line 962–981; Haar change pp. 9, 26, line 424–440"
+            "where": "§4.5, Proposition 4.10, pp. 31–33, line 1505–1568; §3.3, equations (3.23)–(3.25), p. 19, line 962–981; introductory measure warning p. 9, line 424–440; change of measures p. 29, line 1437–1440"
           },
           "prerequisites": [
             "target:2.7",
             "target:2.6",
             "gap:local-categories",
             "gap:archimedean-globalization",
-            "gap:l-factors",
+            "gap:tempered-local-regularity",
+            "gap:local-rankin-selberg",
+            "gap:whittaker-pairing-fourier",
             "gap:gl-tempered-genericity"
           ],
           "api": [
@@ -1477,7 +1486,8 @@
             "target:5.1",
             "target:3.3",
             "gap:local-categories",
-            "target:5.1a"
+            "target:5.1a",
+            "gap:archimedean-globalization"
           ],
           "api": [
             {
@@ -1488,7 +1498,7 @@
             {
               "name": "normalizedLocalBesselPeriod_ext",
               "role": "extensionality",
-              "statement": "A sesquilinear form agreeing on pure tensors agrees everywhere on the completed smooth tensor carrier."
+              "statement": "At finite places two sesquilinear forms on the algebraic tensor carrier agreeing on every pair of pure tensors are equal. At infinity two jointly continuous sesquilinear forms on the completed projective tensor carrier agreeing on every pair of pure tensors are equal, by density in both arguments."
             },
             {
               "name": "normalizedLocalBesselPeriod_nonzero_iff",
@@ -1516,6 +1526,16 @@
               "name": "local_alpha_rescale_vector",
               "kind": "compatibility",
               "statement": "For c≠0, q(cx)=q(x); α(cx,cx)=|c|²α(x,x)."
+            },
+            {
+              "name": "local_alpha_continuous_density",
+              "kind": "compatibility",
+              "statement": "For two continuous forms on X=V completed-projective-tensor W, equality on pure-tensor pairs extends first by linearity to A×A, A=V tensor W, and then by density to X×X. This identifies the constructed α with any continuous comparison form; algebraic spanning suffices at finite places (bp-arch §7.2, pp. 180–181, line 6797–6801 and line 6820–6825)."
+            },
+            {
+              "name": "local_alpha_discontinuous_control",
+              "kind": "non-example",
+              "statement": "For infinite-dimensional split GL₃(R)×GL₂(R) principal series, the completed tensor X contains infinite-rank tensors outside the proper dense algebraic tensor A. Choose x∉A and an algebraic functional ℓ with ℓ|A=0 and ℓ(x)=1. Then β(u,v)=ℓ(u)conj(ℓ(v)) vanishes on all pure-tensor pairs but β(x,x)=1, so β≠0 and is discontinuous."
             }
           ]
         },
@@ -1523,25 +1543,35 @@
           "id": "5.3",
           "kind": "theorem",
           "name": "normalizedLocalBesselPeriod_spherical",
-          "statement": "At a finite place outside a finite set containing dyadic places, archimedean places and all ramified group, extension, representation, additive-data and level places, suppose E/F is unramified or split, the groups admit the chosen compatible hyperspecials, σ_v is spherical and x_v is a nonzero hyperspecial-fixed tensor. Then ∫B_v(σ_v(t)x_v,x_v)dt_v=C_v·vol(K_(H,v))B_v(x_v,x_v), hence q_v(x_v)=vol(K_(H,v)).",
+          "statement": "Let F be any nonarchimedean characteristic-zero local field, including residue characteristic 2, and E/F unramified quadratic or split. For an adjacent rank-(n,n+1) Hermitian pair, n≥1, with compatible hyperspecials K_W=K_V∩U(W) from a self-dual integral pair, an actual irreducible unitary tempered spherical σ=π_V⊠π_W, a nonzero K_V×K_W-fixed tensor x, positive invariant B and Haar dt on H=U(W)(F), prove ∫_H B(σ(t)x,x)dt=C·vol_dt(K_W)B(x,x), hence q(x)=vol_dt(K_W), where C is the local normalizer of 5.1. The almost-everywhere assertion for factorizable global tempered cuspidal data is its corollary.",
           "hypotheses": [
-            "E/F is a quadratic extension of number fields",
-            "n≥1 and h is any nondegenerate rank-n Hermitian E-space",
-            "G_h=U(h)×U(h orthogonal-sum <1>), with diagonal subgroup H_h=U(h)",
-            "σ is an irreducible cuspidal automorphic subrepresentation of G_h(A_F), tempered at every place",
-            "Π=BC(σ) is its actual strong Hermitian discrete base change",
-            "The displayed good-place spherical hypotheses hold at v; only the local hypotheses are used in this theorem"
+            "F is a finite extension of Q_p for any p, E/F is unramified quadratic or F×F, and n≥1",
+            "W⊂V is nondegenerate of ranks n,n+1 and admits self-dual O_E-lattices Λ_V=Λ_W orthogonal-sum Λ_L with unramified smooth reductive unitary integral models; K_V,K_W are their compatible hyperspecial stabilizers",
+            "σ=π_V⊠π_W is an actual irreducible unitary tempered representation with nonzero K_V×K_W-fixed tensor x; B is positive definite invariant and dt is any Haar on H",
+            "C is the regular nonzero local factor of 5.1; there is no globalization hypothesis",
+            "For the Whittaker proof choose a conductor-zero additive character and self-dual root measures; no additive character is part of the resulting spherical identity"
           ],
           "locator": {
             "source": "harris",
-            "where": "§2 hypotheses (1)–(7), pp. 4–5, harris line 170–190; Theorem 2.12, p. 23, line 1289; bpcz equation (1.1.6.1), p. 4, line 168"
+            "where": "Odd-residue intermediate: §2 hypotheses (1)–(7), pp. 4–5, harris line 170–181; Theorem 2.12, p. 23, line 1289–1294. General local proof: relative spherical calculation of §2.2, pp. 7–23, especially nonsplit Weyl rational expressions, pp. 16–20, line 907–1147, extended here using all-residue Cartan/Satake input; split Whittaker calculation zhang-period equations (3.3), (3.26), pp. 14, 19, line 675–678 and line 982–986, with Proposition 4.10, p. 31, line 1543–1551. Global corollary: bpcz equation (1.1.6.1), p. 4, line 168–169"
           },
           "prerequisites": [
             "target:5.2",
-            "gap:l-factors",
-            "gap:local-spherical"
+            "gap:factor-epsilon-identities",
+            "gap:tempered-local-regularity",
+            "gap:local-rankin-selberg",
+            "gap:whittaker-pairing-fourier",
+            "gap:local-spherical",
+            "target:5.1a",
+            "gap:automorphic-realization"
           ],
-          "api": [],
+          "api": [
+            {
+              "name": "normalizedLocalBesselPeriod_spherical_ae",
+              "role": "global corollary",
+              "statement": "For everywhere-tempered cuspidal global data with nonzero factorizable f, q_v(f_v)=vol(K_(H,v)) at every place satisfying the local spherical hypotheses, hence almost everywhere; dyadic places satisfying those hypotheses are included."
+            }
+          ],
           "tests": [
             {
               "name": "spherical_unit_volume",
@@ -1556,7 +1586,17 @@
             {
               "name": "spherical_bad_places",
               "kind": "non-example",
-              "statement": "This evaluation is not asserted at a ramified or dyadic place; 5.2 still defines its convergent local integral."
+              "statement": "For F=Q₂ and split E, take π_V=St_(GL₂) and π_W a unitary character of Q₂× of conductor 4. Then π_V^(GL₂(Z₂))=0 and π_W^(Z₂×)=0, so no nonzero hyperspecial-fixed tensor exists. The ramified nonspherical datum has its convergent 5.2 form, but cannot be assigned a spherical value."
+            },
+            {
+              "name": "spherical_split_dyadic",
+              "kind": "computation",
+              "statement": "For F=Q₂, split E, n=1, π_V=Ind_B^(GL₂)(1⊠ω) normalized with ω unramified and ω(2)=-1, and π_W=1, take a spherical x with B(x,x)=vol(Z₂×)=1. Its Satake eigenvalues are 1,-1: L_F(1/2,π_V×1)=2, Δ₂=8/3 and L_F(1,σ,Ad)=32/9. Hence C=(8/3)·4/(32/9)=3, the spherical coefficient at diag(2^k,1) is 0 for odd k and 2^(-|k|/2) for even k, so the raw integral is 1+2Σ_(m≥1)2^(-m)=3, and α(x,x)=q(x)=1. Excluding residue characteristic 2 loses this value."
+            },
+            {
+              "name": "spherical_nonsplit_dyadic",
+              "kind": "computation",
+              "statement": "For the unramified quadratic E/Q₂, n=1 and W=<1>, V=<1,1>, take compatible self-dual lattices and any tempered spherical π_V paired with the trivial spherical U(W) character. Here H=U(1)=K_W is compact. With total H mass 1 and B(x,x)=1, its embedded action fixes x, so the raw integral is 1; for Satake eigenvalues t,t⁻¹ over E, Δ₂=8/9 and L_F(1,σ,Ad)=(8/9)L_E(1/2,BC(σ_V)×1), so C=1 and α(x,x)=q(x)=1, also at residue size 2."
             }
           ]
         },
@@ -1686,7 +1726,9 @@
             "where": "§8.1.2 and Theorem 8.1.2.1, pp. 76–77, bpcz line 4122–4154; §10.2.1, p. 90, line 4835–4845"
           },
           "prerequisites": [
-            "gap:l-factors",
+            "gap:hermitian-global-values",
+            "gap:local-rankin-selberg",
+            "gap:global-mirabolic-norms",
             "gap:automorphic-realization",
             "gap:automorphic-spectrum",
             "gap:adelic-measures"
@@ -1747,16 +1789,21 @@
             "Each constituent has a pole of L(s,Π_(m,j),As^((-1)^(m+1))) at s=1",
             "The actual induced representations are the supplier’s Hermitian discrete Arthur parameters; their constituent and base-change uniqueness are supplied, not postulated anew",
             "For J_σ, σ is cuspidal; temperedness is required only for its local integral realization",
-            "f belongs to the supplied adelic Schwartz algebra; orthogonal basis elements are nonzero"
+            "f belongs to the supplied adelic Schwartz algebra; orthogonal basis elements are nonzero",
+            "Local assertion: F_v is any characteristic-zero local field, E_v/F_v is quadratic étale, G_v=U(V)(F_v)×U(W)(F_v), H_v=U(W)(F_v) diagonally, n≥1 and σ_v is irreducible unitary tempered; f_v∈C_c∞(G_v) at finite v and f_v∈S(G_v) in the bpcz §2.5 Nash Schwartz topology at infinite v",
+            "Fix Haar dg_v on G_v and dt_v on H_v; put σ_v(f_v)=∫_(G_v)f_v(g)σ_v(g)dg_v; global specializations use the disintegrated measures of bpcz §2.3.3"
           ],
           "locator": {
             "source": "bpcz",
-            "where": "§2.8; §5.1.5 and Proposition 5.1.5.1, p. 59, bpcz line 3040–3058; §8.1.3, p. 78, line 4225–4233"
+            "where": "§2.8; §5.1.5 and Proposition 5.1.5.1, p. 59, bpcz line 3040–3058; §8.1.3, p. 78, line 4225–4233; §10.3.1, pp. 90–91, bpcz line 4873–4888 (local integral)"
           },
           "prerequisites": [
             "target:4.1",
             "target:6.1",
-            "gap:automorphic-spectrum"
+            "gap:automorphic-spectrum",
+            "target:2.7",
+            "target:5.2",
+            "gap:local-smoothing-trace"
           ],
           "api": [
             {
@@ -1772,7 +1819,7 @@
             {
               "name": "unitaryGlobalRelativeCharacter_local",
               "role": "compatibility",
-              "statement": "For tempered σ_v the local relative character is J_(σ_v)(f_v)=∫_(H_v)Tr(σ_v(t)σ_v(f_v))dt."
+              "statement": "For the local data just specified, J_(σ_v)(f_v)=∫_(H_v)Tr(σ_v(t)σ_v(f_v))dt_v is absolutely convergent and continuous in f_v. For the smoothing expansion σ_v(f_v)=Σ_j T_(x_j,y_j) supplied by local-smoothing-trace, it equals Σ_j∫_(H_v)B_v(σ_v(t)x_j,y_j)dt_v=C_vΣ_jα_v(x_j,y_j), with absolute convergence; the same value is obtained from a smooth orthonormal K-basis."
             },
             {
               "name": "unitaryGlobalRelativeCharacter_congr",
@@ -1795,6 +1842,11 @@
               "name": "relative_character_basis_rescale",
               "kind": "compatibility",
               "statement": "Replacing an orthogonal basis vector by ce multiplies numerator and norm by |c|² and does not change I_Π."
+            },
+            {
+              "name": "relative_character_local_smoothing",
+              "kind": "compatibility",
+              "statement": "For f_v=e_(K_G)=1_(K_G)/vol(K_G) and a one-dimensional hyperspecial-fixed subspace spanned by a unit vector x, σ_v(f_v)=T_(x,x), so J_(σ_v)(f_v)=C_vα_v(x,x). Rescaling dg_v changes e_(K_G) reciprocally and leaves this projector identity intact; omitting dt_v or C_v gives the wrong integral."
             }
           ]
         },
@@ -1923,7 +1975,7 @@
             "gap:relative-archimedean-transfer",
             "gap:relative-character-comparison",
             "gap:global-parameters",
-            "gap:l-factors"
+            "gap:factor-epsilon-identities"
           ],
           "api": [],
           "tests": [
@@ -2009,7 +2061,7 @@
           },
           "prerequisites": [
             "target:7.1",
-            "gap:l-factors"
+            "gap:hermitian-global-values"
           ],
           "api": [],
           "tests": [
@@ -2208,7 +2260,7 @@
     {
       "roadmap": "AutomorphicSpectralTheory",
       "sections": [],
-      "what": "Requested contracts only: gap:distribution-gk, gap:local-schwartz-germs, gap:local-tempered-bounds, gap:local-plancherel, gap:local-fourier-extension, gap:automorphic-spectrum, gap:spectral-isolation. No missing primary section is asserted as an import."
+      "what": "Requested contracts only: gap:distribution-gk, gap:local-schwartz-germs, gap:local-tempered-bounds, gap:local-plancherel, gap:local-fourier-extension, gap:local-smoothing-trace, gap:automorphic-spectrum, gap:spectral-isolation. No missing primary section is asserted as an import."
     },
     {
       "roadmap": "ModularityAndLanglandsExtensions",
@@ -2233,7 +2285,7 @@
     {
       "roadmap": "AutomorphicLFunctionsAndLocalFactors",
       "sections": [],
-      "what": "Requested contracts only: gap:l-factors. No missing primary section is asserted as an import."
+      "what": "Requested contracts only: gap:factor-epsilon-identities, gap:tempered-local-regularity, gap:hermitian-global-values, gap:local-rankin-selberg, gap:whittaker-pairing-fourier, gap:global-mirabolic-norms. No missing primary section is asserted as an import."
     }
   ],
   "consumers": [
@@ -2334,8 +2386,8 @@
       "neededBy": [
         "5.3"
       ],
-      "detail": "For every unramified irreducible tempered GL_k(K) and nondegenerate unramified character, normalize its hyperspecial-fixed Whittaker vector by W(1)=1 and identify its Satake parameter; give the compatible unitary Satake/base-change and normalized-induction comparisons. Haar volume is explicit and no spherical evaluation is asserted for ramified data (harris §2, pp. 4–5, line 170; zhang-period §3.3, p. 19, line 982). The relative spherical integral remains §5.3.",
-      "needs": "For split or unramified reductive local groups with specified hyperspecial subgroups, supply Satake parameters, normalized spherical matrix coefficients and spherical Whittaker vectors.",
+      "detail": "For every unramified irreducible tempered GL_k(K) and conductor-zero generic character, normalize the spherical Whittaker vector by W(1)=1. Give compatible unitary Satake/base-change and normalized-induction comparisons and the group spherical formulas for all residue sizes q≥2, including coincident Satake eigenvalues by continuous specialization. Retain both split and unramified nonsplit unitary groups; no odd-residue hypothesis is allowed in this general input. Haar volume is explicit, and data without hyperspecial fixed vectors have no spherical evaluation. General group formulas are the input; the relative spherical integral and its dyadic root-coordinate comparison remain §5.3 (harris §2.2, pp. 7–23, line 368–403 and line 907–1000; zhang-period §3.3, p. 19, line 982–986).",
+      "needs": "For every finite extension K/Q_p, including p=2, and split or unramified reductive groups with specified hyperspecials, supply Satake parameters, normalized spherical matrix coefficients, spherical Whittaker vectors, and their Cartan double-coset volumes and Iwasawa/Weyl formulas with the actual Haar normalization.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "requested §SR.5 spherical contract; no supplied section"
     },
@@ -2347,7 +2399,8 @@
         "2.2",
         "2.5",
         "3.3",
-        "5.1a"
+        "5.1a",
+        "5.2"
       ],
       "detail": "For every pair of these representations, identify the completed projective tensor with continuous bilinear maps by its universal property and identify H-equivariant bilinear functionals with continuous maps to the smooth contragredient when H acts through the stated factors; include nuclearity, density of algebraic tensors, and functoriality. A raw algebraic dual is insufficient (sun-zhu p. 2; jsz-bessel §3.2–§3.3, pp. 6–7, line 207).",
       "needs": "For real reductive groups U(p,q) and GL_k(R) or GL_k(C), supply the Casselman–Wallach category of admissible finite-length smooth Fréchet representations of moderate growth, its globalization equivalence and smooth dual.",
@@ -2361,7 +2414,7 @@
         "2.5"
       ],
       "detail": "Fix r≥1, irreducible π_W and generic irreducible auxiliary σ of GL_(r+1)(E), where E is C, R×R or C×C as appropriate. In unnormalized induction with transformation f(n g m x)=χ_(U(W))(g)^(-1)|det m|^s(π_W⊠σ)(g m)f(x), the reducible parameters form a Lebesgue-null subset of C^d, d=1 for a field and d=2 for a split algebra. Every componentwise right half-plane therefore contains an irreducible parameter; the finite-dimensional space S and its half-plane belong to §2.5 (jsz-bessel Proposition 3.1, p. 6, line 207–216).",
-      "needs": "For the real unitary and split GL parabolics with Levi GL_(r+1)(E)×U(W), supply generic irreducibility for the precise Casselman–Wallach families in jsz-bessel §3.2, equation (10), pp. 5–6.",
+      "needs": "For the real unitary and split GL parabolics with Levi GL_(r+1)(E)×U(W), supply generic irreducibility for the precise Casselman–Wallach families in jsz-bessel §3.2, unnumbered inducing transformation and Proposition 3.1, p. 6, line 207–216.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "requested §AF.1 inducing-family extension; no supplied section"
     },
@@ -2510,6 +2563,7 @@
       "neededBy": [
         "4.1",
         "4.2",
+        "5.3",
         "6.1"
       ],
       "detail": "Need all number fields and arbitrary unitary inner forms, pure-tensor density, Petersson positive pairings, local invariant unitary structures, and the general finite-rank/smoothing operator bridge. Uniform estimates along the relevant flag are applied in target 4.1, not assumed as its conclusion.",
@@ -2536,25 +2590,95 @@
       "section": "requested §ML.4 global extension; primary section unavailable"
     },
     {
-      "slug": "l-factors",
-      "title": "All-place epsilon, Asai, Rankin–Selberg and adjoint theory",
+      "slug": "factor-epsilon-identities",
+      "title": "Completed factors and epsilon identities",
       "neededBy": [
         "3.1",
         "3.2",
-        "3.11",
         "4.3",
-        "4.4",
+        "5.1",
+        "5.3",
+        "6.5"
+      ],
+      "needs": "For every characteristic-zero local field F and quadratic étale E/F, and for quadratic number-field extensions globally, supply completed factors of actual Weil–Deligne, archimedean Weil and automorphic parameters, compatible with sums, induction, tensor products and duals; at the central argument prove ε(1/2,M,ψ_E)=1 for conjugate-orthogonal M and nontrivial ψ_E trivial on F, ε(M,ψ_E)ε(M^∨,ψ_E)=det M(-1), and ε(M,ψ_E(t·))=det M(t)ε(M,ψ_E) for t∈F×.",
+      "detail": "Include zero parameters (factor 1), epsilon lift-independence under the connected centralizer, and multiplicativity used in ggp Theorem 6.1, pp. 20–21, line 728–753, with the duality formula in §5, p. 16, line 598–615. For actual degree-m unitary base change identify L_F(s,σ_m,Ad)=L_F(s,BC(σ_m),As^((-1)^m)), locally and globally (harris Remark 1.4, p. 3, line 149–157; bpcz §10.3.5, p. 92, line 4945). Use geometric Frobenius of norm q⁻¹ (ggp §3, p. 8, line 272–276), compare arithmetic Frobenius by inversion, and retain split products, gamma factors and p=2.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "requested §§AL.1, AL.3–AL.5 factor identities and signed-Asai comparison; primary sections unavailable"
+    },
+    {
+      "slug": "tempered-local-regularity",
+      "title": "Tempered local regularity",
+      "neededBy": [
         "5.1",
         "5.1a",
-        "5.3",
+        "5.3"
+      ],
+      "needs": "For every characteristic-zero local F, quadratic étale E/F, n≥1 and actual irreducible unitary tempered σ of an adjacent rank-(n,n+1) unitary pair, prove that L_F(s,η^i) at s=i for 1≤i≤n+1, L_E(s,BC(σ_n)×BC(σ_(n+1))) at s=1/2, and L_F(s,σ,Ad) at s=1 are holomorphic and nonzero.",
+      "detail": "Here η is the quadratic character, equal to 1 in the split case, and σ has no globalization premise. Include ramified and split algebras, dyadic fields and archimedean gamma factors. These are regularity assertions for the individual factors, not for an assumed quotient: C_v and its nonvanishing are constructed and deduced solely in §5.1 (bpcz §1.1.6, p. 4, line 148–167).",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "requested §§AL.1, AL.3–AL.5 tempered regularity; primary sections unavailable"
+    },
+    {
+      "slug": "hermitian-global-values",
+      "title": "Hermitian global central and adjoint values",
+      "neededBy": [
+        "4.4",
+        "5.1",
         "6.1",
-        "6.5",
         "7.2"
       ],
-      "detail": "Need ε(1/2,conjugate-orthogonal,ψ_E)=1, epsilon lift-independence identities, regular nonzero local L_v(i,η_v^i) for 1≤i≤n+1, L_(E_v)(1/2,Π_n×Π_(n+1)) and L_(F_v)(1,σ_v,Ad) for each actual unitary tempered adjacent pair, plus the adjoint/opposite-parity Asai comparison, global central regularity and opposite-parity adjoint/Asai value at 1 finite nonzero for distinct Hermitian constituents, Whittaker norm leading coefficients, and nonzero normalized RS test vectors. Include archimedean gamma factors, p=2 and split E. The doubling extension of this owner is not presumed to provide missing signed-Asai or generic norm inputs. Use geometric Frobenius with norm q⁻¹ as in ggp §3, line 272–276, and invert any arithmetic-Frobenius input. The quotient C_v and its regular nonvanishing are constructed and derived solely in §5.1. For every generic unitary tempered GL_(n+1)(F)×GL_n(F), supply the convergent Whittaker pairing of zhang-period equation (3.2), its invariant positive normalization, the Fourier matrix-coefficient identity of Lemma 4.9, and a Whittaker tensor with normalized Rankin–Selberg value 1 at s=0 (central argument 1/2); the relative integral comparison itself is §5.1a.",
-      "needs": "Supply local/global completed factors with induction, dual, tensor and change-of-character identities, general Rankin–Selberg and mirabolic distinction theory, and the stated regularity/nonvanishing theorems.",
+      "needs": "For a quadratic number-field extension E/F and normalized isobaric inductions Π_a,Π_b of distinct unitary conjugate-self-dual cuspidal constituents in each degree, with a-b odd, prove the completed L_E(s,Π_a×Π_b) is holomorphic at s=1/2 and may vanish there; prove each opposite-parity L_F(1,Π_m,As^((-1)^m)) is finite and nonzero when its degree-m constituents have Asai pole sign (-1)^(m+1).",
+      "detail": "For b=0 the tensor L-function is 1. Include all infinite factors and the finite nonzero completed L_F(i,η^i), i≥1, for the globally nontrivial quadratic η. The same central regularity applies to the generic tempered base changes in §4.4; no central value is inverted. At adjacent ranks the opposite-parity product is the global adjoint denominator via factor-epsilon-identities (ggp Conjecture 24.1, p. 90, line 3175–3182; harris Remark 1.4, p. 3, line 149–157; bpcz §§1.1.2–1.1.6, pp. 2–5; bplzz Definition 1.5, p. 3, line 128).",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.1, AL.3–AL.5 and signed-Asai extension; primary sections unavailable"
+      "section": "requested §§AL.3–AL.5 global Rankin–Selberg and signed-Asai values; primary sections unavailable"
+    },
+    {
+      "slug": "local-rankin-selberg",
+      "title": "Local Rankin–Selberg continuation and test vectors",
+      "neededBy": [
+        "3.11",
+        "5.1a",
+        "5.3",
+        "6.1"
+      ],
+      "needs": "For every characteristic-zero local field K, n≥1 and generic irreducible GL_(n+1)(K)×GL_n(K) pair, with opposite Whittaker characters and compatible quotient Haar measures, prove meromorphic continuation of λ(s,W)=∫_(N_n\\GL_n)W_(n+1)(diag(g,1))W_n(g)|det g|^s dḡ, entire continuation of λ(s,W)/L_K(s+1/2,π_(n+1)×π_n), and existence at each s₀ of a smooth Whittaker tensor with normalized value 1.",
+      "detail": "For unitary tempered pairs the raw integral converges absolutely for Re(s)>-1/2. For unramified pairs and conductor-zero characters the W_m(1)=1 spherical vectors satisfy λ(s,W)=vol(GL_n(O_K))L_K(s+1/2,π_(n+1)×π_n), with the stated measures, for every residue characteristic including 2. At infinity all functionals are continuous on the Casselman–Wallach model; for split coefficients apply this per field factor (zhang-period §3.3, equations (3.23)–(3.26), p. 19, line 962–986).",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "requested §§AL.3–AL.4 local Rankin–Selberg integrals; primary sections unavailable"
+    },
+    {
+      "slug": "whittaker-pairing-fourier",
+      "title": "Whittaker pairings and Fourier matrix coefficients",
+      "neededBy": [
+        "5.1a",
+        "5.3"
+      ],
+      "needs": "For every characteristic-zero local K, k≥1 and generic unitary GL_k(K) representation, supply the absolutely convergent positive invariant Whittaker pairing ϑ_k(W,W′)=∫_(N_(k-1)\\GL_(k-1))W(diag(g,1))conj(W′(diag(g,1)))dḡ; for tempered representations supply the Fourier identity F̂_(W,W′)(ψ_t)=δ_(B_k)(t)^(-1)W(t)conj(W′(t)) on regular unipotent characters.",
+      "detail": "Here F(u)=∫_([N_k,N_k])B(π(vu)W,W′)dv converges absolutely, F lies in L² of the unipotent abelianization, and its Fourier transform is smooth on the regular-character open set. Fix self-dual root measures and quotient measures by disintegration; include k=1, R,C and dyadic K. For unramified π and conductor-zero ψ, its spherical W(1)=1 has ϑ_k(W,W)=vol(GL_k(O_K))L_K(1,π×π^∨) in the unnormalized differential measures (zhang-period equation (3.2), pp. 13–14, line 656–678; Lemma 4.9, pp. 30–31, line 1523–1542). The relative split integral identity remains §5.1a.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "requested §§AL.3–AL.4 Whittaker pairing and Fourier continuation; primary sections unavailable"
+    },
+    {
+      "slug": "global-mirabolic-norms",
+      "title": "Global distinction and Whittaker norm leading coefficients",
+      "neededBy": [
+        "6.1"
+      ],
+      "needs": "For every quadratic number-field extension E/F, m≥1 and full normalized GL_m(A_E) induction Π_m of distinct unitary conjugate-self-dual cuspidal constituents with Asai pole sign (-1)^(m+1), supply the nonzero (-1)^(m+1)-distinguished mirabolic functional and positive invariant Whittaker norm: their finite-S expressions have coefficients (Δ_(GL_m/F)^(S,*))⁻¹L^(S,*)(1,Π_m,As^((-1)^(m+1))) and (Δ_(Res GL_m)^(S,*))⁻¹L^(S,*)(1,Π_m×Π_m^∨), respectively, where L^(S,*)(1) means the finite nonzero limit of (s-1)^r_m L^S(s) and r_m is the number of distinct constituents (the exact pole order of both functions).",
+      "detail": "Prove convergence of the corresponding mirabolic integrals, independence of sufficiently large S, nonzero leading coefficients of the stated orders, and equality of the Whittaker norm with the normalized induced Petersson norm; retain endoscopic inductions, all infinite places and local ramification. This is the general one-degree distinction/norm input. Its two-degree assembly, the continued global λ and their relative-character factorization remain §§6.1–6.5 (bpcz §8.1.2 and Theorem 8.1.2.1, pp. 76–77, line 4132–4154; zhang-period §§3.1–3.2, pp. 13–19).",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "requested §§AL.3–AL.5 global mirabolic distinction and norm residues; primary sections unavailable"
+    },
+    {
+      "slug": "local-smoothing-trace",
+      "title": "Local smoothing tensors and trace coefficients",
+      "neededBy": [
+        "6.2"
+      ],
+      "needs": "For every reductive group G over a characteristic-zero local F and every irreducible unitary tempered σ, prove that σ(f)=∫_G f(g)σ(g)dg is a smooth trace-class operator for f∈C_c∞(G(F)) at finite places or the Nash Schwartz space S(G(F)) at infinity; f↦σ(f) is continuous into the smooth endomorphism space and defines a canonical tensor admitting an absolutely convergent rank-one expansion.",
+      "detail": "For a positive invariant linear-first B, require σ(f)=Σ_j T_(x_j,y_j), T_(x,y)(z)=B(z,y)x, with smooth x_j,y_j and Σ_j p(x_j)q(y_j)<∞ for every pair of continuous smooth-vector seminorms (a finite sum on a fixed compact-open stage at finite places). Require Tr(σ(g)σ(f))=Σ_j B(σ(g)x_j,y_j), continuously in the weak Harish–Chandra Schwartz topology, and equality with the absolutely convergent smooth K-basis expansion. The global automorphic-spectrum clause supplies nuclear sums on induced automorphic realizations, not this local assertion. Here the general smoothing/tensor bridge is supplied; §6.2 proves its H-integrability and interchange using §2.7 (bp-arch §7.2, pp. 180–181, line 6780–6801 and line 6827–6833; bpcz §10.3.1, pp. 90–91, line 4873–4888).",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "requested Part II local smoothing extension of §§AS.0–AS.2; no supplied section"
     },
     {
       "slug": "automorphic-spectrum",
@@ -2575,7 +2699,7 @@
       "neededBy": [
         "6.4"
       ],
-      "detail": "The board design AutomorphicSpectralTheoryPartII owns this theory; it is not an eligible primary-section import here. This gap requests the contract from the earlier base owner and requires that continuation to be placed before this roadmap before it can discharge the gap. No duplicate multiplier, interpolation, counting or isolation targets occur here.",
+      "detail": "The AutomorphicSpectralTheory Part II multiplier continuation, §§SM.0–SM.5, owns this theory. This contract remains assigned to AutomorphicSpectralTheory and requires the multiplier continuation to precede this roadmap in the direction of supply. No duplicate multiplier, interpolation, counting or isolation targets occur here.",
       "needs": "Supply normalized Schwartz multipliers isolating a prescribed GL cuspidal datum and the unitary cuspidal base-change classes, preserving transfer and the exact local support conditions.",
       "supplier": "AutomorphicSpectralTheory",
       "section": "proposed Part II §§SM.0–SM.5; placement and primary import contract required"

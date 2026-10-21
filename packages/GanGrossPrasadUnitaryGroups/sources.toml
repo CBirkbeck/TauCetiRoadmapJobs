@@ -253,7 +253,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v4"
-cited_for = ["5.1a", "5.2", "l-factors", "gl-tempered-genericity"]
+cited_for = ["5.1a", "5.2", "local-rankin-selberg", "whittaker-pairing-fourier", "gl-tempered-genericity"]
 
 [[source]]
 id = "bernstein-zelevinsky"
