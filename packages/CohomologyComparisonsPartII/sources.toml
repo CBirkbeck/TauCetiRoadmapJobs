@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v4"
-cited_for = ["period-rings", "4.1", "4.2", "4.4", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent", "period-rings"]
+cited_for = ["4.1", "4.2", "4.4", "local-period-fundamental-sequences", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent"]
 
 [[source]]
 id = "BesserII"
@@ -125,9 +125,9 @@ cited_for = ["period-rings", "3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "4
 
 [[source]]
 id = "Buhler"
-year = 2009
-title = "Exact Categories"
 authors = "Theo Bühler"
+title = "Exact Categories"
+year = 2009
 arxiv = "0811.1480v2"
 locator_scheme = "section"
 locator = "Definition 2.1, p. 5; Sections 10 and 12; Buhler line 195, Buhler line 2215"
@@ -143,9 +143,9 @@ cited_for = ["1.3", "exact-yoneda"]
 
 [[source]]
 id = "MathlibPin"
-year = 2022
-title = "Mathlib: Witt vector isocrystals (pinned Lean source)"
 authors = "Heather Macbeth and the Mathlib community"
+title = "Mathlib: Witt vector isocrystals (pinned Lean source)"
+year = 2022
 locator_scheme = "section"
 locator = "WittVector.Isocrystal and equivariant maps; MathlibPin line 77, MathlibPin line 117, MathlibPin line 136, MathlibPin line 142, MathlibPin line 184"
 url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/WittVector/Isocrystal.lean"
@@ -159,9 +159,9 @@ cited_for = ["5.1", "library baseline"]
 
 [[source]]
 id = "MathlibCone"
-year = 2023
-title = "Mathlib: Mapping cone of cochain complexes (pinned Lean source)"
 authors = "Joël Riou and the Mathlib community"
+title = "Mathlib: Mapping cone of cochain complexes (pinned Lean source)"
+year = 2023
 locator_scheme = "section"
 locator = "CochainComplex.mappingCone; MathlibCone line 61, MathlibCone line 76, MathlibCone line 80, MathlibCone line 84, MathlibCone line 92"
 url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Homology/HomotopyCategory/MappingCone.lean"
@@ -175,9 +175,9 @@ cited_for = ["1.4", "2.2"]
 
 [[source]]
 id = "MathlibExt"
-year = 2024
-title = "Mathlib: Ext in abelian categories (pinned Lean source)"
 authors = "Joël Riou and the Mathlib community"
+title = "Mathlib: Ext in abelian categories (pinned Lean source)"
+year = 2024
 locator_scheme = "section"
 locator = "CategoryTheory.HasExt and CategoryTheory.Abelian.Ext; MathlibExt line 53, MathlibExt line 59, MathlibExt line 122"
 url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean"
@@ -191,9 +191,9 @@ cited_for = ["exact-yoneda", "library baseline"]
 
 [[source]]
 id = "TauCetiCone"
-year = 2026
-title = "Tau Ceti: Contractibility of cones of homotopy equivalences (pinned Lean source)"
 authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Contractibility of cones of homotopy equivalences (pinned Lean source)"
+year = 2026
 locator_scheme = "section"
 locator = "CochainComplex.mappingCone.nonempty_homotopy_id_zero_of_homotopyEquiv; TauCetiCone line 40, TauCetiCone line 53"
 url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/HomotopyCategory/MappingCone.lean"
@@ -207,9 +207,9 @@ cited_for = ["1.4", "library baseline"]
 
 [[source]]
 id = "TauCetiSyntomic"
-year = 2026
-title = "Tau Ceti: Standard syntomic algebras (pinned Lean source)"
 authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Standard syntomic algebras (pinned Lean source)"
+year = 2026
 locator_scheme = "section"
 locator = "TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension; TauCetiSyntomic line 79, TauCetiSyntomic line 85"
 url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RingTheory/Syntomic/StandardSyntomic.lean"
@@ -348,3 +348,51 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "MathlibPadicLattice"
+authors = "Robert Y. Lewis, Mario Carneiro, Johan Commelin and the Mathlib community"
+title = "Mathlib: p-adic integer scalar action (pinned Lean source)"
+year = 2018
+locator_scheme = "section"
+locator = "PadicInt.algebra, PadicInt.algebraMap_apply and PadicInt.isFractionRing; MathlibPadicLattice line 580–588"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/PadicIntegers.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Padics/PadicIntegers.lean"
+fetched_at = "2026-10-21T05:39:46Z"
+sha256 = "0c6a36fff6db91e57414bf81122ab646cd0300eb956fec39e76a9b55c3f94000"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.1 coordinate lattices"]
+
+[[source]]
+id = "MathlibLinearProd"
+authors = "Johannes Hölzl, Mario Carneiro, Kevin Buzzard, Yury Kudryashov, Eric Wieser and the Mathlib community"
+title = "Mathlib: linear maps on product modules (pinned Lean source)"
+year = 2017
+locator_scheme = "section"
+locator = "LinearMap.fst, LinearMap.snd, LinearMap.prod and application formulas; MathlibLinearProd line 48–104"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Prod.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Prod.lean"
+fetched_at = "2026-10-21T05:51:00Z"
+sha256 = "fc5dee3cdf7d22ddd6f8576e6028c20e2243c6f199cce02527ae144b05b3e8ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.4 and 5.2 coordinate maps"]
+
+[[source]]
+id = "TauCetiLinearYonedaReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: linear Hom complexes (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti.ChainComplex.linearYonedaFunctor and its additive and abelian contexts; TauCetiLinearYonedaReview line 51–60, line 79–105"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/LinearYoneda.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/LinearYoneda.lean"
+fetched_at = "2026-10-21T05:50:36Z"
+sha256 = "c2a46fdb6c0c2056ed587a7c7e2947fa223fe21572d759e997f007e73f3c4250"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["exact-yoneda duplication audit"]
