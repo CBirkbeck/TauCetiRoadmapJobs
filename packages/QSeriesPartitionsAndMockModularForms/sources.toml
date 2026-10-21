@@ -10,8 +10,8 @@ locator_scheme = "section"
 locator = "Sections 1.2 and 5.1 (inherited bibliographic locators, not independently checked)"
 licence_class = "none"
 status = "waived"
-cited_for = ["Optional filed background; endpoints use certified alternatives"]
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1#issuecomment-6299988600"
+cited_for = ["Retained bibliographic background; endpoints use certified alternatives"]
 
 [[source]]
 id = "BFOR2017"
@@ -19,20 +19,20 @@ authors = "Kathrin Bringmann, Amanda Folsom, Ken Ono and Larry Rolen"
 title = "Harmonic Maass Forms and Mock Modular Forms: Theory and Applications"
 year = 2017
 locator_scheme = "section"
-locator = "Exact section/theorem locator unresolved; requires legal text or an alternative reference"
+locator = "Bibliographic background; no theorem from this waived work is used"
 licence_class = "none"
 status = "waived"
-cited_for = ["Optional filed background; endpoints use certified alternatives"]
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1#issuecomment-6299988600"
+cited_for = ["Retained bibliographic background; endpoints use certified alternatives"]
 
 [[source]]
 id = "Zwegers2002"
 authors = "Sander Zwegers"
 title = "Mock Theta Functions"
-year = 2008
+year = 2002
 arxiv = "0807.4834v1"
 locator_scheme = "theorem"
-locator = "Proposition 1.5, Theorems 1.11 and 1.16, Chapters 2–4"
+locator = "Propositions 1.3–1.5, Theorems 1.11 and 1.16; Definition 2.1, Proposition 2.4, Corollary 2.9; Definitions 3.2/3.4/3.8, Theorem 3.9; Propositions 4.2–4.5, 4.10, 4.13–4.14"
 url = "https://arxiv.org/abs/0807.4834v1"
 fetched_from = "https://arxiv.org/pdf/0807.4834v1"
 fetched_at = "2026-10-20T21:36:56Z"
@@ -40,8 +40,8 @@ sha256 = "ca2b841ad716a16eb380893e6686f67f65e5506a9375de7a3c8f96ec58e8280d"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-version_note = "arXiv v1"
-cited_for = ["Appell–Lerch completion and mock theta transformations"]
+version_note = "Utrecht thesis 2002, deposited as arXiv v1 in 2008; use the thesis printed pages"
+cited_for = ["5.1–7.5", "9.1–9.5", "10.3–10.8"]
 
 [[source]]
 id = "Gasper1995"
@@ -76,13 +76,13 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-20"
 cited_for = ["Mock modular forms, shadows, completions and rank applications"]
+version_note = "Author copy with exposé page labels 986–NN. The illustrative R₃ coefficient and displayed rank-to-Lerch expression are checked against BringmannOno2006 and corrected by the explicit derivation in 11.2; Theorem 7.1 is retained."
 
 [[source]]
 id = "Pak2002"
 authors = "Igor Pak"
 title = "Partition bijections, a survey"
 year = 2002
-version_note = "Author draft dated September 18, 2002; cite its pagination and numbering"
 locator_scheme = "section"
 locator = "Sections 2.2, 6 and 7"
 url = "https://www.math.ucla.edu/~pak/papers/psurvey.pdf"
@@ -92,6 +92,7 @@ sha256 = "a65746dc070e19c40a52660b55f9263e8b8da4744fbb6745d16be34397f36503"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-20"
+version_note = "Author draft dated September 18, 2002; cite its pagination and numbering"
 cited_for = ["Partition generating functions and Rogers–Ramanujan identities"]
 
 [[source]]
@@ -109,7 +110,7 @@ sha256 = "9094db44c13fde548a576dfcb4bd04cd25b4563153ea1457afd45961fd1c67a8"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-version_note = "arXiv v4"
+version_note = "arXiv initial deposit 2002, revised v4 in 2003; locators use this preprint version"
 cited_for = ["General harmonic weak Maass forms and the xi operator"]
 
 [[source]]
@@ -151,11 +152,141 @@ id = "Andrews1976"
 authors = "George E. Andrews"
 title = "The Theory of Partitions"
 year = 1976
+doi = "10.1017/CBO9780511608650"
 locator_scheme = "chapter"
 locator = "Chapters 1, 7 and 10 (bibliographic locators only)"
-cited_for = ["Optional filed background; replaced by Pak2002, Gasper1995, AndrewsGarvan1988 and BevilacquaChandranChoi2019"]
-doi = "10.1017/CBO9780511608650"
 url = "https://doi.org/10.1017/CBO9780511608650"
 licence_class = "none"
 status = "uncertified"
 version_note = "1976 original; Cambridge reprints. Sources service found no legal readable full text; no endpoint relies on unread contents."
+cited_for = ["Retained bibliographic background; replaced by Pak2002, Gasper1995, AndrewsGarvan1988 and BevilacquaChandranChoi2019"]
+
+[[source]]
+id = "Watson1938"
+locator_scheme = "theorem"
+locator = "Hauptsätze 1, 3–4, pp. 98–99, lines 76 and 123–126; §§2–5, (3.41)–(3.44) and (5.41)–(5.42), for proof filtrations; p. 98, line 108 for p(243) modulo 343"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0179/LOG_0012.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0179/LOG_0012.pdf"
+fetched_at = "2026-10-21T09:31:50Z"
+sha256 = "046087b7546cdbf06510f67c303e3f08213b50a3a029c74ebe0ee4e415ff3885"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.8", "4.9", "4.8a"]
+authors = "G. N. Watson"
+title = "Ramanujans Vermutung über Zerfällungsanzahlen"
+year = 1938
+version_note = "GDZ volume 179, article LOG_0012, 32 printed pages plus cover; OCR extraction. Earlier landing and LOG_0009/0018 retrievals were not this work and are not evidence."
+
+[[source]]
+id = "Atkin1967"
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 14, line 28; Lemma 10 and (29)–(33), p. 23, lines 375–410; Lemmas 8 and 14 for integral filtrations"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/71DCFFC35C9742F396BD35FDC848BDE5/S0017089500000045a.pdf/proof_of_a_conjecture_of_ramanujan.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/71DCFFC35C9742F396BD35FDC848BDE5/S0017089500000045a.pdf/proof_of_a_conjecture_of_ramanujan.pdf"
+fetched_at = "2026-10-21T09:06:20Z"
+sha256 = "94fa88ad03833b039f114e80e2eaba87f218bbdfdeb910304fdaf9802070d874"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.7", "4.8", "4.9", "4.8a"]
+authors = "A. O. L. Atkin"
+title = "Proof of a conjecture of Ramanujan"
+year = 1967
+
+[[source]]
+id = "BringmannOno2006"
+locator_scheme = "theorem"
+locator = "Author version §2, (2.1)–(2.5) and Theorem 2.1, pp. 5–6, lines 270–337"
+url = "https://www.mi.uni-koeln.de/Bringmann/mock2-1.pdf"
+fetched_from = "https://www.mi.uni-koeln.de/Bringmann/mock2-1.pdf"
+fetched_at = "2026-10-21T09:09:00Z"
+sha256 = "c9a38541fb6c655a1525c4c5115cf4ac7cad0177fa363c0d2c29da7bbabf5d2e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["10.1", "10.2", "11.2"]
+authors = "Kathrin Bringmann and Ken Ono"
+title = "The f(q) mock theta function conjecture and partition ranks"
+year = 2006
+version_note = "Undated author PDF read; locators use its 23-page pagination and Theorem 2.1, not an assumed journal page conversion."
+
+[[source]]
+id = "Garvan1988"
+locator_scheme = "equation"
+locator = "(1.27)–(1.29), pp. 50–51, lines 154–163; §§2–6 for vector-crank dissections; (6.4), (6.6), (6.15)–(6.16), pp. 63–65, lines 668–684 and 709–729, for the eleven-dissection derivation; (6.24), p. 65, lines 747–749, for the residue-five product; §8 for the rank-five comparison"
+url = "https://www.ams.org/journals/tran/1988-305-01/S0002-9947-1988-0920146-8/S0002-9947-1988-0920146-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1988-305-01/S0002-9947-1988-0920146-8/S0002-9947-1988-0920146-8.pdf"
+fetched_at = "2026-10-21T09:10:14Z"
+sha256 = "96eb49a514cd0bb789ca3f23af87cb9ec7bb8a7b05ba35a874b2f157af76e972"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["4.2", "4.5", "4.4a"]
+authors = "Frank G. Garvan"
+title = "New combinatorial interpretations of Ramanujan’s partition congruences mod 5, 7 and 11"
+year = 1988
+version_note = "In (6.8), p. 64, line 695, the residue-five term prints A8. Use A9, as derived from (6.15)–(6.16) with (6.4), (6.6), and independently corroborated by the product in (6.24), p. 65, lines 747–749."
+
+[[source]]
+id = "Hickerson1988"
+authors = "D. R. Hickerson"
+title = "On the seventh order mock theta functions"
+year = 1988
+venue = "Inventiones Mathematicae 94"
+doi = "10.1007/bf01394280"
+locator_scheme = "page"
+locator = "pp. 665–666, seventh-order Hecke identities"
+url = "https://doi.org/10.1007/bf01394280"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.4", "10.3a"]
+
+[[source]]
+id = "Andrews1986"
+locator_scheme = "theorem"
+locator = "Bailey’s Lemma (2.3)–(2.6), pp. 114–115, lines 93–110; Theorems 3–4, 9 and 13, pp. 117–118, 125 and 132–133, lines 241, 266, 450, 698; corrections specified by Zwegers2002 lines 4123–4124"
+url = "https://www.ams.org/journals/tran/1986-293-01/S0002-9947-1986-0814916-2/S0002-9947-1986-0814916-2.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1986-293-01/S0002-9947-1986-0814916-2/S0002-9947-1986-0814916-2.pdf"
+fetched_at = "2026-10-21T09:47:12Z"
+sha256 = "5d91d479a67b8a5e1c10121e8619111592bf5bad238c9f8b736e120c71388998"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["2.6", "2.7", "10.3", "10.4", "10.3a"]
+authors = "George E. Andrews"
+title = "The fifth and seventh order mock theta functions"
+year = 1986
+
+[[source]]
+id = "AtkinSwinnertonDyer1954"
+authors = "A. O. L. Atkin and P. Swinnerton-Dyer"
+title = "Some Properties of Partitions"
+year = 1954
+doi = "10.1112/plms/s3-4.1.84"
+url = "https://doi.org/10.1112/plms/s3-4.1.84"
+locator_scheme = "page"
+locator = "pp. 84–106, complete rank dissections modulo 5 and 7 (bibliographic locator)"
+licence_class = "none"
+status = "uncertified"
+version_note = "Bibliographic citation only: publisher DOI and public PDF access attempts returned HTTP 403. No proof text or theorem numbering is inferred. Certified AndrewsGarvan1988 and Garvan1988 corroborate the endpoint; the complete rank-difference dissections are targets of §4.4a."
+cited_for = ["4.4a"]
+
+[[source]]
+id = "KnoppMason2009"
+authors = "Marvin Knopp, Geoffrey Mason"
+title = "Logarithmic vector-valued modular forms"
+year = 2009
+arxiv = "0910.3976v1"
+locator_scheme = "theorem"
+locator = "arXiv v1 §2.2, Lemma 2.1, Theorem 2.2 and Lemma 2.3, pp. 4–6, lines 188–241; holomorphic logarithmic expansions only"
+url = "https://arxiv.org/abs/0910.3976v1"
+fetched_from = "https://arxiv.org/pdf/0910.3976v1"
+fetched_at = "2026-10-21T11:00:46Z"
+sha256 = "3af7c86321a672297ea9c0d4fbe2b6f0e176ddf4879fad775afac56cc16b117d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+version_note = "arXiv v1"
+cited_for = ["8.4a"]
