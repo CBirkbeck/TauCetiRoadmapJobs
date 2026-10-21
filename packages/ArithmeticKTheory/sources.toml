@@ -16,3 +16,26 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-21"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6313071059"
+
+[[source]]
+id = "harris-segal"
+authors = "B. Harris, G. Segal"
+title = "K i Groups of Rings of Algebraic Integers"
+year = 1975
+doi = "10.2307/1970984"
+locator_scheme = "section"
+locator = "Section 3, article pp. 20–33"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
+
+[[source]]
+id = "groenewegen-preprint"
+authors = "Richard P. Groenewegen"
+title = "Bounds for computing the tame kernel"
+year = 2002
+locator_scheme = "theorem"
+locator = "Lemmas 6, 9, 12; Proposition 10; §§3–7, preprint pp. 7–11"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
