@@ -23,3 +23,19 @@ locator = "Multiplicative case cited via Stein–Wuthrich Theorem 6.1; exact Jon
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/189#issuecomment-6318397078"
+
+[[source]]
+id = "src18"
+authors = "Peter Schneider"
+title = "p-adic height pairings. II"
+year = 1985
+locator_scheme = "theorem"
+locator = "Section 2, Theorem 2 prime, p.342; Section 7, Theorems 6–7, p.371"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0079/LOG_0025.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0079/LOG_0025.pdf"
+fetched_at = "2026-10-21T15:46:20Z"
+sha256 = "f1a0268798f3b8754949db4f37250cc7a67feb14b449c580f9f54ae246333665"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/189#issuecomment-6319892324"
