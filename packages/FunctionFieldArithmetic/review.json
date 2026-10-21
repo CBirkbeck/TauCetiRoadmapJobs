@@ -1,0 +1,8 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-REV-PKG-FunctionFieldArithmetic~codex2",
+    "date": "2026-10-20",
+    "notes": "Independent review for #11489 by Codex, session codex-ofOFBJ. Accepted after verifying closure of the earlier finding 11 in README 4.6-4.10: rigidified Picard representability, Abel bundle and modulus property, explicit ray comparison, finite-Artin identification of Lang covers, arithmetic/geometric connectedness, constant covers and least conductors. Checked every finite exact constant field and characteristic, including characteristic two and nonreduced moduli, without a rational-point assumption. Earlier corrections 1-10 and 12-23 remain intact. Read the full package, accepted plan and audit; checked earlier supplier contracts, current upstream duplication, primary construction sources and an independent 15-subsection source sample. Added verified Rosen, Goss and Stichtenoth publisher-preview locators. No higher Langlands supplier or additional duplicate target found. Suggested.lean and metadata unchanged; lean-check exited 0 at the pins with eight sorry warnings only. Packet, intake and whitespace checks passed. The independent report records source limits and the adversarial mathematics pass; no unresolved package defect remains."
+  }
+}
