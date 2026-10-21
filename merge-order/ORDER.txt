@@ -130,6 +130,7 @@ ColemanIntegrationPartII
 EffectiveDiophantineMethods
 CompletedCohomologyPartII
 CohomologyComparisons
+CohomologyComparisonsPartII
 AutomorphicBundles
 HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
