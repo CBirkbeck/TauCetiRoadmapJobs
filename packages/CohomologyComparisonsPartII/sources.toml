@@ -24,7 +24,7 @@ venue = "Algebra Number Theory 10 (2016) 1695-1790"
 doi = "10.2140/ant.2016.10.1695"
 arxiv = "1309.7620v5"
 locator_scheme = "theorem"
-locator = "Theorem A(1),(4); Section 3.2, equation (32); Proposition 3.8; Section 4.1; Proposition 4.6; Corollary 4.11"
+locator = "Theorem A(1),(4); Section 3.2, equation (32); Proposition 3.8; Proposition 3.18, p. 33, NN line 1688–1691; Section 4.1; Proposition 4.6; Corollary 4.11"
 url = "https://arxiv.org/abs/1309.7620v5"
 fetched_from = "https://arxiv.org/pdf/1309.7620v5"
 fetched_at = "2026-10-20T21:11:07Z"
@@ -33,7 +33,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v5"
-cited_for = ["3.4", "4.1", "5.2", "5.3", "rational-descent", "hyodo-kato-inputs"]
+cited_for = ["3.4", "4.1", "5.2", "5.3", "rational-descent", "hyodo-kato-proper", "arithmetic-pair-deformation"]
 
 [[source]]
 id = "AM"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v2"
-cited_for = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "7.1", "7.2", "7.3", "7.4", "7.5", "consumer symbol-comparison hypotheses"]
+cited_for = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "rigid-gysin", "7.1", "7.2", "7.3", "7.4", "7.5", "consumer symbol-comparison hypotheses"]
 
 [[source]]
 id = "HK"
@@ -70,7 +70,7 @@ sha256 = "220873e91f89094d14f1a82631c6887a40ec362139990928236ca0525b1050cf"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
-cited_for = ["5.1", "5.2", "hyodo-kato-inputs"]
+cited_for = ["5.1", "5.2", "hyodo-kato-proper", "arithmetic-pair-deformation"]
 
 [[source]]
 id = "CN"
@@ -79,7 +79,7 @@ title = "Syntomic complexes and p-adic nearby cycles"
 year = 2015
 arxiv = "1505.06471v4"
 locator_scheme = "theorem"
-locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3, p. 23; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.5, pp. 54–57; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
+locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3, p. 23; Section 3/Proposition 3.3/Corollary 3.9/Proposition 3.10/Lemma 3.11, pp. 32–35; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.6/Lemmas 5.8–5.9, pp. 54–58; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
 url = "https://arxiv.org/abs/1505.06471v4"
 fetched_from = "https://arxiv.org/pdf/1505.06471v4"
 fetched_at = "2026-10-20T21:12:38Z"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v4"
-cited_for = ["4.1", "4.2", "4.4", "local-period-analysis", "period-rings"]
+cited_for = ["4.1", "4.2", "4.4", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent", "period-rings"]
 
 [[source]]
 id = "BesserII"
@@ -220,3 +220,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["ownership boundary"]
+
+[[source]]
+id = "MathlibBDeRhamReview"
+authors = "Jiedong Jiang and the Mathlib community"
+title = "Mathlib: De Rham period-ring carriers (pinned Lean source)"
+year = 2025
+locator_scheme = "section"
+locator = "Mathlib/RingTheory/Perfectoid/BDeRham.lean at 6b7abb3c7686292736be2955bd3eb9ebf63b456a; binders at MathlibBDeRhamReview line 55–56; global BDeRhamPlus at line 79 and BDeRham at line 92"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Perfectoid/BDeRham.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Perfectoid/BDeRham.lean"
+fetched_at = "2026-10-21T00:56:57Z"
+sha256 = "8e7ff96418b58146ee03aadde0d977657a14e49d171f70065bcbe0bb8f77f717"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["library baseline", "period-rings"]
