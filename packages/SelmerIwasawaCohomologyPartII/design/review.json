@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-DESIGN-SelmerIwasawaCohomologyPartII~7",
+  "date": "2026-10-21",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by @CBirkbeck (codex) of be7b795",
+  "conditional_gaps": [
+   "automorphic-multiplicity",
+   "boundary-cohomology",
+   "chow-abel-jacobi",
+   "diagonal-concentration",
+   "eventual-images",
+   "eventual-rigidity",
+   "hecke-finite-support",
+   "hermitian-local-global",
+   "hilbert-precursor",
+   "hochshild-serre-adic",
+   "local-unitary-representations",
+   "native-shimura",
+   "nearby-weight",
+   "old-form-dimension",
+   "polarized-image-lifting",
+   "purity-crystalline-regulator",
+   "rigid-r-equals-t",
+   "semistable-boundary",
+   "unitary-incidence",
+   "unitary-special-compatibility"
+  ]
+ }
+}
