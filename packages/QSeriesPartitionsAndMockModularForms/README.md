@@ -33,9 +33,11 @@ Mathlib pin: `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
 
 | Declarations | File and exact use |
 | --- | --- |
-| `Nat.Partition`, `Nat.Partition.ofSums` | `Mathlib/Combinatorics/Enumerative/Partition/Basic.lean`: positive multiset of natural parts with prescribed sum; finite carrier and constructors. |
+| `Nat.Partition`, `Nat.Partition.ofSums`, `Nat.Partition.restricted` | `Mathlib/Combinatorics/Enumerative/Partition/Basic.lean`: positive multiset of natural parts with prescribed sum; finite carrier, constructors and the finite subset selected by a predicate on each part. |
+| `Multiset.sort` | `Mathlib/Data/Multiset/Sort.lean`: increasingly sorted list retaining every multiplicity; the gap predicate uses native `List.Pairwise` on this list. |
 | `Nat.Partition.genFun`, `Nat.Partition.coeff_genFun`, `Nat.Partition.hasProd_genFun` | `Mathlib/Combinatorics/Enumerative/Partition/GenFun.lean`: arbitrary multiplicative weights in a commutative semiring; the product theorem uses a Hausdorff coefficient topology. Values at part zero and multiplicity zero are ignored. The ordinary specialization is an adapter in 3.5. |
 | `Nat.Partition.hasProd_powerSeriesMk_card_restricted`, `Nat.Partition.card_restricted_eq_card_countRestricted`, `Nat.Partition.card_odds_eq_card_distincts` | `Mathlib/Combinatorics/Enumerative/Partition/Glaisher.lean`: restricted product, Glaisher for positive multiplicity bound, and odd/distinct equality. Used to check adapters. |
+| `PowerSeries.expand`, `PowerSeries.coeff_expand` | `Mathlib/RingTheory/PowerSeries/Expand.lean`: substitution by X^t for t≠0 over a commutative ring, with coefficient f_(n/t) when t divides n and zero otherwise. The semiring pullout law states this coefficient formula directly. |
 | `PowerSeries.isUnit_iff_constantCoeff`, `PowerSeries.invOfUnit`, `PowerSeries.mul_invOfUnit` | `Mathlib/RingTheory/PowerSeries/Inverse.lean`: over a ring, a power series is a unit exactly when its constant coefficient is; use specified units rather than field inverses over arbitrary rings. |
 | `PowerSeries.pentagonalSeries`, `PowerSeries.WithPiTopology.hasProd_one_sub_X_pow` | `Mathlib/Combinatorics/Enumerative/Pentagonal/PowerSeries.lean`: the Euler product equals the integral pentagonal series in the pi topology over every commutative ring; no extra NoZeroDivisors hypothesis. |
 | `jacobiTheta₂`, `hasSum_jacobiTheta₂_term`, `jacobiTheta₂_functional_equation`, `hasDerivAt_jacobiTheta₂_fst` | `Mathlib/NumberTheory/ModularForms/JacobiTheta/TwoVariable.lean`: the exponent is `2*pi*i*n*z+pi*i*n^2*tau`; HasSum and differentiation require Im(tau)>0. The functional equation retains the principal complex half-power. |
@@ -167,7 +169,7 @@ For the proof, every positive factor first changes degree j; form each coefficie
 
 ### 1.5 concatenation and inversion
 
-Prove concatenation and inversion with the following hypotheses. For every commutative ring, Pₙ₊ₘ(a;q)=Pₙ(a;q)Pₘ(aqⁿ;q). If a and q are units, Pₙ(a;q)=(−a)ⁿq^(n(n−1)/2)Pₙ(a⁻¹;q⁻¹). Integer-index versions hold on the common reciprocal-factor domain. These identities, including list multiplicities, commute with scalar change. (Gasper1995, (1.3.10) and Exercise 1.1(ii), pp. 6–7, lines 313 and 327; Gasper1995 line 313.)
+Prove concatenation and inversion with the following hypotheses. For every commutative ring, Pₙ₊ₘ(a;q)=Pₙ(a;q)Pₘ(aqⁿ;q). If a and q are units, Pₙ(a;q)=(−a)ⁿq^(n(n−1)/2)Pₙ(a⁻¹;q⁻¹). Integer-index versions hold on the common reciprocal-factor domain. These identities, including list multiplicities, commute with scalar change. (Gasper1995, (1.3.10) and Exercise 1.1(ii), pp. 6–7, lines 313 and 329; Gasper1995 line 313.)
 
 The public laws are `qPochhammer_concat`: The displayed concatenation formula; `qPochhammer_invert_base`: The displayed inverse-base identity.
 
@@ -276,7 +278,9 @@ For the proof, compare constant terms and the recurrence (1−z)f(z)=(1−az)f(q
 
 Prove Ramanujan’s bilateral summation with the following hypotheses. If 0<|q|<1, a≠0, |b/a|<|z|<1 and every displayed denominator factor is nonzero, then Ψ([a];[b];q,z)=P(q,b/a,az,q/(az);q)/P(b,q/a,z,b/(az);q), with absolute convergence. The quotient-coefficient formulation includes b=q^N, N≥1, by its vanishing negative tail and analytic continuation. (Gasper1995, (2.1.8)–(2.1.9), p. 9, lines 478–508; Gasper1995 line 478.)
 
-The public laws are 1ψ1 has sum: The displayed absolutely convergent equality; 1ψ1 at q power: The b=q^N specialization is the shifted binomial theorem.
+The public laws are `ramanujanOnePsiOne_hasSum`: The displayed absolutely convergent equality; 1ψ1 at q power: The b=q^N specialization is the shifted binomial theorem.
+
+The representative coefficient `ramanujanOnePsiOneTerm` at (a,b,q,z,j) is Pⱼ(a;q)zʲ/Pⱼ(b;q) for j≥0 and, for j=−m<0, is `prod_(0<=r<m)((b-q^(r+1))/(a-q^(r+1)))*z^(-m)`. Its domain requires `1-b*q^r != 0` and `a-q^(r+1) != 0` for every r≥0. This polynomial-ratio negative tail allows b=0 and b=q^N without dividing by b. Its API is Ramanujan term nonneg: agreement with the finite quotient for j≥0; Ramanujan term neg: the displayed reciprocal-factor expression; Ramanujan term recurrence: `(1-b*q^j)*t_(j+1)=(1-a*q^j)*z*t_j` for every integer j on this domain. The annulus implies z≠0 and |b/(az)|<1; the factor exclusions make P(b;q) and P(q/a;q) nonzero, so every infinite denominator in the headline is nonzero. The coefficient formula is (Gasper1995, (2.1.8), pp. 8–9, lines 478–496; Gasper1995 line 478).
 
 For the proof, prove the q^N specializations by shifting the binomial theorem. Both sides are holomorphic in b on pole-free subdomains; use the accumulating sequence q^N and continue in the annulus. This is analytic continuation, not formal Laurent substitution.
 
@@ -284,6 +288,9 @@ For the proof, prove the q^N specializations by shifting the binomial theorem. B
 
 **Checks.**
 
+- ramanujan zero term: `ramanujanOnePsiOneTerm(a,b,q,z,0)=1`; retaining an extra initial factor would change the constant term.
+- ramanujan negative term: At j=−1 the term is `(b-q)/(a-q)/z`, fixing the direction of the reciprocal quotient and the negative z-power.
+- ramanujan zero parameter: At a=2, q=z=1/2, b=0 the j=−1 term is −2/3, while b=q makes it zero. A formula dividing by b would lose the first case.
 - psi binomial specialization: b=q gives the binomial product, since all negative coefficients are zero.
 - annulus empty: a=b gives |b/a|=1 and an empty required annulus; there is no convergent two-sided geometric series.
 
@@ -365,7 +372,9 @@ For the proof, d_n counts gap-at-least-two partitions with largest part at most 
 
 Prove Rogers–Ramanujan identities with the following hypotheses. For complex |q|<1, Σ q^(n²)/Pₙ(q;q)=1/P(q,q⁴;q⁵) and Σ q^(n²+n)/Pₙ(q;q)=1/P(q²,q³;q⁵), absolutely and locally uniformly. For every commutative ring K the corresponding identities hold in K⟦X⟧ with inverses of constant-one products, and their coefficients count, respectively, partitions with successive gaps≥2 and partitions with successive gaps≥2 and all parts≥2, versus parts in residues ±1 and ±2 modulo 5, for every size including zero. (Gasper1995, (4.2.11)–(4.2.12), p. 29, line 1672; Pak2002 §§7.1.1–7.1.3, lines 3703–3755; Gasper1995 line 1672.)
 
-The public laws are rogers ramanujan formal: Both formal product identities over K; rogers ramanujan count: Both equalities of finite partition counts; `rogersRamanujan_hasSum`: Both absolutely convergent complex identities.
+Define `IsGapTwo` on p:Nat.Partition n by pairwise `a+2<=b` on its increasingly sorted list of parts; this retains multiplicities and is equivalent to successive gaps at least two. Define `IsPlusMinusOneMod5` by requiring each part to have remainder 1 or 4 modulo 5. Their API is gap two iff adjacent: equivalence with the successive-gap condition; gap two nodup: the parts are distinct; plus minus one mod five iff restricted: agreement with the native restricted partition predicate for residues 1 and 4 (Pak2002 §7.1.1–7.1.3, pp. 38–39, lines 3703–3755; Pak2002 line 3745).
+
+The public laws are rogers ramanujan formal: Both formal product identities over K; `rogersRamanujan_count`: equality of the finite counts selected by `IsGapTwo` and `IsPlusMinusOneMod5`; `rogersRamanujan_count_two`: equality after requiring every gap-two part to be at least 2, versus every part having remainder 2 or 3 modulo 5; `rogersRamanujan_hasSum`: Both absolutely convergent complex identities. Both finite-count laws quantify over every n:ℕ, including zero.
 
 For the proof, take coefficientwise limits in 3.2: each Gaussian with both rectangle sides growing tends to the ordinary partition product; fixed j on the left tends to 1/Pⱼ. The quadratic exponents bound the indices contributing to each coefficient. Apply the imported formal triple product to the two bilateral sums and scalar-change contract. Removing the staircases (2k−1,…,1) and (2k,…,2) proves the counting interpretations. Geometric product bounds and the quadratic numerator justify analytic limits; division is by nonzero positive tails.
 
@@ -375,12 +384,18 @@ For the proof, take coefficientwise limits in 3.2: each Gaussian with both recta
 
 - rogers first five: First series: coefficients in degrees 0,…,4 are 1,1,1,1,2; second: 1,0,1,1,1.
 - rogers at zero: Both analytic sums and products have value 1 at q=0.
+- gap two singleton: At size 4, (4) satisfies `IsGapTwo`; a condition demanding two parts would fail.
+- gap two boundary: (3,1) satisfies `IsGapTwo`, with gap exactly 2; a strict gap bound would reject it.
+- gap two multiplicity: (2,2) fails `IsGapTwo`; sorting a set instead of the multiset would admit it.
+- residue singleton: (4) satisfies `IsPlusMinusOneMod5`, testing the negative residue −1.
+- residue gap distinction: (3,1) fails `IsPlusMinusOneMod5` although its gap is 2; the gap and residue predicates are different.
+- residue repetition: (2,2) fails `IsPlusMinusOneMod5`; multiplicity does not make a forbidden part allowed.
 
 ### 3.4 the quintuple product
 
 Prove the quintuple product with the following hypotheses. For 0<|q|<1 and z≠0, Σ_(n∈ℤ)(−1)^n q^(n(3n−1)/2)z^(3n)(1+zqⁿ)=P(q,−z,−q/z;q)P(qz²,q/z²;q²), absolutely and locally uniformly on the stated domain. (Gasper1995, (2.2.10), p. 11, line 605; Gasper1995 line 605.)
 
-The public laws are quintuple product theta addition: J(−z;q)J(qz²;q²)=P(q²;q²)(J(qz³;q³)+zJ(q²z³;q³)); quintuple product has sum: The displayed absolutely convergent identity.
+The public laws are quintuple product theta addition: J(−z;q)J(qz²;q²)=P(q²;q²)(J(qz³;q³)+zJ(q²z³;q³)); `quintupleProduct_hasSum`: The displayed absolutely convergent identity with integer powers on ℤ.
 
 For the proof, use the imported triple-product series in the theta-addition identity. Multiplication is justified by absolute double summability; split the integer lattice into its residue classes, pair the cancelling classes, and complete the two resulting quadratic exponents. Since P(q²;q²)≠0, division gives the stated identity. Gasper states the identity without its proof; the theta-addition equality is a named proof obligation here.
 
@@ -549,7 +564,7 @@ Define `qSeriesDecimation` as follows. For every commutative semiring K and inte
 
 The public laws are q series decimation coeff: Coefficient n of U_t f equals coefficient tn of f; `qSeriesDecimation_comp`: U_s(U_t f)=U_(st)f; `qSeriesDecimation_pullout`: U_t(f(X^t)g(X))=f(X)U_t g(X); q series decimation map: Coefficient ring homomorphisms commute with extraction.
 
-The representative `qSeriesDecimation_add_smul` states U_t(f+c·g)=U_t(f)+c·U_t(g) over every commutative semiring. Its coefficient function and its bundled linear map are identified by the same formula.
+The representative `qSeriesDecimation_add_smul` states U_t(f+c·g)=U_t(f)+c·U_t(g) over every commutative semiring. Its coefficient function and its bundled linear map are identified by the same formula. The pullout signature also retains every commutative semiring: it writes f(X^t) as `PowerSeries.mk (fun n => if t ∣ n then PowerSeries.coeff (n / t) f else 0)`. Over a commutative ring this agrees with `PowerSeries.expand t ht f` by `PowerSeries.coeff_expand` in `Mathlib/RingTheory/PowerSeries/Expand.lean`; the pinned expansion API itself requires a commutative ring.
 
 For the proof, define the native power-series coefficients, then prove each identity by extensionality and the finite Cauchy coefficient formula. The pullout identity uses that f(X^t) is supported on multiples of t.
 
@@ -986,6 +1001,8 @@ For the proof, use the Jordan logarithm to make the x-dependence periodic. Fouri
 
 Prove Weil Fourier parts and the the xi kernel with the following hypotheses. For every nondegenerate even integral lattice L, every k∈(1/2)ℤ with k≠1, every finite-index Γ≤Mp₂(ℤ), and F∈H_k(Γ,ρ_L), each cusp expansion decomposes uniquely into F⁺+F⁻ using exp(−w), H_k(w), and the constant pair 1,y^(1−k). At infinity for the full group, n∈ℤ+Q(h), h∈L∨/L, F⁺=Σ a⁺(h,n)e(nτ)e_h and F⁻=Σ_h[a⁻(h,0)y^(1−k)+Σ_(n≠0)a⁻(h,n)H_k(2πny)e(nx)]e_h. Only finitely many negative a⁺ and positive a⁻ occur. ξ_k maps H onto a subspace of M!_(2−k)(Γ,ρ_(L−)); its kernel is exactly M!_k. On H⁺ the n≥0 nonholomorphic coefficients vanish at each cusp, and ξ is cuspidal. (BruinierFunke2003, (3.2), Lemmas 3.1, 3.3–3.4, Proposition 3.2, H⁺ definition, pp. 9–11, lines 384–515; ambient dimension assumption §2 line 190; BruinierFunke2003 line 384.)
 
+For the full group the Fourier and kernel assertions are BruinierFunke2003 (3.2) and Proposition 3.2; the finite-index assertions are proved here by the cusp-width and finite-order translation argument of §8.4a. The source fixes full-group notation at BruinierFunke2003 line 383.
+
 The public laws are harmonic Maass holomorphic part: The uniquely normalized F⁺ at the specified cusp; harmonic Maass nonholomorphic part: The displayed F⁻ with its constant term; the xi kernel: ξ_k F=0 iff F is weakly holomorphic; harmonic Maass fourier growth: a⁺(h,n)=O(exp(C√n)) and a⁻(h,−n)=O(exp(C√n)); cusp-shadow a⁻(h,−n)=O(n^(k/2)); harmonic Maass hyperbolic stabilization: Adjoining two even unimodular hyperbolic planes preserves the finite quadratic module, signature modulo 8, and every H, M!, S and xi map by an intertwining equivalence; this reduces rank <3 to the source’s ambient dimension ≥3.; harmonic Maass xi fourier: At the full-group infinity cusp, the ξ-image of a⁻(h,0)y^(1−k) is (1−k)conj(a⁻(h,0)); for n≠0 its coefficient at e(−nτ)e_h is −conj(a⁻(h,n))conj((−4πn)^(1−k)), with the upper-bank branch of 8.4. Reindex h in the conjugate Weil module.; harmonic Maass central action: Let σ=signature(L). If Z=(−I,i)∈Γ, then F_h=exp(πi(k−σ/2))F_(−h). If (I,−1)∈Γ and 2k is not congruent to σ modulo 2, H_k is zero. No central-parity restriction is imposed when the corresponding central element is absent from Γ..
 
 For the proof, diagonalize the finite-order cusp translation supplied by the Weil representation and recover coefficients by period integration. The harmonic equation gives 8.4’s scalar ODE. Growth and the two asymptotics cut off the forbidden tails. Apply L and conjugate to compute ξ; the constant and nonzero modes prove kernel equality and the cusp-shadow characterization. Transport every step to each cusp. The coefficient bounds follow from the modular small-y bound and circle integration, as in Lemmas 3.3–3.4, lines 503–515. Bruinier–Funke §2 line 190 assumes ambient dimension at least 3; first add two even unimodular hyperbolic planes and transport the unchanged discriminant representation to justify all smaller ranks, including rank zero.
@@ -1003,6 +1020,8 @@ For the proof, diagonalize the finite-order cusp translation supplied by the Wei
 ### 8.6 surjectivity and exact sequences
 
 Prove surjectivity and exact sequences with the following hypotheses. In the full Weil-representation setting of 8.5, ξ_k is surjective onto M!_(2−k)(Γ,ρ_(L−)). The sequences 0→M!_k→H_k→M!_(2−k)→0 and 0→M!_k→H_k⁺→S_(2−k)→0 are exact as real vector spaces, or as complex spaces after conjugating the last term. This holds for every finite-index Γ and k≠1; it is not a surjectivity assertion for an arbitrary representation. (BruinierFunke2003, Theorem 3.7 and Corollary 3.8, pp. 13–15, lines 626–699; BruinierFunke2003 line 626.)
+
+For the full group these are BruinierFunke2003 Theorem 3.7 and Corollary 3.8. The arbitrary finite-index case is proved here by descent from a normal torsion-free subgroup of finite index and averaging over the finite quotient, following the source’s subgroup construction and full-group descent (BruinierFunke2003 lines 663–696).
 
 The public laws are xi surjective weil: Every stated weakly holomorphic Weil form has a harmonic preimage; xi exact weil: The two displayed exact sequences with the actual inclusion and ξ maps.
 
@@ -1355,7 +1374,7 @@ Locators name the editions and versions listed in the roadmap’s sources manife
 - **GasperRahman2004**: George Gasper and Mizan Rahman. *Basic Hypergeometric Series, second edition* (2004). Sections 1.2 and 5.1.
 - **BFOR2017**: Kathrin Bringmann, Amanda Folsom, Ken Ono and Larry Rolen. *Harmonic Maass Forms and Mock Modular Forms: Theory and Applications* (2017).
 - **Zwegers2002**: Sander Zwegers. *Mock Theta Functions* (2002). Propositions 1.3–1.5, Theorems 1.11 and 1.16; Definition 2.1, Proposition 2.4, Corollary 2.9; Definitions 3.2/3.4/3.8, Theorem 3.9; Propositions 4.2–4.5, 4.10, 4.13–4.14. [open-repository](https://arxiv.org/abs/0807.4834v1).
-- **Gasper1995**: George Gasper. *Lecture notes for an introductory minicourse on q-series* (1995). Equations (1.2.3), (1.2.7)–(1.2.8), (1.3.6)–(1.3.11), (2.1.3), (2.1.9), (2.2.1), (2.2.10), (3.1.6), (3.1.11)–(3.1.12), (4.2.11)–(4.2.12). [open-repository](https://arxiv.org/abs/math/9509223v1).
+- **Gasper1995**: George Gasper. *Lecture notes for an introductory minicourse on q-series* (1995). Equations (1.2.3), (1.2.7)–(1.2.8), (1.3.6)–(1.3.11), (2.1.3), (2.1.8)–(2.1.9), (2.2.1), (2.2.10), (3.1.6), (3.1.11)–(3.1.12), (4.2.11)–(4.2.12). [open-repository](https://arxiv.org/abs/math/9509223v1).
 - **Zagier2009**: Don Zagier. *Ramanujan’s Mock Theta Functions and Their Applications* (2009). Sections 2, 5 and 7; Theorems 2.1 and 7.1; pp. 986–07, 986–12–14 and 986–16–18. [author-page](https://people.mpim-bonn.mpg.de/zagier/files/aster/326/fulltext.pdf).
 - **Pak2002**: Igor Pak. *Partition bijections, a survey* (2002). Sections 2.2, 6 and 7. [author-page](https://www.math.ucla.edu/~pak/papers/psurvey.pdf).
 - **BruinierFunke2003**: Jan Hendrik Bruinier, Jens Funke. *On Two Geometric Theta Lifts* (2002). Section 3, Proposition 3.2, Theorem 3.7 and Corollary 3.8. [open-repository](https://arxiv.org/abs/math/0212286v4).

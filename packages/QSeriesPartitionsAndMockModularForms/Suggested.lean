@@ -191,12 +191,89 @@ theorem euler_qExponential (q z : ℂ) (hq : ‖q‖ < 1) :
     Summable (fun n : ℕ => ‖q ^ (n * (n - 1) / 2) * z ^ n / qPochhammerFin q q n‖) := by
   sorry
 
+/-- The bilateral quotient coefficient avoids division by b, including at b=0. -/
+def ramanujanOnePsiOneTerm (a b q z : ℂ) (j : ℤ) : ℂ :=
+  if 0 ≤ j then
+    qPochhammerFin a q j.toNat / qPochhammerFin b q j.toNat * z ^ j
+  else
+    (∏ r ∈ Finset.range (-j).toNat, (b - q ^ (r + 1)) / (a - q ^ (r + 1))) * z ^ j
+
+/-- The zero and minus-one terms fix the index and reciprocal-factor convention. -/
+example (a b q z : ℂ) :
+    ramanujanOnePsiOneTerm a b q z 0 = 1 ∧
+    ramanujanOnePsiOneTerm a b q z (-1) = (b - q) / (a - q) * z⁻¹ := by
+  norm_num [ramanujanOnePsiOneTerm, qPochhammerFin, Finset.prod_range_succ]
+
+/-- The b=0 tail can be nonzero, whereas b=q stops the negative tail. -/
+example : ramanujanOnePsiOneTerm 2 0 (1 / 2) (1 / 2) (-1) = -2 / 3 ∧
+    ramanujanOnePsiOneTerm 2 (1 / 2) (1 / 2) (1 / 2) (-1) = 0 := by
+  norm_num [ramanujanOnePsiOneTerm, qPochhammerFin, Finset.prod_range_succ]
+
+/-- Ramanujan's 1-psi-1 sum on its pole-free annulus; Gasper (2.1.9). -/
+theorem ramanujanOnePsiOne_hasSum (a b q z : ℂ)
+    (hq : ‖q‖ < 1) (hq0 : q ≠ 0) (ha : a ≠ 0)
+    (hinner : ‖b / a‖ < ‖z‖) (houter : ‖z‖ < 1)
+    (hpos : ∀ r : ℕ, 1 - b * q ^ r ≠ 0)
+    (hneg : ∀ r : ℕ, a - q ^ (r + 1) ≠ 0) :
+    let P : ℂ → ℂ := fun c => ∏' r : ℕ, (1 - c * q ^ r)
+    HasSum (ramanujanOnePsiOneTerm a b q z)
+      (P q * P (b / a) * P (a * z) * P (q / (a * z)) /
+        (P b * P (q / a) * P z * P (b / (a * z)))) ∧
+    Summable (fun j : ℤ => ‖ramanujanOnePsiOneTerm a b q z j‖) := by
+  sorry
+
 /-! ## Layer 3: polynomial identities and partition-series adapters -/
 
 /-- The ordinary partition adapter has the native finite partition count as coefficient. -/
 theorem partitionSeries_coeff {K : Type*} [CommSemiring K] (n : ℕ) :
     PowerSeries.coeff n (Nat.Partition.genFun (fun _ _ => (1 : K))) =
       (Fintype.card (Nat.Partition n) : K) := by
+  sorry
+
+/-- Increasingly sorted parts have pairwise gaps at least two, including multiplicities. -/
+def IsGapTwo {n : ℕ} (p : Nat.Partition n) : Prop :=
+  (p.parts.sort (· ≤ ·)).Pairwise (fun a b => a + 2 ≤ b)
+
+/-- Every part belongs to one of the two residues 1 and 4 modulo five. -/
+def IsPlusMinusOneMod5 {n : ℕ} (p : Nat.Partition n) : Prop :=
+  ∀ i ∈ p.parts, i % 5 = 1 ∨ i % 5 = 4
+
+/-- Singleton and two-part gap partitions both satisfy the first counting condition. -/
+example : IsGapTwo (Nat.Partition.ofSums 4 {4} (by decide)) ∧
+    IsGapTwo (Nat.Partition.ofSums 4 {3, 1} (by decide)) := by
+  unfold IsGapTwo
+  decide
+
+/-- Repeated parts fail the gap condition even when the underlying set is a singleton. -/
+example : ¬ IsGapTwo (Nat.Partition.ofSums 4 {2, 2} (by decide)) := by
+  unfold IsGapTwo
+  decide
+
+/-- A singleton four has allowed residue, whereas the gap partition 3+1 does not. -/
+example : IsPlusMinusOneMod5 (Nat.Partition.ofSums 4 {4} (by decide)) ∧
+    ¬ IsPlusMinusOneMod5 (Nat.Partition.ofSums 4 {3, 1} (by decide)) := by
+  unfold IsPlusMinusOneMod5
+  decide
+
+/-- Repeating the forbidden residue two still fails the first residue condition. -/
+example : ¬ IsPlusMinusOneMod5 (Nat.Partition.ofSums 4 {2, 2} (by decide)) := by
+  unfold IsPlusMinusOneMod5
+  decide
+
+open scoped Classical in
+/-- The first Rogers-Ramanujan counting theorem on native partitions, including size zero. -/
+theorem rogersRamanujan_count (n : ℕ) :
+    (Finset.univ.filter (fun p : Nat.Partition n => IsGapTwo p)).card =
+      (Finset.univ.filter (fun p : Nat.Partition n => IsPlusMinusOneMod5 p)).card := by
+  sorry
+
+open scoped Classical in
+/-- The second counting theorem requires minimum part two and residues two or three. -/
+theorem rogersRamanujan_count_two (n : ℕ) :
+    (Finset.univ.filter (fun p : Nat.Partition n =>
+      IsGapTwo p ∧ ∀ i ∈ p.parts, 2 ≤ i)).card =
+      (Finset.univ.filter (fun p : Nat.Partition n =>
+        ∀ i ∈ p.parts, i % 5 = 2 ∨ i % 5 = 3)).card := by
   sorry
 
 /-- Both Rogers-Ramanujan identities, with nonzero Euler-tail denominators on the disc. -/
@@ -207,6 +284,18 @@ theorem rogersRamanujan_hasSum (q : ℂ) (hq : ‖q‖ < 1) :
       ((∏' j : ℕ, ((1 - q ^ (5 * j + 2)) * (1 - q ^ (5 * j + 3))))⁻¹) ∧
     Summable (fun n : ℕ => ‖q ^ (n * n) / qPochhammerFin q q n‖) ∧
     Summable (fun n : ℕ => ‖q ^ (n * n + n) / qPochhammerFin q q n‖) := by
+  sorry
+
+/-- The quintuple product with integer powers and absolute convergence; Gasper (2.2.10). -/
+theorem quintupleProduct_hasSum (q z : ℂ)
+    (hq : ‖q‖ < 1) (hq0 : q ≠ 0) (hz : z ≠ 0) :
+    HasSum (fun n : ℤ => (-1 : ℂ) ^ n * q ^ (n * (3 * n - 1) / 2) *
+      z ^ (3 * n) * (1 + z * q ^ n))
+      ((∏' j : ℕ, (1 - q ^ (j + 1)) * (1 + z * q ^ j) * (1 + q / z * q ^ j)) *
+        (∏' j : ℕ, (1 - q * z ^ 2 * (q ^ 2) ^ j) *
+          (1 - q / z ^ 2 * (q ^ 2) ^ j))) ∧
+    Summable (fun n : ℤ => ‖(-1 : ℂ) ^ n * q ^ (n * (3 * n - 1) / 2) *
+      z ^ (3 * n) * (1 + z * q ^ n)‖) := by
   sorry
 
 /-! ## Layer 4: rank, crank and arithmetic progressions -/
@@ -286,7 +375,8 @@ theorem filterTwo :
 example (s : (n : ℕ) → Nat.Partition n → ℤ) :
     partitionResidueCount s 1 0 0 = Fintype.card (Nat.Partition 0) := by
   classical
-  simp [partitionResidueCount]
+  unfold partitionResidueCount
+  rw [Finset.filter_true_of_mem (fun _ _ => Subsingleton.elim _ _), Finset.card_univ]
 
 /-- The rank dissections yield equidistribution in the two Ramanujan progressions. -/
 theorem rank_equidistribution_five_seven (n : ℕ) :
@@ -344,16 +434,19 @@ theorem qSeriesDecimation_add_smul {K : Type*} [CommSemiring K]
     qSeriesDecimation t (f + c • g) = qSeriesDecimation t f + c • qSeriesDecimation t g := by
   sorry
 
-/-- Pulling out a series supported in multiples of t gives the projection formula. -/
+/-- Coefficient substitution by X^t gives the pullout formula over every commutative semiring. -/
 theorem qSeriesDecimation_pullout {K : Type*} [CommSemiring K]
     (t : ℕ) (ht : t ≠ 0) (f g : PowerSeries K) :
-    qSeriesDecimation t (PowerSeries.expand t ht f * g) = f * qSeriesDecimation t g := by
+    qSeriesDecimation t
+      (PowerSeries.mk (fun n => if t ∣ n then PowerSeries.coeff (n / t) f else 0) * g) =
+      f * qSeriesDecimation t g := by
   sorry
 
 /-- The coefficient-one term of the decimated quadratic records its coefficient two. -/
 example : PowerSeries.coeff 1
     (qSeriesDecimation 2 (1 + PowerSeries.X + 2 * (PowerSeries.X : PowerSeries ℤ) ^ 2)) = 2 := by
-  norm_num [qSeriesDecimation, PowerSeries.coeff_mul]
+  norm_num [qSeriesDecimation, PowerSeries.coeff_mul, PowerSeries.coeff_X,
+    PowerSeries.coeff_X_pow, PowerSeries.coeff_one, PowerSeries.coeff_C_mul]
 
 /-- Index one preserves every coefficient. -/
 example {K : Type*} [CommSemiring K] (f : PowerSeries K) : qSeriesDecimation 1 f = f := by
@@ -424,6 +517,7 @@ example (τ : ℂ) : maassXi 0 (fun z : ℂ => (z.im : ℂ)) τ = 1 := by
     (Complex.ofRealCLM.comp Complex.imCLM).hasFDerivAt
   rw [maassXi, wirtingerBar, h.fderiv]
   norm_num
+  linear_combination (-1 : ℂ) * Complex.I_sq
 
 /-- Xi sends i times y to minus i, witnessing antilinearity. -/
 example (τ : ℂ) : maassXi 0 (fun z : ℂ => Complex.I * (z.im : ℂ)) τ = -Complex.I := by
@@ -432,6 +526,7 @@ example (τ : ℂ) : maassXi 0 (fun z : ℂ => Complex.I * (z.im : ℂ)) τ = -C
     (Complex.I • (Complex.ofRealCLM.comp Complex.imCLM)).hasFDerivAt
   rw [maassXi, wirtingerBar, h.fderiv]
   norm_num
+  ring
 
 /-- The Laplacian kills every constant. -/
 example (k : ℝ) (c τ : ℂ) : maassLaplacian k (fun _ => c) τ = 0 := by
