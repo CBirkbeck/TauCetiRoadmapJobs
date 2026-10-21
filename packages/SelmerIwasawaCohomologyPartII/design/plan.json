@@ -85,7 +85,7 @@
             "target:1.5",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7",
             "roadmap:LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`)",
-            "roadmap:IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7",
+            "roadmap:IgusaVarietiesAndTorsionConcentration §IG.7.2",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ)",
             "roadmap:GlobalGaloisDeformations §5.2 (rank-two IsCyclotomicAbsIrred specialization)"
           ],
@@ -497,7 +497,7 @@
           "id": "3.1",
           "kind": "theorem",
           "name": "localizedUnitaryCohomology",
-          "statement": "For 2.1, residual absolute irreducibility identifies compactly supported and ordinary localized cohomology of the indefinite generic fibre and the ground stratum, in every degree. Under intertwining genericity the two special-maximal-level intertwiners on definite functions are isomorphisms. Under cohomological genericity, localized nearby cohomology is concentrated in degree N−1 and free there; this latter conclusion uses the derived integral reduction comparison.",
+          "statement": "For 2.1, residual absolute irreducibility identifies compactly supported and ordinary localized cohomology of the indefinite generic fibre and the ground stratum, in every degree. Under intertwining genericity the two special-maximal-level intertwiners on definite functions localized at mΠ are isomorphisms. Under cohomological genericity, localized nearby cohomology is concentrated in degree N−1 and free there; this latter conclusion uses the derived integral reduction comparison.",
           "hypotheses": [
             "Auxiliary-model terms and their localized stratum sequence use H_𝔗/H_𝔗,c over the finite CM torsor, with the coefficient/support/free-component trace domains in Conventions; Shimura geometric and absolute cohomology are compared via semistableStrata_genericFiber and native-shimura (ltxzz equation (4.2), Lemmas 4.2.4 and 5.2.7; lines 1737–1749, 2744)."
           ],
@@ -509,15 +509,21 @@
             "target:2.1",
             "target:2.5",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7",
-            "roadmap:IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7",
+            "roadmap:IgusaVarietiesAndTorsionConcentration §IG.7.2",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ)",
             "gap:boundary-cohomology",
             "roadmap:EtaleCohomologyFoundations §F.4.4",
             "roadmap:SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4"
           ],
           "api": [],
-          "tests": [],
-          "proofSketch": "Residual irreducibility excludes boundary isobaric constituents; the local intertwining factors are units by SmoothRepresentationsOfLocalGroups §SR.4.4. The universal coefficient sequence and Nakayama convert residual concentration to integral concentration and freeness.",
+          "tests": [
+            {
+              "name": "intertwiner_localization_required",
+              "kind": "non-example",
+              "statement": "Without localization, an automorphic π with (π_p)^{K•}≠0=(π_p)^{K°} contributes only to the target of T•°; that map then fails to be surjective. The bad local Satake pairs are {−1,−1} in even rank and {−p,−p⁻¹} in odd rank. P5 for Π excludes them only on the Π-congruent support after localization, not on every automorphic constituent (ltxzz lines 5230–5245)."
+            }
+          ],
+          "proofSketch": "Residual irreducibility excludes boundary isobaric constituents; the local intertwining factors are units by SmoothRepresentationsOfLocalGroups §SR.4.4. After localization at mΠ, the rank comparison runs only over Π-congruent standard pairs; P5 excludes the bad Satake pairs on this support (ltxzz lines 5230–5245). The universal coefficient sequence and Nakayama convert residual concentration to integral concentration and freeness.",
           "adversarial": "Zero localization allowed here; nonproper boundary requires its own theorem; residual irreducibility is in scope."
         },
         {
@@ -651,7 +657,9 @@
           "kind": "theorem",
           "name": "oddSpecialLevelChange",
           "statement": "For standard indefinite odd rank n₁, self-dual level away from Σ⁺min, and a finite set P of special inert places with distinct rational supports outside Σ⁺min, assume H(n₁), intertwining genericity at every p∈P and cohomological genericity. The localized Oλ[ΓF]-cohomology at a hyperspecial level is isomorphic in every degree to that at any special maximal level at P.",
-          "hypotheses": [],
+          "hypotheses": [
+            "Standard indefinite odd rank n₁, self-dual level away from Σ⁺min, a finite set P of special inert places with distinct rational supports outside Σ⁺min, H(n₁), intertwining genericity at every p∈P and cohomological genericity."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Lemma 8.1.7, pp. 133–134; ltxzz line 6489"
@@ -920,7 +928,9 @@
           "kind": "theorem",
           "name": "diagonalRegulatorNaturality",
           "statement": "For compatible finite level covers a:Sh′_n→Sh_n and b:Sh′_n+1→Sh_n+1, the projected graph regulator commutes with proper trace and induced Hecke quotient maps under the respective concentration hypotheses. If a has constant degree d, trace(AJ(Δ′))=d AJ(Δ); use componentwise source degrees otherwise. For pullback set Z=X′×_X Graph(sh↑). Finite étale base change identifies the pullback regulator with the regulator of [Z], retaining every component and its multiplicity. The regulator of the chosen refined graph is obtained by this formula only for a Cartesian graph square, or after projection to a specified open-and-closed component of Z identified with that graph. Scalar extension Eλ→E′λ′ uses the base-changed representations and multiplicity spaces.",
-          "hypotheses": [],
+          "hypotheses": [
+            "Compatible finite étale level covers a:Sh′_n→Sh_n and b:Sh′_n+1→Sh_n+1 with the respective projected concentration hypotheses and induced Hecke quotient maps; for the scalar trace formula a has constant degree d (otherwise use componentwise source degrees), for pullback to the chosen refined graph require a Cartesian graph square or an identified open-and-closed pullback component, and for Eλ→E′λ′ use base-changed representations and multiplicity spaces."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Constructions 4.6.1, 5.10.1 and §8.3; ltxzz line 2488; ltxzz line 6767"
@@ -994,7 +1004,7 @@
             {
               "name": "first_tensor_not_factors",
               "kind": "non-example",
-              "statement": "Over 𝔽₁₁, q=2, even roots {2,6} and odd roots {1,4,3} satisfy individual specialness/Tate and intertwining genericity, but tensor eigenvalue 2 occurs twice (2·1=6·4); PI7 fails."
+              "statement": "Over 𝔽₁₁, q=3, let P₀ have even roots {3,4} and P₁ odd roots {1,9,5}. Then P₀(3)=0, P₀′(3)=10, P₀(−1)=9, P₁′(1)=10 and P₁(−3)=1, verifying individual specialness/Tate and intertwining genericity. The tensor eigenvalues are {3,5,4,4,3,9}; q=3 occurs twice, so the tensor polynomial has a double root at q and PI7 fails."
             },
             {
               "name": "first_point_pairing",
@@ -1333,7 +1343,9 @@
           "kind": "theorem",
           "name": "admissibleImageLift",
           "statement": "For Rα, their polarizations and residual image as in L5-2, and every m≥1, the image of (ρ̄₀+⁽ᵐ⁾,ρ̄₁+⁽ᵐ⁾,ε̄ℓ⁽ᵐ⁾) over F⁺rflx contains (γ₀,γ₁,ξ) with ξ²−1 a unit, both conjugate components of order prime to ℓ, and ker(hγ₀−1), ker(hγ₁−1), ker(hγ₀⊗hγ₁−1) free of rank 1 over Oλ/λᵐ, with the residual exclusions −1 and −ξ.",
-          "hypotheses": [],
+          "hypotheses": [
+            "Rα, their (1−α)-polarizations, chosen bases and actual residual image satisfy L5-2 over F⁺rflx, and m≥1."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Lemma 2.7.1 with F′=F⁺rflx and P=T²−1, p. 21; ltxzz line 918"
@@ -1496,7 +1508,9 @@
           "kind": "theorem",
           "name": "eventualAdmissibilityFamilies",
           "statement": "For F⁺≠ℚ, admissibility holds outside finitely many λ for each of two source families. Family A: E=ℚ, two geometrically nonisogenous elliptic curves over F⁺, each with geometric endomorphism ring ℤ, and ρΠα,ℓ≃Sym^(nα−1)H¹ét(Aα_Fbar,ℚℓ)|ΓF for every ℓ. Family B: a very special inert p with Π₀,p Steinberg and Π₁,p unramified with eigenvalue 1 exactly once, and a supercuspidal finite local component of each Πα. No eventual-admissibility assertion is made for arbitrary relevant pairs.",
-          "hypotheses": [],
+          "hypotheses": [
+            "F⁺≠ℚ and either Family A (E=ℚ, two geometrically nonisogenous elliptic curves over F⁺ with geometric endomorphism ring ℤ and the stated symmetric-power realizations for every ℓ) or Family B (a very special inert p with Π₀,p Steinberg, Π₁,p unramified with eigenvalue 1 exactly once, and a supercuspidal finite local component of each Πα)."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Lemmas 8.1.3–8.1.5, pp. 131–133; ltxzz line 6400; ltxzz line 6418; ltxzz line 6459"
@@ -1504,7 +1518,7 @@
           "prerequisites": [
             "target:1.6",
             "gap:eventual-images",
-            "roadmap:IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7",
+            "roadmap:IgusaVarietiesAndTorsionConcentration §IG.7.2",
             "roadmap:AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ)",
             "gap:eventual-rigidity"
           ],
@@ -1609,7 +1623,9 @@
           "kind": "theorem",
           "name": "rankTwoThreeRankTheorems",
           "statement": "For n=2 and every CM F/F⁺ including F⁺=ℚ, specialize 8.1 and 8.2 with all admissibility clauses L1–L7 retained. Under the definite period witness and uniform rank-one span premise obtain rank zero; under the transferable diagonal datum, nonzero AJ and uniform rank-two span premise obtain rank one. H(2) and H(3) are discharged by the N≤3 part of Proposition 3.2.11.",
-          "hypotheses": [],
+          "hypotheses": [
+            "n=2, every CM F/F⁺ including F⁺=ℚ, and all admissibility clauses L1–L7 and remaining hypotheses of 8.1 or 8.2; rank zero requires the definite period witness and uniform rank-one span premise, while rank one requires the transferable diagonal datum, nonzero AJ and uniform rank-two span premise, with H(2),H(3) discharged by Proposition 3.2.11."
+          ],
           "locator": {
             "source": "ltxzz",
             "where": "Proposition 3.2.11; Theorems 8.2.2 and 8.3.2 specialized at n=2, pp. 28,135,139; ltxzz line 1273; ltxzz line 6568; ltxzz line 6773; positive-loss linear algebra uses EulerSystemsAndKolyvaginSystems §4.4 and the primitive-kernel calculation in §7.2"
@@ -1750,11 +1766,9 @@
     {
       "roadmap": "IgusaVarietiesAndTorsionConcentration",
       "sections": [
-        "§IG.7.2",
-        "§IG.7.5",
-        "§IG.7.7"
+        "§IG.7.2"
       ],
-      "what": "IsCohomologicallyGeneric with every exceptional-set enlargement, standard indefinite space and compatible level; compact concentration under its F⁺≠ℚ and genericity hypotheses, without inferring genericity from one fixed module."
+      "what": "IsCohomologicallyGeneric with every exceptional-set enlargement, standard indefinite space and compatible level; IsCohomologicallyGeneric.of_decomposedGeneric retains F⁺≠ℚ and decomposed-generic witnesses away from every prescribed finite enlargement. Genericity is not inferred from one fixed module."
     },
     {
       "roadmap": "PELModuli",

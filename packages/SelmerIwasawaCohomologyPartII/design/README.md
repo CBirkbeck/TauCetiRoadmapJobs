@@ -107,7 +107,7 @@ AG2.1b (The actual Galois constituent of cohomology; The archimedean packet mult
 
 ### From TauCetiRoadmap.IgusaVarietiesAndTorsionConcentration
 
-§IG.7.2, §IG.7.5, §IG.7.7: `IsCohomologicallyGeneric` with every exceptional-set enlargement, standard indefinite space and compatible level; compact concentration under its F⁺≠ℚ and genericity hypotheses, without inferring genericity from one fixed module.
+§IG.7.2: `IsCohomologicallyGeneric` with every exceptional-set enlargement, standard indefinite space and compatible level; `IsCohomologicallyGeneric.of_decomposedGeneric` retains F⁺≠ℚ and decomposed-generic witnesses away from every prescribed finite enlargement. Genericity is not inferred from one fixed module.
 
 ### From TauCetiRoadmap.PELModuli
 
@@ -239,7 +239,7 @@ The interface includes `admissible_iff_clauses` (constructors and projections): 
 
 The proof uses the following chain. Use the imported polarizable representation category, residual image and rigidity predicates. The tensor polarization adds the twists 1 and 0. Conjugacy transports all spectra and invariant Hom spaces.
 
-*Needs:* SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`); IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); GlobalGaloisDeformations §5.2 (rank-two `IsCyclotomicAbsIrred` specialization).
+*Needs:* SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`); IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); GlobalGaloisDeformations §5.2 (rank-two `IsCyclotomicAbsIrred` specialization).
 
 **Checks.**
 
@@ -255,7 +255,7 @@ For F=ℚ(i), p=3 is special inert, while p=5 splits and p=2 is excluded. For n=
 
 ### Dependencies
 
-ShimuraVarieties §5.1; PELModuli §§M0.25–M0.26, M4.7–M4.9; SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`); IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); GlobalGaloisDeformations §5.2 (rank-two `IsCyclotomicAbsIrred` specialization).
+ShimuraVarieties §5.1; PELModuli §§M0.25–M0.26, M4.7–M4.9; SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`); IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); GlobalGaloisDeformations §5.2 (rank-two `IsCyclotomicAbsIrred` specialization).
 
 ## Layer 2: Unitary integral models, incidence and the semistable product
 
@@ -368,11 +368,15 @@ SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); Layer 1 §1.5;
 
 ### 3.1 localizedUnitaryCohomology
 
-Prove `localizedUnitaryCohomology` as follows. For 2.1, residual absolute irreducibility identifies compactly supported and ordinary localized cohomology of the indefinite generic fibre and the ground stratum, in every degree. Under intertwining genericity the two special-maximal-level intertwiners on definite functions are isomorphisms. Under cohomological genericity, localized nearby cohomology is concentrated in degree N−1 and free there; this latter conclusion uses the derived integral reduction comparison. (ltxzz, Lemmas 6.1.9–6.1.11 and Remark 6.1.5, pp. 107–109; ltxzz line 5206; ltxzz line 5221; ltxzz line 5247).
+Prove `localizedUnitaryCohomology` as follows. For 2.1, residual absolute irreducibility identifies compactly supported and ordinary localized cohomology of the indefinite generic fibre and the ground stratum, in every degree. Under intertwining genericity the two special-maximal-level intertwiners on definite functions localized at mΠ are isomorphisms. Under cohomological genericity, localized nearby cohomology is concentrated in degree N−1 and free there; this latter conclusion uses the derived integral reduction comparison. (ltxzz, Lemmas 6.1.9–6.1.11 and Remark 6.1.5, pp. 107–109; ltxzz line 5206; ltxzz line 5221; ltxzz line 5247).
 
-The proof uses the following chain. Residual irreducibility excludes boundary isobaric constituents; the local intertwining factors are units by SmoothRepresentationsOfLocalGroups §SR.4.4. The universal coefficient sequence and Nakayama convert residual concentration to integral concentration and freeness.
+The proof uses the following chain. Residual irreducibility excludes boundary isobaric constituents; the local intertwining factors are units by SmoothRepresentationsOfLocalGroups §SR.4.4. After localization at mΠ, the rank comparison runs only over Π-congruent standard pairs; P5 excludes the bad Satake pairs on this support (ltxzz lines 5230–5245). The universal coefficient sequence and Nakayama convert residual concentration to integral concentration and freeness.
 
-*Needs:* Layer 2 §2.1; Layer 2 §2.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `boundary-cohomology`; EtaleCohomologyFoundations §F.4.4; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4.
+*Needs:* Layer 2 §2.1; Layer 2 §2.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `boundary-cohomology`; EtaleCohomologyFoundations §F.4.4; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4.
+
+**Checks.**
+
+- `intertwiner_localization_required`: Without localization, an automorphic π with (π_p)^{K•}≠0=(π_p)^{K°} contributes only to the target of T•°; that map then fails to be surjective. The bad local Satake pairs are {−1,−1} in even rank and {−p,−p⁻¹} in odd rank. P5 for Π excludes them only on the Π-congruent support after localization, not on every automorphic constituent (ltxzz lines 5230–5245).
 
 ### 3.2 oddTateCycleComparison
 
@@ -442,7 +446,7 @@ Odd rank has a coinvariant comparison. Even rank has a singular comparison and t
 
 ### Dependencies
 
-Layer 2 §2.1; Layer 2 §2.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `boundary-cohomology`; EtaleCohomologyFoundations §F.4.4; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4; SelmerIwasawaCohomology §§0.12–0.13; Layer 3 §3.1; contract gap `automorphic-multiplicity`; contract gap `rigid-r-equals-t`; contract gap `old-form-dimension`; GlobalGaloisDeformations §5.2 (rank-two `IsCyclotomicAbsIrred` specialization); EndoscopicTransferAndUnitaryTraceComparison §§13.6–13.9; Layer 3 §3.3; SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-even-formulas, unitary-odd-formulas); contract gap `local-unitary-representations`; EndoscopicTransferAndUnitaryTraceComparison §§11.2–11.4, 12.12–12.15, 13.5–13.8; Layer 3 §3.4; Layer 3 §3.5; Layer 3 §3.2.
+Layer 2 §2.1; Layer 2 §2.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.7; IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `boundary-cohomology`; EtaleCohomologyFoundations §F.4.4; SmoothRepresentationsOfLocalGroups §§SR.4.1, SR.4.4; SelmerIwasawaCohomology §§0.12–0.13; Layer 3 §3.1; contract gap `automorphic-multiplicity`; contract gap `rigid-r-equals-t`; contract gap `old-form-dimension`; GlobalGaloisDeformations §5.2 (rank-two `IsCyclotomicAbsIrred` specialization); EndoscopicTransferAndUnitaryTraceComparison §§13.6–13.9; Layer 3 §3.3; SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-even-formulas, unitary-odd-formulas); contract gap `local-unitary-representations`; EndoscopicTransferAndUnitaryTraceComparison §§11.2–11.4, 12.12–12.15, 13.5–13.8; Layer 3 §3.4; Layer 3 §3.5; Layer 3 §3.2.
 
 ## Layer 4: Diagonal cycles and Selmer-valued Abel–Jacobi classes
 
@@ -550,7 +554,7 @@ The proof uses the following chain. Construct the levels and ideals on the nativ
 
 **Checks.**
 
-- `first_tensor_not_factors`: Over 𝔽₁₁, q=2, even roots {2,6} and odd roots {1,4,3} satisfy individual specialness/Tate and intertwining genericity, but tensor eigenvalue 2 occurs twice (2·1=6·4); PI7 fails.
+- `first_tensor_not_factors`: Over 𝔽₁₁, q=3, let P₀ have even roots {3,4} and P₁ odd roots {1,9,5}. Then P₀(3)=0, P₀′(3)=10, P₀(−1)=9, P₁′(1)=10 and P₁(−3)=1, verifying individual specialness/Tate and intertwining genericity. The tensor eigenvalues are {3,5,4,4,3,9}; q=3 occurs twice, so the tensor polynomial has a double root at q and PI7 fails.
 - `first_point_pairing`: For a singleton graph and f=1 the sum pairing equals 1; a two-point fibre pushed onto the same pair contributes 2.
 - `first_zero_localization`: A zero congruence function quotient fails PI6; the datum cannot certify an arithmetic level-raising theorem using empty automorphic support.
 
@@ -741,7 +745,7 @@ Prove `eventualAdmissibilityFamilies` as follows. For F⁺≠ℚ, admissibility 
 
 The proof uses the following chain. Check L1–L7 separately. For A, use independent elliptic residual images and symmetric powers. For B, the Steinberg unipotent plus trivial odd inertia proves tensor irreducibility and excludes its occurrence in the adjoint when char k=0 or ≥2n(n+1)−1; local tempered eigenvalue exclusions prove L5-2. Eventual rigidity and cohomological genericity are separate imports.
 
-*Needs:* Layer 1 §1.6; contract gap `eventual-images`; IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `eventual-rigidity`.
+*Needs:* Layer 1 §1.6; contract gap `eventual-images`; IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `eventual-rigidity`.
 
 ### Examples
 
@@ -749,7 +753,7 @@ Local detection uses the polarized tensor and its actual finite representation e
 
 ### Dependencies
 
-Layer 1 §1.6; contract gap `polarized-image-lifting`; Layer 7 §7.1; Chebotarev Layers 1–2 and 10; ProfiniteCohomology Layers 5–8; EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15; contract gap `hecke-finite-support`; Layer 3 §3.6; Layer 3 §3.7; Layer 4 §4.6; Layer 5 §5.6; Layer 6 §6.4; Layer 7 §7.2; SelmerIwasawaCohomology §§2.6–2.7, 4.8–4.10, 4.24–4.25; EulerSystemsAndKolyvaginSystems §1.2; ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7; SelmerIwasawaCohomology §§4.11, 4.24–4.25; contract gap `eventual-images`; IgusaVarietiesAndTorsionConcentration §§IG.7.2, IG.7.5, IG.7.7; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `eventual-rigidity`; EulerSystemsAndKolyvaginSystems §4.4; PELModuli §§M2.8, M4.3; EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6; contract gap `native-shimura`; contract gap `purity-crystalline-regulator`; LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`); SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); AutomorphicGaloisRepresentationsPartII AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations).
+Layer 1 §1.6; contract gap `polarized-image-lifting`; Layer 7 §7.1; Chebotarev Layers 1–2 and 10; ProfiniteCohomology Layers 5–8; EulerSystemsAndKolyvaginSystems §§1.3, 1.6, 1.11, 1.15; contract gap `hecke-finite-support`; Layer 3 §3.6; Layer 3 §3.7; Layer 4 §4.6; Layer 5 §5.6; Layer 6 §6.4; Layer 7 §7.2; SelmerIwasawaCohomology §§2.6–2.7, 4.8–4.10, 4.24–4.25; EulerSystemsAndKolyvaginSystems §1.2; ArithmeticGaloisDuality §§R02.4.2–R02.4.3, D7.4, D7.7; SelmerIwasawaCohomology §§4.11, 4.24–4.25; contract gap `eventual-images`; IgusaVarietiesAndTorsionConcentration §IG.7.2; AutomorphicGaloisRepresentationsPartII AG2.7 (Residual genericity outside finitely many λ); contract gap `eventual-rigidity`; EulerSystemsAndKolyvaginSystems §4.4; PELModuli §§M2.8, M4.3; EtaleCohomologyFoundations §§F.2.1–F.2.3, F.4.1, F.4.6; contract gap `native-shimura`; contract gap `purity-crystalline-regulator`; LocalGaloisDeformationRings §§1.6, 2.3, 2.12, 2.20 (`IsRigidFor`, `IsRigidFor.mono`); SmoothRepresentationsOfLocalGroups §SR.4.4 (unitary-genericity); AutomorphicGaloisRepresentationsPartII AG2.5 (Unramifiedness and the good-prime polynomial; Published RACSDC comparison specializations).
 
 ## Layer 8: Rank zero, rank one and the rank-(2,3) specialization
 
