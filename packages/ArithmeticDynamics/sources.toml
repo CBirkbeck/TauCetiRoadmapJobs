@@ -94,3 +94,25 @@ locator = "Facts 1.0; Lemmas 1.1–2.2; Theorems in Sections 1 and 3"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/27#issuecomment-6305114552"
+
+[[source]]
+id = "silverman-moduli-book-2012"
+authors = "Joseph H. Silverman"
+title = "Moduli Spaces and Arithmetic Dynamics"
+year = 2012
+locator_scheme = "page"
+locator = "103"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/60#issuecomment-6306267928"
+
+[[source]]
+id = "tate-1983"
+authors = "John Tate"
+title = "Variation of the canonical height of a point depending on a parameter"
+year = 1983
+locator_scheme = "page"
+locator = "287-294"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/60#issuecomment-6306267928"
