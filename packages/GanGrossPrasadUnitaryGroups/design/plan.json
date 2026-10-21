@@ -2314,7 +2314,7 @@
       "detail": "At fields of characteristic ≠2 include split étale coefficients, zero rank, both real signatures, and nonsplit local forms. Matrix.unitaryGroup represents only the identity Gram matrix; ClassicalGroups Layer 0 does not supply this generality. This is a requested upstream contract, not an asserted import.",
       "needs": "Supply Hermitian forms on finite projective constant-rank modules over quadratic étale algebras, complements, Witt extension/cancellation, hyperbolic bases, and representable reductive U(h), with arbitrary-form, scalar-extension and local-inner-form comparisons.",
       "supplier": "ReductiveGroupsPartII",
-      "section": "requested extension of §RG2.4; primary section unavailable"
+      "section": "RG2.4: arbitrary-form Hermitian continuation"
     },
     {
       "slug": "local-categories",
@@ -2330,9 +2330,9 @@
         "5.2"
       ],
       "detail": "Retain p=2, split products and rank zero; require Hom_H(π⊗ρ,ν)≃Hom_H(π,ρ^∨⊗ν) on the appropriate restricted smooth-dual carrier and Ind_unnorm(ρ)=Ind_norm(δ_P^(-1/2)ρ) for every parabolic P, with functorial intertwiners. This category contract supplies neither Bernstein exclusions nor mirabolic calculations (ggp §§14–15, pp. 58–63).",
-      "needs": "For every finite extension F/Q_p and each reductive F-group, supply smooth admissible complex categories, smooth contragredients, algebraic tensor actions, normalized and unnormalized parabolic induction, Jacquet functors and their adjunctions.",
+      "needs": "On the smooth category, contragredients, induction and Jacquet functors of SR.0–SR.2, supply the natural tensor–Hom comparison after restriction along continuous group homomorphisms to closed relative subgroups, with character twists and the identity Ind_unnorm(ρ)=Ind_norm(δ_P^(-1/2)ρ), including split groups, rank zero and dyadic fields.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "requested §SR.0–SR.2 category contract; no supplied section"
+      "section": "SR.0.4 and SR.2.1–SR.2.3: restriction and tensor–Hom comparison supplement"
     },
     {
       "slug": "local-bernstein",
@@ -2340,10 +2340,10 @@
       "neededBy": [
         "2.4"
       ],
-      "detail": "For k=r+1≥2, fixed irreducible π_W and π_V, choose a generic supercuspidal τ of GL_k(E) (a product of generic supercuspidals for split E) and an unramified twist outside the support and reducibility loci so that unnormalized Ind_P^(U(V⊕(-L)))(τ⊠π_W) is irreducible and π_V^∨ lies in none of the blocks [GL_k(E)×U(V′),τ⊠μ], for every μ and every such Levi in U(V). The exceptional loci are proper in the unramified-character family; no supercuspidality of either endpoint is assumed (ggp Corollary 15.2 and its proof, p. 63, ggp line 2229).",
-      "needs": "For finite extensions F/Q_p and arbitrary-form unitary groups, including split GL groups, supply finite supercuspidal support, Bernstein block separation and generic irreducibility of the auxiliary induction families used in §2.4.",
+      "detail": "For k=r+1≥2, fixed irreducible π_W and π_V, first choose a generic supercuspidal inertial class for GL_k(E) (one in each factor for split E) outside the fixed support, and then choose an unramified twist avoiding the reducibility locus so that unnormalized Ind_P^(U(V⊕(-L)))(τ⊠π_W) is irreducible and π_V^∨ lies in none of the blocks [GL_k(E)×U(V′),τ⊠μ], for every μ and every such Levi in U(V). The support exclusion holds on the entire chosen inertial family, and the reducibility locus is proper in that family; no supercuspidality of either endpoint is assumed (ggp Corollary 15.2 and its proof, p. 63, ggp line 2229).",
+      "needs": "For each finite extension F/Q_p, k=r+1≥2 and fixed irreducible π_V,π_W of the relevant unitary groups, choose generic supercuspidal GL_k(E) inertial classes absent from the finite supercuspidal support of π_V^∨, then unramified twists in those classes for which unnormalized Ind_P^(U(V⊕(-L)))(τ⊠π_W) is irreducible, so every excluded block [GL_k(E)×U(V′),τ⊠μ] is absent for every μ, including split E and every residue characteristic.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "requested §SR.3 Bernstein/induction extension; no supplied section"
+      "section": "SR.3.1–SR.3.3: simultaneous auxiliary-support avoidance supplement"
     },
     {
       "slug": "local-mirabolic",
@@ -2354,13 +2354,13 @@
       "detail": "For a generic supercuspidal τ of GL_k(K), its restriction to the last-row mirabolic P_k is compact induction from the maximal upper unipotent N_k with the fixed nondegenerate character, functorially with the source induction normalizations (ggp §15, pp. 62–63, ggp line 2190–2226). Include all residue characteristics. The Bessel open-orbit Hom comparison remains §2.4.",
       "needs": "For every nonarchimedean characteristic-zero local field K and k≥1, supply the mirabolic restriction of generic supercuspidal GL_k(K) representations.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "requested §SR.4 mirabolic/Jacquet extension; no supplied section"
+      "section": "SR.5, mirabolic-derivatives and schwartz-submodule: supercuspidal restriction supplement"
     },
     {
       "slug": "gl-tempered-genericity",
       "title": "All-place tempered GL genericity",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "requested §SR.4 all-place genericity continuation; no supplied section",
+      "section": "SR.2.3 and SR.3.3: all-place tempered GL genericity supplement",
       "needs": "For every characteristic-zero local field K and k≥1, prove that every irreducible unitary tempered GL_k(K) representation admits a nonzero Whittaker functional for each nondegenerate unitary character of its maximal unipotent.",
       "detail": "Use smooth admissible representations at finite places and Casselman–Wallach representations at infinity, with continuous functionals in the latter category; include K=R,C and dyadic fields. Identify the smooth Whittaker realization and its compatibility with contragredients and tensor products. This is a general GL theorem, distinct from a relative period nonvanishing theorem (ggp discussion preceding Theorem 17.2, p. 68, ggp line 2394–2405; zhang-period §4.5, pp. 30–31, line 1469–1548).",
       "neededBy": [
@@ -2373,8 +2373,8 @@
       "slug": "local-jacquet-filtration",
       "title": "Principal-series Jacquet filtration",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "requested §SR.3 geometric-lemma extension; no supplied section",
-      "needs": "For every finite extension K/Q_p, k≥1 and normalized principal series of GL_k(K), supply its minimal-parabolic Jacquet filtration with one graded piece for each Weyl permutation of the inducing characters.",
+      "section": "SR.2.2, geometric-lemma and principal-series-jacquet; SR.2.3: regular unitary GL comparison supplement",
+      "needs": "Using the SR.2.2 Weyl-character Jacquet filtration, prove for GL_k(K) over every finite extension K/Q_p that normalized induction of pairwise distinct unitary characters is irreducible unitary tempered, its ordinary maximal-unipotent coinvariants have dimension k!, and its nondegenerate Whittaker quotient has dimension one, with the δ_B^(-1/2) torus-action comparison.",
       "detail": "For pairwise distinct unitary χ_i the normalized induction is irreducible unitary tempered and the ordinary N_k-coinvariants have dimension k!; dualizing gives dim Hom_N(π,1)=k!. For a nondegenerate character the Whittaker quotient has dimension 1. Keep the normalization distinction between ordinary coinvariants and the torus action twisted by δ_B^(-1/2). The filtration is the general geometric lemma, rather than an asserted splitting (bernstein-zelevinsky §2.12, p. 448, line 329–338; ggp Theorem 17.2(ii), p. 68, line 2398).",
       "neededBy": [
         "3.10"
@@ -2389,7 +2389,7 @@
       "detail": "For every unramified irreducible tempered GL_k(K) and conductor-zero generic character, normalize the spherical Whittaker vector by W(1)=1. Give compatible unitary Satake/base-change and normalized-induction comparisons and the group spherical formulas for all residue sizes q≥2, including coincident Satake eigenvalues by continuous specialization. Retain both split and unramified nonsplit unitary groups; no odd-residue hypothesis is allowed in this general input. Haar volume is explicit, and data without hyperspecial fixed vectors have no spherical evaluation. General group formulas are the input; the relative spherical integral and its dyadic root-coordinate comparison remain §5.3 (harris §2.2, pp. 7–23, line 368–403 and line 907–1000; zhang-period §3.3, p. 19, line 982–986).",
       "needs": "For every finite extension K/Q_p, including p=2, and split or unramified reductive groups with specified hyperspecials, supply Satake parameters, normalized spherical matrix coefficients, spherical Whittaker vectors, and their Cartan double-coset volumes and Iwasawa/Weyl formulas with the actual Haar normalization.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "requested §SR.5 spherical contract; no supplied section"
+      "section": "SR.4.1–SR.4.2: all-residue matrix-coefficient and Whittaker normalization supplement"
     },
     {
       "slug": "archimedean-globalization",
@@ -2403,9 +2403,9 @@
         "5.2"
       ],
       "detail": "For every pair of these representations, identify the completed projective tensor with continuous bilinear maps by its universal property and identify H-equivariant bilinear functionals with continuous maps to the smooth contragredient when H acts through the stated factors; include nuclearity, density of algebraic tensors, and functoriality. A raw algebraic dual is insufficient (sun-zhu p. 2; jsz-bessel §3.2–§3.3, pp. 6–7, line 207).",
-      "needs": "For real reductive groups U(p,q) and GL_k(R) or GL_k(C), supply the Casselman–Wallach category of admissible finite-length smooth Fréchet representations of moderate growth, its globalization equivalence and smooth dual.",
+      "needs": "On the finite-length Casselman–Wallach globalizations of §2.7 for U(p,q) and GL_k(R/C), supply the nuclear completed-projective-tensor universal property, density of algebraic tensors, and the functorial identification of continuous equivariant bilinear forms with maps to the smooth contragredient under the relative subgroup actions.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "requested §AF.1 globalization extension; no supplied section"
+      "section": "2.7: completed tensor and smooth-dual comparison supplement"
     },
     {
       "slug": "archimedean-generic-induction",
@@ -2416,7 +2416,7 @@
       "detail": "Fix r≥1, irreducible π_W and generic irreducible auxiliary σ of GL_(r+1)(E), where E is C, R×R or C×C as appropriate. In unnormalized induction with transformation f(n g m x)=χ_(U(W))(g)^(-1)|det m|^s(π_W⊠σ)(g m)f(x), the reducible parameters form a Lebesgue-null subset of C^d, d=1 for a field and d=2 for a split algebra. Every componentwise right half-plane therefore contains an irreducible parameter; the finite-dimensional space S and its half-plane belong to §2.5 (jsz-bessel Proposition 3.1, p. 6, line 207–216).",
       "needs": "For the real unitary and split GL parabolics with Levi GL_(r+1)(E)×U(W), supply generic irreducibility for the precise Casselman–Wallach families in jsz-bessel §3.2, unnumbered inducing transformation and Proposition 3.1, p. 6, line 207–216.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "requested §AF.1 inducing-family extension; no supplied section"
+      "section": "2.3 and 2.7: specified JSZ induction-family supplement"
     },
     {
       "slug": "archimedean-seminorms",
@@ -2427,7 +2427,7 @@
       "detail": "For every continuous seminorm q on π there are a seminorm p and c≥0 with q(π(g)v)≤||g||^c p(v) for all g,v. For ρ=π_W completed-tensor σ, Λ=id⊗λ and a generic Whittaker λ, if q(Λρ(g)v)≤||g||^c p_0(v), then for every integer N>0 there is p_N with q(Λρ(a_t)v)≤ξ(t)^(-N)||a_t||^c p_N(v) for all positive diagonal t and v; ξ(t)=∏_(i=1..k-1)(1+t_i/t_(i+1)), multiplied over the two factors for split E. Exponents and seminorms may depend on π,q,N, not on g,t,v. These bounds are uniform on a finite basis of S by taking maxima; the relative quotient integral and half-plane are derived in §2.5, not assumed here (jsz-bessel Lemma 6.2, p. 18, line 652–656; §6.4, pp. 20–22, line 765–804).",
       "needs": "For every Casselman–Wallach representation of U(p,q) or GL_k(R/C), supply quantified moderate-growth and generic Whittaker seminorm bounds, with the Cartan integration formula for the actual Haar measure.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "requested §AF.1 seminorm extension; no supplied section"
+      "section": "2.7: quantified Whittaker-seminorm supplement"
     },
     {
       "slug": "distribution-gk",
@@ -2439,7 +2439,7 @@
       "detail": "Use compactly supported locally constant tests at finite places and smooth tests/generalized functions at infinity; for a reductive group acting on a smooth affine variety and a continuous character, descent must reduce vanishing of equivariant distributions to the stabilizer normal spaces at closed orbits, with the restricted character. For a finite-dimensional space with nondegenerate symmetric B, require the null-cone homogeneity theorem: at finite places a distribution supported with its Fourier transform on B(v,v)=0 has scaling δ_B(t)|t|^(dim V/2) and is zero for odd dim V; at infinity require a nonzero Fourier- and B-multiplication-stable subspace of null-cone-supported Schwartz distributions to contain a nonzero B-adapted distribution, with exactly the possible homogeneities of ag-descent Definition 5.1.6, not a universal scaling law for every real distribution. Here δ_B(t)=γ(B)/γ(tB), and the Fourier measure is self-dual (ag-descent Theorems 3.1.1, 5.1.5, 5.1.7 and 8.1.5, pp. 9, 13, 25, ag-descent line 406–410, line 583–599, line 1189–1191). For a reductive group M and closed unimodular reductive N, if an involutive anti-automorphism preserves N and fixes all N-biinvariant distributions, prove dim Hom_N(π,1) · dim Hom_N(π^∨,1)≤1 for every irreducible admissible π (continuous Casselman–Wallach at infinity). Include the diagonal-product adapter from conjugation invariance and the contragredient transport. This is the general criterion, not the relative symmetry or multiplicity theorem of §§2.2–2.6 (agrs Proposition 1.1 and Corollary 1.1, pp. 6–7, agrs line 220; sun-zhu §§1–2). The continuation requires an upstream ownership/placement decision; no section is asserted to exist.",
       "needs": "For reductive groups over every characteristic-zero local field, supply test distributions, equivariant Harish–Chandra descent to normal representations of closed semisimple orbits, Fourier inversion with self-dual measures, and the Gelfand–Kazhdan criterion.",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested Part II local-distribution extension of §§AS.0–AS.2; no supplied section"
+      "section": "requested Part II local-distribution extension of Layers 0–2"
     },
     {
       "slug": "local-schwartz-germs",
@@ -2451,7 +2451,7 @@
       "detail": "For each semisimple x and quasi-character θ, define the regular-nilpotent coefficients c_(θ,O)(x), with unique germ expansion on g_x; average only over a nonempty finite set and put c_θ(x)=0 when that set is empty. For each invariant compact-modulo-conjugacy L there is a continuous seminorm ν_L such that sup_(x∈L_ss) D_G(x)^(1/2)|c_θ(x)|≤ν_L(θ). Supply the centralizer-quotient Jacobians and normalized-induction character descent for all inner forms (bp-arch §4.5, Proposition 4.5.1, p. 106, line 3984–4011). The relative Γ-integral remains §3.4.",
       "needs": "For reductive groups over every characteristic-zero local field, supply Harish–Chandra Schwartz and quasi-character spaces and semisimple germ expansions with the fixed self-dual Fourier orbital measures.",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested Part II local germ extension of §§AS.0–AS.2; no supplied section"
+      "section": "requested Part II local germ extension of Layers 0–2"
     },
     {
       "slug": "local-tempered-bounds",
@@ -2464,7 +2464,7 @@
       "detail": "For each irreducible unitary tempered π there are d≥0 and continuous seminorms p,q on smooth vectors such that |B(π(g)v,w)|≤p(v)q(w)Ξ_G(g)(1+σ_G(g))^d for all g,v,w (on each compact-open fixed-vector stage at finite places). Retain arbitrary maximal-compact types, all real signatures and dyadic fields. The adjacent integral of the product of two Ξ functions is proved in §2.7 (harris Proposition 2.1 and proof, pp. 5–8; bp-arch §1.5 and §2.2).",
       "needs": "For reductive groups over every characteristic-zero local field, supply tempered matrix-coefficient bounds by Harish–Chandra Ξ and powers of a proper logarithmic norm, and Cartan integration with its Haar Jacobian.",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested Part II local estimates extension of §§AS.0–AS.2; no supplied section"
+      "section": "requested Part II local estimates extension of Layers 0–2"
     },
     {
       "slug": "local-plancherel",
@@ -2476,7 +2476,7 @@
       "detail": "For every f in the Schwartz algebra, inversion and pairing against a Schwartz test converge in the stated Schwartz/distribution topologies using the actual tempered dual and Plancherel measure; include elliptic character independence and the Levi disintegration with its Weyl and formal-degree factors. These are group spectral theorems, not the relative trace identity of §3.5 (bp-arch §2.6, pp. 58–60).",
       "needs": "For reductive groups over every characteristic-zero local field, supply tempered Plancherel inversion on Harish–Chandra Schwartz functions, distribution characters and normalized-induction disintegration.",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested Part II local spectral extension of §§AS.0–AS.2; no supplied section"
+      "section": "requested Part II local spectral extension of Layers 0–2"
     },
     {
       "slug": "local-fourier-extension",
@@ -2487,7 +2487,7 @@
       "detail": "Let E₀ be a dense test subspace of a weak-Schwartz stage E with its locally constant finite-place or smooth real conjugation action. Assume there is a positive weight w on H such that restriction of f and, over R, every required conjugation derivative is bounded by w times a continuous E-seminorm, and ∫_H w(h)(1+|λ(h)|)^(-δ)dh<∞ for every δ>0. Fix a nontrivial unitary ψ and d×t=dt/|t| for the self-dual additive dt. For ξ=ψ∘λ, require the unique continuous extension T of ∫_H f(h)ξ(h)dh from E₀, with |T(f)|≤Cp(f) for a continuous stage seminorm p, and the Fourier-averaging identity T(Ad_a(φ)f)=∫_H f(h) Fourier(|t|^(-1)δ_H(a(t))φ(t))(λ(h))dh for φ compactly supported smooth on F×; δ_H(a(t)) is the absolute determinant of conjugation on Lie H. At finite places prove this by averaging over the compact-open stabilizer in F×; over R use the smooth conjugation derivatives and Fourier decay. This does not assert raw cutoff stabilization for every weak-Schwartz function. The relative bounds establishing the hypotheses, the H-equivariant form and its nonzero-iff-model theorem remain §3.3 (bp-arch Proposition 7.1.1 and Lemma 7.1.2, pp. 177–180, line 6627–6773).",
       "needs": "For F nonarchimedean of characteristic zero or R, supply the Fourier-averaging extension lemma for a unimodular closed algebraic H in a reductive G, an algebraic homomorphism λ:H→Ga and a cocharacter a:Gm→N_G(H) satisfying λ(a(t)ha(t)^(-1))=tλ(h).",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested Part II local Fourier extension of §§AS.0–AS.2; no supplied section"
+      "section": "requested Part II local Fourier extension of Layers 0–2"
     },
     {
       "slug": "enhanced-packets",
@@ -2505,7 +2505,7 @@
       "detail": "Need conjugate-dual signs (-1)^(m-1), multiplicities in z_φ, STAB/TRANS/WHITT, ordinary and twisted endoscopic character identities as in bp-refined §7.2, local factor compatibility, smooth duals, determinant twists, tempered induction, additive-character and scaling transport. Real enhancement labels must be compared with Xue §2.1 after choosing the complement reference. Do not assume GGP, a relative period identity or an arbitrary packet bijection.",
       "needs": "Supply the actual tempered enhanced LLC for all pure inner forms of characteristic-zero local unitary groups, its component groups, central restrictions and Whittaker normalization with every property used here proved.",
       "supplier": "ModularityAndLanglandsExtensions",
-      "section": "requested §ML.4 unitary classification contract; primary section unavailable"
+      "section": "3.13, 3.15 and 3.20: all-inner-form and GGP-normalization comparison supplement"
     },
     {
       "slug": "ordinary-endoscopy",
@@ -2516,7 +2516,7 @@
       "detail": "Use all nonsplit characteristic-zero local unitary inner forms and the self-dual Fourier measures of bp-refined §§7.2, 7.7 and 8.3; provide the geometric germ and induction comparisons consumed in §3.6. This earlier general transfer theory feeds the enhanced-classification owner, which alone supplies ordinary/twisted character identities for the actual enhanced packets; §3.6 then combines these inputs in its own relative Fourier calculation. No GGP conclusion or second construction of packet identities is requested.",
       "needs": "Supply ordinary and twisted unitary transfer factors, Whittaker-normalized geometric transfer constants, and stable orbital-integral and quasi-character transfer independent of an enhanced packet classification.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "requested ordinary-transfer sections; primary section unavailable"
+      "section": "Layers 2–5 and 11.2–11.4: ordinary geometric germ and normalization supplement"
     },
     {
       "slug": "real-oscillator-model",
@@ -2527,7 +2527,7 @@
       "detail": "Use ψ(x)=exp(-2πix), χ_V|R×=sgn^(dim V′) and χ_(V′)|R×=sgn^(dim V); compare Hermitian V′ by -iV′. Require one continuous Schwartz seminorm p such that for every positive diagonal dilation λ of the mixed Euclidean coordinates and all Φ,Φ′, the absolute mixed overlap is bounded by ∏_j min(1,λ_j^(-1)) p(Φ)p(Φ′), and the resulting continuity/absolute convergence of the integrated oscillator pairings in equal or adjacent ranks. This is the general model estimate; the Bessel seesaw is §3.8 (xue-real §3.1, Lemmas 3.1–3.4, pp. 1003–1009, line 312–425).",
       "needs": "For every real dual pair U(V)×U(V′) with V Hermitian and V′ skew-Hermitian, construct the oscillator action on its nuclear Schwartz mixed model with the specified unitary splittings and matrix-coefficient decay.",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "requested real-local oscillator continuation; no supplied section"
+      "section": "0.18 and 3.3–3.3b: real mixed-model overlap-estimate supplement"
     },
     {
       "slug": "real-small-theta",
@@ -2538,7 +2538,7 @@
       "detail": "Use the splittings of real-oscillator-model. In equal rank put θφ=φ⊗χ_V^(-1)χ_(V′) and θη(a_i)=ε(φ_i⊗χ_V^(-1),conj(ψ_C))η(a_i); there is exactly one target signature. In rank n+1 add χ_(V′): if χ_V occurs in φ there is exactly one target and θη=η on the same component group; if it does not occur there are exactly two, θη restricts to η and its new generator has value (∏η(a_i))(-1)^(n(n+1)/2-q′). To specify the signature rather than only its discriminant, remove the paired summands not of the required conjugate-self-dual sign by tempered induction, contributing (t,t) to signature, then order the remaining appropriate-sign characters with multiplicity by decreasing exponent as in Xue §3.2 and count p′=t+#{i:θη(e_i)=(-1)^(i-1)}, q′=dim V′-p′; all other signatures have zero lift. Include the inverse statement: a tempered target of rank n+1 containing an appropriate-sign self-dual character is, after a determinant twist, a nonzero small lift from rank n. These assertions concern the small lift, not irreducibility of the big lift (xue-real §3.2, equations (3.11)–(3.15) and Lemma 3.5, pp. 1010–1013, line 554–609; signature rule line 677–685).",
       "needs": "For each irreducible tempered U(V) representation with actual enhancement (φ,η), supply nonzero small theta lifts, exact signature selection and parameter formulas for target dimension dim V or dim V+1, with determinant-twist transport.",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "requested real-local small-theta continuation; no supplied section"
+      "section": "3.4–3.6: real tempered signature and enhancement supplement"
     },
     {
       "slug": "adelic-measures",
@@ -2553,9 +2553,9 @@
         "7.4"
       ],
       "detail": "For arbitrary number fields and all unitary inner forms supply the formulas of bpcz §2.3.2: dh=(Δ_H^*)⁻¹∏_v Δ_(H,v)|ω_H|_v, its partial measure factors and the product-formula independence. Need convergence/nonzero of the volume tail for any local factorization of this measure, unipotent rational quotient mass 1, and compatibility with diagonal inclusions; GlobalNumberFields and RestrictedProducts explicitly stop before these claims.",
-      "needs": "Supply adelic group points and rational quotients, compatible Haar disintegration, Tamagawa measures including global L convergence factors, and their local-volume products.",
+      "needs": "Compare the adelic quotient and Tamagawa measures of §§0.1–0.3, 1.1–1.5 and 2.2–2.5 with the BPCZ Artin–Tate convention dh=(Δ_H^*)⁻¹∏_vΔ_(H,v)|ω_H|_v, including its partial measures, nonzero convergent hyperspecial-volume tail, unipotent rational quotient mass one and compatibility with diagonal inclusions over all number fields and unitary inner forms.",
       "supplier": "AdelicAlgebraicGroups",
-      "section": "requested §§AA.2–AA.3; primary sections unavailable"
+      "section": "0.3, 1.2–1.5 and 2.2–2.5: BPCZ convergence-factor comparison supplement"
     },
     {
       "slug": "automorphic-realization",
@@ -2567,9 +2567,9 @@
         "6.1"
       ],
       "detail": "Need all number fields and arbitrary unitary inner forms, pure-tensor density, Petersson positive pairings, local invariant unitary structures, and the general finite-rank/smoothing operator bridge. Uniform estimates along the relevant flag are applied in target 4.1, not assumed as its conclusion.",
-      "needs": "Supply adelic Schwartz and cusp spaces, right regular actions, cuspidal rapid decay, continuous period estimates and restricted smooth tensor factorizations.",
+      "needs": "On the adelic Schwartz, cuspidal and Petersson carriers of §§0.1–0.5, 3.4–3.5 and 4.2, supply restricted completed smooth tensor factorization with pure-tensor density, continuous restriction estimates derived from cuspidal rapid decay and local invariant unitary pairings for all number fields and unitary inner forms.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "requested §§AF.0–AF.3; primary sections unavailable"
+      "section": "0.1–0.5, 3.4–3.5 and 4.2: completed smooth-factorization and period-estimate supplement"
     },
     {
       "slug": "global-parameters",
@@ -2587,7 +2587,7 @@
       "detail": "Need the distinct constituent definition and Asai pole sign (-1)^(m+1), actual local compatibility at all places, the constituent sign group S_Π=(Z/2)^(r_n+r_(n+1)), and existence of the relevant actual base changes for everywhere-tempered cuspidal σ. This contract proves classification and does not assert nonzero relative periods or GGP.8.",
       "needs": "Supply actual Hermitian discrete Arthur parameters, constituent uniqueness, global packets and cuspidal multiplicity, strong base change and its comparison with split-almost-everywhere weak base change.",
       "supplier": "ModularityAndLanglandsExtensions",
-      "section": "requested §ML.4 global extension; primary section unavailable"
+      "section": "5.1 and 5.4: Hermitian discrete base-change and constituent-group supplement"
     },
     {
       "slug": "factor-epsilon-identities",
@@ -2603,7 +2603,7 @@
       "needs": "For every characteristic-zero local field F and quadratic étale E/F, and for quadratic number-field extensions globally, supply completed factors of actual Weil–Deligne, archimedean Weil and automorphic parameters, compatible with sums, induction, tensor products and duals; at the central argument prove ε(1/2,M,ψ_E)=1 for conjugate-orthogonal M and nontrivial ψ_E trivial on F, ε(M,ψ_E)ε(M^∨,ψ_E)=det M(-1), and ε(M,ψ_E(t·))=det M(t)ε(M,ψ_E) for t∈F×.",
       "detail": "Include zero parameters (factor 1), epsilon lift-independence under the connected centralizer, and multiplicativity used in ggp Theorem 6.1, pp. 20–21, line 728–753, with the duality formula in §5, p. 16, line 598–615. For actual degree-m unitary base change identify L_F(s,σ_m,Ad)=L_F(s,BC(σ_m),As^((-1)^m)), locally and globally (harris Remark 1.4, p. 3, line 149–157; bpcz §10.3.5, p. 92, line 4945). Use geometric Frobenius of norm q⁻¹ (ggp §3, p. 8, line 272–276), compare arithmetic Frobenius by inversion, and retain split products, gamma factors and p=2.",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.1, AL.3–AL.5 factor identities and signed-Asai comparison; primary sections unavailable"
+      "section": "§§AL.1, AL.3–AL.5 factor identities and signed-Asai comparison: exact normalization and all-place comparison supplement"
     },
     {
       "slug": "tempered-local-regularity",
@@ -2616,7 +2616,7 @@
       "needs": "For every characteristic-zero local F, quadratic étale E/F, n≥1 and actual irreducible unitary tempered σ of an adjacent rank-(n,n+1) unitary pair, prove that L_F(s,η^i) at s=i for 1≤i≤n+1, L_E(s,BC(σ_n)×BC(σ_(n+1))) at s=1/2, and L_F(s,σ,Ad) at s=1 are holomorphic and nonzero.",
       "detail": "Here η is the quadratic character, equal to 1 in the split case, and σ has no globalization premise. Include ramified and split algebras, dyadic fields and archimedean gamma factors. These are regularity assertions for the individual factors, not for an assumed quotient: C_v and its nonvanishing are constructed and deduced solely in §5.1 (bpcz §1.1.6, p. 4, line 148–167).",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.1, AL.3–AL.5 tempered regularity; primary sections unavailable"
+      "section": "§§AL.1, AL.3–AL.5 tempered regularity: exact normalization and all-place comparison supplement"
     },
     {
       "slug": "hermitian-global-values",
@@ -2630,7 +2630,7 @@
       "needs": "For a quadratic number-field extension E/F and normalized isobaric inductions Π_a,Π_b of distinct unitary conjugate-self-dual cuspidal constituents in each degree, with a-b odd, prove the completed L_E(s,Π_a×Π_b) is holomorphic at s=1/2 and may vanish there; prove each opposite-parity L_F(1,Π_m,As^((-1)^m)) is finite and nonzero when its degree-m constituents have Asai pole sign (-1)^(m+1).",
       "detail": "For b=0 the tensor L-function is 1. Include all infinite factors and the finite nonzero completed L_F(i,η^i), i≥1, for the globally nontrivial quadratic η. The same central regularity applies to the generic tempered base changes in §4.4; no central value is inverted. At adjacent ranks the opposite-parity product is the global adjoint denominator via factor-epsilon-identities (ggp Conjecture 24.1, p. 90, line 3175–3182; harris Remark 1.4, p. 3, line 149–157; bpcz §§1.1.2–1.1.6, pp. 2–5; bplzz Definition 1.5, p. 3, line 128).",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.3–AL.5 global Rankin–Selberg and signed-Asai values; primary sections unavailable"
+      "section": "§§AL.3–AL.5 global Rankin–Selberg and signed-Asai values: exact normalization and all-place comparison supplement"
     },
     {
       "slug": "local-rankin-selberg",
@@ -2644,7 +2644,7 @@
       "needs": "For every characteristic-zero local field K, n≥1 and generic irreducible GL_(n+1)(K)×GL_n(K) pair, with opposite Whittaker characters and compatible quotient Haar measures, prove meromorphic continuation of λ(s,W)=∫_(N_n\\GL_n)W_(n+1)(diag(g,1))W_n(g)|det g|^s dḡ, entire continuation of λ(s,W)/L_K(s+1/2,π_(n+1)×π_n), and existence at each s₀ of a smooth Whittaker tensor with normalized value 1.",
       "detail": "For unitary tempered pairs the raw integral converges absolutely for Re(s)>-1/2. For unramified pairs and conductor-zero characters the W_m(1)=1 spherical vectors satisfy λ(s,W)=vol(GL_n(O_K))L_K(s+1/2,π_(n+1)×π_n), with the stated measures, for every residue characteristic including 2. At infinity all functionals are continuous on the Casselman–Wallach model; for split coefficients apply this per field factor (zhang-period §3.3, equations (3.23)–(3.26), p. 19, line 962–986).",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.3–AL.4 local Rankin–Selberg integrals; primary sections unavailable"
+      "section": "§§AL.3–AL.4 local Rankin–Selberg integrals: exact normalization and all-place comparison supplement"
     },
     {
       "slug": "whittaker-pairing-fourier",
@@ -2656,7 +2656,7 @@
       "needs": "For every characteristic-zero local K, k≥1 and generic unitary GL_k(K) representation, supply the absolutely convergent positive invariant Whittaker pairing ϑ_k(W,W′)=∫_(N_(k-1)\\GL_(k-1))W(diag(g,1))conj(W′(diag(g,1)))dḡ; for tempered representations supply the Fourier identity F̂_(W,W′)(ψ_t)=δ_(B_k)(t)^(-1)W(t)conj(W′(t)) on regular unipotent characters.",
       "detail": "Here F(u)=∫_([N_k,N_k])B(π(vu)W,W′)dv converges absolutely, F lies in L² of the unipotent abelianization, and its Fourier transform is smooth on the regular-character open set. Fix self-dual root measures and quotient measures by disintegration; include k=1, R,C and dyadic K. For unramified π and conductor-zero ψ, its spherical W(1)=1 has ϑ_k(W,W)=vol(GL_k(O_K))L_K(1,π×π^∨) in the unnormalized differential measures (zhang-period equation (3.2), pp. 13–14, line 656–678; Lemma 4.9, pp. 30–31, line 1523–1542). The relative split integral identity remains §5.1a.",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.3–AL.4 Whittaker pairing and Fourier continuation; primary sections unavailable"
+      "section": "§§AL.3–AL.4 Whittaker pairing and Fourier continuation: exact normalization and all-place comparison supplement"
     },
     {
       "slug": "global-mirabolic-norms",
@@ -2667,7 +2667,7 @@
       "needs": "For every quadratic number-field extension E/F, m≥1 and full normalized GL_m(A_E) induction Π_m of distinct unitary conjugate-self-dual cuspidal constituents with Asai pole sign (-1)^(m+1), supply the nonzero (-1)^(m+1)-distinguished mirabolic functional and positive invariant Whittaker norm: their finite-S expressions have coefficients (Δ_(GL_m/F)^(S,*))⁻¹L^(S,*)(1,Π_m,As^((-1)^(m+1))) and (Δ_(Res GL_m)^(S,*))⁻¹L^(S,*)(1,Π_m×Π_m^∨), respectively, where L^(S,*)(1) means the finite nonzero limit of (s-1)^r_m L^S(s) and r_m is the number of distinct constituents (the exact pole order of both functions).",
       "detail": "Prove convergence of the corresponding mirabolic integrals, independence of sufficiently large S, nonzero leading coefficients of the stated orders, and equality of the Whittaker norm with the normalized induced Petersson norm; retain endoscopic inductions, all infinite places and local ramification. This is the general one-degree distinction/norm input. Its two-degree assembly, the continued global λ and their relative-character factorization remain §§6.1–6.5 (bpcz §8.1.2 and Theorem 8.1.2.1, pp. 76–77, line 4132–4154; zhang-period §§3.1–3.2, pp. 13–19).",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "requested §§AL.3–AL.5 global mirabolic distinction and norm residues; primary sections unavailable"
+      "section": "§§AL.3–AL.5 global mirabolic distinction and norm residues: exact normalization and all-place comparison supplement"
     },
     {
       "slug": "local-smoothing-trace",
@@ -2678,7 +2678,7 @@
       "needs": "For every reductive group G over a characteristic-zero local F and every irreducible unitary tempered σ, prove that σ(f)=∫_G f(g)σ(g)dg is a smooth trace-class operator for f∈C_c∞(G(F)) at finite places or the Nash Schwartz space S(G(F)) at infinity; f↦σ(f) is continuous into the smooth endomorphism space and defines a canonical tensor admitting an absolutely convergent rank-one expansion.",
       "detail": "For a positive invariant linear-first B, require σ(f)=Σ_j T_(x_j,y_j), T_(x,y)(z)=B(z,y)x, with smooth x_j,y_j and Σ_j p(x_j)q(y_j)<∞ for every pair of continuous smooth-vector seminorms (a finite sum on a fixed compact-open stage at finite places). Require Tr(σ(g)σ(f))=Σ_j B(σ(g)x_j,y_j), continuously in the weak Harish–Chandra Schwartz topology, and equality with the absolutely convergent smooth K-basis expansion. The global automorphic-spectrum clause supplies nuclear sums on induced automorphic realizations, not this local assertion. Here the general smoothing/tensor bridge is supplied; §6.2 proves its H-integrability and interchange using §2.7 (bp-arch §7.2, pp. 180–181, line 6780–6801 and line 6827–6833; bpcz §10.3.1, pp. 90–91, line 4873–4888).",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested Part II local smoothing extension of §§AS.0–AS.2; no supplied section"
+      "section": "requested Part II local smoothing extension of Layers 0–2"
     },
     {
       "slug": "automorphic-spectrum",
@@ -2691,7 +2691,7 @@
       "detail": "Need canonical regularized Eisenstein Rankin–Selberg periods and Flicker–Rallis intertwining periods with convergence, parameter regularity and norm leading coefficients. No abstract complex of arbitrary distributions replaces actual automorphic kernels. Supply the actual general Jacquet–Rallis trace distribution and its cuspidal-support contribution I_χ, as distributions on the adelic Schwartz algebra (bpcz Theorem 3.2.4.1 and §10.1.6, line 4775). The star-generic relative contribution is target 6.3.",
       "needs": "Supply actual cuspidal support decompositions, normalized Eisenstein/intertwiner families, Arthur truncation asymptotics and nuclear spectral-kernel pairings on the specified Schwartz spaces.",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "requested §§AS.0–AS.4; primary sections unavailable"
+      "section": "Layers 0–4 and 6: canonical relative Eisenstein-period and Jacquet–Rallis distribution supplement"
     },
     {
       "slug": "spectral-isolation",
@@ -2713,7 +2713,7 @@
       "detail": "Groups and measures: G′=Res_(E/F)(GL_n×GL_(n+1)), H₁=Res_(E/F)GL_n diagonal, H₂=GL_n×GL_(n+1) with η(det g_n)^(n+1)η(det g_(n+1))^n; U_h=U(h)×U(h⊕<1>), H_h=U(h). Fix ψ_E=ψ_F∘Tr(τ·), self-dual root measures, disintegrated quotient measures and Ω of bp-plancherel §5.3; globally use bpcz §2.3.2–§2.3.3 Δ factors. Use the groups, characters and quotient measures fixed below. Truncate the actual kernels along the specified parabolics, prove their asymptotic constant terms exist and the geometric expansions converge in the Schwartz topology, then identify these constant terms for matching orbital integrals and spherical base-change tests outside S, with the partial Δ measure factors. This is an equality before cuspidal isolation or star-generic spectral calculation, not §6.4 or GGP.8 (bpcz §10.1.6, proof pp. 89–90, line 4775–4831).",
       "needs": "For every quadratic number-field extension E/F and n≥1, prove equality of the regularized geometric Jacquet–Rallis distributions for matching adelic Schwartz tests on G′ and all U_h.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "proposed Part II relative comparison continuation; no supplied section (global geometry)"
+      "section": "Part II relative comparison continuation (global geometry)"
     },
     {
       "slug": "relative-finite-transfer",
@@ -2724,7 +2724,7 @@
       "detail": "Groups and measures: G′=Res_(E/F)(GL_n×GL_(n+1)), H₁=Res_(E/F)GL_n diagonal, H₂=GL_n×GL_(n+1) with η(det g_n)^(n+1)η(det g_(n+1))^n; U_h=U(h)×U(h⊕<1>), H_h=U(h). Fix ψ_E=ψ_F∘Tr(τ·), self-dual root measures, disintegrated quotient measures and Ω of bp-plancherel §5.3; globally use bpcz §2.3.2–§2.3.3 Δ factors. Use the Schwartz spaces, relative orbital integrals and transfer factor Ω of bp-plancherel §5.3 with the quotient measures fixed below: Ω(γ)O_γ(f′)=O_δ(f_h) at every matching regular semisimple orbit, with zero on unmatched orbits. Require both directions, including a test supported on one prescribed inner form, all ramification and p=2; identify the elementary split convolution transfer (bp-plancherel Theorem 5.3.1(i), p. 84, line 4480–4484).",
       "needs": "For every finite extension F/Q_p, quadratic étale E/F and n≥1, every compactly supported smooth test on G′ has a matching finite family on all U_h and conversely.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "proposed Part II relative comparison continuation; no supplied section (finite smooth transfer)"
+      "section": "Part II relative comparison continuation (finite smooth transfer)"
     },
     {
       "slug": "relative-archimedean-transfer",
@@ -2736,7 +2736,7 @@
       "detail": "Groups and measures: G′=Res_(E/F)(GL_n×GL_(n+1)), H₁=Res_(E/F)GL_n diagonal, H₂=GL_n×GL_(n+1) with η(det g_n)^(n+1)η(det g_(n+1))^n; U_h=U(h)×U(h⊕<1>), H_h=U(h). Fix ψ_E=ψ_F∘Tr(τ·), self-dual root measures, disintegrated quotient measures and Ω of bp-plancherel §5.3; globally use bpcz §2.3.2–§2.3.3 Δ factors. Density is in each native Schwartz Fréchet topology, with the same Ω and quotient measures as finite transfer; require relative orbital integral continuity and transfer with zero components on the other forms for a test in the chosen dense unitary subspace. This permits extension of continuous relative-character identities, without claiming transfer for every archimedean Schwartz test (bp-plancherel Theorem 5.3.1(ii), p. 84, line 4485–4491; bpcz §10.3.4, p. 91, line 4920–4926).",
       "needs": "For F=R or C, quadratic étale E/F and every n≥1, construct dense subspaces of the Schwartz spaces on G′ and the finite direct sum over U_h whose members admit matching transfers in both directions.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "proposed Part II relative comparison continuation; no supplied section (infinite smooth transfer)"
+      "section": "Part II relative comparison continuation (infinite smooth transfer)"
     },
     {
       "slug": "relative-fundamental-lemma",
@@ -2747,7 +2747,7 @@
       "detail": "Use Ω and the disintegrated quotient measures fixed above; translate explicitly from the volume-one measures of bp-fundamental §1 to these measures. Include the Lie algebra unit lemma for every rank, its group comparison, and the elementary split convolution transfer. No residue characteristic is excluded: bp-fundamental Theorem 1, p. 3, line 99–119, includes small residue characteristic. The final comparison uses unit tests at inert places outside S and permits arbitrary spherical Hecke tests only at split places, as in bpcz Proposition 10.1.6.1, pp. 88–89, line 4760–4782. Ramified data use relative-finite-transfer. This is precisely the fundamental-lemma input for enlargement of S, without asserting a full nonsplit Hecke-algebra fundamental lemma.",
       "needs": "For every unramified quadratic extension of nonarchimedean characteristic-zero local fields and every n≥1, prove matching of the hyperspecial unit test and zero transfer to the other inner forms; for split E=F×F give the elementary spherical base-change transfer.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "proposed Part II relative comparison continuation; no supplied section (spherical transfer)"
+      "section": "Part II relative comparison continuation (spherical transfer)"
     },
     {
       "slug": "relative-character-comparison",
@@ -2758,7 +2758,7 @@
       "detail": "Groups and measures: G′=Res_(E/F)(GL_n×GL_(n+1)), H₁=Res_(E/F)GL_n diagonal, H₂=GL_n×GL_(n+1) with η(det g_n)^(n+1)η(det g_(n+1))^n; U_h=U(h)×U(h⊕<1>), H_h=U(h). Fix ψ_E=ψ_F∘Tr(τ·), self-dual root measures, disintegrated quotient measures and Ω of bp-plancherel §5.3; globally use bpcz §2.3.2–§2.3.3 Δ factors. Use the Whittaker λ, β and norm pairings of bpcz §10.3.3 and the raw unitary matrix-coefficient character of §6.2; for nonsplit E/F compare bp-plancherel Theorem 5.5.1 constants under dual/Whittaker and Haar changes, rather than identifying its differently normalized characters. For global rational ψ, trace-zero τ and Tamagawa-compatible measures prove ∏_v κ_(h_v,ψ_v)=1, including split places via zhang-period §4.5. No global period identity is assumed (bp-plancherel Theorem 5.5.1 and Remark 5.5.2, p. 89, line 4734–4748; bpcz §10.3.5, p. 92, line 4935–4941).",
       "needs": "For every characteristic-zero local F, quadratic étale E/F, n≥1 and actual irreducible tempered distinguished σ of U_h with Π=BC(σ), prove I_Π(f′)=κ_(h,ψ)J_σ(f_h) for every matching Schwartz family, with κ_(h,ψ) explicit and nonzero.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "proposed Part II relative comparison continuation; no supplied section (local spectral comparison)"
+      "section": "Part II relative comparison continuation (local spectral comparison)"
     }
   ]
 }
