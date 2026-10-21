@@ -3355,7 +3355,7 @@
       "title": "Finite tame subgroups of SL₂",
       "supplier": "CFSGStatement",
       "section": "proposed Part II §finite-linear-groups",
-      "needs": "Supply cyclic, binary dihedral, tetrahedral, octahedral and icosahedral classification for finite prime-to-p subgroups of SL₂ over algebraically closed fields.",
+      "needs": "Supply the classification of finite prime-to-p subgroups of SL₂ over algebraically closed fields of characteristic p>0, and finite subgroups in characteristic zero, as cyclic, binary dihedral, binary tetrahedral, binary octahedral or binary icosahedral groups.",
       "detail": "Dolgachev–Keum Lemma 3.1, lines 399–402; retain characteristic-zero and tame positive-characteristic domains. ADE resolution discriminants belong to gap:tame-quotient-singularities and quaternion representation obstructions to gap:mukai-eleven-groups-recognition.",
       "neededBy": [
         "6.1",
@@ -3561,39 +3561,6 @@
       ]
     },
     {
-      "slug": "surface-brauer-localization",
-      "title": "Surface Brauer localization",
-      "supplier": "EtaleCohomologyFoundations",
-      "section": "proposed Part II §surface-Brauer-localization",
-      "needs": "Supply prime-to-characteristic Brauer purity and the residue localization sequence for smooth surfaces over algebraically closed fields, including invariance under deleting finitely many points and the restriction isomorphism across disjoint exceptional rational trees when the residue term vanishes.",
-      "detail": "Use the localization sequence with its residue term; restriction across an arbitrary divisor need not be an isomorphism. The eight disjoint exceptional curves of a tame K3 involution give the required vanishing (dolgachev-keum lines 616–626). Formal Brauer pullback and trace remain in gap:witt-formal-brauer.",
-      "neededBy": [
-        "6.7d"
-      ]
-    },
-    {
-      "slug": "surface-brauer-kummer",
-      "title": "Surface Brauer Kummer comparison",
-      "supplier": "EtaleCohomologyFoundations",
-      "section": "proposed Part II §surface-Brauer-Kummer",
-      "needs": "Supply, for smooth projective surfaces over algebraically closed fields and ℓ invertible, the Kummer identification of the ℓ-primary Brauer group with (ℚ_ℓ/ℤ_ℓ)^(b₂−ρ) up to the finite H³_et(ℤ_ℓ(1))-torsion contribution, with its functorial exact sequences and integral group actions.",
-      "detail": "Retain the finite torsion contribution until it is proved zero; for K3 surfaces §3.4 gives H³_et(ℤ_ℓ(1))=0. This supplies the ℓⁿ-torsion ranks used with equivariant descent (dolgachev-keum equations (4.3)–(4.4), lines 543–566, and lines 627–647). The general derivation uses SchemeAndStackFoundations §2.11 fppf_kummer_sequence (its invertible-order étale form), together with EtaleCohomologyFoundations F.4.2–F.4.5. Take the direct limit of 0→Pic/ℓⁿ→H²(μ_(ℓⁿ))→Br[ℓⁿ]→0. Divisibility of Pic⁰ over an algebraically closed field identifies Pic⊗(ℚ_ℓ/ℤ_ℓ) with NS⊗(ℚ_ℓ/ℤ_ℓ). The coefficient triangle gives 0→H²(ℤ_ℓ(1))⊗(ℚ_ℓ/ℤ_ℓ)→H²(ℚ_ℓ/ℤ_ℓ(1))→H³(ℤ_ℓ(1))[ℓ∞]→0. Finite generation in F.4.4 makes the last term finite. Thus 0→(ℚ_ℓ/ℤ_ℓ)^(b₂−ρ)→Br{ℓ}→H³(ℤ_ℓ(1))[ℓ∞]→0, where identifying the first term with a standard power is noncanonical. Keep the natural sequences equivariant; no equivariant splitting follows from this abstract group description. The cited Dolgachev–Keum sequences are applications after K3 H³ vanishes, not a source for the general finite term.",
-      "neededBy": [
-        "6.7d"
-      ]
-    },
-    {
-      "slug": "equivariant-brauer-descent",
-      "title": "Equivariant Brauer descent",
-      "supplier": "EtaleCohomologyFoundations",
-      "section": "proposed Part II §equivariant-Brauer-descent",
-      "needs": "Supply compatibility of the low-degree Picard–Brauer filtration and edge maps of SchemeAndStackFoundations §2.15 hochschildSerre_galois_covering for G_m with the ℓⁿ-Kummer sequences and restriction between free finite-group surface torsors, for every invertible ℓ and n≥1.",
-      "detail": "The spectral sequence itself is consumed from SchemeAndStackFoundations §2.15. The additional contract identifies the induced maps of filtered cohomology under Kummer and restriction, including d₂ and d₃ entering total degree two; its low-degree deductions retain Hᵃ(G,Γ(U,O_U)ˣ), Hᵃ(G,Pic U), and all edge kernels and cokernels. No sequence with omitted units terms is asserted without proving their vanishing. The construction is naturality of that supplied spectral sequence applied to the Kummer short exact sequence; dolgachev-keum (4.7), lines 599–615, is its K3 application.",
-      "neededBy": [
-        "6.7d"
-      ]
-    },
-    {
       "slug": "rational-surface-cohomology",
       "title": "Divisor classes on unirational surfaces",
       "supplier": "SchemeAndStackFoundations",
@@ -3607,6 +3574,12 @@
         "6.3",
         "6.5"
       ]
+    },
+    {
+      "slug": "tame-equivariant-deformations",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II §tame-equivariant-deformations",
+      "needs": "Supply, for smooth proper schemes over a perfect field of characteristic p>0 with a finite group G of order prime to p, the marked equivariant deformation functor, its identification with the G-fixed subfunctor when infinitesimal automorphisms vanish, invariant tangent and obstruction spaces, and formal algebraization of equivariant ample pairs; in particular, a G-action over W(k) on a formally smooth W(k)-deformation space with a fixed closed point has a formally smooth fixed locus of relative dimension equal to the invariant tangent dimension."
     }
   ]
 }
