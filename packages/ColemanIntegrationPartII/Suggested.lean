@@ -34,13 +34,13 @@ abbrev LogarithmicFunctions (k : Type*) [Field k] := LaurentSeries k × k
 namespace LogarithmicFunctions
 
 /-- The coefficient of `dz` in `d(f + a L)`, where `dL = dz/z`. -/
-def differential {k : Type*} [Field k] (F : LogarithmicFunctions k) :
+noncomputable def differential {k : Type*} [Field k] (F : LogarithmicFunctions k) :
     LaurentSeries k :=
   LaurentSeries.derivative k F.1 + HahnSeries.single (-1) F.2
 
 /-- The formal logarithmic coefficient decomposition embeds into the polynomial
 logarithm algebra by `f + a L`. -/
-def toPolynomial {k : Type*} [Field k] (F : LogarithmicFunctions k) :
+noncomputable def toPolynomial {k : Type*} [Field k] (F : LogarithmicFunctions k) :
     Polynomial (LaurentSeries k) :=
   Polynomial.C F.1 + Polynomial.C (HahnSeries.single 0 F.2) * Polynomial.X
 
@@ -81,13 +81,19 @@ example {k : Type*} [Field k] [CharZero k] :
   · intro c
     simp [differential, LaurentSeries.derivative]
 
-/-- The derivative of `2 + 3 L` has residue three, whereas `L²` cannot be represented
-in the degree-one space. This also tests the polynomial comparison's degree bound. -/
+/-- The derivative of `2 + 3 L` has residue three. The polynomial comparison sends
+the nonzero Laurent constant to its constant polynomial and the logarithmic generator
+to `X`, while excluding `X²` from its image. -/
 example :
     (differential ((HahnSeries.single 0 2, 3) : LogarithmicFunctions ℚ)).coeff (-1) = 3 ∧
+      toPolynomial ((HahnSeries.single 0 2, 0) : LogarithmicFunctions ℚ) =
+        Polynomial.C (HahnSeries.single 0 2) ∧
+      toPolynomial ((0, 1) : LogarithmicFunctions ℚ) = Polynomial.X ∧
       ∀ F : LogarithmicFunctions ℚ, toPolynomial F ≠ Polynomial.X ^ 2 := by
-  constructor
+  refine ⟨?_, ?_, ?_, ?_⟩
   · norm_num [differential, LaurentSeries.derivative]
+  · simp [toPolynomial]
+  · simp [toPolynomial]
   · intro F h
     have hc := congrArg (fun P : Polynomial (LaurentSeries ℚ) ↦ P.coeff 2) h
     simpa [toPolynomial] using hc
@@ -105,7 +111,7 @@ orientation reversal. `doubleIndex_scalarExtension` transports this value under
 coefficient embeddings; `doubleIndex_shrink` identifies analytic values on a
 common end annulus. Their signatures use the domain and transport constructions
 specified in README Layer 2. -/
-def doubleIndex {k : Type*} [Field k]
+noncomputable def doubleIndex {k : Type*} [Field k]
     (F G : LogarithmicFunctions k) : k :=
   (F.1 * LaurentSeries.derivative k G.1).coeff (-1) +
     G.2 * F.1.coeff 0 - F.2 * G.1.coeff 0

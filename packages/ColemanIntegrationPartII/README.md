@@ -223,6 +223,8 @@ Use Polynomial (LaurentSeries k) for the formal ring, with dL=z⁻¹. Integrate 
 
 - d(2+3L)=3 dz/z and Res=3; replacing the residue by the constant term of F fails.
 - dC=0 for every constant C and dL≠0, including over ℚ₂. In the coefficient presentation L=(0,1), a scalar is (C,0), and the residue of dL is 1, which a constant-only space would miss.
+- Over ℚ, `toPolynomial (single 0 2, 0) = Polynomial.C (single 0 2)`: the nonzero Laurent constant remains the same constant polynomial. A zero map would lose it.
+- Over ℚ, `toPolynomial (0, 1) = Polynomial.X`: the logarithmic generator maps to the polynomial variable. A map retaining only the Laurent part would send it to zero.
 - L² is in A_log but not A_log,1, since d(L²)=2L dz/z is not an analytic differential. Characteristic p would also make d(z^p)=0.
 
 ### 2.1a The analytic coefficient extension
