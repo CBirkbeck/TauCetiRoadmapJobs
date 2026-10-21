@@ -236,3 +236,83 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["library baseline", "period-rings"]
+
+[[source]]
+id = "TauCetiExactReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Quillen exact structures (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti/CategoryTheory/Exact/ExactStructure.lean; TauCeti.ExactStructure, TauCetiExactReview line 245–267"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/ExactStructure.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/ExactStructure.lean"
+fetched_at = "2026-10-21T01:37:15Z"
+sha256 = "3560cfe1db6cff65d5702a2347f5eea767c6f8cc7dac1b37d2fd44cf67e316ca"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiExactFunctorReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Conflation-exact functors (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti/CategoryTheory/Exact/Functor.lean; TauCeti.ExactStructure.IsConflationExact, TauCetiExactFunctorReview line 68–81"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Functor.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Functor.lean"
+fetched_at = "2026-10-21T01:37:31Z"
+sha256 = "aeeb2efe7e63064706ee6b655667d62e30099fc01ed3d017222abb69dbd9952f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TsujiNearby"
+authors = "Takeshi Tsuji"
+title = "On p-adic nearby cycles of log smooth families"
+year = 2000
+locator_scheme = "theorem"
+locator = "Theorems A3–A4, p. 563; Lemmas 4.3–4.4 and proof of Theorem 4.2, pp. 551–555; Proposition A15, p. 570; Lemmas 3.2 and 5.2, pp. 547,555–557; proof of Theorem 5.1, pp. 558–561; TsujiNearby line 679, line 805, line 873, line 892, line 954, line 1074, line 1211, line 1231, line 1442"
+url = "https://www.numdam.org/article/BSMF_2000__128_4_529_0.pdf"
+fetched_from = "https://www.numdam.org/article/BSMF_2000__128_4_529_0.pdf"
+fetched_at = "2026-10-21T01:37:32Z"
+sha256 = "179e127c8248ebe54728ec026b8ac518b39bbeb19b0a430c2ea6be602ca92ec1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["nearby-cycle-cartier", "nearby-cycle-graded", "4.3"]
+
+[[source]]
+id = "StacksRlim"
+authors = "The Stacks Project authors"
+title = "The Stacks Project: More on Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 07KV, Lemmas 15.88.1–15.88.2 (Tags 07KW and 0H31); StacksRlim line 10638–10675"
+url = "https://stacks.math.columbia.edu/tag/07KV"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=07KV"
+fetched_at = "2026-10-21T01:39:10Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["3.4 tail-tower Check"]
+
+[[source]]
+id = "TauCetiExtReview"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Abelian Ext functoriality (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti/Algebra/Homology/Ext/Basic.lean; abelian-category and HasExt binders, TauCetiExtReview line 54"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/Ext/Basic.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Homology/Ext/Basic.lean"
+fetched_at = "2026-10-21T01:39:21Z"
+sha256 = "0a1d68da1cdc2eaa66aa3f0f90ff7238e18338d33fe0a838fc768d8135e249a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["exact-yoneda", "library baseline"]
