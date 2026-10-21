@@ -2455,6 +2455,11 @@
               "name": "QWitt.framedJacksonDerivative_3",
               "kind": "non-example",
               "statement": "At q=1 in characteristic 2, D(T²)=0; the integral formula remains valid and does not divide by 2."
+            },
+            {
+              "name": "QWitt.framedJacksonDerivative_4",
+              "kind": "computation",
+              "statement": "For R=ℤ[T,T⁻¹] with the localization frame ℤ[T]→R, γ(T⁻¹)=q⁻¹T⁻¹ and D(T⁻¹)=−q⁻¹T⁻² in R[[h]]. This étale map is not finite: an integral equation for T⁻¹ would imply 1∈(T) in ℤ[T]. The ordinary derivative gives −T⁻² instead, agreeing only after q=1."
             }
           ],
           "proofSketch": "The divisibility and regularity in 8.2 permit unique cancellation. Expand γ_i(fg)−fg for the twisted product rule, use coordinate evaluation and finite geometric sums for monomials, and formal étaleness for the specialization and commutation identities.",
@@ -2468,7 +2473,7 @@
           "name": "QWitt.framedDifferenceComplex",
           "statement": "For the framing in 8.2 form C□=K(R[[h]];D_i) and H□=K(R[[h]];hD_i), with terms Ω^k_{R/A}[[h]] via the coordinate basis. Equip both with the ordered-wedge product (f dT_I)(g dT_J)=f γ_I(g) dT_I∧dT_J. This is associative, strictly alternating on coordinate one-forms and obeys the DG Leibniz rule. Modulo h, C□ is the de Rham complex; H□ is Ω*_{R/A} with zero differential.",
           "hypotheses": [
-            "A any commutative ring; finite étale framing as in 8.2; all complexes are nonnegative cochain complexes."
+            "A any commutative ring; étale framing with finitely many coordinates as in 8.2; all complexes are nonnegative cochain complexes."
           ],
           "locator": {
             "source": "wagner",
@@ -2528,7 +2533,7 @@
           "id": "8.5",
           "kind": "construction",
           "name": "QWitt.framedFrobenius",
-          "statement": "If A is perfectly covered and R has the finite étale framing □, for every prime p construct the unique continuous ψ_p-semilinear Frobenius lift φ□ on R̂_p with T_i↦T_i^p. Extend it to R̂_p[[h]] by q↦q^p. On H□ completed degreewise at p it gives a semilinear DGA map with φ□(dT_i)=T_i^(p−1)dT_i, commuting with each γ_i. On C□ the corresponding chain map instead sends dT_i↦[p]_q T_i^(p−1)dT_i.",
+          "statement": "If A is perfectly covered and R has the étale framing with finitely many coordinates □, for every prime p construct the unique continuous ψ_p-semilinear Frobenius lift φ□ on R̂_p with T_i↦T_i^p. Extend it to R̂_p[[h]] by q↦q^p. On H□ completed degreewise at p it gives a semilinear DGA map with φ□(dT_i)=T_i^(p−1)dT_i, commuting with each γ_i. On C□ the corresponding chain map instead sends dT_i↦[p]_q T_i^(p−1)dT_i.",
           "hypotheses": [
             "A perfectly covered; R étale over A[T₁,…,T_r]; p prime. Completion is (p,h); all relevant coefficient rings are discrete."
           ],
@@ -2598,7 +2603,7 @@
           "name": "QWitt.framedFrobeniusDecomposition",
           "statement": "Under 8.5 and for α≥0 put B_α=(φ□^α(R̂_p)⊗_{ψ_p^α(Â_p)}Â_p)^∧_p. Its map to R̂_p is injective and R̂_p is free over B_α with basis T^v, 0≤v_i<p^α. After adjoining h, the p-completed H□ decomposes as a finite direct sum by v, with degree-k basis T^v times the wedges of T_j^(−1)dT_j, interpreted as T_j^(p^α−1)dT_j when v_j=0. After reduction q^(p^α)−1, the v-summand is a tensor product of two-term factors with differential q^(v_i)−1 (zero for v_i=0).",
           "hypotheses": [
-            "A perfectly covered; finite étale framing; p prime; α≥0; inverse powers in the notation are replaced by the explicit nonnegative monomials."
+            "A perfectly covered; étale framing with finitely many coordinates; p prime; α≥0; inverse powers in the notation are replaced by the explicit nonnegative monomials."
           ],
           "locator": {
             "source": "wagner",
@@ -2702,9 +2707,9 @@
           "id": "9.4",
           "kind": "construction",
           "name": "QWitt.framedBockstein",
-          "statement": "For a perfectly covered Λ-ring A and finite étale framing □ of R/A, put f_m=q^m−1 and E_m=H*(H□/f_m). Since f_m is injective in every term of H□, specialize the generic DGA Bockstein to β_m:E_m^i→E_m^(i+1), with β_m([x])=[d_H(x)/f_m]. It is independent of the cycle lift, squares to zero and is a degree-one derivation. For d|m the reduction F and multiplication V=[m/d]_{q^d} satisfy Fβ_mV=β_d.",
+          "statement": "For a perfectly covered Λ-ring A and étale framing with finitely many coordinates □ of R/A, put f_m=q^m−1 and E_m=H*(H□/f_m). Since f_m is injective in every term of H□, specialize the generic DGA Bockstein to β_m:E_m^i→E_m^(i+1), with β_m([x])=[d_H(x)/f_m]. It is independent of the cycle lift, squares to zero and is a degree-one derivation. For d|m the reduction F and multiplication V=[m/d]_{q^d} satisfy Fβ_mV=β_d.",
           "hypotheses": [
-            "A perfectly covered; R has a specified finite étale framing; m,d>0 and d divides m."
+            "A perfectly covered; R has a specified étale framing with finitely many coordinates; m,d>0 and d divides m."
           ],
           "locator": {
             "source": "wagner",
@@ -2759,9 +2764,9 @@
           "id": "9.5",
           "kind": "theorem",
           "name": "QWitt.framedCohomologySystem",
-          "statement": "For A perfectly covered and a finite étale framing □, put E_m=H*(H□/(q^m−1)) with β_m from 9.4. Then E_m is ℤ-torsion-free, strictly alternating and graded commutative. Give it its canonical Q_m(R/A)→E_m⁰ map, F_{m/d} induced by quotient reduction and V_{m/d} induced by multiplication [m/d]_{q^d}. This is a differential q-FV system. Its canonical Q_mΩ*→E_m map is induced by initiality.",
+          "statement": "For A perfectly covered and an étale framing with finitely many coordinates □, put E_m=H*(H□/(q^m−1)) with β_m from 9.4. Then E_m is ℤ-torsion-free, strictly alternating and graded commutative. Give it its canonical Q_m(R/A)→E_m⁰ map, F_{m/d} induced by quotient reduction and V_{m/d} induced by multiplication [m/d]_{q^d}. This is a differential q-FV system. Its canonical Q_mΩ*→E_m map is induced by initiality.",
           "hypotheses": [
-            "A perfectly covered; R has a specified finite étale framing; m>0; all quotients are degreewise ordinary since q^m−1 is regular on the terms."
+            "A perfectly covered; R has a specified étale framing with finitely many coordinates; m>0; all quotients are degreewise ordinary since q^m−1 is regular on the terms."
           ],
           "locator": {
             "source": "wagner",
@@ -2899,7 +2904,7 @@
             {
               "name": "QWitt.smoothDeRhamComparison_primePower",
               "role": "specialization",
-              "statement": "For n=1, the sole d=1 factor is (Ω*_{R/A}⊗ᴸ_{A,ψ_{p^α}}A[q]/(q^(p^α)−1))^∧_p, and on a finite étale frame its equivalence agrees with §9.6(c)."
+              "statement": "For n=1, the sole d=1 factor is (Ω*_{R/A}⊗ᴸ_{A,ψ_{p^α}}A[q]/(q^(p^α)−1))^∧_p, and on an étale frame with finitely many coordinates its equivalence agrees with §9.6(c)."
             },
             {
               "name": "QWitt.smoothDeRhamComparison_natural",
@@ -3181,7 +3186,7 @@
         "9.6",
         "9.7"
       ],
-      "detail": "For perfectly covered A, p prime and a finite étale framing, D=Â_p[[h]], q=1+h, I=([p]_q) is the bounded q-de Rham prism. Supply the q-PD envelope and comparison with C□^∧_p, identify the explicit coordinate map from 8.5 with prismatic Frobenius, and supply φ^{α*}Δ≃Lη_{Iφ(I)⋯φ^{α−1}(I)}Δ for α≥0, with completed scalar extension, plus its reduction/Bockstein comparison. The general Lη and q-PD theory belongs to that supplier and its existing dependencies. Sources: bhatt-scholze v4 Theorem 15.3, p. 103, bhatt-scholze line 3898; Constructions 16.19–16.20, p. 114, bhatt-scholze line 4316; Theorem 16.22, p. 115, bhatt-scholze line 4378; wagner v5 Lemma 4.32, p. 70, wagner line 3459. This input is not the q-fixed coefficient equivalence of Layer 6. For §9.7 require also p-completely ind-smooth δ-presentations, their δ-compatible PD envelopes, and the multiplicative crystalline Poincaré comparison from the completed PD de Rham complex to (Ω*_{R/A})^∧_p, functorial in presentations (wagner v5 §4.34, p. 71, wagner lines 3492–3517).",
+      "detail": "For perfectly covered A, p prime and an étale framing with finitely many coordinates, D=Â_p[[h]], q=1+h, I=([p]_q) is the bounded q-de Rham prism. Supply the q-PD envelope and comparison with C□^∧_p, identify the explicit coordinate map from 8.5 with prismatic Frobenius, and supply φ^{α*}Δ≃Lη_{Iφ(I)⋯φ^{α−1}(I)}Δ for α≥0, with completed scalar extension, plus its reduction/Bockstein comparison. The general Lη and q-PD theory belongs to that supplier and its existing dependencies. Sources: bhatt-scholze v4 Theorem 15.3, p. 103, bhatt-scholze line 3898; Constructions 16.19–16.20, p. 114, bhatt-scholze line 4316; Theorem 16.22, p. 115, bhatt-scholze line 4378; wagner v5 Lemma 4.32, p. 70, wagner line 3459. This input is not the q-fixed coefficient equivalence of Layer 6. For §9.7 require also p-completely ind-smooth δ-presentations, their δ-compatible PD envelopes, and the multiplicative crystalline Poincaré comparison from the completed PD de Rham complex to (Ω*_{R/A})^∧_p, functorial in presentations (wagner v5 §4.34, p. 71, wagner lines 3492–3517).",
       "needs": "Required from PrismaticCohomology: Frobenius-compatible framed q-prismatic comparison and the PD-presentation comparison.",
       "supplier": "PrismaticCohomology",
       "section": "q-PD, framed Frobenius and PD-presentation interfaces"
