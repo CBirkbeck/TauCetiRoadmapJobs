@@ -26,7 +26,7 @@ example : (-1 : Matrix.GeneralLinearGroup (Fin 1) (PadicInt 3)) ∉
   have hentry := congrArg
     (fun A : Matrix.GeneralLinearGroup (Fin 1) (ZMod 3) => A 0 0) h
   change (PadicInt.toZMod : PadicInt 3 →+* ZMod 3) (-1) = 1 at hentry
-  norm_num at hentry
+  norm_num [ZMod.neg_one_eq_one_iff] at hentry
 
 /-- The control `prime2_negative`: at two the kernel contains a nontrivial involution. -/
 example : (-1 : Matrix.GeneralLinearGroup (Fin 1) (PadicInt 2)) ∈

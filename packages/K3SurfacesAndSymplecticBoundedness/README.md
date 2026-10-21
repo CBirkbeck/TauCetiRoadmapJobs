@@ -625,6 +625,9 @@ Prove the following interface laws: `polarizedAut.mem_iff`: Membership is f*L≅
 - `polarized_identity`: id fixes [L] for every L; the stabilizer condition is equality of classes, without extra scalar-isomorphism data.
 - `scalar_choices`: Multiplying a chosen isomorphism f*L≅L by k× does not create additional automorphisms.
 - `power_stabilizer`: Aut(X,[Lⁿ])=Aut(X,[L]) for n>0 by torsion-freeness of Pic.
+- `polarized_wehler_positive`: On the complex Wehler surface of §5.4, H₁ is ample since the first projection is finite. The equality σ₁*H₁=H₁ puts σ₁ in Aut(X,[H₁]).
+- `polarized_wehler_negative`: H₂ is also ample, but σ₁*H₂=4H₁−H₂≠H₂: the Gram determinant −12 makes H₁,H₂ independent. Thus σ₁ is outside Aut(X,[H₂]); the full automorphism group would fail this test.
+- `polarized_symplectic_intersection`: The same σ₁ lies in Aut(X,[H₁]) but outside SymplecticAut(X,[H₁]), since its canonical scalar is −1 over ℂ.
 
 ### 5.3 Finite étale polarized automorphism schemes
 
@@ -882,6 +885,8 @@ Prove `IsK3.tameInvolutionLift`. For a geometric K3 X in characteristic p>0 with
 
 The fixed marked deformation space is formally smooth over W(k), with tangent H¹(T_X)^g. The eight-point trace in §6.2 gives invariant H² rank 14; crystalline cross-realization and equivariant Hodge degeneration give dim H¹(Ω¹)^g=12 and hence dim H¹(T_X)^g=12 by contraction with the invariant volume form. Choose the norm ample line A⊗g*A, with its canonical involution linearization. Its pair locus inside the fixed formal space is defined by one equation. To prove that equation is not divisible by p, assume extension over the entire characteristic-p fixed deformation and apply the primitive crystalline normalization of §2.6. The normalized class is still g-invariant since the crystalline module is torsion-free. If its reduction lies in F², contraction identifies the graded Gauss–Manin map along the nonzero invariant tangent space with multiplication by the volume form, giving a contradiction to horizontality. Otherwise its nonzero class in (F¹/F²)^g pairs nontrivially with H¹(T_X)^g: Serre duality is equivariant and averaging is exact since 2 is invertible. This again contradicts horizontality. Thus the pair locus is flat. Take a mixed-characteristic trait through its closed point and algebraise the polarized equivariant formal family by the supplier contract. The scalar on the lifted canonical line has square one and reduces to +1; since 2 is invertible it is +1.
 
+*Needs:* §2.3 `IsK3.noVectorFields`; §2.4 `IsK3.hodgeAndCrystallineRanks`; §2.5 `IsK3.formalDeformation`; §2.6 `IsK3.lineBundleDeformationDivisor`; §3.4 `IsK3.integralEtaleRanks`; §6.2 `IsK3.tameSymplectic_fixedPoints`; `gap:tame-equivariant-deformations`; `gap:crystalline-chern-derivative`; `gap:cross-realization`; SchemeAndStackFoundations §§4.1–4.6 and §4.10; CrystallineCohomology CR.7.3.
+
 **Checks.**
 
 - `involution_lift_tangent`: Trace 6 on H² gives invariant rank (22+6)/2=14; subtracting the invariant H²(O) and H⁰(Ω²) gives tangent dimension 12, not 20.
@@ -892,7 +897,7 @@ Prove `IsK3.symplecticInvolution_genusOnePencil`. For a K3 surface X over an alg
 
 Apply `IsK3.tameInvolutionLift`, spread its polarized generic fibre and involution to a finitely generated characteristic-zero field and compare over ℂ. Lefschetz gives trace 6 on H² and an anti-invariant subspace of dimension (22−6)/2=8. Symplecticity makes that rational subspace of type (1,1); the exponential-sequence description in §3.3 makes it algebraic. An invariant ample class is independent of it, giving generic Picard rank at least 9 (huybrechts Chapter 15 §1.2, lines 11901–11908). The injective intersection-preserving `IsK3.picardSpecialization` of §4.1 gives ρ(X)≥9. Apply §6.0b. The integral modulo-2 inference in dolgachev-keum lines 643–647 is not a premise of this proof.
 
-*Needs:* §2.3 `IsK3.noVectorFields`; §2.4 `IsK3.hodgeAndCrystallineRanks`; §2.5 `IsK3.formalDeformation`; §2.6 `IsK3.lineBundleDeformationDivisor`; §3.3 `IsK3.complexIntegralBetti`; §3.4 `IsK3.integralEtaleRanks`; §4.1 `IsK3.picardSpecialization`; §4.2 `IsK3.picardLattice`; §6.2 `IsK3.tameSymplectic_fixedPoints`; §6.0b `IsK3.genusOnePencil_of_rank_ge_five`; `gap:tame-equivariant-deformations`; `gap:crystalline-chern-derivative`; `gap:cross-realization`; SchemeAndStackFoundations §§4.1–4.6 and §4.10; CrystallineCohomology CR.7.3.
+*Needs:* §6.7d `IsK3.tameInvolutionLift`; §3.3 `IsK3.complexIntegralBetti`; §3.4 `IsK3.integralEtaleRanks`; §4.1 `IsK3.picardSpecialization`; §4.2 `IsK3.picardLattice`; §6.2 `IsK3.tameSymplectic_fixedPoints`; §6.0b `IsK3.genusOnePencil_of_rank_ge_five`.
 
 **Checks.**
 
