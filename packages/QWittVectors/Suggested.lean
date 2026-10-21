@@ -126,30 +126,15 @@ open scoped BigOperators
 /-! ## Layer 6: Completed coefficient Frobenius and cyclotomic overlaps -/
 
 /-- Consecutive p-cyclotomic completion ideals have the same radical over any base ring.
-The characteristic-p cyclotomic power identities cover both p dividing d and p not dividing d. -/
+The characteristic-p cyclotomic power identities cover both p dividing d and p not dividing d;
+at d = 0 both ideals are the unit ideal. -/
 theorem cyclotomicCompletedFrobenius_ideals
-    (A : Type*) [CommRing A] (p d : ℕ) [Fact p.Prime] (hd : 0 < d) :
+    (A : Type*) [CommRing A] (p d : ℕ) [Fact p.Prime] :
     (Ideal.span ({Polynomial.C (p : A), Polynomial.cyclotomic d A} :
       Set (Polynomial A))).radical =
     (Ideal.span ({Polynomial.C (p : A), Polynomial.cyclotomic (p * d) A} :
       Set (Polynomial A))).radical := by
   sorry
-
-/-- At the prime two the first two cyclotomic factors coincide after reduction. -/
-theorem cyclotomicCompletedFrobenius_charTwo :
-    Polynomial.cyclotomic 2 (ZMod 2) = Polynomial.X - 1 := by
-  letI : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
-  simpa [Polynomial.cyclotomic_one] using
-    (Polynomial.cyclotomic_mul_prime_eq_pow_of_not_dvd (ZMod 2)
-      (p := 2) (n := 1) (by norm_num))
-
-/-- At the prime three the third cyclotomic factor has a double root at one. -/
-theorem cyclotomicCompletedFrobenius_charThree :
-    Polynomial.cyclotomic 3 (ZMod 3) = (Polynomial.X - 1) ^ 2 := by
-  letI : Fact (Nat.Prime 3) := ⟨Nat.prime_three⟩
-  simpa [Polynomial.cyclotomic_one] using
-    (Polynomial.cyclotomic_mul_prime_eq_pow_of_not_dvd (ZMod 3)
-      (p := 3) (n := 1) (by norm_num))
 
 /-- Equal radicals do not imply equal cyclotomic completion ideals, already over the integers. -/
 theorem cyclotomicCompletedFrobenius_ideals_ne :

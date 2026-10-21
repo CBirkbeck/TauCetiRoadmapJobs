@@ -37,7 +37,7 @@ The dependency pin is Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
 - `WittVector.verschiebung`, `WittVector.verschiebung_coeff_succ` and `WittVector.verschiebung_injective` in `Mathlib/RingTheory/WittVector/Verschiebung.lean`; `WittVector.teichmuller` and `WittVector.ghostComponent_teichmuller` in `Mathlib/RingTheory/WittVector/Teichmuller.lean`. They have p-typical scope only.
 - `Algebra.TensorProduct.includeRight` in `Mathlib/RingTheory/TensorProduct/Basic.lean` fixes the right scalar factor of the algebra tensor product; `Algebra.Etale` and `Algebra.FormallyEtale` in `Mathlib/RingTheory/Etale/Basic.lean` fix the étale predicates; `KaehlerDifferential`, `KaehlerDifferential.D`, `KaehlerDifferential.linearMapEquivDerivation` in `Mathlib/RingTheory/Kaehler/Basic.lean` supply degree-one differentials; `PowerSeries`, `PowerSeries.coeff`, `PowerSeries.constantCoeff`, `PowerSeries.algebraPowerSeries` in `Mathlib/RingTheory/PowerSeries/Basic.lean` supply complete series carriers and their scalar action; `PowerSeries.isUnit_iff_constantCoeff` in `Mathlib/RingTheory/PowerSeries/Inverse.lean` supplies the unit criterion used in §9.2; `Polynomial.cyclotomic` in `Mathlib/RingTheory/Polynomial/Cyclotomic/Basic.lean` supplies Φ_n. In the same file, `Polynomial.prod_cyclotomic_eq_X_pow_sub_one` and `Polynomial.prod_cyclotomic_eq_geom_sum` give, for n>0 over every commutative ring, the divisor product q^n−1 and the product with the index 1 omitted equal to [n]_q.
 
-- `Polynomial.cyclotomic_mul_prime_eq_pow_of_not_dvd`, `Polynomial.cyclotomic_mul_prime_dvd_eq_pow`, `Polynomial.cyclotomic_expand_eq_cyclotomic_mul` and `Polynomial.cyclotomic_expand_eq_cyclotomic` in `Mathlib/RingTheory/Polynomial/Cyclotomic/Expand.lean` supply the characteristic-p powers and integral prime-expansion identities. The first pair requires a prime p and characteristic p; the second pair works over any commutative ring. The p-divisibility hypothesis selects the appropriate identity.
+- `Polynomial.cyclotomic_zero` and `Polynomial.cyclotomic_one` in `Mathlib/RingTheory/Polynomial/Cyclotomic/Basic.lean` give Φ_0=1 and Φ_1=q−1. `Polynomial.cyclotomic_mul_prime_eq_pow_of_not_dvd`, `Polynomial.cyclotomic_mul_prime_dvd_eq_pow`, `Polynomial.cyclotomic_expand_eq_cyclotomic_mul` and `Polynomial.cyclotomic_expand_eq_cyclotomic` in `Mathlib/RingTheory/Polynomial/Cyclotomic/Expand.lean` supply the characteristic-p powers and integral prime-expansion identities. The first pair requires a prime p and characteristic p; the second pair works over any commutative ring. The p-divisibility hypothesis selects the appropriate identity. At d=1 the first identity gives Φ_2=q−1 over 𝔽₂ and Φ_3=(q−1)² over 𝔽₃, the polynomial boundary cases in §6.2.
 
 ### From Tau Ceti
 
@@ -777,9 +777,9 @@ Prove `QWitt.cyclotomicCompletedFrobenius`. For A,R,p as in 6.1 and every d>0 th
 
 Prove `cyclotomicCompletedFrobenius_q`: The equivalence fixes q and the right A-factor.
 
-Prove `QWitt.cyclotomicCompletedFrobenius_ideals`: For every commutative A, prime p and d>0, the ideals (p,Φ_d) and `(p,Phi_{pd})` have equal radicals in A[q], giving the same derived completion functor, by Mathlib `Polynomial.cyclotomic_mul_prime_eq_pow_of_not_dvd`, `Polynomial.cyclotomic_mul_prime_dvd_eq_pow` and DerivedModuleAlgebra §1.2 `isDerivedCompleteRadical`, §1.3.
+Prove `QWitt.cyclotomicCompletedFrobenius_ideals`: For every commutative A, prime p and natural number d, including zero, the ideals (p,Φ_d) and `(p,Phi_{pd})` have equal radicals in A[q], giving the same derived completion functor, by Mathlib `Polynomial.cyclotomic_zero`, `Polynomial.cyclotomic_mul_prime_eq_pow_of_not_dvd`, `Polynomial.cyclotomic_mul_prime_dvd_eq_pow` and DerivedModuleAlgebra §1.2 `isDerivedCompleteRadical`, §1.3. At d=0 both ideals are the unit ideal; the coefficient Frobenius equivalence above retains d>0.
 
-Prove the boundary targets `QWitt.cyclotomicCompletedFrobenius_charTwo` and `QWitt.cyclotomicCompletedFrobenius_charThree`: Over 𝔽₂ and 𝔽₃, respectively, Φ_2=q−1 and Φ_3=(q−1)². Prove `QWitt.cyclotomicCompletedFrobenius_ideals_ne`: The ideals (3,Φ_3) and (3,q−1) in ℤ[q] are unequal despite their equal radicals. These are the two cyclotomic Checks below on existing polynomial and ideal carriers (same Mathlib identities; Wagner–Habiro §2.7, pp. 15–16, wagner-habiro line 647).
+Prove `QWitt.cyclotomicCompletedFrobenius_ideals_ne`: The ideals (3,Φ_3) and (3,q−1) in ℤ[q] are unequal despite their equal radicals. This is the ideal boundary target in the second Check below, on existing polynomial and ideal carriers (Mathlib characteristic-p cyclotomic identities; Wagner–Habiro §2.7, pp. 15–16, wagner-habiro line 647).
 
 Prove `cyclotomicCompletedFrobenius_baseChange`: The equivalence is the ψ_d-base change of 6.1 followed by the common completion; it commutes with morphisms of étale A-algebras.
 
@@ -791,6 +791,7 @@ Prove `cyclotomicCompletedFrobenius_baseChange`: The equivalence is the ψ_d-bas
 
 - For p=2,d=1, Φ_1=q−1 and Φ_2=q+1 become equal modulo 2.
 - For p=3,d=1, Φ_3 mod 3=(q−1)²; (3,Φ_3) and (3,q−1) have the same radical but are not equal in ℤ[q].
+- For d=0, Φ_0=Φ_(p·0)=1, so both ideals are A[q] and both derived completion functors are zero. With A=ℤ, replacing Φ_0 by Φ_1 would give the proper ideal (p,q−1) instead.
 - For R=0 both sides are zero, and for R=A the map is the canonical twisted-base equivalence.
 
 ### 6.3 Completed ghost Frobenius
