@@ -142,7 +142,7 @@
           "id": "1.3",
           "kind": "construction",
           "name": "FilFMIC.exactStructure",
-          "statement": "Equip FilFMIC with a TauCeti.ExactStructure whose conflations 0→H′→H→H″→0 are exact on F^j of the de Rham realization for every j∈ℤ. Compare with strict exactness and the induced rigid exact sequence. Tensoring with each fixed object, duality (viewed from the opposite exact category) and the pullbacks and equivalences of 1.2 satisfy TauCeti.ExactStructure.IsConflationExact. On the supplied general Yoneda construction export Ext^i(H,H′) for i≥0, Baer addition, Q_p-linearity, splicing, pushout, pullback and coefficient-category naturality.",
+          "statement": "Equip FilFMIC with a TauCeti.ExactStructure whose conflations 0→H′→H→H″→0 are exact on F^j of the de Rham realization for every j∈ℤ. Compare with strict exactness and the induced rigid exact sequence. Prove TauCeti.ExactStructure.IsMonoidal for this exact structure and the symmetric Q_p-bilinear tensor of 1.2. Duality from TauCeti.ExactStructure.op and the pullbacks and equivalences of 1.2 satisfy TauCeti.ExactStructure.IsConflationExact. On the supplied general Yoneda construction export Ext^i(H,H′) for i≥0, Baer addition, Q_p-linearity, splicing, pushout, pullback and coefficient-category naturality.",
           "hypotheses": [
             "p is prime; V is a complete mixed-characteristic (0,p) DVR with perfect residue field k; K=Frac(V), K0=Frac(W(k))",
             "in addition V has an endomorphism F_V inducing x↦x^p modulo pV; S=Spec(B) is smooth affine over V; σ:B†→B† extends F_V and induces x↦x^p modulo pB†",
@@ -158,13 +158,20 @@
             "gap:exact-yoneda",
             "gap:relative-rigid-coefficients",
             "tauceti:TauCeti.ExactStructure",
-            "tauceti:TauCeti.ExactStructure.IsConflationExact"
+            "tauceti:TauCeti.ExactStructure.IsConflationExact",
+            "tauceti:TauCeti.ExactStructure.IsMonoidal",
+            "tauceti:TauCeti.ExactStructure.op"
           ],
           "api": [
             {
               "name": "FilFMIC.conflation_iff",
               "role": "characterisation",
               "statement": "A short sequence is a conflation exactly when each F^j sequence is exact."
+            },
+            {
+              "name": "FilFMIC.exactStructure_isMonoidal",
+              "role": "structure",
+              "statement": "The tensor of 1.2 preserves conflations on both sides, giving TauCeti.ExactStructure.IsMonoidal for FilFMIC.exactStructure."
             },
             {
               "name": "FilFMIC.ext_map",
@@ -266,7 +273,7 @@
             {
               "name": "FilFMIC.syntomicConnectionComplex_zero",
               "kind": "degenerate",
-              "statement": "S(0)=0. The two-term fibre of multiplication 2 on Q is [Q —2→ Q] and is acyclic, including the sign on its second differential."
+              "statement": "S(0)=0. The two-term fibre of multiplication 2 on Q is [Q —2→ Q], with d(a)=(0,2a), the second component carrying +f(a); it is acyclic since 2 is invertible in Q."
             }
           ]
         },
@@ -406,7 +413,6 @@
             "where": "§5 and §4.22, manuscript pp. 16–18; BesserI line 625, BesserI line 648, BesserI line 663"
           },
           "prerequisites": [
-            "gap:base-ownership",
             "gap:rigid-realizations",
             "roadmap:AdicSpacesPartIV §F1.7",
             "roadmap:RigidAnalyticGeometry §8.1",
@@ -747,10 +753,11 @@
           "id": "3.4",
           "kind": "construction",
           "name": "LogSyntomic.presentationsAndCompletion",
-          "statement": "For an étale-local exact log immersion into a log-smooth W(k)-scheme with compatible Frobenius lifts, identify S_n(r),S′_n(r) with the corresponding log-PD-envelope de Rham fibres, using J^⟨r−j⟩ or J^[r−j] in degree j and the total Frobenius on forms. Prove independence of immersion and lifts and coherent gluing. For an arithmetic pair (U,Ubar) log-smooth over V with canonical log structure, set RΓ_syn(U,Ubar,r)=Rlim_n RΓ(S′_n(r)) and RΓ_syn,Q=RΓ_syn⊗Q_p. Construct the rational equivalence to Fib((1−φ/p^r,can):RΓ_cr,Q→RΓ_cr,Q⊕RΓ_dR/F^r), using the filtered crystalline/de Rham quotient comparison. Both integral families become equivalent after rationalization via ω and τ, with the required p^r rescaling visible.",
+          "statement": "For an étale-local exact log immersion into a log-smooth W(k)-scheme with compatible Frobenius lifts, identify S_n(r),S′_n(r) with the corresponding log-PD-envelope de Rham fibres, using J^⟨r−j⟩ or J^[r−j] in degree j and the total Frobenius on forms. Prove independence of immersion and lifts and coherent gluing. For every log-syntomic X/W(k) of 3.2 define RΓ_syn(X,r)=Rlim_n RΓ(X_et,S′_n(r)), its divided analogue RΓ_syn,div(X,r)=Rlim_n RΓ(X_et,S_n(r)), and their rationalizations by tensoring with Q_p; S_n and S′_n on X_et mean their derived pushforwards from 3.2. Write RΓ_log-syn(X,Q_p(r)) for the rational undivided complex. For an arithmetic pair (U,Ubar) log-smooth over canonical-log V, apply this construction to its boundary-log model. On this arithmetic-pair domain construct the rational equivalence to Fib((1−φ/p^r,can):RΓ_cr,Q→RΓ_cr,Q⊕RΓ_dR/F^r), using the filtered crystalline/de Rham quotient comparison. Both integral families become equivalent after rationalization via ω and τ, with the required p^r rescaling visible.",
           "hypotheses": [
             "p is prime; V is a complete mixed-characteristic (0,p) DVR with perfect residue field k; K=Frac(V), K0=Frac(W(k))",
             "n≥1; r≥0",
+            "Completed and rational complexes are defined for every log-syntomic X/W(k) as in 3.2; the NN reduction and quotient-fibre assertions retain their arithmetic-pair hypotheses",
             "An arithmetic pair is a dense open K-variety inside a reduced proper flat V-scheme, with fine integral quasi-coherent boundary log structure",
             "Log-smoothness and the existence of local exact log-PD presentations are retained"
           ],
@@ -785,7 +792,7 @@
             {
               "name": "LogSyntomic.rationalFiber",
               "role": "evaluation",
-              "statement": "The second target component is the derived quotient RΓ_dR/F^r, with its canonical quotient map."
+              "statement": "On the NN arithmetic-pair domain, the second target component is the derived quotient RΓ_dR/F^r, with its canonical quotient map."
             }
           ],
           "tests": [
@@ -803,6 +810,11 @@
               "name": "LogSyntomic.presentationsAndCompletion_tower",
               "kind": "non-example",
               "statement": "For A_n=⊕_(j≥n) F_p (n≥0) with inclusion transitions, lim A_n=0 but H¹(Rlim A_n)=lim¹ A_n≃(∏_(j≥0) F_p)/(⊕_(j≥0) F_p)≠0; the class of (1,1,…) is nonzero. Indeed, 0→A_n→B→C_n→0 with constant B=⊕_(j≥0) F_p and C_n=⊕_(j<n) F_p gives lim C_n=∏ F_p and lim¹ B=lim¹ C_n=0, since both latter towers are Mittag–Leffler. Replacing Rlim by lim would erase this H¹ (StacksRlim, Tag 07KV, Lemmas 15.88.1–15.88.2, StacksRlim line 10638–10675)."
+            },
+            {
+              "name": "LogSyntomic.presentationsAndCompletion_horizontalPoint",
+              "kind": "computation",
+              "statement": "For X=Spec(Z_p) with trivial log structure, r=0 and k=F_p, the divided and undivided towers are [Z/p^n —0→ Z/p^n], with surjective reduction maps. Their completed complexes are [Z_p —0→ Z_p] and their rationalizations have H⁰=H¹=Q_p. This horizontal-log carrier is defined without imposing a vertical boundary."
             }
           ]
         }
@@ -828,8 +840,7 @@
           },
           "prerequisites": [
             "roadmap:EtaleCohomologyFoundations §F.0.3",
-            "roadmap:EtaleCohomologyFoundations §F.4.1–§F.4.5",
-            "gap:period-rings"
+            "roadmap:EtaleCohomologyFoundations §F.4.1–§F.4.5"
           ],
           "api": [
             {
@@ -1143,7 +1154,6 @@
           },
           "prerequisites": [
             "gap:hyodo-kato-proper",
-            "gap:base-ownership",
             "mathlib:WittVector.Isocrystal"
           ],
           "api": [
@@ -1182,7 +1192,7 @@
             {
               "name": "ClassicalSyntomic.hyodoKatoAdapter_cartierNecessary",
               "kind": "non-example",
-              "statement": "For p∤m and m>1, the log chart 1↦m on Spec(k[t]/t^m) is log-smooth but not Cartier type; φ(t)=t^p on its rational crystalline H⁰ need not be invertible (HK §3.3). It cannot supply an Isocrystal instance."
+              "statement": "For p∤m and m>1, the log chart 1↦m on Spec(k[t]/t^m) is log-smooth but not Cartier type; φ(t)=t^p on its rational crystalline H⁰ is not bijective for every such m>1 (HK (3.3), HK line 738–739). It cannot supply an Isocrystal instance."
             }
           ]
         },
@@ -1204,7 +1214,6 @@
             "target:3.4",
             "target:5.1",
             "gap:arithmetic-pair-deformation",
-            "gap:base-ownership",
             "roadmap:EnhancedDerivedSheaves §§0.1–0.4"
           ],
           "api": [
@@ -1266,7 +1275,6 @@
             "target:3.4",
             "target:5.2",
             "gap:rational-descent",
-            "gap:base-ownership",
             "gap:rigid-realizations"
           ],
           "api": [
@@ -1481,7 +1489,7 @@
             {
               "name": "RelativeCohomology.goodCompactification_collision",
               "kind": "non-example",
-              "statement": "For p odd, the horizontal sections x=0 and x=t over A¹_V collide at t=0. Their union is not a relative normal-crossings divisor over S there, even if the total-space crossing is normal. This does not give a goodCompactification witness for that S."
+              "statement": "The horizontal sections x=0 and x=t over A¹_V collide at t=0. Their union is not a relative normal-crossings divisor over S there, even if the total-space crossing is normal. This does not give a goodCompactification witness for that S."
             }
           ]
         },
@@ -1908,7 +1916,7 @@
           "id": "7.4",
           "kind": "theorem",
           "name": "ClassicalSyntomic.logRigidComparison",
-          "statement": "Let Y be smooth projective over W(k), D a relative normal-crossings divisor, M the horizontal log structure induced by D alone, over W(k) with trivial log structure, and U=Y−D. For every r≥0 construct RΓ_log-syn((Y,M),Q_p(r))≃RΓ_rsyn(U,r), inducing the AM cohomology comparison in every degree. Identify both with the fibre of F^rRΓ_log-dR(Y_K,M_K)→RΓ_log-cr(Y_k,M_k) with arrow (1−φ/p^r) composed with the de Rham/crystalline map. Prove compatibility with products and the period maps on the shared base carriers, and with pullback of such pairs. No regulator or symbol map is a premise.",
+          "statement": "Let Y be smooth projective over W(k), D a relative normal-crossings divisor, M the horizontal log structure induced by D alone, over W(k) with trivial log structure, and U=Y−D. For every r≥0 construct RΓ_log-syn((Y,M),Q_p(r))≃RΓ_rsyn(U,r), inducing the AM cohomology comparison in every degree. Identify both with the fibre of F^rRΓ_log-dR(Y_K,M_K)→RΓ_log-cr(Y_k,M_k) with arrow (1−φ/p^r) composed with the de Rham/crystalline map. Prove compatibility with products, pullback of such pairs and the étale period maps: the horizontal-log and rigid periods supplied by `rigid-syntomic-etale-period`. No regulator or symbol map is a premise.",
           "hypotheses": [
             "p prime; k perfect of characteristic p; V=W(k)",
             "Y/W(k) projective smooth; D relative normal-crossings; U=Y−D; the log structure is from D alone, not D∪Y0",
@@ -1923,9 +1931,8 @@
             "target:3.2",
             "target:3.4",
             "gap:rigid-realizations",
-            "gap:base-ownership",
-            "gap:period-rings",
-            "gap:rigid-log-crystalline"
+            "gap:rigid-log-crystalline",
+            "gap:rigid-syntomic-etale-period"
           ],
           "api": [
             {
@@ -1986,7 +1993,8 @@
             "target:6.7",
             "target:7.3",
             "target:7.4",
-            "target:2.3"
+            "target:2.3",
+            "gap:rigid-syntomic-etale-period"
           ],
           "api": [
             {
@@ -2030,7 +2038,7 @@
     {
       "roadmap": "CohomologyComparisons",
       "sections": [],
-      "what": "Base objects and comparisons; missing exact sections are recorded by base-ownership, relative-hodge and rational-descent."
+      "what": "Rational h-descent, relative Hodge realization and rigid syntomic étale periods; missing exact sections are recorded by rational-descent, relative-hodge and rigid-syntomic-etale-period."
     },
     {
       "roadmap": "CrystallineCohomology",
@@ -2123,19 +2131,16 @@
   ],
   "gaps": [
     {
-      "slug": "base-ownership",
-      "title": "Base comparison carriers and ownership boundary",
+      "slug": "rigid-syntomic-etale-period",
+      "title": "Rigid syntomic periods and their log comparison",
       "neededBy": [
-        "2.1",
-        "5.1",
-        "5.2",
-        "5.3",
-        "7.4"
+        "7.4",
+        "7.5"
       ],
-      "detail": "CohomologyComparisons is a declared existing base. Its README and section locators are absent. Required outputs are its de Rham, rigid, crystalline, étale and semistable comparison carriers, coherent comparison diagrams, cup products and finite scalar-extension/trace compatibility. Bind every overlapping comparison to its accepted section before implementing the adapters here; none is reconstructed by this extension.",
-      "needs": "Supply the base roadmap text and exact sections identifying its comparison objects and already-owned theorems.",
+      "detail": "The horizontal-log period is the map in AM Lemma 3.10, pp. 29–30, AM line 1327–1334. The canonical-vertical-log domain of 4.2 and 4.5 does not supply this horizontal-log map. BesserI Corollary 9.10, manuscript p. 32, BesserI line 1209–1216 supplies the rigid period; the square uses the horizontal-log realization morphisms of AM (3.10)–(3.12).",
+      "needs": "For a complete mixed-characteristic DVR V with perfect residue field, smooth quasi-projective X/V, every i and r≥0, supply the functorial product- and pullback-compatible period H^i_rsyn(X,r)→H^i_et(X_K,Q_p(r)) of BesserI Corollary 9.10; for Y projective smooth over W(k), relative normal-crossings D, U=Y−D and horizontal log structure M from D alone over trivial-log W(k), supply the rational horizontal-log period H^i_log-syn((Y,M),Q_p(r))→H^i_et(U_K,Q_p(r)) and its commutation with the rigid period under the realization comparison of AM Lemma 3.10, naturally under pullback and with products.",
       "supplier": "CohomologyComparisons",
-      "section": "accepted sections unavailable"
+      "section": "accepted sections unavailable; BesserI Corollary 9.10, manuscript p. 32; AM Lemma 3.10, pp. 29–30"
     },
     {
       "slug": "crystalline-inputs",
@@ -2189,15 +2194,13 @@
       "slug": "period-rings",
       "title": "Classical period-ring fundamental sequences",
       "neededBy": [
-        "4.1",
         "4.2",
-        "4.4",
-        "7.4"
+        "4.4"
       ],
-      "detail": "Extend or specialize Mathlib BDeRhamPlus R p and BDeRham R p on the binders recorded above (MathlibBDeRhamReview line 55, MathlibBDeRhamReview line 79, MathlibBDeRhamReview line 92). A_cris, B_cris, B_st, B_dR, filtrations, φ, N, t and Tate coordinates; divided and undivided fundamental sequences with their distinct integral lattices; relative PD Poincaré and Artin–Schreier sequences for CN chart period rings. NN §4.1 and CN §2.4.3 specify which sequence is used. Frobenius acts on t by p and N uses HK sign.",
-      "needs": "On the existing de Rham period-ring carriers and the classical crystalline/semistable period rings for the mixed-characteristic bases used here, supply the missing filtration and comparison API and the divided/undivided integral fundamental sequences, including the CN chart PD Poincaré and Artin–Schreier sequences.",
+      "detail": "Extend or specialize Mathlib BDeRhamPlus R p and BDeRham R p on the binders recorded above (MathlibBDeRhamReview line 55, MathlibBDeRhamReview line 79, MathlibBDeRhamReview line 92). Frobenius on crystalline and semistable rings satisfies φ(t)=pt; monodromy on B_st satisfies Nφ=pφN with the HK convention. No Frobenius or monodromy operator on B_dR is stipulated.",
+      "needs": "For V a complete mixed-characteristic DVR with perfect residue field and the geometric period coefficients over a completed algebraic closure of K=Frac(V), supply A_cris, B_cris, B_st and their comparison embeddings into B_dR, the induced filtrations, t and Tate coordinates, Frobenius on A_cris, B_cris and B_st and monodromy on B_st; supply the Fontaine–Messing coefficient fundamental sequences inducing the divided period map with lattice Z_p(r) for 0≤r≤p−2 and the modified period map with lattice L_EN(r) for r≥0 (EN §2.2, p. 7, EN line 299–308); on the completed CN §2.2.2 semistable charts supply the Artin–Schreier exact sequences of CN Lemma 2.23(i), the p^r-exact crystalline and p^(4r)-exact annular sequences of Lemma 2.23(ii)–(iii) with their CN lattices, v>0 for (i) and 0<u≤1≤v for (iii); for S=R_PD or R^[u,v] of CN §2.6, p-adically complete filtered O_F-algebra Λ and a continuous injective filtered map S→Λ, supply the p^s quasi-isomorphism F^rΛ→F^rΩ•_(S_Λ^s/Λ) of Lemma 2.37, where S_Λ^s is the p-adically completed log-PD envelope of S⊗Λ→Λ with partial divided powers of level s≥0.",
       "supplier": "PadicPeriodRings",
-      "section": "accepted sections unavailable"
+      "section": "accepted sections unavailable; EN §2.2, p. 7; CN §2.4.3, Lemma 2.23, pp. 23–24, and §2.6.2, Lemma 2.37, pp. 28–29"
     },
     {
       "slug": "rigid-realizations",
@@ -2477,7 +2480,7 @@
         "1.5"
       ],
       "detail": "Use the pinned TauCeti.ExactStructure and TauCeti.ExactStructure.IsConflationExact carriers with their additive-category binders (TauCetiExactReview line 245–246; TauCetiExactFunctorReview line 68–81). No enough-injectives or abelian hypothesis on FilFMIC is assumed; the pinned Tau Ceti Ext API still requires [Abelian C] and [HasExt C] (TauCetiExtReview line 54).",
-      "needs": "For a ring R and an essentially small R-linear additive category C with chosen TauCeti.ExactStructure C, supply Ext^i_E(X,Y) for all i≥0 as admissible i-extensions modulo zigzags (Ext⁰=Hom), with Baer addition, R-module operations, splicing, pullback/pushout, naturality for R-linear functors satisfying TauCeti.ExactStructure.IsConflationExact and canonical agreement with Mathlib Abelian.Ext with its HasExt instance for the canonical abelian exact structure, and under an additional R-bilinear biexact symmetric monoidal structure supply external extension products and unit-source cups with associativity and graded symmetry.",
+      "needs": "For a ring R and an essentially small R-linear additive category C with chosen TauCeti.ExactStructure C, supply Ext^i_E(X,Y) for all i≥0 as admissible i-extensions modulo zigzags (Ext⁰=Hom), with Baer addition, R-module operations, splicing, pullback/pushout, naturality for R-linear functors satisfying TauCeti.ExactStructure.IsConflationExact and canonical agreement with Mathlib Abelian.Ext with its HasExt instance for the canonical abelian exact structure, and under TauCeti.ExactStructure.IsMonoidal with Mathlib SymmetricCategory and R-bilinearity supply external extension products and unit-source cups with associativity and graded symmetry.",
       "supplier": "GrothendieckEulerForms",
       "section": "proposed Part II: exact-category Yoneda extensions; no accepted section"
     },

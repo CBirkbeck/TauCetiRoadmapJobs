@@ -7,13 +7,13 @@ authors = "Amnon Besser"
 title = "Syntomic regulators and p-adic integration I: Rigid syntomic regulators"
 year = 2000
 locator_scheme = "page"
-locator = "Sections 4–6; Definition 6.1; Propositions 6.2–6.3; Remark 8.7(3), manuscript p. 28 (BesserI line 1073)"
+locator = "Sections 4–6; Definition 6.1; Propositions 6.2–6.3; Remark 8.7(3), manuscript p. 28 (BesserI line 1073); Corollary 9.10, manuscript p. 32 (BesserI line 1209–1216)"
 sha256 = "b152f1e224e5f310d733304ed773cf76fd949240c598a1489fd9253f4e68907a"
 licence_class = "operator-local"
 status = "certified"
 local_name = "besser-2000-syntomic-regulators-I-rigid.txt"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3#issuecomment-6301551849"
-cited_for = ["2.1", "2.2", "2.3", "7.4", "7.5"]
+cited_for = ["2.1", "2.2", "2.3", "7.4", "7.5", "rigid-syntomic-etale-period"]
 
 [[source]]
 id = "NN"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v2"
-cited_for = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "rigid-gysin", "7.1", "7.2", "7.3", "7.4", "7.5", "consumer symbol-comparison hypotheses"]
+cited_for = ["rigid-syntomic-etale-period", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "rigid-gysin", "7.1", "7.2", "7.3", "7.4", "7.5", "consumer symbol-comparison hypotheses"]
 
 [[source]]
 id = "HK"
@@ -79,7 +79,7 @@ title = "Syntomic complexes and p-adic nearby cycles"
 year = 2015
 arxiv = "1505.06471v4"
 locator_scheme = "theorem"
-locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3, p. 23; Section 3/Proposition 3.3/Corollary 3.9/Proposition 3.10/Lemma 3.11, pp. 32–35; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.6/Lemmas 5.8–5.9, pp. 54–58; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
+locator = "Section 1.1.1/Theorem 1.1, p. 2; Section 2.2.1, p. 10; Section 2.4.3/Lemma 2.23, pp. 23–24; Section 2.6.2/Lemma 2.37, pp. 28–29 (CN line 1234–1239); Section 3/Proposition 3.3/Corollary 3.9/Proposition 3.10/Lemma 3.11, pp. 32–35; Section 4.3/Lemma 4.4/Proposition 4.5, pp. 43–44; Lemmas 4.8/4.10/4.12 and Proposition 4.13, pp. 45–48; Theorems 4.14/4.16, pp. 49–50; Sections 5.1.2–5.1.6/Lemmas 5.8–5.9, pp. 54–58; CN line 67, CN line 78, CN line 422, CN line 968, CN line 1998, CN line 2055, CN line 2148, CN line 2185, CN line 2249, CN line 2267, CN line 2305, CN line 2384, CN line 2664"
 url = "https://arxiv.org/abs/1505.06471v4"
 fetched_from = "https://arxiv.org/pdf/1505.06471v4"
 fetched_at = "2026-10-20T21:12:38Z"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v4"
-cited_for = ["4.1", "4.2", "4.4", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent", "period-rings"]
+cited_for = ["period-rings", "4.1", "4.2", "4.4", "local-period-pd-radius", "local-period-annulus-entry", "local-period-frobenius-change", "local-period-lie", "local-period-lazard", "local-period-annulus-change", "local-period-phi-psi", "local-period-disk-change", "local-period-galois", "local-period-approximation", "local-period-kpi1", "local-period-etale-gaga", "local-period-descent", "period-rings"]
 
 [[source]]
 id = "BesserII"
@@ -121,7 +121,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-20"
 version_note = "arXiv v2"
-cited_for = ["3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "4.5", "nearby-cycle-inputs"]
+cited_for = ["period-rings", "3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "4.5", "nearby-cycle-inputs"]
 
 [[source]]
 id = "Buhler"
@@ -316,3 +316,35 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 cited_for = ["exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiExactMonoidal"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Monoidal exact structures (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti.ExactStructure.IsMonoidal and its tensorLeft/tensorRight fields; TauCetiExactMonoidal line 48–57"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Monoidal.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Monoidal.lean"
+fetched_at = "2026-10-21T02:40:51Z"
+sha256 = "4d0adcb15c6b45a58d75b38145b47dea3ab4daebbc8902494de243d64a610e06"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
+
+[[source]]
+id = "TauCetiExactOpposite"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti: Opposite exact structures (pinned Lean source)"
+year = 2026
+locator_scheme = "section"
+locator = "TauCeti.ExactStructure.op and op_conflation_op_iff; TauCetiExactOpposite line 150–155, line 201–203"
+url = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Opposite.lean"
+fetched_from = "https://raw.githubusercontent.com/TauCetiProject/TauCeti/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/Exact/Opposite.lean"
+fetched_at = "2026-10-21T02:41:13Z"
+sha256 = "aab9a1587a08c1cf5ed8b41e9925bb304ac9c73f26ec6e7b495b69604a4371f8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-21"
+cited_for = ["1.3", "exact-yoneda", "library baseline"]
