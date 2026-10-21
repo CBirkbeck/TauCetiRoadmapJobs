@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GanGrossPrasadUnitaryGroups"
+
+[[source]]
+id = "xue-real"
+authors = "Hang Xue"
+title = "Bessel models for real unitary groups: the tempered case"
+year = 2023
+doi = "10.1215/00127094-2022-0018"
+locator_scheme = "section"
+locator = "Author preprint Section 2, main tempered Bessel theorem; exact theorem number and published pagination unverified"
+url = "https://par.nsf.gov/servlets/purl/10476094"
+fetched_from = "https://par.nsf.gov/servlets/purl/10476094"
+fetched_at = "2026-10-21T19:38:50Z"
+sha256 = "2d9231a906ccc2d0fcd1c105efb4a74aa0f58d763f43c633401b81c4a2fe78a2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
+
+[[source]]
+id = "xue-bessel"
+authors = "Hang Xue"
+title = "Bessel models for unitary groups and Schwartz homology"
+year = 2025
+locator_scheme = "section"
+locator = "Main local GGP theorem in the introduction; exact theorem number and pagination unverified"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
