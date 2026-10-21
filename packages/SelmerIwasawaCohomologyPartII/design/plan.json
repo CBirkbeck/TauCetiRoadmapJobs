@@ -1880,6 +1880,12 @@
   ],
   "gaps": [
     {
+      "slug": "integral-nearby-complex",
+      "needs": "Extend §§7a.7–7a.9 to the integral and finite-coefficient filtered nearby-cycle complex with derived inertia action, stratum E₁ terms, alternating restriction/Gysin differential, integral tame operator on graded pieces, coefficient compatibilities and nearby-cohomology abutment for separated finite-type strictly semistable schemes with smooth intersection strata over a henselian trait and ℓ invertible, without properness, including the two- and three-branch models used here.",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "§§7a.7–7a.9; residual integral filtered nearby complex and general stratum spectral sequence"
+    },
+    {
       "slug": "native-shimura",
       "title": "Native unitary Shimura schemes and integral models",
       "neededBy": [
