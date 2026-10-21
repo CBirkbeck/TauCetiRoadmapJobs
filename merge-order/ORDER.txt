@@ -33,6 +33,7 @@ KTheoryLowDegrees
 K2SymbolsBrauer
 PolylogarithmFunctions
 ComplexComparisonPartII
+K3SurfacesAndSymplecticBoundedness
 AbelianSchemesAndArithmeticModuli
 ArithmeticGaloisRepresentations
 ArithmeticGaloisDuality
