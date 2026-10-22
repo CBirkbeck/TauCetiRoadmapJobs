@@ -92,7 +92,7 @@ example {Ω : Set ℂ} (E : LinearEquation Ω 1)
     simp [iteratedDeriv_one, iteratedDeriv_zero, ha z hz, hd]
   · intro h
     have hc := h.2 x hx
-    simpa [iteratedDeriv_one, iteratedDeriv_zero, ha x hx] using hc
+    simp [iteratedDeriv_one, iteratedDeriv_zero, ha x hx] at hc
 
 /-! ## Layer 1: analytic universal covers and pointed radius -/
 
@@ -213,14 +213,14 @@ example (x : ℂ) : schwarzian (fun z ↦ 2 * z + 1) x = 0 := by
   have hd : deriv (fun z : ℂ ↦ 2 * z + 1) = fun _ ↦ 2 := by
     ext z
     simp [deriv_add_const, deriv_const_mul_id]
-  simp [schwarzian, iteratedDeriv_succ', iteratedDeriv_zero, hd, iteratedDeriv_const]
+  simp [schwarzian, iteratedDeriv_succ', hd, iteratedDeriv_const]
 
 /-- The square map detects both the sign and the factor three halves. -/
 example {x : ℂ} (hx : x ≠ 0) :
     schwarzian (fun z ↦ z ^ 2) x = -3 / (2 * x ^ 2) := by
   norm_num [schwarzian, iteratedDeriv_pow, deriv_pow_field]
-  <;> field_simp [hx]
-  <;> ring
+  field_simp [hx]
+  ring
 
 /-- Inversion has zero Schwarzian away from its pole (CDT Remark 5.1.10). -/
 theorem schwarzian.inverse {x : ℂ} (hx : x ≠ 0) :
@@ -300,7 +300,8 @@ theorem gauss_equation_terminating (a b c x : ℂ)
 
 /-- The terminating checks give 1 and 1-x, including outside the unit disc. -/
 theorem gauss_terminating_checks (x : ℂ) :
-    ordinaryHypergeometric 0 1 1 x = 1 ∧ ordinaryHypergeometric (-1) 1 1 x = 1 - x := by sorry
+    ordinaryHypergeometric (0 : ℂ) 1 1 x = 1 ∧
+      ordinaryHypergeometric (-1 : ℂ) 1 1 x = 1 - x := by sorry
 
 /-- The oriented inverse germ is the scalar prefactor times J_N
  (CDT Lemma 5.1.16, pp.671–672); both inverse compositions are germ equalities. -/

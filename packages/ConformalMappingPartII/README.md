@@ -4,11 +4,11 @@
 
 ## Scope and ownership
 
-Reuse [ConformalMapping](https://github.com/TauCetiProject/TauCetiRoadmap/tree/main/TauCetiRoadmap/ConformalMapping) for planar conformal mapping: **L2** (Schwarz lemma, its equality case and disc automorphisms), **L3** (normalized Riemann mapping, logarithm and root branches), and **L4** (analytic continuation, monodromy and Schwarz reflection). Its planar Riemann mapping theorem does not supply uniformization of an abstract analytic universal cover; that extension is a target of Layer 1 here. Boundary correspondence and Schwarz–Christoffel theory remain in ConformalMapping.
+Reuse [ConformalMapping](https://github.com/TauCetiProject/TauCetiRoadmap/tree/main/TauCetiRoadmap/ConformalMapping) for planar conformal mapping: **L1** (normal families and Montel compactness for locally bounded holomorphic families), **L2** (Schwarz lemma, its equality case, disc automorphisms and their invariance of the Poincaré metric), **L3** (normalized Riemann mapping, logarithm and root branches), and **L4** (analytic continuation, monodromy and Schwarz reflection). Its planar Riemann mapping theorem does not supply uniformization of an abstract analytic universal cover; that extension is a target of Layer 1 here. Boundary correspondence and Schwarz–Christoffel theory remain in ConformalMapping.
 
 Reuse [UniversalCovers](https://github.com/TauCetiProject/TauCetiRoadmap/tree/main/Completed/UniversalCovers), **Stage 0** (the universal-cover carrier, local sheets and simply connected total space), **Stage 1** (deck transformations and the fundamental-group action), and **Stage 2** (based lifts). The carrier is `TauCeti.UniversalCover a`, with its existing quotient topology and projection. For its complex charts, specialize `TauCeti.Geometry.Manifold.Instances.UniversalCover` to the complex model: `TauCeti.UniversalCover.instChartedSpace`, `instIsManifold` and `isLocalDiffeomorph_proj` already provide the lifted atlas and local holomorphic projection. Its `contMDiff_iff` also tests regularity of a lift by continuity and regularity of its projected map. The atlas agreements and checks below fix their use here. General atlas compatibility for covers belongs to [DifferentialGeometry, Layer 2.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DifferentialGeometry/README.md#layer-2-orientations-and-the-orientation-double-cover).
 
-Reuse [FuchsianOrbifolds](https://github.com/TauCetiProject/TauCetiRoadmap/tree/main/TauCetiRoadmap/FuchsianOrbifolds), **Layer 0** (effective projective action, discreteness, stabilizers and free-locus quotients), **Layer 2** (hyperbolic polygons, reflected side pairings, Poincaré's theorem, presentations and area), and **Layer 3** (primitive cusp data, full stabilizers, cusp charts and transport). Layer 6 gives only the symmetric roots-cover instances. For Shimizu's inequality use `Subgroup.inv_le_abs_apply_one_zero_of_upperRightHom_mem` in `TauCeti.Analysis.Complex.Fuchsian.Shimizu`; Layer 8 adds the estimate involving both matrix entries that this particular group needs. Generic orbifold compactification, degree and genus theory belong to FuchsianOrbifolds.
+Reuse [FuchsianOrbifolds](https://github.com/TauCetiProject/TauCetiRoadmap/tree/main/TauCetiRoadmap/FuchsianOrbifolds), **Layer 0** (effective projective action, discreteness, stabilizers and free-locus quotients), **Layer 2** (hyperbolic polygons, reflected side pairings, Poincaré's theorem, presentations and area), **Layer 3** (primitive cusp data, full stabilizers, cusp charts and transport), and **Layer 4** (the cusp compactification of a cofinite quotient). Layer 6 gives only the symmetric roots-cover instances. For Shimizu's inequality use `Subgroup.inv_le_abs_apply_one_zero_of_upperRightHom_mem` in `TauCeti.Analysis.Complex.Fuchsian.Shimizu`; Layer 8 adds the estimate involving both matrix entries that this particular group needs. Generic orbifold compactification, degree and genus theory belong to FuchsianOrbifolds.
 
 Mathlib supplies analytic functions, iterated complex derivatives, meromorphic order, divisors, trailing coefficients, circle averages, proximity and characteristic functions, the ordinary hypergeometric series, Gamma and digamma functions, and elementary special-function identities. Import those interfaces and extend them. In particular, use `MeromorphicOn.divisor`, `Real.circleAverage`, `ValueDistribution.proximity` and `meromorphicTrailingCoeffAt`. Do not replace a meromorphic scalar representative by a projective-valued function without a comparison theorem.
 
@@ -52,7 +52,11 @@ Reuse [ClassicalArithmeticCompletion §6.20](https://github.com/TauCetiProject/T
 
 Reuse [DiophantineApproximationAndTranscendence §5.1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md) for holomorphic matrix and scalar initial-value existence, uniqueness and solution-space dimension on positive-radius discs. Layer 0 owns the equation/germ and unscaled-jet comparison and continuation on general domains.
 
-Reuse [ComplexCurveModuli D0.4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ComplexCurveModuli/README.md#d0-smooth-curves-finite-type-and-the-classification-floor) for complete finite-area curvature −1 metrics on stable punctured components and their cusp-end expansion. Section 1.12 compares that metric to the actual covering and the Fuchsian cusp compactification; arbitrary infinitely connected plane domains still require §1.1. Little Picard belongs to ModularForms in ConformalMapping's relationship specification; its missing exact export is the supplier gap below.
+Reuse [RiemannianGeometry](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RiemannianGeometry/README.md), **R4.3** for Hausdorffness and second countability of the native universal-cover manifold and for complete pullback metrics with preserved curvature, and **R4.7** for the curvature −1 disc model and Killing–Hopf classification. Layer 1 compares the real and complex lifted atlases and identifies the pulled-back conformal metric with that disc model.
+
+Reuse [PDE](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/PDE/README.md), **Lane C, items 12–15**, for Euclidean harmonic and subharmonic theory, maximum and Harnack principles, Green and Poisson kernels, and Perron construction with boundary barriers. Layer 1 transports the local theory through holomorphic charts and constructs the surface envelope, smooth-boundary Dirichlet solution and logarithmic Green pole, agreeing with the planar constructions.
+
+Reuse [ComplexCurveModuli D0.4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ComplexCurveModuli/README.md#d0-smooth-curves-finite-type-and-the-classification-floor) for complete finite-area curvature −1 metrics on stable punctured components and their cusp-end expansion. Section 1.7 compares that metric to the actual covering and the Fuchsian cusp compactification; arbitrary infinitely connected plane domains still require §1.1. Little Picard belongs to ModularForms in ConformalMapping's relationship specification; its missing exact export is the supplier gap below.
 
 ## Conventions
 
@@ -80,11 +84,11 @@ From Tau Ceti, `TauCeti.IsAnalyticContinuationAlong` supplies a family of analyt
 
 From Tau Ceti, `TauCeti.descendPow` requires a nonzero natural exponent m. `descendPow_pow` gives the factorization at u under invariance by all mth roots of unity at u; `differentiableOn_descendPow` requires an open set s, holomorphy on s and that invariance at every u∈s, and yields holomorphy on `(· ^ m) '' s`. `TauCeti.image_pow_ball` identifies this image with the ball of radius r^m for r≥0. Apply these to f=F_N^N and s=𝔻. The derivative at zero and ramification away from the selected branch are the additional roots-cover assertions. In `TauCeti.Analysis.Complex.Herglotz`, `DiffContOnCl.circleAverage_herglotzRieszKernel_smul_re_add` assumes `DiffContOnCl ℂ L (ball c R)` and w∈ball c R; its conclusion is the boundary-real-part integral plus `(L c).im * I = L w`. For an analytic log L with L(0)=0 the imaginary constant vanishes. These inputs are consumed from the pinned Tau Ceti modules named above.
 
-From ConformalMapping L2 consume the classification of automorphisms fixing zero as rotations and the equality case of the derivative Schwarz inequality. From L3 consume normalized planar Riemann maps, their holomorphic inverses, and analytic logarithm and root branches on simply connected plane domains. Use the native `TauCeti.IsNormalizedRiemannMapOn φ Ω a` in `TauCeti.Analysis.Complex.Conformal.RiemannMapping.Normalization`: it requires a∈Ω, holomorphy, a bijection Ω→𝔻, φ(a)=0 and positive real φ′(a). Its direction is domain to disc. From L4 consume path monodromy and reflection across analytic circle sides. In particular, a planar Riemann map cannot supply the uniformization theorem for the abstract universal-cover surface in Layer 1.
+From ConformalMapping L1 consume Montel compactness for locally bounded holomorphic families, used in the normalized univalent limit of §1.1 after its local bounds are proved. From L2 consume the classification of automorphisms fixing zero as rotations, the equality case of the derivative Schwarz inequality, and invariance of the curvature −1 Poincaré metric under disc automorphisms. From L3 consume normalized planar Riemann maps, their holomorphic inverses, and analytic logarithm and root branches on simply connected plane domains. Use the native `TauCeti.IsNormalizedRiemannMapOn φ Ω a` in `TauCeti.Analysis.Complex.Conformal.RiemannMapping.Normalization`: it requires a∈Ω, holomorphy, a bijection Ω→𝔻, φ(a)=0 and positive real φ′(a). Its direction is domain to disc. From L4 consume path monodromy and reflection across analytic circle sides. In particular, a planar Riemann map cannot supply the uniformization theorem for the abstract universal-cover surface in Layer 1.
 
 From UniversalCovers Stage 0 consume its existing carrier, covering projection, local sheets and simply connected total space, after verifying the local path-connectedness and semilocal simple connectedness of a connected plane domain. Stage 1 supplies the deck action; Stage 2 supplies the unique based lift from a simply connected source and the identification of two lifts by a deck transformation. The regularity criterion for the native analytic atlas, listed under ownership, makes the continuous based lift holomorphic when its projection is holomorphic.
 
-From FuchsianOrbifolds Layer 0 consume the effective `PSL(2, ℝ)` action, discreteness and proper discontinuity, and the local biholomorphic quotient on the free locus. Its Layer 2 supplies actual geodesic regions, paired sides, the Poincaré polygon theorem, presentations and the native hyperbolic measure/area formula. A region with named vertices alone is not a fundamental-domain witness. Layer 3 supplies the full primitive parabolic stabilizer, normalized cusp charts and horoball transport. Layer 4 supplies the cusp compactification for a cofinite group. Neither contract identifies a puncture of a specified sphere with a parabolic cusp: `FinitePuncturedCover.cuspComparison` in §1.12 proves that identification and its nonzero leading coefficient. The paper-specific subgroups in Layer 6 are subgroups of this effective projective group; their regions are measurable subsets of its native hyperbolic plane, and their areas use `(MeasureTheory.volume : Measure UpperHalfPlane)` after Cayley transport. `UpperHalfPlane.volume_def` in Mathlib's `Analysis.Complex.UpperHalfPlane.Measure` fixes its density dx dy/y². No free area parameter or predicate storing the desired presentation is introduced.
+From FuchsianOrbifolds Layer 0 consume the effective `PSL(2, ℝ)` action, discreteness and proper discontinuity, and the local biholomorphic quotient on the free locus. Its Layer 2 supplies actual geodesic regions, paired sides, the Poincaré polygon theorem, presentations and the native hyperbolic measure/area formula. A region with named vertices alone is not a fundamental-domain witness. Layer 3 supplies the full primitive parabolic stabilizer, normalized cusp charts and horoball transport. Layer 4 supplies the cusp compactification for a cofinite group. Neither contract identifies a puncture of a specified sphere with a parabolic cusp: `FinitePuncturedCover.cuspComparison` in §1.7 proves that identification and its nonzero leading coefficient. The paper-specific subgroups in Layer 6 are subgroups of this effective projective group; their regions are measurable subsets of its native hyperbolic plane, and their areas use `(MeasureTheory.volume : Measure UpperHalfPlane)` after Cayley transport. `UpperHalfPlane.volume_def` in Mathlib's `Analysis.Complex.UpperHalfPlane.Measure` fixes its density dx dy/y². No free area parameter or predicate storing the desired presentation is introduced.
 
 From Tau Ceti, consume `TauCeti.exists_eqOn_const_mul_of_leftInvOn_ball_of_map_zero` in `TauCeti.Analysis.Complex.Conformal.UnitDisc.Automorphism.Rotation`, re-exported by `.Classification`, for rotation uniqueness; `TauCeti.logDeriv_deriv_comp` in `TauCeti.Analysis.Complex.Conformal.PreSchwarzian` for the pre-Schwarzian; and `Subgroup.isFundamentalDomain_dirichletDomain` in `TauCeti.Analysis.Complex.Fuchsian.DirichletDomain` for the measurable domain `TauCeti.dirichletDomain Γ p` at a free point. `MeasureTheory.covolume` and `Subgroup.IsCofinite` in `TauCeti.Analysis.Complex.Fuchsian.Covolume` measure the actual quotient. `Subgroup.CuspDatum` in `TauCeti.Analysis.Complex.Fuchsian.Cusp.Datum` records the width and full stabilizer. Consume its `disjoint_smul_horodisc_horodisc` and `mem_stabilizer_of_mem_horodisc_of_smul_mem_horodisc` in `TauCeti.Analysis.Complex.Fuchsian.Cusp.Horodisc`; `Subgroup.im_smul_mul_im_le_sq_of_upperRightHom_mem` and `Subgroup.im_smul_mul_im_le_abs_mul_of_upperRightHom_mem` in `TauCeti.Analysis.Complex.Fuchsian.Shimizu` provide the height bounds. `TauCeti.UpperHalfPlane.volume_triangle` and `volume_idealRegion_neg_one_one` in `TauCeti.Analysis.Complex.UpperHalfPlane.Triangle` and `.IdealRegion` fix Gauss–Bonnet area and its ideal limit. Layer 6 identifies the particular regions and groups, rather than reconstructing this geometry.
 
@@ -92,7 +96,11 @@ From TauCetiRoadmap.ClassicalArithmeticCompletion §6.20 consume `TauCetiRoadmap
 
 From TauCetiRoadmap.DiophantineApproximationAndTranscendence §5.1 consume the holomorphic linear-system and scalar initial-value theorems on discs, including the evaluation linear equivalence and dimension equal to the order. Restriction to a disc around an ordinary point supplies the germ comparison in §0.2.
 
-From TauCetiRoadmap.ComplexCurveModuli D0.4 consume the complete finite-area conformal metric and its cusp-end expansion for a sphere with at least three punctures. Section 1.12 supplies the comparison with the disc-cover metric and the primitive Fuchsian q-coordinate; the supplier does not itself assert that comparison.
+From TauCetiRoadmap.RiemannianGeometry R4.3 consume Hausdorffness and second countability of the native based-path universal-cover manifold of a connected finite-dimensional Hausdorff second-countable smooth real manifold. Consume its pullback metric on a surjective smooth covering, its completeness when the base is complete, and preservation of curvature by the local isometry. From R4.7 consume the complete simply connected curvature −1 space-form classification and the disc metric `4|dz|²/(1−|z|²)²`. No finite-area assertion for the universal cover is used.
+
+From TauCetiRoadmap.PDE Lane C, items 12–15 consume the Euclidean mean-value, maximum and Harnack principles, harmonic replacement by Poisson kernels, and Perron/barrier Dirichlet construction. Boundary attainment is used only where a barrier is supplied. `SurfaceUniformization.perron`, `dirichlet` and `greenFunction` transport this theory to holomorphic surface charts, prove the surface-global assertions, and agree with the supplied planar constructions.
+
+From TauCetiRoadmap.ComplexCurveModuli D0.4 consume the complete finite-area conformal metric and its cusp-end expansion for a sphere with at least three punctures. Section 1.7 supplies the comparison with the disc-cover metric and the primitive Fuchsian q-coordinate; the supplier does not itself assert that comparison.
 
 What ModularForms must provide (gap:little-picard): in Layer 10, the modular-uniformization branch assigned to ModularForms by ConformalMapping, supply Little Picard: a holomorphic map ℂ→ℂ omitting two distinct finite values is constant. No such exact target is asserted to be present in that layer. Section 1.1 uses this contract solely to exclude the plane alternative; it follows from the twice-punctured-plane disc cover by lifting and Liouville (McMullenRS, Theorem 2.9, p.9).
 
@@ -204,17 +212,28 @@ Establish hyperbolic uniformization and make based holomorphic covers usable thr
 
 Prove `SurfaceUniformization.noncompactCoordinate`: a connected, noncompact, simply connected, Hausdorff second-countable one-dimensional complex analytic manifold admits a biholomorphism onto an open subset of ℂ. This is analytic existence on the native abstract manifold carrier, including injectivity and a holomorphic inverse. The planar Riemann mapping theorem is applied only after that coordinate exists (Uniformization, arXiv:2008.12189v2, Theorem 1, p.2).
 
-The proof owns its surface-analytic prerequisites at the same generality. `SurfaceUniformization.perron` states that the supremum of a nonempty locally bounded above family of continuous subharmonic functions, closed under maxima and harmonic replacement on coordinate discs, is harmonic (Uniformization, Theorem 6 and Appendix A, pp.4,11). `SurfaceUniformization.greenFunction` gives, on a compact connected smooth bordered subsurface with nonempty boundary and a specified interior point, a positive harmonic function off that point, zero on the boundary, whose sum with log of the coordinate modulus extends harmonically at the point (Proposition 9, pp.5–6). Its boundary Dirichlet input for bounded continuous data is included (Theorem 6 and Appendix B, pp.4,11–12). `SurfaceUniformization.discEmbedding` gives a biholomorphism from the interior of a compact simply connected smooth bordered subsurface with one boundary circle to 𝔻 (Theorem 10, pp.6–8). `SurfaceUniformization.exhaustion` exhausts a noncompact simply connected surface by such subsurfaces with nested interiors (Theorem 12, pp.8–10). Normalize these embeddings at one point in one fixed coordinate. `SurfaceUniformization.limitEmbedding` uses the compactness of normalized univalent disc functions and a diagonal compact limit to give a nonconstant injective global map; the argument principle rules out collisions in the limit (Lemma 13 and §7, pp.10–11, Appendix D, pp.13–14). These are construction theorems, not hypotheses asserting that a uniformizing map exists.
+Consume PDE Lane C, items 12–15 for the Euclidean harmonic/subharmonic theory, maximum and Harnack principles, Poisson replacement and Perron construction with boundary barriers. On connected Hausdorff second-countable one-dimensional complex analytic manifolds, the following targets add compatibility under holomorphic chart changes and the surface-global constructions; the surface need not be simply connected or noncompact.
+
+Prove `SurfaceUniformization.perron`: the supremum of a nonempty locally bounded above family of continuous subharmonic functions, closed under maxima and harmonic replacement on coordinate discs, is harmonic (Uniformization, Theorem 6 and Appendix A, pp.4,11; Uniformization line 152). *Needs:* PDE Lane C, items 12–15; the native complex manifold charts.
+
+Prove `SurfaceUniformization.dirichlet`: on a compact connected smooth bordered subsurface with nonempty boundary, every continuous real boundary datum has a unique continuous extension harmonic in the interior, lying between its minimum and maximum. Smooth-boundary barriers in charts give boundary attainment (Uniformization, Theorem 6 and Appendix B, pp.4,11–12; Uniformization line 155). *Needs:* PDE Lane C, items 12–15; `SurfaceUniformization.perron` and holomorphic chart compatibility.
+
+Prove `SurfaceUniformization.greenFunction`: on such a subsurface with a specified interior point, construct a function continuous off that point, positive and harmonic on the punctured interior and zero on the boundary, whose sum with log of the coordinate modulus extends harmonically at the point. Its plane specialization agrees with the supplied Green function (Uniformization, Proposition 9, pp.5–6; Uniformization line 213). *Needs:* PDE Lane C, items 12–15; `SurfaceUniformization.perron`; `SurfaceUniformization.dirichlet` and removable harmonic singularities.
+
+`SurfaceUniformization.discEmbedding` gives a biholomorphism from the interior of a compact simply connected smooth bordered subsurface with one boundary circle to 𝔻 (Theorem 10, pp.6–8). `SurfaceUniformization.exhaustion` exhausts a noncompact simply connected surface by such subsurfaces with nested interiors (Theorem 12, pp.8–10). Normalize these embeddings at one point in one fixed coordinate. `SurfaceUniformization.limitEmbedding` uses the compactness of normalized univalent disc functions and a diagonal compact limit to give a nonconstant injective global map; the argument principle rules out collisions in the limit (Lemma 13 and §7, pp.10–11, Appendix D, pp.13–14). These are construction theorems, not hypotheses asserting that a uniformizing map exists.
 
 **Checks.**
 
 * On the closed radius-R disc with pole zero, the Green function is log(R/|z|); its regular part is log R. This fixes both the logarithmic sign and boundary value.
+* Constant Dirichlet boundary data c give the constant c, fixing boundary attainment and uniqueness.
+* On the unit circle, boundary data Re z extend as Re z on the disc, rather than the zero function.
+* On the annulus 1≤|z|≤R with R>1, data zero on the inner circle and one on the outer circle give log|z|/log R. The surface Dirichlet theorem does not require simple connectivity.
 * ℂ admits the coordinate id, and exp:ℂ→ℂ∖{0} is nonconstant; one omitted finite value cannot force the disc alternative.
 * 𝔻 admits the coordinate id and its normalized radius-r exhaustion maps tend to id; the Riemann sphere fails the noncompactness hypothesis and cannot admit a nonconstant global map to ℂ.
 
-For a connected open Ω⊆ℂ with two distinct omitted points and a∈Ω, apply `SurfaceUniformization.noncompactCoordinate` to the lifted analytic atlas on its native universal cover. Establish Hausdorffness and second countability there from the countable plane-domain atlas and countability of its fundamental group (a countable cover by rational discs contained in Ω encodes loops by finite chains, with convex overlaps); this topological verification is included in `PointedCover.exists_cover`. The cover is noncompact because its surjective continuous projection has noncompact image Ω. In its plane coordinate the projection is nonconstant and omits two values, so gap:little-picard excludes a coordinate image equal to all ℂ. Planar Riemann mapping then identifies that image with 𝔻. Choosing a source automorphism sending zero to the based lift gives `PointedCover.exists_cover : Nonempty (PointedCover Ω a)` under `IsOpen Ω`, `IsConnected Ω`, `a ∈ Ω` and two distinct omitted points. The general domain may have infinitely many complementary components.
+For a connected open Ω⊆ℂ with two distinct omitted points and a∈Ω, apply `SurfaceUniformization.noncompactCoordinate` to the lifted analytic atlas on its native universal cover. Consume RiemannianGeometry R4.3’s Hausdorffness and second-countability theorem for the native based-path universal-cover manifold. Compare its underlying real atlas with the complex charted-space instance imported here: both pull back the same plane charts along the same projection. These supplied topological properties discharge the standing hypotheses of `SurfaceUniformization.noncompactCoordinate`. The cover is noncompact because its surjective continuous projection has noncompact image Ω. In its plane coordinate the projection is nonconstant and omits two values, so gap:little-picard excludes a coordinate image equal to all ℂ. Planar Riemann mapping then identifies that image with 𝔻. Choosing a source automorphism sending zero to the based lift gives `PointedCover.exists_cover : Nonempty (PointedCover Ω a)` under `IsOpen Ω`, `IsConnected Ω`, `a ∈ Ω` and two distinct omitted points. The general domain may have infinitely many complementary components.
 
-(Source: Uniformization, Theorem 1 and §§3–7, pp.2–11; McMullenRS, Theorem 2.9, p.9 for the omitted-values input; CDT, §5.1, setup before Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; UniversalCovers Stage 0; ConformalMapping L1 normal families and L3 planar Riemann maps; ModularForms Layer 10 contract gap:little-picard.
+(Source: Uniformization, Theorem 1 and §§3–7, pp.2–11; McMullenRS, Theorem 2.9, p.9 for the omitted-values input; CDT, §5.1, setup before Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; UniversalCovers Stage 0; RiemannianGeometry R4.3 native-cover manifold topology; PDE Lane C, items 12–15 through the three surface targets above; ConformalMapping L1 normal families and L3 planar Riemann maps; ModularForms Layer 10 contract gap:little-picard.
 
 ### 1.2 Pointed analytic cover uniqueness
 
@@ -276,7 +295,36 @@ For connected hyperbolic domains Ω⊆Ω′ and a∈Ω, R(Ω,a)≤R(Ω′,a). Ap
 
 (Source: Mathlib `Complex.affine_of_mapsTo_ball_of_norm_dslope_eq_div`, `Mathlib/Analysis/Complex/Schwarz.lean`, equality case after a based lift.) *Needs:* Layer 1, extremality of the pointed cover.
 
-### 1.6 The normalized roots-of-unity covering
+### 1.6 Projective realization of analytic deck transformations
+
+For a connected hyperbolic plane domain Ω and a pointed holomorphic universal cover F:𝔻→Ω, its existing topological deck transformations are holomorphic disc automorphisms. Conjugation through C identifies their action with a discrete subgroup of PSL₂(ℝ), acting freely on ℍ, and the analytic quotient is Ω. For a finite punctured plane this is its Fuchsian covering group.
+
+(Source: CDT, §5.1, setup preceding Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; [UniversalCovers — stage 2 lifting criterion and galois correspondence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-2-lifting-criterion-and-galois-correspondence); [ConformalMapping, Layers list, L2 Schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md); [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action).
+
+
+### 1.7 Finite-puncture cusp comparison
+
+For a finite set S⊂ℙ¹ with |S|≥3 and a holomorphic universal disc cover of ℙ¹∖S, prove `FinitePuncturedCover.cuspComparison`: the effective deck subgroup of PSL₂(ℝ) is cofinite, its parabolic cusp orbits correspond bijectively to S, and the quotient identification extends to a biholomorphism from the cusp compactification to ℙ¹. At a finite puncture p and a primitive positive cusp coordinate q=exp(2πiστ/w), the covering is p+cq+O(q²) with c≠0. At infinity the same assertion holds for its reciprocal in the local coordinate 1/X. A nonprimitive generator does not give a uniformizing coordinate.
+
+First prove `FinitePuncturedCover.metricComparison`: for the finite S above, the supplied complete curvature −1 conformal metric g on ℙ¹∖S and a holomorphic universal cover π:𝔻→ℙ¹∖S, the pullback satisfies `π*g = 4|dz|²/(1−|z|²)²`. RiemannianGeometry R4.3 gives completeness and curvature −1 of π*g through the native universal cover and its based-cover equivalence with 𝔻. Apply R4.7’s complete simply connected space-form classification to obtain an isometry from this disc to the standard hyperbolic disc. Choose its orientation positive, composing with complex conjugation of the standard disc if needed. Since both metrics are conformal to the complex structure, this isometry is a holomorphic disc automorphism. ConformalMapping L2’s invariance of the standard metric under disc automorphisms gives the stated equality (McMullenRS, §16, p.147; McMullenRS line 5348, for the model normalization). *Needs:* §1.6 projective deck realization; ComplexCurveModuli D0.4 complete conformal metric; RiemannianGeometry R4.3 complete pullback and curvature, R4.7 Killing–Hopf and the disc model; ConformalMapping L2 hyperbolic metric invariance.
+
+Descend this equality to the quotient before transferring the supplied metric’s finite area to the native covolume. The universal disc itself has infinite area. The metric cusp ends then identify parabolic ends; apply the FuchsianOrbifolds Layers 3–4 charts and compactification. The extended quotient map is biholomorphic in the puncture coordinate, so its first coefficient is nonzero. This proves the logarithmic inverse expansion used by the accessory parameters without a roots-specific polygon or a dependency on Layer 6 (Hem88, Theorem 3.1, pp.97–115, uncertified primary locator; CDT-journal, proof of Lemma 5.1.8, (5.1.13), p.670).
+
+Its API comprises `FinitePuncturedCover.metricComparison`, the pullback equality just stated; `FinitePuncturedCover.cofinite`, asserting finite native covolume; `FinitePuncturedCover.punctureEquivCusp`, the bijection of ends; `FinitePuncturedCover.compactificationEquiv`, the extended holomorphic equivalence; and `FinitePuncturedCover.simpleQ`, the nonzero linear coefficient at each puncture.
+
+**Checks.**
+
+* For the pullback metric, the squared length of the coordinate vector 1 at zero is 4, fixing the curvature −1 disc normalization. Its universal-disc area is infinite, even when the quotient has finite area.
+* Scaling the squared standard metric by c>0 changes curvature to −1/c; the curvature hypothesis forces c=1.
+* Pulling the standard metric back by z↦z/2 gives `|dz|²/(1−|z|²/4)²`, also of curvature −1, but the radial segment to 1 has finite length log 3. Completeness is essential for `metricComparison`.
+* For S={0,1,∞}, there are three cusp orbits and area 2π in curvature −1; a comparison counting only finite punctures would give two.
+* In a primitive chart, X(q)=p+cq+O(q²) gives inverse τ=(w/(2πi))log(X−p)+a holomorphic term; its Schwarzian has double-pole coefficient 1/2, independent of w and c≠0.
+* On the intermediate cusp cover, replacing the primitive translation by its mth power for m≥2 gives X−p=cq_m^m+O(q_m^(2m)); the vanishing first coefficient detects the wrong cusp coordinate.
+
+(Source: Hem88, Theorem 3.1, uncertified; CDT-journal, (5.1.13), p.670.) *Needs:* §1.6 projective deck realization; `FinitePuncturedCover.metricComparison`; ComplexCurveModuli D0.4 complete finite-area metrics and cusp ends; RiemannianGeometry R4.3 complete pullback and R4.7 Killing–Hopf; ConformalMapping L2 hyperbolic metric invariance; FuchsianOrbifolds Layers 3–4 cusp charts and compactification.
+
+
+### 1.8 The normalized roots-of-unity covering
 
 The representative target is `RootsCover.exists_cover`. For an integer N≥2 choose a holomorphic universal cover F_N:𝔻→ℂ∖μ_N with F_N(0)=0. For the explicit inverse-germ calculations orient it with F_N′(0)>0 real. Its half-plane form is F̃_N=F_N∘C⁻¹; the standard cusp chart is chosen so that its limit at i∞ is 1. The notation F_N(1)=1 denotes that cusp limit, not evaluation in the disc.
 
@@ -294,24 +342,24 @@ The required API is:
 * F_N(1)=1 is a cusp limit and 1 is omitted from all interior values.
 * Precomposing the positively oriented cover with z↦iz gives derivative iF_N′(0), which has the same norm but is not positive real. It fails the orientation required by the inverse-germ formula.
 
-(Source: CDT, p.667; Definition 5.1.1.) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.12); Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; Layer 1, pointed analytic cover uniqueness; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action); [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, p.667; Definition 5.1.1.) *Needs:* Layer 1, hyperbolic uniformization of the cover and pointed analytic cover uniqueness; the native Cayley coordinate (existence and uniqueness).
 
 
-`RootsCover.realRadialLimit` states the real radial limit at 1 and interior omission for every oriented `RootsCover N`. `RootsCover.quarterTurn` states that precomposition by iz has derivative iF_N′(0), with positive imaginary part. The radial endpoint is fixed by conjugation symmetry, local inverse continuation on [0,1), and the puncture comparison, not by assigning a boundary value (CDT, Definition 5.1.1, p.667).
+`RootsCover.realRadialLimit` states the real radial limit at 1 and interior omission for every oriented `RootsCover N`. `RootsCover.quarterTurn` states that precomposition by iz has derivative iF_N′(0), with positive imaginary part. The radial endpoint is fixed by conjugation symmetry, local inverse continuation on [0,1), and the puncture comparison, not by assigning a boundary value (CDT, Definition 5.1.1, p.667). *Needs:* `FinitePuncturedCover.cuspComparison` (§1.7); pointed analytic cover uniqueness and ConformalMapping L4 for local inverse continuation along [0,1) (cusp limit).
 
-### 1.7 Nonvanishing derivative of the cover
+### 1.9 Nonvanishing derivative of the cover
 
 For every N≥2 and |z|<1, F_N′(z)≠0. A holomorphic covering between one-dimensional complex manifolds is a local biholomorphism, hence has nonzero complex derivative.
 
 (Source: CDT, p.668; Lemma 5.1.2.) *Needs:* Layer 1, the normalized roots-of-unity covering; the imported complex atlas on the native universal cover.
 
-### 1.8 Rotation equivariance of the covering
+### 1.10 Rotation equivariance of the covering
 
 For N≥2 and ζ^N=1, F_N(ζz)=ζF_N(z) for |z|<1. For the standard left action τ↦(aτ+b)/(cτ+d), the matrix r̃_N=[cos(π/N),−sin(π/N);sin(π/N),cos(π/N)] corresponds through C to multiplication by ζ_N⁻¹. Its inverse corresponds to ζ_N. In Tau Ceti’s convention `Matrix.SpecialLinearGroup.rotation θ = !![cos θ, sin θ; -sin θ, cos θ]`, this r̃_N is `rotation (-Real.pi / N)`. CDT Lemma 5.1.2 displays this matrix with ζ_N on the left; under the standard left action that relation holds for r̃_N⁻¹, as the N=3 computation in Layer 6 shows. Both have projective order N; use the displayed r̃_N in the subgroup presentations below.
 
 (Source: CDT, p.668; Lemma 5.1.2.) *Needs:* Layer 1, the normalized roots-of-unity covering; Layer 1, pointed analytic cover uniqueness; Layer 1, nonvanishing derivative of the cover; [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action).
 
-### 1.9 The descended power map
+### 1.11 The descended power map
 
 The representative target is `RootsCover.power_descent`. For N≥2 there is a unique holomorphic G_N:𝔻→ℂ∖{1} with G_N(z^N)=F_N(z)^N. Specialize the native `TauCeti.descendPow` to F_N^N and use equivariance for root independence; unlike generic descent, this target identifies its derivative, omitted value and ramification for the roots cover. G_N(0)=0. It is ramified at the lifts of zero other than the chosen local branch and is not asserted to be a universal covering.
 
@@ -332,35 +380,11 @@ The required API is:
 
 (Source: CDT, p.671; Definition 5.1.15.) *Needs:* Layer 1, rotation equivariance of the covering; Tau Ceti `TauCeti.descendPow`, `descendPow_pow`, `differentiableOn_descendPow` and `image_pow_ball`.
 
-### 1.10 Derivative of the descended power map
+### 1.12 Derivative of the descended power map
 
 G_N′(0)=F_N′(0)^N and |G_N′(0)|=|F_N′(0)|^N for N≥2.
 
 (Source: CDT, p.671; Definition 5.1.15.) *Needs:* Layer 1, the descended power map; Layer 1, nonvanishing derivative of the cover.
-
-### 1.11 Projective realization of analytic deck transformations
-
-For a connected hyperbolic plane domain Ω and a pointed holomorphic universal cover F:𝔻→Ω, its existing topological deck transformations are holomorphic disc automorphisms. Conjugation through C identifies their action with a discrete subgroup of PSL₂(ℝ), acting freely on ℍ, and the analytic quotient is Ω. For a finite punctured plane this is its Fuchsian covering group.
-
-(Source: CDT, §5.1, setup preceding Definition 5.1.1, p.667.) *Needs:* the imported complex atlas on the native universal cover; Layer 1, hyperbolic uniformization of the cover; the native Cayley coordinate; [UniversalCovers — stage 2 lifting criterion and galois correspondence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/UniversalCovers/README.md#stage-2-lifting-criterion-and-galois-correspondence); [ConformalMapping, Layers list, L2 Schwarz lemma extensions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ConformalMapping/README.md); [FuchsianOrbifolds — layer 0 the effective projective möbius action](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-0-the-effective-projective-möbius-action).
-
-
-### 1.12 Finite-puncture cusp comparison
-
-For a finite set S⊂ℙ¹ with |S|≥3 and a holomorphic universal disc cover of ℙ¹∖S, prove `FinitePuncturedCover.cuspComparison`: the effective deck subgroup of PSL₂(ℝ) is cofinite, its parabolic cusp orbits correspond bijectively to S, and the quotient identification extends to a biholomorphism from the cusp compactification to ℙ¹. At a finite puncture p and a primitive positive cusp coordinate q=exp(2πiστ/w), the covering is p+cq+O(q²) with c≠0. At infinity the same assertion holds for its reciprocal in the local coordinate 1/X. A nonprimitive generator does not give a uniformizing coordinate.
-
-Compare ComplexCurveModuli D0.4’s complete finite-area conformal metric on ℙ¹∖S with the disc-cover metric: pull back to the universal cover and use the uniqueness of the complete curvature −1 metric. The metric cusp ends identify parabolic ends; apply the FuchsianOrbifolds Layers 3–4 charts and compactification. The extended quotient map is biholomorphic in the puncture coordinate, so its first coefficient is nonzero. This proves the logarithmic inverse expansion used by the accessory parameters without a roots-specific polygon or a dependency on Layer 6 (Hem88, Theorem 3.1, pp.97–115, uncertified primary locator; CDT-journal, proof of Lemma 5.1.8, (5.1.13), p.670).
-
-Its API comprises `FinitePuncturedCover.cofinite`, asserting finite native covolume; `FinitePuncturedCover.punctureEquivCusp`, the bijection of ends; `FinitePuncturedCover.compactificationEquiv`, the extended holomorphic equivalence; and `FinitePuncturedCover.simpleQ`, the nonzero linear coefficient at each puncture.
-
-**Checks.**
-
-* For S={0,1,∞}, there are three cusp orbits and area 2π in curvature −1; a comparison counting only finite punctures would give two.
-* In a primitive chart, X(q)=p+cq+O(q²) gives inverse τ=(w/(2πi))log(X−p)+a holomorphic term; its Schwarzian has double-pole coefficient 1/2, independent of w and c≠0.
-* On the intermediate cusp cover, replacing the primitive translation by its mth power for m≥2 gives X−p=cq_m^m+O(q_m^(2m)); the vanishing first coefficient detects the wrong cusp coordinate.
-
-(Source: Hem88, Theorem 3.1, uncertified; CDT-journal, (5.1.13), p.670.) *Needs:* §1.11 projective deck realization; ComplexCurveModuli D0.4 complete finite-area metrics and cusp ends; FuchsianOrbifolds Layers 3–4 cusp charts and compactification.
-
 
 ### Examples
 
@@ -398,7 +422,7 @@ The square check is a proved example. `schwarzian.inverse` states the inverse ch
 
 ### 2.2 Schwarzian chain rule
 
-For holomorphic f,g near x, with g′(x)≠0 and f′(g(x))≠0, S(f∘g)(x)=S(f)(g(x))g′(x)²+S(g)(x).
+For g holomorphic near x and f holomorphic near g(x), with g′(x)≠0 and f′(g(x))≠0, S(f∘g)(x)=S(f)(g(x))g′(x)²+S(g)(x).
 
 (Source: CDT, p.669; Remark 5.1.10.) *Needs:* Layer 2, the schwarzian derivative.
 
@@ -420,7 +444,7 @@ Let S={p₀,…,p_N}⊂ℂ consist of distinct finite points, |S|≥3; thus infi
 
 Construct this punctured-sphere cover by moving one p_k to infinity with a Möbius chart and applying Layer 1 to the resulting plane with at least two omitted points. Transport the cover back through that chart. The local cusp expansion supplies the double-pole coefficient 1/2, and Möbius invariance makes the continued Schwarzian single valued; regularity at the unpunctured infinity gives the constraints below. This proof supplies the accessory-parameter input invoked by CDT.
 
-(Source: CDT, proof of Lemma 5.1.8, equation (5.1.13), p.670; Hem88, Theorem 3.1 (uncertified primary locator).) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.12); Layer 2, möbius invariance of the schwarzian; Layer 1, hyperbolic uniformization of the cover; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, proof of Lemma 5.1.8, equation (5.1.13), p.670; Hem88, Theorem 3.1 (uncertified primary locator).) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.7); Layer 2, möbius invariance of the schwarzian; Layer 1, hyperbolic uniformization of the cover; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
 ### 2.6 Accessory-parameter constraints at infinity
 
@@ -676,7 +700,7 @@ For N≥2, γ_N=Γ((N−1)/(2N))²Γ(1+1/N)/(Γ((N+1)/(2N))²Γ(1−1/N)).
 
 Along the compatible real branch x→1 from below, the ratio s_N(x)=x^(1/N)₂F₁(a_+,a_+;2a_+;x)/₂F₁(a_−,a_−;2a_−;x) tends to Γ(1+1/N)Γ(a_−)²/(Γ(1−1/N)Γ(a_+)²). The inverse cover approaches a boundary point of modulus one.
 
-(Source: CDT, p.672; Proof of Theorem 5.1.4.) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.12); Layer 4, zero-balanced hypergeometric continuation; Layer 4, matching the actual covering inverse; Layer 1, the normalized roots-of-unity covering; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
+(Source: CDT, p.672; Proof of Theorem 5.1.4.) *Needs:* Layer 1, `FinitePuncturedCover.cuspComparison` (§1.7); Layer 4, zero-balanced hypergeometric continuation; Layer 4, matching the actual covering inverse; Layer 1, the normalized roots-of-unity covering; [FuchsianOrbifolds — layer 3 cusps and q coordinates](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/FuchsianOrbifolds/README.md#layer-3-cusps-and-q-coordinates).
 
 ### 5.5 The conformal radius of the punctured plane
 
@@ -1157,7 +1181,7 @@ The conformal-radius formula supplies explicit analytic sizes for arithmetic hol
 
 **TeschlODE**: Gerald Teschl, *Ordinary Differential Equations and Dynamical Systems*, author's preliminary version, §1.2, equation (1.18), p.7, and §4.3, Theorem 4.7 and its proof, p.130.
 
-**McMullenRS**: Curtis T. McMullen, *Riemann Surfaces*, Harvard Math 213b course notes, April 28, 2026, Theorem 2.9, p.9, and Theorem 17.1, p.157. The former gives the triply punctured sphere model; the latter states the abstract classification developed in §1.1.
+**McMullenRS**: Curtis T. McMullen, *Riemann Surfaces*, Harvard Math 213b course notes, April 28, 2026, Theorem 2.9, p.9, and Theorem 17.1, p.157. The former gives the triply punctured sphere model; the latter states the abstract classification developed in §1.1. Section 16, p.147, fixes the hyperbolic metric normalization used in §1.7.
 
 **Uniformization**: Cipriana Anghel and Rareș Stan, *Uniformization of Riemann surfaces revisited*, arXiv:2008.12189v2 (2021), Theorem 1, p.2; Theorem 6, p.4; Proposition 9, pp.5–6; Theorem 10, pp.6–8; Theorem 12, pp.8–10; Lemma 13 and §7, pp.10–11; Appendices A–D, pp.11–14.
 

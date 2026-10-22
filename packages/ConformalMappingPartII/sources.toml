@@ -23,7 +23,7 @@ authors = "Curtis T. McMullen"
 title = "Riemann Surfaces, Math 213b course notes"
 year = 2026
 locator_scheme = "theorem"
-locator = "Theorem 2.9, p.9; Theorem 17.1, p.157"
+locator = "Theorem 2.9, p.9; Theorem 17.1, p.157; Section 16, p.147"
 url = "https://abel.math.harvard.edu/~ctm/math213b/%68ome/course/course.pdf"
 fetched_from = "https://abel.math.harvard.edu/~ctm/math213b/%68ome/course/course.pdf"
 fetched_at = "2026-10-21T12:15:17Z"
@@ -31,7 +31,7 @@ sha256 = "1442374a6f3a389a426d966103adb689e5947e80efb4bcee34b6018383a30406"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-21"
-cited_for = ["1.1", "Exact supplier contracts: gap:little-picard"]
+cited_for = ["1.1", "1.7", "Exact supplier contracts: gap:little-picard"]
 
 [[source]]
 id = "KR16"
@@ -159,7 +159,7 @@ url = "https://doi.org/10.1112/blms/20.2.97"
 licence_class = "none"
 status = "uncertified"
 version_note = "Publisher page restricts the article PDF to subscribers; primary locators are cited without its text. CDT-journal (5.1.13)–(5.1.14) provides the read secondary formula."
-cited_for = ["1.12", "2.4", "2.5", "2.6", "2.7"]
+cited_for = ["1.7", "2.4", "2.5", "2.6", "2.7"]
 
 [[source]]
 id = "DLMF-15-10"
