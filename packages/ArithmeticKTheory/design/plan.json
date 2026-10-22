@@ -1,0 +1,28 @@
+{
+  "gaps": [
+    {
+      "slug": "cyclotomic-kummer-congruence",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§§0.1–0.5",
+      "needs": "For odd prime p and even n,n′≥2 congruent modulo p−1 with p−1∤n, B_n/n and B_n′/n′ are p-integral and congruent modulo p."
+    },
+    {
+      "slug": "cyclotomic-finite-herbrand-ribet",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§§0.1–0.5",
+      "needs": "For odd prime p and 1≤k≤(p−3)/2, the direct-Artin χ^(1−2k) component of the mod-p class group of ℚ(μ_p) is nonzero exactly when p divides num(B_(2k))."
+    },
+    {
+      "slug": "cyclotomic-character-reflection",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§5.4",
+      "needs": "For the direct Artin action, the trivial and χ mod-p class components vanish and every even a satisfies dim A_a ≤ dim A_(1−a) ≤ dim A_a+1."
+    },
+    {
+      "slug": "arithmetic-special-value-euler-characteristic",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§§7.1–7.4",
+      "needs": "For totally real F and k≥1, the ℓ-valuation of |ζ_F(1−2k)| equals that of the finite continuous H²/H¹ order ratio in twist 2k for every odd ℓ, and also for ℓ=2 when F/ℚ is abelian."
+    }
+  ]
+}

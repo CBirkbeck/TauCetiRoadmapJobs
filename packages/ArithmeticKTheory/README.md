@@ -20,18 +20,19 @@ low-degree computations. K2SymbolsBrauer owns Matsumoto symbols, tame and real
 sign symbols, the degree-two tame-kernel sequence, and K₂ of ℤ and ℚ. Their
 theorems are inputs here, rather than additional constructions of those objects.
 
-BorelRegulators, Layers R.1 and R.3, owns buildings, orientation-correct
-Steinberg finiteness and the rational rank theorem for orders. Here the
-rank-filtered Q-space assembles finite generation and extends ranks to finite
-S. MotivicEtaleKTheory owns twists, descent and real-place corrections;
+This roadmap owns the Tits-building and projective-lattice Steinberg
+finiteness inputs in §3.2 and the rational rank theorem for orders in §3.4.
+The rank-filtered Q-space assembles finite generation and extends ranks to
+finite S. It consumes EtaleCohomologyFoundations §§F.0.3/F.4 for twists and owns
+the norm-residue, Suslin and descent comparisons in §5.2, and the real KO comparison in §5.4.
 ArithmeticGaloisDuality owns Kummer, Brauer and Poitou–Tate calculations;
-KTheoryFiniteLocalFields owns local K-groups and completion. Arithmetic
-structure, map identification, exceptional cases and arithmetic certificates
-are assembled here. The full Chern/regulator family is not a prerequisite for
-the first torsion descent edge.
+KTheoryFiniteLocalFields owns local K-groups and completion. The full
+Chern/regulator family is not a prerequisite for the torsion descent edge.
 
 Hermitian carriers and fibre sequences belong to
-HermitianKTheoryOfPoincareCategories and the quadratic-arithmetic roadmaps.
+HermitianKTheoryOfPoincareCategories. GeometryOfNumbersAndQuadraticArithmetic
+GN.6 supplies the number-ring signature theorem; §3.5 owns the integral
+Witt injection and the Dedekind symmetric/quadratic L-table prerequisites.
 IntegralIwasawaTheory owns cyclotomic foundations, Kummer congruences,
 reflection and Vandiver's conjecture. This roadmap uses those inputs for finite
 cyclotomic K-groups; it does not build another Iwasawa theory. The arithmetic
@@ -42,7 +43,7 @@ Downstream consumers.
 
 The general rings, valuations, finite extensions, class groups, local Galois
 objects, quadratic forms and integral lattices already provided by Mathlib,
-Tau Ceti and the current TauCetiRoadmap are used through their existing APIs.
+Tau Ceti and TauCetiRoadmap are used through their existing APIs.
 In particular NumberFieldArithmetic supplies general quadratic-field arithmetic,
 and `TauCeti.NumberField.Sqrt5` already supplies the golden field’s integral
 basis, signature, principal ideals, class number, dyadic prime and fundamental
@@ -51,7 +52,10 @@ roadmap. IntegralLattices supplies lattice infrastructure; LocalGaloisGroups and
 ProfiniteArithmetic supply local and profinite arithmetic; ClassFieldTheory
 supplies the class-formation interfaces. No replacement for those roadmaps is
 introduced. Smooth curves over finite fields, arithmetic K-theory Part II,
-regulators and special-value proofs lie outside the present scope.
+regulator families and special-value formulas beyond the order comparison
+in §7.5 lie outside the present scope. The latter comparison consumes the
+explicit Euler-characteristic supplier gap and is not used in the independent
+tame-kernel certificates.
 
 ## Conventions
 
@@ -101,7 +105,7 @@ Mathlib's B₁=−1/2; Weibel's positive reindexing is treated separately in Lay
 
 ## Exact supplier contracts
 
-### From Mathlib and Tau Ceti
+### From Mathlib
 
 At the pinned APIs, `Set.integer` gives the S-integer subalgebra and `Set.unit`
 its units. `Set.unitEquivUnitsInteger` identifies the unit carriers. Use
@@ -109,25 +113,7 @@ its units. `Set.unitEquivUnitsInteger` identifies the unit carriers. Use
 valuation support and the existing finite-extension/integral-closure API.
 `ClassGroup`, `ClassGroup.equivPic`, `ClassGroup.extendedHom`,
 `NumberField.classNumber` and the finite class group of a number ring supply
-the arithmetic class data. Tau Ceti's `ClassGroup.relNorm` and
-`ClassGroup.relNorm_extendedHom` supply ideal norms and their degree composite.
-
-For S-integers use Tau Ceti's `integerHeightOneSpectrumEquiv`,
-`valuation_integerHeightOneSpectrumEquiv`, `integer_extendedHom_surjective`,
-`ker_integer_extendedHom`, `integerClassGroupEquiv`,
-`finite_integer_classGroup`, `Set.unit_mono`, `Set.unitValuation_ker`, and
-`Set.unit_fg_of_units`. The last result supplies finite generation for finite
-S, not an S-unit rank formula. The existing class-group quotient and unit
-valuation maps are reused; their K-theoretic interpretation is what Layer 2
-adds.
-The current Tau Ceti library also provides `CategoryTheory.ExactStructure`,
-`TauCeti.ExactK0` and `TauCeti.ExactK0.liftEquiv` (the latter two in
-`TauCeti.CategoryTheory.GrothendieckGroup.Exact`), together with exact-functor
-maps and the finite-projective-module K₀ carrier. These supply exact-category and
-Grothendieck-group infrastructure; their comparison to the genuine higher
-Q-space is the general K-theory supplier's responsibility. Neither that
-comparison nor the higher arithmetic groups follow merely from K₀'s
-presentation universal property.
+the arithmetic class data.
 
 `Submodule`, categorical full subcategories and nerves, group homology,
 relative chain complexes, homotopy groups and tensor products supply the
@@ -155,7 +141,29 @@ separate group-action construction. `bernoulli`, `bernoulli'`,
 `Bernoulli.vonStaudt_clausen` denominator API are the Bernoulli suppliers.
 They do not include the divided-denominator Kummer refinement.
 
-For the golden field, the current Tau Ceti modules
+### From Tau Ceti
+
+Tau Ceti's `ClassGroup.relNorm` and
+`ClassGroup.relNorm_extendedHom` supply ideal norms and their degree composite.
+
+For S-integers use Tau Ceti's `integerHeightOneSpectrumEquiv`,
+`valuation_integerHeightOneSpectrumEquiv`, `integer_extendedHom_surjective`,
+`ker_integer_extendedHom`, `integerClassGroupEquiv`,
+`finite_integer_classGroup`, `Set.unit_mono`, `Set.unitValuation_ker`, and
+`Set.unit_fg_of_units`. The last result supplies finite generation for finite
+S, not an S-unit rank formula. The existing class-group quotient and unit
+valuation maps are reused; their K-theoretic interpretation is what Layer 2
+adds.
+The pinned Tau Ceti library also provides `CategoryTheory.ExactStructure`,
+`TauCeti.ExactK0` and `TauCeti.ExactK0.liftEquiv` (the latter two in
+`TauCeti.CategoryTheory.GrothendieckGroup.Exact`), together with exact-functor
+maps and the finite-projective-module K₀ carrier. These supply exact-category and
+Grothendieck-group infrastructure; their comparison to the genuine higher
+Q-space is the general K-theory supplier's responsibility. Neither that
+comparison nor the higher arithmetic groups follow merely from K₀'s
+presentation universal property.
+
+For the golden field, the pinned Tau Ceti modules
 `TauCeti.NumberTheory.NumberField.WorkedExamples.Sqrt5.Basic`, `Invariants`,
 `Units` and `RealPlace` supply the arithmetic under an integral generator θ with
 `minpoly ℤ θ = X²−X−1` and `Algebra.adjoin ℚ {(θ : F)} = ⊤`.
@@ -170,87 +178,122 @@ coming from θ, `mul_sub_one_eq_one` gives its inverse,
 `closure_sup_torsion_eq_top` gives generation modulo torsion, and
 `exists_isReal_and_apply_eq_goldenRatio` fixes the positive embedding;
 `units_rank_eq_one` supplies the unit rank and `torsionOrder_eq_two` the
-order of the roots of unity. These current-library inputs are
-consumed after transporting the chosen field model; they are not available as
-imports at the older pins used by Suggested.lean.
+order of the roots of unity. These pinned-library inputs are
+available at the pinned Tau Ceti commit and consumed after transporting the
+chosen field model. Suggested.lean imports an individual module only when
+a kept declaration uses it.
 
-### From the K-theory and homotopy roadmaps
+### From TauCetiRoadmap.StableHomotopyKTheory
 
-GeneralAlgebraicKTheory K.1–K.3 supplies exact categories, the genuine
-Q-construction, additivity, dévissage, functorial K-groups, finite-projective
-transfer and the projection formula. K.7 must supply finite-coefficient
-localization, its boundary projection formula, reduction and Bockstein
-compatibility. Products at a safe modulus may be reduced to a smaller modulus;
-this does not confer a ring structure on arbitrary mod-2, mod-3, mod-4 or mod-8
-coefficients.
+H.1 supplies category homology, groupoid/classifying-space comparisons,
+cellular relative comparisons and filtered-colimit homology. H.3 supplies
+the connected CW H-space finite-type theorem, allowing nonzero π₁:
+a connected simple H-space with finitely generated integral homology in
+every degree has finitely generated homotopy in every degree. H.6 supplies
+coefficients, colimits, Milnor sequences, stable transfer and the connective
+C₂ homotopy-orbit spectral sequence. Its finitely generated coefficients and
+connectivity give finitely many terms on each diagonal; coefficient-colimit,
+Bockstein and localization maps agree.
 
-SchemeKTheoryOperations S.3 supplies the general Dedekind localization sequence,
-Cartan comparison, finite-pushforward naturality and the DVR boundary valuation.
-KTheoryLowDegrees Z.4 and Z.6 supplies rank–Picard and projective
-classification, K₀ of S-integers and K₀(ℤ). Its U.4/U.6 supplies determinant,
-vanishing of arithmetic SK₁ and the S-unit rank. K2SymbolsBrauer T.2/T.3/T.5
-supplies the exact symbol, residue and tame-kernel results; T.7 supplies the
-classical Hilbert norm test. KTheoryFiniteLocalFields L.1 supplies finite-field
-K-groups and Bott classes; L.3/L.6/L.7 supplies the degree-two Moore theorem,
-local even K-groups, cohomological quotients and completion compatibilities.
+### From TauCetiRoadmap.GeneralAlgebraicKTheory
 
-StableHomotopyKTheory H.1 supplies category homology, groupoid/classifying-space
-comparisons, cellular relative comparisons and filtered-colimit homology. H.3
-must supply the **connected** CW H-space finite-type theorem, allowing nonzero
-π₁: the space is simple, and finitely generated integral homology in every
-degree implies finitely generated homotopy in every degree. A simply connected
-version would not suffice for BQ. H.6 supplies coefficients, colimits and
-Milnor sequences; its required connective C₂ homotopy-orbit spectral sequence
-has finitely generated coefficients and only finitely many terms on each
-diagonal. Its coefficient-colimit, Bockstein and localization maps must agree.
+K.1–K.3 supplies exact categories, the genuine Q-construction, additivity,
+dévissage, functorial K-groups, finite-projective transfer and the projection
+formula. K.7 supplies finite-coefficient localization, its boundary projection
+formula, reduction and Bockstein compatibility. Products at a safe modulus may
+be reduced to a smaller modulus; no ring structure on arbitrary mod-2, mod-3,
+mod-4 or mod-8 coefficients is inferred.
 
-### From arithmetic, étale and hermitian roadmaps
+### From TauCetiRoadmap.EtaleCohomologyFoundations
 
-BorelRegulators R.1 supplies Steinberg homology finiteness for **every**
-projective O_F-lattice, including nonfree ones, using the orientation-correct
-coefficient St_n⊗ℤ_χ^(n−1) in duality and finite-index descent. R.3 supplies the
-Borel ranks for orders. These are not assertions that arbitrary untwisted
-arithmetic-group cohomology is the required integral Steinberg homology.
+F.0.1/F.0.2 supplies coefficient sheaves and finite-cover monodromy.
+F.0.3, `VanishingCycles.etaleTateTwists`, supplies integer-weight finite
+Tate twists on the canonical roots-of-unity sheaf, positive tensor powers,
+negative dual powers, pullback and coefficient reductions. F.4.1–F.4.6
+supplies their integral and rational realization and continuous coefficient
+comparison. No second twist carrier is constructed here.
 
-MotivicEtaleKTheory M.1 supplies twists. M.7 supplies the separably closed
-Suslin comparison, real-place correction, dyadic S-integer extensions,
-arithmetic comparison ranges, Bott descent and Adams weights. For Layer 5 it
-must export the equivariant torsion identification and its coefficient-colimit
-and connecting-map compatibilities before the full M.8 Chern family. For
-Layer 6 it must export spectrum-level dualization at every odd prime power,
-including 3. RefinedTraceMethods RT.4 supplies **real** KO/BO and real Bott
-8-periodicity with coefficient connecting maps; complex KU alone is not this
-input.
+### From TauCetiRoadmap.IntegralIwasawaTheory
 
-ArithmeticGaloisDuality R02.1/R02.3/R02.4 supplies inverse-limit control,
-Kummer, finite H¹/H², the one-inverted-prime Brauer computation and Poitou–Tate.
-At odd ℓ the last computation retains the sum-of-local-invariants condition;
-one finite place above ℓ then gives Br(O[1/ℓ])[ℓ^r]=0 and
-H²(O[1/ℓ],μ_(ℓ^r))=Pic(O[1/ℓ])/ℓ^r. Real 2-torsion cannot be silently dropped.
-SelmerIwasawaCohomology L2 supplies strict local conditions, functorial Selmer
-kernels and their exact cohomological formulation.
+Sections 0.1–0.5 supply cyclotomic fields and actions, §3.1 the one-prime
+class-control theorem, §5.4 general reflection, and §§7.1–7.4 Vandiver and
+its tower consequences. The following are additional required interfaces,
+not assertions that those sections state these specializations.
 
-GeometryOfNumbersAndQuadraticArithmetic GN.6 must supply the number-ring Witt
-signature theorem: finite signature kernel, image a rank-r₁ sublattice of
-ℤ^r₁, finite Picard group and the characteristic-zero injection
-W^q(O)→W^s(O). Use Part II DA.0's integral injection and DA.1/DA.3's
-symmetric/quadratic tables. HermitianKTheoryOfPoincareCategories HK.5/HK.7/HK.8
-supplies genuine Poincaré structures, comparison ranges and the GW–L fibre
-sequences, including the exact **nonnegative classical** comparison. A
-quadratic comparison starting in degree four cannot supply classical degrees
-zero through three.
+What IntegralIwasawaTheory must provide (gap:cyclotomic-kummer-congruence): for odd prime p and even n,n′≥2 with n≡n′ modulo p−1 and p−1∤n, the divided Bernoulli values B_n/n and B_n′/n′ are p-integral and congruent modulo p (cyclotomic foundations §§0.1–0.5; Sharifi, Proposition 5.2.5 and Remarks 5.2.8–5.2.9, pp. 134–136).
 
-IntegralIwasawaTheory §§0.1–0.5 supplies cyclotomic fields and actions,
-§3.1 the one-prime class-control theorem, §5.4 reflection, and
-§§7.1–7.4 Vandiver and its tower consequences. Its current package does
-not yet name the finite Kummer/Herbrand–Ribet and congruence exports
-required here. Layer 7 states those additional supplier requests, their
-proofs and their character conventions explicitly. The conditional integral
-table in §7.5 also requires the special-value order formulas of K-book
-VI.10.1, p. 527. The detected Harris–Segal
-construction and Keune's exact twisted Picard injection are stated with their
-specific source-proof requirements below; an abstract isomorphism of finite
-groups supplies neither map.
+What IntegralIwasawaTheory must provide (gap:cyclotomic-finite-herbrand-ribet): for odd prime p, A the p-primary ideal class group of ℚ(μ_p) with the direct Artin action and χ the mod-p cyclotomic character, (A/p)^(χ^(1−2k)) is nonzero exactly when p divides num(B_(2k)), for 1≤k≤(p−3)/2 (finite cyclotomic class groups §§0.1–0.5; Ribet, Theorems 1.1–1.3 and 4.4).
+
+What IntegralIwasawaTheory must provide (gap:cyclotomic-character-reflection): with the same direct action, the trivial and χ components of A/p vanish and, for every even character exponent a modulo p−1, dim(A/p)^(χ^a) ≤ dim(A/p)^(χ^(1−a)) ≤ dim(A/p)^(χ^a)+1 (§5.4; Sharifi, Theorem 4.4.2 and Corollaries 4.4.4–4.4.5, pp. 111–113).
+
+What IntegralIwasawaTheory must provide (gap:arithmetic-special-value-euler-characteristic): for totally real F, k≥1 and odd ℓ, v_ℓ(|ζ_F(1−2k)|) equals the valuation of |H²(O_F[1/ℓ],ℤ_ℓ(2k))|/|H¹(O_F[1/ℓ],ℤ_ℓ(2k))|, with the same equality at ℓ=2 when F/ℚ is abelian (the arithmetic specialization of the cyclotomic theory underlying §§7.1–7.4; K-book, VI.8.7–8.8 and proof, pp. 515–516).
+
+The Euler-characteristic contract requires the main-conjecture specialization,
+including its dyadic abelian case; Vandiver and finite reflection alone do
+not imply it. Section 7.5 owns the passage from this interface and §6.5 to
+integer K-group orders. Section 7.2 consumes the other three contracts before
+the finite criterion, its all-index consequence and its tower interpretation.
+
+### From TauCetiRoadmap.SchemeKTheoryOperations
+
+S.3 supplies general Dedekind localization, Cartan comparison,
+finite-pushforward naturality and the DVR boundary valuation.
+
+### From TauCetiRoadmap.KTheoryLowDegrees
+
+Z.4/Z.6 supplies rank–Picard and projective classification, K₀ of S-integers
+and K₀(ℤ). U.4/U.6 supplies determinant, arithmetic SK₁ vanishing and the
+S-unit rank.
+
+### From TauCetiRoadmap.K2SymbolsBrauer
+
+T.2/T.3/T.5 supplies Matsumoto symbols, tame and real sign symbols, the
+exact tame-kernel results and K₂ of ℤ and ℚ. T.7 supplies the classical
+Hilbert symbol–norm criterion. The Tate filtration below uses the inverse
+of the localization boundary, with the uniformizer/unit test of §2.2.
+
+### From TauCetiRoadmap.ArithmeticGaloisDuality
+
+R02.1/R02.3/R02.4 supplies continuous inverse-limit control, Kummer,
+finite H¹/H², the Brauer invariant-sum computation and Poitou–Tate.
+At odd ℓ, one finite place above ℓ gives Br(O[1/ℓ])[ℓ^r]=0 and
+H²(O[1/ℓ],μ_(ℓ^r))=Pic(O[1/ℓ])/ℓ^r. Real 2-torsion is retained.
+
+### From TauCetiRoadmap.SelmerIwasawaCohomology
+
+L2 supplies strict local conditions, functorial Selmer kernels and their
+exact cohomological formulation.
+
+### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
+
+GN.6 supplies the number-ring Witt signature theorem: finite signature
+kernel and image a rank-r₁ sublattice of ℤ^r₁. The Picard finiteness input
+is the localized class-group quotient from Tau Ceti. The integral injection
+and L-tables used with this theorem are targets of §3.5 here.
+
+### From TauCetiRoadmap.HermitianKTheoryOfPoincareCategories
+
+HK.5/HK.7/HK.8 supplies genuine Poincaré structures, localization and
+GW–L fibre sequences, quadratic and symmetric comparison ranges, and the
+nonnegative classical comparison. The quadratic comparison starting in
+degree four is not used for classical degrees zero through three.
+
+### From TauCetiRoadmap.KTheoryFiniteLocalFields
+
+L.1 supplies finite-field K-groups and Bott classes; L.3/L.6/L.7 supplies
+the degree-two Moore theorem, local even K-groups, their finite
+cohomological quotients and completion compatibilities.
+
+### From TauCetiRoadmap.ClassFieldTheory
+
+The global reciprocity and Hilbert S-class-field constructions identify the
+class group and its arithmetic Artin action in §6.11.
+
+### From TauCetiRoadmap.Chebotarev
+
+Layer 10, `hasDirichletDensity_frobeniusPrimeSet`, supplies positive density
+and infinitude for each Frobenius class, unchanged by finite exclusions.
+Section 6.11 applies it to the compatible class/cyclotomic fiber product.
 
 ## How to read the build
 
@@ -388,8 +431,8 @@ KTheoryLowDegrees Z.4/U.4/U.6 for the low-degree identifications and unit rank.
 ### 2.1 Arithmetic indexing of the localization sequence
 
 Consume the general Dedekind sequence from SchemeKTheoryOperations S.3. For
-O=O_(F,S), identify its closed points with finite primes of F outside S and
-obtain
+O=O_(F,S), use `integerHeightOneSpectrumEquiv` to identify its nonzero
+prime ideals (height-one points) with finite primes of F outside S and obtain
 
 ```text
 … → ⨁_(v∉S) K_n(k(v)) → K_n(O) → K_n(F)
@@ -397,7 +440,10 @@ obtain
 ```
 
 The arithmetic target is the identification of rings, primes and maps, not a
-second general localization theorem. For S⊆T, the relative sequence is indexed
+second general localization theorem. When O is not a field, these height-one
+points are its closed points. At S equal to all finite primes, O=F, its
+height-one family is empty and localization is the identity; the closed point
+(0) of Spec F is not a residue summand. For S⊆T, the relative sequence is indexed
 by T∖S. For arbitrary S or T the boundary still has finite support: each
 element is represented after inverting finitely many denominators, and
 filtered-colimit compatibility makes the map land in the direct sum. The same
@@ -423,7 +469,8 @@ F×→⊕_(v∉S)ℤ. The map from a residue generator to K₀(O) sends e_v to
 (0,[v]⁻¹), since [O/v]=[O]−[v]. This fixes the sign relative to the usual
 divisor-class sequence. The K₂ boundary β has the normalization in
 Conventions; comparing it with the supplied tame symbol t_v is an explicit
-inverse. (K-book, V.6.6–6.6.1, p. 409; III.6.2.3–6.2.4, pp. 232–233.)
+inverse. (K-book, V.6.6–6.6.1, p. 409; III.6.3, p. 234. The boundary β agrees with III.6.3, whereas Tate’s t
+is its inverse, as the uniformizer/unit Check below specifies.)
 
 Interpret, without redefining the existing maps, the S-unit and class sequence
 
@@ -585,10 +632,62 @@ Sun, pp. 5–6.) The named interface is `LayerPoset.le_iff`, `map`,
 
 ### 3.2 Relative homology, stability and the finiteness criterion
 
+For every field K and finite-dimensional K-space V of dimension m,
+construct `titsBuilding V` as the flag complex of nonzero proper subspaces,
+and its GL(V)-action. For m≥2 prove `solomonTits`: its reduced integral homology
+vanishes outside degree m−2 and in that degree is the Steinberg module
+`steinbergModule V`; the nerve is a wedge of (m−2)-spheres. Transport,
+apartment classes, the rank-one convention St₁=ℤ, and equivariance form the
+API. The building is not defined as the desired homology group. Use the
+apartment filtration and relative chain comparison. (Kahn, §4.3.1 and
+Theorem 4.3.3, pp. 17–18; Putman–Studenmund, §1, pp. 3–4;
+Quillen, Theorem 3 and proof, pp. 181–183.)
+
+**Checks.**
+
+- At rank two over 𝔽₂, the building has three isolated lines, with
+  reduced H₀=ℤ²; adjoining the zero subspace makes it contractible.
+- At rank one the proper building is empty and St₁=ℤ in reduced
+  degree −1; the layer poset instead has two points in degree zero.
+- A linear isomorphism transports every flag forward and acts on its
+  apartment orientation; changing basis does not erase that action.
+
+For every number field F, every projective O_F-lattice P of rank m≥1,
+and every q≥0, prove `projectiveSteinbergHomology_fg`:
+H_q(Aut_(O_F)(P);St(P⊗F)) is finitely generated over ℤ. Establish
+`projectiveArithmeticDuality` first: for a torsion-free finite-index
+subgroup Γ, the integral virtual dualizing module is
+St(P⊗F)⊗ℤ_χ^(m−1), where χ(g)=sign(N_(F/ℚ)(det_F g)). Its API gives
+the finite classifying model, orientation character, integral duality,
+transport in P and finite-index descent. A compact arithmetic bordification
+with boundary the proper building gives duality; cohomology with the inverse
+orientation character gives finiteness of untwisted Steinberg homology.
+The Lyndon–Hochschild–Serre sequence then descends through the finite
+quotient. For nonfree P use commensurability with a free lattice, not a
+free-basis assumption. (Quillen, proof of Theorem 1, pp. 184–185;
+Putman–Studenmund, Theorem C, pp. 4–5, Proposition 2.1 and its proof,
+pp. 8–10; Kahn, §4.3, pp. 17–18.)
+
+**Checks.**
+
+- At m=1, St₁=ℤ and Aut(P)=O_F×; the finitely generated unit group
+  has finitely generated homology, even for a nonprincipal rank-one P.
+- Over ℤ at m=2, det diag(−1,1)=−1 and the orientation twist is
+  nontrivial; at m=3 its square is trivial. Untwisted duality fails the
+  first case.
+- Both projective classes over ℤ[√−5] are included. Integral duality is
+  used on a torsion-free subgroup before finite-index descent, so torsion
+  orders are not inverted in the final ℤ-finiteness theorem.
+
+*Needs:* §3.1, the proper-building construction, existing arithmetic
+lattices and reduction theory, integral group (co)homology, the finite-index
+spectral sequence, and StableHomotopyKTheory H.1. The bordification,
+duality and Steinberg finiteness targets are owned in this subsection.
+
 Compare the nerve of LayerPoset V with the unreduced suspension of the Tits
 building. In rank m≥1 its sole reduced homology is St(V) in degree m−1;
 the rank-one convention gives St₁=ℤ with trivial action. The building and
-Solomon–Tits theorem are the R.1 inputs; the layer-poset comparison is the
+Solomon–Tits theorem are constructed below; the layer-poset comparison is the
 arithmetic target here. (Kahn, §§4.3.1–4.3.3, p. 17; Sun, p. 6.)
 
 Construct the natural relative comparison, for m≥1 and i≥0,
@@ -612,7 +711,7 @@ for m≥i and isomorphisms for m≥i+1. These bounds hold for every Dedekind
 domain; they are not homological stability bounds for GL_m. If Pic(R) is
 finite and H_q(Aut_R(P);St(P⊗K)) is finitely generated for all positive-rank
 projectives P and all q≥0, prove finite generation of every H_i(BQ_m) and
-H_i(BQ). For R=O_F apply R.1's projective-lattice finiteness, including its
+H_i(BQ). For R=O_F apply `projectiveSteinbergHomology_fg` below, including its
 orientation twist and nonfree classes. This unifies the finite-stage and
 stable homology assertions. (Quillen, Corollary on p. 182 and proof of
 Theorem 1, pp. 184–185.)
@@ -646,7 +745,8 @@ p. 479, IV §6 Proposition 9, p. 483, and V §§1–2, pp. 489–491.)
 - Finite rational dimension alone does not imply integral finite generation,
   as ℚ shows; finite generation alone does not imply finiteness, as ℤ shows.
 
-*Needs:* §3.1, H.1's categorical/relative homology comparisons, R.1 and H.3's
+*Needs:* §3.1, `solomonTits`, `projectiveSteinbergHomology_fg`,
+H.1's categorical/relative homology comparisons and H.3's
 connected H-space theorem. These comparisons and the finite-type theorem are
 substantive supplier inputs.
 
@@ -694,10 +794,36 @@ p. 320; V.6.6.3–6.6.4, p. 410.)
 
 ### 3.4 Ranks, finite even groups and infinite field groups
 
+Prove `borel_rank_order` for every order R in a finite-dimensional
+semisimple ℚ-algebra A and n≥2: the actual inclusion induces
+K_n(R)⊗ℚ≃K_n(A)⊗ℚ. For a central simple algebra over a number field F,
+prove `borel_rank_centralSimple`: the dimension is r₁+r₂ in degree
+1 modulo four, r₂ in degree 3 modulo four, and zero in even degrees.
+Products of simple factors give the semisimple case. The proof targets are
+the stable arithmetic-group comparison with relative Lie algebra cohomology
+and the identification of primitive rational homology with rational homotopy
+of the plus H-space. Compute the stable exterior generators in degrees
+4a+1 (a≥1) at real places and 2a+1 (a≥1) at complex places, then take
+primitives. This owns the rank theorem independently of a regulator-value
+formula. (K-book, IV.1.17–1.18 and preceding argument, pp. 270–271.)
+
+**Checks.**
+
+- For A=ℚ, degrees 3 and 5 have ranks zero and one; for ℚ(i) both
+  ranks are one. Complex embeddings contribute once per pair.
+- Nonmaximal orders have the same ranks in n≥2. Degree one has unit
+  rank instead, and degree zero has a rank-one summand per simple factor.
+- For A=F×F, the dimensions add. For a matrix algebra over F the
+  matrix size does not multiply the answer, by Morita invariance.
+
+*Needs:* §3.2, GeneralAlgebraicKTheory’s plus/Q comparison and Morita
+invariance, StableHomotopyKTheory’s rational H-space comparison, and the
+stable arithmetic and relative Lie algebra comparison proved here.
+
 Define the numerical function `borelRank r₁ r₂ n` to be r₁+r₂ at n≡1 mod 4,
 r₂ at n≡3 mod 4, and zero otherwise. Prove its even-degree vanishing
 `borelRank_even` and its period-four behavior. Its arithmetic interpretation
-is **only for n≥2**. Combine R.3's orders theorem with §3.3 to obtain this
+is **only for n≥2**. Combine `borel_rank_order` below with §3.3 to obtain this
 rank for K_n(O_(F,S)). Consequently
 K_n(O)≅ℤ^borelRank⊕T_n, where T_n is the canonical finite torsion subgroup
 and the free complement is not canonical. All positive even groups of O are
@@ -724,6 +850,48 @@ Soulé's later surjectivity. (K-book, IV.1.18, p. 271; V.6.8, p. 412.)
   finiteness assertion to the field would fail this basic example.
 
 ### 3.5 Symmetric, quadratic and genuine hermitian finiteness
+
+First prove `quadraticWitt_to_symmetric_injective` for every Dedekind
+domain R with fraction field of characteristic different from two. The
+map forgets a unimodular quadratic form to its associated symmetric form.
+A symmetric null class has a strict Lagrangian over R: intersect a field
+Lagrangian with the projective lattice and use saturation over a Dedekind
+domain. On this Lagrangian 2q(x)=b(x,x)=0, so q(x)=0 by 2-torsion
+freeness. This proves injectivity without requiring 1/2∈R.
+(Calmès–Dotto–Harpaz–Hebestreit–Land–Moi–Nardin–Nikolaus–Steimle,
+Corollary 2.3.16 and proof, pp. 47–48.)
+
+Prove `dedekindSymmetricLTable` and `dedekindQuadraticLTable` for the
+same R when its dyadic prime set I is finite. For ε=+1, the symmetric
+residues n modulo four are W^s(R), ⊕_(v∈I)W^s(k(v)), 0, and
+coker(W^s(K)→⊕_v W^s(k(v))). The quadratic residues are W^q(R),
+0, ⊕_(v∈I)W^q(k(v)), and an extension of the symmetric residue-three
+group by the total cokernel of the square W^q(R)→W^s(R) over
+W^q(R̂₂)→W^s(R̂₂). Name the exact extension `quadraticL_oddExtension`;
+no splitting is asserted. The sign ε=−1 is obtained by the degree-two
+shift L_n(R;−1)≃L_(n+2)(R;+1). For a global fraction field the symmetric
+residue-three term is Pic(R)/2. Prove the tables by symmetric
+localization–dévissage and the quadratic localization–completion square,
+retaining the actual maps. These prerequisites are owned here on the
+hermitian supplier’s carriers. (The same source, Proposition 2.3.1,
+Corollary 2.3.2, Remark 2.3.3, Propositions 2.3.6–2.3.9 and Corollary
+2.3.10, pp. 41–46.)
+
+**Checks.**
+
+- Over ℤ, forgetting quadratic to symmetric Witt groups is injective
+  although 2 is not a unit; its image has the integral signature constraint.
+- At R=ℤ the symmetric residues are ℤ,ℤ/2,0,0 and the quadratic
+  residues are ℤ,0,ℤ/2,0. A common table would give the wrong middle rows.
+- Over ℤ[1/2] the dyadic summands disappear. In characteristic two the
+  forgetting map can be zero, so the injection theorem cannot include it.
+- Negative degrees use periodicity and the sign-shift map. Replacing the
+  quadratic residue-three extension by its quotient loses its kernel.
+
+*Needs:* HermitianKTheoryOfPoincareCategories HK.5/HK.7/HK.8,
+GeometryOfNumbersAndQuadraticArithmetic GN.6 for the number-ring signature
+theorem, the finite Picard quotient, and the strict-Lagrangian and integral
+localization–completion arguments just specified.
 
 For a number ring O=O_(F,S) with finite S and ε=±1, prove finite generation
 of the periodic symmetric and quadratic L-groups L^s_n(O;ε), L^q_n(O;ε) in
@@ -776,7 +944,7 @@ These cases test both the arithmetic and categorical finiteness inputs.
 ### Dependencies
 
 Layers 1–2; GeneralAlgebraicKTheory K.1/K.3; StableHomotopyKTheory H.1/H.3/H.6;
-BorelRegulators R.1/R.3; finite-field K-theory; the arithmetic Witt and
+the building, Steinberg finiteness and rank targets of §§3.2/3.4; finite-field K-theory; the arithmetic Witt and
 hermitian comparison/fibre-sequence contracts specified above. The hermitian
 results require those exact supplier theorems, including the low classical
 degrees.
@@ -786,8 +954,7 @@ degrees.
 ### 4.1 Fixed twists and their functoriality
 
 For a field F, a chosen separable closure and an integer i, define
-`WInvariant F i` as H⁰(G_F,ℚ/ℤ(i)), using the prime-to-characteristic twist
-from M.1. Define `WInvariant.primary F i ℓ` by the ℓ-primary fixed twist for
+`WInvariant F i` as H⁰(G_F,ℚ/ℤ(i)), using the supplied prime-to-characteristic twist. Define `WInvariant.primary F i ℓ` by the ℓ-primary fixed twist for
 ℓ≠char F. The API gives the primary internal direct sum, cyclicity when
 finite, the order `wInvariant` under that finiteness hypothesis, its finite
 product formula, equality of the fixed subgroups at i and −i under the
@@ -826,7 +993,7 @@ finiteness. (K-book, VI.2.1–2.3, pp. 469–471.)
 - For a quadratic extension, cor∘res is multiplication by 2. It is not
   the identity merely because restriction is injective.
 
-*Needs:* M.1 twists, continuous H⁰, cyclotomic characters and finite
+*Needs:* EtaleCohomologyFoundations §§F.0.3/F.4 twists, continuous H⁰, cyclotomic characters and finite
 restriction/corestriction, with the chosen embedding comparisons.
 
 ### 4.2 Exponents and odd-primary computation
@@ -924,7 +1091,7 @@ condition and the exponent of each primary factor.
 
 ### Dependencies
 
-MotivicEtaleKTheory M.1, existing cyclotomic characters and roots of unity,
+EtaleCohomologyFoundations §§F.0.3/F.4 twists, existing cyclotomic characters and roots of unity,
 continuous H⁰ restriction/corestriction, and the elementary structure of units
 modulo prime powers. No arithmetic K-group is used to define W_i.
 
@@ -965,6 +1132,70 @@ finite-field Bott operations and compatible modulus reduction.
 
 ### 5.2 The e-invariant and the first descent edge
 
+Prove `milnor_etale_normResidue` for every field k, prime ℓ invertible
+in k, r≥1 and a≥0: the symbol sending {u₁,…,u_a} to the cup product
+of their Kummer classes is an isomorphism
+K_a^M(k)/ℓ^r≃H^a(k,μ_(ℓ^r)^(⊗a)). The target includes the full
+norm-residue theorem, not just the degree-two symbol law. Its proof uses
+norm varieties and the motivic-to-étale comparison; construct the required
+motivic complexes and their localization and coefficient maps before using
+the spectral sequence. (K-book, Theorem VI.4.1 and the discussion preceding
+spectral sequence VI.4.2, pp. 479–480.)
+
+**Checks.**
+
+- In degree zero the symbol is ℤ/ℓ^r→H⁰(k,ℤ/ℓ^r), sending 1 to 1;
+  in degree one it is Kummer’s k×/(k×)^(ℓ^r) isomorphism.
+- In degree two the cup product agrees with the imported Brauer symbol,
+  including its Steinberg relation, rather than its inverse.
+- ℓ=2 over characteristic zero is included; characteristic ℓ is excluded
+  from the stated étale formula and is not handled by deleting that prime.
+
+Prove `suslinTorsionComparison` for every separably closed field k of
+characteristic zero and i≥1: K_(2i−1)(k)_tors≃ℚ/ℤ(i), with coefficient
+comparison K_(2i)(k;ℤ/m)≃μ_m^(⊗i) and zero odd coefficient groups.
+Normalize the comparison by the Bockstein of a Bott element in degree two;
+prove equivariance for every field automorphism, field-embedding
+naturality, coefficient-colimit and connecting-map compatibility. Rigidity,
+the algebraically closed finite-coefficient computation and its
+coefficient sequence give this theorem. (K-book, VI.1.3–1.7.1,
+pp. 464–468.)
+
+**Checks.**
+
+- At i=1 the torsion map is the roots-of-unity identity under K₁=k×.
+- An automorphism sending ζ_m to ζ_m^a acts by a^i in weight i;
+  replacing this by the untwisted action fails at i=2,m=5,a=2.
+- For a separably closed k the Galois fixed-point edge is the chosen
+  comparison itself; its Bockstein has degree −1.
+
+Construct `arithmeticEtaleDescent`, the coefficient-compatible motivic
+and étale descent spectral sequences for number fields and all finite-S
+integer rings with ℓ inverted, and their restriction/corestriction maps.
+Prove `arithmeticEtaleComparison`: for odd ℓ, or for ℓ=2 and totally
+imaginary F, the ordinary finite-coefficient map to étale K-theory is an
+isomorphism in degrees n≥1 and injective at n=0; coefficient limits and
+real-corrected versions retain their named connecting maps. The proof
+compares motivic and étale pages through `milnor_etale_normResidue`, uses
+cd_ℓ≤2, and applies localization from the field to the integer ring.
+For ℓ=2 with real places use instead §5.4’s real comparison and its
+restriction spectral-sequence maps; no finite-cd assumption is imposed on
+that Galois group. (K-book, VI.4.2–4.2.1, pp. 480–481, VI.8.2–8.3,
+pp. 513–514, VI.9.1–9.4, pp. 517–519; Feng–Galatius–Venkatesh,
+Proposition 2.9 and proof, pp. 12–13.)
+
+**Checks.**
+
+- The imaginary dyadic field ℚ(√−7) is permitted despite exceptionality.
+- For real ℚ in degree three the dyadic torsion map has a kernel of
+  order two; the ordinary cd≤2 edge cannot be used there.
+- At n=0 injectivity does not imply surjectivity. The two bases of §6.16
+  require their separate Picard argument to obtain that stronger result.
+
+*Needs:* §4.1’s twists, the generic coefficient/localization and homotopy
+suppliers, ArithmeticGaloisDuality’s finite and continuous cohomology,
+and the rigidity, norm-residue and descent targets owned in this subsection.
+
 For i≥1 and a field of characteristic zero, define `eInvariant` on
 K_(2i−1)(F)_tors by extension to a separable closure and the equivariant
 Suslin identification with ℚ/ℤ(i), taking fixed points in W_i(F). Its
@@ -1004,7 +1235,7 @@ descent edge ε_R satisfies
 
 At odd ℓ, and at ℓ=2 for totally imaginary F, this edge and the resulting
 e-map are isomorphisms. At real places and ℓ=2 the equality of maps remains
-valid but the edge may have kernel or cokernel. This is the **early** M.7
+valid but the edge may have kernel or cokernel. This is the coefficient-compatible `arithmeticEtaleDescent`
 edge, not a theorem deduced from the full later Chern/regulator family.
 (Rognes–Weibel, §1 after Example 1.6, p. 8; K-book, VI.1.6–1.7.1,
 pp. 467–468 and VI.8.2–8.3, pp. 513–514.)
@@ -1059,7 +1290,41 @@ p. 513; Theorem VI.8.4, p. 514 and Theorem VI.9.5(a), p. 519.)
 
 ### 5.4 Diagonal extensions and real places
 
-First prove the elementary extension normal form. Let r>0 and w>0 be even.
+Construct the real topological K-spectrum KO from stable virtual real
+vector bundles and suspension; its API includes pullback, direct sum,
+complexification, realification and the connective cover ko. Construct
+`realKTheoryComparison`: for real closed k and m≥2, compare
+connective algebraic K(k;ℤ/m) with connective real topological K-theory
+ko; it induces isomorphisms on all nonnegative homotopy groups, with the
+coefficient Bockstein and extension to the algebraic closure matching
+complexification ko→ku. Construct `realBottPeriodicity` on periodic KO,
+with eight-periodic homotopy and the real/complex comparison maps; its
+connective cover is ko, so no negative ordinary algebraic K-group is
+introduced. Prove the finite-coefficient comparison by real rigidity and
+Suslin’s real-closed-field calculation. Construct `realRestrictionDescent`
+for number-field S-integers with 2 inverted: restriction to every real
+place is a morphism of the coefficient spectral sequences, giving the
+real d₂ differentials and additive extensions of VI.9.1–9.4. This is the
+input to the real torsion table, including the nonsplit degree-three
+extension below. (K-book, VI.3.1 and Table 3.1.1, p. 475; VI.9.1–9.4,
+pp. 517–519; Rognes–Weibel, Theorems 6.7 and 6.9, pp. 32–34.)
+
+**Checks.**
+
+- Integrally KO₀=ℤ, KO₁=KO₂=ℤ/2, KO₃=0, KO₄=ℤ and
+  KO₅=KO₆=KO₇=0; KU alone fails the degrees one and two.
+- Modulo two the groups in degrees 0,…,7 have orders 2,2,4,2,2,1,1,1;
+  the degree-two group is ℤ/4, not (ℤ/2)². Bockstein compatibility
+  must retain that extension.
+- Complexification KO₀→KU₀ is the identity, whereas KO₄→KU₄
+  is multiplication by two. Eight-periodicity is applied to KO; ko
+  has no negative-degree periodic table.
+
+*Needs:* §5.2’s coefficients and Suslin normalization,
+StableHomotopyKTheory’s spectra, homotopy groups and connecting sequences; real Bott periodicity and the comparison are
+proved here, independently of any trace-method roadmap.
+
+First prove the elementary extension normal form. Let r>0 be an integer and let w>0 be even.
 If 0→(ℤ/2)^r→E→ℤ/w→0 has a lift x of 1 satisfying
 wx=(1,…,1), then E≅ℤ/(2w)⊕(ℤ/2)^(r−1). In the presentation, replace
 one elementary basis vector by the diagonal vector; it becomes wx, leaving
@@ -1136,8 +1401,9 @@ functor; it is not an arbitrary map out of a cyclic group.
 Theorem 3.4, pp. 185–186.)
 
 The finite-field detection follows from stable transfer. First take
-k=𝔽_q with μ_m(k)
-of exact order m=ℓ^a, where ℓ is odd, or ℓ=2 and a≥2.
+k=𝔽_q and m=ℓ^a=|k×{ℓ}|, so a=v_ℓ(q−1)≥1. Assume ℓ odd,
+or ℓ=2 and a≥2. Thus μ_m(k) is the full ℓ-primary root group,
+not merely a subgroup of that order.
 The valuation identity
 
 ```text
@@ -1217,6 +1483,9 @@ finite-rank section is not claimed to be canonical.
 - A real field at ℓ=2 is excluded: K₃(ℚ)→W₂(ℚ) is nonsplit.
 - A nonexceptional imaginary field may use the dyadic summand, while ℚ(√−7)
   may not use that hypothesis merely because it has no real places.
+- At q=19, ℓ=3, r=1, μ₃ is a root subgroup but not the full
+  3-primary group: v₃(|GL₁(𝔽₁₉)|)=2, whereas a=1 for μ₃.
+  Its index is 6, so merely having μ₃ cannot justify prime-to-3 detection.
 - At q=7, ℓ=3, r=2, |GL₂(𝔽₇)|=2016 and |μ₃≀Σ₂|=18;
   their index 112 is prime to 3. At q=3, ℓ=2 the displayed
   valuation formula fails already at r=2; q≡1 mod4 was essential.
@@ -1238,8 +1507,8 @@ and e-maps remain distinguished from the abstract free-plus-torsion forms.
 ### Dependencies
 
 Layers 1–4; K.7's coefficient operations; finite-field Bott classes;
-M.7's early coefficient-compatible equivariant edge and real correction;
-H.6's colimits and Bockstein; RT.4's real KO comparison. The Harris–Segal
+§5.2's coefficient-compatible equivariant edge and §5.4's real correction;
+H.6's colimits and Bockstein; `realKTheoryComparison` and `realBottPeriodicity`. The Harris–Segal
 detected-map construction is an additional proof input, not a consequence
 of the table of abstract groups.
 
@@ -1254,7 +1523,7 @@ natural comparison
 K_(2i)(O_(F,S)){ℓ} ≅ H²(O_(F,S)[1/ℓ],ℤ_ℓ(i+1)).
 ```
 
-Use M.7's comparison and the coefficient inverse-limit theorem, not an
+Use `arithmeticEtaleComparison` and the coefficient inverse-limit theorem, not an
 unjustified exchange of homotopy and inverse limit. Its mod-ℓ version is
 K_(2i)(O)/ℓ≅H²(O[1/ℓ],μ_ℓ^(⊗(i+1))). The positive even group is finite,
 so this mod-ℓ quotient counts cyclic primary factors; it does not determine
@@ -1288,7 +1557,7 @@ hypothesis at 2. The sum-of-invariants relation accounts for the minus one.
 - This vanishing concerns the 2-primary part, not the entire higher even
   group.
 
-*Needs:* Layers 2–5, M.7, arithmetic Kummer/Brauer and inverse-limit control.
+*Needs:* Layers 2–5, `arithmeticEtaleComparison`, arithmetic Kummer/Brauer and inverse-limit control.
 
 ### 6.2 Signature defect from Selmer classes
 
@@ -1414,8 +1683,10 @@ function; arithmetic use keeps n>0 and s≥1.
 - For (r,s,t,j)=(1,1,0,0), the values at 2,4,6,8 are 1,0,0,0.
 - For (2,1,0,1), they are 2,1,1,0. The degree-four value detects the
   signature defect that the rational case alone would miss.
-- Adding one allowed finite prime increases every even branch by one;
-  s≥1 prevents truncated-subtraction artifacts.
+- Holding r,t,j fixed, replacing the numerical parameter s by s+1
+  increases every even branch by one for s≥1. Arithmetic enlargement
+  can change t and j: for ℚ(√7), adjoining the prime above 7 changes
+  (s,j) from (1,1) to (2,0), with t=0, so the degree-four two-rank stays 1.
 - At (r,t,j,n)=(0,0,0,0), both s=0 and s=1 give zero. Thus
   `evenTwoRank_add_prime` would be false without s≥1, even though the
   numerical function is defined there.
@@ -1546,7 +1817,7 @@ has Pic(O_F[1/3]){3}≃ℤ/3 and one prime above 3, and that F(μ₉)/F
 is nontrivial, unramified and split at that prime. Include the degree and
 root-order checks used above. The conditional counterexample does not
 require treating this computational certificate as already supplied.
-(Caputo, arXiv:1002.2936v2, Proposition 2, p. 5, Theorem 1,
+(Caputo, arXiv:1002.2936v2, Proposition 2, p. 4, Theorem 1,
 pp. 12–14, Proposition 4 and Example 2, pp. 16–17.)
 
 This distinguishes the assertion in K-book V.6.8.2, p. 413, from the
@@ -1774,7 +2045,8 @@ last retains both exceptionality and every dyadic alternative. These are the
 - For F=ℚ(√−17), 17 is a square in ℚ₂, so F_v=ℚ₂(i).
   This completion is nonexceptional and its cyclotomic image is proper;
   F is special. Both F(i) and F_v(i) have only μ₄ among dyadic roots,
-  so the old strict-root-enlargement test incorrectly rejected F.
+  so requiring strictly more dyadic roots in F_v(i) than in F(i) would
+  wrongly reject F; both alternatives in the local criterion are needed.
 - For squarefree d≠0,1, ℚ(√d) is special precisely when d≡−1 mod 8
   with d≠−1, or d≡±2 mod 16 with d≠±2. The excluded fields test the
   exceptional small root levels.
@@ -1942,7 +2214,9 @@ Artin(x)|_C=σ|_C. The norm residue must first define σ in the actual
 cyclotomic image. The proof applies Chebotarev to
 Gal(HL/F)=Gal(H/F)×_(Gal(C/F))Gal(L/F), using arithmetic Frobenius.
 This is a specialization of ClassFieldTheory's reciprocity and
-GlobalNumberFields' Chebotarev, not a new unrestricted approximation
+Chebotarev, Layer 10, `hasDirichletDensity_frobeniusPrimeSet` and its
+infinitude and finite-exclusion corollaries. Arithmetic Frobenius is taken
+on the compatible fiber product; this is not an unrestricted approximation
 principle. It explains the failed lemma but is not needed for the
 independent proof above.
 
@@ -1965,6 +2239,10 @@ independent proof above.
 - At a real place and even i the Bockstein H³ term is nonzero.
   Ordinary finite H² cannot be substituted for integral H² modulo
   2^ν without the displayed boundary calculation.
+
+*Needs:* ClassFieldTheory’s global reciprocity and Hilbert S-class fields;
+Chebotarev, Layer 10; ArithmeticGaloisDuality’s Poitou–Tate and Bockstein
+maps; Hutchinson’s finite-group and Picard-image arguments specified above.
 
 ### 6.12 Divisibility, special-field obstruction and completion boundary
 
@@ -2018,7 +2296,7 @@ Theorem 8.7, pp. 20–21.)
 Assemble `weibel_symbol_divisibility` for every number field and i≥1:
 div K_(2i)(F)⊆WK^sym_(2i)(F), with quotient ℤ/2 for special F and odd
 i, and zero otherwise. Use Hutchinson's independent cohomological result
-for the formerly missing exceptional odd image step; retain Weibel's
+for the exceptional odd image step; retain Weibel's
 real motivic/K comparison and the inclusion C_(F,i)⊆div, rather than
 identifying those groups without their correction. (Wild-kernel preprint,
 Theorem A, p. 1, §§7–8, pp. 18–21; Hutchinson, Corollary 5.7, p. 19.)
@@ -2030,12 +2308,11 @@ torsion. In higher degrees a global torsion element might map nontrivially
 into divisible residue-characteristic local torsion. To claim equality,
 one must prove the explicit vanishing of those global-to-local images.
 Without that additional theorem, no raw-kernel version of the preceding
-symbol theorem is asserted. Name the conditional target
-`rawWildKernel_eq_symbol_of_localRestriction_eq_zero`: for each place v,
-assume that the actual restriction K_(2i)(F)→K_(2i)(F_v) is zero on
-`symbolWildKernel F i`; then the two kernels agree. Establishing this
-vanishing at i>1 is the open sub-target. Divisible local torsion does not
-force the restriction to be zero. (K-book, V.6.8.2, p. 413; wild-kernel preprint,
+symbol theorem is asserted. The established comparison targets are
+`rawWildKernel_le_symbol` for every i≥1 and `rawWildKernel_two_eq_symbol`
+at i=1. Divisible local torsion alone does not force the higher restriction
+to vanish; no higher equality target is asserted without an independently
+sourced global-to-local theorem with explicit hypotheses. (K-book, V.6.8.2, p. 413; wild-kernel preprint,
 Definition 0.2, pp. 2–3, and §1.)
 
 **Checks.**
@@ -2114,12 +2391,13 @@ of the vanishing being deduced.
 ### 6.14 Finite presentations with independent lower bounds
 
 Define `OrderCertificate A` for an abelian group A using finite
-`Module.Relations ℤ`, a solution in A whose images span, a finite quotient
+`Module.Relations ℤ` (finite generator and relation index types), a solution in A whose images span, a finite quotient
 B of A with a proved surjection A→B, and the equality
-|B|=|rel.Quotient|, where the latter quotient is finite. The two maps are
+|B|=|rel.Quotient|, where the latter quotient is finite. The proof field `OrderCertificate.card_match` is this equality. The two maps are
 P=rel.Quotient↠A↠B. Their matched finite orders force the first map to
-be an isomorphism. Its API includes `fromQuotient_surjective`,
-`isPresentation`, `toPresentation`, `card_eq`, `linearEquiv` and
+be an isomorphism. The Lean milestone `OrderCertificate.isPresentation`
+states that the stored solution is a presentation. Its API includes
+`fromQuotient_surjective`, `isPresentation`, `toPresentation`, `card_eq`, `linearEquiv` and
 `ofIsPresentation` for a complete kernel proof. Every relation, spanning
 assertion and lower-bound surjection is a mathematical proof field.
 (Finite-group cardinal comparison and Mathlib's relations API; the
@@ -2132,10 +2410,14 @@ p. 232.)
   real sign quotient of order two gives its certificate. The spanning
   proof is a separate supplied theorem.
 - An empty presentation has order one; its spanning proof forces A=0.
+  Suggested.lean constructs its matching certificate on the zero group
+  `Fin 0 →₀ ℤ`.
   It cannot certify an arbitrary group just because no generators were listed.
 - The map ℤ/4↠ℤ/2 satisfies the relation 4g=0 and spans the target,
   but gives only an upper bound four. There is no lower quotient of
-  ℤ/2 of order four, so this is not a completed certificate.
+  ℤ/2 of order four, so this is not a completed certificate. The proved
+  Lean Check excludes every certificate on `ZMod 2` whose upper quotient
+  has order four.
 - A verified complete-kernel presentation produces the same relations
   and solution under `toPresentation`, rather than a different abstract
   group of the same order.
@@ -2162,9 +2444,9 @@ compatibility with the original relations and solution.
 - A two-rank gives the number of primary cyclic factors, not h₂. Full
   cohomology cardinalities, all local maps and any extension kernel are
   required for an order computation.
-- `OrderCertificate.ofCohomology_toPresentation` preserves the given
+- OrderCertificate.ofCohomology_toPresentation preserves the given
   relations and their images. The targets `evenK_toPrimaryCohomology_surjective`,
-  `OrderCertificate.ofCohomology_card` and `ofCohomology_two_real` state
+  OrderCertificate.ofCohomology_card and `ofCohomology_two_real` state
   respectively the primary projection, matched order and real correction
   used in this constructor.
 - A conjectural or unproved special-value equality cannot fill a lower
@@ -2182,8 +2464,8 @@ is 2·twist−cohomologicalDegree=2j. This is a numerical convention for
 dualization signs, not a construction of any Bott group.
 `bottCohomologySlot_sign` identifies the sign (−1)^twist;
 `bottCohomologySlot_period` keeps the cohomological index and adds two to
-the twist when j increases by two. `bottCohomologySlot_compat` interprets
-the selected slot in M.7 twists and the native `Module.End.eigenspace`.
+the twist when j increases by two. The selected slot is interpreted through `bottEvenEdgeEquiv` below in
+EtaleCohomologyFoundations §§F.0.3/F.4 twists and the native `Module.End.eigenspace`.
 (Feng–Galatius–Venkatesh, author PDF, Lemmas 2.11 and 2.14,
 pp. 13–15; descent spectral sequence (2.6), p. 12.)
 
@@ -2204,8 +2486,34 @@ pp. 13–15; descent spectral sequence (2.6), p. 12.)
   of scheme maps gives their composites. A chosen abstract splitting need
   not satisfy either naturality test.
 
-Take q=p^r with p odd and r≥1, and X either Spec ℤ[1/p] or
-Spec ℤ[ζ_q,1/p]. Prove the natural even edge sequence
+Construct `bottEtaleDescent` for the Bott localization of algebraic
+K-theory at every odd prime power q=p^r on regular finite-type schemes over
+ℤ[1/p] of finite p-cohomological dimension. Its spectral sequence is
+E₂^(s,t)=H^(−s)(X,ℤ/q(t/2))⇒K^β_(s+t)(X;ℤ/q), with even t and
+s≤0. Prove convergence, pullback and coefficient compatibility. Construct
+`bottDualization` as a spectrum involution induced by dualizing perfect
+complexes, commuting with localization; on the row of twist a it acts by
+(−1)^a, including at p=3. The comparison comes from étale hyperdescent of
+the Bott-localized K-sheaf; the root action fixes the Tate normalization.
+(Feng–Galatius–Venkatesh, §2.6.1, equation (2.6), p. 12.)
+
+**Checks.**
+
+- For cd_p(X)≤2 only cohomological rows 0,1,2 survive. At j=1,
+  the positive even edge is H²(2) and the negative edge is H⁰(1).
+- At q=3 dualization remains a spectrum map; the construction never
+  assumes an associative product on arbitrary mod-three coefficients.
+- The involution is dualization on perfect complexes. Conjugation of the
+  cyclotomic base is a different map, even though it also has order two.
+
+*Needs:* §5.2’s norm-residue and descent theory, the general coefficient
+and localization spectra, §4.1’s twists, and the étale site supplied by
+EtaleCohomologyFoundations. The Bott hyperdescent proof and spectrum
+involution are targets here.
+
+For every number field F, finite S containing all primes above an odd
+prime p, q=p^r with r≥1, and X=Spec O_(F,S), prove in every integer
+degree the natural even edge sequence
 
 ```text
 0 → H²(X,ℤ/q(j+1)) → K^β_(2j)(X;ℤ/q) → H⁰(X,ℤ/q(j)) → 0.
@@ -2225,7 +2533,8 @@ states their compatibility, their inverse maps and the splitting for every
 morphism of these descent filtrations commuting with dualization; its
 identity and composition laws follow from those actual maps.
 
-Spell out both bases' tables for every k∈ℤ:
+Spell out the resulting table for every such X and every k∈ℤ;
+Spec ℤ[1/p] and Spec ℤ[ζ_q,1/p] are specializations:
 
 | Degree and dualization sign | Cohomology |
 | --- | --- |
@@ -2285,13 +2594,13 @@ these examples prevent treating the even theory as a single uncorrected
 
 ### Dependencies
 
-Layers 1–5; M.7's comparison, real correction, Bott descent and
-spectrum-level dualization; arithmetic Kummer/Brauer and Poitou–Tate;
+Layers 1–5; `arithmeticEtaleComparison`, the real correction in §5.4,
+`bottEtaleDescent` and `bottDualization`; arithmetic Kummer/Brauer and Poitou–Tate;
 strict Selmer kernels and inverse limits; local K-theory and symbols;
 K.7's coefficient localization; finite-presentation/cardinality APIs. The
-exceptional dyadic Picard-image argument and the higher raw-completion
-vanishing are separate required theorems, with no substitution of the
-symbol-kernel theorem for either one.
+exceptional dyadic Picard-image argument retains its independent proof;
+raw-completion comparison is limited to the inclusion and degree-two
+equality in §6.12.
 
 ## Layer 7: Bernoulli numbers, regular primes and conditional tables
 
@@ -2350,92 +2659,74 @@ is fixed.
 ### 7.2 Regularity and Kummer's finite criterion
 
 For a prime p define `IsRegularPrime p` by
-p∤NumberField.classNumber(CyclotomicField p ℚ). The light predicate is
-defined on all natural inputs; every arithmetic regularity theorem separately
-assumes primality. Its API includes
-equivalence with vanishing p-primary class group, the regular/irregular
-dichotomy under primality, invariance under choices of primitive roots,
-and the odd-prime Bernoulli criterion. This predicate does not include
-Vandiver's plus-part assertion. The arithmetic definition is finite-level.
-For odd p prove the Iwasawa equivalence between regularity and vanishing
-of p-primary class groups throughout the p-power cyclotomic tower, using
-the exact tower theorem from IntegralIwasawaTheory, rather than a definition
-by conjectural tower behavior. (K-book, Example VI.2.4.1, p. 472;
-IntegralIwasawaTheory's finite-class-group and tower contracts.)
-
-Prove `kummer_criterion`: for odd prime p, irregularity is equivalent to
-p dividing the numerator of some B_(2k) with 1≤k≤(p−3)/2. From the
-Kummer congruences deduce that an odd regular p divides no numerator of
-B_(2k)/k for k≥1. This conclusion about all k needs the congruence
-argument, not just inspection of the finite initial range.
+p∤NumberField.classNumber(CyclotomicField p ℚ). The predicate is defined
+on all natural inputs; arithmetic regularity theorems separately assume
+primality. Its API includes equivalence with zero p-primary class group,
+the regular/irregular dichotomy, invariance under primitive-root choice,
+`IsRegularPrime.iff_not_dvd_classNumber` and the criterion below.
+Vandiver’s plus-part assertion is not part of the definition.
 (K-book, Example VI.2.4.1, p. 472.)
 
-The finite proof uses the direct Artin action on the p-class group A of
-E=ℚ(μ_p). Its trivial and χ components vanish. For every even a,
-character reflection gives
+First consume `cyclotomic_kummer_congruence` and
+`cyclotomic_character_reflection` from the exact supplier contracts
+(gap:cyclotomic-kummer-congruence and gap:cyclotomic-character-reflection).
+For the latter, A is the p-primary class group of ℚ(μ_p), with the
+**direct Artin action**, and χ is its mod-p cyclotomic character. Its
+trivial and χ components vanish, and every even exponent a satisfies
 
 ```text
 dim(A/p)^(χ^a) ≤ dim(A/p)^(χ^(1−a)) ≤ dim(A/p)^(χ^a)+1.
 ```
 
-Together with §7.3's Herbrand–Ribet equivalence for the other odd
-characters, this proves that all class components vanish exactly when
-the finite Bernoulli range is p-indivisible. Thus the criterion includes
-the plus part; it does not assume Vandiver. The reflection proof uses
-the Kummer pairing between the unramified radical and the class group,
-whose dual character is χ times the inverse character. The intervening
-unit radical has dimension at most one in each nontrivial even
-character; the trivial component and the χ component vanish by descent
-to ℚ and the ramification of E(μ_(p²))/E. (Sharifi, Theorem 4.4.2
-and proof, pp. 111–113, Corollaries 4.4.4–4.4.5, p. 113.)
+The reflection dual character is χ times the inverse character. These
+are supplier contracts, not additional constructions of reflection or
+Bernoulli measures here. (Sharifi, Theorem 4.4.2 and Corollaries
+4.4.4–4.4.5, pp. 111–113; Proposition 5.2.5 and Remarks 5.2.8–5.2.9,
+pp. 134–136.) *Needs:* the two named IntegralIwasawaTheory gaps.
 
-Here is the all-index step, including indices divisible by p. For even
-n,n′≥2 congruent modulo p−1 and not divisible by p−1, the smoothed
-Bernoulli measure has moments
-(1−c^n)(1−p^(n−1))B_n/n. Choose c primitive modulo p. This moment
-is integral, both displayed factors are units, and x^(n−1) and
-x^(n′−1) agree modulo p on ℤ_p^×. Consequently B_n/n is p-integral
-and B_n/n≡B_n′/n′ modulo p. Reduce n=2k to an even index
-2≤n′≤p−3 and apply the finite criterion. If p−1 divides n instead,
-von Staudt–Clausen gives v_p(B_n/n)=−1−v_p(n), whose reduced
-numerator is again prime to p. Multiplying by 2 gives the asserted
-statement for B_(2k)/k. This proof uses moments of a bounded measure,
-not division of a congruence by the potentially nonunit k.
-(Sharifi, Definition 5.2.4 and Proposition 5.2.5 with proof,
-pp. 134–135; moment interpretation, Remarks 5.2.8–5.2.9,
-pp. 135–136.)
+Next consume `cyclotomic_finite_herbrand_ribet`
+(gap:cyclotomic-finite-herbrand-ribet): for 1≤k≤(p−3)/2 the
+χ^(1−2k) component of A/p is nonzero exactly when p∣num(B_(2k)).
+Section 7.3 identifies its action with the explicit finite projector; it
+is not a proof input to this contract. (Ribet, Theorems 1.1–1.3 and 4.4;
+K-book, VI.10.4, p. 530.) *Needs:* the finite Herbrand–Ribet supplier
+contract, with the divided congruence normalization fixed independently
+before its character translation.
 
-For the tower equivalence take E_r=ℚ(μ_(p^r)), r≥1. Each
-E_r/E_1 is a p-extension with exactly one ramified finite prime,
-totally ramified. If its upper p-class group were nonzero, let H be
-its maximal unramified abelian p-extension. H/E_1 is a finite
-p-Galois extension. Its inertia subgroup at p maps isomorphically
-onto Gal(E_r/E_1) and is proper in Gal(H/E_1). A maximal subgroup
-containing that inertia is normal of index p; its fixed field is an
-unramified degree-p extension of E_1, contradicting the zero base
-p-class group. The converse includes r=1. This is the finite
-one-prime argument behind IntegralIwasawaTheory §3.1, with no main
-conjecture or control-isomorphism assumption. (Yokoyama, Theorem 4
-and proof, pp. 354–355, attributing the argument to Iwasawa.)
+Prove `kummer_criterion`: for odd prime p, irregularity is equivalent to
+p dividing num(B_(2k)) for some 1≤k≤(p−3)/2. Reflection identifies the
+vanishing of the remaining even components with the vanishing detected
+by Herbrand–Ribet; the two exceptional characters vanish unconditionally.
+Thus the finite criterion includes the plus part and assumes no Vandiver
+hypothesis. (K-book, Example VI.2.4.1, p. 472.) *Needs:* the preceding
+finite Herbrand–Ribet and character-reflection contracts, the class-number
+predicate and the finite character decomposition.
 
-The exact additional IntegralIwasawaTheory exports requested here are
-`cyclotomic_kummer_congruence` in the preceding integral divided form,
-`cyclotomic_finite_herbrand_ribet` with the action of §7.3, and
-`cyclotomic_character_reflection` with the displayed component ranks.
-The current §5.4 supplies general reflection but does not yet name
-this component specialization. Its §3.1 already supplies the
-one-prime theorem; this paragraph specializes it rather than
-replanning class control.
+Then prove `IsRegularPrime.dividedBernoulli_num`: for every odd regular
+prime p and k≥1, p does not divide the reduced numerator of B_(2k)/k.
+When p−1∤2k, use the integral **divided** congruence to reduce to
+2≤n′≤p−3. When p−1∣2k, von Staudt–Clausen gives
+v_p(B_(2k)/(2k))=−1−v_p(2k), so its numerator is prime to p.
+Multiplication by two preserves this for odd p. No congruence is divided
+by a possibly nonunit k. (Sharifi, Proposition 5.2.5 and Remarks
+5.2.8–5.2.9, pp. 134–136; K-book, VI.2.4.1, p. 472.)
+*Needs:* `kummer_criterion`, gap:cyclotomic-kummer-congruence, and the
+existing von Staudt–Clausen denominator theorem.
 
-Prove `isRegularPrime_of_lt_37` for every prime p<37. For p=2 use
-ℚ(ζ₂)=ℚ and class number one; for the odd primes use the finite
-Bernoulli criterion. This is a finite calculation, separate from the
-all-indices Kummer-congruence consequence.
-`IsRegularPrime.iff_not_dvd_classNumber` is the defining characterization.
-`IsRegularPrime.iwasawa` is the regularity/tower equivalence with its odd
-prime and cyclotomic hypotheses from IntegralIwasawaTheory;
-`IsRegularPrime.decidable` uses a proved computation of the class number,
-not an oracle inferred from an unproved table.
+Finally prove `IsRegularPrime.iwasawa`: for odd prime p, regularity is
+equivalent to p-indivisibility of the class number of ℚ(μ_(p^r)) for
+every r≥1. This specializes the one-prime p-extension theorem: each
+upper cyclotomic layer has a single totally ramified finite prime.
+The converse includes r=1. (IntegralIwasawaTheory §3.1; Yokoyama,
+Theorem 4 and proof, pp. 354–355.) *Needs:* that one-prime theorem and
+the class-number definition; the finite criterion and all-index corollary
+precede this interpretation without serving as its definition.
+
+Prove `isRegularPrime_of_lt_37` for every prime p<37. At p=2 use
+ℚ(ζ₂)=ℚ and class number one; at odd p use the finite criterion.
+This finite range assertion is distinct from the all-index corollary.
+(K-book, Example VI.2.4.1, p. 472.) *Needs:* `kummer_criterion` and
+proved Bernoulli numerators in its finite range.
 
 **Checks.**
 
@@ -2470,41 +2761,20 @@ compatibility with localization of the principal cyclotomic prime. For
 P^(χ^(1−2k)) ≠ 0  ↔  ℓ divides num(B_(2k)).
 ```
 
-The exponent is ℓ−2k modulo ℓ−1. It is not 2k−1 unless the specified
-action has first been inverted. The two implications are Herbrand and
-Ribet respectively; their finite-class-group proofs and exact twist
-translation are the IntegralIwasawaTheory requests just specified.
-For Herbrand, project the Stickelberger annihilator to χ^a, a=1−2k.
-Its scalar is (ω^a(b)−b)B_(1,ω^(−a)), where ω is the
-Teichmüller lift of χ. A primitive b makes the first factor a unit,
-since a≠1. The finite Teichmüller power-sum calculation gives
-B_(1,ω^(2k−1))≡B_(2k)/(2k) modulo p. One can check this
-normalization using ω(b)≡b^p modulo p² and the ordinary Kummer
-congruence at N=1+p(2k−1); N≡2k modulo p−1 and N≡1 modulo p.
-A nonzero class component therefore forces p∣num(B_(2k)).
-(Sharifi, Theorem 4.5.7 and proof, p. 117; Ribet, Lemma 3.1
-and proof, pp. 156–157.)
-
-For the reverse direction, Ribet's Eisenstein congruence produces a
-weight-two level-p eigenform with the prescribed residual characters.
-Its p-adic representation is irreducible; the stable-lattice argument
-chooses a nonsplit residual extension with diagonal characters
-1 and χ^(2k−1), in that order. Restricting to G_E gives a nonzero
-additive p-extension. It is unramified away from p by the level.
-At p, the representation is realized in the p-torsion of the relevant
-Jacobian over the real cyclotomic local field. Its ramification index
-(p−1)/2 is less than p−1; the finite-flat group-scheme argument
-splits off the connected part and makes the remaining local p-image
-trivial. Thus the extension of E is everywhere unramified. Conjugation
-on its upper-right entry is multiplication by χ^(1−2k), which is
-exactly the direct Artin character on the class quotient, not its
-inverse. (Ribet, Theorems 1.1–1.3 and the matrix calculation,
-pp. 151–153; Proposition 2.1, pp. 154–155; Propositions 3.4–3.6
-and Theorem 3.7, pp. 158–159; Propositions 4.1–4.3 and
-Theorem 4.4, pp. 160–162.) These are supplier proofs for this
-finite criterion, not appeals to the integral Iwasawa main conjecture.
-(K-book, VI.10.4 and Examples VI.10.4.1–10.4.2, p. 530;
-Remark VI.10.8.1, p. 532.)
+The exponent is ℓ−2k modulo ℓ−1. It is not 2k−1 unless the
+specified action has first been inverted. Consume the finite
+Herbrand–Ribet contract of §7.2 and identify its A/ℓ with P: the sole
+cyclotomic prime is principal, so its localization does not change the
+class group. The two implications are the supplier’s Herbrand and Ribet
+theorems; no modular-form or Iwasawa proof is replanned here. The
+χ^(1−2k) action is pinned by conjugation on an unramified extension
+with residual diagonal characters 1 and χ^(2k−1): the upper-right
+entry transforms by their ratio χ^(1−2k).
+(Ribet, Theorems 1.1–1.3, pp. 151–153, and Theorem 4.4, pp. 160–162;
+Sharifi, Theorem 4.5.7, p. 117; K-book, VI.10.4 and Examples
+10.4.1–10.4.2, p. 530.) *Needs:* the native module-action API,
+§7.2’s finite Herbrand–Ribet contract, its independent congruence and
+reflection inputs, and principal-prime localization.
 
 **Checks.**
 
@@ -2628,12 +2898,118 @@ when that weight is divisible by ℓ−1.
 
 ### 7.5 Vandiver and the conditional integer table
 
+Prove `k4_int_eq_zero` unconditionally before using the degree-four
+entry. Its homological inputs are the following targets on the genuine
+K-spectrum. For any unital ring R for which a split injection R^a→R^b
+with free cokernel implies a≤b, construct `stableRankFiltration` on free
+K-theory using the rank-bounded iterated S-construction. Its API includes
+coherent stage inclusions, a filtered-colimit equivalence to free K-theory,
+and GL_m(R)-equivariant stable-building cofiber descriptions. It is distinct from §3.1’s filtration of BQ. Prove
+`stableBuilding_connectivity` for a PID R: D(R^m) is (m−1)-connected
+for m≥2, with D(R⁴) at least four-connected. The apartment/component
+filtration and its partition-lattice chains give these bounds; hence
+F₃K(ℤ)→K(ℤ) is four-connected.
+(Rognes, author manuscript, Proposition 1.2, pp. 5–6, Propositions
+5.1–5.2, pp. 16–18; K-book, VI.10.1.3, p. 528.)
+
+Prove `kInt_lowSpectrumHomology`: integral spectrum homology in degrees
+0,…,4 is ℤ,0,0,ℤ/2,0. Establish the first three rank-subquotient
+homology groups and their nonzero differentials through total degree four,
+using `integerRankSubquotientHomology`, which computes the GL₃(ℤ)
+and parabolic homology contribution. For E₁_(s,t)=H_(s+t)(F_(s+1)/F_s),
+its first three columns are as follows; the d₁ maps (1,1)→(0,1),
+(2,2)→(1,2), (1,3)→(0,3) and (2,3)→(1,3) are nonzero.
+(Rognes, §6, p. 19.)
+
+| t | s=0 | s=1 | s=2 |
+| --- | --- | --- | --- |
+| 4 | 0 | (ℤ/2)² | ℤ/2 |
+| 3 | ℤ/2 | (ℤ/2)² | ℤ |
+| 2 | 0 | ℤ/6 | ℤ/3 |
+| 1 | ℤ/2 | ℤ/2 | 0 |
+| 0 | ℤ | 0 | 0 |
+
+The named target includes the integral chain maps inducing these differentials,
+not just a table of abstract groups. The connectivity bound eliminates higher-rank
+terms in this range. Prove `kInt_bokstedtComparison` with the two-complete
+spectrum JK(ℤ)=fib(ko→[ψ³−1]bspin→[c]bsu): its looped comparison has
+a section, and JK₃(ℤ){2}=ℤ/16, JK₄(ℤ){2}=0. Construct and identify
+the map using Adams operations and real/complex comparison, rather than
+assuming a splitting from the order of K₃.
+(Rognes, §6, pp. 19–21, especially the argument preceding Lemma 6.1.)
+
+Finally apply the stable Atiyah–Hirzebruch spectral sequence
+H_s(K(ℤ);π_t^S)⇒K_(s+t)(ℤ). The comparison kills η times the
+K₃ generator, forcing d₂:H₅(K(ℤ))→H₃(K(ℤ);π₁^S) to be onto.
+The known stable stems through four and `kInt_lowSpectrumHomology`
+leave no term in total degree four. This proves `k4_int_eq_zero`,
+including the two-primary calculation, without Vandiver or a zeta order
+formula. (Rognes, Main Theorem and §6, pp. 19–21.)
+
+**Checks.**
+
+- The zero stage is contractible, and over ℤ free and projective
+  K-theory agree. The zero ring is excluded: its split map R²→R
+  violates the rank condition, so it cannot carry this rank filtration.
+- D(R⁴) requires four-connectivity; the general (m−1) bound alone gives
+  only three at m=4 and does not suffice for this calculation.
+- H₃(K(ℤ);ℤ)=ℤ/2 is nonzero although H₄ is zero. Ignoring the
+  d₂ from degree five would retain a spurious total-degree-four class.
+- K₃(ℤ){2}=ℤ/16 maps to the same cyclic group in JK; its η-product
+  dies because JK₄{2}=0. An order-only comparison does not force this.
+- K₄(ℤ[1/2]) is ℤ/3 by §8.2, so the integral vanishing theorem is
+  not a vanishing theorem for every localization of ℤ.
+
+*Needs:* GeneralAlgebraicKTheory K.1–K.3 and its iterated S-model,
+StableHomotopyKTheory H.1/H.6, §§3.1–3.4 and §5.4’s real KO theory;
+the stable filtration, low-rank group homology and Bökstedt comparison
+are proved here with the specified source argument.
+
+First prove `specialValueKOrderRatio`: for every totally real number
+field F with F/ℚ abelian and k≥1,
+
+```text
+|ζ_F(1−2k)| = 2^r₁ |K_(4k−2)(O_F)| / |K_(4k−1)(O_F)|.
+```
+
+Apply gap:arithmetic-special-value-euler-characteristic prime by prime and
+§6.5’s corrected K/cohomology ratio, including the dyadic factor.
+Equality of valuations at every prime gives equality of positive rational
+numbers. The general totally real **odd-primary** valuation identity is
+also retained; no dyadic conclusion is assigned to nonabelian F by this
+argument. The Iwasawa main-conjecture specialization is requested from its
+owner, rather than proved again here. (K-book, VI.8.7–8.8 and proof,
+pp. 515–516; VI.9.12, p. 525.)
+
+Prove `integerEvenKOrder`: for every a≥0,
+|K_(8a+2)(ℤ)|=2c_(2a+1) and |K_(8a+6)(ℤ)|=c_(2a+2), where
+c_j=|num(B_(2j)/(4j))| for j≥1. Specialize the preceding ratio to ℚ,
+use ζ(1−2k)=−B_(2k)/(2k), §5.4’s odd orders and §7.1’s
+w_(2k) denominator identity. The dyadic orders in §6.4 separate the
+two residues. The index is 2a+2 in the 8a+6 row, as in Table 10.1.1.
+(K-book, VI.2.4.2, p. 472, VI.10.1 and Table 10.1.1, pp. 527–528.)
+
+**Checks.**
+
+- At F=ℚ,k=1 the ratio is 2·2/48=1/12; removing 2^r₁ gives
+  the wrong ζ-value even in the first weight.
+- At a=0, c₁=c₂=1 gives orders 2 and 1 in degrees 2 and 6.
+- At a=2 the degree-22 order is c₆=691, detected by B₁₂; the
+  index 2a+1 would use B₁₀ and miss 691.
+- The order theorems are unconditional. Cyclicity of all these finite
+  groups is a separate Vandiver consequence, not a conclusion of an order.
+
+*Needs:* gap:arithmetic-special-value-euler-characteristic, §§5.4/6.4/6.5,
+§7.1 and the Bernoulli evaluation of the rational zeta function. The latter
+is Mathlib’s `riemannZeta_neg_nat_eq_bernoulli`, evaluated at the
+nonnegative integer 2k−1; the Euler-characteristic arithmetic is a supplier gap.
+
 Use IntegralIwasawaTheory §7.1's `VandiverCondition`: for odd p, the
 class number of the maximal real subfield of ℚ(ζ_p) is prime to p.
 It is weaker than regularity and is not built into `IsRegularPrime`.
 Require the precise plus-part tower, reflection and cyclicity consequences
-before deducing group structure, and the special-value order formulas of
-K-book VI.10.1, p. 527, before assigning orders. (K-book, Conjecture VI.10.8,
+before deducing group structure, and use `integerEvenKOrder` before
+assigning orders. (K-book, Conjecture VI.10.8,
 p. 532, and Theorems VI.10.9–10.10, p. 533.)
 
 The finite deduction can be checked without assuming a tower
@@ -2708,11 +3084,11 @@ table without being proved from its hypothesis.
 
 Layers 3–6; Mathlib's Bernoulli, class-number and cyclotomic-prime API;
 IntegralIwasawaTheory §§0.1–0.5, 3.1, 5.4 and 7.1–7.4,
-with the exact additional congruence, finite Herbrand–Ribet and
-character-reflection exports requested in §7.2; M.7's normalized
+with the congruence, finite Herbrand–Ribet, reflection and arithmetic
+Euler-characteristic gaps in the exact supplier contracts; `arithmeticEtaleDescent` and its normalized
 finite-coefficient edges for the constructed Bott shift; the detected
-Harris–Segal construction; the one-prime Brauer calculation; §7.5's
-special-value order formulas for the conditional full table. Arithmetic
+Harris–Segal construction; the one-prime Brauer calculation; §7.5’s `integerEvenKOrder` and its explicit Euler-characteristic gap
+for the conditional full table. Arithmetic
 regular-prime conclusions do not import the downstream K₃/Bloch analysis
 or the full Chern/regulator family.
 
@@ -2726,11 +3102,11 @@ Every entry includes equality to the actual arithmetic invariant, rather
 than being an unconstrained natural number. Require r₁+2r₂=[F:ℚ]
 and unit rank r₁+r₂−1. `CertifiedExample F` combines these data with
 §6.14's finite presentation, its surjective generator map into the actual
-tame kernel, and an independent finite quotient of the same order. Give
-`CertifiedExample.tag` the values computed, imported and deduced, and
-retain the dependencies of each numerical claim. The target
-`CertifiedExample.no_circularity` says that neither bound used in a
-Birch–Tate test depends on the Birch–Tate formula. An upper-bound report
+tame kernel, and an independent finite quotient of the same order.
+For a Birch–Tate test, separately audit that proofs of both bounds use
+only the named independent generation and sign targets. This is a
+dependency requirement on the development, not a field or theorem of the
+mathematical record. An upper-bound report
 is admissible data, but becomes a certified group computation only after
 a matching lower bound or a complete kernel proof. These are a
 specialization of finite-presentation and finite-cardinality arguments,
@@ -2762,8 +3138,8 @@ Combine the supplier identifications in low degree with §5.4 to give
 K₀(ℤ)=ℤ, K₁(ℤ)=ℤ/2, K₂(ℤ)=ℤ/2 and K₃(ℤ)=ℤ/48. The
 first three identifications come from their existing owners. The degree
 three calculation uses w₂(ℚ)=24 and the nonsplit real extension, not
-a regulator or a Bloch-group calculation. Record the unconditional
-K₄(ℤ)=0 separately from §7.5's conditional higher table.
+a regulator or a Bloch-group calculation. Use §7.5’s unconditional `k4_int_eq_zero` separately from the
+conditional higher table.
 (K-book, III.6.5.1, p. 236; VI.1.1 and VI.1.3, pp. 464–465;
 VI.9.5, p. 519; Remark VI.10.1.3, pp. 528–529.)
 
@@ -2927,9 +3303,54 @@ and d=−4 calculation, p. 436; K-book, III.5.2.2, p. 218.)
 
 ### 8.6 Congruence lattices in the golden field
 
+For every number field F of degree n≥1 and discriminant Δ_F, finite
+prime v of norm q, length s≥2 and nonzero residues a₁,…,a_(s−1), define
+`CongruenceLattice F v a` inside O_F^s by x_j≡a_j x_s modulo v.
+Use the canonical real embedding space, with measure 2 dx dy on each
+complex factor, so O_F has covolume √|Δ_F|. The lattice API includes
+the embedding, kernel and index descriptions, transport under field and
+residue isomorphisms, and `CongruenceLattice.covolume`:
+
+```text
+covolume = |Δ_F|^(s/2) q^(s−1).
+```
+
+Define B_t by ((∑_(w|∞)[F_w:ℝ]|z_w|²)/n)^(n/2)≤t and
+
+d_F=2^n Γ(n/2+1)√|Δ_F|/(πn)^(n/2). Then vol(B_t)=
+2^n√|Δ_F|·t/d_F and |N(x)|≤t on B_t. Prove d_F≥1 by applying
+Minkowski to O_F and using integrality of the nonzero absolute norm. For every t>0 with
+t^s≥d_F^s q^(s−1), prove `CongruenceLattice.smallTuple`: each positive
+archimedean stretch ξ with ∏_w ξ_w^[F_w:ℝ]=1 gives a nonzero lattice
+tuple in (ξB_t)^s. Apply Minkowski to this full lattice in dimension ns;
+no optimal packing density is needed. If also t<q, prove
+`CongruenceLattice.oldUnits`: every coordinate is nonzero and is a unit
+in the ring obtained by inverting all preceding primes in the norm order.
+If one coordinate vanishes, the congruences force zero residue in every
+coordinate; the strict norm bound then forces the entire tuple to vanish.
+(Groenewegen, Lemma 6, journal p. 1447, Lemma 9 and proof, p. 1450,
+Lemma 12 and proof, p. 1453; the same kernel/index and Minkowski proof
+for arbitrary s. Preprint locators: pp. 5, 8, 11.)
+
+**Checks.**
+
+- Over ℚ, covolume is q^(s−1); at s=2, v=(5), a=2, the tuple
+  (2,1) lies in the lattice. The tuple (1,1) fails its congruence.
+- Each extra congruence adds a factor q to the index. At s=3,
+  using q instead of q² gives the wrong covolume even over ℚ.
+- At t=q the tuple (q,…,q) over ℚ has zero residue and is not an
+  old-unit tuple; at t<q nonzero tuples cannot have a zero coordinate.
+- Complex stretches use their local degree two in the determinant:
+  omitting that weight would change the measure and norm estimates.
+
+*Needs:* IntegralLattices’ full lattices, covolume and Minkowski theorem;
+NumberFieldArithmetic’s canonical embedding, discriminant and ideal norm;
+§8.3’s preceding-prime units. The arbitrary-length construction precedes
+all quadratic specializations.
+
 Put F=ℚ(√5), ε=(1+√5)/2, O=ℤ[ε] and ε²=ε+1. Import the
 integral basis, principal-ideal property, units ±ε^ℤ, degree two,
-signature (2,0) and class number one through the current
+signature (2,0) and class number one through the pinned
 `TauCeti.NumberField.Sqrt5` suppliers fixed above.
 Write [a,b] for a+bε. Multiplication, conjugation and norm are
 
@@ -2940,8 +3361,8 @@ conj[a,b] = [a+b,−b],             N[a,b] = a²+ab−b².
 
 Let d=2√5/π and B_t={(z₁,z₂):(z₁²+z₂²)/2≤t} in the real
 embedding space. For s=2 or 3 and nonzero residues a₁,…,a_(s−1)
-at v of norm q, define `GoldenCongruenceLattice` by
-x_j≡a_j x_s (mod v) in O^s. The API supplies its embedding,
+at v of norm q, define `GoldenCongruenceLattice` by specializing `CongruenceLattice`
+to this field and these two lengths. The API supplies its embedding,
 `covolume = 5^(s/2)q^(s−1)`, `smallTuple` and `oldUnits`.
 The names `GoldenCongruenceLattice.covolume`, `smallTuple` and `oldUnits`
 refer to this one construction, with the bounds below explicit in their
@@ -2973,9 +3394,49 @@ weaker packing estimate one.)
 
 ### 8.7 A small-fraction section and the cutoff
 
+For every number field F and a principal step v in the preceding-prime
+ring, let U,U₁ be as in §8.3. Prove `smallFraction_compare`: integral
+old-unit fractions x/y and x′/y′ with equal nonzero residue, whose
+numerators and denominators lie respectively in ξB_t and ξ′B_t′,
+have the same class in U/U₁ when 2^n tt′<q². The cross-difference
+xy′−x′y has absolute norm at most 2^n tt′. A zero difference gives
+equality directly; otherwise its one v-factor and smaller remaining
+factors put the quotient in 1+π_vU. This uses §8.4’s norm comparison
+and is independent of the chosen generator π_v. (Groenewegen,
+Proposition 10 and proof, journal p. 1450; preprint pp. 8–9.)
+
+If q>max(d_F,2^n d_F²), construct `ResidueSection F v` from the
+s=2 lattice with t=d_F√q. The bound q>d_F makes the step principal
+by the inverse-ideal Minkowski argument. Its API is
+`ResidueSection.independent`, `compare`, `reduction` and `one`:
+all choices have the same class, reduction composed with the section is
+the identity, and the unit residue maps to one. The self-comparison bound
+is exactly 2^n t²<q². If also q>d_F³ and
+q>2^(6n/5)d_F^(12/5), prove `ResidueSection.mul` using the s=3
+common denominator tuple with t₃=d_Fq^(2/3); then
+2^n t₃t<q² compares products. (Groenewegen, Lemma 4, p. 1446,
+Lemma 9 and Proposition 10, p. 1450; Lemma 12 and Proposition 13,
+p. 1453; preprint pp. 4, 8–9, 11.)
+
+**Checks.**
+
+- Comparing x/y with itself has zero cross-difference; no inverse of
+  that difference is taken. The residue of y/x is the inverse of x/y.
+- Over ℚ at v=(5), 2/1 and 1/3 have residue 2 and cross-difference
+  5. Their norms satisfy 2·2·3=12<25, so the comparison applies.
+- For signature (2,0), the general constant 2^n is four and the
+  covolume-one stretch diag(2,1/2) preserves every norm estimate.
+- The section’s two-coordinate construction alone does not prove
+  multiplicativity; the three-coordinate bound is a separate hypothesis.
+
+*Needs:* §8.6’s general congruence lattice, §8.4, and the inverse-ideal
+Minkowski bound. The golden-field section below is this construction
+specialized to n=2, Δ=5.
+
 For q>4d² choose a generator π_v and define U,U₁ as in §8.3.
 Using §8.6 with t=d√q choose x,y∈O∩U∩B_t with residue x/y=a
-for each a∈k(v)×. Define `GoldenResidueSection a=[x/y]∈U/U₁`.
+for each a∈k(v)×. Define `GoldenResidueSection a=[x/y]∈U/U₁` by specialization of
+`ResidueSection F v`.
 Its API is `independent`, `compare`, `reduction` and `one`:
 that is, `GoldenResidueSection.independent`, `compare`, `reduction` and
 `one` on the chosen section:
@@ -3464,15 +3925,16 @@ Gaussian and golden-field computations as independent tests. For the golden
 field, the certified order 4 and w₂(F)=120 give 4/120=1/30, which B.3
 compares with ζ_F(−1)=1/30. Neither certificate bound depends on that
 comparison. Its B.8 consumes the arithmetic groups and order comparisons
-of Layers 3–6 in its higher special-value formulas; §7.5's conditional
-integer table uses the K-book order formulas cited there.
+of Layers 3–6 in its higher special-value formulas. Section 7.5 owns
+`specialValueKOrderRatio` and `integerEvenKOrder`, conditional only on
+completion of the stated supplier development; neither formula is used to
+certify the three independent tame-kernel computations.
 K3BlochGroups is a downstream consumer of the degree-three rank and
 arithmetic torsion of Layers 3–5. Its decomposable and indecomposable
 analysis and Bloch comparison are not needed to prove them.
 Chern classes, regulators, polylogarithms and higher
 special values consume these arithmetic groups and ranks. The basic
-odd torsion calculation uses only the early étale edge from M.7 and
-its real correction. Hermitian computations consume §3.5's periodic
+odd torsion calculation uses only §5.2’s étale edge and §5.4’s real correction. Hermitian computations consume §3.5's periodic
 L-group and classical Grothendieck–Witt finiteness results. Even
 computations can use §6.14's cohomological certificate independently
 of a zeta-value order formula.
@@ -3482,6 +3944,10 @@ of a zeta-value order formula.
 Locators above refer to the following versions and their printed pages.
 All formulas and finite data use the conventions fixed here.
 
+- John Rognes, [*K4(Z) is the trivial group*](https://www.mn.uio.no/math/personer/vit/rognes/papers/k4z.pdf),
+  author manuscript with 1993 header, Main Theorem, Propositions 1.2,
+  5.1–5.2 and §6, pp. 1–22. Published in *Topology* 39 (2000),
+  pp. 267–281; locators here use the author manuscript.
 - Charles A. Weibel, [*The K-book: An Introduction to Algebraic
   K-theory*](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf),
   combined author PDF, 29 August 2013. Its chapter numbering and pages
