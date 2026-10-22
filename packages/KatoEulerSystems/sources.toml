@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KatoEulerSystems"
+
+[[source]]
+id = "FontaineMessing1987"
+authors = "Jean-Marc Fontaine, William Messing"
+title = "𝑝-adic periods and 𝑝-adic étale cohomology"
+year = 1987
+doi = "10.1090/conm/067/902593"
+locator_scheme = "theorem"
+locator = "p-adic comparison"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/192#issuecomment-6334684419"
