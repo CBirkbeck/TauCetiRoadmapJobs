@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TropicalAndBerkovichArithmetic"
+
+[[source]]
+id = "berkovich-spectral"
+authors = "Vladimir Berkovich"
+title = "Spectral Theory and Analytic Geometry over Non-Archimedean Fields"
+year = 1990
+locator_scheme = "theorem"
+locator = "Theorem 1.2.1; Corollary 1.2.4; Theorem 1.3.1; Corollary 1.3.2; Theorem 1.3.6; §§3.4 and 4.3; Proposition 5.2.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/282#issuecomment-6329777760"
