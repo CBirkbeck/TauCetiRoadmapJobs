@@ -25,7 +25,9 @@ group laws (A1), duality, Picard and Poincaré geometry, polarizations (A2), iso
 cohomology, its Hodge sequence and Tate systems (A4), complex uniformization and
 the Hodge dictionary (A5), and finite-rank Hom groups, characteristic polynomials,
 semisimple endomorphism algebras and complete reducibility (A6). These objects
-are inputs here. In particular, a second dual abelian scheme, Picard functor,
+are inputs here. Uniform Manin–Mumford and Lang–Néron require the additional
+A6 supplier contracts below; B2 owns their finite-maximal-special application.
+In particular, a second dual abelian scheme, Picard functor,
 polarization definition or quotient construction is outside this roadmap.
 
 Use **AlgebraicVectorBundles** for finite locally free sheaves, symmetric and
@@ -51,7 +53,7 @@ Siegel family and M6 the arithmetic coarse-moduli and level interfaces.
 **Completed/HodgeStructures**, L0–L3, supplies the linear Hodge carriers.
 **ShimuraVarieties**, §§3.5a–3.5d, supplies the real o-minimal and definable-Chow
 foundations; the precise additional fixed-part, equivariant Hodge-Hom and mixed
-Kuga/counting inputs are the extension contracts below. B2–B3 construct the
+Kuga/counting and abelian Ax–Lindemann inputs are the extension contracts below. B2–B3 construct the
 abelian-family adapters to those inputs. **JacobianChallengePartII**, §2.6
 `RelativeJacobian.CurveDifference`, §§5.3–5.4 and §7.2
 `RelativeJacobian.levelFaltingsZhang`, supplies differences for a given curve
@@ -197,6 +199,14 @@ kernel is constructed here. Consume A5's complex Hodge dictionary and A6.2
 `frobeniusSemisimple`. F1 only transports the last theorem to its faithful
 contravariant realization and identifies the polynomial.
 
+What AbelianSchemesAndArithmeticModuli must provide (gap:uniform-manin-mumford): extend A6 by `uniformManinMumfordInFamilies`: for an abelian variety A over an algebraically closed field Ω of characteristic zero, an irreducible quasi-projective Ω-variety V and an irreducible closed Y⊂V×A, there are a finite family of abelian subvarieties B_i⊂A and D≥0 such that, for every v∈V(Ω), the Zariski closure of the torsion points in Y_v is a union of at most D torsion translates of members of that family, including empty fibres; the requirement includes the characteristic-zero Manin–Mumford theorem and its uniform-family proof ([GH][GH], Theorem 3.2, PDF p.13; GH line 546).
+
+The uniform-family contract has these Checks: an empty fibre has empty torsion closure; Y=V×A has torsion closure A in each fibre, with D=1 and B₁=A; for Y=V×{P}, that closure is {P} for torsion P and empty for non-torsion P, distinguishing torsion translates from arbitrary translates.
+
+What AbelianSchemesAndArithmeticModuli must provide (gap:lang-neron-modulo-trace): extend A6 by `langNeronModuloTrace`: for every finitely generated regular extension K/k of fields, in any characteristic, and abelian variety A/K with K/k-trace (T,τ), the group A(K)/τ(T(k)) is finitely generated; also supply its bounded-degree torsion consequence over curve fields: if k is algebraically closed of characteristic zero, K=k(S) for a smooth irreducible curve, A/K has zero geometric trace and D≥1, then the orders of P∈A(Kbar)_tors with [K(P):K]≤D are bounded in terms of A and D, using the finiteness of finite étale covers of bounded degree of the good-reduction open curve ([ConradTrace][ConradTrace], Theorem 7.1, author version p.23, ConradTrace line 1079; [GH][GH], Proposition 3.1 proof, PDF pp.14–15, GH line 610).
+
+The Lang–Néron contract has these Checks: for K=k the trace is A and the quotient is zero even when A(k) is not finitely generated; for A=0 both trace and quotient are zero; for a geometrically trace-free A over a characteristic-zero curve field the quotient is A(K), whose torsion is finite, giving the D=1 case of the bounded-degree assertion.
+
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
 Consume R07.1.2 `etaleGroupEquivContAction`, R07.2.10
@@ -223,6 +233,8 @@ that the cited sections already prove them.
 What ShimuraVarieties must provide (gap:fixed-part-theorem): extend §3.5b.1 to the fixed-part theorem for polarized integral variations arising from smooth proper complex algebraic families over a smooth connected quasi-projective base S, semisimplicity of their rational monodromy, and the weight −1 abelian-scheme Hom comparison: for polarized abelian schemes A,B/S, integral flat Hodge morphisms R₁π_A,*ℤ→R₁π_B,*ℤ are exactly homomorphisms A→B; after any connected finite étale cover, the invariant subvariation is constant and its abelian realization is the constant part up to isogeny. Use Deligne Corollary 4.1.2, Theorem 4.2.6 and Rappel 4.4.3, printed pp.42,45,51 (Deligne line 1377, Deligne line 1698), with Hodge type required at every fibre.
 
 What ShimuraVarieties must provide (gap:kuga-definable-inputs): extend §§P.1 and 3.5a–3.5d to connected Kuga data (P=V⋊G,X⁺), congruence Γ, quasi-projective Γ∖X⁺ and its universal abelian family, an `R_an,exp`-definable fundamental set and uniformization, the parameter-uniform semirational Pila–Wilkie block theorem for a definable Z⊂ℝᵃ×ℝᵇ with bounded-height rational coordinates and unrestricted remaining coordinates, and the bi-algebraic/weakly-special closure and connected normal rational quotient dictionary, including algebraic monodromy normality for a Hodge-generic subvariety; these are the carriers and counting inputs to the growth, stabilizer, quotient and finite weakly optimal targets of B3, not those targets' Ax–Schanuel conclusion (GH Lemma 5.2 proof pp.19–20; Gao–Ax §§2–4.1, pp.5–15).
+
+What ShimuraVarieties must provide (gap:algebraic-betti-ax-type): extend §§P.1 and 3.5a–3.5d by the abelian Ax–Lindemann input and its real-period adapter `algebraicSubvariety_bettiAxType`: for every complex abelian variety A of dimension g, a real-linear period identification b:A(ℂ)≃(ℝ/ℤ)^(2g), and closed algebraic Z⊂A, the lift of b(Z(ℂ)) to [0,1]^(2g) is definable in `R_an,exp`, and every continuous semialgebraic arc in this lift, real analytic on (0,1), maps into a coset b(z₀)+G contained in b(Z(ℂ)), for a closed subgroup G; prove the abelian Ax input independently of B3's mixed Ax–Schanuel conclusion ([GH][GH], Ax-type definition and Proposition 5.3 proof, PDF pp.18–21; GH line 1003). For a point G={0} works; for an abelian-subvariety coset its real subtorus works; the curved arc t↦(t,t²) from B2 fails the implication and cannot be such an algebraic Z under a period identification.
 
 ### From TauCetiRoadmap.PELModuli and JacobianChallengePartII
 
@@ -321,11 +333,14 @@ Prove compatibility as N increases.
 
 **Checks.**
 
-- A sequence supported in one degree: Updating the zero sequence at n with x gives x at n
-  and zero at all other degrees; the proved example tests both clauses.
+- `degreeCompletion_infiniteSupport`: For R=M=ℤ, let c_n be the invariant tensor
+  1⊗⋯⊗1 in degree n, including the empty tensor in degree zero. Every c_n is
+  nonzero and c lies in the product but outside the image of the canonical
+  direct-sum inclusion. A direct-sum replacement fails this boundary theorem
+  in `Suggested.lean`.
 - Loss under truncation: A nonzero coefficient in degree N+1 gives a
-  nonzero completed sequence whose restriction through N is zero; a finite-sum
-  replacement for completion would lose such coefficients.
+  nonzero completed sequence whose restriction through N is zero; the proved
+  example distinguishes completion from any fixed finite truncation.
 - `degreeCompletion_nonzero_degree_zero`: A sequence with degree-zero coefficient
   1 over ℤ is nonzero, through the native empty-tensor equivalence; this is a
   named boundary theorem in `Suggested.lean`.
@@ -508,9 +523,10 @@ the connection version.
 - `completedPoincare_zero`: P(0)≃O_A and P♮(0)≃O_A with trivial relative connection.
 - `completedPoincare_first`: P(1) is an extension of O_A by π^*ω_A∨ with the imported unit
 rigidification.
-- `completedPoincare_base`: At every finite level the underlying sheaf is pushforward of the
-imported rigidified Poincaré sheaf restricted to A×A∨(n), rather than a tensor-power
-replacement.
+- `completedPoincare_rank_two`: On an elliptic scheme, P^(2) and P♮^(2) have
+O_A-ranks 3 and 6, while their degree-two truncation kernels have ranks 1 and 3.
+The conormal ranks are respectively 1 and 2; identifying the ordinary and
+connection coefficient sheaves fails this check.
 
 **Source.** [KS][KS], Definitions 2.4/2.7 and equations(2.1.4)–(2.1.5), PDF pp.14–16.
 
@@ -993,30 +1009,34 @@ despite positive definite form on each individual fibre.
 
 ### Function-field trace and constant part
 
-For K=C(S) and an abelian variety A/K, a C-trace is an abelian variety T/C with a K-homomorphism
+For an algebraically closed field k of characteristic zero, a smooth irreducible
+curve S/k, K=k(S) and an abelian variety A/K, a k-trace is an abelian variety
+T/k with a K-homomorphism
 τ:T_K→A universal among maps from constant abelian varieties. In characteristic zero τ has
 finite kernel. Its image has a complementary abelian subvariety up to isogeny by imported
-Poincaré reducibility. Universal equivariant Hom, not all fibrewise Hom, detects this trace.
-Also construct the trace over Kbar/C for a chosen algebraic closure Kbar of K. The latter is the
+Poincaré reducibility. For k=ℂ, universal equivariant Hodge-Hom detects this trace.
+Also construct the trace over Kbar/k for a chosen algebraic closure Kbar of K. The latter is the
 geometric trace used in Definition 1.2; it can grow after finite extension and is not identified
-with the K/C trace without an explicit descent argument.
+with the K/k trace without an explicit descent argument.
 
 **API.**
 
 - `functionFieldTrace_map`: τ:T_K→A is the universal homomorphism from the constant trace.
-- `functionFieldTrace_universal`: For every B/C, Hom_C(B,T)→Hom_K(B_K,A), f↦τ∘f_K, is a
+- `functionFieldTrace_universal`: For every B/k, Hom_k(B,T)→Hom_K(B_K,A), f↦τ∘f_K, is a
 bijection.
 - `functionFieldTrace_complement`: In characteristic zero there is an abelian complement B and a
 K-isogeny T_K×B→A.
 
 **Checks.**
 
-- `functionFieldTrace_constant`: The C-trace of a constant B_K is B with identity map.
+- `functionFieldTrace_constant`: The k-trace of a constant B_K is B with identity map.
 - `functionFieldTrace_zero`: The zero abelian variety has zero trace.
 - `functionFieldTrace_nonconstant`: For a non-isotrivial elliptic variety over C(S), the trace
 is zero even though its complex fibres are nonzero elliptic curves.
 
-**Source.** [GH][GH], Trace conventions; Lemma 5.6 and §5.4, PDF pp.2,25,28–29.
+**Source.** [ConradTrace][ConradTrace], Definition 6.1 and Theorems 6.2, 6.4,
+author version pp.20–21 (ConradTrace line 966, ConradTrace line 1007);
+[GH][GH], Lemma 5.6 and §5.4, PDF pp.25,28–29 for the complex application.
 
 **Needs.** **AbelianSchemesAndArithmeticModuli**, A6.5 `poincareReducibility`.
 
@@ -1090,10 +1110,12 @@ its image. Consequently the same local assertion holds between real m-manifolds.
 
 Prove `constantRankLocal` in the following generality.
 
-For a C^k map f:M^m→N^n of finite-dimensional real manifolds, 1≤k≤∞, with differential of
-constant rank r on an open neighbourhood, local C^k coordinates put f in projection form. Each
-nonempty fibre in that neighbourhood is a C^k submanifold of dimension m−r. Apply to the
-real-analytic Betti map on its smooth maximal-rank locus, where m=2 dim X.
+For an open set U⊆ℝ^m and a map f:ℝ^m→ℝ^n that is C^k on U, 1≤k≤ω
+(with ω the real-analytic case), suppose its differential has constant rank r
+on U, with r≤m and r≤n. Local C^k coordinates at every x∈U put f in projection
+form, so each nonempty local fibre is a C^k submanifold of dimension m−r.
+The version for finite-dimensional real manifolds follows in charts. Apply
+to the real-analytic Betti map on its smooth maximal-rank locus, where m=2 dim X.
 
 **Source.** [GH][GH], Lemma 6.2 proof, PDF p.31.
 
@@ -1101,7 +1123,9 @@ real-analytic Betti map on its smooth maximal-rank locus, where m=2 dim X.
 
 ### Good-cover refinement on a Riemann surface
 
-Prove `riemannGoodCover` in the following generality.
+Prove `riemannGoodCover` in the following generality. The carrier is a complex-analytic
+manifold of dimension one (`IsManifold 𝓘(ℂ) ω S`). Use a Riemannian metric and
+geodesically convex neighbourhoods for the refinement.
 
 Every open cover of a second-countable Hausdorff Riemann surface has a locally finite refinement
 by relatively compact coordinate neighbourhoods such that every nonempty finite intersection is
@@ -1110,7 +1134,7 @@ discs.
 
 **Source.** [GH][GH], §5.2, PDF p.22, for the good-cover refinement used in the proof.
 
-**Needs.** `ChartedSpace`; `LocallyFinite`; `ContractibleSpace`.
+**Needs.** `ChartedSpace`; `IsManifold`; `LocallyFinite`; `ContractibleSpace`.
 
 ### Fixed homology and equivariant Hom
 
@@ -1128,10 +1152,11 @@ part; **ShimuraVarieties**, §3.5b.1 extension `gap:fixed-part-theorem`; **Abeli
 
 ### Generically special subvarieties
 
-For an irreducible closed Y⊂A dominating the smooth complex curve S, Y is GH generically special
-if its geometric generic fibre is a finite union of τ(Z_Kbar)+B+t, where τ is the Kbar/C
-geometric trace, Z is a closed irreducible subvariety of that constant trace over C, B is an
-abelian subvariety of A_Kbar and t is torsion. A Gao special-generically subvariety, used for
+For an algebraically closed field k of characteristic zero and an irreducible closed
+Y⊂A dominating a smooth irreducible curve S/k, Y is GH generically special
+if its geometric generic fibre is a finite union of τ(Z_Kbar)+B+t, where τ is the Kbar/k
+geometric trace, Z is a closed irreducible subvariety of that constant trace over k, B is an
+abelian subvariety of A_Kbar and t is torsion. A Gao special-generically subvariety in a complex family, used for
 degeneracy loci, instead uses a constant section and an abelian subgroup, not a general constant
 Z.
 
@@ -1239,7 +1264,7 @@ subvariety B of positive dimension.
 
 **Needs.** [B2](#b2-curve-monodromy-and-constant-traces), Integer characters and countably many
 closed torus subgroups; [B2](#b2-curve-monodromy-and-constant-traces), Invariant definable sets
-of Ax-type.
+of Ax-type; **ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:algebraic-betti-ax-type`.
 
 ### Invariant homology gives the function-field trace
 
@@ -1274,6 +1299,45 @@ fibres; [B2](#b2-curve-monodromy-and-constant-traces), Free subgroups in curve m
 [B2](#b2-curve-monodromy-and-constant-traces), Invariant homology gives the function-field
 trace.
 
+### Finitely many maximal GH generically special subvarieties
+
+Prove `finiteMaximalGHGenericallySpecial`. Let k be algebraically closed of
+characteristic zero, S/k a smooth irreducible curve, A→S an abelian scheme of
+constant relative dimension g≥1, and X⊂A irreducible closed dominating S.
+There are finitely many maximal GH generically special subvarieties of A
+contained in X. Their union is closed in X; its complement is empty exactly
+when X is GH generically special.
+
+For the trace-free reduction, prove the form of GH Proposition 3.1: put
+K=k(S), choose Kbar, let V₀/k be irreducible quasi-projective, and let B/Kbar
+be an abelian variety with zero Kbar/k-trace. For irreducible closed
+Y⊂(V₀×_k Kbar)×B, density of V₀(k)×B(Kbar)_tors in Y implies
+Y=(W₀×_k Kbar)×(t+C) for W₀⊂V₀ irreducible closed, t torsion and C⊂B
+an abelian subvariety. Consequently Y contains finitely many maximal products
+of this form. Apply this after an isogeny splitting off the geometric trace.
+Uniform torsion closures and bounded-degree torsion in the trace-free quotient
+are separate inputs to this argument.
+
+**Checks.**
+
+- For A=B₀×S and X=C₀×S, with C₀ any irreducible constant subvariety,
+  the sole maximal special subvariety is X itself, even when C₀ has genus≥2.
+  Restricting the constant factor to torsion cosets would fail.
+- In a geometrically trace-free family, a torsion multisection X is its own
+  sole maximal special subvariety; its generic dimension is zero and its
+  total dimension is one.
+- If X is a non-torsion section of a geometrically trace-free family, it
+  contains no GH generically special subvariety dominating S, so its special
+  union is empty. Allowing arbitrary translates would give the opposite answer.
+
+**Source.** [GH][GH], Propositions 1.3 and 3.1, PDF pp.3,12–15
+(GH line 120, GH line 512).
+
+**Needs.** [B2](#b2-curve-monodromy-and-constant-traces), Generically special subvarieties;
+[B2](#b2-curve-monodromy-and-constant-traces), Function-field trace and constant part;
+**AbelianSchemesAndArithmeticModuli**, A3 and A6 extensions
+`gap:uniform-manin-mumford` and `gap:lang-neron-modulo-trace`.
+
 ### Curve degeneracy implies GH generic specialness
 
 For an abelian scheme over a smooth irreducible complex algebraic curve S, an irreducible closed
@@ -1284,7 +1348,8 @@ subvariety Y dominating S which is curve-degenerate is GH generically special.
 **Needs.** [B2](#b2-curve-monodromy-and-constant-traces), Degeneracy over a curve;
 [B2](#b2-curve-monodromy-and-constant-traces), Generically special subvarieties;
 [B2](#b2-curve-monodromy-and-constant-traces), Function-field trace and constant part;
-[B2](#b2-curve-monodromy-and-constant-traces), Virtually invariant subvarieties in kernels.
+[B2](#b2-curve-monodromy-and-constant-traces), Virtually invariant subvarieties in kernels;
+[B2](#b2-curve-monodromy-and-constant-traces), Finitely many maximal GH generically special subvarieties.
 
 ### Full-rank algebraic points outside generic specialness
 
@@ -1307,10 +1372,10 @@ that rank_R d(b|X)_P=2 dim_C X.
 Prove existence and the finite-kernel property of the C(S)/C trace and the geometric trace,
 their finite-cover descent, and extension over the smooth curve. The trace reduction also needs
 two specific assertions: after making connected monodromy, all fibres outside a countable set
-are extendable (Gao–Habegger, Lemma 5.7, pp.25–26), and a fixed X contains finitely many maximal
-GH generically special subvarieties (Proposition 1.3, pp.3–4, used on p.30). Establish the
-endomorphism-extension argument for the first and the uniform Manin–Mumford/Lang–Néron argument
-for the second before taking a finite union of special closures. The local Néron factor theory
+are extendable (Gao–Habegger, Lemma 5.7, pp.25–26), and
+`finiteMaximalGHGenericallySpecial` supplies the finite union of special closures.
+Establish the endomorphism-extension argument for the first and use the precise
+`gap:uniform-manin-mumford` and `gap:lang-neron-modulo-trace` contracts for the second. The local Néron factor theory
 is not a substitute for either assertion.
 
 For the definable argument, prove integer-character separation for closed torus subgroups
@@ -1331,6 +1396,40 @@ finite weakly optimal data. Then construct special-generically closures and dege
 the abelian family. The quotient criterion concerns generic Betti rank; it does not identify
 every critical point with a degeneracy locus.
 
+### Quantitative estimates on the pure projection
+
+In the graph-component setting of Gao–Ax Theorem 4.1, let Z be an irreducible
+complex analytic component of B∩graph(u), B=Z^Zar, for a connected Kuga datum, reduced to the smallest Kuga subdatum containing
+pr_X⁺Z, and let Z_G be the pure projection of pr_X⁺Z. Assume dim Z_G>0, fix z₀∈Z_G,
+and use the invariant hyperbolic metric and height of Gao–Ax §4.2, with a fixed
+open definable fundamental set F_G as in §4.1. Write
+`B_horz(T)={z:d_horz(z,z₀)<log T}` for T>1. Prove
+`purePartHeightBound`: if γF_G meets B_horz(T), then H(γ)≤c₁T^c₂ for
+positive c₁,c₂; `purePartVolumeLowerBound`: for sufficiently large T,
+vol(Z_G∩B_horz(T))≥c₃T^(c₄ dim Z_G) for positive c₃,c₄; and
+`purePartFundamentalVolumeUpperBound`: vol(Z_G∩γF_G)≤c₅ for every γ∈Γ_G,
+with c₅>0. Constants depend only on the fixed datum, fundamental set,
+projection and base point. In particular c₅ is independent of γ.
+
+**Checks.**
+
+- On the upper half-plane with curvature −1 and z₀=i, the full pure
+  projection has ball area 2π(cosh(log T)−1)=π(T+T⁻¹−2), of positive-power
+  growth; a logarithmic lower bound would miss the needed scale.
+- For γ_N(z)=z+N, d(i,γ_N i)<log T is equivalent to
+  N²<T+T⁻¹−2. The standard fundamental domain contains i, so these
+  translates test the polynomial height scale, rather than a constant bound.
+- For the full upper half-plane projection, every translate of the standard
+  modular fundamental domain has area π/3. The corresponding uniform bound
+  is independent of N; summing the areas of translates in one piece would fail.
+- If the pure projection is a point, the positive-dimensional volume estimate
+  is inapplicable; horizontal/vertical growth uses its vertical case instead.
+
+**Source.** [Gao–Ax][Gao–Ax], Lemmas 4.2–4.5 and (4.1)–(4.2), PDF pp.15–16
+(Gao-Ax line 650, Gao-Ax line 667, Gao-Ax line 672, Gao-Ax line 675).
+
+**Needs.** **ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
+
 ### Horizontal and vertical growth in mixed Ax–Schanuel
 
 Let M=Γ\X⁺ be a connected Kuga mixed Shimura variety with uniformization u, Δ=graph(u), and Z an
@@ -1341,7 +1440,8 @@ connected semialgebraic block in Θ contains at least T_i^ε points of Γ of hei
 
 **Source.** [Gao–Ax][Gao–Ax], Theorem 4.1 setting and Theorem 5.2, PDF pp.14–19.
 
-**Needs.** **ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
+**Needs.** [B3](#b3-degeneracy-loci-and-quotient-criteria), Quantitative estimates on the pure projection;
+**ShimuraVarieties**, §§P.1,3.5a–3.5d extension `gap:kuga-definable-inputs`.
 
 ### Bigness of the rational stabilizer
 
@@ -1450,8 +1550,9 @@ loci; [B3](#b3-degeneracy-loci-and-quotient-criteria), Finite weakly optimal quo
 
 ### Construction requirements
 
-The mixed Ax–Schanuel uses require hyperbolic-volume growth, the Pila–Wilkie connected-block
-theorem, o-minimal Chow and mixed bi-algebraic monodromy from `gap:kuga-definable-inputs`. Normality requires the very
+The mixed Ax–Schanuel uses require B3's quantitative estimates on the pure projection.
+The Pila–Wilkie connected-block theorem, o-minimal Chow and mixed bi-algebraic
+monodromy come from `gap:kuga-definable-inputs`. Normality requires the very
 general Hilbert-family replacement, the G-stability of the vector part and the trivial reductive
 action on its quotient. Normality in an intermediate subgroup alone is not enough. Normalize the
 rational conjugating parameters in the finite-data argument, retaining moving orbit points (Gao,
@@ -1594,9 +1695,9 @@ the models is a separate hypothesis, established over finite fields using polari
 - For `u_n=ℓ^n·id`, the limit is zero and `⋂n ℓ^n L={0}`; replacing
   the intersection by a union would give all of L.
 
-These boundary cases are named `compactLatticeImageLimit_rankZero`,
-`compactLatticeImageLimit_constant` and `compactLatticeImageLimit_powers`
-in `Suggested.lean`.
+The first two Checks are proved boundary theorems
+`compactLatticeImageLimit_rankZero` and `compactLatticeImageLimit_constant`
+in `Suggested.lean`; `compactLatticeImageLimit_powers` is a theorem target.
 
 **Source.** [Tate][Tate], Hyp(k,A,d,ℓ) and Proposition 1 proof, printed pp.136–137 (PDF pp.3–4).
 
@@ -1621,8 +1722,9 @@ a_0=1 and a_(2g)=q^g.
 - `frobeniusPolynomial_zero`: For the zero-dimensional abelian variety P_A=1 and the point count
 is 1.
 - `frobeniusPolynomial_elliptic`: For an elliptic curve, P_A=X²−tX+q and #A(F_q)=q+1−t.
-- `frobeniusPolynomial_native`: For ℓ≠p its image in Q_ℓ[X] is the imported characteristic
-polynomial of the Frobenius action on V_ℓA.
+- `frobeniusPolynomial_elliptic_product`: For elliptic curves with traces a,b over F_q,
+  their product has polynomial X⁴−(a+b)X³+(ab+2q)X²−q(a+b)X+q².
+  This tests both the descending coefficient order and dimension-two reciprocity.
 
 **Source.** [Waterhouse][Waterhouse], Chapter 2 opening, printed pp.526–528 (PDF pp.7–9).
 
@@ -2016,7 +2118,7 @@ reverses composition; taking inverses restores the left action.
 - `markedLattice_support`: A tuple differing from the standard lattice at infinitely many primes
 is excluded from the finite-support space.
 
-**Source.** [Waterhouse][Waterhouse], §1.2 and §3.1, printed pp.525,530–531 (PDF pp.6,11–12).
+**Source.** [Waterhouse][Waterhouse], §1.2 and §3.1, printed pp.524–525,529–531 (PDF pp.5–6,10–12).
 
 **Needs.** **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.2.10 `dieudonnePDivisible`;
 **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1.2 `etaleGroupEquivContAction`.
@@ -2075,7 +2177,7 @@ when f′u=f for an F_q-isomorphism u:B→B′, correspond to X_p×X^p by Λ_ℓ
 Λ_p=C(f)⁻¹(C(B)). This bijection is equivariant for postcomposition on f and the action
 specified in the prime-to-p and p lattice spaces above.
 
-**Source.** [Waterhouse][Waterhouse], §1.2 and §3.1, printed pp.525,530–531 (PDF pp.6,11–12).
+**Source.** [Waterhouse][Waterhouse], §1.2 and §3.1, printed pp.524–525,529–531 (PDF pp.5–6,10–12).
 
 **Needs.** [F3](#f3-hondatate-and-lattice-classifications), Prime-to-p and p lattice spaces;
 **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1.2 `etaleGroupEquivContAction`;
@@ -2350,7 +2452,7 @@ If a prime p splits in an imaginary quadratic class-number-one field L, there ex
 End_Fp(E)=O_L, obtained from a norm-p algebraic integer and Waterhouse order realization.
 
 **Source.** [Waterhouse][Waterhouse], Chapter 2, Porism 4.3 and Theorem 6.1, printed
-pp.527–528,541,550–551.
+pp.527–528,540,550–551.
 
 **Needs.** [F0](#f0-finite-field-frobenius-and-tate), Weil q-numbers;
 [F3](#f3-hondatate-and-lattice-classifications), Honda–Tate simple isogeny classification;
@@ -2589,6 +2691,8 @@ misprint; F5 derives 1/2 from (39) rather than using the printed 1.
 
 - **Lemmermeyer**: Franz Lemmermeyer, *The ambiguous class number formula revisited*. arXiv:1309.1071v1. [Lemmermeyer][Lemmermeyer].
 
+- **ConradTrace**: Brian Conrad, *Chow’s K/k-image and K/k-trace, and the Lang–Néron theorem*. Enseignement Mathématique 52 (2006), 37–108; author version, Definition 6.1, Theorems 6.2, 6.4 and 7.1, pp.20–23. [ConradTrace][ConradTrace].
+
 - **Conrad**: Brian Conrad, *Polarizations*. 2004 publicly available notes. [Conrad][Conrad].
 
 - **Tate**: John Tate, *Endomorphisms of abelian varieties over finite fields*. Inventiones Mathematicae 2 (1966), 134–144. [Tate][Tate].
@@ -2600,6 +2704,7 @@ misprint; F5 derives 1/2 from (39) rather than using the printed 1.
 - **Milne**: James S. Milne, *Extensions of abelian varieties defined over a finite field*. Inventiones Mathematicae 5(1968), 63–84; author-hosted published scan. [Milne][Milne].
 
 - **Gao–Survey**: Ziyang Gao, *Recent developments of the Uniform Mordell–Lang Conjecture*. arXiv:2104.03431v5. [Gao–Survey][Gao–Survey].
+[ConradTrace]: https://math.stanford.edu/~conrad/papers/Kktrace.pdf
 [Tits]: https://doi.org/10.1016/0021-8693(72)90058-0
 [Roby]: https://www.numdam.org/item/10.24033/asens.1124.pdf
 [Kings]: https://arxiv.org/pdf/1304.7161v2

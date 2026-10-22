@@ -29,6 +29,24 @@
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "3.3",
       "needs": "For fixed imaginary quadratic class-number-one K, supply the unitary mass formula including ramified and dyadic factors, genus and automorphism bounds and weighted-to-unweighted comparison proving log H_K(g)=½g²log g+O_K(g²)."
+    },
+    {
+      "slug": "algebraic-betti-ax-type",
+      "supplier": "ShimuraVarieties",
+      "section": "P.1; 3.5a–3.5d",
+      "needs": "Abelian Ax–Lindemann and its real-period adapter giving fundamental-cube definability and the Ax-type semialgebraic-arc coset implication for every closed algebraic subvariety of every complex abelian variety, independently of B3 mixed Ax–Schanuel."
+    },
+    {
+      "slug": "uniform-manin-mumford",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A6",
+      "needs": "Uniform Manin–Mumford in characteristic-zero algebraic families Y⊂V×A, with a fixed finite family of abelian subvarieties and a uniform bound for the number of torsion cosets in each fibre torsion closure, including empty fibres."
+    },
+    {
+      "slug": "lang-neron-modulo-trace",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A6",
+      "needs": "Lang–Néron finite generation modulo the trace for every finitely generated regular extension in any characteristic, together with bounded-degree torsion for geometrically trace-free abelian varieties over characteristic-zero curve fields using bounded-degree finite étale cover finiteness."
     }
   ]
 }

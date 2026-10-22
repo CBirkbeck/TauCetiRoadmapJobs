@@ -67,15 +67,15 @@ theorem tensorSymmetricPower_nonfixed :
 /-- Degree completion is the product of the invariant modules, with no adic comparison assumed. -/
 abbrev degreeCompletion := ∀ n : ℕ, ↥(tensorSymmetricPower R M n)
 
-/-- A sequence supported in degree n has exactly its prescribed coefficient there. -/
-example (n : ℕ) (x : ↥(tensorSymmetricPower R M n)) :
-    (Function.update (0 : degreeCompletion R M) n x) n = x ∧
-      ∀ m, m ≠ n → (Function.update (0 : degreeCompletion R M) n x) m = 0 := by
-  classical
-  constructor
-  · simp
-  · intro m hm
-    simp [Function.update_of_ne hm]
+/-- The all-unit tensor sequence has infinite support and is outside the canonical direct sum. -/
+theorem degreeCompletion_infiniteSupport :
+    let c : degreeCompletion ℤ ℤ := fun n =>
+      ⟨PiTensorProduct.tprod ℤ (fun _ : Fin n => (1 : ℤ)),
+        tensorSymmetricPower_diagonal ℤ ℤ n 1⟩
+    (∀ n, c n ≠ 0) ∧
+      c ∉ Set.range (fun s : DirectSum ℕ (fun n => ↥(tensorSymmetricPower ℤ ℤ n)) =>
+        (fun n => s n : degreeCompletion ℤ ℤ)) := by
+  sorry
 
 /-- Truncation through N loses a nonzero coefficient in degree N+1. -/
 example (N : ℕ) (x : ↥(tensorSymmetricPower R M (N + 1))) (hx : x ≠ 0) :
@@ -124,7 +124,7 @@ theorem freeMatrixWordGrowth (n : ℕ)
 
 open scoped ContDiff
 
-/-- The coordinate form is stated on genuine open partial homeomorphisms, with smooth inverses. -/
+/-- A constant-rank C^k map on a real open set has local C^k projection coordinates, for 1 ≤ k ≤ ω. -/
 theorem constantRankLocal (m n r : ℕ) (hrm : r ≤ m) (hrn : r ≤ n)
     (k : ℕ∞ω) (hk : 1 ≤ k) (f : (Fin m → ℝ) → (Fin n → ℝ))
     (U : Set (Fin m → ℝ)) (hU : IsOpen U) (hf : ContDiffOn ℝ k f U)
@@ -139,9 +139,10 @@ theorem constantRankLocal (m n r : ℕ) (hrm : r ≤ m) (hrn : r ≤ n)
         b (f y) = fun i => if h : i.val < r then a y ⟨i.val, Nat.lt_of_lt_of_le h hrm⟩ else 0 := by
   sorry
 
-/-- A Riemann surface's underlying native charted space suffices for the topological refinement. -/
+open scoped Manifold ContDiff in
+/-- A complex-analytic Riemann surface admits a countable relatively compact good refinement. -/
 theorem riemannGoodCover {S ι : Type*} [TopologicalSpace S] [T2Space S]
-    [SecondCountableTopology S] [ChartedSpace ℂ S]
+    [SecondCountableTopology S] [ChartedSpace ℂ S] [IsManifold 𝓘(ℂ) ω S]
     (C : ι → Set S) (hC : ∀ i, IsOpen (C i)) (hcover : ∀ x, ∃ i, x ∈ C i) :
     ∃ V : ℕ → Set S, LocallyFinite V ∧ (∀ x, ∃ j, x ∈ V j) ∧
       (∀ j, IsOpen (V j) ∧ IsCompact (closure (V j)) ∧
@@ -232,14 +233,14 @@ theorem compactLatticeImageLimit {ℓ : ℕ} [Fact ℓ.Prime] (d : ℕ)
 theorem compactLatticeImageLimit_rankZero {ℓ : ℕ} [Fact ℓ.Prime]
     (u : Matrix (Fin 0) (Fin 0) (PadicInt ℓ)) :
     Set.range u.mulVec = Set.univ := by
-  sorry
+  simp [Set.eq_univ_iff_forall]
 
 /-- A constant family of lattice maps has precisely its fixed image as the intersection. -/
 theorem compactLatticeImageLimit_constant {ℓ : ℕ} [Fact ℓ.Prime] (d : ℕ)
     (u : ℕ → Matrix (Fin d) (Fin d) (PadicInt ℓ))
     (v : Matrix (Fin d) (Fin d) (PadicInt ℓ)) (hconst : ∀ n, u n = v) :
     Set.range v.mulVec = ⋂ n, Set.range (u n).mulVec := by
-  sorry
+  simp [hconst, Set.iInter_const]
 
 /-- The intersection of all p-power multiples of a finite free p-adic lattice is zero. -/
 theorem compactLatticeImageLimit_powers {ℓ : ℕ} [Fact ℓ.Prime] (d : ℕ) :
