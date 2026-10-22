@@ -1,0 +1,10 @@
+{
+  "gaps": [
+    {
+      "slug": "fundamental-reduced-forms-primitive",
+      "needs": "For every natural d with -d fundamental, every form in TauCeti.reducedForms d is primitive, so H1.3 counts the full pinned finite set.",
+      "supplier": "ImaginaryQuadraticClassNumber",
+      "section": "H1.3"
+    }
+  ]
+}
