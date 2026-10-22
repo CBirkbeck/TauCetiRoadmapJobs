@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "slug": "bloch-foundations",
+      "supplier": "K3BlochGroups",
+      "section": "Bloch conventions, configurations and finite fields",
+      "needs": "Natural comparison of the three Bloch conventions with precise two-primary defects, configuration and repeated-point specialization maps, and finite-field Bloch groups, independent of the comparisons owned by HabiroNumberFields §§1.6 and 1.13."
+    },
+    {
+      "slug": "arithmetic-k-inputs",
+      "supplier": "ArithmeticKTheory",
+      "section": "Global arithmetic K-groups, étale comparisons and the cyclotomic Picard injection",
+      "needs": "Finite K₂ of integer rings, Tate invariants, odd-primary K₃ structure and global H¹ comparison, Tate degree-two and K₂-torsion comparisons, and the stated twisted-coinvariant Keune injection with natural coefficient and restriction diagrams."
+    },
+    {
+      "slug": "local-k3-regulator",
+      "supplier": "PadicHodgeRegulators",
+      "section": "Completed unramified local K₃ and its integral regulator",
+      "needs": "At every unramified p>3, a finite integral root-symbol presentation of the completed image of global K₃ and its p²-integral Coleman-normalized regulator, compatible with relations, field embeddings and transfer to trace on every semilocal factor."
+    }
+  ]
+}
