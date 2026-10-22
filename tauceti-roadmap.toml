@@ -144,7 +144,7 @@ claude_model = "fable"
 separation = "agent"
 # Logins whose review comments on a board pull request count, besides the board's bots and the
 # project's own workers (for example a maintainer reviewing from a browser model).
-comment_reviewers = []
+comment_reviewers = ["CBirkbeck"]
 
 [sources]
 # Hosts that are refused outright (pirate mirrors). The sandbox proxy refuses them as well, through
