@@ -46,3 +46,14 @@ locator = "Proposition 3.6, p.11"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6330186096"
+
+[[source]]
+id = "HR-1974"
+authors = "H. Halberstam, H.-E. Richert"
+title = "H. Halberstam and H.-E. Richert, Sieve methods, Academic Press, 1974"
+year = 1974
+locator_scheme = "theorem"
+locator = "Lemmas 5.3-5.4"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6331311160"
