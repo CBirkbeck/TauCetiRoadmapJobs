@@ -1,0 +1,161 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularityWild3Adic"
+
+[[source]]
+id = "BCDT"
+authors = "C. Breuil; B. Conrad; F. Diamond; R. Taylor"
+title = "On the modularity of elliptic curves over Q: wild 3-adic exercises"
+year = 2001
+locator_scheme = "section"
+locator = "§§1.1–1.4, 2.1–2.3, 3.1–3.4, 4.1–4.7, 5.1–5.7, 6.1–6.5, 7.1–7.3, 8.1–8.3, 9.1–9.6, 10; Theorems 2.2.1–2.2.2, 4.4.1, 4.5.1, 4.6.1–4.6.3, 5.1.3; published pp. 843–939"
+url = "https://www.ams.org/journals/jams/2001-14-04/S0894-0347-01-00370-8/S0894-0347-01-00370-8.pdf"
+fetched_from = "https://www.ams.org/journals/jams/2001-14-04/S0894-0347-01-00370-8/S0894-0347-01-00370-8.pdf"
+fetched_at = "2026-10-22T17:26:10Z"
+sha256 = "1e34130e55a0ef39d7ef2566cc7d518e2b69048dece36328a0b6530e92044cf2"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.1–6.13"]
+
+[[source]]
+id = "CDT"
+version_note = "Author copy uses the cited appendix and theorem numbering; printed journal pagination 521–567 corresponds to PDF pagination with offset 520."
+authors = "B. Conrad; F. Diamond; R. Taylor"
+title = "Modularity of certain potentially Barsotti–Tate Galois representations"
+year = 1999
+locator_scheme = "theorem"
+locator = "Proposition B.4.2; Theorems 7.2.1–7.2.2; Lemmas 7.2.3–7.2.4"
+url = "https://virtualmath1.stanford.edu/~conrad/papers/cdtmaster.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/papers/cdtmaster.pdf"
+fetched_at = "2026-10-22T17:26:43Z"
+sha256 = "e9dac063b9db6fd7b34e79907ce09095688b1fd8b1ea48c8527797b6090ae91c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.13; 6.9; 6.11; 6.12"]
+
+[[source]]
+id = "SBT"
+version_note = "Read the author copy: Lemma 1.1 on PDF p. 3 and Theorem 1.2 on pp. 3–4; journal pp. 285–286."
+authors = "N. I. Shepherd-Barron; R. Taylor"
+title = "Mod 2 and mod 5 icosahedral representations"
+year = 1997
+locator_scheme = "theorem"
+locator = "Lemma 1.1; Theorem 1.2; author-copy pp. 2–4"
+url = "https://math.stanford.edu/~rltaylor/klein.pdf"
+fetched_from = "https://math.stanford.edu/~rltaylor/klein.pdf"
+fetched_at = "2026-10-22T17:32:39Z"
+sha256 = "857e0948c265684293f3a84df33762d394b15ce61ac185b513c44338df836a08"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.8; 1.15"]
+
+[[source]]
+id = "DDT"
+authors = "H. Darmon; F. Diamond; R. Taylor"
+title = "Fermat’s Last Theorem"
+year = 1995
+locator_scheme = "theorem"
+locator = "Theorems 3.9 and 3.14; Definition 3.12; Remark 3.6"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-10-22T17:32:42Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.6"]
+
+[[source]]
+id = "Breuil"
+arxiv = "math/0009252v1"
+version_note = "arXiv v1 carries the published Annals pagination 489–549 and the cited theorem numbering."
+authors = "C. Breuil"
+title = "Groupes p-divisibles, groupes finis et modules filtrés"
+year = 2000
+venue = "Ann. of Math. (2) 152 (2000), no. 2, 489-549"
+locator_scheme = "theorem"
+locator = "Proposition 2.1.2.2; Theorems 3.3.7 and 4.2.1.6"
+url = "https://arxiv.org/abs/math/0009252v1"
+fetched_from = "https://arxiv.org/pdf/math/0009252v1"
+fetched_at = "2026-10-22T17:32:47Z"
+sha256 = "23b98f1b92df823ea282339105c6f06ba2f76c7c8668725f061ec41cde45b789"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.1"]
+
+[[source]]
+id = "BBM"
+authors = "P. Berthelot; L. Breen; W. Messing"
+title = "Théorie de Dieudonné cristalline II"
+year = 1982
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0093025"
+locator_scheme = "theorem"
+locator = "4.2.14"
+url = "https://doi.org/10.1007/BFb0093025"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Elkies"
+authors = "N. D. Elkies"
+title = "Elliptic and modular curves over finite fields and related computational issues"
+year = 1998
+locator_scheme = "equation"
+locator = "(150)–(153); author-copy pp. 54–55"
+url = "https://people.math.harvard.edu/~elkies/modular.pdf"
+fetched_from = "https://people.math.harvard.edu/~elkies/modular.pdf"
+fetched_at = "2026-10-22T17:32:51Z"
+sha256 = "62b2ad1c987bdacb45880b432736e8637485f514c8594f4658127b72450a4c9e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.11"]
+
+[[source]]
+id = "Cremona"
+authors = "J. E. Cremona"
+title = "ecdata: allcurves.00000-09999"
+year = 2026
+locator_scheme = "section"
+locator = "Rows 50 b 1 and 338 e 1"
+url = "https://raw.githubusercontent.com/JohnCremona/ecdata/master/allcurves/allcurves.00000-09999"
+fetched_from = "https://raw.githubusercontent.com/JohnCremona/ecdata/master/allcurves/allcurves.00000-09999"
+fetched_at = "2026-10-22T17:32:52Z"
+sha256 = "259f3846329395b371e8079c77a6f1097adaebc98a054974573e241416efa968"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.11"]
+
+[[source]]
+id = "Manoharmayum"
+authors = "J. Manoharmayum"
+title = "Pairs of mod 3 and mod 5 representations arising from elliptic curves"
+year = 1999
+locator_scheme = "theorem"
+locator = "Theorems 5.3.2 and 5.4.2; Definition 3.3; Sections 4–5"
+url = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/mrl/1999/0006/0006/MRL-1999-0006-0006-a012.pdf"
+fetched_from = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/mrl/1999/0006/0006/MRL-1999-0006-0006-a012.pdf"
+fetched_at = "2026-10-22T17:33:32Z"
+sha256 = "54a0052b024d310f08384bc3316bd83faf24fee136692d385ef9d06c90b9273b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.11; 1.12; 1.16; 3.2"]
+
+[[source]]
+id = "Serre"
+authors = "J.-P. Serre"
+title = "Corps locaux"
+year = 1962
+locator_scheme = "chapter"
+locator = "Ch. XIV, §1, Proposition 3"
+cited_for = ["1.1"]
+licence_class = "none"
+status = "waived"
