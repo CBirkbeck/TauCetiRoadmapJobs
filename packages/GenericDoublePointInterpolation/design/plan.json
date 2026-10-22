@@ -1,0 +1,34 @@
+{
+  "gaps": [
+    {
+      "slug": "cartier-residual",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II, ideal sheaves after §0.28",
+      "needs": "Cartier ideal-quotient residual/trace sheaf sequence, twists and left exact global sections."
+    },
+    {
+      "slug": "generic-contact",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II, generic tangent incidence",
+      "needs": "Characteristic-zero generic smoothness, differential-rank/image-dimension and tangent-incidence contact fibers."
+    },
+    {
+      "slug": "plane-singular-incidence",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II, plane divisors after §5.12",
+      "needs": "Double containment of a singular reduced curve and general-point degree-ℓ plane-curve incidence bound."
+    },
+    {
+      "slug": "finite-flat-sections",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "Part II after §§1.7, 2.1, finite-flat incidence",
+      "needs": "Finite locally free pushforward/base change of line bundles and universal projective tangent-direction families."
+    },
+    {
+      "slug": "mixed-bad-incidence",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "Part II after §§1.7, 2.1, compatible specialization",
+      "needs": "Compatible generic, mixed-stratum and common special configurations in the closed bad-direction incidence as specified in Layer 2."
+    }
+  ]
+}

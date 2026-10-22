@@ -1,18 +1,18 @@
-# Generic double-point interpolation
+# Roadmap: generic double-point interpolation
 
-This roadmap builds value-and-first-derivative interpolation for multivariate
+**Summary.** This roadmap builds value-and-first-derivative interpolation for multivariate
 polynomials, the projective double-point theorem that supplies its generic
-rank, and a polynomial certificate that produces small integer coordinates.
+rank, and a nonvanishing polynomial minor that gives small integer coordinates.
 The reusable objects are the bounded polynomial submodule, its coefficient
 basis, the native square-zero first-jet algebra, finite double-point quotients,
 and universal interpolation matrices. The geometric argument develops the
 restriction-rank and residual/trace tools needed for ordinary and differential
 Horace induction.
 
-The final theorem is the following. Let k be an algebraically closed field of
+The final theorem is the following. Let k be a field of
 characteristic zero, let r,n≥1 and d≥5, and suppose
 
-$$m=n(r+1)\le N(r,d)=\binom{r+d}{d}.$$
+m = n(r+1) ≤ N(r,d) = choose(r+d,d).
 
 There is a nonzero polynomial Δ with integer coefficients in the rn point
 coordinates such that its principal open is nonempty and every tuple on that
@@ -31,87 +31,41 @@ matrix and integer-box argument give the affine and effective endpoint.
 These sources support different parts of the development; the native algebraic
 comparisons below specify how those parts fit together.
 
-## Scope and prerequisites
+## Scope and ownership
 
 This roadmap owns bounded-degree coefficient coordinates, fixed-degree
-homogenization, first jets, double-point interpolation, the specializations used
-in its Horace proof, and the universal minor certificate. It imports general
-algebraic geometry from the following owning layers.
+homogenization, first jets, double-point interpolation, the Veronese and plane
+specializations, the squared-point and tangent-direction families used in its
+Horace proof, and the universal minor. General projective bundles and twisting
+cohomology belong to AlgebraicModuliForArithmeticGeometry §§1.1–1.2;
+determinantal loci and Hilbert functors belong to its §§1.7 and 2.1. General
+ideal-sheaf quotient comparisons and Bézout belong to SchemeAndStackFoundations
+§§0.28 and 5.12. The exact contracts and missing general extensions are listed below.
 
-| Owning roadmap and layer | Interface used here |
-| --- | --- |
-| **AlgebraicModuliForArithmeticGeometry, R09.1** | Projective space over k, the invertible sheaf O(d), its global sections and the homogeneous-form equivalence; affine-chart trivialization and naturality of restriction and base change. |
-| **SchemeAndStackFoundations, SF.0** | Ideal sheaves, squared finite closed subschemes, affine quotients and their k-valued points, finite-scheme length, Cartier residual/trace sequences and left exactness of global sections. Its continuation for generic tangent incidence supplies generic smoothness, irreducible parameter products, generic rank/dimension and contact-fiber statements. |
-| **SchemeAndStackFoundations, SF.5** | Plane divisors, double containment of a singular curve, Bézout and the incidence-dimension bound for reduced curves through general points. |
-| **AlgebraicModuliForArithmeticGeometry, R09.2** | Finite-flat moving subschemes, Hilbert/incidence families, locally free finite pushforwards with base change, proper projective tangent-direction incidence and valuative extension. |
+Arithmetic consumers use the principal-open and integer-box results and supply
+their own number-field embedding parametrizations, nonzero pullbacks and
+arithmetic counting arguments. IntegralLattices owns general lattice theory;
+the metric here is the elementary monomial metric. Higher jets,
+positive-characteristic Alexander–Hirschowitz and Waring classification lie
+outside this roadmap's scope.
 
-These are actual scheme, sheaf and section interfaces. A vector space with the
-right dimension does not replace H⁰(P^r,O(d)); a collection of pointwise choices
-does not replace a finite-flat family. The generic tangent-incidence continuation
-belongs to SchemeAndStackFoundations, in the direction of SF.0. Only its
-Veronese and plane specializations belong here. The hyperplane residual/trace
-sequence is imported from SF.0 and applied to squared point ideals here.
-
-**EffectiveBoundsCompactModels** consumes the principal-open and integer-box
-results. It owns the number-field embedding parametrization, the proof that its
-pullback of Δ is nonzero, and the subsequent lattice and counting arguments.
-The coefficient metric here is the elementary monomial metric needed for that
-interface. General lattice theory belongs to **IntegralLattices**. Higher-order
-jets, positive-characteristic Alexander–Hirschowitz statements, classification
-of Waring decompositions, and the arithmetic counting theorem lie outside this
-roadmap's scope.
-
-The algebraic starting point is Mathlib's polynomial submodule and basis, rather
-than a new bounded-polynomial carrier. The following declarations supply the
-baseline at Mathlib commit `082e2d37e8b0463410cdb532e111cd43d5a66174`.
-Their hypotheses are used as written: in particular, the affine first-jet
-identities do not require characteristic zero, while the geometric genericity
-arguments do.
-
-| Mathlib declarations | What is reused |
-| --- | --- |
-| [MvPolynomial.restrictTotalDegree, basisRestrictSupport, mem_restrictTotalDegree, monomial_mem_restrictSupport](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/MvPolynomial/Basic.lean) | The submodule of polynomials of total degree ≤d, its admissible monomials and its restricted monomial basis. |
-| [MvPolynomial.pderiv, pderiv_monomial, pderiv_X, pderiv_mul](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MvPolynomial/PDeriv.lean) | Partial differentiation, including the exponent-decrement formula and Leibniz rule. |
-| [MvPolynomial.eval, aeval, eval_monomial, aeval_monomial](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MvPolynomial/Eval.lean) | Evaluation and algebra evaluation, including evaluation in square-zero algebras and substitution. |
-| [MvPolynomial.homogeneousSubmodule](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/MvPolynomial/Homogeneous.lean) | The native fixed-degree homogeneous submodule. |
-| [MvPolynomial.lcoeff](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MvPolynomial/Basic.lean) | Coefficient extraction as a linear map. |
-| [Sym.equivNatSum](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Data/Finsupp/Multiset.lean), [Sym.card_sym_eq_choose](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Data/Sym/Card.lean) | Degree-d exponent tuples as size-d multisets, and their stars-and-bars count. Only the slack-coordinate adapter is new here. |
-| [TrivSqZeroExt, TrivSqZeroExt.inr_mul_inr](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/TrivSqZeroExt/Basic.lean) | The existing algebra R⊕M and the vanishing of products of infinitesimal terms. |
-| [Ideal.quotientInfRingEquivPiQuotient](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/Ideal/Quotient/Operations.lean) | Finite Chinese remainder for pairwise comaximal ideals. The scalar-compatible algebra upgrade is checked here. |
-| [Matrix.rank_of_det_ne_zero, rank_submatrix_le, rank_eq_finrank_range_toLin](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/Matrix/Rank.lean) | Determinant and submatrix rank bounds, and matrix rank as dimension of the range of its represented linear map. |
-| [MvPolynomial.eq_zero_of_eval_zero_at_prod_finset](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Combinatorics/Nullstellensatz.lean) | A polynomial over a domain vanishing on a product of sufficiently large coordinate sets is zero. |
-| [MvPolynomial.degreeOf_le_totalDegree](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MvPolynomial/Degrees.lean) | The coordinate-degree bound used for the integer grid. |
-| [PrimeSpectrum.basicOpen, mem_basicOpen](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/Spectrum/Prime/Topology.lean) | The principal open D(Δ) and its pointwise membership criterion. |
-| [AlgebraicGeometry.Spec, Spec.map, Spec.algebraMap, Spec.map_apply](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/AlgebraicGeometry/Scheme.lean), [AffineSpace.SpecIso, homOverEquiv](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/AlgebraicGeometry/AffineSpace.lean) | Actual affine schemes, evaluation morphisms over Spec k, the polynomial-spectrum identification and the existing affine-space functor of points. |
-
-Tau Ceti also supplies the total-degree inclusion and span lemmas in
-[RingTheory/MvPolynomial/RestrictTotalDegree](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RingTheory/MvPolynomial/RestrictTotalDegree.lean),
-including `MvPolynomial.restrictTotalDegree_mono`,
-`MvPolynomial.restrictTotalDegree_eq_span` and
-`TauCeti.MvPolynomial.apply_mem_of_basis`. These are existing polynomial APIs,
-not targets of this roadmap. They concern inclusion and linear extension on the
-submodule, whereas the targets here add coefficient coordinates, homogenization
-and jets.
-
-## Conventions and sources
+## Conventions
 
 Write V(R,r,d) for the native submodule
 MvPolynomial.restrictTotalDegree (Fin r) R d. Its monomial index is
 
-$$A(r,d)=\{\alpha:\operatorname{Fin}(r)\to_0\mathbf N:\;|\alpha|\le d\},
-\qquad |\alpha|=\sum_j\alpha_j.$$
+A(r,d) = {α : Fin r →₀ ℕ | |α| ≤ d}, where |α| is the sum of its exponents.
 
-Here finite support is Mathlib's Finsupp. The finite type structure on A(r,d)
-is the adapter supplied in GI.0. A commutative ring R is sufficient for
+Here finite support is Mathlib's Finsupp. The type `Monomials` is A(r,d); `monomialsFintype` supplies its finite type structure in Layer 0. `Bounded` abbreviates the native submodule V(R,r,d). A commutative ring R is sufficient for
 coefficient coordinates, homogenization and the jet evaluation formulas.
 Dimension and finite quotient statements explicitly use a field. The real
-coefficient metric uses R=ℝ. All geometric statements in GI.2–GI.5, including
+coefficient metric uses R=ℝ. All geometric statements in Layer 2–Layer 5, including
 the word *general*, use an algebraically closed field k of characteristic zero
 unless an algebraic statement explicitly gives weaker hypotheses.
 
 An ordered affine tuple is P:Fin n→(Fin r→k). A jet row is a pair
 (i,z) with z in Option(Fin r): None selects the value and Some j selects the
-j-th partial derivative. Thus there are n(r+1) rows. We use genuine partial
+j-th partial derivative. Thus there are n(r+1) rows, indexed by `JetRows`. We use genuine partial
 polynomial derivatives, with exponent coefficients in k; no factorial or
 inverse coordinate appears. Products with exponent decrement are zero when
 the original exponent is zero. The target is a product of square-zero algebras,
@@ -136,8 +90,7 @@ parameter scheme. They do not quantify over every distinct tuple.
 
 The exceptional triples relevant to the induction are
 
-$$d=2,\;2\le q\le r;\qquad
-(r,d,q)=(2,4,5),(3,4,9),(4,3,7),(4,4,14).$$
+d = 2 with 2 ≤ q ≤ r, and (r,d,q) = (2,4,5), (3,4,9), (4,3,7), (4,4,14).
 
 The geometric endpoint uses d≥5 and so has none of these exceptions. The
 one-dimensional Hermite theorem uses arbitrary distinct points over any field.
@@ -145,711 +98,797 @@ In all division formulas below u is an integer; only in the critical range is
 its nonnegativity established. This prevents natural-number subtraction from
 silently changing a statement when the dividend is negative.
 
-The sources are cited by the pagination of these particular versions:
+## Exact supplier contracts
 
-- **BO:** Maria Chiara Brambilla and Giorgio Ottaviani, *On the
-  Alexander–Hirschowitz Theorem*, [arXiv:math/0701409v2](https://arxiv.org/pdf/math/0701409v2),
-  10 September 2007. The relevant material is Theorem 1.1 and §§2–6,
-  printed pp.1–19. The arbitrary-distinct univariate observation is also in
-  the opening paragraph of §7.1, p.19. Source dimension n is called r here.
-- **COU:** Jean-Marc Couveignes, *Enumerating number fields*,
-  [Annals of Mathematics 192 (2020), 487–497](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf),
-  §3, printed pp.491–493. This supplies the affine interpretation, matrix,
-  minor, small integer box and coefficient metric. BO's Theorem 1.1 supplies
-  the inclusive degree-5 endpoint.
+### From Mathlib
 
-Each target below gives its source and its direct prerequisites. The statements
-and proof descriptions use the conventions above. Algebraic reformulations,
-finite witness replacements and the coarse degree bound are identified where
-they occur. The API names designate proposed library declarations; existing
-linearity, algebra-map and equivalence laws come from the native structures.
-The tests are exact mathematical contracts, including zero and failure cases.
+The polynomial submodule and basis are supplied at Mathlib commit `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
+Their hypotheses are used as written: in particular, the affine first-jet
+identities do not require characteristic zero, while the geometric genericity
+arguments do.
 
-## GI.0. Coefficient spaces and fixed homogenization
+| Mathlib declarations | What is reused |
+| --- | --- |
+| [MvPolynomial.restrictTotalDegree, basisRestrictSupport, mem_restrictTotalDegree, monomial_mem_restrictSupport](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/MvPolynomial/Basic.lean) | The submodule of polynomials of total degree ≤d, its admissible monomials and its restricted monomial basis. |
+| [MvPolynomial.pderiv, pderiv_monomial, pderiv_X, pderiv_mul](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/PDeriv.lean) | Partial differentiation, including the exponent-decrement formula and Leibniz rule. |
+| [MvPolynomial.eval, aeval, eval_monomial, aeval_monomial](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Eval.lean) | Evaluation and algebra evaluation, including evaluation in square-zero algebras and substitution. |
+| [MvPolynomial.homogeneousSubmodule](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/MvPolynomial/Homogeneous.lean) | The native fixed-degree homogeneous submodule. |
+| [MvPolynomial.lcoeff](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Basic.lean) | Coefficient extraction as a linear map. |
+| [Sym.equivNatSum](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Data/Finsupp/Multiset.lean), [Sym.card_sym_eq_choose](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Data/Sym/Card.lean) | Degree-d exponent tuples as size-d multisets, and their stars-and-bars count. Only the slack-coordinate adapter is new here. |
+| [TrivSqZeroExt, TrivSqZeroExt.inr_mul_inr](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/TrivSqZeroExt/Basic.lean) | The existing algebra R⊕M and the vanishing of products of infinitesimal terms. |
+| [Ideal.quotientInfRingEquivPiQuotient](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Ideal/Quotient/Operations.lean) | Finite Chinese remainder for pairwise comaximal ideals. The scalar-compatible algebra upgrade is checked here. |
+| [Matrix.rank_of_det_ne_zero, rank_submatrix_le, rank_eq_finrank_range_toLin](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Matrix/Rank.lean) | Determinant and submatrix rank bounds, and matrix rank as dimension of the range of its represented linear map. |
+| [MvPolynomial.eq_zero_of_eval_zero_at_prod_finset](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Combinatorics/Nullstellensatz.lean) | A polynomial over a domain vanishing on a product of sufficiently large coordinate sets is zero. |
+| [MvPolynomial.degreeOf_le_totalDegree](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Degrees.lean) | The coordinate-degree bound used for the integer grid. |
+| [PrimeSpectrum.basicOpen, mem_basicOpen](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/Spectrum/Prime/Topology.lean) | The principal open D(Δ) and its pointwise membership criterion. |
+| [AlgebraicGeometry.Spec, Spec.map, Spec.algebraMap, Spec.map_apply](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/AlgebraicGeometry/Scheme.lean), [AffineSpace.SpecIso, homOverEquiv](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/AlgebraicGeometry/AffineSpace.lean) | Actual affine schemes, evaluation morphisms over Spec k, the polynomial-spectrum identification and the existing affine-space functor of points. |
+
+Mathlib also supplies `MvPolynomial.IsHomogeneous.sum_X_mul_pderiv` in
+`Mathlib/RingTheory/MvPolynomial/EulerIdentity.lean` (line 73); it holds over a
+commutative semiring, including degree zero.
+
+### From Tau Ceti
+
+Tau Ceti supplies the total-degree inclusion and span lemmas in
+[RingTheory/MvPolynomial/RestrictTotalDegree](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RingTheory/MvPolynomial/RestrictTotalDegree.lean),
+including `MvPolynomial.restrictTotalDegree_mono`,
+`MvPolynomial.restrictTotalDegree_eq_span` and
+`TauCeti.MvPolynomial.apply_mem_of_basis`. These are existing polynomial APIs,
+not targets of this roadmap. They concern inclusion and linear extension on the
+submodule, whereas the targets here add coefficient coordinates, homogenization
+and jets.
+
+### From TauCetiRoadmap.SchemeAndStackFoundations
+
+Consume §0.28, IdealPullback: `quotientPresheaf`, `quotientToClosedNatTrans_isIso`
+for affine morphisms, and `allOpenSheafComparison` after sheafification.
+These do not identify a non-affine global quotient presheaf with all sections.
+Consume §2.6, `projectiveSpace_cohomology`, and §5.12, `bezout_inequality`,
+with the proper-intersection hypothesis retained for its equality statement.
+
+What SchemeAndStackFoundations must provide (gap:cartier-residual): In a
+SchemeAndStackFoundations, Part II extension of §0.28, give the ideal-quotient
+residual/trace sheaf sequence for a closed subscheme and an effective Cartier
+divisor, with twists and left exactness on global sections.
+
+What SchemeAndStackFoundations must provide (gap:generic-contact): In a
+SchemeAndStackFoundations, Part II extension of its geometry of finite-type
+schemes, give generic smoothness and generic differential-rank/image-dimension
+comparison in characteristic zero and the tangent-incidence contact-fiber
+statement used by the Veronese specialization of Layer 3.
+
+What SchemeAndStackFoundations must provide (gap:plane-singular-incidence):
+In a SchemeAndStackFoundations, Part II extension of §5.12, give double
+containment of a reduced curve in a plane divisor singular along it and the
+bound q ≤ ℓ(ℓ+3)/2 for q general plane points lying on a degree-ℓ curve.
+
+### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
+
+Consume §1.1, `ProjectiveBundles.projectiveBundle` and `integerTwists`, on
+quasicoherent modules and their invertible quotient convention; specialize to
+the free module of rank r+1. Consume §1.2,
+`ProjectiveBundles.projectiveBundle.projectiveSpaceCechComparison`, over a
+commutative ring, with q=0 and nonnegative twist d: use its natural coefficient
+basis comparison, together with the native H⁰/global-section equivalence.
+Layer 0 owns its chart-normalized polynomial adapter.
+Consume §1.7, `rankLocus`, for maps between finite locally free sheaves and
+its scheme-theoretic base-change law. Consume §2.1, `hilbertFunctorAsQuot`,
+for separated morphisms of finite presentation, parametrizing finitely
+presented flat proper closed subschemes. This does not itself construct the
+squared-point or direction families; Layers 1–2 and 4 construct those specializations.
+
+What AlgebraicModuliForArithmeticGeometry must provide (gap:finite-flat-sections):
+In an AlgebraicModuliForArithmeticGeometry, Part II extension of §§1.7 and 2.1, give finite locally free pushforward of a line bundle along a finite locally
+free morphism and arbitrary base change, with proper projective tangent-line
+parameters and their universal finite-flat length-two incidence families.
+
+What AlgebraicModuliForArithmeticGeometry must provide (gap:mixed-bad-incidence):
+In an AlgebraicModuliForArithmeticGeometry, Part II extension of §§1.7 and 2.1, give the compatible specialization interface described in Layer 2 for the
+closed bad-direction incidence over a product of moving-support parameters,
+including the required mixed strata and a common special fiber after allowed
+base modifications; properness along individual traits alone is insufficient.
+
+## How to read the build
+
+Layer 0 fixes coefficient and section coordinates. Layer 1 identifies first
+jets with doubled points. Layer 2 supplies restriction ranks, residuals and
+curvilinear families. Layer 3 proves the plane and cubic bases. Layer 4 uses
+ordinary and differential Horace for the projective theorem. Layer 5 constructs
+the affine principal open and bounded integer witnesses. The headline signatures
+in Suggested.lean use explicit native polynomial and spectrum carriers; the
+projective-section and relative-incidence interfaces are specified here.
+
+## Layer 0: Coefficient spaces and fixed homogenization
 
 The bounded space has a native finite monomial basis. This layer exposes that basis as coefficient functions, relates it to homogeneous forms and genuine projective sections, and supplies the real coefficient metric. The cardinality computation builds only the bounded/slack adapter to Mathlib’s multiset equivalence.
 
-### The bounded monomial basis
-
-<a id="monomial-count"></a>
+### 0.1 The bounded monomial basis
 
 **Binomial count of bounded monomials.** For r,d≥0, the finite set A(r,d)={α:Fin r→₀N | Σα≤d} has cardinality N(r,d)=choose(r+d,d).
 
-Adjoin a slack exponent d−|α| in the None coordinate. This is a bijection with degree-d exponent tuples on Option(Fin r); compose it with Sym.equivNatSum and apply Sym.card_sym_eq_choose. Deleting the slack coordinate proves the inverse formula.
+Adjoin a slack exponent d−|α| in the None coordinate. This is a bijection with degree-d exponent tuples on Option(Fin r); compose it with Sym.equivNatSum and apply Sym.card_sym_eq_choose. Deleting the slack coordinate proves the inverse formula. The API recovers each old exponent, recovers the slack exponent d−|α|, and preserves their total sum d.
 
-**Prerequisites:** `Sym.card_sym_eq_choose` (Mathlib); `Sym.equivNatSum` (Mathlib).
+**Checks.**
 
-**Source:** [BO, §1, p.1](https://arxiv.org/pdf/math/0701409v2); [COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+- For r=0 and every d the unique exponent is zero, giving choose(d,d)=1; adding a spurious affine coordinate gives the wrong count.
+- For d=0 and every r only the zero exponent occurs, giving choose(r,0)=1.
+- For r=d=2 the six bounded exponents map to degree-two triples with slack exponents 2,1,1,0,0,0; a coordinatewise degree bound would incorrectly give nine.
 
-<a id="bounded-finrank"></a>
+*Needs:* `Sym.card_sym_eq_choose` (Mathlib); `Sym.equivNatSum` (Mathlib).
+
+([BO, §1, p.1](https://arxiv.org/pdf/math/0701409v2); [COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
 **Dimension of bounded polynomials.** For any field k and r,d≥0, finrank_k(MvPolynomial.restrictTotalDegree (Fin r) k d)=N(r,d).
 
 Use basisRestrictSupport on the admissible exponent set. Its cardinality is N(r,d), so the dimension follows from the native finite-basis dimension formula. No extra space of formal coefficient lists is used as the polynomial carrier.
 
-**Prerequisites:** `MvPolynomial.restrictTotalDegree` (Mathlib); `MvPolynomial.basisRestrictSupport` (Mathlib); [Binomial count of bounded monomials](#monomial-count).
+*Needs:* `MvPolynomial.restrictTotalDegree` (Mathlib); `MvPolynomial.basisRestrictSupport` (Mathlib); [Binomial count of bounded monomials](#01-the-bounded-monomial-basis).
 
-**Source:** [COU, §3, p. 491, bounded polynomial dimension](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
-
-<a id="coefficient-coordinates"></a>
+([COU, §3, p. 491, bounded polynomial dimension](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
 **Coefficient coordinates.** For a commutative ring R, identify the native bounded submodule V(R,r,d) with functions A(r,d)→R by a linear equivalence c_d; its α-coordinate is the actual MvPolynomial coefficient.
 
 Restrict the native coefficient representation to A(r,d), then use finiteness to replace the finitely supported coordinate function by an ordinary function. The inverse is the finite sum of admissible monomials, and native polynomial coefficient extensionality proves both inverse identities.
 
-**API.**
+The API has the following properties.
 
-- `coefficientCoordinates_apply` (projection): c_d(f)(α)=coeff_α(f).
-- `coefficientCoordinates_symm` (constructor): c_d⁻¹(a)=Σ_{α∈A(r,d)}a_α X^α.
-- `coefficientCoordinates_ext` (extensionality): f=g iff c_d(f)=c_d(g).
+- c_d(f)(α)=coeff_α(f).
+- c_d⁻¹(a)=Σ over α∈A(r,d) of a_α X^α.
+- f=g iff c_d(f)=c_d(g).
 
-**Tests.**
+**Checks.**
 
-- `six_not_nine`: For r=2,d=2 the coordinates are 1,x,y,x²,xy,y², six in all.
-- `constants`: For d=0 there is one coordinate and c_0(C a)=a.
-- `native_coefficient`: For r=1,d=3 and f=2+3x², coordinates are (2,0,3,0).
+- For r=2,d=2 the coordinates are 1,x,y,x²,xy,y², six in all.
+- For d=0 there is one coordinate and c_0(C a)=a.
+- For r=1,d=3 and f=2+3x², coordinates are (2,0,3,0).
 
-**Prerequisites:** `MvPolynomial.basisRestrictSupport` (Mathlib); `MvPolynomial.restrictTotalDegree` (Mathlib); [Binomial count of bounded monomials](#monomial-count).
+*Needs:* `MvPolynomial.basisRestrictSupport` (Mathlib); `MvPolynomial.restrictTotalDegree` (Mathlib); [Binomial count of bounded monomials](#01-the-bounded-monomial-basis).
 
-**Source:** [COU, §3 pp. 491,493](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 pp. 491,493](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### Homogeneous forms and sections
+### 0.2 Homogeneous forms and sections
 
-<a id="fixed-homogenization"></a>
-
-**Fixed-degree homogenization.** For a commutative ring R, fixedHomogenization_d is a linear equivalence V(R,r,d)≃ homogeneousSubmodule (Option(Fin r)) R d. It sends X^α to X₀^(d−Σα)∏X_j^α_j; inverse evaluation sets X₀=1.
+**Fixed-degree homogenization.** For a commutative ring R, the fixed-degree homogenization is a linear equivalence V(R,r,d)≃ homogeneousSubmodule (Option(Fin r)) R d. It sends X^α to X₀^(d−Σα)∏X_j^α_j; inverse evaluation sets X₀=1.
 
 Transport the bounded monomial basis through the slack-coordinate bijection. Dehomogenization evaluates X₀ at 1 and the remaining variables at their native polynomial variables. Checking the two composites on monomials gives a linear equivalence at each degree; multiplication relates degrees d,e and d+e.
 
-**API.**
+The API has the following properties.
 
-- `fixedHomogenization_monomial` (simp): X^α maps to X₀^(d−Σα)X^α.
-- `fixedHomogenization_dehomogenize` (equivalence): Setting X₀=1 is the inverse on degree-d homogeneous forms.
-- `fixedHomogenization_mul` (compatibility): H_{d+e}(fg)=H_d(f)H_e(g), for f∈V_d and g∈V_e; targets have different degrees.
+- X^α maps to X₀^(d−Σα)X^α.
+- Setting X₀=1 is the inverse on degree-d homogeneous forms.
+- H(d+e)(fg)=H_d(f)H_e(g), for f∈V_d and g∈V_e; targets have different degrees.
 
-**Tests.**
+**Checks.**
 
-- `homogenize_quadratic`: At d=2, 1+x maps to X₀²+X₀X₁, not 1+X₁.
-- `homogenize_constant`: At d=0 constants remain constants.
-- `dehomogenize_native`: The monomial X₀X₁ in degree 2 dehomogenizes to x in the native degree≤2 submodule.
+- At d=2, 1+x maps to X₀²+X₀X₁. Over a nontrivial ring this differs from 1+X₁; in the zero ring both are zero.
+- At d=0 constants remain constants.
+- The monomial X₀X₁ in degree 2 dehomogenizes to x in the native degree≤2 submodule.
 
-**Prerequisites:** [Coefficient coordinates](#coefficient-coordinates); `MvPolynomial.homogeneousSubmodule` (Mathlib); `MvPolynomial.aeval` (Mathlib).
+*Needs:* [Coefficient coordinates](#01-the-bounded-monomial-basis); `MvPolynomial.homogeneousSubmodule` (Mathlib); `MvPolynomial.aeval` (Mathlib).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
-
-<a id="sections-comparison"></a>
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
 **Homogeneous forms and twisting sections.** For algebraically closed k and d≥0, the fixed-homogenization equivalence followed by the supplier homogeneous-form/section equivalence identifies V(k,r,d) with H⁰(P^r_k,O(d)), compatibly with restriction to the chart X₀≠0.
 
-Compose fixedHomogenization with the homogeneous-form/global-section equivalence of R09.1. The comparison with the chart uses the actual O(d) trivialization there. Its monomial calculation determines the restriction square, rather than comparing dimensions alone.
+Compose this homogenization with the homogeneous-form/global-section equivalence of AlgebraicModuliForArithmeticGeometry §§1.1–1.2. The comparison with the chart uses the actual O(d) trivialization there. Its monomial calculation determines the restriction square, rather than comparing dimensions alone.
 
-**Prerequisites:** [Fixed-degree homogenization](#fixed-homogenization); **AlgebraicModuliForArithmeticGeometry, R09.1**.
+*Needs:* [Fixed-degree homogenization](#02-homogeneous-forms-and-sections); AlgebraicModuliForArithmeticGeometry §§1.1–1.2.
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### The real coefficient metric
+### 0.3 The real coefficient metric
 
-<a id="coefficient-gram"></a>
+**Coefficient Gram form.** Over ℝ, the bounded real polynomial space has positive definite bilinear form G(f,g)=Σ over α∈A(r,d) of coeff_α(f)coeff_α(g). Transporting the Euclidean structure along c_d makes the monomials orthonormal; the integral lattice consists exactly of integral coordinate tuples.
 
-**Coefficient Gram form.** Over ℝ, the bounded real polynomial space has positive definite bilinear form G(f,g)=Σ_{α∈A(r,d)}coeff_α(f)coeff_α(g). Transporting the Euclidean structure along c_d makes the monomials orthonormal; the integral lattice consists exactly of integral coordinate tuples.
+Pull the finite-dimensional Euclidean inner product back through the coefficient equivalence. A nonzero polynomial has a nonzero coefficient, giving strict positivity of the sum of squares. Use this transport to equip the bounded real submodule with its norm and inner product; integral tuples form its additive ℤ-coordinate subgroup.
 
-Pull the finite-dimensional Euclidean inner product back through coefficientCoordinates. A nonzero polynomial has a nonzero coefficient, giving strict positivity of the sum of squares. Use this transport to equip the bounded real submodule with its norm and inner product; integral tuples form its additive ℤ-coordinate subgroup.
+The API has the following properties.
 
-**API.**
+- G(f,g)=Σ coeff_α(f)coeff_α(g).
+- For real f≠0, G(f,f)>0.
+- For the transported Euclidean norm, c_d is an isometry and the integral coordinates are Z^A(r,d).
 
-- `coefficientGram_apply` (projection): G(f,g)=Σ coeff_α(f)coeff_α(g).
-- `coefficientGram_positive` (structure): For real f≠0, G(f,f)>0.
-- `coefficientCoordinates_isometry` (compatibility): For the transported Euclidean norm, c_d is an isometry and the integral coordinates are Z^A(r,d).
+**Checks.**
 
-**Tests.**
+- For r=2,d=2, G(x,y)=0 and G(x,x)=1.
+- At d=0, G(C a,C b)=ab.
+- The native polynomial 2+x has integral coordinates and squared norm5.
 
-- `orthonormal_xy`: For r=2,d=2, G(x,y)=0 and G(x,x)=1.
-- `gram_constants`: At d=0, G(C a,C b)=ab.
-- `integral_coordinates`: The native polynomial 2+x has integral coordinates and squared norm5.
+*Needs:* [Coefficient coordinates](#01-the-bounded-monomial-basis).
 
-**Prerequisites:** [Coefficient coordinates](#coefficient-coordinates).
+([COU, §3, p. 493, monomial coefficient metric](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-**Source:** [COU, §3, p. 493, monomial coefficient metric](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+### Examples
 
-## GI.1. First-jet algebras and double-point evaluation
+The degree-two basis in two variables is 1,x,y,x²,xy,y²; the polynomial 2+x has squared coefficient norm 5.
 
-The first jet is the order-one square-zero algebra, whose infinitesimal dimension is r. This layer connects that algebra to squared evaluation ideals, CRT, the bounded linear evaluation map and its matrix. The affine identities hold over their stated rings or fields in every characteristic; the projective comparison imports R09.1 and SF.0.
+### Dependencies
 
-### The local square-zero algebra
+Mathlib bounded polynomial and monomial APIs; Tau Ceti total-degree APIs; AlgebraicModuliForArithmeticGeometry §§1.1–1.2.
 
-<a id="jet-algebra"></a>
+## Layer 1: First-jet algebras and double-point evaluation
 
-**First-jet algebra evaluation.** For any commutative ring k and P∈k^r, jetAlgebra_P:k[x₁,…,x_r]→ₐ[k]TrivSqZeroExt k (Fin r→k) sends X_j to (P_j,e_j). Its value part is f(P) and its square-zero part is (∂_j f(P))_j.
+The first jet is the order-one square-zero algebra, whose infinitesimal dimension is r. This layer connects that algebra to squared evaluation ideals, CRT, the bounded linear evaluation map and its matrix. The affine identities hold over their stated rings or fields in every characteristic; the projective comparison imports AlgebraicModuliForArithmeticGeometry §§1.1–1.2 and SchemeAndStackFoundations §0.28 and gap:cartier-residual.
+
+### 1.1 The local square-zero algebra
+
+**First-jet algebra evaluation.** Define `jetAlgebra` by native algebra evaluation. For any commutative ring k and P∈k^r, jetAlgebra_P:k[x₁,…,x_r]→ₐ[k]TrivSqZeroExt k (Fin r→k) sends X_j to (P_j,e_j). Its value part is f(P) and its square-zero part is (∂_j f(P))_j.
 
 Use algebra evaluation with X_j sent to the sum of the scalar P_j and the infinitesimal coordinate e_j. The square-zero multiplication kills all terms with two infinitesimals. Expanding monomials gives exactly the native partial-derivative formula in every characteristic.
 
-**API.**
+The API has the following properties.
 
-- `jetAlgebra_fst` (projection): fst(jetAlgebra_P(f))=eval P f.
-- `jetAlgebra_snd` (projection): snd(jetAlgebra_P(f))(j)=eval P(pderiv j f).
-- `jetAlgebra_X` (simp): jetAlgebra_P(X_j)=(P_j,e_j).
+- fst(jetAlgebra_P(f))=eval P f.
+- snd(jetAlgebra_P(f))(j)=eval P(pderiv j f).
+- jetAlgebra_P(X_j)=(P_j,e_j).
 
-**Tests.**
+**Checks.**
 
-- `jet_variable`: At the origin, jetAlgebra(X₁)=(0,e₁), not zero.
-- `jet_constant`: jetAlgebra(C a)=(a,0).
-- `jet_square`: At the origin, X₁² maps to zero in the native square-zero extension; an order-two jet retaining quadratics would fail.
+- At the origin, jetAlgebra(X₁)=(0,e₁). Over a nontrivial ring e₁≠0; in the zero ring this jet is zero.
+- jetAlgebra(C a)=(a,0).
+- At the origin, X₁² maps to zero in the native square-zero extension; an order-two jet retaining quadratics would fail.
 
-**Prerequisites:** `MvPolynomial.aeval` (Mathlib); `MvPolynomial.aeval_monomial` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib); `TrivSqZeroExt` (Mathlib).
+*Needs:* `MvPolynomial.aeval` (Mathlib); `MvPolynomial.aeval_monomial` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib); `TrivSqZeroExt` (Mathlib).
 
-**Source:** [COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §2, Proposition 2.1, p.3](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="jet-kernel"></a>
+([COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §2, Proposition 2.1, p.3](https://arxiv.org/pdf/math/0701409v2)).
 
 **Kernel of one first jet.** For a field k and P∈k^r, jetAlgebra_P is surjective and its kernel is (ker(eval P))². This assertion holds in every characteristic.
 
 Translate to variables X_j−P_j. Constants and those translated variables generate the scalar and infinitesimal target coordinates. The remaining terms have translated total degree at least two and lie in m_P²; Leibniz proves the reverse kernel inclusion.
 
-**Prerequisites:** [First-jet algebra evaluation](#jet-algebra); `MvPolynomial.eval` (Mathlib); `TrivSqZeroExt.inr_mul_inr` (Mathlib).
+*Needs:* [First-jet algebra evaluation](#11-the-local-square-zero-algebra); `MvPolynomial.eval` (Mathlib); `TrivSqZeroExt.inr_mul_inr` (Mathlib).
 
-**Source:** [COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §2, Proposition 2.1, p.3](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="point-comaximal"></a>
+([COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §2, Proposition 2.1, p.3](https://arxiv.org/pdf/math/0701409v2)).
 
 **Distinct point ideals and their powers.** For a field k and distinct P,Q∈k^r, the evaluation ideals m_P,m_Q and their squares are comaximal.
 
 Select a coordinate in which P and Q differ. The two translated coordinate functions have nonzero constant difference, so a scalar multiple expresses 1 in m_P+m_Q. Apply the native coprime-power identity to obtain m_P²+m_Q²=top.
 
-**Prerequisites:** `MvPolynomial.eval` (Mathlib); [Kernel of one first jet](#jet-kernel).
+*Needs:* `MvPolynomial.eval` (Mathlib); [Kernel of one first jet](#11-the-local-square-zero-algebra).
 
-**Source:** [COU, §3, p. 491, distinct-point squared ideal decomposition](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3, p. 491, distinct-point squared ideal decomposition](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### The finite double-point scheme and its quotient
+### 1.2 The finite double-point scheme and its quotient
 
-<a id="double-ideal"></a>
+**Squared union ideal.** For a commutative ring R and P:Fin n→R^r, `doubleIdeal` is (⋂ᵢ ker(eval Pᵢ))². Over a field k with injective P, it equals ⋂ᵢ(ker(eval Pᵢ))²; Spec(k[x]/doubleIdeal(P)) is the affine double-point scheme.
 
-**Squared union ideal.** For a finite ordered tuple P:Fin n→k^r over a field, doubleIdeal(P)=(⋂_i m_{P_i})². Under Injective P this equals ⋂_i m_{P_i}²; Spec(k[x]/doubleIdeal(P)) is the affine double-point scheme.
+Take the infimum of the actual evaluation ideals and square that ideal. Over a field with distinct supports, pairwise comaximality identifies the finite infimum with a product, and squaring the product gives the infimum of the squared factors. SchemeAndStackFoundations §0.28 turns the affine quotient into its closed subscheme and compares it with the projective chart.
 
-Take the infimum of the actual evaluation ideals and square that ideal. Pairwise comaximality identifies the finite infimum with a product, and squaring the product gives the infimum of the squared factors. SF.0 turns the affine quotient into its closed subscheme and compares it with the projective chart.
+The API has the following properties.
 
-**API.**
+- doubleIdeal(P)=(⋂ ker(eval P_i))².
+- Over a field with injective P, doubleIdeal(P)=⋂ (ker(eval P_i))².
+- Permuting the finite tuple leaves doubleIdeal unchanged.
 
-- `doubleIdeal_def` (characterisation): doubleIdeal(P)=(⋂ ker(eval P_i))².
-- `doubleIdeal_distinct` (compatibility): If P is injective, doubleIdeal(P)=⋂ (ker(eval P_i))².
-- `doubleIdeal_reindex` (functoriality): Permuting the finite tuple leaves doubleIdeal unchanged.
+**Checks.**
 
-**Tests.**
+- For r=1,n=1,P=0, the ideal is (x²); over a nontrivial ring it differs from (x), while both are zero in the zero ring.
+- For n=0 the ideal is top and the quotient is the zero ring; over a field its dimension is 0.
+- For r=1,P=0 over a nontrivial ring, x² is zero modulo doubleIdeal, but is nonzero modulo (x³).
+- Over ℤ, distinct supports 0 and 2 have point-ideal sum (x,2), which excludes 1; distinctness alone over a ring does not give the field CRT argument.
 
-- `double_origin`: For r=1,n=1,P=0, the ideal is (x²), not (x).
-- `empty_double`: For n=0 the ideal is top and the quotient has dimension 0.
-- `double_vs_triple`: For r=1,P=0, x² is zero modulo doubleIdeal, but is nonzero modulo (x³).
+*Needs:* `MvPolynomial.eval` (Mathlib); [Distinct point ideals and their powers](#11-the-local-square-zero-algebra).
 
-**Prerequisites:** `MvPolynomial.eval` (Mathlib); [Distinct point ideals and their powers](#point-comaximal).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
-
-<a id="double-quotient"></a>
-
-**Double-point quotient comparison.** For a field k and injective P:Fin n→k^r, k[x]/doubleIdeal(P)≃ₐ[k]Π_i TrivSqZeroExt k(k^r), with the class of f mapped to (jetAlgebra_{P_i}(f))_i.
+**Double-point quotient comparison.** The headline `doublePointQuotient` asserts existence of the following algebra equivalence with its specified quotient map.  For a field k and injective P:Fin n→k^r, k[x]/doubleIdeal(P)≃ₐ[k]Πᵢ TrivSqZeroExt k(k^r), with the class of f mapped to (jetAlgebra(Pᵢ)(f))_i.
 
 Apply Ideal.quotientInfRingEquivPiQuotient to the squared ideals, then the first isomorphism theorem to each jetAlgebra. Verify preservation of scalar constants to obtain an algebra equivalence, including the nonreduced multiplication in every factor.
 
-**API.**
+The API has the following properties.
 
-- `doubleQuotient_mk` (projection): The class of f maps to its tuple of native first jets.
-- `doubleQuotient_mul` (compatibility): Multiplication is the native square-zero multiplication in each factor.
-- `doubleQuotient_reindex` (functoriality): A tuple permutation commutes with the induced product-factor permutation.
+- The class of f maps to its tuple of native first jets.
+- Multiplication is the native square-zero multiplication in each factor.
+- A tuple permutation commutes with the induced product-factor permutation.
 
-**Tests.**
+**Checks.**
 
-- `one_point_length`: For r=2,n=1 the quotient has basis1,x−P₁,y−P₂ and dimension 3.
-- `empty_quotient`: For n=0 both sides are the zero-dimensional empty product algebra.
-- `nonreduced_product`: For r=1,P=(0,1), the class of x(x−1) is nonzero, but its square is zero; the reduced quotient would kill the class.
+- For r=2,n=1 the quotient has basis1,x−P₁,y−P₂ and dimension 3.
+- For n=0 both sides are the zero-dimensional empty product algebra.
+- For r=1,P=(0,1), the class of x(x−1) is nonzero, but its square is zero; the reduced quotient would kill the class.
 
-**Prerequisites:** [Squared union ideal](#double-ideal); [Kernel of one first jet](#jet-kernel); [Distinct point ideals and their powers](#point-comaximal); `Ideal.quotientInfRingEquivPiQuotient` (Mathlib).
+*Needs:* [Squared union ideal](#12-the-finite-double-point-scheme-and-its-quotient); [Kernel of one first jet](#11-the-local-square-zero-algebra); [Distinct point ideals and their powers](#11-the-local-square-zero-algebra); `Ideal.quotientInfRingEquivPiQuotient` (Mathlib).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
-
-<a id="double-length"></a>
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
 **Length of distinct double points.** For a field k, injective P:Fin n→k^r gives finrank_k(k[x]/doubleIdeal(P))=n(r+1); the projective double-point scheme on the affine chart has the same length.
 
 The algebra equivalence is linear over k. Each factor has the basis of a scalar and r infinitesimal coordinates. Finite-product dimension gives n(r+1), and the affine finite-scheme comparison identifies this with geometric length.
 
-**Prerequisites:** [Double-point quotient comparison](#double-quotient); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Double-point quotient comparison](#12-the-finite-double-point-scheme-and-its-quotient); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### Bounded values and derivatives
+### 1.3 Bounded values and derivatives
 
-<a id="first-jet-map"></a>
-
-**Bounded first-jet evaluation.** For a field k, define J_{P,d}:V(k,r,d)→ₗ[k](Fin n→Option(Fin r)→k) by J(f)_i(None)=f(P_i) and J(f)_i(Some j)=∂_j f(P_i). The row index contains n(r+1) entries.
+**Bounded first-jet evaluation.** For a commutative ring R, define `firstJetMap`, denoted J(P,d), from V(R,r,d) to the R-module Fin n→Option(Fin r)→R by J(f)_i(None)=f(P_i) and J(f)_i(Some j)=∂_j f(P_i). The row index contains n(r+1) entries.
 
 Restrict the evaluations and derivative evaluations to the native bounded submodule. Their product is a linear map with the stated Option-indexed codomain. On monomials its entries are the value monomial and the exponent-weighted monomial of one lower degree.
 
-**API.**
+The API has the following properties.
 
-- `firstJetMap_value` (projection): J(f)_i(None)=eval P_i f.
-- `firstJetMap_partial` (projection): J(f)_i(Some j)=eval P_i(pderiv j f).
-- `firstJetMap_monomial` (simp): The α column is P_i^α in the value row and α_jP_i^(α−e_j) in derivative row j; zero exponent gives zero.
+- J(f)_i(None)=eval P_i f.
+- J(f)_i(Some j)=eval P_i(pderiv j f).
+- The α column is P_i^α in the value row and α_jP_i^(α−e_j) in derivative row j; zero exponent gives zero.
 
-**Tests.**
+**Checks.**
 
-- `linear_origin_jets`: For one point0 in A² and d=1, 1,x,y give the identity3×3 matrix.
-- `constant_jets`: At d=0 gradients vanish; for r≥1,n=1 the map is not onto.
-- `native_derivative`: For f=x² at P=3 in A¹, J(f)=(9,6), using native pderiv.
+- For one point0 in A² and d=1, 1,x,y give the identity3×3 matrix.
+- At d=0 gradients vanish; over a nontrivial ring, for r≥1,n=1 the map is not onto.
+- For f=x² at P=3 in A¹, J(f)=(9,6), using native pderiv.
 
-**Prerequisites:** [First-jet algebra evaluation](#jet-algebra); `MvPolynomial.restrictTotalDegree` (Mathlib); `MvPolynomial.pderiv` (Mathlib).
+*Needs:* [First-jet algebra evaluation](#11-the-local-square-zero-algebra); `MvPolynomial.restrictTotalDegree` (Mathlib); `MvPolynomial.pderiv` (Mathlib).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="value-map"></a>
-
-**Value projection.** For a field k, valueMap_{P,d}:V(k,r,d)→ₗ[k](Fin n→k) is evaluation at P; it is the None-row projection of J.
+**Value projection.** For a commutative ring R, the value map from V(R,r,d) to Fin n→R is evaluation at P; it is the None-row projection of J.
 
 Project firstJetMap to its None coordinates. This is the usual value evaluation map, whose native linear kernel is the bounded-polynomial vanishing subspace. The projection retains its codomain and reindexing laws without introducing a second vanishing predicate.
 
-**API.**
+The API has the following properties.
 
-- `valueMap_apply` (projection): valueMap(f)(i)=eval P_i f.
-- `valueMap_eq_jetProjection` (compatibility): valueMap is the None-row projection of J.
-- `mem_valueKernel` (characterisation): f∈ker(valueMap) iff every f(P_i)=0.
+- valueMap(f)(i)=eval P_i f.
+- valueMap is the None-row projection of J.
+- f∈ker(valueMap) iff every f(P_i)=0.
 
-**Tests.**
+**Checks.**
 
-- `values_linear`: At points0,1 in A¹, valueMap(x)=(0,1).
-- `empty_values`: For n=0 the codomain is the zero module and the kernel is all V_d.
-- `values_not_gradients`: At one point0, x has value0 but nonzero first derivative.
+- At points0,1 in A¹, valueMap(x)=(0,1).
+- For n=0 the codomain is the zero module and the kernel is all V_d.
+- At one point0, x has value0 and derivative1, which is nonzero over a nontrivial ring.
 
-**Prerequisites:** [Bounded first-jet evaluation](#first-jet-map).
+*Needs:* [Bounded first-jet evaluation](#13-bounded-values-and-derivatives).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="derivative-on-kernel"></a>
-
-**Derivatives of vanishing polynomials.** For a field k, derivativeOnKernel_{P,d}:ker(valueMap_{P,d})→ₗ[k](Fin n→Fin r→k) evaluates native partial derivatives.
+**Derivatives of vanishing polynomials.** For a commutative ring R, the derivative map from the value kernel to Fin n→Fin r→R evaluates native partial derivatives.
 
 Restrict the Some-coordinate projection of firstJetMap to LinearMap.ker(valueMap). The inherited subtype map identifies its values with actual derivatives. Point permutations act simultaneously on the kernel inclusion and derivative target.
 
-**API.**
+The API has the following properties.
 
-- `derivativeOnKernel_apply` (projection): The (i,j) coordinate is ∂_j f(P_i).
-- `derivativeOnKernel_eq_jet` (compatibility): It equals the Some-row projection of J on ker(valueMap).
-- `derivativeOnKernel_reindex` (functoriality): Permuting points permutes the derivative target coordinates.
+- The (i,j) coordinate is ∂_j f(P_i).
+- It equals the Some-row projection of J on ker(valueMap).
+- Permuting points permutes the derivative target coordinates.
 
-**Tests.**
+**Checks.**
 
-- `simple_zero_derivative`: At P=0,d=1,r=1, x lies in the value kernel and maps to1.
-- `constant_kernel`: For one point and d=0, the value kernel is zero.
-- `square_zero_gradient`: At P=0,d=2, x² is a nonzero element of the value kernel with zero derivative.
+- At P=0,d=1,r=1, x lies in the value kernel and maps to1.
+- For one point and d=0, the value kernel is zero.
+- At P=0,d=2, over a nontrivial ring x² is a nonzero element of the value kernel with zero derivative.
 
-**Prerequisites:** [Value projection](#value-map); [Bounded first-jet evaluation](#first-jet-map).
+*Needs:* [Value projection](#13-bounded-values-and-derivatives); [Bounded first-jet evaluation](#13-bounded-values-and-derivatives).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="jet-kernel-split"></a>
-
-**Surjectivity through the value kernel.** For any field k and tuple P, J_{P,d} is onto iff valueMap_{P,d} is onto and derivativeOnKernel_{P,d} is onto.
+**Surjectivity through the value kernel.** For any field k and tuple P, J(P,d) is onto iff valueMap(P,d) is onto and derivativeOnKernel(P,d) is onto.
 
 For a map into a product, surjectivity is equivalent to surjectivity onto the first factor and onto the second factor from the kernel of the first projection. Lift the value tuple first and correct its derivatives using a polynomial in the value kernel.
 
-**Prerequisites:** [Bounded first-jet evaluation](#first-jet-map); [Value projection](#value-map); [Derivatives of vanishing polynomials](#derivative-on-kernel).
+*Needs:* [Bounded first-jet evaluation](#13-bounded-values-and-derivatives); [Value projection](#13-bounded-values-and-derivatives); [Derivatives of vanishing polynomials](#13-bounded-values-and-derivatives).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### Matrix rank and projective restriction
+### 1.4 Matrix rank and projective restriction
 
-<a id="jet-matrix"></a>
+**Monomial first-jet matrix.** For a commutative ring R, `firstJetMatrix`(P,d) has rows Fin n×Option(Fin r) and columns A(r,d), entry P_i^α for None and α_jP_i^(α−e_j) for Some j. Its linear map in coefficient coordinates is J.
 
-**Monomial first-jet matrix.** For a field k, firstJetMatrix(P,d) has rows Fin n×Option(Fin r) and columns A(r,d), entry P_i^α for None and α_jP_i^(α−e_j) for Some j. Its linear map in coefficient coordinates is J.
+Represent firstJetMap in coefficient coordinates and the standard row-coordinate basis. Native evaluation and pderiv_monomial determine all matrix entries and the mulVec equality. The Option row index records precisely one value and r derivatives per support.
 
-Represent firstJetMap in coefficientCoordinates and the standard row-coordinate basis. Native evaluation and pderiv_monomial determine all matrix entries and the mulVec equality. The Option row index records precisely one value and r derivatives per support.
+The API has the following properties.
 
-**API.**
+- The None row at α equals P_i^α.
+- The Some j row equals α_jP_i^(α−e_j), with zero when α_j=0.
+- firstJetMatrix(P,d)·c_d(f)=J(P,d)(f).
 
-- `firstJetMatrix_value` (projection): The None row at α equals P_i^α.
-- `firstJetMatrix_partial` (projection): The Some j row equals α_jP_i^(α−e_j), with zero when α_j=0.
-- `firstJetMatrix_mulVec` (compatibility): firstJetMatrix(P,d)·c_d(f)=J_{P,d}(f).
+**Checks.**
 
-**Tests.**
+- For r=1,n=1,d=1,P=0, columns1,x give the identity2×2 matrix.
+- For d=0 the single column has value1 and every derivative entry0.
+- For r=2,n=2,d=2 the native matrix is6×6, not 2×18.
 
-- `matrix_linear_origin`: For r=1,n=1,d=1,P=0, columns1,x give the identity2×2 matrix.
-- `matrix_constants`: For d=0 the single column has value1 and every derivative entry0.
-- `matrix_shape`: For r=2,n=2,d=2 the native matrix is6×6, not 2×18.
+*Needs:* [Coefficient coordinates](#01-the-bounded-monomial-basis); [Bounded first-jet evaluation](#13-bounded-values-and-derivatives); `MvPolynomial.eval_monomial` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib).
 
-**Prerequisites:** [Coefficient coordinates](#coefficient-coordinates); [Bounded first-jet evaluation](#first-jet-map); `MvPolynomial.eval_monomial` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
-
-<a id="jet-rank"></a>
-
-**Full row rank criterion.** For a field k, J_{P,d} is onto iff rank(firstJetMatrix(P,d))=n(r+1).
+**Full row rank criterion.** For a field k, J(P,d) is onto iff rank(firstJetMatrix(P,d))=n(r+1).
 
 Apply Matrix.rank_eq_finrank_range_toLin to the matrix representation. The target dimension is n(r+1); equality of range dimension with target dimension is equivalent to a full range and hence surjectivity.
 
-**Prerequisites:** [Monomial first-jet matrix](#jet-matrix); [Dimension of bounded polynomials](#bounded-finrank); `Matrix.rank_eq_finrank_range_toLin` (Mathlib).
+*Needs:* [Monomial first-jet matrix](#14-matrix-rank-and-projective-restriction); [Dimension of bounded polynomials](#01-the-bounded-monomial-basis); `Matrix.rank_eq_finrank_range_toLin` (Mathlib).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="well-poised"></a>
-
-**Well-poised double points.** For a field k and an injective finite tuple P, WellPoised(P,d) means J_{P,d} is surjective. Via the projective restriction comparison this is COU’s well-poisedness of 2P in degree d.
+**Well-poised double points.** For a field k and any finite tuple P, `WellPoised`(P,d) means J(P,d) is surjective. For injective P, the projective restriction comparison identifies this with COU’s well-poisedness of 2P in degree d.
 
 Define the predicate directly as Function.Surjective(firstJetMap P d). Permuting points gives an invertible target-coordinate permutation, while increasing d includes the old bounded submodule in the new one. The scheme interpretation is established by the separate projective comparison.
 
-**API.**
+The API has the following properties.
 
-- `wellPoised_iff_surjective` (characterisation): WellPoised(P,d) iff Surjective(J_{P,d}).
-- `wellPoised_reindex` (functoriality): WellPoised is unchanged under a permutation of points.
-- `wellPoised_degree_mono` (relation): If d≤e and WellPoised(P,d), then WellPoised(P,e).
+- WellPoised(P,d) iff Surjective(J(P,d)).
+- WellPoised is unchanged under a permutation of points.
+- If d≤e and WellPoised(P,d), then WellPoised(P,e).
 
-**Tests.**
+**Checks.**
 
-- `wellPoised_one_linear`: One point in A^r is well poised in degree 1.
-- `wellPoised_constants_fail`: For r≥1 one point is not well poised in degree 0.
-- `wellPoised_collinear_fail`: Seven distinct collinear points in A² are not well poised in degree 5, although21=choose(7,5).
+- One point in A^r is well poised in degree 1.
+- For r≥1 one point is not well poised in degree 0.
+- Seven distinct collinear points in A² are not well poised in degree 5, although21=choose(7,5).
 
-**Prerequisites:** [Bounded first-jet evaluation](#first-jet-map).
+*Needs:* [Bounded first-jet evaluation](#13-bounded-values-and-derivatives).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="projective-jet-comparison"></a>
+**Restriction to projective double points.** For d≥0 and an injective affine-chart tuple P, the H⁰(P^r,O(d))→H⁰(2P,O(d)) restriction map is J(P,d) under fixed homogenization and the chart’s O(d) trivialization; therefore the projective restriction is onto iff WellPoised(P,d).
 
-**Restriction to projective double points.** For d≥0 and an injective affine-chart tuple P, the H⁰(P^r,O(d))→H⁰(2P,O(d)) restriction map is J_{P,d} under fixed homogenization and the chart’s O(d) trivialization; therefore the projective restriction is onto iff WellPoised(P,d).
+Extend the finite affine subscheme through the standard open chart, square its ideal sheaf and trivialize O(d) there. Fixed homogenization and the double-point quotient comparison identify source and target with the native polynomial and jet modules. Check the restriction square on the monomial basis.
 
-Extend the finite affine subscheme through the standard open chart, square its ideal sheaf and trivialize O(d) there. Fixed homogenization and doubleQuotient identify source and target with the native polynomial and jet modules. Check the restriction square on the monomial basis.
+*Needs:* [Homogeneous forms and twisting sections](#02-homogeneous-forms-and-sections); [Double-point quotient comparison](#12-the-finite-double-point-scheme-and-its-quotient); [Well-poised double points](#14-matrix-rank-and-projective-restriction); AlgebraicModuliForArithmeticGeometry §§1.1–1.2; SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Prerequisites:** [Homogeneous forms and twisting sections](#sections-comparison); [Double-point quotient comparison](#double-quotient); [Well-poised double points](#well-poised); **AlgebraicModuliForArithmeticGeometry, R09.1**; **SchemeAndStackFoundations, SF.0**.
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+### Examples
 
-## GI.2. Restriction rank, Horace and curvilinear families
+At one support in A², 1,x,y give the three independent first jets. At supports 0,1 in A¹ the nonzero class x(x−1) has square zero.
+
+### Dependencies
+
+Layer 0; Mathlib square-zero algebras and Chinese remainder; SchemeAndStackFoundations §0.28; AlgebraicModuliForArithmeticGeometry §§1.1–1.2.
+
+## Layer 2: Restriction rank, Horace and curvilinear families
 
 This layer applies the general geometry interfaces to interpolation. Restriction rank always means the range dimension of a genuine section map, including for a proper linear subsystem. Residual/trace estimates use left exactness only. The curvilinear criterion and proper direction incidence supply the logical and geometric tools for the differential argument.
 
-### Ranks of section maps
-
-<a id="restriction-rank"></a>
+### 2.1 Ranks of section maps
 
 **Restriction rank of a finite scheme.** For d≥0, a zero-dimensional subscheme X⊂P^r_k and a finite-dimensional linear system D⊂H⁰(P^r,O(d)), h(X,D) is the rank of the actual restriction D→H⁰(X,O(d)|X). Independence means h(X,D)=length(X). Write h(X,d) for the full system.
 
 Restrict the actual section map to D and take the dimension of its linear range. Rank-nullity gives its kernel formula, while finite-scheme length is the dimension of the twisted target section module. The kernel is a subspace of D, also when D is a proper subsystem.
 
-**API.**
+The API has the following properties.
 
-- `restrictionRank_kernel` (characterisation): h(X,D)=dim D−dim ker(D→H⁰(X,O(d)|X)).
-- `restrictionRank_le_length` (relation): h(X,D)≤min(dim D,length X).
-- `restrictionRank_empty` (simp): h(∅,D)=0.
+- h(X,D)=dim D−dim ker(D→H⁰(X,O(d)|X)).
+- h(X,D)≤min(dim D,length X).
+- h(∅,D)=0.
 
-**Tests.**
+**Checks.**
 
-- `simple_point_rank`: For a simple point and the full degree 0 constant system, h=1.
-- `zero_system_rank`: For D=0, h(X,D)=0 even when X has positive length.
-- `double_linear_rank`: For one affine double point and d=1, h=r+1, agreeing with the native first-jet matrix.
+- For a simple point and the full degree 0 constant system, h=1.
+- For D=0, h(X,D)=0 even when X has positive length.
+- For one affine double point and d=1, h=r+1, agreeing with the native first-jet matrix.
 
-**Prerequisites:** **AlgebraicModuliForArithmeticGeometry, R09.1**; **SchemeAndStackFoundations, SF.0**.
+*Needs:* AlgebraicModuliForArithmeticGeometry §§1.1–1.2; SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="rank-disjoint"></a>
+([BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2)).
 
 **Restriction rank on disjoint unions.** For disjoint finite schemes A,B and D as above, h(A∪B,D)=h(B,D)+h(A,ker(D→H⁰(B,O(d)|B))).
 
 Sections on a disjoint union split into a product. Project the restriction image onto the B factor; its kernel is the restriction image on A of the B-vanishing subspace of D. Rank-nullity proves the identity for this native kernel.
 
-**Prerequisites:** [Restriction rank of a finite scheme](#restriction-rank); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Restriction rank of a finite scheme](#21-ranks-of-section-maps); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2)).
 
-### Hyperplane residuals and ordinary Horace
+### 2.2 Hyperplane residuals and ordinary Horace
 
-<a id="residual-trace"></a>
+**Finite-scheme residual and trace.** For r≥1, a finite closed subscheme X⊂P^r_k
+and a hyperplane H, define Res by the ideal quotient I_X:I_H and Tr by the
+restriction (I_X+I_H)/I_H on H. For every d≥1 the sequence
+0→I_Res(d−1)→I_X(d)→i_*I_Tr,H(d)→0 is exact as sheaves on P^r.
+Here i:H→P^r is the inclusion; no surjectivity on global sections is asserted.
+Apply the Cartier residual sequence of gap:cartier-residual and twist by O(d).
 
-**Double-point residual and trace.** Let X be q distinct double points in P^r and H a hyperplane containing exactly u supports. Then Tr_H X consists of u double points in H≅P^(r−1), Res_H X consists of q−u double points off H and u reduced points on H, and 0→I_Res(d−1)→I_X(d)→I_Tr,H(d)→0 is exact as sheaves.
+For q distinct full double points with exactly u supports on H, the trace has
+u double points in H, and the residual has q−u off-H doubles and u reduced
+on-H supports: locally (m²:x_r)=m and (m²+(x_r))/(x_r) is the squared point
+ideal on H. A length-two direction transverse to H has trace and residual
+length 1; a direction contained in H has trace length 2 and empty residual.
 
-Apply the Cartier-divisor residual sequence from SF.0. At a support on H, coordinates with H=(x_r) give (m²:x_r)=m and the trace m²+(x_r); away from H its equation is a unit. Twist the sheaf sequence by O(d).
+**Checks.**
 
-**Prerequisites:** [Squared union ideal](#double-ideal); **SchemeAndStackFoundations, SF.0**; **AlgebraicModuliForArithmeticGeometry, R09.1**.
+- In A³ with H=(z=0), the double origin has lengths 4=1+3; treating its trace as a full ambient double gives the wrong length 4.
+- The direction cut out by (x,y,z²) has lengths 2=1+1; its trace and residual are the reduced origin.
+- The tangent direction (y,z,x²) has lengths 2=0+2, and the empty scheme gives 0=0+0; residual and trace must not be interchanged.
 
-**Source:** [BO, §4 pp. 7–8](https://arxiv.org/pdf/math/0701409v2).
+*Needs:* Squared union ideal; SchemeAndStackFoundations §0.28 and
+gap:cartier-residual; AlgebraicModuliForArithmeticGeometry §§1.1–1.2.
+(Source: BO, §4, pp.7–8, the Cartier sequence at BO line 407.)
 
-<a id="castelnuovo-bound"></a>
+**Castelnuovo dimension bound.** For every finite closed X⊂P^r_k, hyperplane H,
+and r,d≥1, dim H⁰(I_X(d))≤dim H⁰(I_Res(d−1))+dim H⁰(I_Tr,H(d)). Equivalently,
+h(X,d)≥h(Res,d−1)+h(Tr,d), with the trace rank computed in H.
 
-**Castelnuovo dimension bound.** In the preceding situation, dim H⁰(I_X(d))≤dim H⁰(I_Res(d−1))+dim H⁰(I_Tr,H(d)). Equivalently h(X,d)≥h(Res,d−1)+h(Tr,d).
+Left exactness identifies the first section space with the kernel and bounds
+the image by the trace section space. Pascal's identity converts dimensions
+to ranks. This includes full doubles, mixed curvilinear schemes and empty X.
 
-Left exactness of global sections identifies the residual section space with the kernel and bounds the image by the trace section space. Convert vanishing-space dimensions to ranks using N(r,d)=N(r,d−1)+N(r−1,d). No right exactness of global sections is required.
+*Needs:* Finite-scheme residual and trace; Restriction rank of a finite scheme;
+Dimension of bounded polynomials. (Source: BO, §4, pp.7–8; §6,
+Theorem 6.4, pp.16–19, mixed use at BO lines 900–905.)
 
-**Prerequisites:** [Double-point residual and trace](#residual-trace); [Restriction rank of a finite scheme](#restriction-rank); [Dimension of bounded polynomials](#bounded-finrank).
-
-**Source:** [BO, §4, Theorem 4.1, pp.7–8; §6, Theorem 6.4, pp.16–19](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="ordinary-horace"></a>
-
-**Ordinary Horace criterion.** Suppose trace and residual have maximal rank. If both ur≤N(r−1,d) and q(r+1)−ur≤N(r,d−1), or both reverse inequalities hold, then X has maximal rank in degree d.
+**Ordinary Horace criterion.** For r,d≥1 and q distinct double points with exactly u supports on H, suppose trace and residual have maximal rank. If both ur≤N(r−1,d) and q(r+1)−ur≤N(r,d−1), or both reverse inequalities hold, then X has maximal rank in degree d.
 
 The lengths of trace and residual are ur and q(r+1)−ur. Insert their maximal ranks into the Castelnuovo bound. In either of the two matched inequality ranges the lower bound equals min(N(r,d),q(r+1)); the general rank upper bound gives equality.
 
-**Prerequisites:** [Castelnuovo dimension bound](#castelnuovo-bound); [Squared union ideal](#double-ideal); [Length of distinct double points](#double-length).
+*Needs:* [Castelnuovo dimension bound](#22-hyperplane-residuals-and-ordinary-horace); [Squared union ideal](#12-the-finite-double-point-scheme-and-its-quotient); [Length of distinct double points](#12-the-finite-double-point-scheme-and-its-quotient).
 
-**Source:** [BO, §4, Theorem 4.1, pp.7–8](https://arxiv.org/pdf/math/0701409v2).
+([BO, §4, Theorem 4.1, pp.7–8](https://arxiv.org/pdf/math/0701409v2)).
 
-### Testing independence on curvilinear subschemes
-
-<a id="subscheme-independence"></a>
+### 2.3 Testing independence on curvilinear subschemes
 
 **Independent subschemes.** If X is D-independent and Y⊂X is a finite subscheme, then Y is D-independent. If restriction to X is injective, restriction to every finite superscheme is injective.
 
 For Y⊂X, the finite target section module for Y is a quotient of the one for X; a surjective restriction map therefore remains surjective after composition. A section vanishing on a superscheme also vanishes on X, proving the injective assertion.
 
-**Prerequisites:** [Restriction rank of a finite scheme](#restriction-rank); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Restriction rank of a finite scheme](#21-ranks-of-section-maps); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §1, p.1; §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="curvilinear-one-point"></a>
+([BO, §1, p.1; §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2)).
 
 **Curvilinear criterion at one support.** For X contained in a double point, X is D-independent iff every curvilinear subscheme ξ⊂X of length≤2 is D-independent.
 
 Induct on length inside the square-zero coordinate algebra of one double point. Choose a section vanishing at the support but nonzero on a length-two direction. Its equation cuts length by one; the induction hypothesis gives full rank on that section, and the extra nonzero condition completes the rank.
 
-**Prerequisites:** [Restriction rank of a finite scheme](#restriction-rank); [Independent subschemes](#subscheme-independence); [Kernel of one first jet](#jet-kernel); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Restriction rank of a finite scheme](#21-ranks-of-section-maps); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes); [Kernel of one first jet](#11-the-local-square-zero-algebra); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="curvilinear-global"></a>
+([BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2)).
 
 **Curvilinear reduction.** If X is a finite subscheme of a union of distinct double points, then X is D-independent iff every curvilinear ξ⊂X, with at most length 2 at each support, is D-independent.
 
 Separate one support from the others and apply the disjoint-rank formula to the kernel of the other restrictions. Induction tests every length-two direction for that kernel system; the one-point criterion then recovers the full local component. Iterate over supports.
 
-**Prerequisites:** [Curvilinear criterion at one support](#curvilinear-one-point); [Restriction rank on disjoint unions](#rank-disjoint); [Independent subschemes](#subscheme-independence).
+*Needs:* [Curvilinear criterion at one support](#23-testing-independence-on-curvilinear-subschemes); [Restriction rank on disjoint unions](#21-ranks-of-section-maps); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes).
 
-**Source:** [BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6, Lemma 6.1, pp.12–14](https://arxiv.org/pdf/math/0701409v2)).
 
-### Families and limits
+### 2.4 Families and limits
 
-<a id="rank-open"></a>
+**Rank in flat point families.** In an actual finite locally free family of fixed length on P^r over any parameter scheme, the locus where restriction of a fixed finite-dimensional linear system has rank at least t is open. A specialization cannot increase rank.
 
-**Rank in flat point families.** In an actual flat finite family of fixed length on P^r over a reduced parameter scheme, the locus where restriction of a fixed finite-dimensional linear system has rank at least t is open. A specialization cannot increase rank.
+Push the twisting restriction forward along the finite-flat family and use base change and local freeness from AlgebraicModuliForArithmeticGeometry §§1.7, 2.1 and gap:finite-flat-sections. In local bundle coordinates the rank-at-least-t locus is a union of nonvanishing t-minor opens. Determinantal closed sets imply that a specialization cannot increase rank.
 
-Push the twisting restriction forward along the finite-flat family and use base change and local freeness from R09.2. In local bundle coordinates the rank-at-least-t locus is a union of nonvanishing t-minor opens. Determinantal closed sets imply that a specialization cannot increase rank.
+*Needs:* [Restriction rank of a finite scheme](#21-ranks-of-section-maps); AlgebraicModuliForArithmeticGeometry §§1.7, 2.1 and gap:finite-flat-sections.
 
-**Prerequisites:** [Restriction rank of a finite scheme](#restriction-rank); **AlgebraicModuliForArithmeticGeometry, R09.2**.
+([BO, §6 pp. 14–18](https://arxiv.org/pdf/math/0701409v2)).
 
-**Source:** [BO, §6 pp. 14–18](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="curvilinear-limits"></a>
-
-**Proper limits of curvilinear failures.** For the moving-point family in BO6.4, a failure of D-independence can be witnessed by length 2 subschemes at the moving supports. Their projective direction-incidence parameter is proper, so after a valuative base change they have an actual flat limit with tangent/transverse classifications relative to H.
+**Proper limits of curvilinear failures.** For the moving-point family in BO6.4, a failure of D-independence can be witnessed by length 2 subschemes at the moving supports. Their projective direction-incidence parameter is proper, so along a trait in the distinct-support parameter open they have, after a field extension if necessary, an actual flat limit with tangent/transverse classifications relative to H.
 
 Each local length-two subscheme is parametrized by a tangent line, with its universal incidence family. Properness of the projective direction parameter extends a generic bad incidence tuple after a valuative base change. The resulting flat limit retains length and supplies its tangent/transverse classification.
 
-**Prerequisites:** [Curvilinear reduction](#curvilinear-global); [Rank in flat point families](#rank-open); **AlgebraicModuliForArithmeticGeometry, R09.2**.
+*Needs:* [Curvilinear reduction](#23-testing-independence-on-curvilinear-subschemes); [Rank in flat point families](#24-families-and-limits); AlgebraicModuliForArithmeticGeometry §§1.7, 2.1 and gap:finite-flat-sections.
 
-**Source:** [BO, §6 Theorem 6.4, cases after Step 3, pp. 17–19](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 Theorem 6.4, cases after Step 3, pp. 17–19](https://arxiv.org/pdf/math/0701409v2)).
 
-## GI.3. Plane and cubic interpolation bases
+**Compatible bad-incidence specialization interface.** In the critical Horace
+setup of Layer 4, with its successful residual system and the independent trace selected in the relevant branch, let B be the distinct-support open in the e-fold product of
+support-parameter curves, with a chosen zero configuration. Let C→B be the
+product of projective tangent-line parameters and let W⊂C be the closed locus
+where the fixed system I_(Φ²∪Σ²)(d) on the union of e length-two directions has
+rank less than 2e. The fixed base Φ²∪Σ² is d-independent of length (r+1)(q−e), so this is equivalent to total rank less than (r+1)(q−e)+2e. In the overfilled branch restrict the directions at the
+hyperplane-restricted indices to their moving hyperplanes. Under a generic
+failure, the required interface must construct a diagram in W containing a
+lift of the generic support configuration, the mixed configurations with
+F supports on H and G supports off H, and a common all-zero specialization.
+At that special point F are the transverse directions and G the tangent ones.
+
+The allowed changes are restriction to parameter neighborhoods retaining the
+zero and generic points, finite dominant covers, and proper modifications
+that are isomorphisms on a dense open. Every selected mixed stratum must still
+dominate its specified support stratum; this is an extra obligation on the
+diagram. The pulled-back direction schemes must remain finite flat of length
+two with distinct supports. The same determinantal upper-rank bound must hold
+at every point of the diagram. The transverse F directions must stay transverse
+on the relevant mixed stratum; the G directions specialize to directions in H.
+A modification with no such mixed stratum cannot be used. No product of
+independent sections or uniquely chosen limit is asserted.
+
+This is the precise requirement gap:mixed-bad-incidence places on
+AlgebraicModuliForArithmeticGeometry. Layers 2 and 4 own its application to
+squared points; proper limits along traits do not establish this requirement.
+The mixed diagram is an input to both differential contradictions.
+
+The interface includes the maps to B and C, their commuting specialization
+squares, and the pullback of W; its rank law is a consequence of factoring
+through W, not a separate unmarked pointwise choice.
+
+**Checks.**
+
+- For one moving support δ(t)=(a,t) and a fixed transverse direction, the limit direction has trace length 1 and residual length 1; the generic and special direction lengths are both 2.
+- For two constant directions with F={1}, G={2}, the mixed support tuple is ((a,0),(b,t)); at t≠0 its residual direction lengths are 1 and 2, and its trace direction lengths are 1 and 0.
+- The graph of [s:t] over A² minus the origin has axis limits [0:1] and [1:0]. Its blowup separates these points; neither properness nor a trait lift identifies them or guarantees a prescribed mixed stratum through either one.
+- For e=0 the rank condition is rank<0, so W is empty; no natural subtraction may turn this into a nonempty rank-zero locus.
+
+*Needs:* Curvilinear reduction; Rank in flat point families;
+AlgebraicModuliForArithmeticGeometry §1.7 and gap:mixed-bad-incidence.
+(Source: the mixed step being formalized is BO, Theorem 6.4,
+pp.17–19, BO lines 880–895 and 943–955; the compatibility requirement is
+additional to its pointwise description.)
+
+### Examples
+
+In A³ a transverse direction has residual/trace lengths 1,1; a tangent direction has lengths 0,2. The matrix [t] has rank 1 off zero and rank 0 at zero.
+
+### Dependencies
+
+Layers 0–1; SchemeAndStackFoundations §0.28 and gap:cartier-residual; AlgebraicModuliForArithmeticGeometry §§1.7, 2.1, gap:finite-flat-sections and gap:mixed-bad-incidence.
+
+## Layer 3: Plane and cubic interpolation bases
 
 This layer provides the low-degree inputs for the induction. Finite integer rank witnesses replace the finite computer calculations by explicit determinant assertions. Plane interpolation uses generic tangent/contact geometry. Cubic interpolation uses general codimension-three configurations and a remainder subscheme contained in a double point.
 
-### Exact low-degree rank witnesses
-
-<a id="modular-rank-lift"></a>
+### 3.1 Exact low-degree rank witnesses
 
 **Exact integer rank witnesses.** If an integer constraint matrix has a t×t minor nonzero modulo101, its rank over every characteristic-zero field is at least t. For homogeneous degree d>0 in characteristic zero, vanishing of all r+1 partials at a nonzero vector implies vanishing of the form itself.
 
-A determinant nonzero modulo 101 is a nonzero integer, and the canonical integer map into a characteristic-zero field is injective. The native minor/rank criterion gives the lower bound. Separately, the monomial Euler identity Σx_j∂_jF=dF shows that all homogeneous partials imply the value condition when d is invertible.
+A determinant nonzero modulo 101 is a nonzero integer, and the canonical integer map into a characteristic-zero field is injective. The native minor/rank criterion gives the lower bound. Separately, Mathlib’s `MvPolynomial.IsHomogeneous.sum_X_mul_pderiv`, Σx_j∂_jF=dF, shows that all homogeneous partials imply the value condition when d is invertible.
 
-**Prerequisites:** `Matrix.rank_eq_finrank_range_toLin` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib).
+*Needs:* `Matrix.rank_eq_finrank_range_toLin` (Mathlib); `MvPolynomial.IsHomogeneous.sum_X_mul_pderiv` (Mathlib).
 
-**Source:** [BO, §5, pp.9–12; §6, p.19](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="quadric-kernel"></a>
+([BO, §5, pp.9–12; §6, p.19](https://arxiv.org/pdf/math/0701409v2)).
 
 **Quadrics with prescribed singular points.** For q general points in P^r, the space of singular quadrics has dimension choose(r+2−q,2) when 0≤q≤r+1 and is zero for q≥r+1. In particular at least r+1 general double points leave no quadrics.
 
 Write a quadric as a symmetric bilinear form, using characteristic zero to divide by two. Singularity at independent supports puts their vector span into its radical. Quadrics on the quotient of dimension r+1−q have dimension choose(r+2−q,2); r+1 supports leave a zero quotient.
 
-**Prerequisites:** [Restriction to projective double points](#projective-jet-comparison); [Restriction rank of a finite scheme](#restriction-rank).
+*Needs:* [Restriction to projective double points](#14-matrix-rank-and-projective-restriction); [Restriction rank of a finite scheme](#21-ranks-of-section-maps).
 
-**Source:** [BO, §3 p. 6](https://arxiv.org/pdf/math/0701409v2).
+([BO, §3 p. 6](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="low-rank-bases"></a>
-
-**Low-degree near-exception certificates.** Generic homogeneous jet ranks at cubic(r,q)=(2,3),(2,4),(3,5),(4,6),(4,8),(7,15) and quartic(r,q)=(2,4),(2,6),(3,8),(3,10),(4,13),(4,15) are respectively 9,10,20,30,35,120 and 12,15,32,35,65,70.
+**Low-degree near-exception ranks.** The headline `nearExceptionRanks` gives distinct rational affine witnesses for the following list.  Generic homogeneous jet ranks at cubic(r,q)=(2,3),(2,4),(3,5),(4,6),(4,8),(7,15) and quartic(r,q)=(2,4),(2,6),(3,8),(3,10),(4,13),(4,15) are respectively 9,10,20,30,35,120 and 12,15,32,35,65,70.
 
 For each listed triple construct the homogeneous monomial derivative matrix at distinct integer projective supports. A minor of the stated size is nonzero modulo 101, so its characteristic-zero rank reaches the dimensional upper bound. Rank openness gives the corresponding generic assertion; no rank at an exceptional count is inferred from a neighboring count.
 
-**Prerequisites:** [Exact integer rank witnesses](#modular-rank-lift); [Rank in flat point families](#rank-open).
+*Needs:* [Exact integer rank witnesses](#31-exact-low-degree-rank-witnesses); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §2, p.6; §3, pp.6–7; §5, pp.9–12; §6, p.19](https://arxiv.org/pdf/math/0701409v2).
+([BO, §2, p.6; §3, pp.6–7; §5, pp.9–12; §6, p.19](https://arxiv.org/pdf/math/0701409v2)).
 
-### Plane interpolation through tangent and contact geometry
-
-<a id="veronese-tangent"></a>
+### 3.2 Plane interpolation through tangent and contact geometry
 
 **Veronese tangents and double-point conditions.** For d≥1 and nonzero v∈k^(r+1), the tangent space to the affine Veronese cone at v^d is v^(d−1)k^(r+1); its annihilator in degree-d forms is the squared point ideal in degree d.
 
 Differentiate the degree-d Veronese map; its differential is multiplication by d v^(d−1), and d is invertible. At a coordinate support the annihilator consists of forms with zero value and first derivatives. Coordinate change identifies that annihilator with the degree-d part of the squared point ideal.
 
-**Prerequisites:** [Kernel of one first jet](#jet-kernel); [Homogeneous forms and twisting sections](#sections-comparison); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Kernel of one first jet](#11-the-local-square-zero-algebra); [Homogeneous forms and twisting sections](#02-homogeneous-forms-and-sections); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §2, Proposition 2.1, p.3](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="terracini-span"></a>
+([BO, §2, Proposition 2.1, p.3](https://arxiv.org/pdf/math/0701409v2)).
 
 **Terracini span for the Veronese family.** At general q Veronese points and a general point in their span, the tangent to their q-secant variety is the span of their tangent spaces; its affine dimension is the restriction rank of the q double points.
 
-Use the incidence map from ordered points and coefficients in their projective span. Its differential is the span of the point tangents and span-coefficient directions. Generic smoothness and the generic rank/dimension theorem from the SF.0 continuation identify this with the secant tangent space.
+Use the incidence map from ordered points and coefficients in their projective span. Its differential is the span of the point tangents and span-coefficient directions. Generic smoothness and the generic rank/dimension theorem required by gap:generic-contact identify this with the secant tangent space.
 
-**Prerequisites:** [Veronese tangents and double-point conditions](#veronese-tangent); **SchemeAndStackFoundations, SF.0**.
+*Needs:* gap:generic-contact; [Veronese tangents and double-point conditions](#32-plane-interpolation-through-tangent-and-contact-geometry); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §2 Lemma 2.2, pp. 3–4](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="terracini-contact"></a>
+([BO, §2 Lemma 2.2, pp. 3–4](https://arxiv.org/pdf/math/0701409v2)).
 
 **Contact curve in the defective plane case.** For general q points in the Veronese plane, a defective tangent span has positive-dimensional contact through each support. For a general degree-d form singular at those supports this yields a reduced plane curve C of degree l through them with 2C contained in its divisor.
 
-Apply the generic contact-fiber argument to the incidence map and a general span point. Positive-dimensional components through the supports yield a reduced contact curve. SF.5 identifies its double containment in the singular divisor and gives 2ℓ≤d and q≤ℓ(ℓ+3)/2 for general plane supports.
+Apply the generic contact-fiber argument to the incidence map and a general span point. Positive-dimensional components through the supports yield a reduced contact curve. SchemeAndStackFoundations §5.12 and gap:plane-singular-incidence identifies its double containment in the singular divisor and gives 2ℓ≤d and q≤ℓ(ℓ+3)/2 for general plane supports.
 
-**Prerequisites:** [Terracini span for the Veronese family](#terracini-span); **SchemeAndStackFoundations, SF.0**; **SchemeAndStackFoundations, SF.5**.
+*Needs:* gap:generic-contact; [Terracini span for the Veronese family](#32-plane-interpolation-through-tangent-and-contact-geometry); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual; SchemeAndStackFoundations §5.12 and gap:plane-singular-incidence.
 
-**Source:** [BO, §2 Lemma 2.3 p. 5 and Theorem 2.4 p. 6](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="plane-numerics"></a>
+([BO, §2 Lemma 2.3 p. 5 and Theorem 2.4 p. 6](https://arxiv.org/pdf/math/0701409v2)).
 
 **Plane contact numerical reduction.** In the plane critical-count argument of BO’s Theorem 2.4, the bounds 2l≤d and q≤l(l+3)/2, with q the relevant critical floor count, reduce a possible defect to d≤4 or d=6.
 
 Substitute q=floor(N(2,d)/3) and ℓ≤floor(d/2) into q≤ℓ(ℓ+3)/2. Separate even and odd d and calculate the small boundary values explicitly. The only possible degrees left beyond d≤4 are sextics.
 
-**Prerequisites:** [Contact curve in the defective plane case](#terracini-contact); [Binomial count of bounded monomials](#monomial-count).
+*Needs:* [Contact curve in the defective plane case](#32-plane-interpolation-through-tangent-and-contact-geometry); [Binomial count of bounded monomials](#01-the-bounded-monomial-basis).
 
-**Source:** [BO, §2 Theorem 2.4 proof, p. 6](https://arxiv.org/pdf/math/0701409v2).
+([BO, §2 Theorem 2.4 proof, p. 6](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="plane-sextic-base"></a>
-
-**Exact sextic plane critical ranks.** There exist distinct plane point configurations for which degree 6 homogeneous jet ranks are 27 at q=9 and 28 at q=10. Thus the corresponding generic ranks are maximal.
+**Exact sextic plane critical ranks.** The headline `sexticPlane` gives distinct rational affine witnesses.  There exist distinct plane point configurations for which degree 6 homogeneous jet ranks are 27 at q=9 and 28 at q=10. Thus the corresponding generic ranks are maximal.
 
 Construct integer homogeneous derivative matrices for 9 and 10 distinct plane supports and exhibit nonzero minors of sizes 27 and 28 modulo 101. Determinant lifting gives the same characteristic-zero lower bounds, and openness on the irreducible support parameter gives the generic ranks.
 
-**Prerequisites:** [Exact integer rank witnesses](#modular-rank-lift); [Rank in flat point families](#rank-open).
+*Needs:* [Exact integer rank witnesses](#31-exact-low-degree-rank-witnesses); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §2 Theorem 2.4 proof, p. 6; authored sextic certificate replacement](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="plane-interpolation"></a>
+([BO, §2 Theorem 2.4 proof, p. 6; authored sextic rank witness replacement](https://arxiv.org/pdf/math/0701409v2)).
 
 **Plane interpolation input.** General double points in P² impose maximal-rank conditions in every degree, except (d,q)=(2,2) and (4,5). The endpoint needed here includes both critical counts in every d≥5.
 
 Combine the contact-curve numerical reduction with the sextic and low-degree rank witnesses. The quadric radical formula gives the quadratic exception and a doubled conic gives the quartic exception. Independence passes to subsets and injectivity to supersets, extending the two critical counts to every count.
 
-**Prerequisites:** [Plane contact numerical reduction](#plane-numerics); [Exact sextic plane critical ranks](#plane-sextic-base); [Quadrics with prescribed singular points](#quadric-kernel); [Low-degree near-exception certificates](#low-rank-bases); [Independent subschemes](#subscheme-independence).
+*Needs:* [Plane contact numerical reduction](#32-plane-interpolation-through-tangent-and-contact-geometry); [Exact sextic plane critical ranks](#32-plane-interpolation-through-tangent-and-contact-geometry); [Quadrics with prescribed singular points](#31-exact-low-degree-rank-witnesses); [Low-degree near-exception ranks](#31-exact-low-degree-rank-witnesses); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes).
 
-**Source:** [BO, §2, Theorem 2.4, p.6](https://arxiv.org/pdf/math/0701409v2).
+([BO, §2, Theorem 2.4, p.6](https://arxiv.org/pdf/math/0701409v2)).
 
-### Codimension-three cubic systems
+### 3.3 Codimension-three cubic systems
 
-<a id="three-cubic-bases"></a>
-
-**Three-subspace cubic base certificates.** For r=5,6,7: no cubic containing three suitably chosen codimension 3 subspaces and singular at three distinct points on each. The full-column integer constraint matrices have ranks 56,84,120.
+**Three-subspace cubic base rank witnesses.** For r=5,6,7: no cubic containing three suitably chosen codimension 3 subspaces and singular at three distinct points on each. The full-column integer constraint matrices have ranks 56,84,120.
 
 Choose integer subspace frames and support vectors in the prescribed incidences for dimensions 5,6,7. Build the homogeneous derivative constraints together with value constraints at integer sample points on each space, and any specified remainder-direction constraints. A full-column minor has nonzero residue modulo 101, giving ranks 56,84,120. These are necessary conditions for a containing cubic, so full column rank excludes it; openness yields the general assertion.
 
-**Prerequisites:** [Exact integer rank witnesses](#modular-rank-lift); [Rank in flat point families](#rank-open).
+*Needs:* [Exact integer rank witnesses](#31-exact-low-degree-rank-witnesses); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §5 Proposition 5.2 pp. 9–10](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="three-cubic-recursion"></a>
+([BO, §5 Proposition 5.2 pp. 9–10](https://arxiv.org/pdf/math/0701409v2)).
 
 **Three-subspace cubic recursion.** For r≥5, three general codimension 3 subspaces and three general points on each admit no cubic containing the spaces and singular at all nine points.
 
 For r≥8 specialize the nine supports to a general hyperplane and use the r−1 assertion on the trace. The residual is a quadric containing the three general codimension-three spaces. A coefficient calculation shows its space is zero, so the residual/trace bound completes the induction.
 
-**Prerequisites:** [Three-subspace cubic base certificates](#three-cubic-bases); [Double-point residual and trace](#residual-trace); [Rank in flat point families](#rank-open).
+*Needs:* [Three-subspace cubic base rank witnesses](#33-codimension-three-cubic-systems); SchemeAndStackFoundations gap:cartier-residual for the union with the positive-dimensional subspaces; [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §5, Proposition 5.2, pp.9–10](https://arxiv.org/pdf/math/0701409v2).
+([BO, §5, Proposition 5.2, pp.9–10](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="two-cubic-bases"></a>
-
-**Two-subspace cubic base certificates.** For r=5,7 there exist two suitably chosen codimension 3 spaces in general position, r−2 distinct double supports on each and three distinct ambient double supports outside them, with no nonzero cubic containing both spaces and singular at those supports. The integer certificate ranks are 56 and 120; openness gives the corresponding general configurations.
+**Two-subspace cubic base rank witnesses.** For r=5,7 there exist two suitably chosen codimension 3 spaces in general position, r−2 distinct double supports on each and three distinct ambient double supports outside them, with no nonzero cubic containing both spaces and singular at those supports. The integer rank witness ranks are 56 and 120; openness gives the corresponding general configurations.
 
 Choose integer subspace frames and support vectors in the prescribed incidences for dimensions 5,7. Build the homogeneous derivative constraints together with value constraints at integer sample points on each space, and any specified remainder-direction constraints. A full-column minor has nonzero residue modulo 101, giving ranks 56,120. These are necessary conditions for a containing cubic, so full column rank excludes it; openness yields the general assertion.
 
-**Prerequisites:** [Exact integer rank witnesses](#modular-rank-lift); [Rank in flat point families](#rank-open).
+*Needs:* [Exact integer rank witnesses](#31-exact-low-degree-rank-witnesses); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §5 Proposition 5.3 p. 10, corrected P⁷ base](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="two-cubic-recursion"></a>
+([BO, §5 Proposition 5.3 p. 10, corrected P⁷ base](https://arxiv.org/pdf/math/0701409v2)).
 
 **Two-subspace cubic recursion.** For r≥3,r≠4, two general codimension 3 spaces L,M, r−2 general double points on each and three general ambient double points leave no cubic containing L∪M.
 
 Use the direct r=3 case and the r=5,7 bases. In r=6 or r≥8 introduce a third codimension-three space, specialize r−5 supports from each original list to its intersections, and move the three ambient supports into it. The trace is the r−3 two-space assertion; the kernel is killed by the three-space assertion with its nine remaining singularities.
 
-**Prerequisites:** [Two-subspace cubic base certificates](#two-cubic-bases); [Three-subspace cubic recursion](#three-cubic-recursion); [Rank in flat point families](#rank-open).
+*Needs:* [Two-subspace cubic base rank witnesses](#33-codimension-three-cubic-systems); [Three-subspace cubic recursion](#33-codimension-three-cubic-systems); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §5, Proposition 5.3, p.10](https://arxiv.org/pdf/math/0701409v2).
+([BO, §5, Proposition 5.3, p.10](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="one-cubic-bases"></a>
-
-**One-subspace cubic base certificates.** For r=5 there exist a codimension 3 subspace L, three distinct double supports on L, six distinct ambient double supports outside L, and a length 2 scheme η⊂2Q at a further support Q∈L with length(η∩L)=1, such that no nonzero cubic contains L and satisfies these conditions. For r=7 the corresponding configuration has seven distinct double supports on L and eight distinct ambient double supports outside L, with no remainder scheme. Certificate ranks are 56 and 120; openness gives the corresponding general configurations.
+**One-subspace cubic base rank witnesses.** For r=5 there exist a codimension 3 subspace L, three distinct double supports on L, six distinct ambient double supports outside L, and a length 2 scheme η⊂2Q at a further support Q∈L with length(η∩L)=1, such that no nonzero cubic contains L and satisfies these conditions. For r=7 the corresponding configuration has seven distinct double supports on L and eight distinct ambient double supports outside L, with no remainder scheme. Witness ranks are 56 and 120; openness gives the corresponding general configurations.
 
 Choose integer subspace frames and support vectors in the prescribed incidences for dimensions 5,7. Build the homogeneous derivative constraints together with value constraints at integer sample points on each space, and any specified remainder-direction constraints. A full-column minor has nonzero residue modulo 101, giving ranks 56,120. These are necessary conditions for a containing cubic, so full column rank excludes it; openness yields the general assertion.
 
-**Prerequisites:** [Exact integer rank witnesses](#modular-rank-lift); [Rank in flat point families](#rank-open).
+*Needs:* [Exact integer rank witnesses](#31-exact-low-degree-rank-witnesses); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §5 Proposition 5.4 pp. 10–11](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="one-cubic-recursion"></a>
+([BO, §5 Proposition 5.4 pp. 10–11](https://arxiv.org/pdf/math/0701409v2)).
 
 **One-subspace cubic recursion.** For r≥3,r≠4, let L have codimension 3. If r≠2 mod3, prescribe r(r−1)/6 general distinct double supports on L and r+1 general ambient double supports outside L. If r≡2 mod3, prescribe (r+1)(r−2)/6 general distinct double supports on L, r+1 general ambient double supports outside L, and a general η⊂2Q at a further general Q∈L of length δ_r=(r+1)/3 and trace length δ_r−1. No nonzero cubic containing L satisfies these conditions.
 
 Introduce a second codimension-three space M. Specialize the required on-L supports to L∩M and r−2 ambient supports to M; in the remainder case place η inside M with the prescribed trace. The restriction image is controlled by the r−3 one-space assertion and the kernel by the two-space assertion. Use a finite-flat η family inside a double point to preserve the trace and length requirements.
 
-**Prerequisites:** [One-subspace cubic base certificates](#one-cubic-bases); [Two-subspace cubic recursion](#two-cubic-recursion); [Rank in flat point families](#rank-open).
+*Needs:* [One-subspace cubic base rank witnesses](#33-codimension-three-cubic-systems); [Two-subspace cubic recursion](#33-codimension-three-cubic-systems); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §5, Proposition 5.4, pp.10–11](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="cubic-remainder"></a>
+([BO, §5, Proposition 5.4, pp.10–11](https://arxiv.org/pdf/math/0701409v2)).
 
 **Cubic critical-count remainder.** Put q_r=floor((r+3)(r+2)/6) and δ_r=N(r,3)−(r+1)q_r. Then δ_r=0 for r≠2 mod3 and δ_r=(r+1)/3 otherwise. For r≥2,r≠4, q_r general double points together with a general η⊂2Q of length δ_r impose N(r,3) independent conditions.
 
 Compute δ_r by r modulo three. A codimension-three specialization puts q_(r−3) doubles and the trace of η on L, leaving r+1 ambient doubles. Apply the lower-dimensional critical assertion to the trace and the one-space assertion to the kernel. In P² the three coordinate supports leave only the triangle cubic x₀x₁x₂, and its value at [1:1:1] kills it.
 
-**Prerequisites:** [One-subspace cubic recursion](#one-cubic-recursion); [Low-degree near-exception certificates](#low-rank-bases); [Independent subschemes](#subscheme-independence).
+*Needs:* [One-subspace cubic recursion](#33-codimension-three-cubic-systems); [Low-degree near-exception ranks](#31-exact-low-degree-rank-witnesses); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes).
 
-**Source:** [BO, §5, Theorem 5.1, pp.9–12](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="cubic-maximal-rank"></a>
+([BO, §5, Theorem 5.1, pp.9–12](https://arxiv.org/pdf/math/0701409v2)).
 
 **Cubic maximal-rank input.** For r≥2, general q double points in P^r have maximal rank in degree 3 unless (r,q)=(4,7). In dimension 4 only q≤6 or q≥8 are used in the induction.
 
 The remainder assertion gives the critical floor independence. When δ_r>0, enlarging η to its containing double point kills the kernel at the critical ceiling count. Use subset and superscheme monotonicity; in dimension four use the separate six-point and eight-point bases.
 
-**Prerequisites:** [Cubic critical-count remainder](#cubic-remainder); [Low-degree near-exception certificates](#low-rank-bases); [Independent subschemes](#subscheme-independence).
+*Needs:* [Cubic critical-count remainder](#33-codimension-three-cubic-systems); [Low-degree near-exception ranks](#31-exact-low-degree-rank-witnesses); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes).
 
-**Source:** [BO, §5, Theorem 5.1, pp.9–12; §3, p.7](https://arxiv.org/pdf/math/0701409v2).
+([BO, §5, Theorem 5.1, pp.9–12; §3, p.7](https://arxiv.org/pdf/math/0701409v2)).
 
-### The quartic starting dimension
+### 3.4 The quartic starting dimension
 
-<a id="quartic-five"></a>
-
-**Quartic P⁵ critical certificate.** There is a configuration of 21 distinct points in P⁵ whose homogeneous quartic first-derivative constraint matrix has full rank 126. Therefore 21 general double points impose independent quartic conditions.
+**Quartic P⁵ critical rank.** The headline `quarticFive` gives a distinct rational affine witness.  There is a configuration of 21 distinct points in P⁵ whose homogeneous quartic first-derivative constraint matrix has full rank 126. Therefore 21 general double points impose independent quartic conditions.
 
 At 21 distinct integer supports in P⁵, an integer homogeneous quartic derivative matrix has a 126-minor nonzero modulo 101. This reaches both the source and target dimensions. Lift the determinant and use rank openness to obtain the general quartic assertion.
 
-**Prerequisites:** [Exact integer rank witnesses](#modular-rank-lift); [Rank in flat point families](#rank-open).
+*Needs:* [Exact integer rank witnesses](#31-exact-low-degree-rank-witnesses); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §6 p. 19 final quartic base](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 p. 19 final quartic base](https://arxiv.org/pdf/math/0701409v2)).
 
-## GI.4. Differential Horace and generic projective interpolation
+### Examples
+
+The plane sextic ranks are 27 and 28; the quartic rank for 21 supports in P⁵ is 126. The exceptional cubic at (r,q)=(4,7) is excluded from the cubic maximum-rank claim.
+
+### Dependencies
+
+Layers 0–2; SchemeAndStackFoundations §5.12, gap:generic-contact and gap:plane-singular-incidence.
+
+## Layer 4: Differential Horace and generic projective interpolation
 
 The differential theorem connects the trace and two lower-degree predecessors, with both critical counts handled explicitly. This layer first establishes the arithmetic and residual tools, then the moving-family rank argument, and finally the quartic and degree-at-least-five induction. Maximal rank is maintained throughout, so overfilled systems give injectivity.
 
 For r≥2 and d≥4, the two critical counts satisfy
 floor(N(r,d)/(r+1))≤q≤ceil(N(r,d)/(r+1)). Define the integer division data by
 
-$$ru+e=q(r+1)-N(r,d-1),\qquad 0\le e<r.$$
+ru + e = q(r+1) − N(r,d−1), with 0 ≤ e < r.
 
 Fix a hyperplane H and pairwise distinct, simultaneously general support lists:
 Φ consists of u points on H; Γ consists of e further points on H; and Σ
 consists of q−u−e points off H. In the full induction all three hypotheses
 
-$$\mathrm{AH}(r-1,d,u),\qquad\mathrm{AH}(r,d-1,q-u),\qquad
-\mathrm{AH}(r,d-2,q-u-e)$$
+AH(r−1,d,u), AH(r,d−1,q−u), AH(r,d−2,q−u−e)
 
 are explicit inputs. The *successful residual setup* means that
 Φ∪Σ²∪(Γ²|H) is independent in degree d−1, with total length N(r,d−1).
@@ -859,352 +898,341 @@ residual nonempty opens in their irreducible parameter scheme. The trace used
 in the overfilled branch is the selected partial trace Φ²|H∪Γ₀ with
 |Γ₀|=ν, rather than the full Γ trace.
 
-### Integer division and the Horace size inequalities
-
-<a id="numerical-trace-bound"></a>
+### 4.1 Integer division and the Horace size inequalities
 
 **Horace trace-size inequality.** For r≥2,d≥4,0≤q≤ceil(N(r,d)/(r+1)), let integers u,e satisfy ru+e=q(r+1)−N(r,d−1) and 0≤e<r. Then re+u≤N(r−1,d−1).
 
 Bound q(r+1) by N(r,d)+r and insert the division relation and Pascal identity. Use 0≤e<r to estimate re+u. The sharp estimate includes the small pairs (r,d)=(3,4),(4,4),(5,4), which are checked by integer division rather than asymptotics.
 
-**Prerequisites:** [Binomial count of bounded monomials](#monomial-count).
+*Needs:* [Binomial count of bounded monomials](#01-the-bounded-monomial-basis).
 
-**Source:** [BO, §6 Lemma 6.3(i), pp. 15–16](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="numerical-residual-bound"></a>
+([BO, §6 Lemma 6.3(i), pp. 15–16](https://arxiv.org/pdf/math/0701409v2)).
 
 **Horace residual-size inequality.** For the same r,d,q,u,e, N(r,d−2)≤(q−u−e)(r+1).
 
 Eliminate q with ru+e=q(r+1)−N(r,d−1), then insert the trace bound for u+re. Pascal gives N(r,d−1)−N(r−1,d−1)=N(r,d−2). The resulting positive lower bound also forces q−u−e≥0.
 
-**Prerequisites:** [Horace trace-size inequality](#numerical-trace-bound).
+*Needs:* [Horace trace-size inequality](#41-integer-division-and-the-horace-size-inequalities).
 
-**Source:** [BO, §6 Lemma 6.3(ii), pp. 15–16](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="numerical-quartic-bound"></a>
+([BO, §6 Lemma 6.3(ii), pp. 15–16](https://arxiv.org/pdf/math/0701409v2)).
 
 **Large-dimensional quartic residual bound.** For d=4,r≥10 and the integer division data just defined, q−u−e≥r+1.
 
 Specialize the sharper division estimate to d=4, retaining the actual remainder e<r. Check the boundary r=10 and the increasing polynomial bound for larger r. The coarse residual bound alone is weaker than r+1 and is not substituted for this sharp conclusion.
 
-**Prerequisites:** [Horace residual-size inequality](#numerical-residual-bound).
+*Needs:* [Horace residual-size inequality](#41-integer-division-and-the-horace-size-inequalities).
 
-**Source:** [BO, §6 Lemma 6.3(iii), pp. 15–16](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="critical-division"></a>
+([BO, §6 Lemma 6.3(iii), pp. 15–16](https://arxiv.org/pdf/math/0701409v2)).
 
 **Nonnegative critical Horace data.** For r≥2,d≥4 and floor(N(r,d)/(r+1))≤q≤ceil(N(r,d)/(r+1)), the Euclidean-division data u,e above satisfy 0≤u≤q and 0≤q−u−e.
 
 At either critical count q(r+1)≥N(r,d)−r. Comparing with N(r,d−1) makes the dividend nonnegative for r≥2,d≥4. Integer Euclidean division gives u≥0; the residual bound gives q−u−e≥0 and therefore u≤q.
 
-**Prerequisites:** [Horace residual-size inequality](#numerical-residual-bound).
+*Needs:* [Horace residual-size inequality](#41-integer-division-and-the-horace-size-inequalities).
 
-**Source:** [BO, §6, Lemma 6.3, pp.15–16; Theorem 6.4, p.16](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6, Lemma 6.3, pp.15–16; Theorem 6.4, p.16](https://arxiv.org/pdf/math/0701409v2)).
 
-### Filling the residual and trace systems
-
-<a id="partial-residual-rank"></a>
+### 4.2 Filling the residual and trace systems
 
 **Mixed residual rank in degree d−1.** Let q,u,e be critical Horace data and assume AH(r,d−1,q−u). Choose Σ of q−u−e general off-H supports and Γ of e general supports on H. Their full doubles at Σ and H-restricted doubles at Γ have rank (r+1)(q−u)−e in degree d−1; their vanishing-system dimension is u.
 
 Specialize e supports to H, discard their normal derivative conditions and prove independence of the remaining restricted conditions using the lower-degree hypothesis and trace bound. This requires the specialization and transversality argument; row deletion by itself does not establish it. Subtract the independent-condition count from N(r,d−1) to obtain dimension u.
 
-**Prerequisites:** [Horace trace-size inequality](#numerical-trace-bound); [Nonnegative critical Horace data](#critical-division); [Restriction rank on disjoint unions](#rank-disjoint); [Rank in flat point families](#rank-open).
+*Needs:* [Horace trace-size inequality](#41-integer-division-and-the-horace-size-inequalities); [Nonnegative critical Horace data](#41-integer-division-and-the-horace-size-inequalities); [Restriction rank on disjoint unions](#21-ranks-of-section-maps); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §6 Theorem 6.4 Step 1 pp. 16–17](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="residual-restrict-injective"></a>
+([BO, §6 Theorem 6.4 Step 1 pp. 16–17](https://arxiv.org/pdf/math/0701409v2)).
 
 **Injective residual restriction to H.** Assume AH(r,d−2,q−u−e). By the numerical residual bound, no degree d−2 form vanishes doubly at Σ. Consequently restriction to H is injective on the degree d−1 system vanishing on Σ² and the restricted doubles Γ²|H.
 
 The numerical residual bound makes the degree-(d−2) predecessor overfilled, so its maximal rank kills its kernel. A degree-(d−1) residual section that restricts to zero on H is divisible by the equation of H. Its quotient vanishes doubly at off-H Σ and must therefore be zero.
 
-**Prerequisites:** [Horace residual-size inequality](#numerical-residual-bound); [Mixed residual rank in degree d−1](#partial-residual-rank); [Double-point residual and trace](#residual-trace).
+*Needs:* [Horace residual-size inequality](#41-integer-division-and-the-horace-size-inequalities); [Mixed residual rank in degree d−1](#42-filling-the-residual-and-trace-systems); [Finite-scheme residual and trace](#22-hyperplane-residuals-and-ordinary-horace).
 
-**Source:** [BO, §6, Theorem 6.4, Step 2, p.16](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="residual-simple-points"></a>
+([BO, §6, Theorem 6.4, Step 2, p.16](https://arxiv.org/pdf/math/0701409v2)).
 
 **Killing a residual system with simple points.** If a degree d−1 residual linear system has dimension u and restricts injectively to H, then u general reduced points Φ on H make its restriction map injective. Applied to the Horace residual system this fills N(r,d−1) conditions.
 
 A nonzero restricted section on the reduced hyperplane is nonzero at some k-point. Successively choose a point that lowers the evaluation kernel dimension by one; distinct choices occur on a nonempty open. After u choices the injectively restricted u-dimensional system has zero kernel.
 
-**Prerequisites:** [Injective residual restriction to H](#residual-restrict-injective); [Rank in flat point families](#rank-open); [Restriction rank on disjoint unions](#rank-disjoint).
+*Needs:* [Injective residual restriction to H](#42-filling-the-residual-and-trace-systems); [Rank in flat point families](#24-families-and-limits); [Restriction rank on disjoint unions](#21-ranks-of-section-maps).
 
-**Source:** [BO, §6, Theorem 6.4, Step 2, p.16](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="trace-simple-rank"></a>
+([BO, §6, Theorem 6.4, Step 2, p.16](https://arxiv.org/pdf/math/0701409v2)).
 
 **Underfilled trace with simple remainder.** In the underfilled critical case q(r+1)≤N(r,d), assuming AH(r−1,d,u), choose Φ,Γ on H as above so h(Φ²|H∪Γ,d)=ru+e. Every subcollection of the simple Γ points preserves independence.
 
 The underfilled division identity gives ru+e≤N(r−1,d). Use AH(r−1,d,u) for Φ, then add e general simple points to its remaining section system. Intersect this open with the residual-filling open for Φ; irreducibility gives a simultaneous choice.
 
-**Prerequisites:** [Killing a residual system with simple points](#residual-simple-points); [Independent subschemes](#subscheme-independence); [Rank in flat point families](#rank-open).
+*Needs:* [Killing a residual system with simple points](#42-filling-the-residual-and-trace-systems); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §6, Theorem 6.4, Step 3, p.17](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6, Theorem 6.4, Step 3, p.17](https://arxiv.org/pdf/math/0701409v2)).
 
-### The moving finite-flat family
-
-<a id="moving-supports"></a>
+### 4.3 The moving finite-flat family
 
 **Moving supports and hyperplanes.** For fixed Γ={γ_i}⊂H, choose an actual algebraic family δ_i(t_i) with δ_i(0)=γ_i and general δ_i(t_i) off H, together with hyperplanes H_i(t_i) through δ_i(t_i) specializing to H. The corresponding full and hyperplane-restricted double-point families are finite flat over the parameter open.
 
-In a chart choose δ_i(t_i)=γ_i+t_i v_i with v_i transverse to H and vary a hyperplane equation through δ_i(t_i). Pull back the actual squared-ideal incidence families of R09.2. Restrict to the open where supports remain distinct; full and hyperplane-restricted fibres have lengths r+1 and r.
+In a chart choose δ_i(t_i)=γ_i+t_i v_i with v_i transverse to H and vary a hyperplane equation through δ_i(t_i). Construct the squared-point and hyperplane-restricted families here in affine coordinates, and glue them using SchemeAndStackFoundations §0.28. Use gap:finite-flat-sections for the general family operations. Restrict to the open where supports remain distinct; full and hyperplane-restricted fibres have lengths r+1 and r.
 
-**API.**
+The API has the following properties.
 
-- `movingSupports_zero` (simp): δ_i(0)=γ_i and H_i(0)=H.
-- `movingSupports_flat` (structure): The double-point and restricted double-point families have constant ranks r+1 and r over the distinct-support open.
-- `movingSupports_baseChange` (functoriality): Any parameter base change pulls back the same squared-ideal incidence family.
+- δ_i(0)=γ_i and H_i(0)=H.
+- The double-point and restricted double-point families have constant ranks r+1 and r over the distinct-support open.
+- Any parameter base change pulls back the same squared-ideal incidence family.
 
-**Tests.**
+**Checks.**
 
-- `moving_affine_line`: In A² with H=(y=0), δ(t)=(a,t) and H_t=(y=t) give the stated fibres.
-- `moving_zero_fibre`: At t=0 the double point retains length 3; it does not become reduced.
-- `moving_restricted_length`: Intersecting its double scheme with H_t gives length 2, agreeing with the local square-zero quotient.
+- In A² with H=(y=0), δ(t)=(a,t) and H_t=(y=t) give the stated fibres.
+- At t=0 the double point retains length 3; it does not become reduced.
+- Intersecting its double scheme with H_t gives length 2, agreeing with the local square-zero quotient.
 
-**Prerequisites:** [Proper limits of curvilinear failures](#curvilinear-limits); **AlgebraicModuliForArithmeticGeometry, R09.2**; **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Proper limits of curvilinear failures](#24-families-and-limits); AlgebraicModuliForArithmeticGeometry §§1.7, 2.1 and gap:finite-flat-sections; SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [BO, §6 Theorem 6.4, moving families in the first and second cases, pp. 17–18](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 Theorem 6.4, moving families in the first and second cases, pp. 17–18](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="transverse-limit-rank"></a>
+**Transverse curvilinear limit rank.** Assume the chosen partial trace Φ²|H∪Γ₀ is d-independent, with F⊆Γ₀ a set of f moving length 2 directions whose limits are transverse to H. Their special traces retain one reduced support each, so h(Φ²|H∪F,d)=ru+f. Their local residuals have length 1 each. Those reduced F residuals, Φ, Σ² and the tangent length-two limits at G form a subscheme of the successful residual setup; their degree-(d−1) rank is u+(r+1)(q−u−e)+f+2g, with no extra rank added to the already filled system.
 
-**Transverse curvilinear limit rank.** Assume the chosen partial trace Φ²|H∪Γ₀ is d-independent, with F⊆Γ₀ a set of f moving length 2 directions whose limits are transverse to H. Their special traces retain one reduced support each, so h(Φ²|H∪F,d)=ru+f. Their local residuals have length 1 each; these are independent residual conditions when added to the successful Step2 residual setup.
+The local ideal of a transverse length-two direction has a reduced length-one trace and a reduced length-one residual. Independence of the selected partial trace gives rank ru+f by subset monotonicity. Subset independence in the filled system supplies this smaller scheme’s rank.
 
-The local ideal of a transverse length-two direction has a reduced length-one trace and a reduced length-one residual. Independence of the selected partial trace gives rank ru+f by subset monotonicity. The successfully filled residual system supplies the corresponding reduced residual conditions.
+*Needs:* Compatible bad-incidence specialization interface (Layer 2, gap:mixed-bad-incidence); [Moving supports and hyperplanes](#43-the-moving-finite-flat-family); [Finite-scheme residual and trace](#22-hyperplane-residuals-and-ordinary-horace); [Proper limits of curvilinear failures](#24-families-and-limits); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes); [Killing a residual system with simple points](#42-filling-the-residual-and-trace-systems).
 
-**Prerequisites:** [Moving supports and hyperplanes](#moving-supports); [Double-point residual and trace](#residual-trace); [Proper limits of curvilinear failures](#curvilinear-limits); [Independent subschemes](#subscheme-independence); [Killing a residual system with simple points](#residual-simple-points).
-
-**Source:** [BO, §6 Theorem 6.4 first case p. 18](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="tangent-moving-rank"></a>
+([BO, §6 Theorem 6.4 first case p. 18](https://arxiv.org/pdf/math/0701409v2)).
 
 **Tangent directions in the moving residual.** In the critical Horace setup with the successful Step2 (d−1)-independent residual system Φ∪Σ²∪Γ²|H, take g bad curvilinear directions whose limits lie in H and f transverse indices, with f+g=e. Keep the tangent supports at a general nonzero parameter during the mixed residual estimate. They contribute2g independent residual conditions; combined residual rank is at least u+(r+1)(q−u−e)+f+2g.
 
-Split indices into transverse F and tangent G. Set the F parameters to their limits, while keeping the G parameters general and nonzero so their length-two conditions remain in the residual. Combine the successful residual setup, subset independence and rank semicontinuity to obtain the lower bound.
+Split indices into transverse F and tangent G. Use the compatible bad-incidence specialization interface of Layer 2 to place the F supports on H while G stays off H, preserving the bad rank bound and the common special configuration. Combine the successful residual setup, subset independence and rank semicontinuity to obtain the lower bound.
 
-**Prerequisites:** [Killing a residual system with simple points](#residual-simple-points); [Moving supports and hyperplanes](#moving-supports); [Rank in flat point families](#rank-open); [Proper limits of curvilinear failures](#curvilinear-limits).
+*Needs:* Compatible bad-incidence specialization interface (Layer 2, gap:mixed-bad-incidence); [Killing a residual system with simple points](#42-filling-the-residual-and-trace-systems); [Moving supports and hyperplanes](#43-the-moving-finite-flat-family); [Rank in flat point families](#24-families-and-limits); [Proper limits of curvilinear failures](#24-families-and-limits).
 
-**Source:** [BO, §6 Theorem 6.4 first case p. 18](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 Theorem 6.4 first case p. 18](https://arxiv.org/pdf/math/0701409v2)).
 
-### The two critical-count arguments
+### 4.4 The two critical-count arguments
 
-<a id="underfilled-contradiction"></a>
+**Underfilled differential Horace contradiction.** For r≥2,d≥4 and critical q with q(r+1)≤N(r,d), assume the compatible bad-incidence specialization interface, AH(r−1,d,u), AH(r,d−1,q−u), AH(r,d−2,q−u−e), and the simultaneous residual/trace setup above. A curvilinear failure at the e moved supports would have rank below (r+1)(q−e)+2e, while the mixed specialization has rank at least that number. Hence a nonempty open set of moves is independent.
 
-**Underfilled differential Horace contradiction.** For r≥2,d≥4 and critical q with q(r+1)≤N(r,d), assume AH(r−1,d,u), AH(r,d−1,q−u), AH(r,d−2,q−u−e), and the simultaneous residual/trace setup above. A curvilinear failure at the e moved supports would have rank below (r+1)(q−e)+2e, while the mixed specialization has rank at least that number. Hence a nonempty open set of moves is independent.
+Curvilinear reduction and the compatible bad-incidence specialization interface give the required generic, mixed and special configurations inside the same closed failure locus. Add the mixed residual bound u+(r+1)(q−u−e)+f+2g to the trace bound ru+f. Since f+g=e, this is (r+1)(q−e)+2e, contradicting the closed upper-rank condition of failure.
 
-Curvilinear reduction and proper direction incidence give a flat limit of a generic failing configuration. Add the mixed residual bound u+(r+1)(q−u−e)+f+2g to the trace bound ru+f. Since f+g=e, this is (r+1)(q−e)+2e, contradicting the closed upper-rank condition of failure.
+*Needs:* Compatible bad-incidence specialization interface (Layer 2, gap:mixed-bad-incidence); [Transverse curvilinear limit rank](#43-the-moving-finite-flat-family); [Tangent directions in the moving residual](#43-the-moving-finite-flat-family); [Castelnuovo dimension bound](#22-hyperplane-residuals-and-ordinary-horace); [Curvilinear reduction](#23-testing-independence-on-curvilinear-subschemes); [Rank in flat point families](#24-families-and-limits); [Underfilled trace with simple remainder](#42-filling-the-residual-and-trace-systems).
 
-**Prerequisites:** [Transverse curvilinear limit rank](#transverse-limit-rank); [Tangent directions in the moving residual](#tangent-moving-rank); [Castelnuovo dimension bound](#castelnuovo-bound); [Curvilinear reduction](#curvilinear-global); [Rank in flat point families](#rank-open); [Underfilled trace with simple remainder](#trace-simple-rank).
-
-**Source:** [BO, §6, Theorem 6.4, first case, pp.17–18](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="overfilled-partial-scheme"></a>
+([BO, §6, Theorem 6.4, first case, pp.17–18](https://arxiv.org/pdf/math/0701409v2)).
 
 **Overfilled partial-length reduction.** For r≥2,d≥4 and critical q with q(r+1)>N(r,d), assume AH(r−1,d,u), AH(r,d−1,q−u), AH(r,d−2,q−u−e), and the successful simultaneous residual/trace setup. Put ν=N(r−1,d)−ru. If ν<0 ordinary Horace applies. Otherwise 0≤ν<e; choose Γ₀⊆Γ with ν supports so Φ²|H∪Γ₀ is independent. Replacing the moved e doubles by ν full doubles and e−ν hyperplane-restricted doubles gives a subscheme of length exactly N(r,d).
 
 For ν≥0 select ν simple trace supports from Γ and keep only the corresponding full moving doubles; at the other indices use hyperplane-restricted doubles. Its length is (q−e)(r+1)+ν(r+1)+(e−ν)r=N(r,d). If ν<0, trace injectivity and the filled residual already give ordinary Horace.
 
-**Prerequisites:** [Nonnegative critical Horace data](#critical-division); [Horace residual-size inequality](#numerical-residual-bound); [Ordinary Horace criterion](#ordinary-horace); [Moving supports and hyperplanes](#moving-supports); [Killing a residual system with simple points](#residual-simple-points); [Independent subschemes](#subscheme-independence); [Rank in flat point families](#rank-open).
+*Needs:* [Nonnegative critical Horace data](#41-integer-division-and-the-horace-size-inequalities); [Horace residual-size inequality](#41-integer-division-and-the-horace-size-inequalities); [Ordinary Horace criterion](#22-hyperplane-residuals-and-ordinary-horace); [Moving supports and hyperplanes](#43-the-moving-finite-flat-family); [Killing a residual system with simple points](#42-filling-the-residual-and-trace-systems); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §6 Theorem 6.4 second case p. 18](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 Theorem 6.4 second case p. 18](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="overfilled-contradiction"></a>
-
-**Overfilled differential Horace contradiction.** Under the overfilled critical-case hypotheses and successful setup of overfilled-partial-scheme, with ν≥0, apply the mixed-parameter transverse/tangent argument to its independent selected trace Φ²|H∪Γ₀, not to the full Γ trace. This makes the partial-length subscheme independent and therefore makes the full q-double-point system injective in degree d.
+**Overfilled differential Horace contradiction.** Under the overfilled partial-length reduction hypotheses, its successful setup and the compatible bad-incidence specialization interface, with ν≥0, apply the mixed-parameter transverse/tangent argument to its independent selected trace Φ²|H∪Γ₀, not to the full Γ trace. This makes the partial-length subscheme independent and therefore makes the full q-double-point system injective in degree d.
 
 In the partial scheme, every direction at a restricted index belongs to the tangent set G. Transverse F is consequently a subset of the ν selected trace supports, where the trace rank bound applies. The same mixed-rank contradiction gives independence at length N(r,d); enlarging to all full doubles preserves injectivity.
 
-**Prerequisites:** [Overfilled partial-length reduction](#overfilled-partial-scheme); [Transverse curvilinear limit rank](#transverse-limit-rank); [Tangent directions in the moving residual](#tangent-moving-rank); [Independent subschemes](#subscheme-independence); [Curvilinear reduction](#curvilinear-global).
+*Needs:* Compatible bad-incidence specialization interface (Layer 2, gap:mixed-bad-incidence); [Overfilled partial-length reduction](#44-the-two-critical-count-arguments); [Transverse curvilinear limit rank](#43-the-moving-finite-flat-family); [Tangent directions in the moving residual](#43-the-moving-finite-flat-family); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes); [Curvilinear reduction](#23-testing-independence-on-curvilinear-subschemes).
 
-**Source:** [BO, §6 Theorem 6.4 second case pp. 18–19](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 Theorem 6.4 second case pp. 18–19](https://arxiv.org/pdf/math/0701409v2)).
 
-### The differential induction theorem
-
-<a id="differential-horace"></a>
+### 4.5 The differential induction theorem
 
 **Differential Horace induction step.** For r≥2,d≥4 and a critical q, suppose AH(r−1,d,u), AH(r,d−1,q−u), and AH(r,d−2,q−u−e) for the division data. Then AH(r,d,q) holds. Here AH means generic maximal rank, not independence when the system is overfilled.
 
 Choose the residual and trace configurations on simultaneous nonempty opens using all three predecessor hypotheses. Use the underfilled contradiction when q(r+1)≤N(r,d), and the partial-length argument or its ordinary branch otherwise. A witness and rank openness give AH(r,d,q).
 
-**Prerequisites:** [Mixed residual rank in degree d−1](#partial-residual-rank); [Killing a residual system with simple points](#residual-simple-points); [Underfilled differential Horace contradiction](#underfilled-contradiction); [Overfilled differential Horace contradiction](#overfilled-contradiction).
+*Needs:* [Mixed residual rank in degree d−1](#42-filling-the-residual-and-trace-systems); [Killing a residual system with simple points](#42-filling-the-residual-and-trace-systems); [Underfilled differential Horace contradiction](#44-the-two-critical-count-arguments); [Overfilled differential Horace contradiction](#44-the-two-critical-count-arguments).
 
-**Source:** [BO, §6, Theorem 6.4, pp.16–19](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6, Theorem 6.4, pp.16–19](https://arxiv.org/pdf/math/0701409v2)).
 
-### The univariate base
+### 4.6 The univariate base
 
-<a id="univariate-hermite"></a>
-
-**Univariate Hermite interpolation.** For any field k, every injective n-tuple in A¹ and d≥2n−1 has surjective first-jet evaluation. More generally its rank is min(d+1,2n).
+**Univariate Hermite interpolation.** The headline `univariateHermiteRank` states the rank formula. For any field k, every injective n-tuple in A¹ with 2n≤d+1 has surjective first-jet evaluation. More generally its rank is min(d+1,2n).
 
 The pairwise comaximal ideals (x−P_i)² have product a monic polynomial of degree 2n. Division gives a unique representative of degree less than 2n in the quotient. Below that degree the restriction is injective; at and above it the map is surjective. This reasoning uses no division by factorials.
 
-**Prerequisites:** [Double-point quotient comparison](#double-quotient); [Full row rank criterion](#jet-rank).
+*Needs:* [Double-point quotient comparison](#12-the-finite-double-point-scheme-and-its-quotient); [Full row rank criterion](#14-matrix-rank-and-projective-restriction).
 
-**Source:** [BO, §1 univariate remark p. 1; §7.1 opening paragraph p. 19](https://arxiv.org/pdf/math/0701409v2).
+([BO, §1 univariate remark p. 1; §7.1 opening paragraph p. 19](https://arxiv.org/pdf/math/0701409v2)).
 
-### Quartic induction and the exception schedule
-
-<a id="quartic-seven"></a>
+### 4.7 Quartic induction and the exception schedule
 
 **Quartic P⁷ ordinary Horace input.** Assuming the quartic30-point assertion in P⁶, quartic q=41 and q=42 in P⁷ have maximal rank by specializing u=30 supports to a hyperplane; both ordinary Horace inequalities have the matching direction.
 
 Use u=30 hyperplane supports. The quartic trace has dimension and length 210; the cubic residual has source dimension 120 and lengths 118 or 126 for q=41 or 42. Cubic maximal rank and general simple-point selection supply the residual. The quartic input in P⁶ is a hypothesis of this argument.
 
-**Prerequisites:** [Cubic maximal-rank input](#cubic-maximal-rank); [Ordinary Horace criterion](#ordinary-horace); [Killing a residual system with simple points](#residual-simple-points).
+*Needs:* [Cubic maximal-rank input](#33-codimension-three-cubic-systems); [Ordinary Horace criterion](#22-hyperplane-residuals-and-ordinary-horace); [Killing a residual system with simple points](#42-filling-the-residual-and-trace-systems).
 
-**Source:** [BO, §6 p. 19](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="quartic-induction"></a>
+([BO, §6 p. 19](https://arxiv.org/pdf/math/0701409v2)).
 
 **Quartic induction inputs.** Quartic critical counts have maximal rank for r≥5. For r=6,8,9 the differential Horace data avoid the low-degree exceptions; for r≥10 its degree 2 residual is empty by q−u−e≥r+1.
 
 Induct increasingly in dimension from r=5. Handle r=7 by ordinary Horace and r=6,8,9 by the differential theorem with explicit critical division data. For r≥10, the quartic arithmetic bound ensures at least r+1 supports in the quadratic predecessor, so its kernel vanishes. The other predecessors are the cubic theorem and the smaller-dimensional quartic theorem.
 
-**Prerequisites:** [Quartic P⁵ critical certificate](#quartic-five); [Quartic P⁷ ordinary Horace input](#quartic-seven); [Quadrics with prescribed singular points](#quadric-kernel); [Cubic maximal-rank input](#cubic-maximal-rank); [Differential Horace induction step](#differential-horace); [Large-dimensional quartic residual bound](#numerical-quartic-bound).
+*Needs:* [Quartic P⁵ critical rank](#34-the-quartic-starting-dimension); [Quartic P⁷ ordinary Horace input](#47-quartic-induction-and-the-exception-schedule); [Quadrics with prescribed singular points](#31-exact-low-degree-rank-witnesses); [Cubic maximal-rank input](#33-codimension-three-cubic-systems); [Differential Horace induction step](#45-the-differential-induction-theorem); [Large-dimensional quartic residual bound](#41-integer-division-and-the-horace-size-inequalities).
 
-**Source:** [BO, §6 p. 19 final induction](https://arxiv.org/pdf/math/0701409v2).
-
-<a id="exception-scheduler"></a>
+([BO, §6 p. 19 final induction](https://arxiv.org/pdf/math/0701409v2)).
 
 **Exception-avoiding induction schedule.** For r≥3,d≥5 and each critical q, the differential-Horace predecessor triples avoid all exceptional AH cases, once the plane and cubic inputs and the quartic bases are used. The induction is lexicographic in degree and then dimension; the r=2 case is supplied independently.
 
 Use the complete low-degree exception list. For d=5 examine quartic and cubic predecessors; for d=6 examine the quartic residual; for d≥7 their degrees are at least five. Combine the quartic schedule and critical division inequalities to exclude every exceptional predecessor for r≥3. The plane case is a separate input.
 
-**Prerequisites:** [Plane interpolation input](#plane-interpolation); [Cubic maximal-rank input](#cubic-maximal-rank); [Quartic induction inputs](#quartic-induction); [Nonnegative critical Horace data](#critical-division).
+*Needs:* [Plane interpolation input](#32-plane-interpolation-through-tangent-and-contact-geometry); [Cubic maximal-rank input](#33-codimension-three-cubic-systems); [Quartic induction inputs](#47-quartic-induction-and-the-exception-schedule); [Nonnegative critical Horace data](#41-integer-division-and-the-horace-size-inequalities).
 
-**Source:** [BO, §6 p. 19 final induction](https://arxiv.org/pdf/math/0701409v2).
+([BO, §6 p. 19 final induction](https://arxiv.org/pdf/math/0701409v2)).
 
-### The projective endpoint
-
-<a id="generic-projective"></a>
+### 4.8 The projective endpoint
 
 **Generic characteristic-zero double-point rank.** Over algebraically closed characteristic-zero k, for r≥1,d≥5 and every q≥1, a nonempty Zariski-open subset of ordered distinct q-tuples in (P^r)^q has homogeneous degree-d jet rank min(N(r,d),q(r+1)).
 
 Prove the two critical counts by lexicographic induction in degree then dimension, with the separate plane and univariate inputs. Pass to subsets below the floor count and add supports above the ceiling count. Irreducibility and rank openness turn each maximal-rank witness into the required nonempty open.
 
-**Prerequisites:** [Differential Horace induction step](#differential-horace); [Exception-avoiding induction schedule](#exception-scheduler); [Univariate Hermite interpolation](#univariate-hermite); [Plane interpolation input](#plane-interpolation); [Independent subschemes](#subscheme-independence); [Rank in flat point families](#rank-open).
+*Needs:* [Differential Horace induction step](#45-the-differential-induction-theorem); [Exception-avoiding induction schedule](#47-quartic-induction-and-the-exception-schedule); [Univariate Hermite interpolation](#46-the-univariate-base); [Plane interpolation input](#32-plane-interpolation-through-tangent-and-contact-geometry); [Independent subschemes](#23-testing-independence-on-curvilinear-subschemes); [Rank in flat point families](#24-families-and-limits).
 
-**Source:** [BO, §1, Theorem 1.1, p.1; §6, conclusion, p.19](https://arxiv.org/pdf/math/0701409v2).
+([BO, §1, Theorem 1.1, p.1; §6, conclusion, p.19](https://arxiv.org/pdf/math/0701409v2)).
 
-## GI.5. Affine principal opens and integer coordinates
+### Examples
+
+For (r,d,q)=(3,6,21), the division data are (u,e)=(9,1). For quartics in P⁷, trace length 210 and residual lengths 118,126 match source dimensions 210,120.
+
+### Dependencies
+
+Layers 0–3; the three explicitly named predecessor AH assertions; compatible bad-incidence specialization interface (Layer 2).
+
+## Layer 5: Affine principal opens and integer coordinates
 
 The projective theorem meets the affine chart and gives a full-row-rank witness. The universal integer matrix then yields a chosen nonzero maximal minor, a principal open and an integer box point. Polynomial pullback is conditional on nonvanishing in the consumer’s parameter family.
 
-### The affine chart and universal matrix
-
-<a id="affine-dense"></a>
+### 5.1 The affine chart and universal matrix
 
 **Passing to the dense affine chart.** The ordered-distinct affine chart of (P^r)^n is a nonempty dense open for r,n≥1. It meets the nonempty generic projective maximal-rank locus, and fixed homogenization identifies its rank with the bounded-polynomial first-jet rank.
 
 Intersect the generic projective rank locus with the standard chart in every factor and with the complement of all support diagonals. These are nonempty opens in the irreducible projective product. Apply the actual homogeneous-section/first-jet comparison on that chart.
 
-**Prerequisites:** [Generic characteristic-zero double-point rank](#generic-projective); [Restriction to projective double points](#projective-jet-comparison); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Generic characteristic-zero double-point rank](#48-the-projective-endpoint); [Restriction to projective double points](#14-matrix-rank-and-projective-restriction); SchemeAndStackFoundations §§0.28, 2.6 and gap:cartier-residual.
 
-**Source:** [COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §1, Theorem 1.1, p.1](https://arxiv.org/pdf/math/0701409v2).
+([COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §1, Theorem 1.1, p.1](https://arxiv.org/pdf/math/0701409v2)).
 
-<a id="universal-jet-matrix"></a>
-
-**Universal first-jet matrix.** For r,n,d≥0 define a matrix U(r,n,d) over Z[T_{ij}] with the same row and column indices as firstJetMatrix. Its entries are T_i^α and α_jT_i^(α−e_j). Evaluation in any field at a tuple P gives firstJetMatrix(P,d).
+**Universal first-jet matrix.** Define `universalJetMatrix` by evaluating `firstJetMatrix` at independent polynomial variables. For r,n,d≥0 define a matrix U(r,n,d) over ℤ[Tᵢⱼ] with the same row and column indices as firstJetMatrix. Its entries are T_i^α and α_jT_i^(α−e_j). Evaluation in any commutative ring at a tuple P gives firstJetMatrix(P,d).
 
 Use native integer polynomials in variables indexed by Fin n×Fin r. Rename each monomial into the i-th coordinate block and apply the exponent-decrement derivative formula. Evaluation through the canonical integer algebra map commutes with the entries and their determinants.
 
-**API.**
+The API has the following properties.
 
-- `universalJetMatrix_eval` (compatibility): Evaluating T_{ij}=P_ij in k gives firstJetMatrix(P,d).
-- `universalJetMatrix_value` (projection): The value entry is the product of T_i coordinates to exponent α.
-- `universalJetMatrix_partial` (projection): The derivative entry is α_j times the exponent-decremented monomial, zero when α_j=0.
+- Evaluating Tᵢⱼ=P_ij in k gives firstJetMatrix(P,d).
+- The value entry is the product of T_i coordinates to exponent α.
+- The derivative entry is α_j times the exponent-decremented monomial, zero when α_j=0.
 
-**Tests.**
+**Checks.**
 
-- `universal_one_linear`: For r=n=d=1, the matrix in columns1,x is [[1,T],[0,1]], determinant1.
-- `universal_zero_degree`: For d=0 all derivative rows are zero.
-- `universal_integer_eval`: Evaluating at P=3 gives the native value9 and derivative6 for x².
+- For r=n=d=1, the matrix in columns1,x is [[1,T],[0,1]], determinant1.
+- For d=0 all derivative rows are zero.
+- Evaluating at P=3 gives the native value9 and derivative6 for x².
 
-**Prerequisites:** [Monomial first-jet matrix](#jet-matrix); `MvPolynomial.aeval` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib).
+*Needs:* [Monomial first-jet matrix](#14-matrix-rank-and-projective-restriction); `MvPolynomial.aeval` (Mathlib); `MvPolynomial.pderiv_monomial` (Mathlib).
 
-**Source:** [COU, §3 pp. 491–492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 pp. 491–492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### A selected determinant and its principal open
+### 5.2 A selected determinant and its principal open
 
-<a id="maximal-minor"></a>
+Define `selectedMinor` for a column embedding JetRows n r→A(r,d) as the
+determinant of that square submatrix of U. The fixed row ordering is used for
+both rows and the domain of the column embedding.
 
-**Nonzero maximal minor.** In the endpoint range r,n≥1,d≥5,n(r+1)≤N(r,d), there exists a choice of n(r+1) distinct columns of U whose determinant Δ∈Z[T] evaluates nonzero at an affine distinct configuration over k. In particular Δ is nonzero.
+Its API evaluates to the corresponding minor of the specialized matrix,
+changes sign under one transposition of its columns, and vanishes at repeated
+supports when n≥2.
 
-At an affine full-row-rank witness select m pivot columns. Form their square determinant in the integer universal matrix before evaluating. The value at the witness is nonzero, so the integer polynomial is nonzero as well. Other choices of m columns need not have nonzero determinants.
+**Checks.**
 
-**Prerequisites:** [Passing to the dense affine chart](#affine-dense); [Universal first-jet matrix](#universal-jet-matrix); [Full row rank criterion](#jet-rank).
+- At one point in A¹, columns (1,x) give [[1,T],[0,1]] and determinant 1.
+- Swapping those columns gives [[T,1],[1,0]] and determinant −1 over ℤ, fixing the sign convention.
+- For n=2,r=1,d=3, supports 0,0 duplicate value rows and give determinant 0; at supports 0,1 the same ordered columns (1,x,x²,x³) give determinant 1.
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+(Source: COU, §3, pp.491–492; determinant specialization is the native algebraic reformulation.)
 
-<a id="minor-degree"></a>
+**Nonzero maximal minor.** For every characteristic-zero field k, in the endpoint range r,n≥1,d≥5,n(r+1)≤N(r,d), there exists a choice of n(r+1) distinct columns of U whose determinant Δ∈Z[T] evaluates nonzero at an affine distinct configuration over k. In particular Δ is nonzero.
+
+At an affine full-row-rank witness choose m linearly independent columns. Form their square determinant in the integer universal matrix before evaluating. The value at the witness is nonzero, so the integer polynomial is nonzero as well. Other choices of m columns need not have nonzero determinants. Take the initial witness over an algebraic closure; its selected integer polynomial is nonzero in ℤ[T]. The bounded integer specialization then gives a witness over k itself.
+
+*Needs:* Bounded integer specialization for an arbitrary nonzero selected minor (whose proof uses only the degree bound and grid vanishing theorem); [Passing to the dense affine chart](#51-the-affine-chart-and-universal-matrix); [Universal first-jet matrix](#51-the-affine-chart-and-universal-matrix); [Full row rank criterion](#14-matrix-rank-and-projective-restriction).
+
+([COU, §3, pp.491–492: generic rank on p.491 and polynomial minors on p.492; the integer universal minor is the algebraic reformulation here](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
 **Degree of a first-jet minor.** For any m=n(r+1) chosen-column minor Δ of U, totalDegree Δ≤md and degreeOf(T_ij)≤md. The bound remains valid when Δ=0.
 
 Expand a selected determinant into its signed permutation products. Each value entry has total degree at most d and each nonzero derivative entry at most d−1, giving total degree at most md for every term and their sum. Coordinate degree is bounded by total degree, also for the zero polynomial.
 
-**Prerequisites:** [Universal first-jet matrix](#universal-jet-matrix); `MvPolynomial.degreeOf_le_totalDegree` (Mathlib).
+*Needs:* [Universal first-jet matrix](#51-the-affine-chart-and-universal-matrix); `MvPolynomial.degreeOf_le_totalDegree` (Mathlib).
 
-**Source:** [COU, §3 pp. 491–492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 pp. 491–492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="principal-open"></a>
+Define `evaluationPrime` for a field k and an ordered tuple P as the kernel
+of k[T]→k, Tᵢⱼ↦Pᵢⱼ. Its primality follows from Mathlib
+`RingHom.ker_isPrime`. The target is the native PrimeSpectrum of k[T].
+Its API identifies its ideal with the evaluation kernel, sends Tᵢⱼ−Pᵢⱼ to
+zero, and tests D(Δ) membership by nonzero evaluation. The parameter scheme
+and evaluation morphism use Mathlib's Spec directly.
 
-**Principal-open full-jet locus.** For the chosen minor mapped into k[T], D(Δ)⊂Spec(k[T]) is the native principal open. Its k-points are exactly ordered affine tuples with eval_P Δ≠0; each such tuple is injective and J_{P,d} is onto. The witness makes this open nonempty.
+**Checks.**
+
+- At the origin over ℚ, every Tᵢⱼ belongs to the evaluation ideal and 1 does not.
+- In one coordinate, the rational tuples 0 and 1 give ideals (T) and (T−1); T lies only in the first, so their spectrum points differ.
+- With nr=0 the polynomial algebra is k, the evaluation kernel is (0), and the parameter scheme is Spec k with its unique point.
+
+(Source: COU, §3, p.492; kernel and spectrum identification is the native algebraic reformulation.)
+
+**Principal-open full-jet locus.** For any field k, r,n,d≥0 and any selected minor mapped into k[T], D(Δ)⊂Spec(k[T]) is the native principal open. Its k-points are exactly ordered affine tuples with eval_P Δ≠0; each such tuple is injective and J(P,d) is onto. A tuple with nonzero evaluation makes this open nonempty; no existence of such a tuple is needed for the implication.
 
 Map the selected integer determinant into k[T]. Use the existing AffineSpace.SpecIso to identify the ordered affine parameter space with Spec k[T]. A tuple gives the native evaluation morphism Spec k→Spec k[T] over Spec k; its image is the evaluation prime kernel and it avoids Δ exactly when its evaluation is nonzero. The selected square submatrix then gives full row rank. Repeated supports would duplicate value rows, so nonvanishing also gives distinctness.
 
-**Prerequisites:** [Nonzero maximal minor](#maximal-minor); [Universal first-jet matrix](#universal-jet-matrix); `PrimeSpectrum.basicOpen` (Mathlib); `PrimeSpectrum.mem_basicOpen` (Mathlib); `AlgebraicGeometry.Spec.map` and `Spec.map_apply` (Mathlib); `AlgebraicGeometry.AffineSpace.SpecIso` (Mathlib); **SchemeAndStackFoundations, SF.0**.
+*Needs:* [Universal first-jet matrix](#51-the-affine-chart-and-universal-matrix); `PrimeSpectrum.basicOpen` (Mathlib); `PrimeSpectrum.mem_basicOpen` (Mathlib); `AlgebraicGeometry.Spec.map` and `Spec.map_apply` (Mathlib); `AlgebraicGeometry.AffineSpace.SpecIso` (Mathlib).
 
-**Source:** [COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="generic-affine"></a>
-
-**Generic affine Hermite interpolation.** For algebraically closed characteristic-zero k, r≥1,d≥5,n≥1 and n(r+1)≤N(r,d), a nonempty Zariski-open locus of ordered distinct n-tuples in (A^r_k)^n has surjective value-and-first-derivative evaluation on the native degree≤d submodule. One nonempty principal open D(Δ) suffices.
+**Generic affine Hermite interpolation.** The headline `genericAffinePrincipalOpen` includes the nonzero integer minor and the nonempty full-jet principal open.  For a characteristic-zero field k, r≥1,d≥5,n≥1 and n(r+1)≤N(r,d), a nonempty Zariski-open locus of ordered distinct n-tuples in (A^r_k)^n has surjective value-and-first-derivative evaluation on the native degree≤d submodule. One nonempty principal open D(Δ) suffices.
 
 Combine the selected-minor witness, its principal-open membership criterion and the matrix representation of firstJetMap. The resulting nonempty principal open lies in the ordered-distinct locus and every tuple there is well poised.
 
-**Prerequisites:** [Principal-open full-jet locus](#principal-open); [Well-poised double points](#well-poised).
+*Needs:* [Principal-open full-jet locus](#52-a-selected-determinant-and-its-principal-open); [Well-poised double points](#14-matrix-rank-and-projective-restriction).
 
-**Source:** [COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §1, Theorem 1.1, p.1](https://arxiv.org/pdf/math/0701409v2).
+([COU, §3, p.491](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf); [BO, §1, Theorem 1.1, p.1](https://arxiv.org/pdf/math/0701409v2)).
 
-### Integer boxes and polynomial parametrizations
+### 5.3 Integer boxes and polynomial parametrizations
 
-<a id="integer-grid"></a>
-
-**Bounded integer specialization.** Under the endpoint hypotheses, with a chosen Δ of degree at most B=n(r+1)d, there is an ordered integer tuple with every coordinate in {0,…,B} and Δ nonzero. Its first jets are surjective after embedding the integers into k.
+**Bounded integer specialization.** The headline `integerGridForMinor` works over every characteristic-zero field k for any r,n,d≥0 and any nonzero selected minor Δ. With B=n(r+1)d, there is an ordered integer tuple with every coordinate in {0,…,B} and Δ nonzero. Its first jets are surjective after embedding the integers into k.
 
 For each variable take the B+1 integers 0,…,B with B=md. The contrapositive of Mathlib’s product-finset vanishing theorem gives an integer assignment where the nonzero Δ remains nonzero. Injectivity of ℤ→k preserves the determinant, giving distinct supports and surjective first jets.
 
-**Prerequisites:** [Nonzero maximal minor](#maximal-minor); [Degree of a first-jet minor](#minor-degree); `MvPolynomial.eq_zero_of_eval_zero_at_prod_finset` (Mathlib); [Principal-open full-jet locus](#principal-open).
+*Needs:* [Degree of a first-jet minor](#52-a-selected-determinant-and-its-principal-open); `MvPolynomial.eq_zero_of_eval_zero_at_prod_finset` (Mathlib); [Principal-open full-jet locus](#52-a-selected-determinant-and-its-principal-open).
 
-**Source:** [COU, §3 pp. 491–492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 pp. 491–492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-<a id="parameter-pullback"></a>
-
-**Polynomial parameter pullback.** Let θ=(θ_ij) be an integer-polynomial point parametrization in a finite set of parameters S. If Δ∘θ is nonzero and each parameter degree is at most B_s, there is an integer parameter vector with 0≤u_s≤B_s for which Δ(θ(u))≠0 and θ(u) is a distinct well-poised configuration after embedding into k.
+**Polynomial parameter pullback.** The headline `parameterPullback` works over any characteristic-zero field k. Let θ=(θ_ij) be an integer-polynomial point parametrization in a finite set of parameters S. If Δ∘θ is nonzero and each parameter degree is at most B_s, there is an integer parameter vector with 0≤u_s≤B_s for which Δ(θ(u))≠0 and θ(u) is a distinct well-poised configuration after embedding into k.
 
 Form Δ∘θ using native algebra substitution. Apply the coordinatewise product-finset theorem to this nonzero pullback with sets 0,…,B_s, then commute substitution with evaluation. Characteristic-zero integer lifting places the resulting tuple in the selected principal open.
 
-**Prerequisites:** [Universal first-jet matrix](#universal-jet-matrix); [Principal-open full-jet locus](#principal-open); `MvPolynomial.eq_zero_of_eval_zero_at_prod_finset` (Mathlib).
+*Needs:* [Universal first-jet matrix](#51-the-affine-chart-and-universal-matrix); [Principal-open full-jet locus](#52-a-selected-determinant-and-its-principal-open); `MvPolynomial.eq_zero_of_eval_zero_at_prod_finset` (Mathlib).
 
-**Source:** [COU, §3 p. 492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 492](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-### A boundary test for genericity
-
-<a id="collinear-boundary"></a>
+### 5.4 A boundary test for genericity
 
 **Special collinear configurations fail.** For P_i=(i,0)∈Q²,0≤i≤6,d=5, the first-jet matrix has rank 11 rather than21. Thus the dimension inequality alone does not imply every distinct tuple is well poised.
 
 The value and x-derivative rows factor through f(x,0), a six-dimensional polynomial space. The y-derivative rows factor through the independent coefficient slice of degree at most four, of dimension five. Ordinary univariate evaluation separates both slices at seven points, proving the exact rank 11.
 
-**Prerequisites:** [Monomial first-jet matrix](#jet-matrix); [Full row rank criterion](#jet-rank).
+*Needs:* [Monomial first-jet matrix](#14-matrix-rank-and-projective-restriction); [Full row rank criterion](#14-matrix-rank-and-projective-restriction).
 
-**Source:** [COU, §3 p. 491 genericity condition; authored counterexample](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf).
+([COU, §3 p. 491 genericity condition; authored counterexample](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf)).
 
-## Interfaces at the endpoint
+### Examples
+
+Seven collinear rational plane points have degree-five rank 6+5=11. For one point in A¹, the selected linear minor is 1 and its integer witness is the origin.
+
+### Dependencies
+
+Layers 0–4; Mathlib determinant, spectrum and product-grid vanishing APIs.
+
+## Downstream consumers
 
 For a fixed choice of columns, let Δ be the determinant of the corresponding
-square submatrix of U. GI.5 exports four compatible facts: evaluation gives
+square submatrix of U. Layer 5 exports four compatible facts: evaluation gives
 that selected minor of firstJetMatrix; its nonzero locus is a native basic
 open; its points are distinct and well poised; and its coordinate degrees
 are bounded. The choice of a nonzero minor is existential and depends on the
@@ -1216,8 +1244,7 @@ parametrization. Before parametrization it supplies independent point
 coordinates. After parametrization the caller supplies the nonzero polynomial
 Δ∘θ and bounds for its individual parameter degrees. In either case the
 integer evaluation is proved nonzero in ℤ, and characteristic zero preserves
-it in k. Algebraic closure is used to obtain the generic witness, not to
-justify integer determinant lifting.
+it in k. The proof obtains the initial generic witness over an algebraic closure, then descends the nonzero integer minor and its integer-grid witness to every characteristic-zero field.
 
 For projective consumers the restriction comparison must carry its O(d)
 trivialization and base-change square. For arithmetic consumers the coordinate
@@ -1226,9 +1253,9 @@ norm is the transported ℓ² norm. None of the interpolation statements asserts
 that an arithmetic parametrization meets the generic locus without its
 nonzero-pullback hypothesis.
 
-## Finite witness specifications
+## Worked examples
 
-The low-degree assertions in GI.3 admit a uniform exact certificate interface.
+The low-degree assertions in Layer 3 admit a uniform exact rank witness interface.
 Choose integer homogeneous support vectors and integer frames for the specified
 linear subspaces. Columns are all homogeneous monomials of the prescribed
 degree. Double-support rows are the r+1 homogeneous partials. Euler's identity
@@ -1244,7 +1271,7 @@ witness uses distinct projective supports, and subspace witnesses retain the
 listed incidence and general-position requirements. A nonzero determinant
 modulo 101 lifts to every characteristic-zero field. The passage from one
 witness to general configurations uses the appropriate irreducible incidence
-parameter and the rank-open theorem of GI.2.
+parameter and the rank-open theorem of Layer 2.
 
 | Degree and configuration | Required rank |
 | --- | ---: |
@@ -1261,3 +1288,16 @@ lifting, Euler comparison and generic openness are mathematical statements to
 prove, as are the unbounded cubic recursion and Horace induction. Exact
 arithmetic for selected small dimensions does not replace the symbolic
 exception scheduler.
+
+## References
+
+- **BO:** Maria Chiara Brambilla and Giorgio Ottaviani, *On the
+  Alexander–Hirschowitz Theorem*, [arXiv:math/0701409v2](https://arxiv.org/pdf/math/0701409v2),
+  10 September 2007. The relevant material is Theorem 1.1 and §§2–6,
+  printed pp.1–19. The arbitrary-distinct univariate observation is also in
+  the opening paragraph of §7.1, p.19. Source dimension n is called r here.
+- **COU:** Jean-Marc Couveignes, *Enumerating number fields*,
+  [Annals of Mathematics 192 (2020), 487–497](https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf),
+  §3, printed pp.491–493. This supplies the affine interpretation, matrix,
+  minor, small integer box and coefficient metric. BO's Theorem 1.1 supplies
+  the inclusive degree-5 endpoint.
