@@ -1,0 +1,40 @@
+{
+  "gaps": [
+    {
+      "slug": "k3-field-inputs",
+      "supplier": "K3BlochGroups",
+      "section": "Layer 2, §§2.1–2.2, 2.5",
+      "needs": "Supply the indecomposable field K3 quotient, Milnor K3 injectivity and the number-field rational rank formula."
+    },
+    {
+      "slug": "arithmetic-dedekind-inputs",
+      "supplier": "ArithmeticKTheory",
+      "section": "§§1.1, 2.1, 2.4, 3.2–3.4",
+      "needs": "Supply S-integer localisation, Dedekind K2 injectivity, the Steinberg-homology finite-generation criterion and number-field finite generation with positive even K-groups finite."
+    },
+    {
+      "slug": "field-motivic-comparisons",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "§§4.7–4.8",
+      "needs": "Supply field motivic cohomology and Milnor K-theory, vanishing above the weight, the weight-one complex, Bloch–Gabber–Kato and the Geisser–Levine logarithmic computation, with subfield-limit compatibility."
+    },
+    {
+      "slug": "motivic-k-comparisons",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§§4.5, 6.9",
+      "needs": "Supply the smooth perfect-field motivic tower, coefficient and Adams compatibility, rational weight comparison, and prime-to-characteristic étale comparisons and descent maps."
+    },
+    {
+      "slug": "function-field-steinberg-homology",
+      "supplier": "ArithmeticKTheory",
+      "section": "§3.2",
+      "needs": "For a smooth affine curve ring R over a finite field with fraction field F, every finite projective R-module P of positive rank and q≥0, supply finite generation of H_q(Aut_R(P);St(P⊗F)), independently of Harder finiteness."
+    },
+    {
+      "slug": "general-scheme-adams-pullback",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§6.8",
+      "needs": "Extend Adams operations to perfect K-theory of every noetherian scheme, multiplicative and compatible with every pullback, without importing regular decomposition or motivic comparison conclusions for singular schemes."
+    }
+  ]
+}

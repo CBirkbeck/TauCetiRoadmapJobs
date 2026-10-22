@@ -1,0 +1,220 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticKTheory"
+
+[[source]]
+id = "bloch"
+authors = "S. Bloch"
+title = "Algebraic K-Theory and Zeta Functions of Elliptic Curves"
+year = 1980
+locator_scheme = "page"
+locator = "p. 514, corrected-symbol construction and torsion-point specialisation"
+licence_class = "none"
+status = "waived"
+cited_for = ["7.7"]
+
+[[source]]
+id = "young"
+authors = "M. A. Young"
+title = "K2 and L-series of elliptic curves over real quadratic fields"
+year = 1995
+locator_scheme = "theorem"
+locator = "Lemma 3.1, pp. 37–38; Theorem 3.3, p. 41"
+licence_class = "none"
+status = "waived"
+cited_for = ["6.9", "7.3", "7.5", "7.6", "8.3"]
+
+[[source]]
+id = "weibel"
+authors = "C. A. Weibel"
+title = "The K-book: an introduction to algebraic K-theory"
+year = 2013
+locator_scheme = "theorem"
+locator = "I.5.14–5.16; II.8.1–8.6; III.2.5.1, 6.3–6.7, 7.2; IV.6.9, Exercise 6.13; V.1.5, 3.3.2, 3.11–3.12, 6.6–6.13.2, 9.5; VI.1.7, 2.1–2.5.1, 4.1–4.7, 6.1–6.8"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-10-22T19:12:59Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 2–7"]
+
+[[source]]
+id = "levine"
+authors = "Marc Levine"
+title = "K-theory and motivic cohomology of schemes, I"
+year = 2001
+locator_scheme = "theorem"
+locator = "Section 3.2, Lemma 3.3, Propositions 3.5, 6.8, Theorems 12.12, 14.7"
+url = "https://www.esaga.uni-due.de/f/marc.levine/publ/KthyMotI12.01.pdf"
+fetched_from = "https://www.esaga.uni-due.de/f/marc.levine/publ/KthyMotI12.01.pdf"
+fetched_at = "2026-10-22T19:13:01Z"
+sha256 = "67affc5d6f837a78281c824d21723be9af1180bb77d44e8cff9cca5b0b2ef820"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.5"]
+
+[[source]]
+id = "ddz"
+authors = "Tim Dokchitser, Rob de Jeu, Don Zagier"
+title = "Numerical verification of Beilinson's conjecture for K2 of hyperelliptic curves"
+year = 2004
+venue = "Compositio Math. 142, Issue 02 (2006), 339-373"
+doi = "10.1112/S0010437X05001892"
+arxiv = "math/0405040v2"
+locator_scheme = "theorem"
+locator = "(3.1), (3.5)–(3.6), Remark 3.8, Construction 4.1, Lemma 4.2, Proposition 4.3, Remark 4.14, Theorem 8.3"
+url = "https://arxiv.org/abs/math/0405040v2"
+fetched_from = "https://arxiv.org/pdf/math/0405040v2"
+fetched_at = "2026-10-22T19:13:05Z"
+sha256 = "a9d5c2cce63f2351991789add5ac9cd213b9783b9cbb0e648313e314eadb3ccf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.8–6.10; 7.1–7.9; 8.2–8.3"]
+
+[[source]]
+id = "dgjk"
+authors = "Neil Dummigan, Vasily Golyshev, Rob de Jeu, Matt Kerr"
+title = "The 2-part of the Bloch-Kato conjecture, and indivisibility results, for $K_2$ of some elliptic curves"
+year = 2026
+arxiv = "2605.11100v1"
+locator_scheme = "theorem"
+locator = "Propositions 2.2, 10.2, Remark 10.3, Table 10.4"
+url = "https://arxiv.org/abs/2605.11100v1"
+fetched_from = "https://arxiv.org/pdf/2605.11100v1"
+fetched_at = "2026-10-22T19:13:11Z"
+sha256 = "93ca7e61d0b9897ed6a9b8eab968ef7f31856900e7cf7a400eb7ccbe7fe3361b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["8.1; 8.3"]
+
+[[source]]
+id = "scholl"
+authors = "A. J. Scholl"
+title = "Integral elements in K-theory and products of modular curves"
+year = 2000
+locator_scheme = "theorem"
+locator = "(0.1); 1.1.1–1.1.7; 1.3.3; 1.3.6"
+url = "https://www.dpmms.cam.ac.uk/~ajs1005/preprints/k1.pdf"
+fetched_from = "https://www.dpmms.cam.ac.uk/~ajs1005/preprints/k1.pdf"
+fetched_at = "2026-10-22T19:13:13Z"
+sha256 = "7bffc95825735b551d93cf8074dba61d28131c3b6302bf855fd1f0e38349a9e6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "conrad"
+authors = "B. Conrad"
+title = "Minimal models for elliptic curves"
+year = 2015
+locator_scheme = "theorem"
+locator = "Definitions 3.1, 3.8; Example 3.9; Theorem 3.10; Remark 3.11; Corollary 4.7; Example 5.3"
+url = "https://math.stanford.edu/~conrad/papers/minimalmodel.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/minimalmodel.pdf"
+fetched_at = "2026-10-22T19:13:15Z"
+sha256 = "1093586aee9844c3c37f518d7b241175d4a64c3912839ecdd485c4c185a8b87a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project"
+year = 2026
+locator_scheme = "theorem"
+locator = "Tags 0BUG, 0FD1, 0BY1, 0BY3, 0BYC, 0BYD, 0BS6, 01T6, 00TT, 00PD, 0ADX, 0BGP, 0C2N, 0C5J, 0C5S, 0C2U, 0C2V, 0CD9, 0C2W, 0C5Z, 0C6B, 0C9Z; Example 55.10.3"
+url = "https://stacks.math.columbia.edu/download/book.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/book.pdf"
+fetched_at = "2026-10-22T19:15:44Z"
+sha256 = "5b3a46c20a9cd3c42e7f6746a30b655367dd544aa0ac837626c01e0f44deb409"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 1, 6"]
+
+[[source]]
+id = "poonen"
+authors = "B. Poonen"
+title = "Rational points on varieties"
+year = 2017
+locator_scheme = "theorem"
+locator = "Section 5.7.6, (5.7.29), Corollary 6.7.8, Exercises 2.12, 6.10"
+url = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_at = "2026-10-22T19:15:49Z"
+sha256 = "42e92ce4599420f6b72139e78cb9f5230e4bf81258c202e7cee4716887353579"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.1; 2.5"]
+
+[[source]]
+id = "bms"
+authors = "H. Bass, J. Milnor, J.-P. Serre"
+title = "Solution of the congruence subgroup problem for SLn (n ≥ 3) and Sp2n (n ≥ 2)"
+year = 1967
+locator_scheme = "theorem"
+locator = "Corollary 4.3(a); Weibel Variant III.2.5.1"
+url = "https://www.numdam.org/item/PMIHES_1967__33__59_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1967__33__59_0.pdf"
+fetched_at = "2026-10-22T19:15:50Z"
+sha256 = "b455790cdaeba5e3a313f1bd4dddfe2892e8a2035067bcdef434ef717edfb996"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.5"]
+
+[[source]]
+id = "harder"
+authors = "G. Harder"
+title = "Die Kohomologie S-arithmetischer Gruppen über Funktionenkörpern"
+year = 1977
+locator_scheme = "theorem"
+locator = "Korollar (3.2.3), p. 175; as stated in Weibel VI.6.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0010.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0010.pdf"
+fetched_at = "2026-10-22T19:22:24Z"
+sha256 = "08109da41f4caccd334c333c91f28e7a1856d88e037f2a747a6b03ca6a205742"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.5–5.6"]
+
+[[source]]
+id = "geisser-levine"
+authors = "Thomas Geisser, Marc Levine"
+title = "The K -theory of fields in characteristic p"
+year = 2000
+venue = "Inventiones Mathematicae 139"
+doi = "10.1007/s002220050014"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; as stated in Weibel VI.4.7"
+url = "https://doi.org/10.1007/s002220050014"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.5"]
+
+[[source]]
+id = "grayson"
+authors = "D. Grayson"
+title = "Finite generation of K-groups of a curve over a finite field"
+year = 1982
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0062167"
+locator_scheme = "theorem"
+locator = "Main finite-generation theorem, pp. 69–90; as stated in Weibel IV.6.9, p. 325"
+url = "https://doi.org/10.1007/bfb0062167"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.5"]
