@@ -2358,11 +2358,11 @@
     },
     {
       "slug": "gl-tempered-genericity",
-      "title": "All-place tempered GL genericity",
+      "title": "Nonarchimedean tempered GL genericity",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "SR.2.3 and SR.3.3: all-place tempered GL genericity supplement",
-      "needs": "For every characteristic-zero local field K and k≥1, prove that every irreducible unitary tempered GL_k(K) representation admits a nonzero Whittaker functional for each nondegenerate unitary character of its maximal unipotent.",
-      "detail": "Use smooth admissible representations at finite places and Casselman–Wallach representations at infinity, with continuous functionals in the latter category; include K=R,C and dyadic fields. Identify the smooth Whittaker realization and its compatibility with contragredients and tensor products. This is a general GL theorem, distinct from a relative period nonvanishing theorem (ggp discussion preceding Theorem 17.2, p. 68, ggp line 2394–2405; zhang-period §4.5, pp. 30–31, line 1469–1548).",
+      "section": "SR.2.3 and SR.3.3: nonarchimedean tempered GL genericity supplement",
+      "needs": "For every nonarchimedean characteristic-zero local field K and k≥1, prove that every irreducible unitary tempered smooth admissible complex GL_k(K) representation admits a nonzero Whittaker functional for each nondegenerate unitary character of its maximal unipotent.",
+      "detail": "Include every finite extension of Q_p, including dyadic fields. Use the Whittaker-functional and character-orbit carriers of SR.2.3 and temperedness of SR.3.3. Import archimedean genericity from AutomorphicFormsOnReductiveGroups §2.6 on the §2.7 continuous globalizations, and the smooth Whittaker realization from AutomorphicLFunctionsAndLocalFactors §AL.3 whittaker-model and Representation prerequisites, Archimedean Whittaker comparisons. Relative tensor–Hom and smooth-contragredient comparisons remain in local-categories and archimedean-globalization; the invariant Whittaker pairing and Fourier identity remain in whittaker-pairing-fourier (ggp Theorem 17.2 and preceding discussion, p. 68, ggp line 2394–2405; zhang-period §4.5, pp. 30–31, line 1469–1548).",
       "neededBy": [
         "3.10",
         "3.11",
