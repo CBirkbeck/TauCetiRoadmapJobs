@@ -1,4 +1,4 @@
-# Roadmap: arithmetic dirichlet series and tauberian methods, part II — poles of higher order
+# Roadmap: arithmetic Dirichlet series and Tauberian methods, part II — poles of higher order
 
 **Summary.** This roadmap extends the Wiener–Ikehara layer of
 [ArithmeticDirichletSeries](../../Completed/ArithmeticDirichletSeries/README.md)
@@ -22,8 +22,12 @@ The end theorems are `delangeLaplace` (Layer HP.3) and its counting forms `delan
 `delangeDirichlet_positiveAbscissa` (Layer HP.4). For `k = 0` every counting statement here is a
 special case of the parent's Wiener–Ikehara layer; the new content is `k ≥ 1`, that is, a
 generating series with a pole of order `m = k + 1 ≥ 2` at its abscissa of convergence. This is the
-situation of Wood's counts of abelian extensions with restricted inertia: for `r ≥ 1`,
-homomorphisms into `C₂^(r+1)` have inertia intersecting `C₂^r × {1}` trivially, the pole has order `2^r`, and the count grows like `X (log X)^(2^r − 1)` (Wood 2019, §7, pp. 415–417).
+situation of Wood's totally real counts: for `r ≥ 1`, the series `F_r` counts continuous
+homomorphisms from the absolute Galois group of ℚ to `C₂^(r+1)` whose finite-prime inertia images
+meet `C₂^r × {1}` trivially and whose complex conjugation is trivial. The index is the absolute
+discriminant of the quadratic character projected to the last factor, with the trivial
+homomorphism treated separately. The pole has order `2^r`, and the count grows like
+`X (log X)^(2^r − 1)` (Wood 2019, §7, pp. 416–417; wood2019 line 1652).
 
 | Layer | Title | Headline targets |
 | --- | --- | --- |
@@ -34,15 +38,13 @@ homomorphisms into `C₂^(r+1)` have inertia intersecting `C₂^r × {1}` trivia
 | HP.4 | Counting functions of Dirichlet series and perturbations | `logSummatory_hasLaplace`, `delangeDirichlet`, `delangeDirichlet_positiveAbscissa`, `finiteChange_asymptotic`, `lowerPole_perturbation` |
 | HP.5 | Zeta checks and the necessity of the boundary hypothesis | `zetaSquare_counting`, `dyadicLocalPoleCounterexample` |
 
-The layer labels HP.0–HP.5 are the labels other roadmaps cite. The definition Checks are
-proved examples when their proofs use the pinned APIs directly. Checks that require new analytic
-results are named theorem targets in `Suggested.lean`; the predicate tests and gamma, smoothing,
-counting and boundary controls below specify their hypotheses and values.
+The layer labels HP.0–HP.5 are the labels other roadmaps cite. The README states the API and
+Checks. `Suggested.lean` states the headline acceptance theorems on the pinned carriers.
 
 Suggested home: `HasLaplace` and its API in `TauCeti/Analysis/LaplaceTransform.lean`, namespace
 `TauCeti`, following Dennj Osele, “The Laplace transform”, declarations `LaplaceConvergent`,
 `laplace`, and `HasLaplace`; everything else in
-`TauCeti/NumberTheory/LSeries/HigherPole/`, namespace `TauCeti.HigherPoleTauberian`, one file per
+`TauCeti/NumberTheory/LSeries/HigherPole/`, namespace TauCeti.HigherPoleTauberian, one file per
 layer. `Suggested.lean` states the definitions and the main theorems in the namespace
 `TauCetiRoadmap.ArithmeticDirichletSeriesPartII`.
 
@@ -99,10 +101,11 @@ supplier contracts*.
   (his Theorems III and IV in full, which use complex powers and logarithms through his Lemmas 4–5)
   are not part of this roadmap: it treats pole orders `k + 1` with `k ∈ ℕ` at an abscissa `a > 0`.
 - The Laplace transform of a positive measure at real arguments (Bernstein's theorem, in
-  [OneParameterSemigroups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/OneParameterSemigroups/README.md))
-  is a different carrier from `HasLaplace`, which transforms functions of exponential growth at
-  complex arguments. The finite Fejér kernels of SieveMethodsAndPrimePatterns live on a circle;
-  `squaredSinc` is a kernel on `ℝ`. Neither is duplicated here.
+  [OneParameterSemigroups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/OneParameterSemigroups/README.md),
+  Part B — Completely monotone (and Bernstein) functions) is a different carrier from
+  `HasLaplace`, which transforms functions of exponential growth at complex arguments.
+  The periodic Fejér kernel is a function on a circle, whereas the squared-sinc kernel developed
+  here is a function on `ℝ`.
 
 ## Conventions
 
@@ -244,22 +247,23 @@ nonnegative coefficient counting functions of HP.4.1, termwise integration gives
 `Re s > 0`; the theorem uses this identity directly. The counting applications use `E = ℂ`
 and the cast `fun t ↦ (α t : ℂ)` of a real function `α`.
 
-The one-sided Laplace API follows Dennj Osele, “The Laplace transform”, declarations
-`LaplaceConvergent`, `laplace`, and `HasLaplace` (2026, `Mathlib/Analysis/LaplaceTransform.lean`,
-lines 121–123, commit `90482cd37e85e423459de2ed103cea2f4d98cb20`). Its argument order, default
-measure and scalar-action hypotheses give the shape of this predicate.
+The one-sided Laplace API follows Dennj Osele, “The Laplace transform” (2026), declarations
+`LaplaceConvergent` (lines 68–70; osele-laplace line 72), `laplace` (lines 117–118;
+osele-laplace line 121) and `HasLaplace` (lines 121–123; osele-laplace line 125) of
+`Mathlib/Analysis/LaplaceTransform.lean` at commit `90482cd37e85e423459de2ed103cea2f4d98cb20`.
+Its argument order, default measure and scalar-action hypotheses give the shape of this predicate.
 
 The API, in namespace `TauCeti`:
 
-- `HasLaplace.integrable`: `HasLaplace f s z μ` gives `Integrable (fun t ↦ exp(−st) • f t) μ`.
-- `HasLaplace.integral_eq`: `HasLaplace f s z μ` gives `∫ exp(−st) • f t ∂μ = z`.
-- `HasLaplace.unique`: `HasLaplace f s z μ` and `HasLaplace f s z' μ` give `z = z'`.
-- `HasLaplace.congr_ae`: `HasLaplace f s z μ` and `f =ᵐ[μ] g` give `HasLaplace g s z μ`.
-- `HasLaplace.add`: with `DistribSMul ℂ E`, `HasLaplace f s z μ` and `HasLaplace g s w μ` give
+- Convergence: `HasLaplace f s z μ` gives `Integrable (fun t ↦ exp(−st) • f t) μ`.
+- Integral value: `HasLaplace f s z μ` gives `∫ exp(−st) • f t ∂μ = z`.
+- Uniqueness: `HasLaplace f s z μ` and `HasLaplace f s z' μ` give `z = z'`.
+- Almost-everywhere congruence: `HasLaplace f s z μ` and `f =ᵐ[μ] g` give `HasLaplace g s z μ`.
+- Additivity: with `DistribSMul ℂ E`, `HasLaplace f s z μ` and `HasLaplace g s w μ` give
   `HasLaplace (f + g) s (z + w) μ`.
-- `HasLaplace.const_smul`: with `NormedSpace ℂ E` and `IsScalarTower ℝ ℂ E`, `HasLaplace f s z μ`
+- Scalar multiplication: with `NormedSpace ℂ E` and `IsScalarTower ℝ ℂ E`, `HasLaplace f s z μ`
   gives `HasLaplace (fun t ↦ c • f t) s (c • z) μ` for every `c : ℂ`.
-- `HasLaplace.comp_mul_left`: with `NormedSpace ℂ E`, `IsScalarTower ℝ ℂ E`, the default measure
+- Positive dilation: with `NormedSpace ℂ E`, `IsScalarTower ℝ ℂ E`, the default measure
   and `0 < c`, `HasLaplace f (s / c) z` gives `HasLaplace (fun t ↦ f (c * t)) s ((c : ℂ)⁻¹ • z)`.
   Dilation is stated only for the default measure.
 
@@ -276,16 +280,16 @@ ordinary Laplace integral; the predicate records exactly this kind of convergenc
 
 **Checks.**
 
-- `HasLaplace_test_zero`: with `[NormedAddCommGroup E] [NormedSpace ℝ E] [SMulZeroClass ℂ E]`,
+- With `[NormedAddCommGroup E] [NormedSpace ℝ E] [SMulZeroClass ℂ E]`,
   the zero function has transform `0` at every complex `s` and for every measure `μ`.
   A complex action that does not preserve zero need not give a zero integrand.
-- `HasLaplace_test_constant`: the constant function `1` has transform `1/s` whenever
+- The constant function `1` has transform `1/s` whenever
   `Re s > 0`. A Stieltjes-type definition gives `1` instead.
-- `HasLaplace_test_quadratic`: `t ↦ t²` has transform `2/s³` whenever `Re s > 0`. A
+- `t ↦ t²` has transform `2/s³` whenever `Re s > 0`. A
   Stieltjes-type definition gives `2/s²`. The value is also the case `a = 0`, `k = 2` of the
   Gamma model HP.2.1, whose constant `k!` it fixes: a model with a stray factor `1/k!` or with
   `t^(k−1)` fails it.
-- `HasLaplace_test_nonintegrable`: `HasLaplace (fun _ ↦ 1) 0 0` is false. A definition recording
+- `HasLaplace (fun _ ↦ 1) 0 0` is false. A definition recording
   only the value of the integral would accept it, because the totalised integral of the
   non-integrable constant is `0`.
 
@@ -314,31 +318,31 @@ derives `g(a) > 0` from `g(a) ≠ 0` (p. 237), whereas the theorems here take `0
 hypothesis. Compared with the parent's Layer 9, which asks only for a continuous extension of
 `F(s) − κ/(s − 1)` to the closed half-plane, the hypothesis is stronger at `k = 0`.
 
-The API, in namespace `TauCeti.HigherPoleTauberian`:
+The API, in namespace TauCeti.HigherPoleTauberian:
 
-- `PoleBoundary.congr`: if `F s = G s` for every `s` with `a < s.re`, then `PoleBoundary F a k A`
+- Agreement on the open half-plane: if `F s = G s` for every `s` with `a < s.re`, then `PoleBoundary F a k A`
   gives `PoleBoundary G a k A`; no equality on the line is needed.
-- `PoleBoundary.leading_unique`: `PoleBoundary F a k A` and `PoleBoundary F a k B` give `A = B`.
-- `PoleBoundary.order_unique`: `PoleBoundary F a k A`, `PoleBoundary F a l B`, `A ≠ 0` and `B ≠ 0`
+- Uniqueness of the leading coefficient: `PoleBoundary F a k A` and `PoleBoundary F a k B` give `A = B`.
+- Uniqueness of the pole order: `PoleBoundary F a k A`, `PoleBoundary F a l B`, `A ≠ 0` and `B ≠ 0`
   give `k = l`.
-- `PoleBoundary.div_argument`: for `0 < a`, `PoleBoundary F a k A` gives
+- Division by the argument in HP.0.2: for `0 < a`, `PoleBoundary F a k A` gives
   `PoleBoundary (fun s ↦ F s / s) a k (A / a)`.
-- `PoleBoundary.rescale`: for `0 < a`, `PoleBoundary F a k A` gives
+- Rescaling in HP.0.2: for `0 < a`, `PoleBoundary F a k A` gives
   `PoleBoundary (fun s ↦ F (a * s)) 1 k (A / a^(k+1))`.
-- `PoleBoundary.mul_regular`: if `H` is analytic at every point of `{s | a ≤ s.re}` and `H a = C`
+- Multiplication by a regular function: if `H` is analytic at every point of `{s | a ≤ s.re}` and `H a = C`
   with `C` real, then `PoleBoundary F a k A` gives `PoleBoundary (fun s ↦ F s * H s) a k (A * C)`.
-- `PoleBoundary.mul`: `PoleBoundary F a k A` and `PoleBoundary G a l B` give
+- The product rule of HP.0.2: `PoleBoundary F a k A` and `PoleBoundary G a l B` give
   `PoleBoundary (fun s ↦ F s * G s) a (k + l + 1) (A * B)`; the pole orders add.
 
-*Proof sketch.* `congr`: every field mentions `F` only on the open half-plane. `leading_unique`:
+*Proof sketch.* Agreement: every field mentions `F` only on the open half-plane. Leading coefficient:
 two numerators `g`, `g'` agree on the half-disc where both represent `F`, a nonempty open set,
-hence on the connected disc by the identity theorem, and so `g a = g' a`. `order_unique`: if
+hence on the connected disc by the identity theorem, and so `g a = g' a`. Pole order: if
 `k < l`, then `g (s − a)^(l−k) = g'` on the half-disc, hence on the disc, and evaluating at `a`
-gives `B = 0`. `div_argument`: shrink the disc so that it avoids `0` (possible as `a > 0`); `g/s`
+gives `B = 0`. Division: shrink the disc so that it avoids `0` (possible as `a > 0`); `g/s`
 is analytic there with value `A/a`, and every germ `g_y/s` is analytic near `a + iy ≠ 0`.
-`rescale`: `s ↦ as` maps `Re s > 1` onto `Re s > a`, the disc of radius `r/a` about `1` into the
+Rescaling: `s ↦ as` maps `Re s > 1` onto `Re s > a`, the disc of radius `r/a` about `1` into the
 disc of radius `r` about `a`, and `a + iay` to the germ at `a + i(ay)`; the new numerator is
-`g(as)/a^(k+1)`. `mul_regular`: multiply the numerator and every germ by `H`. `mul`: with
+`g(as)/a^(k+1)`. Regular multiplication: multiply the numerator and every germ by `H`. Products: with
 numerators `g` and `h`, on the smaller of the two discs the product is
 `g(s) h(s)/(s − a)^(k+l+2)`, with numerator value `A B`,
 and the germs multiply. *Needs:* Mathlib
@@ -350,25 +354,25 @@ hypotheses.
 
 **Checks.**
 
-- `PoleBoundary_test_model`: for all real `a`, `A` and natural `k`,
+- For all real `a`, `A` and natural `k`,
   `F(s) = A/(s − a)^(k+1)` satisfies `PoleBoundary F a k A` (constant numerator; the germs away
   from `a` are `F` itself).
-- `PoleBoundary_test_wrong_leading`: `F(s) = 1/(s − 1)` does not satisfy `PoleBoundary F 1 0 2`;
+- `F(s) = 1/(s − 1)` does not satisfy `PoleBoundary F 1 0 2`;
   a definition that did not tie the numerator's value to `A` would accept it.
-- `PoleBoundary_test_boundary_value`: `1/(s − 1)` redefined to be `37` at `s = 1` still satisfies
+- `1/(s − 1)` redefined to be `37` at `s = 1` still satisfies
   `PoleBoundary · 1 0 1`; a definition asking for agreement on the closed half-plane fails.
-- `PoleBoundary_test_dyadic`: `F(s) = 1/(1 − e^((1−s) log 2))` does not satisfy
+- `F(s) = 1/(1 − e^((1−s) log 2))` does not satisfy
   `PoleBoundary F 1 0 (1/log 2)`, because of its further poles at `1 + 2πim/log 2`, `m ≠ 0`,
   although it has the right local form at `1` (HP.5.2). A definition with only the `pole` field
   would accept it.
-- `PoleBoundary_test_zero_not_exact`: for `A ≠ 0`, the zero function satisfies no
+- For `A ≠ 0`, the zero function satisfies no
   `PoleBoundary · a k A`: its numerator vanishes on a half-disc, hence at `a`.
 
 ### Examples
 
 - `riemannZeta` satisfies `PoleBoundary riemannZeta 1 0 1`: the numerator is `(s − 1) ζ(s)`,
   redefined as `1` at `s = 1` (removable by `riemannZeta_residue_one`), and the germs away from
-  `1` are `ζ` itself (`analyticOn_riemannZeta`). By `PoleBoundary.mul`, its powers give
+  `1` are `ζ` itself (`analyticOn_riemannZeta`). By the product rule of HP.0.2, its powers give
   `PoleBoundary (ζ^m) 1 (m − 1) 1` for every `m ≥ 1`.
 - The transform of `e^(at) t^k` is HP.2.1; the transform of a logarithmic counting function is
   HP.4.1.
@@ -407,14 +411,14 @@ itself.
 
 The API:
 
-- `squaredSinc_nonneg`: `0 ≤ K_λ(v)` for `λ > 0` and all `v`.
-- `squaredSinc_even`: `K_λ(−v) = K_λ(v)` for all `λ`, `v`.
-- `squaredSinc_continuous`: `K_λ` is continuous for every real `λ`.
-- `squaredSinc_integrable`: `K_λ` is Lebesgue integrable on `ℝ` for `λ > 0`.
+- Nonnegativity: `0 ≤ K_λ(v)` for `λ > 0` and all `v`.
+- Evenness: `K_λ(−v) = K_λ(v)` for all `λ`, `v`.
+- Continuity: `K_λ` is continuous for every real `λ`.
+- Integrability: `K_λ` is Lebesgue integrable on `ℝ` for `λ > 0`.
 - `squaredSinc_mass`: `∫_ℝ K_λ = 1` for `λ > 0`.
 - `squaredSinc_fourier`: the displayed triangle formula, as an equality of complex numbers, for
   `λ > 0` and every `v`.
-- `squaredSinc_tail`: for `h > 0`, `∫_{|v| ≥ h} K_λ(v) dv → 0` as `λ → ∞`.
+- Tail concentration: for `h > 0`, `∫_{|v| ≥ h} K_λ(v) dv → 0` as `λ → ∞`.
 
 *Proof sketch.* Continuity and evenness come from `Real.continuous_sinc` and the evenness of
 `sinc`. Integrability: `K_λ ≤ λ/π` everywhere (`Real.abs_sinc_le_one`) and
@@ -444,12 +448,14 @@ of the kernel, its mass near the origin and its tails drive the Tauberian step.
 
 **Checks.**
 
-- `squaredSinc_test_origin`: `K_λ(0) = λ/π` for every real `λ`. This pins `Real.sinc 0 = 1` and the
+- `K_λ(0) = λ/π` for every real `λ`. This pins `Real.sinc 0 = 1` and the
   factor `λ/π`.
-- `squaredSinc_test_zero`: `K_λ(π/λ) = 0` for `λ > 0`: the first zero sits at `π/λ`, matching the
+- `K_λ(π/λ) = 0` for `λ > 0`: the first zero sits at `π/λ`, matching the
   frequency endpoint `2λ`. A kernel built with `sinc(λv/2)`, that is with frequency endpoint `λ`,
   fails (its value there is `(λ/π)·(2/π)²`).
-- `squaredSinc_test_mass_two`: `∫_ℝ K_2 = 1`. A missing factor `π` or `λ` fails.
+- `∫_ℝ K_2 = 1`. A missing factor `π` or `λ` fails.
+- `K_1(0) = 1/π` and `K_1(2π) = 0`, so the kernel on `ℝ` is not `2π`-periodic; it cannot
+  be substituted for the periodic Fejér kernel on a circle.
 
 ### HP.1.2 Delange's polynomial weight
 
@@ -479,14 +485,14 @@ positive cutoff gives the same limits, and `1` is used here.
 
 The API:
 
-- `delangeWeight_continuous`: `w_k` is continuous on `ℝ` for every `k`.
-- `delangeWeight_nonneg`: `0 ≤ w_k(t)` for `t ≥ 0`.
-- `delangeWeight_pos`: `0 < w_k(t)` for `t > 0`.
+- Continuity: `w_k` is continuous on `ℝ` for every `k`.
+- Nonnegativity: `0 ≤ w_k(t)` for `t ≥ 0`.
+- Positivity: `0 < w_k(t)` for `t > 0`.
 - `delangeWeight_normalization`: `w_k(t) tᵏ → 1` as `t → ∞`.
 - `delangeWeight_shift`: for each fixed real `h`, `w_k(t + h)/w_k(t) → 1` as `t → ∞`.
-- `delangeWeight_shift_uniform`: for each `H > 0`,
+- Uniform shifts: for each `H > 0`,
   `sup_{|h| ≤ H} |w_k(t + h)/w_k(t) − 1| → 0` as `t → ∞`.
-- `delangeWeight_bound`: `w_k(t) tᵏ ≤ 1` for `t ≥ 0`.
+- Normalized bound: `w_k(t) tᵏ ≤ 1` for `t ≥ 0`.
 
 *Proof sketch.* Continuity: the integrand is jointly continuous and the `u`-interval is compact.
 The incomplete-Gamma identity gives nonnegativity, positivity for `t > 0` and the bound, since the
@@ -500,7 +506,7 @@ w_k(t + h)/w_k(t) = [w_k(t + h)(t + h)ᵏ] / [w_k(t) tᵏ] · (t/(t + h))ᵏ →
 
 and for a fixed `H > 0` the convergence is uniform in `|h| ≤ H`, because both normalised weights
 tend to `1` once `t − H` is large and `(t/(t + h))ᵏ → 1` uniformly in `|h| ≤ H`; this uniform
-form, `delangeWeight_shift_uniform`, is what HP.3.1 uses. The explicit cases below
+form, the uniform shift limit of HP.1.2, is what HP.3.1 uses. The explicit cases below
 follow by integrating a polynomial times an exponential. *Needs:* Mathlib Gamma function.
 
 *Source.* Delange (1954), §3.1–3.2, pp. 220–221 (the function `v`, its positivity and
@@ -509,10 +515,10 @@ monotonicity, and `v(t + h)/v(t) → 1`); Lemma 3, §5.1.1, pp. 231–232 (the A
 
 **Checks.**
 
-- `delangeWeight_test_origin`: `w_k(0) = 0` for every `k`.
-- `delangeWeight_test_simple`: `w_0(t) = 1 − e^(−t)` for every real `t`.
-- `delangeWeight_test_double`: `t · w_1(t) = 1 − (1 + t) e^(−t)` for every real `t`.
-- `delangeWeight_test_triple`: `t² · w_2(t) = 1 − (1 + t + t²/2) e^(−t)` for every real `t`.
+- `w_k(0) = 0` for every `k`.
+- `w_0(t) = 1 − e^(−t)` for every real `t`.
+- `t · w_1(t) = 1 − (1 + t) e^(−t)` for every real `t`.
+- `t² · w_2(t) = 1 − (1 + t + t²/2) e^(−t)` for every real `t`.
   Without the `1/k!` the right side would be `2 − (2 + 2t + t²) e^(−t)`.
 
 ### Examples
@@ -561,9 +567,9 @@ Only nonnegative integer powers are needed here.
 
 **Checks.**
 
-- `integerGammaLaplace_test_zero`, `k = 0`: the transform of `e^(at)` is `1/(s − a)`.
-- `integerGammaLaplace_test_one`, `k = 1`: the transform of `e^(at) t` is `1/(s − a)²`.
-- `a = 0`, `k = 2`: this is `HasLaplace_test_quadratic`, value `2/s³`.
+- `k = 0`: the transform of `e^(at)` is `1/(s − a)`.
+- `k = 1`: the transform of `e^(at) t` is `1/(s − a)²`.
+- `a = 0`, `k = 2`: the quadratic transform Check of HP.0.1 gives `2/s³`.
 
 ### HP.2.2 Locally integrable regularised boundary values
 
@@ -590,7 +596,8 @@ behaviour of `F` alone.
    meromorphic at `a` with a pole of order at most `k`; Tau Ceti's Laurent data
    (`TauCeti.Contour.exists_laurent_data_of_meromorphicAt`), applied to this quotient and not to
    the values of `F` on the line, write it as a principal part `∑_{1≤j≤k} c_j/(s − a)^j` plus a
-   function analytic at `a`. For `k = 0`, `R` is analytic at `a`.
+   function analytic at `a`. For `k = 0`, the restriction of `R` to the open half-plane has an
+   analytic continuation across `a`; the raw total function can have a different value there.
 2. Split `u ∈ [0, 1]` into a part inside the disc and its complement. A principal term of order
    `j ≤ k` has derivative of size `|s − a|^(−j−1)`. With `s − a = ε + u + iy` and `ε, u ≥ 0`,
    `|ε + u + iy| ≥ (u + |y|)/√2`, so
@@ -601,7 +608,7 @@ behaviour of `F` alone.
 
    uniformly in small `ε > 0`. The factor `uᵏ` is what turns a power singularity into a
    logarithm, and the majorant is integrable near `y = 0`; the single point `y = 0` is a null set.
-3. On a compact `y`-interval avoiding `0`, the `away` germs make `R′` continuous up to the line;
+3. On a compact `y`-interval avoiding `0`, the `away` germs continue `R′` continuously across the line;
    a finite cover by the discs of the `away` field gives uniform convergence of `H(a + ε + iy)`
    to `b(y) = −∫₀¹ R̃′(a + u + iy) uᵏ/k! du`, where `R̃` is the continuation, with a uniform bound.
    The part of the `u`-integral away from the line is continuous in `(ε, y)` on a compact set.
@@ -621,11 +628,14 @@ behaviour through his Lemmas 1–2; under the holomorphic hypothesis of `PoleBou
 
 **Checks.**
 
-- `regularizedBoundary_test_log`: a remaining pole of order `j ≤ k` produces at most a logarithmic singularity in `y`, never a
+- A remaining pole of order `j ≤ k` produces at most a logarithmic singularity in `y`, never a
   non-integrable power. For `k = 1`, `c ∈ ℂ` and `R(s) = c/(s − a)`, the boundary value is
   `b(y) = c ∫₀¹ u/(u + iy)² du = c (log(1 + iy) − log(iy) + iy/(1 + iy) − 1)` for `y ≠ 0`
   (principal logarithm), which grows like `−c log |y|` as `y → 0`.
-- `regularizedBoundary_test_model`: for the model `F = A/(s − a)^(k+1)` the remainder `R` is `0`, so `H = 0` and `b = 0`.
+- For the model `F = A/(s − a)^(k+1)` the remainder `R` is `0`, so `H = 0` and `b = 0`.
+- Updating the simple model to `37` at its pole leaves `PoleBoundary` unchanged. The raw
+  remainder has value `37` at `a = 1` and value `0` at `1 + ε` for every `ε > 0`, so it is
+  discontinuous at the pole; its analytic continuation from the open half-plane is zero.
 
 ### HP.2.3 The smoothed limit
 
@@ -669,7 +679,7 @@ limit is nonnegative, so the hypotheses force `A ≥ 0`.)
 3. *Letting `ε → 0`.* On the right, `regularizedBoundaryL1` gives convergence to
    `(1/2π) ∫ b(y) (1 − |y|/(2λ)) e^(iyT) dy`. On the left, the `β`-part converges by dominated
    convergence, because `w_k(t) e^(−at) β(t) = (A/k!) w_k(t) tᵏ` is bounded
-   (`delangeWeight_bound`). The `α`-part is nonnegative: Fatou's lemma
+   (the normalized bound of HP.1.2). The `α`-part is nonnegative: Fatou's lemma
    (`MeasureTheory.lintegral_liminf_le'`) and the finiteness of the limit give integrability of
    the undamped product, which proves the first conclusion, and dominated convergence with that
    product as majorant removes `ε`. This proves the undamped identity before any limit in `T` is
@@ -694,7 +704,7 @@ unnormalised kernel); §4.1, pp. 228–229.
 
 **Checks.**
 
-- `delangeSmoothedLimit_test_model`: `α(t) = e^(at) tᵏ` is nonnegative and nondecreasing on `[0, ∞)`, has transform
+- `α(t) = e^(at) tᵏ` is nonnegative and nondecreasing on `[0, ∞)`, has transform
   `k!/(s − a)^(k+1)` (HP.2.1) and satisfies `PoleBoundary` with `A = k!`; the theorem gives the
   limit `1`, and directly `w_k(t) e^(−at) α(t) = w_k(t) tᵏ → 1`.
 
@@ -731,7 +741,7 @@ needed at every bandwidth: one bandwidth does not suffice.
 1. *A bound for `J`.* Fix `h > 0` and `λ > 0` such that `K_λ` has positive mass `m` on
    `[−h/2, h/2]`. In the convolution centred at `T + h/2`, keep only `t ∈ [T, T + h]`. There
    `α(t) ≥ α(T)`, `e^(−at) ≥ e^(−ah) e^(−aT)`, and, for `T` large, `w_k(t) ≥ (1 − η) w_k(T)` by
-   `delangeWeight_shift_uniform`. So the convolution is at least
+   the uniform shift limit of HP.1.2. So the convolution is at least
    `(1 − η) e^(−ah) m J(T)`, and its limit bounds `J(T)` for large `T`. On compact intervals `α`
    is bounded (it is monotone) and `w_k` is continuous, so `J ≤ M` on `[0, ∞)` for some `M`.
 2. *Two-sided comparison.* The same window gives `limsup J ≤ C e^(ah) / ((1 − η) m)`. For the lower
@@ -739,7 +749,7 @@ needed at every bandwidth: one bandwidth does not suffice.
    `e^(−at) ≤ e^(ah) e^(−aT)` and `w_k(t) ≤ (1 + η) w_k(T)`; the rest of the convolution is at
    most `M` times the mass of `K_λ` outside `[−h/2, h/2]`.
 3. *Limits.* Let `T → ∞` at fixed `λ` and `h`; then `λ → ∞` at fixed `h`, so that the mass of
-   `[−h/2, h/2]` tends to `1` and the tails to `0` (`squaredSinc_tail`); then `h → 0`, so that
+   `[−h/2, h/2]` tends to `1` and the tails to `0` (the tail concentration of HP.1.1); then `h → 0`, so that
    `e^(±ah) → 1`. Both `limsup J` and `liminf J` equal `C`.
 4. Finally `α(t)/(e^(at) tᵏ) = J(t)/(w_k(t) tᵏ)` and `w_k(t) tᵏ → 1`. The case `C = 0` is
    included.
@@ -752,14 +762,14 @@ first in the bandwidth and then in the window. The bound is derived, not assumed
 
 **Checks.**
 
-- `monotoneUnsmoothing_test_one_bandwidth`: one bandwidth is not enough. For every `a > 0`,
+- One bandwidth is not enough. For every `a > 0`,
   `C > 0`, `λ > 0` and `k ∈ ℕ`, such a counterexample exists. Take a small `ε > 0`, and `α` with
   `J(t) = C + ε cos(3λt)` for `t ≥ t₀`, continued as a nondecreasing nonnegative function on
   `[0, t₀]`. For `ε < aC/(a + 3λ)` and `t₀` large, `α(t) = J(t) e^(at)/w_k(t)` is nondecreasing
   on `[t₀, ∞)` as well: its logarithmic derivative is at least `a − 3λε/(C − ε) − w_k′(t)/w_k(t)`,
   and `w_k′/w_k → 0`. The convolution with this one `K_λ` tends to `C`, since the Fourier transform
   of `K_λ` vanishes at the frequency `3λ`, but `J` has no limit.
-- `monotoneUnsmoothing_test_zero`, `C = 0`: the theorem gives `α(t) = o(e^(at) tᵏ)`.
+- `C = 0`: the theorem gives `α(t) = o(e^(at) tᵏ)`.
 
 ### HP.3.2 Delange's theorem
 
@@ -788,9 +798,9 @@ hypotheses on p. 213.
 
 **Checks.**
 
-- `delangeLaplace_test_simple`, `k = 0`: `α(t) ~ A e^(at)`, Ikehara's theorem under holomorphic continuation of the boundary.
-- `delangeLaplace_test_double`, `k = 1`: `α(t) ~ A e^(at) t`, coefficient `A` and one power of `t`.
-- `delangeLaplace_test_model`: the model `α(t) = e^(at) tᵏ`, with `A = k!`, gives the limit `1`.
+- `k = 0`: `α(t) ~ A e^(at)`, Ikehara's theorem under holomorphic continuation of the boundary.
+- `k = 1`: `α(t) ~ A e^(at) t`, coefficient `A` and one power of `t`.
+- The model `α(t) = e^(at) tᵏ`, with `A = k!`, gives the limit `1`.
   The ratio itself tends to `1` for every real `a`, by cancellation for `t > 0`.
 
 ### Examples
@@ -848,13 +858,13 @@ given discriminant; the bridge above is derived independently.
 
 **Checks.**
 
-- `logSummatory_test_initial`: `S_c(e^0) = c 1`.
-- `logSummatory_test_unit_mass`: for the sequence with `c 1 = 1` and all other coefficients `0`,
+- `S_c(e^0) = c 1`.
+- For the sequence with `c 1 = 1` and all other coefficients `0`,
   `α = 1` on `[0, ∞)` and the transform is `1/s`.
-- `logSummatory_test_endpoint`: `S_c(e^(log 2)) = c 1 + c 2`; an exclusive cutoff gives `c 1`.
+- `S_c(e^(log 2)) = c 1 + c 2`; an exclusive cutoff gives `c 1`.
 - `Re s > 0` cannot be dropped: for the sequence with only `c 1 = 1` the series converges at every
   `s` with sum `1`, in particular at `s = 0`, but `α = 1` on `[0, ∞)` has no Laplace transform at
-  `s = 0` (`HasLaplace_test_nonintegrable`), and `F(s)/s` is undefined there.
+  `s = 0` (the nonintegrability Check of HP.0.1), and `F(s)/s` is undefined there.
 
 ### HP.4.2 Counting at abscissa one
 
@@ -870,21 +880,30 @@ The hypotheses are genuine analytic continuation along the whole line `Re s = 1`
 leading coefficient; `m = k + 1 ≥ 1`.
 
 *Proof sketch.* HP.4.1 at every `s` with `Re s > 1` gives `α(t) = S_c(eᵗ)` with transform
-`F(s)/s`, nonnegative and nondecreasing. `PoleBoundary.div_argument` at `a = 1` gives
+`F(s)/s`, nonnegative and nondecreasing. Division by the argument in HP.0.2 at `a = 1` gives
 `PoleBoundary (F/s) 1 k A`. HP.3.2 gives `α(t)/(eᵗ tᵏ) → A/k!`; substitute `t = log X` for
 `X > 1`, using `e^(log X) = X` and `log X → ∞`. *Needs:* HP.0.2, HP.3.2, HP.4.1.
 
 *Source.* Delange (1954), Theorem III, §5.2.1, pp. 235–238. Wood (2019), §7, p. 417: for the
-series `F_r`, for `r ≥ 1`, counts homomorphisms into `C₂^(r+1)` with the prescribed inertia restriction
-relative to `C₂^r × {1}`; its pole at `1` has order `2^r` and its partial sums are asymptotic to
-a constant times `X (log X)^(2^r − 1)`. The analytic hypotheses needed for this step are explicit here.
+series `F_r`, for `r ≥ 1`, the coefficients count continuous homomorphisms from the absolute
+Galois group of ℚ to `C₂^(r+1)` whose finite-prime inertia images meet `C₂^r × {1}` trivially
+and whose complex conjugation is trivial (wood2019 line 1652). The index is the absolute
+discriminant of the quadratic character projected to the last factor, with the trivial
+homomorphism treated separately (§7, p. 416; wood2019 line 1617). Its pole at `1` has order
+`2^r` and its partial sums are asymptotic to a constant times `X (log X)^(2^r − 1)`
+(wood2019 line 1692). Variants allowing nontrivial complex conjugation are separate applications
+with their own series. The analytic hypotheses needed for this step are explicit here.
 
 **Checks.**
 
-- `counting_test_ones`: `c n = 1` for `n ≥ 1`: `F = ζ`, `PoleBoundary ζ 1 0 1`, and
+- `c n = 1` for `n ≥ 1`: `F = ζ`, `PoleBoundary ζ 1 0 1`, and
   `S(X)/X → 1`, with the `n = 0` coefficient suppressed; this agrees with the elementary count
   `⌊X⌋/X → 1`.
 - The divisor function, `k = 1`: `S(X)/(X log X) → 1` (HP.5.1).
+- For `r = 1`, the character of ℚ(i) embedded in the last `C₂` factor has image
+  `{0} × C₂`, whose intersection with `C₂ × {0}` is `{(0, 0)}`; it satisfies the finite-prime
+  inertia condition. Complex conjugation maps to `(0, 1)`, so this homomorphism is excluded
+  from `F_1`. The last-factor character has absolute discriminant `4`.
 
 ### HP.4.3 Counting at a positive abscissa
 
@@ -899,10 +918,10 @@ S_c(X) / (X^a (log X)ᵏ) → A/(a · k!)        as X → ∞,
 where `X^a` is `Real.rpow` (and `X > 1` eventually). The hypothesis `a > 0` is essential; no
 theorem at `a = 0` is asserted.
 
-*Proof sketch.* The bridge HP.4.1 applies on `Re s > a > 0`. `PoleBoundary.div_argument` changes
+*Proof sketch.* The bridge HP.4.1 applies on `Re s > a > 0`. Division by the argument in HP.0.2 changes
 the leading coefficient to `A/a` on the same line. HP.3.2 gives
 `α(t) ~ (A/(a·k!)) e^(at) tᵏ`; substitute `t = log X`, using `e^(a log X) = X^a`. An independent
-check of the constant: `PoleBoundary.rescale` moves the pole to `1` with leading coefficient
+check of the constant: Rescaling in HP.0.2 moves the pole to `1` with leading coefficient
 `A/a^(k+1)`, and the time dilation `t ↦ at` contributes `aᵏ`; the product is `A/a`. *Needs:*
 HP.0.2, HP.3.2, HP.4.1.
 
@@ -912,13 +931,13 @@ logarithmic counting function.
 
 **Checks.**
 
-- `counting_test_abscissa_two`: `c n = n` has series `ζ(s − 1)`, a simple pole at `a = 2` with
+- `c n = n` has series `ζ(s − 1)`, a simple pole at `a = 2` with
   numerator `1`, and `S_c(X)/X² → 1/2 = A/a`; without the factor `1/a` the prediction would be `1`.
   This agrees with the elementary `⌊X⌋(⌊X⌋ + 1)/2`.
 - At `a = 1` the statement is HP.4.2.
 - At `k = 0` the constant `A/a` is the constant `κ/σ` of the parent's positive-abscissa variant
   (`TauCeti.LSeries.wienerIkehara_rpow`).
-- `counting_test_abscissa_zero`, a negative control: `c n = 1/n` has series `ζ(s + 1)`, convergent on
+- A negative control: `c n = 1/n` has series `ζ(s + 1)`, convergent on
   `Re s > 0` with a simple pole at `0` and numerator value `1`, but `S_c(X) = ∑_{1≤n≤X} 1/n ~ log X`
   is not a constant multiple of `X^0 (log X)^0`. The transform `ζ(s + 1)/s` of `S_c(eᵗ)` has a
   pole of order two at `0`: at `a = 0` dividing by `s` raises the order of the pole instead of
@@ -943,7 +962,7 @@ coefficient, is set aside.
 
 **Checks.**
 
-- `counting_test_insert_one`: adding `7` at `n = 1` to the divisor function leaves the limit of
+- Adding `7` at `n = 1` to the divisor function leaves the limit of
   `S(X)/(X log X)` equal to `1`.
 
 ### HP.4.5 Errors dominated by a lower-order pole
@@ -968,17 +987,26 @@ proof of its hypotheses are arithmetic input to the application.
 
 **Checks.**
 
-- `lowerPole_test_equal_order`: the inequality `l < k` is strict. Take `c = b = 1` and `d = 2`
-  on positive integers. Then `|d − c| ≤ b`, the majorant has the same simple pole as `c`
-  (`counting_test_ones`), and the limit at scale `X` changes from `1` to `2`.
-- A perturbation known only to have a local pole is not covered: the dyadic series (HP.5.2) has the
-  local form of a simple pole and no counting asymptotic.
+- The inequality `l < k` is strict. Take `c = b = 1` and `d = 2` on positive integers, and set
+  all three coefficients to zero at `n = 0`. Then `|d n − c n| ≤ b n` gives `0 ≤ 0` at zero
+  and `1 ≤ 1` at each positive integer. The majorant has the same simple pole as `c`, and the
+  limit at scale `X` changes from `1` to `2` (the count of ones in HP.4.2).
+- For `a = 1`, `k = 1`, `l = 0`, take `c(n) = d₂(n) = #(Nat.divisors n)`,
+  `d(n) = d₂(n) + (−1)^n` and `b(n) = 1`
+  on positive integers, with all three coefficients zero at zero. The error has absolute value
+  one at every positive integer, and the majorant has series `ζ` and a simple pole. At integer
+  cutoffs `1, 2, 3, 4`, the signed summatory errors are `−1, 0, −1, 0`; at every real cutoff
+  they lie in `{0, −1}`. Both sums divided by `X log X` tend to `1`, so this lower-order
+  majorant preserves the double-pole asymptotic (HP.5.1).
 
 ### Examples
 
-- Wood's counts (Wood 2019, §7), for `r ≥ 1`: homomorphisms into `C₂^(r+1)` with inertia intersecting
-  `C₂^r × {1}` trivially give a generating series with pole order `2^r` at `s = 1`, so
-  `k = 2^r − 1`; HP.4.2 gives the main term `X (log X)^(2^r − 1)` with constant `A/(2^r − 1)!`,
+- Wood's totally real counts (Wood 2019, §7, pp. 416–417; wood2019 line 1652), for `r ≥ 1`:
+  continuous homomorphisms into `C₂^(r+1)` with finite-prime inertia meeting `C₂^r × {1}`
+  trivially and trivial complex conjugation give the series `F_r`, indexed by the absolute
+  discriminant of the last-factor quadratic character, with the trivial homomorphism treated
+  separately. It has pole order `2^r` at `s = 1`, so `k = 2^r − 1`; HP.4.2 gives the main term
+  `X (log X)^(2^r − 1)` with constant `A/(2^r − 1)!`,
   HP.4.4 removes the trivial homomorphism, and HP.4.5 removes the non-surjective ones once they are
   dominated by the coefficients of a series with a pole of order `2^(r−1)`.
 
@@ -1022,12 +1050,13 @@ function convention.
 
 **Checks.**
 
-- `counting_test_insert_one`: replacing `d` by `d + 7 · 1[n = 1]` keeps the limit `1` (HP.4.4).
-- `counting_test_ones`: `c n = 1` for `n ≥ 1`, the simple pole of `ζ`, gives `S(X)/X → 1`.
-- `counting_test_divisor_fourfold`: `d₄ = σ₀ * σ₀` has series `ζ(s)⁴`, a pole of order four with
+- Replacing `d` by `d + 7 · 1[n = 1]` keeps the limit `1` (HP.4.4).
+- `c n = 1` for `n ≥ 1`, the simple pole of `ζ`, gives `S(X)/X → 1`.
+- `d₄ = σ₀ * σ₀` has series `ζ(s)⁴`, a pole of order four with
   numerator value `1`, so `∑_{n≤X} d₄(n) / (X (log X)³) → 1/6 = 1/3!`. Normalising by `k`,
   `(k − 1)!` or `(k + 1)!` would give `1/3`, `1/2` or `1/24`. This is the pole order of Wood's
-  count into `C₂³`, with inertia intersecting `C₂² × {1}` trivially (`r = 2`).
+  totally real count into `C₂³`, with finite-prime inertia meeting `C₂² × {1}` trivially and
+  trivial complex conjugation (`r = 2`; wood2019 line 1652).
 
 ### HP.5.2 A local pole is not enough: the dyadic series
 
@@ -1062,11 +1091,11 @@ ratio `S_c(X)/X` stays between positive bounds but has no limit.
 
 **Checks.**
 
-- `dyadic_test_values`: the exact formulas `S_c(2^j) = 2^(j+1) − 1` and
+- The exact formulas `S_c(2^j) = 2^(j+1) − 1` and
   `S_c(3 · 2^j) = 2^(j+2) − 1` give `S_c(1) = 1`, `S_c(2) = 3`, `S_c(3) = 3`, `S_c(4) = 7`, `S_c(6) = 7`,
   `S_c(8) = 15`, `S_c(12) = 15`; the ratios at `2^j` are `1, 3/2, 7/4, 15/8 → 2` and at `3 · 2^j`
   are `1, 7/6, 5/4, … → 4/3`.
-- `dyadic_test_residue`: `1/log 2 ≈ 1.4427` lies strictly between the two limit points.
+- `1/log 2 ≈ 1.4427` lies strictly between the two limit points.
 
 ### Examples
 
@@ -1079,7 +1108,8 @@ Layer HP.4 (HP.5.1) and Layer HP.0 (HP.5.2). Mathlib `riemannZeta` and arithmeti
 
 ## Downstream consumers
 
-- Counts of abelian extensions with restricted inertia (Wood 2019, §7) illustrate the analytic
+- Totally real counts of abelian extensions with restricted finite-prime inertia
+  (Wood 2019, §7, pp. 416–417; wood2019 line 1652) illustrate the analytic
   input to HP.4.2, HP.4.4 and HP.4.5: the application must prove continuation, positivity of the
   leading coefficient and a coefficientwise arithmetic majorant. These are conditional
   applications of the generic theorems here.
@@ -1108,5 +1138,6 @@ Layer HP.4 (HP.5.1) and Layer HP.0 (HP.5.2). Mathlib `riemannZeta` and arithmeti
   and holomorphic boundary continuation; uniformity remains a consumer obligation.
 - D. Osele, *The Laplace transform* (2026),
   [author source](https://github.com/dennj/mathlib4/blob/90482cd37e85e423459de2ed103cea2f4d98cb20/Mathlib/Analysis/LaplaceTransform.lean#L121-L123),
-  declarations `LaplaceConvergent`, `laplace`, and `HasLaplace`, lines 121–123 at commit
-  `90482cd37e85e423459de2ed103cea2f4d98cb20`, for the predicate's shape.
+  declarations `LaplaceConvergent` (lines 68–70; osele-laplace line 72), `laplace`
+  (lines 117–118; osele-laplace line 121) and `HasLaplace` (lines 121–123; osele-laplace line 125)
+  at commit `90482cd37e85e423459de2ed103cea2f4d98cb20`, for the predicate's shape.
