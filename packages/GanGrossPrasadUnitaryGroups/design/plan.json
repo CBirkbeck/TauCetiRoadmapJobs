@@ -2311,8 +2311,8 @@
         "1.3",
         "3.4"
       ],
-      "detail": "At fields of characteristic ≠2 include split étale coefficients, zero rank, both real signatures, and nonsplit local forms. Matrix.unitaryGroup represents only the identity Gram matrix; ClassicalGroups Layer 0 does not supply this generality. This is a requested upstream contract, not an asserted import.",
-      "needs": "Supply Hermitian forms on finite projective constant-rank modules over quadratic étale algebras, complements, Witt extension/cancellation, hyperbolic bases, and representable reductive U(h), with arbitrary-form, scalar-extension and local-inner-form comparisons.",
+      "detail": "At fields of characteristic ≠2 include split étale coefficients, zero rank, both real signatures, and nonsplit local forms. GeometryOfNumbersAndQuadraticArithmetic §2.9 owns SignedHermitianSpace and the field adjoint API; GanGrossPrasadUnitaryGroups §1.1 owns hermitianFieldCarrierEquiv after both suppliers, without a dependency between them. Matrix.unitaryGroup represents only the identity Gram matrix; ClassicalGroups Layer 0 does not supply this generality. This is a requested upstream contract, not an asserted import.",
+      "needs": "Supply the extension to finite projective constant-rank modules over quadratic étale algebras, complement decompositions, Witt extension/cancellation, hyperbolic bases, and representable reductive U(h), with arbitrary-form, scalar-extension and local-inner-form comparisons; no second field-form carrier or field adjoint construction is requested.",
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.4: arbitrary-form Hermitian continuation"
     },
