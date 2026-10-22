@@ -23,25 +23,30 @@ The prerequisites and boundaries are as follows.
 - **PolynomialGaloisGroups, Layers 0 and 1** own faithful root actions, the
   orbit/factor dictionary, blocks, block-stabilizer correspondence, and the
   imprimitivity grid and wreath embedding. The grid supplies an equivariant
-  quotient of a transitive imprimitive action into equal blocks. Its Layer 5
-  owns the unramified equality of factor degrees and Frobenius cycle lengths;
-  its Layer 9 supplies the surrounding polynomial symmetric-group context.
+  quotient of a transitive imprimitive action into equal blocks.
+  NumberFieldArithmetic, §3.10, owns the factorization/cycle-type equality
+  for monic integral polynomials at primes not dividing their polynomial
+  discriminant. PolynomialGaloisGroups, Layer 5, imports that equality and
+  owns the factor-degree carrier and polynomial membership adapter; its Layer 9
+  supplies the surrounding polynomial symmetric-group context. The equality is
+  implemented by `TauCeti.NumberField.exists_gal_fullCycleType_eq_factorizationType`
+  in `TauCeti/NumberTheory/NumberField/Frobenius/CycleType.lean`; this continuation
+  extends its prime range by allowing collisions and bounded merging.
 - **Mathlib and Tau Ceti** own the partition carrier, full permutation cycle
   type, reduction factor degrees, arithmetic Frobenius lifts, finite-field
   Frobenius orbits, and the simple-root stabilizer and double-transitivity
-  quotient adapter. The current library also owns single-cycle fibre arithmetic
+  quotient adapter. Tau Ceti also owns single-cycle fibre arithmetic
   for equivariant maps. This continuation assembles its occurrence-block witness
   and its invariant unions of whole blocks.
-- **AnalyticNumberTheory, AN.2 and AN.5** supply the reciprocal Mertens product
-  with its Euler-constant coefficient and the uniform divisor subpower estimate.
-  The large-prime harmonic-mass argument depends on the precise Mertens theorem,
-  including its constant-identification proof; the weaker assertion that the
-  product is bounded by an unspecified multiple of `log x` is insufficient.
-- **ArithmeticStatisticsPartIIRandomPolynomials**, the proposed continuation of
-  ArithmeticStatistics for random polynomials of growing degree, owns concrete
-  coefficient laws, bounds for repeated reduction factors, and quantitative irreducibility.
-  It consumes the partition criterion and arithmetic certificate. Its distribution
-  estimates are not prerequisites of the theorem for arbitrary partition laws.
+- **AnalyticNumberTheoryPartI**, through the exact Mertens supplier gap below,
+  must supply the reciprocal prime product with its Euler-constant coefficient
+  and constant-identification proof. **ErdosProgressionPowers, §0.9**, owns
+  `eventualDivisorSubpower`. The unspecified-constant Euler-product bound does
+  not suffice for the large-prime harmonic mass.
+- Concrete coefficient laws, bounds for repeated reduction factors and quantitative
+  irreducibility for random polynomials of growing degree are outside this roadmap.
+  They consume 6.1 and 6.2 and motivate a continuation of ArithmeticStatistics;
+  their distribution estimates are not prerequisites of the arbitrary-law theorem.
 
 The suggested namespace is `TauCetiRoadmap.PolynomialGaloisGroupsPartII`.
 `Suggested.lean` records the light definitions and representative milestones;
@@ -70,8 +75,8 @@ is formed over that field using monic polynomial division. The original `f`
 need not be monic for the higher-irreducibility results. The integral
 specialization theorem does require a monic polynomial.
 
-Partition measures have the discrete measurable structure. `PartitionLaw` is
-a proposition about a measure with three quantitative fields; it does not
+Partition measures use the discrete measurable structure `partitionMeasurableSpace`.
+`PartitionLaw` is a proposition about a measure with three quantitative fields; it does not
 include probability normalization. Each probability theorem separately requires
 `IsProbabilityMeasure ν`. This matters because `ν.real` alone does not enforce
 finite total mass.
@@ -108,7 +113,7 @@ Each subsection fixes the meaning it uses.
 
 ### From Mathlib
 
-The library pin is Mathlib `082e2d37e8b0463410cdb532e111cd43d5a66174`.
+The library pin is Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
 The following are the interfaces consumed, with their required hypotheses.
 
 - `Mathlib.Combinatorics.Enumerative.Partition.Basic`: `Nat.Partition`, with
@@ -153,7 +158,7 @@ The following are the interfaces consumed, with their required hypotheses.
 
 ### From Tau Ceti
 
-The signatures use Tau Ceti `f790474821cf4256814db967cb154e7af3d0c369`.
+The signatures use Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
 
 - `TauCeti.GroupTheory.Perm.Partition`: `Equiv.Perm.fullCycleType`,
   `sum_fullCycleType`, `fullCycleType_eq_of_isConj`, and
@@ -187,10 +192,9 @@ The signatures use Tau Ceti `f790474821cf4256814db967cb154e7af3d0c369`.
   `Equiv.Perm.IsCycle.pow_apply_eq_self_iff`. At a point moved by a cycle,
   a power fixes it exactly when the cycle order divides the exponent.
 
-### From the current Tau Ceti cycle-fibre API
+### From Tau Ceti, cycle-fibre arithmetic
 
-`TauCeti.GroupTheory.Perm.Semiconj` supplies the single-cycle arithmetic at
-current Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`:
+`TauCeti.GroupTheory.Perm.Semiconj` supplies the single-cycle arithmetic:
 `Function.Semiconj.minimalPeriod_dvd`,
 `Function.Semiconj.setOf_sameCycle_and_eq`, and
 `Function.Semiconj.ncard_sameCycle_and_eq_mul_minimalPeriod`.
@@ -221,28 +225,25 @@ Consequently `r ∣ n` and `1 < r < n`. The continuation requires precisely
 this quotient, not a new construction of the general wreath product.
 See [PolynomialGaloisGroups, Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/PolynomialGaloisGroups/README.md#layer-1-permutation-groups-blocks-and-wreath-products).
 
-### From AnalyticNumberTheory
+### From ErdosProgressionPowers, §0.9
 
-`AN.5/uniform-divisor-subpower-bound` supplies, for every `η > 0`, a constant
-`D_η` with `τ(n) ≤ D_η n^η` for all positive integers `n`. The application
-uses `η = δ/4`, retaining its dependence on `δ`.
+`eventualDivisorSubpower` supplies, for every real `η > 0`, the bound
+`τ(n) ≤ n^η` for all sufficiently large positive integers, including
+nonsquarefree integers. Enlarging a constant over the finitely many positive
+exceptions gives `D_η ≥ 1` with `τ(n) ≤ D_η n^η` for every `n ≥ 1`.
+The application uses `η = δ/4` and retains its dependence on `δ`.
 
-`AN.2/mertens-prime-product` supplies an absolute `D` and a real threshold
-`x₀ ≥ 2` such that
+### From AnalyticNumberTheoryPartI, Mertens product
 
-```text
-| ∏_{p prime, p ≤ x} (1 − 1/p)⁻¹ − exp(γ) log x | ≤ D
-```
+What AnalyticNumberTheoryPartI must provide (gap:mertens-prime-product):
+there exist real `D ≥ 0` and `x₀ ≥ 2` such that, for every real `x ≥ x₀`,
+`|∏_{p prime, p ≤ x}(1−1/p)⁻¹ − exp(Real.eulerMascheroniConstant) log x| ≤ D`.
 
-for every real `x ≥ x₀`, with inclusive prime endpoints and the existing
-Euler–Mascheroni constant `γ`. The required part is the additive bounded error
-with coefficient `exp γ`; only its upper half,
-`∏_{p ≤ x} (1 − 1/p)⁻¹ ≤ exp(γ) log x + D`, is used, in 3.4.
-Its supplier proof must identify the constant via
-the tilted Euler product and Euler-constant integral comparison. Those analytic
-inputs belong to AN.2; this roadmap does not supply them. See
-[AnalyticNumberTheory, Mertens product](https://github.com/CBirkbeck/tauceti-explorer/blob/main/research/blueprint/readmes/AnalyticNumberTheory--AN.0.md#mertens-prime-product)
-and [its divisor estimate](https://github.com/CBirkbeck/tauceti-explorer/blob/main/research/blueprint/readmes/AnalyticNumberTheory--AN.0.md#uniform-divisor-subpower-bound).
+Prime endpoints are inclusive. Only the upper half is used in 3.4.
+The supplier owns the constant-identification proof, including its analytic
+Euler-product and Euler-constant comparison inputs. The need for this precise
+coefficient is visible in BSKK, Lemma 12.5, pp.60–61. This contract requests
+the general estimate rather than an unspecified multiple of `log x`.
 
 ## How to read the build
 
@@ -278,7 +279,8 @@ consequences of the same definition, used in BSKK Lemma 12.9, pp.62–63.
 
 - `{1,1,2,2,2,3}` merges at bound `2` into `{1,1,2,3,4}`: combine two of
   the three `2`-occurrences and leave every other occurrence alone.
-- The same input cannot merge at bound `2` into `{2,3,6}`: producing `6`
+- The named check target `equalPartMerging_forbidden` excludes a bound-`2`
+  merging of the same input into `{2,3,6}`: producing `6`
   would require either three copies of `2` or two copies of `3`; neither
   is available under that bound. Conservation of total sum alone fails this test.
 - The empty multiset merges into itself at bound `1`, with an empty collection
@@ -306,9 +308,11 @@ and transport of the full cycle type prove the two invariance statements.
 
 **Checks.**
 
-- The identity lies in `MergePerms 1 ρ` precisely when `ρ.parts` consists
+- The named check target `mergePerms_identity` puts the identity in
+  `MergePerms 1 ρ` precisely when `ρ.parts` consists
   of `card Ω` copies of `1`. A cycle type omitting fixed points fails this test.
-- A full `5`-cycle lies in `MergePerms 1` of the one-part partition `{5}`.
+- `mergePerms_five_cycle` is the named check target putting any full `5`-cycle
+  in `MergePerms 1` of the one-part partition `{5}`.
 - On the empty carrier the unique permutation lies in `MergePerms 1` of
   the empty partition; degree conservation still gives `0 = 0`.
 
@@ -329,12 +333,15 @@ its action, and the alternating/symmetric comparisons, not just the permutation.
 
 **Checks.**
 
-- `BadTransitive (Fin n)` is empty for `n ≤ 3`: the transitive subgroups
+- The named check target `badTransitive_small_degree` says
+  `BadTransitive (Fin n)` is empty for `n ≤ 3`: the transitive subgroups
   in those degrees are already alternating or symmetric.
-- The identity on five points belongs, using the regular cyclic subgroup `C₅`.
+- The named check target `badTransitive_identity_five` includes the identity
+  on five points, using the regular cyclic subgroup `C₅`.
   Thus testing whether the permutation lies outside the alternating group
   would give the wrong predicate.
-- Every full `5`-cycle belongs, using its generated cyclic subgroup. The
+- The named check target `badTransitive_five_cycle` includes every full
+  `5`-cycle, using its generated cyclic subgroup. The
   witness is transitive and has order `5`, distinct from `A₅` and `S₅`.
 
 *Needs:* finite permutation subgroups and `IsPretransitive`. It is used
@@ -359,7 +366,7 @@ equal-intersection statement gives `m_i` points of the cycle in every fibre.
 One block of `m_i` copies of `d` per cycle is the occurrence-block witness;
 divisibility of the individual cycle lengths alone would not give it.
 
-*Needs:* 0.1–0.2 and the current cycle-fibre supplier contract.
+*Needs:* 0.1–0.2 and the cycle-fibre supplier contract.
 
 ### Examples
 
@@ -398,8 +405,9 @@ omitted: a unit is squarefree but has value zero.
 - The constant polynomial `1` over `F₂` has value `0`.
 - The zero polynomial over `F₂` also has value `0`, by the chosen normalized-factor
   convention. It is never used as a monic positive-degree reduction.
-- `(X+1)^3` over `F₂` has value `3`.
-- `X(X−1)` over `F₃` has value `1`, although its factor-degree multiset
+- The first conjunct of the named check target
+  `maxFactorMultiplicity_repeated_distinct` gives value `3` for `(X+1)^3` over `F₂`.
+- Its second conjunct gives value `1` for `X(X−1)` over `F₃`, although its factor-degree multiset
   is `{1,1}`. Maximizing degree counts would fail this example.
 
 *Needs:* normalized UFD factors, their counts, and the reduction factor-degree convention.
@@ -498,23 +506,27 @@ hold without monicity of `f`; removing all roots leaves its leading coefficient.
 - An empty tuple generates the base intermediate field `⊥`.
 - A one-root tuple generates precisely `F⟮x₀⟯`, agreeing with the simple-root
   supplier, rather than the whole splitting field by definition.
-- For `X²−2` over `ℚ`, one selected root generates a degree-two field.
-  For `X(X−1)` over `ℚ`, selecting either rational root still generates the
-  base field. Using a free formal extension instead of the actual adjoin fails
+- For `X²−2` over `ℚ`, the named check target `tupleRootField_quadratic`
+  gives degree two for a one-root tuple field.
+  For `X(X−1)` over `ℚ`, the named check target `tupleRootField_split`
+  says that selecting either rational root still generates the base field. Using a
+  free formal extension instead of the actual adjoin fails
   this distinction.
 
 **Checks for the quotient.**
 
 - At `j = 0`, its image in `L[X]` is `f` mapped to `L`; the empty product is `1`.
-- For monic separable `f` and a tuple of all `f.natDegree` roots, the quotient
-  is `1`. For a nonmonic split quadratic `2X(X−1)` over `ℚ`, it is `2`,
+- The named check target `tupleRootQuotient_all_roots_monic` gives quotient
+  `1` for monic separable `f` and a tuple of all `f.natDegree` roots.
+  For the nonmonic split quadratic `2X(X−1)` over `ℚ`, the named check
+  target `tupleRootQuotient_nonmonic` gives `2`,
   so the monicity hypothesis in this check is necessary.
 - At `j = 1` it is division by `X−x₀` over the simple root field, agreeing
   under the field identification with the existing double-transitivity adapter.
 
 *Needs:* intermediate-field adjoin and its inclusion, polynomial mapping and
-monic division, and the simple-root stabilizer and quotient contracts. The
-current Tau Ceti library also has `Polynomial.rootSet_divByMonic_X_sub_C`:
+monic division, and the simple-root stabilizer and quotient contracts. Tau Ceti
+also has `Polynomial.rootSet_divByMonic_X_sub_C`:
 dividing by `X − a` at a simple root `a` of the base field removes exactly that
 root from the root set. Applied over the tuple field, where every selected root
 lies, it gives the root-set statement one root at a time.
@@ -539,10 +551,12 @@ monotonicity.
 - No polynomial is `0`-fold irreducible, including a separable linear polynomial.
   A vacuous universal quantifier would give the wrong answer.
 - No polynomial is `k`-fold irreducible when `k` exceeds its degree.
-- `Φ₁₁` over `ℚ` is `1`-fold but not `2`-fold irreducible. Its root group
+- The named check target `kfold_cyclotomic_eleven` makes `Φ₁₁` over `ℚ`
+  `1`-fold but not `2`-fold irreducible. Its root group
   is the regular abelian group of order ten; a root already generates the
   splitting field, so the remaining degree-nine quotient is reducible there.
-- `(X²−2)²` over `ℚ` is not `1`-fold irreducible. Its transitive distinct-root
+- The named check target `kfold_repeated_quadratic` excludes
+  `1`-fold irreducibility of `(X²−2)²` over `ℚ`. Its transitive distinct-root
   action does not remove the separability guard or repeated polynomial factor.
 
 *Needs:* 2.1 and the separable positive-degree irreducibility/orbit contract.
@@ -662,14 +676,17 @@ weakening `κ` increases the exponential right side since `L ≥ 0`.
 - The zero indicator gives `0`, for every `m`, including `m = 0`.
 - The indicator of `2` through `4` gives `1/2`, not `2` or `1`.
 - The indicator constantly true through `2` gives `1 + 1/2 = 3/2`;
-  starting the reciprocal sum at zero would violate this normalization.
+  this tests reciprocal weights and the inclusive upper endpoint. Excluding zero
+  is a domain convention: total real inversion makes an added zero term
+  numerically invisible.
 
 **Checks for the law.**
 
 - For the zero indicator and `m = 7` in range, the lower-tail event is
   the whole space, so the field gives `ν(univ) ≤ C`. With probability
   normalization this reads `1 ≤ C`.
-- For the indicator of `2` and `m = 4` in range, the law gives
+- For the indicator of `2` and `m = 4` in range, the named check target
+  `partitionLaw_singleton` gives
   `ν(countρ(2) ≤ t/2) ≤ C exp(−κ/2)`.
 - For `n ≥ 8`, the diagonal pair field gives
   `ν(countρ(2) ≥ 2) ≤ C/4`. A law that bounds mere membership of `2`
@@ -712,11 +729,15 @@ cutoff inequalities and cannot be applied to an uncontrolled companion part.
 
 - The partition `{2,2,4}` of eight fails `E₁` at `κ = 1, α = 0`,
   since `gcd(2,2) = 2 ≥ 8^0 = 1`.
-- At `n = 1, α = 0`, the unique partition passes `E₃`: its required
+- The proved target `goodEvent_log_one` says that at `n = 1, α = 0`
+  the unique partition passes `E₃`: its required
   count is zero because `log 1 = 0`. The asymptotic theorem is not asserted here.
-- Every partition of three fails `E₅*` at `α = 0`: there cannot be
-  four qualifying occurrences. Replacing four by one changes the predicate.
-- `{3,3}` at `n = 6, δ = 2` fails `E₂` with `r = 2, j = 1` and
+- The partition `{1,2}` of three at `α = 1` passes the one-witness
+  variant for every `r ≥ 2`: the part `1` lies in `[1/3,3/log 3]` and
+  `r ∤ 1`. It fails `E₅*` because it has only two occurrences. Thus this
+  check distinguishes four witnesses from one, even outside the asymptotic ranges.
+- The proved target `goodEvent_two_three` says `{3,3}` at `n = 6, δ = 2`
+  fails `E₂` with `r = 2, j = 1` and
   sum `3`. This tests the definition outside the probability-law parameter range.
 - `{2,6}` of eight passes `E₁` at `κ = 1, α = 0`: its only part at most
   `8/4 = 2` occurs once, so no pair of occurrences is constrained. A definition
@@ -763,7 +784,7 @@ remaining mass is bounded below by
 is strictly greater than `1/4`; enlarge `N` to absorb the bounded error.
 The empty-prime-factor integer `1` belongs to the removed smooth contribution.
 
-*Needs:* the exact AN.2 Mertens product contract, harmonic bounds, and the
+*Needs:* the exact Mertens product contract (gap:mertens-prime-product), harmonic bounds, and the
 Euler–Mascheroni constant inequality. This is the analytic supplier boundary
 on which 3.8 and the final criterion depend.
 
@@ -798,7 +819,8 @@ complement to arrange `j ≤ r/2`. Since `r ∣ n`, this is an integer; and
 `r ≤ n^(δ/2)` puts it between `n^(1−δ/2)` and `n/2`, exactly premise (b)'s
 range. For a fixed `r`, summing `C·(nj/r)^(−δ)` over `1 ≤ j ≤ r/2` gives
 `O(C n^(−δ) r)`, using `δ < 1`. Summing over divisors `r` gives
-`O(n^(−δ/2) τ(n))`. Invoke AN.5 with exponent `δ/4`, including its constant,
+`O(n^(−δ/2) τ(n))`. Invoke ErdosProgressionPowers §0.9, `eventualDivisorSubpower`, with
+exponent `δ/4`, enlarging its constant over finitely many positive exceptions,
 to reach `n^(−δ/4)`.
 
 *Needs:* 3.1–3.2, the complement API, and the uniform divisor subpower contract.
@@ -878,8 +900,9 @@ witnesses. The restriction `ε > 0` is essential to that uniform assertion.
 
 The three fields of 3.1 suffice for the probabilistic arguments: (a) supplies
 3.5, (b) supplies 3.6, and (c) supplies 3.7–3.8; 3.9 uses (a) and (c).
-The external analytic inputs are exactly AN.5 for 3.6 and AN.2 for 3.4 and,
-through 3.4, for 3.8.
+The external analytic inputs are ErdosProgressionPowers §0.9 for 3.6 and
+AnalyticNumberTheoryPartI, gap:mertens-prime-product, for 3.4 and, through 3.4,
+for 3.8.
 The harmonic interval comparisons otherwise use the pinned harmonic inequalities.
 
 ## Layer 4: primitive minimum support
@@ -903,8 +926,10 @@ including the identity would make every value zero.
 **Checks.**
 
 - `S_(Fin 0)` has `minSupport = none`; its unique permutation is the identity.
-- `S_(Fin 2)` has `some 2`, attained by the swap.
-- `A_(Fin 3)` has `some 3`, attained by either nonidentity 3-cycle.
+- The named check target `minSupport_symmetric_two` gives `some 2` for
+  `S_(Fin 2)`, attained by the swap.
+- The named check target `minSupport_alternating_three` gives `some 3` for
+  `A_(Fin 3)`, attained by either nonidentity 3-cycle.
 
 *Needs:* finite permutation subgroups, support, and the attained natural minimum.
 
@@ -926,7 +951,8 @@ the pair. These statements require no transitivity or primitivity.
 
 - `D(x,x)` is empty for every group, since the identity transports the pair.
 - For the trivial group and `x ≠ y`, `D(x,y)` is the whole carrier.
-- For the full symmetric group and `x ≠ y`, `D(x,y) = {x,y}`. At every
+- The named check target `orbitalDistinguishers_symmetric` gives
+  `D(x,y) = {x,y}` for the full symmetric group and `x ≠ y`. At every
   other point a swap of `x,y` fixes that point; at `x` or `y`, fixing the
   point prevents transport. This also holds on a two-point carrier.
 
@@ -1102,7 +1128,7 @@ if `σx = x`, the cycle length is `1`, although `cycleOf x` has empty support.
 Thus the length expression is `card(support(cycleOf x)) + if σx=x then 1 else 0`.
 An arbitrary divisor of `ℓ` would not suffice in place of the actual orbit size.
 
-*Needs:* the parent Layer 1 imprimitivity quotient and the current cycle-fibre supplier.
+*Needs:* the parent Layer 1 imprimitivity quotient and the cycle-fibre supplier contract.
 
 ### 5.2 Proper primitive exclusion
 
@@ -1268,8 +1294,8 @@ supplier enters through 3.4 and is not replaced by a generic Euler-product bound
 
 ### 6.2 A polynomial bad-group certificate
 
-Prove `galois_merging_certificate`: let `A : ℤ[X]` be monic, with separable
-irreducible image over `ℚ`, and let `p` be prime. Suppose the faithful
+Prove `galois_merging_certificate`: let `A : ℤ[X]` be monic with
+irreducible image over `ℚ` (hence separable), and let `p` be prime. Suppose the faithful
 root-action image is neither alternating nor symmetric, and
 `maxFactorMultiplicity (A mod p) ≤ y` for `y : ℝ`. Then there is a
 permutation in that image whose full cycle type is a `y`-merging of
@@ -1285,7 +1311,7 @@ using 0.2–0.3's relabeling APIs, preserving both the full cycle type and the
 alternating/symmetric subgroup comparisons.
 
 For any coefficient probability space whose sampled polynomials satisfy these
-monic, separable, irreducible conditions and have fixed degree `n`, this gives
+monic and irreducible conditions and have fixed degree `n`, this gives
 the pointwise event inclusion
 
 ```text
@@ -1293,9 +1319,9 @@ the pointwise event inclusion
 ```
 
 With a uniform choice `y = n^θ`, a consumer can combine a repeated-factor
-tail estimate with 6.1 for the induced partition law. If irreducibility or
-separability is not imposed on every sample, their failure events must also
-be included. This target supplies the deterministic inclusion, not the
+tail estimate with 6.1 for the induced partition law. If monicity or
+irreducibility is not imposed on every sample, include its failure event.
+Separability follows from irreducibility over `ℚ`. This target supplies the deterministic inclusion, not the
 coefficient-law estimates or their conditioning behavior.
 
 *Needs:* 1.3, 0.1–0.3, the faithful root-action and irreducibility/orbit
@@ -1309,7 +1335,7 @@ At `θ = 0`, the merging bound is `1`, so only the original full cycle type
 is allowed. At `θ = δ/2−ε`, the final exponent is `−κε/2 < 0`.
 The criterion still decays uniformly at that endpoint. For a reducible repeated
 polynomial such as `(X²−2)²`, transitivity on its distinct roots does not meet
-the arithmetic certificate's irreducibility and separability premises.
+the arithmetic certificate's irreducibility premise.
 At a ramified prime, the certificate still uses the Frobenius lift; it never
 adds squarefree reduction as an unstated assumption.
 
@@ -1322,8 +1348,8 @@ recognition interface; it is not required by the arbitrary partition law.
 
 ## Downstream consumers
 
-**ArithmeticStatisticsPartIIRandomPolynomials** uses the certificate and uniform
-partition theorem after establishing its three partition-law premises and
+A continuation of ArithmeticStatistics for random polynomials would use the
+certificate and uniform partition theorem after establishing the three partition-law premises and
 repeated-factor tails. Quantitative irreducibility provides the transitive
 root-group input, and the tuple interface expresses stronger polynomial
 irreducibility conclusions without changing the probability theorem's premises.
@@ -1346,7 +1372,7 @@ pagination. Statements and proof routes above use the roadmap's own notation.
   Definition 11.2, Lemma 11.3 and Claim 11.4, pp.56–57; §11.3,
   pp.57–58; §12, Proposition 12.1 and Lemmas 12.2–12.9, pp.59–63.
 - **László Babai, original lecture scribe Tom Hayes**,
-  [Primitive coherent configurations and the order of uniprimitive permutation groups](https://people.cs.uchicago.edu/~laci/papers/uni-update.pdf),
+  [Primitive coherent configurations and the order of uniprimitive permutation groups](http://people.cs.uchicago.edu/~laci/papers/uni-update.pdf),
   author exposition of October 21, 2018. §§2–4, pp.3–5;
   Definition 6.1, Exercise 6.2 and Theorem 6.6, pp.5–6;
   Lemmas 8.5–8.18 and Corollary 8.19, pp.7–9;
