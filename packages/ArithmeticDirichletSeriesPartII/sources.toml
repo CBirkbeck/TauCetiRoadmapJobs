@@ -1,0 +1,67 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticDirichletSeriesPartII"
+
+[[source]]
+id = "delange1954"
+authors = "Hubert Delange"
+title = "Généralisation du théorème de Ikehara"
+year = 1954
+locator_scheme = "section"
+locator = "p. 213; §§3–4.1, pp. 220–229; §§5.1–5.3, pp. 231–242"
+url = "https://www.numdam.org/item/ASENS_1954_3_71_3_213_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1954_3_71_3_213_0.pdf"
+fetched_at = "2026-10-22T08:59:34Z"
+sha256 = "4934b4bfba12d405fc267fa0c0318c3034ab29c9e8223388019377bb45ca0998"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["HP.0–HP.5"]
+
+[[source]]
+id = "wood2019"
+authors = "Melanie Matchett Wood"
+title = "Nonabelian Cohen–Lenstra moments"
+year = 2019
+locator_scheme = "section"
+locator = "§7, pp. 415–417"
+url = "https://par.nsf.gov/servlets/purl/10152050"
+fetched_from = "https://par.nsf.gov/servlets/purl/10152050"
+fetched_at = "2026-10-22T08:59:51Z"
+sha256 = "154e700c1b634b9e9bde4334a19678d05ff98ca18efb6b07cb5b809f2da9c03d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["HP.4; HP.5.1"]
+
+[[source]]
+id = "gmr2019"
+authors = "Alex Gamburd; Michael Magee; Ryan Ronan"
+title = "An asymptotic formula for integer points on Markoff–Hurwitz varieties"
+year = 2019
+locator_scheme = "section"
+locator = "§4.1, pp. 790–791, equation (4.4); §4.3, pp. 796–797"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v190-n3-p02-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v190-n3-p02-s.pdf"
+fetched_at = "2026-10-22T09:00:02Z"
+sha256 = "c5e7ebb5322cdfd455735f13c2b420dba318089b382a3f78f40628efc838215a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Downstream consumers"]
+
+[[source]]
+id = "osele-laplace"
+authors = "Dennj Osele"
+title = "The Laplace transform"
+year = 2026
+locator_scheme = "section"
+locator = "Mathlib/Analysis/LaplaceTransform.lean:68–70 (LaplaceConvergent), 117–118 (laplace), 121–123 (HasLaplace), commit 90482cd37e85e423459de2ed103cea2f4d98cb20"
+url = "https://raw.githubusercontent.com/dennj/mathlib4/90482cd37e85e423459de2ed103cea2f4d98cb20/Mathlib/Analysis/LaplaceTransform.lean"
+fetched_from = "https://raw.githubusercontent.com/dennj/mathlib4/90482cd37e85e423459de2ed103cea2f4d98cb20/Mathlib/Analysis/LaplaceTransform.lean"
+fetched_at = "2026-10-22T09:00:29Z"
+sha256 = "02a2b99eb203ecca8c99012af3aa1045a58a06ee94a68996736b9a417799efd7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["HP.0.1"]
+
