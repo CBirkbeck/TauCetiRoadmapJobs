@@ -2402,10 +2402,10 @@
         "5.1a",
         "5.2"
       ],
-      "detail": "For every pair of these representations, identify the completed projective tensor with continuous bilinear maps by its universal property and identify H-equivariant bilinear functionals with continuous maps to the smooth contragredient when H acts through the stated factors; include nuclearity, density of algebraic tensors, and functoriality. A raw algebraic dual is insufficient (sun-zhu p. 2; jsz-bessel §3.2–§3.3, pp. 6–7, line 207).",
-      "needs": "On the finite-length Casselman–Wallach globalizations of §2.7 for U(p,q) and GL_k(R/C), supply the nuclear completed-projective-tensor universal property, density of algebraic tensors, and the functorial identification of continuous equivariant bilinear forms with maps to the smooth contragredient under the relative subgroup actions.",
+      "detail": "For the H=N⋊U(W) actions of §1.2, the first factor acts by u i(g), the second by g, and the target has character ν; retain these actions and the character twist in the curried map. Include the split adjacent GL actions of §5.1a and r=0, where the identification is Hom_H(π_V completed-tensor π_W,1)≃Hom_H(π_V,π_W^∨). The contragredient carries its supplied smooth topology, and the comparison is natural in continuous intertwiners. A raw algebraic dual is insufficient (sun-zhu Theorem B, p. 2, line 66–68; jsz-bessel §§3.2–3.3, pp. 6–7, line 190–233).",
+      "needs": "On the finite-length Casselman–Wallach globalizations of §2.7 for U(p,q) and GL_k(R/C), using the §2.7 nuclear smooth topologies and NoncommutativeGeometry N1 tensor, supply the functorial identification of continuous equivariant bilinear forms with continuous maps to the smooth contragredient under the relative subgroup actions.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "2.7: completed tensor and smooth-dual comparison supplement"
+      "section": "2.7: relative smooth-contragredient comparison supplement"
     },
     {
       "slug": "archimedean-generic-induction",
@@ -2424,10 +2424,10 @@
       "neededBy": [
         "2.5"
       ],
-      "detail": "For every continuous seminorm q on π there are a seminorm p and c≥0 with q(π(g)v)≤||g||^c p(v) for all g,v. For ρ=π_W completed-tensor σ, Λ=id⊗λ and a generic Whittaker λ, if q(Λρ(g)v)≤||g||^c p_0(v), then for every integer N>0 there is p_N with q(Λρ(a_t)v)≤ξ(t)^(-N)||a_t||^c p_N(v) for all positive diagonal t and v; ξ(t)=∏_(i=1..k-1)(1+t_i/t_(i+1)), multiplied over the two factors for split E. Exponents and seminorms may depend on π,q,N, not on g,t,v. These bounds are uniform on a finite basis of S by taking maxima; the relative quotient integral and half-plane are derived in §2.5, not assumed here (jsz-bessel Lemma 6.2, p. 18, line 652–656; §6.4, pp. 20–22, line 765–804).",
-      "needs": "For every Casselman–Wallach representation of U(p,q) or GL_k(R/C), supply quantified moderate-growth and generic Whittaker seminorm bounds, with the Cartan integration formula for the actual Haar measure.",
+      "detail": "For ρ=π_W completed-tensor σ, Λ=id⊗λ and a nonzero continuous generic Whittaker λ, the supplied growth estimate applied to the continuous seminorm q∘Λ gives q(Λρ(g)v)≤||g||^c p_0(v). For every integer N>0 require a continuous seminorm p_N with q(Λρ(a_t)v)≤ξ(t)^(-N)||a_t||^c p_N(v) for all positive diagonal t and v; ξ(t)=∏_(i=1..k-1)(1+t_i/t_(i+1)), multiplied over the two factors for split E. The exponent c is fixed by the initial growth bound; p_N may depend on ρ,q,λ,N, not on t,v. Compare the actual Haar measure with the Cartan Jacobian in these coordinates. Bounds for a finite basis of S are combined by taking maxima; the relative quotient integral and half-plane are derived in §2.5 (jsz-bessel Lemma 6.2, p. 18, line 652–656; §6.4, pp. 20–22, line 765–804).",
+      "needs": "Using §2.7 seminormEstimate and the NoncommutativeGeometry N1 tensor, supply vector-valued generic Whittaker decay for Casselman–Wallach representations of U(p,q) and GL_k(R/C), with the Haar/Cartan comparison in the JSZ coordinates used in §2.5.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "2.7: quantified Whittaker-seminorm supplement"
+      "section": "2.7: vector-valued Whittaker-decay and Haar-comparison supplement"
     },
     {
       "slug": "distribution-gk",

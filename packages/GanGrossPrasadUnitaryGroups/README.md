@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-The general smooth category, induction, Jacquet filtrations, Satake theory, globalizations, adelic measures, ordinary endoscopy, classification of Langlands packets and L-functions have the supplier sections specified below. This roadmap owns their relative Bessel specializations and comparison proofs.
+The general smooth category, induction, Jacquet filtrations, Satake theory, globalizations, adelic measures, ordinary endoscopy, classification of Langlands packets and L-functions have the supplier sections specified below. This roadmap owns their relative Bessel specializations and comparison proofs. NoncommutativeGeometry N1 owns completed projective tensors, their complete-target universal property and the dense algebraic tensor image. AutomorphicFormsOnReductiveGroups §2.7 owns SAF nuclearity and `seminormEstimate` for ordinary moderate growth.
 
 This roadmap owns relevant Hermitian pairs, their relative Bessel subgroups and characters, model spaces and transport, relative distribution symmetry and multiplicity, relative tempered forms and geometric multiplicities, the Bessel calculation over Langlands packets, global Bessel periods, relative normalizers and the adjacent period theorems. It includes rank-zero smaller spaces and split local algebras; the final global adjacent theorems have n≥1. It makes no quasi-split, CM, totally-real, unramified, odd-residue-characteristic or auxiliary-supercuspidal restriction on the library. The split archimedean higher-codimension assertion is the proposition of §3.10; the theorem of §3.11 covers finite places and adjacent archimedean pairs.
 
@@ -88,15 +88,19 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:local-jacquet-filtrati
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:local-spherical): For every finite extension K/Q_p, including p=2, and split or unramified reductive groups with specified hyperspecials, supply Satake parameters, normalized spherical matrix coefficients, spherical Whittaker vectors, and their Cartan double-coset volumes and Iwasawa/Weyl formulas with the actual Haar normalization. For every unramified irreducible tempered GL_k(K) and conductor-zero generic character, normalize the spherical Whittaker vector by W(1)=1. Give compatible unitary Satake/base-change and normalized-induction comparisons and the group spherical formulas for all residue sizes q≥2, including coincident Satake eigenvalues by continuous specialization. Retain both split and unramified nonsplit unitary groups; no odd-residue hypothesis is allowed in this general input. Haar volume is explicit, and data without hyperspecial fixed vectors have no spherical evaluation. General group formulas are the input; the relative spherical integral and its dyadic root-coordinate comparison remain §5.3 (harris §2.2, pp. 7–23, line 368–403 and line 907–1000; zhang-period §3.3, p. 19, line 982–986). The section contract is SR.4.1–SR.4.2: all-residue matrix-coefficient and Whittaker normalization supplement. Needed by §5.3.
 
+### From TauCetiRoadmap.NoncommutativeGeometry
+
+Consume N1 for the Hausdorff completed projective tensor of Hausdorff locally convex complex spaces, its canonical bilinear map, functoriality and universal property for continuous bilinear maps into complete targets. The algebraic tensor image is dense by the Hausdorff-completion construction. With target C, the universal property identifies continuous linear functionals on the completion with continuous bilinear forms; density gives uniqueness. Apply this to the Casselman–Wallach spaces with the topologies and nuclearity of AutomorphicFormsOnReductiveGroups §2.7 in §§2.1, 2.2, 2.5, 3.3, 5.1a and 5.2.
+
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
-Consume §§0.1–0.5 for adelic test spaces and right actions, §§2.3 and 2.7 for real induction and globalization, §§3.4–3.5 for restricted tensor factors and spherical lines, and §4.2 for cuspidal realizations and Petersson pairings. The supplements below retain the completed smooth topology and the quantified Whittaker and relative-estimate comparisons.
+Consume §§0.1–0.5 for adelic test spaces and right actions, §§2.3 and 2.7 for real induction and globalization, §§3.4–3.5 for restricted tensor factors and spherical lines, and §4.2 for cuspidal realizations and Petersson pairings. In §2.7 use SAF nuclearity and `seminormEstimate`: for each continuous seminorm q there are p,C,N with q(π(g)v)≤C H(g)^N p(v). Absorbing C into p gives the ordinary growth input to the Whittaker estimate. Use the §2.7 smooth topology and NoncommutativeGeometry N1 tensor throughout; the supplements below concern the relative smooth-dual comparison and vector-valued Whittaker decay with its Haar/Cartan comparison.
 
-What AutomorphicFormsOnReductiveGroups must provide (gap:archimedean-globalization): On the finite-length Casselman–Wallach globalizations of §2.7 for U(p,q) and GL_k(R/C), supply the nuclear completed-projective-tensor universal property, density of algebraic tensors, and the functorial identification of continuous equivariant bilinear forms with maps to the smooth contragredient under the relative subgroup actions. For every pair of these representations, identify the completed projective tensor with continuous bilinear maps by its universal property and identify H-equivariant bilinear functionals with continuous maps to the smooth contragredient when H acts through the stated factors; include nuclearity, density of algebraic tensors, and functoriality. A raw algebraic dual is insufficient (sun-zhu p. 2; jsz-bessel §3.2–§3.3, pp. 6–7, line 207). The section contract is 2.7: completed tensor and smooth-dual comparison supplement. Needed by §2.1, §2.2, §2.5, §3.3, §5.1a, §5.2.
+What AutomorphicFormsOnReductiveGroups must provide (gap:archimedean-globalization): On the finite-length Casselman–Wallach globalizations of §2.7 for U(p,q) and GL_k(R/C), using the §2.7 nuclear smooth topologies and NoncommutativeGeometry N1 tensor, supply the functorial identification of continuous equivariant bilinear forms with continuous maps to the smooth contragredient under the relative subgroup actions. For the H=N⋊U(W) actions of §1.2, the first factor acts by u i(g), the second by g, and the target has character ν; retain these actions and the character twist in the curried map. Include the split adjacent GL actions of §5.1a and r=0, where the identification is Hom_H(π_V completed-tensor π_W,1)≃Hom_H(π_V,π_W^∨). The contragredient carries its supplied smooth topology, and the comparison is natural in continuous intertwiners. A raw algebraic dual is insufficient (sun-zhu Theorem B, p. 2, line 66–68; jsz-bessel §§3.2–3.3, pp. 6–7, line 190–233). The section contract is 2.7: relative smooth-contragredient comparison supplement. Needed by §2.1, §2.2, §2.5, §3.3, §5.1a, §5.2.
 
 What AutomorphicFormsOnReductiveGroups must provide (gap:archimedean-generic-induction): For the real unitary and split GL parabolics with Levi GL_(r+1)(E)×U(W), supply generic irreducibility for the precise Casselman–Wallach families in jsz-bessel §3.2, unnumbered inducing transformation and Proposition 3.1, p. 6, line 207–216. Fix r≥1, irreducible π_W and generic irreducible auxiliary σ of GL_(r+1)(E), where E is C, R×R or C×C as appropriate. In unnormalized induction with transformation f(n g m x)=χ_(U(W))(g)^(-1)|det m|^s(π_W⊠σ)(g m)f(x), the reducible parameters form a Lebesgue-null subset of C^d, d=1 for a field and d=2 for a split algebra. Every componentwise right half-plane therefore contains an irreducible parameter; the finite-dimensional space S and its half-plane belong to §2.5 (jsz-bessel Proposition 3.1, p. 6, line 207–216). The section contract is 2.3 and 2.7: specified JSZ induction-family supplement. Needed by §2.5.
 
-What AutomorphicFormsOnReductiveGroups must provide (gap:archimedean-seminorms): For every Casselman–Wallach representation of U(p,q) or GL_k(R/C), supply quantified moderate-growth and generic Whittaker seminorm bounds, with the Cartan integration formula for the actual Haar measure. For every continuous seminorm q on π there are a seminorm p and c≥0 with q(π(g)v)≤||g||^c p(v) for all g,v. For ρ=π_W completed-tensor σ, Λ=id⊗λ and a generic Whittaker λ, if q(Λρ(g)v)≤||g||^c p_0(v), then for every integer N>0 there is p_N with q(Λρ(a_t)v)≤ξ(t)^(-N)||a_t||^c p_N(v) for all positive diagonal t and v; ξ(t)=∏_(i=1..k-1)(1+t_i/t_(i+1)), multiplied over the two factors for split E. Exponents and seminorms may depend on π,q,N, not on g,t,v. These bounds are uniform on a finite basis of S by taking maxima; the relative quotient integral and half-plane are derived in §2.5, not assumed here (jsz-bessel Lemma 6.2, p. 18, line 652–656; §6.4, pp. 20–22, line 765–804). The section contract is 2.7: quantified Whittaker-seminorm supplement. Needed by §2.5.
+What AutomorphicFormsOnReductiveGroups must provide (gap:archimedean-seminorms): Using §2.7 `seminormEstimate` and the NoncommutativeGeometry N1 tensor, supply vector-valued generic Whittaker decay for Casselman–Wallach representations of U(p,q) and GL_k(R/C), with the Haar/Cartan comparison in the JSZ coordinates used in §2.5. For ρ=π_W completed-tensor σ, Λ=id⊗λ and a nonzero continuous generic Whittaker λ, the supplied growth estimate applied to the continuous seminorm q∘Λ gives q(Λρ(g)v)≤||g||^c p_0(v). For every integer N>0 require a continuous seminorm p_N with q(Λρ(a_t)v)≤ξ(t)^(-N)||a_t||^c p_N(v) for all positive diagonal t and v; ξ(t)=∏_(i=1..k-1)(1+t_i/t_(i+1)), multiplied over the two factors for split E. The exponent c is fixed by the initial growth bound; p_N may depend on ρ,q,λ,N, not on t,v. Compare the actual Haar measure with the Cartan Jacobian in these coordinates. Bounds for a finite basis of S are combined by taking maxima; the relative quotient integral and half-plane are derived in §2.5 (jsz-bessel Lemma 6.2, p. 18, line 652–656; §6.4, pp. 20–22, line 765–804). The section contract is 2.7: vector-valued Whittaker-decay and Haar-comparison supplement. Needed by §2.5.
 
 What AutomorphicFormsOnReductiveGroups must provide (gap:automorphic-realization): On the adelic Schwartz, cuspidal and Petersson carriers of §§0.1–0.5, 3.4–3.5 and 4.2, supply restricted completed smooth tensor factorization with pure-tensor density, continuous restriction estimates derived from cuspidal rapid decay and local invariant unitary pairings for all number fields and unitary inner forms. Need all number fields and arbitrary unitary inner forms, pure-tensor density, Petersson positive pairings, local invariant unitary structures, and the general finite-rank/smoothing operator bridge. Uniform estimates along the relevant flag are applied in target 4.1, not assumed as its conclusion. The section contract is 0.1–0.5, 3.4–3.5 and 4.2: completed smooth-factorization and period-estimate supplement. Needed by §4.1, §4.2, §5.3, §6.1.
 
@@ -312,7 +316,7 @@ For local data of 1.2 define besselModel(π_V,π_W) as Hom_H(π_V|H tensor π_W|
 
 Here F is a local field of characteristic zero; E/F is quadratic étale; W embeds isometrically in V, with V/W isometric to H^r orthogonal-sum L for r≥0 and a nondegenerate line L; the representations are irreducible smooth admissible complex representations at finite places and irreducible Casselman–Wallach representations at infinite places.
 
-Use the native intertwiner and tensor representation carriers; impose continuity as supplied by the analytic category. The completed tensor universal property gives the archimedean bilinear description. Schur theory is not used to assert multiplicity here.
+Use the native intertwiner and tensor representation carriers; impose continuity as supplied by the analytic category. NoncommutativeGeometry N1 gives the completed-tensor bilinear description and density; AutomorphicFormsOnReductiveGroups §2.7 gives the nuclear smooth topology, and gap:archimedean-globalization compares with its smooth contragredient. Schur theory is not used to assert multiplicity here.
 
 **API.**
 
@@ -326,7 +330,7 @@ Use the native intertwiner and tensor representation carriers; impose continuity
 
 - **besselMultiplicity_eq_finrank.** Once finite-dimensional, the cardinal dimension is the cast of Module.finrank ℂ.
 
-*Needs:* this roadmap §1.2; this roadmap §1.3; Mathlib Representation.IntertwiningMap; Mathlib Representation.tprod; contract gap local-categories; contract gap archimedean-globalization.
+*Needs:* this roadmap §1.2; this roadmap §1.3; Mathlib Representation.IntertwiningMap; Mathlib Representation.tprod; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization.
 
 **Checks.**
 
@@ -372,7 +376,7 @@ Linearize equivariant distributions near semisimple strata. Decompose the centra
 
 - **adjacentAntiInvolution_subgroup.** ι preserves the embedded smaller unitary group.
 
-*Needs:* this roadmap §1.3; contract gap distribution-gk; contract gap archimedean-globalization.
+*Needs:* this roadmap §1.3; contract gap distribution-gk; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization.
 
 **Checks.**
 
@@ -440,7 +444,7 @@ For archimedean local data under the stated hypotheses and r≥1, given π_V,π_
 
 Here F is a local field of characteristic zero; E/F is quadratic étale; W embeds isometrically in V, with V/W isometric to H^r orthogonal-sum L for r≥0 and a nondegenerate line L; the representations are irreducible smooth admissible complex representations at finite places and irreducible Casselman–Wallach representations at infinite places; F is R or C; r≥1.
 
-Use Propositions 3.3 and 3.4 on a finite basis of S to choose a common half-plane, then Proposition 3.1 to choose an irreducible inducing parameter. The integral is nonzero on every nonzero functional in S. Only finite-dimensional S is embedded; no uniform half-plane for the full Hom space is assumed.
+Use NoncommutativeGeometry N1 for completed tensors and AutomorphicFormsOnReductiveGroups §2.7 `seminormEstimate` for ordinary growth. The residual gap:archimedean-seminorms supplies vector-valued Whittaker decay and the Haar/Cartan comparison. Apply Propositions 3.3 and 3.4 on a finite basis of S to choose a common half-plane, then Proposition 3.1 to choose an irreducible inducing parameter. The integral is nonzero on every nonzero functional in S. Only finite-dimensional S is embedded; no uniform half-plane for the full Hom space is assumed.
 
 **API.**
 
@@ -448,7 +452,7 @@ Use Propositions 3.3 and 3.4 on a finite basis of S to choose a common half-plan
 
 - **besselArchIntegral_injective.** For every finite-dimensional S there is a common right half-plane of convergence; a generic irreducible parameter there gives an injective map on S.
 
-*Needs:* this roadmap §2.1; contract gap archimedean-globalization; contract gap archimedean-generic-induction; contract gap archimedean-seminorms.
+*Needs:* this roadmap §2.1; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap archimedean-generic-induction; contract gap archimedean-seminorms.
 
 **Checks.**
 
@@ -506,7 +510,7 @@ For compact U(2)↓U(1), the standard representation restricts with weights 1 an
 
 ### Dependencies
 
-this roadmap §1.2; this roadmap §1.3; Mathlib Representation.IntertwiningMap; Mathlib Representation.tprod; contract gap local-categories; contract gap archimedean-globalization; contract gap distribution-gk; contract gap local-bernstein; contract gap local-mirabolic; contract gap archimedean-generic-induction; contract gap archimedean-seminorms; contract gap local-tempered-bounds.
+this roadmap §1.2; this roadmap §1.3; Mathlib Representation.IntertwiningMap; Mathlib Representation.tprod; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap distribution-gk; contract gap local-bernstein; contract gap local-mirabolic; contract gap archimedean-generic-induction; contract gap archimedean-seminorms; contract gap local-tempered-bounds.
 
 ## Layer 3: Root-number characters and the tempered local theorem
 
@@ -588,7 +592,7 @@ Build the regularized integral using the Fourier extension and polynomial bounds
 
 - **temperedBesselForm_adjacent.** For r=0, L_π(v,w)=∫_(U(W)) <π(t)v,w> dt in the source linear-first pairing.
 
-*Needs:* this roadmap §2.6; contract gap local-categories; contract gap archimedean-globalization; contract gap local-tempered-bounds; contract gap local-plancherel; contract gap local-fourier-extension; this roadmap §2.7.
+*Needs:* this roadmap §2.6; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap local-tempered-bounds; contract gap local-plancherel; contract gap local-fourier-extension; this roadmap §2.7.
 
 **Checks.**
 
@@ -802,7 +806,7 @@ The empty W-parameter gives the trivial distinguished character on the V compone
 
 ### Dependencies
 
-AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; contract gap enhanced-packets; contract gap factor-epsilon-identities; contract gap local-rankin-selberg; this roadmap §1.3; this roadmap §2.6; contract gap local-categories; contract gap archimedean-globalization; contract gap local-tempered-bounds; contract gap local-plancherel; contract gap local-fourier-extension; this roadmap §2.7; this roadmap §1.2; contract gap local-schwartz-germs; contract gap hermitian-unitary; contract gap ordinary-endoscopy; contract gap real-oscillator-model; contract gap real-small-theta; this roadmap §2.1; contract gap gl-tempered-genericity; contract gap local-jacquet-filtration; this roadmap §2.4.
+AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; contract gap enhanced-packets; contract gap factor-epsilon-identities; contract gap local-rankin-selberg; this roadmap §1.3; this roadmap §2.6; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap local-tempered-bounds; contract gap local-plancherel; contract gap local-fourier-extension; this roadmap §2.7; this roadmap §1.2; contract gap local-schwartz-germs; contract gap hermitian-unitary; contract gap ordinary-endoscopy; contract gap real-oscillator-model; contract gap real-small-theta; this roadmap §2.1; contract gap gl-tempered-genericity; contract gap local-jacquet-filtration; this roadmap §2.4.
 
 ## Layer 4: Global Bessel periods and the fixed-pair conjecture
 
@@ -966,7 +970,7 @@ Apply the general Whittaker pairing and Fourier matrix-coefficient identity, the
 
 - **splitAdjacentWhittakerPeriod_rescale.** Scaling B by b and dt by a multiplies the raw period by ab, while λ stays fixed at the source reference measures.
 
-*Needs:* AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; this roadmap §2.7; this roadmap §2.6; contract gap local-categories; contract gap archimedean-globalization; contract gap tempered-local-regularity; contract gap local-rankin-selberg; contract gap whittaker-pairing-fourier; contract gap gl-tempered-genericity.
+*Needs:* AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; this roadmap §2.7; this roadmap §2.6; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap tempered-local-regularity; contract gap local-rankin-selberg; contract gap whittaker-pairing-fourier; contract gap gl-tempered-genericity.
 
 **Checks.**
 
@@ -996,7 +1000,7 @@ Apply 2.7 and divide by the proved nonzero local factor. Invariant measure chang
 
 - **normalizedLocalBesselPeriod_source.** Its value is the source’s P_h,σ_v^natural with the same pairing and Haar measure.
 
-*Needs:* this roadmap §2.7; this roadmap §5.1; this roadmap §3.3; contract gap local-categories; this roadmap §5.1a; contract gap archimedean-globalization.
+*Needs:* this roadmap §2.7; this roadmap §5.1; this roadmap §3.3; contract gap local-categories; this roadmap §5.1a; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization.
 
 **Checks.**
 
@@ -1096,7 +1100,7 @@ For compact U(1) of Haar mass a and paired weights k,-k, the unnormalized local 
 
 ### Dependencies
 
-AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; contract gap factor-epsilon-identities; contract gap tempered-local-regularity; contract gap hermitian-global-values; contract gap local-rankin-selberg; contract gap whittaker-pairing-fourier; contract gap global-parameters; this roadmap §2.7; this roadmap §2.6; contract gap local-categories; contract gap archimedean-globalization; contract gap gl-tempered-genericity; this roadmap §3.3; contract gap local-spherical; this roadmap §4.1; contract gap adelic-measures; contract gap automorphic-realization.
+AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; contract gap factor-epsilon-identities; contract gap tempered-local-regularity; contract gap hermitian-global-values; contract gap local-rankin-selberg; contract gap whittaker-pairing-fourier; contract gap global-parameters; this roadmap §2.7; this roadmap §2.6; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap gl-tempered-genericity; this roadmap §3.3; contract gap local-spherical; this roadmap §4.1; contract gap adelic-measures; contract gap automorphic-realization.
 
 ## Layer 6: Relative characters and the endoscopic spectral calculation
 
