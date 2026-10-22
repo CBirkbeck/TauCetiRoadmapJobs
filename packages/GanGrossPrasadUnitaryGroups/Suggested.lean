@@ -20,12 +20,6 @@ universe u v w
 free rank-one module over the split quadratic algebra. -/
 def splitLineFrame {F : Type u} [Field F] (e : F × F) : Prop := IsUnit e
 
-/-- On the split Hermitian line, the norm of a basis vector is nonzero, and conversely.
-The two coordinates must both be nonzero, including over a dyadic base field. -/
-theorem splitLineFrame_iff_norm_ne_zero {F : Type u} [Field F] (e : F × F) :
-    splitLineFrame e ↔ e.1 * e.2 ≠ 0 := by
-  sorry
-
 /-- Split-line frames can have norm one or two. The linear-first split pairing
 is preserved by the inverse dual scaling (2,1/2), while scaling both coordinates
 by two multiplies the cross-pairing by four. -/
@@ -79,45 +73,144 @@ noncomputable abbrev algebraicBesselModel {H : Type u} [Group H]
     (ν : Representation ℂ H ℂ) :=
   Representation.IntertwiningMap (ρV.tprod ρW) ν
 
-/-- A Bessel functional evaluated on a translated pure tensor transforms by the
-specified character line. This is the finite-place equation of the roadmap. -/
-theorem algebraicBesselModel_equivariant {H : Type u} [Group H]
-    {V : Type v} [AddCommGroup V] [Module ℂ V]
-    {W : Type w} [AddCommGroup W] [Module ℂ W]
-    (ρV : Representation ℂ H V) (ρW : Representation ℂ H W)
-    (ν : Representation ℂ H ℂ) (ℓ : algebraicBesselModel ρV ρW ν)
-    (h : H) (v : V) (w : W) :
-    ℓ ((ρV h v) ⊗ₜ[ℂ] (ρW h w)) = ν h (ℓ (v ⊗ₜ[ℂ] w)) := by
-  sorry
-
-/-- Multiplication intertwines a scalar character times the trivial action with
-that same character. The values at one and at i pin the direction of covariance. -/
+/-- Evaluation at one identifies the scalar-character model with the complex line.
+Multiplication gives the inverse at one, with values one and i; the trivial character
+specializes this to the one-dimensional trivial-group model. -/
 example {H : Type u} [Group H] (ν : Representation ℂ H ℂ) :
-    ∃ ℓ : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν,
-      ℓ ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) = 1 ∧
-      ℓ (Complex.I ⊗ₜ[ℂ] (1 : ℂ)) = Complex.I := by
-  let ℓ : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν :=
+    ∃ e : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν ≃ₗ[ℂ] ℂ,
+      (∀ ℓ, e ℓ = ℓ ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ))) ∧
+      e.symm 1 ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) = 1 ∧
+      e.symm 1 (Complex.I ⊗ₜ[ℂ] (1 : ℂ)) = Complex.I ∧
+      Module.finrank ℂ (algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν) = 1 := by
+  let m : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν :=
     ⟨LinearMap.mul' ℂ ℂ, by
       intro h
       ext
       simp [Representation.tprod]⟩
-  exact ⟨ℓ, by simp [ℓ]⟩
+  let ev : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν →ₗ[ℂ] ℂ :=
+    { toFun := fun ℓ => ℓ ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ))
+      map_add' := by intros; rfl
+      map_smul' := by intros; rfl }
+  have h_eval (ℓ : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν)
+      (v w : ℂ) : ℓ (v ⊗ₜ[ℂ] w) = v * w * ev ℓ := by
+    rw [TensorProduct.tmul_eq_smul_one_tmul, map_smul]
+    nth_rw 1 [← mul_one w]
+    rw [← smul_eq_mul, TensorProduct.tmul_smul, map_smul]
+    simp [ev, smul_eq_mul, mul_assoc]
+  let e : algebraicBesselModel ν (Representation.trivial ℂ H ℂ) ν ≃ₗ[ℂ] ℂ :=
+    { ev with
+      invFun := fun c => c • m
+      left_inv := by
+        intro ℓ
+        apply Representation.IntertwiningMap.ext
+        apply TensorProduct.ext'
+        intro v w
+        change ev ℓ * (v * w) = ℓ (v ⊗ₜ[ℂ] w)
+        rw [h_eval]
+        ring
+      right_inv := by intro c; simp [ev, m] }
+  refine ⟨e, fun _ => rfl, ?_, ?_, ?_⟩
+  · simp [e, m]
+  · simp [e, m]
+  · simpa using e.finrank_eq
 
-/-- The character target matters: for any Bessel functional, a tensor fixed by an
-element whose target action is minus identity is annihilated. -/
-example {H : Type u} [Group H]
-    {V : Type v} [AddCommGroup V] [Module ℂ V]
-    {W : Type w} [AddCommGroup W] [Module ℂ W]
-    (ρV : Representation ℂ H V) (ρW : Representation ℂ H W)
-    (ν : Representation ℂ H ℂ) (ℓ : algebraicBesselModel ρV ρW ν)
-    (h : H) (v : V) (w : W)
-    (hv : ρV h v = v) (hw : ρW h w = w)
-    (hν : ν h = -LinearMap.id) : ℓ (v ⊗ₜ[ℂ] w) = 0 := by
-  have he := Representation.IntertwiningMap.isIntertwining _ _ ℓ h (v ⊗ₜ[ℂ] w)
-  simp only [Representation.tprod_apply, TensorProduct.map_tmul, hv, hw, hν,
-    LinearMap.neg_apply, LinearMap.id_apply] at he
-  have hz : (2 : ℂ) * ℓ (v ⊗ₜ[ℂ] w) = 0 := by linear_combination he
-  exact (mul_eq_zero.mp hz).resolve_left (by norm_num)
+/-- Circle weights one and minus one give a one-dimensional invariant model, whereas
+two weight-one factors give the zero model, as witnessed by i. A fixed tensor is also
+annihilated when its target character acts by minus identity. -/
+example :
+    let ρ : Representation ℂ Circle ℂ :=
+      (algebraMap ℂ (Module.End ℂ ℂ)).toMonoidHom.comp Circle.coeHom
+    let ρinv : Representation ℂ Circle ℂ := ρ.comp invMonoidHom
+    let τ := Representation.trivial ℂ Circle ℂ
+    (∃ e : algebraicBesselModel ρ ρinv τ ≃ₗ[ℂ] ℂ,
+      (∀ f, e f = f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ))) ∧
+      e.symm 1 ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) = 1 ∧
+      Module.finrank ℂ (algebraicBesselModel ρ ρinv τ) = 1) ∧
+    ((∀ f : algebraicBesselModel ρ ρ τ, f = 0) ∧
+      Module.finrank ℂ (algebraicBesselModel ρ ρ τ) = 0) ∧
+    (∀ {H : Type u} [Group H]
+      {V : Type v} [AddCommGroup V] [Module ℂ V]
+      {W : Type w} [AddCommGroup W] [Module ℂ W]
+      (ρV : Representation ℂ H V) (ρW : Representation ℂ H W)
+      (ν : Representation ℂ H ℂ) (ℓ : algebraicBesselModel ρV ρW ν)
+      (h : H) (v : V) (w : W),
+      ρV h v = v → ρW h w = w →
+      ν h = -LinearMap.id → ℓ (v ⊗ₜ[ℂ] w) = 0) := by
+  dsimp only
+  let ρ : Representation ℂ Circle ℂ :=
+    (algebraMap ℂ (Module.End ℂ ℂ)).toMonoidHom.comp Circle.coeHom
+  let ρinv : Representation ℂ Circle ℂ := ρ.comp invMonoidHom
+  let τ := Representation.trivial ℂ Circle ℂ
+  have hρ (z : Circle) (x : ℂ) : ρ z x = (z : ℂ) * x := by
+    rfl
+  have hinv (z : Circle) (x : ℂ) : ρinv z x = (z : ℂ)⁻¹ * x := by
+    simp [ρinv, hρ]
+  have h_eval (σ₁ σ₂ : Representation ℂ Circle ℂ)
+      (f : algebraicBesselModel σ₁ σ₂ τ) (x y : ℂ) :
+      f (x ⊗ₜ[ℂ] y) = x * y * f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) := by
+    rw [TensorProduct.tmul_eq_smul_one_tmul, map_smul]
+    nth_rw 1 [← mul_one y]
+    rw [← smul_eq_mul, TensorProduct.tmul_smul, map_smul]
+    simp [smul_eq_mul, mul_assoc]
+  let m : algebraicBesselModel ρ ρinv τ :=
+    ⟨LinearMap.mul' ℂ ℂ, by
+      intro z
+      apply TensorProduct.ext'
+      intro x y
+      change (ρ z x) * (ρinv z y) = τ z (x * y)
+      rw [hρ, hinv]
+      change (z : ℂ) * x * ((z : ℂ)⁻¹ * y) = x * y
+      calc
+        _ = ((z : ℂ) * (z : ℂ)⁻¹) * (x * y) := by ring
+        _ = x * y := by rw [mul_inv_cancel₀ (Circle.coe_ne_zero z), one_mul]⟩
+  let ev : algebraicBesselModel ρ ρinv τ →ₗ[ℂ] ℂ :=
+    { toFun := fun f => f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ))
+      map_add' := by intros; rfl
+      map_smul' := by intros; rfl }
+  let e : algebraicBesselModel ρ ρinv τ ≃ₗ[ℂ] ℂ :=
+    { ev with
+      invFun := fun c => c • m
+      left_inv := by
+        intro f
+        apply Representation.IntertwiningMap.ext
+        apply TensorProduct.ext'
+        intro x y
+        change ev f * (x * y) = f (x ⊗ₜ[ℂ] y)
+        rw [h_eval]
+        dsimp [ev]
+        ring
+      right_inv := by intro c; simp [ev, m] }
+  have hz (f : algebraicBesselModel ρ ρ τ) : f = 0 := by
+    let zi : Circle := ⟨Complex.I, by simp [Submonoid.unitSphere]⟩
+    have he := Representation.IntertwiningMap.isIntertwining _ _ f zi
+      ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ))
+    simp only [Representation.tprod_apply, TensorProduct.map_tmul, hρ, mul_one] at he
+    have he' : -f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) =
+        f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) := by
+      calc
+        _ = f (Complex.I ⊗ₜ[ℂ] Complex.I) := by
+          rw [h_eval ρ ρ f Complex.I Complex.I, Complex.I_mul_I, neg_one_mul]
+        _ = τ zi (f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ))) := he
+        _ = _ := rfl
+    have hzero : f ((1 : ℂ) ⊗ₜ[ℂ] (1 : ℂ)) = 0 := by
+      linear_combination (-1 / 2 : ℂ) * he'
+    apply Representation.IntertwiningMap.ext
+    apply TensorProduct.ext'
+    intro x y
+    change f (x ⊗ₜ[ℂ] y) = 0
+    rw [h_eval, hzero, mul_zero]
+  refine ⟨⟨e, fun _ => rfl, ?_, ?_⟩, ⟨hz, ?_⟩, ?_⟩
+  · simp [e, m]
+  · simpa only [ρ, ρinv, τ, Module.finrank_self] using e.finrank_eq
+  · let : Subsingleton (algebraicBesselModel ρ ρ τ) :=
+      ⟨fun f g => (hz f).trans (hz g).symm⟩
+    exact Module.finrank_zero_of_subsingleton
+  · intro H _ V _ _ W _ _ ρV ρW ν ℓ h v w hv hw hν
+    have he := Representation.IntertwiningMap.isIntertwining _ _ ℓ h (v ⊗ₜ[ℂ] w)
+    simp only [Representation.tprod_apply, TensorProduct.map_tmul, hv, hw, hν,
+      LinearMap.neg_apply, LinearMap.id_apply] at he
+    have hz : (2 : ℂ) * ℓ (v ⊗ₜ[ℂ] w) = 0 := by linear_combination he
+    exact (mul_eq_zero.mp hz).resolve_left (by norm_num)
 
 /-! ## Layer 3: Root-number characters and the tempered local theorem -/
 
@@ -170,12 +263,6 @@ example :
 in each degree. Its coordinates are written additively (BPCZ, Section 10.3). -/
 abbrev unitaryConstituentSigns (I : Type u) (J : Type v) := (I ⊕ J) → ZMod 2
 
-/-- The full constituent sign group includes both degree-wise central signs. -/
-theorem unitaryConstituentSigns_card (I : Type u) (J : Type v) [Finite I] [Finite J] :
-    Nat.card (unitaryConstituentSigns I J) =
-      2 ^ (Nat.card I + Nat.card J) := by
-  sorry
-
 /-- Two single-constituent degrees give four signs. -/
 example : Nat.card (unitaryConstituentSigns (Fin 1) (Fin 1)) = 4 := by
   norm_num [unitaryConstituentSigns, Nat.card_eq_fintype_card, Fintype.card_fun]
@@ -191,14 +278,6 @@ order of the full constituent sign group, with no quotient by a diagonal sign. -
 noncomputable def unitaryConstituentCoefficient (I : Type u) (J : Type v)
     [Finite I] [Finite J] : ℂ :=
   (Nat.card (unitaryConstituentSigns I J) : ℂ)⁻¹
-
-/-- The relative spectral coefficient is the inverse power of two determined by the
-actual two constituent counts (BPCZ, Theorem 8.1.4.1). -/
-theorem unitaryConstituentCoefficient_eq (I : Type u) (J : Type v)
-    [Finite I] [Finite J] :
-    unitaryConstituentCoefficient I J =
-      ((2 : ℂ) ^ (Nat.card I + Nat.card J))⁻¹ := by
-  sorry
 
 /-- Stable cuspidal base change gives the coefficient one quarter. -/
 example : unitaryConstituentCoefficient (Fin 1) (Fin 1) = 1 / 4 := by

@@ -1,4 +1,4 @@
-# Roadmap: unitary bessel models and the gan–gross–prasad period formula
+# Roadmap: unitary Bessel models and the Gan–Gross–Prasad period formula
 
 **Summary.** Build the relative restriction library for unitary groups from Hermitian geometry, local representation categories, actual enhanced Langlands correspondences and automorphic analysis. The endpoints are multiplicity one for every relevant odd codimension, the tempered nonsplit local theorem with its epsilon-factor enhancement, adjacent global period nonvanishing including endoscopy, and the completed Tamagawa-normalized identity `GGP.8`. The fixed-pair global assertion in arbitrary odd codimension and the split archimedean higher-codimension prediction are named propositions with their conjectural status retained. Every analytic theorem includes all permitted bad and infinite places.
 
@@ -51,8 +51,8 @@ The library pins are Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a and Tau Ce
 - `Representation.IntertwiningMap`, `Representation.IntertwiningMap.ext` and `Representation.IntertwiningMap.isIntertwining`, in `Mathlib/RepresentationTheory/Intertwining.lean`, give the algebraic equivariant-map carrier and evaluation. They supply no continuity or admissibility.
 - `Representation.tprod` and `Representation.tprod_apply`, in `Mathlib/RepresentationTheory/Basic.lean`, give the diagonal tensor action over a commutative semiring; use their complex specialization for finite-place algebraic tensors. `Representation.dual` uses the inverse action on the algebraic dual; it is not by itself a smooth contragredient.
 - `Matrix.unitaryGroup`, in `Mathlib/LinearAlgebra/UnitaryGroup.lean`, is the unitary submonoid of matrices over a commutative star ring. The requested arbitrary-form group must agree with it on the identity Gram matrix, including size zero.
-- `Prod.isUnit_iff` in `Mathlib/Algebra/Group/Prod.lean` and the field unit criterion identify generators of the split line. `Nat.card_fun` and `Nat.card_sum` in `Mathlib/SetTheory/Cardinal/Finite.lean`, with the finite-cardinality instances for ZMod, supply the general cardinal arithmetic used by the constituent-sign specialization. No general counting theorem is a target here.
-- The complex inner product and its scalar identities in `Mathlib/Analysis/InnerProductSpace/Basic.lean` supply the swapped-slot pairing convention. `LinearMap.mul'` and `TensorProduct.map_tmul` supply the scalar-model examples. These inputs do not impose the analytic smooth-vector topology.
+- `Prod.isUnit_iff` in `Mathlib/Algebra/Group/Prod.lean` and `isUnit_iff_ne_zero` in `Mathlib/Algebra/GroupWithZero/Units/Basic.lean` identify generators of the split line. `Nat.card_fun` and `Nat.card_sum` in `Mathlib/SetTheory/Cardinal/Finite.lean`, with the finite-cardinality instances for ZMod, supply the general cardinal arithmetic used by the constituent-sign specialization. No general counting theorem is a target here.
+- The complex inner product and its scalar identities in `Mathlib/Analysis/InnerProductSpace/Basic.lean` supply the swapped-slot pairing convention. `LinearMap.mul'` and `TensorProduct.map_tmul` supply the scalar-model examples. `Circle` and `Circle.coeHom` in `Mathlib/Analysis/Complex/Circle.lean` supply the weight-one character; its composite with `invMonoidHom` gives weight minus one. `LinearEquiv.finrank_eq` transfers the scalar-model dimension along the evaluation equivalences. These inputs do not impose the analytic smooth-vector topology.
 
 ### From Tau Ceti
 
@@ -66,9 +66,9 @@ Layers 0, 3, 5 and 7 supply the affine Hopf/scheme/point dictionaries, closed su
 
 Layers 4–6 and 8 supply finite/full adeles, rational embeddings, completion maps and extension/base-change maps. Use these in §4.1 and localizing its rational Bessel character. Quotient measures on group points are the separate AdelicAlgebraicGroups contract.
 
-### From TauCetiRoadmap.RestrictedProducts
+### From [RestrictedProducts](../../Completed/RestrictedProducts/README.md) (completed)
 
-Completed Layers 0–3 supply compact-open reference families, coordinate maps, reference change, finite-place decomposition and eventually integral rational diagonals. Use these to assemble the adelic relative group and identify its local factors. They do not assert a Tamagawa product.
+Its completed Layers 0–3 supply compact-open reference families, coordinate maps, reference change, finite-place decomposition and eventually integral rational diagonals, each realized by the Tau Ceti declaration its README names. Use these to assemble the adelic relative group and identify its local factors. They do not assert a Tamagawa product.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -258,15 +258,15 @@ For split E=F×F with coordinate-swap involution, use the sign +1 finite-project
 
 This interface is used by all Bessel constructions and pure-inner-form indexing.
 
-On the standard split line the real-bodied specialization `splitLineFrame` says that e is a unit of F×F. Its intended domain is any field F; the surrounding Hermitian theory retains characteristic ≠2. Prove `splitLineFrame_iff_norm_ne_zero`: a vector e frames the line exactly when e₁e₂≠0. This uses the line norm h(e,e)=(e₁e₂,e₁e₂) and tests the basis-vector clause of `RelevantHermitianPair`, without constructing the arbitrary-form supplier (ggp §12, p. 44, ggp line 1567–1569).
+On the standard split line the real-bodied specialization `splitLineFrame` says that e is a unit of F×F. Its intended domain is any field F; the surrounding Hermitian theory retains characteristic ≠2. A vector e frames the line exactly when e₁e₂≠0, by the native product-unit and field-unit criteria in the supplier contract. This uses the line norm h(e,e)=(e₁e₂,e₁e₂) and tests the basis-vector clause of `RelevantHermitianPair`, without constructing the arbitrary-form supplier (ggp §12, p. 44, ggp line 1567–1569).
 
-**API.** The predicate is the specialization of unit membership; `splitLineFrame_iff_norm_ne_zero` identifies it with nonzero norm. Coordinate equality determines the input vector.
+**API.** The predicate is the specialization of unit membership; the native product-unit and field-unit criteria identify it with nonzero norm. Coordinate equality determines the input vector.
 
 **Checks.**
 
 - The vector (1,1) satisfies `splitLineFrame` and has norm 1; a frame condition excluding this vector is false. This is a proved Lean example.
 - The vector (1,0) is nonzero, has norm 0 and fails `splitLineFrame`; accepting every nonzero vector loses the second split character coordinate. This is a proved Lean example.
-- Over Q the vector (2,1) satisfies `splitLineFrame` and has norm 2. Requiring norm one would reject this basis. This is proved together with the (1,1) Lean example; `splitLineFrame_iff_norm_ne_zero` retains its all-field scope.
+- Over Q the vector (2,1) satisfies `splitLineFrame` and has norm 2. Requiring norm one would reject this basis. This is proved together with the (1,1) Lean example; the unit criterion retains its all-field scope.
 
 ### 1.2 `besselDatum`
 
@@ -366,9 +366,9 @@ Use the native intertwiner and tensor representation carriers; impose continuity
 
 **Checks.**
 
-- `bessel_model_trivial`. (degenerate) For H=1 and both spaces ℂ, evaluation zw gives a one-dimensional model.
+- `bessel_model_trivial`. (degenerate) For H=1 and both spaces ℂ, evaluation at 1⊗1 is a linear equivalence of the model with ℂ, inverse c↦(z⊗w↦czw), so its finrank is 1. The first `algebraicBesselModel` Lean example proves this as the trivial-character specialization of its scalar-character equivalence.
 
-- `bessel_model_weights`. (computation) On U(1), weights 1 and -1 pair to ℂ, while weights 1 and 1 have zero invariant bilinear forms; omitting the dual fails.
+- `bessel_model_weights`. (computation) On U(1)=Circle, let z act by zx on the first line and z⁻¹y on the second. Evaluation at 1⊗1 identifies the invariant model with ℂ, with multiplication as its nonzero inverse image of 1 and finrank 1. With weights 1 and 1, z=i acts by -1 on the tensor and by +1 on the trivial target, forcing every invariant functional to vanish on 1⊗1 and hence on every pure tensor; the model has finrank 0. The second `algebraicBesselModel` Lean example proves both conclusions; omitting the dual fails.
 
 - `bessel_model_library`. (compatibility) At a finite place the defining equations coincide with `Representation.IntertwiningMap` into the one-dimensional representation ν, not Hom into the trivial representation when ν≠1.
 
@@ -384,15 +384,15 @@ The real-bodied `linearFirstPairing` is the native positive complex inner produc
 - For every complex c and vectors x,y, `linearFirstPairing` sends (cx,y) to cB(x,y) and (x,cy) to conjugate(c)B(x,y). This is part of a proved Lean example; omitting conjugation fails at c=i.
 - On (0,x) and (x,0), `linearFirstPairing` is 0. The same Lean example includes both values, including the zero vector space.
 
-For representations ρV and ρW already restricted to a group H, and an actual representation ν of H on ℂ, define the algebraic specialization `algebraicBesselModel` to be the native intertwiner space from their tensor to ν. It makes no smoothness or topological assertion. Prove `algebraicBesselModel_equivariant`: for ℓ in this space, h∈H and v,w, ℓ(ρV(h)v⊗ρW(h)w)=ν(h)(ℓ(v⊗w)). For the Bessel character line this is multiplication by ν(h), with no inverse (ggp §14, p. 58, ggp line 2051–2060).
+For representations ρV and ρW already restricted to a group H, and an actual representation ν of H on ℂ, define the algebraic specialization `algebraicBesselModel` to be the native intertwiner space from their tensor to ν. It makes no smoothness or topological assertion. The native `Representation.IntertwiningMap.isIntertwining`, evaluated on a pure tensor, gives for ℓ in this space, h∈H and v,w, ℓ(ρV(h)v⊗ρW(h)w)=ν(h)(ℓ(v⊗w)). For the Bessel character line this is multiplication by ν(h), with no inverse (ggp §14, p. 58, ggp line 2051–2060).
 
-**API.** Construction, equality and linear structure use the native intertwiner API. The specialized evaluation statement is `algebraicBesselModel_equivariant`; the analytic extension is `besselModel` above.
+**API.** Construction, equality and linear structure use the native intertwiner API. Evaluation uses `Representation.IntertwiningMap.isIntertwining` and `Representation.tprod_apply`; the analytic extension is `besselModel` above.
 
 **Checks.**
 
-- For any scalar character ν on the first factor and target, with trivial action on the second factor, multiplication gives a functional with values 1 on 1⊗1 and i on i⊗1. A proved Lean example checks these values; specializing ν=1 gives the trivial-group test.
-- If h fixes v and w while acting by −1 on the target line, every member of `algebraicBesselModel` vanishes on v⊗w. This is a proved Lean example; replacing the target character by 1 would admit the scalar product instead.
-- If ν(h)1=i in the scalar-character example, translating 1⊗1 gives i⊗1 and its functional value is i; the same proved Lean example computes that value. The equation `algebraicBesselModel_equivariant` uses ν, while the inverse-character convention would prescribe −i. The full unitary-weight Check above supplies the dual-convention witness.
+- For any scalar character ν on the first factor and target, with trivial action on the second factor, evaluation at 1⊗1 is a linear equivalence with ℂ and the model has finrank 1. Its inverse at 1 is multiplication, with values 1 on 1⊗1 and i on i⊗1. The first proved Lean example includes the equivalence, dimension and both values; specializing ν=1 gives the trivial-group test.
+- If h fixes v and w while acting by −1 on the target line, every member of `algebraicBesselModel` vanishes on v⊗w. The second proved Lean example retains this negative control together with the Circle weight tests above; replacing the target character by 1 would admit the scalar product instead.
+- If ν(h)1=i in the scalar-character example, translating 1⊗1 gives i⊗1 and its functional value is i; the same proved Lean example computes that value. The native intertwiner equation uses ν, while the inverse-character convention would prescribe −i. The full unitary-weight Check above supplies the dual-convention witness.
 
 ### 2.2 `adjacentInvariantDistribution_symmetry`
 
@@ -1178,9 +1178,9 @@ This interface is used by GL relative character, its central-value nonvanishing 
 
 ### 6.2 `unitaryGlobalRelativeCharacter`
 
-For a cuspidal automorphic realization σ define J_σ(f)=Σ_e P(σ(f)e)conj(P(e)) over an orthonormal basis for the actual Petersson pairing. For the stated Hermitian Arthur data define I_Π(f)=Σ_W λ(Π(f)W)conj(β_η(W))/<W,W>_Whitt over an orthogonal smooth K-basis. Prove convergence, basis independence and continuity on the supplied adelic Schwartz algebra. Define the induced relative character I_(P,ρ) by the same pairing of the canonically regularized Rankin–Selberg period of E(φ,0) with the Flicker–Rallis intertwining period; both are the supplied canonical periods, not arbitrary extensions. (bpcz, §2.8; §5.1.5 and Proposition 5.1.5.1, p. 59, bpcz line 3040–3058; §8.1.3, p. 78, line 4225–4233; §10.3.1, pp. 90–91, bpcz line 4873–4888 (local integral)).
+For a cuspidal automorphic realization σ define J_σ(f)=Σ_e P(σ(f)e)conj(P(e)) over an orthonormal smooth K-basis for the actual Petersson pairing, the union of orthonormal bases of its finite-dimensional K-isotypic subspaces (bpcz §2.8.3, p. 25, bpcz line 1167–1170; §10.1.2, p. 87, bpcz line 4694–4701). For the stated Hermitian Arthur data define I_Π(f)=Σ_W λ(Π(f)W)conj(β_η(W))/<W,W>_Whitt over an orthogonal smooth K-basis. Prove convergence, basis independence and continuity on the supplied adelic Schwartz algebra. Define the induced relative character I_(P,ρ) by the same pairing of the canonically regularized Rankin–Selberg period of E(φ,0) with the Flicker–Rallis intertwining period; both are the supplied canonical periods, not arbitrary extensions. (bpcz, §2.8; §5.1.5 and Proposition 5.1.5.1, p. 59, bpcz line 3040–3058; §8.1.3, p. 78, line 4225–4233; §10.3.1, pp. 90–91, bpcz line 4873–4888 (local integral)).
 
-Here E/F is a quadratic extension of number fields and n≥1; Π_m, for m=n,n+1, is the full normalized induction of distinct conjugate-self-dual cuspidal constituents Π_(m,j); each constituent has a pole of L(s,Π_(m,j),As^((-1)^(m+1))) at s=1; the actual induced representations are the supplier’s Hermitian discrete Arthur parameters; their constituent and base-change uniqueness are supplied, not postulated anew; for J_σ, σ is cuspidal; temperedness is required only for its local integral realization; f belongs to the supplied adelic Schwartz algebra; orthogonal basis elements are nonzero; Local assertion: F_v is any characteristic-zero local field, E_v/F_v is quadratic étale, G_v=U(V)(F_v)×U(W)(F_v), H_v=U(W)(F_v) diagonally, n≥1 and σ_v is irreducible unitary tempered; f_v∈C_c∞(G_v) at finite v and f_v∈S(G_v) in the bpcz §2.5 Nash Schwartz topology at infinite v; fix Haar dg_v on G_v and dt_v on H_v; put σ_v(f_v)=∫_(G_v)f_v(g)σ_v(g)dg_v; global specializations use the disintegrated measures of bpcz §2.3.3.
+Here E/F is a quadratic extension of number fields and n≥1; Π_m, for m=n,n+1, is the full normalized induction of distinct conjugate-self-dual cuspidal constituents Π_(m,j); each constituent has a pole of L(s,Π_(m,j),As^((-1)^(m+1))) at s=1; the actual induced representations are the supplier’s Hermitian discrete Arthur parameters; their constituent and base-change uniqueness are supplied, not postulated anew; for J_σ, σ is cuspidal; temperedness is required only for its local integral realization; f belongs to the supplied adelic Schwartz algebra; all global basis vectors lie in the smooth automorphic realization, and convergence uses bpcz Proposition 2.8.4.1, p. 25, bpcz line 1174–1186; orthogonal K-bases are rescalings of compatible orthonormal smooth K-bases and their elements are nonzero; Local assertion: F_v is any characteristic-zero local field, E_v/F_v is quadratic étale, G_v=U(V)(F_v)×U(W)(F_v), H_v=U(W)(F_v) diagonally, n≥1 and σ_v is irreducible unitary tempered; f_v∈C_c∞(G_v) at finite v and f_v∈S(G_v) in the bpcz §2.5 Nash Schwartz topology at infinite v; fix Haar dg_v on G_v and dt_v on H_v; put σ_v(f_v)=∫_(G_v)f_v(g)σ_v(g)dg_v; global specializations use the disintegrated measures of bpcz §2.3.3.
 
 Use the supplier’s nuclear trace-kernel and continuous period pairing theorem to prove convergence and independence. This applies to the actual λ and β of 6.1 and the actual P of 4.1. Positivity follows by writing the global relative character on a convolution square as a sum of absolute squares; it is not inferred from an archimedean local positivity conjecture.
 
@@ -1188,7 +1188,7 @@ For the local trace, consume the rank-one tensor expansion and trace-coefficient
 
 **API.**
 
-- `unitaryGlobalRelativeCharacter_basis`. Changing orthonormal or orthogonal bases leaves the distributions unchanged.
+- `unitaryGlobalRelativeCharacter_basis`. Changing compatible smooth K-bases, or rescaling their vectors with the displayed norm denominators, leaves the distributions unchanged.
 
 - `unitaryGlobalRelativeCharacter_positive`. J_σ(f*f*)≥0 and J_σ is nonzero iff P|σ≠0, using the source convolution adjoint.
 
@@ -1205,6 +1205,8 @@ For the local trace, consume the rank-one tensor expansion and trace-coefficient
 - `relative_character_zero_period`. (degenerate) P|σ=0 gives J_σ=0 even if σ(f) is nonzero.
 
 - `relative_character_basis_rescale`. (compatibility) Replacing an orthogonal basis vector by ce multiplies numerator and norm by |c|² and does not change I_Π.
+
+- An arbitrary orthonormal Hilbert basis can contain vectors outside the smooth realization, where P is undefined. Such a basis does not define J_σ; K-type-adapted smooth bases keep every summand in the period domain.
 
 - `relative_character_local_smoothing`. (compatibility) For f_v=e_(K_G)=1_(K_G)/vol(K_G) and a one-dimensional hyperspecial-fixed subspace spanned by a unit vector x, σ_v(f_v)=T_(x,x), so J_(σ_v)(f_v)=C_vα_v(x,x). Rescaling dg_v changes e_(K_G) reciprocally and leaves this projector identity intact; omitting dt_v or C_v gives the wrong integral.
 
@@ -1230,9 +1232,9 @@ Unfold the truncated spectral kernel along H′ and G_R. The general Arthur trun
 
 This interface is used by Endoscopic comparison and variable component-group constant.
 
-For finite types I and J indexing the distinct constituents in the two degrees, define `unitaryConstituentSigns` as the additive sign group (I⊕J)→ℤ/2. Prove `unitaryConstituentSigns_card`: its order is 2^(#I+#J). Define `unitaryConstituentCoefficient` as the inverse of this order in ℂ and prove `unitaryConstituentCoefficient_eq`: it equals (2^(#I+#J))⁻¹. The group always has at least its identity, so the inverse denominator is nonzero. The full sign group, rather than a quotient by a diagonal sign, is the one used in §7.4 (bpcz §§1.1.3, 8.1.4, pp. 3, 78, bpcz line 96–107 and bpcz line 4243–4254).
+For finite types I and J indexing the distinct constituents in the two degrees, define `unitaryConstituentSigns` as the additive sign group (I⊕J)→ℤ/2. Its order is 2^(#I+#J) by `Nat.card_fun` and `Nat.card_sum`. Define `unitaryConstituentCoefficient` as the inverse of this order in ℂ; the same native cardinal identities give (2^(#I+#J))⁻¹. The group always has at least its identity, so the inverse denominator is nonzero. The full sign group, rather than a quotient by a diagonal sign, is the one used in §7.4 (bpcz §§1.1.3, 8.1.4, pp. 3, 78, bpcz line 96–107 and bpcz line 4243–4254).
 
-**API.** The coordinate group law and reindexing use the native function group. `unitaryConstituentSigns_card` and `unitaryConstituentCoefficient_eq` identify its order and inverse-order coefficient.
+**API.** The coordinate group law and reindexing use the native function group. The native `Nat.card_fun` and `Nat.card_sum` identities identify its order and inverse-order coefficient.
 
 **Checks.**
 
@@ -1412,7 +1414,7 @@ The period-witness premise in SelmerIwasawaCohomologyPartII §8.1 has an arithme
 
 ## References
 
-The manifest packages/GanGrossPrasadUnitaryGroups/sources.toml records the exact legal copies. The following identifiers govern the locators above; preprint numbering is not silently replaced by publication numbering.
+The accompanying [source manifest](sources.toml) records the exact legal copies. The following identifiers govern the locators above; preprint numbering is not silently replaced by publication numbering.
 
 - **xue-real**: Hang Xue, [Bessel models for real unitary groups: the tempered case](https://par.nsf.gov/servlets/purl/10476094), 2023. Theorem 2.2, published p. 1000; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001.
 
