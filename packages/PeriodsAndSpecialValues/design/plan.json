@@ -1,0 +1,40 @@
+{
+  "gaps": [
+    {
+      "slug": "modular-eigenprojector-motive",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "MC.2 (required extension)",
+      "needs": "The rank-two eigenprojector motive of every normalized cuspidal newform over ℚ, with coefficient-field realizations and marked comparisons."
+    },
+    {
+      "slug": "motivic-cohomology-adams",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "Layer 4 (required extension)",
+      "needs": "For number fields, identify rational motivic cohomology with the corresponding Adams eigenspaces of K-theory, naturally for products and residues."
+    },
+    {
+      "slug": "framed-relative-motives",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "Layers 4–5 (required extension)",
+      "needs": "Relative motives of the configuration pairs used for iterated integrals, with Tate framings and realization-compatible products and boundaries."
+    },
+    {
+      "slug": "k3-betti-even-unimodular",
+      "supplier": "K3SurfacesAndSymplecticBoundedness",
+      "section": "§3.3 (required extension)",
+      "needs": "For every projective complex K3, prove the integral H² cup lattice even unimodular of signature (3,19)."
+    },
+    {
+      "slug": "cm-elliptic-regulator",
+      "supplier": "EllipticKTheory",
+      "section": "elliptic regulator comparison (required extension)",
+      "needs": "Supply the motivic regulator and the normalized CM L(E,2) formula with specified cycle and all conductor, period and roots-of-unity factors."
+    },
+    {
+      "slug": "indefinite-lattice-classification",
+      "supplier": "IntegralLattices",
+      "section": "Part II: primitive embeddings and indefinite even unimodular lattices",
+      "needs": "Extend the completed lattice theory by primitive-embedding uniqueness with unimodular ambient lattice and discriminant-length bounds, and indefinite even-unimodular classification."
+    }
+  ]
+}
