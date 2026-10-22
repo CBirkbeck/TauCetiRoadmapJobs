@@ -1,0 +1,52 @@
+{
+  "gaps": [
+    {
+      "slug": "cm-local-dynamics",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§4.2 Mixing, ergodicity and unipotent flows",
+      "needs": "For every finite extension L/ℚ_p, r≥1 and product of cocompact lattices Γᵢ⊂SL₂(L), supply the homogeneous orbit-closure probability measure and dilated-compact-set equidistribution for every L-one-parameter unipotent subgroup of SL₂(L)ʳ, the twisted-diagonal containment for Δ(U) with U nontrivial, and the full-product criterion that the conjugated lattices are pairwise not U-commensurable (Cornut–Vatsal Theorem 2.29, Lemma 2.30 and Proposition 2.35, pp.31–34)."
+    },
+    {
+      "slug": "self-dual-rigidity-three",
+      "supplier": "EulerSystemsAndKolyvaginSystems",
+      "section": "§§5.11–5.13 Rigidity, divisibility profile and exact length",
+      "needs": "For residue characteristic 3, a coefficient DVR R finite over ℤ₃, surjective residual elliptic representation, the self-dual cartesian ordinary conditions and a prime set containing every sufficiently deep auxiliary set, prove the common stub exponent d in BCGS Lemma 2.2.4 on N(2k−1), independent of k, with d finite if a core value is nonzero, and deduce the deep-prime invariance and exact paired length of Proposition 2.2.1 and Theorem 2.2.2 without the printed p>3 rigidity restriction."
+    },
+    {
+      "slug": "zhang-level-raising",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "§§1.1–1.3 Level-changing algebra and cohomology; §2.4 Diamond’s level-raising criterion",
+      "needs": "For the weight-two GL₂-type residual representation over k₀ satisfying Zhang’s three-clause Hypothesis ♥ and admissible primes q₁,q₂, provide the integral/rational residual structures and definite/indefinite quaternionic multiplicity-one identifications, with prescribed local types, used in Zhang Theorem 4.3; existence of a q-new form alone is insufficient."
+    },
+    {
+      "slug": "gl2-integral-rank-zero",
+      "supplier": "ModularIwasawaMainConjectures",
+      "section": "§§1.3, 1.7 Skinner–Urban and multiplicative reduction",
+      "needs": "For g and its quadratic twist g_K in Zhang Theorem 7.1, give the integral ordinary main-conjecture/Kato comparison and trivial-character GL₂-type control formula over the coefficient DVR, assuming residual image containing SL₂(𝔽_p), good ordinary p≥3 and a residually ramified prime ℓ∥N, and retain the canonical-period and local component factors without assuming full integral SL₂ image."
+    },
+    {
+      "slug": "integral-family-logarithm",
+      "supplier": "GrossZagierAndArithmeticHeights",
+      "section": "§9.20 Bloch–Kato logarithm of the Heegner Kummer class",
+      "needs": "For the ordinary split anticyclotomic Heegner family, provide the integral family logarithm and explicit reciprocity identity on the specified distinguished Tate lattice, with coefficient extension, periods and regulator cokernel, used by BCGS Lemmas 1.2.3–1.2.5; the rational finite-point identity alone does not give this contract."
+    },
+    {
+      "slug": "primitive-toric-mu",
+      "supplier": "AutomorphicCongruences",
+      "section": "L5w.3 Quaternionic period and primitive anticyclotomic input",
+      "needs": "Supply the precise primitive toric μ=0 theorem and projection/period comparison on the character domain used in BCS Theorem 4.2.1 and Proposition 5.2.1, with p≥5, split ordinary CM hypotheses, residual ramification and every imprimitive Euler factor retained; the independent anticyclotomic divisibility must not consume its cyclotomic-return application."
+    },
+    {
+      "slug": "eisenstein-elliptic-unit-inputs",
+      "supplier": "EulerSystemsCyclotomicMainConjecture",
+      "section": "Scope and ownership",
+      "needs": "Provide an earlier elliptic-unit/Katz main-conjecture and μ input for the imaginary-quadratic finite-order character components used by CGS Theorem C under φ|G_p≠1,ω, including local and integral lattice corrections, independently of the Heegner anticyclotomic equality; the cyclotomic-unit theorem over ℚ alone is insufficient."
+    },
+    {
+      "slug": "jsw-propagated-specialization",
+      "supplier": "SelmerIwasawaCohomology",
+      "section": "§§3.3, 3.9–3.10 Descent and control; local and derived specialization",
+      "needs": "For the strict-at-v unrestricted-at-v̄ condition and sufficiently near-one crystalline α in BCGS Theorem 1.2.7, supply the exact JSW specialization formula with finite propagated Sha, the squared local cokernel, all K-primes over N and H⁰ torsion factors, separately from perfect specialization of the all-p ordinary complex."
+    }
+  ]
+}

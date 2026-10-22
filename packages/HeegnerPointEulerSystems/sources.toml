@@ -1,0 +1,323 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeegnerPointEulerSystems"
+
+[[source]]
+id = "howard"
+authors = "Benjamin Howard"
+title = "The Heegner point Kolyvagin system"
+year = 2012
+venue = "Compositio Mathematica 140 (2004), 1439–1472"
+arxiv = "1202.6340v1"
+locator_scheme = "theorem"
+locator = "Theorems A and B, pp.1–3; Theorems 1.6.1, 1.6.5; §1.7, Lemmas 1.7.1–1.7.2, Proposition 1.7.4 and Theorem 1.7.5; §2.3, Lemmas 2.3.2–2.3.6 and Theorem 2.3.7, pp.28–34"
+url = "https://arxiv.org/abs/1202.6340v1"
+fetched_from = "https://arxiv.org/pdf/1202.6340v1"
+fetched_at = "2026-10-22T11:31:40Z"
+sha256 = "d2d06e851d6aa1fdc33a932b69b5c06a8c56dc2d9e05fb10d97c0358d6d6ea9a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["1.5 Heegner point family", "3.1 Heegner Kummer classes", "3.4 Kummer condition at the coefficient prime", "3.5 Saturated integral Kummer comparison", "4.1 Heegner conductor coefficient ideal", "4.2 Differentiated point invariance", "4.7 Generator change and intrinsic tensor coefficient", "5.1 Transverse condition of the descended class", "5.2 Heegner finite–singular correction automorphism", "5.3 Corrected Heegner Kolyvagin system", "5.4 Tate coefficient and big-image hypotheses", "5.5 Cartesian, self-dual and conjugation local conditions", "5.8 Arithmetic local error lengths", "6.1 Howard’s Heegner rank-one theorem", "6.5 Sha square-index bound", "6.6 Primitivity and sharpness comparison", "8.1 Heegner initial Euler factor", "8.4 Finite solvability of the Heegner norm constraints", "8.5 Howard universal-norm Heegner family", "8.23 Cornut’s higher Heegner point theorem", "8.33 Λ-adic Heegner derivative class", "8.34 Λ-adic Heegner local conditions", "8.35 Λ-adic finite/singular Heegner compatibility", "8.36 Howard’s anticyclotomic divisibility theorem"]
+
+[[source]]
+id = "gross"
+year = 1991
+title = "Kolyvagin’s work on modular elliptic curves"
+authors = "Benedict H. Gross"
+locator_scheme = "section"
+locator = "§§1–12, pp.236–256; Proposition 2.1, Proposition 3.7, Lemma 4.3, Proposition 4.7, Proposition 5.4, Proposition 6.2, Proposition 8.2, Proposition 9.1, Proposition 9.3, Claims 10.1 and 10.3"
+url = "https://www.wstein.org/papers/bib/gross-kolyvagins_work_on_modular_elliptic_curves.pdf"
+fetched_from = "https://www.wstein.org/papers/bib/gross-kolyvagins_work_on_modular_elliptic_curves.pdf"
+fetched_at = "2026-10-22T11:35:19Z"
+sha256 = "60b310c58a3494860c5967a03569a7d30033e9074d9d3d9a0d5bc2dfedd46b32"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.5 Ring-class tower and finite Galois quotients", "0.6 Dihedral action on the tower", "1.6 Parametrization choice, degree and torsion", "2.2 Inert Heegner norm relation", "2.6 Heegner reduction congruence", "3.2 Good-place Kummer condition", "3.3 Component obstruction at bad places", "3.6 Archimedean Tate correction", "4.3 Vanishing of ring-class torsion invariants", "4.4 Descended Heegner derivative class", "4.5 Explicit cocycle and divisibility criterion", "4.6 Bottom class is the trace Kummer class", "4.9 Parity of the Heegner derivative class", "5.6 Residual Kummer field and detection pairing", "5.7 Heegner class detection by auxiliary primes", "6.2 Opposite Selmer eigenspace vanishing", "6.3 Same Selmer eigenspace generation", "6.4 Gross’s clean mod-p descent", "7.1 Prime divisibility of the non-torsion Heegner point", "7.2 Non-CM open-image application", "7.10 Almost-all primary Sha vanishing", "7.11 Classical full Sha finiteness", "7.13 Classical square-index bound"]
+
+[[source]]
+id = "cornut-vatsal"
+year = 2005
+title = "Nontriviality of Rankin–Selberg L-functions and CM points"
+authors = "Christophe Cornut; Vinayak Vatsal"
+locator_scheme = "section"
+locator = "§1.1 equations (3)–(4), Lemma 1.1, Theorems 1.4–1.5, pp.3–7; §2, pp.20–23; §3.5, pp.29–32; §3.8, pp.34–35; Theorem 4.10 and Proposition 4.17, pp.41–49; Propositions 5.6–5.8 and Theorem 5.10, pp.55–59; Appendix §6.1–§6.4, pp.62–67"
+url = "https://personal.math.ubc.ca/~vatsal/research/part1.pdf"
+fetched_from = "https://personal.math.ubc.ca/~vatsal/research/part1.pdf"
+fetched_at = "2026-10-22T11:35:24Z"
+sha256 = "bdf258c742a88ce4328dcf3ef1df0dfe1235f1640c06bd66eeaaef2c1c6625e1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.4 Conductor-change kernel", "0.7 Relative CM conductor tower", "0.8 Norm, reciprocity and level compatibility", "1.4 Jacobian basepoint and Hodge denominators", "2.1 Hecke neighbors of a CM point", "2.3 Split and ramified first-step relations", "2.4 Repeated-conductor predecessor relation", "2.5 Distribution at nonmaximal local level", "8.7 Primitive CM character stratum", "8.8 Generic CM root-number parity", "8.11 Definite primitive-character toric nonvanishing", "8.12 Cornut–Vatsal definite nonvanishing", "8.20 Finite torsion in the relative ring-class tower", "8.21 Indefinite primitive-character Heegner nonvanishing", "8.22 Cornut–Vatsal indefinite nonvanishing"]
+
+[[source]]
+id = "nekovar"
+year = 2007
+title = "The Euler system method for CM points on Shimura curves"
+authors = "Jan Nekovář"
+locator_scheme = "section"
+locator = "§1.19, pp.14–15; §3.1–Theorem 3.2, pp.18–19; §§4.8–4.13, pp.24–27; §§5.1–5.19, pp.27–34; §§6.1–6.5, pp.35–41; §§7.1–7.5, pp.43–47 (53-page author preprint)"
+url = "https://web.archive.org/web/20221115094729id_/https://webusers.imj-prg.fr/~jan.nekovar/pu/euler.pdf"
+fetched_from = "https://web.archive.org/web/20221115094729id_/https://webusers.imj-prg.fr/~jan.nekovar/pu/euler.pdf"
+fetched_at = "2026-10-22T11:35:31Z"
+sha256 = "05c8debf4783f4604afe71a0b4367554ac62d52a6a462daa5e2e8c2ed6bfd26a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["7.3 Integral Tate image errors", "7.4 Integral CM prime detection", "7.5 Arithmetic derivative denominators at exceptional primes", "7.6 Dyadic integral conjugation descent", "7.7 Exceptional primary Sha exponent bound", "7.8 CM and Heegner fields", "7.9 CM character descent and error bounds", "7.10 Almost-all primary Sha vanishing", "7.11 Classical full Sha finiteness", "7.12 Admissible RM Kolyvagin–Logachev application"]
+
+[[source]]
+id = "pollack-weston"
+authors = "Robert Pollack, Tom Weston"
+title = "On anticyclotomic mu-invariants of modular forms"
+year = 2006
+venue = "Compositio Math. 147 (2011) 1353-1381"
+doi = "10.1112/S0010437X11005318"
+arxiv = "math/0610694v1"
+locator_scheme = "section"
+locator = "§§6.2–6.5, Theorem 6.2, Propositions 6.3–6.7 and Theorem 6.8, pp.18–21 (arXiv v1)"
+url = "https://arxiv.org/abs/math/0610694v1"
+fetched_from = "https://arxiv.org/pdf/math/0610694v1"
+fetched_at = "2026-10-22T11:35:36Z"
+sha256 = "42962ab1de00924170e7cc02f95a0ebb967ec979a76823298014eb8511243d04"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["6.11 Ribet–Takahashi period and Tamagawa comparison"]
+
+[[source]]
+id = "kolyvagin-structure"
+year = 1991
+title = "On the structure of Shafarevich–Tate groups"
+authors = "V. A. Kolyvagin"
+locator_scheme = "section"
+locator = "Theorem A, p.95; introduction, pp.94–97"
+url = "https://www.wstein.org/papers/bib/kolyvagin-structure_of_sha.pdf"
+fetched_from = "https://www.wstein.org/papers/bib/kolyvagin-structure_of_sha.pdf"
+fetched_at = "2026-10-22T11:35:38Z"
+sha256 = "ab9126cb2e0147753ca3f1a354f591b516b84f48c5b0882b9a55e87a60edefc9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["7.13 Classical square-index bound"]
+
+[[source]]
+id = "skinner"
+authors = "Christopher Skinner"
+title = "Multiplicative reduction and the cyclotomic main conjecture for $\\mathrm{GL}_2$"
+year = 2014
+venue = "Pacific J. Math. 283 (2016) 171-200"
+doi = "10.2140/pjm.2016.283.171"
+arxiv = "1407.1093v1"
+locator_scheme = "section"
+locator = "Theorem B, p.2; Theorem 2.5.2 and discussion, pp.15–16; §3.2, pp.20–21 (arXiv v1)"
+url = "https://arxiv.org/abs/1407.1093v1"
+fetched_from = "https://arxiv.org/pdf/1407.1093v1"
+fetched_at = "2026-10-22T11:35:43Z"
+sha256 = "02d176d8fd52b0159eecb448f4bea89bd29bdf73f3095a686d52ad96c0a9b988"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["6.9 Auxiliary rank-zero formula over K"]
+
+[[source]]
+id = "zanarella"
+authors = "Murilo Zanarella"
+title = "On Howard's main conjecture and the Heegner point Kolyvagin system"
+year = 2019
+arxiv = "1908.09197v1"
+locator_scheme = "section"
+locator = "§2.2 rigidity, pp.14–18; Definition 2.3.2, Proposition 2.3.3 and Theorem 2.3.6, pp.19–20 (arXiv v1)"
+url = "https://arxiv.org/abs/1908.09197v1"
+fetched_from = "https://arxiv.org/pdf/1908.09197v1"
+fetched_at = "2026-10-22T11:35:49Z"
+sha256 = "00d91f8d73880174f410ac4be2a43f89867421c0ab7bfafdba1b837111df312f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["6.6 Primitivity and sharpness comparison"]
+
+[[source]]
+id = "cornut"
+year = 2002
+title = "Mazur’s conjecture on higher Heegner points"
+authors = "Christophe Cornut"
+locator_scheme = "section"
+locator = "Introduction main theorem, pp.2–3 (author manuscript)"
+url = "https://webusers.imj-prg.fr/~christophe.cornut/papers/mcinv.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~christophe.cornut/papers/mcinv.pdf"
+fetched_at = "2026-10-22T11:35:51Z"
+sha256 = "e7915bddc4843d38e6652b013b707e34e43e5df698aec178231376abbd092da9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8.23 Cornut’s higher Heegner point theorem"]
+
+[[source]]
+id = "cv-dynamics"
+year = 2005
+title = "CM points and quaternion algebras"
+authors = "Christophe Cornut; Vinayak Vatsal"
+locator_scheme = "section"
+locator = "Theorem 2.9 and Corollary 2.10, pp.11–12; §2.7, Theorem 2.29, Lemma 2.30 and Proposition 2.35, pp.31–34 (3 April 2005 manuscript)"
+url = "https://webusers.imj-prg.fr/~christophe.cornut/papers/part2.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~christophe.cornut/papers/part2.pdf"
+fetched_at = "2026-10-22T11:35:53Z"
+sha256 = "efececf39b157f59d08d5c042808e4527a099d0b328924d546cf67b0e9ed2703"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8.9 Joint distribution of CM reductions", "8.10 Surjectivity onto CM reduction fibres"]
+
+[[source]]
+id = "bcgs"
+authors = "Ashay Burungale, Francesc Castella, Giada Grossi, Christopher Skinner"
+title = "Non-vanishing of Kolyvagin systems and Iwasawa theory"
+year = 2023
+arxiv = "2312.09301v2"
+locator_scheme = "section"
+locator = "Theorem A, p.2; Theorem B, p.3; Lemma 1.1.5, p.9; Theorem 1.1.6, p.10; Definition 1.2.2, p.10; Lemmas 1.2.3–1.2.5, pp.11–12; Theorem 1.2.7, p.13; Lemma 1.2.8, Conjecture 1.2.10, Theorem 1.2.13, pp.14–15; Theorem 1.3.1, p.15; Proposition 2.2.1, Theorem 2.2.2 and Lemma 2.2.4, pp.17–20 (arXiv v2)"
+url = "https://arxiv.org/abs/2312.09301v2"
+fetched_from = "https://arxiv.org/pdf/2312.09301v2"
+fetched_at = "2026-10-22T11:35:59Z"
+sha256 = "e575367ab8dd9ffdb1850959dde93f205c4007b0e56af4ed30e120079660aee3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["8.14 Crystalline characters near the identity", "8.15 Heegner divisibility profile", "8.16 Optimal and distinguished lattice comparison", "8.17 Tamagawa factors near the identity", "8.26 Nonzero bottom classes near the identity", "8.27 Near-trivial logarithm index formula", "8.28 Twisted anticyclotomic control formula", "8.29 Integral main conjecture and twisted index square", "8.38 Heegner specialization with the initial factor", "8.39 Uniform arithmetic Kolyvagin error bound", "8.40 Exact paired Selmer length for a Heegner system", "8.41 BCGS nonvanishing from the main conjecture", "8.42 BCGS refined divisibility from the integral conjecture", "8b.1 BDP square-root convention comparison", "8b.10 Eisenstein anticyclotomic theorem interface", "8b.11 Split-prime Kolyvagin nonvanishing branches", "8b.12 Split-prime refined Kolyvagin divisibility"]
+
+[[source]]
+id = "bcs"
+authors = "Ashay Burungale, Francesc Castella, Christopher Skinner"
+title = "Base change and Iwasawa Main Conjectures for ${\\rm GL}_2$"
+year = 2024
+arxiv = "2405.00270v2"
+locator_scheme = "section"
+locator = "Theorems 1.2.2 and 1.2.4, Remark 1.2.3, p.3; Theorem 4.2.1, p.8; Proposition 5.2.1 and Lemma 5.2.3, pp.9–11 (arXiv v2)"
+url = "https://arxiv.org/abs/2405.00270v2"
+fetched_from = "https://arxiv.org/pdf/2405.00270v2"
+fetched_at = "2026-10-22T11:36:03Z"
+sha256 = "bf87592cdbaabb5c57004bfd44dd5b4d712cb306bbbdc36520a3daf92fa416f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["8b.1 BDP square-root convention comparison", "8b.3 Auxiliary quadratic fields for BCS descent", "8b.4 Heegner Euler-system divisibility for BCS", "8b.5 BCS anticyclotomic reverse divisibility", "8b.6 Rational Heegner-point main conjecture", "8b.7 Integral Heegner-point main conjecture", "8b.8 Rational Greenberg–BDP main conjecture", "8b.9 Integral Greenberg–BDP main conjecture"]
+
+[[source]]
+id = "cgls"
+year = 2022
+title = "On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes"
+authors = "Francesc Castella; Giada Grossi; Jaehoon Lee; Christopher Skinner"
+locator_scheme = "section"
+locator = "Theorems 4.1.1–4.1.2 and Remark 4.1.3, pp.27–28; Proposition 4.2.1, pp.28–29 (author copy)"
+url = "https://web.math.ucsb.edu/~castella/Eisenstein.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/Eisenstein.pdf"
+fetched_at = "2026-10-22T11:36:08Z"
+sha256 = "2bd32832411151a628136b245eada847f2f1b2e04872391bbe630e8e1a54819b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8.2 Ordinary stabilization of Heegner points", "8.3 Norm compatibility of stabilized Heegner points", "8.4 Finite solvability of the Heegner norm constraints", "8.5 Howard universal-norm Heegner family", "8.6 Anticyclotomic Heegner class", "8.13 Unit comparison of Heegner normalizations", "8.24 Non-torsion Λ-adic bottom class", "8.33 Λ-adic Heegner derivative class", "8.34 Λ-adic Heegner local conditions", "8.35 Λ-adic finite/singular Heegner compatibility", "8.37 Weaker torsion hypothesis and localized bound", "8b.2 Anticyclotomic main-conjecture comparison"]
+
+[[source]]
+id = "cs"
+year = 2026
+title = "On refined nonvanishing conjectures by Kurihara and Kolyvagin"
+authors = "Francesc Castella; Takamichi Sano"
+locator_scheme = "section"
+locator = "Theorem C, pp.4–5; Lemma 3.1.1 and (3.5), pp.12–13; (3.6)–(3.8), Theorem 3.2.1, Conjecture 3.2.2 and Proposition 3.2.3, pp.13–14; Proposition 3.3.2, pp.14–15; Lemma 3.3.3 and Corollary 3.3.4, p.16; §3.4, pp.17–18 (20 January 2026 manuscript)"
+url = "https://web.math.ucsb.edu/~castella/Kurihara.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/Kurihara.pdf"
+fetched_at = "2026-10-22T11:36:11Z"
+sha256 = "9478dc414299a3821fe4192ef138bb1da96a30b95f8b01beae54895340f903c9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8.18 Arithmetic strict ordinary Selmer complex comparison", "8.19 Ordinary local specialization defect", "8.30 Determinantal Heegner element", "8.31 Heegner determinant and characteristic ideals", "8.32 Specialized Heegner determinant lattice", "8.38 Heegner specialization with the initial factor", "8.43 Twisted index square from the determinant conjecture", "8.44 Castella–Sano refined conjecture equivalence", "8b.13 Split determinantal Heegner main conjecture"]
+
+[[source]]
+id = "bck"
+year = 2021
+title = "A proof of Perrin-Riou’s Heegner point main conjecture"
+authors = "Ashay Burungale, Francesc Castella, Chan-Ho Kim"
+locator_scheme = "section"
+locator = "Theorem 5.2 and proof, pp.1646–1647 (PDF pp.20–21); standing hypotheses and §5"
+url = "https://web.math.ucsb.edu/~castella/PRconj-print.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/PRconj-print.pdf"
+fetched_at = "2026-10-22T11:36:16Z"
+sha256 = "6380182b4211ad71e8c9a8b8557132902c673ccd69e7a28192ffde9343b44fdd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8b.2 Anticyclotomic main-conjecture comparison"]
+
+[[source]]
+id = "cgs"
+year = 2025
+title = "Mazur’s main conjecture at Eisenstein primes"
+authors = "Francesc Castella, Giada Grossi, Christopher Skinner"
+locator_scheme = "section"
+locator = "Theorem C and ensuing Greenberg reformulation, pp.3–4 (author copy)"
+url = "https://web.math.ucsb.edu/~castella/Mazur.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/Mazur.pdf"
+fetched_at = "2026-10-22T11:36:20Z"
+sha256 = "4ca65e104b68ce441b2d62ba39af96bc4058fab26947919d5a8d4a6eb929382e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8b.10 Eisenstein anticyclotomic theorem interface"]
+
+[[source]]
+id = "khayutin"
+year = 2019
+title = "Joint equidistribution of CM points"
+authors = "Ilya Khayutin"
+locator_scheme = "section"
+locator = "§2.4.3–§2.4.4, Definition 2.1, Proposition 2.2, Lemma 2.3, Definition 2.6, Remark 2.7 and Definition 2.8, pp.165–167; §5.2, Definition 5.7 and Lemma 5.8, p.184"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v189-n1-p04-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v189-n1-p04-s.pdf"
+fetched_at = "2026-10-22T11:37:06Z"
+sha256 = "f22691429c27058fabd47fe12c6a901e7feffffad7a0c52e1a936da645166d6f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.1 Local toral order", "0.2 Transported global order", "0.3 Toral orbit and ideal-class comparison", "0.9 Different of the local toral order"]
+
+[[source]]
+id = "zhang"
+year = 2014
+title = "Selmer groups and the indivisibility of Heegner points"
+authors = "Wei Zhang"
+locator_scheme = "section"
+locator = "Notations (vi)–(xv), pp.200–203; Theorem 1.1, p.195; Theorems 2.1, 3.1, 4.3, 5.2; Corollary 6.2 and Theorems 6.4–6.5, pp.227–231; Theorem 7.1, pp.231–232; Lemmas 8.1–8.2, Definition 8.3, Lemma 8.4, pp.235–239; Theorems 9.1–9.3, pp.240–243"
+url = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/cjm/2014/0002/0002/CJM-2014-0002-0002-a002.pdf"
+fetched_from = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/cjm/2014/0002/0002/CJM-2014-0002-0002-a002.pdf"
+fetched_at = "2026-10-22T11:37:10Z"
+sha256 = "698eb8a6d2297684c683c4c3f43a195cac1d8752ef0c8362ab90c74f5b3792ec"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.7 Quaternionic CM reduction and specialization", "4.8 Coefficient reduction and auxiliary-prime restriction", "5.9 Tamagawa and local torsion obstruction examples", "6.6 Primitivity and sharpness comparison", "6.7 Zhang’s Heegner congruence after level raising", "6.8 Heegner rank lowering through an admissible prime", "6.9 Auxiliary rank-zero formula over K", "6.10 Jochnowitz unit criterion", "6.11 Ribet–Takahashi period and Tamagawa comparison", "6.12 Heegner-system vanishing order", "6.13 Heegner-system base locus", "6.14 Residual Heegner local pairing", "6.15 Residual Heegner reciprocity", "6.16 Simultaneous residual prime detection", "6.17 Residual ramification selection", "6.18 Triangular Heegner Selmer basis", "6.19 Zhang’s Heegner indivisibility theorem"]
+
+[[source]]
+id = "wuthrich"
+year = 2014
+title = "On the integrality of modular symbols and Kato’s Euler system for elliptic curves"
+authors = "Christian Wüthrich"
+locator_scheme = "section"
+locator = "Theorem 4, p.384; proof, pp.386–387"
+url = "https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-19/12.pdf"
+fetched_from = "https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-19/12.pdf"
+fetched_at = "2026-10-22T11:37:12Z"
+sha256 = "8fc88f778138f495b24de8a16b5520af76446df610b0d46ad93776eb43a27db5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8.16 Optimal and distinguished lattice comparison"]
