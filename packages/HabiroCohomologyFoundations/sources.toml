@@ -1,0 +1,296 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HabiroCohomologyFoundations"
+
+[[source]]
+id = "QH"
+authors = ["Ferdinand Wagner"]
+title = "q-Hodge complexes over the Habiro ring"
+year = 2025
+arxiv = "2510.04782v2"
+locator_scheme = "section"
+locator = "Sections 2–4; Appendices A–B (v2)"
+url = "https://arxiv.org/abs/2510.04782v2"
+fetched_from = "https://arxiv.org/pdf/2510.04782v2"
+fetched_at = "2026-10-22T12:03:54Z"
+sha256 = "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["Layers 0–8"]
+
+[[source]]
+id = "QW"
+authors = ["Ferdinand Wagner"]
+title = "q-Witt vectors and q-Hodge complexes"
+year = 2024
+arxiv = "2410.23078v5"
+locator_scheme = "section"
+locator = "2–5 (v5)"
+url = "https://arxiv.org/abs/2410.23078v5"
+fetched_from = "https://arxiv.org/pdf/2410.23078v5"
+fetched_at = "2026-10-22T12:04:45Z"
+sha256 = "c1c7426f374a9f56d5ad6fb743f6cfc95e74ba9c35a96babd7ae5101a9dded01"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["Layers 0–4"]
+
+[[source]]
+id = "KU"
+authors = ["Ferdinand Wagner"]
+title = "q-de Rham cohomology and topological Hochschild homology over ku"
+year = 2025
+arxiv = "2510.06057v1"
+locator_scheme = "section"
+locator = "1.2; Theorem 1.14 (v1)"
+url = "https://arxiv.org/abs/2510.06057v1"
+fetched_from = "https://arxiv.org/pdf/2510.06057v1"
+fetched_at = "2026-10-22T12:05:03Z"
+sha256 = "fe9d7d71478eb546f89784f2eabdb15ec4f1e5ff8870c6c84909896c1543ea7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["4.28"]
+
+[[source]]
+id = "TC"
+authors = ["Samuel Meyer", "Ferdinand Wagner"]
+title = "q-Hodge complexes and refined TC minus"
+year = 2024
+arxiv = "2410.23115v4"
+locator_scheme = "section"
+locator = "1.2; 3.1–3.2 (v4)"
+url = "https://arxiv.org/abs/2410.23115v4"
+fetched_from = "https://arxiv.org/pdf/2410.23115v4"
+fetched_at = "2026-10-22T12:05:22Z"
+sha256 = "4479788e04da71cfb76596b4375b6b1e4c9bcd940ad92e1ab7c8ededba446dd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["5.26"]
+
+[[source]]
+id = "GSWZ"
+authors = ["Stavros Garoufalidis", "Peter Scholze", "Campbell Wheeler", "Don Zagier"]
+title = "The Habiro ring of a number field"
+year = 2024
+arxiv = "2412.04241v2"
+locator_scheme = "section"
+locator = "1.4; 5.2 (v2)"
+url = "https://arxiv.org/abs/2412.04241v2"
+fetched_from = "https://arxiv.org/pdf/2412.04241v2"
+fetched_at = "2026-10-22T12:05:28Z"
+sha256 = "308d1dd1c42bd979e5d5c31d9d95215a1808f604031b49c0ce2a1eb767273de9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.1"]
+
+[[source]]
+id = "Pridham"
+authors = ["J. P. Pridham"]
+title = "On q-de Rham cohomology via Lambda-rings"
+year = 2016
+arxiv = "1608.07142v4"
+locator_scheme = "section"
+locator = "1.2–1.3 (v4)"
+url = "https://arxiv.org/abs/1608.07142v4"
+fetched_from = "https://arxiv.org/pdf/1608.07142v4"
+fetched_at = "2026-10-22T12:05:33Z"
+sha256 = "f00412c88e3713dab6089c4e470e2af42ee04cdfbf151a9ea8b800ce3cc4f62f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["1.22–1.28"]
+
+[[source]]
+id = "BS"
+authors = ["Bhargav Bhatt", "Peter Scholze"]
+title = "Prisms and prismatic cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "section"
+locator = "4; 15–18 (v4)"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-10-22T12:05:42Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["Layers 1, 3, 8"]
+
+[[source]]
+id = "Bhatt"
+authors = ["Bhargav Bhatt"]
+title = "p-adic derived de Rham cohomology"
+year = 2012
+arxiv = "1204.6560v1"
+locator_scheme = "section"
+locator = "8; Proposition 8.5; Corollary 8.6; Remark 8.7 (v1)"
+url = "https://arxiv.org/abs/1204.6560v1"
+fetched_from = "https://arxiv.org/pdf/1204.6560v1"
+fetched_at = "2026-10-22T12:06:15Z"
+sha256 = "e5ca4056c89eaed462a12038c29d5c3b0a7e06d02d18a7db6dfdf1cfe9f4f00f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["1.3; 5.26"]
+
+[[source]]
+id = "BMS1"
+authors = ["Bhargav Bhatt", "Matthew Morrow", "Peter Scholze"]
+title = "Integral p-adic Hodge theory"
+year = 2016
+arxiv = "1602.03148v3"
+locator_scheme = "section"
+locator = "6; 14 (v3)"
+url = "https://arxiv.org/abs/1602.03148v3"
+fetched_from = "https://arxiv.org/pdf/1602.03148v3"
+fetched_at = "2026-10-22T12:06:22Z"
+sha256 = "285f7d2088607688365ca92222dcf44c0acd6c4788dd872fe6a6191b9c4e072a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "BMS2"
+authors = ["Bhargav Bhatt", "Matthew Morrow", "Peter Scholze"]
+title = "Topological Hochschild homology and integral p-adic Hodge theory"
+year = 2018
+arxiv = "1802.03261v2"
+locator_scheme = "section"
+locator = "5; Theorem 1.12 (v2)"
+url = "https://arxiv.org/abs/1802.03261v2"
+fetched_from = "https://arxiv.org/pdf/1802.03261v2"
+fetched_at = "2026-10-22T12:06:56Z"
+sha256 = "b2338ef19714f39aeac2aaaa4e8d6bd708020815016bbe5541a74e4db3594038"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["Layers 3, 8"]
+
+[[source]]
+id = "Sch"
+authors = ["Peter Scholze"]
+title = "Canonical q-deformations in arithmetic geometry"
+year = 2016
+arxiv = "1606.01796v1"
+locator_scheme = "section"
+locator = "2–4; 7–8 (v1)"
+url = "https://arxiv.org/abs/1606.01796v1"
+fetched_from = "https://arxiv.org/pdf/1606.01796v1"
+fetched_at = "2026-10-22T12:07:13Z"
+sha256 = "ce060b41e28fef16c011d3d3455c53a8bdc11cd8c98dc4dc6c2be178e1567273"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["Layers 6, 8"]
+
+[[source]]
+id = "DAGVIII"
+authors = ["Jacob Lurie"]
+title = "Quasi-Coherent Sheaves and Tannaka Duality Theorems"
+year = 2011
+locator_scheme = "section"
+locator = "2.6–2.7; pp. 66–76 (5 November 2011)"
+url = "https://www.math.ias.edu/~lurie/papers/DAG-VIII.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/DAG-VIII.pdf"
+fetched_at = "2026-10-22T12:07:17Z"
+sha256 = "c9f1b4bb3fab1624c2c5d97e0c1701352912fc0ffda752e8345ab11bb70e0523"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.26–1.28"]
+
+[[source]]
+id = "Stacks091N"
+authors = ["The Stacks Project Authors"]
+title = "The Stacks Project: Derived completion"
+year = 2026
+locator_scheme = "tag"
+locator = "091N; Definition 15.93.4; Lemma 15.93.20"
+url = "https://stacks.math.columbia.edu/tag/091N"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=091N"
+fetched_at = "2026-10-22T12:07:28Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.1; 1.19"]
+
+[[source]]
+id = "Stacks03OY"
+authors = ["The Stacks Project Authors"]
+title = "The Stacks Project: Cohomology of quasi-coherent sheaves"
+year = 2026
+locator_scheme = "tag"
+locator = "03OY; Lemma 59.22.1; Theorem 59.22.4"
+url = "https://stacks.math.columbia.edu/tag/03OY"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=03OY"
+fetched_at = "2026-10-22T12:07:35Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.19"]
+
+[[source]]
+id = "Stacks06WT"
+authors = ["The Stacks Project Authors"]
+title = "The Stacks Project: Quasi-coherent sheaves and presentations"
+year = 2026
+locator_scheme = "tag"
+locator = "06WT; Proposition 96.14.3"
+url = "https://stacks.math.columbia.edu/tag/06WT"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-sheaves.pdf#nameddest=06WT"
+fetched_at = "2026-10-22T12:07:37Z"
+sha256 = "1ad5e359c3a2ef5bccc1dd2a41fcc0a442b413d2662f50a13680024fe4c9a883"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.27–1.28"]
+
+[[source]]
+id = "Stacks00NV"
+authors = ["The Stacks Project Authors"]
+title = "The Stacks Project: Finite projective modules"
+year = 2026
+locator_scheme = "tag"
+locator = "00NV; Lemma 10.78.2"
+url = "https://stacks.math.columbia.edu/tag/00NV"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NV"
+fetched_at = "2026-10-22T12:07:50Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.28"]
+
+[[source]]
+id = "Sch25"
+authors = ["Peter Scholze"]
+title = "Habiro Cohomology"
+year = 2025
+locator_scheme = "section"
+locator = "Lecture course, summer 2025; analytic Habiro stack"
+url = "https://archive.mpim-bonn.mpg.de/id/eprint/5155/"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/5155/"
+fetched_at = "2026-10-22T12:12:23Z"
+sha256 = "b895a8abbb00e930ae8ea62d8afb9f7e8e86e19f39eb9182de03913aeb48b85b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.0–6.3"]

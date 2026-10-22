@@ -1,0 +1,46 @@
+{
+  "gaps": [
+    {
+      "slug": "relative-witt-factorization",
+      "supplier": "CrystallineCohomology",
+      "section": "Part II: relative restriction-free de Rham–Witt, extending CR.4",
+      "needs": "For every Λ-ring A that is a ℤ_(p)-algebra and every A-algebra R, prove that the absolute restriction-free FV map W_(a+1)Ω_(R/ℤ_(p))→qW_(pᵃ)Ω_(R/A), for all a≥0, kills the differentials of the image of W_(a+1)(A), hence factors through the relative ordinary complex, compatibly with Frobenius and Verschiebung."
+    },
+    {
+      "slug": "finite-projective-nygaard",
+      "supplier": "PrismaticCohomology",
+      "section": "Part II: finite-projective Frobenius/Nygaard transport, extending PR.3",
+      "needs": "For a finite-projective Λ-map A→B of perfectly covered bases, supply coherent completed scalar-extension equivalences for the actual relative Frobenius and Nygaard filtration of every twisted smooth q-de Rham input of §§3.15 and 3.22, natural in smooth algebras and compatible with divisor maps, products, identity and composition."
+    },
+    {
+      "slug": "finite-projective-filtered-decalage",
+      "supplier": "AInfCohomology",
+      "section": "Part II: finite-projective filtered décalage transport, extending AI.1",
+      "needs": "For the finite-projective Λ-base changes and twisted q-de Rham inputs of §4.26, supply natural scalar-extension equivalences for Lη and its entire décalage filtration, with the displayed regular parameters, completed tensors, coefficient twists and coherence under identity, composition and tensor products."
+    },
+    {
+      "slug": "unbounded-derived-commutative",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "Part II: unbounded derived commutative algebras, extending E5:animation.4",
+      "needs": "For every commutative coefficient ring B, construct the unbounded derived commutative category DAlg_B and a conservative forgetful functor to CAlg(D(B)) creating limits and colimits, naturally under coefficient extension, with the static-ring and cosimplicial-envelope realizations used in §1.18; this is distinct from connective animated rings."
+    },
+    {
+      "slug": "filtered-graded-derived-commutative",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "Part II: filtered and graded derived commutative algebras, extending E5:abstract and E5:animation.4",
+      "needs": "Supply filtered and graded refinements of the unbounded DAlg_B contract, compatible with Day tensor, associated graded, Rees modules, localization, degree-one filtered quotients, completion, animation and enhanced descent as used in §§3.18, 3.30, 4.23 and 5.22, with conservative forgetful comparisons preserving the required diagrams."
+    },
+    {
+      "slug": "fully-faithful-pushout",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "Part II: fully faithful pushouts in Cat∞, extending E0.4–E0.5",
+      "needs": "For every pushout C⊔_A B in Cat∞ with A→B fully faithful, prove C→C⊔_A B fully faithful, with the mapping-space comparison natural in the pushout diagram; generic existence of coherent pushouts or stable pushouts does not supply this theorem."
+    },
+    {
+      "slug": "cyclotomic-contract",
+      "supplier": "HabiroCyclotomicCompletions",
+      "section": "Part II: integral cyclotomic intersections and completion topology (shared QWittVectors gap)",
+      "needs": "For distinct positive a,b classify ℤ[q]/(Φ_a,Φ_b) as zero unless max(a,b)/min(a,b)=pᵏ for a prime p and k≥1, and as 𝔽_p[q]/Φ_min(a,b) in that case, with the common-completion identifications and prime-to-p product splitting required in §0.2."
+    }
+  ]
+}

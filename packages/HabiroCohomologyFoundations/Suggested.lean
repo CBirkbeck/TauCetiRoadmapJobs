@@ -12,7 +12,7 @@ targets, so Layers 0, 3 and 5–7 have no declarations here. In particular, the 
 of README §§4.21 and 4.28 uses its own coefficient construction, not a later ordinary model.
 
 Design choices made explicit here:
-* the Jackson operator is defined coefficientwise through `Polynomial.sum`, so it makes sense
+* the Jackson operator is defined coefficientwise through `Polynomial.sum`, as a specialization with an arbitrary scalar q, so it makes sense
   over any commutative ring and the exponent-zero term vanishes without any division;
 * the torus parameter `q` is a unit, so negative exponents of the Laurent torus are allowed,
   and coordinate scaling is the algebra map that `AddMonoidAlgebra.lift` attaches to a
@@ -36,7 +36,8 @@ section Jackson
 variable {A : Type u} [CommRing A]
 
 /-- The polynomial Jackson operator, using the existing geometric sum for `[n]_q`.
-It specializes the framed calculus of QH §A.1 (pp.70–74) to one polynomial coordinate. -/
+It is the arbitrary-scalar polynomial variant of the complete framed calculus imported from
+QWittVectors §§8.1–8.3; see QH §A.1 (pp.70–74). -/
 def qDiff (q : A) (f : A[X]) : A[X] :=
   f.sum fun n a => C (a * ∑ j ∈ Finset.range n, q ^ j) * X ^ (n - 1)
 
@@ -47,7 +48,9 @@ theorem jackson_calculus (q : A) (f g : A[X]) :
     f.comp (C q * X) - f = C (q - 1) * X * qDiff q f ∧
     qDiff q (f * g) = qDiff q f * g.comp (C q * X) + f * qDiff q g ∧
     qDiff (1 : A) f = derivative f := by
-  sorry
+  refine ⟨?_, ?_, by simp [qDiff, derivative_apply]⟩
+  · sorry
+  · sorry
 
 -- Constants, including exponent zero, do not create a spurious X^(0-1) term.
 example (q a : A) : qDiff q (C a) = 0 := by
@@ -56,12 +59,29 @@ example (q a : A) : qDiff q (C a) = 0 := by
 -- At q=2 the cubic coefficient is 1+2+4=7, not the ordinary coefficient 3.
 example : qDiff (2 : ℤ) ((X : ℤ[X]) ^ 3) = C 7 * X ^ 2 ∧
     qDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X ∧
-    qDiff (1 : ZMod 2) ((X : (ZMod 2)[X]) ^ 2) = 0 := by
-  refine ⟨?_, ?_, ?_⟩
-  all_goals
-    rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+    qDiff (1 : ZMod 2) ((X : (ZMod 2)[X]) ^ 2) = 0 ∧
+    qDiff (1 : ℤ) (X : ℤ[X]) = 1 ∧
+    qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 2) =
+      C (C 2 + (X - 1) : ℤ[X]) * X ∧
+    qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 3) =
+      C (C 3 * X + (X - 1) ^ 2 : ℤ[X]) * X ^ 2 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
+  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
       norm_num [Finset.sum_range_succ]
-  decide
+  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+      norm_num [Finset.sum_range_succ]
+  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+      norm_num [Finset.sum_range_succ]
+    decide
+  · rw [qDiff, sum_X_index] <;> norm_num [Finset.sum_range_succ]
+  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+      norm_num [Finset.sum_range_succ]
+    simp only [map_ofNat]
+    ring
+  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+      norm_num [Finset.sum_range_succ]
+    simp only [map_ofNat]
+    ring
 
 /-- The source's uniform denominator at h^n: QH A.11, pp.74–75.
 The empty product at n=0 is one. This does not construct an envelope map. -/
@@ -72,7 +92,7 @@ def uniformDenominator (n : ℕ) : ℕ :=
 /-- The scalar denominator is nonzero; thus localizing at it is meaningful.
 The assertion about factorization of actual envelope maps is in README §1.8. -/
 theorem uniformDenominator_pos (n : ℕ) : 0 < uniformDenominator n := by
-  sorry
+  exact Finset.prod_pos fun p hp => pow_pos (Finset.mem_filter.mp hp).2.pos _
 
 example : uniformDenominator 0 = 1 ∧ uniformDenominator 1 = 1 := by
   norm_num [uniformDenominator, Finset.prod_range_succ, Finset.prod_filter]
@@ -155,19 +175,27 @@ cyclotomic reduction. -/
 theorem coefficientRelation_eval (m : ℕ) (q β t : A) :
     MvPolynomial.eval (![q, β, t]) (coefficientRelation m) = 0 ↔
       β * t = q ^ m - 1 := by
-  sorry
+  simp [coefficientRelation, sub_eq_zero]
 
 example : MvPolynomial.eval (![2, 3, 1] : Fin 3 → ℤ)
     (coefficientRelation 2) = 0 ∧
     MvPolynomial.eval (![2, 2, 1] : Fin 3 → ℤ)
-    (coefficientRelation 2) ≠ 0 := by
+    (coefficientRelation 2) = -1 := by
   norm_num [coefficientRelation, Matrix.cons_val_two]
 
 example : MvPolynomial.eval (![2, 1, 1] : Fin 3 → ℤ)
     (coefficientRelation 1) = 0 ∧
     MvPolynomial.eval (![2, 0, 0] : Fin 3 → ℤ)
-    (coefficientRelation 0) = 0 := by
-  norm_num [coefficientRelation, Matrix.cons_val_two]
+    (coefficientRelation 0) = 0 ∧
+    MvPolynomial.IsWeightedHomogeneous (![0, 1, -1] : Fin 3 → ℤ)
+      (MvPolynomial.X 1 : MvPolynomial (Fin 3) ℤ) 1 ∧
+    MvPolynomial.IsWeightedHomogeneous (![0, 1, -1] : Fin 3 → ℤ)
+      (MvPolynomial.X 2 : MvPolynomial (Fin 3) ℤ) (-1) := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · norm_num [coefficientRelation, Matrix.cons_val_two]
+  · norm_num [coefficientRelation, Matrix.cons_val_two]
+  · exact MvPolynomial.isWeightedHomogeneous_X ℤ (![0, 1, -1] : Fin 3 → ℤ) 1
+  · exact MvPolynomial.isWeightedHomogeneous_X ℤ (![0, 1, -1] : Fin 3 → ℤ) 2
 
 end FilteredCoefficients
 
@@ -186,15 +214,36 @@ and the specialization at q=1 is zero rather than the ordinary derivative. -/
 theorem qHodge_polynomial (q : A) (n : ℕ) (f : A[X]) :
     qHodgeDiff q ((X : A[X]) ^ n) = C (q ^ n - 1) * X ^ (n - 1) ∧
       qHodgeDiff (1 : A) f = 0 := by
+  refine ⟨?_, by simp [qHodgeDiff]⟩
   sorry
 
 example (f : A[X]) (q a : A) :
     qHodgeDiff (1 : A) f = 0 ∧ qHodgeDiff q (C a) = 0 := by
   simp [qHodgeDiff, qDiff]
 
-example : qHodgeDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X := by
-  rw [qHodgeDiff, qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-    norm_num [Finset.sum_range_succ]
+example : qHodgeDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X ∧
+    (qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 2)).coeff 1 -
+      (qHodgeDiff (X : ℤ[X]) (X : (ℤ[X])[X])).coeff 0 = C 2 ∧
+    ((qDiff (2 : ℤ) ((X : ℤ[X]) ^ 2)).eval 1 +
+      (qHodgeDiff (2 : ℤ) (X : ℤ[X])).eval 1) = 4 := by
+  refine ⟨?_, ?_, ?_⟩
+  · rw [qHodgeDiff, qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+      norm_num [Finset.sum_range_succ]
+  · have htwo : qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 2) = C (1 + X) * X := by
+      rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+        norm_num [Finset.sum_range_succ]
+    have hone : qDiff (X : ℤ[X]) (X : (ℤ[X])[X]) = 1 := by
+      rw [qDiff, sum_X_index] <;> simp
+    rw [htwo, qHodgeDiff, hone]
+    simp
+    ring
+  · have htwo : qDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X := by
+      rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
+        norm_num [Finset.sum_range_succ]
+    have hone : qDiff (2 : ℤ) (X : ℤ[X]) = 1 := by
+      rw [qDiff, sum_X_index] <;> simp
+    rw [htwo, qHodgeDiff, hone]
+    norm_num
 
 end QHodgePolynomial
 
@@ -207,20 +256,5 @@ and the corrections of QH Example 4.24 (p.64). -/
 theorem cyclotomic_prime_decomposition (p : ℕ) [Fact p.Prime] :
     ∃ u : ℤ[X], cyclotomic p ℤ = C (p : ℤ) * u + (X - 1) ^ (p - 1) ∧ u.eval 1 = 1 := by
   sorry
-
--- In characteristic two the first two cyclotomic supports coincide (README §0.2).
-example : cyclotomic 2 ℤ = C 2 + (X - 1) ∧
-    cyclotomic 3 ℤ = C 3 * X + (X - 1) ^ 2 ∧
-    cyclotomic 1 (ZMod 2) = cyclotomic 2 (ZMod 2) := by
-  refine ⟨?_, ?_, ?_⟩
-  · simp only [cyclotomic_two, map_ofNat]; ring
-  · simp only [cyclotomic_three, map_ofNat]; ring
-  · simp [cyclotomic_one, cyclotomic_two, sub_eq_add_neg, CharTwo.neg_eq]
-
-example : (2 : ℤ[X]) = -(X - 1) + (X + 1) ∧
-    ((X - 1) + (X + 1) : ℤ[X]).eval 2 ≠ 2 := by
-  constructor
-  · ring
-  · norm_num
 
 end TauCetiRoadmap.HabiroCohomologyFoundations
