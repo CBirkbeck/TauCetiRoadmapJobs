@@ -99,7 +99,7 @@ theorem reducedForms_small_counts :
 example : TauCeti.reducedForms 23 = {⟨1, 1, 6⟩, ⟨2, -1, 3⟩, ⟨2, 1, 3⟩} ∧
     (⟨2, 2, 3⟩ : TauCeti.BinaryQuadraticForm ℤ) ∈ TauCeti.reducedForms 20 ∧
     (⟨2, -2, 3⟩ : TauCeti.BinaryQuadraticForm ℤ) ∉ TauCeti.reducedForms 20 := by
-  decide
+  native_decide
 
 /-- §0.2: strictness fails at `-4` and at the imprimitive form of discriminant `-16`. -/
 example : TauCeti.IsReducedForm (⟨1, 0, 1⟩ : TauCeti.BinaryQuadraticForm ℤ) ∧
@@ -141,7 +141,7 @@ example : ramifiedWeight 15 = 1 / 4 ∧ ramifiedWeight 84 = 1 / 12 := by
     apply (Nat.floor_eq_iff (by positivity)).2
     constructor
     · have h := Real.le_sqrt_of_sq_le (show (1 : ℝ) ^ 2 ≤ 2 by norm_num)
-      norm_num at h ⊢; linarith
+      norm_num at h ⊢
     · have h := (Real.sqrt_lt (by norm_num : (0 : ℝ) ≤ 2)
         (by norm_num : (0 : ℝ) ≤ 3 / 2)).2 (by norm_num : (2 : ℝ) < (3 / 2) ^ 2)
       norm_num at h ⊢; linarith
@@ -153,9 +153,24 @@ example : ramifiedWeight 15 = 1 / 4 ∧ ramifiedWeight 84 = 1 / 12 := by
     · have h := (Real.sqrt_lt (by norm_num : (0 : ℝ) ≤ 3)
         (by norm_num : (0 : ℝ) ≤ 2)).2 (by norm_num : (3 : ℝ) < 2 ^ 2)
       norm_num at h ⊢; linarith
-  have h15 : Nat.primeFactors 15 = {3, 5} := by decide
-  have h84 : Nat.primeFactors 84 = {2, 3, 7} := by decide
-  norm_num [ramifiedWeight, h15, h84, Finset.sup_insert, h2, h3]
+  have h15 : Nat.primeFactors 15 = {3, 5} := by
+    rw [show (15 : ℕ) = 3 * 5 by norm_num, Nat.primeFactors_mul (by norm_num) (by norm_num),
+      Nat.Prime.primeFactors (by norm_num), Nat.Prime.primeFactors (by norm_num)]
+    rfl
+  have h84 : Nat.primeFactors 84 = {2, 3, 7} := by
+    rw [show (84 : ℕ) = 2 ^ 2 * (3 * 7) by norm_num,
+      Nat.primeFactors_mul (by norm_num) (by norm_num),
+      Nat.primeFactors_prime_pow (by norm_num) (by norm_num),
+      Nat.primeFactors_mul (by norm_num) (by norm_num),
+      Nat.Prime.primeFactors (by norm_num), Nat.Prime.primeFactors (by norm_num)]
+    rfl
+  have e15 : (Nat.primeFactors 15).erase ((Nat.primeFactors 15).sup id) = {3} := by
+    rw [h15]; decide
+  have e84 : (Nat.primeFactors 84).erase ((Nat.primeFactors 84).sup id) = {2, 3} := by
+    rw [h84]; decide
+  rw [ramifiedWeight, ramifiedWeight, e15, e84]
+  rw [Finset.prod_singleton, Finset.prod_insert (by decide), Finset.prod_singleton]
+  norm_num [h2, h3]
 
 /-- §0.4: a split prime `p` satisfies `d ≤ 4 p ^ h`. -/
 theorem splitPrime_size (K : Type) [Field K] [NumberField K]
@@ -215,8 +230,7 @@ example : goldfeldCompletion 2 3 (fun _ ↦ 2) (fun _ ↦ 5) 1 = 30 ∧
     goldfeldCompletion 2 3 (fun _ ↦ 1) (fun _ ↦ 1) 2 = 18 := by
   constructor
   · norm_num [goldfeldCompletion]
-  · have hΓ : Complex.Gamma 2 = 1 := by
-      simpa using Complex.Gamma_nat_eq_factorial 1
+  · have hΓ : Complex.Gamma 2 = 1 := by simp
     norm_num [goldfeldCompletion, hΓ]
 
 /-- §1.1: a zero factor gives the zero product, and totalized Gamma forces the product's value
@@ -247,19 +261,22 @@ theorem inverseMellinKernel_mellin (a : ℝ) (m : ℕ) (hm : 2 ≤ m) (s : ℂ) 
     mellin (fun x ↦ (inverseMellinKernel a m x : ℂ)) s = (s - (a : ℂ)) ^ (-(m : ℤ)) := by
   sorry
 
-/-- §1.3: the exponent `a=1` contributes the factor two at `x=1/2`. -/
+/-- §1.3: `a=1` contributes a factor two at `x=1/2`, while `m=3` has denominator `2!`. -/
 example : inverseMellinKernel 0 2 (1 / 2) = Real.log 2 ∧
-    inverseMellinKernel 1 2 (1 / 2) = 2 * Real.log 2 := by
-  constructor <;> norm_num [inverseMellinKernel]
+    inverseMellinKernel 1 2 (1 / 2) = 2 * Real.log 2 ∧
+    inverseMellinKernel 0 3 (1 / 2) = Real.log 2 ^ 2 / 2 ∧
+    0 < inverseMellinKernel 0 3 (1 / 2) := by
+  norm_num [inverseMellinKernel]
+  exact sq_pos_of_pos (Real.log_pos (by norm_num : (1 : ℝ) < 2))
 
 /-- §1.3: the support endpoints vanish; the negative-`a` kernel increases between `1/16`
 and `1/4`, so the antitonicity hypothesis cannot be dropped. -/
 example : inverseMellinKernel 0 3 1 = 0 ∧ inverseMellinKernel 0 2 2 = 0 ∧
     inverseMellinKernel (-1) 2 (1 / 16) < inverseMellinKernel (-1) 2 (1 / 4) := by
   have hlog4 : Real.log (4 : ℝ) = 2 * Real.log 2 := by
-    rw [show (4 : ℝ) = 2 ^ (2 : ℕ) by norm_num, Real.log_pow]
+    rw [show (4 : ℝ) = 2 ^ (2 : ℕ) by norm_num, Real.log_pow]; norm_num
   have hlog16 : Real.log (16 : ℝ) = 4 * Real.log 2 := by
-    rw [show (16 : ℝ) = 2 ^ (4 : ℕ) by norm_num, Real.log_pow]
+    rw [show (16 : ℝ) = 2 ^ (4 : ℕ) by norm_num, Real.log_pow]; norm_num
   norm_num [inverseMellinKernel, hlog4, hlog16]
   nlinarith [Real.log_pos (show (1 : ℝ) < 2 by norm_num)]
 
@@ -396,7 +413,10 @@ theorem curve139_source_equation (X Y : ℚ) :
       (-139 : ℚ) * ((8 * Y + 4) / 139 ^ 2) ^ 2 =
         ((4 * X + 462) / (-139)) ^ 3 + 10 * ((4 * X + 462) / (-139)) ^ 2 -
           20 * ((4 * X + 462) / (-139)) + 8 := by
-  sorry
+  rw [WeierstrassCurve.Affine.equation_iff]; simp only [curve139]
+  constructor <;> intro h
+  · linear_combination (-64 / 2685619 : ℚ) * h
+  · linear_combination (-2685619 / 64 : ℚ) * h
 
 /-- §2.1: the origin fails the chosen affine equation. -/
 example : curve139.a₂ = -1 ∧ curve139.a₄ = -64403 ∧ curve139.a₆ = -6220110 ∧
@@ -422,12 +442,18 @@ example : curve37.a₂ = 1 ∧ curve37.a₄ = -3 ∧ curve37.a₆ = 1 ∧
   norm_num [curve37, WeierstrassCurve.Δ, WeierstrassCurve.c₄, WeierstrassCurve.c₆,
     WeierstrassCurve.b₂, WeierstrassCurve.b₄, WeierstrassCurve.b₆, WeierstrassCurve.b₈]
 
-/-- §2.1: the origin is not on the conductor-37 model. -/
-example : ¬ curve37.toAffine.Equation 0 0 := by
+/-- §§2.1, 2.7: the origin is excluded; the displayed equation has nine projective points
+modulo seven, whereas its nonminimal scaled equation reduces to a cusp with eight. -/
+example : ¬ curve37.toAffine.Equation 0 0 ∧
+    (Finset.univ.filter (fun P : ZMod 7 × ZMod 7 ↦
+      P.2 ^ 2 + P.2 = P.1 ^ 3 + P.1 ^ 2 - 3 * P.1 + 1)).card + 1 = 9 ∧
+    (Finset.univ.filter (fun P : ZMod 7 × ZMod 7 ↦ P.2 ^ 2 = P.1 ^ 3)).card + 1 = 8 := by
+  refine ⟨?_, by decide, by decide⟩
   rw [WeierstrassCurve.Affine.equation_iff]; simp [curve37]
 
-/-- §2.3: parity of the finite analytic order follows from the completed functional equation.
-The entire completion is supplied independently of its right-half-plane gamma expression. -/
+/-- §2.3: elliptic motivic-normalization adapter to the sign-parity theorem of
+AutomorphicLFunctionsAndLocalFactors AL.5 (`central-sign-vanishing`). The entire completion
+is supplied independently of its right-half-plane gamma expression; `a₁=1` excludes `L=0`. -/
 theorem analyticRank_parity (E : WeierstrassCurve ℚ) [E.IsElliptic]
     (N : ℕ) (hN : 0 < N) (L Λ : ℂ → ℂ)
     (hL : Differentiable ℂ L) (hΛ : Differentiable ℂ Λ)
@@ -453,6 +479,27 @@ theorem twist_LFunction_coeff (E : WeierstrassCurve ℚ) [E.IsElliptic] (D : ℤ
 /-- §2.3: the bad Euler factors: additive reduction of `curve139` at `139` and nonsplit
 multiplicative reduction of `curve5077` at `5077`. -/
 theorem curve_local_data : curve139.LFunction 139 = 0 ∧ curve5077.LFunction 5077 = -1 := by
+  sorry
+
+/-- §2.3: all three displayed integral equations are minimal at every rational prime.
+Their nonzero discriminant valuations are `1` or `6`, strictly below `12`. -/
+theorem curve_models_minimal (p : ℕ) [Fact p.Prime] :
+    WeierstrassCurve.IsMinimal ℤ_[p] (curve37.baseChange ℚ_[p]) ∧
+      WeierstrassCurve.IsMinimal ℤ_[p] (curve139.baseChange ℚ_[p]) ∧
+      WeierstrassCurve.IsMinimal ℤ_[p] (curve5077.baseChange ℚ_[p]) := by
+  sorry
+
+/-- §§2.3, 2.7: the trace-zero good factor at five, split factor at thirty-seven and
+minimalization at seven fix the cohomological geometric-Frobenius convention. -/
+theorem curve37_local_polynomial_checks [Fact (Nat.Prime 5)] [Fact (Nat.Prime 37)]
+    [Fact (Nat.Prime 7)] :
+    (curve37.baseChange ℚ_[5]).localPolynomial ℤ_[5] =
+        1 + Polynomial.C 5 * Polynomial.X ^ 2 ∧
+      (curve37.baseChange ℚ_[37]).localPolynomial ℤ_[37] = 1 - Polynomial.X ∧
+      (curve37.baseChange ℚ_[7]).localPolynomial ℤ_[7] =
+        1 + Polynomial.X + Polynomial.C 7 * Polynomial.X ^ 2 ∧
+      ((⟨0, 49, 343, -7203, 117649⟩ : WeierstrassCurve ℚ).baseChange ℚ_[7]).localPolynomial
+          ℤ_[7] = 1 + Polynomial.X + Polynomial.C 7 * Polynomial.X ^ 2 := by
   sorry
 
 /-- §2.4: Mordell–Weil ranks: both curves have rank `3`, and `curve5077(ℚ)` is torsion-free. -/
@@ -513,12 +560,19 @@ theorem centralDerivative_series (N r : ℕ) (hN : 0 < N) (hr : Odd r) (a : ℕ 
         ((a n / n * bgzKernel r (2 * Real.pi * n / Real.sqrt N) : ℝ) : ℂ) := by
   sorry
 
-/-- §2.7: a rational enclosure before exact vanishing gives `|L′(1)| < 10⁻¹²`.
-The accompanying README target `curve5077_twist7_central_bounds` places the central value of
-the entire `-7` twist L-function strictly between four and five, supplying nonvanishing. -/
+/-- §2.7: a rational enclosure before exact vanishing gives `|L′(1)| < 10⁻¹²`. -/
 theorem curve5077_deriv_small (L : ℂ → ℂ) (hentire : Differentiable ℂ L)
     (hseries : ∀ s : ℂ, 3 / 2 < s.re → L s = curve5077.LSeries s) :
     ‖deriv L 1‖ < (10 : ℝ) ^ (-12 : ℤ) := by
+  sorry
+
+/-- §2.7: the entire L-function of the `-7` twist has central value in `(4,5)`.
+The trace-one, norm-two twist parameter has discriminant `1²-4·2=-7`. -/
+theorem curve5077_twist7_central_bounds (L : ℂ → ℂ)
+    (hentire : Differentiable ℂ L)
+    (hseries : ∀ s : ℂ, 3 / 2 < s.re →
+      L s = (curve5077.quadraticTwistOf 1 2).LSeries s) :
+    (4 : ℝ) < (L 1).re ∧ (L 1).re < 5 := by
   sorry
 
 /-- §2.7: the entire conductor-37 L-function has its central value in `(0.72,0.73)`. -/
@@ -668,9 +722,10 @@ example : primeMajorant 7000 0 = 7000 ∧ primeMajorant 55 1 = 55 := by
 /-- §4.1: the first factor is at `p₀=2`, the next at `p₁=3`. -/
 example : primeMajorant 55 2 = 55 * (3 / (3 - 2 * Real.sqrt 2)) ∧
     primeMajorant 55 3 = 55 * (3 / (3 - 2 * Real.sqrt 2)) * (4 / (4 - 2 * Real.sqrt 3)) := by
-  norm_num [primeMajorant, Finset.prod_range_succ, Nat.nth_prime_zero_eq_two,
-    Nat.nth_prime_one_eq_three]
-  <;> ring
+  simp only [primeMajorant, Finset.prod_range_succ, Finset.prod_range_zero,
+    Nat.nth_prime_zero_eq_two, Nat.nth_prime_one_eq_three]
+  norm_num
+  ring
 
 /-- §4.3: the bounds `log d ≤ C_7000(t) h` and, for `5077 ∤ d`, `log d ≤ C_55(t) h`. -/
 theorem explicitT_bound (K : Type) [Field K] [NumberField K]
@@ -712,7 +767,8 @@ def effectiveKappa (q : ℚ) : ℚ :=
 
 /-- §4.6: `κ(q) > 0` for `q > 0`. -/
 theorem effectiveKappa_pos (q : ℚ) (hq : 0 < q) : 0 < effectiveKappa q := by
-  sorry
+  unfold effectiveKappa
+  split_ifs <;> first | linarith | positivity
 
 /-- §4.6: the nonpositive branch is zero and the large-loss branch is `1/2`. -/
 example : effectiveKappa 0 = 0 ∧ effectiveKappa 1 = 1 / 2 := by
@@ -720,7 +776,7 @@ example : effectiveKappa 0 = 0 ∧ effectiveKappa 1 = 1 / 2 := by
 
 /-- §4.6: the two interior rational losses distinguish the exact ceiling exponents. -/
 example : effectiveKappa (1 / 2) = 1 / 2 ^ 302 ∧ effectiveKappa (1 / 4) = 1 / 2 ^ 814 := by
-  constructor <;> norm_num [effectiveKappa] <;> rfl
+  constructor <;> norm_num [effectiveKappa]
 
 /-- §4.7: the effective logarithmic class-number theorem with the rational witness `κ(q)`,
 valid for every real exponent loss `ε ≥ q`. -/
@@ -815,7 +871,7 @@ example : IsInertPrime 43 1333963 ∧ IsInertPrime 47 1333963 := by
     refine ⟨hp, by norm_num, ?_⟩
     intro q hq h2 hle
     have hmem : q ∈ ({3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47} : Finset ℕ) := by
-      interval_cases q <;> norm_num at hq ⊢
+      interval_cases q <;> first | (norm_num at hq; done) | norm_num
     exact hodd q hmem hq
   exact ⟨⟨h47.1, h47.2.1, fun q hq h2 hle ↦ h47.2.2 q hq h2 (by omega)⟩, h47⟩
 
