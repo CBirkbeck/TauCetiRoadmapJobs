@@ -1,0 +1,10 @@
+{
+  "gaps": [
+    {
+      "slug": "local-two-quotient",
+      "needs": "For abelian varieties over finite extensions of ℚ_p and over ℝ, supply the multiplication-by-two quotient cardinalities used by the local descent image size comparison.",
+      "supplier": "HeightsRationalPointsAndObstructions",
+      "section": "1.17"
+    }
+  ]
+}
