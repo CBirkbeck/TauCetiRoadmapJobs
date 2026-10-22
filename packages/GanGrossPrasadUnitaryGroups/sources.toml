@@ -8,7 +8,7 @@ title = "Bessel models for real unitary groups: the tempered case"
 year = 2023
 doi = "10.1215/00127094-2022-0018"
 locator_scheme = "theorem"
-locator = "Theorem 2.2, published p. 1000; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001; Section 2.4 and Sections 3-4, pp. 1002-1029"
+locator = "Theorem 2.2, published p. 1000; notation p. 996; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001; Section 2.4 and Sections 3-4, pp. 1002-1029; equation (3.17) and Proposition 3.6, p. 1019; Lemmas 3.8-3.9, pp. 1022-1024; Lemmas 4.1-4.4, pp. 1024-1029"
 url = "https://par.nsf.gov/servlets/purl/10476094"
 fetched_from = "https://par.nsf.gov/servlets/purl/10476094"
 fetched_at = "2026-10-21T19:38:50Z"
@@ -18,7 +18,7 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "Published Duke Math. J. pagination in institutional copy; cached text recognised by OCR"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
-cited_for = ["3.8", "3.9", "2.1"]
+cited_for = ["3.8", "3.8 realSeesawForm", "3.9", "2.1"]
 
 [[source]]
 id = "xue-bessel"
@@ -244,7 +244,7 @@ title = "Automorphic period and the central value of Rankin--Selberg L-function"
 year = 2014
 arxiv = "1208.6280v4"
 locator_scheme = "section"
-locator = "Equation (3.2), pp. 13–14; Section 3.3, equations (3.23)–(3.25), p. 19; Section 4.5, Lemma 4.9 and Proposition 4.10, pp. 30–33; change of measures p. 29"
+locator = "Section 2.1, pp. 10–11; Equation (3.2), pp. 13–14; Section 3.3, equations (3.23)–(3.26), p. 19; Section 4.5, Lemma 4.9 and Proposition 4.10, pp. 30–33; change of measures pp. 9, 29"
 url = "https://arxiv.org/abs/1208.6280v4"
 fetched_from = "https://arxiv.org/pdf/1208.6280v4"
 fetched_at = "2026-10-21T20:56:44Z"

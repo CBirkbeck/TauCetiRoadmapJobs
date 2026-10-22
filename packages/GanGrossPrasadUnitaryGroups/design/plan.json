@@ -2634,17 +2634,17 @@
     },
     {
       "slug": "local-rankin-selberg",
-      "title": "Local Rankin–Selberg continuation and test vectors",
+      "title": "Local Rankin–Selberg differential and quotient Haar comparison",
       "neededBy": [
         "3.11",
         "5.1a",
         "5.3",
         "6.1"
       ],
-      "needs": "For every characteristic-zero local field K, n≥1 and generic irreducible GL_(n+1)(K)×GL_n(K) pair, with opposite Whittaker characters and compatible quotient Haar measures, prove meromorphic continuation of λ(s,W)=∫_(N_n\\GL_n)W_(n+1)(diag(g,1))W_n(g)|det g|^s dḡ, entire continuation of λ(s,W)/L_K(s+1/2,π_(n+1)×π_n), and existence at each s₀ of a smooth Whittaker tensor with normalized value 1.",
-      "detail": "For unitary tempered pairs the raw integral converges absolutely for Re(s)>-1/2. For unramified pairs and conductor-zero characters the W_m(1)=1 spherical vectors satisfy λ(s,W)=vol(GL_n(O_K))L_K(s+1/2,π_(n+1)×π_n), with the stated measures, for every residue characteristic including 2. At infinity all functionals are continuous on the Casselman–Wallach model; for split coefficients apply this per field factor (zhang-period §3.3, equations (3.23)–(3.26), p. 19, line 962–986).",
+      "needs": "Compare the existing §AL.3 adjacent Rankin–Selberg integral and normalized period with dg_n^d=|det g|^(-n)∏dx_ij and its N_n quotient measure, using the same ψ-self-dual root measures at every characteristic-zero local K.",
+      "detail": "At finite K normalize the supplier GL_n(O_K) volume to 1; with κ=vol_dx(O_K) and c_n=κ^(n²)∏_(j=1..n)(1−q^(-j)), require dg_n^d=c_n dg_n^AL, dḡ_n^d=c_n dḡ_n^AL and λ^d/L=c_n λ^AL/L, with λ(s)=Ψ₀(s+1/2). At infinity choose the supplier differential Haar so c_n=1. Under dg→a dg and du_N→b du_N, the quotient and λ scale by a/b. For conductor-zero ψ, the existing AL3.NormalizedRsPeriod.unramified value 1 becomes c_n=vol_(dg_n^d)(GL_n(O_K)); Zhang’s earlier finite-place ζ_K(1)dg_n^d convention has an additional ζ_K(1), absent in the unnormalized local convention here. This gap requests only the measure comparison; rs-local-convergence, rs-local-factor, normalized-rs-period, AL3.RsLocalFactor.normalize and .nonvanishing, AL3.NormalizedRsPeriod.entire, .invariant and .unramified are consumed from §AL.3 (zhang-period §2.1, pp. 10–11, line 489–522; p. 9, line 424–440; §3.3, p. 19, line 962–986).",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "§§AL.3–AL.4 local Rankin–Selberg integrals: exact normalization and all-place comparison supplement"
+      "section": "§AL.3 local Rankin–Selberg periods: differential and quotient Haar comparison supplement"
     },
     {
       "slug": "whittaker-pairing-fourier",

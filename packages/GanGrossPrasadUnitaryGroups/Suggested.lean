@@ -26,10 +26,12 @@ theorem splitLineFrame_iff_norm_ne_zero {F : Type u} [Field F] (e : F × F) :
     splitLineFrame e ↔ e.1 * e.2 ≠ 0 := by
   sorry
 
-/-- The diagonal vector frames the split line and has Hermitian norm one. -/
+/-- The diagonal vector frames the split line with norm one; the rational vector
+(2,1) also frames it, with norm two, so a frame need not have norm one. -/
 example {F : Type u} [Field F] :
-    splitLineFrame ((1 : F), 1) ∧ (1 : F) * 1 = 1 := by
-  simp [splitLineFrame, Prod.isUnit_iff]
+    (splitLineFrame ((1 : F), 1) ∧ (1 : F) * 1 = 1) ∧
+    (splitLineFrame ((2 : ℚ), 1) ∧ (2 : ℚ) * 1 = 2) := by
+  norm_num [splitLineFrame, Prod.isUnit_iff]
 
 /-- A nonzero split idempotent has zero Hermitian norm and cannot frame the line. -/
 example {F : Type u} [Field F] :
@@ -132,13 +134,25 @@ example : componentCentralElement (fun _ : Fin 1 => 2) = 0 ∧
     have := congrFun h 0
     simp at this
 
-/-- Two distinct irreducibles occurring once each give both central coordinates,
-whereas a zero-dimensional parameter has the unique empty central element. -/
-example : componentCentralElement (fun _ : Fin 2 => 1) = (fun _ => 1) ∧
-    componentCentralElement (fun i : Fin 0 => Fin.elim0 i) = 0 := by
-  constructor
-  · rfl
+/-- Two constituents occurring once each have both central coordinates. The additive
+character summing these coordinates is one on each generator and zero on the central
+element; a zero-dimensional parameter has the unique empty central element. -/
+example :
+    let χ : (Fin 2 → ZMod 2) →+ ZMod 2 :=
+      { toFun := fun x => x 0 + x 1
+        map_zero' := by simp
+        map_add' := by intros; simp only [Pi.add_apply]; abel }
+    componentCentralElement (fun _ : Fin 2 => 1) = (fun _ => 1) ∧
+    componentCentralElement (fun i : Fin 0 => Fin.elim0 i) = 0 ∧
+    χ (Pi.single (0 : Fin 2) 1) = 1 ∧
+    χ (Pi.single (1 : Fin 2) 1) = 1 ∧
+    χ (componentCentralElement (fun _ : Fin 2 => 1)) = 0 := by
+  dsimp
+  refine ⟨rfl, ?_, ?_, ?_, ?_⟩
   · funext i; exact Fin.elim0 i
+  · simp
+  · simp
+  · decide
 
 /-! ## Layer 6: Relative characters and the endoscopic spectral calculation -/
 
