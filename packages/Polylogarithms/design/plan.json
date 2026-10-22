@@ -1,0 +1,16 @@
+{
+  "gaps": [
+    {
+      "slug": "borel-period-contract",
+      "needs": "Supply the rational Borel regulator image and covolume and the totally-real even-weight primitive-period theorem, including its Tamagawa input.",
+      "supplier": "BorelRegulators",
+      "section": "Layers 3–5; §7.1"
+    },
+    {
+      "slug": "universal-deligne-contract",
+      "needs": "Supply higher-cycle complexes, rational Chern characters and the universal restriction-natural Deligne regulator with its required logarithmic and support-semipurity input.",
+      "supplier": "MotivicEtaleKTheory",
+      "section": "Layer 4; §§9.1, 12.2"
+    }
+  ]
+}
