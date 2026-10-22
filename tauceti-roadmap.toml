@@ -209,6 +209,8 @@ netjail = ""
 claude_hook = true
 
 [replies]
+maintainer_logins = ["CBirkbeck"]
+maintainer_review_prefix = "Maintainer review"
 # How the gate lane tells a review from a reply on the content repository's pull requests.
 # A comment counts as a review when it comes from someone else, or when one of these markers
 # appears in its first 60 characters. A reply must never name a marker in its first 40 characters.
