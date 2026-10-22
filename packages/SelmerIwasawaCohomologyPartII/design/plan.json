@@ -2103,7 +2103,7 @@
         "7.4"
       ],
       "detail": "Need independent non-CM elliptic residual images, symmetric powers and their polarizations, plus the tensor irreducibility/adjoint exclusion criterion with one regular even unipotent and trivial odd action in characteristic zero or ≥2n(n+1)−1. ltxzz line 942, ltxzz line 6459.",
-      "needs": "Bind the residual-image and tensor-irreducibility facts needed to check the two admissibility families.",
+      "needs": "Bind the residual-image and tensor-irreducibility facts needed to check the two admissibility families, including exclusion from every coefficient Frobenius twist of the adjoint over finite residue fields.",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "new obligation: ltxzz Proposition 2.7.2 and Lemma 8.1.5"
     },
