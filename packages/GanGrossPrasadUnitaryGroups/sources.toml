@@ -8,7 +8,7 @@ title = "Bessel models for real unitary groups: the tempered case"
 year = 2023
 doi = "10.1215/00127094-2022-0018"
 locator_scheme = "theorem"
-locator = "Theorem 2.2, published p. 1000; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001; Section 2.4 and Sections 3-4, pp. 1002-1029"
+locator = "Theorem 2.2, published p. 1000; notation p. 996; Sections 2.1-2.3, pp. 997-1001; Corollary 2.5, p. 1001; Section 2.4 and Sections 3-4, pp. 1002-1029; equation (3.17) and Proposition 3.6, p. 1019; Lemmas 3.8-3.9, pp. 1022-1024; Lemmas 4.1-4.4, pp. 1024-1029"
 url = "https://par.nsf.gov/servlets/purl/10476094"
 fetched_from = "https://par.nsf.gov/servlets/purl/10476094"
 fetched_at = "2026-10-21T19:38:50Z"
@@ -18,7 +18,7 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "Published Duke Math. J. pagination in institutional copy; cached text recognised by OCR"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/613#issuecomment-6324791403"
-cited_for = ["3.8", "3.9", "2.1"]
+cited_for = ["3.8", "3.8 realSeesawForm", "3.9", "2.1"]
 
 [[source]]
 id = "xue-bessel"
@@ -48,7 +48,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["1.1", "1.2", "1.3", "2.1", "2.4", "2.6", "3.1", "3.2", "3.10", "3.11", "4.1", "4.2", "4.3", "4.4"]
+cited_for = ["1.1", "1.1 hermitianFieldCarrierEquiv", "1.1 hermitianSplitCarrierEquiv", "1.1 splitLineFrame", "1.2", "1.3", "2.1", "2.1 algebraicBesselModel", "2.4", "2.6", "3.1", "3.1 componentCentralElement", "3.2", "3.10", "3.11", "4.1", "4.2", "4.3", "4.4"]
 
 [[source]]
 id = "agrs"
@@ -114,7 +114,7 @@ title = "A local trace formula for the Gan-Gross-Prasad conjecture for unitary g
 year = 2015
 arxiv = "1506.01452v3"
 locator_scheme = "theorem"
-locator = "Proposition 4.5.1, p. 106; Proposition 7.1.1 and Lemma 7.1.2, pp. 177–180; Theorem 12.4.1, arXiv v3 pp. 289-290; Sections 7.1-7.4, 11.1-11.4, 12.2-12.3; Theorem 7.2.1, p. 181; Proposition 7.4.1, p. 192; Proposition 11.2.1, pp. 265-266; Theorems 11.4.1-11.4.3, p. 273"
+locator = "Proposition 4.5.1, p. 106; Proposition 7.1.1 and Lemma 7.1.2, pp. 177–180; Theorem 12.4.1, arXiv v3 pp. 289-290; Sections 7.1-7.4, 11.1-11.4, 12.2-12.3; Theorem 7.2.1, p. 181; Proposition 7.4.1, p. 192; Proposition 11.2.1, pp. 265-266; Theorems 11.4.1-11.4.3, p. 273; Lemma 11.3.1, p. 272"
 url = "https://arxiv.org/abs/1506.01452v3"
 fetched_from = "https://arxiv.org/pdf/1506.01452v3"
 fetched_at = "2026-10-21T19:42:55Z"
@@ -161,7 +161,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
-cited_for = ["2.7", "5.3", "7.3", "5.1", "5.2"]
+cited_for = ["2.1 linearFirstPairing", "2.7", "5.3", "7.3", "5.1", "5.2"]
 
 [[source]]
 id = "bplzz"
@@ -188,7 +188,7 @@ title = "The global Gan-Gross-Prasad conjecture for unitary groups: the endoscop
 year = 2020
 arxiv = "2007.05601v1"
 locator_scheme = "theorem"
-locator = "Sections 1.1.2-1.1.6, arXiv v1 pp. 2-5; Theorems 1.1.5.1 and 1.1.6.1; Section 2.3.2, p. 15; Sections 5.1.3-5.2, 8.1.2-8.1.4, 10.1-10.3; Theorems 5.2.1.1 and 8.1.4.1, pp. 59, 78; Proposition 10.1.6.1, pp. 88-89; equations 10.3.2.1 and 10.3.5.4, pp. 90-92"
+locator = "Sections 1.1.2-1.1.6, arXiv v1 pp. 2-5; Theorems 1.1.5.1 and 1.1.6.1; Section 2.3.2, p. 15; Section 2.8.3 and Proposition 2.8.4.1, p. 25; Section 10.1.2, p. 87; Sections 5.1.3-5.2, 8.1.2-8.1.4, 10.1-10.3; Theorems 5.2.1.1 and 8.1.4.1, pp. 59, 78; Proposition 10.1.6.1, pp. 88-89; equations 10.3.2.1 and 10.3.5.4, pp. 90-92; Section 1.1.3, p. 3"
 url = "https://arxiv.org/abs/2007.05601v1"
 fetched_from = "https://arxiv.org/pdf/2007.05601v1"
 fetched_at = "2026-10-21T19:43:18Z"
@@ -197,7 +197,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["5.1", "5.2", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "6.5", "7.1", "7.4", "5.3", "7.3"]
+cited_for = ["5.1", "5.2", "5.4", "5.5", "6.1", "6.2", "6.3", "6.4", "6.5", "7.1", "7.4", "5.3", "7.3", "6.3 unitaryConstituentSigns and unitaryConstituentCoefficient"]
 
 [[source]]
 id = "jsz-bessel"
@@ -244,7 +244,7 @@ title = "Automorphic period and the central value of Rankin--Selberg L-function"
 year = 2014
 arxiv = "1208.6280v4"
 locator_scheme = "section"
-locator = "Equation (3.2), pp. 13–14; Section 3.3, equations (3.23)–(3.25), p. 19; Section 4.5, Lemma 4.9 and Proposition 4.10, pp. 30–33; change of measures p. 29"
+locator = "Section 2.1, pp. 10–11; Equation (3.2), pp. 13–14; Section 3.3, equations (3.23)–(3.26), p. 19; Section 4.5, Lemma 4.9 and Proposition 4.10, pp. 30–33; change of measures pp. 9, 29"
 url = "https://arxiv.org/abs/1208.6280v4"
 fetched_from = "https://arxiv.org/pdf/1208.6280v4"
 fetched_at = "2026-10-21T20:56:44Z"
