@@ -1,0 +1,16 @@
+{
+  "gaps": [
+    {
+      "slug": "connective-c2-homotopy-orbit-spectral-sequence",
+      "supplier": "StableHomotopyKTheory",
+      "section": "Layer 7",
+      "needs": "For every connective spectrum E with a coherent C₂-action, the natural strongly convergent spectral sequence H_p(C₂;π_q E) ⇒ π_(p+q)(E_hC₂), with its skeletal filtration."
+    },
+    {
+      "slug": "number-ring-witt-signature",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§6.11",
+      "needs": "For every number field F and finite S of finite primes, the symmetric Witt real-signature map W^s(O_(F,S)) → ℤ^r₁ has finite kernel and image of rank r₁."
+    }
+  ]
+}

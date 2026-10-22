@@ -2,22 +2,6 @@ schema = "tauceti-roadmap-sources/v1"
 roadmap = "ArithmeticKTheory"
 
 [[source]]
-id = "groenewegen"
-authors = "Richard P. Groenewegen"
-title = "Bounds for computing the tame kernel"
-year = 2004
-locator_scheme = "theorem"
-locator = "Preprint Lemmas 6, 9, 12; Proposition 10; Propositions/Theorems 13–15; printed pages 5, 8–13"
-url = "https://www.ams.org/journals/mcom/2004-73-247/S0025-5718-03-01592-8/S0025-5718-03-01592-8.pdf"
-fetched_from = "https://www.ams.org/journals/mcom/2004-73-247/S0025-5718-03-01592-8/S0025-5718-03-01592-8.pdf"
-fetched_at = "2026-10-21T09:51:24Z"
-sha256 = "44f6518313fa95bb16c6120663272415788e1fa15ff5d123dc444dbc6146f5f8"
-licence_class = "publisher-open"
-status = "certified"
-accessed = "2026-10-21"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6313071059"
-
-[[source]]
 id = "harris-segal"
 authors = "B. Harris, G. Segal"
 title = "K i Groups of Rings of Algebraic Integers"
@@ -28,31 +12,6 @@ locator = "Section 3, article pp. 20–33"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
-
-[[source]]
-id = "groenewegen-preprint"
-authors = "Richard P. Groenewegen"
-title = "Bounds for computing the tame kernel"
-year = 2002
-locator_scheme = "theorem"
-locator = "Lemmas 6, 9, 12; Proposition 10; §§3–7, preprint pp. 7–11"
-licence_class = "none"
-status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
-
-[[source]]
-id = "yokoyama"
-title = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf/-char/ja"
-locator_scheme = "theorem"
-locator = "Theorem 4"
-url = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf"
-fetched_from = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf"
-fetched_at = "2026-10-21T13:02:26Z"
-sha256 = "241d16ad2bce2aff802a94c3bb72758453b6211283cd5dd7756442c19a6c0f18"
-licence_class = "publisher-open"
-status = "certified"
-accessed = "2026-10-21"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
 
 [[source]]
 id = "mitchell"
@@ -89,3 +48,322 @@ locator = "V §§1-2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
+
+[[source]]
+id = "kbook"
+authors = "Charles A. Weibel"
+title = "The K-book: An Introduction to Algebraic K-theory"
+year = 2013
+locator_scheme = "chapter"
+locator = "Combined author PDF, 29 August 2013; Chapters I–VI; III.6.3 p. 234; VI.8.8 pp. 515–516; VI.9.12 p. 525; VI.10.1–10.1.3 pp. 527–528"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-10-22T08:53:42Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Combined author PDF, 29 August 2013; printed page numbers, not PDF page indices."
+cited_for = ["1–8"]
+
+[[source]]
+id = "sun"
+authors = "Fei Sun"
+title = "Algebraic K-Theory and Modular Symbols"
+year = 2016
+arxiv = "1604.04700v1"
+locator_scheme = "page"
+locator = "Version 1, pp. 5–6"
+url = "https://arxiv.org/abs/1604.04700v1"
+fetched_from = "https://arxiv.org/pdf/1604.04700v1"
+fetched_at = "2026-10-22T08:54:23Z"
+sha256 = "c0585949df902e30b7368c235210e8b20a0dea344ed88a9e7a65577ec681e793"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["3.1–3.2"]
+
+[[source]]
+id = "putman-studenmund"
+authors = "Andrew Putman; Daniel Studenmund"
+title = "The dualizing module and top-dimensional cohomology group of GL_n(O)"
+year = 2021
+venue = "Math. Z. 300 (2022), no. 1, 1-31"
+doi = "10.1007/s00209-021-02769-9"
+arxiv = "1909.01217v4"
+locator_scheme = "theorem"
+locator = "Version 4, Proposition 2.1, pp. 8–10"
+url = "https://arxiv.org/abs/1909.01217v4"
+fetched_from = "https://arxiv.org/pdf/1909.01217v4"
+fetched_at = "2026-10-22T08:54:29Z"
+sha256 = "3421bcfaffc1e05198ae8323971872ca3774bd73c067077e94f46ed5d073d7ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["3.2"]
+
+[[source]]
+id = "kahn"
+authors = "Bruno Kahn"
+title = "Around Quillen’s theorem A"
+year = 2011
+arxiv = "1108.2441v3"
+locator_scheme = "section"
+locator = "Version 3, Sections 2–4; Definition 2.3.2; Corollary 2.3.7; Theorem 2.4.1; Proposition 4.2.4; Corollary 4.2.6; Theorem 4.3.3"
+url = "https://arxiv.org/abs/1108.2441v3"
+fetched_from = "https://arxiv.org/pdf/1108.2441v3"
+fetched_at = "2026-10-22T08:54:35Z"
+sha256 = "71b5da651ba9feca4c1abcc58f566afbf11019dda465cbc3a95aace7cb1e2406"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["3.1–3.2"]
+
+[[source]]
+id = "hermitian"
+authors = "Baptiste Calmès; Emanuele Dotto; Yonatan Harpaz; Fabian Hebestreit; Markus Land; Kristian Moi; Denis Nardin; Thomas Nikolaus; Wolfgang Steimle"
+title = "Hermitian K-theory for stable infinity-categories III: Grothendieck–Witt groups of rings"
+year = 2020
+arxiv = "2009.07225v4"
+locator_scheme = "theorem"
+locator = "Version 4, Corollaries 2.3.16, 2.3.18–2.3.19, pp. 47–48 and tables cited in the proof"
+url = "https://arxiv.org/abs/2009.07225v4"
+fetched_from = "https://arxiv.org/pdf/2009.07225v4"
+fetched_at = "2026-10-22T08:54:43Z"
+sha256 = "1e4b6720055ebdce0012f5780bfc7cdb5b853e32f29b17224a1be0bc676f770c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["3.5"]
+
+[[source]]
+id = "rognes-weibel"
+authors = "John Rognes; Charles A. Weibel"
+title = "Two-primary algebraic K-theory of rings of integers in number fields"
+year = 2000
+locator_scheme = "theorem"
+locator = "Theorems 6.7 and 6.9, pp. 32–33"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/RognesWeibel.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/RognesWeibel.pdf"
+fetched_at = "2026-10-22T08:54:46Z"
+sha256 = "9d770c079313ccc26f29da641d301269edf12985f122fd107ab201f086e8f446"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5–6"]
+
+[[source]]
+id = "handbook"
+authors = "Charles A. Weibel"
+title = "Algebraic K-theory of rings of integers in local and global fields"
+year = 2005
+locator_scheme = "theorem"
+locator = "Theorem 73 and odd torsion, pp. 167–169"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/KZsurvey-published.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/KZsurvey-published.pdf"
+fetched_at = "2026-10-22T08:54:49Z"
+sha256 = "6c6368a61982eca8b05a44d521088c61d9c890a02454766a0ff5a6c1c6c831fe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.2–5.5"]
+
+[[source]]
+id = "wildkernel"
+authors = "Charles A. Weibel"
+title = "Higher wild kernels and divisibility in the K-theory of number fields"
+year = 2004
+locator_scheme = "section"
+locator = "Author preprint 23 July 2004, Sections 1–8; Lemma 4.4 replaced by compatible Frobenius prescription; Corollary 4.6 p. 13"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/wildkernel.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/wildkernel.pdf"
+fetched_at = "2026-10-22T08:56:03Z"
+sha256 = "2675756fe4e03556dac1b26538eeca0fd1b8bf0ae7d800433a3c708812f3478b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.2", "6.6–6.13"]
+
+[[source]]
+id = "hutchinson"
+authors = "Kevin Hutchinson"
+title = "Étale wild kernels of exceptional number fields"
+year = 2004
+locator_scheme = "theorem"
+locator = "Author preprint 16 July 2004; Definition 2.3; Remark 2.4; Theorem 2.8; Corollary 2.9; Theorem 4.3; Corollaries 4.7–4.8; Lemma 5.1; Corollary 5.7, pp. 4–19"
+url = "https://web.archive.org/web/20151219232629id_/http://www.math.uiuc.edu/K-theory/0700/etalekernels.pdf"
+fetched_from = "https://web.archive.org/web/20151219232629id_/http://www.math.uiuc.edu/K-theory/0700/etalekernels.pdf"
+fetched_at = "2026-10-22T08:56:05Z"
+sha256 = "4b17df7ff67808e65b19aeec2f71c8002926583e26446b1aafd90cd97fc6686f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Author preprint, 16 July 2004; published J. Number Theory 120 (2006), pp. 47–71; numbering and pages cited are the preprint."
+cited_for = ["6.9–6.13"]
+
+[[source]]
+id = "caputo"
+authors = "Luca Caputo"
+title = "Splitting in the K-theory localization sequence of number fields"
+year = 2010
+arxiv = "1002.2936v2"
+locator_scheme = "theorem"
+locator = "Version 2, Proposition 2 p. 4; Lemmas 4, 6–7, Proposition 3, Remark 5 pp. 7–8; Theorem 1 pp. 12–14; Proposition 4 and Example 2 pp. 16–17"
+url = "https://arxiv.org/abs/1002.2936v2"
+fetched_from = "https://arxiv.org/pdf/1002.2936v2"
+fetched_at = "2026-10-22T08:56:08Z"
+sha256 = "0dd2d646a440cacfc7f8a33f4e8922ac3eb96a8b84a509dc5780026c3212191b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.6, 6.13"]
+
+[[source]]
+id = "banaszak"
+authors = "Grzegorz Banaszak"
+title = "Wild kernels and divisibility in K-groups of global fields"
+year = 2012
+arxiv = "1208.2137v1"
+locator_scheme = "equation"
+locator = "Version 1, (56), (59)–(60) p. 17; Remark 6.1 and Theorem 6.4 p. 31"
+url = "https://arxiv.org/abs/1208.2137v1"
+fetched_from = "https://arxiv.org/pdf/1208.2137v1"
+fetched_at = "2026-10-22T08:56:15Z"
+sha256 = "81b519ed809abfe718d66e650c9771ae4374bc840160552d340d11b9cd25ff5c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["6.6"]
+
+[[source]]
+id = "fgv"
+authors = "Tony Feng; Søren Galatius; Akshay Venkatesh"
+title = "The Galois action on symplectic K-theory"
+year = 2022
+doi = "10.1007/s00222-022-01127-8"
+locator_scheme = "section"
+locator = "Author PDF, Sections 2.6–2.7, pp. 12–15; (2.6); Proposition 2.9; Lemmas 2.10–2.11; Corollary 2.12; Remark 2.13; Lemma 2.14"
+url = "https://math.berkeley.edu/~fengt/Galois_action_on_KSp.pdf"
+fetched_from = "https://math.berkeley.edu/~fengt/Galois_action_on_KSp.pdf"
+fetched_at = "2026-10-22T08:56:18Z"
+sha256 = "5d717b2a94288593049be2aed34e38dbde10750beba4bd3d3387820d038e8807"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Author PDF; locators use its printed pp. 12–15, not journal pagination."
+cited_for = ["6.15–6.16"]
+
+[[source]]
+id = "cgz"
+authors = "Frank Calegari; Stavros Garoufalidis; Don Zagier"
+title = "Bloch groups, algebraic K-theory, units, and Nahm’s conjecture"
+year = 2017
+arxiv = "1712.04887v3"
+locator_scheme = "theorem"
+locator = "Version 3, Lemma 3.5 and proof, p. 20"
+url = "https://arxiv.org/abs/1712.04887v3"
+fetched_from = "https://arxiv.org/pdf/1712.04887v3"
+fetched_at = "2026-10-22T08:56:22Z"
+sha256 = "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["6.13"]
+
+[[source]]
+id = "sharifi"
+authors = "Romyar Sharifi"
+title = "Iwasawa Theory"
+year = "undated"
+locator_scheme = "theorem"
+locator = "Theorem 4.4.2; Corollaries 4.4.4–4.4.5 pp. 111–113; Theorem 4.5.7 p. 117; Definition 5.2.4; Proposition 5.2.5; Remarks 5.2.8–5.2.9 pp. 134–136"
+url = "https://www.math.ucla.edu/~sharifi/iwasawa.pdf"
+fetched_from = "https://www.math.ucla.edu/~sharifi/notes/iwasawa.pdf"
+fetched_at = "2026-10-22T08:56:29Z"
+sha256 = "e5308be4c3d9ded6002cefb50df64b31f62b584b6ff68be7f21dc939f2508c26"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Undated author notes, 189 pages; fetched copy used for theorem and page numbering."
+cited_for = ["7.2–7.3"]
+
+[[source]]
+id = "ribet"
+authors = "Kenneth A. Ribet"
+title = "A modular construction of unramified p-extensions of Q(mu_p)"
+year = 1976
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.3; Proposition 2.1; Theorem 3.7; Propositions 4.1–4.3; Theorem 4.4, pp. 151–162"
+url = "https://math.berkeley.edu/~ribet/Articles/invent_34.pdf"
+fetched_from = "https://math.berkeley.edu/~ribet/Articles/invent_34.pdf"
+fetched_at = "2026-10-22T08:57:11Z"
+sha256 = "6985813b4026bb0fd7098aed3f816262e0922f62a5d2dab22e29bcc2eb323471"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["7.3"]
+
+[[source]]
+id = "yokoyama"
+title = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf/-char/ja"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf"
+fetched_from = "https://www.jstage.jst.go.jp/article/tmj1949/17/4/17_4_349/_pdf"
+fetched_at = "2026-10-21T13:02:26Z"
+sha256 = "241d16ad2bce2aff802a94c3bb72758453b6211283cd5dd7756442c19a6c0f18"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#issuecomment-6316719984"
+
+[[source]]
+id = "groenewegen"
+authors = "Richard P. Groenewegen"
+title = "Bounds for computing the tame kernel"
+year = 2004
+locator_scheme = "theorem"
+locator = "Preprint Lemmas 6, 9, 12; Proposition 10; Propositions/Theorems 13–15; printed pages 5, 8–13"
+url = "https://www.ams.org/journals/mcom/2004-73-247/S0025-5718-03-01592-8/S0025-5718-03-01592-8.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2004-73-247/S0025-5718-03-01592-8/S0025-5718-03-01592-8.pdf"
+fetched_at = "2026-10-21T09:51:24Z"
+sha256 = "44f6518313fa95bb16c6120663272415788e1fa15ff5d123dc444dbc6146f5f8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6313071059"
+
+[[source]]
+id = "rognes-k4"
+authors = "John Rognes"
+title = "K4(Z) is the trivial group"
+year = 1993
+locator_scheme = "theorem"
+locator = "Author manuscript: Main Theorem p. 1; Proposition 1.2 pp. 5–6; Propositions 5.1–5.2 pp. 16–18; §6 pp. 19–21"
+url = "https://www.mn.uio.no/math/personer/vit/rognes/papers/k4z.pdf"
+fetched_from = "https://www.mn.uio.no/math/personer/vit/rognes/papers/k4z.pdf"
+fetched_at = "2026-10-22T08:58:19Z"
+sha256 = "3fc6665e1956f2dba27bf669d7e7fd196b530f833c0acdfb3ac7fc5d9e26f717"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Author manuscript with 1993 header, 22 pages; published Topology 39 (2000), pp. 267–281. All locators use the manuscript."
+cited_for = ["7.5", "8.2"]
+
+[[source]]
+id = "groenewegen-preprint"
+authors = "Richard P. Groenewegen"
+title = "Bounds for computing the tame kernel"
+year = 2002
+locator_scheme = "theorem"
+locator = "Lemmas 6, 9, 12; Proposition 10; §§3–7, preprint pp. 7–11"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#issuecomment-6314103459"
