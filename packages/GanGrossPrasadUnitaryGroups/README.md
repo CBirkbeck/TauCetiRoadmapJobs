@@ -6,7 +6,7 @@
 
 The general smooth category, induction, Jacquet filtrations, Satake theory, globalizations, adelic measures, ordinary endoscopy, classification of Langlands packets and L-functions have the supplier sections specified below. This roadmap owns their relative Bessel specializations and comparison proofs. NoncommutativeGeometry N1 owns completed projective tensors, their complete-target universal property and the dense algebraic tensor image. AutomorphicFormsOnReductiveGroups §2.6, using §2.7, owns archimedean tempered GL genericity; §2.7 owns SAF nuclearity and `seminormEstimate` for ordinary moderate growth. AutomorphicLFunctionsAndLocalFactors §AL.3 and its Representation prerequisites, Archimedean Whittaker comparisons, own the Whittaker realization and its smooth-globalization comparison.
 
-GeometryOfNumbersAndQuadraticArithmetic §2.9 owns `SignedHermitianSpace` and the field adjoint API over every commutative field with involution and every finite-dimensional module. Use its sign +1 carrier for nonsplit coefficient fields, with the slot comparison `hermitianFieldCarrierEquiv` of §1.1. The odd-residue local-field hypotheses of its classification and transfer-image results do not restrict this carrier or adjoint. ReductiveGroupsPartII retains the additional quadratic-étale module and algebraic-group geometry specified below; the comparison between these suppliers belongs here.
+GeometryOfNumbersAndQuadraticArithmetic §2.9 owns `SignedHermitianSpace` and the field adjoint API over every commutative field with involution and every finite-dimensional module. Use its sign +1 carrier for nonsplit coefficient fields, with the slot comparison `hermitianFieldCarrierEquiv` of §1.1. The odd-residue local-field hypotheses of its classification and transfer-image results do not restrict this carrier or adjoint. MetaplecticAutomorphicForms §3.2a owns the split finite-projective Hermitian carrier, its A⊕A∨ description and its GL(A) isometry-group identification. Use its sign +1 carrier with `hermitianSplitCarrierEquiv` of §1.1. ReductiveGroupsPartII retains the complement/Witt geometry, arbitrary-form algebraic-group representability and additional scalar-extension/inner-form comparisons specified below. This roadmap owns the comparisons with both form suppliers after them; these comparisons impose no dependency of ReductiveGroupsPartII on either form supplier.
 
 This roadmap owns relevant Hermitian pairs, their relative Bessel subgroups and characters, model spaces and transport, relative distribution symmetry and multiplicity, relative tempered forms and geometric multiplicities, the Bessel calculation over Langlands packets, global Bessel periods, relative normalizers and the adjacent period theorems. It includes rank-zero smaller spaces and split local algebras; the final global adjacent theorems have n≥1. It makes no quasi-split, CM, totally-real, unramified, odd-residue-characteristic or auxiliary-supercuspidal restriction on the library. The split archimedean higher-codimension assertion is the proposition of §3.10; the theorem of §3.11 covers finite places and adjacent archimedean pairs.
 
@@ -72,11 +72,11 @@ Completed Layers 0–3 supply compact-open reference families, coordinate maps, 
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
-What ReductiveGroupsPartII must provide (gap:hermitian-unitary): Supply the extension to finite projective constant-rank modules over quadratic étale algebras, complement decompositions, Witt extension/cancellation, hyperbolic bases, and representable reductive U(h), with arbitrary-form, scalar-extension and local-inner-form comparisons; no second field-form carrier or field adjoint construction is requested. At fields of characteristic ≠2 include split étale coefficients, zero rank, both real signatures, and nonsplit local forms. The comparison with GeometryOfNumbersAndQuadraticArithmetic §2.9 is owned by `hermitianFieldCarrierEquiv` here, after both suppliers; it imposes no dependency between them. `Matrix.unitaryGroup` represents only the identity Gram matrix; ClassicalGroups Layer 0 does not supply this generality. This is a requested upstream contract, not an asserted import. The section contract is RG2.4: arbitrary-form Hermitian continuation. Needed by §1.1, §1.3, §3.4.
+What ReductiveGroupsPartII must provide (gap:hermitian-unitary): For nondegenerate forms on finite projective constant-rank modules over quadratic étale F-algebras, supply complement decompositions, Witt extension/cancellation, hyperbolic bases, arbitrary-form representable reductive U(h), and the additional scalar-extension and local-inner-form comparisons; carrier constructions and field adjoints are excluded from this request. At fields of characteristic ≠2 include split étale coefficients, zero rank, both real signatures, and nonsplit local forms. The comparisons with GeometryOfNumbersAndQuadraticArithmetic §2.9 and MetaplecticAutomorphicForms §3.2a are owned here by `hermitianFieldCarrierEquiv` and `hermitianSplitCarrierEquiv`, respectively, after all three suppliers; these comparisons impose no dependency of ReductiveGroupsPartII on either form supplier. `Matrix.unitaryGroup` represents only the identity Gram matrix; ClassicalGroups Layer 0 does not supply this generality. This is a requested upstream contract, not an asserted import. The section contract is RG2.4: arbitrary-form Hermitian continuation. Needed by §1.1, §1.3, §3.4.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-Consume §2.9 `SignedHermitianSpace E V 1`, `signedHermitianAdjoint`, `signedHermitianAdjoint_unique`, `signedHermitianAdjoint_id`, `signedHermitianAdjoint_comp` and `signedHermitianAdjoint_involutive` for finite-dimensional V over a commutative field E with its specified involution. The form is conjugate-linear first and linear second, and its adjoint satisfies `k(Tx,y)=k(x,T*y)`. Neither odd residue characteristic nor a local-field hypothesis is imposed on these declarations. For nonsplit E/F, use `h(x,y)=k(y,x)` through §1.1 `hermitianFieldCarrierEquiv` in §§1.1, 1.3 and 3.4. Split E=F×F uses gap:hermitian-unitary; it is not a field specialization of this carrier. The local classification and transfer-image results of §2.9 are not inputs here.
+Consume §2.9 `SignedHermitianSpace E V 1`, `signedHermitianAdjoint`, `signedHermitianAdjoint_unique`, `signedHermitianAdjoint_id`, `signedHermitianAdjoint_comp` and `signedHermitianAdjoint_involutive` for finite-dimensional V over a commutative field E with its specified involution. The form is conjugate-linear first and linear second, and its adjoint satisfies `k(Tx,y)=k(x,T*y)`. Neither odd residue characteristic nor a local-field hypothesis is imposed on these declarations. For nonsplit E/F, use `h(x,y)=k(y,x)` through §1.1 `hermitianFieldCarrierEquiv` in §§1.1, 1.3 and 3.4. Split E=F×F uses MetaplecticAutomorphicForms §3.2a through `hermitianSplitCarrierEquiv`; it is not a field specialization of this carrier. The local classification and transfer-image results of §2.9 are not inputs here.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -160,7 +160,7 @@ What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:relative-char
 
 ### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
-Consume §0.18 for smooth oscillator vectors and §§3.3–3.6 for unitary splittings and local theta modules. The exact real mixed-model estimates and enhanced signature rules below are supplements on those carriers.
+Consume §3.2a's sign +1 split finite-projective Hermitian carrier over E=F×F, with F any field of characteristic ≠2, its idempotent description M≃A⊕A∨, conjugate-first pairing `k((x,l),(y,m))=(l(y),m(x))`, and isometry group GL(A) acting by `(g,(g⁻¹)∨)`. Use §1.1 `hermitianSplitCarrierEquiv` for the linear-first convention in §§1.1 and 1.3 and the split comparison boundary of §3.4. These algebraic inputs require no local-field or oscillator estimates. Consume §0.18 for smooth oscillator vectors and §§3.3–3.6 for unitary splittings and local theta modules. The exact real mixed-model estimates and enhanced signature rules below are supplements on those carriers.
 
 What MetaplecticAutomorphicForms must provide (gap:real-oscillator-model): For every real dual pair U(V)×U(V′) with V Hermitian and V′ skew-Hermitian, construct the oscillator action on its nuclear Schwartz mixed model with the specified unitary splittings and matrix-coefficient decay. Use ψ(x)=exp(-2πix), χ_V|R×=sgn^(dim V′) and χ_(V′)|R×=sgn^(dim V); compare Hermitian V′ by -iV′. Require one continuous Schwartz seminorm p such that for every positive diagonal dilation λ of the mixed Euclidean coordinates and all Φ,Φ′, the absolute mixed overlap is bounded by ∏_j min(1,λ_j^(-1)) p(Φ)p(Φ′), and the resulting continuity/absolute convergence of the integrated oscillator pairings in equal or adjacent ranks. This is the general model estimate; the Bessel seesaw is §3.8 (xue-real §3.1, Lemmas 3.1–3.4, pp. 1003–1009, line 312–425). The section contract is 0.18 and 3.3–3.3b: real mixed-model overlap-estimate supplement. Needed by §3.8.
 
@@ -222,6 +222,16 @@ For a nonsplit quadratic field E/F and finite-dimensional E-module V, use `Signe
 - On the zero E-module, the unique form is nondegenerate and the slot swap and its inverse fix it. A comparison requiring positive rank would reject it.
 - Over a quadratic extension of Q₂, on the line k(x,y)=c(x)y, multiplication by a has adjoint multiplication by c(a) on both sides. Taking a with c(a)≠a rejects an adjoint without conjugation, while taking a=2 rejects replacing the adjoint by its inverse. The same comparison applies over C/R to both line signs and their hyperbolic sums.
 
+For split E=F×F with coordinate-swap involution, use the sign +1 finite-projective carrier of MetaplecticAutomorphicForms §3.2a. Prove `hermitianSplitCarrierEquiv` between its perfect conjugate-first forms on a fixed finite projective constant-rank E-module M and the linear-first quadratic-étale form interface: the underlying map on M is the identity, `h(v,w)=k(w,v)`, and the inverse swaps the slots again. In the supplied coordinates M≃A⊕A∨, with A finite-dimensional over F and `(a,b)(x,l)=(ax,bl)`, this gives `h((x,l),(y,m))=(m(x),l(y))`. The coordinate identification comes from the supplied perfect pairing; it requires no chosen basis. Slot exchange preserves perfectness and Hermitian symmetry. For every E-linear equivalence f between two such modules, preservation of k is equivalent to preservation of h. For every E-submodule S, `h(s,v)=0` for all s∈S iff `k(s,v)=0` for all s∈S, by `k(v,s)=c(k(s,v))`. Thus isometries and orthogonal submodules agree with the supplier, including its GL(A) action. This is the split counterpart of `hermitianFieldCarrierEquiv`, under the same standing characteristic ≠2 hypothesis (MetaplecticAutomorphicForms §3.2a; Mathlib `LinearMap.flip_nondegenerate` and `Submodule.mem_orthogonalBilin`; linear-first convention ggp §2, p. 5, ggp line 179–190; relative complements pp. 5–7, ggp line 229–243).
+
+**API.** `hermitianSplitCarrierEquiv_apply` and `hermitianSplitCarrierEquiv_symm_apply` are the two slot formulas. `hermitianSplitCarrierEquiv_identity` fixes each underlying vector and sends the identity isometry to itself; the induced transport respects composition. `hermitianSplitCarrierEquiv_isometry` identifies the isometries, and `hermitianSplitCarrierEquiv_isometryGroup` transports the supplied GL(A) identification with action `(g,(g⁻¹)∨)`. `hermitianSplitCarrierEquiv_orthogonal` identifies the orthogonal submodule of every S. `hermitianSplitCarrierEquiv_zero` specializes these identifications to the zero module. Use the comparison on W, V and their complements when defining `RelevantHermitianPair` and its frames.
+
+**Checks for `hermitianSplitCarrierEquiv`.**
+
+- `split_carrier_zero`. For A=0 the unique perfect form, its slot swap and the inverse coincide; the map fixes the unique vector, the isometry group GL(0) is trivial, and the orthogonal of the zero submodule is zero. Requiring positive rank or assigning a nontrivial isometry group fails. This is the target `hermitianSplitCarrierEquiv_zero` on the supplier's carrier.
+- `split_carrier_idempotents`. For A=F, identify A∨ with F. With v=(1,0), w=(0,1), the values are `k(v,w)=(0,1)` and `h(v,w)=(1,0)`, while both self-pairings are zero. The E-submodule F×{0} is its own orthogonal for both forms; the ambient form remains perfect. The vector (1,1) frames the line with norm (1,1), whereas v fails `splitLineFrame`. Keeping the slots unchanged or treating E as a field fails. The split-line Lean examples verify the scalar pairing and orthogonality equations.
+- `split_carrier_scaling`. For A=F and t∈F×, the action `(t,t⁻¹)` preserves both k and h. Over Q take t=2: `h((2,0),(0,1/2))=(1,0)`, whereas scaling both components by 2 gives `(4,0)`. Both (2,1/2) and (2,1) satisfy `splitLineFrame`, with norms 1 and 2 respectively. Thus preservation of the form requires inverse dual scaling, while a frame need not have norm one. The split-line Lean example computes these values.
+
 **API.**
 
 - `mk`. A complement isometry constructs relevance; adjoining a hyperbolic basis and an E-basis vector e of L constructs a frame, which forgets to relevance.
@@ -234,7 +244,7 @@ For a nonsplit quadratic field E/F and finite-dimensional E-module V, use `Signe
 
 - `frame_ext`. Two framed witnesses with the same embedding, complement isometry, hyperbolic basis and E-basis vector e of L are equal; the basis and nonzero-norm proofs carry no extra choices.
 
-*Needs:* Mathlib `LinearMap.Nondegenerate`; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; contract gap hermitian-unitary.
+*Needs:* Mathlib `LinearMap.Nondegenerate`; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; MetaplecticAutomorphicForms §3.2a split Hermitian carrier and GL(A) identification; contract gap hermitian-unitary.
 
 **Checks.**
 
@@ -298,7 +308,7 @@ Here F is a field of characteristic different from 2; E is a quadratic étale F-
 
 Use Witt extension to conjugate flags and the diagonal Levi to scale simple coordinates. Pull back characters and representation actions along this explicit conjugacy. Scaling the form cancels in its preservation equation.
 
-For nonsplit coefficient fields, transport the imported `SignedHermitianSpace E V 1` and its W and complement counterparts through `hermitianFieldCarrierEquiv`. Its isometry and adjoint comparisons identify the same conjugating maps in both slot conventions; split coefficients retain the quadratic-étale module carrier.
+For nonsplit coefficient fields, transport the imported `SignedHermitianSpace E V 1` and its W and complement counterparts through `hermitianFieldCarrierEquiv`. Its isometry and adjoint comparisons identify the same conjugating maps in both slot conventions. For split coefficients use `hermitianSplitCarrierEquiv` on the MetaplecticAutomorphicForms §3.2a carrier; its identity, isometry and orthogonal comparisons identify the same flag conjugacies and their compositions, with the supplied action `(g,(g⁻¹)∨)`.
 
 **API.**
 
@@ -310,7 +320,7 @@ For nonsplit coefficient fields, transport the imported `SignedHermitianSpace E 
 
 - `besselTransport_neg_real`. U(p,q)=U(q,p) as the matrix groups for a form and its negative; the complement line changes sign.
 
-*Needs:* this roadmap §1.1 `hermitianFieldCarrierEquiv`; this roadmap §1.2; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; contract gap hermitian-unitary.
+*Needs:* this roadmap §1.1 `hermitianFieldCarrierEquiv` and `hermitianSplitCarrierEquiv`; this roadmap §1.2; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; MetaplecticAutomorphicForms §3.2a split Hermitian carrier and GL(A) identification; contract gap hermitian-unitary.
 
 **Checks.**
 
@@ -328,7 +338,7 @@ The zero smaller space, the split algebra F×F, and the real complements of sign
 
 ### Dependencies
 
-Mathlib `LinearMap.Nondegenerate`; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; contract gap hermitian-unitary; ReductiveGroups §Layer 0; ReductiveGroups §Layer 3; ReductiveGroups §Layer 5; ReductiveGroups §Layer 7; Tau Ceti `TauCeti.HopfAlgebra.pointsFunctor`.
+Mathlib `LinearMap.Nondegenerate`; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; MetaplecticAutomorphicForms §3.2a split Hermitian carrier and GL(A) identification; contract gap hermitian-unitary; ReductiveGroups §Layer 0; ReductiveGroups §Layer 3; ReductiveGroups §Layer 5; ReductiveGroups §Layer 7; Tau Ceti `TauCeti.HopfAlgebra.pointsFunctor`.
 
 ## Layer 2: Local Bessel models, multiplicity one and tempered integrability
 
@@ -636,6 +646,8 @@ Stratify by the fixed and moving Hermitian spaces. The germ estimates and determ
 
 Use `SignedHermitianSpace E W 1` and its restrictions to the fixed and moving subspaces through §1.1 `hermitianFieldCarrierEquiv`. The orthogonal and adjoint comparisons give the same unitary centralizers and the same operators on the centralizer quotients; the discriminants and the norm determinant in the API are unchanged by the slot convention.
 
+At the split comparison boundary, §1.1 `hermitianSplitCarrierEquiv` likewise identifies the fixed and moving orthogonal submodules and their isometry centralizers with the supplied GL(A) model. This algebraic identification supplies no split geometric-multiplicity formula: the theorem in this subsection assumes nonsplit E/F, and split Bessel multiplicities use §§3.10–3.11.
+
 **API.**
 
 - `besselGeometricMultiplicity_linear`. m_geom is a continuous complex-linear functional on quasi-characters.
@@ -646,7 +658,7 @@ Use `SignedHermitianSpace E W 1` and its restrictions to the fixed and moving su
 
 - `besselGeometricMultiplicity_induction`. For a Levi L=L_GL×G̃, m_geom(i_L^G(θ_GL tensor θ̃))=c_(θ_GL)(1)m_geom(θ̃).
 
-*Needs:* this roadmap §1.1 `hermitianFieldCarrierEquiv`; this roadmap §1.2; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; contract gap local-schwartz-germs; contract gap hermitian-unitary.
+*Needs:* this roadmap §1.1 `hermitianFieldCarrierEquiv` and `hermitianSplitCarrierEquiv`; this roadmap §1.2; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; MetaplecticAutomorphicForms §3.2a split Hermitian carrier and GL(A) identification; contract gap local-schwartz-germs; contract gap hermitian-unitary.
 
 **Checks.**
 
@@ -834,7 +846,7 @@ The empty W-parameter gives the trivial distinguished character on the V compone
 
 ### Dependencies
 
-AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; contract gap enhanced-packets; contract gap factor-epsilon-identities; contract gap local-rankin-selberg; this roadmap §1.3; this roadmap §2.6; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap local-tempered-bounds; contract gap local-plancherel; contract gap local-fourier-extension; this roadmap §2.7; this roadmap §1.2; contract gap local-schwartz-germs; contract gap hermitian-unitary; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; contract gap ordinary-endoscopy; contract gap real-oscillator-model; contract gap real-small-theta; this roadmap §2.1; contract gap gl-tempered-genericity (finite places); AutomorphicFormsOnReductiveGroups §§2.6–2.7 (archimedean genericity); AutomorphicLFunctionsAndLocalFactors §AL.3 whittaker-model and Representation prerequisites, Archimedean Whittaker comparisons; contract gap local-jacquet-filtration; this roadmap §2.4.
+AutomorphicLFunctionsAndLocalFactors §AL.3, rs-local-convergence, rs-local-factor and normalized-rs-period; contract gap enhanced-packets; contract gap factor-epsilon-identities; contract gap local-rankin-selberg; this roadmap §1.3; this roadmap §2.6; contract gap local-categories; NoncommutativeGeometry §N1; AutomorphicFormsOnReductiveGroups §2.7; contract gap archimedean-globalization; contract gap local-tempered-bounds; contract gap local-plancherel; contract gap local-fourier-extension; this roadmap §2.7; this roadmap §1.2; contract gap local-schwartz-germs; contract gap hermitian-unitary; GeometryOfNumbersAndQuadraticArithmetic §2.9 field carrier and adjoint API; MetaplecticAutomorphicForms §3.2a split Hermitian carrier and GL(A) identification; contract gap ordinary-endoscopy; contract gap real-oscillator-model; contract gap real-small-theta; this roadmap §2.1; contract gap gl-tempered-genericity (finite places); AutomorphicFormsOnReductiveGroups §§2.6–2.7 (archimedean genericity); AutomorphicLFunctionsAndLocalFactors §AL.3 whittaker-model and Representation prerequisites, Archimedean Whittaker comparisons; contract gap local-jacquet-filtration; this roadmap §2.4.
 
 ## Layer 4: Global Bessel periods and the fixed-pair conjecture
 

@@ -26,16 +26,26 @@ theorem splitLineFrame_iff_norm_ne_zero {F : Type u} [Field F] (e : F × F) :
     splitLineFrame e ↔ e.1 * e.2 ≠ 0 := by
   sorry
 
-/-- The diagonal vector frames the split line with norm one; the rational vector
-(2,1) also frames it, with norm two, so a frame need not have norm one. -/
+/-- Split-line frames can have norm one or two. The linear-first split pairing
+is preserved by the inverse dual scaling (2,1/2), while scaling both coordinates
+by two multiplies the cross-pairing by four. -/
 example {F : Type u} [Field F] :
+    let h : (ℚ × ℚ) → (ℚ × ℚ) → ℚ × ℚ :=
+      fun v w => (v.1 * w.2, v.2 * w.1)
     (splitLineFrame ((1 : F), 1) ∧ (1 : F) * 1 = 1) ∧
-    (splitLineFrame ((2 : ℚ), 1) ∧ (2 : ℚ) * 1 = 2) := by
+    (splitLineFrame ((2 : ℚ), 1) ∧ (2 : ℚ) * 1 = 2) ∧
+    (splitLineFrame ((2 : ℚ), 1 / 2) ∧ (2 : ℚ) * (1 / 2) = 1) ∧
+    h (2, 0) (0, 1 / 2) = (1, 0) ∧ h (2, 0) (0, 2) = (4, 0) := by
   norm_num [splitLineFrame, Prod.isUnit_iff]
 
-/-- A nonzero split idempotent has zero Hermitian norm and cannot frame the line. -/
+/-- A nonzero split idempotent fails the frame condition. The conjugate-first and
+linear-first cross-pairings exchange coordinates, and its E-line is self-orthogonal. -/
 example {F : Type u} [Field F] :
-    ((1 : F), 0) ≠ 0 ∧ ¬ splitLineFrame ((1 : F), 0) ∧ (1 : F) * 0 = 0 := by
+    let h : (F × F) → (F × F) → F × F := fun v w => (v.1 * w.2, v.2 * w.1)
+    let k : (F × F) → (F × F) → F × F := fun v w => h w v
+    (((1 : F), 0) ≠ 0 ∧ ¬ splitLineFrame ((1 : F), 0) ∧ (1 : F) * 0 = 0) ∧
+    h (1, 0) (0, 1) = (1, 0) ∧ k (1, 0) (0, 1) = (0, 1) ∧
+    (∀ v : F × F, h (1, 0) v = 0 ↔ v.2 = 0) := by
   simp [splitLineFrame, Prod.isUnit_iff]
 
 /-! ## Layer 2: Local Bessel models, multiplicity one and tempered integrability -/
