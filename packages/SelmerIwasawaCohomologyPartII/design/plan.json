@@ -1880,6 +1880,12 @@
   ],
   "gaps": [
     {
+      "slug": "integral-nearby-complex",
+      "needs": "Extend §§7a.7–7a.9 to the integral and finite-coefficient filtered nearby-cycle complex with derived inertia action, stratum E₁ terms, alternating restriction/Gysin differential, integral tame operator on graded pieces, coefficient compatibilities and nearby-cohomology abutment for separated finite-type strictly semistable schemes with smooth intersection strata over a henselian trait and ℓ invertible, without properness, including the two- and three-branch models used here.",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "§§7a.7–7a.9; residual integral filtered nearby complex and general stratum spectral sequence"
+    },
+    {
       "slug": "native-shimura",
       "title": "Native unitary Shimura schemes and integral models",
       "neededBy": [
@@ -1970,7 +1976,7 @@
         "3.3",
         "3.6"
       ],
-      "detail": "For the polarized problem retain D0–D4 of ltxzz-deformation Theorem 3.6.3, including Fontaine–Laffaille width, ℓ>2(N+1), arbitrary-rank cyclotomic irreducibility, rigidity, residual concentration and a nonzero localized module; Σlr=∅ in odd rank. Require Runiv≃T_m, finite free middle cohomology, and the mixed-to-congruence maps, using local rings from LocalGaloisDeformationRings (ltxzz-deformation line 1444; ltxzz line 5662).",
+      "detail": "For the polarized problem retain D0–D4 of ltxzz-deformation Theorem 3.6.3, including Fontaine–Laffaille width, ℓ≥2(N+1), arbitrary-rank cyclotomic irreducibility, rigidity, residual concentration and a nonzero localized module; Σlr=∅ in odd rank. Require Runiv≃T_m, finite free middle cohomology, and the mixed-to-congruence maps, using local rings from LocalGaloisDeformationRings (ltxzz-deformation line 1444; ltxzz line 5662; ltxzz-published Theorem 6.3.4(a), p. 277, line 6408).",
       "needs": "Supply the polarized global rigid R=T and freeness theorem and its mixed-to-congruence deformation maps at full coefficient generality.",
       "supplier": "GlobalGaloisDeformations",
       "section": "§§3.3–3.8; new obligation: polarized rigid R=T"
@@ -1996,6 +2002,7 @@
       "slug": "local-unitary-representations",
       "title": "Local unitary constituents and cohomological decomposition",
       "neededBy": [
+        "3.2",
         "3.4",
         "6.3"
       ],
@@ -2046,12 +2053,13 @@
       "slug": "unitary-special-compatibility",
       "title": "Special homomorphism under basic uniformizations",
       "neededBy": [
+        "2.6",
         "5.2",
         "6.1",
         "6.2"
       ],
-      "detail": "Need native maps under V→V⊕⟨1⟩, the basic and link Cartesian squares, the two definite special correspondence legs, and identification with their double-coset maps. Source-specific geometric reciprocity is 5.2/6.2; the moduli compatibilities are required with the lattice/polarization scaling by ϖ. ltxzz §§4.5 and 5.10, especially ltxzz line 2286, ltxzz line 4432, ltxzz line 4461.",
-      "needs": "Bind the native special-map and definite/indefinite uniformization compatibility diagrams, with their isogeny scaling.",
+      "detail": "Supply addition-of-line maps V→V⊕⟨1⟩ and definite/indefinite uniformization compatibilities on the native level domains, including the two definite correspondence legs and their double-coset maps, with lattice/polarization scaling by ϖ. The basic square of Proposition 4.5.5 is Cartesian for even n only; the ground square of Proposition 5.10.6 is Cartesian for odd n; the link squares of Lemma 5.10.8(1)/(2) have respectively even/odd n. For §6.2 use the product square in the proof of Theorem 4.6.2, from Proposition 4.5.5 for even n and Lemma 4.5.2 for odd n (ltxzz line 2286–2297, 2552–2563, 4432, 4461–4479). Source-specific geometric reciprocity is proved in §§5.2/6.2.",
+      "needs": "Supply native addition-of-line and uniformization compatibilities with isogeny scaling by ϖ, the even-n Cartesian square of Proposition 4.5.5, odd-n ground square of Proposition 5.10.6, even/odd link squares of Lemma 5.10.8(1)/(2), and the all-parity product square of Theorem 4.6.2 using Lemma 4.5.2 in odd rank.",
       "supplier": "ShimuraVarieties",
       "section": "new obligation: native addition-of-line and uniformization compatibility"
     },
@@ -2083,8 +2091,8 @@
       "neededBy": [
         "7.2"
       ],
-      "detail": "Need finite support of localized native Hecke modules, distinction of nonisomorphic residual Galois systems by Frobenius, and contraction invariance after omitting an auxiliary rational support, simultaneously with the detecting conjugacy class. ltxzz line 5173, ltxzz line 5880, ltxzz line 6617, ltxzz line 6856. Chebotarev alone does not prove a Hecke quotient map is an isomorphism.",
-      "needs": "Bind the finite-support/Frobenius separation theorem proving the congruence Hecke quotient comparisons.",
+      "detail": "Need finite support of localized native Hecke modules, distinction of nonisomorphic residual Galois systems by Frobenius, and contraction invariance between Oλ-coefficient Hecke algebras after omitting an auxiliary rational support, simultaneously with the detecting conjugacy class, for the n_(Π,m) coefficient kernels including ramified coefficients. ltxzz line 5173, ltxzz line 5880, ltxzz line 6617, ltxzz line 6856. Chebotarev alone does not prove a Hecke quotient map is an isomorphism.",
+      "needs": "Bind the finite-support/Frobenius separation theorem proving congruence quotient comparisons for the Oλ-extended Hecke algebras and their n_(Π,m) coefficient kernels, including ramified coefficients.",
       "supplier": "IntegralHeckeAndGaloisDeterminants",
       "section": "new obligation: PI6, PI8 and PII8"
     },
@@ -2095,7 +2103,7 @@
         "7.4"
       ],
       "detail": "Need independent non-CM elliptic residual images, symmetric powers and their polarizations, plus the tensor irreducibility/adjoint exclusion criterion with one regular even unipotent and trivial odd action in characteristic zero or ≥2n(n+1)−1. ltxzz line 942, ltxzz line 6459.",
-      "needs": "Bind the residual-image and tensor-irreducibility facts needed to check the two admissibility families.",
+      "needs": "Bind the residual-image and tensor-irreducibility facts needed to check the two admissibility families, including exclusion from every coefficient Frobenius twist of the adjoint over finite residue fields.",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "new obligation: ltxzz Proposition 2.7.2 and Lemma 8.1.5"
     },
@@ -2128,7 +2136,7 @@
         "2.1"
       ],
       "supplier": "AdelicAlgebraicGroups",
-      "section": "§4.1; new obligation: hermitian local-global classification",
+      "section": "new obligation after §4.1: hermitian local-global classification",
       "detail": "For CM F/F⁺, construct standard hermitian spaces with the specified real signatures and finite local invariants exactly when the determinant/Hasse product compatibility holds; include the definite/indefinite switch used in ltxzz §§3.2, 3.4 and 5.1.",
       "needs": "Supply the Hasse classification and existence of global hermitian spaces with compatible prescribed local invariants."
     }
