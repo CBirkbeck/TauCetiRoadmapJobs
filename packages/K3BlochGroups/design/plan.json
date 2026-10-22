@@ -1,0 +1,16 @@
+{
+  "gaps": [
+    {
+      "slug": "number-field-k3-arithmetic",
+      "supplier": "ArithmeticKTheory",
+      "section": "number-field K\u2083 scope",
+      "needs": "Finite generation, rank r\u2082, all primewise w\u2082 formulas, the ambient K\u2083 structures and the \u211a and \u211a(i) specializations, independently of the Milnor quotient and Bloch comparison."
+    },
+    {
+      "slug": "real-closed-elementary-transfer",
+      "supplier": "RealAlgebraicGeometry",
+      "section": "Layer 6: CAD and quantifier elimination",
+      "needs": "Completeness and model completeness for all real closed ordered fields, extending the \u211d-only quantifier-elimination scope and giving rational-parameter elementary transfer."
+    }
+  ]
+}
