@@ -1,0 +1,201 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EnriquesSurfacesAndIntegralNonexistence"
+
+[[source]]
+id = "SCH23"
+authors = "Stefan Schröer"
+title = "There is no Enriques surface over the integers"
+year = 2020
+venue = "Ann. of Math. 197 (2023), 1--63"
+arxiv = "2004.07025v3"
+locator_scheme = "theorem"
+locator = "Theorem 15.1; §§1–15, equations (14), (16)"
+url = "https://arxiv.org/abs/2004.07025v3"
+fetched_from = "https://arxiv.org/pdf/2004.07025v3"
+fetched_at = "2026-10-22T18:51:56Z"
+sha256 = "ae6481f25627867473ba40db3b08e5f4b861de8aa103204eefc5ad1123a46d61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["Layers 0–8"]
+
+[[source]]
+id = "ESB21"
+authors = "T. Ekedahl, N. I. Shepherd-Barron"
+title = "On exceptional Enriques surfaces"
+year = 2004
+arxiv = "math/0405510v2"
+locator_scheme = "theorem"
+locator = "§2; Proposition 2.8; Proposition 3.16; Theorem 4.2; Corollary 4.3"
+url = "https://arxiv.org/abs/math/0405510v2"
+fetched_from = "https://arxiv.org/pdf/math/0405510v2"
+fetched_at = "2026-10-22T18:52:35Z"
+sha256 = "286a66bd91e12053a50d562100c7dcd635a4f3ac103e95a80c1d416934fb3cf3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["Layers 1 and 8"]
+
+[[source]]
+id = "DI21"
+authors = "Stefan Schröer"
+title = "The Deligne-Illusie Theorem and exceptional Enriques surfaces"
+year = 2019
+venue = "Eur. J. Math. 7 (2021), 489-525"
+arxiv = "1906.04616v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.3; Corollary 3.4; Proposition 4.2; Theorems 4.3, 6.1, 7.2; Proposition 7.1"
+url = "https://arxiv.org/abs/1906.04616v2"
+fetched_from = "https://arxiv.org/pdf/1906.04616v2"
+fetched_at = "2026-10-22T18:52:42Z"
+sha256 = "8998b9b6249178b0006dc2a1cfbcec7f028908fe96fe2587dd7f85ca8671fcd6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "MMV22"
+authors = "Gebhard Martin, Giacomo Mezzedimi, Davide Cesare Veniani"
+title = "On extra-special Enriques surfaces"
+year = 2022
+venue = "Math. Ann. 387, 133--143 (2023)"
+doi = "10.1007/s00208-022-02459-9"
+arxiv = "2201.05481v1"
+locator_scheme = "theorem"
+locator = "Definition 1.1; Theorem 1.2; Remarks 1.4–1.5; Lemmas 2.1–2.4"
+url = "https://arxiv.org/abs/2201.05481v1"
+fetched_from = "https://arxiv.org/pdf/2201.05481v1"
+fetched_at = "2026-10-22T18:52:47Z"
+sha256 = "d1eddae313c18886ecea690875841e844781a221aad4fe89e9c737658caa0e46"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["Layers 1, 5 and 7"]
+
+[[source]]
+id = "CDL2021"
+authors = "François Cossec, Igor Dolgachev and Christian Liedtke"
+title = "Enriques Surfaces I"
+year = 2024
+locator_scheme = "theorem"
+locator = "Theorem 1.4.13, pp. 231–232; Theorems 5.11.4–5.11.5, pp. 609–611 (2024 draft); Theorem 6.1.10 (2021 draft)"
+url = "https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf"
+fetched_from = "https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf"
+fetched_at = "2026-10-22T18:54:22Z"
+sha256 = "3c6bf1d54954e28728935bbe1f4b1e38435fe469cf2b8543d657087815a2f526"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "2024 author draft read for Theorems 1.4.13 and 5.11.4–5.11.5; Theorem 6.1.10 uses settled waived 2021 draft numbering."
+cited_for = ["1.23", "3.10a", "8.3a"]
+
+[[source]]
+id = "CD89"
+authors = "François R. Cossec, Igor V. Dolgachev"
+title = "Enriques Surfaces I"
+year = 1989
+venue = "Progress in Mathematics"
+doi = "10.1007/978-1-4612-3696-2"
+locator_scheme = "theorem"
+locator = "Chapter III, Theorem 3.4.1"
+url = "https://doi.org/10.1007/978-1-4612-3696-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.3; 1.23"]
+
+[[source]]
+id = "LLR04"
+authors = "Qing Liu, Dino Lorenzini, Michel Raynaud"
+title = "Néron models, Lie algebras, and reduction of curves of genus one"
+year = 2004
+venue = "Inventiones mathematicae 157"
+doi = "10.1007/s00222-004-0342-y"
+locator_scheme = "theorem"
+locator = "Theorem 6.6 and Remark 6.8, pp. 496–497"
+url = "https://doi.org/10.1007/s00222-004-0342-y"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0D24; 0D3D; 0EMV; 0H74"
+url = "https://stacks.math.columbia.edu/tag/0H74"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0H74"
+fetched_at = "2026-10-22T19:12:27Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 2 and 3", "2.2; 3.3"]
+
+[[source]]
+id = "Lang1983"
+authors = "William E. Lang"
+title = "On Enriques surfaces in characteristic p. I"
+year = 1983
+locator_scheme = "theorem"
+locator = "Theorems 4.1–4.2, printed p. 62"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0265/LOG_0011.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0265/LOG_0011.pdf"
+fetched_at = "2026-10-22T18:55:24Z"
+sha256 = "f415bda7d29c6c2672ec090bb2187f54286e2e9ee1aeb261afe60cea97d549c1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.26"]
+
+[[source]]
+id = "LLR2018"
+authors = "Qing Liu, Dino Lorenzini, Michel Raynaud"
+title = "Corrigendum to Néron models, Lie algebras, and reduction of curves of genus one [LLR1] and The Brauer group of a surface [LLR2]"
+year = 2018
+venue = "Inventiones mathematicae 214 (2018), 593–604"
+doi = "10.1007/s00222-018-0809-x"
+arxiv = "1804.11158v2"
+locator_scheme = "theorem"
+locator = "Corrected Theorem 4.3, published pp. 593–595"
+url = "https://arxiv.org/abs/1804.11158v2"
+fetched_from = "https://arxiv.org/pdf/1804.11158v2"
+fetched_at = "2026-10-22T19:07:54Z"
+sha256 = "a3b3a2a7188933fd76135c3029ef8de79a075122f5138d256d406ebf62aac4c9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2, corrected Theorem 4.3 on pp. 2–3; published pp. 593–595 used only as the published locator."
+cited_for = ["4.3", "4.3; References"]
+
+[[source]]
+id = "BM1977"
+authors = "Enrico Bombieri and David Mumford"
+title = "Enriques classification of surfaces in characteristic p. II"
+year = 1977
+locator_scheme = "theorem"
+locator = "Theorem 3; Proposition 11"
+licence_class = "none"
+status = "waived"
+version_note = "Settled operator waiver; cited by locator without certifying the text."
+cited_for = ["1.3"]
+
+[[source]]
+id = "Fontaine"
+authors = "Jean-Marc Fontaine"
+title = "Schémas propres et lisses sur Z"
+year = 1991
+locator_scheme = "theorem"
+locator = "Preprint 91-02, Theorem 1 and Remark (a), printed p. 3, PDF p. 4"
+licence_class = "none"
+status = "waived"
+version_note = "Settled operator waiver; cited by locator without certifying the text."
+cited_for = ["Exact supplier contracts; 3.13"]

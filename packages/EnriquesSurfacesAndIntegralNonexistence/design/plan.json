@@ -1,0 +1,46 @@
+{
+  "gaps": [
+    {
+      "slug": "numerical-contraction-descent",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II §numerical-contraction-descent",
+      "needs": "Supply the arbitrary-field and relative numerical quotient with base change under flat Pic^τ and locally constant numerical rank, and constant-Num projective-contraction and labelled fibre-graph descent with the hypotheses of SCH23 Theorems 1.3 and 2.1."
+    },
+    {
+      "slug": "elliptic-surface-geometry",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II §genus-one-fibrations",
+      "needs": "Supply the shared genus-one and Jacobian surface, wild canonical, Euler and component-lattice interface specified under this slug by K3SurfacesAndSymplecticBoundedness, using the arithmetic models of NeronModelsAndSemistableAbelianVarietiesPartII §§2–4."
+    },
+    {
+      "slug": "picard-flatness-betti",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "Part II §picard-deformations",
+      "needs": "Supply the relative Picard flatness criterion b₁=2(h¹(O)−h²(O)) for proper flat deformations of a smooth proper geometrically connected variety over local Noetherian Witt algebras, with the proper identity-component and finite-flat specialization over Henselian bases of dimension at most one."
+    },
+    {
+      "slug": "finite-local-group-w2-nonlifting",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "Part II §finite-local-group-nonlifting",
+      "needs": "Supply DI21 Proposition 4.2 over every algebraically closed field of positive characteristic: a finite commutative local group whose unipotent quotient has an α_(p^n) direct summand, n≥1, has no finite flat W₂ lift."
+    },
+    {
+      "slug": "one-obstruction-regularity",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II §one-obstruction-deformations",
+      "needs": "Supply DI21 Proposition 3.3 and Corollary 3.4 for smooth proper varieties with h²(Θ)=1: non-W₂-lifting gives regularity of the miniversal ring, and formal characteristic-zero lifting gives Witt flatness and singular reduction."
+    },
+    {
+      "slug": "differential-w2-nonlifting",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Part II §differential-nonlifting",
+      "needs": "Supply DI21 Theorem 6.1 for smooth proper characteristic-two surfaces with exact-order-two canonical bundle, the specified differential quotient, semiample positivity and Picard 2-divisibility, with the dimension comparison and equality-case W₂ obstruction."
+    },
+    {
+      "slug": "fontaine-low-degree-hodge",
+      "supplier": "PadicHodgeTheory",
+      "section": "Part II §everywhere-good-reduction",
+      "needs": "Supply Fontaine Theorem 1 and Remark (a): smooth proper Q-schemes with smooth proper Z_p-scheme models at every prime have vanishing off-diagonal Hodge numbers in total degree at most three."
+    }
+  ]
+}
