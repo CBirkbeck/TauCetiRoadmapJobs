@@ -1,0 +1,16 @@
+{
+  "gaps": [
+    {
+      "slug": "field-cup-residue-coherence",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.0.3, F.4.1–F.4.2",
+      "needs": "For every field and invertible m≥1, identify the native Kummer module and ordered cup under the field étale/Galois comparison, compatibly with restriction, finite-extension transfer and finite/adic coefficient triangles, and for every DVR with m invertible in the residue field identify residues by ∂κ_m(π)=1 and ∂(κ_m(u)∪κ_m(π))=−κ_m(ū)."
+    },
+    {
+      "slug": "arithmetic-tate-symbol-maps",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "3.0a",
+      "needs": "Supply the specified adic Tate symbol and coefficient diagram at ℓ≠char F, its ℓ-primary torsion theorem assuming mod-ℓ injectivity and global-field specialization, the number-field S-integer finite/adic isomorphisms with real places at 2, and the global-field Picard sequence for μ_ℓ⊂F and finite nonempty S containing archimedean places and places over ℓ in the number-field case, with restriction, transfer, localization and S-enlargement maps."
+    }
+  ]
+}
