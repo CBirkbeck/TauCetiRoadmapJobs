@@ -1,0 +1,76 @@
+{
+  "gaps": [
+    {
+      "slug": "analytic-divisor-moments",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§3.26",
+      "needs": "For each fixed nonnegative integer j and real Q≥2, supply Σ_(1≤q≤Q)τ(q)^j/φ(q)≪ⱼ(1+log Q)^(2^j), including j=0, with the coprime-cofactor versions and explicit dependence needed by conductor reduction; these are stronger than the divisor-subpower bound."
+    },
+    {
+      "slug": "uniform-wirsing",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§3.32",
+      "needs": "Supply the positive Euler/Gamma-normalized squarefree multiplicative mean under the prime-sum and square-sum hypotheses of §1.6, together with its uniform versions after deletion of progression-modulus primes and the degree-uniform lower bound of Khayutin Lemma 9.8."
+    },
+    {
+      "slug": "maximal-small-conductor",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§0.32",
+      "needs": "Supply maximal small-primitive-conductor estimates for the actual Vaughan convolution coefficients and coprime cofactors with every prescribed logarithmic saving, and Chen Lemma 6 for conductors ≤log¹⁰⁰N, including the exceptional-zero, contour and smoothing bounds."
+    },
+    {
+      "slug": "extremely-smooth-tails",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§3.34",
+      "needs": "Supply the reciprocal and tail estimates for the extremely-smooth population in Khayutin Lemma 9.23, uniformly in its fixed parameters including the separately treated α=0 endpoint."
+    },
+    {
+      "slug": "curvature-uniform-lattice",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§4.1",
+      "needs": "For the strictly convex planar C² domains of Khayutin Definition 9.4, supply the translated and scaled bound |#(a⁻¹(E−x₀)∩ℤ²)−area(E)/a²|≤Cₗ(R/a)^θ for integers a≥1 and x₀∈ℤ² with area(E)≥a², with R the maximal curvature radius, uniform in x₀ and a; include the stated C² and C³ ellipse exponents with their regularity hypotheses."
+    },
+    {
+      "slug": "spin-sliced-lattice",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§4.1",
+      "needs": "Supply covolume and successive-minimum lattice-count errors on the scaled and translated generator-domain slices of KM-21 Lemma 3.1, uniformly in the nonzero difference ideals and rational divisibility moduli, sufficient for the exact squarefull-tail bound in §5.3."
+    },
+    {
+      "slug": "spin-codimension-two",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§4.1",
+      "needs": "Supply the codimension-two geometric sieve on the generator-domain slices in KM-21 Lemma 3.2, separating zero differences and finitely many bad primes, uniformly in x≥2 and Z≥1, sufficient for the three-term common-norm tail in §5.3."
+    },
+    {
+      "slug": "subgroup-strong-approximation",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§4.2",
+      "needs": "For a fixed finitely generated Zariski-dense subgroup of a connected simply connected absolutely almost simple group over ℚ, supply its full reduction images outside one fixed modulus and the simultaneous squarefree CRT image, with the subgroup hypotheses and finite local modifications of BGS-10 §2."
+    },
+    {
+      "slug": "squarefree-ring-sum-product",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§4.2",
+      "needs": "Supply the quantitative squarefree-ring sum-product input of BGS-10 §4 for subsets of ℤ/qℤ, with all large-divisor projection and nonconcentration hypotheses and constants uniform in squarefree q outside a fixed modulus; this is a missing input to the SL₂ expansion target, not algebraic-group strong approximation."
+    },
+    {
+      "slug": "sl2-noncommutative-flattening",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§4.2",
+      "needs": "Supply the noncommutative Balog–Szemerédi–Gowers and L²-flattening input of BGS-10 §4 for probability measures on SL₂(ℤ/qℤ), retaining symmetry, subgroup nonconcentration, representation multiplicity and squarefree-quotient uniformity; the abelian theorem is insufficient."
+    },
+    {
+      "slug": "quadratic-order-conductor-counts",
+      "supplier": "GlobalNumberFields",
+      "section": "Layer 11",
+      "needs": "Supply finite norm fibres and the explicit prime-power counts of integral invertible ideals of an arbitrary fixed imaginary quadratic order, including primes dividing its conductor, sufficient for the multiplicative-growth bound of §0.9."
+    },
+    {
+      "slug": "bounded-degree-lang-weil",
+      "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
+      "section": "§IG.2.5",
+      "needs": "Supply the bounded-degree uniformity in the fixed-model Lang–Weil estimate for the group, geometrically irreducible hypersurface factors and their intersections used in §5.4, including O(p^(dim G−1)) counts on proper subvarieties outside one fixed modulus."
+    }
+  ]
+}
