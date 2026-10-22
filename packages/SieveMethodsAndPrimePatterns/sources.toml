@@ -57,3 +57,14 @@ locator = "Lemmas 5.3-5.4"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6331311160"
+
+[[source]]
+id = "KM-KERNEL-PUBLISHED"
+authors = "Peter Koymans and Djordjo Milovic"
+title = "On the 16-rank of class groups of Q(sqrt(-2p)) for primes p congruent to 1 modulo 4"
+year = 2019
+locator_scheme = "theorem"
+locator = "Published §3.4, Proposition 3.6; UCL manuscript pp.9–11"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6331926037"
