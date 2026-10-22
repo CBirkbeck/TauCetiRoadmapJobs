@@ -1,17 +1,11 @@
-# Roadmap: rational symplectic-similitude characters
+# Roadmap: classical groups, Part II: rational symplectic-similitude characters
 
-For a positive integer g, this roadmap constructs the rational algebraic
+**Summary.** For a positive integer g, this roadmap constructs the rational algebraic
 representation theory of the split symplectic-similitude group GSp₂g over Q
 and every characteristic-zero field. Its endpoints are two integral ring
 isomorphisms:
 
-\[
-R_g(K)\simeq
-\mathbb Z[t^{\pm1},z_1^{\pm1},\ldots,z_g^{\pm1}]^{W_g},
-\qquad
-C_g(K)\simeq
-\mathbb Z[z_1,\ldots,z_g,t/z_1,\ldots,t/z_g]^{W_g}.
-\]
+`R_g(K) ≃ ℤ[t^±1,z_1^±1,…,z_g^±1]^W; C_g(K) ≃ ℤ[z_1,…,z_g,t/z_1,…,t/z_g]^W.`
 
 The Weyl group permutes the g pairs and exchanges z_i with t/z_i.
 The representation ring R_g(K) uses finite-dimensional algebraic
@@ -31,7 +25,7 @@ input for counting applications as well as the representation interpretation.
 The local-system counting theorems themselves belong to the function-field
 Langlands and counting roadmaps.
 
-## Scope and dependencies
+## Scope and ownership
 
 This is Part II of
 [ClassicalGroups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md).
@@ -39,7 +33,7 @@ That roadmap owns the standard complex classical-group actions, their tensor,
 exterior and symmetric constructions, the connected Sp highest-weight
 classification, formal characters and Weyl dimension formula. Here the new
 work is the independent multiplier coordinate, its central lattice and
-parity condition, explicit rational forms, comparison under field extension,
+parity condition, explicit primitive-tensor rational forms and their comparison with the supplied split highest-weight modules,
 and the two integral GSp character-ring presentations. The primitive GSp
 contraction takes values in the multiplier line and is proved compatible
 with the parent Sp theory.
@@ -47,13 +41,15 @@ with the parent Sp theory.
 [ReductiveGroups](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md)
 owns the Hopf-algebra/affine-group dictionary (Layer 0), representations and
 comodules (Layer 1), subgroup quotients and descent (Layer 3), connected
-reductivity and characteristic-zero semisimplicity (Layer 6), and maximal
-tori and root data (Layer 7). Those interfaces are used at the layers listed
+reductivity and characteristic-zero semisimplicity (Layer 6), maximal
+tori and root data (Layer 7), rational scalar extension and torus formal
+characters (§10A), and split highest-weight classification with absolute
+simplicity, scalar endomorphisms and field extension (§10B). Those interfaces are used at the layers listed
 below; they are not rebuilt here. The abstract semisimple Lie classification
 comes from
 [LieHighestWeight Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/LieHighestWeight/README.md#layer-4-the-classification-of-finite-dimensional-irreducibles).
-The simplicity of the particular tensor-generated Cartan component is proved
-here from that classification, semisimplicity and its one-dimensional top line.
+The GSp-specific comparison of the tensor-generated Cartan component with
+ReductiveGroups §10B uses its one-dimensional top line and semisimplicity.
 
 The general matrix-similitude theory used in arithmetic statistics keeps its
 own scope. The coordinate presentation here represents the explicit
@@ -71,7 +67,7 @@ characters. The names in [Suggested.lean](Suggested.lean) are suggested forms.
 This README states the mathematical requirements, including the scheme
 quotient and representation descent statements.
 
-## Standing conventions
+## Conventions
 
 - **Rank and coefficients.** Every representation-theoretic statement assumes
   g≥1 and a field K of characteristic zero. A comparison K/F is a field
@@ -116,55 +112,126 @@ quotient and representation descent statements.
   an integer combination of simple constituent classes, not necessarily the
   class of an actual representation.
 
-All API names below are in the namespace `TauCeti.GSpCharacter` unless
-another namespace is displayed. Each definition includes an API and at
-least three tests specifying its intended behavior. The tests are theorem
-statements for the implementation to satisfy.
+Names declared in [Suggested.lean](Suggested.lean) use the namespace
+`TauCetiRoadmap.ClassicalGroupsPartII`. All other interface bullets describe
+mathematical requirements in prose. Checks specify values and counterexamples
+for the eventual library; they do not claim additional Lean declarations.
 
-## Existing library interfaces
+## Exact supplier contracts
 
-Use the following declarations rather than introducing new finite-comodule,
-Grothendieck-group or symmetric-polynomial foundations. The tensor instances
-on finite comodules use matching coefficient and module universes, as in
-`FGComoduleCat.{u,u,u}` over a field in `Type u`. The quotient/descent and
-generic category compatibility requirements are the ReductiveGroups
-interfaces described under the targets.
+### From Mathlib
 
-| Existing declaration | Interface used here |
+| Declaration | Interface used here |
 | --- | --- |
-| [`Matrix.GeneralLinearGroup`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean) | Units of the square-matrix algebra over a semiring with a finite decidable index type. For commutative K-algebras this supplies the native invertible matrix carrier. |
-| [`TauCeti.FGComoduleCat`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Basic.lean) | Full subcategory of right comodules with Module.Finite; over a field this is the finite-dimensional algebraic representation category. |
-| [`TauCeti.FGComoduleCat.instMonoidalCategory`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Monoidal.lean) | Diagonal tensor product and trivial tensor unit on finite comodules over a bialgebra, in matching universes. |
-| [`TauCeti.FGComoduleCat.instBraidedCategory`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Symmetric.lean) | Tensor swap is a braiding for finite comodules over a commutative bialgebra. |
-| [`TauCeti.FGComoduleCat.hasBinaryBiproducts`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Product.lean) | Binary biproducts of finite comodules. |
-| [`TauCeti.SplitK0`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean) | Split Grothendieck group of an essentially small category with zero morphisms and binary biproducts. |
-| [`TauCeti.SplitK0.of`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean) | Class of an object, invariant under isomorphism. |
-| [`TauCeti.SplitK0.liftRingHom`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal.lean) | Lift a biproduct-additive invariant taking the tensor unit to 1 and tensor products to products to a ring homomorphism. |
-| [`TauCeti.SplitK0.of_mul_of`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal.lean) | [X][Y]=[X⊗Y] for an essentially small monoidal preadditive category with binary biproducts. |
-| [`TauCeti.SplitK0.mapRingHom`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal.lean) | An additive strong monoidal functor induces a ring homomorphism on the SplitK0. |
-| [`TauCeti.DiagonalizableGroup.weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean) | Weight submodule of a right C-comodule corestricted along C→R[X], indexed by x∈X. |
-| [`TauCeti.DiagonalizableGroup.isInternal_weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean) | All these weight submodules form an internal direct sum. |
-| [`TauCeti.DiagonalizableGroup.finite_setOf_weightSpace_ne_bot`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean) | A Module.Finite comodule has finitely many nonzero weight submodules after corestriction. |
-| [`TauCeti.Comodule.baseChange`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/BaseChange.lean) | Actual base change: an R,H-comodule M becomes an A,A⊗[R]H-comodule on A⊗[R]M. This is stronger than the finite scalar-extension functor whose target is only SemimoduleCat. |
-| [`TauCeti.Comodule.matrixCoefficientSubcoalgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean) | For a finite free right comodule M over a coalgebra C over a commutative semiring R, the matrix coefficients span a subcoalgebra of C. Over a field every finite-dimensional M is free. |
-| [`TauCeti.Comodule.matrixCoefficientSubcoalgebra_finite`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean) | The underlying R-module of the matrix-coefficient subcoalgebra of a finite free comodule is finite. |
-| [`TauCeti.Symplectic.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/Symplectic/Basic.lean) | O(Sp₂g), the Hopf quotient of the general-linear coordinate ring by XJXᵀ−J. |
-| [`TauCeti.GeneralLinear.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/GeneralLinear/Coordinate/HopfAlgebra.lean) | O(GL_n), with its determinant localization and matrix-inverse Hopf structure. |
-| [`TauCeti.char_extPowerRep_diagonal`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/RepresentationTheory/ClassicalGroups/ExteriorPower.lean) | Over a field, the abstract exterior-power standard GL_n character on diag(t_i) is the elementary symmetric polynomial in the t_i. It supplies the underlying trace computation, not the GSp comodule itself. |
-| [`MonoidAlgebra.domCongr`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MonoidAlgebra/Basic.lean) | A multiplicative equivalence of the indexing monoids induces an algebra equivalence of their monoid algebras. |
-| [`MvPolynomial.esymmAlgEquiv`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/MvPolynomial/Symmetric/FundamentalTheorem.lean) | For any commutative ring R and a finite variable set of cardinality n, elementary symmetric polynomials give an R-algebra equivalence with the symmetric subalgebra; no denominators. |
-| [`TauCeti.Comodule.Hom.ker`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean) | Over a commutative ring R with Module.Flat R C, the kernel of a comodule morphism is a Subcomodule whose underlying submodule is the linear kernel. Flatness is automatic for the field coefficients used here. |
-| [`TauCeti.Comodule.Hom.ker_finite`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean) | With the same Module.Flat R C hypothesis as ker, the kernel of a comodule map out of an IsNoetherian R M module is Module.Finite. Finite-dimensional modules over the coefficient field satisfy the Noetherian hypothesis. |
+| [`Matrix.GeneralLinearGroup`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean) | Units of the square-matrix algebra over a semiring with a finite decidable index type. For commutative K-algebras this supplies the native invertible matrix carrier. |
+| [`MonoidAlgebra.domCongr`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MonoidAlgebra/Basic.lean) | A multiplicative equivalence of the indexing monoids induces an algebra equivalence of their monoid algebras. |
+| [`MvPolynomial.esymmAlgEquiv`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/MvPolynomial/Symmetric/FundamentalTheorem.lean) | For any commutative ring R and a finite variable set of cardinality n, elementary symmetric polynomials give an R-algebra equivalence with the symmetric subalgebra; no denominators. |
 
-The kernel interface assumes `Module.Flat K O_g(K)` and a Noetherian
-source module; both hold over a field with a finite-dimensional source.
-The matrix-coefficient coalgebra interface assumes a finite free comodule,
-which holds for every object used here. `Comodule.baseChange` changes both
-its coefficient coalgebra and its module, giving K⊗_F O_g(F) and K⊗_F M;
-transport through the stated coordinate comparison is part of the scalar
-extension functor. The exterior trace theorem concerns the abstract GL
-representation and supplies a trace calculation after point evaluation;
-it does not itself construct the GSp exterior comodule.
+### From Tau Ceti
+
+Finite-comodule tensor instances use matching coefficient and module universes,
+as in `FGComoduleCat.{u,u,u}` over a field in Type u. The native finite-comodule
+category requires finite generation, not semisimplicity or an algebraic closure.
+
+| Declaration | Interface used here |
+| --- | --- |
+| [`TauCeti.FGComoduleCat`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Basic.lean) | Full subcategory of right comodules with Module.Finite; over a field this is the finite-dimensional algebraic representation category. |
+| [`TauCeti.FGComoduleCat.instMonoidalCategory`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Monoidal.lean) | Diagonal tensor product and trivial tensor unit on finite comodules over a bialgebra, in matching universes. |
+| [`TauCeti.FGComoduleCat.instBraidedCategory`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Symmetric.lean) | Tensor swap is a braiding for finite comodules over a commutative bialgebra. |
+| [`TauCeti.FGComoduleCat.hasBinaryBiproducts`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Product.lean) | Binary biproducts of finite comodules. |
+| [`TauCeti.SplitK0`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean) | Split Grothendieck group of an essentially small category with zero morphisms and binary biproducts. |
+| [`TauCeti.SplitK0.of`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean) | Class of an object, invariant under isomorphism. |
+| [`TauCeti.SplitK0.liftRingHom`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal/Basic.lean) | Lift a biproduct-additive invariant taking the tensor unit to 1 and tensor products to products to a ring homomorphism. |
+| [`TauCeti.SplitK0.of_mul_of`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal/Basic.lean) | [X][Y]=[X⊗Y] for an essentially small monoidal preadditive category with binary biproducts. |
+| [`TauCeti.SplitK0.mapRingHom`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal/Basic.lean) | An additive strong monoidal functor induces a ring homomorphism on the SplitK0. |
+| [`TauCeti.DiagonalizableGroup.weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean) | Weight submodule of a right C-comodule corestricted along C→R[X], indexed by x∈X. |
+| [`TauCeti.DiagonalizableGroup.isInternal_weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean) | All these weight submodules form an internal direct sum. |
+| [`TauCeti.DiagonalizableGroup.finite_setOf_weightSpace_ne_bot`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean) | A Module.Finite comodule has finitely many nonzero weight submodules after corestriction. |
+| [`TauCeti.Comodule.baseChange`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/BaseChange.lean) | Actual base change: an R,H-comodule M becomes an A,A⊗[R]H-comodule on A⊗[R]M. This is stronger than the finite scalar-extension functor whose target is only SemimoduleCat. |
+| [`TauCeti.Comodule.matrixCoefficientSubcoalgebra`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean) | For a finite free right comodule M over a coalgebra C over a commutative semiring R, the matrix coefficients span a subcoalgebra of C. Over a field every finite-dimensional M is free. |
+| [`TauCeti.Comodule.matrixCoefficientSubcoalgebra_finite`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean) | The underlying R-module of the matrix-coefficient subcoalgebra of a finite free comodule is finite. |
+| [`TauCeti.Symplectic.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/Symplectic/Basic.lean) | O(Sp₂g), the Hopf quotient of the general-linear coordinate ring by XJXᵀ−J. |
+| [`TauCeti.GeneralLinear.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/GeneralLinear/Coordinate/HopfAlgebra.lean) | O(GL_n), with its determinant localization and matrix-inverse Hopf structure. |
+| [`TauCeti.char_extPowerRep_diagonal`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RepresentationTheory/ClassicalGroups/ExteriorPower.lean) | Over a field, the abstract exterior-power standard GL_n character on diag(t_i) is the elementary symmetric polynomial in the t_i. It supplies the underlying trace computation, not the GSp comodule itself. |
+| [`TauCeti.Comodule.Hom.ker`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean) | Over a commutative ring R with Module.Flat R C, the kernel of a comodule morphism is a Subcomodule whose underlying submodule is the linear kernel. Flatness is automatic for the field coefficients used here. |
+| [`TauCeti.Comodule.Hom.ker_finite`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean) | With the same Module.Flat R C hypothesis as ker, the kernel of a comodule map out of an IsNoetherian R M module is Module.Finite. Finite-dimensional modules over the coefficient field satisfy the Noetherian hypothesis. |
+| `TauCeti.Comodule.exteriorPower` | Exterior-power coaction on the native exterior power over a commutative bialgebra; selected explicitly, with no coalgebra-flatness hypothesis (`TauCeti/Algebra/Coalgebra/Comodule/ExteriorAlgebra/Power.lean`, line 73). |
+| `TauCeti.Comodule.Hom.exteriorPowerMap` | The comodule morphism whose underlying linear map is the exterior-power map (same file, line 110). |
+| `TauCeti.Comodule.baseChange_subtype_endOfPoint_ιMulti` | Pure-wedge point-action formula after scalar extension, for every commutative value algebra, including nonreduced ones (same file, line 166). |
+
+The kernel interface assumes `Module.Flat K O_g(K)` and a Noetherian source;
+a field and a finite-dimensional source provide both. Matrix-coefficient
+subcoalgebras require finite freeness, also automatic here. Native
+`TauCeti.Comodule.baseChange` changes both the coalgebra and the module;
+transport through the GSp coordinate comparison is part of the specialization.
+Native preadditivity is transferred from the ambient comodule category
+(`TauCeti/Algebra/Coalgebra/Comodule/Finite/Preadditive.lean`, lines 48–62).
+The exterior trace theorem computes an abstract GL trace; the GSp comparison
+is a separate target below.
+
+### From TauCetiRoadmap.ReductiveGroups
+
+Consume Layer 0's Hopf/affine-group/represented-functor dictionary; Layer 1's
+rational-action/comodule comparison; Layer 3's subgroup schemes and represented
+fppf quotients; Layer 6's central-isogeny and characteristic-zero reductivity
+results; and Layer 7's split-pair, root-datum and normalizer-Weyl interfaces.
+Use §10A, “The rational category and actual torus lattice”, for scalar extension,
+finite torus-weight decompositions and formal characters, and §10B, “Induction,
+Weyl modules and simple heads”, for classification of split-group rational
+simples, absolute simplicity, End=K and arbitrary-field extension. Match the
+actual lattice and Borel conventions before transporting any such result.
+
+What ReductiveGroups must provide (gap:generated-vector-base-change): For a
+finite-dimensional right comodule M over a commutative Hopf algebra H over a
+field F and v∈M, construct the least subcomodule containing v and prove that
+extension to every field K/F is the least subcomodule containing 1⊗v
+(Layer 1). Use the native finite coefficient-subcoalgebra, without rebuilding it.
+
+What ReductiveGroups must provide (gap:central-quotient-representations): For a
+faithfully flat quotient G→Q of affine finite-type group schemes over a field
+with finite central kernel N, pullback identifies finite rational Q-representations
+with the full subcategory of finite rational G-representations on which N acts
+trivially as a group scheme (Layer 3).
+
+What ReductiveGroups must provide (gap:finite-comodule-category): For a field
+F and a commutative Hopf F-algebra H in the same universe, equip the native
+finite-comodule category with compatible essential smallness, monoidal
+preadditivity, F-linearity and finite-dimensional Hom spaces, reusing its native
+tensor, braiding and preadditive structures (Layer 1).
+
+### From TauCetiRoadmap.ClassicalGroups
+
+Consume Layer 0's standard GL complex representation, symplectic inclusion
+and invariant alternating form. The GSp point comparison below identifies
+these with evaluation of the constructed comodule. Layer 1 supplies the
+abstract tensor/exterior/symmetric representations and traces; Layer 2's
+column Schur functor identifies ΛᵏV with the alternating image in V^⊗k.
+The rational alternating projector gives the K-form of that splitting.
+Layer 3 supplies the Sp maximal torus and highest-weight comparison;
+Layer 4 supplies the complex classical character comparison; Layer 5 supplies
+the Sp fundamental dimension binom(2g,k)−binom(2g,k−2).
+
+### From TauCetiRoadmap.LieHighestWeight
+
+Consume Layer 4's classification and uniqueness of finite-dimensional simple
+semisimple Lie-algebra modules through the complex symplectic realization.
+The comparison of a specified tensor top line with the supplied simple is
+GSp-specific work here, not another abstract classification.
+
+## How to read the build
+
+Layer CG.0 constructs the coordinate presentation and establishes connected
+reductivity before using the split-pair interface, then identifies the torus,
+lattice, Weyl action and central parity. Layer CG.1 builds primitive-tensor
+models and compares them with the supplied split highest-weight theory.
+Layer CG.2 proves the integral full invariant presentation and the rational
+character isomorphism. Layer CG.3 proves the support criterion, positive
+invariant presentation, tensor-occurrence criterion and the constituent
+character isomorphism with multiplier localization. The statable headlines
+in Suggested.lean are `fullInvariantPresentation`, `mem_positiveSubring`
+and `positiveInvariantPresentation`. The remaining headlines need the GSp
+coordinate Hopf algebra and its finite-comodule objects, which are construction
+targets here; their missing carriers are recorded in the module docstring.
 
 ## Layer CG.0: Algebraic similitudes, diagonal torus and central weights
 
@@ -186,17 +253,12 @@ Sp(Q)×Q×. Surjectivity on rational points is therefore not an acceptance
 condition. The scheme quotient and its representation descent belong to the
 supplied Reductive Groups interfaces, not to a new local theory of quotients.
 
-<a id="coordinate-hopf-algebra"></a>
-
-### Algebraic presentation of the symplectic similitude group
+### CG.0.1 Algebraic presentation of the symplectic similitude group
 
 For g≥1 and characteristic-zero K, build the finite-type coordinate Hopf
-algebra
+algebra ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
-\[
-O_g(K)=K[x_{ab},D,s,s^{-1}]/
-(D\det X-1,\;ss^{-1}-1,\;(XJX^\mathsf T-sJ)_{ab}),
-\]
+`O_g(K) = K[x_ab,D,s,s⁻¹]/(D det(X) − 1, s s⁻¹ − 1, (X J Xᵀ − s J)_ab).`
 
 where X has size 2g. Its matrix entries have comultiplication
 Δ(x_ab)=Σ_c x_ac⊗x_cb, and s is invertible and group-like.
@@ -209,35 +271,66 @@ through the ReductiveGroups dictionary. The fibre s=1 is the existing Sp
 coordinate algebra. In rank one the presentation reduces to the existing
 GL₂ coordinate algebra and s becomes determinant.
 
-**Prerequisites:** [`Matrix.GeneralLinearGroup`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean) with the displayed similitude equation; [`TauCeti.GeneralLinear.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/GeneralLinear/Coordinate/HopfAlgebra.lean); [`TauCeti.Symplectic.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/Symplectic/Basic.lean); [ReductiveGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-0-the-functor-of-points-and-the-three-way-dictionary).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
-
 **Construction and proof.**
 
 1. Use the existing GL determinant localization and adjoin an invertible scalar s. The relation XJXᵀ=sJ is stable under multiplication, identity and inverse, so the displayed ideal is a Hopf ideal.
 2. The generators and relations give the natural points equivalence directly in Matrix.GeneralLinearGroup. Multiplier uniqueness follows by inspecting a ±1 entry of J. Compare the induced point functor with any matrix-similitude interface through that natural equivalence.
 3. The s=1 quotient is the symplectic coordinate Hopf algebra. In rank one XJXᵀ=det(X)J, so eliminate s and recover the GL₂ coordinate algebra.
 
-**API.**
+The required interface has the following properties.
 
-- `coordinateHopfAlgebra`: The displayed finite-type coordinate Hopf algebra O_g(K), with its polynomial quotient presentation.
-- `matrixEntry`: x_ab is the residue class of the (a,b) generic matrix entry.
-- `multiplierCoordinate`: s is the invertible group-like multiplier coordinate; s⁻¹ is its antipode.
-- `pointsEquiv`: Naturally in A, K-algebra maps O_g(K)→A correspond to h∈GL₂g(A) with hJhᵀ=ν(h)J, the displayed similitude carrier.
-- `coordinateHopfAlgebra_rank_one`: O_1(K) is canonically Hopf-isomorphic to TauCeti.GeneralLinear.coordinateHopfAlgebra K 2; s corresponds to determinant.
+- The displayed finite-type coordinate Hopf algebra O_g(K), with its polynomial quotient presentation.
+- matrix entry: x_ab is the residue class of the (a,b) generic matrix entry.
+- multiplier coordinate: s is the invertible group-like multiplier coordinate; s⁻¹ is its antipode.
+- Naturally in A, K-algebra maps O_g(K)→A correspond to h∈GL₂g(A) with hJhᵀ=ν(h)J, the displayed similitude carrier.
+- O_1(K) is canonically Hopf-isomorphic to TauCeti.GeneralLinear.coordinateHopfAlgebra K 2; s corresponds to determinant.
 
-**Unit tests.**
+**Checks.**
 
-- `coordinate.test_rank_one`: For every h∈GL₂(Q), evaluation of s at h equals det(h).
-- `coordinate.test_multiplier_one`: The quotient O_g(Q)/(s−1) is canonically O(Sp₂g).
-- `coordinate.test_scalar`: The scalar matrix 2I has multiplier 4, rather than 2.
+- For every h∈GL₂(Q), evaluation of s at h equals det(h).
+- The quotient O_g(Q)/(s−1) is canonically O(Sp₂g).
+- The scalar matrix 2I has multiplier 4, rather than 2.
 
 **Consequences to check.** The multiplier-one fibre is Sp₂g, as a Hopf quotient, not just a set of Q-points. For g=1 the multiplier is the determinant.
 
-<a id="similitude-weight-lattice"></a>
+*Needs:* [`Matrix.GeneralLinearGroup`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean) with the displayed similitude equation; [`TauCeti.GeneralLinear.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/GeneralLinear/Coordinate/HopfAlgebra.lean); [`TauCeti.Symplectic.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/Symplectic/Basic.lean); [ReductiveGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-0-the-functor-of-points-and-the-three-way-dictionary).
 
-### The integral central-similitude weight lattice
+### CG.0.2 Central isogeny and connected reductivity
+
+For g≥1 and characteristic-zero K construct π:Sp₂g×G_m→GSp₂g by
+π(a,c)=ca. Prove it faithfully flat with central kernel μ₂ embedded by
+ε↦(εI,ε), and identify its target as the represented fppf quotient.
+Deduce geometric connectedness from the quotient of Sp₂g×G_m. Prove
+reductivity using its defining faithful matrix action: after algebraic
+closure the symplectic group is transitive on nonzero vectors, by extending
+a nonzero vector to a symplectic basis. Its standard action is therefore
+simple, and so is the GSp action that restricts to it. Apply the faithful semisimple criterion
+(Milne, Corollary 19.18 and Example 19.19, p.401), through ReductiveGroups Layer 6. This target uses no GSp maximal torus, Borel,
+root datum or Weyl group (Yu, §7.1, Remark 7.1.1, p.64, for the matrix group; the kernel
+and fppf lifts are computed below).
+
+For a commutative K-algebra A and a similitude h with unit multiplier s,
+A[C]/(C²−s) is free of rank two, hence faithfully flat; C is a unit and
+C⁻¹h is symplectic. The kernel equation ca=I forces a=c⁻¹I and c²=1,
+so a=cI. Apply the affine quotient and central-isogeny interfaces to
+these equations. Splitness is established with the diagonal torus below,
+after connected reductivity is available.
+
+The required interface records π on matrices, its μ₂ kernel as a subgroup
+scheme, its fppf quotient property and connected reductivity of GSp₂g.
+
+**Checks.**
+
+- In rank one π(a,c)=ca has det(ca)=c², and its kernel is exactly (I,1),(−I,−1) over a characteristic-zero algebraically closed field.
+- diag(I_g,2I_g) over Q has multiplier 2. A lift requires c²=2 and has no Q-point, while Q[C]/(C²−2) supplies a lift.
+- Over A=Q[ε]/(ε²), multiplier 1+ε has square root 1+ε/2. Its square is 1+ε, so the lift construction also tests nonreduced value algebras.
+
+*Needs:* [Algebraic presentation of the symplectic similitude group](#cg01-algebraic-presentation-of-the-symplectic-similitude-group);
+`TauCeti.Symplectic.coordinateHopfAlgebra`; ReductiveGroups Layers 3 and 6 for fppf quotient identification and the
+faithful semisimple reductivity criterion;
+ClassicalGroups Layer 0 for the symplectic group.
+
+### CG.0.3 The integral central-similitude weight lattice
 
 Define the character lattice as X_g=Z×Z^g, where (m,u) denotes
 t^m∏z_i^u_i. Name e_t=(1,0) and e_i=(0,δ_i), and expose the paired
@@ -246,11 +339,7 @@ d(m,u)=2m+Σu_i. Define Dom_g by u₁≥⋯≥u_g≥0 with unrestricted m∈Z.
 For the central cover (a,c)↦ca, its pullback is
 (m,u)↦(u,2m+Σu_i). Prove that this is injective, with image the pairs
 (u,d) satisfying d≡Σu_i modulo 2; its inverse on that image recovers
-m=(d−Σu_i)/2.
-
-**Prerequisites:** the integer lattice and elementary arithmetic.
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466.
+m=(d−Σu_i)/2. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466).
 
 **Construction and proof.**
 
@@ -258,62 +347,75 @@ m=(d−Σu_i)/2.
 2. On scalar matrices z_i=c and t=c²; hence d=2m+Σu_i.
 3. Simple roots e_i−e_(i+1) and 2e_g−e_t pair with coroots by u_i−u_(i+1) and u_g. Recover m=(d−Σu_i)/2 exactly when the parity condition holds.
 
-**API.**
+The required interface has the following properties.
 
 - `Weight`: X_g is the additive group Z×(Fin g→Z); monomials use its multiplicative wrapper in MonoidAlgebra.
-- `multiplierWeight`: e_t=(1,0).
-- `standardWeight`: e_i=(0,δ_i); the paired weight is e_t−e_i.
-- `centralDegree`: d(m,u)=2m+Σu_i, an additive homomorphism X_g→Z.
-- `DominantWeight`: Subtype of X_g cut out by antitonicity and nonnegativity of u, with unrestricted integer m.
-- `coverWeight`: Pullback X_g→Z^g×Z sends (m,u) to (u,2m+Σu_i).
+- multiplier weight: e_t=(1,0).
+- standard weight: e_i=(0,δ_i); the paired weight is e_t−e_i.
+- central degree: d(m,u)=2m+Σu_i, an additive homomorphism X_g→Z.
+- Subtype of X_g cut out by antitonicity and nonnegativity of u, with unrestricted integer m.
+- Pullback X_g→Z^g×Z sends (m,u) to (u,2m+Σu_i).
 
-**Unit tests.**
+**Checks.**
 
-- `weight.test_multiplier_degree`: d(e_t)=2 and d(e_i)=1.
-- `weight.test_negative_twist`: (−1,0) is dominant and has degree −2; rational algebraic representations include ν⁻¹.
-- `weight.test_parity`: The Sp standard highest weight with central degree 0 does not lie in the image of coverWeight, since its weight sum is odd.
+- d(e_t)=2 and d(e_i)=1.
+- (−1,0) is dominant and has degree −2; rational algebraic representations include ν⁻¹.
+- The Sp standard highest weight with central degree 0 does not lie in the image of the cover-weight map, since its weight sum is odd.
+
+Define the simple roots α_i=e_i−e_(i+1) for i<g and
+α_g=2e_g−e_t, indexed by Fin g. Define the root order μ≤λ by the exact
+condition λ−μ=Σ_i n_i α_i with n_i∈N (Milne, Chapter 22 §a, the root-order paragraph preceding Definition 22.1, p.464,
+and the type-C root datum in Chapter 21 §j, Summary 21.98, p.461).
+The root-order interface includes reflexivity, transitivity, antisymmetry
+and equality of scalar degrees for comparable weights.
+
+**Checks.**
+
+- The simple-root list is empty at g=0; at g=1 it is the single weight (−1,2), of scalar degree −2+2=0.
+- At g=2 the roots are (0,(1,−1)) and (−1,(0,2)), with coroot values u₁−u₂ and u₂; exchanging them changes dominance and fails the displayed chamber.
+- Every simple root has scalar degree 0, whereas e_t has degree 2 and cannot be a simple root.
+- The root order has μ≤μ; it has 0≤α_i but not α_i≤0, since the simple roots are linearly independent.
+- Comparable weights have equal scalar degrees: 0 and e_t are incomparable in both directions (degrees 0 and 2).
+- In rank one 0≤2α₁=(−2,4), whereas 0≤e₁=(0,1) fails (scalar degrees 0 and 1).
+- The lattice permits every integer m: in rank zero it is Z, in rank one it is Z², and the weight (−1,0) remains present and dominant.
 
 **Consequences to check.** No positivity is imposed on m in Dom_g. The central degree of the multiplier is 2 and of each standard weight is 1.
 
-<a id="diagonal-torus"></a>
+*Needs:* the integer lattice and elementary arithmetic.
 
-### The diagonal GSp torus
+### CG.0.4 The diagonal GSp torus
 
 Construct the split diagonal torus with lattice X_g and immersion
 (t,z)↦diag(z₁,…,z_g,t/z₁,…,t/z_g). Give its coordinate Hopf morphism
-torusRestriction:O_g(K)→K[X_g], taking X to this matrix and s to the
+the torus coordinate restriction:O_g(K)→K[X_g], taking X to this matrix and s to the
 monomial t. Prove it is a maximal torus, and choose the Borel with simple
 roots e_i−e_(i+1) and 2e_g−e_t. At t=1 identify its immersion with
 Tau Ceti's symplectic diagonal torus. Record the root/coroot pairing in the
-ReductiveGroups split-pair interface.
-
-**Prerequisites:** [Algebraic presentation of the symplectic similitude group](#coordinate-hopf-algebra); [The integral central-similitude weight lattice](#similitude-weight-lattice); [ReductiveGroups Layer 7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-7-structure-theory); [ClassicalGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-0-the-classical-groups-and-the-standard-representation); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466.
+ReductiveGroups split-pair interface. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466).
 
 **Construction and proof.**
 
 1. The diagonal entries satisfy XJXᵀ=tJ, so the coordinate map descends and is a Hopf morphism. Its image contains t and every z_i and their inverses, proving closed immersion.
-2. A matrix commuting with all independent diagonal torus characters is diagonal. The similitude equation then says its paired products are equal, so its centralizer is this torus, proving maximality through the generic split-pair interface. Compute the adjoint roots from the symplectic matrix entries and use the imported Sp Borel with the displayed positive roots. This proof does not use the subsequent central cover.
+2. A matrix commuting with all independent diagonal torus characters is diagonal. The similitude equation then says its paired products are equal, so its centralizer is this torus, proving maximality through the generic split-pair interface. Compute the adjoint roots from the symplectic matrix entries and use the imported Sp Borel with the displayed positive roots. Connected reductivity comes from the preceding central-isogeny target; the torus and chosen Borel then exhibit splitness.
 
-**API.**
+The required interface has the following properties.
 
-- `torusRestriction`: O_g(K)→ₐc[K]K[Multiplicative X_g], the Hopf coordinate map of the displayed diagonal immersion.
-- `torusRestriction_matrixEntry`: An off-diagonal entry maps to 0; entry i maps to z_i and paired entry g+i maps to t z_i⁻¹.
-- `torusRestriction_multiplier`: The multiplier coordinate maps to the group-like monomial [e_t].
-- `diagonalMatrix`: The matrix diag(z_1,…,z_g,t/z_1,…,t/z_g) for unit-valued torus coordinates.
+- O_g(K)→ₐc[K]K[Multiplicative X_g], the Hopf coordinate map of the displayed diagonal immersion.
+- An off-diagonal entry maps to 0; entry i maps to z_i and paired entry g+i maps to t z_i⁻¹.
+- The multiplier coordinate maps to the group-like monomial [e_t].
+- The matrix diag(z_1,…,z_g,t/z_1,…,t/z_g) for unit-valued torus coordinates.
 
-**Unit tests.**
+**Checks.**
 
-- `torus.test_rank_one`: For g=1 and t=6,z_1=2, the torus matrix is diag(2,3) with determinant 6.
-- `torus.test_symplectic_fibre`: At t=1 this immersion is the diagonal Sp torus.
-- `torus.test_scalar`: The scalar cI has coordinates t=c² and all z_i=c; it has g+1 torus coordinates, with this one-dimensional scalar subtorus.
+- For g=1 and t=6,z_1=2, the torus matrix is diag(2,3) with determinant 6.
+- At t=1 this immersion is the diagonal Sp torus.
+- The scalar cI has coordinates t=c² and all z_i=c; it has g+1 torus coordinates, with this one-dimensional scalar subtorus.
 
 **Consequences to check.** The first and second basis vectors of pair i have torus weights e_i and e_t−e_i. Set t=1 to recover diag(z_i,z_i⁻¹) in Sp.
 
-<a id="weyl-action"></a>
+*Needs:* [Central isogeny and connected reductivity](#cg02-central-isogeny-and-connected-reductivity); [Algebraic presentation of the symplectic similitude group](#cg01-algebraic-presentation-of-the-symplectic-similitude-group); [The integral central-similitude weight lattice](#cg03-the-integral-central-similitude-weight-lattice); [ReductiveGroups Layer 7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-7-structure-theory); [ClassicalGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-0-the-classical-groups-and-the-standard-representation); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification).
 
-### Reciprocal Weyl action on the Laurent character algebra
+### CG.0.5 Reciprocal Weyl action on the Laurent character algebra
 
 Define the Weyl action first on X_g and then on L_g. A permutation σ
 acts by (m,u)↦(m,u∘σ⁻¹). The flip in pair i acts by
@@ -321,11 +423,7 @@ acts by (m,u)↦(m,u∘σ⁻¹). The flip in pair i acts by
 Prove that these automorphisms satisfy the relations of
 W_g=(S₂)^g⋊S_g and identify this group with the normalizer Weyl group
 of the diagonal torus. The fixed subring L_g^W consists exactly of the
-elements fixed by every permutation and every pair flip.
-
-**Prerequisites:** [The integral central-similitude weight lattice](#similitude-weight-lattice); [The diagonal GSp torus](#diagonal-torus); [`MonoidAlgebra.domCongr`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MonoidAlgebra/Basic.lean); [ReductiveGroups Layer 7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-7-structure-theory).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+elements fixed by every permutation and every pair flip. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
@@ -333,138 +431,141 @@ elements fixed by every permutation and every pair flip.
 2. Check each reflection squares to identity, distinct reflections commute, and conjugation by σ relabels i. Normalizer representatives are the imported type-C symplectic permutation and pair-swap matrices; the multiplier central direction is fixed.
 3. Define the fixed Subring by generator fixedness; the relations identify it with invariants for the semidirect Weyl group.
 
-**API.**
+The required interface has the following properties.
 
 - `Laurent`: L_g is MonoidAlgebra Z (Multiplicative X_g), the integral Laurent character algebra.
 - `permWeight`: The additive lattice equivalence (m,u)↦(m,u∘σ⁻¹).
 - `flipWeight`: The additive lattice involution (m,u)↦(m+u_i,u[i:=−u_i]).
 - `permLaurent`: The induced Z-algebra automorphism permuting z_i and fixing t.
 - `flipLaurent`: The induced Z-algebra automorphism exchanging z_i and t/z_i and fixing t.
-- `permLaurent_monomial`, `flipLaurent_monomial`: On every monomial, the algebra automorphism is induced by the corresponding explicit lattice automorphism, including negative exponents.
-- `flipLaurent_involutive`, `flipLaurent_commute`, `permLaurent_flip`: Pair flips square to the identity, commute with one another, and are relabelled by conjugation with a permutation.
-- `centralDegree_weyl`: Every permutation and pair flip preserves the scalar degree 2m+Σu_i.
+- On every monomial, the algebra automorphism is induced by the corresponding explicit lattice automorphism, including negative exponents.
+- Pair flips square to the identity, commute with one another, and are relabelled by conjugation with a permutation.
+- Every permutation and pair flip preserves the scalar degree 2m+Σu_i.
 - `invariantSubring`: The Subring of L_g whose elements are fixed by every permLaurent σ and flipLaurent i.
-- `mem_invariantSubring`: Membership is precisely fixedness under these two families of generators.
+- Membership is precisely fixedness under these two families of generators.
 
-**Unit tests.**
+Use `monomial` for the coefficient-one basis element of `Laurent` at a
+weight in `Weight`. Write `t` and `tInv` for the weights (1,0) and (−1,0),
+and `z` and `pairedZ` for (0,δ_i) and (1,−δ_i). These definitions use the
+native integral group algebra, not pointwise Laurent functions (Yu, §7.1,
+pp.64, definition of the reciprocal substitutions).
 
-- `weyl.test_reciprocal`: flip_i(z_i)=t/z_i, and flip_i(t/z_i)=z_i.
-- `weyl.test_multiplier`: Every Weyl generator fixes t, 1 and every integer constant.
-- `weyl.test_standard_character`: Σ_i(z_i+t/z_i) is W-invariant.
-- `weyl.test_wrong_inversion`: In rank one, z+t/z is changed by ordinary inversion z↦z⁻¹ when t remains an independent variable.
+The monomial interface gives multiplication by addition of weights, distinct
+basis elements for distinct weights and coefficient extraction. The four
+standard-letter definitions have their indicated weights and coefficient 1;
+t t⁻¹=1 and z_i pairedZ_i=t. The automorphisms act on these weights by the
+explicit formulas above, preserving coefficients. The invariant subring is
+the intersection of the equalizers of these automorphisms with the identity.
 
-**Consequences to check.** A reflection fixes centralDegree and exchanges z_i with t/z_i. An ordinary inversion z_i↦z_i⁻¹ with t fixed is not this Weyl action.
+**Checks.**
 
-<a id="central-cover"></a>
+- flip_i(z_i)=t/z_i, and flip_i(t/z_i)=z_i.
+- Every Weyl generator fixes t, 1 and every integer constant.
+- Σ_i(z_i+t/z_i) is W-invariant.
+- In rank one, z+t/z is changed by ordinary inversion z↦z⁻¹ when t remains an independent variable.
 
-### The central cover and its parity constraint
+- At rank zero, the Laurent ring is Z[t±1], every permutation is the identity and there are no flips, so its fixed ring is the whole Laurent ring.
+- The monomial at weight 0 is 1 with coefficient 1; at (−1,0) it is t⁻¹ with coefficient 1; the monomials at (1,0) and (0,0) are distinct, including at g=0.
+- t has weight (1,0) and coefficient 1; t⁻¹ has weight (−1,0) and coefficient 1; their product is 1. Sending both to 1 would lose distinct basis elements.
+- For g≥1, z_i has weight (0,δ_i) and coefficient 1, pairedZ_i has weight (1,−δ_i) and coefficient 1, and their product is t. Neither letter is 1 and neither is z_i⁻¹.
+- At g=2, transposition sends (−1,(2,−3)) to (−1,(−3,2)), and twice to the original weight; the identity permutation fixes it.
+- At g=1, flipping (−1,2) gives (1,−2), and flipping again gives (−1,2); flipping e_t fixes it. Both weights have scalar degree 0.
+- At g=2, a pair permutation sends z₁² to z₂², sends t⁻¹ to t⁻¹, and fixes −3; replacing σ⁻¹ by σ fails for the cycle (1 2 3) at rank three, which sends z₁ to z₂.
+- In rank one, a flip sends z² to t²/z², sends t⁻¹ to itself and fixes −3. Ordinary inversion would give z⁻², losing the factor t².
+- In rank one, 1, t and z+t/z are fixed, but z is not. At rank two x₁ is flip-fixed but not permutation-fixed, excluding an invariant definition that checks only flips.
 
-Over a characteristic-zero field, construct the morphism
-π:Sp₂g×G_m→GSp₂g, π(a,c)=ca. Prove that it is a faithfully flat central
-isogeny, with kernel μ₂ embedded by ε↦(εI,ε), and identify GSp₂g as its
-fppf quotient. Pullback of rational representations is fully faithful, with
-essential image precisely the representations on which this kernel acts
-trivially. For a simple Sp highest weight u and scalar exponent d, this
-condition is d−Σu_i even. Establish split connected reductivity of GSp and
-identify its dominant chamber with Dom_g using the displayed roots and
-coroots. Faithful flatness and descent are scheme statements, over all
-K-algebras, not assertions of surjectivity on K-points.
+**Consequences to check.** A reflection fixes scalar degree and exchanges z_i with t/z_i. An ordinary inversion z_i↦z_i⁻¹ with t fixed is not this Weyl action.
 
-**Prerequisites:** [Algebraic presentation of the symplectic similitude group](#coordinate-hopf-algebra); [The diagonal GSp torus](#diagonal-torus); [Reciprocal Weyl action on the Laurent character algebra](#weyl-action); [The integral central-similitude weight lattice](#similitude-weight-lattice); [`TauCeti.Symplectic.coordinateHopfAlgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/Symplectic/Basic.lean); [ReductiveGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-3-subgroups-quotients-components); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups).
+*Needs:* [The integral central-similitude weight lattice](#cg03-the-integral-central-similitude-weight-lattice); [The diagonal GSp torus](#cg04-the-diagonal-gsp-torus); [`MonoidAlgebra.domCongr`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MonoidAlgebra/Basic.lean); [ReductiveGroups Layer 7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-7-structure-theory).
 
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, complement 22.12, printed p.466.
+### CG.0.6 The central cover and its parity constraint
 
-**Construction and proof.**
+For the central isogeny constructed after the coordinate presentation, apply
+the representation-descent contract gap:central-quotient-representations.
+For an Sp highest weight u and scalar exponent d, the diagonal kernel μ₂
+acts by ε^(d+Σu_i). It is trivial exactly when d−Σu_i is even. Under the
+torus identification this gives (m,u) ↦ (u,2m+Σu_i), and the dominant
+chamber is Dom_g. These are statements about algebraic representations;
+the cover need not be surjective on K-points (Milne, Chapter 22 §a,
+Complement 22.12, printed p.466; Yu, §7.1, Remark 7.1.1, p.64).
 
-1. Compute the multiplier of ca as c² and the kernel as (εI,ε), ε²=1. Adjoining a square root of an invertible multiplier gives a finite faithfully flat cover, so this is a quotient statement in the fppf topology, not surjectivity on Q-points.
-2. Use the imported affine-group quotient/descent criterion and reductivity under central isogeny. The split torus and root calculation of Layer CG.0 identify the lattice and dominant chamber.
-3. On the Sp module of highest weight u, −I acts by (−1)^(Σu_i), while −1 in G_m acts by (−1)^d. Hence the kernel acts trivially exactly at the displayed parity.
+**Checks.**
 
-**Consequences to check.** diag(I_g,2I_g) is a Q-point with multiplier 2 but has no lift to Sp(Q)×Q×; local fppf surjectivity remains valid. Standard Sp weight requires odd scalar degree; ν has Sp weight 0 and scalar degree 2.
+- The standard Sp weight has sum 1: degree 0 fails descent, whereas degree 1 descends to V.
+- The trivial Sp weight with degree 2 descends to ν; degree −2 descends to ν⁻¹.
+- For ε=−1, the standard Sp centre acts by −1 and the degree-one scalar factor by −1, so their product is +1; an even scalar exponent would give −1.
+
+*Needs:* [Central isogeny and connected reductivity](#cg02-central-isogeny-and-connected-reductivity);
+[The diagonal GSp torus](#cg04-the-diagonal-gsp-torus);
+[The integral central-similitude weight lattice](#cg03-the-integral-central-similitude-weight-lattice);
+ReductiveGroups Layer 3 and gap:central-quotient-representations.
+
+### Examples
+
+At g=1 the matrix diag(2,3) has t=6, while 2I has t=4. The central-cover lift of diag(1,2) needs a square root of 2.
+
+### Dependencies
+
+Mathlib and Tau Ceti coordinate/group-algebra interfaces; ReductiveGroups Layers 0, 3, 6 and 7; ClassicalGroups Layers 0 and 3; the quotient-representation supplier gap.
 
 ## Layer CG.1: Rational algebraic representations and primitive powers
 
-Specialize the existing finite-comodule category and SplitK0 to GSp. Construct standard and multiplier representations, primitive exterior powers with ν-valued contraction, and their split decomposition and fundamental highest weights. Prove the finite Hom/weight base-change theorem, construct rational models and classify rational irreducibles with unrestricted integer multiplier exponent. Induce the canonical Q-to-C and Q-to-K ring equivalence using the existing SplitK0 functorial map.
+Specialize the existing finite-comodule category and SplitK0 to GSp. Construct standard and multiplier representations, primitive exterior powers with ν-valued contraction, and their split decomposition and fundamental highest weights. Prove the finite Hom/weight base-change theorem, construct rational models and compare them with the supplied split simples with unrestricted integer multiplier exponent. Induce the canonical Q-to-C and Q-to-K ring equivalence using the existing SplitK0 functorial map.
 
 For the rational model, set a_k=u_k−u_(k+1), where u_(g+1)=0.
 The tensor of the explicit highest vectors e_1∧⋯∧e_k in P_k, repeated a_k
 times, lies over Q and has highest weight (0,u). The subcomodule generated
 by this vector is the rational Cartan component. It uses the finite
-matrixCoefficientSubcoalgebra for the coefficient-extraction span; the generic
+the native coefficient-subcoalgebra for the coefficient-extraction span; the generic
 minimal generated-subcomodule and flat base-change interface comes from
 ReductiveGroups Layer 1.
-After extension to C the
-imported connected Sp theorem identifies it as simple. Its endomorphisms
-over Q are scalar, by Hom base change; over any characteristic-zero extension
-they are still scalar. Semisimplicity then proves it remains simple: a direct
-sum with two nonzero factors would have two independent idempotent
-endomorphisms. Twisting by ν^m gives the general rational model.
+Compare that component with ReductiveGroups §10B's simple object after
+identifying its actual character lattice with X_g. Its unique tensor top line
+and complete reducibility identify the generated component with the supplied
+simple of weight (0,u). Twisting by ν^m identifies all dominant weights.
+ReductiveGroups §10A supplies scalar extension and formal characters, and
+§10B supplies classification, scalar endomorphisms, absolute simplicity and
+arbitrary-field extension. This comparison gives the canonical ring map on
+the shared simple basis. It does not give an equivalence of Q-linear and
+K-linear categories: Hom(1,1) changes from Q to K.
 
-The Hom base-change statement is needed for arbitrary F→K. Choose bases of
-M and N; the coaction compatibility equations for a matrix of a linear map
-use only finitely many coefficients in O_g(F). Their F-span is finite, so
-equivariance is a kernel of a finite matrix over F. Flat field extension
-commutes with that kernel. The same argument applies to each torus weight
-equation. A nonempty invertible locus inside this finite-dimensional Hom
-space has an F-point because F is infinite: its determinant is a nonzero
-polynomial. This proves reflection of isomorphisms without using the classification, and thus avoids a circular descent argument.
-
-For a representation over an arbitrary K, its finite list of coaction
-coefficients descends to a finitely generated subfield F/Q inside K. The
-comodule laws descend along the injective field map. Such an F embeds in C.
-A simple K-object has a simple F-form; a proper F-subcomodule would remain
-proper over K. Semisimplicity over C and the existing complex classification
-find a rational highest-weight model with a nonzero map into the C-extension.
-F-to-C Hom base change descends a nonzero map, hence an isomorphism over F.
-Extending to K proves completeness of the rational-model list without
-requiring K itself to embed in C. The ring equivalence follows from the
-shared simple basis. Scalar extension does not assert an equivalence of
-the Q-linear and K-linear categories: already Hom(1,1) changes from Q to K.
-
-<a id="rational-representation-ring"></a>
-
-### The rational algebraic representation ring
+### CG.1.1 The rational algebraic representation ring
 
 Set RatRep_g(K)=TauCeti.FGComoduleCat K O_g(K) and
 R_g(K)=TauCeti.SplitK0 RatRep_g(K). Use the existing biproduct,
-preadditive, tensor and braiding structures. The generic ReductiveGroups
-representation interface supplies essential smallness and compatibility of
-tensor with addition, making R_g(K) a commutative ring. By
+preadditive, tensor and braiding structures. The generic compatibility required in gap:finite-comodule-category supplies
+essential smallness and tensor additivity, making R_g(K) a commutative ring. By
 characteristic-zero semisimplicity, its split relations agree with the
 exact-sequence Grothendieck relations. Point evaluation gives a functor to
 abstract FDRep and the corresponding homomorphism to Tau Ceti's abstract
 representation ring. Give the dimension homomorphism R_g(K)→Z, taking
-[M] to dim_K M.
-
-**Prerequisites:** [Algebraic presentation of the symplectic similitude group](#coordinate-hopf-algebra); [The central cover and its parity constraint](#central-cover); [`TauCeti.FGComoduleCat`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Basic.lean); [`TauCeti.FGComoduleCat.instMonoidalCategory`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Monoidal.lean); [`TauCeti.FGComoduleCat.instBraidedCategory`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Symmetric.lean); [`TauCeti.FGComoduleCat.hasBinaryBiproducts`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/Finite/Product.lean); [`TauCeti.SplitK0`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean); [`TauCeti.SplitK0.of`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean); [`TauCeti.SplitK0.of_mul_of`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal.lean); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466.
+[M] to dim_K M. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466).
 
 **Construction and proof.**
 
-1. Specialize the FGComoduleCat to O_g(K). Obtain the missing generic essentially-small and monoidal-preadditive instances from the owning representation/comodule layer, rather than rebuilding a category or a K₀.
+1. Specialize the FGComoduleCat to O_g(K). Use gap:finite-comodule-category for essentially-small and monoidal-preadditive compatibility; reuse the native preadditive and tensor structures.
 2. Use the SplitK0 commutative-ring construction. Since GSp is connected reductive in characteristic zero, every short exact sequence splits by the semisimplicity result.
 3. Point evaluation is obtained from the imported comodule/rational-representation dictionary. Dimension is a biproduct-additive and tensor-multiplicative invariant, so the `SplitK0.liftRingHom` gives dimension R_g(K)→Z.
 
-**API.**
+The required interface has the following properties.
 
-- `RatRep`: Alias of the finite right-comodule category over O_g(K).
-- `repRing`: Alias of the SplitK0 of RatRep_g(K), with its inherited commutative-ring structure.
-- `classOf`: The SplitK0.of class of an algebraic representation.
-- `classOf_tensor`: classOf(M⊗N)=classOf(M)classOf(N).
-- `dimension`: The canonical ring homomorphism R_g(K)→Z sending [M] to dim_K M.
+- Alias of the finite right-comodule category over O_g(K).
+- Alias of the SplitK0 of RatRep_g(K), with its inherited commutative-ring structure.
+- The SplitK0.of class of an algebraic representation.
+- class of tensor: classOf(M⊗N)=classOf(M)classOf(N).
+- The canonical ring homomorphism R_g(K)→Z sending [M] to dim_K M.
 
-**Unit tests.**
+**Checks.**
 
-- `ring.test_unit`: [1]=1 and dimension([1])=1.
-- `ring.test_zero`: [0]=0 and dimension([0])=0.
-- `ring.test_biproduct`: For M,N, [M⊕N]=[M]+[N], exactly the SplitK0 biproduct relation.
+- [1]=1 and dimension([1])=1.
+- [0]=0 and dimension([0])=0.
+- For M,N, [M⊕N]=[M]+[N], exactly the SplitK0 biproduct relation.
 
 **Consequences to check.** Finite-dimensional comodule morphisms preserve the algebraic coaction for all K-algebras, not only abstract point actions. The class of the tensor unit is 1 and the class of the zero comodule is 0.
 
-<a id="standard-representation"></a>
+*Needs:* [Algebraic presentation of the symplectic similitude group](#cg01-algebraic-presentation-of-the-symplectic-similitude-group); [The central cover and its parity constraint](#cg06-the-central-cover-and-its-parity-constraint); [`TauCeti.FGComoduleCat`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Basic.lean); [`TauCeti.FGComoduleCat.instMonoidalCategory`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Monoidal.lean); [`TauCeti.FGComoduleCat.instBraidedCategory`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Symmetric.lean); [`TauCeti.FGComoduleCat.hasBinaryBiproducts`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/Finite/Product.lean); [`TauCeti.SplitK0`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean); [`TauCeti.SplitK0.of`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Split.lean); [`TauCeti.SplitK0.of_mul_of`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal/Basic.lean); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups).
 
-### The standard algebraic GSp representation
+### CG.1.2 The standard algebraic GSp representation
 
 Build the standard finite algebraic comodule V_g(K) on K^(2g), with
 δ(e_b)=Σ_a e_a⊗x_ab. Its action at an A-point is the defining matrix
@@ -472,77 +573,86 @@ action. After torus restriction it has precisely the weights e_i and
 e_t−e_i, each once. Use the generic comodule exterior and tensor functors
 for Λ^kV and V^⊗d, including their boundary isomorphisms. Identify their
 point actions with the existing ClassicalGroups constructions; preserve
-this comparison when computing traces.
-
-**Prerequisites:** [Algebraic presentation of the symplectic similitude group](#coordinate-hopf-algebra); [The diagonal GSp torus](#diagonal-torus); [The rational algebraic representation ring](#rational-representation-ring); [ClassicalGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-1-functorial-constructions-and-tensor-powers); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules); [ClassicalGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-0-the-classical-groups-and-the-standard-representation).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+this comparison when computing traces. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
 1. The matrix comultiplication and counit identities give the displayed coaction and finite dimension.
-2. Corestrict through torusRestriction and read off the diagonal entries.
-3. Consume the generic tensor/exterior comodule operations from ReductiveGroups Layer 1, and the existing abstract exterior-power trace calculation after point evaluation; no second exterior algebra is introduced.
+2. Corestrict through the torus coordinate restriction and read off the diagonal entries.
+3. Bundle `TauCeti.Comodule.exteriorPower` K O_g(K) V k in `TauCeti.FGComoduleCat`. Reuse `TauCeti.Comodule.Hom.exteriorPowerMap` and `TauCeti.Comodule.baseChange_subtype_endOfPoint_ιMulti` from `TauCeti/Algebra/Coalgebra/Comodule/ExteriorAlgebra/Power.lean`. Tensor products use the native finite-comodule tensor structure. The remaining GSp boundary isomorphisms and comparison with the abstract exterior trace theorem are specialized targets here.
 
-**API.**
+The required interface has the following properties.
 
-- `standard`: The finite comodule V_g(K) on K^(2g) with the displayed matrix coaction.
-- `standard_finrank`: dim_K V_g(K)=2g.
-- `standard_coaction`: Under standardCoordinates, the coaction of v is Σ_a e_a⊗(Σ_b v_b x_ab). This pins the matrix convention over the coordinate Hopf algebra, before evaluation at points.
-- `standard_point_action`: The action at a similitude point is multiplication by its defining matrix.
-- `exteriorStandard`: Λ^k V_g as the imported exterior-power algebraic comodule; Λ^0 V=1 and Λ^k V=0 for k>2g.
-- `tensorStandard`: V_g^⊗d with the imported diagonal tensor coaction; degree zero is the tensor unit.
+- The finite comodule V_g(K) on K^(2g) with the displayed matrix coaction.
+- standard finrank: dim_K V_g(K)=2g.
+- Under the standard coordinate identification, the coaction of v is Σ_a e_a⊗(Σ_b v_b x_ab). This pins the matrix convention over the coordinate Hopf algebra, before evaluation at points.
+- The action at a similitude point is multiplication by its defining matrix.
+- exterior standard: Λ^k V_g as the imported exterior-power algebraic comodule; Λ^0 V=1 and Λ^k V=0 for k>2g.
+- V_g^⊗d with the imported diagonal tensor coaction; degree zero is the tensor unit.
 
-**Unit tests.**
+The standard point comparison target identifies evaluation over every
+commutative K-algebra A with h acting on A^(2g) by matrix multiplication.
+For K=C it is ClassicalGroups Layer 0's standard GL representation restricted
+to GSp, and then to Sp. For g≥1 and characteristic-zero K, prove that a
+subspace of any finite O_g(K)-comodule is a subcomodule exactly when it is
+stable under every GSp₂g(K)-point. Use the rational-action/comodule dictionary
+from ReductiveGroups Layer 1 and schematic density of the K-points of this
+smooth connected split group (Milne, Proposition 4.32, p.96, and its
+stabilizer argument). Consequently comodule simplicity and semisimplicity
+agree with those of this point action.
 
-- `standard.test_rank_one`: In rank one V is the standard GL₂ comodule under the coordinate Hopf isomorphism.
-- `standard.test_exterior_zero`: Λ^0 V is the tensor unit and Λ^(2g+1)V is zero.
-- `standard.test_torus_weights`: In rank one the character is z_1+t/z_1, with central scalar degree 1 on both weights.
+The point comparison intertwines tensor, symmetric and exterior operations;
+its exterior equation is the native pure-wedge point-action theorem. It
+respects subspaces and complements, so it transports complete reducibility.
+
+**Checks.**
+
+- In rank one V is the standard GL₂ comodule under the coordinate Hopf isomorphism.
+- Λ^0 V is the tensor unit and Λ^(2g+1)V is zero.
+- In rank one the character is z_1+t/z_1, with central scalar degree 1 on both weights.
+
+- For the scalar point 2I, the standard action is multiplication by 2, while the multiplier action is 4; the inverse matrix convention gives 1/2 and fails.
+- The line K e₁ is stable under the diagonal torus but not GSp: the symplectic pair swap sends e₁ to −f₁. Torus stability alone therefore fails the subcomodule criterion.
+- The zero and whole subspaces are stable under all points and are subcomodules, with dimensions 0 and 2g.
 
 **Consequences to check.** V has dimension 2g, central degree 1 and multiplier-twisted alternating pairing V⊗V→ν.
 
-<a id="multiplier-line"></a>
+*Needs:* [Algebraic presentation of the symplectic similitude group](#cg01-algebraic-presentation-of-the-symplectic-similitude-group); [The diagonal GSp torus](#cg04-the-diagonal-gsp-torus); [The rational algebraic representation ring](#cg11-the-rational-algebraic-representation-ring); [ClassicalGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-1-functorial-constructions-and-tensor-powers); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules); [ClassicalGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-0-the-classical-groups-and-the-standard-representation).
 
-### The multiplier line and its integer twists
+### CG.1.3 The multiplier line and its integer twists
 
 For every m∈Z define the one-dimensional comodule ν^m by
 δ(1)=1⊗s^m. Give ν^m⊗ν^n≅ν^(m+n), ν^0≅1, and the identification of
 the dual of ν^m with ν^(−m). The element [ν] is a unit of R_g(K) with
 inverse [ν⁻¹]; it has torus character t and scalar degree 2. Integer
-powers, including negative ones, use the invertible group-like coordinate.
-
-**Prerequisites:** [Algebraic presentation of the symplectic similitude group](#coordinate-hopf-algebra); [The rational algebraic representation ring](#rational-representation-ring).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+powers, including negative ones, use the invertible group-like coordinate. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
 1. The invertible group-like coordinate s makes all integer powers group-like, so the formula is a one-dimensional comodule.
 2. Tensoring coactions multiplies s^m; the inherited SplitK0 product yields the class formulas.
 
-**API.**
+The required interface has the following properties.
 
-- `multiplier`: ν^m, the one-dimensional comodule with coefficient s^m for every integer m.
-- `multiplier_tensor`: ν^m⊗ν^n is canonically isomorphic to ν^(m+n).
-- `multiplierClass`: The class [ν] is invertible with inverse [ν⁻¹].
+- multiplier: ν^m, the one-dimensional comodule with coefficient s^m for every integer m.
+- multiplier tensor: ν^m⊗ν^n is canonically isomorphic to ν^(m+n).
+- The class [ν] is invertible with inverse [ν⁻¹].
 
-**Unit tests.**
+**Checks.**
 
-- `multiplier.test_zero`: ν^0 is the tensor unit.
-- `multiplier.test_rank_one`: For g=1, ν is Λ²V, the GL₂ determinant comodule.
-- `multiplier.test_negative`: ν⁻¹ has torus character t⁻¹ and is not a constituent of any V^⊗d with d≥0.
+- ν^0 is the tensor unit.
+- For g=1, ν is Λ²V, the GL₂ determinant comodule.
+- ν⁻¹ has torus character t⁻¹ and is not a constituent of any V^⊗d with d≥0.
 
 **Consequences to check.** For scalar cI, ν(cI)=c². Negative multiplier twists are algebraic rational representations.
 
-<a id="primitive-exterior-powers"></a>
+*Needs:* [Algebraic presentation of the symplectic similitude group](#cg01-algebraic-presentation-of-the-symplectic-similitude-group); [The rational algebraic representation ring](#cg11-the-rational-algebraic-representation-ring).
 
-### Primitive symplectic exterior powers with multiplier twist
+### CG.1.4 Primitive symplectic exterior powers with multiplier twist
 
-For 2≤k≤g construct the comodule contraction
+For 2≤k≤g construct the comodule contraction ([Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132; [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
-\[
-\kappa_k:\Lambda^kV\longrightarrow\nu\otimes\Lambda^{k-2}V.
-\]
+`κ_k : ΛᵏV → ν ⊗ Λ^(k−2)V.`
 
 On v₁∧⋯∧v_k its formula sums over 1≤a<b≤k:
 (−1)^(a+b−1)ω(v_a,v_b) times the wedge with v_a,v_b omitted,
@@ -553,40 +663,34 @@ subcomodule kernel and its finiteness theorem. The coalgebra is flat and the
 source Noetherian because the coefficients are a field and the source
 finite-dimensional. The construction has only the stated degrees 0≤k≤g.
 
-**Prerequisites:** [The standard algebraic GSp representation](#standard-representation); [The multiplier line and its integer twists](#multiplier-line); [`TauCeti.Comodule.Hom.ker`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean); [`TauCeti.Comodule.Hom.ker_finite`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean).
-
-**Sources:** [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132; [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
-
 **Construction and proof.**
 
 1. The alternating universal property factors the displayed multilinear contraction through the existing exterior power. Because ω(hv,hw)=ν(h)ω(v,w), it is a comodule map to the multiplier-twisted target.
 2. Use the Comodule.Hom.ker and ker_finite to take the kernel as a finite subcomodule; bundle it through FGComoduleCat. The boundary degrees have the stated values.
 
-**API.**
+The required interface has the following properties.
 
-- `contraction`: The displayed ν-valued contraction κ_k for 2≤k≤g, using the exterior-power module.
-- `primitive`: P_k is the kernel of κ_k for 2≤k≤g, with P_0=1 and P_1=V.
-- `primitiveInclusion`: The natural monomorphism P_k→Λ^k V; its image is ker κ_k for k≥2.
-- `contraction_pair`: κ_2(v∧w)=ω(v,w) in ν.
-- `alternatingForm_coordinates`: In standardCoordinates the scalar-valued form used to describe the ν-valued pairing is ω(v,w)=Σ_ab v_a J_ab w_b, for J=[[0,I],[-I,0]]. Thus contraction_pair uses this specific alternating form.
+- The displayed ν-valued contraction κ_k for 2≤k≤g, using the exterior-power module.
+- P_k is the kernel of κ_k for 2≤k≤g, with P_0=1 and P_1=V.
+- The natural monomorphism P_k→Λ^k V; its image is ker κ_k for k≥2.
+- contraction pair: κ_2(v∧w)=ω(v,w) in ν.
+- In the standard coordinate identification the scalar-valued form used to describe the ν-valued pairing is ω(v,w)=Σ_ab v_a J_ab w_b, for J=[[0,I],[-I,0]]. Thus contraction_pair uses this specific alternating form.
 
-**Unit tests.**
+**Checks.**
 
-- `primitive.test_zero`: P_0 is the tensor unit and P_1 is V.
-- `primitive.test_rank_two`: For g=2, dim P_2=6−1=5.
-- `primitive.test_twist`: For g≥2, κ_2((2v)∧(2w))=4κ_2(v∧w), the scalar action on ν; an untwisted trivial target would act by 1.
+- P_0 is the tensor unit and P_1 is V.
+- For g=2, dim P_2=6−1=5.
+- For g≥2, κ₂(e₁∧f₁)=1 in ν and κ₂(f₁∧e₁)=−1. At scalar 2 the first nonzero image becomes 4; zero contraction and the opposite sign both fail.
 
 **Consequences to check.** The untwisted contraction is equivariant only after restricting to Sp; over GSp its target must contain ν. The kernel API requires flatness of the coordinate coalgebra and a Noetherian source for kernel finiteness; both follow here from field coefficients and finite dimension.
 
-<a id="primitive-exterior-decomposition"></a>
+*Needs:* [The standard algebraic GSp representation](#cg12-the-standard-algebraic-gsp-representation); [The multiplier line and its integer twists](#cg13-the-multiplier-line-and-its-integer-twists); [`TauCeti.Comodule.Hom.ker`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean); [`TauCeti.Comodule.Hom.ker_finite`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Subcomodule/Comap.lean).
 
-### Primitive exterior decomposition and fundamental highest weights
+### CG.1.5 Primitive exterior decomposition and fundamental highest weights
 
-For 2≤k≤g prove κ_k surjective and split its exact sequence to give
+For 2≤k≤g prove κ_k surjective and split its exact sequence to give ([Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–133 (the contraction-kernel argument and the second fundamental dimension); [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
-\[
-\Lambda^kV\simeq P_k\oplus(\nu\otimes\Lambda^{k-2}V).
-\]
+`ΛᵏV ≃ P_k ⊕ (ν ⊗ Λ^(k−2)V).`
 
 For 1≤k≤g, prove P_k absolutely simple with highest weight
 (0,(1^k,0^(g−k))) and dimension
@@ -594,60 +698,48 @@ binom(2g,k)−binom(2g,k−2), where a negative lower index contributes zero.
 It is a summand of V^⊗k; ν is a summand of V^⊗2. Consequently the
 primitive class is [Λ^kV]−[ν][Λ^(k−2)V]. The k=1 expression is [V].
 
-**Prerequisites:** [Primitive symplectic exterior powers with multiplier twist](#primitive-exterior-powers); [The central cover and its parity constraint](#central-cover); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification); [ClassicalGroups Layer 5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-5-the-weyl-dimension-formula); [ClassicalGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-1-functorial-constructions-and-tensor-powers); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups).
-
-**Sources:** [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–133 (the contraction-kernel argument and the second fundamental dimension); [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
-
 **Construction and proof.**
 
-1. Choose the standard basis e_i,f_i with ω(e_i,f_j)=δ_ij. After trivializing the underlying multiplier line, let L be wedge multiplication by Σ_i e_i∧f_i; its equivariant form carries the appropriate multiplier twist. With the stated positive contraction on e_i∧f_i, [κ,L]=(g−k) in degree k. The Lefschetz decomposition has nonzero contraction coefficients in characteristic zero and proves surjectivity for k≤g. This explicit normalization avoids identifying L with a bivector of the opposite sign.
+1. Choose the standard basis e_i,f_i with ω(e_i,f_j)=δ_ij. Define the raising map L_k:ν⊗ΛᵏV→Λ^(k+2)V by wedge multiplication by Σ_i e_i∧f_i in the chosen multiplier basis. The bivector has character ν, so this is the indicated equivariant map. With the stated positive contraction on e_i∧f_i, [κ,L]=(g−k) in degree k. The Lefschetz decomposition has nonzero contraction coefficients in characteristic zero and proves surjectivity for k≤g. This explicit normalization avoids identifying L with a bivector of the opposite sign.
 2. Use semisimplicity for the splitting. The vector e_1∧⋯∧e_k lies in the kernel with the stated highest weight; the imported Sp highest-weight/dimension theorem and the displayed dimension computation identify the kernel as the corresponding fundamental simple module.
-3. The central cover transfers simplicity to GSp and verifies absolute simplicity. Antisymmetrization splits Λ^kV out of V^⊗k because k! is invertible; the pairing splits ν out of V^⊗2.
+3. The central cover transfers simplicity to GSp and verifies absolute simplicity. ClassicalGroups Layer 2 identifies the column Schur functor with Λ^k over C; the standard point comparison transports it, and the rational alternating projector (1/k!)Σ_σ sign(σ)σ gives the splitting over K; the pairing splits ν out of V^⊗2.
 
 **Consequences to check.** For k=1 the correction term is zero, so [P_1]=[V]. In rank two the second primitive module has dimension 5, whereas Λ²V has dimension 6.
 
-<a id="hom-and-weight-base-change"></a>
+*Needs:* [Primitive symplectic exterior powers with multiplier twist](#cg14-primitive-symplectic-exterior-powers-with-multiplier-twist); [The central cover and its parity constraint](#cg06-the-central-cover-and-its-parity-constraint); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification); [ClassicalGroups Layer 5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-5-the-weyl-dimension-formula); [ClassicalGroups Layer 2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-2-the-weyl-construction-via-young-symmetrizers); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups).
 
-### Hom spaces and torus weights commute with field extension
+### CG.1.6 Hom spaces and torus weights commute with field extension
 
 Let K/F be any characteristic-zero field extension. Give the Hopf
 comparison O_g(K)≃K⊗_F O_g(F) and the additive strong symmetric
 monoidal scalar-extension functor M↦M_K on finite comodules. For finite
-M,N prove the canonical K-linear map
-
-\[
-K\otimes_F\operatorname{Hom}_{GSp_F}(M,N)
-\longrightarrow\operatorname{Hom}_{GSp_K}(M_K,N_K)
-\]
-
-is an isomorphism. Each torus weight space also base-changes, preserving its
+M,N prove that the canonical K-linear map
+`K ⊗_F Hom_GSp_F(M,N) → Hom_GSp_K(M_K,N_K)`
+is an isomorphism (Milne, Chapter 4 §i, Corollary 4.34, p.96, and
+Exercise 4-4(a,b), p.97). Each torus weight space also base-changes, preserving its
 dimension. The functor reflects invertibility of a given morphism, detects
 zero morphisms, and reflects whether two objects are isomorphic. Its map
 on unextended Hom sets need not be surjective: Hom(1,1) changes from F to K.
-These comparisons are established before highest-weight classification.
-
-**Prerequisites:** [Algebraic presentation of the symplectic similitude group](#coordinate-hopf-algebra); [The diagonal GSp torus](#diagonal-torus); [The rational algebraic representation ring](#rational-representation-ring); [`TauCeti.Comodule.baseChange`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/BaseChange.lean); [`TauCeti.DiagonalizableGroup.weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.DiagonalizableGroup.isInternal_weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules).
-
-**Sources:** [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466.
+Specialize ReductiveGroups §10A scalar extension to the displayed GSp coordinate algebra; prove these explicit Hom and weight comparisons before using the §10B model comparison.
 
 **Construction and proof.**
 
 1. Polynomial quotient and determinant localization commute with scalar extension, giving the specified Hopf algebra comparison for K/F. Use the actual Comodule.baseChange with both coefficient and module base-changed.
 2. Choose bases of the finite-dimensional modules. Equivariance of a linear map is a finite system of linear equations: matrix coaction coefficients span a finite-dimensional subspace of O_g(F). Flat scalar extension commutes with this kernel.
-3. Apply the same kernel argument to each weight equation. Faithful field extension detects zero and exactness; an invertible equivariant map after extension forces an equivariant isomorphism over F: use the nonempty invertible locus in the finite-dimensional Hom space over the infinite field F. This argument does not depend on the classification.
+3. Weight-space base change also follows by applying Corollary 4.34 to invariants after twisting by the inverse torus character. Faithful field extension detects zero and exactness; an invertible equivariant map after extension forces an equivariant isomorphism over F: use the nonempty invertible locus in the finite-dimensional Hom space over the infinite field F. This argument does not depend on the classification.
 
-**API.**
+The required interface has the following properties.
 
-- `coordinateBaseChange`, `scalarExtendCoordinates`: Identify the extended coordinate Hopf algebra and underlying module with K⊗_F O_g(F) and K⊗_F M respectively.
-- `scalarExtend_coaction`, `scalarExtend_map`: Under those identifications the coaction is the native Comodule.baseChangeCoact, and a morphism sends a⊗m to a⊗f(m).
-- `homBaseChange_tmul`: The canonical Hom comparison sends a⊗f to a times the scalar-extended morphism f.
-- `scalarExtend_reflectsIso`, `homAndWeightBaseChange`: Reflect invertibility and object isomorphisms, detect zero maps, and give the Hom and weight-space comparisons for every characteristic-zero K/F.
+- Identify the extended coordinate Hopf algebra and underlying module with K⊗_F O_g(F) and K⊗_F M respectively.
+- Under those identifications the coaction is the native Comodule.baseChangeCoact, and a morphism sends a⊗m to a⊗f(m).
+- The canonical Hom comparison sends a⊗f to a times the scalar-extended morphism f.
+- Reflect invertibility and object isomorphisms, detect zero maps, and give the Hom and weight-space comparisons for every characteristic-zero K/F.
 
 **Consequences to check.** This is not fullness of the scalar-extension functor: Hom(1,1)=Q maps into C, not onto C. The standard and multiplier character polynomials retain their integer coefficients after extension.
 
-<a id="irreducible-rational-model"></a>
+*Needs:* [Algebraic presentation of the symplectic similitude group](#cg01-algebraic-presentation-of-the-symplectic-similitude-group); [The diagonal GSp torus](#cg04-the-diagonal-gsp-torus); [The rational algebraic representation ring](#cg11-the-rational-algebraic-representation-ring); [`TauCeti.Comodule.baseChange`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/BaseChange.lean); [`TauCeti.DiagonalizableGroup.weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.DiagonalizableGroup.isInternal_weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules).
 
-### Rational models of the GSp highest-weight modules
+### CG.1.7 Rational models of the GSp highest-weight modules
 
 For wt=(m,u)∈Dom_g construct an algebraic model L_g,K(wt) over Q
 and then over K. Put a_k=u_k−u_(k+1), with u_(g+1)=0.
@@ -657,60 +749,52 @@ and dimension one. Prove this component absolutely simple, and twist it by
 ν^m to obtain L(m,u). Its scalar degree is 2m+Σu_i. Give natural
 compatibility with field extension. This constructs the rational form
 inside a definite tensor product rather than choosing a form of a complex
-simple module.
-
-**Prerequisites:** [The integral central-similitude weight lattice](#similitude-weight-lattice); [The central cover and its parity constraint](#central-cover); [Primitive exterior decomposition and fundamental highest weights](#primitive-exterior-decomposition); [Hom spaces and torus weights commute with field extension](#hom-and-weight-base-change); [`TauCeti.Comodule.matrixCoefficientSubcoalgebra`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean); [`TauCeti.Comodule.matrixCoefficientSubcoalgebra_finite`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification); [LieHighestWeight Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/LieHighestWeight/README.md#layer-4-the-classification-of-finite-dimensional-irreducibles); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups); [ClassicalGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-1-functorial-constructions-and-tensor-powers); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules).
-
-**Sources:** [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132; [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+simple module. ([Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132; [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
-1. The explicit primitive highest vectors and the a_k give a rational highest tensor vector. Its generated subcomodule is the span of coefficient extractions from its coaction: restrict to the existing matrixCoefficientSubcoalgebra D, whose finite underlying module is supplied by matrixCoefficientSubcoalgebra_finite, and apply id⊗φ for φ∈D*. Coassociativity makes this span stable and minimal. The finite-dual and span constructions commute with flat field extension, so the rational generated component extends to the complex Cartan component.
-2. After extension to C, apply imported semisimplicity to the tensor product and the highest-weight classification/uniqueness to its simple summands. The tensor highest vector is killed by positive-root operators and its weight u is the unique top weight, with a one-dimensional weight space. Its projection to a simple summand is either zero or a highest vector of weight u; uniqueness and the one-dimensional top line leave exactly one such summand. The generated submodule is therefore that simple Sp module: this proves the Cartan-component step here, rather than requesting it from the classification layer. The centre acts by Σu_i, and the central parity criterion descends the component to GSp.
-3. Faithful extension proves simplicity and scalar endomorphisms over Q. The generic Hom base-change theorem makes End_K one-dimensional for every K/Q; semisimplicity over K therefore proves that each model remains simple. Twisting by ν^m gives every central-compatible highest weight, including negative m.
+1. The explicit primitive highest vectors and the a_k give a rational highest tensor vector. Apply gap:generated-vector-base-change to its ambient finite tensor comodule, using the native finite matrix-coefficient subcoalgebra. The supplied compatibility identifies its extension with the generated component over every field K. The target here is comparison of that specified component with the supplied split simple.
+2. Identify ReductiveGroups §10B's split torus lattice with X_g, matching each simple root and coroot and the central degree. The tensor top line has weight (0,u), is one-dimensional, and all other weights are lower. Complete reducibility and the supplied highest-weight uniqueness identify its generated subcomodule with §10B's L(0,u).
+3. Transport §10B's absolute simplicity, scalar endomorphisms and arbitrary-field base change across this comparison. Twisting by ν^m gives its L(m,u). Only the comparison with this explicit primitive-tensor model is constructed here.
 
-**API.**
+The required interface has the following properties.
 
-- `irreducible`: L_g,K(λ), the rational highest-weight model indexed by Dom_g.
-- `irreducible_zero`: L_g,K((0,0)) is the tensor unit.
-- `irreducible_multiplier_twist`: ν^n⊗L(m,u)≅L(m+n,u), for every n∈Z.
+- L_g,K(λ), the rational highest-weight model indexed by Dom_g.
+- L_g,K((0,0)) is the tensor unit.
+- irreducible multiplier twist: ν^n⊗L(m,u)≅L(m+n,u), for every n∈Z.
 
-**Unit tests.**
+**Checks.**
 
-- `irreducible.test_standard`: L(0,(1,0,…,0))≅V.
-- `irreducible.test_multiplier_inverse`: L(−1,0)≅ν⁻¹.
-- `irreducible.test_rank_one`: For g=1, L(m,u)≅det^m⊗Sym^u(V) as a rational GL₂ representation.
+- L(0,(1,0,…,0))≅V.
+- L(−1,0)≅ν⁻¹.
+- For g=1, L(m,u)≅det^m⊗Sym^u(V) as a rational GL₂ representation.
 
 **Consequences to check.** The highest vector is constructed inside a tensor product; no assertion that an arbitrary complex module has a chosen rational form is substituted for the descent proof.
 
-<a id="rational-highest-weight-classification"></a>
+*Needs:* ReductiveGroups §10A–10B, gap:generated-vector-base-change; [The integral central-similitude weight lattice](#cg03-the-integral-central-similitude-weight-lattice); [The central cover and its parity constraint](#cg06-the-central-cover-and-its-parity-constraint); [Primitive exterior decomposition and fundamental highest weights](#cg15-primitive-exterior-decomposition-and-fundamental-highest-weights); [Hom spaces and torus weights commute with field extension](#cg16-hom-spaces-and-torus-weights-commute-with-field-extension); [`TauCeti.Comodule.matrixCoefficientSubcoalgebra`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean); [`TauCeti.Comodule.matrixCoefficientSubcoalgebra_finite`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/Coalgebra/Comodule/MatrixCoefficient/Subcoalgebra.lean); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification); [LieHighestWeight Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/LieHighestWeight/README.md#layer-4-the-classification-of-finite-dimensional-irreducibles); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups); [ClassicalGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-1-functorial-constructions-and-tensor-powers); [ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules).
 
-### Highest-weight classification over Q and its extensions
+### CG.1.8 Highest-weight classification over Q and its extensions
 
-Prove that, for every characteristic-zero K, wt↦L_g,K(wt)
-bijects Dom_g with the isomorphism classes of simple finite algebraic
-representations. The highest weight of L(wt) has multiplicity one and each
-other weight is strictly lower in the nonnegative simple-root order.
-End(L(wt))=K through scalar multiplication. Every finite algebraic
-representation is a finite direct sum of these simples, and two objects
-are isomorphic exactly when their simple multiplicities agree. In rank
-one this is the GL₂ classification det^m⊗Sym^uV, with m∈Z and u≥0.
+Identify the explicit primitive-tensor model L_g,K(m,u) with the simple
+of ReductiveGroups §10B under the lattice comparison above. Transport its
+classification, one-dimensional highest line, lower-weight triangularity,
+End=K, absolute simplicity and field-extension compatibility. With
+ReductiveGroups Layer 6 semisimplicity, simple multiplicities classify all
+finite GSp representations. These are consequences of the comparison,
+not a second proof of split reductive classification (Milne, Theorem 22.2
+and Complements 22.3–22.6, pp.464–466; Lemma 22.39 and Theorem 22.42,
+pp.477–479).
 
-**Prerequisites:** [Rational models of the GSp highest-weight modules](#irreducible-rational-model); [Hom spaces and torus weights commute with field extension](#hom-and-weight-base-change); [The central cover and its parity constraint](#central-cover); [ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification); [ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups).
+**Checks.**
 
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §c, Lemma 22.39 and Theorem 22.42, pp.477–479.
+- At g=1, L(m,u)=det^m⊗Sym^u V, for all integers m and u≥0; its GL₂ highest exponents are (m+u,m).
+- L(−1,0) is ν⁻¹, has dimension 1 and degree −2; restricting m≥0 would omit it.
+- Over Q and over C, L(0,0) is the unit and its endomorphism algebra has dimension 1 over the respective field; extension changes Q to C, not to a two-dimensional endomorphism algebra.
 
-**Construction and proof.**
+*Needs:* [Rational models of the GSp highest-weight modules](#cg17-rational-models-of-the-gsp-highest-weight-modules);
+ReductiveGroups §10A–10B and Layer 6.
 
-1. For Q-to-C extension the imported connected Sp classification and central cover give exactly the dominant pairs. The preceding comparison supplies absolutely simple rational models for all of them. To treat an arbitrary characteristic-zero K without supposing it embeds in C, descend the finitely many coaction coefficients of a finite object to a finitely generated subfield F/Q inside K; F embeds in C. Comodule identities descend because field inclusion is faithful.
-2. A K-simple object has a simple descended F-form: any proper F-subcomodule would remain proper after extension. Semisimplicity over C gives a simple rational model occurring in its C-extension. Generic F-to-C Hom base change descends a nonzero morphism from that model, which is an isomorphism over F by simplicity; extend it to K. This includes the Q case.
-3. Uniqueness, highest-weight triangularity and scalar endomorphisms descend from the corresponding split highest-weight statements; combine with imported semisimplicity.
-
-**Consequences to check.** There is no restriction m≥0 in the rational classification. In rank one u labels the difference of the two GL₂ highest exponents, and m is the lower exponent.
-
-<a id="scalar-extension-ring-equivalence"></a>
-
-### Rational and complex representation rings
+### CG.1.9 Rational and complex representation rings
 
 Use scalar extension BC_K:RatRep_g(Q)→RatRep_g(K), with its
 additive strong symmetric monoidal structure, to induce the canonical
@@ -719,30 +803,36 @@ and preserves the standard, multiplier and primitive classes and the
 integral torus character. In particular it identifies the rational and
 complex representation rings. This comparison identifies rings and
 simple isomorphism classes; it does not identify the Q-linear and K-linear
-representation categories.
-
-**Prerequisites:** [Hom spaces and torus weights commute with field extension](#hom-and-weight-base-change); [Highest-weight classification over Q and its extensions](#rational-highest-weight-classification); [`TauCeti.SplitK0.mapRingHom`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal.lean).
-
-**Sources:** [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466; [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+representation categories. ([Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466; [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
 1. Use the actual base-change comodule functor and its additive/monoidal structure to form SplitK0.mapRingHom.
 2. Semisimplicity and the classification make split K₀ the free abelian group on the dominant-weight-indexed simple classes. The induced map preserves this basis, hence is bijective and is a ring equivalence.
 
-**API.**
+The required interface has the following properties.
 
-- `baseChange`: BC_K is the additive strong symmetric monoidal finite-comodule scalar-extension functor.
-- `scalarExtensionRingEquiv`: The canonical R_g(Q)≃+*R_g(K) induced by BC_K.
-- `scalarExtensionRingEquiv_classOf`: The equivalence sends [M] to [BC_K M].
+- BC_K is the additive strong symmetric monoidal finite-comodule scalar-extension functor.
+- The canonical R_g(Q)≃+*R_g(K) induced by BC_K.
+- The equivalence sends [M] to [BC_K M].
 
-**Unit tests.**
+**Checks.**
 
-- `baseChange.test_identity`: For K=Q the ring equivalence is the identity.
-- `baseChange.test_standard`: It sends the Q-standard and Q-multiplier classes to their K counterparts.
-- `baseChange.test_simple`: Every [L_g,Q(λ)] maps to exactly [L_g,K(λ)], with multiplicity one.
+- For K=Q the ring equivalence is the identity.
+- It sends the Q-standard and Q-multiplier classes to their K counterparts.
+- Every [L_g,Q(λ)] maps to exactly [L_g,K(λ)], with multiplicity one.
 
 **Consequences to check.** Base change cannot multiply a simple class by its dimension or split it into several rational-form classes.
+
+*Needs:* [Hom spaces and torus weights commute with field extension](#cg16-hom-spaces-and-torus-weights-commute-with-field-extension); [Highest-weight classification over Q and its extensions](#cg18-highest-weight-classification-over-q-and-its-extensions); [`TauCeti.SplitK0.mapRingHom`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal/Basic.lean).
+
+### Examples
+
+At g=2 the primitive second exterior module has dimension 6−1=5; at g=1 L(m,u)=det^m Sym^u V.
+
+### Dependencies
+
+Layer CG.0; native finite comodules, kernels and exterior powers; ReductiveGroups Layers 1 and 6 and §10A–10B; ClassicalGroups Layers 0–3 and 5; LieHighestWeight Layer 4; the generated-vector and category supplier gaps.
 
 ## Layer CG.2: Integral torus characters and the full representation ring
 
@@ -767,10 +857,7 @@ There is no averaging over W and no division by its order.
 The generating polynomial is ∏(1+x_i U+tU²). To obtain U^k, choose j
 quadratic factors and k−2j linear factors. Thus, for 0≤k≤g,
 
-\[
-E_k=\sum_{j=0}^{\lfloor k/2\rfloor}
-\binom{g-k+2j}{j}t^j e_{k-2j}(x).
-\]
+`E_k = Σ_(j=0)^⌊k/2⌋ binom(g−k+2j,j) t^j e_(k−2j)(x).`
 
 It follows that F_k=e_k(x) plus integer-polynomial combinations of t and
 earlier e_r(x), r<k. This triangular change of generators has diagonal
@@ -790,29 +877,20 @@ root order and inspect that coefficient. Primitive decomposition identifies
 F_k with the actual character of P_k, and ν gives t with inverse ν⁻¹.
 Since these generate the full invariant ring, the map is surjective as well.
 
-<a id="formal-torus-character"></a>
+### CG.2.1 The integral formal torus character
 
-### The integral formal torus character
+Specialize ReductiveGroups §10A to the lattice X_g. For a finite
+algebraic comodule M, identify its supplied formal character with ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466).
 
-For a finite algebraic comodule M, use its corestricted torus weight
-spaces to define
+`ch_T(M) = Σ_(wt∈X_g) dim_K(M_wt) [wt] ∈ L_g.`
 
-\[
-\operatorname{ch}_T(M)=\sum_{wt\in X_g}
-\dim_K(M_{wt})[wt]\in L_g.
-\]
-
-The nonzero terms form a finite set. Prove isomorphism invariance,
+The nonzero terms form a finite set. Transport isomorphism invariance,
 biproduct additivity, tensor multiplicativity, the unit formula and Weyl
-invariance. The existing SplitK0 lift then gives
-restrictionCharacter:R_g(K)→L_g^W. At any unit-valued torus point over
+invariance from §10A under the lattice comparison. The existing SplitK0 lift then gives
+the character restriction map:R_g(K)→L_g^W. At any unit-valued torus point over
 any commutative K-algebra A, evaluating this integer polynomial in A
 equals the A-linear trace on A⊗_K M. Give compatibility with dimension
 by augmentation and with field extension through the weight comparison.
-
-**Prerequisites:** [The diagonal GSp torus](#diagonal-torus); [Reciprocal Weyl action on the Laurent character algebra](#weyl-action); [The rational algebraic representation ring](#rational-representation-ring); [`TauCeti.DiagonalizableGroup.weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.DiagonalizableGroup.isInternal_weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.DiagonalizableGroup.finite_setOf_weightSpace_ne_bot`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.SplitK0.liftRingHom`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal.lean); [ClassicalGroups Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-4-characters-and-schur-polynomials).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466.
 
 **Construction and proof.**
 
@@ -820,38 +898,34 @@ by augmentation and with field extension through the weight comparison.
 2. Biproduct weights add and tensor weights convolve. A normalizer representative conjugates torus weights, so multiplicities are W-invariant.
 3. The `SplitK0.liftRingHom` extends this additive multiplicative invariant through SplitK0. The diagonalizable point-action theorem identifies each weight with its monomial eigenvalue and therefore proves the trace comparison.
 
-**API.**
+The required interface has the following properties.
 
-- `formalCharacter`: The finite integer weight-multiplicity sum attached to a finite algebraic representation.
-- `formalCharacter_coeff`: The coefficient at λ is dim_K of the corestricted λ-weight space.
-- `restrictionCharacter`: The ring homomorphism from the SplitK0 to the Weyl-fixed Subring.
-- `restrictionCharacter_classOf`: restrictionCharacter([M]) has underlying Laurent polynomial formalCharacter(M).
-- `formalCharacter_evaluate`: At every unit-valued torus point over a K-algebra A, evaluation equals the A-linear trace on A⊗_K M.
+- The finite integer weight-multiplicity sum attached to a finite algebraic representation.
+- The coefficient at λ is dim_K of the corestricted λ-weight space.
+- The ring homomorphism from the SplitK0 to the Weyl-fixed Subring.
+- restriction character class of: the character restriction map([M]) has underlying Laurent polynomial formalCharacter(M).
+- At every unit-valued torus point over a K-algebra A, evaluation equals the A-linear trace on A⊗_K M.
 
-**Unit tests.**
+**Checks.**
 
-- `character.test_unit`: ch(1)=1 and ch(0)=0.
-- `character.test_standard`: ch(V)=Σ_i(z_i+t/z_i).
-- `character.test_multiplier_inverse`: ch(ν⁻¹)=t⁻¹, with coefficient 1, not its negative.
-- `character.test_dimension`: The augmentation of ch(M) equals dim_K M.
+- ch(1)=1 and ch(0)=0.
+- ch(V)=Σ_i(z_i+t/z_i).
+- ch(ν⁻¹)=t⁻¹, with coefficient 1, not its negative.
+- The augmentation of ch(M) equals dim_K M.
 
 **Consequences to check.** The multiplier character is t and the standard character is Σ_i(z_i+t/z_i). Augmentation sending every monomial to 1 recovers dimension.
 
-<a id="character-injectivity"></a>
+*Needs:* ReductiveGroups §10A; [The diagonal GSp torus](#cg04-the-diagonal-gsp-torus); [Reciprocal Weyl action on the Laurent character algebra](#cg05-reciprocal-weyl-action-on-the-laurent-character-algebra); [The rational algebraic representation ring](#cg11-the-rational-algebraic-representation-ring); [`TauCeti.DiagonalizableGroup.weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.DiagonalizableGroup.isInternal_weightSpace`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.DiagonalizableGroup.finite_setOf_weightSpace_ne_bot`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/Algebra/AlgebraicGroup/DiagonalizableGroup/Weight.lean); [`TauCeti.SplitK0.liftRingHom`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/CategoryTheory/GrothendieckGroup/Monoidal/Basic.lean); [ClassicalGroups Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-4-characters-and-schur-polynomials).
 
-### Injectivity of rational character restriction
+### CG.2.2 Injectivity of rational character restriction
 
-For g≥1 and characteristic-zero K prove restrictionCharacter
+For g≥1 and characteristic-zero K prove the character restriction map
 injective. Each simple character has coefficient one at its highest
 weight wt, and all other weights lie strictly below wt in the positive
 simple-root order. Therefore a finite integer linear combination of
 simple characters vanishes exactly when every coefficient is zero.
 Use algebraic highest weights for this argument; the point group is
-infinite and finite-group character injectivity does not supply this result.
-
-**Prerequisites:** [The integral formal torus character](#formal-torus-character); [Highest-weight classification over Q and its extensions](#rational-highest-weight-classification); [Rational and complex representation rings](#scalar-extension-ring-equivalence); [ClassicalGroups Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-4-characters-and-schur-polynomials).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466.
+infinite and finite-group character injectivity does not supply this result. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Milne](https://www.jmilne.org/math/Books/iAG2022.pdf), Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466).
 
 **Construction and proof.**
 
@@ -861,27 +935,21 @@ infinite and finite-group character injectivity does not supply this result.
 
 **Consequences to check.** A class with torus character zero is zero even though GSp(Q) is infinite. At rank one determinant twists remain distinct, including negative twists.
 
-<a id="fundamental-exterior-characters"></a>
+*Needs:* [The integral formal torus character](#cg21-the-integral-formal-torus-character); [Highest-weight classification over Q and its extensions](#cg18-highest-weight-classification-over-q-and-its-extensions); [Rational and complex representation rings](#cg19-rational-and-complex-representation-rings); [ClassicalGroups Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-4-characters-and-schur-polynomials).
 
-### Fundamental exterior character polynomials
+### CG.2.3 Fundamental exterior character polynomials
 
 Define E_k for all integer k as elementary degree k in the 2g
 Laurent letters z_i,t/z_i, with zero outside 0≤k≤2g and E₀=1.
 For 1≤k≤g define F_k=E_k−tE_(k−2). All these polynomials are Weyl
 invariant. Write x_i=z_i+t/z_i and e_k(x) for elementary degree k in
-the g pair sums. Establish the generating identity
+the g pair sums. Establish the generating identity ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132).
 
-\[
-\sum_k E_kU^k=\prod_{i=1}^g(1+x_iU+tU^2).
-\]
+`Σ_k E_k U^k = ∏_(i=1)^g (1 + x_i U + t U²).`
 
 Relate E_k to the exterior-standard formal character using its exterior
 basis and the existing trace theorem. In particular F₁=E₁, and the signed
 index convention is essential at this boundary.
-
-**Prerequisites:** [Reciprocal Weyl action on the Laurent character algebra](#weyl-action); [`TauCeti.char_extPowerRep_diagonal`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/RepresentationTheory/ClassicalGroups/ExteriorPower.lean).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132.
 
 **Construction and proof.**
 
@@ -889,37 +957,37 @@ index convention is essential at this boundary.
 2. A Weyl generator permutes those 2g entries, proving invariance. F_k has its displayed multiplier correction.
 3. The exterior trace theorem supplies the pointwise elementary symmetric character computation; the formal weight-sum version follows from the same exterior basis.
 
-**API.**
+The required interface has the following properties.
 
 - `exteriorCharacter`: E_k for integer k, with E_k=0 outside 0≤k≤2g.
 - `fundamentalCharacter`: F_k=E_k−tE_(k−2), for 1≤k≤g.
 - `pairSum`: x_i=z_i+t/z_i.
-- `exteriorCharacter_generating`: The coefficient of U^k in ∏_i(1+x_iU+tU²) is E_k.
-- `fundamentalCharacter_invariant`: F_k is fixed by the reciprocal Weyl action for 1≤k≤g.
+- The coefficient of U^k in ∏_i(1+x_iU+tU²) is E_k.
+- F_k is fixed by the reciprocal Weyl action for 1≤k≤g.
 
-**Unit tests.**
+**Checks.**
 
-- `exterior.test_negative`: E_(−1)=0 and E_0=1.
-- `exterior.test_first`: F_1=E_1=Σx_i; the formula does not subtract t.
-- `exterior.test_rank_two`: For g=2, E_2=x_1x_2+2t and F_2=x_1x_2+t.
-- `exterior.test_top`: E_(2g)=t^g, the determinant character of the standard GSp representation.
+- E_(−1)=0 and E_0=1.
+- F_1=E_1=Σx_i; the formula does not subtract t.
+- For g=2, E_2=x_1x_2+2t and F_2=x_1x_2+t.
+- E_(2g)=t^g, the determinant character of the standard GSp representation.
+
+- At g=0, E₀=1, E₁=0 and E_(−1)=0, because the generating polynomial is 1. At any g, E_(2g+1)=0, so converting negative degrees by truncated natural subtraction would fail E_(−1)=0.
+- For g=1, x₁=z+t/z has coefficients 1 at (0,1) and (1,−1), has augmentation 2, and is unchanged by the flip. The expression z+z⁻¹ fails the second weight.
+- F₁ at g=1 equals x₁, F₂ at g=2 equals x₁x₂+t, and at g=3 the augmentation of F₃ is 20−6=14. The wrong k=1 correction would give x₁−t.
 
 **Consequences to check.** The generating function ΣE_kU^k=∏_i(1+x_iU+tU²). For g=2, F_2=x_1x_2+t.
 
-<a id="integral-invariant-presentation"></a>
+*Needs:* [Reciprocal Weyl action on the Laurent character algebra](#cg05-reciprocal-weyl-action-on-the-laurent-character-algebra); [`TauCeti.char_extPowerRep_diagonal`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RepresentationTheory/ClassicalGroups/ExteriorPower.lean).
 
-### Integral polynomial presentation of the full Weyl-fixed ring
+### CG.2.4 Integral polynomial presentation of the full Weyl-fixed ring
 
-Put A=Z[t±1]. Construct an A-algebra equivalence
+Put A=Z[t±1]. For every natural g, `fullInvariantPresentation` asserts existence of an A-algebra equivalence
 A[X₁,…,X_g]≃L_g^W, with X_k↦F_k and the coefficient t mapped to
 the multiplier monomial. Prove both generation and algebraic independence,
 integrally. This is a theorem about explicit Laurent algebras and does
 not depend on representation classification. The normal form is unique
-over Z[t±1], including invariants with odd orbit coefficients.
-
-**Prerequisites:** [Reciprocal Weyl action on the Laurent character algebra](#weyl-action); [Fundamental exterior character polynomials](#fundamental-exterior-characters); [`MvPolynomial.esymmAlgEquiv`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/MvPolynomial/Symmetric/FundamentalTheorem.lean).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+over Z[t±1], including invariants with odd orbit coefficients. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
@@ -927,34 +995,37 @@ over Z[t±1], including invariants with odd orbit coefficients.
 2. Apply the elementary-symmetric algebra equivalence over the ring A to the remaining S_g action. This proves the integral ring A[e_1(x),…,e_g(x)].
 3. For k≤g, expand the generating function: E_k=Σ_(j=0)^floor(k/2) binom(g−k+2j,j)t^j e_(k−2j)(x). Therefore F_k=e_k(x) plus a Z[t]-linear combination of lower e_(k−2j)(x), so recursive substitution changes generators by an integral triangular automorphism.
 
-**API.**
+The coefficient carrier `MultLaurent` is the group algebra Z[Z]. Its
+basis elements `coeffT` and `coeffTInv` have exponents 1 and −1. Their
+product is 1 and their powers give every coefficient monomial. The
+`fullInvariantPresentation` theorem specifies a ring equivalence whose
+X_i image is `fundamentalCharacter` i and whose coefficient generator images
+are `t` g and `tInv` g. These equations determine the coefficient map and
+hence the Z[t±1]-algebra presentation; no choice of a translated generator
+is allowed.
 
-- `fullInvariantEquiv`: The Z[t±1]-algebra equivalence from g-variable polynomials to L_g^W, with variable k sent to F_k.
-- `fullInvariantEquiv_variable`: X_k maps to F_k for 1≤k≤g.
-- `fullInvariantEquiv_multiplier`: The coefficient variable t and its inverse map to the multiplier monomials t and t⁻¹.
+**Checks.**
 
-**Unit tests.**
+- In the coefficient ring, T and T⁻¹ have coefficient 1 at exponents 1 and −1, coefficient 0 at exponent 0, and multiply to 1; replacing either by the zero element fails this identity.
+- The coefficient ring contains T⁻² with coefficient 1 at −2 and T² with coefficient 1 at 2; T⁻¹ differs from T and from 1. Thus it is a Laurent ring, not Z[T].
+- At g=0 the full presentation has no X variables and sends T,T⁻¹ to t,t⁻¹. This is Z[t±1], retaining both coefficient directions.
 
-- `fullInvariant.test_rank_one`: At g=1, the unique polynomial generator maps to z+t/z.
-- `fullInvariant.test_rank_two`: At g=2, F_2=e_2(x)+t, so the inverse sends e_2(x) to X_2−t.
-- `fullInvariant.test_integral`: Every invariant Laurent polynomial has a unique polynomial expression with coefficients in Z[t±1], including those with odd orbit coefficients.
+- At g=1, the unique polynomial generator maps to z+t/z.
+- At g=2, F_2=e_2(x)+t, so the inverse sends e_2(x) to X_2−t.
+- At g=1 the inverse image of z²+(t/z)² is X₁²−2T, with both orbit coefficients 1; the inverse image of the single constant orbit 1 is 1.
 
 **Consequences to check.** For g=1 the fixed ring is Z[t±1,z+t/z]. For g=2 replace e_2(x) by F_2−t without rational denominators.
 
-<a id="primitive-character-identity"></a>
+*Needs:* [Reciprocal Weyl action on the Laurent character algebra](#cg05-reciprocal-weyl-action-on-the-laurent-character-algebra); [Fundamental exterior character polynomials](#cg23-fundamental-exterior-character-polynomials); [`MvPolynomial.esymmAlgEquiv`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/MvPolynomial/Symmetric/FundamentalTheorem.lean).
 
-### Primitive representations have the fundamental characters
+### CG.2.5 Primitive representations have the fundamental characters
 
 Prove ch_T(P_k)=F_k for each 1≤k≤g and ch_T(ν)=t.
 The fundamental polynomials are thus characters of actual absolutely
 simple modules. The top exterior character is t^g in every rank;
 for rank one the exterior-square character is t. The decomposition and
 exterior-basis calculation supply these identities with the chosen
-multiplier twist.
-
-**Prerequisites:** [Primitive exterior decomposition and fundamental highest weights](#primitive-exterior-decomposition); [The multiplier line and its integer twists](#multiplier-line); [The integral formal torus character](#formal-torus-character); [Fundamental exterior character polynomials](#fundamental-exterior-characters); [`TauCeti.char_extPowerRep_diagonal`](https://github.com/TauCetiProject/TauCeti/blob/f790474821cf4256814db967cb154e7af3d0c369/TauCeti/RepresentationTheory/ClassicalGroups/ExteriorPower.lean).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132.
+multiplier twist. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132).
 
 **Construction and proof.**
 
@@ -963,41 +1034,47 @@ multiplier twist.
 
 **Consequences to check.** At g=2, evaluate t=z_i=1 to obtain dim P_2=5.
 
-<a id="rational-character-isomorphism"></a>
+*Needs:* [Primitive exterior decomposition and fundamental highest weights](#cg15-primitive-exterior-decomposition-and-fundamental-highest-weights); [The multiplier line and its integer twists](#cg13-the-multiplier-line-and-its-integer-twists); [The integral formal torus character](#cg21-the-integral-formal-torus-character); [Fundamental exterior character polynomials](#cg23-fundamental-exterior-character-polynomials); [`TauCeti.char_extPowerRep_diagonal`](https://github.com/TauCetiProject/TauCeti/blob/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti/RepresentationTheory/ClassicalGroups/ExteriorPower.lean).
 
-### The rational GSp character isomorphism
+### CG.2.6 The rational GSp character isomorphism
 
 For every characteristic-zero K construct the ring equivalence
-rationalCharacterEquiv:R_g(K)≃L_g^W with forward homomorphism
-restrictionCharacter. It takes [ν±1] to t±1 and [P_k] to F_k. Its inverse
+the rational character equivalence:R_g(K)≃L_g^W with forward homomorphism
+the character restriction map. It takes [ν±1] to t±1 and [P_k] to F_k. Its inverse
 is obtained by substituting those classes in the unique integral
 polynomial normal form. It commutes with scalar extension and with trace
 evaluation on torus points. For K=Q this realizes Yu's full rational
-character-ring assertion.
-
-**Prerequisites:** [Injectivity of rational character restriction](#character-injectivity); [Integral polynomial presentation of the full Weyl-fixed ring](#integral-invariant-presentation); [Primitive representations have the fundamental characters](#primitive-character-identity).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+character-ring assertion. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
 1. Injectivity is the preceding algebraic highest-weight result.
-2. Every integral invariant is a polynomial in t±1 and F_k by fullInvariantEquiv, and each generator is the character of a representation class by primitive-character-identity; hence restrictionCharacter is surjective.
+2. Every integral invariant is a polynomial in t±1 and F_k by `fullInvariantPresentation`, and each generator is the character of a representation class by primitive-character-identity; hence the character restriction map is surjective.
 3. Package the existing ring homomorphism as a ring equivalence. Its inverse takes the polynomial normal form to the same polynomial in [ν^±1] and [P_k], which is independent of choices by the integral algebra equivalence.
 
-**API.**
+The required interface has the following properties.
 
-- `rationalCharacterEquiv`: The canonical R_g(K)≃+*L_g^W induced by restrictionCharacter.
-- `rationalCharacterEquiv_classOf`: The forward map on [M] is its integral torus character.
-- `rationalCharacterEquiv_fundamental`: The inverse sends F_k to [P_k] and t to [ν].
+- The canonical R_g(K)≃+*L_g^W induced by the character restriction map.
+- The forward map on [M] is its integral torus character.
+- The inverse sends F_k to [P_k] and t to [ν].
 
-**Unit tests.**
+**Checks.**
 
-- `characterEquiv.test_rank_one`: For GSp₂=GL₂ the ring is Z[det±1,standard], with characters t and z+t/z.
-- `characterEquiv.test_unit`: The equivalence and its inverse send 1 to 1.
-- `characterEquiv.test_inverse_multiplier`: The inverse of t⁻¹ is [ν⁻¹].
+- For GSp₂=GL₂ the ring is Z[det±1,standard], with characters t and z+t/z.
+- At g=1, ch(Sym²V)=z²+t+(t/z)²=x₁²−t; its inverse is [V]²−[ν], detecting a translated polynomial generator.
+- The inverse of t⁻¹ is [ν⁻¹].
 
 **Consequences to check.** The inverse of F_k is [P_k], not merely an arbitrary virtual character over Q.
+
+*Needs:* [Injectivity of rational character restriction](#cg22-injectivity-of-rational-character-restriction); [Integral polynomial presentation of the full Weyl-fixed ring](#cg24-integral-polynomial-presentation-of-the-full-weyl-fixed-ring); [Primitive representations have the fundamental characters](#cg25-primitive-representations-have-the-fundamental-characters).
+
+### Examples
+
+At g=2, E₂=x₁x₂+2t and F₂=x₁x₂+t; at g=1, z²+(t/z)²=x₁²−2t.
+
+### Dependencies
+
+Layers CG.0 and CG.1; integral symmetric polynomials in Mathlib; ReductiveGroups §10A–10B; ClassicalGroups Layer 4 and the native exterior trace theorem.
 
 ## Layer CG.3: Tensor constituents and the positive character algebra
 
@@ -1043,21 +1120,15 @@ integer coefficients are allowed, but [ν⁻¹] is excluded. In rank one,
 [ν] recovers the full ring, since every finite Laurent polynomial in t
 can have its denominators cleared by a sufficiently high nonnegative power.
 
-<a id="positive-laurent-subring"></a>
-
-### The positive reciprocal Laurent subring
+### CG.3.1 The positive reciprocal Laurent subring
 
 Define B_g as the subring of L_g generated by every z_i and t/z_i;
-its fixed subring is B_g^W=B_g∩L_g^W. Prove the exact support criterion:
+its fixed subring is B_g^W=B_g∩L_g^W. For g≥1 prove `mem_positiveSubring`, the exact support criterion:
 a polynomial is in B_g if and only if every monomial t^m z^u with
 nonzero coefficient satisfies m+Σ_i min(u_i,0)≥0. The construction
 and this theorem use only integral Laurent algebra. Negative integer
 coefficients are allowed. Give Weyl stability and the explicit monomial
-normal form in these generators.
-
-**Prerequisites:** [Reciprocal Weyl action on the Laurent character algebra](#weyl-action).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+normal form in these generators. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
@@ -1065,36 +1136,47 @@ normal form in these generators.
 2. A monomial in the generators has u_i=a_i−b_i and m=Σb_i, hence m+Σmin(u_i,0)=Σmin(a_i,b_i)≥0. Conversely choose b_i=max(−u_i,0), a_i=max(u_i,0), and multiply by t^(m−Σb_i), which has nonnegative exponent.
 3. The support inequality is equivalently m+Σ_(i∈S)u_i≥0 for every subset S. These linear inequalities make it closed under addition of weights; the minimum functional itself is not additive. Integer sums and negatives preserve the allowed support.
 
-**API.**
+The required interface has the following properties.
 
 - `positiveSubring`: B_g=Subring.closure{z_i,t/z_i | i=1,…,g} inside L_g.
-- `positiveInvariantSubring`: The Subring B_g∩invariantSubring g inside L_g.
-- `mem_positiveSubring`: Membership is equivalent to the exponent support condition m+Σmin(u_i,0)≥0.
-- `positiveSubring_weyl_stable`: Each Weyl generator preserves B_g, since it permutes its displayed generating monomials.
+- `positiveInvariantSubring`: The Subring B_g∩L_g^W inside L_g.
+- `mem_positiveSubring`: For g≥1, membership is equivalent to the exponent support condition m+Σmin(u_i,0)≥0.
+- Each Weyl generator preserves B_g, since it permutes its displayed generating monomials.
 
-**Unit tests.**
+**Checks.**
 
-- `positive.test_multiplier`: t lies in B_g because z_i(t/z_i)=t.
-- `positive.test_inverse_multiplier`: t⁻¹ does not lie in B_g; its support exponent has cone value −1.
-- `positive.test_signed_coefficients`: −Σ_i(z_i+t/z_i) belongs to B_g^W. This negative-coefficient polynomial remains invariant under pair permutations as well as flips; positivity concerns its exponents.
-- `positive.test_boundary`: The monomial t/z_i lies on the cone boundary m+Σmin(u_i,0)=0 and is included.
+- For g≥1, t lies in B_g because z_i(t/z_i)=t.
+- t⁻¹ does not lie in B_g; its support exponent has cone value −1.
+- −Σ_i(z_i+t/z_i) belongs to B_g^W. This negative-coefficient polynomial remains invariant under pair permutations as well as flips; positivity concerns its exponents.
+- The monomial t/z_i lies on the cone boundary m+Σmin(u_i,0)=0 and is included.
+
+- At g=0, the empty generating set gives only integer constants in B₀. The monomial t has cone value 1 but is not in B₀, so the support equivalence and positive polynomial presentation require g≥1.
+
+The functional `coneValue` has the exact formula h(m,u)=m+Σmin(u_i,0).
+It is invariant under the Weyl generators and superadditive, giving closure
+of its nonnegative cone under addition. The generated subring and its fixed
+intersection have their own native Subring carriers; no coefficient-sign
+condition is imposed.
+
+**Checks.**
+
+- h(0,0)=0, h(1,0)=1 and h(−1,0)=−1, in every rank, including rank zero.
+- At rank one h(0,1)=0, h(1,−1)=0 and h(0,−1)=−1; thus z and t/z are boundary letters, but z⁻¹ is excluded from B₁.
+- At rank one h(0,1)+h(0,−1)=−1, while h(0,0)=0. Thus h is superadditive, not additive.
+- The fixed intersection contains −x₁ at rank one, excludes z (not fixed), and excludes t⁻¹ (not generated). At rank zero the intersection is Z, although the full fixed ring is Z[t±1].
 
 **Consequences to check.** t belongs, but t⁻¹ does not. Integer coefficients may be negative. At g=1 both z and t/z belong, whereas z⁻¹ does not.
 
-<a id="positive-invariant-presentation"></a>
+*Needs:* [Reciprocal Weyl action on the Laurent character algebra](#cg05-reciprocal-weyl-action-on-the-laurent-character-algebra).
 
-### Integral polynomial presentation of positive invariants
+### CG.3.2 Integral polynomial presentation of positive invariants
 
-Construct the Z-algebra equivalence
+For g≥1, `positiveInvariantPresentation` asserts existence of the Z-algebra equivalence
 Z[T,X₁,…,X_g]≃B_g^W, sending T to t and X_k to F_k.
 These generators are algebraically independent, and every positive
 invariant has a unique integral polynomial expression in them. Its
 inclusion into L_g^W agrees with the full fixed-ring presentation after
-inverting T. No negative t power occurs in this presentation.
-
-**Prerequisites:** [The positive reciprocal Laurent subring](#positive-laurent-subring); [Integral polynomial presentation of the full Weyl-fixed ring](#integral-invariant-presentation); [Fundamental exterior character polynomials](#fundamental-exterior-characters); [`MvPolynomial.esymmAlgEquiv`](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/RingTheory/MvPolynomial/Symmetric/FundamentalTheorem.lean).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+inverting T. No negative t power occurs in this presentation. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
@@ -1102,23 +1184,22 @@ inverting T. No negative t power occurs in this presentation.
 2. Therefore invariants under pair swaps are exactly Z[t,x_1,…,x_g]. Apply the symmetric-polynomial equivalence over Z[t] to get Z[t,e_1(x),…,e_g(x)].
 3. The same integral triangular change e_k↔F_k used in the full invariant presentation never introduces a negative t exponent. Algebraic independence follows from the full presentation and the inclusion of Z[t] into Z[t±1].
 
-**API.**
+The `positiveInvariantPresentation` theorem gives an existential ring
+equivalence from polynomials indexed by Option (Fin g): none maps to the
+multiplier t and some i maps to F_(i+1). Since it is a ring equivalence,
+it fixes integer coefficients; these generator equations determine the map.
 
-- `positiveInvariantEquiv`: The Z-algebra equivalence from MvPolynomial (Option (Fin g)) Z to B_g^W; none represents t and some i represents F_(i+1).
-- `positiveInvariantEquiv_multiplier`: The none variable maps to t.
-- `positiveInvariantEquiv_variable`: The variable some i maps to F_(i+1).
+**Checks.**
 
-**Unit tests.**
-
-- `positiveInvariant.test_rank_one`: For g=1 the variables map to t and z+t/z.
-- `positiveInvariant.test_inverse_excluded`: No polynomial with integer coefficients in T,X_k maps to t⁻¹.
-- `positiveInvariant.test_constant`: The constant polynomial 1 maps to 1, without a Weyl-orbit size factor.
+- For g=1 the variables map to t and z+t/z.
+- No polynomial with integer coefficients in T,X_k maps to t⁻¹.
+- At g=1, z²+(t/z)² has inverse X₁²−2T and the single constant orbit 1 has inverse 1, detecting both translation and orbit-size normalization.
 
 **Consequences to check.** At g=1, the positive fixed ring is Z[t,z+t/z]. The zero-orbit normalization uses 1, not 2; no division by 2 or g! occurs.
 
-<a id="tensor-constituent-subring"></a>
+*Needs:* [The positive reciprocal Laurent subring](#cg31-the-positive-reciprocal-laurent-subring); [Integral polynomial presentation of the full Weyl-fixed ring](#cg24-integral-polynomial-presentation-of-the-full-weyl-fixed-ring); [Fundamental exterior character polynomials](#cg23-fundamental-exterior-character-polynomials); [`MvPolynomial.esymmAlgEquiv`](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/MvPolynomial/Symmetric/FundamentalTheorem.lean).
 
-### The subring generated by tensor-power constituents
+### CG.3.3 The subring generated by tensor-power constituents
 
 Define C_g(K) as the subring of R_g(K) generated by [S] for
 simple algebraic S that is a summand of V^⊗d for some natural d,
@@ -1127,45 +1208,37 @@ p:V^⊗d→S with p∘i=id_S. By semisimplicity this agrees with being a
 composition factor. Prove that C_g(K) is also the Z-span of these simple
 classes: multiplying two constituent classes produces another integer
 combination of constituent classes. This definition takes all simple
-summands, rather than just the subring generated by [V].
-
-**Prerequisites:** [The rational algebraic representation ring](#rational-representation-ring); [The standard algebraic GSp representation](#standard-representation); [Highest-weight classification over Q and its extensions](#rational-highest-weight-classification).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+summands, rather than just the subring generated by [V]. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
 1. Use the `SplitK0` classes and Subring.closure of the explicitly defined constituent set. Simplicity uses the usual subcomodule order, not a label chosen by character data.
 2. Degree zero includes the unit. Tensor products of two direct-summand inclusions give summands of V^⊗(d+e); semisimplicity decomposes them into simples, so the Z-span of these simple classes is already a subring.
 
-**API.**
+The required interface has the following properties.
 
-- `tensorConstituentSubring`: C_g(K), the Subring generated by classes of simple direct summands of some tensorStandard d.
-- `mem_tensorConstituentSubring`: A virtual class lies in C_g iff it is an integer linear combination of such simple constituent classes.
-- `tensorConstituentSubring_tensor`: The tensor product of two constituent objects has all its simple constituents among constituents of tensor powers, so their classes multiply inside C_g.
+- C_g(K), the Subring generated by classes of simple direct summands of some standard tensor power d.
+- A virtual class lies in C_g iff it is an integer linear combination of such simple constituent classes.
+- The tensor product of two constituent objects has all its simple constituents among constituents of tensor powers, so their classes multiply inside C_g.
 
-**Unit tests.**
+**Checks.**
 
-- `tensorSubring.test_degree_zero`: The tensor unit is a constituent at degree zero and its class is 1.
-- `tensorSubring.test_rank_one_multiplier`: At g=1, ν=Λ²V is a summand of V⊗V and [ν] lies in C_g.
-- `tensorSubring.test_standard_only`: At g=1, [ν] does not belong to Z[[V]], although it belongs to C_g; their characters are independent variables t and z+t/z.
+- The tensor unit is a constituent at degree zero and its class is 1.
+- At g=1, ν=Λ²V is a summand of V⊗V and [ν] lies in C_g.
+- At g=1, [ν] does not belong to Z[[V]], although it belongs to C_g; their characters are independent variables t and z+t/z.
 
 **Consequences to check.** Direct summands are algebraic comodule summands, not arbitrary subspaces or representations of the abstract point group.
 
-<a id="tensor-constituent-criterion"></a>
+*Needs:* [The rational algebraic representation ring](#cg11-the-rational-algebraic-representation-ring); [The standard algebraic GSp representation](#cg12-the-standard-algebraic-gsp-representation); [Highest-weight classification over Q and its extensions](#cg18-highest-weight-classification-over-q-and-its-extensions).
 
-### The exact highest-weight criterion for tensor occurrence
+### CG.3.4 The exact highest-weight criterion for tensor occurrence
 
 For wt=(m,u)∈Dom_g and natural d prove the exact criterion
 L_g,K(wt) is a summand of V^⊗d if and only if m≥0 and
 d=2m+Σu_i. Hence a simple appears in some nonnegative tensor power
 exactly when m≥0. Every weight of such a tensor power is in the support
 cone of B_g, and so ch_T(L(wt))∈B_g for m≥0. In particular ν⁻¹
-is an algebraic representation but is not a tensor constituent.
-
-**Prerequisites:** [The subring generated by tensor-power constituents](#tensor-constituent-subring); [Primitive exterior decomposition and fundamental highest weights](#primitive-exterior-decomposition); [Rational models of the GSp highest-weight modules](#irreducible-rational-model); [Highest-weight classification over Q and its extensions](#rational-highest-weight-classification); [The positive reciprocal Laurent subring](#positive-laurent-subring); [The integral formal torus character](#formal-torus-character).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132.
+is an algebraic representation but is not a tensor constituent. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64; [Sternberg](https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf#page=131), §7.9, pp.131–132).
 
 **Construction and proof.**
 
@@ -1175,21 +1248,17 @@ is an algebraic representation but is not a tensor constituent.
 
 **Consequences to check.** L(0,0) occurs in degree 0 only; GSp has no invariant vector in V^⊗2, while its ν constituent has degree 2. For g=1, det^m Sym^u V occurs at degree 2m+u exactly for m≥0.
 
-<a id="tensor-character-isomorphism"></a>
+*Needs:* [The subring generated by tensor-power constituents](#cg33-the-subring-generated-by-tensor-power-constituents); [Primitive exterior decomposition and fundamental highest weights](#cg15-primitive-exterior-decomposition-and-fundamental-highest-weights); [Rational models of the GSp highest-weight modules](#cg17-rational-models-of-the-gsp-highest-weight-modules); [Highest-weight classification over Q and its extensions](#cg18-highest-weight-classification-over-q-and-its-extensions); [The positive reciprocal Laurent subring](#cg31-the-positive-reciprocal-laurent-subring); [The integral formal torus character](#cg21-the-integral-formal-torus-character).
 
-### Yu’s tensor-constituent character interpretation
+### CG.3.5 Yu’s tensor-constituent character interpretation
 
-Restrict rationalCharacterEquiv to a ring equivalence
-tensorCharacterEquiv:C_g(K)≃B_g^W. It sends each constituent class
+Restrict the rational character equivalence to a ring equivalence
+the tensor character equivalence:C_g(K)≃B_g^W. It sends each constituent class
 to its integral formal character, and its inverse takes t to [ν] and
 F_k to [P_k]. Its inclusion into the full ring commutes with the full
 character equivalence. Thus every positive invariant is an integer
 virtual combination of tensor-constituent characters, over Q and every
-characteristic-zero K.
-
-**Prerequisites:** [The rational GSp character isomorphism](#rational-character-isomorphism); [The exact highest-weight criterion for tensor occurrence](#tensor-constituent-criterion); [Integral polynomial presentation of positive invariants](#positive-invariant-presentation); [Primitive representations have the fundamental characters](#primitive-character-identity).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+characteristic-zero K. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
@@ -1197,23 +1266,23 @@ characteristic-zero K.
 2. The multiplier and P_k are tensor constituents and their characters are t and F_k. The positive integral invariant presentation proves the reverse inclusion.
 3. Restrict the full character equivalence to the two Subrings. Coercions into the full ring commute, and the inverse generator formulas determine the equivalence.
 
-**API.**
+The required interface has the following properties.
 
-- `tensorCharacterEquiv`: The canonical ring equivalence C_g(K)≃+*positiveInvariantSubring g.
-- `tensorCharacterEquiv_coe`: Its underlying Laurent polynomial agrees with rationalCharacterEquiv on the coerced tensor-subring class.
-- `tensorCharacterEquiv_generators`: It sends [ν] to t and [P_k] to F_k.
+- The canonical ring equivalence C_g(K)≃+*B_g^W.
+- Its underlying Laurent polynomial agrees with the rational character equivalence on the coerced tensor-subring class.
+- It sends [ν] to t and [P_k] to F_k.
 
-**Unit tests.**
+**Checks.**
 
-- `tensorCharacter.test_rank_one`: For g=1, C_g=Z[[ν],[V]] maps isomorphically to Z[t,z+t/z].
-- `tensorCharacter.test_inverse_multiplier`: The full class [ν⁻¹] does not lie in C_g.
-- `tensorCharacter.test_boundary`: The unit class maps to the cone-boundary polynomial 1.
+- For g=1, C_g=Z[[ν],[V]] maps isomorphically to Z[t,z+t/z].
+- The full class [ν⁻¹] does not lie in C_g.
+- At g=1, [Sym²V]=[V]²−[ν] maps to z²+t+(t/z)²; all three coefficients are 1 and all cone values are nonnegative.
 
 **Consequences to check.** The theorem uses integer virtual classes, permitting subtraction of characters, and does not assert that every element is an actual representation character.
 
-<a id="integral-tensor-generation"></a>
+*Needs:* [The rational GSp character isomorphism](#cg26-the-rational-gsp-character-isomorphism); [The exact highest-weight criterion for tensor occurrence](#cg34-the-exact-highest-weight-criterion-for-tensor-occurrence); [Integral polynomial presentation of positive invariants](#cg32-integral-polynomial-presentation-of-positive-invariants); [Primitive representations have the fundamental characters](#cg25-primitive-representations-have-the-fundamental-characters).
 
-### Integral tensor generation and multiplier localization
+### CG.3.6 Integral tensor generation and multiplier localization
 
 Identify C_g(K) with the freely polynomial subring
 Z[[ν],[P₁],…,[P_g]] inside R_g(K), and prove the generator expressions
@@ -1222,48 +1291,33 @@ The classes [ν],[P₁],…,[P_g] are algebraically independent over Z.
 Inverting [ν] recovers R_g(K), freely polynomial in [P_k] over Z[[ν]±1].
 Equivalently, for every virtual class r there is n≥0 such that [ν]^n r
 lies in C_g(K). This is integral generation and localization, with no
-extension of representation-ring coefficients to Q.
-
-**Prerequisites:** [Yu’s tensor-constituent character interpretation](#tensor-character-isomorphism); [Integral polynomial presentation of positive invariants](#positive-invariant-presentation); [Integral polynomial presentation of the full Weyl-fixed ring](#integral-invariant-presentation); [Primitive representations have the fundamental characters](#primitive-character-identity).
-
-**Sources:** [Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64.
+extension of representation-ring coefficients to Q. ([Yu](https://arxiv.org/pdf/1807.04659v5#page=64), §7.1, equation (7.1.1) and Remark 7.1.1, printed p.64).
 
 **Construction and proof.**
 
-1. Transport the positive polynomial presentation through tensorCharacterEquiv to get integral generation and independence. The primitive decomposition gives precisely the exterior expressions printed by Yu.
-2. Transport the full invariant presentation through rationalCharacterEquiv; multiplying any Laurent coefficient expression by a sufficiently large nonnegative power of t clears every negative multiplier exponent.
+1. Transport the positive polynomial presentation through the tensor character equivalence to get integral generation and independence. The primitive decomposition gives precisely the exterior expressions printed by Yu.
+2. Transport the full invariant presentation through the rational character equivalence; multiplying any Laurent coefficient expression by a sufficiently large nonnegative power of t clears every negative multiplier exponent.
 3. The construction never divides by a Weyl-group order or tensors the representation ring with Q.
 
 **Consequences to check.** In rank one the full ring is Z[[ν]±1,[V]], whereas the constituent ring is Z[[ν],[V]]. For every k=1 the stated fundamental generator is [V], with no spurious −[ν].
 
-## Dependency interfaces
+*Needs:* [Yu’s tensor-constituent character interpretation](#cg35-yus-tensor-constituent-character-interpretation); [Integral polynomial presentation of positive invariants](#cg32-integral-polynomial-presentation-of-positive-invariants); [Integral polynomial presentation of the full Weyl-fixed ring](#cg24-integral-polynomial-presentation-of-the-full-weyl-fixed-ring); [Primitive representations have the fundamental characters](#cg25-primitive-representations-have-the-fundamental-characters).
 
-The following interfaces are consumed from the named upstream layers. They
-specify precisely how the specialized constructions meet their general
-foundations. The finite-comodule tensor, braiding, biproduct, kernel,
-matrix-coefficient and unbundled base-change data above are library inputs.
+### Examples
 
-- **[ReductiveGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-0-the-functor-of-points-and-the-three-way-dictionary)**: Apply the existing commutative Hopf algebra ↔ affine group scheme ↔ represented functor-of-points dictionary to the explicit finite-type quotient O_g(K). In particular Hopf quotient equations represent the closed subfunctor and coordinate maps give the named group morphisms.
+In rank one, the positive fixed ring is Z[t,x₁], and t⁻¹ is excluded. At rank zero B₀=Z, so the positive-rank support equivalence fails.
 
-- **[ReductiveGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-1-representations--comodules)**: For finite comodules over a commutative Hopf algebra over a characteristic-zero field, supply the generic essentially-small and monoidal-preadditive instance glue, the K-linear hom-space structure, the minimal coefficient-generated subcomodule of a vector and its flat base-change compatibility, and exterior/symmetric-power functor/coaction with natural boundary isomorphisms, compatible with point evaluation. Use the existing finite matrixCoefficientSubcoalgebra to form the coefficient-extraction span; do not rebuild that coalgebra. Supply scalar extension as an additive strong symmetric monoidal functor, transporting along the coordinate Hopf base-change isomorphism. The FGComoduleCat tensor, braiding, biproducts, kernel and unbundled base-change data are reused, not rebuilt.
+### Dependencies
 
-- **[ReductiveGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-3-subgroups-quotients-components)**: For a faithfully flat affine group quotient by a finite central subgroup scheme, rational algebraic representations pull back fully faithfully with image those on which the kernel acts trivially; identify the fppf quotient with the target once the functor-of-points kernel and local lifts are verified.
+Layers CG.0–CG.2; integral symmetric-polynomial theory; the supplied split highest-weight classification and the primitive tensor comparison.
 
-- **[ReductiveGroups Layer 6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-6-reductive-and-semisimple-groups)**: In characteristic zero, central isogenies preserve connected reductivity, and every finite-dimensional rational algebraic representation of a connected reductive group is semisimple, over the original field as well as its algebraic closure.
+## Downstream consumers
 
-- **[ReductiveGroups Layer 7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ReductiveGroups/README.md#layer-7-structure-theory)**: The split-pair root-datum and maximal-torus interface, including Weyl normalizer quotient and coroot pairings, into which the displayed GSp torus and type-C root calculation are registered. No general root-datum or Weyl-group theory is developed here.
-
-- **[ClassicalGroups Layer 0](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-0-the-classical-groups-and-the-standard-representation)**: The defining standard Sp₂g(C) matrix action and invariant alternating pairing agree with point evaluation of the symplectic standard comodule; use this compatibility when applying complex classical-group results to the GSp standard family.
-
-- **[ClassicalGroups Layer 1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-1-functorial-constructions-and-tensor-powers)**: Symmetric, exterior and tensor powers of the standard complex classical representation agree with the generic algebraic comodule constructions after point evaluation. Antisymmetrization splits Λ^k V as a direct summand of V^⊗k in characteristic zero.
-
-- **[ClassicalGroups Layer 3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-3-maximal-torus-weights-and-the-highest-weight-classification)**: For the connected complex group Sp₂g, supply the standard diagonal maximal torus, its Borel and type-C adjoint roots. Dominant integral highest weights are u_1≥⋯≥u_g≥0, each simple has a one-dimensional highest line and lower weights in the positive-root order, and the centre acts through its highest weight. Supply this existing classification, not a new Sp classification.
-
-- **[ClassicalGroups Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-4-characters-and-schur-polynomials)**: The complex connected Sp formal character has integral weight multiplicities, is Weyl-invariant, has highest-weight coefficient 1 with strictly lower other weights, and agrees with its torus trace. No finite-group injectivity statement is used.
-
-- **[ClassicalGroups Layer 5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/ClassicalGroups/README.md#layer-5-the-weyl-dimension-formula)**: The type-C Weyl dimension formula for the Sp fundamental highest weight (1^k), giving binom(2g,k)−binom(2g,k−2). This matches the kernel dimension and proves primitive irreducibility.
-
-- **[LieHighestWeight Layer 4](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RepresentationTheory/LieHighestWeight/README.md#layer-4-the-classification-of-finite-dimensional-irreducibles)**: The existing highest-weight classification and uniqueness of finite-dimensional simple semisimple-Lie-algebra modules, used through the complex symplectic realization. The simplicity of the tensor-generated Cartan component is derived in the rational-model construction from this classification, its one-dimensional tensor top line and semisimplicity already from ReductiveGroups Layer 6. No separate Cartan-component theorem is assigned to this classification layer.
+Counting applications consume the integral fixed-ring presentations and support
+criterion without representation theory. Representation-theoretic consumers
+use the rational character equivalence, primitive characters, exact tensor
+occurrence and multiplier localization. Local-system counting theorems retain
+their own function-field scope.
 
 ## References
 
@@ -1274,8 +1328,11 @@ matrix-coefficient and unbundled base-change data above are library inputs.
   generators. The ring assertion there credits a suggestion of Pierre Deligne.
 - J. S. Milne, *Algebraic Groups*, second edition (2022),
   [author PDF dated 5 October 2021](https://www.jmilne.org/math/Books/iAG2022.pdf).
-  Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466,
-  give split highest weights, scalar endomorphisms, absolute simplicity and
+  Chapter 4 §i, Proposition 4.32, Corollary 4.34 and Exercise 4-4(a,b),
+  pp.96–97, give the point-density and Hom/invariant base-change comparisons.
+  Corollary 19.18, p.401, gives the faithful semisimple reductivity criterion;
+  Summary 21.98, p.461, fixes the type-C root datum.
+  Chapter 22 §a, Theorem 22.2 and complements 22.3–22.6, pp.464–466, give split highest weights, scalar endomorphisms, absolute simplicity and
   scalar extension. Complement 22.12, p.466, gives descent of simple
   highest-weight modules through central isogenies. Chapter 22 §c,
   Lemma 22.39 and Theorem 22.42, pp.477–479, provide semisimplicity descent
