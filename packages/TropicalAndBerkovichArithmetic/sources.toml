@@ -1,0 +1,591 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TropicalAndBerkovichArithmetic"
+
+[[source]]
+id = "berkovich-spectral"
+authors = "Vladimir Berkovich"
+title = "Spectral Theory and Analytic Geometry over Non-Archimedean Fields"
+year = 1990
+locator_scheme = "theorem"
+locator = "Theorem 1.2.1; Corollary 1.2.4; Theorem 1.3.1; Corollary 1.3.2; Proposition 1.3.5; Corollary 1.3.6, pp. 13–16"
+licence_class = "none"
+status = "waived"
+cited_for = ["0.13", "0.14", "0.18", "0.24"]
+note = "Settled operator waiver; cited by locator alone."
+
+[[source]]
+id = "temkin"
+locator_scheme = "section"
+locator = "Definition 2.2.2.1(i), p. 6; Definition/Exercise 2.1.2.1(i), p. 4; Fact 2.2.2.3(i), p. 7; Exercise 2.2.2.4(i), p. 7; Definitions 2.1.2.1(i) and 2.2.2.1(i), pp. 4, 6; Definition 3.1.1.1 and Fact 3.1.4.1, pp. 11–14; Definitions 3.2.2.1 and 3.2.3.1; Fact 3.2.3.2, Exercise 3.2.3.3 and Fact 3.2.3.4, pp. 14–16; §§3.3.1–3.3.3, pp. 16–18; Definitions 4.1.1.1 and 4.1.2.1; §§4.1.2–4.1.3, pp. 22–24; §5.1, Exercise 5.1.1.1 and Facts 5.1.1.2, 5.1.2.1–5.1.2.2, pp. 33–34; Facts 5.1.2.1–5.1.2.2, p. 34"
+url = "https://math.huji.ac.il/~temkin/papers/Introduction_to_Berkovich_Spaces.pdf"
+fetched_from = "https://math.huji.ac.il/~temkin/papers/Introduction_to_Berkovich_Spaces.pdf"
+fetched_at = "2026-10-22T21:27:23Z"
+sha256 = "93d4a9bb0ffc9fa2273a0ff5996b2c8ec72201c8c7f9dd7fac652c64c77f2e5a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "0.10", "0.11", "0.17", "0.19", "0.20", "0.21", "0.22", "1.4"]
+authors = "Michael Temkin"
+title = "Introduction to Berkovich analytic spaces"
+year = 2011
+
+[[source]]
+id = "bpr-structure"
+authors = "Matthew Baker, Sam Payne, Joseph Rabinoff"
+title = "On the structure of nonarchimedean analytic curves"
+year = 2014
+venue = "Tropical and Non-Archimedean Geometry, Contemp. Math., vol. 605, Amer. Math. Soc., Providence, RI, 2013, pp. 93--121"
+doi = "10.1090/conm/605/12113"
+arxiv = "1404.0279v1"
+locator_scheme = "section"
+locator = "Propositions 2.4–2.5, pp. 4–5; Definition 3.1, printed p. 101; Definitions 3.3 and 3.5, printed pp. 102–103; Lemma 3.2 with proof, printed pp. 101–102; Lemma 3.4(3), printed p. 102; Lemma 3.4(1)–(2), Definition 3.5, printed pp. 102–103; Lemma 3.4(4), printed pp. 102–103; Definition 3.7, printed p. 103; Lemma 3.8, printed p. 103; Proposition 3.9, printed p. 103; Theorem 4.22 and proof, pp. 16–17; Proposition 4.3, Theorem 4.6, §4.9, Proposition 4.10 and Theorem 4.11, pp. 11–15; Theorem 4.11, Corollary 4.23 and §5.3, pp. 13–18; Theorem 4.22, printed p. 112; Definitions 3.1 and 3.3, Remark 3.6 and Lemma 3.8, pp. 7–9; §2.3, p. 4; Proposition 4.21, p. 16; Theorem 4.22(1), printed p. 112; Definition 4.20 and Theorem 4.22(2), printed pp. 111–112; Corollary 4.23, printed p. 112; Theorem 5.15 and its proof, pp. 21–22"
+url = "https://arxiv.org/abs/1404.0279v1"
+fetched_from = "https://arxiv.org/pdf/1404.0279v1"
+fetched_at = "2026-10-22T21:27:29Z"
+sha256 = "5e40117270a0051d9661c9bbd0317968b810573796a5c2408582f20692568a11"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Same numbering in arXiv v1 and published offprint; offprint printed pages are physical PDF pages plus 92; arXiv pages are cited separately."
+cited_for = ["1.6", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10", "2.11", "2.13", "2.14", "2.15", "2.18", "2.19", "2.20", "2.21", "2.22", "2.23", "3.7"]
+published_url = "https://sites.lsa.umich.edu/sdpayne/wp-content/uploads/sites/1450/2025/08/StructureOfNonarchimedeanCurves.pdf?download=1"
+published_sha256 = "01cbd4659548f916d5c82bbd4703dcee865307271796d873cc7d1dd098c43d6e"
+
+[[source]]
+id = "bpr-metrics"
+authors = "Matthew Baker, Sam Payne, Joseph Rabinoff"
+title = "Nonarchimedean geometry, tropicalization, and metrics on curves"
+year = 2011
+venue = "Algebraic Geometry 3 (2016), no. 1, 63-105"
+arxiv = "1104.0320v3"
+locator_scheme = "section"
+locator = "Definitions 4.21 and 4.23, Proposition 4.24, pp. 18–19; Theorem 1.3, pp. 2–3; Remark 5.6 and formula (5.6.1), p. 22; Theorem 1.4, p. 3; §5.15, Remark 5.16 and Lemma 5.17, pp. 24–25; Lemmas 5.18–5.19 and Theorem 5.20, pp. 25–26; Theorem 1.1, p. 2; §5.15, Remark 5.16, Lemma 5.17 and Theorems 5.20–5.21, pp. 24–26; Theorem 5.22 and proof, pp. 26–27"
+url = "https://arxiv.org/abs/1104.0320v3"
+fetched_from = "https://arxiv.org/pdf/1104.0320v3"
+fetched_at = "2026-10-22T21:27:36Z"
+sha256 = "19fbd64ec043835cbadad0375df562d78aa62b26b4820bd1e9f0f79d45c4348e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["4.5", "4.6", "4.7", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6"]
+
+[[source]]
+id = "scholze"
+locator_scheme = "section"
+locator = "Definitions 2.1–2.2 and Proposition 2.4, pp. 7–8; Theorem 2.14, pp. 10–11; Corollary 2.15, p. 11; Proposition 3.2, pp. 14–15; Definitions 2.19–2.20 and Proposition 2.21, pp. 12–13; Theorem 2.18 and its direct proof, pp. 11–12; Theorem 2.12, p. 10"
+url = "https://people.mpim-bonn.mpg.de/scholze/BerkovichMotives.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/BerkovichMotives.pdf"
+fetched_at = "2026-10-22T21:27:41Z"
+sha256 = "23a34fdedb928bf43b6d8fad58cc4a4652d2dfdeeeb429a0aabdbc44b17b53c9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.12", "0.13", "0.14", "0.16", "0.24", "0.25", "0.26"]
+authors = "Peter Scholze"
+title = "Berkovich Motives"
+year = 2025
+
+[[source]]
+id = "poineau-turchetti"
+authors = "Jérôme Poineau, Daniele Turchetti"
+title = "Berkovich curves and Schottky uniformization"
+year = 2020
+arxiv = "2010.09043v1"
+locator_scheme = "section"
+locator = "Definition I.2.1 and Lemma I.2.5, pp. 6–7; Propositions I.5.1 and I.5.5, Corollary I.5.6, pp. 19–22; §I.1, pp. 4–5; Definition I.2.9, Lemma I.2.11, Proposition I.2.12 and Example I.2.20, pp. 7–11; Proposition I.6.12, pp. 25–26; Definitions I.7.1–I.7.2, Lemmas I.7.8–I.7.9 and Propositions I.7.10–I.7.11, pp. 26–29; Definitions I.7.1–I.7.2, Lemma I.7.4, Remark I.7.5, Definition I.7.6 and Remark I.7.7, pp. 26–28; Definition II.2.14, Remark II.2.16, Definition II.2.22 and Theorem II.2.23, pp. 40–43; Theorem II.3.18 and Example II.3.19, pp. 49–50; Definitions II.1.9/II.1.11, Lemma II.1.10, p. 38; Proposition II.2.26 and Remark II.2.28, pp. 44–45"
+url = "https://arxiv.org/abs/2010.09043v1"
+fetched_from = "https://arxiv.org/pdf/2010.09043v1"
+fetched_at = "2026-10-22T21:27:49Z"
+sha256 = "bd0cb1701b829b531d0b90cab8da661ca5f2cba8d1499a1252f477174d0d34f0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All locators refer to arXiv:2010.09043v1 (18 October 2020), not the author-hosted PDF."
+cited_for = ["0.15", "0.18", "1.1", "1.2", "1.3", "1.5", "1.7", "2.12", "7.1", "7.3", "7.4"]
+
+[[source]]
+id = "gathmann-kerber"
+authors = "Andreas Gathmann, Michael Kerber"
+title = "A Riemann-Roch theorem in tropical geometry"
+year = 2006
+arxiv = "math/0612129v2"
+locator_scheme = "section"
+locator = "§1, pp. 3–5; Definitions in §1, pp. 4–7; Theorem 2.1, Lemma 2.3, Proposition 2.4, Corollary 2.5 and Proposition 3.1, pp. 8–12"
+url = "https://arxiv.org/abs/math/0612129v2"
+fetched_from = "https://arxiv.org/pdf/math/0612129v2"
+fetched_at = "2026-10-22T21:27:53Z"
+sha256 = "de05c79158d5cae92fca5997971116643a307239414242ef237c53fdcdd44dc2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["3.1", "3.2", "3.5"]
+
+[[source]]
+id = "baker-specialization"
+authors = "Matthew Baker"
+title = "Specialization of linear systems from curves to graphs"
+year = 2007
+arxiv = "math/0701075v4"
+locator_scheme = "section"
+locator = "§2, pp. 5–10"
+url = "https://arxiv.org/abs/math/0701075v4"
+fetched_from = "https://arxiv.org/pdf/math/0701075v4"
+fetched_at = "2026-10-22T21:28:01Z"
+sha256 = "c717174304c79115b2f2daa1f17a03b6410e373ab665191785fa6e69ba693ec4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["3.6"]
+
+[[source]]
+id = "amini-baker"
+authors = "Omid Amini, Matthew Baker"
+title = "Linear series on metrized complexes of algebraic curves"
+year = 2012
+arxiv = "1204.3508v3"
+locator_scheme = "section"
+locator = "§§1.1–2.1, pp. 2–7; Theorem 3.7, pp. 14–16; Theorem 3.2, p. 13; Theorems 4.5–4.6, pp. 23–24"
+url = "https://arxiv.org/abs/1204.3508v3"
+fetched_from = "https://arxiv.org/pdf/1204.3508v3"
+fetched_at = "2026-10-22T21:28:07Z"
+sha256 = "69d40d2417a0ade8f27ea5e4f45380fd666a9605b19ba56b0495f49328352686"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["3.8", "3.9", "3.10", "3.11"]
+
+[[source]]
+id = "baker-faber"
+authors = "Matthew Baker, Xander Faber"
+title = "Metric Properties of the Tropical Abel-Jacobi Map"
+year = 2009
+arxiv = "0905.1679v4"
+locator_scheme = "section"
+locator = "§3, Theorem 3.4, pp. 15–16"
+url = "https://arxiv.org/abs/0905.1679v4"
+fetched_from = "https://arxiv.org/pdf/0905.1679v4"
+fetched_at = "2026-10-22T21:28:13Z"
+sha256 = "9d56f1475646c92cb5e9d6378f5dab31391e3d7da83607ded928f449c4070e8f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["3.4"]
+
+[[source]]
+id = "gubler"
+locator_scheme = "section"
+locator = "§2.1, p. 3; §§5.1–5.5 and §§6.5–6.7, pp. 10–13; Theorems 3.3, 5.6 and 10.14; Proposition 10.15, pp. 7, 11; §§13.4–13.11, pp. 43–45; §§13.14–13.17, pp. 45–46"
+url = "https://gubler.app.uni-regensburg.de/Publikationen/1108.6126.pdf"
+fetched_from = "https://gubler.app.uni-regensburg.de/Publikationen/1108.6126.pdf"
+fetched_at = "2026-10-22T21:28:20Z"
+sha256 = "e3087e939cb971a53405e176923d1c9a3d682fec9442c27334fe04fa927bce20"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.1", "4.2", "4.3", "4.4", "4.8"]
+authors = "Walter Gubler"
+title = "A guide to tropicalizations"
+year = 2013
+
+[[source]]
+id = "sturmfels-tevelev"
+authors = "Bernd Sturmfels, Jenia Tevelev"
+title = "Elimination Theory for Tropical Varieties"
+year = 2007
+arxiv = "0704.3471v1"
+locator_scheme = "section"
+locator = "arXiv:0704.3471 PDF; physical pages"
+url = "https://arxiv.org/abs/0704.3471v1"
+fetched_from = "https://arxiv.org/pdf/0704.3471v1"
+fetched_at = "2026-10-22T21:28:24Z"
+sha256 = "eccf07cf4d5a4b3330d355601581ed2b9d25e3e5245ff4958d4ee92b7eb3948d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["References and the numbered sections citing this work"]
+
+[[source]]
+id = "chambert-loir"
+authors = "Antoine Chambert-Loir"
+title = "Mesures et équidistribution sur les espaces de Berkovich"
+year = 2003
+venue = "J. Reine Angew. Math. 595 (2006), 215--235"
+doi = "10.1515/CRELLE.2006.049"
+arxiv = "math/0304023v3"
+locator_scheme = "section"
+locator = "§2.1–2.3, pp. 4–5; Definition 2.4 and §2.5, pp. 5–6; §§2.2–2.3 and Proposition 2.7, pp. 4–8; §2.5 and Proposition 2.7, pp. 6–8; §2.4 and Tate example, pp. 5–6; Section 2.1, p. 4 (model-function density)"
+url = "https://arxiv.org/abs/math/0304023v3"
+fetched_from = "https://arxiv.org/pdf/math/0304023v3"
+fetched_at = "2026-10-22T21:28:33Z"
+sha256 = "853c24a1f7d883196b862af317a391765645b69bc9fb5c05b62e2e08d0c2f79f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["6.1", "6.2", "6.3", "6.4", "7.2"]
+
+[[source]]
+id = "favre-rivera"
+authors = "Charles Favre, Juan Rivera-Letelier"
+title = "Equidistribution quantitative des points de petite hauteur sur la droite projective"
+year = 2004
+arxiv = "math/0407471v2"
+locator_scheme = "section"
+locator = "§§4.1–4.5, equation (20), Lemmas 4.3–4.4 and Proposition 4.5, pp. 23–27"
+url = "https://arxiv.org/abs/math/0407471v2"
+fetched_from = "https://arxiv.org/pdf/math/0407471v2"
+fetched_at = "2026-10-22T21:28:45Z"
+sha256 = "61bf5a3d444ce1a361db743ffde4185e1ce823681fd6e0dedae7fa73f83bc309"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "yuan"
+locator_scheme = "section"
+locator = "Appendix A.5, pp. 115–117; Appendix A.5, Green-kernel characterization and Proposition A.5, pp. 115–118; Appendix A.5, Proposition A.4 and proof, p. 117; Appendix A.5, displayed admissible metric formula, p. 116"
+url = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_from = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_at = "2026-10-22T21:28:50Z"
+sha256 = "b36f4860cc0f098ef062523e8a5147e8172d1e4e357fc76a63cd7c0d782a813e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["3.3", "6.6", "6.7", "6.8"]
+authors = "Xinyi Yuan"
+title = "Arithmetic bigness and a uniform Bogomolov-type result"
+year = 2024
+
+[[source]]
+id = "zavyalov"
+authors = "Bogdan Zavyalov"
+title = "Mod-p Poincaré Duality in p-adic Analytic Geometry"
+year = 2021
+arxiv = "2111.01830v3"
+locator_scheme = "section"
+locator = "Appendix A, Definitions A.5–A.6, Lemmas A.7–A.8, pp. 84–86"
+url = "https://arxiv.org/abs/2111.01830v3"
+fetched_from = "https://arxiv.org/pdf/2111.01830v3"
+fetched_at = "2026-10-22T21:29:02Z"
+sha256 = "a984d973782649972a835b302e20ec91fc9c1abc5e5b43c7eccc5934b9c2c951"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["0.30"]
+
+[[source]]
+id = "kedlaya-liu"
+authors = "Kiran S. Kedlaya, Ruochuan Liu"
+title = "Relative p-adic Hodge theory: Foundations"
+year = 2013
+arxiv = "1301.0792v5"
+locator_scheme = "section"
+locator = "Remark 2.3.9, p. 35; Definition 2.4.1 and Remark 2.4.4, pp. 37–39; Definition 2.4.8, p. 40; Definition 8.2.11 and Lemma 8.2.12(a)–(c), pp. 160–161; Lemmas 2.3.12 and 2.3.14, p. 36"
+url = "https://arxiv.org/abs/1301.0792v5"
+fetched_from = "https://arxiv.org/pdf/1301.0792v5"
+fetched_at = "2026-10-22T21:29:17Z"
+sha256 = "a6a117423db62aec072442bb15b70e3175bcc3b631bdcd6d74f740e3c6cfd942"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["0.27", "0.28", "0.29", "0.31", "0.32"]
+
+[[source]]
+id = "colmez-dospinescu-niziol"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Cohomologie p-adique de la tour de Drinfeld: le cas de la dimension 1"
+year = 2017
+arxiv = "1704.08928v2"
+locator_scheme = "section"
+locator = "Appendix A.2, pp. 51–52; Appendix A.2–A.3, pp. 52–53"
+url = "https://arxiv.org/abs/1704.08928v2"
+fetched_from = "https://arxiv.org/pdf/1704.08928v2"
+fetched_at = "2026-10-22T21:29:21Z"
+sha256 = "15e4868f5b11ad113e2806b5e9884d7b100f529e67c6cd6030f24cf8e3ae9073"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["2.16", "2.17"]
+
+[[source]]
+id = "dky"
+authors = "Laura DeMarco, Holly Krieger, Hexi Ye"
+title = "Uniform Manin-Mumford for a family of genus 2 curves"
+year = 2019
+arxiv = "1901.09945v2"
+locator_scheme = "section"
+locator = "arXiv:1901.09945v2"
+url = "https://arxiv.org/abs/1901.09945v2"
+fetched_from = "https://arxiv.org/pdf/1901.09945v2"
+fetched_at = "2026-10-22T21:29:27Z"
+sha256 = "8fc51ac36f9fc4b406c7bb44cdeccf31386e81e0a471176a69e80a1a0766bab8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2 §2.7 pp. 11–12; published §2.7 pp. 960–961. Both versions were fetched; the energy convention is stated in the roadmap."
+cited_for = ["References and the numbered sections citing this work"]
+published_url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p05-s.pdf"
+published_sha256 = "7a4bd817bc7cc561363c68c3941b449af55fbf4cb1b3481bd0d601e84b9307df"
+
+[[source]]
+id = "boucksom-jonsson"
+authors = "Sébastien Boucksom, Mattias Jonsson"
+title = "Tropical and non-Archimedean limits of degenerating families of volume forms"
+year = 2016
+arxiv = "1605.05277v2"
+locator_scheme = "section"
+locator = "Definition 4.9, pp. 23–24"
+url = "https://arxiv.org/abs/1605.05277v2"
+fetched_from = "https://arxiv.org/pdf/1605.05277v2"
+fetched_at = "2026-10-22T21:29:33Z"
+sha256 = "1e247d1168b5dad41def9b8bbf31863d5b04ec5773ea58c3794579b5b9e2be8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2 Appendix A pp. 43–48; JEP 4 (2017), Appendix A.4–A.6 pp. 136–137. Both versions were fetched; positive order gives the central norm r^ord."
+cited_for = ["0.23"]
+published_url = "https://www.numdam.org/item/10.5802/jep.39.pdf"
+published_sha256 = "f1ab95eaf0f14109e4d5ff13f6b9f60a9aaa3ffa99099b7dea40f7e3779d3769"
+
+[[source]]
+id = "krzb-survey"
+authors = "Eric Katz, Joseph Rabinoff, David Zureick-Brown"
+title = "Diophantine and tropical geometry, and uniformity of rational points on curves"
+year = 2016
+arxiv = "1606.09618v2"
+locator_scheme = "section"
+locator = "Definition 4.2.2 and surrounding discussion, pp. 28–30; §4.2 and §4.3, pp. 28–34"
+url = "https://arxiv.org/abs/1606.09618v2"
+fetched_from = "https://arxiv.org/pdf/1606.09618v2"
+fetched_at = "2026-10-22T21:29:39Z"
+sha256 = "47d633a350341cc8b3c1eb7ca61e559c2fc54aab403b2659251ff8d386fcbc52"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["7.6", "7.7"]
+
+[[source]]
+id = "krzb-uniform"
+authors = "Eric Katz, Joseph Rabinoff, David Zureick-Brown"
+title = "Uniform bounds for the number of rational points on curves of small Mordell--Weil rank"
+year = 2015
+venue = "Duke Math. J. 165, no. 16 (2016), 3189-3240"
+doi = "10.1215/00127094-3673558"
+arxiv = "1504.00694v3"
+locator_scheme = "section"
+locator = "Proposition 3.16, formula (3.17), Corollary 3.18, pp. 22–23"
+url = "https://arxiv.org/abs/1504.00694v3"
+fetched_from = "https://arxiv.org/pdf/1504.00694v3"
+fetched_at = "2026-10-22T21:29:45Z"
+sha256 = "d81017bf1e5206873061214ad7f8c4db14b3f983f35203b368edbcc5cea4c10a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["7.8"]
+
+[[source]]
+id = "baker-rabinoff"
+authors = "Matthew Baker, Joseph Rabinoff"
+title = "The skeleton of the Jacobian, the Jacobian of the skeleton, and lifting meromorphic functions from tropical to algebraic curves"
+year = 2013
+arxiv = "1308.3864v1"
+locator_scheme = "section"
+locator = "§2.7, Theorem 2.9, p. 5"
+url = "https://arxiv.org/abs/1308.3864v1"
+fetched_from = "https://arxiv.org/pdf/1308.3864v1"
+fetched_at = "2026-10-22T21:29:50Z"
+sha256 = "acf7cd5977d24d8561718b33c0d855996f131cbb075189eedff6bdb9a64e6010"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["7.5"]
+
+[[source]]
+id = "favre-corrigendum"
+locator_scheme = "section"
+locator = "Author-hosted corrigendum, 3 pages; quantitative error bounds are corrected, not the §4.2 Laplacian sign"
+url = "https://www.cmls.polytechnique.fr/perso/favre/corrigendum.pdf"
+fetched_from = "https://www.cmls.polytechnique.fr/perso/favre/corrigendum.pdf"
+fetched_at = "2026-10-22T21:29:51Z"
+sha256 = "dd74776159bbad2fa0368b6a2a6d19bd708773c2da2381679e53108e4d8d9a95"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["References and the numbered sections citing this work"]
+authors = "Charles Favre and Juan Rivera-Letelier"
+title = "Corrigendum to Équidistribution quantitative des points de petite hauteur sur la droite projective"
+year = 2006
+
+[[source]]
+id = "kedlaya-liu-ii"
+authors = "Kiran S. Kedlaya, Ruochuan Liu"
+title = "Relative p-adic Hodge theory, II: Imperfect period rings"
+year = 2016
+arxiv = "1602.06899v3"
+locator_scheme = "section"
+locator = "arXiv:1602.06899v3, Appendix A, pp. 189–191; errata to Part I"
+url = "https://arxiv.org/abs/1602.06899v3"
+fetched_from = "https://arxiv.org/pdf/1602.06899v3"
+fetched_at = "2026-10-22T21:29:59Z"
+sha256 = "97383900492daf1c6778959c37e993f67dd5ad379ac03c31049b870382e5d42c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["References and the numbered sections citing this work"]
+
+[[source]]
+id = "baker-norine"
+authors = "Matthew Baker, Serguei Norine"
+title = "Riemann-Roch and Abel-Jacobi theory on a finite graph"
+year = 2006
+arxiv = "math/0608360v3"
+locator_scheme = "section"
+locator = "arXiv:math/0608360v3 (2007), §§2–3, pp. 8–16"
+url = "https://arxiv.org/abs/math/0608360v3"
+fetched_from = "https://arxiv.org/pdf/math/0608360v3"
+fetched_at = "2026-10-22T21:30:04Z"
+sha256 = "ce58153e6fa2e9f325ed79c5f08c36d503dcbde62f991a7d97a068b98a57fb7e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["References and the numbered sections citing this work"]
+
+[[source]]
+id = "berkovich-integration"
+locator_scheme = "section"
+locator = "Author preprint (2004), Theorems 1.6.1–1.6.2 and 9.1.1, pp. 22–23, 136–138"
+url = "https://www.wisdom.weizmann.ac.il/~vova/Integration_2004.pdf"
+fetched_from = "https://www.wisdom.weizmann.ac.il/~vova/Integration_2004.pdf"
+fetched_at = "2026-10-22T21:30:14Z"
+sha256 = "927ef432db9ccdb8b4f8ab0d49a0b3c918d238ad3390f8d70c130b05cb798a5b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["References and the numbered sections citing this work"]
+authors = "Vladimir Berkovich"
+title = "Integration of one-forms on p-adic analytic spaces"
+year = 2004
+
+[[source]]
+id = "fresnel-matignon"
+authors = "J. Fresnel, M. Matignon"
+title = "Sur les espaces analytiques quasi-compacts de dimension 1 sur un corps valué complet ultramétrique"
+year = 1986
+venue = "Annali di Matematica Pura ed Applicata 145"
+doi = "10.1007/BF01790541"
+locator_scheme = "section"
+locator = "Annali di Matematica Pura ed Applicata 145 (1986), 159–210; Théorème 1, §1.4, pp. 165–168 and Théorème 4, §2.4, pp. 182–184"
+url = "https://doi.org/10.1007/BF01790541"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["References and the numbered sections citing this work"]
+
+[[source]]
+id = "bosch-lutkebohmert"
+locator_scheme = "section"
+locator = "Mathematische Annalen 270 (1985), 349–379; Corollary 3.8, pp. 364–365; Lemma 6.1, p. 372; Theorem 7.1 and its proof, pp. 374–378"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0270/LOG_0034.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0270/LOG_0034.pdf"
+fetched_at = "2026-10-22T21:32:42Z"
+sha256 = "cf1e7be3e1977ae9e9a21c58b72f98be878233197ae601015efeab967dc1a1fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["References and the numbered sections citing this work"]
+authors = "Siegfried Bosch and Werner Lütkebohmert"
+title = "Stable reduction and uniformization of abelian varieties I"
+year = 1985
+
+[[source]]
+id = "huber-1994"
+authors = "R. Huber"
+title = "A generalization of formal schemes and rigid analytic varieties"
+year = 1994
+venue = "Mathematische Zeitschrift 217"
+doi = "10.1007/BF02571959"
+locator_scheme = "section"
+locator = "Mathematische Zeitschrift 217 (1994), 513–551, Proposition 4.5(iv), printed p. 543"
+url = "https://doi.org/10.1007/BF02571959"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.30"]
+
+[[source]]
+id = "ducros"
+locator_scheme = "section"
+locator = "§4.5.2, p. 271"
+url = "https://webusers.imj-prg.fr/~antoine.ducros/trirss.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~antoine.ducros/trirss.pdf"
+fetched_at = "2026-10-22T21:34:09Z"
+sha256 = "d1f4b481d2b72866a73dd8b6ec4b6366061dfaf0a3fc29839cff48c6a873c1f4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.16"]
+authors = "Antoine Ducros"
+title = "La structure des courbes analytiques"
+year = 2014
+
+[[source]]
+id = "coleman"
+locator_scheme = "section"
+locator = "Proposition 4.3, printed p. 226"
+url = "https://www.numdam.org/item/CM_1989__72_2_205_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1989__72_2_205_0.pdf"
+fetched_at = "2026-10-22T21:34:10Z"
+sha256 = "d04e1c413f62b744c2d8e5d746bcb569e19a952f976694e0f2997fa6da3c4204"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["7.7"]
+authors = "Robert F. Coleman"
+title = "Reciprocity laws on curves"
+year = 1989
+
+[[source]]
+id = "de-shalit"
+locator_scheme = "section"
+locator = "Documenta Mathematica, Extra Volume Coates (2006), 325–334; §0.3, pp. 327–328"
+url = "https://ftp.gwdg.de/pub/misc/EMIS/journals/DMJDMV/vol-coates/deshalit.pdf"
+fetched_from = "https://ftp.gwdg.de/pub/misc/EMIS/journals/DMJDMV/vol-coates/deshalit.pdf"
+fetched_at = "2026-10-22T21:34:10Z"
+sha256 = "5b8b17e58843f9f6c43be6744469a07b99b20961fa269bf9b08bebf26e13ee4a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["References and the numbered sections citing this work"]
+authors = "Ehud de Shalit"
+title = "Coleman integration versus Schneider integration on semistable curves"
+year = 2006
+
+[[source]]
+id = "huber-1996"
+locator_scheme = "theorem"
+locator = "Proposition 8.3.1; Remark 8.3.2; Lemma 5.6.8(i); Theorem 8.3.5"
+url = "https://link.springer.com/book/10.1007/978-3-663-09991-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.30"]
+authors = "Roland Huber"
+title = "Étale cohomology of rigid analytic varieties and adic spaces"
+year = 1996
+doi = "10.1007/978-3-663-09991-8"
