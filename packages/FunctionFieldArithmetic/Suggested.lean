@@ -2,22 +2,19 @@ import Mathlib
 import TauCeti.FieldTheory.FunctionField.RiemannRoch.ClassNumber
 
 /-!
-# FunctionFieldArithmetic: representative target signatures
+# FunctionFieldArithmetic: target signatures
 
-The roadmap is `README.md`; this file is not the roadmap and is not exhaustive. It records the
-definitions and theorem signatures of the roadmap that can be stated against the pinned Mathlib and
-Tau Ceti APIs, so that contributors and reviewers converge on names and signatures.
+The roadmap is README.md; this file is not the roadmap. It states its headline theorems
+against the pinned Mathlib and Tau Ceti APIs, using the few simple definitions they need.
 
-Design choices made explicit here:
-
-* the setting is Tau Ceti's intrinsic `TauCeti.IsFunctionField k F`, passed as an explicit
-  hypothesis, with exactness of the constants as the separate hypothesis
-  `IsIntegrallyClosedIn k F`;
-* the zeta function is defined from effective divisors of the function field (`TauCeti.Divisor`),
-  not from points of a scheme; its comparison with the scheme zeta function is a README target;
-* `pointCount r` is defined from place degrees, `Σ_{d ∣ r} d · #{places of degree d}`;
-* the Artin–Schreier–Witt operator is `Frob − id` on Mathlib's Witt vectors, never a coordinatewise
-  map, and the length-`n` group is the quotient of `W(F)` by `℘ W(F)` and the kernel of truncation.
+The finite-length Artin–Schreier–Witt character classification, degree-one divisor theorem,
+divisor zeta identities and polynomial recovery are statable on native carriers below.
+The other headline theorems are not statable at the pins: equal-characteristic local
+abelian existence lacks the completed local reciprocity carrier; finite ray-cover
+classification lacks generalized Picard schemes and their Lang covers; Harder finiteness
+lacks the reductive adelic automorphic function module; unitary Eisenstein continuation
+and the global Fourier coefficient formula lack smooth induced sections, Eisenstein series
+and local representation densities. Their full statements are in the README.
 -/
 
 namespace TauCetiRoadmap.FunctionFieldArithmetic
@@ -36,54 +33,36 @@ theorem exists_divisor_degree_eq_one [Finite k] (hF : IsFunctionField k F)
     (hk : IsIntegrallyClosedIn k F) : ∃ D : Divisor k F, Divisor.degree D = 1 := by
   sorry
 
-/-- The divisor degree of a function field with finite exact constants is onto `ℤ`
-(README 0.2). -/
-theorem divisor_degree_surjective [Finite k] (hF : IsFunctionField k F)
-    (hk : IsIntegrallyClosedIn k F) :
-    Function.Surjective (Divisor.degree : Divisor k F →+ ℤ) := by
-  sorry
-
 end Constants
 
 /-! ## Layer 3: Artin–Schreier–Witt theory -/
 
 section ArtinSchreierWitt
 
-variable (p : ℕ) [Fact p.Prime] (F : Type*) [Field F] [CharP F p]
+variable (p : ℕ) [Fact p.Prime] (F : Type*) [Field F]
 
 /-- **The Artin–Schreier–Witt operator** `℘ = Frob − id` on the Witt vectors of a field of
 characteristic `p` (README 3.1). It is additive for the Witt group law. -/
-noncomputable def artinSchreierWitt : WittVector p F →+ WittVector p F :=
+noncomputable def artinSchreierWitt [CharP F p] : WittVector p F →+ WittVector p F :=
   (WittVector.frobenius : WittVector p F →+* WittVector p F).toAddMonoidHom -
     AddMonoidHom.id (WittVector p F)
 
 /-- **The Artin–Schreier–Witt group of length `n`** (README 3.1):
 `W_n(F) / ℘ W_n(F) = W(F) / (℘ W(F) + ker (truncate n))`. -/
-abbrev aswQuotient (n : ℕ) : Type _ :=
+abbrev aswQuotient [CharP F p] (n : ℕ) : Type _ :=
   WittVector p F ⧸ ((artinSchreierWitt p F).range ⊔
     (RingHom.ker (WittVector.truncate (p := p) (R := F) n)).toAddSubgroup)
 
-/-- `℘` kills the unit Witt vector: the trivial class gives the trivial extension. -/
-example : artinSchreierWitt p F 1 = 0 := by
-  simp [artinSchreierWitt]
+variable [CharP F p]
 
-/-- On a Teichmüller representative `℘` is `[a] ↦ [a^p] − [a]`: Frobenius is computed by raising
-the Witt coordinates to the `p`-th power, not by Witt multiplication. -/
-example (a : F) :
-    artinSchreierWitt p F (WittVector.teichmuller p a) =
-      WittVector.teichmuller p (a ^ p) - WittVector.teichmuller p a := by
-  simp only [artinSchreierWitt, AddMonoidHom.sub_apply, RingHom.toAddMonoidHom_eq_coe,
-    AddMonoidHom.coe_coe, AddMonoidHom.id_apply, WittVector.frobenius_eq_map_frobenius,
-    WittVector.map_teichmuller, frobenius_def]
-
-/-- At length zero the Artin–Schreier–Witt group is trivial. -/
-example : Subsingleton (aswQuotient p F 0) := by
-  have h : (RingHom.ker (WittVector.truncate (p := p) (R := F) 0)).toAddSubgroup = ⊤ := by
-    ext x
-    simp only [Submodule.mem_toAddSubgroup, RingHom.mem_ker, AddSubgroup.mem_top, iff_true]
-    exact TruncatedWittVector.ext fun i => i.elim0
-  rw [aswQuotient, h, sup_top_eq]
-  exact QuotientAddGroup.subsingleton_quotient_top
+/-- The finite-length Artin–Schreier–Witt quotient classifies continuous characters of the
+absolute Galois group with values in `ℤ/p^n` (README 3.1; Kosters–Wan, Theorem 3.4).
+This signature asserts the underlying group equivalence; the solution pairing and its
+functorial and topological characterizations are specified in the README. -/
+theorem artinSchreierWitt_galois (n : ℕ) :
+    Nonempty (aswQuotient p F n ≃+
+      Additive (ContinuousMonoidHom (Field.absoluteGaloisGroup F) (Multiplicative (ZMod (p ^ n))))) := by
+  sorry
 
 end ArtinSchreierWitt
 
@@ -113,34 +92,17 @@ noncomputable def pointCount (r : ℕ) : ℕ :=
 
 variable {k F}
 
-/-- The zero divisor is the only effective divisor of degree zero (README 5.1,
-`zeta_coeff_zero`). -/
-theorem effectiveDivisorCount_zero (hF : IsFunctionField k F) :
-    effectiveDivisorCount k F 0 = 1 := by
-  rw [effectiveDivisorCount, Nat.card_eq_one_iff_exists]
-  refine ⟨⟨0, AlgebraicGeometry.WeilDivisor.isEffective_zero, by simp⟩, ?_⟩
-  rintro ⟨D, hD, hdeg⟩
-  have hle : (0 : Divisor k F) ≤ D := AlgebraicGeometry.WeilDivisor.isEffective_iff_zero_le.mp hD
-  refine Subtype.ext (AlgebraicGeometry.WeilDivisor.ext fun P => ?_)
-  have h1 := Divisor.coeff_le_degree hF hle P
-  have h2 := (AlgebraicGeometry.WeilDivisor.isEffective_iff D).mp hD P
-  simp only [hdeg, Nat.cast_zero] at h1
-  simp only [AlgebraicGeometry.WeilDivisor.coeff_zero]
-  omega
+open scoped PowerSeries.WithPiTopology
 
-/-- The zeta series has constant term one. -/
-example (hF : IsFunctionField k F) : PowerSeries.constantCoeff (zeta k F) = 1 := by
-  simp [zeta, effectiveDivisorCount_zero hF]
-
-/-- No place has degree zero. -/
-example (hF : IsFunctionField k F) : placeCount k F 0 = 0 := by
-  rw [placeCount, Nat.card_eq_zero]
-  left
-  exact ⟨fun ⟨P, hP⟩ => by have := P.one_le_degree_of_isFunctionField hF; omega⟩
-
-/-- `N₁` counts the places of degree one. -/
-example : pointCount k F 1 = placeCount k F 1 := by
-  simp [pointCount]
+/-- The divisor zeta series is the coefficientwise convergent Euler product over all places
+(README 5.1). Each factor is the geometric series in the place degree. -/
+theorem zeta_eulerProduct [Finite k] (hF : IsFunctionField k F)
+    (hk : IsIntegrallyClosedIn k F) :
+    HasProd (fun v : Place k F =>
+      PowerSeries.invOfUnit
+        (1 - (PowerSeries.X : PowerSeries ℤ) ^ v.degree) (1 : ℤˣ))
+      (zeta k F) := by
+  sorry
 
 /-- **Logarithmic derivative of the zeta function** (README 5.1):
 `r A_r = Σ_{i=1}^{r} N_i A_{r−i}`, equivalently `T Z′/Z = Σ_r N_r T^r`. -/
@@ -149,11 +111,6 @@ theorem zeta_logDeriv [Finite k] (hF : IsFunctionField k F) (hk : IsIntegrallyCl
     (r : ℤ) * PowerSeries.coeff r (zeta k F) =
       ∑ i ∈ Finset.range r,
         (pointCount k F (i + 1) : ℤ) * PowerSeries.coeff (r - 1 - i) (zeta k F) := by
-  sorry
-
-/-- **Point counts of the rational function field** (README 5.1, Check): `N_r = q^r + 1`. -/
-theorem pointCount_ratFunc [Finite k] (r : ℕ) (hr : 0 < r) :
-    pointCount k (RatFunc k) r = Nat.card k ^ r + 1 := by
   sorry
 
 /-- **Effective divisors in large degree** (README 5.2): for `n > 2g − 2`,
@@ -229,51 +186,5 @@ example : ¬ IsLPolynomialData 5 1 (fun _ => 8) (1 + C 3 * X + C 5 * X ^ 2) := b
   simp [coeff_X, coeff_X_pow, coeff_one] at this
 
 end LPolynomial
-
-/-!
-## Statements not typed at the pins
-
-The following README targets need carriers that the pinned libraries do not provide; they are
-stated in the README only.
-
-* Layer 0: `degree_conventions` (needs the idele group of ArithmeticGaloisDuality and the adeles of
-  AutomorphicLFunctionsAndLocalFactors), `divisorClass_picardPoints` (Picard schemes).
-* Layer 1: `chartIdeals`, `riemannRochSpace_eq_inf_chartIdeals`, `exists_reducedBasis`,
-  `riemannRoch_reducedBasis`, `computeRiemannRochBasis`, `computeRiemannRochBasis_cost` and their API (two-chart integral closures and their fractional
-  ideals).
-* Layer 2: `divisorLattice` and its API, `selfDual_local_volume`, `selfDual_global_volumes`,
-  `fourier_indicator_divisorLattice`, `testFunctions_span_translates` (completed adeles and residue
-  characters).
-* Layer 3: `artinSchreierWitt_galois`, `aswField_eq_iff`, `aswField_degree`,
-  `aswReduced_exists_unique` and its API, `artinSchreier_onePole_comparison`.
-* Layer 4: `LubinTate.formalGroup`, `LubinTate.smul`, `lubinTate_torsion`, `localKroneckerWeber`,
-  `localAbelianExistence_all`, `injective_artinMap_all`, `lubinTate_artin`,
-  `conductor_existence_all`, `rayIdeleClassGroup`, `RayCharacterData`, `rayCharacterData_conductor` and their API,
-  `schmidWitt_localCoordinates`, `localCoordinates_truncation`, `schmidWitt_changeParameter`,
-  `rigidifiedPicardFunctor`, `generalizedPicard`, `generalizedJacobian`, `generalizedPicard_representable`,
-  `generalizedJacobian_linearPart`, `rayAbel`, `rayAbel_affineBundle`, `HasRayModulus`, `rayAbel_rosenlicht`,
-  `rayPicard_comparison`, `rayPicard_localUnits`, `rayLangCover`, `rayLangCover_frobenius`,
-  `ideleClasses_away_dense`, `rayLangCover_artin`, `rayLangCover_geometricallyConnected`,
-  `finiteRayLangCover`, `finiteRayLangCover_classifies`, `finiteRayLangCover_normGroup`, `finiteRayLangCover_connected`,
-  `finiteRayLangCover_geometricallyConnected`, `rayLangCover_conductor`, `rayLangCover_modulusFactor`,
-  `schmidWitt`, `schmidWitt_perfect`, `schmidWitt_characterization`,
-  `schmidWitt_formula`, `schmidWitt_normGroup`, `aswConductor_eq`, `aswUpperRamification`.
-* Layer 5: `zeta_eulerProduct`, `pointCount_eq`, `effectiveDivisorCount_eq`, `zeta_eq_schemeZeta`,
-  `lPolynomial_constantExtension`, `zeta_constantExtension`, `localEulerFactorFinite` and its API,
-  `lFunction_cohomological`, `lFunction_cohomological_projective`, `enumeratePlaces_le`, `enumeratePlaces_cost`,
-  `computeRayQuotient`, `computeRayQuotient_cost`, `computeRayCharacterData_sound`,
-  `computeRayCharacterData_complete`, `frobeniusPlaceCount`,
-  `frobeniusPlaceCount_constant_congruence`, `degree_sensitive_chebotarev` and their API.
-* Layer 6: `adelicPoints` and its API, `automorphicFunctions`, `constantTerm`, `cuspFunctions`,
-  `cuspFunctions_compactSupport`, `cuspFunctions_integralModel`, `heckeEigenvalue_algebraic`,
-  `heckeAction_unramified_cusp`, `normalizedConstantTerm` and its API,
-  `normalizedConstantTerm_hecke`, `satake_gl1_reciprocity`, `cuspForm_exists_degreeZero_ne_zero`.
-* Layer 7: `exists_unramified_inducingCharacter`, `I_n`, `sphericalSection`, `siegelEisenstein`,
-  `section_degree`, `leviDetCharacter_discrete`, `siegelEisenstein_converges`,
-  `siegelEisenstein_rational`, `fourierExpansion`, `fourierCoefficient_rationalLevi`, `whittaker_levi`,
-  `fourierCoefficient_factor`, `hermitianDensity`, `densityPolynomial`, `densityType`,
-  `densityHalfLength`, `hermitianDensity_split`, `whittaker_eq_density`,
-  `fyz_globalCoefficient`.
--/
 
 end TauCetiRoadmap.FunctionFieldArithmetic

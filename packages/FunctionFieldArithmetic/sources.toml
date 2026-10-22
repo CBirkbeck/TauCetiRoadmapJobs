@@ -1,0 +1,466 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FunctionFieldArithmetic"
+
+[[source]]
+id = "rosen"
+authors = "Michael Rosen"
+title = "Number Theory in Function Fields"
+year = 2002
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-6046-0"
+locator_scheme = "chapter"
+locator = "Chapter 5, pp. 45–46; Theorems 5.9–5.10"
+url = "https://doi.org/10.1007/978-1-4757-6046-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0; 5.1–5.6"]
+
+[[source]]
+id = "goss"
+authors = "David Goss"
+title = "Basic Structures of Function Field Arithmetic"
+year = 1996
+doi = "10.1007/978-3-642-61480-4"
+locator_scheme = "section"
+locator = "1.1, Example 1.1.1 and Proposition 1.1.2, p. 1"
+url = "https://doi.org/10.1007/978-3-642-61480-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "1998 printing of the 1996 work; paywalled, cited by locator without the text"
+cited_for = ["3.1"]
+
+[[source]]
+id = "stichtenoth"
+authors = "Henning Stichtenoth"
+title = "Algebraic Function Fields and Codes"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-540-76878-4"
+locator_scheme = "section"
+locator = "5.1, Lemma 5.1.1, Definition 5.1.2, Proposition 5.1.3, pp. 185–186"
+url = "https://doi.org/10.1007/978-3-540-76878-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Scope; 5.1–5.3"]
+
+[[source]]
+id = "yu"
+authors = "Hongjie Yu"
+title = "Comptage des systèmes locaux $\\ell$-adiques sur une courbe"
+year = 2018
+arxiv = "1807.04659v5"
+locator_scheme = "section"
+locator = "2.1–2.3; 5.3.1, Lemma 5.3.3"
+url = "https://arxiv.org/abs/1807.04659v5"
+fetched_from = "https://arxiv.org/pdf/1807.04659v5"
+fetched_at = "2026-10-22T17:15:41Z"
+sha256 = "9383bcdee14777ec647ba2658da3319d7d43864f9481b07c7d9550f1a454de1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["0.1; 6.7"]
+
+[[source]]
+id = "kw"
+authors = "Michiel Kosters, Daqing Wan"
+title = "On the arithmetic of Z_p-extensions"
+year = 2016
+arxiv = "1607.00523v1"
+locator_scheme = "section"
+locator = "3.1–3.2; 4.1–4.4; Theorem 4.12; Proposition 4.14"
+url = "https://arxiv.org/abs/1607.00523v1"
+fetched_from = "https://arxiv.org/pdf/1607.00523v1"
+fetched_at = "2026-10-22T17:15:45Z"
+sha256 = "c306bfb15225da4558574451e2ae22cb307c8f0b698dc5f366e543350f9522ab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["3; 4.3–4.4"]
+
+[[source]]
+id = "kosters"
+authors = "Michiel Kosters"
+title = "A short proof of a Chebotarev density theorem for function fields"
+year = 2014
+arxiv = "1404.6345v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Corollary 1.2, Lemmas 1.3–1.4"
+url = "https://arxiv.org/abs/1404.6345v1"
+fetched_from = "https://arxiv.org/pdf/1404.6345v1"
+fetched_at = "2026-10-22T17:15:51Z"
+sha256 = "6e98f8196ac9731be61947a4dd3d6fce14abd306f4b1a154e49b450db69c35ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["5.10"]
+
+[[source]]
+id = "yoshida"
+year = 2008
+title = "Local class field theory via Lubin–Tate theory"
+authors = "T. Yoshida"
+locator_scheme = "section"
+locator = "3–6; 8"
+url = "https://www.numdam.org/item/10.5802/afst.1188.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/afst.1188.pdf"
+fetched_at = "2026-10-22T17:15:52Z"
+sha256 = "37a2b12ba633f505d6753e034812a047f998e30c663976ca87cc742b3d311c74"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.1–4.2"]
+
+[[source]]
+id = "hess"
+authors = "F. Hess"
+title = "Computing Riemann–Roch Spaces in Algebraic Function Fields and Related Topics"
+year = 2002
+venue = "Journal of Symbolic Computation 33"
+doi = "10.1006/jsco.2001.0513"
+locator_scheme = "theorem"
+locator = "Lemma 1; Corollaries 3–4; Theorem 7; Proposition 9; Corollary 11 (author manuscript pagination)"
+url = "https://doi.org/10.1006/jsco.2001.0513"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1–1.2"]
+
+[[source]]
+id = "parshin"
+authors = "A. N. Parshin"
+title = "Notes on the Poisson formula"
+year = 2010
+arxiv = "1011.3392v1"
+locator_scheme = "section"
+locator = "2.1–2.2, pp. 7, 9–10"
+url = "https://arxiv.org/abs/1011.3392v1"
+fetched_from = "https://arxiv.org/pdf/1011.3392v1"
+fetched_at = "2026-10-22T17:16:01Z"
+sha256 = "acbb25d15ad3efc8fc70f92cc436c8ed0ea7d8b74487e338af996f403b6270da"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["2"]
+
+[[source]]
+id = "milne"
+year = 2006
+title = "Arithmetic Duality Theorems, 2nd edition"
+authors = "J. S. Milne"
+locator_scheme = "theorem"
+locator = "Appendix A, A.7–A.12, pp. 131–136"
+url = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_at = "2026-10-22T17:16:09Z"
+sha256 = "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.3; 4.6"]
+
+[[source]]
+id = "conrad_geom"
+year = 2009
+title = "Geometric global class field theory"
+authors = "B. Conrad"
+locator_scheme = "theorem"
+locator = "Section 2; Theorems 3.1–3.2"
+url = "https://math.stanford.edu/~conrad/249BW09Page/handouts/geomcft.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/249BW09Page/handouts/geomcft.pdf"
+fetched_at = "2026-10-22T17:16:10Z"
+sha256 = "d5a83bd35472904dabd0d8ff02974b221065af2ebbc421d12a45bb3e3da16a85"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.6–4.10"]
+
+[[source]]
+id = "russell"
+authors = "Henrik Russell"
+title = "Albanese varieties with modulus over a perfect field"
+year = 2009
+venue = "Algebra & Number Theory Vol. 7, No. 4 (2013), 853-892"
+arxiv = "0902.2533v3"
+locator_scheme = "theorem"
+locator = "Section 3.3; Theorems 3.24–3.25, p. 34"
+url = "https://arxiv.org/abs/0902.2533v3"
+fetched_from = "https://arxiv.org/pdf/0902.2533v3"
+fetched_at = "2026-10-22T17:16:17Z"
+sha256 = "d3b0e6330b724b751d6bf33511c027603f612c2151fcbfa15363042bb3ae8c4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["4.6–4.7"]
+
+[[source]]
+id = "conrad_adelic"
+year = 2012
+title = "Weil and Grothendieck approaches to adelic points"
+authors = "B. Conrad"
+locator_scheme = "theorem"
+locator = "Proposition 2.1; Example 2.3; Theorem 3.6"
+url = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/adelictop.pdf"
+fetched_at = "2026-10-22T17:16:28Z"
+sha256 = "fe4a9193aff4ef575665b40971f3da32f850a74d87b3f2d0fa28bba26b9cbabb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.1"]
+
+[[source]]
+id = "bhkt"
+authors = "Gebhard Böckle, Michael Harris, Chandrashekhar Khare, Jack A. Thorne"
+title = "$\\hat{G}$-local systems on smooth projective curves are potentially automorphic"
+year = 2016
+arxiv = "1609.03491v2"
+locator_scheme = "theorem"
+locator = "Propositions 8.1–8.2"
+url = "https://arxiv.org/abs/1609.03491v2"
+fetched_from = "https://arxiv.org/pdf/1609.03491v2"
+fetched_at = "2026-10-22T17:16:34Z"
+sha256 = "ec54cf92ce04146c73b48945be2765f675359255d46cc94a0aa35a39229743b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.3–6.5"]
+
+[[source]]
+id = "ciubotaru_harris"
+authors = "Dan Ciubotaru, Michael Harris"
+title = "On the generalized Ramanujan and Arthur conjectures over function fields"
+year = 2023
+arxiv = "2311.15300v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.1; Lemma 3.2"
+url = "https://arxiv.org/abs/2311.15300v1"
+fetched_from = "https://arxiv.org/pdf/2311.15300v1"
+fetched_at = "2026-10-22T17:16:39Z"
+sha256 = "7261083b46cc8ec3fad81215250ff6bef47da05ef6054813572de21db10dc103"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["6.5"]
+
+[[source]]
+id = "abdurrahman_venkatesh"
+authors = "Amina Abdurrahman, Akshay Venkatesh"
+title = "Symplectic $L$-functions and symplectic Reidemeister torsion (mod squares)"
+year = 2023
+arxiv = "2303.13436v1"
+locator_scheme = "section"
+locator = "3.2, p. 27, equations 3.1–3.2"
+url = "https://arxiv.org/abs/2303.13436v1"
+fetched_from = "https://arxiv.org/pdf/2303.13436v1"
+fetched_at = "2026-10-22T17:16:45Z"
+sha256 = "3e2736beea70ba3467ad30a24b518d82cf589d9ddd4a06f6b0684c7bfd7d6306"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["5.7"]
+
+[[source]]
+id = "stacks"
+year = 2026
+title = "The Stacks Project, The Trace Formula"
+authors = "The Stacks Project Authors"
+locator_scheme = "tag"
+locator = "03UZ, Theorem 64.20.1"
+url = "https://stacks.math.columbia.edu/tag/03UZ"
+fetched_from = "https://stacks.math.columbia.edu/download/trace.pdf#nameddest=03UZ"
+fetched_at = "2026-10-22T17:16:48Z"
+sha256 = "99d5358fe636cb18afa5a81f93c7906995db2a02a15efd742ba90e07cb74c828"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.7"]
+
+[[source]]
+id = "sga4half"
+authors = "A. Grothendieck, P. Deligne"
+title = "Fonctions L modulo ℓn et modulo p"
+year = 1977
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0091520"
+locator_scheme = "theorem"
+locator = "Théorème 2.2"
+url = "https://doi.org/10.1007/BFb0091520"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.7"]
+
+[[source]]
+id = "fyz"
+authors = "Tony Feng, Zhiwei Yun, Wei Zhang"
+title = "Higher Siegel--Weil formula for unitary groups: the non-singular terms"
+year = 2021
+arxiv = "2103.11514v4"
+locator_scheme = "section"
+locator = "2.1–2.6, pp. 8–15 (Remark 2.1 corrected in 7.1)"
+url = "https://arxiv.org/abs/2103.11514v4"
+fetched_from = "https://arxiv.org/pdf/2103.11514v4"
+fetched_at = "2026-10-22T17:16:56Z"
+sha256 = "c6a65b8c01333cc726ba6b163fd24aba5022db6cf5baf00c353ccb9b9ba182b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["7"]
+
+[[source]]
+id = "li_zhang"
+authors = "Chao Li, Wei Zhang"
+title = "Kudla--Rapoport cycles and derivatives of local densities"
+year = 2019
+arxiv = "1908.01701v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.5.1 and proof; Example 3.5.2"
+url = "https://arxiv.org/abs/1908.01701v3"
+fetched_from = "https://arxiv.org/pdf/1908.01701v3"
+fetched_at = "2026-10-22T17:17:02Z"
+sha256 = "7db1843f90c3e79741f8d58d92b6bb42b0a3b7ae001c8f9419f43b08c2119d49"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["7.4"]
+
+[[source]]
+id = "kudla_rapoport"
+authors = "Stephen Kudla, Michael Rapoport"
+title = "Special cycles on unitary Shimura varieties II: global theory"
+year = 2009
+arxiv = "0912.3758v2"
+locator_scheme = "theorem"
+locator = "Proposition 10.1, pp. 37–38"
+url = "https://arxiv.org/abs/0912.3758v2"
+fetched_from = "https://arxiv.org/pdf/0912.3758v2"
+fetched_at = "2026-10-22T17:17:08Z"
+sha256 = "4184d46227f59875b0aba2178af2fac5baee21aa06ef201aed1d782c69c91d41"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["7.5"]
+
+[[source]]
+id = "borel_tits"
+year = 1965
+title = "Groupes réductifs"
+authors = "A. Borel and J. Tits"
+locator_scheme = "section"
+locator = "Théorème 3.17"
+url = "https://www.numdam.org/item/PMIHES_1965__27__55_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__27__55_0.pdf"
+fetched_at = "2026-10-22T17:17:10Z"
+sha256 = "ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.3"]
+
+[[source]]
+id = "morris1"
+year = 1982
+title = "Eisenstein series for reductive groups over global function fields I. The cusp form case"
+authors = "L. E. Morris"
+locator_scheme = "section"
+locator = "4.1–4.3; 5.3–5.6; pp. 134, 160–168"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DAC6AE21425864B27BFA33D98ECA5ACA/S0008414X00026584a.pdf/eisenstein-series-for-reductive-groups-over-global-function-fields-i-the-cusp-form-case.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DAC6AE21425864B27BFA33D98ECA5ACA/S0008414X00026584a.pdf/eisenstein-series-for-reductive-groups-over-global-function-fields-i-the-cusp-form-case.pdf"
+fetched_at = "2026-10-22T17:17:23Z"
+sha256 = "6757178733cee91823e6d8842c5fd7c9a17b99c9a9cf7b8d55bc8f35e5fb2254"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.4; 7.2"]
+
+[[source]]
+id = "guignard_published"
+year = 2019
+title = "On the ramified class field theory of relative curves"
+authors = "Q. Guignard"
+locator_scheme = "section"
+locator = "4.7; Propositions 4.8, 4.11–4.14; Lemma 4.9"
+url = "https://msp.org/ant/2019/13-6/ant-v13-n6-p03-s.pdf"
+fetched_from = "https://msp.org/ant/2019/13-6/ant-v13-n6-p03-s.pdf"
+fetched_at = "2026-10-22T17:17:26Z"
+sha256 = "aa6ae6be9d22d4f5a4aab744e22589712d5863f00fad7d33a98f434b186ce94b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.6–4.10"]
+
+version_note = "Published version, Algebra & Number Theory 13 (2019); locators use published numbering"
+[[source]]
+id = "morris2"
+year = 1982
+title = "Eisenstein series for reductive groups over global function fields II. The general case"
+authors = "L. E. Morris"
+locator_scheme = "section"
+locator = "5.5; 6.5–6.6"
+url = "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/eisenstein-series-for-reductive-groups-over-global-function-fields-ii-the-general-case/6B1D0A42095B073B7072B0D7D584536D"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6B1D0A42095B073B7072B0D7D584536D/S0008414X00033150a.pdf/div-class-title-eisenstein-series-for-reductive-groups-over-global-function-fields-ii-the-general-case-div.pdf"
+fetched_at = "2026-10-22T17:20:23Z"
+sha256 = "3e38d71954a76856304a034fadba599bfb90deec0bee06afaee99fb92a292a40"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.4; 7.2"]
+
+[[source]]
+id = "harder"
+year = 1974
+title = "Chevalley groups over function fields and automorphic forms"
+authors = "G. Harder"
+locator_scheme = "section"
+locator = "1.1–1.2"
+url = "https://campuscore.ariel.ac.il/wp/yuval-flicker/wp-content/uploads/sites/316/2026/03/HarderChevalleyGpsFunFields1974.pdf"
+fetched_from = "https://campuscore.ariel.ac.il/wp/yuval-flicker/wp-content/uploads/sites/316/2026/03/HarderChevalleyGpsFunFields1974.pdf"
+fetched_at = "2026-10-22T17:20:26Z"
+sha256 = "a6e654188e504f21a2caa11888160499e7c86fa9b7f0e4bfd92535835d423bfa"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.3–6.5"]
+
+[[source]]
+id = "sga3"
+year = 1970
+title = "Schémas en groupes III, SGA 3"
+authors = "M. Demazure and A. Grothendieck"
+locator_scheme = "section"
+locator = "Exposé XXVI, Proposition 2.1"
+url = "https://wstein.org/sga/SGA3/Expo26.pdf"
+fetched_from = "https://wstein.org/sga/SGA3/Expo26.pdf"
+fetched_at = "2026-10-22T17:20:28Z"
+sha256 = "45acf965a0e3ad5995a334a67862f98026535276c42ea15297df89f44d91fd7e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.3"]
+version_note = "Gille–Polo re-edition, Exposé XXVI (May 2009); proposition numbering as cited"
+
+[[source]]
+id = "roquette"
+authors = "P. Roquette"
+title = "Class field theory in characteristic p, its origin and development"
+year = 2002
+locator_scheme = "section"
+locator = "Equation (4), p. 22; section 4.3.3, pp. 25–28; section 8.1"
+cited_for = ["0.2", "5.1–5.6"]
+url = "https://www.mathi.uni-heidelberg.de/~roquette/klkall.pdf"
+licence_class = "author-page"
+status = "waived"
+version_note = "Operator waiver; cited by locator without the text"

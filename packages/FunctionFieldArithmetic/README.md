@@ -1,4 +1,4 @@
-# Roadmap: algebraic curves, Part II — arithmetic of function fields over finite fields
+# Roadmap: function field arithmetic — algebraic curves, Part II
 
 **Summary.** This roadmap continues
 [AlgebraicCurves](../AlgebraicCurves/README.md) at the point where that roadmap stops: function
@@ -41,7 +41,7 @@ in `TauCeti/FieldTheory/FunctionField/ConstantField.lean`. For example, the exac
 be viewed over `𝔽_{q²}` for the geometrically connected curve dictionary. Constant extensions,
 including the perfect-field hypotheses and the inseparable genus-drop warning, are consumed from
 AlgebraicCurves Layer 8. The one-pole Artin–Schreier genus and different are also supplied there
-(Layer 10), now implemented by
+(Layer 10), implemented by
 `TauCeti.two_mul_genus_eq_of_exists_reduced_artinSchreier_pole_ratFunc` in
 `TauCeti/FieldTheory/FunctionField/ArtinSchreier/Genus.lean`; §3.3 adds the comparison with Witt
 classes and their localization maps.
@@ -67,7 +67,8 @@ This roadmap owns:
   coefficients in a `ℤ[1/p]`-algebra, constant terms, cusp modules, Harder's finiteness theorem,
   integral coefficient models, the global unramified Hecke action and Yu's degree-zero
   nonvanishing (Layer 6);
-- unramified inducing characters for unitary groups, the unitary Siegel–Eisenstein series, its
+- inducing characters with their unramified obstruction and finite ramification, unitary
+  Eisenstein continuation from all parabolics and discrete data, the Siegel series and its
   Hermitian Fourier coefficients, split Hermitian local densities, the local Whittaker–density
   identity and the Feng–Yun–Zhang global coefficient formula (Layer 7).
 
@@ -99,13 +100,15 @@ It leaves the following to the roadmaps that state them, and states none of them
   characteristic polynomials); §1.8 Brauer–Nesbitt.
 - **DeligneWeightsAndPurity**: §1.6 (the Weil estimate for curves through the Jacobian and
   `Z(C, t) = P^rev_{π_J}(t)/((1 − t)(1 − qt))`) and §1.9 (base extension).
-  Its §3.7 consumes the per-degree Chebotarev theorem of §5.10 here.
+  Its §3.7 supplies `finiteCover_degreeChebotarev`, including the prescribed
+  constant-field Frobenius coset; §5.10 adds an explicit error estimate and compares it
+  with that supplied asymptotic statement.
 - **WeilConjectures**: WC.1 *A curve numerator before root bounds*
   (`curve_zeta_numerator_without_rh`) and WC.5 *Recurrences and Newton recovery*
   (`extension_count_recurrence`).
-- **SchemeAndStackFoundations**: SF.2 *Tsen's theorem*, SF.3b *Vector bundles and duality on
-  curves*, SF.3c *Picard schemes and Picard torsors of a curve without a rational point*, and
-  SF.5 *Weil bound via surfaces*.
+- **SchemeAndStackFoundations**: §2.16 *Tsen's theorem*, §3.3 *Vector bundles and duality on
+  curves*, §3.6 *Picard schemes and Picard torsors of a curve without a rational point*, and
+  §5.11 *Weil bound via surfaces*.
 - **AutomorphicSpectralTheory**: §§1.11–1.13 (function-field `GLₙ` character tori, spherical
   sections and induction normalization), §§2.15–2.16 (intertwiners), §§4.11–4.17
   (discrete and residual data). These are its everywhere-unramified `GLₙ` branch; they do not
@@ -127,14 +130,15 @@ It leaves the following to the roadmaps that state them, and states none of them
   extension of a nonarchimedean local field of characteristic other than two.
 
 The adelic points of an affine group over a function field (§6.1) are built here because
-AdelicAlgebraicGroups Layer 1 is written for number fields only. The split case of the Hermitian
-local density (§7.4) is built here because GeometryOfNumbersAndQuadraticArithmetic §3.2 treats
-the inert case only.
+AdelicAlgebraicGroups Layer 1 is written for number fields only. The split and inert equal-characteristic-two cases of Hermitian
+local density (§7.4) are built here because GeometryOfNumbersAndQuadraticArithmetic §3.2
+supplies the inert case over base fields of characteristic different from two, including
+dyadic residue fields.
 
 Arithmetic ray quotients and their finite characters are constructed in §4.5. Sections
 4.6–4.10 construct the generalized Picard schemes of every effective modulus, their universal
 property and their Lang covers, and compare the latter with finite Artin reciprocity.
-SchemeAndStackFoundations SF.3c supplies the ordinary Picard schemes used in the construction;
+SchemeAndStackFoundations §3.6 supplies the ordinary Picard schemes used in the construction;
 AutomorphicLFunctionsAndLocalFactors AL.3 supplies the zero-modulus comparison. The added
 geometry belongs here. ArithmeticGaloisDuality §R02.3.2 supplies compatible finite Artin maps
 and the constant-field projection; §4.9 applies them to an explicitly constructed cover.
@@ -179,7 +183,8 @@ Layer 12) `F = k(X)` for a smooth projective geometrically connected curve `X/k`
 and `RestrictedProduct.unitsEquiv`; `Valuation.Completion`; `LaurentSeries` and
 `LaurentSeries.ratfuncAdicComplRingEquiv`; `FormalGroup` (one-dimensional formal group laws;
 commutativity is a separate hypothesis); `Field.absoluteGaloisGroup`; `IsIntegrallyClosedIn`,
-`algebraicClosure`; `MeasureTheory.Measure.haar`.
+`algebraicClosure`; `MeasureTheory.Measure.haar`; `Algebra.trace_surjective`
+(`Mathlib/RingTheory/Trace/Basic.lean`, for a finite-dimensional separable field extension).
 
 ### From Tau Ceti
 
@@ -190,12 +195,14 @@ commutativity is a separate hypothesis); `Field.absoluteGaloisGroup`; `IsIntegra
 constants); `TauCeti.Place`, `TauCeti.Place.degree`, `TauCeti.Place.one_le_degree_of_isFunctionField`;
 `TauCeti.Divisor := WeilDivisor (Place k F)`, `TauCeti.Divisor.degree`,
 `TauCeti.Divisor.principal`, `TauCeti.Divisor.degree_principal`, `TauCeti.Divisor.dim`;
+`TauCeti.Divisor.degree_eq_zero_iff` (`TauCeti/FieldTheory/FunctionField/Divisor/Basic.lean`,
+for an effective divisor and an explicit function-field hypothesis);
 `TauCeti.riemannRochSpace`; `TauCeti.genus`; `TauCeti.Divisor.finite_setOf_isEffective_degree_le`,
 `TauCeti.Divisor.finite_ker_degreeClass`, `TauCeti.Divisor.classNumber`,
 `TauCeti.Divisor.classNumber_pos`; `TauCeti.weilDifferentialSpace`,
 `TauCeti.degree_weilDifferentialDivisor` (a nonzero Weil differential over exact constants has
 divisor degree `2g − 2`); `TauCeti.ReductiveAffineGroupSchemeCat` and `TauCeti.AlgHom.instGroup`
-(convolution points of a Hopf algebra form a group). Current Tau Ceti also has
+(convolution points of a Hopf algebra form a group). Tau Ceti also has
 `TauCeti.Place.Completion := P.valuation.Completion` with `completionEmbedding` and
 `completionIntegersEquivPowerSeries` at a rational place, the AlgebraicCurves Layer 5 and 9
 completion and expansion targets; this roadmap uses those names.
@@ -226,21 +233,28 @@ contracts this roadmap relies on are:
   Section 4.9 uses its commutative form `Frob_q − id` on a generalized Jacobian, including its
   unipotent part. RG2.0a supplies affine restriction of scalars along finite locally free
   maps, so `Res_{m/k} 𝔾_m` includes nonreduced finite `m`.
-- SchemeAndStackFoundations SF.3c, targets T353–T356, supplies ordinary Picard schemes and
-  torsors, the Picard–Brauer obstruction and divisor comparison without a rational point.
-  SF.3d T359 supplies high-degree ordinary Abel maps. JacobianChallenge Layers A–C supply
-  line bundles, coherent curve cohomology and the vanishing/base-change theorem for
-  pushforwards. Section 4.6 adds the rigidification and its representing scheme; §4.7 adds
-  the modulus relations. SchemeAndStackFoundations SF.1 T159–T160 supplies fpqc descent of
-  modules and affine morphisms; its subcanonical flat topology supplies descent of morphisms.
-- SmoothRepresentationsOfLocalGroups §SR.4.1 gives the Satake isomorphism of the spherical Hecke
+- SchemeAndStackFoundations §3.6 (`picardComponent`, `picardComponent_torsor`,
+  `picardComponent_point_iff`) supplies ordinary Picard components and torsors, using
+  JacobianChallenge Layer D for representability and the Picard–Brauer obstruction.
+  SchemeAndStackFoundations §3.7 `abelMaps_highDegree` supplies ordinary high-degree Abel
+  maps with Brauer–Severi descent. JacobianChallenge Layers A–C supply line bundles,
+  coherent curve cohomology and pushforward vanishing and base change. Section 4.6 adds
+  rigidification and its representing scheme; §4.7 adds the modulus relations.
+  SchemeAndStackFoundations §1.1 supplies quasi-coherent module descent; ModularCurves
+  Layer 0E supplies effective descent of affine schemes. The subcanonical flat topology
+  supplies descent of morphisms.
+- SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 supply smooth/parabolic induction,
+  its finite-level double-coset description and Whittaker functionals. Section SR.4.1 gives the Satake isomorphism of the spherical Hecke
   algebra with `Z[q_v^(±1/2)]`-coefficients and its compatibility with parabolic restriction.
 - EtaleCohomologyFoundations §§F.2.5 and F.3 give the actual compact-support functor and
   perfectness for bounded constructible finite-Tor-amplitude coefficients; §§F.10.2–F.10.3
-  give Frobenius comparison and finite-projective trace/determinant algebra. These are the
-  versioned roadmap contracts at commit `651c49797943811c7dd6d8ab4b5771b7ede1ec0d`, not
-  implementation declarations at the pins. Section 5.7 adds the finite-coefficient Euler-product
+  give Frobenius comparison and finite-projective trace/determinant algebra. These are roadmap contracts, rather than implementation declarations at the pins. Section 5.7 adds the finite-coefficient Euler-product
   identity; equality of power traces alone is not its supplier.
+- PadicMeasuresIwasawaAlgebras §5.1 supplies `detLine`, `detLine_quasiIso`,
+  `detLine_shortExact`, `detLine_baseChange`, `detLine_shift` and `detLine_acyclic` for
+  perfect complexes over commutative rings. Section 5.7 forms the characteristic series
+  from this functor; EtaleCohomologyFoundations §F.10.3 supplies traces and determinants
+  of finite projective modules, not this derived determinant construction.
 - ReductiveGroupsPartII RG2.0 supplies affine point topologies, their functoriality and the
   topological group of points over every topological base algebra, including the adeles.
   Section 6.1 adds the function-field restricted-product comparison.
@@ -254,8 +268,7 @@ Layer 3 for the Schmid–Witt symbol and Layer 2 for the local-coordinate compar
 Its geometric branch (§§4.6–4.10) starts from ordinary Picard schemes and curve
 Riemann–Roch, then uses Lang's theorem and compatible finite Artin reciprocity. It does not
 depend on Layer 5's Chebotarev estimate or on the higher-rank automorphic results.
-Layer 5 needs Layers 0 and 1 and AlgebraicCurves Layers 3–5; its finite ray computation also
-uses §4.5. Layer 6
+Layer 5 needs Layer 0 and AlgebraicCurves Layers 3–5; its finite-ray comparisons use §4.5. Layer 6
 needs Layer 2 (unipotent quotient volumes) and Layer 0. Layer 7 needs Layers 2 and 6. The worked
 examples after Layer 7 use Layers 0, 3 and 5.
 
@@ -267,7 +280,7 @@ of the curve is assumed.
 
 ### 0.1 Degrees, idele degrees and Frobenius conventions
 
-Prove `degree_conventions`, a set of comparison statements with one fixed sign convention each:
+Prove degree_conventions, a set of comparison statements with one fixed sign convention each:
 
 1. For a divisor `D`, `TauCeti.Divisor.degree D = Σ_v D_v d_v`, and the principal divisor of
    `f ∈ Fˣ` has degree zero (`TauCeti.Divisor.degree_principal`).
@@ -309,7 +322,7 @@ analysis*; AlgebraicCurves Layer 0.
 Prove `exists_divisor_degree_eq_one`: if `k` is finite, `hF : IsFunctionField k F` and
 `IsIntegrallyClosedIn k F`, then some `D : TauCeti.Divisor k F` has `Divisor.degree D = 1`.
 Equivalently the greatest common divisor of the degrees of all places is `1`, and
-`Divisor.degree : Divisor k F →+ ℤ` is surjective (`divisor_degree_surjective`). This does not
+`Divisor.degree : Divisor k F →+ ℤ` is surjective (surjectivity of the degree map). This does not
 assert the existence of a place of degree one, nor of a rational point of the model.
 
 *Proof sketch.* This is the divisor form of F. K. Schmidt's theorem, ArithmeticGaloisDuality's
@@ -317,7 +330,7 @@ assert the existence of a place of degree one, nor of a rational point of the mo
 AutomorphicLFunctionsAndLocalFactors AL.3 and the comparison 0.1(2): a degree-one idele maps to
 a degree-one divisor. A direct proof, independent of class field theory, runs through the Weil
 bound: if `e > 1` divided every place degree, the model would have no `𝔽_{q^r}`-points for
-`e ∤ r`, contradicting `|#X(𝔽_{q^r}) − q^r − 1| ≤ 2g q^(r/2)` (SchemeAndStackFoundations SF.5 *Weil bound via surfaces*,
+`e ∤ r`, contradicting `|#X(𝔽_{q^r}) − q^r − 1| ≤ 2g q^(r/2)` (SchemeAndStackFoundations §5.11 *Weil bound via surfaces*,
 together with DeligneWeightsAndPurity §1.9 for base extension) for large `r` prime to `e`; Bézout
 then combines finitely many places into a degree-one divisor. (Roquette, *Class field theory in
 characteristic p*, §4.3.3, p. 26, which records the theorem and its original zeta-function proof;
@@ -333,11 +346,11 @@ AL.3 *Curve additive analysis*; Layer 0.1.
   produced a rational point would be false for such curves.
 - For `F = 𝔽_q(t)` the place at infinity already has degree one.
 - Over a non-finite field the statement fails: the function field of a pointless conic over `ℝ`
-  has every divisor of even degree (SchemeAndStackFoundations SF.3c, *picardComponent_test_conic*).
+  has every divisor of even degree (SchemeAndStackFoundations §3.6, *picardComponent_test_conic*).
 
 ### 0.3 Divisor classes and Picard points over a finite field
 
-Prove `divisorClass_picardPoints`: for `F = k(X)` with finite exact constants `k`, the divisor class
+Prove divisorClass_picardPoints: for `F = k(X)` with finite exact constants `k`, the divisor class
 group `Cl(F)` is isomorphic to `Pic(X)` and to the group of `k`-points
 `Pic_{X/k}(k)` of the Picard scheme, compatibly with degree; in particular
 `Cl⁰(F) ≅ Pic⁰_{X/k}(k) = J(k)` for the Jacobian `J`, and the class number is
@@ -345,13 +358,13 @@ group `Cl(F)` is isomorphic to `Pic(X)` and to the group of `k`-points
 the class of a degree-one divisor from 0.2), but such a point is not a point of `X(k)`.
 
 *Proof sketch.* AlgebraicCurves Layer 12D identifies `Divisor k F` with the Weil divisors of the
-model and `Cl(F)` with its Picard group; SchemeAndStackFoundations SF.3c gives the injection `Pic(X) → Pic_{X/k}(k)` with cokernel
+model and `Cl(F)` with its Picard group; SchemeAndStackFoundations §3.6 gives the injection `Pic(X) → Pic_{X/k}(k)` with cokernel
 inside `Br(k)`, and `Br(k) = 0` for a finite field (Wedderburn; ClassFieldTheory Layer 5). The
 torsor `Pic¹` has a `k`-point by 0.2 and `picardComponent_point_iff`. (Milne, *Arithmetic Duality
 Theorems*, 2nd ed., Appendix A, proof of A.7, pp. 131–132, for the use of this comparison over
 finite fields.)
 
-*Needs:* AlgebraicCurves Layer 12; SchemeAndStackFoundations SF.3c; ClassFieldTheory Layer 5;
+*Needs:* AlgebraicCurves Layer 12; SchemeAndStackFoundations §3.6; ClassFieldTheory Layer 5;
 Tau Ceti `Divisor.degreeClass`, `Divisor.finite_ker_degreeClass`, `Divisor.classNumber`; Layer 0.2.
 
 **Checks.**
@@ -371,7 +384,7 @@ For `F = 𝔽_q(t)`: `k̃ = 𝔽_q`, `g = 0`, `h = 1`, the place `∞` has degre
 
 AlgebraicCurves Layers 0, 3, 5, 8 and 12; ArithmeticGaloisDuality §R02.3.2;
 AutomorphicLFunctionsAndLocalFactors AL.3 *Curve additive analysis*; SchemeAndStackFoundations
-SF.3c and SF.5; DeligneWeightsAndPurity §1.9; ClassFieldTheory Layer 5.
+§3.6 and §5.11; DeligneWeightsAndPurity §1.9; ClassFieldTheory Layer 5.
 
 ## Layer 1: Riemann–Roch spaces over a polynomial subring
 
@@ -391,16 +404,16 @@ the statements below are made for every such `x`.
 Define `chartIdeals D`, the pair `(D_fin, D_∞)` of fractional ideals of `O_fin` and `O_∞`
 attached to a divisor `D` (the place–prime bijection of AlgebraicCurves Layer 2 and the
 divisor–fractional-ideal isomorphism of AlgebraicCurves Layer 3, applied on each chart), and prove
-`riemannRochSpace_eq_inf_chartIdeals`:
+riemannRochSpace_eq_inf_chartIdeals:
 
 ```text
 L(D) = (D_fin)⁻¹ ∩ (D_∞)⁻¹      inside F,
 ```
 
-where the intersection is of `k`-subspaces of `F`. The API: `chartIdeals_add` (the map
+where the intersection is of `k`-subspaces of `F`. The API: chartIdeals_add (the map
 `D ↦ (D_fin, D_∞)` is a group isomorphism from divisors onto pairs of invertible fractional
-ideals), `chartIdeals_add_poles` (`D + r·(x)_∞` corresponds to `(D_fin, x^(−r)·D_∞)` and
-`D + r·(x)_0` to `(x^r·D_fin, D_∞)`), and `chartIdeals_principal` (a principal divisor gives a pair
+ideals), chartIdeals_add_poles (`D + r·(x)_∞` corresponds to `(D_fin, x^(−r)·D_∞)` and
+`D + r·(x)_0` to `(x^r·D_fin, D_∞)`), and chartIdeals_principal (a principal divisor gives a pair
 of principal ideals generated by the same element).
 
 *Proof sketch.* A function `a ∈ F` lies in `(D_fin)⁻¹` exactly when `ord_v(a) ≥ −D_v` at every
@@ -424,10 +437,10 @@ topics*, Proposition 9 and proof, p. 7; Remark 10, p. 7, for the pole shifts.)
 
 ### 1.2 Reduced bases and the invariants of a divisor
 
-Prove `exists_reducedBasis`: for free modules `M_fin` over `k[x]` and `M_∞` over `O_{k(x),∞}` of
+Prove exists_reducedBasis: for free modules `M_fin` over `k[x]` and `M_∞` over `O_{k(x),∞}` of
 the same rank `n` spanning the same `k(x)`-vector space, there are bases `v₁, …, vₙ` of `M_fin`
 and integers `d₁ ≥ ⋯ ≥ dₙ` such that `x^d₁ v₁, …, x^dₙ vₙ` is a basis of `M_∞`; the
-integers are unique. Then prove `riemannRoch_reducedBasis`: for every divisor `D` there are
+integers are unique. Then prove riemannRoch_reducedBasis: for every divisor `D` there are
 uniquely determined integers `d₁ ≥ ⋯ ≥ dₙ` (the `k[x]`-invariants `|D|_i` of `D`) and elements
 `v₁, …, vₙ ∈ F`, linearly independent over `k(x)`, such that for every `r ∈ ℤ`
 
@@ -441,9 +454,9 @@ exact constant field and `g_exact = TauCeti.genus k̃ F`. When `k` is exact this
 `g`; otherwise one must first transport the places and divisors to `k̃`. The truncated
 `TauCeti.genus k F` over a nonexact base does not in general equal `g_exact`.
 
-The API: `reducedBasis_unique` (uniqueness of the `d_i`), `reducedBasis_shift`
-(`|D + r·(x)_∞|_i = |D|_i + r`), `reducedBasis_dim` (the dimension formula), `reducedBasis_sum`
-(the sum formula above) and `reducedBasis_principal` (for `f ∈ Fˣ`, `|D − div f|_i = |D|_i`, with
+The API: reducedBasis_unique (uniqueness of the `d_i`), reducedBasis_shift
+(`|D + r·(x)_∞|_i = |D|_i + r`), reducedBasis_dim (the dimension formula), reducedBasis_sum
+(the sum formula above) and reducedBasis_principal (for `f ∈ Fˣ`, `|D − div f|_i = |D|_i`, with
 `v_i` replaced by `f·v_i`).
 
 *Proof sketch.* Choose bases of `(D_fin)⁻¹` and `(D_∞)⁻¹` and the transition matrix
@@ -472,49 +485,6 @@ exact constants); Mathlib matrices over `Polynomial k` and `RatFunc k`.
   Here the native supremum over `k` is `TauCeti.genus k F = 3`; using it in Hess's formula
   would incorrectly give `deg_k D − 4 − n`.
 
-### 1.3 Computing a basis with correctness and termination
-
-For the effective version, let `k` be a finite field presented as `𝔽_p[Z]/(h)` with `h` monic
-irreducible. Take a separating presentation `F = k(x)[y]/(f)`, with `f` monic, irreducible and
-separable in `y`, verified integral bases of both chart normalizations, and a divisor represented
-by normalized places with their multiplicities. Prove `computeRiemannRochBasis`: there is a
-terminating procedure returning `r` and a native `Basis (Fin r) k (riemannRochSpace D)` with its
-entries represented in `F`. The output includes membership, linear independence and spanning;
-a list satisfying only the valuation bounds is insufficient. Use the existing `Basis.repr` for
-the coordinate equivalence with `Fin r → k`, rather than a second notion of basis.
-
-The procedure forms bases of the two inverse chart ideals, computes their transition matrix over
-`k(x)`, and performs the column reduction of §1.2. Its output is the finite list of the
-`x^j v_i` with `0 ≤ j ≤ d_i`. Prove `computeRiemannRochBasis_sound`,
-`computeRiemannRochBasis_complete`, `computeRiemannRochBasis_terminates` and
-`computeRiemannRochBasis_principal`: replacing `D` by `D − div f` transports the resulting
-basis by multiplication by `f`, without asserting that two executions choose identical bases.
-Termination follows from the decreasing, bounded sum of column degrees, not from a search
-that waits for enough candidate functions. (Hess, §6, Algorithm 13 and Remark 14, p. 10;
-§3.2, pp. 3–4, and §6, p. 9, for the arithmetic assumptions.)
-
-Prove `computeRiemannRochBasis_cost`: with the integral bases supplied, polynomial arithmetic
-and ideal-arithmetic routines supplied with correctness and cost bounds, the reduction takes
-polynomially many field operations and integer bit operations in the matrix dimensions,
-numerator/denominator degrees and divisor height `h(D) = Σ_v |D_v|d_v`. For Hess's equation
-presentation one may use `n`, `C_f = max_i ceil(deg a_i/i)` and `h(D)` as parameters. Account
-separately for constructing normalizations and factoring ideals. Field operations have the bit
-cost of the chosen finite-field encoding; a polynomial bound in `h(D)` is not a polynomial
-bound in the bit length of its multiplicities. This distinction matters when a multiplicity is
-of order `q^g` (Hess, Remark 14, p. 10).
-
-*Needs:* §§1.1–1.2; AlgebraicCurves Layers 2–3; Mathlib `Basis` and polynomial matrix arithmetic;
-explicit correct finite-field, polynomial and ideal-arithmetic routines as input.
-
-**Checks.**
-
-- For `k(t)` and `D = m∞`, `m ≥ 0`, the output has `m+1` entries spanning
-  `1,t,…,t^m`; a list containing just `1` passes membership but fails completeness for `m > 0`.
-- For `D = −∞` the output is the empty basis of the zero space, rather than a failed search.
-- On the nonsingular elliptic equation of the worked examples, `D = 3O` gives the span
-  of `1,x,y`; `1,x` alone is not accepted, even though both functions satisfy the bounds.
-- For `D − div f`, the transported entries are `f b_i`, not `f⁻¹ b_i`.
-
 ### Examples
 
 On `𝔽_5(x, y)` with `y² = x³ + x + 1`, `L(2·O) = span(1, x)` and `L(3·O) = span(1, x, y)`,
@@ -538,14 +508,14 @@ adelic Fourier transform are used; no theorem of Tate's thesis is stated or cite
 
 Define `divisorLattice D := {a ∈ 𝔸_K : a_v ∈ π_v^(−D_v) O_v for every place v}` for a divisor
 `D` (membership is the valuation inequality `|a_v|_v ≤ q_v^(D_v)`, which includes `a_v = 0`).
-Prove `divisorLattice_isCompactOpen`, `divisorLattice_inter_diagonal`
+Prove divisorLattice_isCompactOpen, divisorLattice_inter_diagonal
 (`divisorLattice D ∩ K = L(D)` under the diagonal embedding, with `0` included for every `D`),
-and `divisorLattice_quotient`: the quotient `𝔸_K ⧸ (divisorLattice D + K)` is a finite-dimensional
+and divisorLattice_quotient: the quotient `𝔸_K ⧸ (divisorLattice D + K)` is a finite-dimensional
 `k`-vector space, naturally isomorphic to the repartition quotient
 `A_F ⧸ (A_F(D) + F)` of AlgebraicCurves Layer 4, hence of dimension `i(D) = ℓ(W − D)` for a
-canonical divisor `W`. The API: `divisorLattice_mono` (`D ≤ D′` gives inclusion),
-`divisorLattice_add` (multiplicativity under translation by a principal divisor:
-`f · divisorLattice D = divisorLattice (D − div f)`), and `divisorLattice_index`
+canonical divisor `W`. The API: divisorLattice_mono (`D ≤ D′` gives inclusion),
+divisorLattice_add (multiplicativity under translation by a principal divisor:
+`f · divisorLattice D = divisorLattice (D − div f)`), and divisorLattice_index
 (`[divisorLattice D′ : divisorLattice D] = q^(deg D′ − deg D)` for `D ≤ D′`).
 
 *Proof sketch.* Compact openness is the product of the compact open `π_v^(−D_v) O_v` with almost
@@ -575,17 +545,17 @@ Layers 4 and 5; Tau Ceti `riemannRochSpace`.
 For a nonzero rational differential `ω` with local conductor exponents `n_v = ord_v(ω)` (so
 `Σ_v n_v d_v = 2g − 2` by `TauCeti.degree_weilDifferentialDivisor`), let `μ_{ω,v}` be the Haar
 measure on `K_v` that is self-dual for the pairing `(a, b) ↦ ψ_{ω,v}(ab)`, and `μ_ω` their
-restricted product on `𝔸_K` (AdelicAlgebraicGroups Layer AA.0). Prove `selfDual_local_volume`:
-`μ_{ω,v}(O_v) = q_v^(−n_v/2)`; and `selfDual_global_volumes`:
+restricted product on `𝔸_K` (AdelicAlgebraicGroups Layer AA.0). Prove selfDual_local_volume:
+`μ_{ω,v}(O_v) = q_v^(−n_v/2)`; and selfDual_global_volumes:
 
 ```text
 μ_ω(∏_v O_v) = q^(1−g),   μ_ω(divisorLattice D) = q^(deg D + 1 − g),   μ_ω(𝔸_K/K) = 1.
 ```
 
-The API: `selfDual_change_differential` (for `f ∈ Kˣ`, `μ_{fω,v} = |f|_v^(1/2) μ_{ω,v}` at every
-place and `μ_{fω} = μ_ω` globally, by the product formula), `selfDual_annihilator_local`
+The API: selfDual_change_differential (for `f ∈ Kˣ`, `μ_{fω,v} = |f|_v^(1/2) μ_{ω,v}` at every
+place and `μ_{fω} = μ_ω` globally, by the product formula), selfDual_annihilator_local
 (the annihilator of `O_v` under `ψ_{ω,v}` is `π_v^(−n_v) O_v`) and
-`selfDual_integralVolume_ratio` (`μ_ω = q^(1−g) · μ_int` where `μ_int` gives every `O_v` volume
+selfDual_integralVolume_ratio (`μ_ω = q^(1−g) · μ_int` where `μ_int` gives every `O_v` volume
 one).
 
 *Proof sketch.* Self-duality forces `μ_{ω,v}(O_v) · μ_{ω,v}(O_v^⊥) = 1`, and
@@ -608,14 +578,14 @@ AdelicAlgebraicGroups Layer AA.0; Tau Ceti `degree_weilDifferentialDivisor`, `Di
 ### 2.3 Fourier transforms of lattice indicators
 
 With the Fourier transform `f̂(b) = ∫ f(a) ψ_ω(ab) dμ_ω(a)` of AL.3, prove
-`fourier_indicator_divisorLattice`: for every divisor `D`,
+fourier_indicator_divisorLattice: for every divisor `D`,
 
 ```text
 (1_{divisorLattice D})^ = q^(deg D + 1 − g) · 1_{divisorLattice ((ω) − D)},
 ```
 
 and for a translate, `(1_{c + divisorLattice D})^(b) = ψ_ω(cb) · (1_{divisorLattice D})^(b)`.
-Prove `testFunctions_span_translates`: the locally constant compactly supported functions on
+Prove testFunctions_span_translates: the locally constant compactly supported functions on
 `𝔸_K` are the finite linear combinations of indicators of translates `c + divisorLattice D`; the
 unshifted indicators `1_{divisorLattice D}` alone do not span.
 
@@ -680,6 +650,23 @@ and the infinite group this inverse-limit topology, equivalently its `p`-adic mo
 For `a ∈ W_n(F)` let `F(℘⁻¹a)` be the field generated by the
 coordinates of any solution of `℘_n y = a` in `W_n(F^sep)`; it depends only on the class of `a`.
 
+Prove **Witt-vector additive Hilbert 90**: for a finite cyclic Galois extension `L/F`
+in characteristic `p`, a chosen generator `σ`, and every `n ≥ 0`, the sequence
+`0 → W_n(L)/W_n(F) → W_n(L) → W_n(F) → 0` is exact. The maps are
+`[a] ↦ a−σa` and `Tr_W(a) = Σ_{τ ∈ Gal(L/F)} τa`, where both the sum and subtraction
+use the Witt group law. Construct this trace, identify its values with invariant vectors,
+and prove that it commutes with truncation. The kernel of `1−σ` is `W_n(F)`, its
+image is the trace kernel, and the trace is onto. (Kosters–Wan, Proposition 3.1, p. 6.)
+*Needs:* Mathlib Witt operations and the finite Galois correspondence; `Algebra.trace_surjective` for a finite separable field extension, followed by induction
+on Witt length.
+
+**Checks for Hilbert 90.**
+
+- At `n = 0` all three groups are zero and both maps are zero.
+- For `L = F`, the first group is zero and the trace is the identity, including at `n = 1`.
+- For `y^p−y=a` of degree `p`, the length-one trace of `1` is `0`, whereas
+  `Tr(−y^(p−1)) = 1`; thus trace surjectivity cannot be tested on `1` alone.
+
 Prove `artinSchreierWitt_galois`: (i) every cyclic extension `L/F` of degree `p^n` inside `F^sep`
 is `F(℘⁻¹a)` for some `a ∈ W_n(F)` whose image in `Q_1(F) = F/℘F` is nonzero (`n ≥ 1`);
 the length-zero case is the trivial extension; (ii) for every
@@ -693,12 +680,14 @@ pairings. This inverse-limit duality is the meaning of perfectness at infinite l
 not a pairing into the Pontryagin dualizing group `ℚ_p/ℤ_p`. (iv) two classes generate the same subfield exactly when they
 generate the same cyclic subgroup of `Q_n(F)`.
 
-The API: `artinSchreierWitt_add` (additivity in the Witt group law, which is not coordinatewise
-addition), `artinSchreierWitt_truncate` (compatibility with `WittVector.truncate`),
-`aswField_eq_iff` (statement (iv)), `aswField_degree` (statement (ii)), `aswQuotient_map`
-(functoriality in `F`, in particular `Q_n(F) → Q_n(F_v)` for a completion, whose kernel records the
-places that split; it need not be injective), and `aswQuotient_restrict` (the projections
-`π_m : Q_n(F) → Q_m(F)` for `m ≤ n`).
+The operator and quotient have the following API:
+
+- The operator is additive for the Witt group law and commutes with truncation.
+- Classes generate the same field exactly when they generate the same cyclic subgroup;
+  the extension degree equals the order of the class.
+- Field embeddings induce maps on the quotients; localization gives `Q_n(F) → Q_n(F_v)`,
+  whose kernel consists of classes split at `v`, and need not be zero.
+- For `m ≤ n`, truncation induces the projection `Q_n(F) → Q_m(F)`.
 
 *Proof sketch.* Additive Hilbert 90 for Witt vectors over a cyclic extension (the exact sequence
 `0 → W_n(L)/W_n(F) → W_n(L) → W_n(F) → 0` given by `a ↦ a − σa` and the trace) produces the
@@ -710,15 +699,18 @@ Theorem 3.4 and proof, pp. 8–9.)
 
 *Needs:* Mathlib `WittVector`, `WittVector.frobenius`, `WittVector.verschiebung`,
 `WittVector.truncate`, `TruncatedWittVector`, `Field.absoluteGaloisGroup`, `InfiniteGalois`
-(Krull topology and the Galois correspondence).
+(Krull topology and the Galois correspondence); Witt-vector additive Hilbert 90 above.
 
 **Checks.**
 
 - `Q_0(F) = 0`, and `F(℘⁻¹0) = F`.
-- A coboundary `℘b` has the trivial class and the split equation; the extension is `F` itself.
+- At every length a coboundary `℘b` has class zero and gives the extension `F`.
+  In contrast, in `Q_1(𝔽_p)` the class of `1` is nonzero, since `x^p−x = 0`
+  for every `x ∈ 𝔽_p`; its extension has degree `p`.
 - For `n = 2`, `p = 2` and `F = 𝔽_2(t)`, `℘` is not the coordinatewise map
-  `(x₀, x₁) ↦ (x₀² − x₀, x₁² − x₁)`: the Witt subtraction carries, and the class of `(t, 0)` has
-  order `4` while its coordinatewise image would have order `2`.
+  `(x₀, x₁) ↦ (x₀² − x₀, x₁² − x₁)`: on the Teichmüller vector `[t] = (t,0,…)` its first two coordinates are
+  `(t²+t, t²+t³)`, and `t²+t³ ≠ 0`. The class of `(t,0)` in `Q_2(F)` has order `4`;
+  a coordinatewise additive quotient would have exponent `2`.
 - Multiplying a class by a unit of `ℤ/p^n` preserves the generated field and changes the attached
   character; a definition that attached a field to a character, rather than to a cyclic
   subgroup, would distinguish them.
@@ -726,7 +718,7 @@ Theorem 3.4 and proof, pp. 8–9.)
 ### 3.2 Reduced Witt–Laurent representatives
 
 Let `K = k((T))` with `k` finite of characteristic `p`, `T` a uniformizer, `α ∈ k` with
-`Tr_{k/𝔽_p}(α) ≠ 0` and `β = [α] ∈ W(k)` its Teichmüller lift. Prove `aswReduced_exists_unique`:
+`Tr_{k/𝔽_p}(α) ≠ 0` and `β = [α] ∈ W(k)` its Teichmüller lift. Prove aswReduced_exists_unique:
 every class in `Q_∞(K)` has a unique representative
 
 ```text
@@ -739,14 +731,14 @@ coordinate is integral then `x ≡ cβ`; and if the first coordinate `x_j` of ne
 `p ∤ v(x_j)`, then `min_i v(c_i) = j`, where `v` on `W(k)` is the index of the first nonzero
 coordinate.
 
-The API: `aswReduced_class` (reassembly of the class from `c` and the `c_i`),
-`aswReduced_unramified` (the classes with all `c_i = 0` are exactly those whose extension is
+The API: aswReduced_class (reassembly of the class from `c` and the `c_i`),
+aswReduced_unramified (the classes with all `c_i = 0` are exactly those whose extension is
 unramified, and then `K(℘⁻¹x)` is the constant extension of degree the order of `c`),
-`aswReduced_primitive` (with `n_c = min v(c_i)` and `n₀ = min(n_c, v(c))`: the length-`n₀` part is
+aswReduced_primitive (with `n_c = min v(c_i)` and `n₀ = min(n_c, v(c))`: the length-`n₀` part is
 trivial, the extension at length `n_c` is the unramified cyclic extension of degree
 `p^(n_c − n₀)`, and above it each step is totally ramified, when `n_c < ∞`; if all `c_i = 0`, every finite
 layer is unramified of degree `p^max(0,n−v(c))`, with the zero class giving degree `1`) and
-`aswReduced_changeUniformizer` (a
+aswReduced_changeUniformizer (a
 different uniformizer `T′` changes the representative but not the attached extensions).
 
 *Proof sketch.* Eliminate pole orders divisible by `p` using `℘`: since
@@ -772,7 +764,7 @@ using that `℘` is surjective on the subgroup of Witt vectors all of whose coor
 
 ### 3.3 Comparing one-pole covers with Witt classes
 
-Prove `artinSchreier_onePole_comparison`: over `F = k(t)` with `k` finite of characteristic `p`,
+Prove artinSchreier_onePole_comparison: over `F = k(t)` with `k` finite of characteristic `p`,
 for `m > 0` with `p ∤ m`, the cover `F(y)/F`, `y^p − y = t^(−m)`, corresponds under 3.1 to
 the cyclic subgroup generated by the class of `t^(−m)` in `Q_1(F)`. Localization at `0` sends
 it to the reduced class of `T^(−m)` in `Q_1(k((T)))`, while localization at `∞` sends it to
@@ -789,9 +781,10 @@ Proposition 4.3, pp. 15–16.)
 
 **Checks.**
 
-- For `p = 3`, `m = 2`: different exponent `6`, genus `1`, conductor `3·[0]`, and the model has
+- For `k = 𝔽_3`, `m = 2`: different exponent `6`, genus `1`, conductor `3·[0]`, and the model has
   exactly `4` rational points (worked example (4) below), using the supplied genus and different
-  formulas; the local class at `0` is nonzero, whereas `∞` splits into three rational places.
+  formulas; the local class at `0` is nonzero, whereas `∞` splits into three rational places. Over `𝔽_9` the same curve has sixteen
+  rational points; the genus and local conductor remain unchanged.
 - For `p = 2`, `m = 1`: genus `0`, and indeed `y² + y = 1/t` is a rational curve.
 - With `m = p` the right side is congruent to `t^(−1)` and the formula for `m = p` would give the
   wrong genus.
@@ -819,7 +812,7 @@ Layers 5–8 supply the local invariant, the local class formation, the absolute
 finite extensions of `ℚ_p` and for norm subgroups of index prime to `p`; its scope section
 excludes Lubin–Tate theory and `p`-primary existence in equal characteristic, which this layer
 supplies. The completion `F_v` of a function field over `𝔽_q` at a place is such a field
-(AlgebraicCurves Layer 9; current Tau Ceti `Place.completionIntegersEquivPowerSeries` at a
+(AlgebraicCurves Layer 9; Tau Ceti `Place.completionIntegersEquivPowerSeries` at a
 rational place), so every statement applies at the places of Layers 0–7.
 
 ### 4.1 Lubin–Tate formal modules
@@ -832,17 +825,17 @@ homomorphism with `[a]_f ≡ aX` modulo degree `2` and `[π]_f = f`. Define the 
 `μ_{f,m} := {α ∈ 𝔪_{K^sep} : f^{∘m}(α) = 0}` (evaluated only in maximal ideals of finite
 extensions, where the series converge) and `K_{π,m} := K(μ_{f,m})`.
 
-Prove `lubinTate_torsion`: for `m ≥ 1`, the Weierstrass polynomial of the power series `f^{∘m}`
+Prove lubinTate_torsion: for `m ≥ 1`, the Weierstrass polynomial of the power series `f^{∘m}`
 has distinct roots, and `μ_{f,m}` is an `O`-module
 isomorphic to `O/𝔭^m` (any `α ∈ μ_{f,m} ∖ μ_{f,m−1}` is a generator), `K_{π,m}/K` is totally
 ramified and abelian of degree `(Q − 1)Q^(m−1)`, `α` is a uniformizer of `K_{π,m}`, `π` is a norm
 from `K_{π,m}`, and `u ↦ (α ↦ [u]_f(α))` is an isomorphism `(O/𝔭^m)ˣ ≅ Gal(K_{π,m}/K)`. Neither
 `K_{π,m}` nor the Galois action depends on the choice of `f` for the given `π`. The API:
-`LubinTate.formalGroup_isComm`, `LubinTate.smul_apply_linear`, `LubinTate.iso_of_series`
+LubinTate.formalGroup_isComm, LubinTate.smul_apply_linear, LubinTate.iso_of_series
 (`formalGroup f ≅ formalGroup g` for two series for the same `π`, by a unique isomorphism tangent
-to the identity commuting with their `O`-actions), `LubinTate.torsion_equiv`,
-`LubinTate.field_degree`, `LubinTate.field_galois`, `LubinTate.norm_uniformizer`, and
-`LubinTate.relative`: for `x ∈ Kˣ` with `d = ord_K(x) > 0`, let `L/K` be the unramified
+to the identity commuting with their `O`-actions), LubinTate.torsion_equiv,
+LubinTate.field_degree, LubinTate.field_galois, LubinTate.norm_uniformizer, and
+LubinTate.relative: for `x ∈ Kˣ` with `d = ord_K(x) > 0`, let `L/K` be the unramified
 extension of degree `d`, and choose `π_L` with `N_{L/K}(π_L) = x`. The relative formal modules
 over `O_L` give abelian fields `K_{x,m}/K` containing `L`, totally ramified over `L`, with
 degree `d(Q − 1)Q^(m−1)` and norm group `⟨x⟩ × U_K^m` for `m ≥ 1`. The unramified degree
@@ -877,16 +870,16 @@ unramified extensions); AlgebraicCurves Layer 9 (the expansion of a completed pl
 
 ### 4.2 Local existence, local Kronecker–Weber and injectivity in equal characteristic
 
-Prove `localKroneckerWeber`: `K^ab = K^ur · K_π` with `K_π = ⋃_m K_{π,m}`. Prove
-`localAbelianExistence_all`: for every open subgroup `H ⊆ Kˣ` of finite index (in particular of
+Prove localKroneckerWeber: `K^ab = K^ur · K_π` with `K_π = ⋃_m K_{π,m}`. Prove
+localAbelianExistence_all: for every open subgroup `H ⊆ Kˣ` of finite index (in particular of
 index divisible by `p` when `char K = p`) there is a unique finite abelian extension `L/K` inside
-`K^sep` with `N_{L/K}(Lˣ) = H`, and `[L : K] = [Kˣ : H]`. Prove `injective_artinMap_all`: the
+`K^sep` with `N_{L/K}(Lˣ) = H`, and `[L : K] = [Kˣ : H]`. Prove injective_artinMap_all: the
 absolute Artin map of ClassFieldTheory Layer 7 is injective with image the abelian Weil group
 `W_K^ab = {σ : σ|_{K^ur} ∈ φ^ℤ}`, it induces an isomorphism of the profinite completion `K̂ˣ`
 with `Gal(K^ab/K)`, and the complete local class-field correspondence holds for every local field.
-Prove `lubinTate_artin`: `Art_K(π)` is trivial on `K_π` and acts as `φ` on `K^ur`, and for
+Prove lubinTate_artin: `Art_K(π)` is trivial on `K_π` and acts as `φ` on `K^ur`, and for
 `u ∈ Oˣ`, `Art_K(u)` is trivial on `K^ur` and acts on `μ_{f,m}` by `[u⁻¹]_f`. Prove
-`conductor_existence_all`: the norm subgroup of an abelian extension of conductor exponent `n`
+conductor_existence_all: the norm subgroup of an abelian extension of conductor exponent `n`
 contains `U^(n)` and not `U^(n−1)` (for `n ≥ 1`), in every characteristic.
 
 These extend, without restating, ClassFieldTheory Layer 8's `localAbelianExistence`,
@@ -916,7 +909,7 @@ Theorems 6.11 and 6.15, pp. 432–433.)
   the Artin–Schreier extension `y^p − y = T^(−1)` (conductor exponent `2`, Layer 4.4; by 4.3,
   `[T^(−1), T) = 0` and `[T^(−1), 1 − aT) = −a`). Every norm subgroup of index prime to `p`
   contains `1 + TO`, so the prime-to-`p` theorem of ClassFieldTheory Layer 8 cannot produce `H`.
-- With Yoshida's normalization substituted for ClassFieldTheory's, `lubinTate_artin` would read
+- With Yoshida's normalization substituted for ClassFieldTheory's, lubinTate_artin would read
   `[u]_f` instead of `[u⁻¹]_f`; the sign check is the action of `Art_K(π)` on `K^ur`.
 
 ### 4.3 The Schmid–Witt symbol
@@ -927,14 +920,14 @@ completion `K̂ˣ = lim Kˣ/(Kˣ)^(p^n)` by the same formula (using the pro-`p` 
 `Art_K` from 4.2). Here every finite-level quotient has the quotient topology from the local
 field and `K̂ˣ` its inverse-limit, profinite topology. Its `p`-adic module topology is generally
 finer and is not used for this duality.
-Prove `schmidWitt_perfect`: `[ , )_n` is bilinear, kills `(Kˣ)^(p^n)` and induces a perfect
+Prove schmidWitt_perfect: `[ , )_n` is bilinear, kills `(Kˣ)^(p^n)` and induces a perfect
 pairing of the discrete group `Q_n(K)` with the profinite group `Kˣ/(Kˣ)^(p^n)`; the infinite
 version identifies each side with the continuous `ℤ_p`-linear dual of the other, with the
 topologies specified in 3.1. At a fixed finite length it is not perfect
-against the whole of `K̂ˣ`. Prove `schmidWitt_characterization`: the symbol is the unique
+against the whole of `K̂ˣ`. Prove schmidWitt_characterization: the symbol is the unique
 `ℤ_p`-bilinear continuous pairing with `[a, T′) = Tr_{W(k)/ℤ_p}(a)` for `a ∈ W(k)` and any
 uniformizer `T′`, and `[[cT′^(−i)], T′) = 0` for `c ∈ k`, `i > 0`, `p ∤ i`. Prove
-`schmidWitt_formula`: for `x ∈ W(K)` and `y ∈ K̂ˣ`,
+schmidWitt_formula: for `x ∈ W(K)` and `y ∈ K̂ˣ`,
 
 ```text
 [x, y) = Tr_{W(k)/ℤ_p} Res( x̃ · dlog ỹ ),
@@ -948,7 +941,7 @@ derivative of the usual Teichmüller-coefficient lift. For general `e` it is the
 logarithmic derivatives at finite precision; no Laurent monomial `T^e` with noninteger exponent
 is required. The residue is taken at each finite precision and
 then passed to the inverse limit; the pole orders need not have one common lower bound.
-Finally prove `schmidWitt_normGroup`: for a finite
+Finally prove schmidWitt_normGroup: for a finite
 subgroup `B ⊆ Q_n(K)`, the compositum of the extensions `K(℘⁻¹b)`, `b ∈ B`, has norm group the
 annihilator of `B` in `Kˣ`.
 
@@ -960,7 +953,7 @@ extension, and the vanishing on Teichmüller poles is Schmid's theorem. The expl
 checked on the generators `(x, T)`, `(β, 1 − aT^i)` and `([bT^(−l)], 1 − aT^i)`, using that the
 right side is also bilinear and continuous. The norm-group statement is the annihilator form of
 4.2. (Kosters–Wan, Theorem 3.4, pp. 8–9; §4.1 and Remark 4.1, pp. 14–15; Proposition 4.2, p. 15;
-Proposition 4.4, pp. 16–17; §4.4's completed ring `R`, p. 17; Theorem 4.7 and proof, pp. 18–19.)
+Proposition 4.4 and proof, pp. 15–16; §4.4's completed ring `R`, p. 17; Theorem 4.7 and proof, pp. 18–19.)
 
 *Needs:* Layers 3.1, 3.2 and 4.2; ClassFieldTheory Layer 7.
 
@@ -978,7 +971,7 @@ Proposition 4.4, pp. 16–17; §4.4's completed ring `R`, p. 17; Theorem 4.7 and
 
 ### 4.4 Conductors of Artin–Schreier–Witt extensions
 
-For `x ∈ W(K)` in the reduced form of Layer 3.2, prove `aswConductor_eq`: for `n ≥ 1` the
+For `x ∈ W(K)` in the reduced form of Layer 3.2, prove aswConductor_eq: for `n ≥ 1` the
 conductor exponent of `K(℘⁻¹π_n(x))/K`, the least `u` with `U^(u) ⊆ ker Art_K` on that extension
 (`U^(0) = Oˣ`, `U^(u) = 1 + 𝔭^u`), is
 
@@ -987,13 +980,13 @@ u_n = 0                                               if v(c_i) ≥ n for all i,
 u_n = 1 + max { i · p^(n − v(c_i) − 1) : v(c_i) < n }   otherwise.
 ```
 
-Prove `aswUpperRamification`: under `Gal(K(℘⁻¹x)/K) ≅ Hom(⟨x⟩, ℤ_p)`, the upper ramification
+Prove aswUpperRamification: under `Gal(K(℘⁻¹x)/K) ≅ Hom(⟨x⟩, ℤ_p)`, the upper ramification
 group `G^r` (`r ≥ 1`) corresponds to the characters `τ` with
 `v(τ(x)) ≥ min_{p ∤ i} (v(c_i) + max(0, ⌈log_p(r/i)⌉))`, with `v(0) = ∞` and the minimum of
 an empty family equal to `∞`. Finite layers use the image of this subgroup in the corresponding
-finite Galois quotient. The API: `aswConductor_compositum`
+finite Galois quotient. The API: aswConductor_compositum
 (`f(L₁L₂/K) = lcm(f(L₁/K), f(L₂/K))` for conductor ideals, hence the maximum of their
-exponents) and `aswConductor_lengthOne` (at `n = 1`, when at least one pole coefficient is
+exponents) and aswConductor_lengthOne (at `n = 1`, when at least one pole coefficient is
 nonzero, the formula reduces to `1 + max {i : c_i ≠ 0}`; a constant-only class has conductor
 zero, ArithmeticGaloisRepresentations §3.7).
 
@@ -1024,48 +1017,47 @@ cannot supply additional units. The conductor formula itself is unchanged.
 
 ### 4.5 Finite ray characters and local-coordinate comparisons
 
-For an effective modulus `m`, define `rayIdeleClassGroup` as `C_m = C_K / im U_m`, with
+For an effective modulus `m`, define rayIdeleClassGroup as `C_m = C_K / im U_m`, with
 `U_m = ∏_v U_v^{m_v}`, `U_v^0 = O_vˣ` and `U_v^j = 1 + 𝔭_v^j` for `j ≥ 1`.
-Prove `rayIdeleClassGroup_degree_exact`: degree gives
+Prove rayIdeleClassGroup_degree_exact: degree gives
 `0 → C_m⁰ → C_m → ℤ → 0`, with `C_m⁰` finite. For `m ≠ 0`, the kernel of
 `C_m → Pic(X)` is the quotient of `∏_{v|m}(O_v/𝔭_v^{m_v})ˣ` by the image of `kˣ`;
 for `m = 0` it is trivial. Finiteness follows from this sequence and finiteness of `Cl⁰`.
 Approximation moves a degree-one divisor away from `m`. Fix a class `a ∈ C_m` of
 valuation degree `1`, and `r ≥ 1`. The finite quotient `C_m/⟨a^r⟩` fixes the degree direction;
-`C_m` itself is infinite. Define `RayCharacterData` to consist of a finite abelian group `A`,
+`C_m` itself is infinite. Define RayCharacterData to consist of a finite abelian group `A`,
 a specified isomorphism `C_m/⟨a^r⟩ ≅ A`, a character `A → μ_N` for a specified `N ≥ 1`, and
 its local restriction maps. These data use the existing ray class group and finite-group
-notions. Define `rayCharacterData_conductor` as the least `m′ ≤ m` whose local unit groups
+notions. Define rayCharacterData_conductor as the least `m′ ≤ m` whose local unit groups
 are killed. Here `U_v^0 = O_vˣ` and `U_v^j = 1 + 𝔭_v^j` for `j ≥ 1`.
 
-Prove `rayCharacterData_sound` (the induced global character has finite image),
-`rayCharacterData_conductor_minimal` (a nonzero local exponent `c` kills `U_v^c` and does not
-kill `U_v^(c−1)`), `rayCharacterData_unramified` (exponent zero exactly when all units are
-killed), and `rayCharacterData_constantValue` (the separately recorded value at `a` determines
+Prove rayCharacterData_sound (the induced global character has finite image),
+rayCharacterData_conductor_minimal (a nonzero local exponent `c` kills `U_v^c` and does not
+kill `U_v^(c−1)`), rayCharacterData_unramified (exponent zero exactly when all units are
+killed), and rayCharacterData_constantValue (the separately recorded value at `a` determines
 the constant-field part after the degree splitting). The local wild cyclic parts are checked
-using §§3.2 and 4.3–4.4; the prime-to-`p` parts use ClassFieldTheory. Finite presentation and
-character arithmetic may be supplied with proofs of reconstruction; no unverified list of
-relations is treated as an isomorphism. (Milne, Appendix A, A.10–A.11, pp. 134–136, for finite
+using §§3.2 and 4.3–4.4; the prime-to-`p` parts use ClassFieldTheory. A finite group presentation must include its isomorphism with the ray quotient; a list of
+relations alone does not specify this comparison. (Milne, Appendix A, A.10–A.11, pp. 134–136, for finite
 norm quotients; Kosters–Wan, Proposition 4.14, pp. 22–23, for the wild conductor;
 Conrad, *Geometric global class field theory*, §2, pp. 1–3, for the ray-class interpretation.)
 
 For an actual normalized place `v`, consume the local expansion isomorphism
 `ι : F_v ≃ κ(v)((T))` from AlgebraicCurves Layer 9, specified by a coefficient-field section
-`κ(v) → O_v` and a uniformizer sent to `T`. Prove `schmidWitt_localCoordinates`: transporting
+`κ(v) → O_v` and a uniformizer sent to `T`. Prove schmidWitt_localCoordinates: transporting
 through `ι` preserves normalized valuations, unit filtrations, the residue conductor and the
-self-dual volume of the differential used in Layer 2. Prove `schmidWitt_changeParameter`:
+self-dual volume of the differential used in Layer 2. Prove schmidWitt_changeParameter:
 changing the uniformizer and coefficient section changes reduced representatives and lifts,
 but the transported Artin symbol and conductor are unchanged. Both are comparison statements
 on the supplied completion, not an identification of the global field with its Laurent-series
-completion. (Kosters–Wan, Proposition 4.2, p. 15, and Proposition 4.4, pp. 16–17, whose
+completion. (Kosters–Wan, Proposition 4.2, p. 15, and Proposition 4.4 and proof, pp. 15–16, whose
 characterization uses every uniformizer; Yoshida, Appendix I, §7, p. 434, for local expansions.)
 
-Prove `localCoordinates_truncation`: for every `N ≥ 1`, the integral-coordinate map induces
+Prove localCoordinates_truncation: for every `N ≥ 1`, the integral-coordinate map induces
 `O_v/𝔭_v^N ≃ κ(v)[T]/(T^N)`. The first `N` expansion coefficients specify the residue class;
 certified addition and multiplication reduce modulo `T^N`. Precision zero gives the zero ring.
 This finite interface checks a truncation without enumerating an infinite series.
 
-*Needs:* Layers 0.1–0.2, 2 and 3–4; AlgebraicCurves Layer 9; ArithmeticGaloisDuality §R02.3.2;
+*Needs:* §§0.1–0.2, 2.1–2.2, 3.1–3.2 and 4.1–4.4; AlgebraicCurves Layer 9; ArithmeticGaloisDuality §R02.3.2;
 AlgebraicCurves Layers 3 and 5 (approximation and finite degree-zero classes);
 Mathlib finite abelian groups and characters.
 
@@ -1081,7 +1073,7 @@ Mathlib finite abelian groups and characters.
 - For `y^p−y = T⁻¹`, the local character kills `U^2` and not `U^1`; its conductor is `2`,
   whereas an unramified character kills `U^0` and has conductor `0`.
 - Omitting the finite degree quotient gives an infinite group and cannot define finite
-  `RayCharacterData`; an incorrect finite-group presentation is rejected by the required isomorphism.
+  RayCharacterData; an incorrect finite-group presentation is rejected by the required isomorphism.
 - For `F = 𝔽_q(t)`, `v = ∞` and `π_v = t⁻¹`, the local coordinate sends `π_v` to `T`
   and `dt` to `−T⁻² dT`, giving conductor exponent `−2` and `μ(O_v) = q`.
   Sending `t` to `T` reverses the valuation and fails the comparison.
@@ -1097,22 +1089,22 @@ For `m ≠ 0`, define `rigidifiedPicardFunctor X m d` on `k`-schemes `T` by pair
 `(L, ψ)`, where `L` is an invertible sheaf on `X_T` of degree `d` on every geometric fiber
 and `ψ : O_{m_T} ≅ L|_{m_T}`. Isomorphisms must carry `ψ` to `ψ′`. This is an fppf
 sheaf: an automorphism is multiplication by a unit from `T`, and its restriction to the
-faithfully flat `m_T → T` forces it to be one. For `m = 0`, use SF.3c's ordinary relative
+faithfully flat `m_T → T` forces it to be one. For `m = 0`, use §3.6's ordinary relative
 Picard sheaf, the fppf sheafification of `T ↦ Pic(X_T)/Pic(T)`.
 
 Construct `generalizedPicard X m d`, denoted `Pic_m^d`, representing this functor, and
 `generalizedJacobian X m := Pic_m^0`, denoted `J_m`. Prove
-`generalizedPicard_representable`: every component is a smooth separated geometrically
+generalizedPicard_representable: every component is a smooth separated geometrically
 connected scheme, `J_m` is a commutative algebraic group, tensor product gives
 `Pic_m^d × Pic_m^e → Pic_m^(d+e)`, and `Pic_m^d` is a `J_m`-torsor. Its dimension is
 `g + N − 1` when `N > 0`, and `g` when `m = 0`. Export the universal rigidified line bundle
-for `m ≠ 0`, `generalizedPicard_tensor` with its dual/unit identities,
-`generalizedPicard_torsor` (the action isomorphism), `generalizedPicard_baseChange` for
+for `m ≠ 0`, generalizedPicard_tensor with its dual/unit identities,
+generalizedPicard_torsor (the action isomorphism), generalizedPicard_baseChange for
 every field extension, and `generalizedPicard_forgetModulus : Pic_{m′}^d → Pic_m^d` for
 `m ≤ m′`, compatible with composition, tensor product and base change. Ordinary Picard
-schemes and their universal properties are consumed from SF.3c, not reconstructed here.
+schemes and their universal properties are consumed from §3.6, not reconstructed here.
 
-Prove `generalizedJacobian_linearPart`: for `m ≠ 0` there is an exact sequence of fppf sheaves
+Prove generalizedJacobian_linearPart: for `m ≠ 0` there is an exact sequence of fppf sheaves
 
 ```text
 1 → 𝔾_m → Res_{m/k} 𝔾_m → J_m → J → 0,
@@ -1138,7 +1130,7 @@ construction for nonreduced `m`, rather than only for reduced punctures.
 (Guignard, §4.7 and Proposition 4.8 with Lemma 4.9, pp. 1317–1319; Conrad, §2, pp. 1–3,
 for the generalized-Jacobian interpretation.)
 
-*Needs:* SchemeAndStackFoundations SF.1 and SF.3b–SF.3c; JacobianChallenge Layers A–C;
+*Needs:* SchemeAndStackFoundations §1.1 and §3.3–§3.6; JacobianChallenge Layers A–C;
 ReductiveGroupsPartII RG2.0a. These inputs precede this roadmap.
 
 **Checks.**
@@ -1161,16 +1153,16 @@ ReductiveGroupsPartII RG2.0a. These inputs precede this roadmap.
 ### 4.7 The ray Abel map and Rosenlicht's universal property
 
 Define `rayAbel : U → Pic_m^1` by `x ↦ (O(x),1|_m)` when `m ≠ 0`, and by the ordinary
-Abel map when `m=0`. Export `rayAbel_baseChange`, `rayAbel_forgetModulus` and the additive
+Abel map when `m=0`. Export rayAbel_baseChange, rayAbel_forgetModulus and the additive
 maps `rayAbel_symmetricPower : Sym^n U → Pic_m^n`, compatible with addition of divisors
 and with `n=0,1`. For `m ≠ 0` and `n ≥ max(0,2g+N−1)`, prove
-`rayAbel_affineBundle`: this map is a torsor under the vector bundle
+rayAbel_affineBundle: this map is a torsor under the vector bundle
 `pr_* L_univ(−m)` of rank `n−N−g+1`, hence smooth surjective with geometrically connected
 fibers. Indeed, the base-change-compatible exact sequence
 `0 → pr_*L(−m) → pr_*L → pr_*(L|_m) → 0` identifies its fiber with the inverse image of
 the universal rigidification. Every such section is nonzero on every curve fiber and cuts
 out an effective degree-`n` divisor disjoint from `m`. The `m=0` projective-bundle form is
-SF.3d T359, with its descent when there is no rational point. (Guignard, Propositions
+§3.7, `abelMaps_highDegree`, with its descent when there is no rational point. (Guignard, Propositions
 4.11–4.12, pp. 1319–1320, and Proposition 4.14 and proof, pp. 1320–1321.)
 
 Let `G` be a smooth connected commutative algebraic group over the perfect field `k`, `Q` a
@@ -1179,12 +1171,12 @@ algebraically closed field extension, `u(div f)=0` for every rational function `
 `f ≡ 1 mod m`. Its divisor is supported in `U`; at `m=0` every nonzero `f` is allowed.
 For a degree-zero divisor, the sum of values in the torsor is a well-defined element of
 `G`, independent of a temporary choice of origin in `Q`.
-Prove `rayAbel_rosenlicht`: `HasRayModulus u m` holds if and only if there is a unique pair
+Prove rayAbel_rosenlicht: `HasRayModulus u m` holds if and only if there is a unique pair
 of a group homomorphism `h : J_m → G` and an `h`-equivariant morphism
 `h¹ : Pic_m^1 → Q` such that `u = h¹ ∘ rayAbel`. Export
-`HasRayModulus.baseChange`, `HasRayModulus.comp` for a homomorphism of torsors,
-`HasRayModulus.mono` for restriction to the complement of a larger modulus, and
-`rayAbel_rosenlicht_unique`, with the induced maps compatible with all three operations.
+HasRayModulus.baseChange, HasRayModulus.comp for a homomorphism of torsors,
+HasRayModulus.mono for restriction to the complement of a larger modulus, and
+rayAbel_rosenlicht_unique, with the induced maps compatible with all three operations.
 This is the universal property for a specified modulus; it is stated over
 perfect fields, not only finite fields. (Russell, §3.3, p. 34, for the principal-congruence
 form of Rosenlicht's property; the following proof uses the preceding Abel-bundle theorem.)
@@ -1228,7 +1220,7 @@ invariance for affine bundles.
 ### 4.8 Ray classes as rational rigidified line bundles
 
 Return to `k=𝔽_q`, with `q` any prime power, including powers of two, and the exact-constant
-curve of §0. Prove `rayPicard_comparison`, a degree-preserving group isomorphism
+curve of §0. Prove rayPicard_comparison, a degree-preserving group isomorphism
 `C_m ≅ ⨿_{d∈ℤ} Pic_m^d(k)`, whose degree-zero and degree-one restrictions are respectively
 `rayPicard_degreeZero : C_m^0 ≅ J_m(k)` and the equivariant bijection
 `rayPicard_degreeOne : deg⁻¹(1) ≅ Pic_m^1(k)`. Here the right side has the tensor-product
@@ -1247,7 +1239,7 @@ is `div f` with `f ≡ 1 mod m`. This proves the inverse and the kernel assertio
 For `m=0` use §0.3's ordinary comparison, including the finite-field vanishing of the
 Picard–Brauer obstruction. For positive `m`, rigidifications remove automorphisms and the
 representing functor directly identifies its `k`-points with actual pairs.
-Prove `rayPicard_localUnits`: a local unit `u` at the modulus maps to the boundary class
+Prove rayPicard_localUnits: a local unit `u` at the modulus maps to the boundary class
 `(O,u⁻¹)`, whereas the boundary in §4.6 was defined by `(O,u)`. Retain this inversion in
 all local reciprocity comparisons. (Conrad, §2 and Theorem 3.2, pp. 1–4, for the comparison
 being realized; the construction uses Guignard, §4.7, pp. 1317–1318, and AlgebraicCurves
@@ -1273,9 +1265,9 @@ Choose `a ∈ Pic_m^1(k)` using §4.8 and write `A=J_m(k)`. Consume Lang's theor
 the finite étale surjection `L_m : J_m → J_m`, `y ↦ Frob_q(y)−y`, with constant kernel
 `A`. Define `rayLangCover X m a` as its pullback by
 `α_a : U → J_m`, `x ↦ rayAbel(x)−a`, with deck action by translation on `y`.
-Export `rayLangCover_equation`, `rayLangCover_isTorsor` (finite étale with this action),
-`rayLangCover_trivialKernel`, and `rayLangCover_forgetModulus` for a map carrying the chosen
-class to the chosen class. Prove `rayLangCover_frobenius`: at a closed point `v∈U` of degree `d`,
+Export rayLangCover_equation, rayLangCover_isTorsor (finite étale with this action),
+rayLangCover_trivialKernel, and rayLangCover_forgetModulus for a map carrying the chosen
+class to the chosen class. Prove rayLangCover_frobenius: at a closed point `v∈U` of degree `d`,
 arithmetic Frobenius acts by translation by
 
 ```text
@@ -1287,7 +1279,7 @@ For a geometric point `x` over `v`, sum
 `Frob_q^d(y)−y`, and the right side is `[v]−d·a`. This fixes the sign without choosing
 a rational point of `U`.
 
-Prove `ideleClasses_away_dense`: for every finite set `S` of places, the subgroup of
+Prove ideleClasses_away_dense: for every finite set `S` of places, the subgroup of
 `C_K` generated by uniformizer ideles at places outside `S` is dense. In a basic idele
 neighborhood enlarge `S` to contain its restricted coordinates; approximation chooses
 `f∈Kˣ` matching the specified coordinates to their required precision. Divide by `f`
@@ -1295,7 +1287,7 @@ and by the uniformizer ideles of its remaining divisor outside `S`. The residual
 lies in the given unit neighborhood. This target uses AlgebraicCurves Layer 3's
 approximation theorem and AL.3's idele topology, not a Frobenius density theorem.
 
-Prove `rayLangCover_artin`: the monodromy of this torsor, composed with the finite Artin
+Prove rayLangCover_artin: the monodromy of this torsor, composed with the finite Artin
 map of ArithmeticGaloisDuality §R02.3.2, is the explicit continuous map
 
 ```text
@@ -1305,9 +1297,9 @@ C_K → C_m → A,     b ↦ rayPicard(b) − deg(b)·a.
 To apply finite reciprocity before proving connectedness, take the image of the torsor's
 Galois representation in `A`; its fixed field is a finite abelian extension. On every
 uniformizer outside the modulus its Artin action is exactly the preceding Frobenius
-calculation. The two continuous finite-valued maps agree by `ideleClasses_away_dense`.
+calculation. The two continuous finite-valued maps agree by ideleClasses_away_dense.
 The displayed map is onto, since its restriction to `C_m^0 ≅ A` is the identity. Thus
-prove `rayLangCover_geometricallyConnected`: first its arithmetic monodromy is all of
+prove rayLangCover_geometricallyConnected: first its arithmetic monodromy is all of
 `A`, so the cover is connected; then every constant-field quotient of this monodromy
 factors through degree. Its image on degree-zero ideles is already all of `A`, so that
 quotient is trivial. The cover's function field has exact constants `k`, and the smooth
@@ -1347,14 +1339,14 @@ the constant cover `U_{𝔽_{q^r}} → U` along
 A × ℤ/r → B,       (x,j) ↦ θ(x) + j·θ(a).
 ```
 
-This is a finite étale `B`-torsor. Export `finiteRayLangCover_map` for homomorphisms of `B`,
-`finiteRayLangCover_generic`, `finiteRayLangCover_forgetModulus`, and
-`finiteRayLangCover_choiceIndependent` for independence of `r` and the degree splitting
+This is a finite étale `B`-torsor. Export finiteRayLangCover_map for homomorphisms of `B`,
+finiteRayLangCover_generic, finiteRayLangCover_forgetModulus, and
+finiteRayLangCover_choiceIndependent for independence of `r` and the degree splitting
 as an isomorphism class. A torsor can have deck automorphisms, so no uniqueness of an
 unpointed isomorphism is asserted. The Artin character of this construction is `θ`
 composed with `C_K → C_m`, by §4.9 and the arithmetic Frobenius degree convention.
 
-Prove `finiteRayLangCover_classifies`: the construction is a bijection between
+Prove finiteRayLangCover_classifies: the construction is a bijection between
 `Hom(C_m,B)` and isomorphism classes of finite étale `B`-torsors on `U` whose generic
 characters kill every `U_v^{m_v}`. Conversely, a torsor gives its continuous finite
 Galois representation; finite Artin reciprocity and local compatibility give the map
@@ -1363,10 +1355,10 @@ representations gives an isomorphism on `U`, since `U` is normal. This proves su
 and injectivity, including disconnected torsors. For a surjective `θ`, the associated
 connected abelian cover has exact constant field
 `𝔽_{q^c}`, where `c=[B:θ(C_m^0)]`; its geometric monodromy is `θ(C_m^0)`.
-Thus `finiteRayLangCover_connected` says connectedness is equivalent to surjectivity
-of `θ`, and `finiteRayLangCover_geometricallyConnected` says geometric connectedness is
+Thus finiteRayLangCover_connected says connectedness is equivalent to surjectivity
+of `θ`, and finiteRayLangCover_geometricallyConnected says geometric connectedness is
 equivalent to `θ(C_m^0)=B`. A nonsurjective map gives `[B:im θ]` connected components.
-Prove `finiteRayLangCover_normGroup`: if `θ` is onto and `L/K` is the constructed field
+Prove finiteRayLangCover_normGroup: if `θ` is onto and `L/K` is the constructed field
 cover, `N_{L/K} C_L` is the inverse image of `ker θ` in `C_K`, and `[L:K]=|B|`.
 This follows by applying the supplied finite Artin isomorphism to this actual extension.
 For an open finite-index `H≤C_K`, choose `m` with `im U_m≤H` and take
@@ -1375,16 +1367,19 @@ stated Lang and constant-cover construction; uniqueness in a fixed separable clo
 the supplied class-field uniqueness. The proof uses finite reciprocity for constructed
 extensions and does not assume existence in order to construct these covers.
 
-Prove `rayLangCover_conductor`: the least modulus for this torsor (or for its connected
+Prove rayLangCover_conductor: the least modulus for this torsor (or for its connected
 field cover when `θ` is onto) has local exponent the least `j≥0` killing `U_v^j` under
 `θ`. Equivalently it is the componentwise maximum of the conductors of all characters
 `χ∘θ`, `χ : B → ℚ/ℤ`. Exponent zero means unramified, and an exponent `j>0` kills
-`U_v^j` but not `U_v^(j−1)`. This is the conductor of `RayCharacterData` in §4.5; its
+`U_v^j` but not `U_v^(j−1)`. This is the conductor of RayCharacterData in §4.5; its
 wild part is computed by §§4.3–4.4 and its tame part by ClassFieldTheory. Prove
-`rayLangCover_modulusFactor`: factorization through `C_{m′}`, `m′≤m`, is equivalent to
-that conductor dividing `m′`, and to descent of the cover, including extension across
-points whose exponent becomes zero. In particular the input modulus need not be least.
-The proof uses `rayLangCover_artin` and the local norm/ramification correspondence; it
+rayLangCover_modulusFactor: factorization through `C_{m′}`, `m′≤m`, is equivalent to
+that conductor dividing `m′`, and to being obtained from the finite-ray construction
+for `m′` with its specified ramification bound. Extension of the underlying finite étale
+cover to `X − supp(m′)` detects only disappearance of ramification at removed support
+points; it cannot detect a decrease between two positive exponents. The input modulus
+need not be least.
+The proof uses rayLangCover_artin and the local norm/ramification correspondence; it
 does not infer unramifiedness from Swan conductor zero, which also allows tame ramification.
 (Conrad, Theorem 3.2, p. 4; Milne ADT, Appendix A, Corollaries A.8–A.9,
 pp. 132–133, Lemma A.10 and Propositions A.11–A.12, pp. 134–136, for finite
@@ -1404,7 +1399,9 @@ pp. 22–23, with the correction of §4.4, for the local wild filtration.)
 - The cover `y^q−y=t` has least modulus `2[∞]`. Every nontrivial additive character
   reduces to a length-one Artin–Schreier character with a simple pole, of conductor two.
   Its group has order `q`, its constant degree is one, and this holds for every `q`,
-  including `2`. Replacing `2[∞]` by `[∞]` would discard the cover.
+  including `2`. Replacing `2[∞]` by `[∞]` would discard the cover. In particular `y^p−y=t`
+  is already finite étale on `𝔸¹` for both moduli `2[∞]` and `[∞]`, but its character
+  factors through only the former ray group: identical opens do not detect multiplicity.
 - If `θ(C_m^0)=0` and `θ(a)` generates `B`, the torsor is connected with constant degree
   `|B|`; if `θ(C_m^0)=B`, it is geometrically connected irrespective of `θ(a)`.
   A proper image of `θ` gives a disconnected torsor even though every local conductor
@@ -1434,7 +1431,7 @@ therefore realize all finite ray-character data for this modulus, including the 
 Layers 0, 2 and 3; ClassFieldTheory Layers 4–8; LocalFieldsRamification Layer 3;
 AlgebraicCurves Layers 3, 5 and 9; ArithmeticGaloisDuality §R02.3.2; Mathlib `FormalGroup`.
 The geometric branch also uses AlgebraicCurves Layers 8 and 12, JacobianChallenge Layers
-A–C, SchemeAndStackFoundations SF.1, SF.3b–SF.3d, ReductiveGroupsPartII RG2.0a and RG2.3.7,
+A–C, SchemeAndStackFoundations §1.1, §§3.3, 3.6–3.7, ReductiveGroupsPartII RG2.0a and RG2.3.7,
 and AL.3's additive-idele topology and ordinary Picard comparison. No result of
 GlobalShtukasAndFunctionFieldLanglands is an input.
 
@@ -1445,7 +1442,7 @@ defined from divisors of the function field, with no scheme and no cohomology; i
 the scheme-theoretic zeta function of WeilConjectures WC.1 and with the Jacobian numerator of
 DeligneWeightsAndPurity §1.6 is a theorem of this layer (5.4). The Riemann hypothesis for curves (the inverse roots of
 `L` have absolute value `√q`) is imported from DeligneWeightsAndPurity §1.6 and
-SchemeAndStackFoundations SF.5 *Weil bound via surfaces*, never derived here.
+SchemeAndStackFoundations §5.11 *Weil bound via surfaces*, never derived here.
 
 ### 5.1 The zeta series, its Euler product and point counts
 
@@ -1462,13 +1459,16 @@ r · A_r = Σ_{i=1}^{r} N_i · A_{r−i},       A_n = effectiveDivisorCount n,  
 ```
 
 equivalently `T·Z′/Z = Σ_{r≥1} N_r T^r`, and over `ℚ`, `log Z = Σ_{r≥1} N_r T^r / r`; and
-`pointCount_eq`: `N_r` equals the number of places of degree one of the constant extension
+pointCount_eq: `N_r` equals the number of places of degree one of the constant extension
 `F·𝔽_{q^r}` and the number of `𝔽_{q^r}`-points of the regular projective model of `F`.
 
-The API: `effectiveDivisorCount_zero` (`A_0 = 1`: the zero divisor is the only effective divisor
-of degree `0`, since `deg v ≥ 1`; hence `zeta_coeff_zero`), `pointCount_ratFunc`
-(`N_r(𝔽_q(t)) = q^r + 1`), `zeta_constantCoeff`, `pointCount_constantExtension`
-(`N_r(F·𝔽_{q^s}) = N_{rs}(F)`) and `placeCount_eq_mobius` (`r · placeCount r = Σ_{d ∣ r} μ(r/d) N_d`).
+The counting definitions have the following API:
+
+- The zero divisor is the only effective divisor of degree zero, so `A_0 = 1` and
+  the constant coefficient of the zeta series is one.
+- For the rational function field, `N_r = q^r + 1` for `r ≥ 1`.
+- For `r,s ≥ 1`, the constant extension has `N_r(F·𝔽_{q^s}) = N_{rs}(F)`.
+- For `r ≥ 1`, Möbius inversion gives `r · placeCount r = Σ_{d ∣ r} μ(r/d) N_d`.
 
 *Proof sketch.* An effective divisor is a unique finite sum of places with multiplicities, which is
 the coefficientwise expansion of the Euler product. Differentiating logarithmically gives
@@ -1498,7 +1498,7 @@ for the zeta-function setting.)
 
 ### 5.2 Effective divisors in large degree
 
-Prove `effectiveDivisorCount_eq`: for every `n ≥ 0`,
+Prove effectiveDivisorCount_eq: for every `n ≥ 0`,
 `A_n = Σ_{[C] : deg C = n} (q^(ℓ(C)) − 1)/(q − 1)`, the sum over divisor classes of degree `n`,
 and there are exactly `h` such classes for every `n ∈ ℤ`. Consequently, for `n > 2g − 2`
 (`effectiveDivisorCount_of_large`, stated in the cleared form `(q − 1)·A_n = h·(q^(n + 1 − g) − 1)`),
@@ -1557,7 +1557,7 @@ Tau Ceti `genus`, `Divisor.classNumber`.
 
 ### 5.4 Comparison with the scheme zeta function and the Jacobian
 
-Prove `zeta_eq_schemeZeta`: `zeta F` equals the zeta function `Z(X, T)` of the regular projective
+Prove zeta_eq_schemeZeta: `zeta F` equals the zeta function `Z(X, T)` of the regular projective
 model `X` (WeilConjectures WC.1, the closed-point Euler product), and `lPolynomial F`
 equals the curve numerator of WeilConjectures WC.1 (`curve_zeta_numerator_without_rh`) and the
 reversed characteristic polynomial `P^rev_{π_J}` of the Frobenius endomorphism of the Jacobian
@@ -1584,9 +1584,9 @@ AlgebraicCurves Layer 12.
 
 ### 5.5 Constant field extensions
 
-Prove `lPolynomial_constantExtension`: for `r ≥ 1`,
+Prove lPolynomial_constantExtension: for `r ≥ 1`,
 `L_{F·𝔽_{q^r}}(T^r) = ∏_{ζ^r = 1} L_F(ζT)`, equivalently the inverse roots of `L_{F·𝔽_{q^r}}` are
-the `α_i^r`; and `zeta_constantExtension`: `Z_{F·𝔽_{q^r}}(T^r) = ∏_{ζ^r=1} Z_F(ζT)`.
+the `α_i^r`; and zeta_constantExtension: `Z_{F·𝔽_{q^r}}(T^r) = ∏_{ζ^r=1} Z_F(ζT)`.
 
 *Proof sketch.* Compare Euler factors: a place of degree `d` splits into `gcd(d, r)` places of
 degree `d/gcd(d, r)` in `F·𝔽_{q^r}` (from the unramifiedness of constant extensions and the
@@ -1629,9 +1629,31 @@ for `a_1 = N_1 − (q + 1)`.)
 - `q = 5`, `g = 1`, `N_1 = 9`: the unique solution is `1 + 3T + 5T²`.
 - Pairing `N_1 = 8` with `1 + 3T + 5T²` fails the predicate. Pairing it with
   `1 + 2T + 5T²` passes, but this is not the polynomial of the displayed curve.
-  The input counts therefore require the independent verification in §5.8.
+  The counts must be proved to equal the point counts of the specified curve.
 
 ### 5.7 `L`-functions of local systems with finite coefficients
+
+For a perfect complex `C` over a commutative ring `A` and a derived endomorphism `u`,
+define its **characteristic series** in `1 + T A[[T]]` as the scalar by which `1−Tu`
+acts on the supplied determinant line of `C ⊗_A^L A[[T]]`. A strictly perfect
+representative gives the invertible chain map `1−Tu`, with inverse `Σ_{j≥0} T^j u^j`.
+Prove independence of the representative and chain lift, arbitrary ring base change,
+shift inversion and the formula `∏_i det(1−Tu | H^i C)^((−1)^i)` when cohomology is
+finite projective. These are the characteristic-series bridge, using
+PadicMeasuresIwasawaAlgebras §5.1's determinant functor and its canonical quasi-isomorphism,
+acyclic and base-change identifications; no new determinant-line construction is made.
+(Stacks, Tag 03UZ, Theorem 64.20.1 and its perfect-complex determinant convention;
+Abdurrahman–Venkatesh, §3.2, equations (3.1)–(3.2), p. 27.)
+
+**Checks for the characteristic series.**
+
+- A rank-one module in degree zero with `u=a` gives `1−aT`; shifting it by one
+  gives `(1−aT)⁻¹`, distinguishing the cohomological sign.
+- The contractible complex `[A →^1 A]` with the identity has series
+  `(1−T)/(1−T) = 1`, independently of the two chosen bases.
+- Over `A = ℤ/4`, `[A →^2 A]` with the identity again gives `1`; its two
+  cohomology modules are `ℤ/2`, and neither has a projective determinant over `A`.
+
 
 Let `Λ` be a finite field of characteristic `ℓ ≠ p` (or a finite commutative ring of order prime to `p`,
 with the additional hypothesis that the sheaf `j_*ρ` below is flat over `Λ`) and `ρ` a
@@ -1642,17 +1664,17 @@ finite set of places. Define
 inertia invariants. Flatness of `j_*ρ` makes these finite stalks projective, so this determinant
 is defined over `Λ`. Over a field it agrees with ArithmeticGaloisRepresentations §2.5's
 `GaloisRep.localEulerFactor`; the finite-ring extension is a target here. Its API is
-`localEulerFactorFinite_field`, `localEulerFactorFinite_unramified`,
-`localEulerFactorFinite_liftIndependent` and `localEulerFactorFinite_constantCoeff` (equal to
-`1`). Prove `lFunction_cohomological`: with `j : U → X` the inclusion of the open set where `ρ`
+localEulerFactorFinite_field, localEulerFactorFinite_unramified,
+localEulerFactorFinite_liftIndependent and localEulerFactorFinite_constantCoeff (equal to
+`1`). Prove lFunction_cohomological: with `j : U → X` the inclusion of the open set where `ρ`
 is unramified,
 
 ```text
 L(X, ρ, T) = det(1 − T·Fr | RΓ(X_{k̄}, j_*ρ))⁻¹     in Λ[[T]],
 ```
 
-where the determinant is on the perfect cohomology complex. If all cohomology modules are
-projective (in particular over a field), `lFunction_cohomological_projective` expresses it as
+where the determinant is the characteristic series of the perfect cohomology complex. If all cohomology modules are
+projective (in particular over a field), lFunction_cohomological_projective expresses it as
 `∏_{i=0}^{2} det(1 − T·Fr | H^i(X_{k̄}, j_*ρ))^((−1)^(i+1))`. For general finite rings the
 individual cohomology modules need not be projective, and this latter expression is not used.
 The Euler product over the closed points of `U` alone uses `RΓ_c(U_{k̄}, ρ)`. No lift of `ρ` to
@@ -1671,7 +1693,10 @@ symplectic Reidemeister torsion*, §3.2, equations (3.1)–(3.2), p. 27, for thi
 curve with torsion coefficients.)
 
 *Needs:* ArithmeticGaloisRepresentations §2.5; EtaleCohomologyFoundations §§F.2.5, F.3 and F.10.2–F.10.3 (compact supports, finiteness, Frobenius and
-perfect-complex trace and determinant algebra); Layer 5.1.
+perfect-complex traces and finite-projective determinant comparisons);
+PadicMeasuresIwasawaAlgebras §5.1 (`detLine`, `detLine_quasiIso`, `detLine_shortExact`,
+`detLine_baseChange`, `detLine_shift`, `detLine_acyclic`); the characteristic-series
+bridge above; Layer 5.1.
 
 **Checks.**
 
@@ -1690,96 +1715,14 @@ perfect-complex trace and determinant algebra); Layer 5.1.
   `localEulerFactorFinite = 1 − aT`; at a zero stalk it is `1`. In either case the constant
   coefficient is a unit, which justifies inversion in the Euler product.
 
-### 5.8 Enumerating normalized places and verifying point counts
-
-For a separating presentation and normalized integral bases as in §1.3, prove
-`enumeratePlaces_le`: a terminating procedure lists exactly the native places of degree at
-most `B`, without repetition, with their residue-field encodings, normalized valuations and
-ramification and residue degrees. Its inputs include correct factorization and normalization
-arithmetic. Enumerate monic irreducibles of `k[x]` of degree at most `B`, factor their extended
-ideals in `O_fin`, retain the primes of residue degree over `k` at most `B`, and separately
-factor the infinite prime in `O_∞`. Completeness follows because a place of `F` of degree `d`
-lies over a base place whose degree divides `d`. A singular affine point is never substituted
-for its normalized branches. (Hess, §3.2, p. 3, Proposition 9, p. 7, and §6, pp. 9–10;
-AlgebraicCurves Layers 2 and 6 for normalized primes, residue degrees and the finite map.)
-
-Prove `enumeratePlaces_sound`, `enumeratePlaces_complete`, `enumeratePlaces_nodup` and
-`pointCount_from_enumeration`: the degree-weighted formula of §5.1 applied to a complete list
-through degree `r` returns `N_r`. The inputs `N_1,…,N_g` in §5.6 must come from this computation
-or an independently proved point-counting procedure; `IsLPolynomialData` checks the polynomial
-against those counts and does not verify that the counts describe a chosen curve.
-
-Prove `enumeratePlaces_cost` with factorization and normalization charged separately and with
-its finite output and the enumerated base polynomials included in the bound. Exhaustive
-point counting over `𝔽_{q^r}` visits `q^r` possible affine `x`-coordinates even for a plane
-presentation; it is not polynomial in `log q` and `r`. These are bounds for explicit encodings,
-not a claim of a new fast point-counting algorithm. (Hess, §3.2, pp. 3–4, and §6, p. 9, for the
-separation of arithmetic and factorization costs.)
-
-*Needs:* §§1.3 and 5.1; AlgebraicCurves Layers 2, 5–6; correct finite-field and polynomial
-factorization routines as explicit inputs.
-
-**Checks.**
-
-- `B = 0` produces no places; every normalized place has positive degree.
-- For `𝔽_q(t)` and `B = 1`, the output consists of the `q` linear finite primes and `∞`;
-  omitting infinity gives the wrong `N_1`.
-- A place of degree `2` contributes two points over `𝔽_{q²}` and none over `𝔽_q`;
-  neither raw list length nor only the rational places computes all extension counts.
-- A nodal affine model can have two normalized branches above one singular point; listing
-  the singular point once fails completeness even if its residue field is correctly recorded.
-
-### 5.9 Computing finite ray quotients and their characters
-
-With the encodings of §§1.3 and 5.8, an effective modulus `m`, a ray divisor `A` of degree one
-representing the selected class `a`, and `r ≥ 1`, prove `computeRayQuotient`: a terminating
-procedure constructs a finite abelian-group presentation and a verified isomorphism with
-`C_m/⟨a^r⟩`. It also computes the images of the finite local unit groups and of `a`.
-Correctness includes all relations, rather than only a map from a proposed presentation.
-
-For example, put `N = 2g + deg m`. Enumerate effective divisors away from `m` of degrees in
-`[N,N+r−1]`, using §5.8 through degree `N+r−1`. Every ray class modulo `a^r` has such a
-representative: shift its degree by a multiple of `rA` and use the surjective evaluation map
-from Riemann–Roch to impose the required unit residue along `m`. Test equality of ray classes
-by solving for a nonzero `f` with `div f = D−E−jrA` and `f ≡ 1 mod m`; the integer `j` is fixed
-by degrees. The solution space and residue constraints are finite linear algebra on §1.3's
-basis. If `m = 0`, the congruence condition is empty and the nonzero condition is retained.
-Choose representatives of the resulting finite equivalence classes to compute the group law.
-This is a direct consequence of Riemann–Roch and the arithmetic ray quotient of §4.5;
-Hess, Theorem 7 and Proposition 9, pp. 6–8, provide its basis computation, rather than a
-separate fast ray-class algorithm.
-
-Prove `computeRayCharacterData_sound` and `computeRayCharacterData_complete`: characters of
-this presentation into a specified `μ_N′`, `N′ ≥ 1`, with a verified roots-of-unity encoding,
-give exactly the corresponding finite ray characters. Testing the finite unit filtrations
-computes their least conductors and retains the degree-one value. Prove `computeRayQuotient_cost`
-in the operation model of §1.3, charging the enumerated divisors, relation tests, local precision
-and finite-group arithmetic separately. No polynomial bound in `log q`, the genus, or binary
-modulus multiplicities is asserted for this exhaustive procedure.
-
-*Needs:* §§0.2, 1.3, 4.5 and 5.8; AlgebraicCurves Riemann–Roch and approximation; finite
-abelian-group arithmetic supplied with correctness. Sections 4.8–4.10 identify the resulting
-characters with geometric covers; this computation uses the arithmetic presentation of §4.5.
-
-**Checks.**
-
-- On `ℙ¹`, `m = 0`, `r = 1` returns the trivial group; `r = 2` returns `ℤ/2`.
-  Omitting the degree relation leaves an infinite group.
-- On `ℙ¹`, `m = 2[0]`, `r = 1`, the group has order `q`; a tame-unit-only implementation
-  would return the trivial group and omit conductor-two characters.
-- The trivial character has zero conductor and degree-one value `1`; a nontrivial character
-  of the degree quotient still has zero conductor. The two must be distinguished by that value.
-- A proper subgroup of the true quotient cannot pass completeness, even when all its
-  proposed relations and its characters satisfy the local bounds.
-
 ### 5.10 Quantitative Chebotarev in each degree
 
 Let `M/F` be a finite Galois extension, with exact constants `k_M = 𝔽_{q^h}`,
 `G = Gal(M/F)`, geometric subgroup `N = Gal(M/Fk_M)`, and a conjugacy class `C ⊆ G`.
 Define `frobeniusPlaceCount C r` to count the unramified places of `F` of degree `r ≥ 1`
-whose arithmetic Frobenius lies in `C`. Prove `frobeniusPlaceCount_constant_congruence`:
+whose arithmetic Frobenius lies in `C`. Prove frobeniusPlaceCount_constant_congruence:
 the count is zero unless the image of `C` in `Gal(k_M/k)` is `Frob_q^r`. In a compatible
-degree, prove `degree_sensitive_chebotarev`:
+degree, prove degree_sensitive_chebotarev:
 
 ```text
 |r · frobeniusPlaceCount C r − (|C|/|N|)(q^r+1)|
@@ -1789,8 +1732,10 @@ degree, prove `degree_sensitive_chebotarev`:
 Here `g_M` is the genus over the exact constants of `M`, `g_X` is the genus of `F/k`,
 `R` is the sum of the degrees of the ramified places of `F`, and the inequality is in `ℝ`.
 Both `|N|` and `q` are positive, with `q > 1`. The factor `|C|/|N|`, rather than `|C|/|G|`,
-is essential when constants enlarge. These statements supply the finite-cover per-degree
-input of DeligneWeightsAndPurity §3.7; that section's Haar-null conclusion is a separate theorem.
+is essential when constants enlarge. The explicit error tends to zero after division by `q^r`, and recovers
+DeligneWeightsAndPurity §3.7's supplied `finiteCover_degreeChebotarev` on each compatible
+constant-field progression. Its asymptotic and Haar-null conclusions are imported there;
+the additional target here is this numerical bound, not their general proof.
 
 For the proof, use Kosters, *A short proof of a Chebotarev density theorem for function fields*,
 Theorem 1.1 and Corollary 1.2, p. 2, with Lemmas 1.3–1.4 and proofs, pp. 3–5. The corollary's
@@ -1813,7 +1758,8 @@ displayed estimate. This deduction does not identify all rational points after b
 with places of degree exactly `r`.
 
 *Needs:* AlgebraicCurves Layers 6 and 8 (Galois places, constant-field components and genus);
-§5.1; DeligneWeightsAndPurity §1.6; finite-group conjugacy and arithmetic Frobenius.
+§5.1; DeligneWeightsAndPurity §§1.6 and 3.7 (`finiteCover_degreeChebotarev`, for
+comparison with its asymptotic); finite-group conjugacy and arithmetic Frobenius.
 
 **Checks.**
 
@@ -1835,9 +1781,9 @@ function field `y² = x³ + x + 1` over `𝔽_5` (discriminant `−16·31 ≢ 0`
 
 ### Dependencies
 
-Layers 0.1–0.2, 1 and 4.5; AlgebraicCurves Layers 2, 3, 4, 5, 6, 8 and 12; DeligneWeightsAndPurity §§1.6 and 1.9; WeilConjectures WC.1 and WC.5; ArithmeticGaloisRepresentations §2.5;
+Layers 0.1–0.2 and 4.5; AlgebraicCurves Layers 2, 3, 4, 5, 6, 8 and 12; DeligneWeightsAndPurity §§1.6 and 1.9; WeilConjectures WC.1 and WC.5; ArithmeticGaloisRepresentations §2.5;
 EtaleCohomologyFoundations §§F.2.5, F.3 and
-F.10.2–F.10.3.
+F.10.2–F.10.3; PadicMeasuresIwasawaAlgebras §5.1.
 
 ## Layer 6: automorphic functions over function fields
 
@@ -1845,7 +1791,8 @@ F.10.2–F.10.3.
 AL.3. This layer supplies arithmetic automorphic functions, constant terms and cuspidal finiteness
 for arbitrary connected reductive groups over `K` and coefficient rings in which `p` is invertible,
 as the work of V. Lafforgue and Böckle–Harris–Khare–Thorne requires. The complex `GLₙ` specialization
-then provides the function spaces used by AL.3's Fourier reconstruction and by
+is compared with AutomorphicLFunctionsAndLocalFactors' supplied function spaces
+in *Representation prerequisites — Restricted tensor realizations* and with
 AutomorphicSpectralTheory's function-field branch.
 
 ### 6.1 Adelic points of affine groups over a function field
@@ -1853,7 +1800,7 @@ AutomorphicSpectralTheory's function-field branch.
 For a finitely generated commutative Hopf algebra `H` over `K` (an affine group scheme `G` of
 finite type), define `adelicPoints H := WithConv (H →ₐ[K] 𝔸)` (a group by
 `TauCeti.AlgHom.instGroup`), with the affine point topology supplied by ReductiveGroupsPartII
-RG2.0. The additional function-field target `adelicPoints_restrictedProduct` compares these
+RG2.0. The additional function-field target adelicPoints_restrictedProduct compares these
 points with the restricted product over the completed global places:
 for a finite nonempty set `S` of places and a flat affine model `𝒢` of finite type over the `S`-integers
 `O_S`, the natural map
@@ -1864,12 +1811,12 @@ G(𝔸)  →  ∏′_{v} ( G(K_v), 𝒢(O_v) )
 
 to the restricted product (Mathlib `RestrictedProduct`, with `G(K_v)` for `v ∈ S`) is a
 homeomorphism of topological groups, independent of `(S, 𝒢)` up to enlarging `S`. Prove
-`adelicPoints_diagonal_discrete`: `G(K) → G(𝔸)` is a closed embedding onto a discrete subgroup, and
-`adelicPoints_finite_stabilizer`: for `U ⊆ G(𝔸)` compact open and `g ∈ G(𝔸)`, `g G(K) g⁻¹ ∩ U` is
-finite. The API: `adelicPoints_map` (functoriality in `H`), `adelicPoints_locallyCompact`,
-`adelicPoints_prod` (products of groups), `adelicPoints_Gm` (for `G = 𝔾_m` the result is the idele
+adelicPoints_diagonal_discrete: `G(K) → G(𝔸)` is a closed embedding onto a discrete subgroup, and
+adelicPoints_finite_stabilizer: for `U ⊆ G(𝔸)` compact open and `g ∈ G(𝔸)`, `g G(K) g⁻¹ ∩ U` is
+finite. The API: adelicPoints_map (functoriality in `H`), adelicPoints_locallyCompact,
+adelicPoints_prod (products of groups), adelicPoints_Gm (for `G = 𝔾_m` the result is the idele
 group of ArithmeticGaloisDuality §R02.3.2 with the topology controlling both a unit and its
-inverse) and `adelicPoints_Ga` (`𝔾_a(𝔸) = 𝔸`).
+inverse) and adelicPoints_Ga (`𝔾_a(𝔸) = 𝔸`).
 
 *Proof sketch.* Use the embedding-independent point topology of ReductiveGroupsPartII RG2.0;
 continuity and openness of the restricted-product comparison maps follow from writing
@@ -1903,20 +1850,29 @@ discrete subgroup of the centre for which `Z(K)∖Z(𝔸)/((Z(𝔸) ∩ U)Ξ)` i
 and `R` a commutative ring. Define `automorphicFunctions G U Ξ R`, the `R`-module of functions
 `G(K)∖G(𝔸)/U → R` invariant under `Ξ`, and, for a character `χ : Z(K)∖Z(𝔸) → Rˣ` trivial on
 `Z(𝔸) ∩ U` and on `Ξ`, the submodule of `χ`-equivariant functions, `f(zg) = χ(z) f(g)`. The API:
-`eval` (evaluation at a double-coset representative is `R`-linear), `levelChange` (for `U′ ⊆ U`,
-pullback is an injective map from level `U` to level `U′`), `heckeAction` (the convolution action of
+eval (evaluation at a double-coset representative is `R`-linear), levelChange (for `U′ ⊆ U`,
+pullback is an injective map from level `U` to level `U′`), heckeAction (the convolution action of
 the `R`-valued Hecke algebra `H(G(𝔸), U)` of compactly supported `U`-bi-invariant functions, defined
-by finite double-coset sums), `baseChange` (an `R`-algebra map `R → S` induces
+by finite double-coset sums), baseChange (an `R`-algebra map `R → S` induces
 `automorphicFunctions G U Ξ R ⊗_R S → automorphicFunctions G U Ξ S`, an isomorphism on finitely
-supported functions) and `gl1` (for `G = 𝔾_m`, the module of functions on `C_K/(U·Ξ)`, with
+supported functions) and gl1 (for `G = 𝔾_m`, the module of functions on `C_K/(U·Ξ)`, with
 `C_K` ArithmeticGaloisDuality's idele class group).
+
+For `G = GL_n`, `R = ℂ` and a fixed unitary central character, prove the comparison
+with the smooth central-character automorphic function space and its constant terms in
+AutomorphicLFunctionsAndLocalFactors, *Representation prerequisites — Restricted tensor
+realizations*. Restriction to level `U` and `Ξ` identifies the two spaces, their quotient
+measures, Hecke actions and cusp subspaces. This comparison is the input to §6.7's use of
+AL.3 Fourier reconstruction; the supplied complex theory has no dependence on Layer 6.
 
 *Proof sketch.* These are definitions over Layer 6.1; the Hecke action is well defined because
 `UgU` is a finite union of `U`-cosets. (Yu, *Comptage des systèmes locaux ℓ-adiques sur une courbe*,
 §§2.2–2.3, pp. 8–12; Harder, *Chevalley groups over function fields and automorphic forms*, §1.1,
 pp. 252–253; Böckle–Harris–Khare–Thorne, §8.1, p. 34.)
 
-*Needs:* Layer 6.1; Layer 0.2; ArithmeticGaloisDuality §R02.3.2.
+*Needs:* Layer 6.1; Layer 0.2; ArithmeticGaloisDuality §R02.3.2;
+AutomorphicLFunctionsAndLocalFactors, *Representation prerequisites — Restricted tensor
+realizations*, for the complex `GL_n` comparison.
 
 **Checks.**
 
@@ -1924,9 +1880,10 @@ pp. 252–253; Böckle–Harris–Khare–Thorne, §8.1, p. 34.)
   surjects onto `ℤ` by degree and is infinite.
 - For `K = 𝔽_q(t)`, `U = ∏_v O_vˣ` and `Ξ` generated by an idele of degree `r > 0`, there are exactly
   `r` double cosets for `GL₁`.
-- If `R` is a field and `χ` is nontrivial on some element of `Z(K)`, the only `χ`-equivariant
-  function is `0`; over a ring one needs `χ(z) − 1` to act injectively for the same conclusion,
-  and nontriviality alone is not enough.
+- For `G = GL₁`, `K = 𝔽_q(t)`, maximal integral level and `Ξ` generated by a
+  degree-two idele, the quotient is `ℤ/2`. The admissible character `χ(d) = (−1)^d`
+  forces values `(a,−a)`. Over `ℚ` no nonzero constant function is equivariant;
+  over `ℤ/4` the constant function `(2,2)` is equivariant.
 
 ### 6.3 Constant terms and the cusp module
 
@@ -1942,14 +1899,11 @@ covolume `1` for `N(K)`. A filtration with vector-group quotients shows `μ(J) �
 each finite stabilizer has `p`-power order. The weights therefore lie in `ℤ[1/p]` and sum to `1`,
 so the integral is defined in `R`. Define
 `cuspFunctions G U Ξ R` as the intersection over all proper `K`-parabolics `P` of the kernels of
-`constantTerm P`. The API: `constantTerm_linear`, `constantTerm_complex` (for `R = ℂ` it is the
-ordinary integral), `constantTerm_refine` (under refinement the weights of the finer cosets sum
-to the old weight, leaving the integral unchanged), `mem_cuspFunctions_iff` (vanishing of every proper constant term;
+`constantTerm P`. The API: constantTerm_linear, constantTerm_complex (for `R = ℂ` it is the
+ordinary integral), constantTerm_refine (under refinement the weights of the finer cosets sum
+to the old weight, leaving the integral unchanged), mem_cuspFunctions_iff (vanishing of every proper constant term;
 it suffices to test maximal parabolics containing a fixed minimal one, up to `G(K)`-conjugacy),
-`cuspFunctions_hecke` (stable under `heckeAction`) and `cuspFunctions_baseChange` (for `R`
-Noetherian and `R → S` flat, `cuspFunctions … R ⊗_R S ≅ cuspFunctions … S` once the common finite
-support of 6.4 is used: the cusp conditions are finitely many linear equations on a finite free
-module).
+cuspFunctions_hecke (stable under heckeAction).
 
 *Proof sketch.* `K`-splitness of the unipotent radical gives a filtration by normal subgroups
 with vector-group quotients on which `P` acts linearly (Morris I, §5.4, p. 104, after SGA 3 XXVI,
@@ -1979,7 +1933,38 @@ ReductiveGroupsPartII Layer RG2.4 (parabolic subgroups and decompositions).
 
 ### 6.4 Compact support and finiteness of cusp forms
 
-Prove `cuspFunctions_compactSupport`: for every connected reductive `G` and compact open `U` there
+Prove **function-field reduction** for every connected reductive `G/K`, every compact
+open `U ⊆ G(𝔸)`, and all characteristics, including nonsplit and anisotropic groups.
+Choose a minimal rational parabolic `P₀ = M₀N₀`, its relative simple roots `Δ`, and
+`H₀ : M₀(𝔸) → Hom(X_K^*(M₀), ℝ)` given by `⟨χ,H₀(m)⟩ = log_q |χ(m)|`.
+Extend the relative roots to the corresponding rational linear forms on this space.
+For `c ∈ ℝ`, put `P₀[c] = {nm : ⟨α,H₀(m)⟩ ≥ c for all α ∈ Δ}`.
+There are `c₁ ∈ ℝ` and a finite `Σ ⊆ G(𝔸)` such that
+`G(𝔸) = G(K) P₀[c₁] Σ U`. For `c₂ ≥ c₁`, impose also
+`⟨α,H₀(m)⟩ ≤ c₂` for every `α`. The images of these bounded regions are relatively
+compact in `G(K)∖G(𝔸)/Z(𝔸)`; every relatively compact subset is contained in such
+an image for some `c₂`. For `Δ = ∅` this says that the entire quotient modulo the
+centre is compact. Prove also finite invariant quotient volume modulo `Z(𝔸)`;
+equivalently use the kernel of all adelic rational-character norms and its finite-index
+central comparison. The API includes change of level, independence of the minimal
+parabolic up to rational conjugacy, and monotonicity in the lower and upper bounds.
+(Morris I, §§4.1–4.3, p. 101; §§4.4–4.7, pp. 102–103; Harder, §§1.1–1.2,
+pp. 252–256, for the split specialization.) *Needs:* §6.1; ArithmeticGaloisDuality
+§R02.3.2 (compact degree-zero idele classes); ReductiveGroupsPartII RG2.3–RG2.4
+(relative roots, rational parabolics and local Iwasawa decomposition).
+
+**Checks for reduction.**
+
+- For `G = 𝔾_m`, `Δ` is empty and the quotient by the full adelic centre has one point;
+  before that quotient the degree takes every integer, so it is not compact.
+- In the split `GL₂` Borel, `m = diag(π_v^a,1)` at a degree-one place has
+  `⟨α,H₀(m)⟩ = −a`; the opposite choice of positive root reverses this number.
+  Bounds `c₁ ≤ −a ≤ c₂` allow finitely many integral values of `a`.
+- For an anisotropic semisimple group there are zero simple rational roots and the
+  whole adelic quotient is compact. For split `SL₂` there is one root and the unbounded
+  cusp is excluded by the upper bound, so the two cases cannot use the same empty test.
+
+Prove cuspFunctions_compactSupport: for every connected reductive `G` and compact open `U` there
 is a compact subset `C ⊆ G(K)∖G(𝔸)/Z(𝔸)` containing the support of every cusp form of level `U`;
 with `Ξ` as in 6.2 the supports lie in a finite subset of `G(K)∖G(𝔸)/UΞ`. Consequently, for `R`
 Noetherian with `p` invertible, `cuspFunctions G U Ξ R` is a finitely generated `R`-module, and for a
@@ -1988,7 +1973,7 @@ there is a constant `c′` with support inside `⋃_i G(K) · B_i(𝔸)[c, c′]
 subgroups `B_i` (the inverse of Harder's Siegel sets, since his quotient is on the right), and under bounded values of all rational characters the space is
 finite-dimensional.
 
-*Proof sketch.* Reduction theory gives `G(𝔸) = G(K)·P₀(c₁)·Σ·U` for a Siegel set and a finite
+*Proof sketch.* Function-field reduction above gives `G(𝔸) = G(K)·P₀(c₁)·Σ·U` for a Siegel set and a finite
 set `Σ`. If a point of a Siegel set lies far enough in the direction of a simple root, the
 `U`-invariance and the compactness of the unipotent quotients force `f` to equal its constant
 term along the corresponding maximal parabolic there, which vanishes for a cusp form; this bounds
@@ -2002,7 +1987,7 @@ reduction theory of Harder for connected reductive groups over global function f
 bound depending only on the level);
 Böckle–Harris–Khare–Thorne, Proposition 8.2, pp. 34–35.)
 
-*Needs:* Layers 6.1–6.3; Layer 0.2; ReductiveGroupsPartII Layer RG2.4.
+*Needs:* Layers 6.1–6.3; function-field reduction above; Layer 0.2; ReductiveGroupsPartII Layer RG2.4.
 
 **Checks.**
 
@@ -2011,14 +1996,21 @@ Böckle–Harris–Khare–Thorne, Proposition 8.2, pp. 34–35.)
   This disproves finiteness without `Ξ`; central translations of a form with a fixed central
   character would instead be scalar multiples, so they are not such a counterexample.
 - The support bound is uniform over all cusp forms of level `U`, not form by form.
-- For `G = 𝔾_m` and `U = ∏_v O_vˣ`, `Ξ = ⟨a⟩` with `deg a = 1`: `cuspFunctions` is the free module of
+- For `G = 𝔾_m` and `U = ∏_v O_vˣ`, `Ξ = ⟨a⟩` with `deg a = 1`: cuspFunctions is the free module of
   rank `h` on `C_K/(UΞ) ≅ Cl⁰(F)`.
+
+For a Noetherian `ℤ[1/p]`-algebra `R` and a flat `R`-algebra `S`, prove
+cusp-module base change: `cuspFunctions … R ⊗_R S ≅ cuspFunctions … S`.
+The common finite support just proved puts both modules inside functions on one finite set;
+the constant-term conditions have finitely many distinct rows there, and flatness preserves
+their common kernel. *Needs:* the definitions in §6.3 and the uniform finite-support theorem
+in §6.4. This statement is not an input to that support theorem.
 
 ### 6.5 Integral coefficient models and algebraic Hecke eigenvalues
 
-Prove `cuspFunctions_integralModel`: if `R` is a Noetherian `ℤ[1/p]`-algebra with an embedding into
+Prove cuspFunctions_integralModel: if `R` is a Noetherian `ℤ[1/p]`-algebra with an embedding into
 an algebraically closed field `C` of characteristic zero, then
-`cuspFunctions G U Ξ R ⊗_R C ≅ cuspFunctions G U Ξ C`. Prove `heckeEigenvalue_algebraic`: the
+`cuspFunctions G U Ξ R ⊗_R C ≅ cuspFunctions G U Ξ C`. Prove heckeEigenvalue_algebraic: the
 eigenvalues of the unramified Hecke algebra `H^S(G, U)` (places outside the finite set where `U` is
 not hyperspecial) on `cuspFunctions G U Ξ C` are algebraic numbers, and every irreducible cuspidal
 automorphic representation (with central character trivial on `Ξ`) has a model over a number
@@ -2047,22 +2039,22 @@ Thorne, Proposition 8.2, pp. 34–35.)
 
 At a place `v` where `U_v = G(O_v)` is hyperspecial, use SmoothRepresentationsOfLocalGroups §SR.4.1:
 the spherical Hecke algebra `H(G(K_v), U_v)` with `vol(U_v) = 1` and its Satake isomorphism after
-adjoining `q_v^(±1/2)`. Prove `heckeAction_unramified_cusp`: the global action of 6.2 at `v`
-preserves `cuspFunctions`, and for a standard parabolic `P = MN`,
+adjoining `q_v^(±1/2)`. Prove heckeAction_unramified_cusp: the global action of 6.2 at `v`
+preserves cuspFunctions, and for a standard parabolic `P = MN`,
 use right convolution `T_h f(g) = ∫ h(x) f(gx) dx`. Set
 `S*_P h(m) = ∫_{N(K_v)} h(mn) dn`, with `N(O_v)` of volume one, and
 `δ_P(m) = |det(Ad(m)|Lie N)|_v`. The raw constant term, restricted to `M(𝔸)`, satisfies
 `constantTerm P (T_h f) = T_{S*_P h}(constantTerm P f)`.
 Define `normalizedConstantTerm P f(m) := δ_P(m)^(−1/2) constantTerm P f(m)` with the adelic
-product modulus. Prove `normalizedConstantTerm_hecke`: it intertwines `T_h` with
+product modulus. Prove normalizedConstantTerm_hecke: it intertwines `T_h` with
 `T_{S_P h}`, where `S_P h = δ_P^(1/2) S*_P h` is normalized Satake. The API
-`normalizedConstantTerm_one` states that normalization does not change evaluation at `1`;
-`normalizedConstantTerm_rightTranslate` gives
+normalizedConstantTerm_one states that normalization does not change evaluation at `1`;
+normalizedConstantTerm_rightTranslate gives
 `CTⁿ_P(R_m f)(l) = δ_P(m)^(1/2) CTⁿ_P(f)(lm)` for `m,l ∈ M(𝔸)`; and
-`normalizedConstantTerm_transitive` gives `CTⁿ_Q = CTⁿ_{Q∩M} ∘ CTⁿ_P` for standard
+normalizedConstantTerm_transitive gives `CTⁿ_Q = CTⁿ_{Q∩M} ∘ CTⁿ_P` for standard
 `Q ⊆ P`, with compatible quotient measures and restriction to the Levi of `Q`. These targets are
 over coefficients containing the required square roots of the local residue cardinalities.
-Prove `satake_gl1_reciprocity`: for
+Prove satake_gl1_reciprocity: for
 `G = GL₁` the Hecke operator of a uniformizer `π_v` acts by translation by the idele `π_v`, and for
 an eigenfunction `f` with idele class character `χ` the eigenvalue is `χ(π_v)`; under the
 reciprocity map of ArithmeticGaloisDuality this is the value of the corresponding Galois character
@@ -2092,7 +2084,7 @@ the computation of a constant term of a right convolution by integrating over `N
 
 ### 6.7 Yu's degree-zero nonvanishing
 
-Prove `cuspForm_exists_degreeZero_ne_zero`: let `π` be an irreducible cuspidal automorphic
+Prove cuspForm_exists_degreeZero_ne_zero: let `π` be an irreducible cuspidal automorphic
 representation of `GL_n(𝔸)`, `n ≥ 1`, unramified at every place, and `φ ∈ π` a nonzero
 `GL_n(Ô)`-invariant vector. Then `φ(g) ≠ 0` for some `g ∈ GL_n(𝔸)` with `deg_Yu(det g) = 0`.
 
@@ -2140,7 +2132,8 @@ AdelicAlgebraicGroups Layer AA.0; ReductiveGroupsPartII Layer RG2.4; SmoothRepre
 
 ## Layer 7: unitary Siegel–Eisenstein series and their nonsingular coefficients
 
-Here `p ≠ 2`, `X/𝔽_q` is as before with `F = k(X)`, and `ν : X′ → X` is a finite étale double
+For the global Eisenstein statements in §§7.1–7.3 and 7.5–7.6, `p ≠ 2`.
+Section 7.4 has its own local setting in every characteristic. Let `X/𝔽_q` be as before with `F = k(X)`, and `ν : X′ → X` is a finite étale double
 cover (possibly the trivial cover `X ⊔ X`, or the constant cover `X ⊗ 𝔽_{q²}`) with
 `F′ = k(X′)` the corresponding quadratic étale `F`-algebra and `σ` its involution. Let `W` be the
 standard split skew-Hermitian `F′`-space of dimension `2n`, `H_n = U(W)`, and `P_n = M_n N_n` the
@@ -2148,96 +2141,194 @@ Siegel parabolic, `m(α) = diag(α, ᵗᾱ⁻¹)` for `α ∈ GL_n(𝔸_{F′})`
 `b ∈ Herm_n(𝔸_F)`. The unitary group, its Siegel parabolic and their local integral models are
 ReductiveGroupsPartII Layers RG2.3–RG2.4 and SmoothRepresentationsOfLocalGroups §SR.4.4.
 
-### 7.1 Unramified inducing characters
+### 7.1 Inducing characters and the unramified obstruction
 
-Let `η : C_F → {±1}` be the quadratic character of `F′/F` (through the reciprocity map of
-ArithmeticGaloisDuality §R02.3.2; trivial when `F′ = F × F`). Prove
-`exists_unramified_inducingCharacter`: for every `n ≥ 0` there is a character
-`χ : C_{F′} → ℂˣ`, unramified at every place, with `χ|_{C_F} = η^n` (for split `F′`, `C_{F′}` is the
-product of two copies of `C_F`). Such a `χ` is a choice, not canonical: two choices differ by an
-unramified character trivial on the image of `C_F`. It can be chosen unitary: the same extension
-argument works in the divisible group `U(1)`. In the connected-cover case every such unramified
-extension is finite-order, since `ν^* Pic(X)` has finite index. In the split case it has the
-form `(χ₀, χ₀⁻¹)` and need not be unitary.
+Let `η : C_F → {±1}` be the quadratic character of `F′/F`, with arithmetic reciprocity
+from ArithmeticGaloisDuality §R02.3.2 (trivial for `F′ = F × F`). For `n ≥ 0`, prove
+**the unramified extension criterion**: an everywhere-unramified character
+`χ : C_{F′} → ℂˣ` with `χ|_{C_F} = η^n` exists if and only if `η^n` is trivial on
+`ker(ν^* : Pic(X) → Pic(X′))`. When this holds it can be chosen unitary, and the set
+of choices is a torsor under the unramified characters trivial on `ν^* Pic(X)`.
+For even `n`, the trivial character works. For a connected cover any such unramified
+extension has finite order, since `ν^* Pic(X)` has finite index in `Pic(X′)`; for a
+split cover the choices are `(χ₀,χ₀⁻¹)` and can have infinite order.
 
-*Proof sketch.* Unramified characters of `C_{F′}` are characters of `Pic(X′)` (Layer 0.3 for `X′`,
-or AL.3's divisor comparison). Since `ℂˣ` is divisible, `η^n` extends from the image of
-`ν^* : Pic(X) → Pic(X′)` exactly when it kills `ker ν^*`. For the trivial and the constant cover the
-kernel is trivial. Otherwise the cover is geometrically nontrivial and the kernel is generated by
-the `2`-torsion line bundle `L_η` with class `η ∈ H¹(X, ℤ/2)` (via `μ₂ ≅ ℤ/2`, `p ≠ 2`). For even
-`n` there is nothing to check. For odd `n` the condition is `η(L_η) = 1`, which is the alternating
-property `x ∪ x = 0` of the cup product on `H¹(X_{k̄}, ℤ/2)`: lift `x` to `H¹(X_{k̄}, ℤ₂)`, which is
-torsion-free (by the Kummer sequence `H¹(X_{k̄}, μ_{2^m}) = J[2^m]`, so that `H¹(X_{k̄}, ℤ₂(1))` is the
-Tate module `T₂J`, a free `ℤ₂`-module), use graded commutativity there to get `2(x̃ ∪ x̃) = 0` in the torsion-free `H²`, and
-reduce modulo `2`. Graded commutativity over `𝔽₂` alone does not give the alternating property.
-(Feng–Yun–Zhang, *Higher Siegel–Weil formula for unitary groups: the non-singular terms*, §2.1,
-Remark 2.1, pp. 8–9.)
+Prove **arithmetic evaluation of the obstruction**: for `D = Σ_v a_v[v]` in this
+kernel, `η(D) = (−1)^(Σ_{v inert} a_v)`, with each closed point counted once with its
+multiplicity, using its local splitting in `X′`; this evaluation is unchanged by a
+principal divisor. Thus geometric cup-product alternation does not establish the
+criterion. (Feng–Yun–Zhang, §2.1, Remark 2.1, pp. 8–9, for the extension criterion;
+ArithmeticGaloisDuality §R02.3.2 for the arithmetic Artin evaluation.)
 
-*Needs:* ArithmeticGaloisDuality §R02.3.2; Layer 0.3; SchemeAndStackFoundations SF.2 (Hilbert 90 and Kummer) and SF.3c
-(`H¹(X, 𝔾_m) = Pic(X)` and the Jacobian); EtaleCohomologyFoundations §0.11 (curve duality and the cup-product pairing).
+**Source correction.** The assertion in FYZ Remark 2.1 that the criterion always holds
+for odd `n` is false. On `E/𝔽_3 : y² = x³+2x²+2x`, let `O` be the identity,
+`P=(0,0)` and
+`ν(x,y) = (x+2+2/x, y(1−2/x²))`. This extends to a separable degree-two isogeny
+`E → E` with kernel `{O,P}`, hence an étale double cover. Its pullback satisfies
+`ν^*(P−O) = div(y/x)`. The fibre at `O` is `{O,P}`, whereas the fibre at `P` is
+the single degree-two point with `y=0` and `x²+2x+2=0`. Hence
+`η(P−O) = (−1)/(+1) = −1`, and no unramified extension exists for odd `n`.
+
+Prove **existence with finite ramification** for every such cover and every `n`:
+there is a continuous unitary character `χ : C_{F′} → U(1)` restricting to `η^n`,
+trivial on the integral units outside a finite set `S`. The idele-class embedding
+`C_F → C_{F′}` has closed image: for a field cover, Hilbert 90 identifies its
+image with the fixed subgroup `C_{F′}^σ`, a closed subgroup with the induced idele-class
+topology; for the split cover it is the diagonal embedding. Choose a compact open subgroup `V`
+of `C_{F′}` whose intersection with that image lies in `ker η^n`. Extend the resulting
+character of the image in the discrete group `C_{F′}/V` into the divisible group
+`U(1)` and pull back. This gives a continuous character with an open kernel and
+therefore finite ramification. The API records its finite local conductor exponents,
+restriction to `C_F`, and change by a character trivial on `C_F`.
+
+*Needs:* ArithmeticGaloisDuality §R02.3.2 (idele classes, topology and reciprocity);
+Layer 0.3; SchemeAndStackFoundations §§2.11 and 3.6 (Hilbert 90 and Picard objects);
+divisibility of `U(1)` and extension of homomorphisms from subgroups of abelian groups.
+The arithmetic obstruction is evaluated before any choice of inducing character.
 
 **Checks.**
 
-- For even `n` the trivial character is an allowed choice.
-- For the constant cover `X ⊗ 𝔽_{q²}`, `η(a) = (−1)^(deg a)`, and for odd `n` the character
-  `χ = (−1)^(deg_{F′})`, with the degree of `F′` over its constants `𝔽_{q²}`, is an unramified
-  choice: an idele of `F` has the same degree when viewed in `F′` (an inert place of degree `d` stays
-  of degree `d`, a split place of even degree `d` gives two places of degree `d/2`).
-- Two choices of `χ` differ by a character trivial on `ν^* Pic(X)`, so `χ` is not determined by
-  `η` and `n`.
+- For `n=0` or any even `n`, the criterion reads `1=1` and `χ=1` works with `S=∅`.
+  For the split cover `ν^*` is diagonal and `(χ₀,χ₀⁻¹)` restricts to `1`.
+- For the constant quadratic cover, `η(D)=(−1)^(deg D)`. The character
+  `χ=(−1)^(deg_{𝔽_{q²}})` on `Pic(X′)` extends it: an inert degree-`d` point
+  has degree `d` after extension and a split even-degree point gives two of degree `d/2`.
+- In the displayed elliptic example `#E(𝔽_3)=2`, `ν^*(P−O)=0` in the Picard group,
+  but `η(P−O)=−1`; for odd `n`, every inducing character must be ramified somewhere.
+  The same character has no obstruction to a finite-ramification extension on idele classes.
+- Two choices have ratio trivial on `C_F`; unitarity does not force an unramified
+  choice. A character ramified at `v` has no nonzero hyperspecial-fixed inducing section
+  there, since a Levi unit on which it is nontrivial acts through that character.
 
 ### 7.2 The unitary Siegel–Eisenstein series
 
-Define the degenerate principal series
+Choose a continuous unitary `χ` from §7.1, allowing finite ramification `S`.
+The split case also allows any continuous pair `(χ₀,χ₀⁻¹)`: its nonunitary
+norm part extends through the determinant of `H_n ≅ GL_{2n}`, giving a twist of the
+unitary family. For the spherical statements choose an everywhere-unramified `χ` and assume
+explicitly that the obstruction in §7.1 vanishes. The general construction uses all
+rational parabolics of `H_n`, not just its Siegel parabolic.
+
+For every rational parabolic `P=MN` of `H_n`, put `⟨χ,H_M(m)⟩=log_q|χ(m)|` for `χ ∈ X_F^*(M)` and let `Λ_M` be its image,
+and `𝒯_M = Hom(Λ_M,ℂˣ)` its complex torus. A point `z` defines an unramified
+character `m ↦ z(H_M(m))`; restrict to its subtorus trivial on `Z_{H_n}(𝔸)` when
+that central character is fixed. For a cuspidal representation `π` of `M` with unitary
+central character and a flat section `f_z` of normalized `Ind_P^{H_n}(π⊗z)`, prove
+**cuspidal Eisenstein rational continuation**. At every fixed compact open level and
+finite-dimensional space of inducing sections there is a nonzero Laurent polynomial
+`D(z)` such that `D(z)E_P(g,f_z)` and `D(z)M(w,π,z)f_z` are Laurent-polynomial
+families for every `g`. Here `M(w,π,z)` maps the induced space for `(M,π,z)` to that
+for `(wM,wπ,wz)` and is initially the standard integral over the corresponding
+rational-unipotent intersection quotient. There is a real `c(π)` such that the series
+and integrals converge whenever `Re⟨λ,α∨⟩ > c(π)` for every simple root of `P`,
+where `z=q^λ` means `z(H_M(m))=q^(⟨λ,H_M(m)⟩)`.
+The pole locus is contained in `D(z)=0`; identities hold as rational families and hence
+at every regular parameter. Prove the constant-term formula as the Weyl sum of these
+intertwiners and their composition and functional-equation identities.
+(Morris I, p. 134 and pp. 160–168.)
+
+Prove **unitary Levi discrete decomposition**: for every rational parabolic `P=MN`
+of `H_n` and unitary automorphic central character `ω` of `M(𝔸)`, the discrete part
+of `L²(M(F)Z_M(𝔸)∖M(𝔸),ω)` is a Hilbert sum of irreducible representations with
+finite multiplicities. Each summand is cuspidal or arises by iterated residues of
+Eisenstein series from cuspidal representations of rational Levi subgroups of `M`.
+Retain every compact open level, arbitrary finite ramification and the action of the
+full unramified-character lattice; no spherical restriction is imposed.
+Here the central-character notation means equivariant functions with the quotient norm,
+not scalar-valued functions invariant under a nontrivial `ω`.
+(Morris II, §5.5, Theorem, p. 1145.)
+
+Prove **discrete-data Eisenstein continuation** with these same maps, level and
+parameter conventions for every discrete `π`: realize residual `π` by the iterated
+residues above, prove independence when presentations give the same inducing vector
+in its specified L² realization, and commute residue operations
+with induction, constant terms and intertwining. A nonzero common Laurent denominator
+on each finite-dimensional level space gives the pole domain; no assertion of regularity
+at a pole is made. The resulting rational identities include the Weyl functional
+equations. (Morris II, §§6.5–6.6, Lemma, p. 1164.)
+*Needs for these three targets:* §6.4 function-field reduction and compact-support
+finiteness; §§6.1–6.3 complex automorphic modules and constant terms; ReductiveGroupsPartII
+RG2.3–RG2.4 (parabolics, relative roots and Iwasawa integration);
+SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (smooth induction and Whittaker functionals). Cuspidal continuation
+precedes construction of residues, which precedes the discrete-data extension.
+The Levi discrete decomposition uses that cuspidal continuation and its residues;
+it is not an input to cuspidal continuation.
+
+**Checks for continuation.**
+
+- For a torus Levi with no proper parabolic the Weyl sum has one term, its intertwiner
+  is the identity, and `E(f)=f`; the denominator can be `1`.
+- For split `H₁=GL₂`, `π=1` on the torus and standard upper Borel, the constant term
+  has two terms. At `m(π_v,1)`, the first section has value `q_v^(−s−1/2)`;
+  its intertwining transform has exponent `−s` and cannot be replaced by that section.
+- A one-dimensional unitary determinant character on `GL₂` is discrete modulo the centre
+  but has nonzero Borel constant term: integrating its unipotent restriction gives `1`.
+  It therefore tests the residual extension rather than cuspidal continuation alone.
+
+Specialize SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.2 to define the degenerate principal series
 `I_n(s, χ) := Ind_{P_n(𝔸)}^{H_n(𝔸)} (χ(det α) |det α|_{F′}^(s + n/2))` (unnormalized smooth
-induction; `χ` extended trivially on `N_n(𝔸)`), the spherical section `Φ(·, s)`, the unique
-`H_n(Ô)`-invariant section with `Φ(1, s) = 1`, factorized as `⊗_v Φ_v`, and the Siegel–Eisenstein
-series
+induction; `χ` extended trivially on `N_n(𝔸)`). For unramified `χ` define the spherical
+section `Φ(·, s)`, the unique
+`H_n(Ô)`-invariant section with `Φ(1, s) = 1`, factorized as `⊗_v Φ_v`.
+For general `χ`, choose compact open `U_v` inside its conductor level and standard flat
+sections `Φ_v` whose restriction to a maximal compact is independent of `s`, with the
+spherical choice outside `S`; their tensor product defines `Φ`. More explicitly, use
+sections supported on `P_n(F_v)kU_v` with value `1` at `k`, whenever `χ_v` is trivial
+on the determinant of `P_n(F_v)∩kU_vk⁻¹`; this condition makes their transformation law
+well defined, and these sections span the `U_v`-fixed induced space. Define the series
 
 ```text
 E(g, s, Φ) := Σ_{γ ∈ P_n(F)∖H_n(F)} Φ(γg, s).
 ```
 
-Prove `siegelEisenstein_converges`: the series converges absolutely and uniformly on compact sets
-for `Re s > n/2`; and `siegelEisenstein_rational`: for each `g`, `s ↦ E(g, s, Φ)` is a rational
+Prove siegelEisenstein_converges: the series converges absolutely and uniformly on compact sets
+for `Re s > n/2` for unitary `χ` and for the split determinant twists just specified;
+and siegelEisenstein_rational: for each `g`, `s ↦ E(g, s, Φ)` is a rational
 function of `q^(−s)` (in particular meromorphic in `s` and periodic with period `2πi/log q`), left
-`H_n(F)`-invariant wherever defined. The API: `section_one` (`Φ(1, s) = 1`),
-`section_parabolic` (`Φ(m(α) n(b) g, s) = χ(det α) |det α|_{F′}^(s+n/2) Φ(g, s)`),
-`section_unipotent` (`Φ(n(b), s) = 1`), `siegelEisenstein_leftInvariant` and
-`section_degree`:
+`H_n(F)`-invariant wherever defined. For the spherical choice the API includes section_one (`Φ(1, s) = 1`); for every section it includes
+section_parabolic (`Φ(m(α) n(b) g, s) = χ(det α) |det α|_{F′}^(s+n/2) Φ(g, s)`),
+section_unipotent (`Φ(n(b), s) = Φ(1,s)`, equal to `1` for the spherical choice), siegelEisenstein_leftInvariant and
+section_degree:
 `Φ(m(α)g, s) = χ(det α) q^(deg_Yu,Fq(det α)(s+n/2)) Φ(g, s)`. Here the idele degree
 uses the original `𝔽_q` as base, on both components in the split case. This homogeneity is a
 property of the inducing section; the full Eisenstein sum has several constant-term exponents
 and is not asserted to be homogeneous under the adelic Levi.
 
 *Proof sketch.* Convergence is Godement's criterion for Eisenstein series in the positive cone,
-applied to the degenerate parameter, using the Iwasawa decomposition `H_n(𝔸) = P_n(𝔸) H_n(Ô)`
-(ReductiveGroupsPartII Layer RG2.4) and the reduction theory of 6.4. Prove
-`leviDetCharacter_discrete`: the inducing datum
+applied to the degenerate parameter and every chosen flat section, using the Iwasawa decomposition `H_n(𝔸) = P_n(𝔸) H_n(Ô)`
+(ReductiveGroupsPartII Layer RG2.4) and function-field reduction in 6.4. Prove
+leviDetCharacter_discrete: the inducing datum
 `χ ∘ det` is a one-dimensional discrete automorphic representation of the Levi after fixing its
 unitary central character: for `n = 1` it is cuspidal on a torus, and for `n > 1` it lies in
 the residual spectrum. The square-integrability follows from finite-volume reduction theory
-for `GL_n` modulo its centre; the general spectral decomposition separates the cuspidal and residual
+for `GL_n` modulo its centre; the unitary Levi discrete decomposition above separates the cuspidal and residual
 parts. For a nonunitary split character `(χ₀, χ₀⁻¹)`, first remove its absolute-value part:
 it extends to a character of the split group `H_n ≅ GL_{2n}` through the determinant, so this
 only twists the value at `g` and changes neither convergence nor rationality. Thus
-rationality of Eisenstein series induced from cuspidal data on Levi subgroups over a global
-function field, and its extension to residual data, give the continuation. (Feng–Yun–Zhang, §2.1,
+cuspidal Eisenstein rational continuation and its discrete-data extension above give the
+continuation. The discrete-datum assertion uses finite-volume reduction and the
+Levi discrete decomposition; it does not assume Siegel rationality. (Feng–Yun–Zhang, §2.1,
 p. 8, for the data and normalizations; Morris I, Lemma (Godement), p. 118, and the lemma on
 `φ_λ`, p. 119, for convergence; Morris I, pp. 134 and 160–168, for the rationality of cuspidal
 Eisenstein series; Morris, *Eisenstein series for reductive groups over global function fields II*,
 §5.5, Theorem, p. 1145, for the spectral decomposition, and §§6.5–6.6, Lemma, p. 1164, for rational continuation
 from discrete Levi data.)
 
-*Needs:* Layers 6.1–6.4 and 7.1; ReductiveGroupsPartII Layers RG2.3–RG2.4;
-SmoothRepresentationsOfLocalGroups §§SR.4.1 and SR.4.4.
+*Needs:* Layers 6.1–6.4 and 7.1; unitary Levi discrete decomposition, cuspidal
+Eisenstein rational continuation and discrete-data continuation above;
+ReductiveGroupsPartII Layers RG2.3–RG2.4;
+SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3, SR.4.1 and SR.4.4.
 
 **Checks.**
 
-- Scaling `Φ` by `c ≠ 1` violates `Φ(1, s) = 1`; the normalization fixes the section uniquely.
-- `Φ(n(b), s) = 1` for every `b ∈ Herm_n(𝔸_F)`.
-- With normalized induction the exponent would be `s` instead of `s + n/2`
-  (`δ_{P_n}^(1/2) = |det|_{F′}^(n/2)`); the two conventions give different series at the same `s`.
+- For the spherical section, scaling `Φ` by `c ≠ 1` violates `Φ(1, s) = 1`; the normalization fixes the section uniquely.
+- For the spherical section, `Φ(n(b), s) = 1` for every `b ∈ Herm_n(𝔸_F)`;
+  for any section the value is `Φ(1,s)`.
+- Normalized induction of `χ|det|^s` and unnormalized induction of
+  `χ|det|^(s+n/2)` give the same section and Eisenstein series, since
+  `δ_{P_n}^(1/2) = |det|_{F′}^(n/2)`. In split rank one with trivial `χ`, both sections
+  take value `q^(−s−1/2)` at `m(π,1)`. Keeping the exponent `s+n/2` while switching
+  to normalized induction instead shifts the series parameter to `s+n/2`.
 - On the split group with `n = 1`, the constant term is the sum of the section at `s` and
   its standard intertwining transform at `−s`. These have different Levi exponents for generic
   `s`; a single section homogeneity law cannot be imposed on `E`.
@@ -2255,22 +2346,22 @@ E_T(g, s, Φ) := ∫_{N_n(F)∖N_n(𝔸)} E(n(b)g, s, Φ) ψ₀(⟨T, b⟩) db,
 for **rational** `T ∈ Herm_n(F, ω_F)`, with `N_n(F)∖N_n(𝔸)` of volume one, and the local Whittaker functions
 `W_{T,v}(g_v, s, Φ_v) := ∫_{N_n(F_v)} Φ_v(w_n⁻¹ n(b) g_v, s) ψ₀(⟨T, b⟩_v) db_v` with `N_n(O_v)` of
 volume one and `w_n = (0 1; −1 0)`; a local index may be any
-`T_v ∈ Herm_n(F_v, ω_{F_v})`. Prove `fourierExpansion`
-(`E = Σ_{T ∈ Herm_n(F, ω_F)} E_T`) and `fourierCoefficient_rationalLevi`: for
+`T_v ∈ Herm_n(F_v, ω_{F_v})`. For the sections of §7.2, including the finite-ramification choices, prove fourierExpansion
+(`E = Σ_{T ∈ Herm_n(F, ω_F)} E_T`) and fourierCoefficient_rationalLevi: for
 `α ∈ GL_n(F′)`,
 
 ```text
 E_T(m(α)g, s, Φ) = E_{ᵗᾱTα}(g, s, Φ).
 ```
 
-The character and norm factors are `1` for rational `α`. Prove `whittaker_levi`: for every
+The character and norm factors are `1` for rational `α`. Prove whittaker_levi: for every
 local `α ∈ GL_n(F′_v)`,
 
 ```text
 W_{T,v}(m(α)g_v, s, Φ_v) = χ_v(det ᾱ)⁻¹ |det α|_{F′_v}^(−s+n/2) W_{ᵗᾱTα,v}(g_v, s, Φ_v).
 ```
 
-Finally prove `fourierCoefficient_factor`: for nonsingular rational `T` and factorizable `Φ`,
+Finally prove fourierCoefficient_factor: for nonsingular rational `T` and factorizable `Φ`,
 
 ```text
 E_T(g, s, Φ) = q^(−n²(g_X − 1)) ∏_v W_{T,v}(g_v, s, Φ_v),
@@ -2311,10 +2402,36 @@ is not assigned the local Whittaker transformation law.
 - Rational `α` preserves rational indices and has norm `1`; a general adelic `α` has neither
   property. In particular no global symbol `E_{ᵗᾱTα}` is formed in the latter case.
 
+For each `v ∈ S`, nonsingular `T_v ∈ Herm_n(F_v,ω_{F_v})`, and a specified
+`U_v`-fixed flat section, define the **ramified local Fourier factor**
+`𝓦_v(T_v,g_v;z)`, `z=q_v^(−s)`, as the rational continuation of the local Whittaker
+integral above from `Re s > n/2`. Prove rationality for every such section by the
+local Bruhat integral, compatibility with linear combinations and refinement of `U_v`,
+and the displayed local Levi covariance. Finite-dimensional level spaces admit a
+nonzero common Laurent denominator; the factor is evaluated away from its zero locus,
+or used as a rational function. A change of section scales the factor linearly; there
+is no density-only formula independent of that section. The nonsingular global
+factorization holds with these factors at `S` and the spherical factors elsewhere.
+(Morris I, pp. 160–168, for rational section/intertwining families; FYZ §2.2,
+equations (2.2)–(2.3), pp. 9–10, for the unfolded Whittaker integral and covariance.)
+*Needs:* §7.2 continuation, §7.3 unfolding and local Levi covariance, SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (local induced spaces and functionals),
+and ReductiveGroupsPartII RG2.4 and SmoothRepresentationsOfLocalGroups SR.4.4 (local unitary groups).
+
+**Checks for ramified factors.**
+
+- For `Φ_v=0`, the integral and its rational continuation are `0`; replacing the
+  factor by an unqualified density polynomial would give a nonzero value in general.
+- Replacing `Φ_v` by `2Φ_v` multiplies the factor by `2` at every regular parameter.
+  Thus normalizing a global formula requires the local sections as data.
+- For unramified `χ_v`, the spherical section, a self-dual rank-one lattice and `s=0`,
+  the factor is `1−η_v(π_v)q_v⁻¹`; at a split place with `q_v=3` this is `2/3`.
+  Section 7.5 proves this specialization from the density comparison.
+
 ### 7.4 Split Hermitian local densities
 
-Let `F_v` be a nonarchimedean local field of characteristic not `2` and `F′_v` either its unramified
-quadratic extension or `F_v × F_v`. In the split case a Hermitian `O_{F′}`-lattice is a pair of
+Let `F_v` be any nonarchimedean local field and `F′_v/F_v` an unramified quadratic
+étale algebra, including `F_v × F_v`. There is no characteristic or residue-characteristic
+restriction in this section. In the split case a Hermitian `O_{F′}`-lattice is a pair of
 `O_F`-lattices `(L₁, L₂)` with an integral `O_F`-bilinear pairing perfect after `⊗ F`.
 Define `L^∨ = (L₁^∨, L₂^∨)`, where `L₁^∨` is the lattice in `L₁ ⊗ F` pairing integrally with
 `L₂`, and `L₂^∨` pairs integrally with `L₁`; these are cross-duals.
@@ -2328,7 +2445,7 @@ dimension `n(2m−n)` is used even when the generic fiber is empty. Define `dens
 torsion modules these half-lengths may be half-integers. The Hermitian quotient `L^∨/L` has
 equal lengths and types in its two components, so its half-length and half-type are integers.
 Prove
-`hermitianDensity_split` (Cho–Yamauchi formula, split and inert uniformly):
+hermitianDensity_split (Cho–Yamauchi formula, split and inert uniformly):
 
 ```text
 (1)  Den(⟨1⟩^(n+j), ⟨1⟩^n) = ∏_{i=1}^{n} (1 − (η(π)q)^(−i) T)  at  T = (η(π)q)^(−j);
@@ -2341,10 +2458,15 @@ Every exponent `2ℓ′(L′/L)` is an integer, although `ℓ′(L′/L)` need n
 in (2) is nonzero: each factor is `1 − (η(π)q)^(−i−j)` with `i+j ≥ 1` and `q > 1`.
 The rank-zero products are `1`.
 
-The inert case is GeometryOfNumbersAndQuadraticArithmetic §3.2; this target is the split case and
-the uniform statement. The API: `den_selfDual` (`Den(T, L) = 1` for self-dual `L`),
-`den_depends_on_torsion` (`Den(T, L)` depends only on the Hermitian torsion module `L^∨/L`) and
-`den_functionalEquation` (`Den(T, L) = (η(π)T)^(ℓ′(L^∨/L)) Den(1/T, L)`, so the degree is
+GeometryOfNumbersAndQuadraticArithmetic §3.2 supplies the inert case when the base field
+has characteristic different from two, including dyadic residue fields. This section adds
+the split case, the inert equal-characteristic-two case and their uniform comparison.
+For the latter the primitive Gram differential is onto: matrix off-diagonal coordinates
+are free and the diagonal uses the surjective trace of the unramified quadratic algebra,
+including `𝔽_4 → 𝔽_2`. Saturation into finitely many integral overlattices then proves
+stabilization and the same interpolation identity, without division by two. The API: den_selfDual (`Den(T, L) = 1` for self-dual `L`),
+den_depends_on_torsion (`Den(T, L)` depends only on the Hermitian torsion module `L^∨/L`) and
+den_functionalEquation (`Den(T, L) = (η(π)T)^(ℓ′(L^∨/L)) Den(1/T, L)`, so the degree is
 `ℓ′(L^∨/L)` and the constant term is `1`).
 
 *Proof sketch.* As for quadratic forms, `Den(⟨1⟩^m, L)` is a sum over integral overlattices
@@ -2376,12 +2498,17 @@ Theorem 3.5.1, pp. 17–18, for the inert case.)
   wrong signs.
 - In the split case `L = (O, πO)`, `L′ = (O,O)` is an integral self-dual overlattice.
   Here `ℓ(L′/L) = 1` and `ℓ′(L′/L) = 1/2`, so its term has exponent `1`, not `2`.
+- With residue field `𝔽_2`, the split rank-one lattice `(O,πO)` has polynomial
+  `1+T`, while the inert rank-one lattice with Gram element `π` has `1−T`.
+  For the inert unit line the residue norm-one fibre has `3` elements and the trace
+  takes values `Tr(0)=Tr(1)=0`, `Tr(u)=Tr(u+1)=1` for `u²+u+1=0`.
 - For the rank-zero lattice the representation scheme has one point, and its density and
   normalized polynomial are both `1`; for `m < n` there is no generic embedding and density `0`.
 
 ### 7.5 Local Whittaker functions and densities
 
-Prove `whittaker_eq_density`: at an unramified place, with `L` a Hermitian `O_{F′}`-lattice of rank
+For odd-characteristic global data and an unramified `χ_v`, use the normalized spherical
+section. Prove whittaker_eq_density: at that place, with `L` a Hermitian `O_{F′}`-lattice of rank
 `n`, `T` the Gram matrix of an `O_{F′}`-basis of `L` and `θ` a generator of `ω_{O_F}`,
 
 ```text
@@ -2411,11 +2538,12 @@ every local field); SmoothRepresentationsOfLocalGroups §SR.4.4.
 
 ### 7.6 The global coefficient formula of Feng–Yun–Zhang
 
-Let `𝓔` be a vector bundle of rank `n` on `X′` and `a : 𝓔 → σ^*𝓔^∨` an injective Hermitian map,
-with `𝓔^∨ = Hom(𝓔, ω_{X′})` (Serre duality, SchemeAndStackFoundations SF.3b). Define
+For a chosen everywhere-unramified `χ` as in §7.1 and its normalized spherical section,
+let `𝓔` be a vector bundle of rank `n` on `X′` and `a : 𝓔 → σ^*𝓔^∨` an injective Hermitian map,
+with `𝓔^∨ = Hom(𝓔, ω_{X′})` (Serre duality, SchemeAndStackFoundations §3.3). Define
 `Den(T, (𝓔, a)) := ∏_{v ∈ |X|} Den_v(T^(d_v), (𝓔_v, a_v))`, a finite product (almost every factor
 is `1`), and `E_a(m(𝓔), s, Φ)` the coefficient of 7.3 attached to `(𝓔, a)` through a rational
-trivialization of `𝓔` (independent of the choice). Prove `fyz_globalCoefficient`:
+trivialization of `𝓔` (independent of the choice). Prove fyz_globalCoefficient:
 
 ```text
 E_a(m(𝓔), s, Φ) = χ(det 𝓔) · q^(−deg(𝓔)(s − n/2) − n² deg(ω_X)/2) · L_n(s)⁻¹ · Den(q^(−2s), (𝓔, a)),
@@ -2430,13 +2558,13 @@ and `χ(det 𝓔) = χ(det α)`, hence `|det α|_{F′} = q^(deg_{𝔽_q} 𝓔)`
 
 *Proof sketch.* Choose a rational trivialization of `𝓔`; then `a` becomes a nonsingular
 `ω_F`-valued Hermitian matrix `T` and `𝓔` an element `m(α)` of the Levi. Apply the factorization
-of 7.3, its local `whittaker_levi` at every place to extract `χ(det 𝓔)` and the degree factor,
+of 7.3, its local whittaker_levi at every place to extract `χ(det 𝓔)` and the degree factor,
 and 7.5 at every place;
 self-duality almost everywhere makes the product finite, and changes of trivialization cancel by
 the product formula and the triviality of `χ` on `F′ˣ`. (Feng–Yun–Zhang, §2.6, equations
 (2.10)–(2.12), Theorem 2.8 and proof, pp. 14–15.)
 
-*Needs:* Layers 7.3–7.5; SchemeAndStackFoundations SF.3b (degrees of vector bundles and Serre
+*Needs:* Layers 7.3–7.5; SchemeAndStackFoundations §3.3 (degrees of vector bundles and Serre
 duality on curves); Layer 0.1.
 
 **Checks.**
@@ -2451,6 +2579,38 @@ duality on curves); Layer 0.1.
   its norm is `(q²)^d = q^(2d)`. The exact-constant degree used to describe `χ` in §7.1
   cannot replace this degree in the exponent.
 
+For every finite-ramification inducing character, also prove the **general coefficient
+formula with level data**. Keep a rational nonsingular index `T`, an adelic matrix
+`α`, and the chosen local sections at `S` as part of the data; a vector bundle alone
+forgets ramified-level information. Write `L_n^S(s)=∏_{v∉S}L_{n,v}(s)` and
+`Den^S=∏_{v∉S}Den_v(q_v^(−2s),L_v)`, where the `L_v` have Gram matrix
+`ᵗᾱ_vT_vα_v` after choosing a generator of `ω_{O_v}`. Then
+
+```text
+E_T(m(α),s,Φ) = q^(−n²(g_X−1)) χ(det ᾱ)⁻¹ |det α|_{F′}^(−s+n/2)
+                · L_n^S(s)⁻¹ · Den^S · ∏_{v∈S} 𝓦_v(T′_v,1;q_v^(−s)),
+T′_v = ᵗᾱ_v T_v α_v.
+```
+
+Prove this as an identity of rational functions, using §7.3 factorization and covariance,
+§7.5 at `v∉S`, and the ramified factors at `S`. Enlarge `S` to include all nonintegral
+or nonspherical local data. Products of the good density polynomials are finite, and
+the good Euler product is continued by §§5.1–5.5: the quadratic-character
+Euler product is `Z(X′,T)/Z(X,T)`, and the trivial character uses `Z(X,T)`.
+At a ramified place changing the integral frame changes the section and its local factor
+with it; the formula is invariant under this simultaneous change, and under rational
+trivializations by automorphy and the product formula. No character value of an
+unframed bundle is asserted in the ramified case. *Needs:* §§5.1–5.5, 7.1–7.3 and 7.5.
+
+**Checks for the general coefficient formula.**
+
+- If `S=∅`, `χ(det ᾱ)⁻¹=χ(det α)` since `χ` kills norms from `F′`; the formula
+  becomes the displayed spherical formula with `deg 𝓔=log_q|det α|`.
+- For `α=1` the character and determinant-norm factors are both `1`; scaling one
+  bad local section by `2` multiplies both sides by `2`.
+- Moving one unramified spherical place into `S` replaces its factor
+  `L_{n,v}(s)⁻¹Den_v` by exactly that Whittaker integral, leaving the product unchanged.
+
 ### Examples
 
 For `n = 1`, `X = ℙ¹`, `F′ = F × F` and `(𝓔, a)` self-dual, the formula reads
@@ -2459,9 +2619,10 @@ For `n = 1`, `X = ℙ¹`, `F′ = F × F` and `(𝓔, a)` self-dual, the formula
 ### Dependencies
 
 Layers 0, 2, 6; ArithmeticGaloisDuality §R02.3.2; AutomorphicLFunctionsAndLocalFactors AL.3;
-ReductiveGroupsPartII Layers RG2.3–RG2.4; SmoothRepresentationsOfLocalGroups §§SR.4.1 and SR.4.4;
+ReductiveGroupsPartII Layers RG2.3–RG2.4; SmoothRepresentationsOfLocalGroups
+§§SR.2.1–SR.2.3, SR.4.1 and SR.4.4;
 GeometryOfNumbersAndQuadraticArithmetic §3.2; MetaplecticAutomorphicForms; SchemeAndStackFoundations
-SF.2, SF.3b and SF.3c; EtaleCohomologyFoundations §0.11.
+§§2.11, 3.3 and 3.6; EtaleCohomologyFoundations §0.11.
 
 ## Worked examples
 
@@ -2595,3 +2756,9 @@ wrong; each is a test of the layers cited.
 - **Kudla–Rapoport**: S. Kudla and M. Rapoport, *Special cycles on unitary Shimura varieties II:
   global theory*, J. reine angew. Math. 697 (2014);
   [arXiv:0912.3758v2](https://arxiv.org/abs/0912.3758v2). §10, Proposition 10.1, pp. 37–38.
+
+- **SGA 3**: M. Demazure and A. Grothendieck (eds.), *Schémas en groupes*, Tome III,
+  Exposé XXVI, Proposition 2.1; Gille–Polo re-edition, May 2009 version,
+  [Exposé XXVI](https://wstein.org/sga/SGA3/Expo26.pdf).
+- **Borel–Tits**: A. Borel and J. Tits, *Groupes réductifs*, Publ. Math. IHÉS 27 (1965),
+  Théorème 3.17, [publisher archive](https://www.numdam.org/item/PMIHES_1965__27__55_0/).
