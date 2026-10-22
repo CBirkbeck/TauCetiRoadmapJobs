@@ -1,28 +1,24 @@
 import Mathlib
 import TauCeti.NumberTheory.Multiquadratic.Quadratic.GenusCharacter.OrdinaryTwoRank
-import TauCeti.NumberTheory.NumberField.NarrowClassGroup.Finite
+import TauCeti.NumberTheory.BinaryQuadraticForm.Basic
 
 /-!
 # MultiquadraticPartII: representative target signatures
 
 The roadmap is README.md. This file records definitions and theorem signatures
 statable against the pinned Mathlib and Tau Ceti APIs and is not exhaustive.
-It uses the existing narrow class group, the additive genus quotient, the
-prime-discriminant genus characters and fractional ideals. Binary quadratic
-forms are integer coefficient triples `(a, b, c)`, standing for
-`a x² + b x y + c y²`; Mathlib's `QuadraticForm ℤ (Fin 2 → ℤ)` is not used
-because its discriminant needs `2` to be invertible. The genus character of a
-form is a real-bodied definition that evaluates the Kronecker character at a
-represented integer chosen by choice; its independence of that choice is the
-evaluation law below. The form/ideal comparison is stated with the explicit
-coefficient ideal of the form, so it does not depend on an oriented
-form–ideal bijection.
+The existing narrow class group, genus quotient, prime-discriminant characters,
+fractional ideals and `TauCeti.BinaryQuadraticForm ℤ` are the carriers. The
+form character evaluates the Kronecker character at a represented integer;
+its evaluation law makes the choice independent when the factor is a
+fundamental divisor. The comparison uses the explicit coefficient ideal.
 
-The baseline is Mathlib 082e2d37e8b0463410cdb532e111cd43d5a66174 and
-Tau Ceti f790474821cf4256814db967cb154e7af3d0c369.
+The baseline is Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a and
+Tau Ceti a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039.
 -/
 
 open Polynomial NumberField TauCeti.Multiquadratic
+open scoped MatrixGroups
 open scoped NumberField nonZeroDivisors
 
 namespace TauCetiRoadmap.MultiquadraticPartII
@@ -56,6 +52,36 @@ theorem existsUnique_wideCharacter_iff
         (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))) = 1 := by
   sorry
 
+/-- Narrow lifts form a singleton when a norm-minus-one unit exists and a
+pair exchanged by `J` otherwise. (Duke–Imamoḡlu–Tóth, §2, pp.950–951.) -/
+theorem narrowDefect_fiber_boundary
+    (hmin : minpoly ℤ θ = X ^ 2 - C d)
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) (hd : 0 < d) :
+    let J := NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))
+    (∀ A B : NarrowClassGroup K,
+      NarrowClassGroup.toClassGroup B = NarrowClassGroup.toClassGroup A ↔
+        B = A ∨ B = J * A) ∧
+    ((∃ u : (𝓞 K)ˣ, Algebra.norm ℚ (((u : 𝓞 K) : K)) = -1) ↔ J = 1) ∧
+    (J ≠ 1 → ∀ A : NarrowClassGroup K, J * A ≠ A ∧ J * (J * A) = A) := by
+  sorry
+
+/-- The trivial, odd and square-defect cases of descent distinguish the
+narrow quotient from the quotient by squares.
+(Duke–Imamoḡlu–Tóth, §7, p.971, after (7.7).) -/
+theorem wideCharacter_boundary
+    (hmin : minpoly ℤ θ = X ^ 2 - C d)
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) :
+    let π := NarrowClassGroup.toClassGroup (K := K)
+    let J := NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))
+    (∃! ψ : ClassGroup (𝓞 K) →* ℤˣ, ψ.comp π = 1) ∧
+    (∀ χ : NarrowClassGroup K →* ℤˣ, χ J = -1 →
+      ¬ ∃ ψ : ClassGroup (𝓞 K) →* ℤˣ, ψ.comp π = χ) ∧
+    (IsSquare J → ∀ χ : NarrowClassGroup K →* ℤˣ,
+      ∃! ψ : ClassGroup (𝓞 K) →* ℤˣ, ψ.comp π = χ) := by
+  sorry
+
 /-! ## Layer 1: the number of classes in a narrow genus -/
 
 /-- Every narrow genus has the narrow class number divided by the genus
@@ -73,6 +99,36 @@ theorem card_genusFiber_mul_twoPow {s : Finset ℤ}
     2 ^ (s.card - 1) *
       Nat.card {A : NarrowClassGroup K // TauCeti.elementaryTwoQuotientMk A = g} =
         Nat.card (NarrowClassGroup K) := by
+  sorry
+
+/-- One, two and three signed factors give respectively one, two and four
+genera, with the corresponding fibre sizes.
+(Duke–Imamoḡlu–Tóth, §4, p.959, (4.1)–(4.2).) -/
+theorem genusFiber_smallFactorizations {s : Finset ℤ}
+    (hs : ∀ P ∈ s, IsPrimeDiscriminant P)
+    (heven : ∀ P ∈ s, ∀ P' ∈ s,
+      IsEvenPrimeDiscriminant P → IsEvenPrimeDiscriminant P' → P = P')
+    (hprod : ∏ P ∈ s, P = fundamentalDiscriminant d)
+    (hmin : minpoly ℤ θ = X ^ 2 - C d)
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) (hsf : Squarefree d)
+    (g : NarrowClassGroup.ElementaryTwoQuotient K) :
+    let n := Nat.card {A : NarrowClassGroup K // TauCeti.elementaryTwoQuotientMk A = g}
+    (s.card = 1 → Nat.card (NarrowClassGroup.ElementaryTwoQuotient K) = 1 ∧
+      n = Nat.card (NarrowClassGroup K)) ∧
+    (s.card = 2 → Nat.card (NarrowClassGroup.ElementaryTwoQuotient K) = 2 ∧
+      2 * n = Nat.card (NarrowClassGroup K)) ∧
+    (s.card = 3 → Nat.card (NarrowClassGroup.ElementaryTwoQuotient K) = 4 ∧
+      4 * n = Nat.card (NarrowClassGroup K)) := by
+  sorry
+
+/-- In a cyclic group of order eight each genus fibre has four elements,
+whereas two-torsion has two. This is a boundary of the fibre interpretation
+of (4.1)–(4.2), Duke–Imamoḡlu–Tóth, §4, p.959. -/
+theorem genusFiber_cyclicEight_boundary :
+    (∀ g : TauCeti.ElementaryTwoQuotient (Multiplicative (ZMod 8)),
+      Nat.card {x : Multiplicative (ZMod 8) // TauCeti.elementaryTwoQuotientMk x = g} = 4) ∧
+    Nat.card (TauCeti.ElementaryTwoQuotient (Multiplicative (ZMod 8))) = 2 ∧
+    Nat.card {x : Multiplicative (ZMod 8) // x ^ 2 = 1} = 2 := by
   sorry
 
 /-! ## Layer 2: signs, principal genera and arithmetic criteria -/
@@ -154,6 +210,76 @@ theorem J_ne_one_of_prime_threeModFour {s : Finset ℤ}
     Nat.card (NarrowClassGroup K) = 2 * Nat.card (ClassGroup (𝓞 K)) := by
   sorry
 
+/-- Signed dyadic and complementary factors fix the normalization at minus
+one; positive products and a negative discriminant have different sign rules.
+(Duke–Imamoḡlu–Tóth, §7, p.971, before (7.8).) -/
+theorem genusCharacter_factorSigns_boundary :
+    genusCharFun {-4} (-1) = -1 ∧ genusCharFun {-8} (-1) = -1 ∧
+    genusCharFun {8} (-1) = 1 ∧ genusCharFun ∅ (-1) = 1 ∧
+    (∏ P ∈ ({-4, -3} : Finset ℤ), P) = 12 ∧
+    (∏ P ∈ ({-8, -3} : Finset ℤ), P) = 24 ∧
+    (∏ P ∈ ({8, 17} : Finset ℤ), P) = 136 ∧
+    genusCharFun {-4, -3} (-1) = 1 ∧ genusCharFun {8, 17} (-1) = 1 ∧
+    (1 : ℤ).sign ≠ (-4 : ℤ).sign := by
+  sorry
+
+/-- The positive-factor criterion includes one and the positive dyadic
+factor; negative discriminants and two even factors are negative controls.
+(Duke–Imamoḡlu–Tóth, §4, p.960, specialized prime-discriminant criterion.) -/
+theorem primeDiscriminants_boundary :
+    (∀ D ∈ ({1, 5, 8, 40, 136} : Finset ℤ),
+      ∀ p : ℕ, p.Prime → (p : ℤ) ∣ D → p % 4 ≠ 3) ∧
+    (3 : ℤ) ∣ 12 ∧ (3 : ℤ) ∣ 24 ∧
+    (∀ p : ℕ, p.Prime → (p : ℤ) ∣ (-4 : ℤ) → p % 4 ≠ 3) ∧
+    (∏ P ∈ ({-4, -8} : Finset ℤ), P) = 32 ∧
+    (∀ p : ℕ, p.Prime → (p : ℤ) ∣ (32 : ℤ) → p % 4 ≠ 3) := by
+  sorry
+
+/-- Positive fundamental examples permit nonprimitive coordinates; nine
+shows why fundamentality is needed. (Duke–Imamoḡlu–Tóth, §4, p.960.) -/
+theorem fundamental_sumTwoSquares_boundary :
+    (1 : ℤ) = 1 ^ 2 + 0 ^ 2 ∧ (5 : ℤ) = 1 ^ 2 + 2 ^ 2 ∧
+    (8 : ℤ) = 2 ^ 2 + 2 ^ 2 ∧ (136 : ℤ) = 6 ^ 2 + 10 ^ 2 ∧
+    (¬ ∃ x y : ℤ, (12 : ℤ) = x ^ 2 + y ^ 2) ∧
+    (9 : ℤ) = 0 ^ 2 + 3 ^ 2 ∧ (3 : ℤ) ∣ 9 ∧
+    ¬ IsFundamentalDiscriminant (9 : ℤ) := by
+  sorry
+
+/-- The norm-minus-one unit `1 + θ` collapses the defect for radicand two.
+(Duke–Imamoḡlu–Tóth, §2, pp.950–951, norm-unit criterion.) -/
+theorem quadratic_two_boundary
+    (hmin : minpoly ℤ θ = X ^ 2 - C (2 : ℤ))
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) :
+    (∃ u : (𝓞 K)ˣ, (u : 𝓞 K) = 1 + θ ∧ Algebra.norm ℚ (((u : 𝓞 K) : K)) = -1) ∧
+    NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin)) = 1 := by
+  sorry
+
+/-- Radicands three and seven have nonsquare defects, no norm-minus-one
+integral units, and class-number ratio two.
+(Duke–Imamoḡlu–Tóth, §2, p.951; §4, p.960.) -/
+theorem quadratic_three_seven_boundary (hd : d = 3 ∨ d = 7)
+    (hmin : minpoly ℤ θ = X ^ 2 - C d)
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) :
+    ¬ IsSquare (NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))) ∧
+    ¬ (∃ u : (𝓞 K)ˣ, Algebra.norm ℚ (((u : 𝓞 K) : K)) = -1) ∧
+    Nat.card (NarrowClassGroup K) = 2 * Nat.card (ClassGroup (𝓞 K)) := by
+  sorry
+
+/-- Radicand thirty-four has a square but nontrivial defect and no integral
+unit of norm minus one. (Duke–Imamoḡlu–Tóth, §2, p.951; §4, p.960;
+elementary negative-Pell boundary, not an assertion that square means trivial.) -/
+theorem quadratic_thirtyFour_boundary
+    (hmin : minpoly ℤ θ = X ^ 2 - C (34 : ℤ))
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) :
+    IsSquare (NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))) ∧
+    NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin)) ≠ 1 ∧
+    ¬ (∃ u : (𝓞 K)ˣ, Algebra.norm ℚ (((u : 𝓞 K) : K)) = -1) := by
+  sorry
+
 /-! ## Layer 3: genus characters of binary forms -/
 
 /-- The genus character `χ_δ([a, b, c])`, `δ = ∏ P ∈ t, P`: the value of `genusCharFun t` at an
@@ -162,14 +288,14 @@ represented integer is chosen by choice; when `δ` is a fundamental divisor of t
 value does not depend on the choice (`binaryFormGenusChar_eq_of_represents`). This is the genus
 character of Duke–Imamoḡlu–Tóth, §9, p.978, and Gross–Kohnen–Zagier, Ch. I §2, p.508, including
 its zero value on forms whose content meets `δ`. -/
-noncomputable def binaryFormGenusChar (t : Finset ℤ) (a b c : ℤ) : ℤ := by
+noncomputable def binaryFormGenusChar (t : Finset ℤ) (Q : TauCeti.BinaryQuadraticForm ℤ) : ℤ := by
   classical
   exact if h : ∃ m : ℤ, IsCoprime m (∏ P ∈ t, P) ∧
-      ∃ x y : ℤ, a * x ^ 2 + b * x * y + c * y ^ 2 = m then
+      ∃ x y : ℤ, Q.eval x y = m then
     genusCharFun t h.choose
   else 0
 
-/-- Evaluation law: if `δ = ∏ P ∈ t, P` is a fundamental divisor of `b² - 4ac`, the form
+/-- Evaluation law: if `δ = ∏ P ∈ t, P` is a fundamental divisor of `Q.discrim`, the form
 character is the Kronecker character at any represented integer coprime to `δ`, of either sign.
 The congruence condition on the cofactor cannot be dropped: `x² + 2y²` has discriminant
 `(-4) · 2` and represents `1` and `3`. (Gross–Kohnen–Zagier, Ch. I §2, pp.508–509.) -/
@@ -177,19 +303,73 @@ theorem binaryFormGenusChar_eq_of_represents {t : Finset ℤ}
     (ht : ∀ P ∈ t, IsPrimeDiscriminant P)
     (heven : ∀ P ∈ t, ∀ P' ∈ t,
       IsEvenPrimeDiscriminant P → IsEvenPrimeDiscriminant P' → P = P')
-    {a b c δ' : ℤ} (hδ' : δ' % 4 = 0 ∨ δ' % 4 = 1)
-    (hdisc : b ^ 2 - 4 * a * c = (∏ P ∈ t, P) * δ') {x y : ℤ}
-    (hcop : IsCoprime (a * x ^ 2 + b * x * y + c * y ^ 2) (∏ P ∈ t, P)) :
-    binaryFormGenusChar t a b c = genusCharFun t (a * x ^ 2 + b * x * y + c * y ^ 2) := by
+    {Q : TauCeti.BinaryQuadraticForm ℤ} {δ' : ℤ} (hδ' : δ' % 4 = 0 ∨ δ' % 4 = 1)
+    (hdisc : Q.discrim = (∏ P ∈ t, P) * δ') {x y : ℤ}
+    (hcop : IsCoprime (Q.eval x y) (∏ P ∈ t, P)) :
+    binaryFormGenusChar t Q = genusCharFun t (Q.eval x y) := by
   sorry
 
 /-- Zero law: the form character vanishes exactly when the content of the form is not coprime
 to `δ`. A form whose content is coprime to `δ` represents an integer coprime to `δ`.
 (Gross–Kohnen–Zagier, Ch. I §2, pp.508–509.) -/
 theorem binaryFormGenusChar_eq_zero_iff {t : Finset ℤ}
-    (ht : ∀ P ∈ t, IsPrimeDiscriminant P) (a b c : ℤ) :
-    binaryFormGenusChar t a b c = 0 ↔
-      ¬ IsCoprime (Int.gcd a (Int.gcd b c) : ℤ) (∏ P ∈ t, P) := by
+    (ht : ∀ P ∈ t, IsPrimeDiscriminant P) (Q : TauCeti.BinaryQuadraticForm ℤ) :
+    binaryFormGenusChar t Q = 0 ↔
+      ¬ IsCoprime (Int.gcd Q.a (Int.gcd Q.b Q.c) : ℤ) (∏ P ∈ t, P) := by
+  sorry
+
+/-- The empty factor has value one even on the zero form.
+(Gross–Kohnen–Zagier, Ch. I §2, p.508, empty Kronecker product.) -/
+theorem binaryFormGenusChar_empty (Q : TauCeti.BinaryQuadraticForm ℤ) :
+    binaryFormGenusChar ∅ Q = 1 := by
+  sorry
+
+/-- Scalar multiplication multiplies the character by the Kronecker value of
+that scalar, including zero and negative scalars.
+(Gross–Kohnen–Zagier, Ch. I §2, p.508, imprimitive extension.) -/
+theorem binaryFormGenusChar_smul {t : Finset ℤ}
+    (ht : ∀ P ∈ t, IsPrimeDiscriminant P)
+    (heven : ∀ P ∈ t, ∀ P' ∈ t,
+      IsEvenPrimeDiscriminant P → IsEvenPrimeDiscriminant P' → P = P')
+    (Q : TauCeti.BinaryQuadraticForm ℤ) {δ' : ℤ}
+    (hδ' : δ' % 4 = 0 ∨ δ' % 4 = 1)
+    (hdisc : Q.discrim = (∏ P ∈ t, P) * δ') (μ : ℤ) :
+    binaryFormGenusChar t ⟨μ * Q.a, μ * Q.b, μ * Q.c⟩ =
+      genusCharFun t μ * binaryFormGenusChar t Q := by
+  sorry
+
+/-- Substitution by any integral invertible matrix preserves the represented
+integers. Here the displayed form is `Q ∘ g`; no discriminant condition is
+needed because the predicates from which choice selects an integer coincide.
+(Gross–Kohnen–Zagier, Ch. I §2, pp.508–509, representation definition.) -/
+theorem binaryFormGenusChar_comp (t : Finset ℤ)
+    (Q : TauCeti.BinaryQuadraticForm ℤ) (g : GL (Fin 2) ℤ) :
+    binaryFormGenusChar t
+      ⟨Q.a * g 0 0 ^ 2 + Q.b * g 0 0 * g 1 0 + Q.c * g 1 0 ^ 2,
+       2 * Q.a * g 0 0 * g 0 1 + Q.b * (g 0 0 * g 1 1 + g 0 1 * g 1 0) +
+         2 * Q.c * g 1 0 * g 1 1,
+       Q.a * g 0 1 ^ 2 + Q.b * g 0 1 * g 1 1 + Q.c * g 1 1 ^ 2⟩ =
+      binaryFormGenusChar t Q := by
+  sorry
+
+/-- Proper equivalence uses the pinned action `γ • Q = Q ∘ γ⁻¹`.
+(Gross–Kohnen–Zagier, Ch. I §2, p.508, proper invariance.) -/
+theorem binaryFormGenusChar_proper (t : Finset ℤ)
+    (Q : TauCeti.BinaryQuadraticForm ℤ) (γ : SL(2, ℤ)) :
+    binaryFormGenusChar t (γ • Q) = binaryFormGenusChar t Q := by
+  sorry
+
+/-- Negating the form multiplies its character by the sign of the factor.
+(Gross–Kohnen–Zagier, Ch. I §2, p.508, scaling by minus one.) -/
+theorem binaryFormGenusChar_neg {t : Finset ℤ}
+    (ht : ∀ P ∈ t, IsPrimeDiscriminant P)
+    (heven : ∀ P ∈ t, ∀ P' ∈ t,
+      IsEvenPrimeDiscriminant P → IsEvenPrimeDiscriminant P' → P = P')
+    (Q : TauCeti.BinaryQuadraticForm ℤ) {δ' : ℤ}
+    (hδ' : δ' % 4 = 0 ∨ δ' % 4 = 1)
+    (hdisc : Q.discrim = (∏ P ∈ t, P) * δ') :
+    binaryFormGenusChar t ⟨-Q.a, -Q.b, -Q.c⟩ =
+      (∏ P ∈ t, P).sign * binaryFormGenusChar t Q := by
   sorry
 
 /-- The form character at a positive fundamental discriminant is the narrow ideal genus
@@ -205,156 +385,125 @@ theorem formCharacter_eq_idealCharacter {s t : Finset ℤ}
     (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) (hsf : Squarefree d)
     (hd : 0 < d) (hts : t ⊆ s)
     (ω : K) (hω : ω ^ 2 = (fundamentalDiscriminant d : K))
-    (a b c : ℤ) (hdisc : b ^ 2 - 4 * a * c = fundamentalDiscriminant d)
+    (Q : TauCeti.BinaryQuadraticForm ℤ) (hdisc : Q.discrim = fundamentalDiscriminant d)
     (𝔞 : (FractionalIdeal (𝓞 K)⁰ K)ˣ)
     (h𝔞 : ∀ z : K, z ∈ (𝔞 : FractionalIdeal (𝓞 K)⁰ K) ↔
-      ∃ u v : ℤ, z = u * a + v * ((-b + ω) / 2)) :
-    binaryFormGenusChar t a b c =
+      ∃ u v : ℤ, z = u * Q.a + v * ((-Q.b + ω) / 2)) :
+    binaryFormGenusChar t Q =
       ((genusCharFunNarrowClassGroupHom hs heven hprod hmin hgen hsf hts
-        (if 0 < a then NarrowClassGroup.mk 𝔞
+        (if 0 < Q.a then NarrowClassGroup.mk 𝔞
           else NarrowClassGroup.mkPrincipal
               (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin)) *
             NarrowClassGroup.mk 𝔞) : ℤˣ) : ℤ) := by
   sorry
 
-/-! ## Examples and negative controls -/
-
--- The trivial real character has a unique wide descent.
-example : ∃! ψ : ClassGroup (𝓞 K) →* ℤˣ,
-    ψ.comp (NarrowClassGroup.toClassGroup (K := K)) = 1 := by
-  refine ⟨1, MonoidHom.one_comp _, fun ψ hψ => MonoidHom.ext fun x => ?_⟩
-  obtain ⟨y, rfl⟩ := NarrowClassGroup.toClassGroup_surjective x
-  simpa using DFunLike.congr_fun hψ y
-
--- A character odd on J cannot descend.
-example (hmin : minpoly ℤ θ = X ^ 2 - C d)
-    (χ : NarrowClassGroup K →* ℤˣ)
-    (hodd : χ (NarrowClassGroup.mkPrincipal
-      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))) = -1) :
-    ¬ ∃ ψ : ClassGroup (𝓞 K) →* ℤˣ,
-      ψ.comp (NarrowClassGroup.toClassGroup (K := K)) = χ := by
-  rintro ⟨ψ, hψ⟩
-  have h := DFunLike.congr_fun hψ (NarrowClassGroup.mkPrincipal
-      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin)))
-  simp only [MonoidHom.coe_comp, Function.comp_apply, NarrowClassGroup.toClassGroup_mkPrincipal,
-    map_one] at h
-  rw [hodd] at h
-  exact absurd h (by decide)
-
--- The quotient and two-torsion subgroup must not be substituted for each other.
-example : Nat.card {x : Multiplicative (ZMod 8) //
-    TauCeti.elementaryTwoQuotientMk x = 0} = 4 := by
+/-- At the empty factor both form and ideal characters equal one, even
+when zero is the represented integer. No zero ideal is used.
+(Duke–Imamoḡlu–Tóth, §9, p.978, empty-factor comparison.) -/
+theorem formCharacter_empty {s : Finset ℤ}
+    (hs : ∀ P ∈ s, IsPrimeDiscriminant P)
+    (heven : ∀ P ∈ s, ∀ P' ∈ s,
+      IsEvenPrimeDiscriminant P → IsEvenPrimeDiscriminant P' → P = P')
+    (hprod : ∏ P ∈ s, P = fundamentalDiscriminant d)
+    (hmin : minpoly ℤ θ = X ^ 2 - C d)
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) (hsf : Squarefree d)
+    (Q : TauCeti.BinaryQuadraticForm ℤ) :
+    binaryFormGenusChar ∅ Q = 1 ∧
+    (∀ A : NarrowClassGroup K,
+      genusCharFunNarrowClassGroupHom hs heven hprod hmin hgen hsf
+        (Finset.empty_subset s) A = 1) ∧
+    binaryFormGenusChar ∅ ⟨0, 0, 0⟩ = 1 := by
   sorry
 
-example : Nat.card {x : Multiplicative (ZMod 8) // x ^ 2 = 1} = 2 := by
-  rw [Nat.card_eq_fintype_card]
-  decide
-
--- The D=1 arithmetic boundary is allowed, although it is not a quadratic field.
-example : (∃ x y : ℤ, (1 : ℤ) = x ^ 2 + y ^ 2) ∧
-    (∀ p : ℕ, p.Prime → (p : ℤ) ∣ (1 : ℤ) → p % 4 ≠ 3) := by
-  refine ⟨⟨1, 0, by norm_num⟩, fun p hp h => ?_⟩
-  have : p ∣ 1 := by exact_mod_cast h
-  exact absurd (Nat.dvd_one.mp this) hp.ne_one
-
-example : (5 : ℤ) = 1 ^ 2 + 2 ^ 2 := by norm_num
-
-example : (8 : ℤ) = 2 ^ 2 + 2 ^ 2 := by norm_num
-
-example : (136 : ℤ) = 6 ^ 2 + 10 ^ 2 := by norm_num
-
-example : ¬ ∃ x y : ℤ, (12 : ℤ) = x ^ 2 + y ^ 2 := by
-  rintro ⟨x, y, h⟩
-  have hx1 : x ≤ 3 := by nlinarith [sq_nonneg y, sq_nonneg (x - 4)]
-  have hx2 : -3 ≤ x := by nlinarith [sq_nonneg y, sq_nonneg (x + 4)]
-  have hy1 : y ≤ 3 := by nlinarith [sq_nonneg x, sq_nonneg (y - 4)]
-  have hy2 : -3 ≤ y := by nlinarith [sq_nonneg x, sq_nonneg (y + 4)]
-  interval_cases x <;> interval_cases y <;> omega
-
--- Nonfundamental 9 demonstrates why odd prime valuations matter.
-example : (∃ x y : ℤ, (9 : ℤ) = x ^ 2 + y ^ 2) ∧
-    (3 : ℤ) ∣ (9 : ℤ) ∧ (3 : ℕ) % 4 = 3 :=
-  ⟨⟨0, 3, by norm_num⟩, by norm_num, by norm_num⟩
-
--- Arithmetic dyadic signs agree with the singleton J formula at the pin.
-example : genusCharFun ({-4} : Finset ℤ) (-1) = -1 := by
-  simp [genusCharFun, primeDiscriminantCharFun]
-  decide
-
-example : genusCharFun ({-8} : Finset ℤ) (-1) = -1 := by
-  simp [genusCharFun, primeDiscriminantCharFun]
-  decide
-
-example : genusCharFun ({8} : Finset ℤ) (-1) = 1 := by
-  simp [genusCharFun, primeDiscriminantCharFun]
-  decide
-
-example : genusCharFun (∅ : Finset ℤ) (-1) = 1 := by
-  simp
-
-example (hmin : minpoly ℤ θ = X ^ 2 - C (3 : ℤ))
-    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) :
-    ¬ IsSquare (NarrowClassGroup.mkPrincipal
-      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))) := by
-  sorry
-
-example (hmin : minpoly ℤ θ = X ^ 2 - C (34 : ℤ))
-    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤) :
-    IsSquare (NarrowClassGroup.mkPrincipal
-      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))) := by
-  sorry
-
--- Complementary factor signs differ at negative discriminant.
-example : (1 : ℤ).sign ≠ (-4 : ℤ).sign := by decide
-
--- The form character is 1 for the empty factor, on every form.
-example (a b c : ℤ) : binaryFormGenusChar ∅ a b c = 1 := by
+/-- The empty factor is one on every form, including zero. -/
+example (Q : TauCeti.BinaryQuadraticForm ℤ) : binaryFormGenusChar ∅ Q = 1 := by
   unfold binaryFormGenusChar
   split_ifs with h
   · simp
-  · exact absurd ⟨a, by simpa using isCoprime_one_right, 1, 0, by ring⟩ h
+  · exact absurd ⟨Q.a, by simpa using isCoprime_one_right, 1, 0, by
+      simp [TauCeti.BinaryQuadraticForm.eval]⟩ h
 
--- The imprimitive form [2, 0, -6] of discriminant 48 = (-4)(-12) has character 0 for δ = -4.
-example : binaryFormGenusChar {-4} 2 0 (-6) = 0 := by
+/-- Content divisible by two forces the imprimitive discriminant-48 value to zero. -/
+example : binaryFormGenusChar {-4} ⟨2, 0, -6⟩ = 0 := by
   unfold binaryFormGenusChar
   split_ifs with h
   · obtain ⟨m, hm, x, y, rfl⟩ := h
-    have h2 : (2 : ℤ) ∣ 2 * x ^ 2 + 0 * x * y + -6 * y ^ 2 := ⟨x ^ 2 - 3 * y ^ 2, by ring⟩
+    have h2 : (2 : ℤ) ∣ (⟨2, 0, -6⟩ : TauCeti.BinaryQuadraticForm ℤ).eval x y :=
+      ⟨x ^ 2 - 3 * y ^ 2, by simp [TauCeti.BinaryQuadraticForm.eval]; ring⟩
     have h4 : (2 : ℤ) ∣ ∏ P ∈ ({-4} : Finset ℤ), P := by simp
     have := IsCoprime.isUnit_of_dvd' hm h2 h4
     norm_num [Int.isUnit_iff] at this
   · rfl
 
--- D = 12, δ = -4: x² - 3y² has character 1 and -x² + 3y² has character -1.
-example : binaryFormGenusChar {-4} 1 0 (-3) = 1 := by
+/-- At discriminant minus fifteen the two proper classes have distinct
+form-character values. (Gross–Kohnen–Zagier, Ch. I §2, p.508.) -/
+theorem binaryFormGenusChar_negFifteen_classes :
+    binaryFormGenusChar {5} ⟨2, 1, 2⟩ = -1 ∧
+    binaryFormGenusChar {5} ⟨1, 1, 4⟩ = 1 := by
   sorry
 
-example : binaryFormGenusChar {-4} (-1) 0 3 = -1 := by
+/-- The discriminant-twelve sign witness and the `T` substitution fix both
+the sign of represented integers and the inverse-matrix convention.
+(Duke–Imamoḡlu–Tóth, §2, p.952, (2.3)–(2.5); §9, p.978.) -/
+theorem binaryFormGenusChar_discriminantTwelve :
+    binaryFormGenusChar {-4} ⟨1, 0, -3⟩ = 1 ∧
+    binaryFormGenusChar {-4} ⟨-1, 0, 3⟩ = -1 ∧
+    genusCharFun {-4} (-3) = 1 ∧ genusCharFun {-4} 3 = -1 ∧
+    ModularGroup.T • (⟨1, 0, -3⟩ : TauCeti.BinaryQuadraticForm ℤ) = ⟨1, -2, -2⟩ ∧
+    binaryFormGenusChar {-4} (ModularGroup.T • ⟨1, 0, -3⟩) = 1 := by
   sorry
 
--- The values 1 = Q(1, 0) and -3 = Q(0, 1) of x² - 3y² give the same character value:
--- evaluation at |m| would be wrong.
-example : genusCharFun ({-4} : Finset ℤ) 1 = 1 ∧ genusCharFun ({-4} : Finset ℤ) (-3) = 1 ∧
-    genusCharFun ({-4} : Finset ℤ) 3 = -1 := by
-  simp [genusCharFun, primeDiscriminantCharFun]
-  decide
+/-- The invalid cofactor two gives distinct arithmetic values at represented
+integers of one form, so the evaluation law requires the cofactor congruence.
+(Gross–Kohnen–Zagier, Ch. I §2, pp.508–509.) -/
+theorem binaryFormGenusChar_invalidCofactor :
+    (⟨1, 0, 2⟩ : TauCeti.BinaryQuadraticForm ℤ).discrim = -8 ∧
+    (⟨1, 0, 2⟩ : TauCeti.BinaryQuadraticForm ℤ).eval 1 0 = 1 ∧
+    (⟨1, 0, 2⟩ : TauCeti.BinaryQuadraticForm ℤ).eval 1 1 = 3 ∧
+    genusCharFun {-4} 1 ≠ genusCharFun {-4} 3 := by
+  sorry
 
--- x² + 2y² (discriminant (-4) · 2, cofactor 2 not 0 or 1 mod 4) represents 1 and 3, where the
--- character of -4 differs: the evaluation law needs its congruence hypothesis.
-example : (1 : ℤ) = 1 ^ 2 + 2 * 0 ^ 2 ∧ (3 : ℤ) = 1 ^ 2 + 2 * 1 ^ 2 ∧
-    genusCharFun ({-4} : Finset ℤ) 1 ≠ genusCharFun ({-4} : Finset ℤ) 3 := by
-  refine ⟨by norm_num, by norm_num, ?_⟩
-  simp [genusCharFun, primeDiscriminantCharFun]
+/-- The discriminant-twelve coefficient ideals are the unit, `(θ)`, and
+unit ideals, respectively. Their oriented classes are `1`, `J`, `J`.
+(Duke–Imamoḡlu–Tóth, §2, p.952, (2.3)–(2.5), and §9, p.978.) -/
+theorem formCharacter_discriminantTwelve_orientation
+    (hmin : minpoly ℤ θ = X ^ 2 - C (3 : ℤ))
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤)
+    (𝔞₁ 𝔞₃ 𝔞neg : (FractionalIdeal (𝓞 K)⁰ K)ˣ)
+    (h₁ : ∀ z : K, z ∈ (𝔞₁ : FractionalIdeal (𝓞 K)⁰ K) ↔
+      ∃ u v : ℤ, z = u + v * (θ : K))
+    (h₃ : ∀ z : K, z ∈ (𝔞₃ : FractionalIdeal (𝓞 K)⁰ K) ↔
+      ∃ u v : ℤ, z = u * 3 + v * (θ : K))
+    (hneg : ∀ z : K, z ∈ (𝔞neg : FractionalIdeal (𝓞 K)⁰ K) ↔
+      ∃ u v : ℤ, z = u * (-1) + v * (θ : K)) :
+    let J := NarrowClassGroup.mkPrincipal
+      (Units.mk0 (θ : K) (NumberField.coe_gen_ne_zero hmin))
+    (𝔞₁ : FractionalIdeal (𝓞 K)⁰ K) = 1 ∧
+    (𝔞₃ : FractionalIdeal (𝓞 K)⁰ K) = FractionalIdeal.spanSingleton (𝓞 K)⁰ (θ : K) ∧
+    (𝔞neg : FractionalIdeal (𝓞 K)⁰ K) = 1 ∧
+    NarrowClassGroup.mk 𝔞₁ = 1 ∧ NarrowClassGroup.mk 𝔞₃ = J ∧
+    J * NarrowClassGroup.mk 𝔞neg = J ∧
+    binaryFormGenusChar {-4} ⟨1, 0, -3⟩ = 1 ∧
+    binaryFormGenusChar {-4} ⟨3, 0, -1⟩ = -1 ∧
+    binaryFormGenusChar {-4} ⟨-1, 0, 3⟩ = -1 ∧
+    ModularGroup.S • (⟨-1, 0, 3⟩ : TauCeti.BinaryQuadraticForm ℤ) = ⟨3, 0, -1⟩ ∧
+    (¬ ∃ x y : ℤ, (⟨1, 0, -3⟩ : TauCeti.BinaryQuadraticForm ℤ).eval x y = -1) ∧
+    (∀ χ : NarrowClassGroup K →* ℤˣ, χ J = -1 →
+      χ (NarrowClassGroup.mk 𝔞₁) = 1 ∧ χ (NarrowClassGroup.mk 𝔞₃) = -1 ∧
+      χ (J * NarrowClassGroup.mk 𝔞neg) = -1) := by
+  sorry
 
--- Discriminant -15 = 5 · (-3): [2, 1, 2] represents 2 and (5/2) = -1.
-example : genusCharFun ({5} : Finset ℤ) 2 = -1 := by
-  simp [genusCharFun, primeDiscriminantCharFun]
-  norm_num
-
--- 48 is not fundamental, so [2, 0, -6] lies outside the comparison of 3.2.
-example : ¬ IsFundamentalDiscriminant (48 : ℤ) := by
-  rintro (⟨h, -⟩ | ⟨m, hm, h, -⟩)
-  · norm_num at h
-  · omega
+/-- Discriminant five has unit coefficient ideal; both its factors have
+value one. (Duke–Imamoḡlu–Tóth, §2, p.952; §9, p.978.) -/
+theorem formCharacter_discriminantFive
+    (hmin : minpoly ℤ θ = X ^ 2 - C (5 : ℤ))
+    (hgen : Algebra.adjoin ℚ {(θ : K)} = ⊤)
+    (𝔞 : (FractionalIdeal (𝓞 K)⁰ K)ˣ)
+    (h𝔞 : ∀ z : K, z ∈ (𝔞 : FractionalIdeal (𝓞 K)⁰ K) ↔
+      ∃ u v : ℤ, z = u + v * ((-1 + (θ : K)) / 2)) :
+    (𝔞 : FractionalIdeal (𝓞 K)⁰ K) = 1 ∧ NarrowClassGroup.mk 𝔞 = 1 ∧
+    binaryFormGenusChar ∅ ⟨1, 1, -1⟩ = 1 ∧
+    binaryFormGenusChar {5} ⟨1, 1, -1⟩ = 1 := by
+  sorry
 
 end TauCetiRoadmap.MultiquadraticPartII
