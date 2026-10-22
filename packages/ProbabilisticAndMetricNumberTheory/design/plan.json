@@ -1,0 +1,40 @@
+{
+  "gaps": [
+    {
+      "slug": "kubilius-uniform-sieve",
+      "supplier": "SieveMethodsAndPrimePatterns",
+      "section": "fundamental lemma and small-prime sieve",
+      "needs": "Uniformly for N≥3 and 2≤y≤N, the sum over y-smooth d of |Φ(N/d,y)/N−V(y)/d| is at most C exp(−c log N/log y), with Φ(X,y) counting positive y-rough integers ≤X and V(y)=∏_{p≤y}(1−1/p), and absolute positive C,c."
+    },
+    {
+      "slug": "mr-restricted-dirichlet-means",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§1.5 Mean square of a Dirichlet polynomial",
+      "needs": "Supply the restricted-prime Dirichlet-polynomial integral estimates of Matomäki–Radziwiłł Sections 3–9, with every interval constraint and loss required for their Theorem 3 as stated in §5.1 here; the unrestricted mean-square theorem alone is insufficient."
+    },
+    {
+      "slug": "liouville-uniform-character-twists",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§§0.18, 3.18 Effective character prime estimates and pretentious distance",
+      "needs": "For every fixed Dirichlet character χ and A≥1, prove inf over |t|≤Ax of Σ_{p≤x}(1−Re(λ(p)conj(χ(p))p^(−it)))/p tends to infinity, uniformly in that full height interval."
+    },
+    {
+      "slug": "modulated-multiplicative-short-sums",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§§1.5, 3.33 Dirichlet-polynomial means and Halász estimates",
+      "needs": "Supply the bounded complex multiplicative modulated short-sum estimate used in TaoLogChowla Proposition 2.4: sup over α of Σ_{x/w<n≤x}|Σ_{j=1}^H f(n+j)e(jα)|/(Hn) is at most C (log log H/log H) log w, with the scale hierarchy and character/height hypotheses specified in §5.2 here."
+    },
+    {
+      "slug": "prime-restriction-fourth-moment",
+      "supplier": "SieveMethodsAndPrimePatterns",
+      "section": "upper-bound sieve and restriction estimates",
+      "needs": "For fixed a≥1 and 0<ε<1, H sufficiently large divisible by a, and arbitrary |c_p|≤1 on primes ε²H/2≤p≤ε²H, supply Σ_{k mod aH}|Σ_p(c_p/p)e(kp/(aH))|⁴≤C_(a,ε)/(log H)⁴, as in TaoLogChowla Lemma 3.7, equation (3.21)."
+    },
+    {
+      "slug": "divisor-bounded-multiplicative-mean",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§3.37 Shiu bounds and multiplicative mean values",
+      "needs": "Supply the nonnegative divisor-bounded multiplicative mean estimate: for k≥1, multiplicative 0≤f≤τ_k, and x≥1, Σ_{1≤n≤x}f(n)≤C_k x exp(Σ_{p≤x}(f(p)−1)/p), uniformly in f and x (Koukoulopoulos2019 Theorem 14.2)."
+    }
+  ]
+}
