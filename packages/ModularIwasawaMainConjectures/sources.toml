@@ -1,0 +1,590 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularIwasawaMainConjectures"
+
+[[source]]
+id = "SU"
+authors = "Christopher Skinner and Eric Urban"
+title = "The Iwasawa main conjectures for GL2"
+year = 2014
+locator_scheme = "theorem"
+locator = "§1.1; Lemma 3.2.17; Proposition 3.2.18; §3.3.3; Theorems 3.5.6, 3.6.1, 3.6.4, 3.6.11; Corollary 3.6.3"
+cited_for = ["Conventions", "0.1–0.5", "0.9", "1.2–1.3", "3.9", "5.1", "5.4"]
+url = "https://www.math.columbia.edu/~urban/eurp/MC.pdf"
+fetched_from = "https://www.math.columbia.edu/~urban/eurp/MC.pdf"
+fetched_at = "2026-10-22T21:46:22Z"
+sha256 = "f9faa40aa5e30eba705da88e3d68c8aa43069b5be01c1cc6ece212dd57879748"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Locators use the 226-page Columbia author copy, not journal pagination."
+
+[[source]]
+id = "FW"
+authors = "Olivier Fouquet and Xin Wan"
+title = "The Iwasawa Main Conjecture for universal families of modular motives"
+year = 2022
+locator_scheme = "theorem"
+locator = "Assumptions 2.1, 3.5; Theorems 3.4, 3.6; Lemmas 3.13, 3.17; Definitions 3.18–3.19; Propositions 3.20, 3.22–3.23, 3.28; Theorems 5.1–5.2; Corollary 5.3"
+cited_for = ["0.1", "0.6–0.10", "1.1–1.5", "2.1–2.3", "4.1–4.3", "5.4"]
+arxiv = "2107.13726v3"
+url = "https://arxiv.org/abs/2107.13726v3"
+fetched_from = "https://arxiv.org/pdf/2107.13726v3"
+fetched_at = "2026-10-22T21:47:19Z"
+sha256 = "39cee6cec8a5d56baf5c0b19dd892a571bc7945eab281d6ec9a9c14fa70294ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2107.13726v3."
+
+[[source]]
+id = "Skinner"
+authors = "Christopher Skinner"
+title = "Multiplicative reduction and the cyclotomic main conjecture for GL2"
+year = 2016
+locator_scheme = "theorem"
+locator = "Theorems A and C; §§2.1, 2.3–2.6; Theorem 2.5.2; Proposition 2.6.1; §3.1(a)–(d); §3.3 and note 8"
+cited_for = ["Conventions", "0.1–0.5", "0.9–0.10", "1.2–1.7", "3.1–3.2", "5.1–5.4", "5.7"]
+doi = "10.2140/pjm.2016.283.171"
+arxiv = "1407.1093v1"
+url = "https://arxiv.org/abs/1407.1093v1"
+fetched_from = "https://arxiv.org/pdf/1407.1093v1"
+fetched_at = "2026-10-22T21:47:22Z"
+sha256 = "02d176d8fd52b0159eecb448f4bea89bd29bdf73f3095a686d52ad96c0a9b988"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 1407.1093v1."
+
+[[source]]
+id = "SkinnerConverse"
+authors = "Christopher Skinner"
+title = "A converse to a theorem of Gross, Zagier, and Kolyvagin"
+year = 2020
+locator_scheme = "section"
+locator = "§1, pp.1–2 of arXiv v1"
+cited_for = ["5.4"]
+arxiv = "1405.7294v1"
+url = "https://arxiv.org/abs/1405.7294v1"
+fetched_from = "https://arxiv.org/pdf/1405.7294v1"
+fetched_at = "2026-10-22T21:47:28Z"
+sha256 = "9e4650618c83394c400a10e990759f9fba42113eedc79fe2fcbe029d6c8381ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 1405.7294v1."
+
+[[source]]
+id = "BCS"
+authors = "Ashay Burungale, Francesc Castella and Christopher Skinner"
+title = "Base change and Iwasawa main conjectures for GL2"
+year = 2025
+locator_scheme = "theorem"
+locator = "Theorem 1.1.2; Remark 1.1.3(i),(iii); Theorems 1.2.2(b), 1.2.4"
+cited_for = ["1.1", "3.1–3.6", "6.1"]
+arxiv = "2405.00270v2"
+url = "https://arxiv.org/abs/2405.00270v2"
+fetched_from = "https://arxiv.org/pdf/2405.00270v2"
+fetched_at = "2026-10-22T21:47:34Z"
+sha256 = "bf87592cdbaabb5c57004bfd44dd5b4d712cb306bbbdc36520a3daf92fa416f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2405.00270v2."
+
+[[source]]
+id = "LLZ"
+authors = "Antonio Lei, David Loeffler and Sarah Livia Zerbes"
+title = "Wach modules and Iwasawa theory for modular forms"
+year = 2010
+locator_scheme = "theorem"
+locator = "Conditions (A),(A′),(E); Lemma 3.15; Proposition 5.10; Corollary 5.11; Proposition 5.21; Corollary 5.22; Theorems 6.1, 6.5; Definition 6.4; Corollary 6.6; Remarks 6.3, 6.7; Corollary 6.8"
+cited_for = ["0.11–0.13", "3.6", "4.3–4.5", "6.3"]
+doi = "10.4310/AJM.2010.v14.n4.a2"
+arxiv = "0912.1263v3"
+url = "https://arxiv.org/abs/0912.1263v3"
+fetched_from = "https://arxiv.org/pdf/0912.1263v3"
+fetched_at = "2026-10-22T21:47:41Z"
+sha256 = "5981c2f6152ba5bfe25c64fcee227db680f4d1e32102a39f067bddb651e52cd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 0912.1263v3."
+
+[[source]]
+id = "RJW"
+authors = "Joaquín Rodrigues Jacinto and Chris Williams"
+title = "An introduction to p-adic L-functions"
+year = 2024
+locator_scheme = "theorem"
+locator = "Remark 2.3, p.7; Conjecture 13.21, p.71; Appendix B.2.3, Theorem B.4, p.80; Appendix B.3"
+cited_for = ["0.5", "5.6–5.9"]
+doi = "10.2140/ent.2025.4.101"
+arxiv = "2309.15692v2"
+url = "https://arxiv.org/abs/2309.15692v2"
+fetched_from = "https://arxiv.org/pdf/2309.15692v2"
+fetched_at = "2026-10-22T21:47:48Z"
+sha256 = "efa1e10168fb092ffb072bbf147f85f07bea72d2a8f4907d6e9e4fd559c039c4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2309.15692v2."
+
+[[source]]
+id = "Kato"
+authors = "Kazuya Kato"
+title = "p-adic Hodge theory and values of zeta functions of modular forms"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorems 12.4–12.5; Conjecture 12.10; §13.9; Theorems 14.2, 16.2; Remark 16.3; Theorem 16.6; Theorem 17.4; §§17.5–17.6, 17.13"
+cited_for = ["0.1–0.10", "1.3–1.5", "2.1", "3.2", "4.3–4.5", "5.4", "5.6"]
+url = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_at = "2026-10-22T21:47:53Z"
+sha256 = "3c6e14b11fa60262db8aff782ce3cf4d83e9100c0be83621a7e4ce502cec605d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Printed Astérisque pagination, not Numdam cover/PDF page numbers."
+
+[[source]]
+id = "Rubin"
+authors = "Karl Rubin"
+title = "Euler systems"
+year = 2000
+locator_scheme = "theorem"
+locator = "Chapter III, Theorems 5.14–5.16 and Corollary 5.17, printed p.53"
+cited_for = ["0.3", "3.3"]
+url = "https://swc-math.github.io/notes/files/99RubinES.pdf"
+fetched_from = "https://swc-math.github.io/notes/files/99RubinES.pdf"
+fetched_at = "2026-10-22T21:47:55Z"
+sha256 = "de47655dc35066fd01f2e76a37076ad03dee62e816130586c7674e520be73d50"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "Colmez"
+authors = "Pierre Colmez"
+title = "La conjecture de Birch et Swinnerton-Dyer p-adique"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorems 0.8, 0.11, 0.15, 0.20; Definition 0.9; Remark 0.10; Conjecture 0.12; Remark 0.13 and note 14, pp.255–258"
+cited_for = ["3.1–3.2", "5.5–5.8"]
+url = "https://www.numdam.org/item/SB_2002-2003__45__251_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_2002-2003__45__251_0.pdf"
+fetched_at = "2026-10-22T21:47:56Z"
+sha256 = "992f7a9f00c959d79b3455c4047ffebaf297d73213b294582da6fdb165198303"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "CGS"
+authors = "Francesc Castella, Giada Grossi and Christopher Skinner"
+title = "Mazur’s main conjecture at Eisenstein primes"
+year = 2023
+locator_scheme = "theorem"
+locator = "Theorems A and C, pp.2–3 of arXiv v2"
+cited_for = ["Scope and ownership", "6.2"]
+arxiv = "2303.04373v2"
+url = "https://arxiv.org/abs/2303.04373v2"
+fetched_from = "https://arxiv.org/pdf/2303.04373v2"
+fetched_at = "2026-10-22T21:48:00Z"
+sha256 = "5046d7571ed3a1b13baa56b2c94186d9c9488d76181062f4ba82b8ab5158af90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2303.04373v2."
+
+[[source]]
+id = "KY"
+authors = "Timo Keller and Mulun Yin"
+title = "On the anticyclotomic Iwasawa theory of newforms at Eisenstein primes of semistable reduction"
+year = 2024
+locator_scheme = "theorem"
+locator = "Definition 1.2.1(iii), p.13; Theorem 1.2.2, p.14; Theorem 3.0.10, p.41"
+cited_for = ["Exact supplier contracts", "6.2"]
+arxiv = "2402.12781v2"
+url = "https://arxiv.org/abs/2402.12781v2"
+fetched_from = "https://arxiv.org/pdf/2402.12781v2"
+fetched_at = "2026-10-22T21:48:07Z"
+sha256 = "bb64820b49aa1eb2574c912c0d03067f904e52b9bf71f441fda78bb6dba9c90a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2402.12781v2."
+
+[[source]]
+id = "HidaAdd"
+authors = "Haruzo Hida"
+title = "Addendum to The Iwasawa mu-invariant of p-adic Hecke L-functions"
+year = 2022
+locator_scheme = "theorem"
+locator = "Lemma 0.2, p.1 (24 July 2022 addendum)"
+cited_for = ["Downstream branch contracts"]
+url = "https://www.math.ucla.edu/~hida/Addendam.pdf"
+fetched_from = "https://www.math.ucla.edu/~hida/Addendam.pdf"
+fetched_at = "2026-10-22T21:48:09Z"
+sha256 = "1eff02ca56c901d63612076b1a6e0116f83ee4d9c8b52f2c17b7798f7a440e25"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "BSTW"
+authors = "Ashay Burungale, Christopher Skinner, Ye Tian and Xin Wan"
+title = "Zeta elements for elliptic curves and applications"
+year = 2024
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+cited_for = ["Scope and ownership", "6.3"]
+arxiv = "2409.01350v2"
+url = "https://arxiv.org/abs/2409.01350v2"
+fetched_from = "https://arxiv.org/pdf/2409.01350v2"
+fetched_at = "2026-10-22T21:48:15Z"
+sha256 = "18e05982cdb2ac57cd7fcdc4791e5db8bff2945755653a5b76dd94377ed11ecf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2409.01350v2."
+
+[[source]]
+id = "CastellaErr"
+authors = "Francesc Castella"
+title = "Erratum to “On the p-part of the Birch–Swinnerton-Dyer formula for multiplicative primes”"
+year = 2023
+locator_scheme = "theorem"
+locator = "Corrected Theorem 1.1, p.1"
+cited_for = ["6.3"]
+url = "https://web.math.ucsb.edu/~castella/Birch-erratum.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/Birch-erratum.pdf"
+fetched_at = "2026-10-22T21:48:17Z"
+sha256 = "c04dff16c27bc3ca4f4e235e366fcd4c95a43cfb9215f75a2584dfeb7114edcf"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "LSTX"
+authors = "Aaron Landesman, Ashvin A. Swaminathan, James Tao and Yujie Xu"
+title = "Lifting subgroups of symplectic groups over Z/ℓZ"
+year = 2017
+locator_scheme = "section"
+locator = "§1, p.1 (rank-two Serre lemma and small-prime exceptions)"
+cited_for = ["3.6"]
+arxiv = "1607.04698v2"
+url = "https://arxiv.org/abs/1607.04698v2"
+fetched_from = "https://arxiv.org/pdf/1607.04698v2"
+fetched_at = "2026-10-22T21:48:21Z"
+sha256 = "693e02f06fb8bb440c20bce51adb791063a9ccc77fd678f46946a672bf2d1170"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 1607.04698v2."
+
+[[source]]
+id = "SW"
+authors = "William Stein and Christian Wuthrich"
+title = "Algorithms for the arithmetic of elliptic curves using Iwasawa theory"
+year = 2013
+locator_scheme = "theorem"
+locator = "§3.5, p.1768; §4.1, equation (4.1), p.1770; §4.2, pp.1771–1772; §4.4, p.1774; Conjecture 5.1; Theorem 6.1, p.1776; equation (3.2), p.1765"
+cited_for = ["3.2", "3.7–3.9", "5.5–5.8"]
+url = "https://wstein.org/papers/mcom2649-iwasawa-alg.pdf"
+fetched_from = "https://wstein.org/papers/mcom2649-iwasawa-alg.pdf"
+fetched_at = "2026-10-22T21:48:22Z"
+sha256 = "f6aa144e3c3e30e6d02ed2dc50d540959d1d0bb27cbba16372bb5c9cfad7f10b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "EPW"
+authors = "Matthew Emerton, Robert Pollack and Tom Weston"
+title = "Variation of Iwasawa invariants in Hida families"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorem 2.1.2, pp.7–8; Proposition 4.1.4, p.30 (arXiv v1)"
+cited_for = ["1.6"]
+doi = "10.1007/s00222-005-0467-7"
+arxiv = "math/0404484v1"
+url = "https://arxiv.org/abs/math/0404484v1"
+fetched_from = "https://arxiv.org/pdf/math/0404484v1"
+fetched_at = "2026-10-22T21:48:28Z"
+sha256 = "d2d3fa555f638068a5edbaa94821956ccce5deb0500b3839ee37c0084ed10721"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv math/0404484v1."
+
+[[source]]
+id = "Ribet"
+authors = "Kenneth A. Ribet"
+title = "Report on mod ℓ representations of Gal(Q̄/Q)"
+year = 1994
+locator_scheme = "theorem"
+locator = "Theorem 3.3; equation (4.7); Theorem 8.1, author-copy pagination"
+cited_for = ["Exact supplier contracts", "5.11"]
+url = "https://math.berkeley.edu/~ribet/Articles/motives.pdf"
+fetched_from = "https://math.berkeley.edu/~ribet/Articles/motives.pdf"
+fetched_at = "2026-10-22T21:48:30Z"
+sha256 = "cb7bc437d287346994488a8e4cf7bfa8be8f36a7c22574577c1597026e6a953b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "Waldschmidt"
+authors = "Michel Waldschmidt"
+title = "Sur la nature arithmétique des valeurs de fonctions modulaires"
+year = 1997
+locator_scheme = "theorem"
+locator = "Théorème 2, p.108; coefficient-field convention p.106; Iwasawa logarithm corollary p.110"
+cited_for = ["3.7", "5.5"]
+url = "https://www.numdam.org/item/SB_1996-1997__39__105_0"
+fetched_from = "https://www.numdam.org/item/SB_1996-1997__39__105_0.pdf"
+fetched_at = "2026-10-22T21:48:31Z"
+sha256 = "b59b4644da9387d5144bb357609c0c656518bf37fd032be6af24fb7e293d0eb0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "BSDGP"
+authors = "Katia Barré-Sirieix, Guy Diaz, François Gramain and Georges Philibert"
+title = "Une preuve de la conjecture de Mahler–Manin"
+year = 1996
+locator_scheme = "theorem"
+locator = "Main Mahler–Manin theorem, pp.1–9; as stated by Waldschmidt, Théorème 2, p.108"
+cited_for = ["3.7", "5.5"]
+doi = "10.1007/s002220050044"
+url = "https://doi.org/10.1007/s002220050044"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+
+[[source]]
+id = "Nakamura"
+authors = "Kentaro Nakamura"
+title = "Zeta morphisms for rank two universal deformations"
+year = 2020
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Remark 1.2; Corollary 4.2; Theorem 4.3"
+cited_for = ["Exact supplier contracts", "4.1–4.2"]
+arxiv = "2006.13647v2"
+url = "https://arxiv.org/abs/2006.13647v2"
+fetched_from = "https://arxiv.org/pdf/2006.13647v2"
+fetched_at = "2026-10-22T21:48:40Z"
+sha256 = "0d8fa462594a20ef96d755d31a13ba23081f1454bfe9809a5fda54fd30311ba7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 2006.13647v2."
+
+[[source]]
+id = "Paskunas"
+authors = "Vytautas Paškūnas"
+title = "On 2-dimensional 2-adic Galois representations of local and global fields"
+year = 2016
+locator_scheme = "theorem"
+locator = "Propositions 2.13 and 2.33; cited by Fouquet–Wan after Theorem 3.6"
+cited_for = ["Exact supplier contracts", "4.1"]
+doi = "10.2140/ant.2016.10.1301"
+arxiv = "1509.00332v2"
+url = "https://arxiv.org/abs/1509.00332v2"
+fetched_from = "https://arxiv.org/pdf/1509.00332v2"
+fetched_at = "2026-10-22T21:48:44Z"
+sha256 = "727addeb49ee302052a493cf097a868a70c340286981598b5e7382fcd8f86749"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv 1509.00332v2."
+
+[[source]]
+id = "Kobayashi"
+authors = "Shinichi Kobayashi"
+title = "Iwasawa theory for elliptic curves at supersingular primes"
+year = 2003
+locator_scheme = "section"
+locator = "§5 (Kato main-conjecture formulation); signed Selmer and local conditions as cited by LLZ §§5–6"
+cited_for = ["0.7", "4.3–4.5"]
+doi = "10.1007/s00222-002-0265-4"
+url = "https://doi.org/10.1007/s00222-002-0265-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+
+[[source]]
+id = "Silverman"
+authors = "Joseph H. Silverman"
+title = "Advanced topics in the arithmetic of elliptic curves"
+year = 1994
+locator_scheme = "theorem"
+locator = "Theorem V.5.3"
+cited_for = ["1.1"]
+doi = "10.1007/978-1-4612-0851-8"
+url = "https://doi.org/10.1007/978-1-4612-0851-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+
+[[source]]
+id = "Greenberg"
+authors = "Ralph Greenberg"
+title = "Iwasawa theory for elliptic curves"
+year = 1999
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+cited_for = ["3.9", "5.4"]
+arxiv = "math/9809206v1"
+url = "https://arxiv.org/abs/math/9809206v1"
+fetched_from = "https://arxiv.org/pdf/math/9809206v1"
+fetched_at = "2026-10-22T21:49:00Z"
+sha256 = "d39ff7b21372d60fca0684ea9a74fea4e94b45840b4c79343ad9ec8b31640b8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "All preprint locators refer to arXiv math/9809206v1."
+
+[[source]]
+id = "Hida"
+authors = "Haruzo Hida"
+title = "The Iwasawa μ-invariant of p-adic Hecke L-functions"
+year = 2010
+locator_scheme = "theorem"
+locator = "Theorem I, p.45; condition (V); Lemma 3.17 with its 2022 replacement"
+cited_for = ["Downstream branch contracts"]
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v172-n1-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v172-n1-p02-p.pdf"
+fetched_at = "2026-10-22T21:51:11Z"
+sha256 = "1a97277068aefe67926966d2ad1bb254f115fb610e82391c0d3123b45c80b9f1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "MST"
+authors = "Barry Mazur, William Stein and John Tate"
+title = "Computation of p-adic heights and log convergence"
+year = 2006
+locator_scheme = "equation"
+locator = "Equations (1.1)–(1.3), p.579; Theorem 1.3, p.580; equations (1.7)–(1.9), p.581"
+cited_for = ["3.7–3.8"]
+url = "https://content.ems.press/assets/public/full-texts/books/254/chapters/online-pdf/978-3-98547-541-4-chapter-5044.pdf"
+fetched_from = "https://content.ems.press/assets/public/full-texts/books/254/chapters/online-pdf/978-3-98547-541-4-chapter-5044.pdf"
+fetched_at = "2026-10-22T21:51:12Z"
+sha256 = "76f3ed4d6f790b263ee4ecfe24fbc99004783b84273d65af5f4ada0c3585dcd7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Publisher-hosted reprint with the original 2006 printed pagination."
+
+[[source]]
+id = "LMFDB11"
+authors = "The LMFDB Collaboration"
+title = "Elliptic curve 11.a2 (Cremona 11a1)"
+year = 2026
+locator_scheme = "section"
+locator = "Curve 11.a2: minimal equation; invariants; Galois representations (5Cs.1.1); isogeny class"
+cited_for = ["0.1", "1.1", "3.1–3.9", "5.10", "6.2"]
+url = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"
+fetched_from = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"
+fetched_at = "2026-10-22T21:51:13Z"
+sha256 = "b2eb7dcb0a565c5dd3d5e03aabb2d08caf710d1fc70252c4cfc88a5b62d8bb83"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Database record accessed 2026-10-22; numerical Checks are recomputed independently."
+
+[[source]]
+id = "LMFDB14"
+authors = "The LMFDB Collaboration"
+title = "Elliptic curve 14.a6 (Cremona 14a1)"
+year = 2026
+locator_scheme = "section"
+locator = "Curve 14.a6 (Cremona 14a1): minimal equation, local data and Galois representations"
+cited_for = ["0.1", "1.1", "2.2", "4.3", "5.10"]
+url = "https://www.lmfdb.org/EllipticCurve/Q/14a1/"
+fetched_from = "https://www.lmfdb.org/EllipticCurve/Q/14a1/"
+fetched_at = "2026-10-22T21:51:14Z"
+sha256 = "62724b09efd735681429fa364978db2c59e7ee50e70c00cb3776f0fc6937f42b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Database record accessed 2026-10-22; numerical Checks are recomputed independently."
+
+[[source]]
+id = "GS"
+authors = "Ralph Greenberg; Glenn Stevens"
+title = "p-adic L-functions and p-adic periods of modular forms"
+year = 1993
+locator_scheme = "theorem"
+locator = "Theorems 5.13 and 7.1, printed pp.438 and 444; p≥5 in Theorem 7.1"
+cited_for = ["Exact supplier contracts", "5.7"]
+url = "https://math.stanford.edu/~conrad/DarmonCM/2011Refs/GSpadic.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/DarmonCM/2011Refs/GSpadic.pdf"
+fetched_at = "2026-10-22T21:57:03Z"
+sha256 = "3e3ac58749812f292950810d3c0ba74f01da92796c011bd39c636b159e504ac2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Institutionally hosted journal scan recognized by OCR; printed pagination."
+
+[[source]]
+id = "Werner"
+authors = "Annette Werner"
+title = "Local heights on abelian varieties and rigid analytic uniformization"
+year = 1998
+locator_scheme = "theorem"
+locator = "Theorem 7.2 and Corollary 7.3, pp.317–318"
+cited_for = ["3.7–3.9"]
+doi = "10.4171/dm/47"
+url = "https://ems.press/content/serial-article-files/25827"
+fetched_from = "https://ems.press/content/serial-article-files/25827"
+fetched_at = "2026-10-22T21:57:51Z"
+sha256 = "571b6c1acaf706899a94a6c43f89d70b9e5d02d3bc24e9ac87293dc97ad2acf3"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+
+[[source]]
+id = "src18"
+authors = "Peter Schneider"
+title = "p-adic height pairings. II"
+year = 1985
+locator_scheme = "theorem"
+locator = "§1, Theorem 1 and Proposition 9, pp.332–340; §2, Theorem 2′, p.342; §7, Theorems 6–7, p.371"
+cited_for = ["3.8–3.9"]
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0079/LOG_0025.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0079/LOG_0025.pdf"
+fetched_at = "2026-10-22T22:04:25Z"
+sha256 = "f1a0268798f3b8754949db4f37250cc7a67feb14b449c580f9f54ae246333665"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "GDZ journal scan recognized by OCR; original printed pagination. Damaged formula glyphs are cross-checked with SW Theorem 6.1."
+
+[[source]]
+id = "Serre"
+authors = "Jean-Pierre Serre"
+title = "Abelian l-adic representations and elliptic curves"
+year = 1968
+locator_scheme = "chapter"
+locator = "IV.3.4, Lemma 3"
+cited_for = ["3.6"]
+licence_class = "none"
+status = "waived"
+version_note = "Operator waiver; cited by locator without a new text request."
+
+[[source]]
+id = "Jones"
+authors = "John W. Jones"
+title = "Iwasawa L-functions for multiplicative abelian varieties"
+year = 1989
+locator_scheme = "section"
+locator = "Multiplicative leading-term theorem, as recorded in Stein–Wuthrich Theorem 6.1, p.1776"
+cited_for = ["3.9"]
+doi = "10.1215/S0012-7094-89-05918-8"
+licence_class = "none"
+status = "waived"
+version_note = "Operator waiver; no primary theorem number is asserted."

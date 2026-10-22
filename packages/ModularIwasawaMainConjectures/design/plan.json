@@ -1,0 +1,52 @@
+{
+  "gaps": [
+    {
+      "slug": "modular-zeta-extensions",
+      "supplier": "KatoEulerSystems",
+      "section": "classical zeta and rank-one-image extensions",
+      "needs": "Supply the missing classical morphism/period dictionaries, integral rank-one-image extensions and elliptic bounds without duplicating PadicFamilies §4.0."
+    },
+    {
+      "slug": "analytic-twist-nonvanishing",
+      "supplier": "KatoEulerSystems",
+      "section": "analytic nonvanishing",
+      "needs": "Supply finite-order twist nonvanishing with the reciprocity and parity hypotheses used in §0.4."
+    },
+    {
+      "slug": "central-critical-specialization",
+      "supplier": "KatoEulerSystems",
+      "section": "central-critical finiteness and specialization",
+      "needs": "Supply both the central-critical Euler-system finiteness direction and the zeta/Bloch–Kato specialization and control comparison of §5.4."
+    },
+    {
+      "slug": "signed-regulators",
+      "supplier": "PadicHodgeRegulators",
+      "section": "integral Coleman regulators and images",
+      "needs": "Supply integral Coleman maps, logarithm matrices and their actual images on the Wach domains of PhiGammaModulesAndIwasawaCohomology §6."
+    },
+    {
+      "slug": "automorphic-endpoints",
+      "supplier": "AutomorphicCongruences",
+      "section": "independent reverse bounds and universal zeta endpoints",
+      "needs": "Supply independently stated reverse bounds, universal zeta and regular-base/elliptic endpoints on earlier carriers with no imports from this roadmap."
+    },
+    {
+      "slug": "manin-period-comparison",
+      "supplier": "GrossZagierAndArithmeticHeights",
+      "section": "integral Manin and saturated period comparison",
+      "needs": "Supply the integral optimal-parametrization and Manin-period comparisons with the stated odd semistable unit range and isogeny corrections."
+    },
+    {
+      "slug": "approximant-period-units",
+      "supplier": "PadicFamilies",
+      "section": "§1.4 family period comparison at approximants",
+      "needs": "Verify the perfect integral pairing and saturation needed for unit correction ideals at arbitrarily precise weight-two approximants."
+    },
+    {
+      "slug": "general-exceptional-zero-families",
+      "supplier": "PadicFamilies",
+      "section": "§§1.4–1.6 general exceptional-zero family input",
+      "needs": "Supply rational deformation, Néron-period specialization and eigenvalue derivative comparison at every odd-prime split multiplicative elliptic point, without residual irreducibility or an auxiliary prime."
+    }
+  ]
+}
