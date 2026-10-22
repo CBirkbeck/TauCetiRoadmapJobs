@@ -1,0 +1,215 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HabiroRings"
+
+[[source]]
+id = "Q"
+authors = "Ferdinand Wagner"
+title = "$q$-Hodge complexes over the Habiro ring"
+year = 2025
+arxiv = "2510.04782v2"
+locator_scheme = "theorem"
+locator = "§§2.1–2.2; Theorem 2.9; Corollary 3.13; Appendix B"
+url = "https://arxiv.org/abs/2510.04782v2"
+fetched_from = "https://arxiv.org/pdf/2510.04782v2"
+fetched_at = "2026-10-22T12:13:50Z"
+sha256 = "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["2–5"]
+
+[[source]]
+id = "W"
+authors = "Ferdinand Wagner"
+title = "$q$-Witt vectors and $q$-Hodge complexes"
+year = 2024
+arxiv = "2410.23078v5"
+locator_scheme = "section"
+locator = "§§2.1–2.6"
+url = "https://arxiv.org/abs/2410.23078v5"
+fetched_from = "https://arxiv.org/pdf/2410.23078v5"
+fetched_at = "2026-10-22T12:14:01Z"
+sha256 = "c1c7426f374a9f56d5ad6fb743f6cfc95e74ba9c35a96babd7ae5101a9dded01"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["supplier contracts; 4–5"]
+
+[[source]]
+id = "H"
+authors = "Lars Hesselholt"
+title = "The big de Rham-Witt complex"
+year = 2010
+venue = "Acta Math. 214 (2015), 135-207"
+doi = "10.1007/s11511-015-0124-y"
+arxiv = "1006.3125v3"
+locator_scheme = "section"
+locator = "§§1–2"
+url = "https://arxiv.org/abs/1006.3125v3"
+fetched_from = "https://arxiv.org/pdf/1006.3125v3"
+fetched_at = "2026-10-22T12:14:25Z"
+sha256 = "1b21e5adf08ea73ea1aac471100d6b191d57d47d95ff27ae0f25ee5e1d9f2973"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["Witt supplier contracts"]
+
+[[source]]
+id = "B"
+authors = "James Borger"
+title = "The basic geometry of Witt vectors, I: The affine case"
+year = 2008
+venue = "Algebra & Number Theory 5 (2011), no. 2, pp 231-285"
+arxiv = "0801.1691v6"
+locator_scheme = "section"
+locator = "§§1.17–1.18"
+url = "https://arxiv.org/abs/0801.1691v6"
+fetched_from = "https://arxiv.org/pdf/0801.1691v6"
+fetched_at = "2026-10-22T12:14:42Z"
+sha256 = "d8d7c8f62311b4b60cf4d298af4e8519460e33b69ce9a34da4641488e6766019"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v6"
+cited_for = ["Λ supplier contracts"]
+
+[[source]]
+id = "G"
+authors = "Stavros Garoufalidis, Peter Scholze, Campbell Wheeler, Don Zagier"
+title = "The Habiro ring of a number field"
+year = 2024
+arxiv = "2412.04241v2"
+locator_scheme = "theorem"
+locator = "Definitions 1.1, 1.4; Theorem 2; Proposition 1.5(f); §3.3"
+url = "https://arxiv.org/abs/2412.04241v2"
+fetched_from = "https://arxiv.org/pdf/2412.04241v2"
+fetched_at = "2026-10-22T12:14:48Z"
+sha256 = "308d1dd1c42bd979e5d5c31d9d95215a1808f604031b49c0ce2a1eb767273de9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["5.9; 6"]
+
+[[source]]
+id = "Bosco"
+authors = "Guido Bosco"
+title = "Rational $p$-adic Hodge theory for rigid-analytic varieties"
+year = 2023
+arxiv = "2306.06100v1"
+locator_scheme = "theorem"
+locator = "Proposition A.3; Lemma A.4"
+url = "https://arxiv.org/abs/2306.06100v1"
+fetched_from = "https://arxiv.org/pdf/2306.06100v1"
+fetched_at = "2026-10-22T12:14:55Z"
+sha256 = "a142fc46709b8a54ef552a052f8a0c96006b578ef2565bbe4bcea6100505c7e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["2.9–2.12"]
+
+[[source]]
+id = "T"
+authors = "Ferdinand Wagner"
+title = "q-Hodge filtrations, Habiro cohomology, and ku"
+year = 2025
+version_note = "Thesis, 15 August 2025; numbered paragraphs 5.1–5.3 within §5.1"
+locator_scheme = "page"
+locator = "numbered paragraphs 5.1–5.3, printed pp.85–86"
+url = "https://guests.mpim-bonn.mpg.de/ferdinand/q-Thesis.pdf"
+fetched_from = "https://guests.mpim-bonn.mpg.de/ferdinand/q-Thesis.pdf"
+fetched_at = "2026-10-22T12:15:01Z"
+sha256 = "d074047f202ee7e64298801b15327a9a634b6f7b6e4bcd5be7b2fda959ad876c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.8"]
+
+[[source]]
+id = "HA"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+version_note = "18 September 2017"
+locator_scheme = "theorem"
+locator = "2.2.1.9; 3.2.2.4–3.2.2.5; 7.1.2.13; 7.1.3.17–7.1.3.18"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-10-22T12:15:21Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0; 2; 3"]
+
+[[source]]
+id = "MW"
+authors = "Samuel Meyer; Ferdinand Wagner"
+title = "q-Hodge complexes and refined TC−"
+year = 2026
+version_note = "Author version, 5 February 2026"
+locator_scheme = "section"
+locator = "§4.1, numbered paragraph 4.1, pp.41–42, version 5 February 2026"
+url = "https://ferdinand-wagner.github.io/papers/q-Hodge.pdf"
+fetched_from = "https://ferdinand-wagner.github.io/papers/q-Hodge.pdf"
+fetched_at = "2026-10-22T12:15:23Z"
+sha256 = "74b8a5c122cc54f5b347a49c895fdafc12e36f376fdd7165036b0c80277b3538"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.8–2.12"]
+
+[[source]]
+id = "Stacks04D1"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Commutative Algebra"
+year = 2026
+version_note = "Chapter PDF, stable tag 04D1"
+locator_scheme = "tag"
+locator = "04D1 (Lemma 10.143.10)"
+url = "https://stacks.math.columbia.edu/tag/04D1"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=04D1"
+fetched_at = "2026-10-22T12:15:33Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.2"]
+
+[[source]]
+id = "Stacks0ALI"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, More on Algebra"
+year = 2026
+version_note = "Chapter PDF, stable tags 0ALI and 0920"
+locator_scheme = "tag"
+locator = "0ALI (Lemma 15.11.2); 0920 (Lemma 15.93.18)"
+url = "https://stacks.math.columbia.edu/tag/0ALI"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0ALI"
+fetched_at = "2026-10-22T12:15:43Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.3", "0.6; 2"]
+
+[[source]]
+id = "Hab"
+authors = "Kazuo Habiro"
+title = "Cyclotomic completions of polynomial rings"
+year = 2004
+version_note = "Publications of the Research Institute for Mathematical Sciences 40, pp.1127–1146"
+locator_scheme = "theorem"
+locator = "Proposition 7.1, pp.1141–1142; §7.3, p.1144"
+url = "https://ems.press/content/serial-article-files/40881"
+fetched_from = "https://ems.press/content/serial-article-files/40881"
+fetched_at = "2026-10-22T12:18:07Z"
+sha256 = "f56094672ada5ba71bbce69785be8c9d1377807c937b1011b1004f51dbf3071f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.1–2.5"]
