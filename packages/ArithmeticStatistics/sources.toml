@@ -1,0 +1,24 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticStatistics"
+
+[[source]]
+id = "as-ref-056"
+authors = "A. J. de Jong"
+title = "Counting elliptic surfaces over finite fields"
+year = 2002
+locator_scheme = "page"
+locator = "Bibliography [56]; no target-specific locator supplied"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/150#issuecomment-6334047397"
+
+[[source]]
+id = "as-ref-022"
+authors = "Etienne Fouvry and Juergen Klueners"
+title = "On the 4-rank of class groups of quadratic number fields"
+year = 2007
+locator_scheme = "page"
+locator = "Published pages 455-513; README cites author-manuscript pagination without a target locator"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/150#issuecomment-6334047397"
