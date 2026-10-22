@@ -157,12 +157,12 @@ EffectiveClassNumbers
 CompletedCohomologyPartII
 CohomologyComparisons
 HabiroCohomologyFoundations
-HabiroCohomologyFoundationsPartII
 CohomologyComparisonsPartII
 PadicHodgeRegulators
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
 GrossZagierAndArithmeticHeights
 AutomorphicBundles
