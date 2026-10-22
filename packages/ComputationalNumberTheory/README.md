@@ -85,8 +85,9 @@ It builds on, and does not plan again:
   Layers CN.0 and CN.4 add finite rational certificates and refinement on top of that theory.
 - **TauCetiRoadmap PolynomialGaloisGroups** (Layer 5): degrees of irreducible factors over a finite
   field are Frobenius orbit sizes. Layer CN.0 turns this into a checked irreducibility certificate.
-- **TauCetiRoadmap NumberFieldArithmetic** (Layers 3 and 7): the index–discriminant identity,
-  Kummer–Dedekind under its index hypothesis, explicit integral bases, rank-one unit certificates.
+- **[NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md)** (Layers 3, 5 and 7): the index–discriminant identity,
+  Kummer–Dedekind under its index hypothesis, explicit integral bases, rank-one unit certificates,
+  and the global completion decomposition with its local/global invariant comparisons (§§5.3, 5.5).
   Layer CN.2 adds full-order presentations and local maximality comparisons.
 - **ClassicalArithmeticCompletion** §§3.3, 3.5, 3.25, 3.27, 3.33 and 3.48 supplies Smith and
   column Hermite decompositions, pivot indices, ordinary Newton polygons and Hermite bases.
@@ -96,6 +97,8 @@ It builds on, and does not plan again:
 - **AlgebraicModularFormsAndSerreWeights** (Layers R15.2, R15.3, R15.5): the `q`-expansion
   principle and bounded denominators at level one, the theta operator and the Hasse invariant, and
   the Deligne–Serre lifting of residual eigensystems to characteristic zero.
+- **[ContourIntegration](../../Completed/ContourIntegration/README.md)** Layer 2: the argument
+  principle with multiplicities and pole corrections. Layer CN.4 specializes it to Dirichlet functions.
 - **HeightsRationalPointsAndObstructions** (§1.17): the index of multiplication by two on the
   points of an abelian variety over a local field, used for the size check of local images.
 
@@ -152,13 +155,19 @@ curves are built on Layers CN.2–CN.4 by the effective Diophantine roadmap, whi
   (Mignotte-type bound for a factor), `Polynomial.mahlerMeasure_le_sum_norm_coeff`
   (the coefficient-norm bound), both in `Mathlib.Analysis.Polynomial.MahlerMeasure`,
   `quadraticChar` (`Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.Basic`).
+- `Complex.exists_continuousOn_eqOn_exp_comp` (`Mathlib.Analysis.Complex.BranchLogRoot`):
+  continuous logarithm branches on open simply connected domains where the function never vanishes;
+  `Complex.Gamma_ne_zero_of_re_pos` (`Mathlib.Analysis.SpecialFunctions.Gamma.Beta`)
+  and `Complex.differentiableAt_Gamma` (`Mathlib.Analysis.SpecialFunctions.Gamma.Deriv`)
+  apply on the right half-plane.
 - `Real.eulerMascheroniSeq_lt_eulerMascheroniConstant`,
   `Real.eulerMascheroniConstant_lt_eulerMascheroniSeq'`,
   `Real.tendsto_eulerMascheroniSeq` and `Real.tendsto_eulerMascheroniSeq'`
   (`Mathlib.NumberTheory.Harmonic.EulerMascheroni`): lower and upper harmonic–logarithm
   bounds converging to Euler's constant.
 - Algebraic numbers and intervals: `algebraicClosure`, `mem_algebraicClosure_iff`
-  (`Mathlib.FieldTheory.AlgebraicClosure`),
+  (`Mathlib.FieldTheory.AlgebraicClosure`), `Polynomial.finite_setOfPred_isRoot`
+  (`Mathlib.Algebra.Polynomial.Roots`, applied after coefficient extension to ℂ),
   `NonemptyInterval` (`Mathlib.Order.Interval.Basic`;its multiplication is the monotone one and does not apply to signed
   rational endpoints; its inverse is a group inverse, not a field reciprocal).
 - Number fields: `NumberField.classNumber`,
@@ -170,7 +179,13 @@ curves are built on Layers CN.2–CN.4 by the effective Diophantine roadmap, whi
   `ModularForm.sturm_bound_levelOne_nat`
   (`Mathlib.NumberTheory.ModularForms.LevelOne.DimensionFormula`), `ModularForm.weakFEPair`, `ModularForm.L` (`Mathlib.NumberTheory.ModularForms.LFunction`),
   `WeakFEPair.functional_equation` (`Mathlib.NumberTheory.LSeries.AbstractFuncEq`), `DirichletCharacter.LFunction` (`Mathlib.NumberTheory.LSeries.DirichletContinuation`),
-  `DirichletCharacter.IsPrimitive` (`Mathlib.NumberTheory.DirichletCharacter.Basic`), `Complex.digamma`, `Complex.digamma_apply_add_nat`
+  `DirichletCharacter.IsPrimitive` (`Mathlib.NumberTheory.DirichletCharacter.Basic`),
+  `DirichletCharacter.completedLFunction`, `DirichletCharacter.gammaFactor`,
+  `DirichletCharacter.LFunction_eq_completed_div_gammaFactor`,
+  `DirichletCharacter.IsPrimitive.completedLFunction_one_sub`
+  (`Mathlib.NumberTheory.LSeries.DirichletContinuation`),
+  `DirichletCharacter.LFunction_ne_zero_of_one_le_re`
+  (`Mathlib.NumberTheory.LSeries.Nonvanishing`), `Complex.digamma`, `Complex.digamma_one`, `Complex.digamma_apply_add_nat`
   (`Mathlib.Analysis.SpecialFunctions.Gamma.Digamma`, recurrence with all poles excluded),
   `CuspFormClass.qExpansion_isBigO` (`Mathlib.NumberTheory.ModularForms.Bounds`), and
   `ModularForm.L` (`Mathlib.NumberTheory.ModularForms.LFunction`).
@@ -184,6 +199,12 @@ curves are built on Layers CN.2–CN.4 by the effective Diophantine roadmap, whi
 
 ### From Tau Ceti (pinned at `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`)
 
+- `TauCeti.Contour.argumentPrinciple_starConvex` (`TauCeti.Analysis.Contour.StarConvex`)
+  and `TauCeti.Contour.argumentPrinciple_nullHomologous`
+  (`TauCeti.Analysis.Contour.Argument.Cycle`): on a closed piecewise-C¹ contour avoiding
+  the zeros and poles, the log-derivative integral is the winding-weighted sum of
+  meromorphic orders. A convex neighborhood of the rectangle supplies null-homology;
+  only finitely many zeros and poles occur in its compact closure.
 - `TauCeti.GlobalNumberFields.NumberFieldOrder.isIntegral`
   (`TauCeti.NumberTheory.NumberField.Global.Orders.Basic`),
   `TauCeti.GlobalNumberFields.NumberFieldOrder.multiplierRing`
@@ -236,6 +257,12 @@ curves are built on Layers CN.2–CN.4 by the effective Diophantine roadmap, whi
 - LocalFieldsRamification Layer 0 (local fields and their finite extensions: uniformizer, residue
   field, `e` and `f`), Layer 1 (Teichmüller representatives), Layer 2 (surjectivity of the
   unramified norm on units).
+- [NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md) §§5.3 and 5.5:
+  `semilocalEquiv`, `completionFactorsEquivPlaces`, `factorFieldEquivCompletion`, and
+  the separate comparisons of completion ramification indices and residue degrees with
+  `Ideal.ramificationIdx` and `Ideal.inertiaDeg`. Use these for K/ℚ before the local degree formula.
+- [ContourIntegration](../../Completed/ContourIntegration/README.md) Layer 2: the argument
+  principle, counting zeros minus poles with their meromorphic orders on a contour avoiding them.
 - RealAlgebraicGeometry Layers 1–4 (real root counting and matching).
 - PolynomialGaloisGroups Layer 5 (factor degrees over a finite field are Frobenius orbit sizes).
 
@@ -291,6 +318,11 @@ of how the finite data are obtained.
 
 ### 0.8 Isolated algebraic root certificate (`AlgebraicRootCertificate`)
 
+This is a presentation adapter for Mathlib's relative algebraic closure. Its native
+intermediate-field structure supplies closure under addition, multiplication and inversion.
+A nonzero polynomial has finitely many distinct complex roots, separated by rational rectangles.
+Arb §5 (Arb line 779) supplies only the meaning of enclosing a value and bounding its error.
+
 **Definition.** An AlgebraicRootCertificate stores a nonzero polynomial f∈ℚ[X], two closed rational intervals R,I, and a proof that exactly one complex z satisfies f(z)=0 and Re(z)∈R, Im(z)∈I. Repeated polynomial roots are permitted: uniqueness concerns distinct roots, not their multiplicities. The exact carrier is the native relative algebraic closure of ℚ in ℂ; the finite polynomial and rectangle are presentation data, not a replacement field. The uniqueness proof is a separate checked obligation, not inferred from small diameter.
 
 - `AlgebraicRootCertificate.value_mem_algebraicClosure`: The decoded root belongs to the native relative algebraic closure.
@@ -298,7 +330,8 @@ of how the finite data are obtained.
 - `AlgebraicRootCertificate.value_spec (c : AlgebraicRootCertificate)`: The decoded value is a root lying in both displayed intervals.
 - `AlgebraicRootCertificate.value_unique`: Any root in the rectangle equals the decoded value.
 
-*Construction.* Use native Polynomial and NonemptyInterval for finite data. Define the root-and-rectangle predicate explicitly and require unique existence. The uniqueness proof is part of the mathematical presentation. ([Arb](#source-arb), §§5–5.3, pp.7–9.) *Needs:* Mathlib `algebraicClosure`; Mathlib `mem_algebraicClosure_iff`; Mathlib `NonemptyInterval`.
+*Construction.* Use native Polynomial and NonemptyInterval for finite data. Define the root-and-rectangle predicate explicitly and require unique existence. The uniqueness proof is part of the mathematical presentation. (Mathlib `algebraicClosure` and `mem_algebraicClosure_iff`,
+`Mathlib/FieldTheory/AlgebraicClosure.lean`, lines 39 and 54.) *Needs:* Mathlib `algebraicClosure`; Mathlib `mem_algebraicClosure_iff`; Mathlib `NonemptyInterval`.
 
 **Checks.**
 
@@ -318,7 +351,8 @@ The boundary comparisons are `AlgebraicRootCertificate.repeated_zero`.
 - `rationalRootCertificate_add r s`: Rational addition commutes with decoding.
 - `rationalRootCertificate_mul r s`: Rational multiplication commutes with decoding.
 
-*Method.* The linear polynomial has exactly the root r. The rational casts commute with addition and multiplication by the existing field homomorphism laws. ([Arb](#source-arb), §§5–5.3, pp.7–9.) *Needs:* `AlgebraicRootCertificate` (0.8).
+*Method.* The linear polynomial has exactly the root r. The rational casts commute with addition and multiplication by the existing field homomorphism laws. (Mathlib `algebraicClosure` and `mem_algebraicClosure_iff`,
+`Mathlib/FieldTheory/AlgebraicClosure.lean`, lines 39 and 54.) *Needs:* `AlgebraicRootCertificate` (0.8).
 
 **Checks.**
 
@@ -326,23 +360,42 @@ The boundary comparisons are `AlgebraicRootCertificate.repeated_zero`.
 - *Computed value.* One half plus one third decodes as five sixths.
 - *Non-example.* One half and one third have different decoded values.
 
+### 0.9a Every algebraic value has an isolated presentation (`algebraicRootCertificate_exists`)
+
+For z∈ℂ algebraic over ℚ, prove `algebraicRootCertificate_exists`: there is an
+`AlgebraicRootCertificate` whose value is z. Choose a nonzero annihilating polynomial and
+separate z from its other finitely many distinct roots by a closed rational rectangle
+with z in its interior. Rationality of z is unnecessary; repeated roots remain single values.
+This is finite-root separation on Mathlib `IsAlgebraic` and `mem_algebraicClosure_iff`
+(`Mathlib/FieldTheory/AlgebraicClosure.lean`, line 54).
+*Needs:* §0.8; native polynomial root finiteness and density of ℚ in ℝ.
+
+**Checks.**
+
+- A rational z has the singleton presentation of §0.9.
+- The repeated root of X² has one value and admits the singleton zero rectangle.
+- A rectangle containing both roots of X²−1 fails uniqueness, regardless of their multiplicities.
+
 ### 0.10 Addition of isolated algebraic numbers (`algebraic_add_certificate`)
 
 **Theorem.** Given isolated algebraic inputs a,b, there exists an isolated-root certificate whose value is their sum.
 
-*Proof sketch.* Closure of the native algebraic-number field gives an annihilating rational polynomial. Its finite distinct root set allows a rational rectangle isolating the desired root. ([Arb](#source-arb), §§5–5.3, pp.7–9.) *Needs:* `AlgebraicRootCertificate` (0.8); Mathlib `algebraicClosure`.
+*Proof sketch.* Closure of the native algebraic-number field gives an annihilating rational polynomial. Its finite distinct root set allows a rational rectangle isolating the desired root. (Mathlib `algebraicClosure` and `mem_algebraicClosure_iff`,
+`Mathlib/FieldTheory/AlgebraicClosure.lean`, lines 39 and 54.) *Needs:* `AlgebraicRootCertificate` (0.8); `algebraicRootCertificate_exists` (0.9a); Mathlib `algebraicClosure`.
 
 ### 0.11 Multiplication of isolated algebraic numbers (`algebraic_mul_certificate`)
 
 **Theorem.** Given isolated algebraic inputs a,b, there exists an isolated-root certificate whose value is their product.
 
-*Proof sketch.* Closure of the native algebraic-number field gives an annihilating rational polynomial. Its finite distinct root set allows a rational rectangle isolating the desired root. ([Arb](#source-arb), §§5–5.3, pp.7–9.) *Needs:* `AlgebraicRootCertificate` (0.8); Mathlib `algebraicClosure`.
+*Proof sketch.* Closure of the native algebraic-number field gives an annihilating rational polynomial. Its finite distinct root set allows a rational rectangle isolating the desired root. (Mathlib `algebraicClosure` and `mem_algebraicClosure_iff`,
+`Mathlib/FieldTheory/AlgebraicClosure.lean`, lines 39 and 54.) *Needs:* `AlgebraicRootCertificate` (0.8); `algebraicRootCertificate_exists` (0.9a); Mathlib `algebraicClosure`.
 
 ### 0.12 Inversion of a nonzero algebraic number (`algebraic_inv_certificate`)
 
 **Theorem.** Given an isolated algebraic input a with nonzero decoded value, there exists an isolated-root certificate whose value is its inverse.
 
-*Proof sketch.* Closure of the native algebraic-number field gives an annihilating rational polynomial. Its finite distinct root set allows a rational rectangle isolating the desired root. ([Arb](#source-arb), §§5–5.3, pp.7–9.) *Needs:* `AlgebraicRootCertificate` (0.8); Mathlib `algebraicClosure`.
+*Proof sketch.* Closure of the native algebraic-number field gives an annihilating rational polynomial. Its finite distinct root set allows a rational rectangle isolating the desired root. (Mathlib `algebraicClosure` and `mem_algebraicClosure_iff`,
+`Mathlib/FieldTheory/AlgebraicClosure.lean`, lines 39 and 54.) *Needs:* `AlgebraicRootCertificate` (0.8); `algebraicRootCertificate_exists` (0.9a); Mathlib `algebraicClosure`.
 
 ### 0.13 Equality of isolated algebraic numbers (`algebraicEqual`)
 
@@ -352,7 +405,8 @@ The boundary comparisons are `AlgebraicRootCertificate.repeated_zero`.
 - `algebraicEqual_refl a`: Every presentation equals itself.
 - `algebraicEqual_symm a b`: The verdict is symmetric.
 
-*Construction.* Use equality of the decoded values. A common root of both annihilating polynomials in both isolating rectangles characterizes this equality. ([Arb](#source-arb), §§5–5.3, pp.7–9.) *Needs:* `AlgebraicRootCertificate` (0.8).
+*Construction.* Use equality of the decoded values. A common root of both annihilating polynomials in both isolating rectangles characterizes this equality. (Mathlib `algebraicClosure` and `mem_algebraicClosure_iff`,
+`Mathlib/FieldTheory/AlgebraicClosure.lean`, lines 39 and 54.) *Needs:* `AlgebraicRootCertificate` (0.8).
 
 **Checks.**
 
@@ -622,11 +676,12 @@ The boundary theorem `aksParameter_two_nine_one` states the displayed values.
 
 - *Computed value.* The characteristic-5 identity passes at every r and every check range.
 - *Degenerate case.* With no bases, even input 9 passes the identity predicate.
-- *Non-example.* The empty identity test is not a primality criterion.
+- *Non-example.* At n=9, r=2, ℓ=1 the identity fails: modulo `(9,X^2-1)`,
+  `(X+1)^9=4*X+4`, whereas `X^9+1=X+1`.
 
 The boundary theorem `AKSIdentities.five_and_empty_nine` states this Check on the native carriers.
 
-The boundary comparisons are `AKSIdentities.five_all`.
+The boundary comparisons are `AKSIdentities.five_all`, `AKSIdentities.nine_nonempty_rejected`.
 
 ### 1.13 AKS arithmetic predicate (`AKSAccepts`)
 
@@ -649,11 +704,55 @@ This is Shoup's arithmetic primality criterion (§21.2, Figure 21.1, p.550).
 
 The boundary theorem `AKSAccepts.two_and_not_nine` states this Check on the native carriers.
 
+### 1.13a Finite-algebra inputs to the AKS criterion
+
+Let n>1, r>1 and ℓ≥1, let p be a prime dividing n, and assume gcd(n,r)=1.
+Put `E = F_p[X]/(X^r-1)` and ξ=[X]. For gcd(k,r)=1 the substitution
+`aksSubstitution k : E ≃ₐ[F_p] E` sends g(ξ) to g(ξ^k). Prove
+`aksSubstitution_comp`, `aksSubstitution_eq_iff` and `aksSubstitution_frobenius`:
+composition multiplies the exponents, equality is congruence modulo r, and the p
+substitution is the p-power map (Shoup Lemma 21.6, printed pp.553–554;
+Shoup line 21678). Set `D(k)={a : sigma_k(a)=a^k}`. Prove
+`aksPowerCompatible_mul` and `aksPowerCompatible_exponents_mul`: D(k) is multiplicative,
+and σ_k(a)=a^k together with σ_j(a)=a^j implies σ_(kj)(a)=a^(kj)
+(Shoup Lemmas 21.7–21.8, p.555; Shoup line 21756).
+
+Take a finite extension F/𝔽_p of degree `s=ord_r(p)`, a root ζ of exact order r,
+and `tau : E →ₐ[F_p] F` with τ(ξ)=ζ. Let `S=tau(D(n))` and
+`t=|⟨p mod r,n mod r⟩|` in `(ℤ/rℤ)^×`. Prove these three inputs:
+
+- `aks_evalImage_upper`: if n is not a prime power, `|S| <= n^(2*floor(sqrt(t)))`.
+  Distinct integers n^u p^v with 0≤u,v≤⌊√t⌋ give two congruent exponents;
+  all elements of S satisfy the resulting nonzero polynomial
+  (Shoup Lemma 21.9, pp.556–557; Shoup line 21783).
+- `aks_evalImage_lower`: if p>r and `(ξ+j)^n=ξ^n+j` for 1≤j≤ℓ, then
+  `|S| >= 2^min(t,l)-1`. Products over proper subsets of the first min(t,ℓ)
+  linear factors have distinct evaluations, since a degree at most t−1 polynomial
+  cannot vanish at t distinct powers of ζ
+  (Shoup Lemma 21.10, pp.557–558; Shoup line 21819).
+- `aks_growth_contradiction`: if `ord_r(n)>4*(aksLen n)^2` and
+  `l>2*aksLen n*floor(sqrt(r))`, then `2^min(t,l)-1>n^(2*floor(sqrt(t)))`.
+  Use `ord_r(n) <= t < r` and `log_2(n) <= aksLen n`
+  (Shoup Lemma 21.11, p.558; Shoup line 21864).
+
+*Needs:* §0.16; finite-field cyclicity, quotient algebras, polynomial root bounds;
+§§1.11–1.12. These are algebraic cardinality theorems, independent of any procedure.
+
+**Checks.**
+
+- σ₁ is the identity and σ_kσ_j=σ_(kj), fixing the substitution direction.
+- At n=p=2, r=31, D(2)=E and S=𝔽₃₂. Its size 32 exceeds
+  `2^(2*floor(sqrt(5)))=16`; the upper bound requires n not to be a prime power.
+- At n=9, r=2, p=3, ℓ=1 the linear-factor hypothesis fails as in §1.12;
+  an empty range supplies no lower-count contradiction.
+
 ### 1.14 AKS characterization of primes (`aks_correct`)
 
 **Theorem.** For every natural n, `AKSAccepts n` holds iff n is prime.
 
-*Proof sketch.* Prime inputs satisfy the polynomial identities by Frobenius. For a composite that reaches the final branch choose a prime p dividing n; the least-modulus property gives p>r and gcd(n,r)=1. Shoup’s quotient-algebra endomorphisms, upper bound on the evaluation image and lower bound from products of distinct linear factors contradict the order and length bounds. Those nonroutine algebraic estimates are separate proof requirements. ([Shoup](#source-shoup), §21.2 and Lemmas 21.6–21.11, pp.549–558.) *Needs:* `AKSAccepts` (1.13); `AKSIdentities` (1.12); `aksParameter` (1.11).
+*Proof sketch.* Prime inputs satisfy the polynomial identities by Frobenius. For a composite that reaches the final branch choose a prime p dividing n; the least-modulus property gives p>r and gcd(n,r)=1. Shoup’s quotient-algebra endomorphisms, upper bound on the evaluation image and lower bound from products of distinct linear factors contradict the order and length bounds. The three named cardinality inputs in §1.13a provide this contradiction. ([Shoup](#source-shoup), §21.2 and Lemmas 21.6–21.11, pp.549–558.) *Needs:* `AKSAccepts` (1.13); `AKSIdentities` (1.12); `aksParameter` (1.11);
+`aksSubstitution_comp`, `aksPowerCompatible_mul`, `aksPowerCompatible_exponents_mul`,
+`aks_evalImage_upper`, `aks_evalImage_lower`, `aks_growth_contradiction` (1.13a).
 
 ### 1.15 Pocklington prime-divisor congruence (`pocklington_prime_divisor`)
 
@@ -780,6 +879,31 @@ factor statement directly (MilneANT, Theorem 7.33 and Lemmas 7.34–7.35, printe
 - Coprimality is essential: at p=2, k=2, `X²` has the two monic factorizations
   `X*X` and `(X+2)*(X+2)` with the same reduction.
 
+The bundled boundary target `henselLift_factor_controls` records the factor identity and
+both reduction identities at modulus 49, and the two distinct factors at modulus four.
+
+### 1.26a Coprime factors over complete DVRs (`henselFactor_completeDVR`)
+
+Let O be any DVR complete and separated for its maximal-ideal topology, with residue
+field κ, and let f∈O[X] be monic. Prove `henselFactor_completeDVR`: every factorization
+`f mod m = g0*h0` into coprime monic κ-polynomials lifts to exactly one pair of monic
+O-polynomials g,h with f=gh and the specified reductions. Prove
+`henselFactor_completeDVR_pairwise` for a finite pairwise coprime monic factorization.
+Constant factors are included, with no restriction on the residue characteristic or its
+cardinality. Construct degree-bounded corrections modulo successive powers of m and take
+coefficientwise limits in O; separatedness gives uniqueness. The finite-quotient statement
+§1.26 is its specialization to integer inputs over ℤ_p, followed by reduction modulo p^k
+(MilneANT Theorem 7.33, Lemmas 7.34–7.35 and Remark 7.36, printed pp.121–122;
+MilneANT lines 5346 and 5389).
+*Needs:* complete DVRs, residue maps and polynomial Bézout identities from Mathlib.
+
+**Checks.**
+
+- Lifting `1*(f mod m)` gives exactly (1,f), retaining degree-zero factors.
+- Over 𝔽₂[[t]], `X*(X-1)` lifts with these same coprime factors; mixed characteristic is unnecessary.
+- Over ℤ₂, `X²` reduces to two equal linear factors: the coprime uniqueness theorem does
+  not apply, and its modulus-four specialization has the two pairs in §1.26.
+
 ### 1.27 Rational polynomial factor certificate (`RationalFactorCertificate`)
 
 **Definition.** For f∈ℚ[X], RationalFactorCertificate f consists of a nonzero rational leading factor c, a finite list of monic polynomials, proofs that each is irreducible over ℚ, and the exact identity f=c∏g_i. Multiplicity is represented by repeated factors. The definition uses actual irreducibility proofs; a CAS assertion or irreducibility modulo a single prime without a valid lifting criterion is insufficient. For f∈ℤ[X], certify its coefficientwise rational image and separately retain integer content and primitive-factor normalization.
@@ -825,7 +949,7 @@ nonzero constants, and comparison of leading coefficients identifies the scalar
 
 ### Dependencies
 
-Layer CN.0; Mathlib (`lucas_primality`, `reverse_lucas_primality`, `Nat.primeFactorsList`, Carmichael numbers, `ZMod`, `Polynomial.modByMonic`, unique factorization, `PadicInt.toZModPow`, the Mahler-measure coefficient bound).
+Layer CN.0; Mathlib (complete DVRs and residue maps, `lucas_primality`, `reverse_lucas_primality`, `Nat.primeFactorsList`, Carmichael numbers, `ZMod`, `Polynomial.modByMonic`, unique factorization, `PadicInt.toZModPow`, the Mahler-measure coefficient bound).
 
 ## Layer CN.2: Order presentations and local arithmetic
 
@@ -1102,8 +1226,7 @@ It factors uniquely into monic factors for the distinct negative slopes. Each ha
 corresponding side up to translation and the same residual up to a nonzero scalar;
 for a root θ of the λ-factor, `v_L(φ(θ))=-λ`, with v_L extended from L, and the −∞
 factor is `φ^ord_φ(f)` (GMN Theorem 1.15, printed pp.11–12; GMN line 575).
-*Needs:* `phiPolygon_mul`, `phiResidual_mul`, and coprime factor Hensel over complete DVRs
-(MilneANT Theorem 7.33; the same degree-bounded correction proof as §1.26).
+*Needs:* `phiPolygon_mul`, `phiResidual_mul`, `henselFactor_completeDVR` (1.26a).
 
 **Checks.**
 
@@ -1155,7 +1278,8 @@ The boundary comparisons are `LocalExpansionCertificate.uniformizer_inverse`, `L
 
 *Proof sketch.* If u ≡ w² modulo 4π then w is a unit, and the polynomial X² − u satisfies |w² − u| ≤ |4π| < |2w|², so Newton's lemma gives a root of X² − u near w. The converse is immediate. For odd p, 4π generates the maximal ideal; for L = ℚ_2, 4π = 8 and the unit squares modulo 8 are 1. ([MilneANT](#source-milneant), Theorem 7.32 (Newton's lemma), printed p.120.) *Needs:* TauCetiRoadmap LocalFieldsRamification Layer 0; Tau Ceti `TauCeti.unitFiltration_le_range_powMonoidHom_two` in `TauCeti.NumberTheory.LocalField.Squares`.
 
-The native `ℤ_[p]` specialization is `isSquare_iff_isSquare_mod_padic`.
+The native `ℤ_[p]` specialization is `isSquare_iff_isSquare_mod_padic`;
+`localSquare_controls` bundles the 17, 5 and 6 comparisons below.
 
 **Checks.**
 
@@ -1168,7 +1292,10 @@ The native `ℤ_[p]` specialization is `isSquare_iff_isSquare_mod_padic`.
 
 **Theorem.** Let f ∈ ℚ[X] be monic irreducible, K = ℚ[X]/(f) and p a prime. The number of roots of f in ℚ_p equals the number of prime ideals P of O_K above p with ramification index and residue degree both equal to 1. For a separable f with irreducible factors f_j and fields K_j, the number of roots of f in ℚ_p is the sum of these counts over j. With the PrimeIdealFactorCertificate of each K_j at p, the count is a finite computation.
 
-*Proof sketch.* K ⊗_ℚ ℚ_p is the product of the completions K_P over the primes P above p, and [K_P : ℚ_p] = e(P|p)·f(P|p). A root of f in ℚ_p is a ℚ-algebra map K → ℚ_p, equivalently a factor K_P of degree one. Distinct roots give distinct factors because f is separable. ([MilneANT](#source-milneant), Proposition 8.2 and its proof, printed p.136.) *Needs:* `PrimeIdealFactorCertificate` (2.9); `exists_rationalFactorCertificate` (1.28); TauCetiRoadmap LocalFieldsRamification Layer 0.
+*Proof sketch.* K ⊗_ℚ ℚ_p is the product of the completions K_P over the primes P above p, and [K_P : ℚ_p] = e(P|p)·f(P|p). A root of f in ℚ_p is a ℚ-algebra map K → ℚ_p, equivalently a factor K_P of degree one. Distinct roots give distinct factors because f is separable. ([MilneANT](#source-milneant), Proposition 8.2 and its proof, printed p.136.) *Needs:* `PrimeIdealFactorCertificate` (2.9); `exists_rationalFactorCertificate` (1.28);
+NumberFieldArithmetic §§5.3, 5.5 (`semilocalEquiv`, `completionFactorsEquivPlaces`,
+`factorFieldEquivCompletion`, and both local/global invariant comparisons);
+TauCetiRoadmap LocalFieldsRamification Layer 0.
 
 ### Examples
 
@@ -1180,7 +1307,7 @@ The native `ℤ_[p]` specialization is `isSquare_iff_isSquare_mod_padic`.
 
 ### Dependencies
 
-Layers CN.0–CN.1; ClassicalArithmeticCompletion §§3.25, 3.27 and 3.48; TauCetiRoadmap NumberFieldArithmetic Layers 3 and 7; TauCetiRoadmap LocalFieldsRamification Layers 0–1; Mathlib (number fields, `Ideal.radical`, Frobenius); Tau Ceti `TauCeti.kernelBasis`.
+Layers CN.0–CN.1; ClassicalArithmeticCompletion §§3.25, 3.27 and 3.48; Completed NumberFieldArithmetic Layers 3, 5 and 7; TauCetiRoadmap LocalFieldsRamification Layers 0–1; Mathlib (number fields, `Ideal.radical`, Frobenius); Tau Ceti `TauCeti.kernelBasis`.
 
 ## Layer CN.3: Exact modular and elliptic arithmetic data
 
@@ -1194,7 +1321,7 @@ counts over finite fields, certified local images of the `x − T` descent map w
 that decides completeness, and a finite criterion for `p`-saturation of a subgroup of the
 Mordell–Weil group.
 
-*Proof obligations of the layer.* Prove coefficient integrality of the normalized E₄, E₆ and Δ, the dimension-compatible monomial family, its leading powers and integral unitriangular elimination (Stein Algorithm 2.18, Lemma 2.20 and Remark 2.21, pp.19–21). The full modular lattice additionally needs an Eisenstein generator with the correct denominator normalization. Prove the integral polynomial-in-j lemma needed for the congruence Sturm bound and use the level-one q-expansion principle of AlgebraicModularFormsAndSerreWeights R15.2 (Stein Theorem 9.18, pp.171–172). In the BCG examples a singular residual determinant gives a finite witness, and a characteristic-zero eigenform comes from the Deligne–Serre lifting lemma of R15.5. A companion system needs one common eigenvector for all Hecke operators, the theta operator and Hasse invariant of R15.3, and a finite congruence Sturm certificate; matching roots of two characteristic polynomials is not enough. Produce full certificates for every listed witness and every exclusion in the finite ranges. In the cohomological convention of BCG, a_g(ℓ) = ℓ^(p−k)·a_f(ℓ), so the exponent at (107, 26) is 81; at (151, 52) and (151, 100) the gcd condition gives 3, not 1. For elliptic curves, every finite output is bound to Tau Ceti's objects: point counts to `WeierstrassCurve.pointCount`, local images to the subgroup range μ of `W_v.M`, and saturation verdicts to divisibility in W(ℚ).
+*Proof obligations of the layer.* Prove coefficient integrality of the normalized E₄, E₆ and Δ, the dimension-compatible monomial family, its leading powers and integral unitriangular elimination (Stein Algorithm 2.18, Lemma 2.20 and Remark 2.21, pp.19–21). The full modular lattice uses the constant-term-one monomial and cusp basis in `exists_integralModularBasis` (§3.3a), avoiding Bernoulli denominators. The congruence Sturm bound uses its integral pivot coordinates and the level-one q-expansion principle of AlgebraicModularFormsAndSerreWeights R15.2 (Stein Theorem 9.18, pp.171–172). In the BCG examples a singular residual determinant gives a finite witness, and a characteristic-zero eigenform comes from the Deligne–Serre lifting lemma of R15.5. A companion system needs one common eigenvector for all Hecke operators, the theta operator and Hasse invariant of R15.3, and a finite congruence Sturm certificate; matching roots of two characteristic polynomials is not enough. Produce full certificates for every listed witness and every exclusion in the finite ranges. In the cohomological convention of BCG, a_g(ℓ) = ℓ^(p−k)·a_f(ℓ), so the exponent at (107, 26) is 81; at (151, 52) and (151, 100) the gcd condition gives 3, not 1. For elliptic curves, every finite output is bound to Tau Ceti's objects: point counts to `WeierstrassCurve.pointCount`, local images to the subgroup range μ of `W_v.M`, and saturation verdicts to divisibility in W(ℚ).
 
 ### 3.1 Integral q-expansion lattice (`integralModularLattice`)
 
@@ -1253,11 +1380,32 @@ The boundary comparisons are `discriminant_integral`, `integralCuspLattice_weigh
 - *Computed value.* At weight 12 the sole basis form is Δ.
 - *Non-example.* Weight two has no cusp basis vector.
 
+### 3.3a Full integral modular basis (`exists_integralModularBasis`)
+
+For every k∈ℕ prove `exists_integralModularBasis`: the full integral modular lattice
+has a finite ℤ-basis b_i, indexed by its complex dimension, and distinct nonnegative
+pivot indices n_i≤⌊k/12⌋ with `a_(n_i)(b_j)=delta_ij`. For every nonzero even
+weight with forms, adjoin a constant-term-one monomial in normalized E₄,E₆ to the
+cusp Miller basis, then clear its positive pivot coefficients integrally. At weight zero
+use the constant form 1; at weight two and at odd weights use the empty basis.
+The dimension and q-expansion theorems give spanning, and the pivot coefficients force
+integral coordinates (Stein Algorithm 2.18, Lemma 2.20 and Remark 2.21, pp.19–21;
+Stein lines 1096, 1134 and 1162).
+*Needs:* §§3.1–3.3; Mathlib `ModularForm.dimension_level_one`,
+`ModularForm.sturm_bound_levelOne_nat`; AlgebraicModularFormsAndSerreWeights R15.2.
+
+**Checks.**
+
+- Weight zero has the singleton basis 1 with pivot zero; a cusp-only construction misses it.
+- Weight two and all odd weights have empty bases, despite the nonempty coefficient range.
+- Weight twelve has basis `E4^3-720*Delta`, Δ with pivots 0,1; both leading coefficients
+  are one and their two pivot rows form the identity matrix.
+
 ### 3.4 Level-one congruence Sturm bound (`levelOne_congruence_sturm`)
 
 **Theorem.** Let k∈ℕ and f belong to integralModularLattice k. For a prime p, if every coefficient a_n(f) for 0≤n≤floor(k/12) is divisible by p, then every coefficient is divisible by p. This is a congruence statement in the integral lattice, not the characteristic-zero identity theorem.
 
-*Proof sketch.* Use the integral triangular basis at level one to propagate divisibility from the initial coefficients to all integral coordinates. Stein’s alternative proof uses the integral polynomial-in-j expansion and multiplication by Δ. The full modular integral basis must be constructed separately from the complex Sturm theorem. ([Stein](#source-stein), Theorem 9.18, pp.171–172, level-one case.) *Needs:* `integralModularLattice` (3.1); Mathlib `ModularForm.sturm_bound_levelOne_nat`; `millerBasis` (3.3); AlgebraicModularFormsAndSerreWeights R15.2.
+*Proof sketch.* Use the integral triangular basis at level one to propagate divisibility from the initial coefficients to all integral coordinates. Stein’s alternative proof uses the integral polynomial-in-j expansion and multiplication by Δ. Apply `exists_integralModularBasis` to recover each integral coordinate at its pivot. ([Stein](#source-stein), Theorem 9.18, pp.171–172, level-one case.) *Needs:* `integralModularLattice` (3.1); `exists_integralModularBasis` (3.3a); AlgebraicModularFormsAndSerreWeights R15.2.
 
 ### 3.5 Exact equality of certified modular data (`modularDataEqual`)
 
@@ -1422,6 +1570,9 @@ The boundary comparisons are `pointCount_small_character_controls`.
 - *Computed value.* For y² = x³ − x at ℝ, the discriminant 4 is positive, r_∞ = 3 and N_∞ = 2; the abscissae −1/2 and 2 give the two classes (+,−,−) and (+,+,+) of signs of x − e_i, so #H_∞ = 2 and the certificate is complete.
 - *Degenerate case.* With no abscissae H_v is trivial; this is complete exactly when N_v = 1, for example at ℝ for y² = x³ + 1, whose discriminant is negative.
 - *Non-example.* For y² = x³ − x at p = 2, N_2 = (1+3)·2 = 8, while the single abscissa 1/4 (f(1/4) = −15/64, unit part −15 ≡ 1 mod 8) gives #H_2 ≤ 2; the certificate is not complete.
+
+The boundary targets `localImageSpan_real_controls` and `localImageSpan_dyadic_controls`
+state the actual span cardinalities: two over ℝ and two, strictly below eight, over ℚ₂.
 
 ### 3.19 The size check completes a local image (`LocalImageCertificate.eq_range_of_isComplete`)
 
@@ -1758,7 +1909,8 @@ functionals, first for F and then for G; this order specifies numerical expressi
 | 6 | `log(2*pi)-Re(psi(zG))+Im(psi(zG))/pi-Re(psi'(zG))/l+l*S(l,(1+w)/2)` |
 | 7 | `Re(phi(z0))-Im(phi(z0))/pi+Re(phi'(z0))/l+l*T(l,1/2)` |
 
-- `ctExplicitFormula_shared_value`: Indices 1 and 4 agree.
+- `ctExplicitFormula_shared_value`: Indices 1 and 4 agree, even for the total real-valued
+  expression at arbitrary real ℓ; the analytic formulas and error bounds require ℓ>0.
 - `ctExplicitFormula_fourier`: Their common value is 8ℓ/π².
 - `ctExplicitFormula_G_imag`: Index 5 has the displayed cosh expression.
 
@@ -1773,6 +1925,8 @@ Mathlib `Complex.digamma` and complex derivatives.
 - At ℓ=2, both become 16/π²; this tests the factor ℓ rather than its inverse.
 - Weight zero gives `Re zF=Re zG=1/2`, while the arguments of ψ inside φ have
   real part at least 1/4; all denominators in §4.17a remain nonzero.
+
+The boundary target `ctExplicitFormula_rational_controls` records the two rational bounds.
 
 ### 4.17a Explicit digamma and trigamma remainders
 
@@ -1802,12 +1956,16 @@ then by its integral from N−1 to infinity. The weighted bound follows from dec
   at N=2, T_N=5/4 and the bound is 1/2.
 - Re z=0 is outside this contract; z=0 would give a zero denominator in the first term.
 
+The boundary targets `digamma_one_controls` and `trigamma_one_controls` record these
+truncation values and errors on the native analytic functions.
+
 ### 4.18 Rational enclosures of CT scalars (`ctEnclosure`)
 
 For rational ℓ>0, weight w∈ℕ, q∈Fin 8 and P∈ℕ, prove existence of a rational interval
 `ctEnclosure l w q P` containing the exact scalar in §4.17 with width at most 2^(−P).
 The chosen family has equal intervals at indices 1 and 4.
 
+- `exists_ctEnclosure`: A family of eight intervals exists at every precision with identical slots 1 and 4.
 - `ctEnclosure_sound`: The exact scalar is contained.
 - `ctEnclosure_width`: Its interval has the stated width.
 - `ctEnclosure_shared`: Indices 1 and 4 use the same interval.
@@ -1834,7 +1992,8 @@ and decoded root set exactly the complex roots of f. Multiplicities are not coun
 Finiteness of the distinct root set gives pairwise disjoint rational neighborhoods;
 isolation uses the root-count and separation comparisons of RealAlgebraicGeometry
 Layers 1–4 (Arb §5, printed pp.7–8, for enclosure semantics).
-*Needs:* §0.8; polynomial root finiteness; RealAlgebraicGeometry Layers 1–4.
+*Needs:* §0.8; `algebraicRootCertificate_exists` (0.9a); polynomial root finiteness;
+RealAlgebraicGeometry Layers 1–4.
 
 **Checks.**
 
@@ -1957,11 +2116,101 @@ Mathlib `ModularForm.L` and `ModularForm.weakFEPair`.
 
 The boundary comparisons are `cuspLBox_zero`, `delta_neg_L_twelve_bounds`.
 
+### 4.21a Argument counts and Turing comparison
+
+For a primitive complex character χ of modulus q≥1, put a=0 or 1 according to χ(−1),
+and let Λχ be the meromorphic continuation of
+`(q/pi)^((s+a)/2)*Gamma((s+a)/2)*L_chi(s)` from Re s>1.
+Prove `dirichletCompleted_normalization`:
+`Lambda_chi(s)=q^((s+a)/2)*DirichletCharacter.completedLFunction chi s`
+away from its poles, with equality of meromorphic germs everywhere. The Gamma-product
+expression is used away from Gamma poles; at trivial zeros its removable continuation
+is essential. The native comparison is
+`DirichletCharacter.LFunction_eq_completed_div_gammaFactor`
+(`Mathlib.NumberTheory.LSeries.DirichletContinuation`, line 258).
+Define `dirichletArgument` by
+`S_chi(t)=Im(integral(sigma=infinity to 1/2, L'_chi/L_chi(sigma+i*t)))/pi`,
+using the right-hand limit at a zero ordinate. Prove local integrability, the
+conjugate-character comparison and agreement with the horizontal argument continued
+from the right half-plane. This fixes the direction and avoids choosing an arbitrary
+principal argument at each point (Platt Theorems 3.1–3.2, pp.4–5; Platt lines 227 and 271).
+
+Prove `dirichletArgumentCount`: for T>0 not a zero ordinate, c>1 and the positively
+oriented rectangle C with vertical sides 1−c,c and horizontal sides −T,T,
+`N_chi(T)-2*delta_(q=1)=(2*pi*i)^(-1)*integral_C Lambda'_chi/Lambda_chi`.
+Here N counts all strip zeros with |Im s|<T with multiplicity; the correction counts
+the two poles of the completed conductor-one function at 0 and 1. The completed
+function has no other poles or zeros outside the strip. With
+`theta_chi(t)=t*log(q/pi)/2+Im(logGamma((1/2+a+i*t)/2))`, choosing the continuous
+logGamma branch on the right half-plane real on its positive real axis, prove
+`dirichletArgumentCount_difference`: for 0<T₁<T₂ with zero-free endpoint ordinates,
+`N_chi(T2)-N_chi(T1)=2*(theta_chi(T2)-theta_chi(T1))/pi+S_chi(T2)+S_bar_chi(T2)-S_chi(T1)-S_bar_chi(T1)`.
+
+Prove `dirichletArgumentCount_integrated`: for t₀,h>0 with zero-free endpoint ordinates,
+let `Z_chi(t0,t)` count positive ordinates in [t₀,t) with multiplicities. Then
+`h*N_chi(t0)=integral(t0 to t0+h, N_chi(t)-Z_chi(t0,t)-Z_bar_chi(t0,t))`.
+Substituting the argument identities evaluates this through the Gamma term and the two
+integrated S terms, with the absolute count fixed by the contour identity. Do not discard
+pole or endpoint contributions (Platt Theorems 3.1–3.2, pp.4–5; Platt line 271).
+*Needs:* ContourIntegration Layer 2 argument principle; Tau Ceti
+`TauCeti.Contour.argumentPrinciple_starConvex`; Mathlib
+`DirichletCharacter.IsPrimitive.completedLFunction_one_sub`,
+`DirichletCharacter.LFunction_ne_zero_of_one_le_re` and the completed/Gamma comparisons
+in the supplier contracts; `Complex.exists_continuousOn_eqOn_exp_comp` for the Gamma branch;
+§4.20 for value enclosures.
+
+The API of `dirichletArgument` is the horizontal argument comparison, its right-limit
+convention and its local integrability; the count identities above are its applications.
+
+**Checks.**
+
+- A zero-free band has N(T₂)−N(T₁)=0; a change of argument without a branch continuation
+  cannot be substituted for the displayed difference.
+- χ and its conjugate have equal symmetric counts, while their positive counts can differ;
+  both Z terms are needed.
+- At conductor one the completed function has two poles; omitting the correction would
+  lower the recovered zero count by two. A zero on an endpoint is counted using the stated
+  one-sided convention, not as a sign change at a nonzero endpoint.
+
+Prove `dirichletTuringIntegralBound`: for primitive χ of modulus q≥1, t₀>50 and h>0,
+`abs(integral(t0 to t0+h, S_chi(t))) <= 1.8397+0.1242*log(q*(t0+h)/(2*pi))`
+(Platt Theorem 3.3, p.5; Platt line 321). Apply the same bound to the conjugate character.
+
+In the sign test choose εχ with `norm(epsilon_chi)=1` and
+`epsilon_chi^2=(DirichletCharacter.rootNumber chi)^(-1)` and use the critical function
+`Z_chi(t)=epsilon_chi*q^((1/2+i*t)/2)*DirichletCharacter.completedLFunction chi (1/2+i*t)`.
+The primitive functional equation and complex conjugation make it real-valued; its
+nonzero factors preserve the critical-line zeros and their multiplicities. Replacing εχ
+by −εχ reverses every sign together and preserves sign changes (Platt lines 50–74).
+
+Prove `dirichletZeroCertificate_complete`: fix a primitive χ, T>0, an auxiliary
+[t₀,t₀+h] with t₀>max(50,T), zero-free endpoints, and a finite family of disjoint
+intervals inside [−T,T]. If certified sign changes of the real normalized critical-line
+function in those intervals give an integer lower count M∈ℕ, and the integrated argument identity
+and its enclosed Gamma and S terms give a real upper bound U for Nχ(T) with U<M+1,
+then Nχ(T)=M and every strip zero in that band lies on the critical line. The finite
+family and upper comparison concern the same symmetric band, and zeros at |Im s|=T
+are separately isolated or included by a zero-free outer height T'>T and restriction.
+This is the counting consequence of Platt §3, pp.4–5, retaining multiplicities.
+*Needs:* `dirichletArgumentCount`, `dirichletArgumentCount_integrated`,
+`dirichletTuringIntegralBound`, `dirichletLBox` (4.20).
+
+**Checks.**
+
+- M=0 and U<1 force an empty strip band; value enclosures alone do not.
+- Disjointness makes two intervals contribute two distinct zeros; overlapping intervals
+  cannot be counted twice.
+- A double zero contributes multiplicity two to N but gives no simple sign-change
+  witness; an incomplete lower count cannot pass equality with the upper count.
+
 ### 4.22 Platt’s finite-conductor zero theorem (`platt_bounded_height`)
 
 **Theorem.** For primitive χ of modulus q≤400000, every zero s of the native LFunction in 0<Re(s)<1 with |Im(s)|≤H(q) has Re(s)=1/2, where H(q)=max(10⁸/q,7.5·10⁷/q+200) for even q and max(10⁸/q,3.75·10⁷/q+200) for odd q. This parity is the modulus parity, not character parity. The unconditional finite computation is not an assumption of global GRH.
 
-*Proof sketch.* Reconstruct the character enumeration, interval evaluations, sign-change zero isolations and Turing upper count. Equality between the isolated zero count and the upper count excludes missed off-line zeros. The zero-count comparison and the specified finite character range are part of the theorem. ([Platt](#source-platt), Theorems 7.1–7.2, pp.14–15.) *Needs:* `dirichletLBox` (4.20); Mathlib `DirichletCharacter.LFunction`; Mathlib `DirichletCharacter.IsPrimitive`.
+*Proof sketch.* Reconstruct the character enumeration, interval evaluations, sign-change zero isolations and Turing upper count. Equality between the isolated zero count and the upper count excludes missed off-line zeros. The zero-count comparison and the specified finite character range are part of the theorem. ([Platt](#source-platt), Theorems 7.1–7.2, pp.14–15.) *Needs:* `dirichletLBox` (4.20); `dirichletArgumentCount`,
+`dirichletArgumentCount_integrated`, `dirichletTuringIntegralBound`,
+`dirichletZeroCertificate_complete` (4.21a); Mathlib `DirichletCharacter.LFunction`;
+Mathlib `DirichletCharacter.IsPrimitive`.
 
 ### 4.23 Platt’s central nonvanishing target (`platt_central_nonvanishing`)
 
@@ -2103,9 +2352,25 @@ printed pp.284–286 and 295–299). *Needs:* §§4.18, 4.31–4.32.
 
 ### 4.34 Correct multiplicity lift for Gram witnesses (`multiplicityGram_lift`)
 
+Define `multiplicityLift m t (i,r)=t_i/m_i` and
+`multiplicityBlockGram m A K (i,r) (j,s)=(if (i,r)=(j,s) then A else 0)-K_ij`
+on the sigma index `Σ i, Fin (m i)`. These are real-valued definitions, including empty
+blocks; positivity is a hypothesis of the reduction theorem. Their APIs are
+`multiplicityLift_apply`, `multiplicityLift_block_sum` (for m_i>0),
+`multiplicityBlockGram_apply` and `multiplicityBlockGram_transpose` (transpose K).
+
 **Theorem.** Let m_i>0 be block sizes, A∈ℝ and K an n×n real matrix. On the expanded index set {(i,r):0≤r<m_i}, put B_(i,r),(j,s)=A·δ_(i,r),(j,s)−K_ij. For any vector t, the expanded vector x_(i,r)=t_i/m_i satisfies xᵀBx=tᵀβt, where β_ij=(A/m_i)δ_ij−K_ij. Thus a certified negative value for β gives one for B. The lift is t_i/m_i; replacing it by t_i/√m_i changes the off-diagonal normalization. This equality does not assert equality of Euclidean unit-sphere minima.
 
 *Proof sketch.* Sum each constant block contribution and the diagonal terms separately. Each diagonal block contributes A·m_i·(t_i/m_i)²=A t_i²/m_i, while each off-diagonal block contributes −K_ij t_i t_j. ([CT](#source-ct), §2.4.2, Equation (2.4.4), p.278 and reduction pp.280–281; Algorithm 2.4.5, p.283.) *Needs:* `NegativeGramCertificate` (4.29).
+
+**Checks.**
+
+- With every m_i=1 the lift is t and the expanded matrix is `A*1-K`; singleton blocks
+  introduce no scaling.
+- For m=(2,3), A=6, K=`[[1,2],[2,4]]`, t=(2,3), the lift is five ones and its
+  expanded value is −34, agreeing with the reduced form. This tests division by m_i.
+- For n=1, m₀=0, A=0, K₀₀=1 and t₀=1, the expanded sum is empty and equals zero,
+  while the proposed reduced value is −1. Positive block sizes are necessary.
 
 ### Examples
 
@@ -2119,7 +2384,7 @@ printed pp.284–286 and 295–299). *Needs:* §§4.18, 4.31–4.32.
 
 ### Dependencies
 
-Layers CN.0–CN.3; Mathlib (`NonemptyInterval`, digamma, `DirichletCharacter.LFunction`, `ModularForm.L`, `WeakFEPair`, `Matrix.PosDef`); TauCetiRoadmap RealAlgebraicGeometry Layers 1–4.
+Layers CN.0–CN.3; Mathlib (`NonemptyInterval`, digamma, `DirichletCharacter.LFunction`, `ModularForm.L`, `WeakFEPair`, `Matrix.PosDef`); TauCetiRoadmap RealAlgebraicGeometry Layers 1–4; ContourIntegration Layer 2.
 
 ## Layer CN.5: Binding and replay of arithmetic datasets
 

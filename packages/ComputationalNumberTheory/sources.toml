@@ -28,7 +28,7 @@ sha256 = "b50e81d48d2fb794948414fee625d1d3ca19c191a87430ca38c8713c8f466b75"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-21"
-cited_for = ["Layer CN.3: Exact modular and elliptic arithmetic data", "3.1 Integral q-expansion lattice (`integralModularLattice`)", "3.2 Integral cusp-form lattice (`integralCuspLattice`)", "3.3 Integral Miller basis (`millerBasis`)", "3.4 Level-one congruence Sturm bound (`levelOne_congruence_sturm`)", "3.5 Exact equality of certified modular data (`modularDataEqual`)", "3.6 Level-one Hecke recurrence contract (`HasLevelOnePrimeRecurrence`)", "3.7 Integral Hecke matrix in the Miller basis (`integralHeckeMatrix`)"]
+cited_for = ["Layer CN.3: Exact modular and elliptic arithmetic data", "3.1 Integral q-expansion lattice (`integralModularLattice`)", "3.2 Integral cusp-form lattice (`integralCuspLattice`)", "3.3 Integral Miller basis (`millerBasis`)", "3.3a Full integral modular basis (`exists_integralModularBasis`)", "3.4 Level-one congruence Sturm bound (`levelOne_congruence_sturm`)", "3.5 Exact equality of certified modular data (`modularDataEqual`)", "3.6 Level-one Hecke recurrence contract (`HasLevelOnePrimeRecurrence`)", "3.7 Integral Hecke matrix in the Miller basis (`integralHeckeMatrix`)"]
 authors = "William Stein"
 title = "Modular Forms: A Computational Approach"
 year = 2007
@@ -49,7 +49,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["0.8 Isolated algebraic root certificate (`AlgebraicRootCertificate`)", "0.9 Exact rational root presentation (`rationalRootCertificate`)", "0.10 Addition of isolated algebraic numbers (`algebraic_add_certificate`)", "0.11 Multiplication of isolated algebraic numbers (`algebraic_mul_certificate`)", "0.12 Inversion of a nonzero algebraic number (`algebraic_inv_certificate`)", "0.13 Equality of isolated algebraic numbers (`algebraicEqual`)", "4.1 Rational interval multiplication (`intervalMul`)", "4.2 Enclosure under multiplication (`intervalMul_sound`)", "4.3 Partial interval reciprocal (`intervalInv`)", "4.4 Enclosure under reciprocal (`intervalInv_sound`)", "4.5 Outward dyadic rounding (`dyadicHull`)", "4.6 Width added by dyadic rounding (`dyadicHull_width`)", "4.7 Rational complex-box denotation (`complexBoxSet`)", "4.8 Unique integer extraction (`uniqueInteger`)", "4.9 Recovery of a known integral value (`uniqueInteger_sound`)", "4.18 Rational enclosures of CT scalars (`ctEnclosure`)", "4.19 Disjoint presentations of every distinct root (`exists_disjoint_root_certificates`)", "4.21 Enclosures of cusp-form values (`cuspLBox`)"]
+cited_for = ["0.8–0.13 and 4.19: enclosure and error semantics only; algebraic arithmetic uses the native relative algebraic closure", "4.1 Rational interval multiplication (`intervalMul`)", "4.2 Enclosure under multiplication (`intervalMul_sound`)", "4.3 Partial interval reciprocal (`intervalInv`)", "4.4 Enclosure under reciprocal (`intervalInv_sound`)", "4.5 Outward dyadic rounding (`dyadicHull`)", "4.6 Width added by dyadic rounding (`dyadicHull_width`)", "4.7 Rational complex-box denotation (`complexBoxSet`)", "4.8 Unique integer extraction (`uniqueInteger`)", "4.9 Recovery of a known integral value (`uniqueInteger_sound`)", "4.18 Rational enclosures of CT scalars (`ctEnclosure`)", "4.21 Enclosures of cusp-form values (`cuspLBox`)"]
 
 [[source]]
 id = "CT"
@@ -174,7 +174,7 @@ title = "Numerical computations concerning the GRH"
 year = 2013
 arxiv = "1305.3087v1"
 locator_scheme = "section"
-locator = "arXiv:1305.3087v1, 15 pages; §§4–7, pp.3–15; Theorem 7.1, p.14; Theorem 7.2, p.15"
+locator = "arXiv:1305.3087v1, 15 pages; Theorems 3.1–3.3, pp.4–5; §§4–7, pp.3–15; Theorem 7.1, p.14; Theorem 7.2, p.15"
 url = "https://arxiv.org/abs/1305.3087v1"
 fetched_from = "https://arxiv.org/pdf/1305.3087v1"
 fetched_at = "2026-10-21T17:27:10Z"
@@ -183,7 +183,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v1"
-cited_for = ["Roadmap: certified computational number theory and arithmetic data", "Scope and ownership", "Layer CN.4: Quantitative analytic bounds and finite Gram data", "4.20 Enclosures of continued Dirichlet values (`dirichletLBox`)", "4.22 Platt’s finite-conductor zero theorem (`platt_bounded_height`)", "4.23 Platt’s central nonvanishing target (`platt_central_nonvanishing`)", "4.24 No real zeros for conductor at most 400000 (`small_conductor_no_real_zero`)", "Layer CN.5: Binding and replay of arithmetic datasets"]
+cited_for = ["Roadmap: certified computational number theory and arithmetic data", "Scope and ownership", "Layer CN.4: Quantitative analytic bounds and finite Gram data", "4.20 Enclosures of continued Dirichlet values (`dirichletLBox`)", "4.21a Argument counts and Turing comparison", "4.22 Platt’s finite-conductor zero theorem (`platt_bounded_height`)", "4.23 Platt’s central nonvanishing target (`platt_central_nonvanishing`)", "4.24 No real zeros for conductor at most 400000 (`small_conductor_no_real_zero`)", "Layer CN.5: Binding and replay of arithmetic datasets"]
 
 [[source]]
 id = "PrattNotes"
@@ -242,7 +242,7 @@ cited_for = ["3.12 The first two nonordinary level-one primes (`small_nonordinar
 [[source]]
 id = "MilneANT"
 locator_scheme = "section"
-locator = "Version 3.08 (19 July 2020); Theorem 7.32, p.120; Theorem 7.33 and Lemmas 7.34–7.35, pp.121–122; Proposition 8.2, p.136"
+locator = "Version 3.08 (19 July 2020); Theorem 7.32, p.120; Theorem 7.33, Lemmas 7.34–7.35 and Remark 7.36, pp.121–122; Proposition 8.2, p.136"
 url = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/ANT.pdf"
 fetched_at = "2026-10-21T17:27:28Z"
@@ -250,7 +250,7 @@ sha256 = "24b83c789a89f25aebffb3cbe4ae5ca29edd0075acc072de093d140770630847"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-21"
-cited_for = ["1.26 Coprime factor lifting modulo prime powers (`henselLift`)", "2.19a Products and factorization of φ-polygons", "2.22 Squares of units in a finite extension of ℚ_p (`isSquare_iff_isSquare_mod`)", "2.23 Roots in ℚ_p from the decomposition of p (`card_padicRoots_eq`)"]
+cited_for = ["1.26 Coprime factor lifting modulo prime powers (`henselLift`)", "1.26a Coprime factors over complete DVRs (`henselFactor_completeDVR`)", "2.19a Products and factorization of φ-polygons", "2.22 Squares of units in a finite extension of ℚ_p (`isSquare_iff_isSquare_mod`)", "2.23 Roots in ℚ_p from the decomposition of p (`card_padicRoots_eq`)"]
 authors = "J. S. Milne"
 title = "Algebraic Number Theory"
 year = 2020

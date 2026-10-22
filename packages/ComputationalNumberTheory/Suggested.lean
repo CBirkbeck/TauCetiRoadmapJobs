@@ -1,10 +1,6 @@
 import Mathlib
 import TauCeti.AlgebraicGeometry.EllipticCurve.PointCount
-import TauCeti.AlgebraicGeometry.EllipticCurve.MordellWeil.LocalCondition
-import TauCeti.AlgebraicGeometry.EllipticCurve.MordellWeil.TwoTorsion
-import TauCeti.AlgebraicGeometry.EllipticCurve.DivisionPolynomial.Descent
-import TauCeti.NumberTheory.ModularForms.SturmBound
-import TauCeti.NumberTheory.LocalField.Squares
+import TauCeti.AlgebraicGeometry.EllipticCurve.MordellWeil.XSubT
 
 /-!
 # ComputationalNumberTheory: representative target signatures
@@ -52,6 +48,11 @@ theorem AlgebraicRootCertificate.value_unique (c : AlgebraicRootCertificate) (z 
     (him : (c.im.fst : ℝ) ≤ z.im ∧ z.im ≤ c.im.snd) : z = c.value := by
   sorry
 
+/-- Every complex number algebraic over the rationals admits an isolated-root presentation. -/
+theorem algebraicRootCertificate_exists (z : ℂ) (hz : IsAlgebraic ℚ z) :
+    ∃ c : AlgebraicRootCertificate, c.value = z := by
+  sorry
+
 /-- **Exact arithmetic of isolated algebraic numbers** (README 0.10–0.12). -/
 theorem algebraic_add_certificate (a b : AlgebraicRootCertificate) :
     ∃ c : AlgebraicRootCertificate, c.value = a.value + b.value := by
@@ -78,7 +79,7 @@ def rationalRootCertificate (r : ℚ) : AlgebraicRootCertificate where
   poly_ne_zero := by
     intro h
     have h1 := congrArg (fun f : ℚ[X] => f.coeff 1) h
-    simpa using h1
+    simp at h1
   re := NonemptyInterval.pure r
   im := NonemptyInterval.pure 0
   isolates := by
@@ -90,7 +91,7 @@ def rationalRootCertificate (r : ℚ) : AlgebraicRootCertificate where
 /-- Decoding the rational presentation is the usual rational embedding. -/
 theorem rationalRootCertificate_value (r : ℚ) : (rationalRootCertificate r).value = r := by
   have h := (rationalRootCertificate r).isolates.exists.choose_spec.1
-  simpa [AlgebraicRootCertificate.value, rationalRootCertificate] using h
+  exact sub_eq_zero.mp (by simpa [AlgebraicRootCertificate.value, rationalRootCertificate] using h)
 
 /-- Equality of isolated algebraic presentations is equality of their decoded native values. -/
 def algebraicEqual (a b : AlgebraicRootCertificate) : Prop := a.value = b.value
@@ -264,15 +265,37 @@ theorem exists_presentationChange {f g : F[X]} (hfm : f.Monic) (hgm : g.Monic) (
   sorry
 
 /-- Over `ZMod 3`, `(X + 2, X + 1)` changes `X² + 1` into `X² + X + 2`. -/
-theorem PresentationChange.translate_three : Nonempty (PresentationChange (X ^ 2 + 1 : (ZMod 3)[X]) (X ^ 2 + X + 2)) := by
-  sorry
+theorem PresentationChange.translate_three :
+    ∃ P : PresentationChange (X ^ 2 + 1 : (ZMod 3)[X]) (X ^ 2 + X + 2),
+      P.b = X + 2 ∧ P.c = X + 1 := by
+  have h3 : (3 : (ZMod 3)[X]) = 0 := by
+    exact CharP.cast_eq_zero ((ZMod 3)[X]) 3
+  refine ⟨⟨X + 2, X + 1, ?_, ?_, ?_⟩, rfl, rfl⟩
+  · apply dvd_of_eq
+    change X ^ 2 + X + 2 = (X ^ 2 + 1).comp (X + C (2 : ZMod 3))
+    simp only [add_comp, pow_comp, X_comp, one_comp]
+    change X ^ 2 + X + 2 = (X + 2) ^ 2 + 1
+    linear_combination -(X + 1) * h3
+  · apply dvd_of_eq
+    change X ^ 2 + 1 = (X ^ 2 + X + C (2 : ZMod 3)).comp (X + 1)
+    simp only [add_comp, pow_comp, X_comp, C_comp]
+    change X ^ 2 + 1 = (X + 1) ^ 2 + (X + 1) + 2
+    linear_combination -(X + 1) * h3
+  · have h : (X + 2 : (ZMod 3)[X]).comp (X + 1) - X = 0 := by
+      change (X + C (2 : ZMod 3)).comp (X + 1) - X = 0
+      simp only [add_comp, X_comp, C_comp]
+      change (X + 1) + 2 - X = 0
+      linear_combination h3
+    rw [h]
+    exact dvd_zero _
 
+omit [Fintype F] in
 /-- The identity substitutions give inverse presentation data. -/
 theorem PresentationChange.identity (f : F[X]) : Nonempty (PresentationChange f f) := by
   exact ⟨⟨X, X, by simp, by simp, by simp⟩⟩
 
 /-- A root substitution need not be its own inverse: scaling by two over the field of seven elements. -/
-theorem PresentationChange.scaling_seven_impossible :
+theorem PresentationChange.scaling_seven_impossible [Fact (Nat.Prime 7)] :
     ¬ ∃ P : PresentationChange (X ^ 3 - 2 : (ZMod 7)[X]) (X ^ 3 - 2),
       P.b = 2 * X ∧ P.c = 2 * X := by
   sorry
@@ -361,7 +384,14 @@ def StrongLiar (n a : ℕ) : Prop :=
         (a : ZMod n) ^ ((n - 1) / 2 ^ (n - 1).factorization 2 * 2 ^ j) = -1)
 
 /-- A prime base passes and input one fails the roadmap strong-liar predicate. -/
-example : StrongLiar 7 3 ∧ ¬ StrongLiar 1 1 := by decide
+example : StrongLiar 7 3 ∧ ¬ StrongLiar 1 1 := by
+  refine ⟨⟨by norm_num, by decide, by norm_num, by norm_num, ?_⟩, by simp [StrongLiar]⟩
+  have h6 : (6 : ℕ).factorization 2 = 1 := by
+    rw [show (6 : ℕ) = 2 ^ 1 * 3 by norm_num, Nat.factorization_mul (by norm_num) (by norm_num),
+      Nat.Prime.factorization_pow Nat.prime_two]
+    simp [Nat.factorization_eq_zero_of_not_dvd (by norm_num : ¬ 2 ∣ 3)]
+  right
+  exact ⟨0, by rw [h6]; norm_num, by rw [h6]; decide⟩
 
 /-- The composite `2047=23*89` passes the strong test at base two. -/
 theorem strongLiar_2047_composite : StrongLiar 2047 2 ∧ ¬ (2047).Prime := by
@@ -419,6 +449,10 @@ theorem AKSIdentities.five_all (r ℓ : ℕ) : AKSIdentities 5 r ℓ := by
 example (n r : ℕ) : AKSIdentities n r 0 := by
   intro j hj h0
   omega
+
+/-- A nonempty identity range rejects nine: the two remainders at `j=1` differ. -/
+theorem AKSIdentities.nine_nonempty_rejected : ¬ AKSIdentities 9 2 1 := by
+  sorry
 
 /-- **Shoup's AKS test** (README 1.13), as an arithmetic predicate excluding
 `n ≤ 1` and perfect powers, and imposing the finite congruence family up to `2·len(n)·⌊√r⌋ + 1`. -/
@@ -546,7 +580,7 @@ example : ∃ c : FiniteFieldFactorCertificate (1 : F[X]), c.lead = 1 ∧ c.fact
   refine ⟨⟨1, one_ne_zero, [], ?_, ?_, ?_, ?_⟩, rfl, rfl⟩ <;> simp
 
 /-- The split quadratic over the field of five elements has its two distinct linear factors. -/
-theorem FiniteFieldFactorCertificate.five_split :
+theorem FiniteFieldFactorCertificate.five_split [Fact (Nat.Prime 5)] :
     ∃ c : FiniteFieldFactorCertificate (X ^ 2 + 1 : (ZMod 5)[X]),
       c.lead = 1 ∧ c.factors = [(X - C 2, 1), (X - C 3, 1)] := by
   sorry
@@ -589,6 +623,40 @@ theorem henselLift (p : ℕ) [Fact p.Prime] (k : ℕ) (hk : 1 ≤ k) (f : ℤ[X]
       f.map (Int.castRingHom (ZMod (p ^ k))) = gh.1 * gh.2 := by
   sorry
 
+/-- Coprime monic residue factors lift uniquely over every complete DVR (README 1.26a). -/
+theorem henselFactor_completeDVR (O : Type*) [CommRing O] [IsDomain O]
+    [IsDiscreteValuationRing O] [IsAdicComplete (IsLocalRing.maximalIdeal O) O]
+    (f : O[X]) (hf : f.Monic)
+    (g₀ h₀ : (IsLocalRing.ResidueField O)[X]) (hg₀ : g₀.Monic) (hh₀ : h₀.Monic)
+    (hcop : IsCoprime g₀ h₀) (hfac : f.map (IsLocalRing.residue O) = g₀ * h₀) :
+    ∃! gh : O[X] × O[X], gh.1.Monic ∧ gh.2.Monic ∧ f = gh.1 * gh.2 ∧
+      gh.1.map (IsLocalRing.residue O) = g₀ ∧ gh.2.map (IsLocalRing.residue O) = h₀ := by
+  sorry
+
+/-- The factor lift at modulus 49 and the two distinct noncoprime lifts at modulus four. -/
+theorem henselLift_factor_controls :
+    (X ^ 2 - 2 : (ZMod 49)[X]) = (X - 10) * (X + 10) ∧
+    (X - 10 : (ZMod 49)[X]).map (ZMod.castHom (by decide : 7 ∣ 49) (ZMod 7)) = X - 3 ∧
+    (X + 10 : (ZMod 49)[X]).map (ZMod.castHom (by decide : 7 ∣ 49) (ZMod 7)) = X + 3 ∧
+    (X ^ 2 : (ZMod 4)[X]) = X * X ∧
+    (X ^ 2 : (ZMod 4)[X]) = (X + 2) * (X + 2) ∧
+    (X : (ZMod 4)[X]) ≠ X + 2 := by
+  have h49 : (49 : (ZMod 49)[X]) = 0 := CharP.cast_eq_zero _ 49
+  have h4 : (4 : (ZMod 4)[X]) = 0 := CharP.cast_eq_zero _ 4
+  refine ⟨?_, ?_, ?_, by ring, ?_, ?_⟩
+  · linear_combination 2 * h49
+  · simp only [Polynomial.map_sub, Polynomial.map_X, Polynomial.map_ofNat]
+    change X - C (10 : ZMod 7) = X - C (3 : ZMod 7)
+    rw [show (10 : ZMod 7) = 3 by decide]
+  · simp only [Polynomial.map_add, Polynomial.map_X, Polynomial.map_ofNat]
+    change X + C (10 : ZMod 7) = X + C (3 : ZMod 7)
+    rw [show (10 : ZMod 7) = 3 by decide]
+  · linear_combination -(X + 1) * h4
+  · intro h
+    have h0 : (0 : ZMod 4) = 2 := by
+      simpa using congrArg (fun f : (ZMod 4)[X] => f.coeff 0) h
+    exact (by decide : (0 : ZMod 4) ≠ 2) h0
+
 /-- **Rational polynomial factor certificate** (README 1.27): a nonzero scalar and monic
 irreducible factors over `ℚ`, with multiplicity by repetition. -/
 structure RationalFactorCertificate (f : ℚ[X]) where
@@ -601,8 +669,7 @@ structure RationalFactorCertificate (f : ℚ[X]) where
 
 /-- The zero polynomial has no factor certificate. -/
 example (c : RationalFactorCertificate 0) : False := by
-  have hp : c.factors.prod ≠ 0 := List.prod_ne_zero_iff.mpr
-    (fun g hg => (c.monic g hg).ne_zero)
+  have hp : c.factors.prod ≠ 0 := List.prod_ne_zero (fun h0 => (c.monic 0 h0).ne_zero rfl)
   exact (mul_ne_zero (Polynomial.C_ne_zero.mpr c.lead_ne_zero) hp) c.eq_prod.symm
 
 /-- Units use an empty list, and repeated rational factors stay repeated in the presentation. -/
@@ -702,7 +769,7 @@ theorem multiplierRing_integer_lattice :
 
 /-- **Local maximality of an order** (README 2.3): every integral element has a multiple prime to
 `p` in `R`. -/
-def IsPMaximal (R : Subalgebra ℤ K) (p : ℕ) : Prop :=
+def IsPMaximal {K : Type*} [Field K] [CharZero K] (R : Subalgebra ℤ K) (p : ℕ) : Prop :=
   ∀ x : K, IsIntegral ℤ x → ∃ a : ℤ, ¬ (p : ℤ) ∣ a ∧ (a : K) * x ∈ R
 
 /-- At `p = 1` no denominator passes. -/
@@ -717,7 +784,7 @@ theorem isPMaximal_integer_order (p : ℕ) [Fact p.Prime] :
   sorry
 
 /-- Enlargement preserves the prime-to-p denominator-clearing property. -/
-theorem isPMaximal_mono {K : Type*} [Field K] [NumberField K]
+theorem isPMaximal_mono {K : Type*} [Field K] [CharZero K]
     (R S : Subalgebra ℤ K) (p : ℕ) (hRS : R ≤ S) (hR : IsPMaximal R p) : IsPMaximal S p := by
   intro x hx
   obtain ⟨a, ha, hax⟩ := hR x hx
@@ -730,14 +797,13 @@ theorem nilpotent_iff_frobenius_zero (p : ℕ) [Fact p.Prime] {A : Type*} [CommR
   sorry
 
 /-- **The `p`-radical in field coordinates** (README 2.5): the radical of `pR` in `R`, viewed as
-a lattice in `K`. For a prime `p` and an order `R` it is the set of `x ∈ R` with a positive power
-in `pR`. -/
+a lattice in `K`. For any natural `p` and any subalgebra `R`, it consists of the elements of `R`
+with a positive power in `pR`. -/
 def pRadicalLattice (R : Subalgebra ℤ K) (p : ℕ) : Submodule ℤ K :=
   ((Ideal.span {(p : R)}).radical.restrictScalars ℤ).map (R.val.toLinearMap.restrictScalars ℤ)
 
 /-- The radical lattice consists of elements with a positive power in pR. -/
-theorem mem_pRadicalLattice {K : Type*} [Field K] [NumberField K] (R : Subalgebra ℤ K) (p : ℕ) (hp : p.Prime)
-    (hR : (Subalgebra.toSubmodule R).FG) (x : K) :
+theorem mem_pRadicalLattice {K : Type*} [Field K] [NumberField K] (R : Subalgebra ℤ K) (p : ℕ) (x : K) :
     x ∈ pRadicalLattice R p ↔ x ∈ R ∧ ∃ k ≥ 1, ∃ y ∈ R, x ^ k = (p : K) * y := by
   sorry
 
@@ -749,7 +815,7 @@ theorem pRadicalLattice_integer_three : (3 : ℚ) ∈ pRadicalLattice (⊥ : Sub
 /-- The zero radical of a characteristic-zero order is zero. -/
 theorem pRadicalLattice_zero {K : Type*} [Field K] [NumberField K]
     (R : Subalgebra ℤ K) : pRadicalLattice R 0 = ⊥ := by
-  sorry
+  simp [pRadicalLattice]
 
 /-- **Multiplier criterion for `p`-maximality** (README 2.6), for an order `R` (finitely generated,
 spanning `K` over `ℚ`). -/
@@ -918,6 +984,11 @@ theorem isSquare_iff_isSquare_mod (L : Type*) [Field L] [ValuativeRel L]
       ∃ w : 𝒪[L], (u : 𝒪[L]) - w ^ 2 ∈ Ideal.span {4 * π} := by
   sorry
 
+/-- Odd and dyadic unit-square controls distinguish the residue modulus `4π`. -/
+theorem localSquare_controls [Fact (Nat.Prime 5)] :
+    IsSquare (17 : ℚ_[2]) ∧ ¬ IsSquare (5 : ℚ_[2]) ∧ IsSquare (6 : ℚ_[5]) := by
+  sorry
+
 /-- The degree-one primes above `p` count the roots in `ℚ_p`; a generating root identifies
 `K` with `ℚ[X]/(f)` (README 2.23). -/
 theorem card_padicRoots_eq (K : Type*) [Field K] [NumberField K]
@@ -973,8 +1044,8 @@ example {L : Type*} [NormedField L] (π : L) (hπ : π ≠ 0) (hπnorm : ‖π�
 /-- A uniformizer inverse has the exact one-digit expansion with initial exponent minus one. -/
 theorem LocalExpansionCertificate.uniformizer_inverse {L : Type*} [NormedField L]
     (π : L) (hπ : π ≠ 0) (hnorm : ‖π‖ < 1) :
-    ∃ c : LocalExpansionCertificate L π π⁻¹ 1, c.valuation = -1 ∧ c.digits 0 = 1 := by
-  sorry
+    ∃ c : LocalExpansionCertificate L π π⁻¹ 1, c.valuation = -1 ∧ c.digits 0 = 1 :=
+  ⟨⟨hπ, hnorm, -1, fun _ => 1, by simp, by simp⟩, rfl, rfl⟩
 
 /-- A precision-one zero centre cannot enclose one when the uniformizer has norm below one. -/
 theorem LocalExpansionCertificate.one_not_zero_centre {L : Type*} [NormedField L]
@@ -1041,6 +1112,17 @@ theorem exists_millerBasis (k : ℕ) (hk : Even k) :
         if i = j then 1 else 0 := by
   sorry
 
+/-- The full integral modular lattice has a basis detected by distinct coefficients at the
+Sturm bound, including the constant coefficient (README 3.3a). -/
+theorem exists_integralModularBasis (k : ℕ) :
+    ∃ b : Module.Basis (Fin (Module.finrank ℂ (ModularForm 𝒮ℒ (k : ℤ)))) ℤ
+        (integralModularLattice k),
+      ∃ pivot : Fin (Module.finrank ℂ (ModularForm 𝒮ℒ (k : ℤ))) → ℕ,
+        Function.Injective pivot ∧ (∀ i, pivot i ≤ k / 12) ∧
+          ∀ i j, (qExpansion 1 (b j : ModularForm 𝒮ℒ (k : ℤ))).coeff (pivot i) =
+            if i = j then 1 else 0 := by
+  sorry
+
 /-- **Level-one congruence Sturm bound** (README 3.4). -/
 theorem levelOne_congruence_sturm (k : ℕ) (p : ℕ) (hp : p.Prime)
     (f : integralModularLattice (k : ℤ))
@@ -1100,7 +1182,7 @@ theorem pointCount_five_cubic [Fact (Nat.Prime 5)] : (⟨0, 0, 0, 1, 1⟩ : Weie
   sorry
 
 /-- Odd characteristic, singular models and characteristic two give discriminating point counts. -/
-theorem pointCount_small_character_controls :
+theorem pointCount_small_character_controls [Fact (Nat.Prime 5)] :
     (⟨0, 0, 0, 1, 0⟩ : WeierstrassCurve (ZMod 3)).pointCount = 4 ∧
     (⟨0, 0, 0, 0, 0⟩ : WeierstrassCurve (ZMod 5)).pointCount = 6 ∧
     (⟨0, 0, 0, 0, 1⟩ : WeierstrassCurve (ZMod 2)).pointCount = 3 := by
@@ -1144,6 +1226,19 @@ theorem localImageSpan_eq_range_of_card_real [DecidableEq ℝ] (W : WeierstrassC
     (hxs : ∀ x ∈ xs, 0 < W.f.eval x)
     (hcard : 2 * Nat.card (localImageSpan W xs) = 1 + Nat.card {x : ℝ // W.f.eval x = 0}) :
     localImageSpan W xs = (WeierstrassCurve.Affine.μ (W := W)).range := by
+  sorry
+
+/-- The real descent image on `y²=x³−x` is generated by the two displayed abscissae. -/
+theorem localImageSpan_real_controls [DecidableEq ℝ] (W : WeierstrassCurve.Affine ℝ)
+    [W.IsElliptic] [W.IsCharNeTwoNF] (hW : W = ⟨0, 0, 0, -1, 0⟩) :
+    Nat.card (localImageSpan W [-1 / 2, 2]) = 2 := by
+  sorry
+
+/-- One dyadic abscissa generates order two, below the full local target of order eight. -/
+theorem localImageSpan_dyadic_controls [DecidableEq ℚ_[2]]
+    (W : WeierstrassCurve.Affine ℚ_[2]) [W.IsElliptic] [W.IsCharNeTwoNF]
+    (hW : W = ⟨0, 0, 0, -1, 0⟩) :
+    Nat.card (localImageSpan W [1 / 4]) = 2 ∧ Nat.card (localImageSpan W [1 / 4]) < 8 := by
   sorry
 
 /-- **`p`-saturated subgroups** (README 3.22). -/
@@ -1200,11 +1295,12 @@ example : (IsPSaturated (⊤ : AddSubgroup (ZMod 3)) 2 ∧
     · simp
   · constructor
     · intro h
-      have h1 := h 1 (by norm_num)
-      norm_num at h1
+      have h1 := h 1 (AddSubgroup.mem_bot.mpr (by decide))
+      exact one_ne_zero (AddSubgroup.mem_bot.mp h1)
     · intro h
-      have h1 := h (0, 1) (by norm_num)
-      norm_num at h1
+      have h1 := h (0, 1) (AddSubgroup.mem_prod.mpr ⟨AddSubgroup.mem_top _,
+        AddSubgroup.mem_bot.mpr (by decide)⟩)
+      exact one_ne_zero (AddSubgroup.mem_bot.mp (AddSubgroup.mem_prod.mp h1).2)
 
 /-- **Exact divisibility test** (README 3.24): `P = (x, y)` is divisible by `p` in `W(ℚ)` exactly
 when a rational root `x₀` of `Φ_p − x·ΨSq_p` carries a point `Q` with `p•Q = P`. -/
@@ -1267,7 +1363,7 @@ example :
     intervalInv ⟨((2 : ℚ), 4), by norm_num⟩ = some ⟨(1 / 4, 1 / 2), by norm_num⟩ ∧
     intervalInv ⟨((-4 : ℚ), -2), by norm_num⟩ = some ⟨(-1 / 2, -1 / 4), by norm_num⟩ ∧
     intervalInv (NonemptyInterval.pure 0) = none := by
-  decide
+  norm_num [intervalInv, NonemptyInterval.pure]
 
 /-- **Outward dyadic rounding** (README 4.5): floor and ceiling on the `2^(−p)` grid. -/
 def dyadicHull (p : ℕ) (I : NonemptyInterval ℚ) : NonemptyInterval ℚ :=
@@ -1305,7 +1401,8 @@ example : Complex.I ∈ complexBoxSet (NonemptyInterval.pure 0) (NonemptyInterva
 /-- The zero singleton rectangle denotes precisely the zero complex number. -/
 example : complexBoxSet (NonemptyInterval.pure 0) (NonemptyInterval.pure 0) = {0} := by
   ext z
-  change ((0 ≤ z.re ∧ z.re ≤ 0) ∧ (0 ≤ z.im ∧ z.im ≤ 0)) ↔ z = 0
+  simp only [complexBoxSet, Set.mem_ofPred_eq, Set.mem_singleton_iff, NonemptyInterval.pure,
+    Rat.cast_zero]
   constructor
   · rintro ⟨hr, hi⟩
     apply Complex.ext <;> simp only [Complex.zero_re, Complex.zero_im] <;> linarith
@@ -1341,7 +1438,6 @@ def ctTailKernel (x : ℝ) : ℝ :=
 example : ctTailKernel 0 = 2 / Real.pi ^ 2 := by
   simp only [ctTailKernel, neg_zero, Real.exp_zero, zero_pow (by decide : 2 ≠ 0), zero_add, mul_one]
   field_simp [Real.pi_ne_zero]
-  <;> ring
 
 /-- The Odlyzko kernel is strictly positive at every real argument. -/
 theorem ctTailKernel_pos (x : ℝ) : 0 < ctTailKernel x := by
@@ -1380,12 +1476,86 @@ theorem trigamma_series_remainder (z : ℂ) (hz : 0 < z.re) (N : ℕ) (hN : 1 �
       1 / ((N : ℝ) - 1 + min 1 z.re) := by
   sorry
 
+/-- At one, every digamma truncation equals `−γ` and the exact value has zero remainder. -/
+theorem digamma_one_controls (N : ℕ) (_hN : 1 ≤ N) :
+    (-(Real.eulerMascheroniConstant : ℂ) +
+      ∑ n ∈ Finset.range N, ((n + 1 : ℂ)⁻¹ - (n + (1 : ℂ))⁻¹)) =
+        -(Real.eulerMascheroniConstant : ℂ) ∧
+    Complex.digamma 1 = -(Real.eulerMascheroniConstant : ℂ) := by
+  simp [Complex.digamma_one]
+
+/-- At one the trigamma series gives the stated first two sums and discriminating errors. -/
+theorem trigamma_one_controls :
+    deriv Complex.digamma 1 = (Real.pi ^ 2 / 6 : ℂ) ∧
+    (∑ n ∈ Finset.range 1, (n + (1 : ℂ))⁻¹ ^ 2) = 1 ∧
+    (∑ n ∈ Finset.range 2, (n + (1 : ℂ))⁻¹ ^ 2) = 5 / 4 ∧
+    0 < ‖deriv Complex.digamma 1 - 1‖ ∧ ‖deriv Complex.digamma 1 - 1‖ < 1 ∧
+    ‖deriv Complex.digamma 1 - 5 / 4‖ ≤ 1 / 2 := by
+  sorry
+
 /-- The weighted alternating kernel tail starts after `n=N`, on its decreasing range. -/
 theorem ctTailKernel_weighted_alternating_tail (α : ℝ) (hα : 0 < α) (N : ℕ)
     (hN : 1 ≤ α * (N + 1)) :
     |(∑' n : ℕ, (-1 : ℝ) ^ n * (n + 1) * ctTailKernel (α * (n + 1))) -
       ∑ n ∈ Finset.range N, (-1 : ℝ) ^ n * (n + 1) * ctTailKernel (α * (n + 1))| ≤
         (N + 1) * ctTailKernel (α * (N + 1)) := by
+  sorry
+
+/-- The eight real CT scalar expressions in their prescribed Fourier/Laplace order
+(README 4.17), with the digamma, derivative and convergent-tail formulas. -/
+def ctExplicitFormula (l : ℝ) (w : ℕ) : Fin 8 → ℝ :=
+  let phi : ℂ → ℂ := fun z => (Complex.digamma ((z + 1) / 2) - Complex.digamma (z / 2)) / 2
+  let z0 : ℂ := 1 / 2 + Complex.I * (π / l : ℝ)
+  let z1 : ℂ := 1 + Complex.I * (π / l : ℝ)
+  let zF : ℂ := 1 / 2 + (w : ℂ) / 4 + Complex.I * (π / (2 * l) : ℝ)
+  let zG : ℂ := (1 + (w : ℂ)) / 2 + Complex.I * (π / l : ℝ)
+  let S : ℝ → ℝ → ℝ := fun a b => ∑' n : ℕ, ctTailKernel (a * (b + n))
+  let T : ℝ → ℝ → ℝ := fun a b => ∑' n : ℕ, (-1 : ℝ) ^ n * ctTailKernel (a * (b + n))
+  let W : ℝ → ℝ := fun a => ∑' n : ℕ, (-1 : ℝ) ^ n * (n + 1) * ctTailKernel (a * (n + 1))
+  ![4 * (phi z0).re - 4 / π * (phi z0).im + 4 / l * (deriv phi z0).re + 4 * l * T l (1 / 2),
+    8 * l / π ^ 2,
+    log π - (Complex.digamma zF).re + (Complex.digamma zF).im / π -
+      (deriv Complex.digamma zF).re / (2 * l) + 2 * l * S (2 * l) (1 / 2 + (w : ℝ) / 4),
+    1 + 2 * π / l * (phi z1).im + 2 * π / l ^ 2 * (deriv phi z1).im + 2 * l * W l,
+    8 * l / π ^ 2,
+    4 * π ^ 2 * l * (1 + cosh (l / 2)) / (l ^ 2 / 4 + π ^ 2) ^ 2,
+    log (2 * π) - (Complex.digamma zG).re + (Complex.digamma zG).im / π -
+      (deriv Complex.digamma zG).re / l + l * S l ((1 + (w : ℝ)) / 2),
+    (phi z0).re - (phi z0).im / π + (deriv phi z0).re / l + l * T l (1 / 2)]
+
+/-- The first F and G Fourier slots have exactly the same value. -/
+theorem ctExplicitFormula_shared_value (l : ℝ) (w : ℕ) :
+    ctExplicitFormula l w 1 = ctExplicitFormula l w 4 := rfl
+
+/-- Both shared Fourier slots have value `8*l/π²` (README 4.17). -/
+theorem ctExplicitFormula_fourier (l : ℝ) (w : ℕ) :
+    ctExplicitFormula l w 1 = 8 * l / π ^ 2 ∧
+      ctExplicitFormula l w 4 = 8 * l / π ^ 2 := ⟨rfl, rfl⟩
+
+/-- The imaginary-argument G Fourier slot has the prescribed cosh value (README 4.17). -/
+theorem ctExplicitFormula_G_imag (l : ℝ) (w : ℕ) :
+    ctExplicitFormula l w 5 =
+      4 * π ^ 2 * l * (1 + cosh (l / 2)) / (l ^ 2 / 4 + π ^ 2) ^ 2 := rfl
+
+/-- The shared slots scale by `l`, as witnessed at lengths one and two. -/
+example (w : ℕ) :
+    ctExplicitFormula 1 w 1 = 8 / π ^ 2 ∧ ctExplicitFormula 1 w 4 = 8 / π ^ 2 ∧
+    ctExplicitFormula 2 w 1 = 16 / π ^ 2 ∧ ctExplicitFormula 2 w 4 = 16 / π ^ 2 := by
+  norm_num [ctExplicitFormula]
+
+/-- The F scalar enclosures at lengths one and two have the displayed rational bounds. -/
+theorem ctExplicitFormula_rational_controls (w : ℕ) :
+    (4 / 5 : ℝ) < ctExplicitFormula 1 w 1 ∧ ctExplicitFormula 1 w 1 < 41 / 50 ∧
+    (8 / 5 : ℝ) ≤ ctExplicitFormula 2 w 1 ∧ ctExplicitFormula 2 w 1 ≤ 41 / 25 := by
+  sorry
+
+/-- Every CT scalar has rational enclosures at every precision; the shared slots use
+identical intervals (README 4.18). -/
+theorem exists_ctEnclosure (l : ℚ) (hl : 0 < l) (w P : ℕ) :
+    ∃ I : Fin 8 → NonemptyInterval ℚ,
+      (∀ q, ((I q).fst : ℝ) ≤ ctExplicitFormula l w q ∧
+        ctExplicitFormula l w q ≤ ((I q).snd : ℝ)) ∧
+      (∀ q, (I q).snd - (I q).fst ≤ 1 / (2 : ℚ) ^ P) ∧ I 1 = I 4 := by
   sorry
 
 end ExplicitFormula
@@ -1599,25 +1769,71 @@ example : GramDatasetValid [⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun
        ⟨1, (fun _ _ => ⟨(-2, -1), by norm_num⟩), (fun _ => 0)⟩] := by
   norm_num [GramDatasetValid, GramWitnessValid, Fin.sum_univ_succ, funext_iff]
 
+/-- The vector constant on each multiplicity block, with block total `t i` (README 4.34). -/
+def multiplicityLift {n : ℕ} (m : Fin n → ℕ) (t : Fin n → ℝ)
+    (a : Σ i, Fin (m i)) : ℝ := t a.1 / m a.1
+
+/-- Each coordinate of the lift divides the block total by its size (README 4.34). -/
+theorem multiplicityLift_apply {n : ℕ} (m : Fin n → ℕ) (t : Fin n → ℝ)
+    (i : Fin n) (r : Fin (m i)) : multiplicityLift m t ⟨i, r⟩ = t i / m i := rfl
+
+/-- A positive-size block has total equal to the original coordinate (README 4.34). -/
+theorem multiplicityLift_block_sum {n : ℕ} (m : Fin n → ℕ) (t : Fin n → ℝ)
+    (i : Fin n) (hi : 0 < m i) :
+    ∑ r : Fin (m i), multiplicityLift m t ⟨i, r⟩ = t i := by
+  have hmi : (m i : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (Nat.ne_of_gt hi)
+  simp only [multiplicityLift, Finset.sum_const, Finset.card_univ, Fintype.card_fin,
+    nsmul_eq_mul]
+  field_simp
+
+/-- The expanded Gram matrix, with scalar diagonal and constant block interactions
+(README 4.34). -/
+def multiplicityBlockGram {n : ℕ} (m : Fin n → ℕ) (A : ℝ)
+    (Kmat : Matrix (Fin n) (Fin n) ℝ) : Matrix (Σ i, Fin (m i)) (Σ i, Fin (m i)) ℝ :=
+  fun a b => (if a = b then A else 0) - Kmat a.1 b.1
+
+/-- Each expanded Gram entry subtracts its block interaction from the scalar diagonal
+(README 4.34). -/
+theorem multiplicityBlockGram_apply {n : ℕ} (m : Fin n → ℕ) (A : ℝ)
+    (Kmat : Matrix (Fin n) (Fin n) ℝ) (a b : Σ i, Fin (m i)) :
+    multiplicityBlockGram m A Kmat a b = (if a = b then A else 0) - Kmat a.1 b.1 := rfl
+
+/-- Transposing block interactions transposes the expanded matrix (README 4.34). -/
+theorem multiplicityBlockGram_transpose {n : ℕ} (m : Fin n → ℕ) (A : ℝ)
+    (Kmat : Matrix (Fin n) (Fin n) ℝ) :
+    (multiplicityBlockGram m A Kmat).transpose = multiplicityBlockGram m A Kmat.transpose := by
+  ext a b
+  simp [multiplicityBlockGram, eq_comm]
+
 /-- **The multiplicity lift** (README 4.34): `x_(i,r) = t_i/m_i` turns the block matrix
 `A·δ − K_(ij)` into `β = (A/m_i)δ_ij − K_ij`. -/
 theorem multiplicityGram_lift {n : ℕ} (m : Fin n → ℕ) (hm : ∀ i, 0 < m i) (A : ℝ)
     (Kmat : Matrix (Fin n) (Fin n) ℝ) (t : Fin n → ℝ) :
     ∑ a : (Σ i, Fin (m i)), ∑ b : (Σ i, Fin (m i)),
-        ((if a = b then A else 0) - Kmat a.1 b.1) * (t a.1 / m a.1) * (t b.1 / m b.1) =
+        multiplicityBlockGram m A Kmat a b * multiplicityLift m t a * multiplicityLift m t b =
       ∑ i, ∑ j, ((if i = j then A / m i else 0) - Kmat i j) * t i * t j := by
   sorry
 
-/-- The actual five-coordinate lift for blocks two and three has quadratic value minus 34. -/
+/-- Direct expansion for blocks two and three gives minus 34, independently of the lift theorem. -/
 example :
     ∑ a : (Σ i : Fin 2, Fin ((![(2 : ℕ), 3] : Fin 2 → ℕ) i)),
       ∑ b : (Σ i : Fin 2, Fin ((![(2 : ℕ), 3] : Fin 2 → ℕ) i)),
-        ((if a = b then (6 : ℝ) else 0) -
-          (!![1, 2; 2, 4] : Matrix (Fin 2) (Fin 2) ℝ) a.1 b.1) *
-        ((![(2 : ℝ), 3] : Fin 2 → ℝ) a.1 / (![(2 : ℕ), 3] : Fin 2 → ℕ) a.1) *
-        ((![(2 : ℝ), 3] : Fin 2 → ℝ) b.1 / (![(2 : ℕ), 3] : Fin 2 → ℕ) b.1) = -34 := by
-  have h := multiplicityGram_lift (![(2 : ℕ), 3]) (by decide)
-    6 (!![1, 2; 2, 4]) (![(2 : ℝ), 3])
-  convert h using 1 <;> norm_num [Fin.sum_univ_two]
+        multiplicityBlockGram ![2, 3] 6 (!![1, 2; 2, 4]) a b *
+          multiplicityLift ![2, 3] ![2, 3] a * multiplicityLift ![2, 3] ![2, 3] b = -34 := by
+  simp only [Fintype.sum_sigma, Fin.sum_univ_two]
+  norm_num [multiplicityLift, multiplicityBlockGram, Fin.sum_univ_succ, Sigma.ext_iff]
+
+/-- Singleton blocks preserve the original matrix; a zero block invalidates the reduction. -/
+example :
+    (∀ (A : ℝ) (Kmat : Matrix (Fin 1) (Fin 1) ℝ) (t : Fin 1 → ℝ),
+      multiplicityLift (fun _ => 1) t ⟨0, 0⟩ = t 0 ∧
+      multiplicityBlockGram (fun _ => 1) A Kmat ⟨0, 0⟩ ⟨0, 0⟩ = A - Kmat 0 0) ∧
+    (∑ a : (Σ _ : Fin 1, Fin 0), ∑ b : (Σ _ : Fin 1, Fin 0),
+      multiplicityBlockGram (fun _ => 0) 0 (fun _ _ => 1) a b *
+        multiplicityLift (fun _ => 0) (fun _ => 1) a *
+        multiplicityLift (fun _ => 0) (fun _ => 1) b) = 0 ∧
+    (∑ i : Fin 1, ∑ j : Fin 1,
+      ((if i = j then (0 : ℝ) / (0 : ℕ) else 0) - 1) * 1 * 1) = -1 := by
+  simp [multiplicityLift, multiplicityBlockGram]
 
 end TauCetiRoadmap.ComputationalNumberTheory
