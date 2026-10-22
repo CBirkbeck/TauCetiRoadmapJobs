@@ -1,7 +1,7 @@
-# Roadmap: arithmetic Dirichlet series and Tauberian methods, part II — poles of higher order
+# Roadmap: arithmetic dirichlet series and tauberian methods, part II — poles of higher order
 
 **Summary.** This roadmap extends the Wiener–Ikehara layer of
-[ArithmeticDirichletSeries](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ArithmeticDirichletSeries/README.md)
+[ArithmeticDirichletSeries](../../Completed/ArithmeticDirichletSeries/README.md)
 from simple poles to poles of any integer order. Its central theorem is the integer-order case of
 Delange's Tauberian theorem: if a nonnegative nondecreasing function `α` on `[0, ∞)` has an
 absolutely convergent Laplace transform `F(s)` on `Re s > a > 0`, if `F` continues holomorphically
@@ -22,8 +22,8 @@ The end theorems are `delangeLaplace` (Layer HP.3) and its counting forms `delan
 `delangeDirichlet_positiveAbscissa` (Layer HP.4). For `k = 0` every counting statement here is a
 special case of the parent's Wiener–Ikehara layer; the new content is `k ≥ 1`, that is, a
 generating series with a pole of order `m = k + 1 ≥ 2` at its abscissa of convergence. This is the
-situation of Wood's counts of abelian extensions with restricted inertia, where the pole has order
-`2^r` and the count grows like `X (log X)^(2^r − 1)` (Wood 2019, §7, pp. 415–417).
+situation of Wood's counts of abelian extensions with restricted inertia: for `r ≥ 1`,
+homomorphisms into `C₂^(r+1)` have inertia intersecting `C₂^r × {1}` trivially, the pole has order `2^r`, and the count grows like `X (log X)^(2^r − 1)` (Wood 2019, §7, pp. 415–417).
 
 | Layer | Title | Headline targets |
 | --- | --- | --- |
@@ -34,12 +34,14 @@ situation of Wood's counts of abelian extensions with restricted inertia, where 
 | HP.4 | Counting functions of Dirichlet series and perturbations | `logSummatory_hasLaplace`, `delangeDirichlet`, `delangeDirichlet_positiveAbscissa`, `finiteChange_asymptotic`, `lowerPole_perturbation` |
 | HP.5 | Zeta checks and the necessity of the boundary hypothesis | `zetaSquare_counting`, `dyadicLocalPoleCounterexample` |
 
-The layer labels HP.0–HP.5 are the labels other roadmaps cite.
+The layer labels HP.0–HP.5 are the labels other roadmaps cite. The definition Checks are
+proved examples when their proofs use the pinned APIs directly. Checks that require new analytic
+results are named theorem targets in `Suggested.lean`; the predicate tests and gamma, smoothing,
+counting and boundary controls below specify their hypotheses and values.
 
 Suggested home: `HasLaplace` and its API in `TauCeti/Analysis/LaplaceTransform.lean`, namespace
-`TauCeti`, built in the shape of the open Mathlib pull request
-[#40582](https://github.com/leanprover-community/mathlib4/pull/40582) so that replacing it by
-Mathlib's declaration is a deletion and an import; everything else in
+`TauCeti`, following Dennj Osele, “The Laplace transform”, declarations `LaplaceConvergent`,
+`laplace`, and `HasLaplace`; everything else in
 `TauCeti/NumberTheory/LSeries/HigherPole/`, namespace `TauCeti.HigherPoleTauberian`, one file per
 layer. `Suggested.lean` states the definitions and the main theorems in the namespace
 `TauCetiRoadmap.ArithmeticDirichletSeriesPartII`.
@@ -79,8 +81,8 @@ supplier contracts*.
 - Wiener–Ikehara for a simple pole with a merely continuous boundary remainder, its zero-residue
   case and its variants (natural cutoffs, finitely many negative coefficients, a pole at a positive
   abscissa) are the parent's
-  [Layer 9](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ArithmeticDirichletSeries/README.md#layer-9-wienerikehara).
-  The current Tau Ceti library proves them as `TauCeti.LSeries.wienerIkehara`,
+  [Layer 9](../../Completed/ArithmeticDirichletSeries/README.md#layer-9-wienerikehara).
+  Tau Ceti proves them as `TauCeti.LSeries.wienerIkehara`,
   `TauCeti.LSeries.wienerIkehara_zero`, `TauCeti.LSeries.wienerIkehara_of_eventually_nonneg`,
   `TauCeti.LSeries.wienerIkehara_nat` and `TauCeti.LSeries.wienerIkehara_rpow`
   (`TauCeti/NumberTheory/LSeries/WienerIkehara/SharpCutoff.lean` and `Variants.lean`). At `k = 0`
@@ -89,9 +91,10 @@ supplier contracts*.
   new at `k = 0` and uses its `k = 0` instances only as consistency checks.
 - Arithmetic functions on ideals, ideal Euler products, prime counting functions and Dirichlet
   density are the parent's Layers 0–8 and 10.
-- For counts of abelian extensions: the local factors, the continuation of the generating series,
-  the positivity of its leading coefficient and the arithmetic majorant for non-surjective
-  homomorphisms belong to ArithmeticStatistics (Layer ST.3), which consumes Layer HP.4.
+- For counts of abelian extensions, the local factors, continuation, positivity of the leading
+  coefficient and arithmetic majorants for non-surjective homomorphisms are input to an
+  application of HP.4. This roadmap owns the generic analytic implication, with these inputs
+  as explicit hypotheses, rather than any arithmetic construction of them.
 - Delange's theorems for non-integral exponents, for exponents `≤ 0` and with logarithmic factors
   (his Theorems III and IV in full, which use complex powers and logarithms through his Lemmas 4–5)
   are not part of this roadmap: it treats pole orders `k + 1` with `k ∈ ℕ` at an abscissa `a > 0`.
@@ -127,7 +130,7 @@ Three conventions carry a witness that fixes them:
 
 ## Exact supplier contracts
 
-### From Mathlib (pinned 082e2d3)
+### From Mathlib (pinned 6b7abb3c)
 
 - `LSeriesHasSum f s a` and `LSeries.term` (`Mathlib/NumberTheory/LSeries/Basic.lean`): the
   Dirichlet-series hypothesis of Layers HP.4–HP.5, always on an open half-plane. Summability in
@@ -166,10 +169,9 @@ Three conventions carry a witness that fixes them:
 - `hasSum_geometric_of_norm_lt_one` (`Mathlib/Analysis/SpecificLimits/Normed.lean`).
 - `Northcott` (`Mathlib/Order/Northcott.lean`).
 
-### From Tau Ceti (pinned f790474)
+### From Tau Ceti (pinned a91d3aaf)
 
-- `TauCeti.summatory N w X` (`TauCeti/Order/Northcott.lean`; in the current Tau Ceti the same
-  declarations live in `TauCeti/Order/Northcott/Basic.lean`): for a natural-valued height
+- `TauCeti.summatory N w X` (`TauCeti/Order/Northcott/Basic.lean`): for a natural-valued height
   `N : ι → ℕ` with a `Northcott N` instance, the sum of `w` over the finite set
   `TauCeti.normLE N X` of indices with `N i ≤ X`, inclusive. Used with
   `TauCeti.summatory_nonneg`, `TauCeti.summatory_mono` (nonnegative weights give a monotone
@@ -183,7 +185,7 @@ Three conventions carry a witness that fixes them:
   `∫₀^R sin(bx)/x dx → π/2`. These are limits of interval integrals; unsquared `sinc` is not
   Lebesgue integrable and no such integral is used.
 
-### From TauCetiRoadmap.ArithmeticDirichletSeries
+### From [ArithmeticDirichletSeries](../../Completed/ArithmeticDirichletSeries/README.md) (completed)
 
 - Layer 9 (Wiener–Ikehara): the hypothesis style is kept — nonnegative coefficients,
   `LSeriesHasSum` on every point of the open half-plane, and a separately named boundary object
@@ -237,16 +239,15 @@ Integrable (fun t ↦ Complex.exp (−s · t) • f t) μ      and      ∫ Comp
 With the default measure, `HasLaplace f s z` says that the ordinary Laplace integral
 `∫₀^∞ e^(−st) f(t) dt` converges absolutely and equals `z`. Integrability is part of the
 predicate because the Bochner integral of a non-integrable function is `0`: the bare integral
-equation cannot certify convergence. The predicate concerns the function `f` itself; for a
-function vanishing on `(−∞, 0)`, the Laplace–Stieltjes transform `∫ e^(−st) df(t)` is `s` times it
-(HP.4.1). The
-counting applications use `E = ℂ` and the cast `fun t ↦ (α t : ℂ)` of a real function `α`.
+equation cannot certify convergence. The predicate concerns the function `f` itself. For the
+nonnegative coefficient counting functions of HP.4.1, termwise integration gives the ordinary Laplace transform `F(s)/s` for
+`Re s > 0`; the theorem uses this identity directly. The counting applications use `E = ℂ`
+and the cast `fun t ↦ (α t : ℂ)` of a real function `α`.
 
-The two conjuncts are exactly `LaplaceConvergent f s μ` and `laplace f s μ = z` of Mathlib pull
-request [#40582](https://github.com/leanprover-community/mathlib4/pull/40582), whose `HasLaplace`
-has the same arguments in the same order, the same default measure and the same scalar-action
-hypotheses. `HasLaplace` is built here in that shape, so that the Tau Ceti declaration and its API
-are replaced by Mathlib's by a deletion and an import.
+The one-sided Laplace API follows Dennj Osele, “The Laplace transform”, declarations
+`LaplaceConvergent`, `laplace`, and `HasLaplace` (2026, `Mathlib/Analysis/LaplaceTransform.lean`,
+lines 121–123, commit `90482cd37e85e423459de2ed103cea2f4d98cb20`). Its argument order, default
+measure and scalar-action hypotheses give the shape of this predicate.
 
 The API, in namespace `TauCeti`:
 
@@ -275,8 +276,9 @@ ordinary Laplace integral; the predicate records exactly this kind of convergenc
 
 **Checks.**
 
-- `HasLaplace_test_zero`: the zero function has transform `0` at every complex `s`, for the
-  default measure (degenerate case).
+- `HasLaplace_test_zero`: with `[NormedAddCommGroup E] [NormedSpace ℝ E] [SMulZeroClass ℂ E]`,
+  the zero function has transform `0` at every complex `s` and for every measure `μ`.
+  A complex action that does not preserve zero need not give a zero integrand.
 - `HasLaplace_test_constant`: the constant function `1` has transform `1/s` whenever
   `Re s > 0`. A Stieltjes-type definition gives `1` instead.
 - `HasLaplace_test_quadratic`: `t ↦ t²` has transform `2/s³` whenever `Re s > 0`. A
@@ -442,7 +444,7 @@ of the kernel, its mass near the origin and its tails drive the Tauberian step.
 
 **Checks.**
 
-- `squaredSinc_test_origin`: `K_λ(0) = λ/π` for `λ > 0`. This pins `Real.sinc 0 = 1` and the
+- `squaredSinc_test_origin`: `K_λ(0) = λ/π` for every real `λ`. This pins `Real.sinc 0 = 1` and the
   factor `λ/π`.
 - `squaredSinc_test_zero`: `K_λ(π/λ) = 0` for `λ > 0`: the first zero sits at `π/λ`, matching the
   frequency endpoint `2λ`. A kernel built with `sinc(λv/2)`, that is with frequency endpoint `λ`,
@@ -559,8 +561,8 @@ Only nonnegative integer powers are needed here.
 
 **Checks.**
 
-- `k = 0`: the transform of `e^(at)` is `1/(s − a)`.
-- `k = 1`: the transform of `e^(at) t` is `1/(s − a)²`.
+- `integerGammaLaplace_test_zero`, `k = 0`: the transform of `e^(at)` is `1/(s − a)`.
+- `integerGammaLaplace_test_one`, `k = 1`: the transform of `e^(at) t` is `1/(s − a)²`.
 - `a = 0`, `k = 2`: this is `HasLaplace_test_quadratic`, value `2/s³`.
 
 ### HP.2.2 Locally integrable regularised boundary values
@@ -619,11 +621,11 @@ behaviour through his Lemmas 1–2; under the holomorphic hypothesis of `PoleBou
 
 **Checks.**
 
-- A remaining pole of order `j ≤ k` produces at most a logarithmic singularity in `y`, never a
-  non-integrable power. For `k = 1` and `R(s) = c/(s − a)`, the boundary value is
+- `regularizedBoundary_test_log`: a remaining pole of order `j ≤ k` produces at most a logarithmic singularity in `y`, never a
+  non-integrable power. For `k = 1`, `c ∈ ℂ` and `R(s) = c/(s − a)`, the boundary value is
   `b(y) = c ∫₀¹ u/(u + iy)² du = c (log(1 + iy) − log(iy) + iy/(1 + iy) − 1)` for `y ≠ 0`
   (principal logarithm), which grows like `−c log |y|` as `y → 0`.
-- For the model `F = A/(s − a)^(k+1)` the remainder `R` is `0`, so `H = 0` and `b = 0`.
+- `regularizedBoundary_test_model`: for the model `F = A/(s − a)^(k+1)` the remainder `R` is `0`, so `H = 0` and `b = 0`.
 
 ### HP.2.3 The smoothed limit
 
@@ -661,7 +663,7 @@ limit is nonnegative, so the hypotheses force `A ≥ 0`.)
 
    ```text
    ∫₀^∞ e^(−εt) w_k(t) e^(−at) (α(t) − β(t)) K_λ(t − T) dt
-       = (1/2π) ∫_{−2λ}^{2λ} H(a + ε + iy) (1 − |y|/(2λ)) e^(iyT) dy.
+       = (1/2π) ∫[−2λ, 2λ] H(a + ε + iy) (1 − |y|/(2λ)) e^(iyT) dy.
    ```
 
 3. *Letting `ε → 0`.* On the right, `regularizedBoundaryL1` gives convergence to
@@ -692,10 +694,9 @@ unnormalised kernel); §4.1, pp. 228–229.
 
 **Checks.**
 
-- The model itself: `α(t) = e^(at) tᵏ` is nonnegative and nondecreasing on `[0, ∞)`, has transform
+- `delangeSmoothedLimit_test_model`: `α(t) = e^(at) tᵏ` is nonnegative and nondecreasing on `[0, ∞)`, has transform
   `k!/(s − a)^(k+1)` (HP.2.1) and satisfies `PoleBoundary` with `A = k!`; the theorem gives the
   limit `1`, and directly `w_k(t) e^(−at) α(t) = w_k(t) tᵏ → 1`.
-- The statement assumes no growth bound: the integrability conclusion is part of what is proved.
 
 ### Examples
 
@@ -751,13 +752,14 @@ first in the bandwidth and then in the window. The bound is derived, not assumed
 
 **Checks.**
 
-- One bandwidth is not enough: take `C > 0`, a small `ε > 0`, and `α` with
+- `monotoneUnsmoothing_test_one_bandwidth`: one bandwidth is not enough. For every `a > 0`,
+  `C > 0`, `λ > 0` and `k ∈ ℕ`, such a counterexample exists. Take a small `ε > 0`, and `α` with
   `J(t) = C + ε cos(3λt)` for `t ≥ t₀`, continued as a nondecreasing nonnegative function on
   `[0, t₀]`. For `ε < aC/(a + 3λ)` and `t₀` large, `α(t) = J(t) e^(at)/w_k(t)` is nondecreasing
   on `[t₀, ∞)` as well: its logarithmic derivative is at least `a − 3λε/(C − ε) − w_k′(t)/w_k(t)`,
   and `w_k′/w_k → 0`. The convolution with this one `K_λ` tends to `C`, since the Fourier transform
   of `K_λ` vanishes at the frequency `3λ`, but `J` has no limit.
-- `C = 0`: the theorem gives `α(t) = o(e^(at) tᵏ)`.
+- `monotoneUnsmoothing_test_zero`, `C = 0`: the theorem gives `α(t) = o(e^(at) tᵏ)`.
 
 ### HP.3.2 Delange's theorem
 
@@ -786,9 +788,10 @@ hypotheses on p. 213.
 
 **Checks.**
 
-- `k = 0`: `α(t) ~ A e^(at)`, Ikehara's theorem under holomorphic continuation of the boundary.
-- `k = 1`: `α(t) ~ A e^(at) t`, coefficient `A` and one power of `t`.
-- The model `α(t) = e^(at) tᵏ`, with `A = k!`, gives the limit `1`.
+- `delangeLaplace_test_simple`, `k = 0`: `α(t) ~ A e^(at)`, Ikehara's theorem under holomorphic continuation of the boundary.
+- `delangeLaplace_test_double`, `k = 1`: `α(t) ~ A e^(at) t`, coefficient `A` and one power of `t`.
+- `delangeLaplace_test_model`: the model `α(t) = e^(at) tᵏ`, with `A = k!`, gives the limit `1`.
+  The ratio itself tends to `1` for every real `a`, by cancellation for `t > 0`.
 
 ### Examples
 
@@ -872,9 +875,9 @@ leading coefficient; `m = k + 1 ≥ 1`.
 `X > 1`, using `e^(log X) = X` and `log X → ∞`. *Needs:* HP.0.2, HP.3.2, HP.4.1.
 
 *Source.* Delange (1954), Theorem III, §5.2.1, pp. 235–238. Wood (2019), §7, p. 417: for the
-series attached to `C₂^r` with a pole of order `2^r` at `s = 1`, a Tauberian theorem gives partial
-sums asymptotic to a constant times `X (log X)^(2^r − 1)`; here the analytic hypotheses that this
-step needs are made explicit.
+series `F_r`, for `r ≥ 1`, counts homomorphisms into `C₂^(r+1)` with the prescribed inertia restriction
+relative to `C₂^r × {1}`; its pole at `1` has order `2^r` and its partial sums are asymptotic to
+a constant times `X (log X)^(2^r − 1)`. The analytic hypotheses needed for this step are explicit here.
 
 **Checks.**
 
@@ -915,7 +918,7 @@ logarithmic counting function.
 - At `a = 1` the statement is HP.4.2.
 - At `k = 0` the constant `A/a` is the constant `κ/σ` of the parent's positive-abscissa variant
   (`TauCeti.LSeries.wienerIkehara_rpow`).
-- `a = 0` is excluded (negative control): `c n = 1/n` has series `ζ(s + 1)`, convergent on
+- `counting_test_abscissa_zero`, a negative control: `c n = 1/n` has series `ζ(s + 1)`, convergent on
   `Re s > 0` with a simple pole at `0` and numerator value `1`, but `S_c(X) = ∑_{1≤n≤X} 1/n ~ log X`
   is not a constant multiple of `X^0 (log X)^0`. The transform `ζ(s + 1)/s` of `S_c(eᵗ)` has a
   pole of order two at `0`: at `a = 0` dividing by `s` raises the order of the pole instead of
@@ -961,18 +964,20 @@ the squeeze theorem. *Needs:* HP.4.3; Tau Ceti `TauCeti.summatory`.
 in terms of a constant and the asymptotics of the coefficients of the series attached to the next
 smaller group, whose pole has order `2^(r−1) < 2^r`. The theorem above is the generic analytic form
 of that step, with a coefficientwise majorant; the arithmetic construction of the majorant and the
-proof of its hypotheses belong to ArithmeticStatistics.
+proof of its hypotheses are arithmetic input to the application.
 
 **Checks.**
 
-- The inequality `l < k` is strict: `d = 2c` is dominated by `b = c`, which has the same pole
-  order, and changes the limit from `C` to `2C`.
+- `lowerPole_test_equal_order`: the inequality `l < k` is strict. Take `c = b = 1` and `d = 2`
+  on positive integers. Then `|d − c| ≤ b`, the majorant has the same simple pole as `c`
+  (`counting_test_ones`), and the limit at scale `X` changes from `1` to `2`.
 - A perturbation known only to have a local pole is not covered: the dyadic series (HP.5.2) has the
   local form of a simple pole and no counting asymptotic.
 
 ### Examples
 
-- Wood's counts (Wood 2019, §7): the generating series has a pole of order `2^r` at `s = 1`, so
+- Wood's counts (Wood 2019, §7), for `r ≥ 1`: homomorphisms into `C₂^(r+1)` with inertia intersecting
+  `C₂^r × {1}` trivially give a generating series with pole order `2^r` at `s = 1`, so
   `k = 2^r − 1`; HP.4.2 gives the main term `X (log X)^(2^r − 1)` with constant `A/(2^r − 1)!`,
   HP.4.4 removes the trivial homomorphism, and HP.4.5 removes the non-surjective ones once they are
   dominated by the coefficients of a series with a pole of order `2^(r−1)`.
@@ -1012,15 +1017,17 @@ Mathlib as listed.
 *Source.* Delange (1954), Theorem III, §5.2.1, pp. 235–238, with `ω = 2`. The arithmetic
 identities and the continuation of `ζ` are Mathlib's.
 
+The elementary value `d(4) = 3` follows from the divisors `{1, 2, 4}` and fixes the arithmetic
+function convention.
+
 **Checks.**
 
-- `counting_test_divisors_four`: `d(4) = 3`.
 - `counting_test_insert_one`: replacing `d` by `d + 7 · 1[n = 1]` keeps the limit `1` (HP.4.4).
 - `counting_test_ones`: `c n = 1` for `n ≥ 1`, the simple pole of `ζ`, gives `S(X)/X → 1`.
 - `counting_test_divisor_fourfold`: `d₄ = σ₀ * σ₀` has series `ζ(s)⁴`, a pole of order four with
   numerator value `1`, so `∑_{n≤X} d₄(n) / (X (log X)³) → 1/6 = 1/3!`. Normalising by `k`,
   `(k − 1)!` or `(k + 1)!` would give `1/3`, `1/2` or `1/24`. This is the pole order of Wood's
-  count for `r = 2`.
+  count into `C₂³`, with inertia intersecting `C₂² × {1}` trivially (`r = 2`).
 
 ### HP.5.2 A local pole is not enough: the dyadic series
 
@@ -1055,10 +1062,11 @@ ratio `S_c(X)/X` stays between positive bounds but has no limit.
 
 **Checks.**
 
-- First values: `S_c(1) = 1`, `S_c(2) = 3`, `S_c(3) = 3`, `S_c(4) = 7`, `S_c(6) = 7`,
+- `dyadic_test_values`: the exact formulas `S_c(2^j) = 2^(j+1) − 1` and
+  `S_c(3 · 2^j) = 2^(j+2) − 1` give `S_c(1) = 1`, `S_c(2) = 3`, `S_c(3) = 3`, `S_c(4) = 7`, `S_c(6) = 7`,
   `S_c(8) = 15`, `S_c(12) = 15`; the ratios at `2^j` are `1, 3/2, 7/4, 15/8 → 2` and at `3 · 2^j`
   are `1, 7/6, 5/4, … → 4/3`.
-- `1/log 2 ≈ 1.4427` lies strictly between the two limit points.
+- `dyadic_test_residue`: `1/log 2 ≈ 1.4427` lies strictly between the two limit points.
 
 ### Examples
 
@@ -1071,10 +1079,10 @@ Layer HP.4 (HP.5.1) and Layer HP.0 (HP.5.2). Mathlib `riemannZeta` and arithmeti
 
 ## Downstream consumers
 
-- ArithmeticStatistics, Layer ST.3: Wood's counts of abelian extensions with restricted inertia
-  (Wood 2019, §7), and any count whose generating Dirichlet series has a higher-order pole at its
-  abscissa. It supplies the continuation, the positivity of the leading coefficient and the
-  majorants, and uses HP.4.2, HP.4.4 and HP.4.5.
+- Counts of abelian extensions with restricted inertia (Wood 2019, §7) illustrate the analytic
+  input to HP.4.2, HP.4.4 and HP.4.5: the application must prove continuation, positivity of the
+  leading coefficient and a coefficientwise arithmetic majorant. These are conditional
+  applications of the generic theorems here.
 - Orbit counts that are proved through a renewal equation, such as the asymptotic for integer
   points on Markoff–Hurwitz varieties (Gamburd–Magee–Ronan 2019), use HP.3.2 with `k = 0` at a
   positive abscissa: a nondecreasing counting function whose Laplace transform has a single simple
@@ -1094,6 +1102,11 @@ Layer HP.4 (HP.5.1) and Layer HP.0 (HP.5.2). Mathlib `riemannZeta` and arithmeti
   [author version](https://par.nsf.gov/servlets/purl/10152050); §7, pp. 415–417, for the
   higher-order pole counts and the removal of non-surjective homomorphisms.
 - A. Gamburd, M. Magee, R. Ronan, *An asymptotic formula for integer points on Markoff–Hurwitz
-  varieties*, Ann. of Math. **190** (2019), 751–809, as a consumer of the simple-pole case.
-- Mathlib pull request [#40582](https://github.com/leanprover-community/mathlib4/pull/40582), *the
-  one-sided Laplace transform*, for the shape of `HasLaplace`.
+  varieties*, Ann. of Math. **190** (2019), 751–809,
+  [publisher PDF](https://annals.math.princeton.edu/wp-content/uploads/annals-v190-n3-p02-s.pdf).
+  §4.1, pp. 790–791, equation (4.4), and §4.3, pp. 796–797, for the Laplace-resolvent identity
+  and holomorphic boundary continuation; uniformity remains a consumer obligation.
+- D. Osele, *The Laplace transform* (2026),
+  [author source](https://github.com/dennj/mathlib4/blob/90482cd37e85e423459de2ed103cea2f4d98cb20/Mathlib/Analysis/LaplaceTransform.lean#L121-L123),
+  declarations `LaplaceConvergent`, `laplace`, and `HasLaplace`, lines 121–123 at commit
+  `90482cd37e85e423459de2ed103cea2f4d98cb20`, for the predicate's shape.
