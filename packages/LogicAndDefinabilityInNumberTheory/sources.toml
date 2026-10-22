@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LogicAndDefinabilityInNumberTheory"
+
+[[source]]
+id = "vd_dr_tame"
+authors = "L. P. D. van den Dries"
+title = "Tame Topology and O-minimal Structures"
+year = 1998
+doi = "10.1017/CBO9780511525919"
+locator_scheme = "section"
+locator = "Chapters 3,4,6,8; Chapter 10 (2.15), p.166"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/191#issuecomment-6334574542"
+
+[[source]]
+id = "vd_dr_macintyre_marker"
+authors = "Lou van den Dries, Angus Macintyre, David Marker"
+title = "The Elementary Theory of Restricted Analytic Fields with Exponentiation"
+year = 1994
+doi = "10.2307/2118545"
+locator_scheme = "section"
+locator = "Analytic cell decomposition; pp.183-205"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/191#issuecomment-6334574542"
+
+[[source]]
+id = "pila_wilkie"
+authors = "Jonathan Pila and Alex Wilkie"
+title = "The rational points of a definable set"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorems 1.8,1.10,2.3,2.5; Proposition 6.1 and Main Lemma 6.2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/191#issuecomment-6334574542"
+
+[[source]]
+id = "cl_addenda"
+authors = "Raf Cluckers and Francois Loeser"
+title = "List of addenda"
+year = "undated"
+locator_scheme = "section"
+locator = "Addenda for Constructible motivic functions and motivic integration"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/191#issuecomment-6334574542"
