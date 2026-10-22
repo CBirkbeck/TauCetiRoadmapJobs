@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicHodgeRegulators"
+
+[[source]]
+id = "FO"
+authors = "Jean-Marc Fontaine and Yi Ouyang"
+title = "Theory of p-adic Galois representations"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorems 6.25(3), 6.26(3), Remark 6.27; pages 129–130"
+url = "http://staff.ustc.edu.cn/~yiouyang/galoisrep.pdf"
+fetched_from = "http://staff.ustc.edu.cn/~yiouyang/galoisrep.pdf"
+fetched_at = "2026-10-22T03:50:15Z"
+sha256 = "ae36580b17f1c9c560771a3b66cbabbc095d93d48b77c0b14a78629e96fd8ef2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/290#issuecomment-6332224054"
+
+[[source]]
+id = "FontaineBPR1994"
+authors = "Jean-Marc Fontaine"
+title = "Appendice: Sur un théorème de Bloch et Kato (lettre à B. Perrin-Riou)"
+year = 1994
+locator_scheme = "section"
+locator = "Section 2.1, page 153"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0115/LOG_0015.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0115/LOG_0015.pdf"
+fetched_at = "2026-10-22T03:50:44Z"
+sha256 = "18d49f9ad620bb6817a2c53927398943e4693ce49f2ac7095c84d42d73bc5f06"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/290#issuecomment-6332224054"
