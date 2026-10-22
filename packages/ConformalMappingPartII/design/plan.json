@@ -1,0 +1,10 @@
+{
+  "gaps": [
+    {
+      "slug": "little-picard",
+      "needs": "A holomorphic map from the complex plane to itself omitting two distinct finite values is constant, with an independent modular-uniformization proof.",
+      "supplier": "ModularForms",
+      "section": "Layer 10: the modular curve and dimension formulas"
+    }
+  ]
+}
