@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SieveMethodsAndPrimePatterns"
+
+[[source]]
+id = "CHEN-73-CN"
+authors = "Jingrun Chen."
+title = "On the representation of a large even integer as the sum of a prime and the product of at most two primes"
+year = 1973
+locator_scheme = "theorem"
+locator = "Lemmas 6 and 9; main estimates; equation (27), p.127"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6330186096"
+
+[[source]]
+id = "HR-SIEVE"
+authors = "H. Halberstam and H.-E. Richert"
+title = "Sieve Methods"
+year = 1974
+locator_scheme = "theorem"
+locator = "Lemmas 5.3–5.4"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6330186096"
+
+[[source]]
+id = "RICHERT-1969"
+authors = "H.-E. Richert"
+title = "Selberg's sieve with weights"
+year = 1969
+doi = "10.1112/S0025579300004563"
+locator_scheme = "theorem"
+locator = "Theorem A"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6330186096"
+
+[[source]]
+id = "KM-16RANK-published"
+authors = "Peter Koymans, Djordjo Milovic"
+title = "On the 16-Rank of Class Groups of ℚ(√-2p) for Primes p ≡ 1 mod 4"
+year = 2018
+doi = "10.1093/imrn/rny010"
+locator_scheme = "theorem"
+locator = "Proposition 3.6, p.11"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6330186096"
