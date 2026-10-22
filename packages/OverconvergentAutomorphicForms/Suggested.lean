@@ -42,7 +42,7 @@ theorem compactSpace_Op : CompactSpace (Op F p) := by
 
 /-- The integral algebra has the degree of the number field as its rank. -/
 theorem finrank_Op : Module.finrank ℤ_[p] (Op F p) = Module.finrank ℚ F := by
-  sorry
+  rw [Module.finrank_baseChange, RingOfIntegers.rank]
 
 /-- the determinant norm on the full integral algebra. -/
 def normAlgebra : Op F p →* ℤ_[p] :=
@@ -54,7 +54,8 @@ theorem norm_tmul_one (a : 𝓞 F) :
       ((Algebra.norm ℤ a : ℤ) : ℤ_[p]) := by
   sorry
 
-/-- restrict the determinant norm to units. -/
+/-- Restrict the determinant norm to units. The generic-fibre product over embeddings,
+`normUnits_embeddings` of README §0.1, is a splitting-field comparison. -/
 def normUnits : (Op F p)ˣ →* ℤ_[p]ˣ :=
   Units.map (normAlgebra F p)
 
@@ -76,27 +77,41 @@ theorem normUnits_unitsToOp (η : (𝓞 F)ˣ) :
 def principalUnits (r : ℕ) : Subgroup (Op F p)ˣ :=
   (Units.map (Ideal.Quotient.mk (Ideal.span {((p : Op F p)) ^ r})).toMonoidHom).ker
 
+/-- Greater depth gives a smaller principal-unit subgroup. -/
+theorem principalUnits_antitone : Antitone (principalUnits F p) := by
+  sorry
+
 /-- Principal congruence subgroups are open and have finite index, including depth zero. -/
 theorem open_finiteIndex_principalUnits (r : ℕ) :
     IsOpen (principalUnits F p r : Set (Op F p)ˣ) ∧
       (principalUnits F p r).FiniteIndex := by
   sorry
 
-example : Module.Finite ℤ_[p] (Op F p) := inferInstance
-
+/-- Scalar and sign values retain the full integral-algebra rank. -/
 example (a : ℤ_[p]) :
     normAlgebra F p (algebraMap ℤ_[p] (Op F p) a) =
-      a ^ Module.finrank ℤ_[p] (Op F p) := by
-  exact Algebra.norm_algebraMap a
+      a ^ Module.finrank ℤ_[p] (Op F p) ∧
+      normAlgebra F p (-1) = (-1) ^ Module.finrank ℤ_[p] (Op F p) := by
+  constructor
+  · exact Algebra.norm_algebraMap a
+  · change Algebra.norm ℤ_[p] (-1 : Op F p) = _
+    rw [← map_one (algebraMap ℤ_[p] (Op F p)), ← map_neg, Algebra.norm_algebraMap]
 
+/-- Zero and one distinguish the determinant norm from a constant character. -/
+example : normAlgebra F p 0 = 0 ∧ normAlgebra F p 1 = 1 := by
+  exact ⟨Algebra.norm_zero, map_one _⟩
+
+/-- Restricting to units preserves the underlying determinant value. -/
 example (u : (Op F p)ˣ) :
     (normUnits F p u : ℤ_[p]) = normAlgebra F p (u : Op F p) := by
   rfl
 
+/-- Global inclusion is the tensor inclusion, rather than the scalar norm. -/
 example (η : (𝓞 F)ˣ) :
     (unitsToOp F p η : Op F p) = (1 : ℤ_[p]) ⊗ₜ[ℤ] (η : 𝓞 F) := by
   rfl
 
+/-- Reduction at depth zero has zero quotient and hence full unit kernel. -/
 example : principalUnits F p 0 = ⊤ := by
   ext x
   simp only [Subgroup.mem_top, iff_true]
@@ -111,39 +126,49 @@ section Weights
 
 variable (R : Type*) [CommRing R] [TopologicalSpace R] [IsTopologicalRing R]
 
-/-- Geometric character points; rigid realization is a separate target. -/
+/-- Continuous geometric character points of the supplied compact character space. -/
 abbrev GeomWeight := ContinuousMonoidHom (Op F p)ˣ Rˣ
 
 /-- Arithmetic characters have two compact torus coordinates. -/
 abbrev ArithWeight := ContinuousMonoidHom ((Op F p)ˣ × ℤ_[p]ˣ) Rˣ
 
-/-- The pair of characters `(w,t)`. -/
+/-- The pair of characters `(w,t)`. README §0.2's `arithWeight_restrict_left`,
+`arithWeight_restrict_right` and `arithWeight_mk_unique` express its coordinate universal property. -/
 def ArithWeight.mk (w : GeomWeight F p R)
     (t : ContinuousMonoidHom ℤ_[p]ˣ Rˣ) : ArithWeight F p R :=
   (w.comp (ContinuousMonoidHom.fst _ _)) *
     (t.comp (ContinuousMonoidHom.snd _ _))
 
-/-- the norm coordinate is inverted. -/
-def weightDualMap : ContinuousMonoidHom (Op F p)ˣ ((Op F p)ˣ × ℤ_[p]ˣ) where
-  toMonoidHom :=
-    { toFun := fun x ↦ (x ^ 2, (normUnits F p x)⁻¹)
-      map_one' := by simp
-      map_mul' := fun x y ↦ by
-        ext1 <;> simp only [Prod.fst_mul, Prod.snd_mul, map_mul, mul_inv]
-        exact mul_pow x y 2 }
-  continuous_toFun :=
-    (continuous_id.pow 2).prodMk (continuous_normUnits F p).inv
+/-- The underlying inverse-norm map; its continuity is a separate theorem. -/
+def weightDualMap : (Op F p)ˣ →* ((Op F p)ˣ × ℤ_[p]ˣ) where
+  toFun := fun x ↦ (x ^ 2, (normUnits F p x)⁻¹)
+  map_one' := by simp
+  map_mul' := fun x y ↦ by
+    ext1 <;> simp only [Prod.fst_mul, Prod.snd_mul, map_mul, mul_inv]
+    exact mul_pow x y 2
 
-/-- pullback along the genuine continuous group map. -/
-def weightMap (κ : ArithWeight F p R) : GeomWeight F p R :=
-  κ.comp (weightDualMap F p)
+/-- Continuity promotes the algebraic inverse-norm map to a continuous homomorphism. -/
+theorem continuous_weightDualMap : Continuous (weightDualMap F p) := by
+  sorry
 
-/-- The geometric weight is the square character times the inverse norm character. -/
+/-- Pull back the arithmetic character along the underlying group map. -/
+def weightMap (κ : ArithWeight F p R) : (Op F p)ˣ →* Rˣ :=
+  κ.toMonoidHom.comp (weightDualMap F p)
+
+/-- The algebraic pullback is continuous and hence defines a geometric weight. -/
+theorem continuous_weightMap (κ : ArithWeight F p R) :
+    Continuous (weightMap F p R κ) := by
+  sorry
+
+omit [NumberField F] in
+/-- The geometric weight is the square character times the inverse norm character.
+README §0.2's `weightMap_norm_factor` is the case w=1, and
+`weightMap_totallyPositiveUnit` applies the norm-one identity at a totally positive global unit. -/
 theorem weightMap_mk_apply (w : GeomWeight F p R)
     (t : ContinuousMonoidHom ℤ_[p]ˣ Rˣ) (x : (Op F p)ˣ) :
     weightMap F p R (ArithWeight.mk F p R w t) x =
       w x ^ 2 * (t (normUnits F p x))⁻¹ := by
-  sorry
+  exact congrArg₂ (· * ·) (map_pow w x 2) (map_inv t _)
 
 /-- all congruence units have norm one.
 Total positivity is unnecessary for the central kernel. -/
@@ -160,29 +185,48 @@ theorem weightMap_mk_congruenceUnit (N : ℕ) (hN : 4 ≤ N)
       w (unitsToOp F p η) ^ 2 = 1 := by
   sorry
 
-/-- Checks the inverse norm sign with a free norm character. -/
-example (t : ContinuousMonoidHom ℤ_[p]ˣ Rˣ) (x : (Op F p)ˣ) :
+/-- Both one-coordinate pullbacks fix the square and inverse conventions. -/
+example (w : GeomWeight F p R) (t : ContinuousMonoidHom ℤ_[p]ˣ Rˣ)
+    (x : (Op F p)ˣ) :
     weightMap F p R (ArithWeight.mk F p R 1 t) x =
-      (t (normUnits F p x))⁻¹ := by
-  change 1 * t ((normUnits F p x)⁻¹) = _
-  simp only [one_mul, map_inv]
+        (t (normUnits F p x))⁻¹ ∧
+      weightMap F p R (ArithWeight.mk F p R w 1) x = w x ^ 2 := by
+  constructor <;> rw [weightMap_mk_apply] <;> simp
 
-example (w : GeomWeight F p R) (x : (Op F p)ˣ) :
-    weightMap F p R (ArithWeight.mk F p R w 1) x = w x ^ 2 := by
-  change w (x ^ 2) * 1 = _
-  simp only [mul_one, map_pow]
+/-- Two nontrivial coordinate values give 2, detecting the erroneous value 8. -/
+example [Fact (Nat.Prime 5)] (w : GeomWeight F 5 ℚ_[5]) (t : ContinuousMonoidHom ℤ_[5]ˣ ℚ_[5]ˣ)
+    (x : (Op F 5)ˣ) (hw : (w x : ℚ_[5]) = 2)
+    (ht : (t (normUnits F 5 x) : ℚ_[5]) = 2) :
+    (weightMap F 5 ℚ_[5] (ArithWeight.mk F 5 ℚ_[5] w t) x : ℚ_[5]) = 2 := by
+  rw [weightMap_mk_apply]
+  simp only [Units.val_mul, Units.val_pow_eq_pow_val, Units.val_inv_eq_inv_val, hw, ht]
+  norm_num
 
-example (w : GeomWeight F p R) (x : (Op F p)ˣ) :
-    ArithWeight.mk F p R w 1 (x, 1) = w x := by
+/-- Each coordinate is recovered, with no exchange of the two factors. -/
+example (w : GeomWeight F p R) (t : ContinuousMonoidHom ℤ_[p]ˣ Rˣ)
+    (x : (Op F p)ˣ) (y : ℤ_[p]ˣ) :
+    ArithWeight.mk F p R w 1 (x, y) = w x ∧
+      ArithWeight.mk F p R 1 t (x, y) = t y := by
   simp [ArithWeight.mk]
 
-example : weightDualMap F p 1 = (1, 1) := by
-  exact map_one _
+/-- The trivial pair reconstructs the trivial character. -/
+example : ArithWeight.mk F p R 1 1 = 1 := by
+  ext
+  simp [ArithWeight.mk]
+
+/-- Identity and products are respected in both inverse-norm coordinates. -/
+example (x y : (Op F p)ˣ) : weightDualMap F p 1 = (1, 1) ∧
+    weightDualMap F p (x * y) = weightDualMap F p x * weightDualMap F p y := by
+  exact ⟨map_one _, map_mul _ _ _⟩
 
 end Weights
 end HilbertWeight
 
 /-! ## Layer 1: right automorphy and coefficient descent -/
+
+/-- Invert both the group argument and its coefficient factor. -/
+def rightCocycleOfLeft {Γ X C : Type*} [Group Γ] [Group C]
+    (K : Γ → X → C) (γ : Γ) (x : X) : C := (K γ⁻¹ x)⁻¹
 
 /-- inversion converts a left cocycle to
 the right cocycle for `x ⋅ γ = γ⁻¹ • x`; invert the coefficient as well. -/
@@ -190,16 +234,33 @@ theorem right_cocycle_of_left {Γ X C : Type*} [Group Γ] [Group C]
     [MulAction Γ X] (K : Γ → X → C)
     (hK : ∀ γ δ x, K (γ * δ) x = K γ (δ • x) * K δ x)
     (γ δ : Γ) (x : X) :
-    (K (γ * δ)⁻¹ x)⁻¹ = (K γ⁻¹ x)⁻¹ * (K δ⁻¹ (γ⁻¹ • x))⁻¹ := by
-  sorry
+    rightCocycleOfLeft K (γ * δ) x =
+      rightCocycleOfLeft K γ x * rightCocycleOfLeft K δ (γ⁻¹ • x) := by
+  simp only [rightCocycleOfLeft]
+  rw [mul_inv_rev, hK, mul_inv_rev]
 
-/-- Noncommuting inverse factors detect the order in a two-step cocycle. -/
+/-- The identity left cocycle on a noncommutative group retains the right order. -/
 example :
-    (!![1, 0; -1, 1] : Matrix (Fin 2) (Fin 2) ℚ) * !![1, -1; 0, 1] ≠
-      (!![1, -1; 0, 1] : Matrix (Fin 2) (Fin 2) ℚ) * !![1, 0; -1, 1] := by
+    let A := Matrix.GeneralLinearGroup.mkOfDetNeZero
+      (!![1, 1; 0, 1] : Matrix (Fin 2) (Fin 2) ℚ) (by norm_num [Matrix.det_fin_two])
+    let B := Matrix.GeneralLinearGroup.mkOfDetNeZero
+      (!![1, 0; 1, 1] : Matrix (Fin 2) (Fin 2) ℚ) (by norm_num [Matrix.det_fin_two])
+    let K := fun (γ : Matrix.GeneralLinearGroup (Fin 2) ℚ) (_ : Unit) ↦ γ
+    rightCocycleOfLeft K (A * B) () = A * B ∧
+      rightCocycleOfLeft K (A * B) () ≠ B * A := by
+  dsimp only
+  simp only [rightCocycleOfLeft, inv_inv]
+  refine ⟨trivial, ?_⟩
   intro h
-  have h00 := congrArg (fun M : Matrix (Fin 2) (Fin 2) ℚ ↦ M 0 0) h
-  norm_num [Matrix.mul_apply, Fin.sum_univ_succ] at h00
+  have h00 := congrArg (fun M : Matrix.GeneralLinearGroup (Fin 2) ℚ ↦ M 0 0) h
+  norm_num [Matrix.GeneralLinearGroup.mkOfDetNeZero, Matrix.mul_apply,
+    Fin.sum_univ_succ] at h00
+
+/-- The identity left cocycle on scalar units retains the scalar; the trivial cocycle stays one. -/
+example (γ : ℚˣ) :
+    rightCocycleOfLeft (fun (δ : ℚˣ) (_ : Unit) ↦ δ) γ () = γ ∧
+      rightCocycleOfLeft (fun (_ : ℚˣ) (_ : Unit) ↦ (1 : ℚˣ)) γ () = 1 := by
+  simp [rightCocycleOfLeft]
 
 /-! ## Layer 6: the wild coefficient-map normalization -/
 
@@ -207,7 +268,8 @@ namespace HilbertAutomorphy
 
 variable {R : Type*} [CommRing R]
 
-/-- The lower-row denominator of the Hilbert fractional coordinate action. -/
+/-- The lower-row denominator of the Hilbert fractional coordinate action.
+`lowerFactor_one` and `lowerFactor_diagonal` in README §6.4 are its identity and diagonal APIs. -/
 def lowerFactor (γ : Matrix (Fin 2) (Fin 2) R) (z : R) : R :=
   γ 1 0 * z + γ 1 1
 
@@ -218,11 +280,17 @@ theorem wild_factor_conjugation (ϖ : Rˣ) (γ : Matrix (Fin 2) (Fin 2) R) (z : 
       (Matrix.diagonal ![(ϖ : R), 1] * γ *
         Matrix.diagonal ![((ϖ⁻¹ : Rˣ) : R), 1]) ((ϖ : R) * z) =
       lowerFactor γ z := by
-  sorry
+  simp [lowerFactor, Matrix.mul_apply, Fin.sum_univ_succ, mul_assoc]
 
-/-- A diagonal acts on the denominator through its lower diagonal entry. -/
-example (a d z : R) : lowerFactor !![a, 0; 0, d] z = d := by
+/-- Identity, diagonal and both unipotent denominators; the dyadic lower factor is retained. -/
+example (a d b c z : R) :
+    lowerFactor !![a, 0; 0, d] z = d ∧
+      lowerFactor (1 : Matrix (Fin 2) (Fin 2) R) z = 1 ∧
+      lowerFactor !![1, b; 0, 1] z = 1 ∧
+      lowerFactor !![1, 0; c, 1] z = c * z + 1 ∧
+      lowerFactor !![1, 0; 2, 1] (1 : R) = 3 := by
   simp [lowerFactor]
+  ring
 
 /-- At p=5 the reversed conjugation changes a unit denominator from 126 to 3126. -/
 example :
@@ -242,7 +310,9 @@ namespace Siegel
 
 variable {n R : Type*} [Fintype n] [DecidableEq n] [CommRing R]
 
-/-- The dual factor in the antidiagonal symplectic basis. -/
+/-- The dual factor in the antidiagonal symplectic basis. README §8.1's
+`antidiagonalDualFactor_add` expands the sum; `antidiagonalDualFactor_basisChange`
+uses the reversal-basis substitution (ZW)(WC)=ZC when W²=I. -/
 def antidiagonalDualFactor (W A C Z : Matrix n n R) : Matrix n n R :=
   W * (A + Z * C).transpose * W
 
@@ -251,7 +321,9 @@ theorem antidiagonal_dual_factor (W A C Z : Matrix n n R)
     (hW : W * W = 1) (hZ : W * Z.transpose * W = Z) :
     antidiagonalDualFactor W A C Z =
       W * A.transpose * W + (W * C.transpose * W) * Z := by
-  sorry
+  conv_rhs => rw [← hZ]
+  simp [antidiagonalDualFactor, Matrix.transpose_add, Matrix.transpose_mul, Matrix.mul_add,
+    Matrix.add_mul, Matrix.mul_assoc, ← Matrix.mul_assoc W W, hW]
 
 /-- The algebraic determinant-line function; analytic restriction is a separate target. -/
 def determinantLineMap {S : Type*} [CommRing S] (χ : Rˣ →* Sˣ) :
@@ -262,24 +334,48 @@ def determinantLineMap {S : Type*} [CommRing S] (χ : Rˣ →* Sˣ) :
 
 /-- Evaluation at the identity recovers the scalar. -/
 theorem determinantLineMap_injective {S : Type*} [CommRing S]
-    (χ : Rˣ →* Sˣ) : Function.Injective (determinantLineMap (n := n) χ) := by
+    (χ : Rˣ →* Sˣ) : Function.Injective (determinantLineMap (n := n) χ) :=
+  fun a b h => by simpa [determinantLineMap] using congrFun h 1
+
+/-- Transpose translation acts on the determinant line by χ(det h). -/
+theorem determinantLineMap_translation {S : Type*} [CommRing S]
+    (χ : Rˣ →* Sˣ) (a : S) (h g : Matrix.GeneralLinearGroup n R) :
+    let hT : Matrix.GeneralLinearGroup n R :=
+      ⟨(h : Matrix n n R).transpose, (↑h⁻¹ : Matrix n n R).transpose,
+        by rw [← Matrix.transpose_mul, Units.inv_mul, Matrix.transpose_one],
+        by rw [← Matrix.transpose_mul, Units.mul_inv, Matrix.transpose_one]⟩
+    determinantLineMap χ a (hT * g) =
+      (χ (Matrix.GeneralLinearGroup.det h) : S) * determinantLineMap χ a g := by
   sorry
+
+/-- The signed block convention for the change to the other row graph chart. -/
+def atkinLehnerBlock (q : R) : Matrix (Sum n n) (Sum n n) R :=
+  Matrix.fromBlocks 0 1 (-(q • (1 : Matrix n n R))) 0
 
 /-- The scaled Atkin–Lehner matrix lands in the other graph chart. -/
 theorem atkin_lehner_chart (q : R) (Z : Matrix n n R) :
-    Matrix.fromCols (1 : Matrix n n R) Z *
-      Matrix.fromBlocks (0 : Matrix n n R) 1 (-(q • (1 : Matrix n n R))) 0 =
+    (Matrix.fromCols (1 : Matrix n n R) Z) *
+      (atkinLehnerBlock q : Matrix (Sum n n) (Sum n n) R) =
     Matrix.fromCols (-(q • Z)) (1 : Matrix n n R) := by
-  sorry
+  unfold atkinLehnerBlock
+  rw [Matrix.fromCols_mul_fromBlocks]
+  simp
 
-example {S : Type*} [CommRing S] (a : S) (g : Matrix.GeneralLinearGroup n R) :
-    determinantLineMap (1 : Rˣ →* Sˣ) a g = a := by
+/-- Trivial character, identity evaluation and zero scalar test the determinant line. -/
+example {S : Type*} [CommRing S] (χ : Rˣ →* Sˣ)
+    (a : S) (g : Matrix.GeneralLinearGroup n R) :
+    determinantLineMap (1 : Rˣ →* Sˣ) a g = a ∧
+      determinantLineMap (n := n) χ a 1 = a ∧ determinantLineMap χ 0 g = 0 := by
   simp [determinantLineMap]
 
-example :
+/-- A diagonal gives 6 and an upper unipotent fixes every scalar on the line. -/
+example (a : ℚ) :
     determinantLineMap (MonoidHom.id ℚˣ) 1
       (Matrix.GeneralLinearGroup.mkOfDetNeZero !![2, 0; 0, 3]
-        (by norm_num [Matrix.det_fin_two])) = 6 := by
+        (by norm_num [Matrix.det_fin_two])) = 6 ∧
+      determinantLineMap (MonoidHom.id ℚˣ) a
+        (Matrix.GeneralLinearGroup.mkOfDetNeZero !![1, 7; 0, 1]
+          (by norm_num [Matrix.det_fin_two])) = a := by
   norm_num [determinantLineMap, Matrix.GeneralLinearGroup.det,
     Matrix.GeneralLinearGroup.mkOfDetNeZero, Matrix.det_fin_two]
 
@@ -288,8 +384,10 @@ example :
     let W : Matrix (Fin 2) (Fin 2) ℚ := !![0, 1; 1, 0]
     let Z : Matrix (Fin 2) (Fin 2) ℚ := !![0, 1; 0, 0]
     let C : Matrix (Fin 2) (Fin 2) ℚ := !![0, 0; 3, 0]
-    antidiagonalDualFactor W 1 C Z ≠ 1 + Z * (W * C.transpose * W) := by
+    antidiagonalDualFactor W 1 C Z ≠ 1 + Z * (W * C.transpose * W) ∧
+      antidiagonalDualFactor 0 1 C Z = 0 := by
   dsimp only
+  refine ⟨?_, by simp [antidiagonalDualFactor]⟩
   intro h
   have h00 := congrArg (fun M : Matrix (Fin 2) (Fin 2) ℚ ↦ M 0 0) h
   norm_num [antidiagonalDualFactor, Matrix.mul_apply, Matrix.vecMul, dotProduct,
@@ -307,42 +405,19 @@ example (a c z : R) :
 /-- The other graph chart gives [-6,1] at q=2 and z=3. -/
 example :
     Matrix.fromCols (!![1] : Matrix (Fin 1) (Fin 1) ℚ) !![3] *
-      Matrix.fromBlocks (!![0] : Matrix (Fin 1) (Fin 1) ℚ) !![1] !![-2] !![0] =
+      atkinLehnerBlock (n := Fin 1) (2 : ℚ) =
       Matrix.fromCols (!![-6] : Matrix (Fin 1) (Fin 1) ℚ) !![1] := by
-  rw [Matrix.fromCols_mul_fromBlocks]
+  rw [atkinLehnerBlock, Matrix.fromCols_mul_fromBlocks]
   congr 1 <;> ext i j <;> fin_cases i <;> fin_cases j <;>
     norm_num [Matrix.mul_apply, Fin.sum_univ_succ]
 
-end Siegel
+/-- A zero graph has a valid second-chart image without inverting Z. -/
+example (q : R) :
+    (Matrix.fromCols (1 : Matrix n n R) (0 : Matrix n n R)) *
+      (atkinLehnerBlock q : Matrix (Sum n n) (Sum n n) R) =
+      Matrix.fromCols (0 : Matrix n n R) (1 : Matrix n n R) := by
+  simpa using (atkin_lehner_chart q (0 : Matrix n n R))
 
-/-
-The following constructions remain README targets:
-hilbertWeightSpace, arithmeticWeightSpace, proWeightRadius, boundedWeightFamily,
-finiteAnalyticCoefficient, coefficientTensor, coefficientDual, coefficientBaseChange,
-analyticInduction, locallyAnalyticInduction, analyticDistribution,
-locallyAnalyticDistribution, inductionProduct, siegelAnalyticCoefficient,
-siegelTransposeAction, siegelCoefficientProduct, groupAnalyticDistributions,
-frechetSteinStructure, coadmissibleModule, analyticVectors,
-admissibleBanachRepresentation, admissibleAnalyticRepresentation, fullCharacterSpace,
-essentiallyAdmissibleRepresentation, finiteSlopePart, positiveJacquetHecke,
-locallyAnalyticJacquet, unitaryCompletedCoefficient, unitaryJacquetCoefficients,
-unitaryCoefficientEigenvariety, unitaryClassicalPoint, RightAutomorphyCocycle,
-analyticCoefficientSheaf, HilbertCoefficientDomain, hilbertFactor, hilbertWeightFactor,
-geometricHilbertSheaf, integralHilbertSheaf, hilbertWeightPullback,
-integralHilbertWeightPullback, fixedRadiusHilbertForms, integralFixedRadiusHilbertForms,
-overconvergentHilbertForms, integralOverconvergentHilbertForms, hilbertModifiedCoefficient,
-smallGeometricCoefficient, fullGeometricCoefficient, intermediateArithmeticCoefficient,
-fullArithmeticCoefficient, twistedPolarisationAction, finitePolarisationDescent,
-arithmeticClassForms, aipAnalyticCoefficient, aipIntegralCoefficient,
-aipUniversalFormalLine, aipFiniteCharacter, aipFullFormalCoefficient,
-finiteCharacterGenerator, hilbertCuspSheaf, fixedRadiusHilbertCuspForms,
-overconvergentHilbertCuspForms, tameHilbertHecke, wildHilbertHecke, hilbertDiamond,
-familyHilbertQExpansion, hilbertCuspBanach, cuspRadiusRestriction,
-hilbertControllingOperator, ordinaryCompletedFunctionsPlus, ordinaryCompletedFunctions,
-ordinaryWeightedFormsPlus, ordinaryWeightedForms, ordinaryRestriction,
-siegelScalarCoefficient, siegelAlgebraicCoefficient, siegelAnalyticSheaf,
-siegelIntegralAnalyticSheaf, toroidalAnalyticCoefficient, reducedDomainCoefficient,
-bruhatCoefficientFamily, bruhatDistributionFamily.
--/
+end Siegel
 
 end TauCetiRoadmap.OverconvergentAutomorphicForms
