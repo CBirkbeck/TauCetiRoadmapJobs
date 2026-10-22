@@ -82,7 +82,6 @@ AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 SieveMethodsAndPrimePatterns
 ProbabilisticAndMetricNumberTheory
-PolynomialGaloisGroupsPartII
 ArithmeticStatistics
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
@@ -186,6 +185,7 @@ ModularityAndLanglandsExtensions
 GanGrossPrasadUnitaryGroups
 ArithmeticDynamics
 ErdosProgressionPowers
+PolynomialGaloisGroupsPartII
 ArithmeticDirichletSeriesPartII
 ClassicalGroupsPartII
 MultiquadraticPartII
