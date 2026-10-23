@@ -36191,10 +36191,42 @@
    "reported": "2026-10-23",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/862#issuecomment-6374474802"
+  },
+  {
+   "kind": "misprint",
+   "source": "Holm",
+   "locator": "Proposition 3.11, proof’s final equality, printed p. 186 (Holm line 725)",
+   "says": "the character module in the final equality is Hom_R(M, Q/Z)",
+   "should": "Hom_Z(M, Q/Z), consistently with the proposition and preceding proof",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "GorensteinHomologicalAlgebra",
+   "job": "ERRATA-GorensteinHomologicalAlgebra",
+   "issue": 870,
+   "head": "59db116",
+   "reported": "2026-10-23",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/870#issuecomment-6376841913"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bennis-Mahdou",
+   "locator": "Theorem 2.7, arXiv",
+   "says": "math/0606770v1, printed p. 7 (Bennis-Mahdou line 219): the source says Holm’s direct-summand closure result is Proposition 2.5",
+   "should": "Theorem 2.5, printed p. 174 (Holm line 270)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "GorensteinHomologicalAlgebra",
+   "job": "ERRATA-GorensteinHomologicalAlgebra",
+   "issue": 870,
+   "head": "59db116",
+   "reported": "2026-10-23",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/870#issuecomment-6376841913"
   }
  ],
  "scanned_to": "2026-10-23T23:20:48Z",
- "updated": "2026-10-23T23:30:04Z",
+ "updated": "2026-10-23T23:33:24Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
@@ -36494,6 +36526,19 @@
     "gap": 2
    },
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/862#issuecomment-6374474802"
+  },
+  {
+   "job": "ERRATA-GorensteinHomologicalAlgebra",
+   "roadmap": "GorensteinHomologicalAlgebra",
+   "head": "59db116",
+   "date": "2026-10-23",
+   "issues": 2,
+   "counts": {
+    "misprint": 2,
+    "error": 0,
+    "gap": 0
+   },
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/870#issuecomment-6376841913"
   }
  ]
 }
