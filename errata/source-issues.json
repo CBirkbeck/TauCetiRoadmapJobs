@@ -7339,10 +7339,655 @@
     "ChatGPT review of TauCetiRoadmap #999 (N4)"
    ],
    "batch": "out-reviews-5.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Rubin, Euler Systems (AWS author draft)",
+   "locator": "Appendix D, the one-step trace line between Proposition 1.3 and Lemma 1.5, p. 165",
+   "says": "the trace down one p-step returns x_r with no scalar factor",
+   "should": "p·x_r, as the source's own definitions and its first p-step computation force",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1311 (N1)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Weibel, The K-book, Chapter VI",
+   "locator": "Theorem 10.1, items (5)–(6)",
+   "says": "these items involve c_{2k+1} and ℤ/c_{4k+4}",
+   "should": "c_{2k+2} and ℤ/w_{4k+4}, as the book's Table 10.1.1 and the proof give",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #851 (G)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Berrick–Karoubi, 2005 (arXiv math/0509404)",
+   "locator": "Lemma 5.3, published p. 801",
+   "says": "the εL₀ groups are ℤ in both cases for ε = 1 and ℤ⊕ℤ/2 in both cases for ε = −1",
+   "should": "the two values interchanged, as the paper's own (4.1) and (4.3) indicate",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #851 (G3)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Schlichting, Hermitian K-theory, derived equivalences and Karoubi's fundamental theorem (arXiv:1209.0848v3)",
+   "locator": "Example 1.30, p. 21",
+   "says": "the dual of a component map carries a sign exponent and component indices that conflict with the internal-Hom action of its §1.11",
+   "should": "the exponent j(j−i) in the cited report's indexing, since a functional on degree j has degree −j",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #851 (N4)",
+    "fix report for TauCetiRoadmap #851 (E1b)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Wood, arXiv:1702.04644",
+   "locator": "Definition 3.12",
+   "says": "the full tame fundamental group is free pro-prime-to-p",
+   "should": "that only its maximal prime-to-p quotient is free pro-prime-to-p",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #850 (G3)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Greither, Class groups of abelian fields, and the main conjecture (Ann. Inst. Fourier, 1992)",
+   "locator": "the dyadic case of the proof, pp. 472–473",
+   "says": "the relevant Kummer kernel is a Klein four-group",
+   "should": "only a group killed by 2, by a complex-conjugation cocycle argument; for K = ℚ with M = 4 or 8 it is cyclic of order 2",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1311 (R)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Breuil–Conrad–Diamond–Taylor (BCDT, J. Amer. Math. Soc. 2001)",
+   "locator": "§1.3, the parenthetical beside the inertia table, author pp. 10–12",
+   "says": "the table attaches a single Serre weight to the residual representation",
+   "should": "that several weights can occur: at p = 5 the split ω⊕1 admits labels (0,0) and (4,0), of weights 2 and 6",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1312 (R2)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "van Hoften, arXiv:2010.10496",
+   "locator": "Appendix A, §A.3.2",
+   "says": "the unramified group matching the coinvariant translation lattice and fundamental group is adjoint, yet for ramified PU₃ the matching group is SL₂",
+   "should": "an unramified quasi-split semisimple group with the inertia-coinvariant cocharacter lattice, adjoint only when that lattice is the full coweight lattice",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #785 (X3)",
+    "fix report for TauCetiRoadmap #785 (X3b)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Orr, arXiv:1609.01315v2",
+   "locator": "Lemma 4.6, p. 19",
+   "says": "the ambient Siegel torus meets the subgroup H in exactly H's Siegel torus, treating the intersection's quotient as a split torus",
+   "should": "only the inclusion of H's torus in the ambient one (Lemma 4.5), since for the norm-one torus of ℚ(i) in SL₂ the intersection is μ₂",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #792 (N1)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Orr–Schnell, Algebra & Number Theory 17(6) (2023)",
+   "locator": "Theorem 1, pp. 1231–1232",
+   "says": "the intersection with H equals H's Siegel torus, as in Orr's Lemma 4.6, and its §§A and E corrections leave this untouched",
+   "should": "only containment of H's torus, as the same μ₂ example in SL₂ shows",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #792 (N1)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Helm, The Bernstein center of smooth W(k)[GL_n(F)]-modules (Hel16, arXiv:1201.1874v3)",
+   "locator": "Theorems 4.2 and 4.4, pp. 9–11",
+   "says": "these hold over an arbitrary field R and for any irreducible cuspidal π over a field K′",
+   "should": "for R algebraically closed or π absolutely irreducible, twisting over an algebraic closure; ℚ₂, ℓ = 3 with 𝒦[t]/(t² − 3) is a counterexample",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #793 (G2)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Helm (Hel16, arXiv:1201.1874v3)",
+   "locator": "§4, p. 11",
+   "says": "a simple module on which ℓ is invertible becomes absolutely irreducible after some finite extension K′",
+   "should": "that it splits into finitely many Galois-conjugate absolutely simple summands, as Lemma 4.5 states; 𝒦[t]/(t² − 3) is simple but splits over 𝒦(√3)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #793 (G2)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Helm (Hel16, arXiv:1201.1874v3)",
+   "locator": "§4, p. 9, the cuspidal type data of Theorem 4.2",
+   "says": "the order 𝔄 in the type data is a maximal order of M_n(F)",
+   "should": "an order normalised by E^× that meets the centraliser of E in a maximal order; for E totally ramified of degree n, 𝔄 is the Iwahori order",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #793 (G)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Helm (Hel16, arXiv:1201.1874v3)",
+   "locator": "Proposition 2.4, p. 5, and Theorem 11.8, p. 58",
+   "says": "objects of a block embed into direct sums of copies of the block's injective object, and §11's stability and adjunction arguments use such sums",
+   "should": "products of copies; for the trivial type of GL₁(ℚ₂) with ℓ = 3, invariants of the direct sum are 3-power torsion",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #793 (G4)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Helm (Hel16, arXiv:1201.1874v3)",
+   "locator": "§11, the duality passage just before Theorem 11.17, pp. 60–61",
+   "says": "the pairing between a module and its dual is perfect",
+   "should": "only a nondegenerate evaluation pairing, with Hom identified in one direction between opposite summands; an infinite direct sum for GL₁(ℚ₂), ℓ = 3, is a counterexample",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #793 (R2)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Calegari–Geraghty ([CG]; the report gives only the abbreviation)",
+   "locator": "§8.2, p. 79",
+   "says": "its sentence on the component set π₀ at p-power level holds with no condition on the class group",
+   "should": "restricted to the case where the narrow class group has exponent dividing p^n",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #792 (F)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kisin–Pappas, Integral models of Shimura varieties with parahoric level structure (arXiv:1512.01149)",
+   "locator": "Lemma 4.4.8",
+   "says": "a polarization with positive multiplier descends to the twist of an abelian scheme by a torsor, with no condition at the real place",
+   "should": "that descent requires the torsor to have a real point, as Kisin–Shin–Zhu §5.12.4 does; twisting E² by Spec ℚ(i) gives an indefinite form",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #849 (N5)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kisin (the paper whose §4.1.6 is corrected in Kisin–Shin–Zhu §5.12.4; the report gives no title)",
+   "locator": "§4.1.6",
+   "says": "the same positive-multiplier polarization descends to a torsor twist, without real triviality of the torsor",
+   "should": "that descent requires a real point of the torsor; the twist of E² by Spec ℚ(i) shows the descended form can be indefinite",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #849 (N5)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, Étale cohomology of diamonds (arXiv:1709.07343)",
+   "locator": "Proposition 13.12 and its proof, pp. 80–81",
+   "says": "it holds for quasicompact separated diamonds, applying Proposition 13.11, which assumes qcqs, though separated does not imply quasiseparated (Remark 10.8)",
+   "should": "stated for qcqs separated diamonds; a Frobenius-twisted dense-orbit quotient that is not quasiseparated breaks the Hausdorff and fibre conclusions",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #820 (G)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory II (2016)",
+   "locator": "the proof of Theorem 8.2.3, with Remarks 8.1.2–8.1.4 and Proposition 1.4.22",
+   "says": "functions on a seminormal space are recovered by pushing forward from a resolution, with no overlap check; at a node, (1,0) on the normalization is not such a function",
+   "should": "that sections agreeing on the resolution's reduced Čech overlap descend, by a finite-algebra subintegrality and seminormality argument",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #820 (N7)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Harbater–Obus–Pries–Stevenson (HOPS), arXiv:1408.0859v1 (per the reviewer also v2)",
+   "locator": "the proof sketch of Theorem 3.6, Serre's solvable step on the affine line, pp. 10–11",
+   "says": "pulling an ℓ-torsion local system back along the tame map z ↦ z^m multiplies the H¹ dimension by m",
+   "should": "d′ = m·d + (m − 1)·dim H, since Swan conductors scale by m; with p = 2, ℓ = 3, m = 3, d goes from 0 to 2",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #850 (G3)",
+    "fix report for TauCetiRoadmap #850 (O1)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Harbater–Obus–Pries–Stevenson (HOPS), arXiv:1408.0859",
+   "locator": "the sketch of the general affine-curve case of Abhyankar's conjecture",
+   "says": "to glue at a point above the punctures where the tame quotient cover ramifies, assuming such a point exists",
+   "should": "that any point above the punctures may serve, possibly unramified, using an affine-line cover split there; a once-punctured elliptic curve with C_p × C_ℓ² is a counterexample",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #850 (R)",
+    "fix report for TauCetiRoadmap #850 (R2)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Cho–Yamauchi, v2",
+   "locator": "§3.1, p. 12",
+   "says": "a point over an arbitrary base algebra is primitive as soon as one maximal minor is a unit",
+   "should": "that the maximal minors generate the unit ideal, i.e. a split injection, since one unit minor suffices only over local rings",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #851 (N2)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Calmès et al. (CDH III), Hermitian K-theory for stable ∞-categories III (arXiv:2009.07225v4)",
+   "locator": "Proposition 3.1.14, p. 54",
+   "says": "an intermediate integral telescope comparison holds for every extended m, including +∞",
+   "should": "restricted to finite m integrally, because at +∞ the degree-zero map is multiplication by eight with cokernel ℤ/8, so 2 must be inverted",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #851 (N5)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Conrad, Modular curves and rigid-analytic spaces",
+   "locator": "Theorem 2.2.4",
+   "says": "the multiplication map on the smooth locus of a generalised elliptic curve is finite flat of constant degree n²",
+   "should": "a degree that varies by component, since on a 2-gon over ℚ₃ the map [2] has four points over (1,0) and none over (1,1)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #813 (N4)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Conrad, Modular curves and rigid-analytic spaces",
+   "locator": "Definition 3.1.4 and Theorem 3.1.5",
+   "says": "the stalk maps between a formal scheme and its rigid generic fibre must be local homomorphisms",
+   "should": "a condition without stalk locality, because for Spf ℤ_p the map ℤ_p → ℚ_p is not local",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #813 (N6)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Conrad, Relative ampleness in rigid geometry",
+   "locator": "Definition 2.2.2",
+   "says": "the stalk maps between a formal scheme and its rigid generic fibre must be local homomorphisms",
+   "should": "a condition without stalk locality, because for Spf ℤ_p the map ℤ_p → ℚ_p is not local",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #813 (N6)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bosch–Lütkebohmert, Formal and rigid geometry II (1993)",
+   "locator": "the base-change sentence following the definition of a dévissage at a point",
+   "says": "dévissages are compatible with base change, without qualification",
+   "should": "only when the distinguished finite fibre remains one point, since X² + 1, irreducible over 𝔽₃, splits into two points over an unramified quadratic extension",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #813 (N8)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory I (2015)",
+   "locator": "the proof of Lemma 2.6.2, p. 53",
+   "says": "each stage's plus ring is the image of the integral restricted power-series ring, which need not be integrally closed as Definition 2.4.1 requires",
+   "should": "the integral closure of that image, since for ℚ_p⟨T⟩[ε]/(ε²) the element ε/p is integral but not in the image",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #814 (GN)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, p-adic Hodge theory for rigid-analytic varieties (2013)",
+   "locator": "§3, the pro-étale site",
+   "says": "Proposition 3.5 and Lemma 3.6, p. 14, and Lemma 3.11, p. 17: the source says its coverings and openness comparisons hold for towers whose finite étale stages need not be surjective, including a converse that a disappearing- or quadratic-tail tower defeats",
+   "should": "as in the author's erratum, item (1): coverings need finite-stage surjection pullbacks, the category is unchanged, and only pro-étale-implies-open is kept",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #814 (N2)",
+    "fix report for TauCetiRoadmap #814 (N5)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Rubin, Euler Systems (AWS author draft)",
+   "locator": "the inflation–restriction argument shortly before equation (6), which is on p. 36",
+   "says": "inflation–restriction over the character field L with group Δ suffices, though the residual coefficients need not descend to Δ",
+   "should": "run over L(μ_p), whose Galois group over ℚ has prime-to-p order and kills the invariant homomorphisms by its scalar action",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1311 (R)"
+   ],
+   "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Kedlaya, Sheaves, stacks, and shtukas (Arizona Winter School 2017 notes)",
+   "locator": "the descent theorem for sheafy rings, as discussed in Hansen–Kedlaya, Remark 4.6",
+   "says": "the descent statement holds, but its published proof is incomplete, as Hansen–Kedlaya point out",
+   "should": "as the evidence in the cited report requires",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #814 (R2)"
+   ],
+   "batch": "out-reports-3.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T12:04:19Z",
+ "updated": "2026-10-23T12:15:13Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
