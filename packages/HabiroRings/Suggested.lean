@@ -1,23 +1,23 @@
 import Mathlib
 
 /-!
-# HabiroRings: representative target signatures
+# HabiroRings: target signatures
 
-The mathematical roadmap is `README.md`. This file records definitions and theorem signatures
-statable on the pinned Mathlib carriers and is not exhaustive. The Habiro completion, its tensor,
-finite cyclotomic descent and the étale coefficient lifts require the supplier gaps of
-HabiroCohomologyFoundations Layer 0, and perfect covers and the completed étale Frobenius are
-QWittVectors interfaces; this file states none of them. The ordinary relative Habiro ring, the
-Laurent and base-change comparisons, the ordinary/derived comparison and the solid spectral
-comparisons remain README targets, since their carriers are not at the pins. Layer 0 records
-arbitrary-ideal étale object existence, the marked reduction map and the
-ordinary completed mapping property on existing carriers. The general finite descent and
-regular-principal enhanced universality targets remain in the README. Layer 2 records the
-native Laurent regularity milestone used by those comparisons; factorial divisibility is
-imported from QSeriesPartitionsAndMockModularForms §3.1.
+README.md is the roadmap; this file is not the roadmap. It states the roadmap's headline
+theorems against the pinned APIs: arbitrary-ideal étale lifting, completed marked maps,
+the Laurent localization resolution, regularity on polynomial coefficient modules, separable
+proper profiles, height one of the prime-chain index, discriminant-support étaleness, and
+triviality of an invertible power-series module with trivial first fibre.
 
-The line milestone works over an arbitrary commutative coefficient ring. The order-one
-trivialization remembers the actual evaluator, including its normalization.
+The ordinary relative-ring presentation, Taylor equalizer, untwisting, classical and GSWZ-ring
+comparisons and completed coefficient base change require the missing relative Habiro carriers.
+Completed scalar extension, transported K₃ lines, their Picard character, completed vanishing
+and supported field comparison require those carriers and actual indexed-line carriers.
+The Laurent/scalar-restriction and ordinary/derived comparisons, general finite monoidal descent,
+and regular-principal enhanced universality require enhanced algebra categories and mapping
+spaces. Spherical localization and completion require spectral module carriers; the solid
+idempotence, null-family and bounded-below tensor comparisons require light solid spectral
+carriers. These headlines are not statable at the pins and no substitute is stated for them.
 -/
 
 namespace TauCetiRoadmap.HabiroRings
@@ -30,46 +30,6 @@ universe u v w
 /-! ## Layer 0: general marked deformations -/
 
 namespace EtaleDeformation
-
-variable {B : Type u} [CommRing B] (I : Ideal B)
-  {E : Type v} {E' : Type w} [CommRing E] [CommRing E']
-  [Algebra B E] [Algebra B E']
-  {D : Type*} {D' : Type*} [CommRing D] [CommRing D']
-  [Algebra (B ⧸ I) D] [Algebra (B ⧸ I) D']
-
-/-- Reduce an algebra map through its actual source and target markings. The formula is
-ε′ ∘ (id ⊗ g) ∘ ε⁻¹; the ordinary carriers exist without an étaleness hypothesis.
-The README laws `EtaleDeformation.reduceMap_id` and `EtaleDeformation.reduceMap_comp`
-are cancellation of the common marking. For its marked étale bundle,
-`EtaleDeformation.carrier_etale` and `EtaleDeformation.reduction_etale` retain ordinary
-étaleness before and after reduction. The general invariance is supplied upstream;
-`EtaleDeformation.nilpotent_reductionEquivalence` transports its map bijection and
-`EtaleDeformation.equivOfMarking_trans` is composition over the identity marking. -/
-noncomputable def reduceMap
-    (ε : ((B ⧸ I) ⊗[B] E) ≃ₐ[B ⧸ I] D)
-    (ε' : ((B ⧸ I) ⊗[B] E') ≃ₐ[B ⧸ I] D') (g : E →ₐ[B] E') :
-    D →ₐ[B ⧸ I] D' :=
-  ε'.toAlgHom.comp ((Algebra.TensorProduct.map (AlgHom.id (B ⧸ I) (B ⧸ I)) g).comp
-    ε.symm.toAlgHom)
-
-/-- The same marking on both sides preserves the identity map, the marking law used by
-`EtaleDeformation.test_unit`. The README localization test `EtaleDeformation.test_localisation`
-has infinite-rank carrier ℤ[1/2] and therefore requires ordinary étale, rather than finite étale. -/
-example (ε : ((B ⧸ I) ⊗[B] E) ≃ₐ[B ⧸ I] D) :
-    reduceMap I ε ε (AlgHom.id B E) = AlgHom.id (B ⧸ I) D := by
-  ext x
-  simp [reduceMap]
-
-/-- Changing the target marking to the split swap changes the reduced identity at (1,0),
-the computation `EtaleDeformation.test_split_swap`. -/
-example [Nontrivial (B ⧸ I)]
-    (ε : ((B ⧸ I) ⊗[B] E) ≃ₐ[B ⧸ I] ((B ⧸ I) × (B ⧸ I))) :
-    let swap : ((B ⧸ I) × (B ⧸ I)) ≃ₐ[B ⧸ I] ((B ⧸ I) × (B ⧸ I)) :=
-      { RingEquiv.prodComm with commutes' := fun _ => rfl }
-    reduceMap I ε (ε.trans swap) (AlgHom.id B E) (1, 0) = ((0 : B ⧸ I), 1) ∧
-      reduceMap I ε (ε.trans swap) (AlgHom.id B E) (1, 0) ≠ ((1 : B ⧸ I), 0) := by
-  dsimp
-  simp [reduceMap, RingEquiv.prodComm]
 
 /-- Every étale algebra over any quotient B/I has an ordinary étale object lift with a
 specified reduction equivalence. No finite generation or nilpotence of I is assumed.
@@ -85,18 +45,9 @@ end EtaleDeformation
 
 namespace CompletedEtaleLift
 
-/-- The ordinary completed lift has the unique map into any I-complete target inducing a
-given map E → C/IC. Marking transport gives README §0.5 homEquiv. This extends the existing
-formally smooth complete-target lift from E to its actual AdicCompletion carrier.
-In the marked formulation `CompletedEtaleLift.reduction_of` identifies the reduced unit;
-`CompletedEtaleLift.map_reduction` identifies each lifted map with its reduced input.
-Uniqueness gives `CompletedEtaleLift.map_id` and `CompletedEtaleLift.map_comp`.
-Lifting the identity gives a marked equivalence: `CompletedEtaleLift.equivOfMarking_reduction`
-retains its marking and `CompletedEtaleLift.equivOfMarking_trans` retains composition.
-The README boundary `CompletedEtaleLift.test_zero_ideal` has completion E at I=0;
-`CompletedEtaleLift.test_nilpotent` has the same value by an eventually constant tower.
-`CompletedEtaleLift.test_split_swap` exchanges the two completed components, whereas
-`CompletedEtaleLift.test_localisation_series` gives ℤ[1/2][[t]], with unbounded denominators. -/
+/-- For a finitely generated ideal I and an étale B-algebra E, each reduced map
+E → C/IC into an I-complete B-algebra extends uniquely from the ordinary completion of E.
+This is the marked completed mapping theorem of README §0.5 before marking transport. -/
 theorem mapUnique (B : Type u) (E : Type v) (C : Type w)
     [CommRing B] [CommRing E] [CommRing C] [Algebra B E] [Algebra B C]
     [Algebra.Etale B E] (I : Ideal B) (hI : I.FG)
@@ -112,6 +63,42 @@ end CompletedEtaleLift
 
 /-! ## Layer 2: ordinary coefficients and factorial tensor weights -/
 
+namespace LaurentLocalization
+
+/-- The Laurent coefficient ring B=ℤ[q,q⁻¹] of README §2.2. -/
+abbrev Coeff := LaurentPolynomial ℤ
+
+/-- The positive factor of index i is 1−q^(i+1); the zero cyclotomic factor is excluded. -/
+noncomputable def factor (i : ℕ) : Coeff := 1 - LaurentPolynomial.T (R := ℤ) ((i + 1 : ℕ) : ℤ)
+
+/-- The multiplicative system generated by every positive factor 1−q^j. -/
+noncomputable def denominators : Submonoid Coeff := Submonoid.closure (Set.range factor)
+
+/-- P_n as an element of the denominator monoid, with P₀=1. -/
+noncomputable def factorial : ℕ → denominators
+  | 0 => 1
+  | n + 1 => factorial n * ⟨factor n, Submonoid.subset_closure ⟨n, rfl⟩⟩
+
+/-- The augmentation sends e_i to 1/P_i in the actual localization. -/
+noncomputable def augmentation : (ℕ →₀ Coeff) →ₗ[Coeff] Localization denominators :=
+  Finsupp.linearCombination Coeff (fun i =>
+    IsLocalization.mk' (Localization denominators) 1 (factorial i))
+
+/-- The telescope differential sends e_i to e_i−(1−q^(i+1))e_(i+1). -/
+noncomputable def differential : (ℕ →₀ Coeff) →ₗ[Coeff] (ℕ →₀ Coeff) :=
+  Finsupp.linearCombination Coeff (fun i =>
+    Finsupp.single i 1 - Finsupp.single (i + 1) (factor i))
+
+/-- The positive-factor telescope is a length-one free resolution of the cyclotomic
+localization. The sign and inverse-factorial augmentation are those of README §2.2;
+Wagner, Appendix B, proof of Lemma B.2, pp.77–78, with the corrected adjacent factor. -/
+theorem free_resolution : Function.Injective differential ∧
+    LinearMap.range differential = LinearMap.ker augmentation ∧
+    Function.Surjective augmentation := by
+  sorry
+
+end LaurentLocalization
+
 namespace OrdinaryDerivedComparison
 /-- Positive Laurent cyclotomic factors are regular on every polynomial coefficient module,
 including modules with integer torsion. This is the finite-quotient milestone for Layer 2
@@ -125,15 +112,19 @@ theorem laurent_regular (R : Type u) (M : Type v) [CommRing R]
 
 end OrdinaryDerivedComparison
 
-/-
-The integral factorial-divisibility input is `gaussianRectangle_product` of
-QSeriesPartitionsAndMockModularForms §3.1. For the solid tensor, the proper-profile law
-`CountableSolidHabiroTensor.separable_weights` asks for separable proper lower profiles
-f(m)+g(n)≤h(m,n), and `CountableSolidHabiroTensor.radial_max` says that the maximum of
-proper profiles is proper on ℕ². These enhanced comparisons require the full solid
-contract; `CountableSolidHabiroTensor.bounded_below` retains lower homotopy bounds on
-both modules as well as the uniformly bounded simplicial realization comparison.
--/
+namespace CountableSolidHabiroTensor
+
+/-- Every radially proper natural-valued profile has separable proper lower profiles.
+This ordinary combinatorial milestone of README §2.11 has no spectral hypotheses;
+Wagner, proof of Lemma B.8, p.80. -/
+theorem separable_weights (h : ℕ × ℕ → ℕ)
+    (hh : ∀ k : ℕ, ∃ B : ℕ, ∀ m n : ℕ, B ≤ m + n → k ≤ h (m, n)) :
+    ∃ f g : ℕ → ℕ, Filter.Tendsto f Filter.atTop Filter.atTop ∧
+      Filter.Tendsto g Filter.atTop Filter.atTop ∧
+      ∀ m n : ℕ, f m + g n ≤ h (m, n) := by
+  sorry
+
+end CountableSolidHabiroTensor
 
 /-! ## Layer 3: the finite prime-chain index -/
 
@@ -144,36 +135,15 @@ The definition is total; the vertex interpretation requires p prime, p ∣ m and
 def primeChain (m d p : ℕ) : Finset ℕ :=
   (Finset.range (m.factorization p + 1)).image (fun i => d * p ^ i)
 
-/-- At m=4 the maximal 2-chain includes its intermediate divisor. -/
-example : primeChain 4 1 2 = {1, 2, 4} := by
-  native_decide
-
-/-- At m=1 the exponent is zero, so the chain has its sole p-free entry. -/
-example : primeChain 1 3 2 = {3} ∧ primeChain 0 1 2 = {1} ∧
-    primeChain 4 0 2 = {0} ∧ primeChain 4 3 0 = {3} := by
-  native_decide
-
-/-- The reduced index has singleton divisors and maximal prime chains, with duplicate
-subsets identified. Its arrows are subset inclusions, not divisibility of entries.
-`CyclotomicIndex.mem_vertices` is precisely this union membership formula;
-for m>0, `CyclotomicIndex.vertex_subset` and `CyclotomicIndex.vertex_nonempty`
-say the subsets are nonempty sets of divisors. On the inherited subtype order,
-`CyclotomicIndex.le_iff_subset` is inclusion; `CyclotomicIndex.nerve_quasicategory`
-uses the ordinary poset nerve. -/
+/-- The reduced index consists of singleton divisors and maximal prime chains, with
+identical subsets identified. Its inherited order is subset inclusion. -/
 def vertices (m : ℕ) : Finset (Finset ℕ) :=
   m.divisors.image (fun d => {d}) ∪
     m.primeFactors.biUnion (fun p =>
       (m.divisors.filter (fun d => ¬ p ∣ d)).image (fun d => primeChain m d p))
 
-/-- The order-one index has exactly one vertex (`CyclotomicIndex.test_one`). -/
-example : vertices 1 = {{1}} ∧ vertices 0 = ∅ := by
-  native_decide
-
-/-- At order four the proper subchain {1,4} is excluded; mixed orders retain all chains
-and incomparable singleton vertices. These are the README computations
-`CyclotomicIndex.test_four`, `CyclotomicIndex.test_not_pair_four`,
-`CyclotomicIndex.test_six` and `CyclotomicIndex.test_incomparable_singletons`:
-their values distinguish subset order and maximality. -/
+/-- Maximality, mixed-prime chains and subset-order orientation are tested together
+at orders 4, 6 and 12. -/
 example : vertices 4 = {{1}, {2}, {4}, {1, 2, 4}} ∧
     ({1, 4} : Finset ℕ) ∉ vertices 4 ∧
     vertices 6 = {{1}, {2}, {3}, {6}, {1, 2}, {3, 6}, {1, 3}, {2, 6}} ∧
@@ -192,17 +162,8 @@ end CyclotomicIndex
 
 /-! ## Layer 5: discriminant-localized number-field coefficients -/
 
-/-- Inverting a nonzero multiple of the discriminant makes the ring of integers étale over ℤ.
-The ring comparison uses this hypothesis; divisibility by 6 is additionally required for the
-GSWZ line applications in Layer 6. Wagner, Corollary 2.13, p.19. -/
-theorem etale_localization_away_discr (F : Type u) [Field F] [NumberField F]
-    (Δ : ℤ) (hΔ : Δ ≠ 0) (hd : NumberField.discr F ∣ Δ)
-    (R : Type v) [CommRing R] [Algebra (𝓞 F) R]
-    [IsLocalization.Away (Δ : 𝓞 F) R] : Algebra.Etale ℤ R := by
-  sorry
-
-/-- The same étaleness criterion only requires inverting every prime in the discriminant's
-support, regardless of multiplicity. This is the radical form of the preceding milestone. -/
+/-- Inverting every rational prime in the discriminant support makes a number field's
+ring of integers étale over ℤ. Multiplicities are irrelevant; README §5.8. -/
 theorem etale_localization_away_of_prime_dvd (F : Type u) [Field F] [NumberField F]
     (Δ : ℤ) (hΔ : Δ ≠ 0)
     (hd : ∀ p : ℕ, p.Prime → (p : ℤ) ∣ NumberField.discr F → (p : ℤ) ∣ Δ)
@@ -211,43 +172,6 @@ theorem etale_localization_away_of_prime_dvd (F : Type u) [Field F] [NumberField
   sorry
 
 /-! ## Layer 6: order-one fibers and completed lines -/
-
-namespace OrderOneFibre
-
-variable {H : Type u} {R : Type v} {M : Type u}
-  [CommRing H] [CommRing R] [Algebra H R]
-  [AddCommGroup M] [Module H M] [Module.Invertible H M]
-
-/-- The actual evaluation map trivializes the base-changed invertible module when it has a
-preimage of 1. Its underlying map is the given evaluator, so a rescaling changes the normalization.
-This specializes Mathlib's bijectivity criterion to the order-one fiber of Layer 6.
-The normalization law `OrderOneFibre.map_eq_eval` is equality of the underlying map with e;
-`OrderOneFibre.inverse_one` says e(t⁻¹(1))=1. -/
-noncomputable def trivialization (e : (R ⊗[H] M) →ₗ[R] R)
-    (hunit : ∃ x, e x = 1) : (R ⊗[H] M) ≃ₗ[R] R :=
-  LinearEquiv.ofBijective e (Module.Invertible.bijective_of_surjective (by
-    obtain ⟨x, hx⟩ := hunit
-    intro r
-    refine ⟨r • x, ?_⟩
-    simp [hx]))
-
-/-- The zero evaluator fails the necessary unit test even on the trivial line. -/
-theorem zeroEvaluation : ¬ ∃ x : ℤ ⊗[ℤ] ℤ, (0 : (ℤ ⊗[ℤ] ℤ) →ₗ[ℤ] ℤ) x = 1 := by
-  simp
-
-/-- The tensor-unit evaluator retains the coefficient of the trivial line. -/
-example (R : Type u) [CommRing R] (r : R) :
-    trivialization (TensorProduct.lid R R).toLinearMap
-      ⟨1 ⊗ₜ[R] 1, by simp⟩ (1 ⊗ₜ[R] r) = r := by
-  simp [trivialization]
-
-/-- Negating the evaluator negates the normalized coordinate. -/
-example :
-    trivialization (-(TensorProduct.lid ℤ ℤ).toLinearMap)
-      ⟨1 ⊗ₜ[ℤ] (-1), by simp⟩ (1 ⊗ₜ[ℤ] (3 : ℤ)) = -3 := by
-  simp [trivialization]
-
-end OrderOneFibre
 
 section CompletedLine
 
@@ -269,40 +193,5 @@ theorem completedRegulatorTriviality {P : Type v} [AddCommGroup P]
   sorry
 
 end CompletedLine
-
-/-
-The marked bundle `EtaleDeformation` consists of an étale algebra and its specified
-quotient marking. `CompletedEtaleLift` uses its ordinary adic completion; the regular
-principal comparison `CompletedEtaleLift.principal_universality` fixes the entire
-homotopy fibre of complete equivalences over that marking. Objects of `EtalePair` are
-perfectly covered Λ-bases with étale algebras, and its maps preserve the base operations.
-
-For Laurent coefficients, `habiroLocalisation` inverts every q^m−1 and `IsHabiroComplete`
-is right orthogonality to that localization. The comparisons
-`habiroCompletion_polynomial_eq_laurent` and `isHabiroComplete_iff_restrictScalars`
-identify the complete categories under Laurent and coefficient restriction;
-`ordinaryDerivedComparison` identifies the completed polynomial coefficient module
-with its static ordinary limit. `habiroTensor_baseChange` is completed coefficient
-extension. In spherical coefficients, `SphericalCyclotomicLocalization` retains the
-sphere's homotopy and `SpectralHabiroCompletion` has unit its completed sphere algebra.
-
-For solid modules `IsHabiroCompleteSolid` is the same localization orthogonality,
-`habiroCompletionSolid` is its reflector, and `toSolid` completes the discrete embedding.
-`SolidHabiroCompletion` retains the product, tower and bounded-realization hypotheses;
-`CountableSolidHabiroFree` completes a sum of countable products by proper factorial profiles.
-
-The finite `CyclotomicIndex` uses inclusion of its singleton and maximal-chain vertices.
-`FiniteMonoidalDescent.Datum` retains the coherent overlap equivalences and conservativity;
-`CyclotomicIndex.mapEqualizer` expresses reconstructed mapping spaces as the homotopy
-equalizer of the two prime-edge comparison maps.
-
-For a pair, `RelHabiroStage` is the marked complete coefficient stage and `relativeHabiro`
-is the ordinary ring of its static limit. Compatible roots define the full Taylor
-coefficient algebras; the two equalizer arrows are coefficient extension and completed
-Frobenius followed by convergent re-expansion. `completedScalarExtension` completes
-tensor along the induced ring map; on invertible modules its class map is `picMap`.
-The transported K₃ lines retain their actual integral order-one evaluators and the
-specified supported field comparisons.
--/
 
 end TauCetiRoadmap.HabiroRings
