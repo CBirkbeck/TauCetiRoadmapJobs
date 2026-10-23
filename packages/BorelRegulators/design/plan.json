@@ -1789,7 +1789,7 @@
         "5.2"
       ],
       "detail": "Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The evaluation uses the integral Hurewicz image and the Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, lines 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1.",
-      "needs": "Supply s(chₙ)(Hur εₙ)=(2πi)^n for εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with these suspension and orientation conventions.",
+      "needs": "Supply s(chₙ)(Hur εₙ)=(2πi)^n for n≥2 and εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with the ordered suspension of CharacteristicClasses C6 item 3 and the (x,y)↦x+iy orientation of TopologicalKTheory T4.",
       "supplier": "CharacteristicClasses",
       "section": "C6 item 3 extension"
     },
@@ -1822,7 +1822,7 @@
       "neededBy": [
         "3.5"
       ],
-      "detail": "Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors.",
+      "detail": "Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses (with the gauge a generator of invariant top forms) and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors.",
       "needs": "Supply positive rational local gauge masses for all compact opens, including ramified finite places.",
       "supplier": "AdelicAlgebraicGroups",
       "section": "Part II, rational gauge masses extending §2.4"
@@ -1891,9 +1891,20 @@
         "4.6"
       ],
       "detail": "Use CharacteristicClasses C5a.5’s multiplicative cohomological Serre spectral sequence. For a number field F, a≥2, G=Res_(F/ℚ)SL_a, its standard connected maximal compact K and torsion-free arithmetic Γ, compare the bundles K→Gᵘ→Xᵘ and K→G(ℝ)/Γ→K\\G(ℝ)/Γ with the compact-Lie-subalgebra filtration on absolute Lie cochains. The maps α and β of §4.2 must preserve that filtration and induce the same restriction to K (borel1977, §3.5, p.622, lines 328–337).",
-      "needs": "Supply the comparison of these C5a.5 spectral sequences with the Lie-cochain filtration, preserving edge restriction and the identity on the common compact fibre.",
+      "needs": "Supply, for a number field F of degree N, n≥2, odd a with a−1>4N(2n−1) and torsion-free arithmetic Γ⊂Res_(F/ℚ)SL_a, the comparison of the C5a.5 spectral sequences of K→Gᵘ→Xᵘ and K→G(ℝ)/Γ→K\\G(ℝ)/Γ with the Lie-cochain filtration, preserving edge restriction and the identity on the common compact fibre, where G=Res_(F/ℚ)SL_a and K is its standard connected maximal compact.",
       "supplier": "CharacteristicClasses",
       "section": "C5a.5 extension, invariant-form filtration comparison"
+    },
+    {
+      "slug": "splitting-degree-index",
+      "title": "Index divisibility for every finite splitting extension",
+      "neededBy": [
+        "3.1"
+      ],
+      "needs": "For any field K, finite-dimensional central simple K-algebra A and finite field extension L/K splitting A, provide index(A)∣[L:K] on Tau Ceti’s native index and splitting-field carriers, without a separability restriction.",
+      "detail": "SemisimpleAlgebras Layer 6 and TauCeti.Algebra.CentralSimple.Index provide an index-degree splitting field but do not state divisibility of every finite splitting degree by the index. Extend that generic theory in Part II. For a division factor D of degree d and a splitting L, restrict the M_d(L)-module L^d to D; finite-dimensionality over the division ring gives d²k=d[L:K], hence d divides [L:K]. The number-field proof in §3.1 consumes this input and the existing index-degree splitting field, rather than constructing a second index theory.",
+      "supplier": "SemisimpleAlgebras",
+      "section": "Part II, finite splitting-degree divisibility extending Layer 6"
     }
   ]
 }
