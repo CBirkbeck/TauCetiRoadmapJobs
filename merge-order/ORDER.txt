@@ -103,6 +103,7 @@ AdicCoefficientsAndComparisons
 AdicCoefficientsAndComparisonsPartII
 EtaleDualityAndPerverseSheaves
 ArcTopologyAndDescent
+EtaleDualityAndPerverseSheavesPartII
 AlgebraicTopologyPartII
 ArithmeticStatisticsPartI
 ArithmeticStatisticsPartII
