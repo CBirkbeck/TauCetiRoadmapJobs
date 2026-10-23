@@ -98,6 +98,7 @@ ClassicalArithmeticCompletion
 EllipticLegendreCharacterInterfaces
 EllipticCurvesPartII
 ArithmeticKTheory
+GeometryOfNumbersAndQuadraticArithmeticPartII
 K3BlochGroups
 K2SymbolsBrauerPartII
 ConformalMappingPartII
