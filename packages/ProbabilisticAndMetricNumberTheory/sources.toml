@@ -2,6 +2,407 @@ schema = "tauceti-roadmap-sources/v1"
 roadmap = "ProbabilisticAndMetricNumberTheory"
 
 [[source]]
+id = "TAO-RESIDUES"
+authors = "Terence Tao"
+title = "254A, Supplement 4: Probabilistic models and heuristics for the primes (optional)"
+year = 2015
+locator_scheme = "section"
+locator = "Section 3, Equidistribution of residues, first six paragraphs and the product-modulus comparison"
+url = "https://terrytao.wordpress.com/2015/01/04/254a-supplement-4-probabilistic-models-and-heuristics-for-the-primes-optional/"
+fetched_from = "https://terrytao.wordpress.com/2015/01/04/254a-supplement-4-probabilistic-models-and-heuristics-for-the-primes-optional/"
+fetched_at = "2026-10-22T09:31:23Z"
+sha256 = "128a46f53a40d85dcfc11c11332e7c2074acd89b20e9096a39b24dc8703935d9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography TAO-RESIDUES and its explicit section locators"]
+
+[[source]]
+id = "GS-SIEVING"
+authors = "Andrew Granville and K. Soundararajan"
+title = "Sieving and the Erdos-Kac theorem"
+year = 2006
+doi = "10.1007/978-1-4020-5404-4_2"
+locator_scheme = "section"
+locator = "Theorem 1; Proposition 2 and proof, pp. 2–6"
+url = "https://dms.umontreal.ca/~andrew/PDF/ErdosKac.pdf"
+fetched_from = "https://dms.umontreal.ca/~andrew/PDF/ErdosKac.pdf"
+fetched_at = "2026-10-22T09:31:24Z"
+sha256 = "c5c6ce0e61d91cd6da0b4be6b137e4b2fdd3e2c4f11b5c90d8b52b6846532be2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Author copy with 2006 footer, pp.1–13; locators refer to that copy, not the 2007 book pagination."
+cited_for = ["README bibliography GS-SIEVING and its explicit section locators"]
+
+[[source]]
+id = "TAO-PRIME-FACTORS"
+authors = "Terence Tao"
+title = "254A, Notes 1: Elementary multiplicative number theory"
+year = 2014
+locator_scheme = "section"
+locator = "Elementary prime-factor counting and normal order sections"
+url = "https://terrytao.wordpress.com/2014/11/23/254a-notes-1-elementary-multiplicative-number-theory/"
+fetched_from = "https://terrytao.wordpress.com/2014/11/23/254a-notes-1-elementary-multiplicative-number-theory/"
+fetched_at = "2026-10-22T09:31:24Z"
+sha256 = "8bde6322948d51f986ed5bc1ed0a85b00fb3f3ac6b103648059e2c153cc3410f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography TAO-PRIME-FACTORS and its explicit section locators"]
+
+[[source]]
+id = "TAO-CLT-2010"
+authors = "Terence Tao"
+title = "254A, Notes 2: The central limit theorem"
+year = 2010
+locator_scheme = "section"
+locator = "Section 3, Theorem 25 proof and Remark 26 (Taylor remainder and Gaussian moments)"
+url = "https://terrytao.wordpress.com/2010/01/05/254a-notes-2-the-central-limit-theorem/"
+fetched_from = "https://terrytao.wordpress.com/2010/01/05/254a-notes-2-the-central-limit-theorem/"
+fetched_at = "2026-10-22T09:31:24Z"
+sha256 = "10a5b15a5156a7908af1bd2779407ffc455ecd659f571ce834babd188edcc192"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography TAO-CLT-2010 and its explicit section locators"]
+
+[[source]]
+id = "TAO-HOFA-1.1"
+authors = "Terence Tao"
+title = "Higher order Fourier analysis, Section 1.1: Equidistribution of polynomial sequences in tori"
+year = 2012
+locator_scheme = "section"
+locator = "Section 1.1, Proposition 1.1.2, Corollary 1.1.9, Exercise 1.1.6"
+url = "https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-142-tao7-higher-book-05june2012.pdf"
+fetched_from = "https://terrytao.wordpress.com/wp-content/uploads/2012/12/gsm-142-tao7-higher-book-05june2012.pdf"
+fetched_at = "2026-10-22T09:31:26Z"
+sha256 = "278a9b48c7ba09dc541371f6703ed3cfc3c72d75b5157107dd99539336ce7bbd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography TAO-HOFA-1.1 and its explicit section locators"]
+
+[[source]]
+id = "KM-2020"
+authors = "Dimitris Koukoulopoulos and James Maynard"
+title = "On the Duffin–Schaeffer conjecture"
+year = 2020
+doi = "10.4007/annals.2020.192.1.5"
+locator_scheme = "section"
+locator = "Theorems 1–2, Corollary 3; Sections 5–15; Lemmas 5.3, 7.2, 7.3; Definition 6.1"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n1-p05-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n1-p05-s.pdf"
+fetched_at = "2026-10-22T09:31:28Z"
+sha256 = "d41eb092839d28e5a5c613a035c6ec8a984fe570700d7bf5c82a08a013b0fc8f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography KM-2020 and its explicit section locators"]
+
+[[source]]
+id = "BSKK2023"
+authors = "Lior Bary-Soroker, Dimitris Koukoulopoulos and Gady Kozma"
+title = "Irreducibility of random polynomials: general measures"
+year = 2023
+doi = "10.1007/s00222-023-01193-6"
+arxiv = "2007.14567v3"
+locator_scheme = "section"
+locator = "Lemma 7.2, p.36"
+url = "https://arxiv.org/abs/2007.14567v3"
+fetched_from = "https://arxiv.org/pdf/2007.14567v3"
+fetched_at = "2026-10-22T09:31:33Z"
+sha256 = "adb1359df46f92d608009b32f45939672e08b1e3fe052587b035431e70d5d3e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "2007.14567v3"
+cited_for = ["README bibliography BSKK2023 and its explicit section locators"]
+
+[[source]]
+id = "KoymansPagano2022"
+authors = "Peter Koymans and Carlo Pagano"
+title = "On Stevenhagen's conjecture"
+year = 2022
+arxiv = "2201.13424v1"
+locator_scheme = "section"
+locator = "Theorem 7.2(a), equation (7.2), p.60"
+url = "https://arxiv.org/abs/2201.13424v1"
+fetched_from = "https://arxiv.org/pdf/2201.13424v1"
+fetched_at = "2026-10-22T09:31:39Z"
+sha256 = "c7a93ffea06491d824d900fe067f6768246e84555fa8da8282833caac7850cbd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "2201.13424v1"
+cited_for = ["README bibliography KoymansPagano2022 and its explicit section locators"]
+
+[[source]]
+id = "ElsholtzTao2011"
+authors = "Christian Elsholtz and Terence Tao"
+title = "Counting the number of solutions to the Erdős–Straus equation on unit fractions"
+year = 2011
+locator_scheme = "section"
+locator = "Appendix A, Lemmas A.2–A.3, p.38"
+url = "https://terrytao.wordpress.com/wp-content/uploads/2011/07/egyptian-count13.pdf"
+fetched_from = "https://terrytao.wordpress.com/wp-content/uploads/2011/07/egyptian-count13.pdf"
+fetched_at = "2026-10-22T09:31:40Z"
+sha256 = "03096488f9544c274b9d895ef5d9df4803acfc88d5a019d19a177eb728c7c3e7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography ElsholtzTao2011 and its explicit section locators"]
+
+[[source]]
+id = "Sarig2023"
+authors = "Omri Sarig"
+title = "Lecture Notes on Ergodic Theory"
+year = 2023
+locator_scheme = "section"
+locator = "Theorems 2.2–2.3, pp.45–48"
+url = "https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/ergodicnotes.pdf"
+fetched_from = "https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/ergodicnotes.pdf"
+fetched_at = "2026-10-22T09:31:44Z"
+sha256 = "94b4fb65b7eb7730ad8b8369239eb5a5503a98b547a6bd812515b5bac6261094"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography Sarig2023 and its explicit section locators"]
+
+[[source]]
+id = "SarigTransfer"
+authors = "Omri Sarig"
+title = "Introduction to the transfer operator method"
+year = 2020
+locator_scheme = "section"
+locator = "Appendix A.2, pp.32–33"
+url = "https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/transferoperatorcourse-bonn.pdf"
+fetched_from = "https://www.weizmann.ac.il/math/sarigo/sites/math.sarigo/files/uploads/transferoperatorcourse-bonn.pdf"
+fetched_at = "2026-10-22T09:31:45Z"
+sha256 = "c00fee5bb0685fac87afb3c66609253c2ddfde7ea553b60ceaa9d325e55fe3a0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography SarigTransfer and its explicit section locators"]
+
+[[source]]
+id = "Smyth2020"
+authors = "Daniel Glasscock, Claire Merriman, Donald Robertson and Clifford Smyth"
+title = "Ergodic Theory with Applications to Continued Fractions"
+year = 2020
+locator_scheme = "section"
+locator = "Theorem 21, p.46; Lesson 10 Theorems 25,27,29 and Exercise 2.20, physical p.55 (printed Lesson 10, p.52); continued fractions and logarithmic limits"
+url = "https://uncg.edu/~cdsmyth/UNCG_Ergodic_Theory_Summer_School_2020_Final_Lecture_Notes.pdf"
+fetched_from = "https://uncg.edu/~cdsmyth/UNCG_Ergodic_Theory_Summer_School_2020_Final_Lecture_Notes.pdf"
+fetched_at = "2026-10-22T09:31:49Z"
+sha256 = "74a84b7ba741728055e9cc0da7b3c2b14e99b645ea79ac2f3b72d98034a9cf1f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography Smyth2020 and its explicit section locators"]
+
+[[source]]
+id = "BeresnevichVelani"
+authors = "Victor Beresnevich and Sanju Velani"
+title = "A Mass Transference Principle and the Duffin–Schaeffer conjecture for Hausdorff measures"
+year = 2006
+locator_scheme = "section"
+locator = "Theorem 2, Lemma 7; Sections 3,5–6, pp.977–990"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v164-n3-p06.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v164-n3-p06.pdf"
+fetched_at = "2026-10-22T09:35:10Z"
+sha256 = "62b1969338f17fc9e1760b858ab23d6e605092470a55000c8cb3af8e032a0f16"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography BeresnevichVelani and its explicit section locators"]
+
+[[source]]
+id = "MatomakiRadziwill"
+authors = "Kaisa Matomäki and Maksym Radziwiłł"
+title = "Multiplicative functions in short intervals"
+year = 2017
+arxiv = "1501.04585v4"
+locator_scheme = "section"
+locator = "Theorem 1 and Corollary 2, pp.1–3; Section 2; Lemma 4, physical pp.13–14; Lemma 14, physical p.21; Proposition 1, physical p.23; Sections 7–9"
+url = "https://arxiv.org/abs/1501.04585v4"
+fetched_from = "https://arxiv.org/pdf/1501.04585v4"
+fetched_at = "2026-10-22T09:35:14Z"
+sha256 = "ec546fdf256b3b3b26b161886c5bab5efb372978ab430c0032e55919f5329277"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "1501.04585v4"
+cited_for = ["README bibliography MatomakiRadziwill and its explicit section locators"]
+
+[[source]]
+id = "TaoLogChowla"
+authors = "Terence Tao"
+title = "The logarithmically averaged Chowla and Elliott conjectures for two-point correlations"
+year = 2016
+arxiv = "1509.05422v4"
+locator_scheme = "section"
+locator = "Theorem 1.3 and (1.6)–(1.7), physical p.5; Corollary 1.5, pp.5–6; Propositions 2.1–2.2, pp.8–12; Proposition 2.6 and Sections 2–3"
+url = "https://arxiv.org/abs/1509.05422v4"
+fetched_from = "https://arxiv.org/pdf/1509.05422v4"
+fetched_at = "2026-10-22T09:35:20Z"
+sha256 = "467329ae414b669808555fddf131be3bc07025777ae3af8ccdea6e98db6722e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "1509.05422v4"
+cited_for = ["README bibliography TaoLogChowla and its explicit section locators"]
+
+[[source]]
+id = "Harper"
+authors = "Adam J. Harper"
+title = "Moments of random multiplicative functions, II: High moments"
+year = 2019
+locator_scheme = "section"
+locator = "p.2277, definitions of random multiplicative functions"
+url = "https://msp.org/ant/2019/13-10/ant-v13-n10-p02-s.pdf"
+fetched_from = "https://msp.org/ant/2019/13-10/ant-v13-n10-p02-s.pdf"
+fetched_at = "2026-10-22T09:35:23Z"
+sha256 = "1e7258fe570e26364a9479e81492b99a92f173de7e749d4984f41650a9904264"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography Harper and its explicit section locators"]
+
+[[source]]
+id = "Sarnak"
+authors = "Peter Sarnak"
+title = "Three Lectures on the Möbius Function, Randomness and Dynamics, Lecture 1"
+year = 2010
+locator_scheme = "section"
+locator = "Lecture 1, Chowla and Sarnak conjectures"
+url = "https://publications.ias.edu/sites/default/files/MobiusFunctionsLectures%282%29.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/MobiusFunctionsLectures%282%29.pdf"
+fetched_at = "2026-10-22T09:35:24Z"
+sha256 = "2e55b6b72b506cf22d72784bc546853317585d1fdab7b088cafcc18ebc27ae46"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography Sarnak and its explicit section locators"]
+
+[[source]]
+id = "Kubilius2021"
+authors = "Louis H. Y. Chen, Arturo Jaramillo and Xiaochuan Yang"
+title = "A generalized Kubilius–Barban–Vinogradov bound for prime multiplicities"
+year = 2021
+arxiv = "2111.07361v1"
+locator_scheme = "section"
+locator = "Equations (1.1), (1.6), pp.2–3; sieve inputs"
+url = "https://arxiv.org/abs/2111.07361v1"
+fetched_from = "https://arxiv.org/pdf/2111.07361v1"
+fetched_at = "2026-10-22T09:35:27Z"
+sha256 = "02bbe9d8f6440d88967cd37962e1a02d6472ffcd929228a9c2186209802a88e3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "2111.07361v1"
+cited_for = ["README bibliography Kubilius2021 and its explicit section locators"]
+
+[[source]]
+id = "Sun2017"
+authors = "Peng Sun"
+title = "A Generalization of Gauss-Kuzmin-Lévy Theorem"
+year = 2017
+arxiv = "1705.02921v2"
+locator_scheme = "section"
+locator = "Theorem 2 and proof, pp.3–6"
+url = "https://arxiv.org/abs/1705.02921v2"
+fetched_from = "https://arxiv.org/pdf/1705.02921v2"
+fetched_at = "2026-10-22T09:35:33Z"
+sha256 = "9b2eb1867614fe285aa4d729345c25962590e6767a36f2b0c20326a8b86cd703"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv:1705.02921v2 numbering, Theorem 2; published Acta Mathematica Scientia 38(3) (2018),965–972."
+cited_for = ["README bibliography Sun2017 and its explicit section locators"]
+
+[[source]]
+id = "Gorodnik2010"
+authors = "Alexander Gorodnik"
+title = "TIFR lectures on homogeneous dynamics, Lecture 1"
+year = 2010
+locator_scheme = "section"
+locator = "Lecture 1, pp.3–8"
+url = "https://www.math.uzh.ch/gorodnik/tifr/lecture1.pdf"
+fetched_from = "https://www.math.uzh.ch/gorodnik/tifr/lecture1.pdf"
+fetched_at = "2026-10-22T09:35:45Z"
+sha256 = "63889917bce84dd38004ba0001e6946f190db02f33fae953ae719f01920303d8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+cited_for = ["README bibliography Gorodnik2010 and its explicit section locators"]
+
+[[source]]
+id = "Mathlib"
+authors = "Mathlib contributors"
+title = "Mathlib"
+year = 2026
+locator_scheme = "section"
+locator = "Native APIs at revision 6b7abb3c7686292736be2955bd3eb9ebf63b456a"
+url = "https://github.com/leanprover-community/mathlib4/tree/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib"
+fetched_from = "https://github.com/leanprover-community/mathlib4/tree/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib"
+fetched_at = "2026-10-22T09:42:19Z"
+sha256 = "d9341837103aa15f4edb375ee8648c34b707c44c0c8c2b99f0b62780837a8e63"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts"]
+aliases = ["ML-ARITH", "ML-COUNT", "ML-PRIME", "ML-UNIFORM", "ML-FINITE-PRODUCT", "ML-MOMENT-TOOLS", "ML-MULTINOMIAL", "ML-CUTOFF-TOOLS", "ML-EXCESS-TOOLS", "ML-ARITHMETIC-LIMITS", "ML-EXCESS-MOMENTS", "ML-PM79"]
+revision = "6b7abb3c7686292736be2955bd3eb9ebf63b456a"
+
+[[source]]
+id = "TauCeti"
+authors = "The Tau Ceti contributors"
+title = "Tau Ceti"
+year = 2026
+locator_scheme = "section"
+locator = "EmpiricalMeasure, Gaussian.Moments and Ergodic at revision a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+url = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti"
+fetched_from = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039/TauCeti"
+fetched_at = "2026-10-22T09:48:34Z"
+sha256 = "68d451f077168919a86581bcf1fd33714e9c131724373be6ca66c6502d2b4d27"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts"]
+aliases = ["TC-EMP", "TC-GAUSSIAN-MOMENTS"]
+revision = "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+
+[[source]]
+id = "StrauchPorubsky2018"
+authors = "Oto Strauch and Stefan Porubsky"
+title = "Distribution of Sequences: A Sampler"
+year = 2018
+locator_scheme = "theorem"
+locator = "Theorems 1.9.0.3 and 1.11.2.1; physical pages 74 and 95"
+url = "https://musavsrv.mat.savba.sk/musav/O_Strauch-S_Porubsky_Distribution_of_Sequences_A_Sampler-20180118.pdf"
+fetched_from = "https://musavsrv.mat.savba.sk/musav/O_Strauch-S_Porubsky_Distribution_of_Sequences_A_Sampler-20180118.pdf"
+fetched_at = "2026-10-21T10:57:25Z"
+sha256 = "618e9de95cbcaa9cd1bb2a9a63f8ff108cdb2f96ce5a47192882985dcc403fb1"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-10-21"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314176071"
+
+[[source]]
 id = "Koukoulopoulos2019"
 authors = "Dimitris Koukoulopoulos"
 title = "The Distribution of Prime Numbers"
@@ -33,22 +434,6 @@ locator = "Theorem 5"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314165218"
-
-[[source]]
-id = "StrauchPorubsky2018"
-authors = "Oto Strauch and Stefan Porubsky"
-title = "Distribution of Sequences: A Sampler"
-year = 2018
-locator_scheme = "theorem"
-locator = "Theorems 1.9.0.3 and 1.11.2.1; physical pages 74 and 95"
-url = "https://musavsrv.mat.savba.sk/musav/O_Strauch-S_Porubsky_Distribution_of_Sequences_A_Sampler-20180118.pdf"
-fetched_from = "https://musavsrv.mat.savba.sk/musav/O_Strauch-S_Porubsky_Distribution_of_Sequences_A_Sampler-20180118.pdf"
-fetched_at = "2026-10-21T10:57:25Z"
-sha256 = "618e9de95cbcaa9cd1bb2a9a63f8ff108cdb2f96ce5a47192882985dcc403fb1"
-licence_class = "answered-by:CBirkbeck"
-status = "certified"
-accessed = "2026-10-21"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/174#issuecomment-6314176071"
 
 [[source]]
 id = "Falconer1990"
