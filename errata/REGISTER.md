@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-1040 mistakes recorded on the board: 669 misprints, 293 errors, 75 gaps, 3 unparsed bullets.
+1048 mistakes recorded on the board: 670 misprints, 296 errors, 78 gaps, 4 unparsed bullets.
 Errata jobs have read the cited sources of 7 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -11,6 +11,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (, ? at , 2026-10-23): Misprint** in Stacks Project, Tag 0BKH (opening paragraph): the source says the derived p-completion C of A = ℤ_p ⋉ ℚ_p/ℤ_p is R[1] ⊕ R[0] (R = ℤ_p) without qualification, false in D(A) since Hom(C, R[1]) = 0; it should be stated in D(ℤ_p) after restricting scalars, or as the cohomology computation only; affects nothing. (found in: 944-M2.md)
 - **Unparsed** (SchemeAndStackFoundationsPartII, #420 at accb0a0, 2026-10-23): Misprint** in CS24 at proof of Theorem 5.7.2, printed p.79: the list of three descent assertions repeats the second equation label; the third should be (5.7.2.3); affects nothing.
 - **Unparsed** (SchemeAndStackFoundationsPartII, #420 at accb0a0, 2026-10-23): Misprint** in DJ at §§2.2, 2.8 and 2.12, printed pp.1–2: three cross-references print as unresolved placeholders; they should cite limits of étale cohomology, the weight decomposition for a diagonalizable group, and quasi-coherent limits on Noetherian stacks; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "accb0a0", "job": "REV-DESIGN-SchemeAndStackFoundationsPartII", "model": "opus", "worker": "fable-rev14"} -->
+- **Unparsed** (PadicHodgeTheoryPartII, #391 at 6502997, 2026-10-23): Misprint** in GLX26 at the justification of (5.34), p. 843: the source moves φ₀ across the pairing with the same exponent; equivariance gives the inverse exponent, and the full-period sums agree; affects nothing.
 
 ## Abe, arXiv preprint v1
 
@@ -488,6 +489,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at paragraph after Definition 2.4.9, printed p. 20 (Chen line 742): the source says every object of Kar TL lies in the specified TLJ subcategory by taking a unary direct sum; it should be take a replete closure or construct an equivalence; U₁/d∈TL₂ is an idempotent absent from the stated closure under tensor products and direct sums; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §2.4, tensor product on Mat C, printed p. 20 (Chen line 734): the source says the Kronecker tensor product of morphism matrices uses composition of entries; it should be use tensor products of entries; arbitrary entries are not composable, and composition has the wrong source and target; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
+## Chen14
+
+- **Misprint** at Lemma 3.3.5, p. 744: the source says N as a sum of Q_{p^s}-lines spanned by the e_i; it should be K₀-lines, since rank one means dim over K₀ equals s; affects nothing. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
+- **Gap** at Proposition 2.0.3, proof, p. 735: the source says the source imposes residue degree above p^{b(m−1)}·m·M but finally needs p^{n₀−b}·m·M with n₀−b = b(m−1)+r; it should be choose b for the stronger bound, which factorial growth permits; affects the proof. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
+- **Error** at Proposition 3.3.4(2), proof, p. 743: the source says every representation of G is a subrepresentation of one mixed tensor power of a faithful one; it should be a subquotient of finite sums of such powers (G_m, 1⊕χ fails); affects the proof. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
+
 ## Chojecki–Hansen–Johansson, Overconvergent modular forms and perfectoid Shimura curves, arXiv:1507.04875
 
 - **Error** at Lemma 6.19(2): the source says density for scalars yields density for bounded families of coefficients; it should be that the image need not be dense in the bounded arrays, since the array Σ uⁿTⁿ stays at distance 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -784,6 +791,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## GLX, arXiv:2208.07195
 
 - **Error** at Lemma 3.2, second assertion: the source says a connected-component formula for the quotient by a group action, with no restriction on the action; it should be stated under additional component and Hausdorff hypotheses, since ℤ acting densely on ℤ_p violates it; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## GLX26
+
+- **Gap** at Proposition 5.7, pp. 840–841: the source says the source indexes refined orbits by Gal(E/K) although the reflex field need not be Galois; it should be range over all Γ_E-orbits in the Γ_K-orbit (Res-torus over Q₅(5^{1/3}) fails); affects a stated result. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
+- **Gap** at Proposition 6.7, step (4), p. 851: the source says the source treats the Galois image as contained in the derived group, but (4) concerns its intersection with it; it should be compare algebraic monodromy and apply Serre–Sen to the lift; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6502997", "job": "REV-DESIGN-PadicHodgeTheoryPartII", "model": "opus", "worker": "fable-rev18"} -->. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
+- **Error** at equation (5.29), p. 842: the source says the source sums refined components over every automorphism τ; it should be sum once over distinct refined orbits, since the trivial weight with quadratic E gives 2v; affects nothing. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
+- **Error** at §5.1 ¶14, p. 836: the source says the source calls MT, defined as the identity component of the Zariski closure, the Tannakian group of the generated category; it should be the full Zariski closure (Chen14 Déf. 3.2.2, Prop. 3.2.3); affects the proof. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
 
 ## GNT19
 
