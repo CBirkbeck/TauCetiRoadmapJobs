@@ -1,0 +1,143 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SolidAnalyticRings"
+
+[[source]]
+id = "MW"
+authors = "Samuel Meyer; Ferdinand Wagner"
+title = "q-Hodge complexes and refined TC−"
+year = 2026
+arxiv = "2410.23115"
+version_note = "Author version dated 5 February 2026; locators use this version rather than arXiv v4."
+locator_scheme = "section"
+locator = "Section 4.1, numbered paragraphs 4.1–4.2, p.41; MW line 1748 and MW line 1764"
+url = "https://ferdinand-wagner.github.io/papers/q-Hodge.pdf"
+fetched_from = "https://ferdinand-wagner.github.io/papers/q-Hodge.pdf"
+fetched_at = "2026-10-23T10:38:37Z"
+sha256 = "74b8a5c122cc54f5b347a49c895fdafc12e36f376fdd7165036b0c80277b3538"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Scope; Final targets 1–2 and 7; Sources; Risks"]
+
+[[source]]
+id = "CS"
+authors = "Peter Scholze; joint work with Dustin Clausen"
+title = "Lectures on Condensed Mathematics"
+year = 2019
+version_note = "May 2026 revision of the 2019 lectures; theorem numbering and pages refer to the fetched revision."
+locator_scheme = "theorem"
+locator = "Theorem 5.8, pp.35–36, CS line 1243; Theorem 6.2, p.43, CS line 1578"
+url = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
+fetched_at = "2026-10-23T10:39:22Z"
+sha256 = "d422561285f3025a53ee71a497d350fc89afaefe28053de78e2255b2d521c69d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Scope; Suppliers; Sources; existing abelian ownership"]
+
+[[source]]
+id = "AG"
+authors = "Peter Scholze; joint work with Dustin Clausen"
+title = "Lectures on Analytic Geometry"
+year = 2020
+version_note = "May 2026 revision of the winter 2019/20 lectures; definition/proposition numbering and pages refer to the fetched revision."
+locator_scheme = "section"
+locator = "Lecture VI, Definition 6.12 and Proposition 6.14, pp.39–40, AG line 1361 and AG line 1384; Lecture XII, Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG line 3014 and AG line 3041"
+url = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
+fetched_at = "2026-10-23T10:39:24Z"
+sha256 = "1d9fe538cfae023ecae4cac8cfc62fb307dbe4b8a06c8514e1bf8ec422224f8b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Final target 7; Scope; Sources; analytic comparison"]
+
+[[source]]
+id = "Q"
+authors = "Ferdinand Wagner"
+title = "$q$-Hodge complexes over the Habiro ring"
+year = 2025
+arxiv = "2510.04782v2"
+locator_scheme = "theorem"
+locator = "Appendix B, paragraphs B.6–B.7 and Lemma B.8 with proof, printed pp.79–80 (PDF extraction pages 124–125), Q line 3643, Q line 3666 and Q line 3688"
+url = "https://arxiv.org/abs/2510.04782v2"
+fetched_from = "https://arxiv.org/pdf/2510.04782v2"
+fetched_at = "2026-10-23T10:39:28Z"
+sha256 = "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["Final targets 3–6; Sources; spectral completion proof obligations"]
+
+[[source]]
+id = "Bosco"
+authors = "Guido Bosco"
+title = "Rational $p$-adic Hodge theory for rigid-analytic varieties"
+year = 2023
+arxiv = "2306.06100v1"
+locator_scheme = "theorem"
+locator = "Proposition A.3 and proof, pp.92–93, Bosco line 3459; Lemma A.4 and proof, p.93, Bosco line 3488; arXiv v1"
+url = "https://arxiv.org/abs/2306.06100v1"
+fetched_from = "https://arxiv.org/pdf/2306.06100v1"
+fetched_at = "2026-10-23T10:39:34Z"
+sha256 = "a142fc46709b8a54ef552a052f8a0c96006b578ef2565bbe4bcea6100505c7e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["Final targets 5–6; Sources; abelian p-adic model"]
+
+[[source]]
+id = "RC"
+authors = "Juan Esteban Rodríguez Camargo"
+title = "Notes on Solid Geometry"
+year = 2026
+arxiv = "2603.03012v1"
+locator_scheme = "section"
+locator = "Theorem 3.2.4, pp.17–18, RC line 754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC line 1392 and RC line 1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC line 1431 and RC line 1489"
+url = "https://arxiv.org/abs/2603.03012v1"
+fetched_from = "https://arxiv.org/pdf/2603.03012v1"
+fetched_at = "2026-10-23T10:40:35Z"
+sha256 = "6277c6a27f48b455e52239c0f2d36005ee3403631a0183ec2ece0a3db6eb7c1f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["Final targets 1–4 and 7; Sources; light and integer-linear comparison"]
+
+[[source]]
+id = "AS"
+authors = "Dustin Clausen; Peter Scholze; transcript by contributors"
+title = "Analytic Stacks"
+year = 2023
+version_note = "2023–2024 course; public contributor transcript fetched from the ndcroos repository; unendorsed and partly automated, used for lecture context only."
+locator_scheme = "section"
+locator = "Lectures 2–3, pp.15–32; Lectures 5–6, pp.42–57; Lecture 8, pp.67–73; Lecture 13, pp.104–110; AS line 9 and AS line 39; editorial caveat at AS line 43"
+url = "https://raw.githubusercontent.com/ndcroos/analytic-stacks/main/AnalyticStacks.pdf"
+fetched_from = "https://raw.githubusercontent.com/ndcroos/analytic-stacks/main/AnalyticStacks.pdf"
+fetched_at = "2026-10-23T10:41:26Z"
+sha256 = "2b25e28e4fce27095b90b71f7c871c28c42e320cd8cae7e5e0bef9705e7ecb2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Sources; Risks; lecture context only"]
+
+[[source]]
+id = "W"
+authors = "Ferdinand Wagner"
+title = "$q$-de Rham cohomology and topological Hochschild homology over ku"
+year = 2025
+arxiv = "2510.06057v1"
+locator_scheme = "section"
+locator = "Paragraphs 2.1–2.3, pp.11–12, W line 437, W line 452 and W line 472; arXiv v1"
+url = "https://arxiv.org/abs/2510.06057v1"
+fetched_from = "https://arxiv.org/pdf/2510.06057v1"
+fetched_at = "2026-10-23T10:45:05Z"
+sha256 = "fe9d7d71478eb546f89784f2eabdb15ec4f1e5ff8870c6c84909896c1543ea7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["Final targets 1–2 and 6; Sources; transferred RefinedTraceMethods 6.2 plan"]
