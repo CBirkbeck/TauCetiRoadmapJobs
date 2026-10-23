@@ -194,6 +194,7 @@ ErdosProgressionPowers
 SieveMethodsAndPrimePatterns
 ProbabilisticAndMetricNumberTheory
 ArithmeticDynamics
+ArakelovGeometryAndAbelianHeightsPartII
 PolynomialGaloisGroupsPartII
 ArithmeticDirichletSeriesPartII
 ClassicalGroupsPartII
