@@ -222,6 +222,7 @@ GeneralAlgebraicKTheoryPartII
 MotivesAndAlgebraicCyclesPartII
 ChromaticHomotopyTheory
 ArithmeticKTheoryPartII
+BorelRegulators
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
 GrossZagierAndArithmeticHeights
