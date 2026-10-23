@@ -1,16 +1,40 @@
 {
   "gaps": [
     {
-      "slug": "field-cup-residue-coherence",
+      "slug": "field-cup-coherence",
       "supplier": "EtaleCohomologyFoundations",
       "section": "F.0.3, F.4.1–F.4.2",
-      "needs": "For every field and invertible m≥1, identify the native Kummer module and ordered cup under the field étale/Galois comparison, compatibly with restriction, finite-extension transfer and finite/adic coefficient triangles, and for every DVR with m invertible in the residue field identify residues by ∂κ_m(π)=1 and ∂(κ_m(u)∪κ_m(π))=−κ_m(ū)."
+      "needs": "For every field F and m≥1 invertible in F, identify weight one with the native Kummer module and preserve ordered cups and finite/adic coefficient triangles under the field étale/Galois comparison, compatibly with restriction, finite-extension transfer including inseparable extensions and its projection formula."
     },
     {
-      "slug": "arithmetic-tate-symbol-maps",
+      "slug": "dvr-residue-coherence",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.0.3",
+      "needs": "For every DVR with fraction field F, residue field k and m≥1 invertible in k, identify the localization residue H²(F,Z/m(2))→H¹(k,μ_m) by ∂κ_m(π)=1 and ∂(κ_m(u)∪κ_m(π))=−κ_m(ū) for every valuation unit u and uniformizer π."
+    },
+    {
+      "slug": "adic-tate-symbol",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "3.0a",
-      "needs": "Supply the specified adic Tate symbol and coefficient diagram at ℓ≠char F, its ℓ-primary torsion theorem assuming mod-ℓ injectivity and global-field specialization, the number-field S-integer finite/adic isomorphisms with real places at 2, and the global-field Picard sequence for μ_ℓ⊂F and finite nonempty S containing archimedean places and places over ℓ in the number-field case, with restriction, transfer, localization and S-enlargement maps."
+      "needs": "For every field F and prime ℓ≠char F, supply the ordered adic Kummer-cup symbol K₂ᶜˡ(F)→H²(F,Z_ℓ(2)) and Tate coefficient diagram at every ℓ^r, r≥1, compatibly with restriction, finite-extension transfer and localization at DVRs where ℓ is invertible in the residue field."
+    },
+    {
+      "slug": "adic-tate-torsion",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "3.0a",
+      "needs": "For every field F and prime ℓ≠char F with injective mod-ℓ symbol, the specified adic symbol induces K₂ᶜˡ(F){ℓ}/D≃H²(F,Z_ℓ(2)){ℓ}, where D is the maximal divisible subgroup of K₂ᶜˡ(F){ℓ}."
+    },
+    {
+      "slug": "global-tate-torsion",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "3.0a",
+      "needs": "For every global field F and prime ℓ≠char F, K₂ᶜˡ(F) is torsion with no nonzero divisible subgroup and the specified adic symbol identifies K₂ᶜˡ(F){ℓ} with H²(F,Z_ℓ(2)){ℓ}."
+    },
+    {
+      "slug": "global-picard-sequence",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "3.0a",
+      "needs": "For every global field F with μ_ℓ⊂F and prime ℓ≠char F, and finite nonempty S containing the archimedean places and, for a number field, those above ℓ, supply 0→μ_ℓ⊗Pic(O_S)→K₂(O_S)/ℓ→(⊕_(v∈S noncomplex)μ_ℓ)_(sum=0)→0 with its actual Picard map and localization square, natural under S-enlargement."
     }
   ]
 }

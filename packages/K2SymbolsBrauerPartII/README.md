@@ -8,7 +8,7 @@ This roadmap follows K2SymbolsBrauer, Layers 0–13. The base roadmap constructs
 
 K2SymbolsBrauer owns classical K₂, Matsumoto's theorem, transfers, tame symbols, localization and the classical-to-Quillen comparison. Its §12.5 owns the real K₂ sign homomorphism, and §§8.1–8.3 fix the product sign used here. KTheoryFiniteLocalFields §3.0a owns the all-field norm-residue comparison, §§3.1–3.3 the local K₂ norm-residue map and full-root splitting, §7.3 the finite-place completion transports, §1.1 finite K-theory coefficients and exactness, and §1.8 the early finite étale Chern operations. This roadmap identifies these specified maps after the classical/Milnor transports; it does not construct a second local factorization, section or finite-coefficient theory.
 
-EtaleCohomologyFoundations §F.0.3 owns finite twists and §§F.4.1–F.4.2 their adic realization. SchemeAndStackFoundations §§2.11, 2.15 owns Kummer and the field étale/Galois comparison. The exact compatibility and arithmetic extensions needed here are declared as supplier gaps below; they are not assumed to be existing targets.
+EtaleCohomologyFoundations §F.0.3 owns finite twists and §§F.4.1–F.4.2 their adic realization. SchemeAndStackFoundations §§2.11, 2.15 owns Kummer and the field étale/Galois comparison. ArithmeticKTheory §§5.2, 6.1 and 6.3 owns the number-field S-integer comparisons, their coefficient limits and localization maps, including the real dyadic degree-two row. Part II compares those specified maps with Tate's field symbol and finite reduction. The remaining coefficient compatibility and arithmetic extensions are declared as supplier gaps below.
 
 ClassFieldTheory owns local reciprocity, normalized Brauer invariants and the number-field Brauer sum. QuadraticFormInvariants §§6C, 6E and 7B owns the unit-input Hilbert symbol, its cohomological comparison and the algebraic/cohomological Brauer equivalence. ClassicalArithmeticCompletion §§1.14, 1.25 and 1.52 owns the arithmetic scalar pairing and its all-place law; §1.44 owns its scalar invariant comparison and sign determination. Part II transports that comparison to K₂. GeneralAlgebraicKTheory §§1.7–1.8, Layer 5 and §§7.4–7.5 supplies stable cofibers, the K-spectrum and integral products.
 
@@ -65,9 +65,11 @@ Consume §§5.1–5.2's universal Steinberg-pairing presentation and §§7.1–7
 
 Consume EtaleCohomologyFoundations §F.0.3's finite twists in every integer weight with tensor, dual, evaluation, pullback and coefficient coherence; §§F.4.1–F.4.2 realizes their normalized adic systems using derived inverse limits with Milnor terms. Consume SchemeAndStackFoundations §2.11's Kummer sequence and §2.15's field étale/Galois equivalence on discrete modules.
 
-What EtaleCohomologyFoundations must provide (gap:field-cup-residue-coherence): extend §§F.0.3, F.4.1–F.4.2 to identify weight one with the native Kummer module, preserve ordered cups and coefficient triangles under the field comparison for every field and invertible m≥1, and identify localization residues for every DVR with m invertible in its residue field, with ∂κ_m(π)=1 and ∂(κ_m(u)∪κ_m(π))=−κ_m(ū).
+What EtaleCohomologyFoundations must provide (gap:field-cup-coherence): for every field F and m≥1 invertible in F, identify weight one of §F.0.3 with the native Kummer module under the field étale/Galois comparison, preserving ordered cups and the finite/adic coefficient triangles of §§F.4.1–F.4.2, compatibly with restriction and finite-extension transfer, including inseparable extensions.
 
-This contract includes restriction and finite-extension transfer, including inseparable extensions, their projection formula, finite reductions, the adic coefficient triangle and its continuous-cohomology transport. It specifies compatibility with the maps just named; it does not assert that an arbitrary cyclic coefficient identification is equivariant.
+What EtaleCohomologyFoundations must provide (gap:dvr-residue-coherence): for every DVR with fraction field F, residue field k and m≥1 invertible in k, identify the localization residue H²(F,Z/m(2))→H¹(k,μ_m) by ∂κ_m(π)=1 and ∂(κ_m(u)∪κ_m(π))=−κ_m(ū) for every valuation unit u and uniformizer π.
+
+The field comparison contract includes the projection formula for transfer, finite reductions and the continuous-cohomology transport of the adic triangle. The residue contract uses the separate residue-field invertibility hypothesis. Neither contract asserts that an arbitrary cyclic coefficient identification is equivariant.
 
 ### From KTheoryFiniteLocalFields
 
@@ -75,9 +77,17 @@ Consume §3.0a's `merkurjevSuslin` on its common Milnor carrier for every field 
 
 Consume §1.1's `coeff`, `coeffGroup`, `reduce`, `bockstein` and `coeff_exact`, including all-degree short exactness, ring/coefficient naturality and CRT. In degree two its actual maps give the sequence and image in §5.4. Consume §1.8's `earlyChern`, Kummer normalization, comparison with integral operations and mixed integral/coefficient product formulas. At even coefficients in degree two, retain its Bockstein correction on arbitrary finite classes; only the integral-reduction image is used in §5.5. Composite coefficients use the supplied CRT maps, without extending the allowed finite-by-finite product range.
 
-What KTheoryFiniteLocalFields must provide (gap:arithmetic-tate-symbol-maps): extend §3.0a's finite-coefficient field-symbol comparison to the specified adic symbol and Tate coefficient diagram for fields at primes ℓ≠char F, the torsion modulo maximal-divisibility theorem assuming mod-ℓ injectivity, its global-field zero-divisible-kernel specialization, and the number-field S-integer finite/adic isomorphisms together with the global-field Picard exact sequence, on the hypotheses of §§5.2–5.3 and with their actual restriction, transfer, localization and S-enlargement maps.
+What KTheoryFiniteLocalFields must provide (gap:adic-tate-symbol): for every field F and prime ℓ≠char F, the adic symbol h_F:K₂ᶜˡ(F)→H²(F,Z_ℓ(2)) defined by the ordered cup of adic Kummer classes, with Tate's coefficient diagram relating its reduction at every r≥1 to §3.0a's mod-ℓ^r symbol, compatibly with restriction, finite-extension transfer and localization at DVRs where ℓ is invertible in the residue field. (Tate, Theorem 3.1, Lemma 3.2 and Diagram 3.3, pp.262–264.)
 
-In this gap, the Picard sequence requires μ_ℓ⊂F, S finite nonempty, all archimedean places and all places over ℓ in the number-field case; the ring isomorphisms require the number-field case and ℓ invertible on O. Ordinary H² retains real places at ℓ=2. These arithmetic assertions are prerequisites requiring the named supplier extension, rather than consequences of merely naming finite coefficient objects. (Tate, Theorem 3.5(b) and corollary, p.265, Theorems 5.4 and 6.2, pp.270–271; Soulé, §2.2.4.4, pp.53–55.)
+What KTheoryFiniteLocalFields must provide (gap:adic-tate-torsion): for every field F and prime ℓ≠char F, assuming injectivity of the mod-ℓ symbol, the specified adic symbol induces K₂ᶜˡ(F){ℓ}/D≃H²(F,Z_ℓ(2)){ℓ}, where D is the maximal divisible subgroup of K₂ᶜˡ(F){ℓ}. (Tate, Theorem 3.5(b) and corollary, p.265.)
+
+What KTheoryFiniteLocalFields must provide (gap:global-tate-torsion): for every global field F and prime ℓ≠char F, K₂ᶜˡ(F) is torsion with no nonzero divisible subgroup and the specified adic symbol identifies K₂ᶜˡ(F){ℓ} with H²(F,Z_ℓ(2)){ℓ}. (Tate, Equation 5.3 and Theorem 5.4, pp.269–270.)
+
+What KTheoryFiniteLocalFields must provide (gap:global-picard-sequence): for every global field F with μ_ℓ⊂F and prime ℓ≠char F, and every finite nonempty S containing the archimedean places and, for a number field, the places above ℓ, the exact sequence 0→μ_ℓ⊗Pic(O)→K₂(O)/ℓ→(⊕_(v∈S noncomplex)μ_ℓ)_(sum=0)→0 for O=O_(F,S), with its actual Picard map and localization square, natural under S-enlargement. (Tate, Theorem 6.2 and proof, pp.270–271.)
+
+### From ArithmeticKTheory
+
+Consume §§5.2, 6.1 and 6.3's specified arithmetic descent comparisons at i=1 for every number field F, prime ℓ, r≥1 and finite S containing the archimedean places and those above ℓ. Use their coefficient-compatible finite and adic maps, coefficient limits, restriction/corestriction and localization squares. Section 6.1 supplies the degree-two comparison for odd ℓ or totally imaginary F; §6.3's n=2 row retains ordinary H² and the real places at ℓ=2. Section 5.3 below identifies these supplied maps on generic restriction with Tate's adic and finite field symbols and compares their finite-reduction square; it does not construct the ring isomorphisms.
 
 ### From GeneralAlgebraicKTheory
 
@@ -101,7 +111,7 @@ Layer 1 compares coefficient models and fixes every root and residue transport. 
 
 ### 1.1 The ordered Kummer-cup dictionary
 
-For every F and m under the standing hypotheses, prove the ordered Kummer-cup dictionary: after the field étale/Galois comparison, `h_(F,m)({a,b} mod m)` equals `explicitCup11` applied to the additive Kummer classes of a and b, for the canonical tensor pairing into Z/m(2). This is an equality involving the imported h, not a new construction of it. It requires no primitive root in F. (Weibel, III.6.10.2–6.10.3, pp.242–243; KTheoryFiniteLocalFields §3.0a; gap:field-cup-residue-coherence.)
+For every F and m under the standing hypotheses, prove the ordered Kummer-cup dictionary: after the field étale/Galois comparison, `h_(F,m)({a,b} mod m)` equals `explicitCup11` applied to the additive Kummer classes of a and b, for the canonical tensor pairing into Z/m(2). This is an equality involving the imported h, not a new construction of it. It requires no primitive root in F. (Weibel, III.6.10.2–6.10.3, pp.242–243; KTheoryFiniteLocalFields §3.0a; gap:field-cup-coherence.)
 
 Use the weight-one dictionary to identify the Kummer class with gα/α and the cup-compatible field comparison to identify the tensor coefficient map. The diagonal Galois action makes the tensor pairing equivariant. Its source coefficients are discrete, so the continuity requirement of `explicitCup11` is satisfied. The Matsumoto equivalence preserves {a,b} in this order. Well-definedness, the Steinberg relation and field functoriality are supplied by KTheoryFiniteLocalFields §3.0a; the target is their compatibility with this concrete continuous API.
 
@@ -193,17 +203,16 @@ Use the supplied restriction and coefficient base-change maps and prove the iden
 - For m=5 and u=2, β_(ζ²)=3β_ζ, while the inverse weight-two coordinate changes by 4. Confusing those two factors fails this example.
 - Over Q(μ₃), replacing ζ by ζ² negates β. On an element with a nonzero cubic local invariant this changes 1/3 to -1/3.
 - Over Q at m=3, §1.1 is still defined but this root-dependent trivialization is unavailable. Field restriction to Q(μ₃) creates the stated root only after the extension.
-- For F→E→L preserving the transported root, direct restriction agrees with the two successive comparisons. For f=id every coefficient and K₂ adapter is the identity.
 
 ### 1.6 Residues in the uniformizer-last convention
 
-For a DVR with fraction field F and residue field k, assume m≥1 is invertible in k. Transport the residue theorem of KTheoryFiniteLocalFields §3.0a and gap:field-cup-residue-coherence to prove the residue dictionary:
+For a DVR with fraction field F and residue field k, assume m≥1 is invertible in k. Transport the residue theorem of KTheoryFiniteLocalFields §3.0a and gap:dvr-residue-coherence to prove the residue dictionary:
 
 ```text
 ∂ h_(F,m)(x) = -κ_m(∂ᴹx)       in H¹(k,μ_m).
 ```
 
-Here the cohomological residue lowers degree and weight by one, and ∂ᴹ is the base tame symbol. In particular the unramified-unit assertion says that the cup of two valuation units has zero residue. No primitive root is needed. (Tate, proof of Theorem 6.2, p.270, for `∂ᴹ{ζ,a}=ζ^{v(a)}`; gap:field-cup-residue-coherence for the residue convention and full symbol formula.)
+Here the cohomological residue lowers degree and weight by one, and ∂ᴹ is the base tame symbol. In particular the unramified-unit assertion says that the cup of two valuation units has zero residue. No primitive root is needed. (Tate, proof of Theorem 6.2, p.270, for `∂ᴹ{ζ,a}=ζ^{v(a)}`; gap:dvr-residue-coherence for the residue convention and full symbol formula.)
 
 For a valuation unit u and uniformizer π, the source tame value is ū. The cohomological residue of κ(u)∪κ(π) is -κ(ū): moving the degree-one unit class past the boundary gives the minus sign. This example fixes the direction of the square. The supplier's exact localization sequence extends the formula to every K₂ class. Weibel's tame-symbol convention in III.6.3 has the uniformizer first and is inverse to ∂ᴹ; it must not be inserted without conversion. At wild coefficients the local comparisons below still exist, but this prime-to-residue-characteristic residue square is unavailable.
 
@@ -220,7 +229,7 @@ The fifth-root calculation separates three maps already at coefficient level: a 
 
 ### Dependencies
 
-K2SymbolsBrauer §§5.1–5.2, 7.1–7.3 and its tame/localization layers; EtaleCohomologyFoundations §F.0.3; SchemeAndStackFoundations §§2.11, 2.15; KTheoryFiniteLocalFields §3.0a; gap:field-cup-residue-coherence; native Kummer and explicit continuous cup APIs; Mathlib's primitive-root maps. The Brauer export additionally uses QuadraticFormInvariants §7B, and the coefficient-pairing comparison uses ClassFieldTheory Layer 5. No local or global norm residue isomorphism is required for this layer.
+K2SymbolsBrauer §§5.1–5.2, 7.1–7.3 and its tame/localization layers; EtaleCohomologyFoundations §F.0.3; SchemeAndStackFoundations §§2.11, 2.15; KTheoryFiniteLocalFields §3.0a; gaps field-cup-coherence and dvr-residue-coherence for the respective dictionaries; native Kummer and explicit continuous cup APIs; Mathlib's primitive-root maps. The Brauer export additionally uses QuadraticFormInvariants §7B, and the coefficient-pairing comparison uses ClassFieldTheory Layer 5. No local or global norm residue isomorphism is required for this layer.
 
 ## Layer 2: cyclic symbol algebras
 
@@ -473,7 +482,7 @@ Prove these three place formulas and identify `λ_{v,m}{a,b}` with ClassicalArit
 - For F=Q,m=1 and x={-1,-1}, every factor, including the real one, is 1. A real value -1 would be outside the target μ₁.
 - For F=Q,m=2 and the same x, the factors at 2 and ∞ are -1 and the factors at every odd prime are 1.
 - If m>2 and a primitive m-th root lies in F, there is no real place. The local-factor construction never adds a real quadratic sign in that case.
-- A global root taken into F_v and then back by the inverse root map is unchanged. Thus two finite-place outputs can actually be multiplied in μ_m(F); a family with distinct untransported local codomains fails this requirement.
+- For F=Q(μ₃) and v over 7 with ζ reducing to 2, the completion root map sends ζ to the lift of 2 and its inverse sends that lift back to ζ. At the conjugate place the lift of 4 instead returns to ζ. Both transports recover the same global root; multiplying raw residue values 2 and 4 would lose the specified global target.
 
 ### 4.2 Finite support on every K₂ class
 
@@ -510,7 +519,7 @@ Independently apply the supplied all-place Brauer law to the particular global c
 - For Q,m=2 and {-1,-1}, the product is `(-1)_2(-1)_∞∏_{p` odd}1=1. The two nonzero invariants are 1/2 and 1/2, whose sum is 0 in Q/Z. Omitting either 2 or ∞ breaks the law.
 - For the same class at m=1, every factor is 1 and every invariant is zero; a quadratic real factor has no role.
 - If x is a sum or difference of two symbols, the statement is the product of the corresponding finitely supported families. The theorem is quantified over the entire K₂ group, not just the two-unit symbol function.
-- Computing the multiplicative law via the scalar supplier and the additive law via the actual β class gives the same equality under e_m and the minus sign. This agreement tests map compatibility, beyond a separate proof that each expression happens to vanish.
+- Take F=Q(μ₃), a primitive ζ, and the place v over 7 where ζ reduces to 2. For x={3,7}, the product over the single place {v} is ζ⁻¹ and the Brauer-invariant sum over {v} is 1/3. The negative-coordinate formula gives ζ⁻¹; inverting every local factor instead gives ζ and fails. Both all-place products remain 1, so those alone cannot test map compatibility. (The cubic computation is §3.5; Milne, III.4, Remark 4.5, p.114.)
 
 ### Examples
 
@@ -532,7 +541,7 @@ For every nondiscrete locally compact field F, prime ℓ≠char F and r≥1, ide
 h_(F,ℓ^r) : K₂ᶜˡ(F)/ℓ^r ≃ H²(F,μ_(ℓ^r)^⊗2)
 ```
 
-with the concrete cup map of §1.1. Denote this compatibility by the local Tate dictionary. The local scope includes R and C as separate archimedean cases. For a nonarchimedean F whose residue characteristic differs from ℓ, prove the local residue dictionary for the actual residue maps in §1.6. At mixed-characteristic residue prime ℓ, retain the isomorphism without asserting that tame residue formula. (Tate, Proposition 4.5 and its corollary, pp.267–268; Diagram 3.3, pp.263–264, and Theorem 3.5, p.265, for the coefficient-diagram argument; KTheoryFiniteLocalFields §3.0a and gap:arithmetic-tate-symbol-maps.)
+with the concrete cup map of §1.1. Denote this compatibility by the local Tate dictionary. The local scope includes R and C as separate archimedean cases. For a nonarchimedean F whose residue characteristic differs from ℓ, prove the local residue dictionary for the actual residue maps in §1.6. At mixed-characteristic residue prime ℓ, retain the isomorphism without asserting that tame residue formula. (Tate, Proposition 4.5 and its corollary, pp.267–268; Diagram 3.3, pp.263–264, and Theorem 3.5, p.265, for the coefficient-diagram argument; KTheoryFiniteLocalFields §3.0a and gap:adic-tate-symbol.)
 
 The isomorphism is the supplier's h, not a choice of an abstract equivalence between two groups. Its equality with the cup on {a,b} is §1.1 and determines it by symbol generation. If a primitive ℓ^r-th root lies in F, the Brauer realization of the same map is β_ζ from Layer 1 and its scalar local realization is the negative invariant formula of §3.5. Without that root, the target remains the tensor-twisted module; no scalar Hilbert coordinate is required for the theorem.
 
@@ -547,34 +556,34 @@ The prime-power passage uses the actual coefficient diagram, not an unjustified 
 
 ### 5.2 Global Tate maps, completion and adic torsion
 
-For every global field F, prime ℓ≠char F and r≥1, prove the global Tate dictionary: the imported isomorphism `h_{F,ℓ^r}` agrees with §1.1 and its actual field restriction maps. In particular the square with K₂(F)→K₂(F_v) above and cohomological restriction below commutes for each completion. At every DVR place where ℓ is invertible in the residue field, its residue square is §1.6. The number-field statement includes ℓ=2 and real places. The finite isomorphism is KTheoryFiniteLocalFields §3.0a's all-field theorem; its arithmetic adic extension is gap:arithmetic-tate-symbol-maps. (Tate, Theorem 5.1, pp.268–269; Theorem 5.4, p.270; Diagram 3.3, pp.263–264.)
+For every global field F, prime ℓ≠char F and r≥1, prove the global Tate dictionary: the imported isomorphism `h_{F,ℓ^r}` agrees with §1.1 and its actual field restriction maps. In particular the square with K₂(F)→K₂(F_v) above and cohomological restriction below commutes for each completion. At every DVR place where ℓ is invertible in the residue field, its residue square is §1.6. The number-field statement includes ℓ=2 and real places. The finite isomorphism is KTheoryFiniteLocalFields §3.0a's all-field theorem; its arithmetic adic extension uses gaps adic-tate-symbol and global-tate-torsion. (Tate, Theorem 5.1, pp.268–269; Theorem 5.4, p.270; Diagram 3.3, pp.263–264.)
 
-Prove the global adic dictionary for the map induced by the same adic symbol h_F:K₂ᶜˡ(F)→H²(F,Z_ℓ(2)). In the general coefficient-diagram formulation, assume the mod-ℓ map h_ℓ of §1.1 is injective; then its restriction to ℓ-primary torsion identifies the quotient by the maximal divisible subgroup with the torsion of H²(F,Z_ℓ(2)). Tate's Theorem 3.5(b) and its corollary, p.265, require that injectivity; for a global field it is Theorem 5.1, p.268 (also a consequence of the supplied all-field finite comparison). The arithmetic supplier extension says more: K₂(F) is torsion with no nonzero divisible subgroup. Thus in this case the actual ℓ-primary part itself is identified with that cohomological torsion group. Both formulations use Tate's map and Diagram 3.3; the divisible quotient is not a new completion of K₂. (Tate, Theorem 3.5 and its corollary, p.265, and Theorem 5.4, p.270; KTheoryFiniteLocalFields §3.0a and gap:arithmetic-tate-symbol-maps.)
+Prove the global adic dictionary for the map induced by the same adic symbol h_F:K₂ᶜˡ(F)→H²(F,Z_ℓ(2)). In the general coefficient-diagram formulation, assume the mod-ℓ map h_ℓ of §1.1 is injective; then its restriction to ℓ-primary torsion identifies the quotient by the maximal divisible subgroup with the torsion of H²(F,Z_ℓ(2)). Tate's Theorem 3.5(b) and its corollary, p.265, require that injectivity; for a global field it is Theorem 5.1, p.268 (also a consequence of the supplied all-field finite comparison). The arithmetic supplier extension says more: K₂(F) is torsion with no nonzero divisible subgroup. Thus in this case the actual ℓ-primary part itself is identified with that cohomological torsion group. Both formulations use Tate's map and Diagram 3.3; the divisible quotient is not a new completion of K₂. (Tate, Theorem 3.5 and its corollary, p.265, and Theorem 5.4, p.270; KTheoryFiniteLocalFields §3.0a and gaps adic-tate-symbol, adic-tate-torsion and global-tate-torsion.)
 
 Keep the coefficient triangles, restriction and finite-extension transfer maps in the transported statements. The cup dictionary and the supplier's projection formula identify them, so an arbitrary isomorphism with the same finite-coefficient source and target groups, which can be infinite for global fields, would not meet the target. Number fields and function fields are distinct supplier cases: in characteristic p only ℓ≠p occurs here, with no inference about characteristic-p differential or logarithmic symbols. Those belong to the characteristic-p symbol owners.
 
 **Checks.**
 
 - For a number field with a real place, the ℓ=2 completion square remains part of the theorem. Adding an odd-prime or totally imaginary hypothesis would weaken the target.
-- For F=F_q(t) and ℓ≠char F, retain the global comparison and its completion/residue maps. The adic arithmetic statement requires gap:arithmetic-tate-symbol-maps with its explicit function-field scope.
+- For F=F_q(t) and ℓ≠char F, retain the global comparison and its completion/residue maps. The adic arithmetic statement requires gap:global-tate-torsion with its explicit function-field scope.
 - The completion square sends an actual symbol {a,b} to {a_v,b_v}, and restriction sends its cup to κ(a_v)∪κ(b_v). This pins the map, whereas agreement of group orders would not.
 - For Q and m=2, tame localization gives a surjection K₂(Q)/2→⊕_(p odd) F_pˣ/(F_pˣ)². Each summand has order 2, so both K₂(Q)/2 and its Galois-symbol target are infinite. Finite coefficients do not mean finite groups. (Tate, Equation 5.3, p.269.)
 - At a characteristic-p global field, no μ_p étale Kummer comparison is claimed. The quotient by maximal divisibility in the general adic statement becomes a zero-kernel quotient for global K₂; it is not used to introduce a nonexistent divisible summand.
 
 ### 5.3 S-integers, localization and the Picard terms
 
-Let F be a global field, ℓ a prime different from char F, S a finite nonempty set of places containing all archimedean places and, for a number field, all places above ℓ, `O=O_{F,S}`, and r≥1. The following two ring isomorphisms are asserted for number fields. Prove the S-integer dictionary for those supplier maps
+Let F be a global field, ℓ a prime different from char F, S a finite nonempty set of places containing all archimedean places and, for a number field, all places above ℓ, `O=O_{F,S}`, and r≥1. For number fields consume ArithmeticKTheory §§5.2, 6.1 and 6.3's two specified ring comparisons and prove their S-integer dictionary with Tate's field maps:
 
 ```text
 K₂(O) ⊗ Z_ℓ ≃ H²_cont(O,Z_ℓ(2)),
 K₂(O)/ℓ^r ≃ H²_et(O,μ_(ℓ^r)^⊗2).
 ```
 
-The first is induced by the integral adic symbol; the second is its finite reduction with the supplied arithmetic coefficient triangle. The targets use ordinary degree-two étale and continuous cohomology, retaining the real-place contribution at ℓ=2. Prove S-integer naturality for O→F, enlargement S⊂S′, coefficient maps and the actual localization boundary diagrams. (Tate, Equation 5.3, p.269, and Theorems 5.4, 6.2, pp.270–271; Weibel, the paragraph following the Birch–Tate formula in VI.8.6, p.515, recording the finite-coefficient ring comparison; gap:arithmetic-tate-symbol-maps.)
+For every x∈K₂(O), prove that the generic restriction of the supplied adic image of x⊗1 is h_F(loc x) of §5.2, and that the generic restriction of the supplied finite image of x mod ℓ^r is h_(F,ℓ^r)(loc x mod ℓ^r) of §1.1. Here loc:K₂(O)→K₂(F) is the actual localization map. Prove that the finite-reduction square between the two ring comparisons commutes with the specified coefficient maps, for every r≥1. The targets use ordinary degree-two étale and continuous cohomology, retaining the real-place contribution at ℓ=2. Transport their supplied S-enlargement and localization diagrams through these equalities. (Tate, Equation 5.3, p.269, and Theorems 5.4, 6.2, pp.270–271; Weibel, VI.8.6, p.515; ArithmeticKTheory §§5.2, 6.1, 6.3; gap:adic-tate-symbol for h_F.)
 
 The square for O→F has the actual localization K₂ map on top, actual étale generic restriction below, and the specified symbols vertically. The remaining columns compare ∂ᴹ with negative Kummer in the convention of §1.6. When S is enlarged in two steps, the squares compose to the square for the combined localization. Inverse limits and finite reduction use the supplier's continuous coefficient machinery; pointwise isomorphisms alone are insufficient to identify those maps. In particular, integral injectivity K₂(O)→K₂(F) does not imply injectivity after quotienting by ℓ^r.
 
-Preserve the ideal-class contribution explicitly. If μ_ℓ⊂F, use the supplied Tate exact sequence
+Preserve the ideal-class contribution explicitly. If μ_ℓ⊂F, use gap:global-picard-sequence's Tate exact sequence
 
 ```text
 0 → μ_ℓ ⊗_Z Pic(O) → K₂(O)/ℓ
@@ -587,14 +596,14 @@ The last map is the field symbol followed by the normalized local maps; a unifor
 0 → Pic(O)/ℓ^r → H²_et(O,μ_(ℓ^r)) → Br(O)[ℓ^r] → 0.
 ```
 
-This is not the weight-two ring comparison: a root-dependent contraction may relate the coefficients when available, but it does not remove Pic(O)/ℓ^r. The vanishing of Pic(Spec F) that justified the field Brauer dictionary does not hold for a general O. (Weibel, III.6.10.1, p.242, for the field contrast; Soulé, §2.2.4.4, pp.54–55, for the ring comparison and its class-group kernel under his root-containment hypothesis; SchemeAndStackFoundations §2.11 and gap:arithmetic-tate-symbol-maps for the full stated ring scope.)
+This is not the weight-two ring comparison: a root-dependent contraction may relate the coefficients when available, but it does not remove Pic(O)/ℓ^r. The vanishing of Pic(Spec F) that justified the field Brauer dictionary does not hold for a general O. (Weibel, III.6.10.1, p.242, for the field contrast; Soulé, §2.2.4.4, pp.54–55, for the ring comparison and its class-group kernel under his root-containment hypothesis; SchemeAndStackFoundations §2.11 for Kummer, ArithmeticKTheory §§5.2, 6.1, 6.3 for the ring comparisons, and gap:global-picard-sequence for Tate's sequence over every global field.)
 
 **Checks.**
 
-- For Q, S={2,∞} and ℓ=2, K₂(Z[1/2])/2≃Z/2, generated by {-1,-1}. It matches H²_et(Z[1/2],μ₂^⊗2); its two local sign values are those at 2 and ∞.
+- For Q, S={2,∞} and ℓ=2, both K₂(Z[1/2])⊗Z₂ and K₂(Z[1/2])/2^r are C₂ for every r≥1, generated by {-1,-1}. The supplied adic and finite comparisons send this generator to the nonzero class, and finite reduction preserves it. At r=1 its two local signs at 2 and ∞ are -1 and -1. Omitting the real dyadic row would lose this generator.
 - For F=F₃(t), ℓ=2 and S={∞}, O=F₃[t] has Pic(O)=0; Bass–Tate and finite-field K₂ vanishing give K₂(O)=0. The sum-zero subgroup of the single μ₂ summand is zero, so the global-function-field Picard sequence reads 0→0→0→0. No archimedean place is being inserted.
 - If Pic(O)/ℓ is nonzero and μ_ℓ⊂F, the Picard term survives as the generic-restriction kernel. Deleting it because the field comparison is an isomorphism gives the wrong ring statement.
-- For S⊂S′⊂S″, composing the two localization squares equals the square for S⊂S″. On a valuation-unit/uniformizer symbol the residue column is -κ∂ᴹ, not +κ∂ᴹ.
+- For Q and S={2,∞}⊂S′={2,3,∞}⊂S″={2,3,5,∞}, the class {-1,-1} has tame values 1 and cohomological residues 0 at both added primes, by either composite localization square. The nonzero sign control is at Q₇ with m=3: {3,7} has tame value 3 and cohomological residue -κ₃(3), distinct from +κ₃(3) because κ₃(3) has order 3.
 - If a place above ℓ is left outside S, the coefficient is not invertible on O. The stated finite étale μ_(ℓ^r) comparison on that ring is then outside these hypotheses.
 - No step identifies H² of an arbitrary scheme with H² of its function field. A nonzero Picard kernel is already a counterexample to such a replacement within this arithmetic setting.
 
@@ -617,8 +626,7 @@ For a field, K₁(F)=Fˣ and K₁(F)[m]=μ_m(F). Thus the additional quotient is
 
 - If μ_m(F) is nontrivial, the right-hand term is nonzero. For F=R,m=2 it is μ₂, so replacing the whole finite K₂ group by K₂(F)/2 erases a nonzero quotient.
 - At m=1 the cofiber of the identity is zero and all three terms of the displayed short exact sequence vanish.
-- A field embedding F→E commutes with red_m and ∂_m via the same K-spectrum map. This tests the specified boundary rather than a noncanonical decomposition of the middle group.
-- The CRT maps for m=6 give its mod-two and mod-three cofiber components, retaining their Bockstein boundaries. They do not supply a new finite-by-finite multiplication.
+- For F=F₅, integral K₂(F)=0, so the Bockstein identifies K₂(F;Z/6) with μ₆(F)=C₂. The nonzero class has boundary -1 and CRT components the nonzero mod-two class and the zero mod-three class, since μ₂(F)=C₂ and μ₃(F)=1. This tests the actual boundary with no finite-by-finite multiplication.
 
 ### 5.5 The product-normalized finite étale Chern comparison
 
@@ -662,17 +670,17 @@ The Q₇ example gives a further independent consistency check. The ordered cup 
 
 ### Dependencies
 
-Layer 1 for the cup and residue dictionaries; Layers 2–3 for the Brauer and local scalar interpretations; EtaleCohomologyFoundations §§F.0.3, F.4.1–F.4.2 and SchemeAndStackFoundations §§2.11, 2.15; gaps field-cup-residue-coherence and arithmetic-tate-symbol-maps for the stated compatibility and arithmetic extensions; KTheoryFiniteLocalFields §§1.1, 1.8, 3.0a for finite coefficients, early Chern operations and the finite field symbol. GeneralAlgebraicKTheory supplies spectrum exactness and integral external/internal products. K2SymbolsBrauer §§8.1–8.3 supplies θ₂, ε and θ₂♮. Layer 4 is a compatibility check for number-field local factors, not a prerequisite for the supplier's Tate proof.
+Layer 1 for the cup and residue dictionaries; Layers 2–3 for the Brauer and local scalar interpretations; EtaleCohomologyFoundations §§F.0.3, F.4.1–F.4.2 and SchemeAndStackFoundations §§2.11, 2.15; gaps field-cup-coherence and dvr-residue-coherence for the respective dictionaries; gaps adic-tate-symbol, adic-tate-torsion and global-tate-torsion for §5.2; ArithmeticKTheory §§5.2, 6.1, 6.3 and gap:global-picard-sequence for §5.3; KTheoryFiniteLocalFields §§1.1, 1.8, 3.0a for finite coefficients, early Chern operations and the finite field symbol. GeneralAlgebraicKTheory supplies spectrum exactness and integral external/internal products. K2SymbolsBrauer §§8.1–8.3 supplies θ₂, ε and θ₂♮. Layer 4 is a compatibility check for number-field local factors, not a prerequisite for the supplier's Tate proof.
 
 ## Downstream consumers
 
-ArithmeticKTheory uses the global and S-integer squares, including the Picard and real-place terms and the distinction between finite coefficient groups and quotients. RefinedTraceMethods uses the actual Brauer symbol and its symbol-algebra representative. EllipticKTheory uses the finite Chern and local/global dictionaries with their specified twists and products. These consumers can cite the appropriate layer without reconstructing a coefficient convention.
+The global and S-integer squares, including the Picard and real-place terms and the distinction between finite coefficient groups and quotients, are stated for arithmetic roadmaps later in the merge order. RefinedTraceMethods can use the actual Brauer symbol and its symbol-algebra representative. EllipticKTheory can use the finite Chern and local/global dictionaries with their specified twists and products. These consumers can cite the appropriate layer without reconstructing a coefficient convention.
 
-K2SymbolsBrauer and KTheoryFiniteLocalFields are suppliers. The classical symbol, local norm-residue map and section, field norm-residue comparison, finite-coefficient exactness and early Chern operations are supplied before their comparisons here. The supplier gaps above must be filled without depending on the dictionaries they supply.
+K2SymbolsBrauer, KTheoryFiniteLocalFields and ArithmeticKTheory are suppliers. The classical symbol, local norm-residue map and section, field norm-residue comparison, finite-coefficient exactness and early Chern operations are supplied before their comparisons here. The supplier gaps above must be filled without depending on the dictionaries they supply.
 
 ## References
 
 - Charles A. Weibel, [*The K-book: An Introduction to Algebraic K-theory*](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf), author's text dated 29 August 2013. III.6.2, pp.232–234, supplies real, local and norm-residue examples; III.6.9–6.10, pp.240–243, supplies symbol algebras and the Galois-symbol dictionary. VI.8.6, p.515, records the finite S-integer comparison in its discussion of Birch–Tate; that discussion is not used for a special-value target. In the split-algebra argument around III.Lemma 6.9.1, use the full eigenvalue/minimal-polynomial hypothesis proved in §2.2. In III.Example 6.2.3, the section requires a primitive pairing value, justified in §3.2.
-- John Tate, [*Relations between K₂ and Galois cohomology*](https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0036/LOG_0020.pdf), Inventiones mathematicae **36** (1976), 257–274. Theorem 3.1 and Lemma 3.2, pp.262–263; Diagram 3.3 and Theorem 3.5, pp.263–265; Proposition 4.5 and its corollary, pp.267–268; Theorems 5.1, 5.4 and 6.2, pp.268–271. These are the arithmetic K₂ and Galois-cohomology inputs specified in gap:arithmetic-tate-symbol-maps.
+- John Tate, [*Relations between K₂ and Galois cohomology*](https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0036/LOG_0020.pdf), Inventiones mathematicae **36** (1976), 257–274. Theorem 3.1 and Lemma 3.2, pp.262–263; Diagram 3.3 and Theorem 3.5, pp.263–265; Proposition 4.5 and its corollary, pp.267–268; Theorems 5.1, 5.4 and 6.2, pp.268–271. These are the arithmetic K₂ and Galois-cohomology inputs specified in gaps adic-tate-symbol, adic-tate-torsion, global-tate-torsion and global-picard-sequence.
 - J. S. Milne, [*Class Field Theory*](https://www.jmilne.org/math/CourseNotes/CFTc.pdf), version 4.03, 6 August 2020. III.3, Proposition 3.6, p.109, and III.4, pp.111–114, fix the character/cup/invariant comparison and the transpose between Milne's Hilbert order and H_m here. V.5, pp.178–179, and VII.8.1, p.221, supply the all-place reciprocity laws. The generator relation here is YX=ζXY; an algebra presentation with XY=ζYX must be converted before comparison.
 - Christophe Soulé, [*Groupes arithmétiques et K-théorie des anneaux d'entiers de corps de nombres*](https://www.ihes.fr/~soule/documents/These_Christophe_Soule.pdf), 1978 thesis, author's transcription. Proposition 2.2.2.3, pp.42–44, and §2.2.4.4, p.53, give the integral degree-two Chern sign. §§2.2.3.1–2.2.3.2, pp.45–48, give finite coefficients and factorization through reduction; the remark after Proposition 2.2.3.3, p.49, limits the finite-product inference. The S-integer argument in §2.2.4.4, pp.54–55, retains the class-group kernel under its root-containment assumptions. In the general product coefficient read the factorial as (i-1)!, as in Proposition 2.2.2.3; the transcription's (1-i)! in Proposition 2.2.3.3 does not define a general coefficient. At i=1 both readings give 0!=1, so the degree-two calculation is unaffected.
