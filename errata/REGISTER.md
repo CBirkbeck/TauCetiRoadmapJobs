@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-1570 mistakes recorded on the board: 1043 misprints, 413 errors, 104 gaps, 10 unparsed bullets.
+1574 mistakes recorded on the board: 1044 misprints, 413 errors, 107 gaps, 10 unparsed bullets.
 Errata jobs have read the cited sources of 14 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -233,8 +233,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BF
 
 - **Misprint** at Proposition 1.26, p.10: the source says the associativity homotopy h lands in total degree r+s+t; it should be r+s+t−1 so that dh+hd matches the associator; affects nothing. Found by MotivicEtaleKTheory (#952 at 39344bc, 2026-10-23, claude opus).
+- **Misprint** at Proposition 1.26, p.10: the source says the associativity homotopy's target degree as r+s+t; it should be r+s+t−1, as a degree −1 homotopy matching the associator; affects nothing. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Gap** at Proposition 2.7, p.15: the source says an integral associative graded-commutative product exists on CH*(X,*) for any quasi-projective X, citing a rational result for smooth X; it should be require smooth X and integral moving; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "39344bc", "job": "REV-DESIGN-MotivicEtaleKTheory", "model": "opus", "worker": "fable-rev25"} -->. Found by MotivicEtaleKTheory (#952 at 39344bc, 2026-10-23, claude opus).
+- **Gap** at Proposition 2.7, p.15: the source says an associative internal product for any quasi-projective X; it should be assume X smooth, since diagonal pullback and the cited Levine result (rational) need smoothness; affects a stated result. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Gap** at Theorem 3.5, p.20: the source says the comparison holds for any equidimensional complex algebraic scheme; it should be stated for smooth quasi-projective complex X, which is all ρ and the proof use; affects a stated result. Found by MotivicEtaleKTheory (#952 at 39344bc, 2026-10-23, claude opus).
+- **Gap** at Theorem 3.5, p.20: the source says the Beilinson comparison for any equidimensional complex algebraic scheme, but its proof treats smooth quasi-projective X only; it should be assume that; affects a stated result. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 
 ## Bhargava, The density of discriminants of quartic rings and fields (Annals 162, 2005)
 
@@ -1458,6 +1461,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4.1.2, p. 32: the source says the unitary invariants use powers of x; it should be use powers of the Hermitian variable y; affects nothing. Found by EndoscopicTransferAndUnitaryTraceComparisonPartII (#309 at 80a66cc, 2026-10-23, claude opus).
 - **Misprint** at §4.1.4, p. 33: the source says the embedding's upper-left block is x; it should be y; affects nothing. Found by EndoscopicTransferAndUnitaryTraceComparisonPartII (#309 at 80a66cc, 2026-10-23, claude opus).
 - **Error** at §5.1, p. 40: the source says the Hermitian Fourier kernel is ψ of the norm of ⟨u,w⟩, with argument x; it should be ψ(Tr⟨u,w⟩) with argument y, as in BP21 §3, p. 5; affects the proof. Found by EndoscopicTransferAndUnitaryTraceComparisonPartII (#309 at 80a66cc, 2026-10-23, claude opus).
+
+## Levine94
+
+- **Gap** at Theorem 3.1, pp.276–277: the source says the cycle-map isomorphism over any field, but its proof checks Theorem 2.7, which assumes an infinite field; it should be add rational descent from an infinite algebraic extension; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "eb7fbdd", "job": "REV-DESIGN-MotivicEtaleKTheory~2", "model": "opus", "worker": "fable-rev30"} -->. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 
 ## Lipnowski–Tsimerman, arXiv:1511.02212
 
