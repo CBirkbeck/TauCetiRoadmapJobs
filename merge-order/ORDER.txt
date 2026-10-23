@@ -258,3 +258,4 @@ GL2ModularityLiftingPartII
 GeometricSatakeAndFusionPartII
 HeightsRationalPointsAndObstructionsPartII
 InverseGaloisAndArithmeticFundamentalGroupsPartII
+LieHighestWeightPartII
