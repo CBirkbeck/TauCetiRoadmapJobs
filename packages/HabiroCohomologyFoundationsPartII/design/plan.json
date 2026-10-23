@@ -1,72 +1,6 @@
 {
   "gaps": [
     {
-      "slug": "habiro-complete-category",
-      "needs": "For every commutative A, provide Habiro-complete enhanced A[q]-modules, their reflection and completed symmetric monoidal tensor.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§0.1"
-    },
-    {
-      "slug": "enhanced-filtration",
-      "needs": "Provide enhanced descending filtrations, Rees modules, filtration completion with pullback recovery and the filtered quotient by h in degree one.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§§2.1–2.3"
-    },
-    {
-      "slug": "derived-qderham",
-      "needs": "Provide animated qdR with completed base change, separate rational and p-adic rational comparisons, and the framed q-de Rham comparisons of §§1.14–1.16.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§§2.4–2.10"
-    },
-    {
-      "slug": "chosen-pair-coherences",
-      "needs": "Provide the category of q-Hodge pairs with all four clauses and their coherent squares, including pullback from underived framed filtrations and rational pairs.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§4.1"
-    },
-    {
-      "slug": "qhodge-functor",
-      "needs": "Provide the q-Hodge functor on pairs, invariance under filtration completion and the coordinate model with differential multiplied by h.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§4.4"
-    },
-    {
-      "slug": "coordinate-pair",
-      "needs": "Provide the coordinate q-Hodge pair for an étale-framed smooth algebra with its stated E₀ structure and pullback to qdR.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§4.8"
-    },
-    {
-      "slug": "habiro-hodge-descent",
-      "needs": "Provide twisted filtrations, partial descents at positive indices, the Habiro–Hodge limit and its completions, q-Witt graded pieces, étale identification and multiplicative upgrades.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§§4.12–4.24"
-    },
-    {
-      "slug": "habiro-descent-exports",
-      "needs": "Export the HabiroHodgeDescent record, periodic q-Hodge object and completion maps without lift or prime-inversion hypotheses.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§4.28"
-    },
-    {
-      "slug": "canonical-smooth-pair",
-      "needs": "For smooth S of relative dimension at most n with every prime at most n inverted, provide its canonical pair and the specified counit comparison to its coordinate pair.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§§5.2–5.8"
-    },
-    {
-      "slug": "naive-quasiregular",
-      "needs": "For p-torsion-free p-quasi-lci relatively semiperfect inputs, provide the naive preimage filtration, injectivity, completed flat base change, higher-power criterion and canonical global section.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§§5.15–5.23"
-    },
-    {
-      "slug": "finite-coefficient-pairs",
-      "needs": "For powerful positive m, provide the q-Hodge pair on ℤ/m by arithmetic gluing with its constant rational corner, including m=1.",
-      "supplier": "HabiroCohomologyFoundations",
-      "section": "§5.26"
-    },
-    {
       "slug": "spherical-base-data",
       "needs": "Provide cyclotomic spherical bases and coherent compatible local lift data with the exact E₂ or torsion-free E₁-cover hypotheses and global gluing.",
       "supplier": "RefinedTraceMethods",
@@ -115,24 +49,6 @@
       "section": "§8.8"
     },
     {
-      "slug": "ordinary-derived-habiro",
-      "needs": "For every commutative B and B-module M, compare derived Laurent cyclotomic completion with static ordinary polynomial completion and provide the completed coefficient base change.",
-      "supplier": "HabiroRings",
-      "section": "HR.2"
-    },
-    {
-      "slug": "relative-habiro-taylor",
-      "needs": "For étale R over A, provide the relative Habiro ring, finite q-Witt quotients, compatible roots, full coefficient tensors and Frobenius-glued Taylor equalizer, including number-field coefficients.",
-      "supplier": "HabiroRings",
-      "section": "HR.5"
-    },
-    {
-      "slug": "cubic-coefficients",
-      "needs": "For ℤ[∛2][1/6], provide the cubic coefficient and completed Frobenius example showing that the constant Taylor family does not glue.",
-      "supplier": "HabiroRings",
-      "section": "HR.7"
-    },
-    {
       "slug": "framed-resolution-comparison",
       "needs": "For torsion-free A as in §1.1 and an étale-framed smooth S with Ŝ₂ 2-torsion free, compare the polynomial and perfect-root Čech resolutions at 2, preserving the map from qdR and all four pair clauses.",
       "supplier": "RefinedTraceMethods",
@@ -155,6 +71,18 @@
       "needs": "For the framed trace comparison on its full torsion-free domain, supply the zeroth-step, filtered-quotient, rational and p-adic rational identifications with all squares and higher compatibilities in the category of pairs.",
       "supplier": "RefinedTraceMethods",
       "section": "§6.10"
+    },
+    {
+      "slug": "perfect-delta-spherical-lifts",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.1",
+      "needs": "For every prime p and p-complete perfect δ-ring B, provide its unique p-complete connective E∞ spherical lift functorial on δ-maps, including the lift of ℤ_p{x}_∞ → ℤ_p with x ↦ p."
+    },
+    {
+      "slug": "spherical-perfection-map",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.1",
+      "needs": "For a p-complete p-completely perfectly covered δ-ring A with the cyclotomic spherical base of KU 3.1, provide the unique p-complete connective E∞ spherical lift of its completed perfection A_∞ and an E∞-map S_A → S_{A_∞} reducing to A → A_∞."
     }
   ]
 }
