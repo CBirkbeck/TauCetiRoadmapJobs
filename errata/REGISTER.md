@@ -2,7 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-235 mistakes recorded on the board: 101 misprints, 79 errors, 14 gaps, 41 unparsed bullets.
+267 mistakes recorded on the board: 124 misprints, 87 errors, 15 gaps, 41 unparsed bullets.
+Errata jobs have read the cited sources of 1 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -201,6 +202,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the proof of the Eisenstein-ideal bound, §8, p. 78: the source says the order inequality with ≤; it should be ≥, since E ⊂ P^m gives ord_P ≥ m; affects nothing. Found by  (#129 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Chen
+
+- **Error** at Definition 2.1.6, printed p. 8, and §5.1, printed p. 38 (Chen line 247; Chen line 1486): the source says rotation with conjugated coefficients and q↦q⁻¹ supplies the pivotal dual; it should be extend rotation C(q)-linearly; otherwise f=i·id makes Definition 5.1.1(2)(i) equate iη with −iη; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Error** at Lemma 5.3.2 and proof, printed p. 41 (Chen line 1626): the source says failure of the recursion at pₙ makes every higher Jones–Wenzl idempotent undefined; it should be distinguish recursive failure from specialization after cancellation; at n=2, q=i, p₃=1−U₁U₂−U₂U₁ is a nonzero normalized annihilating idempotent; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Remark 2.2.3, adjacent-generator relations, printed p. 10 (Chen line 307): the source says the adjacent relations using Uᵢ₊₁ range over 1≤i<n; it should be restrict to 1≤i<n−1; Uₙ is not a generator of TLₙ; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Error** at paragraph after Definition 2.4.9, printed p. 20 (Chen line 742): the source says every object of Kar TL lies in the specified TLJ subcategory by taking a unary direct sum; it should be take a replete closure or construct an equivalence; U₁/d∈TL₂ is an idempotent absent from the stated closure under tensor products and direct sums; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §2.4, tensor product on Mat C, printed p. 20 (Chen line 734): the source says the Kronecker tensor product of morphism matrices uses composition of entries; it should be use tensor products of entries; arbitrary entries are not composable, and composition has the wrong source and target; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
 ## Chojecki–Hansen–Johansson, Overconvergent modular forms and perfectoid Shimura curves, arXiv:1507.04875
 
 - **Error** at Lemma 6.19(2): the source says density for scalars yields density for bounded families of coefficients; it should be that the image need not be dense in the bounded arrays, since the array Σ uⁿTⁿ stays at distance 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -256,6 +265,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Dummigan–Golyshev–de Jeu–Kerr, arXiv:2605.11100
 
 - **Misprint** at the discriminant of the E₄ family near Proposition 2.2: the source says the factor (u²−1)⁴; it should be 16u⁴(u²−1)² (921600 at u=4), as its own Proposition 2.2(3) minimal discriminant confirms; affects nothing. Found by  (#138 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Edie-Michell-Morrison
+
+- **Error** at §1, Braidings and Monoidal equivalence, printed p. 2 (Edie-Michell-Morrison line 58; Edie-Michell-Morrison line 72): the source says the underlying monoidal label is obtained by reducing ℓ modulo k+2; it should be choose 1≤m≤k+1 with m≡±ℓ modulo 2(k+2); k=2, ℓ=5 gives m=3 and δ=−√2, whereas reduction modulo four gives m=1; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Error** at §1, field-of-definition paragraph, printed p. 1 (Edie-Michell-Morrison line 28): the source says Q(q) is always the minimal field of definition of Cₖ,ₘ; it should be call Q(q) a field of definition; C₁,₁≅Vec(Z/2) has a split form over Q, whereas q=e^{πi/3} generates a larger field; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §1, quantum-group comparison, printed p. 3 (Edie-Michell-Morrison line 104): the source says the parameter relation contains cos(mπi/(k+2)); it should be remove i from the cosine argument; for k=m=1 the intended dimension is −1, whereas the printed expression is −2cosh(π/3); affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §2, 6j-symbol formula, printed p. 4 (Edie-Michell-Morrison line 161): the source says the recoupling prefactor has sign (−1)^{e+1}; it should be use (−1)^e; after allowing zero counts, all six labels zero must give the unit recoupling coefficient 1, not −1; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §2, Basic data and theta formula, printed p. 4 (Edie-Michell-Morrison line 115; Edie-Michell-Morrison line 139): the source says admissibility requires strict triangle inequalities, and theta vanishes unless all three internal counts are positive; it should be allow weak inequalities and nonnegative counts; θ₀,₀,₀=1 and θ₀,₁,₁=δ, while the printed conditions exclude both; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §2, Galois conjugates, printed p. 5 (Edie-Michell-Morrison line 197): the source says even k gives three braided Galois orbits, immediately before also giving even k one orbit; it should be the three-orbit case is odd k; even k remains the one-orbit case, agreeing with the table on p. 7; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §2, R-symbol formula, printed p. 5 (Edie-Michell-Morrison line 183): the source says the braiding coefficient has sign (−1)^{(a+b+c)/2}; it should be use (−1)^{(a+b−c)/2}; braiding the unit with X₁ requires R₀,₁,₁=1, while the displayed sign gives −1; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
 ## Ellenberg–Venkatesh–Westerland, Homological stability for Hurwitz spaces and the Cohen–Lenstra conjecture over function fields II, arXiv:1212.0923v1
 
@@ -344,6 +363,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the Chow polylogarithm forms, a later display (earlier definition at cached extraction line 1067): the source says the r-form with the wrong number of entries, contradicting its own definition; it should be the definition's arity (for p=1, q=2, r₂ has three entries) with normalisation (2πi)^−p; affects nothing. Found by  (#170 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at §§5.4–5.5, Borel calibration (near Theorems 5.7 and 5.11): the source says the matrix-unit calibration of the weight-two Borel class has value 1; it should be 1/2: for X=E₁₂, Y=E₂₁, Z=E₂₂ the alternating trace is −3 and half of it −3/2; affects a stated result. Found by  (#170 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Goodman-Wenzl
+
+- **Error** at Proposition 1.1, printed p. 4 (Goodman-Wenzl line 125): the source says dim(eAf) is preserved by specialization for every diagram-spanned A; it should be require eA⊆A and Af⊆A; in T₃ set d=t+t⁻¹, e=E₁/d, u=eE₂(1−e), f=1−e+(t−1)u, A=⟨1⟩: ef=(t−1)u gives dimensions 1→0 at t=1; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Proposition 2.1 proof, printed p. 9 (Goodman-Wenzl line 745): the source says the relevant semisimple quotient has only noncritical zᴸ_λ blocks of width at least ℓ; it should be include the critical z_λ blocks as well, as required by §2.4 properties 1–2; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Proposition 2.1 proof, printed p. 9 (Goodman-Wenzl line 751): the source says Hom(n,m) is multiplied on the right by zⁿⁱˡ_m and on the left by zⁿⁱˡ_n; it should be use Hom(n,m)zⁿⁱˡ_n + zⁿⁱˡ_m Hom(n,m); the printed products have incompatible objects when n≠m; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Gap** at Proposition 2.1, final proof step, printed p. 10 (Goodman-Wenzl line 764): the source says the endomorphism argument extends to unequal objects through the retractions of §1.1, without excluding d=0; it should be give a separate argument for τ=±i, or restrict to d≠0; those retractions divide by d; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §2.4, property 3, printed p. 8 (Goodman-Wenzl line 695): the source says the generic corner uses zᴸ_{λ′}, although only λ and μ were introduced; it should be use zᴸ_μ as the right idempotent; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
 ## Granville–Soundararajan, Sieving and the Erdős–Kac theorem (2006)
 
@@ -484,6 +511,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Chapter I, Remark 5.2(a): the source says the Euler-characteristic expression has the archimedean term H⁰(G_v, M) in its denominator; it should be the corresponding term for the dual module M^D; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Morrison
+
+- **Error** at Proposition 3.3 proof, case (1), printed p. 6 (Morrison line 247): the source says the product has at most n−4 through strands; n=3, h=E₁, i=1 instead gives E₃E₁, with zero through strands rather than at most −1; it should be exclude these terms by their upper cups: a nonidentity h retains an upper cup among the first n endpoints, unlike gₙ₊₁,ⱼ; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Error** at Proposition 3.3 proof, case (2), printed p. 6 (Morrison line 251): the source says a rightmost lower cap in h makes hgₙ₊₁,ᵢ have a vertical rightmost strand; it should be use the upper-cup argument instead; for n=3, h=E₂, i=3, E₂E₃ connects upper endpoint four to lower endpoint two; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §3 and Lemma 3.1, printed p. 4 (Morrison line 131; Morrison line 142): the source says Jₙ is a left ideal, although its defining upper cup is preserved by multiplication on the right; it should be call Jₙ a right ideal; with corrected endpoint indexing, E₂E₁∉J₃ although E₁∈J₃; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §3 figure references, printed pp. 4–6 (Morrison line 139; Morrison line 170; Morrison line 249): the source says the K₆ diagrams, multiplication example, and two exclusion cases refer respectively to Figures 3, 3, and 2; it should be refer respectively to Figures 4, 5, and 6; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §3, definition of P preceding Lemma 3.1, printed p. 4 (Morrison line 129): the source says P consists of the leftmost n−2 upper endpoints; it should be use the leftmost n−1 endpoints; for n=3 the printed J₃ is zero, contradicting its claimed codimension three; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §5, definition preceding Proposition 5.1, printed p. 9 (Morrison line 347): the source says cap-position adjustment subtracts one for each previously removed cap to its left; it should be τ(s)ᵢ=sᵢ−2κ(s)ᵢ; a cap removes two endpoints. For e₁∈TL₂, the printed rule gives coefficient 1 instead of 1/[2]; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
 ## Ngô, "Le lemme fondamental pour les algèbres de Lie", arXiv:0801.0446 v3
 
 - **Misprint** at Theorem 7.1.13, p. 128: the source says that for a weak abelian fibration, an occurring support Z with codim Z ≤ δ_Z is the closure of an irreducible-component stratum (top fibre cohomology conclusion); it should be the reverse inequality codim Z ≥ δ_Z, i.e. equality, since ≤ always holds; the published version, Proposition 7.2.2, p. 114, states it correctly; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -548,6 +584,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Proposition 2.2.3.3, p.49: the source says the mixed-product coefficient contains the factorial (1−i)!; it should be (i−1)!, matching Proposition 2.2.2.3 (both agree at i=1); affects a stated result. Found by  (#160 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Spencer
+
+- **Misprint** at Definition 1.1 and the following categorical claim, printed pp. 3–4 (Spencer line 105; Spencer line 126): the source says maximal-propagation diagrams are monic for m≤n and epic for m≥n; it should be reverse the inequalities: monic for n≤m, epic for m≤n; the simple cap is epic, consistently with the notation on p. 5; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Definition 1.1, propagation paragraph, printed p. 3 (Spencer line 104): the source says maximal propagation is the larger of n and m; it should be use min(n,m); the pictured (3,5)-diagram has three through strands; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Definition 1.2, printed p. 3 (Spencer line 112): the source says the diagram category with objects the natural numbers is abelian; it should be say R-linear or preadditive; over a nonzero ring every object has a nonzero identity, so this category has no zero object; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Lemma 1.5 proof, printed p. 5 (Spencer line 175): the source says the ith closing-site label being at least i characterizes the standard-tableau condition; it should be require at least 2i; otherwise closing sites {2,3} pass the printed test but give a nonstandard two-row tableau; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at equation (1.3), printed p. 5 (Spencer line 182): the source says module duals consist of TLₙ-linear maps M→R; it should be use Hom_R(M,R), with the displayed action twisted by ι; module-linear maps generally form a smaller space and do not define this duality; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at equation (2.5), printed p. 6 (Spencer line 236): the source says the δ-parameter for the second quantum integer is [ℓ+2]−[ℓ]; it should be use [ℓ+1]−[ℓ−1]=q^ℓ+q^−ℓ; with m=2, ℓ=1 the printed identity incorrectly equates δ and δ²−2; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
 ## Stein, Modular Forms: A Computational Approach (2007)
 
 - **Misprint** at the formula for Δ near Theorem 9.18, pp. 171–172: the source says Δ with a sign typo; it should be the correctly signed expression in E₄ and E₆ normalized to constant term 1; affects nothing. Found by  (#131 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -575,6 +620,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Théry, Primality Tests and Prime Certificate, arXiv:2203.16341v1
 
 - **Misprint** at Theorem 6.2, p. 9 (Pocklington criterion): the source says the size condition F > N, impossible since F divides N−1; it should be F² > N, that is N < F²; affects a stated result. Found by  (#131 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Tingley
+
+- **Misprint** at Introduction, printed p. 2 (Tingley line 72): the source says the alternative braiding is compared with ordinary symmetry at q=0; it should be use q=1; the displayed braiding contains negative powers of q and cannot be evaluated at zero; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §3A, paragraph following (3), printed p. 6 (Tingley line 219): the source says adjoining a square root to the rational-function field gives C[q¹ᐟ²]; it should be use C(q¹ᐟ²); the polynomial ring does not contain the already required q⁻¹; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
 ## Treumann–Venkatesh, Functoriality, Smith theory and the Brauer homomorphism (Annals, 2016)
 
@@ -628,6 +678,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Weibel, The K-book (combined draft)
 
 - **Misprint** at VI.6.4: the source says a formula with a required overbar missing; it should be written with the bar, as in the separate chapter file Kbook.VI.pdf; affects nothing. Found by  (#138 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Wenzl
+
+- **Misprint** at paragraph after Theorem 5, printed p. 9 (Wenzl line 281): the source says infinite projection sequences exist for t∈I; it should be use 1/t∈I, as on p. 5; t=3 lies in I but cannot satisfy eᵢeᵢ₊₁eᵢ=3eᵢ for nonzero orthogonal projections; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
 ## Zagier, Ramanujan's mock theta functions and their applications, 2009
 
