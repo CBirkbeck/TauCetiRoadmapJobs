@@ -39,6 +39,7 @@ AdelicAlgebraicGroups
 AlgebraicModuliForArithmeticGeometry
 GenericDoublePointInterpolation
 SchemeKTheoryOperations
+SchemeKTheoryOperationsPartII
 KTheoryLowDegrees
 K2SymbolsBrauer
 PolylogarithmFunctions
