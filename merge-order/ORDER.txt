@@ -84,6 +84,7 @@ InertAnticyclotomicCMMainConjecture
 LocalGaloisDeformationRings
 LocalGaloisDeformationRingsPartII
 GlobalGaloisDeformations
+MappingClassGroupsAndCanonicalRepresentations
 DiamondEtaleCohomology
 DiamondSixOperations
 DeligneWeightsAndPurity
