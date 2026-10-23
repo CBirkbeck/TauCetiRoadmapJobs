@@ -216,7 +216,7 @@ year = 2022
 title = "On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes"
 authors = "Francesc Castella; Giada Grossi; Jaehoon Lee; Christopher Skinner"
 locator_scheme = "section"
-locator = "Theorems 4.1.1–4.1.2 and Remark 4.1.3, pp.27–28; Proposition 4.2.1, pp.28–29 (author copy)"
+locator = "Introduction (disc), p.2; §4.1 standing hypotheses, p.27; Theorems 4.1.1–4.1.2 and Remark 4.1.3, pp.27–28; Proposition 4.2.1, pp.28–29 (author copy)"
 url = "https://web.math.ucsb.edu/~castella/Eisenstein.pdf"
 fetched_from = "https://web.math.ucsb.edu/~castella/Eisenstein.pdf"
 fetched_at = "2026-10-22T11:36:08Z"
@@ -264,7 +264,7 @@ year = 2025
 title = "Mazur’s main conjecture at Eisenstein primes"
 authors = "Francesc Castella, Giada Grossi, Christopher Skinner"
 locator_scheme = "section"
-locator = "Theorem C and ensuing Greenberg reformulation, pp.3–4 (author copy)"
+locator = "Theorem C and ensuing Greenberg reformulation, pp.3–4; Theorem 6.5.2, p.29 (author copy)"
 url = "https://web.math.ucsb.edu/~castella/Mazur.pdf"
 fetched_from = "https://web.math.ucsb.edu/~castella/Mazur.pdf"
 fetched_at = "2026-10-22T11:36:20Z"
@@ -272,7 +272,7 @@ sha256 = "4ca65e104b68ce441b2d62ba39af96bc4058fab26947919d5a8d4a6eb929382e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["8b.10 Eisenstein anticyclotomic theorem interface"]
+cited_for = ["8b.1 BDP square-root convention comparison", "8b.4 Heegner Euler-system divisibility for BCS", "8b.10 Eisenstein anticyclotomic theorem interface"]
 
 [[source]]
 id = "khayutin"

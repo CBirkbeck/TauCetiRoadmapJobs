@@ -47,6 +47,30 @@
       "supplier": "SelmerIwasawaCohomology",
       "section": "§§3.3, 3.9–3.10 Descent and control; local and derived specialization",
       "needs": "For the strict-at-v unrestricted-at-v̄ condition and sufficiently near-one crystalline α in BCGS Theorem 1.2.7, supply the exact JSW specialization formula with finite propagated Sha, the squared local cokernel, all K-primes over N and H⁰ torsion factors, separately from perfect specialization of the all-p ordinary complex."
+    },
+    {
+      "slug": "elliptic-adelic-open-image",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§6.4 Coefficients and images",
+      "needs": "For every non-CM elliptic curve over a number field, supply Serre’s adelic open-image theorem with finite base-change index and cyclotomic determinant, implying full residual GL₂(𝔽_p) image for E/ℚ at all but finitely many p."
+    },
+    {
+      "slug": "abelian-scalar-image",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§§6.1–6.4 Tate modules, coefficients and images",
+      "needs": "For the RM quotients of the integral context over K, supply a scalar u_p∈ℤ_p× distinct from 1 in the G_K image on T_pA for every p, and a bound on the indices of the scalar subgroups independent of p, so that u_p−1 can be a unit at all but finitely many p (Nekovář Proposition 6.1.1, pp.35–36)."
+    },
+    {
+      "slug": "classical-uniform-square-index",
+      "supplier": "EulerSystemsAndKolyvaginSystems",
+      "section": "§4.13 All-prime CM-point descent with bounded error",
+      "needs": "In the classical setting of Kolyvagin’s Theorem A, supply the integral length descent giving a positive d_E independent of the Heegner field K, with v_ℓ(d_E)=0 at the full Tate-image primes B(E) of §7.13 and #Sha(E/K) dividing d_E[E(K):ℤy_K]², retaining Cartan/CM and dyadic errors."
+    },
+    {
+      "slug": "surjective-three-integral-comparison",
+      "supplier": "SelmerIwasawaCohomology",
+      "section": "§2.3 Change of local conditions; §§2.19, 3.9–3.10 Poitou–Tate and specialization",
+      "needs": "For p=3, E/ℚ good ordinary with surjective residual G_ℚ image and K satisfying (disc),(Heeg),(spl), use the actual Heegner family and integral family logarithm to prove equivalence of both integral Heegner-index and (0,∅)-Greenberg/BDP divisibilities of §8b.2, retaining height-one (3) lengths, coefficient extension, periods, involution and every finite local cokernel, without inverting 3 or assuming either divisibility."
     }
   ]
 }
