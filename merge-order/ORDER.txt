@@ -91,6 +91,7 @@ AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 CongruenceSpectralGap
 ClassicalArithmeticCompletion
+EllipticCurvesPartII
 ArithmeticKTheory
 K3BlochGroups
 K2SymbolsBrauerPartII
