@@ -9185,10 +9185,130 @@
    "reported": "2026-10-23",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/848#issuecomment-6364592435"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, \"p-adic Hodge theory for rigid-analytic varieties\" (Forum Math. Pi 2013, arXiv:1205.3463)",
+   "locator": "§3, Proposition 3.7(i), p. 15, as used for Proposition 3.7(iii) and Lemma 3.16, pp. 15–20 (withdrawn in the author's erratum, item (1))",
+   "says": "arbitrary open surjections of profinite sets split, and its pro-étale coverings rest on this",
+   "should": "replaced by the splitting of towers (pullbacks of surjections of finite G-sets, then G-étale maps), with coverings redefined accordingly",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "report-875-decycle-drop.md"
+   ],
+   "batch": "out-reports-5.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kedlaya–Liu, \"Relative p-adic Hodge theory: Foundations\" (arXiv:1301.0792v5)",
+   "locator": "Remark 8.4.8, pp. 168–169",
+   "says": "the source concludes that A is normal from A being an integral domain",
+   "should": "assume A normal (noetherian) explicitly, because integrality does not imply normality",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "report-875-decycle-drop.md"
+   ],
+   "batch": "out-reports-5.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Huber, Étale Cohomology of Rigid Analytic Varieties and Adic Spaces (1996)",
+   "locator": "proof of Corollary 4.2.9, part (2), p. 246",
+   "says": "the displayed base change between the finite-rank model and the original scheme points the wrong way",
+   "should": "show X as the base change X₀ ×_{A₀} A of the model along A₀ → A, a Cartesian square over A",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "report-875-decycle-drop.md"
+   ],
+   "batch": "out-reports-5.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Huber, Étale Cohomology of Rigid Analytic Varieties and Adic Spaces (1996)",
+   "locator": "§3.5, proof of Proposition 3.5.6, p. 204",
+   "says": "the parenthetical example takes the auxiliary valuation ring to be the completion of k(x)⁺, whose fraction field need not be algebraically closed",
+   "should": "the completion of C⁺ for a chosen geometric point over x",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "report-875-decycle-drop.md"
+   ],
+   "batch": "out-reports-5.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Li–Reinecke–Zavyalov, \"Relative Poincaré duality in nonarchimedean geometry\" (arXiv:2410.08200v1)",
+   "locator": "Remark 3.1.10, pp. 22–23",
+   "says": "the source puts the class of a line bundle in a cohomology group of the wrong degree",
+   "should": "H¹(X_ét, G_m), that is Pic(X)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "report-875-decycle-drop.md"
+   ],
+   "batch": "out-reports-5.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Li–Reinecke–Zavyalov, \"Relative Poincaré duality in nonarchimedean geometry\" (arXiv:2410.08200v1)",
+   "locator": "the chart diagram for Lemmas 6.1.9–6.1.10, pp. 71–73",
+   "says": "the lower chart arrow carries the étale counit of g₁, repeating the label of the upper arrow",
+   "should": "the étale counit of g₂",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "report-875-decycle-drop.md"
+   ],
+   "batch": "out-reports-5.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T12:26:47Z",
+ "updated": "2026-10-23T12:27:55Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
