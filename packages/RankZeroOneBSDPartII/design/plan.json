@@ -1173,7 +1173,7 @@
       ]
     },
     {
-      "supplier": "SelmerIwasawaCohomology:L1",
+      "supplier": "SelmerIwasawaCohomology",
       "need": "Export the shared elliptic Cassels–Tate pairing, with both kernels the maximal divisible subgroups and elliptic alternation, on the existing Sha carrier; its finite odd-primary nondivisible quotient has paired elementary divisors. This is the existing PAPER-SKINNER-20/83–86 and RankOneConverse request, not a second pairing construction. See GAP-CT.",
       "neededBy": [
         "RankZeroOneBSDPartII:EC.0/small-selmer-corank"
@@ -1258,7 +1258,7 @@
       "id": "GAP-CT",
       "title": "Shared Cassels–Tate modulo-divisible endpoint has no registered node",
       "detail": "The existing PAPER-SKINNER-20/83–86 source extension and RankOneConverse requests assign the elliptic pairing, divisible kernels, alternation and paired finite odd-primary quotient to SelmerIwasawaCohomology L1–L2. Its accepted packet has no exact node stating that endpoint. Keep the stage requests and the supplied source PS explicit until the shared owner registers it; do not duplicate the construction or assume full Sha finiteness. This affects EC.0/small-selmer-corank, EC.3/mod-p-converse and the analytic twist applications, not the p∞ converse proof.",
-      "supplier": "SelmerIwasawaCohomology:L1",
+      "supplier": "SelmerIwasawaCohomology",
       "neededBy": [
         "RankZeroOneBSDPartII:EC.0/small-selmer-corank",
         "RankZeroOneBSDPartII:EC.3/mod-p-converse",

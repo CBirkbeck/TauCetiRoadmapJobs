@@ -3063,7 +3063,7 @@
     {
       "id": "G6",
       "title": "Register the existing ProfiniteArithmetic Layer 0 supply",
-      "supplier": "tauceti:TauCetiRoadmap/ProfiniteArithmetic#layer-0-the-ring-structure-on-the-profinite-integers",
+      "supplier": "ProfiniteArithmetic",
       "detail": "The exact existing owner is tauceti:TauCetiRoadmap/ProfiniteArithmetic#layer-0-the-ring-structure-on-the-profinite-integers. Current Tau Ceti ZHat/Ring.lean and ZHat/Decomposition.lean implement the ring on Additive TauCeti.zHat, its continuous product equivalence, surjective components, prime idempotents and their finite-sum limit (TauCeti.zHat.ringEquivPiPadicInt and TauCeti.zHat.tendsto_sum_idem). The atlas stage inventory used by check_blueprint.py omits ProfiniteArithmetic and rejects its genuine stage address as an unknown supplier. Register that existing upstream stage, then move this precise supply into requests and both direct prerequisite lists. No mathematical profinite-integer gap or new ring plan is asserted; the older pinned baseline is not silently advanced.",
       "neededBy": [
         "FaltingsFinitenessAndIsogenyTheoremsPartII:QI.7/integral-image-algebra",
