@@ -224,6 +224,7 @@ PolynomialGaloisGroupsPartII
 ArithmeticDirichletSeriesPartII
 ClassicalGroupsPartII
 MultiquadraticPartII
+FuchsianOrbifoldsPartII
 AlgebraicModularFormsAndSerreWeightsPartII
 ArithmeticDynamicsPartII
 AutomorphicSpectralTheoryPartII
