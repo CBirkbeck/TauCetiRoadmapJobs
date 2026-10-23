@@ -170,6 +170,7 @@ PadicHodgeRegulators
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+ChromaticHomotopyTheory
 ArithmeticKTheoryPartII
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
