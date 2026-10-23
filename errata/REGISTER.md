@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-1472 mistakes recorded on the board: 970 misprints, 396 errors, 100 gaps, 6 unparsed bullets.
+1502 mistakes recorded on the board: 991 misprints, 404 errors, 101 gaps, 6 unparsed bullets.
 Errata jobs have read the cited sources of 13 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -134,6 +134,22 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Baumslag–Myasnikov–Remeslennikov, Algebraic geometry over groups I (author PDF)
 
 - **Error** at the results identifying Zariski-closed with algebraic sets and closure with V(I) (no theorem number given): the source says these for every coefficient domain, but for G = H = 1 the empty set is closed while V(I(∅)) is the whole point; it should be require nontrivial coefficients with an injective coefficient map; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## BCDT
+
+- **Misprint** at Corollary 2.3.2, p. 866, BCDT line 1160: the source says the two-dimensional mod-three representation lands in `GL₃`; it should be `GL₂`; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Gap** at Corollary 4.6.4 proof, p. 879, BCDT line 1777: the source says factorization through `3D` permits division by 3 inside `End(D)`; it should be justified or replaced by the `D[9]⊆D[3]` argument using `F(D[3])=0` and `F²=−3`; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at Lemma 2.3.1 proof, p. 866, BCDT line 1151: the source says the uniformizer norm has a residue factor independent of `B`; it should be `1−2(B+3)/3−3√−3` modulo 9; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Lemma 5.2.3(1), p. 887, BCDT line 2166: the source says the underlying rank is `[k′:k]` despite disjoint extensions of `𝔽_ℓ`; it should be `[k′:𝔽_ℓ]`; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Lemma 7.2.6 proof, p. 908, BCDT lines 3133,3146: the source says to evaluate on a vector missing one factor of `u`, and later drops that factor in the module parameter; it should be the filtration generator `u²e′+(b+b′u)ue` and its matching parameter; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Theorem 4.6.3, p. 878, BCDT line 1737: the source says the residual representation rather than `ρ_N` is reduced modulo `T²`; it should be `ρ_N mod T²` over `𝔽₃[T]/T²`; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at Theorem 4.6.3, p. 878, BCDT lines 1728,1737: the source says the nonconstant modulo-`T²` conclusion holds for every `N≥1`; it should be required only for `N≥2`, since `A₁=𝔽₃`; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at the conclusion of §8.3, p. 918, BCDT line 3587: the source says the quadratic calculation proves Theorem 4.4.1; it should be Theorem 4.5.1; affects nothing. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at the setup for Corollary 5.6.2, p. 898, BCDT line 2650: the source says `H_γ=u(1+f_γ)` for a relation word; it should be `γ̂(u)=u(1+f_γ)`, equivalently `H_γ=1+f_γ`; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at §1.3, p. 855, BCDT line 609: the source says admission by `σₙ,₀` is equivalent to one minimal integer Serre weight; it should be membership in the allowed weight set, retaining both endpoint weights; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §6.4, p. 902, BCDT line 2865: the source says `α/β` is a uniformizer when `α³=4`; it should be `(α−1)/β`; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §7.4, p. 910, BCDT lines 3215,3217: the source says the first off-diagonal term uses `e′_ω` and gives two formulas for `γ̂₃(e′_ω)`; it should be `e_ω` in the first term and `γ̂₃(e′₁)` in the last formula; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §§6.3–6.4, pp. 900–901, BCDT lines 2785,2840: the source says `γ₄²` has order three; it should be order two, as its action on `β` also proves; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 
 ## BCGP25
 
@@ -538,6 +554,23 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Théorème 5.15 (p.55): the source says Ř is Hom(Ř,L); it should be the continuous L-dual of R; affects nothing. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 - **Gap** at Théorème 5.24(ii), proof (p.60): the source says the L-duals are finite locally free over R_{B,M}, without argument; it should be proved on each PID factor; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3e0777d", "job": "REV-DESIGN-PadicLocalLanglandsForGL2QpPartII", "model": "opus", "worker": "fable-rev16"} -->. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 
+## CDT
+
+- **Error** at Lemma 6.1.2(4), p. 545, as corrected in BCDT line 4436: the source says the subgroup comparison needs no normality qualification; it should be stated with `V′` normal in `V`; affects a stated result; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Lemma 7.2.3 and proof, p. 554, CDT lines 1659,1665: the source says the conductor-50 exceptional invariant is positive `5·29³/2⁵`; it should be negative `−5·29³/2⁵`; affects a stated result; corrected in print at BCDT §10, p. 938. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Lemma 7.2.3 proof, p. 554, CDT line 1692: the source says the congruence moduli for the cyclic subgroup and unordered pair are `p` and `q`; it should be `q` and `p`, respectively; affects the proof; corrected in print at BCDT §10, p. 938. <!-- tauceti-roadmap-review {"agent": "codex", "head": "b3316c7272f743c7c76702d3aa510d757c0c8a3c", "job": "RT-EllipticCurveModularityWild3Adic~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at Lemma 7.2.3, p. 554, CDT line 1659: the source says the original curve's `j` belongs to the displayed set; it should be a curve rationally isogenous to it whose `j` belongs to that set; affects a stated result; corrected in print at BCDT §10, pp. 937–938. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 523, line −10, as corrected in BCDT line 4425: the source says to use each point without its field-of-definition qualification; it should be each `K`-rational point; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at p. 532, line −6, as corrected in BCDT line 4426: the source says semisimplicity of `σ₁` implies semisimplicity of `σ_n`; it should be deleted, as the implication is false and unused; affects nothing; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 536, line 7, as corrected in BCDT line 4429: the source says the real-group argument uses `GL₂(ℂ)`; it should be `GL₂(ℝ)`; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 538, line −10, as corrected in BCDT line 4430: the source says only that the global representation has type `(S,τ)`; it should be supplemented by the local restriction having type `τ`; affects a stated result; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 539, lines 18–20, as corrected in BCDT line 4432: the source says the character labels are `ω₁,ω₂`; it should be `η₁,η₂`; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 541, line 14, as corrected in BCDT line 4433: the source says three patched-algebra occurrences are `A`; it should be `A∞`; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 544, line −6, as corrected in BCDT line 4434: the source says to use the discrete topology on `V_p`; it should be the `ℓ`-adic topology on `M_p`; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at p. 549, lines −15 and −11, as corrected in BCDT lines 4456–4457: the source says the level factors are `U_{r,r′,p}` and `U′_S/U′_{0,S}`; it should be `U_{r,p}` and `V₀/V₁`; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at p. 552, line 4, as corrected in BCDT lines 4458–4460: the source says the assertion applies for every `ℓ≥5`; it should be restricted further by `j(E)≢1728 mod ℓ`; affects a stated result; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Error** at §6.2, p. 546, as corrected in BCDT lines 4440–4455: the source says the original arithmetic group meets Theorem 6.1.1 and uses dual coefficient modules; it should be replaced by the modified levels and `L_n⊗k` with the corrected Hom module; affects the proof; corrected in print at BCDT §10, pp. 937–938. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+
 ## Chen
 
 - **Error** at Definition 2.1.6, printed p. 8, and §5.1, printed p. 38 (Chen line 247; Chen line 1486): the source says rotation with conjugated coefficients and q↦q⁻¹ supplies the pivotal dual; it should be extend rotation C(q)-linearly; otherwise f=i·id makes Definition 5.1.1(2)(i) equate iη with −iη; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
@@ -736,6 +769,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Edixhoven, Point counting after Kedlaya
 
 - **Error** at the §4.3 reduction step: the source says the decomposition is unique, yet zero input has the nonzero decomposition φ = y/25, b = −Q′/50; it should be unique only after requiring the reduced b to have degree at most 2g − 1; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Elkies
+
+- **Misprint** at the paragraph after equation (153), author p. 55, Elkies line 2505: the source says the upper double-cover curve has seven finite rational points; it should be the lower elliptic quotient `X₀⁺⁺(75)`; affects nothing. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 
 ## Ellenberg–Venkatesh–Westerland, Homological stability for Hurwitz spaces and the Cohen–Lenstra conjecture over function fields II, arXiv:1212.0923v1
 
@@ -1698,6 +1735,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Savitt, On a conjecture of Conrad, Diamond, and Taylor, arXiv:math/0404327
 
 - **Misprint** at Definition 3.1, printed p. 12: the source says descent data are maps obeying the cocycle rule, without requiring [1] = id or invertibility (so the all-zero family qualifies); it should be required that [1] = id, invertibility then following from the cocycle rule; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## SBT
+
+- **Misprint** at Lemma 1.1 proof, author-copy p. 3, SBT line 118: the source says the lifted homomorphism has source `SL₅(𝔽₅)`; it should be `SL₂(𝔽₅)`; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Lemma 1.1, author-copy p. 3, SBT line 102: the source says the twist for an arbitrary characteristic-zero field is a projective line over `ℚ`; it should be over that field `K`; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 
 ## Schlichting's example of Artinian rings with equivalent derived categories but different K-theory (cited as "Schlichting example")
 
