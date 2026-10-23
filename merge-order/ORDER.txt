@@ -241,3 +241,4 @@ DrinfeldModulesAndTModulesPartII
 ExcursionOperatorsAndSpectralActionPartII
 ExoticMonoidalStructuresAndAbstractAutomorphicity
 GL2ModularityLiftingPartII
+GeometricSatakeAndFusionPartII
