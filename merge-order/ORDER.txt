@@ -245,6 +245,7 @@ ErdosProgressionPowers
 SieveMethodsAndPrimePatterns
 ProbabilisticAndMetricNumberTheory
 DiophantineApproximationAndTranscendencePartII
+ModularFormsPartII
 ArithmeticDynamics
 ArakelovGeometryAndAbelianHeightsPartII
 PolynomialGaloisGroupsPartII
