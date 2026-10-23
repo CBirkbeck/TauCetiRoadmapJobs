@@ -1,0 +1,1475 @@
+{
+  "roadmap": "SolidAnalyticRings",
+  "title": "Solid spectral analytic coefficients",
+  "parent": null,
+  "summary": "Light solid spectral foundations, countable product/tower and balanced tensor comparisons, cardinal interchange, complete filtered null families, bounded-below realizations and spectral analytic coefficients, preserving the sphere and the relocated RefinedTraceMethods foundation.",
+  "baseline": {
+    "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
+    "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+  },
+  "layers": [
+    {
+      "key": "1",
+      "title": "Light spectral sheaves and the null-sequence test",
+      "targets": [
+        {
+          "id": "1.1",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.lightSpectralSheaves",
+          "statement": "Fix a small skeleton of second-countable profinite spaces in universe u, with finite jointly surjective covering families. Define Cond(Sp) as hypercomplete spectrum-valued sheaves on this site. Construct a presentable stable closed symmetric monoidal enhancement, with tensor obtained by hypersheafifying the sectionwise tensor. Its limits are sectionwise; its colimits are hypersheafified sectionwise colimits. Construct the free spectral sheaf 𝕊[T] representing evaluation at each light profinite T. Prove that hypercovers can be refined by simplicial light profinite objects, so each descent comparison involves a countable diagram.",
+          "hypotheses": [
+            "u is fixed and diagrams are u-small; spectra live in a compatible enlargement",
+            "the coherent site uses finite covers; hyperdescent is required"
+          ],
+          "locator": {
+            "source": "RC",
+            "where": "Definition 4.0.1, pp.27–28, RC line 1392; W paragraph 2.1, p.11, W line 437"
+          },
+          "prerequisites": [
+            "mathlib:LightProfinite",
+            "mathlib:LightProfinite.effectiveEpi_iff_surjective",
+            "mathlib:LightCondensed",
+            "roadmap:GeneralizedCohomology G2.1–G2.7",
+            "roadmap:EnhancedDerivedSheaves E0.4",
+            "roadmap:EnhancedDerivedSheaves E0.8",
+            "roadmap:EnhancedDerivedSheaves E2.6–E2.7",
+            "roadmap:EnhancedDerivedSheaves E3.2",
+            "roadmap:EnhancedDerivedSheaves E5:presentability.2"
+          ],
+          "api": [
+            {
+              "name": "lightSpectralFree",
+              "role": "constructor",
+              "statement": "For each light profinite T, the free object has Map(𝕊[T],M) ≃ M(T), naturally in T and M."
+            },
+            {
+              "name": "lightSpectralSheaves_ext",
+              "role": "extensionality",
+              "statement": "Maps agree when their maps of values agree coherently on the site; equivalences are detected on all values."
+            },
+            {
+              "name": "lightSpectralSheaves_descent",
+              "role": "evaluation",
+              "statement": "For every hypercover U•→T, M(T)→Tot M(U•) is an equivalence."
+            },
+            {
+              "name": "lightSpectralTensor",
+              "role": "structure",
+              "statement": "The free-object tensor is 𝕊[T]⊗𝕊[U] ≃ 𝕊[T×U], including empty T or U."
+            }
+          ],
+          "tests": [
+            {
+              "name": "empty",
+              "kind": "degenerate",
+              "statement": "The empty space evaluates to 0, excluding the constant presheaf with nonzero empty value."
+            },
+            {
+              "name": "pair",
+              "kind": "computation",
+              "statement": "For a disjoint pair, the sheaf value is two factors, and the free object is two spheres."
+            },
+            {
+              "name": "ordinary_carrier",
+              "kind": "compatibility",
+              "statement": "The degree-zero integer homotopy sheaves use LightCondAb; an ordinary Category-valued sheaf alone does not encode spectral hyperdescent."
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.discreteSpectralAdjunction",
+          "statement": "For every spectrum X construct δX as the hypercomplete constant sheaf. Prove δ ⊣ ev_* with unit X→(δX)(*) an equivalence, and δ𝕊≃𝕊 and δ(X⊗Y)≃δX⊗δY coherently. Hence δ is fully faithful and preserves all small colimits. Identify the homotopy sheaf π_k(δX) with the discrete sheaf on π_kX for every integer k. The comparison from δ of an inverse limit to the limit of δ is a specified natural map, with no general equivalence assertion.",
+          "hypotheses": [
+            "X,Y are arbitrary spectra, without boundedness restrictions"
+          ],
+          "locator": {
+            "source": "W",
+            "where": "Paragraph 2.1, p.11, W line 437; MW paragraph 4.1, p.41, MW line 1748"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "mathlib:LightCondensed.discreteUnderlyingAdj"
+          ],
+          "api": [
+            {
+              "name": "discreteSpectral_map",
+              "role": "functoriality",
+              "statement": "A spectral map X→Y induces δX→δY, preserving identities, composites, zero maps and all integer shifts."
+            },
+            {
+              "name": "discreteSpectral_unit",
+              "role": "evaluation",
+              "statement": "The adjunction unit is the natural equivalence X→(δX)(*), including its action on every π_k."
+            },
+            {
+              "name": "discreteSpectral_tensor",
+              "role": "structure",
+              "statement": "The tensor and unit comparisons of δ satisfy symmetry, associativity and unit coherences."
+            }
+          ],
+          "tests": [
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "δ0=0 and the adjunction unit at 0 is the identity of 0."
+            },
+            {
+              "name": "two_terms",
+              "kind": "computation",
+              "statement": "For X=𝕊⊕Σ𝕊, π₀δX is ℤ and π₁δX contains the shifted ℤ summand."
+            },
+            {
+              "name": "inverse_limit",
+              "kind": "non-example",
+              "statement": "The inverse limit of discrete H(ℤ/p^r) has continuous ℤ_p-valued sections. On T=ℤ_p its identity section is not locally constant, so it is not δHℤ_p."
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.spectralNullSequence",
+          "statement": "Let C=ℕ∪{∞} with the one-point compactification topology, and define N=cofib(𝕊[{∞}]→𝕊[C]). Define σ:N→N from the continuous map n↦n+1, ∞↦∞, using its compatibility with the marked point. All maps and cofibers are in Cond(Sp). Construct the universe-lifted marked compactification and compare the free integer null summand, shift and internal projectivity with the pinned Type0 model. At the base universe, internal projectivity is imported; the additional target is its natural scalar/site transport on the common light presentations, not another base-universe proof.",
+          "hypotheses": [
+            "the point ∞ is marked; ℕ is indexed from 0"
+          ],
+          "locator": {
+            "source": "W",
+            "where": "Paragraph 2.1, p.11, W line 443; RC Definition 3.2.1, p.16, RC line 730"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "mathlib:LightCondensed.internallyProjective_free_natUnionInfty",
+            "mathlib:CategoryTheory.InternallyProjective.ofRetract",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1",
+            "roadmap:VStackSheavesAndLisseCategories VS2.2"
+          ],
+          "api": [
+            {
+              "name": "spectralNullSequence_map",
+              "role": "functoriality",
+              "statement": "A continuous map of pointed compactifications induces the corresponding map of cofibers, with identity and composition laws."
+            },
+            {
+              "name": "spectralNullSequence_hom",
+              "role": "universal property",
+              "statement": "Internal Hom from N to M is the fiber of internal Hom(𝕊[C],M)→internal Hom(𝕊[{∞}],M)."
+            },
+            {
+              "name": "spectralNullSequence_shift",
+              "role": "evaluation",
+              "statement": "For a map with coefficient sequence b, precomposition σ* has coefficient at n equal to b_(n+1)."
+            },
+            {
+              "name": "spectralNullSequence_universe",
+              "role": "compatibility",
+              "statement": "On common light presentations, universe/scalar lifts commute with the marked point, null summand and shift and transport the integer internal-projectivity lifting test."
+            }
+          ],
+          "tests": [
+            {
+              "name": "marked_point",
+              "kind": "degenerate",
+              "statement": "The free cofiber on a singleton marked point is 0, excluding an unreduced free object."
+            },
+            {
+              "name": "shift",
+              "kind": "computation",
+              "statement": "Against δHℤ, (1−σ*)e₁=e₁−e₀ and its inverse sends e₁ to e₁+e₀."
+            },
+            {
+              "name": "direction",
+              "kind": "non-example",
+              "statement": "A right shift on coefficient sequences sends e₁ to e₂ and fails the computed witness."
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.isSolidSpectrum",
+          "statement": "A spectrum-valued hypersheaf M is solid when 1−σ* is an equivalence of internal Hom objects Hom(N,M)→Hom(N,M). Define Sp■ as the full subcategory on this property. Equivalently, M is right-orthogonal to cofib(1−σ:N→N) after tensoring that cofiber with every free 𝕊[T]; the internal and externally tested formulations must agree.",
+          "hypotheses": [
+            "M is a light spectral hypersheaf; all T range over the chosen light site"
+          ],
+          "locator": {
+            "source": "W",
+            "where": "Paragraph 2.1, p.11, W lines 443–451; MW paragraph 4.1, MW line 1754"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:1.1"
+          ],
+          "api": [
+            {
+              "name": "isSolidSpectrum_iff_tests",
+              "role": "characterisation",
+              "statement": "Solidity is equivalent to Map(cofib(1−σ)⊗𝕊[T],M)=0 for every T."
+            },
+            {
+              "name": "isSolidSpectrum_equiv",
+              "role": "extensionality",
+              "statement": "An equivalence of hypersheaves transports solidity; the full-subcategory inclusion is fully faithful."
+            },
+            {
+              "name": "discrete_isSolidSpectrum",
+              "role": "compatibility",
+              "statement": "Every δX is solid for arbitrary X, with the finite-support inverse of 1−σ* agreeing with the integer witness."
+            }
+          ],
+          "tests": [
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "0 is solid, with the unique self-map of its zero Hom an equivalence."
+            },
+            {
+              "name": "sphere",
+              "kind": "compatibility",
+              "statement": "δ𝕊 is solid with π₀=ℤ and π₁=ℤ/2; replacing spectra by Hℤ-modules loses the latter sphere class."
+            },
+            {
+              "name": "free_null",
+              "kind": "non-example",
+              "statement": "N is not solid: its pointwise π₀ is ⊕_ℕℤ, whereas its solidification has product π₀ and contains the all-one vector."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "title": "Solidification, homotopy and the compact generator",
+      "targets": [
+        {
+          "id": "2.1",
+          "kind": "construction",
+          "name": "SolidAnalyticRings.solidHomotopyTStructure",
+          "statement": "First prove, inside Cond(Sp), that Hom(N,−) is t-exact and preserves small colimits; its homotopy sheaf in degree k is the internal abelian Hom from the integer null object to π_k. Deduce that M is solid exactly when every π_kM is integer-solid on the light site. The homotopy t-structure restricts to the stable full subcategory Sp■, has heart the light realization of SolidAb, is nondegenerate and left and right complete, and is compatible with filtered colimits and countable products. Compare truncations and shifts with ordinary spectra and the supplied integer enhancement.",
+          "hypotheses": [
+            "all homotopy indices and lower bounds are integers",
+            "the light site is fixed; countable products and Postnikov limits use this site"
+          ],
+          "locator": {
+            "source": "RC",
+            "where": "Theorem 2.3.3(1)–(3), pp.12–13, RC line 537; Theorem 3.2.4(6), p.17, RC line 764; proof RC line 870 (integer model)"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.3",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1",
+            "mathlib:LightCondensed",
+            "mathlib:LightCondMod",
+            "roadmap:EnhancedDerivedSheaves E2:towers",
+            "roadmap:EnhancedDerivedSheaves E5:spectra-comparison",
+            "roadmap:StableHomotopyKTheory §§5.15–5.18",
+            "mathlib:CategoryTheory.CountableAB4Star",
+            "mathlib:CategoryTheory.IsGrothendieckAbelian"
+          ],
+          "api": [
+            {
+              "name": "solidHomotopy_truncation",
+              "role": "constructor",
+              "statement": "All homotopy truncations preserve solidity; their unit/counit maps have the stated π_k isomorphism and vanishing ranges."
+            },
+            {
+              "name": "solidHomotopy_heart",
+              "role": "compatibility",
+              "statement": "The heart inclusion identifies a solid integer group B with HB, with π₀=B and all other homotopy sheaves zero."
+            },
+            {
+              "name": "solidHomotopy_shift",
+              "role": "structure",
+              "statement": "Suspension sends the lower bound b to b+1 and gives π_k(ΣM)=π_(k−1)M."
+            }
+          ],
+          "tests": [
+            {
+              "name": "shift",
+              "kind": "computation",
+              "statement": "ΣHℤ has π₁=ℤ and π₀=0; cohomological ℤ in degree 2 corresponds to π₋₂=ℤ."
+            },
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "The zero module lies in every connective and coconnective range."
+            },
+            {
+              "name": "square_zero",
+              "kind": "non-example",
+              "statement": "A=𝕊⊕Σ𝕊 with square-zero ideal is connective and has a nonzero π₁; its heart does not determine A as a spectral algebra."
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "kind": "construction",
+          "name": "SolidAnalyticRings.solidSpectralReflection",
+          "statement": "Construct the accessible reflection L■:Cond(Sp)→Sp■. Prove that the inclusion creates all small limits and colimits and that Hom(C,M) is solid whenever M is solid and C is any condensed spectrum. Prove tensor compatibility L■(C⊗D)≃L■(L■C⊗D), and equip Sp■ with closed symmetric monoidal tensor C⊗■D=L■(C⊗D), unit δ𝕊 and the ambient internal Hom into solid targets. Prove L■ preserves connective objects. For a connective E₁ solid A, Mod_A has the underlying homotopy t-structure. For connective commutative A, tensor over A sends degrees ≥b and ≥c to degrees ≥b+c, for all integers b,c. For every light profinite T presented as a sequential limit of finite quotients T_n, construct L■𝕊[T]≃lim_n δ𝕊[T_n], independent of the presentation and compatible with its free-object unit.",
+          "hypotheses": [
+            "C,D range over Cond(Sp); M is solid"
+          ],
+          "locator": {
+            "source": "W",
+            "where": "Paragraph 2.1, p.11, W lines 448–451; RC Theorem 3.2.4(5)–(8), p.17, RC line 761 (integer model); RC Theorem 3.2.4(12), p.17, RC line 773 (free measure model)"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "roadmap:EnhancedDerivedSheaves E3.2",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.3",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1",
+            "target:2.1"
+          ],
+          "api": [
+            {
+              "name": "solidSpectralReflection_unit",
+              "role": "universal property",
+              "statement": "For solid M, precomposition with C→L■C gives Map(L■C,M)≃Map(C,M); its counit is invertible."
+            },
+            {
+              "name": "solidSpectralReflection_idempotent",
+              "role": "compatibility",
+              "statement": "The two units L■C→L■L■C agree and are equivalences."
+            },
+            {
+              "name": "solidSpectralTensorHom",
+              "role": "structure",
+              "statement": "For solid C,D,M, Hom(C⊗■D,M)≃Hom(C,Hom(D,M)), coherently with symmetry and units."
+            },
+            {
+              "name": "solidSpectralFreeMeasure",
+              "role": "constructor",
+              "statement": "For every sequential finite-quotient presentation of T, the free solid measure object is the displayed limit; its unit is induced by the finite projections, and maps of T act covariantly."
+            }
+          ],
+          "tests": [
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "L■0=0 and 0⊗■M=0."
+            },
+            {
+              "name": "unit",
+              "kind": "computation",
+              "statement": "L■δ𝕊=δ𝕊, and δ𝕊⊗■M=M."
+            },
+            {
+              "name": "hom",
+              "kind": "compatibility",
+              "statement": "Internal Hom into a solid target is computed in Cond(Sp), rather than by forgetting condensation."
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.integerLinearSolidComparison",
+          "statement": "Construct a symmetric monoidal t-exact equivalence Mod_{δHℤ}(Sp■)≃D(SolidAb_light) on the common enhancement. It identifies solidification of Hℤ-module sheaves with derived integer solidification, including the units and the internal-Hom comparison. For every integer b and solid X with π_kX=0 for all k<b, the unit-induced map X→δHℤ⊗■X induces an isomorphism on π_b. Consequently Hℤ⊗■− detects zero objects among bounded-below solid spectra. Compare modules over θB for animated B through the supplied animated-to-commutative-algebra functor, without identifying animated rings with arbitrary connective spectral algebras.",
+          "hypotheses": [
+            "the same light site and size-bounded integer realization are used on both sides",
+            "the conservativity assertion requires a lower homotopy bound",
+            "B uses the supplied θ, with its rational-only equivalence restriction"
+          ],
+          "locator": {
+            "source": "MW",
+            "where": "Paragraph 4.1, p.41, MW line 1763; RC Theorem 3.2.4(9)–(11), p.17, RC line 769"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "target:2.2",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1",
+            "roadmap:EnhancedDerivedSheaves E5:spectra-comparison",
+            "roadmap:EnhancedDerivedSheaves E5:animation.4",
+            "roadmap:StableHomotopyKTheory §§5.14–5.16",
+            "roadmap:EnhancedDerivedSheaves §§0.1–0.3",
+            "roadmap:EnhancedDerivedSheaves E1.3",
+            "roadmap:EnhancedDerivedSheaves E2.6"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "integer",
+              "kind": "compatibility",
+              "statement": "The spectral Hℤ-module unit corresponds to ℤ concentrated in cohomological degree 0."
+            },
+            {
+              "name": "tor",
+              "kind": "computation",
+              "statement": "H𝔽_p⊗_{Hℤ}H𝔽_p has π₀=π₁=𝔽_p and other homotopy zero, including p=2,3."
+            },
+            {
+              "name": "animation",
+              "kind": "non-example",
+              "statement": "Over 𝔽₂, a free commutative derived algebra retains positive symmetric-group homology, whereas the animated polynomial algebra is discrete."
+            }
+          ]
+        },
+        {
+          "id": "2.4",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.solidNullCompactGenerator",
+          "statement": "Put G=L■N. Construct an equivalence G≃∏_ℕδ𝕊, with the product in Cond(Sp), and prove G is connective, compact and a generator of Sp■. For any E₁ algebra A, G_A=A⊗■G is a compact generator of left A-modules. For connective A it is connective and its degree-zero homotopy is a projective generator of the heart. The homotopy sheaves of G are ∏_ℕδπ_k𝕊, and Hℤ⊗■G corresponds to ∏_ℕℤ. For connective A, Map_A(G_A,−) is t-exact and the endomorphism spectrum R_A=Map_A(G_A,G_A) is connective; precomposition makes Map_A(G_A,M) a right R_A-module.",
+          "hypotheses": [
+            "A may be noncommutative; connectivity conclusions require connective A",
+            "compactness means preservation of all filtered colimits by the mapping spectrum"
+          ],
+          "locator": {
+            "source": "W",
+            "where": "Paragraph 2.3, p.12, W line 472; RC Theorem 3.2.4(12), p.17, RC line 773 (integer model)"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "target:2.2",
+            "target:2.3",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1",
+            "roadmap:EnhancedDerivedSheaves E3.3",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.2",
+            "roadmap:EnhancedDerivedSheaves E5:presentability.1",
+            "target:1.3"
+          ],
+          "api": [
+            {
+              "name": "solidNullGenerator_unit",
+              "role": "constructor",
+              "statement": "The map N→G is the reflection unit and its maps to the finite partition quotients determine the product comparison."
+            },
+            {
+              "name": "solidNullGenerator_homotopy",
+              "role": "evaluation",
+              "statement": "For every integer k, π_kG=∏ℕδπ_k𝕊, with the finite-coordinate evaluation maps."
+            },
+            {
+              "name": "solidModuleGenerator_free",
+              "role": "universal property",
+              "statement": "For every E₁ A, Map_A(A⊗■G,M)=Map(G,UM); this transports compactness and zero detection."
+            }
+          ],
+          "tests": [
+            {
+              "name": "point",
+              "kind": "computation",
+              "statement": "At the point, π₀G=∏_ℕℤ and the all-one vector is present."
+            },
+            {
+              "name": "non_discrete",
+              "kind": "non-example",
+              "statement": "The null family e_n gives a continuous map of the convergent sequence to π₀G; as a map into the discrete group ∏_ℕℤ it is not continuous."
+            },
+            {
+              "name": "zero_algebra",
+              "kind": "degenerate",
+              "statement": "For A=0 the module category and G_A are both zero; generation is still the zero-object detection assertion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3",
+      "title": "Countable products, split towers and balanced tensor",
+      "targets": [
+        {
+          "id": "3.1",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.countableProductTensor",
+          "statement": "For all countable sets I,J, including finite and empty sets, the projection-induced map (∏_Iδ𝕊)⊗■(∏_Jδ𝕊)→∏_(I×J)δ𝕊 is an equivalence, natural under reindexing and coherent with units, symmetry and associativity. Identify the map on integer-linearization with VS2.1’s derived product tensor.",
+          "hypotheses": [
+            "I and J are countable in the fixed universe"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, printed p.79, Q line 3672; RC Theorem 3.2.4(13), p.17, RC line 777"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:2.3",
+            "target:2.4",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "empty",
+              "kind": "degenerate",
+              "statement": "If I=∅ the empty product in the stable category is 0, so both sides vanish."
+            },
+            {
+              "name": "finite",
+              "kind": "computation",
+              "statement": "For |I|=2 and |J|=3, both sides are six spheres and the coordinate (1,2) projection is the tensor of those two projections."
+            },
+            {
+              "name": "symmetry",
+              "kind": "compatibility",
+              "statement": "Swapping two degree-one suspended sphere factors multiplies the generator by −1; unsuspended coordinate reindexing has sign +1."
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.splitFiniteFreeSphereTower",
+          "statement": "A split finite free sphere tower is a functor P:ℕᵒᵖ→Sp with a finite sphere basis at each stage, a sphere-linear section s_n:P_n→P_(n+1) of each transition d_n, and coherent choices identifying composites with their iterated splittings. Maps are coherent maps of diagrams; a map need not preserve the chosen sections. Construct the coherent identification of P_n with P_0 plus the first n split kernels, each kernel a finite free sphere module, and hence lim δP as the countable product of these sphere factors.",
+          "hypotheses": [
+            "finite free means a finite coproduct of the unsuspended sphere, not an arbitrary perfect spectrum",
+            "the sections are sphere-linear; no coefficient-linearity is inferred"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, printed p.79, Q lines 3672–3674 (split-tower argument)"
+          },
+          "prerequisites": [
+            "target:2.4",
+            "roadmap:EnhancedDerivedSheaves E2:towers",
+            "roadmap:GeneralizedCohomology G2.4",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.4",
+            "mathlib:Submodule.basisOfPid",
+            "target:2.3"
+          ],
+          "api": [
+            {
+              "name": "splitFiniteFreeSphereTower_mk",
+              "role": "constructor",
+              "statement": "Finite sphere bases, transitions, sections and coherent right-inverse identities determine a split tower."
+            },
+            {
+              "name": "splitFiniteFreeSphereTower_ext",
+              "role": "extensionality",
+              "statement": "Coherently equal stage maps give equal maps of tower limits."
+            },
+            {
+              "name": "splitFiniteFreeSphereTower_decompose",
+              "role": "structure",
+              "statement": "P_n≃P_0⊕⊕_(r<n)ker d_r and lim δP≃δP_0×∏_rδker d_r."
+            },
+            {
+              "name": "splitFiniteFreeSphereTower_changeSplitting",
+              "role": "functoriality",
+              "statement": "Different specified sections give equivalent product presentations of the same limit, compatible with its stage projections."
+            }
+          ],
+          "tests": [
+            {
+              "name": "constant",
+              "kind": "degenerate",
+              "statement": "The constant zero tower has every kernel and limit 0; a constant rank-one identity tower has limit 𝕊."
+            },
+            {
+              "name": "growing",
+              "kind": "computation",
+              "statement": "For P_n=𝕊^(n+1), the ranks at n=0,1,2 are 1,2,3 and the kernels all have rank 1."
+            },
+            {
+              "name": "non_split",
+              "kind": "non-example",
+              "statement": "Multiplication by 2 on 𝕊 is not a split surjection: an integer b with 2b=1 does not exist."
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.splitTowerTensorComparison",
+          "statement": "For any two split finite free sphere towers P,Q, the map (lim_m δP_m)⊗■(lim_n δQ_n)→lim_(m,n)δ(P_m⊗Q_n) induced by stage projections is an equivalence. Restricting the right side to the diagonal n=m is also an equivalence. Both comparisons are natural for all coherent maps of towers, including maps which change the chosen sections.",
+          "hypotheses": [
+            "P,Q carry the data of §3.2"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, printed p.79, Q line 3672"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:3.2",
+            "roadmap:EnhancedDerivedSheaves E2:towers"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "constant",
+              "kind": "degenerate",
+              "statement": "Two constant rank-one towers give 𝕊⊗■𝕊≃𝕊."
+            },
+            {
+              "name": "ranks",
+              "kind": "computation",
+              "statement": "At m=1,n=2 for the growing rank n+1 towers the independent stage has 2·3=6 summands."
+            },
+            {
+              "name": "scalar_warning",
+              "kind": "non-example",
+              "statement": "A section of A→A/(t) given by constant polynomials over the sphere is not A-linear: s(t·1)=0 while t·s(1)=t."
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.balancedTensorComparison",
+          "statement": "For commutative A in Sp■ and A-modules X,Y, construct the natural equivalence X⊗■_A Y≃(X⊗■Y)⊗■_(A⊗■A)A, with the latter action given by multiplication A⊗■A→A. Compute both sides by the supplied two-sided bar constructions and identify their bisimplicial realizations. For maps A→B→C, give coherent identity, associativity and ordinary pushout base-change comparisons of relative tensor. If B is dualizable as an A-module, prove B⊗■_A lim_K M≃lim_K(B⊗■_A M) for every small diagram M. Without this hypothesis, apply balancing to the completed object produced by §3.3; do not move B through its inverse limit.",
+          "hypotheses": [
+            "A,B,C are commutative solid spectral algebras for monoidal module statements",
+            "X,Y are A-modules",
+            "the inverse-limit assertion assumes B dualizable over A"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, printed pp.79–80, Q lines 3672 and 3685 (spectral application of relative tensor)"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.2",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.3",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "unit",
+              "kind": "degenerate",
+              "statement": "For A=𝕊 both sides are X⊗■Y; if X=0 both are 0."
+            },
+            {
+              "name": "variables",
+              "kind": "computation",
+              "statement": "For A=𝕊[t], X=Y=A, the absolute tensor has π₀=ℤ[t₁,t₂], and balancing sends t₁ and t₂ to t."
+            },
+            {
+              "name": "limit_failure",
+              "kind": "non-example",
+              "statement": "Over Hℤ, rational scalar extension of ∏_ℕℤ has uniformly bounded denominators. The element (1/2^n)_n lies in ∏_ℕℚ but not in (∏_ℕℤ)⊗ℚ, so arbitrary scalar extension cannot commute with this product."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4",
+      "title": "Countable limits and independent support bounds",
+      "targets": [
+        {
+          "id": "4.1",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.countableLimitOmegaOneFiltered",
+          "statement": "Let K be a small category whose nerve has countably many nondegenerate simplices, let J be a small ω₁-filtered category, and let F:J×K→Cond(Sp) be any coherent diagram. The comparison colim_j lim_k F(j,k)→lim_k colim_j F(j,k) is an equivalence. Prove the same assertion in Sp■ and in left modules over any fixed E₁ solid spectral algebra. In these categories ω₁-filtered colimits of hypersheaves are computed sectionwise.",
+          "hypotheses": [
+            "K has a countable nerve in the specified sense; J is ω₁-filtered, including nonemptiness",
+            "the algebra in the module statement is fixed, with no connective hypothesis"
+          ],
+          "locator": {
+            "source": "HTT",
+            "where": "Proposition 5.3.3.3, printed p.394, HTT line 18705; RC Remark 4.0.3, p.28, RC line 1411; Q line 3688"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:2.2",
+            "roadmap:EnhancedDerivedSheaves E0.8",
+            "roadmap:EnhancedDerivedSheaves E5:presentability.2",
+            "gap:cardinal-interchange"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "empty_K",
+              "kind": "degenerate",
+              "statement": "For K empty, both sides are 0; for J a point both sides are lim_K F."
+            },
+            {
+              "name": "ordinary_filtered",
+              "kind": "non-example",
+              "statement": "For F(n,k)=Hℤ when k<n and 0 otherwise, with J=ℕ and discrete K=ℕ, the two π₀ groups are ⊕_ℕℤ and ∏_ℕℤ, respectively."
+            },
+            {
+              "name": "constant",
+              "kind": "compatibility",
+              "statement": "For K a point the map is the identity on colim_J F; no countable product assertion is used in this case."
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.countableIndependentUnions",
+          "statement": "For a countable family of light solid abelian groups B_j and directed systems of subobjects B_(j,α)⊆B_j, the natural map colim_(α_j)∏_j B_(j,α_j)→∏_j colim_α B_(j,α) is an isomorphism of light solid sheaves. In a countable split tower of finite sphere sums, prove that π_k of its limit is the inverse limit of the π_k sheaves for every integer k, and that every projection is surjective on π_k. These statements provide independent coordinate bounds and eliminate the lim¹ error used in §5.",
+          "hypotheses": [
+            "each subobject index is nonempty and directed",
+            "the product and the family of independent choices are countable",
+            "the spectral tower has the coherent splittings of §3.2"
+          ],
+          "locator": {
+            "source": "RC",
+            "where": "Theorem 2.3.3(1)–(2), pp.12–13, RC line 539; Bosco Lemma A.4 proof, p.93, Bosco lines 3504–3521"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:3.2",
+            "gap:light-countable-ab6",
+            "roadmap:EnhancedDerivedSheaves E2:towers",
+            "target:2.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "bounded_denominators",
+              "kind": "computation",
+              "statement": "For B_j=ℚ and subgroups (1/n!)ℤ, independent choices include (1/(j+1)!)_j, while the diagonal union has only uniformly bounded denominators."
+            },
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "With every B_j=0 both sides are 0; an empty product is also 0 in abelian groups."
+            },
+            {
+              "name": "split_limit",
+              "kind": "compatibility",
+              "statement": "For truncation towers ℤ^(n+1), the projection of ℤ^ℕ to the first n+1 coordinates is onto and lim¹=0."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5",
+      "title": "Complete filtered coefficients and spectral null families",
+      "targets": [
+        {
+          "id": "5.1",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.completeSplitCoefficientDatum",
+          "statement": "A complete split coefficient datum consists of a connective commutative solid spectral algebra A, elements a_r∈π₀A(*) with a₀=1, representatives and coherent divisibility maps a_s=a_r b_(r,s) for r≤s, and the induced coherent quotient tower B_r=cofib(a_r:A→A). Its unit A→lim_r B_r must be an equivalence. Each B_r, as a condensed spectrum, has a specified equivalence with δP_r for a finite free sphere module, and the transitions are equipped with coherent sphere-linear sections. Define J_r=fib(A→B_r), with its marked map to A, and Λ_a(M)=lim_r cofib(a_r:M→M)=lim_r(M⊗■_A B_r). Quotients here are A-modules; no commutative algebra structure on a cofiber is assumed.",
+          "hypotheses": [
+            "coherence includes b_(r,r)=1 and b_(r,s)b_(s,t)=b_(r,t) together with the corresponding homotopies",
+            "a₀=1 gives B₀=0 and J₀=A",
+            "finite free sphere stages and their splittings are underlying sphere data, not A-linear data"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, pp.79–80, Q lines 3672–3688 (model for the general spectral datum)"
+          },
+          "prerequisites": [
+            "target:3.2",
+            "target:3.3",
+            "target:3.4",
+            "roadmap:EnhancedDerivedSheaves E2:towers"
+          ],
+          "api": [
+            {
+              "name": "completeSplitCoefficientDatum_mk",
+              "role": "constructor",
+              "statement": "The displayed algebra, multiplication representatives, divisibility homotopies, split stages and completeness equivalence determine the datum; equivalent coherent data induce equivalent completions."
+            },
+            {
+              "name": "coefficientIdeal_map",
+              "role": "evaluation",
+              "statement": "J_r≃A and its map to A is multiplication by a_r; for r≤s the map J_s→J_r is multiplication by b_(r,s)."
+            },
+            {
+              "name": "derivedQuotientCompletion_unit",
+              "role": "universal map",
+              "statement": "There is a natural map M→Λ_a(M), and scalar-linear maps commute with it and with all quotient projections."
+            },
+            {
+              "name": "derivedQuotientCompletion_cofinal",
+              "role": "functoriality",
+              "statement": "A cofinal reindexing of the coherent tower induces an equivalence of completions, compatible with the unit."
+            },
+            {
+              "name": "derivedQuotientCompletion_tensor",
+              "role": "compatibility",
+              "statement": "The quotient cofiber of multiplication on M is M⊗■_A B_r; the statement concerns modules and uses no quotient algebra."
+            }
+          ],
+          "tests": [
+            {
+              "name": "formal_variable",
+              "kind": "computation",
+              "statement": "Construct A as lim_r δ(𝕊[t]/t^r), whose underlying split stages have ranks r and preserve all sphere stems. Multiplication by t has cofiber 𝕊."
+            },
+            {
+              "name": "zero_ring",
+              "kind": "degenerate",
+              "statement": "A=0 with its unique unit and zero stages is admitted; all J_r and all completions are 0."
+            },
+            {
+              "name": "p_moore",
+              "kind": "non-example",
+              "statement": "The tower 𝕊/p^r is not a split finite free sphere tower: π₀(𝕊/p)=ℤ/p is not finite free over ℤ. The p-adic theorem is §6.4, with its separate hypotheses."
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.properProfile",
+          "statement": "A proper profile is a function f:ℕ→ℕ such that for every r the set {j | f(j)<r} is finite. Order profiles by an arrow f→g when f(j)≥g(j) for every j. For countable sets I_j define V_f=∏_j∏_(i∈I_j)J_(f(j)), with transition V_f→V_g induced by the marked ideal maps. Define a block map as an A-linear map on the uncompleted direct sums for which each entire input block factors through a specified finite sum of output blocks; include the actual coherent factorizations as data.",
+          "hypotheses": [
+            "j ranges over ℕ; each I_j is countable and may be empty",
+            "arrows use reverse pointwise order; properness uses strict f(j)<r"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, p.80, Q lines 3693–3705; Bosco Lemma A.4, p.93, Bosco line 3488"
+          },
+          "prerequisites": [
+            "target:5.1"
+          ],
+          "api": [
+            {
+              "name": "properProfile_mk",
+              "role": "constructor",
+              "statement": "A function with the displayed finite-sublevel-set condition determines a profile; equality is pointwise equality."
+            },
+            {
+              "name": "properProfile_filtered",
+              "role": "structure",
+              "statement": "The profile category is nonempty and filtered, with a common target min(f,g); it is not ω₁-filtered."
+            },
+            {
+              "name": "properProfile_transition",
+              "role": "functoriality",
+              "statement": "Identity transitions are identities and transitions compose according to the divisibility coherences."
+            },
+            {
+              "name": "finiteSupportBlockMap_comp",
+              "role": "constructor",
+              "statement": "Identity block maps and composites have finite output supports for each input block."
+            }
+          ],
+          "tests": [
+            {
+              "name": "proper",
+              "kind": "computation",
+              "statement": "f(j)=j is proper; f(j)=0 fails for r=1, whose sublevel set is all ℕ."
+            },
+            {
+              "name": "empty_blocks",
+              "kind": "degenerate",
+              "statement": "When every I_j is empty, each V_f=0."
+            },
+            {
+              "name": "not_omega_one",
+              "kind": "non-example",
+              "statement": "The countable family max(j−k,0) has no common target profile, excluding use of §4.1 for this colimit."
+            },
+            {
+              "name": "block_identity_zero",
+              "kind": "degenerate",
+              "statement": "The identity block map has output support {j} on block j; the zero block map has empty support and induces the zero map on every quotient."
+            },
+            {
+              "name": "block_composition",
+              "kind": "computation",
+              "statement": "The duplication j↦{2j,2j+1} followed by the same duplication has outputs {4j,4j+1,4j+2,4j+3}, a finite set of size4."
+            },
+            {
+              "name": "profile_transition",
+              "kind": "compatibility",
+              "statement": "For a_r=t^r and f(j)=j+1→g(j)=j, the j-th ideal map sends t^(j+1)x to the same element of t^jA; reversing the inclusion would fail on t^j."
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.spectralNullFamilyComparison",
+          "statement": "For every complete split coefficient datum and countable block sets I_j, put F_I=⊕_j∏_(i∈I_j)A. Construct a natural equivalence colim_(f proper) V_f→Λ_a(F_I) in Sp■, hence also in Cond(Sp) and on underlying spectra at the point. Its map modulo a_r is obtained by retaining the finitely many blocks with f(j)<r; blocks with f(j)≥r map to zero by the specified divisibility nullhomotopies. The equivalence is of spectra, not just a π₀ identification.",
+          "hypotheses": [
+            "all the hypotheses of §5.1, without any arithmetic specialization",
+            "all I_j are countable; the block index is ℕ"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, p.80, Q line 3688 and displayed formula Q lines 3693–3705; Bosco Lemma A.4 proof, Bosco lines 3504–3521 (abelian model)"
+          },
+          "prerequisites": [
+            "target:4.2",
+            "target:5.1",
+            "target:5.2",
+            "target:2.2",
+            "target:2.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "t_decay",
+              "kind": "computation",
+              "statement": "For I_j a singleton and A=𝕊[[t]], the family (t^j)_j occurs, whereas (1)_j does not; modulo t^r only j<r remain."
+            },
+            {
+              "name": "finite_blocks",
+              "kind": "degenerate",
+              "statement": "If only blocks 0 and 1 are nonempty singletons, both sides are A²: choose a proper profile with f(0)=f(1)=0."
+            },
+            {
+              "name": "infinite_block",
+              "kind": "compatibility",
+              "statement": "For I₀=ℕ and all other blocks empty, both sides are ∏_ℕA. The allowed zero value at j=0 does not force decay within that block."
+            }
+          ]
+        },
+        {
+          "id": "5.4",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.nullFamilyHomotopyNaturality",
+          "statement": "For every integer k, the equivalence of §5.3 induces π_kΛ_a(F_I)≃colim_f∏_j∏_(i∈I_j)π_kJ_(f(j)) as light solid homotopy sheaves. It is natural for the coherent finite-output block maps of §5.2 and for maps of complete split coefficient data which carry their marked ideal towers to each other. Under a block map, sums over input blocks are defined by their finite reductions modulo each a_r, not by an unqualified infinite sum in A.",
+          "hypotheses": [
+            "k∈ℤ, with no exclusion of positive or negative degrees",
+            "coefficient changes include the coherent quotient maps and their compatibility with the completeness equivalences"
+          ],
+          "locator": {
+            "source": "Q",
+            "where": "Proof of Lemma B.8, p.80, Q lines 3688–3705; Bosco Lemma A.4 proof, p.93, Bosco line 3510 (models for spectral extension)"
+          },
+          "prerequisites": [
+            "target:5.3",
+            "target:5.2",
+            "target:2.2",
+            "target:2.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "negative",
+              "kind": "degenerate",
+              "statement": "For k<0 every term is 0 because the split coefficient ideals are connective; the completed free block sum is connective."
+            },
+            {
+              "name": "sphere_stem",
+              "kind": "compatibility",
+              "statement": "For A=𝕊[[t]], π₁A=(ℤ/2)[[t]] and the degree-one family (ηt^j) has modulo t² survivors η and ηt."
+            },
+            {
+              "name": "block_maps",
+              "kind": "computation",
+              "statement": "The map sending input block j to blocks 2j and 2j+1 sends t^j to two copies of t^j; modulo t² only outputs 0,1,2,3 survive. A block mapped simultaneously to every output is excluded by the finite-output condition."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6",
+      "title": "Bounded-below resolutions, realizations and prime completion",
+      "targets": [
+        {
+          "id": "6.1",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.boundedBelowFreeResolution",
+          "statement": "For a connective E₁ solid algebra A and M∈Mod_A with π_kM=0 for k<b, construct an augmented simplicial resolution P•→M whose realization is M and each P_n is a coproduct of shifts Σ^dG_A with d≥b. The same integer b works for every simplicial degree. Give coherent comparison maps between resolutions over a map of modules, unique at the level of their realized derived functors; no uniqueness of the individual free presentations is asserted. Arbitrary coproduct index sets remain in the fixed universe.",
+          "hypotheses": [
+            "A connective; b∈ℤ; M≥b",
+            "E₁ suffices; no commutativity or arithmetic completeness is required"
+          ],
+          "locator": {
+            "source": "Bosco",
+            "where": "Proof of Proposition A.3, pp.92–93, Bosco lines 3462–3469; Q proof of Lemma B.8, Q lines 3688–3692 (integer/arithmetic resolution models)"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:2.4",
+            "roadmap:EnhancedDerivedSheaves E3.3",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.2",
+            "roadmap:StableHomotopyKTheory §5.17",
+            "target:4.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "M=0 has the zero resolution and realization0."
+            },
+            {
+              "name": "shift",
+              "kind": "computation",
+              "statement": "For M=Σ^bG_A the constant simplicial object on M is already a resolution with lower bound b."
+            },
+            {
+              "name": "no_uniform_bound",
+              "kind": "non-example",
+              "statement": "The family Σ^(−n)G_A has no common lower bound; it does not satisfy the hypothesis of the realization theorem for completion."
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.quotientCompletionConnectivity",
+          "statement": "For any connective commutative solid A and coherent divisibility tower of scalar multiplication maps a_r, define Λ_a by the module cofiber tower as in §5.1, without assuming finite free quotients or that A is complete. It is exact, and if M≥b then M/a_r≥b for every r and Λ_a(M)≥b−1. For the free block modules of §5.3 and a complete split datum, improve the bound to Λ_a(F_I)≥0 by split surjectivity on each homotopy tower. The map between the limit and the product has the fiber-of-1−shift convention of the supplied tower theory.",
+          "hypotheses": [
+            "A connective, b∈ℤ; all maps of the scalar tower include coherent homotopies",
+            "only the improved bound requires the split datum"
+          ],
+          "locator": {
+            "source": "Bosco",
+            "where": "Proposition A.3 proof, Bosco line 3465; Q proof of Lemma B.8, Q line 3688 (connectivity step made explicit)"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:5.1",
+            "target:5.3",
+            "roadmap:EnhancedDerivedSheaves E2:towers",
+            "target:2.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "unit_scalar",
+              "kind": "degenerate",
+              "statement": "For a_r=1 all quotient cofibers and Λ_aM are0."
+            },
+            {
+              "name": "zero_scalar",
+              "kind": "computation",
+              "statement": "For a single zero scalar the derived quotient is M⊕ΣM; it is not the ordinary quotient M alone."
+            },
+            {
+              "name": "lim_error",
+              "kind": "non-example",
+              "statement": "For the tower ℤ --2→ ℤ --2→⋯ in degree0, lim=0 and lim¹=ℤ₂/ℤ, so the homotopy limit has π₋₁=ℤ₂/ℤ. The b−1 bound is necessary for general towers."
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.quotientCompletionRealization",
+          "statement": "For the quotient completion functor of §6.2 and a simplicial A-module M• with M_n≥b for one integer b independent of n, the natural map |Λ_a(M•)|→Λ_a(|M•|) is an equivalence. More explicitly, cofib(|sk_dM•|→|M•|) lies in degrees ≥b+d+1, and applying Λ_a gives degrees ≥b+d; the analogous tail of |Λ_a(M•)| is ≥b+d. Consequently finite skeleta determine the comparison on π_k once d>k−b+2. The equivalence is natural and agrees with the balanced bar comparison of §3.4 whenever A and the bar terms have the stated uniform lower bounds. For a two-sided bar for X⊗_A Y, take the A-action through the X factor in each degree; the realized action is the balanced A-action, and the comparison is A-linear for these specified actions.",
+          "hypotheses": [
+            "A connective and M_n≥b for all n",
+            "the quotient tower is fixed across all simplicial degrees",
+            "for a two-sided bar, coefficient algebra is connective and its two modules have fixed lower bounds",
+            "d is a natural skeleton degree, and bounds involving b,k,d are inequalities in ℤ"
+          ],
+          "locator": {
+            "source": "Bosco",
+            "where": "Proof of Proposition A.3, Bosco line 3465; Q proof of Lemma B.8, Q lines 3688–3692 (uniform spectral estimate supplied here)"
+          },
+          "prerequisites": [
+            "target:6.2",
+            "target:6.1",
+            "target:3.4",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "constant",
+              "kind": "degenerate",
+              "statement": "A constant simplicial M gives the identity comparison Λ_aM→Λ_aM."
+            },
+            {
+              "name": "first_layer",
+              "kind": "computation",
+              "statement": "A normalized layer in simplicial degree1 contributes ΣM, so a b-connective input produces a (b+1)-connective layer before completion and at least b-connective after completion."
+            },
+            {
+              "name": "uniform",
+              "kind": "non-example",
+              "statement": "With normalized term Σ^(−n)A in degree n, its suspended layer is A in every degree; the tails never become more connective, so the proof cannot apply."
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.boundedBelowPrimeCompleteComparison",
+          "statement": "For every prime p, define e_p(X)=lim_r δ(X/p^r) on derived p-complete ordinary spectra X. Evaluation at the point is its right adjoint on p-complete objects and the unit is an equivalence, so e_p is fully faithful. If M,N are p-complete bounded-below solid spectra then M⊗■N is p-complete. For bounded-below p-complete X,Y, e_p(X)⊗■e_p(Y)≃e_p((X⊗Y)^∧_p). The bounded-below p-complete solid category is symmetric monoidal with unit e_p(𝕊^∧_p), and the inclusion into all solid spectra is lax monoidal with unit map δ𝕊→e_p(𝕊^∧_p). On Hℤ-linear inputs, recover Bosco’s completed-tensor comparison over any derived p-complete solid ordinary ring with bounded-above cohomological complexes. Construct the p-complete full subcategory in Cond(Sp) and Sp■ by orthogonality to all shifts of p-inverted free spectral objects, and prove its reflection is the p-power cofiber limit used in the definition of e_p.",
+          "hypotheses": [
+            "p is any prime, including 2 and 3",
+            "full faithfulness has no lower-bound restriction; the tensor statements do",
+            "the ordinary and solid p-completions use derived cofibers"
+          ],
+          "locator": {
+            "source": "W",
+            "where": "Paragraph 2.2, p.11, W lines 452–462; Bosco Proposition A.3, pp.92–93, Bosco line 3459"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:2.3",
+            "target:2.4",
+            "target:6.1",
+            "target:6.3",
+            "roadmap:GeneralizedCohomology G3.8–G3.9",
+            "roadmap:EnhancedDerivedSheaves E4.1",
+            "roadmap:EnhancedDerivedSheaves E4.4",
+            "target:3.1"
+          ],
+          "api": [
+            {
+              "name": "primeCompleteDiscrete_unit",
+              "role": "evaluation",
+              "statement": "For a p-complete spectrum X, evaluation e_pX at * is X, compatibly with the completed discrete/evaluation adjunction unit."
+            },
+            {
+              "name": "primeCompleteDiscrete_tensor",
+              "role": "structure",
+              "statement": "For bounded-below complete X,Y the tensor comparison is computed with completed ordinary smash and has completed sphere unit."
+            },
+            {
+              "name": "primeCompleteInteger_comparison",
+              "role": "compatibility",
+              "statement": "On the Hℤ-linear realization the comparison is Bosco’s relative completed tensor over the chosen derived p-complete solid ordinary ring."
+            },
+            {
+              "name": "solidPrimeCompletion_reflection",
+              "role": "universal property",
+              "statement": "The p-power cofiber limit is left adjoint to inclusion of objects right-orthogonal to every shift of every p-inverted light free object."
+            }
+          ],
+          "tests": [
+            {
+              "name": "p2",
+              "kind": "computation",
+              "statement": "At p=2, π₀(e_p(𝕊^∧_p)(*))=ℤ₂, and the ambient unit has π₀=ℤ."
+            },
+            {
+              "name": "p3",
+              "kind": "computation",
+              "statement": "At p=3 the same calculation gives ℤ₃, and the unit comparison sends 1 to1; no inversion of 2 or 3 is used."
+            },
+            {
+              "name": "integer_model",
+              "kind": "compatibility",
+              "statement": "For M=N=Hℤ_p the relative solid tensor over Hℤ is Hℤ_p. In contrast H𝔽_p⊗_{Hℤ_p}H𝔽_p has an additional π₁=𝔽_p; absolute sphere tensor and Hℤ-relative tensor remain distinct."
+            },
+            {
+              "name": "characteristic_p",
+              "kind": "computation",
+              "statement": "For X=H𝔽_p, X/p^r=X⊕ΣX with transition identity on X and zero on ΣX. The limit is X and the completion unit is its identity, including p=2,3."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7",
+      "title": "Spectral analytic coefficients and summability",
+      "targets": [
+        {
+          "id": "7.1",
+          "kind": "definition",
+          "name": "SolidAnalyticRings.spectralAnalyticStructure",
+          "statement": "For connective commutative A in Sp■ define an uncompleted spectral analytic structure to be a specified accessible reflective stable full subcategory D⊆Mod_A(Sp■), closed under all small ambient limits and colimits and under internal Hom_A(C,M) for arbitrary A-module C and M∈D, whose reflector L_D preserves connective objects. A completed structure additionally has A∈D. A morphism (A,D)→(B,E) is an algebra map A→B whose restriction carries E into D. Equivalent reflective full subcategories determine the same structure only with their actual inclusion and unit identified.",
+          "hypotheses": [
+            "A is connective and commutative; size bounds are fixed",
+            "reflectivity and accessibility are explicit data/properties; no reflection principle is assumed without proof"
+          ],
+          "locator": {
+            "source": "RC",
+            "where": "Definition 4.1.1 and Remark 4.1.2, pp.28–29, RC lines 1431 and 1457; AG Definition 12.1, AG line 3014 (integer/animated model)"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:3.4",
+            "roadmap:EnhancedDerivedSheaves E3.2",
+            "target:2.1"
+          ],
+          "api": [
+            {
+              "name": "spectralAnalyticStructure_mk",
+              "role": "constructor",
+              "statement": "The specified inclusion, accessible adjunction, closure laws and connective-preservation proof determine the structure."
+            },
+            {
+              "name": "spectralAnalyticStructure_ext",
+              "role": "extensionality",
+              "statement": "Two inclusions with the same full image have a uniquely identified reflector under their units; an unmarked equivalence of abstract categories is insufficient."
+            },
+            {
+              "name": "spectralAnalyticStructure_morphism",
+              "role": "functoriality",
+              "statement": "Identity and composite algebra maps preserving complete objects give identity and composite morphisms."
+            },
+            {
+              "name": "spectralAnalyticStructure_complete",
+              "role": "characterisation",
+              "statement": "The structure is completed iff its unit A→L_DA is an equivalence."
+            }
+          ],
+          "tests": [
+            {
+              "name": "trivial",
+              "kind": "compatibility",
+              "statement": "For D=all modules, L_D=id and the structure is completed."
+            },
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "D={0} is an uncompleted structure for every A, completed exactly when A=0."
+            },
+            {
+              "name": "hom_closure",
+              "kind": "non-example",
+              "statement": "The full subcategory of perfect Hℤ-modules fails the axioms: a countable coproduct of Hℤ is not perfect."
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "kind": "construction",
+          "name": "SolidAnalyticRings.analyticCompletedTensor",
+          "statement": "For an uncompleted structure (A,D), construct the closed symmetric monoidal tensor M⊗hat_A N=L_D(M⊗■_A N) on D, with unit L_DA and internal Hom inherited from Mod_A. Retain the connective commutative coefficient algebra Â=L_DA supplied by the lax monoidal inclusion and its map A→Â; no identification with A is made without completedness. For a morphism (A,D)→(B,E), completed scalar extension M↦L_E(B⊗■_A M) is left adjoint to restriction E→D. Prove identity, composition and coherences for the scalar-change squares: both iterated extensions along a coherently commuting square to a fixed analytic target agree with extension along its composite. For algebra-pushout base change, prove the completed-tensor comparison after applying the target reflector whenever its kernel is the localizing tensor ideal generated by the scalar extensions of the two input kernels; this kernel-generation condition specifies the induced analytic structure. Explicitly, for an algebra pushout B′=B⊗■_A A′ with compatible analytic structures D_B,D_A′,D_B′ and the indicated generated kernel, both L_D_B′(B′⊗_B L_D_B(B⊗_A M)) and L_D_B′(B′⊗_A′ L_D_A′(A′⊗_A M)) are canonically L_D_B′(B′⊗_A M), for every A-module M. These are equivalences of complete B′-modules.",
+          "hypotheses": [
+            "the hypotheses are exactly those of §7.1",
+            "base-change squares include their algebra maps and coherence; the pushout assertion has the stated kernel-generation hypothesis"
+          ],
+          "locator": {
+            "source": "RC",
+            "where": "Proposition 4.1.6 and proof, pp.29–30, RC lines 1489–1519; AG Proposition 12.4 and Remark 12.5, p.80, AG lines 3041–3055"
+          },
+          "prerequisites": [
+            "target:7.1",
+            "target:3.4",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.2",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.3",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.4"
+          ],
+          "api": [
+            {
+              "name": "analyticCompletedTensor_unit",
+              "role": "structure",
+              "statement": "The tensor unit is L_DA, and for completed structures this is A."
+            },
+            {
+              "name": "analyticScalarExtension_adjunction",
+              "role": "universal property",
+              "statement": "For M∈D and N∈E, Map_E(L_E(B⊗_A M),N)≃Map_D(M,U N)."
+            },
+            {
+              "name": "analyticScalarExtension_comp",
+              "role": "functoriality",
+              "statement": "For composable compatible maps, L_F(C⊗_B L_E(B⊗_A M))≃L_F(C⊗_A M), coherently under units and threefold composition."
+            },
+            {
+              "name": "analyticScalarExtension_baseChange",
+              "role": "compatibility",
+              "statement": "For the compatible algebra pushout B′=B⊗_A A′, the two completed scalar paths displayed in the statement agree with L_D_B′(B′⊗_A M) for every A-module M, coherently with the units."
+            }
+          ],
+          "tests": [
+            {
+              "name": "zero_module",
+              "kind": "degenerate",
+              "statement": "0⊗hat_A N=0 and every completed scalar extension sends0 to0."
+            },
+            {
+              "name": "uncompleted_unit",
+              "kind": "non-example",
+              "statement": "For D=0 and A=Hℤ, the tensor unit has π₀=0 rather than ℤ."
+            },
+            {
+              "name": "derived_base_change",
+              "kind": "computation",
+              "statement": "For trivial structures the base-change comparison is the derived relative tensor, retaining Tor in the square ℤ→𝔽₂←ℤ."
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "kind": "construction",
+          "name": "SolidAnalyticRings.spectralSummabilityLocalization",
+          "statement": "For connective commutative solid A and any small family F⊆π₀A(*), construct the full subcategory D_F of modules M for which 1−fσ* is invertible on internal Hom_A(A⊗■G,M), for every f∈F. Prove D_F is an uncompleted spectral analytic structure, including ambient colimit closure and connective preservation of its reflector. The condition can equivalently be tested with A⊗N in condensed modules. Construct its free complete modules, its reflector, and its coefficient algebra Â_F=L_FA with the unit A→Â_F. Establish naturality for algebra maps which carry the specified summability tests to tests of the target. Imposing more tests gives a further localization; being completed is a separate assertion that A is itself F-summable.",
+          "hypotheses": [
+            "F is small; f acts through its specified π₀ scalar action",
+            "all internal Hom tests are internal equivalences, rather than only equations on global π₀"
+          ],
+          "locator": {
+            "source": "MW",
+            "where": "Paragraph 4.2, p.41, MW lines 1764–1775; RC Example 4.6.4(2),(4), p.44, RC lines 2125–2145 (integer model)"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:2.4",
+            "target:3.1",
+            "target:7.1",
+            "target:7.2",
+            "roadmap:EnhancedDerivedSheaves E5:abstract.5",
+            "roadmap:EnhancedDerivedSheaves E3.2",
+            "roadmap:EnhancedDerivedSheaves E3.3"
+          ],
+          "api": [
+            {
+              "name": "spectralSummabilityLocalization_tests",
+              "role": "characterisation",
+              "statement": "M is local exactly when all specified internal 1−fσ* maps are equivalences; equivalent scalar representatives give equivalent tests."
+            },
+            {
+              "name": "spectralSummabilityLocalization_free",
+              "role": "constructor",
+              "statement": "The free complete object on an A-module C is L_FC, with Map(L_FC,M)≃Map(C,M) for local M."
+            },
+            {
+              "name": "spectralSummabilityLocalization_monotone",
+              "role": "functoriality",
+              "statement": "For F⊆F′, D_F′⊆D_F and L_F′L_F≃L_F′, with the units fixed."
+            },
+            {
+              "name": "spectralSummabilityLocalization_scalar",
+              "role": "compatibility",
+              "statement": "A map carrying the scalar tests into a target family makes restriction preserve local objects and gives the completed extension of §7.2."
+            },
+            {
+              "name": "spectralSummability_nilpotent",
+              "role": "characterisation",
+              "statement": "If f^d=0 for some d≥1, the f-test is automatically invertible on every module, with inverse the finite geometric sum of the powers of fσ*."
+            }
+          ],
+          "tests": [
+            {
+              "name": "zero_scalar",
+              "kind": "degenerate",
+              "statement": "F=∅ and F={0} both give all modules; f=1 adds no condition in Sp■."
+            },
+            {
+              "name": "two_term_sign",
+              "kind": "computation",
+              "statement": "For a finite-support null sequence b=e₁ and any discrete scalar f, (1−fσ*)(e₁+fe₀)=e₁."
+            },
+            {
+              "name": "coefficient_changes",
+              "kind": "non-example",
+              "statement": "For A=Hℚ_p with its topological solid realization and f=1/p, the null sequence b_n=p^n satisfies b_n−f b_(n+1)=0 and b₀=1. Thus A is not F-complete, including p=2,3, and replacing Â_F by A would be false."
+            },
+            {
+              "name": "nilpotent",
+              "kind": "computation",
+              "statement": "For A=H(𝔽₂[ε]/ε²) and f=ε, the inverse is 1+εσ* and the reflector is the identity; this tests a nonreduced characteristic-two coefficient ring."
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "kind": "theorem",
+          "name": "SolidAnalyticRings.analyticMeasureSpectralComparison",
+          "statement": "For an integer-linear analytic measure structure (B,μ) supplied by VS2.2, with B and all measure objects in its integer-solid realization, and represented on its common size-bounded light presentation, transport its complete derived module subcategory through §2.3 to the Hℤ-linear spectral algebra associated to B. Prove this is a completed spectral analytic structure exactly when the imported Dirac unit B→μ[*] is an equivalence; in general retain μ[*] as the completed coefficient algebra. Identify free complete modules, Dirac maps, relative tensor, internal Hom and compatible scalar extension. For animated B use θB and the supplied animated-module comparison, retaining the distinction from arbitrary Hℤ-algebras. Prove these comparisons commute with cutoff enlargement on the supplied common presentations and with restriction to the light site on those presentations; no equivalence of unrestricted condensed universes is asserted.",
+          "hypotheses": [
+            "the measure structure and its enhanced derived realization are supplied by VS2.2",
+            "site comparison is confined to the size-bounded presentations on which that supplier proves free-object and tensor/Hom comparison",
+            "animated B is carried by θ, rather than identified with arbitrary CAlg(Mod_Hℤ)",
+            "B and μ[S] have the imported integer-solid realization; this comparison concerns the solid measure structures of VS2.2"
+          ],
+          "locator": {
+            "source": "AG",
+            "where": "Definition 6.12 and Proposition 6.14, pp.39–40, AG lines 1361 and 1384; Definition 12.1, Proposition 12.4, Remark 12.5, pp.79–80, AG lines 3014–3055"
+          },
+          "prerequisites": [
+            "target:2.3",
+            "target:7.1",
+            "target:7.2",
+            "target:7.3",
+            "roadmap:VStackSheavesAndLisseCategories VS2.1",
+            "roadmap:VStackSheavesAndLisseCategories VS2.2",
+            "roadmap:EnhancedDerivedSheaves E5:animation.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "finite_measures",
+              "kind": "computation",
+              "statement": "For integer-solid measures on a finite set of size2 the free complete module is ℤ²; on ∅ it is0 and on * it isℤ."
+            },
+            {
+              "name": "denominators",
+              "kind": "non-example",
+              "statement": "For topological E/ℚ_p, (∏_I O_E)[1/p] has uniformly bounded denominators and excludes (p^(−n))_n. Replacing the free complete measure object by an unrestricted product ∏_I E fails."
+            },
+            {
+              "name": "positive_characteristic",
+              "kind": "compatibility",
+              "statement": "Over 𝔽₂, θ preserves the specified animated polynomial input but is not an equivalence onto all commutative H𝔽₂-algebras; the positive group homology witness is retained."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "roadmap": "GeneralizedCohomology",
+      "sections": [
+        "G2.1–G2.7",
+        "G3.8–G3.9"
+      ],
+      "what": "Concrete symmetric spectra, stable and monoidal models, sphere and Eilenberg–Mac Lane adapters; coherent ordinary spectral towers and derived prime completion."
+    },
+    {
+      "roadmap": "StableHomotopyKTheory",
+      "sections": [
+        "§§5.13–5.18"
+      ],
+      "what": "Operadic and module model comparisons, cochain homology/spectrum homotopy with π_k=H^(−k), cellular approximation and connective-model comparison; no new spectrum carrier."
+    },
+    {
+      "roadmap": "EnhancedDerivedSheaves",
+      "sections": [
+        "§§0.1–0.3",
+        "E1.3",
+        "E0.4",
+        "E0.8",
+        "E2:towers",
+        "E2.6–E2.7",
+        "E3.2–E3.3",
+        "E4.1",
+        "E4.4",
+        "E5:abstract.2–E5:abstract.5",
+        "E5:presentability.1–E5:presentability.2",
+        "E5:animation.4",
+        "E5:spectra-comparison"
+      ],
+      "what": "Stable enhancements, hypercovers, accessibility, localization, coherent towers, bar scalar extension, monoidal localization, monadicity and spectrum/module comparisons. The additional cardinal-interchange contract is gap:cardinal-interchange."
+    },
+    {
+      "roadmap": "VStackSheavesAndLisseCategories",
+      "sections": [
+        "VS2.1",
+        "VS2.2"
+      ],
+      "what": "Integer solidification and enhanced derived solid tensor; analytic measures, complete modules and proved size-bounded site comparisons. The additional light AB6 contract is gap:light-countable-ab6."
+    }
+  ],
+  "consumers": [
+    {
+      "roadmap": "HabiroRings",
+      "what": "§§2.8–2.12 consume §§1–6 for the light-solid-spectra gap, split tower and balanced tensor inputs, completed block sums, all homotopy sheaves and bounded-below realizations. Its arithmetic idempotence and multiplicative profile estimates remain there."
+    },
+    {
+      "roadmap": "RefinedTraceMethods",
+      "what": "§§6.2–6.4 import §§1–2 and §6.4 for the relocated light spectral foundations and bounded-below p-complete comparison; trace classes, nuclearity, even sites and filtrations remain there."
+    },
+    {
+      "roadmap": "HigherHidaAndColemanTheory",
+      "what": "Contracts R23–R24 can use §7.2 scalar change and §7.4 common-presentation comparison. Huber-pair localization, formal complements and nonarchimedean geometric claims require their existing VS2.2 ownership or a Part II extension."
+    },
+    {
+      "roadmap": "LocallyAnalyticRepresentationsOfLocalGroups",
+      "what": "LR.3 can use §7.4 for the supplied integer-linear E-coefficient comparison. Profinite group rings, strongly inaccessible-cutoff equivalences and Banach/Smith comparison are not outputs of this light spectral roadmap."
+    }
+  ],
+  "gaps": [
+    {
+      "slug": "cardinal-interchange",
+      "title": "Abstract cardinal-filtered colimits and cardinal-small limits",
+      "neededBy": [
+        "4.1"
+      ],
+      "detail": "EnhancedDerivedSheaves E0.8 defines cardinal filteredness and presentability, while E5:presentability.2 constructs spectra; the read sections do not state the general HTT Proposition 5.3.3.3 equivalence. Import its formal proof as an extension in that roadmap’s direction, then specialize it here to countable hypercover descent. The source is read: HTT line 18705.",
+      "needs": "For every infinite regular κ and κ-filtered small J, colim_J in spaces preserves every κ-small limit, with a compatible levelwise stabilization comparison.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E0.8 and E5:presentability.2; proposed EnhancedDerivedSheaves, Part II, cardinal interchange"
+    },
+    {
+      "slug": "light-countable-ab6",
+      "title": "Countable independent directed unions in the light abelian carrier",
+      "neededBy": [
+        "4.2"
+      ],
+      "detail": "The pinned Light/AB.lean gives countable exact products and Grothendieck abelianness, not countable AB6. VS2.1 supplies abelian solidity and its enhancement, but the read contract does not state RC Theorem 2.3.3(1)’s independent-union law. Its extension belongs to the integer/light abelian owner. This is the precise abelian input to the spectral null-family proof, not an appeal to ω₁-filteredness of profiles.",
+      "needs": "For countably many directed systems of subobjects in light condensed abelian groups, independent choices commute with their product, naturally and compatibly with the solid full inclusion.",
+      "supplier": "VStackSheavesAndLisseCategories",
+      "section": "VS2.1; proposed VStackSheavesAndLisseCategoriesPartIII §1.1, light countable AB6"
+    }
+  ]
+}

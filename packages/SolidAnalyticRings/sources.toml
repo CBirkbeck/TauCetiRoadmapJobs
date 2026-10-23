@@ -7,7 +7,6 @@ authors = "Samuel Meyer; Ferdinand Wagner"
 title = "q-Hodge complexes and refined TC−"
 year = 2026
 arxiv = "2410.23115"
-version_note = "Author version dated 5 February 2026; locators use this version rather than arXiv v4."
 locator_scheme = "section"
 locator = "Section 4.1, numbered paragraphs 4.1–4.2, p.41; MW line 1748 and MW line 1764"
 url = "https://ferdinand-wagner.github.io/papers/q-Hodge.pdf"
@@ -17,14 +16,14 @@ sha256 = "74b8a5c122cc54f5b347a49c895fdafc12e36f376fdd7165036b0c80277b3538"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Scope; Final targets 1–2 and 7; Sources; Risks"]
+version_note = "Author version dated 5 February 2026; locators use this version rather than arXiv v4."
+cited_for = ["1.2", "1.4", "2.3", "7.3"]
 
 [[source]]
 id = "CS"
 authors = "Peter Scholze; joint work with Dustin Clausen"
 title = "Lectures on Condensed Mathematics"
 year = 2019
-version_note = "May 2026 revision of the 2019 lectures; theorem numbering and pages refer to the fetched revision."
 locator_scheme = "theorem"
 locator = "Theorem 5.8, pp.35–36, CS line 1243; Theorem 6.2, p.43, CS line 1578"
 url = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
@@ -34,14 +33,14 @@ sha256 = "d422561285f3025a53ee71a497d350fc89afaefe28053de78e2255b2d521c69d"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Scope; Suppliers; Sources; existing abelian ownership"]
+version_note = "May 2026 revision of the 2019 lectures; theorem numbering and pages refer to the fetched revision."
+cited_for = ["2.1–2.3; imported VS2.1 integer model"]
 
 [[source]]
 id = "AG"
 authors = "Peter Scholze; joint work with Dustin Clausen"
 title = "Lectures on Analytic Geometry"
 year = 2020
-version_note = "May 2026 revision of the winter 2019/20 lectures; definition/proposition numbering and pages refer to the fetched revision."
 locator_scheme = "section"
 locator = "Lecture VI, Definition 6.12 and Proposition 6.14, pp.39–40, AG line 1361 and AG line 1384; Lecture XII, Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG line 3014 and AG line 3041"
 url = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
@@ -51,12 +50,13 @@ sha256 = "1d9fe538cfae023ecae4cac8cfc62fb307dbe4b8a06c8514e1bf8ec422224f8b"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Final target 7; Scope; Sources; analytic comparison"]
+version_note = "May 2026 revision of the winter 2019/20 lectures; definition/proposition numbering and pages refer to the fetched revision."
+cited_for = ["7.1–7.2", "7.4"]
 
 [[source]]
 id = "Q"
 authors = "Ferdinand Wagner"
-title = "$q$-Hodge complexes over the Habiro ring"
+title = "q-Hodge complexes over the Habiro ring"
 year = 2025
 arxiv = "2510.04782v2"
 locator_scheme = "theorem"
@@ -69,12 +69,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v2"
-cited_for = ["Final targets 3–6; Sources; spectral completion proof obligations"]
+cited_for = ["3.1–3.4", "5.1–5.4", "6.1–6.3"]
 
 [[source]]
 id = "Bosco"
 authors = "Guido Bosco"
-title = "Rational $p$-adic Hodge theory for rigid-analytic varieties"
+title = "Rational p-adic Hodge theory for rigid-analytic varieties"
 year = 2023
 arxiv = "2306.06100v1"
 locator_scheme = "theorem"
@@ -87,7 +87,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v1"
-cited_for = ["Final targets 5–6; Sources; abelian p-adic model"]
+cited_for = ["4.2", "5.2–5.4", "6.1–6.4"]
 
 [[source]]
 id = "RC"
@@ -96,7 +96,7 @@ title = "Notes on Solid Geometry"
 year = 2026
 arxiv = "2603.03012v1"
 locator_scheme = "section"
-locator = "Theorem 3.2.4, pp.17–18, RC line 754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC line 1392 and RC line 1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC line 1431 and RC line 1489"
+locator = "Theorem 2.3.3, pp.12–13, RC line 537; Theorem 3.2.4, pp.17–18, RC line 754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC lines 1392 and 1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC lines 1431 and 1489; Example 4.6.4(2),(4), p.44, RC lines 2125–2145"
 url = "https://arxiv.org/abs/2603.03012v1"
 fetched_from = "https://arxiv.org/pdf/2603.03012v1"
 fetched_at = "2026-10-23T10:40:35Z"
@@ -105,14 +105,13 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v1"
-cited_for = ["Final targets 1–4 and 7; Sources; light and integer-linear comparison"]
+cited_for = ["1.1", "1.3", "2.1–2.4", "3.1", "4.1–4.2", "7.1–7.3"]
 
 [[source]]
 id = "AS"
 authors = "Dustin Clausen; Peter Scholze; transcript by contributors"
 title = "Analytic Stacks"
 year = 2023
-version_note = "2023–2024 course; public contributor transcript fetched from the ndcroos repository; unendorsed and partly automated, used for lecture context only."
 locator_scheme = "section"
 locator = "Lectures 2–3, pp.15–32; Lectures 5–6, pp.42–57; Lecture 8, pp.67–73; Lecture 13, pp.104–110; AS line 9 and AS line 39; editorial caveat at AS line 43"
 url = "https://raw.githubusercontent.com/ndcroos/analytic-stacks/main/AnalyticStacks.pdf"
@@ -122,12 +121,13 @@ sha256 = "2b25e28e4fce27095b90b71f7c871c28c42e320cd8cae7e5e0bef9705e7ecb2a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Sources; Risks; lecture context only"]
+version_note = "2023–2024 course; public contributor transcript fetched from the ndcroos repository; unendorsed and partly automated, used for lecture context only."
+cited_for = ["References; contextual transcript only"]
 
 [[source]]
 id = "W"
 authors = "Ferdinand Wagner"
-title = "$q$-de Rham cohomology and topological Hochschild homology over ku"
+title = "q-de Rham cohomology and topological Hochschild homology over ku"
 year = 2025
 arxiv = "2510.06057v1"
 locator_scheme = "section"
@@ -140,4 +140,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v1"
-cited_for = ["Final targets 1–2 and 6; Sources; transferred RefinedTraceMethods 6.2 plan"]
+cited_for = ["1.1–1.4", "2.2–2.4", "6.4"]
+
+[[source]]
+id = "HTT"
+authors = "Jacob Lurie"
+title = "Higher Topos Theory"
+year = 2009
+version_note = "Author PDF dated 9 April 2017; printed page 394 is PDF page 412."
+locator_scheme = "theorem"
+locator = "Proposition 5.3.3.3, printed p.394 (PDF p.412), HTT line 18705"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-10-23T11:32:28Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["4.1; gap:cardinal-interchange"]
