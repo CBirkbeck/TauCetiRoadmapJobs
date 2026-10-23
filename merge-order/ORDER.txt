@@ -111,7 +111,6 @@ ClassicalArithmeticCompletion
 EllipticLegendreCharacterInterfaces
 EllipticCurvesPartII
 ArithmeticKTheory
-BorelRegulators
 GeometryOfNumbersAndQuadraticArithmeticPartII
 K3BlochGroups
 ZagierConjecturePolylogarithms
@@ -165,6 +164,7 @@ ArithmeticStatisticsPartVIII
 WeightsInEtaleCohomology
 EllipticKTheory
 EndoscopicTransferAndUnitaryTraceComparison
+BorelRegulators
 MetaplecticAutomorphicForms
 HodgeClassesForJacquetLanglands
 FunctionFieldArithmetic
