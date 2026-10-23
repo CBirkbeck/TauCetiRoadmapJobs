@@ -23,6 +23,7 @@ DerivedDeRhamCohomology
 CrystallineCohomology
 PerfectoidQuotients
 ReductiveGroupsPartII
+RootSystemsPartII
 AutomorphicLFunctionsAndLocalFactorsPartII
 SmoothRepresentationsOfLocalGroups
 GlobalShtukasAndFunctionFieldLanglandsPartII
