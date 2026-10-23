@@ -1,6 +1,6 @@
 # Roadmap: motivic cycle comparisons and real Deligne regulators
 
-**Summary.** Build the integral cubical and mixed realizations of the shared higher-cycle theory, identify its rational higher Chern character on actual scheme K-groups, and construct its real Deligne–Beilinson regulator. The logarithmic Dolbeault theory includes arbitrary twists, products, compactification independence, singular closed supports and semipurity. The end theorems identify the universal regulator with the independently normalized Beilinson character and prove integral-source multiplicativity. Algebraic comparisons work over every field in their stated geometric scope. Complex realization uses a specified embedding into ℂ and every smooth quasi-projective variety, with disconnected schemes treated componentwise.
+**Summary.** Build the integral cubical and mixed realizations of the shared higher-cycle theory, identify its rational higher Chern character on actual scheme K-groups, and construct its real Deligne–Beilinson regulator. The logarithmic Dolbeault theory includes arbitrary twists, products, compactification independence, singular closed supports and semipurity. The end theorems identify the universal regulator with the independently normalized Beilinson character and prove integral-source multiplicativity. Algebraic comparisons work over every field in their stated geometric scope. Complex realization uses a specified embedding into ℂ; its logarithmic and support theory covers smooth separated varieties, and its higher-cycle source uses smooth quasi-projective varieties, with disconnected schemes treated componentwise.
 
 ## Scope and ownership
 
@@ -8,9 +8,9 @@ This roadmap owns the cubical and mixed adapters to the shared integral cycles, 
 
 KTheoryFiniteLocalFields §3.0a owns the simplicial BlochCycle/HigherChow complexes, moving, localization, coefficients, products, transfers and motivic-to-K tower. MotivesAndAlgebraicCycles §§4.7–4.8 and 4.17–4.18 own their motive-category adapters and comparisons; its §§4.8a and 4.14 retain relative cycles and specialization. SchemeKTheoryOperations §§7.1–7.3 own Adams/γ theory and the degree-zero character. The retained higher variant here extends that same map in positive K-degree and compares it on the same carriers. SchemeAndStackFoundations §§5.1–5.8 retain ordinary intersection and geometric Chern theory. ResolutionOfSingularitiesCharacteristicZero §§5–6 and EtaleCohomologyFoundations §§G.1–G.3 retain resolution and common-refinement geometry.
 
-ComplexComparisonPartII §§C5.1, C5.3–C5.5 retain analytification, geometric de Rham comparison, proper algebraic Hodge theory, holomorphic logarithmic forms, current calculus and ordinary geometric cycle normalization. Its §C5.7 is a curve comparison. The all-dimensional smooth-open filtered comparison needed by the Deligne model is §3.2 here. Completed/HodgeStructures retains linear pure and mixed Hodge structures; the corresponding pinned Tau Ceti structures and strictness are imported. General geometric Hodge modules and singular hyperresolution theory are outside this construction.
+ComplexComparisonPartII §§C5.1, C5.3–C5.5 retain analytification, geometric de Rham comparison, proper algebraic Hodge theory, holomorphic logarithmic forms, current calculus and ordinary geometric cycle normalization. Its §C5.6 (regularSingularDeRhamComparison, trivial connection, Ē=O_W) retains the all-dimensional unfiltered logarithmic comparison. Section 3.2 here adds the geometric weight and Hodge filtrations and the Burgos smooth logarithmic model. ComplexKahlerGeometry K1–K2 retain type decomposition, the transported complex orientation and Dolbeault calculus. The geometric logarithmic, Deligne and support assertions in §§3.1–3.4 and 5.1–5.2 apply to all smooth separated finite-type complex varieties; §§5.3–5.4 keep the quasi-projective higher-cycle scope of Layer 1. Completed/HodgeStructures retains linear pure and mixed Hodge structures; the corresponding pinned Tau Ceti structures and strictness are imported. General geometric Hodge modules and singular hyperresolution theory are outside this construction.
 
-Polylogarithms §§5.2–5.10 retain the explicit normalized-current dictionary, Wang/Goncharov forms, concrete support-cone models and mixed regulator homotopy; its §5.12 retains Green objects and Arakelov comparisons. Sections 5.1–5.4 here provide abstract logarithmic support fibers and the cycle resolution used to define the universal map. They impose no choice of that consumer’s explicit cone model. BorelRegulators retains number-field arithmetic regulator spaces, Borel comparison, lattices and special values; EllipticRegulators retains explicit elliptic realization applications. The name MotivicEtaleKTheory adds no finite-coefficient étale descent, norm-residue theorem, p-adic regulator, arithmetic K-group computation or trace theory to this scope.
+The shared auxiliary complexes Aₚ, Aₚ,S and Hₚ, the logarithmic Green-current criterion and its normalized even-degree pairing belong to §§5.2–5.3 here: their ownership moves from Polylogarithms §5.2 to this earlier supplier. Polylogarithms §5.2 retains its shifted comparison complex D_AH and β, the full normalized-current dictionary and concrete support-cone adapters; §5.3 retains Green forms, and §§5.4–5.12 retain Wang/Goncharov forms, mixed regulator homotopies and explicit Arakelov comparisons. Section 5.1 supplies the abstract fibers. The shared supported multi-relative cube construction of §2.0a likewise supplies ColemanIntegration §§L3.Fa.1–L3.Fa.2; its arithmetic relative-symbol applications remain there. BorelRegulators is the consumer direction for number-field arithmetic regulator spaces, Borel comparison, lattices and special values. The name MotivicEtaleKTheory adds no finite-coefficient étale descent, norm-residue theorem, p-adic regulator, arithmetic K-group computation or trace theory to this scope.
 
 ## Conventions
 
@@ -22,7 +22,7 @@ Order cube coordinates first, simplex coordinates second. Set ∂□=Σᵢ₌₁
 
 Cochain differential raises degree, A[s]ᵃ=Aᵃ⁺ˢ and d[s]=(−1)ˢd. Use Mathlib’s source-shift-first cone and the explicitly transported pair fiber with d(a,b)=(da,f(a)−db) in Aᵃ⊕Bᵃ⁻¹. It is isomorphic to Cone(f)[−1] by negating the second coordinate after shifting. Thus fib(0→ℝ[0]) lies in degree 1. Its raw cochain connecting map sends b to [(0,b)]. Keep this raw map separate from the supplied K-theory boundary B, with B[t]=+[O₀], and the uniformizer-last adapter (−1)ⁿ⁻¹B. Section 2.3 proves the suspension dictionary between their sequences. In the cycle pair fiber, d(Γ_t,0)=([0],t), hence [(0,t)]=−[([0],0)]. The localization-boundary adapter on both cycle and Deligne pair fibers is minus the raw connecting map; it sends the unit t to +[0] and log|t| to +cl([0]). Section 2.3 identifies this adapter with the supplied right-linear B in every degree; the left-linear version adds its factor (−1)ⁿ⁻¹. The raw fiber triangles themselves retain their connecting maps.
 
-Write ℝ(p)=(2πi)ᵖℝ for every integer p. Negative powers are valid because 2πi≠0. The Deligne arrow is filtered de Rham comparison minus real inclusion. For the point H_D⁰(ℝ(0))=ℝ, while H_D¹(ℝ(1))=ℂ/(2πiℝ)≃ℝ by real part. The exponential class of u has value log|u|; u=2 gives log 2 and u=i gives 0. The critical Dolbeault differential is −2∂∂̄; on |z|² it gives −2dz∧dż. A principal-divisor Green representative is −log|f|. Under the raw connecting map log|t| gives −cl([0]), while (0,−log|t|) represents +cl([0]).
+Write z̄ for complex conjugation, also on coordinates and coefficient functions. Write ℝ(p)=(2πi)ᵖℝ for every integer p. Negative powers are valid because 2πi≠0. The Deligne arrow is filtered de Rham comparison minus real inclusion. For the point H_D⁰(ℝ(0))=ℝ, while H_D¹(ℝ(1))=ℂ/(2πiℝ)≃ℝ by real part. The exponential class of u has value log|u|; u=2 gives log 2 and u=i gives 0. The critical Dolbeault differential is −2∂∂̄; on |z|² it gives −2dz∧dz̄. A principal-divisor Green representative is −log|f|. Under the raw connecting map log|t| gives −cl([0]), while (0,−log|t|) represents +cl([0]).
 
 Orient complex normal disks by their complex coordinates and loops counterclockwise. The period of dz/z is 2πi, the ordered two-residue of dz/z∧dw/w is +1, and exchange gives −1. The Tate-normalized integral of c₁O(1) on ℙ¹ is +1, with raw complex period 2πi. Deligne degree a has ordinary form degree a−1 below 2p and degree a at or above 2p. In totalized forms of bidegrees (r,−n),(s,−m), product has the additional Koszul factor (−1)ⁿˢ. For n=s=1 this is −1. On 𝔾_m, log 2•log|t|=i log 2 darg t with circle period 2πi log 2. These witnesses are retained wherever the signs are transported.
 
@@ -32,7 +32,7 @@ Orient complex normal disks by their complex coordinates and loops counterclockw
 
 The baseline is Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a. Use `AlgebraicGeometry.AlgebraicCycle` and `AlgebraicGeometry.AlgebraicCycle.map` from Mathlib/AlgebraicGeometry/AlgebraicCycle/Basic.lean:44 and :69. A cycle is a locally finitely supported coefficient function on scheme points, without a dimension condition; the map uses explicit dimension weights and residue degrees for a quasi-compact morphism. The face-admissible and dimension predicates here cut out subgroups of this carrier. Properness is needed for the higher Chow pushforward, rather than for the bare native map. Use `AlgebraicGeometry.Scheme` from Mathlib/AlgebraicGeometry/Scheme.lean:40, `ModuleCat` from Mathlib/Algebra/Category/ModuleCat/Basic.lean:56, `HomologicalComplex` and `HomologicalComplex.d_comp_d` from Mathlib/Algebra/Homology/HomologicalComplex.lean:59 and :72, and `CategoryTheory.DerivedCategory` from Mathlib/Algebra/Homology/DerivedCategory/Basic.lean:87. The last is localization at quasi-isomorphisms of integer cochain complexes in an abelian category, not a homotopy-coherent diagram category.
 
-Use `CochainComplex.mappingCone`, `CochainComplex.mappingCone.inl_v_d` and `CochainComplex.mappingCone.inr_f_d` from Mathlib/Algebra/Homology/HomotopyCategory/MappingCone.lean:57, :261 and :269. These specify the cone differential on both summands; the pair fiber above is a coordinate transport of it. Use `CategoryTheory.Abelian.DoldKan.equivalence` from Mathlib/AlgebraicTopology/DoldKan/Equivalence.lean:167 for the equivalence between simplicial objects in an abelian category and natural-number chain complexes. Its interpretation in homotopy groups is AlgebraicTopology Stage 8, item 1’s separate input.
+Use `CochainComplex.mappingCone`, `CochainComplex.mappingCone.inl_v_d` and `CochainComplex.mappingCone.inr_f_d` from Mathlib/Algebra/Homology/HomotopyCategory/MappingCone.lean:57, :261 and :269. These specify the cone differential on both summands; the pair fiber above is a coordinate transport of it. Use `CategoryTheory.Abelian.DoldKan.equivalence` from Mathlib/AlgebraicTopology/DoldKan/Equivalence.lean:167 for the equivalence between simplicial objects in an abelian category and natural-number chain complexes. Its interpretation in homotopy groups is AlgebraicTopology Stage 8, item 2’s separate input.
 
 ### From Tau Ceti
 
@@ -50,11 +50,11 @@ Use `TauCeti.Hodge.MixedHodgeStructure` from TauCeti/Geometry/Hodge/Mixed/Basic.
 
 ### From TauCetiRoadmap.KTheoryFiniteLocalFields
 
-§3.0a (motivicCycles), §3.0a (motivicToK). Integral dimension-graded simplicial BlochCycle and HigherChow, coefficient complexes, arbitrary-field localization, simultaneous good-position moving, graph pullbacks, integral products/transfers, nilpotent invariance and componentwise grading. The degree-one simplex boundary is [fiber at 1]−[fiber at 0]. The common Milnor diagonal, its signs and the existing motivic-to-K tower with layers, convergence and localization are also inputs; neither norm-residue nor étale descent is a target here.
+§3.0a (motivicCycles), §3.0a (motivicToK), §6.10 (diagonalChernMilnor). Integral dimension-graded simplicial BlochCycle and HigherChow, coefficient complexes, arbitrary-field localization, simultaneous good-position moving, graph pullbacks, integral products/transfers, nilpotent invariance and componentwise grading. The degree-one simplex boundary is [fiber at 1]−[fiber at 0]. The common Milnor diagonal, its signs and the existing motivic-to-K tower with layers, convergence and localization are also inputs. Section 6.10 supplies the integral field-diagonal Chern map, with which §2.0b agrees. Neither norm-residue nor étale descent is a target here.
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
-§§4.7–4.8, §§4.17–4.18. The adapters to the same shared higher-cycle complexes, and the perfect-field motive/higher-Chow and representability comparisons, including their resolution hypotheses where used. These express the source of §6.3 motivically; they impose no perfectness condition on the arbitrary-field cycle comparison or Chern theorem.
+§§4.7–4.8, §4.8a, §§4.17–4.18. The adapters to the same shared higher-cycle complexes, and the perfect-field motive/higher-Chow and representability comparisons, including their resolution hypotheses where used. These express the source of §6.3 motivically; they impose no perfectness condition on the arbitrary-field cycle comparison or Chern theorem. Section 4.8a supplies specialization of relative cycles for §2.0b.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -70,7 +70,7 @@ Use `TauCeti.Hodge.MixedHodgeStructure` from TauCeti/Geometry/Hodge/Mixed/Basic.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
-§§C−1.1, C−1.4, §C5.1, §§C5.3–C5.5, §C6.0. Analytification and adapted holomorphic SNC charts, geometric de Rham–Betti comparison, projective and arbitrary smooth-proper algebraic Hodge theory (properPureHodge and relativeHodgeBundles in §C5.3), LF-continuous current calculus and multiplicity-bearing integration classes, Poincaré–Lelong and geometric first-Chern normalization, holomorphic logarithmic forms, and compatible algebraic stratification. Section C5.7 supplies a curve logarithmic comparison; the all-dimensional smooth-open filtered theorem is §3.2 here.
+§§C−1.1, C−1.4, §C5.1, §§C5.3–C5.6, §C6.0. Analytification and adapted holomorphic SNC charts, geometric de Rham–Betti comparison, projective and arbitrary smooth-proper algebraic Hodge theory (properPureHodge and relativeHodgeBundles in §C5.3), LF-continuous current calculus and multiplicity-bearing integration classes, Poincaré–Lelong and geometric first-Chern normalization, holomorphic logarithmic forms, and compatible algebraic stratification. Section C5.6 (regularSingularDeRhamComparison, trivial connection, Ē=O_W, all residues 0) supplies the all-dimensional unfiltered logarithmic comparison; §3.2 adds its mixed-Hodge filtrations and smooth Burgos model.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -78,17 +78,35 @@ Use `TauCeti.Hodge.MixedHodgeStructure` from TauCeti/Geometry/Hodge/Mixed/Basic.
 
 ### From TauCetiRoadmap.DifferentialGeometry
 
-Layers 0–1, Layers 5–9. Native forms, pullback, wedge and exterior derivative, complexified for Dolbeault forms; integration with the complex orientation, Stokes, de Rham comparison and smooth manifold duality. The additional smooth extension/flat-function input for §3.2 is the explicit gap:smooth-whitney-extension contract below.
+Layers 0–1, Layers 5–9. Native forms, pullback, wedge, exterior derivative, integration, Stokes, real de Rham comparison and smooth manifold duality. The extra closed-jet inputs for §3.2 are gap:smooth-whitney-extension and gap:flat-ideal-regular-situation below.
+
+### From TauCetiRoadmap.ComplexKahlerGeometry
+
+K1 supplies type decomposition, conjugation and transport of the complex orientation in the shared orientation carrier; K2 supplies ∂, ∂̄, bidegrees, squares zero, anticommutation, Leibniz and holomorphic-pullback naturality on finite-dimensional Hausdorff second-countable complex manifolds. Analytifications here satisfy these hypotheses. K1 transports the orientation supplied by ComplexManifolds Milestones 1–2; it does not construct a separate orientation.
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-Stages 2–3, Stage 6, items 1–4, Stage 8, item 1. Relative homology/cohomology, excision, products and local manifold duality used in the support calculation; the simplicial-group Kan and Moore-homotopy comparison πₙ(G)=Hₙ(NG), including components, used with native Dold–Kan in §7.1.
+Stages 2–3, Stage 6, items 1–4, Stage 8, item 2. Relative homology/cohomology, excision, products and local manifold duality used in the support calculation; the simplicial-group Kan theorem and, for simplicial abelian groups, the Moore-homotopy comparison πₙ(G)=Hₙ(NG), including components, used with native Dold–Kan in §7.1.
 
-### Required supplier extension
+### Required supplier extensions
 
-**gap:smooth-whitney-extension.** DifferentialGeometry, Part II, §1 must supply smooth infinite Whitney jets on arbitrary relatively closed subsets of an open finite-dimensional real vector space, their extension theorem with finite-dimensional coefficients, relative Borel extension with smooth transverse parameters, and the flat-ideal calculus used in the logarithmic local resolution. In particular flat ideals satisfy I∞(A∪B)=I∞(A)∩I∞(B), and for closed real analytic A,B also I∞(A∩B)=I∞(A)+I∞(B); dividing a flat function by a fixed coordinate monomial and multiplying by a fixed logarithmic power preserve smooth flat extension. This extends DifferentialGeometry’s manifold form and approximation theory to arbitrary closed-jet extension. It is a prerequisite for §3.2’s smooth logarithmic comparison, rather than a new construction here. (Burgos94 §3, Theorems 3.1 and 3.3–3.5, pp.71–74, Burgos94 line 269, Burgos94 line 316, Burgos94 line 337, Burgos94 line 345 and Burgos94 line 358; §§4–5, Burgos94 line 361 and Burgos94 line 479.)
+What DifferentialGeometry must provide (gap:smooth-whitney-extension): in Part II: Whitney jets and flat functions, for U⊂ℝⁿ open, A⊂U relatively closed and E a finite-dimensional real vector space, every infinite-order E-valued Whitney jet on A is the jet of a smooth U→E, including relative Borel extension along a coordinate hyperplane with smooth transverse parameters. A jet satisfies Whitney compatibility when each order-m Taylor remainder for derivative α is o(‖y−x‖^(m−|α|)), uniformly on compact subsets of A, for every m≥|α|. Complex coefficients use real and imaginary parts. This is an extension of the supplier’s manifold calculus. (Burgos94 Theorems 3.1 and 3.3, pp.72–73, Burgos94 line 316 and Burgos94 line 337.)
 
-**Checks of the required contract.** At A={0}, Taylor coefficients 1,1,2 give derivatives 1,1,4; a smooth extension of the infinite coefficients n! exists even though that formal series has radius zero. The function exp(−1/x²) for x≠0, extended by 0 at 0, has zero jet at 0 but is nonzero away from 0, so an analytic-function model cannot represent the flat ideal. Empty A imposes no constraint; for A=U, extension is the given smooth function.
+**Checks.**
+
+- At A={0}⊂ℝ, Taylor coefficients 1,1,2 give derivatives 1,1,4. Coefficients n! give derivatives (n!)²; the smooth extension exists although the power series has radius zero.
+- Along x=0 in ℝ², prescribed normal derivatives ∂ₓᵐf(0,y)=(m!)² sin y have a smooth extension. At m=2,y=π/2 the value is 4, so a scalar Borel theorem without parameters does not specify this jet.
+- Empty A imposes zero jet conditions; at A=U the prescribed smooth function extends as itself. At U=ℝ,A={0}, both 0 and exp(−1/x²), extended by 0, have all jet entries 0, so uniqueness of extension is false.
+
+What DifferentialGeometry must provide (gap:flat-ideal-regular-situation): in Part II: Whitney jets and flat functions, for U⊂ℝⁿ open and relatively closed real-analytic subsets A,B⊂U, the scalar smooth flat ideals satisfy I∞(A∩B)=I∞(A)+I∞(B), where I∞(A) consists of smooth functions all of whose derivatives vanish on A. Complex-valued functions satisfy the componentwise version. (Burgos94 Theorems 3.4–3.5, pp.73–74, Burgos94 line 345 and Burgos94 line 358.)
+
+**Checks.**
+
+- For A=B={0}, exp(−1/x²), extended by 0, lies in I∞({0})=I∞({0})+I∞({0}) and has value e⁻¹ at x=1; an analytic-function model would give only 0.
+- For A=∅, B=U, the formula reads C∞(U)=C∞(U)+0. For A=B=U it reads 0=0+0.
+- For A={x=0},B={y=0} in ℝ², let φ(t)=exp(−1/t²), φ(0)=0. The function φ(x)+φ(y) is flat at A∩B={(0,0)} and splits into the two flat ideals; at (0,1) it has value e⁻¹, excluding their intersection as the answer.
+
+The coordinate-division and logarithmic-power estimates used in the smooth logarithmic resolution are targets of §3.2 here, using Burgos94 Proposition 4.1; they are not supplier-extension requirements.
 
 ## How to read the build
 
@@ -121,7 +139,7 @@ The construction has the following API.
 
 ### 1.2 The mixed complex and its axes
 
-For the same k,X,p, define Cmixᵖ(X)ₙ,ₘ from integral closed cycles of X×□ⁿ×Δᵐ meeting every product of iterated faces properly, normalized only in the cube directions. Its direct-sum total complex in homological degree N is ⊕ₙ₊ₘ₌N Cmixᵖ(X)ₙ,ₘ with differential ∂□+(−1)ⁿ∂Δ. Define the cube-axis inclusion i□ and the supplied unnormalized simplex-axis inclusion iΔ into this total complex. (BFT, §6.4 and Proposition 6.12, p.20; BFT line 948 and BFT line 961).
+For the same k,X,p, define Cmixᵖ(X)ₙ,ₘ from integral closed cycles of X×□ⁿ×Δᵐ meeting every product of iterated faces properly, normalized only in the cube directions. Its direct-sum total complex in homological degree N is ⊕ₙ₊ₘ₌N Cmixᵖ(X)ₙ,ₘ with differential ∂□+(−1)ⁿ∂Δ. Define the cube-axis inclusion i□ and the supplied unnormalized simplex-axis inclusion iΔ into this total complex. (BFT, §6.4 and Proposition 6.12, pp.19–20; BFT line 943, BFT line 948 and BFT line 961).
 
 The face systems commute before totalization. The sign (−1)ⁿ changes when the cube boundary lowers n, so the cross terms in the square cancel. Each diagonal has finitely many summands. Transport BFT’s axis maps by Jₙ on bidegree (n,m), leaving the simplex axis unchanged.
 
@@ -177,11 +195,49 @@ KTheoryFiniteLocalFields §3.0a, SchemeAndStackFoundations §§5.1–5.2, and En
 
 ## Layer 2: the rational higher Chern character
 
+### 2.0a Supported multi-relative cube K-theory
+
+For every field k, smooth quasi-projective finite-type X/k, n≥0 and closed S⊂Y=X×□ⁿ, construct K^S(Y;∂□ⁿ) as the iterated homotopy fiber of the supplied supported perfect K-spectra on all intersections of the coordinate face pairs Dᵢ={tᵢ=0}⊔{tᵢ=∞}, with support restricted to each intersection. Equivalently take the support fiber of the multi-relative restriction diagram. Order the coordinates as in Layer 1. Construct compatible Adams operations ψᵃ, a≥1, on this entire diagram and its total fiber; for a fixed a>1, integer q and homotopy degree m≥0, first use the finite generalized weight-q decomposition defined by (ψᵃ−aᑫ)ᴺx=0 for some N≥1. The commuting Adams maps preserve these summands, and the decomposition agrees with the supplied weight decomposition on each vertex. This relative construction retains generalized weight pieces; §2.2 proves the genuine eigenweight assertion on the absolute Kₘ(X). The relative cycle map uses face-admissible S, with all iterated face intersections of the required codimension. (Levine94 §1, Theorem 1.10 and Corollary 1.11, pp.247–256, Levine94 line 407, Levine94 line 539 and Levine94 line 625; §2, Lemma 2.1 and Theorem 2.7, pp.257–273, Levine94 line 655, Levine94 line 695, Levine94 line 711 and Levine94 line 1101.)
+
+Use the supplied functorial supported K-models and their Adams maps before taking fibers. Regularity of X and its face strata permits resolution comparisons. The iterated-double cycle comparison invokes Theorem 2.7 only with its splitting and moving hypotheses over an infinite field; the arbitrary-field conclusion uses the supplied finite-field descent as in Levine94 Theorem 3.1, rather than dropping that hypothesis.
+
+The construction has the following API.
+
+- At n=0 the construction is the supplied K^S(X); empty support gives the zero spectrum. Forgetting and enlarging support commute with every face restriction and the total fiber.
+- Coordinate restrictions, allowed pullbacks of supported face diagrams and products induce the corresponding maps of total fibers; identities and compositions are coherent. Adams operations commute with these maps and with each face, and their rational weight projectors agree with the supplied ones on every vertex.
+- For S=T×□ⁿ with T⊂X closed, homotopy invariance gives the ordered equivalence K^S(Y;∂□ⁿ)≃ΩⁿK^T(X). At each step identify the cokernel of the diagonal by (a,b)↦a−b, with the zero face first; exchanging two loop coordinates contributes −1 on the induced double suspension of homotopy groups.
+
+**Checks.**
+
+- At n=0,S=X the degree-zero group is K₀(X); for X=Spec k the class [k²] is 2. At n=0,S=∅ it is 0. In codimension c the leading weight of [O_V] is [V] with coefficient 1 under the supplied degree-zero character.
+- At n=1,S=Y the face map is the diagonal x↦(x,x). Its difference map sends (1,0)↦1, (0,1)↦−1 and (1,1)↦0; reversing the face order reverses these signs.
+- At n=2,S=Y the face-pair diagram has four vertices and total fiber Ω²K(X). For k=ℚ(u,v), the class corresponding to {u,v}∈K₂(k) has consecutive last-slot residues +1; exchanging the loop coordinates gives −1. Adams ψ² acts on this weight-2 class by 4 and ψ¹ by 1.
+
+*Needs:* §1.4; SchemeKTheoryOperations §§2.5, 3.1–3.3, 4.3, 6.7–6.9; GeneralAlgebraicKTheory §§4.6, 4.8, 4.14, 7.4–7.7; KTheoryFiniteLocalFields §3.0a; EnhancedDerivedSheaves §§0.1–0.4, E0.6.
+
+### 2.0b Universal motivic Chern classes
+
+For every field k, smooth quasi-projective finite-type X/k and p,n≥0, construct integral motivic Chern operations cₚ,ₙ:Kₙ(X)→CHᵖ(X,n) on the supplied carriers. The p=0 component is 1 at n=0 and 0 at n>0; rank is retained separately when forming the character. For p≥1 start with the universal class Cₚ in CHᵖ(B·GL_N,0), pass to the stabilized classifying sheaves and use moving over purely transcendental extensions and specialization to define pullback on the shared cycle complexes. Here the higher Chow group of B·GL_N is the cohomology of its flat-face simplicial cycle double complex. Positive K-degree gives additive maps; cₚ,₀ is the ordinary Chern operation, which need not be additive. (BF §3.2, pp.21–22, BF line 961 and BF line 974–997, read over ℂ; the arbitrary-field construction is Bloch86 §7, uncertified.)
+
+The construction has the following API.
+
+- The universal classes stabilize with N, are natural for pullback of smooth quasi-projective schemes, and satisfy the Whitney sum identity in degree zero. Their classifying-sheaf maps use the same moving and specialization comparisons, so different allowed representatives give the same operation.
+- For a field F and p=n≥1, the diagonal operation equals KTheoryFiniteLocalFields §6.10’s diagonalChernMilnor, including its coefficient (−1)ⁿ⁻¹(n−1)! on Milnor symbols.
+- Newton polynomials and rank give a rational universal-class character; for n>0,p≥1 its component is (−1)ᵖ⁻¹cₚ,ₙ/(p−1)!, and in degree zero it is the supplied ordinary character. The denominator is a positive integer factorial, hence nonzero in ℚ.
+
+**Checks.**
+
+- For a unit u in a field, c₁,₁[u]=[u]; for u=2 over ℚ, the 2-adic valuation of this class is 1. Thus the operation in positive K-degree is not zero. At the zero K-class c₀,₀=1 and cₚ,₀=0 for p>0, whereas the character is 0.
+- On ℙ², c₂,₀(O(1))=0 whereas ch₂,₀(O(1))=h²/2≠0. For O(1)⊕O(−1), c₂,₀=−h² and ch₂,₀=h²; confusing the operations reverses this value.
+- On diagonal Milnor symbols in degrees 1,2,3 the composite symbol-to-K then cₙ,ₙ is multiplication by 1,−1,2. The corresponding character is multiplication by 1 in all three degrees after rationalization; no division by 2 is made integrally.
+
+*Needs:* §1.4; SchemeKTheoryOperations §§4.3, 6.7; SchemeAndStackFoundations §§5.3–5.8; KTheoryFiniteLocalFields §§3.0a, 6.10; MotivesAndAlgebraicCycles §4.8a; GeneralAlgebraicKTheory §3.12; EnhancedDerivedSheaves §E2.6; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 2.
+
 ### 2.1 The actual higher character
 
 For every smooth quasi-projective finite-type X over any field k and p,n≥0, construct chₚ,ₙ:Kₙ(X)⊗ℚ→CHᵖ(X,n)⊗ℚ on the supplied perfect K-theory groups and shared cycle complexes. Construct its total character with target the direct sum over p≥0, so each element has finite weight support. The construction is the rational inverse of the geometric cycle-to-K map on its Adams weight and agrees with the universal Chern-class construction on the classifying simplicial scheme BGL, not an arbitrary group equivalence. Construct the character on the classifying-space/descent diagrams with target the Dold–Kan realizations of the nonpositive cycle complexes shifted by 2p, with coherent open-restriction naturality, before passing to homotopy groups. (Levine94, Theorem 3.1 and its construction, pp.275–277, Levine94 line 1197 and Levine94 line 1210; BF §3.2, pp.21–22, BF line 961).
 
-Use the supplier’s multirelative K-model for cube faces, resolution and Adams projectors. The geometric map sends a codimension-p cycle to its coherent structure-sheaf class, followed by the weight-p projector and the cube delooping comparison. Moving makes it independent of representatives. Compare its inverse with universal Chern classes by classifying bundles on finite Grassmannians, descent and specialization. The supplier’s bounded rational weights and the motivic tower control the finite direct sum; a spectral-sequence splitting alone is insufficient.
+Use §2.0a’s supported multi-relative cube model, together with the supplied resolution and Adams operations. The geometric map sends a codimension-p cycle to its coherent structure-sheaf class, followed by the weight-p projector and the cube delooping comparison. Moving makes it independent of representatives. Section 2.2 separately identifies this inverse with §2.0b’s universal-class character. The supplier’s bounded rational weights and the motivic tower control the finite direct sum; a spectral-sequence splitting alone is insufficient.
 
 The construction has the following API.
 
@@ -191,24 +247,28 @@ The construction has the following API.
 **Checks.**
 
 - At a point ch₀,₀([k²])=2 and all positive-weight degree-zero components vanish; the zero map fails.
-- On ℙ¹, ch(O(1))=1+h and ch(O(−1))=1−h, with h²=0; a total Chern class in place of a character gives the wrong rank and sum law.
+- On ℙ¹, ch(O(1))=1+h and ch(O(−1))=1−h, so ch(O(1)⊕O(−1))=2, whereas its total Chern class is (1+h)(1−h)=1 because h²=0.
 - For X=∅ both source and every summand are 0. For X=Spec k⊔Spec k ranks remain a pair (2,1), rather than their sum 3.
+- In positive K-degree, ch₁,₁[2]=[2]≠0 in CH¹(ℚ,1)⊗ℚ: its 2-adic valuation is 1. A character vanishing in every positive degree fails.
 
-*Needs:* §1.4; GeneralAlgebraicKTheory §§3.12, 4.6, 4.8, 4.14, 6.3, 7.4–7.7; SchemeKTheoryOperations §§2.1–2.6, 6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 1; SchemeKTheoryOperations §§4.3, 6.7.
+*Needs:* §2.0a; §2.0b; §1.4; GeneralAlgebraicKTheory §§3.12, 4.6, 4.8, 4.14, 6.3, 7.4–7.7; SchemeKTheoryOperations §§2.1–2.6, 6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 2; SchemeKTheoryOperations §§4.3, 6.7.
 
 ### 2.2 Weights and the higher comparison
 
 For every X/k and n≥0 in 2.1, the total character is an isomorphism Kₙ(X)⊗ℚ≃⊕ₚ≥₀ H_M²ᵖ⁻ⁿ(X,ℚ(p)). Its pth component identifies the simultaneous Adams weight-p subgroup with CHᵖ(X,n)⊗ℚ and annihilates all other weights. For every integer a≥1, chₚ,ₙ(ψᵃx)=aᵖchₚ,ₙ(x). (Levine94, Theorem 3.1, p.276, Levine94 line 1210; BF Theorem 3.5, p.20, BF line 905).
 
-Prove the geometric cycle-to-K map is an isomorphism on each weight by the multirelative filtration, moving and resolution argument of Levine94. Sum the finite weight pieces supplied by SchemeKTheoryOperations; compare the diagonal tower edge on the common Milnor symbols. Projector denominators 2ⁱ−2ʲ are used only for i≠j, when they are nonzero rational numbers.
+Prove the geometric cycle-to-K map is an isomorphism on each weight by §2.0a’s multi-relative filtration, moving and resolution argument of Levine94. Sum the finite weight pieces supplied by SchemeKTheoryOperations; compare the diagonal tower edge on the common Milnor symbols. Projector denominators 2ⁱ−2ʲ are used only for i≠j, when they are nonzero rational numbers.
+
+Prove separately that the inverse of Levine’s geometric cycle map equals the universal-class character of §2.0b on these K-groups in every degree and weight. The universal-class comparison route transports the universal motivic classes through the iterated-double cycle map, uses the splitting principle for their degree-zero bundle classes, and the moving/specialization construction on the classifying diagrams; the composite is identity on each weight, so uniqueness of inverse identifies the maps. Degree-zero agreement alone is not this argument. (Bloch86 §7, uncertified; Levine94 Theorem 3.1, p.276, Levine94 line 1210; BF §3.2, pp.21–22, BF line 961–997, for the universal construction over ℂ.)
 
 **Checks.**
 
 - For weights 0,1,2 the ψ² eigenvalues are 1,2,4, and their pairwise differences are −1,−3,−2; none is 0.
 - On K₁(k)=k×, ψᵃ[u]=[uᵃ]=a[u], so the diagonal component has weight 1. At n=0,p=0 rank has eigenvalue a⁰=1, including a=1.
 - The component of ch(O(1)) on ℙ² in weight 2 is h²/2; its coefficient 1/2 excludes an integral character with the same target.
+- Both the inverse cycle map and the universal-class character send [O_point] on ℙ¹ to h in leading weight 1. In degree 1 both send the unit 2 over ℚ to [2], whose 2-adic valuation is 1; agreement only at n=0 would not exclude a zero map in positive degrees.
 
-*Needs:* §2.1; SchemeKTheoryOperations §§6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a.
+*Needs:* §2.0a; §2.0b; §2.1; SchemeKTheoryOperations §§6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a.
 
 ### 2.3 Closed supports and boundary transport
 
@@ -255,7 +315,7 @@ Layer 1; GeneralAlgebraicKTheory §§3.12, 4.6, 4.8, 4.14, 6.3, 7.4–7.7; Schem
 
 ### 3.1 The smooth logarithmic Dolbeault algebra
 
-For a smooth complex algebraic variety W and an SNC divisor D, with open X=W∖D, define E_W(log D) as the subalgebra of j_* smooth complex forms generated locally over smooth forms on W by log|zᵢ|², dzᵢ/zᵢ and dżᵢ/żᵢ in holomorphic SNC coordinates. Retain its real structure, Dolbeault bigrading, Hodge filtration by holomorphic degree and the image weight filtration from the real analytic logarithmic model. Use native form and pullback carriers. It is the image algebra, rather than an abstract tensor product with the smooth functions. (Burgos94, §2, pp.65–67, Burgos94 line 155; BKK Definition 5.20, p.116, BKK line 4217).
+For a smooth complex algebraic variety W and an SNC divisor D, with open X=W∖D, define E_W(log D) as the subalgebra of j_* smooth complex forms generated locally over smooth forms on W by log|zᵢ|², dzᵢ/zᵢ and dz̄ᵢ/z̄ᵢ in holomorphic SNC coordinates. Retain its real structure, Dolbeault bigrading, Hodge filtration by holomorphic degree and the image weight filtration from the real analytic logarithmic model. Use native form and pullback carriers. It is the image algebra, rather than an abstract tensor product with the smooth functions. (Burgos94, §2, pp.65–67, Burgos94 line 155; BKK Definition 5.20, p.116, BKK line 4217).
 
 Coordinate changes multiply boundary parameters by holomorphic units, so their logarithms and logarithmic derivatives differ by smooth terms. This proves independence of charts. Define the algebra as an actual subsheaf of smooth forms on X; equality and all operations are inherited from that inclusion.
 
@@ -267,32 +327,35 @@ The construction has the following API.
 
 **Checks.**
 
-- On a punctured disk d log|z|²=dz/z+dż/ż and ∮dz/z=2πi. Omitting the logarithmic function or its conjugate derivative fails this identity.
+- On a punctured disk d log|z|²=dz/z+dz̄/z̄ and ∮dz/z=2πi. Omitting the logarithmic function or its conjugate derivative fails this identity.
 - If D=∅ the algebra is the smooth forms on W; for W=∅ every degree is 0.
 - Near z=0, log|z|² is admitted while |z|⁻² is not a smooth coefficient polynomial in logarithmic generators; a model admitting arbitrary poles is too large.
 - The ordered residue of (dz/z)∧(dw/w) at z=w=0 is 1; reversing the order gives −1.
 
-*Needs:* ComplexComparisonPartII §§C−1.1, C−1.4, C5.1, C5.5; DifferentialGeometry Layers 0–1.
+*Needs:* ComplexComparisonPartII §§C−1.1, C−1.4, C5.1, C5.5; DifferentialGeometry Layers 0–1; ComplexKahlerGeometry K1–K2.
 
 ### 3.2 Geometric filtered comparison
 
-For every smooth quasi-projective complex X and every smooth proper SNC compactification j:X→W, the holomorphic logarithmic complex maps by a filtered quasi-isomorphism for F to E_W(log D), and the real logarithmic model represents Rj_*ℝ. On hypercohomology the rational structure and F define the geometric mixed Hodge structure; its cohomological weight WₘHⁱ is induced by Wₘ₋ᵢ on the logarithmic complex. The Hodge spectral sequence degenerates at E₁ and the weight spectral sequence at E₂. Every morphism of compactifications fixing X induces a real F-filtered quasi-isomorphism on derived global sections. No invariance of the unshifted residue filtration W on complexes under a blowup is asserted. (DeligneHodgeII, Proposition 3.1.8, Theorem 3.2.5 and Corollary 3.2.13, pp.33,35–38; DeligneHodgeII line 1044, DeligneHodgeII line 1142, DeligneHodgeII line 1242; Burgos94 Theorem 2.1/Corollary 2.2, p.67, Burgos94 line 181).
+For every smooth separated finite-type complex X and every smooth proper SNC compactification j:X→W, the holomorphic logarithmic complex maps by a filtered quasi-isomorphism for F to E_W(log D), and the real logarithmic model represents Rj_*ℝ. On hypercohomology the rational structure and F define the geometric mixed Hodge structure; its cohomological weight WₘHⁱ is induced by Wₘ₋ᵢ on the logarithmic complex. The Hodge spectral sequence degenerates at E₁ and the weight spectral sequence at E₂. Every morphism of compactifications fixing X induces a real F-filtered quasi-isomorphism on derived global sections. No invariance of the unshifted residue filtration W on complexes under a blowup is asserted. (DeligneHodgeII, Proposition 3.1.8, Theorem 3.2.5 and Corollary 3.2.13, pp.33,35–38; DeligneHodgeII line 1044, DeligneHodgeII line 1142, DeligneHodgeII line 1242; Burgos94 Theorem 2.1/Corollary 2.2, p.67, Burgos94 line 181).
 
-Prove the logarithmic Poincaré lemma in a polydisk by its product-of-circles calculation. Identify the residue graded pieces with shifted forms on intersections of boundary components, including their order signs and Tate markings. Apply proper geometric Hodge theory to these strata; strictness of the resulting opposed filtrations gives the two degenerations and the shifted cohomological weight. The Burgos comparison is proved by the local flat-function resolution and fine acyclicity, not by claiming the image algebra is a tensor product. For a refinement, the underlying Betti map is identity and the cohomology map is a strict mixed-Hodge isomorphism; E₁ degeneration upgrades it to the F-filtered comparison.
+Import ComplexComparisonPartII §C5.6’s regularSingularDeRhamComparison for the trivial connection with Ē=O_W: every residue is 0 and hence is not a positive integer. This supplies the all-dimensional unfiltered logarithmic comparison. Identify the residue graded pieces with shifted forms on intersections of boundary components, including their order signs and Tate markings. Apply proper geometric Hodge theory to these strata; strictness of the resulting opposed filtrations gives the two degenerations and the shifted cohomological weight. For its smooth resolution prove the following local estimates here. In an SNC coordinate polydisk U⊂ℂᵈ with coordinate hypersurfaces Hᵢ, let f be smooth and flat on their union. For any fixed nonnegative integers aᵢ,bᵢ,cᵢ, both f/∏ᵢ(zᵢ^(aᵢ)z̄ᵢ^(bᵢ)) and f∏ᵢ(log|zᵢ|²)^(cᵢ) on the complement extend by 0 smoothly and remain flat on that union; so does the combined expression f∏ᵢ(zᵢ^(−aᵢ) z̄ᵢ^(−bᵢ)(log|zᵢ|²)^(cᵢ)). Derivative estimates follow from flatness to every order, and the supplier’s Whitney/Borel and real-analytic flat-ideal results supply the remaining local resolution steps. (Burgos94 Proposition 4.1, p.75, Burgos94 line 379–381; Theorem 2.1, p.67, Burgos94 line 181.) Fine acyclicity then proves the Burgos comparison. For a refinement, the underlying Betti map is identity and the cohomology map is a strict mixed-Hodge isomorphism; E₁ degeneration upgrades it to the F-filtered comparison.
 
 **Checks.**
 
-- For X=𝔾_m, H¹ has type (1,1) and weight 2; dz/z has residue-filtration index 1, and 1+cohomological degree 1=2. Calling that weight 1 would be wrong.
+- For X=𝔾_m⊂ℙ¹, the trivial extension has residues (0,0), so §C5.6 gives H¹=ℂ·dz/z with positive-loop period 2πi. It has type (1,1) and weight 2; dz/z has residue-filtration index 1, and 1+cohomological degree 1=2. Calling that weight 1 would be wrong.
 - Blow up (0,0) in (ℙ¹)² compactifying 𝔾_m². H⁰,H¹,H² have complex dimensions 1,2,1 before and after; the dlog x,dlog y and dlog x∧dlog y classes are unchanged. The extra boundary component changes the residue E₁ diagram, so W-filtered quasi-isomorphism is not asserted.
 - For a point the only Hodge component is H⁰,⁰=ℂ and the weight is 0; for ∅ all components are 0.
+- On ℂ set f(z)=exp(−1/|z|²), f(0)=0. Every derivative at 0 of f/z² and f log|z|² is 0; at z=1 the first value is e⁻¹. Thus flat extension is smooth without being the zero function.
+- With f(z)=1, 1/z has a pole and log|z|² diverges at 0; the flatness hypothesis cannot be omitted. With all exponents 0, the extension is f itself and has its original values.
+- On ℂ², f(z,w)=exp(−1/|zw|²) off zw=0 and 0 on the axes is flat on their union. The extension of f log|z|²/(zw̄) has zero jets on both axes and value −(e⁻¹ᐟ⁴ log 4)/2 at (z,w)=(−2,1), excluding a changed denominator or an extension by an unrelated value.
 
-*Needs:* §3.1; ComplexComparisonPartII §§C5.1, C5.3, C5.5; EnhancedDerivedSheaves §§0.1–0.4, E2.6; Tau Ceti `TauCeti.Hodge.MixedHodgeStructure`; Tau Ceti `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F`; gap:smooth-whitney-extension.
+*Needs:* §3.1; ComplexComparisonPartII §§C5.1, C5.3, C5.5–C5.6; EtaleCohomologyFoundations §§G.1–G.3; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.6, 6.4; EnhancedDerivedSheaves §§0.1–0.4, E2.6; Tau Ceti `TauCeti.Hodge.MixedHodgeStructure`; Tau Ceti `TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F`; gap:smooth-whitney-extension; gap:flat-ideal-regular-situation.
 
 ### 3.3 The Deligne functor on Dolbeault complexes
 
 For every real Dolbeault cochain complex A bounded below, with A_C the direct sum of its (r,s)-pieces and conjugation exchanging r,s, and every integer p, define its Deligne cone as fib(A_R(p)⊕FᵖA_C→A_C), with arrow (a,f)↦f−a and A_R(p)=(2πi)ᵖA_R. Define its small Dolbeault model D(A,p) by Dᵃ=A_Rᵃ⁻¹(p−1)∩Fᵃ⁻ᵖ,ᵃ⁻ᵖ for a≤2p−1, and Dᵃ=A_Rᵃ(p)∩Fᵖ,ᵖ for a≥2p. Here Fʳ,ˢ projects to types at least (r,s). Its differential is minus the projection of d to types at least (a−p+1,a−p+1) below degree 2p−1, equals −2∂∂̄ at degree 2p−1, and equals d above it. Construct mutually inverse-up-to-homotopy maps with the cone, with projection followed by inclusion equal to identity on D. (BKK, Definitions 5.7–5.10 and Proposition 5.12, pp.110–113; BKK line 3999, BKK line 4035 and BKK line 4060).
 
-Use the type projections and πₚ(z)=(z+(−1)ᵖż)/2 to split the real and Hodge cone. The inclusion below the critical degree sends x to (∂xᵖ⁻¹,ᵃ⁻ᵖ−∂̄xᵃ⁻ᵖ,ᵖ⁻¹, 2∂xᵖ⁻¹,ᵃ⁻ᵖ,x); above it sends x to (x,x,0). The cone projection and the complementary-type contraction prove the stated homotopies. The special differential follows from ∂∂̄+∂̄∂=0.
+Use the type projections and πₚ(z)=(z+(−1)ᵖz̄)/2 to split the real and Hodge cone. The inclusion below the critical degree sends x to (∂xᵖ⁻¹,ᵃ⁻ᵖ−∂̄xᵃ⁻ᵖ,ᵖ⁻¹, 2∂xᵖ⁻¹,ᵃ⁻ᵖ,x); above it sends x to (x,x,0). The cone projection and the complementary-type contraction prove the stated homotopies. The special differential follows from ∂∂̄+∂̄∂=0.
 
 The construction has the following API.
 
@@ -304,21 +367,21 @@ The construction has the following API.
 
 - For A=ℂ in degree 0, H⁰D(A,0)=ℝ and H¹D(A,1)=ℂ/(2πiℝ)≃ℝ by Re; all other degrees vanish in these two cases.
 - For the same point and p=−1, F⁻¹A=A, so H⁰ is ℝ(−1) and H¹=0. A rule forcing p≥1 would lose this case.
-- For p=1 and x=|z|², ∂∂̄x=dz∧dż, hence d_Dx=−2dz∧dż; replacing the top operator by d would have degree and sign wrong.
+- For p=1 and x=|z|², ∂∂̄x=dz∧dz̄, hence d_Dx=−2dz∧dz̄; replacing the top operator by d would have degree and sign wrong.
 - For A=0 every cone term, D term and contraction is 0; on the point at weight 1 the projection sends log 2+iθ to log 2, independent of θ.
 
-*Needs:* Mathlib `CochainComplex.mappingCone`; Mathlib `CochainComplex.mappingCone.inl_v_d`; Mathlib `CochainComplex.mappingCone.inr_f_d`; §3.1; Tau Ceti `TauCeti.gradedCochainComplex`.
+*Needs:* Mathlib `CochainComplex.mappingCone`; Mathlib `CochainComplex.mappingCone.inl_v_d`; Mathlib `CochainComplex.mappingCone.inr_f_d`; §3.1; ComplexKahlerGeometry K1–K2; Tau Ceti `TauCeti.gradedCochainComplex`.
 
 ### 3.4 The compactification-independent logarithmic realization
 
-For every smooth quasi-projective complex X and integer p, define D_log(X,p) by applying 3.3 to the sheafified filtered colimit of the logarithmic algebras of all smooth proper SNC compactifications. Use a universe-small skeleton. It represents fib(RΓ(X,ℝ(p))⊕RΓ(W,FᵖΩ_W(log D))→RΓ(X,ℂ)), with arrow filtered comparison minus real inclusion. Each fixed compactification maps by a quasi-isomorphism to this object. Refinement comparisons compose, their common-refinement identifications satisfy the three-choice cocycle, and algebraic pullbacks, restrictions and finite disjoint unions are independent of the auxiliary compactifications. (BKK, Theorem 5.22, formula 5.23, Proposition 5.29 and Corollary 5.31, pp.117–119; BKK line 4239, BKK line 4263, BKK line 4297, BKK line 4315).
+For every smooth separated finite-type complex X and integer p, define D_log(X,p) by applying 3.3 to the sheafified filtered colimit of the logarithmic algebras of all smooth proper SNC compactifications. Use a universe-small skeleton. It represents fib(RΓ(X,ℝ(p))⊕RΓ(W,FᵖΩ_W(log D))→RΓ(X,ℂ)), with arrow filtered comparison minus real inclusion. Each fixed compactification maps by a quasi-isomorphism to this object. Refinement comparisons compose, their common-refinement identifications satisfy the three-choice cocycle, and algebraic pullbacks, restrictions and finite disjoint unions are independent of the auxiliary compactifications. (BKK, Theorem 5.22, formula 5.23, Proposition 5.29 and Corollary 5.31, pp.117–119; BKK line 4239, BKK line 4263, BKK line 4297, BKK line 4315).
 
-Use the supplier’s dense common-refinement category, then resolve and principalize outside the prescribed open to return to SNC choices. The equivalences of 3.2 satisfy its coefficient comparison principle. Prove finite-open Mayer–Vietoris for F-graded logarithmic sections using strict mixed-Hodge maps; fine acyclicity compares the presheaf colimit with its sheafification. In general they need not be equal as spaces of sections. Resolve graph compactifications to construct algebraic pullbacks.
+Use EtaleCohomologyFoundations §G.2 to compactify each smooth separated finite-type X, then resolve and principalize outside X to obtain a smooth proper SNC choice. The quasi-projective case can use the supplied projective sncCompactification. Apply the same resolution to the dense common-refinement category; properness alone never implies projectivity. The equivalences of 3.2 satisfy its coefficient comparison principle. Prove finite-open Mayer–Vietoris for F-graded logarithmic sections using strict mixed-Hodge maps; fine acyclicity compares the presheaf colimit with its sheafification. In general they need not be equal as spaces of sections. Resolve graph compactifications to construct algebraic pullbacks.
 
 The construction has the following API.
 
 - A refinement arrow fixing X gives a quasi-isomorphism; two refining cones induce the same derived comparison, with identity, inverse and cocycle laws.
-- Every morphism f:X→Y of smooth quasi-projective complex schemes induces f*:D_log(Y,p)→D_log(X,p), with coherent identity/composition and restriction maps in the enhanced derived category; on fixed pairs it is the actual logarithmic pullback.
+- Every morphism f:X→Y of smooth separated finite-type complex schemes induces f*:D_log(Y,p)→D_log(X,p), with coherent identity/composition and restriction maps in the enhanced derived category; on fixed pairs it is the actual logarithmic pullback.
 - D_log(∅,p)=0 and for a finite open cover its augmented Čech totalization computes D_log(X,p); this comparison is natural for restriction.
 - For a sheaf of Dolbeault complexes, compatible morphisms from the logarithmic presheaf diagram extend uniquely from its sheafified colimit. A change of small skeleton induces the unique colimit comparison preserving those maps; the geometric comparisons of this section identify its derived global sections.
 
@@ -336,13 +399,13 @@ For a punctured coordinate disk, the period of dz/z is 2πi. On a point, weight 
 
 ### Dependencies
 
-ComplexComparisonPartII §§C−1.1, C−1.4, C5.1, C5.3–C5.5; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.6, 6.1–6.4; EtaleCohomologyFoundations §§G.1–G.3; EnhancedDerivedSheaves §§0.1–0.4, E0.6, E1.4, E2.6; DifferentialGeometry Layers 0–1, 5–9. The proper algebraic case uses ComplexComparisonPartII §C5.3’s properPureHodge and relativeHodgeBundles; the smooth local-resolution route also needs gap:smooth-whitney-extension.
+ComplexComparisonPartII §§C−1.1, C−1.4, C5.1, C5.3–C5.6; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.6, 6.1–6.4; EtaleCohomologyFoundations §§G.1–G.3; EnhancedDerivedSheaves §§0.1–0.4, E0.6, E1.4, E2.6; DifferentialGeometry Layers 0–1, 5–9; ComplexKahlerGeometry K1–K2. The proper algebraic case uses ComplexComparisonPartII §C5.3’s properPureHodge and relativeHodgeBundles; the smooth local-resolution route also needs gap:smooth-whitney-extension and gap:flat-ideal-regular-situation.
 
 ## Layer 4: the logarithmic Deligne product
 
 ### 4.1 The full Dolbeault product
 
-For every real Dolbeault algebra A as in 3.3, equip ⊕ₚ∈ℤD(A,p) with the following bilinear product. Put l=a+b, r=p+q, πᵣ(z)=(z+(−1)ʳż)/2 and rₚ(x)=2πₚ(Fᵖdx). For x∈Dᵃ(A,p), y∈Dᵇ(A,q), if a<2p and b<2q use (−1)ᵃrₚ(x)∧y+x∧r_q(y). If a<2p, b≥2q and l<2r, use Fˡ⁻ʳ,ˡ⁻ʳ(x∧y); if instead l≥2r, use Fʳ,ʳ(rₚ(x)∧y)+2πᵣ∂(x∧y)ʳ⁻¹,ˡ⁻ʳ. If both degrees are at or above their cutoffs, use x∧y. Define the remaining case by graded symmetry. On odd critical degrees this is x•y=−∂x∧y+∂̄x∧y+x∧∂y−x∧∂̄y. Apply the construction to D_log and obtain external products by the two projections. (BKK, Definition 5.14 and special-degree formulas, pp.113–115; BKK line 4129 and BKK line 4176).
+For every real Dolbeault algebra A as in 3.3, equip ⊕ₚ∈ℤD(A,p) with the following bilinear product. Put l=a+b, r=p+q, πᵣ(z)=(z+(−1)ʳz̄)/2 and rₚ(x)=2πₚ(Fᵖdx). For x∈Dᵃ(A,p), y∈Dᵇ(A,q), if a<2p and b<2q use (−1)ᵃrₚ(x)∧y+x∧r_q(y). If a<2p, b≥2q and l<2r, use Fˡ⁻ʳ,ˡ⁻ʳ(x∧y); if instead l≥2r, use Fʳ,ʳ(rₚ(x)∧y)+2πᵣ∂(x∧y)ʳ⁻¹,ˡ⁻ʳ. If both degrees are at or above their cutoffs, use x∧y. Define the remaining case by graded symmetry. On odd critical degrees this is x•y=−∂x∧y+∂̄x∧y+x∧∂y−x∧∂̄y. Apply the construction to D_log and obtain external products by the two projections. (BKK, Definition 5.14 and special-degree formulas, pp.113–115; BKK line 4129 and BKK line 4176).
 
 Split the cone product into real, filtered and homotopy coordinates, and apply the explicit contraction of 3.3. Verify each degree range by type projection; the swapped mixed case is forced by the same formula. This yields the specific BKK product, with its critical-degree identity, rather than leaving an unspecified cup product on cohomology.
 
@@ -354,21 +417,21 @@ The construction has the following API.
 
 **Checks.**
 
-- For p=q=1 on 𝔾_m, x=log 2 and y=log|t| give x•y=(log 2)/2·(dt/t−dż/ż)=i log 2 darg t; y•x is its negative.
+- For p=q=1 on 𝔾_m, x=log 2 and y=log|t| give x•y=(log 2)/2·(dt/t−dt̄/t̄)=i log 2 darg t; y•x is its negative.
 - On a point log 2•log 3=0 because every one-form is 0; 1∈D⁰(−,0) still multiplies log 2 to log 2.
-- On ℂ, x=|z|² and y=1 in weight one have x•y=−ż dz+z dż and d_D(x•y)=−2dz∧dż, equal to d_Dx•1. Replacing the critical operator by the ordinary d fails.
+- On ℂ, x=|z|² and y=1 in weight one have x•y=−z̄ dz+z dz̄ and d_D(x•y)=−2dz∧dz̄, equal to d_Dx•1. Replacing the critical operator by the ordinary d fails.
 
-*Needs:* §3.3; §3.4; DifferentialGeometry Layers 0–1; EnhancedDerivedSheaves §0.3.
+*Needs:* §3.3; §3.4; ComplexKahlerGeometry K1–K2; DifferentialGeometry Layers 0–1; EnhancedDerivedSheaves §0.3.
 
 ### 4.2 Associativity and choice compatibility
 
-For the product of 4.1 construct a natural degree −1 trilinear homotopy h_a satisfying d_Dh_a+h_ad=((x•y)•z)−x•(y•z), with tensor differential on the input. It vanishes on triples of closed even critical-degree elements. All refinement, restriction and algebraic pullback comparisons preserve this product in the enhanced derived category, hence Deligne cohomology is an associative graded-commutative unital ring graded by degree and twist, independent of compactification. (BKK, Proposition 5.15, p.114, BKK line 4142; BF Proposition 1.26, p.10, BF line 506).
+For the product of 4.1 construct a natural degree −1 trilinear homotopy h_a satisfying d_Dh_a+h_ad=((x•y)•z)−x•(y•z), with tensor differential on the input. It vanishes on all triples x∈D²ᵖ(A,p), y∈D²ᑫ(A,q), z∈D²ʳ(A,r), without a closedness hypothesis. All refinement, restriction and algebraic pullback comparisons preserve this product in the enhanced derived category, hence Deligne cohomology is an associative graded-commutative unital ring graded by degree and twist, independent of compactification. (BKK, Proposition 5.15, p.114, BKK line 4142; BF Proposition 1.26, p.10, BF line 506).
 
 Transfer the associative cone product through the explicit deformation retract, symmetrize with the Koszul signs, and write its associator as a boundary using the contraction. This specifies the homotopy as an operation, not merely an existential cohomological associativity. Naturality of the contraction transports it through the entire refinement diagram. The degree −1 is forced by the associator identity; BF line 508’s displayed codomain lacks this shift.
 
 **Checks.**
 
-- For closed (p,p),(q,q),(r,r)-forms the two bracketings both equal x∧y∧z, while h_a=0 and dh_a+h_ad=0.
+- For even critical-degree forms both bracketings equal x∧y∧z and h_a=0. In weight zero on ℂ, take x=Re z and constants 2,3: both bracketings are 6 Re z, with value 6 at z=1, although d_Dx=dx≠0. The homotopy identity gives dh_a+h_ad=0 here as well.
 - For three weight-zero point constants 2,3,5 the bracketings are both 30; an odd triple of point weight-one classes has product 0 in either bracketing.
 - The dlog x∧dlog y period on the positive product torus is (2πi)² before and after a boundary blowup. Exchanging the two circles changes the period to −(2πi)² in both choices.
 
@@ -380,13 +443,13 @@ At weights p=q=1, constants have zero odd-degree product. On 𝔾_m the product 
 
 ### Dependencies
 
-Layer 3, the native wedge algebra and pullbacks supplied by DifferentialGeometry Layers 0–1, and EnhancedDerivedSheaves §0.3.
+Layer 3, the native wedge algebra and pullbacks supplied by DifferentialGeometry Layers 0–1, ComplexKahlerGeometry K1–K2’s type calculus, and EnhancedDerivedSheaves §0.3.
 
 ## Layer 5: supports, semipurity and the cycle resolution
 
 ### 5.1 Logarithmic support fibers
 
-For every smooth quasi-projective complex X, closed subset Z⊂X and integer p, define D_log,Z(X,p)=fib(D_log(X,p)→D_log(X∖Z,p)). In cochain degree a its pair model is D_logᵃ(X,p)⊕D_logᵃ⁻¹(X∖Z,p), with d(ω,g)=(d_Dω,res(ω)−d_Dg). Give its explicit isomorphism to Mathlib’s mapping cone shifted by −1, its forget-support projection and its restriction and support-enlargement maps. Its cohomology is denoted H_D,Zᵃ(X,ℝ(p)). (BF, Definition 1.28 and Lemma 1.29, p.11, BF line 517; BFT §1.1, p.2, BFT line 63).
+For every smooth separated finite-type complex X, closed subset Z⊂X and integer p, define D_log,Z(X,p)=fib(D_log(X,p)→D_log(X∖Z,p)). In cochain degree a its pair model is D_logᵃ(X,p)⊕D_logᵃ⁻¹(X∖Z,p), with d(ω,g)=(d_Dω,res(ω)−d_Dg). Give its explicit isomorphism to Mathlib’s mapping cone shifted by −1, its forget-support projection and its restriction and support-enlargement maps. Its cohomology is denoted H_D,Zᵃ(X,ℝ(p)). (BF, Definition 1.28 and Lemma 1.29, p.11, BF line 517; BFT §1.1, p.2, BFT line 63).
 
 The pair differential squares to zero because restriction commutes with d_D. Relative to Mathlib’s source-shift-first cone coordinates, negating the second coordinate after shifting identifies the displayed fiber differential. Construct the localization triangle and all support maps in the enhancement; finite-open descent gives excision and the Mayer–Vietoris triangle for two closed supports.
 
@@ -407,7 +470,7 @@ The construction has the following API.
 
 ### 5.2 Semipurity with singular support
 
-For every smooth equidimensional quasi-projective complex X, p≥0 and closed Z whose every irreducible component has codimension at least p, H_D,Zᵃ(X,ℝ(p))=0 for every integer a<2p. In degree 2p, cycle classes give a canonical isomorphism ⊕_{V⊂Z, codim_X V=p}ℝ[V]≃H_D,Z²ᵖ(X,ℝ(p)), with finite support and multiplicities. Restriction and support enlargement commute with these classes. In the normalized logarithmic form model a cocycle (ω,g) represents Σm_V[V] if and only if its current extensions satisfy −2∂∂̄[g]=[ω]−Σm_Vδ_V. Here the criterion uses the normalized currents corresponding to these forms, and is not a new current carrier or a product of arbitrary currents. For this even-degree representative criterion, in complex dimension d the form-current pairing is [α](η)=(2πi)⁻ᵈ∫_X η∧α and δ_V(η)=(2πi)⁻⁽ᵈ⁻ᵖ⁾∫_{V_reg}η. These are scalar multiples of the supplied native form and cycle currents in the indicated degrees. (BF, Equation 1.30 and Proposition 1.31, p.11, BF line 530; BKK §5.6 and Proposition 5.58, pp.132–133, BKK line 4795 and BKK line 4841).
+For every smooth equidimensional separated finite-type complex X, p≥0 and closed Z whose every irreducible component has codimension at least p, H_D,Zᵃ(X,ℝ(p))=0 for every integer a<2p. In degree 2p, cycle classes give a canonical isomorphism ⊕_{V⊂Z, codim_X V=p}ℝ[V]≃H_D,Z²ᵖ(X,ℝ(p)), with finite support and multiplicities. Restriction and support enlargement commute with these classes. In the normalized logarithmic form model a cocycle (ω,g) represents Σm_V[V] if and only if its current extensions satisfy −2∂∂̄[g]=[ω]−Σm_Vδ_V. Here the criterion uses the normalized currents corresponding to these forms, and is not a new current carrier or a product of arbitrary currents. For this even-degree representative criterion, in complex dimension d the form-current pairing is [α](η)=(2πi)⁻ᵈ∫_X η∧α and δ_V(η)=(2πi)⁻⁽ᵈ⁻ᵖ⁾∫_{V_reg}η. These are scalar multiples of the supplied native form and cycle currents in the indicated degrees. (BF, Equation 1.30 and Proposition 1.31, p.11, BF line 530; BKK §5.6 and Proposition 5.58, pp.132–133, BKK line 4795 and BKK line 4841).
 
 First prove the local Betti support calculation: a complex normal p-disk has one oriented class in degree 2p and none below. Use compatible algebraic stratification, excision and the long exact sequence for nested supports to remove higher-codimension singular strata; these cannot contribute at or below 2p. This yields Betti vanishing and the component basis with pure type (p,p) in top degree. The filtered cone of restriction, using the strict cohomology maps of 3.2, then gives the Deligne assertion. Normalize its fundamental class by the complex orientation and the supplied integration class. Resolve supports only to justify locally integrable extensions and prove both directions of the current criterion; exact current differences have zero local coefficients.
 
@@ -424,13 +487,13 @@ The construction has the following API.
 - At p=0 and Z=X, H_D,X⁰=ℝ per component and all negative degrees vanish; Z=∅ gives 0 in every degree. At a point with p=1 and full support, H¹=ℝ≠0, so deleting the codimension hypothesis is false.
 - For f=t on 𝔸¹, the normalized identity is d_D[−log|t|]=−δ₀, and (0,−log|t|) has class +[0]; using +log|t| gives coordinate −1.
 
-*Needs:* §5.1; §3.2; ComplexComparisonPartII §§C5.4, C6.0; DifferentialGeometry Layers 5–9; AlgebraicTopology Stages 2–3, 6.1–6.4.
+*Needs:* §5.1; §3.2; ComplexComparisonPartII §§C5.4, C6.0; ComplexKahlerGeometry K1–K2; DifferentialGeometry Layers 5–9; AlgebraicTopology Stages 2–3, 6.1–6.4.
 
 ### 5.3 The auxiliary support resolution
 
 For a smooth quasi-projective complex X and p≥0, let Sₚ,ₙ be the directed set of closed subsets of X×□ⁿ all of whose components have codimension at least p and which meet every iterated face with that bound. Finite unions are the directing operation. Let Hₚ(X)ₙ be H_D,Sₚ,ₙ²ᵖ, defined by the filtered colimit of support fibers, with infinity normalization and cube boundary ∂□. Define Aₚ(X) as the normalized direct-sum total of τ≤₂ₚD_log(X×□ⁿ,p) in bidegree (r,−n). Define Aₚ,S(X) by the same construction from the support colimits. Their total differential is d_D+(−1)ʳ∂□ and total degree r−n. Truncation is good truncation, with cycles in its top degree. (BF, §2.4–§2.5, pp.15–17, BF line 705 and BF line 746; BFT Proposition 4.3, p.7, BFT line 266).
 
-Face pullback is defined on precisely these support conditions. The split infinity normalization commutes with cohomology and filtered colimits. Build all three objects on the same diagram, with projection to supported degree 2p, and with the forget-support map Aₚ,S→Aₚ. Applying Jₙ converts this entire diagram to the BF δ convention. These are the universal construction’s auxiliary objects; the consumer’s concrete comparison cones remain its own objects.
+Face pullback is defined on precisely these support conditions. The split infinity normalization commutes with cohomology and filtered colimits. Build all three objects on the same diagram, with projection to supported degree 2p, and with the forget-support map Aₚ,S→Aₚ. Applying Jₙ converts this entire diagram to the BF δ convention. These are also the auxiliary D_A, D_{A,Z} and H^p used by Polylogarithms §5.2, after its cube-orientation transport; its shifted D_AH and β are additional consumer constructions.
 
 The construction has the following API.
 
@@ -443,7 +506,7 @@ The construction has the following API.
 
 - At (r,n)=(2p,1) total degree is 2p−1; its cube differential has coefficient (−1)²ᵖ=1. At r=2p−1 that coefficient is −1.
 - For a point and p=0, the normalized cycle-support complex is ℝ in degree 0 and 0 in positive cube degree.
-- For p=1, x=|z|² has d_Dx=−2dz∧dż≠0. A degree-2 form with nonzero d cannot be admitted as a cycle at the top of τ≤₂; brutal truncation would introduce an extra top cohomology class.
+- On ℂ² with p=1, ω=Re(z₁) dz₂∧dz̄₂ belongs to D²(A,1), but d_Dω=(dz₁+dz̄₁)∧dz₂∧dz̄₂/2 is nonzero: its value on (∂ₓ₁,∂ₓ₂,∂ᵧ₂) is −2i. Good truncation excludes ω from degree 2; brutal truncation would make it an extra top cocycle.
 
 *Needs:* §1.1; §5.1; §5.2; §4.2; EnhancedDerivedSheaves §§0.1–0.4.
 
@@ -495,12 +558,12 @@ The construction has the following API.
 
 The map of 6.1 is a morphism of enhanced restriction diagrams: its naturality homotopy for each open immersion is specified by the common roof, and the homotopies satisfy identity and composition coherence. For every closed Z⊂X, taking the fiber defines r_D,Z from the motivic restriction fiber to D_log,Z(X_σ,p). It commutes with forgetting and enlarging support, restriction of pairs and every map of the localization triangles with the declared signs. This includes singular and nonreduced closed supports through their underlying closed sets and cycle multiplicities. (BF, Proposition 3.3 and its proof, p.19, BF line 877; §1.3–§1.5, pp.5–7, BF line 319; BFT §4, BFT line 277).
 
-The cycle-class and forget-support arrows commute strictly with open restriction in the colimit models. Inversion within the diagram category supplies the coherent inverse data and hence the needed homotopies. For a pair square f′r≃r′f with cochain homotopy h satisfying f′r−r′f=dh+hd, its fiber map is (a,b)↦(ra,sb−ha); this formula proves the sign and reduces higher coherence to that of the original diagram. Compare only these abstract fibers here; explicit Wang/current support-cone adapters belong to Polylogarithms §5.2.
+The cycle-class and forget-support arrows commute strictly with open restriction in the colimit models. Inversion within the diagram category supplies the coherent inverse data and hence the needed homotopies. For a pair square f′r≃r′f with cochain homotopy h satisfying f′r−r′f=dh+hd, its fiber map is (a,b)↦(ra,r′b+ha); this formula proves the sign and reduces higher coherence to that of the original diagram. Compare only these abstract fibers here; explicit Wang/current support-cone adapters belong to Polylogarithms §5.2.
 
 **Checks.**
 
 - Z=∅ gives the zero regulator on the contractible fiber; Z=X gives the absolute regulator. The identity restriction has h=0.
-- For h=0 the pair map is (ra,sb). In general its second-coordinate differential defect is (f′r−r′f−dh−hd)a=0; using +ha instead would give 2(dh+hd)a.
+- For h=0 the pair map is (ra,r′b). With +ha its second-coordinate differential defect is (f′r−r′f−dh−hd)a=0; using −ha would give 2(dh+hd)a. For A=A′=ℤ[0], B=0, B′=(ℤ→ℤ) in degrees −1,0 with differential 1, r=f′=h=1, the image of 1 is (1,1) and D′(1,1)=(0,0); the wrong image (1,−1) has D′=(0,2).
 - On (𝔸¹,{0}), the open unit t maps to log|t|; its raw Deligne connecting class is [(0,log|t|)]=−cl([0]). The principal-divisor representative (0,−log|t|) has coefficient +1. Thus raw connecting and positive valuation are not silently identified.
 
 *Needs:* §6.1; §5.1; §1.4; EnhancedDerivedSheaves §§0.1–0.4, E0.6.
@@ -546,13 +609,17 @@ The construction has the following API.
 - For O(a) on ℙ¹ the degree-zero character is 1+a h_D, and the normalized integral of h_D is 1.
 - The zero K-class and the K-groups of ∅ map to 0; the trivial line maps to 1, so the entire character is not the zero map.
 
-*Needs:* §3.4; §4.2; GeneralAlgebraicKTheory §§3.12, 7.4–7.7; SchemeKTheoryOperations §§2.1–2.6, 4.3, 6.7–6.9; SchemeAndStackFoundations §§5.3–5.8; EnhancedDerivedSheaves §E2.6; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 1.
+- For a number-field embedding and p=j≥1, the point quotient ℂ/ℝ(p) identifies with ℝ(p−1) by πₚ₋₁(z)=(z+(−1)ᵖ⁻¹z̄)/2, the same projection used for the number-field Beilinson map. At z=3+4i, p=1,2,3 give 3,4i,3. Adding an element of ℝ(p) changes each projected value by 0; the opposite parity would not descend to the quotient.
+
+- For the constant simplicial abelian group ℤ, π₀=H₀=ℤ and all positive homotopy and homology groups are 0. The constant simplicial group S₃ instead has nonabelian π₀=S₃; the abelian Moore-chain comparison does not apply to it.
+
+*Needs:* §3.4; §4.2; GeneralAlgebraicKTheory §§3.12, 7.4–7.7; SchemeKTheoryOperations §§2.1–2.6, 4.3, 6.7–6.9; SchemeAndStackFoundations §§5.3–5.8; EnhancedDerivedSheaves §E2.6; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 2.
 
 ### 7.2 Identification on the supplied K-groups
 
 For every σ:k→ℂ, smooth quasi-projective finite-type X/k and n≥0, the sum over weights of r_D∘chₙ on Kₙ(X)⊗ℚ equals the real Beilinson character of 7.1 after base change X→X_σ. The equality is on the actual K-groups and the shared higher Chow maps. The supported realization of 6.2 composed with 2.3 is the induced relative comparison on every closed-open restriction diagram, with its stated boundary transports. Products, pullbacks and change of compatible embeddings preserve this equality. (BF, Theorem 3.5 and proof, pp.20–23; BF line 905, BF line 998 and BF line 1033; BFT Theorem 4.7, p.7, BFT line 296).
 
-Run the two universal-class constructions on the same BGL and Grassmannian nerves. On Grassmannians the cycle class of a geometric Chern class is the Deligne Chern class by 6.1 and the geometric normalization. Naturality, specialization and descent from the supplied classifying-space model extend the equality to all K-degrees. This is the argument inside BF’s proof, which assumes smooth quasi-projective X despite the wider wording of its theorem header. Take fibers only after proving the equality of restriction diagrams. BFT’s explicit-current theorem is not used to extend the construction to opens.
+Use §2.2’s identification of Levine’s inverse with §2.0b’s universal motivic character, then run the motivic and Deligne universal-class constructions on the same BGL and Grassmannian nerves. On Grassmannians the cycle class of a geometric Chern class is the Deligne Chern class by 6.1 and the geometric normalization. Naturality, specialization and descent from the supplied classifying-space model extend the equality to all K-degrees. This is the argument inside BF’s proof, which assumes smooth quasi-projective X despite the wider wording of its theorem header. Take fibers only after proving the equality of restriction diagrams. BFT’s explicit-current theorem is not used to extend the construction to opens.
 
 **Checks.**
 
@@ -560,7 +627,7 @@ Run the two universal-class constructions on the same BGL and Grassmannian nerve
 - For K₁(ℂ), the unit 2 has value log 2 on both sides, while −1 has value 0. In higher weight 2 the universal factor is −1, agreeing with ch₂,₂=−c₂,₂.
 - For full support the equality is the absolute one and for empty support both maps are 0. On (𝔸¹,{0}) the raw Deligne boundary of log|t| has coefficient −1, as in 6.2.
 
-*Needs:* §2.4; §6.3; §7.1.
+*Needs:* §2.0b; §2.2; §2.4; §6.3; §7.1.
 
 ### 7.3 Multiplicativity of the universal map
 
@@ -578,7 +645,7 @@ Take products on the common support diagrams, with the sign (−1)ⁿˢ for the 
 
 ### 7.4 The logarithm and projective acceptance witnesses
 
-For every u∈ℂ×, under H_D¹(point,ℝ(1))=ℂ/ℝ(1)≃ℝ with quotient identified by real part, the K₁ exponential class and its shared motivic unit both have regulator log|u|. Hence the value on uv is log|u|+log|v|. On a smooth complex curve a nowhere-zero regular unit f gives the Dolbeault representative log|f|; for two units f,g their cup representative is i(log|f| darg g−log|g| darg f), where darg f=(df/f−d(conj f)/(conj f))/(2i). For a rational function with divisor, the supported Green representative instead is −log|f|. On ℙ¹ the Deligne cycle class of c₁O(a) is a times the positive generator of normalized integral 1. (BKK, §5.1, pp.109–110, BKK line 3965; special-degree formula p.115, BKK line 4176; BF p.11, BF line 550; KLM §5.3, p.13, KLM line 553).
+For every u∈ℂ×, under H_D¹(point,ℝ(1))=ℂ/ℝ(1)≃ℝ with quotient identified by real part, the K₁ exponential class and its shared motivic unit both have regulator log|u|. Hence the value on uv is log|u|+log|v|. On a smooth complex curve a nowhere-zero regular unit f gives the Dolbeault representative log|f|; for two units f,g their cup representative is i(log|f| darg g−log|g| darg f), where darg f=(df/f−df̄/f̄)/(2i). For a rational function with divisor, the supported Green representative instead is −log|f|. On ℙ¹ the Deligne cycle class of c₁O(a) is a times the positive generator of normalized integral 1. (BKK, §5.1, pp.109–110, BKK line 3965; special-degree formula p.115, BKK line 4176; BF p.11, BF line 550; KLM §5.3, p.13, KLM line 553).
 
 Use the exponential class to fix the value at a point, then restriction naturality and the weight-one logarithmic representative. Substitute x=log|f| and y=log|g| into the four-term product, using ∂log|f|=df/(2f). Poincaré–Lelong fixes the negative Green representative separately. The projective line calculation follows from the degree-zero character and positive complex orientation; it excludes any rescaling of the universal map.
 
@@ -600,19 +667,32 @@ Layers 1–6, the actual classifying-space K-models and operations supplied by G
 
 ## Downstream consumers
 
-- **Polylogarithms.** §5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. Its requested Layer 4 / §§9.1,12.2 refer respectively to the contracts delivered here in Layers 1, 2 and 6–7. It owns all explicit Wang/Goncharov forms, normalized-current dictionaries, concrete support-cone adapters and their comparison homotopies.
+- **Polylogarithms.** §5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. The shared Aₚ, Aₚ,S, Hₚ, logarithmic Green-current identity and normalized even-degree pairing move down to §§5.2–5.3 here. Polylogarithms §5.2 retains D_AH, β, its full current dictionary and concrete comparison cones; §5.3 retains its Green forms. Explicit Wang/Goncharov forms and their comparison homotopies remain its direction.
 
-- **BorelRegulators.** At number-field points consumes §§2.2, 6.1 and 7.2–7.4 for comparison with the universal realization; number-field embedding spaces, Borel class, lattice/covolume and special-value theorems are its own arithmetic direction.
+- **ColemanIntegration.** §§L3.Fa.1–L3.Fa.2 import §2.0a’s general supported cube construction; its arithmetic hypotheses, special-unit localizations and de Jeu symbols remain there. Its Beilinson map reg_∞ in §L3.Fc.1 is the specialization of §7.1 to K₂ₚ₋₁(ℂ), transported through ℂ/ℝ(p)≃ℝ(p−1) by πₚ₋₁. It consumes §§7.1 and 7.4 for this normalization; the syntomic map and regulator determinants remain there.
 
-- **PeriodsAndSpecialValues.** PS.3.1–PS.3.2a use the motivic/Deligne character and its fixed Tate normalization; PS.9’s explicit period applications use them through their motivic and explicit-cycle suppliers. No special-value conjecture is asserted here.
+- **BorelRegulators.** Number-field applications use §§2.2, 6.1 and 7.2–7.4 for comparison with the universal realization; embedding spaces, Borel classes, lattice/covolume and special-value theorems lie in that arithmetic direction.
 
-- **KatoEulerSystems.** §3.4 uses §§2.4 and 7.2–7.4 to identify the unit-symbol archimedean regulator on smooth projective curves, retaining its own modular units and special-value formula.
+- **PeriodsAndSpecialValues.** The number-field Beilinson map specified in PS.3.2a through ℂ/ℝ(j), with projection (z+(−1)ʲ⁻¹z̄)/2, is the specialization of §7.1 at its number-field embeddings and must import §§7.1 and 7.4 for this map. Its construction is not an existing use of this roadmap’s motivic character. Its Borel comparison, determinant factors and special-value statements remain arithmetic targets there.
 
-- **EllipticRegulators.** Receives the universal class and product normalization of §§6.1–7.4 for the cycles supplied by EllipticKTheory Layer 7. EllipticKTheory itself supplies classes, not the regulator comparison.
+- **KatoEulerSystems.** Its requested ch₂,₂=−c₂,₂ convention is §2.4 here; the smooth-projective-curve archimedean comparison uses §§7.2–7.4. Its modular units and special-value formulas are separate arithmetic applications.
 
-- **HodgeStructuresPartIII.** A geometric extension can import §3.2’s smooth-open filtered comparison and §3.4’s refinement calculus. Singular-variety hyperresolutions and their broader mixed-Hodge realization are a distinct extension of Completed/HodgeStructures.
+- **ZagierConjecturePolylogarithms.** The requested M.8 motivic character and number-field Deligne normalization are §§2.1–2.2, 7.1 and 7.4 here; they supply the character and embeddingwise normalization used by its cycle-period comparisons.
 
 - **MixedHodgeModulesAndIrregularHodgeTheory.** Its N/logarithmic-filtration zero-function case can use §§3.1–3.2 as the ordinary logarithmic comparison; irregular pole-order, exponential and Newton constructions remain there.
+
+The requested interface labels have the following mathematical meanings; §4.2 here concerns associativity, not the cubical cycle complex.
+
+| Consumer’s label for this roadmap | Section here |
+| --- | --- |
+| Polylogarithms §4.2, including its cubical orientation change | §1.1 |
+| Polylogarithms Layer 4 | §§1.1–1.4 |
+| Polylogarithms §9.1 | §§2.1–2.3 |
+| Polylogarithms §12.2 | §§6.1–6.3, 7.2, 7.4 |
+| §12.1 requested by KatoEulerSystems | §2.4 |
+| ZagierConjecturePolylogarithms M.8 | §§2.1–2.2, 7.1, 7.4 |
+
+Several other labels attached to the name MotivicEtaleKTheory describe different theories and are not delivered by this roadmap. ArithmeticKTheoryPartII’s M.7/bott-etale-descent and GeneralAlgebraicKTheoryPartII’s M.7/R10 request spectral étale comparisons; MotivesAndAlgebraicCyclesPartII, EtaleHomotopyTypes and QuadraticFormInvariantsPartII use M.5a for motivic or étale presentations; SymplecticReidemeisterTorsionModSquares uses M.1 for Kummer/gluing data. These requests require separately assigned owners for the precise interfaces. The field diagonal and norm-residue portion called M.4 or M.5d has an existing owner in KTheoryFiniteLocalFields §§3.0–3.0a (motivicToK), not a second construction here; this also identifies the diagonal comparison referred to by K2SymbolsBrauer §10.29. The dyadic and normal-ring finite-coefficient interfaces requested by SymplecticReidemeisterTorsionModSquares M.7–M.8 also require separate ownership.
 
 ## References
 
@@ -625,6 +705,6 @@ All statements are specifications in this roadmap’s own words. The locators be
 - **BKK.** Burgos Gil, Jürg Kramer and Ulf Kühn, *Cohomological arithmetic Chow rings*, [arXiv:math/0404122v2](https://arxiv.org/abs/math/0404122v2) (revision 2005). Printed preprint §§5.1–5.3 and 5.6, pp.109–119,132–133; BKK line 3965, 4035, 4060, 4129, 4142, 4176, 4239, 4263, 4297, 4315 and 4841. These numbers belong to the preprint, rather than the 2007 publication.
 - **DeligneHodgeII.** Pierre Deligne, *Théorie de Hodge, II*, Publications Mathématiques de l’IHÉS 40 (1971), pp.5–57. [Numdam](https://www.numdam.org/item/PMIHES_1971__40__5_0/). Sections 2.2.2–2.2.3, 3.1.4–3.1.9, Theorem 3.2.5 and Corollary 3.2.13; DeligneHodgeII line 852, 866, 988, 1044, 1142 and 1242. The cohomological weight shift and refinement proof are DeligneHodgeII line 1147 and 1223.
 - **KLM.** Matt Kerr, James D. Lewis and Stefan Müller-Stach, *The Abel–Jacobi map for higher Chow groups*, [arXiv:math/0409116v1](https://arxiv.org/abs/math/0409116v1) (2004). Section 5.3, printed p.13, KLM line 553, provides the degree-one logarithm witness; its explicit-current construction stays with the explicit regulator consumers.
-- **Bloch86.** Spencer Bloch, *Algebraic cycles and higher K-theory*, Advances in Mathematics 61 (1986), pp.267–304, [DOI](https://doi.org/10.1016/0001-8708(86)90081-2). Uncertified historical reference, cited by bibliographic locator only; Levine94 supplies the read comparison statements.
+- **Bloch86.** Spencer Bloch, *Algebraic cycles and higher K-theory*, Advances in Mathematics 61 (1986), pp.267–304, [DOI](https://doi.org/10.1016/0001-8708(86)90081-2). Uncertified reference: §7, for the arbitrary-field universal motivic Chern construction and its identification with the inverse cycle map in §§2.0b and 2.2. BF pp.21–22 provides the read complex-field construction; Levine94 supplies the read cycle-to-K isomorphism.
 - **Beilinson85.** A. A. Beilinson, *Higher regulators and values of L-functions*, Journal of Soviet Mathematics 30 (1985), §§1–2, pp.2036–2070, [DOI](https://doi.org/10.1007/BF02105861). Uncertified historical reference; BF supplies the read comparison proof.
 - **Levine98.** Marc Levine, *Mixed Motives* (1998), Part I, Chapter II §§2–3, Chapter III §1 and Chapter V §2. Waived chapter-level background reference; it certifies no finer locator or additional theorem in this build.

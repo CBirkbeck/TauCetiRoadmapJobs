@@ -95,7 +95,7 @@
           ],
           "locator": {
             "source": "BFT",
-            "where": "§6.4 and Proposition 6.12, p.20; BFT line 948 and BFT line 961"
+            "where": "§6.4 and Proposition 6.12, pp.19–20; BFT line 943, 948 and 961"
           },
           "prerequisites": [
             "target:1.1",
@@ -219,6 +219,122 @@
       "title": "the rational higher Chern character",
       "targets": [
         {
+          "id": "2.0a",
+          "kind": "definition",
+          "name": "TauCeti.MotivicRealization.supportedCubeK",
+          "statement": "For every field k, smooth quasi-projective finite-type X/k, n≥0 and closed S⊂Y=X×□ⁿ, construct K^S(Y;∂□ⁿ) as the iterated homotopy fiber of the supplied supported perfect K-spectra on all intersections of the coordinate face pairs Dᵢ={tᵢ=0}⊔{tᵢ=∞}, with support restricted to each intersection. Equivalently take the support fiber of the multi-relative restriction diagram. Order the coordinates as in Layer 1. Construct compatible Adams operations ψᵃ, a≥1, on this entire diagram and its total fiber; for a fixed a>1, integer q and homotopy degree m≥0, first use the finite generalized weight-q decomposition defined by (ψᵃ−aᑫ)ᴺx=0 for some N≥1. The commuting Adams maps preserve these summands, and the decomposition agrees with the supplied weight decomposition on each vertex. This relative construction retains generalized weight pieces; §2.2 proves the genuine eigenweight assertion on the absolute Kₘ(X). The relative cycle map uses face-admissible S, with all iterated face intersections of the required codimension.",
+          "hypotheses": [
+            "k is any field; X/k is smooth quasi-projective and finite type",
+            "n≥0; S is a closed subset of X×□ⁿ; face-admissibility is required for the relative cycle map",
+            "Adams index a≥1; use a>1 and m≥0 for the finite generalized rational weight decomposition; no uncorrected Gysin identification"
+          ],
+          "locator": {
+            "source": "Levine94",
+            "where": "§§1–2, Theorem 1.10, Corollary 1.11, Lemma 2.1 and Theorem 2.7, pp.247–273; Levine94 line 407, 539, 625, 655, 695, 711, 1101"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "roadmap:SchemeKTheoryOperations §§2.5, 3.1–3.3, 4.3, 6.7–6.9",
+            "roadmap:GeneralAlgebraicKTheory §§4.6, 4.8, 4.14, 7.4–7.7",
+            "roadmap:KTheoryFiniteLocalFields §3.0a",
+            "roadmap:EnhancedDerivedSheaves §§0.1–0.4, E0.6"
+          ],
+          "api": [
+            {
+              "name": "TauCeti.MotivicRealization.supportedCubeKApi1",
+              "role": "basic API",
+              "statement": "At n=0 the construction is the supplied K^S(X); empty support gives the zero spectrum. Forgetting and enlarging support commute with every face restriction and the total fiber."
+            },
+            {
+              "name": "TauCeti.MotivicRealization.supportedCubeKApi2",
+              "role": "basic API",
+              "statement": "Coordinate restrictions, allowed pullbacks of supported face diagrams and products induce the corresponding maps of total fibers; identities and compositions are coherent. Adams operations commute with these maps and with each face, and their rational weight projectors agree with the supplied ones on every vertex."
+            },
+            {
+              "name": "TauCeti.MotivicRealization.supportedCubeKApi3",
+              "role": "basic API",
+              "statement": "For S=T×□ⁿ with T⊂X closed, homotopy invariance gives the ordered equivalence K^S(Y;∂□ⁿ)≃ΩⁿK^T(X). At each step identify the cokernel of the diagonal by (a,b)↦a−b, with the zero face first; exchanging two loop coordinates contributes −1 on the induced double suspension of homotopy groups."
+            }
+          ],
+          "tests": [
+            {
+              "name": "check_2_0a_1",
+              "kind": "computation",
+              "statement": "At n=0,S=X the degree-zero group is K₀(X); for X=Spec k the class [k²] is 2. At n=0,S=∅ it is 0. In codimension c the leading weight of [O_V] is [V] with coefficient 1 under the supplied degree-zero character."
+            },
+            {
+              "name": "check_2_0a_2",
+              "kind": "computation",
+              "statement": "At n=1,S=Y the face map is the diagonal x↦(x,x). Its difference map sends (1,0)↦1, (0,1)↦−1 and (1,1)↦0; reversing the face order reverses these signs."
+            },
+            {
+              "name": "check_2_0a_3",
+              "kind": "computation",
+              "statement": "At n=2,S=Y the face-pair diagram has four vertices and total fiber Ω²K(X). For k=ℚ(u,v), the class corresponding to {u,v}∈K₂(k) has consecutive last-slot residues +1; exchanging the loop coordinates gives −1. Adams ψ² acts on this weight-2 class by 4 and ψ¹ by 1."
+            }
+          ]
+        },
+        {
+          "id": "2.0b",
+          "kind": "definition",
+          "name": "TauCeti.MotivicRealization.universalMotivicChernClasses",
+          "statement": "For every field k, smooth quasi-projective finite-type X/k and p,n≥0, construct integral motivic Chern operations cₚ,ₙ:Kₙ(X)→CHᵖ(X,n) on the supplied carriers. The p=0 component is 1 at n=0 and 0 at n>0; rank is retained separately when forming the character. For p≥1 start with the universal class Cₚ in CHᵖ(B·GL_N,0), pass to the stabilized classifying sheaves and use moving over purely transcendental extensions and specialization to define pullback on the shared cycle complexes. Here the higher Chow group of B·GL_N is the cohomology of its flat-face simplicial cycle double complex. Positive K-degree gives additive maps; cₚ,₀ is the ordinary Chern operation, which need not be additive.",
+          "hypotheses": [
+            "k is any field; X/k is smooth quasi-projective and finite type",
+            "p,n≥0; cₚ,₀ is a Chern operation, additive only in positive K-degree",
+            "The field diagonal is the supplied KTheoryFiniteLocalFields §6.10 map"
+          ],
+          "locator": {
+            "source": "BF",
+            "where": "§3.2, pp.21–22; BF line 961, 974–997 (complex case); Bloch86 §7 (arbitrary fields, uncertified)"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "roadmap:SchemeKTheoryOperations §§4.3, 6.7",
+            "roadmap:SchemeAndStackFoundations §§5.3–5.8",
+            "roadmap:KTheoryFiniteLocalFields §§3.0a, 6.10",
+            "roadmap:MotivesAndAlgebraicCycles §4.8a",
+            "roadmap:GeneralAlgebraicKTheory §3.12",
+            "roadmap:EnhancedDerivedSheaves §E2.6",
+            "mathlib:CategoryTheory.Abelian.DoldKan.equivalence",
+            "roadmap:AlgebraicTopology Stage 8, item 2"
+          ],
+          "api": [
+            {
+              "name": "TauCeti.MotivicRealization.universalMotivicChernClassesApi1",
+              "role": "basic API",
+              "statement": "The universal classes stabilize with N, are natural for pullback of smooth quasi-projective schemes, and satisfy the Whitney sum identity in degree zero. Their classifying-sheaf maps use the same moving and specialization comparisons, so different allowed representatives give the same operation."
+            },
+            {
+              "name": "TauCeti.MotivicRealization.universalMotivicChernClassesApi2",
+              "role": "basic API",
+              "statement": "For a field F and p=n≥1, the diagonal operation equals KTheoryFiniteLocalFields §6.10’s diagonalChernMilnor, including its coefficient (−1)ⁿ⁻¹(n−1)! on Milnor symbols."
+            },
+            {
+              "name": "TauCeti.MotivicRealization.universalMotivicChernClassesApi3",
+              "role": "basic API",
+              "statement": "Newton polynomials and rank give a rational universal-class character; for n>0,p≥1 its component is (−1)ᵖ⁻¹cₚ,ₙ/(p−1)!, and in degree zero it is the supplied ordinary character. The denominator is a positive integer factorial, hence nonzero in ℚ."
+            }
+          ],
+          "tests": [
+            {
+              "name": "check_2_0b_1",
+              "kind": "computation",
+              "statement": "For a unit u in a field, c₁,₁[u]=[u]; for u=2 over ℚ, the 2-adic valuation of this class is 1. Thus the operation in positive K-degree is not zero. At the zero K-class c₀,₀=1 and cₚ,₀=0 for p>0, whereas the character is 0."
+            },
+            {
+              "name": "check_2_0b_2",
+              "kind": "computation",
+              "statement": "On ℙ², c₂,₀(O(1))=0 whereas ch₂,₀(O(1))=h²/2≠0. For O(1)⊕O(−1), c₂,₀=−h² and ch₂,₀=h²; confusing the operations reverses this value."
+            },
+            {
+              "name": "check_2_0b_3",
+              "kind": "computation",
+              "statement": "On diagonal Milnor symbols in degrees 1,2,3 the composite symbol-to-K then cₙ,ₙ is multiplication by 1,−1,2. The corresponding character is multiplication by 1 in all three degrees after rationalization; no division by 2 is made integrally."
+            }
+          ]
+        },
+        {
           "id": "2.1",
           "kind": "construction",
           "name": "TauCeti.MotivicRealization.higherMotivicChern",
@@ -239,8 +355,10 @@
             "roadmap:SchemeKTheoryOperations §§2.1–2.6, 6.8–6.9, 7.1–7.3",
             "roadmap:KTheoryFiniteLocalFields §3.0a",
             "mathlib:CategoryTheory.Abelian.DoldKan.equivalence",
-            "roadmap:AlgebraicTopology Stage 8, item 1",
-            "roadmap:SchemeKTheoryOperations §§4.3, 6.7"
+            "roadmap:AlgebraicTopology Stage 8, item 2",
+            "roadmap:SchemeKTheoryOperations §§4.3, 6.7",
+            "target:2.0a",
+            "target:2.0b"
           ],
           "api": [
             {
@@ -263,12 +381,17 @@
             {
               "name": "chern_line",
               "kind": "compatibility",
-              "statement": "On ℙ¹, ch(O(1))=1+h and ch(O(−1))=1−h, with h²=0; a total Chern class in place of a character gives the wrong rank and sum law."
+              "statement": "On ℙ¹, ch(O(1))=1+h and ch(O(−1))=1−h, so ch(O(1)⊕O(−1))=2, whereas its total Chern class is (1+h)(1−h)=1 because h²=0."
             },
             {
               "name": "chern_empty",
               "kind": "degenerate",
               "statement": "For X=∅ both source and every summand are 0. For X=Spec k⊔Spec k ranks remain a pair (2,1), rather than their sum 3."
+            },
+            {
+              "name": "check_2_1_4",
+              "kind": "computation",
+              "statement": "In positive K-degree, ch₁,₁[2]=[2]≠0 in CH¹(ℚ,1)⊗ℚ: its 2-adic valuation is 1. A character vanishing in every positive degree fails."
             }
           ]
         },
@@ -285,14 +408,22 @@
           ],
           "locator": {
             "source": "Levine94",
-            "where": "Theorem 3.1, p.276, Levine94 line 1210; BF Theorem 3.5, p.20, BF line 905"
+            "where": "Theorem 3.1, p.276, Levine94 line 1210; BF Theorem 3.5, p.20, BF line 905; Bloch86 §7 (universal-class identification, uncertified)"
           },
           "prerequisites": [
             "target:2.1",
             "roadmap:SchemeKTheoryOperations §§6.8–6.9, 7.1–7.3",
-            "roadmap:KTheoryFiniteLocalFields §3.0a"
+            "roadmap:KTheoryFiniteLocalFields §3.0a",
+            "target:2.0a",
+            "target:2.0b"
           ],
-          "api": [],
+          "api": [
+            {
+              "name": "TauCeti.MotivicRealization.levineUniversalChernAgreement",
+              "role": "comparison theorem",
+              "statement": "For every smooth quasi-projective finite-type X over any field and every n,p≥0, the inverse of Levine’s geometric weight-p cycle-to-K isomorphism equals the weight-p universal-class character of §2.0b on Kₙ(X)⊗ℚ; Bloch86 §7, uncertified; Levine94 Theorem 3.1, p.276; BF pp.21–22."
+            }
+          ],
           "tests": [
             {
               "name": "weight_projectors",
@@ -308,6 +439,11 @@
               "name": "rational_is_essential",
               "kind": "non-example",
               "statement": "The component of ch(O(1)) on ℙ² in weight 2 is h²/2; its coefficient 1/2 excludes an integral character with the same target."
+            },
+            {
+              "name": "universal_inverse_agreement",
+              "kind": "compatibility",
+              "statement": "Both the inverse cycle map and the universal-class character send [O_point] on ℙ¹ to h in leading weight 1. In degree 1 both send the unit 2 over ℚ to [2], whose 2-adic valuation is 1; agreement only at n=0 would not exclude a zero map in positive degrees."
             }
           ]
         },
@@ -411,7 +547,7 @@
           "id": "3.1",
           "kind": "definition",
           "name": "TauCeti.MotivicRealization.smoothLogForms",
-          "statement": "For a smooth complex algebraic variety W and an SNC divisor D, with open X=W∖D, define E_W(log D) as the subalgebra of j_* smooth complex forms generated locally over smooth forms on W by log|zᵢ|², dzᵢ/zᵢ and dżᵢ/żᵢ in holomorphic SNC coordinates. Retain its real structure, Dolbeault bigrading, Hodge filtration by holomorphic degree and the image weight filtration from the real analytic logarithmic model. Use native form and pullback carriers. It is the image algebra, rather than an abstract tensor product with the smooth functions.",
+          "statement": "For a smooth complex algebraic variety W and an SNC divisor D, with open X=W∖D, define E_W(log D) as the subalgebra of j_* smooth complex forms generated locally over smooth forms on W by log|zᵢ|², dzᵢ/zᵢ and dz̄ᵢ/z̄ᵢ in holomorphic SNC coordinates. Retain its real structure, Dolbeault bigrading, Hodge filtration by holomorphic degree and the image weight filtration from the real analytic logarithmic model. Use native form and pullback carriers. It is the image algebra, rather than an abstract tensor product with the smooth functions.",
           "hypotheses": [
             "W is smooth of finite type over ℂ",
             "D is a reduced SNC divisor",
@@ -423,7 +559,8 @@
           },
           "prerequisites": [
             "roadmap:ComplexComparisonPartII §§C−1.1, C−1.4, C5.1, C5.5",
-            "roadmap:DifferentialGeometry Layers 0–1"
+            "roadmap:DifferentialGeometry Layers 0–1",
+            "roadmap:ComplexKahlerGeometry K1–K2"
           ],
           "api": [
             {
@@ -446,7 +583,7 @@
             {
               "name": "log_generator",
               "kind": "computation",
-              "statement": "On a punctured disk d log|z|²=dz/z+dż/ż and ∮dz/z=2πi. Omitting the logarithmic function or its conjugate derivative fails this identity."
+              "statement": "On a punctured disk d log|z|²=dz/z+dz̄/z̄ and ∮dz/z=2πi. Omitting the logarithmic function or its conjugate derivative fails this identity."
             },
             {
               "name": "log_empty",
@@ -469,9 +606,9 @@
           "id": "3.2",
           "kind": "theorem",
           "name": "TauCeti.MotivicRealization.logarithmicFilteredComparison",
-          "statement": "For every smooth quasi-projective complex X and every smooth proper SNC compactification j:X→W, the holomorphic logarithmic complex maps by a filtered quasi-isomorphism for F to E_W(log D), and the real logarithmic model represents Rj_*ℝ. On hypercohomology the rational structure and F define the geometric mixed Hodge structure; its cohomological weight WₘHⁱ is induced by Wₘ₋ᵢ on the logarithmic complex. The Hodge spectral sequence degenerates at E₁ and the weight spectral sequence at E₂. Every morphism of compactifications fixing X induces a real F-filtered quasi-isomorphism on derived global sections. No invariance of the unshifted residue filtration W on complexes under a blowup is asserted.",
+          "statement": "For every smooth separated finite-type complex X and every smooth proper SNC compactification j:X→W, the holomorphic logarithmic complex maps by a filtered quasi-isomorphism for F to E_W(log D), and the real logarithmic model represents Rj_*ℝ. On hypercohomology the rational structure and F define the geometric mixed Hodge structure; its cohomological weight WₘHⁱ is induced by Wₘ₋ᵢ on the logarithmic complex. The Hodge spectral sequence degenerates at E₁ and the weight spectral sequence at E₂. Every morphism of compactifications fixing X induces a real F-filtered quasi-isomorphism on derived global sections. No invariance of the unshifted residue filtration W on complexes under a blowup is asserted.",
           "hypotheses": [
-            "X is smooth quasi-projective of finite type over ℂ",
+            "X is smooth separated of finite type over ℂ",
             "W is any smooth proper compactification with reduced SNC boundary",
             "Filtered derived sections use acyclic bifiltered resolutions"
           ],
@@ -485,14 +622,29 @@
             "roadmap:EnhancedDerivedSheaves §§0.1–0.4, E2.6",
             "tauceti:TauCeti.Hodge.MixedHodgeStructure",
             "tauceti:TauCeti.Hodge.MixedHodgeStructure.Hom.range_inf_F_eq_map_F",
-            "gap:smooth-whitney-extension"
+            "gap:smooth-whitney-extension",
+            "roadmap:ComplexComparisonPartII §C5.6 (regularSingularDeRhamComparison, trivial connection, Ē=O_W)",
+            "roadmap:EtaleCohomologyFoundations §§G.1–G.3",
+            "roadmap:ResolutionOfSingularitiesCharacteristicZero §§5.1–5.6, 6.4",
+            "gap:flat-ideal-regular-situation"
           ],
-          "api": [],
+          "api": [
+            {
+              "name": "TauCeti.MotivicRealization.flatCoordinateDivision",
+              "role": "local resolution input",
+              "statement": "For U⊂ℂᵈ an SNC coordinate polydisk and f smooth and flat on the union of the chosen coordinate hypersurfaces, division by any fixed monomial in those coordinates and their conjugates extends by 0 smoothly and flat on that union; Burgos94 Proposition 4.1, p.75, line 379."
+            },
+            {
+              "name": "TauCeti.MotivicRealization.flatLogPowers",
+              "role": "local resolution input",
+              "statement": "Under the same hypotheses, multiplication by any fixed nonnegative integral powers of log|zᵢ|², with or without the fixed coordinate-monomial denominator, extends by 0 smoothly and flat on that union; Burgos94 Proposition 4.1, p.75, line 379."
+            }
+          ],
           "tests": [
             {
               "name": "open_torus_weight",
               "kind": "computation",
-              "statement": "For X=𝔾_m, H¹ has type (1,1) and weight 2; dz/z has residue-filtration index 1, and 1+cohomological degree 1=2. Calling that weight 1 would be wrong."
+              "statement": "For X=𝔾_m⊂ℙ¹, the trivial extension has residues (0,0), so §C5.6 gives H¹=ℂ·dz/z with positive-loop period 2πi. It has type (1,1) and weight 2; dz/z has residue-filtration index 1, and 1+cohomological degree 1=2. Calling that weight 1 would be wrong."
             },
             {
               "name": "boundary_refinement",
@@ -503,6 +655,21 @@
               "name": "proper_point",
               "kind": "degenerate",
               "statement": "For a point the only Hodge component is H⁰,⁰=ℂ and the weight is 0; for ∅ all components are 0."
+            },
+            {
+              "name": "check_3_2_4",
+              "kind": "computation",
+              "statement": "On ℂ set f(z)=exp(−1/|z|²), f(0)=0. Every derivative at 0 of f/z² and f log|z|² is 0; at z=1 the first value is e⁻¹. Thus flat extension is smooth without being the zero function."
+            },
+            {
+              "name": "check_3_2_5",
+              "kind": "computation",
+              "statement": "With f(z)=1, 1/z has a pole and log|z|² diverges at 0; the flatness hypothesis cannot be omitted. With all exponents 0, the extension is f itself and has its original values."
+            },
+            {
+              "name": "check_3_2_6",
+              "kind": "computation",
+              "statement": "On ℂ², f(z,w)=exp(−1/|zw|²) off zw=0 and 0 on the axes is flat on their union. The extension of f log|z|²/(zw̄) has zero jets on both axes and value −(e⁻¹ᐟ⁴ log 4)/2 at (z,w)=(−2,1), excluding a changed denominator or an extension by an unrelated value."
             }
           ]
         },
@@ -525,7 +692,8 @@
             "mathlib:CochainComplex.mappingCone.inl_v_d",
             "mathlib:CochainComplex.mappingCone.inr_f_d",
             "target:3.1",
-            "tauceti:TauCeti.gradedCochainComplex"
+            "tauceti:TauCeti.gradedCochainComplex",
+            "roadmap:ComplexKahlerGeometry K1–K2"
           ],
           "api": [
             {
@@ -558,7 +726,7 @@
             {
               "name": "deligne_top",
               "kind": "computation",
-              "statement": "For p=1 and x=|z|², ∂∂̄x=dz∧dż, hence d_Dx=−2dz∧dż; replacing the top operator by d would have degree and sign wrong."
+              "statement": "For p=1 and x=|z|², ∂∂̄x=dz∧dz̄, hence d_Dx=−2dz∧dz̄; replacing the top operator by d would have degree and sign wrong."
             },
             {
               "name": "contraction_zero",
@@ -571,9 +739,9 @@
           "id": "3.4",
           "kind": "construction",
           "name": "TauCeti.MotivicRealization.logarithmicDeligneRealization",
-          "statement": "For every smooth quasi-projective complex X and integer p, define D_log(X,p) by applying 3.3 to the sheafified filtered colimit of the logarithmic algebras of all smooth proper SNC compactifications. Use a universe-small skeleton. It represents fib(RΓ(X,ℝ(p))⊕RΓ(W,FᵖΩ_W(log D))→RΓ(X,ℂ)), with arrow filtered comparison minus real inclusion. Each fixed compactification maps by a quasi-isomorphism to this object. Refinement comparisons compose, their common-refinement identifications satisfy the three-choice cocycle, and algebraic pullbacks, restrictions and finite disjoint unions are independent of the auxiliary compactifications.",
+          "statement": "For every smooth separated finite-type complex X and integer p, define D_log(X,p) by applying 3.3 to the sheafified filtered colimit of the logarithmic algebras of all smooth proper SNC compactifications. Use a universe-small skeleton. It represents fib(RΓ(X,ℝ(p))⊕RΓ(W,FᵖΩ_W(log D))→RΓ(X,ℂ)), with arrow filtered comparison minus real inclusion. Each fixed compactification maps by a quasi-isomorphism to this object. Refinement comparisons compose, their common-refinement identifications satisfy the three-choice cocycle, and algebraic pullbacks, restrictions and finite disjoint unions are independent of the auxiliary compactifications.",
           "hypotheses": [
-            "X is smooth quasi-projective finite type over ℂ",
+            "X is smooth separated finite-type finite type over ℂ",
             "p∈ℤ",
             "Compacting pairs are smooth proper with reduced SNC boundary",
             "Universe-small skeletons are chosen with enlargement equivalences"
@@ -598,7 +766,7 @@
             {
               "name": "TauCeti.MotivicRealization.logarithmicDelignePullback",
               "role": "basic API",
-              "statement": "Every morphism f:X→Y of smooth quasi-projective complex schemes induces f*:D_log(Y,p)→D_log(X,p), with coherent identity/composition and restriction maps in the enhanced derived category; on fixed pairs it is the actual logarithmic pullback."
+              "statement": "Every morphism f:X→Y of smooth separated finite-type complex schemes induces f*:D_log(Y,p)→D_log(X,p), with coherent identity/composition and restriction maps in the enhanced derived category; on fixed pairs it is the actual logarithmic pullback."
             },
             {
               "name": "TauCeti.MotivicRealization.logarithmicDeligneDescent",
@@ -639,7 +807,7 @@
           "id": "4.1",
           "kind": "construction",
           "name": "TauCeti.MotivicRealization.deligneProduct",
-          "statement": "For every real Dolbeault algebra A as in 3.3, equip ⊕ₚ∈ℤD(A,p) with the following bilinear product. Put l=a+b, r=p+q, πᵣ(z)=(z+(−1)ʳż)/2 and rₚ(x)=2πₚ(Fᵖdx). For x∈Dᵃ(A,p), y∈Dᵇ(A,q), if a<2p and b<2q use (−1)ᵃrₚ(x)∧y+x∧r_q(y). If a<2p, b≥2q and l<2r, use Fˡ⁻ʳ,ˡ⁻ʳ(x∧y); if instead l≥2r, use Fʳ,ʳ(rₚ(x)∧y)+2πᵣ∂(x∧y)ʳ⁻¹,ˡ⁻ʳ. If both degrees are at or above their cutoffs, use x∧y. Define the remaining case by graded symmetry. On odd critical degrees this is x•y=−∂x∧y+∂̄x∧y+x∧∂y−x∧∂̄y. Apply the construction to D_log and obtain external products by the two projections.",
+          "statement": "For every real Dolbeault algebra A as in 3.3, equip ⊕ₚ∈ℤD(A,p) with the following bilinear product. Put l=a+b, r=p+q, πᵣ(z)=(z+(−1)ʳz̄)/2 and rₚ(x)=2πₚ(Fᵖdx). For x∈Dᵃ(A,p), y∈Dᵇ(A,q), if a<2p and b<2q use (−1)ᵃrₚ(x)∧y+x∧r_q(y). If a<2p, b≥2q and l<2r, use Fˡ⁻ʳ,ˡ⁻ʳ(x∧y); if instead l≥2r, use Fʳ,ʳ(rₚ(x)∧y)+2πᵣ∂(x∧y)ʳ⁻¹,ˡ⁻ʳ. If both degrees are at or above their cutoffs, use x∧y. Define the remaining case by graded symmetry. On odd critical degrees this is x•y=−∂x∧y+∂̄x∧y+x∧∂y−x∧∂̄y. Apply the construction to D_log and obtain external products by the two projections.",
           "hypotheses": [
             "A is a real, bounded-below Dolbeault algebra with associative graded-commutative wedge",
             "a,b,p,q∈ℤ",
@@ -653,7 +821,8 @@
             "target:3.3",
             "target:3.4",
             "roadmap:DifferentialGeometry Layers 0–1",
-            "roadmap:EnhancedDerivedSheaves §0.3"
+            "roadmap:EnhancedDerivedSheaves §0.3",
+            "roadmap:ComplexKahlerGeometry K1–K2"
           ],
           "api": [
             {
@@ -676,7 +845,7 @@
             {
               "name": "two_units_product",
               "kind": "computation",
-              "statement": "For p=q=1 on 𝔾_m, x=log 2 and y=log|t| give x•y=(log 2)/2·(dt/t−dż/ż)=i log 2 darg t; y•x is its negative."
+              "statement": "For p=q=1 on 𝔾_m, x=log 2 and y=log|t| give x•y=(log 2)/2·(dt/t−dt̄/t̄)=i log 2 darg t; y•x is its negative."
             },
             {
               "name": "constant_unit_product",
@@ -686,7 +855,7 @@
             {
               "name": "critical_nonclosed",
               "kind": "computation",
-              "statement": "On ℂ, x=|z|² and y=1 in weight one have x•y=−ż dz+z dż and d_D(x•y)=−2dz∧dż, equal to d_Dx•1. Replacing the critical operator by the ordinary d fails."
+              "statement": "On ℂ, x=|z|² and y=1 in weight one have x•y=−z̄ dz+z dz̄ and d_D(x•y)=−2dz∧dz̄, equal to d_Dx•1. Replacing the critical operator by the ordinary d fails."
             }
           ]
         },
@@ -694,11 +863,11 @@
           "id": "4.2",
           "kind": "theorem",
           "name": "TauCeti.MotivicRealization.deligneProductCoherence",
-          "statement": "For the product of 4.1 construct a natural degree −1 trilinear homotopy h_a satisfying d_Dh_a+h_ad=((x•y)•z)−x•(y•z), with tensor differential on the input. It vanishes on triples of closed even critical-degree elements. All refinement, restriction and algebraic pullback comparisons preserve this product in the enhanced derived category, hence Deligne cohomology is an associative graded-commutative unital ring graded by degree and twist, independent of compactification.",
+          "statement": "For the product of 4.1 construct a natural degree −1 trilinear homotopy h_a satisfying d_Dh_a+h_ad=((x•y)•z)−x•(y•z), with tensor differential on the input. It vanishes on all triples x∈D²ᵖ(A,p), y∈D²ᑫ(A,q), z∈D²ʳ(A,r), without a closedness hypothesis. All refinement, restriction and algebraic pullback comparisons preserve this product in the enhanced derived category, hence Deligne cohomology is an associative graded-commutative unital ring graded by degree and twist, independent of compactification.",
           "hypotheses": [
             "A or X is as in 4.1",
             "Homogeneous degrees and all twists are integers",
-            "For vanishing of h_a, x,y,z are closed of degrees 2p,2q,2r respectively"
+            "For vanishing of h_a, x,y,z have degrees 2p,2q,2r respectively; closedness is not required"
           ],
           "locator": {
             "source": "BKK",
@@ -713,7 +882,7 @@
             {
               "name": "associator_even",
               "kind": "computation",
-              "statement": "For closed (p,p),(q,q),(r,r)-forms the two bracketings both equal x∧y∧z, while h_a=0 and dh_a+h_ad=0."
+              "statement": "For even critical-degree forms both bracketings equal x∧y∧z and h_a=0. In weight zero on ℂ, take x=Re z and constants 2,3: both bracketings are 6 Re z, with value 6 at z=1, although d_Dx=dx≠0. The homotopy identity gives dh_a+h_ad=0 here as well."
             },
             {
               "name": "associator_point",
@@ -737,9 +906,9 @@
           "id": "5.1",
           "kind": "definition",
           "name": "TauCeti.MotivicRealization.supportedLogDeligne",
-          "statement": "For every smooth quasi-projective complex X, closed subset Z⊂X and integer p, define D_log,Z(X,p)=fib(D_log(X,p)→D_log(X∖Z,p)). In cochain degree a its pair model is D_logᵃ(X,p)⊕D_logᵃ⁻¹(X∖Z,p), with d(ω,g)=(d_Dω,res(ω)−d_Dg). Give its explicit isomorphism to Mathlib’s mapping cone shifted by −1, its forget-support projection and its restriction and support-enlargement maps. Its cohomology is denoted H_D,Zᵃ(X,ℝ(p)).",
+          "statement": "For every smooth separated finite-type complex X, closed subset Z⊂X and integer p, define D_log,Z(X,p)=fib(D_log(X,p)→D_log(X∖Z,p)). In cochain degree a its pair model is D_logᵃ(X,p)⊕D_logᵃ⁻¹(X∖Z,p), with d(ω,g)=(d_Dω,res(ω)−d_Dg). Give its explicit isomorphism to Mathlib’s mapping cone shifted by −1, its forget-support projection and its restriction and support-enlargement maps. Its cohomology is denoted H_D,Zᵃ(X,ℝ(p)).",
           "hypotheses": [
-            "X is smooth quasi-projective over ℂ",
+            "X is smooth separated finite-type over ℂ",
             "Z is any closed subset, including empty/full and singular supports",
             "a,p∈ℤ"
           ],
@@ -798,9 +967,9 @@
           "id": "5.2",
           "kind": "theorem",
           "name": "TauCeti.MotivicRealization.supportedDeligneSemipurity",
-          "statement": "For every smooth equidimensional quasi-projective complex X, p≥0 and closed Z whose every irreducible component has codimension at least p, H_D,Zᵃ(X,ℝ(p))=0 for every integer a<2p. In degree 2p, cycle classes give a canonical isomorphism ⊕_{V⊂Z, codim_X V=p}ℝ[V]≃H_D,Z²ᵖ(X,ℝ(p)), with finite support and multiplicities. Restriction and support enlargement commute with these classes. In the normalized logarithmic form model a cocycle (ω,g) represents Σm_V[V] if and only if its current extensions satisfy −2∂∂̄[g]=[ω]−Σm_Vδ_V. Here the criterion uses the normalized currents corresponding to these forms, and is not a new current carrier or a product of arbitrary currents. For this even-degree representative criterion, in complex dimension d the form-current pairing is [α](η)=(2πi)⁻ᵈ∫_X η∧α and δ_V(η)=(2πi)⁻⁽ᵈ⁻ᵖ⁾∫_{V_reg}η. These are scalar multiples of the supplied native form and cycle currents in the indicated degrees.",
+          "statement": "For every smooth equidimensional separated finite-type complex X, p≥0 and closed Z whose every irreducible component has codimension at least p, H_D,Zᵃ(X,ℝ(p))=0 for every integer a<2p. In degree 2p, cycle classes give a canonical isomorphism ⊕_{V⊂Z, codim_X V=p}ℝ[V]≃H_D,Z²ᵖ(X,ℝ(p)), with finite support and multiplicities. Restriction and support enlargement commute with these classes. In the normalized logarithmic form model a cocycle (ω,g) represents Σm_V[V] if and only if its current extensions satisfy −2∂∂̄[g]=[ω]−Σm_Vδ_V. Here the criterion uses the normalized currents corresponding to these forms, and is not a new current carrier or a product of arbitrary currents. For this even-degree representative criterion, in complex dimension d the form-current pairing is [α](η)=(2πi)⁻ᵈ∫_X η∧α and δ_V(η)=(2πi)⁻⁽ᵈ⁻ᵖ⁾∫_{V_reg}η. These are scalar multiples of the supplied native form and cycle currents in the indicated degrees.",
           "hypotheses": [
-            "X is smooth equidimensional quasi-projective of finite type over ℂ",
+            "X is smooth equidimensional separated of finite type over ℂ",
             "p≥0 and codim_X Z≥p componentwise",
             "a∈ℤ",
             "The representative criterion assumes (ω,g) is a support cocycle with the prescribed logarithmic extension"
@@ -814,7 +983,8 @@
             "target:3.2",
             "roadmap:ComplexComparisonPartII §§C5.4, C6.0",
             "roadmap:DifferentialGeometry Layers 5–9",
-            "roadmap:AlgebraicTopology Stages 2–3, 6.1–6.4"
+            "roadmap:AlgebraicTopology Stages 2–3, 6.1–6.4",
+            "roadmap:ComplexKahlerGeometry K1–K2"
           ],
           "api": [
             {
@@ -914,7 +1084,7 @@
             {
               "name": "support_wrong_truncation",
               "kind": "non-example",
-              "statement": "For p=1, x=|z|² has d_Dx=−2dz∧dż≠0. A degree-2 form with nonzero d cannot be admitted as a cycle at the top of τ≤₂; brutal truncation would introduce an extra top cohomology class."
+              "statement": "On ℂ² with p=1, ω=Re(z₁) dz₂∧dz̄₂ belongs to D²(A,1), but d_Dω=(dz₁+dz̄₁)∧dz₂∧dz̄₂/2 is nonzero: its value on (∂ₓ₁,∂ₓ₂,∂ᵧ₂) is −2i. Good truncation excludes ω from degree 2; brutal truncation would make it an extra top cocycle."
             }
           ]
         },
@@ -1039,7 +1209,13 @@
             "target:1.4",
             "roadmap:EnhancedDerivedSheaves §§0.1–0.4, E0.6"
           ],
-          "api": [],
+          "api": [
+            {
+              "name": "TauCeti.MotivicRealization.homotopyFiberMap",
+              "role": "support coherence",
+              "statement": "For cochain maps f:A→B, f′:A′→B′, r:A→A′, r′:B→B′ and h:Aᵃ→B′ᵃ⁻¹ with f′r−r′f=dh+hd, the pair-fiber map for d(a,b)=(da,fa−db) is (a,b)↦(ra,r′b+ha)."
+            }
+          ],
           "tests": [
             {
               "name": "regulator_fiber_extremes",
@@ -1049,7 +1225,7 @@
             {
               "name": "homotopy_fiber_formula",
               "kind": "computation",
-              "statement": "For h=0 the pair map is (ra,sb). In general its second-coordinate differential defect is (f′r−r′f−dh−hd)a=0; using +ha instead would give 2(dh+hd)a."
+              "statement": "For h=0 the pair map is (ra,r′b). With +ha its second-coordinate differential defect is (f′r−r′f−dh−hd)a=0; using −ha would give 2(dh+hd)a. For A=A′=ℤ[0], B=0, B′=(ℤ→ℤ) in degrees −1,0 with differential 1, r=f′=h=1, the image of 1 is (1,1) and D′(1,1)=(0,0); the wrong image (1,−1) has D′=(0,2)."
             },
             {
               "name": "unit_boundary_sign",
@@ -1128,7 +1304,7 @@
             "roadmap:SchemeAndStackFoundations §§5.3–5.8",
             "roadmap:EnhancedDerivedSheaves §E2.6",
             "mathlib:CategoryTheory.Abelian.DoldKan.equivalence",
-            "roadmap:AlgebraicTopology Stage 8, item 1"
+            "roadmap:AlgebraicTopology Stage 8, item 2"
           ],
           "api": [
             {
@@ -1157,6 +1333,16 @@
               "name": "beilinson_empty",
               "kind": "degenerate",
               "statement": "The zero K-class and the K-groups of ∅ map to 0; the trivial line maps to 1, so the entire character is not the zero map."
+            },
+            {
+              "name": "check_7_1_4",
+              "kind": "computation",
+              "statement": "For a number-field embedding and p=j≥1, the point quotient ℂ/ℝ(p) identifies with ℝ(p−1) by πₚ₋₁(z)=(z+(−1)ᵖ⁻¹z̄)/2, the same projection used for the number-field Beilinson map. At z=3+4i, p=1,2,3 give 3,4i,3. Adding an element of ℝ(p) changes each projected value by 0; the opposite parity would not descend to the quotient."
+            },
+            {
+              "name": "abelian_moore_comparison",
+              "kind": "negative-control",
+              "statement": "For the constant simplicial abelian group ℤ, π₀=H₀=ℤ and all positive homotopy and homology groups are 0. The constant simplicial group S₃ instead has nonabelian π₀=S₃; the abelian Moore-chain comparison does not apply to it."
             }
           ]
         },
@@ -1178,7 +1364,9 @@
           "prerequisites": [
             "target:2.4",
             "target:6.3",
-            "target:7.1"
+            "target:7.1",
+            "target:2.0b",
+            "target:2.2"
           ],
           "api": [],
           "tests": [
@@ -1243,7 +1431,7 @@
           "id": "7.4",
           "kind": "example",
           "name": "TauCeti.MotivicRealization.regulatorNormalizationWitnesses",
-          "statement": "For every u∈ℂ×, under H_D¹(point,ℝ(1))=ℂ/ℝ(1)≃ℝ with quotient identified by real part, the K₁ exponential class and its shared motivic unit both have regulator log|u|. Hence the value on uv is log|u|+log|v|. On a smooth complex curve a nowhere-zero regular unit f gives the Dolbeault representative log|f|; for two units f,g their cup representative is i(log|f| darg g−log|g| darg f), where darg f=(df/f−d(conj f)/(conj f))/(2i). For a rational function with divisor, the supported Green representative instead is −log|f|. On ℙ¹ the Deligne cycle class of c₁O(a) is a times the positive generator of normalized integral 1.",
+          "statement": "For every u∈ℂ×, under H_D¹(point,ℝ(1))=ℂ/ℝ(1)≃ℝ with quotient identified by real part, the K₁ exponential class and its shared motivic unit both have regulator log|u|. Hence the value on uv is log|u|+log|v|. On a smooth complex curve a nowhere-zero regular unit f gives the Dolbeault representative log|f|; for two units f,g their cup representative is i(log|f| darg g−log|g| darg f), where darg f=(df/f−df̄/f̄)/(2i). For a rational function with divisor, the supported Green representative instead is −log|f|. On ℙ¹ the Deligne cycle class of c₁O(a) is a times the positive generator of normalized integral 1.",
           "hypotheses": [
             "u,v∈ℂ×, so neither is 0",
             "The curve is smooth; f,g are invertible regular functions on the open where the formula is used",
@@ -1309,17 +1497,19 @@
       "roadmap": "KTheoryFiniteLocalFields",
       "sections": [
         "§3.0a (motivicCycles)",
-        "§3.0a (motivicToK)"
+        "§3.0a (motivicToK)",
+        "§6.10 (diagonalChernMilnor)"
       ],
-      "what": "Integral dimension-graded simplicial BlochCycle and HigherChow, coefficient complexes, arbitrary-field localization, simultaneous good-position moving, graph pullbacks, integral products/transfers, nilpotent invariance and componentwise grading. The degree-one simplex boundary is [fiber at 1]−[fiber at 0]. The common Milnor diagonal, its signs and the existing motivic-to-K tower with layers, convergence and localization are also inputs; neither norm-residue nor étale descent is a target here."
+      "what": "Integral dimension-graded simplicial BlochCycle and HigherChow, coefficient complexes, arbitrary-field localization, simultaneous good-position moving, graph pullbacks, integral products/transfers, nilpotent invariance and componentwise grading. The degree-one simplex boundary is [fiber at 1]−[fiber at 0]. The common Milnor diagonal, its signs and the existing motivic-to-K tower with layers, convergence and localization are also inputs. Section 6.10 supplies the integral field-diagonal Chern map, with which §2.0b agrees. Neither norm-residue nor étale descent is a target here."
     },
     {
       "roadmap": "MotivesAndAlgebraicCycles",
       "sections": [
         "§§4.7–4.8",
-        "§§4.17–4.18"
+        "§§4.17–4.18",
+        "§4.8a"
       ],
-      "what": "The adapters to the same shared higher-cycle complexes, and the perfect-field motive/higher-Chow and representability comparisons, including their resolution hypotheses where used. These express the source of §6.3 motivically; they impose no perfectness condition on the arbitrary-field cycle comparison or Chern theorem."
+      "what": "The adapters to the same shared higher-cycle complexes, and the perfect-field motive/higher-Chow and representability comparisons, including their resolution hypotheses where used. These express the source of §6.3 motivically; they impose no perfectness condition on the arbitrary-field cycle comparison or Chern theorem. Section 4.8a supplies specialization of relative cycles for §2.0b."
     },
     {
       "roadmap": "SchemeAndStackFoundations",
@@ -1351,10 +1541,10 @@
       "sections": [
         "§§C−1.1, C−1.4",
         "§C5.1",
-        "§§C5.3–C5.5",
+        "§§C5.3–C5.6",
         "§C6.0"
       ],
-      "what": "Analytification and adapted holomorphic SNC charts, geometric de Rham–Betti comparison, projective and arbitrary smooth-proper algebraic Hodge theory (properPureHodge and relativeHodgeBundles in §C5.3), LF-continuous current calculus and multiplicity-bearing integration classes, Poincaré–Lelong and geometric first-Chern normalization, holomorphic logarithmic forms, and compatible algebraic stratification. Section C5.7 supplies a curve logarithmic comparison; the all-dimensional smooth-open filtered theorem is §3.2 here."
+      "what": "Analytification and adapted holomorphic SNC charts, geometric de Rham–Betti comparison, projective and arbitrary smooth-proper algebraic Hodge theory (properPureHodge and relativeHodgeBundles in §C5.3), LF-continuous current calculus and multiplicity-bearing integration classes, Poincaré–Lelong and geometric first-Chern normalization, holomorphic logarithmic forms, and compatible algebraic stratification. Section C5.6 (regularSingularDeRhamComparison, trivial connection, Ē=O_W, all residues 0) supplies the all-dimensional unfiltered logarithmic comparison; §3.2 adds its mixed-Hodge filtrations and smooth Burgos model."
     },
     {
       "roadmap": "EnhancedDerivedSheaves",
@@ -1372,42 +1562,50 @@
         "Layers 0–1",
         "Layers 5–9"
       ],
-      "what": "Native forms, pullback, wedge and exterior derivative, complexified for Dolbeault forms; integration with the complex orientation, Stokes, de Rham comparison and smooth manifold duality. The additional smooth extension/flat-function input for §3.2 is the explicit gap:smooth-whitney-extension contract below."
+      "what": "Native forms, pullback, wedge, exterior derivative, integration, Stokes, real de Rham comparison and smooth manifold duality. The extra closed-jet inputs for §3.2 are gap:smooth-whitney-extension and gap:flat-ideal-regular-situation below."
+    },
+    {
+      "roadmap": "ComplexKahlerGeometry",
+      "sections": [
+        "K1",
+        "K2"
+      ],
+      "what": "Type decomposition, conjugation and transported complex orientation on the shared carrier; Dolbeault operators, bidegrees, squares zero, anticommutation, Leibniz and holomorphic-pullback naturality on finite-dimensional Hausdorff second-countable complex manifolds."
     },
     {
       "roadmap": "AlgebraicTopology",
       "sections": [
         "Stages 2–3",
         "Stage 6, items 1–4",
-        "Stage 8, item 1"
+        "Stage 8, item 2"
       ],
-      "what": "Relative homology/cohomology, excision, products and local manifold duality used in the support calculation; the simplicial-group Kan and Moore-homotopy comparison πₙ(G)=Hₙ(NG), including components, used with native Dold–Kan in §7.1."
+      "what": "Relative homology/cohomology, excision, products and local manifold duality used in the support calculation; the simplicial-group Kan theorem and, for simplicial abelian groups, the Moore-homotopy comparison πₙ(G)=Hₙ(NG), including components, used with native Dold–Kan in §7.1."
     }
   ],
   "consumers": [
     {
       "roadmap": "Polylogarithms",
-      "what": "§5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. Its requested Layer 4 / §§9.1,12.2 refer respectively to the contracts delivered here in Layers 1, 2 and 6–7. It owns all explicit Wang/Goncharov forms, normalized-current dictionaries, concrete support-cone adapters and their comparison homotopies."
+      "what": "§5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. The shared Aₚ, Aₚ,S, Hₚ, logarithmic Green-current identity and normalized even-degree pairing move down to §§5.2–5.3 here. Polylogarithms §5.2 retains D_AH, β, its full current dictionary and concrete comparison cones; §5.3 retains its Green forms. Explicit Wang/Goncharov forms and their comparison homotopies remain its direction."
+    },
+    {
+      "roadmap": "ColemanIntegration",
+      "what": "§§L3.Fa.1–L3.Fa.2 import §2.0a’s general supported cube construction; its arithmetic hypotheses, special-unit localizations and de Jeu symbols remain there. Its Beilinson map reg_∞ in §L3.Fc.1 is the specialization of §7.1 to K₂ₚ₋₁(ℂ), transported through ℂ/ℝ(p)≃ℝ(p−1) by πₚ₋₁. It consumes §§7.1 and 7.4 for this normalization; the syntomic map and regulator determinants remain there."
     },
     {
       "roadmap": "BorelRegulators",
-      "what": "At number-field points consumes §§2.2, 6.1 and 7.2–7.4 for comparison with the universal realization; number-field embedding spaces, Borel class, lattice/covolume and special-value theorems are its own arithmetic direction."
+      "what": "Number-field applications use §§2.2, 6.1 and 7.2–7.4 for comparison with the universal realization; embedding spaces, Borel classes, lattice/covolume and special-value theorems lie in that arithmetic direction."
     },
     {
       "roadmap": "PeriodsAndSpecialValues",
-      "what": "PS.3.1–PS.3.2a use the motivic/Deligne character and its fixed Tate normalization; PS.9’s explicit period applications use them through their motivic and explicit-cycle suppliers. No special-value conjecture is asserted here."
+      "what": "The number-field Beilinson map specified in PS.3.2a through ℂ/ℝ(j), with projection (z+(−1)ʲ⁻¹z̄)/2, is the specialization of §7.1 at its number-field embeddings and must import §§7.1 and 7.4 for this map. Its construction is not an existing use of this roadmap’s motivic character. Its Borel comparison, determinant factors and special-value statements remain arithmetic targets there."
     },
     {
       "roadmap": "KatoEulerSystems",
-      "what": "§3.4 uses §§2.4 and 7.2–7.4 to identify the unit-symbol archimedean regulator on smooth projective curves, retaining its own modular units and special-value formula."
+      "what": "Its requested ch₂,₂=−c₂,₂ convention is §2.4 here; the smooth-projective-curve archimedean comparison uses §§7.2–7.4. Its modular units and special-value formulas are separate arithmetic applications."
     },
     {
-      "roadmap": "EllipticRegulators",
-      "what": "Receives the universal class and product normalization of §§6.1–7.4 for the cycles supplied by EllipticKTheory Layer 7. EllipticKTheory itself supplies classes, not the regulator comparison."
-    },
-    {
-      "roadmap": "HodgeStructuresPartIII",
-      "what": "A geometric extension can import §3.2’s smooth-open filtered comparison and §3.4’s refinement calculus. Singular-variety hyperresolutions and their broader mixed-Hodge realization are a distinct extension of Completed/HodgeStructures."
+      "roadmap": "ZagierConjecturePolylogarithms",
+      "what": "The requested M.8 motivic character and number-field Deligne normalization are §§2.1–2.2, 7.1 and 7.4 here; they supply the character and embeddingwise normalization used by its cycle-period comparisons."
     },
     {
       "roadmap": "MixedHodgeModulesAndIrregularHodgeTheory",
@@ -1417,14 +1615,25 @@
   "gaps": [
     {
       "slug": "smooth-whitney-extension",
-      "title": "Whitney jets, relative Borel extension and flat-function calculus",
+      "title": "Smooth Whitney and relative Borel extension",
       "neededBy": [
         "3.2"
       ],
-      "detail": "The proof of Burgos94 Theorem 2.1 uses the general smooth extension and flat-function theory of Burgos94 Section 3, Theorems 3.1 and 3.3–3.5, pp.71–74, lines 269–360, followed by its flat logarithmic calculations in Sections 4–5. For U open in a finite-dimensional real vector space, A relatively closed and E finite-dimensional, the missing theorem extends every E-valued infinite Whitney jet on A to a smooth function on U. Whitney compatibility means that for every m and compact K in A, every derivative-index α with |α|≤m has Taylor remainder o(norm(y−x)^(m−|α|)) uniformly on K. Include restriction, localization, finite-dimensional coefficient maps and real/complex agreement; relative Borel extension with smooth transverse parameters; and flat ideals I∞(A), including I∞(A∪B)=I∞(A)∩I∞(B) and I∞(A∩B)=I∞(A)+I∞(B) for closed real analytic A,B. Division of a function flat on a coordinate zero set by any fixed coordinate monomial, and multiplication by fixed logarithmic powers, must extend smoothly and remain flat. Native Whitney embedding and chart derivatives do not supply these extension results. The existing DifferentialGeometry roadmap stops at forms, smooth approximation, manifold de Rham theory and its other stated manifold targets; it has no closed-jet extension contract.",
-      "needs": "Supply general smooth Whitney extension, relative Borel extension with parameters, and the flat-ideal and coordinate-division calculus used to prove the smooth logarithmic Dolbeault comparison.",
       "supplier": "DifferentialGeometry",
-      "section": "Part II, §1: Whitney jets and flat functions (successor contract to be written)"
+      "section": "Part II: Whitney jets and flat functions",
+      "needs": "For U⊂ℝⁿ open, A⊂U relatively closed and E a finite-dimensional real vector space, every infinite-order E-valued Whitney jet on A is the jet of a smooth U→E, including relative Borel extension along a coordinate hyperplane with smooth transverse parameters.",
+      "detail": "Whitney compatibility is uniform Taylor remainder o(‖y−x‖^(m−|α|)) on compact subsets of A for every m≥|α|; complex coefficients are componentwise real. Burgos94 Theorems 3.1 and 3.3, pp.72–73, lines 316 and 337. The local coordinate-division and log-power estimates are targets of §3.2 here."
+    },
+    {
+      "slug": "flat-ideal-regular-situation",
+      "title": "Flat ideals of real-analytic closed sets",
+      "neededBy": [
+        "3.2"
+      ],
+      "supplier": "DifferentialGeometry",
+      "section": "Part II: Whitney jets and flat functions",
+      "needs": "For U⊂ℝⁿ open and relatively closed real-analytic subsets A,B⊂U, the scalar smooth flat ideals satisfy I∞(A∩B)=I∞(A)+I∞(B).",
+      "detail": "I∞(A) consists of smooth scalar functions all of whose derivatives vanish on A; complex coefficients satisfy the componentwise identity. Burgos94 Theorems 3.4–3.5, pp.73–74, lines 345 and 358. No assertion for arbitrary closed pairs is requested."
     }
   ]
 }
