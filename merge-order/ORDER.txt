@@ -194,3 +194,4 @@ PolynomialGaloisGroupsPartII
 ArithmeticDirichletSeriesPartII
 ClassicalGroupsPartII
 MultiquadraticPartII
+AlgebraicModularFormsAndSerreWeightsPartII
