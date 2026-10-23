@@ -167,6 +167,7 @@ PadicHodgeRegulators
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+ArithmeticKTheoryPartII
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
 GrossZagierAndArithmeticHeights
