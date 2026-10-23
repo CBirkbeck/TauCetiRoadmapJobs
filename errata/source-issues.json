@@ -9153,10 +9153,42 @@
     "fix report for TauCetiRoadmap #858 (N30)"
    ],
    "batch": "out-reports-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Szego",
+   "locator": "§4.62(1), after (4.62.2), printed p. 77 (Szego line 3382; Szego line 3393)",
+   "says": "the analytic remainder has M₂(0) ≠ 0 for every admissible parameter, including α=0",
+   "should": "M₂(0) may vanish at α=0: continuity in β and values (log 2)/2, (log 2−1)/2 at β=0,1 imply a zero between them",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "LaguerreJacobi",
+   "job": "ERRATA-LaguerreJacobi",
+   "issue": 848,
+   "head": "5aad605",
+   "reported": "2026-10-23",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/848#issuecomment-6364592435"
+  },
+  {
+   "kind": "misprint",
+   "source": "Szego",
+   "locator": "§4.82(1), after (4.82.2), printed p. 89 (Szego line 3966)",
+   "says": "the λ=1/2 specialization is the sum of the two Dirichlet–Mehler expressions (4.8.6) and (4.8.7)",
+   "should": "their arithmetic mean: (4.82.2) assigns 1/π to each integral, whereas each earlier formula assigns 2/π",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "LaguerreJacobi",
+   "job": "ERRATA-LaguerreJacobi",
+   "issue": 848,
+   "head": "5aad605",
+   "reported": "2026-10-23",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/848#issuecomment-6364592435"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T12:25:05Z",
+ "updated": "2026-10-23T12:26:47Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
@@ -9170,6 +9202,19 @@
     "gap": 1
    },
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/847#issuecomment-6364282929"
+  },
+  {
+   "job": "ERRATA-LaguerreJacobi",
+   "roadmap": "LaguerreJacobi",
+   "head": "5aad605",
+   "date": "2026-10-23",
+   "issues": 2,
+   "counts": {
+    "misprint": 1,
+    "error": 1,
+    "gap": 0
+   },
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/848#issuecomment-6364592435"
   }
  ]
 }
