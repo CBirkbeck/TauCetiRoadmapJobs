@@ -5,6 +5,7 @@ GeneralAlgebraicKTheory
 ResolutionOfSingularitiesCharacteristicZero
 DerivedModuleAlgebra
 AdicSpacesPartII
+AdicSpacesPartIIPartII
 AdicSpacesPartIII
 AdicEtaleGeometry
 PerfectoidSpaces
