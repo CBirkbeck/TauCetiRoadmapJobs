@@ -6235,10 +6235,915 @@
     "ChatGPT review of TauCetiRoadmap #999 (N2)"
    ],
    "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Wu, lecture notes on heights (diop-08)",
+   "locator": "Lemma 2.5, p. 4",
+   "says": "the height is independent of the chosen coordinates",
+   "should": "independent of the number field chosen to contain the point, which is what the proof establishes",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1000 (N4)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya, A p-adic local monodromy theorem (Ann. of Math. 2004)",
+   "locator": "the Bessel-equation example",
+   "says": "the relevant Artin–Schreier cover is z^p − z = y, which already splits over k((y))",
+   "should": "z^p − z = 1/y",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya, Slope filtrations revisited (math/0504204v4)",
+   "locator": "Definition 4.4.1",
+   "says": "the rank is at most n",
+   "should": "positive and at most n, since the argument needs nonzero rank",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Zureick-Brown, arXiv:1204.5246v4",
+   "locator": "the proof of Theorem 1.1(i), Step 3, pp. 22–24",
+   "says": "finite flat maps are locally monogenic, which fails for a rank-three square-zero algebra",
+   "should": "avoid that claim, reducing instead to monogenic generators together with finite normalizations",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (N3)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kedlaya–Xiao, Differential modules on p-adic polyannuli",
+   "locator": "Theorems 1.4.21 and 1.5.6",
+   "says": "a value-group membership that lacks a normalizing factor, refuted by a rank-one module over the Gauss field with p = 3",
+   "should": "(r/ω^{1/p^h})^dim ∈ |K^×|^{1/p^h}",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (N4)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya, overview of p-adic local monodromy (math/0501361)",
+   "locator": "the proof of Theorem 5.4.10",
+   "says": "a subgroup containing H^i",
+   "should": "a subgroup containing H^{i+}",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (N4)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Kedlaya, Local and global structure of connections on nonarchimedean curves (Compositio 2015)",
+   "locator": "§4.6, the nonmonomial induction",
+   "says": "the induction goes through as printed, without the fibre-functor and filtration adjustments",
+   "should": "as repaired in the author's 2017 corrigendum, with corrected neutral fibre functor and filtration steps",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (N4)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya–Xiao, Differential modules on p-adic polyannuli (v4)",
+   "locator": "Remark 1.4.2 (with Definitions 1.2.8 and 1.4.1, pp. 7, 9–10)",
+   "says": "the intrinsic radius equals |u| times R",
+   "should": "R divided by |u|",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Abe, arXiv preprint v1",
+   "locator": "Lemma 6.1(i), p. 7",
+   "says": "one twist works on any finite-type X, but two points with Frobenius eigenvalues 1 and p admit no common twist",
+   "should": "for smooth geometrically connected X, with separate twists on separate components",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Edixhoven, Point counting after Kedlaya",
+   "locator": "the §4.3 reduction step",
+   "says": "the decomposition is unique, yet zero input has the nonzero decomposition φ = y/25, b = −Q′/50",
+   "should": "unique only after requiring the reduced b to have degree at most 2g − 1",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1002 (R2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Milne, Abelian Varieties (v2.00, 2008)",
+   "locator": "I 15.4–15.5 and 15.8, pp. 65–67",
+   "says": "the conjugation orbit of an idempotent matches the image Grassmannian without proving the orbit closed",
+   "should": "add that closedness, derived from e² = e and the fixed block traces",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1004 (R)",
+    "fix report for TauCetiRoadmap #1004 (R2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Yuan–Zhang (Ann. of Math. 187, 2018)",
+   "locator": "the sentence after Proposition 5.4, before Corollary 5.5",
+   "says": "the determinant lattice lies in ω^{−2}",
+   "should": "ω², as Theorem 4.10 forces",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (N1)",
+    "fix report for TauCetiRoadmap #1005 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Manning–Shotton",
+   "locator": "the norm-fibre argument for Theorem 6.8",
+   "says": "the norm fibres are taken over a quotient wider than the reduced-norm image, which a ℚ(√3) narrow-class example refutes",
+   "should": "use the quotient by Nrd(D^×), which equals the totally positive elements F_+^×",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Birkbeck–Heuer–Williams (2019)",
+   "locator": "Proposition 8.4",
+   "says": "the map is a Δ(N)-torsor without restriction, which fails at a CM point for N = 7",
+   "should": "a quotient-stack statement, or a torsor only over the free locus",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (N5)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Andreatta–Iovita–Pilloni",
+   "locator": "§8.1, Lemma 8.1, p. 34",
+   "says": "rigidity applies to α/ᾱ without checking that this map preserves the marking",
+   "should": "first prove marking preservation before invoking rigidity",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (N5)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Yuan–Zhang (Ann. of Math. 187, 2018)",
+   "locator": "§3.1, p. 552, the special case",
+   "says": "the reflex field F′ equals E",
+   "should": "so only when [F:ℚ] > 1, while F′ = ℚ in degree one",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (N2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Colmez–Dospinescu–Nizioł (CDN), Drinfeld-tower paper,",
+   "locator": "the strict-ball radius-n model",
+   "says": "centres are taken modulo π^n with strict radius |π|^n, an inconsistent indexing (ℚ₂, z = 2 shows it)",
+   "should": "centres modulo π^{n+1}",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Taylor, Remarks on a conjecture of Fontaine and Mazur (2002)",
+   "locator": "the choice of local tame field",
+   "says": "to take the smallest tame Galois extension with the needed property, which need not be unique (ℚ₅(√5), ℚ₅(√10))",
+   "should": "a chosen extension of minimal degree",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1005 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pilloni, GSp₄ Hida theory,",
+   "locator": "Theorem 5.1.7.1(5), p. 23",
+   "says": "the similitude exponent is −λ₁ − λ₂, conflicting with item (3) and HT(ε) = −1",
+   "should": "λ₁ + λ₂",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1006 (F1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Taylor–Yoshida, Compatibility of local and global Langlands correspondences,",
+   "locator": "the projector construction on nearby-cycle cohomology",
+   "says": "a power of an operator idempotent on graded pieces is the projector, justified only by the filtration, though Jordan blocks show it need not be idempotent",
+   "should": "use an idempotent polynomial correction such as 1 − (1 − T^D)^D, as in Caraiani's correction",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1006 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Deligne–Serre, Formes modulaires de poids 1 (1974)",
+   "locator": "Proposition 5.1 and §5.2, pp. 518–519",
+   "says": "R_f has its only pole at s = k, but a level-23 weight-one form gives another pole at s = iπ/log 23",
+   "should": "holomorphic on Re s ≥ k except for a simple pole at k",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1007 (N2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Darmon–Diamond–Taylor, Fermat's Last Theorem,",
+   "locator": "§4.1, Lemma 4.4, p. 111",
+   "says": "the oldform chain index starts at 1, omitting i = 0",
+   "should": "0 ≤ i ≤ v",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1007 (N3)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Poonen, Rational Points on Varieties (2017)",
+   "locator": "Theorem 8.4.10 and Corollary 8.4.11",
+   "says": "the positive-characteristic case without assuming properness, which an Artin–Schreier example refutes",
+   "should": "assume X proper, as in the author's errata, p. 4",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1017 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bellaïche (cited as Bellaïche09)",
+   "locator": "the proof of Lemma 2.11, pp. 17–18",
+   "says": "Ext(χ₂, χ₂)",
+   "should": "Ext(χ₂, χ₁)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1019 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bellaïche (cited as Bellaïche09)",
+   "locator": "the proof of Lemma 2.11",
+   "says": "the character ratio is nontrivial because no level-one E₂ exists, which fails for primitive E₂(χ, χ) with χ quadratic of conductor 3 and p = 5",
+   "should": "assume χ₁χ₂⁻¹ ≠ χ_cyc",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1019 (R2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bellaïche (cited as Bellaïche09)",
+   "locator": "Proposition 2.12, last sentence",
+   "says": "every refinement of an Eisenstein series is θ-critical, but the ordinary refinement of E₄ at p = 5 is not",
+   "should": "only the positive-slope refinement",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1019 (R2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Dieulefait–Pacetti, arXiv:2108.07577v2,",
+   "locator": "Theorem 1.9(3), p. 6",
+   "says": "the lift is unramified at its own coefficient prime",
+   "should": "crystalline there with Hodge–Tate weights {0, k − 1} (unramified Weil–Deligne parameter), as Paso 3 on p. 12 uses",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1020 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Balakrishnan–Dan-Cohen–Kim–Wewers, arXiv:1209.0640v4,",
+   "locator": "Remark 2.6 and Definition 2.7, p. 9",
+   "says": "the local condition at good places is the image of local integral points, which is empty at 2 for the thrice-punctured line",
+   "should": "the neutral (unramified) condition at those good places",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1021 (R2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Besser–de Jeu (Ann. Sci. ÉNS 2003)",
+   "locator": "the quotient display after Lemma 3.19, p. 886",
+   "says": "the quotient description without the special-units hypothesis of Lemma 3.19, and it fails over ℤ_(2)",
+   "should": "stated under that hypothesis",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1043 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Besser–de Jeu (Ann. Sci. ÉNS 2003)",
+   "locator": "p. 884",
+   "says": "J_k is formed from (1+I)* together with Symb_k",
+   "should": "Symb_{k−1}, since cup products raise the weight by one (p. 883)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1043 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Rodrigues Jacinto–Williams, arXiv:2309.15692,",
+   "locator": "Theorem 6.7, p. 39",
+   "says": "the left-hand interpolated value without any twist",
+   "should": "the Teichmüller-twisted value required by Definition 5.18 and Remark 5.19",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1043 (M1)",
+    "fix report for TauCetiRoadmap #1043 (M2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Česnavičius–Koshikawa, arXiv:1710.06145v3,",
+   "locator": "Proposition 5.39, p. 55",
+   "says": "the full augmentation kernel has divided powers and is topologically nilpotent, which the point case refutes (every power of T survives mod p)",
+   "should": "use the extended chart ideal I·D_m",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1044 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bhatt–Morrow–Scholze, Integral p-adic Hodge theory (Publ. IHES 2018),",
+   "locator": "§4, before Corollary 4.12",
+   "says": "a classification of rank-one valuation submodules that misses irrational cuts (value group ℚ, D = 𝔪D over ℂ_p^♭)",
+   "should": "include those cases, after which the lattice theorem still holds",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1044 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bhatt–Morrow–Scholze, Integral p-adic Hodge theory (Publ. IHES 2018),",
+   "locator": "the substitution for the power-series variable (no theorem number given)",
+   "says": "T is sent to a unit-valued element",
+   "should": "T ↦ [ε]^{1/p} − 1",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1044 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bhatt–Morrow–Scholze, Topological Hochschild homology and integral p-adic Hodge theory (Publ. IHES 2019),",
+   "locator": "Proposition 11.3, pp. 299–300",
+   "says": "the Frobenius lift is (s, n) ↦ (s^p, pn), which is not equivariant",
+   "should": "(s, n) ↦ (s, pn)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1044 (N4)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, p-adic Hodge theory for rigid-analytic varieties (2013),",
+   "locator": "§6, the construction of OB_dR^+",
+   "says": "the rational tensor product is used without completion",
+   "should": "p-adically completed first, as item (3) of the author's erratum requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1044 (N2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Caraiani–Newton, arXiv:2301.10509,",
+   "locator": "Lemma 5.6.5",
+   "says": "a trace identity forces Klein-four projective image, omitting the A₄ alternative, as an order-24 group over F₇ with quaternion kernel shows",
+   "should": "retain both cases, as DDT does",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1048 (N2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Caraiani–Newton, arXiv:2301.10509,",
+   "locator": "Lemma 6.1.7",
+   "says": "the primes 3 and 5 in swapped roles",
+   "should": "use five for the switch at five and three for the switch at three",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1048 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Berger, Représentations p-adiques et équations différentielles (Invent. Math. 2002),",
+   "locator": "§1.1, p. 10 and Proposition 1.4, p. 12",
+   "says": "the degree includes the residue-field extension, which fails for ℚ₃(μ₃)",
+   "should": "the ramification index e(E_K/E_{K_0}) of the norm fields with coefficient field F′_K, per the author's errata §1",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1062 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Berger, Wach-module paper (Proposition II.1.1, Theorem III.4.4),",
+   "locator": "the result treated in §2 of the author's errata",
+   "says": "the result without the rational étale scalar-extension hypothesis, and its final filtration step does not go through",
+   "should": "as corrected in those errata, adding that hypothesis and redoing the step with successive γ − χ(γ)^j",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1062 (U2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bhatt–Scholze, Prisms and prismatic cohomology (arXiv v4),",
+   "locator": "Lemma 16.10(2), pp. 110–111",
+   "says": "the presentation's quotient is identified with the envelope's quotient unconditionally, which a square-zero extension of ℤ_p by ∏ℤ_p refutes",
+   "should": "assume the discrete quotient P/J is derived p-complete",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1065 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Skinner–Wiles, Residually reducible representations and modular forms (Publ. IHES 1999),",
+   "locator": "Proposition 3.23",
+   "says": "mutually incompatible formulas for the twisted mixed-tensor Hecke action",
+   "should": "a factorwise algebra map sending 1⊗[n] to Φ(n), twisting traces linearly, determinants quadratically, and central terms once",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1066 (N1)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Skinner–Wiles (Publ. IHES 1999)",
+   "locator": "the definition of the auxiliary form f₀ (§3, before Proposition 3.23)",
+   "says": "f₀ = Lg − E₀, which reduces to −E₀",
+   "should": "f₀ = E₀ − Lg, giving the stated congruence F₁ ≡ E₁",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1066 (R)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Emerton–Pollack–Weston, Variation of Iwasawa invariants in Hida families (2006),",
+   "locator": "the clause on integral inertia coinvariants of the family representation",
+   "says": "these are integrally of rank one with canonical stabilization while allowing residually unramified data, which ηη₂₃ at p = 13 refutes",
+   "should": "require residual coinvariant dimension one",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1066 (R2)"
+   ],
+   "batch": "out-reports-1.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, On torsion in the cohomology of locally symmetric varieties (arXiv version),",
+   "locator": "Corollary III.2.6 (Ch. III §2, pp. 31–35)",
+   "says": "canonical-subgroup points coincide over every complete flat test algebra, which the nonnormal p = 2 ring of congruent pairs in O_C² refutes",
+   "should": "give inclusion in general, and equality when the ring is integrally closed in its p-inversion",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1064 (N1)",
+    "fix report for TauCetiRoadmap #1069 (R2)",
+    "fix report for TauCetiRoadmap #1069 (U1)"
+   ],
+   "batch": "out-reports-1.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T12:00:13Z",
+ "updated": "2026-10-23T12:03:20Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
