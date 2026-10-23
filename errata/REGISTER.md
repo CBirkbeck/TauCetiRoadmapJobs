@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-202 mistakes recorded on the board: 87 misprints, 63 errors, 11 gaps, 41 unparsed bullets.
+234 mistakes recorded on the board: 100 misprints, 79 errors, 14 gaps, 41 unparsed bullets.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -104,9 +104,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Corollary 3.2 and Remark 3.3, p. 518: the source says p = 151 is among the ordinary companion examples; it should be removed from that list, since its only twisted-eigenvalue match is at weights (52,100), with gcd(k−1,p−1) = 3; affects a stated result. Found by  (#131 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Boxer–Calegari–Gee–Pilloni, Abelian surfaces over totally real fields are potentially modular (2021)
+
+- **Misprint** at §6.1.1, p. 139: the source says Q(U) is invertible on M>h when all roots of Q have valuation less than h; it should be valuation at most h, equality included; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Boxer–Calegari–Gee–Pilloni, Abelian surfaces over totally real fields are potentially modular, arXiv:1812.09269
 
 - **Misprint** at §2.8, display after (2.8.5), p.37: the source says an alternating-sign exponent in the L-function conventions with a wrong value; it should be the corrected exponent (the review confirms the misprint but does not restate it); affects a stated result. Found by  (#169 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Boxer–Calegari–Gee–Pilloni, Modularity theorems for abelian surfaces, arXiv:2502.20645v1
+
+- **Misprint** at Definition 9.1.7 and Lemma 9.1.8, pp. 190–191: the source says the definition and lemma with a "toric" subscript missing (the toric-rank-two condition); it should be written with the toric subscript, as the witness in the cited reviews requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Boxer–Pilloni, Higher Coleman theory, arXiv:2110.10251
 
@@ -181,9 +189,27 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at §4.2, Cartan comparison: the source says an integral order q²−1 for the relevant H₃ group; it should be true only after inverting the characteristic: the integral orders at q=2, 3, 4, 5 are 6, 24, 30, 120, against 3, 8, 15, 24; affects a stated result. Found by  (#162 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Calegari–Geraghty, Modularity lifting beyond the Taylor–Wiles method, arXiv:1207.4224v2
+
+- **Error** at §8.2, p. 79: the source says the component group is the largest exponent-pⁿ quotient of the ray class group of conductor Q; it should be that this holds only when the narrow class group has exponent dividing pⁿ; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Calmès et al., Hermitian K-theory for stable ∞-categories III, arXiv:2009.07225v4
+
+- **Error** at Proposition 3.1.14 and its proof, printed p. 54: the source says L(R;Q^{≥m})[x⁻¹] ≃ L(R;Q^s) integrally for every m in ℤ ∪ {±∞}; it should be stated only for m ≠ +∞, since at m = +∞ for R = ℤ the comparison is multiplication by 8, an equivalence only after inverting 2; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Castella–Liu–Wan (CLW), Iwasawa–Greenberg main conjecture for non-ordinary modular forms and Eisenstein congruences on GU(3,1)
 
 - **Misprint** at the proof of the Eisenstein-ideal bound, §8, p. 78: the source says the order inequality with ≤; it should be ≥, since E ⊂ P^m gives ord_P ≥ m; affects nothing. Found by  (#129 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Chojecki–Hansen–Johansson, Overconvergent modular forms and perfectoid Shimura curves, arXiv:1507.04875
+
+- **Error** at Lemma 6.19(2): the source says density for scalars yields density for bounded families of coefficients; it should be that the image need not be dense in the bounded arrays, since the array Σ uⁿTⁿ stays at distance 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Error** at Lemma 6.21: the source says a comparison map for scalar extension of coefficient modules that fails, refuted by Teichmüller lifts of residues independent over 𝔽_p; it should be as the witness in the cited review requires; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Coleman, p-adic Banach spaces and families of modular forms (Invent. Math., 1997)
+
+- **Error** at Appendix A3.1: the source says H may be any restricted power series in A⟨T⟩; it should be required that H be entire (in A{{T}}), since the statement fails for G = 1 − pT, H = Σ pⁿTⁿ; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Misprint** at Appendix A3.4: the source says a formula for K(T) that is missing a factor T^n; it should be the formula with the factor T^n included; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Colmez–Nizioł, arXiv:1505.06471v4
 
@@ -193,6 +219,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the definition of Z_p(r)′ (introduction) and the recalled sequence of Lemma 2.23(ii): the source says r=(p−1)a+b with 0≤b≤p−1, so (a,b)=(0,p−1) is allowed at r=p−1; it should be 0≤b<p−1: at r=p−1 the kernel of p^(p−1)−φ on F^(p−1)A_cr is spanned by t^(p−1)/p; affects a stated result. Found by  (#110 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Conrad, Semistable reduction notes (Darmon CM seminar, 2011)
+
+- **Gap** at the monodromy-criterion pages (no theorem number given): the source says finite-level points are inertia-invariant on the strength of the dimension of the rational Tate-module invariants; it should be supported by a separate finite-level argument, which that dimension count does not supply; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Misprint** at the pages on finite flat groups at the residue prime (no theorem number given): the source says a wrong rank for the toric or finite part; it should be as the witness in the cited review requires (ranks t and t + 2a); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Conrad–Diamond–Taylor, Modularity of certain potentially Barsotti–Tate Galois representations, JAMS 12 (1999)
 
 - **Misprint** at Lemma 7.2.3, p. 554: the source says the exceptional j-value set without its sign; it should be the signed j-value; affects a stated result. Found by  (#135 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -200,6 +231,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Dasgupta–Kakde–Silliman–Wang, On Ribet's lemma in the residually indistinguishable case, arXiv:2310.16396v2
 
 - **Misprint** at the relations defining Q, pp.8–9: the source says the relation with the sign opposite to the one in the statement of Theorem 2.1 (pp.7–8); it should be as the witness in the cited review requires (the sign of Theorem 2.1); affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Deligne, Équations différentielles à points singuliers réguliers (LNM 163, 1970)
+
+- **Misprint** at II.5.3: the source says 4.3 as this item's number although it sits in §II.5; it should be numbered 5.3; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Deligne–Serre, Formes modulaires de poids 1, Ann. Sci. ENS 1974
 
@@ -221,6 +256,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Dummigan–Golyshev–de Jeu–Kerr, arXiv:2605.11100
 
 - **Misprint** at the discriminant of the E₄ family near Proposition 2.2: the source says the factor (u²−1)⁴; it should be 16u⁴(u²−1)² (921600 at u=4), as its own Proposition 2.2(3) minimal discriminant confirms; affects nothing. Found by  (#138 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Ellenberg–Venkatesh–Westerland, Homological stability for Hurwitz spaces and the Cohen–Lenstra conjecture over function fields II, arXiv:1212.0923v1
+
+- **Gap** at Sections 6 and 12 and some theorems of the introduction: the source says results there whose proofs have a gap the authors acknowledged, withdrawing the preprint; it should be that those results are treated as unproved until the gap is closed; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Emerton–Paškūnas (EP), density of supercuspidal points of fixed regular weight in local deformation rings, published pp. 337–371
 
@@ -292,6 +331,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem 21, p.46: the source says the Khinchin-constant factor with the denominator k(k+1); it should be a(a+2) (equivalently k(k+2)); affects a stated result. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## GLX, arXiv:2208.07195
+
+- **Error** at Lemma 3.2, second assertion: the source says a connected-component formula for the quotient by a group action, with no restriction on the action; it should be stated under additional component and Hausdorff hypotheses, since ℤ acting densely on ℤ_p violates it; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Goncharov, Geometry of configurations, polylogarithms, and motivic cohomology, Adv. Math. (1995)
 
 - **Misprint** at §3, restatement of the relations of Definition 1.5: the source says the triangle/incidence relation with an extra endpoint term η/3; it should be the relation of Definition 1.5, which has no such term; affects nothing. Found by  (#170 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -306,13 +349,29 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at proof of Proposition 2 (moment expansion), p.4: the source says a count of the contributing compositions that is wrong; it should be the binomial coefficient C(k−s−1, s−1) (k=5, s=2 gives 2); affects the proof. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Harari–Szamuely, Arithmetic duality theorems for 1-motives (J. reine angew. Math., 2005)
+
+- **Gap** at the strictness step corrected in the authors' corrigenda: the source says a strictness property that its corrigenda flag as unjustified; it should be as the witness in the cited review requires (the published corrigenda); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Harbater–Obus–Pries–Stevenson, Abhyankar's conjectures in Galois theory, arXiv:1408.0859v1
+
+- **Error** at §3.3, sketch of the solvable step in Theorem 3.6: the source says the invariant grows under the m-fold pullback as d′ = m·d; it should be m·d + (m − 1)·dim H, since the characteristic-two S₃ case gives 2, not 0; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Heath-Brown, Lectures on sieves, arXiv:math/0209360v1
 
 - **Misprint** at Theorem 5.1, p.35, and Corollary 5.1: the source says the lower-bound form of the linear sieve with a wrong sign; it should be the corrected sign (the review confirms the correction is needed); affects a stated result. Found by  (#177 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Henk, Successive minima and lattice points, arXiv:math/0204158v1
+
+- **Misprint** at p. 2: the source says a ceiling bracket there that the review confirms is a misprint; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Huybrechts, Lectures on K3 surfaces (author draft)
 
 - **Misprint** at Chapter 18, §3, Example 3.4: the source says (via "respectively") discriminant −64 for the infinite-height case p≡3 mod 4 and −p² for the other case; it should be the reverse: −p² for infinite height (rank 22, p-elementary), −64 for the other; affects a stated result. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Illusie, Complexe de de Rham–Witt et cohomologie cristalline (Ann. Sci. ENS, 1979)
+
+- **Error** at I.3.21 (I.3.21.1.5, printed p. 579): the source says a proof of I.3.21 that the author's own errata call incorrect; it should be replaced by the argument of Illusie–Raynaud, Les suites spectrales associées au complexe de de Rham–Witt, II.1.3; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Kakde, The main conjecture of Iwasawa theory for totally real fields, arXiv:1008.0142v3
 
@@ -322,6 +381,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the Bessel example: the source says the example becomes unipotent after adjoining only y = (t/4)^{1/2}; it should be the larger extension that also adjoins y^{1/2} and the Artin–Schreier cover z^p − z = y, as in the published version (Ann. of Math. 160 (2004), §1.5, p. 101); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Kedlaya, Finiteness of rigid cohomology with coefficients, arXiv:math/0208027v6
+
+- **Misprint** at Definition 3.2.1: the source says the definition without requiring the algebra A to be regular; it should be required that A is regular, as the author's own errata list states; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Kedlaya, Notes on analytic number theory, ch. 12 (KED-ANT-12)
 
 - **Misprint** at §12.4, Theorem 12.2, second inequality: the source says the second inequality with a printed sign slip; it should be the opposite sign (the review confirms the slip against the source text); affects a stated result. Found by  (#177 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -329,6 +392,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kedlaya, Semistable Reduction IV
 
 - **Error** at Lemma 5.6.2 (used in the proof of Theorem 5.0.1): the source says tame alterations preserve terminal presentations, an acknowledged error; it should be repaired as in Kedlaya, Local and global structure of connections on nonarchimedean curves (arXiv:1301.6309), Remark 4.6.7, using Corollary 4.6.5; Theorem 5.0.1 survives; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kedlaya–Liu, Relative p-adic Hodge theory II, arXiv:1602.06899
+
+- **Error** at Remark 8.1.4, p. 159 (used in the proof of Theorem 8.2.3, pp. 162–163): the source says O_X ≅ f_*O_Y for seminormal X and a smooth proper birational resolution f; it should be that O_X is the subsheaf of sections of f_*O_Y compatible on Y ×_X Y, since for a node the section (1,0) does not descend; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Khayutin, Joint equidistribution of CM points, Ann. Math. 189 (2019)
 
@@ -341,6 +408,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Khayutin, Joint equidistribution of CM points, Ann. Math. 189 (2019), arXiv:1710.04557
 
 - **Misprint** at Lemma 5.8, printed p.184: the source says the different of the full local toral order has a generator whose norm equals the discriminant; it should be equality only up to sign, as ideals: in the split case the generator (π,−π) has norm −π², the discriminant ideal (π²); affects a stated result. Found by  (#159 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kisin, Integral models for Shimura varieties of abelian type (2010)
+
+- **Error** at Lemma 3.1.5: the source says a polarization descends to a coefficient-torsor twist whenever the multiplier character is positive; it should be required in addition that the torsor have a real point, the correction made in Kisin–Shin–Zhu §5.12.4, p. 174; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kisin, Mod p points on Shimura varieties of abelian type (2017)
+
+- **Error** at §4.1.6: the source says the same polarization descent for coefficient-torsor twists, with no condition at the real place; it should be required that the torsor be trivial over ℝ, as Kisin–Shin–Zhu §5.12.4 notes; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kisin–Pappas, Integral models of Shimura varieties with parahoric level structure (2018)
+
+- **Error** at Lemma 4.4.8: the source says polarization descent for coefficient-torsor twists holds with no condition at the real place; it should be required that the torsor be trivial over ℝ, as Kisin–Shin–Zhu §5.12.4 notes; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Koenigsmann, Defining ℤ in ℚ, Ann. Math. 183 (2016) (read in arXiv v2)
 
@@ -401,6 +480,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the proof of Lemma 3.7, p. 32: the source says the rationalisations vanish (the finite-coefficient rational corner); it should be that the non-completed rational corner is nonzero and must be kept: for the zero ring, polynomial animation gives dR_(0/ℚ) = ℚ; affects the proof. Found by  (#149 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Milne, Arithmetic Duality Theorems (2nd ed., 2006)
+
+- **Misprint** at Chapter I, Remark 5.2(a): the source says the Euler-characteristic expression has the archimedean term H⁰(G_v, M) in its denominator; it should be the corresponding term for the dual module M^D; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Nikulin, Finite automorphism groups of Kähler K3 surfaces
 
 - **Error** at §5, equation (5.2) and its case list, pp. 108–110 of the Russian original: the source says the solutions of t_pq(p+1)(q+1)=24 without (p,q)=(2,7), t=1, that is order 14; it should be a list including that solution, which is then disposed of separately; affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -412,6 +495,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Parshin (cited as parshin)
 
 - **Error** at §2.2, p. 9: the source says an additive character of every finite field is injective; it should be limited to prime fields, since 𝔽_q with q = p^f, f > 1, has no injective additive character; affects nothing. Found by  (#142 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Pilloni, higher Hida theory for GSp4 (author's notes "complexhidatheorygsp4")
+
+- **Misprint** at §13.1.1, condition 4, p. 84: the source says Q(U) is invertible on M>h when the roots of Q have valuation strictly greater than h; it should be valuation at most h, equality included; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Qian, arXiv:2103.00106
 
@@ -429,9 +516,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Appendix A.2 (Rényi theorem), pp.32–33: the source says the Gauss density is bounded above by 2 ln 2; it should be 1/ln 2, the density's value at 0, which exceeds 2 ln 2 (about 1.443 against 1.386); affects a stated result. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Schlichting, Hermitian K-theory, derived equivalences and Karoubi's fundamental theorem, arXiv:1209.0848v3
+
+- **Misprint** at Example 1.30, printed p. 21: the source says the dualisation sign on a component X^i → Y^j is (−1)^{i(j−i)}, incompatible with its own Hom differential and §1.11 sign; it should be (−1)^{j(j−i)}; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Scholze, Berkovich motives, arXiv:2412.03382
 
 - **Gap** at the almost-module/continuous K-theory input (cached extraction lines 1944–1948): the source says the open unit ball A_<1 of a commutative Banach ring with compatible roots of T is treated as a nonunital ring; it should be an explicit hypothesis (or proof) that A_<1 is closed under addition, which fails for archimedean norms (in ℂ, 3/4+3/4=3/2); affects the proof. Found by  (#175 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Scholze, p-adic Hodge theory for rigid-analytic varieties (2013)
+
+- **Error** at Lemma 3.11, printed p. 17: the source says a morphism of the pro-finite-étale site is pro-étale exactly when the map of underlying inverse-limit spaces is open; it should be only "pro-étale implies open"; a quadratic-tail tower over ℚ₂ refutes the converse, which needs openness on profinite geometric fibres; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Error** at §3, a claim about points of the pro-étale site: the source says a statement about points that the author's erratum deletes; it should be withdrawn, as the erratum does; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Error** at §3, definition of pro-étale coverings: the source says an original covering definition that the author's erratum, item (1), supersedes; it should be the erratum's definition, with covering towers whose pullback witnesses are surjective at each finite stage; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Schröer, arXiv:2004.07025v3
 
@@ -463,6 +560,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at proof of Theorem 2, pp.3–6: the source says a signed derivative contribution of the transfer branches serves as if it were an absolute bound; it should be a bound by absolute coefficients (at a=2, x=1 the branch derivative is −1/72); affects the proof. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## the Stacks Project
+
+- **Error** at Remark 60.24.9 (tag 07MU, base change isomorphism): the source says crystalline base change is an isomorphism under seven conditions that allow local complete intersection morphisms; it should be withdrawn beyond the smooth case, since A′ = 𝔽_p[t,ε]/(ε²,tε) meets all seven conditions yet Tor₂^{A′}(D′,A) ≠ 0; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## the work corrected by Serre's 1974 correction (cited as "Serre 1974 correction", congruence-subgroup and Mennicke setting)
 
 - **Error** at the formula that correction replaces: the source says a degree/root-count-only expression; it should be computed through the norm on roots of unity, as the 1974 correction gives; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -470,6 +571,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Théry, Primality Tests and Prime Certificate, arXiv:2203.16341v1
 
 - **Misprint** at Theorem 6.2, p. 9 (Pocklington criterion): the source says the size condition F > N, impossible since F divides N−1; it should be F² > N, that is N < F²; affects a stated result. Found by  (#131 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Treumann–Venkatesh, Functoriality, Smith theory and the Brauer homomorphism (Annals, 2016)
+
+- **Misprint** at §2.10, p. 187: the source says the Hecke action on the permutation module A[S] has kernel h(s,t), which under its own product (2.10.1) is a right action; it should be the transposed kernel h(t,s), the only form yielding a left action and (2.10.2); affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Voight, Characterizing quaternion rings over an arbitrary base, arXiv:1004.0994v2 (2012)
+
+- **Misprint** at Example 3.14: the source says one of the two signs in the worked diagonalisation of the binary form is a plus; it should be with both signs minus, as the basis change f₂ = e₂ − (b/2a)e₁ confirms; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Wagner, PhD thesis (cited as W-thesis)
 
@@ -496,6 +605,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Weibel, The K-book (2013)
 
+- **Misprint** at Chapter VI, Theorem 10.1(6): the source says |K_n(ℤ)| = c_{2k+1} for n = 8k+6; it should be c_{2k+2}, since its proof gives |K_{4k−2}(ℤ)| = c_k and 8k+6 = 4(2k+2)−2; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at III, text after Proposition 7.8.2 (norm-kernel equality), chapter PDF pp.67–68: the source says the letters I and V in interchanged roles; it should be the letter consistent with Proposition 7.8.2 (the review names the I/V misprint without restating it); affects nothing. Found by  (#162 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at Theorem VI.10.1, pp. 527–528: the source says the 8k+6 row has order c_(2k+1); it should be c_(2k+2), as Table 10.1.1 says (K₂₂(ℤ) has order 691); affects a stated result. Found by  (#127 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at VI, 5.5–5.6 (ordered configurations and projective coinvariants), combined PDF pp.497–498: the source says the projective line over 𝔽₂ has seven points; it should be three points; affects nothing. Found by  (#162 at , 2026-10-23, backfill from earlier reviews (claude opus)).
