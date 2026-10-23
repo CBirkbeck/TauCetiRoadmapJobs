@@ -101,6 +101,7 @@ AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 CongruenceSpectralGap
 GeometricFreyMazur
+ModularCurvesPartIII
 ClassicalArithmeticCompletion
 EllipticLegendreCharacterInterfaces
 EllipticCurvesPartII
