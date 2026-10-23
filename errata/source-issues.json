@@ -5295,10 +5295,950 @@
    "reported": "2026-10-23",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/847#issuecomment-6364282929"
+  },
+  {
+   "kind": "error",
+   "source": "Schröer, arXiv:2004.07025 (title not given in the reviews)",
+   "locator": "Theorem 10.4 (classification of models, with Theorem 10.5)",
+   "says": "its eleven models (eight with nonzero j, three with j = 0) are the complete list",
+   "should": "fourteen models, adding the twisted equations (t,1,t³,0,0), (t,t,t³,0,0), (t,t²,t²,0,0), with discriminants t¹⁰, t¹¹, t⁸(t²+t+1)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #870 (fable)",
+    "ChatGPT review of TauCetiRoadmap #870 (N1)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Schröer, arXiv:2004.07025",
+   "locator": "p. 31 (twisted-case bookkeeping r_a + i + r_c = 11)",
+   "says": "only the triples (8,1,2) and (9,1,1) occur",
+   "should": "that (7,2,2) and (8,2,1) occur as well, which is where the omitted models come from",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #870 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bhatt, p-adic derived de Rham cohomology, arXiv:1204.6560",
+   "locator": "Remark 8.7",
+   "says": "torsion coordinates with the wrong p-power orders (the review sets p^⌊n/2⌋ against p^(n−1))",
+   "should": "as the witness in the cited review requires (its recomputation of ℤ_p ⊕ ⊕_j ℤ_p/j)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #868 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bhatt–Morrow–Scholze, Topological Hochschild homology and integral p-adic Hodge theory (2019)",
+   "locator": "Proposition 5.6",
+   "says": "the Ext computation for the Beilinson heart with a wrong index shift",
+   "should": "the shift i + c, as the review's check Ext¹(k, k[−1]) = k confirms",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #868 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Česnavičius, Macaulayfication of Noetherian schemes, arXiv:1810.04493v2",
+   "locator": "§1.14",
+   "says": "something about the support that the review calls an \"off-support\" slip",
+   "should": "as the witness in the cited review requires",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #872 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Česnavičius, arXiv:1810.04493v2",
+   "locator": "Remark 3.9, p. 12",
+   "says": "an earlier index where a later one is meant",
+   "should": "as the witness in the cited review requires",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #872 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Česnavičius, arXiv:1810.04493v2",
+   "locator": "Proposition 3.11(iii), pp. 12–13",
+   "says": "r_{s'}",
+   "should": "r'_{s'}",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #872 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Česnavičius, arXiv:1810.04493v2",
+   "locator": "the ideal I_s on p. 15 (argument for Theorem 3.14)",
+   "says": "I_s carries the factor (r₁,…,r_s)",
+   "should": "as the witness in the cited review requires",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #872 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Česnavičius, arXiv:1810.04493v2",
+   "locator": "(3.14.10), pp. 15–16",
+   "says": "r_aT − r_b",
+   "should": "as the witness in the cited review requires",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #872 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kawasaki (the 2000 Macaulayfication paper, cited through Česnavičius; title not given in the review)",
+   "locator": "the conditions restated as Česnavičius Proposition 3.11",
+   "says": "the conditions with five misprints, which Česnavičius records in footnote 4, p. 13",
+   "should": "as Česnavičius Proposition 3.11 states them",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #872 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Deligne, La conjecture de Weil II (1980)",
+   "locator": "the Weyl-group trace identity (section not given in the review)",
+   "says": "a constant that the roadmap corrects",
+   "should": "as the witness in the cited review requires (the review recomputed the identity and agrees with the correction)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #873 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Fontaine, Il n'y a pas de variété abélienne sur Z (1985)",
+   "locator": "the proof of Proposition 1.5, p. 520",
+   "says": "the inverse-Herbrand boundary value with the upper break u_{L/K} where the lower break belongs",
+   "should": "eψ(m) = e·i_{L/K} − 1/d at m = u_{L/K} − 1/e, d = |G_(i_{L/K})| (8/3, not 35/3, for ℚ₃(ζ₉)/ℚ₃)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #879 (N6)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Savitt, On a conjecture of Conrad, Diamond, and Taylor, arXiv:math/0404327",
+   "locator": "Definition 3.1, printed p. 12",
+   "says": "descent data are maps obeying the cocycle rule, without requiring [1] = id or invertibility (so the all-zero family qualifies)",
+   "should": "required that [1] = id, invertibility then following from the cocycle rule",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #879 (N3)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "de Jong, Crystalline Dieudonné module theory via formal and rigid geometry, Publ. IHÉS 82 (1995)",
+   "locator": "§7.1.13 (auxiliary maps on the route to Theorem 7.4.1 and Proposition 7.5.2)",
+   "says": "auxiliary maps that are faulty as printed",
+   "should": "as corrected in the author's 1998 erratum (Publ. IHÉS 87), which leaves the main theorems standing",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #879 (N9)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Calegari–Dimitrov–Tang (title not given in the reviews)",
+   "locator": "Lemma 4.5.11",
+   "says": "𝔽₃ at level five",
+   "should": "𝔽₅, as the subsequent application of the lemma requires",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #913 (N4)",
+    "ChatGPT review of TauCetiRoadmap #913 (N6)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Conrad, Arithmetic moduli of generalized elliptic curves",
+   "locator": "Theorem 4.3.4",
+   "says": "the cusp data with a wrong (b, r) indexing",
+   "should": "as the witness in the cited review requires (an indexing giving the count φ(d)/2)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #913 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kharlampovich–Myasnikov, Implicit function theorem over free groups, arXiv:math/0312509v2",
+   "locator": "Theorem 2(3)–(5), p. 9",
+   "says": "items (3)–(5) in a printed form that the roadmap corrects and the review confirms as wrong",
+   "should": "as the witness in the cited review requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #914 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kharlampovich–Myasnikov, arXiv:math/0312509v2",
+   "locator": "the \"equivalent\" regularity clause, p. 9",
+   "says": "the regularity clause in a printed form that the roadmap corrects and the review confirms as wrong",
+   "should": "as the witness in the cited review requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #914 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Gee, Arizona Winter School 2013 notes on modularity lifting (arXiv v2)",
+   "locator": "the displayed dimension formula, p. 18",
+   "says": "H⁰_{S,T} = F also for nonempty T, so the formula lacks a −1",
+   "should": "a count with |T| − 1, as in the source's own Proposition 5.10, 3.24(3) and the rank-one case",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #920 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Clozel–Harris–Taylor, Automorphy for some l-adic lifts of automorphic mod l Galois representations, Publ. Math. IHÉS 108 (2008)",
+   "locator": "Proposition 2.4.8(3)",
+   "says": "a character ratio for the ordinary filtration that needed correction",
+   "should": "the ratio given in the authors' erratum",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #923 (N4)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kisin, Potentially semi-stable deformation rings, J. Amer. Math. Soc. 21 (2008)",
+   "locator": "the uniqueness of finite-height lattices",
+   "says": "an argument that needed repair",
+   "should": "the repaired argument of the author's Errata (E.4), author DVI p. 34",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "923-inv-readme.md"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kisin, Modularity of 2-adic Barsotti–Tate representations, Invent. Math. 178 (2009)",
+   "locator": "Corollary (2.4.6), author p. 33",
+   "says": "the ordinary quotient is a domain, omitting the case where it is zero",
+   "should": "\"zero or a domain\", as the proof of (2.4.5) allows; the irreducible S₃ ≅ GL₂(𝔽₂) residual representation over ℚ₂ has no ordinary lifts",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #923 (N12)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Duke–Imamoḡlu–Tóth (DIT16), Ann. of Math. 184 (2016)",
+   "locator": "(8.4) (residue of the resolvent kernel, pp. 973–975)",
+   "says": "the polar projector without a complex conjugate",
+   "should": "the projector with the conjugate, with which the printed residue display on p. 975 holds for every Hecke–Maass form, odd or even",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #925 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Duke–Imamoḡlu–Tóth (DIT16), Ann. of Math. 184 (2016)",
+   "locator": "p. 984",
+   "says": "the sine-power integral without the factor 2^{ν−1}",
+   "should": "the integral with the factor 2^{ν−1}",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #925 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Arthur (Art80, 1980)",
+   "locator": "Lemma 1.1",
+   "says": "a strict inequality",
+   "should": "the corrected inequality recorded in Arthur, An Introduction to the Trace Formula (2005), p. 68",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #925 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Arthur–Clozel (AC89, 1989)",
+   "locator": "Lemma 6.1",
+   "says": "a lemma that contains a mistake, recorded in Arthur, An Introduction to the Trace Formula (2005), p. 191",
+   "should": "as the witness in the cited review requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #925 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Arthur–Clozel (AC89, 1989)",
+   "locator": "the density argument, p. 196",
+   "says": "a density argument with a gap, recorded in Arthur, An Introduction to the Trace Formula (2005), p. 191",
+   "should": "as the witness in the cited review requires",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #925 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Ramakrishnan, A theorem on GL(n) à la Tchebotarev, arXiv:1806.08429",
+   "locator": "Lemma 4.1",
+   "says": "the lemma with no hypothesis at the real places",
+   "should": "stated with a real-place hypothesis, which the instance over ℚ(i) with the quaternion algebra (−1,−1) shows is needed",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #925 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, Étale cohomology of diamonds, arXiv:1709.07343v4",
+   "locator": "Proposition 23.10(i), p. 145",
+   "says": "ℓ-cohomological smoothness forces dim.trg f to be finite globally",
+   "should": "only locally finite, as in Definition 23.8, since a disjoint union of balls ⊔Bⁿ is smooth with unbounded dimension",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #927 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze (the 2015 work cited as [Sch15] in Étale cohomology of diamonds)",
+   "locator": "Section II.2",
+   "says": "that an example shows strongly Zariski closed is strictly stronger than Zariski closed",
+   "should": "that the two notions are equivalent, the example being erroneous (Étale cohomology of diamonds, Definition 5.7, p. 24)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "927-ecd-excerpts.md"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, Étale cohomology of diamonds (an earlier arXiv version)",
+   "locator": "Proposition 22.3(vii)",
+   "says": "(vii) holds without the local splitting condition on g",
+   "should": "stated with that condition, since counterexamples exist (footnote 5, p. 128 of the later version)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "927-ecd-excerpts.md"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Deligne, La conjecture de Weil II (1980)",
+   "locator": "(2.2.8)(i) and (3.5.1)",
+   "says": "the sheaf is pointwise ι-pure of weight 2ℜ(r)",
+   "should": "weight −2ℜ(r), since (2.1.1) fixes ω₁(γ) = q^{−deg γ}, so the Tate line ω₁ (ℜ = 1) has weight −2",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #929 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Serre, Sur les représentations modulaires de degré 2 de Gal(Q̄/Q) (1987)",
+   "locator": "its citation \"th. 2.4.3\" of Raynaud",
+   "says": "a Raynaud theorem number that does not exist (Raynaud has no §2.4)",
+   "should": "as the witness in the cited review requires",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #928 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Milne, Introduction to Shimura Varieties",
+   "locator": "14.16(b) (the \"More precisely\" sentence)",
+   "says": "the canonical model for Sh°(G₂, X₂), with G₂ where another group is meant",
+   "should": "as the witness in the cited review requires",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #933 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bakker–Klingler–Tsimerman (BKT; title not given in the review)",
+   "locator": "the inverse-image-of-Siegel-sets step (authors' erratum §1.5, p. 3)",
+   "says": "the step follows from Borel–Harish-Chandra 7.5, which concerns real Siegel sets",
+   "should": "justified by Bakker–Grimm–Schnell–Tsimerman, arXiv:2112.06995, 28.1, as the erratum states",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #933 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "unparsed",
+   "source": "",
+   "locator": "",
+   "says": "Misprint** in Stacks Project, Tag 0BKH (opening paragraph): the source says the derived p-completion C of A = ℤ_p ⋉ ℚ_p/ℤ_p is R[1] ⊕ R[0] (R = ℤ_p) without qualification, false in D(A) since Hom(C, R[1]) = 0; it should be stated in D(ℤ_p) after restricting scalars, or as the cohomology computation only; affects nothing. (found in: 944-M2.md)",
+   "should": "",
+   "affects": "",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Lan, PEL-type thesis (original version)",
+   "locator": "the enlargement of the finite set □ of primes (original errata p. 16; revised thesis Lemma 1.4.4.2 and Proposition 1.4.4.3, pp. 105–106)",
+   "says": "the finite-□ comparison in a form the errata flag as defective",
+   "should": "an open-and-closed immersion in general, an equivalence only under self-dual-lattice uniqueness, as revised",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #966 (N10)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Lan, PEL-type thesis",
+   "locator": "Lemma 1.2.5.10",
+   "says": "the lemma in a form that the author's errata correct",
+   "should": "as the witness in the cited review requires (the errata's corrected statement)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #966 (N3)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Liu–Tian–Xiao–Zhang–Zhu (an earlier version; title not given in the reviews)",
+   "locator": "the reflex-lattice construction",
+   "says": "there is a model over the reflex field",
+   "should": "the auxiliary-extension construction of the published version, which withdraws that assertion",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #966 (N3)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions (Ann. Sci. ÉNS)",
+   "locator": "Theorem 2.6 / Corollary 2.7, p. 12",
+   "says": "(T⁻¹ − 1)D_∞, with the companion expression v_i|(γ_i − 1) + Σ v′_i",
+   "should": "(1 − T⁻¹)D_∞, as the Γ₀(2) relation D′₁ = {0} − {−1} fixes, the companion expression as the witness in the cited review requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions",
+   "locator": "Definition 6.4 / Proposition 6.5, p. 29",
+   "says": "L(f, χ⁻¹, 1)",
+   "should": "as the witness in the cited review requires (the roadmap's source correction, which the review confirms)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions",
+   "locator": "Definition 6.4 / Proposition 6.5, p. 29",
+   "says": "the coefficient space S_k(Γ, ℚ_p)",
+   "should": "as the witness in the cited review requires (the roadmap's source correction, which the review confirms)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Wiese, arXiv:1809.04645v1 (title not given in the reviews)",
+   "locator": "Proposition 4.16",
+   "says": "ν_∞",
+   "should": "as the witness in the cited review requires (the roadmap's correction, which the review says stands)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Wiese, arXiv:1809.04645v1",
+   "locator": "Proposition 4.16",
+   "says": "dim H⁰(⟨τ⟩, M) = μ/3",
+   "should": "as the witness in the cited review requires (the roadmap's correction, which the review says stands)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bellaïche, Critical p-adic L-functions, arXiv:0912.2925",
+   "locator": "formulas (4)–(5), p. 8",
+   "says": "the two formulas with different quantities in their denominators",
+   "should": "α in both denominators",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions",
+   "locator": "§8.4, footnote (7), p. 36",
+   "says": "the level-33 Hida algebra cannot be free over Λ because its weight-2 and weight-0 eigenforms have different coefficient fields",
+   "should": "that this does not follow: ℤ₃⟦T⟧[x]/(x² − T − 9) is free, split at T = 0, with fibre ℚ₃(√3) at T = 3",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #968 (fable)"
+   ],
+   "batch": "out-reviews-4.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, The local Langlands correspondence for GL_n over p-adic fields",
+   "locator": "the proof of Proposition 4.3, p. 12",
+   "says": "each lattice stabilizer is a maximal compact subgroup of the common centralizer",
+   "should": "dropped, with stabilizer volumes tracked, since for A = M₂(ℚ₃), γ = diag(1,4), L = ℤ₃e₁ + ℤ₃(e₁+e₂)/3 the stabilizer has index two",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #999 (N2)"
+   ],
+   "batch": "out-reviews-4.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T11:58:49Z",
+ "updated": "2026-10-23T12:00:13Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
