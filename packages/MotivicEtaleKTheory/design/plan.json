@@ -222,15 +222,16 @@
           "id": "2.0a",
           "kind": "definition",
           "name": "TauCeti.MotivicRealization.supportedCubeK",
-          "statement": "For every field k, smooth quasi-projective finite-type X/k, n≥0 and closed S⊂Y=X×□ⁿ, construct K^S(Y;∂□ⁿ) as the iterated homotopy fiber of the supplied supported perfect K-spectra on all intersections of the coordinate face pairs Dᵢ={tᵢ=0}⊔{tᵢ=∞}, with support restricted to each intersection. Equivalently take the support fiber of the multi-relative restriction diagram. Order the coordinates as in Layer 1. Construct compatible Adams operations ψᵃ, a≥1, on this entire diagram and its total fiber; for a fixed a>1, integer q and homotopy degree m≥0, first use the finite generalized weight-q decomposition defined by (ψᵃ−aᑫ)ᴺx=0 for some N≥1. The commuting Adams maps preserve these summands, and the decomposition agrees with the supplied weight decomposition on each vertex. This relative construction retains generalized weight pieces; §2.2 proves the genuine eigenweight assertion on the absolute Kₘ(X). The relative cycle map uses face-admissible S, with all iterated face intersections of the required codimension.",
+          "statement": "For every regular Noetherian separated finite-dimensional scheme X with an ample family of line bundles, n≥0, open Y⊂X×□ⁿ and closed S⊂Y, construct K^S(Y;∂□ⁿ) as the iterated homotopy fiber of the supplied supported perfect K-spectra on all intersections of the coordinate face pairs Dᵢ={tᵢ=0}⊔{tᵢ=∞}, with support restricted to each intersection. Here □=ℙ¹_ℤ∖{1}, products are over Spec ℤ, and every face is intersected with Y. Equivalently take the support fiber of the multi-relative restriction diagram. Order the coordinates as in Layer 1. Construct compatible Adams operations ψᵃ, a≥1, on this entire diagram and its total fiber; for a fixed a>1, integer q and homotopy degree m≥0, on Kₘ^S(Y;∂□ⁿ)⊗ℚ first use the finite generalized weight-q decomposition defined by (ψᵃ−aᑫ)ᴺx=0 for some N≥1. The commuting Adams maps preserve these summands, and the decomposition agrees with the supplied weight decomposition on each vertex. This relative construction retains generalized weight pieces; §2.2 proves the genuine eigenweight assertion on the absolute Kₘ(X) in §2.1’s field-base scope. For the relative cycle map require a field k, X smooth quasi-projective and finite type over k, and face-admissible S, with all iterated face intersections of the required codimension.",
           "hypotheses": [
-            "k is any field; X/k is smooth quasi-projective and finite type",
-            "n≥0; S is a closed subset of X×□ⁿ; face-admissibility is required for the relative cycle map",
-            "Adams index a≥1; use a>1 and m≥0 for the finite generalized rational weight decomposition; no uncorrected Gysin identification"
+            "X is a regular Noetherian separated finite-dimensional scheme with an ample family of line bundles",
+            "n≥0; Y is an open subscheme of X×□ⁿ over Spec ℤ, with □=ℙ¹_ℤ∖{1}; S is closed in Y; every face is intersected with Y",
+            "Adams index a≥1; use a>1 and m≥0 on Kₘ^S(Y;∂□ⁿ)⊗ℚ for the finite generalized rational weight decomposition; no uncorrected Gysin identification",
+            "Only the relative cycle-map clause requires k a field, X/k smooth quasi-projective of finite type, and S face-admissible in every iterated face"
           ],
           "locator": {
             "source": "Levine94",
-            "where": "§§1–2, Theorem 1.10, Corollary 1.11, Lemma 2.1 and Theorem 2.7, pp.247–273; Levine94 line 407, 539, 625, 655, 695, 711, 1101"
+            "where": "§§1–2, Theorem 1.10, Corollary 1.11, Lemma 2.1 and Theorem 2.7, pp.247–273; Levine94 line 407, 539, 625, 655, 695, 711, 1101; regular ample-family vertex operations and weights from SchemeKTheoryOperations §§2.5, 6.7–6.9; finite-filtration argument Levine94 Lemma 2.1, pp.258–259, line 719–729"
           },
           "prerequisites": [
             "target:1.4",
@@ -243,7 +244,7 @@
             {
               "name": "TauCeti.MotivicRealization.supportedCubeKApi1",
               "role": "basic API",
-              "statement": "At n=0 the construction is the supplied K^S(X); empty support gives the zero spectrum. Forgetting and enlarging support commute with every face restriction and the total fiber."
+              "statement": "At n=0 the construction is the supplied K^S(Y); in particular it is K^S(X) when Y=X. Empty support gives the zero spectrum. Forgetting and enlarging support commute with every face restriction and the total fiber."
             },
             {
               "name": "TauCeti.MotivicRealization.supportedCubeKApi2",
@@ -253,24 +254,34 @@
             {
               "name": "TauCeti.MotivicRealization.supportedCubeKApi3",
               "role": "basic API",
-              "statement": "For S=T×□ⁿ with T⊂X closed, homotopy invariance gives the ordered equivalence K^S(Y;∂□ⁿ)≃ΩⁿK^T(X). At each step identify the cokernel of the diagonal by (a,b)↦a−b, with the zero face first; exchanging two loop coordinates contributes −1 on the induced double suspension of homotopy groups."
+              "statement": "For Y=X×□ⁿ and S=T×□ⁿ with T⊂X closed, homotopy invariance gives the ordered equivalence K^S(Y;∂□ⁿ)≃ΩⁿK^T(X). At each step identify the cokernel of the diagonal by (a,b)↦a−b, with the zero face first; exchanging two loop coordinates contributes −1 on the induced double suspension of homotopy groups."
             }
           ],
           "tests": [
             {
               "name": "check_2_0a_1",
               "kind": "computation",
-              "statement": "At n=0,S=X the degree-zero group is K₀(X); for X=Spec k the class [k²] is 2. At n=0,S=∅ it is 0. In codimension c the leading weight of [O_V] is [V] with coefficient 1 under the supplied degree-zero character."
+              "statement": "At n=0,Y=X,S=X the degree-zero group is K₀(X); for X=Spec k the class [k²] is 2. At n=0,S=∅ it is 0. In codimension c the leading weight of [O_V] is [V] with coefficient 1 under the supplied degree-zero character."
             },
             {
               "name": "check_2_0a_2",
               "kind": "computation",
-              "statement": "At n=1,S=Y the face map is the diagonal x↦(x,x). Its difference map sends (1,0)↦1, (0,1)↦−1 and (1,1)↦0; reversing the face order reverses these signs."
+              "statement": "At n=1,Y=X×□,S=Y the face map is the diagonal x↦(x,x). Its difference map sends (1,0)↦1, (0,1)↦−1 and (1,1)↦0; reversing the face order reverses these signs."
             },
             {
               "name": "check_2_0a_3",
               "kind": "computation",
-              "statement": "At n=2,S=Y the face-pair diagram has four vertices and total fiber Ω²K(X). For k=ℚ(u,v), the class corresponding to {u,v}∈K₂(k) has consecutive last-slot residues +1; exchanging the loop coordinates gives −1. Adams ψ² acts on this weight-2 class by 4 and ψ¹ by 1."
+              "statement": "At n=2,Y=X×□²,S=Y the face-pair diagram has four vertices and total fiber Ω²K(X). For k=ℚ(u,v), the class corresponding to {u,v}∈K₂(k) has consecutive last-slot residues +1; exchanging the loop coordinates gives −1. Adams ψ² acts on this weight-2 class by 4 and ψ¹ by 1."
+            },
+            {
+              "name": "regular_dvr_cube",
+              "kind": "computation",
+              "statement": "For X=Spec ℤ_p at every prime p, n=1,Y=X×□,S=Y gives fib(K(Y)→K(X)⊕K(X))≃ΩK(X), hence K₀(Y;∂□)=K₁(ℤ_p)=ℤ_p×. The difference map on the two face ranks sends (1,0) to +1 and (0,1) to −1, including p=2 and p=3. For X=Spec ℤ₃ and Y=(X×□)∖{t=2}, the two induced faces are still copies of X, with face ranks (1,1) for the trivial line; the construction applies without asserting the full-cube delooping for this open."
+            },
+            {
+              "name": "rational_generalized_weights",
+              "kind": "computation",
+              "statement": "On X=S=Y=ℙ² at n=0, put h=1−[O(−1)], so h³=0. Then ψ²h=2h−h² and ψ²h²=4h². The integral generalized weight lattices ℤ·1, ℤ(2h+h²), ℤh² have index 2, whereas over ℚ, h=(2h+h²)/2−h²/2. Thus the direct-sum decomposition requires rational coefficients."
             }
           ]
         },
@@ -338,7 +349,7 @@
           "id": "2.1",
           "kind": "construction",
           "name": "TauCeti.MotivicRealization.higherMotivicChern",
-          "statement": "For every smooth quasi-projective finite-type X over any field k and p,n≥0, construct chₚ,ₙ:Kₙ(X)⊗ℚ→CHᵖ(X,n)⊗ℚ on the supplied perfect K-theory groups and shared cycle complexes. Construct its total character with target the direct sum over p≥0, so each element has finite weight support. The construction is the rational inverse of the geometric cycle-to-K map on its Adams weight and agrees with the universal Chern-class construction on the classifying simplicial scheme BGL, not an arbitrary group equivalence. Construct the character on the classifying-space/descent diagrams with target the Dold–Kan realizations of the nonpositive cycle complexes shifted by 2p, with coherent open-restriction naturality, before passing to homotopy groups.",
+          "statement": "For every smooth quasi-projective finite-type X over any field k and p,n≥0, construct chₚ,ₙ:Kₙ(X)⊗ℚ→CHᵖ(X,n)⊗ℚ on the supplied perfect K-theory groups and shared cycle complexes. Construct its total character with target the direct sum over p≥0, so each element has finite weight support. The construction is the rational inverse of the geometric cycle-to-K map on its Adams weight. Construct the character on the classifying-space/descent diagrams with target the Dold–Kan realizations of the nonpositive cycle complexes shifted by 2p, with coherent open-restriction naturality, before passing to homotopy groups.",
           "hypotheses": [
             "k is a field",
             "X is smooth, quasi-projective and of finite type over k",
@@ -365,11 +376,6 @@
               "name": "TauCeti.MotivicRealization.higherChernComponents",
               "role": "basic API",
               "statement": "Projection to the pth summand is chₚ,ₙ, rationally additive and natural for morphisms of smooth quasi-projective schemes."
-            },
-            {
-              "name": "TauCeti.MotivicRealization.higherChernUniversalClass",
-              "role": "basic API",
-              "statement": "Universal bundle classes on finite Grassmannians, their stabilization and their classifying Čech nerves give the same higher Chern-class maps as the multirelative cycle construction, with the standard Newton-polynomial factorials."
             }
           ],
           "tests": [
@@ -444,6 +450,11 @@
               "name": "universal_inverse_agreement",
               "kind": "compatibility",
               "statement": "Both the inverse cycle map and the universal-class character send [O_point] on ℙ¹ to h in leading weight 1. In degree 1 both send the unit 2 over ℚ to [2], whose 2-adic valuation is 1; agreement only at n=0 would not exclude a zero map in positive degrees."
+            },
+            {
+              "name": "degree_two_universal_inverse_agreement",
+              "kind": "compatibility",
+              "statement": "On 𝔾_{m,ℚ}, both the inverse cycle map and the universal-class character send {2}·{t}∈K₂ to the ordered cube product [Γ₂]×[Γ_t]∈CH²(𝔾_m,2)⊗ℚ. Its regulator is i log 2 darg t with positive-circle period 2πi log 2≠0 (§§7.3–7.4; BKK p.115, BKK line 4176–4180). Reversing the loop order gives the negative, so agreement in degrees 0 and 1 alone does not fix this sign."
             }
           ]
         },
@@ -606,7 +617,7 @@
           "id": "3.2",
           "kind": "theorem",
           "name": "TauCeti.MotivicRealization.logarithmicFilteredComparison",
-          "statement": "For every smooth separated finite-type complex X and every smooth proper SNC compactification j:X→W, the holomorphic logarithmic complex maps by a filtered quasi-isomorphism for F to E_W(log D), and the real logarithmic model represents Rj_*ℝ. On hypercohomology the rational structure and F define the geometric mixed Hodge structure; its cohomological weight WₘHⁱ is induced by Wₘ₋ᵢ on the logarithmic complex. The Hodge spectral sequence degenerates at E₁ and the weight spectral sequence at E₂. Every morphism of compactifications fixing X induces a real F-filtered quasi-isomorphism on derived global sections. No invariance of the unshifted residue filtration W on complexes under a blowup is asserted.",
+          "statement": "For every smooth separated finite-type complex X and every smooth proper SNC compactification j:X→W, the holomorphic logarithmic complex maps by a bifiltered quasi-isomorphism for (W,F) to E_W(log D), and the real logarithmic model represents Rj_*ℝ. On hypercohomology the rational structure and F define the geometric mixed Hodge structure; its cohomological weight WₘHⁱ is induced by Wₘ₋ᵢ on the logarithmic complex. The Hodge spectral sequence degenerates at E₁ and the weight spectral sequence at E₂. Every morphism of compactifications fixing X induces a real F-filtered quasi-isomorphism on derived global sections. No invariance of the unshifted residue filtration W on complexes under a blowup is asserted.",
           "hypotheses": [
             "X is smooth separated of finite type over ℂ",
             "W is any smooth proper compactification with reduced SNC boundary",
@@ -644,7 +655,7 @@
             {
               "name": "open_torus_weight",
               "kind": "computation",
-              "statement": "For X=𝔾_m⊂ℙ¹, the trivial extension has residues (0,0), so §C5.6 gives H¹=ℂ·dz/z with positive-loop period 2πi. It has type (1,1) and weight 2; dz/z has residue-filtration index 1, and 1+cohomological degree 1=2. Calling that weight 1 would be wrong."
+              "statement": "For X=𝔾_m⊂ℙ¹, the trivial extension has residues (0,0), so §C5.6 gives H¹=ℂ·dz/z with positive-loop period 2πi. It has type (1,1) and weight 2; on both the holomorphic and smooth logarithmic complexes dz/z lies in W₁ and not W₀, and 1+cohomological degree 1=2. Calling that weight 1 would be wrong."
             },
             {
               "name": "boundary_refinement",
@@ -1585,11 +1596,11 @@
   "consumers": [
     {
       "roadmap": "Polylogarithms",
-      "what": "§5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. The shared Aₚ, Aₚ,S, Hₚ, logarithmic Green-current identity and normalized even-degree pairing move down to §§5.2–5.3 here. Polylogarithms §5.2 retains D_AH, β, its full current dictionary and concrete comparison cones; §5.3 retains its Green forms. Explicit Wang/Goncharov forms and their comparison homotopies remain its direction."
+      "what": "§5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. The shared Aₚ, Aₚ,S, Hₚ, logarithmic Green-current criterion and normalized even-degree pairing are §§5.2–5.3 here; Polylogarithms §5.2 imports them. Polylogarithms §5.2 retains D_AH, β, its full current dictionary and concrete comparison cones; §5.3 retains its Green forms. Explicit Wang/Goncharov forms and their comparison homotopies remain its direction."
     },
     {
       "roadmap": "ColemanIntegration",
-      "what": "§§L3.Fa.1–L3.Fa.2 import §2.0a’s general supported cube construction; its arithmetic hypotheses, special-unit localizations and de Jeu symbols remain there. Its Beilinson map reg_∞ in §L3.Fc.1 is the specialization of §7.1 to K₂ₚ₋₁(ℂ), transported through ℂ/ℝ(p)≃ℝ(p−1) by πₚ₋₁. It consumes §§7.1 and 7.4 for this normalization; the syntomic map and regulator determinants remain there."
+      "what": "ColemanIntegration §L3.Fa.2 imports §2.0a’s cube K-theory, ordered relativity equivalence and Adams weights; its L3.Fa.1 Quillen package, special-unit localizations and de Jeu symbols remain there. Its Beilinson map reg_∞ in §L3.Fc.1 is the specialization of §7.1 to K₂ₚ₋₁(ℂ), transported through ℂ/ℝ(p)≃ℝ(p−1) by πₚ₋₁. It consumes §§7.1 and 7.4 for this normalization; the syntomic map and regulator determinants remain there."
     },
     {
       "roadmap": "BorelRegulators",
@@ -1597,7 +1608,7 @@
     },
     {
       "roadmap": "PeriodsAndSpecialValues",
-      "what": "The number-field Beilinson map specified in PS.3.2a through ℂ/ℝ(j), with projection (z+(−1)ʲ⁻¹z̄)/2, is the specialization of §7.1 at its number-field embeddings and must import §§7.1 and 7.4 for this map. Its construction is not an existing use of this roadmap’s motivic character. Its Borel comparison, determinant factors and special-value statements remain arithmetic targets there."
+      "what": "The number-field Beilinson map specified in PS.3.2a through ℂ/ℝ(j), with projection (z+(−1)ʲ⁻¹z̄)/2, is the specialization of §7.1 at its number-field embeddings and must import §§7.1 and 7.4 for this map. Its Borel comparison, determinant factors and special-value statements remain arithmetic targets there."
     },
     {
       "roadmap": "KatoEulerSystems",
