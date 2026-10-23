@@ -127,6 +127,7 @@ EnriquesSurfacesAndIntegralNonexistence
 RelativeFarguesFontaine
 VStackSheavesAndLisseCategories
 GeometricSatakeAndFusion
+FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII
 DiamondsAndVStacksPartII
 PrismaticCohomologyPartIV
 ColemanIntegration
