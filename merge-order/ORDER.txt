@@ -201,6 +201,7 @@ GaloisSectionsPadicPeriodMaps
 HabiroCohomologyFoundations
 CohomologyComparisonsPartII
 PadicHodgeRegulators
+NonordinaryCMSpecialValues
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
