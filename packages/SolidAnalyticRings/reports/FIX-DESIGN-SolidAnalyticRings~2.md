@@ -1,5 +1,7 @@
 # SolidAnalyticRings design repair
 
+The supplied starting tree already contains the mathematical repairs below relative to the reviewed design. This pass reverified them against the source cache, pinned libraries, main and indexed open heads. Additional edits make the two replete-topos supplier attributions explicit, synchronize their plan description, and correct the wording of §6.3’s finite-skeleton route.
+
 ## F01 (P1) — applied
 
 Implicit import of light integer solidity from VS2.1 → local §1.5, including the null test, abelian and derived reflections, cohomological characterization, free measures and countable product tensor. Repointed §§1.3, 2.1–2.4, 3.1, 4.2 and 7.4, their plan prerequisites, supplier contracts, ownership and references. Native universe-0 carriers and their larger-universe transport are distinguished.
@@ -26,7 +28,7 @@ Evidence: §§3.2 and 3.1 give ∏_I A≃A⊗■∏_Iδ𝕊 for the coefficient 
 
 ## F05 (P3) — applied
 
-Incomplete inputs → §1.4 and EnhancedDerivedSheaves E2.1–E2.3 in §2.1; E5:abstract.3 in §1.1; E5:spectra-comparison and its ordinary tower comparison in §6.4; E2:towers in Layer 5 Dependencies. Added the native essentially-small instance and ordinary small-site sheaf equivalence to Conventions and Mathlib contracts. Plan prerequisite lists and supplier sections agree.
+Incomplete inputs → §1.4 and EnhancedDerivedSheaves E2.1–E2.3 in §2.1; E5:abstract.3 in §1.1; E5:spectra-comparison in §6.4; E2:towers in Layer 5 Dependencies. Added the native small-site declarations. README and plan now explicitly attribute countable-product epimorphisms and Milnor to EnhancedDerivedSheaves E2.1 and E2.2. Prerequisites and supplier sections agree.
 
 Evidence: Mathlib/Topology/Category/LightProfinite/Basic.lean:403 supplies the instance; Mathlib/Condensed/Light/Small.lean:30 supplies `LightCondensed.equivSmall`. EnhancedDerivedSheaves E2.1–E2.3 contains the countable-product, Milnor and Postnikov inputs; E5:abstract.3 is monoidal localization. E5:spectra-comparison's `symmetricSpectra_towerComparison` explicitly compares the (p,id) tower and its completion unit, including its H𝔽_p Check.
 
@@ -56,7 +58,13 @@ Ownership searches used the roadmap service across main and all 330 indexed open
 
 Supplier citations were rechecked on main for GeneralizedCohomology G2.1–G2.7, G3.8–G3.9 and the EnhancedDerivedSheaves sections named in the contracts; at the service heads for StableHomotopyKTheory §§5.13–5.18, VStackSheavesAndLisseCategories VS2.1–VS2.2, and HabiroRings §§2.6–2.12. The interfaces used are the concrete spectra/towers, enhanced light ringed-site categories, localizations, stabilization, animated module comparison and common-presentation analytic measures specified in the README. The contract passages for both gaps still do not state the required general extensions, so their gap entries remain.
 
-The citation resolver returned one existing lead: “7: RefinedTraceMethods §6.2: no roadmap RefinedTraceMethods on main or in an open pull request”. The board index identifies its head as 87bc3ff, whose `packages/RefinedTraceMethods/README.md` was read through the local Git object. Its §6.2 contains the exact “Light condensed and solid spectra” block; §§6.3–6.4 contain the stated consumers. This confirms the citation against the indexed board head rather than claiming a main-branch supplier. The block's ownership remains in this package, as already specified; it creates no reverse dependency. The resolver reported no unresolved Lean names, but explicitly did not check external Lean names because its own host has no pinned Lake packages; those declarations were inspected in the supplied pinned checkouts instead.
+The supplied citation audit lists three leads, all resolved by direct inspection:
+
+- RefinedTraceMethods §6.2 is absent from the service index. The board index identifies head 87bc3ff, whose `packages/RefinedTraceMethods/README.md` was reopened through its local Git object. Section 6.2 contains “Light condensed and solid spectra”; §§6.3–6.4 contain the stated consumers. This is the indexed board head, not a main-branch supplier. Ownership stays here and introduces no reverse dependency.
+- `IsReplete.countableProduct_epi` is the named target in `TauCetiRoadmap/EnhancedDerivedSheaves/README.md`, E2.1, on main a07e2024. It asserts countable-product epimorphisms for replete topoi. It is not a pinned-library declaration; the README now attributes it explicitly to this supplier section.
+- `IsReplete.milnor` is the named target in the same main roadmap, E2.2. Its cohomological lim¹ term is H^(q−1), hence its homological term is π_(k+1), as used here. It is likewise a supplier target, now explicitly attributed. The supplier description in the plan records both sections.
+
+The rerun resolver returns only the RefinedTraceMethods lead and says that external Lean names were not checked because its host lacks pinned Lake packages. Direct searches of both supplied pins found neither replete-topos name; their absence there agrees with their ownership as supplier targets.
 
 The unchanged HigherHidaAndColemanTheory R23–R24 consumer citation could not be independently reopened: its board-index entry identifies da88512, but neither a checkout nor that Git object is present, and the roadmap service reports no main/open copy. This is an outgoing consumer note, not a supplier or a new ownership claim. No claim is made to have verified that consumer's text. LocallyAnalyticRepresentationsOfLocalGroups LR.3 was read in its board design; its broader geometric, group-ring and functional-analysis requests remain outside this package.
 
@@ -148,6 +156,7 @@ These are computed mathematical tests, not an assertion that examples prove the 
 | §5.3 null-family equivalence | (t^j)_j; (1)_j; two singleton blocks; one infinite block | modulo t^r survivors j<r; constants survive infinitely; A²=A²; ∏ℕA=∏ℕA | positive and negative models separated | None |
 | §5.4 all degrees/naturality | k<0; ηt^j; duplication; fold | 0; modulo t² survivors η,ηt; outputs 0–3; fold 1+t modulo t² | consistent | False restriction Check replaced |
 | §6.1 bounded resolutions | 0; Σ^bG_A; Σ^(−n)G_A | realizations 0 and Σ^bG_A; lower bounds −n unbounded | uniformity essential | None |
+| EnhancedDerivedSheaves E2.1–E2.2 inputs | Countable products of ℤ/4→ℤ/2; tower H(ℤ/2^r) | product map is coordinate reduction and lifts each 0/1 coordinate; lim=ℤ₂, lim¹=0, π₋₁ of limit=0 | supplier targets give the required epimorphism and homological Milnor degree | Attribution made explicit |
 | §6.2 quotient completion | a_r=1; zero scalar; Hℤ/2^r | 0; M⊕ΣM at a zero scalar; π₋₁Hℤ₂=0, lim¹ quotients=0 | bound is ≥b | Stronger target |
 | §6.2 ideal/quotient boundary | ℤ←2ℤ←4ℤ; quotient system ℤ/2^r | ideal lim=0, pointwise lim¹=ℤ₂/ℤ; quotient lim=ℤ₂, lim¹=0 | towers differ | Necessity claim deleted |
 | §6.3 realization estimate | Constant object; first normalized layer Σ^bHℤ, a_r=2^r | identity; completion=Σ^(b+1)Hℤ₂, π_b=0 and π_(b+1)=ℤ₂ | retains b+1 connectivity | Both tails and skeleton threshold raised |
@@ -179,9 +188,9 @@ The repaired proof routes have no new circular prerequisite: §1.5 uses the mark
 
 ## Mechanical outcomes
 
-- README/plan audit: PASS. All 27 target statements, all 27 prerequisite lists, all 89 Checks and all 61 API laws agree. Every target has at least three Checks. The two gap needs sentences agree exactly and occur under the required “What … must provide” lines. The independent-choice indices have no unintended countability restriction. Source TOML parses with nine unique source keys. `git diff --check` exits 0; only the three permitted package files and this requested report are changed.
+- README/plan audit: PASS. All 27 target statements, all 27 prerequisite lists, all 89 Checks and all 61 API laws agree. Every target has at least three Checks. The two gap needs sentences agree exactly and occur under the required “What … must provide” lines. The independent-choice indices have no unintended countability restriction. Source TOML parses with nine unique source keys. `git diff --check` exits 0. This verification changes only the README, plan and requested report; the source manifest already records the required locators and remains unchanged.
 - Lean audit: not applicable to this design. There is no `Suggested.lean`, hence no declarations, section-variable binders, sorry'd data or theorem signatures to compare mechanically with `#check @name`. No Lean command was run and no acceptance-test file was created outside the permitted scope.
-- Citation audit: no unresolved Lean name was returned; one existing RefinedTraceMethods lead was independently resolved against its indexed local board head as described above. The external-name resolver limitation and unavailable HigherHidaAndColemanTheory consumer text are recorded above rather than treated as verified.
+- Citation audit: the three supplied leads were independently resolved as described above. The rerun resolver leaves only RefinedTraceMethods, verified against its indexed local board head, and skips external Lean names on its host. The two flagged replete-topos names are main-roadmap supplier targets. The unavailable HigherHidaAndColemanTheory consumer text remains explicitly unverified.
 - Dependency check: exit 0. Exact output:
 
 ```text

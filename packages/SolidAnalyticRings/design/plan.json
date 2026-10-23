@@ -1526,7 +1526,7 @@
         "E5:animation.4",
         "E5:spectra-comparison"
       ],
-      "what": "Stable enhancements, hypercovers, accessibility, localization, coherent towers, bar scalar extension, monoidal localization, monadicity and spectrum/module comparisons. The additional cardinal-interchange contract is gap:cardinal-interchange."
+      "what": "Stable enhancements, hypercovers, accessibility, localization, coherent towers, replete countable-product epimorphisms (E2.1), the Milnor sequence (E2.2), Postnikov comparison (E2.3), bar scalar extension, monoidal localization, monadicity and spectrum/module comparisons. The additional cardinal-interchange contract is gap:cardinal-interchange."
     },
     {
       "roadmap": "VStackSheavesAndLisseCategories",
