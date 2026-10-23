@@ -236,3 +236,4 @@ ColemanPowerSeriesPartII
 DrinfeldModulesAndTModulesPartII
 ExcursionOperatorsAndSpectralActionPartII
 ExoticMonoidalStructuresAndAbstractAutomorphicity
+GL2ModularityLiftingPartII
