@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-533 mistakes recorded on the board: 259 misprints, 234 errors, 39 gaps, 1 unparsed bullets.
+539 mistakes recorded on the board: 265 misprints, 234 errors, 39 gaps, 1 unparsed bullets.
 Errata jobs have read the cited sources of 3 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -754,6 +754,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at p. 2: the source says a ceiling bracket there that the review confirms is a misprint; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## HTT
+
+- **Misprint** at the proof of Proposition 5.3.3.3, printed p.394 (HTT line 18710): the source says the cofinal map from N(A) is given the ∞-category of spaces as target; it should be the κ-filtered ∞-category I, as the factorization that follows requires; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d195541", "job": "REV-DESIGN-SolidAnalyticRings", "model": "opus", "worker": "fable-rev7"} -->. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
+
 ## Huber, Étale Cohomology of Rigid Analytic Varieties and Adic Spaces (1996)
 
 - **Misprint** at proof of Corollary 4.2.9, part (2), p. 246: the source says the displayed base change between the finite-rank model and the original scheme points the wrong way; it should be show X as the base change X₀ ×_{A₀} A of the model along A₀ → A, a Cartesian square over A; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1181,6 +1185,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Ramakrishnan, A theorem on GL(n) à la Tchebotarev, arXiv:1806.08429
 
 - **Error** at Lemma 4.1: the source says the lemma with no hypothesis at the real places; it should be stated with a real-place hypothesis, which the instance over ℚ(i) with the quaternion algebra (−1,−1) shows is needed; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## RC
+
+- **Misprint** at Theorem 2.3.3(3), p.12 (RC line 541): the source says the internally projective object is written with a disjoint-union sign; it should be the one-point compactification ℕ∪{∞}, as the proof at RC line 548 uses; affects nothing. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
+- **Misprint** at the proof of Proposition 3.2.5, item (1), p.18 (RC line 812): the source says the second coordinate of (1−Shift*) applied to a sequence is a₁ minus itself; it should be a₁ minus a₂; affects nothing; (the stated inverse is correct). Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
+- **Misprint** at the proof of Proposition 3.2.5, item (7), p.19 (RC lines 874–875): the source says the solid target is introduced as C but written as B in the displayed isomorphism and the conclusion; it should be C throughout; affects nothing. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
+- **Misprint** at the proof of Proposition 3.2.5, p.19 (RC line 876): the source says it assumes properties (11) and (12), but the argument uses (12) and (13) to deduce (9)–(11); it should be (12) and (13), matching RC line 794; affects nothing. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
+- **Misprint** at the proof of Theorem 2.3.3(3), p.12 (RC lines 555–556): the source says the factor is written as ℕ times the point at infinity; it should be ℕ∪{∞}; affects nothing. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
 
 ## Rizov, Moduli stacks of polarized K3 surfaces in mixed characteristic, arXiv math/0506120v2
 
