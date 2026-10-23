@@ -1,0 +1,8 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-REV-PKG-HabiroCohomologyFoundations~codex7",
+    "date": "2026-10-20",
+    "notes": "Independent review of #11466 by Codex, session codex-iFM9sJ, under the maintainer-revised HC -> QW -> I -> HR -> RT -> II order. Accepted after adding the differential ghost API and three discriminating Checks in 3.7, extending its QW 3.15 locator to pp.41-42, aligning the Layer 5 introduction with the perfectly covered base in 5.13, and separating its etale example from later HR ordinary-model recognition. Verified all 151 supplier sentences: family inputs are QW.1-QW.4, with HC indirect through QW; no HR-derived, RT or Part II input. Checked ownership in 0.1-0.3, the full marked etale export in 4.21/4.28 including the nonstatic uncompleted pair, trace relocation, all-prime algebraic higher-power range and generality. Old R1 is withdrawn by the revised order; old R2 is the separate HR adv4 job, not a certification here that it has landed. Read current upstream/library and reviewed audit; no additional duplicate identified. Verified 15 randomly sampled source-bearing subsections plus delicate/flagged assertions, all definition Checks and twelve native signatures. Unchanged 226-line Suggested.lean passes lean-check at required pins with exactly seven sorry warnings and no other warnings/errors; five real definitions, seven theorem targets, twelve proved examples. Full report: research/blueprint/reviews/REV-PKG-HabiroCohomologyFoundations~codex7.md. Validation and external integration boundaries: research/blueprint/handoff/REV-PKG-HabiroCohomologyFoundations~codex7.md."
+  }
+}
