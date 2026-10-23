@@ -81,6 +81,7 @@ ModularCurvesPartII
 AnticyclotomicLocalUnits
 InertAnticyclotomicCMMainConjecture
 LocalGaloisDeformationRings
+LocalGaloisDeformationRingsPartII
 GlobalGaloisDeformations
 DiamondEtaleCohomology
 DiamondSixOperations
