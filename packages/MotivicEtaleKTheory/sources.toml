@@ -49,7 +49,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "Read arXiv:0907.5169v1 (2009), 52 pages. DOI identifies the 2012 publication; every theorem/page locator uses the read preprint."
-cited_for = ["1.1: cubical normalization", "2.0b and 2.2: complex-field universal higher Chern construction and Beilinson comparison input; arbitrary-field construction and inverse identification cited to uncertified Bloch86 Section 7", "4.2–7.4: supports, regulator roof, Beilinson comparison and products"]
+cited_for = ["1.1: cubical normalization", "2.0b and 2.2: complex-field universal higher Chern construction and Beilinson comparison input; arbitrary-field construction and inverse identification cited to uncertified Bloch86 Section 7", "2.4: universal character construction and degree-zero agreement, not a citation for higher multiplicativity", "4.2–7.4: supports, regulator roof, Beilinson comparison and products"]
 
 [[source]]
 id = "Levine94"
@@ -65,7 +65,7 @@ sha256 = "5f4de92e51f03dfb9a4708f70ed9a8f58d2c2a51e310eeb4d597be84c7450984"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["1.3–1.4: integral cycle comparison; rational source pullback scope distinguished from the supplied integral moving theory", "2.0a: supported multi-relative cube K-theory and generalized Adams weights", "2.1–2.3: higher Chern and supported comparisons"]
+cited_for = ["1.3–1.4: integral cycle comparison; rational source pullback scope distinguished from the supplied integral moving theory", "2.0a: supported multi-relative cube K-theory and generalized Adams weights", "2.4: rational cycle product only; character multiplicativity uses the roadmap tensor-pairing proof", "2.1–2.3: higher Chern and supported comparisons"]
 
 [[source]]
 id = "Burgos94"

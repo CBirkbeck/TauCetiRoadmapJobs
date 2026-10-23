@@ -197,23 +197,24 @@ KTheoryFiniteLocalFields §3.0a, SchemeAndStackFoundations §§5.1–5.2, and En
 
 ### 2.0a Supported multi-relative cube K-theory
 
-For every regular Noetherian separated finite-dimensional scheme X with an ample family of line bundles, n≥0, open Y⊂X×□ⁿ and closed S⊂Y, construct K^S(Y;∂□ⁿ) as the iterated homotopy fiber of the supplied supported perfect K-spectra on all intersections of the coordinate face pairs Dᵢ={tᵢ=0}⊔{tᵢ=∞}, with support restricted to each intersection. Here □=ℙ¹_ℤ∖{1}, products are over Spec ℤ, and every face is intersected with Y. Equivalently take the support fiber of the multi-relative restriction diagram. Order the coordinates as in Layer 1. Construct compatible Adams operations ψᵃ, a≥1, on this entire diagram and its total fiber; for a fixed a>1, integer q and homotopy degree m≥0, on Kₘ^S(Y;∂□ⁿ)⊗ℚ first use the finite generalized weight-q decomposition defined by (ψᵃ−aᑫ)ᴺx=0 for some N≥1. The commuting Adams maps preserve these summands, and the decomposition agrees with the supplied weight decomposition on each vertex. This relative construction retains generalized weight pieces; §2.2 proves the genuine eigenweight assertion on the absolute Kₘ(X) in §2.1’s field-base scope. For the relative cycle map require a field k, X smooth quasi-projective and finite type over k, and face-admissible S, with all iterated face intersections of the required codimension. (Levine94 §1, Theorem 1.10 and Corollary 1.11, pp.247–256, Levine94 line 407, Levine94 line 539 and Levine94 line 625; §2, Lemma 2.1 and Theorem 2.7, pp.257–273, Levine94 line 655, Levine94 line 695, Levine94 line 711 and Levine94 line 1101.)
+For every regular Noetherian separated finite-dimensional scheme X with an ample family of line bundles, n≥0, open Y⊂X×□ⁿ and closed S⊂Y, construct K^S(Y;∂□ⁿ) as the iterated homotopy fiber of the supplied supported perfect K-spectra on all intersections of the coordinate face pairs Dᵢ={tᵢ=0}⊔{tᵢ=∞}, with support restricted to each intersection. Here □=ℙ¹_ℤ∖{1}, the ambient cube X×□ⁿ is formed over Spec ℤ, and every face is intersected with Y. Pairings over a common regular base and external pairings have the domains specified below. Equivalently take the support fiber of the multi-relative restriction diagram. Order the coordinates as in Layer 1. Construct compatible Adams operations ψᵃ, a≥1, on this entire diagram and its total fiber; for a fixed a>1, integer q and homotopy degree m≥0, on Kₘ^S(Y;∂□ⁿ)⊗ℚ first use the finite generalized weight-q decomposition defined by (ψᵃ−aᑫ)ᴺx=0 for some N≥1. The commuting Adams maps preserve these summands, and the decomposition agrees with the supplied weight decomposition on each vertex. For arbitrary Y,S retain generalized weight pieces; on full cubes the relativity equivalence below identifies them with the supplied simultaneous supported eigenspaces. Section 2.2 identifies the absolute eigenweights with higher Chow groups in §2.1’s field-base scope. For the relative cycle map require a field k, X smooth quasi-projective and finite type over k, and face-admissible S, with all iterated face intersections of the required codimension. (Levine94 §1, Theorem 1.10 and Corollary 1.11, pp.247–256, Levine94 line 407, Levine94 line 539 and Levine94 line 625; §2, Lemma 2.1 and Theorem 2.7, pp.257–273, Levine94 line 655, Levine94 line 695, Levine94 line 711 and Levine94 line 1101.)
 
-Use SchemeKTheoryOperations §§2.5, 6.7–6.9’s supported K-models, functorial Adams maps and rational vertex weights on the stated regular ample-family domain before taking fibers. The finite face diagram gives a finite filtration on each rational homotopy group; its weight quotients yield the generalized decomposition by the linear-algebra argument of Levine94 Lemma 2.1, pp.258–259, Levine94 line 719–729. Regularity of the open face strata permits resolution comparisons. In the field-base cycle-map clause, the iterated-double cycle comparison invokes Theorem 2.7 only with its splitting and moving hypotheses over an infinite field; the arbitrary-field conclusion uses the supplied finite-field descent as in Levine94 Theorem 3.1, rather than dropping that hypothesis.
+Use SchemeKTheoryOperations §§2.5, 6.7–6.9’s supported K-models, functorial Adams maps and rational vertex weights on the stated regular ample-family domain before taking fibers. The finite face diagram gives a finite filtration on each rational homotopy group; its weight quotients yield the generalized decomposition by the linear-algebra argument of Levine94 Lemma 2.1, pp.258–259, Levine94 line 719–729. Regularity of the open face strata permits resolution comparisons. On full cubes, SchemeKTheoryOperations §6.8 makes pullback from X and restriction to the two sections Adams-compatible. Iterating their diagonal fiber with the ordered difference proves Adams equivariance of relativity; §6.9 then supplies its simultaneous eigenspaces. In the field-base cycle-map clause, the iterated-double cycle comparison invokes Theorem 2.7 only with its splitting and moving hypotheses over an infinite field; the arbitrary-field conclusion uses the supplied finite-field descent as in Levine94 Theorem 3.1, rather than dropping that hypothesis.
 
 The construction has the following API.
 
 - At n=0 the construction is the supplied K^S(Y); in particular it is K^S(X) when Y=X. Empty support gives the zero spectrum. Forgetting and enlarging support commute with every face restriction and the total fiber.
-- Coordinate restrictions, allowed pullbacks of supported face diagrams and products induce the corresponding maps of total fibers; identities and compositions are coherent. Adams operations commute with these maps and with each face, and their rational weight projectors agree with the supplied ones on every vertex.
-- For Y=X×□ⁿ and S=T×□ⁿ with T⊂X closed, homotopy invariance gives the ordered equivalence K^S(Y;∂□ⁿ)≃ΩⁿK^T(X). At each step identify the cokernel of the diagonal by (a,b)↦a−b, with the zero face first; exchanging two loop coordinates contributes −1 on the induced double suspension of homotopy groups.
+- Coordinate restrictions and pullbacks induce maps of total fibers: for g:X′→X between bases in this scope, take an open Y′⊂(g×id)⁻¹(Y) and closed S′⊂Y′ containing (g×id)⁻¹(S)∩Y′, with the induced faces. For two opens Y⊂X×□ⁿ and Y′⊂X×□ᵐ over the same X, construct the pairing of total-fiber spectra inducing the bilinear pairing Kᵣ^S(Y;∂□ⁿ)⊗Kₛ^{S′}(Y′;∂□ᵐ)→Kᵣ₊ₛ^{S×_X S′}(Y×_X Y′;∂□ⁿ⁺ᵐ), r,s≥0. The target is an open cube over X and has the same regularity hypotheses. For different bases X,X′, the external pairing over Spec ℤ is included when X×_ℤX′ also satisfies those hypotheses. Identities and compositions are coherent. Adams operations commute with restrictions and pullbacks and satisfy ψᵃ(x·y)=ψᵃx·ψᵃy for these pairings; their rational projectors restrict to the supplied vertex projectors.
+- For Y=X×□ⁿ and S=T×□ⁿ with T⊂X closed, homotopy invariance gives the ordered equivalence K^S(Y;∂□ⁿ)≃ΩⁿK^T(X). At each step identify the cokernel of the diagonal by (a,b)↦a−b, with the zero face first; exchanging two loop coordinates contributes −1 on the induced double suspension of homotopy groups. The equivalence intertwines every ψᵃ, a≥1, and carries the rational generalized weight-q piece in homotopy degree m≥0 onto the simultaneous weight-q eigenspace of Kₘ₊ₙ^T(X)⊗ℚ. Thus on these full cubes the generalized pieces are simultaneous eigenspaces.
 
 **Checks.**
 
 - At n=0,Y=X,S=X the degree-zero group is K₀(X); for X=Spec k the class [k²] is 2. At n=0,S=∅ it is 0. In codimension c the leading weight of [O_V] is [V] with coefficient 1 under the supplied degree-zero character.
-- At n=1,Y=X×□,S=Y the face map is the diagonal x↦(x,x). Its difference map sends (1,0)↦1, (0,1)↦−1 and (1,1)↦0; reversing the face order reverses these signs.
+- At n=1,Y=X×□,S=Y the face map is the diagonal x↦(x,x). Its difference map sends (1,0)↦1, (0,1)↦−1 and (1,1)↦0; reversing the face order reverses these signs. For X=Spec ℚ, the relative class corresponding to the unit 2 maps to [2]∈K₁(ℚ); ψ² multiplies it by 2 on both sides, and ψ¹ fixes it.
 - At n=2,Y=X×□²,S=Y the face-pair diagram has four vertices and total fiber Ω²K(X). For k=ℚ(u,v), the class corresponding to {u,v}∈K₂(k) has consecutive last-slot residues +1; exchanging the loop coordinates gives −1. Adams ψ² acts on this weight-2 class by 4 and ψ¹ by 1.
 - For X=Spec ℤ_p at every prime p, n=1,Y=X×□,S=Y gives fib(K(Y)→K(X)⊕K(X))≃ΩK(X), hence K₀(Y;∂□)=K₁(ℤ_p)=ℤ_p×. The difference map on the two face ranks sends (1,0) to +1 and (0,1) to −1, including p=2 and p=3. For X=Spec ℤ₃ and Y=(X×□)∖{t=2}, the two induced faces are still copies of X, with face ranks (1,1) for the trivial line; the construction applies without asserting the full-cube delooping for this open.
 - On X=S=Y=ℙ² at n=0, put h=1−[O(−1)], so h³=0. Then ψ²h=2h−h² and ψ²h²=4h². The integral generalized weight lattices ℤ·1, ℤ(2h+h²), ℤh² have index 2, whereas over ℚ, h=(2h+h²)/2−h²/2. Thus the direct-sum decomposition requires rational coefficients.
+- For X=Spec ℤ[i], the external self-product over ℤ is singular at (1+i,t−i): in ℤ[i,t]/(t²+1), putting v=t−i gives v(v+2i)=0, so this local ring has dimension 1 and cotangent dimension 2 over 𝔽₂. It is outside the regular external-product domain. In contrast Y=Y′=X×□ gives Y×_X Y′=X×□², which is regular. For X=Spec ℤ_(p) and units u,v, the ordered two-loop product satisfies ψ²{u,v}=4{u,v}=ψ²[u]·ψ²[v], including p=2 and p=3.
 
 *Needs:* §1.4; SchemeKTheoryOperations §§2.5, 3.1–3.3, 4.3, 6.7–6.9; GeneralAlgebraicKTheory §§4.6, 4.8, 4.14, 7.4–7.7; KTheoryFiniteLocalFields §3.0a; EnhancedDerivedSheaves §§0.1–0.4, E0.6.
 
@@ -252,7 +253,7 @@ The construction has the following API.
 - For X=∅ both source and every summand are 0. For X=Spec k⊔Spec k ranks remain a pair (2,1), rather than their sum 3.
 - In positive K-degree, ch₁,₁[2]=[2]≠0 in CH¹(ℚ,1)⊗ℚ: its 2-adic valuation is 1. A character vanishing in every positive degree fails.
 
-*Needs:* §2.0a; §2.0b; §1.4; GeneralAlgebraicKTheory §§3.12, 4.6, 4.8, 4.14, 6.3, 7.4–7.7; SchemeKTheoryOperations §§2.1–2.6, 6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 2; SchemeKTheoryOperations §§4.3, 6.7.
+*Needs:* §2.0a; §1.4; GeneralAlgebraicKTheory §§3.12, 4.6, 4.8, 4.14, 6.3, 7.4–7.7; SchemeKTheoryOperations §§2.1–2.6, 6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a; Mathlib `CategoryTheory.Abelian.DoldKan.equivalence`; AlgebraicTopology Stage 8, item 2; SchemeKTheoryOperations §§4.3, 6.7.
 
 ### 2.2 Weights and the higher comparison
 
@@ -268,7 +269,7 @@ Prove separately that the inverse of Levine’s geometric cycle map equals the u
 - On K₁(k)=k×, ψᵃ[u]=[uᵃ]=a[u], so the diagonal component has weight 1. At n=0,p=0 rank has eigenvalue a⁰=1, including a=1.
 - The component of ch(O(1)) on ℙ² in weight 2 is h²/2; its coefficient 1/2 excludes an integral character with the same target.
 - Both the inverse cycle map and the universal-class character send [O_point] on ℙ¹ to h in leading weight 1. In degree 1 both send the unit 2 over ℚ to [2], whose 2-adic valuation is 1; agreement only at n=0 would not exclude a zero map in positive degrees.
-- On 𝔾_{m,ℚ}, both the inverse cycle map and the universal-class character send {2}·{t}∈K₂ to the ordered cube product [Γ₂]×[Γ_t]∈CH²(𝔾_m,2)⊗ℚ. Its regulator is i log 2 darg t with positive-circle period 2πi log 2≠0 (§§7.3–7.4; BKK p.115, BKK line 4176–4180). Reversing the loop order gives the negative, so agreement in degrees 0 and 1 alone does not fix this sign.
+- On 𝔾_{m,ℚ}, both the inverse cycle map and the universal-class character send {2}·{t}∈K₂ to the ordered cube product [Γ₂]×[Γ_t]∈CH²(𝔾_m,2)⊗ℚ. Its uniformizer-last localization residue at t=0, using KTheoryFiniteLocalFields §3.0a’s diagonal boundary adapter, is [2]∈CH¹(Spec ℚ,1)⊗ℚ, whose 2-adic valuation is 1. Reversing the loop order gives −[2], of valuation −1. The native right-linear K-boundary instead has value −[2] on {2,t}, before the degree-two factor −1. Thus agreement in degrees 0 and 1 alone does not fix this sign. Section 7.3 computes the regulator of the same ordered product as i log 2 darg t.
 
 *Needs:* §2.0a; §2.0b; §2.1; SchemeKTheoryOperations §§6.8–6.9, 7.1–7.3; KTheoryFiniteLocalFields §3.0a.
 
@@ -293,7 +294,7 @@ The construction has the following API.
 
 ### 2.4 Products and degree-zero agreement
 
-For X,Y smooth quasi-projective over k, x∈Kₙ(X)⊗ℚ and y∈Kₘ(Y)⊗ℚ, the weight-(p+q) character of x×y is Σᵢ₊ⱼ₌p₊q chᵢ,ₙ(x)×chⱼ,ₘ(y), and diagonal pullback gives the internal formula. In degree zero this character equals SchemeKTheoryOperations §7.2 on the same K₀ carrier: ch(E)=Σ Chern roots exp(c₁), the rank is ch₀, ch(L)=exp(c₁L), and for an integral codimension-c V⊂X the first nonzero component of ch(O_V) is [V] in weight c. In positive K-degree, chₚ,ₙ=(−1)ᵖ⁻¹ cₚ,ₙ/(p−1)! for p≥1 with the universal higher Chern-class convention. (BF, §3.2, pp.21–23, BF line 948 and BF line 997; Levine94 Theorem 5.2, p.313, Levine94 line 2226).
+For X,Y smooth quasi-projective over k, x∈Kₙ(X)⊗ℚ and y∈Kₘ(Y)⊗ℚ, the weight-(p+q) character of x×y is Σᵢ₊ⱼ₌p₊q chᵢ,ₙ(x)×chⱼ,ₘ(y), and diagonal pullback gives the internal formula. The cycle product is Levine94 Theorem 5.2, p.313, Levine94 line 2226; compatibility of the character with it is proved here by the tensor-pairing route below. In degree zero this character equals SchemeKTheoryOperations §7.2 on the same K₀ carrier: ch(E)=Σ Chern roots exp(c₁), the rank is ch₀, ch(L)=exp(c₁L), and for an integral codimension-c V⊂X the first nonzero component of ch(O_V) is [V] in weight c. In positive K-degree, chₚ,ₙ=(−1)ᵖ⁻¹ cₚ,ₙ/(p−1)! for p≥1 with the universal higher Chern-class convention. (For the universal construction and degree-zero agreement: BF §3.2, pp.21–22, BF line 961–997; the higher coefficient follows from the Newton-polynomial calculation below.)
 
 Compare universal Chern classes and use the splitting principle for K₀. On higher homotopy the decomposable Chern monomials disappear, leaving the Newton-polynomial coefficient (−1)ᵖ⁻¹/(p−1)!. Tensor pairing coherence and the same multirelative cycle product prove multiplicativity. Agreement with §7.2 is an equality of maps after its perfect/vector-bundle comparison.
 
@@ -302,8 +303,9 @@ Compare universal Chern classes and use the splitting principle for K₀. On hig
 - On ℙ¹, [O_point]=1−[O(−1)] and ch=1−(1−h)=h. Thus the leading sign is +1.
 - For n>0 the factors relating chₚ,ₙ to cₚ,ₙ at p=1,2,3 are 1,−1,1/2; in particular ch₂,₂=−c₂,₂.
 - The external product of bundles of ranks 2 and 3 has ch₀=6=2·3; the unit rank 1 preserves every character component.
+- On ℙ¹, put ξ=1−[O(−1)]∈K₀ and h=[point]∈CH¹(ℙ¹,0). Then ξ²=0, ch(ξ)=h and h²=0, hence ch(ξ²)=0=ch(ξ)²; the character product formula gives the same vanishing as the Chow product.
 
-*Needs:* §2.2; §2.3; SchemeKTheoryOperations §§7.1–7.3; SchemeAndStackFoundations §§5.3–5.8.
+*Needs:* §2.2; §2.3; §2.0a; §1.4; GeneralAlgebraicKTheory §7.4; SchemeKTheoryOperations §§6.8, 7.1–7.3; SchemeAndStackFoundations §§5.3–5.8.
 
 ### Examples
 
@@ -355,7 +357,7 @@ Import ComplexComparisonPartII §C5.6’s regularSingularDeRhamComparison for th
 
 ### 3.3 The Deligne functor on Dolbeault complexes
 
-For every real Dolbeault cochain complex A bounded below, with A_C the direct sum of its (r,s)-pieces and conjugation exchanging r,s, and every integer p, define its Deligne cone as fib(A_R(p)⊕FᵖA_C→A_C), with arrow (a,f)↦f−a and A_R(p)=(2πi)ᵖA_R. Define its small Dolbeault model D(A,p) by Dᵃ=A_Rᵃ⁻¹(p−1)∩Fᵃ⁻ᵖ,ᵃ⁻ᵖ for a≤2p−1, and Dᵃ=A_Rᵃ(p)∩Fᵖ,ᵖ for a≥2p. Here Fʳ,ˢ projects to types at least (r,s). Its differential is minus the projection of d to types at least (a−p+1,a−p+1) below degree 2p−1, equals −2∂∂̄ at degree 2p−1, and equals d above it. Construct mutually inverse-up-to-homotopy maps with the cone, with projection followed by inclusion equal to identity on D. (BKK, Definitions 5.7–5.10 and Proposition 5.12, pp.110–113; BKK line 3999, BKK line 4035 and BKK line 4060).
+For every real Dolbeault cochain complex A bounded below, with A_C the direct sum of its (r,s)-pieces and conjugation exchanging r,s, and every integer p, define its Deligne cone as fib(A_R(p)⊕FᵖA_C→A_C), with arrow (a,f)↦f−a and A_R(p)=(2πi)ᵖA_R. Define its small Dolbeault model D(A,p) by Dᵃ=A_Rᵃ⁻¹(p−1)∩Fᵃ⁻ᵖ,ᵃ⁻ᵖ for a≤2p−1, and Dᵃ=A_Rᵃ(p)∩Fᵖ,ᵖ for a≥2p. Here Fʳ,ˢ projects to types at least (r,s). Its differential is minus the projection of d to types at least (a−p+1,a−p+1) below degree 2p−1, equals −2∂∂̄ at degree 2p−1, and equals d above it. Construct mutually inverse-up-to-homotopy maps with the cone, with inclusion D(A,p)→cone followed by projection cone→D(A,p) equal to the identity of D(A,p), and projection followed by inclusion homotopic to the identity of the cone by the specified degree −1 contraction. (BKK, Definitions 5.7–5.10 and Proposition 5.12, pp.110–113; BKK line 3999, BKK line 4035 and BKK line 4060).
 
 Use the type projections and πₚ(z)=(z+(−1)ᵖz̄)/2 to split the real and Hodge cone. The inclusion below the critical degree sends x to (∂xᵖ⁻¹,ᵃ⁻ᵖ−∂̄xᵃ⁻ᵖ,ᵖ⁻¹, 2∂xᵖ⁻¹,ᵃ⁻ᵖ,x); above it sends x to (x,x,0). The cone projection and the complementary-type contraction prove the stated homotopies. The special differential follows from ∂∂̄+∂̄∂=0.
 
@@ -370,7 +372,7 @@ The construction has the following API.
 - For A=ℂ in degree 0, H⁰D(A,0)=ℝ and H¹D(A,1)=ℂ/(2πiℝ)≃ℝ by Re; all other degrees vanish in these two cases.
 - For the same point and p=−1, F⁻¹A=A, so H⁰ is ℝ(−1) and H¹=0. A rule forcing p≥1 would lose this case.
 - For p=1 and x=|z|², ∂∂̄x=dz∧dz̄, hence d_Dx=−2dz∧dz̄; replacing the top operator by d would have degree and sign wrong.
-- For A=0 every cone term, D term and contraction is 0; on the point at weight 1 the projection sends log 2+iθ to log 2, independent of θ.
+- For A=0 every cone term, D term and contraction is 0. On the point at weight 1, inclusion sends r to (0,0,r) and projection sends this back to r. The other composite sends (0,0,log 2+iθ) to (0,0,log 2), which differs when θ≠0; it is homotopic to identity, rather than equal to it.
 
 *Needs:* Mathlib `CochainComplex.mappingCone`; Mathlib `CochainComplex.mappingCone.inl_v_d`; Mathlib `CochainComplex.mappingCone.inr_f_d`; §3.1; ComplexKahlerGeometry K1–K2; Tau Ceti `TauCeti.gradedCochainComplex`.
 
@@ -467,8 +469,9 @@ The construction has the following API.
 - For Z=∅ the fiber of identity is contractible; for Z=X it is D_log(X,p) because D_log(∅,p)=0.
 - For the map 0→ℝ[0], the fiber is ℝ in cochain degree 1, not degree −1. For a pair (ω,g), d² has second coordinate res(dω)−d(res ω−dg)=0.
 - For {0}⊂{0,1}⊂𝔸¹, degree-two supported coordinates send r↦(r,0), and the direct composite agrees; reversing the arrow would have source ℝ² and lose this inclusion.
+- In X=𝔸²_ℂ, the supported divisor classes for V(x) and V(y) multiply to the origin class with coefficient +1 in support V(x,y); forgetting support agrees with §4.2’s product. Disjoint divisors V(x) and V(x−1) have empty intersection and supported product 0.
 
-*Needs:* §3.4; Mathlib `CochainComplex.mappingCone`; Mathlib `CochainComplex.mappingCone.inl_v_d`; Mathlib `CochainComplex.mappingCone.inr_f_d`; EnhancedDerivedSheaves §§0.1–0.4.
+*Needs:* §3.4; §4.2; Mathlib `CochainComplex.mappingCone`; Mathlib `CochainComplex.mappingCone.inl_v_d`; Mathlib `CochainComplex.mappingCone.inr_f_d`; EnhancedDerivedSheaves §§0.1–0.4.
 
 ### 5.2 Semipurity with singular support
 
@@ -590,7 +593,7 @@ At a point the integral unit 2 maps to log 2. On an arbitrary open complement, i
 
 ### Dependencies
 
-Layers 1 and 3–5, KTheoryFiniteLocalFields §3.0a’s moving/localization maps, MotivesAndAlgebraicCycles §§4.7–4.8, 4.17–4.18 for its representability bridge, and EnhancedDerivedSheaves §§0.1–0.4, E2.6.
+Layers 1 and 3–5, KTheoryFiniteLocalFields §3.0a’s moving/localization maps, MotivesAndAlgebraicCycles §§4.7–4.8, 4.17–4.18 for its representability bridge, and EnhancedDerivedSheaves §§0.1–0.4, E0.6, E2.6.
 
 ## Layer 7: Beilinson comparison, products and normalization
 
@@ -671,7 +674,7 @@ Layers 1–6, the actual classifying-space K-models and operations supplied by G
 
 - **Polylogarithms.** §5.2 consumes §§1.3–1.4, 3.4, 4.1–4.2, 5.1–5.4 and 6.1–6.3; §§5.9–5.10 consume the cycle comparisons and §7.2; §§5.13 and 5.17 consume §§2.4, 7.2–7.4. The shared Aₚ, Aₚ,S, Hₚ, logarithmic Green-current criterion and normalized even-degree pairing are §§5.2–5.3 here; Polylogarithms §5.2 imports them. Polylogarithms §5.2 retains D_AH, β, its full current dictionary and concrete comparison cones; §5.3 retains its Green forms. Explicit Wang/Goncharov forms and their comparison homotopies remain its direction.
 
-- **ColemanIntegration.** ColemanIntegration §L3.Fa.2 imports §2.0a’s cube K-theory, ordered relativity equivalence and Adams weights; its L3.Fa.1 Quillen package, special-unit localizations and de Jeu symbols remain there. Its Beilinson map reg_∞ in §L3.Fc.1 is the specialization of §7.1 to K₂ₚ₋₁(ℂ), transported through ℂ/ℝ(p)≃ℝ(p−1) by πₚ₋₁. It consumes §§7.1 and 7.4 for this normalization; the syntomic map and regulator determinants remain there.
+- **ColemanIntegration.** ColemanIntegration §L3.Fa.2 imports §2.0a’s cube K-theory, ordered relativity equivalence with its weightwise form, and generalized Adams weight pieces, which are simultaneous eigenspaces on full cubes; its L3.Fa.1 Quillen package, special-unit localizations and de Jeu symbols remain there. Its Beilinson map reg_∞ in §L3.Fc.1 is the specialization of §7.1 to K₂ₚ₋₁(ℂ), transported through ℂ/ℝ(p)≃ℝ(p−1) by πₚ₋₁. It consumes §§7.1 and 7.4 for this normalization; the syntomic map and regulator determinants remain there.
 
 - **BorelRegulators.** Number-field applications use §§2.2, 6.1 and 7.2–7.4 for comparison with the universal realization; embedding spaces, Borel classes, lattice/covolume and special-value theorems lie in that arithmetic direction.
 
