@@ -176,7 +176,6 @@ MordellLawrenceVenkatesh
 HilbertModularVarietiesAndShimuraCurves
 ShimuraCompactifications
 StableReductionPartII
-AutomorphicBundlesPartII
 AnalyticToricGeometryPartII
 MixedHodgeModulesAndIrregularHodgeTheory
 DeligneWeightsAndPurityPartII
@@ -229,6 +228,7 @@ GrossZagierAndArithmeticHeights
 GrossZagierAndArithmeticHeightsPartII
 ComplexMultiplicationAndExplicitReciprocityPartII
 AutomorphicBundles
+AutomorphicBundlesPartII
 ReductiveGroupsPartIII
 HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
