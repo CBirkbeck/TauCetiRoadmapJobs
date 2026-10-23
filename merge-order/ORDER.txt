@@ -220,8 +220,8 @@ StableHomotopyKTheoryPartII
 GeneralAlgebraicKTheoryPartII
 MotivesAndAlgebraicCyclesPartII
 ChromaticHomotopyTheory
-ArithmeticKTheoryPartII
 BorelRegulators
+ArithmeticKTheoryPartII
 Polylogarithms
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
