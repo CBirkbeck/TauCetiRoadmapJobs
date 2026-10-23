@@ -1557,6 +1557,12 @@
   ],
   "gaps": [
     {
+      "slug": "light-measure-site-comparison",
+      "needs": "For every pair of uncountable strong limit cutoffs κ≤λ and every common light presentation of total size less than κ as defined in Conventions, provide light, compact-Hausdorff and cutoff realization functors with coherent natural comparisons identifying the free integer objects, their solidification units and measure Dirac maps, preserving the specified colimit cocones, and commuting with derived tensor, internal Hom and compatible analytic scalar extension whenever the objects compared have such presentations.",
+      "supplier": "VStackSheavesAndLisseCategories",
+      "section": "VS2.2, Analytic measures and complete modules; VS2.1 integer free measures"
+    },
+    {
       "slug": "cardinal-interchange",
       "title": "Abstract cardinal-filtered colimits and cardinal-small limits",
       "neededBy": [

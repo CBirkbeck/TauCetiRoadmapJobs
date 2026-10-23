@@ -25,7 +25,7 @@ authors = "Peter Scholze; joint work with Dustin Clausen"
 title = "Lectures on Condensed Mathematics"
 year = 2019
 locator_scheme = "theorem"
-locator = "Theorem 5.8, pp.35–36, CS line 1243; Theorem 6.2, p.43, CS line 1578"
+locator = "Remark 1.4, pp.7–8, CS line 116; Stone–Čech size bound, p.8, CS line 148; Theorem 5.8, pp.35–36, CS line 1243; Theorem 6.2, p.43, CS line 1578"
 url = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
 fetched_at = "2026-10-23T10:39:22Z"
@@ -34,7 +34,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "May 2026 revision of the 2019 lectures; theorem numbering and pages refer to the fetched revision."
-cited_for = ["7.4; imported VS2.1 compact-Hausdorff integer model"]
+cited_for = ["Conventions; strong-limit cutoffs", "7.4; imported VS2.1 compact-Hausdorff integer model"]
 
 [[source]]
 id = "AG"
@@ -42,7 +42,7 @@ authors = "Peter Scholze; joint work with Dustin Clausen"
 title = "Lectures on Analytic Geometry"
 year = 2020
 locator_scheme = "section"
-locator = "Lecture VI, Definition 6.12 and Proposition 6.14, pp.39–40, AG line 1361 and AG line 1384; Lecture XII, Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG line 3014 and AG line 3041"
+locator = "Definition 11.7, p.76, AG line 2934; Lecture VI, Definition 6.12 and Proposition 6.14, pp.39–40, AG line 1361 and AG line 1384; Lecture XII, Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG line 3014 and AG line 3041"
 url = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
 fetched_at = "2026-10-23T10:39:24Z"
@@ -60,7 +60,7 @@ title = "q-Hodge complexes over the Habiro ring"
 year = 2025
 arxiv = "2510.04782v2"
 locator_scheme = "theorem"
-locator = "Appendix B, paragraphs B.6–B.7 and Lemma B.8 with proof, printed pp.79–80 (PDF extraction pages 124–125), Q line 3643, Q line 3666 and Q line 3688"
+locator = "Appendix B, paragraphs B.6–B.7 and Lemma B.8 with proof, printed pp.79–80 (PDF extraction pages 124–125), Q line 3643, Q line 3666, Q line 3688 and Q line 3712–3715"
 url = "https://arxiv.org/abs/2510.04782v2"
 fetched_from = "https://arxiv.org/pdf/2510.04782v2"
 fetched_at = "2026-10-23T10:39:28Z"
@@ -69,7 +69,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v2"
-cited_for = ["3.1–3.4", "5.1–5.4", "6.1–6.3"]
+cited_for = ["3.1–3.4", "4.1", "5.1–5.4", "6.1–6.4"]
 
 [[source]]
 id = "Bosco"
@@ -96,7 +96,7 @@ title = "Notes on Solid Geometry"
 year = 2026
 arxiv = "2603.03012v1"
 locator_scheme = "section"
-locator = "Theorem 2.3.3, pp.12–13, RC line 537; Definition 3.2.1, p.16, RC line 732; Theorem 3.2.4(1)–(13), pp.17–18, RC line 754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC lines 1392 and 1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC lines 1431 and 1489; Example 4.6.4(2),(4), p.44, RC lines 2125–2145"
+locator = "Theorem 2.3.3, pp.12–13, RC line 537; Definition 3.2.1, p.16, RC line 732; Theorem 3.2.4(1)–(14), p.17, RC line 754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC lines 1392 and 1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC lines 1431 and 1489; Example 4.6.4, pp.43–44, RC line 2114; parts (2),(4), p.44, RC lines 2125–2145; Definition 5.5.1, p.64, RC line 3236; Definition 5.5.4, Lemma 5.5.5 and Proposition 5.5.6 with proof, pp.65–66, RC lines 3265–3305"
 url = "https://arxiv.org/abs/2603.03012v1"
 fetched_from = "https://arxiv.org/pdf/2603.03012v1"
 fetched_at = "2026-10-23T10:40:35Z"
@@ -105,7 +105,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v1"
-cited_for = ["1.1", "1.3", "1.5", "2.1–2.4", "3.1", "4.1–4.2", "6.2", "7.1–7.3"]
+cited_for = ["1.1", "1.3", "1.5", "2.1–2.4", "3.1", "4.1–4.2", "6.2", "7.1–7.4"]
 
 [[source]]
 id = "AS"
