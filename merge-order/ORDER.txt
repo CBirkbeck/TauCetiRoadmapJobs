@@ -70,6 +70,7 @@ HabiroCyclotomicCompletions
 QWittVectors
 MotivesAndAlgebraicCycles
 ModularCurvesPartII
+AnticyclotomicLocalUnits
 LocalGaloisDeformationRings
 GlobalGaloisDeformations
 DiamondEtaleCohomology
