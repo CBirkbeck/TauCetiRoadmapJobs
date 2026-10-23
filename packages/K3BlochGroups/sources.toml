@@ -33,3 +33,224 @@ locator = "Sections 1–5; pp. 217–239"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/193#issuecomment-6318617750"
+
+[[source]]
+id = "weibel"
+authors = "Charles A. Weibel"
+title = "The K-book: An Introduction to Algebraic K-Theory"
+year = 2013
+locator_scheme = "section"
+locator = "Combined PDF: IV.1, IV.4.10.1, V.6.7–6.7.1, V.11.13, VI.1–VI.5, pp.274–282,316,418–419,466,478–509; chapter III: III.6.4.1, III.7.2, III.7.8 and Exercises 7.3,7.12–7.13, pp.52,61–62,67–73; chapter IV: IV.1 and IV.4.9.3, pp.3–15,43; chapter V: V.6.7–6.7.1 and V.11.3–11.13, pp.38–39,81–87; chapter VI: VI.1–VI.5, pp.2–35"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-10-22T12:52:22Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "One work: the combined 29 August 2013 author draft uses volume PDF page numbers; separate chapter PDFs use chapter pagination."
+cited_for = ["1–6", "References"]
+weibel3_licence_class = "author-page"
+weibel3_sha256 = "ba1bc2d25680ab25c4baadc5ab28e39d1077dc66bb12ca4e2174b6cb55f81307"
+weibel3_url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+weibel4_licence_class = "author-page"
+weibel4_sha256 = "9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248"
+weibel4_url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
+weibel5_licence_class = "author-page"
+weibel5_sha256 = "52dcc8ee3a1764e5ea309c59f093ac8e2a1ea64f3b94bacc05e6a2b6125b1da8"
+weibel5_url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.V.pdf"
+weibel6_licence_class = "author-page"
+weibel6_sha256 = "efca16d77ed598735aa4e819be48d10d35bec0cf1b4138548f94f67922d40cd1"
+weibel6_url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.VI.pdf"
+
+[[source]]
+id = "mirzaii"
+authors = "Behrooz Mirzaii"
+title = "Bloch-Wigner theorem over rings with many units"
+year = 2008
+arxiv = "0807.2039v2"
+locator_scheme = "section"
+locator = "Lemma 4.1, arXiv v2 pp.8–10"
+url = "https://arxiv.org/abs/0807.2039v2"
+fetched_from = "https://arxiv.org/pdf/0807.2039v2"
+fetched_at = "2026-10-22T12:52:26Z"
+sha256 = "840a11b01a716af1d5d016152725bb020d7842340f53968d9f9b8704102a7012"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["4.11"]
+
+[[source]]
+id = "hutchinson2013"
+authors = "Kevin Hutchinson"
+title = "A Bloch–Wigner complex for SL2"
+year = 2013
+arxiv = "1107.0264v2"
+locator_scheme = "section"
+locator = "Sections 3–4,6–7, arXiv v2 pp.12–36"
+url = "https://arxiv.org/abs/1107.0264v2"
+fetched_from = "https://arxiv.org/pdf/1107.0264v2"
+fetched_at = "2026-10-22T12:52:32Z"
+sha256 = "057ce8a6ae5548fd9f6279514adfa3afa5a6554ad1e58f9ca34bb4c62df52e94"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["4–5"]
+
+[[source]]
+id = "levine"
+authors = "Marc Levine"
+title = "The indecomposable K3 of fields"
+year = 1989
+locator_scheme = "section"
+locator = "Theorems 4.11–4.12, pp.334–336"
+url = "https://numdam.org/item/10.24033/asens.1585.pdf"
+fetched_from = "https://numdam.org/item/10.24033/asens.1585.pdf"
+fetched_at = "2026-10-22T12:52:33Z"
+sha256 = "820e5603a23645cefa4a13c3310d62bd9edee248a96b033b7ff55b6398b7a4b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.18; 6.7"]
+
+[[source]]
+id = "hutchinson2024"
+authors = "Kevin Hutchinson"
+title = "The Chern class for K3 and the cyclic quantum dilogarithm"
+year = 2024
+arxiv = "2104.14413v4"
+locator_scheme = "section"
+locator = "Section 2.3, Theorem 2.10, arXiv v4 p.4"
+url = "https://arxiv.org/abs/2104.14413v4"
+fetched_from = "https://arxiv.org/pdf/2104.14413v4"
+fetched_at = "2026-10-22T12:52:38Z"
+sha256 = "e7a358154bf29701afcb1feb2308287f90e0fe405813d9548879dd5b2f2f30bf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["6.7"]
+
+[[source]]
+id = "cgz2021"
+authors = "Frank Calegari; Stavros Garoufalidis; Don Zagier"
+title = "Bloch groups, algebraic K-theory, units, and Nahm’s conjecture"
+year = 2023
+doi = "10.24033/asens.2537"
+arxiv = "1712.04887v3"
+locator_scheme = "section"
+locator = "arXiv v3 (2021): Definitions 1.1,2.1, Lemma 2.2, Theorem 2.11, Section 6, pp.2,8–9,15,33; published (2023): Definition 2.1, Lemma 2.2 p.391, Sections 4.2–4.3 pp.406–407, Section 6 pp.414–416"
+url = "https://arxiv.org/abs/1712.04887v3"
+fetched_from = "https://arxiv.org/pdf/1712.04887v3"
+fetched_at = "2026-10-22T12:52:44Z"
+sha256 = "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "One work with materially different presentations: arXiv v3 (2021) Definition 1.1 p.2, Definition 2.1 p.8, Lemma 2.2 p.9, Theorem 2.11 p.15 and Section 6 p.33 use the exterior convention; the published author copy (2023), Definition 2.1 and Lemma 2.2 p.391, Sections 4.2–4.3 pp.406–407 and Section 6 pp.414–416 use the negative-unit convention. Locators never interchange these versions."
+cited_for = ["3.13–3.16; 5.6; 6", "References"]
+preprint_sha256 = "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5"
+preprint_url = "https://arxiv.org/pdf/1712.04887v3"
+published_licence_class = "author-page"
+published_sha256 = "13d38474d6b7b6e3fc946d50cc2764094c3a25a194d873c17d9cd334c25600cf"
+published_url = "https://people.mpim-bonn.mpg.de/stavros/publications/printed/calegari_unit.pdf"
+
+[[source]]
+id = "goncharov"
+authors = "Alexander B. Goncharov"
+title = "Geometry of configurations, polylogarithms, and motivic cohomology"
+year = 1995
+locator_scheme = "section"
+locator = "Sections 1.8–1.9,2.3, pp.202–203,218,221–225,253–254"
+url = "https://sasha-goncharov.github.io/Advances1995.pdf"
+fetched_from = "https://sasha-goncharov.github.io/Advances1995.pdf"
+fetched_at = "2026-10-22T12:57:10Z"
+sha256 = "434fd9093d2e27e96fae240f8f591ca532baa2f9cc7cdfeb8bc087f5235f5344"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["3.11–3.12; 4.21"]
+
+[[source]]
+id = "zagier"
+authors = "Don Zagier"
+title = "The Dilogarithm Function"
+year = 2007
+locator_scheme = "section"
+locator = "Appendix II.1.A, pp.23–24"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/978-3-540-30308-4_1/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/978-3-540-30308-4_1/fulltext.pdf"
+fetched_at = "2026-10-22T12:57:12Z"
+sha256 = "05079cf525c6ba0f0d00b5c0d948bad202d291bc4910149d5d4abbab0515e7a0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.8"]
+
+[[source]]
+id = "kerz"
+authors = "Moritz C. Kerz"
+title = "The complex of words and Nakaoka stability"
+year = 2005
+arxiv = "math/0410261v1"
+locator_scheme = "section"
+locator = "Theorems 1–2, pp.1–3"
+url = "https://arxiv.org/abs/math/0410261v1"
+fetched_from = "https://arxiv.org/pdf/math/0410261v1"
+fetched_at = "2026-10-22T12:57:15Z"
+sha256 = "0337c78d59bcfcc6ccb6acd4d22f7b7e930ebf0ac2cd00d48abed7114b6fef0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["4.0; 4.15"]
+
+[[source]]
+id = "hatcher"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "section"
+locator = "Section 4.2, Examples 4.51–4.52, pp.380–381; Exercise 37, p.392"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-10-22T12:57:32Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.5"]
+
+[[source]]
+id = "marker"
+authors = "David Marker"
+title = "Introduction to Model Theory"
+year = 2000
+locator_scheme = "section"
+locator = "Theorem 3.5 and Corollary 3.6, pp.24–25; Proposition 4.1, p.25"
+url = "https://library.slmath.org/books/Book39/files/marker.pdf"
+fetched_from = "https://library.slmath.org/books/Book39/files/marker.pdf"
+fetched_at = "2026-10-22T12:57:57Z"
+sha256 = "19d7fb7388a6139e258f01a7c738e6d918e66311ceba8f1487e857856a67a160"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.8; gap:real-closed-elementary-transfer"]
+
+[[source]]
+id = "weibel-chern"
+authors = "Charles A. Weibel"
+title = "Étale Chern classes at the prime 2"
+year = 1993
+locator_scheme = "theorem"
+locator = "Proposition 2.4 and Example 2.6.2, author manuscript pp.10–11"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
+fetched_at = "2026-10-22T12:59:17Z"
+sha256 = "38dc2a10f368cf0115b890baff2b64ab77d352c037add1cc9bbe50125d796665"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts; 6.7"]

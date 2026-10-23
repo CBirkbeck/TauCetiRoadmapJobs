@@ -1,0 +1,16 @@
+{
+  "gaps": [
+    {
+      "slug": "real-closed-elementary-transfer",
+      "supplier": "RealAlgebraicGeometry",
+      "section": "Layer 6: CAD and quantifier elimination",
+      "needs": "Completeness and model completeness for all real closed ordered fields, extending the ℝ-only quantifier-elimination scope and giving rational-parameter elementary transfer."
+    },
+    {
+      "slug": "algebraically-closed-charp-k3-torsion",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§6.5a",
+      "needs": "For every algebraically closed field Ω of characteristic p>0, supply the natural isomorphism K₃(Ω)_tors≃Tor₁^ℤ(μ(Ω),μ(Ω)), normalized by the degree-four Bott Bockstein for each modulus m≥2 prime to p, compatibly with field embeddings, automorphisms and coefficient changes."
+    }
+  ]
+}
