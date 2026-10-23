@@ -180,6 +180,7 @@ MordellLawrenceVenkatesh
 MordellLawrenceVenkateshPartII
 HilbertModularVarietiesAndShimuraCurves
 ShimuraCompactifications
+StableReductionPartII
 AutomorphicBundlesPartII
 AnalyticToricGeometryPartII
 MixedHodgeModulesAndIrregularHodgeTheory
