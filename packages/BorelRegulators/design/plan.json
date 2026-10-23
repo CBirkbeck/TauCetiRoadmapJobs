@@ -1812,7 +1812,7 @@
         "3.6"
       ],
       "detail": "AdelicAlgebraicGroups §3.4 explicitly constructs SL₁(D), its semisimplicity and quotient compactness. Strong approximation in §4.2 additionally needs absolute almost simplicity and simple connectedness. Supply these properties by base change to SL_a for every central division algebra of degree a≥2; no new group carrier is needed.",
-      "needs": "Supply absolute almost simplicity and simple connectedness of the existing SL₁(D) carrier.",
+      "needs": "For every number field F and finite-dimensional central division F-algebra D of degree a≥2, prove that the existing AdelicAlgebraicGroups §3.4 group SL₁(D) is absolutely almost simple and simply connected.",
       "supplier": "AdelicAlgebraicGroups",
       "section": "§3.4 norm-one construction, structure extension"
     },
@@ -1823,20 +1823,9 @@
         "3.5"
       ],
       "detail": "Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses (with the gauge a generator of invariant top forms) and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors.",
-      "needs": "Supply positive rational local gauge masses for all compact opens, including ramified finite places.",
+      "needs": "For every nonarchimedean local field K of characteristic zero, smooth affine K-group H, nonzero K-rational invariant top form ω on H and compact open subgroup U⊂H(K), prove |ω|(U)∈ℚ_>0, where the gauge measure uses the additive coordinate measure on K giving O_K mass 1.",
       "supplier": "AdelicAlgebraicGroups",
       "section": "Part II, rational gauge masses extending §2.4"
-    },
-    {
-      "slug": "order-finite-generation",
-      "title": "Integral finite generation for nonmaximal orders",
-      "neededBy": [
-        "5.5"
-      ],
-      "detail": "ArithmeticKTheory §3.4 explicitly supplies the rational inclusion equivalence for every order. The integral image being a lattice also needs finite generation, not only a rational dimension. Supply finite generation of K_m(R) for every full ℤ-order R in a number field and m≥2, or an equally strong finite-index image theorem. Number-ring and finite-S finite generation in §3.3 cannot silently be applied to a singular nonmaximal order.",
-      "needs": "Supply finite generation or a finite-index integral comparison for higher K-groups of all number-field orders.",
-      "supplier": "ArithmeticKTheory",
-      "section": "extension of ArithmeticKTheory §§3.2–3.4 to all full ℤ-orders"
     },
     {
       "slug": "universal-deligne",
@@ -1846,8 +1835,8 @@
         "6.2",
         "6.3"
       ],
-      "detail": "For varieties, provide actual real Deligne cohomology and rational Chern regulators, including the point, finite disjoint unions, real descent, universal bundle class and maps from actual Quillen K-theory, naturality for embeddings and finite transfers, and chₙψ^a=a^n chₙ. This construction is independent of the Borel zeta-value and explicit polylogarithm comparisons. Its point case supplies ColemanIntegration §L3.Fc.1’s reg_∞ through §§6.1–6.2 here.",
-      "needs": "Supply the independent universal Chern/Deligne regulator and its point, transfer and Adams compatibility.",
+      "detail": "For varieties, provide actual real Deligne cohomology and rational Chern regulators, including the point, finite disjoint unions, real descent, universal bundle class and maps from actual Quillen K-theory, naturality for embeddings and finite transfers, and chₙψ^a=a^n chₙ. This construction is independent of the Borel zeta-value and explicit polylogarithm comparisons.",
+      "needs": "For every number field F and n≥1, supply the real Beilinson regulator K_(2n−1)(F)→H¹_D(Spec F×_ℚℝ,ℝ(n)) on actual Quillen K-theory from the universal twisted Chern class chₙᵗʷ∈H^(2n)_D(B·GL(ℂ),ℝ(n)), independently of Borel’s class, together with Deligne cohomology of finite disjoint unions of complex points, real descent, restriction and finite-transfer compatibility, and r_Be∘ψ^a=a^n·r_Be for every integer a≥1.",
       "supplier": "MotivicEtaleKTheory",
       "section": "universal-realization layer"
     },
@@ -1858,7 +1847,7 @@
         "6.2"
       ],
       "detail": "Over the actual universal classifying model, compare normalized cosimplicial functions/forms on the first infinitesimal classifying nerve with CE and Weil complexes, including evaluation into continuous cohomology and the Deligne cone projection. Fix the coefficient normalizations independently of the factor-two conclusion (burgos2002, Chapter 8, Propositions 8.9, 8.10, 8.14; Theorem 10.9 proof, lines 4172–4190).",
-      "needs": "Supply normalized infinitesimal classifying-space CE/Weil comparisons with the Deligne cone projection.",
+      "needs": "For every N≥1 and n≥1, supply isomorphisms from normalized holomorphic functions, holomorphic forms and real smooth ℝ(n−1)-valued functions on the first infinitesimal nerve B⁽¹⁾·GL_N(ℂ) to CE*(gl_N(ℂ),ℂ), W(gl_N(ℂ)) and CE*(gl_N(ℂ)_ℝ,ℝ(n−1)), respectively, compatible with the Hodge filtration, evaluation into continuous cohomology and Deligne cone projection π_(n−1), with coefficient normalizations independent of Bo=2Be.",
       "supplier": "MotivicEtaleKTheory",
       "section": "universal-realization layer, classifying-space comparison"
     },
@@ -1869,7 +1858,7 @@
         "4.1"
       ],
       "detail": "CharacteristicClasses C5a.2 already constructs the invariant-polynomial augmentation quotient and its coefficient and generator changes. Its generalization to every connected nonnegative graded commutative algebra, needed for cohomology of arithmetic quotients and compact duals, belongs to its Part II. Supply Q(A)=A₊/(A₊)², the homogeneous quotient, quotient universal property, map and base-change laws, and the exterior-generator comparison. Section 4.1 constructs only the cohomological determinant adapters, not a second generic augmentation quotient.",
-      "needs": "Supply one generic graded indecomposable functor extending the existing invariant-polynomial construction.",
+      "needs": "For every field k and connected ℕ-graded graded-commutative k-algebra A, supply Q(A)=A₊/(A₊·A₊), its homogeneous components and quotient universal property, functoriality for graded algebra maps, compatibility with extension of k, and Q(Λ(V))≃V for V concentrated in positive odd degrees.",
       "supplier": "CharacteristicClasses",
       "section": "Part II, general graded quotient API extending C5a.2"
     },
@@ -1894,12 +1883,6 @@
       "detail": "SemisimpleAlgebras Layer 6 and TauCeti.Algebra.CentralSimple.Index provide an index-degree splitting field but do not state divisibility of every finite splitting degree by the index. Extend that generic theory in Part II. For a division factor D of degree d and a splitting L, restrict the M_d(L)-module L^d to D; finite-dimensionality over the division ring gives d²k=d[L:K], hence d divides [L:K]. The number-field proof in §3.1 consumes this input and the existing index-degree splitting field, rather than constructing a second index theory.",
       "supplier": "SemisimpleAlgebras",
       "section": "Part II, finite splitting-degree divisibility extending Layer 6"
-    },
-    {
-      "slug": "borel-period-contract",
-      "needs": "Supply Polylogarithms with the real regulator isomorphism and resulting injectivity, integral image lattice, zeta covolume and rational-basis determinant, totally real even-weight rationality, and Tamagawa input.",
-      "supplier": "BorelRegulators",
-      "section": "§2.3, §§5.3–5.4, §5.1 and §3.4"
     }
   ]
 }

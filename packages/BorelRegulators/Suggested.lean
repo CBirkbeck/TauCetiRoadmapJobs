@@ -9,8 +9,6 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs.
 
 The following headlines are not statable at the pins:
-* Layer 1: the exact order and nonzero leading coefficient of the continued
-  Dedekind function at 1-n require its global continuation and analytic germ.
 * Layer 2: the specified Chern-normalized Borel regulator, its real isomorphism,
   torsion kernel and restriction/transfer laws require actual higher Quillen
   K-groups, the continuous Borel class and the arithmetic comparison maps.
@@ -29,14 +27,44 @@ The following headlines are not statable at the pins:
   regulator; the rational Adams-weight theorem requires higher K-groups and
   their Adams operations.
 
-The period-index equality and existence of division algebras split at infinity
-are stated on native algebra carriers. The rank-zero primitive-period theorem is
+The analytic leading-term theorem is stated for every analytic continuation
+agreeing with the native Dedekind series on Re(s)>1. The period-index equality
+and existence of division algebras split at infinity are stated on native algebra
+carriers. The rank-zero primitive-period theorem is
 stated on Mathlib's Dedekind zeta function. No replacement regulator is introduced.
 -/
 
 namespace TauCetiRoadmap.BorelRegulators
 
 universe u
+
+/-! ## Layer 1: Tate coordinates, trace and leading coefficients -/
+
+/-- Every continuation of the native Dedekind series analytic off `1` has
+exact higher-weight zero order, a nonzero real leading coefficient, and the
+functional-equation proportionality of README §1.3. The coefficient is the
+punctured limit; no assertion depends on the representative's value at `1`.
+See Borel 1977, §1.4 and §6.4. -/
+theorem dedekindZeta_continuation_leadingTerm
+    (F : Type u) [Field F] [NumberField F]
+    (Z : ℂ → ℂ)
+    (hZ : ∀ z : ℂ, z ≠ 1 → AnalyticAt ℂ Z z)
+    (hseries : ∀ z : ℂ, 1 < z.re → Z z = NumberField.dedekindZeta F z)
+    (n : ℕ) (hn : 2 ≤ n) :
+    let d := if n % 2 = 0 then NumberField.InfinitePlace.nrComplexPlaces F
+      else NumberField.InfinitePlace.nrRealPlaces F +
+        NumberField.InfinitePlace.nrComplexPlaces F
+    let z₀ : ℂ := 1 - (n : ℂ)
+    let c : ℂ := iteratedDeriv d Z z₀ / (Nat.factorial d : ℂ)
+    analyticOrderAt Z z₀ = (d : ℕ∞) ∧ c.im = 0 ∧ c ≠ 0 ∧
+      Filter.Tendsto (fun z : ℂ => Z z / (z - z₀) ^ d)
+        (nhdsWithin z₀ ({z₀}ᶜ)) (nhds c) ∧
+      ∃ q : ℚ, q ≠ 0 ∧
+        c = (q : ℂ) * (Real.sqrt |(NumberField.discr F : ℝ)| : ℂ) *
+          (Real.pi : ℂ) ^
+            ((d : ℤ) - (Module.finrank ℚ F : ℤ) * (n : ℤ)) *
+          NumberField.dedekindZeta F (n : ℂ) := by
+  sorry
 
 /-! ## Layer 3: Division algebras, rational gauges and arithmetic volume -/
 
