@@ -85,6 +85,7 @@ AnalyticNumberTheoryPartI
 AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 ArithmeticStatistics
+EffectiveBoundsCompactModels
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 CongruenceSpectralGap
