@@ -4,11 +4,13 @@
 
 ## Scope and ownership
 
-This roadmap owns the embedding Tate lattice, the specified arithmetic regulator and its real isomorphism, the point realization and Borel–Beilinson comparison, the classical division-algebra volume input, and the primitive-period determinant and zeta covolume. The number-field regulator block is the shared input of PeriodsAndSpecialValues PS.3.2a; that roadmap retains its determinant and fundamental lines, general conjectural special-value predicates, and mixed Tate applications. The type-A norm-one theorem is the input used by EndoscopicTransferAndUnitaryTraceComparison §6.2; its general simply connected semisimple Tamagawa theorem and endoscopic proof remain there. Section 3.1 supplies the period–index input of HeightsRationalPointsAndObstructions §3.6.
+This roadmap owns the embedding Tate lattice, the specified arithmetic regulator and its real isomorphism, the point realization and Borel–Beilinson comparison, the arithmetic division-algebra volume specialization, and the primitive-period determinant and zeta covolume. The number-field regulator block is the shared input of PeriodsAndSpecialValues PS.3.2a; that roadmap retains its determinant and fundamental lines, general conjectural special-value predicates, and mixed Tate applications. The norm-one Tamagawa theorem is supplied by the AdelicAlgebraicGroups extension below; §3.4 identifies its mass in Borel’s gauge. Section 3.1 supplies the period–index input of HeightsRationalPointsAndObstructions §3.6.
 
-ArithmeticKTheory §§3.2–3.4 owns finite generation, the actual rational localization and order equivalences, the stable arithmetic and relative-Lie comparison and Borel ranks. These theorems are inputs here, independent of regulator values. GeneralAlgebraicKTheory §3.12 and §§7.4–7.8 owns Quillen groups, the plus/Q comparison and transfers; StableHomotopyKTheory §§3.37,4.14 owns the finite-type rational H-space comparison and stable GL plus multiplication. CharacteristicClasses C5a/C6 and TopologicalKTheory T4/T7 own compact transgression, characteristic classes and Bott theory. Section 4.3 computes their specific rational Lie-algebra-to-compact period for restriction of scalars of SL, rather than another compact-Lie cohomology theory.
+The complex regulator and lattice theorem of ColemanIntegration §L3.Fc.1 belong to §§2.2–2.3 and 5.3 here, with the Beilinson normalization identified in §6.2. ColemanIntegration retains its pairings and discriminant/regulator determinants. Its point regulator uses the point case of gap:universal-deligne. IntegralIwasawaTheory §6.0 owns totally real Siegel–Klingen rationality; LFunctions Layer 3 and §1.3 turn its trivial-character value at 1−n into the positive even-value formula. Section 5.1 retains the empty determinant case of the general period comparison.
 
-MotivicEtaleKTheory owns the universal motivic Chern character, cycle-model comparisons and Deligne regulator for varieties. Section 6.1 owns its explicit point/embedding-space identification and §6.2 its Borel comparison. The universal supplier is an explicit gap below, not a construction assumed from a section title in a consumer. Polylogarithms §§2.3,3.7–3.8,4.4 owns explicit symbol comparisons and their factorial/Hurewicz and π^(n−1) calibrations. None supplies an input to this proof. Higher symplectic arithmetic stability and KSp are outside this number-field SL regulator contract; their natural owner is ArithmeticKTheory, Part II.
+ArithmeticKTheory §§3.2–3.4 owns finite generation, the actual rational localization and order equivalences, the stable arithmetic and relative-Lie comparison and Borel ranks. These theorems are inputs here, independent of regulator values. GeneralAlgebraicKTheory §§2.5, 3.2, 3.12 and 7.7–7.8 owns Quillen groups, the plus/Q comparison and transfers; StableHomotopyKTheory §§3.37,4.14 owns the finite-type rational H-space comparison and stable GL plus multiplication. CharacteristicClasses C5a/C6 and TopologicalKTheory T4/T7 own compact transgression, characteristic classes and Bott theory. Section 4.3 computes their specific rational Lie-algebra-to-compact period for restriction of scalars of SL, rather than another compact-Lie cohomology theory.
+
+MotivicEtaleKTheory owns the universal motivic Chern character, cycle-model comparisons and Deligne regulator for varieties. Section 6.1 owns its explicit point/embedding-space identification and §6.2 its Borel comparison. The universal-realization layer is requested through gap:universal-deligne below. Polylogarithms §§2.3,3.7–3.8,4.4 owns explicit symbol comparisons and their factorial/Hurewicz and π^(n−1) calibrations. None supplies an input to this proof. ArithmeticKTheoryPartII §R17’s symplectic stable cohomology and finite-type KSp comparison are outside this number-field SL regulator contract and are not supplied here. The order-finite-generation contract belongs to an extension of the base ArithmeticKTheory §§3.2–3.4 to all full ℤ-orders, independently of that symplectic direction.
 
 The pinned definitions of embeddings, discriminant, module quotients, determinants, discrete full lattices and covolume are used directly. Tau Ceti’s TauCeti.Hodge.tate in TauCeti/Geometry/Hodge/Tate/Basic.lean:91 is a Hodge structure with the ordinary unscaled inclusion of ℤ into ℂ as its lattice map. The coefficient lattices here instead specify multiplication by (2πi)^k and the embedding involution; they introduce no second Hodge-structure carrier. The degree-one unit lattice and Dirichlet regulator are already in Mathlib and the completed NumberFieldArithmetic roadmap. At weight one the unit regulator lies in the sum-zero hyperplane; the whole group Fˣ has no finite-rank lattice theorem. No positive-characteristic global-field regulator, nonpositive-weight value theorem or integral Lichtenbaum torsion formula is asserted here. All number fields, finite primes, ramification and both parities occur in the higher-weight theorem.
 
@@ -48,13 +50,15 @@ The baseline is mathlib commit 6b7abb3c7686292736be2955bd3eb9ebf63b456a. The fol
 
 The baseline is Tau Ceti commit a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039. `TauCeti.exists_differentiableOn_eq_dedekindZeta_sub`, in TauCeti/NumberTheory/NumberField/DedekindZeta.lean:158, supplies a holomorphic remainder on Re(s)>1−1/N agreeing with ζ_F(s)−ρ/(s−1) on Re(s)>1. It does not provide the global continuation or functional equation. The LFunctions supplier identifies its continuation with this local germ and with Mathlib’s convergent function.
 
+`TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`, in TauCeti/Algebra/BrauerGroup/Division.lean:69, gives a finite-dimensional central division representative of every native Brauer class. `TauCeti.BrauerGroup.mk_matrix`, in TauCeti/Algebra/BrauerGroup/Group.lean:159, preserves that class under matrices of size a≥1; its signature requires `NeZero a`. Neither theorem supplies the number-field period–index equality of §3.1.
+
 ### From TauCetiRoadmap.GeneralAlgebraicKTheory
 
-§3.12, §§7.4–7.8 supplies actual Quillen groups, the specified plus/Q comparison and finite-projective transfer with naturality.
+§§2.5, 3.2, 3.12, 7.7–7.8 supply actual Quillen groups, the specified plus/Q comparison and finite-projective transfer with naturality.
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
-§3.37, §4.14 supplies stable GL plus H-space and rational primitive Hurewicz only for path-connected H-spaces with finite-type rational homology.
+§§2.4–2.5 supply the homotopy-fibre long exact sequence used for SO→SU→SU/SO in §5.2. Sections 3.37 and 4.14 supply stable GL plus H-space and rational primitive Hurewicz only for path-connected H-spaces with finite-type rational homology.
 
 ### From TauCetiRoadmap.ArithmeticKTheory
 
@@ -84,9 +88,13 @@ Layer 5, Layer 10 supplies normalized local Brauer invariants, restriction multi
 
 Layer 3 supplies the continued Dedekind function, its germ regularity, completed functional equation and agreement with the pinned convergent function.
 
+### From TauCetiRoadmap.IntegralIwasawaTheory
+
+§6.0 supplies Siegel–Klingen rationality at the trivial character for the Layer 5 example. The general primitive-period proof has its own inputs.
+
 ### From TauCetiRoadmap.CharacteristicClasses
 
-C5a.3–C5a.5, C6 items 2–3 supplies actual compact-Lie primitive/transgression comparisons and rational universal Chern characters; integral homotopy calibration is separately a gap.
+C5a.3–C5a.5 and C6 items 2–3 supply actual compact-Lie primitive/transgression comparisons, the multiplicative cohomological Serre spectral sequence with local coefficients, and rational universal Chern characters. The integral Bott-to-suspended-Chern calibration and the invariant-form filtration comparison have the separate contracts below.
 
 ### From TauCetiRoadmap.TopologicalKTheory
 
@@ -102,39 +110,35 @@ Layers 5–6, Layer 8 supplies oriented integration, Stokes and multiplicative d
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-Stage 5 item 5 supplies the native bundle Serre filtration, its monodromy and Leray–Hirsch applications; the missing multiplicative cohomological comparison is a separate contract.
+Stage 5 item 5 supplies the native bundle Serre filtration, its monodromy and Leray–Hirsch applications; CharacteristicClasses C5a.5 supplies the multiplicative cohomological sequence, and its invariant-form filtration comparison is gap:multiplicative-serre-comparison.
 
-### Required extensions and unwritten contracts
+### Supplier extensions
 
-Each item is represented by a gap prerequisite in the data plan. A named supplier retains ownership of its extension; a missing section is not treated as an existing one.
+What ArithmeticKTheory must provide (gap:stable-finite-range): Supply the map-level finite-stage comparison and the conservative bound a−1>4Nq. The finite-stage form extends ArithmeticKTheory §3.4’s stable arithmetic and relative-Lie comparison and its primitive generators. Supply actual invariant-form comparison maps, stabilization and rational finite-index restriction; for Res SL_a over F the range a−1>4Nq must imply isomorphism through degree q. Finite-type is used only on the arithmetic plus H-space, not on GL(ℂ) with its discrete topology. Required location: §3.4, explicit finite-stage form of the stable comparison.
 
-**ArithmeticKTheory — stable-finite-range.** ArithmeticKTheory §3.4 owns the stable arithmetic and relative-Lie comparison and its primitive generators, but does not state the finite-stage bound used here. Supply actual invariant-form comparison maps, stabilization and rational finite-index restriction; for Res SL_a over F the range a−1>4Nq must imply isomorphism through degree q. Finite-type is used only on the arithmetic plus H-space, not on GL(ℂ) with its discrete topology. Supply the map-level finite-stage comparison and the conservative bound a−1>4Nq. Required location: §3.4, explicit finite-stage form of the stable comparison.
+What CharacteristicClasses must provide (gap:integral-chern-calibration): Supply s(chₙ)(Hur εₙ)=(2πi)^n for εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with these suspension and orientation conventions. Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The evaluation uses the integral Hurewicz image and the Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, lines 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1. Required location: C6 item 3 extension.
 
-**CharacteristicClasses — integral-chern-calibration.** CharacteristicClasses C5a/C6 supplies rational primitive transgression and the Chern character; TopologicalKTheory T4/T7 item 1 supplies Bott classes and real/complex coefficient maps. The exact bridge to π_(2n−1)SU, its integral Hurewicz image, and the SO\SU-to-SU index is not stated in those contracts. Require suspended chₙ(Hur ε)=(2πi)^n and the indices 1 in degree 1 mod8 and 2 in degree 5 mod8, with εₙ=(-1)^n clutch(u^n) for the supplier’s u=O(-1)−1. Its character is -v; the ordered suspension/clutching comparison is part of this bridge. This is a characteristic/topological K-theory extension, not permission to renormalize by an arbitrary real scalar. Supply the integral Bott-to-suspended-Chern bridge and real-place homotopy indices with fixed orientations. Required location: C6 items 2–3 extension, coordinated with TopologicalKTheory T4 and T7 item 1.
+What ArithmeticGaloisDuality must provide (gap:cyclic-local-degrees): Supply cyclic splitting extensions with full local degrees while retaining Wang’s obstruction for fixed prescriptions. ArithmeticGaloisDuality R02.4.5b–R02.4.6 retains the exact exceptional class for fixed character prescriptions. Supply the consequence used in Poonen’s proof: for any a≥1 and finite set of finite places, a cyclic degree-a extension may be chosen with local degree a at those places, with the local extensions allowed to vary, and with selected real places complex when a is even. No assertion of arbitrary prescribed unramified dyadic extensions is made. Required location: §R02.4.6, variable-local-extension corollary.
 
-**ArithmeticGaloisDuality — cyclic-local-degrees.** ArithmeticGaloisDuality R02.4.5b–R02.4.6 retains the exact exceptional class for fixed character prescriptions. Supply the consequence used in Poonen’s proof: for any a≥1 and finite set of finite places, a cyclic degree-a extension may be chosen with local degree a at those places, with the local extensions allowed to vary, and with selected real places complex when a is even. No assertion of arbitrary prescribed unramified dyadic extensions is made. Supply cyclic splitting extensions with full local degrees while retaining Wang’s obstruction for fixed prescriptions. Required location: §R02.4.6, variable-local-extension corollary.
+What AdelicAlgebraicGroups must provide (gap:inner-type-a-structure): Supply absolute almost simplicity and simple connectedness of the existing SL₁(D) carrier. AdelicAlgebraicGroups §3.4 explicitly constructs SL₁(D), its semisimplicity and quotient compactness. Strong approximation in §4.2 additionally needs absolute almost simplicity and simple connectedness. Supply these properties by base change to SL_a for every central division algebra of degree a≥2; no new group carrier is needed. Required location: §3.4 norm-one construction, structure extension.
 
-**AdelicAlgebraicGroups — inner-type-a-structure.** AdelicAlgebraicGroups §3.4 explicitly constructs SL₁(D), its semisimplicity and quotient compactness. Strong approximation in §4.2 additionally needs absolute almost simplicity and simple connectedness. Supply these properties by base change to SL_a for every central division algebra of degree a≥2; no new group carrier is needed. Supply absolute almost simplicity and simple connectedness of the existing SL₁(D) carrier. Required location: §3.4 norm-one construction, structure extension.
+What AdelicAlgebraicGroups must provide (gap:adelic-rational-masses): Supply positive rational local gauge masses for all compact opens, including ramified finite places. Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors. Required location: Part II, rational gauge masses extending §2.4.
 
-**AdelicAlgebraicGroups — adelic-rational-masses.** AdelicAlgebraicGroups §2.4 gives smooth integral-model masses and gauge scaling. It does not assert rationality of the mass of every compact open for every rational invariant form at an arbitrary finite place. Require that result for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors. Supply positive rational local gauge masses for all compact opens, including ramified finite places. Required location: Part II, rational gauge masses extending §2.4.
+What AdelicAlgebraicGroups must provide (gap:classical-tamagawa-proof): Supply τ(SL₁(D))=1 for every central division algebra D of degree a≥2 over a number field, in the §2.4 Tamagawa normalization. For a number field F and every central division F-algebra D of degree a≥2, use the existing SL₁(D) carrier of §3.4 and the Tamagawa measure of §2.4. No infinite-splitting hypothesis is needed for the supplied theorem. Section 3.4 here specializes its quotient mass to the split infinite factors and the gauge of §3.3 (weil1961, §3.3, Theorem 3.3.1; borel1977 line 227). Required location: Part II, Tamagawa numbers extending §2.4 and the §3.4 SL₁(D) carrier.
 
-**BorelRegulators — classical-tamagawa-proof.** Section 3.4 states the numerical theorem. Weil §3.3 Theorem 3.3.1 is waived, and Borel invokes it without its proof. Neither the waived text nor the general later trace-formula proof certifies the prerequisite closure of the classical adelic norm-one argument. A source-certified decomposition of that classical argument is needed to replace this proof-route gap; it may introduce adelic integration and norm-fibre comparison lemmas, but must name and state them rather than assume the desired number. This gap is not a hypothesis of the theorem and not a request to reopen the waived source. Provide a legally checked decomposition of the classical norm-one Tamagawa proof into independently stated inputs. Required location: §3.4 proof route.
+What ArithmeticKTheory must provide (gap:order-finite-generation): Supply finite generation or a finite-index integral comparison for higher K-groups of all number-field orders. ArithmeticKTheory §3.4 explicitly supplies the rational inclusion equivalence for every order. The integral image being a lattice also needs finite generation, not only a rational dimension. Supply finite generation of K_m(R) for every full ℤ-order R in a number field and m≥2, or an equally strong finite-index image theorem. Number-ring and finite-S finite generation in §3.3 cannot silently be applied to a singular nonmaximal order. Required location: extension of ArithmeticKTheory §§3.2–3.4 to all full ℤ-orders.
 
-**ArithmeticKTheory — order-finite-generation.** ArithmeticKTheory §3.4 explicitly supplies the rational inclusion equivalence for every order. The integral image being a lattice also needs finite generation, not only a rational dimension. Supply finite generation of K_m(R) for every full ℤ-order R in a number field and m≥2, or an equally strong finite-index image theorem. Number-ring and finite-S finite generation in §3.3 cannot silently be applied to a singular nonmaximal order. Supply finite generation or a finite-index integral comparison for higher K-groups of all number-field orders. Required location: Part II, integral order comparison extending §§3.2–3.4.
+What MotivicEtaleKTheory must provide (gap:universal-deligne): Supply the independent universal Chern/Deligne regulator and its point, transfer and Adams compatibility. For varieties, provide actual real Deligne cohomology and rational Chern regulators, including the point, finite disjoint unions, real descent, universal bundle class and maps from actual Quillen K-theory, naturality for embeddings and finite transfers, and chₙψ^a=a^n chₙ. This construction is independent of the Borel zeta-value and explicit polylogarithm comparisons. Its point case supplies ColemanIntegration §L3.Fc.1’s reg_∞ through §§6.1–6.2 here. Required location: universal-realization layer.
 
-**MotivicEtaleKTheory — universal-deligne.** The universal-realization prefix requires a designed section of MotivicEtaleKTheory. It must provide actual real Deligne cohomology and rational Chern regulators, including the point, finite disjoint unions, real descent, universal bundle class and maps from actual Quillen K-theory, naturality for embeddings and finite transfers, and chₙψ^a=a^n chₙ. Its prefix is independent of the Borel zeta-value and explicit polylogarithm comparisons. Consumer references to Layer 4 or §§9.1,12.2 are not treated as existing sections. Supply the independent universal Chern/Deligne regulator and its point, transfer and Adams compatibility. Required location: No designed section; early universal-realization prefix.
+What MotivicEtaleKTheory must provide (gap:infinitesimal-classifying-comparison): Supply normalized infinitesimal classifying-space CE/Weil comparisons with the Deligne cone projection. Over the actual universal classifying model, compare normalized cosimplicial functions/forms on the first infinitesimal classifying nerve with CE and Weil complexes, including evaluation into continuous cohomology and the Deligne cone projection. Fix the coefficient normalizations independently of the factor-two conclusion (burgos2002, Chapter 8, Propositions 8.9, 8.10, 8.14; Theorem 10.9 proof, lines 4172–4190). Required location: universal-realization layer, classifying-space comparison.
 
-**MotivicEtaleKTheory — infinitesimal-classifying-comparison.** Burgos Chapter 8, Propositions 8.9,8.10,8.14 and the proof of Theorem 10.9 compare normalized cosimplicial functions/forms on the first infinitesimal classifying nerve with CE and Weil complexes. No consumed roadmap states this precise comparison with its cone and coefficient normalizations. It must be provided independently of the factor-two conclusion, over the actual universal classifying model, with evaluation into continuous cohomology. This is an extension of the universal-realization prefix, not a new local regulator defined to make the equation true. Supply normalized infinitesimal classifying-space CE/Weil comparisons with the Deligne cone projection. Required location: No designed section; classifying-space realization comparison.
+What CharacteristicClasses must provide (gap:graded-indecomposable-api): Supply one generic graded indecomposable functor extending the existing invariant-polynomial construction. CharacteristicClasses C5a.2 already constructs the invariant-polynomial augmentation quotient and its coefficient and generator changes. Its generalization to every connected nonnegative graded commutative algebra, needed for cohomology of arithmetic quotients and compact duals, belongs to its Part II. Supply Q(A)=A₊/(A₊)², the homogeneous quotient, quotient universal property, map and base-change laws, and the exterior-generator comparison. Section 4.1 constructs only the cohomological determinant adapters, not a second generic augmentation quotient. Required location: Part II, general graded quotient API extending C5a.2.
 
-**Acceptance signatures — pinned-headline-carriers.** Make native supplier carriers available for the acceptance signatures without placeholder data or theorem-shaped hypotheses. The native higher K and Deligne objects must be available before these signatures can be expressed with only simple transparent definitions.
-
-**CharacteristicClasses — graded-indecomposable-api.** CharacteristicClasses C5a.2 already constructs the invariant-polynomial augmentation quotient and its coefficient and generator changes. Its generalization to every connected nonnegative graded commutative algebra, needed for cohomology of arithmetic quotients and compact duals, belongs to its Part II. Supply Q(A)=A₊/(A₊)², the homogeneous quotient, quotient universal property, map and base-change laws, and the exterior-generator comparison. Section 4.1 constructs only the cohomological determinant adapters, not a second generic augmentation quotient. Supply one generic graded indecomposable functor extending the existing invariant-polynomial construction. Required location: Part II, general graded quotient API extending C5a.2.
-
-**DGFloer — multiplicative-serre-comparison.** AlgebraicTopology Stage 5 item 5 calls for the cohomological counterparts and multiplicative local-pairing API of DGFloer Layer 1 item 2. That item on main states CW approximation and the homological sequence but not the needed multiplicative cohomological construction. Supply its characteristic-zero cohomological sequence, naturality, convergence and comparison with the filtration on relative Lie cochains used for K→G→G/K and the corresponding arithmetic bundle. The edge restriction and the identity on the common compact fibre must be preserved; an abstract ring isomorphism is insufficient. Supply the multiplicative cohomological Serre machinery and its invariant-form filtration comparison. Required location: Part II, cohomological Serre comparison extending Layer 1 items 2–3.
+What CharacteristicClasses must provide (gap:multiplicative-serre-comparison): Supply the comparison of these C5a.5 spectral sequences with the Lie-cochain filtration, preserving edge restriction and the identity on the common compact fibre. Use CharacteristicClasses C5a.5’s multiplicative cohomological Serre spectral sequence. For a number field F, a≥2, G=Res_(F/ℚ)SL_a, its standard connected maximal compact K and torsion-free arithmetic Γ, compare the bundles K→Gᵘ→Xᵘ and K→G(ℝ)/Γ→K\G(ℝ)/Γ with the compact-Lie-subalgebra filtration on absolute Lie cochains. The maps α and β of §4.2 must preserve that filtration and induce the same restriction to K (borel1977, §3.5, p.622, lines 328–337). Required location: C5a.5 extension, invariant-form filtration comparison.
 
 ## How to read the build
 
-Layer 1 fixes the embedding target, trace and analytic leading coefficient. Layer 2 constructs and identifies the actual regulator using the independent arithmetic comparison. Layer 3 develops the division-algebra, gauge and volume input. Layer 4 extracts primitive arithmetic periods by compact cycles and lower-degree exterior ideals. Layer 5 cancels the common compact-fibre determinant, converts the homotopy lattice to Tate coordinates, and proves the integral zeta covolume and localization statements. Layer 6 identifies the point Deligne realization and compares the independently supplied Beilinson map, with its Adams consequence. Layer 7 isolates the totally real even-weight consequence so that a consumer must import its volume proof even when the final regulator rank is zero. Every proof route lists its own direct inputs; the Deligne comparison is not a prerequisite of the volume or zeta theorem.
+Layer 1 fixes the embedding target, trace and analytic leading coefficient. Layer 2 constructs and identifies the actual regulator using the independent arithmetic comparison. Layer 3 develops the division-algebra, gauge and volume input. Layer 4 extracts primitive arithmetic periods by compact cycles and lower-degree exterior ideals. Layer 5 cancels the common compact-fibre determinant, converts the homotopy lattice to Tate coordinates, and proves the integral zeta covolume and localization statements. Layer 6 identifies the point Deligne realization and compares the independently supplied Beilinson map, with its Adams consequence. The rank-zero case remains in §5.1 and its Layer 5 examples. Every proof route lists its own direct inputs; the Deligne comparison is not a prerequisite of the volume or zeta theorem.
 
 ## Layer 1: Tate coordinates, trace and leading coefficients
 
@@ -164,7 +168,7 @@ The interface requires the following facts.
 
 ### 1.2 Restriction and sum over embeddings
 
-For a finite extension E/F, define R:Vₙ(F)→Vₙ(E) by (Rv)_τ=v_(τ|F), and T:Vₙ(E)→Vₙ(F) by (Tw)_σ=Σ_(τ|σ)w_τ, summing over all embeddings extending σ. Both preserve the coordinate lattices, commute with conjugation, and satisfy T∘R=[E:F]·id. Restriction and trace compose in towers. (burgos2002, Proposition 9.21, p.85, lines 3628–3645; embedding assembly in Definition 10.8, p.94, lines 4091–4106.)
+For a finite extension E/F, define R:Vₙ(F)→Vₙ(E) by (Rv)_τ=v_(τ|F), and T:Vₙ(E)→Vₙ(F) by (Tw)_σ=Σ_(τ|σ)w_τ, summing over all embeddings extending σ. Both preserve the coordinate lattices, commute with conjugation, and satisfy T∘R=[E:F]·id. Restriction and trace compose in towers. (Elementary finite-fibre identities; burgos2002, Definition 10.8, p.94, lines 4091–4106, supplies the embedding assembly only.)
 
 A proof route is to partition the embeddings over each σ into fibres. Separability of number fields gives [E:F] points in each fibre. Check that conjugation sends one fibre bijectively onto the conjugate fibre. This is the target-space map used by K-theoretic transfer.
 
@@ -180,7 +184,7 @@ The interface requires the following facts.
 - For ℚ(i)/ℚ in weight 3, R(t)=(t,t) and T(R(t))=2t. A trace divided by two fails this law.
 - For a real quadratic extension in odd weight T(a,b)=a+b and R(t)=(t,t); the identity extension gives T(t)=t.
 
-*Needs:* §1.1; GeneralAlgebraicKTheory §§7.4–7.8.
+*Needs:* §1.1; the native number-field embedding fibres and separability.
 
 ### 1.3 The analytic leading coefficient
 
@@ -231,7 +235,7 @@ The interface requires the following facts.
 - In weight 3 the value is (2πi)³=-8π³i and its Tate coordinate is 1; replacing ch₃ by c₃ changes the generator by the factorial 2.
 - Adding an identity block preserves the reduced universal bundle class and hence adds 0 to the positive-degree character, rather than multiplying its value by the matrix size.
 
-*Needs:* CharacteristicClasses C5a.3–C5a.5 and C6 items 2–3; AutomorphicFormsOnReductiveGroups §§1.1–1.3; the exact supplier contract integral-chern-calibration.
+*Needs:* CharacteristicClasses C5a.3–C5a.5 and C6 items 2–3; AutomorphicFormsOnReductiveGroups §§1.1–1.3; gap:integral-chern-calibration.
 
 ### 2.2 The regulator on actual Quillen groups
 
@@ -271,7 +275,7 @@ The interface requires the following facts.
 - For ℚ(i), n=2 and n=3 each give dimensions 1 and 1. For a real quadratic field n=3 gives 2 and 2.
 - For ℚ(i)/ℚ at n=3, tr∘res acts by 2 and the target composite sends t to 2t; at n=2 the target sends (t,-t) to 0.
 
-*Needs:* §1.2; §2.2; ArithmeticKTheory §§3.2–3.4; StableHomotopyKTheory §3.37; GeneralAlgebraicKTheory §§7.4–7.8; the exact supplier contract stable-finite-range; the exact supplier contract integral-chern-calibration.
+*Needs:* §1.2; §2.2; ArithmeticKTheory §§3.2–3.4; StableHomotopyKTheory §3.37; GeneralAlgebraicKTheory §§7.7–7.8; gap:stable-finite-range; gap:integral-chern-calibration.
 
 ### Examples
 
@@ -279,7 +283,7 @@ The free rational K₃ of ℚ has dimension 0; K₅ has dimension 1. The regulat
 
 ### Dependencies
 
-Layer 1; GeneralAlgebraicKTheory §3.12 and §§7.4–7.8; StableHomotopyKTheory §§3.37,4.14; ArithmeticKTheory §§3.2–3.4; AutomorphicFormsOnReductiveGroups §§1.1–1.3; CharacteristicClasses C5a/C6 and its integral calibration contract.
+Layer 1; GeneralAlgebraicKTheory §§2.5, 3.2, 3.12, 7.7–7.8; StableHomotopyKTheory §§3.37,4.14; ArithmeticKTheory §§3.2–3.4; AutomorphicFormsOnReductiveGroups §§1.1–1.3; CharacteristicClasses C5a/C6 and its integral calibration contract.
 
 ## Layer 3: Division algebras, rational gauges and arithmetic volume
 
@@ -293,16 +297,16 @@ The interface requires the following facts.
 
 - The denominator lcm computes the degree of the division representative.
 - All local invariants vanish if and only if α=0.
-- A class of period dividing a has a central simple representative of degree a by taking a matrix algebra over its division representative.
+- For a≥1, a class of period dividing a has a central simple representative of degree a: if its division representative has degree d≥1, take M_(a/d)(D). The matrix size a/d is positive since d divides a.
 
 **Checks.**
 
-- The empty lcm is 1 and the representative is F of dimension 1, not a division algebra of degree 0.
+- The empty lcm is 1 and the representative is F of dimension 1. For a≥1 the same class is represented by M_a(F), of degree a and dimension a². At a=0 there is no nonzero matrix size and no central simple algebra of degree zero; that value is excluded.
 - Invariants 1/2 at two finite places sum to 1=0 in ℚ/ℤ; period=index=2 and dimension is 4.
 - Invariants 1/3 and -1/3 have lcm 3, index 3 and dimension 9. Keeping only the first invariant gives sum 1/3 and no global class.
 - The requested index 8 means dimension 64. A fixed unramified degree-eight dyadic prescription over ℚ is obstructed; permitting different local cyclic extensions is essential.
 
-*Needs:* ClassFieldTheory Layers 5 and 10; ArithmeticGaloisDuality §R02.4.6; the exact supplier contract cyclic-local-degrees.
+*Needs:* ClassFieldTheory Layers 5 and 10; ArithmeticGaloisDuality §R02.4.6; gap:cyclic-local-degrees; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.BrauerGroup.mk_matrix`.
 
 ### 3.2 Division algebras in every degree
 
@@ -322,7 +326,7 @@ The interface requires the following facts.
 - Invariants 1/3,-1/3 at two finite places give degree 3 and dimension 9, with every infinite invariant 0.
 - The Hamilton algebra over ℚ has invariant 1/2 at infinity and dimension 4, but fails the infinite splitting hypothesis; the theorem does not identify it with the constructed indefinite quaternion algebra.
 
-*Needs:* §3.1; ClassFieldTheory Layer 10.
+*Needs:* §3.1; ClassFieldTheory Layer 10; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.BrauerGroup.mk_matrix`.
 
 ### 3.3 Borel’s rational gauge and its transport
 
@@ -346,26 +350,24 @@ The interface requires the following facts.
 
 *Needs:* Mathlib `NumberField.discr_ne_zero`; AdelicAlgebraicGroups §§2.4–2.5.
 
-### 3.4 The classical norm-one theorem
+### 3.4 The norm-one quotient mass in Borel’s gauge
 
-For every number field F, every a≥2 and central division F-algebra D of dimension a² split at all infinite places, the group H=SL₁(D), constructed on the supplied algebraic-group carrier, has Tamagawa number 1 with the gauge product of §3.3. (weil1961, §3.3, Theorem 3.3.1, invoked in borel1977 p.619, line 227; waived locator.)
+For every number field F, every a≥2, central division F-algebra D of dimension a² split at all infinite places, and nonzero F-rational invariant top form ω, identify the product m∞·m_f of §3.3 on H=SL₁(D) with the supplied Tamagawa measure. Its quotient by H(F), with counting measure, has mass 1 by gap:classical-tamagawa-proof. This specialization fixes the measure used in §3.6; the supplied numerical theorem also covers algebras ramified at infinity. (weil1961, §3.3, Theorem 3.3.1, invoked in borel1977 p.619, line 227; waived locator.)
 
-A proof route is to the proof obligation is the classical adelic norm-one calculation with compatible gauges. Its prerequisite closure must be supplied by the classical-proof contract below; no inner-form invariance, simple trace formula or endoscopic stabilization is an input. Borel’s invocation identifies the required theorem, while the waived source does not certify a decomposition of its proof.
+A proof route identifies the measure using §3.3 and the vanishing geometric character lattice of SL₁(D), then applies the AdelicAlgebraicGroups numerical contract. Gauge independence and restriction of scalars use its §2.4 directly.
 
 The interface requires the following facts.
 
-- The value 1 is unchanged when a single global invariant top form is rescaled.
-- Restriction of scalars preserves the same normalized number.
 - The quotient mass is finite, strictly positive and equal to 1, not merely rational or finite.
 
 **Checks.**
 
-- For a quaternion division algebra over ℚ ramified at two finite primes and split over ℝ, h=3 and the normalized adelic mass is 1.
+- For D=(-1,3) over ℚ the Hilbert symbols at 2, 3 and ∞ are -1, -1 and +1; all other local symbols are +1. Thus D is division, split over ℝ, h=3, and its normalized adelic mass is 1.
 - For a degree-three division algebra split at infinity, h=8 and the normalized adelic mass is 1; matrix size does not multiply this mass by 3.
 - For ω↦2ω over ℚ the product multiplier is 2·(1/2)=1, so the two predicted masses are both 1.
 - The norm-one torus of ℚ(i)/ℚ has dimension 1 and geometric character lattice ℤ, whereas the degree-two central division input has norm-one group dimension 3 and character lattice 0. The torus is excluded from this theorem.
 
-*Needs:* §3.3; AdelicAlgebraicGroups §§2.4–2.5 and §3.4; the exact supplier contract inner-type-a-structure; the exact supplier contract classical-tamagawa-proof.
+*Needs:* §3.3; AdelicAlgebraicGroups §2.4 (gauge independence and τ(Res)=τ), §2.5 and §3.4; gap:inner-type-a-structure; gap:classical-tamagawa-proof.
 
 ### 3.5 Every finite factor and the Euler product
 
@@ -386,7 +388,7 @@ The interface requires the following facts.
 - If an exceptional q=2 SL₂ level has gauge mass b, its correction is 4b/3. Deleting this place loses the factor 4b/3.
 - At q=1 the putative factor 1−q^(−2) is 0 and its totalized inverse is 0; residue fields here have q≥2, so this value is excluded.
 
-*Needs:* §3.3; AdelicAlgebraicGroups §§1.2,2.4; LFunctions Layer 3; the exact supplier contract adelic-rational-masses.
+*Needs:* §3.3; AdelicAlgebraicGroups §§1.2,2.4; LFunctions Layer 3; gap:adelic-rational-masses.
 
 ### 3.6 The arithmetic quotient and the exact adelic identity
 
@@ -407,7 +409,7 @@ The interface requires the following facts.
 - For D=M₂(ℚ), SL₂(ℝ)/SL₂(ℤ) has finite volume but is noncompact; this algebra is not division. Division is essential for compactness.
 - For F=ℚ(√5), a=2 the unscaled product volume is 5^(3/2) times Borel’s volume; dropping that factor changes a rational multiple of ζ_F(2) to a different normalization.
 
-*Needs:* §3.3; §3.4; §3.5; AdelicAlgebraicGroups §§2.2–2.4,3.4,4.2; the exact supplier contract inner-type-a-structure.
+*Needs:* §3.3; §3.4; §3.5; AdelicAlgebraicGroups §§2.2–2.4,3.4,4.2; gap:inner-type-a-structure.
 
 ### Examples
 
@@ -415,7 +417,7 @@ Two finite invariants 1/a and -1/a give an algebra of degree a split at infinity
 
 ### Dependencies
 
-ClassFieldTheory Layers 5 and 10; ArithmeticGaloisDuality R02.4.5b–R02.4.6 with the local-degree contract; AdelicAlgebraicGroups §§1.4,2.2–2.5,3.4,4.2; LFunctions Layer 3. The classical Tamagawa proof contract is independent of regulator values.
+ClassFieldTheory Layers 5 and 10; ArithmeticGaloisDuality R02.4.5b–R02.4.6 with the local-degree contract; AdelicAlgebraicGroups §§1.4,2.2–2.5,3.4,4.2; LFunctions Layer 3. The numerical norm-one contract gap:classical-tamagawa-proof is independent of regulator values.
 
 ## Layer 4: Invariant forms and primitive periods
 
@@ -438,7 +440,7 @@ The interface requires the following facts.
 - For A=k concentrated in degree 0, Q=0 in every degree and its determinant is k with empty generator 1.
 - For k[u₂], Q²=k·[u₂] while Q⁴=0 although u₂²≠0. The quotient construction is not restricted to exterior algebras.
 
-*Needs:* Mathlib `Submodule.mkQ`; CharacteristicClasses C5a.4–C5a.5; the exact supplier contract graded-indecomposable-api.
+*Needs:* Mathlib `Submodule.mkQ`; CharacteristicClasses C5a.4–C5a.5; gap:graded-indecomposable-api.
 
 ### 4.2 The actual invariant-form comparison
 
@@ -500,7 +502,7 @@ The interface requires the following facts.
 - For N=2,j=1 the dimension is 6 and the restriction factor is 2²=4, not 2.
 - In Λ(x₃,x₅), x₃∧x₃=0, so wedging with η₁=x₃ kills the ideal generated by x₃. A product with no repeated earlier generator cannot be dropped merely for having positive degree.
 
-*Needs:* §3.2; §3.6; §4.1; §4.2; CharacteristicClasses C5a.4–C5a.5; DifferentialGeometry Layers 5–6 and 8; the exact supplier contract stable-finite-range.
+*Needs:* §3.2; §3.6; §4.1; §4.2; CharacteristicClasses C5a.4–C5a.5; DifferentialGeometry Layers 5–6 and 8; gap:stable-finite-range.
 
 ### 4.5 Arithmetic periods before cancelling the compact fibre
 
@@ -519,7 +521,7 @@ The interface requires the following facts.
 - At j=2, ζ_F(2)ζ_F(3)/ζ_F(2)=ζ_F(3); ζ_F(2)>0 supplies the nonzero denominator.
 - For F=ℚ,n=2, the compact-dual primitive rank d is 0 but the full-group primitive rank N is 1. The ζ(2) period survives on this full line.
 
-*Needs:* §4.1; §4.2; §4.4; CharacteristicClasses C5a.4–C5a.5; the exact supplier contract stable-finite-range.
+*Needs:* §4.1; §4.2; §4.4; CharacteristicClasses C5a.4–C5a.5; gap:stable-finite-range.
 
 ### 4.6 The common compact-fibre line
 
@@ -540,7 +542,7 @@ The interface requires the following facts.
 - For F=ℚ(i), in either parity the ranks are 1,2,1; the full determinant has two generators and the base has one.
 - The splitting change [[1,2],[0,1]] has determinant 1; replacing the fibre identity by multiplication by 2 would have determinant 2 and is excluded.
 
-*Needs:* §4.1; §4.2; ArithmeticKTheory §3.4; CharacteristicClasses C5a.4–C5a.5; AlgebraicTopology Stage 5 item 5; the exact supplier contract stable-finite-range; the exact supplier contract multiplicative-serre-comparison.
+*Needs:* §4.1; §4.2; ArithmeticKTheory §3.4; CharacteristicClasses C5a.4–C5a.5; AlgebraicTopology Stage 5 item 5; gap:stable-finite-range; gap:multiplicative-serre-comparison.
 
 ### Examples
 
@@ -571,13 +573,13 @@ The interface requires the following facts.
 - For ℚ(i), N=2,r₁=0,r₂=1, E=0 for n=2 and n=3. The raw classes are 2ζ_F(2)/π⁴ and 2ζ_F(3)/π⁶, respectively.
 - For a real quadratic F,n=2, N=2,d=0,E=-4 and i^E=1. Its empty determinant 1 enforces √Δζ_F(2)/π⁴∈ℚˣ.
 
-*Needs:* §4.3; §4.5; §4.2; ArithmeticKTheory §3.4; the exact supplier contract stable-finite-range; §4.6.
+*Needs:* §4.3; §4.5; §4.2; ArithmeticKTheory §3.4; gap:stable-finite-range; §4.6.
 
 ### 5.2 The homotopy and Tate lattice conversion
 
 Let R′_Bo be Burgos Definition 9.10’s covolume relative to the compact-dual homotopy lattice, and R_Bo the covolume after the character identification with Cₙ(F). Then R_Bo=(2π)^dₙ·ε(F,n)·R′_Bo, where ε(F,n)=2^r₁ when n≡3 mod4 and ε(F,n)=1 otherwise. The compact real-place homotopy generator maps with index 1 in degree 1 mod8 and index 2 in degree 5 mod8; a complex place contributes one conjugate pair. (burgos2002, Lemma 9.18, Definition 9.19 and Remark 9.20, p.84, lines 3546–3614.)
 
-A proof route is to apply the supplied real/complex Bott coefficient maps to SO→SU→SU/SO and compare the compact twins under complexification. Evaluate suspended chₙ on the homotopy generators, with the integral normalization of §2.1. Each surviving coordinate contributes 2π from the twist shift; the real-place index contributes precisely in n≡3 mod4. Record these indices before passing to a rational class.
+Construct the stable Cartan map C:SU/SO→SU by C(gSO)=g gᵗ, with identity basepoint, and compute its map on the free homotopy groups in the displayed degrees. A proof route combines the SO→SU→SU/SO homotopy sequence of StableHomotopyKTheory §§2.4–2.5 with TopologicalKTheory T7 item 1’s c(b)=u⁴ and c(a)=2u², preserving the ordered generators. The Cartan-map identification and index computation are targets of this section (burgos2002, Lemma 9.18 and proof, lines 3546–3576). Evaluate suspended chₙ on the homotopy generators, with the integral normalization of §2.1. Each surviving coordinate contributes 2π from the twist shift; the real-place index contributes precisely in n≡3 mod4. Record these indices before passing to a rational class.
 
 The interface requires the following facts.
 
@@ -588,11 +590,11 @@ The interface requires the following facts.
 **Checks.**
 
 - For ℚ,n=2, d=0 and ε=1, giving R_Bo/R′_Bo=1.
-- For ℚ,n=3, d=1 and ε=2, giving R_Bo/R′_Bo=4π, not 2π or 8π.
-- For ℚ,n=5, d=1 and ε=1, giving R_Bo/R′_Bo=2π.
+- For ℚ,n=3, d=1 and ε=2: on π₅ the quotient SU→SU/SO is onto and C has index 2, so their composite is multiplication by 2. This gives R_Bo/R′_Bo=4π; a zero Cartan map would give 0.
+- For ℚ,n=5, d=1 and ε=1: on π₉ the quotient has image 2ℤ and C has index 1, again giving composite multiplication by 2. Thus R_Bo/R′_Bo=2π. At the identity coset C(SO)=I. For g=diag(i,-i) and h=[[0,1],[-1,0]] in SO₂, both (gh)(gh)ᵗ and g gᵗ equal -I; the assignment [g]↦g would instead depend on the representative.
 - For an imaginary quadratic field, d=1,r₁=0 in either parity, so the ratio is 2π in both weights 2 and 3.
 
-*Needs:* §2.1; §5.1; the exact supplier contract integral-chern-calibration; TopologicalKTheory T4 and T7 item 1.
+*Needs:* §2.1; §5.1; gap:integral-chern-calibration; TopologicalKTheory T4 and T7 item 1; StableHomotopyKTheory §§2.4–2.5.
 
 ### 5.3 The integral image and its positive covolume
 
@@ -610,7 +612,7 @@ The interface requires the following facts.
 **Checks.**
 
 - For ℚ,n=2 the free group is 0, Λ={0} in {0}, and the empty determinant and covolume are both 1, not 0.
-- If x generates the free quotient and has coordinate t≠0, Λ=tℤ and R=|t|. Using 2x gives sublattice 2tℤ of index 2 and covolume 2|t|.
+- If x generates the free quotient and has coordinate t≠0, Λ=tℤ and R=|t|. Using 2x gives sublattice 2tℤ of index 2 and covolume 2|t|. For ℚ,n=3, §6.2 identifies ColemanIntegration’s Beilinson image as (t/2)ℤ, with covolume |t|/2; the common lattice theorem does not identify the two normalizations.
 - The finitely generated subgroup ℤ+√2ℤ⊂ℝ is not discrete although it spans. Its source has rank 2 and real extension cannot be an isomorphism to the rank-one target.
 - If d=1, the rational image is tℚ: t/m→0 with t/m≠0 for m≥1, so this image is not the integral lattice tℤ.
 
@@ -656,15 +658,24 @@ The interface requires the following facts.
 - For ℤ→ℤ[1/2] in degree 1, the unit ranks are 0 and 1, so the transported finite-rank equivalence asserted for 2n−1≥3 cannot be extended to K₁.
 - For two lattices with common sublattice indices 2 and 3, their covolume ratio is 3/2 in the corresponding order; rational commensurability does not imply equality.
 
-*Needs:* §2.3; §5.3; §5.4; ArithmeticKTheory §§3.3–3.4; GeneralAlgebraicKTheory §§7.4–7.8; the exact supplier contract order-finite-generation.
+*Needs:* §2.3; §5.3; §5.4; ArithmeticKTheory §§3.3–3.4; GeneralAlgebraicKTheory §§7.7–7.8; gap:order-finite-generation.
 
 ### Examples
 
 For ℚ in weight 3 the compact-dual cohomology determinant class is ζ(3)/π³, while the Tate-divided regulator class is ζ(3)/π². The exact conversion of the corresponding covolumes is 4π.
 
+The totally real even-weight specialization of §5.1 has dₙ=0: both empty generators map to 1. Its scalar class agrees, through §1.3, with IntegralIwasawaTheory §6.0’s trivial-character Siegel–Klingen value and LFunctions Layer 3’s functional equation (borel1977, Remark 6.3, p.632, lines 590–594).
+
+**Checks.**
+
+- For ℚ,n=2, ζ(-1)=-1/12 and the §1.3 ratio is -1/2, giving ζ(2)/π²=1/6 and reciprocal 6. The comparison scalar is 1, and 6·(1/6)=1.
+- For ℚ,n=4, ζ(-3)=1/120 and the ratio is 3/4, giving ζ(4)/π⁴=1/90 and reciprocal 90; the empty determinant remains 1.
+- For r₁=N,r₂=0 and n=2k≥2, d=0 and the exponent is -2kN; at N=2 it is -4k. Positivity of Δ_F, π and ζ_F(n) makes the rational class positive and its reciprocal defined.
+- For ℚ(i), even n gives r₂=d=1, so the determinant has one row. Its covolume cannot be replaced by the empty value 1.
+
 ### Dependencies
 
-Layers 1–4; ArithmeticKTheory §§3.2–3.4; CharacteristicClasses and the integral Chern/Bott calibration contract; pinned IsZLattice and covolume theorems.
+Layers 1–4; ArithmeticKTheory §§3.2–3.4; CharacteristicClasses and gap:integral-chern-calibration; TopologicalKTheory T7 item 1 and StableHomotopyKTheory §§2.4–2.5 for §5.2; pinned IsZLattice and covolume theorems. The totally real example compares §5.1 with IntegralIwasawaTheory §6.0 through §1.3 and LFunctions Layer 3.
 
 ## Layer 6: Point Deligne realization and the Beilinson comparison
 
@@ -688,7 +699,7 @@ The interface requires the following facts.
 - For n=2, z=1+i has P₁(z)=i and z-P₁(z)=1∈ℝ(2); for n=3 it has P₂(z)=1 and difference i∈ℝ(3). Both quotient inverse identities hold.
 - At F=ℚ,n=2 the conjugation-fixed quotient is 0; at n=3 it is one-dimensional. Taking invariants on embeddings alone would give a false weight-two real direction.
 
-*Needs:* §1.1; Mathlib `Submodule.mkQ`; the exact supplier contract universal-deligne.
+*Needs:* §1.1; Mathlib `Submodule.mkQ`; gap:universal-deligne.
 
 ### 6.2 Comparison with the universal realization
 
@@ -709,7 +720,7 @@ The interface requires the following facts.
 - For a real quadratic F,n=3, d=2 and the ratio is 4, not 2.
 - In a rank-one example the real regulator is an isomorphism with determinant t≠0, so r_Be=0 would give 2·0=0≠t. The independent Chern normalization also excludes a rescaling of r_Be.
 
-*Needs:* §2.1; §2.2; §6.1; §5.3; CharacteristicClasses C5a.3–C5a.5 and C6 items 2–3; the exact supplier contract universal-deligne; the exact supplier contract infinitesimal-classifying-comparison.
+*Needs:* §2.1; §2.2; §6.1; §5.3; CharacteristicClasses C5a.3–C5a.5 and C6 items 2–3; gap:universal-deligne; gap:infinitesimal-classifying-comparison.
 
 ### 6.3 The rational Adams weight
 
@@ -729,7 +740,7 @@ The interface requires the following facts.
 - At F=ℚ,n=2,a=2 the space is 0 and its determinant is 2^(2·0)=1, not 4.
 - At a=1 the scalar and determinant are both 1 for every dₙ. The theorem makes no claim for a=0.
 
-*Needs:* §2.3; §6.2; SchemeKTheoryOperations §6.8; the exact supplier contract universal-deligne.
+*Needs:* §2.3; §6.2; SchemeKTheoryOperations §6.8; gap:universal-deligne.
 
 ### Examples
 
@@ -739,45 +750,15 @@ At a complex point, weight 2 projects 1 to 0 and i to i; weight 3 projects 1 to 
 
 Layers 1–2 and 5; CharacteristicClasses C5a/C6; SchemeKTheoryOperations §6.8 for the actual Adams operations; the independent universal Deligne and Chern-character contracts of MotivicEtaleKTheory.
 
-## Layer 7: The empty determinant and the totally real theorem
-
-### 7.1 The totally real even-weight theorem
-
-For every totally real number field F and every even integer n≥2, dₙ=0 and √Δ_F·π^(−nN)·ζ_F(n)∈ℚ_>0. The comparison of §5.1 on the actual zero-dimensional indecomposable determinant sends 1 to 1 and proves this nonzero rationality. Equivalently its reciprocal π^(nN)/(√Δ_F ζ_F(n)) is positive rational. The same theorem gives the even-weight leading coefficient relation when dₙ=0. (borel1977, Remark 6.3, p.632, lines 590–594; Theorem 6.2 and equations (3)–(5), lines 571–589.)
-
-A proof route is to the compact-fibre cancellation in §5.1 leaves the identity on the empty determinant line. Its scalar 1 is a nonzero rational multiple of √Δ_F π^(−nN)ζ_F(n). Positivity of the zeta series, Δ_F and π makes the rational number positive. This route retains the full-group periods and quotient volume from Layers 3–4 even though the final primitive rank is zero.
-
-The interface requires the following facts.
-
-- The empty determinant is 1 and the empty lattice covolume is 1.
-- The displayed positive rational has a positive rational reciprocal; no division by the rank or by a vanished determinant occurs.
-
-**Checks.**
-
-- For ℚ,n=2 the rational number is 1/6, with reciprocal 6. Multiplying the comparison scalar class by 6 gives the empty determinant 1.
-- For ℚ,n=4 it is 1/90, with reciprocal 90; the formula is not restricted to weight 2.
-- For r₁=N,r₂=0 and n=2k≥2, d=0 and the exponent is -2kN. In a real quadratic field this is -4k and the empty comparison is 1.
-- For ℚ(i), r₂=1 and d=1 in even weight, so the determinant has one row. Treating it as empty would replace its nonzero regulator determinant by 1 without justification.
-
-*Needs:* §5.1; §1.3; Mathlib `Matrix.det_fin_zero`; Mathlib `riemannZeta_two`; Mathlib `riemannZeta_four`.
-
-### Examples
-
-For ℚ, ζ(2)/π²=1/6 and ζ(4)/π⁴=1/90. For a real quadratic field, every positive even weight has zero regulator rank but still has a nontrivial rational zeta relation.
-
-### Dependencies
-
-§5.1 with its complete volume proof; §1.3 for equivalent leading coefficients. The positive even values over ℚ are the pinned riemannZeta_two and riemannZeta_four witnesses.
-
 ## Downstream consumers
 
-- **Polylogarithms.** §§2.3,3.7–3.8,4.4 consume §§2.1–2.3,5.2–5.4 and 6.2; §4.7 consumes §7.1. Its explicit factorial and Hurewicz calibration and π^(n−1) conversion stay there.
-- **PeriodsAndSpecialValues.** PS.3.2a imports the relocated §§2.1–2.3 and 6.1–6.3; PS.9.8–PS.9.10 use §5.4 in fundamental-line and mixed Tate applications.
-- **EndoscopicTransferAndUnitaryTraceComparison.** §6.2 imports the classical norm-one theorem §3.4; its general simply connected semisimple Tamagawa theorem and trace comparison keep their owner.
+- **Polylogarithms.** §§2.3,3.7–3.8,4.4 consume §§2.1–2.3,5.2–5.4 and 6.2; §4.7 uses §5.1’s rank-zero clause together with IntegralIwasawaTheory §6.0. Its explicit factorial and Hurewicz calibration and π^(n−1) conversion stay there.
+- **PeriodsAndSpecialValues.** PS.3.2a imports §§2.1–2.3 and 6.1–6.3 for its fundamental-line and mixed Tate applications.
+- **ColemanIntegration.** §L3.Fc.1 uses §§2.2–2.3 and 5.3 for the complex regulator lattice theorem, and §6.2 for its Beilinson normalization; its pairings and discriminant/regulator determinants remain there.
 - **HeightsRationalPointsAndObstructions.** §3.6 imports the number-field period–index theorem §3.1 in its PGL descent comparison.
 - **HabiroNahmSeries.** §1.5 uses the embedding rational-image theorem indirectly through Polylogarithms; no Habiro-symbol or torsion assertion is a premise here.
 
-The number-field contracts are §§2.1–2.3, 5.1–5.5, 6.1–6.3 and 7.1, rather than a generic uncalibrated regulator structure. A polylogarithmic consumer converting each row by λₙπ^(n−1), with λₙ∈ℚˣ, obtains its determinant exponent from §5.4 by adding (n−1)dₙ. Constructing and calibrating those polylogarithmic rows belongs to that consumer. Neither the source of its symbols nor their every-family image assertion follows from the Borel lattice alone.
+The number-field contracts are §§2.1–2.3, 5.1–5.5 and 6.1–6.3, rather than a generic uncalibrated regulator structure. A polylogarithmic consumer converting each row by λₙπ^(n−1), with λₙ∈ℚˣ, obtains its determinant exponent from §5.4 by adding (n−1)dₙ. Constructing and calibrating those polylogarithmic rows belongs to that consumer. Neither the source of its symbols nor their every-family image assertion follows from the Borel lattice alone.
 
 ## References
 
