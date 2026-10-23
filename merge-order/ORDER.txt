@@ -19,6 +19,7 @@ DerivedDeRhamCohomology
 CrystallineCohomology
 PerfectoidQuotients
 ReductiveGroupsPartII
+AutomorphicLFunctionsAndLocalFactorsPartII
 SmoothRepresentationsOfLocalGroups
 QuiverRepresentationsPartII
 IntegralHeckeAndGaloisDeterminants
