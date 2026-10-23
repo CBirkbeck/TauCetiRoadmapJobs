@@ -90,6 +90,7 @@ ConformalMappingPartII
 EulerSystemsAndKolyvaginSystems
 ShimuraVarieties
 AdicCoefficientsAndComparisons
+AdicCoefficientsAndComparisonsPartII
 EtaleDualityAndPerverseSheaves
 ArithmeticStatisticsPartI
 ArithmeticStatisticsPartII
