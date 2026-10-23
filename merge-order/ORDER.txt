@@ -241,6 +241,7 @@ KatoEulerSystems
 AutomorphicCongruences
 ModularIwasawaMainConjectures
 HeegnerPointEulerSystems
+RankOneConverse
 CrystallineLocalGlobalCompatibilityCM
 EllipticCurveModularityImaginaryQuadratic
 ModularityAndLanglandsExtensions
