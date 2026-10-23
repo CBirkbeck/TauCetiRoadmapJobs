@@ -12,6 +12,7 @@ AdicEtaleGeometry
 PerfectoidSpaces
 AdicSpacesPartIV
 DiamondsAndVStacks
+FunctionFieldArithmeticPartII
 PerfectoidTowers
 EnhancedDerivedSheaves
 EtaleCohomologyFoundations
