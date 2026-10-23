@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-456 mistakes recorded on the board: 222 misprints, 203 errors, 30 gaps, 1 unparsed bullets.
+462 mistakes recorded on the board: 226 misprints, 205 errors, 30 gaps, 1 unparsed bullets.
 Errata jobs have read the cited sources of 2 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -712,6 +712,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at p. 2: the source says a ceiling bracket there that the review confirms is a misprint; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Huber, Étale Cohomology of Rigid Analytic Varieties and Adic Spaces (1996)
+
+- **Misprint** at proof of Corollary 4.2.9, part (2), p. 246: the source says the displayed base change between the finite-rank model and the original scheme points the wrong way; it should be show X as the base change X₀ ×_{A₀} A of the model along A₀ → A, a Cartesian square over A; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Misprint** at §3.5, proof of Proposition 3.5.6, p. 204: the source says the parenthetical example takes the auxiliary valuation ring to be the completion of k(x)⁺, whose fraction field need not be algebraically closed; it should be the completion of C⁺ for a chosen geometric point over x; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Huybrechts, Lectures on K3 surfaces (author draft)
 
 - **Misprint** at Chapter 18, §3, Example 3.4: the source says (via "respectively") discriminant −64 for the infinite-height case p≡3 mod 4 and −p² for the other case; it should be the reverse: −p² for infinite height (rank 22, p-elementary), −64 for the other; affects a stated result. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -788,6 +793,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kedlaya–Liu (KL), Relative p-adic Hodge theory: Foundations,
 
 - **Error** at 8.1.6 (taut maps), in a sentence beside its local formulation: the source says an equivalence phrased with globally spectral maps; it should be use locally spectral maps, global spectrality holding only in qcqs cases (witness: the non-quasi-compact partially proper open disc); affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kedlaya–Liu, "Relative p-adic Hodge theory: Foundations" (arXiv:1301.0792v5)
+
+- **Error** at Remark 8.4.8, pp. 168–169: the source says the source concludes that A is normal from A being an integral domain; it should be assume A normal (noetherian) explicitly, because integrality does not imply normality; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Kedlaya–Liu, Relative p-adic Hodge theory I (2015)
 
@@ -955,6 +964,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 5.11.3(2), p. 98 (same claim in the published version): the source says Q††→P†† is a trivial ℙ¹-bundle; at n=2, p=3 over a quartic C it is ℙ(O_C⊕O_C(4)), with a section of self-intersection −16, so not a product; it should be the projectivization of the sum of the two link normal lines, only Zariski-locally trivial; affects a stated result. Found by  (#589 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at the printed proof at cached lines 702–707: the source says restriction of scalars followed by extension gives identical copies of the adjoint; the summands are Frobenius twists (over 𝔽₄₉, C₄₈-weights 7, 6: k-linear Hom vanishes, the x↦x⁷ twist does not); it should be a decomposition into Frobenius twists, requiring Hom vanishing for every twist of the adjoint; affects the proof. Found by  (#589 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Li–Reinecke–Zavyalov, "Relative Poincaré duality in nonarchimedean geometry" (arXiv:2410.08200v1)
+
+- **Misprint** at Remark 3.1.10, pp. 22–23: the source says the source puts the class of a line bundle in a cohomology group of the wrong degree; it should be H¹(X_ét, G_m), that is Pic(X); affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Misprint** at the chart diagram for Lemmas 6.1.9–6.1.10, pp. 71–73: the source says the lower chart arrow carries the étale counit of g₁, repeating the label of the upper arrow; it should be the étale counit of g₂; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Lurie, Spectral Algebraic Geometry (SAG)
 
@@ -1147,6 +1161,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Section II.2: the source says that an example shows strongly Zariski closed is strictly stronger than Zariski closed; it should be that the two notions are equivalent, the example being erroneous (Étale cohomology of diamonds, Definition 5.7, p. 24); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at Section II.2: the source says an example shows strongly Zariski closed is strictly stronger than Zariski closed; it should be that the two notions are equivalent, the example being erroneous (Étale cohomology of diamonds, Definition 5.7, p. 24); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Scholze, "p-adic Hodge theory for rigid-analytic varieties" (Forum Math. Pi 2013, arXiv:1205.3463)
+
+- **Error** at §3, Proposition 3.7(i), p. 15, as used for Proposition 3.7(iii) and Lemma 3.16, pp. 15–20 (withdrawn in the author's erratum, item (1)): the source says arbitrary open surjections of profinite sets split, and its pro-étale coverings rest on this; it should be replaced by the splitting of towers (pullbacks of surjections of finite G-sets, then G-étale maps), with coverings redefined accordingly; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Scholze, Berkovich motives, arXiv:2412.03382
 
