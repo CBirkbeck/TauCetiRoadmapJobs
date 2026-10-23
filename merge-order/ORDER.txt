@@ -91,6 +91,7 @@ AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 CongruenceSpectralGap
 ClassicalArithmeticCompletion
+EllipticLegendreCharacterInterfaces
 EllipticCurvesPartII
 ArithmeticKTheory
 K3BlochGroups
