@@ -111,6 +111,7 @@ ClassicalArithmeticCompletion
 EllipticLegendreCharacterInterfaces
 EllipticCurvesPartII
 ArithmeticKTheory
+BorelRegulators
 GeometryOfNumbersAndQuadraticArithmeticPartII
 K3BlochGroups
 ZagierConjecturePolylogarithms
@@ -220,7 +221,6 @@ StableHomotopyKTheoryPartII
 GeneralAlgebraicKTheoryPartII
 MotivesAndAlgebraicCyclesPartII
 ChromaticHomotopyTheory
-BorelRegulators
 ArithmeticKTheoryPartII
 Polylogarithms
 HabiroCohomologyFoundationsPartII
