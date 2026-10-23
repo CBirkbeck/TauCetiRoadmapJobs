@@ -1,20 +1,20 @@
 # Roadmap: solid spectral analytic coefficients
 
-**Summary.** Build the light solid spectral coefficient library from concrete spectra, the light profinite site and the integer solid theory, retaining the sphere and all its homotopy groups. The endpoints are the countable product and split-tower tensor comparisons, balanced scalar change, countable-limit/ω₁-filtered-colimit interchange, the spectral null-family description of completed countable block sums, uniformly bounded-below realization comparisons, and spectral analytic coefficient structures with completed scalar extension and summability localizations.
+**Summary.** Build the light solid abelian and spectral coefficient library from concrete spectra and the light profinite site, retaining the sphere and all its homotopy groups. The endpoints are the countable product and split-tower tensor comparisons, balanced scalar change, countable-limit/ω₁-filtered-colimit interchange, the spectral null-family description of completed countable block sums, uniformly bounded-below realization comparisons, and spectral analytic coefficient structures with completed scalar extension and summability localizations.
 
 ## Scope and ownership
 
-This roadmap owns the sphere-linear theory of light spectral hypersheaves and solidification, its integer-linear comparison, and the coefficient constructions of Layers 3–7. The ambient light condensed and solid spectral block of RefinedTraceMethods §6.2, “Light condensed and solid spectra”, belongs here in §§1–2 and §6.4. Its discrete embedding, null-sequence definition, reflection, compact generator and bounded-below p-complete statement are retained with the completed unit. RefinedTraceMethods §§6.2–6.4 own trace-class maps, nuclearity, perfect-even sites and even filtrations. They consume this foundational block.
+This roadmap owns the light null-test theory of solid abelian groups in §1.5, the sphere-linear theory of light spectral hypersheaves and solidification, its integer-linear comparison, and the coefficient constructions of Layers 3–7. The ambient light condensed and solid spectral block of RefinedTraceMethods §6.2, “Light condensed and solid spectra”, belongs here in §§1–2 and §6.4. Its discrete embedding, null-sequence definition, reflection, compact generator and bounded-below p-complete statement are retained with the completed unit. RefinedTraceMethods §§6.2–6.4 own trace-class maps, nuclearity, perfect-even sites and even filtrations. They consume this foundational block.
 
-VStackSheavesAndLisseCategories VS2.1 owns solid abelian groups, Breen–Deligne resolutions, integer solidification and its enhanced derived tensor. VS2.2 owns analytic measures, integer-linear analytic structures, analytic spectra and their geometric gluing, including its nonarchimedean coefficient structures. Those objects are imported, with the common-site comparisons their owner specifies. The variants here have sphere-linear coefficients and preserve higher spectral homotopy. GeneralizedCohomology G2 owns concrete spectra; StableHomotopyKTheory §§5.13–5.18 and EnhancedDerivedSheaves E5:spectra-comparison own their abstract and integer-module adapters. Generic enhanced category theory remains in EnhancedDerivedSheaves; the two exact extensions it and VS2.1 must supply are stated below.
+VStackSheavesAndLisseCategories VS2.1 owns the compact-Hausdorff theory of solid abelian groups, Breen–Deligne resolutions, integer solidification and its enhanced derived tensor. VS2.2 owns analytic measures, integer-linear analytic structures, analytic spectra and their geometric gluing, including its nonarchimedean coefficient structures. The compact-Hausdorff theory is used here only through the common-presentation comparison of §7.4, with the site comparisons specified by VS2.2. The variants here have sphere-linear coefficients and preserve higher spectral homotopy. GeneralizedCohomology G2 owns concrete spectra; StableHomotopyKTheory §§5.13–5.18 and EnhancedDerivedSheaves E5:spectra-comparison own their abstract and integer-module adapters. Generic enhanced category theory remains in EnhancedDerivedSheaves; the two exact extensions it and VS2.1 must supply are stated below.
 
-The site, ordinary light sheaves, ordinary module tensor, countable exact products and integer solidity predicate are already in the pinned libraries under the declarations listed below. Ordinary light sheaves are not a construction of the enhanced spectral hypersheaf category. No second abelian solidity predicate, spectrum carrier, ordinary tensor or general bar construction is planned here.
+The site, ordinary light sheaves, ordinary module tensor, countable exact products and compact-Hausdorff integer solidity predicate are already in the pinned libraries under the declarations listed below. Ordinary light sheaves are not a construction of the enhanced spectral hypersheaf category. The light null-test predicate of §1.5 differs from the pinned profinite-measure predicate; no second spectrum carrier, ordinary tensor or general bar construction is planned here.
 
-HabiroRings §§2.6–2.12 owns the Habiro algebra, its particular factorial filtration, arithmetic scalar idempotence and bounded-below arithmetic monoidality. It instantiates the general coefficient comparisons here. Huber-pair geometry, functional analysis, group representation theory, analytic stacks and six operations belong to their named geometric, functional-analysis and representation owners. The requests labeled SA.1–SA.4 in consumers do not define sections of this roadmap. Integer E-coefficients and common-presentation comparisons are supplied through VS2.2 and §7.4; their Huber-pair and group-ring extensions are identified under Downstream consumers.
+HabiroRings §§2.6–2.12 owns the Habiro algebra, its particular factorial filtration, arithmetic scalar idempotence and bounded-below arithmetic monoidality. It instantiates the general coefficient comparisons here. Huber-pair geometry, functional analysis, group representation theory, analytic stacks and six operations belong to their named geometric, functional-analysis and representation owners. Integer E-coefficients and common-presentation comparisons are supplied through VS2.2 and §7.4; their Huber-pair and group-ring extensions are identified under Downstream consumers.
 
 ## Conventions
 
-Fix universes u<v. Choose an essentially small skeleton of the pinned category of u-small light profinite spaces; diagrams, families of tests and summands are u-small. Coefficient categories are presentable in the compatible enlargement. An enlargement is accompanied by a comparison functor on the stated presentations. A light profinite space is compact Hausdorff, totally disconnected and second countable. Covers are finite jointly surjective families; hyperdescent is part of Cond(Sp). Empty space values and empty products in stable categories are 0. A two-point free object is 𝕊⊕𝕊, so tensoring ranks two and three gives rank six.
+Fix universes u<v. Choose an essentially small skeleton of the pinned category of u-small light profinite spaces, using the `CategoryTheory.EssentiallySmall` instance in Mathlib/Topology/Category/LightProfinite/Basic.lean:403 and the ordinary sheaf equivalence `LightCondensed.equivSmall` in Mathlib/Condensed/Light/Small.lean:30; diagrams, families of tests and summands are u-small. Coefficient categories are presentable in the compatible enlargement. An enlargement is accompanied by a comparison functor on the stated presentations. A light profinite space is compact Hausdorff, totally disconnected and second countable. Covers are finite jointly surjective families; hyperdescent is part of Cond(Sp). Empty space values and empty products in stable categories are 0. A two-point free object is 𝕊⊕𝕊, so tensoring ranks two and three gives rank six.
 
 Left module categories are used for E₁ coefficients. In compact-generator reconstruction, Map_A(G_A,M) is a right module over End_A(G_A) by precomposition. With matrix units, e₁₂e₂₁=e₁₁ and e₂₁e₁₂=e₂₂; the order is retained in scalar and bar comparisons.
 
@@ -36,8 +36,8 @@ Quotients by a scalar are module cofibers. For a₀=1, B₀=0 and J₀=A; for a 
 
 Use Mathlib pin 6b7abb3c7686292736be2955bd3eb9ebf63b456a.
 
-- The native `LightProfinite` is defined in Mathlib/Topology/Category/LightProfinite/Basic.lean:42 as a CompHausLike category with total disconnectedness and second countability. `LightProfinite.of`, at line56, requires compactness and Hausdorffness as well. `LightProfinite.effectiveEpi_iff_surjective`, in EffectiveEpi.lean:28, identifies single effective-epimorphism covers with surjections. These are site carriers; they contain no spectral enhancement.
-- `LightCondensed`, in Mathlib/Condensed/Light/Basic.lean:28, is exactly the ordinary sheaf category for the coherent topology. `LightCondMod`, in Light/Module.lean:42, is its ModuleCat-valued specialization; `LightCondensed.free` and `LightCondensed.freeForgetAdjunction`, at lines68 and73, supply the ordinary free module and adjunction. `LightCondAb`, at line85, specializes to ℤ. The equivalence of ordinary integer presentations is imported from VS2.1; no unrestricted-site equivalence is inferred from the abbreviation.
+- The native `LightProfinite` is defined in Mathlib/Topology/Category/LightProfinite/Basic.lean:42 as a CompHausLike category with total disconnectedness and second countability. `LightProfinite.of`, at line56, requires compactness and Hausdorffness as well. `LightProfinite.effectiveEpi_iff_surjective`, in EffectiveEpi.lean:28, identifies single effective-epimorphism covers with surjections. The `CategoryTheory.EssentiallySmall` instance in Basic.lean:403 supplies a small equivalent site; `LightCondensed.equivSmall`, in Mathlib/Condensed/Light/Small.lean:30, transports ordinary sheaves to its induced topology. These are site carriers and an ordinary sheaf equivalence; they contain no spectral enhancement.
+- `LightCondensed`, in Mathlib/Condensed/Light/Basic.lean:28, is exactly the ordinary sheaf category for the coherent topology. `LightCondMod`, in Light/Module.lean:42, is its ModuleCat-valued specialization; `LightCondensed.free` and `LightCondensed.freeForgetAdjunction`, at lines68 and73, supply the ordinary free module and adjunction. `LightCondAb`, at line85, specializes to ℤ.
 - `LightCondensed.discreteUnderlyingAdj`, in Mathlib/Condensed/Discrete/Basic.lean:86, assumes a Category and the indicated HasSheafify and states the ordinary discrete/evaluation adjunction. It supplies the degree-zero comparison, rather than the spectral adjunction of §1.2.
 - Mathlib/Condensed/Light/AB.lean:31–37 gives `CategoryTheory.CountableAB4Star` and `CategoryTheory.IsGrothendieckAbelian` instances for light modules over any ring R. This does not state the independent-union law required in gap:light-countable-ab6. Light/Monoidal.lean:41–62 gives `CategoryTheory.MonoidalCategory`, `CategoryTheory.SymmetricCategory` and `CategoryTheory.MonoidalClosed` instances over commutative R and monoidal ordinary sheafification/free functors. Derived solid and spectral tensors use their respective owners.
 - `Condensed.profiniteFree`, `Condensed.profiniteSolid` and `Condensed.profiniteSolidification`, in Mathlib/Condensed/Solid.lean:44,48,69, are the ordinary free functor, right Kan extension of finite free objects, and its comparison. `CondensedMod.IsSolid`, at line83, is the map-inversion predicate. Its defining field tests every profinite object; its docstring at lines74–81 restricts this use to finite-type integer algebras and explains the polynomial restriction correction for a general ring. VS2.1–VS2.2 owns that correction and the resulting theory. `LocallyConstant.freeOfProfinite`, in Mathlib/Topology/Category/Profinite/Nobeling/Induction.lean:153, is Nöbeling freeness for the actual module of locally constant integer functions on any profinite S; its integer measure use stays in VS2.1.
@@ -47,7 +47,7 @@ Use Mathlib pin 6b7abb3c7686292736be2955bd3eb9ebf63b456a.
 
 ### From Tau Ceti
 
-Use Tau Ceti pin a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039. There is no additional direct Tau Ceti declaration imported by this design. The supplied enhanced and integer roadmaps retain their own pinned sheaf-tensor and dg interfaces. Their spectral comparison is imported by section, rather than presented as a pinned spectral declaration.
+Use Tau Ceti pin a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039. There is no direct Tau Ceti declaration imported. The supplied enhanced and integer roadmaps retain their own pinned sheaf-tensor and dg interfaces. Their spectral comparison is imported by section, rather than presented as a pinned spectral declaration.
 
 ### From TauCetiRoadmap.GeneralizedCohomology
 
@@ -59,19 +59,19 @@ Sections 5.13–5.18 supply operadic algebra/model comparisons, HR-modules and u
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
-Sections0.1–0.3 and E1.3 supply enhanced module sheaves and their tensor/Hom and derived limits on small ringed sites. E5:spectra-comparison supplies the point-site Eilenberg–Mac Lane equivalence; the sheafwise light comparison is the target of §2.3. E0.4 and E0.8 supply stable coherent categories, cardinal filteredness, accessibility and presentability. E2:towers supplies the coherent limit fiber of 1−shift, Milnor and pro-zero APIs. E2.6–E2.7 supplies hypercovers, space-valued sheaves, hypercompletion and the distinction from Postnikov completeness. E3.2–E3.3 supplies accessible localizations, adjoints and compact generation. E5:abstract.2–E5:abstract.5 supplies algebra/module fibers, bar scalar extension, tensor-compatible localization, stable monoidal comparisons and monadic reconstruction. E5:presentability.1–E5:presentability.2 supplies compact objects, presentable-category operations and abstract stabilization. E5:spectra-comparison supplies the concrete spectral and Eilenberg–Mac Lane module comparisons. E5:animation.4 supplies θ and animated-module comparison with its positive-characteristic restriction. E4.1 and E4.4 supplies integer-derived completion and completed tensor where those hypotheses apply; §6.4 proves the extra sphere-linear instance.
+Sections0.1–0.3 and E1.3 supply enhanced module sheaves and their tensor/Hom and derived limits on small ringed sites. E5:spectra-comparison supplies the point-site Eilenberg–Mac Lane equivalence; the sheafwise light comparison is the target of §2.3. E0.4 and E0.8 supply stable coherent categories, cardinal filteredness, accessibility and presentability. E2:towers supplies the coherent limit fiber of 1−shift, Milnor and pro-zero APIs. E2.1–E2.3 supplies replete countable-product epimorphisms, the Milnor sequence and Postnikov comparison, through `IsReplete.countableProduct_epi` and `IsReplete.milnor`. E2.6–E2.7 supplies hypercovers, space-valued sheaves, hypercompletion and the distinction from Postnikov completeness. E3.2–E3.3 supplies accessible localizations, adjoints and compact generation. E5:abstract.2–E5:abstract.5 supplies algebra/module fibers, bar scalar extension, tensor-compatible localization, stable monoidal comparisons and monadic reconstruction. E5:presentability.1–E5:presentability.2 supplies compact objects, presentable-category operations and abstract stabilization. E5:spectra-comparison supplies the concrete spectral and Eilenberg–Mac Lane module comparisons. E5:animation.4 supplies θ and animated-module comparison with its positive-characteristic restriction. E4.1 and E4.4 supplies integer-derived completion and completed tensor where those hypotheses apply; §6.4 proves the extra sphere-linear instance.
 
-**Additional exact contract — gap:cardinal-interchange.** EnhancedDerivedSheaves E0.8 and E5:presentability.2 must supply: for every infinite regular κ, the colimit over any κ-filtered small J in spaces preserves all κ-small limits, compatibly with levelwise stabilization. This is HTT Proposition 5.3.3.3, printed p.394, HTT line18705. The supplied sections define cardinal filteredness and spectra but do not state this general interchange theorem. The extension is EnhancedDerivedSheaves, Part II, in the same categorical direction. §4.1 specializes that contract to the light spectral site.
+What EnhancedDerivedSheaves must provide (gap:cardinal-interchange): For every infinite regular κ, every small κ-filtered ∞-category J and every κ-small simplicial set K, colim_J:Fun(J,C)→C preserves K-indexed limits, for C=Spaces and for C=Sp(Spaces_*) of E5:presentability.2. The supplying sections are E0.8 and E5:presentability.2. The spaces assertion is HTT Proposition 5.3.3.3, printed p.394, HTT line 18705; the spectra assertion is its stabilization consequence, with filtered colimits computed levelwise in the loop-tower presentation. The supplied sections define cardinal filteredness and spectra but do not state this general interchange theorem. The extension is EnhancedDerivedSheaves, Part II, in the same categorical direction. §4.1 specializes that contract to the light spectral site.
 
 ### From TauCetiRoadmap.VStackSheavesAndLisseCategories
 
-VS2.1, “Solid abelian groups”, “Solidification as a reflection” and “Solid tensor and internal Hom”, supplies the integer full subcategory, reflection, enhanced derived comparison, compact projective integer products and their derived tensor theorem. VS2.2, “Analytic measures and complete modules”, supplies the measure and Dirac data, Hom extension axiom, enhanced reflection, complete tensor/Hom and scalar extension. Its conventions and “Solid nonarchimedean coefficients” supplies common size-bounded light/cutoff realization comparisons and topological E-coefficients. Analytic spectrum and gluing remain there. In particular, the Smith-type measure object has uniformly bounded denominators, rather than arbitrary ∏E.
+VS2.1, “The abelian category of solid groups”, “Solidification as a reflection” and “Solid tensor and internal Hom”, supplies the compact-Hausdorff integer full subcategory, reflection, enhanced derived comparison, compact projective integer products and their derived tensor theorem. Its use is the common-presentation comparison in §7.4; the light null-test theory, its derived category and its product tensor are §1.5. VS2.2, “Analytic measures and complete modules”, supplies the measure and Dirac data, Hom extension axiom, enhanced reflection, complete tensor/Hom and scalar extension. Its conventions and “Solid nonarchimedean coefficients” supplies common size-bounded light/cutoff realization comparisons and topological E-coefficients. Analytic spectrum and gluing remain there. In particular, the Smith-type measure object has uniformly bounded denominators, rather than arbitrary ∏E.
 
-**Additional exact contract — gap:light-countable-ab6.** VS2.1 must supply: for a countable family of directed systems of subobjects B_(j,α)⊆B_j in light condensed abelian groups, the map colim_(α_j)∏_j B_(j,α_j)→∏_j colim_α B_(j,α) is an isomorphism, naturally and compatibly with the solid full inclusion. RC Theorem 2.3.3(1), pp.12–13, RC line539, supplies its abelian model. Countable exact products alone do not state this law. This missing abelian continuation is proposed as VStackSheavesAndLisseCategoriesPartIII §1.1; the geometric VStackSheavesAndLisseCategoriesPartII VS6–VS11 keeps its scope. §4.2 uses the abelian contract, and §5.3 uses that spectral application.
+What VStackSheavesAndLisseCategories must provide (gap:light-countable-ab6): For every countable family of light condensed abelian groups B_j with directed families of subobjects (B_(j,α))_(α∈A_j), the map colim_((α_j)∈∏_j A_j) ∏_j B_(j,α_j) → ∏_j colim_(α∈A_j) B_(j,α) is an isomorphism. The supplying section is the light abelian continuation of VS2.1. RC Theorem 2.3.3(1), pp.12–13, RC line539, supplies its abelian model. Countable exact products alone do not state this law. This missing abelian continuation is proposed as VStackSheavesAndLisseCategoriesPartIII §1.1; the geometric VStackSheavesAndLisseCategoriesPartII VS6–VS11 keeps its scope. §4.2 uses the abelian contract, and §5.3 uses that spectral application.
 
 ## How to read the build
 
-Layer 1 fixes the site and null test. In Layer 2, §2.1 proves the preliminary null-Hom and homotopy calculation before §2.2 constructs reflection and module tensor; §2.3 then compares Hℤ-linear coefficients and §2.4 identifies the compact generator. Layer 3 proves product and split-tower comparisons and applies the supplied bar formalism to balanced tensor. Layer 4 separates ω₁-filtered interchange from independent directed support bounds. Layer 5 constructs the complete filtered datum and proves its spectral null-family theorem in every degree. Layer 6 supplies bounded-below resolutions, the exact connectivity estimates for realizations, and the retained p-complete comparison. Layer 7 builds the sphere-linear analytic structures and their measure comparison. Locators described as integer models or arithmetic models identify the argument being extended; the sphere-linear extensions are the targets stated here, with their full hypotheses. Neither a legal-source status nor an integer comparison is substituted for their proofs.
+Layer 1 fixes the site, the spectral null test and the light solid abelian theory of §1.5. In Layer 2, §2.1 proves the preliminary null-Hom and homotopy calculation before §2.2 constructs reflection and module tensor; §2.3 then compares Hℤ-linear coefficients and §2.4 identifies the compact generator. Layer 3 proves product and split-tower comparisons and applies the supplied bar formalism to balanced tensor. Layer 4 separates ω₁-filtered interchange from independent directed support bounds. Layer 5 constructs the complete filtered datum and proves its spectral null-family theorem in every degree. Layer 6 supplies bounded-below resolutions, the exact connectivity estimates for realizations, and the retained p-complete comparison. Layer 7 builds the sphere-linear analytic structures and their measure comparison. Locators described as integer models or arithmetic models identify the argument being extended; the sphere-linear extensions are the targets stated here, with their full hypotheses.
 
 ## Layer 1: Light spectral sheaves and the null-sequence test
 
@@ -81,7 +81,7 @@ Fix a small skeleton of second-countable profinite spaces in universe u, with fi
 
 A proof route is to apply the supplied hypercomplete-space-sheaf localization and stabilization to the pinned site. Verify stability of descent under shifts and that the hypercover localization is compatible with tensor on free representables. Induct on matching degrees to choose finite covering refinements; finite disjoint unions and finite limits remain light profinite. Use the free-object mapping property for closedness and descent.
 
-*Needs:* Mathlib `LightProfinite`; Mathlib `LightProfinite.effectiveEpi_iff_surjective`; Mathlib `LightCondensed`; GeneralizedCohomology G2.1–G2.7; EnhancedDerivedSheaves E0.4; EnhancedDerivedSheaves E0.8; EnhancedDerivedSheaves E2.6–E2.7; EnhancedDerivedSheaves E3.2; EnhancedDerivedSheaves E5:presentability.2.
+*Needs:* Mathlib `LightProfinite`; Mathlib `LightProfinite.effectiveEpi_iff_surjective`; Mathlib `LightCondensed`; GeneralizedCohomology G2.1–G2.7; EnhancedDerivedSheaves E0.4; EnhancedDerivedSheaves E0.8; EnhancedDerivedSheaves E2.6–E2.7; EnhancedDerivedSheaves E3.2; EnhancedDerivedSheaves E5:abstract.3; EnhancedDerivedSheaves E5:presentability.2.
 
 The API has the following laws.
 
@@ -99,7 +99,7 @@ The API has the following laws.
 
 - For a disjoint pair, the sheaf value is two factors, and the free object is two spheres.
 
-- The degree-zero integer homotopy sheaves use LightCondAb; an ordinary Category-valued sheaf alone does not encode spectral hyperdescent.
+- For C=ℕ∪{∞}, π₀ of 𝕊[C] at the point is ⊕_Cℤ; at a two-point space it is (⊕_Cℤ)². The all-one vector is absent at the point, distinguishing the free sheaf from its product-valued solid measure.
 
 ### 1.2 Discreteness and point evaluation
 
@@ -127,11 +127,11 @@ The API has the following laws.
 
 ### 1.3 The marked null sequence
 
-Let C=ℕ∪{∞} with the one-point compactification topology, and define N=cofib(𝕊[{∞}]→𝕊[C]). Define σ:N→N from the continuous map n↦n+1, ∞↦∞, using its compatibility with the marked point. All maps and cofibers are in Cond(Sp). Construct the universe-lifted marked compactification and compare the free integer null summand, shift and internal projectivity with the pinned Type0 model. At the base universe, internal projectivity is imported; the additional target is its natural scalar/site transport on the common light presentations, not another base-universe proof. (W, Paragraph 2.1, p.11, W line 443; RC Definition 3.2.1, p.16, RC line 730).
+Let C=ℕ∪{∞} with the one-point compactification topology, and define N=cofib(𝕊[{∞}]→𝕊[C]). Define σ:N→N from the continuous map n↦n+1, ∞↦∞, using its compatibility with the marked point. All maps and cofibers are in Cond(Sp). Construct the universe-lifted marked compactification and compare the free integer null summand, shift and internal projectivity with the pinned Type0 model. At the base universe, internal projectivity is imported; the additional target is its natural scalar/site transport on the common light presentations, not another base-universe proof. (W, Paragraph 2.1, p.11, W line 443; RC Definition 3.2.1, p.16, RC line 732).
 
 A proof route is to apply the free-sheaf functor to the marked inclusion and shift, then use functoriality of cofibers. The finite-support calculation against discrete integers fixes precomposition and the sign. The ordinary marked-point map splits by the constant map to the point, so the integer null summand is a retract of the free convergent-sequence module. Use the pinned internal projectivity theorem at Type0 and the pinned retract lemma. For larger universes, construct the marked ULift and scalar-lift comparisons and verify the internal lifting test over each common light presentation: the countable fiber products and finite covering diagrams are transported before passing to free objects. This universe-transport statement is an additional target, with no claim that the pinned theorem is universe-polymorphic.
 
-*Needs:* §1.1; Mathlib `LightCondensed.internallyProjective_free_natUnionInfty`; Mathlib `CategoryTheory.InternallyProjective.ofRetract`; VStackSheavesAndLisseCategories VS2.1; VStackSheavesAndLisseCategories VS2.2.
+*Needs:* §1.1; Mathlib `LightCondensed.internallyProjective_free_natUnionInfty`; Mathlib `CategoryTheory.InternallyProjective.ofRetract`.
 
 The API has the following laws.
 
@@ -175,23 +175,55 @@ The API has the following laws.
 
 - N is not solid: its pointwise π₀ is ⊕_ℕℤ, whereas its solidification has product π₀ and contains the all-one vector.
 
+### 1.5 Light solid abelian groups
+
+Write Ab_light for light sheaves of integer modules on the fixed site: the native LightCondAb at universe 0, and LightCondMod over the lifted integer ring at larger u, using the transport of §1.3. In Ab_light let P=coker(ℤ[{∞}]→ℤ[C]), with C=ℕ∪{∞} and the marked shift σ. Define SolidAb_light as the full subcategory of groups B for which 1−σ* is invertible on the internal Hom(P,B). In the enhanced unbounded D(Ab_light), define the derived solid subcategory by the same test on RHom(P,−). Construct its abelian and derived reflections and closed solid tensors, and prove the following light integer theory. These are light-site statements, without an identification of the unrestricted compact-Hausdorff and light categories. (RC Definition 3.2.1, p.16, RC line 732; Theorem 3.2.4(1)–(13), pp.17–18, RC lines 754–786.)
+
+A proof route is to apply the internal projectivity and universe transport of §1.3 to the null test and its tensor–Hom adjunction. Use accessible localization for the derived reflection. Construct the free solid measures from finite clopen quotients, identify their compact projectivity and generation, and derive the abelian reflection and tensor on this generating family. The product-tensor theorem is a target on this light family. This route uses the light assertions of RC Theorem 3.2.4, without importing VS2.1's compact-Hausdorff presentation.
+
+*Needs:* §1.3; Mathlib `LightCondAb`; Mathlib `LightCondMod`; Mathlib `LightCondensed.free`; Mathlib `LightCondensed.freeForgetAdjunction`; Mathlib `CategoryTheory.CountableAB4Star`; Mathlib `CategoryTheory.IsGrothendieckAbelian`; EnhancedDerivedSheaves §§0.1–0.3; EnhancedDerivedSheaves E1.3; EnhancedDerivedSheaves E3.2–E3.3; EnhancedDerivedSheaves E5:abstract.3.
+
+The API has the following laws.
+
+- SolidAb_light is Grothendieck abelian; its inclusion creates all small limits and colimits and solid groups are closed under extensions. Discrete ℤ is solid, and internal Hom from any light condensed abelian group into a solid group is solid.
+
+- The abelian solidification is left adjoint to inclusion. Its tensor is the unique closed symmetric monoidal tensor making solidification symmetric monoidal, with unit ℤ. The solidification of the topological additive group ℝ is 0.
+
+- The derived solid subcategory is presentable and its inclusion creates all small limits and colimits. It is reflective, and a complex belongs to it exactly when every cohomology sheaf is in SolidAb_light; derived internal Hom into a solid complex remains solid.
+
+- The enhanced functor D(SolidAb_light)→D(Ab_light) is fully faithful onto these complexes. Its reflection and tensor are the left derived abelian solidification and solid tensor, respectively, and derived solidification is symmetric monoidal.
+
+- For a light profinite S with a sequential finite-quotient presentation S=lim_n S_n, the natural free-measure unit gives ℤ■[S]≃lim_n ℤ[S_n]≅∏_Jℤ for a countable J. This object is compact projective in SolidAb_light, and is a generator when S is infinite. The natural unit and projections fix the comparison independently of the presentation.
+
+- For countable sets I,J, including finite and empty sets, the projection-induced map (∏_Iℤ)⊗ᴸ■(∏_Jℤ)→∏_(I×J)ℤ is an equivalence. No uncountable-product assertion is inferred.
+
+**Checks.**
+
+- At the point Hom(P,ℤ)=⊕_ℕℤ. On e₁ the inverse sends e₁ to e₁+e₀, since (1−σ*)(e₁+e₀)=e₁; the opposite shift would give e₁−e₂. Thus discrete ℤ satisfies the light test.
+
+- For S=∅, *, and a two-point set, ℤ■[S] is respectively 0, ℤ, and ℤ². For C=ℕ∪{∞}, ℤ■[C]≅ℤ×∏_ℕℤ, while P■≅∏_ℕℤ contains the all-one vector absent from P(*). In particular P is a non-example of solidity.
+
+- For |I|=2, |J|=3 the tensor comparison gives ℤ⁶ on both sides; for I=∅ it gives 0; for I=J=ℕ both sides are ∏_(ℕ²)ℤ, with no positive Tor sheaf.
+
+- For Σℤ the cohomology is ℤ in degree −1 and 0 elsewhere, so it lies in D(SolidAb_light). The topological group ℝ fails the test: for b_n=1/(n+1), a null solution to x_n−x_(n+1)=b_n would satisfy x₀−x_(N+1)=∑_(n=0)^N 1/(n+1), whose right side diverges while its left side tends to x₀. Thus ℝ is not solid, and its solidification is 0.
+
 ### Examples
 
 The empty profinite space has value 0; a disjoint pair has value X(*) × X(*). The convergent sequence, with its distinguished limit point, fixes the shift used throughout the build.
 
 ### Dependencies
 
-Pinned light profinite and sheaf carriers; GeneralizedCohomology G2.1–G2.7; EnhancedDerivedSheaves E0.4, E0.8, E2.6–E2.7, E3.2 and E5:presentability.2.
+Pinned light profinite and sheaf carriers; GeneralizedCohomology G2.1–G2.7; EnhancedDerivedSheaves §§0.1–0.3, E0.4, E0.8, E1.3, E2.6–E2.7, E3.2–E3.3, E5:abstract.3 and E5:presentability.2.
 
 ## Layer 2: Solidification, homotopy and the compact generator
 
 ### 2.1 The spectral homotopy structure
 
-First prove, inside Cond(Sp), that Hom(N,−) is t-exact and preserves small colimits; its homotopy sheaf in degree k is the internal abelian Hom from the integer null object to π_k. Deduce that M is solid exactly when every π_kM is integer-solid on the light site. The homotopy t-structure restricts to the stable full subcategory Sp■, has heart the light realization of SolidAb, is nondegenerate and left and right complete, and is compatible with filtered colimits and countable products. Compare truncations and shifts with ordinary spectra and the supplied integer enhancement. (RC, Theorem 2.3.3(1)–(3), pp.12–13, RC line 537; Theorem 3.2.4(6), p.17, RC line 764; proof RC line 870 (integer model)).
+First prove, inside Cond(Sp), that Hom(N,−) is t-exact and preserves small colimits; its homotopy sheaf in degree k is the internal abelian Hom from the integer null object to π_k. Deduce that M is solid exactly when every π_kM is integer-solid on the light site. The homotopy t-structure restricts to the stable full subcategory Sp■, has heart SolidAb_light of §1.5, is nondegenerate and left and right complete, and is compatible with filtered colimits and countable products. Compare truncations and shifts with ordinary spectra and the supplied integer enhancement. (RC, Theorem 2.3.3(1)–(3), pp.12–13, RC line 537; Theorem 3.2.4(6), p.17, RC line 764; proof RC line 870 (integer model)).
 
 A proof route is to lift the pinned integer internal-projectivity result, its marked retract and the universe transport of §1.3, together with the compactness calculation through bounded Postnikov intervals. Use exact countable products and the supplied tower fiber formula to pass to unbounded spectra. The light finite-cover lifting argument gives colimit preservation; it does not claim that every representable is projective. The internal-Hom test then reduces solidity to integer solidity in every homotopy sheaf. Countable exact products and the replete light-site descent prove Postnikov convergence and effectivity here, rather than assuming this for every hypercomplete topos.
 
-*Needs:* §1.1; §1.3; VStackSheavesAndLisseCategories VS2.1; Mathlib `LightCondensed`; Mathlib `LightCondMod`; EnhancedDerivedSheaves E2:towers; EnhancedDerivedSheaves E5:spectra-comparison; StableHomotopyKTheory §§5.15–5.18; Mathlib `CategoryTheory.CountableAB4Star`; Mathlib `CategoryTheory.IsGrothendieckAbelian`.
+*Needs:* §1.1; §1.3; §1.4; §1.5; Mathlib `LightCondensed`; Mathlib `LightCondMod`; EnhancedDerivedSheaves E2:towers; EnhancedDerivedSheaves E2.1–E2.3; EnhancedDerivedSheaves E5:spectra-comparison; StableHomotopyKTheory §§5.15–5.18; Mathlib `CategoryTheory.CountableAB4Star`; Mathlib `CategoryTheory.IsGrothendieckAbelian`.
 
 The API has the following laws.
 
@@ -213,9 +245,9 @@ The API has the following laws.
 
 Construct the accessible reflection L■:Cond(Sp)→Sp■. Prove that the inclusion creates all small limits and colimits and that Hom(C,M) is solid whenever M is solid and C is any condensed spectrum. Prove tensor compatibility L■(C⊗D)≃L■(L■C⊗D), and equip Sp■ with closed symmetric monoidal tensor C⊗■D=L■(C⊗D), unit δ𝕊 and the ambient internal Hom into solid targets. Prove L■ preserves connective objects. For a connective E₁ solid A, Mod_A has the underlying homotopy t-structure. For connective commutative A, tensor over A sends degrees ≥b and ≥c to degrees ≥b+c, for all integers b,c. For every light profinite T presented as a sequential limit of finite quotients T_n, construct L■𝕊[T]≃lim_n δ𝕊[T_n], independent of the presentation and compatible with its free-object unit. (W, Paragraph 2.1, p.11, W lines 448–451; RC Theorem 3.2.4(5)–(8), p.17, RC line 761 (integer model); RC Theorem 3.2.4(12), p.17, RC line 773 (free measure model)).
 
-A proof route is to construct the free solid measure on a profinite T from its finite clopen quotients. Use the exact null-Hom and homotopy tests of §2.1 and the imported integer measure universal property to identify maps from this limit into every solid M, first on bounded Postnikov intervals and then using the complete homotopy structure. Its unit is induced by the finite projections. Extend this free-object reflection to spectral sheaves by its mapping universal property and accessible localization. These free measure objects are connective; connective free resolutions therefore give connective preservation of L■. Tensor–Hom adjunction makes the kernel a tensor ideal and proves Hom closure; apply monoidal localization. Transfer the homotopy structure to modules over connective algebras and prove the tensor bound on connective free cells.
+A proof route is to construct the free solid measure on a profinite T from its finite clopen quotients. Use the exact null-Hom and homotopy tests of §2.1 and the light integer measure universal property of §1.5 to identify maps from this limit into every solid M, first on bounded Postnikov intervals and then using the complete homotopy structure. Its unit is induced by the finite projections. Extend this free-object reflection to spectral sheaves by its mapping universal property and accessible localization. These free measure objects are connective; connective free resolutions therefore give connective preservation of L■. Tensor–Hom adjunction makes the kernel a tensor ideal and proves Hom closure; apply monoidal localization. Transfer the homotopy structure to modules over connective algebras and prove the tensor bound on connective free cells.
 
-*Needs:* §1.4; EnhancedDerivedSheaves E3.2; EnhancedDerivedSheaves E5:abstract.3; VStackSheavesAndLisseCategories VS2.1; §2.1.
+*Needs:* §1.4; EnhancedDerivedSheaves E3.2; EnhancedDerivedSheaves E5:abstract.3; §1.5; §2.1.
 
 The API has the following laws.
 
@@ -237,11 +269,11 @@ The API has the following laws.
 
 ### 2.3 The Hℤ-linear comparison
 
-Construct a symmetric monoidal t-exact equivalence Mod_{δHℤ}(Sp■)≃D(SolidAb_light) on the common enhancement. It identifies solidification of Hℤ-module sheaves with derived integer solidification, including the units and the internal-Hom comparison. For every integer b and solid X with π_kX=0 for all k<b, the unit-induced map X→δHℤ⊗■X induces an isomorphism on π_b. Consequently Hℤ⊗■− detects zero objects among bounded-below solid spectra. Compare modules over θB for animated B through the supplied animated-to-commutative-algebra functor, without identifying animated rings with arbitrary connective spectral algebras. (MW, Paragraph 4.1, p.41, MW line 1763; RC Theorem 3.2.4(9)–(11), p.17, RC line 769).
+Construct a symmetric monoidal t-exact equivalence Mod_{δHℤ}(Sp■)≃D(SolidAb_light), with SolidAb_light and its enhanced derived category as in §1.5. It identifies solidification of Hℤ-module sheaves with derived integer solidification, including the units and the internal-Hom comparison. For every integer b and solid X with π_kX=0 for all k<b, the unit-induced map X→δHℤ⊗■X induces an isomorphism on π_b. Consequently Hℤ⊗■− detects zero objects among bounded-below solid spectra. Compare modules over θB for animated B through the supplied animated-to-commutative-algebra functor, without identifying animated rings with arbitrary connective spectral algebras. (MW, Paragraph 4.1, p.41, MW line 1763; RC Theorem 3.2.4(9)–(11), p.17, RC line 769).
 
-A proof route is to use the supplied point-site equivalence Mod_Hℤ(Sp)≃D(ℤ), then construct its sheafwise comparison with the enhanced ringed-site derived category of §§0.1–0.3 and E1.3. Compare bounded Postnikov intervals by hypercover descent; §2.1 and exact countable products justify passage to the unbounded light setting. Identify the resulting solid localization tests with those of VS2.1 and compare the monoidal localizations by their universal properties. The connective cofiber of 𝕊→Hℤ and the tensor bound of §2.2 give first-homotopy detection for bounded-below spectra. The sheafwise comparison is a target here, not a theorem claimed from the point-site supplier.
+A proof route is to use the supplied point-site equivalence Mod_Hℤ(Sp)≃D(ℤ), then construct its sheafwise comparison with the enhanced ringed-site derived category of §§0.1–0.3 and E1.3. Compare bounded Postnikov intervals by hypercover descent; §2.1 and exact countable products justify passage to the unbounded light setting. Identify the resulting solid localization tests with those of §1.5 and compare the monoidal localizations by their universal properties. The connective cofiber of 𝕊→Hℤ and the tensor bound of §2.2 give first-homotopy detection for bounded-below spectra. The sheafwise comparison is a target here, not a theorem claimed from the point-site supplier.
 
-*Needs:* §2.1; §2.2; VStackSheavesAndLisseCategories VS2.1; EnhancedDerivedSheaves E5:spectra-comparison; EnhancedDerivedSheaves E5:animation.4; StableHomotopyKTheory §§5.14–5.16; EnhancedDerivedSheaves §§0.1–0.3; EnhancedDerivedSheaves E1.3; EnhancedDerivedSheaves E2.6.
+*Needs:* §2.1; §2.2; §1.5; EnhancedDerivedSheaves E5:spectra-comparison; EnhancedDerivedSheaves E5:animation.4; StableHomotopyKTheory §§5.14–5.16; EnhancedDerivedSheaves §§0.1–0.3; EnhancedDerivedSheaves E1.3; EnhancedDerivedSheaves E2.6.
 
 **Checks.**
 
@@ -257,7 +289,7 @@ Put G=L■N. Construct an equivalence G≃∏_ℕδ𝕊, with the product in Con
 
 A proof route is to build the free solid measure on the convergent sequence by its finite clopen partitions, using the spectral Postnikov comparison and integer measure calculation. Identify the marked summand with the product. Null-Hom compactness gives compactness after reflection; the vanishing tests and integer detection on homotopy sheaves give generation. Transfer compactness and generation by the free/forgetful module adjunction.
 
-*Needs:* §2.1; §2.2; §2.3; VStackSheavesAndLisseCategories VS2.1; EnhancedDerivedSheaves E3.3; EnhancedDerivedSheaves E5:abstract.2; EnhancedDerivedSheaves E5:presentability.1; §1.3.
+*Needs:* §2.1; §2.2; §2.3; §1.5; EnhancedDerivedSheaves E3.3; EnhancedDerivedSheaves E5:abstract.2; EnhancedDerivedSheaves E5:presentability.1; §1.3.
 
 The API has the following laws.
 
@@ -281,17 +313,17 @@ The solid sphere retains its higher stems. Integer-linearization sends the solid
 
 ### Dependencies
 
-Layer 1; VStackSheavesAndLisseCategories VS2.1; EnhancedDerivedSheaves E3.2–E3.3, E5:abstract.2–E5:abstract.3, E5:presentability.1 and E5:spectra-comparison; StableHomotopyKTheory §§5.13–5.18.
+Layer 1; EnhancedDerivedSheaves E2:towers, E2.1–E2.3, E3.2–E3.3, E5:abstract.2–E5:abstract.3, E5:presentability.1 and E5:spectra-comparison; StableHomotopyKTheory §§5.13–5.18.
 
 ## Layer 3: Countable products, split towers and balanced tensor
 
 ### 3.1 Product tensor comparison
 
-For all countable sets I,J, including finite and empty sets, the projection-induced map (∏_Iδ𝕊)⊗■(∏_Jδ𝕊)→∏_(I×J)δ𝕊 is an equivalence, natural under reindexing and coherent with units, symmetry and associativity. Identify the map on integer-linearization with VS2.1’s derived product tensor. (Q, Proof of Lemma B.8, printed p.79, Q line 3672; RC Theorem 3.2.4(13), p.17, RC line 777).
+For all countable sets I,J, including finite and empty sets, the projection-induced map (∏_Iδ𝕊)⊗■(∏_Jδ𝕊)→∏_(I×J)δ𝕊 is an equivalence, natural under reindexing and coherent with units, symmetry and associativity. Identify the map on integer-linearization with the light derived product tensor of §1.5. (Q, Proof of Lemma B.8, printed p.79, Q line 3672; RC Theorem 3.2.4(13), p.17, RC line 777).
 
-A proof route is to use G and its finite retracts to identify the integer-linearization of each product with the integer product. Both sides and the cone of the comparison are bounded below. Apply the imported integer product theorem and bounded-below Hℤ-detection of §2.3. Identify the equivalence by its individual projections so all reindexing and coherence diagrams are determined.
+A proof route is to use G and its finite retracts to identify the integer-linearization of each product with the integer product. Both sides and the cone of the comparison are bounded below. Apply the light integer product theorem of §1.5 and bounded-below Hℤ-detection of §2.3. Identify the equivalence by its individual projections so all reindexing and coherence diagrams are determined.
 
-*Needs:* §2.2; §2.3; §2.4; VStackSheavesAndLisseCategories VS2.1.
+*Needs:* §2.2; §2.3; §2.4; §1.5.
 
 **Checks.**
 
@@ -365,7 +397,7 @@ A rank-two stage tensored with a rank-three stage has six sphere summands. For a
 
 ### Dependencies
 
-Layer 2; EnhancedDerivedSheaves E2:towers, E5:abstract.2–E5:abstract.4 and E5:presentability.1; integer products from VStackSheavesAndLisseCategories VS2.1.
+Layer 2; EnhancedDerivedSheaves E2:towers, E5:abstract.2–E5:abstract.4 and E5:presentability.1; light integer products from §1.5.
 
 ## Layer 4: Countable limits and independent support bounds
 
@@ -373,7 +405,7 @@ Layer 2; EnhancedDerivedSheaves E2:towers, E5:abstract.2–E5:abstract.4 and E5:
 
 Let K be a small category whose nerve has countably many nondegenerate simplices, let J be a small ω₁-filtered category, and let F:J×K→Cond(Sp) be any coherent diagram. The comparison colim_j lim_k F(j,k)→lim_k colim_j F(j,k) is an equivalence. Prove the same assertion in Sp■ and in left modules over any fixed E₁ solid spectral algebra. In these categories ω₁-filtered colimits of hypersheaves are computed sectionwise. (HTT, Proposition 5.3.3.3, printed p.394, HTT line 18705; RC Remark 4.0.3, p.28, RC line 1411; Q line 3688).
 
-A proof route is to import the abstract cardinal-filtered limit theorem specified in the gap contract. Apply it levelwise to spectra, then to the countable hypercover refinements of §1.1; hence a sectionwise ω₁-filtered colimit remains a hypersheaf. Limits are sectionwise. Use creation of limits and colimits by solid inclusion and by the fixed-algebra module forgetful functor.
+A proof route is to import the abstract cardinal-filtered limit theorem specified in the gap contract. Use its spectra assertion, then apply it to the countable hypercover refinements of §1.1; hence a sectionwise ω₁-filtered colimit remains a hypersheaf. Limits are sectionwise. Use creation of limits and colimits by solid inclusion and by the fixed-algebra module forgetful functor.
 
 *Needs:* §1.1; §2.2; EnhancedDerivedSheaves E0.8; EnhancedDerivedSheaves E5:presentability.2; gap:cardinal-interchange.
 
@@ -387,11 +419,11 @@ A proof route is to import the abstract cardinal-filtered limit theorem specifie
 
 ### 4.2 Independent bounds in the heart
 
-For a countable family of light solid abelian groups B_j and directed systems of subobjects B_(j,α)⊆B_j, the natural map colim_(α_j)∏_j B_(j,α_j)→∏_j colim_α B_(j,α) is an isomorphism of light solid sheaves. In a countable split tower of finite sphere sums, prove that π_k of its limit is the inverse limit of the π_k sheaves for every integer k, and that every projection is surjective on π_k. These statements provide independent coordinate bounds and eliminate the lim¹ error used in §5. (RC, Theorem 2.3.3(1)–(2), pp.12–13, RC line 539; Bosco Lemma A.4 proof, p.93, Bosco lines 3504–3521).
+For a countable family B_j in SolidAb_light of §1.5 and directed systems of subobjects B_(j,α)⊆B_j in that abelian category, the natural map colim_(α_j)∏_j B_(j,α_j)→∏_j colim_α B_(j,α) is an isomorphism of light solid sheaves. In a countable split tower of finite sphere sums, prove that π_k of its limit is the inverse limit of the π_k sheaves for every integer k, and that every projection is surjective on π_k. These statements provide independent coordinate bounds and eliminate the lim¹ error used in §5. (RC, Theorem 2.3.3(1)–(2), pp.12–13, RC line 539; Bosco Lemma A.4 proof, p.93, Bosco lines 3504–3521).
 
-A proof route is to import countable AB6 for the light abelian carrier rather than construct it again. The full solid inclusion creates these operations. For towers, apply the split decomposition and countable exact products to each homotopy sheaf; the shift map on the product is surjective by the chosen sections, so its cokernel lim¹ vanishes. Use these two results separately; no common index for all coordinates is required.
+A proof route is to import countable AB6 for the light abelian carrier rather than construct it again. The full inclusion of §1.5 creates the limits and colimits in this formula, so the solid assertion follows from the ambient abelian contract; no supplier compatibility with a spectral inclusion is required. For towers, apply the split decomposition and countable exact products to each homotopy sheaf; the shift map on the product is surjective by the chosen sections, so its cokernel lim¹ vanishes. Use these two results separately; no common index for all coordinates is required.
 
-*Needs:* §2.2; §3.2; gap:light-countable-ab6; EnhancedDerivedSheaves E2:towers; §2.1.
+*Needs:* §1.5; §2.2; §3.2; gap:light-countable-ab6; EnhancedDerivedSheaves E2:towers; §2.1.
 
 **Checks.**
 
@@ -407,7 +439,7 @@ Ordinary filtered colimits do not commute with countable products: the all-one v
 
 ### Dependencies
 
-Layers 1–3; EnhancedDerivedSheaves E0.8 and E5:presentability.2, with gap:cardinal-interchange; VStackSheavesAndLisseCategories VS2.1, with gap:light-countable-ab6.
+Layers 1–3; EnhancedDerivedSheaves E0.8 and E5:presentability.2, with gap:cardinal-interchange; §1.5 and the light abelian extension of VStackSheavesAndLisseCategories VS2.1 specified by gap:light-countable-ab6.
 
 ## Layer 5: Complete filtered coefficients and spectral null families
 
@@ -443,9 +475,11 @@ The API has the following laws.
 
 A proper profile is a function f:ℕ→ℕ such that for every r the set {j | f(j)<r} is finite. Order profiles by an arrow f→g when f(j)≥g(j) for every j. For countable sets I_j define V_f=∏_j∏_(i∈I_j)J_(f(j)), with transition V_f→V_g induced by the marked ideal maps. Define a block map as an A-linear map on the uncompleted direct sums for which each entire input block factors through a specified finite sum of output blocks; include the actual coherent factorizations as data. (Q, Proof of Lemma B.8, p.80, Q lines 3693–3705; Bosco Lemma A.4, p.93, Bosco line 3488).
 
+For these countable-product blocks the existence of a finite output factorization is automatic: §3.2 expresses A as a countable sphere product, §3.1 gives ∏_I A≃A⊗■∏_Iδ𝕊, and §2.4 makes this a compact A-module. A map from it into a direct sum therefore factors through a finite sub-sum. The specified coherent factorization records a choice of this data.
+
 A proof route is to use pointwise minimum for cocones on pairs of profiles, and ideal inclusions for the transition functor. Prove properness is invariant under altering finitely many values and that every finite-support family belongs to a profile stage. Construct block-map identity and composition by taking finite unions of the given output supports.
 
-*Needs:* §5.1.
+*Needs:* §5.1; §3.1; §3.2; §2.4.
 
 The API has the following laws.
 
@@ -456,6 +490,8 @@ The API has the following laws.
 - Identity transitions are identities and transitions compose according to the divisibility coherences.
 
 - Identity block maps and composites have finite output supports for each input block.
+
+- Every A-linear map from a countable-product block ∏_I A to a direct sum factors through a finite sub-sum because ∏_I A≃A⊗■∏_Iδ𝕊 is a compact A-module; a block map records coherent choices of such factorizations.
 
 **Checks.**
 
@@ -501,7 +537,9 @@ A proof route is to use filtered-colimit compatibility of homotopy sheaves and e
 
 - For A=𝕊[[t]], π₁A=(ℤ/2)[[t]] and the degree-one family (ηt^j) has modulo t² survivors η and ηt.
 
-- The map sending input block j to blocks 2j and 2j+1 sends t^j to two copies of t^j; modulo t² only outputs 0,1,2,3 survive. A block mapped simultaneously to every output is excluded by the finite-output condition.
+- The map sending input block j to blocks 2j and 2j+1 sends t^j to two copies of t^j; modulo t² only outputs 0,1,2,3 survive.
+
+- The fold map ⊕_jA→A is the identity on every singleton block and has output support {0} per block. For A=𝕊[[t]], its completion sends (t^j)_j to ∑_j t^j=(1−t)⁻¹ in π₀A=ℤ[[t]], which is 1+t modulo t². Here 1−t is a unit because its constant coefficient is 1, and (1−t)(1+t)=1 modulo t². The family (t^j)_j is absent from the uncompleted direct sum.
 
 ### Examples
 
@@ -509,7 +547,7 @@ The formal-variable tower 𝕊[[t]]/(t^r) has ranks 0,1,2 at r=0,1,2, giving a c
 
 ### Dependencies
 
-Layers 2–4; the independent-union supplier gap in §4.2; the integer p-adic model is Bosco Lemma A.4 and the sphere-linear model is Q, proof of Lemma B.8. No Habiro-specific statement is an input.
+Layers 2–4; EnhancedDerivedSheaves E2:towers; the independent-union supplier gap in §4.2; the integer p-adic model is Bosco Lemma A.4 and the sphere-linear model is Q, proof of Lemma B.8. No Habiro-specific statement is an input.
 
 ## Layer 6: Bounded-below resolutions, realizations and prime completion
 
@@ -531,11 +569,11 @@ A proof route is to use the connective projective generator G_A to choose a free
 
 ### 6.2 Connectivity of quotient completion
 
-For any connective commutative solid A and coherent divisibility tower of scalar multiplication maps a_r, define Λ_a by the module cofiber tower as in §5.1, without assuming finite free quotients or that A is complete. It is exact, and if M≥b then M/a_r≥b for every r and Λ_a(M)≥b−1. For the free block modules of §5.3 and a complete split datum, improve the bound to Λ_a(F_I)≥0 by split surjectivity on each homotopy tower. The map between the limit and the product has the fiber-of-1−shift convention of the supplied tower theory. (Bosco, Proposition A.3 proof, Bosco line 3465; Q proof of Lemma B.8, Q line 3688 (connectivity step made explicit)).
+For any connective commutative solid A and coherent divisibility tower of scalar multiplication maps a_r, define Λ_a by the module cofiber tower as in §5.1, without assuming finite free quotients or that A is complete. It is exact, and if M≥b then M/a_r≥b for every r and Λ_a(M)≥b for every such tower. In particular the free block modules of §5.3 satisfy Λ_a(F_I)≥0, with no split-surjectivity hypothesis needed for this bound. The map between the limit and the product has the fiber-of-1−shift convention of the supplied tower theory. (Bosco, Proposition A.3 proof, Bosco line 3465; Q proof of Lemma B.8, Q line 3688 (connectivity step made explicit)).
 
-A proof route is to each quotient is a cofiber of an endomorphism of a b-connective module. A countable tower limit is fib(1−shift on the product), and countable products preserve connectivity, giving the possible one-degree loss. Exactness follows because all these functors preserve finite limits and colimits. For split free block quotients, the 1−shift map is surjective on π_b and removes the loss.
+A proof route is to use the cofiber sequence to obtain M/a_r≥b and π_b(M/a_r)=coker(a_r:π_bM→π_bM). The transition square (b_(r,s),id) induces the surjective quotient map on these bottom homotopy sheaves. The Milnor sequence and vanishing of lim¹ for epimorphic towers on the light site give π_(b−1)Λ_a(M)=0; countable products exclude all lower degrees. Exactness follows because cofibers and limits preserve finite limits and colimits in a stable category. This argument needs neither completeness of A nor split quotient stages. (RC Theorem 2.3.3(2), p.12, RC line 540.)
 
-*Needs:* §2.2; §5.1; §5.3; EnhancedDerivedSheaves E2:towers; §2.1.
+*Needs:* §2.2; §5.1; EnhancedDerivedSheaves E2:towers; EnhancedDerivedSheaves E2.1–E2.2; §2.1.
 
 **Checks.**
 
@@ -543,11 +581,11 @@ A proof route is to each quotient is a cofiber of an endomorphism of a b-connect
 
 - For a single zero scalar the derived quotient is M⊕ΣM; it is not the ordinary quotient M alone.
 
-- For the tower ℤ --2→ ℤ --2→⋯ in degree0, lim=0 and lim¹=ℤ₂/ℤ, so the homotopy limit has π₋₁=ℤ₂/ℤ. The b−1 bound is necessary for general towers.
+- For M=Hℤ and a_r=2^r, the quotient tower H(ℤ/2^r) has surjective transitions, lim=ℤ₂ and lim¹=0, so Λ_aM=Hℤ₂ and π₋₁=0. The tower ℤ←2ℤ←4ℤ←⋯ is an ideal tower J_r, not this quotient tower; its pointwise derived inverse limit has π₋₁=ℤ₂/ℤ.
 
 ### 6.3 Uniform realization comparison
 
-For the quotient completion functor of §6.2 and a simplicial A-module M• with M_n≥b for one integer b independent of n, the natural map |Λ_a(M•)|→Λ_a(|M•|) is an equivalence. More explicitly, cofib(|sk_dM•|→|M•|) lies in degrees ≥b+d+1, and applying Λ_a gives degrees ≥b+d; the analogous tail of |Λ_a(M•)| is ≥b+d. Consequently finite skeleta determine the comparison on π_k once d>k−b+2. The equivalence is natural and agrees with the balanced bar comparison of §3.4 whenever A and the bar terms have the stated uniform lower bounds. For a two-sided bar for X⊗_A Y, take the A-action through the X factor in each degree; the realized action is the balanced A-action, and the comparison is A-linear for these specified actions. (Bosco, Proof of Proposition A.3, Bosco line 3465; Q proof of Lemma B.8, Q lines 3688–3692 (uniform spectral estimate supplied here)).
+For the quotient completion functor of §6.2 and a simplicial A-module M• with M_n≥b for one integer b independent of n, the natural map |Λ_a(M•)|→Λ_a(|M•|) is an equivalence. More explicitly, cofib(|sk_dM•|→|M•|) lies in degrees ≥b+d+1, and applying Λ_a gives degrees ≥b+d+1; the analogous tail of |Λ_a(M•)| is ≥b+d+1. Consequently finite skeleta determine the comparison on π_k once d>k−b. The equivalence is natural and agrees with the balanced bar comparison of §3.4 whenever A and the bar terms have the stated uniform lower bounds. For a two-sided bar for X⊗_A Y, take the A-action through the X factor in each degree; the realized action is the balanced A-action, and the comparison is A-linear for these specified actions. (Bosco, Proof of Proposition A.3, Bosco line 3465; Q proof of Lemma B.8, Q lines 3688–3692 (uniform spectral estimate supplied here)).
 
 A proof route is to finite Reedy skeleta use finite colimits, which commute with exact Λ_a. Latching cofibers stay b-connective; the d-th normalized layer is suspended d times. The two tail estimates make the finite-skeleton comparisons stabilize in each homotopy degree, and nondegeneracy gives equivalence. In a balanced bar with connective coefficient algebra, all terms have lower bound the sum of the module bounds. This proof uses connectivity, not a formal exchange of arbitrary realization and inverse limit.
 
@@ -557,7 +595,7 @@ A proof route is to finite Reedy skeleta use finite colimits, which commute with
 
 - A constant simplicial M gives the identity comparison Λ_aM→Λ_aM.
 
-- A normalized layer in simplicial degree1 contributes ΣM, so a b-connective input produces a (b+1)-connective layer before completion and at least b-connective after completion.
+- A normalized layer in simplicial degree1 contributes ΣM, so a b-connective input produces a (b+1)-connective layer before completion and (b+1)-connective after completion.
 
 - With normalized term Σ^(−n)A in degree n, its suspended layer is A in every degree; the tails never become more connective, so the proof cannot apply.
 
@@ -565,9 +603,9 @@ A proof route is to finite Reedy skeleta use finite colimits, which commute with
 
 For every prime p, define e_p(X)=lim_r δ(X/p^r) on derived p-complete ordinary spectra X. Evaluation at the point is its right adjoint on p-complete objects and the unit is an equivalence, so e_p is fully faithful. If M,N are p-complete bounded-below solid spectra then M⊗■N is p-complete. For bounded-below p-complete X,Y, e_p(X)⊗■e_p(Y)≃e_p((X⊗Y)^∧_p). The bounded-below p-complete solid category is symmetric monoidal with unit e_p(𝕊^∧_p), and the inclusion into all solid spectra is lax monoidal with unit map δ𝕊→e_p(𝕊^∧_p). On Hℤ-linear inputs, recover Bosco’s completed-tensor comparison over any derived p-complete solid ordinary ring with bounded-above cohomological complexes. Construct the p-complete full subcategory in Cond(Sp) and Sp■ by orthogonality to all shifts of p-inverted free spectral objects, and prove its reflection is the p-power cofiber limit used in the definition of e_p. (W, Paragraph 2.2, p.11, W lines 452–462; Bosco Proposition A.3, pp.92–93, Bosco line 3459).
 
-A proof route is to construct the spectral p-completion reflection from the p-inverted free objects and identify its quotient tower using the supplied ordinary Moore/telescope argument on the spectral tensor action. All shifts and all light free tests occur in the orthogonality condition. Point evaluation and the ordinary completion unit then compute the adjunction unit. For bounded-below objects resolve by free solid generators, apply the realization estimate to the p-power cofiber tower, and prove the generator tensor comparison through the integer p-adic null-family calculation and bounded Postnikov intervals. State and prove these spectral comparisons on the actual generator, using the tail estimates to pass to arbitrary bounds. Moore spectra are not declared finite free spheres; §5.1 is not invoked for them. Retain the monoidal unit in the completed codomain.
+A proof route is to construct the spectral p-completion reflection from the p-inverted free objects and identify its quotient tower using the supplied ordinary Moore/telescope argument on the spectral tensor action. All shifts and all light free tests occur in the orthogonality condition. Use EnhancedDerivedSheaves E5:spectra-comparison, `symmetricSpectra_towerComparison`, to identify the ordinary p-power tower, its (p,id) transitions and completion unit. Point evaluation and that unit then compute the adjunction unit. For bounded-below objects resolve by free solid generators, apply the realization estimate to the p-power cofiber tower, and prove the generator tensor comparison through the integer p-adic null-family calculation and bounded Postnikov intervals. State and prove these spectral comparisons on the actual generator, using the tail estimates to pass to arbitrary bounds. Moore spectra are not declared finite free spheres; §5.1 is not invoked for them. Retain the monoidal unit in the completed codomain.
 
-*Needs:* §1.2; §2.3; §2.4; §6.1; §6.3; GeneralizedCohomology G3.8–G3.9; EnhancedDerivedSheaves E4.1; EnhancedDerivedSheaves E4.4; §3.1.
+*Needs:* §1.2; §2.3; §2.4; §6.1; §6.3; GeneralizedCohomology G3.8–G3.9; EnhancedDerivedSheaves E4.1; EnhancedDerivedSheaves E4.4; EnhancedDerivedSheaves E5:spectra-comparison; §3.1.
 
 The API has the following laws.
 
@@ -627,9 +665,9 @@ The API has the following laws.
 
 ### 7.2 Complete tensor and scalar extension
 
-For an uncompleted structure (A,D), construct the closed symmetric monoidal tensor M⊗hat_A N=L_D(M⊗■_A N) on D, with unit L_DA and internal Hom inherited from Mod_A. Retain the connective commutative coefficient algebra Â=L_DA supplied by the lax monoidal inclusion and its map A→Â; no identification with A is made without completedness. For a morphism (A,D)→(B,E), completed scalar extension M↦L_E(B⊗■_A M) is left adjoint to restriction E→D. Prove identity, composition and coherences for the scalar-change squares: both iterated extensions along a coherently commuting square to a fixed analytic target agree with extension along its composite. For algebra-pushout base change, prove the completed-tensor comparison after applying the target reflector whenever its kernel is the localizing tensor ideal generated by the scalar extensions of the two input kernels; this kernel-generation condition specifies the induced analytic structure. Explicitly, for an algebra pushout B′=B⊗■_A A′ with compatible analytic structures D_B,D_A′,D_B′ and the indicated generated kernel, both L_D_B′(B′⊗_B L_D_B(B⊗_A M)) and L_D_B′(B′⊗_A′ L_D_A′(A′⊗_A M)) are canonically L_D_B′(B′⊗_A M), for every A-module M. These are equivalences of complete B′-modules. (RC, Proposition 4.1.6 and proof, pp.29–30, RC lines 1489–1519; AG Proposition 12.4 and Remark 12.5, p.80, AG lines 3041–3055).
+For an uncompleted structure (A,D), construct the closed symmetric monoidal tensor M⊗hat_A N=L_D(M⊗■_A N) on D, with unit L_DA and internal Hom inherited from Mod_A. Retain the connective commutative coefficient algebra Â=L_DA supplied by the lax monoidal inclusion and its map A→Â; no identification with A is made without completedness. For a morphism (A,D)→(B,E), completed scalar extension M↦L_E(B⊗■_A M) is left adjoint to restriction E→D. Prove identity, composition and coherences for the scalar-change squares: both iterated extensions along a coherently commuting square to a fixed analytic target agree with extension along its composite. For algebra-pushout base change, prove the completed-tensor comparison after applying the target reflector for every compatible square of analytic morphisms. Explicitly, for an algebra pushout B′=B⊗■_A A′ with analytic structures D_B,D_A′,D_B′ for which both maps into B′ are analytic morphisms, both L_D_B′(B′⊗_B L_D_B(B⊗_A M)) and L_D_B′(B′⊗_A′ L_D_A′(A′⊗_A M)) are canonically L_D_B′(B′⊗_A M), for every A-module M. These are equivalences of complete B′-modules. (RC, Proposition 4.1.6 and proof, pp.29–30, RC lines 1489–1519; AG Proposition 12.4 and Remark 12.5, p.80, AG lines 3041–3055).
 
-A proof route is to use tensor–Hom adjunction: for C in ker L_D and complete M, Map(C⊗X,M)=Map(C,Hom(X,M))=0, so the kernel is a tensor ideal. Apply the supplied monoidal localization. The ordinary scalar-extension adjunction factors through L_D because restriction of an E-object is D-complete. Its mapping-space formula fixes all units, composite comparisons and scalar-change coherences. For the displayed pushout paths use the specified generated kernel and the universal property of localization, retaining the target completion on both sides.
+A proof route is to use tensor–Hom adjunction: for C in ker L_D and complete M, Map(C⊗X,M)=Map(C,Hom(X,M))=0, so the kernel is a tensor ideal. Apply the supplied monoidal localization. The ordinary scalar-extension adjunction factors through L_D because restriction of an E-object is D-complete. Its mapping-space formula fixes all units, composite comparisons and scalar-change coherences. For K∈ker L_D_B and N∈D_B′, compatibility gives N restricted to B in D_B, so Map_B′(B′⊗_B K,N)=Map_B(K,N|_B)=0. Target reflection therefore inverts the scalar extension of each intermediate reflection unit. Apply this argument on both paths and tensor associativity, retaining target completion; no kernel-generation hypothesis is needed.
 
 *Needs:* §7.1; §3.4; EnhancedDerivedSheaves E5:abstract.2; EnhancedDerivedSheaves E5:abstract.3; EnhancedDerivedSheaves E5:abstract.4.
 
@@ -649,7 +687,9 @@ The API has the following laws.
 
 - For D=0 and A=Hℤ, the tensor unit has π₀=0 rather than ℤ.
 
-- For trivial structures the base-change comparison is the derived relative tensor, retaining Tor in the square ℤ→𝔽₂←ℤ.
+- For trivial structures and the span H𝔽₂←Hℤ→H𝔽₂, the pushout comparison is H𝔽₂⊗ᴸ_HℤH𝔽₂, with π₀=π₁=𝔽₂ and all other homotopy zero. Underived tensor would lose π₁.
+
+- For A=A′=B=B′=Hℤ, with the target structure D_B′={0} and all other structures the full module categories, both completed paths give 0. The input kernels generate {0}, whereas the target kernel is all modules, so kernel generation is unnecessary for the comparison.
 
 ### 7.3 Spectral summability structures
 
@@ -683,11 +723,11 @@ The API has the following laws.
 
 ### 7.4 Measures, animated inputs and site comparison
 
-For an integer-linear analytic measure structure (B,μ) supplied by VS2.2, with B and all measure objects in its integer-solid realization, and represented on its common size-bounded light presentation, transport its complete derived module subcategory through §2.3 to the Hℤ-linear spectral algebra associated to B. Prove this is a completed spectral analytic structure exactly when the imported Dirac unit B→μ[*] is an equivalence; in general retain μ[*] as the completed coefficient algebra. Identify free complete modules, Dirac maps, relative tensor, internal Hom and compatible scalar extension. For animated B use θB and the supplied animated-module comparison, retaining the distinction from arbitrary Hℤ-algebras. Prove these comparisons commute with cutoff enlargement on the supplied common presentations and with restriction to the light site on those presentations; no equivalence of unrestricted condensed universes is asserted. (AG, Definition 6.12 and Proposition 6.14, pp.39–40, AG lines 1361 and 1384; Definition 12.1, Proposition 12.4, Remark 12.5, pp.79–80, AG lines 3014–3055).
+For an integer-linear analytic measure structure (B,μ) supplied by VS2.2, with B and all measure objects in its integer-solid realization, and represented on its common size-bounded light presentation, identify its light integer-solid realization with §1.5 on those presentations, then transport its complete derived module subcategory through §2.3 to the Hℤ-linear spectral algebra associated to B. Prove this is a completed spectral analytic structure exactly when the imported Dirac unit B→μ[*] is an equivalence; in general retain μ[*] as the completed coefficient algebra. Identify free complete modules, Dirac maps, relative tensor, internal Hom and compatible scalar extension. For animated B use θB and the supplied animated-module comparison, retaining the distinction from arbitrary Hℤ-algebras. Prove these comparisons commute with cutoff enlargement on the supplied common presentations and with restriction to the light site on those presentations; no equivalence of unrestricted condensed universes is asserted. (AG, Definition 6.12 and Proposition 6.14, pp.39–40, AG lines 1361 and 1384; Definition 12.1, Proposition 12.4, Remark 12.5, pp.79–80, AG lines 3014–3055).
 
-A proof route is to use the imported measure reflection and its universal Hom property to identify the transported full subcategory and its free objects. The monoidal and scalar-change comparisons are forced by their units and adjunctions. Apply only the site/cutoff comparison proved by VS2.2 on common presentations. Use the associative module comparison for animated coefficients, not an unavailable positive-characteristic equivalence of commutative algebra categories.
+A proof route is to compare the imported integer free-measure units with those of §1.5 on the supplied common light presentations; their universal properties identify the solid realizations there. Use the imported measure reflection and its universal Hom property to identify the transported complete subcategory and its free objects. The monoidal and scalar-change comparisons are forced by their units and adjunctions. Apply only the site/cutoff comparison proved by VS2.2 on common presentations. Use the associative module comparison for animated coefficients, not an unavailable positive-characteristic equivalence of commutative algebra categories.
 
-*Needs:* §2.3; §7.1; §7.2; §7.3; VStackSheavesAndLisseCategories VS2.1; VStackSheavesAndLisseCategories VS2.2; EnhancedDerivedSheaves E5:animation.4.
+*Needs:* §1.5; §2.3; §7.1; §7.2; §7.3; VStackSheavesAndLisseCategories VS2.1; VStackSheavesAndLisseCategories VS2.2; EnhancedDerivedSheaves E5:animation.4.
 
 **Checks.**
 
@@ -717,14 +757,14 @@ LocallyAnalyticRepresentationsOfLocalGroups LR.3 consumes the integer E-coeffici
 
 ## References
 
-All locators use the legally read versions recorded in sources.toml. Every statement is phrased independently of the source wording. Spectral extensions of an integer or arithmetic model are identified in their statements and proof routes.
+All locators use the versions recorded in sources.toml. Every statement is phrased independently of the source wording. Spectral extensions of an integer or arithmetic model are identified in their statements and proof routes.
 
 - **W:** Ferdinand Wagner, *q-de Rham cohomology and topological Hochschild homology over ku*, arXiv:2510.06057v1. Paragraphs2.1–2.3, pp.11–12, W lines437,443,452,472. [Open text](https://arxiv.org/abs/2510.06057v1).
 - **MW:** Samuel Meyer and Ferdinand Wagner, *q-Hodge complexes and refined TC−*, author version of5 February2026, §4.1, paragraphs4.1–4.2, p.41, MW lines1748,1764. [Author text](https://ferdinand-wagner.github.io/papers/q-Hodge.pdf).
 - **Q:** Ferdinand Wagner, *q-Hodge complexes over the Habiro ring*, arXiv:2510.04782v2, AppendixB, LemmaB.8 and proof, printed pp.79–80, Q lines3666–3705; the extraction page numbers are124–125. [Open text](https://arxiv.org/abs/2510.04782v2).
 - **Bosco:** Guido Bosco, *Rational p-adic Hodge theory for rigid-analytic varieties*, arXiv:2306.06100v1, PropositionA.3 and LemmaA.4, pp.92–93, Bosco lines3459,3488,3504. These are integer-linear models. [Open text](https://arxiv.org/abs/2306.06100v1).
-- **RC:** Juan Esteban Rodríguez Camargo, *Notes on Solid Geometry*, arXiv:2603.03012v1. Theorem 2.3.3, pp.12–13, RC line537; Theorem 3.2.4, pp.17–18, RC line754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC lines1392,1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC lines1431,1489; Example 4.6.4, p.44, RC line2114. [Open text](https://arxiv.org/abs/2603.03012v1).
-- **CS:** Peter Scholze, joint work with Dustin Clausen, *Lectures on Condensed Mathematics*, May2026 revision of the2019 lectures. Theorems5.8 and6.2, pp.35–36,43, CS lines1243,1578. The integer theory is imported through VS2.1. [Author text](https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf).
+- **RC:** Juan Esteban Rodríguez Camargo, *Notes on Solid Geometry*, arXiv:2603.03012v1. Theorem 2.3.3, pp.12–13, RC line537; Definition 3.2.1, p.16, RC line 732; Theorem 3.2.4, pp.17–18, RC line754; Definition 4.0.1 and Remark 4.0.3, pp.27–28, RC lines1392,1411; Definition 4.1.1 and Proposition 4.1.6, pp.28–30, RC lines1431,1489; Example 4.6.4, p.44, RC line2114. [Open text](https://arxiv.org/abs/2603.03012v1).
+- **CS:** Peter Scholze, joint work with Dustin Clausen, *Lectures on Condensed Mathematics*, May2026 revision of the2019 lectures. Theorems5.8 and6.2, pp.35–36,43, CS lines1243,1578. The compact-Hausdorff integer theory is imported through VS2.1 for the comparison of §7.4. [Author text](https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf).
 - **AG:** Peter Scholze, joint work with Dustin Clausen, *Lectures on Analytic Geometry*, May2026 revision of the2019/20 lectures. Definition 6.12 and Proposition 6.14, pp.39–40, AG lines1361,1384; Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG lines3014,3041. [Author text](https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf).
 - **HTT:** Jacob Lurie, *Higher Topos Theory*, author PDF of9 April2017. Proposition 5.3.3.3, printed p.394 (PDF p.412), HTT line18705, is the abstract supplier extension of §4.1. [Author text](https://www.math.ias.edu/~lurie/papers/HTT.pdf).
 - **AS:** Clausen–Scholze, *Analytic Stacks*,2023–24 public contributor transcript, lectures2–3,5–6,8,13. AS lines9,39 identify the course; AS lines43–44 explain the unendorsed and partly automated transcript. This is context only and is not the sole evidence for any target. [Public transcript](https://raw.githubusercontent.com/ndcroos/analytic-stacks/main/AnalyticStacks.pdf).
