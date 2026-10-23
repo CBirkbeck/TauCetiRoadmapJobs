@@ -175,6 +175,7 @@ ArithmeticKTheoryPartII
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
 GrossZagierAndArithmeticHeights
+ComplexMultiplicationAndExplicitReciprocityPartII
 AutomorphicBundles
 HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
