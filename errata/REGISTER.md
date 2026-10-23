@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2136 mistakes recorded on the board: 1403 misprints, 560 errors, 158 gaps, 15 unparsed bullets.
-Errata jobs have read the cited sources of 23 roadmaps; in those of 1 they found no mistake.
+2138 mistakes recorded on the board: 1405 misprints, 560 errors, 158 gaps, 15 unparsed bullets.
+Errata jobs have read the cited sources of 24 roadmaps; in those of 1 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -211,6 +211,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## beltagy
 
 - **Misprint** at §3.1, printed p. 4 (beltagy line 276 and beltagy line 287): the source says receptive-field sizes are ℓw without dilation and ℓdw with dilation; it should be inclusive spans ℓw+1 and ℓdw+1 for interior tokens, clipped at boundaries. w=2 and ℓ=1 already gives three positions; affects a stated result. Found by StructuredBlockOperators (ERRATA-StructuredBlockOperators at 945f5e6, 2026-10-23, codex gpt-6-astra).
+
+## Bennis-Mahdou
+
+- **Misprint** at Theorem 2.7, arXiv: the source says math/0606770v1, printed p. 7 (Bennis-Mahdou line 219): the source says Holm’s direct-summand closure result is Proposition 2.5; it should be Theorem 2.5, printed p. 174 (Holm line 270); affects nothing. Found by GorensteinHomologicalAlgebra (ERRATA-GorensteinHomologicalAlgebra at 59db116, 2026-10-23, codex gpt-6-astra).
 
 ## Berger, Représentations p-adiques et équations différentielles
 
@@ -1494,6 +1498,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Theorem 4.5.3, p. 41: the source says the fixed locus is fibred over In_S(T₁); it should be In_S(T); affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Error** at §4.6, closing remark, p. 44: the source says isolated fixed points over U make the inertia étale over [U//G]; it should be étaleness of the fixed locus over U is needed (fails for the affine group on P¹); affects a stated result. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at §5.3, p. 48: the source says the trace map is described before Definition 4.3.5; it should be before Definition 4.3.6; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
+
+## Holm
+
+- **Misprint** at Proposition 3.11, proof’s final equality, printed p. 186 (Holm line 725): the source says the character module in the final equality is Hom_R(M, Q/Z); it should be Hom_Z(M, Q/Z), consistently with the proposition and preceding proof; affects the proof. Found by GorensteinHomologicalAlgebra (ERRATA-GorensteinHomologicalAlgebra at 59db116, 2026-10-23, codex gpt-6-astra).
 
 ## horn-johnson
 
