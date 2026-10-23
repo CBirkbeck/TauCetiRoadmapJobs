@@ -1,16 +1,22 @@
 import Mathlib
 
 /-!
-# Polylogarithms: representative target signatures
+# Polylogarithms: target signatures
 
-The roadmap is README.md. This file records light definitions and milestone signatures on
-the pinned APIs and is not exhaustive. The classical and single-valued polylogarithms and the
-Bloch–Wigner function belong to the roadmap PolylogarithmFunctions; they are restated below by
-their defining formulas so that the regulator statements typecheck at the pins. Rational cycles
-are tested by their universal relations, without constructing a second Bloch-group carrier.
-Determinants use selected archimedean embeddings and the discriminant normalization of the
-README. The weight-four theorem for the explicit cycles defined here is proved in
-Polylogarithms, Part II, and is not stated in this file.
+The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
+theorems against the pinned APIs: ideal volume, the Lobachevsky formula and uniform Fourier
+bound, the explicit trilogarithm relations, weight-three Zagier existence and every-family
+rationality, totally-real even-weight existence, and elliptic-kernel absolute convergence.
+The analytic functions are restated by the formulas of PolylogarithmFunctions; universal
+relation tests express the weight-three cycle condition on native tensor carriers.
+
+The descent/Borel comparisons and configuration lifting cannot yet be stated on their actual
+objects: the pins lack the Bloch-group, configuration-complex and higher K-theory regulator
+carriers. Explicit/universal chain-regulator comparisons lack manifold form-test currents,
+higher-cycle Deligne complexes and their regulator maps. Reciprocity constructions lack
+curve-function-field Bloch complexes and their residue homotopies. The elliptic regulator
+pairing additionally lacks those curve/current regulator maps. These headlines have no
+substitute statements here. The weight-four theorem belongs to Polylogarithms, Part II.
 -/
 
 namespace TauCetiRoadmap.Polylogarithms
@@ -20,7 +26,7 @@ open NumberField
 
 universe u
 
-/-! ## The single-valued polylogarithms of PolylogarithmFunctions -/
+/-! ## Definitions for the headline statements -/
 
 /-- The natural-index classical polylogarithm `Liₙ`, with the lower boundary value on the cut.
 This is PolylogarithmFunctions' function, with its API and Checks there; an implementation uses
@@ -44,8 +50,6 @@ noncomputable def singleValued (n : ℕ) (z : ℂ) : ℝ :=
 term vanishes at `z = 0` by totalization. -/
 noncomputable def blochWigner (z : ℂ) : ℝ :=
   (polylog 2 z).im + Complex.arg (1 - z) * Real.log ‖z‖
-
-/-! ## Explicit symbols, cycles and determinants -/
 
 /-- The rationalized unit vector; zero has no unit and is assigned the zero vector. -/
 noncomputable def unitVector {F : Type u} [Field F] (x : F) :
@@ -88,15 +92,6 @@ def IsCycle3 {F : Type u} [Field F] (c : F →₀ ℚ) : Prop :=
     FiveTermFunction b →
       c.sum (fun x a => a • (b x ⊗ₜ[ℚ] unitVector x)) = 0
 
-/-- An explicit raw weight-four cycle: a rational symbol sum whose image `Σ aₓ [x]₃ ⊗ u(x)`
-vanishes in the explicit weight-three group tensor the units, tested against every function on
-the explicit weight-three presentation without constructing that quotient. The README target
-`isCycle4_iff_mem_explicitRawCycleFour` identifies it with the raw kernel. -/
-def IsCycle4 {F : Type u} [Field F] (c : F →₀ ℚ) : Prop :=
-  ∀ (V : Type u) [AddCommGroup V] [Module ℚ V] (b : F → V),
-    TrilogRelationFunction b →
-      c.sum (fun x a => a • (b x ⊗ₜ[ℚ] unitVector x)) = 0
-
 /-- The period matrix has embeddings as rows and symbol families as columns. -/
 noncomputable def periodMatrix {F : Type u} [Field F] {ι : Type*}
     (n : ℕ) (σ : ι → F →+* ℂ) (c : ι → F →₀ ℚ) : Matrix ι ι ℝ :=
@@ -109,49 +104,40 @@ noncomputable def normalizedPeriod {F : Type u} [Field F] [NumberField F]
   Real.pi ^ (n * (Module.finrank ℚ F - Fintype.card ι)) /
     Real.sqrt |(NumberField.discr F : ℝ)| * (periodMatrix n σ c).det
 
-/-! ## Headline theorem -/
-
-/-- Weight-three Zagier existence, including the actual rational cycle condition.
-Goncharov, Advances 1995, Theorem 1.1; the row equivalence selects every infinite place. -/
-theorem zagier_three_exists (F : Type u) [Field F] [NumberField F]
-    (e : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) ≃
-      InfinitePlace F) :
-    ∃ c : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) → F →₀ ℚ,
-      (∀ j, IsCycle3 (c j)) ∧ ∃ q : ℚ, q ≠ 0 ∧
-        normalizedPeriod 3 (fun i => (e i).embedding) c =
-          (q : ℝ) * (NumberField.dedekindZeta F 3).re := by
-  sorry
-
-/-- Every rational weight-three cycle family has rational zeta-normalized period.
-The proof uses the all-configuration cycle-lifting target of README §3.8. -/
-theorem zagier_three_everyFamily (F : Type u) [Field F] [NumberField F]
-    (e : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) ≃
-      InfinitePlace F)
-    (c : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) → F →₀ ℚ)
-    (hc : ∀ j, IsCycle3 (c j)) :
-    ∃ q : ℚ, normalizedPeriod 3 (fun i => (e i).embedding) c =
-      (q : ℝ) * (NumberField.dedekindZeta F 3).re := by
-  sorry
-
-/-! ## Layer 2: volume and Fourier estimates -/
+/-! ## Layer 2: dilogarithmic regulators, volume and Fourier estimates -/
 
 /-- Lobachevsky's π-periodic function, defined by its convergent logarithmic integral. -/
 noncomputable def lobachevsky (θ : ℝ) : ℝ :=
   -∫ t : ℝ in (0 : ℝ)..θ, Real.log |2 * Real.sin t|
-
-/-- Lobachevsky's half-period integral vanishes, with the factor two inside the logarithm. -/
-theorem lobachevsky_half_pi : lobachevsky (Real.pi / 2) = 0 := by
-  sorry
-
-/-- The full-period logarithmic integral vanishes. -/
-theorem lobachevsky_pi : lobachevsky Real.pi = 0 := by
-  sorry
 
 /-- The analytic angle formula, before its identification with a geometric volume. -/
 theorem blochWigner_lobachevsky (z : ℂ) (hz : 0 < z.im) :
     blochWigner z = lobachevsky (Complex.arg z) +
       lobachevsky (Complex.arg (1 / (1 - z))) +
       lobachevsky (Complex.arg (1 - z⁻¹)) := by
+  sorry
+
+/-- The upper-half-space ideal region above the triangle with vertices zero, one and z.
+For nonreal z its fourth face is the hemisphere through those vertices. -/
+noncomputable def idealRegion (z : ℂ) : Set (ℂ × ℝ) :=
+  let c : ℂ := 1 / 2 + Complex.I * (((‖z‖ ^ 2 - z.re) / (2 * z.im) : ℝ) : ℂ)
+  {p | 0 < p.2 ∧ p.1 ∈ convexHull ℝ ({0, 1, z} : Set ℂ) ∧
+    ‖c‖ ^ 2 ≤ p.2 ^ 2 + ‖p.1 - c‖ ^ 2}
+
+/-- Oriented hyperbolic volume in upper-half-space coordinates, with density h⁻³. -/
+noncomputable def signedIdealVolume (z : ℂ) : ℝ :=
+  Real.sign z.im * ∫ p : ℂ × ℝ in idealRegion z, p.2 ^ (-3 : ℤ)
+
+/-- The cusp geometry gives finite volume before comparison with a special function.
+Milnor, Chapter 7, Theorem 7.2.1 and Lemma 7.2.2. -/
+theorem idealRegion_finiteVolume (z : ℂ) (hz : z.im ≠ 0) :
+    MeasureTheory.IntegrableOn (fun p : ℂ × ℝ => p.2 ^ (-3 : ℤ)) (idealRegion z) := by
+  sorry
+
+/-- The signed geometric integral equals the Bloch–Wigner dilogarithm for every nonreal shape.
+Milnor, Theorem 7.2.1; Zagier, The dilogarithm function, equation (8). -/
+theorem idealTetrahedron_volume (z : ℂ) (hz : z.im ≠ 0) :
+    signedIdealVolume z = blochWigner z := by
   sorry
 
 /-- The truncated unit-circle Fourier series. -/
@@ -171,116 +157,7 @@ theorem blochWigner_kummer (z : ℂ) (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
        blochWigner ((1 - z⁻¹) / star (1 - z⁻¹))) := by
   sorry
 
-example : lobachevsky 0 = 0 := by
-  simp [lobachevsky]
-
-/-- Two cutoffs at the same circle point distinguish the indexing and the tail terms. -/
-example : circlePartial 3 Complex.I = 8 / 9 ∧ circlePartial 6 Complex.I = 209 / 225 := by
-  norm_num [circlePartial, Finset.sum_range_succ, Complex.I_sq, pow_succ]
-
-/-! ## Layer 3: explicit trilogarithmic cycles -/
-
-/-- The determinant cross-ratio on five ordered vectors; genericity is required by its API. -/
-noncomputable def projectedCrossRatio {F : Type*} [Field F]
-    (v : Fin 5 → Fin 3 → F) : F :=
-  let d (i j k : Fin 5) := Matrix.det (Matrix.of ![v i, v j, v k])
-  d 0 1 3 * d 0 2 4 / (d 0 1 4 * d 0 2 3)
-
-/-- The raw triple ratio on six ordered vectors, before its alternating symbol sum. -/
-noncomputable def tripleRatio {F : Type*} [Field F]
-    (v : Fin 6 → Fin 3 → F) : F :=
-  let d (i j k : Fin 6) := Matrix.det (Matrix.of ![v i, v j, v k])
-  d 0 1 3 * d 1 2 4 * d 0 2 5 / (d 0 1 4 * d 1 2 5 * d 0 2 3)
-
-/-- G95's triangle parameter for the order (x₁,x₂,x₃,y₁,y₂,y₃).
-Its four determinants must be nonzero in the geometric API. -/
-noncomputable def triangleParameter {F : Type*} [Field F]
-    (v : Fin 6 → Fin 3 → F) : F :=
-  let d (i j k : Fin 6) := Matrix.det (Matrix.of ![v i, v j, v k])
-  d 5 0 4 * d 5 1 3 / (d 5 0 3 * d 5 1 4)
-
-example : triangleParameter (fun i : Fin 6 =>
-    match i.val with
-    | 0 => (![0,1,0] : Fin 3 → ℚ)
-    | 1 => ![1,0,0]
-    | 2 => ![0,0,1]
-    | 3 => ![1,1,0]
-    | 4 => ![1,0,1]
-    | _ => ![0,1,-2]) = 2 ∧
-    triangleParameter (fun i : Fin 6 =>
-    match i.val with
-    | 0 => (![0,2,0] : Fin 3 → ℚ)
-    | 1 => ![1,0,0]
-    | 2 => ![0,0,1]
-    | 3 => ![1,1,0]
-    | 4 => ![1,0,1]
-    | _ => ![0,1,-2]) = 2 := by
-  constructor <;>
-    norm_num [triangleParameter, Matrix.det_fin_three, Matrix.of_apply,
-      Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four,
-      Matrix.vecHead, Matrix.vecTail]
-
-example : triangleParameter (fun i : Fin 6 =>
-    match i.val with
-    | 0 => (![0,1,0] : Fin 3 → ℚ)
-    | 1 => ![1,0,0]
-    | 2 => ![0,0,1]
-    | 3 => ![1,1,0]
-    | 4 => ![1,0,1]
-    | _ => ![0,1,-1]) = 1 := by
-  norm_num [triangleParameter, Matrix.det_fin_three, Matrix.of_apply,
-    Matrix.cons_val_two, Matrix.vecHead, Matrix.vecTail]
-
-example : projectedCrossRatio
-    (![![1,1,1], ![1,2,4], ![1,3,9], ![1,5,25], ![1,7,49]] :
-      Fin 5 → Fin 3 → ℚ) = 6 / 5 ∧
-    projectedCrossRatio
-    (![![2,2,2], ![1,2,4], ![1,3,9], ![1,5,25], ![1,7,49]] :
-      Fin 5 → Fin 3 → ℚ) = 6 / 5 := by
-  constructor <;>
-    norm_num [projectedCrossRatio, Matrix.det_fin_three, Matrix.of_apply,
-      Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four,
-      Matrix.vecHead, Matrix.vecTail]
-
-example : projectedCrossRatio
-    (![![1,1,1], ![1,2,4], ![1,3,9], ![1,7,49], ![1,5,25]] :
-      Fin 5 → Fin 3 → ℚ) = 5 / 6 := by
-  simp only [projectedCrossRatio]
-  simp only [Matrix.det_fin_three, Matrix.of_apply]
-  norm_num [Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four,
-    Matrix.vecHead, Matrix.vecTail]
-
-example : tripleRatio (fun i : Fin 6 =>
-    match i.val with
-    | 0 => (![1,1,1] : Fin 3 → ℚ)
-    | 1 => ![1,2,4]
-    | 2 => ![1,3,9]
-    | 3 => ![1,5,25]
-    | 4 => ![1,7,49]
-    | _ => ![1,11,121]) = 10 / 9 ∧
-    tripleRatio (fun i : Fin 6 =>
-    match i.val with
-    | 0 => (![2,2,2] : Fin 3 → ℚ)
-    | 1 => ![1,2,4]
-    | 2 => ![1,3,9]
-    | 3 => ![1,5,25]
-    | 4 => ![1,7,49]
-    | _ => ![1,11,121]) = 10 / 9 := by
-  constructor <;>
-    norm_num [tripleRatio, Matrix.det_fin_three, Matrix.of_apply,
-      Matrix.cons_val_two, Matrix.cons_val_three, Matrix.cons_val_four,
-      Matrix.vecHead, Matrix.vecTail]
-
-example : tripleRatio (fun i : Fin 6 =>
-    match i.val with
-    | 0 => (![1,0,0] : Fin 3 → ℚ)
-    | 1 => ![0,1,0]
-    | 2 => ![0,0,1]
-    | 3 => ![1,1,1]
-    | 4 => ![1,2,3]
-    | _ => ![1,3,2]) = 1 := by
-  norm_num [tripleRatio, Matrix.det_fin_three, Matrix.of_apply, Matrix.cons_val_two,
-    Matrix.vecHead, Matrix.vecTail]
+/-! ## Layer 3: the explicit trilogarithmic complex -/
 
 /-- The real single-valued trilogarithm satisfies the explicit weight-three presentation,
 including the endpoint form of the three-term relation; it therefore descends to the explicit
@@ -288,10 +165,6 @@ group. -/
 theorem singleValued_three_relations :
     TrilogRelationFunction (singleValued 3) := by
   sorry
-
-/-- The endpoint branch and the identity unit both give the zero vector. -/
-example {F : Type u} [Field F] : unitVector (0 : F) = 0 ∧ unitVector (1 : F) = 0 := by
-  simp [unitVector, Units.mk0_one]
 
 /-- Prime valuations distinguish three nonzero independent rationalized units. -/
 example : LinearIndependent ℚ (![unitVector (2 : ℚ), unitVector (3 : ℚ), unitVector (5 : ℚ)]) := by
@@ -346,124 +219,29 @@ example : LinearIndependent ℚ (![unitVector (2 : ℚ), unitVector (3 : ℚ), u
   · exact h3
   · exact h5
 
-/-- Endpoint normalization accepts zero and rejects a nonzero constant function. -/
-example : FiveTermFunction (fun _ : ℚ => (0 : ℚ)) ∧
-    ¬ FiveTermFunction (fun _ : ℚ => (1 : ℚ)) := by
-  simp [FiveTermFunction]
-
-/-- The cyclic relation at one is a nonzero raw sum, retaining the endpoint. -/
-example :
-    (let b : ℚ → ℚ →₀ ℚ := fun x => Finsupp.single x 1
-     trilogCyclic b 1 1 1 + trilogCyclic b 1 1 1 + trilogCyclic b 1 1 1 + b (-1) =
-       3 • b 1 + 4 • b (-1)) ∧ trilogCyclic (fun x : ℚ => x) 1 1 1 = 0 := by
-  constructor
-  · dsimp
-    ext x
-    norm_num [trilogCyclic, Finsupp.single_apply]
-    split_ifs <;> norm_num
-  · norm_num [trilogCyclic]
-
-/-- The raw relation at two has a negative quarter coefficient. -/
-example :
-    let b : ℚ → ℚ →₀ ℚ := fun x => Finsupp.single x 1
-    trilogCyclic b 2 2 2 + trilogCyclic b 2 2 2 + trilogCyclic b 2 2 2 + b (-8) =
-      3 • b 3 + 3 • b (3/4) + 3 • b 2 + 3 • b (1/2) + 3 • b (-2) -
-        3 • b (3/2) - 3 • b (1/4) - 3 • b 1 + b (-8) := by
-  dsimp
-  ext x
-  norm_num [trilogCyclic, Finsupp.single_apply]
-  split_ifs <;> norm_num
-
-example : ¬TrilogRelationFunction (fun x : ℚ => x) := by
-  intro h
-  have hi := h.2.1 2 (by norm_num)
-  norm_num at hi
-
-/-- The symbol three has nonzero weight-three boundary, detected by prime valuations. -/
-theorem not_isCycle3_single_three : ¬ IsCycle3 (Finsupp.single (3 : ℚ) 1) := by
+/-- Weight-three Zagier existence, including the actual rational cycle condition.
+Goncharov, Advances 1995, Theorem 1.1; the row equivalence selects every infinite place. -/
+theorem zagier_three_exists (F : Type u) [Field F] [NumberField F]
+    (e : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) ≃
+      InfinitePlace F) :
+    ∃ c : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) → F →₀ ℚ,
+      (∀ j, IsCycle3 (c j)) ∧ ∃ q : ℚ, q ≠ 0 ∧
+        normalizedPeriod 3 (fun i => (e i).embedding) c =
+          (q : ℝ) * (NumberField.dedekindZeta F 3).re := by
   sorry
 
-/-- The symbol two has nonzero weight-four boundary, detected by the trilogarithm and ord₂. -/
-theorem not_isCycle4_single_two : ¬ IsCycle4 (Finsupp.single (2 : ℚ) 1) := by
+/-- Every rational weight-three cycle family has rational zeta-normalized period.
+The proof uses the all-configuration cycle-lifting target of README §3.8. -/
+theorem zagier_three_everyFamily (F : Type u) [Field F] [NumberField F]
+    (e : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) ≃
+      InfinitePlace F)
+    (c : Fin (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F) → F →₀ ℚ)
+    (hc : ∀ j, IsCycle3 (c j)) :
+    ∃ q : ℚ, normalizedPeriod 3 (fun i => (e i).embedding) c =
+      (q : ℝ) * (NumberField.dedekindZeta F 3).re := by
   sorry
 
-example {F : Type u} [Field F] : IsCycle3 (Finsupp.single (1 : F) (1 : ℚ)) := by
-  intro V _ _ b hb
-  simp [Finsupp.sum_single_index, hb.2.1]
-
-example {F : Type u} [Field F] : IsCycle4 (Finsupp.single (1 : F) (1 : ℚ)) := by
-  intro V _ _ b _
-  simp [Finsupp.sum_single_index, unitVector]
-
-example : IsCycle4 (Finsupp.single (2 : ℚ) (1 : ℚ) + Finsupp.single (2⁻¹ : ℚ) 1) := by
-  intro V _ _ b hb
-  have hinv : b 2 = b 2⁻¹ := hb.2.1 2 (by norm_num)
-  have hunit : Units.mk0 (2⁻¹ : ℚ) (by norm_num) = (Units.mk0 (2 : ℚ) (by norm_num))⁻¹ := by
-    ext; simp
-  have hu : unitVector (2⁻¹ : ℚ) = -unitVector (2 : ℚ) := by
-    simp [unitVector, hunit, TensorProduct.tmul_neg]
-  rw [Finsupp.sum_add_index' (by simp) (by intros; simp [add_smul])]
-  simp [Finsupp.sum_single_index, ← hinv, hu, TensorProduct.tmul_neg]
-
-/-! ## Layer 4: determinants, explicit cycles and lifting -/
-
-/-- A chosen preimage can be made an a-cycle precisely when its boundary can be
-cancelled by an element of the kernel of p; no commuting square is needed. -/
-theorem cycleLift_iff {C D E : Type*}
-    [AddCommGroup C] [Module ℚ C] [AddCommGroup D] [Module ℚ D]
-    [AddCommGroup E] [Module ℚ E]
-    (p : C →ₗ[ℚ] D) (a : C →ₗ[ℚ] E) (y : D) (x : C) (hx : p x = y) :
-    (∃ z : C, p z = y ∧ a z = 0) ↔ ∃ k : C, p k = 0 ∧ a k = a x := by
-  constructor
-  · rintro ⟨z, hz, haz⟩
-    exact ⟨x - z, by simp [map_sub, hx, hz], by simp [map_sub, haz]⟩
-  · rintro ⟨k, hk, hak⟩
-    exact ⟨x - k, by simp [map_sub, hx, hk], by simp [map_sub, hak]⟩
-
-/-- If the comparison map on the target of the first differentials is injective, every
-inductive cycle comes from an explicit one. In weight three it is the identification of the
-two presentations of `B₂` tensored with the units, so every inductive weight-three cycle lifts. -/
-theorem cycleLift_of_injective {C D E J : Type*}
-    [AddCommGroup C] [Module ℚ C] [AddCommGroup D] [Module ℚ D]
-    [AddCommGroup E] [Module ℚ E] [AddCommGroup J] [Module ℚ J]
-    (p : C →ₗ[ℚ] D) (a : C →ₗ[ℚ] E) (b : D →ₗ[ℚ] J) (q : E →ₗ[ℚ] J)
-    (hsquare : q.comp a = b.comp p) (hp : Function.Surjective p)
-    (hq : Function.Injective q) (y : D) (hy : b y = 0) :
-    ∃ x : C, p x = y ∧ a x = 0 := by
-  obtain ⟨x, hx⟩ := hp y
-  refine ⟨x, hx, hq ?_⟩
-  rw [map_zero, ← LinearMap.comp_apply, hsquare, LinearMap.comp_apply, hx, hy]
-
-/-- A surjective p does not make cycles lift when q has a kernel. -/
-example :
-    (Function.Surjective (LinearMap.id : ℚ →ₗ[ℚ] ℚ)) ∧
-      (¬ ∃ x : ℚ, (LinearMap.id : ℚ →ₗ[ℚ] ℚ) x = 1 ∧
-        (LinearMap.id : ℚ →ₗ[ℚ] ℚ) x = 0) := by
-  refine ⟨Function.surjective_id, ?_⟩
-  simp
-
-/-- Even weights use no rows over a totally real field; the determinant is 1, not 0. -/
-theorem normalizedPeriod_empty (F : Type u) [Field F] [NumberField F]
-    (σ : Fin 0 → F →+* ℂ) (c : Fin 0 → F →₀ ℚ) (n : ℕ) :
-    normalizedPeriod n σ c =
-      Real.pi ^ (n * Module.finrank ℚ F) / Real.sqrt |(NumberField.discr F : ℝ)| := by
-  simp [normalizedPeriod, Matrix.det_fin_zero]
-
-example : periodMatrix 3 (fun _ : Fin 1 => (Rat.castHom ℂ))
-    (fun _ => Finsupp.single (1 : ℚ) (2 : ℚ)) 0 0 = 2 * singleValued 3 1 := by
-  simp [periodMatrix]
-
-/-- The empty determinant is one; any zero column of a positive-size matrix kills its period. -/
-example (σ : Fin 0 → ℚ →+* ℂ) (c : Fin 0 → ℚ →₀ ℚ) :
-    normalizedPeriod 4 σ c = Real.pi ^ 4 ∧
-      ∀ (n d : ℕ) (σ' : Fin d → ℚ →+* ℂ) (c' : Fin d → ℚ →₀ ℚ)
-        (j : Fin d), c' j = 0 → normalizedPeriod n σ' c' = 0 := by
-  constructor
-  · norm_num [normalizedPeriod, NumberField.discr_rat]
-  · intro n d σ' c' j hj
-    have hdet : (periodMatrix n σ' c').det = 0 :=
-      Matrix.det_eq_zero_of_column_eq_zero j (by intro i; simp [periodMatrix, hj])
-    simp [normalizedPeriod, hdet]
+/-! ## Layer 4: inductive Bloch groups and the meaning of Zagier's statement -/
 
 /-- Over a totally real field an even weight has no rows, and the empty determinant is a
 nonzero rational multiple of `ζ_F(n)`: Borel's even-weight rationality, through
@@ -475,68 +253,31 @@ theorem zagierExistence_totallyRealEven (F : Type u) [Field F] [NumberField F]
       normalizedPeriod n σ c = (q : ℝ) * (NumberField.dedekindZeta F n).re := by
   sorry
 
-/-! ## Layer 5: curve regulator formulas -/
+/-! ## Layer 5: logarithmic currents and explicit regulators -/
 
-/-- The point-cycle family t ↦ [t]+[-t], retaining integral multiplicities at collision. -/
-noncomputable def collidingPointCycle {F : Type*} [Field F] (t : F) : F →₀ ℕ :=
-  Finsupp.single t 1 + Finsupp.single (-t) 1
+/-- The unitary character of a full complex lattice, normalized by its positive covolume. -/
+noncomputable def ellipticCharacter (Λ : Submodule ℤ ℂ) [DiscreteTopology Λ]
+    [IsZLattice ℝ Λ] (γ : Λ) (z : ℂ) : ℂ :=
+  Complex.exp (2 * (Real.pi : ℂ) * Complex.I *
+    (((z * star (γ : ℂ)).im / ZLattice.covolume Λ : ℝ) : ℂ))
 
-example : collidingPointCycle (0 : ℚ) = Finsupp.single 0 2 := by
-  simp [collidingPointCycle, ← Finsupp.single_add]
+/-- One coefficient of the generalized elliptic trilogarithm kernel.
+The index carries both the zero-sum constraint and all three nonzero-frequency conditions. -/
+noncomputable def ellipticTrilogSummand (Λ : Submodule ℤ ℂ) [DiscreteTopology Λ]
+    [IsZLattice ℝ Λ] (x y z : ℂ)
+    (g : {g : Fin 3 → Λ // (∑ i, g i) = 0 ∧ ∀ i, g i ≠ 0}) : ℂ :=
+  ellipticCharacter Λ (g.val 0) x * ellipticCharacter Λ (g.val 1) y *
+    ellipticCharacter Λ (g.val 2) z *
+      (star ((g.val 2 : Λ) : ℂ) - star ((g.val 1 : Λ) : ℂ)) /
+      ((‖((g.val 0 : Λ) : ℂ)‖ ^ 2 * ‖((g.val 1 : Λ) : ℂ)‖ ^ 2 *
+        ‖((g.val 2 : Λ) : ℂ)‖ ^ 2 : ℝ) : ℂ)
 
-/-- Separated rational points and a characteristic-two collision retain their multiplicities. -/
-example : collidingPointCycle (1 : ℚ) 1 = 1 ∧
-    collidingPointCycle (1 : ZMod 2) = Finsupp.single 1 2 := by
-  constructor
-  · norm_num [collidingPointCycle]
-  · simp [collidingPointCycle, ← Finsupp.single_add]
-
-/-- Evaluation of the real curve-regulator one-form on a tangent vector, from its jets. -/
-noncomputable def etaJet (f g df dg : ℂ) : ℝ :=
-  Real.log ‖f‖ * (dg / g).im - Real.log ‖g‖ * (df / f).im
-
-/-- Steinberg symbols map to exact Bloch–Wigner forms. -/
-theorem etaJet_steinberg (z : ℂ) (hz0 : z ≠ 0) (hz1 : z ≠ 1) (v : ℂ) :
-    etaJet z (1 - z) v (-v) = fderiv ℝ blochWigner z v := by
-  sorry
-
-example : etaJet 1 1 0 0 = 0 := by
-  simp [etaJet]
-
-example : etaJet 2 Complex.I 0 (-1) = Real.log 2 := by
-  norm_num [etaJet, Complex.norm_def]
-
-/-! ## Layer 6: differential and regulator diagnostics -/
-
-/-- The exact real derivative, including the radial logarithmic correction. -/
-theorem singleValued_three_differential (z : ℂ) (hz0 : z ≠ 0) (hz1 : z ≠ 1) :
-    DifferentiableAt ℝ (singleValued 3) z ∧ ∀ v : ℂ,
-      fderiv ℝ (singleValued 3) z v =
-        -blochWigner z * (v / z).im + (Real.log ‖z‖ / 3) *
-          (Real.log ‖1 - z‖ * (v / z).re -
-            Real.log ‖z‖ * (v / (z - 1)).re) := by
-  sorry
-
-/-- A concrete negative control for dropping the radial logarithmic correction. -/
-theorem singleValued_three_derivative_half (v : ℂ) :
-    fderiv ℝ (singleValued 3) (1 / 2 : ℂ) v =
-      (4 / 3 : ℝ) * (Real.log 2) ^ 2 * v.re := by
-  sorry
-
-/-- The radial correction remains nonzero on the classical cut at two. -/
-theorem singleValued_three_derivative_two (v : ℂ) :
-    fderiv ℝ (singleValued 3) (2 : ℂ) v =
-      -(1 / 3 : ℝ) * (Real.log 2) ^ 2 * v.re := by
-  sorry
-
-/-- Minus one is stationary for the real single-valued trilogarithm. -/
-theorem singleValued_three_derivative_negOne (v : ℂ) :
-    fderiv ℝ (singleValued 3) (-1 : ℂ) v = 0 := by
-  sorry
-
-/-- The endpoint extension is differentiable at one with zero real Fréchet derivative. -/
-theorem singleValued_three_derivative_one :
-    HasFDerivAt (singleValued 3) (0 : ℂ →L[ℝ] ℝ) (1 : ℂ) := by
+/-- Absolute convergence of the full nonzero-triad elliptic trilogarithm kernel at all points.
+The dyadic lattice estimate applies without any divisor-cycle restriction on x, y, z. -/
+theorem ellipticTrilogKernel_summable (Λ : Submodule ℤ ℂ) [DiscreteTopology Λ]
+    [IsZLattice ℝ Λ] (x y z : ℂ) :
+    Summable (fun g : {g : Fin 3 → Λ // (∑ i, g i) = 0 ∧ ∀ i, g i ≠ 0} =>
+      ‖ellipticTrilogSummand Λ x y z g‖) := by
   sorry
 
 end TauCetiRoadmap.Polylogarithms
