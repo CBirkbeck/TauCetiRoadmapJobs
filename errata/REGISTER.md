@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-434 mistakes recorded on the board: 208 misprints, 197 errors, 28 gaps, 1 unparsed bullets.
+454 mistakes recorded on the board: 221 misprints, 202 errors, 30 gaps, 1 unparsed bullets.
 Errata jobs have read the cited sources of 1 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -21,6 +21,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Allen–Khare–Thorne, Modularity of GL₂(F_p)-representations over CM fields, arXiv:1910.12986v2
 
 - **Gap** at the proof of Theorem A.14, printed p.95: the source says the source invokes Darmon–Diamond–Taylor Lemma 4.11, which excludes the projective-A₄ (degree-three) case, without treating that case; it should be as the witness in the cited review requires; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Alper, moduli lecture notes (the report gives no title)
+
+- **Misprint** at the display immediately after the identity h¹ = h⁰ − χ in the H¹-vanishing and regularity argument: the source says the Hilbert-polynomial term enters with a plus sign; it should be a minus sign, consistent with the identity h¹ = h⁰ − χ just before; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Andreatta–Iovita–Pilloni
 
@@ -144,6 +148,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the tensor presentations of de Jeu's complexes, printed pp.884–886, including the quotient display after Lemma 3.19: the source says the last terms have the displayed tensor and exterior-power forms with no restriction; it should be require residue field with more than two elements, as Lemma 3.19 does (fails for Z_(2), n=2); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Beukers, A refined version of the Siegel–Shidlovskii theorem (arXiv math/0405549)
+
+- **Misprint** at the desingularization (gauge-transform) display following Proposition 4.1: the source says the transformed coefficient matrix carries +D⁻¹D′; it should be −D⁻¹D′, since differentiating F = B·E gives B·E′ = A·B·E − B′·E (check: B = z−1, F = (z−1)eᶻ); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Beuzart-Plessis–Chaudouard–Zydor, The global Gan–Gross–Prasad conjecture for unitary groups: the endoscopic case, arXiv:2007.05601v1
 
 - **Misprint** at §10.3, pp. 90–92 (closing sentence, cached line 4945): the source says the order of the component group S_Π with an inverted sign in the exponent; it should be |S_Π| = 2^(dim a_P), the coefficient being its inverse 2^(−dim a_P); affects nothing. Found by  (#521 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -168,6 +176,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Bhatt, p-adic derived de Rham cohomology, arXiv:1204.6560
 
 - **Error** at Remark 8.7: the source says torsion coordinates with the wrong p-power orders (the review sets p^⌊n/2⌋ against p^(n−1)); it should be as the witness in the cited review requires (its recomputation of ℤ_p ⊕ ⊕_j ℤ_p/j); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Bhatt–Morrow–Scholze 2019 (BMS19), Topological Hochschild homology and integral p-adic Hodge theory,
+
+- **Misprint** at Proposition 5.6, printed p. 237: the source says the degree index is i − c; it should be i + c, as the proof's computation of RHom(M,N)[c] on p. 238 gives under the paper's shift convention (Ext¹(k, k[−1]) ≅ k excludes i − c); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Bhatt–Morrow–Scholze, Integral p-adic Hodge theory (BMS1), arXiv:1602.03148v3
 
@@ -223,6 +235,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Boxer–Calegari–Gee–Pilloni, Abelian surfaces over totally real fields are potentially modular (2021)
 
 - **Misprint** at §6.1.1, p. 139: the source says Q(U) is invertible on M>h when all roots of Q have valuation less than h; it should be valuation at most h, equality included; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Boxer–Calegari–Gee–Pilloni, Abelian surfaces over totally real fields are potentially modular (arXiv:1812.09269)
+
+- **Misprint** at the slope-≤h decomposition condition: the source says the root-valuation condition without its endpoint h; it should be include the endpoint, roots of Q of valuation ≤ h; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Boxer–Calegari–Gee–Pilloni, Abelian surfaces over totally real fields are potentially modular (arXiv:1812.09269v3)
+
+- **Error** at Remark 7.5.23: the source says the order-128 Sylow 2-subgroup of Sp₄(F₃) is not enormous, contradicting the enormous order-128 class listed in §7.5.20; it should be enormous: |Sp₄(F₃)| = 2^7·3^4·5, so all order-128 subgroups are conjugate, and enormity is conjugation-invariant; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Boxer–Calegari–Gee–Pilloni, Abelian surfaces over totally real fields are potentially modular, arXiv:1812.09269
 
@@ -426,6 +446,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Definition 2.2.2: the source says the stalk maps between a formal scheme and its rigid generic fibre must be local homomorphisms; it should be a condition without stalk locality, because for Spf ℤ_p the map ℤ_p → ℚ_p is not local; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Conrad, Semistable reduction for abelian varieties (2011 seminar notes)
+
+- **Misprint** at the helper result in the proof of Theorem 4.4, pp. 10–16: the source says the helper for separated finite-type groups with abelian generic fibre and semi-abelian identity component, assuming no flatness, yet its proof uses that G is integral; it should be add a hypothesis giving this, e.g. G smooth; the non-flat Spec R[e]/(e²−e, πe) shows it is needed; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Conrad, Semistable reduction notes (Darmon CM seminar, 2011)
 
 - **Gap** at the monodromy-criterion pages (no theorem number given): the source says finite-level points are inertia-invariant on the strength of the dimension of the rational Tate-module invariants; it should be supported by a separate finite-level argument, which that dimension count does not supply; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -523,6 +547,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Emerton–Pollack–Weston, Variation of Iwasawa invariants in Hida families (2006),
 
 - **Error** at the clause on integral inertia coinvariants of the family representation: the source says these are integrally of rank one with canonical stabilization while allowing residually unramified data, which ηη₂₃ at p = 13 refutes; it should be require residual coinvariant dimension one; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Evertse, Diophantine approximation lecture notes, Chapter 2 (geometry of numbers)
+
+- **Misprint** at the change-of-coordinates remark after Theorem 2.9, §2.3, printed pp. 24–25: the source says body and lattice may be moved together by a linear change of coordinates, without the invertibility this needs; it should be require the linear transformation to be invertible; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Evertse–Schlickewei–Schmidt (ESS02, arXiv math/0409604v1)
+
+- **Gap** at (2.10) and (6.3) against (11.19): the source says the result with a 4n exponent budget, but the proof's small-error step (11.19) uses 5n, and with 4n that bound fails; it should be stated with 5n, or the 4n small-height step needs further justification; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Faltings, Endlichkeitssätze für abelsche Varietäten über Zahlkörpern, Invent. Math. 73 (1983)
 
@@ -640,8 +672,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the dyadic case of the proof, pp. 472–473: the source says the relevant Kummer kernel is a Klein four-group; it should be only a group killed by 2, by a complex-conjugation cocycle argument; for K = ℚ with M = 4 or 8 it is cyclic of order 2; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Gros, Classes de Chern et classes de cycles en cohomologie de Hodge–Witt logarithmique (Mém. SMF, 1985)
+
+- **Error** at Chapitre I, §5.1, (5.1.11)–(5.1.12): the source says Ru_*O^* is quasi-isomorphic to the envelope's multiplicative de Rham complex; (O, d+dt) on A¹ over F_p, which is not quasi-nilpotent, refutes this at n = 1; it should be as the evidence in the cited report requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Harari–Szamuely, Arithmetic duality theorems for 1-motives (J. reine angew. Math., 2005)
 
+- **Gap** at journal pp. 120 and 123 (the completed duality sequences): the source says these sequences without verifying finite-level strictness or passing to the profinite localization quotient; it should be impose both, as the authors' corrigenda (printed pp. 1 and 5) require; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Gap** at the strictness step corrected in the authors' corrigenda: the source says a strictness property that its corrigenda flag as unjustified; it should be as the witness in the cited review requires (the published corrigenda); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Harbater–Obus–Pries–Stevenson (HOPS), arXiv:1408.0859
@@ -683,6 +720,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at I.3.21 (I.3.21.1.5, printed p. 579): the source says a proof of I.3.21 that the author's own errata call incorrect; it should be replaced by the argument of Illusie–Raynaud, Les suites spectrales associées au complexe de de Rham–Witt, II.1.3; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Illusie, Complexe de de Rham–Witt et cohomologie cristalline (Ann. Sci. ÉNS 1979)
+
+- **Error** at I.3.21.1.5, p. 579: the source says a formula there that the author's own errata (entry for p. 579) withdraw; it should be replaced by the corrected argument of Illusie–Raynaud (Publ. Math. IHÉS 57, 1983), II.1.3, p. 125, reducing étale-locally to the polynomial basic-Witt computation; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Kakde, arXiv:1008.0142v3
 
 - **Error** at Lemma 118, second case, p. 87: the source says a trace-multiplier equality that fails (checked on C_{p²} × C_{p²}); it should be the multiplier (|H̃|/|P′|)·|⟨h⟩|·i_P², using compatible generators and |P′| dividing |H̃|, after which the lemma's containment survives; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -692,9 +733,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Lemma 118, p.87: the source says |H̃|·|⟨h₀⟩|/|P| = |H̃|·i_P, false for P=⟨(a,b^p)⟩ in C_{p²}×C_{p²}; it should be (|H̃|/|P′|)·|⟨h⟩|·i_P², still divisible by p·i_P²; affects the proof; (the bound survives). Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at §3 (character decompositions of Λ(G) and its K-groups): the source says the components are indexed by all absolute irreducible characters, which overcounts conjugate characters (e.g. Z₅[C₃]); it should be index by Galois-orbit representatives, as the paper's own §5.1 does; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Kato, Logarithmic structures of Fontaine–Illusie (1989)
+
+- **Misprint** at the log PD-envelope theorem (as corrected in Du–Moon–Shimizu, arXiv: the source says 2603.00559, Theorem 2.1(2), footnote 2): the source says the base divided powers must extend to the ambient Y; it should be extension to the source X; ambient extension does not imply it (F₂[e,h]/(e²,eh,h²), γ₂(ae+bh) = a²h); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Kawasaki (the 2000 Macaulayfication paper, cited through Česnavičius; title not given in the review)
 
 - **Misprint** at the conditions restated as Česnavičius Proposition 3.11: the source says the conditions with five misprints, which Česnavičius records in footnote 4, p. 13; it should be as Česnavičius Proposition 3.11 states them; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kawasaki, On Macaulayfication of Noetherian schemes (Trans. Amer. Math. Soc., 2000)
+
+- **Misprint** at the five colon estimates whose corrections Česnavičius (arXiv: the source says 1810.04493v2) discusses: the source says five of these estimates in misprinted form, as Česnavičius records; it should be as the evidence in the cited report requires; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Kedlaya, A p-adic local monodromy theorem (Ann. of Math. 2004)
 
@@ -735,6 +784,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kedlaya, Slope filtrations revisited (math/0504204v4)
 
 - **Misprint** at Definition 4.4.1: the source says the rank is at most n; it should be positive and at most n, since the argument needs nonzero rank; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Kedlaya–Liu (KL), Relative p-adic Hodge theory: Foundations,
+
+- **Error** at 8.1.6 (taut maps), in a sentence beside its local formulation: the source says an equivalence phrased with globally spectral maps; it should be use locally spectral maps, global spectrality holding only in qcqs cases (witness: the non-quasi-compact partially proper open disc); affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Kedlaya–Liu, Relative p-adic Hodge theory I (2015)
 
@@ -903,6 +956,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Lemma 5.11.3(2), p. 98 (same claim in the published version): the source says Q††→P†† is a trivial ℙ¹-bundle; at n=2, p=3 over a quartic C it is ℙ(O_C⊕O_C(4)), with a section of self-intersection −16, so not a product; it should be the projectivization of the sum of the two link normal lines, only Zariski-locally trivial; affects a stated result. Found by  (#589 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at the printed proof at cached lines 702–707: the source says restriction of scalars followed by extension gives identical copies of the adjoint; the summands are Frobenius twists (over 𝔽₄₉, C₄₈-weights 7, 6: k-linear Hom vanishes, the x↦x⁷ twist does not); it should be a decomposition into Frobenius twists, requiring Hom vanishing for every twist of the adjoint; affects the proof. Found by  (#589 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Lurie, Spectral Algebraic Geometry (SAG)
+
+- **Error** at Construction 25.2.2.2 and Proposition 25.2.3.4(2): the source says exterior powers are the coinvariants of the sign-twisted symmetric-group action on tensor powers; it should be the alternating quotient, which also kills repeated factors (rank one over ℤ: exterior square 0, signed coinvariants ℤ/2; over F₂: F₂); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Manning–Shotton
 
 - **Error** at the norm-fibre argument for Theorem 6.8: the source says the norm fibres are taken over a quotient wider than the reduced-norm image, which a ℚ(√3) narrow-class example refutes; it should be use the quotient by Nrd(D^×), which equals the totally positive elements F_+^×; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -961,6 +1018,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3, definition of P preceding Lemma 3.1, printed p. 4 (Morrison line 129): the source says P consists of the leftmost n−2 upper endpoints; it should be use the leftmost n−1 endpoints; for n=3 the printed J₃ is zero, contradicting its claimed codimension three; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §5, definition preceding Proposition 5.1, printed p. 9 (Morrison line 347): the source says cap-position adjustment subtracts one for each previously removed cap to its left; it should be τ(s)ᵢ=sᵢ−2κ(s)ᵢ; a cap removes two endpoints. For e₁∈TL₂, the printed rule gives coefficient 1 instead of 1/[2]; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
+## Nekovář, Selmer complexes (Astérisque 310, 2006)
+
+- **Misprint** at Proposition 8.4.4.1 (statement; definitions in §8.4.2): the source says the Shapiro-type isomorphism passes through the involuted Iwasawa algebra twisted by ⟨−1⟩; it should be the twist ⟨+1⟩ with final map id ⊗ ι, as the source's own definitions and proof actions force; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Newton–Thorne (NT16), Torsion Galois representations over CM fields and Hecke algebras in the derived category,
+
+- **Misprint** at Lemma 4.6: the source says the block-parabolic Satake substitution uses the full power q^{a_i−b_i}; it should be the half power Y_{b_i+j} ↦ q_v^{(a_i−b_i)/2}Z_{i,j}, from S^G_norm = S^M_norm ∘ (δ_Q^{1/2}·S_v) (GL₂, q = 4: 17/2 versus 5); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Ngô, "Le lemme fondamental pour les algèbres de Lie", arXiv:0801.0446 v3
 
 - **Misprint** at Theorem 7.1.13, p. 128: the source says that for a weak abelian fibration, an occurring support Z with codim Z ≤ δ_Z is the closure of an irreducible-component stratum (top fibre cohomology conclusion); it should be the reverse inequality codim Z ≥ δ_Z, i.e. equality, since ≤ always holds; the published version, Proposition 7.2.2, p. 114, states it correctly; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -994,6 +1059,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Pilloni (title not given in the review)
 
 - **Misprint** at a locator the review does not give: the source says a sign in the large-weight case that the review calls incompatible; it should be as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Pilloni, Duke Math. J. 2020 paper (author version)
+
+- **Misprint** at the slope-≤h decomposition condition: the source says the condition through the reciprocal polynomial Q⋆(U) with a root-valuation bound that does not fit Q⋆; it should be use Q(U) with root valuations ≤ h, or require Q⋆'s nonzero reciprocal roots to have valuation ≥ −h; merely reversing the inequality fails (U = p², h = 1, Q = X − p⁻²); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Pilloni, GSp₄ Hida theory,
 
@@ -1032,6 +1101,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rizov, Moduli stacks of polarized K3 surfaces in mixed characteristic, arXiv math/0506120v2
 
 - **Misprint** at §4.3, the frame construction and quotient presentation after Theorem 4.3.3, pp. 20–25: the source says a wrong size for the projective linear group in the later presentation; it should be PGL_(9d+2), matching the rank 9d+2 of the sections of L³; affects nothing. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Rodrigues Jacinto–Williams (RJW), An introduction to p-adic L-functions (arXiv:2309.15692v2)
+
+- **Misprint** at Example 13.22: the source says the characteristic ideal is cut out by the bare twisted Kubota–Leopoldt element, dropping the augmentation factor its own earlier computation establishes; it should be Tw_{−n}(a·ζ_p) with a = (1−e₀)+e₀(γ−1), i.e. char X = I·ζ_p; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Rodrigues Jacinto–Williams, arXiv:2309.15692,
 
@@ -1354,6 +1427,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 3.11(iii), pp. 12–13: the source says r_{s'}; it should be r'_{s'}; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at Remark 3.9, p. 12: the source says an earlier index where a later one is meant; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at the ideal I_s on p. 15 (argument for Theorem 3.14): the source says I_s carries the factor (r₁,…,r_s); it should be as the witness in the cited review requires; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Česnavičius, Macaulayfication of Noetherian schemes (arXiv:1810.04493v2)
+
+- **Misprint** at Proposition 3.11(i)–(iii), pp. 12–13: the source says the clauses use the sequence's original last element where the auxiliary replacement element is meant; it should be the auxiliary last element; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Česnavičius, Macaulayfication of Noetherian schemes, arXiv:1810.04493v2
 
