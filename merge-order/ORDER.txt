@@ -188,6 +188,7 @@ PadicHodgeRegulators
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+GeneralAlgebraicKTheoryPartII
 ChromaticHomotopyTheory
 ArithmeticKTheoryPartII
 HabiroCohomologyFoundationsPartII
