@@ -41,16 +41,16 @@ The prerequisites and boundaries are as follows.
 - **AnalyticNumberTheoryPartI**, through the exact Mertens supplier gap below,
   must supply the reciprocal prime product with its Euler-constant coefficient
   and constant-identification proof. **ErdosProgressionPowers, §0.9**, owns
-  `eventualDivisorSubpower`. The unspecified-constant Euler-product bound does
-  not suffice for the large-prime harmonic mass.
+  the eventual divisor-subpower bound. The unspecified-constant Euler-product bound
+  does not suffice for the large-prime harmonic mass.
 - Concrete coefficient laws, bounds for repeated reduction factors and quantitative
   irreducibility for random polynomials of growing degree are outside this roadmap.
   They consume 6.1 and 6.2 and motivate a continuation of ArithmeticStatistics;
   their distribution estimates are not prerequisites of the arbitrary-law theorem.
 
 The suggested namespace is `TauCetiRoadmap.PolynomialGaloisGroupsPartII`.
-`Suggested.lean` records the light definitions and representative milestones;
-this README specifies the complete mathematical API and proof obligations.
+`Suggested.lean` states the headline acceptance theorems and the simple definitions
+needed to express them; this README specifies the complete API and proof obligations.
 
 ## Conventions
 
@@ -227,7 +227,7 @@ See [PolynomialGaloisGroups, Layer 1](https://github.com/TauCetiProject/TauCetiR
 
 ### From ErdosProgressionPowers, §0.9
 
-`eventualDivisorSubpower` supplies, for every real `η > 0`, the bound
+ErdosProgressionPowers, §0.9, supplies, for every real `η > 0`, the bound
 `τ(n) ≤ n^η` for all sufficiently large positive integers, including
 nonsquarefree integers. Enlarging a constant over the finitely many positive
 exceptions gives `D_η ≥ 1` with `τ(n) ≤ D_η n^η` for every `n ≥ 1`.
@@ -267,20 +267,19 @@ one part `mk`. The intended partition relation uses `y ≥ 1`; the raw relation
 also makes sense for arbitrary real bounds and empty multisets.
 (BSKK, Definition 11.2 and example, §11.2, p.56.)
 
-Prove `EqualPartMerging.refl` for `1 ≤ y`, `mono` when `y ≤ z`, `sum_eq`,
-and `eq_of_lt_two` when `y < 2`. Nonempty blocks then have cardinality one,
-so the last conclusion is `a = b`, even without assuming positivity of `a`.
-For `pullback_submultiset`, if `v ≤ b`, choose the corresponding occurrence
-blocks and flatten them to `u ≤ a` with `u.sum = v.sum`. Occurrence selection
-is essential when several output sums are equal. These are the formal API
+Prove reflexivity for `1 ≤ y`, monotonicity when `y ≤ z`, conservation of
+the total sum, and equality of the input and output when `y < 2`. Nonempty
+blocks then have cardinality one, so the last conclusion is `a = b`, even
+without assuming positivity of `a`. If `v ≤ b`, prove that selecting the
+corresponding occurrence blocks and flattening them gives `u ≤ a` with
+`u.sum = v.sum`. Occurrence selection is essential when several output sums are equal. These are the formal API
 consequences of the same definition, used in BSKK Lemma 12.9, pp.62–63.
 
 **Checks.**
 
 - `{1,1,2,2,2,3}` merges at bound `2` into `{1,1,2,3,4}`: combine two of
   the three `2`-occurrences and leave every other occurrence alone.
-- The named check target `equalPartMerging_forbidden` excludes a bound-`2`
-  merging of the same input into `{2,3,6}`: producing `6`
+- The same input cannot merge at bound `2` into `{2,3,6}`: producing `6`
   would require either three copies of `2` or two copies of `3`; neither
   is available under that bound. Conservation of total sum alone fails this test.
 - The empty multiset merges into itself at bound `1`, with an empty collection
@@ -299,20 +298,17 @@ Define `MergePerms y ρ` on any finite carrier `Ω` as the set of `σ` for which
 independently of `card Ω`; membership forces them equal. The use of the full
 cycle multiset retains the fixed points. (BSKK, §12.2 notation, p.61.)
 
-The API is `mem_mergePerms`, giving this membership equivalence;
-`mergePerms_mono` for `y ≤ z`; `mergePerms_card`, giving `n = card Ω`;
-`mergePerms_conj`, preserving membership under `gσg⁻¹`; and
-`mergePerms_permCongr`, preserving it under any equivalence `Ω ≃ Ω'`.
+Prove the defining membership equivalence, monotonicity for `y ≤ z`, and
+the degree equality `n = card Ω` for every member. Prove that membership
+is preserved under conjugation `gσg⁻¹` and under any equivalence `Ω ≃ Ω'`.
 Sum conservation and the full-cycle sum prove the degree statement; conjugacy
 and transport of the full cycle type prove the two invariance statements.
 
 **Checks.**
 
-- The named check target `mergePerms_identity` puts the identity in
-  `MergePerms 1 ρ` precisely when `ρ.parts` consists
+- The identity lies in `MergePerms 1 ρ` precisely when `ρ.parts` consists
   of `card Ω` copies of `1`. A cycle type omitting fixed points fails this test.
-- `mergePerms_five_cycle` is the named check target putting any full `5`-cycle
-  in `MergePerms 1` of the one-part partition `{5}`.
+- Every full `5`-cycle lies in `MergePerms 1` of the one-part partition `{5}`.
 - On the empty carrier the unique permutation lies in `MergePerms 1` of
   the empty partition; degree conservation still gives `0 = 0`.
 
@@ -326,23 +322,21 @@ Define `BadTransitive Ω` as the union of the underlying sets of subgroups
 permutation can belong through a smaller transitive witness. (BSKK,
 Equation (11.1), §11, p.54; Proposition 12.1, p.59.)
 
-Prove `mem_badTransitive`, unpacking the witness; `badTransitive_witness`,
-introducing any element of a permitted group; `badTransitive_conj`; and
-`badTransitive_permCongr`. For the latter two, transport the whole subgroup,
+Prove the membership equivalence that unpacks the witness and the inclusion
+of every permitted group in the union. Prove invariance under conjugation and
+relabeling. For the latter two, transport the whole subgroup,
 its action, and the alternating/symmetric comparisons, not just the permutation.
 
 **Checks.**
 
-- The named check target `badTransitive_small_degree` says
-  `BadTransitive (Fin n)` is empty for `n ≤ 3`: the transitive subgroups
+- `BadTransitive (Fin n)` is empty for `n ≤ 3`: the transitive subgroups
   in those degrees are already alternating or symmetric.
-- The named check target `badTransitive_identity_five` includes the identity
-  on five points, using the regular cyclic subgroup `C₅`.
+- The identity on five points belongs to the union, using the regular cyclic
+  subgroup `C₅`.
   Thus testing whether the permutation lies outside the alternating group
   would give the wrong predicate.
-- The named check target `badTransitive_five_cycle` includes every full
-  `5`-cycle, using its generated cyclic subgroup. The
-  witness is transitive and has order `5`, distinct from `A₅` and `S₅`.
+- Every full `5`-cycle belongs to the union, using its generated cyclic subgroup.
+  The witness is transitive and has order `5`, distinct from `A₅` and `S₅`.
 
 *Needs:* finite permutation subgroups and `IsPretransitive`. It is used
 together with 0.2 in Layer 6.
@@ -392,29 +386,26 @@ repeated degrees. For a nonzero nonunit it is also the greatest exponent
 `m` for which some irreducible `q` satisfies `q^m ∣ f`.
 (BSKK, Lemma 11.3, §11.2, p.56.)
 
-Prove `maxFactorMultiplicity_zero`, following the library's empty factorization
-at zero; `maxFactorMultiplicity_unit`; `count_le_maxFactorMultiplicity` for
-any proposed factor; and `maxFactorMultiplicity_le_iff`, saying the maximum
-is at most `m` iff each occurring normalized factor has count at most `m`.
-For `maxFactorMultiplicity_eq_one_iff`, assume `f ≠ 0` and `¬ IsUnit f`;
-then value `1` is equivalent to `Squarefree f`. These assumptions cannot be
-omitted: a unit is squarefree but has value zero.
+Prove that the value at zero and at every unit is zero, and that the count
+of any proposed normalized factor is bounded by the maximum. Prove that the
+maximum is at most `m` iff each occurring normalized factor has count at most
+`m`. For `f ≠ 0` and `¬ IsUnit f`, prove that value `1` is equivalent to
+`Squarefree f`. These assumptions cannot be omitted: a unit is squarefree but has value zero.
 
 **Checks.**
 
 - The constant polynomial `1` over `F₂` has value `0`.
 - The zero polynomial over `F₂` also has value `0`, by the chosen normalized-factor
   convention. It is never used as a monic positive-degree reduction.
-- The first conjunct of the named check target
-  `maxFactorMultiplicity_repeated_distinct` gives value `3` for `(X+1)^3` over `F₂`.
-- Its second conjunct gives value `1` for `X(X−1)` over `F₃`, although its factor-degree multiset
+- `(X+1)^3` over `F₂` has value `3`.
+- The value is `1` for `X(X−1)` over `F₃`, although its factor-degree multiset
   is `{1,1}`. Maximizing degree counts would fail this example.
 
 *Needs:* normalized UFD factors, their counts, and the reduction factor-degree convention.
 
 ### 1.2 Fibre size is root multiplicity
 
-Prove `fibre_card_eq_rootMultiplicity`: for a commutative ring `R`, a field `K`,
+Prove the fibre-cardinality identity: for a commutative ring `R`, a field `K`,
 a ring homomorphism `r : R →+* K`, a finite set `S ⊆ R`, and `z : K`,
 
 ```text
@@ -493,11 +484,10 @@ has its stated coefficient field. It is monic; division is the existing
 and its Galois interpretation, p.5; the field construction extends the simple-root
 argument in the cited Tau Ceti stabilizer and quotient modules.)
 
-For separable `f`, prove `tupleRootQuotient_factor`: after mapping to `L`,
-the quotient times the selected linear-factor product equals `f` mapped to `L`.
-Prove `tupleRootQuotient_natDegree`, giving `f.natDegree − j`, and
-`tupleRootQuotient_separable`. Distinctness and separability make the product
-an exact divisor, and its roots are exactly the selected ones. The quotient
+For separable `f`, prove that after mapping to `L`, the quotient times the
+selected linear-factor product equals `f` mapped to `L`. Prove that the
+quotient has degree `f.natDegree − j` and is separable. Distinctness and
+separability make the product an exact divisor, and its roots are exactly the selected ones. The quotient
 splits in `L` and its roots are the complementary root set. These conclusions
 hold without monicity of `f`; removing all roots leaves its leading coefficient.
 
@@ -506,21 +496,17 @@ hold without monicity of `f`; removing all roots leaves its leading coefficient.
 - An empty tuple generates the base intermediate field `⊥`.
 - A one-root tuple generates precisely `F⟮x₀⟯`, agreeing with the simple-root
   supplier, rather than the whole splitting field by definition.
-- For `X²−2` over `ℚ`, the named check target `tupleRootField_quadratic`
-  gives degree two for a one-root tuple field.
-  For `X(X−1)` over `ℚ`, the named check target `tupleRootField_split`
-  says that selecting either rational root still generates the base field. Using a
-  free formal extension instead of the actual adjoin fails
+- For `X²−2` over `ℚ`, a one-root tuple field has degree two.
+  For `X(X−1)` over `ℚ`, selecting either rational root still generates the
+  base field. Using a free formal extension instead of the actual adjoin fails
   this distinction.
 
 **Checks for the quotient.**
 
 - At `j = 0`, its image in `L[X]` is `f` mapped to `L`; the empty product is `1`.
-- The named check target `tupleRootQuotient_all_roots_monic` gives quotient
-  `1` for monic separable `f` and a tuple of all `f.natDegree` roots.
-  For the nonmonic split quadratic `2X(X−1)` over `ℚ`, the named check
-  target `tupleRootQuotient_nonmonic` gives `2`,
-  so the monicity hypothesis in this check is necessary.
+- The quotient is `1` for monic separable `f` and a tuple of all
+  `f.natDegree` roots. For the nonmonic split quadratic `2X(X−1)` over `ℚ`,
+  the quotient is `2`, so the monicity hypothesis in this check is necessary.
 - At `j = 1` it is division by `X−x₀` over the simple root field, agreeing
   under the field identification with the existing double-transitivity adapter.
 
@@ -540,10 +526,10 @@ at `j = 0`. It does not define the predicate by the group-theoretic conclusion.
 (BSKK, Introduction, p.5; the explicit degree and separability guards specify
 the extension to all polynomials.)
 
-Prove `IsKFoldIrreducible.one_iff` for separable positive-degree `f`, equating
-`k = 1` with ordinary `Irreducible f`; `mono`, for `1 ≤ l ≤ k`; and
-`degree_bound`, returning `1 ≤ k ≤ f.natDegree`. The empty-tuple field
-comparison proves the first, and restricting the tuple quantifier proves
+For separable positive-degree `f`, prove that `k = 1` is equivalent to
+ordinary `Irreducible f`. Prove that `k`-fold irreducibility implies `l`-fold
+irreducibility for `1 ≤ l ≤ k`, and that it implies `1 ≤ k ≤ f.natDegree`.
+The empty-tuple field comparison proves the first, and restricting the tuple quantifier proves
 monotonicity.
 
 **Checks.**
@@ -551,20 +537,18 @@ monotonicity.
 - No polynomial is `0`-fold irreducible, including a separable linear polynomial.
   A vacuous universal quantifier would give the wrong answer.
 - No polynomial is `k`-fold irreducible when `k` exceeds its degree.
-- The named check target `kfold_cyclotomic_eleven` makes `Φ₁₁` over `ℚ`
-  `1`-fold but not `2`-fold irreducible. Its root group
+- `Φ₁₁` over `ℚ` is `1`-fold but not `2`-fold irreducible. Its root group
   is the regular abelian group of order ten; a root already generates the
   splitting field, so the remaining degree-nine quotient is reducible there.
-- The named check target `kfold_repeated_quadratic` excludes
-  `1`-fold irreducibility of `(X²−2)²` over `ℚ`. Its transitive distinct-root
+- `(X²−2)²` over `ℚ` is not `1`-fold irreducible. Its transitive distinct-root
   action does not remove the separability guard or repeated polynomial factor.
 
 *Needs:* 2.1 and the separable positive-degree irreducibility/orbit contract.
 
 ### 2.3 Tuple stabilizers and restriction
 
-Prove `tuple_stabilizer_eq_fixingSubgroup` for every field `F`, polynomial `f`,
-and root embedding `x : Fin j ↪ f.rootSet L`: the stabilizer of the embedding
+For every field `F`, polynomial `f`, and root embedding
+`x : Fin j ↪ f.rootSet L`, prove that the stabilizer of the embedding
 under the componentwise `f.Gal` action equals `(TupleRootField f x).fixingSubgroup`.
 No separability hypothesis is needed for this equality: fixing a tuple is fixing
 all its generators. (BSKK, Introduction, p.5, interpreted through the
@@ -666,9 +650,10 @@ indices. Its basic API includes the zero-indicator identity, the singleton
 identity `L = 1/a` for `1 ≤ a ≤ m`, and monotonicity under enlargement of
 the indicator or of `m`, because every term is nonnegative.
 
-Prove `PartitionLaw.pair_diagonal`, giving the bound `C/k²` on
-`countρ(k) ≥ 2` within the pair range; `enlarge_constant` for `C ≤ D`; and
-`weaken_kappa` for `0 < κ' ≤ κ`. All three right-hand factors are nonnegative;
+Prove the bound `C/k²` on `countρ(k) ≥ 2` within the pair range,
+preservation of the law when `C` is enlarged to `D ≥ C`, and preservation
+when `κ` is replaced by `0 < κ' ≤ κ`. All three right-hand factors are
+nonnegative;
 weakening `κ` increases the exponential right side since `L ≥ 0`.
 
 **Checks for the harmonic sum.**
@@ -685,8 +670,7 @@ weakening `κ` increases the exponential right side since `L ≥ 0`.
 - For the zero indicator and `m = 7` in range, the lower-tail event is
   the whole space, so the field gives `ν(univ) ≤ C`. With probability
   normalization this reads `1 ≤ C`.
-- For the indicator of `2` and `m = 4` in range, the named check target
-  `partitionLaw_singleton` gives
+- For the indicator of `2` and `m = 4` in range, the lower-tail field gives
   `ν(countρ(2) ≤ t/2) ≤ C exp(−κ/2)`.
 - For `n ≥ 8`, the diagonal pair field gives
   `ν(countρ(2) ≥ 2) ≤ C/4`. A law that bounds mere membership of `2`
@@ -718,26 +702,23 @@ are imposed by the theorems. In particular the exponent in `E₂` remains `δ/2`
 not a substituted function of `α`. The fifth event strengthens the one-witness
 source event, with the same asymptotic failure rate as proved in 3.9.
 
-Prove `goodEvent_one_diagonal`: under `E₁`, if `n^(κα) ≤ k ≤ n/4`,
-then `countρ(k) ≤ 1`. Prove `goodEvent_two_complement` for any
-`U ≤ ρ.parts`, giving `(ρ.parts−U).sum = n−U.sum`; no good-event premise
-is needed for that identity. Prove `goodEvent_five_four`, extracting the
-four nondivisible occurrences for each `r ≥ 2`. The first requires both
+Under `E₁`, prove that `n^(κα) ≤ k ≤ n/4` implies `countρ(k) ≤ 1`.
+For any `U ≤ ρ.parts`, prove `(ρ.parts−U).sum = n−U.sum`; no good-event
+premise is needed for that identity. Under `E₅*`, extract the four
+nondivisible occurrences for each `r ≥ 2`. The first requires both
 cutoff inequalities and cannot be applied to an uncontrolled companion part.
 
 **Checks.**
 
 - The partition `{2,2,4}` of eight fails `E₁` at `κ = 1, α = 0`,
   since `gcd(2,2) = 2 ≥ 8^0 = 1`.
-- The proved target `goodEvent_log_one` says that at `n = 1, α = 0`
-  the unique partition passes `E₃`: its required
+- At `n = 1, α = 0` the unique partition passes `E₃`: its required
   count is zero because `log 1 = 0`. The asymptotic theorem is not asserted here.
 - The partition `{1,2}` of three at `α = 1` passes the one-witness
   variant for every `r ≥ 2`: the part `1` lies in `[1/3,3/log 3]` and
   `r ∤ 1`. It fails `E₅*` because it has only two occurrences. Thus this
   check distinguishes four witnesses from one, even outside the asymptotic ranges.
-- The proved target `goodEvent_two_three` says `{3,3}` at `n = 6, δ = 2`
-  fails `E₂` with `r = 2, j = 1` and
+- `{3,3}` at `n = 6, δ = 2` fails `E₂` with `r = 2, j = 1` and
   sum `3`. This tests the definition outside the probability-law parameter range.
 - `{2,6}` of eight passes `E₁` at `κ = 1, α = 0`: its only part at most
   `8/4 = 2` occurs once, so no pair of occurrences is constrained. A definition
@@ -747,7 +728,7 @@ cutoff inequalities and cannot be applied to an uncontrolled companion part.
 
 ### 3.3 Uniform harmonic intervals
 
-Prove `anatomy_harmonic_masses`: for every `ε > 0` there are `B ≥ 0`
+Prove the uniform harmonic-interval estimates: for every `ε > 0` there are `B ≥ 0`
 and `N ≥ 3` such that for every `n ≥ N` and every
 `ε/2 ≤ α ≤ 1/40`, the reciprocal mass of
 `[n^(1−α),n/log n]` differs from `α log n−log log n` by at most `B`.
@@ -790,7 +771,7 @@ on which 3.8 and the final criterion depend.
 
 ### 3.5 Large-gcd failure
 
-Prove `pair_gcd_failure` with the common parameter ranges, a probability
+Prove the large-gcd failure bound with the common parameter ranges, a probability
 measure `ν`, and `PartitionLaw n ν C t κ δ`. There are uniform `B ≥ 0,N ≥ 3`
 such that
 
@@ -810,8 +791,8 @@ fixes the starting degree before choosing `θ`.
 
 ### 3.6 Block-fraction subsum failure
 
-Prove `block_subsum_failure`, with the same law and parameter quantifiers,
-giving uniform `ν(E₂ᶜ) ≤ B n^(−δ/4)` for all `n ≥ N`.
+Prove the block-fraction subsum failure bound, with the same law and parameter
+quantifiers, giving uniform `ν(E₂ᶜ) ≤ B n^(−δ/4)` for all `n ≥ N`.
 (BSKK, Lemma 12.3 and proof, p.60.)
 
 If a forbidden sum is `nj/r`, replace its occurrence submultiset by its
@@ -819,16 +800,16 @@ complement to arrange `j ≤ r/2`. Since `r ∣ n`, this is an integer; and
 `r ≤ n^(δ/2)` puts it between `n^(1−δ/2)` and `n/2`, exactly premise (b)'s
 range. For a fixed `r`, summing `C·(nj/r)^(−δ)` over `1 ≤ j ≤ r/2` gives
 `O(C n^(−δ) r)`, using `δ < 1`. Summing over divisors `r` gives
-`O(n^(−δ/2) τ(n))`. Invoke ErdosProgressionPowers §0.9, `eventualDivisorSubpower`, with
-exponent `δ/4`, enlarging its constant over finitely many positive exceptions,
+`O(n^(−δ/2) τ(n))`. Invoke ErdosProgressionPowers §0.9, the eventual
+divisor-subpower bound, with exponent `δ/4`, enlarging its constant over finitely many positive exceptions,
 to reach `n^(−δ/4)`.
 
 *Needs:* 3.1–3.2, the complement API, and the uniform divisor subpower contract.
 
 ### 3.7 Long-part lower-tail failure
 
-Prove `long_parts_failure`, with the same uniform quantifiers, giving
-`ν(E₃ᶜ) ≤ B (log n)^κ n^(−κα)`.
+Prove the long-part lower-tail failure bound, with the same uniform quantifiers,
+giving `ν(E₃ᶜ) ≤ B (log n)^κ n^(−κα)`.
 (BSKK, Lemma 12.4 and proof, p.60.)
 
 Use premise (c) with the indicator of the long interval and
@@ -843,8 +824,8 @@ non-strict lower-tail event. Exponentiation produces `n^(−κα)` and
 
 ### 3.8 Large-prime part failure
 
-Prove `large_prime_parts_failure`, with the same uniform quantifiers, giving
-`ν(E₄ᶜ) ≤ B n^(−κ/4)`.
+Prove the large-prime part failure bound, with the same uniform quantifiers,
+giving `ν(E₄ᶜ) ≤ B n^(−κ/4)`.
 (BSKK, Lemma 12.5 and proof, pp.60–61.)
 
 Take the indicator of integers with a prime factor exceeding `n^(1/8)` and
@@ -915,20 +896,19 @@ support cardinality among those elements. The carrier is finite, so the
 nonempty minimum is attained. (BSKK, §12.2 notation, p.61, and Lemma 12.7,
 p.62; the value `none` for the trivial group is this roadmap's convention.)
 
-Prove `minSupport_eq_none`, equivalent to `G = ⊥`, and
-`minSupport_eq_some`, equivalent to existence of a nonidentity element of
-support exactly `m` together with the lower bound `m ≤ card(support σ)`
-for every nonidentity `σ ∈ G`. Prove `minSupport_le`, extracting that lower
-bound, and `minSupport_two_le`: no permutation moves exactly one point,
-so every returned `m` is at least two. The minimum is on nonidentity elements;
+Prove that the value is `none` iff `G = ⊥`, and is `some m` iff there
+is a nonidentity element of support exactly `m` and every nonidentity
+`σ ∈ G` satisfies `m ≤ card(support σ)`. Extract this lower bound for
+each nonidentity group element. Prove that every returned `m` is at least
+two, since no permutation moves exactly one point. The minimum is on nonidentity elements;
 including the identity would make every value zero.
 
 **Checks.**
 
 - `S_(Fin 0)` has `minSupport = none`; its unique permutation is the identity.
-- The named check target `minSupport_symmetric_two` gives `some 2` for
+- The value is `some 2` for
   `S_(Fin 2)`, attained by the swap.
-- The named check target `minSupport_alternating_three` gives `some 3` for
+- The value is `some 3` for
   `A_(Fin 3)`, attained by either nonidentity 3-cycle.
 
 *Needs:* finite permutation subgroups, support, and the attained natural minimum.
@@ -941,9 +921,8 @@ no `g ∈ G` both fixes `z` and sends `x` to `y`. Equivalently `(x,z)` and
 orbits of the point stabilizer at `z`. There is no new coherent-configuration
 carrier. (Babai, §6, Definition 6.1, p.5, and Exercise 6.2, p.6.)
 
-Prove `mem_orbitalDistinguishers`, giving the stabilizer-orbit equivalence;
-`orbitalDistinguishers_symm`, by taking inverses of transporting elements;
-and `orbitalDistinguishers_subset_support`: for `g ∈ G`,
+Prove the stabilizer-orbit membership equivalence and symmetry in `x,y`,
+by taking inverses of transporting elements. Prove that for `g ∈ G`,
 `D(x,gx) ⊆ support g`. A point fixed by that very `g` cannot distinguish
 the pair. These statements require no transitivity or primitivity.
 
@@ -951,8 +930,7 @@ the pair. These statements require no transitivity or primitivity.
 
 - `D(x,x)` is empty for every group, since the identity transports the pair.
 - For the trivial group and `x ≠ y`, `D(x,y)` is the whole carrier.
-- The named check target `orbitalDistinguishers_symmetric` gives
-  `D(x,y) = {x,y}` for the full symmetric group and `x ≠ y`. At every
+- `D(x,y) = {x,y}` for the full symmetric group and `x ≠ y`. At every
   other point a swap of `x,y` fixes that point; at `x` or `y`, fixing the
   point prevents transport. This also holds on a two-point carrier.
 
@@ -960,7 +938,7 @@ the pair. These statements require no transitivity or primitivity.
 
 ### 4.3 Primitive orbital connectivity
 
-Prove `orbital_walk_connectivity`: for `IsPreprimitive G Ω`, a distinct pair
+Prove primitive orbital connectivity: for `IsPreprimitive G Ω`, a distinct pair
 `x ≠ y`, and any `a,b`, there is a walk in the undirected relation joining
 `u,v` whenever `(u,v)` or `(v,u)` is in the diagonal orbit of `(x,y)`.
 Equivalently its reflexive transitive closure relates every `a,b`.
@@ -1109,7 +1087,7 @@ interfaces. Neither number-field ramification nor an analytic estimate enters.
 
 ### 5.1 A cycle's actual block orbit
 
-Prove `block_orbit_cycle_divisibility` for a surjective equivariant quotient
+Prove the block-orbit cycle-divisibility statement for a surjective equivariant quotient
 `b : X → Fin r` with all fibres of cardinality `s > 0`, where `r > 0`,
 `σ` acts on `X` and `ψ` on the quotient. For each point cycle of length `ℓ`,
 let `r'` be the cardinality of the actual `ψ`-orbit of its block.
@@ -1187,7 +1165,7 @@ If `2 ≤ r ≤ n^(δ/2)`, choose via `E₅*` a long part `ℓ` not divisible
 by `r`. Its block orbit has `1 ≤ r' < r`, since otherwise `r ∣ ℓ` by 5.1.
 The union of these blocks is invariant of cardinality `nr'/r`. Its cycle
 lengths form a submultiset of the output; pull it back through
-`EqualPartMerging.pullback_submultiset` to a submultiset `V ≤ ρ.parts` with
+the occurrence-selection API of 0.1 to a submultiset `V ≤ ρ.parts` with
 `Σ_{v∈V} v = nr'/r`. This contradicts `E₂`. The identity sums the part
 sizes in `V`; it does not count occurrences.
 

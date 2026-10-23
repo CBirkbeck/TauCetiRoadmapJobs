@@ -3,12 +3,16 @@ import TauCeti.GroupTheory.Perm.Partition
 import TauCeti.RingTheory.Polynomial.FactorDegrees
 
 /-!
-# PolynomialGaloisGroupsPartII: representative target signatures
+# PolynomialGaloisGroupsPartII: target signatures
 
-The roadmap is `README.md`. This file records light definitions and representative
-theorem signatures statable against the pinned APIs; it is not exhaustive.
-It fixes occurrence-sensitive merging, full cycle types, ordered distinct roots,
-discrete partition measures, and an optional minimum for the trivial group.
+The roadmap is README.md; this file is not the roadmap. It states the roadmap’s
+headline theorems against the pinned Mathlib and Tau Ceti APIs. All headline
+theorems are statable here using the real-bodied definitions below: equivariant
+cycle fibres, ramified merging, higher-transitivity and alternating recognition,
+large-prime harmonic mass, four nondivisible parts, Babai’s and Bochert’s bounds,
+the primitive support bound, primitive and imprimitive exclusions, the arbitrary-law
+criterion, and its Galois certificate. The complete API and subsidiary proof
+targets are specified in the README.
 -/
 
 noncomputable section
@@ -23,9 +27,6 @@ def EqualPartMerging (y : ℝ) (a b : Multiset ℕ) : Prop :=
   ∃ blocks : Multiset (Multiset ℕ), blocks.sum = a ∧ blocks.map Multiset.sum = b ∧
     ∀ B ∈ blocks, 0 < B.card ∧ (B.card : ℝ) ≤ y ∧ ∀ u ∈ B, ∀ v ∈ B, u = v
 
-/-- Equal occurrences can be merged while unequal values stay separate. -/
-example : EqualPartMerging 2 {1, 1, 2, 2, 2, 3} {1, 1, 2, 3, 4} :=
-  ⟨{{1}, {1}, {2}, {2, 2}, {3}}, by decide, by decide, by simp⟩
 /-- Two successive equal-part mergings need not be a single equal-part merging. -/
 example : EqualPartMerging 2 {1, 1, 2} {2, 2} ∧
     EqualPartMerging 2 {2, 2} {4} ∧ ¬ EqualPartMerging 4 {1, 1, 2} {4} ∧
@@ -41,65 +42,16 @@ example : EqualPartMerging 2 {1, 1, 2} {2, 2} ∧
   · intro y
     exact ⟨0, by simp, by simp, by simp⟩
 
-/-- Selecting output occurrences pulls back to input occurrences with the same sum. -/
-theorem EqualPartMerging.pullback_submultiset {y : ℝ} {a b v : Multiset ℕ}
-    (h : EqualPartMerging y a b) (hv : v ≤ b) :
-    ∃ u ≤ a, u.sum = v.sum := by sorry
-/-- The equal-entry and block-size restrictions forbid the source's sum-preserving nonexample. -/
-theorem equalPartMerging_forbidden :
-    ¬ EqualPartMerging 2 {1, 1, 2, 2, 2, 3} {2, 3, 6} := by sorry
-
 variable {α : Type*} [Fintype α] [DecidableEq α]
 /-- Permutations whose full cycle multiset is a bounded equal-part merging of `ρ`. -/
 def MergePerms {n : ℕ} (y : ℝ) (ρ : Nat.Partition n) : Set (Equiv.Perm α) :=
   {σ | EqualPartMerging y ρ.parts σ.fullCycleType}
-/-- The identity has one full-cycle part for each fixed point. -/
-theorem mergePerms_identity (ρ : Nat.Partition (Fintype.card α)) :
-    (1 : Equiv.Perm α) ∈ MergePerms 1 ρ ↔
-      ρ.parts = Multiset.replicate (Fintype.card α) 1 := by sorry
-/-- The empty partition matches the permutation on the empty carrier. -/
-example (σ : Equiv.Perm (Fin 0)) :
-    σ ∈ MergePerms (α := Fin 0) 1 (Nat.Partition.indiscrete 0) :=
-  ⟨0, by simp [Equiv.Perm.fullCycleType_of_isEmpty]⟩
-/-- Enlarging the allowed block size enlarges the permutation set. -/
-theorem mergePerms_mono {n : ℕ} {y z : ℝ} (ρ : Nat.Partition n) (h : y ≤ z) :
-    MergePerms (α := α) y ρ ⊆ MergePerms z ρ := by sorry
-/-- Merging preserves the total degree, including fixed points. -/
-theorem mergePerms_card {n : ℕ} {y : ℝ} {ρ : Nat.Partition n} {σ : Equiv.Perm α}
-    (h : σ ∈ MergePerms y ρ) : n = Fintype.card α := by sorry
-/-- Conjugation preserves membership because it preserves the full cycle multiset. -/
-theorem mergePerms_conj {n : ℕ} (y : ℝ) (ρ : Nat.Partition n) (g σ : Equiv.Perm α) :
-    g * σ * g⁻¹ ∈ MergePerms y ρ ↔ σ ∈ MergePerms y ρ := by sorry
-/-- Relabeling a finite carrier preserves merging membership. -/
-theorem mergePerms_permCongr {β : Type*} [Fintype β] [DecidableEq β]
-    {n : ℕ} (y : ℝ) (ρ : Nat.Partition n) (e : α ≃ β) (σ : Equiv.Perm α) :
-    Equiv.permCongr e σ ∈ MergePerms y ρ ↔ σ ∈ MergePerms y ρ := by sorry
-/-- A full five-cycle belongs to the merging set of the one-part partition. -/
-theorem mergePerms_five_cycle (σ : Equiv.Perm (Fin 5)) (h : σ.fullCycleType = {5}) :
-    σ ∈ MergePerms 1 (Nat.Partition.indiscrete 5) := by sorry
 
 /-- The union of transitive permutation subgroups unequal to alternating and symmetric. -/
 def BadTransitive (α : Type*) [Fintype α] [DecidableEq α] : Set (Equiv.Perm α) :=
   {σ | ∃ G : Subgroup (Equiv.Perm α), IsPretransitive G α ∧
     G ≠ alternatingGroup α ∧ G ≠ ⊤ ∧ σ ∈ G}
-/-- Every transitive subgroup in degree at most three is alternating or symmetric. -/
-theorem badTransitive_small_degree (n : ℕ) (hn : n ≤ 3) : BadTransitive (Fin n) = ∅ := by sorry
-/-- The identity belongs through the regular cyclic subgroup of degree five. -/
-theorem badTransitive_identity_five : (1 : Equiv.Perm (Fin 5)) ∈ BadTransitive (Fin 5) := by sorry
-/-- The cyclic subgroup generated by a full five-cycle is a proper transitive witness. -/
-theorem badTransitive_five_cycle (σ : Equiv.Perm (Fin 5)) (h : σ.fullCycleType = {5}) :
-    σ ∈ BadTransitive (Fin 5) := by sorry
-/-- Any element of a transitive subgroup distinct from alternating and symmetric is bad-transitive. -/
-theorem badTransitive_witness (G : Subgroup (Equiv.Perm α))
-    (ht : IsPretransitive G α) (ha : G ≠ alternatingGroup α) (hs : G ≠ ⊤)
-    {σ : Equiv.Perm α} (hσ : σ ∈ G) : σ ∈ BadTransitive α := by sorry
-/-- Conjugation transports the witness subgroup as well as its element. -/
-theorem badTransitive_conj (g σ : Equiv.Perm α) :
-    g * σ * g⁻¹ ∈ BadTransitive α ↔ σ ∈ BadTransitive α := by sorry
-/-- Relabeling transports bad-transitive witnesses. -/
-theorem badTransitive_permCongr {β : Type*} [Fintype β] [DecidableEq β]
-    (e : α ≃ β) (σ : Equiv.Perm α) :
-    Equiv.permCongr e σ ∈ BadTransitive β ↔ σ ∈ BadTransitive α := by sorry
+
 /-- First-return cycles over a bottom cycle give equal-part merging (BSKK Claim 11.4, p. 57). -/
 theorem equivariant_cycle_fibres {β : Type*} [Fintype β] [DecidableEq β]
     (σ : Equiv.Perm α) (ψ : Equiv.Perm β) (r : α → β)
@@ -112,24 +64,7 @@ theorem equivariant_cycle_fibres {β : Type*} [Fintype β] [DecidableEq β]
 /-- The largest normalized irreducible-factor count, with value zero on an empty factor multiset. -/
 def maxFactorMultiplicity {F : Type*} [Field F] (f : F[X]) : ℕ :=
   (normalizedFactors f).toFinset.sup (fun q => (normalizedFactors f).count q)
-/-- The normalized-factor convention gives value zero at the zero polynomial. -/
-example : maxFactorMultiplicity (0 : (ZMod 2)[X]) = 0 ∧
-    maxFactorMultiplicity (1 : (ZMod 2)[X]) = 0 := by simp [maxFactorMultiplicity]
-/-- Repeated factors have exponent three; distinct degree-one factors have exponent one. -/
-theorem maxFactorMultiplicity_repeated_distinct : maxFactorMultiplicity ((X + 1 : (ZMod 2)[X]) ^ 3) = 3 ∧
-    maxFactorMultiplicity ((X : (ZMod 3)[X]) * (X - 1)) = 1 := by sorry
-/-- Zero has no normalized factors under the library convention. -/
-theorem maxFactorMultiplicity_zero {F : Type*} [Field F] :
-    maxFactorMultiplicity (0 : F[X]) = 0 := by simp [maxFactorMultiplicity]
-/-- A unit has no irreducible-factor occurrences. -/
-theorem maxFactorMultiplicity_unit {F : Type*} [Field F] {f : F[X]} (h : IsUnit f) :
-    maxFactorMultiplicity f = 0 := by sorry
-/-- A finite maximum is bounded exactly when each occurring factor count is bounded. -/
-theorem maxFactorMultiplicity_le_iff {F : Type*} [Field F] (f : F[X]) (m : ℕ) :
-    maxFactorMultiplicity f ≤ m ↔ ∀ q ∈ normalizedFactors f, (normalizedFactors f).count q ≤ m := by sorry
-/-- On nonzero nonunits the maximum equals one exactly for squarefree polynomials. -/
-theorem maxFactorMultiplicity_eq_one_iff {F : Type*} [Field F] (f : F[X])
-    (hf : f ≠ 0) (hu : ¬ IsUnit f) : maxFactorMultiplicity f = 1 ↔ Squarefree f := by sorry
+
 /-- Every prime supplies a merging Frobenius element, including ramified primes (BSKK Lemma 11.3, pp. 56–57). -/
 theorem ramified_merging (A : ℤ[X]) (hA : A.Monic)
     (hsep : (A.map (Int.castRingHom ℚ)).Separable)
@@ -147,30 +82,6 @@ variable {F : Type*} [Field F] (f : F[X])
 /-- The intermediate field generated by an ordered tuple of distinct roots. -/
 abbrev TupleRootField {j : ℕ} (x : Fin j ↪ f.rootSet f.SplittingField) :=
   IntermediateField.adjoin F (Set.range (fun i => (x i : f.SplittingField)))
-/-- The empty tuple generates the base intermediate field. -/
-example (x : Fin 0 ↪ f.rootSet f.SplittingField) : TupleRootField f x = ⊥ := by simp [TupleRootField]
-
-/-- One selected root generates precisely its simple intermediate field. -/
-example (x : Fin 1 ↪ f.rootSet f.SplittingField) :
-    TupleRootField f x = IntermediateField.adjoin F {(x 0 : f.SplittingField)} := by
-  unfold TupleRootField
-  apply congrArg (IntermediateField.adjoin F)
-  ext z
-  constructor
-  · rintro ⟨i, rfl⟩
-    have hi : i = 0 := Subsingleton.elim _ _
-    subst i
-    exact Set.mem_singleton _
-  · intro hz
-    exact ⟨0, (Set.mem_singleton_iff.mp hz).symm⟩
-/-- A root of the irreducible quadratic generates a quadratic field. -/
-theorem tupleRootField_quadratic
-    (x : Fin 1 ↪ (X ^ 2 - C 2 : ℚ[X]).rootSet (X ^ 2 - C 2 : ℚ[X]).SplittingField) :
-    Module.finrank ℚ (TupleRootField (X ^ 2 - C 2 : ℚ[X]) x) = 2 := by sorry
-/-- Selecting a rational root of the split quadratic leaves the base field. -/
-theorem tupleRootField_split
-    (x : Fin 1 ↪ (X * (X - 1) : ℚ[X]).rootSet (X * (X - 1) : ℚ[X]).SplittingField) :
-    TupleRootField (X * (X - 1) : ℚ[X]) x = ⊥ := by sorry
 
 /-- Divide over the tuple-generated field by the product of the selected linear factors. -/
 def tupleRootQuotient {j : ℕ} (x : Fin j ↪ f.rootSet f.SplittingField) :
@@ -178,58 +89,13 @@ def tupleRootQuotient {j : ℕ} (x : Fin j ↪ f.rootSet f.SplittingField) :
   (f.map (algebraMap F (TupleRootField f x))) /ₘ
     ∏ i, (X - C (⟨(x i : f.SplittingField),
       IntermediateField.subset_adjoin F _ ⟨i, rfl⟩⟩ : TupleRootField f x))
-/-- Removing no roots preserves the original mapped polynomial. -/
-example (x : Fin 0 ↪ f.rootSet f.SplittingField) :
-    (tupleRootQuotient f x).map (algebraMap (TupleRootField f x) f.SplittingField) =
-      f.map (algebraMap F f.SplittingField) := by
-  simp [tupleRootQuotient, Polynomial.map_map, ← IsScalarTower.algebraMap_eq]
-/-- Removing every root of a monic separable polynomial leaves one. -/
-theorem tupleRootQuotient_all_roots_monic (hf : f.Monic) (hs : f.Separable)
-    (x : Fin f.natDegree ↪ f.rootSet f.SplittingField) : tupleRootQuotient f x = 1 := by sorry
-/-- Dividing out distinct selected roots gives an exact factorization in the splitting field. -/
-theorem tupleRootQuotient_factor (hs : f.Separable) {j : ℕ}
-    (x : Fin j ↪ f.rootSet f.SplittingField) :
-    (tupleRootQuotient f x).map (algebraMap (TupleRootField f x) f.SplittingField) *
-      ∏ i, (X - C (x i : f.SplittingField)) = f.map (algebraMap F f.SplittingField) := by sorry
-/-- Removing `j` distinct roots reduces the degree by `j`. -/
-theorem tupleRootQuotient_natDegree (hs : f.Separable) {j : ℕ}
-    (x : Fin j ↪ f.rootSet f.SplittingField) :
-    (tupleRootQuotient f x).natDegree = f.natDegree - j := by sorry
-/-- The remaining-root quotient of a separable polynomial is separable. -/
-theorem tupleRootQuotient_separable (hs : f.Separable) {j : ℕ}
-    (x : Fin j ↪ f.rootSet f.SplittingField) : (tupleRootQuotient f x).Separable := by sorry
-/-- Removing all roots of the nonmonic split quadratic retains its leading coefficient. -/
-theorem tupleRootQuotient_nonmonic
-    (x : Fin 2 ↪ (C 2 * X * (X - 1) : ℚ[X]).rootSet
-      (C 2 * X * (X - 1) : ℚ[X]).SplittingField) :
-    tupleRootQuotient (C 2 * X * (X - 1) : ℚ[X]) x = C 2 := by sorry
-/-- For a singleton tuple the divisor is the selected linear factor over the simple root field. -/
-example (x : Fin 1 ↪ f.rootSet f.SplittingField) :
-    tupleRootQuotient f x = f.map (algebraMap F (TupleRootField f x)) /ₘ
-      (X - C (⟨(x 0 : f.SplittingField),
-        IntermediateField.subset_adjoin F _ ⟨0, rfl⟩⟩ : TupleRootField f x)) := by
-  simp [tupleRootQuotient]
+
 /-- All quotients after fewer than `k` roots are adjoined are irreducible; separability and degree bounds are explicit. -/
 def IsKFoldIrreducible (k : ℕ) : Prop :=
   f.Separable ∧ 0 < f.natDegree ∧ 1 ≤ k ∧ k ≤ f.natDegree ∧
     ∀ j < k, ∀ x : Fin j ↪ f.rootSet f.SplittingField,
       Irreducible (tupleRootQuotient f x)
-/-- A cyclotomic polynomial is irreducible but its root-generated quotient splits. -/
-theorem kfold_cyclotomic_eleven : IsKFoldIrreducible (cyclotomic 11 ℚ) 1 ∧
-    ¬ IsKFoldIrreducible (cyclotomic 11 ℚ) 2 := by sorry
-/-- A repeated irreducible factor fails the separability guard. -/
-theorem kfold_repeated_quadratic : ¬ IsKFoldIrreducible ((X ^ 2 - C 2 : ℚ[X]) ^ 2) 1 := by sorry
 
-/-- The lower and upper degree guards prevent vacuous tuple quantification. -/
-example (k : ℕ) (hk : f.natDegree < k) :
-    ¬ IsKFoldIrreducible f 0 ∧ ¬ IsKFoldIrreducible f k := by
-  constructor
-  · simp [IsKFoldIrreducible]
-  · intro h
-    exact (Nat.not_le_of_lt hk) h.2.2.2.1
-/-- At one, the tuple definition agrees with ordinary irreducibility in the separable positive-degree range. -/
-theorem IsKFoldIrreducible.one_iff (hs : f.Separable) (hd : 0 < f.natDegree) :
-    IsKFoldIrreducible f 1 ↔ Irreducible f := by sorry
 /-- Higher irreducibility is multiple transitivity on distinct roots, within the nonvacuous degree range. -/
 theorem kfold_iff_multiplyPretransitive (k : ℕ) (hs : f.Separable)
     (hd : 0 < f.natDegree) (hk : 1 ≤ k) (hkn : k ≤ f.natDegree) :
@@ -250,12 +116,6 @@ local instance partitionMeasurableSpace (n : ℕ) : MeasurableSpace (Nat.Partiti
 /-- The finite reciprocal mass of a Boolean indicator through `m`. -/
 abbrev harmonicMass (f : ℕ → Bool) (m : ℕ) : ℝ :=
   ∑ k ∈ Finset.Icc 1 m, if f k then (k : ℝ)⁻¹ else 0
-/-- The Boolean indicator of `2` has reciprocal mass one half through `4`. -/
-example : harmonicMass (fun k => decide (k = 2)) 4 = 1 / 2 ∧
-    harmonicMass (fun _ => true) 2 = 3 / 2 := by
-  norm_num [harmonicMass, Finset.sum_Icc_succ_top]
-/-- A zero indicator has zero reciprocal mass even at the empty cutoff. -/
-example (m : ℕ) : harmonicMass (fun _ => false) m = 0 := by simp [harmonicMass]
 
 /-- The occurrence, subsum, and lower-tail bounds of BSKK Proposition 12.1, p. 59; probability normalization is separate. -/
 structure PartitionLaw (n : ℕ) (ν : MeasureTheory.Measure (Nat.Partition n))
@@ -274,29 +134,6 @@ structure PartitionLaw (n : ℕ) (ν : MeasureTheory.Measure (Nat.Partition n))
   lower : ∀ (f : ℕ → Bool) (m : ℕ), 1 ≤ m → (m : ℝ) ≤ n / Real.log n →
     ν.real {ρ | ((ρ.parts.filter (fun (k : ℕ) => k ≤ m ∧ f k = true)).card : ℝ) ≤
       t * harmonicMass f m} ≤ C * Real.exp (-κ * harmonicMass f m)
-
-/-- The indicator of two gives reciprocal mass one half. -/
-theorem partitionLaw_singleton {n : ℕ} {ν : MeasureTheory.Measure (Nat.Partition n)} {C t κ δ : ℝ}
-    (h : PartitionLaw n ν C t κ δ) (hn : (4 : ℝ) ≤ n / Real.log n) :
-    ν.real {ρ | (ρ.parts.count 2 : ℝ) ≤ t / 2} ≤ C * Real.exp (-κ / 2) := by sorry
-/-- The diagonal pair event counts two occurrences, rather than mere membership. -/
-example {n : ℕ} {ν : MeasureTheory.Measure (Nat.Partition n)} {C t κ δ : ℝ}
-    (h : PartitionLaw n ν C t κ δ) (hn : 8 ≤ n) :
-    ν.real {ρ | 2 ≤ ρ.parts.count 2} ≤ C / 4 := by
-  have h8 : (8 : ℝ) ≤ n := by exact_mod_cast hn
-  simpa [Multiset.le_count_iff_replicate_le, Multiset.replicate_succ, Multiset.insert_eq_cons,
-    show (C : ℝ) / ((2 : ℝ) * 2) = C / 4 by norm_num] using
-    h.pair 2 2 le_rfl le_rfl (by linarith) (by linarith)
-/-- A zero indicator in the lower-tail premise bounds the mass of the whole carrier. -/
-example {n : ℕ} {ν : MeasureTheory.Measure (Nat.Partition n)} {C t κ δ : ℝ}
-    (h : PartitionLaw n ν C t κ δ) (hn : (7 : ℝ) ≤ n / Real.log n) :
-    ν.real Set.univ ≤ C := by
-  simpa [harmonicMass] using h.lower (fun _ => false) 7 (by omega) hn
-/-- The diagonal pair premise counts at least two occurrences of the same part. -/
-theorem PartitionLaw.pair_diagonal {n : ℕ} {ν : MeasureTheory.Measure (Nat.Partition n)}
-    {C t κ δ : ℝ} (h : PartitionLaw n ν C t κ δ) (k : ℕ)
-    (hk : 2 ≤ k) (hkn : (k : ℝ) ≤ n / 4) :
-    ν.real {ρ | 2 ≤ ρ.parts.count k} ≤ C / (k : ℝ) ^ 2 := by sorry
 
 /-- Five anatomy events, with four nondivisible long occurrences in the fifth event. -/
 def GoodEvent (i : Fin 5) (n : ℕ) (t κ δ α : ℝ) : Set (Nat.Partition n) :=
@@ -358,28 +195,7 @@ example (ρ : Nat.Partition 3) (hρ : ρ.parts = {1, 2}) :
     have hbad := hc.trans hb
     rw [hρ] at hbad
     norm_num at hbad
-/-- Total logarithm makes the third event automatic in degree one at exponent zero. -/
-theorem goodEvent_log_one (ρ : Nat.Partition 1) : ρ ∈ GoodEvent 2 1 1 1 1 0 := by
-  simp [GoodEvent]
-/-- The subsum three in `{3,3}` violates the second event at delta two. -/
-theorem goodEvent_two_three (ρ : Nat.Partition 6) (hρ : ρ.parts = {3, 3}) :
-    ρ ∉ GoodEvent 1 6 1 1 2 0 := by
-  intro H
-  have hc := H 2 (by decide) (by decide) (by norm_num) 1 (by decide) (by decide)
-    {3} (by rw [hρ]; decide)
-  norm_num at hc
-/-- The diagonal gcd cutoff forbids repeated parts within both specified cutoffs. -/
-theorem goodEvent_one_diagonal {n k : ℕ} {ρ : Nat.Partition n} {t κ δ a : ℝ}
-    (h : ρ ∈ GoodEvent 0 n t κ δ a) (hk : (n : ℝ) ^ (κ * a) ≤ k)
-    (hkn : (k : ℝ) ≤ n / 4) : ρ.parts.count k ≤ 1 := by sorry
-/-- Taking the occurrence complement subtracts the subsum from the partition degree. -/
-theorem goodEvent_two_complement {n : ℕ} (ρ : Nat.Partition n) (u : Multiset ℕ)
-    (hu : u ≤ ρ.parts) : (ρ.parts - u).sum = n - u.sum := by sorry
-/-- The fifth event supplies four nondivisible occurrences at each integer modulus at least two. -/
-theorem goodEvent_five_four {n r : ℕ} {ρ : Nat.Partition n} {t κ δ a : ℝ}
-    (h : ρ ∈ GoodEvent 4 n t κ δ a) (hr : 2 ≤ r) :
-    4 ≤ (ρ.parts.filter (fun k : ℕ => (n : ℝ) ^ (1 - 2 * a) ≤ k ∧
-      (k : ℝ) ≤ n / Real.log n ∧ ¬ r ∣ k)).card := h r hr
+
 /-- The large-prime reciprocal mass exceeds one quarter of the logarithm, using the exact Mertens constant. -/
 theorem nonsmooth_harmonic_mass :
     ∃ N : ℕ, 3 ≤ N ∧ ∀ n ≥ N,
@@ -403,51 +219,10 @@ def minSupport (G : Subgroup (Equiv.Perm α)) : Option ℕ :=
   if ∃ σ ∈ G, σ ≠ 1 then
     some (sInf {m : ℕ | ∃ σ ∈ G, σ ≠ 1 ∧ σ.support.card = m}) else none
 
-/-- The permutation group on the empty carrier has no nonidentity support minimum. -/
-example : minSupport (⊤ : Subgroup (Equiv.Perm (Fin 0))) = none := by
-  simp [minSupport, Subsingleton.elim _ (1 : Equiv.Perm (Fin 0))]
-/-- The alternating group on three points has minimum support three. -/
-theorem minSupport_alternating_three : minSupport (alternatingGroup (Fin 3)) = some 3 := by sorry
-/-- The swap attains minimum support two on two points. -/
-theorem minSupport_symmetric_two : minSupport (⊤ : Subgroup (Equiv.Perm (Fin 2))) = some 2 := by sorry
-/-- There is no minimum exactly when the group is trivial. -/
-theorem minSupport_eq_none (G : Subgroup (Equiv.Perm α)) : minSupport G = none ↔ G = ⊥ := by sorry
-/-- A returned minimum is attained and bounds every nonidentity support. -/
-theorem minSupport_eq_some (G : Subgroup (Equiv.Perm α)) (m : ℕ) :
-    minSupport G = some m ↔ (∃ σ ∈ G, σ ≠ 1 ∧ σ.support.card = m) ∧
-      ∀ σ ∈ G, σ ≠ 1 → m ≤ σ.support.card := by sorry
-/-- A minimum bounds the support of each nonidentity element of the group. -/
-theorem minSupport_le (G : Subgroup (Equiv.Perm α)) {m : ℕ} (hm : minSupport G = some m)
-    {σ : Equiv.Perm α} (hσ : σ ∈ G) (hne : σ ≠ 1) : m ≤ σ.support.card := by sorry
-/-- A permutation cannot move exactly one point. -/
-theorem minSupport_two_le (G : Subgroup (Equiv.Perm α)) {m : ℕ}
-    (hm : minSupport G = some m) : 2 ≤ m := by sorry
-
 /-- Points whose stabilizer cannot transport `x` to `y`. -/
 def orbitalDistinguishers (G : Subgroup (Equiv.Perm α)) (x y : α) : Finset α :=
   Finset.univ.filter (fun z => ¬ ∃ g : G, g • x = y ∧ g • z = z)
-/-- A trivial stabilizer cannot transport distinct points. -/
-example (x y : α) (h : x ≠ y) :
-    orbitalDistinguishers (⊥ : Subgroup (Equiv.Perm α)) x y = Finset.univ := by
-  ext z
-  simp [orbitalDistinguishers, h]
-/-- For the full symmetric group only the two endpoints distinguish a distinct pair. -/
-theorem orbitalDistinguishers_symmetric (x y : α) (h : x ≠ y) :
-    orbitalDistinguishers (⊤ : Subgroup (Equiv.Perm α)) x y = {x, y} := by sorry
 
-/-- The identity transports a point to itself while fixing every test point. -/
-example (G : Subgroup (Equiv.Perm α)) (x : α) : orbitalDistinguishers G x x = ∅ := by
-  ext z
-  simp only [orbitalDistinguishers, Finset.mem_filter, Finset.mem_univ,
-    true_and, Finset.notMem_empty, iff_false, not_not]
-  exact ⟨1, by simp, by simp⟩
-/-- Inverting a transport proves symmetry of the distinguisher set. -/
-theorem orbitalDistinguishers_symm (G : Subgroup (Equiv.Perm α)) (x y : α) :
-    orbitalDistinguishers G x y = orbitalDistinguishers G y x := by sorry
-/-- A point fixed by a transporting element cannot distinguish its input and output. -/
-theorem orbitalDistinguishers_subset_support (G : Subgroup (Equiv.Perm α))
-    {g : Equiv.Perm α} (hg : g ∈ G) (x : α) :
-    orbitalDistinguishers G x (g x) ⊆ g.support := by sorry
 /-- Babai's uniprimitive bound gives at least half the square root of the degree distinguishers. -/
 theorem babai_distinguishers (G : Subgroup (Equiv.Perm α))
     (hp : IsPreprimitive G α) (h2 : ¬ IsMultiplyPretransitive G α 2)
@@ -519,7 +294,4 @@ theorem galois_merging_certificate (A : ℤ[X]) (hA : A.Monic)
       σ ∈ BadTransitive ((A.map (Int.castRingHom ℚ)).rootSet
         (A.map (Int.castRingHom ℚ)).SplittingField) := by sorry
 
-/-! Further targets in the README include the definition APIs, fibre-cardinality identity,
-tuple-stabilizer restriction, uniform harmonic intervals, the individual anatomy bounds,
-orbital connectivity and block-orbit arithmetic. -/
 end TauCetiRoadmap.PolynomialGaloisGroupsPartII
