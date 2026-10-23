@@ -93,6 +93,7 @@ EffectiveBoundsCompactModels
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 CongruenceSpectralGap
+GeometricFreyMazur
 ClassicalArithmeticCompletion
 EllipticLegendreCharacterInterfaces
 EllipticCurvesPartII
