@@ -197,7 +197,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v1"
-cited_for = ["Layers 6, 8"]
+cited_for = ["1.10; 1.22–1.28; Layer 8"]
 
 [[source]]
 id = "DAGVIII"
@@ -293,4 +293,4 @@ sha256 = "b895a8abbb00e930ae8ea62d8afb9f7e8e86e19f39eb9182de03913aeb48b85b"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["6.0–6.3"]
+cited_for = ["6.1–6.3"]

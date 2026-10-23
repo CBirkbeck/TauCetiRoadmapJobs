@@ -1,23 +1,35 @@
 import Mathlib
 
 /-!
-# HabiroCohomologyFoundations: representative target signatures
+# HabiroCohomologyFoundations: target signatures
 
-The roadmap is `README.md`. This file records the definitions and theorem signatures of the
-roadmap that can be stated against the pinned Mathlib; it is not exhaustive. The cohomology
-theories themselves (Habiro completion and étale coefficient lifts, global and derived q-de
-Rham complexes, q-Hodge pairs, twisted q-Hodge filtrations, Habiro–Hodge descent and the
-comparison squares) live on enhanced carriers that are not at the pins. They are README
-targets, so Layers 0, 3 and 5–7 have no declarations here. In particular, the étale comparison
-of README §§4.21 and 4.28 uses its own coefficient construction, not a later ordinary model.
+The roadmap is README.md; this file is not the roadmap. It states the roadmap's
+headline theorems against the pinned APIs where their carriers are available:
+integer torus scaling and its invertible characterization (§1.23), and the integral
+prime cyclotomic decomposition (§8.2).
 
-Design choices made explicit here:
-* the Jackson operator is defined coefficientwise through `Polynomial.sum`, as a specialization with an arbitrary scalar q, so it makes sense
-  over any commutative ring and the exponent-zero term vanishes without any division;
-* the torus parameter `q` is a unit, so negative exponents of the Laurent torus are allowed,
-  and coordinate scaling is the algebra map that `AddMonoidAlgebra.lift` attaches to a
-  character;
-* the filtered coefficient relation uses the variable order `(q, β, t)`.
+The following headline families are not statable at the pins:
+* Habiro reflection, finite cyclotomic descent and marked étale coefficient lifts
+  (§§0.1–0.3) lack enhanced complete module categories and marked deformation carriers;
+* global, rational, local and framed q-de Rham comparisons and coherent étale descent
+  (§§1.4, 1.10–1.21) lack qΩ, q-PD envelopes and enhanced comparison functors;
+* torus quotient and equivariant perfect-complex descent (§§1.25–1.28) lack enhanced
+  homotopy fixed points, quotient prestacks and their QCoh categories;
+* the uniform envelope bound and animated qdR comparisons (§§1.8, 2.4–2.10) lack the
+  actual envelope maps, animated algebras and derived de Rham carriers;
+* twisted q-Witt deformation, Nygaard comparison and the functorial obstruction
+  (§§3.14–3.29) lack differential q-Witt systems and prismatic Nygaard objects;
+* the no-section theorem, symmetric monoidal Habiro descent, smooth décalage, étale
+  identification and conditional finite-projective transport (§§4.2, 4.19, 4.21–4.27)
+  lack the enhanced category of pairs, qHdg and its Habiro descent functor;
+* canonical locally admissible smooth and quasi-regular sections, scheme cohomology,
+  proper perfectness and powerful-integer pairs (§§5.8–5.26) lack the relevant
+  filtrations, enhanced functors and sheaf-valued cohomology objects;
+* the analytic comparison problem (§6) lacks a specified analytic Habiro stack,
+  solid coefficient category and completed localization;
+* equality of the canonical θ/de Rham and Witt/crystalline specialization maps
+  (§§8.18–8.19) lacks qΩ, AΩ and their enhanced specialization maps.
+No substitute statements encode these missing carriers.
 -/
 
 noncomputable section
@@ -30,78 +42,6 @@ namespace TauCetiRoadmap.HabiroCohomologyFoundations
 universe u
 
 /-! ## Layer 1: global q-de Rham and framed connections -/
-
-section Jackson
-
-variable {A : Type u} [CommRing A]
-
-/-- The polynomial Jackson operator, using the existing geometric sum for `[n]_q`.
-It is the arbitrary-scalar polynomial variant of the complete framed calculus imported from
-QWittVectors §§8.1–8.3; see QH §A.1 (pp.70–74). -/
-def qDiff (q : A) (f : A[X]) : A[X] :=
-  f.sum fun n a => C (a * ∑ j ∈ Finset.range n, q ^ j) * X ^ (n - 1)
-
-/-- The framed polynomial milestone: the Jackson operator is the divided difference,
-satisfies the twisted product rule, and specializes to the ordinary derivative.
-No division or regularity assumption is needed for this polynomial formula. -/
-theorem jackson_calculus (q : A) (f g : A[X]) :
-    f.comp (C q * X) - f = C (q - 1) * X * qDiff q f ∧
-    qDiff q (f * g) = qDiff q f * g.comp (C q * X) + f * qDiff q g ∧
-    qDiff (1 : A) f = derivative f := by
-  refine ⟨?_, ?_, by simp [qDiff, derivative_apply]⟩
-  · sorry
-  · sorry
-
--- Constants, including exponent zero, do not create a spurious X^(0-1) term.
-example (q a : A) : qDiff q (C a) = 0 := by
-  rw [qDiff, sum_C_index] <;> simp
-
--- At q=2 the cubic coefficient is 1+2+4=7, not the ordinary coefficient 3.
-example : qDiff (2 : ℤ) ((X : ℤ[X]) ^ 3) = C 7 * X ^ 2 ∧
-    qDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X ∧
-    qDiff (1 : ZMod 2) ((X : (ZMod 2)[X]) ^ 2) = 0 ∧
-    qDiff (1 : ℤ) (X : ℤ[X]) = 1 ∧
-    qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 2) =
-      C (C 2 + (X - 1) : ℤ[X]) * X ∧
-    qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 3) =
-      C (C 3 * X + (X - 1) ^ 2 : ℤ[X]) * X ^ 2 := by
-  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩
-  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-      norm_num [Finset.sum_range_succ]
-  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-      norm_num [Finset.sum_range_succ]
-  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-      norm_num [Finset.sum_range_succ]
-    decide
-  · rw [qDiff, sum_X_index] <;> norm_num [Finset.sum_range_succ]
-  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-      norm_num [Finset.sum_range_succ]
-    simp only [map_ofNat]
-    ring
-  · rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-      norm_num [Finset.sum_range_succ]
-    simp only [map_ofNat]
-    ring
-
-/-- The source's uniform denominator at h^n: QH A.11, pp.74–75.
-The empty product at n=0 is one. This does not construct an envelope map. -/
-def uniformDenominator (n : ℕ) : ℕ :=
-  ∏ p ∈ (Finset.range (n + 1)).filter Nat.Prime,
-    p ^ (2 * ∑ j ∈ Finset.range n, p ^ j)
-
-/-- The scalar denominator is nonzero; thus localizing at it is meaningful.
-The assertion about factorization of actual envelope maps is in README §1.8. -/
-theorem uniformDenominator_pos (n : ℕ) : 0 < uniformDenominator n := by
-  exact Finset.prod_pos fun p hp => pow_pos (Finset.mem_filter.mp hp).2.pos _
-
-example : uniformDenominator 0 = 1 ∧ uniformDenominator 1 = 1 := by
-  norm_num [uniformDenominator, Finset.prod_range_succ, Finset.prod_filter]
-
-example : uniformDenominator 2 = 64 ∧ uniformDenominator 3 = 2 ^ 14 * 3 ^ 26 := by
-  norm_num [uniformDenominator, Finset.sum_range_succ, Finset.prod_range_succ,
-    Finset.prod_filter]
-
-end Jackson
 
 section Torus
 
@@ -140,112 +80,7 @@ theorem torusScale_exists_unique (q : Bˣ) (a : Fin d → ℤ) :
         AddMonoidAlgebra.single m ((q ^ (∑ i, a i * m i) : Bˣ) : B) := by
   sorry
 
--- One coordinate: the monomial x⁻¹ acquires q⁻¹, which pins the sign of the exponent.
-example (q : Bˣ) :
-    torusScaleHom (d := 1) q (fun _ => 1) (AddMonoidAlgebra.single (fun _ => -1) 1) =
-      AddMonoidAlgebra.single (fun _ => -1) ((q⁻¹ : Bˣ) : B) ∧
-    torusScaleHom q ![2, -1] (AddMonoidAlgebra.single ![-1, 3] 1) =
-      AddMonoidAlgebra.single ![-1, 3] ((q ^ (-5 : ℤ) : Bˣ) : B) := by
-  simp [torusScaleHom, Fin.sum_univ_two]
-
-example (q : Bˣ) (b : B) :
-    torusScaleHom (d := 0) q 0 (AddMonoidAlgebra.single 0 b) =
-      AddMonoidAlgebra.single 0 b ∧
-    ∀ a m : Fin d → ℤ, torusScaleHom (1 : Bˣ) a (AddMonoidAlgebra.single m b) =
-      AddMonoidAlgebra.single m b := by
-  simp [torusScaleHom]
-
 end Torus
-
-/-! ## Layer 2: animation and filtered conventions -/
-
-section FilteredCoefficients
-
-variable {A : Type u} [CommRing A]
-
-/-- The relation defining the filtered coefficient ring, in variable order (q,β,t).
-Assign degrees (0,1,-1); the relation has total weighted degree zero.
-See QH Convention 1.22 (pp.10–11) and Paragraph 3.1 (p.20). -/
-def coefficientRelation (m : ℕ) : MvPolynomial (Fin 3) A :=
-  MvPolynomial.X 1 * MvPolynomial.X 2 - (MvPolynomial.X 0 ^ m - 1)
-
-/-- The coefficient relation vanishes precisely when βt=q^m−1.
-The roadmap uses m≥1; m=0 has a different coefficient ring and is not a
-cyclotomic reduction. -/
-theorem coefficientRelation_eval (m : ℕ) (q β t : A) :
-    MvPolynomial.eval (![q, β, t]) (coefficientRelation m) = 0 ↔
-      β * t = q ^ m - 1 := by
-  simp [coefficientRelation, sub_eq_zero]
-
-example : MvPolynomial.eval (![2, 3, 1] : Fin 3 → ℤ)
-    (coefficientRelation 2) = 0 ∧
-    MvPolynomial.eval (![2, 2, 1] : Fin 3 → ℤ)
-    (coefficientRelation 2) = -1 := by
-  norm_num [coefficientRelation, Matrix.cons_val_two]
-
-example : MvPolynomial.eval (![2, 1, 1] : Fin 3 → ℤ)
-    (coefficientRelation 1) = 0 ∧
-    MvPolynomial.eval (![2, 0, 0] : Fin 3 → ℤ)
-    (coefficientRelation 0) = 0 ∧
-    MvPolynomial.IsWeightedHomogeneous (![0, 1, -1] : Fin 3 → ℤ)
-      (MvPolynomial.X 1 : MvPolynomial (Fin 3) ℤ) 1 ∧
-    MvPolynomial.IsWeightedHomogeneous (![0, 1, -1] : Fin 3 → ℤ)
-      (MvPolynomial.X 2 : MvPolynomial (Fin 3) ℤ) (-1) := by
-  refine ⟨?_, ?_, ?_, ?_⟩
-  · norm_num [coefficientRelation, Matrix.cons_val_two]
-  · norm_num [coefficientRelation, Matrix.cons_val_two]
-  · exact MvPolynomial.isWeightedHomogeneous_X ℤ (![0, 1, -1] : Fin 3 → ℤ) 1
-  · exact MvPolynomial.isWeightedHomogeneous_X ℤ (![0, 1, -1] : Fin 3 → ℤ) 2
-
-end FilteredCoefficients
-
-/-! ## Layer 4: chosen q-Hodge pairs and Habiro descent -/
-
-section QHodgePolynomial
-
-variable {A : Type u} [CommRing A]
-
-/-- The coordinate q-Hodge differential is h times the Jackson operator.
-See QH Example 3.12 (p.25) and Paragraph 1.10 (p.6). -/
-def qHodgeDiff (q : A) (f : A[X]) : A[X] := C (q - 1) * qDiff q f
-
-/-- The framed q-Hodge polynomial milestone. The monomial formula includes n=0,
-and the specialization at q=1 is zero rather than the ordinary derivative. -/
-theorem qHodge_polynomial (q : A) (n : ℕ) (f : A[X]) :
-    qHodgeDiff q ((X : A[X]) ^ n) = C (q ^ n - 1) * X ^ (n - 1) ∧
-      qHodgeDiff (1 : A) f = 0 := by
-  refine ⟨?_, by simp [qHodgeDiff]⟩
-  sorry
-
-example (f : A[X]) (q a : A) :
-    qHodgeDiff (1 : A) f = 0 ∧ qHodgeDiff q (C a) = 0 := by
-  simp [qHodgeDiff, qDiff]
-
-example : qHodgeDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X ∧
-    (qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 2)).coeff 1 -
-      (qHodgeDiff (X : ℤ[X]) (X : (ℤ[X])[X])).coeff 0 = C 2 ∧
-    ((qDiff (2 : ℤ) ((X : ℤ[X]) ^ 2)).eval 1 +
-      (qHodgeDiff (2 : ℤ) (X : ℤ[X])).eval 1) = 4 := by
-  refine ⟨?_, ?_, ?_⟩
-  · rw [qHodgeDiff, qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-      norm_num [Finset.sum_range_succ]
-  · have htwo : qDiff (X : ℤ[X]) ((X : (ℤ[X])[X]) ^ 2) = C (1 + X) * X := by
-      rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-        norm_num [Finset.sum_range_succ]
-    have hone : qDiff (X : ℤ[X]) (X : (ℤ[X])[X]) = 1 := by
-      rw [qDiff, sum_X_index] <;> simp
-    rw [htwo, qHodgeDiff, hone]
-    simp
-    ring
-  · have htwo : qDiff (2 : ℤ) ((X : ℤ[X]) ^ 2) = C 3 * X := by
-      rw [qDiff, X_pow_eq_monomial, sum_monomial_index] <;>
-        norm_num [Finset.sum_range_succ]
-    have hone : qDiff (2 : ℤ) (X : ℤ[X]) = 1 := by
-      rw [qDiff, sum_X_index] <;> simp
-    rw [htwo, qHodgeDiff, hone]
-    norm_num
-
-end QHodgePolynomial
 
 /-! ## Layer 8: comparison squares and specialization compatibility -/
 
