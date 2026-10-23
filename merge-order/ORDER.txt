@@ -77,6 +77,7 @@ QWittVectors
 MotivesAndAlgebraicCycles
 ModularCurvesPartII
 AnticyclotomicLocalUnits
+InertAnticyclotomicCMMainConjecture
 LocalGaloisDeformationRings
 GlobalGaloisDeformations
 DiamondEtaleCohomology
