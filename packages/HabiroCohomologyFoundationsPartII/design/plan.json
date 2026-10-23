@@ -1,0 +1,88 @@
+{
+  "gaps": [
+    {
+      "slug": "spherical-base-data",
+      "needs": "Provide cyclotomic spherical bases and coherent compatible local lift data with the exact E₂ or torsion-free E₁-cover hypotheses and global gluing.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.1"
+    },
+    {
+      "slug": "local-trace-comparisons",
+      "needs": "Provide the qdR-to-even-TC⁻ comparison, the odd-prime E₂ and all-prime E₁ q-Hodge theorems and the torsion-free identity-cover preimage theorem.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.9"
+    },
+    {
+      "slug": "global-trace-pair",
+      "needs": "Under KU 4.18 and its prime-two E₁ addendum, provide global even gluing and the enhanced q-Hodge pair with its completion and Eₙ₋₁ monoidality.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.10"
+    },
+    {
+      "slug": "full-framed-trace",
+      "needs": "For every étale-framed smooth S over a torsion-free cyclotomic base, provide the full coordinate-filtration trace comparison without dimension-dependent prime inversion.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.10 (framed comparison)"
+    },
+    {
+      "slug": "framed-proof-exports",
+      "needs": "Provide the full-diagonal q-PD Čech proof model with normalized divided powers, its filtered totalisation and the comparison respecting all four pair clauses.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.10 (framed exports and proof model)"
+    },
+    {
+      "slug": "cyclonic-comparison",
+      "needs": "Provide cyclonic spectra, TC⁻⁽ᵐ⁾ at positive indices, divisibility maps and the β-periodic Habiro–Hodge comparison under KU 4.18, 2 invertible and (A₂).",
+      "supplier": "RefinedTraceMethods",
+      "section": "§§6.11–6.13"
+    },
+    {
+      "slug": "number-field-realisation",
+      "needs": "For a number field F and positive Δ divisible by 6 and disc(F), provide its unique étale spherical lift and the degree-zero genuine-fixed-point Habiro ring isomorphism.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.14"
+    },
+    {
+      "slug": "coherent-trace-interface",
+      "needs": "Export coherent circle and genuine finite-subgroup maps, complete even filtrations and their graded module comparisons at the specified multiplicative level.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§8.8"
+    },
+    {
+      "slug": "framed-resolution-comparison",
+      "needs": "For torsion-free A as in §1.1 and an étale-framed smooth S with Ŝ₂ 2-torsion free, compare the polynomial and perfect-root Čech resolutions at 2, preserving the map from qdR and all four pair clauses.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.10"
+    },
+    {
+      "slug": "framed-derived-commutative",
+      "needs": "For the fixed étale framing of §3.3, export the filtered derived commutative refinement obtained from the full-diagonal framed Čech totalisation, together with its underlying E∞ comparison.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.10"
+    },
+    {
+      "slug": "finite-coefficient-trace",
+      "needs": "For high-powered positive m, provide the completed finite-coefficient trace comparison of TC Corollary 3.8 with the exponent convention of §2.1.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§7.6"
+    },
+    {
+      "slug": "framed-pair-coherences",
+      "needs": "For the framed trace comparison on its full torsion-free domain, supply the zeroth-step, filtered-quotient, rational and p-adic rational identifications with all squares and higher compatibilities in the category of pairs.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.10"
+    },
+    {
+      "slug": "perfect-delta-spherical-lifts",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.1",
+      "needs": "For every prime p and p-complete perfect δ-ring B, provide its unique p-complete connective E∞ spherical lift functorial on δ-maps, including the lift of ℤ_p{x}_∞ → ℤ_p with x ↦ p."
+    },
+    {
+      "slug": "spherical-perfection-map",
+      "supplier": "RefinedTraceMethods",
+      "section": "§6.1",
+      "needs": "For a p-complete p-completely perfectly covered δ-ring A with the cyclotomic spherical base of KU 3.1, provide the unique p-complete connective E∞ spherical lift of its completed perfection A_∞ and an E∞-map S_A → S_{A_∞} reducing to A → A_∞."
+    }
+  ]
+}
