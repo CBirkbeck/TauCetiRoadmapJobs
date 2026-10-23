@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BorelRegulators"
+
+[[source]]
+id = "weil1961"
+authors = "André Weil; notes by Michel Demazure and Takashi Ono"
+title = "Adeles and Algebraic Groups"
+year = 1961
+locator_scheme = "theorem"
+locator = "§3.3, Theorem 3.3.1, as cited in Borel 1977, Proposition 2.4, p.619"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/833#issuecomment-6363558452"
