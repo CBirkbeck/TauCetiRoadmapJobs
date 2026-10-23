@@ -1,5 +1,6 @@
 # Global supplier order for our roadmaps (low -> high). A roadmap may consume only roadmaps ABOVE it in this file, roadmaps on main, and other authors' PRs. New roadmaps are inserted after their last supplier.
 SchemeAndStackFoundations
+LefschetzPencilsAndVanishingCyclesPartII
 StableHomotopyKTheory
 GeneralAlgebraicKTheory
 ResolutionOfSingularitiesCharacteristicZero
