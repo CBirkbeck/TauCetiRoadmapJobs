@@ -63,7 +63,6 @@ LocallyAnalyticDistributions
 GeometryOfNumbersAndQuadraticArithmetic
 HermitianKTheoryOfPoincareCategories
 KTheoryFiniteLocalFields
-ArithmeticKTheory
 K3BlochGroups
 HabiroCyclotomicCompletions
 QWittVectors
@@ -86,6 +85,7 @@ ArithmeticStatistics
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 ClassicalArithmeticCompletion
+ArithmeticKTheory
 K2SymbolsBrauerPartII
 ConformalMappingPartII
 EulerSystemsAndKolyvaginSystems
