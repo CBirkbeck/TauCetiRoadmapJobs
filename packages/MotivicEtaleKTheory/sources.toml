@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MotivicEtaleKTheory"
+
+[[source]]
+id = "Levine98"
+authors = "Marc Levine"
+title = "Mixed Motives"
+year = 1998
+locator_scheme = "chapter"
+locator = "Part I, Chapter II, Sections 2–3; Chapter III, Section 1; Chapter V, Section 2 (chapter-level reference only)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/834#issuecomment-6366629111"
