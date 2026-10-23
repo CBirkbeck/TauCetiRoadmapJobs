@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-454 mistakes recorded on the board: 221 misprints, 202 errors, 30 gaps, 1 unparsed bullets.
-Errata jobs have read the cited sources of 1 roadmaps; in those of 0 they found no mistake.
+456 mistakes recorded on the board: 222 misprints, 203 errors, 30 gaps, 1 unparsed bullets.
+Errata jobs have read the cited sources of 2 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -1269,6 +1269,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Sun, A generalization of Gauss–Kuzmin–Lévy theorem, arXiv:1705.02921v2
 
 - **Error** at proof of Theorem 2, pp.3–6: the source says a signed derivative contribution of the transfer branches serves as if it were an absolute bound; it should be a bound by absolute coefficients (at a=2, x=1 the branch derivative is −1/72); affects the proof. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Szego
+
+- **Error** at §4.62(1), after (4.62.2), printed p. 77 (Szego line 3382; Szego line 3393): the source says the analytic remainder has M₂(0) ≠ 0 for every admissible parameter, including α=0; it should be M₂(0) may vanish at α=0: continuity in β and values (log 2)/2, (log 2−1)/2 at β=0,1 imply a zero between them; affects a stated result. Found by LaguerreJacobi (ERRATA-LaguerreJacobi at 5aad605, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at §4.82(1), after (4.82.2), printed p. 89 (Szego line 3966): the source says the λ=1/2 specialization is the sum of the two Dirichlet–Mehler expressions (4.8.6) and (4.8.7); it should be their arithmetic mean: (4.82.2) assigns 1/π to each integral, whereas each earlier formula assigns 2/π; affects nothing. Found by LaguerreJacobi (ERRATA-LaguerreJacobi at 5aad605, 2026-10-23, codex gpt-6-astra).
 
 ## Taylor, Remarks on a conjecture of Fontaine and Mazur (2002)
 
