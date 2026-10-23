@@ -153,7 +153,6 @@ FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII
 DiamondsAndVStacksPartII
 PrismaticCohomologyPartIV
 ColemanIntegration
-Polylogarithms
 ArakelovGeometryAndAbelianHeights
 HeightsRationalPointsAndObstructions
 LogicAndDefinabilityInNumberTheory
@@ -223,6 +222,7 @@ MotivesAndAlgebraicCyclesPartII
 ChromaticHomotopyTheory
 ArithmeticKTheoryPartII
 BorelRegulators
+Polylogarithms
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
 GrossZagierAndArithmeticHeights
