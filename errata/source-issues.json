@@ -7984,10 +7984,778 @@
     "fix report for TauCetiRoadmap #814 (R2)"
    ],
    "batch": "out-reports-3.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Zaman (title not given in the report)",
+   "locator": "(6.7), (6.25), (6.29), pp. 145 and 151–152, the α = 5.8 row of the (T, α, C) table",
+   "says": "the real-secondary-zero (digamma) coefficient is at most 0.6881",
+   "should": "0.6882, since the expression evaluates to about 0.6881037 and was rounded down",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1126 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Lagarias–Li, arXiv:1506.06161v1",
+   "locator": "equation (2.5), the Lerch differential relations",
+   "says": "the partial differential equation with a positive sign on the s-term",
+   "should": "carry the negative sign, because the lowering operator sends −sΦ(z,s+1,c) to −sΦ(z,s,c)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1167 (E1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Ash–Brakenhoff–Zarrabi, Equality of polynomial and field discriminants (Experimental Math. 16, 2007)",
+   "locator": "the table of Theorem 6.8 (with Propositions 6.4 and 6.7), pp. 371–372",
+   "says": "the local density formula has exponent −n",
+   "should": "2−n, as the paper's own coefficient computation and concluding table give, consistent with ν₁(4,3) = 8/81",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1171 (E1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bhargava–Shankar–Wang, Squarefree values of polynomial discriminants I, arXiv:1611.09806v3",
+   "locator": "Theorem 4.4, (39), printed p. 22",
+   "says": "the summed tail bound without excluding polynomials of discriminant zero",
+   "should": "restricted to nonzero discriminant, which the proof's finite divisor-multiplicity count requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1174 (E1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Lemke Oliver–Wang–Wood, The average size of 3-torsion in class groups of 2-extensions (Forum Math. Pi 13, 2025), publisher version,",
+   "locator": "Lemma 2.1 (with Remark 2.2, pp. 7–9)",
+   "says": "one letter d for both the absolute degree (theta restriction) and the relative degree (base-discriminant exponent)",
+   "should": "N = [L:ℚ] in the theta restriction and d = [L:K] in the exponent, as in Lemma 2.4 and the proof",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1175 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bhargava–Skinner, arXiv:1401.0233v1",
+   "locator": "pp. 3 and 14 (the rank-one family, Lemma 15)",
+   "says": "a dyadic condition with 2-adic valuation three for A, admitting pairs such as (A,B) = (−136,16) that have no suitable integral model",
+   "should": "v₂(A) = 4 and B ≡ 16 mod 64, giving the integral model y² + y = x³ + (A/16)x + (B/16 − 1)/4",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1176 (R)",
+    "fix report for TauCetiRoadmap #1176 (R2)",
+    "fix report for TauCetiRoadmap #1176 (E1b)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bhargava–Klagsbrun–Lemke Oliver–Shnidman (BKLOS), three-isogeny Selmer groups in quadratic twist families,",
+   "locator": "Example 13.3 (universal-twist table)",
+   "says": "the order-three kernel generator is (0, 2√(t_k+27))",
+   "should": "(0, 4√(t_k+27)), since substitution gives y² = 16(t_k+27) and the tangent there meets the cubic triply",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1178 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Caraiani–Newton, arXiv:2301.10509",
+   "locator": "Lemma 6.1.7",
+   "says": "its \"respectively\" clause pairs p = 3 and p = 5 with the mod-5 and mod-3 switching inputs",
+   "should": "the reverse, p = 3 with the mod-3 input (Proposition 6.1.6) and p = 5 with the mod-5 input (Proposition 6.1.5)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1180 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory: Foundations (KL I)",
+   "locator": "the proof on pp. 128–129 (initial term of a recursion)",
+   "says": "the recursion starts from z₀ = 0",
+   "should": "as the evidence in the cited report requires (a zero start can only reconstruct zero; the residual recursion fixes the intended start)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1209 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory: Foundations (KL I)",
+   "locator": "the proof on pp. 128–129 (final element)",
+   "says": "the final element carries an R subscript",
+   "should": "carry an S subscript, since that element lies in the S ring",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1209 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory: Foundations (KL I)",
+   "locator": "the proof on pp. 128–129 (module coefficients)",
+   "says": "FÉt, a category of finite étale objects, serves as the scalar ring of a module",
+   "should": "the underlying period ring",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1209 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Burns–Venjakob, published version (EMS Press; title not given in the report)",
+   "locator": "formula (40), p. 202",
+   "says": "the interpolation formula uses the untwisted Gamma factor Γ(V̂)⁻¹",
+   "should": "the twisted factor Γ_L(Ŵ)⁻¹, i.e. Γ_ℚp(V̂)^(−dim ρ) for Artin twists, as in its own (48), p. 204",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1307 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Burns–Venjakob, arXiv:math/0511672v2",
+   "locator": "Remark 2.4 and Proposition 3.19",
+   "says": "the Euler-characteristic formulas with a positive valuation and an inverse absolute value, clashing with Remark 2.3's inverse-determinant convention",
+   "should": "χ_add = −ord_L(L*(ρ)) and χ_mult = |L*(ρ)|_p^[L:ℚ_p]",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1307 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Snowden, arXiv:0905.4266v1",
+   "locator": "the proof of Proposition 5.3.1",
+   "says": "the abelian variety has dimension 2[K:ℚ] while specifying rank-two torsion over K",
+   "should": "dimension [K:ℚ] (a Hilbert–Blumenthal abelian variety), consistent with dim V_ℓ(A) = 2 dim A",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1075 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Thorne, the paper cited as bigness.pdf (title not given in the report)",
+   "locator": "Lemma 6.4(i)–(ii), pp. 33–34",
+   "says": "level U in the sentence just before the numbered conclusions",
+   "should": "level V, which conclusion (ii) and its proof use",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1075 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Koshikawa, arXiv:2007.14037 (cited as K1; title not given)",
+   "locator": "Example 1.4 of the introduction",
+   "says": "the comparison applies to mixed-characteristic input over W(k), with no Cartier-type hypothesis",
+   "should": "a qcqs smooth Cartier-type log scheme over (k, ℕ→0) with k perfect, as its site setup and Theorem 6.3 require",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1080 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Khare–Thorne (cited as KT; arXiv manuscript, title not given in the reports)",
+   "locator": "§5, the normalization display between Lemmas 5.2 and 5.3",
+   "says": "e_i ↦ q^{i(n−i)/2}T_i, with a positive exponent",
+   "should": "e_i ↦ q^{−i(n−i)/2}T_i, matching the source's own Bernstein definition",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1081 (R)",
+    "fix report for TauCetiRoadmap #1081 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Berkane–Bordellès–Ramaré, explicit divisor-problem remainder paper (Math. Comp., printed pp. 1030–1043; title not given in the reports)",
+   "locator": "Lemma 8.3, p. 1040 (with (8.1)–(8.2), p. 1037)",
+   "says": "the scaled distance of the remainder integral from κ₇ is at most 0.302 for 1 ≤ T ≤ 10⁵",
+   "should": "start at T = 2, since at T = 1 the integral vanishes and the scaled value is κ₇ ≈ 0.4077",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1126 (N2)",
+    "fix report for TauCetiRoadmap #1126 (N3)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Datskovsky–Wright (scanned paper; title not given in the report)",
+   "locator": "p. 69, the transform of the integral-lattice indicator, against the pairing on p. 37 and the Fourier definition on p. 38",
+   "says": "the transform is the mass factor times δ(x1, 3x2, 3x3, x4)",
+   "should": "δ(x1, x2/3, x3/3, x4) with the same mass factor, the annihilator of their own pairing (witness x = (0, 1/3, 0, 0) over ℚ₃)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1167 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bhargava, The density of discriminants of quartic rings and fields (Annals 162, 2005)",
+   "locator": "pp. 1056–1057 (argument for Proposition 23), with the similar estimate invoked in Lemma 12, p. 1045",
+   "says": "a compressed floor-exponent bound on suborders of given index, making index-p³ counts independent of p (they are 3, 4, 6, 8 at p = 2, 3, 5, 7)",
+   "should": "p-dependent bounds such as index factor ≪ k^{1/2+ε} and Σ_{e≥1} s(p^e)/p^{2e} ≪ p^{−2} (Shankar–Tsimerman, arXiv:2503.02381v1, §11)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1174 (R)",
+    "fix report for TauCetiRoadmap #1174 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bhargava, The density of discriminants of quartic rings and fields (Annals 162, 2005)",
+   "locator": "the acceptability criterion for quadratic extensions of cubic fields (the report places it with Lemmas 25–26 and (34), p. 1057; exact locator not given)",
+   "says": "the source says, as an unrestricted converse, that square norm of the finite conductor makes the extension acceptable",
+   "should": "a necessary condition only: for the cubic field of discriminant −23 and E = K(i) the conductor norm is 64 but the closure group is S₃×C₂",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1174 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Caraiani–Newton, arXiv:2301.10509",
+   "locator": "Proposition 5.5.2",
+   "says": "an integral GL₂ Galois representation valued in the whole Hecke quotient T/J, from absolute irreducibility at one maximal ideal m",
+   "should": "localized, T_m = e_m T, J ⊂ T_m and ρ_m valued in GL₂(T_m/J), with the same nilpotence exponent (a product T₁ × T₂ shows the failure)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1182 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory: Foundations (KL I)",
+   "locator": "the definition of primitive elements",
+   "says": "a definition of primitive elements that the authors later corrected in Relative p-adic Hodge theory II, Appendix A, pp. 189–191",
+   "should": "as the evidence in the cited report requires (the KL II Appendix A correction, not restated there)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1209 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kedlaya–Liu, Relative p-adic Hodge theory: Foundations (KL I)",
+   "locator": "Lemma 5.5.5",
+   "says": "a version of the lemma that the authors later corrected in Relative p-adic Hodge theory II, Appendix A (pp. 189–191)",
+   "should": "as the evidence in the cited report requires (the KL II Appendix A correction, not restated there)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1209 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Weibel, The K-book",
+   "locator": "Chapter IV, Exercise 1.1 (the punctured Poincaré homology sphere)",
+   "says": "the free action on S³ comes from embedding the binary icosahedral group in O₃",
+   "should": "the binary icosahedral group Γ ⊂ SU(2) ≅ S³ acting by quaternion multiplication, with only its image A₅ lying in SO(3)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1227 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Fargues–Scholze, Geometrization of the local Langlands correspondence, arXiv:2102.13459",
+   "locator": "VI.11.2, p. 237",
+   "says": "the source says, in its argument on high Frobenius images and connected SL₂-subgroups containing a torus, a characteristic-two shortcut that the reports call erroneous",
+   "should": "as the evidence in the cited report requires (a separate modular argument keeping the characteristic-two normalizer distinction)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1235 (R)",
+    "fix report for TauCetiRoadmap #1235 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Mazur–Rubin, Kolyvagin systems (Mem. AMS, 2004)",
+   "locator": "Proposition 1.3.2(ii), p. 12, and the p = 2 branch of (H.4)",
+   "says": "Nβ = α^{d/p^k}, and transverse self-duality for every p",
+   "should": "Nβ = ξ^{d(d−1)/2}α^{d/p^k} with ξ ∈ μ_{p^k}, so self-duality needs p odd or p^k | d(d−1)/2 (witness (−3,−3)₃ = −1, 𝔽₂ coefficients)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1272 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Mazur–Rubin, Controlling Selmer groups in the higher core rank case (cited as MR16; arXiv:1312.4052)",
+   "locator": "hypothesis (H.4), its p = 2 branch",
+   "says": "transverse local conditions are self-dual also when p = 2",
+   "should": "self-dual only for odd p, or for p = 2 when (|𝔽^×|/2)·T = 0 (witness (−3,−3)₃ = −1 over ℚ₃)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1272 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Burns–Sakamoto–Sano (BSS II), arXiv:1805.08448v1",
+   "locator": "§3.1.3",
+   "says": "the dual of the transverse-modified condition F_a^b(n) is F_b^a(n), with no restriction at p = 2",
+   "should": "hold for odd p, and for p = 2 only when (|𝔽^×|/2)·T = 0 (witness (−3,−3)₃ = −1 over ℚ₃)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1272 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Silliman, arXiv:2009.14353v2",
+   "locator": "Theorem 8.10 (weights of Hasse lifts; construction in §8.4)",
+   "says": "the source says, as literally quantified, mod-p^m congruent Hasse lifts in weights not divisible by p^(m−1)(p−1), contradicting Katz Cor. 4.4.2 (witness p = 5, m = 2, w ≡ 4 mod 20)",
+   "should": "positive even multiples of (p−1)p^{N₀(F,p,m)}, with N₀ ≥ 1 at p = 2 and precision fixed before the weight",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1306 (R5)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kakde, arXiv:1008.0142v3",
+   "locator": "Lemma 118, second case, p. 87",
+   "says": "a trace-multiplier equality that fails (checked on C_{p²} × C_{p²})",
+   "should": "the multiplier (|H̃|/|P′|)·|⟨h⟩|·i_P², using compatible generators and |P′| dividing |H̃|, after which the lemma's containment survives",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1307 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Snowden, arXiv:0905.4266v1",
+   "locator": "the choice of the auxiliary CM quadratic field H (Propositions 5.3.1, 5.4.1 and §5.5, pp. 16–18)",
+   "says": "H need only split ℓ, which does not give H ⊄ F(ζ_ℓ) (ℓ = 3, F = ℚ(√6), H = ℚ(√−2))",
+   "should": "also require H ⊄ F(ζ_ℓ), always possible since only finitely many quadratic fields lie in F(ζ_ℓ)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1075 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Barnet-Lamb–Gee–Geraghty–Taylor (BLGGT), arXiv version 4 (title not given in the report)",
+   "locator": "§5.2, pp. 65–69",
+   "says": "the full centre of G_l⁰ is treated as an unramified torus, conflating it with the connected centre",
+   "should": "the connected centre Z(G_l⁰)⁰, with the finite central kernels bounded separately (SO₄ has full centre μ₂ and trivial connected centre)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1075 (R)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kisin, The Fontaine–Mazur conjecture for GL₂",
+   "locator": "published Lemma (2.2.11) (numbered (2.2.10) in the author's DVI)",
+   "says": "a multiplicity criterion that Gee–Kisin, arXiv:1208.3179v5, Appendix B, B.5, p. 39 explicitly replaces",
+   "should": "as the evidence in the cited report requires (the replacement statement in Gee–Kisin B.5)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1071 (N1)",
+    "fix report for TauCetiRoadmap #1071 (SUG)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, On torsion in the cohomology of locally symmetric varieties (2015, arXiv version)",
+   "locator": "Corollary III.2.6, p. 33",
+   "says": "equality of points over the test algebra R′, with no hypothesis on R′",
+   "should": "an inclusion in general, equality needing R′ integrally closed in R′[1/p] (witness p = 2, R′ = {(a,b) ∈ O_C² : a ≡ b mod 2})",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1084 (U1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Diao–Lan–Liu–Zhu, arXiv:1803.05786 (title not given in the report)",
+   "locator": "the proof of Lemma 5.2.3",
+   "says": "it argues with a maximal real-split subtorus, which outside the CM range need not be the minimal rank-removing quotient defined in §5.1",
+   "should": "argue directly with the §5.1 equal-rank quotient and its split/real-anisotropic decomposition",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1085 (N1)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "error",
+   "source": "Birkbeck–Heuer–Williams, overconvergent Hilbert modular forms (2019 arXiv version; full title not given)",
+   "locator": "Proposition 8.4, Lemmas 8.16, 8.19, 8.24 and Proposition 8.21",
+   "says": "the finite-level quotient maps are coarse torsors on the whole space at every level n",
+   "should": "quotient-stack torsors, or coarse torsors on free loci, whole-space only along a cofinal projectively neat tail (CM witness at n = 0)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1085 (R2)"
+   ],
+   "batch": "out-reports-2.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Soulé, Opérations en K-théorie algébrique (Canad. J. Math.)",
+   "locator": "the proof of Théorème 7, step 2, pp. 534–539",
+   "says": "the correction factor is k^(−d+dim S) with d the absolute ambient dimension, tacitly equating d − dim S with the relative dimension",
+   "should": "the componentwise relative cotangent rank, index dim S + rank Ω_{M/S}, giving k^(−j) on each stratum",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #1229 (N1)",
+    "fix report for TauCetiRoadmap #1229 (N2)"
+   ],
+   "batch": "out-reports-2.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T12:15:13Z",
+ "updated": "2026-10-23T12:22:36Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
