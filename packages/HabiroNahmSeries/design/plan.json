@@ -1,0 +1,46 @@
+{
+  "gaps": [
+    {
+      "slug": "integral-bloch-comparisons",
+      "supplier": "K3BlochGroups",
+      "section": "Layers 3–4 and 6",
+      "needs": "Supply the CGZ quotient, integral convention and Suslin comparisons, rational restriction and regulator injectivity, and explicit relation certificates, importing the antisymmetric carrier from ColemanIntegration §L2.Fb and regulator descent from Polylogarithms §2.1."
+    },
+    {
+      "slug": "finite-chern-cyclic",
+      "supplier": "HabiroNumberFields",
+      "section": "Layers 0–1",
+      "needs": "Supply the good-order exceptional integer, finite-Chern injectivity with roots-of-unity restrictions, cyclic products, five-term and orientation comparisons independently of HabiroNahmSeries."
+    },
+    {
+      "slug": "habiro-modules-descent",
+      "supplier": "HabiroNumberFields",
+      "section": "Layers 2–3",
+      "needs": "Supply number-field Habiro rings and K₃ modules with integral first-jet generator criterion, Kummer and effective global descent, tensor and inversion laws; their complete-module scalar extension is consumed from HabiroRings §§6.1–6.2."
+    },
+    {
+      "slug": "etale-habiro-hodge-degree-zero",
+      "supplier": "HabiroCohomologyFoundations",
+      "section": "Layers 4–5",
+      "needs": "Supply, for localized number rings and their finite étale coefficient algebras, the degree-zero étale Habiro–Hodge equivalence with the relative Habiro ring, preserving root Taylor maps, Frobenius and q=1 completion."
+    },
+    {
+      "slug": "local-k3-regulator",
+      "supplier": "PadicHodgeRegulators",
+      "section": "D.1, D.3 and D.4",
+      "needs": "Supply the unramified p>3 integral K₃ regulator lattice and its Bloch, Coleman and root-of-unity comparisons."
+    },
+    {
+      "slug": "higher-habiro-comparison",
+      "supplier": "HabiroCohomologyFoundations",
+      "section": "Layers 5, 7 and 9",
+      "needs": "Supply the GW affine top-form comparison in its actual cohomological degree with root, Frobenius, analytic-radius and base-change conditions."
+    },
+    {
+      "slug": "qseries-root-modularity",
+      "supplier": "QSeriesPartitionsAndMockModularForms",
+      "section": "§§3.1, 3.3 and 5.2 (extensions)",
+      "needs": "Supply general q-Lucas evaluation, Andrews–Gordon in Nahm-matrix form and all-cusp modular theta-quotient transformations of the normalized Rogers–Ramanujan functions."
+    }
+  ]
+}
