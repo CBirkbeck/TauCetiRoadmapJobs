@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "slug": "borel-period-contract",
+      "needs": "Supply the rational Borel regulator image and covolume and the totally-real even-weight primitive-period theorem, including its Tamagawa input.",
+      "supplier": "BorelRegulators",
+      "section": "Layers 3–5; §7.1"
+    },
+    {
+      "slug": "universal-deligne-contract",
+      "needs": "Using KTheoryFiniteLocalFields §3.0a’s shared BlochCycle/HigherChow complexes and localization maps, supply the cubical and mixed-model comparison, rational Chern character and restriction-natural universal Deligne regulator for smooth projective varieties over subfields of ℂ and their open complements, with the logarithmic product, compactification independence and the support-semipurity input of §5.2.",
+      "supplier": "MotivicEtaleKTheory",
+      "section": "Layer 4; §§9.1, 12.2"
+    },
+    {
+      "slug": "rational-hspace-unrestricted",
+      "needs": "Extend the rational Hurewicz identification with primitive homology to path-connected homotopy-associative H-spaces of CW type without finite-type rational homology, with naturality.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "§3.37"
+    }
+  ]
+}

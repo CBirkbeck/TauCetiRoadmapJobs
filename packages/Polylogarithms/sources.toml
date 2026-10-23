@@ -1,0 +1,326 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Polylogarithms"
+
+[[source]]
+id = "G04"
+authors = "Alexander B. Goncharov"
+title = "Polylogarithms, regulators, and Arakelov motivic complexes"
+year = 2004
+arxiv = "math/0207036v3"
+locator_scheme = "section"
+locator = "Sections 2, 5, 6; Theorem 6.14; Proposition 6.17 (v3 pagination)"
+url = "https://arxiv.org/abs/math/0207036v3"
+fetched_from = "https://arxiv.org/pdf/math/0207036v3"
+fetched_at = "2026-10-22T11:37:28Z"
+sha256 = "ac729924bca286113e8aae593f6012bf72c77d935178606e7a2be677bd3440db"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv math/0207036v3 (2004), 70 pages; all locators use preprint pagination, not JAMS 18 (2005)."
+cited_for = ["Exact supplier contracts", "2.1", "2.2", "2.3", "2.4", "3.2", "3.3", "3.7", "5.3", "5.4", "5.5", "5.10", "5.11", "5.12", "5.13", "5.14", "5.15", "5.16", "5.17"]
+
+[[source]]
+id = "Z90"
+year = 1990
+title = "Polylogarithms, Dedekind zeta functions and the algebraic K-theory of fields"
+authors = "Don Zagier"
+locator_scheme = "section"
+locator = "Sections 7–8; equations (33)–(36), Proposition 3, pp.413–417"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/scanned/PolylogsDedekindZetaAndKTheory/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/scanned/PolylogsDedekindZetaAndKTheory/fulltext.pdf"
+fetched_at = "2026-10-22T11:29:26Z"
+sha256 = "96bbb5f616dfac26e28c1da4657b2c5ae9cefa462213279797ccd44b71e1bb19"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.4", "6.2"]
+version_note = "Author manuscript dated 1990; published 1991, pp.391–430; OCR text of author scan."
+
+[[source]]
+id = "Z07"
+year = 2007
+title = "The dilogarithm function"
+authors = "Don Zagier"
+locator_scheme = "section"
+locator = "Sections 1–5; equation (2), pp.10–11"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/978-3-540-30308-4_1/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/978-3-540-30308-4_1/fulltext.pdf"
+fetched_at = "2026-10-22T11:29:28Z"
+sha256 = "05079cf525c6ba0f0d00b5c0d948bad202d291bc4910149d5d4abbab0515e7a0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.1", "2.4", "2.5", "5.13"]
+
+[[source]]
+id = "G94"
+year = 1994
+title = "Polylogarithms and motivic Galois groups"
+authors = "Alexander B. Goncharov"
+locator_scheme = "section"
+locator = "Sections 3.1–3.10, Theorems 3.12, 5.11 (manuscript pagination)"
+url = "https://sasha-goncharov.github.io/SeattleMotives.pdf"
+fetched_from = "https://sasha-goncharov.github.io/SeattleMotives.pdf"
+fetched_at = "2026-10-22T11:29:29Z"
+sha256 = "e664e340573fcadd339e46c8d4a105a00f4cae0700622884455c4c9c60c55225"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["3.4", "3.5", "3.6", "3.7", "3.8"]
+
+[[source]]
+id = "G95"
+year = 1995
+title = "Geometry of configurations, polylogarithms, and motivic cohomology"
+authors = "Alexander B. Goncharov"
+locator_scheme = "section"
+locator = "Theorem 1.1; Sections 1, 3, 5–9; Theorem A, diagram (5.20), p.293"
+url = "https://sasha-goncharov.github.io/Advances1995.pdf"
+fetched_from = "https://sasha-goncharov.github.io/Advances1995.pdf"
+fetched_at = "2026-10-22T11:37:15Z"
+sha256 = "434fd9093d2e27e96fae240f8f591ca532baa2f9cc7cdfeb8bc087f5235f5344"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["3.1", "3.2", "3.5", "3.6", "3.7", "3.8", "4.1", "4.2", "4.3", "4.4", "4.7"]
+version_note = "Author scan of Advances in Mathematics 114 (1995), pp.197–318; OCR text."
+
+[[source]]
+id = "MIL"
+year = 2002
+title = "The Geometry and Topology of Three-Manifolds, Chapter 7: Computation of volume"
+authors = "John W. Milnor; William P. Thurston"
+locator_scheme = "section"
+locator = "Lemmas 7.1.2–7.1.4, Theorem 7.2.1, Lemma 7.2.2, pp.157–170"
+url = "https://library.slmath.org/books/gt3m/PDF/7.pdf"
+fetched_from = "https://library.slmath.org/books/gt3m/PDF/7.pdf"
+fetched_at = "2026-10-22T11:37:16Z"
+sha256 = "a42ef9fc5884005ad72e559e6d59ccadce447dd47ecf985b0ee44b7d17c5a683"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.4"]
+version_note = "Electronic edition 1.1 (2002), Chapter 7 of the 1980 notes; printed pp.157–170."
+
+[[source]]
+id = "SV"
+year = 2000
+title = "Relative cycles and Chow sheaves"
+authors = "Andrei Suslin; Vladimir Voevodsky"
+locator_scheme = "section"
+locator = "Definition 3.1.3; Theorems 3.3.1, 4.2.2, 4.4.11; Corollary 4.4.13"
+url = "https://www.math.ias.edu/vladimir/sites/math.ias.edu.vladimir/files/s2.pdf"
+fetched_from = "https://www.math.ias.edu/vladimir/sites/math.ias.edu.vladimir/files/s2.pdf"
+fetched_at = "2026-10-22T11:37:17Z"
+sha256 = "4f2cfb7162e9ca5febd9010ffca3a3d1ebe3e34b7031c6d514bd02b00e53ce92"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.3"]
+
+[[source]]
+id = "G00"
+authors = "Alexander B. Goncharov"
+title = "Explicit regulator maps on polylogarithmic motivic complexes"
+year = 2000
+arxiv = "math/0003086v1"
+locator_scheme = "section"
+locator = "Proposition 4.1, equation (28), pp.17–20; beta generating function p.3"
+url = "https://arxiv.org/abs/math/0003086v1"
+fetched_from = "https://arxiv.org/pdf/math/0003086v1"
+fetched_at = "2026-10-22T11:37:21Z"
+sha256 = "47a616bada4abeaee1672679593e5b69e6d293b2cf98e08de6b726072f9a69ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv math/0003086v1 (2000); printed pages 0–28."
+cited_for = ["5.14", "5.17", "6.2"]
+
+[[source]]
+id = "GR"
+authors = "Alexander B. Goncharov; Daniil Rudenko"
+title = "Motivic correlators, cluster varieties, and Zagier’s conjecture on ζF(4)"
+year = 2026
+arxiv = "1803.08585v5"
+locator_scheme = "section"
+locator = "Theorems 1.1–1.2; Sections 1.1–1.2, 5.1, 7.1, 9.3; equations (142), (144)"
+url = "https://arxiv.org/abs/1803.08585v5"
+fetched_from = "https://arxiv.org/pdf/1803.08585v5"
+fetched_at = "2026-10-22T11:37:35Z"
+sha256 = "d7694f411ff344af087768a951a871aef6ebd4bbed571af6d6c045560d6ed8df"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv 1803.08585v5 (2026), 111 pages; v5 pagination."
+cited_for = ["3.1", "3.2", "3.4", "3.5", "3.6", "3.7", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7"]
+
+[[source]]
+id = "BFT"
+authors = "José Ignacio Burgos Gil; Elisenda Feliu; Yuichiro Takeda"
+title = "On Goncharov’s regulator and higher arithmetic Chow groups"
+year = 2009
+arxiv = "0909.5296v1"
+locator_scheme = "section"
+locator = "Sections 2–6; equations (5.1)–(5.2), (6.3)"
+url = "https://arxiv.org/abs/0909.5296v1"
+fetched_from = "https://arxiv.org/pdf/0909.5296v1"
+fetched_at = "2026-10-22T11:37:39Z"
+sha256 = "63155506c01244497f732d6d57cf78b979a18cbbe24cbca8fade1da99f359cd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["5.2", "5.7", "5.8", "5.9", "5.10"]
+
+[[source]]
+id = "D96"
+authors = "Alexander B. Goncharov"
+title = "Deninger’s conjecture on L-functions of elliptic curves at s=3"
+year = 1996
+arxiv = "alg-geom/9512016v2"
+locator_scheme = "section"
+locator = "Theorem 2.1, p.7; Theorems 3.3–3.4, pp.20–21"
+url = "https://arxiv.org/abs/alg-geom/9512016v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9512016v2"
+fetched_at = "2026-10-22T11:37:45Z"
+sha256 = "8e0798f9d67fbbd4ca14a2da386e130e8efb5785a5f01304ac3c268a6e0d3712"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv alg-geom/9512016v2 (1996); printed pages 0–36."
+cited_for = ["5.13", "5.17", "5.18"]
+
+[[source]]
+id = "DEM"
+year = 2012
+title = "Complex Analytic and Differential Geometry"
+authors = "Jean-Pierre Demailly"
+locator_scheme = "section"
+locator = "Chapters I and III; Theorem 2.15, p.143; Corollary 2.11, p.141; Theorem 2.24, p.20"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-10-22T11:37:55Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.1", "5.2"]
+version_note = "Version dated 21 June 2012; 455 pages."
+
+[[source]]
+id = "BUR"
+year = 1994
+title = "Arithmetic Chow rings and Deligne–Beilinson cohomology"
+authors = "José Ignacio Burgos Gil"
+locator_scheme = "section"
+locator = "Chapter II, Proposition 3.1, Corollary 3.8, Theorem 4.3, Lemma 4.5, pp.73–81"
+url = "https://www.icmat.es/miembros/burgos/files/tesis.pdf"
+fetched_from = "https://www.icmat.es/miembros/burgos/files/tesis.pdf"
+fetched_at = "2026-10-22T11:37:58Z"
+sha256 = "65a531b4ed7cc8d0f1318645aaa7003a0d685e65ae7706fc01249fdb3fe8457c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.3", "5.12"]
+version_note = "1994 doctoral thesis, Anillos de Chow aritmeticos; Chapter II supplies the cited English Green-form discussion."
+
+[[source]]
+id = "NEK"
+year = 1994
+title = "Beilinson’s conjectures"
+authors = "Jan Nekovář"
+locator_scheme = "section"
+locator = "Sections 7.3–7.5, equations (7.3.2), (7.4.1), pp.23–25"
+url = "https://math.stanford.edu/~conrad/BSDseminar/refs/BeilinsonintroII.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/BSDseminar/refs/BeilinsonintroII.pdf"
+fetched_at = "2026-10-22T11:37:59Z"
+sha256 = "3b6ba59cb8338b59fd8206318b2a91c3588ca09545522d6fb33717287924eacd"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.13"]
+
+[[source]]
+id = "SHA"
+year = "undated"
+title = "Iwasawa theory"
+authors = "Romyar Sharifi"
+locator_scheme = "section"
+locator = "Section 1.5, Proposition 1.5.6, Theorem 1.5.7, Definitions 1.5.9–1.5.10, Remark 1.5.11, pp.31–32"
+url = "https://www.math.ucla.edu/~sharifi/iwasawa.pdf"
+fetched_from = "https://www.math.ucla.edu/~sharifi/notes/iwasawa.pdf"
+fetched_at = "2026-10-22T11:38:08Z"
+sha256 = "e5308be4c3d9ded6002cefb50df64b31f62b584b6ff68be7f21dc939f2508c26"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.1"]
+version_note = "Undated 189-page author notes; fetched author URL redirects to notes/iwasawa.pdf."
+
+[[source]]
+id = "WEI"
+year = 2013
+title = "The K-book, Chapter V: The fundamental theorems of higher K-theory"
+authors = "Charles Weibel"
+locator_scheme = "section"
+locator = "Section 6, Theorems 6.2, 6.7, Corollary 6.7.1, Lemma 6.7.3, equation (6.6), pp.39–43"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.V.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.V.pdf"
+fetched_at = "2026-10-22T11:38:11Z"
+sha256 = "52dcc8ee3a1764e5ea309c59f093ac8e2a1ea64f3b94bacc05e6a2b6125b1da8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.2"]
+version_note = "Author Chapter V, chapter-local pagination pp.39–43."
+
+[[source]]
+id = "WEI4"
+year = 2013
+title = "The K-book, Chapter IV: Definitions of higher K-theory"
+authors = "Charles Weibel"
+locator_scheme = "section"
+locator = "Section 1, Rank of K_n over number fields, pp.11–12"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
+fetched_at = "2026-10-22T11:38:14Z"
+sha256 = "9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.2", "3.7", "3.8"]
+version_note = "Author Chapter IV, chapter-local pagination pp.11–12."
+
+[[source]]
+id = "BOR77"
+year = 1977
+title = "Cohomologie de SL_n et valeurs de fonctions zeta aux points entiers"
+authors = "Armand Borel"
+locator_scheme = "section"
+locator = "Remark 6.3, p.632"
+url = "https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0.pdf"
+fetched_at = "2026-10-22T11:38:15Z"
+sha256 = "f27dc4622583423cdcfc66671cffd38904f3ecf4d97b8b1352fcf3dbf3a295b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts", "4.7"]
+
+[[source]]
+id = "SCH"
+year = 1988
+title = "Introduction to the Beilinson conjectures"
+authors = "Peter Schneider"
+locator_scheme = "section"
+locator = "Section 4, p.28"
+url = "https://math.stanford.edu/~conrad/BSDseminar/refs/BeilinsonintroI.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/BSDseminar/refs/BeilinsonintroI.pdf"
+fetched_at = "2026-10-22T11:39:58Z"
+sha256 = "9693e4a34e8aa8d6c92899b2ba2ce9735615de4758d536d8dc25d9b20f9ea88b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.13"]
+version_note = "Schneider chapter, 1988, printed pp.1–35; institutional seminar copy."
+

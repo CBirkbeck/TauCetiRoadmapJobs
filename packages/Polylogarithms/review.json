@@ -1,0 +1,8 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-REV-PKG-Polylogarithms~codex2",
+    "date": "2026-10-20",
+    "notes": "Independent review after FIX-PKG-Polylogarithms~adv2; G1-G3 closed at roadmap level. Audited all 169 input targets, 42 subsections, twelve flagged boundaries and fifteen additional source locators. Verified PolylogarithmFunctions ownership, downstream weight-four tasks, no PeriodsAndSpecialValues supplier and actual K3 V.3/V.4 contracts. Corrected weight-two rigidity attribution with a local proof route; current K2/SchemeK residue and specialization contracts; forward primitive Hurewicz/rank-filtration and supported-regulator cone adapters; Chow-form index, degree and period factor; public Leopoldt sources and BFT/G04 locators. Exact rational configuration checks include all 720 permutations. lean-check exits 0 with twelve sorry warnings only; twelve theorem signatures and 22 proved examples, no sorry-bodied data. Six packet checks, shape/JSON/TOML/intake checks and diff checks pass. Remaining formalization obligations and conjectures are explicit; see the independent report and handoff."
+  }
+}
