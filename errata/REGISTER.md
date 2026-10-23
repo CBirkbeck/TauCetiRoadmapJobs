@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-1194 mistakes recorded on the board: 787 misprints, 313 errors, 90 gaps, 4 unparsed bullets.
+1210 mistakes recorded on the board: 798 misprints, 315 errors, 92 gaps, 5 unparsed bullets.
 Errata jobs have read the cited sources of 9 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -12,6 +12,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (SchemeAndStackFoundationsPartII, #420 at accb0a0, 2026-10-23): Misprint** in CS24 at proof of Theorem 5.7.2, printed p.79: the list of three descent assertions repeats the second equation label; the third should be (5.7.2.3); affects nothing.
 - **Unparsed** (SchemeAndStackFoundationsPartII, #420 at accb0a0, 2026-10-23): Misprint** in DJ at §§2.2, 2.8 and 2.12, printed pp.1–2: three cross-references print as unresolved placeholders; they should cite limits of étale cohomology, the weight decomposition for a diagonalizable group, and quasi-coherent limits on Noetherian stacks; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "accb0a0", "job": "REV-DESIGN-SchemeAndStackFoundationsPartII", "model": "opus", "worker": "fable-rev14"} -->
 - **Unparsed** (PadicHodgeTheoryPartII, #391 at 6502997, 2026-10-23): Misprint** in GLX26 at the justification of (5.34), p. 843: the source moves φ₀ across the pairing with the same exponent; equivariance gives the inverse exponent, and the full-period sums agree; affects nothing.
+- **Unparsed** (SolidAnalyticRings, #943 at 2e18779, 2026-10-23): Misprint** in RC at Proposition 3.2.5, proof of item (7), printed p.19 (RC line 874): the displayed isomorphism and the following clause name the solid complex B; it was introduced as C, and should be C; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "2e18779", "job": "REV-PKG-SolidAnalyticRings", "model": "opus", "worker": "fable-rev23"} -->
 
 ## Abe, arXiv preprint v1
 
@@ -1412,8 +1413,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## RC
 
 - **Error** at Lemma 3.3.2, p.20 (RC line 923): the source says every light profinite S has a map from P to ℤ[S] inverted by solidification; it should be stated for infinite S only, since for S a point the solidifications are ∏_ℕℤ and ℤ; affects nothing. Found by SolidAnalyticRings (#910 at 802490a, 2026-10-23, claude opus).
+- **Misprint** at Proposition 3.2.5, proof of item (1), printed p.18 (RC line 812): the source says the second coordinate of (1−Shift*)a is written as a₁ minus a₁; it should be a₁ minus a₂; affects nothing. Found by SolidAnalyticRings (#943 at 2e18779, 2026-10-23, claude opus).
+- **Misprint** at Proposition 3.2.5, proof of item (4), printed p.19 (RC line 866): the source says the relation x_n = x_{2n+1} is asserted for all integers n; it should be for all natural numbers n; affects nothing. Found by SolidAnalyticRings (#943 at 2e18779, 2026-10-23, claude opus).
 - **Misprint** at Theorem 2.3.3(3), p.12 (RC line 541): the source says the internally projective object is written with a disjoint-union sign; it should be the one-point compactification ℕ∪{∞}, as the proof at RC line 548 uses; affects nothing. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
 - **Misprint** at Theorem 2.3.3(3), p.12 (RC line 541): the source says the internally projective object is free on a disjoint union of ℕ and a point; it should be ℕ∪{∞}, as the proof uses; affects nothing. Found by SolidAnalyticRings (#910 at 802490a, 2026-10-23, claude opus).
+- **Misprint** at Theorem 2.3.3(3), proof, printed p.12 (RC lines 550, 555–556): the source says the map g is given source Z[S]⊗N, and the parameter space is written S×(N×{∞}); it should be Z[S]⊗P and S×(N∪{∞}); affects nothing. Found by SolidAnalyticRings (#943 at 2e18779, 2026-10-23, claude opus).
 - **Misprint** at the proof of Proposition 3.2.5(1), p.18 (RC line 812): the source says the second coordinate of (1−Shift*) of a sequence is a₁ minus a₁; it should be a₁ minus a₂; affects nothing. Found by SolidAnalyticRings (#910 at 802490a, 2026-10-23, claude opus).
 - **Misprint** at the proof of Proposition 3.2.5(7), p.19 (RC lines 874–875): the source says the solid target is B in the displayed isomorphism and conclusion; it should be C, as introduced; affects nothing. Found by SolidAnalyticRings (#910 at 802490a, 2026-10-23, claude opus).
 - **Misprint** at the proof of Proposition 3.2.5, item (1), p.18 (RC line 812): the source says the second coordinate of (1−Shift*) applied to a sequence is a₁ minus itself; it should be a₁ minus a₂; affects nothing; (the stated inverse is correct). Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
@@ -1444,6 +1448,21 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rubin, Euler Systems (AWS draft version)
 
 - **Misprint** at Appendix D, proof of Lemma D.1.4, printed pp.164–166: the source says the trace from level mp^{n+1} to mp^n sends x_{mp^{n+1}} to x_{mp^n}; it should be p·x_{mp^n}, as Proposition D.1.3 and the D.1.5 calculations force (p=3: Tr x₃ = 2 = 3x₁); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## S16
+
+- **Misprint** at Corollary 1.4(i), p.301: the source says the nilpotent-cone count carries q to the power 2(1+(g−1)r²); it should be q to the power 1+(g−1)r² (rank one then gives P(1)); affects a stated result. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at Corollary 1.4(ii), p.301: the source says the top cohomology of the cone and of the Higgs space sits in degree 1+(g−1)r²; it should be degree 2(1+(g−1)r²); affects a stated result. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at Corollary 1.9 examples, p.306: the source says the rank-three value is A_{g,3,d}; it should be A_{g,3,d}(0), the origin value; affects nothing. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at Corollary 1.9, p.305: the source says the origin constant is the plain sum over μ_r of ξ^{−d} times the residues of A⁰dz/z; it should be the negative of that sum (rank one otherwise gives −1); affects a stated result. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at Lemma 2.4, equation (2.1), p.309: the source says the diagonal radical block is n_i copies of rad End(M_i); it should be all n_i×n_i matrices over rad End(M_i); affects the proof. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Error** at Lemma 6.5, p.345: the source says the moment map on the semistable quotient is submersive onto all of g*; it should be onto (Lie(G/G_m))*, since every value kills (Id,Id); affects the proof. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at Proposition 5.1, p.322: the source says X is indexed in reversed rank order and Y has variables z_r,…,z_1; it should be the index order and variables of the definitions just given; affects nothing. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Gap** at Theorem 7.1, p.353: the source says parabolic counts lie in Q[T_g]^{W_g}, though its parallel proof gives K_g and p.300 calls even the unmarked case conjectural; it should be K_g; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d9d4c34", "job": "REV-PKG-CountingBundlesAndHallAlgebrasOfCurves", "model": "opus", "worker": "fable-rev24"} -->. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at equations (6.11)–(6.12), pp.351–352: the source says each stratum contributes compact cohomology shifted by its affine fibre rank; it should be shifted by twice that rank; affects the proof. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Gap** at proof of Lemma 6.1, p.339: the source says kernels of L₁⊗V↠F have finitely many HN types for arbitrary V, whose rank is unbounded; it should be a fixed source dimension, or the uniform bound μ_min≥−d−(r+1)d₁; affects the proof. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Misprint** at §4.2, p.316: the source says the bundle–torsion coefficient in the decomposition of 1_γ is q^{−l/2}; it should be q^{−rl/2}, the Euler form being rl; affects the proof. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
+- **Error** at §6.4, p.339: the source says the open where both frame maps are isomorphisms forces strong generation by L₁; it should be also require the L₁ part of the quotient map to be surjective (genus-two base-point example); affects the proof. Found by CountingBundlesAndHallAlgebrasOfCurves (#937 at d9d4c34, 2026-10-23, claude opus).
 
 ## Saito, Hilbert modular forms and p-adic Hodge theory, arXiv:math/0612077v2
 
