@@ -86,6 +86,7 @@ AnalyticNumberTheory
 ArithmeticStatistics
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
+CongruenceSpectralGap
 ClassicalArithmeticCompletion
 ArithmeticKTheory
 K3BlochGroups
