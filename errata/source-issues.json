@@ -9305,10 +9305,496 @@
     "report-875-decycle-drop.md"
    ],
    "batch": "out-reports-5.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Fontaine, Il n'y a pas de variété abélienne sur Z (Invent. Math. 1985)",
+   "locator": "the boundary formula just before §1.6",
+   "says": "at m = u − 1/e one has eψ(m) = e·u − 1/d",
+   "should": "eψ(m) = e·i − 1/d, since the source's own inverse identity gives ψ(u − 1/e) = i − 1/(ed) (8/3, not 35/3, for ℚ₃(ζ₉))",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #879 (N6)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Fontaine, Il n'y a pas de variété abélienne sur Z (Invent. Math. 1985)",
+   "locator": "§1.6",
+   "says": "its criterion on ideals as an equivalence in terms of a real cutoff m, which fails over ℚ₃ with m = 1/4",
+   "should": "give only sufficient bounds in m, with the exact equivalence stated through the least nonzero valuation c of the ideal",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #879 (R)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Breuil, Une application du corps des normes (1999)",
+   "locator": "§2.2",
+   "says": "the source calls a Frobenius module étale when its semilinear Frobenius is injective, but over an imperfect field such as F_p(t) an injective Frobenius can have singular linearisation",
+   "should": "require the linearised Frobenius to be bijective",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #879 (R)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Savitt, arXiv:math/0404327v3",
+   "locator": "the construction of the Weil–Deligne representation (no printed page given)",
+   "says": "one p-power Frobenius per relative Frobenius, dropping the residue-degree factor",
+   "should": "r(g) = g_D·φ^(−a(g)) with a(g) = residue degree × α(g), which makes r(g) linear and gives rNr⁻¹ = |g|⁻¹N",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #879 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "gap",
+   "source": "de Jong, Crystalline Dieudonné module theory via formal and rigid geometry (Publ. Math. IHÉS 82, 1995)",
+   "locator": "the construction of the auxiliary maps in the formal–rigid descent argument (no theorem number given)",
+   "says": "the source's construction of those maps does not work as printed",
+   "should": "as in the author's 1998 erratum (Publ. Math. IHÉS 87, p. 175), which rebuilds them using Artin–Rees",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #879 (N9)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Česnavičius, A modular description of X₀(n) (arXiv:1511.07475v2)",
+   "locator": "Proposition 4.3.6 and its proof, p. 39",
+   "says": "schematicity away from listed prime-power levels, not excluding n = 1, and its proof factors n = n₁n₂ with n₁, n₂ ≥ 3, impossible at n = 1",
+   "should": "also exclude n = 1, where inversion is a nontrivial automorphism and only a coarse j-line exists",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #913 (N8)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Kharlampovich–Myasnikov, Implicit function theorem over free groups (arXiv:math/0312509v2)",
+   "locator": "Theorem 2(3)",
+   "says": "the source describes the radical by the single commutator relation [z b⁻¹, c], which is too small when c is a proper power (Britton/HNN witness)",
+   "should": "use the relations [z b⁻¹, h] for every h in the centraliser of c",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #914 (R)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Baumslag–Myasnikov–Remeslennikov, Algebraic geometry over groups I (author PDF)",
+   "locator": "the results identifying Zariski-closed with algebraic sets and closure with V(I) (no theorem number given)",
+   "says": "these for every coefficient domain, but for G = H = 1 the empty set is closed while V(I(∅)) is the whole point",
+   "should": "require nontrivial coefficients with an injective coefficient map",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #914 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Dotto, Breuil–Mézard conjectures for central division algebras",
+   "locator": "the introduction, p. 213",
+   "says": "the source relates the characters of Jacquet–Langlands partners on matching elliptic elements by a plain equality",
+   "should": "carry the sign (−1)^(d−1), since Steinberg is −1 on elliptic elements while the trivial character of D^× is +1",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #923 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Tate, Fourier analysis in number fields and Hecke's zeta-functions (thesis, 1950)",
+   "locator": "§4.2 (hypotheses behind Lemma 4.2.3) and §4.4 (conditions before Lemma A)",
+   "says": "the source asks the periodised sum to converge uniformly in x over the whole space, which a translated Gaussian fails",
+   "should": "ask uniformity on the fundamental domain D (for ideles, the closure of E), which is what the proof uses",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #924 (N1)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Duke–Imamoḡlu–Tóth, Geometric invariants for real quadratic fields (Ann. of Math. 184, 2016)",
+   "locator": "§8, the residue formula, printed p. 975",
+   "says": "the residue of Φ(−m, n; s) as 2Σ‖φ‖⁻² a(m)a(n), which yields +2/‖φ‖² instead of −2/‖φ‖² for an odd eigenform at m = n = 1",
+   "should": "have a(−m)a(n) on the right, or equivalently Φ(m, n; s) on the left",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #925 (F1)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Duke–Imamoḡlu–Tóth, Geometric invariants for real quadratic fields (Ann. of Math. 184, 2016)",
+   "locator": "§8, formula (8.4), pp. 973–974",
+   "says": "the source leaves a complex conjugate out of the displayed formula",
+   "should": "as the evidence in the cited report requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #925 (F1)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Ramakrishnan [Ram18], the degree-one comparison paper for GL(n), arXiv v1,",
+   "locator": "Lemma 4.1",
+   "says": "a class in H²(F, ℤ/p) trivial over K dies over every index-p subfield of KE for suitable cyclic E/F, refuted by β = (−1,−1) with F = ℚ, K = ℚ(i)",
+   "should": "assume zero real localizations, or first pass to a totally imaginary quadratic F₀/F",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #925 (M1)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Arthur–Clozel, Simple algebras, base change, and the advanced theory of the trace formula (1989)",
+   "locator": "the geometric density argument of the twisted trace formula comparison (no locator in the book given)",
+   "says": "the source's density argument needed correction",
+   "should": "as corrected in Arthur, An introduction to the trace formula, §26, p. 191",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #925 (M1)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, Étale cohomology of diamonds (arXiv:1709.07343)",
+   "locator": "Remark 25.2",
+   "says": "the source treats Spa(C, O_C) as open in Spa(C, C⁺) for any open bounded valuation subring C⁺, but for infinite-rank C⁺ the norm point is not open",
+   "should": "assume openness (for instance finite rank) or argue with the rational open {|a| ≤ 1}",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #927 (R)",
+    "fix report for TauCetiRoadmap #927 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Katz, p-adic properties of modular schemes and modular forms (LNM 350, 1973)",
+   "locator": "§1.8, printed p. 87",
+   "says": "the source describes level-one forms as the fibre product of the full level-3 and level-4 form modules",
+   "should": "take their GL₂-invariant parts (with 3, resp. 4, inverted), as its own invariance argument uses; in characteristic two the dimensions differ (2 versus 1)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #928 (R)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Getz, An introduction to automorphic representations (author PDF)",
+   "locator": "§6.4, the Casimir eigenvalue displayed with Lemma 6.19 and Remark 6.20",
+   "says": "the source's displayed Casimir scalar contradicts the scalar the same notes give for the full O(2) modules in §6.5",
+   "should": "as the evidence in the cited report requires",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #931 (A1)",
+    "fix report for TauCetiRoadmap #931 (U1)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Bakker–Klingler–Tsimerman, Tame topology of arithmetic quotients and algebraicity of Hodge loci (JAMS 2020)",
+   "locator": "Theorem 1.1",
+   "says": "Theorem 1.1 in a form that the authors' own erratum calls incorrect",
+   "should": "the erratum's Theorem 1.2 (§§1.1–1.3, pp. 1–3), with a fixed maximal compact subgroup and restricted functoriality",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #933 (R)",
+    "fix report for TauCetiRoadmap #933 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Milne, Kazhdan's theorem on arithmetic varieties (author exposition, 1984)",
+   "locator": "the statement of Clozel's input near Conjecture 3.17",
+   "says": "the source asks at once for a fixed nontrivial level at a place p₀ and for trivially intersecting adelic levels, which is impossible",
+   "should": "Clozel's hypotheses: fixed supercuspidal place, shrinking at a disjoint finite set, trivially intersecting arithmetic groups, bound after discarding finitely many levels",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #933 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Bijakowski–Pilloni–Stroh, Classicité de formes modulaires surconvergentes (Ann. of Math. 2016)",
+   "locator": "the determinant-polynomial evaluation in its signature argument (no printed locator given)",
+   "says": "the source evaluates on diag(x, 1, …, 1) plus the identity",
+   "should": "diag(x − 1, 0, …, 0) plus the identity, that is diag(x, 1, …, 1); in rank one at x = 1 these give 2 and 1",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #966 (R)",
+    "fix report for TauCetiRoadmap #966 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "gap",
+   "source": "Lan, Arithmetic compactifications of PEL-type Shimura varieties (thesis)",
+   "locator": "Remark 1.4.3.8",
+   "says": "the source tacitly assumes that the order containing O is stable under the involution when enlarging",
+   "should": "keep O and enlarge only the lattice, with no such requirement, as the author's official errata (printed p. 11) states",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #966 (N9)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions (Ann. Sci. ÉNS 2011)",
+   "locator": "§8.4, Examples 8.6–8.7, footnote 7, printed p. 36",
+   "says": "the source infers that a Hida algebra is not free because its fibres have different splitting fields",
+   "should": "draw no such conclusion, since a free monic quadratic family can have split fibre ℚ₃[x]/(x²−9) and field fibre ℚ₃(√3)",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #968 (F1)",
+    "fix report for TauCetiRoadmap #968 (R)",
+    "fix report for TauCetiRoadmap #968 (R2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Pollack, On the p-adic L-function of a modular form",
+   "locator": "a supersingular prime (Duke Math. J. 2003) at Lemma 3.2, pp. 533–535",
+   "says": "boundedness forces finitely many zeros, with no nonzero hypothesis",
+   "should": "assume the series is nonzero, since the zero series is bounded with infinitely many zeros, and the proofs of Theorems 3.3 and 3.5 assume this anyway",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #968 (N2)"
+   ],
+   "batch": "out-reports-6.md"
+  },
+  {
+   "kind": "error",
+   "source": "Scholze, The local Langlands correspondence for GL_n over p-adic fields (author PDF)",
+   "locator": "Proposition 4.3 and Corollary 4.5, printed p. 12",
+   "says": "centraliser lattice stabilisers are maximal compact, so all volumes are one; for diag(a, b) over ℚ₃ the lattice with basis [[1, 1/3], [0, 1/3]] has index-two stabiliser",
+   "should": "use the actual stabilisers weighted by reciprocal volume",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "fix report for TauCetiRoadmap #999 (N2)"
+   ],
+   "batch": "out-reports-6.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T12:27:55Z",
+ "updated": "2026-10-23T12:32:42Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
