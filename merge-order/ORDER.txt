@@ -181,6 +181,7 @@ TropicalAndBerkovichArithmetic
 EffectiveClassNumbers
 CompletedCohomologyPartII
 CohomologyComparisons
+GaloisSectionsPadicPeriodMaps
 HabiroCohomologyFoundations
 CohomologyComparisonsPartII
 PadicHodgeRegulators
