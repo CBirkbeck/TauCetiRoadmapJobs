@@ -147,6 +147,7 @@ WeilConjectures
 EnriquesSurfacesAndIntegralNonexistence
 RelativeFarguesFontaine
 VStackSheavesAndLisseCategories
+SolidAnalyticRings
 GeometricSatakeAndFusion
 FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII
 DiamondsAndVStacksPartII
