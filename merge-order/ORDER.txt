@@ -95,6 +95,7 @@ ShimuraVarieties
 AdicCoefficientsAndComparisons
 AdicCoefficientsAndComparisonsPartII
 EtaleDualityAndPerverseSheaves
+ArcTopologyAndDescent
 AlgebraicTopologyPartII
 ArithmeticStatisticsPartI
 ArithmeticStatisticsPartII
