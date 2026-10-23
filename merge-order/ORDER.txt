@@ -106,6 +106,7 @@ EtaleDualityAndPerverseSheaves
 ArcTopologyAndDescent
 EtaleDualityAndPerverseSheavesPartII
 AlgebraicTopologyPartII
+ExponentialSumsAndCircleMethodPartII
 ArithmeticStatisticsPartI
 ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
