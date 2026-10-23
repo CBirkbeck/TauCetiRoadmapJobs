@@ -4,11 +4,13 @@ import Mathlib
 # Solid spectral analytic coefficients: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
-headline theorems against the pinned APIs. At universe zero, §1.5's abelian
-solidification, countable integer-product compact projective generator and
-ordinary derived-category reflection are statable below. Compactness in the
-abelian category means preservation by Hom of filtered colimits indexed in
-Lean universe 1, the hom universe of the native category.
+headline theorems against the pinned APIs. For every universe u, §1.3's internal
+projectivity and §1.5's abelian solidification, countable integer-product compact
+projective generator, closed symmetric monoidal reflection and ordinary
+derived-category reflection are stated below on light modules over ULift.{u} ℤ.
+Compactness means preservation by Hom of filtered colimits indexed in Lean
+universe u+1, the hom universe of the native category. Their proofs use §1.3's
+marked-diagram universe transport.
 
 The remaining headlines are not statable at the pins, for the indicated missing
 carriers.
@@ -16,12 +18,9 @@ carriers.
 * Layer 1, §1.2: the fully faithful symmetric monoidal discrete spectral
   embedding, left adjoint to point evaluation, lacks the concrete stable
   spectrum carrier and the enhanced category of light spectral hypersheaves.
-* Layer 1, §1.5: the closed abelian solid tensor needs the solidification
-  functor as constructed data. The enhanced derived comparison and derived
-  product-tensor theorem need the enhanced light solid category and its
-  monoidal structure; the pinned ordinary DerivedCategory has no derived
-  tensor. Above universe zero the marked convergent-sequence carrier and
-  its transport of §1.3 are also missing.
+* Layer 1, §1.5: the enhanced derived comparison and derived product-tensor
+  theorem need the enhanced light solid category and its monoidal structure;
+  the pinned ordinary DerivedCategory has no derived tensor.
 * Layer 2, §2.1: solidity detected on every homotopy sheaf and the complete
   homotopy t-structure lack light spectral hypersheaves, their null object
   and homotopy sheaves.
@@ -81,54 +80,88 @@ are targets of this roadmap and its named suppliers.
 
 namespace TauCetiRoadmap.SolidAnalyticRings
 
+universe u
+
 open CategoryTheory Limits MonoidalCategory LightProfinite LightCondensed
 
 noncomputable section
 
 /-! ## Layer 1: Light spectral sheaves and the null-sequence test -/
 
-/-- On the marked convergent sequence, shift each natural number up by one and fix infinity. -/
-def natShift : ℕ∪{∞} ⟶ ℕ∪{∞} :=
-  CompHausLike.ofHom _ ⟨OnePoint.map (· + 1), OnePoint.continuous_map continuous_of_discreteTopology
-    (by simpa [Filter.coclosedCompact_eq_cocompact, Filter.cocompact_eq_cofinite,
-      Nat.cofinite_eq_atTop] using Filter.tendsto_add_atTop_nat 1)⟩
+/-- The convergent sequence in universe u, obtained by lifting its compact topology. -/
+def liftedSequence : LightProfinite.{u} := by
+  letI : SecondCountableTopology (ULift.{u} LightProfinite.NatUnionInfty) :=
+    Homeomorph.ulift.secondCountableTopology
+  letI : TotallyDisconnectedSpace (ULift.{u} LightProfinite.NatUnionInfty) :=
+    Homeomorph.ulift.symm.totallyDisconnectedSpace
+  exact LightProfinite.of (ULift.{u} LightProfinite.NatUnionInfty)
 
-/-- The inclusion of the marked limit point into the convergent sequence. -/
-def inftyPoint : LightProfinite.of PUnit ⟶ ℕ∪{∞} :=
-  CompHausLike.ofHom _ (ContinuousMap.const _ OnePoint.infty)
+/-- On the lifted marked sequence, shift each natural number up by one and fix infinity. -/
+def natShift : liftedSequence.{u} ⟶ liftedSequence.{u} :=
+  ⟨TopCat.ofHom ⟨ULift.map (OnePoint.map (· + 1)),
+    continuous_uliftMap _ (OnePoint.continuous_map continuous_of_discreteTopology
+      (by simpa [Filter.coclosedCompact_eq_cocompact, Filter.cocompact_eq_cofinite,
+        Nat.cofinite_eq_atTop] using Filter.tendsto_add_atTop_nat 1))⟩⟩
 
-/-- The free light condensed integer module on a null sequence, with its limit point killed. -/
-abbrev nullSeq : LightCondAb :=
-  cokernel ((free ℤ).map (lightProfiniteToLightCondSet.map inftyPoint))
+/-- The inclusion of the marked limit point into the lifted convergent sequence. -/
+def inftyPoint : LightProfinite.of (ULift.{u} PUnit.{1}) ⟶ liftedSequence.{u} :=
+  ⟨TopCat.ofHom (ContinuousMap.const _ (ULift.up OnePoint.infty))⟩
 
-/-- The endomorphism of the integer null-sequence object induced by the marked shift. -/
-def nullShift : nullSeq ⟶ nullSeq :=
-  cokernel.desc _ ((free ℤ).map (lightProfiniteToLightCondSet.map natShift) ≫ cokernel.π _) (by
-    have h : inftyPoint ≫ natShift = inftyPoint := by ext x; rfl
+/-- The free light module over the lifted integers on a null sequence, with its limit killed. -/
+abbrev nullSeq : LightCondMod (ULift.{u} ℤ) :=
+  cokernel ((free (ULift.{u} ℤ)).map (lightProfiniteToLightCondSet.map inftyPoint.{u}))
+
+/-- The endomorphism of the lifted integer null-sequence object induced by the marked shift. -/
+def nullShift : nullSeq.{u} ⟶ nullSeq.{u} :=
+  cokernel.desc _ ((free (ULift.{u} ℤ)).map
+    (lightProfiniteToLightCondSet.map natShift.{u}) ≫ cokernel.π _) (by
+    have h : inftyPoint.{u} ≫ natShift.{u} = inftyPoint.{u} := by ext x; rfl
     rw [← Category.assoc, ← Functor.map_comp, ← Functor.map_comp, h]
     exact cokernel.condition _)
 
-/-- A light condensed abelian group is solid when one minus shift-precomposition is
-invertible on its internal Hom from the null-sequence object (RC Definition 3.2.1, p.16). -/
-def IsLightSolid : ObjectProperty LightCondAb := fun B =>
-  IsIso (𝟙 ((ihom nullSeq).obj B) - (MonoidalClosed.pre nullShift).app B)
-
-/-- The light solid inclusion has a left adjoint, and the countable product of discrete
-integers is a solid compact projective generator, with filtered index categories in
-Lean universe 1 (RC Theorem 3.2.4(2),(12), p.17). -/
-theorem isLightSolid_reflective_and_generator :
-    IsLightSolid.ι.IsRightAdjoint ∧
-      ∃ h : IsLightSolid (∏ᶜ fun _ : ℕ => (discrete (ModuleCat ℤ)).obj (ModuleCat.of ℤ ℤ)),
-        Projective (⟨_, h⟩ : IsLightSolid.FullSubcategory) ∧
-        IsFinitelyPresentable.{1} (⟨_, h⟩ : IsLightSolid.FullSubcategory) ∧
-        IsSeparator (⟨_, h⟩ : IsLightSolid.FullSubcategory) := by
+/-- The free light module over lifted integers on the convergent sequence is internally
+projective in every universe (RC Theorem 2.3.3(3), pp.12–13). -/
+theorem internallyProjective_free_liftedSequence :
+    InternallyProjective ((free (ULift.{u} ℤ)).obj
+      (lightProfiniteToLightCondSet.obj liftedSequence.{u})) := by
   sorry
 
-/-- The ordinary derived category's full subcategory of complexes with light-solid
-cohomology has a left-adjoint reflection (RC Theorem 3.2.4(5)–(6), p.17). -/
-theorem derivedLightSolid_isRightAdjoint [HasDerivedCategory LightCondAb] :
-    (ObjectProperty.ι (fun K : DerivedCategory LightCondAb =>
-      ∀ n : ℤ, IsLightSolid ((DerivedCategory.homologyFunctor LightCondAb n).obj K))).IsRightAdjoint := by
+/-- A light module over lifted integers is solid when one minus shift-precomposition is
+invertible on its internal Hom from the null-sequence object (RC Definition 3.2.1, p.16). -/
+def IsLightSolid : ObjectProperty (LightCondMod (ULift.{u} ℤ)) := fun B =>
+  IsIso (𝟙 ((ihom nullSeq.{u}).obj B) - (MonoidalClosed.pre nullShift.{u}).app B)
+
+/-- The light solid inclusion has a left adjoint, and the countable product of discrete
+lifted integers is a solid compact projective generator, with filtered index categories in
+Lean universe u+1 (RC Theorem 3.2.4(2),(12), p.17). -/
+theorem isLightSolid_reflective_and_generator :
+    IsLightSolid.{u}.ι.IsRightAdjoint ∧
+      ∃ h : IsLightSolid.{u} (∏ᶜ fun _ : ℕ =>
+          (discrete (ModuleCat (ULift.{u} ℤ))).obj (ModuleCat.of (ULift.{u} ℤ) (ULift.{u} ℤ))),
+        Projective (⟨_, h⟩ : IsLightSolid.{u}.FullSubcategory) ∧
+        IsFinitelyPresentable.{u+1} (⟨_, h⟩ : IsLightSolid.{u}.FullSubcategory) ∧
+        IsSeparator (⟨_, h⟩ : IsLightSolid.{u}.FullSubcategory) := by
+  sorry
+
+/-- The light solid full subcategory admits a closed symmetric monoidal structure for
+which its left-adjoint reflection is symmetric monoidal (RC Theorem 3.2.4(3), p.17). -/
+theorem isLightSolid_closed_monoidal_reflection :
+    ∃ m : MonoidalCategory IsLightSolid.{u}.FullSubcategory,
+      letI := m
+      ∃ s : SymmetricCategory IsLightSolid.{u}.FullSubcategory,
+        letI := s
+        Nonempty (MonoidalClosed IsLightSolid.{u}.FullSubcategory) ∧
+          ∃ L : LightCondMod (ULift.{u} ℤ) ⥤ IsLightSolid.{u}.FullSubcategory,
+            Nonempty (L ⊣ IsLightSolid.{u}.ι) ∧ Nonempty L.Braided := by
+  sorry
+
+/-- For any chosen ordinary derived category of light modules over lifted integers, the
+full subcategory with solid cohomology has a left-adjoint reflection
+(RC Theorem 3.2.4(5)–(6), p.17). -/
+theorem derivedLightSolid_isRightAdjoint [HasDerivedCategory (LightCondMod (ULift.{u} ℤ))] :
+    (ObjectProperty.ι (fun K : DerivedCategory (LightCondMod (ULift.{u} ℤ)) =>
+      ∀ n : ℤ, IsLightSolid.{u}
+        ((DerivedCategory.homologyFunctor (LightCondMod (ULift.{u} ℤ)) n).obj K))).IsRightAdjoint := by
   sorry
 
 end

@@ -25,7 +25,7 @@ authors = "Peter Scholze; joint work with Dustin Clausen"
 title = "Lectures on Condensed Mathematics"
 year = 2019
 locator_scheme = "theorem"
-locator = "Theorem 5.8, pp.35–36, CS line 1243; Theorem 6.2, p.43, CS line 1578"
+locator = "Remark 1.4, pp.7–8, CS line 116; Stone–Čech size bound, p.8, CS line 148; Theorem 5.8, pp.35–36, CS line 1243; Theorem 6.2, p.43, CS line 1578"
 url = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf"
 fetched_at = "2026-10-23T10:39:22Z"
@@ -34,7 +34,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "May 2026 revision of the 2019 lectures; theorem numbering and pages refer to the fetched revision."
-cited_for = ["7.4; imported VS2.1 compact-Hausdorff integer model"]
+cited_for = ["Conventions; strong-limit cutoffs", "7.4; imported VS2.1 compact-Hausdorff integer model"]
 
 [[source]]
 id = "AG"
@@ -42,7 +42,7 @@ authors = "Peter Scholze; joint work with Dustin Clausen"
 title = "Lectures on Analytic Geometry"
 year = 2020
 locator_scheme = "section"
-locator = "Lecture VI, Definition 6.12 and Proposition 6.14, pp.39–40, AG line 1361 and AG line 1384; Lecture XII, Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG line 3014 and AG line 3041"
+locator = "Definition 11.7, p.76, AG line 2934; Lecture VI, Definition 6.12 and Proposition 6.14, pp.39–40, AG line 1361 and AG line 1384; Lecture XII, Definition 12.1, Proposition 12.4 and Remark 12.5, pp.79–80, AG line 3014 and AG line 3041"
 url = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf"
 fetched_at = "2026-10-23T10:39:24Z"
