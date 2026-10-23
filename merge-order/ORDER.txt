@@ -119,6 +119,7 @@ EnriquesSurfacesAndIntegralNonexistence
 RelativeFarguesFontaine
 VStackSheavesAndLisseCategories
 GeometricSatakeAndFusion
+DiamondsAndVStacksPartII
 PrismaticCohomologyPartIV
 ColemanIntegration
 Polylogarithms
