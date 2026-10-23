@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-462 mistakes recorded on the board: 226 misprints, 205 errors, 30 gaps, 1 unparsed bullets.
+486 mistakes recorded on the board: 235 misprints, 217 errors, 33 gaps, 1 unparsed bullets.
 Errata jobs have read the cited sources of 2 roadmaps; in those of 0 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -43,6 +43,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Lemma 6.1: the source says a lemma that contains a mistake, recorded in Arthur, An Introduction to the Trace Formula (2005), p. 191; it should be as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Gap** at the density argument, p. 196: the source says a density argument with a gap, recorded in Arthur, An Introduction to the Trace Formula (2005), p. 191; it should be as the witness in the cited review requires; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Arthur–Clozel, Simple algebras, base change, and the advanced theory of the trace formula (1989)
+
+- **Gap** at the geometric density argument of the twisted trace formula comparison (no locator in the book given): the source says the source's density argument needed correction; it should be as corrected in Arthur, An introduction to the trace formula, §26, p. 191; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Asakura–Miyatani, arXiv:2007.14255v2
 
 - **Error** at Lemma 2.19 (with Remark 2.21(3)): the source says the lemma for any smooth V-scheme X; it should be restricted to affine X, which is all its proof (an affine embedding) gives; it fails for proper X, since H¹(E^an,O)=K for an elliptic curve; affects a stated result. Found by  (#110 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -66,6 +70,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Bakker–Klingler–Tsimerman (BKT; title not given in the review)
 
 - **Error** at the inverse-image-of-Siegel-sets step (authors' erratum §1.5, p. 3): the source says the step follows from Borel–Harish-Chandra 7.5, which concerns real Siegel sets; it should be justified by Bakker–Grimm–Schnell–Tsimerman, arXiv:2112.06995, 28.1, as the erratum states; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Bakker–Klingler–Tsimerman, Tame topology of arithmetic quotients and algebraicity of Hodge loci (JAMS 2020)
+
+- **Error** at Theorem 1.1: the source says Theorem 1.1 in a form that the authors' own erratum calls incorrect; it should be the erratum's Theorem 1.2 (§§1.1–1.3, pp. 1–3), with a fixed maximal compact subgroup and restricted functoriality; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Bakker–Klingler–Tsimerman, Tame topology of arithmetic quotients and algebraicity of Hodge loci, J. Amer. Math. Soc. 33 (2020), arXiv:1810.04801
 
@@ -96,6 +104,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at proof of Lemma 12.5, pp.60–61: the source says the finite sum of reciprocals of small-prime-smooth integers below the cutoff equals the full Euler product; it should be an inequality (at most the product): for the prime set {2} with cutoff 2 the sum is 1.5, the product 2; affects the proof. Found by  (#171 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at §12.2, Lemmas 12.7–12.9, p.62 (cached extraction line 3836): the source says a cutoff comparison in the exclusion argument pointing the wrong way; it should be the reversed comparison; affects the proof. Found by  (#171 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Gap** at §12.2, the imprimitive exclusion after Lemma 12.9, pp.62–63: the source says a short companion part is used without control, while the anatomy event of Lemma 12.6 gives only one witness per r; it should be controlled, e.g. by a separately proved four-witness (five in the middle range) strengthening; affects the proof. Found by  (#171 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Baumslag–Myasnikov–Remeslennikov, Algebraic geometry over groups I (author PDF)
+
+- **Error** at the results identifying Zariski-closed with algebraic sets and closure with V(I) (no theorem number given): the source says these for every coefficient domain, but for G = H = 1 the empty set is closed while V(I(∅)) is the whole point; it should be require nontrivial coefficients with an injective coefficient map; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Bellaïche (cited as Bellaïche09)
 
@@ -210,6 +222,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 16.10(2), p.110: the source says the uncompleted quotient P/J equals the q-PD envelope quotient E/K; it should be use the derived p-completion, i.e. the completed extended ideal as in Construction 16.13 (a square-zero counterexample shows IP need not be closed); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Bijakowski–Pilloni–Stroh, Classicité de formes modulaires surconvergentes (Ann. of Math. 2016)
+
+- **Misprint** at the determinant-polynomial evaluation in its signature argument (no printed locator given): the source says the source evaluates on diag(x, 1, …, 1) plus the identity; it should be diag(x − 1, 0, …, 0) plus the identity, that is diag(x, 1, …, 1); in rank one at x = 1 these give 2 and 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Birkbeck–Heuer–Williams (2019)
 
 - **Error** at Proposition 8.4: the source says the map is a Δ(N)-torsor without restriction, which fails at a CM point for N = 7; it should be a quotient-stack statement, or a torsor only over the free locus; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -259,6 +275,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Brambilla–Ottaviani, On the Alexander–Hirschowitz theorem, arXiv:math/0701409v2
 
 - **Misprint** at Proposition 5.3, p. 10: the source says P⁵ in the paragraph treating P⁷; it should be P⁷; affects nothing. Found by  (#144 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Breuil, Une application du corps des normes (1999)
+
+- **Error** at §2.2: the source says the source calls a Frobenius module étale when its semilinear Frobenius is injective, but over an imperfect field such as F_p(t) an injective Frobenius can have singular linearisation; it should be require the linearised Frobenius to be bijective; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Breuil–Conrad–Diamond–Taylor (BCDT, J. Amer. Math. Soc. 2001)
 
@@ -471,6 +491,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at p. 69, the transform of the integral-lattice indicator, against the pairing on p. 37 and the Fourier definition on p. 38: the source says the transform is the mass factor times δ(x1, 3x2, 3x3, x4); it should be δ(x1, x2/3, x3/3, x4) with the same mass factor, the annihilator of their own pairing (witness x = (0, 1/3, 0, 0) over ℚ₃); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## de Jong, Crystalline Dieudonné module theory via formal and rigid geometry (Publ. Math. IHÉS 82, 1995)
+
+- **Gap** at the construction of the auxiliary maps in the formal–rigid descent argument (no theorem number given): the source says the source's construction of those maps does not work as printed; it should be as in the author's 1998 erratum (Publ. Math. IHÉS 87, p. 175), which rebuilds them using Artin–Rees; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## de Jong, Crystalline Dieudonné module theory via formal and rigid geometry, Publ. IHÉS 82 (1995)
 
 - **Error** at §7.1.13 (auxiliary maps on the route to Theorem 7.4.1 and Proposition 7.5.2): the source says auxiliary maps that are faulty as printed; it should be as corrected in the author's 1998 erratum (Publ. IHÉS 87), which leaves the main theorems standing; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -513,10 +537,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at the proof of Lemma 4.3 (cached lines 643–647): the source says an automorphism of order at most 2 of a free ℤ_ℓ-module acts trivially mod 2, false (the swap matrix on ℤ₂²); it should be an argument that tracks the integral extension terms, since (4.9) alone gives no bound on ρ(X); affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at the proof of Theorem 3.3, p. 13 (cached lines 511–520): the source says only orders 11 and 15 survive as extra rank-20 candidates, but n=14 with (a₂,a₇,a₁₄)=(1,1,1) satisfies every relation; it should be a list that includes 14, excluded like the others (root lattice A₁₃⊕A₆⊕A₁, square discriminant 196); affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Dotto, Breuil–Mézard conjectures for central division algebras
+
+- **Misprint** at the introduction, p. 213: the source says the source relates the characters of Jacquet–Langlands partners on matching elliptic elements by a plain equality; it should be carry the sign (−1)^(d−1), since Steinberg is −1 on elliptic elements while the trivial character of D^× is +1; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Duke–Imamoḡlu–Tóth (DIT16), Ann. of Math. 184 (2016)
 
 - **Misprint** at (8.4) (residue of the resolvent kernel, pp. 973–975): the source says the polar projector without a complex conjugate; it should be the projector with the conjugate, with which the printed residue display on p. 975 holds for every Hecke–Maass form, odd or even; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at p. 984: the source says the sine-power integral without the factor 2^{ν−1}; it should be the integral with the factor 2^{ν−1}; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Duke–Imamoḡlu–Tóth, Geometric invariants for real quadratic fields (Ann. of Math. 184, 2016)
+
+- **Misprint** at §8, formula (8.4), pp. 973–974: the source says the source leaves a complex conjugate out of the displayed formula; it should be as the evidence in the cited report requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Misprint** at §8, the residue formula, printed p. 975: the source says the residue of Φ(−m, n; s) as 2Σ‖φ‖⁻² a(m)a(n), which yields +2/‖φ‖² instead of −2/‖φ‖² for an odd eigenform at m = n = 1; it should be have a(−m)a(n) on the right, or equivalently Φ(m, n; s) on the left; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Dummigan–Golyshev–de Jeu–Kerr, arXiv:2605.11100
 
@@ -575,6 +608,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Fontaine, Il n'y a pas de variété abélienne sur Z (1985)
 
 - **Misprint** at the proof of Proposition 1.5, p. 520: the source says the inverse-Herbrand boundary value with the upper break u_{L/K} where the lower break belongs; it should be eψ(m) = e·i_{L/K} − 1/d at m = u_{L/K} − 1/e, d = |G_(i_{L/K})| (8/3, not 35/3, for ℚ₃(ζ₉)/ℚ₃); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Fontaine, Il n'y a pas de variété abélienne sur Z (Invent. Math. 1985)
+
+- **Misprint** at the boundary formula just before §1.6: the source says at m = u − 1/e one has eψ(m) = e·u − 1/d; it should be eψ(m) = e·i − 1/d, since the source's own inverse identity gives ψ(u − 1/e) = i − 1/(ed) (8/3, not 35/3, for ℚ₃(ζ₉)); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Error** at §1.6: the source says its criterion on ideals as an equivalence in terms of a real cutoff m, which fails over ℚ₃ with m = 1/4; it should be give only sufficient bounds in m, with the exact equivalence stated through the least nonzero valuation c of the ideal; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Fouquet–Wan, The Iwasawa main conjecture for universal families of modular motives (FW)
 
@@ -637,6 +675,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Getz (title not given in the review)
 
 - **Misprint** at a locator the review does not give: the source says an equality of spherical dimensions without a restriction it needs; it should be as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Getz, An introduction to automorphic representations (author PDF)
+
+- **Error** at §6.4, the Casimir eigenvalue displayed with Lemma 6.19 and Remark 6.20: the source says the source's displayed Casimir scalar contradicts the scalar the same notes give for the full O(2) modules in §6.5; it should be as the evidence in the cited report requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Glasscock–Merriman–Robertson–Smyth, Ergodic theory with applications to continued fractions (2020)
 
@@ -742,6 +784,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the log PD-envelope theorem (as corrected in Du–Moon–Shimizu, arXiv: the source says 2603.00559, Theorem 2.1(2), footnote 2): the source says the base divided powers must extend to the ambient Y; it should be extension to the source X; ambient extension does not imply it (F₂[e,h]/(e²,eh,h²), γ₂(ae+bh) = a²h); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Katz, p-adic properties of modular schemes and modular forms (LNM 350, 1973)
+
+- **Misprint** at §1.8, printed p. 87: the source says the source describes level-one forms as the fibre product of the full level-3 and level-4 form modules; it should be take their GL₂-invariant parts (with 3, resp. 4, inverted), as its own invariance argument uses; in characteristic two the dimensions differ (2 versus 1); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Kawasaki (the 2000 Macaulayfication paper, cited through Česnavičius; title not given in the review)
 
 - **Misprint** at the conditions restated as Česnavičius Proposition 3.11: the source says the conditions with five misprints, which Česnavičius records in footnote 4, p. 13; it should be as Česnavičius Proposition 3.11 states them; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -838,6 +884,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the "equivalent" regularity clause, p. 9: the source says the regularity clause in a printed form that the roadmap corrects and the review confirms as wrong; it should be as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Kharlampovich–Myasnikov, Implicit function theorem over free groups (arXiv:math/0312509v2)
+
+- **Error** at Theorem 2(3): the source says the source describes the radical by the single commutator relation [z b⁻¹, c], which is too small when c is a proper power (Britton/HNN witness); it should be use the relations [z b⁻¹, h] for every h in the centraliser of c; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Kharlampovich–Myasnikov, Implicit function theorem over free groups, arXiv:math/0312509v2
 
 - **Misprint** at Theorem 2(3)–(5), p. 9: the source says items (3)–(5) in a printed form that the roadmap corrects and the review confirms as wrong; it should be as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -914,6 +964,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Lagarias–Li, arXiv:1506.06161v1
 
 - **Misprint** at equation (2.5), the Lerch differential relations: the source says the partial differential equation with a positive sign on the s-term; it should be carry the negative sign, because the lowering operator sends −sΦ(z,s+1,c) to −sΦ(z,s,c); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Lan, Arithmetic compactifications of PEL-type Shimura varieties (thesis)
+
+- **Gap** at Remark 1.4.3.8: the source says the source tacitly assumes that the order containing O is stable under the involution when enlarging; it should be keep O and enlarge only the lattice, with no such requirement, as the author's official errata (printed p. 11) states; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Lan, PEL-type thesis
 
@@ -1019,6 +1073,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at 14.16(b) (the "More precisely" sentence): the source says the canonical model for Sh°(G₂, X₂), with G₂ where another group is meant; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Milne, Kazhdan's theorem on arithmetic varieties (author exposition, 1984)
+
+- **Error** at the statement of Clozel's input near Conjecture 3.17: the source says the source asks at once for a fixed nontrivial level at a place p₀ and for trivially intersecting adelic levels, which is impossible; it should be Clozel's hypotheses: fixed supercuspidal place, shrinking at a disjoint finite set, trivially intersecting arithmetic groups, bound after discarding finitely many levels; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Milne, Shimura varieties and moduli (notes)
 
 - **Misprint** at the printed calculation behind Proposition 8.8 and Corollary 8.9: the source says the weight adjustment in the construction with a prescribed derived cover is made with the wrong sign; it should be the opposite sign, as the roadmap uses; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1086,11 +1144,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §13.1.1, condition 4, p. 84: the source says Q(U) is invertible on M>h when the roots of Q have valuation strictly greater than h; it should be valuation at most h, equality included; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Pollack, On the p-adic L-function of a modular form
+
+- **Misprint** at a supersingular prime (Duke Math. J. 2003) at Lemma 3.2, pp. 533–535: the source says boundedness forces finitely many zeros, with no nonzero hypothesis; it should be assume the series is nonzero, since the zero series is bounded with infinitely many zeros, and the proofs of Theorems 3.3 and 3.5 assume this anyway; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions
 
 - **Misprint** at Definition 6.4 / Proposition 6.5, p. 29: the source says L(f, χ⁻¹, 1); it should be as the witness in the cited review requires (the roadmap's source correction, which the review confirms); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at Definition 6.4 / Proposition 6.5, p. 29: the source says the coefficient space S_k(Γ, ℚ_p); it should be as the witness in the cited review requires (the roadmap's source correction, which the review confirms); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at §8.4, footnote (7), p. 36: the source says the level-33 Hida algebra cannot be free over Λ because its weight-2 and weight-0 eigenforms have different coefficient fields; it should be that this does not follow: ℤ₃⟦T⟧[x]/(x² − T − 9) is free, split at T = 0, with fibre ℚ₃(√3) at T = 3; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions (Ann. Sci. ÉNS 2011)
+
+- **Error** at §8.4, Examples 8.6–8.7, footnote 7, printed p. 36: the source says the source infers that a Hida algebra is not free because its fibres have different splitting fields; it should be draw no such conclusion, since a free monic quadratic family can have split fibre ℚ₃[x]/(x²−9) and field fibre ℚ₃(√3); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Pollack–Stevens, Overconvergent modular symbols and p-adic L-functions (Ann. Sci. ÉNS)
 
@@ -1107,6 +1173,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Qian, arXiv:2103.00106
 
 - **Error** at Lemma 4.2: the source says an overbroad local assertion in the Dwork-family argument; it should be as the witness in the cited review requires (consecutive labelled weights, every character conjugate checked, semistability only after a finite extension); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Ramakrishnan [Ram18], the degree-one comparison paper for GL(n), arXiv v1,
+
+- **Error** at Lemma 4.1: the source says a class in H²(F, ℤ/p) trivial over K dies over every index-p subfield of KE for suitable cyclic E/F, refuted by β = (−1,−1) with F = ℚ, K = ℚ(i); it should be assume zero real localizations, or first pass to a totally imaginary quadratic F₀/F; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Ramakrishnan, A theorem on GL(n) à la Tchebotarev, arXiv:1806.08429
 
@@ -1140,6 +1210,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Sarig, Introduction to the transfer operator method (2020)
 
 - **Error** at Appendix A.2 (Rényi theorem), pp.32–33: the source says the Gauss density is bounded above by 2 ln 2; it should be 1/ln 2, the density's value at 0, which exceeds 2 ln 2 (about 1.443 against 1.386); affects a stated result. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Savitt, arXiv:math/0404327v3
+
+- **Misprint** at the construction of the Weil–Deligne representation (no printed page given): the source says one p-power Frobenius per relative Frobenius, dropping the residue-degree factor; it should be r(g) = g_D·φ^(−a(g)) with a(g) = residue degree × α(g), which makes r(g) linear and gives rNr⁻¹ = |g|⁻¹N; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Savitt, On a conjecture of Conrad, Diamond, and Taylor, arXiv:math/0404327
 
@@ -1194,6 +1268,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the proof of Proposition 4.3, p. 12: the source says each lattice stabilizer is a maximal compact subgroup of the common centralizer; it should be dropped, with stabilizer volumes tracked, since for A = M₂(ℚ₃), γ = diag(1,4), L = ℤ₃e₁ + ℤ₃(e₁+e₂)/3 the stabilizer has index two; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Scholze, The local Langlands correspondence for GL_n over p-adic fields (author PDF)
+
+- **Error** at Proposition 4.3 and Corollary 4.5, printed p. 12: the source says centraliser lattice stabilisers are maximal compact, so all volumes are one; for diag(a, b) over ℚ₃ the lattice with basis [[1, 1/3], [0, 1/3]] has index-two stabiliser; it should be use the actual stabilisers weighted by reciprocal volume; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
 ## Scholze, Étale cohomology of diamonds (an earlier arXiv version)
 
 - **Error** at Proposition 22.3(vii): the source says (vii) holds without the local splitting condition on g; it should be stated with that condition, since counterexamples exist (footnote 5, p. 128 of the later version); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1201,6 +1279,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Scholze, Étale cohomology of diamonds (arXiv:1709.07343)
 
 - **Error** at Proposition 13.12 and its proof, pp. 80–81: the source says it holds for quasicompact separated diamonds, applying Proposition 13.11, which assumes qcqs, though separated does not imply quasiseparated (Remark 10.8); it should be stated for qcqs separated diamonds; a Frobenius-twisted dense-orbit quotient that is not quasiseparated breaks the Hausdorff and fibre conclusions; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+- **Error** at Remark 25.2: the source says the source treats Spa(C, O_C) as open in Spa(C, C⁺) for any open bounded valuation subring C⁺, but for infinite-rank C⁺ the norm point is not open; it should be assume openness (for instance finite rank) or argue with the rational open {|a| ≤ 1}; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Scholze, Étale cohomology of diamonds, arXiv:1709.07343v4
 
@@ -1292,6 +1371,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at §4.62(1), after (4.62.2), printed p. 77 (Szego line 3382; Szego line 3393): the source says the analytic remainder has M₂(0) ≠ 0 for every admissible parameter, including α=0; it should be M₂(0) may vanish at α=0: continuity in β and values (log 2)/2, (log 2−1)/2 at β=0,1 imply a zero between them; affects a stated result. Found by LaguerreJacobi (ERRATA-LaguerreJacobi at 5aad605, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §4.82(1), after (4.82.2), printed p. 89 (Szego line 3966): the source says the λ=1/2 specialization is the sum of the two Dirichlet–Mehler expressions (4.8.6) and (4.8.7); it should be their arithmetic mean: (4.82.2) assigns 1/π to each integral, whereas each earlier formula assigns 2/π; affects nothing. Found by LaguerreJacobi (ERRATA-LaguerreJacobi at 5aad605, 2026-10-23, codex gpt-6-astra).
+
+## Tate, Fourier analysis in number fields and Hecke's zeta-functions (thesis, 1950)
+
+- **Misprint** at §4.2 (hypotheses behind Lemma 4.2.3) and §4.4 (conditions before Lemma A): the source says the source asks the periodised sum to converge uniformly in x over the whole space, which a translated Gaussian fails; it should be ask uniformity on the fundamental domain D (for ideles, the closure of E), which is what the proof uses; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Taylor, Remarks on a conjecture of Fontaine and Mazur (2002)
 
@@ -1443,6 +1526,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Zureick-Brown, Cohomological descent on the overconvergent site, arXiv:1204.5246
 
 - **Error** at Lemma 5.14 (the argument is used twice): the source says the proof infers equality of tubes from surjectivity of a map of schemes, which does not give the tube isomorphism Lemma 5.2 needs (flagged by Le Stum, arXiv:2209.07875, §7); it should be replaced by Le Stum's dimension induction (§7.2, Lemmas 7.6–7.7, Corollary 7.9), separating strict transform from full inverse image; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Česnavičius, A modular description of X₀(n) (arXiv:1511.07475v2)
+
+- **Error** at Proposition 4.3.6 and its proof, p. 39: the source says schematicity away from listed prime-power levels, not excluding n = 1, and its proof factors n = n₁n₂ with n₁, n₂ ≥ 3, impossible at n = 1; it should be also exclude n = 1, where inversion is a nontrivial automorphism and only a coarse j-line exists; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
 ## Česnavičius, arXiv:1810.04493v2
 
