@@ -218,6 +218,7 @@ NonordinaryCMSpecialValues
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+StableHomotopyKTheoryPartII
 GeneralAlgebraicKTheoryPartII
 MotivesAndAlgebraicCyclesPartII
 ChromaticHomotopyTheory
