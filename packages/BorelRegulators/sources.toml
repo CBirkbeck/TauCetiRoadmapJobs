@@ -8,6 +8,75 @@ title = "Adeles and Algebraic Groups"
 year = 1961
 locator_scheme = "theorem"
 locator = "§3.3, Theorem 3.3.1, as cited in Borel 1977, Proposition 2.4, p.619"
+cited_for = ["classical norm-one Tamagawa-number input to the arithmetic quotient volume"]
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/833#issuecomment-6363558452"
+
+[[source]]
+id = "borel1977"
+authors = "Armand Borel"
+title = "Cohomologie de SL_n et valeurs de fonctions zêta aux points entiers"
+year = 1977
+venue = "Annali della Scuola Normale Superiore di Pisa, Classe di Scienze, series 4, volume 4, pp.613–636"
+locator_scheme = "theorem"
+locator = "Lemma 2.2 and Proposition 2.4, pp.617–619; §5.5, pp.629–630; Theorem 6.2, pp.631–632; Remark 6.3, p.632; §6.4, pp.632–633"
+url = "https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0.pdf"
+fetched_at = "2026-10-23T13:21:06Z"
+sha256 = "f27dc4622583423cdcfc66671cffd38904f3ecf4d97b8b1352fcf3dbf3a295b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["regulator lattice, zeta covolume, primitive periods and Tamagawa input"]
+
+[[source]]
+id = "borel1974"
+authors = "Armand Borel"
+title = "Stable real cohomology of arithmetic groups"
+year = 1974
+doi = "10.24033/asens.1269"
+venue = "Annales scientifiques de l’École Normale Supérieure, series 4, volume 7, pp.235–272"
+locator_scheme = "theorem"
+locator = "Theorem 7.5, p.259; §11.4, pp.267–268; Proposition 12.2, p.271"
+url = "https://www.numdam.org/item/ASENS_1974_4_7_2_235_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1974_4_7_2_235_0.pdf"
+fetched_at = "2026-10-23T13:21:37Z"
+sha256 = "20247a7df85bfcab17dc51e46cdcaf8bd6c2e8c1fae194014e518913ae9f859d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["stable real arithmetic cohomology underlying the regulator; rank ownership boundary"]
+
+[[source]]
+id = "burgos2002"
+authors = "José Ignacio Burgos Gil"
+title = "The Regulators of Beilinson and Borel"
+year = 2002
+venue = "CRM Monograph Series 15"
+locator_scheme = "theorem"
+locator = "Corollary 9.8, p.78; Theorem 9.9 and Definition 9.10, p.79; Theorem 9.12, p.80; Definition 9.19 and Remark 9.20, p.84; Proposition 9.22 and Corollary 9.23, p.85; Examples 10.4–10.5, p.91; Definitions 10.7–10.8, p.94; Theorem 10.9, pp.95–97"
+version_note = "Locators use the printed pages and numbering of the legally fetched author copy; PDF pages are six greater than printed pages."
+url = "https://www.icmat.es/miembros/burgos/files/brbr.pdf"
+fetched_from = "https://www.icmat.es/miembros/burgos/files/brbr.pdf"
+fetched_at = "2026-10-23T13:21:56Z"
+sha256 = "da6ba8c4b08bf447d1575788c33b96c52d8d0d0a377e8f2990ead6aed73f65ea"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Borel and Beilinson regulator construction and normalization comparison"]
+
+[[source]]
+id = "beilinson1985"
+authors = "A. A. Beilinson"
+title = "Higher regulators and values of L-functions"
+year = 1985
+venue = "Journal of Soviet Mathematics 30"
+doi = "10.1007/BF02105861"
+locator_scheme = "section"
+locator = "§§1–2, Deligne cohomology and higher regulators; J. Soviet Math. 30 (1985), pp.2036–2070"
+url = "https://doi.org/10.1007/BF02105861"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["historical universal regulator background; its general construction belongs to MotivicEtaleKTheory"]
