@@ -4763,8 +4763,28 @@
     "ChatGPT review of TauCetiRoadmap #858 (N2)"
    ],
    "batch": "out-reviews-3.md"
+  },
+  {
+   "kind": "misprint",
+   "source": "Ngô, \"Le lemme fondamental pour les algèbres de Lie\", arXiv:0801.0446 v3",
+   "locator": "Theorem 7.1.13, p. 128",
+   "says": "that for a weak abelian fibration, an occurring support Z with codim Z ≤ δ_Z is the closure of an irreducible-component stratum (top fibre cohomology conclusion)",
+   "should": "the reverse inequality codim Z ≥ δ_Z, i.e. equality, since ≤ always holds; the published version, Proposition 7.2.2, p. 114, states it correctly",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "",
+   "job": "",
+   "board_pr": "",
+   "head": "",
+   "reported": "2026-10-23",
+   "reporter": "backfill from earlier reviews (claude opus)",
+   "comment": "",
+   "found_in": [
+    "ChatGPT review of TauCetiRoadmap #999 (N4)"
+   ],
+   "batch": "out-reviews-5.md"
   }
  ],
  "scanned_to": "",
- "updated": "2026-10-23T11:44:49Z"
+ "updated": "2026-10-23T11:46:15Z"
 }
