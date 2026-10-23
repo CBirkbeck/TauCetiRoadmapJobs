@@ -1776,7 +1776,7 @@
         "5.1"
       ],
       "detail": "The finite-stage form extends ArithmeticKTheory §3.4’s stable arithmetic and relative-Lie comparison and its primitive generators. Supply actual invariant-form comparison maps, stabilization and rational finite-index restriction; for Res SL_a over F the range a−1>4Nq must imply isomorphism through degree q. Finite-type is used only on the arithmetic plus H-space, not on GL(ℂ) with its discrete topology.",
-      "needs": "Supply the map-level finite-stage comparison and the conservative bound a−1>4Nq.",
+      "needs": "Supply, for every number field F of degree N, a≥2, G=Res_(F/ℚ)SL_a with its standard maximal compact K and every arithmetic Γ⊂G(ℚ), the actual invariant-form maps H^q(Lie G,K;ℝ)→H^q(Γ;ℝ) for q∈ℕ, compatible with block stabilization and finite-index restriction, and bijective whenever a−1>4Nq.",
       "supplier": "ArithmeticKTheory",
       "section": "§3.4, explicit finite-stage form of the stable comparison"
     },
@@ -1788,8 +1788,8 @@
         "2.3",
         "5.2"
       ],
-      "detail": "Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The evaluation uses the integral Hurewicz image and the Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, lines 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1.",
-      "needs": "Supply s(chₙ)(Hur εₙ)=(2πi)^n for εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with these suspension and orientation conventions.",
+      "detail": "Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The rational evaluation uses the integral Hurewicz image; multiplication by (2πi)^n gives the evaluation with Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, lines 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1.",
+      "needs": "Supply s(chₙ)(Hur εₙ)=1 for n≥2, for the rational character chₙ of CharacteristicClasses C6 item 2 and εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with the ordered suspension of CharacteristicClasses C6 item 3 and the (x,y)↦x+iy orientation of TopologicalKTheory T4; equivalently s(chₙᵗʷ)(Hur εₙ)=(2πi)^n for chₙᵗʷ=(2πi)^n·chₙ.",
       "supplier": "CharacteristicClasses",
       "section": "C6 item 3 extension"
     },
@@ -1800,7 +1800,7 @@
         "3.1"
       ],
       "detail": "ArithmeticGaloisDuality R02.4.5b–R02.4.6 retains the exact exceptional class for fixed character prescriptions. Supply the consequence used in Poonen’s proof: for any a≥1 and finite set of finite places, a cyclic degree-a extension may be chosen with local degree a at those places, with the local extensions allowed to vary, and with selected real places complex when a is even. No assertion of arbitrary prescribed unramified dyadic extensions is made.",
-      "needs": "Supply cyclic splitting extensions with full local degrees while retaining Wang’s obstruction for fixed prescriptions.",
+      "needs": "Supply, for every number field F, a≥1, finite set S of finite places and set R of real places (R empty when a is odd), a cyclic extension L/F of degree a with [L_w:F_v]=a for every v∈S and w|v, and every place of R complex in L; the local extensions may vary.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "§R02.4.6, variable-local-extension corollary"
     },
@@ -1812,7 +1812,7 @@
         "3.6"
       ],
       "detail": "AdelicAlgebraicGroups §3.4 explicitly constructs SL₁(D), its semisimplicity and quotient compactness. Strong approximation in §4.2 additionally needs absolute almost simplicity and simple connectedness. Supply these properties by base change to SL_a for every central division algebra of degree a≥2; no new group carrier is needed.",
-      "needs": "Supply absolute almost simplicity and simple connectedness of the existing SL₁(D) carrier.",
+      "needs": "For every number field F and finite-dimensional central division F-algebra D of degree a≥2, prove that the existing AdelicAlgebraicGroups §3.4 group SL₁(D) is absolutely almost simple and simply connected.",
       "supplier": "AdelicAlgebraicGroups",
       "section": "§3.4 norm-one construction, structure extension"
     },
@@ -1822,32 +1822,10 @@
       "neededBy": [
         "3.5"
       ],
-      "detail": "Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors.",
-      "needs": "Supply positive rational local gauge masses for all compact opens, including ramified finite places.",
+      "detail": "Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses (with the gauge a generator of invariant top forms) and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors.",
+      "needs": "For every nonarchimedean local field K of characteristic zero, smooth affine K-group H, nonzero K-rational invariant top form ω on H and compact open subgroup U⊂H(K), prove |ω|(U)∈ℚ_>0, where the gauge measure uses the additive coordinate measure on K giving O_K mass 1.",
       "supplier": "AdelicAlgebraicGroups",
       "section": "Part II, rational gauge masses extending §2.4"
-    },
-    {
-      "slug": "classical-tamagawa-proof",
-      "title": "Norm-one Tamagawa number in the adelic normalization",
-      "neededBy": [
-        "3.4"
-      ],
-      "detail": "For a number field F and every central division F-algebra D of degree a≥2, use the existing SL₁(D) carrier of §3.4 and the Tamagawa measure of §2.4. No infinite-splitting hypothesis is needed for the supplied theorem. Section 3.4 here specializes its quotient mass to the split infinite factors and the gauge of §3.3 (weil1961, §3.3, Theorem 3.3.1; borel1977 line 227).",
-      "needs": "Supply τ(SL₁(D))=1 for every central division algebra D of degree a≥2 over a number field, in the §2.4 Tamagawa normalization.",
-      "supplier": "AdelicAlgebraicGroups",
-      "section": "Part II, Tamagawa numbers extending §2.4 and the §3.4 SL₁(D) carrier"
-    },
-    {
-      "slug": "order-finite-generation",
-      "title": "Integral finite generation for nonmaximal orders",
-      "neededBy": [
-        "5.5"
-      ],
-      "detail": "ArithmeticKTheory §3.4 explicitly supplies the rational inclusion equivalence for every order. The integral image being a lattice also needs finite generation, not only a rational dimension. Supply finite generation of K_m(R) for every full ℤ-order R in a number field and m≥2, or an equally strong finite-index image theorem. Number-ring and finite-S finite generation in §3.3 cannot silently be applied to a singular nonmaximal order.",
-      "needs": "Supply finite generation or a finite-index integral comparison for higher K-groups of all number-field orders.",
-      "supplier": "ArithmeticKTheory",
-      "section": "extension of ArithmeticKTheory §§3.2–3.4 to all full ℤ-orders"
     },
     {
       "slug": "universal-deligne",
@@ -1857,8 +1835,8 @@
         "6.2",
         "6.3"
       ],
-      "detail": "For varieties, provide actual real Deligne cohomology and rational Chern regulators, including the point, finite disjoint unions, real descent, universal bundle class and maps from actual Quillen K-theory, naturality for embeddings and finite transfers, and chₙψ^a=a^n chₙ. This construction is independent of the Borel zeta-value and explicit polylogarithm comparisons. Its point case supplies ColemanIntegration §L3.Fc.1’s reg_∞ through §§6.1–6.2 here.",
-      "needs": "Supply the independent universal Chern/Deligne regulator and its point, transfer and Adams compatibility.",
+      "detail": "For varieties, provide actual real Deligne cohomology and rational Chern regulators, including the point, finite disjoint unions, real descent, universal bundle class and maps from actual Quillen K-theory, naturality for embeddings and finite transfers, and chₙψ^a=a^n chₙ. This construction is independent of the Borel zeta-value and explicit polylogarithm comparisons.",
+      "needs": "For every number field F and n≥1, supply the real Beilinson regulator K_(2n−1)(F)→H¹_D(Spec F×_ℚℝ,ℝ(n)) on actual Quillen K-theory from the universal twisted Chern class chₙᵗʷ∈H^(2n)_D(B·GL(ℂ),ℝ(n)), independently of Borel’s class, together with Deligne cohomology of finite disjoint unions of complex points, real descent, restriction and finite-transfer compatibility, and r_Be∘ψ^a=a^n·r_Be for every integer a≥1.",
       "supplier": "MotivicEtaleKTheory",
       "section": "universal-realization layer"
     },
@@ -1869,7 +1847,7 @@
         "6.2"
       ],
       "detail": "Over the actual universal classifying model, compare normalized cosimplicial functions/forms on the first infinitesimal classifying nerve with CE and Weil complexes, including evaluation into continuous cohomology and the Deligne cone projection. Fix the coefficient normalizations independently of the factor-two conclusion (burgos2002, Chapter 8, Propositions 8.9, 8.10, 8.14; Theorem 10.9 proof, lines 4172–4190).",
-      "needs": "Supply normalized infinitesimal classifying-space CE/Weil comparisons with the Deligne cone projection.",
+      "needs": "For every N≥1 and n≥1, supply isomorphisms from normalized holomorphic functions, holomorphic forms and real smooth ℝ(n−1)-valued functions on the first infinitesimal nerve B⁽¹⁾·GL_N(ℂ) to CE*(gl_N(ℂ),ℂ), W(gl_N(ℂ)) and CE*(gl_N(ℂ)_ℝ,ℝ(n−1)), respectively, compatible with the Hodge filtration, evaluation into continuous cohomology and Deligne cone projection π_(n−1), with coefficient normalizations independent of Bo=2Be.",
       "supplier": "MotivicEtaleKTheory",
       "section": "universal-realization layer, classifying-space comparison"
     },
@@ -1880,7 +1858,7 @@
         "4.1"
       ],
       "detail": "CharacteristicClasses C5a.2 already constructs the invariant-polynomial augmentation quotient and its coefficient and generator changes. Its generalization to every connected nonnegative graded commutative algebra, needed for cohomology of arithmetic quotients and compact duals, belongs to its Part II. Supply Q(A)=A₊/(A₊)², the homogeneous quotient, quotient universal property, map and base-change laws, and the exterior-generator comparison. Section 4.1 constructs only the cohomological determinant adapters, not a second generic augmentation quotient.",
-      "needs": "Supply one generic graded indecomposable functor extending the existing invariant-polynomial construction.",
+      "needs": "For every field k and connected ℕ-graded graded-commutative k-algebra A, supply Q(A)=A₊/(A₊·A₊), its homogeneous components and quotient universal property, functoriality for graded algebra maps, compatibility with extension of k, and Q(Λ(V))≃V for V concentrated in positive odd degrees.",
       "supplier": "CharacteristicClasses",
       "section": "Part II, general graded quotient API extending C5a.2"
     },
@@ -1891,9 +1869,20 @@
         "4.6"
       ],
       "detail": "Use CharacteristicClasses C5a.5’s multiplicative cohomological Serre spectral sequence. For a number field F, a≥2, G=Res_(F/ℚ)SL_a, its standard connected maximal compact K and torsion-free arithmetic Γ, compare the bundles K→Gᵘ→Xᵘ and K→G(ℝ)/Γ→K\\G(ℝ)/Γ with the compact-Lie-subalgebra filtration on absolute Lie cochains. The maps α and β of §4.2 must preserve that filtration and induce the same restriction to K (borel1977, §3.5, p.622, lines 328–337).",
-      "needs": "Supply the comparison of these C5a.5 spectral sequences with the Lie-cochain filtration, preserving edge restriction and the identity on the common compact fibre.",
+      "needs": "Supply, for a number field F of degree N, n≥2, odd a with a−1>4N(2n−1) and torsion-free arithmetic Γ⊂Res_(F/ℚ)SL_a, the comparison of the C5a.5 spectral sequences of K→Gᵘ→Xᵘ and K→G(ℝ)/Γ→K\\G(ℝ)/Γ with the Lie-cochain filtration, preserving edge restriction and the identity on the common compact fibre, where G=Res_(F/ℚ)SL_a and K is its standard connected maximal compact.",
       "supplier": "CharacteristicClasses",
       "section": "C5a.5 extension, invariant-form filtration comparison"
+    },
+    {
+      "slug": "splitting-degree-index",
+      "title": "Index divisibility for every finite splitting extension",
+      "neededBy": [
+        "3.1"
+      ],
+      "needs": "For any field K, finite-dimensional central simple K-algebra A and finite field extension L/K splitting A, provide index(A)∣[L:K] on Tau Ceti’s native index and splitting-field carriers, without a separability restriction.",
+      "detail": "SemisimpleAlgebras Layer 6 and TauCeti.Algebra.CentralSimple.Index provide an index-degree splitting field but do not state divisibility of every finite splitting degree by the index. Extend that generic theory in Part II. For a division factor D of degree d and a splitting L, restrict the M_d(L)-module L^d to D; finite-dimensionality over the division ring gives d²k=d[L:K], hence d divides [L:K]. The number-field proof in §3.1 consumes this input and the existing index-degree splitting field, rather than constructing a second index theory.",
+      "supplier": "SemisimpleAlgebras",
+      "section": "Part II, finite splitting-degree divisibility extending Layer 6"
     }
   ]
 }
