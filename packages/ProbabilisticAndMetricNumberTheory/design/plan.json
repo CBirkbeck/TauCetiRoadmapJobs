@@ -1,6 +1,12 @@
 {
   "gaps": [
     {
+      "slug": "real-multiplicative-long-means",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§3.33 Pretentious Halász mean bound",
+      "needs": "There are absolute C>0 and X₀>1 such that, for every real multiplicative f with |f(n)|≤1 on positive integers, real X≥X₀, X≤x≤2X and X/(log X)^(1/5)≤y≤X, |y⁻¹Σ_{x≤n≤x+y}f(n)−X⁻¹Σ_{X≤n≤2X}f(n)|≤C(log X)^(−1/20), uniformly in f, x and y (MatomakiRadziwill Lemma 4, §3, physical pp.13–14)."
+    },
+    {
       "slug": "kubilius-uniform-sieve",
       "supplier": "SieveMethodsAndPrimePatterns",
       "section": "fundamental lemma and small-prime sieve",
@@ -10,7 +16,7 @@
       "slug": "mr-restricted-dirichlet-means",
       "supplier": "AnalyticNumberTheoryPartI",
       "section": "§1.5 Mean square of a Dirichlet polynomial",
-      "needs": "Supply the restricted-prime Dirichlet-polynomial integral estimates of Matomäki–Radziwiłł Sections 3–9, with every interval constraint and loss required for their Theorem 3 as stated in §5.1 here; the unrestricted mean-square theorem alone is insufficient."
+      "needs": "For 0<η<1/6, real multiplicative |f(n)|≤1, X≥X₀(η), and S_X with increasing prime intervals satisfying the two spacing inequalities (2)–(3) and cutoff Q_J≤exp(√log X) specified in §5.1, the polynomial F(s)=Σ_{n∈S_X}f(n)n^(−s) satisfies ∫_((log X)^(1/15))^T |F(1+it)|²dt ≤ C_η(T/(X/Q₁)+1)((log Q₁)^(1/3)/P₁^(1/6−η)+(log X)^(−1/50)) for every T≥(log X)^(1/15), with C_η independent of f, X, T and the admissible intervals (MatomakiRadziwill Proposition 1, §8, physical p.23)."
     },
     {
       "slug": "liouville-uniform-character-twists",

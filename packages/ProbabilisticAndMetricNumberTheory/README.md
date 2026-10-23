@@ -10,7 +10,7 @@ Mathlib supplies `ArithmeticFunction`, `cardDistinctFactors` (ω), `cardFactors`
 
 Generic arithmetic functions, summation and Dirichlet series remain with Mathlib, Tau Ceti and [ArithmeticDirichletSeries](../../Completed/ArithmeticDirichletSeries/README.md) (Export contract). AnalyticNumberTheoryPartI §§0.19, 0.21 owns reciprocal-prime estimates, §1.5 Dirichlet-polynomial mean squares, and §§3.18, 3.33 pretentious distance and Halász estimates; §§3.12a, 3.32, 3.41 supply analytic counts for the restricted squarefree family. The stronger analytic inputs are the explicit supplier gaps below. The finite van der Corput estimate and the entropy-decrement argument belong here. DiophantineApproximationAndTranscendence §0.6 owns BadlyApproximable; this roadmap owns its characterization by bounded native partial denominators. AdelicAlgebraicGroups AA.2–AA.3 owns homogeneous quotients and finite invariant volume; GeometryOfNumbersAndQuadraticArithmetic §§4.2, 4.5 owns Howe–Moore, Moore ergodicity and Mahler compactness. IntegralLattices concerns integral quadratic and bilinear lattices. Möbius orthogonality to nilsequences is outside this roadmap. General Chowla and Sarnak are conjectures, not conclusions of Layer 5.
 
-The existing circle measure `AddCircle.haarAddCircle` and product `Measure.pi` are used throughout. The names `circleHaar` and `torusHaar d` in the signature file merely bundle these measures as `ProbabilityMeasure`; they introduce no new measure. Their coercions are native volume, translation invariance is the native additive Haar property, and native Fourier orthogonality gives integral 1 at frequency zero and 0 otherwise. In dimension zero the product is the point mass on the unique point; projecting the one-dimensional product gives circle Haar probability. These normalizations fix both the total mass and interval lengths on [0,1). The frequency (1,−1) on the two-torus has integral zero. The required declarations are `AddCircle.haarAddCircle`, its probability instance, `Measure.pi`, `UnitAddTorus.orthonormal_mFourier` and `orthonormal_fourier` (take one frequency to be zero). Their API is consumed here rather than reproved.
+The existing circle measure `AddCircle.haarAddCircle` and product `Measure.pi` are used throughout. The names `circleHaar` and `torusHaar` at d in the signature file merely bundle these measures as `ProbabilityMeasure`; they introduce no new measure. Their coercions are native volume, translation invariance is the native additive Haar property, and native Fourier orthogonality gives integral 1 at frequency zero and 0 otherwise. In dimension zero the product is the point mass on the unique point; projecting the one-dimensional product gives circle Haar probability. These normalizations fix both the total mass and interval lengths on [0,1). The frequency (1,−1) on the two-torus has integral zero. The required declarations are `AddCircle.haarAddCircle`, its probability instance, `Measure.pi`, `UnitAddTorus.orthonormal_mFourier` and `orthonormal_fourier` (take one frequency to be zero). Their API is consumed here rather than reproved.
 
 ## Conventions
 
@@ -24,7 +24,7 @@ For m∈ℕ put N=m+1 and let μ_N be the existing `TauCeti.Probability.empirica
 
 This is notation for a specialization. There is no empty-sample probability theorem. All functions on the discrete natural carrier are measurable, and the finite Dirac decomposition gives integrability. Probabilities in numerical formulas are real values (`Measure.real` or `toReal`). Floor division of naturals takes place before casting. All denominators in finite arithmetic probability formulas are positive. Finite prime sets have no repeats, but ordered tuples in moment expansions may repeat a prime.
 
-Use `UnitAddCircle` = ℝ/ℤ and `UnitAddTorus d` = d→ℝ/ℤ for finite d. Write e(t)=exp(2πit) and k·α=Σ_i k_i•α_i. Sequence averages include indices 0,…,n and have denominator n+1. Classical averages over 1,…,N agree after a finite shift. Positional digit cylinders are half open, with the native terminating expansion at base-adic endpoints. Approximation sets in Layer 3 instead use closed rational intervals; comparison with native open circle balls includes the stated factor two and irrationality hypothesis.
+Use `UnitAddCircle` = ℝ/ℤ and `UnitAddTorus d` = d→ℝ/ℤ for finite d. Write e(t)=exp(2πit) and k·α=Σ_i k_i•α_i. Sequence averages include indices 0,…,n and have denominator n+1. Classical averages over 1,…,N agree after a finite shift. Positional digit cylinders are half open, with the native terminating expansion at base-adic endpoints. The basic one-dimensional approximation sets in Layer 3 use closed rational intervals; power-law and simultaneous approximation use their displayed strict inequalities; comparison with native open circle balls includes the stated factor two and irrationality hypothesis.
 
 For dynamics write A_n f(x)=`birkhoffAverage ℝ T f n x`, with A_0=0. The total Gauss map is T(x)=fract(x⁻¹), including T(0)=0. `gaussDigit x n` observes T^n x, so digit zero is the first positive partial quotient on irrational x∈(0,1). The Gauss measure μ_G has density 1/((1+x)log 2) on (0,1]. Initial Lebesgue probability m is volume restricted to (0,1); endpoint nullity identifies the two unit-interval restrictions when needed. D is the irrational part of (0,1), a conull invariant Borel set. Native continued-fraction denominators are q_n=`(GenContFract.of x).dens n`, with q_0=1 and the auxiliary `q_{−1}=0`. Rational termination is kept separate from irrational growth.
 
@@ -48,7 +48,9 @@ Consume §0.19's explicit reciprocal-prime estimate for x≥286 and §0.21's Mer
 
 Consume §1.5, dirichlet_polynomial_mean_square, for arbitrary finite complex coefficients and its stated integration range; §§3.18 and 3.33, pretentiousDist and halasz_mean, for unit-disc multiplicative functions with the infimum over the full compact twist interval. Consume §§3.12a, 3.32 and 3.41 for the compact-parameter Selberg–Delange expansion, restricted_squarefree_landau_count and the fixed-A restricted squarefree Sathe–Selberg bounds. The local conditional moment estimate in §1.6 differentiates that supplied analytic expansion; it does not reprove it.
 
-What AnalyticNumberTheoryPartI must provide (gap:mr-restricted-dirichlet-means): Supply the restricted-prime Dirichlet-polynomial integral estimates of Matomäki–Radziwiłł Sections 3–9, with every interval constraint and loss required for their Theorem 3 as stated in §5.1 here; the unrestricted mean-square theorem alone is insufficient. Requested supplier section: §1.5 Mean square of a Dirichlet polynomial.
+What AnalyticNumberTheoryPartI must provide (gap:mr-restricted-dirichlet-means): For 0<η<1/6, real multiplicative |f(n)|≤1, X≥X₀(η), and S_X with increasing prime intervals satisfying the two spacing inequalities (2)–(3) and cutoff Q_J≤exp(√log X) specified in §5.1, the polynomial `F(s)=Σ_{n∈S_X}f(n)n^(−s)` satisfies ∫_((log X)^(1/15))^T |F(1+it)|²dt ≤ C_η(T/(X/Q₁)+1)((log Q₁)^(1/3)/P₁^(1/6−η)+(log X)^(−1/50)) for every T≥(log X)^(1/15), with C_η independent of f, X, T and the admissible intervals (MatomakiRadziwill Proposition 1, §8, physical p.23). Requested supplier section: §1.5 Mean square of a Dirichlet polynomial.
+
+What AnalyticNumberTheoryPartI must provide (gap:real-multiplicative-long-means): There are absolute C>0 and X₀>1 such that, for every real multiplicative f with |f(n)|≤1 on positive integers, real X≥X₀, X≤x≤2X and X/(log X)^(1/5)≤y≤X, `|y⁻¹Σ_{x≤n≤x+y}f(n)−X⁻¹Σ_{X≤n≤2X}f(n)|≤C(log X)^(−1/20)`, uniformly in f, x and y (MatomakiRadziwill Lemma 4, §3, physical pp.13–14). Requested supplier section: §3.33 Pretentious Halász mean bound.
 
 What AnalyticNumberTheoryPartI must provide (gap:liouville-uniform-character-twists): For every fixed Dirichlet character χ and A≥1, prove inf over |t|≤Ax of `Σ_{p≤x}(1−Re(λ(p)conj(χ(p))p^(−it)))/p` tends to infinity, uniformly in that full height interval. Requested supplier section: §§0.18, 3.18 Effective character prime estimates and pretentious distance.
 
@@ -100,22 +102,22 @@ at zero. The API is used by prime-power representation and the quadratic mean bo
 
 Use Mathlib `ArithmeticFunction`.
 
-Prove `IsAdditive.map_one`. If f is additive, f(1)=0. ([ElsholtzTao2011](#references) Appendix A,
+Prove IsAdditive.map_one. If f is additive, f(1)=0. ([ElsholtzTao2011](#references) Appendix A,
 Lemma A.2, physical pp.37–38.)
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
-Prove `IsAdditive.map_mul`. Additivity on positive coprime products, retaining both positivity hypotheses.
+Prove IsAdditive.map_mul. Additivity on positive coprime products, retaining both positivity hypotheses.
 ([ElsholtzTao2011](#references) Appendix A, Lemma A.2, physical pp.37–38.)
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
-Prove `IsAdditive.add`. The pointwise sum of additive arithmetic functions is additive.
+Prove IsAdditive.add. The pointwise sum of additive arithmetic functions is additive.
 ([ElsholtzTao2011](#references) Appendix A, Lemma A.2, physical pp.37–38.)
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
-Define `IsStronglyAdditive`. For f:ArithmeticFunction R, IsStronglyAdditive f means IsAdditive f and
+Define strong additivity for f:ArithmeticFunction R to mean IsAdditive f and
 f(p^k)=f(p) for every natural prime p and k≥1. It is different from complete additivity f(mn)=f(m)+f(n) on all
 positive inputs. ([ElsholtzTao2011](#references) Appendix A, Lemma A.3, defining paragraph, physical
 p.38.)
@@ -133,17 +135,17 @@ needed to replace the prime-power representation by the distinct-prime sum.
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
-Prove `IsStronglyAdditive.isAdditive`. A strongly additive function is additive.
+Prove that a strongly additive function is additive.
 ([ElsholtzTao2011](#references) Appendix A, Lemma A.3, defining paragraph, physical p.38.)
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
-Prove `IsStronglyAdditive.prime_pow`. For p prime and k>0, f(p^k)=f(p).
+Prove the prime-power evaluation of a strongly additive function. For p prime and k>0, f(p^k)=f(p).
 ([ElsholtzTao2011](#references) Appendix A, Lemma A.3, defining paragraph, physical p.38.)
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
-Prove `IsStronglyAdditive.add`. Pointwise addition preserves strong additivity.
+Prove that pointwise addition preserves strong additivity.
 ([ElsholtzTao2011](#references) Appendix A, Lemma A.3, defining paragraph, physical p.38.)
 
 Use §0.1 (additive functions in the native arithmetic carrier).
@@ -162,7 +164,7 @@ Use §0.1 (additive functions in the native arithmetic carrier); Mathlib `Arithm
 ([ElsholtzTao2011](#references) Appendix A, Lemma A.3, defining paragraph, physical p.38.)
 
 Use the prime-power representation and positivity of every factorization exponent on primeFactors. Apply
-IsStronglyAdditive.prime_pow term by term.
+the prime-power clause of strong additivity term by term.
 
 Use §0.1 (additive functions in the native arithmetic carrier).
 
@@ -201,7 +203,7 @@ Use Mathlib `ArithmeticFunction`; Mathlib `ArithmeticFunction.ext`; Mathlib `Ari
 
 n>0; P finite; a real-valued.
 
-Prove `primeDivisibilitySum_apply`. For n>0, S(P,a)(n)=sum over p in P of a(p) times the indicator of p
+Prove the positive-input evaluation formula. For n>0, S(P,a)(n)=sum over p in P of a(p) times the indicator of p
 dividing n. ([ML-ARITH](#references) Defs.lean: ArithmeticFunction; Misc.lean: cardDistinctFactors and
 cardDistinctFactors_apply_prime_pow.)
 
@@ -213,7 +215,7 @@ Use §0.2 (weighted finite prime sums).
 
 a real-valued.
 
-Prove `primeDivisibilitySum_empty`. S(empty,a)=0 as an ArithmeticFunction, including at n=0.
+Prove primeDivisibilitySum_empty. S(empty,a)=0 as an ArithmeticFunction, including at n=0.
 ([ML-ARITH](#references) Defs.lean: ArithmeticFunction; Misc.lean: cardDistinctFactors and
 cardDistinctFactors_apply_prime_pow.)
 
@@ -226,7 +228,7 @@ Use §0.2 (weighted finite prime sums); Mathlib `ArithmeticFunction.ext`; Mathli
 
 P finite; a(p)=b(p) for every p in P.
 
-Prove `primeDivisibilitySum_congr`. If a(p)=b(p) for p in P then S(P,a)=S(P,b). ([ML-ARITH](#references)
+Prove primeDivisibilitySum_congr. If a(p)=b(p) for p in P then S(P,a)=S(P,b). ([ML-ARITH](#references)
 Defs.lean: ArithmeticFunction; Misc.lean: cardDistinctFactors and cardDistinctFactors_apply_prime_pow.)
 
 **Checks.**
@@ -237,7 +239,7 @@ Use §0.2 (weighted finite prime sums); Mathlib `ArithmeticFunction.ext`.
 
 P finite; a,b real-valued.
 
-Prove `primeDivisibilitySum_add`. S(P,a+b)=S(P,a)+S(P,b), where the additions are pointwise.
+Prove primeDivisibilitySum_add. S(P,a+b)=S(P,a)+S(P,b), where the additions are pointwise.
 ([ML-ARITH](#references) Defs.lean: ArithmeticFunction; Misc.lean: cardDistinctFactors and
 cardDistinctFactors_apply_prime_pow.)
 
@@ -249,7 +251,7 @@ Use §0.2 (weighted finite prime sums); Mathlib `ArithmeticFunction.ext`.
 
 Every p in P is prime; m,n>0; gcd(m,n)=1.
 
-Prove `primeDivisibilitySum_mul_of_coprime`. For prime P and coprime positive m,n,
+Prove primeDivisibilitySum_mul_of_coprime. For prime P and coprime positive m,n,
 S(P,a)(mn)=S(P,a)(m)+S(P,a)(n). ([ML-ARITH](#references) Defs.lean: ArithmeticFunction; Misc.lean:
 cardDistinctFactors and cardDistinctFactors_apply_prime_pow; [ML-PRIME](#references) Prime.dvd_of_dvd_pow;
 Prime.dvd_iff_eq; GCD/Basic.lean: Coprime.lcm_eq_mul.)
@@ -266,7 +268,7 @@ Use §0.2 (weighted finite prime sums); Mathlib `Nat.Prime.dvd_iff_eq`; Mathlib 
 
 All p in P are prime; q prime; k>=1.
 
-Prove `primeDivisibilitySum_prime_pow`. For prime P, prime q and k>=1, S(P,a)(q^k)=a(q) if q is in P, and 0
+Prove primeDivisibilitySum_prime_pow. For prime P, prime q and k>=1, S(P,a)(q^k)=a(q) if q is in P, and 0
 otherwise. ([ML-ARITH](#references) Defs.lean: ArithmeticFunction; Misc.lean: cardDistinctFactors and
 cardDistinctFactors_apply_prime_pow; [ML-PRIME](#references) Prime.dvd_of_dvd_pow; Prime.dvd_iff_eq;
 GCD/Basic.lean: Coprime.lcm_eq_mul.)
@@ -282,7 +284,7 @@ Use §0.2 (weighted finite prime sums); Mathlib `Nat.Prime.dvd_of_dvd_pow`; Math
 
 n is any natural number, including 0 and 1.
 
-Prove `primeDivisibilitySum_primeFactors`. S(n.primeFactors,constant 1)(n) equals the real cast of the
+Prove primeDivisibilitySum_primeFactors. S(n.primeFactors,constant 1)(n) equals the real cast of the
 existing cardDistinctFactors n, for every natural n. ([ML-ARITH](#references) Defs.lean: ArithmeticFunction;
 Misc.lean: cardDistinctFactors and cardDistinctFactors_apply_prime_pow.)
 
@@ -1568,26 +1570,26 @@ complex observations.
 
 - A dirac law has concentration one at every positive radius.
 
-- For equal atoms at 0 and 1, radius 1/2 has Q=1/2; closed intervals would wrongly give 1. This and positive-radius Dirac concentration form the named target `concentration_boundary_values`.
+- For equal atoms at 0 and 1, radius 1/2 has Q=1/2; closed intervals would wrongly give 1. A positive-radius interval captures an entire Dirac mass, giving concentration 1.
 
 Use Mathlib `MeasureTheory.ProbabilityMeasure`.
 
-Prove `concentration_bounds`. For every real radius, 0≤Q≤1. ([BSKK2023](#references) Lemma 7.2, physical
+Prove concentration_bounds. For every real radius, 0≤Q≤1. ([BSKK2023](#references) Lemma 7.2, physical
 p.36, concentration convention.)
 
 Use §0.12 (concentration of real laws).
 
-Prove `concentration_mono`. Increasing the radius cannot decrease Q. ([BSKK2023](#references) Lemma 7.2,
+Prove concentration_mono. Increasing the radius cannot decrease Q. ([BSKK2023](#references) Lemma 7.2,
 physical p.36, concentration convention.)
 
 Use §0.12 (concentration of real laws).
 
-Prove `concentration_translate`. Translation of a real law leaves Q unchanged. ([BSKK2023](#references)
+Prove concentration_translate. Translation of a real law leaves Q unchanged. ([BSKK2023](#references)
 Lemma 7.2, physical p.36, concentration convention.)
 
 Use §0.12 (concentration of real laws).
 
-Prove `concentration_scale`. For a≠0, Q(law(aX),δ)=Q(law(X),δ/|a|). ([BSKK2023](#references) Lemma 7.2,
+Prove concentration_scale. For a≠0, Q(law(aX),δ)=Q(law(X),δ/|a|). ([BSKK2023](#references) Lemma 7.2,
 physical p.36, concentration convention.)
 
 Use §0.12 (concentration of real laws).
@@ -2196,7 +2198,7 @@ HasOuterApproxClosed X. Uniqueness and the constant-sequence iff additionally as
 metric Borel spaces, including the tori used here, satisfy these assumptions. x : ℕ → X; μ :
 ProbabilityMeasure X.
 
-Define `AsympEquidistributed`. For a topological space X with its Borel σ-algebra, a sequence x : ℕ → X and a
+Define `AsympEquidistributed`. For a topological measurable space X whose open sets are measurable (in particular its Borel σ-algebra), a sequence x : ℕ → X and a
 Borel probability measure μ, AsympEquidistributed x μ means that the empirical measures of x converge to μ in
 ProbabilityMeasure X: Tendsto (TauCeti.Probability.empiricalMeasure x) atTop (𝓝 μ). Equivalently (1.1):
 (n+1)⁻¹ `∑_{i≤n}` f(x i) → ∫ f dμ for every bounded continuous f, which for compact X is every f ∈ C(X). Tau
@@ -2208,7 +2210,7 @@ agree because equidistribution ignores any finite shift of the index. ([TAO-HOFA
 §1.1.1, printed p. 4, Example 1.1.1.)
 
 The interface also exports `AsympEquidistributed`: Tendsto (TauCeti.Probability.empiricalMeasure x) atTop (𝓝
-μ); `asympEquidistributed_const_iff`: Under HasOuterApproxClosed X and BorelSpace X, AsympEquidistributed (fun
+μ); asympEquidistributed_const_iff: Under HasOuterApproxClosed X and BorelSpace X, AsympEquidistributed (fun
 _ => p) μ ↔ μ = diracProba p.
 
 Define AsympEquidistributed x μ := Tendsto (empiricalMeasure x) atTop (𝓝 μ); no new measure or averaging
@@ -2259,7 +2261,7 @@ Tau Ceti `TauCeti.Probability.empiricalMeasure_apply_toReal`; Mathlib
 Use the ambient types, measurability and finiteness hypotheses of Layer 2, Asymptotic equidistribution of a
 sequence. Any additional assumptions are stated explicitly above.
 
-Prove `asympEquidistributed_iff_integral_tendsto`. AsympEquidistributed x μ ↔ ∀ f : X →ᵇ ℝ, (n+1)⁻¹ `∑_{i≤n}` f
+Prove asympEquidistributed_iff_integral_tendsto. AsympEquidistributed x μ ↔ ∀ f : X →ᵇ ℝ, (n+1)⁻¹ `∑_{i≤n}` f
 (x i) → ∫ f dμ. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the definition (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.2;
@@ -2273,7 +2275,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `asympEquidistributed_iff_integral_tendsto_complex`. The same with bounded continuous complex-valued f;
+Prove asympEquidistributed_iff_integral_tendsto_complex. The same with bounded continuous complex-valued f;
 this is the form the Weyl criterion uses. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the
 definition (1.1); [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references)
@@ -2287,7 +2289,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `asympEquidistributed_comp_add_iff`. AsympEquidistributed (fun n => x (n + m)) μ ↔ AsympEquidistributed
+Prove asympEquidistributed_comp_add_iff. AsympEquidistributed (fun n => x (n + m)) μ ↔ AsympEquidistributed
 x μ. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the definition (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.2;
@@ -2301,7 +2303,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `AsympEquidistributed.congr_of_eventuallyEq`. Sequences that agree for all large n are equidistributed
+Prove AsympEquidistributed.congr_of_eventuallyEq. Sequences that agree for all large n are equidistributed
 for the same measures. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the definition (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.2;
@@ -2315,7 +2317,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `AsympEquidistributed.unique`. Under HasOuterApproxClosed X and BorelSpace X, a sequence is
+Prove AsympEquidistributed.unique. Under HasOuterApproxClosed X and BorelSpace X, a sequence is
 equidistributed for at most one μ. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the definition
 (1.1); [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1); [TAO-HOFA-1.1](#references)
 §1.1.1, printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.2;
@@ -2329,7 +2331,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `AsympEquidistributed.tendsto_frequency`. Assume HasOuterApproxClosed X. If μ (frontier E) = 0 then #{i
+Prove AsympEquidistributed.tendsto_frequency. Assume HasOuterApproxClosed X. If μ (frontier E) = 0 then #{i
 ≤ n : x i ∈ E}/(n+1) → μ E (Portmanteau). ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the
 definition (1.1); [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references)
@@ -2343,7 +2345,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `AsympEquidistributed.eventually_frequency_ge`. Assume HasOuterApproxClosed X. For open U with μ U > 0
+Prove AsympEquidistributed.eventually_frequency_ge. Assume HasOuterApproxClosed X. For open U with μ U > 0
 there is c > 0 with #{i ≤ n : x i ∈ U}/(n+1) ≥ c for all large n. ([TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 3, the definition (1.1); [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references)
@@ -2357,7 +2359,7 @@ Mathlib `MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto`; 
 `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto`; Mathlib
 `MeasureTheory.diracProba`.
 
-Prove `AsympEquidistributed.denseRange`. Assume HasOuterApproxClosed X. If μ charges every nonempty open set,
+Prove AsympEquidistributed.denseRange. Assume HasOuterApproxClosed X. If μ charges every nonempty open set,
 then x has dense range. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 3, the definition (1.1);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 4, Exercise 1.1.1; [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, Exercise 1.1.2;
@@ -2382,8 +2384,8 @@ Define `TotallyAsympEquidistributed`. TotallyAsympEquidistributed x μ means Asy
 indices. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, after (1.1).)
 
 The interface also exports `TotallyAsympEquidistributed`: ∀ q r : ℕ, 0 < q → AsympEquidistributed (fun n => x
-(q * n + r)) μ; `TotallyAsympEquidistributed.asympEquidistributed`: Total equidistribution implies
-equidistribution (q = 1, r = 0); `TotallyAsympEquidistributed.comp_affine`: If x is totally equidistributed
+(q * n + r)) μ; TotallyAsympEquidistributed.asympEquidistributed: Total equidistribution implies
+equidistribution (q = 1, r = 0); TotallyAsympEquidistributed.comp_affine: If x is totally equidistributed
 then so is n ↦ x (q * n + r) for q ≥ 1.
 
 Define TotallyAsympEquidistributed x μ := ∀ q r : ℕ, 0 < q → AsympEquidistributed (fun n => x (q * n + r)) μ.
@@ -2408,16 +2410,16 @@ n ↦ x ((q q') n + (q r' + r)), again a progression with q q' ≥ 1, so the not
 
 Use §2.1 (equidistribution as weak convergence).
 
-Define `AsympEquidistributedInt`. A sequence x : ℤ → X is asymptotically equidistributed for μ
+Define AsympEquidistributedInt. A sequence x : ℤ → X is asymptotically equidistributed for μ
 (AsympEquidistributedInt x μ) when both halves n ↦ x (n + 1) and n ↦ x (−(n + 1)), n ∈ ℕ, are
 AsympEquidistributed for μ; x(0) is omitted, as in the source. It is totally equidistributed when n ↦ x (q n +
 r) is AsympEquidistributedInt for every integer q ≥ 1 and every r ∈ ℤ. ([TAO-HOFA-1.1](#references)
 §1.1.1, printed p. 4; [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, footnote 2.)
 
-The interface also exports `AsympEquidistributedInt`: Both halves n ↦ x (n + 1) and n ↦ x (−(n + 1)) are
-AsympEquidistributed; `TotallyAsympEquidistributedInt`: ∀ q ≥ 1, ∀ r : ℤ, AsympEquidistributedInt (fun n => x
-(q * n + r)); `asympEquidistributedInt_update_zero`: Changing x 0 does not change AsympEquidistributedInt;
-`TotallyAsympEquidistributedInt.asympEquidistributedInt`: Total implies plain (q = 1, r = 0).
+The interface also exports AsympEquidistributedInt: Both halves n ↦ x (n + 1) and n ↦ x (−(n + 1)) are
+AsympEquidistributed; TotallyAsympEquidistributedInt: ∀ q ≥ 1, ∀ r : ℤ, AsympEquidistributedInt (fun n => x
+(q * n + r)); asympEquidistributedInt_update_zero: Changing x 0 does not change AsympEquidistributedInt;
+TotallyAsympEquidistributedInt.asympEquidistributedInt: Total implies plain (q = 1, r = 0).
 
 Define AsympEquidistributedInt x μ := AsympEquidistributed (fun n : ℕ => x (n + 1)) μ ∧ AsympEquidistributed
 (fun n : ℕ => x (-(n + 1))) μ. Define TotallyAsympEquidistributedInt x μ := ∀ q : ℕ, 0 < q → ∀ r : ℤ,
@@ -2447,13 +2449,13 @@ Use §2.1 (equidistribution as weak convergence); §2.2 (progressions and two-si
 Use the ambient types, measurability and finiteness hypotheses of Layer 2, Equidistribution of doubly infinite
 sequences. Any additional assumptions are stated explicitly above.
 
-Prove `AsympEquidistributedInt.natCast`. AsympEquidistributedInt x μ → AsympEquidistributed (fun n : ℕ => x n)
+Prove AsympEquidistributedInt.natCast. AsympEquidistributedInt x μ → AsympEquidistributed (fun n : ℕ => x n)
 μ. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 4; [TAO-HOFA-1.1](#references) §1.1.1, printed
 p. 4, footnote 2.)
 
 Use §2.2 (progressions and two-sided integer indexing); §2.1 (equidistribution as weak convergence).
 
-Prove `TotallyAsympEquidistributedInt.totallyAsympEquidistributed_natCast`. Totally equidistributed on ℤ
+Prove TotallyAsympEquidistributedInt.totallyAsympEquidistributed_natCast. Totally equidistributed on ℤ
 implies n ↦ x n totally equidistributed on ℕ. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 4;
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 4, footnote 2.)
 
@@ -2504,7 +2506,7 @@ Use Mathlib `UnitAddTorus`; Mathlib `UnitAddTorus.mFourier`; Mathlib `fourier`; 
 Use the ambient types, measurability and finiteness hypotheses of Layer 2, Irrational points of the torus. Any
 additional assumptions are stated explicitly above.
 
-Prove `torusIrrational_iff_mFourier`. TorusIrrational α ↔ ∀ k ≠ 0, mFourier k α ≠ 1.
+Prove torusIrrational_iff_mFourier. TorusIrrational α ↔ ∀ k ≠ 0, mFourier k α ≠ 1.
 ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 6, Exercise 1.1.5 (iv);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 5, after (1.2); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 6, after Remark 1.1.4.)
@@ -2512,14 +2514,14 @@ printed p. 6, after Remark 1.1.4.)
 Use §2.3 (irrational torus points and characters); Mathlib `UnitAddTorus`; Mathlib `UnitAddTorus.mFourier`;
 Mathlib `fourier`; Mathlib `AddCircle.denseRange_zsmul_iff`.
 
-Prove `mFourier_eq_fourier_sum`. mFourier k α = fourier 1 (∑ i, k i • α i). ([TAO-HOFA-1.1](#references)
+Prove mFourier_eq_fourier_sum. mFourier k α = fourier 1 (∑ i, k i • α i). ([TAO-HOFA-1.1](#references)
 §1.1.1, printed p. 6, Exercise 1.1.5 (iv); [TAO-HOFA-1.1](#references) §1.1.1, printed p. 5, after
 (1.2); [TAO-HOFA-1.1](#references) §1.1.1, printed p. 6, after Remark 1.1.4.)
 
 Use §2.3 (irrational torus points and characters); Mathlib `UnitAddTorus`; Mathlib `UnitAddTorus.mFourier`;
 Mathlib `fourier`; Mathlib `AddCircle.denseRange_zsmul_iff`.
 
-Prove `torusIrrational_unique_iff`. For d with exactly one element, TorusIrrational α ↔ addOrderOf (α default)
+Prove torusIrrational_unique_iff. For d with exactly one element, TorusIrrational α ↔ addOrderOf (α default)
 = 0. ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 6, Exercise 1.1.5 (iv);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 5, after (1.2); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 6, after Remark 1.1.4.)
@@ -2527,7 +2529,7 @@ printed p. 6, after Remark 1.1.4.)
 Use §2.3 (irrational torus points and characters); Mathlib `UnitAddTorus`; Mathlib `UnitAddTorus.mFourier`;
 Mathlib `fourier`; Mathlib `AddCircle.denseRange_zsmul_iff`.
 
-Prove `TorusIrrational.zsmul`. If α is irrational and m ≠ 0 then m • α is irrational.
+Prove TorusIrrational.zsmul. If α is irrational and m ≠ 0 then m • α is irrational.
 ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 6, Exercise 1.1.5 (iv);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 5, after (1.2); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 6, after Remark 1.1.4.)
@@ -2535,7 +2537,7 @@ printed p. 6, after Remark 1.1.4.)
 Use §2.3 (irrational torus points and characters); Mathlib `UnitAddTorus`; Mathlib `UnitAddTorus.mFourier`;
 Mathlib `fourier`; Mathlib `AddCircle.denseRange_zsmul_iff`.
 
-Prove `TorusIrrational.nsmul`. If α is irrational and m ≠ 0 then m • α is irrational, for m : ℕ.
+Prove TorusIrrational.nsmul. If α is irrational and m ≠ 0 then m • α is irrational, for m : ℕ.
 ([TAO-HOFA-1.1](#references) §1.1.1, printed p. 6, Exercise 1.1.5 (iv);
 [TAO-HOFA-1.1](#references) §1.1.1, printed p. 5, after (1.2); [TAO-HOFA-1.1](#references) §1.1.1,
 printed p. 6, after Remark 1.1.4.)
@@ -2820,7 +2822,7 @@ Matrix-parametrized connected subgroups carry pushforward Haar probability. Char
 
 d a finite type; n : ℕ; M : Matrix d (Fin n) ℤ.
 
-Define `Subtorus`. A subtorus datum S of UnitAddTorus d consists of n : ℕ and an integer matrix M : Matrix d
+Define Subtorus. A subtorus datum S of UnitAddTorus d consists of n : ℕ and an integer matrix M : Matrix d
 (Fin n) ℤ; its homomorphism is S.toHom : UnitAddTorus (Fin n) →+ UnitAddTorus d, y ↦ (i ↦ ∑_j M i j • y j),
 its carrier is the range (a compact connected subgroup), and its Haar measure S.haar is the pushforward of
 torusHaar (Fin n) along S.toHom. A character mFourier k of the big torus has S.haar-integral 1 if k vanishes
@@ -2830,10 +2832,10 @@ subgroup arises this way, using the first d′ columns of L⁻¹ when L ∈ SL_d
 (Exercise 1.1.22). ([TAO-HOFA-1.1](#references) §1.1.2, printed p. 16, complexity of a subtorus;
 [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise 1.1.22.)
 
-The interface also exports `Subtorus`: Structure: n : ℕ, M : Matrix d (Fin n) ℤ; `Subtorus.toHom`:
-UnitAddTorus (Fin n) →+ UnitAddTorus d, y ↦ (i ↦ ∑ j, M i j • y j); `Subtorus.carrier`: The additive subgroup
-S.toHom.range; `Subtorus.haar`: The pushforward of torusHaar (Fin n) along toHom, as a ProbabilityMeasure;
-`Subtorus.top`: The full torus: n = #d, M = 1, with haar = torusHaar d; `Subtorus.bot`: The zero subtorus: n =
+The interface also exports Subtorus: Structure: n : ℕ, M : Matrix d (Fin n) ℤ; Subtorus.toHom:
+UnitAddTorus (Fin n) →+ UnitAddTorus d, y ↦ (i ↦ ∑ j, M i j • y j); Subtorus.carrier: The additive subgroup
+S.toHom.range; Subtorus.haar: The pushforward of torusHaar (Fin n) along toHom, as a ProbabilityMeasure;
+Subtorus.top: The full torus: n = #d, M = 1, with haar = torusHaar d; Subtorus.bot: The zero subtorus: n =
 0, with haar = diracProba 0.
 
 S.toHom is a continuous additive homomorphism (finite sums of integer multiples of coordinates). carrier :=
@@ -2871,7 +2873,7 @@ Mathlib `MeasureTheory.integral_map`; Mathlib `IsCompact.image`; Mathlib `isConn
 Use the ambient types, measurability and finiteness hypotheses of Layer 2, Subtori of the standard torus and
 their Haar measures. Any additional assumptions are stated explicitly above.
 
-Prove `Subtorus.continuous_toHom`. toHom is continuous. ([TAO-HOFA-1.1](#references) §1.1.2, printed p.
+Prove Subtorus.continuous_toHom. toHom is continuous. ([TAO-HOFA-1.1](#references) §1.1.2, printed p.
 16, complexity of a subtorus; [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise 1.1.22.)
 
 Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundary; Mathlib
@@ -2879,7 +2881,7 @@ Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundar
 `IsCompact.image`; Mathlib `isConnected_range`; Mathlib
 `MeasureTheory.FiniteMeasure.ext_of_forall_integral_eq`.
 
-Prove `Subtorus.isCompact_carrier`. The carrier is compact, hence closed. ([TAO-HOFA-1.1](#references)
+Prove Subtorus.isCompact_carrier. The carrier is compact, hence closed. ([TAO-HOFA-1.1](#references)
 §1.1.2, printed p. 16, complexity of a subtorus; [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17,
 Exercise 1.1.22.)
 
@@ -2888,7 +2890,7 @@ Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundar
 `IsCompact.image`; Mathlib `isConnected_range`; Mathlib
 `MeasureTheory.FiniteMeasure.ext_of_forall_integral_eq`.
 
-Prove `Subtorus.isConnected_carrier`. The carrier is connected. ([TAO-HOFA-1.1](#references) §1.1.2,
+Prove Subtorus.isConnected_carrier. The carrier is connected. ([TAO-HOFA-1.1](#references) §1.1.2,
 printed p. 16, complexity of a subtorus; [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise
 1.1.22.)
 
@@ -2897,7 +2899,7 @@ Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundar
 `IsCompact.image`; Mathlib `isConnected_range`; Mathlib
 `MeasureTheory.FiniteMeasure.ext_of_forall_integral_eq`.
 
-Prove `Subtorus.haar_carrier`. S.haar (S.carrier) = 1. ([TAO-HOFA-1.1](#references) §1.1.2, printed p.
+Prove Subtorus.haar_carrier. S.haar (S.carrier) = 1. ([TAO-HOFA-1.1](#references) §1.1.2, printed p.
 16, complexity of a subtorus; [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise 1.1.22.)
 
 Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundary; Mathlib
@@ -2905,7 +2907,7 @@ Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundar
 `IsCompact.image`; Mathlib `isConnected_range`; Mathlib
 `MeasureTheory.FiniteMeasure.ext_of_forall_integral_eq`.
 
-Prove `Subtorus.integral_mFourier_haar`. ∫ mFourier k d(S.haar) = if k ᵥ* M = 0 then 1 else 0.
+Prove Subtorus.integral_mFourier_haar. ∫ mFourier k d(S.haar) = if k ᵥ* M = 0 then 1 else 0.
 ([TAO-HOFA-1.1](#references) §1.1.2, printed p. 16, complexity of a subtorus;
 [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise 1.1.22.)
 
@@ -2914,7 +2916,7 @@ Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundar
 `IsCompact.image`; Mathlib `isConnected_range`; Mathlib
 `MeasureTheory.FiniteMeasure.ext_of_forall_integral_eq`.
 
-Prove `Subtorus.mFourier_eq_one_iff`. mFourier k is identically 1 on S.carrier iff k ᵥ* M = 0.
+Prove Subtorus.mFourier_eq_one_iff. mFourier k is identically 1 on S.carrier iff k ᵥ* M = 0.
 ([TAO-HOFA-1.1](#references) §1.1.2, printed p. 16, complexity of a subtorus;
 [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise 1.1.22.)
 
@@ -2923,7 +2925,7 @@ Use §2.6 (subtori and rational decompositions); the native Haar/Fourier boundar
 `IsCompact.image`; Mathlib `isConnected_range`; Mathlib
 `MeasureTheory.FiniteMeasure.ext_of_forall_integral_eq`.
 
-Prove `Subtorus.haar_eq_of_carrier_eq`. S.carrier = S'.carrier → S.haar = S'.haar.
+Prove Subtorus.haar_eq_of_carrier_eq. S.carrier = S'.carrier → S.haar = S'.haar.
 ([TAO-HOFA-1.1](#references) §1.1.2, printed p. 16, complexity of a subtorus;
 [TAO-HOFA-1.1](#references) §1.1.2, printed pp. 16–17, Exercise 1.1.22.)
 
@@ -2963,9 +2965,19 @@ elsewhere) pulled back by L⁻¹, leaving α′_j with first r coordinates zero,
 Use §2.6 (subtori and rational decompositions); §2.3 (irrational torus points and characters); Mathlib
 `Submodule.smithNormalForm`; Mathlib `IsOfFinOrder`.
 
+Define `torusPolynomial` on the native coordinate type d (finite in the headline theorems) by `P(n)=Σ_{0≤j≤s}n^j • α_j` for n∈ℤ, including the constant coefficient. This uses native integer scalar multiplication, not a new polynomial carrier. Its API consists of evaluation at zero, finite additivity in the coefficient sequence and restriction to natural indices. (TAO-HOFA-1.1, §1.1.1, Exercise 1.1.7, printed p.9.)
+
+**Checks.**
+
+- For s=0, P(n)=α₀ even at n=0; the native value 0^0=1 preserves the constant term.
+- For α₀=0, α₁=(√2,1/2) and s=1, P(2)=(2√2,0) in T², while P(1)=(√2,1/2).
+- For P(n)=α₀+nα₁+n²α₂, P(−1)=α₀−α₁+α₂; using natural exponents with an unsigned argument would lose the odd-term sign.
+
+*Needs:* native integer scalar multiplication on UnitAddTorus; §2.5 polynomial sequences.
+
 d a finite type; s ≥ 0; α_0, …, α_s ∈ UnitAddTorus d.
 
-**Equidistribution theorem for abelian polynomial sequences**. For P(n) = `∑_{j=0}^{s}` n^j • α_j with α_0, …,
+Prove `polynomial_haar_mixture` (equidistribution of abelian polynomial sequences). For P(n) = `∑_{j=0}^{s}` n^j • α_j with α_0, …,
 α_s ∈ UnitAddTorus d there are a subtorus datum S and a decomposition P = P′ + P″, where P′(n) = `∑_{j=1}^{s}`
 n^j • α′_j with every α′_j ∈ S.carrier and P″(n) = α_0 + `∑_{j=1}^{s}` n^j • α″_j with every α″_j (j ≥ 1) of
 finite order, such that n ↦ P′(n) is totally equidistributed for S.haar on ℕ and on ℤ. P″ is periodic, and P
@@ -2979,7 +2991,7 @@ ambient frequency k, project P′ to the circle by k·P′. If k annihilates S, 
 Otherwise k∉Γ and some nonconstant coefficient k·α′_j has infinite order; apply the one-dimensional polynomial
 Weyl criterion to this scalar polynomial on each progression and each half. This supplies the required Fourier
 coefficient without claiming full equidistribution of a coordinate lift from a single tested frequency. The ℤ
-statement follows in the same way from (iii) of the criterion. The limit law of P: along each residue class
+statement follows in the same way from (iii) of the criterion. In the signature S is a native closed connected additive subgroup, μ is a probability supported on S and invariant under every translation in S, and ν is exactly the average of its translated measures over a positive period Q. These properties determine the subgroup Haar law, including S={0}. No supplier carrier is assumed. The limit law of P: along each residue class
 mod a period Q of P″, P = P′ + constant, and P′ restricted to that class is equidistributed for S.haar;
 average over the Q classes.
 
@@ -2989,6 +3001,8 @@ average over the Q classes.
   diracProba α_0, obtained from the zero subtorus.
 
 - The source's example n ↦ (√2 n, n²/3) is equidistributed for (1/3)·Haar(T × {0}) + (2/3)·Haar(T × {1/3}).
+
+- For P(n)=(n√2,n/2), the limit gives weight 1/2 to Haar(T×{0}) and weight 1/2 to Haar(T×{1/2}); every nonzero signed progression of the connected part has Haar(T×{0}) limit.
 
 - For s = 1 it is abelian-ratner-linear.
 
@@ -3038,17 +3052,17 @@ normalization in Koksma and the one-dimensional Erdős–Turán estimate.
 
 Use Mathlib `MeasureTheory.ProbabilityMeasure`.
 
-Prove `starDiscrepancy_bounds`. 0≤D*≤1 for every finite real sample.
+Prove starDiscrepancy_bounds. 0≤D*≤1 for every finite real sample.
 ([StrauchPorubsky2018](#references) §1.9 and §1.11.2, physical pp.73–74,95.)
 
 Use §2.7 (discrepancy and quadrature).
 
-Prove `starDiscrepancy_perm`. Reordering the finite sample preserves star discrepancy.
+Prove starDiscrepancy_perm. Reordering the finite sample preserves star discrepancy.
 ([StrauchPorubsky2018](#references) §1.9 and §1.11.2, physical pp.73–74,95.)
 
 Use §2.7 (discrepancy and quadrature).
 
-Prove `starDiscrepancy_perturb`. If both samples lie in [0,1) and corresponding points differ by at most ε≥0,
+Prove starDiscrepancy_perturb. If both samples lie in [0,1) and corresponding points differ by at most ε≥0,
 their star discrepancies differ by at most ε. ([StrauchPorubsky2018](#references) §1.9 and
 §1.11.2, physical pp.73–74,95.)
 
@@ -3072,7 +3086,7 @@ dvolume|≤(eVariationOn f [0,1]).toReal D*(x). Variation is finite by hypothesi
 discontinuities are retained. ([StrauchPorubsky2018](#references) Theorem 1.9.0.3, physical
 p.74.)
 
-First prove `bv_empirical_integral_bound`: for a finite signed Borel measure σ supported on [0,1], with σ([0,1])=0, and native BoundedVariationOn f [0,1], if |σ([0,t))|≤D and |σ([0,t])|≤D for every t∈[0,1], then |∫f dσ|≤D·(eVariationOn f [0,1]).toReal. Interpret the signed integral using its Jordan positive and negative measures. The one-sided distribution bounds retain the actual values of f at jumps. Prove the monotone-function case by layer-cake integration and split a BV function into the difference of two monotone functions with the variation sum equal to its total variation (StrauchPorubsky2018, Theorem 1.9.0.3, physical p.74). Apply to empirical probability minus restricted Lebesgue; the closed initial-interval bound follows from the open bound by right limits, including the endpoint. The native inputs are SignedMeasure, its Jordan decomposition, finite integrals, BoundedVariationOn and eVariationOn.
+First prove bv_empirical_integral_bound: for a finite signed Borel measure σ supported on [0,1], with σ([0,1])=0, and native BoundedVariationOn f [0,1], if |σ([0,t))|≤D and |σ([0,t])|≤D for every t∈[0,1], then |∫f dσ|≤D·(eVariationOn f [0,1]).toReal. Interpret the signed integral using its Jordan positive and negative measures. The one-sided distribution bounds retain the actual values of f at jumps. Prove the monotone-function case by layer-cake integration and split a BV function into the difference of two monotone functions with the variation sum equal to its total variation (StrauchPorubsky2018, Theorem 1.9.0.3, physical p.74). Apply to empirical probability minus restricted Lebesgue; the closed initial-interval bound follows from the open bound by right limits, including the endpoint. The native inputs are SignedMeasure, its Jordan decomposition, finite integrals, BoundedVariationOn and eVariationOn.
 
 **Checks.**
 
@@ -3084,7 +3098,7 @@ First prove `bv_empirical_integral_bound`: for a finite signed Borel measure σ 
 
 Use §2.7 (discrepancy and quadrature); Mathlib `BoundedVariationOn`; Mathlib `eVariationOn`.
 
-The strict-interval singleton values D*({0})=1 and D*({1/2})=1/2 are the target `starDiscrepancy_singletons`.
+The strict-interval singleton values D*({0})=1 and D*({1/2})=1/2 are Checks of this definition.
 
 ### 2.8 Canonical normal digits
 
@@ -3112,18 +3126,18 @@ Cylinder indicators for the expanding circle map give the simultaneous countable
 
 Use Mathlib `Real.digits`.
 
-Prove `IsNormalBase.block`. For a normal x each specified block has the stated overlapping frequency.
+Prove IsNormalBase.block. For a normal x each specified block has the stated overlapping frequency.
 ([Smyth2020](#references) Lesson 5 pointwise frequency discussion, physical pp.28–29; block version via
 cylinder observables.)
 
 Use §2.8 (canonical normal digits).
 
-Prove `IsNormalBase.digit`. Each single digit has frequency 1/b. ([Smyth2020](#references) Lesson 5
+Prove IsNormalBase.digit. Each single digit has frequency 1/b. ([Smyth2020](#references) Lesson 5
 pointwise frequency discussion, physical pp.28–29; block version via cylinder observables.)
 
 Use §2.8 (canonical normal digits).
 
-Prove `IsNormalBase.empty_block`. The empty block is counted at all N positions, giving limiting frequency
+Prove IsNormalBase.empty_block. The empty block is counted at all N positions, giving limiting frequency
 one. ([Smyth2020](#references) Lesson 5 pointwise frequency discussion, physical pp.28–29; block version
 via cylinder observables.)
 
@@ -3141,7 +3155,7 @@ a separate native comparison theorem; do not identify dense orbits with digit fr
 
 Use Mathlib `Real.digits`.
 
-The terminating binary nonexamples 0 and 1/2 form `terminating_binary_not_normal`.
+The terminating binary expansions 0 and 1/2 are non-examples: the digit-one frequencies tend to zero.
 
 Prove `borel_normal`. For each b≥2, IsNormalBase b x holds for volume-almost every x∈[0,1);
 ([Smyth2020](#references) Lesson 5 pointwise frequency theorem, physical pp.28–29, applied to base-b
@@ -3166,8 +3180,7 @@ Use §2.8 (canonical normal digits).
 
 ### Examples
 
-The constant zero circle sequence has Dirac limit, so `zero_not_equidistributed_haar` rules
-out Haar equidistribution. The zero-dimensional torus has a single point and no nonzero
+The constant zero circle sequence has Dirac limit and fails Haar equidistribution. The zero-dimensional torus has a single point and no nonzero
 character, so every sequence is equidistributed for its unique probability. On the
 two-torus, (α,α) with irrational α has irrational coordinates but is annihilated by (1,−1).
 Its linear orbit lies on the diagonal circle. The matrix column (1,1) gives that subtorus;
@@ -3210,14 +3223,14 @@ version for ψ lies in 𝒜, and an irrational point of 𝒜 lies in the open ve
 conventions. This argument does not identify individual finite sets, their exact overlap measures, or exact
 radius-dependent constants.
 
-Define `dsSet, dsLimsup, khinchinSet, khinchinLimsup`. For ψ: ℕ → `ℝ_{≥0}` and q ≥ 1 let 𝒜_q = [0,1] ∩ `⋃_{1≤a≤q`,
+Define `dsSet`, `dsLimsup`, `khinchinSet` and `khinchinLimsup`. For ψ: ℕ → `ℝ_{≥0}` and q ≥ 1 let 𝒜_q = [0,1] ∩ `⋃_{1≤a≤q`,
 gcd(a,q)=1} [a/q − ψ(q)/q, a/q + ψ(q)/q] (1.3), and let 𝒜 = `limsup_{q→∞}` 𝒜_q, the set of α ∈ [0,1] lying in
 infinitely many 𝒜_q (1.4). Khinchin's 𝒦_q (1.2) uses every 0 ≤ a ≤ q, and 𝒦 = limsup 𝒦_q.
 ([KM-2020](#references) §1, (1.2)–(1.4), pp. 252–253; [KM-2020](#references) §1, (1.2), p. 252.)
 
-The interface also exports `TauCeti.DuffinSchaeffer.dsLimsup`: 𝒜 = `limsup_{q→∞}` 𝒜_q;
-`TauCeti.DuffinSchaeffer.khinchinSet`: Khinchin's 𝒦_q, over every 0 ≤ a ≤ q;
-`TauCeti.DuffinSchaeffer.khinchinLimsup`: 𝒦 = limsup 𝒦_q.
+The interface also exports TauCeti.DuffinSchaeffer.dsLimsup: 𝒜 = `limsup_{q→∞}` 𝒜_q;
+TauCeti.DuffinSchaeffer.khinchinSet: Khinchin's 𝒦_q, over every 0 ≤ a ≤ q;
+TauCeti.DuffinSchaeffer.khinchinLimsup: 𝒦 = limsup 𝒦_q.
 
 Define 𝒜_q, 𝒦_q as finite unions of closed intervals intersected with [0,1], and 𝒜, 𝒦 as Filter.limsup along
 atTop. Measure bounds: 𝒜_q is a union of φ(q) intervals of length 2ψ(q)/q, so λ(𝒜_q) ≤ 2φ(q)ψ(q)/q. When ψ(q)
@@ -3245,38 +3258,38 @@ Use Mathlib `Nat.totient`; Mathlib `UnitAddCircle.mem_addWellApproximable_iff`.
 Use the ambient types, measurability and finiteness hypotheses of Layer 3, Duffin–Schaeffer approximation sets
 𝒜_q, 𝒜, 𝒦_q and 𝒦. Any additional assumptions are stated explicitly above.
 
-Prove `TauCeti.DuffinSchaeffer.volume_dsSet_le`. λ(𝒜_q) ≤ 2φ(q)ψ(q)/q for ψ ≥ 0. ([KM-2020](#references) §1,
+Prove TauCeti.DuffinSchaeffer.volume_dsSet_le. λ(𝒜_q) ≤ 2φ(q)ψ(q)/q for ψ ≥ 0. ([KM-2020](#references) §1,
 (1.2)–(1.4), pp. 252–253; [KM-2020](#references) §1, (1.2), p. 252.)
 
 Use §3.1 (reduced and unrestricted approximation sets); Mathlib `Nat.totient`; Mathlib
 `UnitAddCircle.mem_addWellApproximable_iff`.
 
-Prove `TauCeti.DuffinSchaeffer.le_volume_dsSet`. λ(𝒜_q) ≥ φ(q)ψ(q)/q for q ≥ 1 and 0 ≤ ψ(q) ≤ 1/2.
+Prove TauCeti.DuffinSchaeffer.le_volume_dsSet. λ(𝒜_q) ≥ φ(q)ψ(q)/q for q ≥ 1 and 0 ≤ ψ(q) ≤ 1/2.
 ([KM-2020](#references) §1, (1.2)–(1.4), pp. 252–253; [KM-2020](#references) §1, (1.2), p. 252.)
 
 Use §3.1 (reduced and unrestricted approximation sets); Mathlib `Nat.totient`; Mathlib
 `UnitAddCircle.mem_addWellApproximable_iff`.
 
-Prove `TauCeti.DuffinSchaeffer.dsSet_mono`. 𝒜_q is monotone in ψ. ([KM-2020](#references) §1, (1.2)–(1.4),
+Prove TauCeti.DuffinSchaeffer.dsSet_mono. 𝒜_q is monotone in ψ. ([KM-2020](#references) §1, (1.2)–(1.4),
 pp. 252–253; [KM-2020](#references) §1, (1.2), p. 252.)
 
 Use §3.1 (reduced and unrestricted approximation sets); Mathlib `Nat.totient`; Mathlib
 `UnitAddCircle.mem_addWellApproximable_iff`.
 
-Prove `TauCeti.DuffinSchaeffer.dsSet_subset_khinchinSet`. 𝒜_q ⊆ 𝒦_q. ([KM-2020](#references) §1, (1.2)–(1.4),
+Prove TauCeti.DuffinSchaeffer.dsSet_subset_khinchinSet. 𝒜_q ⊆ 𝒦_q. ([KM-2020](#references) §1, (1.2)–(1.4),
 pp. 252–253; [KM-2020](#references) §1, (1.2), p. 252.)
 
 Use §3.1 (reduced and unrestricted approximation sets); Mathlib `Nat.totient`; Mathlib
 `UnitAddCircle.mem_addWellApproximable_iff`.
 
-Prove `TauCeti.DuffinSchaeffer.mem_dsLimsup_of_mem_addWellApproximable`. For x ∈ [0,1], if the image of x on
+Prove TauCeti.DuffinSchaeffer.mem_dsLimsup_of_mem_addWellApproximable. For x ∈ [0,1], if the image of x on
 the circle is in Mathlib's addWellApproximable for δ(n) = ψ(n)/n, then x ∈ 𝒜. ([KM-2020](#references) §1,
 (1.2)–(1.4), pp. 252–253; [KM-2020](#references) §1, (1.2), p. 252.)
 
 Use §3.1 (reduced and unrestricted approximation sets); Mathlib `Nat.totient`; Mathlib
 `UnitAddCircle.mem_addWellApproximable_iff`.
 
-Prove `TauCeti.DuffinSchaeffer.mem_addWellApproximable_of_mem_dsLimsup`. An irrational x ∈ 𝒜 maps into
+Prove TauCeti.DuffinSchaeffer.mem_addWellApproximable_of_mem_dsLimsup. An irrational x ∈ 𝒜 maps into
 addWellApproximable for δ(n) = 2ψ(n)/n. ([KM-2020](#references) §1, (1.2)–(1.4), pp. 252–253;
 [KM-2020](#references) §1, (1.2), p. 252.)
 
@@ -3485,7 +3498,7 @@ Finite positive vertex sets and an arbitrary set of recorded primes encode exact
 Allow an arbitrary set 𝒫 of primes. Finite metadata is a specialization for the iterative construction, not a restriction on the general carrier. Condition
 (ii) is stated with p-adic valuations: the valuation of gcd(v,w) at p is min(f(p), g(p)).
 
-Define `GCDGraph`. A GCD graph is G = (μ, 𝒱, 𝒲, ℰ, 𝒫, f, g) with `μ:ℕ→ℝ_{≥0}` an individually finite nonnegative
+Define GCDGraph. A GCD graph is G = (μ, 𝒱, 𝒲, ℰ, 𝒫, f, g) with `μ:ℕ→ℝ_{≥0}` an individually finite nonnegative
 weight (no finite-total-mass assumption) (extended to pairs by μ(𝒩) = `Σ_{(n₁,n₂)∈𝒩}` μ(n₁)μ(n₂)), 𝒱, 𝒲 finite
 sets of positive integers, ℰ ⊆ 𝒱 × 𝒲, 𝒫 a set of primes and f, g: 𝒫 → `ℤ_{≥0}` such that for p ∈ 𝒫: (i) `p^{f(p)}`
 | v for v ∈ 𝒱 and `p^{g(p)}` | w for w ∈ 𝒲; (ii) `p^{min(f(p),g(p))}` ∥ gcd(v,w) for (v,w) ∈ ℰ; (iii) if f(p) ≠
@@ -3493,10 +3506,10 @@ g(p) then `p^{f(p)}` ∥ v for all v ∈ 𝒱 and `p^{g(p)}` ∥ w for all w ∈
 GCD subgraph) if μ' = μ, 𝒱' ⊆ 𝒱, 𝒲' ⊆ 𝒲, ℰ' ⊆ ℰ, 𝒫' ⊇ 𝒫 and f', g' extend f, g. ([KM-2020](#references) §6,
 Definitions 6.1, 6.2 and 6.4, pp. 269–270; [KM-2020](#references) §6, Lemma 6.7, p. 273.)
 
-The interface also exports `TauCeti.DuffinSchaeffer.GCDGraph.vertexMeasure`: μ(𝒮) = `Σ_{n∈𝒮}` μ(n);
-`TauCeti.DuffinSchaeffer.GCDGraph.edgeMeasure`: μ(𝒩) = `Σ_{(n₁,n₂)∈𝒩}` μ(n₁)μ(n₂);
-`TauCeti.DuffinSchaeffer.GCDGraph.IsNontrivial`: μ(ℰ) > 0 (Definition 6.2);
-`TauCeti.DuffinSchaeffer.GCDGraph.IsSubgraph`: The relation G' ⪯ G of Definition 6.4.
+The interface also exports TauCeti.DuffinSchaeffer.GCDGraph.vertexMeasure: μ(𝒮) = `Σ_{n∈𝒮}` μ(n);
+TauCeti.DuffinSchaeffer.GCDGraph.edgeMeasure: μ(𝒩) = `Σ_{(n₁,n₂)∈𝒩}` μ(n₁)μ(n₂);
+TauCeti.DuffinSchaeffer.GCDGraph.IsNontrivial: μ(ℰ) > 0 (Definition 6.2);
+TauCeti.DuffinSchaeffer.GCDGraph.IsSubgraph: The relation G' ⪯ G of Definition 6.4.
 
 Encode G as a structure with fields for the data and the conditions (i)–(iii), with f, g: ℕ → ℕ read only on
 𝒫. Define the vertex and edge measures, non-triviality and the subgraph relation. Lemma 6.7: transitivity and
@@ -3523,20 +3536,20 @@ Use Mathlib `Nat.factorization`; Mathlib `Nat.primeFactors`.
 `𝒱_{p^k}` = {v ∈ 𝒱 : p^k ∥ v}; `𝒱_{p⁰}` is the set of v coprime to p. In ℛ♯ the exponent k can be bounded by the
 largest vertex without changing the set.
 
-Define `GCDGraph.quality`. For a GCD graph G: the edge density δ(G) = μ(ℰ)/(μ(𝒱)μ(𝒲)) (0 if a vertex set has
+Define GCDGraph.quality. For a GCD graph G: the edge density δ(G) = μ(ℰ)/(μ(𝒱)μ(𝒲)) (0 if a vertex set has
 measure 0); the neighbourhoods Γ_G(v), Γ_G(w); ℛ(G) = {p ∉ 𝒫 : p | gcd(v,w) for some (v,w) ∈ ℰ}; ℛ♯(G) = {p ∈
 ℛ(G) : ∃k with `μ(𝒱_{p^k})/μ(𝒱)`, `μ(𝒲_{p^k})/μ(𝒲)` ≥ 1 − 10⁴⁰/p}, ℛ♭(G) = ℛ(G) \ ℛ♯(G); and the quality q(G) =
 δ¹⁰ μ(𝒱)μ(𝒲) `∏_{p∈𝒫}` `p^{|f(p)−g(p)|}/((1` − `𝟙_{f(p)=g(p)≥1}/p)²(1` − `p^{−31/30})¹⁰)`. ([KM-2020](#references)
 §6, Definition 6.6 and the remark after it, pp. 271–273.)
 
-The interface also exports `TauCeti.DuffinSchaeffer.GCDGraph.edgeDensity`: δ(G) = μ(ℰ)/(μ(𝒱)μ(𝒲)), or 0;
-`TauCeti.DuffinSchaeffer.GCDGraph.nbhdV`: Γ_G(v) = {w ∈ 𝒲 : (v,w) ∈ ℰ};
-`TauCeti.DuffinSchaeffer.GCDGraph.nbhdW`: Γ_G(w) = {v ∈ 𝒱 : (v,w) ∈ ℰ}; `TauCeti.DuffinSchaeffer.GCDGraph.R`:
-ℛ(G), the primes outside 𝒫 dividing the gcd of an edge; `TauCeti.DuffinSchaeffer.GCDGraph.Vpow`: `𝒱_{p^k}`;
-`TauCeti.DuffinSchaeffer.GCDGraph.Wpow`: `𝒲_{p^k}`; `TauCeti.DuffinSchaeffer.GCDGraph.RSharp`: ℛ♯(G);
-`TauCeti.DuffinSchaeffer.GCDGraph.RFlat`: ℛ♭(G) = ℛ(G) \ ℛ♯(G).
+The interface also exports TauCeti.DuffinSchaeffer.GCDGraph.edgeDensity: δ(G) = μ(ℰ)/(μ(𝒱)μ(𝒲)), or 0;
+TauCeti.DuffinSchaeffer.GCDGraph.nbhdV: Γ_G(v) = {w ∈ 𝒲 : (v,w) ∈ ℰ};
+TauCeti.DuffinSchaeffer.GCDGraph.nbhdW: Γ_G(w) = {v ∈ 𝒱 : (v,w) ∈ ℰ}; TauCeti.DuffinSchaeffer.GCDGraph.R:
+ℛ(G), the primes outside 𝒫 dividing the gcd of an edge; TauCeti.DuffinSchaeffer.GCDGraph.Vpow: `𝒱_{p^k}`;
+TauCeti.DuffinSchaeffer.GCDGraph.Wpow: `𝒲_{p^k}`; TauCeti.DuffinSchaeffer.GCDGraph.RSharp: ℛ♯(G);
+TauCeti.DuffinSchaeffer.GCDGraph.RFlat: ℛ♭(G) = ℛ(G) \ ℛ♯(G).
 
-Define each quantity as displayed; ℛ(G) is a finite set because ℰ is finite. For quality, set q(G)=0 when μ(ℰ)=0; otherwise use the native infinite product over the subtype 𝒫. Prove `GCDGraph.quality_product_convergent`: choose an edge (v,w); every p with f(p)>0 or g(p)>0 divides vw, so such p form a finite set. Outside it the local factor is (1−p^(−31/30))^(−10), whose logarithms are summable by comparison with `Σ_{n≥2}n^(−31/30)`. Thus the product exists, is finite and strictly positive. Prove `GCDGraph.quality_finite`: finite 𝒫 gives exactly the displayed finite product. With no edges, f and g need not have finite support; the explicit zero-quality guard prevents an undefined product from affecting that case. (KM-2020, Definition 6.1(d), Definition 6.6 and following remark, pp.269–273.) Remark after Definition 6.6: when
+Define each quantity as displayed; ℛ(G) is a finite set because ℰ is finite. For quality, set q(G)=0 when μ(ℰ)=0; otherwise use the native infinite product over the subtype 𝒫. Prove GCDGraph.quality_product_convergent: choose an edge (v,w); every p with f(p)>0 or g(p)>0 divides vw, so such p form a finite set. Outside it the local factor is (1−p^(−31/30))^(−10), whose logarithms are summable by comparison with `Σ_{n≥2}n^(−31/30)`. Thus the product exists, is finite and strictly positive. Prove GCDGraph.quality_finite: finite 𝒫 gives exactly the displayed finite product. With no edges, f and g need not have finite support; the explicit zero-quality guard prevents an undefined product from affecting that case. (KM-2020, Definition 6.1(d), Definition 6.6 and following remark, pp.269–273.) Remark after Definition 6.6: when
 μ(𝒱), μ(𝒲) > 0, q(G) = `μ(ℰ)¹⁰/(μ(𝒱)⁹μ(𝒲)⁹)·∏_{p∈𝒫}(…)`. Lemma 6.7(d): non-trivial ⟺ δ > 0 ⟺ q(G) > 0, since the
 product over 𝒫 is positive. δ ≤ 1 because ℰ ⊆ 𝒱 × 𝒲 and μ ≥ 0.
 
@@ -3555,7 +3568,7 @@ Use §3.4 (weighted gcd graphs).
 
 The source requires only p ∉ 𝒫 for the definition.
 
-Define `GCDGraph.restrictPow`. For a GCD graph G, a prime p ∉ 𝒫 and k, ℓ ≥ 0, `G_{p^k,p^ℓ}` = (μ, `𝒱_{p^k}`,
+Define GCDGraph.restrictPow. For a GCD graph G, a prime p ∉ 𝒫 and k, ℓ ≥ 0, `G_{p^k,p^ℓ}` = (μ, `𝒱_{p^k}`,
 `𝒲_{p^ℓ}`, ℰ ∩ `(𝒱_{p^k}` × `𝒲_{p^ℓ})`, 𝒫 ∪ {p}, `f_{p^k}`, `g_{p^ℓ})` with `f_{p^k}` extending f by k at p and `g_{p^ℓ}`
 extending g by ℓ. It is a GCD subgraph of G. ([KM-2020](#references) §6, Definition 6.5, p. 271.)
 
@@ -3565,19 +3578,17 @@ immediate.
 
 **Checks.**
 
-- The vertex set of `G_{2⁰,2⁰}` is the set of odd elements of 𝒱.
+- On the complete bipartite graph 𝒱={1,2,4}, 𝒲={1,2,8}, with unit weights and empty prime metadata, (p,k,ℓ)=(2,0,0) retains {1}×{1}, with quality (1−2^(−31/30))^(−10).
 
-- For k ≠ ℓ every vertex v of `G_{p^k,p^ℓ}` on the left has v_p(v) = k exactly.
+- On that graph (2,1,3) retains {2}×{8}; the gcd valuation is exactly 1 and the quality is 4(1−2^(−31/30))^(−10). Keeping merely divisible vertices would also retain 4 on the left and give the wrong graph.
 
-- If `𝒱_{p^k}` = ∅ then `q(G_{p^k,p^ℓ})` = 0.
-
-- `G_{2⁰,2⁰}` keeps the odd vertices on both sides.
+- On that graph (2,3,0) has no left vertices, no edges and quality zero, testing the zero-quality guard.
 
 Use §3.4 (weighted gcd graphs).
 
 Assume p ∉ 𝒫.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.quality_restrictPow`. If G is non-trivial, p ∉ 𝒫 and `μ(𝒱_{p^k})`,
+Prove TauCeti.DuffinSchaeffer.GCDGraph.quality_restrictPow. If G is non-trivial, p ∉ 𝒫 and `μ(𝒱_{p^k})`,
 `μ(𝒲_{p^ℓ})` > 0, then `q(G_{p^k,p^ℓ})/q(G)` =
 `(μ(ℰ_{p^k,p^ℓ})/μ(ℰ))¹⁰(μ(𝒱)/μ(𝒱_{p^k}))⁹(μ(𝒲)/μ(𝒲_{p^ℓ}))⁹·p^{|k−ℓ|}/((1` − `𝟙_{k=ℓ≥1}/p)²(1` − `p^{−31/30})¹⁰)`.
 ([KM-2020](#references) §11, Lemma 11.1, p. 288.)
@@ -3591,24 +3602,24 @@ Use §3.4 (weighted gcd graphs).
 Use the ambient types, measurability and finiteness hypotheses of Layer 3, GCD graph and GCD subgraph
 (Definitions 6.1, 6.2, 6.4). Any additional assumptions are stated explicitly above.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.IsSubgraph.trans`. Lemma 6.7(a): ⪯ is transitive.
+Prove TauCeti.DuffinSchaeffer.GCDGraph.IsSubgraph.trans. Lemma 6.7(a): ⪯ is transitive.
 ([KM-2020](#references) §6, Definitions 6.1, 6.2 and 6.4, pp. 269–270; [KM-2020](#references) §6, Lemma 6.7,
 p. 273.)
 
 Use §3.4 (weighted gcd graphs); Mathlib `Nat.factorization`; Mathlib `Nat.primeFactors`.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.IsSubgraph.refl`. G ⪯ G. ([KM-2020](#references) §6, Definitions 6.1,
+Prove TauCeti.DuffinSchaeffer.GCDGraph.IsSubgraph.refl. G ⪯ G. ([KM-2020](#references) §6, Definitions 6.1,
 6.2 and 6.4, pp. 269–270; [KM-2020](#references) §6, Lemma 6.7, p. 273.)
 
 Use §3.4 (weighted gcd graphs); Mathlib `Nat.factorization`; Mathlib `Nat.primeFactors`.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.R_subset_of_isSubgraph`. Lemma 6.7(b): G' ⪯ G implies ℛ(G') ⊆ ℛ(G).
+Prove TauCeti.DuffinSchaeffer.GCDGraph.R_subset_of_isSubgraph. Lemma 6.7(b): G' ⪯ G implies ℛ(G') ⊆ ℛ(G).
 ([KM-2020](#references) §6, Definitions 6.1, 6.2 and 6.4, pp. 269–270; [KM-2020](#references) §6, Lemma 6.7,
 p. 273.)
 
 Use §3.4 (weighted gcd graphs); Mathlib `Nat.factorization`; Mathlib `Nat.primeFactors`.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.vertexMeasure_pos_of_isNontrivial`. Lemma 6.7(c): a non-trivial G has
+Prove TauCeti.DuffinSchaeffer.GCDGraph.vertexMeasure_pos_of_isNontrivial. Lemma 6.7(c): a non-trivial G has
 μ(𝒱), μ(𝒲) > 0. ([KM-2020](#references) §6, Definitions 6.1, 6.2 and 6.4, pp. 269–270;
 [KM-2020](#references) §6, Lemma 6.7, p. 273.)
 
@@ -3617,17 +3628,17 @@ Use §3.4 (weighted gcd graphs); Mathlib `Nat.factorization`; Mathlib `Nat.prime
 Use the ambient types, measurability and finiteness hypotheses of Layer 3, Edge density, ℛ(G) and the quality
 of a GCD graph (Definition 6.6). Any additional assumptions are stated explicitly above.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.isNontrivial_iff`. Lemma 6.7(d): non-trivial ⟺ δ > 0 ⟺ q > 0.
+Prove TauCeti.DuffinSchaeffer.GCDGraph.isNontrivial_iff. Lemma 6.7(d): non-trivial ⟺ δ > 0 ⟺ q > 0.
 ([KM-2020](#references) §6, Definition 6.6 and the remark after it, pp. 271–273.)
 
 Use §3.4 (weighted gcd graphs).
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.quality_eq`. q(G) = μ(ℰ)¹⁰/(μ(𝒱)⁹μ(𝒲)⁹)·∏ when μ(𝒱), μ(𝒲) > 0.
+Prove TauCeti.DuffinSchaeffer.GCDGraph.quality_eq. q(G) = μ(ℰ)¹⁰/(μ(𝒱)⁹μ(𝒲)⁹)·∏ when μ(𝒱), μ(𝒲) > 0.
 ([KM-2020](#references) §6, Definition 6.6 and the remark after it, pp. 271–273.)
 
 Use §3.4 (weighted gcd graphs).
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.edgeDensity_le_one`. δ(G) ≤ 1. ([KM-2020](#references) §6, Definition
+Prove TauCeti.DuffinSchaeffer.GCDGraph.edgeDensity_le_one. δ(G) ≤ 1. ([KM-2020](#references) §6, Definition
 6.6 and the remark after it, pp. 271–273.)
 
 Use §3.4 (weighted gcd graphs).
@@ -3635,12 +3646,12 @@ Use §3.4 (weighted gcd graphs).
 Use the ambient types, measurability and finiteness hypotheses of Layer 3, The special GCD subgraphs
 `G_{p^k,p^ℓ}` (Definition 6.5). Any additional assumptions are stated explicitly above.
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.restrictPow_isSubgraph`. `G_{p^k,p^ℓ}` ⪯ G. ([KM-2020](#references) §6,
+Prove TauCeti.DuffinSchaeffer.GCDGraph.restrictPow_isSubgraph. `G_{p^k,p^ℓ}` ⪯ G. ([KM-2020](#references) §6,
 Definition 6.5, p. 271.)
 
 Use §3.4 (weighted gcd graphs).
 
-Prove `TauCeti.DuffinSchaeffer.GCDGraph.R_restrictPow`. `ℛ(G_{p^k,p^ℓ})` ⊆ ℛ(G) \ {p}. ([KM-2020](#references)
+Prove TauCeti.DuffinSchaeffer.GCDGraph.R_restrictPow. `ℛ(G_{p^k,p^ℓ})` ⊆ ℛ(G) \ {p}. ([KM-2020](#references)
 §6, Definition 6.5, p. 271.)
 
 Use §3.4 (weighted gcd graphs).
@@ -4013,17 +4024,17 @@ The diameter/radius comparison is a separate lemma; its constants are not an equ
 
 Use Mathlib `MeasureTheory.Measure.mkMetric`.
 
-Prove `IsDimensionGauge.zero`. A dimension gauge vanishes at zero.
+Prove IsDimensionGauge.zero. A dimension gauge vanishes at zero.
 ([BeresnevichVelani](#references) §2.1, printed p.974.)
 
 Use §3.8 (gauges and disjoint expanded coverings).
 
-Prove `IsDimensionGauge.positive`. Every positive radius has positive gauge value.
+Prove IsDimensionGauge.positive. Every positive radius has positive gauge value.
 ([BeresnevichVelani](#references) §2.1, printed p.974.)
 
 Use §3.8 (gauges and disjoint expanded coverings).
 
-Prove `IsDimensionGauge.tendsto_zero`. The gauge tends to zero as the radius tends to zero.
+Prove IsDimensionGauge.tendsto_zero. The gauge tends to zero as the radius tends to zero.
 ([BeresnevichVelani](#references) §2.1, printed p.974.)
 
 Use §3.8 (gauges and disjoint expanded coverings).
@@ -4059,7 +4070,7 @@ Use §3.8 (gauges and disjoint expanded coverings).
 
 Construct a nested family with several separated local sublevels. Gauge-proportional child masses extend to a native Borel probability; the small-ball estimate must have a constant independent of the parameter η.
 
-Define `MassTransferenceCantor`. For k≥1, η>1, a bounded positive-radius root B₀, and the full expanded-ball
+Define MassTransferenceCantor. For k≥1, η>1, a bounded positive-radius root B₀, and the full expanded-ball
 limsup hypothesis with f(r)/r^k→∞, construct finite labelled closed-ball levels K(n), finite local sublevels
 K(n,B,i) and increasing source index cutoffs, with K(1)={B₀}. (P1) All triples3L of children of B are
 disjoint, contained in B and contained in L^f. (P2) Expanded L^f are disjoint inside each sublevel and
@@ -4076,32 +4087,31 @@ levels. The construction includes the finite parent maps, sublevel labels and ra
 
 **Checks.**
 
-- No child crosses the boundary of its parent.
+- For root [0,1], children centred at 1/4 and 3/4 with radius 1/20 have disjoint triples [1/10,2/5] and [3/5,9/10]. A child centred at 19/20 with radius 1/10 is rejected: its triple reaches 5/4.
 
 - A construction repeating a fixed finite collection of balls is rejected by the increasing-cutoff requirement.
 
-- For nonroot parents the source choice gives at least two sublevels, preventing an incorrect single-child
-  measure model.
+- For f(r)=√r, consecutive sublevels with radii 1/16 and 1/64 give f-values 1/4 and 1/8 and satisfy P4 with equality. Repeating radius 1/16 would require the false inequality 1/4≤1/8. These test individual constraints on the construction.
 
 Use §3.8 (gauges and disjoint expanded coverings).
 
-Prove `MassTransferenceCantor.nested`. Every level lies inside its parent level.
+Prove MassTransferenceCantor.nested. Every level lies inside its parent level.
 ([BeresnevichVelani](#references) §§5.1–5.2, printed pp.980–986.)
 
 Use §3.9 (separated cantor levels and their probability measure).
 
-Prove `MassTransferenceCantor.limsup`. Every point of Kη belongs to infinitely many original balls with
+Prove MassTransferenceCantor.limsup. Every point of Kη belongs to infinitely many original balls with
 unbounded indices. ([BeresnevichVelani](#references) §§5.1–5.2, printed pp.980–986.)
 
 Use §3.9 (separated cantor levels and their probability measure).
 
-Prove `MassTransferenceCantor.separated`. Distinct child triples are disjoint; the stronger expanded-ball
+Prove MassTransferenceCantor.separated. Distinct child triples are disjoint; the stronger expanded-ball
 disjointness holds within each sublevel. ([BeresnevichVelani](#references) §§5.1–5.2, printed
 pp.980–986.)
 
 Use §3.9 (separated cantor levels and their probability measure).
 
-Define `MassTransferenceMeasure`. On the source Cantor levels attach weight 1 to B₀ and weight μ(L)=f(r_L)
+Define MassTransferenceMeasure. On the source Cantor levels attach weight 1 to B₀ and weight μ(L)=f(r_L)
 `μ(B)/Σ_{M child of B}f(r_M)` to each child L of B. Extend these compatible finite masses to a Borel probability
 supported on Kη. ([BeresnevichVelani](#references) §§5.3–5.5, printed pp.986–990.)
 
@@ -4124,17 +4134,17 @@ intersection.
 Use §3.9 (separated cantor levels and their probability measure); Mathlib
 `MeasureTheory.Measure.le_hausdorffMeasure`.
 
-Prove `MassTransferenceMeasure.root`. The root mass is one. ([BeresnevichVelani](#references)
+Prove MassTransferenceMeasure.root. The root mass is one. ([BeresnevichVelani](#references)
 §§5.3–5.5, printed pp.986–990.)
 
 Use §3.9 (separated cantor levels and their probability measure).
 
-Prove `MassTransferenceMeasure.children`. The sum of finite child masses equals the parent mass.
+Prove MassTransferenceMeasure.children. The sum of finite child masses equals the parent mass.
 ([BeresnevichVelani](#references) §§5.3–5.5, printed pp.986–990.)
 
 Use §3.9 (separated cantor levels and their probability measure).
 
-Prove `MassTransferenceMeasure.ball_bound`. For A of radius below the construction cutoff, μ(A)≤C_k f(r_A)/η
+Prove MassTransferenceMeasure.ball_bound. For A of radius below the construction cutoff, μ(A)≤C_k f(r_A)/η
 with C_k independent of η and A. ([BeresnevichVelani](#references) §§5.3–5.5, printed pp.986–990.)
 
 Apply the separate arbitrary-ball bound, retaining its dimension-only constant and construction-dependent
@@ -4180,8 +4190,26 @@ Use §3.9 (separated cantor levels and their probability measure).
 
 The general Euclidean transference theorem yields the line power-gauge case, Jarník–Besicovitch and Hausdorff Duffin–Schaeffer. A convergence exponent describes the reduced limsup dimension.
 
-**Mass transference principle**. BV Theorem 2: for k≥1, balls B_i⊂ℝ^k of radii tending to zero, a dimension
-function f with f(r)/r^k monotone, and expanded balls B_i^f of radius f(r_i)^(1/k), assume limsup B_i^f has
+Define `extendedGauge` by extending f:ℝ≥0→ℝ≥0 to ENNReal: its value at finite r is f(r), and its value at ∞ is ∞. Native Measure.mkMetric applies this gauge to diameters. The API preserves every finite value, the zero value for dimension gauges and equality of gauges at finite arguments; the value at ∞ does not affect the small-scale Hausdorff construction. (Mathlib, MeasureTheory/Measure/Hausdorff.lean, Measure.mkMetric; [BeresnevichVelani](#references), §2.1, printed p.974.)
+
+**Checks.**
+
+- For f(r)=r², the extended value at 1/2 is 1/4, whereas at ∞ it is ∞; an extension by zero at ∞ would lose the chosen convention.
+- For f(r)=√r, the extended value at 1/4 is 1/2, retaining the finite radius.
+- For f(r)=r, the extended value at 0 is 0. Finite diameter 2r receives 2r, not r; for f(r)=r² and r=1/4 the diameter gauge gives 1/4 rather than the radius gauge's 1/16.
+
+Define `GaugeRatioMonotone` for k and f to mean that some R>0 makes f(r)/r^k monotone or antitone on 0<r≤R. Only the behavior near zero enters Hausdorff measure; this is the local form of the source's ratio hypothesis. Its API restricts the cutoff R, admits either direction and ignores the totalized quotient at r=0. ([BeresnevichVelani](#references), Theorem 2 and Remark 3, printed p.977.)
+
+**Checks.**
+
+- For k=2 and f(r)=r² the ratio is 1 on positive radii; both directions hold and the expanded radius is r.
+- For k=1 and f(r)=√r, the ratio at 1/16 is 4 and at 1/4 is 2: it is antitone.
+- For k=1 and f(r)=r², the same ratios are 1/16 and 1/4: it is monotone. Rejecting this direction would incorrectly exclude the zero-Hausdorff-measure case.
+
+*Needs:* §3.8 dimension gauges and native Measure.mkMetric.
+
+Prove `mass_transference` (the mass transference principle). BV Theorem 2: for k≥1, closed balls B_i⊂ℝ^k of positive radii tending to zero, a dimension
+function f with GaugeRatioMonotone k f, and expanded balls B_i^f of radius f(r_i)^(1/k), assume limsup B_i^f has
 full Lebesgue measure in every ball. Then H^f(B∩limsup B_i)=H^f(B) for every ball B. Use native mkMetric
 through the explicit normalization comparison; no claim about a general metric space without §6.1’s local
 compactness/doubling hypotheses. ([BeresnevichVelani](#references) Theorem 2 and §5, printed
@@ -4194,13 +4222,13 @@ bound, then native mass distribution to get H^f≥cη for all η.
 **Checks.**
 
 - For k=1, f(r)=r^s, 0<s<1 and 0<r<1, the expanded radius r^s is larger than r; reversing the two limsups would be wrong.
-- For f(r)=r^k the expanded radius is exactly r, giving the identity implication.
+- For k=2 and f(r)=r² the expanded radius is √(r²)=r for r>0, giving the identity implication.
 - Dimension k=0 is excluded before forming the reciprocal exponent 1/k.
 
 Use §3.8 (gauges and disjoint expanded coverings); §3.9 (separated cantor levels and their probability
 measure); Mathlib `MeasureTheory.Measure.le_hausdorffMeasure`.
 
-The named convention target `power_gauge_radius_convention` includes admissibility of f(r)=r^s for s>0, expansion r<r^s when 0<r<1 and s<1, and the identity r^1=r.
+The power-gauge Checks include admissibility of f(r)=r^s for s>0, expansion r<r^s when 0<r<1 and s<1, and the identity r^1=r.
 
 Prove `mass_transference_power`. For 0<s<1, centers c_i∈ℝ, positive radii r_i→0, and E=limsup
 closedBall(c_i,r_i), assume every nonempty open ball meets limsup closedBall(c_i,r_i^s) in full Lebesgue
@@ -4213,14 +4241,24 @@ infinity. Use the radius/diameter normalization bridge; it changes finite factor
 **Checks.**
 
 - For k=1, f(r)=r^s, 0<s<1 and 0<r<1, the expanded radius r^s is larger than r; reversing the two limsups would be wrong.
-- For f(r)=r^k the expanded radius is exactly r, giving the identity implication.
+- For k=2 and f(r)=r² the expanded radius is √(r²)=r for r>0, giving the identity implication.
 - Dimension k=0 is excluded before forming the reciprocal exponent 1/k.
 
 Use §3.10 (mass transference and hausdorff consequences); Mathlib `MeasureTheory.Measure.hausdorffMeasure`.
 
-**Jarník–Besicovitch dimension theorem**. For v>2, let W_v consist of x∈[0,1] with |x−a/q|<q^(−v) for
+Define `powerApproximationSet` at v as the set of x∈[0,1] such that for unbounded positive q there is a∈ℤ with gcd(|a|,q)=1 and |x−a/q|<q^(−v). Its API identifies the strict reduced-rational limsup, retains the unit-interval bound and decreases the set as v increases above zero. ([BeresnevichVelani](#references), §3.2, printed pp.977–978.)
+
+**Checks.**
+
+- For v=3, x=1/2, q=2, a=1 gives error 0<1/8. The equivalent fraction 2/4 is rejected since gcd(2,4)=2.
+- At q=3 and v=3 the radius is 1/27, rather than 1/9; q=0 is excluded before forming approximation radii.
+- For x=0, v=3 and q≥2, every nonzero a has |a/q|≥1/q>q^(−3), while a=0 is not reduced. Thus 0 is outside this limsup despite its exact unrestricted rational approximations.
+
+*Needs:* §3.1 approximation sets; native integer coprimality and real powers.
+
+Prove `jarnik_besicovitch` (the Jarník–Besicovitch dimension theorem). For v>2, let W_v consist of x∈[0,1] with |x−a/q|<q^(−v) for
 infinitely many coprime integers a and positive q. Then native dimH(W_v)=2/v and its critical (2/v)-Hausdorff
-measure is infinite. The source writes ψ(q)=q^(−τ), τ=v−1, so the exponent is 2/(1+τ), not 2/(2+τ).
+measure is infinite. At v=3, the dimension and critical exponent are 2/3 and the critical measure is infinite. The source writes ψ(q)=q^(−τ), τ=v−1, so the exponent is 2/(1+τ), not 2/(2+τ).
 ([BeresnevichVelani](#references) §3.2, printed pp.977–978.)
 
 Use Dirichlet’s theorem for the expanded radius q^(−2), and the critical power mass-transference statement for
@@ -4231,8 +4269,8 @@ constant-radius sandwiches before applying native Hausdorff dimension.
 Use §3.10 (mass transference and hausdorff consequences); §3.1 (reduced and unrestricted approximation sets);
 Mathlib `MeasureTheory.Measure.hausdorffMeasure`.
 
-**Hausdorff Duffin–Schaeffer theorem**. For the one-dimensional reduced approximation limsup and dimension
-function f with f(r)/r monotone, convergence of Σ_q φ(q) f(ψ(q)/q) gives zero H^f-measure; divergence gives
+Prove `hausdorff_duffin_schaeffer` (Hausdorff Duffin–Schaeffer). For the one-dimensional reduced approximation limsup and dimension
+function f with GaugeRatioMonotone 1 f, convergence of Σ_q φ(q) f(ψ(q)/q) gives zero H^f-measure; divergence gives
 H^f equal to that of [0,1]. No monotonicity of ψ is imposed. The divergence follows by the Lebesgue
 Duffin–Schaeffer theorem for θ(q)=q f(ψ(q)/q), followed by mass transference.
 ([BeresnevichVelani](#references) Theorem 1 and §3.1, printed pp.973,977.)
@@ -4259,17 +4297,27 @@ Mathlib `dimH`; Mathlib `dimH_empty`; Mathlib `dimH_mono`; Mathlib `Real.dimH_un
 
 In higher dimension every coordinate numerator is coprime to the common denominator. This hypothesis is stronger than joint primitivity of the whole vector.
 
-**Higher-dimensional Duffin–Schaeffer theorem**. For k≥2 and ψ:ℕ→[0,∞), let S_k(ψ) consist of x∈[0,1]^k such
+Define `coordinatewiseReducedLimsup` for k and nonnegative real ψ on the native finite product Fin k→ℝ. Require every coordinate in [0,1] and unbounded positive denominators q with a numerator tuple a∈ℤ^k, gcd(|a_i|,q)=1 separately for each i, and |x_i−a_i/q|<ψ(q)/q. The API gives the unit-cube inclusion, coordinatewise reduction and monotonicity in ψ. (PollingtonVaughan1990, pp.190–200.)
+
+**Checks.**
+
+- At k=2 and ψ=0, the strict inequality 0<0 is impossible at every denominator, so the limsup is empty and its volume is zero.
+- For k=2, q=2 and ψ(2)=1/4, the single reduced centre (1/2,1/2) gives the square (3/8,5/8)² of volume 1/16. This tests the finite-denominator neighborhoods, not membership in the limsup from a single denominator.
+- At q=2, (1/2,0) with numerator (1,0) fails coordinatewise reduction since gcd(0,2)=2, although gcd(1,0,2)=1; with ψ(2)=1/4 it is outside that denominator's square.
+
+*Needs:* finite product Lebesgue measure; native integer coprimality; §3.1 approximation sets.
+
+Prove `simultaneous_duffin_schaeffer` (higher-dimensional Duffin–Schaeffer). For k≥2 and ψ:ℕ→[0,∞), let S_k(ψ) consist of x∈[0,1]^k such
 that for infinitely many q≥1 there are a_i∈ℤ with gcd(a_i,q)=1 separately for every coordinate and
 max_i|x_i−a_i/q|<ψ(q)/q. Its Lebesgue measure is zero if Σ_q(φ(q)ψ(q)/q)^k converges and one if the sum
 diverges. The coordinatewise coprimality is stronger than gcd(a₁,…,a_k,q)=1.
-(PollingtonVaughan1990, divergence theorem and proof, pp.190–200; BeresnevichVelani, introduction pp.971–972 records the attribution.)
+(PollingtonVaughan1990, divergence theorem and proof, pp.190–200; [BeresnevichVelani](#references), introduction pp.971–972 records the attribution.)
 
-Prove `coordinatewise_reduced_overlap`: fix k≥2 and 0≤ψ(q)≤1/2, and let A_q be the k-fold product of the one-dimensional coordinatewise-reduced rational neighborhoods. If Σ_q(φ(q)ψ(q)/q)^k diverges, there is C_k>0 such that for each Q₀≥1 there are arbitrarily large Q≥Q₀ with
+Prove coordinatewise_reduced_overlap: fix k≥2 and 0≤ψ(q)≤1/2, and let A_q be the k-fold product of the one-dimensional coordinatewise-reduced rational neighborhoods. If Σ_q(φ(q)ψ(q)/q)^k diverges, there is C_k>0 such that for each Q₀≥1 there are arbitrarily large Q≥Q₀ with
 `Σ_{Q₀≤q,r≤Q} volume(A_q∩A_r) ≤ C_k(Σ_{Q₀≤q≤Q}volume(A_q))²`.
 Both coordinates in each overlap are separately reduced. Products give volume(A_q∩A_r)=volume(𝒜_q∩𝒜_r)^k. The arithmetic summation of these k-th powers is a distinct target; the one-dimensional generic second-moment bound does not supply it. Use PollingtonVaughan1990, pp.190–200, divergence proof, as the primary locator; no unstated intermediate lemma number is assumed.
 
-Prove `coordinatewise_reduced_zero_one`: for k≥2 and arbitrary nonnegative ψ, the coordinatewise-reduced limsup in [0,1]^k has volume zero or one. Combine the coordinatewise scaling invariance and density argument with the preceding overlap estimate to turn a positive limsup measure into full measure. For arbitrary ψ remove the ≤1/2 restriction by the source’s large-radius reduction before applying the overlap contract. (PollingtonVaughan1990, pp.190–200, zero–one step in the divergence proof.)
+Prove coordinatewise_reduced_zero_one: for k≥2 and arbitrary nonnegative ψ, the coordinatewise-reduced limsup in [0,1]^k has volume zero or one. Combine the coordinatewise scaling invariance and density argument with the preceding overlap estimate to turn a positive limsup measure into full measure. For arbitrary ψ remove the ≤1/2 restriction by the source’s large-radius reduction before applying the overlap contract. (PollingtonVaughan1990, pp.190–200, zero–one step in the divergence proof.)
 
 The convergence direction is direct covering and Borel–Cantelli. For divergence use the overlap target on every tail and the second-moment inequality to get positive measure, then the zero–one target. Compare the finite coordinatewise reduced sets with product cube volume, keeping boundary nullity. This roadmap owns both arithmetic and zero–one prerequisites.
 
@@ -4377,7 +4425,7 @@ invariant function almost surely constant; its integral is the integral of f.
 
 Use §4.1 (pointwise averages, truncated limsups and first hits); Mathlib `Ergodic`.
 
-Define `upperOrbitTruncation`. For arbitrary T:Ω→Ω, real f, L≥0 and x, define U_L(T,f,x) as the real value of
+Define upperOrbitTruncation. For arbitrary T:Ω→Ω, real f, L≥0 and x, define U_L(T,f,x) as the real value of
 min(limsup over n of ENNReal.ofReal(A_(n+1)f(x)), ENNReal.ofReal L). A_n is native birkhoffAverage real T f n.
 The minimum is finite even before any integrability assertion. ([Sarig2023](#references) Theorem 2.2,
 physical pp.45–48, finite coloring proof.)
@@ -4395,12 +4443,12 @@ value.
 
 Use Mathlib `birkhoffAverage`.
 
-Prove `upperOrbitTruncation_bounds`. For L≥0 and all T,f,x, 0≤U_L(T,f,x)≤L. ([Sarig2023](#references)
+Prove upperOrbitTruncation_bounds. For L≥0 and all T,f,x, 0≤U_L(T,f,x)≤L. ([Sarig2023](#references)
 Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use §4.1 (pointwise averages, truncated limsups and first hits).
 
-Prove `upperOrbitTruncation_measurable`. For measurable T and measurable real f, U_L(T,f,·) is measurable for
+Prove upperOrbitTruncation_measurable. For measurable T and measurable real f, U_L(T,f,·) is measurable for
 every L≥0. ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Every finite orbit average is measurable by finite sums and measurable iterates. Write the limsup as the
@@ -4408,7 +4456,7 @@ countable infimum of countable suprema, then compose with minimum and ENNReal.to
 
 Use §4.1 (pointwise averages, truncated limsups and first hits); Mathlib `birkhoffAverage`.
 
-Prove `upperOrbitTruncation_comp`. If f≥0 pointwise, then U_L(T,f,Tx)=U_L(T,f,x) for all x and L≥0.
+Prove upperOrbitTruncation_comp. If f≥0 pointwise, then U_L(T,f,Tx)=U_L(T,f,x) for all x and L≥0.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use A_(n+1)f(x)=f(x)/(n+1)+n/(n+1) A_n f(Tx). For nonnegative averages and finite f(x), the extended limsup is
@@ -4422,7 +4470,7 @@ lower thresholds. Apply finite truncation.
 
 Use §4.1 (pointwise averages, truncated limsups and first hits).
 
-Define `firstOrbitHit`. For an endomap T:Ω→Ω and real-valued f,c:Ω→real, define τ(T,f,c,x) as the least
+Define firstOrbitHit. For an endomap T:Ω→Ω and real-valued f,c:Ω→real, define τ(T,f,c,x) as the least
 positive natural n with A_n f(x)>c(x), and 0 if no such n exists. It depends on no measure.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
@@ -4439,17 +4487,17 @@ otherwise.
 
 Use Mathlib `birkhoffAverage`.
 
-Prove `firstOrbitHit_pos_iff`. τ(T,f,c,x)>0 iff ∃n≥1, A_n f(x)>c(x). ([Sarig2023](#references) Theorem 2.2,
+Prove firstOrbitHit_pos_iff. τ(T,f,c,x)>0 iff ∃n≥1, A_n f(x)>c(x). ([Sarig2023](#references) Theorem 2.2,
 physical pp.45–48, finite coloring proof.)
 
 Use §4.1 (pointwise averages, truncated limsups and first hits).
 
-Prove `firstOrbitHit_average`. If τ(T,f,c,x)>0, A_τ(x) f(x)>c(x). ([Sarig2023](#references) Theorem 2.2,
+Prove firstOrbitHit_average. If τ(T,f,c,x)>0, A_τ(x) f(x)>c(x). ([Sarig2023](#references) Theorem 2.2,
 physical pp.45–48, finite coloring proof.)
 
 Use §4.1 (pointwise averages, truncated limsups and first hits).
 
-Prove `firstOrbitHit_measurable`. For measurable T,f,c, τ(T,f,c,·) is measurable. ([Sarig2023](#references)
+Prove firstOrbitHit_measurable. For measurable T,f,c, τ(T,f,c,·) is measurable. ([Sarig2023](#references)
 Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 For n≥1, {τ=n} is {A_n>c} minus the finite union of earlier crossing sets. The zero fiber is the complement of
@@ -4461,7 +4509,7 @@ Use §4.1 (pointwise averages, truncated limsups and first hits); Mathlib `birkh
 
 A finite greedy partition into good blocks, bad singletons and a short tail supplies the upper and lower integral bounds. Conull transport and positive/negative parts extend the result to integrable real functions.
 
-Define `greedyOrbitBlocks`. For σ:natural→natural, M≥1 and N, construct a list of triples
+Define greedyOrbitBlocks. For σ:natural→natural, M≥1 and N, construct a list of triples
 (start,length,isBlue). Starting at k=0, while k<N: if 1≤σ(k)≤M and k+σ(k)≤N, append the blue block
 (k,σ(k),true) and advance; if σ(k)=0 or σ(k)>M, append the red singleton (k,1,false) and advance; otherwise
 stop, leaving a terminal interval. The list is ordered by start and covers an initial segment of {0,…,N−1}.
@@ -4480,23 +4528,23 @@ positive permitted block that would overrun N.
 
 - σ=constant 0,M=2,N=3 gives three red singletons, not a zero-length blue loop.
 
-Prove `greedyOrbitBlocks_partition`. The greedy list covers exactly an initial natural interval [0,k), has
+Prove greedyOrbitBlocks_partition. The greedy list covers exactly an initial natural interval [0,k), has
 pairwise disjoint consecutive block intervals, and the sum of block lengths is k≤N.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use §4.2 (finite coloring and signed convergence).
 
-Prove `greedyOrbitBlocks_blue`. Every blue block has length σ(start) with 1≤σ(start)≤M and start+length≤N.
+Prove greedyOrbitBlocks_blue. Every blue block has length σ(start) with 1≤σ(start)≤M and start+length≤N.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use §4.2 (finite coloring and signed convergence).
 
-Prove `greedyOrbitBlocks_red`. Every red block has length 1 and σ(start)=0 or σ(start)>M.
+Prove greedyOrbitBlocks_red. Every red block has length 1 and σ(start)=0 or σ(start)>M.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use §4.2 (finite coloring and signed convergence).
 
-Prove `greedyOrbitBlocks_tail`. For M≥1, the uncovered terminal interval after greedy coloring has length
+Prove greedyOrbitBlocks_tail. For M≥1, the uncovered terminal interval after greedy coloring has length
 strictly less than M. ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use §4.2 (finite coloring and signed convergence).
@@ -4620,7 +4668,7 @@ Use §4.2 (finite coloring and signed convergence); Mathlib `birkhoffAverage`.
 
 Choose the unique real orbit limit, with a fixed zero default on divergent orbits. Bounded approximation gives L1 convergence, and invariant-set integrals identify the native conditional expectation.
 
-Define `orbitLimit`. For T and real f, define orbitLimit(T,f,x) as the unique real limit of the sequence A_n
+Define orbitLimit. For T and real f, define orbitLimit(T,f,x) as the unique real limit of the sequence A_n
 f(x) if such a limit exists, and zero otherwise. No measure or selected convergence proof is part of the data.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
@@ -4637,12 +4685,12 @@ Use uniqueness of a convergent real sequence to choose its limit, and use zero o
 
 Use Mathlib `birkhoffAverage`.
 
-Prove `orbitLimit_of_tendsto`. If A_n f(x) tends to c∈real, orbitLimit(T,f,x)=c. ([Sarig2023](#references)
+Prove orbitLimit_of_tendsto. If A_n f(x) tends to c∈real, orbitLimit(T,f,x)=c. ([Sarig2023](#references)
 Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use §4.3 (the canonical limit and conditional expectation).
 
-Prove `orbitLimit_measurable`. For measurable T and measurable f:Ω→ℝ, orbitLimit(T,f,·) is measurable.
+Prove orbitLimit_measurable. For measurable T and measurable f:Ω→ℝ, orbitLimit(T,f,·) is measurable.
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 **Check.** For T=id on the Borel real line, a non-Borel set E gives f=1_E and orbitLimit=f. Thus measurable T alone does not suffice. For merely integrable f, use a measurable representative and the orbit-conull agreement set separately.
@@ -4652,7 +4700,7 @@ comparisons of orbit averages. On this measurable set, the pointwise limit is me
 
 Use §4.3 (the canonical limit and conditional expectation); Mathlib `birkhoffAverage`.
 
-Prove `orbitLimit_comp`. For every T,f and x, orbitLimit(T,f,Tx)=orbitLimit(T,f,x).
+Prove orbitLimit_comp. For every T,f and x, orbitLimit(T,f,Tx)=orbitLimit(T,f,x).
 ([Sarig2023](#references) Theorem 2.2, physical pp.45–48, finite coloring proof.)
 
 Use the finite-average recurrence to show real convergence at x iff convergence at Tx, with the same limit. On
@@ -4733,16 +4781,16 @@ separately.
 
 Use Mathlib `GenContFract.of`.
 
-Prove `gaussMap_zero`. T(0)=0. ([SarigTransfer](#references) §2.3 and Appendix A.2, physical pp.11,32.)
+Prove gaussMap_zero. T(0)=0. ([SarigTransfer](#references) §2.3 and Appendix A.2, physical pp.11,32.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussMap_range`. Every real input maps into [0,1). ([SarigTransfer](#references) §2.3 and
+Prove gaussMap_range. Every real input maps into [0,1). ([SarigTransfer](#references) §2.3 and
 Appendix A.2, physical pp.11,32.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussMap_measurable`. The total Gauss map is Borel measurable. ([SarigTransfer](#references)
+Prove gaussMap_measurable. The total Gauss map is Borel measurable. ([SarigTransfer](#references)
 §2.3 and Appendix A.2, physical pp.11,32.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
@@ -4765,20 +4813,19 @@ support to prove mutual absolute continuity. The erroneous printed upper bound 2
 
 Use §4.4 (the gauss map, measure, digits and invariance); Mathlib `MeasureTheory.ProbabilityMeasure`.
 
-The upper-half interval check is `gaussMeasure_digit_one_interval`: μ_G((1/2,1])=log(4/3)/log 2.
+The upper-half interval Check is μ_G((1/2,1])=log(4/3)/log 2.
 
-Prove `gaussMeasure_univ`. The measure has total mass one. Package the same normalization as
-`gaussMeasure_probability : IsProbabilityMeasure gaussMeasure`.  ([SarigTransfer](#references) Appendix
+Prove `gaussMeasure_probability`: the displayed Gauss measure is a native probability measure, equivalently its total mass is one.  ([SarigTransfer](#references) Appendix
 A.2, physical pp.32–33, density with corrected upper bound.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussMeasure_interval`. For 0≤a≤b≤1, μ_G((a,b])=(log(1+b)−log(1+a))/log 2.
+Prove gaussMeasure_interval. For 0≤a≤b≤1, μ_G((a,b])=(log(1+b)−log(1+a))/log 2.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33, density with corrected upper bound.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussMeasure_equivalent`. Gauss and restricted Lebesgue measure have the same null sets.
+Prove gaussMeasure_equivalent. Gauss and restricted Lebesgue measure have the same null sets.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33, density with corrected upper bound.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
@@ -4803,17 +4850,17 @@ inverse-fractional-part step matches T.
 
 Use §4.4 (the gauss map, measure, digits and invariance); Mathlib `GenContFract.of`.
 
-Prove `gaussDigit_zero`. The first digit is floor(x⁻¹). ([SarigTransfer](#references) §2.3, physical
+Prove gaussDigit_zero. The first digit is floor(x⁻¹). ([SarigTransfer](#references) §2.3, physical
 p.11, corrected iterate/digit index; native partial denominator bridge.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussDigit_shift`. Digit n at T(x) equals digit n+1 at x. ([SarigTransfer](#references) §2.3,
+Prove gaussDigit_shift. Digit n at T(x) equals digit n+1 at x. ([SarigTransfer](#references) §2.3,
 physical p.11, corrected iterate/digit index; native partial denominator bridge.)
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussDigit_native`. On irrational x in (0,1), native partial denominator n is some real cast of
+Prove gaussDigit_native. On irrational x in (0,1), native partial denominator n is some real cast of
 gaussDigit(x,n). ([SarigTransfer](#references) §2.3, physical p.11, corrected iterate/digit index;
 native partial denominator bridge.)
 
@@ -4884,20 +4931,20 @@ endpoints: all rational points are excluded from this definition.
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-The zero-digit and reversed length-two word checks form `gaussCylinder_boundary_values`.
+The zero-digit and reversed length-two words are cylinder Checks.
 
-Prove `gaussCylinder_nil`. C_empty=D. ([SarigTransfer](#references) Appendix A.2, physical pp.32–33
+Prove gaussCylinder_nil. C_empty=D. ([SarigTransfer](#references) Appendix A.2, physical pp.32–33
 (printed pp.30–31), inverse cylinders and tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents).
 
-Prove `gaussCylinder_cons`. For a≥1 and every finite word w, C_(a::w)=D∩{x:digit0(x)=a}∩T⁻¹(C_w).
+Prove gaussCylinder_cons. For a≥1 and every finite word w, C_(a::w)=D∩{x:digit0(x)=a}∩T⁻¹(C_w).
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents); §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussCylinder_measurable`. C_w is Borel measurable for every finite natural word w.
+Prove gaussCylinder_measurable. C_w is Borel measurable for every finite natural word w.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
 
@@ -4906,7 +4953,7 @@ complement of the countable rational range; take the finite intersection.
 
 Use §4.5 (words, matrices and native convergents); §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `gaussCylinder_zero`. If 0 occurs in w, then C_w=empty. ([SarigTransfer](#references) Appendix
+Prove gaussCylinder_zero. If 0 occurs in w, then C_w=empty. ([SarigTransfer](#references) Appendix
 A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents); §4.4 (the gauss map, measure, digits and invariance).
@@ -4923,7 +4970,7 @@ make x rational; positivity and the unit-interval range give preservation of D.
 Use §4.4 (the gauss map, measure, digits and invariance); Mathlib `Set.countable_range`; Mathlib
 `MeasureTheory.NullSingletonClass`; Mathlib `Set.Countable.measure_zero`; Mathlib `Irrational`.
 
-Define `inverseWord`. For w=[a_0,…,a_(n−1)], define v_w=v_a0∘…∘v_a(n−1), with v_a(y)=1/(a+y), and v_empty=id.
+Define ordered inverse-word map. For w=[a_0,…,a_(n−1)], define v_w=v_a0∘…∘v_a(n−1), with v_a(y)=1/(a+y), and v_empty=id.
 This total real function is defined for every natural word, but geometric statements assume all entries
 positive. ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse
 cylinders and tail-event exactness.)
@@ -4940,18 +4987,18 @@ Fold the ordered list from the right, preserving the source’s composition orde
 
 Use §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `inverseWord_nil`. v_empty(y)=y for all real y. ([SarigTransfer](#references) Appendix A.2,
+Prove that v_empty(y)=y for all real y. ([SarigTransfer](#references) Appendix A.2,
 physical pp.32–33 (printed pp.30–31), inverse cylinders and tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents).
 
-Prove `inverseWord_cons`. v_(a::w)(y)=1/(a+v_w(y)) for every natural a, word w and real y.
+Prove that v_(a::w)(y)=1/(a+v_w(y)) for every natural a, word w and real y.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents).
 
-Prove `inverseWord_append`. v_(u++w)=v_u∘v_w for all finite natural words u,w.
+Prove that v_(u++w)=v_u∘v_w for all finite natural words u,w.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
 
@@ -4974,17 +5021,17 @@ Use the native matrix monoid and the list product in word order.
 
 Use Mathlib `Matrix`.
 
-Prove `wordMatrix_nil`. W_empty=identity matrix. ([SarigTransfer](#references) Appendix A.2, physical
+Prove wordMatrix_nil. W_empty=identity matrix. ([SarigTransfer](#references) Appendix A.2, physical
 pp.32–33 (printed pp.30–31), inverse cylinders and tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents).
 
-Prove `wordMatrix_cons`. W_(a::w)=[[0,1],[1,a]] W_w. ([SarigTransfer](#references) Appendix A.2,
+Prove wordMatrix_cons. W_(a::w)=[[0,1],[1,a]] W_w. ([SarigTransfer](#references) Appendix A.2,
 physical pp.32–33 (printed pp.30–31), inverse cylinders and tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents).
 
-Prove `wordMatrix_det`. det W_w=(-1)^(length w). ([SarigTransfer](#references) Appendix A.2, physical
+Prove wordMatrix_det. det W_w=(-1)^(length w). ([SarigTransfer](#references) Appendix A.2, physical
 pp.32–33 (printed pp.30–31), inverse cylinders and tail-event exactness.)
 
 Use §4.5 (words, matrices and native convergents); Mathlib `Matrix.det_mul`.
@@ -5151,12 +5198,12 @@ redefined.
 
 Use Mathlib `MeasureTheory.ProbabilityMeasure`; Mathlib `Ergodic`.
 
-Prove `IsStrongMixing.measurePreserving`. Mixing includes measure preservation.
+Prove IsStrongMixing.measurePreserving. Mixing includes measure preservation.
 ([SarigTransfer](#references) Appendix A.2, physical p.32.)
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
 
-Prove `IsStrongMixing.ergodic`. A strongly mixing probability system is native Ergodic.
+Prove IsStrongMixing.ergodic. A strongly mixing probability system is native Ergodic.
 ([SarigTransfer](#references) Appendix A.2, physical p.32.)
 
 For a measurable strictly invariant A, the iterated preimage is A; apply mixing with B=A to obtain μ(A)=μ(A)².
@@ -5164,7 +5211,7 @@ Since 0≤μ(A)≤1, the mass is zero or one; with the measure-preserving projec
 
 Use §4.6 (cylinder filtrations, exactness and mixing); Mathlib `Ergodic`.
 
-Prove `IsStrongMixing.correlation`. Exports the defining measurable-set correlation limit.
+Prove IsStrongMixing.correlation. Exports the defining measurable-set correlation limit.
 ([SarigTransfer](#references) Appendix A.2, physical p.32.)
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
@@ -5186,17 +5233,17 @@ explicit tail zero-one condition; invariance of a single set is not exactness.
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
 
-Prove `IsExact.measurePreserving`. Exactness includes measure preservation.
+Prove IsExact.measurePreserving. Exactness includes measure preservation.
 ([SarigTransfer](#references) Appendix A.2, physical p.32.)
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
 
-Prove `IsExact.tail_zero_one`. Exports the native tail-sigma zero-one law.
+Prove IsExact.tail_zero_one. Exports the native tail-sigma zero-one law.
 ([SarigTransfer](#references) Appendix A.2, physical p.32.)
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
 
-Prove `IsExact.strongMixing`. An exact probability system is strongly mixing, by reverse martingale
+Prove IsExact.strongMixing. An exact probability system is strongly mixing, by reverse martingale
 convergence. ([SarigTransfer](#references) Appendix A.2, physical p.32.)
 
 For each bounded observable, apply reverse-martingale conditional-expectation convergence to the decreasing
@@ -5205,7 +5252,7 @@ preservation converts these conditional expectations into the measurable-set mix
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
 
-Define `gaussCylinderFiltration`. Construct a native Filtration natural on the Borel real line, F_n generated
+Define gaussCylinderFiltration. Construct a native Filtration natural on the Borel real line, F_n generated
 by D and all C_w with length w≤n. Its positive-mass atoms for m=volume|(0,1) are the positive-word cylinders
 of length n; the complement of D is a null atom. Do not claim F_n generates all ambient Borel sets away from
 D. ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders
@@ -5216,21 +5263,21 @@ sigma-algebra.
 
 **Checks.**
 
-- D is F_0-measurable and F_0 is generated by D alone.
+- F₀ consists exactly of ∅, D, Dᶜ and ℝ; the all-Borel choice for F₀ is excluded.
 
-- C_[1] is F_1-measurable.
+- C_[1]=D∩(1/2,1) has Lebesgue mass 1/2. It separates 1/√2 (first digit 1) and √2−1 (first digit 2) in F₁, while F₀ cannot separate these irrational points.
 
-- C_[1] is not F_0-measurable: it is a proper nonempty subset of the single atom D.
+- C_[1,1]=D∩(1/2,2/3) has Lebesgue mass 1/6. It is not F₁-measurable, since it splits C_[1], and is F₂-measurable. A filtration stopping at first digits fails this test.
 
 Use §4.5 (words, matrices and native convergents); Mathlib `MeasureTheory.Filtration`.
 
-Prove `gaussCylinderFiltration_cylinder`. If length w≤n then C_w is F_n-measurable.
+Prove gaussCylinderFiltration_cylinder. If length w≤n then C_w is F_n-measurable.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
 
 Use §4.6 (cylinder filtrations, exactness and mixing).
 
-Prove `gaussCylinderFiltration_atoms`. For each n, the positive natural words of length n give a countable
+Prove gaussCylinderFiltration_atoms. For each n, the positive natural words of length n give a countable
 pairwise-disjoint partition of D into C_w; each C_w is an atom of F_n restricted to D.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
@@ -5240,7 +5287,7 @@ the sigma-algebra of unions of these partition cells.
 
 Use §4.6 (cylinder filtrations, exactness and mixing); §4.5 (words, matrices and native convergents).
 
-Prove `gaussCylinderFiltration_generates`. For every Borel subset B of real, B∩D is measurable for ⨆n F_n.
+Prove gaussCylinderFiltration_generates. For every Borel subset B of real, B∩D is measurable for ⨆n F_n.
 ([SarigTransfer](#references) Appendix A.2, physical pp.32–33 (printed pp.30–31), inverse cylinders and
 tail-event exactness.)
 
@@ -5400,7 +5447,7 @@ finite-word interface. The distortion bound permits C=4, including the empty wor
 Use §4.5 (words, matrices and native convergents); §4.4 (the gauss map, measure, digits and invariance); §4.6
 (cylinder filtrations, exactness and mixing).
 
-The fair two-atom identity and swap fail both mixing and exactness, as recorded by `two_atom_not_mixing_exact`.
+The fair two-atom identity and swap fail both mixing and exactness.
 
 Prove `gauss_exact`. The Gauss map with μ_G is exact in the native tail-sigma sense. Any tail measurable B
 with positive mass has full mass. ([SarigTransfer](#references) Appendix A.2, physical pp.32–33,
@@ -5482,12 +5529,12 @@ summable power tail; the finitely many endpoint terms are immediate.
 
 Use §4.7 (metric digit laws and logarithmic constants).
 
-Prove `khinchinConstant_pos`. K is positive. ([Smyth2020](#references) Theorem 21, physical p.46, corrected
+Prove khinchinConstant_pos. K is positive. ([Smyth2020](#references) Theorem 21, physical p.46, corrected
 using the preceding digit-frequency formula.)
 
 Use §4.7 (metric digit laws and logarithmic constants).
 
-Prove `khinchinConstant_log_integral`. log K equals the Gauss integral of log of the first digit.
+Prove khinchinConstant_log_integral. log K equals the Gauss integral of log of the first digit.
 ([Smyth2020](#references) Theorem 21, physical p.46, corrected using the preceding digit-frequency
 formula.)
 
@@ -5636,9 +5683,9 @@ Use the native real sum indexed by a=n+1, retaining the positive branch indexing
 
 Use §4.5 (words, matrices and native convergents).
 
-The endpoint and invariant-density targets are `gaussDensityTransfer_one_zero`, with L(1)(0)=π²/6, and `gaussDensityTransfer_invariant_density`, with L(h)=h on [0,1].
+The endpoint value L(1)(0)=π²/6 and the fixed density L(h)=h on [0,1] are Checks.
 
-Prove `gaussDensityTransfer_zero`. L(0)=0 as a real function. ([Sun2017](#references) Theorem 2, physical
+Prove gaussDensityTransfer_zero. L(0)=0 as a real function. ([Sun2017](#references) Theorem 2, physical
 pp.3–6, specialized to p=1.)
 
 Use §4.8 (density transfer and normalized transfer).
@@ -5652,12 +5699,12 @@ x∈I, then the reciprocal-square majorant.
 
 Use §4.8 (density transfer and normalized transfer); Mathlib `hasSum_zeta_two`.
 
-Prove `gaussDensityTransfer_add`. If f,g are continuous on I, then L(f+g)(x)=Lf(x)+Lg(x) for x∈I.
+Prove gaussDensityTransfer_add. If f,g are continuous on I, then L(f+g)(x)=Lf(x)+Lg(x) for x∈I.
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `gaussDensityTransfer_duality`. For f continuous on I and ψ Borel and bounded on I, ∫_I ψ(x)Lf(x) dx=∫_I
+Prove gaussDensityTransfer_duality. For f continuous on I and ψ Borel and bounded on I, ∫_I ψ(x)Lf(x) dx=∫_I
 ψ(Ty)f(y) dy. ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 On each branch interval substitute y=1/(a+x), with absolute Jacobian (a+x)^(-2). Endpoint values and rational
@@ -5690,35 +5737,35 @@ Use native infinite sum and the explicitly normalized branch weights.
 
 Use §4.8 (density transfer and normalized transfer); §4.4 (the gauss map, measure, digits and invariance).
 
-The target `normalizedGaussTransfer_boundary_values` records P(1)=1 on [0,1] and P(id)(0)=π²/6−1.
+The identities P(1)=1 on [0,1] and P(id)(0)=π²/6−1 are Checks.
 
-Prove `normalizedGaussTransfer_const`. For x∈I and real c, P(constant c)(x)=c. ([Sun2017](#references)
+Prove normalizedGaussTransfer_const. For x∈I and real c, P(constant c)(x)=c. ([Sun2017](#references)
 Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Use §4.8 (density transfer and normalized transfer); §4.4 (the gauss map, measure, digits and invariance).
 
-Prove `normalizedGaussTransfer_conjugate`. For f continuous on I, P((1+·)f)(x)=(1+x)Lf(x) for all x∈I.
+Prove normalizedGaussTransfer_conjugate. For f continuous on I, P((1+·)f)(x)=(1+x)Lf(x) for all x∈I.
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 At v_a, (1+v_a)h_a=(1+x)/(a+x)². Use summability and factor the constant 1+x from the native sum.
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `normalizedGaussTransfer_integral`. For g continuous on I, ∫_I Pg(x)/(1+x) dx=∫_I g(x)/(1+x) dx.
+Prove normalizedGaussTransfer_integral. For g continuous on I, ∫_I Pg(x)/(1+x) dx=∫_I g(x)/(1+x) dx.
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Put f=g/(1+x), continuous on I, in the conjugacy. Apply Lebesgue duality with ψ=1.
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `gaussDensityTransfer_smul`. For c real, f continuous on I and x∈I, L(c f)(x)=c Lf(x).
+Prove gaussDensityTransfer_smul. For c real, f continuous on I and x∈I, L(c f)(x)=c Lf(x).
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Use absolute convergence of the branch series for f and c f. Factor the fixed scalar through the native sum.
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `gaussDensityTransfer_nonnegative`. For f continuous on I with f≥0 on I, Lf(x)≥0 for every x∈I.
+Prove gaussDensityTransfer_nonnegative. For f continuous on I with f≥0 on I, Lf(x)≥0 for every x∈I.
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Every inverse branch maps I into I and every Jacobian weight is nonnegative. Finite partial sums are
@@ -5726,7 +5773,7 @@ nonnegative; their limit is Lf.
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `normalizedGaussTransfer_add`. For continuous g,h on I and x∈I, P(g+h)(x)=Pg(x)+Ph(x).
+Prove normalizedGaussTransfer_add. For continuous g,h on I and x∈I, P(g+h)(x)=Pg(x)+Ph(x).
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Apply the conjugacy to g/(1+x) and h/(1+x), continuous since 1+x≥1 on I. Use additivity of L and simplify the
@@ -5734,12 +5781,12 @@ nonzero factors.
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `normalizedGaussTransfer_smul`. For c real, g continuous on I and x∈I, P(c g)(x)=c Pg(x).
+Prove normalizedGaussTransfer_smul. For c real, g continuous on I and x∈I, P(c g)(x)=c Pg(x).
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `normalizedGaussTransfer_bounds`. If g is continuous on I and c≤g(x)≤C there, then c≤Pg(x)≤C for x∈I.
+Prove normalizedGaussTransfer_bounds. If g is continuous on I and c≤g(x)≤C there, then c≤Pg(x)≤C for x∈I.
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Use positive transfer of g−c and C−g through conjugacy. Use linearity and constant preservation to obtain both
@@ -5747,7 +5794,7 @@ bounds.
 
 Use §4.8 (density transfer and normalized transfer).
 
-Prove `gaussDensityTransfer_continuous`. For f continuous on I, Lf is continuous on I.
+Prove gaussDensityTransfer_continuous. For f continuous on I, Lf is continuous on I.
 ([Sun2017](#references) Theorem 2, physical pp.3–6, specialized to p=1.)
 
 Every finite sum of branch terms is continuous on I because a+x≥1. Apply the native uniform-limit continuity
@@ -5964,7 +6011,7 @@ rate).
 
 ### 4.10 Modular homogeneous-space consumers
 
-Prove `bounded_partial_denominators_iff_badlyApproximable`. For irrational 0<x<1, the native partial denominators of GenContFract.of x are bounded if and only if BadlyApproximable x from DiophantineApproximationAndTranscendence §0.6. Use the native upper convergent error and the lower bound 1/(q_n(q_n+q_(n+1))), with q_(n+1)=a_(n+1)q_n+q_(n−1); Legendre’s criterion reduces sufficiently close rationals to convergents. The characterization is Smyth2020, Lesson 10, §2.5, Exercise 2.20, physical p.56; Theorems 25, 27 and 29 provide the convergent-error and Legendre inputs. The supplier’s §0.5 supplies the stated convergent-error inequalities on the native carrier.
+Prove bounded_partial_denominators_iff_badlyApproximable. For irrational 0<x<1, the native partial denominators of GenContFract.of x are bounded if and only if BadlyApproximable x from DiophantineApproximationAndTranscendence §0.6. Use the native upper convergent error and the lower bound 1/(q_n(q_n+q_(n+1))), with q_(n+1)=a_(n+1)q_n+q_(n−1); Legendre’s criterion reduces sufficiently close rationals to convergents. The characterization is Smyth2020, Lesson 10, §2.5, Exercise 2.20, physical p.55 (printed Lesson 10, p.52); Theorems 25, 27 and 29 provide the convergent-error and Legendre inputs. The supplier’s §0.5 supplies the stated convergent-error inequalities on the native carrier.
 
 **Checks.**
 
@@ -6009,7 +6056,7 @@ Choose p=−round(qx) and t=log(2q/δ)≥0. The second coordinate has absolute v
 absolute value at least δ. Use exp t=2q/δ and rearrange.
 
 Prove `homogeneous_birkhoff`. Let G=SL(2, real), Γ=SL(2, integer) embedded entrywise, X=G/Γ with its quotient
-Borel structure, μ the normalized G-invariant Haar probability, a_t=diag(exp t, exp(-t)), and S(gΓ)=a_1 gΓ.
+Borel structure (the native aliases `homogeneousGroupTopology` and `homogeneousQuotientMeasurableSpace`), μ the normalized G-invariant Haar probability, a_t=diag(exp t, exp(-t)), and S(gΓ)=a_1 gΓ.
 For every μ-integrable real f, native Birkhoff averages of S converge μ-almost everywhere to ∫f dμ.
 ([Gorodnik2010](#references) Lecture 1, physical pp.3–8, bounded geodesics and lattices.)
 
@@ -6020,8 +6067,13 @@ Apply the pointwise ergodic theorem to S and f.
 
 **Checks.**
 
-- This is Haar-almost-everywhere on X. It makes no assertion about every point u_xΓ or
-  Lebesgue-almost-everywhere on a single horocycle.
+- At t=log 2 and x=1, a_t u_x=[[2,2],[0,1/2]], whereas u_x a_t=[[2,1/2],[0,1/2]]. Thus the positive column-lattice action uses the first product; on the column (−1,1) it gives (0,1/2).
+
+- For f=1, every nonempty time-one average and the Haar integral equal 1. At N=0 the totalized average is 0, which does not affect the limit.
+
+- The identity transformation is excluded by a₁=diag(e,e⁻¹): its first diagonal entry 1 differs from e. Time-one mixing follows from Howe–Moore, rather than being an extra hypothesis.
+
+- This is Haar-almost-everywhere on X. It makes no assertion about every point u_xΓ or Lebesgue-almost-everywhere on a single horocycle.
 
 Use AdelicAlgebraicGroups AA.2–AA.3; GeometryOfNumbersAndQuadraticArithmetic §§4.2, 4.5; GeometryOfNumbersAndQuadraticArithmetic /
 §4.2.2 moore_ergodicity; §4.1 (pointwise averages, truncated limsups and first hits);
@@ -6138,18 +6190,18 @@ integrates real starting points separately.
 
 Use Mathlib `ArithmeticFunction`; Mathlib `ArithmeticFunction.IsMultiplicative`.
 
-Prove `shortMean_zero`. The totalized zero-length mean is zero. ([MatomakiRadziwill](#references)
+Prove shortMean_zero. The totalized zero-length mean is zero. ([MatomakiRadziwill](#references)
 Theorem 1, physical p.1; collated published pp.1015–1017,1020–1021.)
 
 Use §5.1 (inclusive short intervals and prime-block restrictions).
 
-Prove `shortMean_add`. The mean is linear for pointwise addition of arithmetic functions.
+Prove shortMean_add. The mean is linear for pointwise addition of arithmetic functions.
 ([MatomakiRadziwill](#references) Theorem 1, physical p.1; collated published
 pp.1015–1017,1020–1021.)
 
 Use §5.1 (inclusive short intervals and prime-block restrictions).
 
-Prove `shortMean_bound`. If |f(n)|≤1 on the interval and h>0, |shortMean|≤(h+1)/h.
+Prove shortMean_bound. If |f(n)|≤1 on the interval and h>0, |shortMean|≤(h+1)/h.
 ([MatomakiRadziwill](#references) Theorem 1, physical p.1; collated published
 pp.1015–1017,1020–1021.)
 
@@ -6163,11 +6215,32 @@ independent of f,h,X,δ. Complex-valued functions are not covered by this source
 pp.1015–1017,1020–1021.)
 
 Use Theorem 3’s mean-square comparison on the source set with one prime factor in each specified prime
-interval. Control the excluded source integers and the local excluded mass using the same theorem with f=1,
-then apply Markov with δ. The analytic estimates of Sections 3–9 are gap:mr-restricted-dirichlet-means; the good-integer counting uses the supplied Mertens estimates; no proved conclusion is derived from a random model.
+interval. For h≤X/(log X)^(1/5), control the excluded integers using the finite-set estimate with f=1 and apply Markov with δ; the terminal loss is absorbed by (log X)^(−1/50). For longer intervals, apply the unrestricted long-interval comparison on [X,3X], rather than discarding the terminal interval: the real bounded multiplicative long-mean estimate in MatomakiRadziwill Lemmas 4–5 compares every interval of length at least X/(log X)^(1/5) with the dyadic mean, with error O((log X)^(−1/20+o(1))). Consume gap:real-multiplicative-long-means for this uniform comparison; Halász alone does not include its stability conclusion. The argument retains the inclusive-endpoint O(1/h) error. The restricted Dirichlet-polynomial inequality is gap:mr-restricted-dirichlet-means, and the Parseval short-interval bound below converts it to real-start mean squares; the good-integer counting uses the supplied Mertens estimates; no proved conclusion is derived from a random model.
 
 Use §5.1 (inclusive short intervals and prime-block restrictions); Mathlib
-`ArithmeticFunction.IsMultiplicative`; AnalyticNumberTheoryPartI §§3.18, 3.33; AnalyticNumberTheoryPartI §1.5; gap:mr-restricted-dirichlet-means.
+`ArithmeticFunction.IsMultiplicative`; AnalyticNumberTheoryPartI §§3.18, 3.33; AnalyticNumberTheoryPartI §1.5; gap:mr-restricted-dirichlet-means; gap:real-multiplicative-long-means.
+
+**Parseval short-interval bound.** For X sufficiently large, complex coefficients |a_m|≤1 and 1≤h₁≤h₂=X/(log X)^(1/5), put `S_j(x)=Σ_{x≤m≤x+h_j}a_m`, `A(s)=Σ_{X≤m≤4X}a_m m^(−s)`, and E(t)=|A(1+it)|²+|A(1−it)|². Prove
+
+`X⁻¹∫_X^(2X)|S₁(x)/h₁−S₂(x)/h₂|²dx ≤ C[(log X)^(−2/15)+∫_((log X)^(1/15))^(X/h₁)E(t)dt+sup_{T≥X/h₁}(X/(h₁T))∫_T^(2T)E(t)dt]`,
+
+with absolute C. Perron's formula and its two frequency halves give this complex form of MatomakiRadziwill Lemma 14, §7, physical p.21; for real coefficients E(t)=2|A(1+it)|². Endpoint equalities affect only a null set of real x. *Needs:* the Perron summation contract of ArithmeticDirichletSeries, Export contract; AnalyticNumberTheoryPartI §1.5 and its mean-square theorem.
+
+**Checks.**
+
+- If every a_m=0, both sides except the nonnegative error term vanish: the discrepancy and both spectral integrals are zero.
+- For h₁=h₂ the two short sums coincide and the left side is zero, independently of a_m.
+- For a_m=m^(−it₀), t₀>0, `A(1−it₀)=Σ_{X≤m≤4X}1/m`, which tends to log 4. Conjugating the coefficients swaps the two frequency integrals and leaves E unchanged; retaining only positive frequencies would miss this peak.
+
+**Prime-condition inclusion–exclusion.** For the J prime intervals of this section and positive n, let χ(n) indicate the condition that each interval contains a prime divisor of n. For I⊆{1,…,J}, let g_I(n) be 1 when no prime in the union of intervals indexed by I divides n, and 0 otherwise; extend g_I by zero at input zero. Each g_I is a native real multiplicative arithmetic function. Prove χ(n)=Σ_I(−1)^|I|g_I(n), by expanding `∏_j(1−g_{ {j} }(n))`. Consequently the restricted sums of any observation on an interval equal the corresponding signed sum of unrestricted sums of its pointwise products with g_I. In particular 1_(S_X)=1_[X,2X]χ; this identity retains the finite support. (MatomakiRadziwill, Lemma 5, physical p.15.)
+
+The spacing conditions also give 2^J=(log X)^o(1), uniformly for fixed η: the j=2 term forces log Q₂≥64 log 2/η, and subsequent steps give log Q_j≥(8j²/η)log Q_(j−1). Factorial growth and log Q_J≤√log X imply J=O_η(log log X/log log log X). Thus summing the long-mean errors over I gives O_η((log X)^(−1/20+o(1))). *Needs:* finite product expansion; the displayed interval constraints; gap:real-multiplicative-long-means for the mean comparison.
+
+**Checks.**
+
+- With J=0 the sole subset is empty and g_empty(n)=1 for n>0, so the identity reads 1=1.
+- With a single interval containing only prime 2, n=2 gives 1−0=1, while n=3 gives 1−1=0.
+- With intervals containing only 2 and only 3, n=6 gives 1−0−0+0=1; n=2 gives 1−0−1+0=0; n=1 gives 1−1−1+1=0. Coprimality assumptions between the intervals are unnecessary for the product expansion.
 
 **Good-integer mean-square input**. MR Theorem 3: let f be real multiplicative with |f(n)|≤1 on positive
 integers and let 2≤h≤X. For η∈(0,1/6), increasing prime intervals [P_j,Q_j] with 1<P_j≤Q_j, Q₁≤exp(sqrt(log
@@ -6175,15 +6248,20 @@ X)), and every j≥2, (log log Q_j)/(log P_(j−1)−1)≤η/(4j²) and (η/j²)
 largest j with Q_j≤exp(sqrt(log X)), and S_X={n∈[X,2X]: each interval [P_j,Q_j],1≤j≤J, contains a prime
 divisor of n}. If [P₁,Q₁]⊂[1,h], then for X≥X₀(η),
 `∫_X^(2X)|h⁻¹Σ_{x≤n≤x+h,n∈S_X}f(n)−X⁻¹Σ_{X≤n≤2X,n∈S_X}f(n)|²dx` ≤ C_η X[(log h)^(1/3)/P₁^(1/6−η)+(log
-X)^(−1/50)]. The start x is real and both finite sums retain the inclusive endpoints. Formula (4) is one
+X)^(−1/50)+h/X]. The start x is real and both finite sums retain the inclusive endpoints. Formula (4) is one
 admissible choice, not the complete hypothesis. ([MatomakiRadziwill](#references) Theorem 3 and
 (4), physical pp.6–7; collated published pp.1015–1017,1020–1021.)
 
-Use the source restricted Dirichlet polynomial integral and its decomposition by prime intervals. Keep the
-exact good-set interface, real-starting-point endpoint convention and all interval inequalities from (4).
+Use gap:mr-restricted-dirichlet-means, the Parseval short-interval bound and prime-condition inclusion–exclusion. For h≤h₂, compare the auxiliary mean on x≤2X−h₂ with its dyadic mean using the long-mean contract on each multiplicative product f·g_I. For h>h₂, make that comparison directly on x≤2X−h. On these ranges the finite-set and unrestricted prime-condition sums agree. The terminal interval has length h; both means are bounded by 3/2 for X≥h≥2, so its squared discrepancy contributes at most 9h. This gives the displayed h/X loss. In the comparison with the auxiliary length h₂=X/(log X)^(1/5), its terminal loss h₂/X is absorbed by (log X)^(−1/50). Keep both spacing inequalities (2)–(3); formula (4) is only one choice.
+
+**Checks.**
+
+- For f=1, h=X and |S_X|/X→1, x≥7X/4 gives a short mean at most 1/4+1/X against a long mean tending to 1. The integral is at least X/36 eventually; the added term contributes C_ηX.
+- If h=o(X), the additional normalized loss h/X tends to zero. For η=1/12, P₁=(log X)^1000 and Q₁=exp(√log X), the missing density is O(log log X/√log X), and the two analytic errors tend to zero.
+- For h≤h₂, the endpoint correction of the auxiliary comparison is (log X)^(−1/5), bounded by (log X)^(−1/50) when log X≥1.
 
 Use §5.1 (inclusive short intervals and prime-block restrictions); AnalyticNumberTheoryPartI §§3.18, 3.33;
-AnalyticNumberTheoryPartI §1.5; gap:mr-restricted-dirichlet-means.
+AnalyticNumberTheoryPartI §1.5; gap:mr-restricted-dirichlet-means; gap:real-multiplicative-long-means.
 
 ### 5.2 Harmonic two-point averages
 
@@ -6209,21 +6287,21 @@ zero-extended arithmetic carrier; positive slopes guarantee eventual positive ar
 
 Use Mathlib `ArithmeticFunction`; Mathlib `ArithmeticFunction.liouville`.
 
-Prove `logCorrelation_swap`. Swapping the observations and both linear forms leaves the product average
+Prove logCorrelation_swap. Swapping the observations and both linear forms leaves the product average
 unchanged. ([TaoLogChowla](#references) Theorems 1.2–1.3 and Corollary 1.5, physical pp.1–6; collated
 published Theorem 2 (p.3), Theorem 3 (p.5) and Corollary 5 (p.6).)
 
 Use §5.2 (harmonic two-point averages).
 
-Prove `logCorrelation_add_left`. The average is linear in the first observation for pointwise
+Prove logCorrelation_add_left. The average is linear in the first observation for pointwise
 arithmetic-function addition. ([TaoLogChowla](#references) Theorems 1.2–1.3 and Corollary 1.5, physical
 pp.1–6; collated published Theorem 2 (p.3), Theorem 3 (p.5) and Corollary 5 (p.6).)
 
 Use §5.2 (harmonic two-point averages).
 
-The harmonic Liouville checks form `logCorrelation_liouville_windows`: the forms n,n+1 give 1/(2 log 2) at x=w=2 and −1/(12 log 4) at x=w=4.
+The harmonic Liouville Checks are: the forms n,n+1 give 1/(2 log 2) at x=w=2 and −1/(12 log 4) at x=w=4.
 
-Prove `logCorrelation_one_window`. When w=1 the summation interval is empty and the totalized average is zero.
+Prove logCorrelation_one_window. When w=1 the summation interval is empty and the totalized average is zero.
 ([TaoLogChowla](#references) Theorems 1.2–1.3 and Corollary 1.5, physical pp.1–6; collated published
 Theorem 2 (p.3), Theorem 3 (p.5) and Corollary 5 (p.6).)
 
@@ -6250,19 +6328,19 @@ for every Dirichlet character χ of period at most A and every real |t|≤Ax, th
 
 `|Σ_{x/w<n≤x} f(a₁n+b₁)g(a₂n+b₂)/n| ≤ ε log w`.
 
-Nonpositive arguments use the native zero extension; finitely many such terms are absorbed by enlarging A₀. Conjugating all characters permutes the family, so this is the same hypothesis as the source’s convention. (TaoLogChowla, Theorem 1.3, (1.6)–(1.7), p.4.)
+Nonpositive arguments use the native zero extension; finitely many such terms are absorbed by enlarging A₀. Conjugating all characters permutes the family, so this is the same hypothesis as the source’s convention. (TaoLogChowla, Theorem 1.3, (1.6)–(1.7), physical p.5.)
 
-The proof has the following individually owned inputs, with quantifiers in source order. Propositions 2.1–2.2 reduce to unit-circle completely multiplicative functions, equal positive slope a and fixed nonzero shift h, and to w≤x/log x (TaoLogChowla, pp.9–12). The hierarchy is: fix small ε>0 and a,b,h; choose H₋ large in these; choose finite H₊ sufficiently large in H₋; then choose A sufficiently large in all preceding parameters. All ensuing estimates are uniform in x≥w≥A, w≤x/log x, and H∈[H₋,H₊]. This hierarchy is part of each following contract.
+The proof has the following individually owned inputs, with quantifiers in source order. Propositions 2.1–2.2 reduce to unit-circle completely multiplicative functions, equal positive slope a and fixed nonzero shift h, and to w≤x/log x (TaoLogChowla, Propositions 2.1–2.2, physical pp.8–12). The hierarchy is: fix small ε>0 and a,b,h; choose H₋ large in these; choose finite H₊ sufficiently large in H₋; then choose A sufficiently large in all preceding parameters. All ensuing estimates are uniform in x≥w≥A, w≤x/log x, and H∈[H₋,H₊]. This hierarchy is part of each following contract.
 
-Prove `logarithmic_affine_invariance`: let n have mass (1/n)/Z on x/w<n≤x, Z the positive harmonic sum. For every η>0 and fixed finite H₊, increasing A makes
+Prove logarithmic_affine_invariance: let n have mass (1/n)/Z on x/w<n≤x, Z the positive harmonic sum. For every η>0 and fixed finite H₊, increasing A makes
 `|E[X(n)1_{n≡r (q)}]−q⁻¹E[X(qn+r)]|≤η`
 uniformly for |X|≤1, 1≤q≤H₊, and integers |r|≤H₊. The bounded observation is defined on integers so that negative shifts have a domain. Rescale the finite harmonic sums and bound the changed endpoints; Z/log w tends to one uniformly in the stated range. (TaoLogChowla, Lemma 2.5, pp.14–15.)
 
-Prove `modulated_short_sum_bound`: under the finite character/height hypothesis, for every H in this hierarchy,
+Prove modulated_short_sum_bound: under the finite character/height hypothesis, for every H in this hierarchy,
 `sup_α Σ_{x/w<n≤x} |Σ_{j=1}^H f(n+j)e(jα)|/(Hn) ≤ C(log log H/log H)log w`.
 Consume gap:modulated-multiplicative-short-sums with its full uniformity. After the affine-invariance transport this gives sup_α `E|Σ_{j=1}^H` f(an+j)e(jα)|=o(H), uniformly over the allowed H. (TaoLogChowla, Proposition 2.4, (2.5)–(2.9), pp.13–15.)
 
-Define finiteEntropy of a finite-valued random variable as −Σ_v P(X=v)log P(X=v), with 0log0=0, and finiteMutualInformation(X,Y)=finiteEntropy(X)+finiteEntropy(Y)−finiteEntropy(X,Y). Prove the finite chain rule, nonnegativity of mutual information and entropy at most log of the alphabet size. These are the finite laws used here; no measure-entropy construction is required. (TaoLogChowla, §3, (3.1)–(3.8), pp.19–20.)
+Define finiteEntropy of a finite-valued random variable as −Σ_v P(X=v)log P(X=v), with 0log0=0, and finiteMutualInformation(X,Y)=finiteEntropy(X)+finiteEntropy(Y)−finiteEntropy(X,Y). Prove the finite chain rule, nonnegativity of mutual information and entropy at most log of the alphabet size. These are the finite laws used here; no measure-entropy construction is required. ([TaoLogChowla](#references), §3, (3.1)–(3.8), pp.19–20.)
 
 **Checks.**
 
@@ -6272,26 +6350,28 @@ Define finiteEntropy of a finite-valued random variable as −Σ_v P(X=v)log P(X
 
 - Two independent fair bits have mutual information zero, whereas a fair bit paired with itself has mutual information log 2.
 
-Prove `entropy_decrement_scale`. Let f,g be the unit-circle completely multiplicative functions in the reduction. For p in P_H={p prime:ε²H/2≤p≤ε²H}, put `M_H=∏_{p∈P_H}p`. Let Y_H=n mod M_H and X_H be the pair of length-H blocks (f(an+j),g(an+j)), quantized on the ε² square mesh by fixed nearest-point choices. Then some integer H∈[H₋,H₊] divisible by a satisfies
+Prove entropy_decrement_scale. Let f,g be the unit-circle completely multiplicative functions in the reduction. For p in P_H={p prime:ε²H/2≤p≤ε²H}, put `M_H=∏_{p∈P_H}p`. Let Y_H=n mod M_H and X_H be the pair of length-H blocks (f(an+j),g(an+j)), quantized on the ε² square mesh by fixed nearest-point choices. Then some integer H∈[H₋,H₊] divisible by a satisfies
 `I(X_H,Y_H) ≤ H/(log H·log log log H)`.
 All logarithms in this denominator are positive by choosing H₋>exp(exp(exp 1)). Use the finite chain rule, alphabet-size bound O_ε(H), and approximate affine invariance to prove entropy-rate subadditivity with the mutual-information decrement; iterate that inequality over the finite scale interval. (TaoLogChowla, Lemma 3.2, (3.12), pp.21–22.)
 
-Prove `entropy_decoupling`. Define F_H(X,y) as `Σ_{p∈P_H}c_p` `Σ_{1≤j,j+ph≤H}1_{ay+j≡pb (ap)}X_(1,j)X_(2,j+ph)`, where c_p=f(p)g(p). At the selected scale,
+Prove entropy_decoupling. Define F_H(X,y) as `Σ_{p∈P_H}c_p` `Σ_{1≤j,j+ph≤H}1_{ay+j≡pb (ap)}X_(1,j)X_(2,j+ph)`, where c_p=conj(f(p)g(p)); thus c_p f(pn)g(p(n+h))=f(n)g(n+h) for positive n,n+h. At the selected scale,
 `|E F_H(X_H,Y_H)−E_X [M_H⁻¹Σ_{y mod M_H}F_H(X,y)]| ≤ C_(a,h) ε²H/log H`.
 The entropy conditioning bound of Lemma 3.3 controls exceptional residue sets; CRT makes distinct prime residues independent under the uniform law, and the bounded-summand Hoeffding argument of Lemma 3.5 gives exceptional fraction ≤exp(−ε⁷H/log H). Increase H₋ and A to absorb the source’s vanishing errors. This gives (3.16) from (2.17), with every expectation taken in its specified law. (TaoLogChowla, Lemmas 3.3, 3.5 and (3.16), pp.23–26.)
 
-Prove `prime_fourier_large_spectrum_bound`: for fixed a≥1, h≠0, b and ε, H divisible by a sufficiently large, arbitrary |c_p|≤1, `S_H(α)=Σ_{p∈P_H}(c_p/p)e(pα)`, and
+Prove prime_fourier_large_spectrum_bound: for fixed a≥1, h≠0, b and ε, H divisible by a sufficiently large, arbitrary |c_p|≤1, `S_H(α)=Σ_{p∈P_H}(c_p/p)e(pα)`, and
 `Ξ_H={ξ mod H: ∃η mod a, |S_H(−(b+h)η/a−hξ/H)|≥ε²/log H}`,
 one has |Ξ_H|≤C_(a,h,ε). Consume gap:prime-restriction-fourth-moment and apply Markov; each frequency in its finite grid has at most a|h| preimages. (TaoLogChowla, Lemma 3.7, (3.21), p.28.)
 
-Prove `elliott_circle_bound`: for any two length-H arrays |x_(i,j)|≤1, the absolute value of
+Prove elliott_circle_bound: for any two length-H arrays |x_(i,j)|≤1, the absolute value of
 `Σ_{p∈P_H}(c_p/p)Σ_{1≤j,j+ph≤H}1_{j≡pb (a)}x_(1,j)x_(2,j+ph)`
 is at most `C_(a,h)(H/log H)(ε²+Σ_{ξ∈Ξ_H}H⁻¹|Σ_{j=1}^H x_(1,j)e(−jξ/H)|)`.
 Use finite Fourier inversion and Parseval after periodically extending the arrays; the removed boundary has size O_(a,h)(ε²H/log H). (TaoLogChowla, Lemma 3.6, (3.18)–(3.20), pp.26–27.)
 
-The nonzero initial correlation gives the all-scale lower bound of Proposition 2.6, (2.11), after multiplicativity and affine invariance. Entropy decrement and decoupling preserve a lower bound at one scale. Remove the mesh approximation, paying O_(a,h)(ε²H/log H), to obtain unit-circle arrays for the Fourier estimate. The circle estimate, bounded large spectrum and modulated short-sum estimate contradict it after the hierarchy is chosen. This proves the finite theorem and then the limiting corrected Elliott theorem. The argument retains arbitrary prime phases c_p; the Liouville case is a specialization.
+The nonzero initial correlation gives the all-scale lower bound of Proposition 2.6, (2.11), after multiplicativity and affine invariance. Entropy decrement and decoupling preserve a lower bound at one scale. Remove the mesh approximation, paying O_(a,h)(ε²H/log H), to obtain unit-circle arrays for the Fourier estimate. The circle estimate, bounded large spectrum and modulated short-sum estimate contradict it after the hierarchy is chosen. This proves the finite theorem and then the limiting corrected Elliott theorem. The argument retains the coefficients c_p=conj(f(p)g(p)) throughout the lower-bound transport, decoupling and Fourier estimate; the Liouville pair has c_p=1.
 
 **Checks.**
+
+- With f(2)=i and g=1 in the completely multiplicative unit-circle reduction, c₂=−i and c₂f(2)g(4)=1=f(1)g(2); the unconjugated coefficient would give −1. For the Liouville pair c₂=(−1)(−1)=1.
 
 - The constant-one f violates finite nonpretentiousness at the principal character and t=0
 
@@ -6301,7 +6381,7 @@ The nonzero initial correlation gives the all-scale lower bound of Proposition 2
 
 *Needs:* native finite probability, CRT and Fourier inversion; AnalyticNumberTheoryPartI §§0.19, 0.21, 1.5, 3.18, 3.33; gap:modulated-multiplicative-short-sums; gap:prime-restriction-fourth-moment; the named finite probability and entropy targets above.
 
-**Corrected logarithmic Elliott theorem**. For native complex multiplicative f,g bounded by 1, fixed positive
+Prove `logarithmic_elliott` (corrected logarithmic Elliott). For native complex multiplicative f,g bounded by 1, fixed positive
 slopes and distinct nonproportional linear forms, assume: for every fixed Dirichlet character χ and A≥1,
 `inf_{|t|≤Ax}Σ_{p≤x}(1−Re(f(p)conj(χ(p))p^(−it)))/p→∞`. Then for every eventually 1≤w(x)≤x with w→∞, the
 normalized logarithmic two-point correlation tends to zero. This is Corollary 1.5; divergence for each fixed t
@@ -6342,7 +6422,7 @@ Mathlib `ArithmeticFunction.liouville_apply_mul`.
 
 Construct arithmetic functions from prime observations first, then assume independent prime laws for their expectation identities. Squarefree support distinguishes the Rademacher model from complete multiplicativity.
 
-Define `rademacherModel`. Given a measurable family ξ_p of independent fair signs on a native probability
+Define Rademacher prime-sign model. Given a measurable family ξ_p of independent fair signs on a native probability
 space, construct for each outcome the native real arithmetic function `R(n)=∏_{p|n}ξ_p` when n is squarefree and
 R(n)=0 otherwise, including n=0. R(1)=1. This is the standard squarefree-supported Möbius model, not a
 completely multiplicative sign model. ([Harper](#references) Introduction, printed p.2277.)
@@ -6361,22 +6441,22 @@ prime-factor union laws; no deterministic arithmetic cancellation is inferred.
 
 Use Mathlib `ArithmeticFunction`.
 
-Prove `rademacherModel_squarefree`. On squarefree n the value is the product of its prime signs.
+Prove that on squarefree n the value is the product of its prime signs.
 ([Harper](#references) Introduction, printed p.2277.)
 
 Use §5.3 (outcome-wise multiplicative models and their laws).
 
-Prove `rademacherModel_nonsquarefree`. On nonsquarefree n the value is zero. ([Harper](#references)
+Prove that on nonsquarefree n the value is zero. ([Harper](#references)
 Introduction, printed p.2277.)
 
 Use §5.3 (outcome-wise multiplicative models and their laws).
 
-Prove `rademacherModel_multiplicative`. For every outcome the native arithmetic function is multiplicative.
+Prove that for every outcome the native arithmetic function is multiplicative.
 ([Harper](#references) Introduction, printed p.2277.)
 
 Use §5.3 (outcome-wise multiplicative models and their laws).
 
-Define `steinhausModel`. Given independent uniform unit-circle prime observations ζ_p, construct
+Define Steinhaus prime-phase model. Given independent uniform unit-circle prime observations ζ_p, construct
 `S(n)=∏_{p|n}ζ_p^(v_p(n))` for n>0 and S(0)=0 in the native complex arithmetic-function carrier. Unlike the
 Rademacher squarefree model, S(p²)=ζ_p² and every positive input has unit modulus. ([Harper](#references)
 Introduction, printed p.2277.)
@@ -6394,17 +6474,17 @@ multiplicativity on positive inputs; zero cases follow from the native guard.
 
 Use Mathlib `ArithmeticFunction`; Mathlib `Nat.prod_primeFactors_pow_factorization`.
 
-Prove `steinhausModel_mul`. The model is completely multiplicative for every outcome. ([Harper](#references)
+Prove that the model is completely multiplicative for every outcome. ([Harper](#references)
 Introduction, printed p.2277.)
 
 Use §5.3 (outcome-wise multiplicative models and their laws).
 
-Prove `steinhausModel_prime_pow`. For prime p and k>0, the value at p^k is ζ_p^k. ([Harper](#references)
+Prove that for prime p and k>0, the value at p^k is ζ_p^k. ([Harper](#references)
 Introduction, printed p.2277.)
 
 Use §5.3 (outcome-wise multiplicative models and their laws).
 
-Prove `steinhausModel_norm`. Unit modulus of prime observations gives unit modulus at every positive input.
+Prove that unit modulus of prime observations gives unit modulus at every positive input.
 ([Harper](#references) Introduction, printed p.2277.)
 
 Use §5.3 (outcome-wise multiplicative models and their laws).
