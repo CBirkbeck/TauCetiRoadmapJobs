@@ -211,3 +211,4 @@ AutomorphicSpectralTheoryPartII
 AutomorphyLiftingBeyondTaylorWiles
 CMRankZeroConverse
 ClassicalAdicEtaleCohomologyPartII
+ColemanPowerSeriesPartII
