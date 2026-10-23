@@ -1,0 +1,69 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "K2SymbolsBrauerPartII"
+
+[[source]]
+id = "weibel"
+version_note = "Author text dated 29 August 2013; locators use printed pagination."
+authors = ["Charles A. Weibel"]
+title = "The K-book: An Introduction to Algebraic K-theory"
+year = 2013
+locator_scheme = "section"
+locator = "III.6.2, pp.232–234; III.6.3, p.234; III.6.9–6.10, pp.240–243; VI.8.6, p.515"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-10-22T16:26:16Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 1–5"]
+
+[[source]]
+id = "milne"
+version_note = "Version 4.03, 6 August 2020; locators use its printed pagination."
+authors = ["J. S. Milne"]
+title = "Class Field Theory"
+year = 2020
+locator_scheme = "section"
+locator = "III.3, Proposition 3.6, p.109; III.4, Steps 1–4 and Remark 4.5, pp.111–114; V.5, Proposition 5.2, Theorem 5.3, Example 5.4, pp.178–179; VII.8.1(b), p.221"
+url = "https://www.jmilne.org/math/CourseNotes/CFTc.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFTc.pdf"
+fetched_at = "2026-10-22T16:26:42Z"
+sha256 = "63e7c0a2b6a62ac365ba8b2145cc89ecffa1a53370c28d358a954a9abc60e4d5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 1–4"]
+
+[[source]]
+id = "soule"
+version_note = "Author transcription of the 1978 thesis; degree-two coefficient evaluated at i=j=1."
+authors = ["Christophe Soulé"]
+title = "Groupes arithmétiques et K-théorie des anneaux d’entiers de corps de nombres"
+year = 1978
+locator_scheme = "section"
+locator = "Proposition 2.2.2.3, pp.42–44; 2.2.3.1–2.2.3.2 and Lemma 2.2.3.2.1, pp.45–48; Proposition 2.2.3.3 and remark, p.49; 2.2.4.4, pp.53–55"
+url = "https://www.ihes.fr/~soule/documents/These_Christophe_Soule.pdf"
+fetched_from = "https://www.ihes.fr/~soule/documents/These_Christophe_Soule.pdf"
+fetched_at = "2026-10-22T16:27:25Z"
+sha256 = "19bb0877616c262fcb83c9fe6ad88f98747f117f23805b6154e19174dbb659a7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "tate"
+authors = ["John Tate"]
+title = "Relations between K₂ and Galois cohomology"
+year = 1976
+locator_scheme = "theorem"
+locator = "Theorem 3.1, p.262; Lemma 3.2, p.263; Diagram 3.3, pp.263–264; Theorem 3.5(a)–(b) and corollary, p.265; Proposition 4.5 and corollary, pp.267–268; Theorems 5.1, 5.4, pp.268–270; Equation 5.3, p.269; Theorem 6.2 and proof, pp.270–271"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0036/LOG_0020.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0036/LOG_0020.pdf"
+fetched_at = "2026-10-22T16:28:46Z"
+sha256 = "5d1ee68e3f9cc49ba6cac8269e1c9ca510411c6a154f36b559290849a72db7b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 1 and 5"]
