@@ -3865,21 +3865,24 @@
    "neededBy": [
     "DirectSummandsAndBigCohenMacaulay:DS.4/equal-char-zero-big-cm"
    ],
-   "detail": "Hochster–Huneke 1995 was not read. The node outlines the classical reduction to characteristic p through the finitely many equations of a bad sequence of partial modifications; the descent from a complete local ring of equal characteristic 0 to a finitely generated base uses Néron–Popescu approximation (SchemeAndStackFoundations:SF.0/popescu-desingularization) and spreading out, and the precise statement of that step (preservation of systems of parameters and of the dimension of a domain quotient after reduction modulo a maximal ideal of the base) must be read off the source before the node is closed."
+   "detail": "Hochster–Huneke 1995 was not read. The node outlines the classical reduction to characteristic p through the finitely many equations of a bad sequence of partial modifications; the descent from a complete local ring of equal characteristic 0 to a finitely generated base uses Néron–Popescu approximation (SchemeAndStackFoundations:SF.0/popescu-desingularization) and spreading out, and the precise statement of that step (preservation of systems of parameters and of the dimension of a domain quotient after reduction modulo a maximal ideal of the base) must be read off the source before the node is closed.",
+   "slug": "equal-char-zero-existence-proof"
   },
   {
    "title": "G2: Kovács' characterisation of rational singularities",
    "neededBy": [
     "DirectSummandsAndBigCohenMacaulay:DS.7/char-zero-derived-splitting"
    ],
-   "detail": "Kovács’ author copy was independently read in full (pp. 187–191). Theorem 1 assumes the source has rational singularities; Theorem 2 is for surjective morphisms of projective complex varieties with rational singularities on both sides. Supply resolution of singularities and Grauert–Riemenschneider vanishing, reduction of an arbitrary proper cover to this projective rational-source case, extension to characteristic-zero fields and localisation, and the finite-presentation/Popescu passage preserving proper surjectivity and the derived retraction. Bhatt 2012 Example 1.2 recalls the characterisation, but the present suppliers do not establish these bridges. The gap concerns a proof and its ownership, not the truth of the known characteristic-zero theorem."
+   "detail": "Kovács’ author copy was independently read in full (pp. 187–191). Theorem 1 assumes the source has rational singularities; Theorem 2 is for surjective morphisms of projective complex varieties with rational singularities on both sides. Supply resolution of singularities and Grauert–Riemenschneider vanishing, reduction of an arbitrary proper cover to this projective rational-source case, extension to characteristic-zero fields and localisation, and the finite-presentation/Popescu passage preserving proper surjectivity and the derived retraction. Bhatt 2012 Example 1.2 recalls the characterisation, but the present suppliers do not establish these bridges. The gap concerns a proof and its ownership, not the truth of the known characteristic-zero theorem.",
+   "slug": "char-zero-derived-splitting-bridges"
   },
   {
    "title": "G3: arbitrary-module completion and change of parameters",
    "neededBy": [
     "DirectSummandsAndBigCohenMacaulay:DS.0/completion-balances"
    ],
-   "detail": "Supply the proof that, for a Noetherian local ring (R,m) of dimension d and an arbitrary module M with M/mM ≠ 0 and H^i_m(M)=0 for i<d, lim M/m^nM is balanced big Cohen–Macaulay. Include comparison of Mathlib’s Ext-colimit local cohomology with Čech/Koszul cohomology for arbitrary modules. André §4.1 p. 85 and BMPSTWW §2.2 p. 12 state the needed completion result; the finite-module depth theorem in R03.3 and DD.1’s Koszul construction do not prove it. A proof from a public source or a cleared book is still needed; no uncleared Bruns–Herzog text was used."
+   "detail": "Supply the proof that, for a Noetherian local ring (R,m) of dimension d and an arbitrary module M with M/mM ≠ 0 and H^i_m(M)=0 for i<d, lim M/m^nM is balanced big Cohen–Macaulay. Include comparison of Mathlib’s Ext-colimit local cohomology with Čech/Koszul cohomology for arbitrary modules. André §4.1 p. 85 and BMPSTWW §2.2 p. 12 state the needed completion result; the finite-module depth theorem in R03.3 and DD.1’s Koszul construction do not prove it. A proof from a public source or a cleared book is still needed; no uncleared Bruns–Herzog text was used.",
+   "slug": "arbitrary-module-completion-proof"
   },
   {
    "title": "G4: finite bad witnesses for pointed partial modifications",
@@ -3889,7 +3892,56 @@
     "DirectSummandsAndBigCohenMacaulay:DS.4/almost-cm-to-big-cm",
     "DirectSummandsAndBigCohenMacaulay:DS.4/weak-functoriality-almost-cm"
    ],
-   "detail": "Prove that a finite bad witness in full algebra modifications, including the two-base double-sequence version, can be realised by a finite sequence of the explicitly pointed scalar-polynomial module quotients in DS.4/partial-algebra-modification. Conversely extend pointed maps into a big Cohen–Macaulay algebra by evaluation. Hochster Theorem 4.2 pp. 8–9 and Heitmann–Ma Theorem 1.6 pp. 3–4 state the intended criterion, but their module formula suppresses a distinguished coefficient and Hochster’s asserted fixed-relation N-colimit is false (E21–E22). A precise finite-witness construction, or a replacement module construction with a proved comparison, is required before this interface can be implemented as the cited criterion. No new algebra structure is inferred from a module colimit."
+   "detail": "Prove that a finite bad witness in full algebra modifications, including the two-base double-sequence version, can be realised by a finite sequence of the explicitly pointed scalar-polynomial module quotients in DS.4/partial-algebra-modification. Conversely extend pointed maps into a big Cohen–Macaulay algebra by evaluation. Hochster Theorem 4.2 pp. 8–9 and Heitmann–Ma Theorem 1.6 pp. 3–4 state the intended criterion, but their module formula suppresses a distinguished coefficient and Hochster’s asserted fixed-relation N-colimit is false (E21–E22). A precise finite-witness construction, or a replacement module construction with a proved comparison, is required before this interface can be implemented as the cited criterion. No new algebra structure is inferred from a module colimit.",
+   "slug": "pointed-modification-finite-witness"
+  },
+  {
+   "slug": "ramification-and-riemann-inputs",
+   "needs": "Provide the almost-pro-zero and derived-limit calculus, quantitative annular Riemann comparison, perfectoid Riemann extension and Abhyankar theorem, purity and Krull detection, and the normalized Kummer flat integral model and ramified almost flatness modulo every p-power specified in RA.0–RA.5.",
+   "supplier": "PerfectoidSpacesPartII",
+   "section": "RA.0–RA.5"
+  },
+  {
+   "slug": "ramified-multielement-kummer",
+   "needs": "Extend normalized Kummer flatness and almost faithful flatness modulo p² to ramified complete regular local bases with perfect residue field and finitely many simultaneous discriminants, with compatible root maps.",
+   "supplier": "PerfectoidSpacesPartII",
+   "section": "RA.5"
+  },
+  {
+   "slug": "common-cohen-extension",
+   "needs": "For compatible Cohen embeddings lifting a separable residue extension k→k′, identify completion_p(Λ′⊗_Λ W(k^perf)) as a strict Cohen ring with residue k′⊗_k k^perf and construct its compatible faithfully flat map to W(k′^perf), so the resulting common completed base change preserves injectivity and purity.",
+   "supplier": "DeformationAndDerivedPatchingAlgebra",
+   "section": "1.10"
+  },
+  {
+   "slug": "finite-parameter-subring",
+   "needs": "For a complete p-torsion-free local domain B of perfect residue field, and a system of parameters (p²,x₂,…,x_d), construct a finite injective coefficient-compatible map W(k)[[T₂,…,T_d]]→B sending T_i to x_i.",
+   "supplier": "DeformationAndDerivedPatchingAlgebra",
+   "section": "1.10 and 1.15"
+  },
+  {
+   "slug": "regular-surjection-kernel",
+   "needs": "For a surjection of regular Noetherian local rings, prove that its kernel is generated by a subset of a regular system of parameters of length the dimension difference, with the coefficient map fixed.",
+   "supplier": "DeformationAndDerivedPatchingAlgebra",
+   "section": "3.2"
+  },
+  {
+   "slug": "parameter-systems",
+   "needs": "Provide finite parameter lists characterized by their dimension-length and maximal-primary generated ideal, their existence and powers, and transport under completion, maximal-dimensional domain quotients and finite local injective maps.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "0.17"
+  },
+  {
+   "slug": "perfectoid-base-modification-domination",
+   "needs": "For an arbitrary integral perfectoid p-torsion-free base A and a proper Y→Spec A whose generic fibre is an isomorphism, dominate the p-adic completion of its generic-fibre closure by the completion of a blow-up of a finitely generated ideal containing p^N for some N.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "4.12"
+  },
+  {
+   "slug": "grauert-riemenschneider",
+   "needs": "For a proper birational morphism ρ:Y→X of characteristic-zero varieties with Y smooth, supply Grauert–Riemenschneider vanishing Rⁱρ_*ω_Y=0 for i>0, with the field-extension and duality comparisons required for derived splitting.",
+   "supplier": "ResolutionOfSingularitiesCharacteristicZero",
+   "section": "5.5"
   }
  ],
  "sourceIssues": [
