@@ -1,0 +1,10 @@
+{
+  "gaps": [
+    {
+      "slug": "mertens-prime-product",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "Mertens product",
+      "needs": "There exist real D ≥ 0 and x₀ ≥ 2 such that for every real x ≥ x₀, |∏_{p prime, p ≤ x}(1−1/p)⁻¹ − exp(Real.eulerMascheroniConstant) log x| ≤ D, including the proof identifying the coefficient."
+    }
+  ]
+}

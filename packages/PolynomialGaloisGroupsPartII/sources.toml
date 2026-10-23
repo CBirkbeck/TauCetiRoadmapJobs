@@ -1,0 +1,76 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PolynomialGaloisGroupsPartII"
+
+[[source]]
+id = "bskk"
+authors = "Lior Bary-Soroker, Dimitris Koukoulopoulos, Gady Kozma"
+title = "Irreducibility of random polynomials: general measures"
+year = 2020
+doi = "10.1007/s00222-023-01193-6"
+arxiv = "2007.14567v3"
+locator_scheme = "section"
+locator = "Introduction pp.4–5; §11 pp.54–58; §12 pp.59–63 (arXiv v3)"
+url = "https://arxiv.org/abs/2007.14567v3"
+fetched_from = "https://arxiv.org/pdf/2007.14567v3"
+fetched_at = "2026-10-22T09:23:59Z"
+sha256 = "adb1359df46f92d608009b32f45939672e08b1e3fe052587b035431e70d5d3e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3 (June 2023); locators use the 65-page preprint, not the journal pagination."
+cited_for = ["0.1–3.9; 4.1; 4.6; 5.1–6.2"]
+
+[[source]]
+id = "babai"
+authors = "László Babai; original lecture scribe Tom Hayes"
+title = "Primitive coherent configurations and the order of uniprimitive permutation groups"
+year = 2018
+version_note = "Author exposition of 21 October 2018; locators use this exposition's numbering."
+locator_scheme = "section"
+locator = "§§3–4 pp.4–5; §6 pp.5–6; §8 pp.7–9; §9 p.10"
+url = "http://people.cs.uchicago.edu/~laci/papers/uni-update.pdf"
+fetched_from = "http://people.cs.uchicago.edu/~laci/papers/uni-update.pdf"
+fetched_at = "2026-10-22T09:24:37Z"
+sha256 = "0727084ac9c61fcf0fd54be97bae96adb8605901369e868a29cf5b1232a3bb67"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.2–4.4"]
+
+[[source]]
+id = "schomburg"
+authors = "Bernd Schomburg"
+title = "Bochert's results on the minimal degree of multiply transitive permutation groups"
+year = 2022
+arxiv = "2209.12049v1"
+locator_scheme = "section"
+locator = "§2 (2.1), Lemmas 2.3–2.5 pp.1–4; §3 Theorem 3.1 pp.4–5 (arXiv v1)"
+url = "https://arxiv.org/abs/2209.12049v1"
+fetched_from = "https://arxiv.org/pdf/2209.12049v1"
+fetched_at = "2026-10-22T09:25:22Z"
+sha256 = "6374c9c7916eb0fe5d1a436e094e18e156686d3a2aced5de9e424e52717ffdfb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["4.5"]
+
+[[source]]
+id = "bary-soroker-kozma"
+authors = "Lior Bary-Soroker, Gady Kozma"
+title = "Irreducible polynomials of bounded height"
+year = 2017
+venue = "Duke Math. J. 169, no. 4 (2020), 579-598"
+doi = "10.1215/00127094-2019-0047"
+arxiv = "1710.05165v2"
+locator_scheme = "section"
+locator = "§3.1 Claim 1 and proof pp.9–10 (arXiv v2)"
+url = "https://arxiv.org/abs/1710.05165v2"
+fetched_from = "https://arxiv.org/pdf/1710.05165v2"
+fetched_at = "2026-10-22T09:26:30Z"
+sha256 = "30e999fd06601abcb2a88b3a1917675a53b134d0bf1a0c40b17ccd50063808b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2 (August 2019); Claim 1 is on pp.9–10 of this version, not the journal pagination."
+cited_for = ["4.6"]
