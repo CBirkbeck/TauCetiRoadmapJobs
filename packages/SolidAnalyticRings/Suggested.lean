@@ -7,7 +7,8 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs. At universe zero, §1.5's abelian
 solidification, countable integer-product compact projective generator and
 ordinary derived-category reflection are statable below. Compactness in the
-abelian category means preservation of filtered colimits by Hom.
+abelian category means preservation by Hom of filtered colimits indexed in
+Lean universe 1, the hom universe of the native category.
 
 The remaining headlines are not statable at the pins, for the indicated missing
 carriers.
@@ -57,7 +58,8 @@ carriers.
 * Layer 6, §6.3: uniformly bounded-below realization commuting with quotient
   completion, with the skeletal tail bound, lacks the same enhanced module
   and simplicial realization carriers.
-* Layer 6, §6.4: the fully faithful prime-completed embedding, bounded-below
+* Layer 6, §6.4: the prime-power null-family theorem (with marked spectral
+  fibers), the fully faithful prime-completed embedding, bounded-below
   tensor closure and completed-sphere monoidal comparison lack ordinary
   spectra, light solid spectra and coherent derived prime completions.
 * Layer 7, §7.2: completed tensor, scalar-extension adjunction and commuting-
@@ -66,7 +68,8 @@ carriers.
 * Layer 7, §7.3: spectral summability localization as an analytic structure,
   including connective preservation, lacks the solid spectral generator,
   spectral analytic structures and enhanced localization functors.
-* Layer 7, §7.4: the common-presentation integer-measure spectral comparison
+* Layer 7, §7.4: the integer-measure spectral comparison on the specified
+  common light presentation diagrams
   lacks the supplier's enhanced analytic-measure module category, the light
   HZ-linear spectral realization and coherent site/cutoff comparisons.
 
@@ -111,12 +114,13 @@ def IsLightSolid : ObjectProperty LightCondAb := fun B =>
   IsIso (𝟙 ((ihom nullSeq).obj B) - (MonoidalClosed.pre nullShift).app B)
 
 /-- The light solid inclusion has a left adjoint, and the countable product of discrete
-integers is a solid compact projective generator (RC Theorem 3.2.4(2),(12), p.17). -/
+integers is a solid compact projective generator, with filtered index categories in
+Lean universe 1 (RC Theorem 3.2.4(2),(12), p.17). -/
 theorem isLightSolid_reflective_and_generator :
     IsLightSolid.ι.IsRightAdjoint ∧
       ∃ h : IsLightSolid (∏ᶜ fun _ : ℕ => (discrete (ModuleCat ℤ)).obj (ModuleCat.of ℤ ℤ)),
         Projective (⟨_, h⟩ : IsLightSolid.FullSubcategory) ∧
-        IsFinitelyPresentable (⟨_, h⟩ : IsLightSolid.FullSubcategory) ∧
+        IsFinitelyPresentable.{1} (⟨_, h⟩ : IsLightSolid.FullSubcategory) ∧
         IsSeparator (⟨_, h⟩ : IsLightSolid.FullSubcategory) := by
   sorry
 
