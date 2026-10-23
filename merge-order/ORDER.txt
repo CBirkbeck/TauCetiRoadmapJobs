@@ -259,6 +259,7 @@ MultiquadraticPartII
 FuchsianOrbifoldsPartII
 AlgebraicModularFormsAndSerreWeightsPartII
 ArithmeticDynamicsPartII
+NonabelianLevelStructures
 AutomorphicSpectralTheoryPartII
 AutomorphyLiftingBeyondTaylorWiles
 CMRankZeroConverse
