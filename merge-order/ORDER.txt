@@ -24,7 +24,6 @@ CrystallineCohomology
 PerfectoidQuotients
 ReductiveGroupsPartII
 RootSystemsPartII
-AutomorphicLFunctionsAndLocalFactorsPartII
 SmoothRepresentationsOfLocalGroups
 GlobalShtukasAndFunctionFieldLanglandsPartII
 QuiverRepresentationsPartII
@@ -166,6 +165,7 @@ EllipticKTheory
 EndoscopicTransferAndUnitaryTraceComparison
 BorelRegulators
 MetaplecticAutomorphicForms
+AutomorphicLFunctionsAndLocalFactorsPartII
 HodgeClassesForJacquetLanglands
 FunctionFieldArithmetic
 GlobalShtukasAndFunctionFieldLanglands
