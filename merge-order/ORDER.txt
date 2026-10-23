@@ -5,6 +5,7 @@ GeneralAlgebraicKTheory
 ResolutionOfSingularitiesCharacteristicZero
 DerivedModuleAlgebra
 AdicSpacesPartII
+CstConjectureForDaggerVarieties
 AdicSpacesPartIIPartII
 AdicSpacesPartIII
 AdicEtaleGeometry
