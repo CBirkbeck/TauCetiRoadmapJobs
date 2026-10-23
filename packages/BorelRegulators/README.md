@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-This roadmap owns the embedding Tate lattice, the specified arithmetic regulator and its real isomorphism, the point realization and Borel–Beilinson comparison, the arithmetic division-algebra volume specialization, and the primitive-period determinant and zeta covolume. The number-field regulator block is the shared input of PeriodsAndSpecialValues PS.3.2a; that roadmap retains its determinant and fundamental lines, general conjectural special-value predicates, and mixed Tate applications. The norm-one Tamagawa theorem is supplied by the AdelicAlgebraicGroups extension below; §3.4 identifies its mass in Borel’s gauge. Section 3.1 supplies the period–index input of HeightsRationalPointsAndObstructions §3.6.
+This roadmap owns the embedding Tate lattice, the specified arithmetic regulator and its real isomorphism, the point realization and Borel–Beilinson comparison, the arithmetic division-algebra volume specialization, and the primitive-period determinant and zeta covolume. The number-field regulator block is the shared input of PeriodsAndSpecialValues PS.3.2a; that roadmap retains its determinant and fundamental lines, general conjectural special-value predicates, and mixed Tate applications. EndoscopicTransferAndUnitaryTraceComparison §6.2 supplies the norm-one Tamagawa theorem; §3.4 identifies its mass in Borel’s gauge. Section 3.1 supplies the period–index input of HeightsRationalPointsAndObstructions §3.6.
 
 The complex regulator and lattice theorem of ColemanIntegration §L3.Fc.1 belong to §§2.2–2.3 and 5.3 here, with the Beilinson normalization identified in §6.2. ColemanIntegration retains its pairings and discriminant/regulator determinants. Its point regulator uses the point case of gap:universal-deligne. IntegralIwasawaTheory §6.0 owns totally real Siegel–Klingen rationality; LFunctions Layer 3 and §1.3 turn its trivial-character value at 1−n into the positive even-value formula. Section 5.1 contains the dₙ=0 case of the general period comparison.
 
@@ -18,11 +18,11 @@ The pinned definitions of embeddings, discriminant, module quotients, exterior p
 
 A number field F has O_F its full ring of integers, Σ_F all embeddings into ℂ, N=[F:ℚ]=r₁+2r₂, and Δ_F=|disc F|>0. Groups are actual connective Quillen groups, written additively; tensor products of their underlying ℤ-modules use the scalar-tower identifications of their suppliers. The main higher-weight hypotheses are n≥2; the elementary Tate target and point quotient are also defined at n=1. All finite extensions carry their specified algebra structure. Universes are arbitrary within the native field and category carriers; Σ_F is finite without a choice of a universe-sized enumeration.
 
-The real and integral Tate lines are ℝ(k)=(2πi)^kℝ and ℤ(k)=(2πi)^kℤ. Conjugation acts simultaneously on the embeddings and coefficients. In the selected coordinates one divides by (2πi)^(n−1), taking all real embeddings in odd weight and one representative of each complex pair in either parity. Real coordinates at fixed embeddings vanish in even weight. Thus dₙ=r₁+r₂ for odd n and dₙ=r₂ for even n. A complex representative change has sign (-1)^(n−1). Rows index the selected embeddings and columns index K-basis elements. The coordinate lattice has covolume one. Ordered determinants are signed; covolumes are positive absolute determinants. An empty exterior generator, empty determinant and zero-dimensional normalized covolume are all 1.
+The rational, real and integral Tate lines are ℚ(k)=(2πi)^kℚ, ℝ(k)=(2πi)^kℝ and ℤ(k)=(2πi)^kℤ. Conjugation acts simultaneously on the embeddings and coefficients. In the selected coordinates one divides by (2πi)^(n−1), taking all real embeddings in odd weight and one representative of each complex pair in either parity. Real coordinates at fixed embeddings vanish in even weight. Thus dₙ=r₁+r₂ for odd n and dₙ=r₂ for even n. A complex representative change has sign (-1)^(n−1). Rows index the selected embeddings and columns index K-basis elements. The coordinate lattice has covolume one. Ordered determinants are signed; covolumes are positive absolute determinants. An empty exterior generator, empty determinant and zero-dimensional normalized covolume are all 1.
 
 Write x∈ℚˣ·y to mean that x=qy for some nonzero rational q, and x∈ℚ_>0·y for a positive rational q. This notation does not assign meaning to a quotient by zero. Every use below proves the two quantities nonzero. Powers with possibly negative exponent, such as π^(dₙ−Nn), are integer powers over ℝ, never natural subtraction. For real s>1, ζ_F(s) is the positive real ideal sum whose inclusion in ℂ equals `NumberField.dedekindZeta F s`. Continued zeta values and leading coefficients refer to the analytic germ supplied by LFunctions Layer 3; no out-of-convergence value of the raw series or totalized Gamma value is used.
 
-The cohomological comparison in degree q is jℝ=i^q μ for the identical complex extension μ of invariant forms. Its primitive determinant has zeta exponent −Nn. The Tate-divided renormalized regulator has exponent dₙ−Nn. The two are linked by §5.2, not identified. The compact generator is εₙ=(-1)^n clutch(u^n) for the ordered complex suspension and TopologicalKTheory’s u=O(-1)−1. Its character is -v at the Bott coefficient, so u² and -u³ have character coordinates +1 and +1 in their respective weights. The integral calibration contract proves that εₙ pairs suspended chₙ to (2πi)^n. In this suspended Chern convention r_Bo=2r_Be. This is a comparison of two independently constructed maps.
+The cohomological comparison in degree q is jℝ=i^q μ for the identical complex extension μ of invariant forms. Its primitive determinant has zeta exponent −Nn. The Tate-divided renormalized regulator has exponent dₙ−Nn. The two are linked by §5.2, not identified. The compact generator is εₙ=(-1)^n clutch(u^n) for the ordered complex suspension and TopologicalKTheory’s u=O(-1)−1. The twisted character is chₙᵗʷ=(2πi)^n·chₙ, valued in ℚ(n), where chₙ is the rational character of CharacteristicClasses C6 item 2 (burgos2002, Remark 4.25, p.32, burgos2002 line 1423–1431, suspended formula). The rational character is -v at the Bott coefficient, so u² and -u³ have character coordinates +1 and +1 in their respective weights. The integral calibration contract proves that εₙ pairs suspended chₙ to 1 and suspended chₙᵗʷ to (2πi)^n. In this suspended Chern convention r_Bo=2r_Be. This is a comparison of two independently constructed maps.
 
 At finite places q_v=#k_v≥2, additive mass of O_v is 1, and at infinity the coordinate measures are dx and 2dxdy. Borel’s infinite measure for a dimension-h group is Δ_F^(−h/2) times the infinite product of local gauges. Its finite product has no second discriminant scalar. Symmetric spaces use left K-cosets, so the bundle over the arithmetic quotient is K→G(ℝ)/Γ→K\G(ℝ)/Γ. The Cartan map in §5.2 uses right SO-cosets. Inversion identifies the left and right homogeneous-space models and their transported forms. Left and right Haar quotient measures are identified by inversion for these unimodular groups; counting measure on discrete arithmetic subgroups fixes finite-index volume changes. One nonzero global rational form fixes every local gauge. A complex coordinate chart change uses the squared complex absolute value.
 
@@ -41,6 +41,7 @@ The baseline is mathlib commit 6b7abb3c7686292736be2955bd3eb9ebf63b456a. The fol
 
 - `NumberField.InfinitePlace.card_add_two_mul_card_eq_rank`, in Mathlib/NumberTheory/NumberField/InfinitePlace/Basic.lean:474, states r₁+2r₂=finrank ℚ F for a number field. The complex-embedding and infinite-place carriers in that file supply conjugation and the finite indexing set; §1.1 adds the twisted fixed submodule.
 - `NumberField.discr` and `NumberField.discr_ne_zero`, in Mathlib/NumberTheory/NumberField/Discriminant/Defs.lean:36 and :41, use the ring-of-integers basis. They ensure Δ_F>0.
+- `NumberField.prod_abs_eq_one`, in Mathlib/NumberTheory/NumberField/ProductFormula.lean:98, gives the product formula for a nonzero field element, with squared absolute values at complex places.
 - `NumberField.IsTotallyReal`, in Mathlib/NumberTheory/NumberField/InfinitePlace/TotallyRealComplex.lean:47, requires every infinite place to be real. The equivalence `NumberField.nrComplexPlaces_eq_zero_iff`, in that file:52, identifies this condition with r₂=0 for number fields, as used in §5.1.
 - `Ideal.nonempty_primesOver`, in Mathlib/RingTheory/Ideal/GoingUp.lean:355, gives a prime above a prime for an integral algebra with faithful scalar action. Apply it to ℤ⊂O_F over (2) and (3); their contractions distinguish the two chosen finite places of §3.2.
 - `Submodule.mkQ` and `Submodule.mkQ_surjective`, in Mathlib/LinearAlgebra/Quotient/Defs.lean:227 and :236, give the native module quotient and its surjective projection. The quotient requires no topology. Sections 4.1 and 6.1 specify the submodules being quotiented.
@@ -73,7 +74,7 @@ The baseline is Tau Ceti commit a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039. `TauCe
 
 §§3.2–3.4 supply finite generation for number rings and finite S; actual rational localization; stable arithmetic invariant-form comparison, primitive generators and Borel ranks, independent of regulator values.
 
-What ArithmeticKTheory must provide (gap:stable-finite-range): Supply the map-level finite-stage comparison and the conservative bound a−1>4Nq. The finite-stage form extends ArithmeticKTheory §3.4’s stable arithmetic and relative-Lie comparison and its primitive generators. Supply actual invariant-form comparison maps, stabilization and rational finite-index restriction; for Res SL_a over F the range a−1>4Nq must imply isomorphism through degree q. Finite-type is used only on the arithmetic plus H-space, not on GL(ℂ) with its discrete topology. Required location: §3.4, explicit finite-stage form of the stable comparison.
+What ArithmeticKTheory must provide (gap:stable-finite-range): Supply, for every number field F of degree N, a≥2, G=Res_(F/ℚ)SL_a with its standard maximal compact K and every arithmetic Γ⊂G(ℚ), the actual invariant-form maps H^q(Lie G,K;ℝ)→H^q(Γ;ℝ) for q∈ℕ, compatible with block stabilization and finite-index restriction, and bijective whenever a−1>4Nq. The finite-stage form extends ArithmeticKTheory §3.4’s stable arithmetic and relative-Lie comparison and its primitive generators. Supply actual invariant-form comparison maps, stabilization and rational finite-index restriction; for Res SL_a over F the range a−1>4Nq must imply isomorphism through degree q. Finite-type is used only on the arithmetic plus H-space, not on GL(ℂ) with its discrete topology. The requested range lies inside the comparison range q<(a−1)/4 (borel1977, §5.2, p.627, borel1977 line 459–461). Required location: §3.4, explicit finite-stage form of the stable comparison.
 
 What ArithmeticKTheory must provide (gap:order-finite-generation): Supply finite generation or a finite-index integral comparison for higher K-groups of all number-field orders. ArithmeticKTheory §3.4 explicitly supplies the rational inclusion equivalence for every order. The integral image being a lattice also needs finite generation, not only a rational dimension. Supply finite generation of K_m(R) for every full ℤ-order R in a number field and m≥2, or an equally strong finite-index image theorem. Number-ring and finite-S finite generation in §3.3 cannot silently be applied to a singular nonmaximal order. Required location: extension of ArithmeticKTheory §§3.2–3.4 to all full ℤ-orders.
 
@@ -93,7 +94,9 @@ What AdelicAlgebraicGroups must provide (gap:inner-type-a-structure): Supply abs
 
 What AdelicAlgebraicGroups must provide (gap:adelic-rational-masses): Supply positive rational local gauge masses for all compact opens, including ramified finite places. Extend AdelicAlgebraicGroups §2.4’s smooth integral-model masses (with the gauge a generator of invariant top forms) and gauge scaling to rationality of every compact-open mass for every rational invariant form at an arbitrary finite place. Require the extension for smooth affine algebraic groups over nonarchimedean characteristic-zero local fields with finite residue field, using the fixed coordinate Haar normalization. Include finite-index comparison and compatibility with a single global rational gauge; a hyperspecial-only theorem cannot discharge the ramified factors. Required location: Part II, rational gauge masses extending §2.4.
 
-What AdelicAlgebraicGroups must provide (gap:classical-tamagawa-proof): Supply τ(SL₁(D))=1 for every central division algebra D of degree a≥2 over a number field, in the §2.4 Tamagawa normalization. For a number field F and every central division F-algebra D of degree a≥2, use the existing SL₁(D) carrier of §3.4 and the Tamagawa measure of §2.4. No infinite-splitting hypothesis is needed for the supplied theorem. Section 3.4 here specializes its quotient mass to the split infinite factors and the gauge of §3.3 (weil1961, §3.3, Theorem 3.3.1; borel1977 line 227). Required location: Part II, Tamagawa numbers extending §2.4 and the §3.4 SL₁(D) carrier.
+### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
+
+§6.2 supplies τ(S)=1 for every simply connected semisimple group over a number field, including inner forms, with the Tamagawa normalization of AdelicAlgebraicGroups §2.4. Apply it to the existing SL₁(D) carrier using gap:inner-type-a-structure; no infinite-splitting hypothesis is required for this supplied theorem.
 
 ### From TauCetiRoadmap.RepresentationTheory.SemisimpleAlgebras
 
@@ -109,7 +112,7 @@ Layers 5 and 10 supply normalized local Brauer invariants, restriction multiplie
 
 §§R02.4.5b–R02.4.6 supply Grunwald–Wang with its dyadic exceptional class, used only through the additional full-local-degree contract.
 
-What ArithmeticGaloisDuality must provide (gap:cyclic-local-degrees): Supply cyclic splitting extensions with full local degrees while retaining Wang’s obstruction for fixed prescriptions. ArithmeticGaloisDuality R02.4.5b–R02.4.6 describes the exact exceptional class for fixed character prescriptions. Supply the consequence used in Poonen’s proof: for any a≥1 and finite set of finite places, a cyclic degree-a extension may be chosen with local degree a at those places, with the local extensions allowed to vary, and with selected real places complex when a is even. No assertion of arbitrary prescribed unramified dyadic extensions is made. Required location: §R02.4.6, variable-local-extension corollary.
+What ArithmeticGaloisDuality must provide (gap:cyclic-local-degrees): Supply, for every number field F, a≥1, finite set S of finite places and set R of real places (R empty when a is odd), a cyclic extension L/F of degree a with [L_w:F_v]=a for every v∈S and w|v, and every place of R complex in L; the local extensions may vary. ArithmeticGaloisDuality R02.4.5b–R02.4.6 describes the exact exceptional class for fixed character prescriptions. Supply the consequence used in Poonen’s proof: for any a≥1 and finite set of finite places, a cyclic degree-a extension may be chosen with local degree a at those places, with the local extensions allowed to vary, and with selected real places complex when a is even. No assertion of arbitrary prescribed unramified dyadic extensions is made (poonen2017, Theorem 1.5.36(iii), p.26, proof at poonen2017 line 1435–1444). Required location: §R02.4.6, variable-local-extension corollary.
 
 ### From TauCetiRoadmap.LFunctions
 
@@ -123,7 +126,7 @@ Layer 3 supplies the continued Dedekind function, its germ regularity, completed
 
 C5a.3–C5a.5 and C6 items 2–3 supply actual compact-Lie primitive/transgression comparisons, the multiplicative cohomological Serre spectral sequence with local coefficients, and rational universal Chern characters. The integral Bott-to-suspended-Chern calibration and the invariant-form filtration comparison have the separate contracts below.
 
-What CharacteristicClasses must provide (gap:integral-chern-calibration): Supply s(chₙ)(Hur εₙ)=(2πi)^n for n≥2 and εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with the ordered suspension of CharacteristicClasses C6 item 3 and the (x,y)↦x+iy orientation of TopologicalKTheory T4. Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The evaluation uses the integral Hurewicz image and the Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, burgos2002 line 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1. Required location: C6 item 3 extension.
+What CharacteristicClasses must provide (gap:integral-chern-calibration): Supply s(chₙ)(Hur εₙ)=1 for n≥2, for the rational character chₙ of CharacteristicClasses C6 item 2 and εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with the ordered suspension of CharacteristicClasses C6 item 3 and the (x,y)↦x+iy orientation of TopologicalKTheory T4; equivalently s(chₙᵗʷ)(Hur εₙ)=(2πi)^n for chₙᵗʷ=(2πi)^n·chₙ. Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The rational evaluation uses the integral Hurewicz image; multiplication by (2πi)^n gives the evaluation with Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, burgos2002 line 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1. Required location: C6 item 3 extension.
 
 What CharacteristicClasses must provide (gap:graded-indecomposable-api): Supply one generic graded indecomposable functor extending the existing invariant-polynomial construction. CharacteristicClasses C5a.2 constructs the invariant-polynomial augmentation quotient and its coefficient and generator changes. Its generalization to every connected nonnegative graded commutative algebra, needed for cohomology of arithmetic quotients and compact duals, belongs to its Part II. Supply Q(A)=A₊/(A₊)², the homogeneous quotient, quotient universal property, map and base-change laws, and the exterior-generator comparison. Section 4.1 constructs only the cohomological determinant adapters, not a second generic augmentation quotient. Required location: Part II, general graded quotient API extending C5a.2.
 
@@ -236,7 +239,7 @@ Pinned embedding and lattice linear algebra; LFunctions Layer 3 for the continue
 
 ### 2.1 The Chern-normalized continuous class
 
-For n≥2 and matrix size b≥2n+1, construct the class Boₙ,b in H_cont^(2n−1)(GL_b(ℂ),ℝ(n−1)). It is the image of the suspended twisted Chern character chₙ under restriction to U(b), invariant-form identification with the compact dual, identity inside the complexified relative cochains, and inverse van Est. Its restrictions along trailing-identity block inclusions agree. Use the ordered complex suspension and εₙ=(-1)^n clutch(u^n), where u=O(-1)−1 is TopologicalKTheory’s chosen Bott class. Prove that suspended chₙ evaluates on εₙ to (2πi)^n. (burgos2002, Definition 9.24, p.86, burgos2002 line 3733–3753; Proposition 9.22, p.85, burgos2002 line 3670–3688.)
+For n≥2 and matrix size b≥2n+1, construct the class Boₙ,b in H_cont^(2n−1)(GL_b(ℂ),ℝ(n−1)). It is the image of the suspended twisted Chern character chₙᵗʷ under restriction to U(b), invariant-form identification with the compact dual, identity inside the complexified relative cochains, and inverse van Est. Its restrictions along trailing-identity block inclusions agree. Use the ordered complex suspension and εₙ=(-1)^n clutch(u^n), where u=O(-1)−1 is TopologicalKTheory’s chosen Bott class. Prove that suspended chₙ evaluates on εₙ to 1, and suspended chₙᵗʷ evaluates to (2πi)^n. (burgos2002, Definition 9.24, p.86, burgos2002 line 3733–3753; Proposition 9.22, p.85, burgos2002 line 3670–3688.)
 
 A proof route is to use the actual universal Chern class and cohomological suspension, then the indicated cochain maps. Check compatibility with conjugation and stabilization before passing to the limit. Construction uses ordinary Hurewicz when evaluated on algebraic K-theory; it needs no finite-type rational primitive isomorphism for the discrete group GL(ℂ).
 
@@ -244,13 +247,13 @@ The interface requires the following facts.
 
 - Restriction from b+1 to b preserves Boₙ,b.
 - Complex conjugation on matrices and ℝ(n−1) together fixes the class.
-- Suspended chₙ evaluates on the specified compact homotopy generator εₙ=(-1)^n clutch(u^n) to (2πi)^n; replacing chₙ by the zero class or twice chₙ fails this equation.
+- Suspended chₙᵗʷ evaluates on the specified compact homotopy generator εₙ=(-1)^n clutch(u^n) to (2πi)^n; replacing chₙᵗʷ by the zero class or twice chₙᵗʷ fails this equation. The corresponding rational evaluation of chₙ is 1.
 
 **Checks.**
 
-- In weight 2 the suspended character evaluates to (2πi)²=-4π²; after dividing by that Tate generator the value is 1.
-- In weight 3 the value is (2πi)³=-8π³i and its Tate coordinate is 1; replacing ch₃ by c₃ changes the generator by the factorial 2.
-- Adding an identity block preserves the reduced universal bundle class and hence adds 0 to the positive-degree character, rather than multiplying its value by the matrix size.
+- In weight 2, ε₂=clutch(u²) has rational character coordinate (-v)²/v²=1. Suspended ch₂ᵗʷ evaluates to (2πi)²=-4π²; after dividing by that Tate generator the value is 1.
+- In weight 3, ε₃=-clutch(u³) has rational character coordinate -(-v)³/v³=1. Suspended ch₃ᵗʷ evaluates to (2πi)³=-8π³i and its Tate coordinate is 1; replacing ch₃ᵗʷ by (2πi)³c₃ doubles the value to -16π³i.
+- Adding an identity block adds 0 to both positive-degree characters, so their calibrated values remain 1 and (2πi)^n. The zero twisted class gives 0 and twice that class gives 2(2πi)^n, both different from (2πi)^n.
 
 *Needs:* CharacteristicClasses C5a.3–C5a.5 and C6 items 2–3; AutomorphicFormsOnReductiveGroups §§1.1–1.3; gap:integral-chern-calibration.
 
@@ -291,6 +294,9 @@ The interface requires the following facts.
 - For ℚ, n=2 the source and target dimensions are 0; n=3 gives 1 and 1. The first equality alone proves no zeta value.
 - For ℚ(i), n=2 and n=3 each give dimensions 1 and 1. For a real quadratic field n=3 gives 2 and 2.
 - For ℚ(i)/ℚ at n=3, tr∘res acts by 2 and the target composite sends t to 2t; at n=2 the target sends (t,-t) to 0.
+- For F=ℚ and q=5, a=22 gives a−1=21>20=4Nq, while a=21 gives equality 20=20 and is outside the stated sufficient range.
+- For F=ℚ(i) and q=3, a=26 gives 25>24=4Nq, while a=25 gives 24=24 and is outside that range.
+- At q=0 and a=2, a−1=1>0; the comparison sends the constant 1 to 1. A zero comparison fails already in degree zero.
 
 *Needs:* §1.2; §2.2; ArithmeticKTheory §§3.2–3.4; StableHomotopyKTheory §3.37; GeneralAlgebraicKTheory §§7.7–7.8; gap:stable-finite-range; gap:integral-chern-calibration.
 
@@ -321,12 +327,15 @@ The interface requires the following facts.
 - Invariants 1/2 at two finite places sum to 1=0 in ℚ/ℤ; period=index=2 and dimension is 4.
 - Invariants 1/3 and -1/3 have lcm 3, index 3 and dimension 9. Keeping only the first invariant gives sum 1/3 and no global class.
 - The requested index 8 means dimension 64. A fixed unramified degree-eight dyadic prescription over ℚ is obstructed; permitting different local cyclic extensions is essential.
+- For a=1, S=∅ and R=∅, take L=F of degree 1; the local conditions are empty. An odd-degree extension cannot make a real place complex, since complex conjugation would give an element of order 2 in its cyclic Galois group.
+- For F=ℚ, a=8 and S={2}, L=ℚ(ζ₃₂)⁺ has cyclic degree 8 and local degree 8 at 2 by total ramification. At 31, the Frobenius is -1 modulo 32 and hence trivial on L, giving local degree 1; the full-degree condition is restricted to S.
+- For the same F,a,S and R={∞}, take the fixed field of {1,15} in ℚ(ζ₃₂). The quotient of (ℤ/32ℤ)ˣ by {1,15} is cyclic of order 8, generated by the class of 3; -1 is not in {1,15}, so the field is imaginary. Its local degree at 2 is 8. These ramified local extensions do not impose the obstructed unramified prescription.
 
 *Needs:* ClassFieldTheory Layers 5 and 10; SemisimpleAlgebras Layer 6 and gap:splitting-degree-index; Tau Ceti `TauCeti.Algebra.index`, `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index` and `TauCeti.brauerCohomologyEquiv`; ArithmeticGaloisDuality §R02.4.6; gap:cyclic-local-degrees; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.BrauerGroup.mk_matrix`.
 
 ### 3.2 Division algebras in every degree
 
-For every number field F and natural a≥1, construct a central division F-algebra D of dimension a² split at every infinite place. The native acceptance statement `exists_divisionAlgebra_split_at_infinity` quantifies over a division ring D in the universe of F with an F-algebra structure, centrality and finite dimension, and asserts this dimension and `TauCeti.Algebra.IsSplittingField` for every F→ℝ and F→ℂ embedding with its induced algebra structure. More precisely any finitely supported admissible family of local invariants of denominator lcm a and zero sum is realized by such a division algebra when all infinite invariants are zero. (borel1977, Lemma 2.2, pp.617–618, borel1977 line 165–195.)
+For every number field F and natural a≥1, construct a central division F-algebra D of dimension a² split at every infinite place. The native acceptance statement `exists_divisionAlgebra_split_at_infinity` quantifies over a division ring D in the universe of F with an F-algebra structure, centrality and finite dimension, and asserts this dimension and `TauCeti.Algebra.IsSplittingField` for every F→ℝ and F→ℂ embedding with its induced algebra structure. (borel1977, Lemma 2.2, pp.617–618, borel1977 line 165–195.) More precisely any finitely supported admissible family of local invariants of denominator lcm a and zero sum is realized by such a division algebra when all infinite invariants are zero. (poonen2017, Theorem 1.5.36(i) and (iv), p.26, poonen2017 line 1402–1446, with §3.1.)
 
 A proof route is to choose places above the distinct rational primes 2 and 3, using `Ideal.nonempty_primesOver`, and invariants 1/a,-1/a, with zero elsewhere. Apply the invariant exact sequence and §3.1. Existence uses all finite places without a restriction on residue characteristic; no particular algebra is built into later theorems.
 
@@ -365,13 +374,13 @@ The interface requires the following facts.
 - For h=0 and ω=1 the point has mass 1. With ω=2 over ℚ its infinite mass is 2 and its finite product is 1/2; the total mass remains 1.
 - ω=0 gives zero measure, so its quotient volume is 0 and cannot be in ℚ_>0·∏ζ; the nonzero hypothesis excludes it.
 
-*Needs:* Mathlib `NumberField.discr_ne_zero`; AdelicAlgebraicGroups §§2.4–2.5.
+*Needs:* Mathlib `NumberField.discr_ne_zero`; AdelicAlgebraicGroups §§2.4–2.5; Mathlib `NumberField.prod_abs_eq_one`.
 
 ### 3.4 The norm-one quotient mass in Borel’s gauge
 
-For every number field F, every a≥2, central division F-algebra D of dimension a² split at all infinite places, and nonzero F-rational invariant top form ω, identify the product m∞·m_f of §3.3 on H=SL₁(D) with the supplied Tamagawa measure. Its quotient by H(F), with counting measure, has mass 1 by gap:classical-tamagawa-proof. This specialization fixes the measure used in §3.6; the supplied numerical theorem also covers algebras ramified at infinity. (weil1961, §3.3, Theorem 3.3.1, invoked in borel1977 p.619, borel1977 line 227; waived locator.)
+For every number field F, every a≥2, central division F-algebra D of dimension a² split at all infinite places, and nonzero F-rational invariant top form ω, identify the product m∞·m_f of §3.3 on H=SL₁(D) with the supplied Tamagawa measure. Its quotient by H(F), with counting measure, has mass 1 by EndoscopicTransferAndUnitaryTraceComparison §6.2. This specialization fixes the measure used in §3.6; the supplied numerical theorem also covers algebras ramified at infinity. (weil1961, §3.3, Theorem 3.3.1, invoked in borel1977 p.619, borel1977 line 227; waived locator.)
 
-A proof route identifies the measure using §3.3 and the vanishing geometric character lattice of SL₁(D), then applies the AdelicAlgebraicGroups numerical contract. Gauge independence and restriction of scalars use its §2.4 directly.
+A proof route identifies the measure using §3.3 and the vanishing geometric character lattice of SL₁(D), then applies EndoscopicTransferAndUnitaryTraceComparison §6.2 using gap:inner-type-a-structure. Gauge independence and restriction of scalars use AdelicAlgebraicGroups §2.4 directly.
 
 The interface requires the following facts.
 
@@ -384,7 +393,7 @@ The interface requires the following facts.
 - For ω↦2ω over ℚ the product multiplier is 2·(1/2)=1, so the two predicted masses are both 1.
 - The norm-one torus of ℚ(i)/ℚ has dimension 1 and geometric character lattice ℤ, whereas the degree-two central division input has norm-one group dimension 3 and character lattice 0. The torus is excluded from this theorem.
 
-*Needs:* §3.3; AdelicAlgebraicGroups §2.4 (gauge independence and τ(Res)=τ), §2.5 and §3.4; gap:inner-type-a-structure; gap:classical-tamagawa-proof.
+*Needs:* §3.3; AdelicAlgebraicGroups §2.4 (gauge independence and τ(Res)=τ), §2.5 and §3.4; gap:inner-type-a-structure; EndoscopicTransferAndUnitaryTraceComparison §6.2.
 
 ### 3.5 Every finite factor and the Euler product
 
@@ -435,7 +444,7 @@ Two finite invariants 1/a and -1/a give an algebra of degree a split at infinity
 
 ### Dependencies
 
-ClassFieldTheory Layers 5 and 10; SemisimpleAlgebras Layer 6 and gap:splitting-degree-index; ArithmeticGaloisDuality R02.4.5b–R02.4.6 with the local-degree contract; AdelicAlgebraicGroups §§1.4,2.2–2.5,3.4,4.2; LFunctions Layer 3. The numerical norm-one contract gap:classical-tamagawa-proof is independent of regulator values.
+ClassFieldTheory Layers 5 and 10; SemisimpleAlgebras Layer 6 and gap:splitting-degree-index; ArithmeticGaloisDuality R02.4.5b–R02.4.6 with the local-degree contract; AdelicAlgebraicGroups §§1.4,2.2–2.5,3.4,4.2; LFunctions Layer 3. EndoscopicTransferAndUnitaryTraceComparison §6.2 supplies the numerical norm-one theorem independently of regulator values.
 
 ## Layer 4: Invariant forms and primitive periods
 
@@ -495,7 +504,7 @@ The interface requires the following facts.
 
 **Checks.**
 
-- For F=ℚ,n=2 the compact period class is π²·ℚ_>0; the degree-three suspended Chern generator pairs to -4π², with absolute ratio 4.
+- For F=ℚ,n=2 the compact period class is π²·ℚ_>0; the degree-three suspended twisted character ch₂ᵗʷ pairs to -4π², with absolute ratio 4.
 - For F=ℚ,n=3 the compact determinant class is π³·ℚ_>0, rather than π²·ℚ_>0.
 - For F=ℚ(i), Δ=4,n=2, the discriminant scalar is 4^(−3/2)=1/8 and the power is π⁴; it is nonzero, so cancelling the compact determinant is legitimate.
 
@@ -592,13 +601,13 @@ The interface requires the following facts.
 - For ℚ(i), N=2,r₁=0,r₂=1, E=0 for n=2 and n=3. The raw classes are 2ζ_F(2)/π⁴ and 2ζ_F(3)/π⁶, respectively.
 - For F=ℚ(√5),n=2, N=2,d=0,E=-4 and i^E=1. Here ζ_F(2)=(π²/6)·4π²/(25√5), so √5·ζ_F(2)/π⁴=2/75>0; the empty determinant divided by this value is 75/2.
 
-*Needs:* §4.3; §4.5; §4.2; ArithmeticKTheory §3.4; gap:stable-finite-range; §4.6.
+*Needs:* §4.3; §4.5; §4.2; ArithmeticKTheory §3.4; gap:stable-finite-range; §4.6; Mathlib `NumberField.IsTotallyReal`, `NumberField.nrComplexPlaces_eq_zero_iff`, `NumberField.discr`, `NumberField.discr_ne_zero` and `NumberField.dedekindZeta`.
 
 ### 5.2 The homotopy and Tate lattice conversion
 
-Transport the free compact-dual homotopy lattice through the suspended character into Vₙ(F). Prove that its covolume for the Cₙ(F)-normalized coordinate measure is (2π)^dₙ·ε(F,n), where ε(F,n)=2^r₁ when n≡3 mod4 and ε(F,n)=1 otherwise. The compact real-place homotopy generator maps with index 1 in degree 1 mod8 and index 2 in degree 5 mod8; a complex place contributes one conjugate pair. (burgos2002, Lemma 9.18, Definition 9.19 and Remark 9.20, p.84, burgos2002 line 3546–3614.)
+For n≥2, transport the free compact-dual homotopy lattice through the suspended twisted character chₙᵗʷ into Vₙ(F). Prove that its covolume for the Cₙ(F)-normalized coordinate measure is (2π)^dₙ·ε(F,n), where ε(F,n)=2^r₁ when n≡3 mod4 and ε(F,n)=1 otherwise. The compact real-place homotopy generator maps with index 1 in degree 1 mod8 and index 2 in degree 5 mod8; a complex place contributes one conjugate pair. (burgos2002, Lemma 9.18, Definition 9.19 and Remark 9.20, p.84, burgos2002 line 3546–3614.)
 
-Construct the stable Cartan map C:SU/SO→SU by C(gSO)=g gᵗ, with identity basepoint, and compute its map on the free homotopy groups in the displayed degrees. A proof route combines the SO→SU→SU/SO homotopy sequence of StableHomotopyKTheory §§2.3–2.5 with TopologicalKTheory T7 item 1’s c(b)=u⁴ and c(a)=2u², preserving the ordered generators. The Cartan-map identification and index computation are targets of this section (burgos2002, Lemma 9.18 and proof, burgos2002 line 3546–3576). Evaluate suspended chₙ on the homotopy generators, with the integral normalization of §2.1. Each surviving coordinate contributes 2π from the twist shift; the real-place index contributes precisely in n≡3 mod4. Record these indices before passing to a rational class.
+Construct the stable Cartan map C:SU/SO→SU by C(gSO)=g gᵗ, with identity basepoint, and compute its map on the free homotopy groups in the displayed degrees. A proof route combines the SO→SU→SU/SO homotopy sequence of StableHomotopyKTheory §§2.3–2.5 with TopologicalKTheory T7 item 1’s c(b)=u⁴ and c(a)=2u², preserving the ordered generators. The Cartan-map identification and index computation are targets of this section (burgos2002, Lemma 9.18 and proof, burgos2002 line 3546–3576). Evaluate suspended chₙᵗʷ on the homotopy generators, with the integral normalization of §2.1. Each surviving coordinate contributes 2π from the twist shift; the real-place index contributes precisely in n≡3 mod4. Record these indices before passing to a rational class.
 
 The interface requires the following facts.
 
@@ -608,6 +617,7 @@ The interface requires the following facts.
 
 **Checks.**
 
+- At F=ℚ,n=1, the target has dimension d₁=1 but π₁(SU)=π₁(SU/SO)=0, since SU is simply connected and SO is connected. The transported subgroup is {0} and does not span the line, so it has no full-lattice covolume 2π; n≥2 excludes this case.
 - For ℚ,n=2, d=0 and ε=1, giving transported homotopy-lattice covolume 1.
 - For ℚ,n=3, d=1 and ε=2: on π₅ the quotient SU→SU/SO is onto and C has index 2, so their composite is multiplication by 2. This gives transported homotopy-lattice covolume 4π; a zero Cartan map would give 0.
 - For ℚ,n=5, d=1 and ε=1: on π₉ the quotient has image 2ℤ and C has index 1, again giving composite multiplication by 2. Thus its transported homotopy-lattice covolume is 2π. At the identity coset C(SO)=I. For g=diag(i,-i) and h=[[0,1],[-1,0]] in SO₂, both (gh)(gh)ᵗ and g gᵗ equal -I; the assignment [g]↦g would instead depend on the representative.
@@ -723,7 +733,7 @@ The interface requires the following facts.
 
 ### 6.2 Comparison with the universal realization
 
-Let r_Be be the independently constructed universal Beilinson regulator on K_(2n−1)(F), with suspended Chern-character normalization and target identified by §6.1. On O_F and on rationalized field K-theory, r_Bo=2r_Be. For the same ordered rational K-basis and embedding coordinates det(r_Bo)=2^dₙdet(r_Be), including the empty determinant. The maps commute with restriction and the full embedding trace for transfers. (burgos2002, Definitions 10.7–10.8, p.94, burgos2002 line 4087–4106; Theorem 10.9 and proof, pp.95–97, burgos2002 line 4133–4245.)
+Let r_Be be the independently constructed universal Beilinson regulator on K_(2n−1)(F), with suspended twisted-character chₙᵗʷ normalization and target identified by §6.1. On O_F and on rationalized field K-theory, r_Bo=2r_Be. For the same ordered rational K-basis and embedding coordinates det(r_Bo)=2^dₙdet(r_Be), including the empty determinant. The maps commute with restriction and the full embedding trace for transfers. (burgos2002, Definitions 10.7–10.8, p.94, burgos2002 line 4087–4106; Theorem 10.9 and proof, pp.95–97, burgos2002 line 4133–4245.)
 
 A proof route is to pull back the universal Chern class along the discrete classifying nerve. Apply the source’s normalized infinitesimal comparison with the Chevalley–Eilenberg and Weil complexes, preserving the cone projection of §6.1. Compare the resulting Beilinson cocycle with Boₙ of §2.1 in relative Lie cohomology: its coefficient is one half. This proves the class equality and hence evaluation on K-theory; it does not define one regulator as a scalar multiple of the other. Take determinants and use localization and the naturality of the universal map.
 
@@ -772,7 +782,7 @@ Layers 1–2 and 5; CharacteristicClasses C5a/C6; SchemeKTheoryOperations §6.8 
 
 ## Downstream consumers
 
-- **Polylogarithms.** §§2.3,3.7–3.8,4.4 consume §§2.1–2.3,5.2–5.4 and 6.2; §4.7 uses §5.1’s rank-zero clause together with IntegralIwasawaTheory §6.0. Its explicit factorial and Hurewicz calibration and π^(n−1) conversion stay there.
+- **Polylogarithms.** §§2.3,3.7–3.8,4.4 consume §§2.1–2.3,5.2–5.4 and 6.2. Its gap:borel-period-contract is supplied by §2.3 (real isomorphism and injectivity after ⊗ℝ), §§5.3–5.4 (integral image lattice, zeta covolume and rational-basis determinant), §5.1 and `exists_pos_rat_dedekindZeta_of_isTotallyReal` (totally real even weight), and §3.4 using EndoscopicTransferAndUnitaryTraceComparison §6.2 (Tamagawa input). Its explicit factorial and Hurewicz calibration and π^(n−1) conversion stay there.
 - **PeriodsAndSpecialValues.** PS.3.2a imports §§2.1–2.3 and 6.1–6.3 for its fundamental-line and mixed Tate applications.
 - **ColemanIntegration.** §L3.Fc.1 uses §§2.2–2.3 and 5.3 for the complex regulator lattice theorem, and §6.2 for its Beilinson normalization; its pairings and discriminant/regulator determinants remain there.
 - **HeightsRationalPointsAndObstructions.** §3.6 imports the number-field period–index theorem §3.1 in its PGL descent comparison.
@@ -786,8 +796,8 @@ All locators use the stated edition. Source line numbers refer to the manifest�
 
 - **borel1974:** Armand Borel, *Stable real cohomology of arithmetic groups*, Ann. Sci. ENS 7 (1974), pp.235–272. [Numdam](https://www.numdam.org/item/ASENS_1974_4_7_2_235_0/). Theorem 7.5, p.259, borel1974 line 934; §11.4, p.267, borel1974 line 1246; Proposition 12.2, p.271, borel1974 line 1377. These locate the arithmetic supplier’s comparison and rank input.
 - **borel1977:** Armand Borel, *Cohomologie de SLₙ et valeurs de fonctions zêta aux points entiers*, Ann. Scuola Norm. Sup. Pisa 4 (1977), pp.613–636. [Numdam](https://www.numdam.org/item/ASNSP_1977_4_4_4_613_0/). §1.6, p.617, borel1977 line 153; Lemma 2.2, pp.617–618, borel1977 line 177; Proposition 2.4, pp.618–619, borel1977 line 213; §§3.3–3.5, borel1977 line 289–337; Proposition 4.3, borel1977 line 369; §§5.3–5.5, pp.627–630, borel1977 line 462–551; Theorem 6.2, pp.631–632, borel1977 line 571; Remark 6.3, p.632, borel1977 line 590; §6.4, pp.632–633, borel1977 line 595. The source’s m equals n−1 here; its matrix n is denoted a here.
-- **burgos2002:** José Ignacio Burgos Gil, *The Regulators of Beilinson and Borel*, CRM Monograph 15 (2002). [Author copy](https://www.icmat.es/miembros/burgos/files/brbr.pdf). Corollary 9.8, p.78, burgos2002 line 3140; Definition 9.10 and Theorem 9.12, pp.79–80, burgos2002 line 3222 and 3256; Lemma 9.18/Definition 9.19/Remark 9.20, p.84, burgos2002 line 3546,3577,3607; Proposition 9.22/Corollary 9.23, p.85, burgos2002 line 3681,3689; Definition 9.24, p.86, burgos2002 line 3733; Examples 10.4–10.5, p.91, burgos2002 line 3973; Definitions 10.7–10.8, p.94, burgos2002 line 4087; Theorem 10.9, pp.95–97, burgos2002 line 4139. For its infinitesimal comparison read Chapter 8, Propositions 8.9,8.10,8.14 and the proof at burgos2002 line 4172–4190. The PDF page index is six greater than the printed page.
-- **poonen2017:** Bjorn Poonen, *Rational Points on Varieties* (2017), unofficial author edition. [Author copy](https://math.mit.edu/~poonen/papers/Qpoints.pdf). Theorem 1.5.36(iii)–(iv), p.26, poonen2017 lines 1396–1446. The local cyclic extensions in that proof may vary; fixed unramified dyadic prescriptions are not asserted.
+- **burgos2002:** José Ignacio Burgos Gil, *The Regulators of Beilinson and Borel*, CRM Monograph 15 (2002). [Author copy](https://www.icmat.es/miembros/burgos/files/brbr.pdf). Remark 4.25, p.32, suspended formula at burgos2002 line 1426–1431; Corollary 9.8, p.78, burgos2002 line 3140; Definition 9.10 and Theorem 9.12, pp.79–80, burgos2002 line 3222 and 3256; Lemma 9.18/Definition 9.19/Remark 9.20, p.84, burgos2002 line 3546,3577,3607; Proposition 9.22/Corollary 9.23, p.85, burgos2002 line 3681,3689; Definition 9.24, p.86, burgos2002 line 3733; Examples 10.4–10.5, p.91, burgos2002 line 3973; Definitions 10.7–10.8, p.94, burgos2002 line 4087; Theorem 10.9, pp.95–97, burgos2002 line 4139. For its infinitesimal comparison read Chapter 8, Propositions 8.9,8.10,8.14 and the proof at burgos2002 line 4172–4190. The PDF page index is six greater than the printed page.
+- **poonen2017:** Bjorn Poonen, *Rational Points on Varieties* (2017), unofficial author edition. [Author copy](https://math.mit.edu/~poonen/papers/Qpoints.pdf). Theorem 1.5.36(i), (iii)–(iv), p.26, poonen2017 line 1396–1446. The local cyclic extensions in that proof may vary; fixed unramified dyadic prescriptions are not asserted.
 - **deligne_goncharov2005:** Pierre Deligne and Alexander B. Goncharov, *Groupes fondamentaux motiviques de Tate mixte*, Ann. Sci. ENS 38 (2005), pp.1–56. [Published open text](https://www.numdam.org/item/ASENS_2005_4_38_1_1_0/). Published §1.6, pp.7–9, equations (1.6.1)–(1.6.10), deligne_goncharov2005 lines 282–428; Adams consequence on p.9, deligne_goncharov2005 line 429–440. The published numbering differs from arXiv:math/0302267v2; these are the published locators.
 - **weil1961:** André Weil, notes by Michel Demazure and Takashi Ono, *Adeles and Algebraic Groups* (1961), §3.3, Theorem 3.3.1, invoked at borel1977 line 227. This locator is waived; its proof text is not certified.
 - **beilinson1985:** A. A. Beilinson, *Higher regulators and values of L-functions*, J. Soviet Math. 30 (1985), pp.2036–2070, §§1–2. [DOI](https://doi.org/10.1007/BF02105861). This historical universal-regulator reference is uncertified and cited by locator only; the number-field factor-two theorem uses the read Burgos text.

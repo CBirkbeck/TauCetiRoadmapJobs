@@ -1776,7 +1776,7 @@
         "5.1"
       ],
       "detail": "The finite-stage form extends ArithmeticKTheory §3.4’s stable arithmetic and relative-Lie comparison and its primitive generators. Supply actual invariant-form comparison maps, stabilization and rational finite-index restriction; for Res SL_a over F the range a−1>4Nq must imply isomorphism through degree q. Finite-type is used only on the arithmetic plus H-space, not on GL(ℂ) with its discrete topology.",
-      "needs": "Supply the map-level finite-stage comparison and the conservative bound a−1>4Nq.",
+      "needs": "Supply, for every number field F of degree N, a≥2, G=Res_(F/ℚ)SL_a with its standard maximal compact K and every arithmetic Γ⊂G(ℚ), the actual invariant-form maps H^q(Lie G,K;ℝ)→H^q(Γ;ℝ) for q∈ℕ, compatible with block stabilization and finite-index restriction, and bijective whenever a−1>4Nq.",
       "supplier": "ArithmeticKTheory",
       "section": "§3.4, explicit finite-stage form of the stable comparison"
     },
@@ -1788,8 +1788,8 @@
         "2.3",
         "5.2"
       ],
-      "detail": "Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The evaluation uses the integral Hurewicz image and the Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, lines 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1.",
-      "needs": "Supply s(chₙ)(Hur εₙ)=(2πi)^n for n≥2 and εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with the ordered suspension of CharacteristicClasses C6 item 3 and the (x,y)↦x+iy orientation of TopologicalKTheory T4.",
+      "detail": "Use the ordered complex suspension of C6 item 3 and the actual clutching map on TopologicalKTheory T4’s Bott coefficient u=O(-1)−1, with ch(u)=−v. For n≥2 set εₙ=(-1)^n clutch(u^n) in stable π_(2n−1)SU. The rational evaluation uses the integral Hurewicz image; multiplication by (2πi)^n gives the evaluation with Tate coefficient ℝ(n) (burgos2002, Proposition 9.22, p.85, lines 3670–3688). The real-place homotopy indices are the separate target §5.2 here, using TopologicalKTheory T7 item 1.",
+      "needs": "Supply s(chₙ)(Hur εₙ)=1 for n≥2, for the rational character chₙ of CharacteristicClasses C6 item 2 and εₙ=(-1)^n clutch(u^n), u=O(-1)−1, with the ordered suspension of CharacteristicClasses C6 item 3 and the (x,y)↦x+iy orientation of TopologicalKTheory T4; equivalently s(chₙᵗʷ)(Hur εₙ)=(2πi)^n for chₙᵗʷ=(2πi)^n·chₙ.",
       "supplier": "CharacteristicClasses",
       "section": "C6 item 3 extension"
     },
@@ -1800,7 +1800,7 @@
         "3.1"
       ],
       "detail": "ArithmeticGaloisDuality R02.4.5b–R02.4.6 retains the exact exceptional class for fixed character prescriptions. Supply the consequence used in Poonen’s proof: for any a≥1 and finite set of finite places, a cyclic degree-a extension may be chosen with local degree a at those places, with the local extensions allowed to vary, and with selected real places complex when a is even. No assertion of arbitrary prescribed unramified dyadic extensions is made.",
-      "needs": "Supply cyclic splitting extensions with full local degrees while retaining Wang’s obstruction for fixed prescriptions.",
+      "needs": "Supply, for every number field F, a≥1, finite set S of finite places and set R of real places (R empty when a is odd), a cyclic extension L/F of degree a with [L_w:F_v]=a for every v∈S and w|v, and every place of R complex in L; the local extensions may vary.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "§R02.4.6, variable-local-extension corollary"
     },
@@ -1826,17 +1826,6 @@
       "needs": "Supply positive rational local gauge masses for all compact opens, including ramified finite places.",
       "supplier": "AdelicAlgebraicGroups",
       "section": "Part II, rational gauge masses extending §2.4"
-    },
-    {
-      "slug": "classical-tamagawa-proof",
-      "title": "Norm-one Tamagawa number in the adelic normalization",
-      "neededBy": [
-        "3.4"
-      ],
-      "detail": "For a number field F and every central division F-algebra D of degree a≥2, use the existing SL₁(D) carrier of §3.4 and the Tamagawa measure of §2.4. No infinite-splitting hypothesis is needed for the supplied theorem. Section 3.4 here specializes its quotient mass to the split infinite factors and the gauge of §3.3 (weil1961, §3.3, Theorem 3.3.1; borel1977 line 227).",
-      "needs": "Supply τ(SL₁(D))=1 for every central division algebra D of degree a≥2 over a number field, in the §2.4 Tamagawa normalization.",
-      "supplier": "AdelicAlgebraicGroups",
-      "section": "Part II, Tamagawa numbers extending §2.4 and the §3.4 SL₁(D) carrier"
     },
     {
       "slug": "order-finite-generation",
@@ -1905,6 +1894,12 @@
       "detail": "SemisimpleAlgebras Layer 6 and TauCeti.Algebra.CentralSimple.Index provide an index-degree splitting field but do not state divisibility of every finite splitting degree by the index. Extend that generic theory in Part II. For a division factor D of degree d and a splitting L, restrict the M_d(L)-module L^d to D; finite-dimensionality over the division ring gives d²k=d[L:K], hence d divides [L:K]. The number-field proof in §3.1 consumes this input and the existing index-degree splitting field, rather than constructing a second index theory.",
       "supplier": "SemisimpleAlgebras",
       "section": "Part II, finite splitting-degree divisibility extending Layer 6"
+    },
+    {
+      "slug": "borel-period-contract",
+      "needs": "Supply Polylogarithms with the real regulator isomorphism and resulting injectivity, integral image lattice, zeta covolume and rational-basis determinant, totally real even-weight rationality, and Tamagawa input.",
+      "supplier": "BorelRegulators",
+      "section": "§2.3, §§5.3–5.4, §5.1 and §3.4"
     }
   ]
 }
