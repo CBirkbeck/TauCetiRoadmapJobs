@@ -66,6 +66,7 @@ AInfCohomology
 PrismaticCohomology
 PerfectoidQuotientsPartII
 PrismaticCohomologyPartII
+PurityForFlatCohomology
 PrismaticCohomologyPartIII
 DeformationAndDerivedPatchingAlgebraPartII
 DeformationAndDerivedPatchingAlgebra
