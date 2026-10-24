@@ -1,0 +1,166 @@
+{
+  "gaps": [
+    {
+      "slug": "elliptic-modularity",
+      "needs": "Every elliptic curve E/ℚ is attached to a normalized weight-two trivial-character newform of exact arithmetic conductor, with equal traces at all good primes.",
+      "supplier": "EllipticCurveModularity",
+      "section": "rational elliptic modularity"
+    },
+    {
+      "slug": "optimized-weight-two-lift",
+      "needs": "For prime ℓ≥5 and irreducible E[ℓ] of Serre weight 2 and prime-to-ℓ Artin conductor N, supply a primitive weight-two trivial-character newform of exact level N and a prime λ above ℓ whose residual representation is E[ℓ].",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "exact level and weight optimization"
+    },
+    {
+      "slug": "deletion-level-lowering",
+      "needs": "For prime ℓ≥3 and irreducible E[ℓ], supply the weight-two trivial-character lift at the deletion level M₀ of Bennett–Siksek §2, equation (3), with good-prime and removed-multiplicative-prime trace congruences of Lemma 2.1.",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "elliptic deletion level"
+    },
+    {
+      "slug": "elliptic-conductor-and-weight",
+      "needs": "For E/ℚ and an odd prime ℓ, supply the arithmetic conductor M of E, the prime-to-ℓ Artin conductor N(E[ℓ]) and the Serre weight of E[ℓ].",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "elliptic local conductors and Serre weights"
+    },
+    {
+      "slug": "residual-conductor-away-from-ell",
+      "needs": "For E/ℚ, a prime ℓ≥5 and a prime q≠ℓ, the exponent of q in N(E[ℓ]) equals v_q(M), except at multiplicative q with ℓ dividing ord_q(Δ), where it is zero.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "elliptic local conductor comparison"
+    },
+    {
+      "slug": "weight-two-reduction-alternative",
+      "needs": "For E/ℚ and a prime ℓ≥11 with E[ℓ] irreducible of Serre weight two, E has good reduction at ℓ or multiplicative reduction at ℓ with ℓ dividing ord_ℓ(Δ).",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "Serre weight two and reduction"
+    },
+    {
+      "slug": "complex-conjugation-on-torsion",
+      "needs": "For E/ℚ and an odd prime ℓ, complex conjugation on E[ℓ] has determinant −1 and eigenvalues 1 and −1.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "complex conjugation on elliptic torsion"
+    },
+    {
+      "slug": "odd-irreducible-absolutely-irreducible",
+      "needs": "For an odd prime ℓ, an irreducible two-dimensional 𝔽_ℓ-representation of the absolute Galois group of ℚ on which complex conjugation has eigenvalues 1 and −1 is absolutely irreducible.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "odd two-dimensional representations"
+    },
+    {
+      "slug": "dickson-classification",
+      "needs": "For an odd prime p and H≤GL₂(𝔽ₚ) not containing SL₂(𝔽ₚ), H lies in a Borel subgroup or a split or nonsplit Cartan normalizer, or its projective image is isomorphic to A₄, S₄ or A₅.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "finite subgroups of GL₂"
+    },
+    {
+      "slug": "serre-inertia-exceptional-bound",
+      "needs": "For E/ℚ and a prime p>17, the projective image on E[p] is not isomorphic to A₄, S₄ or A₅.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "exceptional projective elliptic images"
+    },
+    {
+      "slug": "newform-residual-representation",
+      "needs": "For a primitive weight-two trivial-character newform f of level N and a coefficient-field prime λ above ℓ, supply its two-dimensional residual representation with arithmetic-Frobenius polynomial T²−c_q T+q at every prime q∤Nℓ.",
+      "supplier": "AutomorphicGaloisRepresentations",
+      "section": "classical newform residual representations"
+    },
+    {
+      "slug": "modular-abelian-conductor",
+      "needs": "For a primitive weight-two trivial-character newform f of level N with coefficient-field degree d, its associated modular abelian variety A_f has arithmetic conductor Nᵈ, in particular N when d=1.",
+      "supplier": "AutomorphicGaloisRepresentations",
+      "section": "modular abelian conductors"
+    },
+    {
+      "slug": "coefficient-bound",
+      "needs": "For a normalized weight-two newform of level N and prime q∤N, every complex embedding of c_q has absolute value at most 2√q.",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "weight-two Hecke eigenvalue bounds"
+    },
+    {
+      "slug": "mixed-modular-curves",
+      "needs": "For r>0 and p prime with gcd(r,p)=1, supply the smooth projective normalizations over ℚ of X₀(r)×_{X(1)}X_H(p), for H a Borel, split Cartan normalizer or nonsplit Cartan normalizer, with their j maps, cusps and smooth integral models at primes q∤6rp.",
+      "supplier": "ModularCurvesPartII",
+      "section": "mixed arithmetic modular curves"
+    },
+    {
+      "slug": "mixed-modular-jacobians",
+      "needs": "For r>0 and p prime with gcd(r,p)=1, supply the Jacobians over ℚ of the mixed Borel and Cartan-normalizer curves, with pull-push Hecke correspondences T_n for n prime to p.",
+      "supplier": "ModularCurvesPartII",
+      "section": "mixed modular Jacobians and Hecke maps"
+    },
+    {
+      "slug": "newform-quotient",
+      "needs": "For a primitive rational weight-two trivial-character newform f of level N, supply the elliptic quotient of J₀(N) attached to f, identifying its residual representations with those of f.",
+      "supplier": "ModularCurvesPartII",
+      "section": "rational primitive newform quotients"
+    },
+    {
+      "slug": "five-level-j-coordinates",
+      "needs": "For r∈{2,3,5,7,13}, supply a ℚ-isomorphism X₀(r)≃ℙ¹ with cusps t=0,∞ and j=f_r(t)/t, where f₂=(t+16)³, f₃=(t+27)(t+3)³, f₅=(t²+10t+5)³, f₇=(t²+5t+1)³(t²+13t+49), and f₁₃=(t⁴+7t³+20t²+19t+1)³(t²+5t+13).",
+      "supplier": "ModularCurvesPartII",
+      "section": "genus-zero coordinates and j maps"
+    },
+    {
+      "slug": "rational-isogeny-j-tables",
+      "needs": "The j-images of Y₀(11)(ℚ), Y₀(17)(ℚ) and Y₀(37)(ℚ) are respectively {−11·131³,−2¹⁵,−11²}, {−17²·101³/2,−17·373³/2¹⁷}, and {−7·137³·2083³,−7·11³}.",
+      "supplier": "ModularCurvesPartII",
+      "section": "rational j images at levels 11, 17 and 37"
+    },
+    {
+      "slug": "split-cartan-rational-points",
+      "needs": "For every prime p≥11 with p≠13 and integer m>1, every rational point of X₀⁺(pᵐ) is cuspidal or CM.",
+      "supplier": "ModularCurvesPartII",
+      "section": "rational points on split Cartan quotients"
+    },
+    {
+      "slug": "chen-isogeny",
+      "needs": "For r>0, p prime and gcd(r,p)=1, supply the prime-to-p Hecke-equivariant correspondence between the split and nonsplit mixed Jacobians, its induced isogeny between p-new quotients, and the identification of the split curve with X₀(rp²)/w at the exact divisor p².",
+      "supplier": "ModularCurvesPartII",
+      "section": "split and nonsplit Cartan correspondences"
+    },
+    {
+      "slug": "integral-winding-comparison",
+      "needs": "For a congruence modular Jacobian J and its full-new winding class e, supply the integral Hecke annihilator I_e and optimal quotient π:J→J/I_e J; at a mixed-characteristic place with ramification index e_K<q−1 where J is semistable, identify Cot₀(J) with integral weight-two dualizing differentials and π*Cot₀(J/I_e J) with the saturated I_e-annihilated sublattice, with period pairing integrating ω_f=2πi f(z)dz from 0 to i∞.",
+      "supplier": "ModularSymbolsPadicLFunctions",
+      "section": "integral winding quotients and modular differentials"
+    },
+    {
+      "slug": "cuspidal-divisor-torsion",
+      "needs": "On a smooth projective congruence modular curve over a number field, every degree-zero divisor supported on geometric cusps has torsion class in its geometric Jacobian.",
+      "supplier": "ModularSymbolsPadicLFunctions",
+      "section": "cuspidal divisors"
+    },
+    {
+      "slug": "modular-rank-zero",
+      "needs": "For a primitive weight-two newform f with L(f,1)≠0, the associated modular abelian variety A_f over ℚ has A_f(ℚ) finite, in every coefficient-field degree.",
+      "supplier": "EulerSystemsAndKolyvaginSystems",
+      "section": "modular abelian rank zero"
+    },
+    {
+      "slug": "cyclic-isogeny-degrees",
+      "needs": "A rational cyclic isogeny on E/ℚ has degree in {1,…,19,21,25,27,37,43,67,163}.",
+      "supplier": "EisensteinIdealAndRationalTorsion",
+      "section": "rational cyclic isogeny classification"
+    },
+    {
+      "slug": "noncm-prime-isogeny-degrees",
+      "needs": "For a non-CM elliptic curve over ℚ, the prime degrees of rational cyclic isogenies belong to {2,3,5,7,11,13,17,37}.",
+      "supplier": "EisensteinIdealAndRationalTorsion",
+      "section": "non-CM rational prime isogenies"
+    },
+    {
+      "slug": "neron-torsion-specialization",
+      "needs": "For the Néron model of an abelian variety over a complete mixed-characteristic DVR of residue characteristic q and absolute ramification index e<q−1, reduction is injective on the full torsion subgroup of rational points.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "torsion specialization"
+    },
+    {
+      "slug": "optimal-quotient-cotangents",
+      "needs": "For a finite extension K/ℚ_q with absolute ramification index e<q−1 and an exact sequence 0→B→J→A→0 of abelian varieties over K with J semistable, the identity components of their Néron models give an exact sequence of free O_K-modules 0→Cot₀(A)→Cot₀(J)→Cot₀(B)→0.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "semistable quotient cotangents"
+    }
+  ]
+}
