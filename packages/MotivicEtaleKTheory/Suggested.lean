@@ -12,8 +12,9 @@ theorems against the pinned APIs. None of the following headlines is statable at
   multi-relative cube K-theory lack scheme perfect K-spectra and their supported face
   diagrams, together with integral Adams operations on the associated pointed K-spaces.
   Integral Adams compatibility is asserted on those spaces and nonnegative homotopy groups.
-* Layer 2.0b: universal integral motivic Chern operations lack scheme higher K-groups,
-  higher Chow groups and their stabilized classifying-sheaf models.
+* Layer 2.0b: the operations induced by the supplied universal integral motivic Chern
+  classes lack scheme higher K-groups, higher Chow groups and their stabilized
+  classifying-sheaf models.
 * Layers 2.1–2.4: the geometric rational supported cycle-to-K comparison for regular
   quasi-projective schemes over every field, including full support, lacks supported scheme
   K-groups and higher-cycle restriction fibers. Its inverse agrees with the universal-class
@@ -26,7 +27,8 @@ theorems against the pinned APIs. None of the following headlines is statable at
   Dolbeault-complex carrier with its type projections and Deligne-model construction.
   Constructing that model is part of the roadmap, beyond a few simple definitions.
 * Layer 3.4: compactification-independent Deligne realization, pullback and descent lack
-  smooth SNC compactification diagrams and the filtered logarithmic Deligne complexes.
+  smooth SNC compactification diagrams, the Zariski-sheafified logarithmic Dolbeault
+  algebra and its filtered Deligne complexes.
 * Layers 4.1–4.2: the Deligne product, its natural associativity homotopy and the unit
   conclusion for unital inputs require real Dolbeault algebras and Deligne complexes,
   neither of which is available at these pins.
