@@ -13,13 +13,16 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's 
 against the pinned Mathlib and Tau Ceti APIs, with only the definitions they need.
 
 The statable headlines are geometric integrality of the projective Weierstrass cubic, the order of
-the twisted Frobenius kernel, Weil reciprocity at the last rational place, and Bloch's correction.
+the twisted Frobenius kernel, minimal regular-model existence, terminality and marked uniqueness
+over S-integers, Weil reciprocity at the last rational place, and Bloch's correction.
 The K₀ ring computation, localisation and coniveau sequences, Adams-weight comparison, Harder
 finiteness, positive K-theory descent and finite-field K-group classification, model-independent
 integral part and quotient Bloch-class descent cannot be stated: the pins have no higher K-groups
-of schemes or fields, motivic K-theory tower or étale-cohomology carriers. Minimal regular-model
-existence and uniqueness also require a generic curve genus interface. The projective
-Weierstrass scheme itself is supplied by Tau Ceti. Boundary cases and API facts are in README.md.
+of schemes or fields, motivic K-theory tower or étale-cohomology carriers. The marked-model
+headlines use native schemes and the S-integer subalgebra; the wider excellent-Dedekind statements
+require an excellence predicate, absent at the pins. General regular-model existence is imported
+from RelativeJacobiansAndIntegralCurveModels §5.1. The projective Weierstrass scheme itself is
+supplied by Tau Ceti. Boundary cases and API facts are in README.md.
 -/
 
 namespace TauCetiRoadmap.EllipticKTheory
@@ -74,6 +77,93 @@ theorem card_twistedFrobeniusKernel {k : Type*} [Field k] [Fintype k] [Decidable
     (Nat.card (twistedFrobeniusKernel W (AlgebraicClosure k) i) : ℤ) =
       1 - W.frobeniusTrace * (Fintype.card k : ℤ) ^ i + (Fintype.card k : ℤ) ^ (2 * i + 1) := by
   sorry
+
+/-! ## Layer 6: Regular models over S-integers and the integral part -/
+
+section Layer6
+
+open _root_.AlgebraicGeometry CategoryTheory Limits
+
+universe u
+
+/-- A marked regular proper model (README §6.1): a proper flat scheme over `O`, regular at every
+stalk, whose generic fibre is identified with the fixed `F`-scheme `C` by an isomorphism over `F`.
+The definition makes sense for any `O`-algebra field; arithmetic existence uses S-integers. -/
+structure RegularProperModel (O F : Type u) [CommRing O] [Field F] [Algebra O F]
+    (C : Scheme.{u}) (toField : C ⟶ Spec (CommRingCat.of F)) where
+  /-- The total scheme. -/
+  X : Scheme.{u}
+  /-- The structure map to the base. -/
+  toBase : X ⟶ Spec (CommRingCat.of O)
+  /-- The structure map is proper. -/
+  isProper : IsProper toBase
+  /-- The structure map is flat. -/
+  flat : Flat toBase
+  /-- Every stalk is regular, including stalks on singular fibres. -/
+  regular : ∀ x : X, IsRegularLocalRing (X.presheaf.stalk x)
+  /-- The fixed identification of the generic fibre. -/
+  genericIso : pullback toBase (Spec.map (CommRingCat.ofHom (algebraMap O F))) ≅ C
+  /-- The marking preserves the specified structure map to `Spec F`. -/
+  genericIso_over : genericIso.hom ≫ toField = pullback.snd _ _
+
+namespace RegularProperModel
+
+variable {O F : Type u} [CommRing O] [Field F] [Algebra O F]
+    {C : Scheme.{u}} {toField : C ⟶ Spec (CommRingCat.of F)}
+
+/-- The inclusion of the fixed marked generic fibre in the total scheme (README §6.3). -/
+noncomputable def genericFibreInclusion (M : RegularProperModel O F C toField) : C ⟶ M.X :=
+  M.genericIso.inv ≫ pullback.fst _ _
+
+/-- A morphism of marked models (README §6.3): a map of total schemes over `O` restricting to the
+identity on the fixed generic curve. -/
+structure Hom (M N : RegularProperModel O F C toField) where
+  /-- The morphism of total schemes. -/
+  hom : M.X ⟶ N.X
+  /-- The map preserves the structure map to `Spec O`. -/
+  hom_toBase : hom ≫ N.toBase = M.toBase
+  /-- The map restricts to the identity on the marked generic curve. -/
+  generic : M.genericFibreInclusion ≫ hom = N.genericFibreInclusion
+
+/-- Outgoing minimality (README §6.3; Conrad, Definition 3.8): every marked morphism from `M` to
+another regular proper model is an isomorphism on total schemes. -/
+def IsMinimal (M : RegularProperModel O F C toField) : Prop :=
+  ∀ (N : RegularProperModel O F C toField) (f : Hom M N), IsIso f.hom
+
+end RegularProperModel
+
+/-- An elliptic curve over a number field has a minimal regular proper model over every ring of
+S-integers (README §§6.5–6.6). Minimality is outgoing minimality for the fixed generic marking;
+regular-model existence is supplied by RelativeJacobiansAndIntegralCurveModels §5.1. -/
+theorem exists_minimalRegularProperModel {F : Type u} [Field F] [NumberField F]
+    (S : Set (IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F))) (hS : S.Finite)
+    (W : WeierstrassCurve F) [W.IsElliptic] :
+    ∃ M : RegularProperModel (S.integer F) F W.projModel W.projModelOver, M.IsMinimal := by
+  sorry
+
+/-- Every regular proper model of the marked elliptic curve has a unique marked morphism to a
+minimal one (README §6.6). This is the terminal-property form of the local minimality criterion. -/
+theorem locallyMinimal_terminal {F : Type u} [Field F] [NumberField F]
+    (S : Set (IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F))) (hS : S.Finite)
+    (W : WeierstrassCurve F) [W.IsElliptic]
+    (M : RegularProperModel (S.integer F) F W.projModel W.projModelOver) (hM : M.IsMinimal)
+    (X : RegularProperModel (S.integer F) F W.projModel W.projModelOver) :
+    Nonempty (Unique (RegularProperModel.Hom X M)) := by
+  sorry
+
+/-- Two minimal regular proper models of the fixed elliptic curve over S-integers have a unique
+isomorphism over the base inducing the identity on the generic curve (README §6.7). -/
+theorem minimal_unique {F : Type u} [Field F] [NumberField F]
+    (S : Set (IsDedekindDomain.HeightOneSpectrum (NumberField.RingOfIntegers F))) (hS : S.Finite)
+    (W : WeierstrassCurve F) [W.IsElliptic]
+    (M N : RegularProperModel (S.integer F) F W.projModel W.projModelOver)
+    (hM : M.IsMinimal) (hN : N.IsMinimal) :
+    ∃! e : M.X ≅ N.X,
+      e.hom ≫ N.toBase = M.toBase ∧
+        M.genericFibreInclusion ≫ e.hom = N.genericFibreInclusion := by
+  sorry
+
+end Layer6
 
 /-! ## Layer 7: Symbol certificates and Bloch’s classes -/
 

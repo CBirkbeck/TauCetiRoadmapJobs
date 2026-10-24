@@ -1,28 +1,16 @@
 {
   "gaps": [
     {
-      "slug": "k3-field-inputs",
-      "supplier": "K3BlochGroups",
-      "section": "Layer 2, §§2.1–2.2, 2.5",
-      "needs": "Supply the indecomposable field K3 quotient, Milnor K3 injectivity and the number-field rational rank formula."
-    },
-    {
-      "slug": "arithmetic-dedekind-inputs",
-      "supplier": "ArithmeticKTheory",
-      "section": "§§1.1, 2.1, 2.4, 3.2–3.4",
-      "needs": "Supply S-integer localisation, Dedekind K2 injectivity, the Steinberg-homology finite-generation criterion and number-field finite generation with positive even K-groups finite."
-    },
-    {
       "slug": "field-motivic-comparisons",
       "supplier": "MotivesAndAlgebraicCycles",
-      "section": "§§4.7–4.8",
-      "needs": "Supply field motivic cohomology and Milnor K-theory, vanishing above the weight, the weight-one complex, Bloch–Gabber–Kato and the Geisser–Levine logarithmic computation, with subfield-limit compatibility."
+      "section": "§§4.4, 4.7–4.8",
+      "needs": "On the imported Bloch complexes for every field, identify weight one with the supplied Suslin–Tate units complex and prove filtered-subfield compatibility of the diagonal and characteristic-p logarithmic comparisons."
     },
     {
       "slug": "motivic-k-comparisons",
       "supplier": "SchemeKTheoryOperations",
       "section": "§§4.5, 6.9",
-      "needs": "Supply the smooth perfect-field motivic tower, coefficient and Adams compatibility, rational weight comparison, and prime-to-characteristic étale comparisons and descent maps."
+      "needs": "On the imported smooth perfect-field motivic-to-K tower, supply Adams action and rational weight comparison, and compatibility with étale K-theory descent, geometric base change and coefficient edge/section maps for positive invertible coefficients and prime-to-characteristic divisible colimits."
     },
     {
       "slug": "function-field-steinberg-homology",

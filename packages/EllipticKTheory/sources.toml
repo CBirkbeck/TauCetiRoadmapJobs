@@ -202,7 +202,7 @@ url = "https://doi.org/10.1007/s002220050014"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["5.5"]
+cited_for = ["Exact supplier contracts; 5.6"]
 
 [[source]]
 id = "grayson"
