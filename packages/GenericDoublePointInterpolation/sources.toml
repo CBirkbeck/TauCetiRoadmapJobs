@@ -35,3 +35,20 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-22"
 cited_for = ["Layers 0, 1, 5: coefficient spaces, first jets, minors, integer grids"]
+
+[[source]]
+id = "VAK"
+authors = "Ravi Vakil"
+title = "The Rising Sea: Foundations of Algebraic Geometry"
+year = 2017
+version_note = "18 November 2017 author draft; numbering of this version"
+locator_scheme = "theorem"
+locator = "Definition 12.6.2, p.355; section 21.2.20 and Theorem 21.2.24, pp.572–574; Theorem 25.3.1, p.681"
+url = "https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf"
+fetched_from = "https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf"
+fetched_at = "2026-10-24T07:18:51Z"
+sha256 = "b956026cc9caddd372332b94f6ecdb77932a08ab0d90dc802bad37b7a6ee62c4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Exact supplier contracts: relative generic smoothness and the diagonal cotangent square-zero algebra"]

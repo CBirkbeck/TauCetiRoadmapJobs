@@ -10,7 +10,7 @@
       "slug": "generic-contact",
       "supplier": "SchemeAndStackFoundations",
       "section": "Part II, generic tangent incidence",
-      "needs": "Characteristic-zero generic smoothness, differential-rank/image-dimension and tangent-incidence contact fibers."
+      "needs": "For a dominant k-morphism of smooth integral finite-type schemes over a characteristic-zero field, a dense source open where the morphism is smooth of relative dimension dim X minus dim Y and the geometric tangent differential is surjective of rank dim Y."
     },
     {
       "slug": "plane-singular-incidence",
@@ -22,7 +22,13 @@
       "slug": "finite-flat-sections",
       "supplier": "AlgebraicModuliForArithmeticGeometry",
       "section": "Part II after §§1.7, 2.1, finite-flat incidence",
-      "needs": "Finite locally free pushforward/base change of line bundles and universal projective tangent-direction families."
+      "needs": "For f:Z to S finite locally free and L invertible on Z, f_*L is finite locally free of the same locally constant rank as f_*O_Z, and its pushforward comparison commutes with every base change."
+    },
+    {
+      "slug": "tangent-direction-incidence",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "Part II after §§1.1, 2.1, tangent-direction incidence",
+      "needs": "For X/k smooth separated of finite type, the quotient projective bundle P_X(Omega^1_X/k) carries the universal closed length-two subscheme of the first infinitesimal diagonal neighborhood, with square-zero algebra O plus O(1), finite locally free of rank two and compatible with arbitrary parameter and ground-base changes using relative differentials and the relative diagonal."
     },
     {
       "slug": "mixed-bad-incidence",

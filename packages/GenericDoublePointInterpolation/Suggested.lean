@@ -7,9 +7,12 @@ The roadmap is README.md; this file is not the roadmap. It states the headline
 theorems against the pinned Mathlib and Tau Ceti APIs, using explicit polynomial,
 linear-map, matrix and spectrum definitions.
 
-The projective Alexander–Hirschowitz theorem, differential Horace theorem,
-plane contact theorem and codimension-three cubic recursions are not statable
-here on the intended projective-section carriers: the supplier projective
+The degree-at-least-five Alexander–Hirschowitz theorem is stated in affine
+first-jet form as genericDoublePointRank, including the overfilled range.
+The finite codimension-three cubic bases are stated on native submodules and
+homogeneous polynomials. The differential Horace theorem, plane contact theorem
+and general codimension-three cubic recursions are not statable here on the
+intended projective-section carriers: the supplier projective
 bundle, twisting-section comparison, residual sequence and relative direction
 incidence interfaces specified in README.md are not present at the pins.
 The coefficient metric and the intermediate API are specified in README.md.
@@ -113,6 +116,76 @@ theorem sexticPlane :
       Function.Injective P ∧ (firstJetMatrix P 6).rank = min 28 (3*q) := by
   sorry
 
+/-- Nonzero vectors represent distinct projective points exactly when proportionality
+    of any two indexed vectors forces their indices to agree. -/
+def ProjectivelyDistinct {k : Type u} [Field k] {r : ℕ} {ι : Type*}
+    (P : ι → Fin (r+1) → k) : Prop :=
+  (∀ i, P i ≠ 0) ∧ ∀ i j (c : k), P i = c • P j → i = j
+
+/-- In projective dimensions five, six and seven, three codimension-three spaces
+    in linear general position admit three singular supports each killing all
+    containing cubics (Brambilla–Ottaviani, Proposition 5.2). -/
+theorem threeSubspaceCubicBases :
+    ∀ r ∈ [5, 6, 7],
+      ∃ (L : Fin 3 → Submodule ℚ (Fin (r+1) → ℚ))
+        (P : Fin 3 × Fin 3 → Fin (r+1) → ℚ),
+        (∀ a, Module.finrank ℚ (L a) = r-2) ∧
+        (∀ a b, a ≠ b → L a ⊔ L b = ⊤) ∧
+        (⨅ a, L a) = ⊥ ∧ ProjectivelyDistinct P ∧
+        (∀ a i, P (a,i) ∈ L a) ∧
+        (∀ a b i, a ≠ b → P (a,i) ∉ L b) ∧
+        ∀ F : MvPolynomial (Fin (r+1)) ℚ,
+          F.IsHomogeneous 3 →
+          (∀ a v, v ∈ L a → MvPolynomial.eval v F = 0) →
+          (∀ z j, MvPolynomial.eval (P z) (MvPolynomial.pderiv j F) = 0) →
+          F = 0 := by
+  sorry
+
+/-- In projective dimensions five and seven, two codimension-three spaces with
+    r−2 singular supports each and three outside supports kill all containing
+    cubics (Brambilla–Ottaviani, Proposition 5.3). -/
+theorem twoSubspaceCubicBases :
+    ∀ r ∈ [5, 7],
+      ∃ (L : Fin 2 → Submodule ℚ (Fin (r+1) → ℚ))
+        (P : (Fin 2 × Fin (r-2)) ⊕ Fin 3 → Fin (r+1) → ℚ),
+        (∀ a, Module.finrank ℚ (L a) = r-2) ∧
+        L 0 ⊔ L 1 = ⊤ ∧ ProjectivelyDistinct P ∧
+        (∀ a i, P (.inl (a,i)) ∈ L a) ∧
+        (∀ a b i, a ≠ b → P (.inl (a,i)) ∉ L b) ∧
+        (∀ i a, P (.inr i) ∉ L a) ∧
+        ∀ F : MvPolynomial (Fin (r+1)) ℚ,
+          F.IsHomogeneous 3 →
+          (∀ a v, v ∈ L a → MvPolynomial.eval v F = 0) →
+          (∀ z j, MvPolynomial.eval (P z) (MvPolynomial.pderiv j F) = 0) →
+          F = 0 := by
+  sorry
+
+/-- The one-space cubic bases have 3 on-space and 6 outside double supports in
+    P⁵, with an additional transverse length-two condition, and 7 on-space and
+    8 outside supports in P⁷ (Brambilla–Ottaviani, Proposition 5.4). -/
+theorem oneSubspaceCubicBases :
+    (∃ (L : Submodule ℚ (Fin 6 → ℚ)) (P : Fin 9 → Fin 6 → ℚ)
+        (Q w : Fin 6 → ℚ),
+      Module.finrank ℚ L = 3 ∧
+      ProjectivelyDistinct (Sum.elim P (fun _ : Unit => Q)) ∧
+      (∀ i, P i ∈ L ↔ i.val < 3) ∧ Q ∈ L ∧ w ∉ L ∧
+      ∀ F : MvPolynomial (Fin 6) ℚ,
+        F.IsHomogeneous 3 →
+        (∀ v, v ∈ L → MvPolynomial.eval v F = 0) →
+        (∀ i j, MvPolynomial.eval (P i) (MvPolynomial.pderiv j F) = 0) →
+        MvPolynomial.eval Q F = 0 →
+        (∑ j, w j * MvPolynomial.eval Q (MvPolynomial.pderiv j F)) = 0 →
+        F = 0) ∧
+    (∃ (L : Submodule ℚ (Fin 8 → ℚ)) (P : Fin 15 → Fin 8 → ℚ),
+      Module.finrank ℚ L = 5 ∧ ProjectivelyDistinct P ∧
+      (∀ i, P i ∈ L ↔ i.val < 7) ∧
+      ∀ F : MvPolynomial (Fin 8) ℚ,
+        F.IsHomogeneous 3 →
+        (∀ v, v ∈ L → MvPolynomial.eval v F = 0) →
+        (∀ i j, MvPolynomial.eval (P i) (MvPolynomial.pderiv j F) = 0) →
+        F = 0) := by
+  sorry
+
 /-- Twenty-one distinct rational supports in affine five-space impose 126 quartic conditions. -/
 theorem quarticFive :
     ∃ P : Fin 21 → Fin 5 → ℚ,
@@ -125,6 +198,14 @@ theorem quarticFive :
 theorem univariateHermiteRank {k : Type u} [Field k] {n : ℕ}
     (P : Fin n → Fin 1 → k) (hP : Function.Injective P) (d : ℕ) :
     (firstJetMatrix P d).rank = min (d+1) (2*n) := by
+  sorry
+
+/-- In degree at least five, some distinct affine configuration has the full
+    Alexander–Hirschowitz rank over every characteristic-zero field, for every count. -/
+theorem genericDoublePointRank {k : Type u} [Field k] [CharZero k]
+    (r d q : ℕ) (hr : 1 ≤ r) (hd : 5 ≤ d) :
+    ∃ P : Fin q → Fin r → k, Function.Injective P ∧
+      (firstJetMatrix P d).rank = min (Nat.choose (r+d) d) (q*(r+1)) := by
   sorry
 
 /-! ## Layer 5: Affine principal opens and integer coordinates -/
@@ -145,21 +226,6 @@ noncomputable abbrev evaluationPrime {k : Type u} [Field k] {r n : ℕ}
   ⟨RingHom.ker (MvPolynomial.eval (fun z : Fin n × Fin r => P z.1 z.2)),
     RingHom.ker_isPrime _⟩
 
-/-- An integer maximal minor defines a nonempty full-jet open over every characteristic-zero field. -/
-theorem genericAffinePrincipalOpen {k : Type u} [Field k] [CharZero k]
-    (r n d : ℕ) (hr : 1 ≤ r) (hn : 1 ≤ n) (hd : 5 ≤ d)
-    (hsize : n*(r+1) ≤ Nat.choose (r+d) d) :
-    ∃ cols : JetRows n r ↪ Monomials r d,
-      selectedMinor d cols ≠ 0 ∧
-      IsOpen ((PrimeSpectrum.basicOpen (MvPolynomial.map (Int.castRingHom k)
-        (selectedMinor d cols))) : Set (PrimeSpectrum (MvPolynomial (Fin n × Fin r) k))) ∧
-      (∃ P : Fin n → Fin r → k, evaluationPrime P ∈ PrimeSpectrum.basicOpen
-        (MvPolynomial.map (Int.castRingHom k) (selectedMinor d cols))) ∧
-      ∀ P : Fin n → Fin r → k, evaluationPrime P ∈ PrimeSpectrum.basicOpen
-        (MvPolynomial.map (Int.castRingHom k) (selectedMinor d cols)) →
-        Function.Injective P ∧ WellPoised P d := by
-  sorry
-
 /-- A nonzero selected minor admits an integer full-jet witness in the box of side n(r+1)d. -/
 theorem integerGridForMinor {k : Type u} [Field k] [CharZero k] {r n : ℕ}
     (d : ℕ) (cols : JetRows n r ↪ Monomials r d) (hΔ : selectedMinor d cols ≠ 0) :
@@ -167,6 +233,19 @@ theorem integerGridForMinor {k : Type u} [Field k] [CharZero k] {r n : ℕ}
       (∀ i j, 0 ≤ P i j ∧ P i j ≤ (n*(r+1)*d : ℕ)) ∧
       MvPolynomial.eval (fun z : Fin n × Fin r => P z.1 z.2) (selectedMinor d cols) ≠ 0 ∧
       Function.Injective P ∧ WellPoised (fun i j => (P i j : k)) d := by
+  sorry
+
+/-- An integer maximal minor defines a nonempty full-jet open over every characteristic-zero field. -/
+theorem genericAffinePrincipalOpen {k : Type u} [Field k] [CharZero k]
+    (r n d : ℕ) (hr : 1 ≤ r) (hn : 1 ≤ n) (hd : 5 ≤ d)
+    (hsize : n*(r+1) ≤ Nat.choose (r+d) d) :
+    ∃ cols : JetRows n r ↪ Monomials r d,
+      selectedMinor d cols ≠ 0 ∧
+      (∃ P : Fin n → Fin r → k, evaluationPrime P ∈ PrimeSpectrum.basicOpen
+        (MvPolynomial.map (Int.castRingHom k) (selectedMinor d cols))) ∧
+      ∀ P : Fin n → Fin r → k, evaluationPrime P ∈ PrimeSpectrum.basicOpen
+        (MvPolynomial.map (Int.castRingHom k) (selectedMinor d cols)) →
+        Function.Injective P ∧ WellPoised P d := by
   sorry
 
 /-- A nonzero polynomial pullback admits an integer parameter witness with individual degree bounds. -/
