@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4685 mistakes recorded on the board: 3127 misprints, 1181 errors, 315 gaps, 62 unparsed bullets.
+4692 mistakes recorded on the board: 3128 misprints, 1182 errors, 320 gaps, 62 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3999,6 +3999,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at published Lemma (2.2.11) (numbered (2.2.10) in the author's DVI): the source says a multiplicity criterion that Gee–Kisin, arXiv:1208.3179v5, Appendix B, B.5, p. 39 explicitly replaces; it should be as the evidence in the cited report requires (the replacement statement in Gee–Kisin B.5); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at the generic-rank, multiplicity and graded-piece statements corrected in Gee–Kisin, arXiv: the source says 1208.3179v5, Appendix B: the source's versions of these statements needed correction; it should be generic rank 2^|R|, the reciprocal multiplicity factor, support on the weight ring, and an extra local exclusion; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Kisin17
+
+- **Misprint** at proof of Lemma 1.2.18, p.16: the source says g₀ in G(O_L) and the comparison g̃ in G(S); it should be G(L) and G(S[1/p]), the output being the coset g₀G(O_L); affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+
 ## Kisin–Pappas, Integral models of Shimura varieties with parahoric level structure (2018)
 
 - **Error** at Lemma 4.4.8: the source says polarization descent for coefficient-torsor twists holds with no condition at the real place; it should be required that the torsor be trivial over ℝ, as Kisin–Shin–Zhu §5.12.4 notes; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -4120,6 +4124,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at the proof of Theorem 4.2.7, p.186: the source says the source calls the frame-to-filtration map a torsor; it should be the smooth action morphism; affects the proof; corrected in print at KPZ §7.3.1(1), p.85. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 - **Misprint** at §2.3.15, p. 162: the source says the target Grassmannian classifies subbundles of rank dim V′; it should be rank dim V′/2; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 
+## KP18
+
+- **Gap** at proof of Lemma 3.1.17, p.169: the source says the source proves convergence in a topology for which Ŵ(A)[1/p] is not complete; it should be use the p-adic topology and Zink's logarithmic coordinates; affects the proof; corrected in print at KPZ26 §7.3.1(2), p.86. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Error** at proof of Lemma 3.1.9, p.166: the source says the first-order comparison c to be determined by a Frobenius-compatibility square; it should be construct c by relative-frame factorization, since the square loses information after p-torsion base change; affects the proof; corrected in print at KPZ26 Lemma 5.1.15 and Remark 5.1.17, pp.51–52. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Gap** at §3.2.12, p.173: the source says the source chooses a tensor-preserving Ψ constant modulo a_E without any compatibility of c with the tensors; it should be assume the very-good condition; affects a stated result; corrected in print at KPZ26 Definition 5.2.5 and §7.1.4, and KZ25 §3.2.5 (C). <!-- tauceti-roadmap-review {"agent": "claude", "head": "6280fea", "job": "REV-PKG-FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII", "model": "opus", "worker": "fable-rev71"} -->. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+
 ## KPZ
 
 - **Misprint** at Definition 3.4.4, chain variant, p. 29: the source says the determining segment starts at p·Λ₀; it should be π_F·Λ₀, as in §2.3, p. 12; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
@@ -4127,6 +4137,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Remark 4.1.5(2), p. 31: the source says the surface x²+xyz=0 is normal; it should be reducible (x(x+yz)), with two components meeting at the origin, so not normal; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Misprint** at Remark 4.1.5(2), p. 31: the source says the coordinate ring has variables x, y, x; it should be x, y, z; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Misprint** at proof of Theorem 4.2.3, type Bₙ, p. 37: the source says the i-th fundamental weight is a sum of i copies of e_i; it should be e₁+⋯+e_i; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+
+## KPZ26
+
+- **Gap** at proof of Corollary 6.3.5, p.71: the source says the source chooses each Λ_i⊕Λ̄_i self-dual and calls the result a lattice chain; it should be pair Λ_i with the ψ-dual of Λ_{−i}, since self-dual members of a segment with two or more lattices are incomparable; affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
 
 ## KreckStolz
 
@@ -4182,6 +4196,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Proposition 5.2.3, pp. 49–50: the source says individual bounds on the Frobenius translates of a root step give a bound on their orbit sum; it should be choose the orbit existentially, since D₄ triality gives coefficient 3 against 2; affects the proof. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Misprint** at §3.2.5, p.23: the source says the source forms the first-order ideal from the maximal ideal and uniformizer multiples in A_E, just after introducing the maximal ideal of A_G̃; it should be use A_G̃ throughout; affects nothing. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 - **Error** at §5.1.3, p.47: the source says rational points of the conjugacy quotient are the semisimple rational conjugacy classes over any characteristic-zero field; it should be geometric points classify geometric classes, and rational points are Galois-stable geometric classes; affects nothing. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
+
+## KZ25
+
+- **Gap** at Proposition 3.3.4, p.25: the source says the source deduces adaptedness from Proposition 3.3.2, whose stabilizer hypotheses (reductive generic fibre, Bruhat–Tits stabilizer) are not assumed for G′; it should be also assume the étale tensors have the fixed integral type; affects a stated result. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
 
 ## L08
 
@@ -7076,6 +7094,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at (3.1.3), p. 455, and Theorem 3.1, p. 456: the source says the dimension formula without requiring a nonempty locus; it should be require nonemptiness (GL₂, b = 1, μ = (1,0) is empty but the formula gives 1/2); affects nothing. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
 - **Gap** at the proof of Proposition 3.3, pp. 459–460: the source says the source applies the fibre bound over ϖ^λ to the preimage of the closed union X_{≤λ}; it should be bound each exact stratum X_{λ′} separately, since smaller strata have larger fibres; affects the proof. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
 - **Misprint** at §3.1.3, p. 458: the source says the source sets τ_i = σ^i(τ₀); it should be τ_i = σ^{−i}(τ₀), to match its own maps H⊗_{τ_i}L ≃ H⊗_{τ₀}L and Nm b = b_{τ₀}σ(b_{τ₁})⋯; affects nothing. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
+
+## Zhu17
+
+- **Gap** at §3.2, p.461: the source says the source fixes any b in the double coset G(W)p^μG(W) and frames D(X₀) with Hodge line equal to the μ-weight-one part; it should be take b in the one-sided coset G(W)·σ(μ)(p) or adjust the frame, as b=diag(1,p) with μ=diag(z,1) shows; affects a stated result. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
 
 ## Zureick-Brown, arXiv:1204.5246v4
 
