@@ -2090,7 +2090,26 @@
       "detail": "Every target-level definition and key theorem has a node and explicit inputs. Independent review corrected the cusp cutoff and supplier ownership; stages remain planned and implementation is not claimed."
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "primitive-minus-cycle-interface",
+      "needs": "§4.17a must export the primitive reduced minus cycle as a complete narrow-class invariant up to cyclic rotation, its attracting Pell word ∏T^nS with least norm-one unit, and its compatibility with the IntegralLattices B2–B3 oriented dictionary specialized through GlobalNumberFields Layer 11 to the native narrow class group.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.17a"
+    },
+    {
+      "slug": "oriented-quadratic-cycle-reversal",
+      "needs": "§4.17a must identify the full primitive parametrized modular cycles C_(JA⁻¹) and C_A with opposite orientations, using the DIT coefficient actions [a,−b,c]↦A⁻¹, [−a,b,−c]↦JA and −Q↦JA⁻¹ and retaining the negative-leading-coefficient sign clause.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.17a"
+    },
+    {
+      "slug": "completed-critical-line-c1-bounds",
+      "needs": "§§1.15 and 4.18 must export C¹ termwise Fourier differentiation on high strips, exponential bounds for nonconstant modes and first derivatives, and fixed-t bounds O(√Y log Y) and O(Y⁻¹/² log Y) for the constant term and its derivative of E*(z,1/2+it), including t=0 by holomorphic cancellation, together with the corresponding zero-mean smooth Maass cusp estimates.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "1.15 and 4.18"
+    }
+  ],
   "requests": [
     {
       "supplier": "tauceti:TauCetiRoadmap/FuchsianOrbifolds#layer-0-the-effective-projective-möbius-action",

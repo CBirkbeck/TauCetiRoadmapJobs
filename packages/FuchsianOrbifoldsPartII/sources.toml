@@ -1,0 +1,53 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FuchsianOrbifoldsPartII"
+
+[[source]]
+id = "DIT16"
+authors = "W. Duke; Ö. Imamoḡlu; Á. Tóth"
+title = "Geometric invariants for real quadratic fields"
+doi = "10.4007/annals.2016.184.3.8"
+version_note = "Version of record; published theorem, equation and page numbering."
+year = 2016
+locator_scheme = "theorem"
+locator = "Theorem 1; §§2–5; Lemmas 1–2, p.972"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p08-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p08-p.pdf"
+fetched_at = "2026-10-24T19:48:29Z"
+sha256 = "a67de7157f76ee700bc2e6a0034a920adc390022d4ff528aa80084f829f35f61"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "LU23"
+authors = "Zhipeng Lu"
+title = "Geodesic cover of Fuchsian groups"
+doi = "10.5802/ambp.421"
+year = 2023
+locator_scheme = "section"
+locator = "§§3.1–3.3, pp.194–198; Proposition 3.5"
+url = "https://www.numdam.org/item/10.5802/ambp.421.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/ambp.421.pdf"
+fetched_at = "2026-10-24T19:49:07Z"
+sha256 = "c0f8b7e6bc6d22e140de2bc8c2c6bf7758bd11ca07518ac4385dd989f8bc1063"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "SERIES05"
+authors = "Caroline Series"
+title = "A Crash Course on Kleinian Groups"
+year = 2005
+locator_scheme = "theorem"
+locator = "Theorem 3.33, p.21; Proposition 4.60 and Fuchsian paragraph, pp.32–33"
+url = "https://rendiconti.dmi.units.it/volumi/37/01.pdf"
+fetched_from = "https://rendiconti.dmi.units.it/volumi/37/01.pdf"
+fetched_at = "2026-10-24T19:49:19Z"
+sha256 = "4eb1f4c626d58673afdcd7b5769854d288e860d951af76695a4129a0d70e28c8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0 and 3"]
