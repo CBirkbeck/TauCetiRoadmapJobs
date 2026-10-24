@@ -3086,6 +3086,30 @@
         "FaltingsFinitenessAndIsogenyTheoremsPartII:QI.7/fixed-prime-uniform-index",
         "FaltingsFinitenessAndIsogenyTheoremsPartII:QI.8/endomorphism-preserving-specialization"
       ]
+    },
+    {
+      "slug": "hom-specialization-saturation",
+      "needs": "For abelian schemes over a connected normal characteristic-zero variety, specialization from geometric generic Hom to geometric fibre Hom is injective with torsion-free cokernel, compatibly with every finite étale torsion realization.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A6.25"
+    },
+    {
+      "slug": "hermitian-maximal-slope",
+      "needs": "For nonzero Hermitian vector bundles over rings of integers, extend §§1.1–1.6 to the maximum normalized slope of saturated subbundles, with dual, tensor, symmetric-power and norm-controlled morphism inequalities and the metric-rescaling law, compatible with the semistable-extension convention for abelian tangent bundles.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "1.1–1.6"
+    },
+    {
+      "slug": "cyclic-maximal-subfield",
+      "needs": "Every finite-dimensional central division algebra over a number field F has a cyclic maximal subfield E/F of degree equal to its index and a cyclic presentation with a nonzero twisting parameter.",
+      "supplier": "ClassFieldTheory",
+      "section": "Layer 10"
+    },
+    {
+      "slug": "fixed-siegel-cusp-family",
+      "needs": "For every g≥1 choose a common positive weight and a finite rational Fourier-normalized scalar Siegel cusp family with no common zero on Siegel space, together with its analytic trivialization and for each 0<δ≤1 positive constants M,c depending only on g,δ and the family such that |u(x+iy)|≤M exp(−c tr y) for every member whenever y≥δdiag(y) and every y_i≥δ.",
+      "supplier": "AutomorphicBundles",
+      "section": "B4.2, B5.13"
     }
   ],
   "restructure": [
