@@ -12,8 +12,12 @@ Drinfeld descent and ind-smoothness for shtuka cohomology, the PGL₂ Eisenstein
 the global cuspidal excursion decomposition with its nonsplit and modular forms, companions
 on curves, and the local parameterization with local–global compatibility and gamma factors.
 
-None is statable on its actual carriers at these pins. Satake lacks the algebraic-group
-representation and perverse étale-sheaf categories on affine Grassmannians. Shtuka geometry,
+None is statable on its actual carriers at these pins. Satake lacks the affine and
+Beilinson–Drinfeld Grassmannians, the perverse étale-sheaf categories on them with convolution,
+and the total-cohomology fibre functor; its representation side is present, since Tau Ceti
+supplies finite algebraic representations of an affine group through
+`TauCeti.FGPointRepresentationCat` and its comodule equivalence
+`TauCeti.fgPointRepresentationCategoryEquivalence`. Shtuka geometry,
 Eichler–Shimura and the Eisenstein theorem lack algebraic moduli stacks and their ℓ-adic
 cohomology. Drinfeld descent and ind-smoothness lack lisse and constructible étale coefficient
 categories and Frobenius–Weil actions on that cohomology. The global excursion theorem lacks

@@ -6,33 +6,33 @@
 
 This roadmap owns, for a global function field F = F_q(X) and a connected reductive group G over F:
 
-- the stack of 𝒢-bundles for a smooth affine model 𝒢 with connected fibres, with full level structures, Iwahori flags and fractional twists; Harder–Narasimhan data for coherent sheaves and G-bundles, with the shifted and the parabolic PGL₂ variants; the adelic description of the F_q-points, central lattices, orbit masses, the mass formulas for bundles and torsion sheaves, and the interface with cuspidal automorphic functions (Layer GS.0);
-- the Beilinson–Drinfeld Grassmannian over X^I, Schubert bounds, global and Iwahori Hecke stacks, ℓ-adic sheaves on algebraic stacks of finite type, fusion, the classical (equal-characteristic, finite-field, ℓ-adic) geometric Satake equivalence with its sign and Tate normalizations, its comparison with spherical functions, nonsplit descent through the L-group and the integral version (Layer GS.1);
-- the stacks of global shtukas, their truncations and local models, their cohomology sheaves in all degrees, partial Frobenius, coalescence of legs and Hecke correspondences, including Yun–Zhang's fractional-infinity shtukas and the PGL₂ horocycles (Layer GS.2);
-- creation and annihilation of legs, the Eichler–Shimura relation, Hecke finiteness, cuspidal cohomology and its integral finiteness, finiteness over one local Hecke algebra, and the PGL₂ Eisenstein decomposition (Layer GS.3);
-- Drinfeld's lemma, the Frobenius–Weil group, the product Galois action on Hecke-finite cohomology, the functors `H_{I,W}`, Weil descent and ind-smoothness of the full cohomology (Layer GS.4);
-- global excursion operators and V. Lafforgue's decomposition, with its nonsplit, integral and modular versions (Layer GS.5);
-- constant twists and companions on curves, and the comparison of excursion parameters with the GL_r correspondence (Layer GS.6);
-- restricted shtukas, nearby cycles over higher-dimensional bases, local excursion elements, the Genestier–Lafforgue parameterization, local–global compatibility, local gamma factors and the GL_r comparison with monodromy at every place (Layer GS.7).
+- the stack of 𝒢-bundles for a smooth affine model 𝒢 with connected fibres, with full level structures, Iwahori flags and fractional twists; Harder–Narasimhan data for coherent sheaves and G-bundles, with the shifted and the parabolic PGL₂ variants; the adelic description of the F_q-points, central lattices, orbit masses, the mass formulas for bundles and torsion sheaves, and the interface with cuspidal automorphic functions (Layer 0);
+- the Beilinson–Drinfeld Grassmannian over X^I, Schubert bounds, global and Iwahori Hecke stacks, ℓ-adic sheaves on algebraic stacks of finite type, fusion, the classical (equal-characteristic, finite-field, ℓ-adic) geometric Satake equivalence with its sign and Tate normalizations, nonsplit descent through the L-group, its comparison with spherical functions and the integral version (Layer 1);
+- the stacks of global shtukas, their truncations and local models, their cohomology sheaves in all degrees, partial Frobenius, coalescence of legs and Hecke correspondences, including Yun–Zhang's fractional-infinity shtukas and the PGL₂ horocycles (Layer 2);
+- creation and annihilation of legs, the Eichler–Shimura relation, Hecke finiteness, cuspidal cohomology and its integral finiteness, finiteness over one local Hecke algebra, and the PGL₂ Eisenstein decomposition (Layer 3);
+- Drinfeld's lemma, the Frobenius–Weil group, the product Galois action on Hecke-finite cohomology, the functors `H_{I,W}`, Weil descent and ind-smoothness of the full cohomology (Layer 4);
+- global excursion operators and V. Lafforgue's decomposition, with its nonsplit, integral and modular versions (Layer 5);
+- constant twists and companions on curves, and the comparison of excursion parameters with the GL_r correspondence (Layer 6);
+- restricted shtukas, nearby cycles over higher-dimensional bases, local excursion elements, the Genestier–Lafforgue parameterization, local–global compatibility, local gamma factors and the GL_r comparison with monodromy at every place (Layer 7).
 
 Its boundaries with neighbouring roadmaps are as follows.
 
-- **AutomorphicLFunctionsAndLocalFactors §AL.3** (section *Curve arithmetic and the unramified pure realization*) owns L. Lafforgue's proof of the global Langlands correspondence for GL_r over F at every level: slopes, HN filtrations, their semicontinuity and the bounded loci of vector bundles on X; two-leg Drinfeld shtukas with and without level, their truncations and compactifications; lower-rank counting with a leg in the level; normalized intersection-complex purity and the essential comparison; the negligible-constituent criterion, essential cohomology and the counting comparison through the truncated trace formula; rank-one reciprocity with and without ramification; the function-field converse theorem and strong multiplicity one; and the induction on the rank, with all-place pair factors and temperedness. Layers GS.6 and GS.7 use that theorem and restate none of it. The G-bundle HN theory of Layer GS.0 agrees with AL.3 on vector bundles, and the stack description of rank-one shtukas in Layer GS.0 is what the horocycle computations here need.
-- **EndoscopicTransferAndUnitaryTraceComparison** §3.1 constructs Bun_G for a quasi-split group scheme that is reductive over all of X, and §3.2 the equal-characteristic local loop Grassmannian LG/L⁺G. [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve) extends the first to models that are reductive only over an open U, and [§GS.1.1 *Beilinson–Drinfeld Grassmannians*](#gs11-beilinsondrinfeld-grassmannians) builds the multi-leg Grassmannian whose fibre over a point is the second.
-- The required **FunctionFieldArithmetic** contracts for adeles, ideles, class field theory, zeta functions, automorphic function spaces and constant terms are declared as gap:function-field-arithmetic below. **AlgebraicCurves** owns function fields of curves, places, divisors and Riemann–Roch; **JacobianChallenge** owns the Picard functor, the Jacobian and the Abel–Jacobi map; **AlgebraicVectorBundles** owns finite locally free sheaves; **SchemeAndStackFoundations** owns algebraic spaces and stacks, torsors, descent, deformation theory and Quot schemes; **ReductiveGroups** and **ReductiveGroupsPartII** own reductive groups, root data, dual groups and L-groups.
-- **EtaleCohomologyFoundations** and **EtaleDualityAndPerverseSheaves** own étale cohomology of schemes: constructible coefficients, base change, duality, perverse sheaves, weights, cohomological correspondences and their trace formulas; **DeligneWeightsAndPurity** owns weights and purity. Neither treats algebraic stacks; [§GS.1.4 *ℓ-adic sheaves on stacks of finite type*](#gs14-ℓ-adic-sheaves-on-stacks-of-finite-type) extends the operations this roadmap needs to stacks of finite type. **ClassicalAdicEtaleCohomology** §5.4 owns general oriented products and the Orgogozo modification theorem, and **LefschetzPencilsAndVanishingCycles** owns nearby cycles over a henselian trait; their application to restricted shtukas is [§GS.7.3 *Nearby cycles over higher-dimensional bases*](#gs73-nearby-cycles-over-higher-dimensional-bases).
+- **AutomorphicLFunctionsAndLocalFactors §AL.3** (section *Curve arithmetic and the unramified pure realization*) owns L. Lafforgue's proof of the global Langlands correspondence for GL_r over F at every level: slopes, HN filtrations, their semicontinuity and the bounded loci of vector bundles on X; two-leg Drinfeld shtukas with and without level, their truncations and compactifications; lower-rank counting with a leg in the level; normalized intersection-complex purity and the essential comparison; the negligible-constituent criterion, essential cohomology and the counting comparison through the truncated trace formula; rank-one reciprocity with and without ramification; the function-field converse theorem and strong multiplicity one; and the induction on the rank, with all-place pair factors and temperedness. Layers 6 and 7 use that theorem and restate none of it. The G-bundle HN theory of Layer 0 agrees with AL.3 on vector bundles, and the stack description of rank-one shtukas in Layer 0 is what the horocycle computations here need.
+- **EndoscopicTransferAndUnitaryTraceComparison** §3.1 constructs Bun_G for a quasi-split group scheme that is reductive over all of X, and §3.2 the equal-characteristic local loop Grassmannian LG/L⁺G. [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve) extends the first to models that are reductive only over an open U, and [§1.1 *Beilinson–Drinfeld Grassmannians*](#11-beilinsondrinfeld-grassmannians) builds the multi-leg Grassmannian whose fibre over a point is the second.
+- **FunctionFieldArithmetic** owns the arithmetic of F over F_q used here: divisor classes and Picard points (FunctionFieldArithmetic §0.3), self-dual volumes of a differential (FunctionFieldArithmetic §2.2), the zeta function (FunctionFieldArithmetic §§5.1 and 5.3), degree-sensitive Chebotarev (FunctionFieldArithmetic §5.8), and the adelic points, automorphic function modules, constant terms, cusp modules and Harder's finiteness theorem for every connected reductive group and every compact open level (FunctionFieldArithmetic §§6.1–6.4). **ArithmeticGaloisDuality** §R02.3.2 owns the ideles, the idele class group and the class formation of F with its Brauer sequence; AutomorphicLFunctionsAndLocalFactors §AL.3, *Curve additive analysis*, owns the completion-valued adeles, the residue character of a differential and the self-dual measures. **AlgebraicCurves** owns function fields of curves, places, divisors and Riemann–Roch; **JacobianChallenge** owns the Picard functor, the Jacobian and the Abel–Jacobi map; **AlgebraicVectorBundles** owns finite locally free sheaves; **SchemeAndStackFoundations** owns algebraic spaces and stacks, torsors, descent, deformation theory and Quot schemes; **ReductiveGroups** and **ReductiveGroupsPartII** own reductive groups, root data, dual groups and L-groups.
+- **EtaleCohomologyFoundations** and **EtaleDualityAndPerverseSheaves** own étale cohomology of schemes: constructible coefficients, base change, duality, perverse sheaves, weights, cohomological correspondences and their trace formulas; **DeligneWeightsAndPurity** owns weights and purity. Neither treats algebraic stacks; [§1.4 *ℓ-adic sheaves on stacks of finite type*](#14-ℓ-adic-sheaves-on-stacks-of-finite-type) extends the operations this roadmap needs to stacks of finite type. **ClassicalAdicEtaleCohomology** §5.4 owns general oriented products and the Orgogozo modification theorem, and **LefschetzPencilsAndVanishingCycles** owns nearby cycles over a henselian trait; their application to restricted shtukas is [§7.3 *Nearby cycles over higher-dimensional bases*](#73-nearby-cycles-over-higher-dimensional-bases).
 - **LanglandsParameterStacks** owns excursion algebras, excursion data and the reconstruction of parameters from their pseudocharacters for an arbitrary group; this roadmap verifies the hypotheses on the cohomology of shtukas and proves continuity for the global Galois group. **IntegralHeckeAndGaloisDeterminants** owns determinants and their reconstruction.
 - **SmoothRepresentationsOfLocalGroups** owns Hecke algebras over rings, the Bernstein centre, parabolic induction and the classical Satake isomorphism.
-- **ArithmeticGaloisRepresentations** §§2.5–2.7 owns local Euler factors and local constants in its finite-extension-of-Q_p setting. The equal-characteristic local constants and function-field product formula are supplied by **AutomorphicLFunctionsAndLocalFactors** §AL.3, *Function-field local factors, multiplicity one and converse theorem*. §GS.7.10 uses that prefix to construct gamma factors for reductive groups.
-- **GeometricSatakeAndFusion** owns geometric Satake for the B_dR-Grassmannian over the Fargues–Fontaine curve; the classical equal-characteristic equivalence is Layer GS.1 here. **HeckeStacksAndLocalShtukas** owns local shtukas and their cohomology; its later geometric realization is not an input here. The additional classical-centre and equal-characteristic GL_r contracts required here are the explicit supplier gaps below.
-- The elliptic-sheaf carrier required for the comparison is an explicit supplier gap below; [§GS.2.7 *Elliptic sheaves as a specialization*](#gs27-elliptic-sheaves-as-a-specialization) compares elliptic sheaves with one-leg shtukas.
+- **ArithmeticGaloisRepresentations** §§2.5–2.7 owns local Euler factors and local constants in its finite-extension-of-Q_p setting. The equal-characteristic local constants and function-field product formula are supplied by **AutomorphicLFunctionsAndLocalFactors** §AL.3, *Function-field local factors, multiplicity one and converse theorem*. §7.10 uses that prefix to construct gamma factors for reductive groups.
+- **GeometricSatakeAndFusion** owns geometric Satake for the B_dR-Grassmannian over the Fargues–Fontaine curve; the classical equal-characteristic equivalence is Layer 1 here. **HeckeStacksAndLocalShtukas** owns local shtukas and their cohomology; its later geometric realization is not an input here. The additional classical-centre and equal-characteristic GL_r contracts required here are the explicit supplier gaps below.
+- The elliptic-sheaf carrier required for the comparison is an explicit supplier gap below; [§2.7 *Elliptic sheaves as a specialization*](#27-elliptic-sheaves-as-a-specialization) compares elliptic sheaves with one-leg shtukas.
 - Drinfeld's companions on smooth varieties of higher dimension are not part of this roadmap.
 
 ## Conventions
 
 Throughout, k = F_q has characteristic p and X/k is a smooth projective geometrically connected curve of genus g, with function field F, adele ring A, completions F_v with integers O_v and residue fields κ_v of size q_v = `q^{deg v}`. The generic group G/F is connected reductive, with a chosen smooth affine model 𝒢 over X with connected fibres, reductive over a nonempty open U ⊂ X; the constant split case comes first, and every nonsplit statement says how it descends. A **level** N is a finite closed subscheme of X, nilpotents included; a parabolic or Iwahori flag at a point is different data. A central lattice Ξ ⊂ Z(F)\Z(A) is a discrete subgroup that controls the central degree directions (for GL_n, the powers a^Z of an idele a of nonzero degree).
 
-For sheaves, ℓ ≠ p and E is a finite extension of Q_ℓ, large enough for the representations in use, with integers O_E and uniformizer λ; a torsion coefficient ring is O_E/λ^s for a stated s. Frob_v denotes a geometric Frobenius element at v, the inverse of arithmetic Frobenius, and traces in the sheaf–function dictionary are traces of geometric Frobenius. Class field theory is normalized so that the arithmetic Artin map sends a uniformizer to arithmetic Frobenius; a rank-one automorphic character χ then corresponds to the Galois character whose geometric-Frobenius value at v is χ(π_v), that is, χ(a) = ρ(Art(a)⁻¹), as in AL.3. One square root of q is fixed for half Tate twists, and q_v is used at a place of degree deg v. For nonsplit G, ᴸG = Ĝ ⋊ Gal(F̃/F) is the finite form of the L-group attached to the fixed field F̃ of the kernel of the pinned Galois action on the full based root datum; Q=Gal(F̃/F) is unramified over U since G extends reductively there. Any larger finite splitting cover used in descent must be étale over U; parameters valued in ᴸG carry the prescribed projection to Gal(F̃/F). Spherical Hecke algebras use the Haar measure with vol(G(O_v)) = 1; the normalized spherical function `h_{V,v}` differs from the trace of the perverse Satake sheaf by the sign `(−1)^{⟨2ρ,ω⟩}` of the orbit dimension. Additive local factors use the additive character of a global differential and the corresponding self-dual measures (FunctionFieldArithmetic FA.2).
+For sheaves, ℓ ≠ p and E is a finite extension of Q_ℓ, large enough for the representations in use, with integers O_E and uniformizer λ; a torsion coefficient ring is O_E/λ^s for a stated s. Frob_v denotes a geometric Frobenius element at v, the inverse of arithmetic Frobenius, and traces in the sheaf–function dictionary are traces of geometric Frobenius. Class field theory is normalized so that the arithmetic Artin map sends a uniformizer to arithmetic Frobenius; a rank-one automorphic character χ then corresponds to the Galois character whose geometric-Frobenius value at v is χ(π_v), that is, χ(a) = ρ(Art(a)⁻¹), as in AL.3. One square root of q is fixed for half Tate twists, and q_v is used at a place of degree deg v. For nonsplit G, ᴸG = Ĝ ⋊ Gal(F̃/F) is the finite form of the L-group attached to the fixed field F̃ of the kernel of the pinned Galois action on the full based root datum; Q=Gal(F̃/F) is unramified over U since G extends reductively there. Any larger finite splitting cover used in descent must be étale over U; parameters valued in ᴸG carry the prescribed projection to Gal(F̃/F). Spherical Hecke algebras use the Haar measure with vol(G(O_v)) = 1; the normalized spherical function `h_{V,v}` differs from the trace of the perverse Satake sheaf by the sign `(−1)^{⟨2ρ,ω⟩}` of the orbit dimension. Additive local factors use the additive character of a global differential and the corresponding self-dual measures (AutomorphicLFunctionsAndLocalFactors §AL.3, *Curve additive analysis*; FunctionFieldArithmetic §2.2).
 
 In a shtuka, τ is pullback along id_X × Frob_S. The ordered partition of the legs and the bound on each modification are part of the data. A fixed HN bound is not invariant under Hecke operators or partial Frobenius: these maps may increase the bound, so they act on the directed system of truncations. The groupoid of F_q-points of a stack keeps its automorphisms and, for nonsplit G, its components indexed by the pure inner forms.
 
@@ -52,7 +52,11 @@ Mathlib at `6b7abb3c7686292736be2955bd3eb9ebf63b456a` (with Tau Ceti at `a91d3aa
 - `ExteriorAlgebra`, `LinearMap.charpoly` and `LinearMap.aeval_self_charpoly` (Cayley–Hamilton for endomorphisms of finite free modules): the linear algebra behind the Eichler–Shimura relation. No endomorphism of the unbounded cohomology is assumed to be of finite rank.
 - `Submodule.FG` and `Module.Finite`: finitely generated submodules, in which Hecke finiteness is stated.
 - `Algebra.adjoin`, `Module.End.genEigenspace`, `Module.End.iSup_maxGenEigenspace_eq_top` and `Module.End.iSup_iInf_maxGenEigenspace_eq_top_of_iSup_maxGenEigenspace_eq_top_of_commute`: the algebra generated by a family of endomorphisms and the simultaneous generalized-eigenspace decomposition of a commuting family over an algebraically closed field, used for the excursion algebra.
-- `CategoryTheory.Ind` and `CategoryTheory.ObjectProperty.IsSerreClass` with the localization by `CategoryTheory.ObjectProperty.isoModSerre`: Ind-objects and quotients of abelian categories by Serre classes, used for the calculus modulo constructible objects in Layer GS.3.
+- `CategoryTheory.Ind` and `CategoryTheory.ObjectProperty.IsSerreClass` with the localization by `CategoryTheory.ObjectProperty.isoModSerre`: Ind-objects and quotients of abelian categories by Serre classes, used for the calculus modulo constructible objects in Layer 3.
+
+### From Tau Ceti
+
+- `TauCeti.FGPointRepresentationCat` and `TauCeti.fgPointRepresentationCategoryEquivalence` (`TauCeti/Algebra/AlgebraicGroup/Representation/Comodule/Equivalence.lean`): finitely generated representations of the affine group of a commutative Hopf algebra, and their equivalence with finitely generated comodules. Over the coefficient field E these are the finite-dimensional algebraic representations Rep_E(Ĝ) on the representation side of geometric Satake; the geometric side (affine Grassmannians, perverse sheaves on them, convolution and the fibre functor) is absent at the pin.
 
 ### From geometric foundations
 
@@ -65,11 +69,14 @@ Mathlib at `6b7abb3c7686292736be2955bd3eb9ebf63b456a` (with Tau Ceti at `a91d3aa
 
 ### From other roadmaps
 
-- **AutomorphicLFunctionsAndLocalFactors**, §AL.3, section *Curve arithmetic and the unramified pure realization*: the targets *Curve bundle slopes and Harder–Narasimhan filtrations*, *Harder–Narasimhan polygon semicontinuity*, *Bounded curve-bundle loci and shtuka truncations*, *Rank-one unramified reciprocity*, *Ramified rank-one curve reciprocity*, *Function-field local factors, multiplicity one and converse theorem*, *Two-leg unramified shtukas*, *Shtuka intersection cohomology and essential comparison*, *Essential cohomology and local factors*, *Leveled shtukas and ramified rank induction* and its unramified pure realization theorem. Assumed: the GL_r correspondence for cuspidal representations with finite-order central character at every level, with matching of good-place Frobenius polynomials and of ramification, all-place L- and ε-factors of pairs, temperedness and purity of weight zero, and multiplicity one and strong multiplicity one. The local-factor prefix independently constructs equal-characteristic Artin local constants, their norm-twist and highly ramified-twist laws, and the function-field product formula; Layer GS.7 consumes this prefix, not the mixed-characteristic epsilon theorem of ArithmeticGaloisRepresentations §2.7.
+- **AutomorphicLFunctionsAndLocalFactors**, §AL.3, section *Curve arithmetic and the unramified pure realization*: the targets *Curve additive analysis* (the completion-valued adeles with integral-volume-one Haar measure, their idele and Picard comparisons, compact rational unipotent quotients with integration in stages, the residue character of a differential with conductor degree 2g − 2, and the self-dual measures), *Curve bundle slopes and Harder–Narasimhan filtrations*, *Harder–Narasimhan polygon semicontinuity*, *Bounded curve-bundle loci and shtuka truncations*, *Rank-one unramified reciprocity*, *Ramified rank-one curve reciprocity*, *Function-field local factors, multiplicity one and converse theorem*, *Two-leg unramified shtukas*, *Shtuka intersection cohomology and essential comparison*, *Essential cohomology and local factors*, *Leveled shtukas and ramified rank induction* and its unramified pure realization theorem. Assumed: the GL_r correspondence for cuspidal representations with finite-order central character at every level, with matching of good-place Frobenius polynomials and of ramification, all-place L- and ε-factors of pairs, temperedness and purity of weight zero, and multiplicity one and strong multiplicity one. The local-factor prefix independently constructs equal-characteristic Artin local constants, their norm-twist and highly ramified-twist laws, and the function-field product formula; Layer 7 consumes this prefix, not the mixed-characteristic epsilon theorem of ArithmeticGaloisRepresentations §2.7.
 - **EndoscopicTransferAndUnitaryTraceComparison**: §3.1 (`CurveBundles`, the stack of torsors under a quasi-split reductive group scheme over X, with descent, universal torsor and algebraicity) and §3.2 (`LocalLoopGrassmannian`, the fpqc quotient LG/L⁺G over any base field).
 - **EtaleDualityAndPerverseSheaves**: §0.5 (global Verdier and Poincaré duality), §1.3 (the étale cycle class map), Layer 2 (abstract hearts, the perverse t-structure with torsion coefficients §2.4, the integral perversity and Verdier duality §§2.3–2.5, intermediate extensions and intersection complexes §§2.8–2.10, small and semismall maps §2.12), Layer 5 (mixed perverse sheaves, purity of intersection complexes §5.3, decomposition §5.6), Layer 6 (correspondences §§6.1–6.2, the Lefschetz–Verdier formula §6.3, contracting correspondences and the Fujiwara–Varshavsky formula §6.5). All are for schemes of finite type.
-- **ClassicalAdicEtaleCohomology**: §5.4, OrientedEtaleProduct with its projections, specialization, base change, enough points, shreds and stalk comparison; OrientedNearbyCycles.modificationBaseChange for a coherent irreducible base, finitely presented map and bounded constructible invertible-torsion coefficients. Stack descent uses §GS.1.4.
-- **DeligneWeightsAndPurity**: DWP.0 (§0.12 weights under a finite extension of the base field, §0.15 twists and Tate twists), DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
+- **ClassicalAdicEtaleCohomology**: §5.4, OrientedEtaleProduct with its projections, specialization, base change, enough points, shreds and stalk comparison; OrientedNearbyCycles.modificationBaseChange for a coherent irreducible base, finitely presented map and bounded constructible invertible-torsion coefficients. Stack descent uses §1.4.
+- **DeligneWeightsAndPurity**: DWP.0 (§0.12 weights under a finite extension of the base field, §0.15 twists and Tate twists), §5.5 (finite geometric monodromy of rank-one ℓ-adic Weil representations, and finite determinant after a rank-one Weil twist of an irreducible system), DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties), §8.24 (`dmStack_etaleCohomology`: the rational constructible étale coefficients and cohomology of a finite-type Deligne–Mumford stack over F_q, with its atlas, refinement, pullback, Frobenius and finiteness API).
+- **FunctionFieldArithmetic**: §0.3 (`Cl(F) ≅ Pic(X) ≅ Pic_{X/k}(k)` compatibly with degree, and `Cl⁰(F) ≅ J(k)`), §2.2 (the self-dual measure of a differential and its volumes), §§5.1 and 5.3 (the zeta series with its Euler product and point counts; its rationality), §5.8 (for a finite Galois extension of F, every conjugacy class occurs as arithmetic Frobenius at unramified places of every sufficiently large degree compatible with the constant-field congruence, and at no place of incompatible degree), §§6.1–6.4 (adelic points G(A) of affine groups with G(F) discrete and finite stabilizers; the automorphic function modules of level U modulo a central lattice Ξ with their Hecke action; constant terms and the cusp module when p is invertible in the coefficients; function-field reduction and the uniform finite support and finite generation of cusp forms for every connected reductive G, every compact open U and every Noetherian coefficient ring in which p is invertible, nonsplit and anisotropic groups included). Assumed of Ξ: the double quotient `Z(F)\Z(A)/((Z(A)∩U)Ξ)` is finite, as in §6.2.
+- **ArithmeticGaloisDuality**: §R02.3.2, *Function-field places, ideles and S-units* (`GlobalFunctionField.ideles`, the idele class group, `ideleDegree` with `ideleDegree_surjective` and `compactSpace_ideleClassGroup_degree_zero`) and *The class formation of a global function field* (`GlobalFunctionField.classFormation`: the exact sequence `0 → Br(F) → ⊕_v Br(F_v) → Q/Z → 0` whose last map is the sum of the local invariants, and reciprocity compatible with local reciprocity).
+- **MotivesAndAlgebraicCycles**: §§6.1–6.2 (neutral fibre data over a field, finite reconstruction, and the reconstructed affine group with its antipode and the symmetric monoidal equivalence with its finite-dimensional representations).
 - **LanglandsParameterStacks**: §LP0.1 (restriction and functoriality of crossed cocycles), §LP1.11 (Weil–Deligne parameters), §§LP2e.9–LP2e.14 (excursion algebras of an arbitrary group over a finite quotient, the universal excursion relations, excursion data and excursion matrix coefficients), §§LP2c.1–LP2c.4 (pseudocharacters with prescribed finite projection, reconstruction for an arbitrary group and groups with reductive identity component, Weil continuity). Assumed: reconstruction of a G-completely reducible representation from a pseudocharacter over an algebraically closed field, for an arbitrary group, unique up to conjugacy.
 - **IntegralHeckeAndGaloisDeterminants**: IHG.0 (*A determinant is determined by its trace when d! is invertible*) and IHG.1 (*Semisimple reconstruction of field determinants*).
 - **ReductiveGroupsPartII**: §RG2.3.7, *lang-theorem* (surjectivity of x↦x⁻¹Frob_q(x) for a smooth geometrically connected finite-type group over F_q, and H¹(F_q,H)=1); §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group).
@@ -80,32 +87,29 @@ Mathlib at `6b7abb3c7686292736be2955bd3eb9ebf63b456a` (with Tau Ceti at `a91d3aa
 
 ### Additional supplier requirements
 
-
-What FunctionFieldArithmetic must provide (gap:function-field-arithmetic): Global function-field adeles and ideles, finite-level reciprocity, differential additive characters and self-dual measures, zeta and Chebotarev theorems, constant terms and cuspidal support modulo a central lattice, with the full contracts labelled FA.1–FA.6 in this roadmap. Section: FA.1–FA.6.
-
 What SmoothRepresentationsOfLocalGroups must provide (gap:classical-centre-restriction): Show that the completed central elements produced by restricted-shtuka excursions restrict to the ordinary smooth Bernstein centre over characteristic-zero coefficients, with compatible level actions; compatible completed corners alone do not supply finite support. Section: SR.1.3 and SR.3.2.
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:equal-characteristic-glr-correspondence): Supply the local Langlands correspondence for every GL_r over a local field of characteristic p, with Frobenius-semisimplified Weil–Deligne parameters including monodromy, central characters and all local pair L and epsilon factors. Section: SR.5.2.
 
-What AlgebraicModuliForArithmeticGeometry must provide (gap:elliptic-sheaf-carrier): Supply rank-n elliptic sheaves on X with chosen infinity, commuting bundle and Frobenius chains, periodicity with the degree of infinity included, prescribed locally free quotients on the pole and zero graphs, degree normalization and compatible levels, for the comparison in GS.2.7. Section: elliptic-sheaf moduli (additional contract).
+What AlgebraicModuliForArithmeticGeometry must provide (gap:elliptic-sheaf-carrier): Supply rank-n elliptic sheaves on X with chosen infinity, commuting bundle and Frobenius chains, periodicity with the degree of infinity included, prescribed locally free quotients on the pole and zero graphs, degree normalization and compatible levels, for the comparison in §2.7. Section: elliptic-sheaf moduli (additional contract).
 
 What AdelicAlgebraicGroups must provide (gap:function-field-sl-volume): For every r≥1 over F=F_q(X), prove the SL_r Tamagawa number is 1 and compare its gauge measure with product Haar measure giving every SL_r(O_v) volume 1: the quotient volume is q^((g−1)(r²−1)) times the product of Z_X(q^(−i)) for 2≤i≤r. Section: AA.2.4 and AA.3.1.
 
-The FA labels in the scope and Needs lines specify the first gap, rather than asserting existing targets. The elliptic-sheaf contract is additional moduli theory; it is not a claim about the present contents of AlgebraicModuliForArithmeticGeometry.
+The elliptic-sheaf contract is additional moduli theory; it is not a claim about the present contents of AlgebraicModuliForArithmeticGeometry.
 
 ## How to read the build
 
-Layer GS.0 builds Bun_𝒢 with its level structures, flags and HN data, and identifies its F_q-points with adelic double cosets. Layer GS.1 builds the Beilinson–Drinfeld Grassmannian and Hecke stacks, extends ℓ-adic sheaf theory to the stacks that occur, and proves the geometric Satake equivalence over finite fields with its global, nonsplit and integral variants. Layer GS.2 constructs shtukas as Hecke stacks pulled back along Frobenius, with their cohomology sheaves, partial Frobenius, coalescence and Hecke operators. Layer GS.3 controls this cohomology: creation and annihilation, the Eichler–Shimura relation, Hecke finiteness and cuspidality, and the PGL₂ boundary analysis. Layer GS.4 proves Drinfeld's lemma and constructs the product Galois actions. Layer GS.5 builds excursion operators and proves the global decomposition. Layer GS.6 adds constant twists, companions and the GL_r comparison on top of AL.3. Layer GS.7 constructs the local parameterization and proves the comparisons at every place.
+Layer 0 builds Bun_𝒢 with its level structures, flags and HN data, and identifies its F_q-points with adelic double cosets. Layer 1 builds the Beilinson–Drinfeld Grassmannian and Hecke stacks, extends ℓ-adic sheaf theory to the stacks that occur, and proves the geometric Satake equivalence over finite fields with its global, nonsplit and integral variants. Layer 2 constructs shtukas as Hecke stacks pulled back along Frobenius, with their cohomology sheaves, partial Frobenius, coalescence and Hecke operators. Layer 3 controls this cohomology: creation and annihilation, the Eichler–Shimura relation, Hecke finiteness and cuspidality, and the PGL₂ boundary analysis. Layer 4 proves Drinfeld's lemma and constructs the product Galois actions. Layer 5 builds excursion operators and proves the global decomposition. Layer 6 adds constant twists, companions and the GL_r comparison on top of AL.3. Layer 7 constructs the local parameterization and proves the comparisons at every place.
 
 Each target states its hypotheses, sources, API and Checks. Suggested.lean lists the geometric headline theorems and the carriers they lack at the pins. Numerical controls and abstract algebraic API remain in this README; they are not substitute acceptance theorems.
 
-## Layer GS.0: bundles, levels and adelic geometry
+## Layer 0: bundles, levels and adelic geometry
 
 This layer builds the moduli of bundles on the curve and its adelic description. Three distinctions run through it: a full level structure (a trivialization on a finite subscheme that keeps its nilpotents) is different data from an Iwahori flag; a weighted stack volume is different from an unweighted count of isomorphism classes; and Harder–Narasimhan instability, measured in the adjoint group, does not bound the central degree, which is controlled separately by a central lattice Ξ.
 
 Standing hypotheses for this layer: X is a smooth projective geometrically connected curve over k = F_q with function field F; the generic group G/F is connected reductive with a chosen smooth affine model 𝒢/X with connected fibres, reductive over a nonempty open U (split statements use the constant split model); bundle statements are over arbitrary k-schemes S. The Iwahori and shifted-HN targets are stated for GL_n or PGL_2, as indicated.
 
-### GS.0.1 Bundles on the global curve
+### 0.1 Bundles on the global curve
 
 Define BunG. For X/F_q smooth projective geometrically connected and a smooth affine model 𝒢/X with connected fibres and reductive generic fibre G, Bun_𝒢(S) is the groupoid of fppf-locally trivial 𝒢-torsors on X×S and equivariant isomorphisms. It is an Artin stack locally of finite type with affine diagonal. Its geometric stabilizers are affine finite-type group schemes; stabilizers of rational objects have finitely many F_q-points.
 
@@ -115,7 +119,7 @@ Define BunG. For X/F_q smooth projective geometrically connected and a smooth af
 
 *Remark.* GL_n-torsors recover the rank-n vector bundles of AlgebraicVectorBundles.
 
-*Remark.* For a quasi-split model that is reductive over all of X this is the fixed-curve stack `CurveBundles` of EndoscopicTransferAndUnitaryTraceComparison §3.1. This target adds smooth affine models with connected fibres that are reductive only over U (parahoric at the remaining points), the affine diagonal and the stabilizer statements, and restricts to §3.1 on reductive models.
+*Remark.* For a quasi-split model that is reductive over all of X this is the fixed-curve stack `CurveBundles` of EndoscopicTransferAndUnitaryTraceComparison §3.1. This target adds smooth affine models with connected fibres that are reductive only over U, with no parahoric condition at the remaining points, the affine diagonal and the stabilizer statements, and restricts to §3.1 on reductive models.
 
 The API:
 
@@ -129,12 +133,13 @@ The API:
 - For GL₁ the result is the Picard stack, with automorphism group F_q× at every rational line bundle.
 - For a constant G the trivial torsor has rational automorphism group G(F_q).
 - On P¹, the degree-zero GL₂ bundles O(m)⊕O(−m), m≥0, have unbounded instability; fixing degree alone does not give a finite-type stack.
+- Let 𝒢 be the model of G_m over P¹/F₃ that agrees with G_m away from a rational point x and whose O_x-points are 1 + π_x O_x (locally `Spec O_x[y, (1 + π_x y)⁻¹]` with law y + y′ + π_x y y′; its fibre at x is G_a, so it is smooth affine with connected fibres but not parahoric). Bun_𝒢 is the stack of line bundles with a trivialization of the fibre at x: each degree has one rational isomorphism class, with trivial automorphism group, whereas the same line bundle without the trivialization has automorphism group F₃× of order 2.
 
-Source: [Hein](#references), Proposition 1 and its proof, p. 4 (smooth affine models and their deformation theory); [Var](#references), §2, Notation 2.1(a), p. 4; [VL](#references), §12.1, p. 148.
+Source: [Hein](#references), Proposition 1 and its proof, p. 4 (smooth affine models and their deformation theory); [AH19](#references), Theorem 2.5, p. 8 (flat affine models of finite type); [Var](#references), §2, Notation 2.1(a), p. 4; [VL](#references), §12.1, p. 148.
 
 *Needs:* Mathlib `AlgebraicGeometry.Scheme`; Mathlib `CategoryTheory.Pseudofunctor.IsStack`; SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); ReductiveGroups Layers 0, 1 and 7 (functor of points, representations as comodules, structure theory); EndoscopicTransferAndUnitaryTraceComparison §3.1 (`CurveBundles`); AlgebraicVectorBundles Layers L0A–L2B; SchemeAndStackFoundations §4.14 (Hilbert and Quot schemes).
 
-### GS.0.2 Deformations of bundles
+### 0.2 Deformations of bundles
 
 At a 𝒢-bundle E, infinitesimal automorphisms, tangent classes and obstructions are H⁰(X,ad E), H¹(X,ad E), H²(X,ad E). The last vanishes on the curve, so Bun_𝒢 is smooth of local dimension −χ(X,ad E). For constant reductive G this is (g−1)dim G; a ramified model uses its actual adjoint-bundle Euler characteristic.
 
@@ -146,9 +151,9 @@ At a 𝒢-bundle E, infinitesimal automorphisms, tangent classes and obstruction
 
 Source: [Hein](#references), proof of Proposition 1, p. 4; [YZ](#references), §5.4.1, Proposition 5.17(1), p. 63 (arXiv v2).
 
-*Needs:* [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); SchemeAndStackFoundations Layer 4 (§4.1 torsors of lifts, §§4.3–4.5 deformation functors and obstruction theories).
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); SchemeAndStackFoundations Layer 4 (§4.1 torsors of lifts, §§4.3–4.5 deformation functors and obstruction theories).
 
-### GS.0.3 Full level structures
+### 0.3 Full level structures
 
 Define BunG.level. For a finite closed subscheme N⊂X, `Bun_{𝒢,N}(S)` consists of a bundle E and a trivialization E|N×S≃𝒢|N×S. Forgetting the trivialization is a torsor under `Res_{N/F_q}(𝒢|N)`, hence representable smooth and surjective. Full congruence level and parabolic flags are different moduli data.
 
@@ -170,9 +175,9 @@ The API:
 
 Source: [VL](#references), §1, (1.1), p. 41; §2, Definition 2.1, p. 52.
 
-*Needs:* [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve).
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve).
 
-### GS.0.4 Iwahori flags and fractional twists
+### 0.4 Iwahori flags and fractional twists
 
 Define IwahoriBundle. Bun_n(Σ) consists of rank-n bundles with, at each x∈Σ, a periodic chain E⊃E(−x/n)⊃⋯⊃E(−x), whose n successive quotients are line bundles on x×S. Extend the chain periodically to define fractional twists E(D) for D supported at the level with coefficients in (1/n)Z; for nonrational points use the chosen residue-field sections over S∞. Bun_PGLn(Σ) is the Picard-stack quotient. Fractional twisting induces Atkin–Lehner automorphisms.
 
@@ -195,11 +200,11 @@ The API:
 
 Source: [YZ](#references), §3.1, Definitions 3.1–3.2 and (3.1)–(3.4), pp. 17–19 (arXiv v2).
 
-*Needs:* [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); AlgebraicVectorBundles Layers L0A–L2B.
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); AlgebraicVectorBundles Layers L0A–L2B.
 
-### GS.0.5 Slopes and Harder–Narasimhan data
+### 0.5 Slopes and Harder–Narasimhan data
 
-Define HNType and HNFiltration. For a nonzero coherent sheaf F on X use class (rk F,deg F), slope deg/rk for positive rank and +∞ for torsion. The HN filtration has semistable quotients with strictly decreasing slopes. Its ordered quotient classes define an HN type. For a constant connected reductive group over an algebraically closed field, use its unique canonical parabolic reduction, characterized by semistability of the Levi bundle and a dominant parabolic-regular degree; project its rational coweight to the adjoint group to measure instability. On classes χ((r,d),(r′,d′))=(1−g)rr′+rd′−r′d. Truncations for the general nonsplit/parahoric model are constructed separately in §GS.0.6.
+Define HNType and HNFiltration. For a nonzero coherent sheaf F on X use class (rk F,deg F), slope deg/rk for positive rank and +∞ for torsion. The HN filtration has semistable quotients with strictly decreasing slopes. Its ordered quotient classes define an HN type. For a constant connected reductive group over an algebraically closed field, use its unique canonical parabolic reduction, characterized by semistability of the Levi bundle and a dominant parabolic-regular degree; project its rational coweight to the adjoint group to measure instability. On classes χ((r,d),(r′,d′))=(1−g)rr′+rd′−r′d. Truncations for a general smooth model 𝒢 are constructed separately in §0.6.
 
 *Construction.* The Euler pairing follows from Riemann–Roch and Serre duality on X. First separate the maximal torsion subsheaf, then construct maximal destabilizing saturated subbundles and induct on the rank. The filtration on a geometric fibre is canonical. In a family the HN type can jump; relative sheaf filtrations belong on their HN strata, and no arbitrary-base-change assertion for a filtration on the whole family is made. For reductive G use Schieder's comparison theorem for parabolic reductions and his existence argument, keeping central degree separate from adjoint instability. In arbitrary positive characteristic the map from semistable parabolic reductions to the reduced HN stratum is an almost-isomorphism (finite with a single point in each geometric fibre), not an asserted isomorphism; do not infer uniqueness of reductions over nonreduced bases from uniqueness at geometric points.
 
@@ -224,15 +229,17 @@ The API:
 
 Source: [Sch](#references), §2.1, pp. 306–308; [Schieder](#references), Theorem 2.3.3 and §2.4.1, pp. 12–13, Theorem 4.5.1, pp. 39–40, and §6.3, pp. 52–54; [VL](#references), §1, (1.3) and the following paragraph, p. 41 (adjoint instability bounds).
 
-*Needs:* [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); AutomorphicLFunctionsAndLocalFactors §AL.3, *Curve bundle slopes and Harder–Narasimhan filtrations*; SchemeAndStackFoundations Layer 3 (curves, divisors and Picard objects).
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); AutomorphicLFunctionsAndLocalFactors §AL.3, *Curve bundle slopes and Harder–Narasimhan filtrations*; SchemeAndStackFoundations Layer 3 (curves, divisors and Picard objects).
 
 The numerical Euler form and rank-zero slope convention are specified by the preceding formulas and Checks.
 
-### GS.0.6 Bounded bundle loci
+### 0.6 Bounded bundle loci
 
-HN≤μ is an open substack of Bun_G. For the general nonsplit group with connected parahoric model, choose a vector bundle V with trivialized determinant and a faithful embedding of the adjoint model into SL(V) with quasi-affine quotient. Define `Bun_{G^ad}^{≤μ}` by inverse image of the degree-zero vector-bundle HN open, and `Bun_G^{≤μ}` by pullback along G→G^ad. Changing this embedding gives cofinal systems of opens; intrinsic canonical parabolic reductions of arbitrary parahoric models are not assumed. Fixing the relevant central degrees (or quotienting by a suitable central lattice) makes its bounded components of finite type. For a fixed coherent-sheaf class each HN type has finitely many rational isomorphism classes; requiring all slopes ≥0 gives finitely many such types and classes. An adjoint HN bound alone does not bound degrees of the centre.
+For every smooth affine model 𝒢/X with connected fibres and reductive generic fibre, choose a vector bundle V of rank r with trivialized determinant and a faithful representation ρ:𝒢→SL(V) such that SL(V)/𝒢 and GL(V)/𝒢 are quasi-affine; such a ρ exists for every flat affine group scheme of finite type over X. Then ρ_*:Bun_𝒢→`Bun⁰_{GL_r}` is representable, quasi-affine and of finite presentation, so for every dominant coweight μ of SL_r the inverse image `Bun_𝒢^{≤μ,ρ}` of the HN open `Bun^{0,≤μ}_{GL_r}` is an open substack of finite type. These opens exhaust Bun_𝒢, and a second choice of (V,ρ) gives a cofinal system.
 
-*Proof.* Embed the bounded bundle problem in bounded Quot families after twisting by a sufficiently positive divisor. Use bounded cohomology and finite generation to obtain finite-type atlases; prove openness by specialization of HN polygons. For coherent sheaves with slopes ≥0, ranks and nonnegative quotient degrees admit only finitely many decompositions of the fixed class.
+On a connected parahoric model, as constructed in VL §12.1, apply the same construction to the adjoint group: `Bun_{G^ad}^{≤μ}` is the inverse image of the degree-zero vector-bundle HN open under a faithful representation of the adjoint model, and `Bun_G^{≤μ}` is its pullback along G→G^ad. These adjoint truncations are stable under central twisting; fixing the relevant central degrees (or quotienting by a central lattice) makes their bounded components of finite type. Intrinsic canonical parabolic reductions of arbitrary models are not assumed; for constant split G the bound HN≤μ through the canonical reductions of §0.5 is an open substack of Bun_G. For a fixed coherent-sheaf class each HN type has finitely many rational isomorphism classes; requiring all slopes ≥0 gives finitely many such types and classes. An adjoint HN bound alone does not bound degrees of the centre.
+
+*Proof.* The faithful representation with quasi-affine quotients is AH19 Proposition 2.2(b); finite type of the ρ-truncations is AH19 Remark 2.9, which pulls back the finite-type HN opens of vector bundles along ρ_* (VL Lemma 12.1). Cofinality under a change of (V,ρ) holds because each member of one system is quasi-compact and the other system is an increasing open cover. For vector bundles, embed the bounded bundle problem in bounded Quot families after twisting by a sufficiently positive divisor. Use bounded cohomology and finite generation to obtain finite-type atlases; prove openness by specialization of HN polygons. For coherent sheaves with slopes ≥0, ranks and nonnegative quotient degrees admit only finitely many decompositions of the fixed class.
 
 *Remark.* For G_m the HN condition in the adjoint group is empty, but line-bundle degrees remain unbounded.
 
@@ -240,17 +247,25 @@ HN≤μ is an open substack of Bun_G. For the general nonsplit group with connec
 
 *Remark.* For GL_r, openness and finite type of the bounded loci of vector bundles are AutomorphicLFunctionsAndLocalFactors §AL.3, *Harder–Narasimhan polygon semicontinuity* and *Bounded curve-bundle loci and shtuka truncations*; this target is the statement for G-bundles, with the central degree.
 
-Source: [Var](#references), §2, Notation 2.1(b), p. 4; Lemma A.3, p. 29; §3, Lemma 3.1(a), p. 12; [VL](#references), §12.1, Lemma 12.1 and pp. 148–149.
+**Checks.**
 
-*Needs:* [§GS.0.2 *Deformations of bundles*](#gs02-deformations-of-bundles); [§GS.0.5 *Slopes and Harder–Narasimhan data*](#gs05-slopes-and-hardernarasimhan-data); AutomorphicLFunctionsAndLocalFactors §AL.3, *Harder–Narasimhan polygon semicontinuity* and *Bounded curve-bundle loci and shtuka truncations*.
+- For G_m on P¹ the adjoint bound is empty, so every O(d), d∈Z, satisfies it, and each degree has exactly one rational class. Through ρ(t)=diag(t,t⁻¹) into SL₂, O(d) goes to O(d)⊕O(−d), so the ρ-truncation for μ=(b,−b) contains exactly the degrees |d|≤b and is of finite type with no central quotient.
+- For GL₂ on P¹, O(1)⊕O(−1) has adjoint instability 2: its adjoint bundle O(2)⊕O⊕O(−2) has slopes (2,0,−2), so it lies in the adjoint truncation for μ=(b,0,−b) exactly when b≥2. It fails the bound b=1 and satisfies b=2.
+- For PGL₂ and the bundle induced by O(a)⊕O(−a), a≥0, the adjoint representation into SL₃ and its double into SL₆ give vector bundles with slopes (2a,0,−2a) and (2a,2a,0,0,−2a,−2a). They lie in the bounds μ=(b,0,−b) and μ=(b,b,0,0,−b,−b) respectively exactly when 2a≤b, although their HN polygons differ: the two choices of ρ are cofinal on this family, not equal.
 
-### GS.0.7 Adelic bundle groupoids
+Source: [AH19](#references), Proposition 2.2, p. 6, Theorem 2.5 and Remark 2.9, pp. 8–10; [Var](#references), §2, Notation 2.1(b), p. 4; Lemma A.3, p. 29; §3, Lemma 3.1(a), p. 12; [VL](#references), §12.1, Lemma 12.1 and pp. 148–149.
+
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve); [§0.2 *Deformations of bundles*](#02-deformations-of-bundles); [§0.5 *Slopes and Harder–Narasimhan data*](#05-slopes-and-hardernarasimhan-data); AutomorphicLFunctionsAndLocalFactors §AL.3, *Harder–Narasimhan polygon semicontinuity* and *Bounded curve-bundle loci and shtuka truncations*.
+
+### 0.7 Adelic bundle groupoids
 
 For the connected-fibre model 𝒢, `Bun_{𝒢,N}(F_q)` is equivalent to the disjoint union, over α∈ker¹(F,G), of quotient groupoids [Gα(F)\Gα(A)/Kα,N], where Gα is the pure inner form and Kα,N is transported integral/congruence level. Automorphisms correspond to Gα(F)∩gKα,Ng⁻¹. For split G the kernel is trivial in the situation of VL Remark 8.21.
 
-The local–global input on torsors is part of this target: the finiteness of ker¹(F, G), the identification of its classes with the generic torsor classes that are locally trivial at every place, and the choice of the pure inner form G_α in each class. FunctionFieldArithmetic supplies the adeles, the ideles and the abelian class field theory, but not these nonabelian statements.
+The local–global input on torsors is part of this target: the finiteness of ker¹(F, G), the identification of its classes with the generic torsor classes that are locally trivial at every place, the choice of the pure inner form G_α in each class, and local triviality at every place: H¹(O_v,𝒢)=1, that is, every 𝒢-torsor over O_v is trivial. AutomorphicLFunctionsAndLocalFactors §AL.3 supplies the completion-valued adeles, ArithmeticGaloisDuality §R02.3.2 the ideles and the class formation, and FunctionFieldArithmetic §6.1 the adelic points G(A) with G(F) discrete; none of them supplies these nonabelian statements.
 
-*Proof.* Trivialize at the generic point and completed local discs, retaining a generic torsor class when it is not trivial. Glue the local data and compare changes of trivialization; use connected fibres and Lang descent over finite residue fields. Identify stabilizers and the locally trivial generic classes; choose the inner form belonging to each class.
+*Proof.* Trivialize at the generic point and completed local discs, retaining a generic torsor class when it is not trivial. For local triviality, the special fibre of a 𝒢-torsor over O_v is a torsor under the smooth connected group `𝒢 ⊗ κ_v` over the finite field κ_v, hence has a κ_v-point by Lang's theorem; lift it to an O_v-point through the successive thickenings O_v/π_vⁿ, using smoothness of the torsor, and pass to the limit. Glue the local data and compare changes of trivialization. Identify stabilizers and the locally trivial generic classes; choose the inner form belonging to each class.
+
+*Remark.* Connected fibres are needed for local triviality: if the fibre at v has component group Z/2 with trivial Frobenius action, then H¹(κ_v,Z/2)=Z/2 gives a nontrivial torsor over κ_v, which lifts to a nontrivial torsor over O_v.
 
 *Remark.* The index set classifies generic torsor components, not individual bundles.
 
@@ -258,9 +273,9 @@ The local–global input on torsors is part of this target: the finiteness of ke
 
 Source: [VL](#references), §8, Remark 8.21, pp. 116–117; §12.1, Remark 12.2, p. 150.
 
-*Needs:* [§GS.0.3 *Full level structures*](#gs03-full-level-structures); FunctionFieldArithmetic FA.2 (*Projective completion-valued adeles*); FunctionFieldArithmetic FA.2 (*Ideles and the idele class group*); FunctionFieldArithmetic FA.3 (ramification inputs); ReductiveGroupsPartII §RG2.3.7, *lang-theorem*, for the smooth connected special fibre of 𝒢, with henselian lifting.
+*Needs:* [§0.3 *Full level structures*](#03-full-level-structures); AutomorphicLFunctionsAndLocalFactors §AL.3, *Curve additive analysis* (completion-valued adeles); ArithmeticGaloisDuality §R02.3.2, *Function-field places, ideles and S-units* (ideles and the idele class group); FunctionFieldArithmetic §6.1 (adelic points of affine groups, discreteness of G(F) and finite stabilizers); ReductiveGroupsPartII §RG2.3.7, *lang-theorem*, for the smooth connected special fibre of 𝒢 over each finite residue field; SchemeAndStackFoundations §4.1 (thickenings and torsors of lifts), for lifting points of the smooth torsor over O_v.
 
-### GS.0.8 Shifted Harder–Narasimhan filtrations
+### 0.8 Shifted Harder–Narasimhan filtrations
 
 Define ShiftedHN.semistable and ShiftedHN.filtration. For n≥1 and a dominant real tuple T=(T₁≥⋯≥Tn) define T-semistability of rank-n E by deg F/r−(T₁+⋯+Tr)/r≤deg E/n−(ΣT)/n for every nonzero proper saturated rank-r subbundle. A quotient of ranks (a,b], with 0≤a<b≤n, uses `μ_T=deg/(b−a)−(T_{a+1}+⋯+Tb)/(b−a)`. The canonical T-HN filtration has shifted-semistable quotients with decreasing shifted slopes; it is trivial exactly for T-semistability.
 
@@ -283,11 +298,11 @@ The API:
 
 Source: [Yu](#references), §3.3.1–§3.3.2, (3.3.5), pp. 19–20; [Chau](#references), §4.1, Theorem 4.1.2, p. 17 (author's preprint).
 
-*Needs:* [§GS.0.5 *Slopes and Harder–Narasimhan data*](#gs05-slopes-and-hardernarasimhan-data).
+*Needs:* [§0.5 *Slopes and Harder–Narasimhan data*](#05-slopes-and-hardernarasimhan-data).
 
 The numerical shifted-slope formula is tested by the P¹, constant-shift and consecutive-block Checks above.
 
-### GS.0.9 Parabolic PGL₂ instability
+### 0.9 Parabolic PGL₂ instability
 
 Define ParabolicInstability. Over an algebraically closed field define inst(E†)=min_D inst(E(D/2)), over reduced divisors D⊂Σ. A bundle is purely unstable when this minimum N is positive; then its minimizing D is unique, giving κ=(D,N). Order κ≤κ′ by N′−N≥|D−D′|. The corresponding κ-stratum is isomorphic, via E†↦E(D/2), to the ordinary instability-N PGL₂ stratum.
 
@@ -310,13 +325,13 @@ The API:
 
 Source: [YZ](#references), §3.4.1–§3.4.2, Lemma 3.19 and Corollary 3.20, pp. 29–30 (arXiv v2).
 
-*Needs:* [§GS.0.4 *Iwahori flags and fractional twists*](#gs04-iwahori-flags-and-fractional-twists); [§GS.0.5 *Slopes and Harder–Narasimhan data*](#gs05-slopes-and-hardernarasimhan-data).
+*Needs:* [§0.4 *Iwahori flags and fractional twists*](#04-iwahori-flags-and-fractional-twists); [§0.5 *Slopes and Harder–Narasimhan data*](#05-slopes-and-hardernarasimhan-data).
 
-### GS.0.10 Central lattices and finite quotients
+### 0.10 Central lattices and finite quotients
 
-Choose a central lattice CentralLattice: a discrete free subgroup Ξ of Z(F)\Z(A) whose central-degree map is injective and has finite-index image in the group of central degrees. The degree map pairs an idele with F-rational characters of G. In particular Ξ∩(Z(F)K_N/Z(F))={1}, so the lattice action introduces no extra degree-zero stabilizers. Central tensoring acts on bundles and shtukas. Bounded shtuka loci modulo Ξ have finitely many remaining degree components; rational stabilizer weights are retained. For GL_n, a nonzero-degree idele a gives the quotient by a^Z.
+Choose a central lattice CentralLattice: a discrete free subgroup Ξ of Z(F)\Z(A) whose central-degree map is injective and has finite-index image in the group of central degrees. The degree map pairs an idele with F-rational characters of G. In particular Ξ∩(Z(F)K_N/Z(F))={1}, so the lattice action introduces no extra degree-zero stabilizers. Central tensoring acts on bundles and shtukas. Bounded shtuka loci modulo Ξ have finitely many remaining degree components; rational stabilizer weights are retained. For GL_n, a nonzero-degree idele a gives the quotient by a^Z. For a general smooth model 𝒢, the saturation `⋃_{ξ∈Ξ} ξ·Bun_𝒢^{≤μ,ρ}` of a ρ-truncation of §0.6 is a Ξ-stable open substack whose quotient by Ξ is of finite type; on a connected parahoric model these saturations and the adjoint truncations of §0.6 are cofinal modulo Ξ. As in VL, where Ξ is a lattice, Ξ is also required to make `Z(F)\Z(A)/((Z(A)∩U)Ξ)` finite for every compact open U ⊂ G(A), which is the hypothesis on Ξ in FunctionFieldArithmetic §6.2. For split Z, in particular for GL_n, this follows from the finite-index condition; for semisimple G, where Z is finite and Ξ={1}, from compactness of Z(A).
 
-*Proof.* Use the idele-degree exact sequence to isolate the free central directions. Check the tensor action and level compatibility, then choose Ξ so the remaining central degrees form a finite set. Prove finite-type assertions for each HN bound after taking this quotient.
+*Proof.* Use the idele-degree exact sequence to isolate the free central directions. Check the tensor action and level compatibility, then choose Ξ so the remaining central degrees form a finite set. Prove finite-type assertions for each HN bound after taking this quotient. The saturation is open as a union of opens, and its quotient by Ξ is the image of the finite-type stack `Bun_𝒢^{≤μ,ρ}`, hence quasi-compact and locally of finite type; cofinality modulo Ξ holds because each member of either system is quasi-compact in the quotient and the other system is an increasing open cover. For split Z ≅ G_m^d the degree-zero part of `Z(F)\Z(A)` is a product of d compact degree-zero idele class groups (ArithmeticGaloisDuality §R02.3.2), so finite index of the degree image of Ξ makes the double quotient finite. For finite Z, Z(A) is the product of the finite groups Z(F_v) over the bad places with the compact groups Z(O_v) elsewhere, since Z(O_v)=Z(F_v) for a finite model.
 
 *Remark.* For GL_n tensoring by a line bundle of degree d changes degree by nd.
 
@@ -332,9 +347,9 @@ The API: CentralLattice.degree_injective detects the identity in Ξ by its degre
 
 Source: [VL](#references), §2, before Definition 2.14, p. 59; §8, Remark 8.21, p. 116.
 
-*Needs:* [§GS.0.6 *Bounded bundle loci*](#gs06-bounded-bundle-loci); FunctionFieldArithmetic FA.2 (*Ideles and the idele class group*).
+*Needs:* [§0.6 *Bounded bundle loci*](#06-bounded-bundle-loci); ArithmeticGaloisDuality §R02.3.2, *Function-field places, ideles and S-units* (ideles, `ideleDegree`, its surjectivity and the compact degree-zero idele classes).
 
-### GS.0.11 Adelic orbit masses
+### 0.11 Adelic orbit masses
 
 Normalize vol(K)=1 for GL_n. The adelic orbit corresponding to E has mass 1/|Aut(E)|. In the diagonal kernel Σγ∈GL_n(F)1_K(g⁻¹γg), the value is |Aut(E)|; consequently its integral over a finite HN-truncated union counts bundle isomorphism classes without weights. General stack volumes remain weighted.
 
@@ -346,9 +361,9 @@ Normalize vol(K)=1 for GL_n. The adelic orbit corresponding to E has mass 1/|Aut
 
 Source: [Yu](#references), §3.3.1, Theorem 3.3.1, (3.3.1) and (3.3.6), pp. 18–19.
 
-*Needs:* [§GS.0.6 *Bounded bundle loci*](#gs06-bounded-bundle-loci); [§GS.0.7 *Adelic bundle groupoids*](#gs07-adelic-bundle-groupoids); FunctionFieldArithmetic FA.6 (*Arithmetic automorphic function spaces*).
+*Needs:* [§0.6 *Bounded bundle loci*](#06-bounded-bundle-loci); [§0.7 *Adelic bundle groupoids*](#07-adelic-bundle-groupoids); FunctionFieldArithmetic §§6.1–6.2 (finite stabilizers of adelic points; automorphic function modules).
 
-### GS.0.12 Nonsplit bundle descent
+### 0.12 Nonsplit bundle descent
 
 For nonsplit G, choose a finite splitting extension and compatible integral model away from the bad places. Torsors with effective descent data recover 𝒢-bundles, and the rational groupoid decomposes into the pure-inner-form components indexed by ker¹(F,G). The component decomposition is preserved by spherical Hecke correspondences.
 
@@ -360,13 +375,13 @@ For nonsplit G, choose a finite splitting extension and compatible integral mode
 
 Source: [VL](#references), §12.1, Remark 12.2 and Theorem 12.3, pp. 148–152; §12.3.2, pp. 159–161.
 
-*Needs:* [§GS.0.7 *Adelic bundle groupoids*](#gs07-adelic-bundle-groupoids); Mathlib `CategoryTheory.Pseudofunctor.DescentData`.
+*Needs:* [§0.7 *Adelic bundle groupoids*](#07-adelic-bundle-groupoids); Mathlib `CategoryTheory.Pseudofunctor.DescentData`.
 
-### GS.0.13 Bundle and torsion mass identities
+### 0.13 Bundle and torsion mass identities
 
 With vol(𝒞)=Σ[F]1/|Aut F|, for r≥1 and d∈Z one has `vol(Bun_{r,d})=q^((g−1)(r²−1))|Pic⁰(F_q)|/(q−1)·∏_{i=2}^r` Z_X(q^(−i)). The torsion series is `Σ_{l≥0}` `vol(Coh_{0,l})s^l=∏_{i≥1}Z_X(q^(−i)s)`, equivalently the plethystic exponential Exp([X]s/(q−1)) with Adams operations using all extension-field point counts. The product for positive-rank coherent sheaves extends to i≥2 without the upper bound r.
 
-*Proof.* Use AdelicAlgebraicGroups (gap:function-field-sl-volume) to supply the determinant-trivialized SL_r quotient volume. For each degree-d Picard class choose an adelic determinant representative. Right translation identifies its determinant-trivialized fibre with an SL_r adelic quotient whose compact subgroup is a GL_r-conjugate of the standard one. Conjugation on SL_r has modulus 1, so these compact subgroups all have Haar volume 1. Summing over Pic^d(F_q), with the q−1 scalar automorphisms, gives the bundle formula using §GS.0.11. The volume calculation is a separate input, not an application of the bundle mass formula itself. Factor torsion sheaves by closed-point support and sum local partition masses to obtain the Euler product. Stratify a coherent sheaf by its torsion subsheaf and vector-bundle quotient; the extension factor yields the final infinite product.
+*Proof.* Use AdelicAlgebraicGroups (gap:function-field-sl-volume) to supply the determinant-trivialized SL_r quotient volume. For each degree-d Picard class choose an adelic determinant representative. Right translation identifies its determinant-trivialized fibre with an SL_r adelic quotient whose compact subgroup is a GL_r-conjugate of the standard one. Conjugation on SL_r has modulus 1, so these compact subgroups all have Haar volume 1. Summing over Pic^d(F_q), with the q−1 scalar automorphisms, gives the bundle formula using §0.11. The volume calculation is a separate input, not an application of the bundle mass formula itself. Factor torsion sheaves by closed-point support and sum local partition masses to obtain the Euler product. Stratify a coherent sheaf by its torsion subsheaf and vector-bundle quotient; the extension factor yields the final infinite product.
 
 *Remark.* r=1 gives |Pic⁰(F_q)|/(q−1).
 
@@ -376,21 +391,21 @@ With vol(𝒞)=Σ[F]1/|Aut F|, for r≥1 and d∈Z one has `vol(Bun_{r,d})=q^((g
 
 Source: [Sch](#references), §4.2, Theorem 4.1(i)–(iii), pp. 316–317; Appendix A, p. 356.
 
-*Needs:* [§GS.0.5 *Slopes and Harder–Narasimhan data*](#gs05-slopes-and-hardernarasimhan-data); [§GS.0.11 *Adelic orbit masses*](#gs011-adelic-orbit-masses); FunctionFieldArithmetic FA.5 (*Closed-point zeta series*); AdelicAlgebraicGroups §§AA.2.4 and AA.3.1 (gap:function-field-sl-volume).
+*Needs:* [§0.5 *Slopes and Harder–Narasimhan data*](#05-slopes-and-hardernarasimhan-data); [§0.11 *Adelic orbit masses*](#011-adelic-orbit-masses); FunctionFieldArithmetic §§5.1 and 5.3 (the zeta series, its Euler product and point counts; rationality); AdelicAlgebraicGroups §§AA.2.4 and AA.3.1 (gap:function-field-sl-volume).
 
-### GS.0.14 Cuspidal functions and bundle functions
+### 0.14 Cuspidal functions and bundle functions
 
-Define BunG.automorphicFunctions and its cuspidal subspace. Transport the automorphic and constant-term spaces of FunctionFieldArithmetic FA.6 to finitely supported functions on the groupoid `Bun_{𝒢,N}(F_q)/Ξ`. A function is cuspidal when every proper-parabolic constant term vanishes, with the unipotent quotient measure normalized to total mass one. This target is the interface between the stack and the adelic description, inner-form components included; automorphic representation theory itself is FA.6's.
+Define BunG.automorphicFunctions and its cuspidal subspace. Transport the automorphic function modules and constant terms of FunctionFieldArithmetic §§6.2–6.3, applied to each pure inner form G_α of §0.7 at the level `K_{α,N}` and with the central lattice Ξ, to finitely supported functions on the groupoid `Bun_{𝒢,N}(F_q)/Ξ`. A function is cuspidal when every proper-parabolic constant term vanishes, with the unipotent quotient measure normalized to total mass one. This target is the interface between the stack and the adelic description, inner-form components included; automorphic function theory itself is FunctionFieldArithmetic's.
 
-For a connected reductive G with a connected parahoric model, the finiteness of the support of cuspidal functions of fixed level modulo Ξ (Harder; recalled in VL §12.1, p. 151) is part of this target. FunctionFieldArithmetic FA.6 (*Harder support and central-degree finiteness*) proves it for split groups.
+The finiteness of the support of cuspidal functions of fixed level modulo Ξ (Harder; recalled in VL §12.1, p. 151) is FunctionFieldArithmetic §6.4, for every connected reductive group, every compact open level and every Noetherian coefficient ring in which p is invertible; E, O_E and O_E/λ^s qualify because ℓ ≠ p. This target transports it along the groupoid equivalence of [§0.7 *Adelic bundle groupoids*](#07-adelic-bundle-groupoids), for an arbitrary smooth model 𝒢 with connected fibres.
 
-*Construction.* Pull the constant-term maps of FA.6 across the groupoid equivalence of [§GS.0.7 *Adelic bundle groupoids*](#gs07-adelic-bundle-groupoids). Retain stabilizer weights when the maps are written as sums of bundle correspondences. Use the compact-support theorem modulo the centre with the lattice Ξ.
+*Construction.* Pull the constant-term maps of FunctionFieldArithmetic §6.3 across the groupoid equivalence of [§0.7 *Adelic bundle groupoids*](#07-adelic-bundle-groupoids). Retain stabilizer weights when the maps are written as sums of bundle correspondences. Use the compact-support theorem of FunctionFieldArithmetic §6.4 with the lattice Ξ, whose finiteness hypothesis is checked in §0.10.
 
 *Remark.* The resulting fixed-level cusp space is finite-dimensional over E.
 
 The API:
 
-- BunG.automorphicFunctions (equivalence): Identify compactly supported functions on the bundle groupoid with the adelic functions of FA.6.
+- BunG.automorphicFunctions (equivalence): Identify compactly supported functions on the bundle groupoid with the adelic functions of FunctionFieldArithmetic §6.2.
 - BunG.constantTerm (compatibility): Transport each proper-parabolic constant term with its measure.
 - BunG.cuspLattice (characterisation): Intersect cuspidal E-valued functions with the integral function lattice.
 
@@ -402,11 +417,11 @@ The API:
 
 Source: [VL](#references), §8, Notation 8.22 and Proposition 8.23, p. 117.
 
-*Needs:* [§GS.0.7 *Adelic bundle groupoids*](#gs07-adelic-bundle-groupoids); [§GS.0.10 *Central lattices and finite quotients*](#gs010-central-lattices-and-finite-quotients); FunctionFieldArithmetic FA.6 (*Arithmetic automorphic function spaces*); FunctionFieldArithmetic FA.6 (*Cuspidal constant terms*); FunctionFieldArithmetic FA.6 (*Harder support and central-degree finiteness*).
+*Needs:* [§0.7 *Adelic bundle groupoids*](#07-adelic-bundle-groupoids); [§0.10 *Central lattices and finite quotients*](#010-central-lattices-and-finite-quotients); FunctionFieldArithmetic §6.2 (automorphic function modules); FunctionFieldArithmetic §6.3 (constant terms and the cusp module); FunctionFieldArithmetic §6.4 (compact support and finiteness of cusp forms).
 
-### GS.0.15 The Picard stack and rank-one Lang fibres
+### 0.15 The Picard stack and rank-one Lang fibres
 
-For G = G_m, identify `Bun_{G_m}` with the Picard stack supplied by SchemeAndStackFoundations §3.7 (picardStack, aut_eq_units, toPicardSheaf, isGerbe, tensor and baseChange). Its supplied G_m-gerbe over Pic_X retains scalar automorphisms. This target adds the Frobenius–Lang fibres and their central-lattice quotient. A rank-one shtuka with legs is a point of a fibre of the Lang map L = Frob_q − id. On the identity component Pic⁰ the Lang map is a finite étale isogeny with kernel Pic⁰(F_q); on the whole Picard scheme its kernel contains Pic(X)(F_q) and is infinite, and only after the quotient by the central lattice Ξ do finitely many degree components remain. Rank-one reciprocity itself, the identification of these Lang torsors with characters of the idele class group under the geometric-Frobenius normalization, is AutomorphicLFunctionsAndLocalFactors §AL.3, *Rank-one unramified reciprocity* and *Ramified rank-one curve reciprocity*; this target is the stack-level description that the horocycle computations of Layer GS.3 use.
+For G = G_m, identify `Bun_{G_m}` with the Picard stack supplied by SchemeAndStackFoundations §3.7 (picardStack, aut_eq_units, toPicardSheaf, isGerbe, tensor and baseChange). Its supplied G_m-gerbe over Pic_X retains scalar automorphisms. This target adds the Frobenius–Lang fibres and their central-lattice quotient. A rank-one shtuka with legs is a point of a fibre of the Lang map L = Frob_q − id. On the identity component Pic⁰ the Lang map is a finite étale isogeny with kernel Pic⁰(F_q); on the whole Picard scheme its kernel contains Pic(X)(F_q) and is infinite, and only after the quotient by the central lattice Ξ do finitely many degree components remain. Rank-one reciprocity itself, the identification of these Lang torsors with characters of the idele class group under the geometric-Frobenius normalization, is AutomorphicLFunctionsAndLocalFactors §AL.3, *Rank-one unramified reciprocity* and *Ramified rank-one curve reciprocity*; this target is the stack-level description that the horocycle computations of Layer 3 use.
 
 *Proof.* Pass from line bundles to their Picard classes, keeping the scalar automorphisms. Apply Lang's theorem on the connected Jacobian Pic⁰ only, and keep the other degree components until the quotient by Ξ. Compare with the rank-one reciprocity of AL.3, recording the inversion from arithmetic to geometric Frobenius.
 
@@ -422,26 +437,26 @@ For G = G_m, identify `Bun_{G_m}` with the Picard stack supplied by SchemeAndSta
 
 Source: [LL](#references), Chapter VI §1d, remark after Theorem VI.9, p. 158; §1e, proof of Proposition VI.11, p. 159.
 
-*Needs:* [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve); [§GS.0.10 *Central lattices and finite quotients*](#gs010-central-lattices-and-finite-quotients); FunctionFieldArithmetic FA.1 (*Divisor classes, Picard points and torsors*); AutomorphicLFunctionsAndLocalFactors §AL.3, *Rank-one unramified reciprocity* and *Ramified rank-one curve reciprocity*; JacobianChallenge Layers D and F (the Picard functor, the Jacobian and the Abel–Jacobi map); SchemeAndStackFoundations §3.7 (Picard stacks, gerbes, tensor product and base change); ReductiveGroupsPartII §RG2.3.7, *lang-theorem*, applied to the smooth geometrically connected finite-type group Pic⁰.
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve); [§0.10 *Central lattices and finite quotients*](#010-central-lattices-and-finite-quotients); FunctionFieldArithmetic §0.3 (divisor classes and Picard points over a finite field); AutomorphicLFunctionsAndLocalFactors §AL.3, *Rank-one unramified reciprocity* and *Ramified rank-one curve reciprocity*; JacobianChallenge Layers D and F (the Picard functor, the Jacobian and the Abel–Jacobi map); SchemeAndStackFoundations §3.7 (Picard stacks, gerbes, tensor product and base change); ReductiveGroupsPartII §RG2.3.7, *lang-theorem*, applied to the smooth geometrically connected finite-type group Pic⁰.
 
 ### Examples
 
-- *Rank one.* For G = G_m the bundle groupoid over F_q has the Picard group as its set of isomorphism classes and F_q^× as the automorphism group of every object; the stack mass of a single line bundle is 1/(q − 1), while the diagonal-kernel contribution of §GS.0.11 is 1 ([§GS.0.11 *Adelic orbit masses*](#gs011-adelic-orbit-masses)).
-- *The projective line.* On P¹ the rank-two bundles O(m) ⊕ O(−m) all have degree zero and instability 2m; they leave every bounded open of [§GS.0.6 *Bounded bundle loci*](#gs06-bounded-bundle-loci). The bundle O(1) ⊕ O(−1) is unstable in the ordinary sense and T-semistable for T = (1, −1) ([§GS.0.8 *Shifted Harder–Narasimhan filtrations*](#gs08-shifted-hardernarasimhan-filtrations)).
-- *Euler pairing.* On a genus-g curve χ(O, O) = 1 − g; on P¹, χ(O, O(1)) = 2 = h⁰(O(1)) while χ(O(1), O) = 0, which fixes the sign of the antisymmetric term in [§GS.0.5 *Slopes and Harder–Narasimhan data*](#gs05-slopes-and-hardernarasimhan-data).
-- *Masses.* For r = 1 the formula of [§GS.0.13 *Bundle and torsion mass identities*](#gs013-bundle-and-torsion-mass-identities) gives `vol(Bun_{1,d})` = |Pic⁰(F_q)|/(q − 1), and the coefficient of s in the torsion series is #X(F_q)/(q − 1).
+- *Rank one.* For G = G_m the bundle groupoid over F_q has the Picard group as its set of isomorphism classes and F_q^× as the automorphism group of every object; the stack mass of a single line bundle is 1/(q − 1), while the diagonal-kernel contribution of §0.11 is 1 ([§0.11 *Adelic orbit masses*](#011-adelic-orbit-masses)).
+- *The projective line.* On P¹ the rank-two bundles O(m) ⊕ O(−m) all have degree zero and instability 2m; they leave every bounded open of [§0.6 *Bounded bundle loci*](#06-bounded-bundle-loci). The bundle O(1) ⊕ O(−1) is unstable in the ordinary sense and T-semistable for T = (1, −1) ([§0.8 *Shifted Harder–Narasimhan filtrations*](#08-shifted-hardernarasimhan-filtrations)).
+- *Euler pairing.* On a genus-g curve χ(O, O) = 1 − g; on P¹, χ(O, O(1)) = 2 = h⁰(O(1)) while χ(O(1), O) = 0, which fixes the sign of the antisymmetric term in [§0.5 *Slopes and Harder–Narasimhan data*](#05-slopes-and-hardernarasimhan-data).
+- *Masses.* For r = 1 the formula of [§0.13 *Bundle and torsion mass identities*](#013-bundle-and-torsion-mass-identities) gives `vol(Bun_{1,d})` = |Pic⁰(F_q)|/(q − 1), and the coefficient of s in the torsion series is #X(F_q)/(q − 1).
 
 ### Dependencies
 
-Mathlib schemes and pseudofunctor descent; ReductiveGroups; AlgebraicVectorBundles; SchemeAndStackFoundations Layers 1, 3 and 4; JacobianChallenge Layers D and F; EndoscopicTransferAndUnitaryTraceComparison §3.1; AutomorphicLFunctionsAndLocalFactors §AL.3 (vector-bundle HN theory and rank-one reciprocity); FunctionFieldArithmetic FA.1, FA.2, FA.3, FA.5 and FA.6.
+Mathlib schemes and pseudofunctor descent; ReductiveGroups; AlgebraicVectorBundles; SchemeAndStackFoundations Layers 1, 3 and 4; JacobianChallenge Layers D and F; EndoscopicTransferAndUnitaryTraceComparison §3.1; AutomorphicLFunctionsAndLocalFactors §AL.3 (vector-bundle HN theory, rank-one reciprocity and curve additive analysis); FunctionFieldArithmetic §§0.3, 5.1, 5.3 and 6.1–6.4; ArithmeticGaloisDuality §R02.3.2; ReductiveGroupsPartII §RG2.3.7.
 
-## Layer GS.1: the Beilinson–Drinfeld Grassmannian and classical Satake
+## Layer 1: the Beilinson–Drinfeld Grassmannian and classical Satake
 
-The Beilinson–Drinfeld Grassmannian, its Schubert supports and the bounded Hecke stacks come first; they use no sheaf theory and are the geometric input of everything later. Then come ℓ-adic sheaves on the stacks of finite type that occur in this roadmap, fusion, the Satake category with its corrected commutativity constraint, the geometric Satake equivalence over finite fields with ℓ-adic coefficients, the comparison with the classical spherical Satake isomorphism, nonsplit descent through the finite-form L-group, and the integral version that the modular theory of Layer GS.5 needs.
+The Beilinson–Drinfeld Grassmannian, its Schubert supports and the bounded Hecke stacks come first; they use no sheaf theory and are the geometric input of everything later. Then come ℓ-adic sheaves on the stacks of finite type that occur in this roadmap, fusion, the Satake category with its corrected commutativity constraint, the geometric Satake equivalence over finite fields with ℓ-adic coefficients, nonsplit descent through the finite-form L-group, the comparison with the classical spherical Satake isomorphism, and the integral version that the modular theory of Layer 5 needs.
 
-Standing hypotheses for this layer, in addition to those of Layer GS.0: ℓ ≠ p and E/Q_ℓ is a finite extension large enough for the representations in use, with integers O_E and uniformizer λ; half Tate twists use one fixed square root of q; integral and torsion statements replace E by O_E or O_E/λ^s explicitly. A level N ⊂ X is a finite closed subscheme with its nilpotents, and moving legs lie in U ∖ |N|. Whenever bounded geometry is asserted, a finite leg set I, an ordered partition of I and a representation or bound are fixed.
+Standing hypotheses for this layer, in addition to those of Layer 0: ℓ ≠ p and E/Q_ℓ is a finite extension large enough for the representations in use, with integers O_E and uniformizer λ; half Tate twists use one fixed square root of q; integral and torsion statements replace E by O_E or O_E/λ^s explicitly. A level N ⊂ X is a finite closed subscheme with its nilpotents, and moving legs lie in U ∖ |N|. Whenever bounded geometry is asserted, a finite leg set I, an ordered partition of I and a representation or bound are fixed.
 
-### GS.1.1 Beilinson–Drinfeld Grassmannians
+### 1.1 Beilinson–Drinfeld Grassmannians
 
 Define BDGrassmannian. For a finite ordered partition I=I₁⊔⋯⊔Ik, Gr_I^(I₁,…,Ik) over X^I classifies bundles E₀,…,Ek, modifications `E_{j−1}≃E_j` away from the graphs indexed by Ij, and a trivialization of Ek. Beauville–Laszlo gluing identifies it with the same data on the formal discs. It is an ind-scheme, with factorization into products when the corresponding groups of legs are disjoint.
 
@@ -466,9 +481,9 @@ The API:
 
 Source: [VL](#references), §1, Definition 1.6, Notation 1.7, Construction 1.8 and Remark 1.9, pp. 43–44.
 
-*Needs:* [§GS.0.1 *Bundles on the global curve*](#gs01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); ReductiveGroups Layers 0, 1 and 7 (functor of points, representations as comodules, structure theory); RelativeFarguesFontaine §6.5 (the Beauville–Laszlo theorem for modules); EndoscopicTransferAndUnitaryTraceComparison §3.2 (`LocalLoopGrassmannian`); AlgebraicModuliForArithmeticGeometry §1.3 (coherent Grassmannians and partial flags).
+*Needs:* [§0.1 *Bundles on the global curve*](#01-bundles-on-the-global-curve); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); ReductiveGroups Layers 0, 1 and 7 (functor of points, representations as comodules, structure theory); RelativeFarguesFontaine §6.5 (the Beauville–Laszlo theorem for modules); EndoscopicTransferAndUnitaryTraceComparison §3.2 (`LocalLoopGrassmannian`); AlgebraicModuliForArithmeticGeometry §1.3 (coherent Grassmannians and partial flags).
 
-### GS.1.2 Schubert bounds
+### 1.2 Schubert bounds
 
 Define SchubertBound. For dominant coweights (ωi), the one-leg Schubert variety is the reduced closure of the positive-loop orbit t^ω. Over the disjoint-leg locus take their product and define `Gr_{I,ω}` as its reduced Zariski closure in the iterated BD Grassmannian. This differs in general from the larger representation-theoretic inequality bound `Gr_{I,≲ω}`; do not identify the two functors on nonreduced test rings without a theorem.
 
@@ -491,9 +506,9 @@ The API:
 
 Source: [VL](#references), §1, Definition 1.12, p. 46.
 
-*Needs:* [§GS.1.1 *Beilinson–Drinfeld Grassmannians*](#gs11-beilinsondrinfeld-grassmannians).
+*Needs:* [§1.1 *Beilinson–Drinfeld Grassmannians*](#11-beilinsondrinfeld-grassmannians).
 
-### GS.1.3 Global Hecke chains
+### 1.3 Global Hecke chains
 
 Define GlobalHecke. Hecke_I^(I₁,…,Ik) classifies the same modification chain without the final trivialization. On a fixed bound choose jets ni large enough that the loop action factors through `G_{Σni xi}`. The bounded Hecke stack is `(Gr_bound×_{X^I}Bun_{G,Σni xi})/G_{Σni xi}`; this gives its finite-dimensional local model and composition by gluing chains.
 
@@ -515,11 +530,11 @@ The API:
 
 Source: [VL](#references), §1, Definition 1.2, (1.8)–(1.9) and Lemma 1.14, pp. 42, 46–47.
 
-*Needs:* [§GS.0.3 *Full level structures*](#gs03-full-level-structures); [§GS.1.2 *Schubert bounds*](#gs12-schubert-bounds).
+*Needs:* [§0.3 *Full level structures*](#03-full-level-structures); [§1.2 *Schubert bounds*](#12-schubert-bounds).
 
-### GS.1.4 ℓ-adic sheaves on stacks of finite type
+### 1.4 ℓ-adic sheaves on stacks of finite type
 
-Define StackSheaf.constructible. For an algebraic stack 𝒳 locally of finite type over k (a finite field or an algebraic closure of one), with ℓ invertible, and Λ one of O_E/λ^s, O_E or E, define the constructible derived category D_c(𝒳, Λ) on the lisse-étale site, with the operations f^∗, Rf_∗, Rf_!, Rf^!, ⊗ and RHom, the dualizing complex and Verdier duality, and the perverse t-structure with its intermediate extensions. Prove smooth and arbitrary base change for Rf_!, the projection formula, the Künneth formula and the fundamental triangle for an open–closed decomposition; on a Deligne–Mumford stack the étale site gives the same categories, and on a quotient [Y/H] by a smooth affine group H they are the H-equivariant categories of Y. Over F_q, prove the Grothendieck–Lefschetz trace formula for stacks of finite type: for a stratifiable, ι-mixed, convergent complex K₀ bounded above (Sun's class), the sum over the `F_{q^v}-points`, each weighted by the inverse order of its automorphism group, of the traces of Frobenius on stalks equals the absolutely convergent alternating trace of Frobenius on RΓ_c, and Rf_! preserves convergent complexes with the relative version of the formula. These are exactly the operations the shtuka stacks, Hecke stacks and their quotients by Ξ and by finite jet groups need; EtaleDualityAndPerverseSheaves and EtaleCohomologyFoundations state them for schemes.
+Define StackSheaf.constructible. For an algebraic stack 𝒳 locally of finite type over k (a finite field or an algebraic closure of one), with ℓ invertible, and Λ one of O_E/λ^s, O_E or E, define the constructible derived category D_c(𝒳, Λ) on the lisse-étale site, with the operations f^∗, Rf_∗, Rf_!, Rf^!, ⊗ and RHom, the dualizing complex and Verdier duality, and the perverse t-structure with its intermediate extensions. Prove smooth and arbitrary base change for Rf_!, the projection formula, the Künneth formula and the fundamental triangle for an open–closed decomposition; on a Deligne–Mumford stack the étale site gives the same categories (for rational coefficients on a finite-type Deligne–Mumford stack over F_q, the étale theory is the supplied `dmStack_etaleCohomology` of DeligneWeightsAndPurity §8.24, and this target constructs its comparison with the lisse-étale theory, compatibly with that API, and extends it to the Artin stacks, coefficients and six operations stated here), and on a quotient [Y/H] by a smooth affine group H they are the H-equivariant categories of Y. Over F_q, prove the Grothendieck–Lefschetz trace formula for stacks of finite type: for a stratifiable, ι-mixed, convergent complex K₀ bounded above (Sun's class), the sum over the `F_{q^v}-points`, each weighted by the inverse order of its automorphism group, of the traces of Frobenius on stalks equals the absolutely convergent alternating trace of Frobenius on RΓ_c, and Rf_! preserves convergent complexes with the relative version of the formula. These are exactly the operations the shtuka stacks, Hecke stacks and their quotients by Ξ and by finite jet groups need; EtaleDualityAndPerverseSheaves and EtaleCohomologyFoundations state them for schemes.
 
 The morphism f:𝒳→𝒴 is of finite type for the pushforward and extraordinary-operation statements. The domains are those of LO-I and LO-II: Rf_∗:D^+_c→D^+_c, Rf_!:D^−_c→D^−_c, f^∗ and Rf^! on D_c, RHom:(D^−_c)^op×D^+_c→D^+_c, and derived tensor D^−_c×D^−_c→D^−_c. The projection, base-change and Künneth comparisons use these domains, with the factors bounded above in the Künneth formula. Unbounded D_c retains the duality and gluing constructions; this does not assert that every operation is an endofunctor on all of D_c.
 
@@ -536,7 +551,7 @@ The API:
 - StackSheaf.kunneth (compatibility): Rf_! of an external tensor product is the external product of the Rf_!.
 - StackSheaf.duality (structure): The dualizing complex Ω_𝒳 and D = RHom(−, Ω_𝒳), with biduality on D^b_c.
 - StackSheaf.perverse (structure): The perverse t-structure glued from a smooth atlas, its heart, intermediate extension and simple objects.
-- StackSheaf.etaleComparison (compatibility): On a Deligne–Mumford stack the étale and lisse-étale theories agree; on a scheme they are the scheme theory.
+- StackSheaf.etaleComparison (compatibility): On a Deligne–Mumford stack the étale and lisse-étale theories agree, compatibly with atlas refinement, pullback and Frobenius; for rational coefficients over F_q the étale side is DeligneWeightsAndPurity §8.24's `dmStack_etaleCohomology`; on a scheme they are the scheme theory.
 - StackSheaf.traceFormula (relation): For 𝒳₀ of finite type over F_q and K₀ bounded above, stratifiable, ι-mixed and convergent, the weighted point sum equals the convergent alternating trace of Frobenius on RΓ_c, with the relative version for Rf_!.
 
 **Checks.**
@@ -545,12 +560,13 @@ The API:
 - For 𝒳 = B G_m over F̄_q, H^∗(𝒳, Q_ℓ) = Q_ℓ[c] with c in degree 2, so RΓ of the constant sheaf is not bounded; a theory restricted to D^b_c cannot contain it.
 - For a finite constant group Γ over F_q, the Γ-torsors over F_q correspond to the conjugacy classes c of Γ, with automorphism groups the centralizers Z(c), so the weighted point count of B Γ is Σ_c 1/|Z(c)| = Σ_c |c|/|Γ| = 1; this equals the Frobenius trace on H^∗_c(B Γ, Q_ℓ), which is Q_ℓ in degree 0.
 - For B G_m over F_q the weighted point count is 1/(q − 1) = `Σ_{i ≥ 1}` `q^{−i}`, matching the convergent alternating trace of Frobenius on H^∗_c(B G_m), which is Q_ℓ(i) in degree −2i for i ≥ 1.
+- On the Deligne–Mumford stack B C₂ over F_q with E coefficients, the sign local system has H⁰ = 0 and the constant local system has H⁰ = E, also when ℓ = 2; the comparison with `dmStack_etaleCohomology` must keep these two values apart, so it cannot be a comparison of underlying coefficient spaces that forgets the C₂-action.
 
 Source: [LO-I](#references), Theorem 2.3.3, p. 11; §§3.3–3.5, pp. 23–25; §4, pp. 29–37; §5, Theorem 5.5.6, p. 47, and Theorem 5.7.5, p. 61; [LO-II](#references), Theorems 7.5 and 7.7, pp. 20–23; §9, p. 25; Theorem 11.4, p. 30; Theorem 12.1, p. 31; [LO-P](#references), Theorem 4.2, p. 6; Theorem 5.1, p. 7; §6, p. 9; Theorem 8.2, p. 12; [Sun](#references), Theorem 1.1, p. 2; Theorem 4.2(ii), p. 29; §5, p. 37.
 
-*Needs:* SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth); EtaleDualityAndPerverseSheaves §0.5 (global Verdier and Poincaré duality); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); EtaleCohomologyFoundations §§F.10.1–F.10.5 (finite-field descent, Frobenius comparison and traces).
+*Needs:* SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth); EtaleDualityAndPerverseSheaves §0.5 (global Verdier and Poincaré duality); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); EtaleCohomologyFoundations §§F.10.1–F.10.5 (finite-field descent, Frobenius comparison and traces); DeligneWeightsAndPurity §8.24 (`dmStack_etaleCohomology` with its atlas, refinement, pullback, Frobenius and finiteness API).
 
-### GS.1.5 Fusion smallness and convolution
+### 1.5 Fusion smallness and convolution
 
 For globally moving legs, the proper map forgetting intermediate bounded modifications is small and is an isomorphism over distinct legs. Its restriction to the full collision diagonal is semismall, not generally small. Consequently proper pushforward identifies the relevant global IC objects, and convolution on the diagonal preserves perversity.
 
@@ -562,9 +578,9 @@ For globally moving legs, the proper map forgetting intermediate bounded modific
 
 Source: [Var](#references), Appendix A, Lemma A.12, p. 35; Proposition A.13, pp. 35–36.
 
-*Needs:* [§GS.1.3 *Global Hecke chains*](#gs13-global-hecke-chains); [§GS.1.4 *ℓ-adic sheaves on stacks of finite type*](#gs14-ℓ-adic-sheaves-on-stacks-of-finite-type); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps).
+*Needs:* [§1.3 *Global Hecke chains*](#13-global-hecke-chains); [§1.4 *ℓ-adic sheaves on stacks of finite type*](#14-ℓ-adic-sheaves-on-stacks-of-finite-type); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps).
 
-### GS.1.6 Minuscule Hecke geometry at Iwahori level
+### 1.6 Minuscule Hecke geometry at Iwahori level
 
 Define IwahoriHecke. For μ∈{±1}^r, Hk_n^μ(Σ) consists of Iwahori bundles E₀,…,Er and legs xi, with `E_{i−1}→Ei` for μi=1 (the reverse for −1) an injection with invertible cokernel on Γxi preserving every flag step. Legs may meet Σ. Every bundle projection is smooth of relative dimension rn; the bundle-and-leg projection is flat of relative dimension r(n−1), smooth over (X−Σ)^r. Quotient by simultaneous Picard tensoring gives the PGL_n version.
 
@@ -587,15 +603,15 @@ The API:
 
 Source: [YZ](#references), §3.1.3, Definition 3.3 and Proposition 3.4, pp. 19–20 (arXiv v2).
 
-*Needs:* [§GS.0.4 *Iwahori flags and fractional twists*](#gs04-iwahori-flags-and-fractional-twists); [§GS.1.3 *Global Hecke chains*](#gs13-global-hecke-chains).
+*Needs:* [§0.4 *Iwahori flags and fractional twists*](#04-iwahori-flags-and-fractional-twists); [§1.3 *Global Hecke chains*](#13-global-hecke-chains).
 
-### GS.1.7 The classical Satake category
+### 1.7 The classical Satake category
 
-Define ClassicalSatake. For split connected reductive G and coefficient field E of characteristic zero with ℓ≠p, Sat_G is the category of positive-loop-equivariant perverse E-sheaves on Gr_G over F̄_q with finite-dimensional closed support. Convolution uses the twisted product and proper multiplication; the unit is the skyscraper at the unit coset. Total cohomology is the fibre functor after the modified commutativity convention. Finite-field Satake coefficient sheaves carry the specified normalized descent datum; arbitrary Frobenius structures are additional data, treated by the arithmetic Satake category of §GS.1.13.
+Define ClassicalSatake. For split connected reductive G and coefficient field E of characteristic zero with ℓ≠p, Sat_G is the category of positive-loop-equivariant perverse E-sheaves on Gr_G over F̄_q with finite-dimensional closed support. Convolution uses the twisted product and proper multiplication; the unit is the skyscraper at the unit coset. Total cohomology is the fibre functor after the modified commutativity convention. Finite-field Satake coefficient sheaves carry the specified normalized descent datum; arbitrary Frobenius structures are additional data, treated by the arithmetic Satake category of §1.11.
 
 *Construction.* Define equivariance through finite jets on each support. Descend the exterior product to the twisted product and push it along multiplication. Use semismallness for perversity and fusion for associativity; retain the coefficient-field restriction for semisimplicity.
 
-*Remark.* With coefficients of characteristic ℓ the category is not semisimple; this layer uses positive-characteristic coefficients only through the integral version [§GS.1.14 *Integral geometric Satake*](#gs114-integral-geometric-satake).
+*Remark.* With coefficients of characteristic ℓ the category is not semisimple; this layer uses positive-characteristic coefficients only through the integral version [§1.14 *Integral geometric Satake*](#114-integral-geometric-satake).
 
 The API:
 
@@ -613,9 +629,9 @@ The API:
 
 Source: [MV](#references), §2, pp. 3–7; §3, pp. 7–13; §§4–6, pp. 13–21; §7, pp. 23–24; [Ric](#references), Theorem 0.1, p. 2, and Theorem 5.1, p. 20 (geometric and arithmetic categories).
 
-*Needs:* [§GS.1.4 *ℓ-adic sheaves on stacks of finite type*](#gs14-ℓ-adic-sheaves-on-stacks-of-finite-type); [§GS.1.5 *Fusion smallness and convolution*](#gs15-fusion-smallness-and-convolution); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); DeligneWeightsAndPurity DWP.0 (§0.12 weights under a finite extension of the base field, §0.15 twists and Tate twists); EtaleCohomologyFoundations §F.8 (perverse t-structures over a field).
+*Needs:* [§1.4 *ℓ-adic sheaves on stacks of finite type*](#14-ℓ-adic-sheaves-on-stacks-of-finite-type); [§1.5 *Fusion smallness and convolution*](#15-fusion-smallness-and-convolution); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); DeligneWeightsAndPurity DWP.0 (§0.12 weights under a finite extension of the base field, §0.15 twists and Tate twists); EtaleCohomologyFoundations §F.8 (perverse t-structures over a field).
 
-### GS.1.8 Satake signs and Tate normalization
+### 1.8 Satake signs and Tate normalization
 
 Correct the geometric fusion commutativity by an extra minus sign when both objects lie on odd-dimensional components. Then total cohomology has the ordinary symmetric tensor constraint. With a fixed square root of q, normalize IC by the relative dimension shift and half Tate twist, so the spherical trace convention matches normalized Satake.
 
@@ -627,23 +643,23 @@ Correct the geometric fusion commutativity by an extra minus sign when both obje
 
 Source: [MV](#references), §6, Lemma 6.1 and Proposition 6.3, pp. 19–20; [VL](#references), §1, Remarks 1.19 and 1.21, pp. 50–51.
 
-*Needs:* [§GS.1.7 *The classical Satake category*](#gs17-the-classical-satake-category); DeligneWeightsAndPurity DWP.0 (§0.12 weights under a finite extension of the base field, §0.15 twists and Tate twists).
+*Needs:* [§1.7 *The classical Satake category*](#17-the-classical-satake-category); DeligneWeightsAndPurity DWP.0 (§0.12 weights under a finite extension of the base field, §0.15 twists and Tate twists).
 
-### GS.1.9 Classical geometric Satake
+### 1.9 Classical geometric Satake
 
 The corrected symmetric tensor category Sat_G with its total-cohomology fibre functor is equivalent to Rep_E(Ĝ), where Ĝ has the dual based root datum. A chosen Borel and pinning identify the reconstructed group with the chosen dual group. For moving legs this yields ULA coefficient sheaves `S_{I,W}`, functorial in W, compatible with disjoint factorization, convolution, all coalescence maps and relative IC normalization.
 
-*Proof.* The semi-infinite orbits give weight functors: compactly supported cohomology along them is concentrated in degree ⟨2ρ, ν⟩, and their sum is an exact faithful tensor fibre functor. Reconstruct the Tannakian group from the coendomorphism coalgebra of this fibre functor (MV §11) and identify its torus and root datum through the weight functors and restriction to rank-one Levi subgroups (MV §12). Over a finite field with ℓ-adic coefficients the equivalence is Richarz's theorem: over a separably closed field (Ric, Theorem 0.1) and, after Galois descent, over any field with the full L-group (Ric, Theorem 5.1). The relative version over X^I — ULA Satake sheaves that are perverse on every geometric fibre after the shift by dim X^I, with fusion and coalescence — is part of this target. Globalize by descent along the torsor of formal coordinates and by Beilinson–Drinfeld fusion; VL Theorem 1.17 states the multi-leg compatibilities used later.
+*Proof.* The semi-infinite orbits give weight functors: compactly supported cohomology along them is concentrated in degree ⟨2ρ, ν⟩, and their sum is an exact faithful tensor fibre functor. Apply the neutral Tannakian reconstruction of MotivesAndAlgebraicCycles §§6.1–6.2 to Sat_G with this fibre functor; the Satake-specific hypotheses are established here: Sat_G is E-linear abelian and rigid with End(1) = E, and after the sign correction of §1.8 the fibre functor is symmetric monoidal with the ordinary symmetry (MV §§7 and 11). Identify the reconstructed group, its torus and its root datum through the weight functors and restriction to rank-one Levi subgroups (MV §12). Over a finite field with ℓ-adic coefficients the equivalence is Richarz's theorem: over a separably closed field (Ric, Theorem 0.1) and, after Galois descent, over any field with the full L-group (Ric, Theorem 5.1). The relative version over X^I — ULA Satake sheaves that are perverse on every geometric fibre after the shift by dim X^I, with fusion and coalescence — is part of this target. Globalize by descent along the torsor of formal coordinates and by Beilinson–Drinfeld fusion; VL Theorem 1.17 states the multi-leg compatibilities used later.
 
-*Remark.* For a torus obtain the dual torus and its coweight grading.
+*Remark.* For a torus obtain the dual torus and its coweight grading: for G_m the reconstructed coordinate ring is E[z, z⁻¹] with antipode z ↦ z⁻¹, and for G = 1 it is E.
 
 *Remark.* For GL₂ the minuscule IC gives the standard dual representation and associativity agrees under triple fusion.
 
 Source: [MV](#references), §7, Theorem 7.3, p. 23; §11, Proposition 11.1, p. 31; §12, Theorem 12.1, pp. 33–38; [Ric](#references), Theorem 0.1, p. 2; Theorem 5.1, p. 20; [VL](#references), §1, Theorem 1.17, pp. 48–50.
 
-*Needs:* [§GS.1.8 *Satake signs and Tate normalization*](#gs18-satake-signs-and-tate-normalization); ReductiveGroups Layers 0, 1 and 7 (functor of points, representations as comodules, structure theory); ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group); ReductiveGroups Layers 8–9 (classification by root data, pinned Chevalley groups); EtaleCohomologyFoundations §F.2.3 (local and universal local acyclicity).
+*Needs:* [§1.8 *Satake signs and Tate normalization*](#18-satake-signs-and-tate-normalization); MotivesAndAlgebraicCycles §§6.1–6.2 (neutral fibre data, finite reconstruction, and the reconstructed group with its antipode); Tau Ceti `TauCeti.FGPointRepresentationCat` (finite-dimensional algebraic representations of the dual group); ReductiveGroups Layers 0, 1 and 7 (functor of points, representations as comodules, structure theory); ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group); ReductiveGroups Layers 8–9 (classification by root data, pinned Chevalley groups); EtaleCohomologyFoundations §F.2.3 (local and universal local acyclicity).
 
-### GS.1.10 Central action on Satake sheaves
+### 1.10 Central action on Satake sheaves
 
 The positive-loop action of the centre on the bounded Grassmannian and its Satake sheaves is trivial in the descent needed for the central quotient of shtukas; central tensoring of the bundle factor therefore preserves the coefficient sheaf.
 
@@ -653,13 +669,38 @@ The positive-loop action of the centre on the bounded Grassmannian and its Satak
 
 Source: [VL](#references), §1, Remark 1.20, p. 51.
 
-*Needs:* [§GS.0.10 *Central lattices and finite quotients*](#gs010-central-lattices-and-finite-quotients); [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake).
+*Needs:* [§0.10 *Central lattices and finite quotients*](#010-central-lattices-and-finite-quotients); [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake).
 
-### GS.1.11 Normalized spherical Satake
+### 1.11 Nonsplit Satake descent
+
+Over the open where G is reductive, descend split Satake from a finite splitting cover étale over that open with its pinned finite Galois action on Ĝ. The resulting coefficient functor is indexed by algebraic representations of the finite-form L-group Ĝ⋊Q and is compatible with restriction of the prescribed Γ→Q projection. Geometric and algebraic actions differ by the Tate/pinning normalization and must be compared explicitly.
+
+Over a field k₀, the full arithmetic Satake category is equivalent to representations of Ĝ⋊Gal(k₀^sep/k₀) with algebraic Ĝ-action, with continuous arithmetic action on a finite-dimensional vector space over one finite extension of Q_ℓ, as specified in Ric Theorem 5.1. Here k₀=F_q for §1.7 and k₀=F at the generic point for nonsplit descent. The normalized finite-form L-group coefficient functor above is a specified subfunctor of this arithmetic category, not a description of the full category. Before the pinning comparison the semidirect product uses the geometric Galois action; the following comparison transports it to the pinned action.
+
+**Checks.**
+
+- For G=1, a rank-one lisse E-sheaf with Frobenius 1+ℓ is arithmetic Satake data of infinite order and cannot factor through any finite Q.
+- For the same trivial group Frobenius −1 factors through a quotient of order two (also when ℓ=2 in characteristic-zero coefficients).
+- For a nonsplit unramified norm-one torus Frobenius acts by −1 on its rank-one character lattice; trivial arithmetic action would give the wrong spherical algebra.
+- For G = PGL₂ split, so Ĝ = SL₂ with trivial pinned action, γ with cycl(γ) = 3 and u(x) the upper unipotent matrix, the map displayed in Ric Corollary 5.8 sends the product (1,γ)·(u(1),1) of the pinned L-group to (u(1/3),γ), while the product of the two images in the geometric L-group is (u(3),γ). The corrected map below sends both to (u(1)c(γ)⁻¹,γ).
+
+The comparison between the geometric Galois action on Ĝ obtained by Tannakian descent and the algebraic action through a pinning is Ric, Proposition 5.6, p. 22: act_geo(γ) = act_alg(γ) ∘ Ad χ(γ) with χ = ρ ∘ cycl, where cycl is the ℓ-adic cyclotomic character and ρ, the half-sum of positive coroots of Ĝ, is viewed as a cocharacter of Ĝ_ad. To compare the semidirect products, fix a half Tate character ε of Gal(k₀^sep/k₀) with ε² = cycl and put c(γ) = (2ρ)(ε(γ)) in the maximal torus of Ĝ; c is a homomorphism whose image in Ĝ_ad is χ(γ). Then (g,γ) ↦ (g·c(γ)⁻¹, γ) is an isomorphism from Ĝ ⋊ Gal(k₀^sep/k₀) with the pinned action to the same group with the geometric action: multiplicativity follows from act_geo(γ) = act_alg(γ) ∘ Ad c(γ) and from act_alg(γ)(c(δ)) = c(δ), since pinned automorphisms fix 2ρ. This corrects the map displayed in Ric, Corollary 5.8 (Source corrections, E7). For k₀ = F_q the fixed square root of q gives ε, with ε(arithmetic Frobenius) = √q, and for k₀ = F the cyclotomic character factors through the constant field, so the same ε serves; these are the two cases used here. The half Tate character is a genuine hypothesis: for k₀ = R, cycl(complex conjugation) = −1 has no square root among the characters of Gal(C/R). This twist is the Tate normalization fixed above.
+
+*Proof.* Construct the pinned action and its descent datum on split Satake sheaves. Check cocycle and independence of the splitting cover, then descend fusion and convolution. Compare the geometric and pinned semidirect products by the map (g,γ) ↦ (g·c(γ)⁻¹, γ) above. Keep the action on coefficients distinct from the Weil action on the base.
+
+*Remark.* A split group has trivial Q action.
+
+*Remark.* For a nonsplit torus the dual-character lattice carries the actual Galois action.
+
+Source: [VL](#references), §12.1, pp. 148–149; §12.3.1, Theorem 12.16, pp. 157–158; [Ric](#references), Theorem 5.1, p. 20; Proposition 5.6 and Corollary 5.8, p. 22.
+
+*Needs:* [§0.12 *Nonsplit bundle descent*](#012-nonsplit-bundle-descent); [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake); LanglandsParameterStacks §LP0.1 (restriction and functoriality of crossed cocycles); ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group).
+
+### 1.12 Normalized spherical Satake
 
 At a good place v∈U∖|N| with hyperspecial model, normalize vol(G(O_v)) = 1. For split G, the classical Satake isomorphism of SmoothRepresentationsOfLocalGroups §SR.4.1, with a fixed square root of q, identifies the spherical E-Hecke algebra with E ⊗_Z K₀(Rep Ĝ); for a split torus it is the group algebra of the cocharacter lattice. For irreducible V of highest weight ω, let `h_{V,v}` be the image of [V]. It takes values in O_E, the `h_{V,v}` form an O_E-basis of the integral spherical Hecke algebra, and `h_{V,v}` = `(−1)^{⟨2ρ,ω⟩}` Tr(Frob_v, S_V), with the half Tate twist already fixed. For nonminuscule V the trace of the intersection complex is not the characteristic function of a single double coset.
 
-For unramified nonsplit G, the spherical algebra is the algebra of regular functions on the semisimple twisted-conjugacy quotient of Ĝ⋊Frob_v. The coefficient representations and their traces include the Frobenius action of §GS.1.13; `h_{V,v}` denotes the resulting twisted-character function. Such traces span the spherical algebra, without asserting that all representations of Ĝ separately give a basis. For an unramified torus T this is `E[X_*(T)^{Frob_v}]`.
+For unramified nonsplit G, the spherical algebra is the algebra of regular functions on the semisimple twisted-conjugacy quotient of Ĝ⋊Frob_v. The coefficient representations and their traces include the Frobenius action of §1.11; `h_{V,v}` denotes the resulting twisted-character function. Such traces span the spherical algebra, without asserting that all representations of Ĝ separately give a basis. For an unramified torus T this is `E[X_*(T)^{Frob_v}]`.
 
 **Checks.**
 
@@ -675,9 +716,9 @@ For unramified nonsplit G, the spherical algebra is the algebra of regular funct
 
 Source: [VL](#references), §1, after Theorem 1.17 and Remarks 1.20–1.21, pp. 51–52; §12.3.1–§12.3.2, pp. 157–161; §6.1, Proposition 6.2, p. 75.
 
-*Needs:* [§GS.0.14 *Cuspidal functions and bundle functions*](#gs014-cuspidal-functions-and-bundle-functions); [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake); SmoothRepresentationsOfLocalGroups §SR.4.1 (the Satake transform and isomorphism); [§GS.1.13 *Nonsplit Satake descent*](#gs113-nonsplit-satake-descent), for the nonsplit trace comparison.
+*Needs:* [§0.14 *Cuspidal functions and bundle functions*](#014-cuspidal-functions-and-bundle-functions); [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake); SmoothRepresentationsOfLocalGroups §SR.4.1 (the Satake transform and isomorphism); [§1.11 *Nonsplit Satake descent*](#111-nonsplit-satake-descent), for the nonsplit trace comparison.
 
-### GS.1.12 Determinant lines and opposition signs
+### 1.13 Determinant lines and opposition signs
 
 On the equal-characteristic GL_n locus Λ⊂R[[t]]ⁿ with locally free rank-N quotient, define satakeDeterminantLine by applying the determinant functor of AlgebraicVectorBundles to this quotient: its fibre is ∧^N_R(R[[t]]ⁿ/Λ). Its API comprises satakeDeterminantLine.baseChange, compatibility with pullback of the quotient, and satakeDeterminantLine.chain, the determinant isomorphism for the short exact sequence of quotients of a lattice chain. In the simply connected semisimple complex setting of Lusztig–Yun, the normalized opposition anti-involution acts on unshifted `IH^{2j}(Gr≤λ)` by (−1)^j. This is the equal-characteristic input to their numerical identity used by Zhu; the mixed-characteristic Satake theorem belongs to GeometricSatakeAndFusion.
 
@@ -692,39 +733,15 @@ On the equal-characteristic GL_n locus Λ⊂R[[t]]ⁿ with locally free rank-N q
 
 Source: [Zhu](#references), §0.1.4, p. 3; §0.2, pp. 4–5; [LY](#references), arXiv:1203.0521v1, Lemma 3.3 and §3.4, pp. 9–11.
 
-*Needs:* [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake); AlgebraicVectorBundles Layer L0C (exterior powers and determinant); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks).
+*Needs:* [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake); AlgebraicVectorBundles Layer L0C (exterior powers and determinant); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks).
 
-### GS.1.13 Nonsplit Satake descent
-
-Over the open where G is reductive, descend split Satake from a finite splitting cover étale over that open with its pinned finite Galois action on Ĝ. The resulting coefficient functor is indexed by algebraic representations of the finite-form L-group Ĝ⋊Q and is compatible with restriction of the prescribed Γ→Q projection. Geometric and algebraic actions differ by the Tate/pinning normalization and must be compared explicitly.
-
-Over a field k₀, the full arithmetic Satake category is equivalent to representations of Ĝ⋊Gal(k₀^sep/k₀) with algebraic Ĝ-action, with continuous arithmetic action on a finite-dimensional vector space over one finite extension of Q_ℓ, as specified in Ric Theorem 5.1. Here k₀=F_q for §GS.1.7 and k₀=F at the generic point for nonsplit descent. The normalized finite-form L-group coefficient functor above is a specified subfunctor of this arithmetic category, not a description of the full category. Before the pinning comparison the semidirect product uses the geometric Galois action; the following comparison transports it to the pinned action.
-
-**Checks.**
-
-- For G=1, a rank-one lisse E-sheaf with Frobenius 1+ℓ is arithmetic Satake data of infinite order and cannot factor through any finite Q.
-- For the same trivial group Frobenius −1 factors through a quotient of order two (also when ℓ=2 in characteristic-zero coefficients).
-- For a nonsplit unramified norm-one torus Frobenius acts by −1 on its rank-one character lattice; trivial arithmetic action would give the wrong spherical algebra.
-
-The comparison between the geometric Galois action on Ĝ obtained by Tannakian descent and the algebraic action through a pinning is Ric, Proposition 5.6, p. 22: the geometric action of γ is the algebraic action composed with the inner automorphism Ad ρ(cycl(γ)), where cycl is the ℓ-adic cyclotomic character and ρ, the half-sum of positive coroots of Ĝ, is viewed as a cocharacter of Ĝ_ad; Ric, Corollary 5.8, turns this into an isomorphism of the two L-groups. This twist is the Tate normalization fixed above.
-
-*Proof.* Construct the pinned action and its descent datum on split Satake sheaves. Check cocycle and independence of the splitting cover, then descend fusion and convolution. Keep the action on coefficients distinct from the Weil action on the base.
-
-*Remark.* A split group has trivial Q action.
-
-*Remark.* For a nonsplit torus the dual-character lattice carries the actual Galois action.
-
-Source: [VL](#references), §12.1, pp. 148–149; §12.3.1, Theorem 12.16, pp. 157–158; [Ric](#references), Theorem 5.1, p. 20; Proposition 5.6 and Corollary 5.8, p. 22.
-
-*Needs:* [§GS.0.12 *Nonsplit bundle descent*](#gs012-nonsplit-bundle-descent); [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake); LanglandsParameterStacks §LP0.1 (restriction and functoriality of crossed cocycles); ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group).
-
-### GS.1.14 Integral geometric Satake
+### 1.14 Integral geometric Satake
 
 For the split equal-characteristic affine Grassmannian over F̄_q, geometric Satake over O_E identifies representations of the pinned dual group on finitely generated O_E-modules with the integral Satake category, compatibly with weight functors, fusion and extension to E. Its restriction identifies finite free representations with the flat Satake objects. Convolution for general coefficients uses zeroth perverse cohomology of the derived exterior product before descent and proper pushforward; for flat objects this truncation is unnecessary. On the moving-leg Grassmannian construct the fully faithful coefficient functor `Sat^{O_E}_{G,I}` on all finitely generated coefficient representations, including torsion, with the specified finite-field descent, as in Xue-I Theorem 1.1.5. The API IntegralSatake.coefficient, IntegralSatake.fusion, IntegralSatake.flat_iff_finiteFree and IntegralSatake.extendToE records the coefficient functor, fusion, the flat subcategory and rationalization. The construction uses the standard integral perverse t-structure; Verdier duality need not preserve that heart. Invariant vectors and covectors give integral creation and annihilation by functoriality. No semisimplicity is asserted over O_E or its residue field.
 
 *Proof.* Use the integral weight-functor reconstruction and the same pinned root datum as the rational theorem. Extend from finite free coefficients to finitely generated coefficients by presentations and the right-exact perverse tensor product, preserving the fusion comparisons. Use the standard integral perversity, without invoking preservation by Verdier duality (EtaleDualityAndPerverseSheaves §§2.3–2.5, the integral perversity and its dual). Transferring MV's integral reconstruction, proved for the complex topology, to étale O_E-sheaves on the equal-characteristic Grassmannian over F̄_q is part of this target; Xue-I §§1.1.1–1.1.7 specify its moving-leg coefficient functor.
 
-*Remark.* Extension of scalars to E recovers [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake).
+*Remark.* Extension of scalars to E recovers [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake).
 
 *Remark.* Reduction modulo λ need not preserve semisimplicity or diagonalizability of the Hecke action.
 
@@ -736,23 +753,23 @@ For the split equal-characteristic affine Grassmannian over F̄_q, geometric Sat
 
 Source: [VL](#references), §13, proof of Proposition 13.1, pp. 166–167; Theorem 1.17, pp. 48–50; [MV](#references), §4, (4.2), p. 13, and Theorem 12.1, pp. 33–37; [Xue-I](#references), §§1.1.1–1.1.7, Theorem 1.1.5, pp. 5–6.
 
-*Needs:* [§GS.1.5 *Fusion smallness and convolution*](#gs15-fusion-smallness-and-convolution); [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group).
+*Needs:* [§1.5 *Fusion smallness and convolution*](#15-fusion-smallness-and-convolution); [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (the dual group with its Galois action, and the L-group).
 
 ### Examples
 
 - *Tori.* For G = G_m the one-leg Grassmannian has the discrete set Z of geometric points, every Schubert variety is a point, convolution adds coweights, and the Satake category is the category of Z-graded vector spaces, matching Rep(G_m) = Rep(Ĝ).
-- *GL₂, minuscule.* For the coweight (1, 0) the Schubert variety is P¹, already closed; its normalized intersection complex goes to the standard representation of GL₂ = Ĝ. The convolution of two copies decomposes as the symmetric square plus the determinant, and the collision fibre of the two-step chain over the central coweight (1, 1) is P¹, which shows the semismall equality case in [§GS.1.5 *Fusion smallness and convolution*](#gs15-fusion-smallness-and-convolution).
-- *Signs.* On the P¹ support of the GL₂ minuscule sheaf, cohomology sits in odd shifted degrees, so the fusion commutativity must be corrected by a sign before the fibre functor is symmetric ([§GS.1.8 *Satake signs and Tate normalization*](#gs18-satake-signs-and-tate-normalization)); for tori no correction is needed.
+- *GL₂, minuscule.* For the coweight (1, 0) the Schubert variety is P¹, already closed; its normalized intersection complex goes to the standard representation of GL₂ = Ĝ. The convolution of two copies decomposes as the symmetric square plus the determinant, and the collision fibre of the two-step chain over the central coweight (1, 1) is P¹, which shows the semismall equality case in [§1.5 *Fusion smallness and convolution*](#15-fusion-smallness-and-convolution).
+- *Signs.* On the P¹ support of the GL₂ minuscule sheaf, cohomology sits in odd shifted degrees, so the fusion commutativity must be corrected by a sign before the fibre functor is symmetric ([§1.8 *Satake signs and Tate normalization*](#18-satake-signs-and-tate-normalization)); for tori no correction is needed.
 
 ### Dependencies
 
-Layer GS.0; ReductiveGroups and ReductiveGroupsPartII §RG2.5; SchemeAndStackFoundations Layer 1; RelativeFarguesFontaine §6.5; EndoscopicTransferAndUnitaryTraceComparison §3.2; EtaleCohomologyFoundations §§F.0–F.2, F.2.3 and F.8; EtaleDualityAndPerverseSheaves Layers 0, 2 and 5; DeligneWeightsAndPurity DWP.0; SmoothRepresentationsOfLocalGroups §SR.4.1; LanglandsParameterStacks §LP0.1.
+Layer 0; ReductiveGroups and ReductiveGroupsPartII §RG2.5; Tau Ceti `TauCeti.FGPointRepresentationCat`; MotivesAndAlgebraicCycles §§6.1–6.2; SchemeAndStackFoundations Layer 1; RelativeFarguesFontaine §6.5; EndoscopicTransferAndUnitaryTraceComparison §3.2; EtaleCohomologyFoundations §§F.0–F.2, F.2.3 and F.8; EtaleDualityAndPerverseSheaves Layers 0, 2 and 5; DeligneWeightsAndPurity DWP.0 and §8.24; SmoothRepresentationsOfLocalGroups §SR.4.1; LanglandsParameterStacks §LP0.1.
 
-## Layer GS.2: global shtukas and their cohomology
+## Layer 2: global shtukas and their cohomology
 
-This layer constructs the stacks of shtukas as Hecke stacks pulled back along the graph of Frobenius, their finite-type truncations and smooth local models, and the compactly supported cohomology sheaves over the leg base in every degree. The bound on the source and on the target of every partial Frobenius and Hecke map is kept visible: these maps can enlarge a Harder–Narasimhan bound, so they act on the directed system of truncations, never on one fixed truncation. The fractional-infinity shtukas of Yun–Zhang and the PGL₂ horocycle geometry are specified specializations with their own degree and parity conditions. Standing hypotheses are those of Layer GS.1.
+This layer constructs the stacks of shtukas as Hecke stacks pulled back along the graph of Frobenius, their finite-type truncations and smooth local models, and the compactly supported cohomology sheaves over the leg base in every degree. The bound on the source and on the target of every partial Frobenius and Hecke map is kept visible: these maps can enlarge a Harder–Narasimhan bound, so they act on the directed system of truncations, never on one fixed truncation. The fractional-infinity shtukas of Yun–Zhang and the PGL₂ horocycle geometry are specified specializations with their own degree and parity conditions. Standing hypotheses are those of Layer 1.
 
-### GS.2.1 Global shtukas
+### 2.1 Global shtukas
 
 Define GlobalShtuka. For legs in U∖|N|, where U is the reductive open of the chosen model, and an ordered partition of I, `Cht_{N,I,W}` classifies bundles E₀,…,Ek with compatible full levels, bounded modifications `E_{j−1}≃Ej` away from the legs in Ij, and a level-preserving isomorphism Ek≃τE₀, where τ=(id_X×Frob_S)∗. It is the Hecke correspondence pulled back along the Frobenius graph of `Bun_{G,N}`. The W-support is pulled back from the reduced global Schubert support.
 
@@ -775,11 +792,11 @@ The API:
 
 Source: [VL](#references), §2, Definition 2.1, pp. 52–53.
 
-*Needs:* [§GS.0.3 *Full level structures*](#gs03-full-level-structures); [§GS.1.2 *Schubert bounds*](#gs12-schubert-bounds); [§GS.1.3 *Global Hecke chains*](#gs13-global-hecke-chains).
+*Needs:* [§0.3 *Full level structures*](#03-full-level-structures); [§1.2 *Schubert bounds*](#12-schubert-bounds); [§1.3 *Global Hecke chains*](#13-global-hecke-chains).
 
-### GS.2.2 Finite-type shtuka truncations
+### 2.2 Finite-type shtuka truncations
 
-For a fixed W, HN bound μ and central lattice Ξ, `Cht^{≤μ}_{N,I,W}/Ξ` is a finite-type Deligne–Mumford stack in the source’s bounded setting. For sufficiently deep nonempty N, depending on μ and W, its components are quasi-projective schemes. With N empty the quotient-of-quasi-projective assertion holds over U^I for every open U⊊X; do not claim the entire unbounded shtuka stack is a scheme.
+For a fixed W, HN bound μ and central lattice Ξ, `Cht^{≤μ}_{N,I,W}/Ξ` is a finite-type Deligne–Mumford stack in the source’s bounded setting. Here ≤μ is a Ξ-stable truncation of §§0.6 and 0.10: the adjoint truncation on a connected parahoric model, and a saturated ρ-truncation for a general smooth model 𝒢; over a ρ-truncation itself the bounded shtukas already form a finite-type Deligne–Mumford stack, since bounded global 𝒢-shtukas are relatively representable of finite type over Bun_𝒢 times the leg base. For sufficiently deep nonempty N, depending on μ and W, its components are quasi-projective schemes. With N empty the quotient-of-quasi-projective assertion holds over U^I for every open U⊊X; do not claim the entire unbounded shtuka stack is a scheme.
 
 *Proof.* Intersect the bounded Hecke locus with the Frobenius graph and use the HN bound for finite type. Frobenius-fixed infinitesimal automorphisms vanish, giving the unramified diagonal. Increase the level enough to kill the remaining finite automorphisms uniformly on the fixed bound.
 
@@ -787,11 +804,11 @@ For a fixed W, HN bound μ and central lattice Ξ, `Cht^{≤μ}_{N,I,W}/Ξ` is a
 
 *Remark.* A single bounded open need not be preserved by all Hecke or partial Frobenius operations.
 
-Source: [VL](#references), §2, Proposition 2.6(a), pp. 53–54, and the paragraph before Definition 2.14, p. 59; [Var](#references), §2, Proposition 2.16(a), pp. 7–8.
+Source: [VL](#references), §2, Proposition 2.6(a), pp. 53–54, and the paragraph before Definition 2.14, p. 59; [Var](#references), §2, Proposition 2.16(a), pp. 7–8; [AH19](#references), Theorem 3.15, pp. 15–17 (flat affine models of finite type).
 
-*Needs:* [§GS.0.6 *Bounded bundle loci*](#gs06-bounded-bundle-loci); [§GS.0.10 *Central lattices and finite quotients*](#gs010-central-lattices-and-finite-quotients); [§GS.2.1 *Global shtukas*](#gs21-global-shtukas).
+*Needs:* [§0.6 *Bounded bundle loci*](#06-bounded-bundle-loci); [§0.10 *Central lattices and finite quotients*](#010-central-lattices-and-finite-quotients); [§2.1 *Global shtukas*](#21-global-shtukas).
 
-### GS.2.3 Smooth shtuka local models
+### 2.3 Smooth shtuka local models
 
 For sufficiently large finite jets ni on the fixed Schubert support, the bounded iterated shtuka stack maps smoothly to `Gr_{I,W}/G_{Σ n_i x_i}`, of relative dimension (Σni)dim G in the split constant-model setting. Thus singularities are governed by the Schubert local model, with the perverse shift determined by this relative dimension.
 
@@ -803,9 +820,9 @@ For sufficiently large finite jets ni on the fixed Schubert support, the bounded
 
 Source: [VL](#references), §2, Proposition 2.8 and its proof, pp. 54–55.
 
-*Needs:* [§GS.0.2 *Deformations of bundles*](#gs02-deformations-of-bundles); [§GS.1.3 *Global Hecke chains*](#gs13-global-hecke-chains); [§GS.2.1 *Global shtukas*](#gs21-global-shtukas).
+*Needs:* [§0.2 *Deformations of bundles*](#02-deformations-of-bundles); [§1.3 *Global Hecke chains*](#13-global-hecke-chains); [§2.1 *Global shtukas*](#21-global-shtukas).
 
-### GS.2.4 Fractional-infinity shtukas
+### 2.4 Fractional-infinity shtukas
 
 Define TwistedShtuka. For Iwahori bundles and μ∈{±1}^r choose D∞ supported on residue-field sections at infinity, with coefficients in (1/n)Z and Σμi=n deg D∞. Require Er≃(τE₀)(D∞), with Frobenius applied before fractional twisting. Form the Frobenius-graph fibre product with AL(−D∞)∘p_r; quotient by Pic_X(F_q) to obtain PGL_n shtukas. The leg map is to X^r×S∞ and includes level collisions.
 
@@ -828,13 +845,13 @@ The API:
 
 Source: [YZ](#references), §3.2.1–§3.2.8, Definition 3.5, Lemmas 3.6–3.8, Propositions 3.9–3.10, Definition 3.12 and (3.18), pp. 21–26 (arXiv v2).
 
-*Needs:* [§GS.0.4 *Iwahori flags and fractional twists*](#gs04-iwahori-flags-and-fractional-twists); [§GS.1.6 *Minuscule Hecke geometry at Iwahori level*](#gs16-minuscule-hecke-geometry-at-iwahori-level); [§GS.2.1 *Global shtukas*](#gs21-global-shtukas).
+*Needs:* [§0.4 *Iwahori flags and fractional twists*](#04-iwahori-flags-and-fractional-twists); [§1.6 *Minuscule Hecke geometry at Iwahori level*](#16-minuscule-hecke-geometry-at-iwahori-level); [§2.1 *Global shtukas*](#21-global-shtukas).
 
-### GS.2.5 Shtuka intersection-cohomology systems
+### 2.5 Shtuka intersection-cohomology systems
 
 Define ShtukaIC and ShtukaCohomology.trunc. Pull the Satake sheaf through the smooth local model, descend by Ξ, and normalize perversely relative to U^I. For the leg map p define `H^{j,≤μ}_{N,I,W}=R^jp_!F_{N,I,W}^{≤μ}` for every j∈Z, and `H^j_{N,I,W}=colim_μ` `H^{j,≤μ}`; the original excursion construction uses j=0. At each finite bound the sheaves are constructible; the colimit is an ind-constructible system, not a single constructible sheaf. Proper partition pushforward identifies different iterated presentations.
 
-*Construction.* Form the coefficients at each bound by descent along an atlas ([§GS.1.4 *ℓ-adic sheaves on stacks of finite type*](#gs14-ℓ-adic-sheaves-on-stacks-of-finite-type)) and use base change for f_!; no properness of the leg map is assumed. For inclusions of HN opens use extension by zero and the covariant map on compact support. Take the filtered system, and prove independence of the partition by proper pushforward of Satake sheaves.
+*Construction.* Form the coefficients at each bound by descent along an atlas ([§1.4 *ℓ-adic sheaves on stacks of finite type*](#14-ℓ-adic-sheaves-on-stacks-of-finite-type)) and use base change for f_!; no properness of the leg map is assumed. For inclusions of HN opens use extension by zero and the covariant map on compact support. Take the filtered system, and prove independence of the partition by proper pushforward of Satake sheaves.
 
 *Remark.* The degree-zero normalization relative to the leg base must agree with the space of functions in the case of no legs.
 
@@ -848,14 +865,14 @@ The API:
 **Checks.**
 
 - For I=∅, W=1, degree-zero compact support gives functions on the rational bundle groupoid modulo Ξ.
-- At a fixed bound the sheaf is constructible; the whole unbounded colimit is not declared constructible.
-- Refining a partition twice gives the same comparison as refining once; an arbitrary isomorphism per partition is insufficient.
+- For G=GL₂ on P¹, I=∅, W=1, empty level, E coefficients and Ξ generated by a degree-one scalar idele, the rational degree-zero bundles of instability at most 2m are O(a)⊕O(−a) with 0≤a≤m. So the degree-zero part of `H^{0,≤μ}` has dimension m+1 (1 for m=0, 2 for m=1), the transition from m to m+1 is extension by zero onto these coordinates, and the colimit is infinite-dimensional: the colimit is not a constructible sheaf on the point, although each truncation is.
+- For GL₂ and two standard minuscule legs, the comparison from the two-block presentation to the one-block presentation is proper pushforward along a map whose fibre over the central coweight (1,1) on the collision diagonal is P¹. Its unshifted compact cohomology has rank 1 in degrees 0 and 2, and the pushforward keeps both, matching Std⊗Std = Sym²⊕det; a comparison that treated this fibre as a point would keep total rank 1 and lose the det summand.
 
 Source: [VL](#references), §2, Definition 2.14 and Corollaries 2.15–2.18, pp. 59–60; §4.2, Definition 4.1, p. 65; §4.5, Definitions 4.5 and 4.7, p. 68.
 
-*Needs:* [§GS.1.4 *ℓ-adic sheaves on stacks of finite type*](#gs14-ℓ-adic-sheaves-on-stacks-of-finite-type); [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake); [§GS.1.10 *Central action on Satake sheaves*](#gs110-central-action-on-satake-sheaves); [§GS.2.3 *Smooth shtuka local models*](#gs23-smooth-shtuka-local-models); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps).
+*Needs:* [§1.4 *ℓ-adic sheaves on stacks of finite type*](#14-ℓ-adic-sheaves-on-stacks-of-finite-type); [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake); [§1.10 *Central action on Satake sheaves*](#110-central-action-on-satake-sheaves); [§2.3 *Smooth shtuka local models*](#23-smooth-shtuka-local-models); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps).
 
-### GS.2.6 Twisted zero-leg inner forms
+### 2.6 Twisted zero-leg inner forms
 
 With r=0 and balanced infinity coefficients, the geometric zero-leg GL_n twisted-shtuka groupoid at a fixed ξ∈S∞ is [B×(F)\B×(A)/∏Kx]. Here B is the degree-n central simple algebra split off Σ∞ with inv_x(B)=Σ_i c_x^(i), and Kx are the source’s minimal parahorics at Σ and maximal parahorics elsewhere. The reciprocity sum of invariants is zero. This is a separate twisted specialization of adelic descent.
 
@@ -867,11 +884,11 @@ With r=0 and balanced infinity coefficients, the geometric zero-leg GL_n twisted
 
 Source: [YZ](#references), §3.2.2, p. 22 (arXiv v2).
 
-*Needs:* [§GS.0.7 *Adelic bundle groupoids*](#gs07-adelic-bundle-groupoids); [§GS.2.4 *Fractional-infinity shtukas*](#gs24-fractional-infinity-shtukas); FunctionFieldArithmetic FA.4 (*The global function-field class formation*: the Brauer sequence and local invariants).
+*Needs:* [§0.7 *Adelic bundle groupoids*](#07-adelic-bundle-groupoids); [§2.4 *Fractional-infinity shtukas*](#24-fractional-infinity-shtukas); ArithmeticGaloisDuality §R02.3.2, *The class formation of a global function field* (`GlobalFunctionField.classFormation`: the Brauer sequence and local invariants).
 
-### GS.2.7 Elliptic sheaves as a specialization
+### 2.7 Elliptic sheaves as a specialization
 
-Take the elliptic sheaves required by AlgebraicModuliForArithmeticGeometry (gap:elliptic-sheaf-carrier) and compare their periodic bundle chains with the one-leg, negative-modification, fractional-infinity shtukas of [§GS.2.4 *Fractional-infinity shtukas*](#gs24-fractional-infinity-shtukas), under the infinity and level conditions of YZ §3.2. For r=1, μ=−1, Σ∞={∞}, D∞=−Γ∞/n, restrict to legs away from ∞ and the degree component deg E₀=n(g−1)+1; YZ §3.2.3 identifies the Drinfeld-module component there. The supplied periodic-chain carrier must include this degree normalization, pole, zero and level data. This comparison is independent of the multi-leg constructions and is not used to define Bun_G or general shtukas.
+Take the elliptic sheaves required by AlgebraicModuliForArithmeticGeometry (gap:elliptic-sheaf-carrier) and compare their periodic bundle chains with the one-leg, negative-modification, fractional-infinity shtukas of [§2.4 *Fractional-infinity shtukas*](#24-fractional-infinity-shtukas), under the infinity and level conditions of YZ §3.2. For r=1, μ=−1, Σ∞={∞}, D∞=−Γ∞/n, restrict to legs away from ∞ and the degree component deg E₀=n(g−1)+1; YZ §3.2.3 identifies the Drinfeld-module component there. The supplied periodic-chain carrier must include this degree normalization, pole, zero and level data. This comparison is independent of the multi-leg constructions and is not used to define Bun_G or general shtukas.
 
 *Proof.* Write the elliptic-sheaf periodicity as a fractional twist of an Iwahori chain. Compare its Frobenius map and one-leg modification with the twisted closing equation, preserving level.
 
@@ -883,13 +900,13 @@ Take the elliptic sheaves required by AlgebraicModuliForArithmeticGeometry (gap:
 - For n=2 on P¹, the distinguished degree is 2(−1)+1=−1. Tensoring by a degree-one line bundle gives degree 1 and leaves that component.
 - A leg at ∞ lies outside the specified open X∖{∞}; the comparison cannot identify it with an allowed finite characteristic.
 
-*Remark.* Layers GS.3–GS.5 do not use elliptic sheaves.
+*Remark.* Layers 3–5 do not use elliptic sheaves.
 
 Source: [YZ](#references), §3.2.3–§3.2.4, Lemma 3.7, pp. 22–23 (arXiv v2).
 
-*Needs:* [§GS.2.4 *Fractional-infinity shtukas*](#gs24-fractional-infinity-shtukas); AlgebraicModuliForArithmeticGeometry (gap:elliptic-sheaf-carrier).
+*Needs:* [§2.4 *Fractional-infinity shtukas*](#24-fractional-infinity-shtukas); AlgebraicModuliForArithmeticGeometry (gap:elliptic-sheaf-carrier).
 
-### GS.2.8 PGL₂ horocycles
+### 2.8 PGL₂ horocycles
 
 Define HorocycleIndex. A horocycle index is κ=(κ₀,…,κr), κi=(Di,Ni), with |Di−Di−1|+|Ni−Ni−1|=1, Nr=N₀, and Dr differing from Fr(D₀) at exactly one geometric point over each closed place of Σ∞. The κ-horocycle fixes these positive-instability indices in the standard PGL₂ shtuka. I(κ)={i:Ni≠Ni−1} has even size; the leg support X(κ) fixes all other leg coordinates and the infinity sections, so `X(κ)≃X^{I(κ)}`.
 
@@ -912,9 +929,9 @@ The API:
 
 Source: [YZ](#references), §3.4.3–§3.4.5, Lemma 3.21, Corollary 3.22, Definition 3.23, Lemma 3.24, Definition 3.25, Lemma 3.26 and Corollary 3.27, pp. 30–33 (arXiv v2).
 
-*Needs:* [§GS.0.9 *Parabolic PGL₂ instability*](#gs09-parabolic-pgl-instability); [§GS.2.4 *Fractional-infinity shtukas*](#gs24-fractional-infinity-shtukas).
+*Needs:* [§0.9 *Parabolic PGL₂ instability*](#09-parabolic-pgl-instability); [§2.4 *Fractional-infinity shtukas*](#24-fractional-infinity-shtukas).
 
-### GS.2.9 Partial Frobenius
+### 2.9 Partial Frobenius
 
 Define Shtuka.partialFrobenius. Rotate the first block of an iterated shtuka chain to the end after Frobenius pullback. This gives the partial Frobenius over `Frob_{I₁}:U^I→U^I`, inducing invertible commuting operators after passage to the cohomological HN colimit. Their product is the canonical total Frobenius. A fixed truncation may map only into a larger bound.
 
@@ -936,9 +953,9 @@ The API:
 
 Source: [VL](#references), §3, Lemma 3.1 and Propositions 3.3–3.4, pp. 62–64; §4.3, p. 66.
 
-*Needs:* [§GS.2.1 *Global shtukas*](#gs21-global-shtukas); [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems).
+*Needs:* [§2.1 *Global shtukas*](#21-global-shtukas); [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems).
 
-### GS.2.10 Coalescence of legs
+### 2.10 Coalescence of legs
 
 For ζ:I→J and the diagonal ∆ζ:U^J→U^I, pullback of the cohomology system with coefficient W identifies with the system for W^ζ, restriction along Ĝ^J→Ĝ^I. The comparisons are natural in W and compose coherently for I→J→K. They include noninjective ζ and the creation/removal of trivial legs.
 
@@ -948,13 +965,13 @@ For ζ:I→J and the diagonal ∆ζ:U^J→U^I, pullback of the cohomology system
 
 Source: [VL](#references), §4.5, Propositions 4.12–4.14, pp. 69–70; §9, Proposition 9.7, pp. 132–133.
 
-*Needs:* [§GS.1.9 *Classical geometric Satake*](#gs19-classical-geometric-satake); [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems).
+*Needs:* [§1.9 *Classical geometric Satake*](#19-classical-geometric-satake); [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems).
 
-### GS.2.11 Hecke correspondences on shtukas
+### 2.11 Hecke correspondences on shtukas
 
-On the locus where all legs avoid its finite place support, a compactly supported bi-K_N-invariant integral Hecke function defines a cohomological correspondence on the shtuka stacks, supported on its finite modification locus. Its action on the HN colimits commutes with partial Frobenius, coefficient maps and coalescence. The action can increase the HN bound; extension across a good place v is a subsequent theorem, proved using the operator `S_{V,v}` of [§GS.3.6 *Hecke operators from Frobenius*](#gs36-hecke-operators-from-frobenius).
+On the locus where all legs avoid its finite place support, a compactly supported bi-K_N-invariant integral Hecke function defines a cohomological correspondence on the shtuka stacks, supported on its finite modification locus. Its action on the HN colimits commutes with partial Frobenius, coefficient maps and coalescence. The action can increase the HN bound; extension across a good place v is a subsequent theorem, proved using the operator `S_{V,v}` of [§3.6 *Hecke operators from Frobenius*](#36-hecke-operators-from-frobenius).
 
-*Construction.* Construct bounded-support Hecke diagrams preserving Frobenius and level. Check properness/étaleness needed for pull-push and compose via common refinements. At a place in the support of the Hecke function, construct the action on the locus where every leg avoids that place. The extension is proved in §GS.3.6.
+*Construction.* Construct bounded-support Hecke diagrams preserving Frobenius and level. Check properness/étaleness needed for pull-push and compose via common refinements. At a place in the support of the Hecke function, construct the action on the locus where every leg avoids that place. The extension is proved in §3.6.
 
 *Remark.* The action is on the HN system, not on an arbitrarily fixed finite bound.
 
@@ -972,23 +989,23 @@ The API:
 
 Source: [VL](#references), §2, Construction 2.20, pp. 61–62; §4.4, p. 67; §6.1, Corollary 6.5, p. 75.
 
-*Needs:* [§GS.1.11 *Normalized spherical Satake*](#gs111-normalized-spherical-satake); [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula).
+*Needs:* [§1.12 *Normalized spherical Satake*](#112-normalized-spherical-satake); [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula).
 
 ### Examples
 
-- *No legs.* With I = ∅ and W = 1 a shtuka is a bundle with level and an isomorphism with its Frobenius pullback; by Lang's theorem these are the F_q-points of `Bun_{G,N}`, so the degree-zero compactly supported cohomology is the space of finitely supported functions on `Bun_{G,N}(F_q)/Ξ` ([§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems)).
-- *Degree balance for G_m.* With two legs of coweights 1 and −1 the degrees balance; a single leg of coweight 1 and no infinity twist gives the empty stack, because deg τE = deg E ([§GS.2.1 *Global shtukas*](#gs21-global-shtukas)). With fractional infinity, r = 1, μ = −1 and D_∞ = −Γ_∞/n balances, which is the Drinfeld-module case ([§GS.2.4 *Fractional-infinity shtukas*](#gs24-fractional-infinity-shtukas)).
-- *Partial Frobenius at a degree-d point.* A closed point of degree d returns to its geometric component only after d iterates of the partial Frobenius, which is why the Eichler–Shimura relation of Layer GS.3 uses `Frob^{deg v}`.
+- *No legs.* With I = ∅ and W = 1 a shtuka is a bundle with level and an isomorphism with its Frobenius pullback; by Lang's theorem these are the F_q-points of `Bun_{G,N}`, so the degree-zero compactly supported cohomology is the space of finitely supported functions on `Bun_{G,N}(F_q)/Ξ` ([§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems)).
+- *Degree balance for G_m.* With two legs of coweights 1 and −1 the degrees balance; a single leg of coweight 1 and no infinity twist gives the empty stack, because deg τE = deg E ([§2.1 *Global shtukas*](#21-global-shtukas)). With fractional infinity, r = 1, μ = −1 and D_∞ = −Γ_∞/n balances, which is the Drinfeld-module case ([§2.4 *Fractional-infinity shtukas*](#24-fractional-infinity-shtukas)).
+- *Partial Frobenius at a degree-d point.* A closed point of degree d returns to its geometric component only after d iterates of the partial Frobenius, which is why the Eichler–Shimura relation of Layer 3 uses `Frob^{deg v}`.
 
 ### Dependencies
 
-Layers GS.0–GS.1; EtaleCohomologyFoundations §§F.0–F.2; EtaleDualityAndPerverseSheaves Layers 2 and 6; AlgebraicModuliForArithmeticGeometry (gap:elliptic-sheaf-carrier) (only for [§GS.2.7 *Elliptic sheaves as a specialization*](#gs27-elliptic-sheaves-as-a-specialization)); FunctionFieldArithmetic FA.4.
+Layers 0–1; EtaleCohomologyFoundations §§F.0–F.2; EtaleDualityAndPerverseSheaves Layers 2 and 6; AlgebraicModuliForArithmeticGeometry (gap:elliptic-sheaf-carrier) (only for [§2.7 *Elliptic sheaves as a specialization*](#27-elliptic-sheaves-as-a-specialization)); ArithmeticGaloisDuality §R02.3.2 (only for [§2.6 *Twisted zero-leg inner forms*](#26-twisted-zero-leg-inner-forms)).
 
-## Layer GS.3: Hecke finiteness and cohomological control
+## Layer 3: Hecke finiteness and cohomological control
 
-Creation and annihilation of legs produce the operators `S_{V,v}`; the alternating-tensor proof of the Eichler–Shimura relation for them comes before their identification with Hecke operators. Integral Hecke finiteness, with its finite O_E-witnesses, singles out the part of cohomology on which the original Galois construction works. Xue's theorems — integral finiteness of cuspidal cohomology and finiteness of the full cohomology over one local Hecke algebra — control the full cohomology. For PGL₂ with fractional infinity, the ind-perverse boundary analysis and the Eisenstein spectral decomposition of Yun–Zhang are additional targets, with the corrected shifts. Standing hypotheses are those of Layer GS.1.
+Creation and annihilation of legs produce the operators `S_{V,v}`; the alternating-tensor proof of the Eichler–Shimura relation for them comes before their identification with Hecke operators. Integral Hecke finiteness, with its finite O_E-witnesses, singles out the part of cohomology on which the original Galois construction works. Xue's theorems — integral finiteness of cuspidal cohomology and finiteness of the full cohomology over one local Hecke algebra — control the full cohomology. For PGL₂ with fractional infinity, the ind-perverse boundary analysis and the Eisenstein spectral decomposition of Yun–Zhang are additional targets, with the corrected shifts. Standing hypotheses are those of Layer 1.
 
-### GS.3.1 Creation and annihilation
+### 3.1 Creation and annihilation
 
 For a representation W of Ĝ^I, a diagonal-Ĝ-invariant vector x and covector ξ give maps from the trivial representation to W^ζ and back, where ζ:I→{0}. Transport these coefficient maps by coalescence to create I legs from one trivial leg and annihilate them. These maps are defined on the HN cohomology systems before passage to Hecke-finite fibres. They commute with the integral Hecke action, preserve Hecke finiteness once it is defined, and satisfy the rigid tensor evaluation/coevaluation identities.
 
@@ -1010,9 +1027,9 @@ The API:
 
 Source: [VL](#references), §5, Definitions 5.1–5.2 and Lemma 5.3, pp. 71–72.
 
-*Needs:* [§GS.2.10 *Coalescence of legs*](#gs210-coalescence-of-legs); [§GS.2.11 *Hecke correspondences on shtukas*](#gs211-hecke-correspondences-on-shtukas).
+*Needs:* [§2.10 *Coalescence of legs*](#210-coalescence-of-legs); [§2.11 *Hecke correspondences on shtukas*](#211-hecke-correspondences-on-shtukas).
 
-### GS.3.2 Integral Hecke finiteness
+### 3.2 Integral Hecke finiteness
 
 Define integral Hecke finiteness. An element h in an E-valued shtuka-cohomology fibre is Hecke-finite if it belongs to a finitely generated O_E-submodule stable under every integral Hecke operator. The union of these lattices is an E-vector subspace H^Hf, stable under the Hecke algebra and the existing geometric actions. Finite-dimensional E-stability alone is a different condition.
 
@@ -1035,11 +1052,11 @@ The API:
 
 Source: [VL](#references), §8, Definition 8.19 and Remark 8.20, p. 115.
 
-*Needs:* [§GS.2.11 *Hecke correspondences on shtukas*](#gs211-hecke-correspondences-on-shtukas); Mathlib `Submodule.FG` and `Module.Finite`.
+*Needs:* [§2.11 *Hecke correspondences on shtukas*](#211-hecke-correspondences-on-shtukas); Mathlib `Submodule.FG` and `Module.Finite`.
 
 The integral-finiteness API includes finite common witnesses, transport under intertwining maps and closure under E-scaling. The inverse-uniformizer example is a README Check.
 
-### GS.3.3 Horocycle compact direct images
+### 3.3 Horocycle compact direct images
 
 For κ with every Ni>max(2g−2,0), the map qκ from the PGL₂ horocycle to the rank-one shtuka chain of degrees Ni is smooth of dimension d=r−#I(κ)/2, with geometric fibres [G_a^d/Z] for a finite étale translation group Z. Thus `Rπκ!Q_ℓ = Rπ₁!Q_ℓ[−2d](−d)` and `Pκ = Rπκ!Q_ℓ[2r](r) = Rπ₁!Q_ℓ[#I(κ)](#I(κ)/2)`, pure perverse of weight zero on X(κ).
 
@@ -1047,13 +1064,13 @@ For κ with every Ni>max(2g−2,0), the map qκ from the PGL₂ horocycle to the
 
 *Remark.* The high-instability inequality is needed for the vector-group presentation.
 
-*Remark.* Use the positive shift [#I(κ)](#I(κ)/2) from YZ Corollary 3.29; the displayed recall at the start of YZ §3.5.4 has the opposite sign (Source corrections, E1).
+*Remark.* Use the positive shift `[#I(κ)](#I(κ)/2)` from YZ Corollary 3.29; the displayed recall at the start of YZ §3.5.4 has the opposite sign (Source corrections, E1).
 
 Source: [YZ](#references), §3.4.6, Lemma 3.28 and Corollary 3.29, pp. 33–35 (arXiv v2).
 
-*Needs:* [§GS.0.15 *The Picard stack and rank-one Lang fibres*](#gs015-the-picard-stack-and-rank-one-lang-fibres); [§GS.2.8 *PGL₂ horocycles*](#gs28-pgl-horocycles); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth); DeligneWeightsAndPurity DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
+*Needs:* [§0.15 *The Picard stack and rank-one Lang fibres*](#015-the-picard-stack-and-rank-one-lang-fibres); [§2.8 *PGL₂ horocycles*](#28-pgl-horocycles); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth); DeligneWeightsAndPurity DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
 
-### GS.3.4 PGL₂ ind-perverse cohomology
+### 3.4 PGL₂ ind-perverse cohomology
 
 Define PGL2Shtuka.indPerverse and PGL2Shtuka.middleCompact. For `K^{≤κ}=Rπ^{≤κ}_!Q_ℓ[2r](r)`, define pH^iK as colimκ `pH^iK^{≤κ}` in Ind(Perv); this notation does not postulate a constructible derived object K for the unbounded stack. Set V=colimκ `H_c^{2r}(Sht^{≤κ},Q_ℓ)(r)`. Hecke correspondences act on the system and on V; Atkin–Lehner involutions commute with them. The cycle class map and the compact-support pairing are equivariant, with inverse correspondences giving adjoints.
 
@@ -1076,9 +1093,9 @@ The API:
 
 Source: [YZ](#references), §3.3, Propositions 3.14–3.15, Lemmas 3.16–3.17 and Remark 3.18, pp. 25–29; §3.5.1–§3.5.2, p. 36 (arXiv v2).
 
-*Needs:* [§GS.2.4 *Fractional-infinity shtukas*](#gs24-fractional-infinity-shtukas); [§GS.2.8 *PGL₂ horocycles*](#gs28-pgl-horocycles); [§GS.2.11 *Hecke correspondences on shtukas*](#gs211-hecke-correspondences-on-shtukas); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula); EtaleDualityAndPerverseSheaves §0.5 (global Verdier and Poincaré duality); EtaleDualityAndPerverseSheaves §1.3 (the étale cycle class map); Mathlib `CategoryTheory.Ind` and `CategoryTheory.ObjectProperty.IsSerreClass` with its localization `CategoryTheory.ObjectProperty.isoModSerre`.
+*Needs:* [§2.4 *Fractional-infinity shtukas*](#24-fractional-infinity-shtukas); [§2.8 *PGL₂ horocycles*](#28-pgl-horocycles); [§2.11 *Hecke correspondences on shtukas*](#211-hecke-correspondences-on-shtukas); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula); EtaleDualityAndPerverseSheaves §0.5 (global Verdier and Poincaré duality); EtaleDualityAndPerverseSheaves §1.3 (the étale cycle class map); Mathlib `CategoryTheory.Ind` and `CategoryTheory.ObjectProperty.IsSerreClass` with its localization `CategoryTheory.ObjectProperty.isoModSerre`.
 
-### GS.3.5 Cuspidal shtuka cohomology
+### 3.5 Cuspidal shtuka cohomology
 
 Define ShtukaCohom.cuspidal. For split G and fixed j, I, W, at a geometric point whose coordinates are generic and satisfy no nonzero Frobenius-graph relation (Xue-I §2.3.8; this includes the generic point of the product and the generic point of the diagonal), define `H^{j,cusp,O_E}` as the intersection of the kernels of all proper-parabolic constant-term maps on the HN-colimit compactly supported cohomology `H^{j,O_E}`. The codomain of each constant-term map is the cohomology of the modified Levi stack, with its degree components and support conditions; it cannot be replaced by the cohomology of an unmodified Levi stack. Over E the analogous kernel is `H^{j,cusp,E}`.
 
@@ -1098,18 +1115,18 @@ The API:
 **Checks.**
 
 - For a torus the intersection is over an empty family and is all cohomology.
-- With no legs, trivial W and j = 0, one obtains the cuspidal functions of [§GS.0.14 *Cuspidal functions and bundle functions*](#gs014-cuspidal-functions-and-bundle-functions), not all compactly supported functions.
+- With no legs, trivial W and j = 0, one obtains the cuspidal functions of [§0.14 *Cuspidal functions and bundle functions*](#014-cuspidal-functions-and-bundle-functions), not all compactly supported functions.
 - For GL₂ a compactly supported function with nonzero upper-triangular constant term is excluded, even though its support is finite.
 
 Source: [Xue-I](#references), §2.3.8, Definitions 2.3.10–2.3.12, pp. 16–17; Proposition 4.2.6, p. 25.
 
-*Needs:* [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems); [§GS.2.11 *Hecke correspondences on shtukas*](#gs211-hecke-correspondences-on-shtukas); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula).
+*Needs:* [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems); [§2.11 *Hecke correspondences on shtukas*](#211-hecke-correspondences-on-shtukas); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula).
 
-### GS.3.6 Hecke operators from Frobenius
+### 3.6 Hecke operators from Frobenius
 
 For a good place v∈U∖|N| and, initially, split G and V∈Rep Ĝ, define `S_{V,v}` by creating V⊠V∗, applying `Frob_first^{deg v}`, then annihilating, with the source’s descent from a geometric point over v. On the locus where existing legs avoid v, this equals `T(h_{V,v})`; hence it extends that spherical Hecke action across v. The dimension-parity sign in the normalized `h_{V,v}` is essential.
 
-For unramified nonsplit G, use the Frobenius-equivariant coefficients of §GS.1.13 and the twisted-character `h_{V,v}` of §GS.1.11, retaining the local system of diagonal invariants in creation and annihilation. The trace is evaluated on Ĝ⋊Frob_v. This gives the same away-from-v comparison for the nonsplit spherical algebra.
+For unramified nonsplit G, use the Frobenius-equivariant coefficients of §1.11 and the twisted-character `h_{V,v}` of §1.12, retaining the local system of diagonal invariants in creation and annihilation. The trace is evaluated on Ĝ⋊Frob_v. This gives the same away-from-v comparison for the nonsplit spherical algebra.
 
 The full correspondence computation of VL §§6.2–6.5, including the identities of Lemmas 6.11–6.15 for intersection complexes and convolution, is part of this target; the minuscule case does not suffice.
 
@@ -1125,9 +1142,9 @@ The API ShtukaHecke.frobeniusOperator, ShtukaHecke.choiceIndependent and ShtukaH
 
 Source: [VL](#references), §6.1, Proposition 6.2 and Corollary 6.5, p. 75; proof in §§6.2–6.5, pp. 76–100.
 
-*Needs:* [§GS.1.11 *Normalized spherical Satake*](#gs111-normalized-spherical-satake); [§GS.2.9 *Partial Frobenius*](#gs29-partial-frobenius); [§GS.3.1 *Creation and annihilation*](#gs31-creation-and-annihilation); [§GS.1.13 *Nonsplit Satake descent*](#gs113-nonsplit-satake-descent).
+*Needs:* [§1.12 *Normalized spherical Satake*](#112-normalized-spherical-satake); [§2.9 *Partial Frobenius*](#29-partial-frobenius); [§3.1 *Creation and annihilation*](#31-creation-and-annihilation); [§1.11 *Nonsplit Satake descent*](#111-nonsplit-satake-descent).
 
-### GS.3.7 The Eichler–Shimura relation
+### 3.7 The Eichler–Shimura relation
 
 For rational coefficients and an external tensor-product coefficient with distinguished factor V, if dim V=d and F₀ is partial Frobenius on the extra V-leg, then `Σ_{i=0}^d(−1)^i(F₀^{deg v})^i∘S_{Λ^{d−i}V,v}=0`. Here S is the creation–Frobenius–annihilation operator; the relation is proved before identifying S with a Hecke operator. The latter identification gives the polynomial recurrence with integral spherical coefficients.
 
@@ -1151,11 +1168,11 @@ This is an identity of maps from the HN-μ system to a sufficiently enlarged HN-
 
 Source: [VL](#references), §7, Proposition 7.1 and proof, pp. 102–105; [Xue-I](#references), Proposition 7.2.6, Remarks 7.2.7–7.2.12 and §§7.3–7.4, pp. 44–54.
 
-*Needs:* [§GS.2.9 *Partial Frobenius*](#gs29-partial-frobenius); [§GS.3.1 *Creation and annihilation*](#gs31-creation-and-annihilation); Mathlib `ExteriorAlgebra`; Mathlib `LinearMap.charpoly` and `LinearMap.aeval_self_charpoly`; [§GS.1.14 *Integral geometric Satake*](#gs114-integral-geometric-satake).
+*Needs:* [§2.9 *Partial Frobenius*](#29-partial-frobenius); [§3.1 *Creation and annihilation*](#31-creation-and-annihilation); Mathlib `ExteriorAlgebra`; Mathlib `LinearMap.charpoly` and `LinearMap.aeval_self_charpoly`; [§1.14 *Integral geometric Satake*](#114-integral-geometric-satake).
 
-The algebraic monic-recurrence consequence is a README target: an operator killed by a monic integral polynomial puts every vector in a finite stable module, generated by its powers below the polynomial degree. It supplies the finite Frobenius box of §GS.4.5.
+The algebraic monic-recurrence consequence is a README target: an operator killed by a monic integral polynomial puts every vector in a finite stable module, generated by its powers below the polynomial degree. It supplies the finite Frobenius box of §4.5.
 
-### GS.3.8 The no-leg cusp identification
+### 3.8 The no-leg cusp identification
 
 Under the no-leg/trivial-coefficient identification, `H_{∅,1}^Hf=C_c^cusp((⊔αGα(F)\Gα(A)/Kα,N)/Ξ,E)`. In fact finite-dimensionality of the E-orbit under one spherical Hecke algebra at a split place already forces cuspidality. The integral cusp-function lattice is finite and Hecke-stable.
 
@@ -1167,9 +1184,9 @@ Under the no-leg/trivial-coefficient identification, `H_{∅,1}^Hf=C_c^cusp((⊔
 
 Source: [VL](#references), §8, Proposition 8.23 and Lemmas 8.24–8.25 with proofs, pp. 117–119.
 
-*Needs:* [§GS.0.14 *Cuspidal functions and bundle functions*](#gs014-cuspidal-functions-and-bundle-functions); [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems); [§GS.3.2 *Integral Hecke finiteness*](#gs32-integral-hecke-finiteness).
+*Needs:* [§0.14 *Cuspidal functions and bundle functions*](#014-cuspidal-functions-and-bundle-functions); [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems); [§3.2 *Integral Hecke finiteness*](#32-integral-hecke-finiteness).
 
-### GS.3.9 PGL₂ boundary constant terms
+### 3.9 PGL₂ boundary constant terms
 
 On a cofinal set of truncations containing the low-instability core, the perverse transitions are injective in degree 0, surjective in degree 1 and isomorphisms otherwise; nonzero perverse degrees eventually stabilize. There is an mc-isomorphism γ:pH⁰K→⊕κ∈K♯r Pκ. It intertwines the Hecke action with the Satake–Picard action modulo constructible errors. Restricting translations to high indices gives an mc-action, not an honest group action on that restricted direct sum.
 
@@ -1181,13 +1198,13 @@ On a cofinal set of truncations containing the low-instability core, the pervers
 
 Source: [YZ](#references), §3.5.1–§3.5.4, Lemmas 3.33, 3.34 and 3.36, (3.32) and Remark 3.35, pp. 36–38 (arXiv v2).
 
-*Needs:* [§GS.1.11 *Normalized spherical Satake*](#gs111-normalized-spherical-satake); [§GS.3.3 *Horocycle compact direct images*](#gs33-horocycle-compact-direct-images); [§GS.3.4 *PGL₂ ind-perverse cohomology*](#gs34-pgl-ind-perverse-cohomology); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps).
+*Needs:* [§1.12 *Normalized spherical Satake*](#112-normalized-spherical-satake); [§3.3 *Horocycle compact direct images*](#33-horocycle-compact-direct-images); [§3.4 *PGL₂ ind-perverse cohomology*](#34-pgl-ind-perverse-cohomology); EtaleDualityAndPerverseSheaves Layer 2 (§2.4 the perverse t-structure, §2.10 intersection complexes, §2.12 small and semismall maps).
 
-### GS.3.10 Integral cusp finiteness
+### 3.10 Integral cusp finiteness
 
 For split G and all cohomological degrees j, finite leg sets I and finite coefficient representations W in the setting of Xue-I, `H^{j,cusp,O_E}` is finitely generated over O_E, equals the integral Hecke-finite submodule, and extends to `H^{j,cusp,E}=H^{j,Hf,E}`. The cuspidal submodule lies in the image of the cohomology of one sufficiently large HN truncation, which is a finite O_E-module (Xue-I, Proposition 3.2.2); no injectivity of the truncation maps is asserted. This proves the Hecke-finite/cuspidal equality for arbitrary legs and degrees in the split case, strengthening the original empty-leg theorem.
 
-The deep-horosphere contraction and constant-term geometry cited in Xue-I §3.1 are part of this target, as in [§GS.3.5 *Cuspidal shtuka cohomology*](#gs35-cuspidal-shtuka-cohomology).
+The deep-horosphere contraction and constant-term geometry cited in Xue-I §3.1 are part of this target, as in [§3.5 *Cuspidal shtuka cohomology*](#35-cuspidal-shtuka-cohomology).
 
 *Proof.* Use deep instability and constant-term comparison to show that the image of one sufficiently large truncation contains the entire cuspidal kernel. Its finite-type cohomology is a finite O_E-module. A nonzero proper-parabolic constant term admits central-Levi Hecke translates moving to unbounded degree components; they contradict a finite integral Hecke orbit. Conversely the finite cuspidal module is Hecke-stable. Prove constant-term kernels commute with extension to E using the uniform integral bounds, then use the cuspidal integral lattice to identify rational Hecke-finiteness.
 
@@ -1197,9 +1214,9 @@ The deep-horosphere contraction and constant-term geometry cited in Xue-I §3.1 
 
 Source: [Xue-I](#references), Theorem 3.2.1 and Propositions 3.2.2 and 3.2.7, pp. 18–19; Propositions 6.1.2, 6.2.12 and 6.3.3, pp. 32–37.
 
-*Needs:* [§GS.0.6 *Bounded bundle loci*](#gs06-bounded-bundle-loci); [§GS.3.2 *Integral Hecke finiteness*](#gs32-integral-hecke-finiteness); [§GS.3.5 *Cuspidal shtuka cohomology*](#gs35-cuspidal-shtuka-cohomology).
+*Needs:* [§0.6 *Bounded bundle loci*](#06-bounded-bundle-loci); [§3.2 *Integral Hecke finiteness*](#32-integral-hecke-finiteness); [§3.5 *Cuspidal shtuka cohomology*](#35-cuspidal-shtuka-cohomology).
 
-### GS.3.11 The PGL₂ Eisenstein spectral decomposition
+### 3.11 The PGL₂ Eisenstein spectral decomposition
 
 Let H̄ be the image of H_G^Σ⊗Q_ℓ in End(V)×Q_ℓ[Pic_X(F_q)]^ι. For f in the Eisenstein ideal, fV is finite-dimensional. For every spherical place y, V is finite over H_y⊗Q_ℓ; H̄ is a finite-type algebra of Krull dimension one and V is finite over it. Its reduced spectrum is the disjoint union of the Eisenstein curve Spec Q_ℓ[Pic_X(F_q)]^ι and finitely many isolated points; V=V_Eis⊕V₀ canonically, with V₀ finite-dimensional. The ramified base-changed stack has the analogous decomposition and equivariant pairing.
 
@@ -1211,9 +1228,9 @@ Let H̄ be the image of H_G^Σ⊗Q_ℓ in End(V)×Q_ℓ[Pic_X(F_q)]^ι. For f in
 
 Source: [YZ](#references), §3.5.5–§3.5.6, Lemma 3.37, Corollary 3.38, Proposition 3.39, Corollary 3.40 and Theorem 3.41, pp. 39–41 (arXiv v2).
 
-*Needs:* [§GS.3.9 *PGL₂ boundary constant terms*](#gs39-pgl-boundary-constant-terms); DeligneWeightsAndPurity DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
+*Needs:* [§3.9 *PGL₂ boundary constant terms*](#39-pgl-boundary-constant-terms); DeligneWeightsAndPurity DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
 
-### GS.3.12 Finiteness over one local Hecke algebra
+### 3.12 Finiteness over one local Hecke algebra
 
 For split G, all j,I,W and every good closed place u outside N, `H^{j,O_E}_{N,I,W}` at the geometric fibres specified in Xue-I §2.3.8 is a finite module over the single spherical Hecke algebra `H^{O_E}_{G,u}`. Its O_E-torsion has bounded exponent. It can be infinite over O_E: being finite over a finitely generated Hecke algebra is a different condition from the integral Hecke-finite condition used for the cuspidal subspace.
 
@@ -1225,9 +1242,9 @@ For split G, all j,I,W and every good closed place u outside N, `H^{j,O_E}_{N,I,
 
 Source: [Xue-I](#references), §5, 5.0.1, Proposition 5.0.2, Theorem 5.0.4 and Corollary 5.0.5, pp. 30–31.
 
-*Needs:* [§GS.1.14 *Integral geometric Satake*](#gs114-integral-geometric-satake); [§GS.2.11 *Hecke correspondences on shtukas*](#gs211-hecke-correspondences-on-shtukas); [§GS.3.5 *Cuspidal shtuka cohomology*](#gs35-cuspidal-shtuka-cohomology); [§GS.3.10 *Integral cusp finiteness*](#gs310-integral-cusp-finiteness).
+*Needs:* [§1.14 *Integral geometric Satake*](#114-integral-geometric-satake); [§2.11 *Hecke correspondences on shtukas*](#211-hecke-correspondences-on-shtukas); [§3.5 *Cuspidal shtuka cohomology*](#35-cuspidal-shtuka-cohomology); [§3.10 *Integral cusp finiteness*](#310-integral-cusp-finiteness).
 
-### GS.3.13 The PGL₂ finite-type core
+### 3.13 The PGL₂ finite-type core
 
 For standard Iwahori PGL₂ shtukas of r modifications, the complement of horocycles with every Ni>max(2g−2,0) is of finite type. Subject to the standard parity r≡#Σ∞ mod 2, the entire stack is of finite type exactly when r<#Σ∞. The large-instability horocycles are nonempty and infinite in number in the opposite case.
 
@@ -1239,39 +1256,40 @@ For standard Iwahori PGL₂ shtukas of r modifications, the complement of horocy
 
 Source: [YZ](#references), §3.4.7, Lemma 3.30 and Corollary 3.31, p. 35 (arXiv v2).
 
-*Needs:* [§GS.0.6 *Bounded bundle loci*](#gs06-bounded-bundle-loci); [§GS.2.8 *PGL₂ horocycles*](#gs28-pgl-horocycles); [§GS.3.3 *Horocycle compact direct images*](#gs33-horocycle-compact-direct-images).
+*Needs:* [§0.6 *Bounded bundle loci*](#06-bounded-bundle-loci); [§2.8 *PGL₂ horocycles*](#28-pgl-horocycles); [§3.3 *Horocycle compact direct images*](#33-horocycle-compact-direct-images).
 
 ### Examples
 
-- *Integral versus rational finiteness.* On E = Q_ℓ with the single operator ℓ⁻¹, the vector 1 spans a one-dimensional stable E-line, but no finitely generated Z_ℓ-submodule containing 1 is stable: ℓ⁻ⁿ is in it for every n. So 1 is not Hecke-finite ([§GS.3.2 *Integral Hecke finiteness*](#gs32-integral-hecke-finiteness)).
-- *Eichler–Shimura for d = 2.* For a two-dimensional V the relation is F² − S_V F + `S_{Λ²V}` = 0, with F the partial Frobenius at the extra leg raised to the power deg v ([§GS.3.7 *The Eichler–Shimura relation*](#gs37-the-eichlershimura-relation)); reversing the exterior indices gives a different, false relation. A monic relation of this kind is what bounds all Frobenius powers by a finite box in [§GS.4.5 *Finite lisse envelopes*](#gs45-finite-lisse-envelopes).
-- *Tori.* For a torus every constant-term family is empty, so all cohomology is cuspidal, and the no-leg cusp space is the space of functions on the finite group of isomorphism classes of Bun_T(F_q)/Ξ.
-
+- *Integral versus rational finiteness.* On E = Q_ℓ with the single operator ℓ⁻¹, the vector 1 spans a one-dimensional stable E-line, but no finitely generated Z_ℓ-submodule containing 1 is stable: ℓ⁻ⁿ is in it for every n. So 1 is not Hecke-finite ([§3.2 *Integral Hecke finiteness*](#32-integral-hecke-finiteness)).
+- *Eichler–Shimura for d = 2.* For a two-dimensional V the relation is F² − S_V F + `S_{Λ²V}` = 0, with F the partial Frobenius at the extra leg raised to the power deg v ([§3.7 *The Eichler–Shimura relation*](#37-the-eichlershimura-relation)); reversing the exterior indices gives a different, false relation. A monic relation of this kind is what bounds all Frobenius powers by a finite box in [§4.5 *Finite lisse envelopes*](#45-finite-lisse-envelopes).
+- *Tori.* For a torus every constant-term family is empty, so all cohomology is cuspidal, and the no-leg cusp space at level N is the space of functions on the finite set of isomorphism classes of `Bun_{T,N}(F_q)/Ξ`; at empty level this specializes to `Bun_T(F_q)/Ξ`.
 - *Full torus level.* For a torus the no-leg cusp space is the function space on `Bun_{T,N}(F_q)/Ξ`. For G_m on P¹/F₃ with N={0,∞}, its degree-zero ray Picard group has order 2, while the ordinary Picard degree-zero group has order 1. Thus the degree-quotient cusp dimensions are 2 and 1 respectively.
 
 ### Dependencies
 
-Layers GS.0–GS.2; Mathlib `Submodule.FG`, `ExteriorAlgebra`, `LinearMap.charpoly`, `CategoryTheory.Ind` and Serre classes; EtaleCohomologyFoundations §§F.0–F.2; EtaleDualityAndPerverseSheaves Layers 0, 1, 2 and 6; DeligneWeightsAndPurity DWP.7.
+Layers 0–2; Mathlib `Submodule.FG`, `ExteriorAlgebra`, `LinearMap.charpoly`, `CategoryTheory.Ind` and Serre classes; EtaleCohomologyFoundations §§F.0–F.2; EtaleDualityAndPerverseSheaves Layers 0, 1, 2 and 6; DeligneWeightsAndPurity DWP.7.
 
-## Layer GS.4: Drinfeld descent and product actions
+## Layer 4: Drinfeld descent and product actions
 
-Drinfeld's lemma, for finite étale covers and then for lisse sheaves with finite O_E-coefficients, comes before its use on cohomology. Hecke-finite vectors sit in finite lisse envelopes with partial Frobenius, which carry an action of the product Galois group; such an envelope embeds into one truncated cohomology sheaf only over a dense open where that sheaf is lisse. The functors `H_{I,W}` are assembled from these envelopes. The full-colimit route gives a Weil action of Weil(F)^I on the whole cohomology and its ind-smoothness, with separate hypotheses in the split integral case and the nonsplit rational case. Standing hypotheses are those of Layer GS.1.
+Drinfeld's lemma, for finite étale covers and then for lisse sheaves with finite O_E-coefficients, comes before its use on cohomology. Hecke-finite vectors sit in finite lisse envelopes with partial Frobenius, which carry an action of the product Galois group; such an envelope embeds into one truncated cohomology sheaf only over a dense open where that sheaf is lisse. The functors `H_{I,W}` are assembled from these envelopes. The full-colimit route gives a Weil action of Weil(F)^I on the whole cohomology and its ind-smoothness, with separate hypotheses in the split integral case and the nonsplit rational case. Standing hypotheses are those of Layer 1.
 
-### GS.4.1 Drinfeld’s lemma for finite étale covers
+### 4.1 Drinfeld’s lemma for finite étale covers
 
-For U a smooth geometrically connected curve over F_q, finite étale covers of U^I equipped with commuting lifts of the partial Frobenius maps whose product is the canonical total Frobenius form a Galois category equivalent to finite sets with continuous π₁(U)^I-action. Basepoints are specified; equivalent formulations use the quotient by the partial Frobenius actions.
+For a finite family of connected F_q-schemes X_i, i∈I, with chosen geometric points z_i, the finite étale covers T of the product `∏_{i∈I} X_i` over F_q equipped with commuting morphisms F_i, each lying over the Frobenius of X_i times the identity of the other factors, whose composite is the q-Frobenius of T, form a Galois category equivalent to finite sets with continuous ∏_i π₁(X_i,z_i)-action. The functor sends Galois covers U_i of X_i and a finite set A with an action of ∏_i Gal(U_i/X_i) to the contracted product `(∏_i U_i) ×^{∏_i Gal(U_i/X_i)} A` with the partial Frobenius maps `Frob_{U_i} × id`, and full faithfulness and essential surjectivity are proved in this generality (VL Lemma 8.11). For X_i = U, a smooth geometrically connected curve, this gives the equivalence for finite étale covers of U^I with π₁(U)^I, used for shtukas; equivalent formulations use the quotient by the partial Frobenius actions.
 
-*Proof.* Use Lang’s theorem for the smooth geometrically connected finite-type group GL_n over F_q to obtain finite-dimensional semilinear descent for finite étale data after extending constants. Descend finite étale algebras across partial Frobenius and recover the product of the finite-cover fibre functors. Verify fullness and essential surjectivity, including the product-of-lifts condition.
+*Proof.* Use Lang’s theorem for the smooth geometrically connected finite-type group GL_n over F_q to obtain finite-dimensional semilinear descent for finite étale data after extending constants. Full faithfulness is direct. For essential surjectivity reduce by induction to two factors, then by gluing and a limit argument to reduced irreducible affine factors of finite type, as in the source. Descend finite étale algebras across partial Frobenius and recover the product of the finite-cover fibre functors, including the product-of-lifts condition.
 
 *Remark.* For I={1} recover the ordinary finite étale Galois category.
 
+*Remark.* The factors need not be curves or equal. For X₁=A² and X₂=A¹ over F_q, the character of π₁(A²) through `Gal(F_{q²}/F_q)` and the trivial character of π₁(A¹) give the degree-two cover `A²_{F_{q²}} × A¹` with F_1 = Frob × id and F_2 = id × Frob, whose composite is its q-Frobenius. On the two-element fibre a Frobenius element of π₁(A²) acts by the transposition and π₁(A¹) acts trivially.
+
 *Remark.* An arbitrary nonétale Frobenius-equivariant scheme need not descend: the twisted dual-number example of VL Remark 8.9 is excluded.
 
-Source: [VL](#references), §8, Lemma 8.11, p. 111; Lemmas 8.5 and 8.8 and Remarks 8.6 and 8.9, pp. 108–110.
+Source: [VL](#references), §8, Lemma 8.11 and its proof, pp. 111–112; Lemmas 8.5 and 8.8 and Remarks 8.6 and 8.9, pp. 108–110.
 
 *Needs:* EtaleCohomologyFoundations §F.0.2 (finite étale Galois categories and the étale fundamental groupoid); Mathlib `CategoryTheory.GaloisCategory`; ReductiveGroupsPartII §RG2.3.7, *lang-theorem*.
 
-### GS.4.2 Drinfeld’s lemma for lisse coefficients
+### 4.2 Drinfeld’s lemma for lisse coefficients
 
 For a lisse sheaf of finitely generated O_E-modules on U^I with the compatible commuting partial Frobenius structure, the fibre carries a continuous π₁(U)^I-action, and the lisse-sheaf construction is inverse. The statement includes torsion modules; finite coefficient quotients and their inverse limits recover the general finitely generated case. For a sheaf initially lisse on a dense open, the extension lemma requires its partial-Frobenius compatibility and finiteness; it is not automatic for arbitrary generic representations.
 
@@ -1283,9 +1301,9 @@ For a lisse sheaf of finitely generated O_E-modules on U^I with the compatible c
 
 Source: [VL](#references), §8, Lemma 8.2, p. 107; Lemma 8.12 and its proof, pp. 111–112.
 
-*Needs:* [§GS.4.1 *Drinfeld’s lemma for finite étale covers*](#gs41-drinfelds-lemma-for-finite-étale-covers); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth).
+*Needs:* [§4.1 *Drinfeld’s lemma for finite étale covers*](#41-drinfelds-lemma-for-finite-étale-covers); EtaleCohomologyFoundations §§F.0.1, F.0.3, F.1 and F.2.1–F.2.7 (constructible coefficients, Tate twists, compact support, base change and Künneth).
 
-### GS.4.3 The Frobenius–Weil group
+### 4.3 The Frobenius–Weil group
 
 Define FrobeniusWeil. Let F^I be the function field of X^I and fix an algebraic closure over the constant algebraic closure. FWeil consists of automorphisms whose restriction to the perfection of the constant-closed function field is a product of integer powers of the coordinate partial Frobenius maps. It fits into 1→π₁^geom(η^I)→FWeil→Z^I→0. A specialization to the diagonal supplies the map to Weil(F)^I; basepoint choices must be recorded.
 
@@ -1307,7 +1325,7 @@ The API:
 
 Source: [VL](#references), §8, Remark 8.18, pp. 114–115; [Feng](#references), §5.2.3, p. 36.
 
-The rational Frobenius–Weil descent theorem is a separate target: a finite-dimensional E-vector space carrying an E-linear FWeil action whose restriction to the geometric kernel is continuous factors through Weil(F)^I. Continuity here is imposed on the geometric kernel only; no O_E-lattice stable under partial Frobenius is required. Use Xue-S §1.2.9 and Lemma 1.2.10, p. 8, applying the finite-dimensional rational Drinfeld descent argument.
+The rational Frobenius–Weil descent theorem is a separate target: a finite-dimensional E-vector space carrying an E-linear FWeil action whose restriction to the geometric kernel is continuous factors through Weil(F)^I. Continuity here is imposed on the geometric kernel only; no O_E-lattice stable under partial Frobenius is required. Use Xue-S §1.2.9 and Lemma 1.2.10, p. 9, applying the finite-dimensional rational Drinfeld descent argument.
 
 **Checks.**
 
@@ -1315,9 +1333,9 @@ The rational Frobenius–Weil descent theorem is a separate target: a finite-dim
 - Frobenius a∈O_E× preserves O_E; its powers have valuation 0, compatible with the integral lisse branch.
 - For two variables with trivial geometric action and Frobenius scalars a,b∈E×, degree (m,n) acts by a^m b^n. This is an action of Weil(F)²; it need not have compact image when v(a)<0.
 
-*Needs:* [§GS.4.1 *Drinfeld’s lemma for finite étale covers*](#gs41-drinfelds-lemma-for-finite-étale-covers), for the rational descent target; [§GS.2.9 *Partial Frobenius*](#gs29-partial-frobenius); EtaleCohomologyFoundations §F.0.2 (finite étale Galois categories and the étale fundamental groupoid).
+*Needs:* [§4.1 *Drinfeld’s lemma for finite étale covers*](#41-drinfelds-lemma-for-finite-étale-covers), for the rational descent target; [§2.9 *Partial Frobenius*](#29-partial-frobenius); EtaleCohomologyFoundations §F.0.2 (finite étale Galois categories and the étale fundamental groupoid).
 
-### GS.4.4 Fusion and partial Frobenius
+### 4.4 Fusion and partial Frobenius
 
 For ζ:I→J, partial Frobenius at a j-leg after coalescence corresponds to the product of the commuting partial Frobenius maps over ζ⁻¹(j), using the canonical coefficient comparison and compatible iterated presentations.
 
@@ -1327,9 +1345,9 @@ For ζ:I→J, partial Frobenius at a j-leg after coalescence corresponds to the 
 
 Source: [VL](#references), §4.5, Proposition 4.14, p. 70.
 
-*Needs:* [§GS.2.9 *Partial Frobenius*](#gs29-partial-frobenius); [§GS.2.10 *Coalescence of legs*](#gs210-coalescence-of-legs).
+*Needs:* [§2.9 *Partial Frobenius*](#29-partial-frobenius); [§2.10 *Coalescence of legs*](#210-coalescence-of-legs).
 
-### GS.4.5 Finite lisse envelopes
+### 4.5 Finite lisse envelopes
 
 Every finite O_E-submodule of the Hecke-finite generic fibre is contained in a finite O_E-module M̃ stable under the product Galois action, factoring through π₁(U′)^I for a dense open U′ depending on that piece. It is the generic fibre of a lisse O_E-sheaf on (U′)^I with compatible partial Frobenius. That sheaf embeds into one sufficiently large HN truncation only on a dense open Ω⊂(U′)^I where the truncation is lisse. No embedding on the whole product, no fixed U′ for every piece, and no single finite lattice for all cohomology are asserted.
 
@@ -1341,9 +1359,9 @@ Every finite O_E-submodule of the Hecke-finite generic fibre is contained in a f
 
 Source: [VL](#references), §8, Proposition 8.27 and Remark 8.28 with proof, pp. 119–123.
 
-*Needs:* [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems); [§GS.3.2 *Integral Hecke finiteness*](#gs32-integral-hecke-finiteness); [§GS.3.6 *Hecke operators from Frobenius*](#gs36-hecke-operators-from-frobenius); [§GS.3.7 *The Eichler–Shimura relation*](#gs37-the-eichlershimura-relation); [§GS.4.2 *Drinfeld’s lemma for lisse coefficients*](#gs42-drinfelds-lemma-for-lisse-coefficients).
+*Needs:* [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems); [§3.2 *Integral Hecke finiteness*](#32-integral-hecke-finiteness); [§3.6 *Hecke operators from Frobenius*](#36-hecke-operators-from-frobenius); [§3.7 *The Eichler–Shimura relation*](#37-the-eichlershimura-relation); [§4.2 *Drinfeld’s lemma for lisse coefficients*](#42-drinfelds-lemma-for-lisse-coefficients).
 
-### GS.4.6 Hecke-finite specialization
+### 4.6 Hecke-finite specialization
 
 For a chosen specialization from the product generic point to the diagonal generic point, the induced map between the corresponding HN-colimit fibres is an isomorphism on Hecke-finite parts. Its inverse is used with the transported product Galois action; the eventual excursion endomorphism is independent of this choice.
 
@@ -1355,9 +1373,9 @@ For a chosen specialization from the product generic point to the diagonal gener
 
 Source: [VL](#references), §8, Propositions 8.31–8.32 and Corollary 8.34, pp. 123–127.
 
-*Needs:* [§GS.3.7 *The Eichler–Shimura relation*](#gs37-the-eichlershimura-relation); [§GS.4.5 *Finite lisse envelopes*](#gs45-finite-lisse-envelopes).
+*Needs:* [§3.7 *The Eichler–Shimura relation*](#37-the-eichlershimura-relation); [§4.5 *Finite lisse envelopes*](#45-finite-lisse-envelopes).
 
-### GS.4.7 The product Galois action
+### 4.7 The product Galois action
 
 The FWeil action on H^Hf factors uniquely through Gal(F̄/F)^I on an E-representation which is a filtered union of finite-dimensional continuous subrepresentations. Each finite subset is contained in a finite O_E-module whose action factors through π₁(U′)^I for some smaller nonempty U′⊂U; the open may depend on that finite piece.
 
@@ -1367,9 +1385,9 @@ The FWeil action on H^Hf factors uniquely through Gal(F̄/F)^I on an E-represent
 
 Source: [VL](#references), §8, Proposition 8.27 and its proof, pp. 119–123.
 
-*Needs:* [§GS.4.2 *Drinfeld’s lemma for lisse coefficients*](#gs42-drinfelds-lemma-for-lisse-coefficients); [§GS.4.3 *The Frobenius–Weil group*](#gs43-the-frobeniusweil-group); [§GS.4.5 *Finite lisse envelopes*](#gs45-finite-lisse-envelopes).
+*Needs:* [§4.2 *Drinfeld’s lemma for lisse coefficients*](#42-drinfelds-lemma-for-lisse-coefficients); [§4.3 *The Frobenius–Weil group*](#43-the-frobeniusweil-group); [§4.5 *Finite lisse envelopes*](#45-finite-lisse-envelopes).
 
-### GS.4.8 The cohomology functors `H_{I,W}`
+### 4.8 The cohomology functors `H_{I,W}`
 
 Define ShtukaH. Define `H_{I,W}` as the Hecke-finite diagonal-generic fibre of the HN cohomology system, transported through the specialization isomorphism when a product-generic fibre is needed. It is an E-linear functor in Rep_E(Ĝ^I), a Gal(F̄/F)^I representation which is a filtered union of finite-dimensional continuous subrepresentations, and has the coalescence isomorphisms χζ and the commuting Hecke action. For I=∅, W=1 it is the cusp space.
 
@@ -1392,9 +1410,9 @@ The API:
 
 Source: [VL](#references), §9, Definition 9.3, Remark 9.5 and Proposition 9.7(a), pp. 130–132; §8, Remark 8.29, p. 120.
 
-*Needs:* [§GS.3.8 *The no-leg cusp identification*](#gs38-the-no-leg-cusp-identification); [§GS.4.6 *Hecke-finite specialization*](#gs46-hecke-finite-specialization); [§GS.4.7 *The product Galois action*](#gs47-the-product-galois-action).
+*Needs:* [§3.8 *The no-leg cusp identification*](#38-the-no-leg-cusp-identification); [§4.6 *Hecke-finite specialization*](#46-hecke-finite-specialization); [§4.7 *The product Galois action*](#47-the-product-galois-action).
 
-### GS.4.9 Galois equivariance of coalescence
+### 4.9 Galois equivariance of coalescence
 
 The map `χζ:H_{I,W}≃H_{J,W^ζ}` intertwines Gal(F̄/F)^J via the coordinate-diagonal map Gal^J→Gal^I. It is E-linear, Hecke-equivariant, natural in W and compatible with composition of maps of finite sets.
 
@@ -1404,9 +1422,9 @@ The map `χζ:H_{I,W}≃H_{J,W^ζ}` intertwines Gal(F̄/F)^J via the coordinate-
 
 Source: [VL](#references), §9, Proposition 9.7(b) and proof, pp. 132–133.
 
-*Needs:* [§GS.2.10 *Coalescence of legs*](#gs210-coalescence-of-legs); [§GS.4.8 *The cohomology functors `H_{I,W}*](#gs48-the-cohomology-functors-h_iw)`.
+*Needs:* [§2.10 *Coalescence of legs*](#210-coalescence-of-legs); [§4.8 *The cohomology functors `H_{I,W}`*](#48-the-cohomology-functors-h_iw).
 
-### GS.4.10 Naturality of leg operations
+### 4.10 Naturality of leg operations
 
 Creation and annihilation commute with Hecke operators away from the added legs and with partial Frobenius on unaffected legs. After the extended spherical action is constructed, the resulting excursions are endomorphisms of the full Hecke module. On created legs the operations retain the ordered Galois/Frobenius insertion rather than commuting it away.
 
@@ -1416,9 +1434,9 @@ Creation and annihilation commute with Hecke operators away from the added legs 
 
 Source: [VL](#references), §5, Definitions 5.1–5.2 and Lemma 5.3, pp. 71–72; §9, proof of Definition–Proposition 9.1, pp. 128–131.
 
-*Needs:* [§GS.2.11 *Hecke correspondences on shtukas*](#gs211-hecke-correspondences-on-shtukas); [§GS.3.1 *Creation and annihilation*](#gs31-creation-and-annihilation); [§GS.4.9 *Galois equivariance of coalescence*](#gs49-galois-equivariance-of-coalescence).
+*Needs:* [§2.11 *Hecke correspondences on shtukas*](#211-hecke-correspondences-on-shtukas); [§3.1 *Creation and annihilation*](#31-creation-and-annihilation); [§4.9 *Galois equivariance of coalescence*](#49-galois-equivariance-of-coalescence).
 
-### GS.4.11 Independence of specialization choices
+### 4.11 Independence of specialization choices
 
 Changing the product-generic point, specialization arrow or finite lisse envelope changes the transported Galois/fusion data by the corresponding comparison isomorphism. In the creation–action–annihilation composite these comparisons cancel, giving a canonical no-leg endomorphism.
 
@@ -1428,25 +1446,25 @@ Changing the product-generic point, specialization arrow or finite lisse envelop
 
 Source: [VL](#references), §9, Lemma 9.4 and Proposition 9.7, pp. 130–133.
 
-*Needs:* [§GS.4.6 *Hecke-finite specialization*](#gs46-hecke-finite-specialization); [§GS.4.9 *Galois equivariance of coalescence*](#gs49-galois-equivariance-of-coalescence).
+*Needs:* [§4.6 *Hecke-finite specialization*](#46-hecke-finite-specialization); [§4.9 *Galois equivariance of coalescence*](#49-galois-equivariance-of-coalescence).
 
-### GS.4.12 Weil descent on full cohomology
+### 4.12 Weil descent on full cohomology
 
 The Frobenius–Weil action on the full HN-colimit shtuka cohomology factors through Weil(F)^I: with O_E coefficients for split G as in Xue-I, and with E coefficients for the connected reductive nonsplit groups of the parahoric setting of Xue-S §6. This statement is about Weil groups and the full colimit; it does not assert an action of the full profinite Galois group on a finite-dimensional space.
 
-The integral branch uses §GS.3.7 for arbitrary finitely generated coefficients W with its auxiliary finite-free M; no decomposition of W into external products is assumed.
+The integral branch uses §3.7 for arbitrary finitely generated coefficients W with its auxiliary finite-free M; no decomposition of W into external products is assumed.
 
-*Proof.* For a finite module M over a finitely generated commutative O_E-algebra A, reduce modulo powers of every maximal ideal m. If λ ∈ m the quotients are finite torsion O_E-modules; otherwise λ is invertible on A/mⁿ and the quotients are finite-dimensional over E. Apply the finite-coefficient lemma or the rational Frobenius–Weil descent theorem of §GS.4.3 accordingly, using continuity on the geometric kernel in the latter case (Source corrections, E6). Use the Krull intersection theorem and localization to kill the kernel of the Frobenius–Weil action on M; in the split integral case use finiteness over one local Hecke algebra. For nonsplit G with rational coefficients, use the finite Hecke envelopes given by the Eichler–Shimura recurrence and finite local Hecke tensor products, and take their directed union. This uses semisimplicity of rational representations, not an integral semisimplicity claim.
+*Proof.* For a finite module M over a finitely generated commutative O_E-algebra A, reduce modulo powers of every maximal ideal m. If λ ∈ m the quotients are finite torsion O_E-modules; otherwise λ is invertible on A/mⁿ and the quotients are finite-dimensional over E. Apply the finite-coefficient lemma or the rational Frobenius–Weil descent theorem of §4.3 accordingly, using continuity on the geometric kernel in the latter case (Source corrections, E6). Use the Krull intersection theorem and localization to kill the kernel of the Frobenius–Weil action on M; in the split integral case use finiteness over one local Hecke algebra. For nonsplit G with rational coefficients, use the finite Hecke envelopes given by the Eichler–Shimura recurrence and finite local Hecke tensor products, and take their directed union. This uses semisimplicity of rational representations, not an integral semisimplicity claim.
 
 *Remark.* A finite A-module need not be finite over O_E.
 
-*Remark.* Descent of the full profinite Galois group on the integral Hecke-finite part is [§GS.4.7 *The product Galois action*](#gs47-the-product-galois-action), a different theorem.
+*Remark.* Descent of the full profinite Galois group on the integral Hecke-finite part is [§4.7 *The product Galois action*](#47-the-product-galois-action), a different theorem.
 
 Source: [Xue-I](#references), §8.2, Lemmas 8.2.2 and 8.2.4 and Proposition 8.2.6, pp. 55–56; [Xue-S](#references), Proposition 1.3.4 and Lemma 1.3.11, pp. 11–12; §6, Lemma 6.0.9 and Proposition 6.0.10, p. 35.
 
-*Needs:* [§GS.3.7 *The Eichler–Shimura relation*](#gs37-the-eichlershimura-relation); [§GS.3.12 *Finiteness over one local Hecke algebra*](#gs312-finiteness-over-one-local-hecke-algebra); [§GS.4.1 *Drinfeld’s lemma for finite étale covers*](#gs41-drinfelds-lemma-for-finite-étale-covers); [§GS.4.2 *Drinfeld’s lemma for lisse coefficients*](#gs42-drinfelds-lemma-for-lisse-coefficients); [§GS.4.3 *The Frobenius–Weil group*](#gs43-the-frobeniusweil-group).
+*Needs:* [§3.7 *The Eichler–Shimura relation*](#37-the-eichlershimura-relation); [§3.12 *Finiteness over one local Hecke algebra*](#312-finiteness-over-one-local-hecke-algebra); [§4.1 *Drinfeld’s lemma for finite étale covers*](#41-drinfelds-lemma-for-finite-étale-covers); [§4.2 *Drinfeld’s lemma for lisse coefficients*](#42-drinfelds-lemma-for-lisse-coefficients); [§4.3 *The Frobenius–Weil group*](#43-the-frobeniusweil-group).
 
-### GS.4.13 Ind-smoothness of full cohomology
+### 4.13 Ind-smoothness of full cohomology
 
 For E coefficients and G with the parahoric model and good open of Xue-S §6, the entire cohomology ind-sheaf `H^j_{N,I,W}` is ind-smooth over (U∖|N|)^I: every specialization to the geometric generic fibre induces an isomorphism. The product Weil action factors through Weil(U∖|N|)^I. For split G with O_E coefficients, specialization from the diagonal generic fibre to the generic product is an isomorphism by Xue-I, Proposition 8.1.2; the stronger nonsplit integral assertion is not inferred from the rational theorem.
 
@@ -1460,23 +1478,23 @@ The pseudo-product sheaves and the specialization theorem for products of strict
 
 Source: [Xue-S](#references), Theorem 4.2.3, p. 32; §6, Theorem 6.0.12 and Proposition 6.0.13, p. 36; [Xue-I](#references), §8.1, Proposition 8.1.2, p. 55.
 
-*Needs:* [§GS.2.9 *Partial Frobenius*](#gs29-partial-frobenius); [§GS.4.6 *Hecke-finite specialization*](#gs46-hecke-finite-specialization); [§GS.4.12 *Weil descent on full cohomology*](#gs412-weil-descent-on-full-cohomology).
+*Needs:* [§2.9 *Partial Frobenius*](#29-partial-frobenius); [§4.6 *Hecke-finite specialization*](#46-hecke-finite-specialization); [§4.12 *Weil descent on full cohomology*](#412-weil-descent-on-full-cohomology).
 
 ### Examples
 
 - *One leg.* For I = {1} Drinfeld's lemma is the usual equivalence between finite étale covers of U and finite continuous π₁(U)-sets, and the Frobenius–Weil group is an extension of Z by the geometric Galois group.
-- *Two legs.* For I = {1, 2} the degree map of the Frobenius–Weil group is onto Z², total Frobenius has degree (1, 1), and merging the two legs restricts a pair of Galois elements along γ ↦ (γ, γ); it does not multiply them ([§GS.4.9 *Galois equivariance of coalescence*](#gs49-galois-equivariance-of-coalescence)).
-- *A counterexample to naive descent.* A finite module over a finitely generated O_E-algebra need not be finite over O_E: O_E[t]/(λt − 1) is the field E. This is why the Weil descent of [§GS.4.12 *Weil descent on full cohomology*](#gs412-weil-descent-on-full-cohomology) separates maximal ideals containing λ from the others (Source corrections, E6).
+- *Two legs.* For I = {1, 2} the degree map of the Frobenius–Weil group is onto Z², total Frobenius has degree (1, 1), and merging the two legs restricts a pair of Galois elements along γ ↦ (γ, γ); it does not multiply them ([§4.9 *Galois equivariance of coalescence*](#49-galois-equivariance-of-coalescence)).
+- *A counterexample to naive descent.* A finite module over a finitely generated O_E-algebra need not be finite over O_E: O_E[t]/(λt − 1) is the field E. This is why the Weil descent of [§4.12 *Weil descent on full cohomology*](#412-weil-descent-on-full-cohomology) separates maximal ideals containing λ from the others (Source corrections, E6).
 
 ### Dependencies
 
-Layers GS.2–GS.3; Mathlib `CategoryTheory.GaloisCategory`; EtaleCohomologyFoundations §§F.0.1–F.0.2 and F.2; the source theorems of Xue cited at each target.
+Layers 2–3; Mathlib `CategoryTheory.GaloisCategory`; EtaleCohomologyFoundations §§F.0.1–F.0.2 and F.2; the source theorems of Xue cited at each target.
 
-## Layer GS.5: global excursions and the parameterization
+## Layer 5: global excursions and the parameterization
 
-This layer realizes the abstract excursion data of LanglandsParameterStacks by creation, Galois action and annihilation of legs on the cohomology of shtukas, proves their relations, continuity and unramifiedness, and applies the reconstruction of parameters from their characters. The result is V. Lafforgue's decomposition of the cusp space into generalized excursion eigenspaces indexed by semisimple global parameters, with scalar spherical Hecke action at good places in characteristic zero. The integral and modular blocks, the action on the full compactly supported cohomology, the conditional comparison with eigensheaves and the conjectural multiplicity description are separate targets, each with its own hypotheses. Standing hypotheses are those of Layer GS.1.
+This layer realizes the abstract excursion data of LanglandsParameterStacks by creation, Galois action and annihilation of legs on the cohomology of shtukas, proves their relations, continuity and unramifiedness, and applies the reconstruction of parameters from their characters. The result is V. Lafforgue's decomposition of the cusp space into generalized excursion eigenspaces indexed by semisimple global parameters, with scalar spherical Hecke action at good places in characteristic zero. The integral and modular blocks, the action on the full compactly supported cohomology, the conditional comparison with eigensheaves and the conjectural multiplicity description are separate targets, each with its own hypotheses. Standing hypotheses are those of Layer 1.
 
-### GS.5.1 Global excursion operators
+### 5.1 Global excursion operators
 
 For finite I, W∈Rep_E(Ĝ^I), diagonal-Ĝ-invariant x∈W and ξ∈W∗, and (γi)∈Gal(F̄/F)^I, define `S_{I,W,x,ξ,γ}` on `C_c^cusp(Bun_{𝒢,N}(F_q)/Ξ,E)` by creation at the generic diagonal, inverse coalescence to `H_{I,W}`, action of (γi), coalescence back and annihilation. It is independent of the specialization choices and commutes with the full level-N Hecke algebra.
 
@@ -1498,9 +1516,9 @@ The API:
 
 Source: [VL](#references), §9, Definition–Proposition 9.1, pp. 128–129.
 
-*Needs:* [§GS.3.1 *Creation and annihilation*](#gs31-creation-and-annihilation); [§GS.3.8 *The no-leg cusp identification*](#gs38-the-no-leg-cusp-identification); [§GS.4.7 *The product Galois action*](#gs47-the-product-galois-action); [§GS.4.10 *Naturality of leg operations*](#gs410-naturality-of-leg-operations); [§GS.4.11 *Independence of specialization choices*](#gs411-independence-of-specialization-choices).
+*Needs:* [§3.1 *Creation and annihilation*](#31-creation-and-annihilation); [§3.8 *The no-leg cusp identification*](#38-the-no-leg-cusp-identification); [§4.7 *The product Galois action*](#47-the-product-galois-action); [§4.10 *Naturality of leg operations*](#410-naturality-of-leg-operations); [§4.11 *Independence of specialization choices*](#411-independence-of-specialization-choices).
 
-### GS.5.2 Invariant-function indexing
+### 5.2 Invariant-function indexing
 
 The shtuka operator depends on (W, x, ξ) only through the function f((g_i)) = ξ((g_i)x) in O(Ĝ\Ĝ^I/Ĝ), and every such invariant function is a matrix coefficient of this form. So the geometric construction gives an operator `S_{I,f,γ}`. This realizes the abstract excursion data of LanglandsParameterStacks §§LP2e.13–LP2e.14; it does not redefine them.
 
@@ -1512,7 +1530,7 @@ The shtuka operator depends on (W, x, ξ) only through the function f((g_i)) = �
 
 Source: [VL](#references), §10, Notation 10.5, Lemma 10.6 and Notation 10.7, pp. 137–138.
 
-*Needs:* [§GS.5.1 *Global excursion operators*](#gs51-global-excursion-operators); LanglandsParameterStacks §LP2e.13 (excursion data); LanglandsParameterStacks §LP2e.14 (excursion matrix coefficients).
+*Needs:* [§5.1 *Global excursion operators*](#51-global-excursion-operators); LanglandsParameterStacks §LP2e.13 (excursion data); LanglandsParameterStacks §LP2e.14 (excursion matrix coefficients).
 
 The pointwise matrix coefficient of an abstract group representation is g↦ξ(ρ(g)x). Its identity value is ξ(x); diagonal invariance of x and ξ makes it invariant on both sides as a function on points. Regularity in this target requires the finite-dimensional algebraic representation of Ĝ^I specified above. For example, on (R×)² the abstract action (a,b)↦|a/b| with x=1 and ξ=id is diagonally invariant but not regular on G_m². The abstract excursion datum is supplied by LanglandsParameterStacks.
 
@@ -1522,19 +1540,19 @@ The pointwise matrix coefficient of an abstract group representation is g↦ξ(�
 - With one leg and invariant x the function is the constant ξ(x), even for a nontrivial ambient representation; it is not an arbitrary class function of one group element.
 - For Ĝ=SL₂, W=V⊠V∨, and coevaluation/evaluation as x,ξ, the function is tr(g₁g₂⁻¹). At (diag(2,1/2),1) over Q it is 5/2, whereas at (1,1) it is 2. For A=diag(2,1/2), f(A,A)=tr(1)=2, whereas the incorrect tr(A²) is 17/4. This distinguishes the relative inverse from multiplication; the value at (A,1) alone does not.
 
-### GS.5.3 Satake scalars and parameter separation
+### 5.3 Satake scalars and parameter separation
 
-For split G and a good place v∈U∖|N|, f(g1,g2)=χV(g1g2⁻¹) and γ∈Gal(F̄_v/Fv) of Weil degree d≥0, `S_{{1,2},f,(γ,1)}` depends only on d, and for d=1 equals `T(h_{V,v})`. For nonsplit unramified G use the twisted-character formulation of §§GS.1.11 and GS.3.6. Chebotarev and continuity determine all single-element semisimple classes from good-place Satake data. This determines a semisimple GL_r representation by its trace, but does not imply simultaneous conjugacy of general reductive-group parameters; all-tuples excursions supply that stronger separation.
+For split G and a good place v∈U∖|N|, f(g1,g2)=χV(g1g2⁻¹) and γ∈Gal(F̄_v/Fv) of Weil degree d≥0, `S_{{1,2},f,(γ,1)}` depends only on d, and for d=1 equals `T(h_{V,v})`. For nonsplit unramified G use the twisted-character formulation of §§1.12 and 3.6. Chebotarev and continuity determine all single-element semisimple classes from good-place Satake data. This determines a semisimple GL_r representation by its trace, but does not imply simultaneous conjugacy of general reductive-group parameters; all-tuples excursions supply that stronger separation.
 
-*Proof.* Transport partial Frobenius through the specialization comparison to obtain the dependence on d only, and use VL Proposition 6.2 when d = 1. Use Chebotarev density only for continuous class functions, which gives information on individual conjugacy classes. For GL_r, use the semisimple reconstruction of determinants over an algebraically closed field and, in characteristic zero, the injectivity of the trace on determinants (IntegralHeckeAndGaloisDeterminants IHG.0–IHG.1; this is Taylor's pseudocharacter theorem, recalled in VL Remark 11.8). For general Ĝ keep the invariants of all tuples.
+*Proof.* Transport partial Frobenius through the specialization comparison to obtain the dependence on d only, and use VL Proposition 6.2 when d = 1. Use Chebotarev density (FunctionFieldArithmetic §5.8: in every finite quotient of π₁(X∖|N|) each conjugacy class is the Frobenius of unramified places of every sufficiently large compatible degree) only for continuous class functions, which gives information on individual conjugacy classes. For GL_r, use the semisimple reconstruction of determinants over an algebraically closed field and, in characteristic zero, the injectivity of the trace on determinants (IntegralHeckeAndGaloisDeterminants IHG.0–IHG.1; this is Taylor's pseudocharacter theorem, recalled in VL Remark 11.8). For general Ĝ keep the invariants of all tuples.
 
 *Remark.* For general Ĝ, homomorphisms that are conjugate element by element need not be conjugate; only the invariants of all tuples separate parameters, and this theorem uses no more than that distinction.
 
 Source: [VL](#references), §10, Lemma 10.2, p. 135; §11, Remarks 11.6 and 11.8, pp. 142–143; §0.7, pp. 36–37.
 
-*Needs:* [§GS.1.11 *Normalized spherical Satake*](#gs111-normalized-spherical-satake); [§GS.3.6 *Hecke operators from Frobenius*](#gs36-hecke-operators-from-frobenius); [§GS.5.1 *Global excursion operators*](#gs51-global-excursion-operators); IntegralHeckeAndGaloisDeterminants IHG.1 (*Semisimple reconstruction of field determinants*); IntegralHeckeAndGaloisDeterminants IHG.0 (*A determinant is determined by its trace when d! is invertible*); FunctionFieldArithmetic FA.5 (Chebotarev density for finite Galois covers of the curve, with constant-field degrees).
+*Needs:* [§1.12 *Normalized spherical Satake*](#112-normalized-spherical-satake); [§3.6 *Hecke operators from Frobenius*](#36-hecke-operators-from-frobenius); [§5.1 *Global excursion operators*](#51-global-excursion-operators); IntegralHeckeAndGaloisDeterminants IHG.1 (*Semisimple reconstruction of field determinants*); IntegralHeckeAndGaloisDeterminants IHG.0 (*A determinant is determined by its trace when d! is invertible*); FunctionFieldArithmetic §5.8 (degree-sensitive Chebotarev for finite Galois extensions of F, with the constant-field congruence).
 
-### GS.5.4 Excursions on full compact cohomology
+### 5.4 Excursions on full compact cohomology
 
 Define CompactShtukaCohom.excursion. For split G, finite retained legs J, a coefficient representation V ∈ `Rep_{O_E}(Ĝ^J)` on a finitely generated module, finite auxiliary legs I disjoint from J, W ∈ `Rep_{O_E}(Ĝ^I)` on a finitely generated module, diagonal-Ĝ-invariant x ∈ W and ξ ∈ W∗, a tuple γ ∈ Weil(F̄/F)^I and any j∈Z, define `S^{O_E}_{I,W,x,ξ,γ}` on `H^{j,O_E}_{N,J,V}` restricted to the generic point of the diagonal of X^J by creating the legs I, applying the product Weil action (trivially on the J coordinates) and annihilating I. The operators commute with proper-parabolic constant terms and with extension of scalars to E. At J = ∅, V = 1, j = 0 they act on the whole space of compactly supported automorphic functions, including its noncuspidal part. The nonsplit version with E coefficients uses ind-smoothness.
 
@@ -1559,9 +1577,9 @@ The API:
 
 Source: [Xue-I](#references), §8.3, Construction 8.3.3, 8.3.4 and Lemma 8.3.5, p. 57; §8.4, Proposition 8.4.2, p. 58.
 
-*Needs:* [§GS.1.14 *Integral geometric Satake*](#gs114-integral-geometric-satake); [§GS.3.5 *Cuspidal shtuka cohomology*](#gs35-cuspidal-shtuka-cohomology); [§GS.4.12 *Weil descent on full cohomology*](#gs412-weil-descent-on-full-cohomology); [§GS.4.13 *Ind-smoothness of full cohomology*](#gs413-ind-smoothness-of-full-cohomology); [§GS.5.1 *Global excursion operators*](#gs51-global-excursion-operators).
+*Needs:* [§1.14 *Integral geometric Satake*](#114-integral-geometric-satake); [§3.5 *Cuspidal shtuka cohomology*](#35-cuspidal-shtuka-cohomology); [§4.12 *Weil descent on full cohomology*](#412-weil-descent-on-full-cohomology); [§4.13 *Ind-smoothness of full cohomology*](#413-ind-smoothness-of-full-cohomology); [§5.1 *Global excursion operators*](#51-global-excursion-operators).
 
-### GS.5.5 The global excursion identities
+### 5.5 The global excursion identities
 
 The shtuka realization satisfies the excursion relations of LanglandsParameterStacks §LP2e.10: f ↦ `S_{I,f,γ}` is a unital E-algebra map for each tuple γ; reindexing along ζ : I → J pulls back f and γ compatibly; disjoint unions multiply operators; and the three-copy identity inserts γ_i(γ′_i)⁻¹γ″_i into f. For each fixed f the map on tuples is continuous for the E-adic topology and factors through π₁(U)^I for some U. These relations are proved for the geometric operators, not imposed as axioms on the cusp space.
 
@@ -1573,9 +1591,9 @@ The shtuka realization satisfies the excursion relations of LanglandsParameterSt
 
 Source: [VL](#references), §10, Lemma 10.1 and Proposition 10.8(i)–(iv), pp. 133–139.
 
-*Needs:* [§GS.4.4 *Fusion and partial Frobenius*](#gs44-fusion-and-partial-frobenius); [§GS.4.9 *Galois equivariance of coalescence*](#gs49-galois-equivariance-of-coalescence); [§GS.5.2 *Invariant-function indexing*](#gs52-invariant-function-indexing); LanglandsParameterStacks §§LP2e.9–LP2e.10 (excursion algebras of a group and the universal excursion relations).
+*Needs:* [§4.4 *Fusion and partial Frobenius*](#44-fusion-and-partial-frobenius); [§4.9 *Galois equivariance of coalescence*](#49-galois-equivariance-of-coalescence); [§5.2 *Invariant-function indexing*](#52-invariant-function-indexing); LanglandsParameterStacks §§LP2e.9–LP2e.10 (excursion algebras of a group and the universal excursion relations).
 
-### GS.5.6 Unramifiedness of excursions
+### 5.6 Unramifiedness of excursions
 
 Every `S_{I,f,γ}` depends only on the image of γ in π₁(X∖|N|)^I, and the resulting map to the finite-dimensional excursion algebra is E-adically continuous. In the nonsplit case replace |N| by |N|∪(X∖U_𝒢), where 𝒢 is reductive on U_𝒢.
 
@@ -1585,9 +1603,9 @@ Every `S_{I,f,γ}` depends only on the image of γ in π₁(X∖|N|)^I, and the 
 
 Source: [VL](#references), §10, Lemma 10.4 and Proposition 10.10, pp. 136–140; §12.1, p. 149; §12.3.4, pp. 162–164.
 
-*Needs:* [§GS.3.6 *Hecke operators from Frobenius*](#gs36-hecke-operators-from-frobenius); [§GS.4.2 *Drinfeld’s lemma for lisse coefficients*](#gs42-drinfelds-lemma-for-lisse-coefficients); [§GS.5.5 *The global excursion identities*](#gs55-the-global-excursion-identities).
+*Needs:* [§3.6 *Hecke operators from Frobenius*](#36-hecke-operators-from-frobenius); [§4.2 *Drinfeld’s lemma for lisse coefficients*](#42-drinfelds-lemma-for-lisse-coefficients); [§5.5 *The global excursion identities*](#55-the-global-excursion-identities).
 
-### GS.5.7 The global excursion algebra
+### 5.7 The global excursion algebra
 
 Define GlobalExcursion.algebra. `B_{N,Ξ,E}` is the E-subalgebra of `End_Hecke(C_c^cusp(Bun_{𝒢,N}(F_q)/Ξ,E))` generated by all `S_{I,f,γ}`. It is finite-dimensional and commutative, and contains the spherical Hecke operators at good places. After a finite coefficient extension splitting B, the cusp space decomposes into its generalized B-character spaces. Reducedness of B and diagonalizability of every excursion are not asserted.
 
@@ -1610,11 +1628,11 @@ The API:
 
 Source: [VL](#references), §10, Notation 10.5, p. 137; §11, Remark 11.6, p. 142.
 
-*Needs:* [§GS.3.8 *The no-leg cusp identification*](#gs38-the-no-leg-cusp-identification); [§GS.5.5 *The global excursion identities*](#gs55-the-global-excursion-identities); [§GS.5.6 *Unramifiedness of excursions*](#gs56-unramifiedness-of-excursions); FunctionFieldArithmetic FA.6 (*Harder support and central-degree finiteness*); Mathlib `Algebra.adjoin`, `Module.End.genEigenspace` and `Module.End.iSup_maxGenEigenspace_eq_top`.
+*Needs:* [§3.8 *The no-leg cusp identification*](#38-the-no-leg-cusp-identification); [§5.5 *The global excursion identities*](#55-the-global-excursion-identities); [§5.6 *Unramifiedness of excursions*](#56-unramifiedness-of-excursions); FunctionFieldArithmetic §6.4 (finite generation of the fixed-level cusp module); Mathlib `Algebra.adjoin`, `Module.End.genEigenspace` and `Module.End.iSup_maxGenEigenspace_eq_top`.
 
 Use Mathlib `Algebra.isMulCommutative_adjoin` for the commuting generating family and `FiniteDimensional.finiteDimensional_subalgebra` for its image algebra. The direct-sum target includes both independence and spanning of the generalized character spaces; use `Module.End.independent_iInf_maxGenEigenspace_of_forall_mapsTo` for independence and the simultaneous generalized-eigenspace spanning theorem for spanning. The geometric realization and its parameter-labelled decomposition remain the headline targets.
 
-### GS.5.8 Global reconstruction of parameters
+### 5.8 Global reconstruction of parameters
 
 For a character ν : B → Q̄_ℓ, the maps Θ_n^ν obtained by adding a base leg with γ₀ = 1 form a pseudocharacter of Γ = π₁(X ∖ |N|) with values in Ĝ. The reconstruction theorem for an arbitrary group (LanglandsParameterStacks §LP2c.2) gives a Ĝ-completely reducible σ_ν : Γ → Ĝ(Q̄_ℓ), unique up to Ĝ(Q̄_ℓ)-conjugacy, with `ν(S_{I,f,γ})` = f((σ_ν(γ_i))). The continuity of σ_ν for the profinite topology of Γ and the E-adic topology, its definition over one finite extension E′/Q_ℓ, and the reductivity of its Zariski closure are part of this target (VL Proposition 11.7 and Lemmas 11.9–11.10); LP2c.3–LP2c.4 treat continuity for local Weil groups only. Distinct characters of B give distinct parameter classes.
 
@@ -1626,9 +1644,9 @@ For a character ν : B → Q̄_ℓ, the maps Θ_n^ν obtained by adding a base l
 
 Source: [VL](#references), §11, Definition–Proposition 11.3, Proposition 11.7 and Lemmas 11.9–11.10, pp. 141–146.
 
-*Needs:* [§GS.5.6 *Unramifiedness of excursions*](#gs56-unramifiedness-of-excursions); [§GS.5.7 *The global excursion algebra*](#gs57-the-global-excursion-algebra); LanglandsParameterStacks §§LP2c.1–LP2c.2 (pseudocharacters with prescribed projection; reconstruction for an arbitrary group).
+*Needs:* [§5.6 *Unramifiedness of excursions*](#56-unramifiedness-of-excursions); [§5.7 *The global excursion algebra*](#57-the-global-excursion-algebra); LanglandsParameterStacks §§LP2c.1–LP2c.2 (pseudocharacters with prescribed projection; reconstruction for an arbitrary group).
 
-### GS.5.9 The global cuspidal decomposition
+### 5.9 The global cuspidal decomposition
 
 For split G, fixed N and central lattice Ξ, there is a canonical finite direct-sum decomposition `C_c^cusp(Bun_{G,N}(F_q)/Ξ,Q̄_ℓ)=⊕σ` Hσ into full level-N Hecke submodules indexed by continuous semisimple global parameters unramified outside N, each defined over a finite Q_ℓ-extension. Hσ is the simultaneous generalized excursion eigenspace with evaluation f((σ(γi))). For every good v and irreducible V, `T(h_{V,v})` acts on Hσ by the scalar χV(σ(Frob_v)). Zero summands may be omitted. No converse existence or general multiplicity formula is claimed.
 
@@ -1638,11 +1656,11 @@ For split G, fixed N and central lattice Ξ, there is a canonical finite direct-
 
 Source: [VL](#references), §11, Theorem 11.11 and proof, p. 148.
 
-*Needs:* [§GS.5.3 *Satake scalars and parameter separation*](#gs53-satake-scalars-and-parameter-separation); [§GS.5.7 *The global excursion algebra*](#gs57-the-global-excursion-algebra); [§GS.5.8 *Global reconstruction of parameters*](#gs58-global-reconstruction-of-parameters).
+*Needs:* [§5.3 *Satake scalars and parameter separation*](#53-satake-scalars-and-parameter-separation); [§5.7 *The global excursion algebra*](#57-the-global-excursion-algebra); [§5.8 *Global reconstruction of parameters*](#58-global-reconstruction-of-parameters).
 
-### GS.5.10 The nonsplit global decomposition
+### 5.10 The nonsplit global decomposition
 
-Let G/F be connected reductive with connected parahoric model 𝒢/X, reductive on U, and let F̃ be the fixed field of the kernel of the pinned Galois action on the full based root datum. This extension is unramified over U; a larger finite splitting cover is permitted only if it is étale over U. Put ᴸG = Ĝ ⋊ Gal(F̃/F). The full cusp space on `Bun_{𝒢,N}(F_q)/Ξ`, including ker¹ pure-inner-form components, has the canonical generalized excursion decomposition indexed by continuous semisimple σ : Gal(F̄/F) → ᴸG(E′), unramified outside |N|∪(X∖U), whose projection is the prescribed quotient to Gal(F̃/F). Good-place Satake operators `h_{V,v}` use the twisted characters of §GS.1.11 and act by Tr(σ(Frob_v)|V), and the decomposition respects changes of N.
+Let G/F be connected reductive with connected parahoric model 𝒢/X, reductive on U, and let F̃ be the fixed field of the kernel of the pinned Galois action on the full based root datum. This extension is unramified over U; a larger finite splitting cover is permitted only if it is étale over U. Put ᴸG = Ĝ ⋊ Gal(F̃/F). The full cusp space on `Bun_{𝒢,N}(F_q)/Ξ`, including ker¹ pure-inner-form components, has the canonical generalized excursion decomposition indexed by continuous semisimple σ : Gal(F̄/F) → ᴸG(E′), unramified outside |N|∪(X∖U), whose projection is the prescribed quotient to Gal(F̃/F). Good-place Satake operators `h_{V,v}` use the twisted characters of §1.12 and act by Tr(σ(Frob_v)|V), and the decomposition respects changes of N.
 
 **Checks.**
 
@@ -1656,21 +1674,21 @@ Let G/F be connected reductive with connected parahoric model 𝒢/X, reductive 
 
 Source: [VL](#references), §12.1, Theorem 12.3 and Remark 12.4, pp. 148–152; §12.3.4–§12.3.5, pp. 162–165.
 
-*Needs:* [§GS.0.12 *Nonsplit bundle descent*](#gs012-nonsplit-bundle-descent); [§GS.1.13 *Nonsplit Satake descent*](#gs113-nonsplit-satake-descent); [§GS.5.8 *Global reconstruction of parameters*](#gs58-global-reconstruction-of-parameters); [§GS.5.9 *The global cuspidal decomposition*](#gs59-the-global-cuspidal-decomposition).
+*Needs:* [§0.12 *Nonsplit bundle descent*](#012-nonsplit-bundle-descent); [§1.11 *Nonsplit Satake descent*](#111-nonsplit-satake-descent); [§5.8 *Global reconstruction of parameters*](#58-global-reconstruction-of-parameters); [§5.9 *The global cuspidal decomposition*](#59-the-global-cuspidal-decomposition).
 
-### GS.5.11 Integral and modular excursion blocks
+### 5.11 Integral and modular excursion blocks
 
 Integral Satake coefficients make the excursion operators preserve the cusp O_E-lattice. Their reductions give, over F̄_ℓ, canonical generalized blocks indexed by continuous completely reducible parameters into the dual group over F̄_ℓ, with the prescribed L-group projection in the nonsplit case. The good-place Hecke action has the corresponding generalized eigenvalues; scalar action is not asserted in this coefficient branch.
 
-*Proof.* Use the integral Satake coefficients of [§GS.1.14 *Integral geometric Satake*](#gs114-integral-geometric-satake), with the integral perverse convention, and run the geometric correspondences on the O_E-lattice. Reduce the finite excursion algebra and apply the positive-characteristic reconstruction of LanglandsParameterStacks §LP2c.2, which uses Ĝ-complete reducibility, not the characteristic-zero criterion through reductive closures. Apply primary decomposition, without the Hermitian normality argument, which is unavailable in characteristic ℓ.
+*Proof.* Use the integral Satake coefficients of [§1.14 *Integral geometric Satake*](#114-integral-geometric-satake), with the integral perverse convention, and run the geometric correspondences on the O_E-lattice. Reduce the finite excursion algebra and apply the positive-characteristic reconstruction of LanglandsParameterStacks §LP2c.2, which uses Ĝ-complete reducibility, not the characteristic-zero criterion through reductive closures. Apply primary decomposition, without the Hermitian normality argument, which is unavailable in characteristic ℓ.
 
 *Remark.* The integral Satake equivalence and the positive-characteristic reconstruction are separate inputs; neither follows from the rational Satake theorem.
 
 Source: [VL](#references), §13, Proposition 13.1, Theorem 13.2 and Remark 13.3, pp. 166–169.
 
-*Needs:* [§GS.1.14 *Integral geometric Satake*](#gs114-integral-geometric-satake); [§GS.5.10 *The nonsplit global decomposition*](#gs510-the-nonsplit-global-decomposition); LanglandsParameterStacks §§LP2e.9–LP2e.10 (excursion algebras of a group and the universal excursion relations); LanglandsParameterStacks §§LP2c.1–LP2c.2 (pseudocharacters with prescribed projection; reconstruction for an arbitrary group).
+*Needs:* [§1.14 *Integral geometric Satake*](#114-integral-geometric-satake); [§5.10 *The nonsplit global decomposition*](#510-the-nonsplit-global-decomposition); LanglandsParameterStacks §§LP2e.9–LP2e.10 (excursion algebras of a group and the universal excursion relations); LanglandsParameterStacks §§LP2c.1–LP2c.2 (pseudocharacters with prescribed projection; reconstruction for an arbitrary group).
 
-### GS.5.12 The conditional eigensheaf comparison
+### 5.12 The conditional eigensheaf comparison
 
 For split G at empty level, suppose a Ξ-equivariant ℓ-adic Hecke eigensheaf F on Bun_G has eigen-local-system E and has cuspidal trace function f. Assume the additional trace-comparison maps in VL Proposition 15.1 are compatible with partial Frobenius. Then f lies in the global block H_σ for the Galois parameter of E. The required maps are coefficient-natural and fusion-compatible; partial-Frobenius compatibility is the explicitly unwritten input. This conditional application is not a prerequisite of the proven decomposition.
 
@@ -1680,49 +1698,49 @@ For split G at empty level, suppose a Ξ-equivariant ℓ-adic Hecke eigensheaf F
 
 Source: [VL](#references), §15, setting before Proposition 15.1 and Proposition 15.1 with proof, pp. 173–174.
 
-*Needs:* [§GS.4.8 *The cohomology functors `H_{I,W}*](#gs48-the-cohomology-functors-h_iw)`; [§GS.5.10 *The nonsplit global decomposition*](#gs510-the-nonsplit-global-decomposition).
+*Needs:* [§4.8 *The cohomology functors `H_{I,W}`*](#48-the-cohomology-functors-h_iw); [§5.10 *The nonsplit global decomposition*](#510-the-nonsplit-global-decomposition).
 
-### GS.5.13 Multiplicity spaces beyond the theorem
+### 5.13 Multiplicity spaces beyond the theorem
 
-Formulate, as a named conjecture and not as an axiom, V. Lafforgue's expected description `H_{I,W}` ≅ ⊕_σ (A_σ ⊗ `W_{σ^I})^{S_σ}` of the cohomology functors through multiplicity spaces A_σ and centralizer groups S_σ, and prove that its case I = ∅, W = 1 is consistent with the proved decomposition [§GS.5.9 *The global cuspidal decomposition*](#gs59-the-global-cuspidal-decomposition). The Arthur-parameter and motivic-independence statements of VL Conjectures 12.7 and 12.12 are likewise only formulated. No other target depends on these conjectures; the proved results use generalized excursion eigenspaces and do not assume that the excursion algebra is reduced.
+Formulate, as a named conjecture and not as an axiom, V. Lafforgue's expected description `H_{I,W}` ≅ ⊕_σ (A_σ ⊗ `W_{σ^I})^{S_σ}` of the cohomology functors through multiplicity spaces A_σ and centralizer groups S_σ, and prove that its case I = ∅, W = 1 is consistent with the proved decomposition [§5.9 *The global cuspidal decomposition*](#59-the-global-cuspidal-decomposition). The Arthur-parameter and motivic-independence statements of VL Conjectures 12.7 and 12.12 are likewise only formulated. No other target depends on these conjectures; the proved results use generalized excursion eigenspaces and do not assume that the excursion algebra is reduced.
 
 *Proof.* Compare the conjectural formula with the proved no-leg decomposition, keeping its centralizer and invariant factors.
 
 Source: [VL](#references), §0, Remark 0.30 and (0.43), pp. 27–28; §12.2.2–§12.2.4, Conjectures 12.7 and 12.12, pp. 153–155.
 
-*Needs:* [§GS.4.8 *The cohomology functors `H_{I,W}*](#gs48-the-cohomology-functors-h_iw)`; [§GS.5.9 *The global cuspidal decomposition*](#gs59-the-global-cuspidal-decomposition).
+*Needs:* [§4.8 *The cohomology functors `H_{I,W}`*](#48-the-cohomology-functors-h_iw); [§5.9 *The global cuspidal decomposition*](#59-the-global-cuspidal-decomposition).
 
 ### Examples
 
-- *Trivial data.* For W = 1 and ξ(x) = a the excursion operator is a·Id, including a = 0; with all γ_i = 1 it is ξ(x)·Id ([§GS.5.1 *Global excursion operators*](#gs51-global-excursion-operators)).
-- *Hecke operators are excursions.* For I = {1, 2}, W = V ⊠ V∗, x the coevaluation and ξ the evaluation, the operator attached to (Frob_v, 1) is the normalized spherical Hecke operator `T(h_{V,v})` ([§GS.5.3 *Satake scalars and parameter separation*](#gs53-satake-scalars-and-parameter-separation)).
-- *Generalized eigenspaces.* On E² the operator with matrix rows (1, 1) and (0, 1) has a two-dimensional generalized eigenspace for the eigenvalue 1 but a one-dimensional eigenspace; the excursion decomposition of [§GS.5.7 *The global excursion algebra*](#gs57-the-global-excursion-algebra) is by generalized eigenspaces.
+- *Trivial data.* For W = 1 and ξ(x) = a the excursion operator is a·Id, including a = 0; with all γ_i = 1 it is ξ(x)·Id ([§5.1 *Global excursion operators*](#51-global-excursion-operators)).
+- *Hecke operators are excursions.* For I = {1, 2}, W = V ⊠ V∗, x the coevaluation and ξ the evaluation, the operator attached to (Frob_v, 1) is the normalized spherical Hecke operator `T(h_{V,v})` ([§5.3 *Satake scalars and parameter separation*](#53-satake-scalars-and-parameter-separation)).
+- *Generalized eigenspaces.* On E² the operator with matrix rows (1, 1) and (0, 1) has a two-dimensional generalized eigenspace for the eigenvalue 1 but a one-dimensional eigenspace; the excursion decomposition of [§5.7 *The global excursion algebra*](#57-the-global-excursion-algebra) is by generalized eigenspaces.
 - *Level control.* For X=P¹/F₃, G=G_m and full level N={0,∞}, the degree-zero ray Picard group is (F₃××F₃×)/F₃×≃F₃× of order 2. After quotienting the degree direction the cusp dimension is 2; erasing level would give dimension 1.
 - *Rank one.* For G = G_m the excursion decomposition is the decomposition of the cusp space (all functions on the finite ray Picard group Pic(X,N)/Ξ, the levelled bundle classes `Bun_{G_m,N}(F_q)/Ξ)` into characters, and the parameters are the rank-one Galois characters of class field theory.
 
 ### Dependencies
 
-Layers GS.0–GS.4; LanglandsParameterStacks §§LP2e.9–LP2e.14 and LP2c.1–LP2c.2; IntegralHeckeAndGaloisDeterminants IHG.0–IHG.1; FunctionFieldArithmetic FA.5 and FA.6; Mathlib `Algebra.adjoin` and generalized eigenspaces.
+Layers 0–4; LanglandsParameterStacks §§LP2e.9–LP2e.14 and LP2c.1–LP2c.2; IntegralHeckeAndGaloisDeterminants IHG.0–IHG.1; FunctionFieldArithmetic §§5.8 and 6.4; Mathlib `Algebra.adjoin` and generalized eigenspaces.
 
-## Layer GS.6: coefficient fields, companions and the GL_r excursion comparison
+## Layer 6: coefficient fields, companions and the GL_r excursion comparison
 
-L. Lafforgue's global Langlands correspondence for GL_r over F belongs to AutomorphicLFunctionsAndLocalFactors §AL.3 (see Scope and ownership); this layer builds on it. It removes the finite-determinant hypothesis by constant twists, under the exact algebraicity and plainness conditions that this requires, proves the existence of ℓ-adic companions on curves, and compares the parameters of V. Lafforgue's excursion decomposition for GL_r with those of the correspondence. The comparison is a second route to the rank-r existence statement; the proof in AL.3 does not depend on Layer GS.5.
+L. Lafforgue's global Langlands correspondence for GL_r over F belongs to AutomorphicLFunctionsAndLocalFactors §AL.3 (see Scope and ownership); this layer builds on it. It removes the finite-determinant hypothesis by constant twists, under the exact algebraicity and plainness conditions that this requires, proves the existence of ℓ-adic companions on curves, and compares the parameters of V. Lafforgue's excursion decomposition for GL_r with those of the correspondence. The comparison is a second route to the rank-r existence statement; the proof in AL.3 does not depend on Layer 5.
 
 Standing hypotheses for this layer: G = GL_r with r ≥ 1; ℓ ≠ p; a fixed isomorphism Q̄_ℓ ≅ C where analytic statements are compared; local factors use one additive character and its self-dual measures.
 
-### GS.6.1 Constant twists and coefficient fields
+### 6.1 Constant twists and coefficient fields
 
-For an irreducible lisse Q̄_ℓ-sheaf L on a smooth curve over F_q, a constant rank-one twist makes det L finite order. The stronger conclusion that this twist is algebraic and plain of characteristic p requires that the Frobenius eigenvalues of L be algebraic and units at every non-p place; being units only at the chosen ℓ-adic place is insufficient. Under Chin Proposition 4.3’s equivalent algebraicity/plainness hypotheses one may choose the constant scalar algebraic and plain of characteristic p, and apply the finite-determinant correspondence to the twisted sheaf. If L is additionally pure of a specified weight w, the normalizing twist can be chosen pure of weight −w; algebraicity and plainness alone do not impose a weight.
+For an irreducible lisse Q̄_ℓ-sheaf L on a smooth curve over F_q, a constant rank-one twist makes det L finite order. This normalization is DeligneWeightsAndPurity §5.5 applied to det L: a rank-one ℓ-adic Weil representation has finite geometric image and is a constant Weil character times a finite-order character. For the continuous lisse input the constant scalar is an ℓ-adic unit, so the twist extends continuously to the Galois group of the constant field. The stronger conclusion that this twist is algebraic and plain of characteristic p requires that the Frobenius eigenvalues of L be algebraic and units at every non-p place; being units only at the chosen ℓ-adic place is insufficient. Under Chin Proposition 4.3’s equivalent algebraicity/plainness hypotheses one may choose the constant scalar algebraic and plain of characteristic p, and apply the finite-determinant correspondence to the twisted sheaf. If L is additionally pure of a specified weight w, the normalizing twist can be chosen pure of weight −w; algebraicity and plainness alone do not impose a weight.
 
-*Proof.* Use finiteness of the geometric determinant to find a constant β whose twist has finite determinant. Apply the finite-determinant theorem to the twist. Under the algebraic/plain hypotheses compare one Frobenius eigenvalue before and after twisting to prove β has the required number-theoretic properties. Undo the twist only in a coefficient category where the selected scalar is defined; its field need not be Q.
+*Proof.* Apply DeligneWeightsAndPurity §5.5 to det L to find a constant β, an ℓ-adic unit, whose twist has finite determinant; for example the constant rank-one sheaf with arithmetic Frobenius 1+ℓ is normalized by the twist (1+ℓ)⁻¹ to the trivial character, although 1+ℓ has infinite order. Apply the finite-determinant theorem to the twist. The algebraicity and plainness refinement below is proved here, using Chin Proposition 4.3. Under the algebraic/plain hypotheses compare one Frobenius eigenvalue before and after twisting to prove β has the required number-theoretic properties. Undo the twist only in a coefficient category where the selected scalar is defined; its field need not be Q.
 
 *Remark.* p-plainness is not inferred from continuity at a single ℓ-adic completion.
 
 Source: [Chin](#references), §4.2 and Proposition 4.3, pp. 13–14.
 
-*Needs:* AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem); FunctionFieldArithmetic FA.4 (*Profinite global reciprocity and constants*).
+*Needs:* AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem); DeligneWeightsAndPurity §5.5 (finite geometric monodromy and rank-one normalization).
 
-### GS.6.2 Compatible systems on curves
+### 6.2 Compatible systems on curves
 
 For an irreducible finite-determinant lisse Q̄_ℓ-sheaf of rank r≥1 on a smooth curve, the good-place Frobenius polynomials lie in a number field; its eigenvalues are pure of weight zero and units at every place away from p. For each λ∤p there is an irreducible λ-adic companion with the same polynomials, after a finite local coefficient extension. More generally an algebraic p-plain irreducible sheaf belongs, after extending its number field, to a compatible system by the constant-twist reduction. For the finite-determinant sheaf and a reciprocal Frobenius root α at x and an additive valuation v_λ above p, the normalized slope bound is `|v_λ(α)/v_λ(q^{deg x})|≤(r−1)²/r`, as in LL VII.6(iv). Here deg x>0 and v_λ(q)>0, so the denominator is nonzero; for r=1 the bound is zero. For a general algebraic p-plain sheaf apply this bound after a finite-determinant constant twist; undoing that twist translates every normalized slope by the normalized valuation of the inverse twisting scalar.
 
@@ -1740,48 +1758,48 @@ For an irreducible finite-determinant lisse Q̄_ℓ-sheaf of rank r≥1 on a smo
 
 Source: [LL](#references), Chapter VII §2a, Theorem VII.6 and proof, pp. 198–200; [Chin](#references), §4.6, Theorem 4.6, pp. 15–16; [KZ](#references), §5.3.1, p. 53.
 
-*Needs:* [§GS.6.1 *Constant twists and coefficient fields*](#gs61-constant-twists-and-coefficient-fields); AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem).
+*Needs:* [§6.1 *Constant twists and coefficient fields*](#61-constant-twists-and-coefficient-fields); AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem).
 
-### GS.6.3 The GL_r excursion comparison
+### 6.3 The GL_r excursion comparison
 
-Assume the GL_s correspondence for all s < r. A GL_r parameter occurring in the excursion decomposition [§GS.5.9 *The global cuspidal decomposition*](#gs59-the-global-cuspidal-decomposition) is irreducible and pure of weight zero. It therefore supplies the rank-r existence input of Deligne's induction, and it equals the parameter given by the GL_r correspondence of AutomorphicLFunctionsAndLocalFactors §AL.3. This is a second route; the proof in AL.3 does not use Layer GS.5.
+Assume the GL_s correspondence for all s < r. A GL_r parameter occurring in the excursion decomposition [§5.9 *The global cuspidal decomposition*](#59-the-global-cuspidal-decomposition) is irreducible and pure of weight zero. It therefore supplies the rank-r existence input of Deligne's induction, and it equals the parameter given by the GL_r correspondence of AutomorphicLFunctionsAndLocalFactors §AL.3. This is a second route; the proof in AL.3 does not use Layer 5.
 
 *Proof.* If an occurring σ were reducible, attach lower-rank cusp representations to its irreducible factors after the required determinant twists. Good-place Satake matching would express L(π∨×π) as a product of unequal-rank Rankin–Selberg functions without its required pole. This is a contradiction. The geometric weight comparison of VL Lemma 16.2 and the finite-order determinant give weight zero; uniqueness identifies the parameter with LL’s σπ.
 
-*Remark.* Layer GS.5 alone gives no converse theorem or multiplicity statement for general groups; this comparison uses the GL_r rank induction.
+*Remark.* Layer 5 alone gives no converse theorem or multiplicity statement for general groups; this comparison uses the GL_r rank induction.
 
 Source: [VL](#references), §16, introduction, Lemmas 16.2 and 16.4 with proof, pp. 174–177.
 
-*Needs:* [§GS.5.9 *The global cuspidal decomposition*](#gs59-the-global-cuspidal-decomposition); AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem); DeligneWeightsAndPurity DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
+*Needs:* [§5.9 *The global cuspidal decomposition*](#59-the-global-cuspidal-decomposition); AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem); DeligneWeightsAndPurity DWP.7 (§7.8 weights of R^i f_!, §7.12 weight bounds and purity of the image, §7.15 purity for proper smooth varieties).
 
 ### Examples
 
 - *Rank one.* For r = 1 a lisse rank-one sheaf with algebraic, p-plain Frobenius eigenvalues is a constant twist of a finite-order character; its companions are the λ-adic characters with the same Frobenius values, given by class field theory.
-- *Why one ℓ is not enough.* A Frobenius eigenvalue can be an ℓ-adic unit and fail to be a unit at another place away from p; the constant-twist criterion of [§GS.6.1 *Constant twists and coefficient fields*](#gs61-constant-twists-and-coefficient-fields) needs units at every place away from p.
+- *Why one ℓ is not enough.* A Frobenius eigenvalue can be an ℓ-adic unit and fail to be a unit at another place away from p; the constant-twist criterion of [§6.1 *Constant twists and coefficient fields*](#61-constant-twists-and-coefficient-fields) needs units at every place away from p.
 
 ### Dependencies
 
-Layer GS.5; AutomorphicLFunctionsAndLocalFactors §AL.3; FunctionFieldArithmetic FA.4; DeligneWeightsAndPurity DWP.7.
+Layer 5; AutomorphicLFunctionsAndLocalFactors §AL.3; DeligneWeightsAndPurity §5.5 and DWP.7.
 
-## Layer GS.7: local excursions and comparison at every place
+## Layer 7: local excursions and comparison at every place
 
 Genestier and V. Lafforgue restrict global shtukas to finite restricted shtukas near a place and use nearby cycles over the leg base to construct local excursion elements in the completed Bernstein centre. The finite jet budgets, the torsion exponent and the congruence level are kept visible in the finite construction; general-base nearby cycles are transported through the local correspondence before convolution and before passing to completed-centre limits. The endpoint is semisimple local–global compatibility for every connected reductive group, a separate GL_r comparison that keeps the monodromy operator, the action with additional global legs, and local gamma factors.
 
-Standing hypotheses for this layer, in addition to those of Layer GS.1: K is a local field of characteristic p with finite residue field, and ℓ ≠ p; the restricted-shtuka construction first uses a split group over K with a chosen integral model, and the nonsplit extension uses parahoric models and the finite L-group; the congruence level m, torsion exponent s, jet bounds and Frobenius iteration budget are fixed in each finite construction and every comparison map respects them.
+Standing hypotheses for this layer, in addition to those of Layer 1: K is a local field of characteristic p with finite residue field, and ℓ ≠ p; the restricted-shtuka construction first uses a split group over K with a chosen integral model, and the nonsplit extension uses parahoric models and the finite L-group; the congruence level m, torsion exponent s, jet bounds and Frobenius iteration budget are fixed in each finite construction and every comparison map respects them.
 
-### GS.7.1 The unramified local comparison
+### 7.1 The unramified local comparison
 
-At a good hyperspecial place v, the restriction of an occurring global parameter has trivial inertia, and χV(σ(Frob_v)) is the normalized Satake eigenvalue of πv for every Frobenius-equivariant coefficient representation V, using twisted characters at nonsplit unramified places. For split G the spherical local excursion indexed by f(g1,g2)=χV(g1g2⁻¹) and (Frob_v,1) equals `h_{V,v}`. This is the first comparison case, proved before constructing the ramified local elements.
+At a good hyperspecial place v, the restriction of an occurring global parameter has trivial inertia, and χV(σ(Frob_v)) is the normalized Satake eigenvalue of πv for every Frobenius-equivariant coefficient representation V, using twisted characters at nonsplit unramified places. This is the first comparison case, proved before constructing the local excursion elements; their value at spherical level is identified in [§7.5 *Local excursion convolution elements*](#75-local-excursion-convolution-elements).
 
-*Proof.* Use global unramifiedness and the good-place Satake scalar theorem. Identify the two-leg local convolution element using the same creation/Frobenius/annihilation calculation at hyperspecial level.
+*Proof.* Use global unramifiedness and the good-place Satake scalar theorem.
 
-*Remark.* Normalize geometric Frobenius, the half Tate twist and volume one consistently with [§GS.1.11 *Normalized spherical Satake*](#gs111-normalized-spherical-satake).
+*Remark.* Normalize geometric Frobenius, the half Tate twist and volume one consistently with [§1.12 *Normalized spherical Satake*](#112-normalized-spherical-satake).
 
-Source: [VL](#references), Theorem 11.11, p. 148; Theorem 12.3, pp. 151–152; §10, Lemma 10.2, p. 135; [GeL](#references), §1, Remark 1.6, p. 8.
+Source: [VL](#references), Theorem 11.11, p. 148; Theorem 12.3, pp. 151–152; §10, Lemma 10.2, p. 135.
 
-*Needs:* [§GS.1.11 *Normalized spherical Satake*](#gs111-normalized-spherical-satake); [§GS.5.9 *The global cuspidal decomposition*](#gs59-the-global-cuspidal-decomposition); [§GS.5.10 *The nonsplit global decomposition*](#gs510-the-nonsplit-global-decomposition).
+*Needs:* [§1.12 *Normalized spherical Satake*](#112-normalized-spherical-satake); [§5.9 *The global cuspidal decomposition*](#59-the-global-cuspidal-decomposition); [§5.10 *The nonsplit global decomposition*](#510-the-nonsplit-global-decomposition).
 
-### GS.7.2 Finite restricted shtukas
+### 7.2 Finite restricted shtukas
 
 Define RestrictedShtuka. Let K be a local field of characteristic p with finite residue field k, choose a smooth k-curve Y with rational point v and completed local field K, and a split reductive G. For fixed ordered legs I,W, large jet multiplicities ni, level nv and integer r≥0, a restricted shtuka is (yi,𝒢,z,θ): a G-torsor on D_r=nv+Σni yi+Σni σ⁻¹yi+⋯+Σni σ⁻r yi, a bounded modification z at Σni yi, and `θ:σ(a_z𝒢)|D_{r−1}≃𝒢|D_{r−1}`. The scheme-theoretic inverse Frobenius divisors retain their thickening. For r=0 read the source convention `D_{−1}=nv`. Restriction from a global shtuka is defined over `U_{I,r}`, with the disjointness condition GeL (2.10), and is smooth; decreasing jet data gives smooth restriction morphisms.
 
@@ -1806,15 +1824,15 @@ The API:
 - For n=0,r=0 obtain the bounded Grassmannian modulo `G_{Σni yi}`.
 - One partial Frobenius reduces the available iteration budget r by one; it is not an endomorphism of every fixed finite-jet stack.
 
-Source: [GeL](#references), §2, Definition 2.11, Remarks 2.12–2.14, Definition 2.15, Proposition 2.16 and Lemma 2.17, pp. 14–18 and §9, pp. 46–47; [AH19](#references), arXiv:1302.6351v2, Theorem 3.15, pp. 15–17; [Ric16](#references), arXiv:1311.1008v2, Theorem A.
+Source: [GeL](#references), §2, Definition 2.11, Remarks 2.12–2.14, Definition 2.15, Proposition 2.16 and Lemma 2.17, pp. 14–18 and §9, pp. 43–45; [AH19](#references), arXiv:1302.6351v2, Theorem 3.15, pp. 15–17; [Ric16](#references), arXiv:1311.1008v2, Theorem A.
 
-*Needs:* [§GS.0.3 *Full level structures*](#gs03-full-level-structures); [§GS.1.3 *Global Hecke chains*](#gs13-global-hecke-chains); [§GS.2.1 *Global shtukas*](#gs21-global-shtukas); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks).
+*Needs:* [§0.3 *Full level structures*](#03-full-level-structures); [§1.3 *Global Hecke chains*](#13-global-hecke-chains); [§2.1 *Global shtukas*](#21-global-shtukas); SchemeAndStackFoundations Layer 1 (§§1.1, 1.15–1.16 descent, torsors and contracted products; §§1.18–1.21 algebraic and Deligne–Mumford stacks, inertia and quotient stacks).
 
-### GS.7.3 Nearby cycles over higher-dimensional bases
+### 7.3 Nearby cycles over higher-dimensional bases
 
 Apply ClassicalAdicEtaleCohomology §5.4 to the Satake sheaf tensored with the regular finite-level local system on a restricted-shtuka chart. Its contract takes a coherent irreducible scheme S, a finitely presented f:Y→S, an integer n>0 invertible on S, and K∈Dᵇ_c(Y,Z/n). After a modification S′→S depending on K, nearby cycles are bounded constructible and commute with every base change to S′. For the leg base choose the smooth geometrically connected curve component containing v; its powers are integral. Integral and rational coefficient systems are obtained only through their specified torsion reductions and limits.
 
-*Proof.* Apply the supplied oriented-product and modification theorem on finitely presented charts with Λ=O_E/λ^s. Descend the Satake coefficients along the finite-jet quotient and tensor with the regular `G(O_{mv})` local system. Use the smooth descent of §GS.1.4 and proper base change to compare the resulting complexes across the restricted-shtuka diagrams.
+*Proof.* Apply the supplied oriented-product and modification theorem on finitely presented charts with Λ=O_E/λ^s. Descend the Satake coefficients along the finite-jet quotient and tensor with the regular `G(O_{mv})` local system. Use the smooth descent of §1.4 and proper base change to compare the resulting complexes across the restricted-shtuka diagrams.
 
 **Checks.**
 
@@ -1826,9 +1844,9 @@ Apply ClassicalAdicEtaleCohomology §5.4 to the Satake sheaf tensored with the r
 
 Source: [GeL](#references), Lemma 2.20 and (2.27)–(2.28), pp. 21–22; proof of Proposition 3.2, pp. 25–31; [Org](#references), arXiv:math/0507475v1, Théorème 1.1, pp. 2–3 and Théorème 6.1, p. 16 (published as Theorems 2.1 and 8.1).
 
-*Needs:* [§GS.1.4 *ℓ-adic sheaves on stacks of finite type*](#gs14-ℓ-adic-sheaves-on-stacks-of-finite-type); [§GS.7.2 *Finite restricted shtukas*](#gs72-finite-restricted-shtukas); ClassicalAdicEtaleCohomology §5.4; LefschetzPencilsAndVanishingCycles Layer LPV.0.
+*Needs:* [§1.4 *ℓ-adic sheaves on stacks of finite type*](#14-ℓ-adic-sheaves-on-stacks-of-finite-type); [§7.2 *Finite restricted shtukas*](#72-finite-restricted-shtukas); ClassicalAdicEtaleCohomology §5.4; LefschetzPencilsAndVanishingCycles Layer LPV.0.
 
-### GS.7.4 Transport on local nearby cycles
+### 7.4 Transport on local nearby cycles
 
 For δ in the local higher-variable Frobenius–Weil group with degree tuple (di), and a sufficiently increasing tuple (mi) with mi+di≥0, there is a local morphism `Tδ:RΨ_{(mi)}SL→RΨ_{(mi+di)}SL` on the same finite restricted-shtuka special fibre. It intertwines the specialization and FWeil action on every global truncation. The local FWeil group surjects onto Weil(K)^I. The theorem uses the general-base modification theorem and the Gabber composition theorem used together with ULA in GeL (proof of Proposition 3.2); a direct trait specialization argument does not supply it.
 
@@ -1838,19 +1856,19 @@ For δ in the local higher-variable Frobenius–Weil group with degree tuple (di
 
 *Remark.* The specialization comparison between the generic product and Frobenius diagonal is part of this target. Its inputs are ULA on the good open and Gabber's nearby-cycle composition theorem, as in GeL §3, proof of Proposition 3.2.
 
-The Gabber input is composition of nearby cycles after modification (Eteve–Xue, Theorem A.9): for a finitely presented map Y→S of qcqs schemes and a bounded constructible torsion complex A on Y, after a suitable modification of S, every chain of geometric specializations s→t→u has an isomorphism Ψ_(s→u)A→Ψ_(t→u)Ψ_(s→t)A. The coefficients have order invertible on S. The modification making A Ψ-good in Theorem A.4 also suffices for this composition theorem. Apply it to the specialization chains of GeL (3.20), using ULA on the good open to identify the intermediate restriction; apply the chart descent of §GS.1.4 afterwards.
+The Gabber input is composition of nearby cycles after modification (Eteve–Xue, Theorem A.9): for a finitely presented map Y→S of qcqs schemes and a bounded constructible torsion complex A on Y, after a suitable modification of S, every chain of geometric specializations s→t→u has an isomorphism Ψ_(s→u)A→Ψ_(t→u)Ψ_(s→t)A. The coefficients have order invertible on S. The modification making A Ψ-good in Theorem A.4 also suffices for this composition theorem. Apply it to the specialization chains of GeL (3.20), using ULA on the good open to identify the intermediate restriction; apply the chart descent of §1.4 afterwards.
 
 Source: [GeL](#references), §3, Proposition 3.2 with proof and Remark 3.12, pp. 24–31; §4, Lemmas 4.1–4.3, pp. 32–33; [EX24](#references), arXiv:2409.16474v1, Theorems A.4 and A.9, Appendix A.
 
-*Needs:* [§GS.4.1 *Drinfeld’s lemma for finite étale covers*](#gs41-drinfelds-lemma-for-finite-étale-covers); [§GS.4.3 *The Frobenius–Weil group*](#gs43-the-frobeniusweil-group); [§GS.7.3 *Nearby cycles over higher-dimensional bases*](#gs73-nearby-cycles-over-higher-dimensional-bases); LefschetzPencilsAndVanishingCycles Layer LPV.0 (nearby cycles over a henselian trait); EtaleCohomologyFoundations §F.2.3 (local and universal local acyclicity).
+*Needs:* [§4.1 *Drinfeld’s lemma for finite étale covers*](#41-drinfelds-lemma-for-finite-étale-covers); [§4.3 *The Frobenius–Weil group*](#43-the-frobeniusweil-group); [§7.3 *Nearby cycles over higher-dimensional bases*](#73-nearby-cycles-over-higher-dimensional-bases); LefschetzPencilsAndVanishingCycles Layer LPV.0 (nearby cycles over a henselian trait); EtaleCohomologyFoundations §F.2.3 (local and universal local acyclicity).
 
-### GS.7.5 Local excursion convolution elements
+### 7.5 Local excursion convolution elements
 
-Define LocalExcursion.convolution. For split G/K, pro-p congruence U_m, whose finite quotients have order prime to ℓ, Λ=O_E/λ^s, f∈O(Ĝ\Ĝ^I/Ĝ)_Λ and (γi)∈Weil(K)^I, the restricted-shtuka composite defines `z_{m,s,I,f,γ}∈C_c(U_m\G(K)/U_m,Λ)`. It is independent of the coefficient realization, leg ordering, local FWeil lift and sufficiently increasing Frobenius tuple; it is continuous in γ, compatible in s,m, and its global convolution equals the modular excursion on all compactly supported automorphic functions, at arbitrary additional level away from v.
+Define LocalExcursion.convolution. For split G/K, pro-p congruence U_m, whose finite quotients have order prime to ℓ, Λ=O_E/λ^s, f∈O(Ĝ\Ĝ^I/Ĝ)_Λ and (γi)∈Weil(K)^I, the restricted-shtuka composite defines `z_{m,s,I,f,γ}∈C_c(U_m\G(K)/U_m,Λ)`. It is independent of the coefficient realization, leg ordering, local FWeil lift and sufficiently increasing Frobenius tuple; it is continuous in γ, compatible in s,m, and its global convolution equals the modular excursion on all compactly supported automorphic functions, at arbitrary additional level away from v. At a good hyperspecial place, for split G, the spherical local excursion element indexed by f(g1,g2)=χV(g1g2⁻¹) and (Frob_v,1) equals `h_{V,v}`, compatibly with the unramified comparison of [§7.1 *The unramified local comparison*](#71-the-unramified-local-comparison).
 
-*Construction.* Represent f by an integral finite-free matrix coefficient and lift γ to local FWeil. Compose creation, ordered partial Frobenius to (mi), Tδ, return partial Frobenius and annihilation, decreasing jet/iteration budgets as required. At zero legs the regular level local system identifies the result with a compactly supported double-coset function. Cartesian correspondence pullback proves the global convolution identity. Use GeL Lemma 1.4’s Poincaré-series detection with arbitrary away-v level to prove uniqueness, hence independence of every auxiliary choice and continuity.
+*Construction.* Represent f by an integral finite-free matrix coefficient and lift γ to local FWeil. Compose creation, ordered partial Frobenius to (mi), Tδ, return partial Frobenius and annihilation, decreasing jet/iteration budgets as required. At zero legs the regular level local system identifies the result with a compactly supported double-coset function. Cartesian correspondence pullback proves the global convolution identity. Use GeL Lemma 1.4’s Poincaré-series detection with arbitrary away-v level to prove uniqueness, hence independence of every auxiliary choice and continuity. At hyperspecial level identify the two-leg spherical element with `h_{V,v}` by the same creation/Frobenius/annihilation calculation as in the global Hecke comparison of §3.6.
 
-*Remark.* The detection step uses the excursions on full compactly supported cohomology of [§GS.5.4 *Excursions on full compact cohomology*](#gs54-excursions-on-full-compact-cohomology), in the split case and, for nonsplit G, in the torsion version that target includes. The cuspidal action alone does not suffice.
+*Remark.* The detection step uses the excursions on full compactly supported cohomology of [§5.4 *Excursions on full compact cohomology*](#54-excursions-on-full-compact-cohomology), in the split case and, for nonsplit G, in the torsion version that target includes. The cuspidal action alone does not suffice.
 
 The API:
 
@@ -1865,11 +1883,11 @@ The API:
 - For f=1 recover the identity `1_{U_m}` under volume-one convolution.
 - Replacing one torsion realization (W,x,ξ) of f or changing a lift δ does not change the double-coset function; this needs the global detection theorem, not a chosen-isomorphism claim.
 
-Source: [GeL](#references), §1, Proposition 1.3 and Lemma 1.4, p. 7; §6, (6.1)–(6.3), Lemma 6.2 and Remark 6.3, pp. 36–40.
+Source: [GeL](#references), §1, Proposition 1.3 and Lemma 1.4, p. 7, and Remark 1.6, p. 8 (the spherical case); §6, (6.1)–(6.3), Lemma 6.2 and Remark 6.3, pp. 36–40; [VL](#references), §6.1, Proposition 6.2, p. 75.
 
-*Needs:* [§GS.5.4 *Excursions on full compact cohomology*](#gs54-excursions-on-full-compact-cohomology); [§GS.5.11 *Integral and modular excursion blocks*](#gs511-integral-and-modular-excursion-blocks); [§GS.7.2 *Finite restricted shtukas*](#gs72-finite-restricted-shtukas); [§GS.7.4 *Transport on local nearby cycles*](#gs74-transport-on-local-nearby-cycles); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula).
+*Needs:* [§3.6 *Hecke operators from Frobenius*](#36-hecke-operators-from-frobenius); [§5.4 *Excursions on full compact cohomology*](#54-excursions-on-full-compact-cohomology); [§5.11 *Integral and modular excursion blocks*](#511-integral-and-modular-excursion-blocks); [§7.1 *The unramified local comparison*](#71-the-unramified-local-comparison); [§7.2 *Finite restricted shtukas*](#72-finite-restricted-shtukas); [§7.4 *Transport on local nearby cycles*](#74-transport-on-local-nearby-cycles); EtaleDualityAndPerverseSheaves Layer 6 (§6.2 composition and pullback of cohomological correspondences, §6.3 the Lefschetz–Verdier formula, §6.5 contracting correspondences and the Fujiwara–Varshavsky formula).
 
-### GS.7.6 Bernstein centre parameters
+### 7.6 Bernstein centre parameters
 
 The local elements define `z_{I,f,γ}` in the projective limit over U of the ℓ-adic completions of the integral level Hecke centres, with the algebra, reindexing, three-copy and continuity identities. For an integral smooth admissible irreducible G(K)-representation over a finite Q_ℓ-extension, evaluating its central character reconstructs a continuous semisimple Gal(K̄/K)→Ĝ(Q̄_ℓ) parameter. For an arbitrary such irreducible, one obtains a continuous semisimple Weil(K) parameter by constant-character twisting and normalized parabolic induction. The assignment depends only on its Bernstein central character and respects normalized induction.
 
@@ -1883,13 +1901,13 @@ The local elements define `z_{I,f,γ}` in the projective limit over U of the ℓ
 
 Source: [GeL](#references), Theorem 0.1, pp. 2–3; §1, Theorem 1.1 and the reduction to Proposition 1.3, pp. 5–9.
 
-*Needs:* [§GS.7.5 *Local excursion convolution elements*](#gs75-local-excursion-convolution-elements); LanglandsParameterStacks §§LP2c.1–LP2c.2 (pseudocharacters with prescribed projection; reconstruction for an arbitrary group); SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.3 and SR.3.2 (admissibility and the centre, the Λ-linear Bernstein centre, the Bernstein decomposition); SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.2 (induction, Jacquet functors and parabolic induction); SmoothRepresentationsOfLocalGroups §§SR.1.3 and SR.3.2 (gap:classical-centre-restriction).
+*Needs:* [§7.5 *Local excursion convolution elements*](#75-local-excursion-convolution-elements); LanglandsParameterStacks §§LP2c.1–LP2c.2 (pseudocharacters with prescribed projection; reconstruction for an arbitrary group); SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.3 and SR.3.2 (admissibility and the centre, the Λ-linear Bernstein centre, the Bernstein decomposition); SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.2 (induction, Jacquet functors and parabolic induction); SmoothRepresentationsOfLocalGroups §§SR.1.3 and SR.3.2 (gap:classical-centre-restriction).
 
-### GS.7.7 Local excursions on compact cohomology
+### 7.7 Local excursions on compact cohomology
 
 With integral coefficients O_E and arbitrary additional legs J and coefficient V, the local elements `z_{m,I,f,γ}` = lim_s `z_{m,s,I,f,γ}` act by right convolution on colim_μ `H^{0,≤μ,O_E}_{N,J,V}` at the generic point of the diagonal, and this action equals the global excursion on compactly supported shtuka cohomology. The inverse-limit function tends to zero at infinity in the ℓ-adic topology. Finite support of every torsion reduction does not by itself give finite support of the integral limit, and finite support of the limit is not asserted.
 
-*Proof.* Use the integral excursion action on compactly supported cohomology of [§GS.5.4 *Excursions on full compact cohomology*](#gs54-excursions-on-full-compact-cohomology), with its coefficient and fusion compatibilities. Repeat the cartesian comparison of correspondences with the extra legs J present. Pass through coefficient reduction and the inverse limit, keeping apart finite support at each s and decay at infinity.
+*Proof.* Use the integral excursion action on compactly supported cohomology of [§5.4 *Excursions on full compact cohomology*](#54-excursions-on-full-compact-cohomology), with its coefficient and fusion compatibilities. Repeat the cartesian comparison of correspondences with the extra legs J present. Pass through coefficient reduction and the inverse limit, keeping apart finite support at each s and decay at infinity.
 
 *Remark.* For J = ∅ one recovers convolution on compactly supported automorphic functions.
 
@@ -1897,13 +1915,13 @@ With integral coefficients O_E and arbitrary additional legs J and coefficient V
 
 Source: [GeL](#references), §8, Proposition 8.1, pp. 42–43; Remark 6.3, pp. 39–40.
 
-*Needs:* [§GS.2.5 *Shtuka intersection-cohomology systems*](#gs25-shtuka-intersection-cohomology-systems); [§GS.5.4 *Excursions on full compact cohomology*](#gs54-excursions-on-full-compact-cohomology); [§GS.7.5 *Local excursion convolution elements*](#gs75-local-excursion-convolution-elements).
+*Needs:* [§2.5 *Shtuka intersection-cohomology systems*](#25-shtuka-intersection-cohomology-systems); [§5.4 *Excursions on full compact cohomology*](#54-excursions-on-full-compact-cohomology); [§7.5 *Local excursion convolution elements*](#75-local-excursion-convolution-elements).
 
-### GS.7.8 Semisimple local–global compatibility
+### 7.8 Semisimple local–global compatibility
 
 If π=⊗v πv occurs in a global cusp block Hσ, then at every place v the local Genestier–Lafforgue parameter is Ĝ-conjugate to (σ|Gal(F̄_v/Fv))^ss in the integral case, and to the semisimplified Weil restriction in the wider coefficient case. For nonsplit G use ᴸG_v and its prescribed finite quotient. This is equality of semisimple parameters, with no general monodromy operator and no multiplicity in local L-packets attached.
 
-For nonsplit G this uses the parahoric construction included in [§GS.7.2 *Finite restricted shtukas*](#gs72-finite-restricted-shtukas).
+For nonsplit G this uses the parahoric construction included in [§7.2 *Finite restricted shtukas*](#72-finite-restricted-shtukas).
 
 *Proof.* Restrict the global excursion-convolution identity to Hσ. Its scalar character evaluates every invariant function on the tuple σ(γi), while the local centre character evaluates it on the local reconstructed tuple. Use the all-tuples semisimple character theorem to obtain conjugacy; retain the finite-quotient projection for nonsplit G.
 
@@ -1911,9 +1929,9 @@ For nonsplit G this uses the parahoric construction included in [§GS.7.2 *Finit
 
 Source: [GeL](#references), Theorem 0.1(b), p. 2; Theorem 1.1(v), p. 6; §6, Lemma 6.2, p. 38; §9, Theorem 9.1, pp. 43–45.
 
-*Needs:* [§GS.5.10 *The nonsplit global decomposition*](#gs510-the-nonsplit-global-decomposition); [§GS.7.5 *Local excursion convolution elements*](#gs75-local-excursion-convolution-elements); [§GS.7.6 *Bernstein centre parameters*](#gs76-bernstein-centre-parameters).
+*Needs:* [§5.10 *The nonsplit global decomposition*](#510-the-nonsplit-global-decomposition); [§7.5 *Local excursion convolution elements*](#75-local-excursion-convolution-elements); [§7.6 *Bernstein centre parameters*](#76-bernstein-centre-parameters).
 
-### GS.7.9 Semisimplification and monodromy
+### 7.9 Semisimplification and monodromy
 
 For general G the preceding construction retains the ordinary semisimple local Galois/Weil parameter and cannot in general determine a nilpotent monodromy operator N from πv. For GL_r the full classical local correspondence uses a Frobenius-semisimplified Weil–Deligne pair (r_v,N_v); Frobenius semisimplification retains N_v. Ordinary semisimplification and Frobenius semisimplification must therefore be separate operations and separate comparison statements.
 
@@ -1923,9 +1941,9 @@ For general G the preceding construction retains the ordinary semisimple local G
 
 Source: [GeL](#references), Remark 0.3, p. 3; [LL](#references), Chapter VII §1c, Corollary VII.5, p. 197.
 
-*Needs:* [§GS.7.8 *Semisimple local–global compatibility*](#gs78-semisimple-localglobal-compatibility); LanglandsParameterStacks §LP1.11 (Weil–Deligne parameters).
+*Needs:* [§7.8 *Semisimple local–global compatibility*](#78-semisimple-localglobal-compatibility); LanglandsParameterStacks §LP1.11 (Weil–Deligne parameters).
 
-### GS.7.10 Local gamma factors
+### 7.10 Local gamma factors
 
 For a reductive group over a local function field K, a finite-dimensional representation ρ of its finite L-group, a smooth irreducible representation π and characters χ:K×→Q̄_ℓ× and nontrivial ψ:K→Q̄_ℓ×, define γ(s,ρ,π,χ,ψ) by the Artin local factor of (ρ∘σπ)⊗χ. After coefficient identification with C these rational functions satisfy naturality, direct-sum multiplication, rank-one reciprocity, normalized parabolic induction, the change-of-ψ law, highly ramified stability and the global functional equation. They extend the existing function-field gamma-factor theories in their common ranges. These gamma factors depend only on the semisimple parameter, unlike separate L and epsilon factors in general.
 
@@ -1947,9 +1965,9 @@ The API LocalGamma.natural, LocalGamma.directSum, LocalGamma.rankOne, LocalGamma
 
 Source: [GeL](#references), §7.1–§7.3 and Remark 7.1, pp. 40–42; §9, p. 45; [Del73](#references), §3.12, pp. 533–534, Theorem 4.1, p. 535, Lemmas 4.12–4.16, pp. 544–545, and §8.12, p. 572.
 
-*Needs:* [§GS.7.6 *Bernstein centre parameters*](#gs76-bernstein-centre-parameters); [§GS.7.8 *Semisimple local–global compatibility*](#gs78-semisimple-localglobal-compatibility); AutomorphicLFunctionsAndLocalFactors §AL.3, *Function-field local factors, multiplicity one and converse theorem* (equal-characteristic Artin local constants, norm twists, highly ramified twists and the function-field product formula); FunctionFieldArithmetic FA.2 (*The differential additive character*); LanglandsParameterStacks §LP1.11 (Weil–Deligne parameters).
+*Needs:* [§7.6 *Bernstein centre parameters*](#76-bernstein-centre-parameters); [§7.8 *Semisimple local–global compatibility*](#78-semisimple-localglobal-compatibility); AutomorphicLFunctionsAndLocalFactors §AL.3, *Function-field local factors, multiplicity one and converse theorem* (equal-characteristic Artin local constants, norm twists, highly ramified twists and the function-field product formula); AutomorphicLFunctionsAndLocalFactors §AL.3, *Curve additive analysis* (the residue character of a global differential); FunctionFieldArithmetic §2.2 (the self-dual measures of a differential); LanglandsParameterStacks §LP1.11 (Weil–Deligne parameters).
 
-### GS.7.11 The ramified GL_r local comparison
+### 7.11 The ramified GL_r local comparison
 
 For the global GL_r correspondence of AutomorphicLFunctionsAndLocalFactors §AL.3, at every place v the Frobenius-semisimplified Weil–Deligne representation attached to σ_π restricted to Gal(F̄_v/F_v) corresponds to π_v under the local Langlands correspondence for GL_r over F_v (SmoothRepresentationsOfLocalGroups §SR.5.2, gap:equal-characteristic-glr-correspondence), monodromy and all local pair factors included. The local factor π_v is characterized by its central character and its pair factors with all lower-rank cuspidal representations (LL Proposition VII.4), and the comparison follows by induction on r (LL Corollary VII.5).
 
@@ -1961,35 +1979,36 @@ For the global GL_r correspondence of AutomorphicLFunctionsAndLocalFactors §AL.
 
 Source: [LL](#references), Chapter VII §1b–§1c, Theorem VII.3, Proposition VII.4 and Corollary VII.5, pp. 195–197.
 
-*Needs:* [§GS.7.9 *Semisimplification and monodromy*](#gs79-semisimplification-and-monodromy); AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem); SmoothRepresentationsOfLocalGroups §SR.5.2 (gap:equal-characteristic-glr-correspondence).
+*Needs:* [§7.9 *Semisimplification and monodromy*](#79-semisimplification-and-monodromy); AutomorphicLFunctionsAndLocalFactors §AL.3, the global GL_r correspondence (*Leveled shtukas and ramified rank induction*, with all-place pair factors and temperedness; *Function-field local factors, multiplicity one and converse theorem*; the unramified pure realization theorem); SmoothRepresentationsOfLocalGroups §SR.5.2 (gap:equal-characteristic-glr-correspondence).
 
 ### Examples
 
-- *Spherical level.* At a hyperspecial place, the local excursion element of the two-leg trace function f(g₁, g₂) = χ_V(g₁g₂⁻¹) and (Frob_v, 1) is the normalized spherical function `h_{V,v}`; for f = 1 the element is the unit `1_{U_m}` ([§GS.7.5 *Local excursion convolution elements*](#gs75-local-excursion-convolution-elements)).
-- *No legs.* With I = ∅ the restricted-shtuka stack is the classifying stack of `G(O_{nv})`, not a discrete set ([§GS.7.2 *Finite restricted shtukas*](#gs72-finite-restricted-shtukas)).
-- *Monodromy.* The Steinberg representation of GL₂(K) and the trivial character of GL₂(K) have the same semisimple parameter, with Weil part `|·|^{1/2}` ⊕ `|·|^{−1/2}`; the Steinberg representation has a nonzero monodromy operator and the trivial character has N = 0, so only the comparison with monodromy distinguishes them ([§GS.7.9 *Semisimplification and monodromy*](#gs79-semisimplification-and-monodromy)).
-- *Rank one.* For G = G_m the local gamma factor is Tate's local factor of the character, with the same reciprocity convention ([§GS.7.10 *Local gamma factors*](#gs710-local-gamma-factors)).
+- *Spherical level.* At a hyperspecial place, the local excursion element of the two-leg trace function f(g₁, g₂) = χ_V(g₁g₂⁻¹) and (Frob_v, 1) is the normalized spherical function `h_{V,v}`; for f = 1 the element is the unit `1_{U_m}` ([§7.5 *Local excursion convolution elements*](#75-local-excursion-convolution-elements)).
+- *No legs.* With I = ∅ the restricted-shtuka stack is the classifying stack of `G(O_{nv})`, not a discrete set ([§7.2 *Finite restricted shtukas*](#72-finite-restricted-shtukas)).
+- *Monodromy.* The Steinberg representation of GL₂(K) and the trivial character of GL₂(K) have the same semisimple parameter, with Weil part `|·|^{1/2}` ⊕ `|·|^{−1/2}`; the Steinberg representation has a nonzero monodromy operator and the trivial character has N = 0, so only the comparison with monodromy distinguishes them ([§7.9 *Semisimplification and monodromy*](#79-semisimplification-and-monodromy)).
+- *Rank one.* For G = G_m the local gamma factor is Tate's local factor of the character, with the same reciprocity convention ([§7.10 *Local gamma factors*](#710-local-gamma-factors)).
 
 ### Dependencies
 
-Layers GS.0–GS.6; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.3, SR.2.1–SR.2.2 and SR.3.2; LanglandsParameterStacks §§LP1.11 and LP2c.1–LP2c.2; SmoothRepresentationsOfLocalGroups (gap:classical-centre-restriction and gap:equal-characteristic-glr-correspondence); LefschetzPencilsAndVanishingCycles Layer LPV.0; ClassicalAdicEtaleCohomology §5.4; EtaleDualityAndPerverseSheaves Layer 6; AutomorphicLFunctionsAndLocalFactors §AL.3; FunctionFieldArithmetic FA.2 and FA.4.
+Layers 0–6; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.3, SR.2.1–SR.2.2 and SR.3.2; LanglandsParameterStacks §§LP1.11 and LP2c.1–LP2c.2; SmoothRepresentationsOfLocalGroups (gap:classical-centre-restriction and gap:equal-characteristic-glr-correspondence); LefschetzPencilsAndVanishingCycles Layer LPV.0; ClassicalAdicEtaleCohomology §5.4; EtaleDualityAndPerverseSheaves Layer 6; AutomorphicLFunctionsAndLocalFactors §AL.3 (including *Curve additive analysis*); FunctionFieldArithmetic §2.2.
 
 ## Source corrections
 
 The following points in the sources need care. Each is described in our own words, with the corrected statement used in this roadmap.
 
-- **E1** (YZ, §3.5.4, p. 38 of arXiv v2; the same text is on p. 38 of v1). The recall of Pκ uses the negative shift and twist `[−#I(κ)](−#I(κ)/2)`. Corollary 3.29, p. 35 instead gives `Rπκ!Q_ℓ = Rπ₁!Q_ℓ[−2r+#I(κ)](−r+#I(κ)/2)`. Applying `[2r](r)` gives the positive shift and twist `[#I(κ)](#I(κ)/2)`. The support has dimension #I(κ), so this is the perverse normalization. Used in [§GS.3.3 *Horocycle compact direct images*](#gs33-horocycle-compact-direct-images).
-- **E2** (YZ, §3.5.4, p. 38). The rank-one map on one fixed-degree component is a torsor under Pic⁰_X(k), not under Pic_X(k); only the union of all degree translates is a Pic_X(k)-torsor, because a line bundle of nonzero degree changes the degree component. Used in [§GS.3.9 *PGL₂ boundary constant terms*](#gs39-pgl-boundary-constant-terms).
-- **E3** (YZ, §3.5.4, p. 38). In the direct sum over the translates κ′ ∈ κ + Z, the summand indexed by κ′ must use the projection for N(κ′), not the fixed projection for N(κ); otherwise the action of Pic_X(k) by translation is lost. Used in [§GS.3.9 *PGL₂ boundary constant terms*](#gs39-pgl-boundary-constant-terms).
-- **E4** (Feng, §5.2.3, p. 36 of arXiv v6). In the definition of the Frobenius–Weil automorphisms, the subscript names the algebraic closure of F_q, while that paper's curve lives over F_ℓ; the closure of the actual base field is meant. This roadmap uses k = F_q throughout and defines the Frobenius–Weil group through the geometric kernel, as in VL Remark 8.18. Used in [§GS.4.3 *The Frobenius–Weil group*](#gs43-the-frobeniusweil-group).
+- **E1** (YZ, §3.5.4, p. 38 of arXiv v2; the same text is on p. 38 of v1). The recall of Pκ uses the negative shift and twist `[−#I(κ)](−#I(κ)/2)`. Corollary 3.29, p. 35 instead gives `Rπκ!Q_ℓ = Rπ₁!Q_ℓ[−2r+#I(κ)](−r+#I(κ)/2)`. Applying `[2r](r)` gives the positive shift and twist `[#I(κ)](#I(κ)/2)`. The support has dimension #I(κ), so this is the perverse normalization. Used in [§3.3 *Horocycle compact direct images*](#33-horocycle-compact-direct-images).
+- **E2** (YZ, §3.5.4, p. 38). The rank-one map on one fixed-degree component is a torsor under Pic⁰_X(k), not under Pic_X(k); only the union of all degree translates is a Pic_X(k)-torsor, because a line bundle of nonzero degree changes the degree component. Used in [§3.9 *PGL₂ boundary constant terms*](#39-pgl-boundary-constant-terms).
+- **E3** (YZ, §3.5.4, p. 38). In the direct sum over the translates κ′ ∈ κ + Z, the summand indexed by κ′ must use the projection for N(κ′), not the fixed projection for N(κ); otherwise the action of Pic_X(k) by translation is lost. Used in [§3.9 *PGL₂ boundary constant terms*](#39-pgl-boundary-constant-terms).
+- **E4** (Feng, §5.2.3, p. 36 of arXiv v6). In the definition of the Frobenius–Weil automorphisms, the subscript names the algebraic closure of F_q, while that paper's curve lives over F_ℓ; the closure of the actual base field is meant. This roadmap uses k = F_q throughout and defines the Frobenius–Weil group through the geometric kernel, as in VL Remark 8.18. Used in [§4.3 *The Frobenius–Weil group*](#43-the-frobeniusweil-group).
 - **E5** (LL, Theorem I.13, pp. 31–32 of the author copy). The author copy corrects the trace formula of the earlier book: the lower-rank error terms are polynomials times exponentials in the iteration exponent, not pure exponentials, and the positive-degree polynomial parts cancel only after comparison with cohomological traces. AutomorphicLFunctionsAndLocalFactors §AL.3 uses this corrected form.
-- **E6** (Xue-I, proof of Lemma 8.2.4, p. 55 of arXiv v2). The proof treats A/mⁿ as a finite torsion O_E-module for every maximal ideal m of a finitely generated O_E-algebra A. This fails when λ ∉ m: for A = O_E[t] and m = (λt − 1), A/m = E. The repair separates the two cases. If λ ∈ m, A/m is a finite field and M/mⁿM is a finite torsion O_E-module, so the finite-coefficient Drinfeld lemma applies. If λ ∉ m, λ is invertible on A/mⁿ, A/m is finite over E, and M/mⁿM is a finite-dimensional E-vector space with continuous geometric-Galois action, so Xue-S Lemma 1.2.10 applies as in §GS.4.3; a lattice stable under partial Frobenius is not required. The Krull intersection argument then proceeds as written, and the statement of Proposition 8.2.6 is unaffected. Used in [§GS.4.12 *Weil descent on full cohomology*](#gs412-weil-descent-on-full-cohomology).
+- **E6** (Xue-I, proof of Lemma 8.2.4, p. 55 of arXiv v2). The proof treats A/mⁿ as a finite torsion O_E-module for every maximal ideal m of a finitely generated O_E-algebra A. This fails when λ ∉ m: for A = O_E[t] and m = (λt − 1), A/m = E. The repair separates the two cases. If λ ∈ m, A/m is a finite field and M/mⁿM is a finite torsion O_E-module, so the finite-coefficient Drinfeld lemma applies. If λ ∉ m, λ is invertible on A/mⁿ, A/m is finite over E, and M/mⁿM is a finite-dimensional E-vector space with continuous geometric-Galois action, so Xue-S Lemma 1.2.10 applies as in §4.3; a lattice stable under partial Frobenius is not required. The Krull intersection argument then proceeds as written, and the statement of Proposition 8.2.6 is unaffected. Used in [§4.12 *Weil descent on full cohomology*](#412-weil-descent-on-full-cohomology).
+- **E7** (Ric, Corollary 5.8, p. 22 of arXiv v2). The displayed map (g,γ) ↦ (Ad χ(γ⁻¹)(g), γ) from the pinned to the geometric L-group is not multiplicative: on the pair (g,γ), (1,γ′) the two sides differ by Ad χ(γ′) in the first coordinate, and the SL₂ unipotent example of §1.11 gives u(1/3) against u(3). With a half Tate character ε, ε² = cycl, and c = (2ρ)∘ε, the map (g,γ) ↦ (g·c(γ)⁻¹, γ) is an isomorphism; Proposition 5.6 is unaffected, and Corollary 5.9 holds with this map whenever such an ε exists, in particular over F_q and over F. Used in [§1.11 *Nonsplit Satake descent*](#111-nonsplit-satake-descent).
 
 ## Downstream consumers
 
-- **GlobalShtukasAndFunctionFieldLanglandsPartII** builds on Layers GS.2–GS.7: weight bounds of Ramanujan and Arthur type for the parameters of Layer GS.5, the uniformization of global shtukas by local shtukas, and the comparison of the local parameters of Layer GS.7 with those of Fargues–Scholze.
-- **KloostermanSheavesAndBesselIsocrystals** uses Bun_G, the Beilinson–Drinfeld Grassmannian and geometric Satake (Layers GS.0–GS.1); **SheafTheoreticSmithTheory** uses the Grassmannian, Schubert bounds and Hecke stacks (Layer GS.1); **CountingBundlesAndHallAlgebrasOfCurves** uses the bundle stacks and masses (Layer GS.0).
-- **DrinfeldModulesAndTModules** uses the shtuka stacks and the elliptic-sheaf comparison (Layer GS.2); **MetaplecticAutomorphicForms** uses the excursion operators and the excursion algebra (Layer GS.5); **HodgeStructuresPartII** uses the companions on curves (Layer GS.6).
+- **GlobalShtukasAndFunctionFieldLanglandsPartII** builds on Layers 2–7: weight bounds of Ramanujan and Arthur type for the parameters of Layer 5, the uniformization of global shtukas by local shtukas, and the comparison of the local parameters of Layer 7 with those of Fargues–Scholze.
+- **KloostermanSheavesAndBesselIsocrystals** uses Bun_G, the Beilinson–Drinfeld Grassmannian and geometric Satake (Layers 0–1); **SheafTheoreticSmithTheory** uses the Grassmannian, Schubert bounds and Hecke stacks (Layer 1); **CountingBundlesAndHallAlgebrasOfCurves** uses the bundle stacks and masses (Layer 0).
+- **DrinfeldModulesAndTModules** uses the shtuka stacks and the elliptic-sheaf comparison (Layer 2); **MetaplecticAutomorphicForms** uses the excursion operators and the excursion algebra (Layer 5); **HodgeStructuresPartII** uses the companions on curves (Layer 6).
 - Roadmaps that need the GL_r correspondence itself (for example GlobalGaloisDeformationsPartII and ShimuraVarietiesPartII) take it from AutomorphicLFunctionsAndLocalFactors §AL.3.
 
 ## References

@@ -1,12 +1,6 @@
 {
   "gaps": [
     {
-      "slug": "function-field-arithmetic",
-      "supplier": "FunctionFieldArithmetic",
-      "section": "FA.1–FA.6",
-      "needs": "Global function-field adeles and ideles, finite-level reciprocity, differential additive characters and self-dual measures, zeta and Chebotarev theorems, constant terms and cuspidal support modulo a central lattice, with the full contracts labelled FA.1–FA.6 in this roadmap."
-    },
-    {
       "slug": "classical-centre-restriction",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.1.3 and SR.3.2",
@@ -22,7 +16,7 @@
       "slug": "elliptic-sheaf-carrier",
       "supplier": "AlgebraicModuliForArithmeticGeometry",
       "section": "elliptic-sheaf moduli (additional contract)",
-      "needs": "Supply rank-n elliptic sheaves on X with chosen infinity, commuting bundle and Frobenius chains, periodicity with the degree of infinity included, prescribed locally free quotients on the pole and zero graphs, degree normalization and compatible levels, for the comparison in GS.2.7."
+      "needs": "Supply rank-n elliptic sheaves on X with chosen infinity, commuting bundle and Frobenius chains, periodicity with the degree of infinity included, prescribed locally free quotients on the pole and zero graphs, degree normalization and compatible levels, for the comparison in §2.7."
     },
     {
       "slug": "function-field-sl-volume",
