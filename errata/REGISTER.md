@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4456 mistakes recorded on the board: 2994 misprints, 1117 errors, 292 gaps, 53 unparsed bullets.
+4466 mistakes recorded on the board: 3000 misprints, 1118 errors, 294 gaps, 54 unparsed bullets.
 Errata jobs have read the cited sources of 56 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -61,6 +61,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (HilbertModularVarietiesAndShimuraCurvesPartII, #1119 at b299520, 2026-10-24): Gap** in BHHMS23 at proof of Proposition 8.3.7, p. 101: the source says π^{K₁} equals D₀(r̄_v^∨)^{⊕r} by the proof of Proposition 8.2.6; that proof gives only an embedding, and the reverse is Breuil's Lemma 9.2 argument in Theorem 8.4.1(i); affects nothing.
 - **Unparsed** (HeckeStacksAndLocalShtukasPartII, #1138 at cf9d6fb, 2026-10-24): Gap** in he21 at §6.3, p. 14: the source gets basic nonemptiness of a t^γ from He15 Theorem 2.27, which assumes shrunkenness; a t^γ need not be shrunken (γ = 0, a = s₁s₂ in split A₂); affects the proof.
 - **Unparsed** (GeometryOfNumbersAndQuadraticArithmeticPartII, #1169 at 87ade09, 2026-10-24): Gap** in CDHHLMNNS-III-v4 at Example 2.3.14, printed p. 46 (lines 2156–2157): the source says (2) is prime because 2 does not divide the discriminant; that gives only unramifiedness, and inertness needs t²+t+1 irreducible mod 2 (ℚ(√−7) shows that unramified primes can split); affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "87ade09", "job": "REV-PKG-GeometryOfNumbersAndQuadraticArithmeticPartII", "model": "opus", "worker": "fable-rev61"} -->
+- **Unparsed** (GlobalGaloisDeformationsPartII, #1174 at 7ceac20, 2026-10-24): Misprint** in Ribet10 at Exercise 1.6(b), p.8: the source asks to show that the segment length l equals n+1; with length counted in edges, Exercises 1.7 and 1.9 force l=n, meaning the fixed set has n+1 vertices; affects nothing.
 
 ## A
 
@@ -2321,6 +2322,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Fischman-Montgomery-Schneider
 
 - **Misprint** at Remark 1.4(a), p. 4861 (Fischman-Montgomery-Schneider line 238): the source says the semilinearity formula ends with right multiplication by b; it should be right multiplication by b′, matching the second argument a′b′; affects nothing. Found by HopfologicalAlgebra (ERRATA-HopfologicalAlgebra at ae6ce67, 2026-10-23, codex gpt-6-astra).
+
+## FKP19
+
+- **Gap** at Lemma A.6, p.63: the source says the proof invokes Lemma A.1(2), which assumes p>2(dim gᵈᵉʳ+1), and treats G as adjoint; it should be obtain O_p(Γ)=1 by Borel–Tits and pass to the adjoint quotient; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7ceac20", "job": "REV-PKG-GlobalGaloisDeformationsPartII", "model": "opus", "worker": "fable-rev62"} -->. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Misprint** at Proposition 5.12, p.35: the source says equal root-group values at τ_{v_n} and τ_{v′_n}; it should be give −X_n and 2X_n, from the doubling class of equation (4); affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+
+## FKP22
+
+- **Misprint** at Appendix A, before Lemma A.3, p.44: the source says the source indexes the factors Σ_{i+1}/Σ_i by i=1,…,n; it should be 0≤i<n; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Error** at Lemma 3.7, pp.15–16: the source says strong disjointness of all K_{η_b^{(v)}} as v and b vary; it should be assume that the conjugates of joint inertia at each v generate the product, which fails for repeated constituents; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Misprint** at Proposition 3.8, p.16: the source says equal root-group values at τ_{v_n} and τ_{v′_n}; it should be give the values −X and 2X from the class used in the proof, nonzero but unequal unless p=3; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Gap** at the proof of Lemma A.4, p.44: the source says the source replaces Γ by π⁻¹(Γ̄), which loses the original Σ's factors; it should be filter Σ by Σ∩U_i(k) and then apply Lemma A.3; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
 
 ## FKS05
 
@@ -4900,6 +4913,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 1.7, manuscript p. 4; published p. 188 (Reichstein line 162): the source says the invariant ring uses G although the theorem specifies the permutation group H; it should be the H-invariant ring; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §2.2, definition of saturation, manuscript p. 5; published p. 189 (Reichstein line 199): the source says saturation tests only a already belonging to S, making the condition vacuous; it should be quantify over a∈ℤⁿ; otherwise Lemma 2.3 fails, for example for S=2ℕ; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §6, proof of Theorem 1.7 after (8), manuscript p. 14; published p. 198 (Reichstein line 567): the source says initial exponents are nonnegative orbit minima; it should be nonnegative orbit maxima: a≽h(a); for S₂ and x₁≻x₂, x₁+x₂ has initial exponent (1,0); affects the proof. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
+
+## Ribet10
+
+- **Misprint** at §1.2, discussion after Lemma 1.5, p.7: the source says the source calls the endpoint reduction reducible but not indecomposable; it should be reducible and indecomposable, a nonsplit extension, as Lemma 1.4(b) gives; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Misprint** at §1.2, final paragraph, p.7: the source says the same orientation, χ₁ by χ₂, at both endpoints; it should be χ₂ by χ₁ at the second endpoint, as Remark 1.1 says; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Misprint** at §1.2, p.7 and Exercise 1.9, p.8: the source says the fixed-point set is called S; it should be C, the notation introduced before Lemma 1.3; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
 
 ## Ric
 
