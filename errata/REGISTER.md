@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-3023 mistakes recorded on the board: 1996 misprints, 782 errors, 217 gaps, 28 unparsed bullets.
-Errata jobs have read the cited sources of 39 roadmaps; in those of 2 they found no mistake.
+3049 mistakes recorded on the board: 2016 misprints, 787 errors, 218 gaps, 28 unparsed bullets.
+Errata jobs have read the cited sources of 40 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -728,6 +728,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at II.6.9.5, proof, p. 134 (Blackadar line 5448): the source says a+λ1≥0 with λ>0 implies norm(a/λ)≤1; it should be bound the negative part a₋ by λ1, then use positivity and contractivity on a₋; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
 - **Error** at II.6.9.7, pp. 134–135 (Blackadar line 5465; Blackadar line 5470): the source says every dilation (ρ,W) satisfies W=UVφ for an isometric intertwiner U; it should be require ρ nondegenerate, or replace W by its projection onto the essential subspace; ρ=0 and W≠0 already contradict the assertion; affects a stated result. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at II.7.3.4, p. 154 (Blackadar line 6279): the source says the double-centralizer product composes the left multipliers backwards and the right multipliers forwards; it should be use (L₁L₂,R₂R₁); the printed multiplication makes a↦(Lₐ,Rₐ) reverse products; affects a stated result. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at II.7.3.4, p. 154 (Blackadar line 6279): the source says double centralizers multiply with reversed left composition and unreversed right composition; it should be (L₁L₂,R₂R₁), consistent with multiplication by ab; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Error** at II.7.4.4, pp. 158–159 (Blackadar line 6453): the source says all correspondences defined there form a category under interior tensor product; it should be restricted to nondegenerate left actions; tensoring the identity correspondence with a nonzero zero-action correspondence gives zero; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at II.7.6.5(ii), p. 161 (Blackadar line 6541): the source says the left inner product and its associated isomorphism use Θ with the two vectors reversed; it should be Θ_(ξ,η), as in II.7.2.5 and the imprimitivity identity; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at II.7.6.5(v), p. 161 (Blackadar line 6556): the source says both dual-module inner products reverse the original vectors; it should be B⟨ξ*,η*⟩=⟨ξ,η⟩_B and ⟨ξ*,η*⟩_A=A⟨ξ,η⟩, because the carrier identification is conjugate-linear; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
 - **Error** at II.8.2.1, p. 167 (Blackadar line 6807): the source says every directed inductive limit embeds naturally into the product modulo the C*-direct sum; it should be use the ideal of nets tending to zero along the directed order; a singleton system with algebra ℂ already contradicts the printed quotient; affects a stated result. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
 - **Error** at II.8.3.3(ii), p. 171 (Blackadar line 6978): the source says the Cuntz algebra Oₙ is simple and purely infinite without restricting n; it should be require n≥2; the displayed relations for n=1 instead give C(𝕋); affects a stated result. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
 - **Error** at II.8.3.3(iii), p. 171 (Blackadar line 6992): the source says simplicity and pure infiniteness require the adjacency matrix to be irreducible; it should be irreducibility is sufficient, not necessary: for [[0,1,0],[0,1,1],[0,1,1]], the corner with unit s₂s₂*+s₃s₃* is full and isomorphic to O₂; affects a stated result. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
@@ -2260,6 +2264,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 2 reference, p.194, line 120: the source says the previously proved mean-square lemma is reference 2; it should be reference 3, the 1973 work identified in the introduction and bibliography; affects nothing. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 
+## Kaad–Lesch
+
+- **Error** at §2.2, p. 6 (Kaad–Lesch line 252): the source says the localization map is injective exactly when the state is faithful; it should be faithfulness is sufficient; necessity fails for A=ℂ², E=ℂ⊕0 and the first-coordinate state; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, Theorem 3.3 proof, equation (3.10), p. 12 (Kaad–Lesch line 590): the source says the second tensor factor changes from h′ to h in both expanded inner products; it should be h′ in y⊗h′ and T^π(y⊗h′); affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, Lemma 6.1 proof, p. 18 (Kaad–Lesch line 896): the source says the second resolvent solution also uses g₁; it should be (I+TₘₐₓTₘᵢₙ)g₂=f; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Error** at §6, Lemma 6.2 proof, p. 19 (Kaad–Lesch line 951): the source says a constant section with arbitrary nonzero value belongs to C₀(X,D(Dₘᵢₙ)); it should be a compactly supported cutoff times that value, with cutoff equal to one at p; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, Proposition 6.4 proof, p. 21 (Kaad–Lesch line 1057): the source says πμ represents C(X) by bounded multiplication operators for arbitrary locally compact X; it should be C₀(X), the algebra used throughout the construction; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, Proposition 6.4 proof, p. 21 (Kaad–Lesch line 1059): the source says Θ is defined by restricting Θ to Ω; it should be Θ=Λ restricted to Ω; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Error** at §6, Proposition 6.4, equation (6.27), p. 20 (Kaad–Lesch line 1036): the source says one integrated graph inner product characterizes the domain, allowing cancellation between fibers; it should be graph orthogonality to η⊥ at almost every point; opposite η⊥ values on two equally weighted points disprove the printed condition; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, Proposition 6.4, equations (6.26)–(6.27), p. 20 (Kaad–Lesch line 1033): the source says f belongs to the localized maximal operator itself; it should be f∈D(Tₘₐₓ^μ), its domain, in both displayed sets; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, definitions before Lemma 6.1, p. 17 (Kaad–Lesch line 857): the source says H and the graph Hilbert spaces are tensor factors balanced over C₀(X); it should be external tensor products over ℂ; these Hilbert spaces have no specified C₀(X)-module structure; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+
 ## Kadiri
 
 - **Misprint** at (2.19), printed p. 10 (Kadiri line 436): the source says all four F arguments use iγ₀, although the left side depends on k; it should be ikγ₀ in those four first arguments, consistently with (2.18) and (2.24); affects the proof. Found by ZerosOfLFunctions (ERRATA-ZerosOfLFunctions at cce2e04, 2026-10-23, codex gpt-6-astra).
@@ -3315,6 +3331,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rodrigues Jacinto–Williams, arXiv:2309.15692,
 
 - **Misprint** at Theorem 6.7, p. 39: the source says the left-hand interpolated value without any twist; it should be the Teichmüller-twisted value required by Definition 5.18 and Remark 5.19; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Roe
+
+- **Gap** at Proposition 10.2 proof, p. 46 (Roe line 1748): the source says the complemented kernel immediately supplies p∈Mₙ(A), including for nonunital A; it should be justified using the Gram matrix T*T∈Mₙ(A) and its spectral gap: its support projection is p; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
 
 ## Rourke–Sanderson
 
@@ -4487,6 +4507,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 2.13, formula (2.60), printed p.72: the source says the domain is defined through the sesquilinear form of q itself while the action subtracts (1−γ)ψ; it should be defined through the scalar product of H_q, as the proof uses; affects nothing. Found by CongruenceSpectralGap (#957 at 2ce573c, 2026-10-23, claude opus).
 - **Gap** at §4.3, inequality (4.31), printed p.118: the source says the lower bound for the infimum over vectors orthogonal to the first eigenvectors follows by taking ψ=ϕₙ, which only bounds it above; it should be derived from the spectral theorem on that orthogonal complement; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "2ce573c", "job": "REV-PKG-CongruenceSpectralGap", "model": "opus", "worker": "fable-rev27"} -->. Found by CongruenceSpectralGap (#957 at 2ce573c, 2026-10-23, claude opus).
 
+## Teschl
+
+- **Misprint** at Theorem 2.27 proof, p. 92 (Teschl line 3815): the source says the old-domain summand is Ran(1+V); it should be Ran(1−V), with closure as displayed; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 2.27 proof, p. 92 (Teschl line 3818): the source says the second resolvent identity again concerns A₁+i and has coefficient −i/2; it should be (A₁−i)⁻¹=(i/2)(1−V₁⁻¹); affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.6, Lemma 2.30 proof, p. 94 (Teschl line 3883): the source says the right-hand sum over j has vector factor φₖ(z*); it should be φⱼ(z*), using the summation index; affects the proof; corrected in print at second-edition author errata, p. 3, entry for p. 94 (Teschl-errata line 80). Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.6, Theorem 2.26 proof, p. 92 (Teschl line 3793): the source says A±i equals the displayed rational expression without its scalar factor; it should be i((1+V)±(1−V))(1−V)⁻¹; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.6, Theorem 2.26 proof, p. 92 (Teschl line 3796): the source says A is the Cayley transform of V; it should be V is the Cayley transform of A; affects nothing. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.6, definition after Lemma 2.28, p. 93 (Teschl line 3848): the source says conjugation preserves the ordered complex inner product; it should be ⟨Cψ,Cφ⟩=⟨φ,ψ⟩; affects a stated result; corrected in print at second-edition author errata, p. 3, entry for p. 93 (Teschl-errata line 78). Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+
 ## the source cited as "Lerch III" (Lerch zeta function, part III)
 
 - **Error** at Theorem 3.4: the source says a vanishing formula for the covering and monodromy contributions in too broad a form; it should be retain the exceptional zero-index branch contribution; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -4734,6 +4763,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Wiese, arXiv:1809.04645v1 (title not given in the reviews)
 
 - **Misprint** at Proposition 4.16: the source says ν_∞; it should be as the witness in the cited review requires (the roadmap's correction, which the review says stands); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Williams
+
+- **Misprint** at Appendix C, Example C.13, p. 359 (Williams line 21418): the source says the fiber multiplier mₓ belongs to A; it should be mₓ∈A(x), the fiber algebra; affects a stated result. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix C, Lemma C.11 proof, p. 359 (Williams line 21411): the source says a chosen fiber element b is evaluated again at x inside the multiplier estimate; it should be m(x)b, since b already belongs to A(x); affects the proof; corrected in print at author errata, p. 532, entry for p. 359 (Williams-errata line 162). Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix C, Lemma C.7 proof, p. 356 (Williams line 21215): the source says the closed hull consists of representations whose kernels are contained in J; it should be kernels containing J, which includes every representation used to define J; affects the proof; corrected in print at author errata, p. 532, entry for p. 356 (Williams-errata line 151). Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix C, Proposition C.10(d) proof, p. 358 (Williams line 21364): the source says after factoring a=g·b, the difference is the coefficient difference multiplied by a; it should be multiplied by b; affects the proof; corrected in print at author errata, p. 532, entry for p. 358 (Williams-errata line 153). Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Appendix C, Proposition C.17 proof, p. 361 (Williams line 21508): the source says convergence in the total bundle permits subtracting aᵢ−a and using its norm; it should be eventual boundedness from upper semicontinuity; different fibers cannot be subtracted, and axiom A5 gives the required zero convergence; affects the proof. Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix C, Theorem C.26(c), p. 367 (Williams line 21823): the source says the section-algebra isomorphism is C₀(X)-linear before A has a C₀(X)-action; it should be a C*-isomorphism, transporting the section action to A; affects a stated result; corrected in print at author errata, p. 533, entry for Theorem C.26 (Williams-errata line 165). Found by HilbertModules (ERRATA-HilbertModules at 9aaab4d, 2026-10-24, codex gpt-6-astra).
 
 ## Wood, arXiv:1702.04644
 
