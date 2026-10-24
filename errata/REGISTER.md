@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4639 mistakes recorded on the board: 3108 misprints, 1170 errors, 301 gaps, 60 unparsed bullets.
+4649 mistakes recorded on the board: 3111 misprints, 1173 errors, 304 gaps, 61 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -68,6 +68,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BT16 at Proposition 27 proof, pp.739–740: it uses Proposition 23 (diagonal tubes) for point-ball volume growth and Proposition 17 for disjointness of bicusp balls, which only bounds the overlap by two; affects the proof.
 - **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BT16 at Corollary 30, p.742: the threshold M_N covers genus <N only via gon≤⌊(g+3)/2⌋ when N≥3; for N≤2 it needs M_{N+1}; affects nothing.
 - **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BTE at Proposition 4.2 proof, p.4: the sum of ball volumes counts a point in k overlapping balls k times, but the tube term has no overlap factor; it needs a cusp-count factor p^{O(δ₃)}; affects the proof.
+- **Unparsed** (GeneralAlgebraicKTheoryPartII, #1197 at 1916a38, 2026-10-24): Gap** in lmmt at proof of Proposition 3.6, p.1023: the source invokes Corollary 3.5 (stated for ℤ/pⁿ) for every p-power-torsion discrete ring, and writes T(1) where T(i), 1≤i≤n, is needed; the module structure of K(A) over K(ℤ/pⁿ) that justifies the step is left implicit; affects the proof.
 
 ## A
 
@@ -307,6 +308,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AIP (Andreatta–Iovita–Pilloni), Hilbert adic paper, author final version
 
 - **Error** at Lemma 8.1, §8.1, printed p. 34: the source says the proof applies level rigidity to α/ᾱ without showing that this quotient fixes the level marking; it should be supplemented by a proved freeness hypothesis: in the ℚ(√3), N = 7 CM example the quotient is −1, which moves the marking; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## akq
+
+- **Error** at §2.1, p.5, attributing Mahowald's Proposition 2.8: the source says the Thom spectrum of Ω²(S³⟨3⟩)→BO→BGL₁S is Hℤ; it should be Hℤ_(2) after 2-localization, since at odd primes the twist is null and the Thom spectrum is the suspension spectrum; affects nothing; (all later uses are 2-local). <!-- tauceti-roadmap-review {"agent": "claude", "head": "1916a38", "job": "REV-PKG-GeneralAlgebraicKTheoryPartII", "model": "opus", "worker": "fable-rev65"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 
 ## AKY
 
@@ -1469,6 +1474,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Lemma 7.4, printed p.942: the source says the first trace sum uses compactly supported cohomology with ordinary weights q^(m−i); it should be ordinary cohomology H^i, dualised to H_c only afterwards; affects the proof. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
 - **Misprint** at proof of Lemma 7.4, printed p.943: the source says the final Euler product has factors (1−qU^k) with no exponent; it should be carry the exponent −e_k(N) on each factor; affects the proof. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
 - **Misprint** at proof of Lemma 7.6, printed p.944: the source says the hypersurface is homotopic to a smash of N spheres; it should be the wedge of N copies of S^(n−1); affects nothing. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
+
+## bs
+
+- **Error** at Proposition 6.7(c) and proof (= Proposition 1.8(c)), pp. 46–47 and 6: the source says (c) gives at least dim A/(d+1) small points, deduced from #Σ ≤ dim A; it should be #Σ_A/(d+1) (or assume A split); false for A=ℚₚ[ε]/(ε³), V=A⊗H¹(E); affects a stated result. Found by GaloisSectionsPadicPeriodMaps (#1205 at 8eb87ad, 2026-10-24, claude opus).
+- **Gap** at Remark 6.23(I), p. 54: the source says choosing r₀ above the odd prime divisors of [K′:ℚ] makes K′ disjoint from ℚ(ζ_{q−1}); it should be also take r₀ above every prime ramified in K′ (a quadratic ℚ(√r) is otherwise possible); affects the proof. Found by GaloisSectionsPadicPeriodMaps (#1205 at 8eb87ad, 2026-10-24, claude opus).
+- **Gap** at proof of Proposition 2.16(1), p. 12: the source says averaging over G_v yields the trace from ℚₚⁿʳ to ℚₚ; it should be also use commutation with φ, since G_v only reaches the fixed field K_{v,0}; affects the proof. Found by GaloisSectionsPadicPeriodMaps (#1205 at 8eb87ad, 2026-10-24, claude opus).
+- **Misprint** at proof of Proposition 6.20, p. 52: the source says size_v of the fibre of Y over y; it should be the fibre of the finite étale base Y′_q over y; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "8eb87ad", "job": "REV-PKG-GaloisSectionsPadicPeriodMaps", "model": "opus", "worker": "fable-rev66"} -->. Found by GaloisSectionsPadicPeriodMaps (#1205 at 8eb87ad, 2026-10-24, claude opus).
+- **Gap** at proof of Proposition 6.9 with Definition 6.11, pp. 48–49: the source says the fibre V_ψ of an S-good pair meets Definition 6.11, whose integrality means integer Frobenius polynomials; it should be allow algebraic-integer eigenvalues of bounded degree (fibres need not be rational); affects the proof. Found by GaloisSectionsPadicPeriodMaps (#1205 at 8eb87ad, 2026-10-24, claude opus).
+- **Misprint** at §6.3, definition before Proposition 6.15 (p. 49) and its proof (p. 51): the source says M¹(Φ) is isomorphic to the pair (D_pH(A), D_pH(V)); it should be the pair M^{≤1}(Φ); affects nothing. Found by GaloisSectionsPadicPeriodMaps (#1205 at 8eb87ad, 2026-10-24, claude opus).
 
 ## BS17
 
@@ -4294,7 +4308,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## lmmt
 
+- **Error** at Redshift Theorem and its Nullstellensatz input, introduction, p.1014: the source says redshift holds for every E∞ ring of nonnegative height, with the global convention T(0)=S[1/p]; it should be restricted at height zero to R with nonzero rationalization (for example p-local R), since (HF₂)^tC₂ at an odd p has height 0 but K-theory of height at most 0; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 - **Misprint** at Remark 2.12, p.10: the source says T(i) kills K(π,r) for every finite group π when r>i; it should be every finite abelian p-group, since π=ℤ/q (q≠p) fails at r=1, i=0; affects nothing. Found by ChromaticHomotopyTheory (#986 at 0ea406d, 2026-10-23, claude opus).
+- **Misprint** at Remark 3.11, p.1026: the source says the stabilized relative K-theory of S with coefficients in M is ΩM; it should be ΣM, the first derivative ΣTHH(S;M); affects nothing; (the contradiction holds for any shift). Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 - **Misprint** at Remark 3.11, printed p.16 (lmmt line 672): the source says the linearized relative K functor on sphere-bimodules is ΩM; it should be ΣM, as the square-zero K₁ calculation shows; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
 ## LO-II
