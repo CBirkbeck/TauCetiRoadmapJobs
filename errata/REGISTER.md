@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2711 mistakes recorded on the board: 1791 misprints, 694 errors, 199 gaps, 27 unparsed bullets.
-Errata jobs have read the cited sources of 30 roadmaps; in those of 1 they found no mistake.
+2736 mistakes recorded on the board: 1814 misprints, 694 errors, 201 gaps, 27 unparsed bullets.
+Errata jobs have read the cited sources of 31 roadmaps; in those of 1 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -1572,6 +1572,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Gasper, Lecture notes for an introductory minicourse on q-series, arXiv math/9509223v1
 
 - **Misprint** at the convergence radius for |q|>1 (cached lines 775–784 and 846–854): the source says a radius that omits a factor |q|; it should be the radius including the factor |q| that the notes' own (1.3.11) carries; affects a stated result. Found by  (#540 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Geck
+
+- **Misprint** at Example 5.9 proof, printed p. 3245 (Geck line 610): the source says φ is applied to eᵋβ, which belongs to its codomain 𝔤; it should be φ(vβ), since φ:M→𝔤 and eᵋβ=φ(vβ); affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.3 proof, printed p. 3237 (Geck line 212): the source says α+αᵢ outside Φ makes the commutator vanish; it should be restricted also to α≠−αᵢ; for α=−αᵢ and j=i the value is 2uᵢ; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.4 proof, printed p. 3237 (Geck line 222): the source says the connecting adverb is spelled Similarily; it should be spelled Similarly; affects nothing. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.4 proof, printed p. 3237 (Geck line 223): the source says the negative-simple-root case gives −2v_{αᵢ}; it should be −2v_{−αᵢ}; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Lemma 4.2 proof, printed p. 3239 (Geck line 292): the source says distinct nonzero vectors h₀(vα) let an invariant subspace isolate a root vector; it should be distinct nonzero scalar eigenvalues α̇(h₀), obtained by avoiding the finitely many root and root-difference hyperplanes; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 4.4 proof, printed p. 3240 (Geck line 341): the source says λ and ν belong to Q⁺ when applying induction to weights μ and ν; it should be μ and ν belong to Q⁺; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 4.5 proof, printed p. 3240 (Geck line 350): the source says the Jacobi expansion adds [z,[eᵢ,y]] to [y,[eᵢ,z]]; it should be subtract [z,[eᵢ,y]]; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 4.5 proof, printed p. 3240 (Geck line 356): the source says V is a subalgebra of an undefined L; it should be a subalgebra of 𝔤; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 5.4 proof, printed p. 3243 (Geck line 494): the source says M₀ contains 𝔥 while being a subspace of M, although 𝔥 lies in End(M); it should be M₀=span{uⱼ:j∈I}⊕ℂv_{αᵢ}⊕ℂv_{−αᵢ}; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Remark 2.1, printed p. 3234 (Geck line 77): the source says the inequality's second namesake is Schwartz; it should be Schwarz; affects nothing. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Section 4, Lie-monomial recursion, printed p. 3238 (Geck line 267): the source says Xₙ₊₁ uses brackets from Xₖ and Xₙ₋ₖ, including undefined X₀; it should be Xₖ and Xₙ₊₁₋ₖ for 1≤k≤n; affects a stated result. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
 
 ## Gee, Arizona Winter School 2013 notes on modularity lifting (arXiv v2)
 
@@ -3158,6 +3172,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at V §7, p. 116 (SGA1 lines 4726–4734): the source says π₁(S;a′,a) denotes paths from a to a′ after the opposite order was defined immediately above; it should be retain the preceding convention and write π₁(S;a,a′); affects nothing. Found by ConstructibleEtale (ERRATA-ConstructibleEtale at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at V §7, p. 117 (SGA1 lines 4776–4777): the source says the displayed map Π₁ˢ′ → f•Π₁ˢ is between pro-groups over S; it should be both pro-groups are over S′; affects nothing. Found by ConstructibleEtale (ERRATA-ConstructibleEtale at 4bd7237, 2026-10-23, codex gpt-6-astra).
 
+## SGA3-III
+
+- **Misprint** at Exposé XXII, 2.6–2.7, printed p. 167 (original scan; SGA3-III line 265, XXII original retype): the source says 1.17 establishes invariance of root data under base change; it should be 1.15(b); affects the proof; corrected in print at revised Exposé XXII, 2.6.1–2.7, p. 115, editorial note 5 (2024). Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXII, 4.1.12, printed p. 122 (2024 revision; SGA3-III line 561, XXII revised text): the source says X is a section over X, although X denotes the section being introduced; it should be X is a section over S; affects a stated result. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXII, 4.1.12, printed p. 176 (original scan; SGA3-III line 505, XXII original retype): the source says expα is applied to the negative-root vector Y in the big-cell criterion; it should be exp−α(Y); affects a stated result; corrected in print at revised Exposé XXII, 4.1.12, p. 122 (2024), also identified in the editors' errata dated 13 October 2024. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXII, 4.1.9 proof, printed p. 175 (original scan; SGA3-III line 483, XXII original retype): the source says the other pulled-back root differs from nα₀ for every positive integer m; it should be it differs from mα₀ for every positive integer m; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXV, 4.4 proof, printed p. 425 (original scan; SGA3-III line 416, XXV original retype): the source says the affineness step refers to an unspecified lemma in Exposé XVI; it should be Exposé XVI, Lemma 4.2; affects the proof; corrected in print at revised Exposé XXV, 4.4, p. 278 (2024). Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXV, Corollary 2.10 proof, printed p. 421 (original scan; SGA3-III line 294, XXV original retype): the source says generic-fibre compatibility follows from 2.10(iii), which does not exist; it should be Proposition 2.9(iii); affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXV, Lemma 2.7 proof, printed p. 417 (original scan; SGA3-III line 187, XXV original retype): the source says d is a morphism from Ω to Spec(ℤ), specified by a varying scalar expression; it should be a morphism Ω→𝔸¹ℤ, equivalently a regular function on Ω; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXV, Lemma 2.7 proof, printed p. 417 (original scan; SGA3-III line 188, XXV original retype): the source says d(u)=α(t)+xαx−α; on the torus this sends t to tα∨(α(t)); it should be d(u)=α(t)⁻¹+xαx−α, giving the required Weyl reflection tα∨(α(t))⁻¹; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Exposé XXV, Lemma 2.8 proof, printed p. 418 (original scan; SGA3-III line 239, XXV original retype): the source says properties (i) and (iii) follow from Lemma 2.8 itself; it should be Lemma 2.7, whose maps are being composed; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Exposé XXV, Proposition 4.1 and 4.3, printed p. 424 (original scan; SGA3-III line 393, XXV original retype): the source says the affineness proposition requires no flatness of G, but its reduction explicitly uses that flatness; it should be assume G flat over S and supply the nonsmooth-flat case, as in the revised proof; affects the proof; corrected in print at revised Exposé XXV, Proposition 4.1, p. 278, editorial notes 6 and 11 (2024). Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+
 ## SGA4
 
 - **Misprint** at Exposé XI, Lemma 4.5 proof, p. 47 (original pp. 76–77; SGA4 line 1980): the source says dimensional induction kills the two terms when q ≥ 1; it should be q > 1; q = 1 uses Riemann existence in the following sentence; affects the proof. Found by ComplexComparison (ERRATA-ComplexComparison at 4bd7237, 2026-10-23, codex gpt-6-astra).
@@ -3844,6 +3871,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Stein, Modular Forms: A Computational Approach (2007)
 
 - **Misprint** at the formula for Δ near Theorem 9.18, pp. 171–172: the source says Δ with a sign typo; it should be the correctly signed expression in E₄ and E₆ normalized to constant term 1; affects nothing. Found by  (#131 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Steinberg-Lectures
+
+- **Misprint** at Chapter 10, remark after Theorem 28, printed p. 154 (1967 notes; Steinberg-Lectures line 4198): the source says the image has parameters k for long roots and kᵖ for short roots; it should be kᵖ for long roots and k for short roots, as the theorem's root map reverses lengths; affects a stated result. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 11, Lorentz-group example, printed p. 171 (1967 notes; Steinberg-Lectures line 4651): the source says n=4 in the preceding SO₂ₙ construction gives the four-dimensional Lorentz group; it should be n=2; affects a stated result. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 2, Lemma 6 proof, printed p. 10 (1967 notes; Steinberg-Lectures line 297): the source says the divided-power coefficient ends with the factor r+m−1; it should be the product of r+1 through r+m, divided by m!; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 2, Theorem 3(b,c) and Lemma 12 proofs, printed pp. 15–16 (1967 notes; Steinberg-Lectures line 423; scan following line 436): the source says the positive enveloping algebras annihilate v⁺, and the negative integral algebra produces only strictly lower weights; it should be their augmentation ideals have those properties; the unital positive algebras send v⁺ to ℂv⁺ and ℤv⁺ respectively; affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
 
 ## Stein–Wuthrich, Algorithms for the arithmetic of elliptic curves using Iwasawa theory, Math. Comp. (2013)
 
