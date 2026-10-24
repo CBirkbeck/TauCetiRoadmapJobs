@@ -97,7 +97,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v1"
-cited_for = ["5.10"]
+cited_for = ["5.8"]
 
 [[source]]
 id = "yoshida"

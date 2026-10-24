@@ -7,14 +7,28 @@ import TauCeti.FieldTheory.FunctionField.RiemannRoch.ClassNumber
 The roadmap is README.md; this file is not the roadmap. It states its headline theorems
 against the pinned Mathlib and Tau Ceti APIs, using the few simple definitions they need.
 
-The finite-length Artin–Schreier–Witt character classification, degree-one divisor theorem,
-divisor zeta identities and polynomial recovery are statable on native carriers below.
-The other headline theorems are not statable at the pins: equal-characteristic local
-abelian existence lacks the completed local reciprocity carrier; finite ray-cover
-classification lacks generalized Picard schemes and their Lang covers; Harder finiteness
-lacks the reductive adelic automorphic function module; unitary Eisenstein continuation
-and the global Fourier coefficient formula lack smooth induced sections, Eisenstein series
-and local representation densities. Their full statements are in the README.
+The degree-one divisor theorem, reduced-basis theorem, Witt-vector additive Hilbert 90,
+finite-length Artin–Schreier–Witt character classification, equal-characteristic local
+abelian existence, divisor zeta identities and polynomial recovery are statable below.
+The remaining headline theorems lack the following carriers at the pins:
+divisor-lattice Fourier duality and volumes (§2) need completed adelic divisor lattices
+and the differential's self-dual measure; reduced Witt–Laurent representatives and the
+Schmid–Witt conductor formula (§§3.2, 4.3–4.4) need the reduced representative and local
+reciprocity constructions; local Kronecker–Weber and Artin injectivity (§4.2) need the
+Lubin–Tate tower and local reciprocity map; the perfect-field fixed-modulus universal
+property and finite-abelian ray-cover classification (§§4.7, 4.10) need generalized
+Picard schemes, Abel maps and Lang covers. The finite-coefficient cohomological
+L-function identity (§5.7) needs constructible étale
+sheaves with derived compact-support cohomology and Frobenius; quantitative Chebotarev
+(§5.8) needs the finite-cover Frobenius conjugacy classes. Harder finiteness (§§6.4–6.5)
+needs reductive adelic automorphic function modules; Yu's degree-zero nonvanishing (§6.7)
+needs their cuspidal representation and Whittaker interfaces. The inducing-character
+obstruction and existence theorems (§7.1) need the curve Picard pullback and adelic
+unitary-character interfaces. Unitary cuspidal and
+discrete-data Eisenstein continuation and Levi discrete decomposition (§7.2) need smooth
+induced sections, Eisenstein series and their L² realizations; the Whittaker–density
+identity, density interpolation and global Fourier coefficient formulas (§§7.4–7.6)
+also need Hermitian local representation densities. Their full statements are in the README.
 -/
 
 namespace TauCetiRoadmap.FunctionFieldArithmetic
@@ -34,6 +48,30 @@ theorem exists_divisor_degree_eq_one [Finite k] (hF : IsFunctionField k F)
   sorry
 
 end Constants
+
+/-! ## Layer 1: reduced bases of Riemann–Roch spaces -/
+
+/-- Reduced bases simultaneously describe every pole shift of a divisor, with uniquely
+determined sorted invariants (README 1.2; Hess, Theorem 7 and Corollary 11). The chosen
+rational subfield need not be separating, and the constant field need not be exact. -/
+theorem riemannRoch_reducedBasis
+    {k F : Type*} [Field k] [Field F] [Algebra k F]
+    [Algebra (RatFunc k) F] [IsScalarTower k (RatFunc k) F]
+    [FiniteDimensional (RatFunc k) F]
+    (hF : IsFunctionField k F) (D : Divisor k F) (x : Fˣ)
+    (hx : (x : F) = algebraMap (RatFunc k) F RatFunc.X) :
+    ∃! d : Fin (Module.finrank (RatFunc k) F) → ℤ,
+      Antitone d ∧
+        ∃ v : Fin (Module.finrank (RatFunc k) F) → F,
+          LinearIndependent (RatFunc k) v ∧
+          ∀ r : ℤ,
+            let w := fun a : {a : Fin (Module.finrank (RatFunc k) F) × ℕ //
+                (a.2 : ℤ) ≤ d a.1 + r} =>
+              (x : F) ^ a.val.2 * v a.val.1
+            LinearIndependent k w ∧
+              Submodule.span k (Set.range w) =
+                riemannRochSpace (D + r • Divisor.poles hF x) := by
+  sorry
 
 /-! ## Layer 3: Artin–Schreier–Witt theory -/
 
@@ -55,6 +93,23 @@ abbrev aswQuotient [CharP F p] (n : ℕ) : Type _ :=
 
 variable [CharP F p]
 
+/-- Witt additive Hilbert 90 for a finite cyclic Galois extension (README 3.1;
+Kosters–Wan, Proposition 3.1). The automorphisms act coefficientwise, while the
+difference and trace use Witt subtraction and addition, at every length including zero. -/
+theorem witt_additiveHilbert90 {L : Type*} [Field L] [CharP L p] [Algebra F L]
+    [FiniteDimensional F L] [IsGalois F L]
+    (σ : L ≃ₐ[F] L) (hσ : Subgroup.zpowers σ = ⊤) (n : ℕ) :
+    let σW : TruncatedWittVector p n L → TruncatedWittVector p n L :=
+      fun a => TruncatedWittVector.mk p fun i => σ (a.coeff i)
+    let iW : TruncatedWittVector p n F → TruncatedWittVector p n L :=
+      fun a => TruncatedWittVector.mk p fun i => algebraMap F L (a.coeff i)
+    let TW : TruncatedWittVector p n L → TruncatedWittVector p n L :=
+      fun a => ∑ τ : L ≃ₐ[F] L, TruncatedWittVector.mk p fun i => τ (a.coeff i)
+    {a | a - σW a = 0} = Set.range iW ∧
+      Set.range (fun a => a - σW a) = {a | TW a = 0} ∧
+      Set.range TW = Set.range iW := by
+  sorry
+
 /-- The finite-length Artin–Schreier–Witt quotient classifies continuous characters of the
 absolute Galois group with values in `ℤ/p^n` (README 3.1; Kosters–Wan, Theorem 3.4).
 This signature asserts the underlying group equivalence; the solution pairing and its
@@ -65,6 +120,21 @@ theorem artinSchreierWitt_galois (n : ℕ) :
   sorry
 
 end ArtinSchreierWitt
+
+/-! ## Layer 4: equal-characteristic local class field theory -/
+
+/-- Every open finite-index subgroup of `k((T))ˣ`, for a finite field `k`, is the norm
+group of a unique finite abelian extension in a fixed algebraic closure, whose degree
+is that index (README 4.2; Yoshida, §5.3(iv)). -/
+theorem localAbelianExistence_laurentSeries (k : Type*) [Field k] [Finite k]
+    (H : Subgroup (LaurentSeries k)ˣ)
+    (hH : IsOpen (H : Set (LaurentSeries k)ˣ)) [H.FiniteIndex] :
+    ∃! L : IntermediateField (LaurentSeries k) (AlgebraicClosure (LaurentSeries k)),
+      FiniteDimensional (LaurentSeries k) L ∧ IsGalois (LaurentSeries k) L ∧
+      (∀ σ τ : L ≃ₐ[LaurentSeries k] L, σ * τ = τ * σ) ∧
+      Subgroup.map (Units.map (Algebra.norm (LaurentSeries k) : L →* LaurentSeries k)) ⊤ = H ∧
+      Module.finrank (LaurentSeries k) L = H.index := by
+  sorry
 
 /-! ## Layer 5: zeta functions and `L`-polynomials -/
 
@@ -168,22 +238,6 @@ theorem lPolynomial_isLPolynomialData {k F : Type*} [Field k] [Finite k] [Field 
       (1 - PowerSeries.C (Nat.card k : ℤ) * PowerSeries.X)) = (P : PowerSeries ℤ)) :
     IsLPolynomialData (Nat.card k) (genus k F) (fun r => pointCount k F r) P := by
   sorry
-
-/-- For `y² = x³ + x + 1` over `𝔽₅`, `N₁ = 9` gives `1 + 3T + 5T²` (README worked example 2). -/
-example : IsLPolynomialData 5 1 (fun _ => 9) (1 + C 3 * X + C 5 * X ^ 2) := by
-  refine ⟨by simp [coeff_X, coeff_X_pow], ?_, ?_, ?_⟩
-  · compute_degree!
-  · intro j hj
-    interval_cases j <;> simp [coeff_X, coeff_X_pow, coeff_one]
-  · intro r hr hr'
-    obtain rfl : r = 1 := by omega
-    simp [coeff_X, coeff_X_pow, coeff_one]
-
-/-- A wrong count `N₁ = 8` is rejected for the same polynomial. -/
-example : ¬ IsLPolynomialData 5 1 (fun _ => 8) (1 + C 3 * X + C 5 * X ^ 2) := by
-  rintro ⟨-, -, -, h⟩
-  have := h 1 one_pos le_rfl
-  simp [coeff_X, coeff_X_pow, coeff_one] at this
 
 end LPolynomial
 
