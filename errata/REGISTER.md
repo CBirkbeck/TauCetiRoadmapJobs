@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-3120 mistakes recorded on the board: 2052 misprints, 810 errors, 228 gaps, 30 unparsed bullets.
-Errata jobs have read the cited sources of 41 roadmaps; in those of 2 they found no mistake.
+3169 mistakes recorded on the board: 2092 misprints, 819 errors, 228 gaps, 30 unparsed bullets.
+Errata jobs have read the cited sources of 42 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -495,6 +495,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Berger, Wach-module paper (Proposition II.1.1, Theorem III.4.4),
 
 - **Gap** at the result treated in §2 of the author's errata: the source says the result without the rational étale scalar-extension hypothesis, and its final filtration step does not go through; it should be as corrected in those errata, adding that hypothesis and redoing the step with successive γ − χ(γ)^j; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Bergh-Lofstrom
+
+- **Misprint** at Lemma 4.2.3 proof, p. 92 (Bergh-Lofstrom line 2804): the source says the Fejér sums converge uniformly in the period parameter n; it should be uniformly in t for each fixed n; periodized scalar Gaussians disprove uniformity in n; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 4.3.3 proof, p. 94 (Bergh-Lofstrom line 2870): the source says the boundary integral uses exp(−ε(j+iτ)²); it should be use exp(+ε(j+iτ)²), consistently with the analytic function and the left-hand side; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4.2 proof, p. 48 (Bergh-Lofstrom line 1594): the source says the theorem has a part (e); it should be refer only to part (d), its final part; affects nothing. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 3.4.2(c) and its proof, pp. 47–48 (Bergh-Lofstrom line 1573; Bergh-Lofstrom line 1586): the source says the closure characterization by vanishing t^(−θ)K(t,a) at both ends holds also for θ=0,1; it should be restrict to 0<θ<1; the constant couple ℂ has K(t,a)=min(1,t)|a|, contradicting both endpoints; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 4.1.4 proof, p. 90 (Bergh-Lofstrom line 2751): the source says the derivative formula for h′(θ) differentiates T(f(η)); it should be differentiate T(g(η)), using the function selected at the proof’s start; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 4.3.1 proof, p. 95 (Bergh-Lofstrom line 2885): the source says a reflexive space’s unit sphere is weakly compact; it should be its closed unit ball is weakly compact; orthonormal sequences in ℓ² converge weakly outside the unit sphere; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 4.6.1 proof, p. 102 (Bergh-Lofstrom line 3073): the source says f₁(j+it) evaluates f at (1−j)θ₀+it(θ₁−θ₀); it should be add jθ₁ to the argument; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 4.6.1 proof, p. 102 (Bergh-Lofstrom line 3080): the source says g₁ is defined from the earlier function f; it should be use g, the function just chosen to represent a by its derivative; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 4.6.1 statement and proof, p. 102 (Bergh-Lofstrom line 3069; Bergh-Lofstrom line 3077): the source says X is interpolated at θ in the reiterated identity; it should be interpolate X at η, with θ=(1−η)θ₀+ηθ₁; several subsequent X-norm subscripts repeat the slip; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 5.6.3, pp. 123–124 (Bergh-Lofstrom line 3643): the source says the full weighted sequence-space identity includes q₀=q₁=∞; it should be require min(q₀,q₁)<∞ for this general assertion; with scalar endpoints and s₀=0,s₁=1, the claimed target contains (2^(−θk)), outside the interpolated space; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
 
 ## Berkane–Bordellès–Ramaré, explicit bounds for the divisor problem (Math. Comp.)
 
@@ -1365,6 +1378,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 2.17, p. 17: the source says the divisor M lives on Y, which does not occur; it should be on S; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 
+## Cwikel
+
+- **Misprint** at Fact 2.25 proof, p. 23 (Cwikel line 1176): the source says the concluding estimate uses the undefined endpoint spaces B₀ and B₁; it should be use X₀ and X₁, respectively; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 2.7 proof (i), p. 12 (Cwikel line 554): the source says the final real upper bound contains exp(δ(1−z_*²)); it should be exp(δ(1−Re(z_*²))), obtained from the modulus of exp(δz_*²); affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 2.9 proof, p. 13 (Cwikel line 605; Cwikel line 607): the source says the Gaussian modulus is evaluated using x² and then x in its real exponent; it should be both exponents use (x−x₀)²−(y−y₀)²; the subsequent bounds still hold; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 2.11(v) proof, p. 16 (Cwikel line 783): the source says h is essentially bounded and therefore square-integrable, although the theorem assumes only integrability; it should be justify (2.24) by uniformly approximating f with analytic polynomials; boundary values of (1−z)^(−1/2) disprove the asserted boundedness; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 2.11(v) proof, p. 16 (Cwikel line 783): the source says the Fourier integral defining v̂(n) uses exp(−i(n−k)); it should be exp(−i(n−k)t), including the integration variable t; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 2.2 proof, Part 2, p. 29 (Cwikel line 1415): the source says the power series defining u_b starts at n=1, forcing u_b(0)=0; it should be start at n=0; the constant coefficient is needed to recover the original functional; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 2.2 proof, final integral, p. 29 (Cwikel line 1450): the source says the Gaussian multiplier uses t while the integration variable is s; it should be replace t with s in that multiplier; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.2, estimates following (2.10), p. 11 (Cwikel line 498; Cwikel line 501): the source says the denominator factorizations use z−θ, and the final equality changes numerator 2 to 1; it should be use z+θ in both factorizations and retain numerator 2 in the final bound; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.2, following (2.6), p. 10 (Cwikel line 462): the source says the logarithm’s domain is the punctured right half-plane, although its argument ranges between zero and π; it should be use the punctured closed upper half-plane, Im(z)≥0; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.2, following (2.8), p. 10; §2.3, p. 19 (Cwikel line 482; Cwikel line 924): the source says the inverse conformal map omits the boundary point exp(iπθ); it should be the omitted point is exp(2iπθ), as follows directly from (2.8); affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.3, following Definition 2.15, p. 19 (Cwikel line 925): the source says ψ_k satisfies the strip-function conditions used for Stafney’s coefficients; it should be φ_k satisfies those conditions; ψ_k is defined on the disk; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+
 ## DarmonMerel2001
 
 - **Misprint** at Proposition7.1 proof, author-copy p.20, lines648–651: the source says L(f,1) equals the positive 2πi multiple of the upward integral; it should be the negative multiple for that orientation; affects nothing. Found by EllipticCurveModularityPartII (#134 at add3164, 2026-10-23, codex gpt-6-astra).
@@ -1640,6 +1667,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## F24
 
 - **Gap** at Lemma 6.2(k) proof supporting Theorem 6.3, p. 34 (F24 line 1454): the source says isomorphic amalgamated free products make the constructed matrices a representation of their finite quotient G; it should be shown that the representation annihilates the kernel of the free product’s map onto G; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+
+## Fack-Kosaki
+
+- **Error** at Lemma 2.5(iv), p. 276 (Fack-Kosaki line 257): the source says singular numbers commute with every continuous increasing function satisfying f(0)≥0; it should be require f(0)=0, or restrict t<τ(1); with M=ℂ, τ(1)=1, T=0, f(s)=s+1, t=2, the printed equality reads 0=1; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 3.6 proof, p. 283 (Fack-Kosaki line 505): the source says Lemma 2.5(iv) supplies the singular-number estimate for T−T_n; it should be cite Lemma 2.5(v), the addition estimate; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 4.9(ii) proof, p. 295 (Fack-Kosaki line 876): the source says the bound for q‖T+S‖_p has two copies of q‖T‖_p; it should be replace the second copy by q‖S‖_p; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
 
 ## Faltings, Endlichkeitssätze für abelsche Varietäten über Zahlkörpern, Invent. Math. 73 (1983)
 
@@ -2010,6 +2043,23 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 1.1 proof, Lemma 4.3, p. 113 (Haagerup line 605): the source says the polynomial approximation step uses u|Pₙ(x)|; it should be use uPₙ(|x|); odd powers then equal x(x*x)ᵏ and converge to u|x|ᵅ; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Theorem 1.1 proof, Proposition 3.7, p. 108 (Haagerup line 477): the source says the unitary represented by the sequence (vₙ) belongs to B; it should be place that unitary in the ultrapower B𝒰; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Theorem 1.1 proof, Proposition 3.7, p. 109, first display (Haagerup line 492): the source says the second A** functional loses its prime before any unprimed restriction is defined; it should be retain φ′₂ in that bidual inequality; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
+
+## Haagerup-dual-II
+
+- **Misprint** at Corollary 2.7 proof, p. 128 (Haagerup-dual-II line 330): the source says equality of convolutions forces g=h and contradicts g’s square-integrability; it should be equality forces f=g almost everywhere, contradicting the chosen f’s failure to belong to L²(G); affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 3.1 proof (a)–(b), p. 136 (Haagerup-dual-II line 571; Haagerup-dual-II line 583): the source says the construction and range property come from Lemma 3.6 and Lemma 3.6(b); it should be cite Lemma 3.5 and Lemma 3.5(2), respectively; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 3.1 proof (b), p. 136 (Haagerup-dual-II line 582): the source says π(M)=M⊗1 in the crossed-product representation; it should be omit this equality; generally π(x)(s)=α_(s⁻¹)(x), which varies with s for nontrivial actions; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 3.1 proof (d), p. 137 (Haagerup-dual-II line 624): the source says the weight φ belongs to P(G); it should be φ belongs to P(M); P(G) instead denotes positive-definite functions; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at remark following Theorem 3.1, p. 138 (Haagerup-dual-II line 643): the source says the integral defining E_φ(x) includes an extra character factor depending on an unbound s; it should be E_φ(x)=∫α̂_p(x) dν_φ(p), with no character multiplier; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+
+## Haagerup-Junge-Xu
+
+- **Misprint** at Lemma 6.12 proof, p. 29 (Haagerup-Junge-Xu line 1463): the source says the row-space convergence assertion replaces H_p(R(M)) by H_p^r(M); it should be H_p^r(R(M)), matching the column case and the range of Φ_m; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 6.13 proof, p. 29 (Haagerup-Junge-Xu line 1474): the source says Φ projects h_p^k(R(M)) onto h_p^k(R(M)); it should be give h_p^k(M) as the range, for k=d,c,r; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 6.2, p. 24 (Haagerup-Junge-Xu line 1200): the source says the input sequence is (x_n), while every displayed inequality uses (a_n); it should be name the input sequence (a_n); affects nothing. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at §6.1, after (6.4), p. 22 (Haagerup-Junge-Xu line 1087): the source says Φ, Φ_m and Ê all commute; it should be assert only Ê’s two commutations; for D=diag(e,1)/(e+1), Φ_m(e₁₂)=e₁₂1_A with Haar(A)=1−2^(−m)/(2π), while Φ averages the group coordinate; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6.1, p. 21 (Haagerup-Junge-Xu line 1070): the source says R_m(N) equals its own intersection with R_m(M); it should be identify R_m(N) with R(N)∩R_m(M); affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at §6.2, classical Rosenthal display, p. 26 (Haagerup-Junge-Xu line 1321): the source says the displayed Rosenthal equivalence holds for arbitrary independent random variables; it should be require mean-zero variables; N constant ones give left side N and right side N^(1/p)+√N; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
 
 ## Hansen
 
@@ -2925,6 +2975,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Construction 25.2.2.2 and Proposition 25.2.3.4(2): the source says exterior powers are the coinvariants of the sign-twisted symmetric-group action on tensor powers; it should be the alternating quotient, which also kills repeated factors (rank one over ℤ: exterior square 0, signed coinvariants ℤ/2; over F₂: F₂); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Lust-Piquard-Pisier
+
+- **Misprint** at Proposition IV.3(ii), p. 257 (Lust-Piquard-Pisier line 550): the source says the test vectors belong to X; it should be require vectors in X^(2), the domain of T, as in part (i) and Theorem IV.4; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem IV.4 proof, first display, p. 258 (Lust-Piquard-Pisier line 581): the source says the sum of squared Hilbert norms equals the supremum of the linear pairing over the unit ℓ² ball; it should be take the square root of the sum on the left; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+
 ## LV
 
 - **Gap** at §2 notation and Lemma 2.3, printed pp. 8–9: the source says Lemma 2.3 concerns representations unramified outside S, where S has no place above p, yet it is applied to p-adic étale cohomology; it should be unramified outside S together with the places above p; affects the proof. Found by LawrenceVenkateshMethod (#345 at 9ee7ac3, 2026-10-23, claude opus).
@@ -3241,6 +3296,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Lemma 14.8.3, p. 102: the source says Lemma 5.1.5.2 applies, but that lemma needs four distinct pair products, which valuations (0,0,k+1,k+1) do not force; it should be a comparison needing only αβ isolated; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "da88512", "job": "REV-DESIGN-HigherHidaAndColemanTheory", "model": "opus", "worker": "fable-rev8"} -->. Found by HigherHidaAndColemanTheory (#332 at da88512, 2026-10-23, claude opus).
 - **Misprint** at §5.1.5, p. 22: the source says the Klingen Hecke parameters satisfy αβ=γδ; it should be αδ=βγ, the spherical normalization on p. 21; affects nothing. Found by HigherHidaAndColemanTheory (#332 at da88512, 2026-10-23, claude opus).
 
+## Pisier-Xu-martingales
+
+- **Misprint** at Appendix corollary (A3), preprint p. 39 (Pisier-Xu-martingales line 1642): the source says the last bound uses the H¹ norm of dx; it should be use the H¹ norm of the martingale x; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix corollary proof, preprint p. 39 (Pisier-Xu-martingales line 1645): the source says the remaining inequality is labelled †; it should be refer to (A3); no †-labelled assertion occurs; affects nothing. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix remark, preprint p. 36 (Pisier-Xu-martingales line 1466): the source says the density remark also applies to H¹_C, repeating the case just proved; it should be H¹_R and H¹; affects nothing. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at Appendix theorem (ii), preprint pp. 36, 38–39 (Pisier-Xu-martingales line 1457; Pisier-Xu-martingales line 1623): the source says the BMO norm is at most √3 times the functional norm; it should be use the valid constant 2; for b=±1 with probabilities 0.9,0.1, a=b−0.8 has BMO norm 1.8 while its functional norm is at most 1; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix theorem proof (ii), preprint p. 38 (Pisier-Xu-martingales line 1587; Pisier-Xu-martingales line 1594): the source says the scalar functional equals sums of operator products without applying the trace; it should be apply τ to each displayed sum defining φ(x); affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at Appendix, (A1) and preceding identity, preprint p. 35 (Pisier-Xu-martingales line 1444): the source says the defined BMO norm is at most the operator norm; it should be use the valid factor 2; revealing a ±1 variable with probabilities 0.9,0.1 gives BMO norm 1.8 and operator norm 1; affects a stated result. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorems 2.1 and 2.3 proof, Step 2, preprint p. 14 (Pisier-Xu-martingales line 602): the source says d_k vanishes for k≥n when the martingale is constant from time n onward; it should be k>n; the terminal difference d_n need not vanish; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+
 ## poineau-turchetti
 
 - **Misprint** at Example I.2.20, p. 11 (poineau-turchetti line 455): the source says Hahn coefficients are rational; it should be complex coefficients with rational exponents; affects a stated result. Found by TropicalAndBerkovichArithmetic (#180 at 2dd8ca6, 2026-10-24, codex gpt-6-astra).
@@ -3373,6 +3438,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Ric
 
 - **Error** at Corollaries 5.8–5.9, printed page 22 (Ric line 1051): the source says conjugating the first coordinate by the cyclotomic cocharacter gives the semidirect-product comparison; it should be right multiplication by an inverse lift, with a half Tate character when required; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
+
+## Ricard-Xu
+
+- **Misprint** at Lemma 5 proof, after (6), electronic-reprint p. 5 (Ricard-Xu line 189): the source says replacing a by its modulus increases ψ″(0); it should be it decreases ψ″(0); the subtracted integral increases, and this direction justifies the positive reduction; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 5 proof, equation (5), electronic-reprint p. 5 (Ricard-Xu line 178): the source says the resolvent integral in ψ″(0) has coefficient −c_p; it should be its coefficient is −(p/2)c_p, obtained by differentiating the preceding formula for ψ′; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 6 proof, derivative defining δ_e, electronic-reprint p. 8 (Ricard-Xu line 345): the source says the derivative’s norm factor has exponent 1−p; it should be the exponent is 2−2p, by differentiating α^((2−p)/p) with α(0)=‖a‖_p^p; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 6 proof, electronic-reprint p. 7 (Ricard-Xu line 312): the source says every nonzero spectral compression of a full-support element is invertible; it should be choose spectral cuts bounded away from zero; multiplication by s on L∞(0,1) has full support but is not invertible; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 6 proof, electronic-reprint p. 7 (Ricard-Xu line 315): the source says ψ_e is defined using the squared p-norm; it should be use the p-th power of the p-norm, as required by the following decomposition and Taylor expansion; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
 
 ## Rizov, Moduli stacks of polarized K3 surfaces in mixed characteristic, arXiv math/0506120v2
 
