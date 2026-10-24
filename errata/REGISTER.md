@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2563 mistakes recorded on the board: 1708 misprints, 650 errors, 178 gaps, 27 unparsed bullets.
-Errata jobs have read the cited sources of 27 roadmaps; in those of 1 they found no mistake.
+2654 mistakes recorded on the board: 1753 misprints, 680 errors, 194 gaps, 27 unparsed bullets.
+Errata jobs have read the cited sources of 29 roadmaps; in those of 1 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -504,6 +504,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 1.26, p.10: the source says the associativity homotopy's target degree as r+s+t; it should be r+s+t−1, as a degree −1 homotopy matching the associator; affects nothing. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Misprint** at Proposition 1.26, p.10: the source says the associator homotopy preserves total input degree; it should be degree minus one to make dh+hd an associator; affects nothing. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Proposition 1.26, p.10: the source says the associativity homotopy target degree r+s+t; it should be r+s+t−1, as the identity dh+hd equal to the associator forces; affects nothing. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, claude opus).
+- **Misprint** at Proposition 1.26, printed p.10 (BF line 508): the source says the associativity homotopy lands in degree r+s+t; it should be degree r+s+t−1, so its differential has the associator's degree; affects a stated result. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
 - **Gap** at Proposition 2.7, p.15: the source says an integral associative graded-commutative product exists on CH*(X,*) for any quasi-projective X, citing a rational result for smooth X; it should be require smooth X and integral moving; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "39344bc", "job": "REV-DESIGN-MotivicEtaleKTheory", "model": "opus", "worker": "fable-rev25"} -->. Found by MotivicEtaleKTheory (#952 at 39344bc, 2026-10-23, claude opus).
 - **Gap** at Proposition 2.7, p.15: the source says an associative internal product for any quasi-projective X; it should be assume X smooth, since diagonal pullback and the cited Levine result (rational) need smoothness; affects a stated result. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Gap** at Proposition 2.7, p.15: the source says every quasi-projective scheme has the indicated internal higher-Chow product; it should be require smoothness for the diagonal pullback and cited Levine argument; affects a stated result. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, codex gpt-6-astra).
@@ -512,7 +513,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Theorem 3.5, p.20: the source says the Beilinson comparison for any equidimensional complex algebraic scheme, but its proof treats smooth quasi-projective X only; it should be assume that; affects a stated result. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Gap** at Theorem 3.5, p.20: the source says the Beilinson comparison for any equidimensional complex algebraic scheme, while its proof assumes X smooth quasi-projective; it should be assume that; affects a stated result. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, claude opus).
 - **Gap** at Theorem 3.5, p.20, proof pp.20–23: the source says the K-to-Chow comparison applies to every equidimensional complex scheme; it should be assume smooth quasi-projective X for the proof given; affects a stated result. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, codex gpt-6-astra).
+- **Error** at Theorem 3.5, printed p.20 (BF line 905–919): the source says the K-to-higher-Chow isomorphism applies to any equidimensional complex algebraic scheme; it should be scoped to the smooth quasi-projective setting used in the proof; affects a stated result. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 5.1, printed p.31 (BF line 1453): the source says the two input forms have twists n and m; it should be twists p and q on X×□ⁿ and Y×□ᵐ, respectively; affects the proof. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 3.5, p.22, BF line 1006: the source says Gr(N,k) parametrizes k-planes in ℂᴺ but has a rank-N universal bundle and stabilization in k; it should be use N-planes in ℂᴺ⁺ᵏ with their rank-N bundle; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "cf15f635abe7ec104fc1850c399a5006423ec57a", "job": "REV-DESIGN-MotivicEtaleKTheory~3", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 3.5, printed p.22 (BF line 1006–1011): the source says the universal bundle on k-planes in ℂᴺ has rank N and classifies through BGL_N; it should be rank k and BGL_k for that Grassmannian convention, or consistently reversed indices; affects the proof. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §5.2 support notation, printed p.32 (BF line 1508): the source says the X-support indexed by n is obtained from supports indexed by m; it should be indexed by n consistently with the X×□ⁿ factor; affects nothing; For the second source issue, X=Spec ℂ[ε]/(ε²) is a concrete obstruction: K₁ contains the nonzero additive group 1+εℂ after rationalization, while higher-cycle groups are invariant under this nilpotent thickening. The README correctly avoids that broad theorem header. No published correction to these preprint issues was established in this review. <!-- tauceti-roadmap-review {"agent": "codex", "head": "18a7b4d7056c6e7f88aa9f634dac7c55278ad1b3", "job": "REV-PKG-MotivicEtaleKTheory", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
 
 ## Bhargava, The density of discriminants of quartic rings and fields (Annals 162, 2005)
 
@@ -622,6 +627,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 6.4 first case, printed p.18, BO line 901: the source says to apply Castelnuovo to a scheme with unsquared or residual fixed supports; it should be Φ²∪Σ²∪Z_F(0)∪Z_G(t), as the following inequality does; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "fc55b70f63026c40e3e91fffd051b3e5e5052478", "job": "RT-GenericDoublePointInterpolation~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by GenericDoublePointInterpolation (#144 at fc55b70, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §3 quadrics, printed p.6, BO line 282: the source says the quadrics singular at two points have projective dimension choose(n,2); it should be vector dimension choose(n,2), or projective dimension one less; affects nothing. Found by GenericDoublePointInterpolation (#144 at fc55b70, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6 Hilbert-function definition, printed p.12, BO line 608: the source says tensoring the linear-system ideal by I_X computes its vanishing kernel without restrictions; it should be formulated using the actual restriction kernel, or hypotheses making the tensor expression valid; affects nothing. Found by GenericDoublePointInterpolation (#144 at fc55b70, 2026-10-23, codex gpt-6-astra).
+
+## BOMBIERI-1971
+
+- **Misprint** at the coefficient after (4), p.402, lines 74–81: the source says the projection coefficient uses a globally summed squared Gram denominator; it should be the first-power absolute Gram row sum for the fixed index; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the kernel display, p.403, lines 77–89: the source says an inner-product modulus equals a signed kernel difference; it should be the absolute value of that difference; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at the radial bins, p.404, lines 100–104: the source says bins whose upper endpoints stay below one half cover all points; it should be augmented by the final partial bin and the antipodal endpoint; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 
 ## borel1977
 
@@ -1534,6 +1545,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at equation (5.29), p. 842: the source says the source sums refined components over every automorphism τ; it should be sum once over distinct refined orbits, since the trivial weight with quadratic E gives 2v; affects nothing. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
 - **Error** at §5.1 ¶14, p. 836: the source says the source calls MT, defined as the identity component of the Zariski closure, the Tannakian group of the generated category; it should be the full Zariski closure (Chen14 Déf. 3.2.2, Prop. 3.2.3); affects the proof. Found by PadicHodgeTheoryPartII (#391 at 6502997, 2026-10-23, claude opus).
 
+## GMP-ECM
+
+- **Misprint** at README contents, unpaginated (GMP-ECM line 20): the source says the record-factors section is numbered 11; it should be numbered 10, matching its heading at GMP-ECM line 760; affects nothing. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+- **Error** at README §6(c), unpaginated (GMP-ECM line 480): the source says the Hessian model X³+Y³+Z³=DXYZ requires D³≠1; it should be D³≠27 over fields of characteristic other than 3; D=3 gives the singular point (1:1:1); affects a stated result. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+- **Error** at README §6(d), unpaginated (GMP-ECM line 505): the source says Z/3×Z/3 and Z/4×Z/4 are available torsion groups over the rationals; it should be over suitable extension fields for these two groups; the Weil pairing forces nonrational third or fourth roots of unity; affects a stated result. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+
 ## GNT19
 
 - **Error** at Lemma 2.20, p. 16: the source says Witt direct images vanish above the maximal fibre dimension for any morphism of separated finite-type schemes; it should be stated for proper f, since an open immersion A²∖0 → A² has a nonzero first direct image; affects a stated result. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
@@ -1618,6 +1635,26 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Harbater–Obus–Pries–Stevenson, Abhyankar's conjectures in Galois theory, arXiv:1408.0859v1
 
 - **Error** at §3.3, sketch of the solvable step in Theorem 3.6: the source says the invariant grows under the m-fold pullback as d′ = m·d; it should be m·d + (m − 1)·dim H, since the characteristic-two S₃ case gives 2, not 0; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## HB-SIEVES
+
+- **Misprint** at (5.3), p.33, lines 1655–1673: the source says the upper main sum is added to the positive first-failure tail; it should be the upper main sum minus that tail, with all terms normalized when dividing by X; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chen's local constant, p.46, lines 2293–2299: the source says the universal product uses only odd primes dividing N; it should be over all odd primes, with the N-dependent correction separate; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Corollary 1.2, p.4, lines 149–160: the source says the asymptotic follows solely from z≤log x; it should be stated with z→∞ or retain the exact finite Euler product for bounded z; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Example 1 after Corollary 5.1, p.36, line 1812: the source says the remainder cutoff is x(log x)²; it should be x/(log x)², matching the subsequent O(y) error; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Example 1, p.2, line 47: the source says the rough count is π(x)−π(z); it should be 1+π(x)−#{p prime:p<z}, retaining the unit and boundary prime; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Example 2 and its divisibility count, pp.2–3, lines 49,90–103: the source says the image-set cardinality equals its parameter count; it should be a weighted image or indexed count preserving multiplicities; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Example 2 prime-pair interpretation, p.2, lines 54–56: the source says only the first prime needs the lower cutoff; it should be both prime factors above the cutoff, with ordering consistent with the population; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Example 3, p.2, line 63: the source says excluding primes congruent to 3 modulo 4 characterizes primitive sums of squares; it should be supplemented by 4∤n and a convention allowing zero coordinates; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Example 4, p.38, lines 1899–1903: the source says θ>1/2 gives positivity and θ>1/5 gives four factors; it should be 2/5<θ<1/2 for this argument; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 4.1 induction, p.28, line 1389: the source says the transformed parameter lies in (0,2] for every p≥x^(1/s); it should be restricted to x^(1/3)≤p<x, with the remaining ranges handled separately; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 5.1, p.35, line 1782: the source says the lower main term has an upper estimate; it should be bounded below by W(z) times the lower sieve function minus its error; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at divisor-count calculation, p.4, line 147: the source says the strict prime product has 2^π(z) divisors; it should be 2^#{p<z}, bounded above by 2^π(z); affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at introductory Goldbach question, p.1, line 24: the source says every even integer starting at 2 is a sum of two primes; it should be every even integer starting at 4; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at partial summation after (6.3), p.44, lines 2192–2194: the source says the integral has the same lower and upper endpoint; it should be integrated from N^α to N^β; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the Liouville error definition, p.24, lines 1215–1218: the source says the unnormalized summatory error decays to zero; it should be x exp(−c√log x), as required by the following squared calculation; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the cutoff after (4.2), p.25, lines 1275–1279: the source says to use the preceding decaying E₁(x) as a growing cutoff; it should be x exp(−√log x); affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at the fundamental lemma, p.38, lines 1908–1916: the source says an absolute error bound in x suffices for relative asymptotics; it should be supplemented by remainder o(XW(z)) and vanishing relative sieve-function error; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 
 ## Heath-Brown, Lectures on sieves, arXiv:math/0209360v1
 
@@ -1814,6 +1851,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Remark 5.1.1(b), printed p.32, jsw line 1322: the source says the derivative index is j=n+1; it should be j=n−1 under its stated character substitution; affects a stated result. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §5.1 after (5.1.a), printed p.32, jsw lines 1304–1307: the source says weight-two Petersson norm uses dxdy/y² without the weight factor; it should be include y², giving dxdy; affects a stated result. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
 
+## JUTILA-ORIGINAL
+
+- **Misprint** at Lemma 2 reference, p.194, line 120: the source says the previously proved mean-square lemma is reference 2; it should be reference 3, the 1973 work identified in the introduction and bibliography; affects nothing. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
 ## Kadiri
 
 - **Misprint** at (2.19), printed p. 10 (Kadiri line 436): the source says all four F arguments use iγ₀, although the left side depends on k; it should be ikγ₀ in those four first arguments, consistently with (2.18) and (2.24); affects the proof. Found by ZerosOfLFunctions (ERRATA-ZerosOfLFunctions at cce2e04, 2026-10-23, codex gpt-6-astra).
@@ -1865,6 +1906,40 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kawasaki, On Macaulayfication of Noetherian schemes (Trans. Amer. Math. Soc., 2000)
 
 - **Misprint** at the five colon estimates whose corrections Česnavičius (arXiv: the source says 1810.04493v2) discusses: the source says five of these estimates in misprinted form, as Česnavičius records; it should be as the evidence in the cited report requires; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## KED-ANT-11
+
+- **Gap** at Theorem 11.11 proof, §11.5, unpaginated, lines 636–651: the source says the two-residue family satisfies the earlier sieve hypotheses after its remainder check; it should be supplied with the missing divisor-cutoff verification or a suitable stronger theorem; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Theorem 11.11 proof, §11.5, unpaginated, lines 645–648: the source says an unspecified O(log z) prime sum gives dimension exactly 2; it should be replaced by the coefficient-one estimate log z+O(1); affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
+## KED-ANT-12
+
+- **Error** at Lemma 12.1, §12.2, unpaginated, lines 359,477–495: the source says the first-failure identity uses the inclusive Euler product at the final prime; it should be the strict left-limit product, with matching outer prime cutoffs; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 12.2, §12.4, unpaginated, line 661: the source says the lower main term exceeds a factor greater than one times V; it should be the factor one minus the positive error; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at the all-prime examples, §12.1, unpaginated, lines 401–414: the source says the unshifted coprimality sieve counts all primes and then twins; it should be the unit plus primes above the sieve cutoff, with shifted residue conditions for twins; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
+## KED-ANT-16
+
+- **Misprint** at (16.1.2), §16.1, unpaginated, lines 362–365: the source says the integer translated in the formula is n while m is quantified; it should be the quantified m; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Definition 16.6, §16.3, unpaginated, lines 549–551: the source says the least nonsquare residue is defined at every prime; it should be restricted to odd primes or separately totalized at 2; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 16.5 CRT display, §16.3, unpaginated, line 535: the source says the second phase fraction sits inside the first denominator; it should be a₁/q₁+a₂/q₂; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 16.5, §16.3, unpaginated, lines 500–521: the source says the local energy bound applies to coefficients on excluded residues; it should be applied to coefficients masked onto surviving classes; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 16.4 proof, §16.3, unpaginated, lines 485–521: the source says the primitive multiplicative theorem bounds the resulting additive energy; it should be the reduced-residue additive theorem, Theorem 16.1; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 16.7 proof, §16.3, unpaginated, lines 556–596: the source says (p−1)/(p+1) is asymptotic to one half; it should be asymptotic to one; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 16.7 smooth-number argument, §16.3, unpaginated, lines 588–596: the source says an ordered-prime-tuple sum is a lower bound for distinct smooth integers; it should be corrected for multiplicities and use an integer tuple length; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the smooth-count asymptotic, §16.3, unpaginated, line 588: the source says the positive asymptotic constant is some N; it should be some c>0, while N tends to infinity; affects nothing. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
+## KED-ANT-18
+
+- **Gap** at Theorem 18.3 dyadic summation, §18.1, unpaginated, lines 473–495: the source says the displayed block bounds sum with no further logarithmic loss; it should be justified by a sharper argument or retain that loss; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Theorem 18.3 small-conductor estimate, §18.1, unpaginated, lines 466–470: the source says the bound contains only the second support's square root; it should be multiplied by the first support's square root as supplied by Lemma 18.2; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 18.5, §18.3, unpaginated, line 635: the source says the sum over residue a uses a free residue m; it should be the discrepancy at a and a consistently squared ℓ² norm; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the bilinear discrepancy display, §18.2, unpaginated, lines 592–596: the source says the residue and summation index share a name and the average lacks coefficients; it should be a distinct residue and identical bilinear summands in both terms; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the boundary after (18.2.2), §18.2, unpaginated, line 559: the source says only n<x^(1/5) contributes the omitted boundary; it should be n≤x^(1/5), including prime-power endpoints; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at the final substitution, §18.2, unpaginated, lines 605–609: the source says δ=√Δ turns its displayed bound into √Δ x log³x; it should be rederived, since direct substitution leaves an extra x/Δ factor; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at the multiplicative partition, §18.2, unpaginated, lines 573–585: the source says O(δ⁻¹) consecutive intervals cover [1,x]; it should be justified with the log x factor or a stated restricted interval; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at the partition parameter, §18.2, unpaginated, line 573: the source says x^(1/5)<δ≤1 for x>1; it should be a nonempty positive range, with the needed lower constraint proved; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at the rectangles after (18.2.3), §18.2, unpaginated, lines 582–585: the source says rectangles with ℓ>L,m>M,LM=x cover ℓm≤x; it should be rectangles below the hyperbola with separate boundary-strip estimates; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 
 ## Kedlaya, A p-adic local monodromy theorem (Ann. of Math. 2004)
 
@@ -1980,6 +2055,22 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 5.8, printed p.184: the source says the different of the full local toral order has a generator whose norm equals the discriminant; it should be equality only up to sign, as ideals: in the split case the generator (π,−π) has norm −π², the discriminant ideal (π²); affects a stated result. Found by  (#159 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## KHAYUTIN-19
+
+- **Error** at Corollary B.7, p.269, lines 6409–6424: the source says the pre-threshold formula includes n=ℓ; it should be n<ℓ, with the corrected non-lifting count at the threshold; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 9.11, pp.225–226, lines 3665–3690: the source says the product comparison is uniform for all positive s; it should be restricted to s≥1 or have its small-s factor changed; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Lemma 9.21, pp.230–231, lines 4025–4054: the source says the final prime sum is uniformly bounded; it should be estimated with the discarded Möbius-difference factors, since its displayed summands dominate 1/p; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Lemma 9.23, p.231, lines 4078–4082: the source says the logarithmic argument covers α=0; it should be treated separately because log α is undefined there; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 9.9 discrepancy bound, p.225, lines 3615–3624: the source says replacing area by lattice population keeps exactly the same discrepancy constant; it should be enlarged to absorb the second discrepancy contribution; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Lemma 9.9, pp.224–225, lines 3612–3644: the source says the lcm discrepancy estimate applies throughout the displayed range directly; it should be preceded by the curvature-to-area cutoff argument and a valid small-θ Gram bound; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma B.4, pp.266–267, lines 6182–6209,6263–6277: the source says the smooth zero-level contribution is (1−χ)p^(n−1); it should be (p−1)(1+χ)p^(n−1), with the stated singular recursion; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Proposition 9.25, pp.235–236, lines 4333–4360: the source says the scaled curvature bound by area suffices for the same η; it should be bounded by scaled area to power 1−3η; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 9.26, pp.236–237, lines 4450,4465–4468: the source says the local residue is k₁ℓ after reducing the original congruence; it should be k₀k₁ℓ, or transport ℓ after dividing by k₀; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition B.5 second branch, p.268, line 6329: the source says the counted modulus is p^ℓ; it should be p^n; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition B.5, (68), pp.268–269, lines 6368–6374: the source says scaling produces twice the parity exponent and a negative constant term; it should be exponent ℓ mod2 and constant +4ωu u_A; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition B.8, pp.270–271, lines 6447–6456,6491–6515: the source says the final character term is (ωu/p); it should be (−ωu/p), as required by Q=q−ωD; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Theorem 9.7 proof, (47), p.233, lines 4182–4185: the source says corrected-density control gives the required ordinary prime-power density bound; it should be replaced by a justified ordinary-density input or a different contribution estimate; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
 ## Khovanov
 
 - **Misprint** at Lemma 2, proof, arXiv v2 p. 10 (Khovanov line 387): the source says r intertwines the inclusions as r(Λ⊗Id)=Id⊗Λ; it should be r(Id⊗Λ)=Λ⊗Id, as correctly stated in Lemma 2; affects the proof. Found by HopfologicalAlgebra (ERRATA-HopfologicalAlgebra at ae6ce67, 2026-10-23, codex gpt-6-astra).
@@ -2021,6 +2112,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kisin–Pappas, Integral models of Shimura varieties with parahoric level structure (arXiv:1512.01149)
 
 - **Error** at Lemma 4.4.8: the source says a polarization with positive multiplier descends to the twist of an abelian scheme by a torsor, with no condition at the real place; it should be that descent requires the torsor to have a real point, as Kisin–Shin–Zhu §5.12.4 does; twisting E² by Spec ℚ(i) gives an indefinite form; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## KM-21
+
+- **Misprint** at Lemma 4.1 domain, p.20, lines 1205–1215: the source says the first argument is an ideal and the second lies in O_F; it should be nonzero elements of O_K coprime to f and elements of O_K; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 4.1(P3), p.20, line 1215: the source says the complete sum is modulo the principal ideal (w); it should be modulo the rational norm ideal |N(w)|O_K, matching the preceding period; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 1, p.2, lines 70–80: the source says the bound's constant depends only on K and ε despite unrestricted ψ; it should be allowed to depend on fixed ψ or require a bound for its supremum norm; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "4fbab2b2f8b90794e0873ea2bfd5b4d063905ea9", "job": "RT-SieveMethodsAndPrimePatterns~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Gap** at definition (2.4), pp.5–6, lines 243–274: the source says an arbitrary odd principal generator can be passed to ψ on unit classes modulo F; it should be restricted to ideals coprime to F or use an explicit zero extension; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 
 ## Koenigsmann, Defining ℤ in ℚ, Ann. Math. 183 (2016) (read in arXiv v2)
 
@@ -2168,6 +2266,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §2, proof of Proposition2.4, preprint p.7, line280: the source says a coordinate avoiding both cusps away from p must be p^k; it should be ±p^k, since both signs are units in ℤ[1/p]; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "add3164d8254f947810f06d1c100ea3946c38a4d", "job": "RT-EllipticCurveModularityPartII~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by EllipticCurveModularityPartII (#134 at add3164, 2026-10-23, codex gpt-6-astra).
 - **Error** at §2, proof of Theorem1.1, preprint p.5, line194: the source says the Jacobian of X₀(37) has rank zero; it should be positive rank, witnessed by its conductor37 elliptic quotient y²+y=x³−x; affects the proof. Found by EllipticCurveModularityPartII (#134 at add3164, 2026-10-23, codex gpt-6-astra).
+
+## Lenstra1987
+
+- **Error** at §2.2, p. 664 (Lenstra1987 line 637): the source says the last addition branch forces P=Q for arbitrary inputs in Vₙ; it should be Pₚ=Qₚ at qualifying primes; modulo 35, P=(0:1:1), Q=(0:11:1) reach this branch but differ; affects a stated result. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
 
 ## Leray1934
 
@@ -2363,6 +2465,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 8.1, definition of G_{b,j}, p.409 (also (8.6)): the source says the sum defining G_{b,j} starts at r=1; it should be a sum that includes the r=0 term; affects a stated result. Found by  (#177 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at the matrix-positivity assertion after Lemma 8.2, p.411: the source says the quadratic form of the J-integrals is positive definite on the polynomial coefficients; it should be only positive semidefinite: a nonzero two-variable polynomial (square integral 1/3150) has identically vanishing fibre integrals; affects the proof. Found by  (#177 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## MAYNARD-2015
+
+- **Misprint** at (4.4), p.389, lines 339–341: the source says to sum over j while the summand uses m; it should be summed over m; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at (5.8), p.393, lines 608–609: the source says the denominator uses undefined functions μ_i; it should be μ(d_i) in each factor; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at (6.18), p.404, lines 1353–1355: the source says the product excludes an undefined index j; it should be the integrated coordinate m; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at (8.10), p.411, line 1976: the source says the factorial denominator uses c instead of twice c′ and the polynomial uses c; it should be (k+b+2c′−1)! and G_(c′,2)(k−1); affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 8.1, p.409, lines 1724–1780: the source says the composition sum starts at length 1; it should be length 0 included, giving G_(0,j)=1; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 1.1 proof, p.391, lines 398–401: the source says only primes smaller than k are handled by nondivisibility; it should be primes at most k; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Error** at matrix positivity after Lemma 8.2, p.411, lines 1978–1987: the source says both quadratic forms are positive definite; it should be positive semidefiniteness for the J form, and independence of basis vectors for the I form; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the sentence preceding (7.10), p.407, line 1582: the source says the removed constraint sums from index 1; it should be from index 2, matching the variables of the error integral; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
 ## Mazur–Rubin, Controlling Selmer groups in the higher core rank case (cited as MR16; arXiv:1312.4052)
 
 - **Error** at hypothesis (H.4), its p = 2 branch: the source says transverse local conditions are self-dual also when p = 2; it should be self-dual only for odd p, or for p = 2 when (|𝔽^×|/2)·T = 0 (witness (−3,−3)₃ = −1 over ℚ₃); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -2374,6 +2487,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Meyer–Wagner, q-Hodge complexes and refined TC⁻, arXiv:2410.23115v4
 
 - **Error** at the proof of Lemma 3.7, p. 32: the source says the rationalisations vanish (the finite-coefficient rational corner); it should be that the non-completed rational corner is nonzero and must be kept: for the zero ring, polynomial animation gives dR_(0/ℚ) = ℚ; affects the proof. Found by  (#149 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Milley2009
+
+- **Error** at Corollary 3.3, preprint p. 7 (Milley2009 line 344): the source says the tail is strictly less than twice its first term whenever θ²<π²/2, including θ=0; it should be a non-strict inequality, or require θ≠0; at zero the printed inequality is 0<0; affects a stated result. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Gap** at proof of Lemma 4.2, preprint p. 10 (Milley2009 line 455): the source says commutation of a^(n+k) and b^m implies commutation of a and b for unrestricted integer exponents; it should be restricted to m(n+k)≠0 for this inference, followed by separate arguments for the zero-exponent cases; affects the proof. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Gap** at §2, preprint p. 4 (Milley2009 line 179): the source says increasing a floating-point slope-length cutoff should compensate for numerical errors and preserve exhaustive enumeration; it should be accompanied by certified bounds on volume and cusp coordinates proving that every relevant slope remains included; affects the proof. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2, preprint p. 5 (Milley2009 line 202): the source says the 1,278 candidate fillings have one-cusped parent manifolds; it should be two-cusped parents, producing one-cusped fillings, as the construction on page 4 specifies; affects nothing. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Error** at §3, preprint p. 8 (Milley2009 line 371): the source says every Lobachevsky-function value equals a value at an argument in [0,π/2]; it should be a representative in [−π/2,π/2], or a signed value on [0,π/2]; L(−π/6)<0 whereas L is nonnegative on [0,π/2]; affects the proof. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, preprint p. 9 (Milley2009 line 426): the source says elliptic elements are characterized by real lift traces in the closed interval [−2,2]; it should be the open interval (−2,2); a nonidentity unipotent matrix has trace 2 and is parabolic; affects nothing. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
 
 ## milne
 
@@ -2445,6 +2567,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 24.2 proof, p. 135 (MilnorMorse line 23127): the source says the scalar spectrum of K_A is called its nonzero eigenvectors; it should be amended to call these numbers eigenvalues; affects nothing. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Lemma 24.6(3) proof, p. 139 (MilnorMorse line 23975): the source says the converse splitting uses H⁴ᵏ despite n=16r; it should be amended to use H⁴ʳ; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 
+## Montgomery1987
+
+- **Misprint** at §10.2, p. 259 (Montgomery1987 line 772): the source says Algorithm MCF is in Subsection 3.2; it should be Subsection 3.3, p. 248; affects nothing. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4.2 and §9.1, (9.1.2), pp. 252, 256 (Montgomery1987 line 457; Montgomery1987 line 633): the source says the sieved continuation covers every prime between the bounds, with PAIR queues indexed by |q|<w; it should be handle primes dividing w separately; B₁=3, B₂=30, w=5 misses prime 5 and accesses undefined Q₋₅; affects a stated result. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4.2, (4.2.1), pp. 252–253 (Montgomery1987 line 449; Montgomery1987 line 493): the source says every emitted pair satisfies v≥2a_min; it should be flush expired queues before advancing a_min; with B₁=100, w=u_max=30, L=2, prime 271 advances a_min to 4 before emitting (6,7); affects a stated result. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §9.2, p. 257 (Montgomery1987 line 680): the source says the auxiliary prime s may divide the transformed value difference F(vw)−F(u); it should be the factor p divides that difference when s divides the corresponding transformed index sum or difference; affects nothing. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
+
 ## Morrison
 
 - **Error** at Proposition 3.3 proof, case (1), printed p. 6 (Morrison line 247): the source says the product has at most n−4 through strands; n=3, h=E₁, i=1 instead gives E₃E₁, with zero through strands rather than at most −1; it should be exclude these terms by their upper cups: a nonidentity h retains an upper cup among the first n endpoints, unlike gₙ₊₁,ⱼ; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
@@ -2502,6 +2631,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at VII §9, equation preceding (9.8), printed p. 515: the source says the cone-zeta summand uses Lₖ*(z), independent of x; it should be Lₖ*(z + ξ), where x = ∑ⱼ ξⱼvᵢⱼ, with these coordinates also used in ζ(Aᵢ, ξ, s); affects the proof. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
 - **Error** at VII §9, final paragraph, printed pp. 516–517: the source says continuity and the interpolation values uniquely determine ζₚ on ℤₚ ∖ {1} for every prime; it should be strengthened to rigid meromorphicity on the unit disc; for p = 2 the prescribed inputs are odd, leaving the even open subset undetermined by continuity; affects a stated result. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
 - **Error** at VII §9, paragraph following (9.7), printed p. 514: the source says the trivial character over a non-totally-real field has a nonzero value at s = 0; it should be exceptional only for the primitive trivial character of an imaginary quadratic field; (5.11) gives vanishing otherwise; affects a stated result. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
+
+## NeumannYang1999
+
+- **Misprint** at Definition 2.1, equation (2), preprint p. 3 (NeumannYang1999 line 131): the source says the negative symmetry term uses the argument (x−1)/x, duplicating an earlier positive term; it should be x/(x−1), as the vertex-permutation list immediately above requires; affects a stated result. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Error** at proof of Lemma 3.3, preprint p. 7 (NeumannYang1999 line 302): the source says Shapiro's decomposition of H₁(Γ,S₀(CP¹)) contains only cyclic-stabilizer summands; it should be those summands plus one Z² per cusp; the differential lands in the cyclic-stabilizer summand; affects the proof. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 6.1, preprint p. 11 (NeumannYang1999 line 473): the source says the tetrahedra defining K are simplices of K, although K is a field; it should be simplices of the triangulation Y; affects nothing. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 8.4, preprint p. 16 (NeumannYang1999 line 745): the source says the image simplex with vertices z₀ through zₙ has dimension n+1; it should be dimension n, consistent with its n+1 vertices and membership in Sₙ; affects nothing. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
 
 ## Newton–Thorne (NT16), Torsion Galois representations over CM fields and Hecke algebras in the derived category,
 
