@@ -1,6 +1,7 @@
 import Mathlib
-import TauCeti.NumberTheory.ModularForms.Newforms.Nebentypus
-import TauCeti.NumberTheory.ModularForms.TrivialNebentypus
+import TauCeti.NumberTheory.ModularForms.Newforms.Basic
+import TauCeti.NumberTheory.ModularForms.DiamondOperators
+import TauCeti.NumberTheory.ModularForms.Newforms.Newform
 import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
 import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Kernel
 import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.BaseChange.Basic
@@ -15,12 +16,13 @@ theorems against the pinned Mathlib and Tau Ceti APIs.
 
 Headlines: Martin's dimension formula and sharp equality criterion; the integral
 norm bound; sharp Kraus rational and full-two-torsion realization; uniform
-irreducibility and absolute irreducibility with rational two-torsion; Cartan
-integrality and Lemos's rational-isogeny surjectivity theorem.
+irreducibility and absolute irreducibility with rational two-torsion; finite-prime
+coefficient rationality; integral ideal-congruence Sturm; Cartan integrality,
+the proper-image classification and Lemos's rational-isogeny surjectivity theorem.
 
 The removed-prime bound and Kraus realization are not statable at the pins: the elliptic arithmetic conductor,
 residual Artin conductor and Serre weight interfaces are missing. The Cartan
-correspondence, winding quotient, formal immersion and integrality headlines
+correspondence, winding quotient and formal immersion headlines
 lack the modular curves with their moduli/j maps, modular Jacobians with integral
 Hecke quotients, and their canonical integral models. They remain README targets;
 no replacement predicates or admitted constructions are used here.
@@ -87,6 +89,30 @@ theorem norm_bound {K : Type*} [Field K] [NumberField K]
     (hB : ∀ σ : K →ₐ[ℚ] ℂ, ‖σ (x : K)‖ ≤ B) :
     (ell : ℝ) ≤ |(Algebra.norm ℚ (x : K) : ℝ)| ∧
       |(Algebra.norm ℚ (x : K) : ℝ)| ≤ B ^ Module.finrank ℚ K := by sorry
+
+/-! ## Layer 3: rationality and exact-conductor realization -/
+
+/-- A primitive weight-two trivial-character newform has integral coefficients
+if its prime coefficients through the Sturm bound are integers
+(Kraus, Lemma 1, pp. 1144–1145). -/
+theorem rationality_of_small_prime_coefficients (N : ℕ) [NeZero N]
+    (f : HeckeRing.GL2.Newform N 2) (hχ : f.χ = 1)
+    (hsmall : ∀ q : ℕ, q.Prime → 6 * q ≤ (CongruenceSubgroup.Gamma0 N).index →
+      ∃ z : ℤ, (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff q = (z : ℂ)) :
+    ∀ n : ℕ, ∃ z : ℤ, (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff n = (z : ℂ) := by sorry
+
+/-! ## Layer 4: full rational two-torsion realization -/
+
+/-- For any nonnegative weight, level, nebentypus and ideal of a number field's
+integers, coefficient membership through the Gamma0 Sturm bound implies membership
+at every coefficient (Kraus, Appendix II, Proposition 1, p. 1158). -/
+theorem integral_sturm_congruence (N : ℕ) [NeZero N] (k : ℕ)
+    (χ : (ZMod N)ˣ →* ℂˣ) {K : Type*} [Field K] [NumberField K]
+    (σ : K →ₐ[ℚ] ℂ) (J : Ideal (𝓞 K)) (f : modFormCharSpace (k : ℤ) χ)
+    (a : ℕ → 𝓞 K)
+    (ha : ∀ n, (UpperHalfPlane.qExpansion 1 f.val).coeff n = σ (a n : K))
+    (hsmall : ∀ n : ℕ, 12 * n ≤ k * (CongruenceSubgroup.Gamma0 N).index → a n ∈ J) :
+    ∀ n : ℕ, a n ∈ J := by sorry
 
 /-! ## Layer 5: uniform two-torsion irreducibility -/
 
@@ -155,6 +181,31 @@ def HasCyclicIsogeny (E : WeierstrassCurve ℚ) [E.IsElliptic] (n : ℕ) : Prop 
   ∃ F : WeierstrassCurve ℚ, ∃ (_ : F.IsElliptic),
     ∃ f : TauCeti.Isogeny E.toAffine F.toAffine,
       f.degree = n ∧ IsAddCyclic ((f.map (algebraMap ℚ (AlgebraicClosure ℚ))).ker)
+
+/-- The torsion image normalizes a quadratic finite subfield of its endomorphism
+ring. The units of that field are a nonsplit Cartan subgroup. -/
+def ImageInNonsplitCartanNormalizer (E : WeierstrassCurve ℚ) [E.IsElliptic]
+    (p : ℕ) [Fact p.Prime] : Prop :=
+  ∃ C : Subring (Module.End (ZMod p) (GeometricTorsion E p)),
+    IsField C ∧ Nat.card C = p ^ 2 ∧
+      ∀ σ, ∀ c ∈ C,
+        torsionRepresentation E p σ * c * torsionRepresentation E p σ⁻¹ ∈ C
+
+/-- For a non-CM rational elliptic curve and p > 37, a proper torsion image
+lies in a nonsplit Cartan normalizer (Lemos, Theorem 2.3, p. 6). -/
+theorem nonsplit_of_not_surjective (E : WeierstrassCurve ℚ) [E.IsElliptic]
+    (hCM : NonCM E) (p : ℕ) [Fact p.Prime] (hp : 37 < p)
+    (h : ¬ Function.Surjective (E.torsionGaloisAction (K := AlgebraicClosure ℚ) (p : ℤ))) :
+    ImageInNonsplitCartanNormalizer E p := by sorry
+
+/-- A rational cyclic isogeny of one of the five genus-zero prime degrees and
+nonsplit-normalizer containment, at a prime outside that set, force integral j
+(Lemos, Proposition 2.1, p. 4). No non-CM hypothesis is needed. -/
+theorem lemos_integral_j (E : WeierstrassCurve ℚ) [E.IsElliptic] (r : ℕ)
+    (hr : r ∈ ({2, 3, 5, 7, 13} : Finset ℕ)) (hisog : HasCyclicIsogeny E r)
+    (p : ℕ) [Fact p.Prime] (hp : p ∉ ({2, 3, 5, 7, 13} : Finset ℕ))
+    (hns : ImageInNonsplitCartanNormalizer E p) :
+    ∃ m : ℤ, E.j = (m : ℚ) := by sorry
 
 /-- Lemos's theorem: a non-CM rational elliptic curve with a nontrivial rational
 cyclic isogeny has full automorphism image on p-torsion for every prime p > 37.
