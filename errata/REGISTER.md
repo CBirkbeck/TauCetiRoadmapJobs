@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2906 mistakes recorded on the board: 1931 misprints, 738 errors, 209 gaps, 28 unparsed bullets.
-Errata jobs have read the cited sources of 37 roadmaps; in those of 2 they found no mistake.
+2946 mistakes recorded on the board: 1954 misprints, 753 errors, 211 gaps, 28 unparsed bullets.
+Errata jobs have read the cited sources of 38 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -633,6 +633,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 16.10(2), p.110: the source says the uncompleted quotient P/J equals the q-PD envelope quotient E/K; it should be use the derived p-completion, i.e. the completed extended ideal as in Construction 16.13 (a square-zero counterexample shows IP need not be closed); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## BHW
+
+- **Error** at Definition 3.10 and its following paragraph, p. 11 (BHW line 511; BHW line 515): the source says the union of closed radius-r balls around units is a multiplicative group for r ≤ 1; it should be require r < 1; at r = 1 the ball around 1 contains 0; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Definition 3.11(4), p. 11 (BHW line 526): the source says the formal additive group gives the multiplicative unit group, described as the closed unit ball around 1; it should be use the formal completion of G_m and its generic fibre |T| = 1; the printed ball also contains nonunits; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Definition 3.16, second displayed expression, p. 12 (BHW line 573): the source says the defining functions live on the tower of level Γ₀(p∞); it should be level Γ(p∞), as in Definition 3.15; the full-level functions carry the required Γ₀(pⁿ)-action; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Definition 4.4, multiplicative torsor assertion, p. 16 (BHW line 755): the source says the fibre over ψ(1) is a torsor under one plus the kernel ideal of π; it should be after trivializing ω⁺, use 1+I/a with I=kerπ and a lifting ψ(1); nonordinary Hodge–Tate lifts are nonunits; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Definition 4.4, p. 16 (BHW line 751): the source says the fibre over ψ(1) is an O⁺-module; it should be an affine torsor under ker π; already for an ordinary elliptic curve, the fibre excludes the zero differential; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Definition 4.5(1)–(2), p. 16 (BHW line 757): the source says a topological generator q of ℤₚ× supplies a weight coordinate with |T| < 1 on all components; it should be choose q generating 1+pℤₚ, or 1+4ℤ₂; ℤ₂× is not procyclic, and tame components invalidate the proposed covering; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Definition 4.5(3), p. 16 (BHW line 763): the source says taking sup over all x ∈ ℤₚ× of |κ(x)−1| defines a strictly positive ε_κ; it should be use |κ(q)−1| for a principal-unit generator; a nontrivial tame character makes the printed supremum one and ε_κ zero; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Definition 4.7, opening sentence, p. 16 (BHW line 771): the source says Definition 3.13 defines the open subsets U_k; it should be Definition 4.5(3); affects nothing. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.19, p. 13 (BHW line 613): the source says γ*s equals (cz+d)γ; it should be (cz+d)s, as computed in the proof; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.7, proof, p. 10 (BHW line 465): the source says O⁺ on X_U is evaluated at V×U, while O⁺ on Y_U is evaluated at W×U; it should be O⁺(W×U)^Γ = O⁺(V×U), with W the preimage of V under X → Y; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 3.24, proof, p. 15 (BHW line 694): the source says the Γ₀(p∞)-level tower over Γ₀(p)-level supplies the pro-étale torsor for descent; it should be the Γ(p∞)-level tower over Γ₀(p)-level, with group Γ₀(p), away from the cusps; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
 ## Bijakowski–Pilloni–Stroh, Classicité de formes modulaires surconvergentes (Ann. of Math. 2016)
 
 - **Misprint** at the determinant-polynomial evaluation in its signature argument (no printed locator given): the source says the source evaluates on diag(x, 1, …, 1) plus the identity; it should be diag(x − 1, 0, …, 0) plus the identity, that is diag(x, 1, …, 1); in rank one at x = 1 these give 2 and 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1119,6 +1133,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §II, printed p. 3 (Childs-Goldstone line 234): the source says the uniform state is a ground state of L; it should be a ground state of −L; the paper defines L=A−D, whose zero eigenvalue is maximal; affects nothing. Found by SpectralQuantumWalks (ERRATA-SpectralQuantumWalks at 162e2af, 2026-10-23, codex gpt-6-astra).
 - **Error** at §III.B, equation (12), printed p. 4 (Childs-Goldstone line 417): the source says the hypercube critical rate is 2⁻ⁿ∑ᵣ₌₁ⁿ binom(n,r)/r, asymptotic to 2/n; it should be halve that expression: −L has eigenvalues 2r, so the rate is 2⁻ⁿ∑ᵣ₌₁ⁿ binom(n,r)/(2r)=1/n+O(n⁻²); affects a stated result. Found by SpectralQuantumWalks (ERRATA-SpectralQuantumWalks at 162e2af, 2026-10-23, codex gpt-6-astra).
 
+## CHJ
+
+- **Misprint** at Lemma 2.11, proof, last sentence, p. 13 (CHJ line 631): the source says the generator of H_m′/H_m is obtained by reducing f(α(e₁)) modulo pᵐ; it should be modulo pᵐ′; since f_*α(e₁)=pᵐβ(e₁), this represents the same torsion point as β(e₁) modulo p^(m′−m); affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 2.14, proof, p. 14 (CHJ line 667–668): the source says HT_(H₁∨) is evaluated at s ∈ H₁(C); it should be HT_H₁(s), landing in ω_(H₁∨), as in the preceding diagram; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 6.19(2), p. 53 (CHJ line 2357; CHJ line 2363): the source says scalar density implies density on bounded families indexed by any pseudobasis; it should be remove the general assertion: for R=ℤₚ[[t]], X=Spa ℚₚ⟨x⟩ and f=x/p, the family ((x/p)ⁿ) has no uniformly bounded approximants; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition 2.6, proof, p. 10 (CHJ line 446; CHJ line 448): the source says the displayed logarithmic series extends every character at every prime; it should be handle p=2 separately, retaining the sign character and using 1+4ℤ₂; for χ(z)=z the printed series sends −1 to 1; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 2.17(3), proof, p. 16 (CHJ line 739): the source says h sends X_∞,w onto X_∞,w+1; it should be take the K₀(p)-saturation of the image: z ↦ pz sends centres pℤₚ into p²ℤₚ and misses the centre p when w≥1; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Theorem 6.20, global-generation argument, p. 53, and its use in Theorem 2.28, p. 22 (CHJ line 2366; CHJ line 1017): the source says the cited Kiehl argument applies to arbitrary small coefficient rings using Lemma 6.19(2); it should be supply a replacement global-generation argument; Lemma 6.19(2) is false for an infinite pseudobasis; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at section 2.2, tame-level setup, p. 11 (CHJ line 495): the source says every local tame-level factor K_ℓ lies in GL₂(ℤ_ℓ); it should be K_ℓ ⊂ (O_B⊗ℤ_ℓ)×; identification with GL₂ applies only at primes where the quaternion algebra splits; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at section 2.3, opening paragraph, p. 12 (CHJ line 567): the source says invariant differentials of a finite flat group are the dual of its Lie module; it should be the cotangent module at the identity; for μₚ over O_C, Lie(μₚ)=0 but invariant differentials equal O_C/p; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at section 2.4, first line of p. 17 (CHJ line 775): the source says sections satisfy f(gh)=d(h)⁻¹f(g); it should be f(gh)=d(h)f(g), as follows immediately for the printed section s(g)=−b(g) and lower-triangular h; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the averaging formula after Proposition 2.27, p. 22 (CHJ line 1007; CHJ line 1009): the source says averaging χ_U(j(γ))⁻¹γ projects onto invariants of the action χ_U(j(γ))γ; it should be average χ_U(j(γ))γ, with multiplication interpreted as composition of semilinear operators; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
 ## Chojecki–Hansen–Johansson, Overconvergent modular forms and perfectoid Shimura curves, arXiv:1507.04875
 
 - **Error** at Lemma 6.19(2): the source says density for scalars yields density for bounded families of coefficients; it should be that the image need not be dense in the bounded arrays, since the array Σ uⁿTⁿ stays at distance 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1411,6 +1438,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Dummigan–Golyshev–de Jeu–Kerr, arXiv:2605.11100
 
 - **Misprint** at the discriminant of the E₄ family near Proposition 2.2: the source says the factor (u²−1)⁴; it should be 16u⁴(u²−1)² (921600 at u=4), as its own Proposition 2.2(3) minimal discriminant confirms; affects nothing. Found by  (#138 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## ECD
+
+- **Error** at Lemma 10.13, proof, p. 54 (ECD line 2221): the source says every open subspace descends to a finite-level quotient; it should be use a basis of quasicompact opens; the open ℤₚ∖{0} in a trivial ℤₚ-torsor does not descend; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the paragraph after Theorem 5.8, p. 25 (ECD line 1010): the source says the almost-surjective ring map runs from S⁺ to R⁺; it should be R⁺ → S⁺, as in Definition 5.7; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 
 ## Edie-Michell-Morrison
 
@@ -1849,6 +1881,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Theorem4.29, printed p.23: the source says the two based conifold loops have identical monodromy images; it should be conjugation by p↦p+1, with fixed points differing by1; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 - **Error** at the paragraph before Theorem4.12, printed p.15: the source says the full-rank embedding M₂⊕T₀ into K3 cohomology is primitive; it should be an index-four embedding, since its determinant is −16 and the ambient determinant is −1; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
+## Hansen
+
+- **Misprint** at Theorem 3.1, Step 1, p. 5 (Hansen line 179): the source says the rank-one generization of v lies in Cont(A); it should be Cont(A^G), since v is a valuation on A^G and its extension to A has not yet been chosen; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
 ## Harari–Szamuely, Arithmetic duality theorems for 1-motives (J. reine angew. Math., 2005)
 
 - **Gap** at journal pp. 120 and 123 (the completed duality sequences): the source says these sequences without verifying finite-level strictness or passing to the profinite localization quotient; it should be impose both, as the authors' corrigenda (printed pp. 1 and 5) require; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -2017,6 +2053,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4.5, tubular-isotopy definition, p. 112 (Hirsch line 4493): the source says the terminal image and bundle comparison use F₀; it should be amended to use F₁(E₀)=f₁(E₁) and f₁⁻¹F₁; affects a stated result. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §4.5, tubular-isotopy definition, p. 112 (Hirsch line 4496): the source says the track is applied to E₀×E₁; it should be amended to use E₀×I; affects a stated result. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §4.6, closed tubular-neighborhood definition, p. 116 (Hirsch line 4648): the source says the disk-bundle embedding has codomain M; it should be amended to use the ambient manifold V; affects a stated result. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
+
+## HJ
+
+- **Error** at Lemma 5.10, proof, p. 32 (HJ line 1424): the source says inverting the pseudouniformizer in the integral perfectoidization already produces a perfectoid Tate ring; it should be first complete for that pseudouniformizer; in characteristic p, perfection alone need not be complete for this topology; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 5.8, p. 30 (HJ line 1350): the source says the neighbourhoods of a quotient point are subsets of X; it should be subsets of X/G; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Theorems 5.3 and 5.8, proofs, pp. 28 and 31 (HJ line 1251; HJ line 1360): the source says pulling back a clean neighbourhood from the maximal Hausdorff quotient gives one clean at the original point; it should be prove equality of the two stabilizers under the stated hypotheses before applying the clean-neighbourhood argument; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 
 ## HJ14
 
@@ -2386,6 +2428,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kisin–Pappas, Integral models of Shimura varieties with parahoric level structure (arXiv:1512.01149)
 
 - **Error** at Lemma 4.4.8: the source says a polarization with positive multiplier descends to the twist of an abelian scheme by a torsor, with no condition at the real place; it should be that descent requires the torsor to have a real point, as Kisin–Shin–Zhu §5.12.4 does; twisting E² by Spec ℚ(i) gives an indefinite form; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## KL16
+
+- **Misprint** at Definition 1.4.1, p. 19, displayed identity (KL16 line 734): the source says the coefficient multiplying w²−x² in the expansion of (w−x)³ is 3(x−w); it should be −3(w+x); affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 8.2.3, proof, p. 163, invoking Remark 8.1.4, p. 159 (KL16 line 6277): the source says seminormality implies O_X = f_*O_X′ for a proper smooth resolution; it should be impose the descent equalizer: normalization of K⟨T,U⟩/(TU) gives K⟨T⟩×K⟨U⟩, which contains the additional idempotent (1,0); affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 
 ## KM-21
 
@@ -3187,6 +3234,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the orientation definition, printed p. 44 (Rourke–Sanderson line 1437): the source says h is orientation-reversing when g fails the orientation-preserving condition; it should be g; affects nothing. Found by PlanarTopology (ERRATA-PlanarTopology at 238d5da, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at the proof of the Simplicial Neighbourhood Theorem following Corollary 3.14, printed p. 35 (Rourke–Sanderson lines 1141–1142): the source says both complement expressions use Q as their ambient manifold; it should be M in both expressions, since Q is undefined in this argument; affects the proof. Found by PlanarTopology (ERRATA-PlanarTopology at 238d5da, 2026-10-23, codex gpt-6-astra).
 
+## Rubin
+
+- **Misprint** at Appendix B, Lemma 2.8, p. 153 (Rubin line 6639): the source says T is a ℤₚ[G_K]-module, although no K is specified and cohomology is taken for G; it should be a continuous ℤₚ[G]-module; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Error** at Appendix B, Remark 2.6, p. 153 (Rubin line 6621): the source says finite generation of the pro-p part ensures finite cohomology with finite p-primary coefficients in every degree; it should be add higher finiteness hypotheses; the two-generated pro-p wreath product Cₚ ≀ ℤₚ has infinite H²(−,𝔽ₚ) for odd p; affects a stated result. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
 ## Rubin, Euler Systems (AWS author draft)
 
 - **Misprint** at Appendix D, the one-step trace line between Proposition 1.3 and Lemma 1.5, p. 165: the source says the trace down one p-step returns x_r with no scalar factor; it should be p·x_r, as the source's own definitions and its first p-step computation force; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -3253,6 +3305,22 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Proposition 8.7, p. 306: the source says two local trivializations of O(D) on the integral model differ by a unit of K°; it should be a unit of the model's structure sheaf on the overlap, a character of absolute value one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at proof of Proposition 8.7, p. 306: the source says the perturbed g has weights u with ⟨u,v_i⟩ ≥ −j·a_i, with j unbound; it should be ⟨u,v_i⟩ ≥ −a_i, since g has degree one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at proof of Proposition 8.7, p. 306: the source says a large p-power of g is a regular function on the toric variety over K♭; it should be a section of O(p^N D), because regular functions on a proper variety are constant; affects the proof. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
+
+## Sch12
+
+- **Misprint** at Proposition 8.7, proof in section 8, p. 47 (Sch12 line 2278): the source says the monomial bound for a section of O(D) contains an unbound factor j; it should be ⟨u,vᵢ⟩ ≥ −aᵢ, without j; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 8.7, proof in section 8, p. 47 (Sch12 line 2280): the source says raising the approximating section to a p-power gives a global regular function on the proper toric variety; it should be a global section of O(pⁿD), whose zero locus defines the hypersurface; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
+## Sch13
+
+- **Error** at Definition 6.8(ii)–(iii), p. 37 (Sch13 line 1697): the source says ker θ-adic completion of the uncompleted structural tensor product defines the structural de Rham sheaf; it should be first p-adically complete the integral tensor products, then invert p, complete along ker θ, and take the indicated colimit; affects a stated result; corrected in print at Sch13E item (3), pp. 1–2 (Sch13E line 45; Sch13E line 50). Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 4.8, proof, p. 25 (Sch13 line 1158): the source says Aᵢ⁺ is the integral closure of A⁺ inside Aᵢ⁺; it should be the integral closure of A⁺ inside Aᵢ; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
+## Sch13E
+
+- **Error** at item (1), p. 1 (Sch13E line 15): the source says every cofiltered category has a cofinal ordinal; it should be restrict this assertion: finite subsets of an uncountable set, ordered by reverse inclusion, admit no cofinal chain; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at item (1), profinite-group construction, p. 1 (Sch13E line 39): the source says G₀ is trivial while G_μ uses coordinates indexed by μ′ ≤ μ; it should be use μ′ < μ, so the zero stage is trivial and limit stages have the required transition maps; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at item (3), proof, final paragraph, p. 2 (Sch13E line 83–91): the source says the truncated period rings are B_dR/ξʳ; it should be B⁺_dR/ξʳ throughout that paragraph; ξ is invertible in B_dR, so the printed quotients are zero; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 
 ## SCH23
 
@@ -4151,6 +4219,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §4.1, p.1770 (SW line 758): the source says Katz's E₂ equals −12a/b; it should be b₂−12a/b, with −12a/b the corrected coefficient E₂−b₂; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 - **Error** at §4.2, p.1771 (SW lines 807–817): the source says the weight-two Eisenstein value scales by C² when the differential pulls back by C; it should be C⁻² times the Tate value; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 
+## SW13
+
+- **Misprint** at Proposition 2.4.5, proof, p. 21 (SW13 line 779): the source says p-adic completion of the direct limit of the integral rings recovers A⁺ for any perfectoid field K; it should be complete along a pseudouniformizer of K; when char K=p, the p-adic topology is discrete and does not complete a perfectoid tower; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
 ## Szego
 
 - **Error** at §4.62(1), after (4.62.2), printed p. 77 (Szego line 3382; Szego line 3393): the source says the analytic remainder has M₂(0) ≠ 0 for every admissible parameter, including α=0; it should be M₂(0) may vanish at α=0: continuity in β and values (log 2)/2, (log 2−1)/2 at β=0,1 imply a zero between them; affects a stated result. Found by LaguerreJacobi (ERRATA-LaguerreJacobi at 5aad605, 2026-10-23, codex gpt-6-astra).
@@ -4371,6 +4443,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Introduction, printed p. 2 (Tingley line 72): the source says the alternative braiding is compared with ordinary symmetry at q=0; it should be use q=1; the displayed braiding contains negative powers of q and cannot be evaluated at zero; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §3A, paragraph following (3), printed p. 6 (Tingley line 219): the source says adjoining a square root to the rational-function field gives C[q¹ᐟ²]; it should be use C(q¹ᐟ²); the polynomial ring does not contain the already required q⁻¹; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
+## Torsion
+
+- **Error** at Remark II.2.4, p. 14, following the cited Lemma II.2.2 (Torsion line 398): the source says the universal Zariski-closed perfectoid quotient need not be a surjective ring quotient; it should be R → S is always surjective; Zariski closed and strongly Zariski closed agree; affects a stated result; corrected in print at BS22 Remark 7.5, p. 56 (BS22 line 2176). Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 
 ## Treumann–Venkatesh, Functoriality, Smith theory and the Brauer homomorphism (Annals, 2016)
 
