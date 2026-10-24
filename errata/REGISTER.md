@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4482 mistakes recorded on the board: 3013 misprints, 1121 errors, 294 gaps, 54 unparsed bullets.
+4494 mistakes recorded on the board: 3022 misprints, 1122 errors, 296 gaps, 54 unparsed bullets.
 Errata jobs have read the cited sources of 57 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3912,6 +3912,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Theorem 4.2.7, p.186 (with §3.2): the source says the source omits the very-good condition needed for the tensor-compatible local model diagram; it should be assume a very-good embedding; affects a stated result; corrected in print at KPZ Remark 7.1.4(1), p.73. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 - **Gap** at the proof of Lemma 3.1.17, p.169: the source says the source deduces a limit from convergence in a non-complete τ-topology; it should be prove p-adic completeness and logarithmic tail convergence; affects the proof; corrected in print at KPZ §7.3.1(2), p.86. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 - **Error** at the proof of Theorem 4.2.7, p.186: the source says the source calls the frame-to-filtration map a torsor; it should be the smooth action morphism; affects the proof; corrected in print at KPZ §7.3.1(1), p.85. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
+- **Misprint** at §2.3.15, p. 162: the source says the target Grassmannian classifies subbundles of rank dim V′; it should be rank dim V′/2; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+
+## KPZ
+
+- **Misprint** at Definition 3.4.4, chain variant, p. 29: the source says the determining segment starts at p·Λ₀; it should be π_F·Λ₀, as in §2.3, p. 12; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+- **Misprint** at Remark 3.3.26, p. 26: the source says only anisotropic factors from division algebras of p-divisible degree are excluded; it should be every factor Res PGL_m(D) with p dividing ind D, as in Proposition 2.2.2; affects a stated result. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+- **Error** at Remark 4.1.5(2), p. 31: the source says the surface x²+xyz=0 is normal; it should be reducible (x(x+yz)), with two components meeting at the origin, so not normal; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+- **Misprint** at Remark 4.1.5(2), p. 31: the source says the coordinate ring has variables x, y, x; it should be x, y, z; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+- **Misprint** at proof of Theorem 4.2.3, type Bₙ, p. 37: the source says the i-th fundamental weight is a sum of i copies of e_i; it should be e₁+⋯+e_i; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 
 ## KreckStolz
 
@@ -3960,7 +3969,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## KZ
 
+- **Gap** at Lemma 3.1.10, p. 20: the source says FHLR Lemma 5.27 gives a closed immersion of local models; it should be that FHLR (p. 34) gives only a finite map that is a universal homeomorphism onto its image; affects a stated result. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+- **Misprint** at Lemma 5.2.5, p. 52: the source says the translation lift lies in G(F_q[[t]]); it should be lie in G(F_q((t))), with only the conjugator integral; affects a stated result. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Misprint** at Proposition 4.2.3(5), p.34: the source says the inertia coinvariants of the cocharacter group of G^ab are torsion; it should be torsion-free, as Lemma 4.2.4 and p.41 use; affects nothing. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
+- **Misprint** at proof of Proposition 5.2.3, Case (3), p. 52: the source says the upper unipotent is u₊(−2x⁻¹, 2x⁻²), which violates the root relation (sum 8x⁻²); it should be u₊(−2x⁻¹, −2x⁻²), whose inverse is the displayed matrix; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
+- **Gap** at proof of Proposition 5.2.3, pp. 49–50: the source says individual bounds on the Frobenius translates of a root step give a bound on their orbit sum; it should be choose the orbit existentially, since D₄ triality gives coefficient 3 against 2; affects the proof. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Misprint** at §3.2.5, p.23: the source says the source forms the first-order ideal from the maximal ideal and uniformizer multiples in A_E, just after introducing the maximal ideal of A_G̃; it should be use A_G̃ throughout; affects nothing. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 - **Error** at §5.1.3, p.47: the source says rational points of the conjugacy quotient are the semisimple rational conjugacy classes over any characteristic-zero field; it should be geometric points classify geometric classes, and rational points are Galois-stable geometric classes; affects nothing. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 
@@ -4811,6 +4824,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## PT
 
 - **Misprint** at the proof of Lemma 3.3, preprint p. 4: the source says the covolume of ψ(I) as Disc(O_K)[O_K:I]; it should be 2^(−g)\|Disc O_K\|^(1/2)[O_K:I] (ℤ[i] gives 1); affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+
+## PZ
+
+- **Misprint** at §9.d.3(a), p. 76: the source says the minuscule IC trace has the factor q^((ρ,μ)); it should be q^(−(ρ,μ)), by (9.9) and geometric Frobenius; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7896af2", "job": "REV-PKG-GeometricSatakeAndFusionPartII", "model": "opus", "worker": "fable-rev63"} -->. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 
 ## Qi
 
@@ -6083,6 +6100,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## SW
 
 - **Misprint** at equation (4.1), p.1770 (SW lines 763–766): the source says the expanded quadratic coefficient is −a/b; it should be +a/b to agree with the adjacent exponential formula and e₂=−12a/b; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §21.8, p. 206: the source says the GL₂ components are (1,1) over the distinguished place and (0,0) or (2,2) elsewhere; it should be give signature values, with actual weights (1,0) at the distinguished conjugate embeddings; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Error** at §4.1, p.1770 (SW line 758): the source says Katz's E₂ equals −12a/b; it should be b₂−12a/b, with −12a/b the corrected coefficient E₂−b₂; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 - **Error** at §4.2, p.1771 (SW lines 807–817): the source says the weight-two Eisenstein value scales by C² when the differential pulls back by C; it should be C⁻² times the Tate value; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 
