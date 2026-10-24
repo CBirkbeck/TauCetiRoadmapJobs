@@ -14,7 +14,12 @@ theorems against the pinned Mathlib and Tau Ceti APIs: the integral unipotent qu
 Serre's rank-two lifting theorem, and the p-adic Mahler–Manin theorem on the native Tate curve.
 
 The ordinary and multiplicative main conjectures lack the cyclotomic Selmer and normalized
-modular p-adic L-function carriers. Kato's main conjecture, its ordinary and signed comparisons,
+modular p-adic L-function carriers. The period-defect dictionary between Kato's good pairs and
+canonical periods (README §0.9) lacks the Galois representation of a newform with its
+Betti–étale lattice and Kato's p-adic zeta function of a pair (ω, γ). The Hida approximation of a
+p-new weight-two form (README §1.6) lacks the Galois lattices of newforms with their ordinary
+lines, the ordinary Hida family through the form, and the canonical p-adic L-functions and
+integral family periods whose ideals it compares. Kato's main conjecture, its ordinary and signed comparisons,
 and the Fouquet–Wan pointwise and family theorems lack modular zeta morphisms, arithmetic
 Iwasawa complexes and their fundamental lines; the signed results also lack integral Coleman
 maps and their image lattices. The elliptic main conjectures lack these same Selmer and

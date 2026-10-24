@@ -3,26 +3,20 @@
     {
       "slug": "modular-zeta-extensions",
       "supplier": "KatoEulerSystems",
-      "section": "classical zeta and rank-one-image extensions",
-      "needs": "Supply the missing classical morphism/period dictionaries, integral rank-one-image extensions and elliptic bounds without duplicating PadicFamilies §4.0."
-    },
-    {
-      "slug": "analytic-twist-nonvanishing",
-      "supplier": "KatoEulerSystems",
-      "section": "analytic nonvanishing",
-      "needs": "Supply finite-order twist nonvanishing with the reciprocity and parity hypotheses used in §0.4."
+      "section": "§7.2 integral bounds under a free rank-one quotient",
+      "needs": "Supply the integral cohomological bound of its §7.2 and the general-weight ordinary divisibility (Kato 12.5(4), 17.4(3)) under residual irreducibility and the free rank-one-coinvariant hypothesis of §0.8 in place of the SL₂(ℤ_p)-image hypothesis, retaining the local degree-two terms."
     },
     {
       "slug": "central-critical-specialization",
       "supplier": "KatoEulerSystems",
-      "section": "central-critical finiteness and specialization",
-      "needs": "Supply both the central-critical Euler-system finiteness direction and the zeta/Bloch–Kato specialization and control comparison of §5.4."
+      "section": "§7.9 vanishing central value specialization",
+      "needs": "For L(f,k/2)=0, supply the specialization/reciprocity comparison placing a nonzero trivial-character specialization of the zeta class in H¹_f and the discrete Bloch–Kato control comparison of §5.4; the nonvanishing direction is its §7.9."
     },
     {
       "slug": "signed-regulators",
       "supplier": "PadicHodgeRegulators",
-      "section": "integral Coleman regulators and images",
-      "needs": "Supply integral Coleman maps, logarithm matrices and their actual images on the Wach domains of PhiGammaModulesAndIwasawaCohomology §6."
+      "section": "Layer 9 Kobayashi multipliers and integral images",
+      "needs": "Supply the multipliers a^± relating the a_p=0 LLZ Coleman maps to Kobayashi's (LLZ 5.10, 5.11), the integral a_p=0 images (LLZ 5.18, 5.22), and the general-weight ordinary Coleman map on the unramified quotient with finite cokernel (Kato 17.11–17.12)."
     },
     {
       "slug": "automorphic-endpoints",
@@ -33,8 +27,8 @@
     {
       "slug": "manin-period-comparison",
       "supplier": "GrossZagierAndArithmeticHeights",
-      "section": "integral Manin and saturated period comparison",
-      "needs": "Supply the integral optimal-parametrization and Manin-period comparisons with the stated odd semistable unit range and isogeny corrections."
+      "section": "Layer 3 saturated period comparison",
+      "needs": "Supply, for an X₀(N)-optimal parametrization and every odd p, the comparison of the saturated f_E-line of H¹(X_0(N),ℤ_(p)) with the saturated modular-symbol period line of ModularSymbolsPadicLFunctions §1.1 up to ℤ_(p)^×."
     },
     {
       "slug": "approximant-period-units",
@@ -47,6 +41,12 @@
       "supplier": "PadicFamilies",
       "section": "§§1.4–1.6 general exceptional-zero family input",
       "needs": "Supply rational deformation, Néron-period specialization and eigenvalue derivative comparison at every odd-prime split multiplicative elliptic point, without residual irreducibility or an auxiliary prime."
+    },
+    {
+      "slug": "global-flat-duality",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "Layer D7 global flat duality over rings of integers",
+      "needs": "Supply Artin–Mazur global flat duality for the p-primary torsion of Néron models of an abelian variety and the identity component of its dual over the rings of integers of the cyclotomic tower, with component-group errors and restriction/corestriction compatibility, as used by Schneider §§1–2."
     }
   ]
 }
