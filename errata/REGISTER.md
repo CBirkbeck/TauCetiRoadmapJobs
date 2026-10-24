@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2869 mistakes recorded on the board: 1907 misprints, 728 errors, 206 gaps, 28 unparsed bullets.
-Errata jobs have read the cited sources of 35 roadmaps; in those of 2 they found no mistake.
+2875 mistakes recorded on the board: 1912 misprints, 729 errors, 206 gaps, 28 unparsed bullets.
+Errata jobs have read the cited sources of 36 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -322,6 +322,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Ash–Brakenhoff–Zarrabi, Equality of polynomial and field discriminants (Experimental Math. 16, 2007)
 
 - **Misprint** at the table of Theorem 6.8 (with Propositions 6.4 and 6.7), pp. 371–372: the source says the local density formula has exponent −n; it should be 2−n, as the paper's own coefficient computation and concluding table give, consistent with ν₁(4,3) = 8/81; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## AtlasRep
+
+- **Error** at §7.3.2, printed p. 104 (AtlasRep line 4289): the source says rows and columns beyond the largest moved point are zero, contradicting its rectangular-matrix example; it should be additional diagonal entries are one through the smaller dimension; the example’s (5,5) entry equals one (AtlasRep line 4334); affects a stated result. Found by SporadicOrders (ERRATA-SporadicOrders at 6486269, 2026-10-24, codex gpt-6-astra).
 
 ## Atobe–Kondo–Yasuda, Local newforms for the general linear groups over a non-archimedean local field, Forum Math. Pi (2022)
 
@@ -1600,6 +1604,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Fouquet–Wan, The Iwasawa main conjecture for universal families of modular motives, arXiv:2107.13726v3
 
 - **Error** at proof of Lemma 3.13: the source says rank-one coinvariants follow from an arbitrary integral lift of a nontrivial residually unipotent element; it should be a genuine unipotent with a unit off-diagonal entry: the lift [[1,1],[ϖ,1+ϖ]] has det(g−1)=−ϖ and torsion coinvariants; affects the proof. Found by  (#165 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## FSG
+
+- **Misprint** at `card_Fi22` documentation, [FiniteSimpleGroups/Sporadic/Fi22/Statement.lean](https: the source says //github.com/KitaKen1/finite-simple-groups-lean/blob/7f09e33a9ceef6b59ce03e34cd4f0558c763e325/FiniteSimpleGroups/Sporadic/Fi22/Statement.lean), unpaginated (FSG line 24): the source says its stabilizer-chain factors certify the Fi22 order, but their product is 50214695731200; it should be factors 3510, 693, 180, 3, 48, 32, 8, 2, 2, multiplying to 64561751654400; compare `FiniteSimpleGroups/Sporadic/Fi22/ChainCard.lean`, FSG line 2529 onward; affects nothing. Found by SporadicOrders (ERRATA-SporadicOrders at 6486269, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at `card_Fi22` documentation, [FiniteSimpleGroups/Sporadic/Fi22/Statement.lean](https: the source says //github.com/KitaKen1/finite-simple-groups-lean/blob/7f09e33a9ceef6b59ce03e34cd4f0558c763e325/FiniteSimpleGroups/Sporadic/Fi22/Statement.lean), unpaginated (FSG line 23): the source says the order theorem concerns Conway’s second group; it should be Fischer’s group Fi22; affects nothing. Found by SporadicOrders (ERRATA-SporadicOrders at 6486269, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at `final_stabilizer_eq_one` documentation, [FiniteSimpleGroups/Sporadic/M12/Cardinality.lean](https: the source says //github.com/KitaKen1/finite-simple-groups-lean/blob/7f09e33a9ceef6b59ce03e34cd4f0558c763e325/FiniteSimpleGroups/Sporadic/M12/Cardinality.lean), unpaginated (FSG line 163): the source says its Witt-design certificate is in module `SporadicM12.Certificates.WittDesign`; it should be `FiniteSimpleGroups.Sporadic.M12.Certificates.WittDesign`, as correctly imported at FSG line 13; affects nothing. Found by SporadicOrders (ERRATA-SporadicOrders at 6486269, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the Held public-statement documentation, [FiniteSimpleGroups/Sporadic/He/Statement.lean](https: the source says //github.com/KitaKen1/finite-simple-groups-lean/blob/7f09e33a9ceef6b59ce03e34cd4f0558c763e325/FiniteSimpleGroups/Sporadic/He/Statement.lean), unpaginated (FSG line 20): the source says the group and theorem argument are named `Sporadic.He`; it should be `Sporadic.He.HeSubgroup`, also abbreviated `Sporadic.He'` at FSG line 30; affects nothing. Found by SporadicOrders (ERRATA-SporadicOrders at 6486269, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at the M22 public-statement documentation, [FiniteSimpleGroups/Sporadic/M22/Statement.lean](https: the source says //github.com/KitaKen1/finite-simple-groups-lean/blob/7f09e33a9ceef6b59ce03e34cd4f0558c763e325/FiniteSimpleGroups/Sporadic/M22/Statement.lean), unpaginated (FSG line 22): the source says the Iwasawa argument is located in `SporadicM22/L34/`; it should be `FiniteSimpleGroups/Sporadic/M22/L34/`, the directory present in this revision; affects nothing. Found by SporadicOrders (ERRATA-SporadicOrders at 6486269, 2026-10-24, codex gpt-6-astra).
 
 ## Fu (fu24), Annals of Math. 200
 
