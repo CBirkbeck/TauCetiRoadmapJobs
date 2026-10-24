@@ -1,11 +1,13 @@
 import Mathlib
+import TauCeti.NumberTheory.ModularForms.Newforms.Newform
 
 /-!
 # EllipticCurveModularityWild3Adic: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
-local arithmetic theorems against the pinned Mathlib and Tau Ceti APIs: the cube-class basis
-of ℚ₃ (§1.1), the cyclic cubic extension (§1.3), and the splitting-field degrees (§§1.4–1.7).
+theorems against the pinned Mathlib and Tau Ceti APIs: the cube-class basis
+of ℚ₃ (§1.1), the cyclic cubic extension (§1.3), the splitting-field degrees (§§1.4–1.7),
+matrix and special-linear Hilbert 90 and the equivariant icosahedral lift (§1.15), and elliptic modularity in its newform formulation (§6.13).
 
 The remaining headlines are not statable at the pins. Simple admittance (§§0.6–0.8) lacks the
 compact-type and residual-admittance carriers. Breuil classification and wild descent (§§2.1–2.4)
@@ -13,15 +15,18 @@ lack finite flat group-scheme and Breuil-module carriers with descent. The tange
 weak acceptability (§§3.8–3.9, 4.6–4.7, 5.8–5.12) lack local deformation rings with these type
 conditions. The cross-prime comparison (§1.13) lacks abelian-variety Tate realizations and the
 p-adic Weil–Deligne functor. Rationality and the companion construction (§1.15, §§6.1–6.3) lack
-twisted modular curves and their universal elliptic curve. The lifting and modularity theorems
-(§§6.5–6.13) lack arithmetic newforms, their attached Galois representations, modularity predicates
-and modular parametrizations. The finite-field and scalar computations used in these results
+twisted modular curves and their universal elliptic curve. The residual modularity and comparison assertions (§§6.6–6.12) lack the Galois
+representations attached to newforms and residual modularity predicates. The level-equals-conductor
+clause and parametrization of §6.13 lack the conductor and modular parametrizations; its
+newform formulation is stated below. The finite-field and scalar computations used in these results
 are README Checks.
 -/
 
 noncomputable section
 
 namespace TauCetiRoadmap.EllipticCurveModularityWild3Adic
+
+open scoped MatrixGroups
 
 /-- `ℚ₃`. -/
 abbrev Q3 := ℚ_[3]
@@ -80,6 +85,66 @@ theorem negativeQuadratic_finrank (s j α β : Q3bar) (hs : s ^ 2 = -3) (hj : j 
 theorem extendedTypeField_finrank (i : Fin 3) (s j α β : Q3bar) (hs : s ^ 2 = -3)
     (hj : j ^ 2 = -1) (hα : α ^ 3 = 3 * (1 + 3 * (i.val : Q3bar))) (hβ : β ^ 2 = -s) :
     Module.finrank Q3 (degreeTwelveSplittingField s j α β) = 24 := by
+  sorry
+
+/-- Diagonal conjugation by `diag(t,1)` on `SL₂(𝔽₅)` (README §1.15). -/
+def levelFiveConjugate (t : (ZMod 5)ˣ) (x : SL(2, ZMod 5)) : SL(2, ZMod 5) :=
+  ⟨!![x 0 0, (t : ZMod 5) * x 0 1; (↑t⁻¹ : ZMod 5) * x 1 0, x 1 1], by
+    have hx := x.property
+    simp only [Matrix.det_fin_two] at hx ⊢
+    calc
+      x 0 0 * x 1 1 - (↑t * x 0 1) * (↑t⁻¹ * x 1 0) =
+          x 0 0 * x 1 1 - (↑t * ↑t⁻¹) * (x 0 1 * x 1 0) := by ring
+      _ = 1 := by simpa using hx⟩
+
+/-- A continuous matrix cocycle on the absolute Galois group is a coboundary (§1.15).
+The target group has the discrete topology and the source its Krull topology. -/
+theorem matrixHilbert90 (K : Type*) [Field K] (n : ℕ) (hn : 1 ≤ n)
+    (c : (SeparableClosure K ≃ₐ[K] SeparableClosure K) → GL (Fin n) (SeparableClosure K))
+    (hc : @Continuous _ _ inferInstance ⊥ c)
+    (hcc : ∀ g h, c (g * h) = c g * Matrix.GeneralLinearGroup.map g.toRingHom (c h)) :
+    ∃ B : GL (Fin n) (SeparableClosure K), ∀ g,
+      c g = B⁻¹ * Matrix.GeneralLinearGroup.map g.toRingHom B := by
+  sorry
+
+/-- A continuous special-linear cocycle admits a determinant-one trivialization (§1.15).
+The target group has the discrete topology and the source its Krull topology. -/
+theorem specialLinearHilbert90 (K : Type*) [Field K] (n : ℕ) (hn : 1 ≤ n)
+    (c : (SeparableClosure K ≃ₐ[K] SeparableClosure K) → SL(n, SeparableClosure K))
+    (hc : @Continuous _ _ inferInstance ⊥ c)
+    (hcc : ∀ g h, c (g * h) = c g * Matrix.SpecialLinearGroup.map g.toRingHom (c h)) :
+    ∃ B : SL(n, SeparableClosure K), ∀ g,
+      c g = B⁻¹ * Matrix.SpecialLinearGroup.map g.toRingHom B := by
+  sorry
+
+/-- A faithful icosahedral projective action has a unique faithful special-linear lift,
+compatible with the given Galois and diagonal-conjugation actions (README §1.15;
+Shepherd-Barron–Taylor, proof of Lemma 1.1). The geometric action takes `χ = χ₅`. -/
+theorem equivariantIcosahedralLift (K : Type*) [Field K] [CharZero K]
+    (χ : (AlgebraicClosure K ≃ₐ[K] AlgebraicClosure K) →* (ZMod 5)ˣ)
+    (a : PSL(2, ZMod 5) →* PGL(Fin 2, AlgebraicClosure K))
+    (ha : Function.Injective a)
+    (heq : ∀ g x,
+      Matrix.ProjGenLinGroup.map g.toRingHom (a (QuotientGroup.mk x)) =
+        a (QuotientGroup.mk (levelFiveConjugate (χ g) x))) :
+    ∃! b : SL(2, ZMod 5) →* SL(2, AlgebraicClosure K),
+      (∀ x, Matrix.SpecialLinearGroup.toPGL (b x) = a (QuotientGroup.mk x)) ∧
+      Function.Injective b ∧ b (-1) = -1 ∧
+      ∀ g x, Matrix.SpecialLinearGroup.map g.toRingHom (b x) =
+        b (levelFiveConjugate (χ g) x) := by
+  sorry
+
+/-! ## Layer W3.6: Global switching and the modularity theorems -/
+
+/-- Every integral Weierstrass model with elliptic rational fibre has an attached weight-two
+newform of positive level and trivial nebentypus. At every prime coprime to its level and the
+model discriminant, its eigenvalue is `p + 1 - #Ẽ(𝔽_p)` (README §6.13). -/
+theorem ellipticCurve_modular (E : WeierstrassCurve ℤ)
+    [(E.map (Int.castRingHom ℚ)).IsElliptic] :
+    ∃ (N : ℕ) (_ : NeZero N) (f : HeckeRing.GL2.Newform N 2), f.χ = 1 ∧
+      ∀ (p : ℕ) [Fact p.Prime] (hpN : Nat.Coprime p N), ¬ (p : ℤ) ∣ E.Δ →
+        f.eigenvalue ⟨p, (Fact.out : p.Prime).pos⟩ hpN =
+          (p : ℂ) + 1 - Nat.card (E.map (Int.castRingHom (ZMod p))).toAffine.Point := by
   sorry
 
 end TauCetiRoadmap.EllipticCurveModularityWild3Adic
