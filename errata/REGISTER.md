@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4659 mistakes recorded on the board: 3115 misprints, 1177 errors, 306 gaps, 61 unparsed bullets.
+4675 mistakes recorded on the board: 3121 misprints, 1181 errors, 311 gaps, 62 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -69,6 +69,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BT16 at Corollary 30, p.742: the threshold M_N covers genus <N only via gon≤⌊(g+3)/2⌋ when N≥3; for N≤2 it needs M_{N+1}; affects nothing.
 - **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BTE at Proposition 4.2 proof, p.4: the sum of ball volumes counts a point in k overlapping balls k times, but the tube term has no overlap factor; it needs a cusp-count factor p^{O(δ₃)}; affects the proof.
 - **Unparsed** (GeneralAlgebraicKTheoryPartII, #1197 at 1916a38, 2026-10-24): Gap** in lmmt at proof of Proposition 3.6, p.1023: the source invokes Corollary 3.5 (stated for ℤ/pⁿ) for every p-power-torsion discrete ring, and writes T(1) where T(i), 1≤i≤n, is needed; the module structure of K(A) over K(ℤ/pⁿ) that justifies the step is left implicit; affects the proof.
+- **Unparsed** (GL2ModularityLiftingPartII, #1225 at bfc6e86, 2026-10-24): Misprint** in cg18 at Theorem 3.30, proof step (3), p. 353: the source defines m* by β(T_x)=α(⟨x⟩T_x); transport through Ψ (preceding page) gives β(T_x)=α(⟨x⟩⁻¹T_x), the contragredient value tr/det; affects nothing.
 
 ## A
 
@@ -1769,6 +1770,24 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §9.2, p. 412: the source says the first Hecke map lands on the level gKg⁻¹ ∩ K_Q; it should be gKg⁻¹ ∩ K; affects nothing. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at 71a36b3, 2026-10-23, claude opus).
 - **Gap** at §9.3 after Conjecture B, p. 415, and proof of Theorem 9.19, p. 427: the source says surjectivity onto the anemic algebra and patching condition (d) follow from Conjecture B; it should be an added clause tying diamond operators at Q to inertia, as Conjecture A(3) does; affects the proof. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at 71a36b3, 2026-10-23, claude opus).
 - **Gap** at §9.4, p. 419: the source says the PGLₙ case should follow easily from GLₙ through circle bundles; it should be proved, because the centre has p-primary cohomology when p divides N(x) − 1; affects nothing. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at 71a36b3, 2026-10-23, claude opus).
+
+## cg18
+
+- **Gap** at Corollary 1.5, p. 304: the source says the source's hypothesis (1) admits ρ|I_v = Teich(χ̄)ψ⊕1 with ψ of order p, which no finite twist makes minimal for Theorem 1.4; it should be require minimality up to finite-order twist, including the inertial determinant; affects a stated result. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Gap** at Lemma 3.5, proof, p. 320: the source says the source derives (1/x)π₁*∘tr(π₁)∘W_x = U_x + (1/x)W_x by cancelling π₁* on the right, citing full faithfulness; it should be verify the identity directly by summing over order-x subgroups; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Misprint** at Lemma 3.5, proof, pp. 318–319: the source says U_x∘V_x = π₁*⟨x⟩ (twice), although its own count of x subgroups gives x⟨x⟩; it should be U_x∘V_x = x⟨x⟩π₁*, as its matrix A uses; affects nothing. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Error** at Lemma 4.11, p. 364: the source says the source lists three non-smooth local rings; at v≡−1 mod p with ramified Steinberg ρ̄|G_v, H⁰(G_v,ad⁰ρ̄(1))∋E₁₂ is nonzero and conductor-two supercuspidal lifts occur; it should be add this case and use the Steinberg quotient; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Gap** at Lemma 5.9(1), proof, p. 377: the source says H₃(Y₀(Q),k)=0, but orbifold homology of lattices containing order-3 elements is nonzero in every degree with 𝔽₃ coefficients; it should be assume p≥5 or prove vanishing after localization; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Error** at Remark 3.4, p. 316: the source says (ℤ/NQℤ)^× acts transitively on the cusps; diamonds preserve whether the level structure meets the identity component, so ∞ and 0 lie in different orbits; it should be compute ψ₁(x)+x^{n−1}ψ₂(x) orbit by orbit; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Misprint** at Theorem 3.11, proof, p. 328 (repeated in Lemma 3.16, p. 332): the source says U_p as [[T_p,1],[−⟨p⟩,0]] while ψ=(φ,⟨p⟩V_p); it should be [[T_p,⟨p⟩],[−1,0]] on column vectors; affects nothing; (same characteristic polynomial). Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Misprint** at Theorem 3.30, proof step (2), p. 351: the source says the source refers to Proposition 3.7(2); it should be Lemma 3.7(2); affects nothing. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Error** at Theorem 4.8, proof, p. 363: the source says every lift at a non-harmless prime is uniquely twist-equivalent to a conductor-minimal one; at x≡1 mod p with a ramified unipotent residual self-extension, types (ψ,1) and (1,ψ⁻¹) are both minimal and twist-equivalent; it should be exclude these primes or use a variable-determinant ring; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Gap** at Theorem 4.8, proof, p. 366: the source says the source deduces T_m ≅ T_{1,m}⊗O[Φ] from a rational isomorphism and torsion-freeness; it should be prove the integral image is generated (O×O versus the congruence order shows the gap); affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Gap** at Theorem 4.8, proof, p. 366: the source says the source adds dim G⁰[m] and dim Gᵉ[m] to get dim G[m], though m-torsion is only left exact; it should be use 3 ≤ dim G[m] ≤ 4 plus ρ̄-isotypy of J₁(N*)[m]; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Misprint** at Theorem 5.11, proof (b), p. 380: the source says Tor^{S_N}_i(H_j(Y_{Δ_N}(Q_N),O)_m) without its second argument; it should be Tor^{S_N}_i(H_j(Y_{Δ_N}(Q_N),O)_m, O); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "bfc6e86", "job": "REV-PKG-GL2ModularityLiftingPartII", "model": "opus", "worker": "fable-rev68"} -->. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Misprint** at Theorem 5.11, proof, p. 379: the source says q=dim H¹_∅(G_F,ad⁰ρ̄); it should be ad⁰ρ̄(1), as in Proposition 5.2; affects nothing. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Error** at §3.8, final paragraph, p. 340: the source says U_x = 0 whenever x² divides N; for ρ̄|G_x ≅ χ̄⊕1 with χ̄ wildly ramified, x² divides N yet U_x is the Frobenius scalar on the invariant line; it should be split by dim ρ̄^{I_x}; affects the proof. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
+- **Misprint** at §5.2.1(4), p. 373: the source says the source sets K_{Q,v}=GL₂(O_v) at flat v|p inside Res PGL₂; it should be PGL₂(O_v); affects nothing. Found by GL2ModularityLiftingPartII (#1225 at bfc6e86, 2026-10-24, claude opus).
 
 ## CG20
 
