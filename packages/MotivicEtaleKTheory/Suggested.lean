@@ -9,8 +9,9 @@ theorems against the pinned APIs. None of the following headlines is statable at
 * Layers 1.3–1.4: the integral cubical–simplicial comparison with supports, coefficients and
   operations lacks the face-admissible higher-cycle complexes and shared higher Chow groups.
 * Layer 2.0a: Adams-compatible ordered relativity and multiplicative pairings for supported
-  multi-relative cube K-theory lack scheme perfect K-spectra, their supported face diagrams
-  and Adams operations.
+  multi-relative cube K-theory lack scheme perfect K-spectra and their supported face
+  diagrams, together with integral Adams operations on the associated pointed K-spaces.
+  Integral Adams compatibility is asserted on those spaces and nonnegative homotopy groups.
 * Layer 2.0b: universal integral motivic Chern operations lack scheme higher K-groups,
   higher Chow groups and their stabilized classifying-sheaf models.
 * Layers 2.1–2.4: the geometric rational supported cycle-to-K comparison for regular

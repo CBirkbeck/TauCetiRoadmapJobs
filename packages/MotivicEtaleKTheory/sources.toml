@@ -134,7 +134,7 @@ url = "https://doi.org/10.1016/0001-8708(86)90081-2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["2.0b: arbitrary-field universal integral motivic Chern operations via classifying sheaves, moving and specialization (uncertified)", "2.2: identification of the universal-class character with the inverse geometric cycle map (uncertified); Levine94 supplies the cycle-to-K isomorphism independently"]
+cited_for = ["2.0b: universal integral motivic Chern operations and infinite-field moving/specialization (uncertified); perfect-field Tate construction uses MVW", "2.2: identification of the universal-class character with the inverse geometric cycle map (uncertified); Levine94 supplies the cycle-to-K isomorphism independently"]
 
 [[source]]
 id = "Beilinson85"
@@ -167,3 +167,37 @@ status = "certified"
 accessed = "2026-10-23"
 cited_for = ["3.2: smooth-open geometric filtered comparison, shifted cohomological weight, strictness, degeneration and independence", "3.2: geometric proper Hodge input, imported from ComplexComparisonPartII §C5.3"]
 version_note = "Read the 1971 Numdam article; all locators use printed journal pagination. Section 3.2.5 has weight shift W[m] on cohomological degree m; no W-filtered invariance of residue complexes under blowups is inferred."
+
+[[source]]
+id = "WeibelKBook"
+authors = "Charles A. Weibel"
+title = "The K-book: an introduction to algebraic K-theory"
+year = 2013
+locator_scheme = "section"
+locator = "Exercise IV.1.12(a), printed p.274, line 15979"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-10-24T04:51:14Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Author PDF dated August 29, 2013; locators use printed chapter pagination."
+cited_for = ["2.0a: stable Hopf class and integral Adams obstruction"]
+
+[[source]]
+id = "MVW"
+authors = "Carlo Mazza; Vladimir Voevodsky; Charles Weibel"
+title = "Lecture notes on motivic cohomology"
+year = 2006
+locator_scheme = "theorem"
+locator = "Definition 3.1, p.21, line 1054; Theorem 4.1 and Corollary 4.2, p.25, lines 1204–1216; Theorem 19.1 and its sheaf-comparison route, pp.159–162, lines 5827–5842"
+url = "https://www.math.ias.edu/vladimir/sites/math.ias.edu.vladimir/files/Lecture_notes_on_motivic_cohology_published.pdf"
+fetched_from = "https://www.math.ias.edu/vladimir/sites/math.ias.edu.vladimir/files/Lecture_notes_on_motivic_cohology_published.pdf"
+fetched_at = "2026-10-24T04:51:57Z"
+sha256 = "1197e239873e2a7f7f4dcbd1d115af67281a6d0867eff8816cc630b86b67f020"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Published 2006 lecture notes in the institutional author copy; locators use printed pages."
+cited_for = ["2.0b: functorial Tate complexes and perfect-field higher-Chow comparison, including finite fields"]
