@@ -91,7 +91,7 @@ year = 2004
 doi = "10.1017/S1474748007000011"
 arxiv = "math/0404122v2"
 locator_scheme = "theorem"
-locator = "Definitions 5.7–5.10, Remark 5.11 and Proposition 5.12, pp.110–113; Definition 5.20, p.116; Definition 5.14 and Proposition 5.15, pp.113–114; special-degree product formula, p.115; Theorem 5.22 through Corollary 5.31, pp.117–119; Section 5.6 and Proposition 5.58, pp.132–133"
+locator = "Definitions 5.7–5.10, Remark 5.11 and Proposition 5.12, pp.110–113; Definition 5.20, p.116; Definitions 5.13–5.14 and Proposition 5.15, pp.113–114; special-degree product formula, p.115; Theorem 5.22 through Corollary 5.31, pp.117–119; Equation (5.38), p.122, lines 4395–4408; Definition 5.41, p.123, lines 4450–4462; Section 5.6 and Proposition 5.58, pp.132–133"
 url = "https://arxiv.org/abs/math/0404122v2"
 fetched_from = "https://arxiv.org/pdf/math/0404122v2"
 fetched_at = "2026-10-23T15:13:12Z"
@@ -100,7 +100,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "Read arXiv:math/0404122v2, revised 2005, 201 PDF pages; locators use printed preprint pages. Its numbering differs from the 2007 publication identified by the DOI."
-cited_for = ["3.1–4.2: Deligne functor, filtered logarithmic model, products and choice independence; shifts apply to the constructed cochain comparison, not an arbitrary Dolbeault bigrading", "5.2: supported cycle criterion", "7.1–7.4: exponential and Chern normalization"]
+cited_for = ["3.1–4.2: Deligne functor, filtered logarithmic model, products and choice independence; shifts apply to the constructed cochain comparison, not an arbitrary Dolbeault bigrading", "5.2: normalized form-current and cycle-current pairings and supported cycle criterion", "7.1–7.4: exponential and Chern normalization"]
 
 [[source]]
 id = "KLM"

@@ -16,15 +16,16 @@ theorems against the pinned APIs. None of the following headlines is statable at
 * Layers 2.1–2.4: the rational higher Chern isomorphism, its universal-class identification,
   supported comparison and products lack these K-theory and motivic cohomology carriers.
 * Layer 3.2: the geometric bifiltered logarithmic comparison and its shifted mixed Hodge
-  structure lack the geometric logarithmic form sheaves, residue filtration and geometric
+  data require the geometric logarithmic form sheaves, residue filtration and geometric
   Betti/de Rham comparison. Native linear mixed Hodge structures alone do not state it.
 * Layer 3.3: the small real Deligne model and its cone deformation retract lack the real
   Dolbeault-complex carrier with its type projections and Deligne-model construction.
   Constructing that model is part of the roadmap, beyond a few simple definitions.
 * Layer 3.4: compactification-independent Deligne realization, pullback and descent lack
   smooth SNC compactification diagrams and the filtered logarithmic Deligne complexes.
-* Layers 4.1–4.2: the Deligne product and its natural associativity homotopy lack real
-  Dolbeault algebras and the Deligne complexes on which that product is defined.
+* Layers 4.1–4.2: the Deligne product, its natural associativity homotopy and the unit
+  conclusion for unital inputs require real Dolbeault algebras and Deligne complexes,
+  neither of which is available at these pins.
 * Layer 5.2: singular-support semipurity and its normalized current criterion lack
   geometric Deligne cohomology with supports and the form/cycle-current comparison.
 * Layer 5.4: the supported cycle-resolution and affine-contraction comparisons lack the
