@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2669 mistakes recorded on the board: 1762 misprints, 685 errors, 195 gaps, 27 unparsed bullets.
-Errata jobs have read the cited sources of 29 roadmaps; in those of 1 they found no mistake.
+2711 mistakes recorded on the board: 1791 misprints, 694 errors, 199 gaps, 27 unparsed bullets.
+Errata jobs have read the cited sources of 30 roadmaps; in those of 1 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -326,6 +326,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at proof of Proposition 3.7, definition of the lattice paths, p.20: the source says the paths end at the vertex [a,1]; it should be [1,r] (for r=3, a=1 the path runs (2,1),(1,1),(1,2),(1,3)); affects nothing. Found by  (#173 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## B
+
+- **Misprint** at proof of Lemma3.8, v1 printed p.11: the source says the intermediate alternating sum has coefficient−2; it should be −1 there, yielding the stated factor2 only after combination with (3.8); affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+
 ## B19
 
 - **Misprint** at (5.7), p. 88: the source says the normal-sequence boundary lands in H⁰(C, N_{C/T}); it should be H¹(C, N_{C/T}); affects nothing. Found by RealSurfacePeriodIndex (#412 at 875bca4, 2026-10-23, claude opus).
@@ -416,6 +420,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §6.4, p. 902, BCDT line 2865: the source says `α/β` is a uniformizer when `α³=4`; it should be `(α−1)/β`; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §7.4, p. 910, BCDT lines 3215,3217: the source says the first off-diagonal term uses `e′_ω` and gives two formulas for `γ̂₃(e′_ω)`; it should be `e_ω` in the first term and `γ̂₃(e′₁)` in the last formula; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §§6.3–6.4, pp. 900–901, BCDT lines 2785,2840: the source says `γ₄²` has order three; it should be order two, as its action on `β` also proves; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+
+## BCGP
+
+- **Misprint** at §2.8, display after (2.8.5), printed p.37: the source says the alternating cohomological exponent depends on the complex variable s; it should be the integer cohomological degree i; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
 ## BCGP21
 
@@ -509,6 +517,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 2.7, p.15: the source says an associative internal product for any quasi-projective X; it should be assume X smooth, since diagonal pullback and the cited Levine result (rational) need smoothness; affects a stated result. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Gap** at Proposition 2.7, p.15: the source says every quasi-projective scheme has the indicated internal higher-Chow product; it should be require smoothness for the diagonal pullback and cited Levine argument; affects a stated result. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, codex gpt-6-astra).
 - **Gap** at Proposition 2.7, p.15: the source says an associative integral internal product for any quasi-projective scheme, citing a rational result; it should be assume X smooth, for diagonal pullback, and rational coefficients or integral moving; affects a stated result. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, claude opus).
+- **Misprint** at Remark7, printed p.534: the source says the Euler factor is the characteristic polynomial evaluated at the norm power; it should be its reciprocal; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 - **Gap** at Theorem 3.5, p.20: the source says the comparison holds for any equidimensional complex algebraic scheme; it should be stated for smooth quasi-projective complex X, which is all ρ and the proof use; affects a stated result. Found by MotivicEtaleKTheory (#952 at 39344bc, 2026-10-23, claude opus).
 - **Gap** at Theorem 3.5, p.20: the source says the Beilinson comparison for any equidimensional complex algebraic scheme, but its proof treats smooth quasi-projective X only; it should be assume that; affects a stated result. Found by MotivicEtaleKTheory (#952 at eb7fbdd, 2026-10-23, claude opus).
 - **Gap** at Theorem 3.5, p.20: the source says the Beilinson comparison for any equidimensional complex algebraic scheme, while its proof assumes X smooth quasi-projective; it should be assume that; affects a stated result. Found by MotivicEtaleKTheory (#952 at cf15f63, 2026-10-23, claude opus).
@@ -622,6 +631,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Theorem 5.5(ii), case s=0, p.959: the source says the p+1 lattices are permuted by Δ and sums over Δ; it should be Δ′, of order p+1 (Δ has order p²−1); affects nothing. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 5.5(ii), p.959: the source says the forward index-p lattices are p^(−s−1)(1+ap^s)ℤ_p t+T; it should be (1+ap^sθ) with O=ℤ_p⊕ℤ_pθ, since 1+ap^s is a unit and all p printed lattices coincide; affects nothing. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
 - **Misprint** at §3.0.2, pp.952–953: the source says an order-l^m character is localized from z_(fl^m) inside K(fl^mp^(n+1)); it should be index by conductor l^m (order l^(m−1)), since the order-l^m layer has conductor l^(m+1); affects nothing. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
+
+## BMW-Monster
+
+- **Misprint** at §4.6, Step 3, p. 8, supporting Proposition 1 (BMW-Monster line 329): the source says the PSL2 alternative has q congruent to 3 or 4 modulo 8; it should be q=4 or odd q congruent to 3 or 5 modulo 8; PSL2(13) has Klein-four Sylow 2-subgroups; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4.8, Step 5, p. 9, supporting Proposition 1 (BMW-Monster line 396): the source says the centralizer of x1 is 3.Fi24; it should be 3.Fi24′, as specified in §2; 3.Fi24 denotes its larger normalizer; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
 
 ## BO
 
@@ -864,6 +878,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at printed p. 40: the source says the cross-reference to Lemma 2.13 there is a slip; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## BV-final
+
+- **Gap** at Definitions2.5,3.7, Conjecture4.1 and Remark5.6, printed pp.170–171,177,188,194–195: the source says the inverse-determinant zeta morphism forms a leading-term pair with the unshifted compact-support complex; it should be paired with the shifted complex and its compatible order, boundary and Bockstein normalization; affects the proof. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Error** at author-final Corollary5.7, internal p.27: the source says Artin induction applies to arbitrary p-adic-rational characters; it should be restricted to rational-valued characters, since nontrivial C₃ characters over ℚ₇ are counterexamples; affects nothing; corrected in print at Corollary5.7, p.196. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Error** at proof of Corollary5.7, printed p.196: the source says an integral virtual combination of permutation characters is a permutation character; it should be only the forward implication, since the C₂ sign character equals regular minus trivial; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Gap** at §5.2, map after (23), printed p.193: the source says the p-adic regulator map μ_p is an isomorphism without a nonvanishing hypothesis; it should be inverted only after the required regulator nonvanishing, including Leopoldt in permutation cases; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+
 ## Böckle–Iyengar–Paškūnas (BIP), Zariski density of crystalline points, Forum Math. Pi
 
 - **Error** at the proof of Theorem 6.8, p. 49 (arXiv line 2781): the source says the whole support of a nonzero test module lies in one component, which does not follow, since a support can meet two components (e.g. Spec L[x,y]/(xy)); it should be a component chosen through a point of the fixed-ψ fibre, which suffices for the argument; affects the proof. Found by  (#252 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1100,6 +1121,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at the monodromy-criterion pages (no theorem number given): the source says finite-level points are inertia-invariant on the strength of the dimension of the rational Tate-module invariants; it should be supported by a separate finite-level argument, which that dimension count does not supply; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at the pages on finite flat groups at the residue prime (no theorem number given): the source says a wrong rank for the toric or finite part; it should be as the witness in the cited review requires (ranks t and t + 2a); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Conrad-Roots
+
+- **Misprint** at §2 opening, p. 2 (Conrad-Roots line 99): the source says S0 is the maximal split torus, then asserts S0×S′ maps isogenously onto S; it should be S0 is the maximal split torus of the center of G; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Error** at §2, Proposition 2.4, p. 3 (Conrad-Roots line 149): the source says Ua∩H equals UH(λa) for every S-normalized subgroup H of G; it should be U(H∩Ga)(λa); take H=G=SL₃, a=e₁−e₂ and λa(t)=diag(t,1,t⁻¹): UH(λa) has dimension three, whereas Ua has dimension one; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2, Theorem 2.9 proof, p. 6 (Conrad-Roots line 274): the source says every simple-root pairing is strictly positive, with equality on I; it should be every pairing is nonnegative, vanishing exactly on I; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, Proposition 3.1 proof, p. 8 (Conrad-Roots line 364): the source says Ua is a vector group in the multipliable-root case; it should be U2a is the vector group trivializing the displayed torsor; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+
+## Conrad-Tits
+
+- **Misprint** at Theorem 2.4, p. 2 (Conrad-Tits line 75): the source says the splitting subgroup U lies in N; it should be U lies in B, as in the preceding split BN-pair definition; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+
 ## conrad_geom
 
 - **Error** at Theorem 3.1, printed p. 4, conrad_geom line 155: the source says every geometrically connected abelian cover remains geometrically connected after pullback along an arbitrary map to the group torsor; it should be asserted for the canonical generalized Abel map, or require surjective monodromy for the cover; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
@@ -1153,6 +1185,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## de Jong, Crystalline Dieudonné module theory via formal and rigid geometry, Publ. IHÉS 82 (1995)
 
 - **Error** at §7.1.13 (auxiliary maps on the route to Theorem 7.4.1 and Proposition 7.5.2): the source says auxiliary maps that are faulty as printed; it should be as corrected in the author's 1998 erratum (Publ. IHÉS 87), which leaves the main theorems standing; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Deligne
+
+- **Misprint** at Proposition–Definition2.3(ii), English translation p.10: the source says to evaluate the twisted-dual infinity factor at s; it should be evaluated at −s, equivalently the untwisted dual at 1−s; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
 ## Deligne, La conjecture de Weil II (1980)
 
@@ -1354,6 +1390,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at (2.10) and (6.3) against (11.19): the source says the result with a 4n exponent budget, but the proof's small-error step (11.19) uses 5n, and with 4n that bound fails; it should be stated with 5n, or the 4n small-height step needs further justification; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## F24
+
+- **Gap** at Lemma 6.2(k) proof supporting Theorem 6.3, p. 34 (F24 line 1454): the source says isomorphic amalgamated free products make the constructed matrices a representation of their finite quotient G; it should be shown that the representation annihilates the kernel of the free product’s map onto G; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+
 ## Faltings, Endlichkeitssätze für abelsche Varietäten über Zahlkörpern, Invent. Math. 73 (1983)
 
 - **Error** at the height argument along the tower of isogenies (corrected by the author's 1984 erratum, parts a) and b)): the source says the printed argument lacks the two corrections the erratum supplies; it should be an argument separating the toric-intersection and integral-closure defects by two shifts in the required order, giving only eventual stationarity of heights; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1419,6 +1459,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §7.3, p. 41: the source says β^(k−1)[(X,q)]; it should be β^(2k−1); affects nothing. Found by ArithmeticKTheoryPartII (#1034 at 30d52b9, 2026-10-24, claude opus).
 - **Misprint** at §7.7, footnote 13, p. 47: the source says ℤ_p× acts on ℚ_p/ℤ_p(2k) via χ^(2k−1); it should be χ^(2k), since otherwise H⁰ would be 0 at p = 3, k = 1; affects nothing. Found by ArithmeticKTheoryPartII (#1034 at 30d52b9, 2026-10-24, claude opus).
 - **Misprint** at §7.7, p. 47: the source says the source credits injectivity of c_B to Theorem 3.3; it should be Theorem 3.5; affects nothing. Found by ArithmeticKTheoryPartII (#1034 at 30d52b9, 2026-10-24, claude opus).
+
+## FiniteSimpleGroups
+
+- **Misprint** at FiniteSimpleGroups/Sporadic/Fi22.lean, module documentation, unpaginated (FiniteSimpleGroups line 36): the source says Fi22 is Conway’s second group on 2300 Leech-triangle points, with a Sylow-23 simplicity argument; it should be Fischer’s Fi22 on 3510 points, with the Sylow-13 argument named in its Statement module; affects nothing. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at FiniteSimpleGroups/Sporadic/Fi22/Statement.lean, card_Fi22 documentation, unpaginated (FiniteSimpleGroups line 23): the source says the documented order belongs to Conway’s second group; it should be Fischer’s group Fi22; affects nothing. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at FiniteSimpleGroups/Sporadic/Fi22/Statement.lean, card_Fi22 documentation, unpaginated (FiniteSimpleGroups line 24): the source says the listed stabilizer-chain factors certify order 64,561,751,654,400; it should be 3510·693·180·3·48·32·8·2·2, as in the ChainCard module; the displayed factors multiply to 50,214,695,731,200; affects nothing. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
 
 ## Fischman-Montgomery-Schneider
 
@@ -1638,6 +1684,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at III §9 proof of (9.7), printed p.266, gz86 lines 1630–1633: the source says the count modulo simultaneous sign is 2u²δ(n); it should be u²δ(n); affects the proof. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
 - **Gap** at V §1 Corollary (1.3), printed p.309, gz86 lines 3259–3265: the source says parity and order-zero/one invariance establish order-at-least-three invariance in every sign; it should be restrict that deduction to odd parity; even orders two and four remain indistinguished; affects the proof. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
 
+## H
+
+- **Misprint** at Proposition4.26 and Example4.27, printed p.21: the source says to rescale the residue form by t⁻¹ and uses multiplication by t in the transformed operator; it should be tΩ and multiplication by 1/t inside the transformed operator; affects a stated result. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem4.12, printed p.15: the source says the stated inequalities imply uniqueness of primitive embeddings into any even nondegenerate ambient lattice; it should be restricted to an even unimodular ambient lattice under those inequalities; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem4.12, printed p.15: the source says i=j∘α with α an automorphism of the ambient lattice; it should be i=α∘j, which has the required domain; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem4.28, printed p.22: the source says the continued regular solution has upper parameters 1/8 and 3/8; it should be the equal pair 1/8,1/8, with linear coefficient1/32; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Gap** at proof of Theorem4.29, printed p.23: the source says the two based conifold loops have identical monodromy images; it should be conjugation by p↦p+1, with fixed points differing by1; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+- **Error** at the paragraph before Theorem4.12, printed p.15: the source says the full-rank embedding M₂⊕T₀ into K3 cohomology is primitive; it should be an index-four embedding, since its determinant is −16 and the ambient determinant is −1; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+
 ## Harari–Szamuely, Arithmetic duality theorems for 1-motives (J. reine angew. Math., 2005)
 
 - **Gap** at journal pp. 120 and 123 (the completed duality sequences): the source says these sequences without verifying finite-level strictness or passing to the profinite localization quotient; it should be impose both, as the authors' corrigenda (printed pp. 1 and 5) require; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1814,6 +1869,28 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Theorem 4.5.3, p. 41: the source says the fixed locus is fibred over In_S(T₁); it should be In_S(T); affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Error** at §4.6, closing remark, p. 44: the source says isolated fixed points over U make the inertia étale over [U//G]; it should be étaleness of the fixed locus over U is needed (fails for the affine group on P¹); affects a stated result. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at §5.3, p. 48: the source says the trace map is described before Definition 4.3.5; it should be before Definition 4.3.6; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
+
+## HMS-book
+
+- **Error** at Theorem14.5.3, printed pp.277–278: the source says the first/second/third-kind decomposition is unique modulo exact forms under the stated exclusions; it should be existence without uniqueness: transfer a nonexact holomorphic form between the first and second summands without changing their pole types; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "9f14c68e80529a59825e1d67cc9edf2091ff2f3a", "job": "RT-PeriodsAndSpecialValues~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+
+## HN
+
+- **Error** at published §4.1, p. 736: the source says the centralizer of N⁰ in HN is the cyclic group generated by t; it should be dihedral of order ten; its elements of order five still lie in ⟨t⟩; affects the proof; corrected in print at [author errata](https://webspace.maths.qmul.ac.uk/j.n.bray/Papers/HN/HN.html), §4.1 item (16 March 2005); incorporated in corrected preprint §4.1, p. 13 (HN line 533). Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3.1, presentation (7), corrected preprint p. 11 (HN line 477): the source says a finite group is presented on x, y, z with no relator involving z; it should be a presentation on x and y; the unused generator otherwise supplies an infinite cyclic quotient; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+
+## Hohn-Seysen
+
+- **Misprint** at Appendix D, p. 35 (Hohn-Seysen line 1486): the source says Table 3 lists sizes of (H∩Nxyz)-orbits; it should be sizes of H-orbits, with subgroup-orbit counts in separate columns; affects nothing. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Appendix D, p. 35 (Hohn-Seysen line 1513): the source says the Gx0-axis certificate computes Table 4; it should be Table 2; affects nothing. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Corollary 5.2, p. 24 (Hohn-Seysen line 1023): the source says the Baby Monster order has a factor 41; it should be the displayed prime factorization without 41; the decimal order and preceding orbit product already agree; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 2.1 proof, p. 6 (Hohn-Seysen line 250): the source says the lattice Λ acts transitively on pairs of short vectors with fixed inner product; it should be its automorphism group Co₀ acts transitively; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.1, Lemma 2.5 proof, p. 9 (Hohn-Seysen line 345): the source says the complementary idempotent has squared norm 3/2; it should be 47/32, subtracting the orthogonal idempotent’s squared norm 1/32 from 3/2; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.1, Lemma 2.5 proof, p. 9 (Hohn-Seysen line 346): the source says its three displayed idempotents exhaust the two-dimensional algebra; it should be four idempotents, including zero; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.1, Theorem 2.7 proof, p. 9 (Hohn-Seysen line 372): the source says subtracting the axis of xᵣx₋₁ from the axis of xᵣ gives 4Xᵣ; it should be −4Xᵣ, by Definition 2.3; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2.1, Theorem 2.7 proof, p. 9 (Hohn-Seysen line 380): the source says the multiplication norm on the axis’s orthogonal complement is strictly less than four times the vector norm; it should be at most four times, with equality on the nonzero 4-eigenspace; affects the proof. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, Table 2 caption, p. 18 (Hohn-Seysen line 768): the source says entries count Nxyz-orbits of axes; it should be coset counts, equivalently weighted orbit-transition counts; Table 1 gives only three Nxyz-orbits in the first orbit; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, Table 4 caption, p. 22 (Hohn-Seysen line 945): the source says entries count (H∩Nxyz)-orbits of feasible axes; it should be coset counts, equivalently weighted orbit-transition counts; the singleton first orbit cannot contain 93,150 subgroup orbits; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
 
 ## Holm
 
@@ -2457,6 +2534,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at §2 notation and Lemma 2.3, printed pp. 8–9: the source says Lemma 2.3 concerns representations unramified outside S, where S has no place above p, yet it is applied to p-adic étale cohomology; it should be unramified outside S together with the places above p; affects the proof. Found by LawrenceVenkateshMethod (#345 at 9ee7ac3, 2026-10-23, claude opus).
 - **Misprint** at §2 notation, printed p. 8: the source says S is a finite set of finite places containing the archimedean places; it should be a finite set of places containing all archimedean places; affects nothing. Found by LawrenceVenkateshMethod (#345 at 9ee7ac3, 2026-10-23, claude opus).
+
+## Ly
+
+- **Misprint** at §3, Lemma 7, author preprint p. 6 (Ly line 263): the source says the order of H divides 585,900,000; it should be 5,859,000,000, the product of the preceding bound 1,500,000 and index 3,906; affects a stated result. Found by CFSGBasicProperties (ERRATA-CFSGBasicProperties at 3e30589, 2026-10-24, codex gpt-6-astra).
+
+## LYA
+
+- **Error** at §6, (6.1)–(6.4), printed p.22: the source says any integral input series suffices for the stated normalized-branch integrality criterion; it should be x=q+O(q²): P=(y−x)(2y−x), x=2q+q² gives m=1 but y=q+q²/2; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
 ## Majid-Comments
 
@@ -3389,6 +3474,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Exposé XV, §3, no. 3, proof of the corollary to Lemma 3, printed p. 478: the source says any A-module lifting R₀ permits the proposed short-exact-sequence lift with projective middle term; it should be required that R is flat; for A = Z/4, I = (2), R = F₂, reduction of 0 → 2A → A → F₂ → 0 loses injectivity; affects the proof. Found by FrobeniusGeometry (ERRATA-FrobeniusGeometry at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Exposé XV, §3, no. 3, remark after Lemma 1, printed p. 475: the source says the reduced complex's perfectness or pseudocoherence is characterized by an isomorphism in D⁻(A); it should be D⁻(A₀), since the reduced complex and its projective resolution are over A₀ = A/I; affects a stated result. Found by FrobeniusGeometry (ERRATA-FrobeniusGeometry at 4bd7237, 2026-10-23, codex gpt-6-astra).
 
+## SH
+
+- **Error** at §§3.1–3.2, v2 printed pp.3–4: the source says the rank-four holomorphic sector is invariant under the natural combined diagonal and permutation action; it should be diagonal-invariant and permutation-sign-equivariant, or permutation-invariant only after a sign twist; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
+
 ## Silliman, arXiv:2009.14353v2
 
 - **Error** at Theorem 8.10 (weights of Hasse lifts; construction in §8.4): the source says the source says, as literally quantified, mod-p^m congruent Hasse lifts in weights not divisible by p^(m−1)(p−1), contradicting Katz Cor. 4.4.2 (witness p = 5, m = 2, w ≡ 4 mod 20); it should be positive even multiples of (p−1)p^{N₀(F,p,m)}, with N₀ ≥ 1 at p = 2 and precision fixed before the weight; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -3457,6 +3546,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 1.5 proof, printed p. 5 (Spencer line 175): the source says the ith closing-site label being at least i characterizes the standard-tableau condition; it should be require at least 2i; otherwise closing sites {2,3} pass the printed test but give a nonstandard two-row tableau; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at equation (1.3), printed p. 5 (Spencer line 182): the source says module duals consist of TLₙ-linear maps M→R; it should be use Hom_R(M,R), with the displayed action twisted by ι; module-linear maps generally form a smaller space and do not define this duality; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at equation (2.5), printed p. 6 (Spencer line 236): the source says the δ-parameter for the second quantum integer is [ℓ+2]−[ℓ]; it should be use [ℓ+1]−[ℓ−1]=q^ℓ+q^−ℓ; with m=2, ℓ=1 the printed identity incorrectly equates δ and δ²−2; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
+## SS
+
+- **Misprint** at §3, printed p.13: the source says raising λ to its p-th power preserves fibres, while fixing λ mixes them; it should be the reverse, as the displayed correction involving λ^p itself shows; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
 ## Stacks
 
