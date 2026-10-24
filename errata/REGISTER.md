@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-3827 mistakes recorded on the board: 2552 misprints, 966 errors, 259 gaps, 50 unparsed bullets.
+3835 mistakes recorded on the board: 2556 misprints, 968 errors, 260 gaps, 51 unparsed bullets.
 Errata jobs have read the cited sources of 48 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -58,6 +58,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Error** in T at §5, p. 386: the source equates [ℚ(A):ℚ] with \|Cl(K*)\|/\|H\|; Shimura's theorem gives the degree over the reflex field, which differs by bounded factors; affects nothing.
 - **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Gap** in YE at the proof of Proposition 6, p. 10: the source asserts that the τ-contracted differential modules are locally free, hence exact; at a ramified prime the contraction can be O_L/(2√p); affects the proof.
 - **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Gap** in Y at §9.2, p. 633: the source calls the level projection étale to make P′ a section, while P′ has multiplicity e in the pull-back; the section claim needs another argument; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "408c5d5", "job": "REV-PKG-ComplexMultiplicationAndExplicitReciprocityPartII", "model": "opus", "worker": "fable-rev56"} -->
+- **Unparsed** (HilbertModularVarietiesAndShimuraCurvesPartII, #1119 at b299520, 2026-10-24): Gap** in BHHMS23 at proof of Proposition 8.3.7, p. 101: the source says π^{K₁} equals D₀(r̄_v^∨)^{⊕r} by the proof of Proposition 8.2.6; that proof gives only an embedding, and the reverse is Breuil's Lemma 9.2 argument in Theorem 8.4.1(i); affects nothing.
 
 ## A
 
@@ -769,6 +770,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Bhatt–Scholze, Prisms and prismatic cohomology, arXiv:1905.08229v4
 
 - **Error** at Lemma 16.10(2), p.110: the source says the uncompleted quotient P/J equals the q-PD envelope quotient E/K; it should be use the derived p-completion, i.e. the completed extended ideal as in Construction 16.13 (a square-zero counterexample shows IP need not be closed); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## BHHMS23
+
+- **Misprint** at Theorem 1.8, p. 8: the source says the theorem is Corollary 8.3.9; it should be Theorem 8.3.9; affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
+- **Error** at Theorem 8.3.9, p. 101, and Corollary 8.3.10, p. 103: the source says the support of M∞(L_j) (resp. M∞(R)) runs over all profiles with (2,−1) at several embeddings; it should be run over (1,0) and profiles with exactly one (2,−1), as (76) and the proof's λ(j′) give; affects a stated result. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
+- **Misprint** at proof of Proposition 8.3.7, p. 100: the source says the space of K-maps from σ_v to π has dimension f, citing Proposition 8.2.3; it should be r, the rank in Proposition 8.2.3(i), via (68); affects the proof. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
+- **Misprint** at proof of Theorem 8.3.9, p. 102: the source says the bijection ι is defined on types with σ_v twisted by the positive norm-determinant character; it should be use the inverse twist, as in the defining intersection and on p. 101; affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
+- **Misprint** at §1.2, p. 4, and proof of Theorem 8.4.3, p. 106: the source says miracle flatness is Gee–Newton's Corollary A.30; it should be Proposition A.30 of GN22 (arXiv v5); affects nothing. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
 
 ## BHW
 
@@ -1899,6 +1908,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Lemma 3.7, proof, p. 9: the source says the least prime factor of a coprime product is the minimum over factors; it should be treat a quotient equal to 1 separately, since λ(1)=1; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at Remark 4.1, p. 21: the source says Theorem 3.2 gives a reduced number in [B, 4B−2]; it should be Theorem 3.14; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at §4.1, p. 20: the source says the first interval of Theorem 3.14 should be empty; it should be Theorem 3.2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+
+## EGS15
+
+- **Error** at §6.2, p. 35: the source says the finite adèles act through the character induced by ψ composed with Artin; it should be ψ⁻¹, for compatibility with det τ = ψ on inertia; affects a stated result; corrected in print at BHHMS23 Remark 8.1.3(i), p. 89. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
+- **Gap** at §6.2, p. 35: the source says S(σ) is the H¹ of the Shimura curve X_K with the extended central action; it should be use the quotient of X_K by the finite group K(𝔸_F^∞)^×/KF^×; affects the proof; corrected in print at BHHMS23 Remark 8.1.3(iii), p. 89. <!-- tauceti-roadmap-review {"agent": "claude", "head": "b299520", "job": "REV-PKG-HilbertModularVarietiesAndShimuraCurvesPartII", "model": "opus", "worker": "fable-rev57"} -->. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at b299520, 2026-10-24, claude opus).
 
 ## EHLS
 
