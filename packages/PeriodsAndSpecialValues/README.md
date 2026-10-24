@@ -23,7 +23,7 @@ The following are imported from their named owners and sections:
 
 - **TauCetiRoadmap EllipticCurves** Layers 1, 2, 4, 6 and 7: the invariant differential, Tate modules and the Weil pairing, reduction types and local Tamagawa numbers, Mordell–Weil, canonical heights and the regulator, Selmer groups, Sha and the conditional BSD quotient over ℚ with its all-components real period. Complex uniformization is not supplied there and is not used here.
 - **TauCetiRoadmap ModularForms**: the L-function of a newform with its Euler product and continuation, and (Layer 8) modular symbols and the Eichler–Shimura period map.
-- The number-field Borel regulator, its comparison with Beilinson's regulator and its determinant factor are targets of PS.3.2a; the degree-one boundary is the Dirichlet regulator. A CM elliptic L(E, 2) formula is required through the explicit EllipticKTheory gap below, with its cycle and all normalization data; no unspecified scalar formula is used.
+- **BorelRegulators** §§2.1–2.3 and 6.0a–6.3: the Chern-normalized Borel regulator on K_(2j−1)(O_F) for every number field F and j ≥ 2, its real isomorphism, its comparison r_Bo = −2·r_Be with the shared Beilinson regulator into real Deligne cohomology, and the rational Adams weight. **ArithmeticKTheory** §§3.3–3.4: rational localization from O_F to F, the stable arithmetic comparison and Borel's ranks. PS.3.2a only places these supplied maps in the fundamental line of h⁰(Spec F)(j); the degree-one boundary is the Dirichlet regulator. No elliptic L(E, 2) regulator formula is used.
 - **[NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md)**: the Dirichlet regulator and the class number formula at s = 1, which is the degree-one case of the Borel regulator; this roadmap starts at degree j ≥ 2.
 - **TauCetiRoadmap PadicMeasuresIwasawaAlgebras** Layer 5: determinant lines of perfect complexes over commutative rings, their acyclic trivialization and specialization.
 - **TauCetiRoadmap ClassicalArithmeticCompletion** §7.10 and §7.60: reduced norms of semisimple number-field algebras and the description of their images (Hasse–Schilling–Maass).
@@ -31,13 +31,13 @@ The following are imported from their named owners and sections:
 - **TauCetiRoadmap SchemeAndStackFoundations** §§1.17, 1.23 and 4.11: quotients by finite groups, coarse spaces, modifications and strict transforms; general blow-ups are supplied by **TauCetiRoadmap StableReduction** Layer 4.
 - **IntegralHeckeAndGaloisDeterminants** Layer 0, §0.6: the Azumaya reduced-norm determinant law, with duals and projective modules.
 
-Other roadmaps supply the following, as specified in Exact supplier contracts: MotivesAndAlgebraicCycles (MC.2 realizations and Layers 3–6: Tannakian categories, geometric motives, Nori diagrams and the marked period torsor); ComplexComparisonPartII C5 (de Rham–Betti comparison, Gauss–Manin connection); AlgebraicTopology Stage 6; ArithmeticGaloisRepresentations §§2.4–2.6, §3.3; AutomorphicLFunctionsAndLocalFactors AL.1, AL.3, AL.4, AL.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.6; NeronModelsAndSemistableAbelianVarieties Layer 6 (§6.10); WeilConjectures WC.1–WC.2; EtaleDualityAndPerverseSheaves Layer 0, §§0.5–0.6; DirichletPadicLFunctions L0; ArithmeticGaloisDuality D7; SelmerIwasawaCohomology L2–L4; GeneralAlgebraicKTheory Layer 4; NoncommutativeAndEquivariantIwasawa NE.7; IntegralIwasawaTheory Layer 11; K3SurfacesAndSymplecticBoundedness §§3.3, 4.2; CrystallineCohomology CR.5–CR.7; PadicDifferentialEquationsAndRigidCohomology RD.1, RD.3, RD.4 and RD.7; ModularCurvesPartII §3.6; PolylogarithmFunctions; AnabelianGeometryAndNonabelianChabauty NC.2.
+Other roadmaps supply the following, as specified in Exact supplier contracts: MotivesAndAlgebraicCycles (Layer 1 projectors, MC.2 realizations and Layers 3–6: Tannakian categories, geometric motives, Nori diagrams and the marked period torsor); ComplexComparisonPartII C5 (de Rham–Betti comparison, Gauss–Manin connection); AlgebraicTopology Stage 6; ArithmeticGaloisRepresentations §§2.4–2.6, §3.3; AutomorphicLFunctionsAndLocalFactors AL.1, AL.3, AL.4, AL.5; AutomorphicGaloisRepresentationsPartII AG2.5–AG2.6; NeronModelsAndSemistableAbelianVarieties Layer 6 (§6.10); WeilConjectures WC.1–WC.2; EtaleDualityAndPerverseSheaves Layer 0, §§0.5–0.6; DirichletPadicLFunctions L0; ArithmeticGaloisDuality D7; SelmerIwasawaCohomology L2–L4; GeneralAlgebraicKTheory Layer 4; NoncommutativeAndEquivariantIwasawa NE.7; IntegralIwasawaTheory Layer 11; K3SurfacesAndSymplecticBoundedness §§3.3, 4.2; CrystallineCohomology CR.5–CR.7; PadicDifferentialEquationsAndRigidCohomology RD.1, RD.3, RD.4 and RD.7; ModularCurvesPartII §3.6; PolylogarithmFunctions; AnabelianGeometryAndNonabelianChabauty NC.2; ArithmeticKTheory §§3.3–3.4; BorelRegulators §§2.1–2.3, 6.0a–6.3.
 
 The exact supplier contracts record the additional modular-motive, motivic-cohomology and framed-relative-motive inputs as separate gaps. The arbitrary-pair comparison and marked period evaluation are MotivesAndAlgebraicCycles §§5.7, 6.7–6.9. The noncommutative determinant functor is NoncommutativeAndEquivariantIwasawa §2.7. PS.3 defines the Burns–Flach orientation of the imported rational fundamental object, and PS.4 constructs its integral pullback under an explicit rational comparison hypothesis. PS.6.4 and PS.6.7 transport explicitly given arithmetic witnesses; neither asserts a theorem supplied by an unnamed arithmetic continuation.
 
 ### Theorems and predicates
 
-The following are predicates, used only as named hypotheses: DeligneAlgebraic (PS.1.4), SerreSystem (PS.1.7), SerreC9 and HasseWeilConjecture (PS.1.8), LeadingTermRational and the Beilinson leading-term assertion (PS.3.3), `ETNC` (PS.5.2), BlochKatoTamagawa (PS.6.5), BBKRankZeroOne (PS.6.6), higher-rank BSD (PS.6.3), PeriodConjecture (PS.7.4), QuinticBoundaryLatticeIntegral (PS.8.17), numerical independence of Hoffman values and exact numerical dimensions (PS.9.23). Everything else in the layers is a definition, construction or theorem to be proved. Numerical agreement witnesses no predicate; an analytic inequality retains its stated hypotheses and bounds.
+The following are predicates, used only as named hypotheses: DeligneAlgebraic (PS.1.4), SerreSystem (PS.1.7), SerreC9 and HasseWeilConjecture (PS.1.8), LeadingTermRational and the Beilinson leading-term assertion (PS.3.3), ETNC (PS.5.2), BlochKatoTamagawa (PS.6.5), BBKRankZeroOne (PS.6.6), higher-rank BSD (PS.6.3), PeriodConjecture (PS.7.4), QuinticBoundaryLatticeIntegral (PS.8.17), numerical independence of Hoffman values and exact numerical dimensions (PS.9.23). Everything else in the layers is a definition, construction or theorem to be proved. Numerical agreement witnesses no predicate; an analytic inequality retains its stated hypotheses and bounds.
 
 ## Conventions
 
@@ -72,7 +72,7 @@ Each entry names the supplier and what is consumed. Where a target needs more th
 
 ### From Mathlib at the pin
 
-Linear algebra: `Matrix.det`, `Matrix.det_mul`, `Matrix.det_fin_zero`, `Matrix.det_smul`, `Matrix.det_nonsing_inv`, `Matrix.det_of_isUpperTriangular`, `LinearIndependent`, Submodule.span, `Finsupp.single`, `Ideal.Quotient.mk`. Localization: `IsLocalization.Away`, `IsLocalization.Away.lift`, IsLocalization.Away.mul_invSelf, `LaurentPolynomial.eval₂` with `LaurentPolynomial.eval₂_T`. Special functions: `Complex.Gamma` (total, with value 0 at its poles, `Complex.Gamma_eq_zero_iff`), `Complex.Gammaℝ`, `Complex.Gammaℂ` (Deligne's normalization), `Complex.Gamma_mul_Gamma_eq_betaIntegral`, `Complex.Gamma_mul_Gamma_one_sub`, `ordinaryHypergeometric` (the ₂F₁ series; no ₃F₂ or continuation). Zeta and L-functions: riemannZeta, `riemannZeta_two`, `riemannZeta_four`, `riemannZeta_neg_nat_eq_bernoulli`, `zeta_nat_eq_tsum_of_gt_one`, `riemannZeta_eulerProduct`, completedRiemannZeta_one_sub, hurwitzZeta_neg_nat, DirichletCharacter.completedLFunction, DirichletCharacter.IsPrimitive.completedLFunction_one_sub, DirichletCharacter.rootNumber, meromorphicOrderAt. Analysis and measure: `intervalIntegral`, `intervalIntegral.norm_integral_le_of_norm_le`, `intervalIntegral.integral_comp_mul_deriv'`, MeasureTheory.tendsto_integral_of_dominated_convergence, MeasureTheory.integral_tsum, MeasureTheory.Measure.haarMeasure, MeasureTheory.Measure.infinitePi (probability measures only), PhragmenLindelof.horizontal_strip. Power series and p-adics: PowerSeries.mk, PowerSeries.derivative, PowerSeries.exp, PowerSeries.subst, PowerSeries.substInv, `Padic`, padicValRat, `sub_one_mul_padicValNat_factorial`, HasSum.
+Linear algebra: `Matrix.det`, `Matrix.det_mul`, `Matrix.det_fin_zero`, `Matrix.det_smul`, `Matrix.det_nonsing_inv`, `Matrix.det_of_isUpperTriangular`, `LinearIndependent`, Submodule.span, `Finsupp.single`, `Ideal.Quotient.mk`. Localization: `IsLocalization.Away`, `IsLocalization.Away.lift`, IsLocalization.Away.mul_invSelf, `LaurentPolynomial.eval₂` with `LaurentPolynomial.eval₂_T`. Special functions: `Complex.Gamma` (total, with value 0 at its poles, `Complex.Gamma_eq_zero_iff`), `Complex.Gammaℝ`, `Complex.Gammaℂ` (Deligne's normalization), `Complex.Gamma_mul_Gamma_eq_betaIntegral`, `Complex.Gamma_mul_Gamma_one_sub`, `ordinaryHypergeometric` (the ₂F₁ series; no ₃F₂ or continuation). Zeta and L-functions: riemannZeta, `riemannZeta_two`, `riemannZeta_four`, `riemannZeta_neg_nat_eq_bernoulli`, `zeta_nat_eq_tsum_of_gt_one`, `riemannZeta_eulerProduct`, completedRiemannZeta_one_sub, hurwitzZeta_neg_nat, DirichletCharacter.completedLFunction, DirichletCharacter.IsPrimitive.completedLFunction_one_sub, DirichletCharacter.rootNumber, meromorphicOrderAt. Analysis and measure: `intervalIntegral`, `intervalIntegral.norm_integral_le_of_norm_le`, `intervalIntegral.integral_comp_mul_deriv'`, MeasureTheory.tendsto_integral_of_dominated_convergence, MeasureTheory.integral_tsum, MeasureTheory.Measure.haarMeasure, MeasureTheory.Measure.infinitePi (probability measures only), PhragmenLindelof.horizontal_strip. Harmonic numbers: `harmonic` (Mathlib/NumberTheory/Harmonic/Defs.lean, `H_n = 1 + 1/2 + ⋯ + 1/n` in ℚ, with `H_0 = 0`). Power series and p-adics: PowerSeries.mk, PowerSeries.derivative, PowerSeries.exp, PowerSeries.subst, PowerSeries.substInv, `Padic`, padicValRat, `sub_one_mul_padicValNat_factorial`, HasSum.
 
 ### From Tau Ceti at the pin
 
@@ -106,13 +106,13 @@ What K3SurfacesAndSymplecticBoundedness must provide (gap:k3-betti-even-unimodul
 
 Categorical and geometric quotients, coarse spaces of finite group quotients (`finite_quotient_coarse`), and modifications with strict transforms. For blow-ups §4.11 imports TauCetiRoadmap StableReduction Layer 4 (Rees algebra, relative Proj, affine charts and flat base change). Used for the quotient and resolution of PS.8.1; the resolution of the six A₃ sections is explicit and belongs to PS.8.1.
 
-### MotivesAndAlgebraicCycles MC.2 and Layers 3–6
+### MotivesAndAlgebraicCycles Layer 1, MC.2 and Layers 3–6
 
-MC.2 supplies tensor-compatible geometric realization functors, including the finite-group actions and cycle maps for PS.8. Layers 3–4 supply Tannakian categories and Tate-stabilized geometric motives. §5.7 supplies the relative de Rham comparison for arbitrary finite-type pairs, with hypercover independence, excision, triple boundaries and products. §§6.7–6.9 supply P = P_eff[L⁻¹], its tensor-isomorphism torsor and the marked evaluation per : P → ℂ with per(L) = 2πi. PS.2 compares this β-point with PS.0's I = β⁻¹; it does not construct a second evaluation.
+MC.2 supplies tensor-compatible geometric realization functors for motives with rational coefficients, including the finite-group actions and cycle maps for PS.8; a ℚ-algebra map E → End(M) makes the realizations E-modules (PS.0.1). Layer 1 supplies Chow motives with their projectors and §6.10 the equivalence of Artin motives with rational Galois representations; PS.1.5 builds the character motive A_χ from them with Deligne's construction M ⊗_ℚ E. Layers 3–4 supply Tannakian categories and Tate-stabilized geometric motives. §5.7 supplies the relative de Rham comparison for arbitrary finite-type pairs, with hypercover independence, excision, triple boundaries and products. §§6.7–6.9 supply P = P_eff[L⁻¹], its tensor-isomorphism torsor and the marked evaluation per : P → ℂ with per(L) = 2πi. PS.2 compares this β-point with PS.0's I = β⁻¹; it does not construct a second evaluation.
 
 What MotivesAndAlgebraicCycles must provide (gap:modular-eigenprojector-motive): for every normalized cuspidal newform over ℚ of weight k ≥ 2, its coefficient-field rank-two eigenprojector motive with Betti, de Rham and étale realizations and tensor-compatible marked comparisons (extension of MC.2, needed by PS.1.6).
 
-What MotivesAndAlgebraicCycles must provide (gap:motivic-cohomology-adams): for every number field F and integers i,n, the natural rational comparison Hom(1,M(Spec F)(n)[i]) ≃ K_(2n−i)(F)^(n), with Adams eigenspaces, products and residue maps (extension of Layer 4, needed by PS.9.8).
+What MotivesAndAlgebraicCycles must provide (gap:motivic-cohomology-adams): for every number field F and integers i,n, the natural rational comparison Hom(1,M(Spec F)(n)[i]) ≃ K_(2n−i)(F)^(n), with Adams eigenspaces, products and residue maps (extension of Layer 4, needed by PS.3.2a, PS.9.8 and PS.9.9).
 
 What MotivesAndAlgebraicCycles must provide (gap:framed-relative-motives): relative-cohomology motives of the compactified configuration pairs used for iterated integrals, with Tate framings, boundary maps and product maps compatible with realizations (extension of Layers 4–5, needed by PS.9.15).
 
@@ -120,9 +120,13 @@ What MotivesAndAlgebraicCycles must provide (gap:framed-relative-motives): relat
 
 C5.1 (the ordinary comparison, proper smooth de Rham–Betti comparison and the multiplicative period interface), C5.2 (families and the Gauss–Manin connection), C5.6 (regular singular comparison), C5.7 (curves and residue localization). PS.0.5 constructs its particular second-kind class using the curve residue sequence, then computes the homology basis and pairing; it requests no elliptic uniformization theorem.
 
-### ArithmeticLocallySymmetricSpaces ALS.0.4–ALS.0.9, ALS.F.5, ALS.5b.1
+### ArithmeticKTheory §§3.3–3.4
 
-The symmetric space, arithmetic quotient and finite-stabilizer topology, relative Lie cochains with invariant forms, and de Rham comparison at neat level supply the geometric carriers for PS.3.2a. The non-neat rational comparison uses the finite-stabilizer descent in that roadmap. Borel's stable arithmetic comparison is a target of PS.3.2a, beyond these geometric identifications.
+§3.3 rationalSIntegerEquiv: for every number field F, finite S and n ≥ 2, the rationalization of the actual inclusion K_n(O_F) → K_n(O_(F,S)) is an equivalence, with the identity at S = ∅ and the comparison toField with rationalized field K-theory. §3.4 borel_rank_order and the rank function ρ: for n ≥ 2 the rank of K_n(O_F) is r₁ + r₂ for n ≡ 1 mod 4, r₂ for n ≡ 3 mod 4 and zero in even degrees, and K_(2i)(F) is torsion for i ≥ 1. That section owns the stable comparison of arithmetic cohomology with relative Lie algebra cohomology and the primitive-homology identification behind these ranks. Used by PS.3.2a, PS.9.8 and PS.9.9.
+
+### BorelRegulators §§2.1–2.3, 6.0a–6.3
+
+For every number field F and n ≥ 2 (here written j), §§2.1–2.2 construct the Chern-normalized Borel regulator r_Bo : K_(2n−1)(O_F) → V_n(F), into the conjugation-fixed space of functions on the complex embeddings with values in (2πi)^(n−1)ℝ, together with its rational extension to K_(2n−1)(F) ⊗ ℚ through the localization inverse; §2.3 proves that its real scalar extension is an isomorphism, that its integral kernel is the torsion and that it commutes with restriction and transfer. §6.1 identifies V_n(F) with H¹_D(Spec(F) ×_ℚ ℝ, ℝ(n)) by P_(n−1)(z) = (z + (−1)^(n−1) z̄)/2; §§6.0a–6.2 prove r_Bo = −2·r_Be for the shared universal Beilinson regulator r_Be with that roadmap's point coordinate, so that the ordered determinants differ by (−2)^(d_n), d_n = r₁ + r₂ for odd n and r₂ for even n, while Burgos's own evaluation is the negative of the shared coordinate and gives the factor +2 (Burgos, Theorem 10.9, printed pp. 95–97). §6.3: ψ^a acts on K_(2n−1)(F) ⊗ ℚ by a^n for every integer a ≥ 1. Used by PS.3.2a and PS.9.9.
 
 ### ArithmeticGaloisRepresentations §§2.4–2.6, §3.3
 
@@ -134,7 +138,7 @@ AL.1: local normal forms and archimedean theory, canonical archimedean factors, 
 
 ### ModularSymbolsPadicLFunctions §§1.1–1.2
 
-The signed rational period lines and saturated integral periods of §1.1, and the twisted Mellin formula of §1.2, give critical-value algebraicity for forms of weight k+2 and 0 ≤ j ≤ k. With its sign ε_(j,χ), the algebraic value is τ(χ)·j!·L(f,χ̄,j+1)/((−2πi)^j Ω_f^ε). PS.1.6 transports these periods and this complete normalization to motivic periods; L/Ω alone is not asserted algebraic.
+The signed rational period lines and saturated integral periods of §1.1, and the twisted Mellin formula of §1.2, give critical-value algebraicity for forms of weight κ+2 and 0 ≤ j ≤ κ (κ is that roadmap's k). With its sign ε_(j,χ) = (−1)^(κ−j)χ(−1), the algebraic value is τ(χ)·j!·L(f,χ̄,j+1)/((−2πi)^j Ω_f^ε), and its period symbol includes the factor 2πi of f dq/q. PS.1.6 uses the untwisted case and matches Ω_f^ε, with j = m − 1, against (2πi)·c^((−1)^m)(M_f), not against c^ε(M_f); L/Ω alone is not asserted algebraic.
 
 ### NeronModelsAndSemistableAbelianVarieties Layer 6, §6.10
 
@@ -155,10 +159,6 @@ Layer 0 (0.4 generalized Bernoulli comparison and conductors): normalized comple
 ### NoncommutativeAndEquivariantIwasawa §§2.7, 7.9
 
 §2.7 supplies noncommutativeDeterminant, Deligne's virtual-object Picard groupoid V(R) for finite projective R-modules and its universal determinant functor on perfect complexes: quasi-isomorphism invariance, exact-sequence additivity, acyclic trivializations, shift inversion, perfect-cohomology formulas and base change. Over commutative R there is a determinant-line functor to PadicMeasuresIwasawaAlgebras §5.1; this is not an equivalence for arbitrary R. §7.9 supplies the rational Fukaya–Kato fundamental object and its period-regulator data. PS.3 uses its inverse Burns–Flach orientation and PS.4 constructs the integral pullback only when its stated comparisons and perfectness hypotheses hold.
-
-### EllipticKTheory: elliptic regulator comparison
-
-What EllipticKTheory must provide (gap:cm-elliptic-regulator): the motivic regulator and Bloch's L(E,2) regulator identity for maximal-order CM elliptic curves with class-number-one CM field, including the specified cycle, differential, roots-of-unity and conductor factors and a proved nonvanishing premise wherever a regulator is inverted (needed for CM specialization of PS.3.2). This contract requests the arithmetic theorem; PS.3.2 requires that exact arithmetic theorem or an explicit exactness witness for the chosen motivic maps.
 
 ### ArithmeticGaloisDuality D7
 
@@ -222,7 +222,7 @@ This layer fixes what a period is. It takes the Betti and de Rham realizations o
 
 ### PS.0.1 The comparison determinant line
 
-Let M be a motive over ℚ with coefficients in a number field E, with Betti realization B and de Rham realization D, finite free E-modules of the same rank d, as supplied by MotivesAndAlgebraicCycles MC.2 together with the comparison of ComplexComparisonPartII C5. Integration of de Rham classes over cycles is an isomorphism β : D ⊗ ℂ → B ⊗ ℂ; Deligne's comparison is its inverse I = β⁻¹. Define comparisonPeriod M to be det I, a nonzero element of the complex line Hom(det B, det D) ⊗ ℂ. In ordered bases (b_j) of B and (d_i) of D write comparisonMatrix for the column-coordinate matrix P of I. Replacing the Betti basis b by bA and the de Rham basis d by dC changes the matrix to P′ = C⁻¹ P A, so det P′ = det(C)⁻¹ · det P · det A (Deligne, §0.4, p. 4, and §5.1, pp. 15–16, of the English translation).
+Let M be a motive over ℚ with coefficients in a number field E in Deligne's sense: a motive of MotivesAndAlgebraicCycles, which has rational coefficients, together with a ℚ-algebra map E → End(M) (Deligne, §2.1(A), p. 9). Its Betti realization B and de Rham realization D, supplied by MotivesAndAlgebraicCycles MC.2 together with the comparison of ComplexComparisonPartII C5, are E-modules by functoriality; they are finite free because E is a field, and of the same rank d because the comparison gives dim_ℚ B = dim_ℚ D. Integration of de Rham classes over cycles is an isomorphism β : D ⊗ ℂ → B ⊗ ℂ; Deligne's comparison is its inverse I = β⁻¹. Define comparisonPeriod M to be det I, a nonzero element of the complex line Hom(det B, det D) ⊗ ℂ. In ordered bases (b_j) of B and (d_i) of D write comparisonMatrix for the column-coordinate matrix P of I. Replacing the Betti basis b by bA and the de Rham basis d by dC changes the matrix to P′ = C⁻¹ P A, so det P′ = det(C)⁻¹ · det P · det A (Deligne, §0.4, p. 4, and §5.1, pp. 15–16, of the English translation).
 
 The comparison is the geometric one. Nothing here produces realizations from an arbitrary pair of vector spaces of equal dimension; extension to an admitted motive or projector is part of the realization comparison that MC.2 supplies. When all coefficient embeddings are recorded at once, use E ⊗_ℚ ℂ in place of ℂ; a coordinate matrix always refers to one embedding σ : E → ℂ.
 
@@ -270,7 +270,7 @@ The interface includes the following facts.
 
 ### PS.0.3 The period class modulo the coefficient field
 
-For the comparison line of M with coefficient field E, define `periodClass M` as the class of the comparison coordinate in (E ⊗_ℚ ℂ)^× / E^×, where u ∈ E^× acts through all embeddings simultaneously, diagonally. Its image in a selected component is a class in ℂ^× / σ(E^×). Equality of two period classes says that one element of E^× relates the two nonzero periods; it is not an equality of complex numbers and not an equality of integral generators (Deligne, §2.6, p. 11, and Conjecture 2.8, p. 12).
+For the comparison line of M with coefficient field E, define the period class of M as the class of the comparison coordinate in (E ⊗_ℚ ℂ)^× / E^×, where u ∈ E^× acts through all embeddings simultaneously, diagonally. Its image in a selected component is a class in ℂ^× / σ(E^×). Equality of two period classes says that one element of E^× relates the two nonzero periods; it is not an equality of complex numbers and not an equality of integral generators (Deligne, §2.6, p. 11, and Conjecture 2.8, p. 12).
 
 The input is a trivialization of each E-determinant line together with the comparison of PS.0.1. The class is basis-independent because changing E-bases multiplies the coordinate by det(A)/det(C) ∈ E^× (PS.0.1). Transport along coefficient embeddings uses one element of E, never independently chosen algebraic factors at different embeddings.
 
@@ -491,7 +491,7 @@ The interface includes the following facts.
 
 ### PS.1.5 The Dirichlet and Tate adapter
 
-For a primitive Dirichlet character χ with values in E, a fixed complex embedding, and the Artin motive A_χ supplied by MotivesAndAlgebraicCycles MC.2 whose finite Euler factors are those of L(χ, s), transport the Bernoulli and Gauss-sum identities to the Deligne normalization of A_χ(m). At s = 1 − n with n ≥ 1 the finite value is the complex image of `−B_{n,χ}/n` in the character convention of DirichletPadicLFunctions L0 (with Mathlib's Hurwitz values hurwitzZeta_neg_nat and `riemannZeta_neg_nat_eq_bernoulli`). A positive critical value uses Mathlib's functional equation for primitive characters, DirichletCharacter.IsPrimitive.completedLFunction_one_sub, with the dual character χ⁻¹, the root number DirichletCharacter.rootNumber and the parity of χ. The period identification of A_χ — the Gauss sum and the power of 2πi as the Betti–de Rham comparison of the Artin motive, with χ versus χ⁻¹ and the sign of the Gauss sum recorded — is part of this target, proved from the geometric comparison of MC.2 following Deligne §§6.3–6.7. For an imprimitive (induced) character each omitted Euler polynomial is kept; if one vanishes at the point, the leading-term correction of AutomorphicLFunctionsAndLocalFactors AL.5 is used, never division (Deligne, §§3.1–3.2, pp. 13–14; §§6.3–6.7, pp. 20–22).
+For a primitive Dirichlet character χ of conductor f with values in a number field E and a fixed complex embedding, let K_χ ⊂ ℚ(ζ_f) be the field cut out by χ, with (ℤ/f)^× → Gal(K_χ/ℚ) sending a to the automorphism induced by ζ_f ↦ ζ_f^a, so that arithmetic Frobenius at p ∤ f maps to p. Define A_χ as the summand of h⁰(Spec K_χ) ⊗_ℚ E on whose Betti realization, an E-line, the Galois group acts through χ⁻¹; this is Deligne's [χ⁻¹] (Deligne, §2.1, p. 9, for M ⊗_ℚ E; §§6.1–6.4, pp. 20–21). It is a motive with coefficients in E in the sense of PS.0.1, built from the Chow motive h⁰(Spec K_χ) with its projectors (MotivesAndAlgebraicCycles Layer 1), the equivalence of Artin motives with rational Galois representations (MotivesAndAlgebraicCycles §6.10) and the realizations of MC.2. Geometric Frobenius at p ∤ f acts on its étale realization by χ(p), so its finite L-function is L(χ, s). Transport the Bernoulli and Gauss-sum identities to the Deligne normalization of A_χ(m). At s = 1 − n with n ≥ 1 the finite value is the complex image of `−B_{n,χ}/n` in the character convention of DirichletPadicLFunctions L0 (with Mathlib's Hurwitz values hurwitzZeta_neg_nat and `riemannZeta_neg_nat_eq_bernoulli`). A positive critical value uses Mathlib's functional equation for primitive characters, DirichletCharacter.IsPrimitive.completedLFunction_one_sub, with the dual character χ⁻¹, the root number DirichletCharacter.rootNumber and the parity of χ. The period identification δ(A_χ) ~ τ(χ) = Σ_u χ(u)e^(2πiu/f) in (E ⊗ ℂ)^×/E^× is part of this target: Deligne's δ([ε]) ~ Σ ε⁻¹(u) ⊗ exp(−2πiu/f) at ε = χ⁻¹ is χ(−1)τ(χ), proved from the comparison of MC.2 on H⁰_dR(Spec K_χ) = K_χ following Deligne §§6.3–6.5, and δ(A_χ(m)) = (2πi)^m δ(A_χ) by PS.0.5. For an imprimitive (induced) character each omitted Euler polynomial is kept; if one vanishes at the point, the leading-term correction of AutomorphicLFunctionsAndLocalFactors AL.5 is used, never division (Deligne, §§3.1–3.2, pp. 13–14; §§6.3–6.7, pp. 20–22).
 
 The Artin realization and its period comparison are actual constructions; no one-dimensional representation is asserted motivic otherwise. The endpoint convention of DirichletPadicLFunctions L0 for the principal character of conductor one is B₁ = +1/2 in its convention; Mathlib's `bernoulli 1 = −1/2` is compared explicitly (ζ(0) = −1/2 in both).
 
@@ -499,8 +499,8 @@ To prove this, match Euler polynomials and the character/inverse convention firs
 
 The interface includes the following facts.
 
-- The finite L-function of A_χ is L(χ, s).
-- c^±(A_χ(m)) as a power of 2πi times the Gauss sum of χ or χ⁻¹, in E^×-classes.
+- The finite L-function of A_χ is L(χ, s); geometric Frobenius at p ∤ f acts by χ(p).
+- δ(A_χ(m)) ~ (2πi)^m τ(χ) in (E ⊗ ℂ)^×/E^×; at a critical m ≥ 1 F∞ acts on A_χ(m) by +1 and c⁺(A_χ(m)) = δ(A_χ(m)), while at a critical m ≤ 0 it acts by −1 and c⁺(A_χ(m)) = 1.
 - The critical values are algebraic in Deligne's sense, with the explicit coefficient.
 - The induced-character version with its Euler polynomials.
 
@@ -509,30 +509,38 @@ The interface includes the following facts.
 - ζ(−1) = −1/12 (Mathlib `riemannZeta_neg_nat_eq_bernoulli` with k = 1) and ζ(2)/(2πi)² = −1/24 are two different critical examples, of opposite sign behaviour.
 - ζ(0) = −1/2, but 0 is not a critical integer for ℚ(0); it is not a Deligne value.
 - Passing from the primitive conductor to an induced modulus multiplies by the missing factors (1 − `χ(p)p^{−s});` if one of them vanishes at the point, no normalized quotient is formed.
+- For the character χ mod 5 with χ(2) = i (odd, E = ℚ(i)), geometric Frobenius at 2 acts on A_χ by i and P₂(T) = 1 − iT, the Euler factor of L(χ, s); Deligne's [χ] gives 1 + iT, the factor of L(χ̄, s). Its critical integers are the positive odd and the nonpositive even integers, and c⁺(A_χ(1)) ~ 2πi·τ(χ).
 
-*Needs:* Layer PS.1.4; Layer PS.0.5; DirichletPadicLFunctions L0 (normalized values in a complex embedding); MotivesAndAlgebraicCycles MC.2 (Artin motives and their comparison); AutomorphicLFunctionsAndLocalFactors AL.1 (local epsilon and gamma factors) and AL.5 (Euler correction and leading term); Mathlib DirichletCharacter.IsPrimitive.completedLFunction_one_sub, DirichletCharacter.rootNumber, hurwitzZeta_neg_nat, `riemannZeta_neg_nat_eq_bernoulli`.
+*Needs:* Layer PS.1.4; Layer PS.0.5; DirichletPadicLFunctions L0 (normalized values in a complex embedding); MotivesAndAlgebraicCycles Layer 1 (projectors), §6.10 (Artin motives and Galois representations) and MC.2 (realizations and comparison); AutomorphicLFunctionsAndLocalFactors AL.1 (local epsilon and gamma factors) and AL.5 (Euler correction and leading term); Mathlib DirichletCharacter.IsPrimitive.completedLFunction_one_sub, DirichletCharacter.rootNumber, hurwitzZeta_neg_nat, `riemannZeta_neg_nat_eq_bernoulli`.
 
 ### PS.1.6 The modular period adapter
 
-Let f be a normalized cuspidal eigenform over ℚ of weight k ≥ 2 in the GL₂ scope of AutomorphicLFunctionsAndLocalFactors AL.5, with coefficient field E containing its eigenvalues, and let M_f be its rank-two motive, supplied by MotivesAndAlgebraicCycles MC.2 with its eigenprojector and comparison. M_f has Hodge types (0, k−1) and (k−1, 0), so its critical integers are 1 ≤ m ≤ k−1 (PS.1.3). Import the signed modular-symbol periods and the critical-value algebraicity theorem, including its Gauss-sum, factorial and Tate factors, from ModularSymbolsPadicLFunctions §§1.1–1.2, and the finite Euler corrections and leading terms from AL.5, and prove that the rational structure given by modular symbols matches the Betti rational structure of M_f, so that Ω_f^± and c^±(M_f) agree in E^×-classes. Only after this identification transport the formula, with the factor (2πi)^m and the sign (−1)^m that selects c^±. A scalar identity needs specified integral cycles, an invariant differential and the comparison coefficient; equality of period classes proves no scalar identity. The conductor, the ramified factors and the leading terms at imprimitive zero factors are retained (Deligne, §7.8, p. 25; (5.1.8), p. 16).
+Let f be a normalized cuspidal eigenform over ℚ of weight k ≥ 2 in the GL₂ scope of AutomorphicLFunctionsAndLocalFactors AL.5, with coefficient field E containing its eigenvalues and character values, and let M_f be its rank-two motive with coefficients in E, supplied through gap:modular-eigenprojector-motive with its eigenprojector and comparison and normalized so that L(M_f, s) = L(f, s). M_f has Hodge types (0, k−1) and (k−1, 0), so d⁺ = d⁻ = 1 and its critical integers are 1 ≤ m ≤ k−1 (PS.1.3); by the twisting rule of PS.0.4, Deligne's normalizer at m is c⁺(M_f(m)) = (2πi)^m · c^((−1)^m)(M_f) (Deligne, (7.8.3), p. 25). Import the signed modular-symbol periods Ω_f^± at the supplier's fixed embedding σ : E → ℂ and its critical-value algebraicity theorem from ModularSymbolsPadicLFunctions §§1.1–1.2: with j = m − 1 in that roadmap's weight k = κ + 2, (m−1)! · L(f, m)/((−2πi)^(m−1) Ω_f^ε) ∈ σ(E) with ε = (−1)^(k−m−1), the period symbol carrying the factor 2πi of the algebraic differential f dq/q = 2πi f(z) dz. Prove that the rational structure given by modular symbols matches the Betti rational structure of M_f, in the form
 
-This target makes no assertion about Rankin–Selberg products or about other base fields beyond AL.5's scope.
+```text
+(2πi) · c^((−1)^m)(M_f) ~ Ω_f^((−1)^(k−m−1))   in ℂ^×/σ(E^×), for 1 ≤ m ≤ k−1.
+```
 
-To prove this, compare the modular-symbol Betti structure and the algebraic de Rham eigenclass through the geometric comparison; use the Hodge pair to read the critical interval and the twist sign; then transport the imported formula and the finite Euler corrections.
+For even k this says (2πi)·c^±(M_f) ~ Ω_f^∓: the modular-symbol period of one sign is matched with 2πi times the Deligne period of the other sign, never with c^±(M_f) itself. Only after this identification transport the algebraicity theorem to DeligneAlgebraic M_f m (PS.1.4). A scalar identity needs specified integral cycles, an invariant differential and the comparison coefficient; equality of period classes proves no scalar identity. The conductor, the ramified factors and the leading terms at imprimitive zero factors are retained (Deligne, §§7.6–7.8, pp. 24–26; (5.1.8), p. 16).
+
+This target makes no assertion about twisted values, Rankin–Selberg products or other base fields beyond AL.5's scope.
+
+To prove this, compare the modular-symbol Betti structure and the algebraic de Rham eigenclass f dq/q through the geometric comparison of the eigenprojector motive (Deligne §7.6 expresses these periods through the Eichler integrals of f(q) dq/q); use the Hodge pair to read the critical interval and the twist sign; then transport the imported formula and the finite Euler corrections.
 
 The interface includes the following facts.
 
-- Ω_f^± ~ c^±(M_f) in E^×-classes.
-- Deligne algebraicity of L(f, m) for 1 ≤ m ≤ k−1, with the explicit sign selection.
+- (2πi)·c^((−1)^m)(M_f) ~ Ω_f^((−1)^(k−m−1)) in ℂ^×/σ(E^×) for 1 ≤ m ≤ k−1.
+- Deligne algebraicity of L(f, m) for 1 ≤ m ≤ k−1, with this sign selection.
 - Replacing Ω by uΩ changes the coefficient by u⁻¹.
 
 **Checks.**
 
-- For k = 2 only m = 1 is critical, and (−1)^1 selects the minus period before the Tate factor.
+- For k = 2 only m = 1 is critical; (−1)^1 selects c⁻(M_f), and ε = (−1)^0 selects Ω_f⁺, so L(f, 1)/Ω_f⁺ ∈ σ(E). For k = 4 the pairs at m = 1, 2, 3 are (c⁻, Ω⁺), (c⁺, Ω⁻), (c⁻, Ω⁺); a rule pairing equal signs fails at every m.
+- Weight-two witness: for the curve y² = x(1−x)(1−x/2) of PS.0.5, M_f = h¹(E) and f dq/q pulls back to a nonzero rational multiple of ω. Legendre's relation at modulus 1/√2, with H = 2E(1/√2) and J = 2(K − E(1/√2)), gives K(H − J) = π, so det B = 4πi. Hence c⁻(h¹(E)) = 2K/det B = K/(2πi) and c⁺(h¹(E)) = −2iK/det B = −K/(2π). With Ω⁺ = 2K and Ω⁻ = 2iK the periods of ω over γ_a and γ_b, 2πi·c⁻ = Ω⁺/2 and 2πi·c⁺ = −Ω⁻/2, whereas c⁻/Ω⁻ = −1/(4π) is irrational: the same-sign identification fails.
 - Replacing Ω by uΩ with u ∈ E^× changes the exact coefficient by u⁻¹ and preserves the E^×-class.
 - A vanishing local correction factor is handled at the correct derivative order through AL.5, not by division.
 
-*Needs:* Layer PS.1.4; ModularSymbolsPadicLFunctions §§1.1–1.2 (signed periods and critical-value algebraicity); AutomorphicLFunctionsAndLocalFactors AL.5 (finite Euler corrections and leading terms); MotivesAndAlgebraicCycles MC.2 (modular eigenprojector motives); TauCetiRoadmap ModularForms Layer 8.
+*Needs:* Layer PS.1.4; Layer PS.0.5 (for the weight-two witness); ModularSymbolsPadicLFunctions §§1.1–1.2 (signed periods and critical-value algebraicity); AutomorphicLFunctionsAndLocalFactors AL.5 (finite Euler corrections and leading terms); MotivesAndAlgebraicCycles gap:modular-eigenprojector-motive (modular eigenprojector motives); TauCetiRoadmap ModularForms Layer 8.
 
 ### PS.1.7 Serre's functional-equation predicate
 
@@ -593,7 +601,7 @@ The interface includes the following facts.
 
 ### Dependencies
 
-Layer PS.0; ArithmeticGaloisRepresentations §§2.4–2.6, §3.3; AutomorphicLFunctionsAndLocalFactors AL.1, AL.3, AL.4, AL.5; DirichletPadicLFunctions L0; MotivesAndAlgebraicCycles MC.2; NeronModelsAndSemistableAbelianVarieties §6.10; WeilConjectures WC.1–WC.2; EtaleDualityAndPerverseSheaves Layer 0, §§0.5–0.6; TauCetiRoadmap ModularForms Layer 8; Mathlib `Complex.Gammaℝ`, `Complex.Gammaℂ`, riemannZeta, DirichletCharacter.completedLFunction.
+Layer PS.0; ArithmeticGaloisRepresentations §§2.4–2.6, §3.3; AutomorphicLFunctionsAndLocalFactors AL.1, AL.3, AL.4, AL.5; DirichletPadicLFunctions L0; MotivesAndAlgebraicCycles Layer 1, MC.2, §6.10 and gap:modular-eigenprojector-motive; NeronModelsAndSemistableAbelianVarieties §6.10; WeilConjectures WC.1–WC.2; EtaleDualityAndPerverseSheaves Layer 0, §§0.5–0.6; TauCetiRoadmap ModularForms Layer 8; Mathlib `Complex.Gammaℝ`, `Complex.Gammaℂ`, riemannZeta, DirichletCharacter.completedLFunction.
 ## Layer PS.2: formal periods and the evaluation comparison
 
 MotivesAndAlgebraicCycles Layer 6 owns the algebra of formal periods, its relations, its localization at the Tate period, and the theorem of Huber and Müller-Stach that its spectrum is the torsor of tensor isomorphisms between the de Rham and Betti fibre functors on Nori motives. This layer uses the marked evaluation and comparison point supplied by MotivesAndAlgebraicCycles §§5.7, 6.7–6.9, and compares its β-convention with the inverse I of PS.0. It ends with the rank-one Tate case, where everything is explicit.
@@ -740,30 +748,32 @@ The interface includes the following facts.
 
 *Needs:* Layers PS.3.1 and PS.0.4; Mathlib `Matrix.det_smul`.
 
-### PS.3.2a Number-field regulators and their normalization
+### PS.3.2a Number-field regulators in the fundamental line
 
-First prove Borel's stable comparison for every number field F: with G=Res_(F/ℚ) SL_n, maximal compact K⊂G(ℝ), and Lie algebras g and k, inclusion of invariant differential forms induces H^i(g,k;ℝ) ≃ H^i(SL_n(O_F),ℝ) whenever i≥0 and n≥4i+5. Use the imported symmetric-space and quotient carriers, and finite-stabilizer descent over ℝ for this non-neat arithmetic group. Prove compatibility in n with block inclusions, and identify rational K-groups in positive degrees with primitive stable homology through the plus/Q comparison. Construct the embedding-space regulators by the primitive classes and their complex-conjugation action (DG §1.6, equations (1.6.1)–(1.6.10), pp. 10–13). These are arithmetic comparison theorems here, rather than assumed consequences of the dimension formula.
+For every number field F of degree N = r₁ + 2r₂ and every integer j ≥ 2, let M = h⁰(Spec F)(j) and d_j = r₁ + r₂ for odd j, d_j = r₂ for even j. Prove that the real exactness hypothesis of PS.3.2 holds for M with the supplied number-field regulator, and compute θ_∞ in bases. The arithmetic inputs are imported, not reconstructed: rational localization from O_F to F and Borel's ranks (d_j is the rank of K_(2j−1)(O_F)) from ArithmeticKTheory §§3.3–3.4; the Chern-normalized regulator r_Bo, its real isomorphism and its functoriality from BorelRegulators §§2.1–2.3; the point Deligne identification and r_Bo = −2·r_Be from BorelRegulators §§6.0a–6.2; and the Adams weight from BorelRegulators §6.3.
 
-For every number field F and every integer j ≥ 2, construct the renormalized Borel regulator of Burgos §9.5 on K_(2j−1)(O_F) into the conjugation-fixed real embedding space of parity j−1. Prove that its real scalar extension is an isomorphism. Its rank d_j is r₁+r₂ for odd j and r₂ for even j; positive even K-groups are rationally zero, K₁(O_F) has rank r₁+r₂−1, and localization identifies higher odd rational K-groups of O_F and F. Prove also that ψ^a acts on K_(2j−1)(F)⊗ℚ by a^j for every positive integer a, using compatibility of the Chern character with Adams operations and injectivity of the regulator (DG §1.6, pp. 12–13). Construct the Beilinson regulator on the same K-group through the Deligne cohomology C/ℝ(j), with projection z ↦ (z+(−1)^(j−1)z̄)/2. In these normalizations r_Borel = 2 r_Beilinson, so the ordered determinant comparison is 2^(d_j), including determinant 1 when d_j=0 (Burgos, Theorems 9.9, 9.12 and 10.9, pp. 72–74, 95–97; DG §1.6 for the rational K-theory input to mixed Tate motives).
+The statement has three parts. First, H_f¹(M) = H¹_M(Spec F, ℚ(j)) is K_(2j−1)(F)^(j) ⊗ ℚ by gap:motivic-cohomology-adams, which is all of K_(2j−1)(F) ⊗ ℚ because ψ^a acts on it by a^j, and is K_(2j−1)(O_F) ⊗ ℚ by rational localization; H_f⁰(M) = 0 because K_(2j)(F) ⊗ ℚ = 0 (ArithmeticKTheory §3.4), and both motivic cohomology modules of M^∨(1) = h⁰(Spec F)(1 − j) vanish because the same comparison makes them K-groups of F in the negative degrees 2 − 2j and 1 − 2j. Second, on the real side H_dR(M) = F has Hodge type (−j, −j), so F⁰ = 0 and t_M = F; the map α : B⁺_ℝ → t_(M,ℝ) is injective, dim B⁺ = N − d_j, and coker α is (∏_σ ℂ/ℝ(j))^conj, the point Deligne cohomology H¹_D(Spec(F) ×_ℚ ℝ, ℝ(j)) that BorelRegulators §6.1 identifies with V_j(F). Third, the regulator H_f¹(M)_ℝ → coker α of PS.3.2 is r_Be ⊗ ℝ under these identifications; it is an isomorphism because r_Bo is one and r_Be = −r_Bo/2. Hence the exact sequence of PS.3.2 reduces to 0 → H_f¹(M)_ℝ → coker α → 0 with ker α = 0, θ_∞ exists, and in one ordered ℚ-basis of K_(2j−1)(O_F) ⊗ ℚ and BorelRegulators' selected embedding coordinates det r_Bo = (−2)^(d_j) · det r_Be, including the empty determinant 1 when d_j = 0 (Deligne, §3.1, pp. 13–14, for the Tate realizations; Burgos, Theorem 10.9, printed pp. 95–97, for the factor in Burgos's evaluation convention).
 
-The K-groups and their localization maps are those of GeneralAlgebraicKTheory. This target constructs their arithmetic regulator maps and the isomorphism theorem, rather than assuming a regulator is any invertible real matrix. PS.3.2 needs the regulator exactness witness for its motive; this theorem supplies the number-field instances.
+Rationality and integrality of the leading term of these motives are the predicates of PS.3.3 and PS.5.2; the proved abelian case is PS.5.4.
+
+To prove this, compute the realizations of h⁰(Spec F)(j) from MotivesAndAlgebraicCycles MC.2 with the Tate scalar of PS.0.5, identify coker α with the point quotient of BorelRegulators §6.1 by taking simultaneous-conjugation invariants (2 is invertible), transport H_f¹(M) to K-theory through gap:motivic-cohomology-adams, the Adams weight and rational localization, and take determinants with the sign of BorelRegulators §6.2.
 
 The interface includes the following facts.
 
-- Stable invariant forms compute the arithmetic cohomology in the stated range, and the compatible primitive comparison determines the regulator map.
-- The regulator is natural for number-field embeddings and transfers and uses one simultaneous embedding space with conjugation parity.
-- Real extension is an isomorphism in the stated rank, hence the rational regulator is injective.
-- Borel and Beilinson maps have ratio 2, and their ordered determinants have ratio 2^(d_j).
+- H_f¹(h⁰(Spec F)(j)) ≅ K_(2j−1)(O_F) ⊗ ℚ has dimension d_j, and the other three motivic cohomology modules of PS.3.1 are zero.
+- ker α = 0, dim B⁺ + d_j = N, and coker α ≅ H¹_D(Spec(F) ×_ℚ ℝ, ℝ(j)) ≅ V_j(F).
+- The regulator of PS.3.2 for M is the supplied Beilinson regulator and is a real isomorphism; hence θ_∞ exists for every F and every j ≥ 2.
+- In the same ordered bases, det r_Bo = (−2)^(d_j) · det r_Be.
 
 **Checks.**
 
-- At i=0,n=5 the stable comparison sends the constant class 1 to 1 on a connected arithmetic quotient. At i=1,n=9 the SL comparison has H¹=0 on both sides. The degree-one GL contribution for a real quadratic field is instead one-dimensional, so forgetting the unit summand would give 0 instead of 1.
-- F=ℚ, j=2 has d_j=0, zero source after rationalization and determinant ratio 1; j=3 has d_j=1 and ratio 2.
-- An imaginary quadratic F has r₁=0, r₂=1, so d₂=d₃=1 and both determinant ratios are 2.
-- At j=3, ψ² acts by 8 on the rank-one rational K₅ of ℚ; on the rank-two K₅ of a real quadratic field its determinant is 64. At j=2 over ℚ the space is zero and that determinant is 1.
-- A real quadratic field has d₂=0 and d₃=2, giving ratios 1 and 4. The degree-one unit rank is 1, which requires the Dirichlet regulator rather than the j≥2 statement.
+- F = ℚ, j = 2: d₂ = 0, K₃(ℤ) ⊗ ℚ = 0, B⁺ = ℚ·(2πi)² is a line and α is an isomorphism onto t_M; the determinant ratio is the empty value 1. A rank function with r₁ + r₂ in even weight would give d₂ = 1 and contradict K₃(ℤ) ⊗ ℚ = 0.
+- F = ℚ, j = 3: d₃ = 1 and B⁺ = 0. If r_Bo(x) = t on a generator x, then r_Be(x) = −t/2 and the signed ratio is −2; Burgos's evaluation of the same class is +t/2, so the factor +2 belongs to his convention, not to the shared coordinate used here.
+- An imaginary quadratic F has r₁ = 0 and r₂ = 1: d₂ = d₃ = 1, dim B⁺ = 1 in both weights, and both signed ratios are −2.
+- A real quadratic F has d₂ = 0 and d₃ = 2, with signed ratios 1 and (−2)² = 4; ψ² acts on its rank-two K₅ ⊗ ℚ by 8 with determinant 64, and on the zero space at j = 2 with determinant 1. Its degree-one unit rank 1 belongs to the Dirichlet regulator, outside j ≥ 2.
+- Over ℚ, P₂(1) = 1 and P₂(i) = 0, so V₃(ℚ) is a line, while P₁(1) = 0 and V₂(ℚ) = 0. Projecting onto the other Tate axis exchanges these dimensions and contradicts d₂ = 0, d₃ = 1.
 
-*Needs:* ArithmeticLocallySymmetricSpaces ALS.0.4–ALS.0.9, ALS.F.5, ALS.5b.1 (native symmetric spaces, finite-stabilizer quotients and invariant forms); GeneralAlgebraicKTheory §§3.12, 5.7, 5.11, 6.1–6.3 (K-theory space, homotopy groups and localization); [NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md) (embeddings, units and degree-one regulator). Application to the fundamental line uses the explicit exactness hypothesis of PS.3.2.
+*Needs:* Layers PS.3.2, PS.0.2 and PS.0.5; ArithmeticKTheory §§3.3–3.4; BorelRegulators §§2.1–2.3 and 6.0a–6.3; MotivesAndAlgebraicCycles MC.2 and gap:motivic-cohomology-adams; [NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md) (embeddings and the degree-one boundary).
 
 ### PS.3.3 Leading terms and their rationality
 
@@ -798,7 +808,7 @@ The interface includes the following facts.
 
 ### Dependencies
 
-Layers PS.0–PS.1; PS.3.2a; TauCetiRoadmap PadicMeasuresIwasawaAlgebras §5.1; GeneralAlgebraicKTheory §§4.15–4.17; [NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md) (boundary).
+Layers PS.0–PS.1; TauCetiRoadmap PadicMeasuresIwasawaAlgebras §5.1; GeneralAlgebraicKTheory §§4.15–4.17; NoncommutativeAndEquivariantIwasawa §§2.7, 7.9; ArithmeticKTheory §§3.3–3.4; BorelRegulators §§2.1–2.3, 6.0a–6.3; MotivesAndAlgebraicCycles gap:motivic-cohomology-adams; [NumberFieldArithmetic](../../Completed/NumberFieldArithmetic/README.md) (boundary).
 ## Layer PS.4: integral fundamental lines and local corrections
 
 This layer puts integral structures into the rational line of Layer PS.3: the λ-adic lattice from compactly supported cohomology of a Galois-stable lattice, the exact formula for the correction a finite complex contributes, the local Euler and Tamagawa terms, and the restriction at the prime 2 forced by real places. Determinants follow TauCetiRoadmap PadicMeasuresIwasawaAlgebras Layer 5: det C = ⊗_i `det(C^i)^{(−1)^i},` and an acyclic complex has a canonical trivialization under which [A --a--> A] in degrees 0, 1 has image aA and in degrees −1, 0 has image a⁻¹A.
@@ -971,7 +981,7 @@ The interface includes the following facts.
 
 ### PS.5.2 The equivariant Tamagawa number conjecture as a predicate
 
-With the data of PS.5.1, define the predicate `ETNC M O` as the conjunction of four separate propositions: (i) continuation of L_A(M, s) to s = 0; (ii) the componentwise order ord_(s=0) L_A(M, s) equals the predicted order of PS.3.3, namely rr_A(H_f¹(M^∨(1))^*) − rr_A(H_f⁰(M^∨(1))^*), with rr_A the reduced rank; (iii) rationality, TΩ(M, O) ∈ Cl(O, ℚ) ⊂ Cl(O, ℝ); (iv) integrality, TΩ(M, O) = 0. Localized variants specify O[1/S] or O_λ and the induced relative class. The four parts are stored separately, so that a proof of the order or of rationality is never read as integrality. A theorem carries its exact motive, order and primes (BF, Conjecture 4(i)–(iv), pp. 535–536; Conjectures 5–6, pp. 536–537).
+With the data of PS.5.1, define the predicate ETNC(M, O) as the conjunction of four separate propositions: (i) continuation of L_A(M, s) to s = 0; (ii) the componentwise order ord_(s=0) L_A(M, s) equals the predicted order of PS.3.3, namely rr_A(H_f¹(M^∨(1))^*) − rr_A(H_f⁰(M^∨(1))^*), with rr_A the reduced rank; (iii) rationality, TΩ(M, O) ∈ Cl(O, ℚ) ⊂ Cl(O, ℝ); (iv) integrality, TΩ(M, O) = 0. Localized variants specify O[1/S] or O_λ and the induced relative class. The four parts are stored separately, so that a proof of the order or of rationality is never read as integrality. A theorem carries its exact motive, order and primes (BF, Conjecture 4(i)–(iv), pp. 535–536; Conjectures 5–6, pp. 536–537).
 
 The coherence, projective structure and real regulator hypotheses of BF Conjecture 4 are part of the data; all centre components and reduced ranks are retained.
 
@@ -1009,9 +1019,9 @@ The interface includes the following facts.
 
 **Checks.**
 
-- The target of ζ is d RΓ_c⁻¹, not d RΓ_c.
-- Specialization produces M(ρ^*), and the Galois action involves ḡ⁻¹.
-- The commutative comparison recovers δ̂(L*) + RΩ = 0 in the BF orientation.
+- For C = [ℤ₃ --3--> ℤ₃] in degrees 0, 1, the acyclic trivialization gives d(C) the lattice 3ℤ₃ and d(C)⁻¹ the lattice 3⁻¹ℤ₃, which is also the lattice of d(C[1]); a target d(C) instead of d(C)⁻¹ changes the 3-adic valuation of a generator from −1 to +1.
+- For G = C₃ = ⟨g⟩ and ρ = χ with χ(g) = ω a primitive cube root of unity, ρ^*(g) = ω² ≠ ω, so specialization at M(ρ^*) and at M(ρ) see different characters; the diagonal action multiplies the Iwasawa factor by ḡ⁻¹, which ρ sends to ω² as well.
+- If ζ generates Δ_ℤ with θ_(∞,FK)(ζ) = 3, then Ξ_ℤ = Δ_ℤ⁻¹ has θ_∞(Ξ_ℤ) = 3⁻¹ℤ, so RΩ has 3-adic valuation −1 and δ̂(3) has +1, and TΩ has valuation 0; reading ζ as a generator of Ξ_ℤ instead gives the lattice 3ℤ and valuation 2.
 - The unshifted pair [RΓ_c, ζ] is rejected when ζ has inverse-determinant target; no untyped composition supplies a normalized leading term.
 
 *Needs:* Layers PS.5.2 and PS.3.1; NoncommutativeAndEquivariantIwasawa NE.7 (Fukaya–Kato zeta isomorphism, local epsilon isomorphism, and the shifted determinant comparison).
@@ -1053,7 +1063,7 @@ This layer states the Tamagawa number conjecture in Bloch and Kato's original fo
 
 ### PS.6.1 Bloch–Kato motivic pairs
 
-A Bloch–Kato motivic pair over ℚ consists of finite-dimensional ℚ-vector spaces V and D, a continuous action of the absolute Galois group on V ⊗ 𝔸_f preserving V under the selected real conjugation, a decreasing exhaustive separated filtration (D^i) on D, and filtered comparisons D ⊗ ℚ_p ≃ D_dR(V_p) and D ⊗ ℝ ≃ (V ⊗ ℂ)^+ for the diagonal real action, subject to the four axioms of BK Definition 5.5: (P1) outside finitely many p, every V_ℓ with ℓ ≠ p is unramified at p and V_p is crystalline; (P2) for all rational lattices T ⊂ V and L ⊂ D, outside a finite set of p depending on T and L, the filtered crystalline module has integers i ≤ 0 < j with D^i = D, D^j = 0 and j − i < p, L ⊗ ℤ_p is strongly divisible, and its Fontaine–Laffaille realization is T ⊗ ℤ_p; (P3) for every p, all local polynomials P_p(V_ℓ, u), including the crystalline one at ℓ = p, have coefficients in ℚ and coincide; (P4) at every p there is a stable adelic lattice whose unramified H⁰ with ℓ-primary divisible coefficients is divisible for almost all ℓ. The pair has weight ≤ w when all local reciprocal roots have absolute value ≤ `p^{w/2}` and D_∞^i ∩ V_∞^+ = 0 for i > w/2. A motivic triple adds a finite-dimensional ℚ-space Φ with isomorphisms R_∞ : Φ ⊗ ℝ ≃ D_∞/(D_∞⁰ + V_∞^+) and R_Gal : Φ ⊗ 𝔸_f ≃ `H¹_{f,Spec ℤ}(ℚ,` V ⊗ 𝔸_f). Being induced by a geometric motive is the additional identification of these data with realizations and regulators of an actual motive (MotivesAndAlgebraicCycles MC.2, with the actual regulator identifications as explicit data), never a consequence of the axioms (Bloch–Kato (BK), Definition 5.5 and 5.5.1, pp. 371–372; triple comparisons, p. 374; Theorem 4.1(iii), p. 362).
+A Bloch–Kato motivic pair over ℚ consists of finite-dimensional ℚ-vector spaces V and D, a continuous action of the absolute Galois group on V ⊗ 𝔸_f preserving V under the selected real conjugation, a decreasing exhaustive separated filtration (D^i) on D, and filtered comparisons D ⊗ ℚ_p ≃ D_dR(V_p) and D ⊗ ℝ ≃ (V ⊗ ℂ)^+ for the diagonal real action, subject to the four axioms of BK Definition 5.5: (P1) outside finitely many p, every V_ℓ with ℓ ≠ p is unramified at p and V_p is crystalline; (P2) for all rational lattices T ⊂ V and L ⊂ D, outside a finite set of p depending on T and L, the filtered crystalline module has integers i ≤ 0 < j with D^i = D, D^j = 0 and j − i < p, L ⊗ ℤ_p is strongly divisible, and its Fontaine–Laffaille realization is T ⊗ ℤ_p; (P3) for every p, all local polynomials P_p(V_ℓ, u), including the crystalline one at ℓ = p, have coefficients in ℚ and coincide; (P4) at every p there is a stable adelic lattice whose unramified H⁰ with ℓ-primary divisible coefficients is divisible for almost all ℓ. The pair has weight ≤ w when all local reciprocal roots have absolute value ≤ `p^{w/2}` and D_∞^i ∩ V_∞^+ = 0 for i > w/2. For a pair of weight ≤ −3, a motivic triple adds a finite-dimensional ℚ-space Φ with isomorphisms R_∞ : Φ ⊗ ℝ ≃ D_∞/(D_∞⁰ + V_∞^+) and R_Gal : Φ ⊗ 𝔸_f ≃ `H¹_{f,Spec ℤ}(ℚ,` V ⊗ 𝔸_f) (BK, p. 374). In pure weight −1 the two dimension counts are incompatible with a nonzero finite Selmer space: D_∞⁰ ∩ V_∞^+ = 0 and dim D_∞⁰ + dim V_∞^+ = dim D_∞, so R_∞ forces Φ = 0 and R_Gal then forces H¹_f = 0. Being induced by a geometric motive is the additional identification of these data with realizations and regulators of an actual motive (MotivesAndAlgebraicCycles MC.2, with the actual regulator identifications as explicit data), never a consequence of the axioms (Bloch–Kato (BK), Definition 5.5 and 5.5.1, pp. 371–372; triple comparisons, p. 374; Theorem 4.1(iii), p. 362).
 
 The Galois representations, period modules and small-weight crystalline realization are imported (FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.P3, R07.P5 for period sequences and realizations; SelmerIwasawaCohomology §4.7 for the small-weight comparison). The Bloch–Kato finite Selmer cohomology is the condition finite at every finite place (SelmerIwasawaCohomology L2, L4). No geometric P3 or P4 and no regulator bijectivity is inserted silently.
 
@@ -1072,12 +1082,13 @@ The interface includes the following facts.
 - In a rank-one Tate comparison, replacing the de Rham lattice L by qL while fixing the Betti lattice T forces q into the P2 exceptional set; one finite set cannot serve all lattice changes.
 - Agreement of P_p(V_ℓ) only for ℓ ≠ p fails P3 unless the crystalline factor at p also matches.
 - The unit pair ℚ(0) has V_∞^+ ≠ 0 and D_∞⁰ = D_∞, so it fails weight ≤ −3 at i = 0.
+- For E : y² = x³ − 2, P = (3, 5) has 2P with x-coordinate 129/100, which is not integral, so P has infinite order (Nagell–Lutz). For h¹(E)(1), of weight −1, D_∞ has dimension 2 and D_∞⁰ and V_∞^+ are complementary lines, so D_∞/(D_∞⁰ + V_∞^+) = 0, while the Kummer map puts E(ℚ) ⊗ ℚ_p ≠ 0 into H¹_f(ℚ, V_p) (BK Proposition 5.4). No triple exists for this pair.
 
 *Needs:* MotivesAndAlgebraicCycles MC.2 (realization equivalence); the explicit regulator comparisons of the triple; SelmerIwasawaCohomology L2 (Galois Selmer groups) and §§4.7, 4.9 (small-weight comparison and finite condition); FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.P3, R07.P5 (period sequences and realizations).
 
 ### PS.6.2 Bloch–Kato points, the Tamagawa measure and Sha
 
-For a motivic pair of weight ≤ −1 and a stable lattice T, define local points A_T(ℚ_p) = H¹_f(ℚ_p, T ⊗ ℤ̂) for finite p and A_T(ℝ) = ((D_∞ ⊗ ℂ)/(D_∞⁰ ⊗ ℂ + T))^+ for the diagonal real action, and, given the triple regulator identifications of PS.6.1, global points A_T(ℚ) as the inverse image of R_Gal(Φ) in `H¹_{f,Spec ℤ}(ℚ,` T ⊗ ℤ̂); its rationalization is Φ and its profinite completion is the integral finite Selmer group, under the given triple comparisons. The rational Bloch–Kato exponential has domain D_p/D_p⁰ and target H¹_f(ℚ_p,V_p). Choose an open neighborhood U of zero on which it lifts to the integral local points A_T(ℚ_p); the lift is an isomorphism onto an open subgroup. Transport the measure defined by a rational nonzero top form ω ∈ det(D/D⁰)^* on this neighborhood and extend by translation. Restricting to a common smaller neighborhood proves independence of U; at all sufficiently good p the total mass is P_p(V, 1). For weight ≤ −3 the product of these masses converges; define the Tamagawa measure μ as the product of the finitely many bad and real measures with the probability product over good primes, rescaled by ∏ P_p(V, 1). Since `μ_{p,aω}` = |a|_p `μ_{p,ω},` the product formula makes μ independent of ω. A lift of the real regulator A_T(ℚ) → A_T(ℝ)/A_T(ℝ)_cpt defines the diagonal arithmetic subgroup, whose real image is discrete and cocompact; set Tam(T) to the induced volume of `∏_{p ≤ ∞}` A_T(ℚ_p)/A_T(ℚ), independent of the lift. Finally
+For a motivic pair of weight ≤ −1 and a stable lattice T, define local points A_T(ℚ_p) = H¹_f(ℚ_p, T ⊗ ℤ̂) for finite p and A_T(ℝ) = ((D_∞ ⊗ ℂ)/(D_∞⁰ ⊗ ℂ + T))^+ for the diagonal real action. For a triple of weight ≤ −3 (PS.6.1) define global points A_T(ℚ) as the inverse image of R_Gal(Φ) in `H¹_{f,Spec ℤ}(ℚ,` T ⊗ ℤ̂); its rationalization is Φ and its profinite completion is the integral finite Selmer group, under the given triple comparisons. The rational Bloch–Kato exponential has domain D_p/D_p⁰ and target H¹_f(ℚ_p,V_p). Choose an open neighborhood U of zero on which it lifts to the integral local points A_T(ℚ_p); the lift is an isomorphism onto an open subgroup. Transport the measure defined by a rational nonzero top form ω ∈ det(D/D⁰)^* on this neighborhood and extend by translation. Restricting to a common smaller neighborhood proves independence of U; at all sufficiently good p the total mass is P_p(V, 1). For weight ≤ −3 the product of these masses converges; define the Tamagawa measure μ as the product of the finitely many bad and real measures with the probability product over good primes, rescaled by ∏ P_p(V, 1). Since `μ_{p,aω}` = |a|_p `μ_{p,ω},` the product formula makes μ independent of ω. A lift of the real regulator A_T(ℚ) → A_T(ℝ)/A_T(ℝ)_cpt defines the diagonal arithmetic subgroup, whose real image is discrete and cocompact; set Tam(T) to the induced volume of `∏_{p ≤ ∞}` A_T(ℚ_p)/A_T(ℚ), independent of the lift. Finally
 
 ```text
 Sha(T) = ker[ H¹(ℚ, T ⊗ ℚ/ℤ)/(A_T(ℚ) ⊗ ℚ/ℤ) → ⊕_{p ≤ ∞} H¹(ℚ_p, T ⊗ ℚ/ℤ)/(A_T(ℚ_p) ⊗ ℚ/ℤ) ],
@@ -1091,7 +1102,7 @@ For weight ≤ −1 assume in addition that the Euler-product L_S(V,s) has a mer
 μ = C_S · (⊗_(v∈S) μ_(v,ω)) ⊗ (⊗_(p∉S) P_p(V,1)⁻¹ μ_(p,ω)),
 ```
 
-where S contains infinity and every exceptional prime of the good-mass formula. Every factor outside S is a probability measure; weight ≤ −1 makes P_p(V,1)>0 since every real reciprocal root is <1 and nonreal roots pair by conjugation. Prove agreement with the absolutely convergent measure in weight ≤ −3, independence of S, of ω and of the local exponential neighborhood, and retain the actual triple regulator comparisons when forming the global quotient (BK (5.9.1), p. 374). Enlarging S by p replaces C_S by C_S/P_p(V,1), while the newly unnormalized p-factor replaces its probability measure by P_p(V,1) times it; the two changes cancel.
+where S contains infinity and every exceptional prime of the good-mass formula. Every factor outside S is a probability measure; weight ≤ −1 makes P_p(V,1)>0 since every real reciprocal root is <1 and nonreal roots pair by conjugation. Prove agreement with the absolutely convergent measure in weight ≤ −3 and independence of S, of ω and of the local exponential neighborhood (BK (5.9.1), p. 374). The global quotient and Tam(T) are formed only for triples, hence in weight ≤ −3; in weight −1 the regularized local measures supply the local normalizations of the determinant formulation of PS.6.3, which keeps the Mordell–Weil space and its height pairing instead of a discrete quotient by a global point group. Enlarging S by p replaces C_S by C_S/P_p(V,1), while the newly unnormalized p-factor replaces its probability measure by P_p(V,1) times it; the two changes cancel.
 
 The cohomology groups, local exponential maps and their topologies are the suppliers' (FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P3 for period fundamental sequences and SelmerIwasawaCohomology §§2.9, 4.9 for the finite condition). Every Haar measure uses its Borel structure and local compactness (Mathlib MeasureTheory.Measure.haarMeasure); the good factors are normalized to probability measures before Mathlib MeasureTheory.Measure.infinitePi is applied, since that product is defined only for probability measures.
 
@@ -1103,7 +1114,7 @@ The interface includes the following facts.
 - With its rationalization and completion maps.
 - Outside a proved finite set the ω-normalized mass is P_p(V, 1).
 - The convergent or regularized measure with independence of S, top form and local neighborhood.
-- Tam(T), with discreteness, cocompactness and lift-independence.
+- For triples of weight ≤ −3, Tam(T), with discreteness, cocompactness and lift-independence.
 - The displayed kernel.
 
 **Checks.**
@@ -1169,13 +1180,13 @@ The interface includes the following facts.
 
 ### PS.6.5 The Bloch–Kato Tamagawa number conjecture as a predicate
 
-For a motivic triple (V, D, Φ) of weight ≤ −1, with the continuation and nonzero-germ hypothesis of PS.6.2 when regularization is needed, with its real and adelic regulator identifications, and a ℤ-lattice T ⊂ V whose adelic extension is Galois stable, use the points, measure and Sha of PS.6.2 to define BlochKatoTamagawa V D Φ T as: Sha(T) is finite and
+For a motivic triple (V, D, Φ) of weight ≤ −3 (PS.6.1), with its real and adelic regulator identifications, and a ℤ-lattice T ⊂ V whose adelic extension is Galois stable, use the points, measure and Sha of PS.6.2 to define BlochKatoTamagawa V D Φ T as: Sha(T) is finite and
 
 ```text
 Tam(T) = #H⁰(ℚ, T^* ⊗ ℚ/ℤ(1)) / #Sha(T),     T^* = Hom_ℤ(T, ℤ).
 ```
 
-Both finiteness and the equality are conjectural in general. The fixed-ℓ formulation of BK Remark 5.15.2 is a separate localized statement under weaker ℓ-adic and regulator hypotheses and does not imply finiteness at all primes. In weight −1 prove compatibility with the elliptic adapter of PS.6.3: under its Kummer, regulator, local-index and finiteness hypotheses, the regularized measure statement yields exactly the same scalar BSD identity (BK, Definition 5.5, pp. 371–372; Definition 5.9 and (5.11)–(5.13), pp. 373–375; Proposition 5.14 and Conjecture 5.15 with Remark 5.15.2, pp. 375–377).
+Both finiteness and the equality are conjectural in general. The fixed-ℓ formulation of BK Remark 5.15.2 is a separate localized statement under weaker ℓ-adic and regulator hypotheses and does not imply finiteness at all primes. The weight ≤ −3 hypothesis is Bloch and Kato's for global triples; for h¹(E)(1), of weight −1, no triple exists once E(ℚ) is infinite (PS.6.1), and the elliptic statement is the determinant formulation of PS.6.3 with its Mordell–Weil space and nondegenerate height pairing, the regularized local measures of PS.6.2 giving its local normalizations (BK, Definition 5.5, pp. 371–372; Definition 5.9 and (5.11)–(5.13), pp. 373–375; Proposition 5.14 and Conjecture 5.15 with Remark 5.15.2, pp. 375–377; pure weight −1 with the height discriminant, pp. 382–383).
 
 The triple comes from an actual motive and satisfies the axioms of PS.6.1, with its global regulator identifications supplied.
 
@@ -1184,14 +1195,14 @@ To prove the structural statements, use the top-form and lift independence of PS
 The interface includes the following facts.
 
 - Total finiteness of Sha(T), not each primary part.
-- The Tamagawa number equals dual torsion divided by the total Sha order, with the stated finiteness and continuation premises.
+- The Tamagawa number equals dual torsion divided by the total Sha order, with the stated finiteness premise.
 - Rescaling the top form changes local measures with product 1.
 - BK Proposition 5.14 between stable lattices in the same realization.
 - The global identity implies its fixed-ℓ version, with no converse to total finiteness.
 
 **Checks.**
 
-- The weight −1 elliptic realization uses the regularized measure and the PS.6.3 compatibility; ℚ(2), of weight −4, uses the convergent product.
+- ℚ(2), of weight −4, falls under the weight ≤ −3 statement and uses the convergent product. The weight −1 pair h¹(E)(1) for y² = x³ − 2 has no triple (PS.6.1), so the predicate does not apply to it; its Kummer line and height determinant are kept by PS.6.3.
 - For the zero triple, L_S=1, r=0 and C_S=1, so regularization agrees with Tam=1.
 - ⊕_p ℤ/p has finite p-primary parts but is infinite, so primary finiteness does not witness the predicate.
 - Scaling the top form by a nonzero rational a changes the product measure by ∏_v |a|_v = 1.
@@ -1340,7 +1351,7 @@ The interface includes the following facts.
 
 ### PS.7.4 The period conjecture and the special-value predicates
 
-For the full localized formal-period algebra P and the evaluation periodEvaluation : P → ℂ of PS.2.1, define PeriodConjecture as injectivity of periodEvaluation: an equality of numerical values implies the corresponding formal relation. It is not implied by the torsor theorem of PS.2.2. Keep it separate from DeligneAlgebraic (PS.1.4), LeadingTermRational (PS.3.3), `ETNC` (PS.5.2), BlochKatoTamagawa (PS.6.5), BBKRankZeroOne (PS.6.6) and higher-rank BSD (PS.6.3 with unrestricted rank); every exported theorem names exactly the members of this list it assumes. An analytic inequality is a theorem with its stated bounds, and numerical agreement witnesses none of these predicates (HMS, Theorem 0.2, p. 2; Definition 2.8 and Theorem 2.10, pp. 10–11; BF, Conjecture 4, pp. 535–536).
+For the full localized formal-period algebra P and the evaluation periodEvaluation : P → ℂ of PS.2.1, define PeriodConjecture as injectivity of periodEvaluation: an equality of numerical values implies the corresponding formal relation. It is not implied by the torsor theorem of PS.2.2. Keep it separate from DeligneAlgebraic (PS.1.4), LeadingTermRational (PS.3.3), ETNC (PS.5.2), BlochKatoTamagawa (PS.6.5), BBKRankZeroOne (PS.6.6) and higher-rank BSD (PS.6.3 with unrestricted rank); every exported theorem names exactly the members of this list it assumes. An analytic inequality is a theorem with its stated bounds, and numerical agreement witnesses none of these predicates (HMS, Theorem 0.2, p. 2; Definition 2.8 and Theorem 2.10, pp. 10–11; BF, Conjecture 4, pp. 535–536).
 
 P and periodEvaluation are the full localized constructions, not the effective algebra.
 
@@ -1376,7 +1387,7 @@ Two one-parameter families put Layers PS.0–PS.2 to work. For the Dwork quartic
 
 ### PS.8.1 The resolved Dwork quartic family
 
-For t ∈ B = 𝔸¹_ℂ ∖ {t : t⁴ = 1}, let F_t ⊂ ℙ³ be the quartic Σ_i X_i⁴ − 4t X₀X₁X₂X₃ = 0. Let G = {(a_i) ∈ μ₄⁴ : ∏ a_i = 1}/μ₄ (diagonal), a group of order 16 acting by scaling coordinates. Define `quarticFamily` X → B as the simultaneous minimal resolution of F/G: the quotient F/G has six curves of A₃ singularities along sections over B, and resolving them gives a proper smooth family of K3 surfaces. Keep the quotient map and the exceptional divisors. The fibre at t = 0 is the smooth Fermat quartic quotient; t = ∞ is a degeneration. The coordinate z = (4t)⁻⁴ is used only for t ≠ 0 (Hartmann (H), §4.1, Propositions 4.1–4.4, PDF pp. 10–11).
+For t ∈ B = 𝔸¹_ℂ ∖ {t : t⁴ = 1}, let F_t ⊂ ℙ³ be the quartic Σ_i X_i⁴ − 4t X₀X₁X₂X₃ = 0. Let G = {(a_i) ∈ μ₄⁴ : ∏ a_i = 1}/μ₄ (diagonal), a group of order 16 acting by scaling coordinates. Define the quartic family X → B as the simultaneous minimal resolution of F/G: the quotient F/G has six curves of A₃ singularities along sections over B, and resolving them gives a proper smooth family of K3 surfaces. Keep the quotient map and the exceptional divisors. The fibre at t = 0 is the smooth Fermat quartic quotient; t = ∞ is a degeneration. The coordinate z = (4t)⁻⁴ is used only for t ≠ 0 (Hartmann (H), §4.1, Propositions 4.1–4.4, PDF pp. 10–11).
 
 The quotient of the family by the finite group is SchemeAndStackFoundations §1.17 and §1.23 (finite quotients and their coarse spaces); the relative resolution of the six A₃ sections is constructed here by explicit blow-ups along them (SchemeAndStackFoundations §4.11, modifications and strict transforms), and checked fibrewise; the cohomological realization of X/B is MotivesAndAlgebraicCycles MC.2.
 
@@ -1394,7 +1405,7 @@ The interface includes the following facts.
 - At t = 0 the equation is Σ X_i⁴; at the zero vector the polynomial is 0, while at (1, 1, 1, 1) it is 4 − 4t. Scaling every coordinate by c scales the polynomial by c⁴.
 - At t = 1 the point [1 : 1 : 1 : 1] is singular (every partial derivative 4X_i³ − `4∏_{j≠i}X_j` vanishes there), so t = 1 is excluded from B.
 - t = 0 belongs to B although z = (4t)⁻⁴ has a pole there: a singular point of the differential equation in a quotient coordinate need not be a singular fibre.
-- The order of quarticGroup is 4⁴/4/4 = 16; a definition without the product-one condition has order 64.
+- The order of G is 4⁴/4/4 = 16; a definition without the product-one condition has order 64.
 
 *Needs:* MotivesAndAlgebraicCycles MC.2; SchemeAndStackFoundations §§1.17, 1.23 and 4.11; TauCetiRoadmap StableReduction Layer 4.
 
@@ -1430,12 +1441,13 @@ The interface includes the following facts.
 - D_t.
 - L_z.
 - The identity with the factor (1 − t⁴)/64 and multiplication by 1/t.
-- The operator annihilates ∫_γΩ. Its ascending coefficients are −3/(32t⁴), (6/t³−t)/64, −3(t⁴+1)/(64t²), (1−t⁴)/(64t).
+- D_t annihilates ∫_γΩ. The pulled-back L_z = (1 − t⁴)/64 · D_t ∘ (1/t) annihilates t·∫_γΩ and, as an operator in t, has ascending coefficients −3/(32t⁴), (6/t³−t)/64, −3(t⁴+1)/(64t²), (1−t⁴)/(64t).
 
 **Checks.**
 
 - L_z(1) = −24z, which after pullback is −3/(32t⁴), the order-zero coefficient above; with multiplication by t instead of 1/t the value is −t²/8.
 - Raw periods behave like t⁻¹·w₀((4t)⁻⁴) at t = ∞, not t·w₀.
+- Applied to the raw leading term t⁻¹, the pulled-back L_z gives t⁻¹/64 − (3/8)t⁻⁵ ≠ 0, so it does not annihilate the raw period. On t·(raw period) = 1 + 24z + ⋯ the degree-one terms cancel: L_z(1) = −24z and L_z(24z) = 24z − 20160z².
 - The order-three coefficient of the pulled-back operator is (1 − t⁴)/(64t); at t = 1 it vanishes, as it must at the conifold point.
 
 *Needs:* Layer PS.8.2; ComplexComparisonPartII C5 (C5.2).
@@ -1504,7 +1516,7 @@ To prove this, put A_n(ρ) = `∏_{k=1}^{4n}(4ρ` + `k)/∏_{k=1}^{n}(ρ` + k)�
 
 The interface includes the following facts.
 
-- `quarticA` and `quarticG` are A_n and g_n, while `harmonic n r` is the r-th harmonic sum. The second correction is h_n as displayed.
+- `quarticA` and `quarticG` are A_n and g_n; g_n uses Mathlib `harmonic`, which is H_n = H_n^(1). The second correction h_n also uses the second-order sums H_n^(2), as displayed.
 - The three Frobenius series (w₀,g,h) have the displayed rational coefficients.
 - The third-order recurrence for n ≥ 1.
 - f₀, f₁, f₂ solve L_z on the punctured disc.
@@ -1517,7 +1529,7 @@ The interface includes the following facts.
 - `H₀^{(r)}` = 0, `H₂^{(1)}` = 3/2 and `H₂^{(2)}` = 5/4; the exponent r cannot be omitted.
 - h₀ = h₁ = 0, h₂ = 10816 and h₃ = 2293824. Thus the second logarithmic correction is not the zero series. The constant coefficients of (w₀, g, h) are (1, 0, 0), and their degree-two coefficients are (2520, 12276, 10816).
 
-*Needs:* Layer PS.8.3; Mathlib PowerSeries.mk, PowerSeries.derivative, `Nat.factorial`.
+*Needs:* Layer PS.8.3; Mathlib PowerSeries.mk, PowerSeries.derivative, `Nat.factorial`, `harmonic`.
 
 ### PS.8.7 The hypergeometric symmetric square
 
@@ -1673,7 +1685,7 @@ The interface includes the following facts.
 - The alternating matrix at λ = 0.
 - The flat alternating cup pairing with (e₀, e₃) = Y₀/(1 + 5⁵λ⁵), Y₀ ≠ 0, and (e₁, e₂) = −Y₀ at λ = 0.
 
-Additional The additional interface consists of D (D in the column-input convention); the monomial basis determinant (det D=1). The u_s are classes in the preceding complex, rather than a new abstract cohomology carrier.
+The interface also contains the matrix D, in the column-input convention, and the monomial basis determinant det D = 1. The u_s are classes in the preceding complex, rather than a new abstract cohomology carrier.
 
 **Checks.**
 
@@ -1844,7 +1856,7 @@ The interface includes the following facts.
 
 ### Examples
 
-- `quarticGram.det = −4`, and the period line (p, −1, 2p²) is isotropic.
+- The Gram matrix G₀ has determinant −4, and the period line (p, −1, 2p²) is isotropic.
 - The five monodromy matrices preserve G₀ and multiply to 1 in the order M_∞M₄M₃M₂M₁.
 - `quarticA 1 = 24`, `quarticA 2 = 2520`, `quarticG 1 = 104`, and the mirror coordinate begins z + 104z² + 15188z³.
 - The quintic connection matrix at λ = 0 is nilpotent of order exactly 4; λ = −1/5 is a singular parameter.
@@ -2015,9 +2027,9 @@ The interface includes the following facts.
 
 ### PS.9.8 Mixed Tate motives over ℤ
 
-Inside the Tate-generated triangulated subcategory DMT(ℚ) of MotivesAndAlgebraicCycles Layer 4, take the heart MT(ℚ) of the motivic t-structure, which exists for number fields by the Beilinson–Soulé vanishing that follows from Borel's computation of the rational K-groups of number fields (PS.3.2a). MT(ℤ) is its full tensor subcategory of objects unramified at every prime: the extensions between adjacent weight-graded pieces have Kummer classes in ℤ^× ⊗ ℚ = 0. Objects have a finite weight filtration with `gr^W_{−2n}` a sum of copies of ℚ(n). The fibre functor ω(M) = ⊕_n Hom(ℚ(n), `gr^W_{−2n}M)` is exact, faithful, ℚ-linear and tensor, so MT(ℤ) is neutral Tannakian (DG, §§1.1–1.9, printed pp. 3–17; §§2.1–2.3, printed pp. 18–20).
+Inside the Tate-generated triangulated subcategory DMT(ℚ) of MotivesAndAlgebraicCycles Layer 4, take the heart MT(ℚ) of the motivic t-structure, which exists for number fields by the Beilinson–Soulé vanishing: through gap:motivic-cohomology-adams it follows from the vanishing of K_(2i)(F) ⊗ ℚ for i ≥ 1 (ArithmeticKTheory §3.4) and the pure Adams weight n of K_(2n−1)(F) ⊗ ℚ (BorelRegulators §6.3). MT(ℤ) is its full tensor subcategory of objects unramified at every prime: the extensions between adjacent weight-graded pieces have Kummer classes in ℤ^× ⊗ ℚ = 0. Objects have a finite weight filtration with `gr^W_{−2n}` a sum of copies of ℚ(n). The fibre functor ω(M) = ⊕_n Hom(ℚ(n), `gr^W_{−2n}M)` is exact, faithful, ℚ-linear and tensor, so MT(ℤ) is neutral Tannakian (DG, §§1.1–1.9, printed pp. 3–17; §§2.1–2.3, printed pp. 18–20).
 
-To prove this, import geometric motives with the Tate object inverted (Layer 4), restrict to the thick Tate-generated subcategory, use the motivic cohomology/K-theory comparison and Borel's vanishing for the t-structure, apply the adjacent-weight unramifiedness criterion, and define the graded fibre functor (MotivesAndAlgebraicCycles Layer 3 for Tannakian categories).
+To prove this, import geometric motives with the Tate object inverted (Layer 4), restrict to the thick Tate-generated subcategory, use the motivic cohomology/K-theory comparison of gap:motivic-cohomology-adams and the Beilinson–Soulé vanishing for the t-structure, apply the adjacent-weight unramifiedness criterion, and define the graded fibre functor (MotivesAndAlgebraicCycles Layer 3 for Tannakian categories).
 
 The interface includes the following facts.
 
@@ -2032,13 +2044,13 @@ The interface includes the following facts.
 - The fibre of ℚ(1) is ℚ in grade 1; its Hodge weight is −2.
 - The Kummer extension attached to 2 lies in MT(ℚ) but not in MT(ℤ): it is ramified at 2.
 
-*Needs:* MotivesAndAlgebraicCycles Layer 3 (Tannakian categories) and Layer 4 (Tate-stabilized geometric motives, motivic cohomology of number fields); PS.3.2a.
+*Needs:* MotivesAndAlgebraicCycles Layer 3 (Tannakian categories), Layer 4 (Tate-stabilized geometric motives, motivic cohomology of number fields) and gap:motivic-cohomology-adams; ArithmeticKTheory §3.4 (rational K-groups of number fields); BorelRegulators §6.3 (Adams weight).
 
 ### PS.9.9 Extensions and the motivic Galois group
 
 `Ext¹_{MT(ℤ)}(ℚ(0),` ℚ(n)) is ℚ for odd n ≥ 3 and zero otherwise, and Ext² between Tate objects vanishes. For ω as above, G_MT = Aut^⊗(ω) is 𝔾_m ⋉ U_MT with Lie U_MT free pronilpotent on one generator in each degree −3, −5, −7, …; the generators are not canonical. The regulator (Hodge realization) is injective on Ext¹, which gives the full faithfulness used to lift path structures (DG, Proposition 1.9, printed pp. 16–17; Propositions 2.2–2.3, pp. 18–20; Proposition 2.14, p. 25; B, §2.5, pp. 6–7).
 
-To prove this, use the rational K-groups of ℤ (PS.3.2a: `K_{4m+1}(ℤ)` ⊗ ℚ = ℚ for m ≥ 1 and the others zero in positive degree) and the injectivity of the Borel regulator (PS.3.2a) to compute Ext¹; Ext² = 0 makes the graded Lie algebra free; apply neutral Tannaka reconstruction (MotivesAndAlgebraicCycles Layer 6). Full faithfulness uses the regulator injection on Ext¹, not injectivity of any numerical period map.
+To prove this, use the rational K-groups of ℤ (ArithmeticKTheory §3.4: `K_{4m+1}(ℤ)` ⊗ ℚ = ℚ for m ≥ 1 and the others zero in positive degree), their Adams weights (BorelRegulators §6.3) and gap:motivic-cohomology-adams to compute Ext¹, and the injectivity of the Borel regulator (BorelRegulators §2.3) for the Hodge realization; Ext² = 0 makes the graded Lie algebra free; apply neutral Tannaka reconstruction (MotivesAndAlgebraicCycles Layer 6). Full faithfulness uses the regulator injection on Ext¹, not injectivity of any numerical period map.
 
 The interface includes the following facts.
 
@@ -2052,7 +2064,7 @@ The interface includes the following facts.
 - Ext¹(ℚ(0), ℚ(2)) = 0 (even degree), consistent with ζ(2) being a power of 2πi up to a rational.
 - The first generators are in degrees −3, −5, −7, matching ζ(3), ζ(5), ζ(7).
 
-*Needs:* Layer PS.9.8; MotivesAndAlgebraicCycles Layer 6 (neutral Tannaka reconstruction); PS.3.2a.
+*Needs:* Layer PS.9.8; MotivesAndAlgebraicCycles Layer 6 (neutral Tannaka reconstruction) and gap:motivic-cohomology-adams; ArithmeticKTheory §3.4; BorelRegulators §§2.3, 6.3.
 
 ### PS.9.10 The motivic torsor of paths on the three-punctured line
 
@@ -2370,7 +2382,7 @@ The interface includes the following facts.
 
 ### Dependencies
 
-Layer PS.2; MotivesAndAlgebraicCycles Layer 3, Layer 4, Layer 6; PS.3.2a; AnabelianGeometryAndNonabelianChabauty NC.2; PolylogarithmFunctions; Tau Ceti `TauCeti.TensorWords`; Mathlib riemannZeta, `intervalIntegral`, PowerSeries, PhragmenLindelof.horizontal_strip, padicValRat, `Matrix.det`, Submodule.span.
+Layer PS.2; MotivesAndAlgebraicCycles Layer 3, Layer 4, Layer 6 and gap:motivic-cohomology-adams; ArithmeticKTheory §3.4; BorelRegulators §§2.3, 6.3; AnabelianGeometryAndNonabelianChabauty NC.2; PolylogarithmFunctions; Tau Ceti `TauCeti.TensorWords`; Mathlib riemannZeta, `intervalIntegral`, PowerSeries, PhragmenLindelof.horizontal_strip, padicValRat, `Matrix.det`, Submodule.span.
 ## Corrections to the sources
 
 The targets above already incorporate the following corrections; each is stated for the version cited in References.
@@ -2438,5 +2450,5 @@ Earlier suppliers contribute their own local factors, realizations, period evalu
 - **Tate-legal** — John Tate, *Number theoretic background*, Proc. Sympos. Pure Math. 33, Part 2 (1979), 3–26; cited for the conventions on local constants only. [scan](https://ncatlab.org/nlab/files/TateNumberTheory.pdf)
 - **Z** — Don Zagier, *Evaluation of the multiple zeta values ζ(2, …, 2, 3, 2, …, 2)*, Annals of Math. 175 (2012), 977–1000. [PDF](https://people.mpim-bonn.mpg.de/zagier/files/doi/10.4007/annals.2012.175.2.11/fulltext.pdf)
 
-- **Burgos** — José Ignacio Burgos Gil, *The regulators of Beilinson and Borel*, CRM Monograph Series 15 (2002), Chapters 9–10. [author copy](https://www.icmat.es/miembros/burgos/files/brbr.pdf)
+- **Burgos** — José Ignacio Burgos Gil, *The regulators of Beilinson and Borel*, CRM Monograph Series 15 (2002); cited for Theorem 10.9, printed pp. 95–97. [author copy](https://www.icmat.es/miembros/burgos/files/brbr.pdf)
 - **Stacks** — The Stacks Project Authors, *The Stacks Project*, Tag 00OC, regular local rings and finite global dimension. [Tag 00OC](https://stacks.math.columbia.edu/tag/00OC)

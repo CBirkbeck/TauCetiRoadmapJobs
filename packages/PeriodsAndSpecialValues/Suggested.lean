@@ -17,11 +17,10 @@ numerical spanning and the dimension bound (PS.9).
 The following headlines are not statable at the pins: the comparison determinant and
 Deligne periods, Dirichlet and modular motivic algebraicity (PS.0–PS.1: no motive with
 marked realizations); comparison of the imported formal-period point with the inverse
-comparison (PS.2: no Nori period algebra or realization torsor); fundamental-line,
-the stable Borel comparison (PS.3.2a: no relative Lie cochain model on arithmetic symmetric spaces),
-regulator, ETNC, Bloch–Kato measure and elliptic/Rankin–Selberg transport theorems
-(PS.3–PS.6: no higher algebraic K-groups with arithmetic regulators, motivic cohomology, virtual determinant category, Selmer complexes or
-motivic triples); the period-conjecture applications (PS.7: no formal-period algebra);
+comparison (PS.2: no Nori period algebra or realization torsor); the fundamental-line,
+number-field regulator, ETNC, Bloch–Kato measure and elliptic/Rankin–Selberg transport
+theorems (PS.3–PS.6: no higher algebraic K-groups with arithmetic regulators, motivic
+cohomology, virtual determinant category, Selmer complexes or motivic triples); the period-conjecture applications (PS.7: no formal-period algebra);
 the geometric quartic Picard–Fuchs and monodromy comparison and the quintic geometric
 boundary Frobenius (PS.8: no resolved families, marked Gauss–Manin modules or
 log-crystalline cohomology); and the motivic Hoffman basis and mixed Tate period
@@ -74,14 +73,11 @@ theorem legendre_midpoint_error (lam : ℝ) (hlam : 0 < lam ∧ lam < 1) (N : �
 
 /-! ## Layer PS.8: arithmetic mirror symmetry and period differential equations -/
 
-/-- `H_n^{(r)} = Σ_{j=1}^{n} j^{-r}`. -/
-def harmonic (n r : ℕ) : ℚ := ∑ j ∈ Finset.range n, 1 / (((j + 1 : ℕ) : ℚ) ^ r)
-
 /-- `A_n = (4n)!/(n!)⁴`. -/
 def quarticA (n : ℕ) : ℚ := ((4 * n).factorial : ℚ) / ((n.factorial : ℚ) ^ 4)
 
-/-- `g_n = 4 A_n (H_{4n} - H_n)`. -/
-def quarticG (n : ℕ) : ℚ := 4 * quarticA n * (harmonic (4 * n) 1 - harmonic n 1)
+/-- `g_n = 4 A_n (H_{4n} - H_n)`, with Mathlib's harmonic numbers `H_n = Σ_{j=1}^{n} 1/j`. -/
+def quarticG (n : ℕ) : ℚ := 4 * quarticA n * (harmonic (4 * n) - harmonic n)
 
 /-- The holomorphic period `w₀(z) = Σ A_n zⁿ`. -/
 def quarticW0 (z : ℂ) : ℂ := ∑' n : ℕ, (quarticA n : ℂ) * z ^ n

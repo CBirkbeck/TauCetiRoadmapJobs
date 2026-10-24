@@ -25,12 +25,6 @@
       "needs": "For every projective complex K3, prove the integral H² cup lattice even unimodular of signature (3,19)."
     },
     {
-      "slug": "cm-elliptic-regulator",
-      "supplier": "EllipticKTheory",
-      "section": "elliptic regulator comparison (required extension)",
-      "needs": "Supply the motivic regulator and the normalized CM L(E,2) formula with specified cycle and all conductor, period and roots-of-unity factors."
-    },
-    {
       "slug": "indefinite-lattice-classification",
       "supplier": "IntegralLattices",
       "section": "Part II: primitive embeddings and indefinite even unimodular lattices",
