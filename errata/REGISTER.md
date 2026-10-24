@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2862 mistakes recorded on the board: 1903 misprints, 726 errors, 205 gaps, 28 unparsed bullets.
+2869 mistakes recorded on the board: 1907 misprints, 728 errors, 206 gaps, 28 unparsed bullets.
 Errata jobs have read the cited sources of 35 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4569,6 +4569,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 5.3.3 proof, printed pp. 37–38, yu line 2024: the source says the Whittaker diagonal has negative Yu degree and uses a positive scalar correction; it should be degree n(n−1)(g−1) and scalar exponent −(n−1)(g−1); affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
 - **Error** at Lemma 5.3.3, printed p. 36, yu line 1934: the source says every vector of the unramified cuspidal representation has a nonzero degree-zero value; it should be a nonzero spherical vector in the stated argument; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
 
+## yuan-2026
+
+- **Error** at Lemma 2.1(1), p. 25: the source says π* on adelic Picard groups is injective for projective flat π with geometrically connected fibres; it should be the same statement with geometrically reduced fibres added, since relative Frobenius of an elliptic curve over 𝔽₅ kills an order-five class; affects a stated result. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Misprint** at proof of Theorem 4.14, p. 94: the source says the geometric part D̃_S − Δ̃_S is effective; it should be D̃_S − c(g)Δ̃_S, as derived on p. 95 (D̃ − Δ̃ is negative at the unit tetrahedral graph); affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Gap** at proof of Theorem A.1, p. 113: the source says property (2) follows from constancy of the pairing integral with L = ω_C, which is empty when g = 1 since c₁(ω) = 0; it should be the same argument with an admissible L of positive degree; affects the proof; (genus one only). <!-- tauceti-roadmap-review {"agent": "claude", "head": "d2be3ab", "job": "REV-PKG-ArakelovGeometryAndAbelianHeightsPartII", "model": "opus", "worker": "fable-rev46"} -->. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Misprint** at §3.3.1, p. 49: the source says δ(C) equals δ of the split semistable base change divided by [K′:K]; it should be divided by the ramification index e(K′/K) when nodes are counted as points; affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Misprint** at §3.3.2, p. 50: the source says the Green function of Φ_S is an integral over the analytic fibre of X; it should be over the analytic fibre of X ×_S X, where c₁(O(Δ)ₐ)² lives; affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Error** at §4.4.1, p. 78 (also p. 84): the source says Bost gives h_Fal ≥ −g log √(2π) in the Faltings normalization of §4.3.1; it should be −(g/2) log(2π²) there, the stated constant being the Deligne-normalized one; affects the proof; (constant c only). Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+
 ## yuan-bigness-pku
 
 - **Misprint** at §A.1, printed p.102, yuan-bigness-pku line 3468: the source says the probability measure occurs with coefficient one for a general divisor; it should be have coefficient deg(D); affects a stated result. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
@@ -4577,6 +4586,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at Lemma 6.1(1), printed pp.582–583, yuan-zhang line 2088: the source says the codimension-zero coefficient contains only outer theta terms; it should be explicitly exclude an equal inner truncation space, whose theta term also has codimension zero; affects the proof. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6.2, printed p.579, yuan-zhang line 1932: the source says bounded local support suffices for convergence; it should be accompanied by growth control toward the removed subspace; affects the proof. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
+
+## yuan-zhang-2025
+
+- **Misprint** at §3.2.2, p. 72: the source says the term e^(−g/2) defines the metric of O(D) attached to an arithmetic divisor (D, g); it should be e^(−g), as the Green-function convention of §3.2.1 and the inverse map −log‖s‖ require; affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
 
 ## Yuan–Zhang (Ann. of Math. 187, 2018)
 
