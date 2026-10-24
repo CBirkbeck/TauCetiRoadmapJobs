@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2146 mistakes recorded on the board: 1411 misprints, 562 errors, 158 gaps, 15 unparsed bullets.
+2164 mistakes recorded on the board: 1419 misprints, 567 errors, 158 gaps, 20 unparsed bullets.
 Errata jobs have read the cited sources of 25 roadmaps; in those of 1 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -23,6 +23,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ClassicalAdicEtaleCohomologyPartII, #971 at c41f55e, 2026-10-23): Gap** in BH at proof of Lemma 3.25, p. 25: the source proves the local almost comparison for any affinoid using a perfectoid toric torsor; such torsors exist only over smooth affinoids with étale toric charts, so a prior reduction to smooth proper spaces is needed; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "c41f55e", "job": "REV-PKG-ClassicalAdicEtaleCohomologyPartII", "model": "opus", "worker": "fable-rev31"} -->
 - **Unparsed** (BorelRegulators, #979 at 5436aa1, 2026-10-23): Misprint** in borel1977 at Theorem 5.5 proof, pp.629–630 (borel1977 line 518 and line 531–532): the source gives the dimension of the cycle Z_j and the degree of its top form as j²+2j; for the restriction of scalars from k it should be d(j²+2j), with d=[k:ℚ]; affects nothing.
 - **Unparsed** (BorelRegulators, #979 at 5436aa1, 2026-10-23): Gap** in borel1977 at Theorem 5.5 proof, p.630 (borel1977 line 525–526): the source embeds D into n×n matrices by its regular representation, which has size (j+1)²; for odd j and odd n no unital algebra embedding exists, and it should be the regular representation padded by an identity block, as a group map; affects the proof.
+- **Unparsed** (MotivicEtaleKTheory, #952 at efff8a4, 2026-10-24): Gap** in BF at Theorem 3.5, p.20: the source states the comparison for every equidimensional complex algebraic scheme, but its proof (line 919) assumes smooth quasi-projective X. It should assume that; affects a stated result.
+- **Unparsed** (MotivicEtaleKTheory, #952 at efff8a4, 2026-10-24): Gap** in BF at Proposition 2.7, p.15: the source asserts an associative product on higher Chow groups of every quasi-projective scheme, citing a rational theorem for smooth schemes. It should require smoothness and rational coefficients; affects a stated result.
+- **Unparsed** (MotivicEtaleKTheory, #952 at efff8a4, 2026-10-24): Misprint** in BF at Proposition 1.26, p.10: the source gives the associator homotopy codomain degree r+s+t. It should be r+s+t−1, as the identity dh+hd=associator forces; affects nothing.
+- **Unparsed** (MotivicEtaleKTheory, #952 at efff8a4, 2026-10-24): Misprint** in BF in the proof of Theorem 3.5, p.22: the source parametrizes k-planes in ℂᴺ but uses a rank-N universal bundle and stabilizes in k. It should use N-planes in ℂᴺ⁺ᵏ; affects the proof.
+- **Unparsed** (MotivicEtaleKTheory, #952 at efff8a4, 2026-10-24): Gap** in Levine94 at Theorem 3.1, pp.276–277: the source states the isomorphism over any field, but its proof verifies Theorem 2.7, which assumes an infinite field. It should add descent from coprime infinite extensions; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "efff8a4", "job": "REV-DESIGN-MotivicEtaleKTheory~4", "model": "opus", "worker": "fable-rev42"} -->
 
 ## Abe, arXiv preprint v1
 
@@ -55,6 +60,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Alper, moduli lecture notes (the report gives no title)
 
 - **Misprint** at the display immediately after the identity h¹ = h⁰ − χ in the H¹-vanishing and regularity argument: the source says the Hilbert-polynomial term enters with a plus sign; it should be a minus sign, consistent with the identity h¹ = h⁰ − χ just before; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## ammn
+
+- **Misprint** at Definition 2.14, printed p.11 (ammn line 496): the source says the crystalline character composes trace after β; it should be β after trace, as their domains require; affects a stated result. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Proposition 3.1, printed p.15 (ammn line 707): the source says the Verschiebung defect subtracts gF; it should be Vg−gV; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Proposition 3.3, printed p.16 (ammn line 748): the source says every retained degree j contains Xᵢ; it should be Xⱼ for j≤i; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3.1, printed p.15 (ammn line 721): the source says graded Day convolution uses multiplication of weights; it should be addition of weights, with degree-zero unit; affects a stated result. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+
+## an
+
+- **Misprint** at proof of Proposition 3.22, printed p.26 (an line 1218): the source says the displayed equivalence for N holds for V-complete M; it should be for V-complete N; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
 ## Andreatta–Iovita–Pilloni
 
@@ -2015,6 +2031,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## lmmt
 
 - **Misprint** at Remark 2.12, p.10: the source says T(i) kills K(π,r) for every finite group π when r>i; it should be every finite abelian p-group, since π=ℤ/q (q≠p) fails at r=1, i=0; affects nothing. Found by ChromaticHomotopyTheory (#986 at 0ea406d, 2026-10-23, claude opus).
+- **Misprint** at Remark 3.11, printed p.16 (lmmt line 672): the source says the linearized relative K functor on sphere-bimodules is ΩM; it should be ΣM, as the square-zero K₁ calculation shows; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
 ## LO-II
 
@@ -2172,6 +2189,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## MW
 
 - **Misprint** at Remark II.10.3, printed page 174: the source says the excluded constituents belong to the singleton-first product; it should be the singleton-last product of Lemma II.10.2 used by its proof; affects a stated result. Found by QuiverRepresentationsPartII (#173 at 398e133, 2026-10-23, codex gpt-6-astra).
+
+## mw
+
+- **Error** at §3.5, printed p.31 (mw lines 1323–1329): the source says the prime-primary product directly supplies the global uncompleted q-Hodge pair; it should be glued with the rational corner before completion; affects a stated result. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
 ## Nekovář, Selmer complexes (Astérisque 310, 2006)
 
@@ -2439,6 +2460,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rubin1987
 
 - **Error** at Lemma 4.2, p.410: the source says any continuous O-linear map X→O sending x to a unit makes x a generator; it should be assume augmentation covariance, since the T-coefficient on O[[T]] sends T to 1; affects a stated result. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
+
+## s-ber
+
+- **Error** at §8 before Proposition 8.7, printed p.46 (s-ber lines 1944–1948): the source says the open unit ball is a nonunital ring under the stated Banach assumptions; it should be stated with addition closure and the compatible ideal-colimit presentation; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "87bc3ff5cef726c6937e934f89f5b44052ce2c01", "job": "RT-RefinedTraceMethods~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
 ## S16
 
@@ -3411,6 +3436,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## W
 
 - **Error** at paragraph 2.2, printed p.11, W line 461–462: the source says completed discreteness is symmetric monoidal into all solid spectra, whose unit has π₀=ℤ; it should be have codomain the bounded-below p-complete solid category, with unit π₀=ℤ_p; affects nothing. Found by SolidAnalyticRings (#943 at 5fe94ca, 2026-10-23, codex gpt-6-astra).
+
+## w
+
+- **Misprint** at proof of Corollary 6.15, printed p.86 (w line 3888): the source says the étale Habiro identification is W-Hab Corollary 3.12; it should be Corollary 3.13; affects nothing. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 6.11, printed p.84 (w lines 3766–3771): the source says its Pochhammer-normalized γ̃_d equals λᵈ((x−y)/(q−1)); it should be (−1)ᵈ times that λ-operation; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Error** at proof of Theorem 6.10, printed p.86 (w line 3862): the source says the q-derivative of γ̃_d is γ̃_(d−1); it should be γ̃_(d−1)/(1−q), or use N_d/[d]_q! throughout; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Error** at §2.2, printed p.11 (w lines 461–462): the source says the bounded-below p-complete embedding into all solid spectra is symmetric monoidal; it should be unital into the p-complete subcategory, with lax-monoidal ambient inclusion; affects a stated result. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Error** at §§6.12(c)–6.13, printed pp.85–86 (w lines 3800–3808): the source says the uncompleted étale tensor diagonal gives the relative TC coefficient algebra; it should be completed along the full étale diagonal before the divided-power comparison; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
 ## Wagner, PhD thesis (cited as W-thesis)
 
