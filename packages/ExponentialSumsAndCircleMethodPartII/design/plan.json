@@ -4965,6 +4965,54 @@
         "ExponentialSumsAndCircleMethodPartII:GCM.13/conditionaldegeneration"
       ],
       "detail": "The compact-open comparison and its trace conjecture are obstructed explicitly. The fixed-radius weighted collar is sufficient only locally. Specify a global topology, prove compact-family control and coordinate compatibility, prove continuity of the polynomial inclusion, and compare with fixed collars. Neither an unspecified colimit nor pointwise O-bounds proves these assertions. The corrected trace comparison remains a conjecture even after this gate is solved."
+    },
+    {
+      "slug": "sf-fibre-strata",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§0.7–0.8",
+      "needs": "For finite-type morphisms over a field, provide constructible fibre-dimension level sets including empty fibres and the equality dim φ⁻¹(W)=dim W+e on each irreducible locally closed constant-nonempty-fibre-dimension stratum W."
+    },
+    {
+      "slug": "ecf-character-fourier",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "§§F.0.1, F.2.4–F.4.6",
+      "needs": "For ℓ≠p and finite E/ℚ_ℓ containing μ_p, construct the nontrivial Artin–Schreier character sheaf with its additive tensor law, nonzero-linear and translation cancellation, and prove H_c^i(𝔾_m×𝔸¹,L_ψ(hg(a)))=0 for i>2 for every one-variable polynomial g of degree 1≤deg g<p, compatibly with base change and finite coefficient extension."
+    },
+    {
+      "slug": "ecf-pi1-surjection",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "§F.0.2",
+      "needs": "For a dominant smooth morphism of normal connected finite-type schemes over an algebraically closed field with connected geometric generic fibre, provide surjectivity on geometric étale fundamental groups and the induced equality of geometric monodromy images."
+    },
+    {
+      "slug": "edc-top-components",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "§0.6",
+      "needs": "For any nonempty separated finite-type scheme M over a separably closed field with ℓ invertible and finite E/ℚ_ℓ, provide H_c^(2a)(M,E)=E(−a)^c for a=dim M and c the number of a-dimensional geometric irreducible components, and vanishing above 2a, allowing singularities and nilpotents."
+    },
+    {
+      "slug": "lpv-universal-monodromy",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "Layer LPV.5",
+      "needs": "For k≥3,n≥3 and characteristic zero or p>k, for universal smooth degree-k projective hypersurfaces in the two consecutive ambient dimensions with finite E/ℚ_ℓ coefficients and ℓ invertible, provide the full primitive symplectic or orthogonal geometric Zariski monodromy images and their product/Goursat comparison, with the cubic exceptions (k,n)=(3,3),(3,4), sufficient to place simultaneous −Id in the two-factor semisimplification."
+    },
+    {
+      "slug": "at2-mapping-restriction",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.1; AlgebraicTopology Stage 4",
+      "needs": "For every compact Hausdorff CW pair (A,B) with chosen basepoint in B and based target X, provide the parameter-natural compact-open Hurewicz-fibration theorem for based restriction Map_*(A,X)→Map_*(B,X)."
+    },
+    {
+      "slug": "ff-polar-minor-count",
+      "supplier": "FunctionFieldArithmetic",
+      "section": "§§2.1–2.3",
+      "needs": "For a degree-k leading form defining a smooth projective hypersurface, all finite extensions F_(q^r), p>k, d≥k−1≥2 and d≤m≤kd/2 outside the Hankel rank-m locus, provide the polarization, symmetric-lattice shrinking and exact counting interfaces yielding #V_k(G_b)(F_(q^r))≤C(d,k,n)(q^r)^(dn(k−1)−n floor(m/(k−1))), with C independent of r and with no dependency on this roadmap."
+    },
+    {
+      "slug": "ff-count-dimension",
+      "supplier": "FunctionFieldArithmetic",
+      "section": "§0.1; finite-field geometric counting extension",
+      "needs": "For every finite-type F_q-scheme V and real c, provide the implication that a bound #V(F_(q^r))≤C q^(rc) for some finite C≥0 independent of r and every r≥1 forces dim V≤c, including geometric components that become defined only after a finite constant-field extension."
     }
   ],
   "sourceIssues": [
