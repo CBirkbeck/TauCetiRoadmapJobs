@@ -7,12 +7,6 @@
       "needs": "Supply the arbitrary-field and relative numerical quotient with base change under flat Pic^τ and locally constant numerical rank, and constant-Num projective-contraction and labelled fibre-graph descent with the hypotheses of SCH23 Theorems 1.3 and 2.1."
     },
     {
-      "slug": "elliptic-surface-geometry",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "Part II §genus-one-fibrations",
-      "needs": "Supply the shared genus-one and Jacobian surface, wild canonical, Euler and component-lattice interface specified under this slug by K3SurfacesAndSymplecticBoundedness, using the arithmetic models of NeronModelsAndSemistableAbelianVarietiesPartII §§2–4."
-    },
-    {
       "slug": "picard-flatness-betti",
       "supplier": "AlgebraicModuliForArithmeticGeometry",
       "section": "Part II §picard-deformations",

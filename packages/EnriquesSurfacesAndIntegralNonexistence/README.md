@@ -1,4 +1,4 @@
-# Roadmap: enriques surfaces and nonexistence over the integers
+# Roadmap: Enriques surfaces and nonexistence over the integers
 
 **Summary.** Build the arithmetic geometry of Enriques surfaces from their geometric definition and numerical intersection lattice through genus-one fibrations, canonical coverings and Picard descent. The main targets exclude nonexceptional Enriques surfaces over F₂ with constant full Picard scheme, and then flat proper families over Spec ℤ with geometric Enriques fibres. The route includes characteristic-two deformation theory and two separate classification obligations: an exhaustive fourteen-case rational-Jacobian classification and the exclusion of three additional Enriques configurations. These obligations are part of the specification of the proof, including every use of the eight-case residual table.
 
@@ -8,11 +8,11 @@ This roadmap owns the coherent Enriques invariants, its numerical intersection l
 
 The following material has other owners and is used through their interfaces.
 
-- **IntegralLattices**, including its completed Layers 1–5, owns integral lattices, duality, finite discriminant forms, root lattices and even overlattices. Its Layer 6, milestone 6A, owns indefinite unimodular classification. Only the geometric identification of Num(Y), the two particular Gram matrices, and their geometric applications belong here.
-- **AlgebraicVectorBundles** owns invertible sheaves, tensor operations and relative Spec. The current Tau Ceti library already has `LineBundleClass`, `Scheme.CartierDivisor.toLineBundleClassHom`, the regular-curve `LineBundleClass.eulerDegreeHom` and `LineBundleClass.picZero`, and `rigidifiedPicardFunctor` for a scheme morphism with a section. These are the underlying objects for the relevant adapters; no second abstract Picard group, degree-zero group or rigidified functor is introduced. Surface Picard representability and the unpointed fppf sheaf are additional interfaces.
-- **JacobianChallenge**, Layer D, owns projective Picard representability for geometrically integral projective schemes over a field, including Enriques surfaces, and the pointed smooth-curve Jacobian specialization. Its Layer E concerns abelian varieties. The generic curve of an Enriques fibration need not have a rational point; a quasielliptic generic curve is regular and nonsmooth. Their Picard and compactification adapters, Kodaira fibres, regular minimal models and rational-elliptic classification belong to **NeronModelsAndSemistableAbelianVarietiesPartII**, §§2.1–2.16, 3.7–3.11, 4.1–4.18, 5.1–5.8 and 7.4.
+- **IntegralLattices**, including its completed Layers 1–5, owns integral lattices, duality, finite discriminant forms, root lattices and even overlattices. Its Layer 6, milestone 6A, owns indefinite unimodular classification. The geometric identification of Num(Y), Lang’s positive-cone decomposition theorem, the two particular Gram matrices and their geometric applications belong here.
+- **AlgebraicVectorBundles** owns invertible sheaves, tensor operations and relative Spec. The pinned Tau Ceti library has `LineBundleClass`, `Scheme.CartierDivisor.toLineBundleClassHom`, the regular-curve `LineBundleClass.eulerDegreeHom` and `LineBundleClass.picZero`, and `rigidifiedPicardFunctor` for a scheme morphism with a section. These are the underlying objects for the relevant adapters; no second abstract Picard group, degree-zero group or rigidified functor is introduced. Surface Picard representability and the unpointed fppf sheaf are additional interfaces.
+- **JacobianChallenge**, Layer D, owns projective Picard representability for geometrically integral projective schemes over a field, including Enriques surfaces, and the pointed smooth-curve Jacobian specialization. Its Layer E concerns abelian varieties. The generic curve of an Enriques fibration need not have a rational point; a quasielliptic generic curve is regular and nonsmooth. Their Picard and compactification adapters, Kodaira fibres, regular minimal models and rational-elliptic classification belong to **NeronModelsAndSemistableAbelianVarietiesPartII**, §§2.1–2.16, 3.7–3.11, 4.1–4.18, 5.1–5.8, 6.1 and 7.4. Its §2.14 supplies the constant-Num I₀* exclusion over F₂, including its Enriques specialization.
 - **LocalFieldsRamification**, Layers 1–2, owns local-field unit filtrations, power classes and unramified extensions. Here its Q₂ specialization is connected to the four units of ℤ[1/2] modulo squares and to canonical-cover twisting. The pinned Tau Ceti library has the square-class group `TauCeti.SquareClassGroup`, the count `TauCeti.card_unitSquareClasses_padic_two` of the four unit square classes of ℚ₂, Padic.not_isSquare_five, and the unramified quadratic extension `TauCeti.UnramifiedQuadratic` of ℚ₂, defined by X²+X+1. The dyadic statements of Layer 3 are proved from these. The class-five model z²−z−1 used in Layer 3 defines the same extension: the discriminants 5 and −3 differ by −15, which is a square in ℚ₂ because −15≡1 mod 16.
-- **SchemeAndStackFoundations**, **AlgebraicModuliForArithmeticGeometry**, **FiniteFlatGroupsAndIntegralPadicHodgeTheory** and **WeilConjectures** supply the general geometry, cohomology, finite-flat groups and trace formula specified below. The finite-flat contract rests on objects in the pinned Tau Ceti library: Cartier duality of finite locally free commutative affine group schemes over a ring (`TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDuality`), the roots-of-unity group schemes μ_n and the Frobenius kernel α_p of the additive group. No second construction of these is planned here. **SchemeAndStackFoundations**, Part II §numerical-contraction-descent, is the owner requested for the general numerical descent extension specified below. **K3SurfacesAndSymplecticBoundedness** §§1.1–1.3 owns the shared geometric K3 predicate and its projectivity. **PadicHodgeTheory**, Part II §everywhere-good-reduction, is the owner requested for Fontaine's obstruction. **WeilConjectures**, WC.7, owns the arbitrary-field Enriques predicate, its numerical-canonical characterization, field extension, projectivity, étale invariants and the constant-Num Enriques count. This roadmap consumes those results; its Layer 0 adds Picard length, coherent invariants and the numerical lattice. **ComplexComparisonPartII** C3.2d.2–C3.2d.5 owns relative Picard algebraic-space representability, Picard–Brauer descent and finite Cartier-dual torsors; **AlgebraicModuliForArithmeticGeometry** §7.6 supplies its relative sheaf and base-change inputs.
+- **SchemeAndStackFoundations**, **AlgebraicModuliForArithmeticGeometry**, **FiniteFlatGroupsAndIntegralPadicHodgeTheory** and **WeilConjectures** supply the general geometry, cohomology, finite-flat groups and trace formula specified below. The finite-flat contract rests on objects in the pinned Tau Ceti library: Cartier duality of finite locally free commutative affine group schemes over a ring (`TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDuality`), the roots-of-unity group schemes μ_n and the Frobenius kernel α_p of the additive group. No second construction of these is planned here. **SchemeAndStackFoundations**, Part II §numerical-contraction-descent, is the owner requested for the general numerical descent extension specified below. **K3SurfacesAndSymplecticBoundedness** §§1.1–1.3 owns the shared geometric K3 predicate and its projectivity; §6.0b owns the shared genus-one carrier, component lattices, wild canonical formula, regular Jacobian and Euler comparison, including quasielliptic fibrations. **PadicHodgeTheory**, Part II §everywhere-good-reduction, is the owner requested for Fontaine's obstruction. **WeilConjectures**, WC.7, owns the arbitrary-field Enriques predicate, its numerical-canonical characterization, field extension, projectivity, étale invariants and the constant-Num Enriques count. This roadmap consumes those results; its Layer 0 adds Picard length, coherent invariants and the numerical lattice. **ComplexComparisonPartII** C3.2d.2–C3.2d.5 owns relative Picard algebraic-space representability, Picard–Brauer descent and finite Cartier-dual torsors; **AlgebraicModuliForArithmeticGeometry** §7.6 supplies its relative sheaf and base-change inputs.
 
 The Enriques geometric invariants, primitive-nef linear-system theorem, nodal reflection reduction and integral-two-section theorem include the classical foundational arguments cited by Schröer and Martin–Mezzedimi–Veniani. These are mathematical proof targets here. Statements of older results in those papers identify the required input; they do not replace a proof of it. Layer 1 includes Lang's general effective-divisor and numerical reducibility theorems and their separate coset-preserving two-section application.
 
@@ -56,19 +56,17 @@ The **AlgebraicVectorBundles** tensor and relative-Spec interface is used to for
 
 - **SchemeAndStackFoundations** §§1.3–1.9 supplies algebraic spaces and properness; §0.11 supplies base change; §§4.1–4.6 supplies marked deformation functors, hulls, tangent and obstruction spaces; §4.10 supplies polarized algebraization. Use §2.6 for coherent cohomology, §2.20 for duality, §§5.9–5.10 for surface intersections, adjunction, Riemann–Roch and Hodge index, and §1.2 for effective descent. Nilpotent thickenings and smooth lifting use §4.1. Finite étale Galois categories and fundamental groups use EtaleCohomologyFoundations §F.0.2; §2.15 supplies the field étale cohomology input.
 - **SchemeAndStackFoundations** §§2.2–2.4, 2.11, 2.15 and 2.22 supplies Leray, fppf torsors, Kummer, field étale cohomology and cohomological Brauer groups. Use **ComplexComparisonPartII** C3.2d.4 for `picard_brauer_obstruction` and C3.2d.5 for `finite_picard_cartier_torsors`, including non-étale finite flat groups. Use **WeilConjectures** WC.7 for Galois-compatible divisor cycle classes and the constant-Num count.
-- **AlgebraicModuliForArithmeticGeometry** §7.6.1–§7.6.1a supplies `relativePicardSheaf`, `relativePicardBaseChange`, `relativePicardKernel` and `sectionPicardSplit`. **ComplexComparisonPartII** C3.2d.2 supplies `relative_picard_algebraicSpace` for proper flat finitely presented algebraic-space morphisms with universal functions, quasi-separated and locally of finite presentation; no general separatedness assertion is added. The Enriques improvement to a scheme is §2.2 here.
+- **AlgebraicModuliForArithmeticGeometry** §7.6.1–§7.6.1a supplies `relativePicardSheaf`, `relativePicardBaseChange`, `relativePicardKernel` and `sectionPicardSplit`. **ComplexComparisonPartII** C3.2d.2 supplies `relative_picard_algebraicSpace` for proper flat finitely presented algebraic-space morphisms with universal functions, quasi-separated and locally of finite presentation; no general separatedness assertion is added. The Enriques improvement to a scheme follows the relative-invariants argument in §2.3 here.
 - **FiniteFlatGroupsAndIntegralPadicHodgeTheory** R07.1 supplies rank-two Oort–Tate groups with parameters `ab=2`, Hopf algebras, Frobenius, Verschiebung and Cartier duality over the field and Witt bases. Its base roadmap does not supply the nonlifting extension requested below.
 - **WeilConjectures** WC.7 supplies `IsEnriques`, `enriques_characterization`, `enriques_baseChange`, projectivity, `enriques_etaleInvariants`, `numericalPicardLocalSystem`, `count_surface_of_constant_num` and `count_enriques_or_rational_genus_one`. In particular b₁=b₃=0 and b₂=ρ=10, and a constant-Num Enriques surface over F_q has `1+10q^r+q^(2r)` points over F_(q^r), r≥1.
-- **K3SurfacesAndSymplecticBoundedness** §1.1 supplies `IsK3`; §1.2 supplies `isK3_fieldExtension_iff` and isomorphism transport; §1.3 supplies projectivity. These are the shared K3 objects used in §3.10.
-- **NeronModelsAndSemistableAbelianVarietiesPartII** §§2.1–2.5 supplies genus-one fibrations, fibre divisors and Kodaira types in every characteristic; §§2.9–2.16 supplies finite-field labelled component descent, counts and forms of P¹; §§3.7–3.11 supplies the local torsor comparison, the F₂ reduced-fibre isomorphism and geometric Kodaira matching. §§4.1–4.4 supplies canonical and Euler formulas; §§4.7–4.8 and 4.16 supplies restriction with vertical kernel, Shioda–Tate and quasielliptic 2-torsion; §4.17 supplies unpointed and regular nonsmooth generic Jacobians and minimal models; §4.18 supplies geometric Tsen. §§5.1–5.8 supplies the auxiliary count and rational-Jacobian constant-Picard criterion. §7.4 supplies completeness of the fourteen-model rational-elliptic classification, including the three nonsplit completions. These inputs are imported rather than constructed here. The shared geometric portion also meets **SchemeAndStackFoundations**, Part II §genus-one-fibrations, gap:elliptic-surface-geometry, specified by K3SurfacesAndSymplecticBoundedness; the Enriques roadmap assigns it no second owner.
+- **K3SurfacesAndSymplecticBoundedness** §1.1 supplies `IsK3`; §1.2 supplies `isK3_fieldExtension_iff` and isomorphism transport; §1.3 supplies projectivity. These are the shared K3 objects used in §3.10. Its §6.0b supplies the genus-one carrier, component lattices, wild canonical formula, regular Jacobian and Euler comparison, including quasielliptic fibrations, used in §§4.1–4.2.
+- **NeronModelsAndSemistableAbelianVarietiesPartII** §§2.1–2.5 supplies genus-one fibrations, fibre divisors and Kodaira types in every characteristic; §§2.9–2.16 supplies finite-field labelled component descent, counts and forms of P¹; §2.14 supplies the I₀* exclusion over F₂ under constant Num; §§3.7–3.11 supplies the local torsor comparison, the F₂ reduced-fibre isomorphism and geometric Kodaira matching. §§4.1–4.3 supplies canonical and Euler formulas; §6.1 supplies the characteristic-independent surface rationality criterion H¹(O)=H⁰(ω²)=0; §§4.7–4.8 and 4.16 supplies restriction with vertical kernel, Shioda–Tate and quasielliptic 2-torsion; §4.17 supplies unpointed and regular nonsmooth generic Jacobians and minimal models; §4.18 supplies geometric Tsen. §§5.1–5.8 supplies the auxiliary count and rational-Jacobian constant-Picard criterion. §7.4 supplies completeness of the fourteen-model rational-elliptic classification, including the three nonsplit completions. These inputs are imported rather than constructed here; K3SurfacesAndSymplecticBoundedness §6.0b supplies the shared geometric genus-one theory and NeronModelsAndSemistableAbelianVarietiesPartII §§2–4 its arithmetic models and local comparisons.
 
-The pinned dyadic-unit inputs are `TauCeti.exists_eq_neg_one_pow_mul_five_pow_mul_sq` and `TauCeti.isSquare_coe_iff_mem_unitsPrincipal_three` in `TauCeti/NumberTheory/Padics/SerreSigns.lean`. Layer 3 supplies their explicit representative and canonical-twist comparison. The native Cartier duality is in `TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean`; `TauCeti.LineBundleClass` is in `TauCeti/AlgebraicGeometry/LineBundle/Class.lean`, `Scheme.CartierDivisor.toLineBundleClassHom` is in `TauCeti/AlgebraicGeometry/CartierDivisor/Picard.lean`, the regular-curve `LineBundleClass.eulerDegreeHom` and `LineBundleClass.picZero` are in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/PicZero.lean`, and `rigidifiedPicardFunctor` is in `TauCeti/AlgebraicGeometry/PicardFunctor/Rigidified.lean`.
+The pinned dyadic-unit inputs are `TauCeti.exists_eq_neg_one_pow_mul_five_pow_mul_sq` and `TauCeti.isSquare_coe_iff_mem_unitsPrincipal_three` in `TauCeti/NumberTheory/Padics/SerreSigns.lean`. Layer 3 supplies their explicit representative and canonical-twist comparison. The native Cartier duality is in `TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean`; `TauCeti.AlgebraicGeometry.LineBundleClass` is in `TauCeti/AlgebraicGeometry/LineBundle/Class.lean`, `Scheme.CartierDivisor.toLineBundleClassHom` is in `TauCeti/AlgebraicGeometry/CartierDivisor/Picard.lean`, the regular-curve `LineBundleClass.eulerDegreeHom` and `LineBundleClass.picZero` are in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/PicZero.lean`, and `rigidifiedPicardFunctor` is in `TauCeti/AlgebraicGeometry/PicardFunctor/Rigidified.lean`.
 
 ### Supplier extension contracts
 
 What SchemeAndStackFoundations must provide (gap:numerical-contraction-descent): In Part II §numerical-contraction-descent, extend the numerical divisor quotient to arbitrary-field proper schemes and to proper flat finitely presented families with flat Pic^τ and locally constant geometric numerical rank, with base-change comparison; prove descent of projective contractions under constant Num, and for a smooth proper surface with H⁰(O)=k prove fibre-graph descent, preservation of intersection labels when the reduced residue fibre is geometrically reduced, and purely inseparable residue field for a geometrically reducible fibre (SCH23, Theorem 1.3, pp. 6–7, and Theorem 2.1, pp. 8–9). Local projectivity in §3.3 uses a section to split the Picard obstruction, constant Num and `2 Pic^τ=0`, not general Brauer vanishing.
-
-What SchemeAndStackFoundations must provide (gap:elliptic-surface-geometry): In Part II §genus-one-fibrations, supply the shared geometric genus-one surface and Jacobian interface with wild canonical coefficients, component lattices and Euler comparison, exactly as specified by K3SurfacesAndSymplecticBoundedness under this same slug; use the arithmetic minimal-model and local-comparison interfaces of NeronModelsAndSemistableAbelianVarietiesPartII §§2–4.
 
 What AlgebraicModuliForArithmeticGeometry must provide (gap:picard-flatness-betti): In Part II §picard-deformations, for a smooth proper geometrically connected Y/k over an algebraically closed field of characteristic p>0, and a proper flat deformation over a local Noetherian W(k)-algebra with closed fibre Y, prove relative Picard flatness when `b₁(Y)=2(h¹(O_Y)−h²(O_Y))`; over a Henselian base of dimension at most one, include the proper flat identity-component scheme and its finite-flat specialization when Pic⁰(Y) is finite (DI21, proof of Theorem 4.3, pp. 16–17).
 
@@ -163,11 +161,11 @@ The interface consists of the following declarations.
 
 **Checks.**
 
-- A scheme fibre 2F gives a half-fibre with the original multiplicities in F.
+- For a smooth double fibre 2E, the half-fibre E has square zero; the candidate 2E fails because twice that candidate is 4E rather than 2E.
 
-- For additive fibres with component multiplicity greater than one, the reduced support cannot replace F.
+- For a double IV* fibre, the primitive central coefficient is 3 and the full-fibre coefficient is 6. Twice the reduced support has central coefficient 2 and cannot be the full fibre.
 
-- For a field extension the base-changed equality remains 2F_K=φ_K*([a_K]).
+- The zero divisor fails: twice zero is zero, while the fibre over the rational base point is nonzero, with coefficient 2 on a component of a smooth double fibre.
 
 *Needs:* WeilConjectures WC.7 (`IsEnriques`); SchemeAndStackFoundations, §§5.9–5.10.
 
@@ -313,7 +311,7 @@ The interface consists of the following declarations.
 
 **Checks.**
 
-- For geometric Pic^τ=μ₂, the predicate holds.
+- On k[ε]/ε² the coproduct Δε=ε⊗1+1⊗ε+ε⊗ε gives μ₂. Omitting ε⊗ε gives α₂ and fails the ordinary condition despite the identical underlying ring.
 
 - The other two length-two group schemes fail the ordinary predicate.
 
@@ -339,7 +337,7 @@ The interface consists of the following declarations.
 
 **Checks.**
 
-- For geometric Pic^τ=(Z/2), the predicate holds.
+- The reduced algebra k×k has two geometric points and zero tangent space at the identity; k[ε]/ε² has one geometric point and tangent dimension one and cannot model the classical type.
 
 - The other two length-two group schemes fail the classical predicate.
 
@@ -365,7 +363,7 @@ The interface consists of the following declarations.
 
 **Checks.**
 
-- For geometric Pic^τ=α₂, the predicate holds.
+- The primitive coproduct Δε=ε⊗1+1⊗ε on k[ε]/ε² gives α₂. Adding ε⊗ε gives μ₂ and fails the supersingular condition.
 
 - The other two length-two group schemes fail the supersingular predicate.
 
@@ -447,11 +445,31 @@ The interface consists of the following declarations.
 
 **Checks for exceptionality.**
 
-- An exceptional T₂,₃,₇ surface satisfies H¹(O_(2C))≠0, so the predicate holds.
-- C=0 gives H¹=0 and the predicate fails, even in a local-cover type.
-- Ordinary Pic^τ=μ₂ is excluded; replacing the type condition by arbitrary characteristic-two Enriques would lose this distinction.
+- For an exceptional classical T₂,₃,₇ surface, h¹(O_(2C))=1 and h⁰(O_(2C))=5, while h⁰(Y,O_Y(2C))=1. Indeed (2C)²=−8 gives χ(O_(2C))=4; the differential sequence of §1.17a, vector-field criterion and duality give h¹=1. Substituting surface line-bundle cohomology changes the object.
+- C=0 gives the empty subscheme and h¹=0, so the predicate fails even in a local-cover type.
+- Replacing the exceptional doubled conductrix by its reduced rational tree gives h¹=0 and incorrectly rejects that exceptional surface (ESB21, Proposition 2.8(3),(6), pp. 6–7).
 
 *Needs:* [1.15](#115-k3-like-canonical-covering); [1.16](#116-cohomology-of-the-k3-like-cover); SchemeAndStackFoundations, §§1.3–1.9 and 4.1; SchemeAndStackFoundations, §§2.6 and 2.20.
+
+### 1.17a The conductrix differential sequence
+
+Let Y be a classical or supersingular geometric Enriques surface in characteristic two, with conductrix C. Construct the saturated injection O_Y(2C)→Ω¹_Y and a finite subscheme W⊂Y with exact sequence `0→O_Y(2C)→Ω¹_Y→I_W⊗ω_Y(−2C)→0`. Its dual is `0→ω_Y(2C)→Θ_Y→I_W(−2C)→0`. Prove h⁰(Y,Ω¹_Y)=1 and, when C≠0, h⁰(Y,O_Y(2C))=1 (ESB21, Lemma 2.4 and equation (2.5), p. 5, ESB21 lines 163–178; proof of Proposition 2.8(2), p. 6, ESB21 lines 219–221).
+
+Derive the map from the normalization’s factorization of Frobenius: locally a section f of the normalization algebra maps to d(f²) on Y. Normality gives saturation, and the determinant of Ω¹_Y identifies the quotient, including the ideal of the finite subscheme. Prove the one-form dimension for these two local-cover types as part of this target, using the canonical-cover differential calculation. For C≠0, compute Chern classes and use this one-form dimension to obtain the section assertion. The sheaf sequence concerns Y; it does not identify O_Y(2C) with the structure sheaf of the doubled subscheme.
+
+The interface has these properties.
+
+- The injection has source O_Y(2C), target Ω¹_Y and torsion-free rank-one quotient I_W⊗ω_Y(−2C); the ideal I_W has zero-dimensional support quotient.
+- Dualizing gives the displayed tangent sequence, with the same finite subscheme W.
+- The one-form space has dimension one (ESB21 line 220; DI21 line 1051); for C≠0 the surface line bundle O_Y(2C) also has exactly one independent global section.
+
+**Checks.**
+
+- At a multiplicity-one component of C, the saturated source has divisor coefficient 2; using O_Y(C) gives coefficient 1 and misses the Frobenius square.
+- For C≠0, C²=−2 gives (2C)²=−8 and length(W)=12−8=4; replacing I_W by O_Y would give length zero and violate the Chern-class equality length(W)−(2C)²=12.
+- On an exceptional classical surface, the dual sequence has h⁰(ω_Y(2C))=h⁰(Θ_Y)=1 since H⁰(I_W(−2C))=0, and h⁰(O_Y(2C))=1. For C=0, the positivity required in §8.3 instead has value C·H=0, so this sequence alone supplies no lifting obstruction.
+
+*Needs:* §1.17 for the normalized canonical cover and conductrix; §0.3 for coherent invariants; SchemeAndStackFoundations §0.29 for scheme Frobenius, §2.20 for duality and §5.10 for Chern classes and Noether’s formula; Mathlib `KaehlerDifferential` in `Mathlib/RingTheory/Kaehler/Basic.lean` for the local construction.
 
 ### 1.18 Special double-fibre characterization of exceptionality
 
@@ -563,11 +581,24 @@ Nef isotropic classes lie in the same closed positive cone. If their intersectio
 
 For every geometric Enriques Y and effective divisor D with D²>0, prove that D is linearly equivalent to D₁+D₂ with nonzero effective Dᵢ and Dᵢ²≥0 (Lang1983, Theorem 4.1, printed p. 62; Lang1983 line 757). No classical or generic-Pic⁰-order hypothesis is imposed.
 
-For the integral lattice L=U⊕E₈(−1), h²>0, d²>0 and d·h>0, prove d=d₁+d₂ with nonzero dᵢ, dᵢ²≥0 and dᵢ·h>0 (Lang1983, Theorem 4.2, printed p. 62; Lang1983 line 760). The numerical theorem is independent of any chosen fibration.
+Define `enriquesNumericalLattice` as the native orthogonal sum of the hyperbolic plane and the negated spinor-glue E₈ lattice. For h,d in this integral carrier L=U⊕E₈(−1), with h²>0, d²>0 and d·h>0, prove `positive_cone_decomposition`: d=d₁+d₂ with nonzero integral dᵢ, dᵢ²≥0 and dᵢ·h>0 (Lang1983, Theorem 4.2, printed p. 62; Lang1983 line 760). The numerical theorem is independent of any chosen fibration. The model uses the native integral pairing, rather than the entire rational ambient space.
+
+Its API consists of the following facts.
+
+- The pairing is the orthogonal sum U⊕E₈(−1); negation changes the form, preserving the E₈ carrier.
+- The carrier is integral of rank ten, and contains the two primitive isotropic U basis vectors.
+- The theorem supplies both summands in that carrier and in the same positive-cone closure as h.
+
+**Checks for the native model.**
+
+- For the U basis e,f, e²=f²=0 and e·f=1, so (e+f)²=2; a positive-definite replacement has no such isotropic basis.
+- An E₈ root r has r²=−2, while (e+f)·r=0. Omitting negation would give +2.
+- The ambient vector e/2 is outside the carrier: its U coordinate 1/2 is not integral; adding a rational ambient summand would admit it.
 
 **Checks for general reducibility.**
 
 - In U, take h=d=e+f. Then h²=d²=2, d·h=2, and d₁=e,d₂=f have square zero and dᵢ·h=1.
+- With an E₈ root r of square −2 orthogonal to U, h=e+f and d=2e+f+r have squares 2 and 2 and pairing 3. The split d₁=e, d₂=e+f+r has squares 0,0 and pairings 1,2 with h, so it tests the negative E₈ summand as well.
 - D=0 has D²=0 and is outside the positive-square theorem; it cannot be a sum of two nonzero effective divisors.
 - With h=e+f and d=−e−f, d²=2 but d·h=−2. It cannot split into two classes each pairing positively with h, so the positive-cone hypothesis is necessary.
 
@@ -581,7 +612,7 @@ The pencil has index two: a K-point would extend to a section, contradicting `R�
 
 - Both square-zero and square−2 branches survive the construction; preserving the nontrivial coset must be checked explicitly.
 
-*Needs:* [0.4](#04-the-enriques-numerical-lattice); [1.2](#12-2-curve-and-two-section-on-an-enriques-surface); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations). NeronModelsAndSemistableAbelianVarietiesPartII §§2.1, 2.2 and 4.7 supplies fibre divisors and generic restriction with vertical kernel; SchemeAndStackFoundations §§2.6, 2.20 and 5.9–5.10 supplies curve Riemann–Roch and adjunction.
+*Needs:* [0.4](#04-the-enriques-numerical-lattice); [1.2](#12-2-curve-and-two-section-on-an-enriques-surface); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations). The numerical headline uses `IntegralLattice.hyperbolicPlane`, `IntegralLattice.d8PlusLattice`, `IntegralLattice.orthogonalSum` and native form negation. NeronModelsAndSemistableAbelianVarietiesPartII §§2.1, 2.2 and 4.7 supplies fibre divisors and generic restriction with vertical kernel; SchemeAndStackFoundations §§2.6, 2.20 and 5.9–5.10 supplies curve Riemann–Roch and adjunction.
 
 ### Examples
 
@@ -629,21 +660,29 @@ The interface consists of the following declarations.
 
 f:Y→S is a flat proper finitely presented algebraic-space Enriques family, with every geometric fibre Enriques.
 
-For any Enriques family over S=Spec R, the fppf relative Picard algebraic space is representable by a scheme over S.
+For any Enriques family over S=Spec R, the relative fppf Picard sheaf is a quasi-separated algebraic space locally of finite presentation, with its base-change comparison. Prove O_S→f_*O_Y universally an isomorphism by coherent base change and geometric connectedness (SCH23, Proposition 5.3 and its preceding paragraph, p. 14; SCH23 lines 601–610).
 
-Use ComplexComparisonPartII C3.2d.2 for the general proper-flat algebraic-space Picard sheaf, with AlgebraicModuliForArithmeticGeometry §7.6.1–§7.6.1a for its base-change comparison. The finite rank-two Pic^τ and étale numerical components give the Enriques-specific scheme representability of SCH23 Proposition 5.3. Over a field, JacobianChallenge Layer D supplies the projective geometrically integral specialization, including Enriques surfaces; the arbitrary-base algebraic-space family needs the relative theorem just cited. ([SCH23](#references), Proposition 5.3, p. 14)
+Apply ComplexComparisonPartII C3.2d.2 and AlgebraicModuliForArithmeticGeometry §7.6.1–§7.6.1a. This step uses no flatness of Pic^τ or numerical local system. Over a geometric field, JacobianChallenge Layer D gives the projective-scheme specialization. The scheme-representability conclusion over arbitrary affine bases follows in §2.3 after the relative invariants.
 
-*Needs:* [2.1](#21-family-of-enriques-surfaces); [0.2](#02-numerically-trivial-picard-group-of-an-enriques-surface); AlgebraicModuliForArithmeticGeometry §7.6.1–§7.6.1a; ComplexComparisonPartII C3.2d.2.
+*Needs:* [2.1](#21-family-of-enriques-surfaces); [0.3](#03-enriques-numerical-and-cohomological-invariants); SchemeAndStackFoundations §2.6; AlgebraicModuliForArithmeticGeometry §7.6.1–§7.6.1a; ComplexComparisonPartII C3.2d.2; JacobianChallenge Layer D for the field specialization.
 
 ### 2.3 Relative numerical invariants
 
 f:Y→S is a flat proper finitely presented algebraic-space Enriques family, with every geometric fibre Enriques.
 
-For an Enriques family, relative Pic^τ is an open finite locally free subgroup of rank two, and its numerical quotient Num is étale locally isomorphic to Z¹⁰. Both commute with base change.
+Prove that relative Pic^τ is an open finite locally free subgroup of rank two, and Num=Pic/Pic^τ is étale locally isomorphic to ℤ¹⁰, with base change for both. Then prove that full Pic is a scheme over any affine S (SCH23, Proposition 5.3, p. 14; EHS12, Proposition 4.2 and Corollary 4.3, printed pp. 31–32, EHS12 lines 1369–1408).
 
-Apply fibrewise length and numerical rank from Layer 0, relative Picard base change and the numerical Picard supplier. Verify openness and flat rank globally, not only on geometric points. ([SCH23](#references), Proposition 5.3, p. 14)
+Start with the algebraic space of §2.2. Establish Picard flatness on local Artinian tests with algebraically closed residue field, without assuming full Pic is a scheme: the deformation of Y is a scheme by invariance under nilpotent thickening. In positive characteristic apply gap:picard-flatness-betti with b₁=2(h¹(O)−h²(O))=0 from §0.3 and WeilConjectures WC.7. In characteristic zero h²(O)=0 gives unobstructed Picard deformation. Prove the passage from these tests to arbitrary affine bases by Noetherian approximation and the local flatness criterion. Establish openness of the numerically trivial locus and its properness and finiteness in Enriques families by the torsion argument of EHS12 Corollary 4.3; together with geometric length two this makes Pic^τ finite locally free of rank two. Constant fibre length alone does not give flatness.
 
-*Needs:* [2.2](#22-relative-picard-representability); [0.2](#02-numerically-trivial-picard-group-of-an-enriques-surface); [0.3](#03-enriques-numerical-and-cohomological-invariants); FiniteFlatGroupsAndIntegralPadicHodgeTheory, R07.1; gap:numerical-contraction-descent.
+Only then apply gap:numerical-contraction-descent to form the étale rank-ten quotient and its base-change comparison. Finally, full Pic→Num is a torsor under finite locally free Pic^τ. Prove scheme representability by the Enriques numerical-component and finite-torsor descent argument of SCH23 Proposition 5.3 and EHS12 Corollary 4.3. This step includes effectivity of that descent for these Picard spaces over arbitrary affine bases; a general algebraic space does not become a scheme merely because it has an étale scheme cover. No scheme premise enters the preceding flatness or quotient arguments.
+
+**Checks.**
+
+- For the constant deformation of a classical surface over R=k[ε]/ε², Pic^τ=(ℤ/2)_R has rank two and k-length four. The connected α₂_R also has k-length four; connectedness does not change rank.
+- In characteristic two, R[t]/(t²,εt) with primitive t has special fibre k[t]/t² of length two, but its underlying R-module R⊕kt has k-length three rather than four. Thus the geometric-fibre length test cannot replace flatness.
+- The coherent pairs (h¹,h²)=(0,0) and (1,1) both give 2(h¹−h²)=0=b₁. Requiring h²=0 in every characteristic would incorrectly exclude the latter Enriques types.
+
+*Needs:* [2.2](#22-relative-picard-representability); [0.2](#02-numerically-trivial-picard-group-of-an-enriques-surface); [0.3](#03-enriques-numerical-and-cohomological-invariants); WeilConjectures WC.7; SchemeAndStackFoundations §§1.2–1.9, 4.1 and 0.9 for descent, nilpotent thickenings and Noetherian approximation; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.1; gap:picard-flatness-betti; gap:numerical-contraction-descent. The Enriques torsion-finiteness argument and passage from Artinian tests are targets of this subsection.
 
 ### 2.4 Family of canonical coverings
 
@@ -669,7 +708,7 @@ The interface consists of the following declarations.
 
 - For ordinary characteristic-two Pic^τ, the fibre group is the étale Z/2.
 
-- The trivial torsor has zero edge class and does not represent the nonzero inclusion P↪Pic.
+- Over a nonempty base, the trivial torsor has zero edge class, whereas the inclusion P↪Pic restricts nontrivially to any geometric fibre; the trivial torsor therefore fails the canonical-cover condition. Over the empty base both classes are zero and the unique torsor is canonical.
 
 *Needs:* [2.3](#23-relative-numerical-invariants); FiniteFlatGroupsAndIntegralPadicHodgeTheory, R07.1; SchemeAndStackFoundations, §§2.2–2.4, 2.11, 2.15 and 2.22; ComplexComparisonPartII C3.2d.5.
 
@@ -862,16 +901,6 @@ For an Enriques Y/F_q with constant Num and a genus-one fibration to P¹, geomet
 Apply the general numerical contraction and graph-descent supplier to φ. Over a finite field purely inseparable residue extensions are trivial. Smooth rational geometric components descend to conics, and finite-field Brauer vanishing splits them. For an irreducible singular rational component assert only normalization P¹, not smoothness of the component. ([SCH23](#references), Theorem 2.1, pp. 8–9; Proposition 3.1, pp. 10–11)
 
 *Needs:* [2.10](#210-constant-and-split-picard-schemes); [1.2](#12-2-curve-and-two-section-on-an-enriques-surface); SchemeAndStackFoundations, §§5.9–5.10; SchemeAndStackFoundations, §§2.2–2.4, 2.11, 2.15 and 2.22; NeronModelsAndSemistableAbelianVarietiesPartII §2.9.
-
-### 2.20 No I₀* fibre over F₂ with constant Num
-
-Y/F₂ is Enriques with constant Num; φ is elliptic or quasielliptic.
-
-An Enriques surface over F₂ with constant Num has no geometric I₀* fibre in any genus-one fibration.
-
-Fibre descent puts this reducible fibre over a rational base point with central component `P¹_{F₂}.` The four distinct outer components attach at four distinct rational points of the central component. P¹(F₂) has only three points. ([SCH23](#references), Proposition 3.2 and proof, p. 11)
-
-*Needs:* [2.19](#219-split-genus-one-fibre-graphs-over-finite-fields); SchemeAndStackFoundations, §§5.9–5.10.
 
 ### Examples
 
@@ -1123,13 +1152,13 @@ The interface consists of the following declarations.
 
 **Checks.**
 
-- For a smooth generic genus-one curve, the generic Jacobian is its Pic⁰ elliptic curve.
+- An index-two smooth generic torsor has no K-point, while its Jacobian has its K-rational identity. Replacing the Jacobian by the torsor fails this point test.
 
-- For the quasielliptic case retain the regular compactification, rather than calling the group curve smooth elliptic.
+- In the quasielliptic branch the affine dimension-one Pic⁰ group has infinitely many linearly independent global functions, whereas its proper regular genus-one compactification has H⁰=K of dimension one. They cannot be the same curve.
 
 - The Jacobian has a section, so it does not inherit a torsor fibre multiplicity two as a Jacobian scheme fibre.
 
-*Needs:* WeilConjectures WC.7 (`IsEnriques`); SchemeAndStackFoundations, §§1.3–1.9 and 4.1; NeronModelsAndSemistableAbelianVarietiesPartII §4.17; gap:elliptic-surface-geometry.
+*Needs:* WeilConjectures WC.7 (`IsEnriques`); SchemeAndStackFoundations, §§1.3–1.9 and 4.1; NeronModelsAndSemistableAbelianVarietiesPartII §4.17; K3SurfacesAndSymplecticBoundedness §6.0b.
 
 ### 4.2 Rationality of the Enriques Jacobian
 
@@ -1137,9 +1166,15 @@ k is any field; Y/k is geometrically Enriques and φ:Y→P¹_k is a genus-one fi
 
 The relatively minimal regular Jacobian surface of any Enriques genus-one fibration is geometrically rational.
 
-Over k̄ restrict to the open base with simple fibres and identify the torsor/Jacobian there by the local genus-one theory. Transfer R¹φ_*O and compute the Enriques Euler characteristic contribution to obtain χ(O_J)=1. Apply the supplier rational genus-one surface criterion. The assertion includes quasielliptic Jacobians. ([SCH23](#references), Proposition 6.2, p. 19)
+Over k̄, use K3SurfacesAndSymplecticBoundedness §6.0b to obtain χ(O_J)=χ(O_Y)=1, including the quasielliptic case. The relatively minimal Jacobian model is smooth projective, has no multiple fibres and has R¹j_*O_J=O(−1). Leray gives H¹(O_J)=0 and the canonical formula gives ω_J=O(−F), so H⁰(ω_J²)=0. Apply NeronModelsAndSemistableAbelianVarietiesPartII §6.1, the surface rationality criterion for smooth projective surfaces over an algebraically closed field; its elliptic-only specialization is not needed. ([SCH23](#references), Proposition 6.2, p. 19)
 
-*Needs:* [4.1](#41-jacobian-of-an-enriques-genus-one-fibration); [0.3](#03-enriques-numerical-and-cohomological-invariants); SchemeAndStackFoundations, §§2.6 and 2.20; NeronModelsAndSemistableAbelianVarietiesPartII §§4.1–4.4.
+*Needs:* [4.1](#41-jacobian-of-an-enriques-genus-one-fibration); [0.3](#03-enriques-numerical-and-cohomological-invariants); SchemeAndStackFoundations, §§2.6 and 2.20; K3SurfacesAndSymplecticBoundedness §6.0b; NeronModelsAndSemistableAbelianVarietiesPartII §§4.1–4.3, 4.17 and 6.1.
+
+**Checks.**
+
+- For E×P¹ the values χ(O)=0 and h¹(O)=1 exclude the rationality criterion, although the fibration has a section.
+- For χ(O_J)=1, H⁰(P¹,O(−1))=H¹(P¹,O)=0, so Leray gives h¹(O_J)=0; H⁰(P¹,O(−2))=0 gives the second plurigenus zero.
+- For a Jacobian K3, χ(O)=2 gives R¹j_*O=O(−2) and ω_J=O, so h⁰(ω_J²)=1; a section alone cannot imply rationality.
 
 ### 4.3 Matching geometric Kodaira types
 
@@ -1181,9 +1216,9 @@ Y/F₂ is an Enriques surface with constant full relative Picard group scheme `(
 
 No geometric Jacobian fibre in this setting has type I₀*.
 
-[2.20](#220-no-i-fibre-over-f-with-constant-num) excludes the Enriques I₀* fibre for either kind of genus-one fibration. For this elliptic Jacobian adapter, transfer geometric Kodaira symbols by [4.3](#43-matching-geometric-kodaira-types). ([SCH23](#references), Proposition 9.3, p. 25)
+NeronModelsAndSemistableAbelianVarietiesPartII §2.14 excludes the Enriques I₀* fibre for either kind of genus-one fibration. For this elliptic Jacobian adapter, transfer geometric Kodaira symbols by [4.3](#43-matching-geometric-kodaira-types). ([SCH23](#references), Proposition 9.3, p. 25)
 
-*Needs:* [4.3](#43-matching-geometric-kodaira-types); [2.14](#214-descent-of--2-curves); [2.20](#220-no-i-fibre-over-f-with-constant-num).
+*Needs:* [4.3](#43-matching-geometric-kodaira-types); [2.14](#214-descent-of--2-curves); NeronModelsAndSemistableAbelianVarietiesPartII §2.14.
 
 ### 4.7 Semistable graph descent
 
@@ -1201,9 +1236,9 @@ Y/F₂ is an Enriques surface with constant full relative Picard group scheme `(
 
 Among the three F₂-rational base points, at most one Jacobian fibre is semistable or smooth supersingular.
 
-The Enriques fibration has two rational tame double fibres, whose half-fibres are ordinary or additive. For smooth multiple reduction use NeronModelsAndSemistableAbelianVarietiesPartII §§2–5 Corollary 8.3 isomorphism, not just the Kodaira symbol I₀, to transfer ordinarity. Simple fibres use the fibre isomorphism. ([SCH23](#references), Proposition 9.3, p. 25)
+The Enriques fibration has two rational tame double fibres, whose half-fibres are ordinary or additive. For smooth multiple reduction use the F₂ multiple-fibre isomorphism of NeronModelsAndSemistableAbelianVarietiesPartII §3.9 (SCH23, Corollary 8.3, p. 23), not just the Kodaira symbol I₀, to transfer ordinarity. Simple fibres use the fibre isomorphism. ([SCH23](#references), Proposition 9.3, p. 25)
 
-*Needs:* [1.11](#111-characteristic-two-tame-half-fibre-types); [2.16](#216-rational-tame-double-fibres); [4.4](#44-simple-fibre-identification).
+*Needs:* [1.11](#111-characteristic-two-tame-half-fibre-types); [2.16](#216-rational-tame-double-fibres); [4.4](#44-simple-fibre-identification); NeronModelsAndSemistableAbelianVarietiesPartII §3.9.
 
 ### 4.9 Descent of all Mordell–Weil sections
 
@@ -1225,7 +1260,7 @@ Y/F₂ is an Enriques surface with constant full relative Picard group scheme `(
 
 At each a∈P¹(F₂), the point-count quantity n_a attached to the Jacobian equals #Y_a(F₂). Summing the three values gives 25.
 
-At simple fibres use the actual fibre isomorphism. At smooth multiple reduction use the local torsor-reduction isomorphism from Corollary 8.3. For additive multiple fibres use the supplier singular-fibre count and the descended graph of the Enriques fibre; nilpotent thickening does not change rational points. Sum over the rational base and use the Num-only surface count. ([SCH23](#references), §9, p. 26)
+At simple fibres use the actual fibre isomorphism. At smooth multiple reduction use the local torsor-reduction isomorphism of NeronModelsAndSemistableAbelianVarietiesPartII §3.9 (SCH23, Corollary 8.3, p. 23). For additive multiple fibres use the supplier singular-fibre count and the descended graph of the Enriques fibre; nilpotent thickening does not change rational points. Sum over the rational base and use the Num-only surface count. ([SCH23](#references), §9, p. 26)
 
 Define n_a as an auxiliary number from the Jacobian fibre type, its geometric component count and, in the smooth case, its residue-field elliptic curve. The formulas used in the enumeration are
 
@@ -1301,7 +1336,7 @@ For a quasielliptic fibration on a constant-full-Picard Enriques surface over F�
 
 Use the supplier 2-torsion generic Pic⁰ and the vertical Picard rank formula ρ=2+Σ(r_a−1). Numerical contraction descent confines reducible fibres to rational points. Exclude I₀* by the rational-point argument and larger `I_{2n}*` by the component bound. ([SCH23](#references), Proposition 11.1 proof, p. 33)
 
-*Needs:* [0.3](#03-enriques-numerical-and-cohomological-invariants); [2.10](#210-constant-and-split-picard-schemes); WeilConjectures WC.7 (`count_enriques_or_rational_genus_one`); [2.20](#220-no-i-fibre-over-f-with-constant-num); [2.19](#219-split-genus-one-fibre-graphs-over-finite-fields); NeronModelsAndSemistableAbelianVarietiesPartII §§4.8 and 4.16.
+*Needs:* [0.3](#03-enriques-numerical-and-cohomological-invariants); [2.10](#210-constant-and-split-picard-schemes); WeilConjectures WC.7 (`count_enriques_or_rational_genus_one`); NeronModelsAndSemistableAbelianVarietiesPartII §2.14; [2.19](#219-split-genus-one-fibre-graphs-over-finite-fields); NeronModelsAndSemistableAbelianVarietiesPartII §§4.8 and 4.16.
 
 ### 5.3 Quasielliptic configurations
 
@@ -1404,7 +1439,7 @@ No genus-one fibration on such Y has a multiple I₄* fibre, after both classifi
 
 The partner half-fibre leaves D₈ vertical. With II* excluded, the additional partner component must complete another I₄*. Intersection at most two forces it disjoint from the original terminal component, producing an I₀* canonical-type curve. This contradicts the I₀* exclusion. ([SCH23](#references), Proposition 11.3, p. 35; proof pp. 36–38 (II* case and multiple I₄* case p. 36, IV* case p. 37, IV case pp. 37–38))
 
-*Needs:* [5.10](#510-elimination-of-ii); [5.7](#57-three-additional-configuration-exclusions); [1.24](#124-partner-genus-one-fibration); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations); [2.20](#220-no-i-fibre-over-f-with-constant-num).
+*Needs:* [5.10](#510-elimination-of-ii); [5.7](#57-three-additional-configuration-exclusions); [1.24](#124-partner-genus-one-fibration); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations); NeronModelsAndSemistableAbelianVarietiesPartII §2.14.
 
 ### 5.12 Elimination of IV*
 
@@ -1495,9 +1530,7 @@ The interface consists of the following declarations.
 
 - `secondLattice`: The native IntegralLattice.ofGramMatrix of N₂ on Q¹⁰.
 
-- `firstGram_symmetric`: firstGram.IsSymm.
-
-- `secondGram_symmetric`: secondGram.IsSymm.
+- Both displayed matrices are symmetric; their symmetry proofs are constructor arguments.
 
 - det N₁=−4.
 
@@ -1529,7 +1562,11 @@ The complete matrices can be specified sparsely without suppressing entries. In 
 
 and their transposes. All other entries of the eight-by-eight block are zero. For N₁ append R,F with R²=−2, F²=0, R·C₄=R·F=1 and all other new entries zero. For N₂ append F′,F with F′²=F²=0, F′·F=1 and both orthogonal to the eight-by-eight block. The Lean indices are zero-based, so C₄ has index 3 and R or F′ has index 8.
 
-In addition to the six entry Checks above, check the native lattices separately: the carrier-basis pair at indices (8,3) is one for the first and zero for the second; the last basis vector has square zero in both; and the two off-diagonal fork entries (5,6) and (5,7) are one. For both matrices compute determinant −4 and rank eight modulo two, whence the Smith factors are eight ones and two twos. The rational inverse has denominator two, not four. These checks distinguish the full integral carrier from the ambient rational space and distinguish N₁ from the orthogonal-sum model N₂.
+In addition to the six entry Checks above, check the native lattices separately: the carrier-basis pair at indices (8,3) is one for the first and zero for the second; the last basis vector has square zero in both; and the two off-diagonal fork entries (5,6) and (5,7) are one. For both matrices compute determinant −4 and rank eight modulo two, whence the Smith factors are eight ones and two twos. The rational inverse has denominator two, not four. These matrix Checks distinguish N₁ from N₂. For each native carrier, additionally use these membership Checks.
+
+- The standard vector e₁ lies in the carrier, with integer coordinates (1,0,…,0) and norm −2.
+- The ambient vector e₁/2 does not lie in the carrier, which is the ℤ-span of the standard rational basis: its first coordinate is 1/2, and its norm is −1/2. Allowing it would violate integrality.
+- The vectors e₁+e₂ and −2e₁ lie in the carrier, with first two coordinates (1,1) and (−2,0), and norms −2 and −8. Integer addition and scalar multiplication stay in the carrier; arbitrary rational scalar multiplication does not.
 
 *Needs:* `TauCeti.IntegralLattice.ofGramMatrix`; `TauCeti.IntegralLattice.integralForm_ofGramMatrix_apply`; Mathlib `Pi.basisFun`.
 
@@ -1647,7 +1684,7 @@ Under the residual table after both classification proofs and [6.8](#68-first-fo
 
 The vertical chain C₁+⋯+C₇ can complete only to I₄* or III*. In the I₄* case the extra end components force an I₀* canonical-type curve by the full-fibre intersection-four bound. In the III* case its new middle component meets C₄ once and the same bound makes it disjoint from C₀ and C₈, giving the first forbidden ten-curve graph. This branch uses neither [6.10](#610-second-forbidden-ten-curve-configuration) nor the completed no-I₄* theorem. ([SCH23](#references), §12, proof of Proposition 12.1, opposite-terminal branch, author p. 40)
 
-*Needs:* [5.14](#514-the-eight-residual-configurations); [5.15](#515-multiplicity-restrictions-in-the-residual-table); [5.8](#58-partner-fibration-over-f); [6.8](#68-first-forbidden-ten-curve-configuration); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations); [2.20](#220-no-i-fibre-over-f-with-constant-num).
+*Needs:* [5.14](#514-the-eight-residual-configurations); [5.15](#515-multiplicity-restrictions-in-the-residual-table); [5.8](#58-partner-fibration-over-f); [6.8](#68-first-forbidden-ten-curve-configuration); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations); NeronModelsAndSemistableAbelianVarietiesPartII §2.14.
 
 ### 6.10 Second forbidden ten-curve configuration
 
@@ -1681,7 +1718,7 @@ No genus-one fibration on a nonexceptional constant-full-Picard Enriques Y/F₂ 
 
 The fibre is simple. Use the six incidence orbits: middle C₄ creates I₈; C₃ creates an I₄ contradiction or too-large intersection; C₂ completions give I₈/I₄ or the first ten-curve graph; fork-tip pair creates I₀*; opposite-tip pair reduces to the first forbidden graph; a double terminal incidence reduces to the second forbidden graph. Separate the opposite-tip square-zero branch before invoking the second ten-curve exclusion. Every generated canonical-type curve is converted to a fibration through Layer 1 and compared with the residual list after both classification proofs. ([SCH23](#references), Proposition 12.1, p. 38; proof pp. 38–40 (it uses Propositions 12.2 and 12.3, pp. 41–44))
 
-*Needs:* [6.11](#611-six-i-half-fibre-incidence-cases); [6.8](#68-first-forbidden-ten-curve-configuration); [6.10](#610-second-forbidden-ten-curve-configuration); [5.9](#59-elimination-of-i); [5.14](#514-the-eight-residual-configurations); [5.15](#515-multiplicity-restrictions-in-the-residual-table); [5.8](#58-partner-fibration-over-f); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations); [6.9](#69-the-independent-opposite-tip-argument); [2.20](#220-no-i-fibre-over-f-with-constant-num).
+*Needs:* [6.11](#611-six-i-half-fibre-incidence-cases); [6.8](#68-first-forbidden-ten-curve-configuration); [6.10](#610-second-forbidden-ten-curve-configuration); [5.9](#59-elimination-of-i); [5.14](#514-the-eight-residual-configurations); [5.15](#515-multiplicity-restrictions-in-the-residual-table); [5.8](#58-partner-fibration-over-f); [1.3](#13-curves-of-canonical-type-on-an-enriques-surface-induce-genus-one-fibrations); [6.9](#69-the-independent-opposite-tip-argument); NeronModelsAndSemistableAbelianVarietiesPartII §2.14.
 
 ### Examples
 
@@ -1763,7 +1800,7 @@ For geometric Enriques Y in characteristic two, (h⁰(Θ_Y),h¹(Θ_Y),h²(Θ_Y))
 
 Classical vector fields are characterized by ESB Proposition 2.8(6); the ordinary and supersingular values of h⁰(Θ_Y), which DI21 Proposition 7.1 quotes from the literature, are part of this target. Serre duality identifies h⁰ and h². Riemann–Roch gives χ(Θ_Y)=−10, so h¹=10+2h⁰. The printed +10 is a sign typo, not the value used here. ([DI21](#references), §7, Proposition 7.1 and proof, p. 23; [ESB21](#references), §2, Proposition 2.8(6) and proof, pp. 6–7)
 
-*Needs:* [0.3](#03-enriques-numerical-and-cohomological-invariants); [1.17](#117-conductrix-and-exceptionality); [1.12](#112-ordinary-enriques-surfaces); [1.14](#114-supersingular-enriques-surfaces); SchemeAndStackFoundations, §§2.6 and 2.20; SchemeAndStackFoundations, §§5.9–5.10.
+*Needs:* §1.17a; [0.3](#03-enriques-numerical-and-cohomological-invariants); [1.17](#117-conductrix-and-exceptionality); [1.12](#112-ordinary-enriques-surfaces); [1.14](#114-supersingular-enriques-surfaces); SchemeAndStackFoundations, §§2.6 and 2.20; SchemeAndStackFoundations, §§5.9–5.10.
 
 ### 8.2 Supersingular Enriques surfaces do not lift to W₂
 
@@ -1781,9 +1818,9 @@ k is algebraically closed; Y/k is a geometric Enriques surface. Characteristic k
 
 For an Enriques surface over an algebraically closed field k of characteristic two, a flat proper W₂(k)-lift exists exactly when the surface is neither exceptional nor supersingular.
 
-For supersingular Y use [8.2](#82-supersingular-enriques-surfaces-do-not-lift-to-w): Pic⁰=α₂ gives a finite-flat group obstruction. This branch cannot use DI Theorem 6.1, which requires the canonical bundle to have exact order two. For exceptional classical Y set L=ω_Y(2C). ESB supplies the differential/conductrix sequence; DI Theorem 6.1 applies using ω of exact order two, positivity of C and the two equal section dimensions. Apply gap:differential-w2-nonlifting for the general Frobenius/de Rham nonlifting criterion. Otherwise [8.1](#81-tangent-cohomology-of-enriques-surfaces) gives h²(Θ)=0; formal smooth deformation over W(k) supplies a W₂-lift. These are the three branches of DI Theorem 7.2. ([SCH23](#references), Theorem 5.2, p. 14; [DI21](#references), §7, Proposition 7.1 and Theorem 7.2, pp. 23–24; §6, Theorem 6.1, pp. 20–22)
+For supersingular Y use [8.2](#82-supersingular-enriques-surfaces-do-not-lift-to-w): Pic⁰=α₂ gives a finite-flat group obstruction. This branch cannot use DI Theorem 6.1, which requires the canonical bundle to have exact order two. For exceptional classical Y set L=ω_Y(2C) and use the differential sequence of §1.17a. Its dual and H⁰(I_W(−2C))=0 identify H⁰(L) with H⁰(Θ_Y), of dimension one by §8.1. Also L⊗ω_Y=O_Y(2C) has h⁰=1 by §1.17a. Choose a sufficiently divisible ample divisor H, hence semiample: C≠0 gives L·H=2C·H>0, and L⊗ω_Y is twice the class C. Thus all hypotheses of DI Theorem 6.1 hold, including ω_Y of exact order two and equality of the two section dimensions. Apply gap:differential-w2-nonlifting for the general Frobenius/de Rham nonlifting criterion. Otherwise [8.1](#81-tangent-cohomology-of-enriques-surfaces) gives h²(Θ)=0; formal smooth deformation over W(k) supplies a W₂-lift. These are the three branches of DI Theorem 7.2. ([SCH23](#references), Theorem 5.2, p. 14; [DI21](#references), §7, Proposition 7.1 and Theorem 7.2, pp. 23–24; §6, Theorem 6.1, pp. 20–22)
 
-*Needs:* [1.17](#117-conductrix-and-exceptionality); [1.13](#113-classical-enriques-surfaces); [1.14](#114-supersingular-enriques-surfaces); SchemeAndStackFoundations, §§4.1–4.6; SchemeAndStackFoundations, §§2.6 and 2.20; [8.1](#81-tangent-cohomology-of-enriques-surfaces); [8.2](#82-supersingular-enriques-surfaces-do-not-lift-to-w); gap:differential-w2-nonlifting.
+*Needs:* §1.17a; [1.17](#117-conductrix-and-exceptionality); [1.13](#113-classical-enriques-surfaces); [1.14](#114-supersingular-enriques-surfaces); SchemeAndStackFoundations, §§4.1–4.6; SchemeAndStackFoundations, §§2.6 and 2.20; [8.1](#81-tangent-cohomology-of-enriques-surfaces); [8.2](#82-supersingular-enriques-surfaces-do-not-lift-to-w); gap:differential-w2-nonlifting.
 
 ### 8.3a Characteristic-zero lifting after a finite Witt extension
 
@@ -1863,6 +1900,8 @@ Page numbers below refer to the indicated author manuscripts. They are not silen
 
 - **ESB21.** Torsten Ekedahl and Nicholas I. Shepherd-Barron, *On exceptional Enriques surfaces*, [arXiv:math/0405510v2](https://arxiv.org/abs/math/0405510v2), 26 August 2021, 19 pages. Use §2 for canonical coverings and conductrices, §3 for fibre restrictions, Theorem 4.2 and Corollary 4.3 for exceptionality and distinguished configurations.
 
+- **EHS12.** Torsten Ekedahl, J. M. E. Hyland and Nicholas I. Shepherd-Barron, *Moduli and periods of simply connected Enriques surfaces*, [arXiv:1210.0342v1](https://arxiv.org/abs/1210.0342v1), manuscript version 7 dated 25 February 2018. Proposition 4.2 and Corollary 4.3, printed pp. 31–32, supply the Picard-flatness argument used in §§2.2–2.3.
+
 - **DI21.** Stefan Schröer, *The Deligne–Illusie theorem and exceptional Enriques surfaces*, author manuscript, 4 January 2021, [author PDF](https://www.math.uni-duesseldorf.de/~schroeer/publications_pdf/DeligneIllusie_2021.pdf), 34 PDF pages; published in *European Journal of Mathematics* 7 (2021), 489–525. Use the manuscript page numbers for Proposition 3.3, Corollary 3.4, Proposition 4.2, Theorem 6.1, Proposition 7.1 and Theorem 7.2.
 
 - **MMV22.** Gebhard Martin, Giacomo Mezzedimi and Davide Cesare Veniani, *On extra-special Enriques surfaces*, [arXiv:2201.05481v1](https://arxiv.org/abs/2201.05481v1), submitted 14 January 2022, manuscript dated 17 January 2022, nine pages. Theorem 1.2 and Remark 1.5, pp. 1–2, identify the general partner theorem and its unique-fibration exception. The older proofs they cite are part of the targets that use them.
@@ -1873,11 +1912,11 @@ Page numbers below refer to the indicated author manuscripts. They are not silen
 
 - **Lang1983.** William E. Lang, *On Enriques surfaces in characteristic p. I*, Math. Ann. 265 (1983), 45–65, [GDZ scan](https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0265/LOG_0011.pdf). Theorems 4.1–4.2, printed p. 62 (Lang1983 lines 757–778).
 
-- **BM1977.** Enrico Bombieri and David Mumford, *Enriques' classification of surfaces in characteristic p. II*, in *Complex Analysis and Algebraic Geometry* (1977), 23–42. Theorem 3 and Proposition 11; cited by locator under the settled waiver.
+- **BM1977.** Enrico Bombieri and David Mumford, *Enriques' classification of surfaces in characteristic p. II*, in *Complex Analysis and Algebraic Geometry* (1977), 23–42. Theorem 3 and Proposition 11.
 
 - **CD89.** François Cossec and Igor Dolgachev, *Enriques Surfaces I*, Progress in Mathematics 76 (1989). Chapter III, Theorem 3.4.1; published locator, uncertified text.
 
-- **CDL2021.** François Cossec, Igor Dolgachev and Christian Liedtke, *Enriques Surfaces I*. Theorem 6.1.10 uses the settled 2021 draft numbering. The [author draft of 19 April 2024](https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf) supplies Theorem 1.4.13, printed pp. 231–232, and Theorems 5.11.4–5.11.5, printed pp. 609–611; these version-specific locators are not interchanged.
+- **CDL2021.** François Cossec, Igor Dolgachev and Christian Liedtke, *Enriques Surfaces I*. Theorem 6.1.10 uses the 2021 draft numbering. The [author draft of 19 April 2024](https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1334/2024/08/EnriquesOne.pdf) supplies Theorem 1.4.13, printed pp. 231–232, and Theorems 5.11.4–5.11.5, printed pp. 609–611; these version-specific locators are not interchanged.
 
 - **LLR04.** Qing Liu, Dino Lorenzini and Michel Raynaud, *Néron models, Lie algebras, and reduction of curves of genus one*, Invent. Math. 157 (2004), 455–518, [author copy](https://www.math.u-bordeaux.fr/~qliu/articles/LLR.pdf). Theorem 6.6 and Remark 6.8, pp. 496–497.
 

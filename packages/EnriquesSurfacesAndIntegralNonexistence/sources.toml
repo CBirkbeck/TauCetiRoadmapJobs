@@ -199,3 +199,21 @@ licence_class = "none"
 status = "waived"
 version_note = "Settled operator waiver; cited by locator without certifying the text."
 cited_for = ["Exact supplier contracts; 3.13"]
+
+[[source]]
+id = "EHS12"
+authors = "T. Ekedahl, J. M. E. Hyland, N. I. Shepherd-Barron"
+title = "Moduli and periods of simply connected Enriques surfaces"
+year = 2012
+arxiv = "1210.0342v1"
+locator_scheme = "theorem"
+locator = "Proposition 4.2 and Corollary 4.3, printed pp. 31–32"
+url = "https://arxiv.org/abs/1210.0342v1"
+fetched_from = "https://arxiv.org/pdf/1210.0342v1"
+fetched_at = "2026-10-24T21:18:38Z"
+sha256 = "b313b5a173d0392288f435b213826cf7475390cf2246efed41a43a93aaa1850a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1; internal manuscript version 7 dated 25 February 2018; Proposition 4.2 and Corollary 4.3 on printed pp. 31–32."
+cited_for = ["2.2; 2.3"]
