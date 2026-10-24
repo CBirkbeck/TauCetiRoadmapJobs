@@ -5,13 +5,14 @@ import TauCeti.LinearAlgebra.Graded.LinearMap
 # Quiver representations, part II: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
-headline theorems against the pinned APIs: the internal grading and uniform pair
-nilpotence, affine-coordinate irreducibility, occurrence Dilworth and cut width,
+headline theorems against the pinned APIs: the internal grading, uniform pair
+nilpotence, reconstruction from actual images, opposite-centralizer extension,
+affine-coordinate irreducibility, finite-poset and occurrence Dilworth and cut width,
 path bounds and attainment, and truncation and nonempty maximal-peeling identities.
 Only simple definitions needed by these statements are included.
 
-The finite-window classification and reconstruction need the oriented-window
-adapter and standard interval-pair construction. Generic duality and its
+The finite-window classification needs the oriented-window adapter and standard
+interval-pair construction. Generic duality and its
 involutivity need the rank-selected generic interval type and algebraic orbit
 conormal carriers. Admissible-image genericity, ram/truncation commutation,
 the adjacent generic-rank formula, and ramified maximal-split additivity need
@@ -110,7 +111,39 @@ theorem Space.internal (S : Space) : DirectSum.IsInternal S.grade := by sorry
 theorem Pair.nilpotent {S : Space} {d : Direction} (P : Pair S d) :
     ∃ k : ℕ, P.operator ^ k = 0 := by sorry
 
+/-- Equal graded dimensions and isomorphic unshifted VN images determine a VN pair
+(AKY Lemma 3.1, pp.14–15). -/
+theorem reconstruction_from_image {S T : Space}
+    (P : Pair S .up) (Q : Pair T .up)
+    (hdim : ∀ a : ℤ, Module.finrank ℂ (S.grade a) =
+      Module.finrank ℂ (T.grade a))
+    (e : LinearMap.range P.operator ≃ₗ[ℂ] LinearMap.range Q.operator)
+    (hgrade : ∀ (a : ℤ) (v : LinearMap.range P.operator),
+      (v : S.Carrier) ∈ S.grade a ↔ (e v : T.Carrier) ∈ T.grade a)
+    (hoperator : ∀ v : LinearMap.range P.operator,
+      e (P.operator.rangeRestrict (v : S.Carrier)) =
+        Q.operator.rangeRestrict (e v : T.Carrier)) :
+    ∃ f : S.Carrier ≃ₗ[ℂ] T.Carrier,
+      (∀ (a : ℤ) (v : S.Carrier), v ∈ S.grade a ↔ f v ∈ T.grade a) ∧
+      (∀ v : S.Carrier, f (P.operator v) = Q.operator (f v)) := by sorry
+
 /-! ## Layer 2: centralizers and generic multisegment duality -/
+
+/-- Every opposite-degree commuting map on an actual VN or WL image extends
+to an opposite-degree commuting endomorphism (AKY Lemma 3.2, p.16). -/
+theorem centralizer_image_extension {S : Space} {d : Direction}
+    (P : Pair S d) (L' : Module.End ℂ (LinearMap.range P.operator))
+    (hgrade : ∀ (a : ℤ) (v : LinearMap.range P.operator),
+      (v : S.Carrier) ∈ S.grade a →
+        (L' v : S.Carrier) ∈ S.grade (a - d.step))
+    (hcomm : ∀ v : LinearMap.range P.operator,
+      L' (P.operator.rangeRestrict (v : S.Carrier)) =
+        P.operator.rangeRestrict (L' v : S.Carrier)) :
+    ∃ L : Module.End ℂ S.Carrier,
+      Homogeneous S L (-d.step) ∧
+      L.comp P.operator = P.operator.comp L ∧
+      ∀ v : LinearMap.range P.operator,
+        L (v : S.Carrier) = (L' v : S.Carrier) := by sorry
 
 /-- Polynomial nonvanishing sets generate the complex-point Zariski topology. -/
 @[instance_reducible] def polynomialTopology (n : ℕ) : TopologicalSpace (Fin n → ℂ) :=
@@ -161,6 +194,16 @@ def antichainWidth (m : Multisegment) : ℕ :=
   ((Finset.univ : Finset (Fin m.card)).powerset.filter
     (IsEndpointAntichain m)).sup Finset.card
 
+/-- Every finite poset has a partition into nonempty chains with as many parts as
+an antichain (DIL Theorem 3, pp.6-1–6-2); the empty poset has the empty partition. -/
+theorem finite_dilworth {α : Type*} [PartialOrder α] [Fintype α]
+    [DecidableEq α] :
+    ∃ (A : Finset α) (C : Finset (Finset α)),
+      IsAntichain (· ≤ ·) (A : Set α) ∧
+      (∀ c ∈ C, c.Nonempty ∧ IsChain (· ≤ ·) (c : Set α)) ∧
+      (C : Set (Finset α)).Pairwise Disjoint ∧
+      C.biUnion id = Finset.univ ∧ A.card = C.card := by sorry
+
 /-- Finite Dilworth expressed through occurrence split-graph matching. -/
 theorem weighted_dilworth (m : Multisegment) :
     matchingNumber m + antichainWidth m = m.card := by sorry
@@ -195,9 +238,10 @@ without a support-window or interior-cut hypothesis. -/
 theorem GridPath.weight_bound {r a : ℕ} (p : GridPath r a) (m : Multisegment) :
     p.weight m ≤ chainWeight m a := by sorry
 
-/-- Some path realizes the weighted chain maximum; paths and chains need not be bijective. -/
+/-- For every cut with a ≤ r, some path realizes the weighted chain maximum;
+paths and chains need not be bijective. -/
 theorem grid_path_chain_max (m : Multisegment) {r a : ℕ}
-    (ha : 1 ≤ a) (har : a < r) (hm : InWindow m r) :
+    (har : a ≤ r) (hm : InWindow m r) :
     ∃ p : GridPath r a, p.weight m = chainWeight m a := by sorry
 
 /-! ## Layer 5: the canonical ramified split and representation interfaces -/
