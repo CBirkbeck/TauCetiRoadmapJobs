@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4494 mistakes recorded on the board: 3022 misprints, 1122 errors, 296 gaps, 54 unparsed bullets.
-Errata jobs have read the cited sources of 57 roadmaps; in those of 2 they found no mistake.
+4539 mistakes recorded on the board: 3051 misprints, 1137 errors, 297 gaps, 54 unparsed bullets.
+Errata jobs have read the cited sources of 58 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -79,6 +79,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Abe, arXiv preprint v1
 
 - **Error** at Lemma 6.1(i), p. 7: the source says one twist works on any finite-type X, but two points with Frobenius eigenvalues 1 and p admit no common twist; it should be for smooth geometrically connected X, with separate twists on separate components; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## ABGHR
+
+- **Misprint** at Theorem 3.19 proof, printed p. 17 (ABGHR line 813): the source says the pullback square has B(QG) above E(QG); it should be E(QG) above B(QG), so QX maps to the classifying space and P̂ is the pulled-back principal bundle; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
 
 ## AC
 
@@ -288,6 +292,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 1.6(2), p. 4: the source says the rank ρ(Y) is positive; it should be restrict to positive-dimensional Y, since a point gives 0; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 - **Misprint** at the proof of Lemma 1.6(1), p. 4: the source says dim X − e + 2 hyperplane cuts on X; it should be dim X − e − 2, leaving a surface; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+
+## AHR
+
+- **Misprint** at Proposition 11.6 proof, printed p. 37 (AHR line 1986): the source says the two displayed scalar factors use p^(n−1) for a form of weight k; it should be p^(k−1) in both occurrences, matching the surrounding calculation; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §12, Hecke q-expansion formula, printed p. 38 (AHR line 2005): the source says T(p) multiplies Σf_(pn)qⁿ by p^(k−1) and leaves f(qᵖ) unscaled; it should be Σf_(pn)qⁿ+p^(k−1)f(qᵖ), as also required by Proposition 11.6; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
 
 ## AIP (Andreatta–Iovita–Pilloni), Hilbert adic paper, author final version
 
@@ -598,6 +607,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 5.6, p.10 (Bastl-et-al line 508): the source says the characteristic sublink can be band-summed to a knot and its handle cores banded to a disc; it should be given an empty-sublink case: for even forms c=0, use Arf invariant zero; affects the proof. Found by FourManifolds (ERRATA-FourManifolds at d09c2c0, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §6, proof of Proposition 6.1, p.13 (Bastl-et-al line 661): the source says the two input matrices are named V and V; it should be V and V′, consistently with the statement and following proof; affects nothing. Found by FourManifolds (ERRATA-FourManifolds at d09c2c0, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §§5–7, pp.9–14 (Bastl-et-al line 508; Bastl-et-al line 661): the source says internal references label Definitions, Theorems, Remarks, Lemmas and Corollaries uniformly as Propositions; it should be use Definition 5.2, Theorem 5.3, Remark 5.4, Lemmas 5.5/6.2/6.5, Corollaries 6.3/6.4, and Theorem 7.1; affects nothing. Found by FourManifolds (ERRATA-FourManifolds at d09c2c0, 2026-10-24, codex gpt-6-astra).
+
+## Bauer
+
+- **Error** at Lemma 7.11, printed p. 28 (Bauer line 654): the source says its stated vanishing hypotheses force the two higher Massey products to intersect; it should be supplemented by compatible vanishing of ⟨b,c,de⟩; in Λ_F₂(x,y,z), dz=xy, take M=0, a=0, b=c=x, d=y, e=1: ⟨x,x,y⟩={xz}≠0; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 8.6, printed p. 35 (Bauer line 926): the source says multiplication by η uniquely determines the degree-20 classes; it should be replaced by an argument controlling ker(η), which contains nonzero 2κ̄ since 2η=0 and κ̄ has order eight; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, multiplicative extension discussion, printed p. 21 (Bauer line 384): the source says bα₁=β₁³ is an extension in π₂₇; it should be π₃₀, since |b|=27 and |α₁|=3; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
 
 ## Baumslag–Myasnikov–Remeslennikov, Algebraic geometry over groups I (author PDF)
 
@@ -1653,6 +1668,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at p. 552, line 4, as corrected in BCDT lines 4458–4460: the source says the assertion applies for every `ℓ≥5`; it should be restricted further by `j(E)≢1728 mod ℓ`; affects a stated result; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6.2, p. 546, as corrected in BCDT lines 4440–4455: the source says the original arithmetic group meets Theorem 6.1.1 and uses dual coefficient modules; it should be replaced by the modified levels and `L_n⊗k` with the corrected Hom module; affects the proof; corrected in print at BCDT §10, pp. 937–938. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 
+## CDvN-DSS
+
+- **Misprint** at Proposition 5.4 proof, printed p. 50 (CDvN-DSS line 1795): the source says ηκ lies in π₁₄S and lifts using τ-freeness in bidegree (14,2); it should be π₁₅S and bidegree (15,3), since |η|=(1,1) and |κ|=(14,2); affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 6.54 proof, printed p. 73 (CDvN-DSS line 2570): the source says ν₆·2ν=τ⁸κ̄d̃₄; it should be τ⁸κ̄²d̃₄, as Lemma 6.53 states; the printed right-hand side has stem 130 instead of 150; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 6.69 proof, printed p. 81 (CDvN-DSS line 2863): the source says the dual extension requires the bracket starting with 2ντ²; it should be 2ντ⁴, matching the cell attachment; only this exponent gives the asserted bidegree (47,1); affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 6.69, printed p. 80 (CDvN-DSS line 2838): the source says the fourfold bracket detecting ν₆ lies in π_(51,1)(Smf/τ¹⁰); it should be π_(147,1)(Smf/τ¹⁰), consistent with the item label and 99+3+3+40+2=147; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 7.4, printed p. 85 (CDvN-DSS line 3000): the source says the displayed decomposition using the exterior algebra E(c₆) is a ring isomorphism in nonnegative degrees; it should be an additive decomposition; multiplication instead satisfies c₆²=c₄³−1728Δ, so c₆² is nonzero; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+
+## CDvN-Synthetic
+
+- **Misprint** at Corollary 2.13, printed p. 17 (CDvN-Synthetic line 627): the source says the full bigraded homotopy groups vanish when the sum of the two degrees is odd; it should be the homotopy groups after reduction modulo τ; τ itself gives an odd-sum counterexample before reduction; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+
 ## CG18
 
 - **Misprint** at Definition 9.1, p. 413: the source says generators T_{α,k} for all α that are units at S_Q; it should be α trivial at R, since §9.2 defines T(g) only for g trivial at R; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "71a36b3", "job": "REV-PKG-AutomorphyLiftingBeyondTaylorWiles", "model": "opus", "worker": "fable-rev36"} -->. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at 71a36b3, 2026-10-23, claude opus).
@@ -2015,6 +2042,43 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Deligne–Serre, Formes modulaires de poids 1, Ann. Sci. ENS 1974
 
 - **Error** at §5.2, pp. 518–519: the source says the continued Rankin series has no pole except s = k, but at general level ramified Euler factors add poles (η(z)η(23z) gives one at iπ/log 23); it should be only holomorphy on Re(s) ≥ k apart from a simple pole at s = k; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Devalapurkar
+
+- **Error** at Proposition 5.13 proof, printed p. 12 (Devalapurkar line 497): the source says every 2-complete Weierstrass elliptic curve is isomorphic to y²+a₁xy+a₃y=x³ over its original base; it should be a faithfully flat local presentation; y²+y=x³+x+1 over ℤ₂ has only one point modulo 2, hence no rational nonzero 3-torsion; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Remark 5.4, printed p. 9 (Devalapurkar line 373): the source says the image in π_*tmf₁(3) consists of c₄, 2c₆ and their listed Δ-multiples; it should be enlarged to include pure discriminant classes, for example 8Δ from Proposition 5.7(a), whose nonzero image is absent even from the listed generators' span; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 5.3, printed p. 9 (Devalapurkar line 364): the source says the connective tmf Adams–Novikov E₂ ring contains Δ⁻¹; it should be cubic-stack cohomology without inverting Δ; the displayed Δ-local ring belongs to periodic TMF; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at §5.2 after Proposition 5.13, printed p. 12 (Devalapurkar line 520): the source says homogeneous generators can make c₄=v₁⁴ and Δ=v₂⁴ in integral π_*tmf₁(3); it should be c₄=a₁⁴−24a₁a₃ and Δ=a₁³a₃³−27a₃⁴; specializing a₁=a₃=1 gives c₄≡9 modulo 16, impossible for a fourth power; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Gap** at §5.2 after Proposition 5.13, printed p. 12 (Devalapurkar line 522): the source says lifting c₄Δᵏ and 2c₆Δᵏ to T(2) proves they lift to B; it should be supplemented by a computation showing these T(2)-classes lie in the image of π_*B→π_*T(2), or by vanishing of their attachment obstructions; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+
+## DFHH
+
+- **Misprint** at Chapter 12, Appendix A, Theorem A.1 proof, printed p. 55 (PDF p. 206): the source says the stabilizer of each chosen generator is contained in 1+2^jℤ₂ for suitable large j; it should be that the stabilizer contains 1+2^jℤ₂, permitting a map from the corresponding permutation module; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 12, Lemma 8.1(1), printed pp. 34–35 (PDF pp. 185–186): the source says an elliptic spectrum over any ring is E(2)-local; it should be its p-localization that is E(2)-local; integral KU, associated to a nodal cubic, is not p-local; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 12, Lemma 8.3 proof, printed p. 38 (PDF p. 189): the source says the intermediate homotopy-fixed-point expression uses tmf_K(2); it should be tmf(N)_K(2) inside those GL₂(ℤ/N)-fixed points, before descent removes the level structure; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 12, Lemma 8.5 proof, printed p. 39 (PDF p. 190): the source says k topologically generates the subgroup 1+ℤₚ of ℤₚ×; it should be 1+pℤₚ, as in the preceding definition; 1+ℤₚ contains zero and is not a multiplicative subgroup; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 12, Lemma 8.6 proof, printed p. 39 (PDF p. 190): the source says taking (ℤ/p)×-fixed points leaves tmf(p)_K(2) on the second equivalence's right-hand side; it should be tmf_K(2), with the level-p structure removed, as Lemma 8.4 and the following spectral sequence require; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 12, construction preceding Lemma 8.8, printed p. 43 (PDF p. 194): the source says E^ord, E^ss and (E^ss)^ord are all K(1)-local; it should be E^ord and (E^ss)^ord that are K(1)-local; E^ss is the K(2)-local section spectrum; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 12, equation (5.2) discussion, printed p. 15 (PDF p. 166): the source says Φ_sep need not be étale despite having étale kernel; it should be étale, but need not be finite across the boundary; Remark 5.3 gives the formal-group isomorphism, and translation gives étaleness everywhere; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 12, equation (5.2), printed p. 15 (PDF p. 166): the source says the canonical-subgroup quotient Φ_insep is purely inseparable over an arbitrary p-complete base; it should be a p-isogeny whose characteristic-p reduction is purely inseparable; on Gₘ over ℤₚ it is [p], which is generically étale; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 12, paragraph following Lemma 7.14, printed p. 33 (PDF p. 184): the source says obstruction groups vanish when s>1 and −u≡3,5,6,7 modulo 8; it should be when either condition holds, as Lemma 7.13 states; the weaker printed conjunction does not cover all the obstructions used; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 12, §5 opening fibre classification, printed p. 10 (PDF p. 161): the source says every singular closed fibre has smooth locus Gₘ over its residue field; it should be a one-dimensional torus, possibly nonsplit; y²=x²(x−1) over F₃ has four smooth rational points, whereas Gₘ has two; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 12, §6, homogeneity hypothesis (1), printed p. 20 (PDF p. 171): the source says MU is an example of an even-periodic E∞-ring; it should be periodic complex bordism MUP; connective MU has no invertible positive-degree class; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, Lemma 5.3 proof, printed p. 6 (PDF p. 309): the source says the inductive congruences use a_i^(pⁱ) modulo p^(i+1), then multiply by p^(n−i); it should be a_i^(p^(n−i)) modulo p^(n−i+1), then multiply by pⁱ, matching the i-th summand of w_n; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, Lemma 7.1 proof, printed p. 10 (PDF p. 313): the source says the Jacobi product includes the factor indexed by k=0; it should be indexed by k≥1; the printed product is zero, whereas the series has constant coefficient one; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, Lemma 8.1, printed p. 14 (PDF p. 317): the source says the big-Witt congruence compares w_(pᵏm) with φₚ(w_m) modulo pᵏ; it should be φₚ(w_(p^(k−1)m)); over ℤ, a₂=1 and all other aᵢ=0 give w₄=w₂=2 but w₁=0, contradicting the printed condition; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 16, Lemma 8.2, printed p. 14 (PDF p. 317): the source says translation sending each primitive w_n to w_n+1 is a Hopf-algebra map; it should be a ring automorphism; it does not preserve the counit, since ε(w_n+1)=1 while ε(w_n)=0; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 16, Remark 7.3 proof, printed p. 11 (PDF p. 314): the source says the chosen b satisfies b≡−Σσ₃(n)qⁿ modulo 8 for the previously arbitrary topological generator g; it should be restricted, for example, to g=5; the allowed choice g=3 gives q-coefficient −3 modulo 8, rather than −1; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, §2, Adams-operation formulas, printed p. 2 (PDF p. 305): the source says the second operation acts on coefficients through ψ^q; it should be ψ^g; q is undefined and g is the operation being evaluated; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, §4, final displayed homomorphism, printed p. 4 (PDF p. 307): the source says the target polynomial generators start x₀,x₀; it should be x₀,x₁, as in Lemma 4.2; affects nothing. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, §8 definition of c_k, printed p. 14 (PDF p. 317): the source says the linear term of c_k is (−1)^k a_k; it should be (−1)^(k+1)a_k; comparing coefficients in the defining product already gives c₁=a₁; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 16, §8 definition of i, printed p. 13 (PDF p. 316): the source says the image of 2v₁² has leading factor 2v₂²; it should be 2v₁², agreeing with the adjacent expression and its degree; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 6, Lemma 1.3 proof, printed p. 2 (PDF p. 105): the source says the localization functor L_(v⁻¹E∨E/v) is an E-module spectrum; it should be the spectrum v⁻¹E∨E/v; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 6, Lemma 4.2 proof, printed p. 8 (PDF p. 111): the source says the acyclicity assumption is equivalent to B(i)=0 for 0≤i≤2; it should be B(i)_*W=0; the following displays smash those nonzero theories with W; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 6, Theorem 3.1 and Corollary 3.2, printed p. 5 (PDF p. 108): the source says regular quotients always retain a commutative multiplication in the homotopy category of E-modules; it should be conditional on vanishing commutativity obstructions; MU/2 has obstruction [ℂP¹] modulo 2, nonzero by Strickland Corollary 3.12 and Proposition 6.8 (Strickland lines 383, 1102); affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Error** at Chapter 6, Theorem 3.4 proof, printed p. 6 (PDF p. 109): the source says height-n formal groups over F_(pⁿ) are unique up to isomorphism, giving an isomorphism of Hopf algebroids; it should be geometric classification followed by descent or change of rings; over F₃, (x+y)/(1+dxy), d=1,2, gives nonisomorphic height-one formal groups; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 8, Corollary 4.3, printed p. 5 (PDF p. 120): the source says the obstruction targets are K_A(A,n+2) and K_A(A,n+1); it should be K_A(ΩⁿA,n+2) and K_A(ΩⁿA,n+1), retaining the internal shift from Theorem 4.2; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter 8, §1, Adams condition, printed p. 2 (PDF p. 117): the source says E is the homotopy limit of its finite Adams pieces; it should be their filtered homotopy colimit; compare Pstragowski Definition 3.14 (Pstragowski line 1531); affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
 
 ## dgjk
 
@@ -2698,6 +2762,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §17.1, printed p. 30 (Godsil-StateTransfer line 1137): the source says equal sum/difference magnitudes force b=ia globally, making H_X(2t)=−iI necessary for mixing on K₂×X; it should be allow entrywise signs b=±ia; X=K₄ at t=3π/4 mixes on K₂×X but has H_X(2t)=iI; affects the proof. Found by SpectralQuantumWalks (ERRATA-SpectralQuantumWalks at 162e2af, 2026-10-23, codex gpt-6-astra).
 - **Error** at §5, printed p. 9 (Godsil-StateTransfer line 322): the source says rationality of every θᵣ/δ makes the period divide 2π/δ; it should be clear denominators first: qθᵣ/δ integral gives period 2πq/|δ|; K₂ with δ=3 contradicts the printed bound; affects a stated result. Found by SpectralQuantumWalks (ERRATA-SpectralQuantumWalks at 162e2af, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6, printed p. 11 (Godsil-StateTransfer line 397): the source says the exact period of an integral vertex-transitive graph is determined by the power of two dividing its eigenvalue gcd; it should be use 2π/gcd{θᵣ−θₛ} for a nontrivial graph; K₃ has eigenvalue gcd 1 but period 2π/3; affects a stated result. Found by SpectralQuantumWalks (ERRATA-SpectralQuantumWalks at 162e2af, 2026-10-23, codex gpt-6-astra).
+
+## Goerss
+
+- **Misprint** at §4.1, printed p. 1005–19 (Goerss line 724): the source says the Hasse invariant is a map O_X→ω_C; it should be O_X→ω_C^(p−1), matching its weight specified immediately above; affects a stated result. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
 
 ## Goncharov, Geometry of configurations, polylogarithms, and motivic cohomology, Adv. Math. (1995)
 
@@ -4820,6 +4888,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem A proof ingredient, Lemma 4.1 proof, p.12 (Powell-Ray-Teichner line 579): the source says the newly contracted spheres are geometrically dual to fᵢ², which has not been defined; it should be Dᵢ², the capped gropes constructed in the preceding paragraph; affects the proof. Found by FourManifolds (ERRATA-FourManifolds at d09c2c0, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Theorem A proof, p.14 (Powell-Ray-Teichner line 689): the source says the auxiliary surfaces are are geometrically dual; it should be delete the duplicated verb; affects nothing. Found by FourManifolds (ERRATA-FourManifolds at d09c2c0, 2026-10-24, codex gpt-6-astra).
+
+## Pstragowski
+
+- **Misprint** at Theorem 4.37 proof, printed p. 48 (Pstragowski line 2179): the source says cocontinuity of Y supplies its left adjoint; it should be continuity and accessibility, both established earlier in the proof; cocontinuity supplies a right adjoint; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
 
 ## PT
 
