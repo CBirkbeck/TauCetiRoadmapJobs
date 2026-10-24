@@ -1,0 +1,596 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FunctionFieldArithmeticPartII"
+
+[[source]]
+id = "AGV08"
+authors = "Dan Abramovich, Tom Graber and Angelo Vistoli"
+title = "Gromov–Witten theory of Deligne–Mumford stacks"
+year = 2008
+arxiv = "math/0603151v2"
+locator_scheme = "section"
+locator = "arXiv:math/0603151v2, Appendix B.1–B.2, pp.52–54"
+url = "https://arxiv.org/abs/math/0603151v2"
+fetched_from = "https://arxiv.org/pdf/math/0603151v2"
+fetched_at = "2026-10-24T19:10:18Z"
+sha256 = "c2889c567c21aa5473ba0be75221dbb67ca122210fa4e4973f4727c490bdd5eb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RS.0", "RS.1", "RS.2", "key"]
+
+[[source]]
+id = "TV17"
+authors = "Mattia Talpo and Angelo Vistoli"
+title = "Infinite root stacks and quasi-coherent sheaves on logarithmic schemes"
+year = 2017
+doi = "10.1112/plms.12109"
+arxiv = "1410.1164v2"
+locator_scheme = "section"
+locator = "arXiv:1410.1164v2, §3, Propositions 3.4–3.5 and 3.10, Remark 3.9, Lemmas 3.7 and 3.12, Corollary 3.13, pp.12–16"
+url = "https://arxiv.org/abs/1410.1164v2"
+fetched_from = "https://arxiv.org/pdf/1410.1164v2"
+fetched_at = "2026-10-24T19:10:25Z"
+sha256 = "92a90d1e3d9ac46e17de8cc9d9524c1621d5e2a8caea7938de61d6503ec2a6c2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators refer to the v2 preprint, rather than the journal pagination."
+cited_for = ["RS.0", "RS.1", "RS.2"]
+
+[[source]]
+id = "STACKS-KUMMER"
+locator_scheme = "tag"
+locator = "Section 59.28, tags 03PK and 040N; Lemma 59.28.3"
+url = "https://stacks.math.columbia.edu/tag/040N"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=040N"
+fetched_at = "2026-10-24T19:10:31Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.0"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 040N"
+year = 2026
+
+related_urls = ["https://stacks.math.columbia.edu/tag/03PK"]
+
+[[source]]
+id = "FramedRoot-codex-rtOQ9t"
+locator_scheme = "section"
+locator = "Draft of 5 January 2026, Examples 4.9.21–4.9.22 and Exercise 4.9.23, pp.159–160"
+url = "https://sites.math.washington.edu/~jarod/moduli.pdf"
+fetched_from = "https://sites.math.washington.edu/~jarod/moduli.pdf"
+fetched_at = "2026-10-24T19:10:54Z"
+sha256 = "f07437af689e9ae4ccd355183f357d234474606a4e0d6511ff2d4ac0a4f14d6d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.0"]
+authors = "Jarod Alper"
+title = "Stacks and Moduli"
+year = 2026
+
+[[source]]
+id = "NormalizationThree-codex-rtOQ9t"
+locator_scheme = "tag"
+locator = "Tag 01JO"
+url = "https://stacks.math.columbia.edu/tag/01JO"
+fetched_from = "https://stacks.math.columbia.edu/download/schemes.pdf#nameddest=01JO"
+fetched_at = "2026-10-24T19:10:56Z"
+sha256 = "fa2b63e8fd245fcd24998767887cd5f993188eabcfb849f21be19519d58fb803"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.0", "RS.2"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 01JO"
+year = 2026
+
+[[source]]
+id = "FramedFppfCover-codex-rtOQ9t"
+locator_scheme = "tag"
+locator = "Tag 021M"
+url = "https://stacks.math.columbia.edu/tag/021M"
+fetched_from = "https://stacks.math.columbia.edu/download/topologies.pdf#nameddest=021M"
+fetched_at = "2026-10-24T19:10:59Z"
+sha256 = "a74faac8fbef55f963ce2cf70f9569f0f6ac2b618df9b37fd98bb00be75f4f64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.0"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 021M"
+year = 2026
+
+[[source]]
+id = "FramedNormalizationArrows-codex-rtOQ9t"
+locator_scheme = "tag"
+locator = "Tag 04V8"
+url = "https://stacks.math.columbia.edu/tag/04V8"
+fetched_from = "https://stacks.math.columbia.edu/download/guide.pdf#nameddest=04V8"
+fetched_at = "2026-10-24T19:11:00Z"
+sha256 = "b26f0d7e8f7cded0ef0adba9a6246916a70b1ecd14a708e20dfc28e53a514fcf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.0"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 04V8"
+year = 2026
+
+[[source]]
+id = "STACKIFICATION"
+locator_scheme = "tag"
+locator = "Tag 02ZO"
+url = "https://stacks.math.columbia.edu/tag/02ZO"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks.pdf#nameddest=02ZO"
+fetched_at = "2026-10-24T19:11:02Z"
+sha256 = "62d1e09b4e02aab3db42e925ce7401de1f20ae12125174e0f56908d0b04f23ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.0"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 02ZO"
+year = 2026
+
+[[source]]
+id = "AOV08"
+locator_scheme = "section"
+locator = "Definition 3.1, Theorem 3.2 and Corollary 3.3, pp.1077–1078"
+url = "https://www.numdam.org/item/10.5802/aif.2378.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/aif.2378.pdf"
+fetched_at = "2026-10-24T19:11:05Z"
+sha256 = "f9e06b4081d49dd366969e82468697e30465a55ccfbab72df06935fc999a46e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.1"]
+authors = "Dan Abramovich, Martin Olsson and Angelo Vistoli"
+title = "Tame stacks in positive characteristic"
+year = 2008
+
+[[source]]
+id = "B24"
+locator_scheme = "section"
+locator = "pp.133, 135–136"
+url = "https://link.springer.com/content/pdf/10.1007/s00222-023-01220-6.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["RS.2"]
+authors = "Giulio Bresciani"
+title = "On the birational section conjecture with strong birationality assumptions"
+year = 2024
+
+[[source]]
+id = "AffineRootPointGroupoid-rtOQ9t"
+locator_scheme = "tag"
+locator = "Tag 022Y"
+url = "https://stacks.math.columbia.edu/tag/022Y"
+fetched_from = "https://stacks.math.columbia.edu/download/groupoids.pdf#nameddest=022Y"
+fetched_at = "2026-10-24T19:11:08Z"
+sha256 = "4506a39201063afc270cbb68c9c0c1d3c90937c03f98cfee074605b402e7a30f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.2"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 022Y"
+year = 2026
+
+[[source]]
+id = "Stacks-finite-root-projections-codex-7e92bd"
+locator_scheme = "tag"
+locator = "Tag 01YW"
+url = "https://stacks.math.columbia.edu/tag/01YW"
+fetched_from = "https://stacks.math.columbia.edu/download/limits.pdf#nameddest=01YW"
+fetched_at = "2026-10-24T19:11:10Z"
+sha256 = "a575d9eddea143ae00b39df8e0d98a66c6c9b2adcdace9d004c0ed5bc47f9d1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RS.2"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 01YW"
+year = 2026
+
+[[source]]
+id = "YZ19"
+locator_scheme = "section"
+locator = "Appendix A.1–A.3, Definitions A.1–A.3, Lemmas A.4–A.10, Propositions A.11–A.12, pp.514–526; §6.2.1, pp.496–497"
+url = "https://math.mit.edu/~zyun/GZW_ramified_published.pdf"
+fetched_from = "https://math.mit.edu/~zyun/GZW_ramified_published.pdf"
+fetched_at = "2026-10-24T19:11:13Z"
+sha256 = "700e0b09f2320912b75f5a16968c5aa3f96a0ad74e3ca375aacedec7e85d296c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.0", "GC.1", "GC.2", "GC.3", "GC.4", "GC.5", "GC.6"]
+authors = "Zhiwei Yun and Wei Zhang"
+title = "Shtukas and the Taylor expansion of L-functions (II)"
+year = 2019
+doi = "10.4007/annals.2019.189.2.2"
+arxiv = "1712.08026"
+version_note = "Theorem numbering and page locators refer to the published author-hosted PDF."
+
+[[source]]
+id = "StacksPic"
+locator_scheme = "tag"
+locator = "Tag 0372"
+url = "https://stacks.math.columbia.edu/tag/0372"
+fetched_from = "https://stacks.math.columbia.edu/download/examples-stacks.pdf#nameddest=0372"
+fetched_at = "2026-10-24T19:11:15Z"
+sha256 = "bf4818a01f50e7d11fda8f621a17d72d6532fb5ef645ed1fb0db1d8b6e7030ec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.0"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0372"
+year = 2026
+
+[[source]]
+id = "StacksRes"
+locator_scheme = "tag"
+locator = "Tag 05Y8"
+url = "https://stacks.math.columbia.edu/tag/05Y8"
+fetched_from = "https://stacks.math.columbia.edu/download/criteria.pdf#nameddest=05Y8"
+fetched_at = "2026-10-24T19:11:17Z"
+sha256 = "f1d9946d39d17967dd9da00c65ed4829a6796a815c727f11c8475df8cd9517e3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.0"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 05Y8"
+year = 2026
+
+[[source]]
+id = "STACKS-DIV"
+locator_scheme = "tag"
+locator = "Tag 0B9C"
+url = "https://stacks.math.columbia.edu/tag/0B9C"
+fetched_from = "https://stacks.math.columbia.edu/download/pic.pdf#nameddest=0B9C"
+fetched_at = "2026-10-24T19:11:24Z"
+sha256 = "d2d67eba4fffb7f7d23f3e14b0413d6fb43aff623f27980e6b66476031b27174"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.1"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0B9C"
+year = 2026
+
+[[source]]
+id = "STACKS-PROP"
+locator_scheme = "tag"
+locator = "Tag 0CL4"
+url = "https://stacks.math.columbia.edu/tag/0CL4"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-morphisms.pdf#nameddest=0CL4"
+fetched_at = "2026-10-24T19:11:27Z"
+sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.1"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0CL4"
+year = 2026
+
+[[source]]
+id = "STACKS-QF"
+locator_scheme = "tag"
+locator = "Tag 06PT"
+url = "https://stacks.math.columbia.edu/tag/06PT"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-morphisms.pdf#nameddest=06PT"
+fetched_at = "2026-10-24T19:11:29Z"
+sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.1"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 06PT"
+year = 2026
+
+[[source]]
+id = "STACKS-RES"
+locator_scheme = "tag"
+locator = "Tag 06MC"
+url = "https://stacks.math.columbia.edu/tag/06MC"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-morphisms.pdf#nameddest=06MC"
+fetched_at = "2026-10-24T19:11:34Z"
+sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.1"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 06MC"
+year = 2026
+
+[[source]]
+id = "ETINGOF"
+authors = "Pavel Etingof, Oleg Golberg, Sebastian Hensel, Tiankai Liu, Alex Schwendner, Dmitry Vaintrob and Elena Yudovina"
+title = "Introduction to representation theory"
+year = 2011
+arxiv = "0901.0827v5"
+locator_scheme = "section"
+locator = "§3.1, Theorem 3.1, pp.33–34"
+url = "https://arxiv.org/abs/0901.0827v5"
+fetched_from = "https://arxiv.org/pdf/0901.0827v5"
+fetched_at = "2026-10-24T19:11:39Z"
+sha256 = "30325e113dcd5d9d6153cb257e1dfca8f44df19ce8d0c3019df63563ac1e0a3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v5"
+cited_for = ["GC.3"]
+
+[[source]]
+id = "AV99"
+authors = "Dan Abramovich and Angelo Vistoli"
+title = "Compactifying the space of stable maps"
+year = 1999
+arxiv = "math/9908167v2"
+locator_scheme = "section"
+locator = "arXiv:math/9908167v2, Lemmas 2.2.3 and 2.3.4"
+url = "https://arxiv.org/abs/math/9908167v2"
+fetched_from = "https://arxiv.org/pdf/math/9908167v2"
+fetched_at = "2026-10-24T19:11:44Z"
+sha256 = "8b19db73bcdaa7ec4cd8ee22ca691aa46a0a06f3a9587501315a582fbeed4ce8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["GC.3"]
+
+[[source]]
+id = "STACKS"
+locator_scheme = "tag"
+locator = "Tag 0BSE"
+url = "https://stacks.math.columbia.edu/tag/0BSE"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0BSE"
+fetched_at = "2026-10-24T19:11:47Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.3"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0BSE"
+year = 2026
+
+[[source]]
+id = "NOOHI"
+authors = "Behrang Noohi"
+title = "Fundamental groups of algebraic stacks"
+year = 2002
+arxiv = "math/0201021v1"
+locator_scheme = "section"
+locator = "arXiv:math/0201021v1, §§4–7; Theorem 7.11"
+url = "https://arxiv.org/abs/math/0201021v1"
+fetched_from = "https://arxiv.org/pdf/math/0201021v1"
+fetched_at = "2026-10-24T19:11:51Z"
+sha256 = "e8024516d2e367ba01313e93f2695f05c4223e375f5d25df2d3f9bb8c2d0da69"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["GC.3"]
+
+[[source]]
+id = "CONRAD-EXT"
+locator_scheme = "section"
+locator = "§§3–5, exterior products and naturality"
+url = "https://kconrad.math.uconn.edu/blurbs/linmultialg/extmod.pdf"
+fetched_from = "https://kconrad.math.uconn.edu/blurbs/linmultialg/extmod.pdf"
+fetched_at = "2026-10-24T19:11:55Z"
+sha256 = "95c48ea826b3c74d5bdbb36ea002f46dd747c7c42e164ce2fee5f95b1fae62e1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.3"]
+authors = "Keith Conrad"
+title = "Exterior powers"
+year = 2026
+version_note = "Undated author notes; year records the accessed edition."
+
+[[source]]
+id = "MILNE-CFT"
+locator_scheme = "section"
+locator = "Version 4.03, Chapter II, Proposition 1.30 and Corollary 1.31"
+url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_at = "2026-10-24T19:12:01Z"
+sha256 = "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.3"]
+authors = "James S. Milne"
+title = "Class Field Theory"
+year = 2020
+
+[[source]]
+id = "StacksVanishing"
+locator_scheme = "tag"
+locator = "Tag 0E3A"
+url = "https://stacks.math.columbia.edu/tag/0E3A"
+fetched_from = "https://stacks.math.columbia.edu/download/curves.pdf#nameddest=0E3A"
+fetched_at = "2026-10-24T19:12:03Z"
+sha256 = "c4e3d4c0fc533a3d46ce07c1bd6ec49f03e02c131da30ed275ada4bc9f82c030"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.4"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0E3A"
+year = 2026
+
+[[source]]
+id = "StacksBaseChange"
+locator_scheme = "tag"
+locator = "Tag 07VJ"
+url = "https://stacks.math.columbia.edu/tag/07VJ"
+fetched_from = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=07VJ"
+fetched_at = "2026-10-24T19:12:06Z"
+sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.4"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 07VJ"
+year = 2026
+
+[[source]]
+id = "SGA1"
+authors = "Alexander Grothendieck and collaborators"
+title = "Revetements etales et groupe fondamental (SGA 1)"
+year = 2004
+arxiv = "math/0206203v2"
+locator_scheme = "section"
+locator = "Recomposed annotated arXiv:math/0206203v2, Exposé X, Corollaire 2.10; Exposé XI, Proposition 1.1, printed p.285"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-10-24T19:12:15Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["GC.4"]
+
+[[source]]
+id = "ACV01"
+authors = "Dan Abramovich, Alessio Corti and Angelo Vistoli"
+title = "Twisted bundles and admissible covers"
+year = 2001
+arxiv = "math/0106211v1"
+locator_scheme = "section"
+locator = "arXiv:math/0106211v1, Appendix A, Proposition A.0.7 and Theorem A.0.8, pp.33–35"
+url = "https://arxiv.org/abs/math/0106211v1"
+fetched_from = "https://arxiv.org/pdf/math/0106211v1"
+fetched_at = "2026-10-24T19:12:19Z"
+sha256 = "8c890d5355ddeb77ab1ccb18fe15f1a89c0d666904920ea6ff4ba95ed02b6ca1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["GC.4"]
+
+[[source]]
+id = "StacksLisse"
+locator_scheme = "tag"
+locator = "Tag 0DV4"
+url = "https://stacks.math.columbia.edu/tag/0DV4"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=0DV4"
+fetched_at = "2026-10-24T19:12:25Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.4"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0DV4"
+year = 2026
+
+[[source]]
+id = "STACKS-TORSORS"
+locator_scheme = "tag"
+locator = "Tag 03AG"
+url = "https://stacks.math.columbia.edu/tag/03AG"
+fetched_from = "https://stacks.math.columbia.edu/download/sites-cohomology.pdf#nameddest=03AG"
+fetched_at = "2026-10-24T19:12:29Z"
+sha256 = "f1af633f357c96051dabe6e6c26e0d62a16685bdc7ff81a195dfd75c5e0b2c2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.6"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 03AG"
+year = 2026
+
+[[source]]
+id = "MILNE-LEC"
+locator_scheme = "section"
+locator = "Version 2.21, §9 property (c), pp.64–66; §11, Theorem 11.4, pp.76–79"
+url = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
+fetched_at = "2026-10-24T19:12:33Z"
+sha256 = "ac4f122f371d38a44c58c296b7dbf88081d89d2de2334070bff3606771c01077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.6"]
+authors = "James S. Milne"
+title = "Lectures on Etale Cohomology"
+year = 2013
+
+[[source]]
+id = "STACKS-NORMS"
+locator_scheme = "tag"
+locator = "Tag 0BCX"
+url = "https://stacks.math.columbia.edu/tag/0BCX"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf#nameddest=0BCX"
+fetched_at = "2026-10-24T19:12:36Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GC.6"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0BCX"
+year = 2026
+
+[[source]]
+id = "STACKS-FLAT-COLIMIT"
+locator_scheme = "tag"
+locator = "Lemma 10.39.20, tag 090N"
+url = "https://stacks.math.columbia.edu/tag/090N"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=090N"
+fetched_at = "2026-10-24T19:24:45Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 3: flat torsor towers"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 090N"
+year = 2026
+
+[[source]]
+id = "STACKS-AFFINE-DESCENT"
+locator_scheme = "tag"
+locator = "Lemma 35.37.1, tag 0245"
+url = "https://stacks.math.columbia.edu/tag/0245"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=0245"
+fetched_at = "2026-10-24T19:24:48Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 3: flat torsor towers"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0245"
+year = 2026
+
+[[source]]
+id = "STACKS-DESCENT-PROPERTIES"
+locator_scheme = "tag"
+locator = "Lemmas 35.23.13, 35.23.17 and 35.23.25, tags 02KY, 02L2, 02LA"
+url = "https://stacks.math.columbia.edu/tag/02KY"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=02KY"
+fetched_at = "2026-10-24T19:24:51Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 3: flat torsor towers"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 02KY"
+year = 2026
