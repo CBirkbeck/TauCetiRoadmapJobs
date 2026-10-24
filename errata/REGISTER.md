@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4021 mistakes recorded on the board: 2683 misprints, 1019 errors, 268 gaps, 51 unparsed bullets.
+4032 mistakes recorded on the board: 2689 misprints, 1021 errors, 271 gaps, 51 unparsed bullets.
 Errata jobs have read the cited sources of 49 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2271,6 +2271,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Getz, An introduction to automorphic representations (author PDF)
 
 - **Error** at §6.4, the Casimir eigenvalue displayed with Lemma 6.19 and Remark 6.20: the source says the source's displayed Casimir scalar contradicts the scalar the same notes give for the full O(2) modules in §6.5; it should be as the evidence in the cited report requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## ggk-2026
+
+- **Misprint** at Proposition A.3(ii), p. 228: the source says the exceptional degree is strictly below (deg X)^{2 dim X}; it should be at most, which is what the proof gives; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Misprint** at Theorem 1.3, p. 192: the source says both constants are c₃; it should be name the cardinality bound c₄; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Misprint** at §7.1, (7.4), p. 221: the source says each covering ball holds at most c₀ points; it should be c₀^{rk Γ+1} by (7.1); affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Error** at §7.3, proof of Theorem 1.1′, p. 224: the source says the rank-ρ finitely generated Γ₀ may be chosen End(A)-stable; it should be drop stability, since the swap on E×E sends rank-one ℤ(P,0) to rank two; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
 
 ## GHW22
 
@@ -5985,6 +5992,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the proof of Lemma 8.2.4, printed page 55 (Xue-I line 3362): the source says every maximal-ideal quotient A/mⁿ is finite torsion over O_E; it should be split into λ∈m and λ∉m cases, using rational geometric continuity in the latter; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
 
+## xy-2022
+
+- **Misprint** at Corollary 3.5, proof, p. 15: the source says the intersection k′∩k_A is a subset of the index set I; it should be an element of I; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Gap** at Corollary 3.5, proof, p. 15: the source says it applies Proposition 3.2 inside an ambient field of possibly infinite transcendence degree; it should be first pass to the algebraic closure of k′k_A, of finite degree; affects the proof. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Gap** at Proposition 3.2, proof, pp. 13–14: the source says a model maps flatly and quasi-finitely onto S₁×S₂ with function field K; this needs k₁, k₂ algebraically independent; it should be supplemented by an argument for dependent intersecting fields (as in README §9.3); affects the proof. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Gap** at Proposition 5.4, pp. 25–26: the source says every torsion t off the jump locus works, but the proof uses an étale multisection, so only orders prime to the characteristic; it should be restricted to prime-to-p torsion, which is still dense; affects the proof. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+
 ## yagasaki-fixed-mass
 
 - **Error** at Theorem 1.1 proof context, §1 after (1.5), printed p. 5 (yagasaki-fixed-mass line 171): the source says equal dimensions and the displayed mixed-derivative condition suffice for Hamiltonianity; it should be supplemented by other closedness conditions: h=0, ω=0, g=(I₂,0) satisfies the displayed test but is not canonically Hamiltonian; affects a stated result. Found by RestrictedThreeBody (ERRATA-RestrictedThreeBody at cc5f962, 2026-10-23, codex gpt-6-astra).
@@ -6054,10 +6068,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## yuan-2026
 
 - **Error** at Lemma 2.1(1), p. 25: the source says π* on adelic Picard groups is injective for projective flat π with geometrically connected fibres; it should be the same statement with geometrically reduced fibres added, since relative Frobenius of an elliptic curve over 𝔽₅ kills an order-five class; affects a stated result. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Misprint** at Proposition 4.18, p. 100: the source says the pairing is pushed forward along π restricted to Y, π undefined there; it should be ψ∘ι; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Error** at Theorem 4.19, p. 101: the source says maximal variation (moduli map over K) suffices for function fields; a constant genus-two curve over S = Spec K refutes this; it should be require maximal variation over the constant field k; affects a stated result. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
 - **Misprint** at proof of Theorem 4.14, p. 94: the source says the geometric part D̃_S − Δ̃_S is effective; it should be D̃_S − c(g)Δ̃_S, as derived on p. 95 (D̃ − Δ̃ is negative at the unit tetrahedral graph); affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
 - **Gap** at proof of Theorem A.1, p. 113: the source says property (2) follows from constancy of the pairing integral with L = ω_C, which is empty when g = 1 since c₁(ω) = 0; it should be the same argument with an admissible L of positive degree; affects the proof; (genus one only). <!-- tauceti-roadmap-review {"agent": "claude", "head": "d2be3ab", "job": "REV-PKG-ArakelovGeometryAndAbelianHeightsPartII", "model": "opus", "worker": "fable-rev46"} -->. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
 - **Misprint** at §3.3.1, p. 49: the source says δ(C) equals δ of the split semistable base change divided by [K′:K]; it should be divided by the ramification index e(K′/K) when nodes are counted as points; affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
 - **Misprint** at §3.3.2, p. 50: the source says the Green function of Φ_S is an integral over the analytic fibre of X; it should be over the analytic fibre of X ×_S X, where c₁(O(Δ)ₐ)² lives; affects nothing. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
+- **Misprint** at §4.3.2, pp. 73–74: the source says k̄ embeds in K, and μ_N(k) appears for triples over F; it should be K̄ and μ_N(F); affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
 - **Error** at §4.4.1, p. 78 (also p. 84): the source says Bost gives h_Fal ≥ −g log √(2π) in the Faltings normalization of §4.3.1; it should be −(g/2) log(2π²) there, the stated constant being the Deligne-normalized one; affects the proof; (constant c only). Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at d2be3ab, 2026-10-24, claude opus).
 
 ## yuan-bigness-pku
