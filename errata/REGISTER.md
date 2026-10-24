@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4571 mistakes recorded on the board: 3065 misprints, 1147 errors, 299 gaps, 60 unparsed bullets.
-Errata jobs have read the cited sources of 59 roadmaps; in those of 2 they found no mistake.
+4639 mistakes recorded on the board: 3108 misprints, 1170 errors, 301 gaps, 60 unparsed bullets.
+Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -438,6 +438,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at final paragraph and displayed evaluation, printed p136 (Anderson lines 6863–6941): the source says the flat-curvature contribution is indexed by r=m and c_m; it should be use r=m−1 and c_(m−1); the defining sum ends at m−1; affects the proof. Found by LocalVariationalFieldTheory (ERRATA-LocalVariationalFieldTheory at a38ee99, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at first displayed identity, printed p133 (Anderson lines 6722–6781): the source says the connection-trace term in d_H(1/√g) has coefficient −1/(2√g); it should be its coefficient is −1/√g; for a metric connection, d(log√g)=trace(ω); affects the proof. Found by LocalVariationalFieldTheory (ERRATA-LocalVariationalFieldTheory at a38ee99, 2026-10-24, codex gpt-6-astra).
 
+## Ando-Hopkins-Rezk
+
+- **Misprint** at Introduction, p. 2 (Ando-Hopkins-Rezk line 55): the source says the elliptic parameter is q=exp(2πτ); it should be it is q=exp(2πiτ), ensuring convergence when Im(τ)>0; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 10.10 proof, p. 35 (Ando-Hopkins-Rezk line 1871): the source says the divisor factor leaves its sum, and the next expression evaluates the test polynomial at one; it should be use Σ_{d|n,(d,p)=1}d⁻¹(h(d)−h(cd)); both evaluations are integral because d and cd are p-adic units; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 10.10 proof, p. 35 (Ando-Hopkins-Rezk line 1892): the source says the p-adic norm of 1−c^{N(r)} equals p⁻ʳ; it should be it is at most p⁻ʳ; c=1 already gives zero; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 10.10 proof, p. 35 (Ando-Hopkins-Rezk line 1898): the source says the constant term in the limit retains the free index k; it should be replace k by N(r) throughout that constant term; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 14.6 and Proposition 15.1, pp. 41–42 (Ando-Hopkins-Rezk line 2235): the source says the k-th characteristic term belongs to modular forms of weight 2k; it should be its weight is k, matching π₂ₖ and Theorem 12.1; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §11 and §12, pp. 36, 38 (Ando-Hopkins-Rezk line 1913): the source says U dilates q and V extracts every p-th coefficient, with the same interchange in the Hecke formula; it should be interchange these definitions; T_p f=Σa_{pn}qⁿ+p^{k−1}Σa_nq^{pn}, consistently with the later proof; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
 ## Andreatta–Iovita–Pilloni
 
 - **Gap** at §8.1, Lemma 8.1, p. 34: the source says rigidity applies to α/ᾱ without checking that this map preserves the marking; it should be first prove marking preservation before invoking rigidity; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -680,6 +689,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 1.6(1), preprint p.4, and Theorem 1.10(1), p.5 (BdJ2003 lines 168,209): the source says the target Adams weight is r; it should be n, as in the adjacent diagrams; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at equation (4.4), preprint p.24 (BdJ2003 line 1081): the source says truncated forms vanish when n<j; it should be when j<n, consistently with the preceding degree-at-least-n complex; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
 
+## Behrens-Mahowald-Quigley
+
+- **Error** at Corollary 7.16, p. 48 (Behrens-Mahowald-Quigley line 1990): the source says the listed multiplicative generators give the entire Hurewicz image below degree 192; it should be also include the c₄ᶦη and c₄ᶦη² families from Theorem 1.2(2); for example, c₄η is missing; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Introduction, p. 5 (Behrens-Mahowald-Quigley line 198): the source says Theorem 6.1 proves the proposed subgroup is contained in the Hurewicz image; it should be the Hurewicz image is contained in the proposed subgroup, as Theorem 6.1 and its proof state; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 7.25 proof, p. 56 (Behrens-Mahowald-Quigley line 2345): the source says the possible differential starts with v₂¹⁶{v₁²h₂,₁²g²[1]}; it should be the exponent of v₁ is three, matching the class under discussion and the next displayed differential; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 7.26 proof, p. 57 (Behrens-Mahowald-Quigley line 2379): the source says the detector for Δ⁶κν[1] has stem 161; it should be the stem is 162: 144+14+3+1; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 7.27 proof, p. 58 (Behrens-Mahowald-Quigley line 2406): the source says Δ⁸ν²[18] and Δ⁸ε[18] lie in degrees 210 and 212; it should be their degrees are 216 and 218, respectively; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 7.27 proof, p. 59 (Behrens-Mahowald-Quigley line 2425): the source says multiplication by v₂¹⁶ leaves the two Ext bidegrees unchanged; it should be the bidegrees become (42,216+42) and (42,218+42); v₂¹⁶ adds (16,112); affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 7.27 proof, p. 59 (Behrens-Mahowald-Quigley line 2441): the source says the second detector contains an additional factor v₁; it should be remove that factor, matching the differential source on the same page and the detector’s degree; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
 ## Bellaïche (cited as Bellaïche09)
 
 - **Error** at Proposition 2.12, last sentence: the source says every refinement of an Eisenstein series is θ-critical, but the ordinary refinement of E₄ at p = 5 is not; it should be only the positive-slope refinement; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -689,6 +708,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Bellaïche, Critical p-adic L-functions, arXiv:0912.2925
 
 - **Misprint** at formulas (4)–(5), p. 8: the source says the two formulas with different quantities in their denominators; it should be α in both denominators; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Belmont-Shimomura
+
+- **Misprint** at Lemma 6.3 proof, p. 19 (Belmont-Shimomura line 708): the source says the boundary-image calculation takes place in the spectral sequence for TMF/(3,v₁³); it should be the calculation takes place in the spectral sequence for TMF/3, the codomain of j₃ and H′; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 6.1, p. 18 (Belmont-Shimomura line 653): the source says the homotopy ring has a generator Δ; it should be only surviving multiples and powers of Δ represent homotopy classes; Δ itself does not lift, as Hopkins Proposition 4.6 independently confirms; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 6.5 proof, p. 21 (Belmont-Shimomura line 776): the source says i(h(x)) belongs to the homotopy of S/3; it should be i(h(x)) belongs to the homotopy of tmf/3, as follows from the displayed definition of h′; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 
 ## beltagy
 
@@ -1199,6 +1224,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the kernel display, p.403, lines 77–89: the source says an inner-product modulus equals a signed kernel difference; it should be the absolute value of that difference; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 - **Gap** at the radial bins, p.404, lines 100–104: the source says bins whose upper endpoints stay below one half cover all points; it should be augmented by the final partial bin and the antipodal endpoint; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 
+## Borel-Hirzebruch-I
+
+- **Error** at Example 10.6(f), p. 494 (Borel-Hirzebruch-I line 1371): the source says the tensor-product formula applies to arbitrary real bundles with the displayed Pontryagin factorizations; it should be require ranks 2m and 2n; tensoring a nontrivial oriented plane bundle with a trivial real line contradicts the unrestricted formula; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Theorem 10.7, p. 494 (Borel-Hirzebruch-I line 1385): the source says the Euler class equals the product of complementary nonzero roots whenever the quotient dimension is even; it should be require equal ranks, or include zero weights; for G=T² and U={1}, the Euler class is zero but the empty product is one; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
 ## borel1977
 
 - **Misprint** at Proposition 2.4 proof, pp.618–619: the source says the rational points and the adelic quotient with an undefined field F, as H(F) and H(A_k)/H(F); it should be the number field k, written H(k) as in §2.3; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "627bb70", "job": "REV-PKG-BorelRegulators~2", "model": "opus", "worker": "fable-rev34"} -->. Found by BorelRegulators (#979 at 627bb70, 2026-10-23, claude opus).
@@ -1636,6 +1666,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 5.6.5, printed pp.85–86: the source says the trace identity forces reducibility on the determinant kernel, including the projective-A₄ case; it should be exclude that case or argue differently (over F₇ a group with kernel Q₈ is a counterexample); affects the proof; (used on p.87). Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Carey-Johnson-Murray-Stevenson-Wang
+
+- **Misprint** at Lemma 5.5 proof, p. 23 (Carey-Johnson-Murray-Stevenson-Wang line 1068): the source says the map EG→B³U(1) is π∘ψ; it should be it is ψ∘π; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition 5.7 proof, p. 24 (Carey-Johnson-Murray-Stevenson-Wang line 1106): the source says the maps obtained by fixing p∈EG form a simplicial map; it should be supply coherent descent instead; the zeroth face sends (p,pg₁) to pg₁, while the proposed degree-zero map remains p; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Remark 6.6, p. 30 (Carey-Johnson-Murray-Stevenson-Wang line 1382): the source says the matrix-valued Chern–Simons expression has cubic coefficient 1/3; it should be the cubic coefficient is 2/3, so its exterior derivative is Tr(F∧F); affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 6.7 proof, p. 31 (Carey-Johnson-Murray-Stevenson-Wang line 1407): the source says the classifying map is ψ composed after the target bundle’s classifying map; it should be compose in the opposite order: f₁=f₂∘ψ on base spaces; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
 ## Castella–Liu–Wan (CLW), Iwasawa–Greenberg main conjecture for non-ordinary modular forms and Eisenstein congruences on GU(3,1)
 
 - **Misprint** at the proof of the Eisenstein-ideal bound, §8, p. 78: the source says the order inequality with ≤; it should be ≥, since E ⊂ P^m gives ord_P ≥ m; affects nothing. Found by  (#129 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1742,6 +1779,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 8.5(3), p. 29: the source says the F₄ B₃ extraneous point has an extra ω₂ term; it should be ω₁+½ω₃+½ω₄, whose top adjoint weight 10 is the one used in the proof of Theorem 10.3, case (3a); affects a stated result. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
 - **Misprint** at the proof of Theorem 10.3, cases (3a), (4) and (5a), p. 34: the source says n_v on both sides of three comparisons; it should be n_u on one side; affects nothing. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
 - **Gap** at §4.1, sketch of Theorems 4.2–4.3, step (1), p. 11: the source says Beuzart-Plessis's appendix makes every discrete series a local component; it should be it gives a cuspidal Π with the same cuspidal support, isomorphic only at a supercuspidal place; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
+
+## Cheeger-Simons
+
+- **Misprint** at Example 1.16, p. 57 (Cheeger-Simons line 304): the source says the circle product is n₁G(0)−∫FG′; it should be reverse the sign; a constant first factor a and a second factor of winding one give a by the product definition; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 2.10, p. 61 (Cheeger-Simons line 441): the source says the finite-holonomy character is the pullback of B⁻¹ applied to the characteristic class; it should be insert a minus sign, consistently with Corollary 1.2 and Corollary 2.4; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 
 ## Chen
 
@@ -2678,6 +2720,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the convergence radius for |q|>1 (cached lines 775–784 and 846–854): the source says a radius that omits a factor |q|; it should be the radius including the factor |q| that the notes' own (1.3.11) carries; affects a stated result. Found by  (#540 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Gawedzki-Reis
+
+- **Misprint** at §2, equation (2.42), p. 7 (Gawedzki-Reis line 288): the source says the product in L_ik is denoted ℓ_jk; it should be denote it ℓ_ik, and use the equivalence-class subscript ik rather than ijk; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §2, p. 3 (Gawedzki-Reis line 135): the source says every nonzero alcove-vertex centralizer has simple Lie algebra; it should be the centralizer is semisimple; deleting the central node of the affine D₄ diagram gives four A₁ components; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
 ## Geck
 
 - **Misprint** at Example 5.9 proof, printed p. 3245 (Geck line 610): the source says φ is applied to eᵋβ, which belongs to its codomain 𝔤; it should be φ(vβ), since φ:M→𝔤 and eᵋβ=φ(vβ); affects the proof. Found by ChevalleyGroups (ERRATA-ChevalleyGroups at 99cf6aa, 2026-10-24, codex gpt-6-astra).
@@ -3275,6 +3322,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §0.1.4, printed p. 3 (horn-johnson line 99): the source says dependence of vectors v₁,…,vₖ is witnessed by a relation using x₁,…,xₖ; it should be a relation using v₁,…,vₖ consistently; affects nothing. Found by StructuredBlockOperators (ERRATA-StructuredBlockOperators at 945f5e6, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §0.1.7, printed p. 4 (horn-johnson line 155): the source says finite dimension requires a positive basis cardinality, otherwise the space is infinite-dimensional; it should be a nonnegative basis cardinality, including the zero space with its empty basis; affects a stated result. Found by StructuredBlockOperators (ERRATA-StructuredBlockOperators at 945f5e6, 2026-10-23, codex gpt-6-astra).
 - **Error** at §0.2.5, printed p. 7 (horn-johnson line 339): the source says every matrix over an arbitrary field has a unique symmetric-plus-skew-symmetric decomposition; it should be restricted to characteristic other than two. Over F₂, [1]=[1]+[0]=[0]+[1] violates uniqueness; affects a stated result. Found by StructuredBlockOperators (ERRATA-StructuredBlockOperators at 945f5e6, 2026-10-23, codex gpt-6-astra).
+
+## Hovey
+
+- **Misprint** at Theorem 1.8 proof, p. 2411 (Hovey line 413): the source says the dimension to establish is dim(p⁻¹A_n)=s+1; it should be it is dim(A_n/a)=s+1, where s=dim(p⁻¹(A_n/a)); affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 2.3 proof, p. 2413 (Hovey line 504): the source says the final tensor factor is BP_*MO⟨8⟩/I; it should be retain the quotient by J in that factor; the following line correctly uses the quotient by (I,J); affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
+## Hovey-Ravenel
+
+- **Misprint** at Proposition 1.3(3), p. 6 (Hovey-Ravenel line 229): the source says suspending E_n gives E_{n+1}; it should be looping E_{n+1} gives E_n; for E=HZ, suspending K(Z,1) gives S², not K(Z,2); affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §1, before Proposition 1.3, p. 6 (Hovey-Ravenel line 222): the source says the n-th space functor is right adjoint to ΣⁿΣ∞; it should be it is right adjoint to Σ⁻ⁿΣ∞ under the stated cohomological indexing; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 
 ## HP-CStar-I
 
@@ -4413,6 +4470,38 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3, hypersurface example, printed p. 719 (McLean line 466): the source says a degree-(n+1) hypersurface in ℂPⁿ has an SU(n)-structure; it should be SU(n−1), since its complex dimension is n−1; alternatively use degree n+2 in ℂPⁿ⁺¹; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §3, item (3), printed p. 718 (McLean line 441; repeated line 488): the source says its positive coordinate Kähler form equals Im h and satisfies κ(u,v)=g(u,Jv); it should be κ=−Im h and κ(u,v)=g(Ju,v), retaining the displayed h=Σdz⊗dz̄ and κ=Σdx∧dy; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 
+## McTague-Cayley
+
+- **Error** at Introduction, p. 3 (McTague-Cayley line 119): the source says Stolz conjectures vanishing exactly when a positive-Ricci metric exists; it should be retain only the implication from positive Ricci curvature; the flat four-torus has vanishing genus but cannot have positive Ricci curvature; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 11 proof, p. 19 (McTague-Cayley line 1209): the source says the stated hypotheses imply 2n≥16; it should be use 2n≥8, with p≥7 in the p+1 case and p≥11 in the p−1 case; the coefficient arguments still work; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition 11 proof, p. 19 (McTague-Cayley line 1231): the source says the displayed binomial difference is congruent to −(pʲ+p)/4 for every odd prime; it should be exclude p=3 here and supply its calculation; p=3,j=3 gives residues 3 and 6 modulo nine; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition 14, p. 23 (McTague-Cayley line 1461): the source says the prefactor is n_f raised to n+n′−8; it should be the exponent is 2n+2n′−8, the polynomial degree after integrating over the sixteen-dimensional fibre; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §1, unnumbered gcd lemma, p. 5 (McTague-Cayley line 250): the source says the gcd formula holds for every n>0; it should be require n>1 and handle degree four separately; at n=1 the indexing range 1<i<2n is empty; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §2, Hovey theorem restatement, p. 8 (McTague-Cayley line 472): the source says the polynomial homology assertion holds whenever n<2p; it should be retain Hovey’s hypothesis that n is even; odd spaces can have odd-degree homology; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §2, p. 10 (McTague-Cayley line 546): the source says the characteristic numbers vanish on the displayed error ideal; it should be they vanish modulo p²; for example, p² times a class can have a nonzero characteristic number; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2, p. 7 (McTague-Cayley line 401): the source says the splittings of ku and BU start at i=1; it should be both products start at i=0; otherwise the ku decomposition loses π₀; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2, p. 7 (McTague-Cayley line 424): the source says the identity factors satisfy 0<i<(p−3)/2; it should be the upper bound is inclusive: 0<i≤(p−3)/2, as the following diagram confirms; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, p. 12 (McTague-Cayley line 731): the source says nonzero torus characters are real-valued functions on T; it should be they take values in R/Z; their real linear lifts are defined on the universal cover; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, p. 12 (McTague-Cayley line 744): the source says the restriction of s_I(η) uses the inclusion T→G; it should be use T→H, since η is a bundle on BH; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §3, p. 13 (McTague-Cayley line 761): the source says the Weyl group contains every lattice isometry preserving the roots; it should be use the subgroup generated by root reflections; for SU(3), negation preserves the lattice and roots but is not Weyl; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4, E₂ calculation, pp. 21–22 (McTague-Cayley line 1376): the source says the base-times-vertical terms have the displayed binomial differences as coefficients; it should be include Proposition 10’s factor 2n_f^{2n−8}; the omitted factor two changes the claimed nonvanishing calculation modulo p²; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, Granville theorem definition, p. 19 (McTague-Cayley line 1253): the source says N_j is the least positive residue; it should be the least nonnegative residue, as the following digit formula requires when those digits are zero; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4, Granville theorem definition, p. 19 (McTague-Cayley line 1254): the source says the carry count is the number of digits with n_i<m_i; it should be count actual carries, including propagated carries; in base three, 2+7=9 has two carries but only one digit with n_i<m_i; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, Granville theorem display, p. 19 (McTague-Cayley line 1257): the source says the left side of the congruence is 1/p^{e₀}; it should be the left side is binomial(n,m)/p^{e₀}; without the binomial numerator it need not be p-integral; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4, p. 16 (McTague-Cayley line 1017): the source says pulling back p₁(η) gives 4n_f(x₁²+x₂²); it should be the coefficient is 4n_f²; each root pulls back linearly in n_f; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
+## McTague-Quotient
+
+- **Error** at Proposition 7 proof, p. 7 (McTague-Quotient line 372): the source says each graded piece of rational K/K² has rank one in degrees divisible by four above twelve; it should be K/K² is free over Q[G₂,G₃] on y₄,y₅,…; degree 24 already contains independent y₆ and G₂y₄; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Theorem 3 proof, p. 5 (McTague-Quotient line 258): the source says the induction supplies isomorphisms commuting with multiplication by the next element; it should be establish module-compatible isomorphisms; the stated vector-space induction and its compatibility with the unit do not imply this square commutes; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §2, p. 4 (McTague-Quotient line 206): the source says the differential of C[1] depends on the arbitrary shift m; it should be the left-hand differential is d_{C[m]}, so the shift and its sign use the same integer; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, p. 6 (McTague-Quotient line 306): the source says separatedness for the module N means the intersection of the ideal powers vanishes; it should be the intersection of XʳN must vanish; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
+## Meinrenken
+
+- **Misprint** at Proposition 5.2(b) proof, p. 14 (Meinrenken line 572): the source says the equivariantly closed two-form under consideration lives on C_j; it should be it lives on the arbitrary conjugacy class C appearing in part (b); affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §5.3, table (7), p. 15 (Meinrenken line 621): the source says the E₆ alcove becomes a weight-lattice polytope after scaling by three; it should be the least scale is six: its highest-root coefficients include both two and three; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
 ## Meyer–Wagner, q-Hodge complexes and refined TC⁻, arXiv:2410.23115v4
 
 - **Error** at the proof of Lemma 3.7, p. 32: the source says the rationalisations vanish (the finite-coefficient rational corner); it should be that the non-completed rational corner is nonzero and must be kept: for the zero ring, polynomial animation gives dR_(0/ℚ) = ℚ; affects the proof. Found by  (#149 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -5046,6 +5135,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Theorem 2.3.3(3), p.12 (RC lines 555–556): the source says the factor is written as ℕ times the point at infinity; it should be ℕ∪{∞}; affects nothing. Found by SolidAnalyticRings (#910 at d195541, 2026-10-23, claude opus).
 - **Misprint** at the proof of Theorem 2.3.3(3), p.12 (RC lines 555–556): the source says the profinite factor is ℕ times the point at infinity; it should be ℕ∪{∞}; affects nothing. Found by SolidAnalyticRings (#910 at 802490a, 2026-10-23, claude opus).
 - **Misprint** at §3.3, printed p.20, RC line 919: the source says the unreflected null-sequence object P is solid; it should be a light condensed abelian group whose solidification is computed next; affects nothing. Found by SolidAnalyticRings (#943 at 5fe94ca, 2026-10-23, codex gpt-6-astra).
+
+## Redden
+
+- **Misprint** at Proposition 3.12 proof, p. 17 (Redden line 812): the source says the differential characters of the three-forms belong to differential cohomology degree three; it should be their degree is four, as in the preceding exact sequence and following line; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Proposition 3.12, p. 16 (Redden line 785): the source says adding π*φ to the string class adds the harmonic representative of φ to H; it should be it subtracts that representative, since Theorem 3.7 defines the harmonic class as CS−π*H; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Proposition 5.4 proof, p. 24 (Redden line 1183): the source says the squared-torsion correction scales as ε⁻¹; it should be it scales as ε⁻²: the torsion scales by ε⁻¹, and the frame and metric factors cancel; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at §5 and Corollary 5.2, pp. 22–23 (Redden line 1093): the source says all metric connections have totally skew torsion, and Levi-Civita uniquely maximizes Ricci among them; it should be restrict both assertions to metric connections preserving Levi-Civita geodesics; on Euclidean R², d+dx⊗J is metric, flat, and distinct from d; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 
 ## Reichstein
 
@@ -6611,6 +6707,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 3.7, p. 39: the source says d∘F_n = n(d∘V_n); it should be d∘F_n = n·F_n∘d, as its proof gives; affects a stated result. Found by  (#149 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Gap** at Lemma 4.17, p. 61 (inference at cached lines 3033–3052): the source says graded commutativity follows coefficientwise on cochains, but a closed form need not be fixed coefficientwise (ω=YdX+XdY gives (γ_X−1)ω=hXdY≠0); it should be a cochain homotopy showing the commutator is a boundary, so the conclusion holds in cohomology; affects the proof. Found by  (#39 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at Proposition 2.48, p.33: the source says the displayed Frobenius map lands in the wrong q-Witt ring; it should be W_d as target; affects a stated result. Found by  (#156 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Waldorf
+
+- **Misprint** at Corollary 4.2.2 proof, p. 32 (Waldorf line 1169): the source says an integral curvature three-form has zero integral over the closed three-manifold; it should be the integral is an integer; its exponential is one; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 2.1.3, p. 15 (Waldorf line 544): the source says the primitive transgression equals p₁/2 also for Spin(3); it should be restrict this normalization to n≥5; for Spin(3)=SU(2), the adjoint bundle has p₁/2=−2c₂, which is not primitive; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Gap** at Lemma 2.2.5 proof, §6.2, p. 43, and Remark 6.2.1, p. 46 (Waldorf line 1582): the source says vanishing after pullback along the covering forces the gerbe class to vanish; it should be use the trivialization's coherent descent data; pullback to a disjoint union of contractible coordinate charts annihilates every positive-degree integral class; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.3.5 proof, p. 39 (Waldorf line 1429): the source says the change of curving is dψ and the subsequent cancellation uses δψ; it should be use dϕ and δϕ; ψ is the connection difference on the double fibre product; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 3.3.5 proof, p. 39 (Waldorf line 1433): the source says the action changes the curvature three-form by +dη; it should be the change is −dη, since the displayed curving changes by dϕ−π*η; affects the proof. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 3.3.7(b) proof, p. 52 (Waldorf line 1994): the source says ψ is a one-form and the final acting triple is (ψ,ρ,ε); it should be ψ is a two-form and the acting triple is (ψ,ρ,ϕ), as required by the action’s domain; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 4.3.2, p. 34 (Waldorf line 1260): the source says the two indexed trivializations have indices 0 and 1; it should be their indices are 1 and 2; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Lemma 5.2.2, p. 38 (Waldorf line 1394): the source says every face in the alternating differential has sign (−1)^k; it should be use (−1)^{i−1} for the i-th omitted factor; the displayed constant sign does not define a complex; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Theorem 1.1.3, p. 6 (Waldorf line 212): the source says the characteristic class of CS_P is half the Pontryagin class of M; it should be it is half the Pontryagin class of P; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4.1, p. 28 (Waldorf line 1019): the source says the fibre category has degree d−n; it should be the degree is n−d, matching the preceding definition; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4.2, p. 31 (Waldorf line 1138): the source says circle transgression takes a two-form curving to a three-form curving; it should be it takes the bundle 2-gerbe’s three-form curving to a two-form curving; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 
 ## Waldschmidt
 
