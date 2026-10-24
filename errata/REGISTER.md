@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2887 mistakes recorded on the board: 1918 misprints, 735 errors, 206 gaps, 28 unparsed bullets.
+2894 mistakes recorded on the board: 1924 misprints, 735 errors, 207 gaps, 28 unparsed bullets.
 Errata jobs have read the cited sources of 37 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1605,6 +1605,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Fouquet–Wan, The Iwasawa main conjecture for universal families of modular motives, arXiv:2107.13726v3
 
 - **Error** at proof of Lemma 3.13: the source says rank-one coinvariants follow from an arbitrary integral lift of a nontrivial residually unipotent element; it should be a genuine unipotent with a unit off-diagonal entry: the lift [[1,1],[ϖ,1+ϖ]] has det(g−1)=−ϖ and torsion coinvariants; affects the proof. Found by  (#165 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## FS94
+
+- **Misprint** at Theorem 3.2, p. 11: the source says the generic displacement avoids finitely many proper subspaces of N_γ⊗ℝ; it should be subspaces of N⊗ℝ (images in (N/N_γ)⊗ℝ), since displacements inside the span of γ never separate cones; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
+- **Misprint** at proof of Lemma 3.4, p. 12: the source says it proves Lemma 3.3 in the case d = n−1; it should be Lemma 3.4, since 3.3 is an Example; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "29d6cf7", "job": "REV-PKG-AnalyticToricGeometryPartII", "model": "opus", "worker": "fable-rev48"} -->. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 
 ## FSG
 
@@ -3219,6 +3224,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 1.1 proof, author-copy p. 3, SBT line 118: the source says the lifted homomorphism has source `SL₅(𝔽₅)`; it should be `SL₂(𝔽₅)`; affects the proof. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Lemma 1.1, author-copy p. 3, SBT line 102: the source says the twist for an arbitrary characteristic-zero field is a projective line over `ℚ`; it should be over that field `K`; affects a stated result. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+
+## SCH12
+
+- **Misprint** at Definition/Proposition 8.4, p. 304: the source says a ray chart is the affine line times a torus whose exponent uses the base-field letter minus one; it should be the rank of N minus one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
+- **Gap** at proof of Corollary 8.8, p. 307: the source says the intersection over K♭ has positive combinatorial degree as a complete intersection; it should be note that the approximants may meet in excess dimension, so nonemptiness needs the refined intersection class supported on their intersection; affects the proof. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
+- **Misprint** at proof of Proposition 8.7, p. 306: the source says two local trivializations of O(D) on the integral model differ by a unit of K°; it should be a unit of the model's structure sheaf on the overlap, a character of absolute value one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
+- **Misprint** at proof of Proposition 8.7, p. 306: the source says the perturbed g has weights u with ⟨u,v_i⟩ ≥ −j·a_i, with j unbound; it should be ⟨u,v_i⟩ ≥ −a_i, since g has degree one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
+- **Misprint** at proof of Proposition 8.7, p. 306: the source says a large p-power of g is a regular function on the toric variety over K♭; it should be a section of O(p^N D), because regular functions on a proper variety are constant; affects the proof. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 
 ## SCH23
 
