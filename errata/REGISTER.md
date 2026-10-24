@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-3169 mistakes recorded on the board: 2092 misprints, 819 errors, 228 gaps, 30 unparsed bullets.
+3182 mistakes recorded on the board: 2097 misprints, 821 errors, 229 gaps, 35 unparsed bullets.
 Errata jobs have read the cited sources of 42 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -38,6 +38,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ArcTopologyAndDescent, #1051 at d11cfe3, 2026-10-24): Misprint** in BS22 at footnote 15 in the proof of Theorem 9.1, p. 72: the valuation rings are said to have algebraically closed residue fields; splitting of finite covers needs algebraically closed fraction fields; affects the proof.
 - **Unparsed** (AlgebraicModuliForArithmeticGeometryPartII, #1082 at 26cf02f, 2026-10-24): Gap** in KEE99 at the proof of Lemma 2.16, printed p. 270: the source says line bundles with fixed Hilbert polynomial form a finite-type moduli space; this fails for reducible E (O(p) ⊔ O(−p) on P¹ ⊔ P¹ all share O's polynomial), and it should use finite type of Pic^τ (KLE05 Remark 6.14); affects the proof.
 - **Unparsed** (AlgebraicModuliForArithmeticGeometryPartII, #1082 at 26cf02f, 2026-10-24): Gap** in KEE99 at the proof of Lemma 1.7, printed p. 262: the source says a big nef L on proper X is ample plus effective by Kodaira's lemma; that needs an ample sheaf, so it should first pass to a projective modification; affects the proof.
+- **Unparsed** (AlgebraicModularFormsAndSerreWeightsPartII, #1087 at 6c5e47e, 2026-10-24): Misprint** in CG20 at §5.5, internal p.33: the source says T_(p,2)/p^(k+j−6) acts by U_(p,2) in large weight; by Lemma 8.4 and the proof of Lemma 6.2 it should be p^(3−k)T_(p,2), acting as Z₂, and §8.3 reuses U₂ for the diagonal operator; affects nothing.
+- **Unparsed** (AlgebraicModularFormsAndSerreWeightsPartII, #1087 at 6c5e47e, 2026-10-24): Gap** in CG20 at the proof of Lemma 8.20, internal p.72: the source takes pM⁻¹ in the same double coset for any level prime to p; this holds for SL₂(ℤ) but fails for Γ(5) at p=3, where reductions are diag(1,3) versus diag(3,1); affects the proof.
+- **Unparsed** (AlgebraicModularFormsAndSerreWeightsPartII, #1087 at 6c5e47e, 2026-10-24): Gap** in CG20 at the proof of Theorem 8.10, internal p.62: the source attributes to Koblitz p.193 a global section of ω^((p²−1)/2) cutting out the supersingular locus; Koblitz proves only the local singularity structure; affects the proof.
+- **Unparsed** (AlgebraicModularFormsAndSerreWeightsPartII, #1087 at 6c5e47e, 2026-10-24): Gap** in Y16 at the proof of Theorem 4.9, p.39: the source changes frame by an upper unipotent before using the local expansion; that change breaks the dual-basis normalization (Koblitz Lemma 13) under which the expansion holds, so a unitary-group frame change should be used; affects the proof.
+- **Unparsed** (AlgebraicModularFormsAndSerreWeightsPartII, #1087 at 6c5e47e, 2026-10-24): Error** in P20 at Lemmas 6.3.3.3 and 6.3.3.5, p.33: the source says V_H*, W and A vanish on all of S∖S′; they vanish only where the multiplicative rank drops, and only A⊗B vanishes on all of S∖S′; affects nothing in the Siegel application.
 
 ## Abe, arXiv preprint v1
 
@@ -1230,6 +1235,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## CG20
 
+- **Misprint** at Lemma 8.3, internal p.58: the source says the integrality condition with an unnormalized matrix product of S⁻¹ and Q; it should be use the normalized action S⁻¹·Q; affects nothing. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
+- **Misprint** at Lemma 8.4, internal pp.58–59: the source says the U₂ multiplier as −1+p·(det Q/p) and equates it with −1+p·((r²−4mn)/p); it should be use the discriminant symbol only, since the two differ by (−1/p); affects a stated result. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
+- **Error** at Proposition 8.9(2), internal p.61: the source says the θ₁ coefficient as det(Q)·con(a_Q⊗Q); it should be con(a_Q⊗Q) up to a unit, as Yamauchi's Fourier computation (Y16 p.24) shows; affects a stated result. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
+- **Gap** at Proposition 8.9, internal p.61: the source says both theta maps with O/ϖ^m coefficients and weight shift p+1, but the cited construction (Y16 §3.3) works only modulo p; it should be stated over the residue field; affects a stated result. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
+- **Error** at Theorem 8.10, internal p.61 (journal 861): the source says the source allows every k≤p+1 with p∤k(2k−1), which includes k=p−1; it should be exclude k=p−1, since the Hasse invariant is nonzero there with Θh=0; affects a stated result. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
+- **Misprint** at the proof of Lemma 8.6, internal p.59: the source says the indices R in Z₂ have det(R)=0; it should be det R = p²det Q ≡ 0 mod p; affects nothing. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
 - **Misprint** at §5.3, p. 28: the source says Weyl chambers C₀,…,C₄; it should be the four chambers C₀,…,C₃; affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
 
 ## CGH20
@@ -3251,7 +3262,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Corollary 15.2.3.1, p. 108: the source says the H¹ identity without the subscript m; it should be localized at m like the H⁰ identity; affects a stated result. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
 - **Misprint** at Theorem 15.2.2.1(2), p. 108: the source says the large-weight condition is λ₁≥R although λ₁=−k−1<0; it should be −λ₁≥R; affects a stated result. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
 - **Misprint** at proof of Corollary 15.2.3.1, p. 109: the source says the boundary sheaf ω² occurs when k=2; it should be when k=0, as two lines earlier; affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at the proof of Lemma 6.4.1, p.35: the source says the source's Frobenius matrix has Fe₂ = pe₃, which with the form J of §5.1 gives ⟨Fe₂,Fe₃⟩ = −p; it should be −pe₃; affects nothing; (the Hasse term −Y is unchanged). <!-- tauceti-roadmap-review {"agent": "claude", "head": "6c5e47e", "job": "REV-PKG-AlgebraicModularFormsAndSerreWeightsPartII", "model": "opus", "worker": "fable-rev51"} -->. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
 - **Misprint** at §5.3, p. 24: the source says the holomorphic parameter is (1−k+r,2−r;k+2r); it should be (1−k−r,2−r;k+2r), as on p. 25; affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at §6.4, p.35: the source says the rank-r stratum dimension 3−r and defines the closed and open strata by strict inequalities; it should be dimension r+1 with "at most" and "at least"; affects nothing. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
 
 ## parshin
 
