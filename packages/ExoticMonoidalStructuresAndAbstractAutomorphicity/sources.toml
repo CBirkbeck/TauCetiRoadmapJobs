@@ -1,0 +1,74 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExoticMonoidalStructuresAndAbstractAutomorphicity"
+
+[[source]]
+id = "Dor21"
+authors = "Gal Dor"
+title = "Global Parabolic Induction and Abstract Automorphicity"
+year = 2021
+arxiv = "2102.11820v1"
+locator_scheme = "section"
+locator = "Sections B.2–B.7 and C.2–C.5"
+url = "https://arxiv.org/abs/2102.11820v1"
+fetched_from = "https://arxiv.org/pdf/2102.11820v1"
+fetched_at = "2026-10-24T22:29:26Z"
+sha256 = "0fbe7c89db6ecefabdf10e069a1968dc024dba73bd9dbcf520bbaae0c9427507"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["Layers 10–11"]
+
+[[source]]
+id = "GH11"
+authors = "Shamgar Gurevich, Ronny Hadani"
+title = "The categorical Weil representation"
+year = 2011
+arxiv = "1108.0351v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.2; Appendix A"
+url = "https://arxiv.org/abs/1108.0351v1"
+fetched_from = "https://arxiv.org/pdf/1108.0351v1"
+fetched_at = "2026-10-24T22:29:38Z"
+sha256 = "2091beae8c99cc1fce8398da756ff5c614d75a402e90bfe91efef23504482404"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Dor20Z"
+authors = "Gal Dor"
+title = "Modules of Zeta Integrals for GL(1)"
+year = 2020
+arxiv = "2012.03068v1"
+locator_scheme = "theorem"
+locator = "Appendix A, Theorem A.1 and Claims A.2–A.3, pages 25–26"
+url = "https://arxiv.org/abs/2012.03068v1"
+fetched_from = "https://arxiv.org/pdf/2012.03068v1"
+fetched_at = "2026-10-24T22:29:49Z"
+sha256 = "72c6f95148b83f020ae1a9633c8e9252204e11bba1c0e108a31df72418b1f6a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["10.1"]
+
+[[source]]
+id = "Dor23"
+authors = "Gal Dor"
+title = "Exotic Monoidal Structures and Abstractly Automorphic Representations for GL(2)"
+year = 2023
+doi = "10.1017/fmp.2023.18"
+version_note = "Version of record, Forum of Mathematics, Pi 11 (2023), e20, pages 1–52; numbering follows the published PDF."
+locator_scheme = "section"
+locator = "Sections 2–4; Appendix A"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/3403D22A0665CE9C6784B3C6B797E78C/S2050508623000185a.pdf/exotic-monoidal-structures-and-abstractly-automorphic-representations-for-dollarmathrm-gl2dollar.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/3403D22A0665CE9C6784B3C6B797E78C/S2050508623000185a.pdf/exotic-monoidal-structures-and-abstractly-automorphic-representations-for-dollarmathrm-gl2dollar.pdf"
+fetched_at = "2026-10-24T22:29:57Z"
+sha256 = "26fcef221b09f6a472b0d0073efe2ab327fdbc6ac9db6674004ca6e32ddd3589"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–9"]
