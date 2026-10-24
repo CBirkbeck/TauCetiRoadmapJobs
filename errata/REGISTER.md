@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4539 mistakes recorded on the board: 3051 misprints, 1137 errors, 297 gaps, 54 unparsed bullets.
-Errata jobs have read the cited sources of 58 roadmaps; in those of 2 they found no mistake.
+4559 mistakes recorded on the board: 3063 misprints, 1144 errors, 298 gaps, 54 unparsed bullets.
+Errata jobs have read the cited sources of 59 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -2968,6 +2968,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at §3.3, sketch of the solvable step in Theorem 3.6: the source says the invariant grows under the m-fold pullback as d′ = m·d; it should be m·d + (m − 1)·dim H, since the characteristic-two S₃ case gives 2, not 0; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Harvey-Lawson
+
+- **Misprint** at II.3, equation numbering, printed pp. 57–58 (Harvey-Lawson line 390; line 424): the source says both the mass definition and the Kähler-power definition have equation number (3.4); it should be give the second display a distinct label, for example (3.6), to avoid the duplicate reference; affects nothing. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at II.7, remark after Proposition 7.9, printed p. 76 (Harvey-Lawson line 1001): the source says every comass-maximizing plane of an arbitrary form lies in its supporting subspace; it should be assume the form is nonzero; for a zero one-form on ℝ, both unit vectors maximize it, while its supporting subspace is zero; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at III, Corollary 2.14, printed p. 95 (Harvey-Lawson line 1604): the source says all sufficiently small C² boundary perturbations admit solutions C² up to the boundary; it should be require C²,α data and base solution, 0<α<1; at n=2, harmonic extensions of boundary φ with φ″(t)=sgn(t)/log(1/|t|) near zero need not be C²; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at III, Remark 2.6, printed p. 92 (Harvey-Lawson line 1527): the source says the graphical special Lagrangian locus has n components for even n and n−1 for odd n; it should be n−1 for even n and n for odd n; for n=2 it is the connected space of trace-free symmetric matrices; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at III, introduction to Theorem 2.7, printed p. 92 (Harvey-Lawson line 1529): the source says volume minimization follows from Theorem II.3.5; it should be Theorem II.4.2, or its Euclidean Corollary II.4.5; II.3.5 is the pointwise/integrated inequality lemma; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+
 ## Hatcher
 
 - **Error** at Example 2.13, p. 56 (Hatcher line 2253): the source says reduced K-classes are nilpotent for all compact manifolds and finite cell complexes; it should be require connectedness; for the two-point manifold S⁰, reduced K⁰ is Z with its usual multiplication; affects a stated result. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
@@ -4371,6 +4379,21 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Mazur–Rubin, Kolyvagin systems (Mem. AMS, 2004)
 
 - **Error** at Proposition 1.3.2(ii), p. 12, and the p = 2 branch of (H.4): the source says Nβ = α^{d/p^k}, and transverse self-duality for every p; it should be Nβ = ξ^{d(d−1)/2}α^{d/p^k} with ξ ∈ μ_{p^k}, so self-duality needs p odd or p^k | d(d−1)/2 (witness (−3,−3)₃ = −1, 𝔽₂ coefficients); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## McLean
+
+- **Misprint** at Remark 3.4 and Theorem 3.6, printed p. 720 (McLean line 497; line 513): the source says the coordinate one-form v=ΣVⁱ′ωⁱ is (JV)♭; it should be v=(−JV)♭ with the displayed J∂x=∂y; changing this sign leaves harmonicity and the squared-norm formula unchanged; affects nothing. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Corollary 3.5, printed p. 720 (McLean line 502): the source says TX⊕TX is isomorphic to TX⊗NX and hence to TM restricted to X; it should be replace TX⊗NX by TX⊕NX; the tangent-normal splitting is a direct sum; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 3.13, printed p. 724 (McLean line 629): the source says the second-variation formula follows from Theorem 1.4; it should be Theorem 2.4; there is no Theorem 1.4; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 3.13, second display, printed p. 724 (McLean line 628): the source says the skew-derivative contribution to ‖dv‖² is the square of the sum of Vᵢⱼ−Vⱼᵢ; it should be Σᵢ<ⱼ(Vᵢⱼ−Vⱼᵢ)²; taking only V₁₂=1 yields 1, whereas the printed sum over all i,j gives 0; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 3.6 after (3.7), printed p. 722 (McLean line 572; line 590): the source says the linearization’s first component is ★δv and, subsequently, −d★v; it should be d★v=−★δv, where δ=d†, by its own equations (3.5)–(3.7) and v=−ι_Vκ; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Gap** at proof of Theorem 3.6, printed pp. 722–723 (McLean line 576; line 589): the source says restricting F to exact Hölder forms suffices to apply the Banach implicit-function theorem; it should be establish closedness of that target, a bounded inverse on the harmonic complement, and Banach smoothness of F; these analytic hypotheses are not proved; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, Example (4), equation (3.9), printed p. 725 (McLean line 682): the source says the last homogeneous coordinate is (Σᵢ(yⁱ)ⁿ)¹⁄ⁿ; it should be (Σᵢ(yⁱ)ⁿ⁺²)¹⁄⁽ⁿ⁺²⁾, matching the defining degree n+2; for n=2, y=(1,1,0) disproves the printed formula; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at §3, Example (4), final paragraph, printed p. 725 (McLean line 685): the source says H¹(X) vanishes and the displayed real hypersurfaces are rigid for both parities of n; it should be restrict this conclusion to n≥2; at n=1, X≅ℝP¹≅S¹ has b₁=1 and is not rigid; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at §3, Example (4), printed p. 725 (McLean line 656): the source says any antiholomorphic involution with smooth nonempty fixed locus produces a special Lagrangian; it should be require an antiholomorphic isometry and compatible volume phase; on the standard complex two-torus, τ(z₁,z₂)=(z̄₁+2iz̄₂,z̄₂) fixes a non-Lagrangian torus; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at §3, coframe construction, printed p. 719 (McLean line 467; preceding definition line 451): the source says the preceding metric and volume-form data admit coframes preserving both h and ζ; it should be require standard unit-volume compatibility; ζ=2dz with the Euclidean metric satisfies the stated conditions but admits no such coframe; affects the proof. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, hypersurface example, printed p. 719 (McLean line 466): the source says a degree-(n+1) hypersurface in ℂPⁿ has an SU(n)-structure; it should be SU(n−1), since its complex dimension is n−1; alternatively use degree n+2 in ℂPⁿ⁺¹; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, item (3), printed p. 718 (McLean line 441; repeated line 488): the source says its positive coordinate Kähler form equals Im h and satisfies κ(u,v)=g(u,Jv); it should be κ=−Im h and κ(u,v)=g(Ju,v), retaining the displayed h=Σdz⊗dz̄ and κ=Σdx∧dy; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 
 ## Meyer–Wagner, q-Hodge complexes and refined TC⁻, arXiv:2410.23115v4
 
@@ -6866,6 +6889,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Zureick-Brown, Cohomological descent on the overconvergent site, arXiv:1204.5246
 
 - **Error** at Lemma 5.14 (the argument is used twice): the source says the proof infers equality of tubes from surjectivity of a map of schemes, which does not give the tube isomorphism Lemma 5.2 needs (flagged by Le Stum, arXiv:2209.07875, §7); it should be replaced by Le Stum's dimension induction (§7.2, Lemmas 7.6–7.7, Corollary 7.9), separating strict transform from full inverse image; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Zust
+
+- **Misprint** at Theorem 1.2, printed p. 2 (Zust line 60): the source says the final codimension condition is m−k=n−k=3 although β has degree ℓ; it should be m−k=n−ℓ=3; Hodge-dualizing the preceding k=ℓ=3 case gives these two codimensions; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3, printed p. 17 (Zust line 780): the source says Cₙ,₁ = C₁,ₙ = 1; it should be Cₙ,₁ = Cₙ,ₙ = 1; the second index is the degree, so C₁,ₙ is undefined for n > 1; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
+- **Error** at §3, printed p. 17 (Zust line 783): the source says Wirt₃ = C²₆,₃ = 4; it should be Wirt₃ = 0: every real three-form squares to zero, whereas C²₆,₃ = 4; affects a stated result. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
 
 ## Česnavičius, A modular description of X₀(n) (arXiv:1511.07475v2)
 
