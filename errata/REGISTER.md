@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4082 mistakes recorded on the board: 2723 misprints, 1034 errors, 274 gaps, 51 unparsed bullets.
+4090 mistakes recorded on the board: 2727 misprints, 1036 errors, 275 gaps, 52 unparsed bullets.
 Errata jobs have read the cited sources of 50 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -59,6 +59,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Gap** in YE at the proof of Proposition 6, p. 10: the source asserts that the τ-contracted differential modules are locally free, hence exact; at a ramified prime the contraction can be O_L/(2√p); affects the proof.
 - **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Gap** in Y at §9.2, p. 633: the source calls the level projection étale to make P′ a section, while P′ has multiplicity e in the pull-back; the section claim needs another argument; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "408c5d5", "job": "REV-PKG-ComplexMultiplicationAndExplicitReciprocityPartII", "model": "opus", "worker": "fable-rev56"} -->
 - **Unparsed** (HilbertModularVarietiesAndShimuraCurvesPartII, #1119 at b299520, 2026-10-24): Gap** in BHHMS23 at proof of Proposition 8.3.7, p. 101: the source says π^{K₁} equals D₀(r̄_v^∨)^{⊕r} by the proof of Proposition 8.2.6; that proof gives only an embedding, and the reverse is Breuil's Lemma 9.2 argument in Theorem 8.4.1(i); affects nothing.
+- **Unparsed** (HeckeStacksAndLocalShtukasPartII, #1138 at cf9d6fb, 2026-10-24): Gap** in he21 at §6.3, p. 14: the source gets basic nonemptiness of a t^γ from He15 Theorem 2.27, which assumes shrunkenness; a t^γ need not be shrunken (γ = 0, a = s₁s₂ in split A₂); affects the proof.
 
 ## A
 
@@ -2317,6 +2318,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §7.1, (7.4), p. 221: the source says each covering ball holds at most c₀ points; it should be c₀^{rk Γ+1} by (7.1); affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
 - **Error** at §7.3, proof of Theorem 1.1′, p. 224: the source says the rank-ρ finitely generated Γ₀ may be chosen End(A)-stable; it should be drop stability, since the swap on E×E sends rank-one ℤ(P,0) to rank two; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
 
+## ghn15
+
+- **Error** at Proposition 2.2.1, arXiv PDF p. 6: the source says π₀(Flag) → π₀(Flag_ad) is injective and that Flag → Flag_ad is an immersion; it should be give only componentwise isomorphisms, the kernel being the torsion of X_*(T)_Γ; affects a stated result; corrected in print at ghnerr Proposition 0.0.1. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
+- **Error** at Proposition 3.5.1, arXiv PDF p. 13: the source says [b] ∩ M_J(L) has at most one M_J-class for every [b]; it should be for basic [b] only (GL₂ torus counterexample); affects a stated result; corrected in print at ghnerr Proposition 0.0.2. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
+
 ## GHW22
 
 - **Misprint** at footnote 1, p. 2: the source says [HKW21, Example 4.2.7] for f_! as group homology; it should be Example 4.2.4 in the published HKW22; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
@@ -2609,6 +2615,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the Liouville error definition, p.24, lines 1215–1218: the source says the unnormalized summatory error decays to zero; it should be x exp(−c√log x), as required by the following squared calculation; affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at the cutoff after (4.2), p.25, lines 1275–1279: the source says to use the preceding decaying E₁(x) as a growing cutoff; it should be x exp(−√log x); affects the proof. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 - **Gap** at the fundamental lemma, p.38, lines 1908–1916: the source says an absolute error bound in x suffices for relative asymptotics; it should be supplemented by remainder o(XW(z)) and vanishing relative sieve-function error; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
+## he14
+
+- **Misprint** at Proposition 11.6, p. 399: the source says the source's support condition is written for an undefined v; it should be for x; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "cf9d6fb", "job": "REV-PKG-HeckeStacksAndLocalShtukasPartII", "model": "opus", "worker": "fable-rev59"} -->. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
+
+## he21
+
+- **Misprint** at §6.2, p. 13, and §6.5, p. 14: the source says the source calls w a (J, σ⁻¹(y), σ)-alcove element; it should be (J, x, σ), the left normal-form factor (ghn15 Lemma 3.6.3). Split A₂ s₂s₁t^λs₁s₂ works with s₂s₁ and fails with s₁s₂; affects nothing. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
 
 ## Heath-Brown, Lectures on sieves, arXiv:math/0209360v1
 
@@ -6203,6 +6217,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Zhu (title not given in the review)
 
 - **Misprint** at the appendix (no finer locator): the source says the appendix uses an inconsistent normalization; it should be as the witness in the cited review requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## zhu17
+
+- **Misprint** at (3.1.3), p. 455, and Theorem 3.1, p. 456: the source says the dimension formula without requiring a nonempty locus; it should be require nonemptiness (GL₂, b = 1, μ = (1,0) is empty but the formula gives 1/2); affects nothing. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
+- **Gap** at the proof of Proposition 3.3, pp. 459–460: the source says the source applies the fibre bound over ϖ^λ to the preimage of the closed union X_{≤λ}; it should be bound each exact stratum X_{λ′} separately, since smaller strata have larger fibres; affects the proof. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
+- **Misprint** at §3.1.3, p. 458: the source says the source sets τ_i = σ^i(τ₀); it should be τ_i = σ^{−i}(τ₀), to match its own maps H⊗_{τ_i}L ≃ H⊗_{τ₀}L and Nm b = b_{τ₀}σ(b_{τ₁})⋯; affects nothing. Found by HeckeStacksAndLocalShtukasPartII (#1138 at cf9d6fb, 2026-10-24, claude opus).
 
 ## Zureick-Brown, arXiv:1204.5246v4
 
