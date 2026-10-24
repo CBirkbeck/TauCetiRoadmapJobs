@@ -5,17 +5,18 @@ import Mathlib
 
 README.md is the roadmap; this file is not the roadmap. It states its headline
 theorems against the pinned Mathlib and Tau Ceti APIs, with only their simple definitions.
-The headlines are the Selberg weighted Gram and upper-sieve inequalities; interval,
+The headlines are the Selberg weighted Gram, Brun fundamental and upper-sieve inequalities; interval,
 progression and twin/Goldbach upper bounds; Brun convergence; additive, primitive and
-quadratic large sieves; Linnik's exceptional-prime bound; Smith's bilinear bound and the
+polynomial Farey large sieves; the prime quadratic-symbol bilinear bound;
+Jutila’s real-character mean; Linnik's exceptional-prime bound; Smith's bilinear bound and the
 Koymans–Pagano row mean; Vaughan's identity; Bombieri–Vinogradov and its maximal and
 second-moment forms; Maynard clusters and variational growth; and Chen's two theorems.
 
-The general Jutila character mean is not statable here: the nonfundamental discriminant
-character is owned by ThetaSeries §2H and has no carrier at the pins. The finite-character
+The finite-character
 Gram bound from lattice discrepancies and binary convex sieve lack the L-domain
 carrier; the weighted general sieve endpoints lack their sieve-function carriers.
-The joint-spin endpoints lack the ideal spin and generator-domain carriers. Affine
+The joint-spin sign-distribution endpoint lacks the ideal spin and generator-domain carriers;
+its analytic chain is supplied by ArithmeticStatisticsPartV §3.30. Affine
 saturation and squarefree expansion lack the word-population and congruence-mixing
 interfaces. Their full statements remain README targets, without proxy predicates.
 
@@ -43,8 +44,48 @@ theorem selberg_weighted_inner (y : ι → E) (x : E) :
 
 end SieveGram
 
+namespace SieveBrun
+
+/-- The Euler-product dimension bound on the prime factors of the native sieve product. -/
+def HasProductDimension (s : BoundingSieve) (κ K : ℝ) : Prop :=
+  ∀ w z : ℝ, 2 ≤ w → w ≤ z →
+    (∏ p ∈ s.prodPrimes.primeFactors.filter (fun p : ℕ => w ≤ (p : ℝ) ∧ (p : ℝ) < z),
+      (1 - s.nu p)⁻¹) ≤ K * (Real.log z / Real.log w) ^ κ
+
+/-- Absolute native remainders on positive divisors strictly below the cutoff, including one. -/
+def remainderMass (s : BoundingSieve) (D : ℝ) : ℝ :=
+  ∑ d ∈ s.prodPrimes.divisors.filter (fun d : ℕ => (d : ℝ) < D), |s.rem d|
+
+end SieveBrun
+namespace SieveRealCharacters
+
+/-- The numerical discriminant symbol on naturals, with explicit dyadic values and zero extension. -/
+def discriminantValue (D : ℤ) (n : ℕ) : ℝ :=
+  if n = 0 then 0 else
+    ∏ p ∈ n.primeFactors,
+      (if p = 2 then
+        if D % 8 = 1 ∨ D % 8 = 7 then (1 : ℝ)
+        else if D % 8 = 3 ∨ D % 8 = 5 then -1 else 0
+      else (jacobiSym D p : ℝ)) ^ n.factorization p
+
+end SieveRealCharacters
+
 /-! ## Layer 1: Brun and Selberg sieves and polynomial values -/
 
+namespace SieveBrun
+
+/-- Brun’s fundamental estimate with product dimension and strict remainder cutoff;
+Kedlaya Theorem 12.2, with the lower main-term sign corrected. -/
+theorem fundamental_estimate (s : BoundingSieve) (κ K y u : ℝ)
+    (hX : 0 ≤ s.totalMass) (hκ : 0 < κ) (hK : 1 < K) (hy : 1 < y)
+    (hu : 9 * κ + 1 ≤ u) (hdim : HasProductDimension s κ K)
+    (hprimes : ∀ p ∈ s.prodPrimes.primeFactors, (p : ℝ) < y ^ (1 / u)) :
+    let V := ∏ p ∈ s.prodPrimes.primeFactors, (1 - s.nu p)
+    let δ := Real.exp (9 * κ + 1 - u) * K ^ 10
+    (1 - δ) * V * s.totalMass - remainderMass s y ≤ s.siftedSum ∧
+      s.siftedSum ≤ (1 + δ) * V * s.totalMass + remainderMass s y := by sorry
+
+end SieveBrun
 namespace SieveSelberg
 
 /-- The Selberg denominator sums native diagonal terms on d<z. -/
@@ -160,17 +201,6 @@ open Finset
 def primeDenominatorSymbol (a : ℤ) (p : ℕ) : ℤ :=
   if p = 2 then if Even a then 0 else 1 else jacobiSym a p
 
-/-- Heath-Brown’s quadratic large sieve restricts both variables to odd squarefree integers. -/
-
-theorem quadratic_largeSieve (ε : ℝ) (hε : 0 < ε) :
-    ∃ C : ℝ, 0 < C ∧ ∀ M N : ℕ, 1 ≤ M → 1 ≤ N → ∀ a : ℕ → ℂ,
-      (∑ m ∈ (Icc 1 M).filter (fun m => Odd m ∧ Squarefree m),
-        ‖∑ n ∈ (Icc 1 N).filter (fun n => Odd n ∧ Squarefree n),
-          a n * (jacobiSym (n : ℤ) m : ℂ)‖ ^ 2) ≤
-        C * Real.rpow ((M : ℝ) * N) ε * (M + N) *
-          ∑ n ∈ (Icc 1 N).filter (fun n => Odd n ∧ Squarefree n), ‖a n‖ ^ 2 := by
-  sorry
-
 /-- The prime quadratic estimate permits arbitrary numerators and any nonnegative coefficient bounds A,B. -/
 
 theorem prime_quadratic_bilinear (ε : ℝ) (hε : 0 < ε) :
@@ -182,6 +212,18 @@ theorem prime_quadratic_bilinear (ε : ℝ) (hε : 0 < ε) :
         a k * b p * (primeDenominatorSymbol (k : ℤ) p : ℂ)‖ ≤
         C * A * B * (Real.rpow ((K : ℝ) * L) (1+ε) /
           Real.sqrt (min (K : ℝ) L) + K) := by sorry
+
+/-- Jutila’s mean-value lemma on all nonsquare discriminants, including nonfundamental ones;
+Lemma 3, equation (12), printed p.194, with its sixth power of log N. -/
+theorem jutila_mean_value : ∃ C : ℝ, 0 < C ∧ ∀ X N : ℕ, 3 ≤ X → 2 ≤ N →
+    ∀ a : ℕ → ℂ,
+      (∑ D ∈ (Icc (-(X : ℤ)) (X : ℤ)).filter
+          (fun D => (D % 4 = 0 ∨ D % 4 = 1) ∧ ¬ IsSquare D),
+        ‖∑ n ∈ Icc 1 N, a n * (SieveRealCharacters.discriminantValue D n : ℂ)‖ ^ 2) ≤
+        C * ((X : ℝ) * (∑ m ∈ Icc 1 N, ∑ n ∈ (Icc 1 N).filter
+          (fun n => IsSquare (m * n)), ‖a m‖ * ‖a n‖) +
+          Real.sqrt X * (N : ℝ) ^ (7 / 4 : ℝ) *
+            (∑ n ∈ Icc 1 N, ‖a n‖ ^ 8) ^ (1 / 4 : ℝ) * (Real.log N) ^ 6) := by sorry
 
 /-- Smith's Legendre-symbol row bound on disjoint finite sets of odd primes;
 Proposition 6.6 of the cited preprint. The constant is chosen after epsilon. -/
@@ -208,6 +250,26 @@ theorem koymans_pagano_row_mean (c₂ c₄ a : ℝ)
         C * X₁.card * X₂.card * t₁ ^ (-1/4 + c₂*c₄ + ε) := by sorry
 
 end SieveQuadratic
+namespace SievePolynomialFarey
+
+/-- Coefficient of T^(-j-1) in G/H at infinity for monic H of degree ℓ;
+the numerator is reversed at the denominator degree. -/
+def coefficient {p : ℕ} [Fact p.Prime] (ℓ : ℕ) (G H : Polynomial (ZMod p)) (j : ℕ) : ZMod p :=
+  PowerSeries.coeff j
+    ((∑ i ∈ Finset.range ℓ, PowerSeries.monomial i (G.coeff (ℓ - 1 - i))) *
+      PowerSeries.invOfUnit (H.reverse : PowerSeries (ZMod p)) 1)
+
+/-- The polynomial Farey large sieve on all monic degree-ℓ denominators and reduced numerators;
+BSKK Lemma 6.2, including ℓ=m=0 and the fraction 0/1. -/
+theorem large_sieve (p ℓ m : ℕ) [Fact p.Prime] (hm : m ≤ 2 * ℓ)
+    (f : Fin m → ZMod p → ℝ) (hf : ∀ j x, 0 ≤ f j x) :
+    let numerators := (Finset.univ : Finset (Fin ℓ → ZMod p)).image (Polynomial.ofFn ℓ)
+    let denominators := numerators.image (fun H => Polynomial.X ^ ℓ + H)
+    (∑ H ∈ denominators, ∑ G ∈ numerators.filter (fun G => IsCoprime G H),
+      ∏ j : Fin m, f j (coefficient ℓ G H j)) ≤
+        (p : ℝ) ^ (2 * ℓ - m) * ∏ j : Fin m, ∑ x : ZMod p, f j x := by sorry
+
+end SievePolynomialFarey
 namespace SieveVaughan
 open Finset
 open scoped ArithmeticFunction

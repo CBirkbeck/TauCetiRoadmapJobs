@@ -321,7 +321,7 @@ authors = "Matti Jutila"
 title = "On mean values of Dirichlet polynomials with real characters"
 year = 1975
 locator_scheme = "theorem"
-locator = "Lemma 3, equation (12), pp.194–195"
+locator = "Lemma 2, printed p.194; Lemma 3, equation (12) and proof (13)–(17), printed pp.194–195"
 url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa27/aa27116.pdf"
 fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa27/aa27116.pdf"
 fetched_at = "2026-10-22T20:02:06Z"
@@ -381,7 +381,7 @@ cited_for = ["README targets and source-sensitive conventions"]
 
 [[source]]
 id = "DFI-1997"
-authors = "Duke"
+authors = "W. Duke, J. Friedlander, H. Iwaniec"
 title = "Bilinear forms with Kloosterman fractions"
 year = 1997
 venue = "Inventiones Mathematicae 128"

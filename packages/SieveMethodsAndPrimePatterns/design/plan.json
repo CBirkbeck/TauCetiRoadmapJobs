@@ -31,18 +31,6 @@
       "needs": "For the strictly convex planar C² domains of Khayutin Definition 9.4, supply the translated and scaled bound |#(a⁻¹(E−x₀)∩ℤ²)−area(E)/a²|≤Cₗ(R/a)^θ for integers a≥1 and x₀∈ℤ² with area(E)≥a², with R the maximal curvature radius, uniform in x₀ and a; include the stated C² and C³ ellipse exponents with their regularity hypotheses."
     },
     {
-      "slug": "spin-sliced-lattice",
-      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
-      "section": "§4.1",
-      "needs": "Supply covolume and successive-minimum lattice-count errors on the scaled and translated generator-domain slices of KM-21 Lemma 3.1, uniformly in the nonzero difference ideals and rational divisibility moduli, sufficient for the exact squarefull-tail bound in §5.3."
-    },
-    {
-      "slug": "spin-codimension-two",
-      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
-      "section": "§4.1",
-      "needs": "Supply the codimension-two geometric sieve on the generator-domain slices in KM-21 Lemma 3.2, separating zero differences and finitely many bad primes, uniformly in x≥2 and Z≥1, sufficient for the three-term common-norm tail in §5.3."
-    },
-    {
       "slug": "subgroup-strong-approximation",
       "supplier": "AdelicAlgebraicGroups",
       "section": "§4.2",
@@ -71,6 +59,18 @@
       "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
       "section": "§IG.2.5",
       "needs": "Supply the bounded-degree uniformity in the fixed-model Lang–Weil estimate for the group, geometrically irreducible hypersurface factors and their intersections used in §5.4, including O(p^(dim G−1)) counts on proper subvarieties outside one fixed modulus."
+    },
+    {
+      "slug": "jutila-unweighted-mean-square",
+      "supplier": "AnalyticNumberTheoryPartII",
+      "section": "§5.29",
+      "needs": "For integers X≥3,Y≥1, supply an absolute C>0 with the nonsquare discriminant mean Σ_(|D|≤X,D≡0,1 mod 4)|Σ_(1≤n≤Y)χ_D(n)|²≤CXY(log X)⁸ for the numerical adapter of §0.6 (Jutila Lemma 2, printed p.194)."
+    },
+    {
+      "slug": "joint-spin-proof-strengths",
+      "supplier": "ArithmeticStatisticsPartV",
+      "section": "§3.30",
+      "needs": "Supply the sliced-lattice and codimension-two exceptional-tail inputs of KM-21 Lemmas 3.1–3.2, the extension of Type I to every nonzero ideal m, and kernel reciprocity retaining dyadic and infinite-place signs for arbitrary nonzero odd elements, sufficient for the imported conditional prime bound."
     }
   ]
 }

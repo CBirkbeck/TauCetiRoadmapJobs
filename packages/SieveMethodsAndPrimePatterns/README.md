@@ -4,13 +4,15 @@
 
 ## Scope and ownership
 
-This roadmap owns the sieve inequalities and their quantitative distribution interfaces. It also owns Vaughan's identity, the prime-tuple statement register, the tuple version of the W-trick, Maynard's variational argument, weighted almost-prime sieves, and the sieve-specific adapters for binary polynomials, polynomial vectors, number-field spins and affine orbits.
+This roadmap owns the sieve inequalities and their quantitative distribution interfaces. It also owns Vaughan's identity, the prime-tuple statement register, the tuple version of the W-trick, Maynard's variational argument, weighted almost-prime sieves, and the sieve-specific adapters for binary polynomials, polynomial vectors, number-field spin-sign distributions and affine orbits.
 
 The native `BoundingSieve` and `SelbergSieve` carriers, weighted sums, signed remainders, upper-Möbius condition, squared Selberg weights and diagonalization are Mathlib inputs. Their constructions and existing upper inequalities are not new targets. The finite-family and arbitrary-residue constructions below add preservation of indexed multiplicities and nonzero bad residue classes; they do not replace these carriers. An existing Selberg truncation level supplies no estimate on the remainders.
 
-IntegralLattices Layers 0 and 3 own even-bilinear half-norms and integral local quadratic classification. Only the count-preserving rank-two conic comparison belongs here. GlobalNumberFields Layers 3/3C and 11 own generators, units, class representatives, orders and invertible ideals. ArithmeticDirichletSeries owns ideal norm fibres and ideal arithmetic functions; ClassFieldTheory Layer 14 owns Hilbert reciprocity; Chebotarev Layer 13 owns the principal-class natural prime count. None of these arithmetic theories is reconstructed as sieve data. Tau Ceti at the pins has `TauCeti.Multiquadratic.fundamentalDiscriminantChar`, the quadratic Dirichlet character of a fundamental discriminant; ThetaSeries §2H owns the Kronecker symbol and the character for every nonzero discriminant D≡0,1 mod 4. Layer 0 owns only its natural-argument, real-valued sieve adapter, with zero value at zero and comparison for |D|>1. ErdosProgressionPowers §3.1 owns the uniform Gram-row, maximum-row and diagonal/off-diagonal inequalities; the weighted denominator inequality here is stronger and remains a target.
+IntegralLattices Layers 0 and 3 own even-bilinear half-norms and integral local quadratic classification. Only the count-preserving rank-two conic comparison belongs here. GlobalNumberFields Layers 3/3C and 11 own generators, units, class representatives, orders and invertible ideals. ArithmeticDirichletSeries owns ideal norm fibres and ideal arithmetic functions; ClassFieldTheory Layer 14 owns Hilbert reciprocity; Chebotarev Layer 13 owns the principal-class natural prime count. None of these arithmetic theories is reconstructed as sieve data. Tau Ceti at the pins has `TauCeti.Multiquadratic.fundamentalDiscriminantChar`, the quadratic Dirichlet character of a fundamental discriminant; ThetaSeries §2H owns the Kronecker symbol and the character for every nonzero discriminant D≡0,1 mod 4. Layer 0 owns only its numerical natural-argument, real-valued sieve adapter, with zero value at zero and comparison for |D|>1. ErdosProgressionPowers §3.1 owns the uniform Gram-row, maximum-row and diagonal/off-diagonal inequalities; the weighted denominator inequality here is stronger and remains a target.
 
-AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26, 0.32, 3.26, 3.34–3.35 supplies the quantitative prime, small-conductor, divisor-subpower and smooth-number inputs at their stated strengths. InverseGaloisAndArithmeticFundamentalGroups §IG.2.5 owns fixed-model Lang–Weil. GeometryOfNumbersAndQuadraticArithmetic §4.1 owns general lattice counting, and AdelicAlgebraicGroups §4.2 owns algebraic-group strong approximation. Stronger inputs needed here are the separate gaps under Exact supplier contracts; they are not exports of those sections.
+AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26, 0.32, 1.2a, 3.22, 3.26, 3.34–3.35 supplies the quantitative prime, small-conductor, divisor-subpower and smooth-number inputs at their stated strengths. InverseGaloisAndArithmeticFundamentalGroups §IG.2.5 owns fixed-model Lang–Weil. GeometryOfNumbersAndQuadraticArithmetic §4.1 owns general lattice counting, and AdelicAlgebraicGroups §4.2 owns algebraic-group strong approximation. Stronger inputs needed here are the separate gaps under Exact supplier contracts; they are not exports of those sections.
+
+AnalyticNumberTheoryPartII §5.29 owns the odd-squarefree quadratic large sieve, its primitive-real form and square-pair correction, uniformly in both cutoffs and arbitrary complex coefficients. Layer 2 retains the unrestricted bilinear consequence and prime-denominator applications. ArithmeticStatisticsPartV §3.30, “Conditional joint-spin prime bound”, owns the arithmetic setup, unit-averaged sequence, generator independence, Type I and Type II estimates and prime-ideal cancellation. Layer 5 retains the general short-character progression/subset transfer, the ideal-symbol comparison, the generic coefficient and prime-extraction interfaces, and the spin-sign equidistribution consequence. The generic prime-extraction theorem allows any bounded ideal sequence satisfying its two estimates; it does not reconstruct the supplied joint-spin chain.
 
 The tuple W-trick here is a construction for Maynard weights. Layer 5 states the conjectural short-character input Cₘ and its reduced-conductor progression consequence; every spin conclusion retains Cₘ as a hypothesis. Elliott–Halberstam, the prime-tuple conjecture, Bouniakowsky and Schinzel H remain named conjectures. Ordinary squarefree SL₂ expansion is separate from the absolute mixing bound needed for an affine word population.
 
@@ -50,9 +52,19 @@ For the finite-character Gram estimate use `AddChar.sum_eq_zero_of_ne_one` and `
 
 ### From AnalyticNumberTheoryPartI
 
-Use §§0.10–0.11 for the prime number theorem with every fixed logarithmic saving and Σ_(p≤x)(log p)/p=log x+O(1); §0.21 for reciprocal-prime Mertens and uniform intervals; §§0.26 and 0.31 for positive prime Euler products; §0.32 for Siegel–Walfisz in its stated range; and §§3.1, 3.26 for divisor subpower bounds. The extra uniform analytic strengths are individual gaps below. In particular, no small-conductor estimate is inferred from Bombieri–Vinogradov itself.
+Use §0.32 at q=1 for the prime number theorem with every fixed logarithmic saving; §0.10 for primes in a fixed multiplicative interval; §0.11 for Σ_(p≤x)(log p)/p=log x+O(1); §0.21 for reciprocal-prime Mertens and uniform intervals; §§0.26 and 0.31 for positive prime Euler products; §0.32 for Siegel–Walfisz in its stated range; and §§3.1, 3.26 for divisor subpower bounds. The extra uniform analytic strengths are individual gaps below. In particular, no small-conductor estimate is inferred from Bombieri–Vinogradov itself.
 
-Use §§3.34–3.35, `smoothCount_dickman` and `smoothCount_rankin`, for the fixed-parameter positive-density count and Rankin bound. The native count is positive integers only: #Nat.smoothNumbersUpTo(N,z+1)≤N^δ∏_(p≤z)(1−p^(−δ))⁻¹ for δ>0. Treat N=0, z=0,1 and N<1 directly. Distinct integers are counted once. Khayutin's stronger extremely-smooth tails use their separate gap.
+Use §3.34, `smoothCount_dickman`, for the fixed-parameter positive-density count and §3.35, “Rankin smooth-number upper bound”, for the Rankin estimate with x≥1,y≥2,σ>0. The native count is positive integers only: #Nat.smoothNumbersUpTo(N,z+1)≤N^δ∏_(p≤z)(1−p^(−δ))⁻¹ for δ>0. Treat N=0, z=0,1 and N<1 directly. Distinct integers are counted once. Khayutin's stronger extremely-smooth tails use their separate gap.
+
+Use §3.22 for the summatory divisor bound and §1.2a for Σ_(n≤Y)τ(n)²≪Y log³(2Y), obtained from τ²≤τ₄ and three harmonic sums. These are the divisor inputs to Jutila’s argument.
+
+### From AnalyticNumberTheoryPartII
+
+Use §5.29 for the odd-squarefree quadratic large sieve and its primitive-real and square-pair versions: for every ε>0 the constant is uniform in M,N≥1 and all complex coefficients. Both odd squarefree ranges include 1; the square-pair version retains all pairs whose product is square. For M=1,N=3 and a₁=1,a₃=−1 the squared sum is 0 and energy is 2; with a₃=1 they are 4 and 2.
+
+### From ArithmeticStatisticsPartV
+
+Use §3.30, “Conditional joint-spin prime bound”, with a fixed finite Galois K/ℚ of degree n, nonempty inverse-disjoint S, the positive-unit square hypothesis in the totally real case, and its fixed class representatives, modulus F and unit-square-invariant residue weight ψ. It supplies the unit-averaged ideal sequence, generator independence, Type I uniformly in every nonzero ideal m, Type II for coefficients bounded by 1, and prime cancellation under C_(|S|n). The Type I saving is δ/(54n|S|²), the Type II exponents are 1/(6n), and prime cancellation saves δ/[54|S|²n(12n+1)]. The totally complex sequence retains every torsion/free-unit coset; constants depend on fixed ψ and auxiliary choices. At n=3,|S|=1,δ=1 the prime saving is 1/5994; ψ=0 gives the zero sequence; an involution cannot belong to S.
 
 ### From geometry and algebraic groups
 
@@ -64,7 +76,7 @@ IntegralLattices Layers 0 and 3 supply even-bilinear half-norms and integral loc
 
 [ArithmeticDirichletSeries](../../Completed/ArithmeticDirichletSeries/README.md) Layers 1–2 supply maximal-order ideal norm fibres and convolution, and Layer 5 supplies prime-power and higher-residue-degree removal. The ideal divisor and logarithmic coefficient estimates are owned in §5.6 here. ClassFieldTheory Layer 14 supplies cohomological Hilbert reciprocity; QuadraticFormInvariants §6C supplies `hilbertSymbol_eq_cohomological`, `hilbertSymbol_productFormula` and the odd, dyadic and infinite local symbols. The ideal-symbol reciprocity adapter in §5.6 compares them. Chebotarev Layer 13 supplies the principal-class natural prime count ∼li(X)/h_K.
 
-ThetaSeries §2H supplies `kroneckerSym` and `kroneckerChar`; use only their natural-argument real adapter in §0.6. The pinned comparison is `TauCeti.Multiquadratic.fundamentalDiscriminantChar D hD` in `TauCeti/NumberTheory/Multiquadratic/FundamentalDiscriminant/Character.lean`, with the explicit proof hD. ErdosProgressionPowers §3.1 supplies the uniform-row, maximum-row and diagonal/off-diagonal finite Gram inequalities, including empty families; §0.4 here supplies the weighted denominator theorem.
+ThetaSeries §2H supplies `kroneckerSym` and `kroneckerChar`; use only their natural-argument real adapter in §0.6. The pinned comparison is `TauCeti.Multiquadratic.fundamentalDiscriminantChar D hD` in `TauCeti/NumberTheory/Multiquadratic/FundamentalDiscriminant/Character.lean`, with the explicit proof hD. ErdosProgressionPowers §3.1 supplies the uniform-row, maximum-row and diagonal/off-diagonal finite Gram inequalities, including empty families; For x=1,y=(1,2) the unweighted left side is 5 and maximal row is 6; two repeated unit vectors give 2=2, while an empty family gives 0≤B for B≥0. §0.4 here supplies the weighted denominator theorem.
 
 Isoperimetry I2 supplies convex-body isoperimetry. RiemannianGeometry R4.9.6a supplies signed planar turning and the tangent-angle comparison for smooth Jordan curves. Their specialization and C² approximation give the curvature-to-area comparison of §1.4.
 
@@ -80,10 +92,6 @@ What AnalyticNumberTheoryPartI must provide (gap:extremely-smooth-tails): §3.34
 
 What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:curvature-uniform-lattice): §4.1. For the strictly convex planar C² domains of Khayutin Definition 9.4, supply the translated and scaled bound |#(a⁻¹(E−x₀)∩ℤ²)−area(E)/a²|≤Cₗ(R/a)^θ for integers a≥1 and x₀∈ℤ² with area(E)≥a², with R the maximal curvature radius, uniform in x₀ and a; include the stated C² and C³ ellipse exponents with their regularity hypotheses.
 
-What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:spin-sliced-lattice): §4.1. Supply covolume and successive-minimum lattice-count errors on the scaled and translated generator-domain slices of KM-21 Lemma 3.1, uniformly in the nonzero difference ideals and rational divisibility moduli, sufficient for the exact squarefull-tail bound in §5.3.
-
-What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:spin-codimension-two): §4.1. Supply the codimension-two geometric sieve on the generator-domain slices in KM-21 Lemma 3.2, separating zero differences and finitely many bad primes, uniformly in x≥2 and Z≥1, sufficient for the three-term common-norm tail in §5.3.
-
 What AdelicAlgebraicGroups must provide (gap:subgroup-strong-approximation): §4.2. For a fixed finitely generated Zariski-dense subgroup of a connected simply connected absolutely almost simple group over ℚ, supply its full reduction images outside one fixed modulus and the simultaneous squarefree CRT image, with the subgroup hypotheses and finite local modifications of BGS-10 §2.
 
 What AdelicAlgebraicGroups must provide (gap:squarefree-ring-sum-product): §4.2. Supply the quantitative squarefree-ring sum-product input of BGS-10 §4 for subsets of ℤ/qℤ, with all large-divisor projection and nonconcentration hypotheses and constants uniform in squarefree q outside a fixed modulus; this is a missing input to the SL₂ expansion target, not algebraic-group strong approximation.
@@ -93,6 +101,18 @@ What AdelicAlgebraicGroups must provide (gap:sl2-noncommutative-flattening): §4
 What GlobalNumberFields must provide (gap:quadratic-order-conductor-counts): Layer 11. Supply finite norm fibres and the explicit prime-power counts of integral invertible ideals of an arbitrary fixed imaginary quadratic order, including primes dividing its conductor, sufficient for the multiplicative-growth bound of §0.9.
 
 What InverseGaloisAndArithmeticFundamentalGroups must provide (gap:bounded-degree-lang-weil): §IG.2.5. Supply the bounded-degree uniformity in the fixed-model Lang–Weil estimate for the group, geometrically irreducible hypersurface factors and their intersections used in §5.4, including O(p^(dim G−1)) counts on proper subvarieties outside one fixed modulus.
+
+What AnalyticNumberTheoryPartII must provide (gap:jutila-unweighted-mean-square): §5.29. For integers X≥3,Y≥1, supply an absolute C>0 such that Σ_(|D|≤X,D≡0,1 mod 4,D not a square)|Σ_(1≤n≤Y)χ_D(n)|²≤CXY(log X)⁸ for the numerical adapter of §0.6 (JUTILA-ORIGINAL Lemma 2, printed p.194, lines 120–125).
+
+What ArithmeticStatisticsPartV must provide (gap:joint-spin-proof-strengths): §3.30. Supply the sliced-lattice and codimension-two exceptional-tail inputs of KM-21 Lemmas 3.1–3.2, the extension of Type I to every nonzero ideal m, and a kernel reciprocity comparison retaining all dyadic and infinite-place signs for arbitrary nonzero odd elements, sufficient for the imported conditional prime bound.
+
+For the last comparison, write Φ(α,β)=∏_(σ∈S)(α/[σ(β)σ⁻¹(β)])_(K,2). When the exchanged kernels are nonzero, the factor in Φ(α,β)=ε(α,β)Φ(β,α) is ∏_(σ∈S,v|2∞)(α,σ(β))_v(α,σ⁻¹(β))_v. A shared odd denominator prime makes both exchanged kernels zero. On totally positive generator domains the infinite factors are 1; for totally complex fields there are no real factors (KM-21 §4, (4.3), properties (P1)–(P3), lines 1238–1276; FIMR-13 Lemma 2.1).
+
+**Checks.**
+
+- In ℚ(t), t³+t²−2t−1=0, with σ(t)=t²−2, S={σ}, α=1+8t and β=1+16σ(t), the norms are 377=13·29 and 3569=43·83. Choose the two ideal-class representatives over 41 and 71; their resulting F is coprime to both norms. Both residues are 1 modulo 8, but Φ(α,β)=1 and Φ(β,α)=−1. The dyadic factors are 1 and the infinite factor is −1, giving 1=(−1)(−1).
+- In that field Φ(α,1)=Φ(1,α)=1. Residue data alone would assign the same exchange sign to this pair and the preceding pair.
+- With α=β=3, both kernels vanish. Cancelling a kernel without its nonvanishing hypothesis would be invalid.
 
 ### Short-character conjecture owned in Layer 5
 
@@ -468,7 +488,7 @@ A finite set at a single cutoff does not supply constants uniform across a varyi
 
 **Euler-product sieve dimension.** HasProductSieveDimension(P,g,κ,K) means: for every real 2≤w≤z, `∏_{p∈P, p prime, w≤p<z}(1−g(p))⁻¹` ≤ K (log z/log w)^κ.
 
-All endpoint choices are part of the definition: p=w is included and p=z is excluded. The predicate alone does not require g(p)<1; every sieve theorem requires 0≤g(p)<1 separately.
+All endpoint choices are part of the definition: p=w is included and p=z is excluded. The acceptance specialization `SieveBrun.HasProductDimension` takes P=primeFactors(s.prodPrimes) and g=ν. The general predicate alone does not require g(p)<1; every sieve theorem requires 0≤g(p)<1 separately.
 
 ([KED-ANT-12](#references), §12.3, (12.3.1).)
 
@@ -493,7 +513,7 @@ Do not infer this product-ratio condition from the logarithmic condition without
 
 *Needs:* Mathlib `Real.log`.
 
-**Truncated remainder mass.** For an existing BoundingSieve s and real D, `remainderMass(s,D)=Σ_{d|s.prodPrimes, d<D}|s.rem(d)|.` Divisors are positive; the cutoff is strict.
+**Truncated remainder mass.** Define `SieveBrun.remainderMass`. For an existing BoundingSieve s and real D, `remainderMass(s,D)=Σ_{d|s.prodPrimes, d<D}|s.rem(d)|.` Divisors are positive; the cutoff is strict.
 
 D can be any real. The sum is zero if D≤1. If D>1 it includes d=1 and hence the mass-normalization error.
 
@@ -645,7 +665,7 @@ This conditional statement does not claim the exact advertised Theorem 11.9 unde
 
 ### 0.6 the real discriminant character
 
-**Real discriminant character adapter.** Define χ_D(0)=0 and, for n>0, χ_D(n) as the real coercion of ThetaSeries §2H's `kroneckerSym D n`. The source and target are ℤ×ℕ and ℝ. For |D|>1 and D≡0,1 mod 4 this is its discriminant Dirichlet character restricted to naturals. The general Kronecker construction, multiplicativity, periodicity and dyadic laws are consumed from that owner.
+**Real discriminant character adapter.** Define `SieveRealCharacters.discriminantValue` by χ_D(0)=0 and, for n>0, χ_D(n)=∏_(p|n)c(D,p)^(v_p(n)), as a real number. For odd p put c(D,p)=jacobiSym(D,p); put c(D,2)=1 for D≡1,7 mod 8, −1 for D≡3,5 mod 8, and 0 otherwise. Compare the finite numerical product with ThetaSeries §2H's `kroneckerSym D n`. The source and target are ℤ×ℕ and ℝ. For |D|>1 and D≡0,1 mod 4 this is its discriminant Dirichlet character restricted to naturals. The general Kronecker construction, multiplicativity, periodicity and dyadic laws are consumed from that owner.
 
 ([JUTILA-ORIGINAL](#references), notation before Theorem 1, p.192; Lemma 3, pp.194–195.)
 
@@ -662,7 +682,7 @@ The adapter exposes these laws:
 - At D=5,n=0 it is 0. At D=1,n=0 it is also 0, whereas the native modulus-one character is 1; hD alone does not suffice for the comparison.
 - At D=1,n=1 it is 1, so the zero extension is not periodic modulo one.
 
-*Needs:* ThetaSeries §2H; the pinned fundamental-discriminant character and its explicit fundamentalness proof; Mathlib real coercions.
+*Needs:* Mathlib `Nat.primeFactors`; Mathlib `Nat.factorization`; Mathlib `jacobiSym`; ThetaSeries §2H for the comparison and character laws; the pinned fundamental-discriminant character and its explicit fundamentalness proof.
 
 ### 0.7 binary polynomial local densities and the growth class
 
@@ -832,7 +852,7 @@ Fixed imaginary quadratic order; invertible ideals, not all proper ideals; ε>0.
 
 *Proof sketch.* Use gap:quadratic-order-conductor-counts for the conductor-local ideal-count formula and coprime norm multiplicativity. At unramified primes there are at most k+1 ideals of norm p^k. Absorb the finitely many conductor primes into the fixed-order constants and apply the divisor-function n^ε estimate. The exact conductor-local formula is a supplier request, not replanned order arithmetic.
 
-*Needs:* GlobalNumberFields Layer 11 orders and Picard groups; GlobalNumberFields Layer 11 gap:quadratic-order-conductor-counts; Layer 0 §0.7 multiplicative sieve growth class; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* GlobalNumberFields Layer 11 orders and Picard groups; GlobalNumberFields Layer 11 gap:quadratic-order-conductor-counts; Layer 0 §0.7 multiplicative sieve growth class; AnalyticNumberTheoryPartI §3.26.
 
 ### 0.10 polynomial-vector sieve data
 
@@ -859,6 +879,7 @@ The definition exposes the following operations and laws:
 **Checks.**
 
 - At one label p=2, ||T³||=8.
+- The empty polynomial vector has norm 1; components T over 𝔽₂ and T² over 𝔽₃ have joint norm 2·9=18.
 - A vector with a zero component has norm zero, not one.
 - With an empty candidate set and D=1, the probability is one.
 - For A=T²,D=T,I={T}, the rough event fails, although D|A.
@@ -898,7 +919,7 @@ Q=x₀² modulo 9 has three x₀ values and nine x₁ values, giving ρ_Q(9)=27.
 
 ### Dependencies
 
-External inputs: AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; GlobalNumberFields Layer 11 orders and Picard groups; IntegralLattices Layers 0 and 3 half-norms and integral local classification.
+External inputs: AnalyticNumberTheoryPartI §3.26; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; GlobalNumberFields Layer 11 orders and Picard groups; IntegralLattices Layers 0 and 3 half-norms and integral local classification.
 
 ## Layer 1: Brun and Selberg sieves and polynomial values
 
@@ -924,7 +945,7 @@ Only squarefree d contribute, so g need only be defined on squarefree integers. 
 
 γ(p) = 1 for p∤W and γ(p) = 0 for p|W gives g(d) = 1/φ(d) on d coprime to W and c_γ = φ(W)/W, so `Σ_{d<z,(d,W)=1}` μ²(d)/φ(d) = (φ(W)/W)(log z + O(L)) with L ≪ 1 + `Σ_{p|W}` log p/p (Maynard (6.7)–(6.8)). The constant is independent of L and of γ beyond A₁ and A₂. Maynard uses this uniformity with L ≪ log log N.
 
-*Needs:* Mathlib `ArithmeticFunction.moebius`; Mathlib `Squarefree`; Mathlib `sum_mul_eq_sub_sub_integral_mul`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; AnalyticNumberTheoryPartI §0.11.
+*Needs:* Mathlib `ArithmeticFunction.moebius`; Mathlib `Squarefree`; Mathlib `sum_mul_eq_sub_sub_integral_mul`; AnalyticNumberTheoryPartI §§0.11, 0.26; AnalyticNumberTheoryPartI §0.11.
 
 **Smoothly weighted diagonal sum (Maynard Lemma 6.1, GGPY Lemma 4).** Under (Ω₁) and (Ω₂(1,L)), for G: [0,1]→ℝ of class C¹ with G_max = `sup_{[0,1]}(|G|` + |G′|): `Σ_{d<z}` μ²(d)g(d)G(log d/log z) = c_γ log z ∫_0^1 G(x) dx + O(c_γ L G_max). The implied constant depends only on A₁ and A₂, not on L or G.
 
@@ -1015,7 +1036,7 @@ P in the dimension predicate means the set of its prime factors. Strict prime-de
 
 *Needs:* Layer 1 §1.2 brun combinatorial coefficients; Layer 0 §0.5 euler-product sieve dimension; Mathlib `BoundingSieve`; Mathlib `BoundingSieve.mainSum`.
 
-**Brun fundamental sieve estimate.** Under the Brun main-term hypotheses and X≥0, (1−δ)V X−remainderMass(s,y) ≤ S ≤ (1+δ)V X+remainderMass(s,y), where β=9κ+1,u≥β,z=y^(1/u), δ=exp(β−u)K^10.
+**Brun fundamental sieve estimate.** Prove `SieveBrun.fundamental_estimate`. Under the Brun main-term hypotheses and X≥0, (1−δ)V X−remainderMass(s,y) ≤ S ≤ (1+δ)V X+remainderMass(s,y), where β=9κ+1,u≥β,z=y^(1/u), δ=exp(β−u)K^10.
 
 This is the proved parameter range of this elementary combinatorial sieve. It is not a sharp beta-sieve theorem, a parity-breaking input or a Chen theorem.
 
@@ -1023,7 +1044,13 @@ This is the proved parameter range of this elementary combinatorial sieve. It is
 
 *Proof sketch.* Expand A_d=ν(d)X+R_d in both weighted brackets. The modulus and support lemmas give |λ±|≤1 and support d<y. Apply the remainder-mass error lemma, then multiply the main-term inequalities by nonnegative X.
 
-The range u≥9κ+1 and positivity of X are explicit. A positive sifted lower bound requires both δ<1 and a sufficiently small actual remainder mass.
+**Checks.**
+
+- P=1, X=S=1, R₁=0, κ=1,K=2,y=exp(10),u=10 gives δ=1024 and −1023≤1≤1025.
+- With the same sieve, y=exp(20),u=20 gives δ=1024exp(−10)≈0.04649 and 0.95351≤1≤1.04649. A lower factor 1+δ would fail.
+- With P=1, X=0, A₁=S=1 and y>1, R₁=1 and the bounds are −1≤1≤1; omitting R₁ makes the upper bound false.
+
+The range u≥9κ+1 and nonnegativity of X are explicit. A positive sifted lower bound requires both δ<1 and a sufficiently small actual remainder mass.
 
 *Needs:* Layer 1 §1.2 dimension-controlled brun main terms; Layer 1 §1.2 brun pointwise divisor brackets; Layer 0 §0.5 coefficient error controlled by remainder mass; Layer 1 §1.2 brun coefficient modulus bound; Layer 1 §1.2 strict brun coefficient support; Mathlib `BoundingSieve.multSum_eq_main_err`.
 
@@ -1073,9 +1100,9 @@ Native multiplicative arithmetic function; nonnegative; prime values bounded by 
 
 ([KHAYUTIN-19](#references), Lemma 9.8 and equations (35)–(37), pp.223–224.)
 
-*Proof sketch.* Extend g’s prime values completely multiplicatively and compare with h(p)=d−g(p). Their squarefree Dirichlet convolution is d^ω. Use the squarefree d^ω/n lower estimate and the Mertens product comparison; both exact uniform analytic inputs are requested from AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26, with the analytic gaps above.
+*Proof sketch.* Extend g’s prime values completely multiplicatively and compare with h(p)=d−g(p). Their squarefree Dirichlet convolution is d^ω. Use the squarefree d^ω/n lower estimate and the Mertens product comparison; the squarefree lower estimate uses gap:uniform-wirsing and the product comparison uses AnalyticNumberTheoryPartI §§0.21, 0.26.
 
-*Needs:* Layer 0 §0.7 binary polynomial local densities; Layer 0 §0.7 binary schwartz–zippel specialization; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 0 §0.7 binary polynomial local densities; Layer 0 §0.7 binary schwartz–zippel specialization; AnalyticNumberTheoryPartI §§0.21, 0.26; gap:uniform-wirsing.
 
 **Curvature-to-area and lcm cutoff comparison.** For a bounded strictly convex C² planar domain with maximal curvature radius R>0 and area A, prove A≤πR². The domain may use either open or closed boundary conventions: its closure has the same area and curvature radius, while its lattice population keeps the original convention. Consequently, if θ∈(0,2], z≥2 and z⁵R^θ≤A, then R>1 and z≤A^(1/5)≤A^(1/4); in particular z²≤√A. This comparison closes the lcm-domain requirement in the full binary-sieve range.
 
@@ -1118,6 +1145,22 @@ The supplied finite Gram-row inequality gives the result, including an empty pop
 
 *Needs:* ErdosProgressionPowers §3.1 finite Gram inequality; gap:curvature-uniform-lattice; Mathlib `AddChar.sum_eq_zero_of_ne_one` and `AddChar.sum_eq_card_of_eq_one`; primitive-frequency uniqueness as proved in this target; Mathlib finite Euclidean spaces and `Real.fourierChar`.
 
+**Binary sieve cutoff comparison.** For a polynomial of degree d≥1, z≥2 and s≥1, with content primes omitted on both sides, `∏_{d<p<z^(1/s)}(1−ρ_Q(p)/p²)≤C_d` s^d `∏_{d<p<z}(1−ρ_Q(p)/p²).` Constants depend only on d. Requiring s≥1 removes the false vanishing right side as s tends to zero.
+
+s≥1; z≥2; nonzero reduction at every included prime.
+
+([KHAYUTIN-19](#references), Lemma 9.11, p.225.)
+
+*Proof sketch.* Use Schwartz–Zippel to bound the local factors and a uniform Mertens estimate between the two cutoffs. Bound primes in the fixed small range separately.
+
+*Needs:* Layer 0 §0.7 binary polynomial local densities; Layer 0 §0.7 binary schwartz–zippel specialization; AnalyticNumberTheoryPartI §0.21.
+
+**Binary-form large sieve with a conservative cutoff.** For Q with nonzero reduction at every prime p<z and a bounded strictly convex C² domain E in L(Cₗ,θ), with area A≥1, maximal curvature radius R>0 and 0<θ≤2, the number of points in E∩ℤ² with Q>0 and no prime p<z dividing Q is at most C A∏_(deg Q<p<z)(1−ρ_Q(p)/p²), with C depending only on degree and Cₗ, for 2≤z≤min((A/R^θ)^(1/5),A^(1/4)). This intermediate has lcm(m,n)≤z²≤√A directly. Use the same finite-character bound with the bounded-power cutoff and Euler-product comparison; the full-cutoff theorem below follows from the curvature-to-area comparison.
+
+([KHAYUTIN-19](#references), Lemma 9.9, proof (38), pp.224–225.)
+
+*Needs:* The Euler denominator; the owned finite-character Gram bound and the Euler cutoff comparison; gap:curvature-uniform-lattice.
+
 **Binary-form large sieve on convex domains.** For a planar domain in L(C_l,θ), area A≥1 and radius R>0, θ∈(0,2], and 2≤z≤min((A/R^θ)^(1/5),A^(1/2)), the number of integer points with positive Q-value and no prime p<z dividing that value is at most C `A∏_{deg Q<p<z}(1−ρ_Q(p)/p²).` C depends only on degree and C_l. Here R is the maximal curvature radius of the compact strictly convex C² boundary, and L(Cₗ,θ) means the uniform translated/scaled discrepancy of the supplier contract. The full source range is retained with the strict prime cutoff p<z.
 
 Q mod p nonzero for every p<z; the stated convex C² geometry; L-domain input; θ≤2. The lcm cutoff follows from the curvature-to-area comparison above.
@@ -1127,22 +1170,6 @@ Q mod p nonzero for every p<z; the stated convex C² geometry; L-domain input; �
 *Proof sketch.* Set b=max(5,7−2θ), so 5≤b<7, and w=z^(5/b)≤z. The curvature-to-area comparison gives w²≤√A, and R^θw^b=R^θz⁵≤A. The finite-character Gram bound is at most (1+3Cₗ)A, since N≤A+CₗR^θ and w≥1. For coefficients masked to the survivors, finite Parseval and Cauchy–Schwarz at a prime p give nontrivial-character energy at least ρ_Q(p)/(p²−ρ_Q(p)) times the squared survivor count. Iterate this inequality over squarefree moduli by CRT; this tensor calculation is part of this proof. A full local bad set makes the survivor count zero and is handled first. Otherwise the resulting denominator H includes d=1, hence H≥1; the character bound gives S(w)²H≤(1+3Cₗ)A S(w). Handle S(w)=0 separately and cancel only a positive count, then use the Euler denominator at w, retaining only primes p<w. The rough-point count at z is at most that at w. The Euler cutoff comparison with s=b/5≤7/5 bounds the latter product by C_degree·s^degree times the product at z. For 1<w<2 the only modulus is one and H=1, so exactly the same Euler-product comparison applies. Thus the full result has constants depending only on degree and Cₗ, for every 0<θ≤2.
 
 *Needs:* Layer 1 §1.4 finite-character Gram bound from lattice discrepancies; Layer 1 §1.4 binary sieve cutoff comparison; Layer 0 §0.7 binary polynomial local densities; Layer 0 §0.7 binary schwartz–zippel specialization; Layer 1 §1.4 binary sieve euler denominator; ErdosProgressionPowers §3.1 uniform Gram-row inequality; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:curvature-uniform-lattice.
-
-**Binary-form large sieve with a conservative cutoff.** Under the same domain and polynomial hypotheses, first prove the preceding bound for 2≤z≤min((A/R^θ)^(1/5),A^(1/4)). This intermediate has lcm(m,n)≤z²≤√A directly. Use the same finite-character bound with the bounded-power cutoff and Euler-product comparison; the full theorem follows from the curvature-to-area comparison.
-
-([KHAYUTIN-19](#references), Lemma 9.9, proof (38), pp.224–225.)
-
-*Needs:* The Euler denominator; the owned finite-character Gram bound and the Euler cutoff comparison; gap:curvature-uniform-lattice.
-
-**Binary sieve cutoff comparison.** For a polynomial of degree d≥1, z≥2 and s≥1, with content primes omitted on both sides, `∏_{d<p<z^(1/s)}(1−ρ_Q(p)/p²)≤C_d` s^d `∏_{d<p<z}(1−ρ_Q(p)/p²).` Constants depend only on d. Requiring s≥1 removes the false vanishing right side as s tends to zero.
-
-s≥1; z≥2; nonzero reduction at every included prime.
-
-([KHAYUTIN-19](#references), Lemma 9.11, p.225.)
-
-*Proof sketch.* Use Schwartz–Zippel to bound the local factors and a uniform Mertens estimate between the two cutoffs. Bound primes in the fixed small range separately.
-
-*Needs:* Layer 0 §0.7 binary polynomial local densities; Layer 0 §0.7 binary schwartz–zippel specialization; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
 
 **Binary polynomial sieve at power level.** If A≥1, R^θ≤A^(1−η), 0<η<1/2, θ∈(0,2], and 1≤z≤A^ς for fixed ς>0, the positive-value rough-point count is ≤C `A∏_{deg Q<p<z}(1−ρ_Q(p)/p²),` with C depending only on degree,C_l,η,ς. Content primes below z give an empty sifted set.
 
@@ -1182,7 +1209,7 @@ Positive arguments; corrected local bound on every prime power.
 
 *Proof sketch.* Apply decoupling with g=fρ̃/a² and ψ=λ_Q. Only v=1 contributes because λ_Q is squarefree. Each prime correction is O(p^(−1−r+ε)); sum the convergent Euler corrections with uniform constants.
 
-*Needs:* Layer 0 §0.7 binary density correction factor; Layer 1 §1.4 multiplicative decoupling inequality; Layer 0 §0.7 binary schwartz–zippel specialization; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 0 §0.7 binary density correction factor; Layer 1 §1.4 multiplicative decoupling inequality; Layer 0 §0.7 binary schwartz–zippel specialization; Mathlib `Real.summable_one_div_nat_rpow`.
 
 **Large smooth-factor saving.** Under M(A,B,ε), the corrected density power bound C,r with 0<ε<r, α,s,κ>0,z>1 and κ≤(r−ε)log z/(2s), the sum of f(a)ρ̃_Q(a)/a² over z^α≤a≤z with every prime divisor≤z^(1/s) is ≤C′ `exp(−sακ)Σ_{a≤z}f(a)ρ̃_Q(a)/a²,` with C′ depending only on κ,A,B,ε,C,r,degree.
 
@@ -1278,7 +1305,7 @@ x,y≥2; constants independent of x.
 
 *Proof sketch.* Use density 1/p and interval remainder≤1. Choose z=sqrt(y)/(log y)³, so that the remainder z²(1+log z)³ is O(y/(log y)³); the native Selberg quadratic main term is optimized before estimating its denominator. Account for primes below z and the 3^ω remainder separately.
 
-*Needs:* Layer 1 `SieveSelberg.selberg_upper_bound`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 1 `SieveSelberg.selberg_upper_bound`; Layer 1 §1.1 selberg’s diagonal sum in dimension one; AnalyticNumberTheoryPartI §1.2a for the τ₄ harmonic-sum majorant.
 
 **Prime upper bound in progressions.** Prove `SieveApplications.progression_upper`. There is an absolute C such that for k≥1, gcd(a,k)=1 and x≥4k, π(x;k,a)≤C x/[φ(k)log(x/k)]. Retaining C=4 requires the precise denominator estimate in the source; this target uses an unspecified absolute constant.
 
@@ -1288,7 +1315,7 @@ x≥4k; reduced residue class.
 
 *Proof sketch.* Sieve the progression using primes not dividing k. The interval length is x/k; the local density is 1/p off k and zero at its prime divisors. Use the k-dependent Euler product estimate uniformly, not an asymptotic with fixed k.
 
-*Needs:* Layer 1 `SieveSelberg.selberg_upper_bound`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 1 `SieveSelberg.selberg_upper_bound`; gap:uniform-wirsing for progression-prime deletion.
 
 **Selberg bounds for twin primes and Goldbach.** Prove `SieveApplications.twin_goldbach_upper`. For x≥3 the number of p≤x with p,p+2 prime is O(x/log²x). For even N≥4 the number of p with p,N−p prime is O(C₂·∏_(odd p|N)(p−1)/(p−2)·N/log²N), where C₂=∏_(p>2)(1−1/(p−1)²). The prime-two local factor is handled separately.
 
@@ -1298,7 +1325,7 @@ Even N in the Goldbach bound; all constants absolute.
 
 *Proof sketch.* Use the union of the two forbidden residues at each odd prime. At divisors of N the two residues coincide. At two choose the surviving odd class before forming the product. Apply the dimension-two denominator lower bound and bound small prime exceptions.
 
-*Needs:* Layer 1 `SieveSelberg.selberg_upper_bound`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 1 `SieveSelberg.selberg_upper_bound`; Layer 1 §1.6 selberg denominator in dimension κ; AnalyticNumberTheoryPartI §1.2a for divisor sums.
 
 **Brun reciprocal convergence.** Prove `SieveApplications.brun_reciprocals`. The sum of 1/p over primes p for which p+2 is prime converges, as does the sum including 1/(p+2).
 
@@ -1324,7 +1351,7 @@ Twin-prime index set; positive terms.
 
 *Proof sketch.* Import a precisely normalized Wirsing/Levin–Fainleib mean-value theorem from the analytic owner; apply it to g/(1−g) on squarefree integers. Identify its Euler constant H_g and Gamma factor. Do not reuse the dimension-one result without the changed normalization.
 
-*Needs:* Layer 1 §1.3 selberg optimal weights; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 1 §1.3 selberg optimal weights; gap:uniform-wirsing; AnalyticNumberTheoryPartI §0.26.
 
 **Selberg parity sequences.** For n>0 put a_odd(n)=(1−(-1)^Ω(n))/2 and a_even(n)=(1+(-1)^Ω(n))/2, with both weights zero at n=0. Here Ω counts prime factors with multiplicity. Their divisor sums have the same main term x/(2d), and remainders differing by the Liouville partial sum. At z>sqrt(x), the even sequence has only the survivor 1 and the odd sequence the primes≥z.
 
@@ -1374,7 +1401,7 @@ Parity counts multiplicity: 1 and 4 have even weight one, 12 has odd weight one 
 
 ### Dependencies
 
-Layer 0. External inputs: AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; AnalyticNumberTheoryPartI §0.11; AnalyticNumberTheoryPartI §§3.34–3.35; gap:extremely-smooth-tails; Layer 0 §0.10 monic-polynomial count; Layer 0 §0.10 irreducible-polynomial count; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:curvature-uniform-lattice.
+Layer 0. External inputs: AnalyticNumberTheoryPartI §§0.11, 0.21, 0.26 and 1.2a; gap:uniform-wirsing; AnalyticNumberTheoryPartI §0.11; AnalyticNumberTheoryPartI §§3.34–3.35; gap:extremely-smooth-tails; Layer 0 §0.10 monic-polynomial count; Layer 0 §0.10 irreducible-polynomial count; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:curvature-uniform-lattice.
 
 ## Layer 2: large sieves and Vaughan decomposition
 
@@ -1526,7 +1553,7 @@ The indexing type may be empty. N,L∈ℕ, L>0, and f_k=0 whenever |n_k|>N. The 
 
 ([BOMBIERI-1971](#references), pp.403–404, reduction to (5) and its diagonal/off-diagonal decomposition.)
 
-*Proof sketch.* For each i split the Gram row into its diagonal and its erased off-diagonal sum using the native additive erase identity. Use tapered-diagonal on the diagonal and tapered-offdiagonal term by term elsewhere. Factor 1/L out of the finite sum and use the assumed row bound C. The resulting bound B=2N+L+C/L is nonnegative even for an empty family. Apply bombieri-row-bound to the family of tapered vectors and f. Use norm symmetry of the inner product and tapered-fourier-pairing to identify every summand. No maximum or nonempty-family hypothesis is needed. Do not replace the row hypothesis by the paper's final separation constant here: corrected bin packing, the cosecant sum, the integer taper choice, and interval translation/parity remain separate proof requirements.
+*Proof sketch.* For each i split the Gram row into its diagonal and its erased off-diagonal sum using the native additive erase identity. Use tapered-diagonal on the diagonal and tapered-offdiagonal term by term elsewhere. Factor 1/L out of the finite sum and use the assumed row bound C. The resulting bound B=2N+L+C/L is nonnegative even for an empty family. Apply ErdosProgressionPowers §3.1’s uniform Gram-row inequality to the family of tapered vectors and f. Use norm symmetry of the inner product and tapered-fourier-pairing to identify every summand. No maximum or nonempty-family hypothesis is needed. Do not replace the row hypothesis by the paper's final separation constant here: corrected bin packing, the cosecant sum, the integer taper choice, and interval translation/parity remain separate proof requirements.
 
 The empty family gives 0≤‖f‖²B; a singleton has C=0. This conditional theorem is not the full additive large-sieve theorem with constant length+2/δ.
 
@@ -1977,16 +2004,6 @@ I,J finite; C≥0.
 
 ### 2.7 quadratic large sieves and real-character means
 
-**Heath-Brown quadratic large sieve.** Prove `SieveQuadratic.quadratic_largeSieve`. For each ε>0 there is Cε>0 such that for integers M,N≥1 and arbitrary complex a_n, `Σ_{1≤m≤M, m odd squarefree}|Σ_{1≤n≤N,` n odd squarefree}a_n `(n/m)|²≤Cε(MN)^ε(M+N)Σ_{n odd squarefree≤N}|a_n|².` Both squarefree restrictions are part of this theorem.
-
-ε>0; M,N≥1; native Jacobi symbol at positive odd denominator.
-
-([HB-REAL-95](#references), Theorem 1, p.237; proof outline §2, pp.240–242.)
-
-*Proof sketch.* Use the quadratic-symbol-specific reciprocity/Poisson iteration of Heath-Brown, not generic character orthogonality. The iterative analytic norm estimates of §§3–8 are a precise proof-closure gap. The original statement and the Corollary 4 consequence have been checked separately.
-
-*Needs:* Mathlib `jacobiSym`; Layer 2 §2.6 squared finite large-sieve duality.
-
 **Heath-Brown quadratic bilinear estimate.** For each ε>0 there is Cε>0 such that M,N≥1 and complex coefficients with |a_m|,|b_n|≤1 satisfy `|Σ_{m≤M,m odd}Σ_{n≤N}` a_m b_n (n/m)|≤Cε(MN)^ε(M√N+√M N). Here squarefree restrictions have been removed using square-part decomposition; denominator m remains odd.
 
 ε>0; M,N≥1; coefficient sup norms at most 1.
@@ -1995,7 +2012,7 @@ I,J finite; C≥0.
 
 *Proof sketch.* As in the source proof of Corollary 4, write the odd denominator as m=kr² with k squarefree. For squarefree k apply Cauchy–Schwarz and the source's Corollary 3, a real-character mean square that allows numerators which are not squarefree; then sum over r≤√M, removing the numerators not coprime to r. Homogeneous scaling restores arbitrary sup norms.
 
-*Needs:* Layer 2 `SieveQuadratic.quadratic_largeSieve`; Mathlib `jacobiSym`.
+*Needs:* AnalyticNumberTheoryPartII §5.29 odd-squarefree, primitive-real and square-pair quadratic large sieves; Mathlib `jacobiSym`.
 
 **Prime-denominator quadratic symbol.** Define `SieveQuadratic.primeDenominatorSymbol`. Define symbol₂(a,p) to be the native Jacobi symbol (a/p) for odd p; at p=2 it is 0 when a is even and 1 when a is odd. This is the convention of Skorobogatov–Sofos, not the Kronecker symbol at 2.
 
@@ -2031,15 +2048,21 @@ The definition exposes the following operations and laws:
 
 *Needs:* Layer 2 §2.7 heath-brown quadratic bilinear estimate; Layer 2 `SieveQuadratic.primeDenominatorSymbol`.
 
-**Jutila mean value lemma.** There is an absolute C>0 such that X≥3,N≥2 and complex a_1,…,a_N satisfy `Σ_{|D|≤X, D≡0,1 mod 4, D not a square}|Σ_{n=1}^N` a_n χ_D(n)|²≤C[X `Σ_{m,n≤N,mn a square}|a_m` a_n|+√X `N^(7/4)(Σ_{n≤N}|a_n|⁸)^(1/4)(log` N)^5]. The discriminants are not restricted to fundamental discriminants.
+**Jutila mean value lemma.** Prove `SieveQuadratic.jutila_mean_value`. There is an absolute C>0 such that X≥3,N≥2 and complex a_1,…,a_N satisfy `Σ_{|D|≤X, D≡0,1 mod 4, D not a square}|Σ_{n=1}^N` a_n χ_D(n)|²≤C[X `Σ_{m,n≤N,mn a square}|a_m` a_n|+√X `N^(7/4)(Σ_{n≤N}|a_n|⁸)^(1/4)(log` N)^6]. The discriminants are not restricted to fundamental discriminants.
 
 Integer X≥3,N≥2; all non-square discriminants in the indicated interval.
 
 ([JUTILA-ORIGINAL](#references), Lemma 3, equation (12), and proof (13)–(17), pp.194–195.)
 
-*Proof sketch.* Expand the square and retain the exact square-product diagonal. For the off-diagonal apply Jutila’s earlier mean-square estimate to the reciprocity-transformed discriminant sum. Cauchy–Schwarz and divisor-function fourth-moment estimates give the displayed eighth moment. The earlier character mean-square and divisor-moment inputs have an explicit gap, not a substitution by Heath-Brown 1995.
+*Proof sketch.* Expand the square and retain the exact square-product diagonal. For the off-diagonal apply Jutila’s earlier mean-square estimate to the reciprocity-transformed discriminant sum. Cauchy–Schwarz and divisor-function fourth-moment estimates give the displayed eighth moment. Use gap:jutila-unweighted-mean-square for Lemma 2 and AnalyticNumberTheoryPartI §§3.22 and 1.2a for the divisor and squared-divisor sums in (17). The scanned display (12) has (log N)⁶; the proof uses (log N)⁸ in (16).
 
-*Needs:* Layer 0 §0.6 real discriminant character adapter; Mathlib `jacobiSym.quadratic_reciprocity`.
+**Checks.**
+
+- For X=3,N=2,a₂=1 and other coefficients zero, D=−3 is the sole discriminant and the squared character sum is 1; the square-product sum is 1.
+- For X=8,N=2 and the same coefficients, D=−8,−7,−4,−3,5,8 give squares 0,1,0,1,1,0, totaling 3. The first main term is 8C and the moment term is nonnegative.
+- For the Lemma 2 input, X=3,Y=1 gives 1≤3C(log 3)⁸. At Y=2 the divisor and squared-divisor sums are 3 and 5. Square discriminants must stay excluded as Y grows.
+
+*Needs:* Layer 0 §0.6 real discriminant character adapter; gap:jutila-unweighted-mean-square; AnalyticNumberTheoryPartII §5.29; AnalyticNumberTheoryPartI §§3.22 and 1.2a; Mathlib `jacobiSym.quadratic_reciprocity`.
 
 **Smith prime Legendre-symbol estimate.** Prove `SieveQuadratic.smith_prime_legendre_bilinear`. For ε>0 there is Cε>0 such that disjoint finite sets X₁,X₂ of odd primes bounded by t₁,t₂≥2 satisfy `Σ_{p∈X₁}|Σ_{q∈X₂}` jacobiSym(p,q)|≤Cε[t₁ t₂^(3/4+ε)+t₂ t₁^(3/4+ε)].
 
@@ -2051,7 +2074,7 @@ Disjoint sets of odd primes; t₁,t₂≥2; ε>0.
 
 *Needs:* Layer 2 §2.7 jutila mean value lemma; Mathlib `jacobiSym.quadratic_reciprocity`.
 
-**Koymans–Pagano normalized row mean.** Prove `SieveQuadratic.koymans_pagano_row_mean`. Fix c₂,c₄,a>0. For every ε>0 there is C>0 such that finite disjoint odd-prime sets X₁,X₂ bounded by 3≤t₁≤t₂, with log t₂≤t₁^c₂ and |X_i|≥a t_i/(log t_i)^c₄ for i=1,2, satisfy Σ_(p∈X₁)|Σ_(q∈X₂)(p/q)|≤C|X₁||X₂| t₁^(−1/4+c₂c₄+ε). The constant depends only on c₂,c₄,a,ε. This is the normalized form of the routed equation (7.11); it does not include the consumer’s prebox equidistribution induction.
+**Koymans–Pagano normalized row mean.** Prove `SieveQuadratic.koymans_pagano_row_mean`. Fix c₂,c₄,a>0. For every ε>0 there is C>0 such that finite disjoint odd-prime sets X₁,X₂ bounded by 3≤t₁≤t₂, with log t₂≤t₁^c₂ and |X_i|≥a t_i/(log t_i)^c₄ for i=1,2, satisfy Σ_(p∈X₁)|Σ_(q∈X₂)(p/q)|≤C|X₁||X₂| t₁^(−1/4+c₂c₄+ε). The constant depends only on c₂,c₄,a,ε. This is the normalized form of equation (7.11); it does not include the consumer’s prebox equidistribution induction.
 
 All c₂,c₄,a,ε positive; disjoint odd-prime sets; the displayed growth and lower-cardinality conditions.
 
@@ -2065,7 +2088,7 @@ An exponentially large t₂ is allowed; no logarithm in t₂ may be absorbed int
 
 ### 2.8 polynomial Farey estimates
 
-**Polynomial Farey coefficient adapter.** For prime p, monic H of degree ℓ and deg G<ℓ, define c_j(G/H) as the coefficient of U^j in [Σ_(0≤i<ℓ)G_(ℓ−1−i)U^i]·(H.reverse(U))⁻¹. The unit constant coefficient of the reversed monic denominator is one. c_j is the coefficient of T^(−j−1) in G/H at infinity, and ψ_p(T^jG/H)=exp(2πi c_j.val/p). Use native Polynomial and PowerSeries.
+**Polynomial Farey coefficient adapter.** Define `SievePolynomialFarey.coefficient`. For prime p, monic H of degree ℓ and deg G<ℓ, define c_j(G/H) as the coefficient of U^j in [Σ_(0≤i<ℓ)G_(ℓ−1−i)U^i]·(H.reverse(U))⁻¹. The unit constant coefficient of the reversed monic denominator is one. c_j is the coefficient of T^(−j−1) in G/H at infinity, and ψ_p(T^jG/H)=exp(2πi c_j.val/p). Use native Polynomial and PowerSeries.
 
 Monic H; deg G<ℓ, allowing G=0; prime p.
 
@@ -2091,7 +2114,7 @@ The definition exposes the following operations and laws:
 
 *Needs:* Mathlib `Polynomial`; Mathlib `PowerSeries.coeff`; Mathlib `PowerSeries.invOfUnit`; Mathlib `Polynomial.reverse`.
 
-**Polynomial Farey large sieve.** For prime p, m,ℓ≥0 with 2ℓ≥m, and nonnegative f_j:F_p→R, Σ_(H monic degℓ)Σ_(deg G<ℓ,(G,H)=1)∏_(j<m)f_j(c_j(G/H))≤p^(2ℓ−m)∏_(j<m)Σξ∈F_p f_j(ξ). This finite-field formulation is exactly the R/Z test-function statement after evaluating at ξ.val/p.
+**Polynomial Farey large sieve.** Prove `SievePolynomialFarey.large_sieve`. For prime p, m,ℓ≥0 with 2ℓ≥m, and nonnegative f_j:F_p→R, Σ_(H monic degℓ)Σ_(deg G<ℓ,(G,H)=1)∏_(j<m)f_j(c_j(G/H))≤p^(2ℓ−m)∏_(j<m)Σξ∈F_p f_j(ξ). This finite-field formulation is exactly the R/Z test-function statement after evaluating at ξ.val/p.
 
 Prime p; all f_j nonnegative; 2ℓ≥m; denominators monic and coprime numerator.
 
@@ -2099,7 +2122,13 @@ Prime p; all f_j nonnegative; 2ℓ≥m; denominators monic and coprime numerator
 
 *Proof sketch.* Distinct reduced fractions of denominator degree ℓ differ at some coefficient before index 2ℓ; otherwise GH′−G′H would have incompatible degree. Thus each initial m-coefficient word occurs at most p^(2ℓ−m) times. Sum the nonnegative product by words and factor the full finite-field coordinate sum. This finite counting proof is equivalent to the paper’s disjoint Laurent balls/Haar integral argument.
 
-*Needs:* Layer 2 §2.8 polynomial farey coefficient adapter; Layer 0 §0.10 monic-polynomial count.
+**Checks.**
+
+- At p=2,ℓ=1,m=2 the reduced fractions 1/T and 1/(T+1) have words (1,0),(1,1). For every f_j=1 the bound is 2≤4.
+- At ℓ=m=0 there is exactly 0/1; both empty products equal 1, giving 1=1. The numerator range is degree G<ℓ, using degree 0=−∞. In the acceptance theorem native `Polynomial.ofFn` presents every polynomial of degree<ℓ, including zero when ℓ=0, and the denominators are T^ℓ plus those polynomials.
+- At p=2,ℓ=1,m=1, taking f₀ to be the indicator of 0 gives left side 0 and right side 2; the two fractions both have c₀=1. At m=2, the indicator of the word (1,0) gives equality 1=1.
+
+*Needs:* Layer 2 §2.8 polynomial farey coefficient adapter; Layer 0 §0.10 monic-polynomial count; Mathlib `Polynomial.ofFn`.
 
 **Additive sieve for bounded integer coefficients.** For H,Y≥1 and complex a_n supported on integers −H≤n≤H, Σ_(1≤q≤Y)Σ_(a modq,(a,q)=1)|Σ_(|n|≤H)a_n exp(2πian/q)|²≤3(H+Y²)Σ|a_n|². The bound follows from the non-sharp H_interval+2Y² sieve with interval length 2H+1.
 
@@ -2192,11 +2221,11 @@ The definition exposes the following operations and laws:
 
 Establish π/δ in the separated Hilbert inequality and its periodic adapter before using H−1+δ⁻¹, including arbitrary origins, H≥1 and singleton frequencies. Squared duality does not give the sharp constant.
 
-Reconstruct Heath-Brown (1995), Theorem 1 and Corollaries 1–4 with odd squarefree support, reciprocity signs and (MN)^ε loss. Jutila (1975), Lemma 3 separately requires his 1973 Lemma 2 and its uniform mean-square constants for the Jutila, Smith and Koymans–Pagano route; the Heath-Brown sieve does not replace it.
+Use AnalyticNumberTheoryPartII §5.29 for Heath-Brown’s odd-squarefree and real-character estimates, retaining reciprocity signs and (MN)^ε loss in the bilinear consequence. Jutila (1975), Lemmas 2–3 use gap:jutila-unweighted-mean-square and AnalyticNumberTheoryPartI §§3.22 and 1.2a for the separate Jutila, Smith and Koymans–Pagano route, including (log N)⁶ in Lemma 3.
 
 Linnik uses a multiplicity-safe positive-proportion smooth count. For p>N^ε all N^ε-smooth integers are coprime to p; forbid only symbol−1 classes, and separate finitely many small p. Ordered prime tuples overcount the population.
 
-Polynomial Farey requires comparison of the reversed-denominator power-series coefficient with the native Laurent coefficient of T⁻¹ in a/J, complete orthogonality and duality with qᵐ vectors and scale qᵐ+q^(2ℓ). Monic-polynomial counts alone supply neither comparison nor sieve.
+Polynomial Farey uses the reversed-denominator power-series coefficients and injectivity of the first 2ℓ coefficients on reduced fractions of denominator degree ℓ. Counting the extensions of an m-coordinate word gives the factor p^(2ℓ−m).
 
 ### Examples
 
@@ -2241,7 +2270,7 @@ The definition exposes the following operations and laws:
 
 - discrepancy(10,3) = 1: π(10;3,1) = 1 (the prime 7), π(10;3,2) = 2 (the primes 2 and 5), and π(10)/φ(3) = 4/2 = 2.
 - The primes have level 0: only q=1 occurs, and its discrepancy vanishes.
-- For fixed θ>1 the level fails. For all sufficiently large x and every x<q≤x^θ, some prime p≤x does not divide q: q has O_θ(log x) distinct prime factors, whereas π(x)≫x/log x. Its reduced class has prime count 1. Summing max discrepancy ≥ 1−π(x)/φ(q) gives ≫x^θ, since `Σ_{q≤x^θ}1/φ(q)=O_θ(log` x). This contradicts the level bound. The needed prime-count and totient-sum estimates are supplied by AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26, with the analytic gaps above.
+- For fixed θ>1 the level fails. For all sufficiently large x and every x<q≤x^θ, some prime p≤x does not divide q: q has O_θ(log x) distinct prime factors, whereas π(x)≫x/log x. Its reduced class has prime count 1. Summing max discrepancy ≥ 1−π(x)/φ(q) gives ≫x^θ, since `Σ_{q≤x^θ}1/φ(q)=O_θ(log` x). This contradicts the level bound. The needed prime-count and totient-sum estimates are supplied by AnalyticNumberTheoryPartI §0.10 and gap:analytic-divisor-moments at j=0.
 - primeCountAP(x,1,0) = Nat.primeCounting ⌊x⌋₊: modulo 1 every prime up to x is counted, which agrees with Mathlib's prime-counting function.
 
 Further Checks distinguish the auxiliary definitions separately:
@@ -2253,7 +2282,7 @@ Further Checks distinguish the auxiliary definitions separately:
 
 The level is a statement for every A>0, with an implied constant depending on A. It is not a single-A bound. Levels θ>1 fail (non-example test), so the Elliott–Halberstam range θ<1 is the natural limit. The Friedlander–Granville obstruction that Maynard mentions (p. 384) is outside this scope.
 
-*Needs:* Mathlib `Nat.primeCounting`; Mathlib `Nat.totient`; Mathlib `Nat.ModEq`; Mathlib `Asymptotics.IsBigO`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Mathlib `Nat.primeCounting`; Mathlib `Nat.totient`; Mathlib `Nat.ModEq`; Mathlib `Asymptotics.IsBigO`.
 
 ### 3.2 arithmetic discrepancies and the maximal Bombieri–Vinogradov theorem
 
@@ -2312,7 +2341,7 @@ Positive moduli; f,g supported in positive integer intervals; native character c
 
 *Proof sketch.* Split primitive r at Δ⁻¹. Apply the corrected transfer for small r and Cauchy–Schwarz for the g sum. For large r import the retained finite dyadic bound including its J factor, use J≪1+log Q, then sum the cofactor using Στ(s)/φ(s)≪(1+log Q)². The printed sharper log² exponent remains a gap, separate from the weaker sufficient target.
 
-*Needs:* Layer 3 §3.2 primitive-conductor reduction of discrepancies; Layer 3 §3.2 discrepancy to restricted character sums; Layer 2 §2.5 primitive bilinear tail through a dyadic endpoint; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 3 §3.2 primitive-conductor reduction of discrepancies; Layer 3 §3.2 discrepancy to restricted character sums; Layer 2 §2.5 primitive bilinear tail through a dyadic endpoint; gap:analytic-divisor-moments at j=1.
 
 **Maximal Bombieri–Vinogradov theorem.** Prove `SieveArithmeticDistribution.bombieri_vinogradov_maximal`. For every A>0 there exist B,C>0 and x₀≥3 such that x≥x₀ and 1≤Q≤sqrt x/(log x)^B imply `Σ_{1≤q≤Q}` `max_{(a,q)=1}` `sup_{0≤y≤x}|ψ(y;q,a)−y/φ(q)|≤Cx/(log` x)^A. ψ includes prime powers through native von Mangoldt. Maximality in y is explicitly required by Chen and weighted sieves. The source’s fixed-x version is a consequence.
 
@@ -2322,7 +2351,7 @@ Unconditional conclusion; constants depend on A. Separate analytic small-conduct
 
 *Proof sketch.* Use the exact Vaughan identity and coefficient energies, then split Type I/II regions with an actual complete hyperbola covering. Treat small conductors with a uniform Siegel–Walfisz/exceptional-zero estimate; large conductors use the finite large sieve with all cofactor/dyadic losses retained. For the maximum in y add the required maximal decomposition and rebalance B against its logarithmic losses. Change the mean from ψ(y)/φ(q) to y/φ(q) using the requested PNT error and totient sum. The source’s displayed rectangular covering and incomplete logarithm cancellation are not accepted as a proof; a complete hyperbola covering still requires proof.
 
-*Needs:* Layer 3 §3.2 arithmetic progression discrepancy; Layer 2 §2.4 weighted vaughan identity on a finite hyperbola; Layer 2 §2.5 primitive bilinear tail through a dyadic endpoint; Layer 3 §3.2 convolution discrepancy mean value; AnalyticNumberTheoryPartI §0.32; gap:maximal-small-conductor; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 3 §3.2 arithmetic progression discrepancy; Layer 2 §2.4 weighted vaughan identity on a finite hyperbola; Layer 2 §2.5 primitive bilinear tail through a dyadic endpoint; Layer 3 §3.2 convolution discrepancy mean value; AnalyticNumberTheoryPartI §0.32; gap:maximal-small-conductor; gap:analytic-divisor-moments; AnalyticNumberTheoryPartI §0.32 at q=1.
 
 ### 3.3 Bombieri–Vinogradov gives every level below one half
 
@@ -2336,7 +2365,7 @@ The input is the Bombieri–Vinogradov theorem in ψ-form at a fixed cutoff (Ked
 
 θ<1/2 is strict: the theorem gives no level 1/2 (Maynard, p. 384). Instance: θ = 1/2 − ε is the input of Maynard Theorem 1.3. The implied constants are ineffective, through Siegel's theorem inside Theorem 18.4. Maynard's remark after Lemma 5.2 records this.
 
-*Needs:* Layer 3 `SieveDistribution.PrimesHaveLevel`; Mathlib `Chebyshev.psi`; Mathlib `Chebyshev.theta`; Mathlib `Chebyshev.abs_psi_sub_theta_le_sqrt_mul_log`; Mathlib `sum_mul_eq_sub_sub_integral_mul`; Layer 3 `SieveArithmeticDistribution.bombieri_vinogradov_maximal`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 3 `SieveDistribution.PrimesHaveLevel`; Mathlib `Chebyshev.psi`; Mathlib `Chebyshev.theta`; Mathlib `Chebyshev.abs_psi_sub_theta_le_sqrt_mul_log`; Mathlib `sum_mul_eq_sub_sub_integral_mul`; Layer 3 `SieveArithmeticDistribution.bombieri_vinogradov_maximal`; gap:analytic-divisor-moments at j=0.
 
 ### 3.4 transfers, variance and the Barban–Davenport–Halberstam theorem
 
@@ -2350,7 +2379,7 @@ Every A>0; j fixed; same Q≤sqrt x/(log x)^B; positive reduced residues.
 
 Preserve maxima over all y≤x and reduced residue classes; the π variant centers at li(y)/φ(q). The additional native names weighted_prime_distribution_pi and weighted_prime_distribution_pi_centered respectively state the maximal π estimate and the separate fixed-x centered estimate.
 
-*Needs:* Layer 3 `SieveArithmeticDistribution.bombieri_vinogradov_maximal`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 3 `SieveArithmeticDistribution.bombieri_vinogradov_maximal`; gap:analytic-divisor-moments for the fixed divisor powers; AnalyticNumberTheoryPartI §0.32 at q=1.
 
 **Arithmetic discrepancy second moment.** With the transfer theorem’s all-moduli hypothesis, x≥1,Q≥2, `Σ_{q≤Q}Σ_{a` units modq}|D_f(x;q,a)|²≤C E_f²(Δx+Q)(1+log Q)^5. The power five is a conservative replacement retaining conductor and dyadic losses. For arbitrary f the corresponding estimate uses x+Q and no Δ improvement.
 
@@ -2360,7 +2389,7 @@ Preserve maxima over all y≤x and reduced residue classes; the π variant cente
 
 *Proof sketch.* Use finite Parseval and primitive-conductor reduction. Apply transfer below r=Δ⁻¹ and large sieve on dyadic intervals above it. Sum τ(s)²/φ(s) with its four logarithmic powers and retain the remaining dyadic logarithm. Do not use the source’s unexplained norm symbol as a first moment.
 
-*Needs:* Layer 3 §3.2 arithmetic progression discrepancy; Layer 3 §3.2 discrepancy to restricted character sums; Layer 2 §2.5 primitive bilinear tail through a dyadic endpoint; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 3 §3.2 arithmetic progression discrepancy; Layer 3 §3.2 discrepancy to restricted character sums; Layer 2 §2.5 primitive bilinear tail through a dyadic endpoint; gap:analytic-divisor-moments at j=2.
 
 **Barban–Davenport–Halberstam theorem.** Prove `SieveArithmeticDistribution.barban_davenport_halberstam`. For every A>0 there are B,C>0,x₀≥3 such that x≥x₀ and 1≤Q≤x/(log x)^B imply `Σ_{q≤Q}Σ_{a` units modq}|ψ(x;q,a)−x/φ(q)|²≤Cx²/(log x)^A. This is a second moment, not a maximum over residues.
 
@@ -2370,7 +2399,7 @@ Unconditional theorem; all constants quantified; prime powers included.
 
 *Proof sketch.* Apply the variance route to a Vaughan decomposition, importing small-conductor estimates and bounding all cofactor sums. Use the PNT error to replace the reduced-residue mean by x/φ(q). A full proof of the course’s exercise is still a precise proof gap; no implication from BV alone at Q≈x is asserted.
 
-*Needs:* Layer 3 §3.4 arithmetic discrepancy second moment; Layer 3 `SieveArithmeticDistribution.bombieri_vinogradov_maximal`; AnalyticNumberTheoryPartI §0.32; gap:maximal-small-conductor; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 3 §3.4 arithmetic discrepancy second moment; Layer 3 `SieveArithmeticDistribution.bombieri_vinogradov_maximal`; AnalyticNumberTheoryPartI §0.32; gap:maximal-small-conductor; gap:analytic-divisor-moments; AnalyticNumberTheoryPartI §0.32 at q=1.
 
 **Bilinear congruence correlation.** For a,b nonzero integers, x,y≥1,Q≥2, supports [1,x],[1,y] and the all-moduli Δ hypothesis for f, sum over q≤Q coprime to ab of the absolute deviation of `Σ_{am≡bn modq,(mn,q)=1}f(m)g(n)` from φ(q)⁻¹(Σ_(m,q)=1 f(m))(Σ_(n,q)=1 g(n)) is ≤C E_f E_g sqrt(Δx+Q)sqrt(y+Q)(1+log Q)^4. The Δ improvement stays on f’s x variable.
 
@@ -2384,7 +2413,7 @@ Unconditional theorem; all constants quantified; prime powers included.
 
 ### Analytic requirements
 
-Write q=rs with primitive conductor r and coprime cofactor s. Use an exact Vaughan hyperbola covering, retaining dyadic J until a stronger aggregate removes it. Choose U,V and the mesh for every prescribed saving, including maximal cutoff decomposition. AnalyticNumberTheoryPartI §0.32 and gap:maximal-small-conductor gives the required small-conductor, cofactor and exceptional-zero estimates and their conductor/log ranges.
+Write q=rs with primitive conductor r and cofactor s=q/r; r and s need not be coprime. The induced character is its primitive character times 1_(gcd(n,s)=1). Retain this coprimality mask in every coefficient sequence and use the all-cofactor estimates. Use an exact Vaughan hyperbola covering, retaining dyadic J until a stronger aggregate removes it. Choose U,V and the mesh for every prescribed saving, including maximal cutoff decomposition. AnalyticNumberTheoryPartI §0.32 and gap:maximal-small-conductor gives the required small-conductor, cofactor and exceptional-zero estimates and their conductor/log ranges.
 
 The variance retains log⁵Q and the cofactor τ(s)²/φ(s) sum. Each divisor exponent j and saving A requires a fresh BV budget. Partial summation is uniform in y≤x and centred at li(y)/φ(q); fixed-x π(x)/φ(q) centering is a separate transfer.
 
@@ -2392,11 +2421,13 @@ The variance retains log⁵Q and the cofactor τ(s)²/φ(s) sum. Each divisor ex
 
 The primes up to 10 are 2,3,5,7. Modulo three the reduced classes contain one and two primes, while the all-prime mean is 4/2=2, giving Maynard discrepancy one. For a point mass at n=2 modulo two, the reduced-residue discrepancy is zero. For a point mass at n=1 modulo three the two discrepancies are 1/2 and −1/2.
 
-At modulus one both discrepancies vanish. Nonpositive prime levels therefore hold. For θ>1 and x<q≤x^θ choose a prime p≤x not dividing q, including when 6|q. Its class has one prime and discrepancy ≥1−π(x)/φ(q). The AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26, with the analytic gaps above prime-count and reciprocal-totient estimates give a total ≫x^θ, contradicting the level bound.
+Inflating the primitive character modulo 4 to modulus 8 gives r=4,s=2 and gcd(r,s)=2. Its values at 1,3,2 are 1,−1,0; the cofactor mask is 1 on odd arguments and 0 on even arguments.
+
+At modulus one both discrepancies vanish. Nonpositive prime levels therefore hold. For θ>1 and x<q≤x^θ choose a prime p≤x not dividing q, including when 6|q. Its class has one prime and discrepancy ≥1−π(x)/φ(q). The prime-count input of AnalyticNumberTheoryPartI §0.10 and the reciprocal-totient estimate of gap:analytic-divisor-moments at j=0 give a total ≫x^θ, contradicting the level bound.
 
 ### Dependencies
 
-Layer 2. External inputs: AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; AnalyticNumberTheoryPartI §0.32; gap:maximal-small-conductor.
+Layer 2. External inputs: AnalyticNumberTheoryPartI §0.32; gap:analytic-divisor-moments; gap:maximal-small-conductor.
 
 ## Layer 4: prime tuples and Maynard clusters
 
@@ -2511,7 +2542,10 @@ The definition exposes the following operations and laws:
 
 **Checks.**
 
-- F = 0 gives λ = 0.
+- For k=1,W=1,h₁=v₀=0,F≡1 and R=4, y₁=y₂=y₃=1, λ₁=5/2,λ₂=−2,λ₃=−3/2. With N=2, w₂=1/4,w₃=1, so S₁=S₂=S₂⁽¹⁾=5/4; y⁽¹⁾₁=5/2 and y⁽¹⁾_r=0 for r>1.
+- For the same data at R=2,N=2, y₁=λ₁=1,w₂=w₃=1,S₁=S₂=S₂⁽¹⁾=2,y⁽¹⁾₁=1. These finite Checks do not require the asymptotic cutoff relations.
+- For F=0, every y,λ,w,S₁,S₂ and y⁽ᵐ⁾ is zero; setting only λ to zero would not test the sums.
+- The totally multiplicative g has g(1)=1,g(2)=0,g(5)=3,g(25)=9; squarefree-only extension would give the wrong last value.
 - R = 2: w_n = F(0)², including zero labels.
 - With k=1, n=h₁=0, R=2, W=1 and F(0)=1, the finite supported weight is 1, while the native divisor sum at zero is 0.
 - k = 2 and d = (2,2): each dᵢ is squarefree but ∏dᵢ = 4 is not, so λ_d = 0. A definition that tested squarefreeness coordinatewise would get this wrong.
@@ -2588,11 +2622,11 @@ Throughout this subsection, unless a statement says otherwise: N is large, D₀ 
 
 ([MAYNARD-2015](#references), §5, (5.9) and the following sentence, pp. 393–394.)
 
-*Proof sketch.* Insert |y_r| ≤ y_max into (5.8) and write rᵢ = dᵢr′ᵢ. Since ∏rᵢ is squarefree, the r′ᵢ are coprime to ∏dᵢ. Use d/φ(d) = `Σ_{e|d}` 1/φ(e) for squarefree d and the multiplicativity of φ to combine everything into `Σ_{u<R}` μ²(u)τ_k(u)/φ(u), with u = dr′ and τ_k(dr′) ≥ τ_k(r′) (5.9). `Σ_{u<R}` μ²(u)τ_k(u)/φ(u) ≤ `∏_{p<R}(1` + k/(p−1)) ≤ exp(k `Σ_{p<R}` 1/(p−1)) = O_k((log R)^k). This uses `Σ_{p<R}` 1/p = log log R + O(1), which follows from Mertens' first theorem (requested from AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26, with the analytic gaps above) by partial summation.
+*Proof sketch.* Insert |y_r| ≤ y_max into (5.8) and write rᵢ = dᵢr′ᵢ. Since ∏rᵢ is squarefree, the r′ᵢ are coprime to ∏dᵢ. Use d/φ(d) = `Σ_{e|d}` 1/φ(e) for squarefree d and the multiplicativity of φ to combine everything into `Σ_{u<R}` μ²(u)τ_k(u)/φ(u), with u = dr′ and τ_k(dr′) ≥ τ_k(r′) (5.9). `Σ_{u<R}` μ²(u)τ_k(u)/φ(u) ≤ `∏_{p<R}(1` + k/(p−1)) ≤ exp(k `Σ_{p<R}` 1/(p−1)) = O_k((log R)^k). This uses `Σ_{p<R}` 1/p = log log R + O(1), which follows from Mertens' first theorem (supplied by AnalyticNumberTheoryPartI §0.21) by partial summation.
 
 The O_k((log R)^k) bound is what turns the error O(λ_max²R²(log `R)^{2k})` of (5.3) into O(y_max²R²(log `R)^{4k}).`
 
-*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; AnalyticNumberTheoryPartI §0.21.
+*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; AnalyticNumberTheoryPartI §0.21.
 
 **Diagonal form of S₁ (Maynard Lemma 5.1).** Let y vanish off the support, with |y_r| ≤ y_max, and λ = λ(y). Then S₁ = (N/W) Σ_r y_r²/∏φ(rᵢ) + O(y_max² φ(W)^k N(log `R)^k/(W^{k+1}D₀)).`
 
@@ -2602,7 +2636,7 @@ The O_k((log R)^k) bound is what turns the error O(λ_max²R²(log `R)^{2k})` of
 
 The main term is diagonal in y: the change of variables diagonalizes the quadratic form S₁, as in the main term of Selberg's one-dimensional sieve (compare Mathlib's lambdaSquared).
 
-*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; Layer 4 §4.4 size of λ in terms of y (maynard (5.9)); Layer 4 §4.2 the w-trick residue v₀ (maynard (4.1)); AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; Layer 1 §1.1 selberg's diagonal sum in dimension one (ggpy lemma 3, κ=1).
+*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; Layer 4 §4.4 size of λ in terms of y (maynard (5.9)); Layer 4 §4.2 the w-trick residue v₀ (maynard (4.1)); AnalyticNumberTheoryPartI §1.2a for the ordered-divisor harmonic-sum majorant; Layer 1 §1.1 selberg's diagonal sum in dimension one (ggpy lemma 3, κ=1).
 
 **Diagonal form of `S₂^{(m)}` (Maynard Lemma 5.2).** Assume in addition that the primes have level of distribution θ, that k ≥ 2, and fix A>0. Then `S₂^{(m)}` = N/(φ(W) log N) Σ_r `(y⁽ᵐ⁾_r)²/∏g(rᵢ)` + `O((y⁽ᵐ⁾_max)²` `φ(W)^{k−2}N(log` `N)^{k−2}/(W^{k−1}D₀))` + O(y_max² N/(log N)^A).
 
@@ -2610,11 +2644,11 @@ The main term is diagonal in y: the change of variables diagonalizes the quadrat
 
 ([MAYNARD-2015](#references), §5, Lemma 5.2 and proof, (5.14)–(5.27), pp. 395–398.)
 
-*Proof sketch.* Expand as for S₁ (5.15). The inner sum runs over one class mod q = W∏[dᵢ,eᵢ] and is coprime to q exactly when d_m = e_m = 1. It equals X_N/φ(q) + O(E(N,q)), where X_N = #{N≤n<2N : n prime} and E is windowError (5.16)–(5.18). Error: q is squarefree and less than R²W, and each q arises from at most `τ_{3k}(q)` tuples. With λ_max ≪ y_max(log R)^k the error is ≪ y_max²(log `R)^{2k}` `Σ_{q<R²W}` `μ²(q)τ_{3k}(q)E(N,q).` Cauchy–Schwarz with E(N,q) ≪ N/φ(q) and PrimesHaveLevel.sum_windowError (R²W < `N^{θ−δ}` for large N) give ≪ y_max²N/(log N)^A (5.19)–(5.20). Main term: write 1/φ([dᵢ,eᵢ]) = `(φ(dᵢ)φ(eᵢ))^{−1}` `Σ_{uᵢ|dᵢ,eᵢ}` g(uᵢ) (5.21), remove the cross coprimality with Möbius sums, and substitute `y⁽ᵐ⁾` (5.23) to get (5.24). Terms with `s_{i,j}` ≠ 1 contribute the D₀ error (5.25). Replace X_N by N/log N + O(N/(log N)²), by the prime number theorem (requested from AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26, with the analytic gaps above); the error is absorbed (5.26)–(5.27).
+*Proof sketch.* Expand as for S₁ (5.15). The inner sum runs over one class mod q = W∏[dᵢ,eᵢ] and is coprime to q exactly when d_m = e_m = 1. It equals X_N/φ(q) + O(E(N,q)), where X_N = #{N≤n<2N : n prime} and E is windowError (5.16)–(5.18). Error: q is squarefree and less than R²W, and each q arises from at most `τ_{3k}(q)` tuples. With λ_max ≪ y_max(log R)^k the error is ≪ y_max²(log `R)^{2k}` `Σ_{q<R²W}` `μ²(q)τ_{3k}(q)E(N,q).` Cauchy–Schwarz with E(N,q) ≪ N/φ(q) and PrimesHaveLevel.sum_windowError (R²W < `N^{θ−δ}` for large N) give ≪ y_max²N/(log N)^A (5.19)–(5.20). Main term: write 1/φ([dᵢ,eᵢ]) = `(φ(dᵢ)φ(eᵢ))^{−1}` `Σ_{uᵢ|dᵢ,eᵢ}` g(uᵢ) (5.21), remove the cross coprimality with Möbius sums, and substitute `y⁽ᵐ⁾` (5.23) to get (5.24). Terms with `s_{i,j}` ≠ 1 contribute the D₀ error (5.25). Replace X_N by N/log N + O(N/(log N)²), by the prime number theorem (AnalyticNumberTheoryPartI §0.32 at q=1); the error is absorbed (5.26)–(5.27).
 
 This is the only use of the arithmetic hypothesis. Unconditional results come from Layer 3 `SieveDistribution.primesHaveLevel_of_lt_half`. The implied constants are ineffective through Bombieri–Vinogradov (remark after Lemma 5.2).
 
-*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; Layer 4 §4.4 size of λ in terms of y (maynard (5.9)); Layer 4 §4.2 the w-trick residue v₀ (maynard (4.1)); Layer 3 `SieveDistribution.PrimesHaveLevel`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; Layer 4 §4.4 size of λ in terms of y (maynard (5.9)); Layer 4 §4.2 the w-trick residue v₀ (maynard (4.1)); Layer 3 `SieveDistribution.PrimesHaveLevel`; gap:analytic-divisor-moments; AnalyticNumberTheoryPartI §0.32 at q=1; Layer 1 §1.1 selberg’s diagonal sum in dimension one.
 
 `**y⁽ᵐ⁾` in terms of y (Maynard Lemma 5.3).** If r_m = 1, then `y⁽ᵐ⁾_r` = `Σ_{a_m}` `y_{r₁,…,r_{m−1},a_m,r_{m+1},…,r_k}/φ(a_m)` + O(y_max φ(W) log R/(W D₀)).
 
@@ -2624,7 +2658,7 @@ This is the only use of the arithmetic hypothesis. Unconditional results come fr
 
 `y⁽ᵐ⁾` vanishes unless r_m = 1; the lemma is the only link between `y⁽ᵐ⁾` and y.
 
-*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; Layer 4 §4.4 size of λ in terms of y (maynard (5.9)); Layer 4 §4.2 the w-trick residue v₀ (maynard (4.1)); Layer 3 `SieveDistribution.PrimesHaveLevel`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 4 §4.2 maynard's multidimensional sieve weights; Layer 4 §4.4 size of λ in terms of y (maynard (5.9)); Layer 4 §4.2 the w-trick residue v₀ (maynard (4.1)); Layer 1 §1.1 selberg's diagonal sum in dimension one (ggpy lemma 3, κ=1).
 
 **Asymptotic for S₁ (Maynard Lemma 6.2).** S₁ = φ(W)^k N(log R)^k `I_k(F)/W^{k+1}` + O(F_max² φ(W)^k N(log `R)^k/(W^{k+1}D₀)).`
 
@@ -2636,7 +2670,7 @@ F is of class C¹ and supported on ℛ_k, and F_max = `sup_{[0,1]^k}` (|F| + Σ�
 
 The main term is positive whenever I_k(F) ≠ 0.
 
-*Needs:* Layer 4 §4.4 diagonal form of s₁ (maynard lemma 5.1); Layer 1 §1.1 smoothly weighted diagonal sum (maynard lemma 6.1, ggpy lemma 4); Layer 4 `SieveMaynard.maynardM`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 4 §4.4 diagonal form of s₁ (maynard lemma 5.1); Layer 1 §1.1 smoothly weighted diagonal sum (maynard lemma 6.1, ggpy lemma 4); Layer 4 `SieveMaynard.maynardM`; AnalyticNumberTheoryPartI §0.11.
 
 **Asymptotic for `S₂^{(m)}` (Maynard Lemma 6.3).** If the primes have level of distribution θ, then `S₂^{(m)}` = φ(W)^k N(log `R)^{k+1}` `J_k^{(m)}(F)/(W^{k+1}` log N) + O(F_max² φ(W)^k N(log `R)^k/(W^{k+1}D₀)).`
 
@@ -2648,7 +2682,7 @@ F is of class C¹ and supported on ℛ_k, and F_max = `sup_{[0,1]^k}` (|F| + Σ�
 
 Check of (6.19): p(p−1)²/(p³−p²−2p+1) = 1 − (p²−3p+1)/(p³−p²−2p+1). arXiv v2 printed a different γ; v3 and the published text agree on this one.
 
-*Needs:* Layer 4 §4.4 diagonal form of s₂⁽ᵐ⁾ (maynard lemma 5.2); Layer 4 §4.4 y⁽ᵐ⁾ in terms of y (maynard lemma 5.3); Layer 1 §1.1 smoothly weighted diagonal sum (maynard lemma 6.1, ggpy lemma 4); Layer 4 `SieveMaynard.maynardM`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; Layer 3 `SieveDistribution.PrimesHaveLevel`.
+*Needs:* Layer 4 §4.4 diagonal form of s₂⁽ᵐ⁾ (maynard lemma 5.2); Layer 4 §4.4 y⁽ᵐ⁾ in terms of y (maynard lemma 5.3); Layer 1 §1.1 smoothly weighted diagonal sum (maynard lemma 6.1, ggpy lemma 4); Layer 4 `SieveMaynard.maynardM`; AnalyticNumberTheoryPartI §§0.11, 0.32; Layer 3 `SieveDistribution.PrimesHaveLevel`.
 
 **Maynard's asymptotics for S₁ and S₂ (Proposition 4.1).** Let the primes have level of distribution θ∈(0,1], let R = `N^{θ/2−δ}` with 0<δ<θ/2 fixed, and let F be smooth and supported on ℛ_k with I_k(F) ≠ 0 and `J_k^{(m)}(F)` ≠ 0 for every m. With λ built from F: S₁ = (1+o(1)) φ(W)^k N(log R)^k `I_k(F)/W^{k+1},` and for every m, `S₂^{(m)}` = (1+o(1)) φ(W)^k N(log `R)^{k+1}` `J_k^{(m)}(F)/(W^{k+1}` log N); hence S₂ = Σ_m `S₂^{(m)}` has the stated asymptotic.
 
@@ -2924,7 +2958,7 @@ The definition exposes the following operations and laws:
 
 ### Analytic requirements
 
-Prove L²-to-smooth simplex approximation with the same supremum, diagonal estimates and uniform errors using the stated AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26, with the analytic gaps above/AnalyticNumberTheoryPartI §0.32 and gap:maximal-small-conductor inputs. The six growing cutoffs require 0<δ<θ/2. Separate k=1 direct counting from k≥2 diagonalization; the empty tuple gives trivial counting only. Rational M₅/M₁₀₅ and finite admissibility certificates do not establish the analytic distribution input.
+Prove L²-to-smooth simplex approximation with the same supremum, diagonal estimates and uniform errors using the stated Layer 1 diagonal estimates, AnalyticNumberTheoryPartI §§0.11, 0.21, 0.32 and 1.2a, and gap:analytic-divisor-moments. The six growing cutoffs require 0<δ<θ/2. Separate k=1 direct counting from k≥2 diagonalization; the empty tuple gives trivial counting only. Rational M₅/M₁₀₅ and finite admissibility certificates do not establish the analytic distribution input.
 
 ### Examples
 
@@ -2951,7 +2985,7 @@ The nonadmissible tuples {0,1} and {0,2,4} have prime translates {2} and {3}; th
 
 ### Dependencies
 
-Layers 1 and 3. External inputs: AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; AnalyticNumberTheoryPartI §0.21.
+Layers 1 and 3. External inputs: AnalyticNumberTheoryPartI §§0.11, 0.21, 0.32 and 1.2a; gap:analytic-divisor-moments; AnalyticNumberTheoryPartI §0.21.
 
 ## Layer 5: weighted almost primes, joint spins and affine saturation
 
@@ -2995,8 +3029,10 @@ The definition exposes the following operations and laws:
 **Checks.**
 
 - F(1)=2e^γ.
+- F(2)=e^γ; the third upper evaluation F(3)=2e^γ/3 tests the inverse-s scaling.
 - f(2)=0, so the linear lower sieve does not detect primes at s=2.
 - f(3)=2e^γlog 2/3>0.
+- f(4)=e^γlog 3/2; extending f=0 past 2 fails both positive evaluations.
 - F(3)=2e^γ/3; extending the initial formula beyond 3 would fail the delay equation.
 
 *Needs:* Mathlib `Real.eulerMascheroniConstant`; Mathlib `intervalIntegral`.
@@ -3116,7 +3152,7 @@ All these hypotheses hold uniformly in N; the strict integral margin is fixed; w
 
 *Proof sketch.* Apply the lower linear sieve to A and upper linear sieve to each A_p at level N^γ/p. Count each remainder only O_α,β,γ(1) times. Partial summation with the two-sided prime-sum estimate gives the displayed integral; use the separate square exception to convert distinct factors to Ω.
 
-*Needs:* Layer 5 §5.2 richert logarithmic weights; Layer 5 §5.2 rosser–iwaniec linear sieve; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Layer 5 §5.2 richert logarithmic weights; Layer 5 §5.2 rosser–iwaniec linear sieve; the stated uniform dimension-one and prime-sum hypotheses.
 
 **Richert explicit level threshold.** For integer r≥1 put Λ_r=r+1−log(4/(1+3^(−r)))/log 3. Under the other Richert assumptions, γ>1/Λ_r yields ≫X/log N P_r values by α=γ/4 and β=γ/(1+3^(−r)). In particular γ<1/2 sufficiently near 1/2 gives Goldbach prime+P₃, whereas this criterion does not yield prime+P₂.
 
@@ -3128,33 +3164,7 @@ Strict γ threshold; Λ_r>0; square and remainder hypotheses retained.
 
 *Needs:* Layer 5 §5.2 richert weighted sieve; Layer 3 §3.4 weighted prime-distribution transfer.
 
-### 5.3 joint-spin data and lattice tails
-
-**Joint-spin arithmetic data.** Fix Galois K/Q of degree n, and if totally real assume every totally positive unit is a square. Choose nonempty S⊆Gal(K/Q) with σ∈S⇒σ⁻¹∉S. Choose two distinct odd integral ideals A_i,B_i in each ideal class, with squarefree norm of their combined product f; put F=2^(2h+3)N(f)D_K (use absolute discriminant for a positive modulus). Choose O_K^×=T_K×V_K and a residue weight ψ on units mod F invariant under multiplying by unit squares.
-
-Native ring of integers, ideals, class group, embeddings, unit decomposition; ψ fixed and bounded.
-
-([KM-21](#references), §§2.1–2.5, pp.3–7, equations (2.1)–(2.3).)
-
-*Construction.* Use ray-class prime existence to choose class representatives with pairwise distinct degree-one norm primes avoiding 2 and the discriminant. This data is specific to the joint-spin argument; import fundamental domains and unit decomposition rather than redeclaring them.
-
-The definition exposes the following operations and laws:
-
-- Native arithmetic inputs and the specified class representatives, S,F and ψ.
-- Identity cannot belong to S.
-- Each σ∈S has order≥3.
-- For every integral ideal coprime to F select a representative from one of the two lists whose conjugates are also coprime to it.
-- Multiplying an ideal by its inverse-class representative yields a native principal ideal with a generator in the imported domain.
-- F is divisible by 8 and by all class-representative norms and |D_K|.
-
-**Checks.**
-
-- S={id} fails the inverse-pair condition.
-- An automorphism of order 2 cannot be included.
-- In a cyclic cubic extension S={σ} is allowed, but S={σ,σ²} fails.
-- Reusing one degree-one prime in A_i and B_j makes N(f) nonsquarefree and fails the setup.
-
-*Needs:* GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting; Chebotarev Layer 13 ϑ_c and π_c.
+### 5.3 short-character progression and subset transfer
 
 **Short character input for joint spins.** Use C_m with m=|S|n≥3 in the uniform-Q form of Exact supplier contracts, including all real nonprincipal characters of moduli q≤Q. Derive its ε-free version by shrinking the saving as stated there; the primitive conductor-q specialization takes Q=max(3,q). The progression corollary for odd squarefree q>1 and q∤k uses the reduced nonprincipal conductor q/gcd(q,k), with a possibly smaller positive saving. C_m remains an explicit hypothesis, not a theorem asserted here.
 
@@ -3170,27 +3180,7 @@ C_|S|n; arbitrary interval origin; the source progression coprimality/reduction 
 - For the nonprincipal character modulo 3 with values 1,−1,0, the interval (0,2] has sum 0 while (1,3] has sum −1. Uniformity in the origin cannot be omitted.
 - For q=15,k=3 the reduced conductor is 5>1; for k=15 it is 1 and the progression condition fails. A principal character modulo 3 has sum 2 on every complete period of length 3, so it cannot satisfy an arbitrarily long power-saving version of this conjectural bound.
 
-*Needs:* The explicit Cₘ hypothesis in Exact supplier contracts; Layer 5 §5.3 joint-spin arithmetic data.
-
-**Squarefull norm tail for spin divisors.** For σ of order m≥3, choose O_K=O_(K^σ)⊕M′. For β∈M′ with every embedding bounded by x^(1/n), let g_σ(β) be the bad-prime ideal factor of β−σβ in KM§3 and g₀ its norm radical. Then #{β:g₀>Z}≪_(K,ε)x^(1−1/m+ε)Z^(−1+2/m).
-
-x≥2,Z≥1; the exact higher-residue-degree, conjugate-collision and repeated-prime bad factor; β−σβ≠0.
-
-([KM-21](#references), Lemma 3.1, p.10, and its proof, pp.10–12.)
-
-*Proof sketch.* Bad factors have squarefull norm and the good quotient is a squarefree rational modulus. Sum over the norm tail using lattice covolume and successive minima. The exact Widmer lattice-counting bound with these domains is requested from GeometryOfNumbersAndQuadraticArithmetic Layer 4; no independent fundamental-domain definition is added.
-
-*Needs:* Layer 5 §5.3 joint-spin arithmetic data; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:spin-sliced-lattice.
-
-**Common norm tail for two spin differences.** For σ,τ∈S distinct, decompose O_K=Z⊕M. For β∈M with all embeddings≤x^(1/n), #{β:gcd(|N(β−σβ)|,|N(β−τβ)|)>Z}≪_(K,ε)x^((n−1)/n+ε)Z^(−1/18)+x^((n−2)/n)+Z^((2n−4)/3).
-
-x≥2,Z≥1; S excludes inverse pairs; nonzero differences handled with their exceptional lower-dimensional locus.
-
-([KM-21](#references), Lemma 3.2 and its proof, pp.12–14.)
-
-*Proof sketch.* Use independence of distinct automorphisms to obtain codimension-two reduction conditions outside finitely many primes. Apply the cited geometric-sieve lattice theorem and balance the small/large divisor ranges. The codimension-two counting theorem is requested; the numerical balancing remains in this proof sketch.
-
-*Needs:* Layer 5 §5.3 joint-spin arithmetic data; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:spin-codimension-two.
+*Needs:* The explicit Cₘ hypothesis in Exact supplier contracts; ArithmeticStatisticsPartV §3.30 joint-spin arithmetic data.
 
 ### 5.4 affine sieve data and saturation
 
@@ -3245,6 +3235,8 @@ The definition exposes the following operations and laws:
 - A value 8 fails O₂ since Ω(8)=3, despite one distinct prime factor.
 - A value 0 fails every locus, despite native Ω(0)=0.
 - Values±1 belong to O₀; the main theorem separately excludes a unit polynomial.
+- On a singleton orbit with f=6, the least dense locus is O₂, so the saturation number is 2. For f=1 it is O₀, so the least index is 0.
+- On a singleton with f=0, every locus is empty and none is dense; saturation fails and the outside-domain convention gives 0. The constant polynomial 1 separates the empty locus from that nonempty orbit, distinguishing this convention from the preceding true minimum zero.
 
 *Needs:* Mathlib `MvPolynomial`; Mathlib `ArithmeticFunction.cardFactors`; Mathlib `Nat.IsAtMostAlmostPrime`.
 
@@ -3384,7 +3376,7 @@ The definition exposes the following operations and laws:
 - C_18=C_6; multiplicity does not add another local factor.
 - C_0=0; the infinite-divisor convention is not used.
 
-*Needs:* Mathlib `Nat.primeFactors`; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing.
+*Needs:* Mathlib `Nat.primeFactors`; Mathlib `Real.summable_one_div_nat_pow`; Mathlib `Summable.of_nonneg_of_le`; Mathlib `Real.multipliable_one_add_of_summable`; Mathlib `Real.summable_log_one_add_of_summable`.
 
 **Chen switched triple upper bound.** For even N sufficiently large, set Q_N=∏_(2≤q<N^(1/4),q prime)q. Count ordered prime triples satisfying N^(1/10)<p₁≤N^(1/3)<p₂≤sqrt(N/p₁), p₂≤p₃≤N/(p₁p₂), and gcd(N−p₁p₂p₃,Q_N)=1. Their count T_N is≤3.9404 C_N N/log²N, with C_N the Goldbach local factor. Each triple has its ordering and multiplicity; this is an upper bound for the switched correction, not ordinary BV.
 
@@ -3477,91 +3469,6 @@ The ideal symbols on the left are the adapter above; the symbols on the right ar
 
 *Needs:* The quadratic ideal-symbol adapter; QuadraticFormInvariants §6C classical/cohomological comparison, finite support and local computations; ClassFieldTheory Layer 14 cohomological product formula.
 
-**Joint spin of ideals.** For odd totally positive α put spin_σ(α)=(α/σ(α))_(K,2), using the quadratic ideal residue symbol. For an odd principal ideal a=(α), prime to F, put s_a=Σ_(t∈T_K,v∈V_K/V_K²)1_(tvα totally positive)ψ(tvα mod F)∏_(σ∈S)spin_σ(tvα); for other ideals put s_a=0. The coefficient sequence is independent of generator and coset representatives. Totally complex fields require the full unit average; real fields with the square-unit hypothesis have one positive coset.
-
-Odd nonzero denominator; ideals coprime to F for residue evaluation; ψ unit-square invariant.
-
-([KM-21](#references), §2.3, pp.5–6, equation (2.4).)
-
-*Construction.* Assemble the native finite-field quadratic characters through ideal factorization using idealQuadraticSymbol. Apply the ideal-symbol reciprocity adapter above for the kernel comparison, retaining dyadic and infinite factors. Square-unit invariance follows from numerator and denominator squares. Reindex torsion and free-unit cosets under a generator change.
-
-The definition exposes the following operations and laws:
-
-- The individual element spin with the ideal-symbol denominator σ(α).
-- The finite unit-coset sum, zero off the specified ideal domain.
-- spin_σ(u²α)=spin_σ(α) for an odd unit u.
-- The sequence depends on the ideal, not its chosen generator.
-- Under the real-unit hypothesis only the unique positive unit coset survives.
-- All torsion/free-unit cosets occur with the residue weight.
-- |s_a|≤|T_K|2^rank(V_K) sup|ψ|; the real bound is sup|ψ|.
-- Nonprincipal or even ideals have coefficient 0.
-
-**Checks.**
-
-- spin_σ(1)=1: the unit denominator gives an empty prime-ideal product.
-- For odd integer m>1, spin_σ(m)=0 since numerator and denominator share every prime ideal dividing m.
-- Replacing α by u²α preserves the individual spin; replacing it by an arbitrary unit need not.
-- A nonprincipal ideal has joint coefficient 0 even if it is odd.
-- With ψ=0 all joint coefficients vanish; a definition omitting ψ would fail.
-
-*Needs:* Layer 5 §5.3 joint-spin arithmetic data; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting; Layer 5 §5.6 quadratic ideal residue symbol adapter; ClassFieldTheory Layer 14; QuadraticFormInvariants §6C; Layer 5 §5.6 ideal-symbol reciprocity adapter.
-
-**Type I estimate for joint spins.** Under C_|S|n with δ>0, for ε>0 the joint-spin sequence satisfies uniformly in integral ideal m, |Σ_(Na≤X,m|a)s_a|≪_(K,ψ,ε)X^(1−δ/(54n|S|²)+ε). Initially the proof treats m prime to F and its conjugates; extending to every m requires the explicit finite bad-prime and large-Nm cases.
-
-X≥2; fixed bounded ψ; the stated short-character conjecture; uniformity in m.
-
-([KM-21](#references), equation (2.5), p.7; §3, pp.8–18.)
-
-*Proof sketch.* Principalize with class representatives, slice the fundamental domain into one-dimensional rational lines and apply Corollary 2.2. Remove exceptional squarefull/common-norm divisors using Lemmas 3.1–3.2 and balance Z,Y. Keep the bad-modulus extension as a precise proof gap rather than dropping the uniformity FIMR requires.
-
-*Needs:* gap:spin-sliced-lattice and gap:spin-codimension-two; Layer 5 §5.6 joint spin of ideals; Layer 5 §5.3 short character input for joint spins; Layer 5 §5.3 squarefull norm tail for spin divisors; Layer 5 §5.3 common norm tail for two spin differences; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting.
-
-**Joint-spin bilinear kernel.** For odd elements α,β coprime to F define Φ(α,β)=∏_(σ∈S)(α/[σ(β)σ⁻¹(β)])_(K,2). It is multiplicative in both arguments. Reciprocity gives Φ(α,β)=ε(α mod 8,β mod 8)Φ(β,α). For fixed nonzero β its α-character has period |Nβ|O_K; its full sum over this quotient is zero when |Nβ| is not squarefull.
-
-Element arguments, not ideals; nonzero odd denominator; S has no inverse pairs.
-
-([KM-21](#references), §4, (4.2)–(4.3), p.18; properties (P1)–(P3) and Lemma 4.1, p.20.)
-
-*Construction.* Factor the denominator prime ideals, isolate a rational norm prime occurring once and show exactly one unpaired conjugate contributes a nontrivial quadratic character. Apply the ideal-symbol reciprocity adapter, including its finite support and odd-residue identifications. Keep the dyadic/infinite signs; GlobalNumberFields supplies the arithmetic carrier and fundamental domain, not reciprocity.
-
-The definition exposes the following operations and laws:
-
-- The displayed product of ideal residue symbols.
-- Multiplicativity in α.
-- Multiplicativity in β.
-- The exchange sign depends only on residues mod 8.
-- In α the period divides |Nβ|O_K.
-- Its complete period sum vanishes when |Nβ| is not squarefull.
-
-**Checks.**
-
-- Φ(α,1)=1 for odd α: every denominator is a unit.
-- For nonunit denominator, α divisible by a denominator prime gives kernel 0, not±1.
-- Φ(α₁α₂,β)=Φ(α₁,β)Φ(α₂,β), retaining zero values.
-- A nonsquarefull |Nβ| forces the complete sum over O_K/|Nβ|O_K to vanish; a sum over O_K/(β) is not the stated test.
-
-*Needs:* Layer 5 §5.6 joint spin of ideals; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting; Layer 5 §5.6 quadratic ideal residue symbol adapter; ClassFieldTheory Layer 14; QuadraticFormInvariants §6C; Layer 5 §5.6 ideal-symbol reciprocity adapter.
-
-**Bilinear bound for spin kernels.** For the element kernel Φ satisfying the corrected reciprocal residue-sign, multiplicativity and complete rational-norm-period cancellation conditions, and bounded coefficients on the imported generator domains of norms≤M,≤N, the bilinear sum is O_(K,ε)((M^(−1/(6n))+N^(−1/(6n)))(MN)^(1+ε)). Coefficients are bounded by 1; fixed residue classes and finitely many class pairs change the constant.
-
-n≥3; correct domain and rational norm period; squarefull norm exceptional set; all native lattice-count bounds.
-
-([KM-21](#references), Lemma 4.1, p.20, and the verification of its hypotheses, pp.20–21.)
-
-*Proof sketch.* Reconcile KM Lemma 4.1 with the element version of KM-16RANK-published, Proposition 3.6 before importing its proof. The comparison with that referenced proposition requires a complete proof at these element-kernel hypotheses. Cauchy, period completion and norm-squarefull counting give the stated exponent; fundamental domains remain the imported GNF3C objects.
-
-*Needs:* Layer 5 §5.6 joint-spin bilinear kernel; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`.
-
-**Type II estimate for joint spins.** For |v_a|,|w_b|≤1 and X,Y≥2, |Σ_(Na≤X,Nb≤Y)v_aw_bs_(ab)|≪_(K,ψ,ε)(X^(−1/(6n))+Y^(−1/(6n)))(XY)^(1+ε).
-
-Fixed bounded ψ; arithmetic setup; no short-character conjecture is required by this bilinear estimate.
-
-([KM-21](#references), equation (2.6), p.7; §4, pp.18–22.)
-
-*Proof sketch.* Split into ideal-class pairs and residue classes mod F, choose coprime class representatives and generators, and express the joint spin of a product as separate bounded coefficients times Φ. Apply the element-kernel theorem with the corrected period and generator-domain translations.
-
-*Needs:* Layer 5 §5.6 joint spin of ideals; Layer 5 §5.6 bilinear bound for spin kernels; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting.
-
 **Ideal divisor and logarithmic coefficient bounds.** For each fixed number field K, write τ_K(a) for the native ideal divisor count described in Exact supplier contracts, evaluated on a nonzero integral ideal a and use the native ideal von Mangoldt coefficient Λ_K with its logarithmic bound from the supplier contract. Prove that for every ε>0 there is C_(K,ε)>0 with τ_K(a)≤C_(K,ε)(Na)^ε. For fixed nonnegative integers j,k and ε>0, prove
 
 `Σ_(0≠a, Na≤X) τ_K(a)^k (1+log Na)^j ≤ C_(K,j,k,ε) X^(1+ε)` for X≥1.
@@ -3588,17 +3495,7 @@ Uniform TypeI; divisor/logarithmic coefficient norms; the owned ideal divisor an
 
 *Proof sketch.* Proposition 5.1 uses the exact ideal von Mangoldt convolution identity, the hyperbola separation kernel and a cutoff y with z=X/y≥y. In the dyadic decomposition use M≤z and N≤2z (or both≤2z), with MN≤2X. The last dyadic block may exceed z when y=z; the factor 2 only changes absolute constants. Choose y=X^(ϑ/(2+θ)); control smaller S(z) iteratively. The integrable separation kernel uses DFI-1997, Lemma 9, cited by its theorem locator. Divisor/logarithmic coefficient bounds in KM follow from bounded TypeII after absorbing their growth into ε; keep these bounds visible.
 
-*Needs:* Layer 5 §5.6 ideal divisor and logarithmic coefficient bounds; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; Layer 5 §5.6 type i estimate for joint spins; Layer 5 §5.6 type ii estimate for joint spins.
-
-**Oscillation of joint spins over prime ideals.** Under the arithmetic setup and C_|S|n with δ>0, for every ε>0, Σ_(Np≤X,p prime)s_p=O_(K,ψ,ε)(X^(1−δ/[54|S|²n(12n+1)]+ε)), X≥2. The source’s dependence only on K,ε is read with ψ fixed; unrestricted scaling of ψ cannot leave the constant unchanged.
-
-Fixed bounded ψ; all setup and TypeI uniformity hypotheses; conjectural short-character input.
-
-([KM-21](#references), Theorem 1, p.2, and §2.6, pp.7–8.)
-
-*Proof sketch.* Use ϑ=δ/(54n|S|²),θ=1/(6n) in the FIMR exponent. Normalize the real sequence by sup|ψ| and the complex sequence by the finite unit-average bound before applying the |a|≤1 theorem.
-
-*Needs:* Layer 5 §5.6 ideal divisor and logarithmic coefficient bounds; Layer 5 §5.6 fimr sieve conversion to prime ideals; Layer 5 §5.6 type i estimate for joint spins; Layer 5 §5.6 type ii estimate for joint spins.
+*Needs:* Layer 5 §5.6 ideal divisor and logarithmic coefficient bounds; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; the stated uniform Type I and coefficient-weighted Type II hypotheses. This generic conversion is independent of the supplied joint-spin construction.
 
 **Equidistribution of joint spin signs.** For totally real Galois K/Q with the positive-unit square property, admissible nonempty S={σ₁,…,σ_t}, and C_tn, each sign vector e∈{±1}^t has asymptotic proportion 2^(−t) among principal prime ideals of norm≤X as X→∞.
 
@@ -3606,9 +3503,9 @@ Real field; principal prime denominator; no inverse pairs; short-character hypot
 
 ([KM-21](#references), Theorem 2, p.2; proof in §2.6, pp.7–8.)
 
-*Proof sketch.* Expand the sign indicator into the finite Fourier sum over subsets of S. Apply the oscillation theorem to each nonempty subset using the explicit transferred short-character bound. Remove the finitely many ramified/bad primes and the O(sqrt X) higher-residue-degree primes where spin vanishes. Import the prime ideal theorem in the principal class to normalize.
+*Proof sketch.* Expand the sign indicator into the finite Fourier sum over subsets of S. Apply ArithmeticStatisticsPartV §3.30 to each nonempty subset using the explicit transferred short-character bound. Remove the finitely many ramified/bad primes and the O(sqrt X) higher-residue-degree primes where spin vanishes. Import the prime ideal theorem in the principal class to normalize.
 
-*Needs:* Layer 5 §5.6 oscillation of joint spins over prime ideals; Layer 5 §5.3 short character input for joint spins; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; Chebotarev Layer 13 ϑ_c and π_c.
+*Needs:* ArithmeticStatisticsPartV §3.30 conditional joint-spin prime bound; gap:joint-spin-proof-strengths; Layer 5 §5.3 short character input for joint spins; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; Chebotarev Layer 13 ϑ_c and π_c.
 
 ### Analytic and native-interface requirements
 
@@ -3616,9 +3513,7 @@ Construct Iwaniec's normalized general-κ functions and constants, proving exist
 
 For Chen prove the original-family lower bound 2.6408 C_N N/log²N and ordered switched-triple upper bound 3.9404 C_N N/log²N. Retain Lemma 3's fourth moment (statement p.114, proof p.115), switched discrepancies, certified integral estimates and Lemma 6 error N/log^(2.01)N. Lemma 9 uses RICHERT-1969, Theorem A, cited by its theorem locator. Keep 0.6706−0.67 when absorbing the N^0.91 exception; a switched complement need not be prime. For each even h>0 reconstruct the shifted family, local factors and switching estimates with h-dependent constants.
 
-Assemble ideal symbols, generator-independent unit averaging, class representatives and rational-norm-modulus reduction, importing reciprocity and natural principal-prime normalization. Prove squarefull/common-norm tails with exact bad factors, zero-difference loci and m≥3. Balance Y,Z without losing 1/18 or the Type I exponents.
-
-Extend Type I from ideals coprime to F and its conjugates to every integral ideal, including finite bad primes and large norms. Prove Λ/τ coefficient bounds, the squarefull-exception element-kernel estimate and ideal-combinatorial conversion, with fixed sup|ψ| and unit factors. The element-kernel proof additionally needs KM-16RANK-published, Proposition 3.6; the integrable hyperbola-separation kernel uses DFI-1997, Lemma 9. Each subset sign moment retains C_(|T|n).
+The ideal-symbol comparison and the generic ideal coefficient/prime-extraction interfaces have their stated hypotheses. Spin-sign moments use ArithmeticStatisticsPartV §3.30 with gap:joint-spin-proof-strengths; each nonempty subset retains C_(|T|n) through §5.3. The imported chain keeps its sliced-lattice and codimension-two exceptional estimates, uniformity in all nonzero ideals, and dyadic/infinite-place reciprocity factors.
 
 For affine sieves supply native subgroup, reduction-image, free-word orbit and CRT density comparisons, identifying relative polynomial density with rational Zariski closure. Establish the free subgroup/coset reduction preserving simultaneous primitivity with fixed bad primes, heights and r=2k−1. Reconstruct SL₂ squarefree expansion from sum-product/flattening. Ordinary one-sided gap leaves a negative extremal eigenvalue: obtain absolute mixing through an aperiodic/lazy population or a periodic-coset comparison compatible with the sieve. Escape requires effective good primes and a power saving. The explicit saturation inequality retains a strict margin.
 
@@ -3643,7 +3538,7 @@ Affine values {2,3} have gcd one but fail simultaneous avoidance at modulus six.
 
 ### Dependencies
 
-Layers 0, 1, 2 and 3. External inputs: AdelicAlgebraicGroups §4.2 gaps squarefree-ring-sum-product and sl2-noncommutative-flattening; AdelicAlgebraicGroups §4.2; gap:subgroup-strong-approximation; AnalyticNumberTheoryPartI §§0.10–0.11, 0.21, 0.26 and 3.26; gaps analytic-divisor-moments and uniform-wirsing; AnalyticNumberTheoryPartI §0.32; gap:maximal-small-conductor; Layer 5 §5.3 conjecture Cₘ; Layer 0 §0.10 finite-field polynomial counts; InverseGaloisAndArithmeticFundamentalGroups §IG.2.5 and gap:bounded-degree-lang-weil; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:curvature-uniform-lattice; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; Chebotarev Layer 13 ϑ_c and π_c; ClassFieldTheory Layer 14; QuadraticFormInvariants §6C; Layer 5 §5.6 ideal-symbol reciprocity adapter; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting.
+Layers 0, 1, 2 and 3. External inputs: AdelicAlgebraicGroups §4.2 gaps squarefree-ring-sum-product and sl2-noncommutative-flattening; AdelicAlgebraicGroups §4.2; gap:subgroup-strong-approximation; AnalyticNumberTheoryPartI §0.32; ArithmeticStatisticsPartV §3.30; gap:joint-spin-proof-strengths; gap:maximal-small-conductor; Layer 5 §5.3 conjecture Cₘ; Layer 0 §0.10 finite-field polynomial counts; InverseGaloisAndArithmeticFundamentalGroups §IG.2.5 and gap:bounded-degree-lang-weil; GeometryOfNumbersAndQuadraticArithmetic §4.1; gap:curvature-uniform-lattice; ArithmeticDirichletSeries Layer 1 norm fibres and Mathlib `LSeries`; Chebotarev Layer 13 ϑ_c and π_c; ClassFieldTheory Layer 14; QuadraticFormInvariants §6C; Layer 5 §5.6 ideal-symbol reciprocity adapter; GlobalNumberFields Layer 3 geometry of numbers and ray class ideal counting.
 
 ## Downstream consumers
 
