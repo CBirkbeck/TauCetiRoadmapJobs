@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-3684 mistakes recorded on the board: 2445 misprints, 938 errors, 257 gaps, 44 unparsed bullets.
+3704 mistakes recorded on the board: 2451 misprints, 945 errors, 258 gaps, 50 unparsed bullets.
 Errata jobs have read the cited sources of 47 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -52,6 +52,25 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (AdmissiblePairsAndPadicHodgeStructures, #1092 at 37bbd60, 2026-10-24): Misprint** in HKI at proof of Theorem 5.1.6, printed p. 42: the weight-w summand is indexed by the slope −w/2 piece of W. It should be the slope w/2 piece, since weight is twice the Newton slope. Affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "37bbd60", "job": "REV-PKG-AdmissiblePairsAndPadicHodgeStructures", "model": "opus", "worker": "fable-rev52"} -->
 - **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at a485141, 2026-10-24): Gap** in temkin17 at §4.3.2, p. 124, and Theorem 1.2.5, p. 99: universal resolvability of qe threefolds is credited to Cossart–Piltant, whose Theorem 1.1 needs separated X and is projective only over a chosen affine cover; global projectivity and non-separated bases remain unproved; affects a stated result.
 - **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at a485141, 2026-10-24): Misprint** in ilo14 at Exposé X, proof of Theorem 2.4 (§2.6), Step 3, p. 155: the unit and branch parts are given ranks μ and ν, then P is written Z^ν ⊕ N^μ; the two assignments should agree (P = Z^μ ⊕ N^ν); affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "a485141", "job": "REV-PKG-AdicCoefficientsAndComparisonsPartII", "model": "opus", "worker": "fable-rev55"} -->
+- **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Error** in A at equation (9.5.3), p. 523: the source equates the maximal O_E-stable lattice with ξ·d_F⁻¹·L₀; for ξ=−p² at an unramified place it is p⁻¹O_E, not p²O_E; affects the proof.
+- **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Error** in T at §2.2, p. 382: the source says the regulators of E and its real subfield coincide; their ratio is 2^(g−1)/Q_E with Q_E equal to 1 or 2; affects nothing.
+- **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Misprint** in T at the proof of Corollary 3.3, pp. 383–384: the source calls the uniform height lower bound positive; it is negative in general, and the argument works for any real bound; affects nothing.
+- **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Error** in T at §5, p. 386: the source equates [ℚ(A):ℚ] with \|Cl(K*)\|/\|H\|; Shimura's theorem gives the degree over the reflex field, which differs by bounded factors; affects nothing.
+- **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Gap** in YE at the proof of Proposition 6, p. 10: the source asserts that the τ-contracted differential modules are locally free, hence exact; at a ramified prime the contraction can be O_L/(2√p); affects the proof.
+- **Unparsed** (ComplexMultiplicationAndExplicitReciprocityPartII, #1113 at 408c5d5, 2026-10-24): Gap** in Y at §9.2, p. 633: the source calls the level projection étale to make P′ a section, while P′ has multiplicity e in the pull-back; the section claim needs another argument; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "408c5d5", "job": "REV-PKG-ComplexMultiplicationAndExplicitReciprocityPartII", "model": "opus", "worker": "fable-rev56"} -->
+
+## A
+
+- **Error** at Lemma 9.4.3, p. 516: the source says every generator has absolute period (2π)^(−dim A); it should be (2π)^(dim A) for the trace-one class, rescaled by \|σ(u)\| for a unit multiple; affects the proof. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Error** at Lemma 9.4.4 and (9.4.6), p. 517: the source says the source's length equals minus the cross-pair sum (ℤ₃[√3] singleton gives −1); it should be the cross-pair sum, half discriminant minus within-part sums; affects a stated result. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Misprint** at Proposition 3.5.2, p. 422: the source says the source names the crystalline representation by an undefined lattice symbol; it should be the given lattice N_p at y with p inverted; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Misprint** at Proposition 3.6.1(1), p. 430: the source says the prime is not split in F; it should be not split in E, as the proof uses; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Error** at Proposition 9.4.5, p. 519: the source says the source puts the factor −e_P/2 before the two conductor values; it should be +e_P/2 (ℚ₃(√3) singleton has length 1); affects a stated result. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Error** at Theorem 9.1.5, p. 510: the source says total heights determine a unique linear functional ht on all of CM⁰; it should be unique only on the span of the a⁰ (all vanish at c), or normalized by Colmez's component periods; affects a stated result. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Error** at §3.2, equation (3.2.2), p. 417: the source says the cokernel as a direct sum over p|p of local norm quotients; it should be one quotient of ℚ_p× by the product of all local norm groups; affects a stated result. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Error** at §3.2, p. 416: the source says the source calls K₀ a maximal compact subgroup of T(A_f); it should be compact open, since a ramified uniformizer class is compact yet outside K₀; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Misprint** at §9.4, p. 514: the source says the ω₀ squared norm as minus the bilinear value, negative for the positive definite Q₀; it should be plus that value; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+- **Misprint** at §9.5, p. 524: the source says the trace from E to ℚ in the auxiliary pairing; it should be the trace from F to ℚ, as in Lemma 9.5.3; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
 
 ## Abe, arXiv preprint v1
 
@@ -3898,6 +3917,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 5.2, weakly mixing case, p. 31 (Popa-II line 1098): the source says the second approximation estimate repeats the first group element and scalar; it should be revised to estimate u⁰_(hₘh) against c′u_g′ in the second estimate; affects the proof. Found by FactorRigidity (ERRATA-FactorRigidity at 00c5ce8, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Theorems 0.7(i), 5.1(i), 5.2(i), and Lemma 5.3, pp. 6, 21–22, 25 (Popa-II line 229; Popa-II line 789; Popa-II line 816; Popa-II line 916): the source says the character projection averages κ(k)u_k while u_k acts on its range by κ(k); it should be revised to average κ(k)⁻¹u_k, retaining u_kp=κ(k)p; the printed average has inverse eigencharacter; affects a stated result. Found by FactorRigidity (ERRATA-FactorRigidity at 00c5ce8, 2026-10-24, codex gpt-6-astra).
 
+## PT
+
+- **Misprint** at the proof of Lemma 3.3, preprint p. 4: the source says the covolume of ψ(I) as Disc(O_K)[O_K:I]; it should be 2^(−g)\|Disc O_K\|^(1/2)[O_K:I] (ℤ[i] gives 1); affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
+
 ## Qi
 
 - **Misprint** at Corollary 6.5, proof, arXiv v2 p. 31 (Qi line 1262): the source says taking invariants replaces P by A⊗V in all three Hom terms; it should be retain P in all three terms; no A⊗V was chosen for this step; affects the proof. Found by HopfologicalAlgebra (ERRATA-HopfologicalAlgebra at ae6ce67, 2026-10-23, codex gpt-6-astra).
@@ -5104,6 +5127,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## T
 
+- **Gap** at Lemma 4.1, p. 384: the source says it for unpolarized A, but level-3 rigidity needs a polarization (unit (1+√2)^8 of ℚ(i,√2) is ≡1 mod 3); it should be stated for polarized A; affects the proof. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
 - **Misprint** at §1.1.2, Examples 1.1.8, p. 13; T line 622: the source says the geometric variable defined on nonnegative integers has mean p; it should be (1−p)/p, obtained by differentiating its geometric-series generating function; affects a stated result. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
 - **Error** at §1.1.2, Examples 1.1.9, p. 16; T line 726: the source says Poisson distributions have subgaussian tails; it should be classify positive-parameter Poisson variables as subexponential; their masses decay like exp(−k log k+O(k)), more slowly than any Gaussian bound; affects a stated result. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
 - **Error** at §1.1.2, Exercise 1.1.5, p. 17; T line 773: the source says moment bounds exp(Ck^C) characterize subexponential tails; it should be use bounds (Ck)^(Ck); lognormal variables satisfy the printed condition but have no stretched-exponential tail; affects a stated result. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
@@ -5225,6 +5249,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3.4.2, Haar expansion, p. 269; T line 11136: the source says half the squared Euclidean norm equals the full sum of squared orthonormal coefficients; it should be remove the factor one-half on the left, or include it on the right; affects the proof. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
 - **Error** at §3.4.2, Ornstein–Uhlenbeck model, pp. 270–271; T line 11206: the source says unit-variance coordinates obey drift −λg and noise coefficient λ; it should be noise coefficient √(2λ); in particular ξ₀ needs √2 times Brownian noise; affects a stated result. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §3.4.2, relaxation time, p. 271; T line 11222: the source says the added curvature n¹⁻ε yields equilibrium time O(n¹⁻ε); it should be O(n⁻¹⁺ε), the reciprocal curvature scale; affects a stated result. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
+- **Error** at §6.2, p. 387: the source says the source bounds the degree of the lifted CM point by 2g; a generic sextic CM type has reflex degree 8; it should be a bound depending only on g; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
 - **Misprint** at §§1.3.3, 1.3.6, 2.4.2, 2.6.1, 2.6.5, pp. 46–47, 53, 137, 184, 208; T line 2019: the source says Wielandt’s surname is repeatedly spelled Weilandt in the matrix inequality’s name; it should be Wielandt; affects nothing; corrected in print at those occurrences, as T-corrections line 56 records. Found by RandomMatrices (ERRATA-RandomMatrices at a62a9af, 2026-10-24, codex gpt-6-astra).
 
 ## Tao-Vu
@@ -5613,6 +5638,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4, equation (4.4), printed p. 13, arXiv v2 (yagasaki-new-proof line 565): the source says the generating function's action arguments repeat I₂; it should be I₁,I₂,I₃; affects nothing. Found by RestrictedThreeBody (ERRATA-RestrictedThreeBody at cc5f962, 2026-10-23, codex gpt-6-astra).
 - **Error** at §4, h₁ after (4.8), printed p. 14, arXiv v2 (yagasaki-new-proof line 620; yagasaki-new-proof line 629): the source says the two angular-chain terms involving χ̂₃,ψ have the displayed signs; it should be both signs reversed, from −∂H/∂θ₁ and φ=θ₃−χ̂₃; affects the proof. Found by RestrictedThreeBody (ERRATA-RestrictedThreeBody at cc5f962, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §§3–4, implicit-differentiation displays, printed pp. 8, 15, arXiv v2 (yagasaki-new-proof line 329; yagasaki-new-proof line 653): the source says the chain-rule terms use derivatives of the defining constraints as derivatives of the implicit variables; it should be −Vⱼ,s/Vⱼ,vⱼ and −Wⱼ,s/Wⱼ,wⱼ, respectively, for each differentiation variable s; affects the proof. Found by RestrictedThreeBody (ERRATA-RestrictedThreeBody at cc5f962, 2026-10-23, codex gpt-6-astra).
+
+## YE
+
+- **Misprint** at the proof of Theorem 1, p. 11: the source says the Hom target as A₂[π]; it should be A₂[δ_π], matching the source module; affects nothing. Found by ComplexMultiplicationAndExplicitReciprocityPartII (#1113 at 408c5d5, 2026-10-24, claude opus).
 
 ## yoshida
 
