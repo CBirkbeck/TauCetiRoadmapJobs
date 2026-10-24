@@ -59,7 +59,7 @@ year = 2011
 venue = "Algebraic Geometry 3 (2016), no. 1, 63-105"
 arxiv = "1104.0320v3"
 locator_scheme = "section"
-locator = "Definitions 4.21 and 4.23, Proposition 4.24, pp. 18–19; Theorem 1.3, pp. 2–3; Remark 5.6 and formula (5.6.1), p. 22; Theorem 1.4, p. 3; §5.15, Remark 5.16 and Lemma 5.17, pp. 24–25; Lemmas 5.18–5.19 and Theorem 5.20, pp. 25–26; Theorem 1.1, p. 2; §5.15, Remark 5.16, Lemma 5.17 and Theorems 5.20–5.21, pp. 24–26; Theorem 5.22 and proof, pp. 26–27"
+locator = "§4.2, p. 14; Definitions 4.21 and 4.23, Proposition 4.24, pp. 18–19; Theorem 1.3, pp. 2–3; Remark 5.6 and formula (5.6.1), p. 22; Theorem 1.4, p. 3; §5.15, Remark 5.16 and Lemma 5.17, pp. 24–25; Lemmas 5.18–5.19 and Theorem 5.20, pp. 25–26; Theorem 1.1, p. 2; §5.15, Remark 5.16, Lemma 5.17 and Theorems 5.20–5.21, pp. 24–26; Theorem 5.22 and proof, pp. 26–27"
 url = "https://arxiv.org/abs/1104.0320v3"
 fetched_from = "https://arxiv.org/pdf/1104.0320v3"
 fetched_at = "2026-10-22T21:27:36Z"
@@ -68,7 +68,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v3"
-cited_for = ["4.5", "4.6", "4.7", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6"]
+cited_for = ["4.1", "4.5", "4.6", "4.7", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6"]
 
 [[source]]
 id = "scholze"
@@ -199,7 +199,7 @@ title = "Elimination Theory for Tropical Varieties"
 year = 2007
 arxiv = "0704.3471v1"
 locator_scheme = "section"
-locator = "arXiv:0704.3471 PDF; physical pages"
+locator = "Definition 3.1, Lemma 3.2, Corollaries 3.4 and 3.8, pp. 7–8; formula (1.2), p. 2"
 url = "https://arxiv.org/abs/0704.3471v1"
 fetched_from = "https://arxiv.org/pdf/0704.3471v1"
 fetched_at = "2026-10-22T21:28:24Z"
@@ -208,7 +208,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v1"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["4.4", "4.8"]
 
 [[source]]
 id = "chambert-loir"
@@ -325,7 +325,7 @@ title = "Uniform Manin-Mumford for a family of genus 2 curves"
 year = 2019
 arxiv = "1901.09945v2"
 locator_scheme = "section"
-locator = "arXiv:1901.09945v2"
+locator = "arXiv v2 §2.7, pp. 11–12; §4, pp. 18–22; published §2.7, pp. 960–961"
 url = "https://arxiv.org/abs/1901.09945v2"
 fetched_from = "https://arxiv.org/pdf/1901.09945v2"
 fetched_at = "2026-10-22T21:29:27Z"
@@ -334,7 +334,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v2 §2.7 pp. 11–12; published §2.7 pp. 960–961. Both versions were fetched; the energy convention is stated in the roadmap."
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["0.23", "6.5"]
 published_url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p05-s.pdf"
 published_sha256 = "7a4bd817bc7cc561363c68c3941b449af55fbf4cb1b3481bd0d601e84b9307df"
 
@@ -417,7 +417,7 @@ cited_for = ["7.5"]
 [[source]]
 id = "favre-corrigendum"
 locator_scheme = "section"
-locator = "Author-hosted corrigendum, 3 pages; quantitative error bounds are corrected, not the §4.2 Laplacian sign"
+locator = "Corrected Theorem 7 and equation (1), p. 1"
 url = "https://www.cmls.polytechnique.fr/perso/favre/corrigendum.pdf"
 fetched_from = "https://www.cmls.polytechnique.fr/perso/favre/corrigendum.pdf"
 fetched_at = "2026-10-22T21:29:51Z"
@@ -425,7 +425,7 @@ sha256 = "dd74776159bbad2fa0368b6a2a6d19bd708773c2da2381679e53108e4d8d9a95"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["3.3"]
 authors = "Charles Favre and Juan Rivera-Letelier"
 title = "Corrigendum to Équidistribution quantitative des points de petite hauteur sur la droite projective"
 year = 2006
@@ -446,7 +446,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v3"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["0.27"]
 
 [[source]]
 id = "baker-norine"
@@ -464,7 +464,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v3"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["3.5"]
 
 [[source]]
 id = "berkovich-integration"
@@ -477,7 +477,7 @@ sha256 = "927ef432db9ccdb8b4f8ab0d49a0b3c918d238ad3390f8d70c130b05cb798a5b"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["7.6"]
 authors = "Vladimir Berkovich"
 title = "Integration of one-forms on p-adic analytic spaces"
 year = 2004
@@ -495,7 +495,7 @@ url = "https://doi.org/10.1007/BF01790541"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["5.3", "5.4", "5.5", "5.6"]
 
 [[source]]
 id = "bosch-lutkebohmert"
@@ -508,7 +508,7 @@ sha256 = "cf1e7be3e1977ae9e9a21c58b72f98be878233197ae601015efeab967dc1a1fa"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["2.10", "2.19", "5.3"]
 authors = "Siegfried Bosch and Werner Lütkebohmert"
 title = "Stable reduction and uniformization of abelian varieties I"
 year = 1985
@@ -571,7 +571,7 @@ sha256 = "5b8b17e58843f9f6c43be6744469a07b99b20961fa269bf9b08bebf26e13ee4a"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["References and the numbered sections citing this work"]
+cited_for = ["7.7"]
 authors = "Ehud de Shalit"
 title = "Coleman integration versus Schneider integration on semistable curves"
 year = 2006

@@ -16,9 +16,10 @@ need the specified seminormed Banach-ring category; analytification and its GAGA
 hybrid and adic comparisons need analytic spaces and their coherent sheaves;
 semistable reduction and skeleta need rank-one formal models and their metric
 realizations; metric-graph and metrized-complex Riemann–Roch need all-point metric
-graph divisors and residue-curve complexes; tropical multiplicities, pushforward
-and faithful domination need valued initial degenerations and analytic toric
-embeddings; mixed measures, local heights and admissible corrections need model
+graph divisors and residue-curve complexes; extended tropicalization needs
+toric analytifications and extended tropical spaces; tropical multiplicities,
+pushforward and faithful domination need valued initial degenerations and analytic
+toric embeddings; mixed measures, local heights and admissible corrections need model
 metrics and measure-valued graph potentials; Tate/Schottky uniformization and the
 Jacobian comparison need analytic quotients and Raynaud covers; BC–abelian
 comparison needs analytic paths, forms and their integration. No substitute

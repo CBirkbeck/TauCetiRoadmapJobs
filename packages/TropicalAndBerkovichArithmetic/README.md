@@ -4,11 +4,11 @@
 
 ## Scope and ownership
 
-Layer 0 imports the complete Banach-spectrum core from AdicSpacesPartIII §R3.9 and owns its native noncomplete comparison, the archimedean unit criterion, completed residue fields, Berkovich analytic spaces, the rank-one maximal Hausdorff quotient and general-family hybrid topology. The input adic valuation classes, Huber pairs and rational topology belong to Tau Ceti's AdicSpaces Layer 2. DiamondsAndVStacks D5 also imports that core from AdicSpacesPartIII and owns its small-v-sheaf extension. No supply from this roadmap to either earlier roadmap is assumed.
+Layer 0 imports the complete Banach-spectrum core from AdicSpacesPartIII §R3.9, the Tate-normalized rank-one spectrum and maximal Hausdorff quotient from DiamondsAndVStacks §D5.13, and the Hausdorff strict analytic category and taut-adic equivalence from ClassicalAdicEtaleCohomology §3.1. It owns the native noncomplete spectrum comparison, the archimedean unit criterion, completed residue fields, the extension to general Berkovich analytic spaces and general-family hybrid topology. Section 0.28 compares the specified uniform-unit norm with the supplied normalized spectrum; §0.30 identifies the strict Hausdorff specialization of the general analytic carrier with the supplied category. The input adic valuation classes, Huber pairs and rational topology belong to Tau Ceti's AdicSpaces Layer 2. The nonstrict, trivially valued and non-Hausdorff analytic extensions belong to §0.21; no supply to these earlier owners is assumed.
 
 Layer 1 owns line points, paths, annuli, logarithmic lengths and their descent conventions. Layer 2 owns rank-one analytic semistable existence, the metric realization of the imported combinatorial dual graph, retractions, refinement and locally finite noncompact triangulations. StableReduction Layer 1 supplies the dual graph with component genera and its arithmetic-genus formula; Layer 2 supplies flat-family genus invariance in its locally noetherian range; the application to rank-one models requires the descent comparison in this roadmap. Its Layers 7–9 cover discrete valuation rings. Their statement does not establish the required theorem over a possibly nonnoetherian rank-one valuation ring.
 
-Layer 3 owns metric graphs, all-point divisors, potentials, Jacobians, metrized complexes and specialization. Layer 4 owns the valued tropicalization, initial-degeneration and weighted-cycle comparisons. Layer 5 owns faithfulness on metric graphs and marked rays. Algebraic curves and Riemann–Roch are imported. AnalyticToricGeometry Layer 0 supplies lattice, cone and fan geometry. Its complex regular-fan schemes do not supply the general-field toric extension; the precise prerequisite is gap:general-field-toric-schemes below.
+Layer 3 owns metric graphs, all-point divisors, potentials, Jacobians, metrized complexes and specialization. Layer 4 owns torus and extended tropicalization on Berkovich analytifications, initial-degeneration and weighted-cycle comparisons. Layer 5 owns faithfulness on metric graphs and marked rays. Algebraic curves and Riemann–Roch are imported. AnalyticToricGeometry Layer 0 supplies lattice, cone and fan geometry. Its complex regular-fan schemes do not supply the general-field toric extension; the precise prerequisite is gap:general-field-toric-schemes below.
 
 Layer 6 owns local model metrics, mixed measures, graph and line potential theory, and local heights. ArithmeticDynamics owns dynamical escape-rate estimates and the convergence of its family-specific potentials on the hybrid space. Layer 7 imports the algebraic Tate curve from EllipticCurves Layer 4, local annular primitives and good-reduction integration from ColemanIntegration, and the finite-model abelian logarithm from AnabelianGeometryAndNonabelianChabauty §5.8, its arbitrary-ℂ_p-coefficient extension from ColemanIntegrationPartII §4.0, and rational endpoint integrals from EffectiveDiophantineMethods §4.3. The arbitrary-rank-one Raynaud interfaces require the three registered NeronModelsAndSemistableAbelianVarieties supplier gaps below. The new results here compare those objects with skeleta and path integrals.
 
@@ -56,7 +56,7 @@ The headline signatures use Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a` a
 From the pinned Tau Ceti library use the following additional interfaces. Their constructions remain with their existing owners.
 
 - `TauCeti.ValuationSpectrum.spa`, in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/Basic.lean`, and the rational topology of AdicSpaces Layer 2 provide the adic point carrier.
-- `TauCeti.ValuationSpectrum.IsAnalyticPoint.exists_coarsenByUnits_mem_spaAnalytic`, in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/Analytic.lean`, supplies an analytic rank-one coarsening of a continuous analytic valuation, with unchanged support, using an Archimedean nontrivial quotient of its value group. Layer 0 adds uniqueness and maximality, normalization by a uniform unit, and comparison with real-valued bounded seminorms. It does not reconstruct the existence of that coarsening.
+- `TauCeti.ValuationSpectrum.IsAnalyticPoint.exists_coarsenByUnits_mem_spaAnalytic`, in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/Analytic.lean`, supplies an analytic rank-one coarsening of a continuous analytic valuation, with unchanged support, using an Archimedean nontrivial quotient of its value group. DiamondsAndVStacks §D5.13 supplies its uniqueness, maximality and Tate normalization; §0.28 compares that normalization with the specified uniform-unit Banach norm.
 - `TauCeti.ValuationSpectrum.spaSeparationQuotientHomeomorph`, in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/SeparationQuotient.lean`, identifies Spa of A modulo the closure of zero with Spa of A. This separated-ring invariance does not provide the maximal Hausdorff quotient of the adic point space required here.
 - `TauCeti.PowerSeries.gaussNorm_mul_of_isRestricted`, in `TauCeti/RingTheory/PowerSeries/GaussNorm.lean`, provides multiplicativity of restricted Gauss norms. Layer 1 uses it for the analytic Gauss-point comparison.
 - `TauCeti.exists_isRiemannRochDivisor`, in `TauCeti/FieldTheory/FunctionField/Differential/CanonicalDivisor.lean`, and AlgebraicCurves Layer 4 provide algebraic Riemann–Roch. Layer 5 adds analytic lifting and separating functions.
@@ -77,6 +77,8 @@ The external analytic and arithmetic interfaces are:
 - AnabelianGeometryAndNonabelianChabauty §5.8 (`abelianLog.cp`, `abelianLog.derivative`, `abelianLog.functorial`): The logarithm on all ℂ_p-points of an abelian variety defined over a finite p-adic field.
 - ColemanIntegrationPartII §4.0: The unique locally analytic additive logarithm with identity differential for every abelian variety over ℂ_p, including those without a finite p-adic field model, and comparison with the preceding finite-model logarithm.
 - ColemanIntegrationPartII §3.1: The zero sum of oriented analytic end residues on a connected Coleman wide open, for forms extending to its specified strict neighborhood.
+- DiamondsAndVStacks §D5.13 (`BerkovichSpectrum`, `BerkovichSpectrum.ofSpa`, `BerkovichSpectrum.toSpa`, `BerkovichSpectrum.changeNormalization`, `TauCetiRoadmap.DiamondsAndVStacks.nonempty_t2Quotient_spa_homeomorph`): The Tate-normalized continuous real spectrum with value 1/2 on the chosen pseudouniformizer, unique rank-one maximal generization, set-theoretic section and maximal Hausdorff quotient of Spa. Section 0.28 transports that quotient through its norm-sensitive comparison.
+- ClassicalAdicEtaleCohomology §3.1 (`StrictAnalyticSpace`, `StrictAnalyticSpace.affinoid`, `StrictAnalyticSpace.glue`, `StrictAnalyticSpace.Hom`, `StrictAnalyticSpace.u`, `StrictAnalyticSpace.s₀`, `StrictAnalyticSpace.u_max`, `StrictAnalyticSpace.u_partiallyProper`, `StrictAnalyticSpace.u_proper`, `StrictAnalyticSpace.u_etale_smooth`): Hausdorff strict analytic atlases over a complete nontrivially valued rank-one field, their taut locally finite-type adic equivalence, and boundary, properness, étale and smooth comparisons. Sections 0.21 and 0.30 identify the strict specialization and transport these results; §0.22 uses them for the strict GAGA route.
 - AdicSpacesPartIII §R3.9 (`Huber.GelfandSpectrum`, `GelfandSpectrum.compactSpace_nonempty`, `GelfandSpectrum.smoothingFun_eq_sSup`): The complete bounded-seminorm spectrum, pointwise topology, compactness, nonemptiness, bounded pullback and spectral maximum.
 - PerfectoidSpaces §P1.12 (`gelfandSpectrum_isUnit_iff`): Unit detection in its nonarchimedean range; §0.14 adds the archimedean extension.
 - RestrictedPowerSeries §§0.1, 1.1 and 2.1: Native weighted series at arbitrary positive polyradii, Gauss norms, completeness and contractive evaluation. Section 0.17 uses these for affinoid quotients and strictification.
@@ -86,17 +88,17 @@ The external analytic and arithmetic interfaces are:
 The following supplier contracts include the extensions needed beyond their narrower versions:
 
 - **SchemeAndStackFoundations §3.3**: Integrate the native smooth connected algebraic curve, smooth proper completion and finite puncture set from AlgebraicCurves. Analytification belongs to Layer 0, not this request. Use §3.3’s `cohomologyDim_zero_structureModule` for H⁰(X̄,O)=K on a smooth proper geometrically connected curve over algebraically closed K, used with proper GAGA for analytic connectedness. Consumed by [2.1 Semistable vertex set](#21-semistable-vertex-set), [1.4 Connected algebraic curves remain connected](#14-connected-algebraic-curves-remain-connected).
-- **AnalyticToricGeometry Layer 0**: Lattices, cones and fans. General-field toric schemes and orbitwise tropicalization require gap:general-field-toric-schemes.
+- **AnalyticToricGeometry Layer 0**: Lattices, cones and fans. General-field toric schemes require gap:general-field-toric-schemes; their extended tropicalization is constructed in §4.1 from §0.22 analytification.
 - **SchemeAndStackFoundations §§5.2–5.3**: Residue-field cycle degrees, `Chow.c1` and `proper_pushforward`. Section 5.9 treats fields, Dedekind bases and arithmetic surfaces; rank-one model specialization and modification comparison require the two gaps below.
 - **NeronModelsAndSemistableAbelianVarieties §§3.13–3.14 and §§4.3–4.4**: The complete-DVR Raynaud extension (`SemiabelianExtensionClassification`), analytic quotient (`RigidUniformisation`, `RaynaudOneMotive`) and graph monodromy pairing. The three gaps below request the arbitrary-rank-one extension used in §§7.5 and 7.8.
-- **TauCetiRoadmap.AdicSpaces Layer 2**: Native valuation classes, Spa(A,A⁺), rational topology and continuous maps; Layer 0 adds normalized real rank-one points and the Hausdorff quotient, with no perfectoid or diamond prerequisite. Consumed by [0.28 Normalized rank-one adic quotient](#028-normalized-rank-one-adic-quotient).
+- **TauCetiRoadmap.AdicSpaces Layer 2**: Native valuation classes, Spa(A,A⁺), rational topology and continuous maps; DiamondsAndVStacks §D5.13 supplies the normalized rank-one quotient and §0.28 compares it with the specified norm. Consumed by [0.28 Normalized rank-one adic quotient](#028-normalized-rank-one-adic-quotient).
 - **TauCetiRoadmap.AlgebraicCurves Layer 4**: Algebraic Riemann–Roch and prescribed-pole rational functions on the smooth proper curve; Layer 5 imports them to obtain unit-slope and coprime-pole coordinates. Consumed by [5.3 Functions separating edges and vertices](#53-functions-separating-edges-and-vertices).
 - **TauCetiRoadmap.EllipticCurves Layer 4**: The existing algebraic Tate elliptic curve and its q-parametrization; Layer 7 adds the analytic quotient, circle length and measure/integral calibration. Consumed by [7.1 Tate analytic quotient and skeletal circle](#71-tate-analytic-quotient-and-skeletal-circle).
 - **TauCetiRoadmap.StableReduction Layer 1**: Existing combinatorial dual graph with component genera and p_a=Σg_v+b₁. Layer 2 adds the metric thickness/skeleton identification only. Consumed by [2.11 Formal models and metric dual graphs](#211-formal-models-and-metric-dual-graphs), [2.12 Vertex genera and analytic genus](#212-vertex-genera-and-analytic-genus).
 - **TauCetiRoadmap.StableReduction Layer 2**: Existing genus invariance in proper flat curve families over locally noetherian bases. Apply it to special and generic fibers through the owned rank-one model descent comparison; no second algebraic genus-invariance theorem is planned. Consumed by [2.12 Vertex genera and analytic genus](#212-vertex-genera-and-analytic-genus).
 - **TauCetiRoadmap.StableReduction Layer 7**: Existing semistable-reduction theorem in its DVR range, used as a compatibility check. It does not supply the owned nonnoetherian rank-one theorem. Consumed by [2.10 Rank-one semistable reduction](#210-rank-one-semistable-reduction).
 
-What AnalyticToricGeometry must provide (gap:general-field-toric-schemes): For every field K and rational fan, supply toric schemes glued from Spec K[σ∨∩M], the dense torus, face/orbit charts, toric morphisms, equivariant products and the closed-graph domination of toric embeddings needed in §§4.1–4.4 and §§5.2–5.6; include extended tropicalization on all orbit charts and compatibility with toric maps. Supplier section: Layer 0.
+What AnalyticToricGeometry must provide (gap:general-field-toric-schemes): For every field K and rational fan, supply toric schemes glued from Spec K[σ∨∩M], the dense torus, face/orbit charts, toric morphisms, equivariant products and the closed-graph domination of toric embeddings needed in §§4.1–4.4 and §§5.2–5.6. Supplier section: Layer 0.
 
 What SchemeAndStackFoundations must provide (gap:rank-one-model-specialization): For proper flat admissible normal models over any complete nontrivially valued rank-one valuation ring, supply specialization of generic intersection degree to component-weighted residue-field intersections, retaining tensor denominators, residue degrees and nonreduced multiplicities, for §6.2. Supplier section: §§5.2–5.3.
 
@@ -519,7 +521,7 @@ For arbitrary positive radii, prove faithful strictification before applying the
 
 Define *analytic spaces*. A K-analytic space is a locally Hausdorff space with a net of compact affinoid domains and compatible affinoid algebras, localized under compatible atlas refinements. Its structure sheaf is on the analytic G-topology. A morphism is locally induced by bounded K-affinoid algebra maps on compatible domain charts, with the resulting continuous G-continuous map and sheaf map.
 
-Complete nonarchimedean K; Hausdorffness is a separate property, not part of all analytic spaces.
+Complete nonarchimedean K; Hausdorffness is a separate property, not part of all analytic spaces. For nontrivially valued K, identify the Hausdorff strict specialization with ClassicalAdicEtaleCohomology §3.1’s strict affinoid atlases, domain refinements and local morphisms. Transport its gluing and category laws through that identification; the general construction extends to nonstrict, trivially valued and non-Hausdorff spaces (Temkin §§4.1.1–4.1.3, pp. 22–24).
 
 Provide the following interface:
 
@@ -537,7 +539,7 @@ Provide the following interface:
 
 For the construction, construct the atlas category, identify refinements and glue bounded chart maps. Sheaf equalizers guarantee independence on overlaps; completed residue maps verify local compatibility.
 
-*Needs:* [0.20 Affinoid structure sheaf and acyclicity](#020-affinoid-structure-sheaf-and-acyclicity).
+*Needs:* [0.20 Affinoid structure sheaf and acyclicity](#020-affinoid-structure-sheaf-and-acyclicity); ClassicalAdicEtaleCohomology §3.1 for the Hausdorff strict specialization over nontrivially valued K.
 
 [Michael Temkin, Introduction to Berkovich analytic spaces](https://math.huji.ac.il/~temkin/papers/Introduction_to_Berkovich_Spaces.pdf), Definitions 4.1.1.1 and 4.1.2.1; §§4.1.2–4.1.3, pp. 22–24. Specifies nets, affinoid atlases, domain sheaves and chart-local morphisms.
 
@@ -566,9 +568,9 @@ For the construction, on polynomial presentations cover by increasing bounded-ra
 
 [Michael Temkin, Introduction to Berkovich analytic spaces](https://math.huji.ac.il/~temkin/papers/Introduction_to_Berkovich_Spaces.pdf), §5.1, Exercise 5.1.1.1 and Facts 5.1.1.2, 5.1.2.1–5.1.2.2, pp. 33–34. Algebraic analytification, its local constructions, properness and coherent GAGA; the general valued-field comparison is a theorem target here.
 
-Prove the *proper coherent GAGA comparison*: for a proper finite-type K-scheme over any complete nonarchimedean K, analytification induces an equivalence between algebraic and analytic coherent sheaves, and the canonical maps Hⁱ(X,𝓕)→Hⁱ(Xᵃⁿ,𝓕ᵃⁿ) are isomorphisms for every i≥0. Transport AdicSpacesPartIII §R3.7 in the strict nontrivially valued range through §0.30; prove the general valued-field extension by the affine analytic comparison and proper descent (Temkin Facts 5.1.2.1–5.1.2.2, p. 34).
+Prove the *proper coherent GAGA comparison*: for a proper finite-type K-scheme over any complete nonarchimedean K, analytification induces an equivalence between algebraic and analytic coherent sheaves, and the canonical maps Hⁱ(X,𝓕)→Hⁱ(Xᵃⁿ,𝓕ᵃⁿ) are isomorphisms for every i≥0. Transport AdicSpacesPartIII §R3.7 in the strict nontrivially valued range through ClassicalAdicEtaleCohomology §3.1’s equivalence, identified with the §0.21 carrier in §0.30; prove the general valued-field extension by the affine analytic comparison and proper descent (Temkin Facts 5.1.2.1–5.1.2.2, p. 34).
 
-*Needs:* §0.22 affine charts and properness; §0.20 coherent Čech comparison; AdicSpacesPartIII §R3.7 and §0.30 only for the strict comparison route. The general-valued proof uses neither that strict equivalence nor §1.4.
+*Needs:* §0.22 affine charts and properness; §0.20 coherent Čech comparison; AdicSpacesPartIII §R3.7, ClassicalAdicEtaleCohomology §3.1 and §0.30 only for the strict comparison route. The general-valued proof uses neither that strict equivalence nor §1.4.
 
 **Checks.**
 
@@ -686,17 +688,26 @@ For the construction, the spectral maximum and the inverse identity force x(z)=�
 
 ### 0.28 Normalized rank-one adic quotient
 
-Prove *adic rank one retraction*. Let A be a nonarchimedean Banach ring with a uniform topologically nilpotent unit z, A⁺ an open integrally closed subring of the power-bounded ring A°, and Spa(A,A⁺) the native adic spectrum. Normalization of rank-one valuations gives a section M(A)→Spa(A,A⁺); the existing analytic rank-one coarsening is shown to be the unique maximal generization, and the resulting map r:Spa(A,A⁺)→M(A) is a continuous retraction and the maximal Hausdorff quotient. The section is not asserted continuous.
+Construct the *uniform-unit spectrum comparison*. Let A be a complete nonarchimedean Banach ring with a uniform topologically nilpotent unit z, and let A⁺⊂A° be open and integrally closed in A. Put c=ρ(z)∈(0,1). Compare M(A) with DiamondsAndVStacks §D5.13’s continuous nonarchimedean spectrum normalized at z with value 1/2. Define θ:M(A)→BerkovichSpectrum(A,z) by θ(x)(a)=x(a)^s, where s=log(1/2)/log(c)>0; its inverse raises evaluations to t=log(c)/log(1/2). Prove that θ is a homeomorphism for the evaluation topologies (Kedlaya–Liu Definition 2.4.6, p. 40, together with the uniform-unit normalization of §0.27).
 
-Uniform unit, not merely arbitrary nonzero topologically nilpotent element. Use equivalence classes of valuations on Spa, normalized real seminorms on M(A). The plus ring is allowed to be smaller than A°; a complete Tate Huber pair with such a norm is included. The quotient is independent of A⁺, while Spa need not be. For a general complete Tate Huber pair, choose the z-adic Banach gauge from the uniform-unit hierarchy first. This is an existence statement for a suitable norm, not a retraction onto the spectrum for every compatible Banach norm.
+Provide the following interface:
 
-For the proof, start with the native support-preserving analytic rank-one coarsening, prove its uniqueness and maximality, and normalize via z and the infimum over comparisons of powers described in KL 2.4.6. Show the maximal generization is independent of z; rational encircling neighborhoods prove continuity and the Hausdorff universal property.
+- The comparison preserves evaluations with the specified exponent: θ(x)(a)=x(a)^s, including value zero; its inverse uses t and st=1.
+- The inverse seminorm is dominated by the specified Banach norm, and every point of M(A) has value c on z.
+- Transport the supplied quotient and section as r=θ⁻¹∘ofSpa:Spa(A,A⁺)→M(A) and toSpa∘θ:M(A)→Spa(A,A⁺). Thus r is the maximal Hausdorff quotient and their composite on M(A) is the identity; the section is only a map of sets.
+- The quotient agrees under the supplier’s change of pseudouniformizer and is independent of A⁺, although Spa can depend on A⁺.
 
-*Needs:* Tau Ceti `TauCeti.ValuationSpectrum.IsAnalyticPoint.exists_coarsenByUnits_mem_spaAnalytic`; [0.1 Berkovich spectrum](#01-berkovich-spectrum); [0.15 Completed residue fields](#015-completed-residue-fields); TauCetiRoadmap.AdicSpaces Layer 2; [0.27 Uniform units and trivial spectrum](#027-uniform-units-and-trivial-spectrum).
+For the comparison proof, use the uniform-unit identity to fix x(z)=c. Positive powers preserve nonarchimedean seminorms and continuity. Conversely the normalized continuous seminorm, rescaled to value c, is the representative selected by the uniform-unit formula in Kedlaya–Liu Definition 2.4.6; that formula gives domination for the specified norm. The reciprocal exponents give inverse continuous maps, coordinate by coordinate. Transport the unique maximal generization, section and Hausdorff universal property from DiamondsAndVStacks §D5.13. For a general complete Tate Huber pair, first use §0.27’s chosen z-adic gauge; this does not assert the comparison for every compatible Banach norm.
 
-[Kiran Kedlaya and Ruochuan Liu, Relative p-adic Hodge theory: Foundations](https://arxiv.org/abs/1301.0792), Definition 2.4.1 and Remark 2.4.4, pp. 37–39; Definitions 2.4.6, 2.4.8, p. 40. The normalization and maximal Hausdorff quotient work for the full adic Banach pair (A,A⁺), not only A⁺=A°. A uniform unit is the stated norm hypothesis.
+*Needs:* [0.1 Berkovich spectrum](#01-berkovich-spectrum); [0.27 Uniform units and trivial spectrum](#027-uniform-units-and-trivial-spectrum); DiamondsAndVStacks §D5.13; TauCetiRoadmap.AdicSpaces Layer 2.
 
-**Check.** Do not identify the whole Spa point set with M(A). Changing A⁺ can change the adic point set; for the fixed uniform-unit norm its maximal Hausdorff quotient is M(A). A claim with a merely topologically nilpotent element must not replace the uniform-unit hypothesis.
+[Kiran Kedlaya and Ruochuan Liu, Relative p-adic Hodge theory: Foundations](https://arxiv.org/abs/1301.0792), Definition 2.4.1 and Remark 2.4.4, pp. 38–39; Definition 2.4.6, p. 40. These fix the Banach-pair and uniform-unit conventions for comparison with the supplied Tate normalization.
+
+**Checks.**
+
+- On ℚ₃ with z=3 and c=1/3, θ sends the value 1/3 to 1/2; its inverse sends 1/2 to 1/3 with exponent log(3)/log(2). Leaving the exponent at one gives the wrong specified absolute value.
+- On z⁻¹ in the same field, the supplied value 2 becomes 3, and on zero both comparisons give zero. This tests the inverse exponent above one and the convention 0^t=0 for t>0.
+- In the strict closed disc over ℚ₃, the Gauss rank-one valuation and a proper rank-two specialization have the same quotient image; both give the specified values 1 on T and 1/3 on 3. Distinct adic points therefore need not be distinct points of M(A).
 
 Construct the *general Banach rational-domain comparison*. For a complete nonarchimedean Banach ring A with a uniform unit z, A⁺⊂A° as in §0.28, and a Huber rational datum (g,f₁,…,fₙ) generating an open ideal, import AdicSpaces §0.4 and Layer 3’s completed rational localization. Equip it with the separated quotient Gauss seminorm of A⟨T₁,…,Tₙ⟩/(gTᵢ−fᵢ), and complete. Restriction identifies its dominated spectrum homeomorphically with {x∈M(A):x(fᵢ)≤x(g) for all i}, including the induced topology and residue-field embeddings. The specified quotient norm, which may initially be a seminorm, is essential; no assertion for an arbitrary equivalent norm is made (Kedlaya–Liu Definition 2.4.8, p. 40).
 
@@ -724,19 +735,25 @@ For the proof, express normalized inequalities by rational comparisons, refine i
 
 ### 0.30 Strict Berkovich–adic equivalence
 
-Establish *global adic comparison*. Over a complete nontrivially valued rank-one field K, Hausdorff strictly K-analytic Berkovich spaces are equivalent to taut adic spaces locally of finite type over Spa(K,K°). On an affinoid Spa(A,A°), its maximal-point quotient is M(A), and each adic affinoid open Spa(A,A°) maps to the strictly affinoid domain M(A). Partially proper maps give boundaryless maps; proper maps give proper maps; étale maps give quasi-étale maps; smooth maps give quasi-smooth maps. For partially proper maps, adic étaleness is equivalent to Berkovich étaleness; partially proper smooth maps are Berkovich smooth. Quasi-étaleness alone is not declared étaleness.
+Construct the *strict analytic carrier comparison*. For complete nontrivially valued rank-one K, identify the Hausdorff strictly K-analytic specialization of §0.21 with ClassicalAdicEtaleCohomology §3.1’s strict analytic category. The comparison is the identity on each strict affinoid M(A), its bounded morphisms and analytic-domain identifications, and respects common atlas refinement. Transport the supplied equivalence with taut adic spaces locally of finite type over Spa(K,K°) through this identification (Temkin §§4.1.1–4.1.3, pp. 22–24; Zavyalov Definition A.6 and Lemma A.7, pp. 84–85).
 
-Hausdorff strict and taut locally finite-type hypotheses; arbitrary locally noetherian adic spaces and nonstrict Berkovich spaces are outside this equivalence.
+Provide the following interface:
 
-For the proof, glue the normalized affinoid comparison along domain intersections. Tautness gives the correct separated quotient topology. For morphisms use the reduction/germ criterion for absence of relative boundary, then the stated local étale and smooth comparisons. The categorical equivalence uses the gluing and morphism comparisons described below.
+- The comparison identifies strict affinoid charts, domain intersections, local morphisms and their glued structure sheaves.
+- The transported realization has underlying maximal-point quotient; Spa(A,A°) realizes as M(A), with the affinoid normalization of §0.28.
+- Transport the supplier’s morphism comparisons: partial properness implies absence of relative boundary, properness is preserved and reflected, and adic étale and smooth maps realize as quasi-étale and quasi-smooth maps. Partial properness upgrades these to étale and smooth maps, with the supplier’s equivalence for étale maps. The nonstrict, trivially valued and non-Hausdorff extensions remain in §0.21.
 
-*Needs:* [0.28 Normalized rank-one adic quotient](#028-normalized-rank-one-adic-quotient); [0.21 Analytic atlases and morphisms](#021-analytic-atlases-and-morphisms).
+For the comparison, match the two presentations of a strict affinoid domain and their bounded maps. Common domain refinements identify atlases and the sheaf equalizers identify the glued structure sheaves. This identifies the categories; apply the supplier’s equivalence and morphism results to this identification.
 
-[Bogdan Zavyalov, Mod-p Poincaré duality in p-adic analytic geometry](https://arxiv.org/pdf/2111.01830v3), Appendix A, Definitions A.5–A.6, Lemmas A.7–A.8, pp. 84–86. Equivalence and one-direction morphism comparisons; quasi-étale is retained rather than silently strengthened to étale. [Bogdan Zavyalov, Mod-p Poincaré duality in p-adic analytic geometry](https://arxiv.org/pdf/2111.01830v3), Corollary A.11, p. 86. The boundaryless hypothesis upgrades the quasi-étale/quasi-smooth implications.
+*Needs:* [0.21 Analytic atlases and morphisms](#021-analytic-atlases-and-morphisms); [0.28 Normalized rank-one adic quotient](#028-normalized-rank-one-adic-quotient); ClassicalAdicEtaleCohomology §3.1.
 
-**Check.** The inclusion of a strict closed subdisc in A¹ᵃⁿ is quasi-étale and has a relative boundary at its Gauss point. It is not Berkovich étale. This prevents upgrading the adic étale comparison without the boundaryless hypothesis.
+[Bogdan Zavyalov, Mod-p Poincaré duality in p-adic analytic geometry](https://arxiv.org/pdf/2111.01830v3), Appendix A, Definitions A.5–A.6, Lemmas A.7–A.8 and Corollary A.11, pp. 84–86. These describe the supplied strict correspondence and its boundary-sensitive morphism comparisons. Its Huber locators are Proposition 8.3.1 and Remark 8.3.2, pp. 422–425, Lemma 5.6.8(i), pp. 313–314 and Theorem 8.3.5, pp. 428–429 in Huber (1996), and Proposition 4.5(iv), p. 543 in Huber (1994).
 
-For the global equivalence, prove that the local correspondences preserve finite domain intersections and their analytic morphisms, then glue along these identifications. Establish tautness of the resulting adic atlas and identify the quotient topology with the given Hausdorff Berkovich topology; prove full faithfulness on overlaps as well as essential surjectivity. Use Huber (1996), Proposition 8.3.1, pp. 422–424 and Remark 8.3.2, pp. 424–425 for the comparison, Lemma 5.6.8(i), pp. 313–314 for passage of tautness between rigid and adic spaces, and Huber (1994), Proposition 4.5(iv), printed p. 543 for the equivalence of rigid spaces and the corresponding adic spaces. Properness of the comparison is a separate morphism assertion, supplied by Zavyalov Lemma A.8, pp. 85–86. Huber Theorem 8.3.5, pp. 428–429 is the subsequent sheaf comparison; the boundary and quasi-étale distinctions are Zavyalov Lemma A.8 and Corollary A.11, pp. 85–86. The strict adic correspondence is compatible with the already constructed analytification and its properness comparison; it is also used to identify the real quotient.
+**Checks.**
+
+- Spa(K,K°) corresponds to the one-point M(K) through both presentations; the identity map has empty relative boundary.
+- Spa(K⟨T⟩,K°⟨T⟩) corresponds to the same closed Berkovich unit disc in both presentations. Its structure map is quasi-smooth and retains its Gauss boundary, so it is not smooth in the boundaryless sense.
+- For a∈K with 0<|a|<1, the inclusion of the strict closed subdisc |T|≤|a| in A¹ᵃⁿ is quasi-étale with relative boundary ζ(0,|a|). It is not Berkovich étale; the corresponding adic open immersion is not partially proper.
 
 ### 0.31 Real quotient of analytic preadic spaces
 
@@ -772,7 +789,7 @@ For ℝ×ℝ the projection absolute values are distinct points, while the ambie
 
 ### Dependencies
 
-Mathlib multiplicative seminorms, normed rings, completions, product topology and compactness; Tau Ceti AdicSpaces Layer 2 and its rank-one generization theorem; RigidAnalyticGeometry Layer 5 for strict affinoid Čech acyclicity and AdicSpacesPartII §R1.3 for adic analytification. Hybrid scheme analytification and nonstrict descent are constructed in this layer.
+Mathlib multiplicative seminorms, normed rings, completions, product topology and compactness; Tau Ceti AdicSpaces Layer 2; DiamondsAndVStacks §D5.13 for the Tate-normalized rank-one quotient; ClassicalAdicEtaleCohomology §3.1 for the Hausdorff strict analytic category and taut-adic equivalence; RigidAnalyticGeometry Layer 5 for strict affinoid Čech acyclicity and AdicSpacesPartII §R1.3 for adic analytification. Hybrid scheme analytification and nonstrict descent are constructed in this layer.
 
 ## Layer 1: Discs, annuli and metric trees
 
@@ -975,9 +992,9 @@ Provide the following interface:
 
 **Checks.**
 
-- No annulus components implies Σ=V.
-- An intrinsic annulus-skeleton point is in Σ even when not in V.
-- A puncture is in the completed skeleton and is not in Σ.
+- For P¹ with only its Gauss vertex ζ(0,1), Σ is a singleton, since every complementary component is an open ball.
+- For P¹∖{0,∞} with its Gauss vertex, Σ has two puncture rays and is a real line in the coordinate −log|T|. Its closure adds 0 at +∞ and ∞ at −∞.
+- For a split Tate curve with parameter 0<|q|<1, a vertex and its complementary annulus form a loop of length −log|q|; the two annular ends attach to the same vertex, so the result is a circle.
 
 For the construction, take the union in the analytic point space using Layer 1 annulus skeleta. Define the completed-skeleton accessor by closure; equality with Σ union D is proved separately.
 
@@ -1050,9 +1067,9 @@ Provide the following interface:
 
 **Checks.**
 
-- τ_V(v)=v for a vertex.
-- An edge-interior point is fixed rather than rounded to a vertex.
-- Two points in one off-skeleton ball have the same image.
+- On P¹ with only its Gauss vertex, the classical points 0 and 1 lie in distinct residue balls but both retract to ζ(0,1).
+- In a complementary annulus A(r,R), a classical point a with r<|a|<R retracts to ζ(0,|a|), of coordinate −log|a|, even when that radius is not a vertex radius.
+- For w=ζ(0,r) with r∈|K×| and 0<r<1, the vertex set {ζ(0,1),w} on P¹ gives τ(w)=w, while the coarser set {ζ(0,1)} gives τ(w)=ζ(0,1). Thus refinement changes the retraction.
 
 For the construction, use the unique boundary supplied by skeleton-complement-balls, and the identity on Σ.
 
@@ -1060,7 +1077,7 @@ For the construction, use the unique boundary supplied by skeleton-complement-ba
 
 [Matthew Baker, Sam Payne, Joseph Rabinoff, On the structure of non-archimedean analytic curves](https://sites.lsa.umich.edu/sdpayne/wp-content/uploads/sites/1450/2025/08/StructureOfNonarchimedeanCurves.pdf?download=1), Definition 3.7, printed p. 103. The corresponding arXiv numbering is the same.
 
-**Check.** An edge-interior point is fixed.
+**Check.** On P¹ with vertices ζ(0,r) and ζ(0,1), 0<r<1, the interior point ζ(0,√r) is fixed at coordinate −log(r)/2, rather than rounded to either endpoint.
 
 ### 2.8 Continuity of skeletal retraction
 
@@ -1590,6 +1607,26 @@ Provide the following interface:
 
 For the construction, characters are invertible analytic functions, so logarithmic evaluation is well-defined and continuous. Pullback of characters proves functoriality; surjective spectral base change proves invariance. General-field toric scheme interfaces require gap:general-field-toric-schemes.
 
+Construct the *extended tropicalization*. Let Δ be a rational fan of strongly convex cones in the finite-rank lattice N, and let Y_Δ be its split toric K-scheme. For σ∈Δ put S_σ=σ∨∩M and N_ℝ(σ)=Hom_mon(S_σ,ℝ∪{∞}), where homomorphisms preserve addition and zero, ∞ is absorbing for addition, and ℝ∪{∞} has the order topology of ℝ∪{+∞}. Give N_ℝ(σ) the topology of pointwise convergence. For a face τ≼σ, localization of S_σ gives the open inclusion N_ℝ(τ)→N_ℝ(σ). Glue these charts to N_ℝ(Δ). On Y_σᵃⁿ define trop(x)(u)=−log|χᵘ(x)|, with −log 0=∞ (BPR tropicalization §4.2, p. 14).
+
+Provide the following interface:
+
+- The chart maps glue to a continuous, proper, surjective map trop:Y_Δᵃⁿ→N_ℝ(Δ). Here proper means that inverse images of compact subsets are compact. This holds over every complete nonarchimedean K, including trivially valued K.
+- For nonempty Δ, N_ℝ is open and dense in N_ℝ(Δ), and restriction to Tᵃⁿ is the torus tropicalization. The stratum for the orbit of σ is N_ℝ/span_ℝ(σ).
+- For a toric morphism f:Y_Δ→Y_Δ′ with lattice map F, precomposition by F* on the character monoids gives a continuous map F_trop:N_ℝ(Δ)→N_ℝ(Δ′), integral linear on each orbit stratum, with trop∘fᵃⁿ=F_trop∘trop. Identity and composition agree with those of the lattice maps.
+
+For the construction, use face localization to compare the formulas on chart overlaps. A monoid point w has a weighted Gauss lift: on K[S_σ], assign Σa_uχᵘ the seminorm max_u |a_u|exp(−w(u)), with exp(−∞)=0. Its finite face determines the torus orbit and the remaining weights give a multiplicative Gauss seminorm on that orbit, so this lift proves surjectivity even for trivially valued K. In finitely many monoid generators, compact target sets have finite lower coordinate bounds; their inverse images are closed in a weighted affinoid domain and hence compact. The monoid charts are locally compact Hausdorff spaces, since finitely many generators present them as closed relation loci in products of ℝ∪{+∞}. The fan intersection property makes the glued target Hausdorff. Shrinking chart neighborhoods covers any compact set by finitely many compact subsets of charts, which proves global properness. Precomposition proves toric functoriality. The full monoid maps and zero-preserving condition exclude constant-∞ functions. BPR §4.2, p. 14 states the construction over algebraically closed nontrivially valued K; the weighted Gauss lift and arbitrary-radius affinoid compactness of §§0.17–0.18 give the stated general-field extension.
+
+**Checks.**
+
+- For Δ={0}, S₀=M and every monoid map is finite, since w(u)+w(−u)=w(0)=0. Thus N_ℝ(Δ)=N_ℝ and the map is exactly the torus map. If N=0 it is a map between one-point spaces; for the empty fan both glued spaces are empty and no dense torus inclusion is asserted.
+- For A¹, N_ℝ(Δ)=ℝ∪{+∞}; the origin maps to +∞ and ζ(0,1) to 0. The map T↦T² sends a finite coordinate w to 2w and +∞ to +∞, fixing the sign and the boundary convention.
+- For P¹, N_ℝ(Δ)=[−∞,+∞] is compact; 0 maps to +∞ and ∞ to −∞ because the second chart uses T⁻¹. For the single ray ℝ≥0·(1,0) in ℝ², the space is (ℝ∪{+∞})×ℝ, with no infinite second coordinate; adding endpoints in every direction would be wrong.
+
+*Needs:* [0.22 Berkovich analytification](#022-berkovich-analytification); [0.17 Affinoid algebras over valued fields](#017-affinoid-algebras-over-valued-fields); AnalyticToricGeometry Layer 0 and gap:general-field-toric-schemes for Y_Δ, face/orbit charts and toric morphisms.
+
+[Matthew Baker, Sam Payne, Joseph Rabinoff, Nonarchimedean geometry, tropicalization, and metrics on curves](https://arxiv.org/abs/1104.0320), §4.2, p. 14. The monoid charts, open face gluing, extended map and dense torus stratum specify the analytic construction used in Layer 5.
+
 *Needs:* [0.22 Berkovich analytification](#022-berkovich-analytification); [0.18 Valued base change of spectra](#018-valued-base-change-of-spectra); AnalyticToricGeometry Layer 0 and gap:general-field-toric-schemes.
 
 [Walter Gubler, A guide to tropicalizations](https://gubler.app.uni-regensburg.de/Publikationen/1108.6126.pdf), §2.1, p. 3; Definition 3.2 and Propositions 3.6–3.7, p. 7. Seminorm tropicalization, field-extension invariance and classical-point closure after algebraically closed nontrivial extension.
@@ -1767,7 +1804,7 @@ For the proof, at each value-group-rational tropical point, multiplicity one for
 
 ### 5.2 Faithful tropicalization on a graph
 
-Define *faithful embedding predicate*. For a closed algebraic embedding ι:X→Y_Δ into a toric variety, faithful tropicalization on a finite embedded graph Γ⊂H°(Xᵃⁿ) means trop_ι|Γ is a homeomorphism onto its image and an isometry for Γ’s intrinsic path metric and the tropical lattice-length metric. On each noncontracted edge the expansion factor is the gcd of the absolute coordinates of its integral slope vector; being one is necessary for edgewise isometry but does not by itself imply global injectivity or correct vertex gluing.
+Define *faithful embedding predicate*. For a closed algebraic embedding ι:X→Y_Δ into a toric variety, faithful tropicalization on a finite embedded graph Γ⊂H°(Xᵃⁿ) means trop_ι|Γ, where trop_ι is §4.1’s extended tropicalization composed with ιᵃⁿ, is a homeomorphism onto its image and an isometry for Γ’s intrinsic path metric and the tropical lattice-length metric. On each noncontracted edge the expansion factor is the gcd of the absolute coordinates of its integral slope vector; being one is necessary for edgewise isometry but does not by itself imply global injectivity or correct vertex gluing.
 
 K algebraically closed complete nontrivial; X smooth connected curve; subdivide at finitely many tropical breakpoints.
 
@@ -1832,13 +1869,13 @@ For the proof, extend each separating rational function on the smooth proper com
 
 ### 5.6 Faithful tropicalization of marked rays
 
-Prove *puncture ray faithfulness*. For X= X̄\D with finite marked punctures, choose a semistable extended skeleton and a toric embedding that sends each puncture to the toric boundary. A dominating toric embedding can be made faithful on the entire extended skeleton, including infinite tails. At each puncture use two rational functions with coprime pole orders larger than 2g to force gcd-one expansion on the eventual ray, then refine the remaining compact part.
+Prove *puncture ray faithfulness*. For X= X̄\D with finite marked punctures, choose a semistable extended skeleton and a toric embedding that sends each puncture to the toric boundary. Using §4.1’s extended tropicalization on the toric boundary, a dominating toric embedding can be made faithful on the entire extended skeleton, including infinite tails. At each puncture use two rational functions with coprime pole orders larger than 2g to force gcd-one expansion on the eventual ray, then refine the remaining compact part.
 
 K algebraically closed complete nontrivial; smooth proper completion and distinct split marked points.
 
 For the proof, Riemann–Roch produces functions with the two prescribed sufficiently large pole orders at each mark; their eventual slopes have gcd one. Outside finitely long initial segments they separate the labeled rays; apply compact-graph faithful refinement to the remaining core.
 
-*Needs:* [2.15 Marked skeleta and puncture rays](#215-marked-skeleta-and-puncture-rays); [5.3 Functions separating edges and vertices](#53-functions-separating-edges-and-vertices).
+*Needs:* [2.15 Marked skeleta and puncture rays](#215-marked-skeleta-and-puncture-rays); [5.3 Functions separating edges and vertices](#53-functions-separating-edges-and-vertices); §4.1 extended tropicalization for the toric boundary.
 
 [Matthew Baker, Sam Payne, Joseph Rabinoff, Nonarchimedean geometry, tropicalization, and metrics on curves](https://arxiv.org/abs/1104.0320), Theorem 5.22 and proof, pp. 26–27. Coprime pole orders repair the unbounded tails as well as the finite graph.
 

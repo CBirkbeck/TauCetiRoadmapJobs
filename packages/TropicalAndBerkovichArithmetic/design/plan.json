@@ -2,7 +2,7 @@
   "gaps": [
     {
       "slug": "general-field-toric-schemes",
-      "needs": "For every field K and rational fan, supply toric schemes glued from Spec K[σ∨∩M], the dense torus, face/orbit charts, toric morphisms, equivariant products and the closed-graph domination of toric embeddings needed in §§4.1–4.4 and §§5.2–5.6; include extended tropicalization on all orbit charts and compatibility with toric maps.",
+      "needs": "For every field K and rational fan, supply toric schemes glued from Spec K[σ∨∩M], the dense torus, face/orbit charts, toric morphisms, equivariant products and the closed-graph domination of toric embeddings needed in §§4.1–4.4 and §§5.2–5.6.",
       "supplier": "AnalyticToricGeometry",
       "section": "Layer 0"
     },
