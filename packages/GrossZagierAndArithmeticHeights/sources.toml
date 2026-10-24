@@ -494,15 +494,16 @@ cited_for = ["6.38", "6.39", "7.4", "7.5", "7.47", "8.1", "Dependencies"]
 
 [[source]]
 id = "argos"
-authors = "Siegfried Bosch, Werner Lütkebohmert and Michel Raynaud"
-title = "Néron Models"
+authors = "ARGOS seminar contributors"
+title = "ARGOS seminar on intersections of modular correspondences"
 year = 2007
 locator_scheme = "theorem"
-locator = "§7.5 Theorem 4, pp. 186–188"
-url = "https://doi.org/10.1007/978-3-642-51438-8"
+locator = "Meusers, Chapter 9 §2 Proposition 2.1, p. 102, §3 Propositions 3.4–3.5, pp. 104–105; Wewers, Chapter 8 §1 Theorem 1.4, p. 79, §3 Theorem 3.2, p. 84; Vollaard, Chapter 11 §2 Theorems 2.1 and 2.3, pp. 114–115"
+url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/argos.pdf"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
+version_note = "cited by its locator without the text"
+cited_for = ["7.1", "7.2"]
 
 [[source]]
 id = "prasanna"
