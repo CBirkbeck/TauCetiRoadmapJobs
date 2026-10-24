@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v2"
-cited_for = ["3.1 Coleman's p-adic dilogarithm on a finite étale Q_p-algebra", "3.2 Frobenius and extension-of-scalars squares for the p-adic dilogarithm", "3.3 The combined p-adic dilogarithm of a number field", "3.4 Dictionary of dilogarithm and regulator normalisations", "3.6 The logarithm takes norms to traces", "4.1 Besser's syntomic regulator", "4.3 Besser–de Jeu: the weight-two regulator is Coleman's dilogarithm on special units", "4.4 Besser–de Jeu: the syntomic regulator in higher weight", "4.5 Gros's normalisation of the syntomic regulator", "6.2 The global regulator on special-unit presentations", "7.1 The weight-two syntomic target of a curve and its two identifications", "7.3 The degree-two syntomic regulator of a curve"]
+cited_for = ["3.1 Coleman's p-adic dilogarithm on a finite étale Q_p-algebra", "3.2 Frobenius and extension-of-scalars squares for the p-adic dilogarithm", "3.3 The combined p-adic dilogarithm of a number field", "3.4 Dictionary of dilogarithm and regulator normalisations", "3.6 The logarithm takes norms to traces", "4.1 Besser's syntomic regulator", "4.3 Bloch–Kato comparison on the supplied weight-two symbols", "4.4 Higher-weight comparison with the supplied symbol regulator", "4.5 Bloch–Kato comparison with the supplied Gros normalization", "6.2 The global regulator on special-unit presentations", "7.1 The weight-two syntomic target of a curve and its two identifications", "7.3 The degree-two syntomic regulator of a curve"]
 
 [[source]]
 id = "HK2011"
@@ -243,7 +243,7 @@ cited_for = ["1.8 The Bloch–Kato conditions for Tate twists", "1.11 Semilocal 
 [[source]]
 id = "BNQD2002"
 locator_scheme = "section"
-locator = "§1.3, p. 647.; §1.3, p. 646.; §2.2.2–§2.3.2, pp. 649–652, as well as its index formula. At the first cyclotomic level the trace of Ξᵣ,₁(a(1+X)) is; Lemme 1.3.2, p. 647; Théorème 2.1, p. 648; Lemme 1.3.2, p. 647."
+locator = "§1.3, pp. 646–647; Lemme 1.3.2, p. 647; Théorème 2.1, p. 648; §2.2.2–§2.3.2, pp. 649–652"
 url = "https://www.numdam.org/item/ASENS_2002_4_35_5_641_0.pdf"
 fetched_from = "https://www.numdam.org/item/ASENS_2002_4_35_5_641_0.pdf"
 fetched_at = "2026-10-22T21:23:56Z"
@@ -276,9 +276,9 @@ cited_for = ["1.5 Dimensions of the Bloch–Kato subspaces"]
 
 [[source]]
 id = "AM18"
-authors = "Masanori Asakura, Kei Miyatani"
+authors = "Masanori Asakura, Kazuaki Miyatani"
 title = "F-isocrystal and syntomic regulators via hypergeometric functions"
-year = 1993
+year = 2018
 arxiv = "1711.08854v2"
 locator_scheme = "section"
 locator = "Proposition 6.4, p. 34; Theorem 9.1, p. 45"
@@ -289,14 +289,14 @@ sha256 = "01977b3a9d6a821308964859f73eaf444ed8a8847e9c77d70bd4cf1f2371fd53"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
-version_note = "arXiv v2"
+version_note = "arXiv 1711.08854v2, 8 April 2018; the internal date November 1, 2021 is inconsistent with this version header"
 cited_for = ["7.3 The degree-two syntomic regulator of a curve", "7.4 Besser's Coleman-integral formula for the regulator of a symbol"]
 
 [[source]]
 id = "AC20"
 authors = "Masanori Asakura, Masataka Chida (Appendix B by François Brunault)"
 title = "A numerical approach toward the p-adic Beilinson conjecture for elliptic curves over Q"
-year = 2003
+year = 2020
 arxiv = "2003.08888v2"
 locator_scheme = "section"
 locator = "Footnote 4, p. 43"
@@ -475,7 +475,7 @@ title = "Toric regulators"
 year = 2019
 arxiv = "1910.06877v1"
 locator_scheme = "section"
-locator = ". Those targets pair the continuous component with ker N and determine its class modulo im N; §3, equations (3.1)–(3.5), pp. 10–11"
+locator = "§3, equations (3.1)–(3.5), pp. 10–11; Theorem 4.7 and proof, pp. 19–20"
 url = "https://arxiv.org/abs/1910.06877v1"
 fetched_from = "https://arxiv.org/pdf/1910.06877v1"
 fetched_at = "2026-10-22T21:29:09Z"
@@ -489,7 +489,7 @@ cited_for = ["7.7 What bad or semistable reduction requires beyond good reductio
 [[source]]
 id = "WeibelChern"
 locator_scheme = "section"
-locator = "Proposition 5.1, p.24 distinguishes the ordinary Chern operation from the edge."
+locator = "Proposition 5.1, p. 24"
 url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
 fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/chernclass.pdf"
 fetched_at = "2026-10-22T21:29:15Z"
@@ -505,7 +505,7 @@ year = "undated author manuscript"
 [[source]]
 id = "FO"
 locator_scheme = "section"
-locator = "Theorem 7.26(3), Theorem 7.28(4), Remark 7.29, printed pp.169–171; extracted lines 6878,6926,6947"
+locator = "Theorem 7.26(3), Theorem 7.28(4), Remark 7.29, printed pp.169–171"
 url = "http://staff.ustc.edu.cn/~yiouyang/galoisrep.pdf"
 fetched_from = "http://staff.ustc.edu.cn/~yiouyang/galoisrep.pdf"
 fetched_at = "2026-10-22T21:29:59Z"
