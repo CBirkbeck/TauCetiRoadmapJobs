@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2875 mistakes recorded on the board: 1912 misprints, 729 errors, 206 gaps, 28 unparsed bullets.
-Errata jobs have read the cited sources of 36 roadmaps; in those of 2 they found no mistake.
+2886 mistakes recorded on the board: 1917 misprints, 735 errors, 206 gaps, 28 unparsed bullets.
+Errata jobs have read the cited sources of 37 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -1622,6 +1622,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Definition 1.2, printed p. 456 (FujinoHigher line 124): the source says a canonical divisor comes from a regular top form on the regular locus; it should be a nonzero rational top form; on P¹, dt has divisor −2[∞], and no nonzero global regular differential exists; affects a stated result. Found by AbundanceStatement (ERRATA-AbundanceStatement at b042ecc, 2026-10-24, codex gpt-6-astra).
 
+## FW
+
+- **Error** at proof of Lemma 3.13, p.26 (FW lines 1497–1499): the source says lifting a nonidentity residual unipotent gives a rank-one kernel; it should be required to choose genuine characteristic-zero unipotence with primitive image; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 3.13, p.26 (FW lines 1504–1510): the source says a cone on fraction-field representations has the displayed integral torsion cohomology; it should be an integral cone, or its displayed cohomology should be tensored with the fraction field; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+
 ## fyz
 
 - **Error** at Remark 2.1, printed pp. 8–9, fyz line 383: the source says every quadratic cover admits the required everywhere-unramified inducing character, including odd rank; it should be existence exactly when the quadratic character's nth power kills the Picard-pullback kernel; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
@@ -1882,6 +1887,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Henk, Successive minima and lattice points, arXiv:math/0204158v1
 
 - **Misprint** at p. 2: the source says a ceiling bracket there that the review confirms is a misprint; it should be as the witness in the cited review requires; affects nothing. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Hida
+
+- **Error** at Lemma 3.17, p.95 (Hida lines 2555–2565): the source says the specified pairwise and first-coordinate projections force N=A^m; it should be allowed that N is a proper graph hyperplane, as the 𝔽₅ example above demonstrates; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+
+## HidaAdd
+
+- **Misprint** at Lemma 0.2, p.1 (HidaAdd line 19): the source says the coordinate submodule N′ embeds in N; it should be embedded in A^m before intersecting with N; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Error** at Lemma 0.2, p.1 (HidaAdd lines 13–20): the source says every proper N has an intersection satisfying the same projection hypotheses in one fewer coordinate; it should be allowed that this intersection loses pairwise surjectivity, as the graph-plane example shows; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 0.2, p.1 (HidaAdd line 25): the source says preservation of surjections by tensor product is left exactness; it should be right exactness; affects nothing; The SW corrections and the genuine-unipotence safeguard are already in the repaired package. The Hida issues concern the downstream background citation, not an additional proof input to this package's targets. <!-- tauceti-roadmap-review {"agent": "codex", "head": "e1ec38a2cc28f046cc9bba1e9c616c3052f6160a", "job": "RT-ModularIwasawaMainConjectures~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 
 ## Hirsch
 
@@ -2715,6 +2730,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §4, proof of Theorem3, preprint p.16, line852: the source says ν∞⁺(2^α) vanishes for all α≥4; it should be its product with ν∞⁺(N) vanishes, while ν∞⁺(16)=1; affects nothing. Found by EllipticCurveModularityPartII (#134 at add3164, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §4, proof of Theorem3, preprint p.16, line858: the source says the final factor is 2^(α−4); it should be 2^(α−5), as in Theorem3, giving dimension1 at level48 and weight2; affects nothing. Found by EllipticCurveModularityPartII (#134 at add3164, 2026-10-23, codex gpt-6-astra).
+
+## Mathlib
+
+- **Error** at Jordan module overview, prime-cycle TODO, unpaginated (Mathlib line 42 through line 44): the source says every primitive permutation group containing a prime-length cycle contains the alternating group; it should be restricted to p + 3 ≤ n (C₅ on five points is primitive but has order 5 < 60 = |A₅|); affects a stated result. Found by CertifiedPermutationComputation (ERRATA-CertifiedPermutationComputation at 6a9ba06, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Jordan module overview, swap-theorem cross-reference, unpaginated (Mathlib line 32): the source says the swap theorem is named `Equiv.Perm.eq_top_of_isPreprimitive_of_isSwap_mem`; it should be `Equiv.Perm.subgroup_eq_top_of_isPreprimitive_of_isSwap_mem`, matching Mathlib line 374; affects nothing. Found by CertifiedPermutationComputation (ERRATA-CertifiedPermutationComputation at 6a9ba06, 2026-10-24, codex gpt-6-astra).
 
 ## Matomäki–Radziwiłł, Multiplicative functions in short intervals, arXiv:1501.04585v4
 
@@ -4089,6 +4109,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Sun, A generalization of Gauss–Kuzmin–Lévy theorem, arXiv:1705.02921v2
 
 - **Error** at proof of Theorem 2, pp.3–6: the source says a signed derivative contribution of the transfer branches serves as if it were an absolute bound; it should be a bound by absolute coefficients (at a=2, x=1 the branch derivative is −1/72); affects the proof. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## SW
+
+- **Misprint** at equation (4.1), p.1770 (SW lines 763–766): the source says the expanded quadratic coefficient is −a/b; it should be +a/b to agree with the adjacent exponential formula and e₂=−12a/b; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4.1, p.1770 (SW line 758): the source says Katz's E₂ equals −12a/b; it should be b₂−12a/b, with −12a/b the corrected coefficient E₂−b₂; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Error** at §4.2, p.1771 (SW lines 807–817): the source says the weight-two Eisenstein value scales by C² when the differential pulls back by C; it should be C⁻² times the Tate value; affects a stated result. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 
 ## Szego
 
