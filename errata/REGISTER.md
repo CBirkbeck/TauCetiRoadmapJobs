@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4675 mistakes recorded on the board: 3121 misprints, 1181 errors, 311 gaps, 62 unparsed bullets.
+4681 mistakes recorded on the board: 3124 misprints, 1181 errors, 314 gaps, 62 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2251,6 +2251,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## dit
 
 - **Error** at Theorem 4, printed pp.965–966, dit lines 669–695: the source says the nonzero normalized half-weight vector is unique; it should be determined only up to sign by the displayed coefficient products; affects a stated result. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
+
+## DIT16
+
+- **Gap** at Lemma 2 and its proof, p.972: the source says the identity follows by letting Y→∞ under the flux condition alone; it should be a proof that the truncated area integrals converge, with s(1−s)=0 treated separately; affects the proof. Found by FuchsianOrbifoldsPartII (#1236 at 4be8459, 2026-10-24, claude opus).
+- **Gap** at the proof of Theorem 1, last paragraph, p.959: the source says distances between chosen successive elliptic lifts are conformal invariants; it should be an argument that first lifts and normalizes the equivalence, since for ℓ=1 both lifts are one cone point; affects the proof. Found by FuchsianOrbifoldsPartII (#1236 at 4be8459, 2026-10-24, claude opus).
+- **Gap** at the proof of Theorem 1, p.958: the source says the arc from z to γ(z) meets the next circle because of where the complete axis ends; it should be a justification that the finite subarc reaches the circle, whose meeting point for ℓ=1 is γ(z) itself; affects the proof. Found by FuchsianOrbifoldsPartII (#1236 at 4be8459, 2026-10-24, claude opus).
+- **Misprint** at §2, Nielsen-region paragraph, p.952: the source says the region lies above the geodesics over the complementary intervals; it should be the side away from each interval, which differs for an interval through ∞; affects nothing. Found by FuchsianOrbifoldsPartII (#1236 at 4be8459, 2026-10-24, claude opus).
+- **Misprint** at §5, the display after (5.2), p.961: the source says the Laplacian has the factor y to the power −2; it should be −y²(∂x²+∂y²), as in (7.10) on p.972; affects nothing. Found by FuchsianOrbifoldsPartII (#1236 at 4be8459, 2026-10-24, claude opus).
 
 ## dky
 
@@ -5526,6 +5534,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §4, footnote 1, p. 144 (Segal line 632): the source says every compact group with a dense cyclic subgroup is a torus times a finite cyclic group; it should be restrict that characterization to compact Lie groups; the additive p-adic integers are a counterexample without this restriction; affects a stated result. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
 - **Gap** at §5, deduction after Proposition 5.1, p. 146 (Segal line 700): the source says localizing the infinite product of orbit representation rings gives zero when each factor localizes to zero; it should be obtain finitely many local annihilators using continuity and compactness, multiply them, and apply Proposition 5.1; localization need not commute with infinite products; affects the proof. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
 - **Error** at §5, definition before Proposition 5.4, p. 147 (Segal line 732): the source says local equivariant contractibility at points is equivalent to local equivariant deformation retraction onto orbits for compact G; it should be require G Lie for this equivalence; translation on G=(S¹)^ℕ satisfies the orbit condition but the underlying space is not locally contractible; affects a stated result. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
+
+## SERIES05
+
+- **Misprint** at the Fuchsian paragraph after Proposition 4.60, p.33: the source says geometric finiteness is equivalent to finite area of the Nielsen region; it should be the region's quotient by the group; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "4be8459", "job": "REV-PKG-FuchsianOrbifoldsPartII", "model": "opus", "worker": "fable-rev70"} -->. Found by FuchsianOrbifoldsPartII (#1236 at 4be8459, 2026-10-24, claude opus).
 
 ## Serre, Sur les représentations modulaires de degré 2 de Gal(Q̄/Q) (1987)
 
