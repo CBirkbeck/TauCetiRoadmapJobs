@@ -2,8 +2,8 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4466 mistakes recorded on the board: 3000 misprints, 1118 errors, 294 gaps, 54 unparsed bullets.
-Errata jobs have read the cited sources of 56 roadmaps; in those of 2 they found no mistake.
+4482 mistakes recorded on the board: 3013 misprints, 1121 errors, 294 gaps, 54 unparsed bullets.
+Errata jobs have read the cited sources of 57 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
 ## (source not named)
@@ -540,6 +540,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §1, p. 295, the explanation of cospectral vertices (Bachman-et-al line 120): the source says cospectral vertices have isomorphic vertex-deleted graphs; it should be vertex-deleted graphs with identical adjacency characteristic polynomials; isomorphism is a stronger condition; affects a stated result. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
 - **Gap** at §1, pp. 294–295, the reduction from equation (3) to (6) (Bachman-et-al line 65; Bachman-et-al line 92): the source says unit-modulus single-excitation transfer suffices for exact transfer of an arbitrary qubit superposition; it should be include a receiver phase correction: for K₂ at π/2, the superposition with equal coefficients acquires relative phase −i, violating (3); affects the proof. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §5, p. 304, equation (27), and Lemma 3, p. 306 (Bachman-et-al line 644; Bachman-et-al line 736): the source says the symmetrizer sums Pα while its permutation index is σ and α is undefined; it should be Pσ in both occurrences; affects nothing. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
+
+## Baez
+
+- **Misprint** at §2.2, Cayley–Dickson sequence, p. 155 (Baez line 473): the source says the Cayley–Dickson sequence orders the quaternions before the complex numbers; it should be R, C, H, O; affects nothing. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Error** at §2.2, sedenions paragraph, p. 155 (Baez lines 470–471): the source says norm-one sedenion zero divisors form G₂; it should be V₂(R⁷), of dimension eleven; G₂ instead parametrizes ordered pairs of unit sedenions whose product vanishes (Moreno lines 31–37); affects a stated result. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3.4, determinant display, p. 182 (Baez line 1663): the source says the mixed determinant term is 2 Re(xyz) for the displayed Hermitian matrix; it should be 2 Re(xyz*), consistent with its trace identity; affects a stated result. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §3.4, polarization of the determinant, p. 182 (Baez lines 1672–1675): the source says a cubic determinant determines a unique trilinear form by its diagonal values; it should be a unique symmetric trilinear form; adding a nonzero alternating form otherwise preserves every diagonal value; affects a stated result; corrected in print at Baez's 2005 erratum, p. 213, correction to p. 182. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
 
 ## baker-norine
 
@@ -2502,6 +2509,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Theorem 3.2, the PBW growth estimate, pp. 8–11 (argument at arXiv line 537): the source says the estimate across the whole weight strip, but the argument proves it only for k≥α; it should be supplemented by an argument covering the remaining weights of the strip; affects the proof. Found by  (#241 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at Theorem 5.1 (arXiv lines 782–785): the source says Theorem 5.1 for weights λ beyond those its argument covers; at p=3, λ=1 the quantity 2λ+1=3 is not a square in ℚ₃; it should be restricted to induced weights λ, for which the relevant value is (μ+1)²; affects a stated result. Found by  (#241 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Fuehring
+
+- **Misprint** at §3, definition of a Thom class, p. 360 (Fuehring line 253): the source says X⁰(Σ∞S⁰) is the entire graded group π*(X); it should be π₀(X); the restricted Thom class is a degree-zero unit generating π*(X) as a module; affects nothing. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, Lemma 4.3 and its proof, p. 367 (Fuehring lines 562, 587): the source says two classifying spaces themselves equal polynomial cohomology rings; it should be their mod-two cohomology rings, inserting H* on both left-hand sides; affects nothing. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §4, proof of Lemma 4.3, p. 367 (Fuehring lines 569–580): the source says the displayed complement in u(3) has positive conjugates in its bottom row; it should be negative conjugates, so the matrices are skew-Hermitian; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Error** at §6, preliminary reduction before Proposition 6.3, p. 373 (Fuehring lines 830–843): the source says virtual-bundle inversion induces a ring-spectrum equivalence MSO→MSO replacing −τ by τ; it should be a cohomology-level argument: such a spectrum map contradicts Sq⁴U=w₄U, since inversion sends w₄ to w₄+w₂²; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §6, proof of Proposition 6.4 after Lemma 6.7, p. 377 (Fuehring lines 1066–1068): the source says s_(p,p) is half of s_(2p)−s_p²; it should be half of s_p²−s_(2p), as two variables already show; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Error** at §8, Proposition 8.2, p. 381 (Fuehring line 1219): the source says the n classes PE_r generate the entire group Ω₄ₙ/Tor₄ₙ; it should be the indecomposable quotient; at n=4 the full group has rank five, exceeding the four proposed generators; affects a stated result. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at §8, proof of Lemma 8.4, p. 384 (Fuehring line 1392): the source says the gcd does not divide p; it should be p does not divide the gcd, which is what the preceding calculation proves; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+
 ## FujinoHigher
 
 - **Misprint** at Definition 1.2, printed p. 456 (FujinoHigher line 124): the source says a canonical divisor comes from a regular top form on the regular locus; it should be a nonzero rational top form; on P¹, dt has divisor −2[∞], and no nonzero global regular differential exists; affects a stated result. Found by AbundanceStatement (ERRATA-AbundanceStatement at b042ecc, 2026-10-24, codex gpt-6-astra).
@@ -3896,6 +3913,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at the proof of Lemma 3.1.17, p.169: the source says the source deduces a limit from convergence in a non-complete τ-topology; it should be prove p-adic completeness and logarithmic tail convergence; affects the proof; corrected in print at KPZ §7.3.1(2), p.86. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 - **Error** at the proof of Theorem 4.2.7, p.186: the source says the source calls the frame-to-filtration map a torsor; it should be the smooth action morphism; affects the proof; corrected in print at KPZ §7.3.1(1), p.85. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
 
+## KreckStolz
+
+- **Misprint** at §4, proof of Proposition 4.2 after (4.5), p. 245 (KreckStolz line 524): the source says the argument excludes p from the gcd whenever q ≥ 1; it should be q > 1, as the immediately following parenthesis acknowledges; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+
 ## Kriz–May
 
 - **Misprint** at V.§9, proof of Lemma 9.3, printed p. 136 (Kriz–May printed version line 4722): the source says τσ₁ acts on L(1), while σ₁τ acts on L(2), throughout the homotopy calculation; it should be σ₁τ on L(1) and τσ₁ on L(2), with every corresponding composite corrected; affects the proof. Found by TopologicalKTheory (ERRATA-TopologicalKTheory at 7575afa, 2026-10-24, codex gpt-6-astra).
@@ -4390,6 +4411,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 24.2 proof, p. 135 (MilnorMorse line 23127): the source says the scalar spectrum of K_A is called its nonzero eigenvectors; it should be amended to call these numbers eigenvalues; affects nothing. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Lemma 24.6(3) proof, p. 139 (MilnorMorse line 23975): the source says the converse splitting uses H⁴ᵏ despite n=16r; it should be amended to use H⁴ʳ; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
+
+## MilnorStasheff
+
+- **Misprint** at §16, discussion before Symmetric Functions, p. 186 (MilnorStasheff lines 4448–4450): the source says CP^(2n+1) is a circle bundle over quaternionic projective space; it should be an S²-bundle over HP^n, bounding the associated D³-bundle; the real dimensions differ by two; affects a stated result. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
 
 ## Montgomery1987
 
@@ -6036,6 +6061,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §7.9, pp. 131–133 (contraction Λ^j→Λ^(j−2) for the symplectic Cartan product): the source says a binomial coefficient with lower index 2j−2; it should be j−2, which gives the correct dimensions (C(2n,2)−1 for the second fundamental representation); affects nothing. Found by  (#130 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## Stong
+
+- **Misprint** at Chapter IX, proof of surjectivity of γ, p. 180 (scan page 187): the source says γ has finite primary kernels, and concludes that γ is surjective; it should be cokernels in both occurrences; the previous proposition gives an odd-order cokernel, while the factorization gives a two-primary cokernel; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+- **Misprint** at Chapter XI, Anderson–Brown–Peterson theorem, p. 319 (scan page 326): the source says the monic cohomology maps have free kernels; it should be free cokernels, as Lemma 3 on p. 332 states and the resulting spectrum decomposition requires; affects a stated result. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
+
 ## Sturmfels
 
 - **Misprint** at Chapter 11, setup preceding Lemma 11.3, p. 100 (Sturmfels line 3019): the source says the initial-monomial homomorphism is onto in(R) before establishing that F is a canonical basis; it should be onto k[in(f₁),…,in(fₙ)]; surjectivity onto in(R) is the property being tested; affects nothing. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
@@ -6305,6 +6335,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Chapter I §4, p. 23 (Thom line 278): the source says the inverse-image submanifold chart is assigned to the fiber over y; it should be amended to assign it to the inverse image of the codimension-q submanifold; that is the space with dimension n−q; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Error** at Chapter II §5, p. 33 (Thom line 711): the source says for odd k, the odd-prime cohomology of MSO(k) is an exterior algebra on one generator; it should be amended to retain the Pontryagin factors: reduced cohomology is U·Fₚ[p₁,…,pₘ], with zero products; already MSO(3) has the nonzero class Up₁; affects a stated result. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Chapter II §9, p. 50 (Thom line 1358): the source says SO(2) and the circle are identified with SU(1); it should be amended to replace SU(1) by U(1); SU(1) is trivial; affects a stated result. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at Chapter III §4, example following Theorem III.9, p. 63 (Thom line 1961): the source says X·P¹β(v₁v₂) equals +v₁v₂(u₁u₂)³; it should be −v₁v₂(u₁u₂)³, by exterior multiplication with the displayed X; affects the proof. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Lemma I.4 proof, p. 24 (Thom line 314): the source says the criticality test requires f(x) to belong to the zero section; it should be amended to require A(f(x)) to belong to the zero section, since the map being tested is A∘f; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Gap** at Lemma I.4 proof, p. 24 (Thom line 316): the source says compactness of Kᵢ makes the bad parameters closed, although criticality is tested over an open ball X; it should be amended to test on compact subballs of X and use a countable exhaustion; limiting critical points can otherwise leave X; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Theorem II.1 proof, diagram (1), p. 30 (Thom line 567): the source says the horizontal cohomology arrows follow the direction of the underlying maps; it should be amended to reverse both arrows and label them with the induced pullbacks F* and g*; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
