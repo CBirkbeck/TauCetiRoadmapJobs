@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4559 mistakes recorded on the board: 3063 misprints, 1144 errors, 298 gaps, 54 unparsed bullets.
+4571 mistakes recorded on the board: 3065 misprints, 1147 errors, 299 gaps, 60 unparsed bullets.
 Errata jobs have read the cited sources of 59 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -62,6 +62,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (HeckeStacksAndLocalShtukasPartII, #1138 at cf9d6fb, 2026-10-24): Gap** in he21 at §6.3, p. 14: the source gets basic nonemptiness of a t^γ from He15 Theorem 2.27, which assumes shrunkenness; a t^γ need not be shrunken (γ = 0, a = s₁s₂ in split A₂); affects the proof.
 - **Unparsed** (GeometryOfNumbersAndQuadraticArithmeticPartII, #1169 at 87ade09, 2026-10-24): Gap** in CDHHLMNNS-III-v4 at Example 2.3.14, printed p. 46 (lines 2156–2157): the source says (2) is prime because 2 does not divide the discriminant; that gives only unramifiedness, and inertness needs t²+t+1 irreducible mod 2 (ℚ(√−7) shows that unramified primes can split); affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "87ade09", "job": "REV-PKG-GeometryOfNumbersAndQuadraticArithmeticPartII", "model": "opus", "worker": "fable-rev61"} -->
 - **Unparsed** (GlobalGaloisDeformationsPartII, #1174 at 7ceac20, 2026-10-24): Misprint** in Ribet10 at Exercise 1.6(b), p.8: the source asks to show that the segment length l equals n+1; with length counted in edges, Exercises 1.7 and 1.9 force l=n, meaning the fixed set has n+1 vertices; affects nothing.
+- **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BT16 at Corollary 8 proof, p.720: it bounds the minimal loop by 2 log p and infers at most one cusp visit; the loop has length 4 log p+O(1), so two visits are possible and must be counted; affects the proof.
+- **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Error** in BT16 at Proposition 12(a) proof, p.724: it says δ<1/4 forces a p-divisible O(p^{8δ}) integer to vanish; this needs 8δ<1, i.e. δ<1/8; affects the proof.
+- **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Error** in BT16 at Proposition 17, pp.727–728: the reconstructed integral matrix may have negative determinant, so the bicusps lie on an ordinary or a conjugate Hecke locus; for p≡1 mod 4 the conclusion should allow conjugate loci; affects a stated result.
+- **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BT16 at Proposition 27 proof, pp.739–740: it uses Proposition 23 (diagonal tubes) for point-ball volume growth and Proposition 17 for disjointness of bicusp balls, which only bounds the overlap by two; affects the proof.
+- **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BT16 at Corollary 30, p.742: the threshold M_N covers genus <N only via gon≤⌊(g+3)/2⌋ when N≥3; for N≤2 it needs M_{N+1}; affects nothing.
+- **Unparsed** (GeometricFreyMazur, #1184 at 15a9232, 2026-10-24): Gap** in BTE at Proposition 4.2 proof, p.4: the sum of ball volumes counts a point in k overlapping balls k times, but the tube term has no overlap factor; it needs a cusp-count factor p^{O(δ₃)}; affects the proof.
 
 ## A
 
@@ -1447,6 +1453,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Theorem 3.5, p. 7: the source says (lines 272–275) BKLOS Theorem 2.7 gives 3∞-Selmer corank zero for half the twists, but that theorem states only Mordell–Weil rank zero; it should be cite BKLOS §9.2 with §11, whose even 3-Selmer argument gives the Selmer statement; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "bed9ba8", "job": "REV-PKG-CMRankZeroConverse", "model": "opus", "worker": "fable-rev35"} -->. Found by CMRankZeroConverse (#993 at bed9ba8, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 1.1, p. 6: the source says (line 256) the dual p∞-Selmer group tensored with the number field K matches Selmer groups of V(f), V(f̄) without central twist; it should be a dimension identity over K_λ for V(f)(1) and V(f̄)(1); affects the proof. Found by CMRankZeroConverse (#993 at bed9ba8, 2026-10-23, claude opus).
 - **Gap** at proof of Theorem 3.1, display (3.1), p. 6: the source says (lines 232–234) Selmer vanishing for f gives rational H² vanishing directly from Kato (14.9.3), whose middle term is the dual (f*) Selmer group; it should be preceded by a Poitou–Tate and Euler-characteristic step proving that dual Selmer group vanishes; affects the proof. Found by CMRankZeroConverse (#993 at bed9ba8, 2026-10-23, claude opus).
+
+## BT16
+
+- **Error** at Lemma 5 proof, p.718: the source says the trace-(2−p²) witness is a product of two parabolic elements of Γ(p), hence trivial after filling cusps; it should be a hyperbolic element that survives filling (e.g. trace 2p²+2); affects the proof. Found by GeometricFreyMazur (#1184 at 15a9232, 2026-10-24, claude opus).
+- **Error** at Proposition 27, p.737: the source says the statement omits that both projections are non-Hecke; a general curve in T₁×T₁ has ratio 3p/(p−6), tending to 3; it should be add that hypothesis; affects a stated result. Found by GeometricFreyMazur (#1184 at 15a9232, 2026-10-24, claude opus).
+- **Error** at §2.5, p.717: the source says T_n is defined by cyclic isogenies, yet its projection degree is given as σ₁(n), which counts all order-n kernels; it should be ψ(n); affects nothing. Found by GeometricFreyMazur (#1184 at 15a9232, 2026-10-24, claude opus).
+- **Misprint** at §3.1, p.718: the source says the cusped injectivity radius is defined as the infimum of lengths, whereas Lemma 5 and Corollary 8 use half-lengths; it should be half the infimum; affects nothing. Found by GeometricFreyMazur (#1184 at 15a9232, 2026-10-24, claude opus).
+
+## BTE
+
+- **Misprint** at Proposition 4.1 proof, p.3: the source says the displayed tube-volume ratio is printed as sinh(ρ_X/2)/sinh ε; it should be sinh ε/sinh(ρ_X/2); affects the proof. Found by GeometricFreyMazur (#1184 at 15a9232, 2026-10-24, claude opus).
+- **Gap** at Proposition 4.2 proof, p.4: the source says it partitions SBC by ordinary small Hecke loci only and invokes BT16 Proposition 17; it should be include conjugate Hecke loci; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "15a9232", "job": "REV-PKG-GeometricFreyMazur", "model": "opus", "worker": "fable-rev64"} -->. Found by GeometricFreyMazur (#1184 at 15a9232, 2026-10-24, claude opus).
 
 ## BunceWright1992
 
