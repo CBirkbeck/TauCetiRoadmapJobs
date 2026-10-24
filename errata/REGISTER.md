@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2894 mistakes recorded on the board: 1924 misprints, 735 errors, 207 gaps, 28 unparsed bullets.
+2906 mistakes recorded on the board: 1931 misprints, 738 errors, 209 gaps, 28 unparsed bullets.
 Errata jobs have read the cited sources of 37 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -659,6 +659,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Theorem 5.5(ii), case s=0, p.959: the source says the p+1 lattices are permuted by Δ and sums over Δ; it should be Δ′, of order p+1 (Δ has order p²−1); affects nothing. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 5.5(ii), p.959: the source says the forward index-p lattices are p^(−s−1)(1+ap^s)ℤ_p t+T; it should be (1+ap^sθ) with O=ℤ_p⊕ℤ_pθ, since 1+ap^s is a unit and all p printed lattices coincide; affects nothing. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
 - **Misprint** at §3.0.2, pp.952–953: the source says an order-l^m character is localized from z_(fl^m) inside K(fl^mp^(n+1)); it should be index by conductor l^m (order l^(m−1)), since the order-l^m layer has conductor l^(m+1); affects nothing. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
+
+## BKO21
+
+- **Misprint** at Corollary 5.6, p.959: the source says the quotient with an unstarred ambient module V∞; it should be V∞*/V∞*,−; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Error** at Lemma 5.1(ii), p.956: the source says a lift of a curve with a_(p²)=±2p has Honda type ±x²+p and Lubin–Tate parameter ∓p; it should be type p∓x² and parameter ±p, since an a_p=0 curve has a_(p²)=−2p and parameter −p; affects a stated result. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Gap** at Lemma 5.2(ii), p.956: the source says the displayed lower bound gives an unramified supersingular point for every p≥31; at p=47 that bound equals 0; it should be use the exact generic count μ⌊(p−1)/12⌋=3μ (or part (iii)); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at proof of Theorem 5.5(ii), p.959: the source says the first-type lattices with the scalar (1+ap^s), which is a ℤ_p-unit, so all p lattices coincide; it should be use (1+ap^sθ) with O=ℤ_p⊕ℤ_pθ; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at proof of Theorem 5.5(ii), p.959: the source says the source sums over Δ at s=0; it should be sum over Δ′, the order-(p+1) torsion subgroup of Gal(Ψ′∞/Φ); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at §3.0.2 and proof of Theorem 3.4, pp.952–954: the source says l^m both as the order and as the conductor of ν; it should be index z and the ring class field by the conductor, with m=r+1 for exact order l^r; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at §5.0.2, p.958: the source says the source labels the quasi-canonical field degree [Φ′_s:Φ]; it should be [Ψ′_s:Φ]=p^(s−1)(p+1); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at §6.0.2, p.962: the source says characters factoring through Gal(Ψ_n/Ψ); it should be Gal(Ψ_n/Φ); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
 
 ## BM21
 
@@ -1854,6 +1865,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Harbater–Obus–Pries–Stevenson, Abhyankar's conjectures in Galois theory, arXiv:1408.0859v1
 
 - **Error** at §3.3, sketch of the solvable step in Theorem 3.6: the source says the invariant grows under the m-fold pullback as d′ = m·d; it should be m·d + (m − 1)·dim H, since the characteristic-two S₃ case gives 2, not 0; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Haz77
+
+- **Misprint** at Theorem 1.3, p.306: the source says the integral part [r] as the smallest integer ≤ r; it should be the largest integer ≤ r; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "1b5329b", "job": "REV-PKG-AnticyclotomicLocalUnits", "model": "opus", "worker": "fable-rev47"} -->. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
 
 ## HB-SIEVES
 
@@ -3184,6 +3199,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rubin1987
 
 - **Error** at Lemma 4.2, p.410: the source says any continuous O-linear map X→O sending x to a unit makes x a generator; it should be assume augmentation covariance, since the T-coefficient on O[[T]] sends T to 1; affects a stated result. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
+
+## Rubin87
+
+- **Error** at Lemma 4.2, p.410: the source says a continuous homomorphism X→O with a unit value at x forces x to generate the free rank-one module X; it should be require Λ-linearity for the augmentation, because the coefficient-of-T functional is a counterexample; affects a stated result. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Gap** at proof of Lemma 5.1, p.411: the source says the source deduces that the norm limit of E(Θ_n) vanishes from Proposition 4.5(i), which only kills the base-level coordinate; it should be also bound norms into each ramified level Θ_m, which lies outside Hazewinkel's unramified hypothesis; affects the proof. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Error** at §2, p.407: the source says a p-adic Tate-module generator for the Lubin–Tate group with parameter −p; it should be use the π-adic generator, which differs by (−1)^n at level n; affects the proof; corrected in print at BKO21 §2, footnote 2, p.948. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
 
 ## s-ber
 
