@@ -1,0 +1,24 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FaltingsFinitenessAndIsogenyTheoremsPartII"
+
+[[source]]
+id = "mw93-periods"
+authors = "David Masser and Gisbert Wüstholz"
+title = "Periods and minimal abelian subvarieties"
+year = 1993
+locator_scheme = "theorem"
+locator = "Main theorem, pp 407–409; equation (7.4), p 436; Lemmas 8.4 and 8.6, pp 439–440; matrix-height input, §9, Lemma 9.6"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/379#issuecomment-6389935806"
+
+[[source]]
+id = "mw95-refine"
+authors = "David Masser and Gisbert Wüstholz"
+title = "Refinements of the Tate conjecture for abelian varieties"
+year = 1995
+locator_scheme = "theorem"
+locator = "Theorems 1–2 and Corollary 1, pp 211–224"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/379#issuecomment-6389935806"
