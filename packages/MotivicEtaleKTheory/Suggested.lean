@@ -13,8 +13,11 @@ theorems against the pinned APIs. None of the following headlines is statable at
   and Adams operations.
 * Layer 2.0b: universal integral motivic Chern operations lack scheme higher K-groups,
   higher Chow groups and their stabilized classifying-sheaf models.
-* Layers 2.1–2.4: the rational higher Chern isomorphism, its universal-class identification,
-  supported comparison and products lack these K-theory and motivic cohomology carriers.
+* Layers 2.1–2.4: the geometric rational supported cycle-to-K comparison for regular
+  quasi-projective schemes over every field, including full support, lacks supported scheme
+  K-groups and higher-cycle restriction fibers. Its inverse agrees with the universal-class
+  higher Chern character on smooth quasi-projective schemes; that identification and the
+  smooth product theorem also lack these K-theory and motivic cohomology carriers.
 * Layer 3.2: the geometric bifiltered logarithmic comparison and its shifted mixed Hodge
   data require the geometric logarithmic form sheaves, residue filtration and geometric
   Betti/de Rham comparison. Native linear mixed Hodge structures alone do not state it.
