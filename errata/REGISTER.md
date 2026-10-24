@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-2654 mistakes recorded on the board: 1753 misprints, 680 errors, 194 gaps, 27 unparsed bullets.
+2669 mistakes recorded on the board: 1762 misprints, 685 errors, 195 gaps, 27 unparsed bullets.
 Errata jobs have read the cited sources of 29 roadmaps; in those of 1 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -519,6 +519,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Theorem 3.5, printed p.22 (BF line 1006–1011): the source says the universal bundle on k-planes in ℂᴺ has rank N and classifies through BGL_N; it should be rank k and BGL_k for that Grassmannian convention, or consistently reversed indices; affects the proof. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §5.2 support notation, printed p.32 (BF line 1508): the source says the X-support indexed by n is obtained from supports indexed by m; it should be indexed by n consistently with the X×□ⁿ factor; affects nothing; For the second source issue, X=Spec ℂ[ε]/(ε²) is a concrete obstruction: K₁ contains the nonzero additive group 1+εℂ after rationalization, while higher-cycle groups are invariant under this nilpotent thickening. The README correctly avoids that broad theorem header. No published correction to these preprint issues was established in this review. <!-- tauceti-roadmap-review {"agent": "codex", "head": "18a7b4d7056c6e7f88aa9f634dac7c55278ad1b3", "job": "REV-PKG-MotivicEtaleKTheory", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
 
+## BGS16
+
+- **Misprint** at Proposition 12, proof, pp. 16–17: the source says the source labels the excluded case as orders (2,2,2) with ζ=±i; it should be (4,4,4), since ±i has order 4; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at equation (63), p. 16: the source says the source pairs ζ_{l1} with ζ_{l2}⁻¹ in the first factor; it should be ζ_{l1}⁻¹; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at §1, p. 1: the source says R2, R3 are defined similarly after defining R3; it should be R1, R2; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "4ba5ef1", "job": "REV-PKG-ArithmeticDynamicsPartII", "model": "opus", "worker": "fable-rev44"} -->. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+
 ## Bhargava, The density of discriminants of quartic rings and fields (Annals 162, 2005)
 
 - **Error** at pp. 1056–1057 (argument for Proposition 23), with the similar estimate invoked in Lemma 12, p. 1045: the source says a compressed floor-exponent bound on suborders of given index, making index-p³ counts independent of p (they are 3, 4, 6, 8 at p = 2, 3, 5, 7); it should be p-dependent bounds such as index factor ≪ k^{1/2+ε} and Σ_{e≥1} s(p^e)/p^{2e} ≪ p^{−2} (Shankar–Tsimerman, arXiv:2503.02381v1, §11); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -865,6 +871,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Böckle–Iyengar–Paškūnas (BIP), Zariski density of crystalline points, Forum Math. Pi (arXiv v2 numbering)
 
 - **Error** at Lemma 6.5, pp. 47–48 (proof step at arXiv lines 2714–2715): the source says the printed character ψ fails the step at the uniformizer: for F=ℚ₅ with κ(5) the Teichmüller lift of 2, ψ(5)=1 whereas κ̄(5)=2; it should be a corrected choice of ψ compatible with κ̄ at the uniformizer, as the repaired step requires; affects the proof. Found by  (#252 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## C24
+
+- **Error** at Proposition 5.4.2(b) and Theorems 5.4.3–5.4.4, pp. 411–413: the source says in even characteristic every trace is the square case with order dividing q−1; it should be split by roots of T²−tT+1, since over 𝔽₄ nonsplit order-5 elements exist; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Error** at Theorem 5.5.8(b), pp. 416–417: the source says X and M satisfy strong approximation modulo squarefree n; it should be the image is the origin plus the primitive locus, since (40,40,40) mod 65 has no lift; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Error** at Theorem 5.5.8, proof, p. 417: the source says M(𝔽₃) has two singleton orbits, the origin and (1,1,1); it should be the origin and one eight-point orbit, as on p. 415; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 
 ## Calegari–Dimitrov–Tang (title not given in the reviews)
 
@@ -1276,6 +1288,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Edixhoven, Point counting after Kedlaya
 
 - **Error** at the §4.3 reduction step: the source says the decomposition is unique, yet zero input has the nonzero decomposition φ = y/25, b = −Q′/50; it should be unique only after requiring the reduced b to have degree at most 2g − 1; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## EFLMT24
+
+- **Error** at Lemma 2.1, proof, pp. 4–5: the source says the curve's zero/pole set is three points and takes coordinate degrees t, d, giving χ=3; it should be four points (adding [1:α:0]), χ=4, degrees 2t, 2d, bound (3/2)·max((32td)^(1/3), 16td/p); affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Gap** at Lemma 3.7, proof, p. 9: the source says the least prime factor of a coprime product is the minimum over factors; it should be treat a quotient equal to 1 separately, since λ(1)=1; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at Remark 4.1, p. 21: the source says Theorem 3.2 gives a reduced number in [B, 4B−2]; it should be Theorem 3.14; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at §4.1, p. 20: the source says the first interval of Theorem 3.14 should be empty; it should be Theorem 3.2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 
 ## EHLS
 
@@ -2582,6 +2601,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3 figure references, printed pp. 4–6 (Morrison line 139; Morrison line 170; Morrison line 249): the source says the K₆ diagrams, multiplication example, and two exclusion cases refer respectively to Figures 3, 3, and 2; it should be refer respectively to Figures 4, 5, and 6; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §3, definition of P preceding Lemma 3.1, printed p. 4 (Morrison line 129): the source says P consists of the leftmost n−2 upper endpoints; it should be use the leftmost n−1 endpoints; for n=3 the printed J₃ is zero, contradicting its claimed codimension three; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §5, definition preceding Proposition 5.1, printed p. 9 (Morrison line 347): the source says cap-position adjustment subtracts one for each previously removed cap to its left; it should be τ(s)ᵢ=sᵢ−2κ(s)ᵢ; a cap removes two endpoints. For e₁∈TL₂, the printed rule gives coefficient 1 instead of 1/[2]; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
+## MP18
+
+- **Error** at Corollary 5.11, proof, p. 25: the source says p(p±3)/4 is never a prime power; it should be exclude p=7, where it is 7 and the fixed-point argument given there is needed; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at Lemma 5.13, proof, p. 26: the source says the commutator's second component with h1; it should be h2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at Lemma 5.13, proof, p. 26: the source says the source speaks of normal subgroups of Q_p; it should be Q_q; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at Lemma 5.13, proof, p. 26: the source says the source concludes containment in the image under π_p; it should be π_q; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at footnote 14, p. 26: the source says the only equal-order case below 10^6 is p=5; it should be the pair p=11, q=5; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 
 ## MW
 
