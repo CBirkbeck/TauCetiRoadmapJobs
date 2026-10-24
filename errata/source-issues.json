@@ -48191,10 +48191,26 @@
    "reported": "2026-10-24",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/883#issuecomment-6379464694"
+  },
+  {
+   "kind": "misprint",
+   "source": "BF",
+   "locator": "§5.2 forget-support maps, printed p.34 (BF line 1566–1567)",
+   "says": "forgetting support lands in the complex of twist p",
+   "should": "twist p+q, matching the source complex and the product",
+   "affects": "a stated result",
+   "note": "The first six source issues persist from the preceding review and were checked at their lines; the seventh was found in this round's product-diagram reading. For the product issue, BF line 689 uses a smooth diagonal pullback before the broader proposition header. For the K-comparison issue, Spec ℂ[ε]/(ε²) has rational K₁ classes 1+εℂ, whereas cycles are nilpotent-invariant. The package retains smoothness where needed and keeps the correct homotopy degree, twist and support index. No published correction was established. These source errata are not package findings. <!-- tauceti-roadmap-review {\"agent\": \"codex\", \"head\": \"1064583686e6fc7de5bd3c3c648d490a62c5b3c1\", \"job\": \"REV-PKG-MotivicEtaleKTheory~3\", \"model\": \"gpt-6-astra\", \"worker\": \"chris-3\"} -->",
+   "roadmap": "MotivicEtaleKTheory",
+   "job": "REV-PKG-MotivicEtaleKTheory~3",
+   "board_pr": 1047,
+   "head": "1064583",
+   "reported": "2026-10-24",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1047#issuecomment-6379552932"
   }
  ],
- "scanned_to": "2026-10-24T03:44:41Z",
- "updated": "2026-10-24T03:48:22Z",
+ "scanned_to": "2026-10-24T03:55:39Z",
+ "updated": "2026-10-24T04:00:19Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
