@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4681 mistakes recorded on the board: 3124 misprints, 1181 errors, 314 gaps, 62 unparsed bullets.
+4685 mistakes recorded on the board: 3127 misprints, 1181 errors, 315 gaps, 62 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -96,6 +96,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 4.9.7(2), p. 113: the source says the first argument bounded below and the second bounded above; it should be first bounded above, second bounded below, as in part (1); affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
 - **Misprint** at Theorem 5.5.5, p. 129: the source says derived pushforward as running from the target's almost category to the source's; it should be run from X to Y; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+
+## AGV08
+
+- **Misprint** at Appendix B.2, item (3), printed p. 53: the source says the section equation raises τ to the power m, while d-th roots are being constructed; it should be φ(τ^d)=σ; affects nothing; Already recorded as E12. <!-- tauceti-roadmap-review {"agent": "claude", "head": "99fbf6f", "job": "REV-PKG-FunctionFieldArithmeticPartII", "model": "opus", "worker": "fable-rev69"} -->. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
 
 ## AGZ
 
@@ -7033,6 +7037,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3.5.4, printed page 38 (YZ line 2367): the source says the boundary perverse summand has a negative support-dimension shift and twist; it should be the positive shift and half-dimension twist obtained from Corollary 3.29; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
 - **Error** at §3.5.4, printed page 38 (YZ line 2367): the source says a fixed-degree rank-one shtuka map is a torsor under the entire Picard group; it should be a Pic⁰(k)-torsor, with all degree translates needed for the full Picard action; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §3.5.4, printed page 38 (YZ line 2367): the source says every translated summand uses the original degree-sequence projection; it should be the projection belonging to that translated summand; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
+
+## YZ19
+
+- **Gap** at A.3.3, display (A.11), printed p. 525: the source says the four-term sequence of Picard stacks is called exact without saying in what sense, and on isomorphism classes it fails at Pic_X′ (for t↦t² on ℙ¹, O(1) is σ-invariant but not a pullback); it should be specify the connecting maps and obstructions; affects a stated result; Already recorded as E8. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
+- **Misprint** at the proof of Lemma A.5, printed p. 518: the source says the idele of a framed line is printed as τ_x∘τ_η⁻¹, which sends O_X(x) with its natural frames to ϖ_x; it should be τ_η∘τ_x⁻¹, so that ϖ_x⁻¹ ↦ O_X(x)♮ as the lemma states; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
+- **Misprint** at the proof of Lemma A.5, printed p. 518: the source says the extra data is written (K_R, ι, τ_R), with the line-frame letter; it should be (K_R, ι, t_R), the root frames; affects nothing; Already recorded by the author as E9. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
 
 ## yzz-book
 
