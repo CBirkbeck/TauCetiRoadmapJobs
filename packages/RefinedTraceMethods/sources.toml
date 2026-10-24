@@ -124,7 +124,7 @@ sha256 = "6b43d1ff3c3f345db85100562a30c2bcbb6fcbfc2874ce899f8b4ded23ff23dd"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["1.11 Derived HKR", "1.5 Maps of mixed complexes and their totalizations", "2.7 Relative THH and linearization", "8.1 Descent and the cyclic de Rham comparison", "8.3 Deformation, antisymmetrization and cotangent filtrations", "8.4 Décalage and Segal comparisons over O_C", "8.5 Convergence and negative TC degrees", "8.6 Trace Adams operations", "8.7 Characteristic-p TC and syntomic K-sheaves"]
+cited_for = ["1.10 Derived HKR", "1.5 Maps of mixed complexes and their totalizations", "2.7 Relative THH and linearization", "8.1 Descent and the cyclic de Rham comparison", "8.3 Deformation, antisymmetrization and cotangent filtrations", "8.4 Décalage and Segal comparisons over O_C", "8.5 Convergence and negative TC degrees", "8.6 Trace Adams operations", "8.7 Characteristic-p TC and syntomic K-sheaves"]
 arxiv = "1802.03261v2"
 doi = "10.1007/s10240-019-00106-9"
 version_note = "BMS uses published pages 199–310; BMS-arXiv uses v2 manuscript pages. Lemma 2.5 is read in arXiv v2, p. 15; Proposition 6.2 is read in the published edition, pp. 245–247."
@@ -231,7 +231,7 @@ cited_for = ["4.17 Nilpotent invariance and the rational comparison", "4.18 Trun
 [[source]]
 id = "d-thesis"
 locator_scheme = "section"
-locator = "§6.2, Notation 6.2.8, printed p. 225 (PDF p. 234; Ch. 6, §6.4 'Application to q-de Rham cohomology', Theorem 6.4.1, printed p. 232 (PDF p. 241; Ch. 6, §6.1, Theorem 6.1.4 (Joint with A. Raksit"
+locator = "Ch. 6, §6.1, Theorem 6.1.4, printed p. 220 (PDF p. 237); §6.2, Notation 6.2.8, printed p. 225 (PDF p. 242); §6.4 'Application to q-de Rham cohomology', Theorem 6.4.1, printed p. 232 (PDF p. 249); §1.2, Theorem 1.2.2, printed p. 15 (PDF p. 24)"
 url = "https://sanathdevalapurkar.github.io/files/thesis.pdf"
 fetched_from = "https://sanathdevalapurkar.github.io/files/thesis.pdf"
 fetched_at = "2026-10-22T20:07:54Z"
@@ -687,7 +687,7 @@ sha256 = "8b1856fa8faefa3efebd64580249aa6fbc0c918f69820bba01410ab0ef1eb8ef"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-22"
-cited_for = ["1.1 Cyclic objects and the cyclic bar", "1.8 Scalar extension and étale comparison", "1.11 Derived HKR, circle tensors and a nonflat example", "2.1 Coherent actions and their adjunctions", "2.2 Algebraic Tate cohomology of Eilenberg–Mac Lane spectra", "2.3 The finite-action Verdier quotient", "2.4 Postnikov bounds and the Tate fixpoint lemma", "2.5 Parametrized Tate constructions", "2.6 Cyclic realization and subdivision", "2.7 Absolute THH of E₁-rings", "2.8 Relative THH and mixed-complex realization", "2.9 Lax equalizers and the cyclotomic categories", "2.10 TC, its fiber formula and arithmetic completion", "2.11 Spherical group rings and categorical THH", "2.12 Orthogonal and genuine equivariant spectra", "2.13 Borel completion, isotropy and geometric localization", "2.14 Finite-family circle spectra, genuine cyclotomic objects and TR", "2.15 Coalgebras, coreflection and bounded-below equivalence", "2.16 The Bökstedt model and its comparison", "2.17 Restriction pullbacks and the genuine TC comparison"]
+cited_for = ["1.1 Cyclic objects and the cyclic bar", "1.8 Scalar extension and étale comparison", "1.10 Derived HKR, circle tensors and a nonflat example", "2.1 Coherent actions and their adjunctions", "2.2 Algebraic Tate cohomology of Eilenberg–Mac Lane spectra", "2.3 The finite-action Verdier quotient", "2.4 Postnikov bounds and the Tate fixpoint lemma", "2.5 Parametrized Tate constructions", "2.6 Cyclic realization and subdivision", "2.7 Absolute THH of E₁-rings", "2.8 Relative THH and mixed-complex realization", "2.9 Lax equalizers and the cyclotomic categories", "2.10 TC, its fiber formula and arithmetic completion", "2.11 Spherical group rings and categorical THH", "2.12 Orthogonal and genuine equivariant spectra", "2.13 Borel completion, isotropy and geometric localization", "2.14 Finite-family circle spectra, genuine cyclotomic objects and TR", "2.15 Coalgebras, coreflection and bounded-below equivalence", "2.16 The Bökstedt model and its comparison", "2.17 Restriction pullbacks and the genuine TC comparison"]
 arxiv = "1707.01799v2"
 doi = "10.4310/ACTA.2018.v221.n2.a1"
 version_note = "NS uses Acta pages 203–409; the explicit arXiv citations to I.3.3, I.3.6 and I.3.8 use v2 pages 19–25. Numbered results agree."
@@ -820,7 +820,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 version_note = "arXiv v1"
-cited_for = ["5.2 Rational graded HKR and relative THH", "5.3 Oriented circle and finite Tate coefficients", "6.1 Spherical bases and compatible global lifts", "6.2 Light solid spectra and module nuclearity", "6.3 Perfect-even sites and homological evenness", "6.4 Even flatness, faithful descent and duality", "6.5 Ordinary and solid even filtrations", "6.6 Synthetic circle and finite cyclic operations", "6.7 Filtered solid relative THH", "6.8 Image of J and the local coefficient comparisons", "6.9 The q-Hodge pullback and local comparisons", "6.10 Arithmetic gluing, the global comparison and framed smooth algebras", "6.11 Cyclonic coefficients and the Adams coherence", "6.12 Higher fixed-point invariants and filtered Bott localization", "6.13 Twisted q-Hodge and the Habiro–Hodge comparison", "6.14 Étale spherical lifts and number fields", "8.8 The coherent Habiro trace interface"]
+cited_for = ["5.2 Rational graded HKR and relative THH", "5.3 Oriented circle and finite Tate coefficients", "6.1 Spherical bases and compatible global lifts", "6.2 Trace-class maps and nuclear solid modules", "6.3 Perfect-even sites and homological evenness", "6.4 Even flatness, faithful descent and duality", "6.5 Ordinary and solid even filtrations", "6.6 Synthetic circle and finite cyclic operations", "6.7 Filtered solid relative THH", "6.8 Image of J and the local coefficient comparisons", "6.9 The q-Hodge pullback and local comparisons", "6.10 Arithmetic gluing, the global comparison and framed smooth algebras", "6.11 Cyclonic coefficients and the Adams coherence", "6.12 Higher fixed-point invariants and filtered Bott localization", "6.13 Twisted q-Hodge and the Habiro–Hodge comparison", "6.14 Étale spherical lifts and number fields", "8.8 The coherent Habiro trace interface"]
 
 [[source]]
 id = "w-hab"
