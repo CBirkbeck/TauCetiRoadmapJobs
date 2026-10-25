@@ -4,15 +4,15 @@
 
 ## Scope and ownership
 
-This roadmap owns the two-lattice theory of goodness, neutral admissible pairs and neutral p-adic Hodge structures, their connected Tannakian groups, the extension of period-domain geometry to connected linear groups, Hodge and Hodge–Tate line loci, and bi-analytic Ax–Lindemann. Its end results are HKII Theorem 9.1.3, p. 55 (HKII line 2481), Theorem A, p. 6 (HKII line 268), and Theorem B, p. 11 (HKII line 501). The two-lattice CM theorem is HKI Theorem B, pp. 5–6 (HKI line 204).
+This roadmap owns the two-lattice theory of goodness, neutral admissible pairs and neutral p-adic Hodge structures, their connected Tannakian groups, the extension of period-domain geometry to connected linear groups, Hodge and Hodge–Tate line loci, and bi-analytic Ax–Lindemann. Its end results are HKII Theorem 9.1.3, p. 55 (HKII line 2481), Theorem A, p. 6 (HKII line 268), and Theorem B, p. 11 (HKII line 501). The two-lattice CM theorem is HKI Theorem B, p. 5 (HKI line 204).
 
-The fixed Fargues–Fontaine curve belongs to AdicSpaces Layer 6; general bundles, tensor constructions and descent belong to AlgebraicVectorBundles L0A–L0C and L2A–L2B. RelativeFarguesFontaine §§4.10–4.12, 6.6–6.9 and 7.0–7.6 own relative period completions, modifications and tensor gluing. VectorBundlesAndIsocrystals VB0–VB2 and VB4 own full slope classification and relative constant-slope local triviality. BunGAndNewtonStrata BG0–BG3 owns the reductive isocrystal and bundle-stratum theory. Here the group-valued extensions concern arbitrary connected linear groups; reductive constructions are imported without a second definition or proof target. The classical complex period domains of HodgeStructures are a different object.
+The fixed Fargues–Fontaine curve belongs to AdicSpaces Layer 6; general bundles, tensor constructions and descent belong to AlgebraicVectorBundles L0A–L0C and L2A–L2B. RelativeFarguesFontaine §§4.10–4.12, 6.6–6.9 and 7.0–7.6 own relative period completions, modifications and tensor gluing. VectorBundlesAndIsocrystals VB0–VB2 and VB4 own full slope classification and relative constant-slope local triviality. VStackSheavesAndLisseCategories §VS4.0 owns the reductive bundle-stack, Newton-geometry and full-automorphism constructions (BunGeometry, BunNewtonGeometry and BunAutomorphisms). BunGAndNewtonStrata §§0.5, 2.3, 3.4 and 3.7 expose their reductive interfaces; its additional Newton classification and arithmetic theory remain there. Here the group-valued extensions concern arbitrary connected linear groups; reductive constructions are imported without a second definition or proof target. The classical complex period domains of HodgeStructures are a different object.
 
 GeometricSatakeAndFusion GS0 owns the reductive Grassmannian and Schubert geometry. HeckeStacksAndLocalShtukas §§HS2.12 and HS2.15 owns reductive nonemptiness, classical period points and connectedness. The non-reductive statements here add the unipotent and Levi analysis. DiamondsAndVStacks D2, D4–D6 owns general sites, local systems, descent and seminormal diamondification. The definitions in Layer 4 specialize those carriers to two period lattices and retain the field of definition; they introduce no new site or general bundle-descent theorem. PerfectoidSpaces §§P4.15.6 and P6.11 owns strong closed quotients; PerfectoidQuotients does not supply a second such quotient.
 
-PadicHodgeTheory §§5.5, 7.1 and 7.4 owns perfect-residue-field period functors, associated filtered-connection lattices, their position and uniqueness, and change of coefficient site. In §4.6, M0 is the trivial-filtration specialization of that associated-lattice functor; its construction and horizontal full faithfulness are imported. This roadmap proves the two-lattice essential-image and trace-exactness statements. MotivesAndAlgebraicCycles §§6.1–6.3 and 6.8 owns abstract neutral reconstruction, the subquotient/subobject criteria, connectedness recognition and tensor-Isom torsors. Only their application to the new categories, and the precise canonical-reduction extension in its contract, belong here.
+PadicHodgeTheory §§5.5, 7.1 and 7.4 owns perfect-residue-field period functors, associated filtered-connection lattices, their position and uniqueness, and change of coefficient site. In §4.6, M0 is the trivial-filtration specialization of that associated-lattice functor; its construction and horizontal full faithfulness are imported. This roadmap proves the two-lattice essential-image and trace-exactness statements. MotivesAndAlgebraicCycles §§6.1–6.3 and 6.8 owns abstract neutral reconstruction, the subquotient/subobject criteria, connectedness recognition and tensor-Isom torsors. Only their application to the new categories belongs here; canonical reduction to the reconstructed subgroup is requested from MotivesAndAlgebraicCycles (gap:tannakian-canonical-reduction).
 
-ReductiveGroups Layers 1–3, 5, 6A and 7 owns representations, Lie theory, subgroups, quotients, the unipotent radical and parabolic Levi decomposition. Layer 6A supplies the characteristic-zero Levi complement and equivariant vector-layer central series. The adjoint-kernel and observable-quotient refinements have the extension contracts below. AInfCohomology §§AI.2.2–AI.2.3 owns BKF modules, their valid operations, its crystalline-rigidified variant and finite-free Fargues classification; its extension supplies rational rigidified modifications. FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.4 owns finite-height Breuil–Kisin modules, which are a distinct category. The comparison in §2.7 consumes the BKF equivalence and is independent of Ax–Lindemann.
+ReductiveGroups Layers 1–3, 5, 6A and 7 owns representations, Lie theory, subgroups, quotients, the unipotent radical and parabolic Levi decomposition. HodgeTateAndCanonicalSubgroups §2.14 owns splitting and type of exact tensor filtrations, their stabilizers and flag schemes, including for finite-type affine groups; AdicSpacesPartII R1.3 owns their analytification. Layer 6A supplies the characteristic-zero Levi complement and equivariant vector-layer central series. The adjoint-kernel and observable-quotient refinements have the extension contracts below. AInfCohomology §§AI.2.2–AI.2.3 owns BKF modules, their valid operations, its crystalline-rigidified variant and finite-free Fargues classification; its extension supplies rational rigidified modifications. FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.4 owns finite-height Breuil–Kisin modules, which are a distinct category. The comparison in §2.7 consumes the BKF equivalence and is independent of Ax–Lindemann.
 
 At the library pins, Mathlib already provides one-dimensional isocrystals and their classification, the absolute de Rham completion, and the Baire theorems listed below. Tau Ceti already reconstructs points of a known Hopf algebra from tensor automorphisms, supplies finite-subcomodule exhaustion, and realizes closed subgroups with finitely generated defining ideals as exterior-line stabilizers with their subgroup characters. These are used directly. Its Frobenius orbit space is topological and does not supply the sheafed curve or the period moduli used here. General Galois theory, rigid Zariski geometry and six operations retain the owners in the contracts; their lemmas are not repackaged as new theorems.
 
@@ -81,11 +81,35 @@ What ReductiveGroups must provide (gap:adjoint-kernel-and-orbit-differential): P
 
 What ReductiveGroups must provide (gap:observable-subgroup-embedding): Prove that a closed subgroup realized as a vector stabilizer is observable and has a representable quasi-affine homogeneous quotient, and distinguish this conclusion from the stronger affine-quotient hypothesis.
 
+### From TauCetiRoadmap.HodgeTateAndCanonicalSubgroups
+
+Use §2.14's fpqc-local splitting of exact tensor filtrations of fibre functors on Rep_k G for finite-type affine G, the cocharacter type, the filtration stabilizer P_mu and the flag scheme G/P_mu with base change. Over a characteristic-zero field the splitting torsor is under a split unipotent group and has a rational point. P_mu need not be parabolic when G is non-reductive.
+
+Consumed sections: HodgeTateAndCanonicalSubgroups §2.14.
+
+### From TauCetiRoadmap.AdicSpacesPartII
+
+Use R1.3’s analytification functor on schemes locally of finite type over a complete nontrivially valued rank-one field, with its morphisms and base-change comparison. Applied to the supplied finite-type flag schemes, it gives the rigid flag varieties used in Layer 5.
+
+Consumed sections: AdicSpacesPartII R1.3 / analytification-functor.
+
+### From TauCetiRoadmap.PadicPeriodRings
+
+Use §2's completion of an algebraic closure of any complete discretely valued characteristic-zero field K0 with perfect residue field of characteristic p, its continuous Galois action and `tateSen_H0`: C^G_K0=K0 and H⁰(G_K0,C(m))=0 for every nonzero integer m. Use §4.1's de Rham action, cyclotomic uniformizer and graded twists, and §4.3's fixed coefficient embedding K0→B_dR+ reducing to K0→C.
+
+Consumed sections: PadicPeriodRings §2; PadicPeriodRings §4.1; PadicPeriodRings §4.3.
+
+### From TauCetiRoadmap.VStackSheavesAndLisseCategories
+
+Use §VS4.0's reductive BunGeometry, BunNewtonGeometry and BunAutomorphisms: the bundle v-stack with tensor/torsor descent, Newton strata and their full automorphism v-groups. Basic strata have constant rational-point automorphism groups; nonbasic strata retain the connected automorphism kernel. The connected-linear-group extensions use these reductive inputs.
+
+Consumed sections: VStackSheavesAndLisseCategories §VS4.0 / bundle-stack-geometry.
+
 ### From TauCetiRoadmap.BunGAndNewtonStrata
 
 Use the reductive G-isocrystal and torsor dictionaries, Newton and Kottwitz invariants, basicness, sigma-centralizers, the bundle v-stack and the full automorphism diamond. No nonbasic automorphism group is replaced by its rational constant subgroup.
 
-Consumed sections: BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G; BunGAndNewtonStrata BG0 / g-torsors-three-descriptions; BunGAndNewtonStrata BG0 / sigma-centralizer-J-b; BunGAndNewtonStrata BG1 / admissible-finiteness-and-basic; BunGAndNewtonStrata BG1 / newton-and-kottwitz-maps; BunGAndNewtonStrata BG1 / torus-norm-description; BunGAndNewtonStrata BG2:uniformization / beauville-laszlo-surjectivity; BunGAndNewtonStrata BG2:uniformization / bun-g-as-v-stack; BunGAndNewtonStrata BG3 / full-automorphism-v-group; BunGAndNewtonStrata BG3 / semistable-locus-and-basic-strata.
+Consumed sections: BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G; BunGAndNewtonStrata BG0 / g-torsors-three-descriptions; BunGAndNewtonStrata BG1 §1.13 / sigma-centralizer-J-b; BunGAndNewtonStrata BG1 / admissible-finiteness-and-basic; BunGAndNewtonStrata BG1 / newton-and-kottwitz-maps; BunGAndNewtonStrata BG1 / torus-norm-description; BunGAndNewtonStrata BG2:uniformization / beauville-laszlo-surjectivity; BunGAndNewtonStrata BG2:uniformization / bun-g-as-v-stack; BunGAndNewtonStrata BG3 / full-automorphism-v-group; BunGAndNewtonStrata BG3 / semistable-locus-and-basic-strata.
 
 ### From TauCetiRoadmap.VectorBundlesAndIsocrystals
 
@@ -109,9 +133,9 @@ What MotivesAndAlgebraicCycles must provide (gap:tannakian-canonical-reduction):
 
 ### From TauCetiRoadmap.DiamondsAndVStacks
 
-Use the specified covering, v-descent, locally spatial and small-stack constructions, locally closed generalizing subdiamonds, profinite products with universally closed projection, and seminormal rigid full faithfulness with their stated size and site hypotheses. For a profinite P in the chart universe and a locally spatial S, D5.10 identifies |P̲ × S| with P × |S| and makes the projection quasicompact, separated and universally closed.
+Use D3.10’s locally profinite torsor level spaces and inverse-limit identification, together with the specified covering, v-descent, locally spatial and small-stack constructions, locally closed generalizing subdiamonds, profinite products with universally closed projection, and seminormal rigid full faithfulness with their stated size and site hypotheses. For a profinite P in the chart universe and a locally spatial S, D5.10 identifies |P̲ × S| with P × |S| and makes the projection quasicompact, separated and universally closed.
 
-Consumed sections: DiamondsAndVStacks D1 / universally-open-std-cover; DiamondsAndVStacks D2 / small-pro-etale-site-and-v-site; DiamondsAndVStacks D2 / v-descent-of-functions; DiamondsAndVStacks D2 / vector-bundles-across-pro-etale-and-v-sites; DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks; DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks; DiamondsAndVStacks D5 / locally-closed-generalizing-subdiamond; DiamondsAndVStacks D5 / spatial-diamond; DiamondsAndVStacks D5 / profinite-products-of-locally-spatial-diamonds; DiamondsAndVStacks D6 / etale-site-comparison; DiamondsAndVStacks D6 / gluing-and-the-diamond-functor; DiamondsAndVStacks D6 / seminormal-rigid-full-faithfulness.
+Consumed sections: DiamondsAndVStacks D3 / locally-profinite-torsors; DiamondsAndVStacks D1 / universally-open-std-cover; DiamondsAndVStacks D2 / small-pro-etale-site-and-v-site; DiamondsAndVStacks D2 / v-descent-of-functions; DiamondsAndVStacks D2 / vector-bundles-across-pro-etale-and-v-sites; DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks; DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks; DiamondsAndVStacks D5 / locally-closed-generalizing-subdiamond; DiamondsAndVStacks D5 / spatial-diamond; DiamondsAndVStacks D5 / profinite-products-of-locally-spatial-diamonds; DiamondsAndVStacks D6 / etale-site-comparison; DiamondsAndVStacks D6 / gluing-and-the-diamond-functor; DiamondsAndVStacks D6 / seminormal-rigid-full-faithfulness.
 
 ### From TauCetiRoadmap.HeckeStacksAndLocalShtukas
 
@@ -207,26 +231,28 @@ Define pointwise lattices and the two trace filtrations, their opposed types and
 
 ### 0.1 Lattices and bilattices
 
-For a complete discrete valuation ring R with fraction field K, uniformizer t and residue field k, a lattice in a finite-dimensional K-space V is a finite free R-submodule spanning V. A bilattice is (V,L1,L2); morphisms are K-linear maps preserving both lattices. Define decreasing trace filtration trFil^i(L1/tL1)=image((t^i L2)∩L1→L1/tL1). The elementary-divisor type is the multiset of a_j with L2=⊕R `t^{a_j}e_j` for a basis of L1.
+For a complete discrete valuation ring R with fraction field K, uniformizer t and residue field k, a lattice in a finite-dimensional K-space V is a finite free R-submodule spanning V. A bilattice is (V,L1,L2); morphisms are K-linear maps preserving both lattices. A morphism f is strict when f(Li)=f(V)∩Li′ for i=1,2. A complex is exact when its underlying K-vector-space complex and both R-lattice complexes are exact; equivalently it is exact on K-spaces and all arrows are strict. Tensor products and duals use this exact structure. Define decreasing trace filtration trFil^i(L1/tL1)=image((t^i L2)∩L1→L1/tL1). The elementary-divisor type is the multiset of a_j with L2=⊕R `t^{a_j}e_j` for a basis of L1.
 
-(HKI, arXiv v2, Definition 3.2.1 and Lemma 3.2.3, p. 24; §3.1, pp. 19–23; HKI line 1106, HKI line 1131).
+(HKI, arXiv v2, Definition 3.2.1 and Lemma 3.2.3, p. 24; §3.1, pp. 19–23; HKI line 1106, HKI line 1109, HKI line 1131).
 
 The interface consists of the following operations and laws.
 
 - A pair of finite free spanning R-submodules of V determines a bilattice.
+- Short exactness is tested on both lattice sequences; tensoring with any bilattice and dualizing preserve these short exact sequences because all lattices are finite free.
 - trFil^i is the indicated image subspace of L1/tL1 and decreases with i.
 - A bilattice isomorphism preserves elementary-divisor type. A complete-DVR extension of ramification index e multiplies every elementary divisor by e; in particular an index-one extension preserves type.
 - Exchanging L1 and L2 negates the elementary-divisor multiset.
 
 Use elementary divisors over the complete DVR. Define the intersection before taking its image; quotienting L2 alone gives the wrong trace filtration.
 
-The consuming constructions use this interface as follows. HK II §3.1: Defines both Bialynicki–Birula filtrations and their relative types. §5.1: Records relative position of a modification.
+The consuming constructions use this interface as follows. §4.4: Defines both Bialynicki–Birula filtrations and their relative types. §5.1: Records relative position of a modification.
 
 **Checks.**
 
 - For L1=R and L2=t^aR, trFil^i=k exactly when i≤−a; it is zero when i>−a.
-- For L1=L2, the only filtration jump is zero and type consists of zeros. Under t=u^e the rank-one type a becomes e*a; invariance is asserted only for ramification index one.
+- For L1=L2 of positive rank, the only filtration jump is zero and every elementary divisor is zero. At rank zero both the jump set and the elementary-divisor list are empty. Under t=u^e the rank-one type a becomes e*a; invariance is asserted only for ramification index one.
 - Over k((t)), L2=R e1+R(e2+t^-1e1) and L1=R^2 have type {−1,1}; the induced lattices on the subline k((t))e1 and quotient both have type {0}.
+- Multiplication by t on (K,R,R) is an underlying K-isomorphism but is not strict: tR differs from K∩R=R, and its lattice cokernel is R/tR. Thus underlying-vector-space exactness alone is insufficient.
 
 **Acceptance.** Checks distinguish the filtration from the lattice and are invariant under a change of uniformizer.
 
@@ -234,9 +260,9 @@ The consuming constructions use this interface as follows. HK II §3.1: Defines 
 
 ### 0.2 Good G-bilattices
 
-Let R be a complete DVR of characteristic zero with algebraically closed residue field k and a coefficient section k→R, and let K=Frac(R). For a connected linear algebraic G/k and a bilatticed G(K)-torsor (an exact tensor functor Rep_k G→bilattices), call it good of type [mu] when, after trivializing the first lattice, the second lies in G(R)t^muG(R). Filtered G-functors are exact tensor functors to finite filtered k-spaces with locally split filtrations; their type is the conjugacy class giving the grading. The algebraically closed residue field makes the lattice torsors trivial over R and splits the cocharacters. For a non-algebraically-closed residue field the double-coset test is used only after the explicit algebraically closed extension, not as a test on an untrivialized torsor over R.
+Let R be a complete DVR of characteristic zero with algebraically closed residue field k and a coefficient section k→R, and let K=Frac(R). For a connected linear algebraic G/k and a bilatticed G(K)-torsor (an exact tensor functor Rep_k G→bilattices), call it good of type [mu] when, after trivializing the first lattice, the second lies in G(R)t^muG(R). For finite exhaustive separated decreasing filtrations, a filtration-preserving f is strict when f(F^j V)=f(V)∩F^j V′ for every integer j. Filtered exactness means exactness at every filtration step, equivalently exactness of the associated graded complex. Filtered G-functors are exact tensor functors to these filtered k-spaces; their type is the conjugacy class of a splitting cocharacter, using HodgeTateAndCanonicalSubgroups §2.14. The algebraically closed residue field makes the lattice torsors trivial over R and splits the cocharacters. For a non-algebraically-closed residue field the double-coset test is used only after the explicit algebraically closed extension, not as a test on an untrivialized torsor over R.
 
-(HKI, arXiv v2, §3.2, Definition 3.2.5, pp. 23–25; HKI line 1151, HKI line 1168).
+(HKI, arXiv v2, Definition 3.1.1 and the exact structures following it, p. 20, and §3.2, Definition 3.2.5, pp. 23–25; HKI line 936, HKI line 944, HKI line 1151, HKI line 1168).
 
 The interface consists of the following operations and laws.
 
@@ -245,20 +271,22 @@ The interface consists of the following operations and laws.
 - For type [mu], BB1 has type [mu^-1] and BB2 has type [mu].
 - The G-structure is retained as tensor data; an arbitrary faithful vector representation alone is not a definition of goodness.
 
-Use the torsor/representation dictionary and descent for split filtrations. Form the cocharacter double coset, checking independence of trivialization.
+Use the torsor/representation dictionary and the imported splitting and type theorem for exact tensor filtrations. Form the cocharacter double coset, checking independence of trivialization.
 
-The consuming constructions use this interface as follows. HK I Theorem 3.2.6: Relates actual group-valued relative position to exactness. HK II §§5–7: Defines fixed-type cells and family types.
+The consuming constructions use this interface as follows. §0.4: Relates actual group-valued relative position to exactness. §§5.1 and 6.4: Define fixed-type cells and family types.
 
 **Checks.**
 
 - The bilattice (K^n,R^n,t^muR^n) is good with exactly its declared cocharacter type.
-- For G_a embedded unipotently in GL_2, the lattice with off-diagonal t^-1 is not good: G_a has only the zero cocharacter.
+- For G_a embedded unipotently in GL_2, the lattice with off-diagonal t^-1 is not good: G_a has only the zero cocharacter. At filtration step zero the ambient trace is k e1 and its image in the quotient is 0, whereas the quotient trace is k. The underlying exact extension therefore fails filtered exactness.
 - For a split torus every bilattice is good, and type is its cocharacter tuple, without Weyl-group identifications beyond that torus.
 - Over Q_p[[t]], the torsor of a quaternion division algebra for PGL_2 has Brauer invariant 1/2 and cannot be trivialized. Taking both lattice torsors equal gives an exact trivial trace filtration but no double-coset presentation over Q_p[[t]]. After extending to Q_p-bar[[t]], its invariant is zero and its type is zero. This is why the residue-field hypothesis is explicit.
 
+- For G=G_m⋉G_a with mu of weight −1 on Lie G_a, the filtration stabilizer P_mu is G_m and G/P_mu is A¹. For mu^-1 the stabilizer is all G and the flag is a point. A reductive-only flag construction would miss the affine-line case.
+
 **Acceptance.** Check the G_a lattice non-example and both opposing type conventions.
 
-*Needs:* §0.1; ReductiveGroups Layer 1.
+*Needs:* §0.1; ReductiveGroups Layer 1; HodgeTateAndCanonicalSubgroups §2.14.
 
 ### 0.3 Specialization dominance
 
@@ -282,19 +310,29 @@ A good cocharacter double coset gives two split exact filtered tensor functors. 
 
 **Acceptance.** The G_a example fails exactness on its defining extension, rather than contradicting tensor compatibility.
 
-*Needs:* §0.2; §0.3.
+*Needs:* §0.2; §0.3; HodgeTateAndCanonicalSubgroups §2.14.
 
 ### 0.5 Recovery from a filtration
 
-Let R be a complete characteristic-zero discrete valuation ring, with fraction field K, algebraically closed residue field C and uniformizer t, with its coefficient field embedded compatibly in R. For a connected linear group G and a cocharacter mu over an algebraically closed coefficient field, the pointwise BB map on the good type-[mu] cell is bijective if all Ad(mu)-weights are ≤1. For the second assertion, let a group Gamma act on R preserving its maximal ideal; assume C^Gamma lies in the coefficient field, G and [mu] are defined over C^Gamma, and Gamma preserves the line (C^Gamma)·t and acts on it by an infinite-order character. Then the Gamma-fixed part of this good cell is exactly the canonical lifts of the C^Gamma-rational flags. In particular this applies to B_dR and the Galois action of a discretely valued p-adic K0⊂C with infinite cyclotomic extension. The fixed-point assertion concerns the good cell, not arbitrary lattices.
+Let R be a complete characteristic-zero DVR with fraction field K, algebraically closed residue field C, uniformizer t and a coefficient section C→R. For connected linear G/C and a cocharacter mu, the pointwise BB map on the good type-[mu] cell is bijective if all Ad(mu)-weights are ≤1.
 
-(HKI, arXiv v2, Proposition 3.1.7 and Example 3.1.10, pp. 22–23; HKI line 1043, HKI line 1083).
+For the fixed-point assertion put kGamma=C^Gamma, where Gamma acts on R preserving its maximal ideal. Require the restriction of the coefficient section to kGamma→R to be fixed pointwise by Gamma, a connected linear G/kGamma and a kGamma-defined class [mu], and gamma(t)=chi(gamma)t for a character chi:Gamma→kGamma×. For every nonzero integer m assume C(chi^m)^Gamma=0, where gamma acts on this twisted coefficient space by c↦chi(gamma)^m gamma(c). Then the Gamma-fixed good type-[mu] lattices are exactly the canonical lattices of kGamma-rational flags in Fl_[mu^-1].
 
-For the weight-bound statement compute positive-loop root coordinates and their truncation degrees. For Galois invariance apply the cyclotomic action on graded B_dR and eliminate negative non-invariant coefficients.
+In the p-adic application take K0 complete discretely valued of characteristic zero with perfect residue field of characteristic p, C the completed algebraic closure of K0, R=B_dR+(C), and Gamma=Gal(K0bar/K0). PadicPeriodRings §2 gives C^Gamma=K0 and the vanishing of every nonzero cyclotomic twist; §§4.1 and 4.3 give gamma(t)=chi_cyc(gamma)t and the fixed embedding K0→R. No action of this Galois group on a larger arbitrary C is presumed.
 
-**Acceptance.** An adjoint weight ≥2 leaves a nontrivial BB fibre; the assertion is not made for all lattices without the Galois hypothesis.
+(HKI, arXiv v2, Proposition 3.1.7 and Example 3.1.10, pp. 22–23; HKI line 1043, HKI line 1083). The fixed-point assertion uses the twisted-invariant hypothesis above: infinite-order scaling in Proposition 3.1.7(2) alone does not suffice (HKI line 1047).
 
-*Needs:* §0.4; RelativeFarguesFontaine §4.10; RelativeFarguesFontaine §4.11; RelativeFarguesFontaine §4.12.
+For the weight bound compute positive-loop weight coordinates and their truncation degrees. For fixed points first descend the trace flag to kGamma and form its canonical lattice using its tensor splitting. Compare an invariant lift with that lattice through successive congruence quotients; every nonzero lifting parameter lies in a nonzero t-degree twisted coefficient space, whose invariants vanish. Completeness then gives equality. This avoids the unsupported coefficient-descent step in the source proof at HKI line 1065.
+
+**Checks.**
+
+- For G=GL_2 and mu=(2,0), the lattices ⟨t²e1,e2+c t e1⟩, c∈C, have the same trace flag but are distinct for distinct c. The adjoint weight 2 leaves a nontrivial BB fibre; for type (1,0) no such parameter remains.
+- Let C be an algebraic closure of Q(u), extend u↦2u to an automorphism gamma of C, put R=C[[t]] and gamma(t)=2t, and write kGamma=C^gamma. The invariant lattice ⟨e1,e2+u t^-1 e1⟩ has type (−1,1), trace flag C² for i≤−1, Ce1 for i=0,1 and zero for i≥2. That flag is kGamma-rational, but its canonical lattice ⟨t^-1 e1,t e2⟩ differs: t^-1 e1 is absent from the original lattice. The nonzero invariant u in C(chi^-1) excludes this example from the theorem.
+- If Gamma acts trivially on C and chi has infinite order, C(chi^m)^Gamma=0 for m≠0: some gamma has chi(gamma)^m≠1. For K0=Q_p, including p=2 and 3, Tate–Sen instead gives H⁰(G_K0,C(m))=0 for m≠0 and H⁰(G_K0,C)=Q_p. The canonical Tate lattice t^aR is invariant and its trace jump is −a.
+
+**Acceptance.** The fixed coefficient section and twisted-invariant vanishing are required for fixed-lattice recovery.
+
+*Needs:* §0.4; HodgeTateAndCanonicalSubgroups §2.14; PadicPeriodRings §2; PadicPeriodRings §4.1; PadicPeriodRings §4.3; RelativeFarguesFontaine §4.10; RelativeFarguesFontaine §4.11; RelativeFarguesFontaine §4.12.
 
 ### Examples
 
@@ -303,6 +341,10 @@ Take L1=R² and L2=R e1+R(e2+t^(−1)e1). The determinant valuation is zero, but
 For L2=t^aR the condition t^(i+a)R∩R maps nontrivially to k precisely when i+a≤0. Swapping lattices negates a; replacing t by u^e multiplies it by e. Thus the trace jump is −a, and a ramified base change changes the normalization of type. The opposite type negates every adjoint weight, exchanging the two one-sided bounds.
 
 ### Dependencies
+
+- PadicPeriodRings §§2, 4.1 and 4.3.
+
+- HodgeTateAndCanonicalSubgroups §2.14.
 
 - RelativeFarguesFontaine §4.10.
 - RelativeFarguesFontaine §4.11.
@@ -324,7 +366,7 @@ The interface consists of the following operations and laws.
 
 - b defines the functor with Frobenius rho(b) sigma in every representation rho.
 - b and b′ define isomorphic functors iff b′=g b sigma(g)^-1.
-- b is basic iff the isocrystal Ad(b) is isoclinic of slope zero.
+- b is basic iff the isocrystal Ad(b) is isoclinic of slope zero, using ker(Ad)=Z(G) (gap:adjoint-kernel-and-orbit-differential).
 - A homomorphism sends G-isocrystals to H-isocrystals, with transported Newton grading; basicness is asserted only when the transported grading is central.
 
 Use Steinberg for the reductive quotient and successive split vector-group quotients for the unipotent radical. Identify the representation functor of b with Frobenius rho(b) sigma. Obtain Newton grading representationwise from Dieudonné–Manin.
@@ -339,7 +381,7 @@ The consuming constructions use this interface as follows. §§2.1–2.2: Matche
 
 **Acceptance.** Basicness must be tested in G, not merely its Levi quotient.
 
-*Needs:* BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G; BunGAndNewtonStrata BG0 / sigma-centralizer-J-b; BunGAndNewtonStrata BG0 / g-torsors-three-descriptions; BunGAndNewtonStrata BG1 / newton-and-kottwitz-maps; BunGAndNewtonStrata BG1 / admissible-finiteness-and-basic; BunGAndNewtonStrata BG1 / torus-norm-description; VectorBundlesAndIsocrystals VB0 / dieudonne-manin-isocrystals; VectorBundlesAndIsocrystals VB0 / tensor-and-dual-slopes; ReductiveGroupsPartII RG2.1 / steinberg-quasi-split; ReductiveGroups Layers 5 and 6A; ReductiveGroups Layer 2; `WittVector.Isocrystal`; `WittVector.StandardOneDimIsocrystal`; `WittVector.isocrystal_classification`.
+*Needs:* BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G; BunGAndNewtonStrata BG1 §1.13 / sigma-centralizer-J-b; BunGAndNewtonStrata BG0 / g-torsors-three-descriptions; BunGAndNewtonStrata BG1 / newton-and-kottwitz-maps; BunGAndNewtonStrata BG1 / admissible-finiteness-and-basic; BunGAndNewtonStrata BG1 / torus-norm-description; VectorBundlesAndIsocrystals VB0 / dieudonne-manin-isocrystals; VectorBundlesAndIsocrystals VB0 / tensor-and-dual-slopes; ReductiveGroupsPartII RG2.1 / steinberg-quasi-split; ReductiveGroups Layers 5 and 6A; ReductiveGroups Layer 2; `WittVector.Isocrystal`; `WittVector.StandardOneDimIsocrystal`; `WittVector.isocrystal_classification`.
 
 ### 1.2 Levi invariance of B(G)
 
@@ -378,7 +420,7 @@ The consuming constructions use this interface as follows. §1.5: Identifies aut
 
 **Acceptance.** The inner-form assertion has a basicness hypothesis.
 
-*Needs:* §1.1; BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G; BunGAndNewtonStrata BG0 / sigma-centralizer-J-b; BunGAndNewtonStrata BG0 / g-torsors-three-descriptions; MotivesAndAlgebraicCycles §§6.1–6.2; MotivesAndAlgebraicCycles §6.8.
+*Needs:* §1.1; BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G; BunGAndNewtonStrata BG1 §1.13 / sigma-centralizer-J-b; BunGAndNewtonStrata BG0 / g-torsors-three-descriptions; MotivesAndAlgebraicCycles §§6.1–6.2; MotivesAndAlgebraicCycles §6.8.
 
 ### 1.4 Bundles for connected linear groups
 
@@ -405,7 +447,7 @@ The consuming constructions use this interface as follows. Layer 1 §1.5: Identi
 
 **Acceptance.** Nonbasic bundle forms and automorphism kernels are not discarded.
 
-*Needs:* §1.1; DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks; DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks; VectorBundlesAndIsocrystals VB1 / isocrystal-to-bundle-functor; VectorBundlesAndIsocrystals VB1 / cohomology-of-twists; BunGAndNewtonStrata BG2:uniformization / bun-g-as-v-stack; BunGAndNewtonStrata BG2:uniformization / beauville-laszlo-surjectivity.
+*Needs:* §1.1; DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks; DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks; VectorBundlesAndIsocrystals VB1 / isocrystal-to-bundle-functor; VectorBundlesAndIsocrystals VB1 / cohomology-of-twists; BunGAndNewtonStrata BG2:uniformization / bun-g-as-v-stack; BunGAndNewtonStrata BG2:uniformization / beauville-laszlo-surjectivity; VStackSheavesAndLisseCategories §VS4.0 / bundle-stack-geometry.
 
 ### 1.5 Basic-stratum theorem
 
@@ -417,7 +459,7 @@ Twist the vector-group quotients of U by E_b. Basicness makes their isocrystals 
 
 **Acceptance.** The Borel example at nonbasic b must fail the claimed extension.
 
-*Needs:* §1.4; §1.3; §1.2; BunGAndNewtonStrata BG3 / semistable-locus-and-basic-strata; BunGAndNewtonStrata BG3 / full-automorphism-v-group; VectorBundlesAndIsocrystals VB1 / isocrystal-to-bundle-functor; VectorBundlesAndIsocrystals VB1 / cohomology-of-twists.
+*Needs:* §1.4; §1.3; §1.2; BunGAndNewtonStrata BG3 / semistable-locus-and-basic-strata; BunGAndNewtonStrata BG3 / full-automorphism-v-group; VectorBundlesAndIsocrystals VB1 / isocrystal-to-bundle-functor; VectorBundlesAndIsocrystals VB1 / cohomology-of-twists; VStackSheavesAndLisseCategories §VS4.0 / bundle-stack-geometry.
 
 ### 1.6 Basic twisting of bundle stacks
 
@@ -454,8 +496,10 @@ For the basic slope-zero matrix b = [[1,1],[0,1]] and x = diag(2,1), both fixed 
 
 ### Dependencies
 
+- VStackSheavesAndLisseCategories §VS4.0 / bundle-stack-geometry.
+
 - BunGAndNewtonStrata BG0 / g-isocrystals-and-B-of-G.
-- BunGAndNewtonStrata BG0 / sigma-centralizer-J-b.
+- BunGAndNewtonStrata BG1 §1.13 / sigma-centralizer-J-b.
 - BunGAndNewtonStrata BG0 / g-torsors-three-descriptions.
 - BunGAndNewtonStrata BG1 / newton-and-kottwitz-maps.
 - BunGAndNewtonStrata BG1 / admissible-finiteness-and-basic.
@@ -500,7 +544,7 @@ The interface consists of the following operations and laws.
 
 Build the modified bundle using imported patching. Impose its stated slope on each graded piece. Define tensor and dual by weight addition and negation, using the bundle slope calculus.
 
-The consuming constructions use this interface as follows. HK II §6: Defines the geometric fibres of neutral Hodge structures. Layer 2 §2.4: Matches basic isocrystal gradings with weights.
+The consuming constructions use this interface as follows. §7.1: Defines the geometric fibres of neutral Hodge structures. Layer 2 §2.4: Matches basic isocrystal gradings with weights.
 
 **Checks.**
 
@@ -527,7 +571,7 @@ The interface consists of the following operations and laws.
 
 Patch the original isocrystal bundle using L_et. Slope-zero classification trivializes the modification and yields the comparison via evaluation. Pull back the standard de Rham lattice.
 
-The consuming constructions use this interface as follows. §3.1: Recognizes pairs defined by filtered isocrystals. HK II §7: Defines geometric fibres of families and both realizations.
+The consuming constructions use this interface as follows. §3.1: Recognizes pairs defined by filtered isocrystals. §6.1: Defines geometric fibres of families and both realizations.
 
 **Checks.**
 
@@ -580,7 +624,7 @@ The consuming constructions use this interface as follows. §7.3: Transfers the 
 
 ### 2.5 Mumford–Tate and motivic Galois groups
 
-For a G-object in HS(C) or AdmPair(C), choose its indicated fibre trivialization and define MT or MG as tensor automorphisms of the fibre functor on the full tensor subcategory generated by the object, including subquotients. This is a closed connected subgroup of G. Construct its canonical reduction of structure group and characterize it by all tensor constructions and their Hodge/Tate lines, including nontrivial characters; weight-zero tensors alone need not suffice.
+For a G-object in HS(C) or AdmPair(C), choose its indicated fibre trivialization and define MT or MG as tensor automorphisms of the fibre functor on the full tensor subcategory generated by the object, including subquotients. This is a closed connected subgroup of G. Import its canonical reduction of structure group (gap:tannakian-canonical-reduction) and characterize it by all tensor constructions and their Hodge/Tate lines, including nontrivial characters; weight-zero tensors alone need not suffice.
 
 (HKI, arXiv v2, §4.4, pp. 36–37; Theorems 4.5.1 and 5.3.1, pp. 38, 43; HKI line 1663, HKI line 1762, HKI line 2013).
 
@@ -591,7 +635,7 @@ The interface consists of the following operations and laws.
 - After a compatible fibre identification, the canonical group is contained in every subgroup supporting a reduction; extension of that canonical reduction gives the original G-object.
 - Under the basic-pair equivalence MG identifies with MT via the same étale fibre functor.
 
-Restrict the fibre functor to the generated tensor subcategory. Apply reconstruction and the Chevalley line criterion. Form the reduction via the tensor-isomorphism torsor and transport the chosen fibre trivialization.
+Restrict the fibre functor to the generated tensor subcategory. Apply reconstruction and the Chevalley line criterion. Apply the imported canonical reduction and transport the chosen fibre trivialization through its tensor-isomorphism torsor.
 
 The consuming constructions use this interface as follows. Layer 6 §6.3: Extends the group and reduction to connected families. §10.1: Detects failure of full motivic Galois group by Hodge lines.
 
@@ -611,7 +655,7 @@ For a good G-Hodge structure of type [mu] whose weight homomorphism is central i
 
 (HKI, arXiv v2, Theorems 4.4.4, 5.2.4, pp. 37, 43; Example 5.4.6, p. 45; HKI line 1730, HKI line 2000, HKI line 2109).
 
-Read the Newton homomorphism from the weight grading. Use the reductive admissibility condition and Levi reduction for necessity. Use imported reductive rigid-point existence and lift along the unipotent filtration; at the resulting finite field of definition the Galois-fixed good lattice is the canonical lift of its rational trace flag by §0.5.
+Read the Newton homomorphism from the weight grading. Use the reductive admissibility condition and Levi reduction for necessity. Use imported reductive rigid-point existence and lift along the unipotent filtration; at the resulting finite field of definition apply §0.5 over its completed algebraic closure, then extend the canonical lattice to C.
 
 **Acceptance.** Keep [mu^-1] in B(G,−), rather than silently reversing the lattice convention.
 
@@ -703,27 +747,33 @@ Use the Galois-stability of the canonical lattice to act on H^0 of the modificat
 
 **Acceptance.** Full faithfulness and subobject stability both enter the identification of the algebraic Galois envelope.
 
-*Needs:* §3.1; §2.3; PadicHodgeTheory §5.5; PadicHodgeTheory §5.5.
+*Needs:* §3.1; §2.3; PadicHodgeTheory §5.5.
 
 ### 3.3 Open Galois image
 
-For a G-admissible pair with good reduction over a strict p-adic field K and a chosen étale fibre trivialization, the continuous Galois representation has image open in MG(Q_p). Its Zariski closure equals MG. For a classical point initially defined over a non-strict discretely valued field F, base change to the completion of its maximal unramified extension F′; the restricted inertia image is open in the same geometric MG and supplies an open subgroup orbit contained in the original Galois orbit.
+For a G-admissible pair with good reduction over a strict p-adic field K and a chosen étale fibre trivialization, compute the realization over the completed algebraic closure of K. Its continuous Galois representation has image open in MG(Q_p). Its Zariski closure equals MG. For a classical point initially defined over a non-strict discretely valued field F, base change to the completion of its maximal unramified extension F′; the restricted inertia image is open in the same geometric MG and supplies an open subgroup orbit contained in the original Galois orbit.
 
 (HKI, arXiv v2, Corollary 5.5.3, pp. 46–47; HK II proof of Theorem 9.1.3, pp. 57–58; HKII line 2577; HKI line 2167).
 
-Identify the algebraic Galois envelope using full faithfulness and subobjects. Apply Serre’s Hodge–Tate openness criterion in that envelope. For F′ retain the same geometric pair and MG, then use inclusion of its Galois group into the original decomposition group.
+Identify the algebraic Galois envelope using full faithfulness and subobjects. Apply Serre’s Hodge–Tate openness criterion in that envelope (gap:strict-field-serre-openness). For F′ retain the same geometric pair and MG, then use inclusion of its Galois group into the original decomposition group.
 
 **Acceptance.** Use containment of an open subgroup orbit, not equality with the entire Galois orbit.
 
-*Needs:* §3.2; §2.5; PadicHodgeTheory §5.5; ReductiveGroupsPartII RG2.0 / scheme-point-topology; ReductiveGroupsPartII RG2.0 / points-topological-group; ReductiveGroupsPartII RG2.0 / congruence-neighbourhood-basis; ReductiveGroupsPartII RG2.0 / smooth-morphism-open-map; PadicHodgeTheory §5.5.
+*Needs:* §3.2; §2.5; PadicHodgeTheory §5.5; ReductiveGroupsPartII RG2.0 / scheme-point-topology; ReductiveGroupsPartII RG2.0 / points-topological-group; ReductiveGroupsPartII RG2.0 / congruence-neighbourhood-basis; ReductiveGroupsPartII RG2.0 / smooth-morphism-open-map.
 
 ### 3.4 Two-lattice CM criterion
 
 Write C0=W(k_C)[1/p] and let C0bar be its algebraic closure inside C. For a basic admissible pair over C, having both its étale lattice (relative to W) and its de Rham lattice (relative to V_et) defined by filtrations over finite extensions of C0 is equivalent to having CM. In the CM case the étale lattice can be defined over Q_p-breve-bar and the de Rham lattice over Q_p-bar. Equivalently a good-reduction p-adic Hodge structure has C0bar-analytic de Rham lattice exactly when it has CM. For a C0bar-analytic admissible pair without basicness, if its de Rham lattice is also C0bar-analytic, the slope filtration lifts to subpairs and its graded subpairs have CM; the original extension need not split or have CM.
 
-(HKI, arXiv v2, Theorem B and Corollary C, pp. 5–6; §6.2, pp. 52–54; Theorem 6.3.2, pp. 54–55; Proposition 5.7.1, p. 49; HKI line 204, HKI line 347, HKI line 2400, HKI line 2490, HKI line 2293).
+(HKI, arXiv v2, Theorem B, p. 5, and Corollary C, p. 8; §6.2, pp. 52–54; Theorem 6.3.2, pp. 54–55; Proposition 5.7.1, p. 49; HKI line 204, HKI line 347, HKI line 2400, HKI line 2490, HKI line 2293).
 
-Reduce the CM direction to a torus; its flag varieties are points, so the character/cocharacter lattice description makes both filtrations algebraic over the stated smaller fields. For the converse the algebraic filtration has an open MG orbit fixed by its field of definition, forcing central cocharacters and then a torus. In the nonbasic case use the lifted slope filtration and apply the basic statement to each graded part.
+Reduce the CM direction to a torus; its flag varieties are points, so the character/cocharacter lattice description makes both filtrations algebraic over the stated smaller fields. For the converse choose a common finite extension K/C0 over which both lattices are filtration-defined. The Galois image preserves the K-rational de Rham lattice (HKI Lemma 5.5.4, p. 47; HKI line 2174). Its elements are tensor automorphisms of the fully faithful realization Rep MG→HS(C), hence are central: full faithfulness identifies them with automorphisms of the identity on Rep MG, whose representation components commute with MG (HKI Lemma 2.1.5, p. 13; HKI line 586). Zariski density from §3.3 makes MG commutative. A connected commutative characteristic-zero linear group is a torus times a vector group; the absence of nonzero C0bar-analytic self-extensions of the unit excludes the vector factor (HKI Example 5.4.5, p. 45, and §6.2, p. 52; HKI line 2101, HKI line 2424). In the nonbasic case use the lifted slope filtration and apply the basic statement to each graded part.
+
+**Checks.**
+
+- Sums of unit objects have trivial MG, a rank-zero torus; a nonzero Tate generator has MG=G_m. Both have the two canonical rational lattices.
+- The unit self-extension with parameter t^-1 modulo B_dR+ has MG=G_a and only the zero cocharacter, which is central. Its nonzero parameter prevents C0bar-analyticity, so central cocharacters alone cannot establish the conclusion.
+- On the standard representation of G_a, [[1,u],[0,1]] commutes with every [[1,v],[0,1]], but u≠0 still gives a nontrivial unit self-extension. The analytic-extension vanishing, in addition to commutativity, is what eliminates this factor.
 
 **Acceptance.** The nonbasic refinement yields CM graded pieces, not a semisimplicity or splitting assertion.
 
@@ -739,7 +789,6 @@ For a CM object reduce its structure group to its torus. A torus flag variety fo
 
 - Layer 2.
 - Layer 0.
-- PadicHodgeTheory §5.5.
 - PadicHodgeTheory §5.5.
 - ReductiveGroupsPartII RG2.0 / scheme-point-topology.
 - ReductiveGroupsPartII RG2.0 / points-topological-group.
@@ -819,7 +868,7 @@ Choose a closed immersion X→A^n_L and test its finitely many coordinates. Boun
 
 ### 4.4 Relative bilattices and their type
 
-A bilatticed B_dR-local system on Y is (V,L1,L2), with V a B_dR-local system and Li B_dR+-local systems identified with lattices in V. A latticed B_dR+-local system is equivalently (L1,L2⊂L1[1/Fil^1]); the datum is not merely a G(B_dR+)-local system with one lattice. Define trace filtrations by image of Fil^i B_dR·L2∩L1 in L1/Fil^1L1, and type pointwise by elementary divisors. A filtered O-local system uses locally direct summands and a pointwise-locally-constant rank function.
+A bilatticed B_dR-local system on Y is (V,L1,L2), with V a B_dR-local system and Li B_dR+-local systems identified with lattices in V. A latticed B_dR+-local system is equivalently (L1,L2⊂L1[1/Fil^1]); the datum is not merely a G(B_dR+)-local system with one lattice. Define trace filtrations by image of Fil^i B_dR·L2∩L1 in L1/Fil^1L1, and type pointwise by elementary divisors. A filtered O-local system uses locally direct summands and a pointwise-locally-constant rank function. Strictness and exactness are the sheaf versions of §§0.1–0.2: test both lattice sequences for bilattices, and every filtration step for filtered systems.
 
 (HKII, arXiv v2, §3.1, pp. 20–22, equations (3.1.0.1), (3.1.1.1), Example 3.1.1, Lemma 3.1.2; HKII line 948, HKII line 961, HKII line 980, HKII line 997).
 
@@ -854,7 +903,7 @@ Apply the point criterion on geometric points. Use constant ranks and finite-pro
 
 **Acceptance.** The disc family and G_a example rule out assuming arbitrary G-families have locally constant good type.
 
-*Needs:* §4.4; §0.2; §0.4.
+*Needs:* §4.4; §0.2; §0.4; HodgeTateAndCanonicalSubgroups §2.14.
 
 ### 4.6 The trivial-filtration lattice functor
 
@@ -903,6 +952,8 @@ For a flat line with its filtration concentrated in degree a, the canonical seco
 
 ### Dependencies
 
+- HodgeTateAndCanonicalSubgroups §2.14.
+
 - DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks.
 - DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks.
 - DiamondsAndVStacks D6 / gluing-and-the-diamond-functor.
@@ -937,7 +988,7 @@ Extend the reductive B_dR+ Grassmannian by Levi and unipotent coordinates. Prove
 
 ### 5.1 Non-reductive de Rham Grassmannians
 
-For connected linear G/Q_p, Gr_G is the étale sheaf quotient G(B_dR)/G(B_dR+), equivalently G(B_dR+)-torsors with a trivialization after inverting Fil^1. It is a v-sheaf. For a cocharacter class [mu], Gr_[mu] is the good lattice locus of type [mu] and BB:Gr_[mu]→Fl_[mu^-1]^diamond is the first trace-filtration map. Define Fl as filtrations of the standard fibre functor; its type components are clopen and descend to their reflex fields.
+Let L be a p-adic field and G/L a connected linear group; for G/Q_p use G_L. The Grassmannian Gr_G/Spd L is the étale sheaf quotient G(B_dR)/G(B_dR+) on Perfd_L, equivalently G(B_dR+)-torsors with a trivialization after inverting Fil^1. It is a v-sheaf. The rigid flag variety Fl_G/Spa L parametrizes filtrations of the standard fibre functor and is the analytification of the flag schemes supplied by HodgeTateAndCanonicalSubgroups §2.14. For a cocharacter class [mu] with reflex field L([mu]), both Gr_[mu] and Fl_[mu^-1] are over that reflex base; the former is the good lattice locus of type [mu], and BB:Gr_[mu]→Fl_[mu^-1]^diamond is the first trace-filtration map. The type components of Fl_G are clopen after the appropriate reflex base change. For any extension L′/L of p-adic fields, Gr_(G_L′)=Gr_G ×_(Spd L) Spd L′ and the flag spaces have the analogous base-change comparison.
 
 (HKII, arXiv v2, Definition 5.0.1 and Proposition 5.0.3, pp. 29–31; HKII line 1347, HKII line 1395).
 
@@ -955,12 +1006,12 @@ The consuming constructions use this interface as follows. Layer 6 §6.5: Realiz
 **Checks.**
 
 - For reductive G this agrees with the one-leg Grassmannian supplied by GS0.
-- For G_m the geometric points are indexed by integer exponents; BB maps each cell to a point.
+- For G_m/L each integer type a has cell Spd L and flag Spa L; after any p-adic extension L′/L that cell is Spd L′. BB has one geometric point on either side.
 - Gr_Ga=B_dR/B_dR+ has nonzero geometric points, while its only good cocharacter cell is the zero point.
 
 **Acceptance.** A non-reductive Grassmannian need not be the union of its good cocharacter cells.
 
-*Needs:* §4.5; §1.4; GeometricSatakeAndFusion GS0:loop-geometry / grassmannian; GeometricSatakeAndFusion GS0:loop-geometry / schubert-bounds-and-properness; DiamondsAndVStacks D6 / gluing-and-the-diamond-functor; DiamondsAndVStacks D6 / etale-site-comparison; DiamondsAndVStacks D6 / seminormal-rigid-full-faithfulness.
+*Needs:* §4.5; §1.4; GeometricSatakeAndFusion GS0:loop-geometry / grassmannian; GeometricSatakeAndFusion GS0:loop-geometry / schubert-bounds-and-properness; DiamondsAndVStacks D6 / gluing-and-the-diamond-functor; DiamondsAndVStacks D6 / etale-site-comparison; DiamondsAndVStacks D6 / seminormal-rigid-full-faithfulness; HodgeTateAndCanonicalSubgroups §2.14; AdicSpacesPartII R1.3 / analytification-functor.
 
 ### 5.2 Subgroup immersion criterion
 
@@ -1006,11 +1057,11 @@ Specialization puts every actual representation type above the induced Levi type
 
 ### 5.5 Rigid sources and Griffiths transversality
 
-For a seminormal rigid S/L and a map S^diamond→Gr_G whose Levi projection lands in Gr_[mu_M], the map factors through Gr_[mu]. BB identifies such maps with filtrations of type [mu^-1] on the trivial G-bundle whose restriction to the smooth locus is Griffiths transversal for the trivial connection. For smooth S the condition holds everywhere. Every rigid analytic point of Gr_G is good. No claim is made that all geometric points are good.
+Let L be p-adic, G/L connected linear, and [mu] a cocharacter class with reflex field L([mu]). For a seminormal rigid S over L([mu]) and a map S^diamond→Gr_G ×_(Spd L) Spd L([mu]) whose Levi projection lands in Gr_[mu_M], the map factors through Gr_[mu]. BB identifies such maps with filtrations of type [mu^-1] on the trivial G-bundle whose restriction to the smooth locus is Griffiths transversal for the trivial connection. For smooth S the condition holds everywhere. Every rigid analytic point of Gr_G is good. No claim is made that all geometric points are good.
 
 (HKII, arXiv v2, Theorem 5.0.4(4), p. 31; §5.3, pp. 34–35; HKII line 1430, HKII line 1566).
 
-At a classical point use the infinite cyclotomic Galois action to recover a canonical lattice. The closed cutout and density give the factorization. On a resolution use the smooth comparison of Layer 4. Descend the flag and its canonical lattice along the resolution and its fibre product by seminormal full faithfulness.
+At a classical point pass to the completed algebraic closure of its residue field and use §0.5 with Tate–Sen vanishing to recover the canonical lattice; extend it to larger geometric fields only afterwards. The closed cutout and density give the factorization. On a resolution use the smooth comparison of Layer 4. Descend the flag and its canonical lattice along the resolution and its fibre product by seminormal full faithfulness.
 
 **Acceptance.** This handles the application of the smooth theorem on a singular base.
 
@@ -1035,6 +1086,10 @@ For G_a in its standard unipotent two-dimensional representation, Gr_Ga(C)=B_dR(
 On a reductive GL_2 cell of type (1,0), adjoint weights are −1,0,1 and BB identifies the cell with the appropriate projective-line flag. A non-reductive type can instead have adjoint weights 0,1,−2: BB for that type is an isomorphism, while BB for its inverse fails. The inverse has a weight 2 and admits no local section over any nonempty flag open. The mirabolic example in §9.4 distinguishes these cases. (HK II Theorem 5.0.4(5), pp. 32, 35, and Example 8.4.4, p. 53.)
 
 ### Dependencies
+
+- AdicSpacesPartII R1.3 / analytification-functor.
+
+- HodgeTateAndCanonicalSubgroups §2.14.
 
 - `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer`.
 
@@ -1095,7 +1150,7 @@ Take isocrystal kernels and intersect the lattice. Use exactness in each point c
 
 ### 6.3 G-families and canonical reduction
 
-A neutral G-admissible pair is an exact tensor functor A:Rep_Qp G→AdmPair^neutral(Y) such that, at every geometric y, omega_y∘A is isomorphic to the standard fibre functor. These isomorphisms are required to exist, not chosen as part of the object. With a chosen geometric fibre trivialization define H=MG(A,y)≤G from its generated tensor subcategory. H is connected. The isocrystal tensor functor of its canonical H-reduction is globally fixed and is isomorphic to W_bH for some b_H∈H(Q_p-breve), without a connectedness hypothesis. If Y is connected, its étale fibre functors all have the standard H-form, so the reduction is neutral. With g sending f(b_H) to b by sigma-conjugation, the classifying map factors through the H-admissible locus. For disconnected Y this assertion is made componentwise, not with one universal neutral reduction.
+A neutral G-admissible pair is an exact tensor functor A:Rep_Qp G→AdmPair^neutral(Y) such that, at every geometric y, omega_y∘A is isomorphic to the standard fibre functor. These isomorphisms are required to exist, not chosen as part of the object. With a chosen geometric fibre trivialization define H=MG(A,y)≤G from its generated tensor subcategory and apply the imported canonical reduction (gap:tannakian-canonical-reduction). H is connected. The isocrystal tensor functor of its canonical H-reduction is globally fixed and is isomorphic to W_bH for some b_H∈H(Q_p-breve), without a connectedness hypothesis. If Y is connected, its étale fibre functors all have the standard H-form, so the reduction is neutral. With g sending f(b_H) to b by sigma-conjugation, the classifying map factors through the H-admissible locus. For disconnected Y this assertion is made componentwise, not with one universal neutral reduction.
 
 (HKII, arXiv v2, Definition 7.2.1, p. 41; Lemma 7.5.1, pp. 46–47, with the connected-base hypothesis; HKII line 1869, HKII line 2117).
 
@@ -1181,7 +1236,7 @@ For the structure map f of a nonempty connected factor, Rf_!Rf^!F_ℓ is concent
 
 **Acceptance.** Nonemptiness is explicit; products of arbitrary diamonds are not declared connected.
 
-*Needs:* DiamondSixOperations §S3.2; DiamondSixOperations §S4.2; DiamondSixOperations §S4.3; DiamondSixOperations §S2.4; DiamondSixOperations §S2.4.
+*Needs:* DiamondSixOperations §S3.2; DiamondSixOperations §S4.2; DiamondSixOperations §S4.3; DiamondSixOperations §S2.4.
 
 ### 6.8 Geometric connectedness of admissible loci
 
@@ -1227,7 +1282,6 @@ On a disconnected base the defining W of a neutral pair remains one globally fix
 - DiamondSixOperations §S3.2.
 - DiamondSixOperations §S4.2.
 - DiamondSixOperations §S4.3.
-- DiamondSixOperations §S2.4.
 - DiamondSixOperations §S2.4.
 - GeometricSatakeAndFusion GS0:Schubert-smoothness / open-cell-stabilizer-and-smoothness.
 - GeometricSatakeAndFusion GS0:Schubert-smoothness / truncated-positive-loops.
@@ -1514,19 +1568,19 @@ Use the torus Kottwitz formula and trivial adjoint representation. For height tw
 
 ### 8.6 Borel and parabolic boundary examples
 
-Work over C_p for the disc families and put R = B_dR+(C) at geometric points. Let H be the upper triangular Borel of G=GL_2, and let mu_G(t)=diag(t^-1,1). Write L_[a:c]=R^2+R xi^-1(a e1+c e2). For b=diag(p,1), G-admissibility means a≠0, whereas H-admissibility in the full preimage means c=0. Thus a c≠0 gives an ambient-admissible point that is not subgroup-admissible. With b=diag(1,p), the particular H-cell <e1,xi^-1(e2+x e1)> is A^1 and maps isomorphically to the G-admissible part P^1 minus [e1]; both loci are H-admissible there. Separately, for G=GL_3 and H stabilizing the span of e1,e2, the family <e1,e2+(z/xi)e1,e3+(1/xi)e1> has constant G-type (1,0,−1); its GL_2×GL_1 Levi type is (1,−1;0) for z≠0 and (0,0;0) at z=0. Therefore a subgroup cell can fail to be closed in an ambient fixed-type cell, and subgroup Schubert decompositions need not be intersections with ambient cells.
+Work over C_p for the disc families and put R = B_dR+(C) at geometric points. Let H be the upper triangular Borel of G=GL_2, and let mu_G(t)=diag(t^-1,1). Write L_[a:c]=R^2+R xi^-1(a e1+c e2). For b=diag(p,1), G-admissibility means a≠0, whereas H-admissibility in the full preimage means c=0. Thus a c≠0 gives an ambient-admissible point that is not subgroup-admissible. With b=diag(1,p) and the H-type mu_H(z)=diag(1,z^-1), which induces [mu_G], the H-cell <e1,xi^-1(e2+x e1)> is A^1 and maps isomorphically to the G-admissible part P^1 minus [e1]; both loci are H-admissible there. Separately, for G=GL_3 and H stabilizing the span of e1,e2, the family <e1,e2+(z/xi)e1,e3+(1/xi)e1> has constant G-type (1,0,−1); its GL_2×GL_1 Levi type is (1,−1;0) for z≠0 and (0,0;0) at z=0. Therefore a subgroup cell can fail to be closed in an ambient fixed-type cell, and subgroup Schubert decompositions need not be intersections with ambient cells.
 
 (HKII, arXiv v2, Remark 7.5.3, p. 47; Example 7.5.10, pp. 49–50; HKII line 2135, HKII line 2230).
 
 Compute elementary divisors and induced Levi lattices in the displayed bases. Separate G-triviality of the modified bundle from the H-fibre-functor neutrality condition. Compare the nonzero-z locus with its limit at zero.
 
-**Acceptance.** The Borel’s b is diag(1,p) for the A^1 assertion; the reversed diagonal describes a different example.
+**Acceptance.** The Borel’s b is diag(1,p) and its type is (0,−1) for the A^1 assertion; the reversed diagonal describes a different example.
 
 *Needs:* §8.4; §5.4; §4.4.
 
 ### Examples
 
-Let H be the upper triangular Borel in GL_2 and L_[a:c]=R²+R ξ^(−1)(a e1+c e2), with type diag(t^(−1),1). For b=diag(p,1), the e1 subline, whose isocrystal slope is 1 and bundle slope is −1, forces a≠0 for ambient admissibility. H-admissibility additionally requires the e1 subpair to be admissible, which forces c=0. Thus the point [1:1] is ambient-admissible and fails subgroup admissibility. For b=diag(1,p), the cell ⟨e1,ξ^(−1)(e2+x e1)⟩ is A¹, maps to P¹ minus [e1], and is H-admissible throughout. These are different diagonal data. (HK II Remark 7.5.3, p. 47, with the specified diagonal and neutrality condition; HKII line 2135)
+Let H be the upper triangular Borel in GL_2 and L_[a:c]=R²+R ξ^(−1)(a e1+c e2), with type diag(t^(−1),1). For b=diag(p,1), the e1 subline, whose isocrystal slope is 1 and bundle slope is −1, forces a≠0 for ambient admissibility. H-admissibility additionally requires the e1 subpair to be admissible, which forces c=0. Thus the point [1:1] is ambient-admissible and fails subgroup admissibility. For b=diag(1,p) and H-type mu_H=(0,−1), the cell ⟨e1,ξ^(−1)(e2+x e1)⟩ is A¹, maps to P¹ minus [e1], and is H-admissible throughout. These are different diagonal data. (HK II Remark 7.5.3, p. 47, with the specified diagonal and neutrality condition; HKII line 2135)
 
 Over Spa(C_p⟨z⟩), the GL_3 parabolic stabilizing ⟨e1,e2⟩ gives another boundary. For ⟨e1,e2+(z/ξ)e1,e3+(1/ξ)e1⟩ the ambient type is (1,0,−1) throughout. At z≠0 its Levi type is (1,−1;0); at zero its Levi type is trivial. All these points are b=1 admissible by their filtration with unit admissible graded pieces. The punctured-disc subgroup cell is therefore not closed inside the ambient fixed-type intersection. (HK II Example 7.5.10, pp. 49–50; HKII line 2230)
 
@@ -1574,16 +1628,16 @@ The consuming constructions use this interface as follows. Layer 9 §9.2: Define
 **Checks.**
 
 - M_1 for the trivial group is the base point.
-- For compatible G_m data the lattice period targets are points, while the étale frame fibre is Q_p×.
+- For compatible G_m data the lattice period targets are points, while the étale frame fibre is Q_p×. At K=Z_p××I the quotient fibre is Q_p×/Z_p×=Z, with valuation as its discrete coordinate.
 - Two different étale trivializations of the same b-rigidified pair are distinct M_b-points.
 
 **Acceptance.** A modification includes its isomorphism off infinity; retaining only the two bundles loses the moduli.
 
-*Needs:* §6.5; §6.1; §1.3; RelativeFarguesFontaine §7.2; RelativeFarguesFontaine §7.4.
+*Needs:* §6.5; §6.1; §1.3; RelativeFarguesFontaine §7.2; RelativeFarguesFontaine §7.4; DiamondsAndVStacks D3 / locally-profinite-torsors.
 
 ### 9.2 The two period maps
 
-On `M_{b,[mu]}`, pi_Let sends a modification to L_et∈`Gr_[mu]^{b-adm}`; it is a G(Q_p)-torsor. pi_LdR records L_dR in the Grassmannian of the trivial étale fibre. If b is basic, its image is X_[mu] and pi_LdR is a G_b(Q_p)-torsor. Their BB composites are the Hodge map to Fl_[mu^-1] and the Hodge–Tate map to Fl_[mu]. Compact-open quotients give the respective finite levels; inverse limits recover M after checking sheaf descent and cofinality.
+On `M_{b,[mu]}`, pi_Let sends a modification to L_et∈`Gr_[mu]^{b-adm}`; it is a G(Q_p)-torsor. pi_LdR records L_dR in the Grassmannian of the trivial étale fibre. If b is basic, its image is X_[mu] and pi_LdR is a G_b(Q_p)-torsor. Their BB composites are the Hodge map to Fl_[mu^-1] and the Hodge–Tate map to Fl_[mu]. After choosing a p-adic reflex base L and C its completed algebraic closure, put I=Gal(Lbar/L). Apply DiamondsAndVStacks D3.10 (locally-profinite-torsors) to the G(Q_p)×I-torsor M_C over the L-admissible cell, and, for basic b, to its G_b(Q_p)×I-torsor over X_[mu],L. It supplies the compact-open quotients M_C/K, separated étale over the respective lattice targets, and identifies M_C with their inverse limit.
 
 (HKII, arXiv v2, §8.3, equations (8.3.0.1)–(8.3.0.2), pp. 51–52; Lemma 8.3.1, p. 52; §1.1, p. 5; HKII line 2290, HKII line 2304, HKII line 2328).
 
@@ -1592,9 +1646,9 @@ The interface consists of the following operations and laws.
 - BB∘pi_Let lands in Fl_[mu^-1], with the Hodge rational structure W_b.
 - BB∘pi_LdR lands in Fl_[mu], with the étale rational structure.
 - The two torsor groups are G(Q_p) for pi_Let and G_b(Q_p) for pi_LdR when b is basic.
-- The compatible compact-open quotient diagrams recover the respective pro-étale tower and its limit.
+- The imported compact-open quotient diagrams recover the respective pro-étale tower and its limit.
 
-Read L_et and L_dR from the same comparison c_dR. Identify the frame fibres as the corresponding rational-point torsors. In the basic case transfer the slope grading and apply the Hodge moduli interpretation. Take level quotients in sheaves before proving the inverse-limit identification.
+Read L_et and L_dR from the same comparison c_dR. Identify the frame fibres as the corresponding rational-point torsors. In the basic case transfer the slope grading and apply the Hodge moduli interpretation. Apply the imported level-space and inverse-limit theorem after perfectoid pullback; its separated étale quotients descend to the lattice targets by v-descent. Compact open subgroups are cofinal among open subgroups of these locally profinite groups.
 
 The consuming constructions use this interface as follows. Layer 9 §9.4: Compares specialness under each period structure. Layer 11 §11.4: Works at finite level étale over the appropriate lattice target.
 
@@ -1606,7 +1660,7 @@ The consuming constructions use this interface as follows. Layer 9 §9.4: Compar
 
 **Acceptance.** The second torsor structure has a basicness hypothesis.
 
-*Needs:* §9.1; §7.3; §2.4; §1.5; §5.6; ReductiveGroupsPartII RG2.0 / scheme-point-topology; ReductiveGroupsPartII RG2.0 / points-topological-group; ReductiveGroupsPartII RG2.0 / congruence-neighbourhood-basis; ReductiveGroupsPartII RG2.0 / smooth-morphism-open-map.
+*Needs:* §9.1; §7.3; §2.4; §1.5; §5.6; ReductiveGroupsPartII RG2.0 / scheme-point-topology; ReductiveGroupsPartII RG2.0 / points-topological-group; ReductiveGroupsPartII RG2.0 / congruence-neighbourhood-basis; ReductiveGroupsPartII RG2.0 / smooth-morphism-open-map; DiamondsAndVStacks D3 / locally-profinite-torsors.
 
 ### 9.3 Functoriality at infinite level
 
@@ -1655,7 +1709,7 @@ The consuming constructions use this interface as follows. Layer 9 §9.5: Tests 
 **Checks.**
 
 - Torus subgroup data satisfy all three notions.
-- For E/Q_p unramified cubic and the mirabolic subgroup of Res_E/Qp GL_2, the type with jumps (1,1,−2) in Example 8.4.4 supplies a Hodge-special component that is not Hodge–Tate special.
+- For any cubic extension E/Q_p and the mirabolic subgroup of Res_E/Qp GL_2, the type with jumps (1,1,−2) in Example 8.4.4 supplies a Hodge-special component that is not Hodge–Tate special. This also holds for a totally ramified cubic extension: the adjoint weights remain 0,1,−2 and the torus coinvariant is 1+1−2=0, matching b=1.
 - The GL_4 minuscule example in HK II 1.1.4 admits non-reductive special subgroup data; specialness must not require H reductive.
 
 **Acceptance.** The three classes can differ even for reductive ambient G.
@@ -1707,6 +1761,8 @@ Conversely, in GL_4 of minuscule type diag(t,t,1,1), every compatible subgroup i
 For the basic slope-zero matrix b = [[1,1],[0,1]] and x = diag(2,1), both fixed by coefficient Frobenius, σ_b(x) = [[2,−1],[0,1]]. Both b^(−1)σ_b(x) and σ(x)b^(−1) equal [[2,−2],[0,1]]; conjugation in the inverse order gives [[2,1],[0,1]] instead. For G_m and b=p^n the inner twist is trivial and duality changes n to −n and μ to μ^(−1). For a noncommutative group the same inversion also changes σ to Int(b)∘σ. Interchanging only the lattice exponents would miss the second rational group and its torsor. (HK II Lemma 4.2.3 and Theorem 8.5.1, pp. 28–29, 54; HKII line 1312)
 
 ### Dependencies
+
+- DiamondsAndVStacks D3 / locally-profinite-torsors.
 
 - Layer 6.
 - Layer 1.
@@ -1820,7 +1876,7 @@ Define the two analytic closures through compact level quotients, prove special 
 
 ### 11.1 Analytic Zariski closures
 
-Let G be connected linear, [b] a G-basic class in B(G,[mu^-1]), M=`M_{b,[mu]}`, L/Q_p-breve([mu]) p-adic, C=completed algebraic closure of L and I=Gal(Lbar/L). The action of a level subgroup K on scalars is through its projection to I, so C^K means the fixed field of that projection. For A⊂|M_C| define its Hodge analytic closure as the intersection of inverse images of all closed rigid analytic subdiamonds of M_C/K containing A, for compact open K≤G(Q_p)×I, defined over C^K. Use K≤G_b(Q_p)×I for the Hodge–Tate closure. An irreducible analytic set of either kind is a connected component of the preimage of an irreducible locally closed rigid analytic subdiamond at a level of that kind. A bi-analytic subdiamond is locally closed and irreducible analytic in both senses. An empty defining intersection equals all of |M_C|.
+Let G be connected linear, [b] a G-basic class in B(G,[mu^-1]), M=`M_{b,[mu]}`, L/Q_p-breve([mu]) p-adic, C=completed algebraic closure of L and I=Gal(Lbar/L). The action of a level subgroup K on scalars is through its projection to I, so C^K means the fixed field of that projection. For A⊂|M_C| define its Hodge analytic closure as the intersection of inverse images of all closed rigid analytic subdiamonds of M_C/K containing A, for compact open K≤G(Q_p)×I, defined over C^K. Use K≤G_b(Q_p)×I for the Hodge–Tate closure. An irreducible analytic set of either kind is a connected component of the preimage of an irreducible locally closed rigid analytic subdiamond at a level of that kind. A bi-analytic subdiamond is locally closed and irreducible analytic in both senses. An empty defining intersection equals all of |M_C|. The analytic closure of the empty subset is empty, because an empty closed rigid analytic container exists at every level.
 
 (HKII, arXiv v2, Definition 9.1.1 and Remark 9.1.2, p. 55; HKII line 2458, HKII line 2470).
 
@@ -1837,9 +1893,9 @@ The consuming constructions use this interface as follows. Layer 11 §11.5: Stat
 
 **Checks.**
 
-- For an ambient two-point set {a,b}, A={a} and a qualifying container {a}, the defining intersection is {a}; adding the container {a,b} leaves that value unchanged. This tests the direction of containment without an ambient rigid structure.
-- The intersection over the empty family of containing subdiamonds is all of M_C.
-- For nonminuscule data the definition does not assert that finite unions of qualifying closed rigid subdiamonds are qualifying rigid subdiamonds.
+- Take G=G_m, b=1 and mu=0, so M_C=Q_p× as a constant diamond over Spd C. At K_n=(1+p^n Z_p)×I, n≥2, the quotient is a discrete union of rigid points over L=C^K_n. The closure of {1} is {1}, since the pullbacks of its quotient points intersect in ∩_n(1+p^n Z_p)={1}.
+- In the same tower, the closure of {1,p} is {1,p}: at each level use the union of the two closed rigid points whose pullbacks are (1+p^n Z_p)∪p(1+p^n Z_p). Their valuations 0 and 1 distinguish the two components.
+- For m≥2, the closure of 1+p^m Z_p is that whole infinite compact open subset, already the pullback of one closed rigid point at level m. Both structures give these values, including at p=2; the level points are defined over L, whereas a C-point with transcendental coordinate in a positive-dimensional rigid chart would not be an L-rigid point.
 
 **Acceptance.** For nonminuscule data these are defined intersections; no unproved finite-union closure topology is assumed.
 
@@ -1875,7 +1931,7 @@ Assume the arbitrary-field full-rank de Rham criterion in the PadicHodgeTheory s
 
 (HKII, arXiv v2, Proof of Theorem 9.1.3, pp. 57–58; HKII line 2574).
 
-Pass to the strict completed maximal unramified extension of the residue field of the generic classical point and use an open inertia orbit contained in the original orbit. Descend through strata of strictly decreasing dimension until rank is constant on a stratum meeting that orbit openly. Constant rank produces a transverse vanishing coordinate if rank is deficient. Pull it back along the submersive G(C)-orbit map; its vanishing on K0 contradicts the identity theorem across Q_p. Surjectivity and Griffiths transversality give the adjoint bound, then the full-dimensional closed-subspace criterion gives the component equality.
+Pass to the strict completed maximal unramified extension of the residue field of the generic classical point and use an open inertia orbit contained in the original orbit. Descend through strata of strictly decreasing dimension until rank is constant on a stratum meeting that orbit openly. Constant rank produces a transverse vanishing coordinate if rank is deficient. Pull it back along the G(C)-orbit map, which is submersive by gap:adjoint-kernel-and-orbit-differential; its vanishing on K0 contradicts the identity theorem across Q_p. Surjectivity and Griffiths transversality give the adjoint bound, then the full-dimensional closed-subspace criterion gives the component equality.
 
 **Acceptance.** This proves submersion at the translated lift in the selected smooth stratum; it does not claim smoothness at every original point.
 
@@ -1923,7 +1979,7 @@ Assume the arbitrary-field full-rank de Rham criterion in the PadicHodgeTheory s
 
 (HKII, arXiv v2, Theorem B, p. 11; proof, p. 58; HKII line 501, HKII line 2632).
 
-Obtain the group and type by canonical reduction and the rigid-base theorem. Choose a Hodge-generic classical point. Apply the same orbit/constant-rank argument directly to a closed rigid analytic condition in the flag target, without using duality. Propagate the resulting open flag image within each connected open by the rigid identity theorem.
+Obtain the group and type by canonical reduction and the rigid-base theorem. Choose a Hodge-generic classical point. Apply the same orbit/constant-rank argument, using gap:adjoint-kernel-and-orbit-differential, directly to a closed rigid analytic condition in the flag target, without using duality. Propagate the resulting open flag image within each connected open by the rigid identity theorem.
 
 **Acceptance.** This proof shares the orbit argument, not the basicness-dependent infinite-level duality.
 
@@ -1931,13 +1987,19 @@ Obtain the group and type by canonical reduction and the rigid-base theorem. Cho
 
 ### 11.8 Nonbasic Serre–Tate boundary
 
-For the Borel of GL_2 with b=diag(p,1) and mu(z)=diag(z^-1,1), the Serre–Tate family gives the nonbasic boundary in HK II Remark 9.1.4: the Hodge–Tate period image is a point, so its closed Hodge–Tate condition does not isolate the canonical torus lift inside the family. A special subvariety can therefore fail to be Hodge–Tate analytically closed without the basic hypothesis.
+For the upper triangular Borel of GL_2 use b=diag(1,p) and mu(z)=diag(1,z^-1), in the Tate-twisted ordinary extension normalization. Its admissible Hodge cell is A¹ with lattices ⟨e1,xi^-1(e2+x e1)⟩, and its Hodge–Tate flag variety is a point. The Serre–Tate deformation chart lies in this ordinary family. Its canonical torus lift is proper although their Hodge–Tate flag images agree, so a condition on that flag cannot isolate the lift. Thus the basic hypothesis cannot be omitted from the closedness assertion by extending Hodge–Tate closed conditions solely through that flag.
 
-(HKII, arXiv v2, Remark 9.1.4, p. 56; HKII line 2499).
+(HKII, arXiv v2, Remark 9.1.4, p. 56; HKII line 2499). The diagonals at HKII line 2503 are reversed for the stated upper-triangular convention; the data above agree with the A¹ computation in §8.6.
 
 Compute the slope filtration and the fixed Hodge–Tate flag in this ordinary extension family. Identify the torus lift as a proper special subvariety and compare its image with the whole family’s identical flag.
 
-**Acceptance.** The two diagonals in the separate Borel examples serve different purposes and are not interchanged.
+**Checks.**
+
+- On E12, Ad(mu) has weight +1. Thus Fl_[mu^-1]=B/T=A¹ while Fl_[mu] is a point; the Newton root slope is −1, so b is not B-basic.
+- The lattices at x=0 and x=1 differ: xi^-1 e2 belongs to the first and not the second. Their Hodge flags are [0:1] and [1:1], whereas both Hodge–Tate flags are the unique point. The x=0 lattice is the diagonal-torus lift.
+- For b=diag(p,1) and mu(z)=diag(z^-1,1), the upper-root weight is −1 and the good B-Hodge cell is a point, as in §8.6. These opposite data cannot describe the positive-dimensional ordinary deformation chart.
+
+**Acceptance.** The ordinary datum has the A¹ Hodge direction and the constant Hodge–Tate flag.
 
 *Needs:* §9.4; §9.2; §11.5.
 
@@ -1945,9 +2007,9 @@ Compute the slope filtration and the fixed Hodge–Tate flag in this ordinary ex
 
 If the family of opposite-level closed rigid targets containing A is empty, its intersection is all M_C. Even if M_C is disconnected, this is the defined closure; no connected special component is selected in that case. If the family is nonempty, the orbit argument after canonical motivic reduction supplies a single opposite-special component contained in every such target. Since that component is itself opposite analytically closed, it is exactly the intersection. Enlarging A shrinks the family of qualifying containers, so it enlarges the intersection. (HK II Definition 9.1.1, Remark 9.1.2 and Theorem 9.1.3, p. 55; HKII line 2458)
 
-For an irreducible rigid source choose a generic classical point after resolution and passage to its constant field. If its field F is not strict, replace it by the completion F′ of its maximal unramified extension. Restriction to inertia yields an open subgroup in the same motivic group; its orbit is contained in the original orbit. A translate of the lift meets a smooth maximal-rank stratum, after shrinking the compact group. Rank deficiency would produce a transverse coordinate vanishing on that open rational group orbit; pullback along the submersive group orbit map contradicts the identity theorem. Griffiths transversality then gives the lower adjoint bound and the full-dimensional closed-subspace criterion gives the desired component. (HK II proof of Theorem 9.1.3, pp. 57–58, using HK I Corollary 5.5.3; HKI line 2167, HKII line 2574)
+For an irreducible rigid source choose a generic classical point after resolution and passage to its constant field. If its field F is not strict, replace it by the completion F′ of its maximal unramified extension. Restriction to inertia yields an open subgroup in the same motivic group; its orbit is contained in the original orbit. A translate of the lift meets a smooth maximal-rank stratum, after shrinking the compact group. Rank deficiency would produce a transverse coordinate vanishing on that open rational group orbit; pullback along the submersive group orbit map (gap:adjoint-kernel-and-orbit-differential) contradicts the identity theorem. Griffiths transversality then gives the lower adjoint bound and the full-dimensional closed-subspace criterion gives the desired component. (HK II proof of Theorem 9.1.3, pp. 57–58, using HK I Corollary 5.5.3; HKI line 2167, HKII line 2574)
 
-The nonbasic ordinary Serre–Tate family has Hodge–Tate period image a point. Its canonical torus lift is proper, but its flag image is identical to that of the whole family. A condition on that image cannot cut out the lift. This witnesses the basicness hypothesis in Ax–Lindemann. Theorem B retains its geometrically irreducible rigid-base and actual generic-group hypotheses, and works directly in the flag target without duality. This does not assert that the entire nonbasic infinite-level Serre–Tate space satisfies those hypotheses. (HK II Remark 9.1.4, p. 56, and proof of Theorem B, p. 58; HKII line 2499)
+For the upper Borel with b=diag(1,p) and mu=(0,−1), the nonbasic ordinary Serre–Tate family has Hodge cell A¹ and Hodge–Tate period image a point. Its canonical torus lift is proper, but its flag image is identical to that of the whole family. A condition on that image cannot cut out the lift. This witnesses the basicness hypothesis in Ax–Lindemann. Theorem B retains its geometrically irreducible rigid-base and actual generic-group hypotheses, and works directly in the flag target without duality. This does not assert that the entire nonbasic infinite-level Serre–Tate space satisfies those hypotheses. (HK II Remark 9.1.4, p. 56, and proof of Theorem B, p. 58; HKII line 2499)
 
 ### Dependencies
 
@@ -2055,25 +2117,31 @@ Import the basic uniformization contract, including the discrete diagonal quotie
 
 **Acceptance.** The application is conditional on the named uniformization input; a product with Gamma is not its quotient.
 
-*Needs:* §12.2; §11.6; PerfectoidShimuraVarieties §2.2; PerfectoidShimuraVarieties §§3.1 and 3.5; PerfectoidShimuraVarieties §§3.1 and 3.5.
+*Needs:* §12.2; §11.6; PerfectoidShimuraVarieties §2.2; PerfectoidShimuraVarieties §§3.1 and 3.5.
 
 ### 12.5 Products of Shimura curves
 
-Assume the arbitrary-field full-rank de Rham criterion in the PadicHodgeTheory supplier contract. Let D/Q be a quaternion algebra split at infinity and ramified at p, with neat level away from p and maximal local level; let B be the inner form definite at infinity and split at p. For a product of n associated curves over Q_p-breve, each chosen component has a Čerednik–Drinfeld presentation Omega^n/Gamma, with Gamma the product of the arithmetic component stabilizers. After base change to C, at infinite level the local product M of Drinfeld spaces and the global perfectoid tower have compatible Hodge–Tate maps and differ by the corresponding arithmetic quotient. Locally in the analytic topology this is the local period diagram. Thus the opposite analytic closure of a lifted irreducible analytic set is the transported image of the appropriate local special subvariety.
+Assume the arbitrary-field full-rank de Rham criterion in the PadicHodgeTheory supplier contract. Let D/Q be a quaternion algebra split at infinity and ramified at p, with neat level away from p and maximal local level; let B be the quaternion algebra over Q ramified at infinity, split at p, and ramified at exactly the same finite places as D away from p. For a product of n associated curves over Q_p-breve, each chosen component has a Čerednik–Drinfeld presentation Omega^n/Gamma, with Gamma the product of the arithmetic component stabilizers. After base change to C, at infinite level the local product M of Drinfeld spaces and the global perfectoid tower have compatible Hodge–Tate maps and differ by the corresponding arithmetic quotient. Locally in the analytic topology this is the local period diagram. Thus the opposite analytic closure of a lifted irreducible analytic set is the transported image of the appropriate local special subvariety.
 
-(HKII, arXiv v2, §10.2, pp. 64–66, diagram p. 65; HKII line 2916, HKII line 2934).
+(HKII, arXiv v2, §10.2, pp. 64–66, diagram p. 65; HKII line 2916, HKII line 2931, HKII line 2934).
 
 Apply the supplied Čerednik–Drinfeld theorem separately to each factor, tracking determinant components and their stabilizers. Form the product diagram and the compatible perfectoid inverse levels. Proper discontinuity makes the finite-level uniformization analytic-locally an isomorphism. Transport Layer 11 through that diagram; the comparison with Chambert-Loir–Loeser in HKII §10.2 concerns a different pair of algebraic structures (HKII line 2919, with the authors identified at HKII line 3003). This is comparison context, not an input to this implication.
 
-**Acceptance.** The quaternion algebras D and B have opposite local behaviour at p and infinity; retain the arithmetic quotient at every level.
+**Checks.**
+
+- If Ram(D)={p,ell} with ell≠p prime, then Ram(B)={infinity,ell}. At p and infinity the invariants change from (1/2,0) to (0,1/2); at ell both are 1/2.
+- A quaternion algebra with ramification {infinity,ell,q,r}, for distinct additional primes q,r, also is definite and split at p but fails the required invariants at q and r. It is excluded from this uniformization.
+- For n=0,1,2 factors the local dimensions are 0,1,2. For n=2 and Gamma=Gamma1×Gamma2, the quotient is (Omega/Gamma1)×(Omega/Gamma2), retaining both component stabilizers.
+
+**Acceptance.** The local invariants determine B at every place; retain the arithmetic quotient at every level.
 
 *Needs:* §12.4; §11.6; EndoscopicTransferAndUnitaryTraceComparison §12.11; EndoscopicTransferAndUnitaryTraceComparison §12.5; HilbertModularVarietiesAndShimuraCurves §R18.5.7; HilbertModularVarietiesAndShimuraCurves §R18.5.15; HilbertModularVarietiesAndShimuraCurves §R18.5.21; HilbertModularVarietiesAndShimuraCurves §R18.5.20; PerfectoidShimuraVarieties §2.2; PerfectoidShimuraVarieties §§3.1 and 3.5.
 
 ### Examples
 
-For a variation the original graded de Rham local system can have nontrivial étale monodromy. M0 is formed from its associated flat bundle after forgetting the filtration. If the resulting bundle has fixed basic class b, its crystalline-frame cover is a G_b(Q_p)-torsor, and the original K-frame data gives the K-level period map. This is a frame construction; it makes no general potential-unramifiedness assertion. Under the ordinary Katz–Igusa tower and monodromy input stated below, the tower on the ordinary modular locus has infinite Z_p× monodromy and gives the obstruction to a rigid analytic de Jong refinement described in HK II §10.1, pp. 63–64.
+For a variation the original graded de Rham local system can have nontrivial étale monodromy. M0 is formed from its associated flat bundle after forgetting the filtration. If the resulting bundle has fixed basic class b, its crystalline-frame cover is a G_b(Q_p)-torsor, and the original K-frame data gives the K-level period map. This is a frame construction; it makes no general potential-unramifiedness assertion. Under the ordinary Katz–Igusa tower and monodromy input requested from IgusaVarietiesAndTorsionConcentration (gap:ordinary-katz-igusa-monodromy), the tower on the ordinary modular locus has infinite Z_p× monodromy and gives the obstruction to a rigid analytic de Jong refinement described in HK II §10.1, pp. 63–64.
 
-For a quaternion algebra D/Q split at infinity and ramified at p, its inner form B is definite at infinity and split at p. A chosen product component of the associated Shimura curves has a Čerednik–Drinfeld presentation Ω^n/Γ with the actual arithmetic component stabilizers. After base change to C, the local Drinfeld product, its two period maps and the global infinite tower are compared through this quotient. In a general Hodge-type basic locus the analogous step is conditional on the explicit basic uniformization contract, including the diagonal arithmetic quotient. Local special points concern the Q_p-structure of the p-divisible group and need not be global motivic CM points. (HK II §10.1–§10.2, pp. 64–66; HKII line 2892)
+For a quaternion algebra D/Q split at infinity and ramified at p, its inner form B is ramified at infinity, split at p, and ramified at exactly the same finite places as D away from p. A chosen product component of the associated Shimura curves has a Čerednik–Drinfeld presentation Ω^n/Γ with the actual arithmetic component stabilizers. After base change to C, the local Drinfeld product, its two period maps and the global infinite tower are compared through this quotient. In a general Hodge-type basic locus the analogous step is conditional on the explicit basic uniformization contract, including the diagonal arithmetic quotient. Local special points concern the Q_p-structure of the p-divisible group and need not be global motivic CM points. (HK II §10.1–§10.2, pp. 64–66; HKII line 2892)
 
 ### Dependencies
 
@@ -2088,7 +2156,6 @@ For a quaternion algebra D/Q split at infinity and ramified at p, its inner form
 - IgusaVarietiesAndTorsionConcentration Layer IG.1.
 - Layer 11.
 - PerfectoidShimuraVarieties §2.2.
-- PerfectoidShimuraVarieties §§3.1 and 3.5.
 - PerfectoidShimuraVarieties §§3.1 and 3.5.
 - EndoscopicTransferAndUnitaryTraceComparison §12.11.
 - EndoscopicTransferAndUnitaryTraceComparison §12.5.
