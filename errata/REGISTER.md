@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5264 mistakes recorded on the board: 3421 misprints, 1312 errors, 409 gaps, 122 unparsed bullets.
+5266 mistakes recorded on the board: 3422 misprints, 1312 errors, 410 gaps, 122 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6082,6 +6082,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Definition/Proposition 8.4, p. 304: the source says a ray chart is the affine line times a torus whose exponent uses the base-field letter minus one; it should be the rank of N minus one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at Definition/Proposition 8.4, printed p. 304 (SCH12 line 2382): the source says the ray chart has torus exponent k−1, where k denotes the field; it should be rank(N)−1; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 10a4560, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 9.1, printed p. 307 (line 2524): the source says the exponential uses a tame character evaluated at an unbound g; it should be evaluated at the quantified σ; affects nothing. Found by DeligneWeightsAndPurityPartII (#1502 at 4c08cd9, 2026-10-25, codex gpt-6-astra).
 - **Gap** at proof of Corollary 8.8, p. 307: the source says the intersection over K♭ has positive combinatorial degree as a complete intersection; it should be note that the approximants may meet in excess dimension, so nonemptiness needs the refined intersection class supported on their intersection; affects the proof. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at proof of Proposition 8.7, p. 306: the source says two local trivializations of O(D) on the integral model differ by a unit of K°; it should be a unit of the model's structure sheaf on the overlap, a character of absolute value one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at proof of Proposition 8.7, p. 306: the source says the perturbed g has weights u with ⟨u,v_i⟩ ≥ −j·a_i, with j unbound; it should be ⟨u,v_i⟩ ≥ −a_i, since g has degree one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
@@ -6090,6 +6091,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Proposition 8.7, printed p. 306 (SCH12 line 2481): the source says two integral trivializations differ by a scalar unit of K°; it should be a unit of the integral structure sheaf on the overlap, whose valuation is one; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 10a4560, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Proposition 8.7, printed p. 306 (SCH12 line 2489): the source says the finite-support degree-one approximation satisfies bounds involving an unbound j; it should be the degree-one inequalities with j=1; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 10a4560, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Proposition 8.7, printed p. 306 (SCH12 line 2491): the source says the powered equation is a global regular function on the proper toric variety; it should be a section of O(pᴺD); affects the proof. Found by AnalyticToricGeometryPartII (#1067 at 10a4560, 2026-10-25, codex gpt-6-astra).
+- **Gap** at the proof of Theorem 9.6, printed p. 309, and Lemma 9.9, printed p. 311 (lines 2609, 2647): the source says a smooth projective alteration has a one-dimensional geometric top group; it should be chosen geometrically connected after a finite extension, since an integral alteration can acquire several geometric components; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "4c08cd9bafebba08ecd2b1beaaf7f21cf68927cb", "job": "REV-PKG-DeligneWeightsAndPurityPartII", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by DeligneWeightsAndPurityPartII (#1502 at 4c08cd9, 2026-10-25, codex gpt-6-astra).
 
 ## Sch12
 
