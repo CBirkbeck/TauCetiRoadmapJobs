@@ -99,7 +99,7 @@ What VectorBundlesAndIsocrystals must provide (gap:natural-period-hom): Provide 
 
 The ordinary projective limits of §0.0 and the strict countable inverse-limit theorem of §0.2 (Fréchet complexes, strict Roos surjectivity, finite-dimensional Mittag–Leffler cohomology) do not supply derived limits of the analytic towers of Layer 4: their terms, such as O(D_n)/C, are infinite dimensional, and their R¹lim terms are obstructions computed in Layer 4 rather than hypotheses. The derived-limit calculus in the left heart is the contract below.
 
-What LocallyAnalyticDistributions must provide (gap:strict-countable-derived-limits): Provide, for countable towers of uniformly bounded complexes in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, exactness of countable products, the Roos derived limit as the cone of 1−shift on the product in the strict derived category, its compatibility with left-heart cohomology, the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart, and vanishing of R^q lim for q≥2, all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.
+What LocallyAnalyticDistributions must provide (gap:strict-countable-derived-limits): Provide, for countable towers of uniformly bounded complexes in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, exactness of countable products, the Roos derived limit Rlim C_n=Cone(1−shift)[−1] in the strict derived category, that is, the homotopy fibre of 1−shift:∏C_n→∏C_n, (a_n)↦(a_n−τ_n(a_(n+1))) for the transition maps τ_n, which for a tower of spaces V_n placed in degree zero is the complex [∏V_n→∏V_n] in degrees 0 and 1, its compatibility with left-heart cohomology, the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart, and vanishing of R^q lim for q≥2, all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.
 
 What LocallyAnalyticDistributions must provide (gap:compact-extension-duality): Prove strictness of the strong-dual sequence and continuity of the bidual comparison for the compact-type extensions occurring in the syntomic splitting, with their actual coefficient-field hypotheses, or supply an alternative valid continuous period-linear splitting argument.
 
@@ -755,9 +755,9 @@ Choose integral models of the hypersurface line bundles on the standard projecti
 The tube Z(ε) has the following API.
 
 - On two integral charts trivializing the line bundles the transition functions are units of the integral structure sheaf, of absolute value 1 at every point, so the local subdomains {|f_j|≤ε} agree on overlaps and Z(ε) is a well-defined subset of Xᵃⁿ (BKV22 lines 1180–1183).
-- Changing a trivialization by an integral unit leaves each local inequality, and hence Z(ε), unchanged; multiplying an equation by a constant c∈K with 0<|c|<1 replaces the radius ε by ε/|c|.
+- Changing a trivialization by an integral unit leaves each local inequality, and hence Z(ε), unchanged; multiplying an equation by a constant λ∈K with 0<|λ|<1 replaces the radius ε by ε/|λ|.
 - For ε≤ε′ in |K×| one has Z(ε)⊆Z(ε′), and every Z(ε) contains Zᵃⁿ.
-- The intersection tube is the intersection of the hypersurface tubes Z_j(ε), and the union tube is their union; on a chart their complements are {max_j|f_j|>ε} and {min_j|f_j|>ε} respectively.
+- The intersection tube is the intersection of the hypersurface tubes Z_j(ε), and the union tube is their union; on a chart their complements are {x : |f_j(x)|>ε for some j} and {x : |f_j(x)|>ε for every j} respectively, so for c=0 the first is empty and the second is the whole chart, and for c≥1 they are {max_j|f_j|>ε} and {min_j|f_j|>ε}.
 
 **Checks.**
 
@@ -803,6 +803,7 @@ The defining data and their natural maps have the following API.
 **Checks.**
 
 - For a constant exhaustion X_n=X the derived-limit complex is the original complex and the R¹lim terms vanish.
+- Degree of the Roos model: for the constant tower Q_p placed in degree 0, 1−shift on ∏Q_p is onto, with section (b_n)↦(a_n), a₀=0, a_n=−Σ_(k<n)b_k, and kernel the diagonal Q_p; so Cone(1−shift)[−1]=[∏Q_p→∏Q_p] in degrees 0 and 1 has (H⁰,H¹)=(Q_p,0), while the unshifted cone has (H⁻¹,H⁰)=(Q_p,0) and puts the limit in degree −1. For a constant tower V placed in degree 1 the only nonzero group is H¹=V, as the Milnor sequence requires.
 - For an exhaustion of the dagger open disc, `F_n^(1,1)` can have a nonzero torsion kernel although `Fbar_n^(1,1)`=0; replacing F by F̄ loses that kernel.
 - Replacing X_n by X₂ₙ preserves the resulting global complex, not merely its underlying set of points.
 
