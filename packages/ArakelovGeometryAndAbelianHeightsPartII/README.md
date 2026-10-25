@@ -22,6 +22,8 @@ Fix a universe for schemes, their invertible sheaves and residue fields; enlarge
 
 The base k is ℤ or a field; fields carry the trivial norm except for the explicitly valued complex-base construction. Schemes called arithmetic varieties are integral, flat and quasi-projective over ℤ. A relative curve is smooth projective with geometrically connected fibres. The admissible metrics and measure, the canonical admissible pair, its global bundles and the family targets of Layers 7–8 and §9.1 have genus g ≥ 1; the canonical, difference and shift identities of §9.2 onward, the graph and Noether divisors and every bigness and Faltings-height statement have genus g > 1, where the canonical degree 2g − 2 is positive. Maximal variation means that the coarse-moduli map is generically finite onto its image. For a function field this condition is over the fixed constant base, not over the function field itself. All dimensions used for adelic degrees are dimensions of quasi-projective models over k, including the extra arithmetic dimension. (yuan-2026, §1.6, pp. 16–17; §3.1, p. 40, lines 1320–1334.)
 
+In the geometric theory over a trivially valued field k, a zero-dimensional integral model is Spec F with F/k finite; its empty intersection is the degree [F:k] of its fundamental zero-cycle, and every line bundle has volume [F:k]. The one-arbitrary-entry intersection and Siu mixed term are used only in dimension at least one. (SchemeAndStackFoundations §5.2; yuan-zhang-2025, §4.1.1, p. 103, lines 3843–3845; §5.2.2, p. 140, lines 5418–5426.)
+
 Green functions are −log‖s‖: a local equation f satisfies g + log|f| continuous, the principal pair is (div f, −log|f|), and the associated section has norm exp(−g). Thus c₁(L̄) = (1/πi)∂∂̄log‖s‖ + δ_div(s). The parent roadmap's squared-norm Green function is twice this one. For ‖1‖ = e⁻¹ on Spec ℤ the degree is +1; the tensor square has norm e⁻² and degree +2. For f = 2 the archimedean term −log 2 cancels the finite term +log 2. These witnesses fix both the sign and the factor of two. (yuan-zhang-2025, §§2.1.1–2.1.5, pp. 23–28, lines 831–879.)
 
 Arithmetic point heights divide raw degree by [K(x):ℚ]; Yuan–Zhang's relative height divides by [K(x):K], so it is [K:ℚ] times ours. At infinity count real embeddings once and complex places twice, equivalently sum over all complex embeddings. In the geometric case use residue degrees over a fixed k, with |f|ᵥ = exp(−[k(v):k]ordᵥ f), and divide the point degree by [K(x):K]. Changing the field representing x leaves its height unchanged with K fixed; changing K to a degree-r extension multiplies the geometric height by r. Thus [1:t] over k(t) has height 1, and after t = u² over k(u) it has height 2. On Spec K, a constant metric e⁻¹ has raw arithmetic degree [K:ℚ] and absolute height 1. (yuan-2026, §4.1.2, pp. 63–64; §4.3.1, pp. 71–73, lines 2387–2414.)
@@ -88,7 +90,7 @@ The general equidistribution contract is the nef quasi-projective theorem at eve
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Use §§0.3 and 4.11–4.12 for projective models, common domination and flattening; §§0.20–0.21 for Nagata and excellent rings, which make the normalization in §4.1 finite; §3.5 for norms of invertible sheaves along finite locally free morphisms; and §§5.1–5.3, 5.5–5.6 and 5.12 for Chow groups, degrees, first Chern classes, proper/flat operations, exterior products, intersection products and Bézout. Geometric nefness is defined in §0.1 here and geometric volume and bigness in §§0.3 and 4.2 here; the supplier states neither. In relative dimension zero the Deligne pairing is the norm of §3.5; pulling back a line by a finite flat degree-r map and taking its norm gives its r-th tensor power. No arithmetic Green-function product is part of this algebraic contract.
+Use §§0.3 and 4.11–4.12 for projective models, common domination and flattening; §§0.20–0.21 for Nagata and excellent rings, which make the normalization in §4.1 finite; §3.5 for norms of invertible sheaves along finite locally free morphisms; and §§5.1–5.3, 5.5–5.6 and 5.12 for Chow groups, degrees, first Chern classes, proper/flat operations, exterior products, intersection products and Bézout. Geometric nefness is defined in §0.1 here and geometric volume and bigness in §§0.3 and 4.2 here; the supplier states neither. In relative dimension zero the Deligne pairing is the norm of §3.5; pulling back a line by a finite flat degree-r map and taking its norm gives its r-th tensor power. The degree of the fundamental zero-cycle in §5.2 supplies the nullary geometric intersection: Spec F has degree [F:k] for every finite extension F/k, separable or inseparable. No arithmetic Green-function product is part of this algebraic contract.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -190,15 +192,16 @@ The basic API comprises these facts.
 
 ### 0.3 Arithmetic volume, Hilbert–Samuel formula and the Siu inequality on projective models
 
-Use the supplied projective intersection, Hilbert–Samuel input and arithmetic Siu estimate to establish the section-count volume and its nef formulas. Let X be a projective arithmetic variety of dimension d and L̄ a hermitian line bundle. The set Ĥ⁰(X, L̄) of sections with sup-norm ≤ 1 is finite; put ĥ⁰ = log #Ĥ⁰. The limit vol^(L̄) = lim d!·ĥ⁰(mL̄)/m^d exists; L̄ is big if vol^(L̄) > 0. (1) If L̄ is nef then vol^(L̄) = L̄^d (arithmetic Hilbert–Samuel). (2) If L̄, M̄ are nef then vol^(L̄ − M̄) ≥ L̄^d − d·L̄ᵈ⁻¹·M̄ (arithmetic Siu inequality). (3) vol^ is continuous and homogeneous of degree d. (yuan-2008, Definition 2.1, p. 10; Theorem 2.2, p. 10; Theorem 2.3 and Corollary 2.4, p. 11, yuan-2008 line 221; yuan-zhang-2025, Theorem 5.2.2 and the paragraph after it, p. 141; homogeneity and continuity, pp. 139–140 and Theorem 5.2.9, p. 148, yuan-zhang-2025 line 5460.) Over a field k, for a projective k-variety X of dimension d and a line bundle L, put h⁰(mL) = dim_k H⁰(X, mL), vol(L) = lim d!·h⁰(mL)/m^d, and call L big if vol(L) > 0. (1′) If L is nef then vol(L) = L^d (the geometric Hilbert–Samuel formula). (2′) If L, M are nef then vol(L − M) ≥ L^d − d·Lᵈ⁻¹·M (Siu's inequality). (yuan-zhang-2025, §5.2.1, p. 140, lines 5396–5414; yuan-2008, §1.3, p. 6, lines 196–201.)
+Use the supplied projective intersection, Hilbert–Samuel input and arithmetic Siu estimate to establish the section-count volume and its nef formulas. Let X be a projective arithmetic variety of dimension d and L̄ a hermitian line bundle. The set Ĥ⁰(X, L̄) of sections with sup-norm ≤ 1 is finite; put ĥ⁰ = log #Ĥ⁰. The limit vol^(L̄) = lim d!·ĥ⁰(mL̄)/m^d exists; L̄ is big if vol^(L̄) > 0. (1) If L̄ is nef then vol^(L̄) = L̄^d (arithmetic Hilbert–Samuel). (2) If L̄, M̄ are nef then vol^(L̄ − M̄) ≥ L̄^d − d·L̄ᵈ⁻¹·M̄ (arithmetic Siu inequality). (3) vol^ is continuous and homogeneous of degree d. (yuan-2008, Definition 2.1, p. 10; Theorem 2.2, p. 10; Theorem 2.3 and Corollary 2.4, p. 11, yuan-2008 line 221; yuan-zhang-2025, Theorem 5.2.2 and the paragraph after it, p. 141; homogeneity and continuity, pp. 139–140 and Theorem 5.2.9, p. 148, yuan-zhang-2025 line 5460.) Over a field k, for a projective k-variety X of dimension d and a line bundle L, put h⁰(mL) = dim_k H⁰(X, mL), vol(L) = lim d!·h⁰(mL)/m^d, and call L big if vol(L) > 0. (1′) If L is nef then vol(L) = L^d (the geometric Hilbert–Samuel formula). (2′) For d ≥ 1, if L, M are nef then vol(L − M) ≥ L^d − d·Lᵈ⁻¹·M (Siu's inequality). For d = 0, X = Spec F with F/k finite, every line bundle is trivial and vol(L − M) = vol(L) = L⁰ = [F:k]; there is no mixed term. (yuan-zhang-2025, §5.2.1, p. 140, lines 5396–5414; yuan-2008, §1.3, p. 6, lines 196–201.)
 
-*Route.* Finiteness of Ĥ⁰: a lattice intersected with a compact ball. Existence of the limit and continuity: Chen and Yuan for smooth metrics, extended to continuous metrics by uniform approximation; recalled in Yuan–Zhang §5.2 (Theorem 5.2.1 proof). Hilbert–Samuel: Gillet–Soulé arithmetic Riemann–Roch and Zhang's extension to nef, recalled in Yuan–Zhang Theorem 5.2.2 discussion. Siu inequality: Yuan 2008 Theorem 2.2 proves, for ample L̄, M̄ and any Ē, χ_sup(Ē + N(L̄ − M̄)) ≥ (L̄^d − d L̄ᵈ⁻¹M̄)N^d/d! + o(N^d); since ĥ⁰ ≥ χ_sup asymptotically (Yuan 2008 §2, with h⁰ counting ‖s‖_sup < 1, which has the same volume), vol^(L̄ − M̄) ≥ L̄^d − d L̄ᵈ⁻¹M̄ for ample L̄, M̄, and for nef ones by approximation and continuity of the volume (Moriwaki, cited in Yuan 2008 p. 8; Yuan–Zhang Theorems 5.2.2 and 5.2.9). Geometric case: (1′) is asymptotic Riemann–Roch for a nef bundle, whose higher cohomology grows like O(m^(d−1)); (2′) is Siu's theorem for ample L, M (yuan-2008, p. 6) applied to L + εA and M + εA with A ample, letting ε → 0 (yuan-zhang-2025, lines 5411–5414). Dimensions of cohomology and intersection numbers are invariant under extension of k, so k need not be algebraically closed.
+*Route.* Finiteness of Ĥ⁰: a lattice intersected with a compact ball. Existence of the limit and continuity: Chen and Yuan for smooth metrics, extended to continuous metrics by uniform approximation; recalled in Yuan–Zhang §5.2 (Theorem 5.2.1 proof). Hilbert–Samuel: Gillet–Soulé arithmetic Riemann–Roch and Zhang's extension to nef, recalled in Yuan–Zhang Theorem 5.2.2 discussion. Siu inequality: Yuan 2008 Theorem 2.2 proves, for ample L̄, M̄ and any Ē, χ_sup(Ē + N(L̄ − M̄)) ≥ (L̄^d − d L̄ᵈ⁻¹M̄)N^d/d! + o(N^d); since ĥ⁰ ≥ χ_sup asymptotically (Yuan 2008 §2, with h⁰ counting ‖s‖_sup < 1, which has the same volume), vol^(L̄ − M̄) ≥ L̄^d − d L̄ᵈ⁻¹M̄ for ample L̄, M̄, and for nef ones by approximation and continuity of the volume (Moriwaki, cited in Yuan 2008 p. 8; Yuan–Zhang Theorems 5.2.2 and 5.2.9). Geometric case in dimension zero follows from dim_k H⁰(Spec F, O) = [F:k]. For d ≥ 1, (1′) is asymptotic Riemann–Roch for a nef bundle, whose higher cohomology grows like O(m^(d−1)); (2′) is Siu's theorem for ample L, M (yuan-2008, p. 6) applied to L + εA and M + εA with A ample, letting ε → 0 (yuan-zhang-2025, lines 5411–5414). Dimensions of cohomology and intersection numbers are invariant under extension of k, so k need not be algebraically closed.
 
 **Checks.**
 
 - For L̄ = (O, e⁻ᶜ) on Spec ℤ (d = 1), ĥ⁰(mL̄) = log(2⌊eᵐᶜ⌋ + 1), so vol^ = c = L̄ when c > 0.
-- For nef big A and nef B with Aᵈ⁻¹B > 0, Siu gives positive volume when 0 < ε < A^d/(d Aᵈ⁻¹B). If that mixed degree is 0, the same bound gives vol^(A − εB) ≥ A^d > 0 for every positive rational ε; no division by 0 is used.
+- For d ≥ 1, nef big A and nef B with Aᵈ⁻¹B > 0, Siu gives positive volume when 0 < ε < A^d/(d Aᵈ⁻¹B). If that mixed degree is 0, the same bound gives vol^(A − εB) ≥ A^d > 0 for every positive rational ε; no division by 0 is used.
 - On Spec ℤ, c=1 gives log(2⌊e^m⌋+1)/m → 1; c=0 gives log 3/m → 0; c=−1 gives 0. With A-degree 2, B-degree 1 and ε=1 the Siu lower bound is 1.
+- Over 𝔽₂, Spec 𝔽₂ and Spec 𝔽₄ have h⁰(mL)=1 and 2 for every m and every L; 0!=m⁰=1 gives volumes and empty intersections 1 and 2. Every difference L−M has the same respective volume. A unary additive pairing on Pic=0 would instead give 0 in both cases.
 - Geometric case on ℙ¹ over a field (d = 1): h⁰(mO(a)) = am + 1 for a ≥ 0, so vol(O(a)) = a = deg O(a); Siu for L = O(2), M = O(1) gives vol(O(1)) ≥ 2 − 1 = 1, an equality. For the non-nef O(−1) the volume is 0, not the degree −1, so (1′) needs nefness.
 
 *Needs:* §0.1; HeightsRationalPointsAndObstructions §§5.17a–5.17f; ArithmeticDynamics §§4.1a and 4.3; SchemeAndStackFoundations §§5.2–5.3 (degrees of products of first Chern classes, for the geometric case).
@@ -566,13 +569,15 @@ The global-field absolute intersection is ArithmeticDynamics §4.3a; relative De
 
 ### 3.1 The absolute intersection pairing of adelic line bundles
 
-Extend the supplied model intersection and global-field pairing to fixed arbitrary bases, including finitely generated fields. Let X be flat essentially quasi-projective integral over k and d the absolute dimension of a quasi-projective model of X over k. The intersection numbers of HeightsRationalPointsAndObstructions §§5.17a–5.17b (resp. geometric ones over a field) on projective models extend by boundary limits to a canonical multilinear map P̂ic(X/k) × P̂ic(X/k)_intᵈ⁻¹ → ℝ, symmetric in the last d − 1 variables and in all d variables when the first is integrable. If L̄₁, …, L̄_d are nef then L̄₁···L̄_d ≥ 0. For integrable L̄₁, …, L̄_d and a morphism f : X′ → X with the same absolute dimension, f^*L̄₁···f^*L̄_d = deg(f)·L̄₁···L̄_d (deg f = 0 if f is not dominant). (yuan-zhang-2025, Proposition 4.1.1, pp. 103–104; Proposition 4.1.2, p. 105, yuan-zhang-2025 line 3854; yuan-2026, §2.1, p. 22, yuan-2026 line 732).
+Extend the supplied model intersection and global-field pairing to fixed arbitrary bases, including finitely generated fields. Let X be flat essentially quasi-projective integral over k and d the absolute dimension of a quasi-projective model of X over k. The intersection numbers of HeightsRationalPointsAndObstructions §§5.17a–5.17b (resp. geometric ones over a field) on projective models extend, for d ≥ 1, by boundary limits to a canonical multilinear map P̂ic(X/k) × P̂ic(X/k)_intᵈ⁻¹ → ℝ, symmetric in the last d − 1 variables and in all d variables when the first is integrable. If L̄₁, …, L̄_d are nef then L̄₁···L̄_d ≥ 0. For integrable L̄₁, …, L̄_d and a morphism f : X′ → X with the same absolute dimension, f^*L̄₁···f^*L̄_d = deg(f)·L̄₁···L̄_d (deg f = 0 if f is not dominant). (yuan-zhang-2025, Proposition 4.1.1, pp. 103–104; Proposition 4.1.2, p. 105, yuan-zhang-2025 line 3854; yuan-2026, §2.1, p. 22, yuan-2026 line 732).
 
-*Route.* For strongly nef L̄ᵢ represented by nef model sequences, the model intersection numbers form a Cauchy sequence: bound the change by the boundary norm times intersection numbers with E₀ (Yuan–Zhang Proposition 4.1.1). Extend by multilinearity to integrable bundles, and to one non-integrable entry by the effective-boundary estimate. Projection formula is the limit of the model projection formula (Proposition 4.1.2).
+For d = 0, necessarily k is a field and X = Spec F with F/k finite. Retain the zero-fold integrable intersection as deg_k[X] = [F:k], using SchemeAndStackFoundations §5.2. It has no line-bundle argument. The projection formula becomes [F′:k] = [F′:F][F:k] for a morphism Spec F′ → Spec F over k, including inseparable extensions. (yuan-zhang-2025, §4.1.1, p. 103, lines 3843–3845; SchemeAndStackFoundations §5.2.)
+
+*Route.* In dimension zero use the supplied degree of the fundamental zero-cycle. For d ≥ 1 and strongly nef L̄ᵢ represented by nef model sequences, the model intersection numbers form a Cauchy sequence: bound the change by the boundary norm times intersection numbers with E₀ (Yuan–Zhang Proposition 4.1.1). Extend by multilinearity to integrable bundles, and to one non-integrable entry by the effective-boundary estimate. Projection formula is the limit of the model projection formula (Proposition 4.1.2).
 
 The basic API comprises these facts.
 
-- L̄₁···L̄_d ∈ ℝ.
+- The d-fold integrable intersection lies in ℝ for every d ≥ 0; for d = 0 it is deg_k[X]. For d ≥ 1 there is also the extension allowing one arbitrary adelic entry.
 - Symmetric and multilinear on integrable bundles.
 - Nonnegative on nef bundles.
 - For integrable entries and a morphism of the same absolute dimension, f^*L̄₁···f^*L̄_d = deg(f)·L̄₁···L̄_d.
@@ -581,6 +586,9 @@ The basic API comprises these facts.
 
 **Checks.**
 
+- Over 𝔽₂, Spec 𝔽₂ and Spec 𝔽₄ have empty intersections 1 and 2. All their line bundles are trivial; a distinguished additive entry would incorrectly force both values to 0.
+- For Spec 𝔽₄ → Spec 𝔽₂ over 𝔽₂, the empty projection formula is 2 = 2·1. The identity of Spec 𝔽₄ instead gives 2 = 1·2.
+- For k=𝔽₂(t), F=k(u) with u²=t and F′=k(v) with v⁴=t and u=v², both steps in k⊂F⊂F′ are purely inseparable of degree 2. The empty projection formula is 4=2·2, rather than 1=1·1 from separable degrees.
 - For X = Spec ℤ, O(c) has intersection number c.
 - For f not dominant, f^*L̄₁···f^*L̄_d = 0.
 - Adding O(c) from Spec ℤ to an entry adds c times the geometric adelic intersection of the other entries over ℚ. When the generic fibre is projective this is its ordinary degree.
@@ -589,7 +597,7 @@ The basic API comprises these facts.
 - In the geometric case with X projective over k the pairing is the classical intersection number.
 - On Spec ℤ the one-entry intersection O(1)=1; pulling to Spec O_K for [K:ℚ]=2 gives 2. A non-dominant equal-dimensional pullback has degree 0 and intersection 0.
 
-*Needs:* HeightsRationalPointsAndObstructions §§5.17a–5.17b; §1.5; §1.6.
+*Needs:* HeightsRationalPointsAndObstructions §§5.17a–5.17b; SchemeAndStackFoundations §5.2 (degree of the fundamental zero-cycle); §1.5; §1.6.
 
 ### 3.2 The adelic Deligne pairing
 
@@ -651,7 +659,7 @@ On Spec ℤ the one-entry intersection O(1)=1; pulling to Spec O_K for [K:ℚ]=2
 
 ### Dependencies
 
-HeightsRationalPointsAndObstructions §§5.17a–5.17b. The internal prerequisites are the individual subsection references above.
+HeightsRationalPointsAndObstructions §§5.17a–5.17b; SchemeAndStackFoundations §5.2. The internal prerequisites are the individual subsection references above.
 
 ## Layer 4: Effective sections, volumes and heights
 Projective Hilbert–Samuel and arithmetic Siu are inputs; the new volume and height statements keep boundary control and arbitrary-base normalization.
@@ -698,6 +706,7 @@ The basic API comprises these facts.
 
 **Checks.**
 
+- Over 𝔽₂, every line bundle on Spec 𝔽₂ or Spec 𝔽₄ has volume 1 or 2 respectively: h⁰(mL)=[F:𝔽₂], with 0!=m⁰=1. Thus the trivial bundle has positive volume in dimension zero.
 - vol^(Spec ℤ, O(c)) = max(c, 0).
 - vol^(O) = 0 for the trivial adelic line bundle when the absolute model dimension is positive.
 - For X projective, vol^ is the arithmetic volume of §0.3.
@@ -708,15 +717,16 @@ The basic API comprises these facts.
 
 ### 4.3 Adelic Hilbert–Samuel formula and Siu inequality
 
-Let X be flat essentially quasi-projective integral over k with absolute dimension d. (1) If L̄ is nef then vol^(X, L̄) = L̄^d; hence a nef L̄ is big iff L̄^d > 0. (2) If L̄, M̄ are nef then vol^(X, L̄ − M̄) ≥ L̄^d − d·L̄ᵈ⁻¹·M̄; in particular if A is nef and big and B nef then A − εB is big for all sufficiently small rational ε > 0. The same holds over a global field with d = dim X + 1. (yuan-zhang-2025, Theorem 5.2.2, p. 141; Theorem 5.2.9, p. 148, yuan-zhang-2025 line 5460; yuan-2026, §1.2, p. 8; §2.1, p. 23; proof of Lemma 2.2, p. 27, yuan-2026 line 901).
+Let X be flat essentially quasi-projective integral over k with absolute dimension d. (1) If L̄ is nef then vol^(X, L̄) = L̄^d; hence a nef L̄ is big iff L̄^d > 0. (2) For d ≥ 1, if L̄, M̄ are nef then vol^(X, L̄ − M̄) ≥ L̄^d − d·L̄ᵈ⁻¹·M̄. For d = 0, X = Spec F over a field k and vol^(X, L̄ − M̄) = [F:k] = L̄⁰, without a mixed term. In every dimension, if A is nef and big and B nef then A − εB is big for all sufficiently small rational ε > 0; in dimension zero this holds for every positive rational ε. The same holds over a global field with d = dim X + 1. (yuan-zhang-2025, Theorem 5.2.2, p. 141; Theorem 5.2.9, p. 148, yuan-zhang-2025 line 5460; yuan-2026, §1.2, p. 8; §2.1, p. 23; proof of Lemma 2.2, p. 27, yuan-2026 line 901).
 
-*Route.* Strongly nef case: limit of §0.3 along representing sequences, by §4.2. Nef case: continuity of the volume function (Yuan–Zhang Theorem 5.2.9) applied to aL̄ + M̄₀ with M̄₀ strongly nef, a → ∞.
+*Route.* For d = 0, dim_k H⁰(Spec F, O) = [F:k] proves both conclusions directly. For d ≥ 1, strongly nef case: limit of §0.3 along representing sequences, by §4.2. Nef case: continuity of the volume function (Yuan–Zhang Theorem 5.2.9) applied to aL̄ + M̄₀ with M̄₀ strongly nef, a → ∞.
 
 **Checks.**
 
 - On Spec ℤ, vol^(O(c)) = c = O(c)^1 for c ≥ 0.
-- If A^d > 0 and Aᵈ⁻¹B > 0, then A − εB is big for 0 < ε < A^d/(d Aᵈ⁻¹B). If Aᵈ⁻¹B = 0, the Siu lower bound remains A^d for every ε > 0.
-- For d=1, A=O(2), B=O(1), vol(A−B)=1=2−1. For B=O(0), the mixed denominator is 0 and vol(A−εB)=2 for every ε>0.
+- For d ≥ 1, if A^d > 0 and Aᵈ⁻¹B > 0, then A − εB is big for 0 < ε < A^d/(d Aᵈ⁻¹B). If Aᵈ⁻¹B = 0, the Siu lower bound remains A^d for every ε > 0.
+- For Spec 𝔽₂ and Spec 𝔽₄ over 𝔽₂, vol(A−B)=A⁰=1 and 2 respectively, for all A,B. Writing a mixed term with exponent d−1 at d=0 would be undefined; truncating that exponent cannot replace the empty intersection.
+- For d=1 on Spec ℤ, A=O(2), B=O(1), vol(A−B)=1=2−1. For B=O(0), the mixed denominator is 0 and vol(A−εB)=2 for every ε>0.
 
 *Needs:* §4.2; §3.1; §0.3.
 
@@ -748,7 +758,7 @@ Let S′ → S be a finite surjective morphism of flat quasi-projective integral
 
 ### 4.6 Heights of algebraic points for adelic line bundles
 
-Give vector-valued heights over finitely generated fields and the following normalization comparison with the supplied global-field point heights. Let k = ℤ and K a number field, or k a field and K a one-variable function field over k, and X a quasi-projective K-variety. For L̄ ∈ P̂ic(X/k) and x ∈ X(K̄) with closure x̃ (Spec of the residue field K(x)) put h_L̄(x) = deĝ(L̄|_x̃)/[K(x) : ℚ] (k = ℤ) or deĝ(L̄|_x̃)/[K(x) : K] (k a field), where deĝ is the adelic intersection number on Spec K(x) over k (residue degrees over the fixed k in the geometric case). This is Yuan's normalization: in the arithmetic case Yuan–Zhang §5.3 divide by the degree over K instead, so h_YZ = [K : ℚ]·h_L̄ (Yuan p. 64 records the difference); in the geometric case the two agree. More generally, for a finitely generated field F over k and X a quasi-projective F-variety, for integrable L̄ the vector-valued height h(x) = π_*⟨L̄|_x̃⟩/deg(x) ∈ P̂ic(F/k)_ℚ, and for H̄ ∈ P̂ic(F/k) satisfying the Moriwaki condition the real height h^H̄_L̄(x) = h(x)·H̄ᵈ⁻¹. h_L̄ is additive in L̄, functorial under pullback, invariant under Galois conjugation and independent of the field used to represent a point with K fixed. Under a finite extension K′/K, absolute arithmetic heights are invariant; geometric heights with degrees over the fixed k scale by [K′ : K], and for a model hermitian line bundle it is the metrized height of ArakelovGeometryAndAbelianHeights Layer 1 §1.12; for a bundle pulled back from P̂ic(K/k), h is constant: deĝ/[K:ℚ] arithmetically and deĝ geometrically. (yuan-2026, §4.1.2, pp. 63–64, yuan-2026 lines 2146–2170; yuan-zhang-2025, §5.3.1–5.3.5, pp. 152–157, yuan-zhang-2025 line 5945).
+Give vector-valued heights over finitely generated fields and the following normalization comparison with the supplied global-field point heights. Let k = ℤ and K a number field, or k a field and K a one-variable function field over k, and X a quasi-projective K-variety. For L̄ ∈ P̂ic(X/k) and x ∈ X(K̄) with closure x̃ (Spec of the residue field K(x)) put h_L̄(x) = deĝ(L̄|_x̃)/[K(x) : ℚ] (k = ℤ) or deĝ(L̄|_x̃)/[K(x) : K] (k a field), where deĝ is the adelic intersection number on Spec K(x) over k (residue degrees over the fixed k in the geometric case). This is Yuan's normalization: in the arithmetic case Yuan–Zhang §5.3 divide by the degree over K instead, so h_YZ = [K : ℚ]·h_L̄ (Yuan p. 64 records the difference); in the geometric case the two agree. More generally, for a finitely generated field F over k and X a quasi-projective F-variety, for integrable L̄ the vector-valued height h(x) = π_*⟨L̄|_x̃⟩/deg(x) ∈ P̂ic(F/k)_ℚ, and, writing d for the dimension of a quasi-projective model of Spec F over k, for d ≥ 1 and H̄ ∈ P̂ic(F/k) satisfying the Moriwaki condition the real height h^H̄_L̄(x) = h(x)·H̄ᵈ⁻¹. h_L̄ is additive in L̄, functorial under pullback, invariant under Galois conjugation and independent of the field used to represent a point with K fixed. Under a finite extension K′/K, absolute arithmetic heights are invariant; geometric heights with degrees over the fixed k scale by [K′ : K], and for a model hermitian line bundle it is the metrized height of ArakelovGeometryAndAbelianHeights Layer 1 §1.12; for a bundle pulled back from P̂ic(K/k), h is constant: deĝ/[K:ℚ] arithmetically and deĝ geometrically. (yuan-2026, §4.1.2, pp. 63–64, yuan-2026 lines 2146–2170; yuan-zhang-2025, §5.3.1–5.3.5, pp. 152–157, yuan-zhang-2025 line 5945).
 
 *Route.* Restriction of adelic line bundles to the closed point x̃ (pullback along Spec K(x) → X) and the degree map on P̂ic(K(x)/k). Independence of the field of definition: projection formula for Spec K′ → Spec K(x). Vector-valued heights and the Moriwaki condition: Yuan–Zhang §5.3.
 
@@ -763,10 +773,11 @@ The basic API comprises these facts.
 - Agrees with the metrized height of the parent Layer 1 §1.12 for model bundles.
 - For max-metrized O(1) on ℙⁿ over a number field K, h_L̄ = h_K/[K:ℚ], where h_K is HeightsRationalPointsAndObstructions §0.11's relative height. Over a one-variable function field the heights agree with that supplier's fixed constant field.
 - Over a number field K, the height of Yuan–Zhang §5.3 is [K : ℚ]·h_L̄.
-- h(x) ∈ P̂ic(F/k)_ℚ over a finitely generated field, and h^H̄ = h·H̄ᵈ⁻¹.
+- h(x) ∈ P̂ic(F/k)_ℚ over a finitely generated field; its scalarization h^H̄ = h·H̄ᵈ⁻¹ uses d ≥ 1 and the stated Moriwaki condition.
 
 **Checks.**
 
+- For F=𝔽₄ over k=𝔽₂, P̂ic(F/k)_ℚ=0, so the vector-valued height is 0. The empty intersection on Spec F is instead 2; it is not a scalarization of that vector with a negative number of polarization entries.
 - For ℙ¹_ℚ, O(1) with max metrics, h([1:2]) = log 2.
 - For L̄ the pullback of O(c) ∈ P̂ic(ℤ/ℤ), h_L̄(x) = c for every x: the degree on Spec O₍K(x)₎ is [K(x) : ℚ]·c.
 - Over number fields, h_L̄(x) does not change after finite extension of K. Over function fields with the same constant base k, h₍L̄₍K′₎₎(x) = [K′ : K]·h_L̄(x); independence of the field representing x keeps K fixed.
@@ -929,7 +940,7 @@ ArithmeticDynamics §§4.4 and 4.40; JacobianChallengePartII §6.3; StableReduct
 
 ### 6.1 Moriwaki polarizations and Moriwaki heights
 
-Let k₀ be a finitely generated field over ℚ of transcendence degree d. A polarization B = (B; H̄₁, …, H̄_d; τ) consists of a normal projective flat integral ℤ-scheme B, nef smooth hermitian line bundles H̄ᵢ on B and an isomorphism τ : ℚ(B) ≅ k₀. For a projective k₀-variety X and a line bundle L on X, the Moriwaki height h^B₍k₀,X,L₎ : X(k̄₀) → ℝ is defined modulo bounded functions by h(P) = deĝ(ĉ₁(L̄)·ĉ₁(f^*H̄₁)···ĉ₁(f^*H̄_d)·[Δ_P])/[k₀(P) : k₀] for a model (X → B, L̄) and the closure Δ_P of P; it equals the Yuan–Zhang vector-valued height of §4.6 paired with H̄₁···H̄_d. B is big if every H̄ᵢ is nef and big. For a field isomorphism ι : k₀ → k′₀ and B′ = (B; H̄; ι∘τ), h^(B′)₍k′₀₎ ∘ ι = h^B₍k₀₎. For d = 0 (k₀ a number field, B = Spec O₍k₀₎) it is [k₀ : ℚ] times the absolute Weil height class. The displayed denominator is relative to k₀, as in Moriwaki and Yuan–Zhang; division by [k₀ : ℚ] is needed to compare with §4.6. (moriwaki-2000, §3.1–3.3, §3.3.6, pp. 10–14, moriwaki-2000 line 490; gao-habegger-2019, §A.1, (A.1), pp. 54–55, gao-habegger-2019 line 2510; yuan-zhang-2025, §5.3.3, p. 155; §5.3.5, pp. 156–157, yuan-zhang-2025 line 6011).
+Let k₀ be a finitely generated field over ℚ of transcendence degree d. A polarization B = (B; H̄₁, …, H̄_d; τ) consists of a normal projective flat integral ℤ-scheme B, nef smooth hermitian line bundles H̄ᵢ on B and an isomorphism τ : ℚ(B) ≅ k₀. For a projective k₀-variety X and a line bundle L on X, the Moriwaki height h^B₍k₀,X,L₎ : X(k̄₀) → ℝ is defined modulo bounded functions by h(P) = deĝ(ĉ₁(L̄)·ĉ₁(f^*H̄₁)···ĉ₁(f^*H̄_d)·[Δ_P])/[k₀(P) : k₀] for a model (X → B, L̄) and the closure Δ_P of P; it equals the Yuan–Zhang vector-valued height of §4.6 paired with H̄₁···H̄_d. B is big if every H̄ᵢ is nef and big. For a field isomorphism ι : k₀ → k′₀ and B′ = (B; H̄; ι∘τ), h^(B′)₍k′₀₎ ∘ ι = h^B₍k₀₎. For d = 0 (k₀ a number field, B = Spec O₍k₀₎) it is [k₀ : ℚ] times the absolute Weil height class. The displayed denominator is relative to k₀, as in Moriwaki and Yuan–Zhang; division by [k₀ : ℚ] is needed to compare with §4.6. (moriwaki-2000, §3.1–3.3, §3.3.6, pp. 10–14, moriwaki-2000 line 490; gao-habegger-2019, §A.1, (A.1), pp. 54–55, gao-habegger-2019 lines 2530–2555; yuan-zhang-2025, §5.3.3, p. 155; §5.3.5, pp. 156–157, yuan-zhang-2025 line 6011).
 
 *Route.* Independence of the model up to O(1): Moriwaki Corollary 3.3.5. Identification with the Yuan–Zhang height h^(H̄)_L̄ over F = k₀ (Yuan–Zhang §5.3.5, Moriwaki condition).
 
@@ -990,7 +1001,7 @@ The basic API comprises these facts.
 
 ### 6.4 Silverman–Tate and specialization with Moriwaki heights
 
-Let k₀ be finitely generated over ℚ with a big polarization B (the Hᵢ are nef and big). (1) For an abelian scheme 𝒜 → S over a regular quasi-projective k₀-variety, with a projective compactification S̄ of S, an embedding of 𝒜 into ℙⁿ × S̄ as in HeightsRationalPointsAndObstructions §§0.26–0.28 and the symmetric relatively ample L = O(1,1)|_𝒜 it induces, there is c > 0 with |ĥ^B₍𝒜₍π(P)₎₎(P) − h^B(P)| ≤ c·max{1, h^B₍S̄₎(π(P))}. (2) For S a smooth projective k₀-curve and a section σ_x over a generically finite S′ → S, ĥ^B(σ_x(t))/h^B_S(ρ(t)) → ĥ₍K,A₎(x) as h^B_S(ρ(t)) → ∞ (Silverman's limit with Moriwaki heights). Here h^B_S has degree-one normalization, and ĥ₍K,A₎(x), K = k₀(S), is the geometric generic-fibre height normalized over K: if x is represented over K′ = k₀(S′), divide its K′-height by [K′ : K]. The comparison height on S̄ is attached to an ample bundle. (gao-habegger-2019, §A.2, p. 56; §A.3, p. 57, gao-habegger-2019 line 2510; wazir-2006, Theorems 0.2–0.3, pp. 4–5 (arXiv v2), wazir-2006 line 170).
+Let k₀ be finitely generated over ℚ with a big polarization B (the Hᵢ are nef and big). (1) For an abelian scheme 𝒜 → S over a regular quasi-projective k₀-variety, with a projective compactification S̄ of S, an embedding of 𝒜 into ℙⁿ × S̄ as in HeightsRationalPointsAndObstructions §§0.26–0.28 and the symmetric relatively ample L = O(1,1)|_𝒜 it induces, there is c > 0 with |ĥ^B₍𝒜₍π(P)₎₎(P) − h^B(P)| ≤ c·max{1, h^B₍S̄₎(π(P))}. (2) For S a smooth projective k₀-curve and a section σ_x over a generically finite S′ → S, ĥ^B(σ_x(t))/h^B_S(ρ(t)) → ĥ₍K,A₎(x) as h^B_S(ρ(t)) → ∞ (Silverman's limit with Moriwaki heights). Here h^B_S has degree-one normalization, and ĥ₍K,A₎(x), K = k₀(S), is the geometric generic-fibre height normalized over K: if x is represented over K′ = k₀(S′), divide its K′-height by [K′ : K]. The comparison height on S̄ is attached to an ample bundle. (gao-habegger-2019, §A.2, p. 56; §A.3, p. 57, gao-habegger-2019 lines 2596–2614 and 2639–2655; wazir-2006, Theorems 0.2–0.3, pp. 4–5 (arXiv v2), wazir-2006 line 170).
 
 *Route.* Apply the Moriwaki height machine and the duplication estimate exactly as in the imported HeightsRationalPointsAndObstructions Layer 0 proofs. Wazir’s preprint Theorems 0.2–0.3 (pp. 4–5) explicitly give comparison and the specialization limit over a finitely generated characteristic-zero field; Gao–Habegger §§A.2–A.3 supply the ample comparison and big-polarization scope. For a section only after a finite cover, apply the section theorem upstairs and divide the geometric height by the cover degree, using h_S∘ρ/h₍S′₎ → deg ρ.
 
@@ -1422,7 +1433,7 @@ For a pm-graph Γ of genus g ≥ 2: (1) r(x, y) is at most the length of any pat
 
 ### 10.3 The local φ-invariant of a curve over a complete field
 
-For C smooth projective geometrically connected of genus g > 1 over a complete valued field K (archimedean via C_ℂ), with Zhang's admissible metrics (Layer 7; GrossZagierAndArithmeticHeights §§2.8 and 2.10 at archimedean places), φ(C) = −∫₍(C×C)^an₎ g₍Δ,a₎ c₁(O(Δ)_a)². (1) Non-archimedean, split semistable reduction, |ϖ| = e⁻¹, unit-edge reduction graph Γ: φ(C) = φ(Γ) of §10.1. (2) Archimedean: with an L²-orthonormal basis ω₁, …, ω_g of H⁰(C, ω) for (i/2)∫α∧β̄ and an orthonormal eigenbasis φ_λ of the Arakelov Laplacian, φ(C) = Σ₍λ>0₎ Σ₍j,k₎ (2/λ)|∫_C φ_λ ω_j ∧ ω̄_k|², so φ(C) > 0. (3) φ(C) ≥ 0 at non-archimedean places. Under a finite extension K′/K with the extended absolute value, φ is unchanged; with |ϖ| = e⁻¹ renormalized on K′, φ is multiplied by e(K′/K). (yuan-2026, §3.3.1, pp. 48–49, yuan-2026 line 1619; zhang-2010, Theorem 1.3.1, pp. 6–7; Proposition 2.5.3, p. 38, zhang-2010 line 206; wilms-2017, (2.11), p. 10, wilms-2017 line 31).
+For C smooth projective geometrically connected of genus g > 1 over a complete valued field K (archimedean via C_ℂ), with Zhang's admissible metrics (Layer 7; GrossZagierAndArithmeticHeights §§2.8 and 2.10 at archimedean places), φ(C) = −∫₍(C×C)^an₎ g₍Δ,a₎ c₁(O(Δ)_a)². (1) Non-archimedean, split semistable reduction, |ϖ| = e⁻¹, unit-edge reduction graph Γ: φ(C) = φ(Γ) of §10.1. (2) Archimedean: with an L²-orthonormal basis ω₁, …, ω_g of H⁰(C, ω) for (i/2)∫α∧β̄ and an orthonormal eigenbasis φ_λ of the Arakelov Laplacian, φ(C) = Σ₍λ>0₎ Σ₍j,k₎ (2/λ)|∫_C φ_λ ω_j ∧ ω̄_k|², so φ(C) > 0. (3) φ(C) ≥ 0 at non-archimedean places. Under a finite extension K′/K with the extended absolute value, φ is unchanged; with |ϖ| = e⁻¹ renormalized on K′, φ is multiplied by e(K′/K). (yuan-2026, §3.3.1, pp. 48–49, yuan-2026 lines 1642–1689; zhang-2010, Theorem 1.3.1, pp. 6–7; Proposition 2.5.3, p. 38, zhang-2010 line 206; wilms-2017, (2.11), p. 10, wilms-2017 line 31).
 
 *Route.* (1) Integrate the explicit graph formulas of §7.5 (Zhang 2010 Theorem 1.3.1 and Lemma 3.5.4; finite-extension normalization by ramification index). (2) Spectral expansion of the Arakelov Green function (Zhang 2010 Proposition 2.5.3); positivity since each term is ≥ 0 and not all vanish. (3) From §10.2(3).
 
@@ -1671,12 +1682,13 @@ For each g > 1 there is c₀(g) > 0 with φ(C) ≥ c₀(g) for every compact Rie
 
 ### 11.2 Bigness of ⟨ω_a, ω_a⟩ in the geometric case
 
-Let k be a field, S quasi-projective normal integral over k and π : X → S smooth of genus g > 1 with maximal variation (StableReductionPartII MC.6/maximal-variation). Then P = π_*⟨w, w⟩ is nef and big on S/k. When dim S = 0 every adelic line bundle on S/k is declared nef and big. (yuan-2026, Theorem 3.2, p. 40; proof after Remark 3.9, pp. 55–56, yuan-2026 line 1329).
+Let k be a field, S quasi-projective normal integral over k and π : X → S smooth of genus g > 1 with maximal variation (StableReductionPartII MC.6/maximal-variation). Then P = π_*⟨w, w⟩ is nef and big on S/k. When dim S = 0, S = Spec F with F/k finite; every adelic line bundle is nef and has P⁰ = vol^(S,P) = [F:k] > 0, so is big (§§3.1 and 4.2). (yuan-2026, Theorem 3.2, p. 40; proof after Remark 3.9, pp. 55–56, yuan-2026 line 1329).
 
-*Route.* Nefness: §9.3. Pass to a finite cover with a stable compactification (StableReductionPartII MC.6/stable-compactification-exists) and normalize; bigness of nef bundles is invariant under finite covers (§4.5). By §10.9, P = cλ_S̄ + A + O(B) with c > 0; λ_S̄ is nef and big under maximal variation (StableReductionPartII MC.6/maximal-variation-hodge, via the Torelli map to the minimal compactification), so cλ_S̄ + A is nef and big, and adding O(B) effective keeps bigness.
+*Route.* For dim S = 0 use deg_k[S]>0 and Hilbert–Samuel. For dim S ≥ 1, nefness: §9.3. Pass to a finite cover with a stable compactification (StableReductionPartII MC.6/stable-compactification-exists) and normalize; bigness of nef bundles is invariant under finite covers (§4.5). By §10.9, P = cλ_S̄ + A + O(B) with c > 0; λ_S̄ is nef and big under maximal variation (StableReductionPartII MC.6/maximal-variation-hodge, via the Torelli map to the minimal compactification), so cλ_S̄ + A is nef and big, and adding O(B) effective keeps bigness.
 
 **Checks.**
 
+- For S=Spec 𝔽₂ and S=Spec 𝔽₄ over 𝔽₂, P is the trivial line and its empty self-intersection and volume are respectively 1 and 2, both positive. A zero-dimensional moduli image still has maximal variation over this zero-dimensional base.
 - For S a curve with a non-isotrivial family, P has positive degree.
 - For a maximal-variation base curve with Hodge degree λ=1, the g=2 decomposition gives deg P≥1/25>0; a constant family instead has geometric deg P=0 and is outside maximal variation in dimension 1.
 
@@ -1691,6 +1703,7 @@ Let S be flat quasi-projective normal integral over ℤ, π : X → S smooth of 
 **Checks.**
 
 - For d = 1 and S open in Spec O_K, the normalized degree is deĝ(P)/[K : ℚ] ≥ 2c₀/(3g − 1) > 0; the unnormalized degree has the additional factor [K : ℚ].
+- For d=1 and generic field K, the empty geometric intersection on S_ℚ=Spec K is [K:ℚ]. At g=2 and [K:ℚ]=2, the displayed expansion gives (2c₀/5)·2=4c₀/5, while replacing the empty degree by 1 would give only 2c₀/5.
 - At g=2,d=1, the normalized lower bound is 2c₀/5; over [K:ℚ]=2 raw degree is at least 4c₀/5, so omission of the field degree halves the raw bound.
 
 *Needs:* §10.7; §11.1; §10.3; §11.2; §4.3; §3.1.
@@ -1704,6 +1717,7 @@ Let k be ℤ or a field, S flat quasi-projective normal integral over k and π :
 **Checks.**
 
 - For S = Spec K a global field this is Zhang's ω_a² > 0 for non-isotrivial curves (the function-field case needs non-isotriviality, which is maximal variation over the constant field).
+- For d=0 and S=Spec F over k with [F:k]=2, g=2 gives P⁰=2 and the positive Abel term 1·16·2=32; dividing by 4g(g−1)=8 gives deg_k ω=4=2·[F:k].
 - At g=2 the Abel degree is 4·2·1·2=16. For dim S=1, the positive expansion term is 2·16·P¹=32P¹>0; for S a field over itself, deg ω=2>0.
 
 *Needs:* §11.2; §11.3; §9.3; §9.2; §4.3; §3.3.
@@ -1744,13 +1758,14 @@ The basic API comprises these facts.
 
 ### 12.2 Intersections and Deligne pairings on relative powers
 
-In the setting of §12.1, let L̄ be nef integrable with a = deg(L_η^e) > 0 and d = dim S. (1) For nonnegative r₁, …, r_m with Σrᵢ = em + 1, (π_m)_*⟨(p₁^*L̄)^(r₁), …, (p_m^*L̄)^(r_m)⟩ vanishes unless (r₁, …, r_m) is a permutation of (e + 1, e, …, e), in which case it is aᵐ⁻¹π_*⟨L̄ᵉ⁺¹⟩; hence (π_m)_*⟨(m⊠L̄)ᵉᵐ⁺¹⟩ is a positive multiple of π_*⟨L̄ᵉ⁺¹⟩. (2) For m ≥ max{1,d}, the top intersection (p₁^*L̄)ᵉ⁺¹···(p_d^*L̄)ᵉ⁺¹(p₍d+1₎^*L̄)^e···(p_m^*L̄)^e on Y^m₍/S₎ equals aᵐ⁻ᵈ(π_*⟨L̄ᵉ⁺¹⟩)^d (with the dimension-zero convention). (yuan-2026, Theorem 4.1 proof, pp. 60–63, yuan-2026 line 2044).
+In the setting of §12.1, let L̄ be nef integrable with a = deg(L_η^e) > 0 and d = dim S. (1) For nonnegative r₁, …, r_m with Σrᵢ = em + 1, (π_m)_*⟨(p₁^*L̄)^(r₁), …, (p_m^*L̄)^(r_m)⟩ vanishes unless (r₁, …, r_m) is a permutation of (e + 1, e, …, e), in which case it is aᵐ⁻¹π_*⟨L̄ᵉ⁺¹⟩; hence (π_m)_*⟨(m⊠L̄)ᵉᵐ⁺¹⟩ is a positive multiple of π_*⟨L̄ᵉ⁺¹⟩. (2) For m ≥ max{1,d}, the top intersection (p₁^*L̄)ᵉ⁺¹···(p_d^*L̄)ᵉ⁺¹(p₍d+1₎^*L̄)^e···(p_m^*L̄)^e on Y^m₍/S₎ equals aᵐ⁻ᵈ(π_*⟨L̄ᵉ⁺¹⟩)^d (for d = 0 the right-hand side is a^m deg_k[S], since (π_*⟨L̄ᵉ⁺¹⟩)⁰ on S is the empty intersection deg_k[S]). (yuan-2026, Theorem 4.1 proof, pp. 60–63, yuan-2026 line 2044).
 
-*Route.* Factor π_m through its projections and use §3.3. If any rᵢ < e, that factor has too few entries for its fibre dimension and kills the pairing. For a potentially nonzero term all rᵢ ≥ e, and Σrᵢ = em + 1 then forces precisely one rᵢ = e + 1 and all others e. The latter factors each contribute a, leaving aᵐ⁻¹π_*⟨L̄ᵉ⁺¹⟩. The exponent sum alone does not exclude multiple exponents above e before the vanishing terms are removed. (2) by induction on d using (1) and the composition formula.
+*Route.* Factor π_m through its projections and use §3.3. If any rᵢ < e, that factor has too few entries for its fibre dimension and kills the pairing. For a potentially nonzero term all rᵢ ≥ e, and Σrᵢ = em + 1 then forces precisely one rᵢ = e + 1 and all others e. The latter factors each contribute a, leaving aᵐ⁻¹π_*⟨L̄ᵉ⁺¹⟩. The exponent sum alone does not exclude multiple exponents above e before the vanishing terms are removed. (2) for d = 0 is the fibre product degree a^m deg_k[S]; for d ≥ 1 use induction and the composition formula, ending with that degree convention.
 
 **Checks.**
 
 - For m = 1, (1) is tautological. If e = 0 then the smooth projective geometrically connected family is Y = S; m⊠L̄ = mL̄, its relative pairing is mL̄, and its top intersection is m^dL̄^d.
+- For d=0, S=Spec F over k with [F:k]=2, Y=ℙ¹_F, L=O(2), e=1 and m=1,2, the selected top terms have degrees 2·2=4 and 2²·2=8, equal to a^m deg_k[S] with a=2. For e=0,Y=S, the empty top intersection is 2 for every m, equal to 1^m·2.
 - For e=1,m=2, exponents (2,1),(1,2) give aM, while (3,0),(0,3) give 0. If d=2,a=2,M²=3,m=3, the selected top term is 2^(3−2)·3=6.
 
 *Needs:* §12.1; §3.3; §3.1.
@@ -1759,12 +1774,12 @@ In the setting of §12.1, let L̄ be nef integrable with a = deg(L_η^e) > 0 and
 
 In the setting of §12.1, let L̄ be nef with positive fibre degree a = deg(L_η^e) > 0 and M̄ = π_*⟨L̄ᵉ⁺¹⟩. The following are equivalent: (1) M̄ is big on S; (2) m⊠L̄ is big on Y^m₍/S₎ for every integer m ≥ max{1, dim S}; (3) L̄ is potentially big over S. (yuan-2026, Theorem 4.1, pp. 60–63, yuan-2026 line 2044).
 
-*Route.* (1) ⇒ (2): m⊠L̄ is nef, so bigness is positivity of (m⊠L̄)ᵈ⁺ᵉᵐ; expand and keep the term b_m of §12.2(2), which is aᵐ⁻ᵈM̄^d > 0 by Hilbert–Samuel, all other terms being ≥ 0 by nefness. (2) ⇒ (3) is trivial. (3) ⇒ (1): (π_m)_*⟨(m⊠L̄)ᵉᵐ⁺¹⟩ is a positive multiple of M̄ (§12.2(1)); Deligne pairings of nef big bundles are nef big (§4.4(1)) after adding a small relatively ample perturbation, and finite covers preserve bigness.
+*Route.* (1) ⇒ (2): m⊠L̄ is nef, so bigness is positivity of (m⊠L̄)ᵈ⁺ᵉᵐ; expand and keep the term b_m of §12.2(2), which is aᵐ⁻ᵈM̄^d > 0 by Hilbert–Samuel, all other terms being ≥ 0 by nefness. (2) ⇒ (3) is trivial. (3) ⇒ (1): if d=0, M̄ is big because its volume is deg_k[S]>0. For d≥1, (π_m)_*⟨(m⊠L̄)ᵉᵐ⁺¹⟩ is a positive multiple of M̄ (§12.2(1)); Deligne pairings of nef big bundles are nef big (§4.4(1)) after adding a small relatively ample perturbation, and finite covers preserve bigness.
 
 **Checks.**
 
-- For dim S = 0 (the paper convention) every L̄ with a > 0 is potentially big.
-- For e=0,Y=S, the criterion is bigness of mL iff bigness of L. With dimS=0, e=1, m≥1 and fibre degree a=2, the fibre power has top degree (em)!a^m/(e!)^m>0; m=0 is not part of potential bigness.
+- For dim S = 0, S=Spec F finite over k, M̄ has volume [F:k]>0. For every m≥1 the selected top term is a^m[F:k]>0, so every L̄ with a>0 is potentially big; no positive base dimension is required.
+- For e=0,Y=S, the criterion is bigness of mL iff bigness of L. With S=Spec F, e=1, m≥1 and fibre degree a=2, the fibre power has top degree m!·2^m[F:k]>0; for [F:k]=2, m=1,2 give 4 and 16 (the selected term at m=2 is 8, with binomial coefficient 2); m=0 is not part of potential bigness.
 
 *Needs:* §12.1; §12.2; §4.4; §4.3.
 
@@ -2047,6 +2062,6 @@ The following locators use the editions actually named here. Source identifiers 
 
 - **gross-schoen-1995.** Benedict Gross and Chad Schoen, *The modified diagonal cycle on the triple product of a pointed curve*, Ann. Inst. Fourier 45 (1995), 649–679, §§6–8 for the regular-model height construction. [Numdam](https://www.numdam.org/item/AIF_1995__45_3_649_0/).
 
-- **moret-bailly-1989.** Laurent Moret-Bailly, *La formule de Noether pour les surfaces arithmétiques*, Invent. Math. 98 (1989), 491–498, Théorème 2.5. [Publisher locator](https://doi.org/10.1007/BF01393833). The primary text is uncertified; the displayed normalization is also in yuan-2026, p. 89, line 2978.
+- **moret-bailly-1989.** Laurent Moret-Bailly, *La formule de Noether pour les surfaces arithmétiques*, Invent. Math. 98 (1989), 491–498, Théorème 2.5. [Publisher locator](https://doi.org/10.1007/BF01393833). The primary text is uncertified; the displayed normalization is also in yuan-2026, p. 89, lines 2992–3001.
 
 - **faltings-1984.** Gerd Faltings, *Calculus on arithmetic surfaces*, Ann. of Math. 119 (1984), 387–424, Theorem 6 and pp. 401–402 for δ. [Publisher locator](https://doi.org/10.2307/2007043). The original text is uncertified; Wilms Theorem 1.1 supplies the theta-integral characterization used here.
