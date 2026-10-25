@@ -110143,10 +110143,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/163#issuecomment-6402134084"
+  },
+  {
+   "kind": "misprint",
+   "source": "LS",
+   "locator": "Lemma 3.8 proof, printed p. 21 (LS line 969)",
+   "says": "the characteristic cycle of i_*Q[n] is the conormal of H",
+   "should": "i_*Q[n−1], the perverse shift of the (n−1)-dimensional H",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "SheafConvolutionOnAbelianVarieties",
+   "job": "REV-PKG-SheafConvolutionOnAbelianVarieties~2",
+   "board_pr": 1674,
+   "head": "f1720ea",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1674#issuecomment-6402242633"
+  },
+  {
+   "kind": "misprint",
+   "source": "LS",
+   "locator": "Lemma 3.8 proof, printed p. 21 (LS line 971)",
+   "says": "the minuscule input is [42, Corollary 1.0]",
+   "should": "Corollary 1.10 of that reference (K1 line 444)",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"f1720ea\", \"job\": \"REV-PKG-SheafConvolutionOnAbelianVarieties~2\", \"model\": \"fable\", \"worker\": \"fable-rev129\"} -->",
+   "roadmap": "SheafConvolutionOnAbelianVarieties",
+   "job": "REV-PKG-SheafConvolutionOnAbelianVarieties~2",
+   "board_pr": 1674,
+   "head": "f1720ea",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1674#issuecomment-6402242633"
   }
  ],
- "scanned_to": "2026-10-25T19:28:17Z",
- "updated": "2026-10-25T19:30:08Z",
+ "scanned_to": "2026-10-25T19:38:36Z",
+ "updated": "2026-10-25T19:40:02Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
