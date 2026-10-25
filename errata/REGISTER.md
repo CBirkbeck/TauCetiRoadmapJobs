@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4929 mistakes recorded on the board: 3253 misprints, 1227 errors, 353 gaps, 96 unparsed bullets.
+4933 mistakes recorded on the board: 3253 misprints, 1227 errors, 353 gaps, 100 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -104,6 +104,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ArcTopologyAndDescent, #1051 at 4bf6c6f, 2026-10-25): Error** in BM21 at the proof of Theorem 5.6(2)(a), p. 40: the source uses functors into finite sets with injections, which forces every morphism to be injective. The fold V⊔V→V is a non-injective morphism. It should allow all natural transformations between injective-transition functors; affects the proof.
 - **Unparsed** (ArcTopologyAndDescent, #1051 at 4bf6c6f, 2026-10-25): Misprint** in BM21 at the proof of Theorem 5.6(2), p. 40: the source writes the spectrum of a rank-n valuation ring as {1,…,n}, which has n points. It should have n+1 points; affects nothing.
 - **Unparsed** (ArcTopologyAndDescent, #1051 at 4bf6c6f, 2026-10-25): Misprint** in BS22 at the proof of Proposition 8.10, p. 68: the source's final sentence swaps the cover Y→X with X→Y and the descended map |X|→|T| with |Y|→|T|. It should keep Y→X as the cover and produce |X|→|T|; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "4bf6c6f", "job": "REV-PKG-ArcTopologyAndDescent~2", "model": "opus", "worker": "fable-rev86"} -->
+- **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Misprint** in weil-II at (5.1.5), p. 235: the source says the comparison map into the Sullivan–de Rham forms tensored with ℚ[t] is an isomorphism. It should say an injective morphism, whose t-degree-n image is the bounded-degree subcomplex. Affects nothing.
+- **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Error** in weil-II at (5.1.5), last paragraph, p. 235: the source says coefficient change to any quotient B of A is an isomorphism off the diagonal. That fails for an infinitely generated ideal on an infinite discrete simplicial set; it should be restricted to finitely generated (for example principal) ideals. Affects nothing, since only ℓ-power quotients are used.
+- **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Gap** in weil-II at Lemme (5.3.5), p. 241: the source says a common stable filtration exists for finitely many automorphisms and leaves the proof to the reader. It should be proved, since unrestricted conjugacy in Théorème 5.3.4 depends on it. Affects a stated result.
+- **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Error** in morgan at Theorem 9.2, p. 195: the source treats the indecomposables of a minimal algebra as invariant under homotopic maps. Only the associated graded of the canonical filtration is invariant. Affects a stated result; corrected in print at IHÉS 64 (1986), p. 185. <!-- tauceti-roadmap-review {"agent": "claude", "head": "d9b1fec", "job": "REV-PKG-EllAdicHomotopyTypesAndWeights", "model": "opus", "worker": "fable-rev89"} -->
 
 ## A
 
