@@ -127,3 +127,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "Publisher book unavailable to the sources service; cited only by the secondary theorem locators in JZ2020, without the proof text."
 note = "Sources service reached the publisher DOI landing page and received HTTP 403; no proof text was read and no licence or hash is asserted. The open JZ2020 extraction supplies the secondary locators."
+
+[[source]]
+id = "GGP2012"
+authors = "Wee Teck Gan, Benedict H. Gross, Dipendra Prasad"
+title = "Symplectic local root numbers, central critical L-values, and restriction problems in the representation theory of classical groups"
+year = 2012
+locator_scheme = "section"
+locator = "Published Theorem 14.1(i), p.57; Theorem 15.1, pp.59–62; Corollary 15.3 and following remark, pp.62–63"
+url = "https://www.numdam.org/item/AST_2012__346__1_0/"
+fetched_from = "https://www.numdam.org/item/AST_2012__346__1_0.pdf"
+fetched_at = "2026-10-25T13:14:15Z"
+sha256 = "bbabe7bf4a53eacc9123d63751e211dab6f000e7bed1009096ea4b2132beb022"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["1.4 Orthogonal local Bessel uniqueness"]
+arxiv = "0909.2999v1"
+version_note = "Published Astérisque 346 (2012), 1–109, read from Numdam; uses Corollary 15.3. The earlier arXiv v1 has Corollary 15.2 and a narrower SO discussion; its numbering is not used."
