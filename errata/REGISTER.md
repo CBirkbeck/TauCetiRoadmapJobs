@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5706 mistakes recorded on the board: 3665 misprints, 1413 errors, 465 gaps, 163 unparsed bullets.
+5712 mistakes recorded on the board: 3668 misprints, 1416 errors, 465 gaps, 163 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5828,6 +5828,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Nikulin, Finite automorphism groups of Kähler K3 surfaces
 
 - **Error** at §5, equation (5.2) and its case list, pp. 108–110 of the Russian original: the source says the solutions of t_pq(p+1)(q+1)=24 without (p,q)=(2,7), t=1, that is order 14; it should be a list including that solution, which is then disposed of separately; affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## ns18
+
+- **Misprint** at Example I.2.3(iii), printed p.220 (ns18 line 649 and line 660): the source says the multiplicative p^r-series is (x−1)^(p^r)−1; it should be (1+x)^(p^r)−1 in the coordinate x=L−1, vanishing at x=0; affects a stated result. Found by StableHomotopyKTheoryPartII (#1597 at 4a10c97, 2026-10-25, codex gpt-6-astra).
+- **Error** at Example IV.1.2(ii), printed p.325 (ns18 line 4852): the source says the p-complete sphere is an example of categorical compactness in p-complete spectra; it should be treated as finite dualizable there; its p-inversion diagram disproves categorical compactness; affects the proof. Found by StableHomotopyKTheoryPartII (#1597 at 4a10c97, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at IV.1, decompositions before Theorem IV.1.15, printed p.332 (ns18 line 5120 and line 5126): the source says odd-prime invariant summands have period p−1 in suspension degree; it should be period 2(p−1), as forced by the degree −2 Laurent generator; affects a stated result. Found by StableHomotopyKTheoryPartII (#1597 at 4a10c97, 2026-10-25, codex gpt-6-astra).
+- **Error** at Proposition IV.1.16 and its proof, printed pp.333,340 (ns18 line 5167 and line 5431): the source says the monomial-coefficient total reduced-power and Bockstein formula is unsigned; it should be Euler-normalized with the (−1)^i scalars and the degree-dependent right-coefficient Bockstein sign; affects a stated result. Found by StableHomotopyKTheoryPartII (#1597 at 4a10c97, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Theorem IV.1.15, printed pp.332–333 (ns18 line 5136 and line 5140): the source says P^i and βP^i have target shifts i(p−1) and i(p−1)+1; it should be 2i(p−1) and 2i(p−1)+1; affects a stated result. Found by StableHomotopyKTheoryPartII (#1597 at 4a10c97, 2026-10-25, codex gpt-6-astra).
+- **Error** at the paragraph following Theorem IV.1.21, printed p.340 (ns18 line 5405): the source says the pre-Tate all-degree power is a graded-ring map; it should be multiplicative with an additive transfer defect, becoming additive after the appropriate transfer quotient or Tate comparison; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "4a10c9753db1edc8911ec6e719c6428f461ec083", "job": "REV-PKG-StableHomotopyKTheoryPartII", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by StableHomotopyKTheoryPartII (#1597 at 4a10c97, 2026-10-25, codex gpt-6-astra).
 
 ## NT21
 
