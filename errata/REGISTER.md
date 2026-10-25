@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5266 mistakes recorded on the board: 3422 misprints, 1312 errors, 410 gaps, 122 unparsed bullets.
+5272 mistakes recorded on the board: 3425 misprints, 1312 errors, 410 gaps, 125 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -130,6 +130,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (GeometryOfNumbersAndQuadraticArithmeticPartII, #1169 at bc888e6, 2026-10-25): Misprint** in CDHHLMNNS-II-v5 after Proposition 4.5.5, printed p. 109 (lines 5276–5277): the source says condition iv) is equivalent to isomorphisms on kernels and cokernels of right multiplication; it should say condition iii), the cofibre condition, which that reformulation describes; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "bc888e6", "job": "REV-PKG-GeometryOfNumbersAndQuadraticArithmeticPartII~2", "model": "opus", "worker": "fable-rev101"} -->
 - **Unparsed** (GL2ModularityLiftingPartII, #1225 at f34aeca, 2026-10-25): Misprint** in cg18 at Theorem 3.11, proof, p. 328 (repeated in Lemma 3.16, p. 332): the printed U_p matrix is the one for the basis (φ, V_p); with the stated ψ = (φ, φT_p − U_pφ) it should be [[T_p, ⟨p⟩],[−1, 0]] on columns; affects nothing.
 - **Unparsed** (GL2ModularityLiftingPartII, #1225 at f34aeca, 2026-10-25): Error** in cg18 at §3.8, final paragraph, p. 340: the source says U_x vanishes whenever x² divides N; with residual χ̄ ⊕ 1 and χ̄ wildly ramified, x² divides N yet U_x is a nonzero Frobenius scalar on the invariant line; affects the proof.
+- **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at 6b12a11, 2026-10-25): Misprint** in H26 at §2.3, p. 11: the stable-projection restriction is asserted for every element of D(G); the projection is defined only on D_temp(G) (p. 6), where it is used; affects nothing.
+- **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at 6b12a11, 2026-10-25): Gap** in H26 at Corollary 1.3, p. 2: atomic stability of Kaletha's regular supercuspidal packet sums is attributed to FKS without argument; FKS Theorem 4.4.4 states stability and identities for only part of S_φ⁺ under convergence assumptions; affects a stated result.
+- **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at 6b12a11, 2026-10-25): Gap** in H26 at §2.3, p. 11: the source chooses a compact U containing every C_T whose elliptic part is stably invariant, without argument; it needs finiteness of torus types and of rational classes in a stable class; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "6b12a11", "job": "REV-PKG-ExcursionOperatorsAndSpectralActionPartII~2", "model": "opus", "worker": "fable-rev105"} -->
 
 ## A
 
@@ -3422,7 +3425,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at Corollary 1.3, p. 2: the source says the source attributes atomic stability of the regular supercuspidal packet sum to FKS without argument; it should be give the deduction, since FKS21v2 Theorem 4.4.4 covers only part of S_φ⁺ and assumes exponential convergence; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "af07bf6", "job": "REV-PKG-ExcursionOperatorsAndSpectralActionPartII", "model": "opus", "worker": "fable-rev75"} -->. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
 - **Misprint** at §2.2, p. 8: the source says 2ρ_G as the usual positive-root sum, with G's roots implied by the subscript, yet uses μ_m=4mρ_G as a Ĝ-weight; it should be the positive roots of Ĝ (coroots of G); affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
+- **Misprint** at §2.2, p. 8: the source says the source calls 2ρ_G the usual sum of positive roots while using 4mρ_G as a Ĝ-weight; it should be the positive roots of Ĝ, the coroots of G (as at FU25 p. 18); affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 6b12a11, 2026-10-25, claude opus).
 - **Misprint** at §2.4, p. 13: the source says the reverse composite with extension index i; it should be the identity-stratum index 1, as on p. 9; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
+- **Misprint** at §2.4, p. 13: the source says the reverse composite carries extension index i; it should be the identity-stratum index 1, as defined on p. 9; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 6b12a11, 2026-10-25, claude opus).
 
 ## Haagerup
 
@@ -3835,6 +3840,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Lemma B.1.1, pp. 72–73: the source says the exponent is m in 𝔪^{m−1} and in Λ/𝔪^{m−1}; it should be k; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at the proof of Theorem 4.5.3, p. 41: the source says the fixed locus is fibred over In_S(T₁); it should be In_S(T); affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at §3.3, (3.3.3), p. 18: the source says the source describes ρ_G as the full positive-root sum; it should be the half-sum, so that 2ρ_G is the full sum (App. A.2, p. 72); affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
+- **Misprint** at §3.3, equation (3.3.3), p. 18: the source says the source describes ρ_G as the sum of the positive roots; it should be the half-sum, so that 2ρ_G is the full sum (as in Appendix A.2, p. 72); affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at 6b12a11, 2026-10-25, claude opus).
 - **Error** at §4.6, closing remark, p. 44: the source says isolated fixed points over U make the inertia étale over [U//G]; it should be étaleness of the fixed locus over U is needed (fails for the affine group on P¹); affects a stated result. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at §5.3, p. 48: the source says the trace map is described before Definition 4.3.5; it should be before Definition 4.3.6; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 
