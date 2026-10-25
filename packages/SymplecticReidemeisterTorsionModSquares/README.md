@@ -12,7 +12,7 @@ TangentialBordism B1–B2 owns labelled smooth bordism, its fundamental-class ma
 
 KTheoryFiniteLocalFields §§1.5, 1.8–1.9 owns finite-field restriction/transfer, universal equivariant finite Chern classes and the finite-rank degree-three Chern isomorphism. K3BlochGroups §§2.4–2.5 and 6.7 owns indecomposable K₃ and its stable Hurewicz and coefficient comparisons. SchemeAndStackFoundations §2.11 owns Kummer torsors as line pairs; §§0.9 and 0.21 own approximation and finite normalization. Chebotarev Layers 7, 11 and 13 owns number-field weighted density; the arithmetic-scheme detection input is its explicit supplier extension below. RepresentationTheory/LieGroups Layer 5 owns universal covering groups, and MetaplecticAutomorphicForms §2.4b owns the metaplectic cover. This roadmap owns the application to real Chern components, without reconstructing either cover.
 
-SymplecticLFunctionsModSquares consumes the resulting topology for arithmetic central values and Hurwitz/PEL geometry. Those arithmetic end theorems are outside this roadmap's ownership.
+The arithmetic application to central values of symplectic L-functions modulo squares and Hurwitz/PEL geometry is outside this roadmap’s ownership.
 
 ## Conventions
 
@@ -24,13 +24,13 @@ Determinant tensors are ordered by increasing degree. Line inversion reverses fa
 
 Square classes are written multiplicatively: 1 is trivial. `TauCeti.SquareClassGroup` is additive with identity 0; `TauCeti.squareClassHom` uses its multiplicative wrapper. A line square-class torsor has no preferred origin. Over rings use H¹_et(R,μ₂), including its Pic(R)[2] contribution. Unsigned discriminant means Gram determinant modulo squares, with no dimension sign. For a quadratic form Q the bilinear form in the Lean signature is its associated form B, so B(v,v)=Q(v); the polar form is 2B. Reflection values are [Q(v)] under the pinned convention. On SO, replacing B by 2B changes each even-reflection word by a square (JRV, Theorem 5.1, pp. 16–17, line 782).
 
-The source of both transformations is B_r(R)=H₃(BSp₂ᵣ(R);ℤ)/2, the integral group modulo doubling. It is not full H₃(−;𝔽₂): the homological coefficient sequence has H₂(−;ℤ)[2] as cokernel. The two agree for the odd finite groups supplied below. The real conclusion has the larger full-mod-two domain and uses a separate proof. All group homology uses discrete groups, including real symplectic groups. Frobenius at an unramified closed point acts arithmetically by x↦x^q; quadratic character values are unchanged by inversion (AV-v1, §2.6, p. 16, line 690; §2.11, p. 21, line 921).
+The source of both transformations is B_r(R)=H₃(BSp₂ᵣ(R);ℤ)/2, the integral group modulo doubling. Its manifold labels use local systems with a fibre identified with the standard free symplectic module R²ʳ; arbitrary finite-projective families use §3.5. It is not full H₃(−;𝔽₂): the homological coefficient sequence has H₂(−;ℤ)[2] as cokernel. The two agree for the odd finite groups supplied below. The real conclusion has the larger full-mod-two domain and uses a separate proof. All group homology uses discrete groups, including real symplectic groups. Frobenius at an unramified closed point acts arithmetically by x↦x^q; quadratic character values are unchanged by inversion (AV-v1, §2.6, p. 16, line 690; §2.11, p. 21, line 921).
 
 ## Exact supplier contracts
 
 ### From Mathlib
 
-`CochainComplex` in `Mathlib/Algebra/Homology/HomologicalComplex.lean` and `HomologicalComplex.homology` in `Mathlib/Algebra/Homology/ShortComplex/HomologicalComplex.lean` supply cochains and their native homology. Boundedness, finite projectivity and a pairing are additional hypotheses, not fields of the bare cochain carrier. `groupHomology` in `Mathlib/RepresentationTheory/Homological/GroupHomology/Basic.lean` supplies homology of representations; trivial integral coefficients and reduction modulo two are specified explicitly. `Sylow` in `Mathlib/GroupTheory/Sylow.lean` supplies the subgroup carrier. `SymplecticGroup.det_eq_one` in `Mathlib/LinearAlgebra/SymplecticGroup.lean` holds over a commutative ring and supplies every finite-rank change-of-basis determinant. `QuadraticForm`, `QuadraticMap.associated`, `Module.Basis`, `LinearMap.ker`, `LinearMap.range`, `LinearMap.restrict`, `LinearMap.det` and `Matrix.det` supply the exact carriers in the Zassenhaus acceptance test. Its restriction witness says that A+1 preserves its stable image; it is no assumption about a spinor value.
+`CochainComplex` in `Mathlib/Algebra/Homology/HomologicalComplex.lean` and `HomologicalComplex.homology` in `Mathlib/Algebra/Homology/ShortComplex/HomologicalComplex.lean` supply cochains and their native homology. Boundedness, finite projectivity and a pairing are additional hypotheses, not fields of the bare cochain carrier. `groupHomology` in `Mathlib/RepresentationTheory/Homological/GroupHomology/Basic.lean` supplies homology of representations; trivial integral coefficients and reduction modulo two are specified explicitly. `Sylow` in `Mathlib/GroupTheory/Sylow.lean` supplies the subgroup carrier. `SymplecticGroup.det_eq_one` in `Mathlib/LinearAlgebra/SymplecticGroup.lean` holds over a commutative ring and supplies every finite-rank change-of-basis determinant. `QuadraticForm`, `QuadraticMap.associated`, `Module.Basis`, `LinearMap.ker`, `LinearMap.range`, `LinearMap.restrict`, `LinearMap.det` and `Matrix.det` supply the exact carriers in the Zassenhaus acceptance test. Its restriction witness says that A+1 preserves its stable image; it is no assumption about a spinor value. `Nat.forall_exists_prime_gt_and_eq_mod` in `Mathlib/NumberTheory/LSeries/PrimesInAP.lean` supplies a prime above any bound in any unit residue class; §6.3 uses the unit class 1+h modulo 2h for even h.
 
 ### From Tau Ceti
 
@@ -52,7 +52,9 @@ Section 5.1: the finite-projective determinant line with quasi-isomorphism, exac
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-Stages 2 and 4: finite cellular local-coefficient cochains, their singular comparison and coefficient pullbacks; crossed homomorphisms modulo principal ones in degree one. Stage 5: the Wang cone for a mapping torus with a chosen coefficient intertwiner and integral finite-cover transfer with inclusion after transfer equal to subgroup index. Stage 6, especially 6.1 and 6.3: cup products, relative fundamental classes and chain-level Poincaré–Lefschetz duality. The orientation on an interval gives endpoint coefficients −1,+1. For an index-three transfer, the composite on integral homology modulo two is multiplication by 3, hence identity.
+Stage 2: local systems and coefficient pullbacks; Stage 4: cellular chains; Stage 6.1: local-system cellular cochains and their singular comparison. Section 4.7 derives its presentation-specific crossed-homomorphism description from that cellular model. Stage 5: the Wang cone for a mapping torus with a chosen coefficient intertwiner and integral finite-cover transfer with inclusion after transfer equal to subgroup index. Stage 6.2: cup and cap products; Stage 6.3: the orientation local system and fundamental classes; Stage 6.4: Poincaré–Lefschetz duality, including `compactTriadPoincareLefschetz`. The chain-level boundary-pairing comparison is the additional contract below. The orientation on an interval gives endpoint coefficients −1,+1. For an index-three transfer, the composite on integral homology modulo two is multiplication by 3, hence identity.
+
+The following contract extends Stage 6.4’s `compactTriadPoincareLefschetz`.
 
 What AlgebraicTopology must provide (gap:poincare-boundary-cone): Provide a chain-homotopy-compatible identification of the cone of the relative self-duality adjoint with boundary cochains, carrying its signed pairing to outward-first Poincaré duality for finite projective self-dual local systems with two invertible.
 
@@ -61,6 +63,8 @@ What AlgebraicTopology must provide (gap:poincare-boundary-cone): Provide a chai
 Layers 1 and 11 and the smoothing-and-triangulation comparison: compact smooth cellulations, boundary-compatible dual cells and simple comparisons. A single even-rank elementary cell pair contributes determinant one; arbitrary quasi-isomorphisms need not preserve a based volume. The scope is smooth manifolds, without a triangulability assertion for arbitrary topological manifolds.
 
 What GeometricTopology must provide (gap:smooth-cell-comparison): Provide finite smooth-compatible triangulations, boundary dual cells, common subdivisions and simple comparison maps in every finite dimension, preserving transported local-coefficient cellular volumes.
+
+What GeometricTopology must provide (gap:marked-surface-twists): Provide, for marked closed smooth oriented surfaces, compatibility between orientation-preserving Dehn twists and their induced automorphisms of marked fundamental-group presentations, including basepoint-path conjugation and preservation of the oriented relator up to conjugacy with exponent +1.
 
 ### From TauCetiRoadmap.TangentialBordism
 
@@ -88,7 +92,9 @@ Sections 1.5 and 1.9: all odd finite fields, every positive finite symplectic ra
 
 What KTheoryFiniteLocalFields must provide (gap:witt-sylow-lift): Provide compatible lifts of every finite-field symplectic Sylow 2-subgroup representation through truncated Witt rings to the full Witt ring in odd residue characteristic, using smooth congruence kernels and averaging.
 
-What KTheoryFiniteLocalFields must provide (gap:real-chern-bockstein): Provide the real c₂₂ and c₃₁ components of the universal standard-representation étale c₂, identify c₂₂ with the discrete pullback of the real metaplectic cover, and prove compatibility with the group and étale coefficient Bocksteins.
+What KTheoryFiniteLocalFields must provide (gap:real-chern-bockstein): Provide the real c₂₂ and c₃₁ components of the universal standard-representation étale c₂ for discrete Sp₂ᵣ(ℝ), r≥1, with c₂₂ equal to the discrete pullback of the real metaplectic double-cover class.
+
+What KTheoryFiniteLocalFields must provide (gap:real-chern-bockstein-compatibility): For discrete G=Sp₂ᵣ(ℝ), r≥1, prove β_et(c₃₁(z))=c₂₂(β_G z) for every z∈H₃(G;𝔽₂), where β_G:H₃(G;𝔽₂)→H₂(G;𝔽₂) is the homological coefficient Bockstein and β_et:H¹_et(ℝ,𝔽₂)→H²_et(ℝ,𝔽₂) is the étale coefficient Bockstein.
 
 ### From TauCetiRoadmap.K3BlochGroups
 
@@ -96,7 +102,9 @@ Sections 2.4–2.5: the natural stable number-field Hurewicz equivalence from in
 
 What K3BlochGroups must provide (gap:unstable-sl2-chern-lift): Provide the natural surjection from integral H₃ of SL₂ of every infinite field onto indecomposable K3, compatible with stabilization and the number-field stable Hurewicz equivalence.
 
-What K3BlochGroups must provide (gap:dyadic-number-field-chern-rank): Provide for every number field the degree-three Chern surjection from indecomposable K3 onto H¹(F,ℤ₂(2))/2, its rank bound at least r₂(F), and injective reduction into H¹(F,μ₂), with real-place corrections and standard-representation normalization.
+What K3BlochGroups must provide (gap:dyadic-number-field-chern-rank): Provide for every number field F the standard-representation degree-three Chern surjection from indecomposable K3(F) onto H¹(F,ℤ₂(2))/2, whose F₂-dimension is at least r₂(F), including the real-place corrections.
+
+What K3BlochGroups must provide (gap:dyadic-number-field-chern-reduction): For every number field F, provide the injective coefficient reduction H¹(F,ℤ₂(2))/2→H¹(F,μ₂), compatible with the degree-three second Chern map and its real-place normalization.
 
 ### From TauCetiRoadmap.Chebotarev
 
@@ -108,7 +116,11 @@ Layers 7, 11.3 and 13: auxiliary cyclotomic disjointness, the negligible residue
 - On Spec ℤ[1/2,t], dimension d=2 gives degree-one main term Q²/2, so its normalized total is 1/2 and a universal total limit 1 is false.
 - For Spec 𝔽₃, the nontrivial torsor is detected by its unique closed-point Frobenius; there cannot be two independent quadratic classes since H¹ has dimension 1. No norm-counting real limit is requested in this case.
 
-What Chebotarev must provide (gap:arithmetic-scheme-frobenius-detection): For every normal integral affine finite-type ℤ[1/2]-scheme, provide Frobenius detection of finite étale quadratic quotients and independent pairs at closed points, and in characteristic zero a positive cQ^d lower bound for the logarithmically weighted nonsplit-point count together with the O(q^(d-1)) residue-order bound, where d is the Krull dimension.
+What Chebotarev must provide (gap:arithmetic-scheme-frobenius-detection): For every normal integral affine finite-type ℤ[1/2]-scheme, detect finite étale quadratic quotients and independent pairs of μ₂-classes by Frobenius at closed points, in every characteristic.
+
+What Chebotarev must provide (gap:arithmetic-scheme-nonsplit-weight): For every connected nontrivial double cover of a normal integral affine finite-type ℤ[1/2]-scheme of characteristic zero and Krull dimension d, provide c>0 and Q₀≥1 such that the logarithmically weighted nonsplit closed-point count of order at most Q is at least cQ^d for every Q≥Q₀.
+
+What Chebotarev must provide (gap:arithmetic-scheme-residue-order-count): For every normal integral affine finite-type ℤ[1/2]-scheme of characteristic zero and Krull dimension d, provide one constant C with at most Cq^(d-1) closed points of residue field order q for every prime power q.
 
 ### From TauCetiRoadmap.RepresentationTheory/LieGroups
 
@@ -266,7 +278,7 @@ The API has the following consequences under these hypotheses.
 - For an interval the cone comparison gives its two endpoints with opposite orientations.
 - For the noncompact line ℝ, ordinary H⁰ has dimension 1 and ordinary H¹ has dimension 0; a closed-manifold perfect pairing between them would fail. Compact support is required for the corresponding noncompact duality.
 
-*Needs:* §0.2; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stage 6; GeometricTopology Layer 11 and smoothing comparison; gap:poincare-boundary-cone.
+*Needs:* §0.2; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4; GeometricTopology Layer 11 and smoothing comparison; gap:poincare-boundary-cone.
 
 ### Examples
 
@@ -274,7 +286,7 @@ The scalar cone K —a→ K, the alternating pair K² —J→ K² and the interv
 
 ### Dependencies
 
-`CochainComplex`; `HomologicalComplex.homology`; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stage 6; GeometricTopology Layer 11 and smoothing comparison. The subsection Needs lines separate statement inputs from the indicated proof route.
+`CochainComplex`; `HomologicalComplex.homology`; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4; GeometricTopology Layer 11 and smoothing comparison. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 1: determinant lines and square-root volumes
 
@@ -336,7 +348,7 @@ The API has the following consequences under these hypotheses.
 
 ### 1.4 Strongly even complexes
 
-A finite projective complex is strongly even when every term has locally constant even rank. Over a field this means Even(dim C^q) for every integer q. For bounded complexes this implies even Euler characteristic. It is independent of requiring every cohomology group to have even dimension: neither condition implies the other. (AV-v1, Appendix B.4.1, pp. 73–75, line 3397).
+A finite projective complex is strongly even when every term has locally constant even rank. Over a field this means Even(dim C^q) for every integer q. For bounded complexes this implies even Euler characteristic. It is independent of requiring every cohomology group to have even dimension: neither condition implies the other. (AV-v1, Appendix B.4.1, pp. 73–75, line 3415).
 
 A proof route is as follows. Use the rank predicate on each term; over a general ring impose it at every prime. Show invariance under termwise isomorphism, shifts, duality and finite direct sums, but do not claim invariance under arbitrary quasi-isomorphism.
 
@@ -359,7 +371,7 @@ The API has the following consequences under these hypotheses.
 
 ### 1.5 Termwise determinants of strongly even complexes
 
-For a strongly even bounded complex, the canonical ordered tensor identification det C≃⊗_q `(det C^q)^((-1)^q)` is compatible with degreewise split exact sequences, the Cone(id) shift and reverse-wedge duality. Use increasing degree order and the corrected brutal-truncation exact sequence σ≥r C→σ≥r−1 C→`C^(r-1)[1-r]`. (AV-v1, Appendix B.4.1, (B.13)–(B.14), pp. 73–75, line 3407).
+For a strongly even bounded complex, the canonical ordered tensor identification det C≃⊗_q `(det C^q)^((-1)^q)` is compatible with degreewise split exact sequences, the Cone(id) shift and reverse-wedge duality. Use increasing degree order and the corrected brutal-truncation exact sequence σ≥r C→σ≥r−1 C→`C^(r-1)[1-r]`. (AV-v1, Appendix B.4.1, (B.13)–(B.14), pp. 73–75, line 3427).
 
 A proof route is as follows. Filter by brutal truncations and apply the imported exact-triangle determinant. Every term determinant has even grading, so the rearrangements have sign one. Compare dual and shifted filtrations with the fixed reverse-wedge and Cone(id) conventions.
 
@@ -373,7 +385,7 @@ A proof route is as follows. Filter by brutal truncations and apply the imported
 
 ### 1.6 Determinant versus cohomology
 
-For every bounded finite-dimensional cochain complex over K, adapt the supplied determinant/cohomology comparison to reverse-wedge duality. The map det C→det H*(C) uses the boundary-cycle and cycle-term exact sequences in that order and cancels boundary factors with the fixed shift evaluation. Prove its compatibility with the AV-normalized duality, shifts and split exact sequences, retaining the exact-sequence torsion signs for a cone. Its underlying determinant functor is the supplier object. (AV-v1, Appendix B.4.2–B.4.3, (B.15)–(B.17), pp. 75–76, line 3494).
+For every bounded finite-dimensional cochain complex over K, adapt the supplied determinant/cohomology comparison to reverse-wedge duality. The map det C→det H*(C) uses the boundary-cycle and cycle-term exact sequences in that order and cancels boundary factors with the fixed shift evaluation. Prove its compatibility with the AV-normalized duality, shifts and split exact sequences, retaining the exact-sequence torsion signs for a cone. Its underlying determinant functor is the supplier object. (AV-v1, Appendix B.4.2–B.4.3, (B.15)–(B.17), pp. 75–76, lines 3498, 3513, 3526).
 
 A proof route is as follows. Use the supplied boundary/cycle determinant comparison, then compare its duality diagram with reversed dual wedges and the cone-normalized shift. For an injection A→B carry the supplied cone/quotient determinant comparison with its exact-sequence torsion signs.
 
@@ -394,7 +406,7 @@ The API has the following consequences under these hypotheses.
 
 ### 1.7 Lagrangian subcomplexes
 
-For a strict ε-symmetric dimension-n complex C, a Lagrangian is a finite projective subcomplex ι:L→C for which the adjoint quotient gives a degreewise split exact sequence 0→L→C→L∨[−n]→0. This includes isotropy and L=L⊥. The vector-space case has n=0. For odd n the determinant has a square-root identification from L. (AV-v1, Appendix B.5, (B.18), pp. 76–77, line 3536).
+For a strict ε-symmetric dimension-n complex C, a Lagrangian is a finite projective subcomplex ι:L→C for which the adjoint quotient gives a degreewise split exact sequence 0→L→C→L∨[−n]→0. This includes isotropy and L=L⊥. In the vector-space case n=0, the adjoint quotient is q(w)(l)=T(w,l). For odd n the determinant has a square-root identification from L. (AV-v1, Appendix B.5, (B.18), pp. 76–77, lines 3565, 3583).
 
 A proof route is as follows. Form the adjoint quotient by restricting the pairing to L. Require the exact sequence and its pairing compatibility, rather than defining a Lagrangian by dimension alone.
 
@@ -415,7 +427,7 @@ The API has the following consequences under these hypotheses.
 
 ### 1.8 The square class of a Lagrangian
 
-For odd n, a Lagrangian L in a strict ε-symmetric C induces det C≃det L⊗det(L∨[−n])≃(det L)² using the exact sequence, reverse-wedge duality and the fixed shifts. Transport the canonical square to ν_L∈Sq(det C). Direct sums obey `nu_(L1 direct_sum L2) = (-1)^(chi(L1)*chi(L2)) * nu_L1 * nu_L2`; the sign is one if both Lagrangians are strongly even. In degree zero the analogous vector-space volume is independent of L for a symplectic form, and in the orthogonal case depends only on its Grassmannian component. (AV-v1, Appendix B.5, (B.18)–(B.19), pp. 76–78, line 3591).
+For odd n, a Lagrangian L in a strict ε-symmetric C induces det C≃det L⊗det(L∨[−n])≃(det L)² using the exact sequence, reverse-wedge duality and the fixed shifts. Transport the canonical square to ν_L∈Sq(det C). Direct sums obey `nu_(L1 direct_sum L2) = (-1)^(chi(L1)*chi(L2)) * nu_L1 * nu_L2`; the sign is one if both Lagrangians are strongly even. In degree zero the analogous vector-space volume is independent of L for a symplectic form, and in the orthogonal case depends only on its Grassmannian component. (AV-v1, Appendix B.5, (B.18)–(B.19), pp. 76–78, line 3588).
 
 A proof route is as follows. Apply the imported determinant exact-sequence isomorphism, then the signed dual and odd shift. The tensor-square class is independent of the root generator. Compute the direct-sum permutation once; for symplectic vector spaces compare Darboux bases.
 
@@ -424,13 +436,13 @@ The API has the following consequences under these hypotheses.
 - The distinguished square class in det C.
 - Isometries carrying L to L′ carry their classes to one another.
 - The direct-sum formula includes `(-1)^(chi(L1)*chi(L2))`.
-- For strongly even L, it is the product of the paired-degree vector-space volumes.
+- For strongly even L, it is the product of the paired-degree vector-space Lagrangian volumes, with their adjoint-quotient normalization.
 
 **Checks.**
 
 - Rescaling a root determinant generator by u multiplies its image by u², leaving ν_L unchanged.
 - Two odd root determinant lines produce a minus sign in the direct-sum class.
-- The two coordinate Lagrangians in a symplectic plane give the same volume, using the signed dual identification.
+- Over ℚ with ω(e,f)=1, L=ℚe has quotient f↦−e*, while L=ℚf has quotient e↦f*; both give ν_L=−e∧f. The ordered Darboux wedge is e∧f, so their ratio is the nontrivial class [−1].
 
 *Needs:* §1.7; §1.2; §1.3; §1.5.
 
@@ -448,26 +460,26 @@ Earlier local inputs: Layer 0. KTheoryLowDegrees §§14.1–14.4; PadicMeasuresI
 
 A finite projective R-module of rank 2r with perfect alternating form has a canonical trivialization of its determinant line. Locally choose a symplectic basis (e₁,f₁,…,e_r,f_r) with ω(e_i,f_i)=1 and use their ordered wedge. The local generators glue because every symplectic change of basis has determinant one. This is the Pfaffian volume normalization; do not divide ω^r by r! in positive characteristic. (AV-v1, §2.3, pp. 11–12; Appendix B.5 and B.7, pp. 76–78, 80, line 3753).
 
-A proof route is as follows. Construct symplectic bases over local rings by splitting a hyperbolic plane and induction, then shrink to neighbourhoods. Use the existing all-rank determinant-one theorem on transitions and glue the determinant trivializations. Compare with the Lagrangian volume convention in a standard symplectic basis.
+A proof route is as follows. Construct symplectic bases over local rings by splitting a hyperbolic plane and induction, then shrink to neighbourhoods. Use the existing all-rank determinant-one theorem on transitions and glue the determinant trivializations. With q(w)(l)=ω(w,l), quotient lifts for the dual basis of L=⟨e₁,…,e_r⟩ are −f₁,…,−f_r. Reverse-wedge duality and reordering to (e₁,f₁,…,e_r,f_r) give ν_L=(−1)^r times this Darboux volume; the cellular normalization uses the Darboux volume.
 
 The API has the following consequences under these hypotheses.
 
 - The canonical determinant generator for a finite projective symplectic module.
 - Symplectic isometries preserve the generator.
 - The generator commutes with extension of scalars.
-- The associated square class agrees with the vector-space Lagrangian construction.
+- Over a field the vector-space Lagrangian volume is (−1)^r times the ordered Darboux volume, so their square classes differ by [(−1)^r].
 
 **Checks.**
 
-- For ω(e,f)=1 the generator is e∧f with the stated order.
-- In rank zero the generator is 1∈R.
+- Over ℚ with ω(e,f)=1 the Darboux generator is e∧f, whereas the adjoint-quotient Lagrangian generator is −e∧f; their ratio [−1] is nontrivial.
+- In rank zero the Darboux and Lagrangian generators are both 1∈R, agreeing with (−1)^0=1.
 - In rank six over F₃ the volume remains nonzero even though 3! vanishes, so a formula requiring division by 3! is invalid.
 
-*Needs:* `SymplecticGroup.det_eq_one`; §1.3.
+*Needs:* `SymplecticGroup.det_eq_one`; §1.3; §1.8.
 
 ### 2.2 The Reidemeister cellular volume
 
-For a finite cell pair (X,A) and an even-rank self-dual local system ρ, choose a symplectic volume on fibres, or in the orthogonal case a specified locally constant self-dual determinant generator for standard wedge duality. The ordered tensor of the oriented cell-fibre generators defines `e_(X,A)` ∈ det C*(X,A;ρ). Even rank makes this independent of cell orientations, cell ordering and compatible fibre trivializations. It respects the absolute/relative exact sequence. (AV-v1, §2.3, pp. 11–12; Appendix B.7, p. 80, line 3766).
+For a finite cell pair (X,A) and an even-rank self-dual local system ρ, choose a symplectic volume on fibres, or in the orthogonal case a specified locally constant self-dual determinant generator for standard wedge duality. The ordered tensor of the oriented cell-fibre generators defines `e_(X,A)` ∈ det C*(X,A;ρ). Even rank makes this independent of cell orientations, cell ordering and compatible fibre trivializations. It respects the absolute/relative exact sequence. (AV-v1, §2.3, pp. 11–12; Appendix B.7, p. 80, lines 509, 3770).
 
 A proof route is as follows. Use the finite-cell decomposition of each cochain term. Changing a cell orientation gives `(-1)^(rank rho) = 1`; swapping blocks gives the same even-rank sign; monodromy preserves the given volume. Use the determinant exact-sequence map in the fixed cell order to identify `e_X = e_(X,A) * e_A`.
 
@@ -484,11 +496,11 @@ The API has the following consequences under these hypotheses.
 - Reversing one edge in even rank does not change its determinant generator.
 - For a rank-one system over Q, reversing a cell orientation changes its generator by −1; the even-rank hypothesis is necessary.
 
-*Needs:* §2.1; §1.5; AlgebraicTopology Stage 4.
+*Needs:* §2.1; §1.5; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.1.
 
 ### 2.3 Subdivision and simple cellular invariance
 
-For compact smooth manifolds with compatible finite triangulations, the determinant quasi-isomorphism induced by an elementary cellular expansion/collapse with volume-preserving even-rank coefficients carries e to e. Hence the scalar torsion square class is independent of triangulation, using common subdivisions and elementary simple changes. An arbitrary quasi-isomorphism alone does not preserve a chosen cellular volume. (AV-v1, §2.3, pp. 11–12; Appendix B.7, p. 80, line 509).
+For compact smooth manifolds with compatible finite triangulations, the determinant quasi-isomorphism induced by an elementary cellular expansion/collapse with volume-preserving even-rank coefficients carries e to e. Hence the scalar torsion square class is independent of triangulation, using common subdivisions and elementary simple changes. An arbitrary quasi-isomorphism alone does not preserve a chosen cellular volume. (AV-v1, §2.3, pp. 11–12; Appendix B.7, p. 80, line 3766).
 
 A proof route is as follows. Compute the two-term acyclic cell pair of an elementary expansion: its attaching matrix is a signed monodromy matrix of determinant one in even rank. Apply determinant multiplicativity to its cancellation. Use compatible subdivisions and simple comparison maps for smooth finite triangulations; transport Poincaré duality with them.
 
@@ -498,7 +510,7 @@ A proof route is as follows. Compute the two-term acyclic cell pair of an elemen
 - Replacing that matrix by −I₂ still has determinant 1, whereas the rank-one matrix −1 has determinant −1.
 - The based acyclic complex K —2→ K has torsion scalar 2; its quasi-isomorphism to zero does not by itself send a based generator to an acyclic generator.
 
-*Needs:* §2.2; §1.6; GeometricTopology Layer 11 and smoothing comparison; AlgebraicTopology Stage 4.
+*Needs:* §2.2; §1.6; GeometricTopology Layer 11 and smoothing comparison; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.1.
 
 ### 2.4 Poincaré duality and cellular volumes
 
@@ -512,7 +524,7 @@ A proof route is as follows. Compute on a pair of oriented primal and dual cells
 - For a rank-two system on a closed three-manifold, χ=0 and the duality scalar is +1.
 - For rank four on a point, d=2 and the scalar is +1; using the full coefficient rank as exponent would miss the rank-two test.
 
-*Needs:* §0.8; §2.2; §2.3; §1.3; AlgebraicTopology Stage 6.
+*Needs:* §0.8; §2.2; §2.3; §1.3; AlgebraicTopology Stage 6.4.
 
 ### 2.5 Reidemeister torsion modulo squares
 
@@ -551,14 +563,14 @@ A proof route is as follows. The cellular volume does not use the global orienta
 
 ### 2.7 Three volumes on an algebraic boundary
 
-Let C be a strongly even skew-symmetric dimension-4j complex over K, j≥1, and D=∂alg C. On det D compare a from C∨[−4j]⊂D, b from σ≥2j D, and c from upper cohomology via det D≃det H*D. Then a=b=(−1)^r c, with r≡(χ(C)+χ₁/₂(D))/2 (mod 2). In particular χ₁/₂(D) is even. Only the parity of r is asserted by this formula; the actual acyclic middle rank is 2r after the splitting. (AV-v1, Appendix B.6, (B.20)–(B.23), pp. 78–80, line 3629).
+Let C be a strongly even skew-symmetric dimension-4j complex over K, j≥1, and D=∂alg C. On det D compare a from C∨[−4j]⊂D, b from σ≥2j D, and c from upper cohomology via det D≃det H*D. Then a=b=(−1)^r c, with r≡(χ(C)+χ₁/₂(D))/2 (mod 2). In particular χ₁/₂(D) is even. Only the parity of r is asserted by this formula; the actual acyclic middle rank is 2r after the splitting. (AV-v1, Appendix B.6, (B.20)–(B.23), pp. 78–80, lines 3653, 3675).
 
 A proof route is as follows. Shift by 2j−1 to the strict symmetric dimension-1 case. Compare a and b degree by degree using strongly even Lagrangians. Apply strict-splitting: Q and its dual give the same classes, while the acyclic alternating block of rank 2r has square determinant and reverse-wedge scalar (−1)^r. With `dim D^i = dim C^(4*j-i) + dim C^(i+1)`, perform the Euler count modulo four to obtain the displayed parity.
 
 **Checks.**
 
 - For C=0 all root classes are 1, χ(C)=χ₁/₂(D)=0 and r=0.
-- Take C=K² in degree zero with a symplectic form and j=1. Its boundary has K² in degrees −1 and 4 with zero differential: χ(C)=2, χ₁/₂(D)=−2 and r≡0, hence a=b=c.
+- Take C=K² concentrated in degree zero with the zero skew-symmetric dimension-four pairing and j=1. Its boundary has K² in degrees −1 and 4 with zero differential: χ(C)=2, χ₁/₂(D)=−2 and r≡0, hence a=b=c.
 - For the strict acyclic middle model K² —J→ K² after the indicated shift, det J=1 but the upper-term versus acyclic root ratio is −1; a determinant-square argument alone misses this sign.
 
 *Needs:* §0.3; §0.6; §0.7; §1.8; §1.5; §1.6.
@@ -575,7 +587,7 @@ A proof route is as follows. Use the relative pairing on N and the boundary-cone
 - For ∂(M×[0,1])=M⊔(−M), the two normalized values multiply to a square, hence 1.
 - For a constant rank-four system on S³, χ₁/₂=4 and raw RT=1; this distinguishes half the semicharacteristic from the full semicharacteristic.
 
-*Needs:* §2.7; §2.4; §2.5; §0.8; AlgebraicTopology Stage 6.
+*Needs:* §2.7; §2.4; §2.5; §0.8; AlgebraicTopology Stage 6.4.
 
 ### Examples
 
@@ -583,7 +595,7 @@ The point, elementary cell pair, S³ with constant symplectic coefficients and o
 
 ### Dependencies
 
-Earlier local inputs: Layer 0, Layer 1. `SymplecticGroup.det_eq_one`; AlgebraicTopology Stage 4; GeometricTopology Layer 11 and smoothing comparison; AlgebraicTopology Stage 6. The subsection Needs lines separate statement inputs from the indicated proof route.
+Earlier local inputs: Layer 0, Layer 1. `SymplecticGroup.det_eq_one`; AlgebraicTopology Stage 4; GeometricTopology Layer 11 and smoothing comparison; AlgebraicTopology Stages 6.1–6.4. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 3: normal coefficients and the two transformations
 
@@ -669,6 +681,7 @@ The API has the following consequences under these hypotheses.
 - The constant rank-two symplectic system on S³ has normalized class 1 over every such R.
 - In the orthogonal circle regression family, normalized generic [1+s] specializes to normalized special 1 although raw torsion changes by [−1]. This tests the same dimension-one model formula.
 - Changing a local basis of the root line changes its scalar by a square and cannot change the torsor.
+- Over R=ℝ[x,y,z]/(x²+y²+z²−1), P=ker((x,y,z):R³→R) with ω(v,w)=det((x,y,z),v,w) is symplectic projective of rank two. Its real fibres are TS², so P has no global frame. The constant P-system on S³ still has normalized value 1 by generic restriction and normality; it supplies no standard-free group label.
 
 *Needs:* §3.4; §3.3; §3.2; §0.7; §1.8.
 
@@ -695,7 +708,9 @@ The API has the following consequences under these hypotheses.
 
 ### 3.7 The normalized torsion transformation
 
-For each rank 2r and normal integral Z[1/2]-algebra R, define B_r(R)=H₃(BSp₂ᵣ(R);ℤ)/2 and N_R:B_r(R)→H¹(R,μ₂) by a labelled manifold representative and normalized torsion. It is a homomorphism natural in R and compatible with block stabilization. For ρ on M, `N_R(rho_*[M]) = [(-1)^(chi_half(M,rho)/2)] * RT_R(M,rho)`. (AV-v1, §2.4–§2.6, (2.8), pp. 14–16, line 618).
+For each rank 2r and normal integral Z[1/2]-algebra R, define B_r(R)=H₃(BSp₂ᵣ(R);ℤ)/2 and N_R:B_r(R)→H¹(R,μ₂) by a labelled manifold representative and normalized torsion. It is a homomorphism natural in R and compatible with block stabilization. For ρ on M equipped with a symplectic identification of its fibre with R²ʳ, `N_R(rho_*[M]) = [(-1)^(chi_half(M,rho)/2)] * RT_R(M,rho)`. (AV-v1, §2.4–§2.6, (2.8), pp. 14–16, line 618).
+
+Changing this symplectic frame conjugates the representation; inner automorphisms act trivially on group homology, so the label and its value are unchanged. Arbitrary finite-projective fibres have the invariant of §3.5, without an asserted BSp₂ᵣ(R) label.
 
 A proof route is as follows. Use low-bordism to choose a smooth labelled representative for every integral H₃ class. Bordism invariance and orientation reversal make the value independent of that choice and additive. Since H¹(R,μ₂) has exponent two the homomorphism factors through B_r; use normalized-family for naturality.
 
@@ -704,7 +719,7 @@ The API has the following consequences under these hypotheses.
 - The homomorphism N_R on B_r(R).
 - Its value on a labelled manifold is the normalized torsion.
 - Every map of normal domains commutes with N.
-- Adding a constant symplectic summand preserves N, since its normalized torsion is trivial.
+- Adding a constant standard free symplectic summand preserves N, since its normalized torsion is trivial.
 
 **Checks.**
 
@@ -726,7 +741,7 @@ Earlier local inputs: Layer 0, Layer 1, Layer 2. AlgebraicTopology Stage 4; Geom
 
 ### 4.1 Zassenhaus determinant formula
 
-Prove `zassenhaus_primary_formula` for every finite-dimensional nondegenerate symmetric space (V,B) over K and every isometry A, with no determinant-one or even-dimension restriction. For N at least dim V let V₋=ker(A+1)^N and U=im(A+1)^N. They are nondegenerate orthogonal complements and θ(A)=disc(V₋) det((1+A)/2 on U). The Lean statement takes B to be the associated form of Q and uses the stable exponent dim V; for every basis of V₋ and every witness that A+1 preserves U it asserts the product determinant is nonzero and its unit square class equals the pinned orthogonal spinor norm. If additionally A∈SO(V), dim V is even and disc(V) is square, both generalized ±1 blocks and the corresponding ordinary eigenspaces have even dimensions, and the equivalent formula is θ(A)=disc(V₊) det(1−A on V₊⊥), with V₊ the generalized +1 block. This second formula is asserted only under these additional hypotheses. (AV-v1, Appendix B.9.1, (B.31), pp. 82–83, line 3822; JRV, Theorem 5.1 and (5.1), pp. 16–17, line 782).
+Prove `zassenhaus_primary_formula` for every finite-dimensional nondegenerate symmetric space (V,B) over K and every isometry A, with no determinant-one or even-dimension restriction. For N at least dim V let V₋=ker(A+1)^N and U=im(A+1)^N. They are nondegenerate orthogonal complements and θ(A)=disc(V₋) det((1+A)/2 on U). The Lean statement takes B to be the associated form of Q and uses the stable exponent dim V; for every basis of V₋ and every witness that A+1 preserves U it asserts the product determinant is nonzero and its unit square class equals the pinned orthogonal spinor norm. If additionally A∈SO(V), dim V is even and disc(V) is square, both generalized ±1 blocks and the corresponding ordinary eigenspaces have even dimensions, and the equivalent formula is θ(A)=disc(V₊) det(1−A on V₊⊥), with V₊ the generalized +1 block. This second formula is asserted only under these additional hypotheses. (AV-v1, Appendix B.9.1, (B.31), pp. 82–83, lines 3840, 3854; JRV, Theorem 5.1 and (5.1), pp. 16–17, line 782).
 
 A proof route is as follows. Use orthogonal primary decomposition and JRV Theorem 5.1, equation (5.1); the nondegenerate stable image makes its determinant a unit. Under the additional SO, even-dimension and square-discriminant hypotheses, compare reciprocal primary blocks and the even rank of the alternating middle maps to derive the generalized +1 version.
 
@@ -777,7 +792,7 @@ A proof route is as follows. Write P=B((1+A)/2−,−), an invertible cross pair
 
 ### 4.4 The circle formula in odd characteristic
 
-Let K have characteristic ≠2, V have even dimension and nondegenerate symmetric form of square unsigned discriminant, choose a standard self-dual volume, and let A∈SO(V). Then h=dim `V^(A=1)` is even and `(-1)^(h/2) * RT(S^1,A) = theta(A)`. No semisimplicity, lifting or characteristic-zero assumption is imposed. (AV-v1, Appendix B.9, (B.30), pp. 82–85; §2.3.2, p. 13, line 3822).
+Let K have characteristic ≠2, V have even dimension and nondegenerate symmetric form of square unsigned discriminant, choose a standard self-dual volume, and let A∈SO(V). Then h=dim `V^(A=1)` is even and `(-1)^(h/2) * RT(S^1,A) = theta(A)`. No semisimplicity, lifting or characteristic-zero assumption is imposed. (AV-v1, Appendix B.9, (B.30), pp. 82–85; §2.3.2, p. 13, lines 3840, 3854).
 
 A proof route is as follows. Split V=V₋⊥U at the generalized −1 block. Both blocks have even dimension, and 1+A is invertible on U. On V₋ the circle is acyclic and `det(1-A) = 2^(dim V_minus)`, a square. On U use strict-circle-calculation, retaining disc(B|U). Since the total discriminant is square, disc(B|U)=disc(B|V₋) modulo squares. Multiply the even-block determinant classes and apply the minus-one Zassenhaus formula. This proves the finite-characteristic case without Jacobson–Morozov or a logarithm.
 
@@ -801,7 +816,7 @@ A proof route is as follows. Poincaré duality gives H²=0 and the symmetric per
 - For genus one under the same no-section condition, dim H¹=0 and T has determinant 1 as an empty determinant.
 - For the constant rank-two genus-two system, H⁰ has dimension 2 and H¹ dimension 8; using 4r(g−1)=4 would be false without the no-section hypothesis.
 
-*Needs:* AlgebraicTopology Stage 6; §2.4; §2.3; §1.6.
+*Needs:* AlgebraicTopology Stages 6.1–6.4; §2.4; §2.3; §1.6.
 
 ### 4.6 Torsion of a mapping torus
 
@@ -834,23 +849,26 @@ The API has the following consequences under these hypotheses.
 
 - φ(g⁻¹)=−ρ(g)⁻¹φ(g); dropping either factor fails the relator expansion.
 - The cocycle φ_v(g)=ρ(g)v−v is sent by T̃ to `phi_(M^(-1)*v)`.
-- For rank-two coefficients satisfying the hypothesis, dim V³/ι(V)=4, matching the genus-two Euler calculation.
+- For rank-two coefficients satisfying the hypothesis, the relator imposes two independent equations on eight generator coordinates: the cellular cocycle space has dimension 6, principal cocycles have dimension 2, and dim H¹=6−2=4, matching the genus-two Euler calculation.
 
-*Needs:* AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; §4.5.
+*Needs:* AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.1; §4.5.
 
 ### 4.8 A nonsquare Gaussian torsion class
 
-Let i²=−1. On a genus-two surface use a₁=diag(−i,i), b₁=a₂=−I, b₂=1/2[[-1−i,−1−i],[1−i,−1+i]]. Take the twists T₁:b₁↦b₁a₁⁻¹, T₂:a₁↦a₁b₁, T₃:(b₁,b₂)↦(a₁⁻¹a₂⁻¹b₁,a₂⁻¹a₁⁻¹b₂), T₄:b₂↦b₂a₂⁻¹, T₅:a₂↦a₂b₂, with unspecified generators fixed. Apply T₄,T₄,T₂,T₃,T₁ in that order to each group word, so t=T₁∘T₃∘T₂∘T₄∘T₄. The intertwiner is M=[[0,−1],[1,0]]. Then char_T(x)=x⁴+1, det(1−T̃)=4, det(1−M⁻¹)=2, h=0 and N=RT=[2]=[i]≠1 in Q(i)ˣ/Q(i)ˣ². The second AV-v1 C.4.2 system with a₁=b₁=[[0,1],[−1,0]], a₂=I, b₂=diag(i,−i), twists T₅,T₅,T₄,T₅,T₅ and the same M gives determinants 8 and 2, hence RT=[4]=1. (AV-v1, Appendix C.4.1–C.4.2, pp. 89–90, line 4196).
+Let i²=−1. On a genus-two surface use a₁=diag(−i,i), b₁=a₂=−I, b₂=1/2[[-1−i,−1−i],[1−i,−1+i]]. Take the twists T₁:b₁↦b₁a₁⁻¹, T₂:a₁↦a₁b₁, T₃:(b₁,b₂)↦(a₁⁻¹a₂⁻¹b₁,a₂⁻¹a₁⁻¹b₂), T₄:b₂↦b₂a₂⁻¹, T₅:a₂↦a₂b₂, with unspecified generators fixed. Realize T₁,…,T₅ by orientation-preserving smooth Dehn twists on the marked surface, with these based word actions, including the basepoint paths. For the oriented relator R=[a₁,b₁][a₂,b₂], verify each T_i sends R to a conjugate of R with exponent +1 (AV-v1, C.1, pp. 86–87, lines 4053, 4065). Apply T₄,T₄,T₂,T₃,T₁ in that order to each group word, so t=T₁∘T₃∘T₂∘T₄∘T₄. The intertwiner is M=[[0,−1],[1,0]]. Then char_T(x)=x⁴+1, det(1−T̃)=4, det(1−M⁻¹)=2, h=0 and N=RT=[2]=[i]≠1 in Q(i)ˣ/Q(i)ˣ². The second AV-v1 C.4.2 system with a₁=b₁=[[0,1],[−1,0]], a₂=I, b₂=diag(i,−i), twists T₅,T₅,T₄,T₅,T₅ and the same M gives determinants 8 and 2, hence RT=[4]=1. (AV-v1, Appendix C.4.1–C.4.2, pp. 89–90, line 4196).
 
-A proof route is as follows. Verify the surface relator and the intertwining relation on all four generators by exact arithmetic in Q(i). Build the relator derivative matrix by the cocycle rule, solve for φ(a₁), and compute T̃ on the six remaining coordinates. Check its invariant two-dimensional principal-cocycle subspace and the quotient characteristic polynomial. Compute determinants 4/2 and 8/2. The identity 2=(1−i)²i identifies the first square class; if (a+bi)²=i with rational a,b, then a=±b and 2a²=±1, impossible.
+A proof route is as follows. Use the marked-surface-twist compatibility to identify the displayed automorphisms with the smooth twists, and compose their basepoint paths to realize t. Form its oriented smooth mapping torus. Verify the surface relator and the intertwining relation on all four generators by exact arithmetic in Q(i). Build the relator derivative matrix by the cocycle rule, solve for φ(a₁), and compute T̃ on the six remaining coordinates. Check its invariant two-dimensional principal-cocycle subspace and the quotient characteristic polynomial. Compute determinants 4/2 and 8/2. The identity 2=(1−i)²i identifies the first square class; if (a+bi)²=i with rational a,b, then a=±b and 2a²=±1, impossible.
 
 **Checks.**
 
+- The four twists T₁,T₂,T₄,T₅ fix R as a free-group word, so their oriented-relator exponent is +1.
+- T₃(R)=(a₂⁻¹a₁⁻¹)R(a₁a₂); its conjugating word is nontrivial and the relator exponent is +1.
+- Swapping (a₁,b₁,a₂,b₂) with (b₂,a₂,b₁,a₁) sends R to R⁻¹ and has orientation exponent −1, excluding realization as an orientation-preserving mapping class.
 - The first surface relator evaluates to I₂ and all four intertwining residual matrices are zero; reversing the order of word composition gives a nonzero residual on b₂.
 - The first six-dimensional characteristic polynomial is (x²+1)(x⁴+1), the principal part has polynomial x²+1, and the determinant ratio is 4/2=2 with h=0.
 - The second example has characteristic polynomial (x²+1)³ before quotient and (x²+1)² after quotient, with ratio 8/2=4 and trivial square class.
 
-*Needs:* §4.7; §4.6.
+*Needs:* §4.7; §4.6; GeometricTopology Layer 3; gap:marked-surface-twists.
 
 ### Examples
 
@@ -858,7 +876,7 @@ The rotation plane and the nonsemisimple hyperbolic 𝔽₃ model test the circl
 
 ### Dependencies
 
-Earlier local inputs: Layer 0, Layer 1, Layer 2. AlgebraicTopology Stage 6; AlgebraicTopology Stage 5; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4. The subsection Needs lines separate statement inputs from the indicated proof route.
+Earlier local inputs: Layer 0, Layer 1, Layer 2. AlgebraicTopology Stages 6.1–6.4; AlgebraicTopology Stage 5; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; GeometricTopology Layer 3; gap:marked-surface-twists. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 5: transfer and controlling extensions
 
@@ -929,7 +947,7 @@ A proof route is as follows. Import the number-field stable Hurewicz equivalence
 - For ℚ(i), r₂=1 and the image has at least 2 elements; for a totally imaginary degree-four field it has at least 4.
 - The stable Hurewicz map for ℚ has orders 48→24, not 48→48; replacing indecomposable K₃ by integral K₃ loses its kernel.
 
-*Needs:* §5.2; K3BlochGroups §§2.4–2.5, 6.7; K3BlochGroups §§2.4–2.5, 6.7; gap:unstable-sl2-chern-lift; K3BlochGroups §§2.5, 6.7; gap:dyadic-number-field-chern-rank; KTheoryFiniteLocalFields §1.8; gap:dyadic-number-field-chern-rank; gap:unstable-sl2-chern-lift.
+*Needs:* §5.2; K3BlochGroups §§2.4–2.5, 6.7; gap:unstable-sl2-chern-lift; gap:dyadic-number-field-chern-rank; gap:dyadic-number-field-chern-reduction; KTheoryFiniteLocalFields §1.8.
 
 ### 5.5 Weighted density and controlling extensions
 
@@ -1000,7 +1018,7 @@ A diagonal C₂ compositum and a disjoint C₂×C₂ compositum distinguish indi
 
 ### Dependencies
 
-Earlier local inputs: Layer 3. KTheoryFiniteLocalFields §§1.5, 1.8–1.9; SchemeAndStackFoundations §2.11; gap:normal-torsor-gluing; K3BlochGroups §§2.4–2.5, 6.7; K3BlochGroups §§2.4–2.5, 6.7; gap:unstable-sl2-chern-lift; K3BlochGroups §§2.5, 6.7; gap:dyadic-number-field-chern-rank; KTheoryFiniteLocalFields §1.8; Chebotarev Layer 11; Chebotarev Layer 13; Chebotarev arithmetic-scheme contract. The subsection Needs lines separate statement inputs from the indicated proof route.
+Earlier local inputs: Layer 3. KTheoryFiniteLocalFields §§1.5, 1.8–1.9; SchemeAndStackFoundations §2.11; gap:normal-torsor-gluing; K3BlochGroups §§2.4–2.5, 6.7; gap:unstable-sl2-chern-lift; gap:dyadic-number-field-chern-rank; gap:dyadic-number-field-chern-reduction; KTheoryFiniteLocalFields §1.8; Chebotarev Layer 11; Chebotarev Layer 13; Chebotarev arithmetic-scheme contract. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 6: density amplification
 
@@ -1036,7 +1054,7 @@ A proof route is as follows. Choose a basis of W whose members are independent o
 
 For a number field K, a fixed finite Galois E/K and every even h≥4, there is a cyclic extension L/K of degree h, linearly disjoint from E, with L totally imaginary. One may choose a sufficiently large rational prime r≡1+h (mod 2h), unramified in E and K, and take the degree-h cyclic subextension of K(ζ_r)/K. (AV-v1, §2.12, proof of Lemma 2.12.3, pp. 23–24, line 1012).
 
-A proof route is as follows. Use the coprime congruence class 1+h modulo 2h to choose r avoiding finitely many primes. The cyclotomic extension is totally ramified at r, while E and K are unramified there; obtain the degree and disjointness. Because (r−1)/h is odd, complex conjugation has nontrivial image in the cyclic quotient, so every real embedding becomes complex.
+A proof route is as follows. Choose r>N in the unit class 1+h modulo 2h using `Nat.forall_exists_prime_gt_and_eq_mod`, with N larger than every prime ramifying in E or K; gcd(1+h,2h)=1 because h is even. Chebotarev §7.2 gives irreducibility of the r-th cyclotomic polynomial over K. The cyclotomic extension is totally ramified at r, while E and K are unramified there; obtain the degree and disjointness. Because (r−1)/h is odd, complex conjugation has nontrivial image in the cyclic quotient, so every real embedding becomes complex.
 
 **Checks.**
 
@@ -1044,7 +1062,7 @@ A proof route is as follows. Use the coprime congruence class 1+h modulo 2h to c
 - For h=4 and r=13, (r−1)/h=3 is odd; the degree-four quotient again has nontrivial complex conjugation.
 - For h=4 and r=17, (r−1)/h=4 is even and complex conjugation dies in the degree-four quotient; merely requiring r≡1 modulo h is insufficient.
 
-*Needs:* Chebotarev Layer 7; Chebotarev Layer 13.
+*Needs:* `Nat.forall_exists_prime_gt_and_eq_mod`; Chebotarev Layer 7 (§7.2); Chebotarev Layer 13.
 
 ### 6.4 The cubic density improvement
 
@@ -1080,7 +1098,7 @@ The W=0 and dim W=2 cases distinguish an empty character locus from its three no
 
 ### Dependencies
 
-Earlier local inputs: Layer 4, Layer 5. Chebotarev Layer 13; Chebotarev Layer 7. The subsection Needs lines separate statement inputs from the indicated proof route.
+Earlier local inputs: Layer 4, Layer 5. Chebotarev Layer 13; Chebotarev Layer 7 (§7.2); `Nat.forall_exists_prime_gt_and_eq_mod`. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 7: the universal comparison
 
@@ -1096,7 +1114,7 @@ A proof route is as follows. For fixed x, the difference a=N_S(x)−c_et(x) is a
 - For Spec ℤ[1/2,t], d=2 and the degree-one contribution is asymptotic to Q²/2; its Q⁻²-normalized limit is 1/2, not 1.
 - A bad rational-prime weight o(Q) contributes at most `Q^(d-1) * o(Q) = o(Q^d)`; the higher prime-power bound `O(Q^(1/2) * (log Q)^2)` gives `O(Q^(d-1/2) * (log Q)^2)`.
 
-*Needs:* §6.5; Chebotarev arithmetic-scheme contract (gap:arithmetic-scheme-frobenius-detection); §3.7; §3.6; Chebotarev Layer 11.
+*Needs:* §6.5; Chebotarev arithmetic-scheme contracts (gap:arithmetic-scheme-frobenius-detection, gap:arithmetic-scheme-nonsplit-weight, gap:arithmetic-scheme-residue-order-count); §3.7; §3.6; Chebotarev Layer 11.
 
 ### 7.2 Lifting finite-field homology through Witt vectors
 
@@ -1144,7 +1162,7 @@ A proof route is as follows. In characteristic p, a difference torsor is split a
 
 Let M be a closed smooth oriented three-manifold and ρ a symplectic rank-2r local system over any field K with characteristic ≠2. Then χ₁/₂(M,ρ)=dim H⁰−dim H¹ is even and `[(-1)^(chi_half/2)] * RT(M,rho) = <rho*c_et,[M]>` in Kˣ/Kˣ². The evaluation is on the integral fundamental cycle reduced modulo two. (AV-v1, §2.1, Theorem 2.1, (2.2), p. 10; §1.1, (1.7), p. 3, line 422).
 
-A proof route is as follows. Apply the transformation equality to the image of the oriented fundamental class in integral group homology modulo two. Use the manifold evaluation formula and Kummer comparison to identify the two sides.
+A proof route is as follows. Choose a symplectic frame over K and apply the transformation equality to the image of the oriented fundamental class in integral group homology modulo two; conjugation invariance makes the result independent of the frame. Use the manifold evaluation formula and Kummer comparison to identify the two sides.
 
 **Checks.**
 
@@ -1156,7 +1174,7 @@ A proof route is as follows. Apply the transformation equality to the image of t
 
 ### 7.6 The mapping-class spinor identity
 
-For any closed smooth oriented surface Σ, field K of characteristic ≠2, symplectic local system ρ with H⁰(Σ;ρ)=0, orientation-preserving diffeomorphism f and specified symplectic isomorphism f*ρ≃ρ, let T on H¹ and ρ_f on M_f be induced by that choice. Then θ(T)=⟨ρ_f*c_et,[M_f]⟩. This includes all odd finite coefficient fields. (AV-v1, §1.1, (1.5), p. 3; Appendix C.2, Lemma C.2.1, pp. 87–88, line 82).
+For any closed smooth oriented surface Σ, field K of characteristic ≠2, symplectic local system ρ with H⁰(Σ;ρ)=0, orientation-preserving diffeomorphism f and specified symplectic isomorphism f*ρ≃ρ, let T on H¹ and ρ_f on M_f be induced by that choice. Then θ(T)=⟨ρ_f*c_et,[M_f]⟩. This includes all odd finite coefficient fields. (AV-v1, §1.1, (1.5), p. 3; Appendix C.2, Lemma C.2.1, pp. 87–88, line 94).
 
 A proof route is as follows. The Wang sequence gives χ₁/₂(M_f)=−h, h=dim ker(1−T), so its half-sign agrees with `(-1)^(h/2)`. Combine the all-odd mapping-torus formula with the topological theorem. Keep the chosen intertwiner as part of the data: f*ρ≃ρ without a choice does not specify T or ρ_f.
 
@@ -1174,13 +1192,13 @@ Spec ℤ[1/2,t] has normalized total weight 1/2, while the comparison needs only
 
 ### Dependencies
 
-Earlier local inputs: Layer 3, Layer 4, Layer 6. Chebotarev Layer 11; `Sylow`; KTheoryFiniteLocalFields §§1.5, 1.8–1.9; AlgebraicTopology Stage 5; `groupHomology`; KTheoryFiniteLocalFields §1.8. The subsection Needs lines separate statement inputs from the indicated proof route.
+Earlier local inputs: Layer 3, Layer 4, Layer 6. Chebotarev Layer 11; gap:arithmetic-scheme-frobenius-detection; gap:arithmetic-scheme-nonsplit-weight; gap:arithmetic-scheme-residue-order-count; `Sylow`; KTheoryFiniteLocalFields §§1.5, 1.8–1.9; AlgebraicTopology Stage 5; `groupHomology`; KTheoryFiniteLocalFields §1.8. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 8: real Chern vanishing
 
 ### 8.1 The real Chern component and the metaplectic cover
 
-For G=Sp₂ᵣ(R) considered as a discrete group, r≥1, identify the degree-(2,2) component c₂₂ of the standard representation’s mod-two étale c₂ with the pullback of its topological metaplectic double-cover class in H²(G;F₂). The latter is the reduction modulo two of the integral class of the universal covering group, whose central kernel is ℤ. Its coefficient Bockstein to H³(G;F₂) therefore vanishes. (AV-v1, §1.3.3, p. 6, argument following (1.10), line 230).
+For G=Sp₂ᵣ(ℝ) considered as a discrete group, r≥1, identify the degree-(2,2) component c₂₂ of the standard representation’s mod-two étale c₂ with the pullback of its topological metaplectic double-cover class in H²(G;F₂). The latter is the reduction modulo two of the integral class of the universal covering group, whose central kernel is ℤ. Its coefficient Bockstein to H³(G;F₂) therefore vanishes. (AV-v1, §1.3.3, p. 6, argument following (1.10), line 230).
 
 A proof route is as follows. Import the universal Chern class and its real comparison, with the standard-representation normalization. Use the universal symplectic covering group with kernel ℤ; push out by ℤ→ℤ/4→ℤ/2. This lifts the metaplectic extension to a ℤ/4-extension. Apply the exact coefficient sequence to conclude its Bockstein is zero, also after forgetting topology. The real Chern/metaplectic identification is a supplier request, not a consequence of the integral H₃/2 comparison.
 
@@ -1194,9 +1212,9 @@ A proof route is as follows. Import the universal Chern class and its real compa
 
 ### 8.2 Vanishing of the real degree-three Chern component
 
-For G=Sp₂ᵣ(R) discrete, c₃₁:H₃(G;F₂)→H¹_et(R,F₂) is zero on the full mod-two homology group, for every r≥1. In particular its restriction to integral H₃(G;ℤ)/2 is zero. (AV-v1, §1.3.3, (1.10), p. 6, line 233).
+For G=Sp₂ᵣ(ℝ) discrete, c₃₁:H₃(G;F₂)→H¹_et(ℝ,F₂) is zero on the full mod-two homology group, for every r≥1. In particular its restriction to integral H₃(G;ℤ)/2 is zero. (AV-v1, §1.3.3, (1.10), p. 6, line 233).
 
-A proof route is as follows. Use the coefficient Bockstein compatibility of the universal étale c₂: after evaluating cycles, β_et c₃₁ is obtained from the group Bockstein of c₂₂. That group Bockstein is zero by metaplectic-component. For Gal(C/R)=C₂, the connecting map β_et:H¹(R,F₂)→H²(R,F₂) is an isomorphism, as the generator squares nontrivially. Hence c₃₁=0. Do not infer this stronger domain statement solely from integral H₃ modulo two.
+A proof route is as follows. Use the coefficient Bockstein compatibility of the universal étale c₂: for z∈H₃(G;𝔽₂), β_et(c₃₁(z))=c₂₂(β_G z)=⟨β_G^coh(c₂₂),z⟩, with the ℝ-Galois degree-two coefficient identified with 𝔽₂. That group Bockstein is zero by metaplectic-component. For Gal(ℂ/ℝ)=C₂, the connecting map β_et:H¹(ℝ,F₂)→H²(ℝ,F₂) is an isomorphism, as the generator squares nontrivially. Hence c₃₁=0. Do not infer this stronger domain statement solely from integral H₃ modulo two.
 
 **Checks.**
 
@@ -1204,7 +1222,7 @@ A proof route is as follows. Use the coefficient Bockstein compatibility of the 
 - A hypothetical nonzero c₃₁ value would therefore give β_et(c₃₁)=t² rather than 0, contradicting the lifted metaplectic component.
 - For the zero group cycle the value is 0 in additive notation, or 1 as a square class; vanishing on integral cycles alone leaves the possible H₂[2] cokernel and cannot prove the full-domain claim.
 
-*Needs:* §8.1; KTheoryFiniteLocalFields §1.8; gap:real-chern-bockstein.
+*Needs:* §8.1; KTheoryFiniteLocalFields §1.8; gap:real-chern-bockstein-compatibility.
 
 ### Examples
 
@@ -1212,11 +1230,11 @@ The real quadratic character has nonzero coefficient Bockstein; the metaplectic 
 
 ### Dependencies
 
-Earlier local inputs: . KTheoryFiniteLocalFields §1.8; RepresentationTheory/LieGroups Layer 5; MetaplecticAutomorphicForms §2.4b. The subsection Needs lines separate statement inputs from the indicated proof route.
+KTheoryFiniteLocalFields §1.8; gap:real-chern-bockstein; gap:real-chern-bockstein-compatibility; RepresentationTheory/LieGroups Layer 5; MetaplecticAutomorphicForms §2.4b. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Downstream consumers
 
-SymplecticLFunctionsModSquares consumes the normalized topological theorem, the odd-finite-field mapping-class identity and real full-mod-two vanishing for its central-value and sign comparisons. Other consumers can use the circle formula, normalized specialization and boundary theorem without the arithmetic application. The maps are the finite-rank maps above, with stabilization compatibility; consumers do not need an acyclicity hypothesis.
+Consumers can use the normalized topological theorem (§7.5), the odd-finite-field mapping-class identity (§7.6), real full-mod-two vanishing (§8.2), the circle formula (§4.4), normalized specialization (§3.5) and the boundary theorem (§2.8). The maps are the finite-rank maps above, with stabilization compatibility; consumers do not need an acyclicity hypothesis.
 
 ## Worked examples
 
@@ -1229,5 +1247,5 @@ For density amplification, let Γ project onto Δ×C_h and onto a group of order
 ## References
 
 - **AV-v1.** Amina Abdurrahman and Akshay Venkatesh, *Symplectic L-functions and symplectic Reidemeister torsion (mod squares)*, [arXiv:2303.13436v1](https://arxiv.org/abs/2303.13436v1), 2023. All page and statement numbers refer to this 98-page version: §1.1, §1.3.3, §§2.1–2.16 and Appendices A–C. The normalization refinements are specified by the displayed formulas and Checks; no numbering from another edition is used.
-- **JRV.** Florent Jouve and Fernando Rodriguez Villegas, *On the bilinear structure associated to Bezoutians*, [arXiv:1004.4208v3](https://arxiv.org/abs/1004.4208v3), 2013. Theorem 5.1 and (5.1), pp. 16–17, JRV line 782; Lemma 6.1, p. 18, JRV line 854. Only the determinant formula and its primary decomposition are used, with no unrestricted spinor-surjectivity claim.
+- **JRV.** Florent Jouve and Fernando Rodriguez Villegas, *On the bilinear structure associated to Bezoutians*, [arXiv:1004.4208v3](https://arxiv.org/abs/1004.4208v3), 2013. Theorem 5.1 and (5.1), pp. 16–17, JRV line 782; Lemma 6.1, p. 18, JRV line 855. Only the determinant formula and its primary decomposition are used, with no unrestricted spinor-surjectivity claim.
 - **Thom.** René Thom, *Quelques propriétés globales des variétés différentiables*, Commentarii Mathematici Helvetici 28 (1954), 17–86, [institutional copy](https://webhomes.maths.ed.ac.uk/~v1ranick/papers/thomcob.pdf), Chapter IV §8, Theorem IV.13, p. 81, Thom line 2527. This locator gives the coefficient bordism groups; the labelled-space comparison uses the supplier filtration stated above.
