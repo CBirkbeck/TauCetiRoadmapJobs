@@ -805,7 +805,9 @@ One route is as follows. Express every fixed-cutoff flag mass by spherical pairi
 
 **Checks.**
 
-- Zero class and line coefficient: Nil mass at zero 1; rank-one generating coefficient P(1)/((q−1)(1−z)); Log recovers P(1)/(1−z). Cutoff coefficients remain cutoff counts.
+- Write N(T,z)=∑N_(r,d)T^rz^d and N₀(z)=[T⁰]N(T,z). The zero-class mass is 1, while N₀ includes nonzero torsion sheaves and need not equal 1.
+- After dividing out N₀(z), the rank-one coefficient is P(1)/((q−1)(1−z)); multiplying the rank-one coefficient of Log N by q−1 recovers P(1)/(1−z). Adams operations of index greater than one cannot contribute to rank one. The torsion cancellation is the passage from (5.19) to (5.20) (S16, p.334; S16 line 2224 and S16 line 2246).
+- On P¹/𝔽₂, N₀=1+3z+O(z²) and [T]N=N₀/(1−z)=1+4z+O(z²), whereas [Tz](N/N₀)=1. In class (1,1), O(1) contributes 1 and each of the three O⊕κ(x) contributes 2/2=1: nilpotence forces both diagonal entries to vanish and leaves two choices for the off-diagonal entry. All four sheaves satisfy the cutoff. Dropping torsion from N would give 1 instead of 4.
 
 ### Examples
 
@@ -1390,7 +1392,9 @@ One route is as follows. For the positive bundle cutoff, apply the same Krull–
 
 **Checks.**
 
-- Rank1,g=1 in characteristic2; coprime rank2 in characteristic2: Ω=2A; stable mass #H/(q−1) and q-normalization yield #H=q^D A in both; no p>C assumption. Hall proof supplies every characteristic.
+- In characteristic two, q=2^f with f≥1, so Ω_K=qA in rank one and coprime rank two; the stable mass #H/(q−1) and the normalization of §8.9 give #H=q^D A. The factor is the field cardinality, and no p>C assumption enters.
+- For E:y²+y=x³ over 𝔽₂, only x=0 has affine solutions, with two choices of y; the point at infinity gives #E=3. Thus A_E(1,d)=3, Ω_K(1,d)=6 and #H_(1,d)=6, with stable stack mass 6/(2−1)=6.
+- Over 𝔽₄ the same curve has nine points: x³ is 0 or 1, and each value has two preimages under y↦y²+y, so all four x-values contribute two points. Hence A_E(1,d)=9, Ω_K(1,d)=36 and #H_(1,d)=36; the stable stack mass is 36/(4−1)=12 and multiplication by q−1 recovers 36. Replacing q by the characteristic would give 18 (MS14, Corollary 4.5, p.9; MS14 line 582).
 
 ### Examples
 
