@@ -3946,6 +3946,84 @@
       "detail": "Theorem7.23’s stated abstract representation isomorphism needs arithmetic semisimplicity and a valid separation of cohomological degrees, or a geometric comparison. All Frobenius power traces prove only virtual-character equality. Pure complexes need not have pure ordinary-degree stalks, and I₂ versus a nontrivial unipotent Jordan block are equal-trace pure weight-zero continuous representations with different fixed-space dimensions. This is a proof gap, not a counterexample to these particular fibres.",
       "status": "open",
       "closure": "Not claimed; exact supplier or proof obligation remains."
+    },
+    {
+      "slug": "geometric-compact-mhs",
+      "needs": "Provide functorial compact-support geometric mixed Hodge structures for separated complex varieties and finite-monodromy local systems, strict localization and Künneth, finite-group projectors, SNC descent and comparison with the abstract mixed-Hodge carrier.",
+      "supplier": "HodgeStructures",
+      "section": "Core definitions; Layers L2–L3"
+    },
+    {
+      "slug": "unitary-splitting-families",
+      "needs": "Provide the rank-one flat-unitary-line/Pic0 equivalence in smooth projective complex families and its coherent action on the common finite splitting torsor.",
+      "supplier": "HodgeStructures",
+      "section": "Relation to sibling roadmaps; weight-one instances"
+    },
+    {
+      "slug": "generic-orbifold-transgression",
+      "needs": "Provide tame finite-quotient inertia, tangent age, action-groupoid gerbe transgression and normalized orbifold integration with rational-torsor stack traces and Hasse comparison under μ_(r|Γ|), including integral-to-special-fibre cocycle comparison and Galois descent with Frobenius sector permutation for nonsplit finite étale commutative acting group schemes.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "3.10, 3.16"
+    },
+    {
+      "slug": "equivariant-grothendieck",
+      "needs": "Provide the good-finite-group equivariant scissor ring and characteristic-zero equivariant Bittner presentation from equivariant compactification and weak factorization, distinguishing its further representation quotient and additive character realizations.",
+      "supplier": "LogicAndDefinabilityInNumberTheory",
+      "section": "LD.3 (equivariant scissor realization contract)"
+    },
+    {
+      "slug": "local-field-integration",
+      "needs": "Provide invariant-top-form measures with integral-unit normalization, Weil volume, Fubini and change of variables over all nonarchimedean local fields, including k((t)), with analytic lower-dimensional subsets of a smooth base of measure zero.",
+      "supplier": "LogicAndDefinabilityInNumberTheory",
+      "section": "LD.2 (local-field integration contract)"
+    },
+    {
+      "slug": "fractional-equivariant-hodge-tate",
+      "needs": "Provide finite-group-equivariant smooth-proper number-field Hodge–Tate comparison, constancy of character Hodge numbers on a smooth connected complex base and Ito additive rational-period multiplicities for finite sets of fractional twists.",
+      "supplier": "CohomologyComparisons",
+      "section": "2.15"
+    },
+    {
+      "slug": "equal-characteristic-abelian-duality",
+      "needs": "Extend the normalized abelian local Tate pairing, gerbe evaluation, isogeny connecting-map adjunction and self-dual prime-to-p index formula to equal-characteristic local fields k((t)).",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "D7.6"
+    },
+    {
+      "slug": "relative-picard-norm-duality",
+      "needs": "Provide relative Picτ for smooth projective families, its Pic0 identification on abelian torsors, norm-pullback Poincaré duality and represented spectral norm kernels and finite quotients with the required smoothness and base change.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A2.2–A2.3; A3.3–A3.7"
+    },
+    {
+      "slug": "relative-higgs-git-properness",
+      "needs": "Provide relative stable general-D Higgs parameter spaces and GIT coarse moduli for projective smooth curve families, with separatedness, quasiprojectivity, semistable Hitchin properness, relative deformation theory and liftability of curves and chosen line bundles.",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "2.1–2.2; 7.3; 8.2"
+    },
+    {
+      "slug": "smooth-stack-hartogs",
+      "needs": "Provide representable relative gerbe-splitting mapping stacks with Picard actions and base change, and extension of an invertible-sheaf trivialization across codimension at least two on a smooth normal algebraic stack.",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "4.1–4.3; 7.3"
+    },
+    {
+      "slug": "relative-hitchin-picard",
+      "needs": "Extend Higgs stacks, spectral module equivalence, regular centralizers, relative Picard actions and codimension estimates to the noetherian smooth-curve general-D stable fixed-determinant families and singular spectral fibres used here.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "3.6–3.14"
+    },
+    {
+      "slug": "higgs-sector-purity",
+      "needs": "Extend canonical GL Higgs purity to complex general-D semiprojective fixed-determinant spaces and canonical finite-order fixed loci with their finite splitting-torsor covers, compatibly with geometric mixed Hodge structures and character projectors.",
+      "supplier": "CountingBundlesAndHallAlgebrasOfCurves",
+      "section": "CB.9/higgs-purity"
+    },
+    {
+      "slug": "tame-stack-trace",
+      "needs": "Provide bounded compact cohomology, proper base change and geometric-Frobenius trace for finite-monodromy sheaves on tame finite quotient stacks, with every rational torsor class weighted by its reciprocal automorphism order.",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "3.7; 6.3–6.4"
     }
   ],
   "sourceIssues": [
