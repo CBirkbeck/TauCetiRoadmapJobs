@@ -206,7 +206,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (cited as BCS-v2) and the published IMRN 2025 version, author copy https://web.math.ucsb.edu/~castella/BCS-print.pdf (cited as BCS-published); numbering agrees, pages differ"
-cited_for = ["0.3", "5.1", "5.11", "5.12", "5.13", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "7.9", "7.10", "8.1"]
+cited_for = ["0.3", "5.1", "5.3", "5.10", "5.11", "5.12", "5.13", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "7.9", "7.10", "8.1"]
 
 [[source]]
 id = "CW"
@@ -288,7 +288,7 @@ venue = "Cambridge Journal of Mathematics 5"
 doi = "10.4310/CJM.2017.v5.n1.a1"
 arxiv = "1503.02888v6"
 locator_scheme = "theorem"
-locator = "Theorem B and the explicit reciprocity laws"
+locator = "Theorem B (Theorem 10.2.2, p. 52), Notation 7.7.1 (p. 39), Definition 8.1.1 (p. 40), Proposition 8.1.7 (p. 42), arXiv v6 pages"
 url = "https://arxiv.org/abs/1503.02888v6"
 fetched_from = "https://arxiv.org/pdf/1503.02888v6"
 fetched_at = "2026-10-25T00:18:11Z"
@@ -296,7 +296,7 @@ sha256 = "2530d973f05ff5a4e2338618dde66d3183c1feeb98abc94a05c8cd23183c504d"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "arXiv v6"
+version_note = "arXiv v6; README page locators use the arXiv v6 pagination, not the Cambridge J. Math. pages"
 cited_for = ["2.15", "2.16", "6.1"]
 
 [[source]]
@@ -671,3 +671,23 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
 cited_for = ["2.10"]
+
+[[source]]
+id = "LZ14"
+authors = "David Loeffler, Sarah Livia Zerbes"
+title = "Iwasawa theory and p-adic L-functions over $\\mathbf{Z}_p^2$-extensions"
+year = 2011
+venue = "Int. J. Number Theory 10 (2014), no. 8, 2045--2095"
+doi = "10.1142/S1793042114500699"
+arxiv = "1108.5954v3"
+locator_scheme = "section"
+locator = "§3.2, Definition 3.4 and Proposition 3.6"
+url = "https://arxiv.org/abs/1108.5954v3"
+fetched_from = "https://arxiv.org/pdf/1108.5954v3"
+fetched_at = "2026-10-25T20:40:21Z"
+sha256 = "0da539348716fa2293377bba81b07de3d851f3e98bbc9b244b19e639a5ae5341"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["2.19"]
