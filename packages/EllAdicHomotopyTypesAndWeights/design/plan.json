@@ -2929,86 +2929,76 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Integral coefficient resolution and finite-width proof",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.2/coefficient-homotopy-calculation",
-        "EllAdicHomotopyTypesAndWeights:EH.2/integral-cohomology-comparison",
-        "EllAdicHomotopyTypesAndWeights:EH.2/quotient-coefficient-change",
-        "EllAdicHomotopyTypesAndWeights:EH.4/galois-action"
-      ],
-      "detail": "Weil II 5.1.9(b), pp. 236–237, gives a proof outline but refers to Quillen décalage and Miller, De Rham cohomology with arbitrary coefficients (Topology 17 (1978), 193–203), for the integral theorem. No cleared full text of Miller was located. Verify the free rank-one exterior-power décalage, extendability/skeletal comparison, principal-quotient coefficient assertion (the unrestricted version fails by E10) and finite-skeleton determination for each fixed (p,n). Dold–Kan alone proves none of these nonlinear claims. No assertion that an arbitrary tensor functor preserves homotopy is used."
+      "slug": "polynomial-forms-de-rham",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.4",
+      "needs": "For every simplicial set X and characteristic-zero field K, provide A_PL(Δʳ;K) as the polynomial/exterior algebra with Σxᵢ=1, Σdxᵢ=0 and d(xᵢ)=dxᵢ, and A_PL(X;K) as its degreewise compatible-family algebra, with equality detected by simplex evaluations, contravariant pullbacks and a natural multiplicative de Rham isomorphism H*(A_PL(X;K))≃H*(X,K); the simplex filtration counting both coordinates and differentials is preserved by d, faces and degeneracies, while the full compatible-family algebra permits unbounded simplexwise degrees (DGMS §2, Theorem 2.1, pp. 254–255; dgms line 448; Sullivan Theorem 7.1 and its polynomial-form example, pp. 296–299; sullivan line 1121)."
     },
     {
-      "id": "G2",
-      "title": "Universal coefficients and exact completed complexes",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.3/ell-adic-universal-coefficients",
-        "EllAdicHomotopyTypesAndWeights:EH.3/bigraded-ell-adic-completion"
-      ],
-      "detail": "Read the proof referred to at SGA5 V 5.3.1 by Weil II 5.2.1, p. 237, or supply an independent proof. It must prove finite generation of H^i_Z_l from degreewise (F), the degree i+1 Tor term, and exactness for the countable module/cycle/boundary systems in the bidegreewise inverse limit. The pinned IsMittagLeffler predicate is only a definition. This is a completion theorem for the form construction; a reusable inverse-limit lemma should be supplied through DGAInfinity/its Part II rather than duplicated."
+      "slug": "sullivan-minimal-models",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.4",
+      "needs": "Over every characteristic-zero field define positive-degree Sullivan algebras as free graded-commutative algebras with ordered Hirsch extensions, call them minimal when generator differentials are decomposable, identify their indecomposable quotient M⁺/(M⁺)² with zero induced differential in the minimal case, prove that a DG map out of a Hirsch extension is determined by its restriction to the base and generator images satisfying the differential equation, and give every connected nonnegative commutative DG algebra ordered full and 1-minimal model maps, respectively quasi-isomorphisms and H¹ isomorphisms with H² injections, without a nilpotence hypothesis on a realizing space (Morgan Definitions 5.1–5.3 and Theorem 5.6, pp. 163–166; morgan line 1017; morgan line 1064)."
     },
     {
-      "id": "G3",
-      "title": "Analytic good covers and finite CW comparison",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.4/analytic-cover-comparison",
-        "EllAdicHomotopyTypesAndWeights:EH.4/complex-minimal-model-comparison"
-      ],
-      "detail": "Weil II 5.2.4–5.2.5, p. 239, invokes compatible good covers. Verify a proof for arbitrary separated finite-type complex varieties, including singular and noncompact ones, a nerve theorem compatible with refinements, and finite CW type sufficient for integral/Z_l cohomology comparison. Current RealAlgebraicGeometry explicitly excludes triangulation, and AlgebraicTopology stage 5 finite-cover chain descent is weaker. Place the missing general topological results in AlgebraicTopology, Part II; do not assume an arbitrary good cover is finite."
+      "slug": "sullivan-quasi-isomorphism-rigidity",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.4",
+      "needs": "In §AT2.4, every quasi-isomorphism between Sullivan minimal algebras over a characteristic-zero field is an algebra isomorphism (Morgan Proposition 5.9 and its degreewise application, p. 167; morgan line 1162)."
     },
     {
-      "id": "G4",
-      "title": "Geometric Hodge realization and spread independence",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.5/geometric-cohomology-weight-bridge",
-        "EllAdicHomotopyTypesAndWeights:EH.5/frobenius-hodge-weight-comparison",
-        "EllAdicHomotopyTypesAndWeights:EH.8/algebraically-closed-weight-splitting"
-      ],
-      "detail": "The pinned MixedHodgeStructure carrier and Completed/HodgeStructures L2 supply abstract linear algebra only. Hodge III 6.2.8 and 8.1.19–8.2.4 give geometric realization through proper SNC hyperresolutions; Poids 13–14 identify its W with the weights of geometric Frobenius (the inverse of arithmetic Frobenius). Plan the missing mixed Hodge complexes, rational/complex filtered comparison, shifted cohomology weight convention, strict descent and common-refinement independence in HodgeStructures, Part III (Part II is already occupied). For arbitrary algebraically closed bases verify the spread-independent étale weight filtration, not merely the decomposition for one Frobenius. This packet owns the realization comparison bridge, not another abstract MHS definition. Current upstream scheme foundations §4.19 supplies SNC alterations, while §4.13 supplies curve resolution. Establish the hyperresolution/refinement construction from those alterations and rational proper descent, or source the stronger characteristic-zero resolution/compactification theorem separately; neither is an implicit consequence of the SNC-divisor definition."
+      "slug": "sullivan-homotopy-lifting",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.4",
+      "needs": "Over a characteristic-zero field define polynomial homotopies M→A⊗K[t,dt], d(t)=dt, with endpoint evaluations killing dt, and prove equal induced cohomology maps, constant paths, pre- and postcomposition, an equivalence relation for ordered positive-degree Sullivan sources with a single homotopy for transitivity, bijectivity [M,A]→[M,B] for every quasi-isomorphism A→B of nonnegative commutative DG algebras, and lifting of each automorphism of a connected target to a homotopy class of automorphisms of a chosen minimal model, without asserting a compatible choice of actual lifts (Morgan Proposition 5.5, Theorems 5.6–5.7 and the relative uniqueness argument, pp. 164–167; morgan line 1043; morgan line 1119; DGMS Theorem 1.2 and Corollaries 1.3–1.6, pp. 252–253; dgms line 331)."
     },
     {
-      "id": "G5",
-      "title": "Full finite-type and common-filtration arguments",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.6/filtration-preserving-representative",
-        "EllAdicHomotopyTypesAndWeights:EH.6/minimal-model-eigenvalue-products",
-        "EllAdicHomotopyTypesAndWeights:EH.6/common-stable-filtration",
-        "EllAdicHomotopyTypesAndWeights:EH.7/rational-grading-conjugacy"
-      ],
-      "detail": "Supply a complete proof of the finite-block filtration and homotopy-adapted representative in Weil II 5.3.1, and especially the actual-automorphism common filtration of Lemma 5.3.5, p. 241, explicitly left to the reader. Closure under finitely many automorphisms and their inverses does not itself establish finite generation of a block. Morgan §5 p. 168 warns that canonical higher-degree Hirsch blocks can be infinite-dimensional. Cover the general connected finite-cohomology case, not just simply connected or finite-generator models. For conjugacy of two G_m actions prove the dense-scalar argument after the lemma."
+      "slug": "sullivan-scalar-extension",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.4",
+      "needs": "In §AT2.4, extension of scalars K→L between characteristic-zero fields carries a full or 1-minimal map M→A to a full or 1-minimal map M⊗_K L→A⊗_K L (Morgan Definition 5.3, p. 163; morgan line 1036; flat field extension preserves its cohomology conditions)."
     },
     {
-      "id": "G6",
-      "title": "Compatible prounipotent splitting and unipotence",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.7/prounipotent-extension-splitting",
-        "EllAdicHomotopyTypesAndWeights:EH.7/rational-weight-splitting",
-        "EllAdicHomotopyTypesAndWeights:EH.7/rational-grading-conjugacy"
-      ],
-      "detail": "Establish the triangular-kernel unipotence assertion at finite model stages and prove compatible lifting of sections and conjugators through the inverse system of algebraic image groups in Weil II 5.3.4. Sullivan §6 and Appendix p. 295 give finite-dimensional algebraic groups, Levi splitting and unipotent torsors, but they do not by themselves prove the pro-limit version. Record the base-field rational-point and finite-stage image hypotheses explicitly; independent arbitrary finite-stage choices do not yield a section of the limit."
+      "slug": "compatible-good-cover-refinement",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C6.0–C6.1",
+      "needs": "For every separated finite-type complex scheme and finite diagram of étale covers, supply a cofinal compatible system of analytic good-cover refinements and a refinement-natural nerve equivalence, without requiring compactness or smoothness."
     },
     {
-      "id": "G7",
-      "title": "General étale 1-minimal/Tannakian comparison",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.8/unipotent-etale-comparison",
-        "EllAdicHomotopyTypesAndWeights:EH.8/normal-variety-lie-presentation"
-      ],
-      "detail": "Prove the comparison of the finite-stage 1-minimal Lie tower of A_l(X) with the continuous Q_l pro-unipotent étale fundamental group for general connected normal separated finite-type X. Weil II 5.3.8 is an announcement; Poids §10 p. 83 gives the presentation argument but leaves this comparison implicit. Sullivan 8.1(ii) is a rational topological realization theorem, not an étale theorem. Extend the NC.2 supplier scope where necessary, then check pointed fiber functors and H¹/H² extension-obstruction compatibility at every finite unipotence depth."
+      "slug": "geometric-mixed-hodge-realization",
+      "supplier": "MotivicEtaleKTheory",
+      "section": "3.2, 3.4",
+      "needs": "For every separated finite-type complex scheme, extend §§3.2 and 3.4’s smooth realization by proper smooth/SNC hyperresolution descent to a common-refinement-independent multiplicative mixed Hodge realization, with rational/complex filtered comparison, cup and Künneth compatibility, and WₘHⁱ induced by Wₘ₋ᵢ on the weight complex (Hodge III §§8.1.19–8.2.4, pp. 34–39; hodge-III line 1213)."
     },
     {
-      "id": "G8",
-      "title": "Finite-coefficient étale realization supplier contract",
-      "neededBy": [
-        "EllAdicHomotopyTypesAndWeights:EH.4/variety-realization",
-        "EllAdicHomotopyTypesAndWeights:EH.4/galois-action",
-        "EllAdicHomotopyTypesAndWeights:EH.4/analytic-cover-comparison",
-        "EllAdicHomotopyTypesAndWeights:EH.4/complex-minimal-model-comparison",
-        "EllAdicHomotopyTypesAndWeights:EH.5/geometric-cohomology-weight-bridge",
-        "EllAdicHomotopyTypesAndWeights:EH.5/frobenius-hodge-weight-comparison"
-      ],
-      "detail": "The current SchemeAndStackFoundations README, layer 2 conventions at upstream commit a08dc283184a9ec4d6c7fab2fb2b41866801994a, explicitly leaves finite-coefficient/adic étale theory and Artin comparison downstream. Its generic site cohomology, curve computations and proper hypercover descent do not supply the complete EH.4 contract. Locate and match the existing downstream finite-coefficient contracts before packaging: ordinary H^i_et(X,Z/l^r) finiteness for separated finite-type X, invariance under algebraically closed extension, cofinal étale-hypercover computation, compatible Galois action and SGA4 XVI 4.1 analytic comparison. Weil II 5.2.2–5.2.5, pp. 238–239, invokes these inputs; their general proofs were not independently verified here. The EDC.0 supplier inventory names EtaleBaseChange/EllAdicRealization in the CohomologicalPointCounting direction; those names alone are not a verified replacement. Preserve existing owners when locating them, and request only any genuinely absent comparison theorem. This gap is separate from G3 good covers, G2 completion and G4 Hodge realization."
+      "slug": "arbitrary-base-weight-filtration",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "8.20–8.24",
+      "needs": "For every separated finite-type scheme over an algebraically closed field with ℓ invertible, extend §§8.20–8.24 to the functorial finite weight filtration on ordinary ℚ_ℓ cohomology defined by suitable spreads, independent of spreads and common refinements and compatible with products and algebraically closed field extension (Weil II §5.3.6, p. 241; weil-II line 3938)."
+    },
+    {
+      "slug": "normal-h1-weights",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "7.12, 8.20–8.24",
+      "needs": "For every normal separated finite-type scheme over an algebraically closed field with ℓ invertible, extend §7.12 and §§8.20–8.24 to Gr_w^W H¹_(ét)(X,ℚ_ℓ)=0 for w outside {1,2}, for the spread-independent weight filtration (Poids §8.3, p. 82; poids line 152; Weil II §5.3.6, p. 241; weil-II line 3938)."
+    },
+    {
+      "slug": "normal-variety-unipotent-category",
+      "supplier": "AnabelianGeometryAndNonabelianChabauty",
+      "section": "2.2–2.3",
+      "needs": "Extend §§2.2–2.3’s pointed unipotent étale Tannakian category, finite-dimensional quotient towers and H¹/Ext¹ and H² obstruction interfaces to every connected normal separated finite-type variety over an algebraically closed field with ℓ invertible."
+    },
+    {
+      "slug": "finite-component-etale-presentation",
+      "supplier": "EtaleHomotopyTypes",
+      "section": "EH.3",
+      "needs": "For every separated finite-type scheme over a countable algebraically closed field k₁, provide a small cofiltered presentation E_fin by connected components of étale hypercovers with finitely many components in every simplicial degree, and a refinement pro-map Et_rig→E_fin inducing the ordinary finite-coefficient étale cohomology isomorphism for every invertible prime ℓ and r≥1, naturally in maps, coefficients and common fields of definition; for a descent to k₀ choose the presentation Galois-compatible, with finite Galois orbits of each truncated stage and finite-extension descent of its components and maps (Weil II §5.2.2–§5.2.3, pp. 238–239; weil-II line 3804; weil-II line 3823)."
+    },
+    {
+      "slug": "ordinary-cohomology-weight-bounds",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "7.12–7.14, 8.24",
+      "needs": "For every separated finite-type scheme X over an algebraically closed field k, every prime ℓ invertible in k and every i≥0, the spread-independent filtration on ordinary Hⁱ_ét(X,ℚ_ℓ) satisfies Gr_w^W Hⁱ=0 for w<0 or w>2i, including when X is neither smooth nor proper (Poids §7.1, p. 82; poids line 127; Weil II §5.3.6, p. 241; weil-II line 3938)."
     }
   ],
   "coverage": [
