@@ -109375,10 +109375,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1184#issuecomment-6400946756"
+  },
+  {
+   "kind": "gap",
+   "source": "ANDRE18B",
+   "locator": "§4.2, Preuve du théorème 0.7.1, printed p. 86",
+   "says": "completing and quotienting by the nilradical reduces to a complete reduced ring without p-torsion",
+   "should": "pass to a minimal prime of maximal dimension, whose quotient is p-torsion-free or of characteristic p (the reduced ring ℤ₂⟦X,Y⟧/(2X,2Y) has 2-torsion)",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"dfaea305fad51b64e4a696996afe6af418efe620\", \"job\": \"REV-PKG-DirectSummandsAndBigCohenMacaulay~3\", \"model\": \"fable\", \"worker\": \"chris-i\"} -->",
+   "roadmap": "DirectSummandsAndBigCohenMacaulay",
+   "job": "REV-PKG-DirectSummandsAndBigCohenMacaulay~3",
+   "board_pr": 1452,
+   "head": "dfaea30",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1452#issuecomment-6401038659"
   }
  ],
- "scanned_to": "2026-10-25T17:44:27Z",
- "updated": "2026-10-25T17:48:11Z",
+ "scanned_to": "2026-10-25T17:48:44Z",
+ "updated": "2026-10-25T17:54:49Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
