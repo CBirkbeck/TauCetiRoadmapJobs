@@ -4993,7 +4993,7 @@
     },
     {
       "slug": "rectangular-orbit-support",
-      "needs": "Supply generalized nilpotent-orbit Whittaker support and its Jacquet/derivative comparison, including vanishing for larger or incomparable rectangular orbits, on admissible finite-length characteristic-zero complex representations.",
+      "needs": "For a nonarchimedean characteristic-zero local field F, k,c≥1 and a nonzero finite-length admissible complex representation ρ of GL_(kc)(F), assume that each of the c successive highest Bernstein–Zelevinsky derivatives has order k; identify Hom_(U_(c^k))(ρ,ψ_(k,c)) with the linear dual of the terminal GL₀ derivative space, with the determinant-normalization conversion from SR.5.3 mirabolic-derivatives made explicit, and prove vanishing of Hom_(V(σ))(ρ,ψ′) for every partition σ greater than or incomparable with (k^c) and every generic ψ′ (MODELS Proposition 2 and proof, pp.3–4, MODELS lines 108–128; GGS17 Theorems E–F, pp.5–6, GGS17 lines 219–238).",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.2, SR.3.3 and SR.5.3"
     },
@@ -5016,8 +5016,14 @@
       "section": "2.4 and 2.7"
     },
     {
-      "slug": "controlled-supercuspidal-globalization",
-      "needs": "Globalize a prescribed characteristic-zero local field and supercuspidal representation of a split classical group or GL with compatible central data, controlling the other ramified places so that every auxiliary place admits the stable-factor cancellation needed to isolate the prescribed place.",
+      "slug": "prescribed-classical-supercuspidal-globalization",
+      "needs": "For a nonarchimedean characteristic-zero local field f and an irreducible supercuspidal σ of a split classical group G in §10.6, fix a positive norm character ζ making σᵘ=σ⊗ζ unitary, choose a number field M and finite v₀ with M_v₀≃f and a unitary automorphic character Ω of Z_G(M)\\Z_G(𝔸_M) restricting to ω_(σᵘ) at v₀, and provide a unitary cuspidal πᵘ of G(𝔸_M) with πᵘ_v₀≃σᵘ and ω_(πᵘ)=Ω, together with the global norm character extending ζ so that twisting back globalizes σ (CFK Corollary 4.11 and proof, p.42; CFK lines 1818–1823).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "controlled-gl-test-globalization",
+      "needs": "For a number field M, a finite place v₀, a finite set T of other finite places, l≥1 and a unitary supercuspidal σ of GL_l(M_v₀), choose a unitary Hecke character Ω with Ω_v₀=ω_σ and Ω_v unramified for v∈T, and provide a unitary cuspidal Σ of GL_l(𝔸_M) with Σ_v₀≃σ, ω_Σ=Ω and Σ_v unramified for every v∈T; additional finite ramification is permitted only outside T∪{v₀}, where both fixed comparison representations π and Π of §10.5 are required to be unramified, with T containing all their other bad places (CFK proof of Theorem 4.10, p.41; CFK lines 1804–1814).",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "2.5–2.7 and 4.2"
     },
@@ -5047,7 +5053,7 @@
     },
     {
       "slug": "archimedean-whittaker-exactness",
-      "needs": "Prove that the generalized Whittaker functor attached to the orbit (k^c) and the character ψ_(k,c) is exact on Casselman–Wallach representations of GL_(kc)(F), F archimedean (MODELS p.6; MODELS lines 219–222).",
+      "needs": "For F=ℝ or ℂ, k,c≥1 and O=(k^c), let M≤O be the finite-length Casselman–Wallach representations of GL_(kc)(F) whose wave-front set is contained in the closure of O, and M<O its Serre subcategory with no O in that set; prove that the continuous generalized-Whittaker functional functor descends to an exact contravariant functor on M≤O/M<O, so 0→A→B→C→0 in M≤O gives 0→W_O(C)→W_O(B)→W_O(A)→0, using W_O(ρ)=Hom_cont,U_(c^k)(ρ,ψ_(k,c)), choosing the neutral Schwartz model induced from ψ_(k,c)⁻¹ to match the continuous-dual convention, and W_O(ρ)≃(E_k^cρ)* (GGS17 Corollary G and proof, pp.6,27–28, GGS17 lines 241–252 and 1310–1326; MODELS lines 219–222).",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "2.1–2.7"
     },
@@ -5065,7 +5071,7 @@
     },
     {
       "slug": "twisted-square-normalizers",
-      "needs": "For unitary cuspidal GL data with no essential twisted self-duality, prove the global twisted symmetric- and exterior-square normalizing-factor holomorphy and pole criteria needed on the closed doubling half-plane.",
+      "needs": "For a number field M, unitary cuspidal τ of GL_k(𝔸_M), unitary Hecke character χ and finite S containing infinity and all ramification, assume |det|^(it)(τ⊗(χ∘det))≇τ∨ for every real t; prove that both partial factors L^S(u,τ,Sym²⊗χ) and L^S(u,τ,∧²⊗χ) are holomorphic on Re(u)≥0, with ∧² of GL₁ interpreted as the zero representation and its L-factor as 1 (CFK proof of Theorem 4.8, p.40; CFK lines 1725–1729).",
       "supplier": "AutomorphicSpectralTheory",
       "section": "2.1–2.6 and Layer 4"
     },
