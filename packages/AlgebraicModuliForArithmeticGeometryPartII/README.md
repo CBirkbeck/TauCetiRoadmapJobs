@@ -42,6 +42,8 @@ Consume `Matrix.dotProduct_mulVec_nonpos_of_mulVec_eq_zero` and `Matrix.dotProdu
 
 Consume §§0.9, 0.11 and 0.23 for finite-presentation limits, field descent and universal homeomorphisms; §§1.1–1.11 for fpqc descent and algebraic spaces; §§2.1–2.2 for site morphisms and Leray; §2.6 for coherent flat base change; §§2.10–2.11 for smooth-group étale/fppf comparison, Hilbert 90, Kummer and `finite_pushforward_exact` on **small étale sites for abelian sheaves**; §§2.15 and 2.22 for field and scheme Brauer comparisons. Exactness of arbitrary finite fppf pushforward is not an input. The Leray edge has source H²(k,h_*G_m) and target H²(X,G_m); for Spec ℂ → Spec ℝ both degree-two sides are zero, and for the identity of Spec ℝ both equal ℤ/2 with identity map.
 
+Consume §2.15 `etale_galois_comparison`, the equivalence between abelian sheaves on the small étale site of a field and discrete abelian groups with continuous absolute Galois action. Applied to the represented commutative étale group scheme in §2.6, it identifies the numerical local system with its geometric numerical lattice. The Galois group itself need not be abelian.
+
 Consume §3.5 for the finite locally free line-bundle norm, rank formula, composition and base change; §§4.9–4.10 for Stein factorization and proper formal existence; §4.12 for generic flatness, Chow's lemma and domination; §§5.2–5.3 for proper pushforward and iterated first-Chern intersections; §5.9 for geometric and arithmetic surface intersections, retaining residue degrees; and §5.10 for the supplied smooth projective surface numerical quotient. The projective nef-and-big criterion is the exact extension of §5.3 specified below; its proper extension is §1.6 here with the parent birational comparison contract.
 
 What SchemeAndStackFoundations must provide (gap:relative-exceptional-degree-witnesses): For a projective birational morphism from a regular variety to a normal variety over any field, provide finitely many contracted integral curves whose Cartier degrees detect every nonzero rational combination of exceptional prime divisors, with field-extension compatibility. This extends §5.9's surface input to the relative comparison of §5.9 here; it is formulated in intersection degrees, so it does not consume this roadmap's numerical quotient.
@@ -320,7 +322,7 @@ One proof route is as follows. Nonnegativity on curves extends to NE(X/S) by lin
 
 - On P¹_k, O(m) is nef iff m ≥ 0.
 - For f = id_S every invertible sheaf is f-nef (there are no curves over S).
-- On Bl_p P² the exceptional curve E has O(E)·E = −1, so O(E) is not nef although it is effective.
+- On Bl_p P² at a k-rational point p, the exceptional curve E has O(E)·E = −1, so O(E) is not nef although it is effective.
 - For the first projection P¹×P¹ → P¹, O(a,b) is f-nef iff b ≥ 0, with a arbitrary.
 - Numerically trivial classes have degree 0 on every curve, so they are nef; excluding the zero functional would violate this boundary case.
 
@@ -395,7 +397,6 @@ One proof route is as follows. Finite-dimensionality of H⁰(X, O_X) (JacobianCh
 - For X = Spec B with B finite over k, X^aff = X.
 - For X = P¹_k ⊔ P¹_k, X^aff = Spec(k × k); h_*G_m ≅ G_m × G_m.
 - For X = P¹ × Spec k[ε]/(ε²), X^aff = Spec k[ε]/(ε²) is not reduced; replacing it by its reduction changes h_*G_m by the unipotent factor 1 + εA.
-- X^aff = Spec k when H⁰(X, O_X) = k (for instance X geometrically integral).
 
 ### 2.3 Cohomological Brauer groups of finite algebras over a field are torsion
 
@@ -434,8 +435,10 @@ One proof route is as follows. Use the identity component of the locally finite-
 
 **Checks.**
 
-- `Pic^τ_{P¹/k}` = 0; for an elliptic curve Pic^τ = Pic⁰ ≅ E; for an Enriques surface over k̄ of characteristic ≠ 2, Pic⁰ = 0 and Pic^τ ≅ ℤ/2.
-- For a singular (ordinary) Enriques surface in characteristic 2, Pic^τ = μ₂ is connected and nonreduced, so Pic^τ = Pic⁰ with its full structure.
+- For P¹_k, `Pic^τ_{P¹/k}` = 0: the degree of O(m) is m, so only m = 0 is numerically trivial.
+- For an elliptic curve E/k, Pic^τ = Pic⁰ ≅ E: the degree-zero component has dimension 1, rather than being the zero group scheme.
+- For an Enriques surface over k̄ of characteristic ≠ 2, Pic⁰ = 0 and Pic^τ ≅ ℤ/2, with the nontrivial class represented by the canonical sheaf. Keeping only Pic⁰ would lose this class (SCH23, Proposition 4.2, p. 12; SCH23 line 526).
+- For a singular (ordinary) Enriques surface in characteristic 2, Pic^τ = μ₂ is connected and nonreduced, so Pic^τ = Pic⁰ with its full structure (SCH23, classification table, p. 13; SCH23 line 547).
 
 ### 2.6 The local system of numerical classes `Num_{X/k}`
 
@@ -444,7 +447,7 @@ For X proper over a field k put `Num_{X/k}` := `Pic_{X/k}/Pic^τ_{X/k}` (fppf qu
 The API gives the following facts.
 
 - `Num_{X/k}` := `Pic_{X/k}/Pic^τ_{X/k}`, an étale commutative group scheme over k.
-- Étale group schemes over k ≃ discrete Gal(k^sep/k)-modules sends `Num_{X/k}` to `Num(X_{k̄}/k̄)` with its Galois action.
+- Under the supplied equivalence between commutative étale group schemes over k and discrete abelian groups with continuous Gal(k^sep/k)-action, `Num_{X/k}` corresponds to `Num(X_{k̄}/k̄)` with its Galois action (SchemeAndStackFoundations §2.15 `etale_galois_comparison`).
 - `Num_{X/k}(k^sep)` is free abelian of rank `ρ(X_{k̄})`, and equals `Num_{X/k}(k̄)`.
 - Num(X/k) → `Num_{X/k}(k)` is injective.
 - `Num_{X_K/K}` = `(Num_{X/k})_K` for every field extension K/k.
@@ -452,7 +455,7 @@ The API gives the following facts.
 
 One proof route is as follows. `Pic^τ_{X/k}` is open, so the quotient of the locally finite type group `Pic_{X/k}` by it is étale (its geometric fibre is the discrete group of components modulo those of Pic^τ). Over k̄: `Num_{X/k}(k̄)` = `Pic(X_{k̄})/Pic^τ(X_{k̄}/k̄)` = `Num(X_{k̄}/k̄)` by §2.5; this is free of finite rank by §1.2. Purely inseparable extensions do not change points of an étale scheme, so the k^sep- and k̄-points agree. A finitely generated free ℤ-module with continuous action of a profinite group has open stabiliser, so the action factors through a finite quotient. Injectivity of Num(X/k) → `Num_{X/k}(k)`: if [L] ∈ `Pic^τ_{X/k}(k)` then `L_{k̄}` is numerically trivial, hence L is (§0.3).
 
-*Needs:* §2.5; §1.2; §1.1; Mathlib `IsSepClosure`; Mathlib `separableClosure.isPurelyInseparable`.
+*Needs:* §2.5; §1.2; §1.1; SchemeAndStackFoundations §2.15 `etale_galois_comparison`; Mathlib `IsSepClosure`; Mathlib `separableClosure.isPurelyInseparable`.
 
 **Checks.**
 
@@ -461,7 +464,7 @@ One proof route is as follows. `Pic^τ_{X/k}` is open, so the quotient of the lo
 - For X = Spec K with K/k finite, `Num_{X/k}` = 0 and ρ = 0. The constants extension does not create a curve class.
 - For X = P¹_ℝ ⊔ Spec ℂ over ℝ, `Num_{X/ℝ}` ≅ ℤ_ℝ is constant: zero-dimensional components contribute nothing.
 - For the pointless real conic, `Num_{X/ℝ}(ℝ)` = ℤ but the image of Pic(X) is 2ℤ: rational points of Num need not come from invertible sheaves.
-- For X geometrically integral with a rational point, Pic(X) → `Pic_{X/k}(k)` is bijective.
+- The constant cyclic group scheme C₃ over k corresponds to ℤ/3 with trivial Galois action, including in characteristic 3. The constant finite étale S₃ scheme is outside this abelian equivalence: (12)(23) = (123), whereas (23)(12) = (132).
 
 ### 2.7 Constant numerical local system
 
@@ -818,8 +821,9 @@ One proof route is as follows. Localise at z: X = S ×_Z Spec `O_{Z,z}` → Spec
 
 **Checks.**
 
-- For the blow-up of a point, ((E·E)) = (−1).
-- For the minimal resolution of an A_n singularity, the matrix is the negative of the A_n Cartan matrix.
+- For the blow-up at a closed point x of a regular proper k-surface, E is P¹ over κ(x) and O(E)|_E = O(−1). Thus E² = χ_k(O_E(−1)) − χ_k(O_E) = 0 − [κ(x):k] = −[κ(x):k]; at a k-rational point this is −1. A residue-field-independent value −1 would discard the restriction-of-scalars factor of §0.1.
+- On Bl_x P²_ℝ for x = V(u²+1,v) in the affine chart, κ(x) = ℂ and E² = 0 − 2 = −2. After extension to ℂ, the full exceptional divisor is E₁ + E₂, with E₁² = E₂² = −1 and E₁·E₂ = 0, giving (E₁+E₂)² = −2. Taking just one geometric component would incorrectly give −1 for the full pullback.
+- For the minimal resolution of an A_n singularity over an algebraically closed field, n ≥ 1, the diagonal entries are −2 and adjacent entries are 1, giving the negative of the A_n Cartan matrix. For n = 1 the matrix is [−2]; for n = 2 it is [[−2,1],[1,−2]], whose quadratic value on (1,1) is −2.
 
 ### 4.6 Zariski's lemma for fibres of fibrations of regular surfaces
 
