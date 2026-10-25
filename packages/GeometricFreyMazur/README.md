@@ -10,13 +10,28 @@ ModularCurves §§0D–0E, 2C and 5B–5C own ordinary elliptic torsion, descent
 
 SchemeAndStackFoundations §1.17 owns projective finite quotients and norm polarization; §§5.1–5.3 and 5.9–5.10 own cycles, weighted pushforward, flat pullback and intersection theory. The symmetric-power subsection specializes that quotient to a surface and applies its relative cycle contract; it does not construct a second general quotient. AlgebraicCurves Layers 3–7 and 12 own divisors, Riemann–Roch, Hurwitz and the proper-model dictionary. FuchsianOrbifolds Layers 0–5 own effective projective actions, quotient charts, polygons, cusps, compactification and analytic degree theory. ComplexKahlerGeometry K3 and K6.1 own analytic cycles and their general local volume interfaces; RiemannianGeometry R7.0 and R8 own the general singular-metric Li–Yau interface requested below. The local application-specific signed estimates remain here.
 
-AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5 and A6.25 and NeronModelsAndSemistableAbelianVarieties §§1.3 and 1.8 supply extension of generic homomorphisms over a Dedekind base and the finite-kernel criterion. There is no separate general extension theorem here. The geometric rank-one Hom application adds nonisotriviality and the scalar-compatible descent argument to A6.7. CongruenceSpectralGap CSG.5 supplies the all-level spectral bound. Full monodromy and absence of quadratic self-twists are independent endpoints; scalar-compatible isogeny descent does not depend on them.
+AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5 and A6.25 and NeronModelsAndSemistableAbelianVarieties §§1.3 and 1.8 supply extension of generic homomorphisms over a Dedekind base and the finite-kernel criterion. There is no separate general extension theorem here. The geometric rank-one Hom application adds nonisotriviality and the scalar-compatible descent argument to A6.7. CongruenceSpectralGap CSG.5 supplies the all-level spectral bound. Full monodromy is an independent endpoint; the auxiliary self-twist argument and full monodromy are not inputs to scalar-compatible isogeny descent.
 
-The pinned library supplies the actual matrix/projective groups, the entrywise matrix norm, symmetric multisets, transvection generation and SL₂ perfectness listed below. Their generic theories are not targets. The statable subgroup-index and self-twist headlines use those exact carriers.
+The pinned library supplies the actual matrix/projective groups, the entrywise matrix norm, symmetric multisets, transvection generation and SL₂ perfectness listed below. Their generic theories are not targets. The subgroup-index and self-twist arguments are auxiliary README targets. The acceptance signatures state full torsion monodromy and function-field geometric Frey–Mazur on native function-field, elliptic-point and isogeny carriers.
 
 ## Conventions
 
-Unless a subsection says otherwise, p is a prime greater than 5, k is algebraically closed of characteristic zero, and a curve is a nonempty smooth geometrically connected quasiprojective k-curve. Its genus and gonality are those of its smooth proper model. The projective-frame comparisons and algebraic special strata require only p>3; the group headlines state their own p≥5 or p>3 bounds. Integral image curves are reduced and irreducible. An effective one-cycle has positive integral component weights; the zero cycle is allowed and every linear estimate is zero on it. A projected constant map contributes zero as a one-cycle.
+Unless a subsection says otherwise, p is a prime greater than 5, k is algebraically closed of characteristic zero, and a curve is a nonempty smooth geometrically connected quasiprojective k-curve. Its genus and gonality are those of its smooth proper model. The projective-frame comparisons and algebraic special strata require only p>3; the subgroup-index argument allows every prime, and the self-twist argument assumes p>3. Integral image curves are reduced and irreducible. An effective one-cycle has positive integral component weights; the zero cycle is allowed and every linear estimate is zero on it. A projected constant map contributes zero as a one-cycle.
+
+For fields k⊂K define `gonality` to be the infimum in ℕ of the degrees [K:k(f)] over transcendental f∈K for which K/k(f) is finite. Here k(f) is `IntermediateField.adjoin k {f}`. For a one-variable function field the set is nonempty and contains only positive integers, so this infimum is an attained positive minimum, independent of a chosen rational subfield. On other field extensions the total definition has value 0 when that set is empty; every headline restricts to `FunctionField k K`, a finite extension of `RatFunc k` with the compatible k-algebra structure. AlgebraicCurves Layer 12 and gap:gonality-norm-and-base-change own the comparison with gonality of the smooth proper model (BT16 §1, p. 710, BT16 lines 55–56).
+
+Its API is the following.
+
+- On a one-variable function field the value is the least positive finite degree [K:k(f)], and some transcendental f realizes it.
+- Changing the chosen embedding of the rational function field leaves this value unchanged.
+- The value agrees with the minimum degree of a map from the smooth proper model to the projective line, through AlgebraicCurves Layer 12 and gap:gonality-norm-and-base-change.
+
+**Checks.**
+
+- For K=k(t), f=t gives degree 1 and every finite field degree is positive, so the value is 1.
+- For the function field of a smooth genus-one curve over algebraically closed characteristic-zero k, a degree-two pencil gives 2; degree 1 would identify its proper model with the genus-zero projective line, so the minimum is 2.
+- For a hyperelliptic function field of genus g≥2 over such k, the hyperelliptic coordinate gives degree 2; degree 1 would again give genus zero, so the value is 2.
+- For K=k with its identity algebra structure every element is algebraic, the defining set is empty and the total infimum is 0. This extension admits no compatible embedding of k(t), so it satisfies none of the function-field headline hypotheses.
 
 Write X(p) for the two-component scalar-framed coarse curve, Y(p) for its elliptic open, G=PGL₂(𝔽_p), S=X(p)×X(p), and Z(p)=S/G. A fixed-pairing component has stabilizer G₀=PSL₂(𝔽_p). A frame is a map 𝔽_p²→E[p], with left action g·φ=φ∘g̃⁻¹. Two frames differ projectively by a scalar. The determinant square class labels components; a nonsquare transports a component and conjugates the selected G₀ presentation. The elliptic automorphism [−1] is still inertia on the projective-frame stack. Coarse points do not carry a universal elliptic family. Actual finite étale module isomorphisms and their inverses are retained separately from their projective classes.
 
@@ -40,13 +55,15 @@ These normalizations use BT16 §1.3, p. 713 (BT16 line 167), §§2.1–2.5, pp. 
 
 - `Matrix.ProjGenLinGroup` and `Matrix.ProjGenLinGroup.mk_eq_mk_iff`, in `Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Projective.lean`, define GL modulo its centre and identify equal classes with multiplication by an invertible scalar. `Matrix.ProjectiveSpecialLinearGroup`, in `Mathlib/LinearAlgebra/Matrix/ProjectiveSpecialLinearGroup.lean`, is SL modulo its centre. `Matrix.ProjectiveSpecialLinearGroup.toPGL` and `Matrix.ProjectiveSpecialLinearGroup.toPGL_injective`, in the former module, compare these over a field; they do not identify PSL and PGL over 𝔽_p.
 - `Matrix.norm_eq_sup_sup_nnnorm` and `Matrix.norm_entry_le_entrywise_sup_norm`, in `Mathlib/Analysis/Matrix/Normed.lean`, use the entrywise supremum norm. Install that scoped norm locally when using height; the operator norm is a different instance.
-- `Subgroup.index`, in `Mathlib/GroupTheory/Index.lean`, is the natural cardinality of the coset space. Its infinite-index value is zero; all groups in the index headlines are finite, so that value cannot occur.
+- `Subgroup.index`, in `Mathlib/GroupTheory/Index.lean`, is the natural cardinality of the coset space. Its infinite-index value is zero; all groups in the subgroup-index argument are finite, so that value cannot occur.
 - `Sym`, `Sym.map` and `Sym.map_map`, in `Mathlib/Data/Sym/Basic.lean`, supply cardinality-indexed multisets and functorial mapping. They supply the geometric-point comparison, not a scheme symmetric power.
+- `FunctionField`, in `Mathlib/NumberTheory/FunctionField.lean:58`, means finite dimensionality over the chosen rational subfield; the headlines also retain the compatible k-algebra tower. `IntermediateField.adjoin` and `Module.finrank` give the rational-subfield degree used by `gonality`.
+- `AddSubgroup.torsionBy` and `AddSubgroup.torsionBy.zmodModule`, in `Mathlib/Algebra/Module/Torsion/Basic.lean:972` and line 1010, give the subgroup killed by p and its ℤ/pℤ-module structure. `AddMonoidHom.toZModLinearMap`, in `Mathlib/Algebra/Module/ZMod.lean:81`, makes every additive torsion homomorphism linear. `WeierstrassCurve.Affine.Point.map`, in `Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.lean:823`, gives the coordinatewise Galois action on geometric points. `LinearMap.det`, in `Mathlib/LinearAlgebra/Determinant.lean:173`, is basis-independent; it returns 1 without a finite basis, so its use here relies on geometric p-torsion being a rank-two vector space in characteristic zero.
 - `Matrix.SL2.commutator_eq_top`, in `Mathlib/LinearAlgebra/Matrix/SpecialLinearGroup.lean`, assumes a field and an element a with a≠0 and a²≠1. Such an a exists in 𝔽_p for p>3. This is the perfectness input in the self-twist route.
 
 ### From Tau Ceti
 
-`Matrix.SpecialLinearGroup.closure_range_toSpecialLinearGroup_eq_top_of_field`, in `TauCeti/LinearAlgebra/Matrix/SpecialLinearGroup/Transvection.lean`, generates SL by elementary transvections over every field. `TauCeti.RiemannSurface.FiniteHolomorphicMap`, `TauCeti.RiemannSurface.degree` and `TauCeti.RiemannSurface.degree_comp`, in `TauCeti/Analysis/Complex/RiemannSurface/Degree.lean`, supply finite nonconstant holomorphic maps and their degree; the bundled map retains two distinct values and finite fibres. `TauCeti.RiemannSurface.ramificationDivisor`, in `TauCeti/Analysis/Complex/RiemannSurface/Ramification.lean`, carries coefficients e−1. The total degree on arbitrary maps is not used without its finiteness and nonconstancy hypotheses. No Tau Ceti import is needed merely to state the three group headlines.
+`Matrix.SpecialLinearGroup.closure_range_toSpecialLinearGroup_eq_top_of_field`, in `TauCeti/LinearAlgebra/Matrix/SpecialLinearGroup/Transvection.lean`, generates SL by elementary transvections over every field. `TauCeti.RiemannSurface.FiniteHolomorphicMap`, `TauCeti.RiemannSurface.degree` and `TauCeti.RiemannSurface.degree_comp`, in `TauCeti/Analysis/Complex/RiemannSurface/Degree.lean`, supply finite nonconstant holomorphic maps and their degree; the bundled map retains two distinct values and finite fibres. `TauCeti.RiemannSurface.ramificationDivisor`, in `TauCeti/Analysis/Complex/RiemannSurface/Ramification.lean`, carries coefficients e−1. The total degree on arbitrary maps is not used without its finiteness and nonconstancy hypotheses. `TauCeti.Isogeny`, in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Basic.lean:139`, supplies the nonzero pointed coordinate pullback used for the function-field conclusion. `TauCeti.Isogeny.existsUnique_map_eq_iff_galoisFixed`, in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Descent.lean:117`, descends an isogeny uniquely over a Galois extension, including an infinite one, when all coefficient conjugations fix it. `TauCeti.Isogeny.Hom.degree_zsmul`, in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/MulByInt/Hom.lean:63`, gives degree scaling by the square of the absolute value of an integer, including zero.
 
 ### From TauCetiRoadmap.ModularCurves and TauCetiRoadmap.ModularCurvesPartII
 
@@ -54,7 +71,7 @@ ModularCurves §§0D–0E supply the field finite-étale/Galois dictionary and e
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Use §§0.8–0.9 for finite-presentation models and spreading, §1.7 for descent, §1.17 for projective finite group quotients with their norm polarization and flat base change, §§5.1–5.3 for Chow cycles, proper pushforward with generic degree, flat pullback and the Chern projection formula, and §§5.9–5.10 for surface intersection. The base is Noetherian in the quotient theorem; the fields and finite-type models used here satisfy it. The degree-zero invariant algebra need not equal the base ring. The general quotient is not replaced by its reduced orbit set.
+Use §§0.8–0.9 for finite-presentation models and spreading, §0.11 for finite-Galois descent of morphisms, §1.17 for projective finite group quotients with their norm polarization and flat base change, §§5.1–5.3 for Chow cycles, proper pushforward with generic degree, flat pullback and the Chern projection formula, and §§5.9–5.10 for surface intersection. Section 4.13 supplies regularity and birationality of the finite normalization of an integral curve; its finite-type-over-a-field case applies to the image curves here, and characteristic zero makes those regular curves smooth. The base is Noetherian in the quotient theorem; the fields and finite-type models used here satisfy it. The degree-zero invariant algebra need not equal the base ring. The general quotient is not replaced by its reduced orbit set.
 
 What SchemeAndStackFoundations must provide (gap:free-locus-and-relative-cycle): For a finite group acting on a projective characteristic-zero scheme, prove that its finite quotient is étale over the image of the free locus, and construct the base-change-compatible norm cycle morphism of a finite flat degree-n family to the permutation quotient SymⁿZ with every fibre length retained.
 
@@ -66,9 +83,9 @@ What SchemeAndStackFoundations must provide (gap:surface-contraction-intersectio
 
 Use Layers 3–5 for divisors, norm/principal-divisor compatibility, Riemann–Roch and pencils; Layer 7 for the different and the function-field Hurwitz formula; and Layer 12, especially 12B–12E, for finite normalization, smooth proper models, extension of finite field embeddings and comparison with scheme genus and Hurwitz. SchemeAndStackFoundations §3.2 gives the scheme formula, with ramification degree equal to Σ(e−1) in the characteristic-zero setting here.
 
-What AlgebraicCurves must provide (gap:gonality-norm-and-base-change): On smooth proper geometrically connected curves over algebraically closed fields, provide gonality as the minimum positive degree of a finite map to the projective line, realization by a base-point-free pencil, invariance under algebraically closed extension, gon(D)≤gon(B) under a nonconstant finite map B→D, gon≤g+1, and gonality 1 and 2 in genera zero and one.
+What AlgebraicCurves must provide (gap:gonality-norm-and-base-change): On smooth proper geometrically connected curves over algebraically closed fields, provide gonality as the minimum positive degree of a finite map to the projective line, comparison with the minimum finite degree [K:k(f)] over transcendental f in the function field K, realization by a base-point-free pencil, invariance under algebraically closed extension, gon(D)≤gon(B) under a nonconstant finite map B→D, gon≤g+1, and gonality 1 and 2 in genera zero and one.
 
-What AlgebraicCurves must provide (gap:curve-extension-and-normalization): For a smooth connected curve over an algebraically closed characteristic-zero field, extend a morphism to a proper target across the missing points of its smooth proper model and factor a nonconstant map through the smooth proper normalization of its integral image, and prove that birational integral curves have isomorphic normalization function fields and equal normalization genus.
+What AlgebraicCurves must provide (gap:curve-extension-and-normalization): For a smooth connected curve over an algebraically closed characteristic-zero field and a proper separated finite-type target, extend a morphism uniquely to its smooth proper model, factor the resulting nonconstant map through the finite normalization of its reduced integral image supplied by SchemeAndStackFoundations §4.13, and prove that birational integral curves have equal normalization genus.
 
 ### From TauCetiRoadmap.FuchsianOrbifolds
 
@@ -168,13 +185,13 @@ One proof route proceeds as follows. Apply the finite quotient universal propert
 
 ### 0.3 Heegner and anti-Heegner CM strata
 
-A smooth-level pair (x,y) belongs to CM only when its two projective point stabilizers share a nonidentity element. Choose corresponding nontrivial automorphisms of E_x,E_y with matching characteristic polynomial, choosing the lift signs so their characteristic polynomials match, with simultaneous sign change thereafter. Put the pair in CM⁺ when their tangent eigenvalues agree and in CM⁻ when they are conjugate unequal eigenvalues. This definition is independent of the common generator, compatible lifts and projective frame representatives. Equal j-invariants alone do not define CM. (BT16 §2.4, pp. 715–716; BT16 line 295.)
+A smooth-level pair (x,y) belongs to CM only when its two projective point stabilizers share a nonidentity element. Choose automorphisms h_x,h_y different from ±1 and one matrix g̃∈GL₂(𝔽_p) lifting that common projective stabilizer, with h_x∘φ_x=φ_x∘g̃⁻¹ and h_y∘φ_y=φ_y∘g̃⁻¹. Thus the frame matrices are equal, and their characteristic polynomials agree. Compare the eigenvalues of h_x on Lie(E_x)=T₀E_x and h_y on Lie(E_y)=T₀E_y: equality defines CM⁺ and unequal roots of their common quadratic polynomial define CM⁻. Over ℂ those unequal roots are complex conjugates. This definition is independent of the common generator, compatible lifts and projective frame representatives. Equal j-invariants alone do not define CM. (BT16 §2.4, pp. 715–716; BT16 lines 295–305.)
 
 The defining construction has the following API.
 
 - CM is the smooth-level common nonidentity stabilizer locus.
 
-- The ratio of the compatible tangent characters distinguishes the plus and minus strata.
+- The actions of the equal-frame lifts on Lie(E_x) and Lie(E_y) distinguish the plus and minus strata; the tangent lines of X(p) do not supply this distinction.
 
 - CM⁺ and CM⁻ are disjoint, and their union is CM.
 
@@ -182,9 +199,9 @@ The defining construction has the following API.
 
 - Conjugating only the second factor exchanges the strata and is a metric isometry.
 
-- The tangent-character definition is preserved by algebraically closed characteristic-zero base change, with embeddings transporting the complex convention.
+- The Lie-character definition is preserved by algebraically closed characteristic-zero base change, with embeddings transporting the complex convention.
 
-One proof route proceeds as follows. Use the faithful derivative character of the effective cyclic stabilizer of order 2 or 3. Changing the common generator applies the same power to both eigenvalues, preserving agreement versus opposition. Check the order-3 lifts using t²+t+I=0, and the order-4 lift using t²=−I. These are different polynomials. Conjugating the second complex structure interchanges CM⁺ and CM⁻; simultaneous G action preserves each. Over another characteristic-zero algebraically closed field formulate the same distinction by the algebraic tangent character, transporting through an embedding only for the metric.
+One proof route proceeds as follows. Use the faithful action of Aut(E) on Lie(E), retaining equality of the two GL₂ frame matrices. Changing the common generator or simultaneously changing the lift signs applies the same operation to both Lie eigenvalues and preserves equality versus inequality. Over j=1728 the effective stabilizer acts on T_xX(p)×T_yX(p) by (−1,−1) in both strata, so this product derivative does not distinguish the signs. Check the order-3 lifts using t²+t+I=0, and the order-4 lift using t²=−I. These are different polynomials. Conjugating the second complex structure interchanges CM⁺ and CM⁻; simultaneous G action preserves each. Over another characteristic-zero algebraically closed field formulate the same distinction by the algebraic action on Lie(E), transporting through an embedding only for the metric.
 
 **Checks.**
 
@@ -192,7 +209,7 @@ One proof route proceeds as follows. Use the faithful derivative character of th
 
 - A pair with x over j=1728 and y over j=0 is in neither stratum: the stabilizer orders 2 and 3 are coprime.
 
-- (x,x) at j=1728 is CM⁺; its second-factor complex conjugate is CM⁻.
+- For (x,x) over j=1728 take h_x=[i]. Choosing h_y=−h_x gives the same polynomial t²+1 but frame matrix g_y=−g_x≠g_x for p>3, so this choice is excluded. The admissible equal lifts have Lie eigenvalues (i,i), while conjugating the second factor gives (i,−i).
 
 - With s=[[0,1],[-1,0]] and g=[[1,1],[0,1]], gsg⁻¹ is not projectively s for p>3: the corresponding equal-j pair need not share a stabilizer.
 
@@ -242,7 +259,16 @@ One proof route proceeds as follows. A nonidentity element fixing a pair fixes b
 
 **Checks.**
 
-- Test all nine pairs of coordinate inertia types, including ordinary points with trivial inertia.
+- The four types have orders 1, 2, 3 and p. The common inertia orders for all 16 ordered pairs are the following; an equal nonordinary type has its indicated order only when the stabilizer subgroups coincide, and otherwise has order 1.
+
+  | First \ second | Ordinary | j=1728 | j=0 | Cusp |
+  |---|---:|---:|---:|---:|
+  | Ordinary | 1 | 1 | 1 | 1 |
+  | j=1728 | 1 | 2 or 1 | 1 | 1 |
+  | j=0 | 1 | 1 | 3 or 1 | 1 |
+  | Cusp | 1 | 1 | 1 | p or 1 |
+
+  In particular gcd(2,3)=gcd(2,p)=gcd(3,p)=1 for p>3: mixed elliptic types and cusp/elliptic pairs have no nonidentity common inertia.
 
 *Needs:* §0.3; §0.4; FuchsianOrbifolds Layer 1; ModularCurvesPartII §4.7; ModularCurvesPartII §5.7.
 
@@ -392,7 +418,7 @@ One proof route proceeds as follows. The surviving witness gives the upper bound
 
 **Checks.**
 
-- Preserve L=2ρ_X throughout.
+- At p=101 the leading terms are ρ_X=2 log(101)+O(1)=9.23024+O(1) and L=4 log(101)+O(1)=18.46048+O(1); using L=ρ_X halves the leading geodesic length.
 
 - A shortest geodesic making two deep visits is handled by two bounded errors, not ruled out by assertion.
 
@@ -406,7 +432,7 @@ One proof route proceeds as follows. Compare the punctured q-disc and its fillin
 
 **Checks.**
 
-- Check the direction of both disc inclusions and the additive log m enlargement; do not apply outside its specified range.
+- At p=101 and y=1/2, |q|<exp(−π/101)≈0.969374 and 2 artanh(exp(−π/101))≈4.163618, so the corresponding compact-ball radius is approximately 4.163618. For the degree-two branches z↦2z and z↦z/2, y changes to 1 and 1/4, giving q-radii approximately 0.939686 and 0.984568 respectively; the smaller height gives the larger disc, in the direction of the +log 2 enlargement within its stated range.
 
 *Needs:* §1.5; §1.6; §1.7; §0.6; FuchsianOrbifolds Layer 3; FuchsianOrbifolds Layer 2, gap:hyperbolic-trigonometry; ModularCurvesPartII §4.8.
 
@@ -586,8 +612,6 @@ One proof route proceeds as follows. Take the set image under the antiholomorphi
 
 - T̄₁ is the graph of complex conjugation on X(p); its tangent planes contain no complex line, and it meets the complex curve T₁ along the points fixed by conjugation.
 
-- For m=1, T̄₁ is the graph of complex conjugation and has no complex tangent line.
-
 - A Heegner point becomes anti-Heegner under c₂ and lies on the transported locus.
 
 - An attempted divisor intersection C·T̄₁ is rejected; its ε-tube volume is meaningful.
@@ -602,7 +626,7 @@ One proof route proceeds as follows. An ordinary Hecke point in CM must have bot
 
 **Checks.**
 
-- Do not reuse the false deduction that all CM⁻ points therefore have disjoint large balls.
+- On E=ℂ/ℤ[i], an ordinary CM endomorphism [a+bi] commutes with [i], so equal-frame lifts have Lie eigenvalues (i,i). Replacing the second by [−i] changes its frame matrix by −1; equality would require [2i]=0 on E[p], impossible because [2i] has degree 4 and is invertible on E[p] for p>3. This proves the sign exclusion without any distance claim.
 
 *Needs:* §0.3; §0.6; ModularCurvesPartII §1.2; ModularCurvesPartII §1.3.
 
@@ -614,7 +638,7 @@ One proof route proceeds as follows. Use cusp double cosets and unique lifts to 
 
 **Checks.**
 
-- Check sharp distinction between two prescribed images (a one-parameter projective freedom) and three (uniqueness).
+- Over 𝔽₇, fixing the prescribed images 0↦0 and ∞↦∞ leaves the six maps t↦a t with a∈𝔽₇×. Adding 1↦1 forces a=1 and leaves one map. Two prescribed images therefore leave freedom that a third distinct image removes.
 
 - For p≡1 mod4 and a²=−1, the nearby cusp pairs (v,av) have negative-reflection type; they do not lie on T_m with m<p−1.
 
@@ -688,7 +712,7 @@ One proof route proceeds as follows. Near a cusp in one coordinate, cusp separat
 
 **Checks.**
 
-- Quantify C log p as a uniform finite threshold, rather than treating ω(log p) as a predicate on a single point.
+- At p=101 let a=(c,c) be a singular bicusp and ξ=(a,a). Each of the 101 elements of its cusp stabilizer gives a distinct Δ_g through ξ, hence 101 tubes contain ξ for every positive radius. The distance to SBC×SBC is 0, realizing alternative (a); the threshold comparison is 101>C log(101), where C log(101)≈4.615121 C.
 
 *Needs:* §4.1; §2.2; §2.4; §1.5; §2.7; §3.1; §4.2; §3.6; §3.4.
 
@@ -898,7 +922,7 @@ One proof route proceeds as follows. Use properness to extend across the finitel
 
 - A degree-q map onto a rational image still reduces to gonality 1; do not assume the original map has degree one.
 
-*Needs:* §0.2; AlgebraicCurves Layer 12; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change.
+*Needs:* §0.2; AlgebraicCurves Layer 12; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization; SchemeAndStackFoundations §4.13 (finite normalization of integral curves).
 
 ### 6.3 The gonality-pencil cycle map
 
@@ -925,8 +949,6 @@ One proof route proceeds as follows. Apply the relative cycle map to the finite 
 - For a hyperelliptic B with its double cover h, φ(t) is the sum of the images of the two points over t, and over each of the 2g+2 branch points φ(t)=2[f(b)].
 
 - For n=1, φ is the original rational curve map.
-
-- For a double-cover pencil, a ramification fibre gives 2[f(b)] in Sym²Z.
 
 - Two distinct generic fibres cannot have the same cycle if f is birational; dropping that hypothesis requires the image reduction first.
 
@@ -964,7 +986,7 @@ One proof route proceeds as follows. Use finite base change, existence and finit
 
 - A pullback meeting a branch point is normalized; it is not declared étale by the fibre-product notation.
 
-*Needs:* §6.3; §0.2; §6.1; AlgebraicCurves Layer 12; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle.
+*Needs:* §6.3; §0.2; §6.1; AlgebraicCurves Layer 12; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization; SchemeAndStackFoundations §4.13 (finite normalization of integral curves).
 
 ### 6.5 Weighted projection cycles and nondegeneracy
 
@@ -978,7 +1000,7 @@ One proof route proceeds as follows. Connectedness of B and the monodromy of its
 
 - For n=2 its sole pair cycle has Deg(C_12)=Deg(C).
 
-- Check the non-Hecke hypothesis for both slots before applying the big-diagonal estimate.
+- In the excluded two-slot configuration C=T₁×{a}, with a=(x,y) off T₁ and p=7, the first slot is Hecke and the second is constant. Its canonical degree is Deg(C)=2(2g_X−2)=8, while the second pushforward one-cycle is 0. The pair degree is still 8, but the nonconstant non-Hecke slot hypotheses fail, so the big-diagonal estimate does not apply.
 
 *Needs:* §6.4; §5.1; §4.1; §0.6.
 
@@ -1074,23 +1096,21 @@ One proof route proceeds as follows. Import CongruenceSpectralGap:CSG.5/congruen
 
 **Checks.**
 
-- Check (21/100)/24=7/800 exactly.
+- For the level-one quotient D=1, Area=π/3 and (21/100)Area/(8π)=7/800, so (21/100)/24=7/800 exactly.
 
-- Do not apply the compact smooth metric spectral gap to the wrong quotient metric.
+- At the level-one cusp the supplied metric has a cusp and finite total area π/3, whereas the round metric on its genus-zero compactification has area 4π. Substituting 4π into the same numerical expression would give 21/200 instead of 7/800, a factor of 12 error.
 
 *Needs:* CongruenceSpectralGap CSG.5/congruence-bound; RiemannianGeometry R7.0 and R8, gap:singular-metric-li-yau; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 4.
 
 ### 8.2 Proper subgroup indices grow at least like p
 
-For prime p≥5 and every proper subgroup H<SL₂(F_p), [SL₂(F_p):H]≥p. The same conclusion holds for proper subgroups of PSL₂(F_p). In particular the minimum proper-subgroup index tends to infinity. (BT16 Remark after Theorem 2 and footnote 3, p. 710; BT16 line 76.)
+For every prime p and every proper subgroup H<SL₂(F_p), [SL₂(F_p):H]≥p. The same conclusion holds for proper subgroups of PSL₂(F_p). In particular the minimum proper-subgroup index tends to infinity. The proof uses the pinned transvection-generation theorem in `TauCeti/LinearAlgebra/Matrix/SpecialLinearGroup/Transvection.lean:595` and the elementary coset-action argument below.
 
-The SL and PSL statements are `sl2_proper_subgroup_index` and `psl2_proper_subgroup_index` in Suggested.lean.
-
-One proof route proceeds as follows. If the coset index d were <p, the action SL₂(F_p)→S_d kills every elementary transvection, because it has order p and S_d has no element of order p. The pinned Tau Ceti transvection-generation theorem then makes the coset action trivial. A transitive trivial coset action has one coset, contradicting properness. For PSL pull back a proper subgroup along the surjection from SL; its index is unchanged. This proof avoids a classification of finite simple groups or of maximal subgroups.
+One proof route proceeds as follows. If the coset index d were <p, the action SL₂(F_p)→S_d kills every nonidentity elementary transvection, because it has order p and S_d has no element of order p; the identity transvection acts trivially as well. The pinned Tau Ceti transvection-generation theorem then makes the coset action trivial. A transitive trivial coset action has one coset, contradicting properness. For PSL pull back a proper subgroup along the surjection from SL; its index is unchanged. This proof avoids a classification of finite simple groups or of maximal subgroups.
 
 **Checks.**
 
-- A Borel has index p+1, consistent with the bound.
+- A Borel has index p+1, consistent with the bound. At p=2, SL₂(𝔽₂)=PSL₂(𝔽₂)≅S₃ and A₃ has index 2. At p=3 the inverse image of the normal four subgroup of PSL₂(𝔽₃)≅A₄ has index 3 in SL₂(𝔽₃), and that four subgroup has index 3 in PSL₂ itself. Thus the lower bound is attained at both small primes.
 
 - The proof requires p>d; divisibility by p in d! is the exact obstruction. For H=SL₂(𝔽₅), the index is 1<5, so properness is essential. In the trivial rank-zero or rank-one special linear group the subgroup set has no proper member, which does not test the rank-two theorem. The field hypotheses exclude the zero ring and composite-modulus rings.
 
@@ -1098,7 +1118,7 @@ One proof route proceeds as follows. If the coset index d were <p, the action SL
 
 ### 8.3 Full SL₂ torsion monodromy on a bounded-gonality base
 
-For each N>0, every nonisotrivial elliptic scheme E/U over C with gon(U)<N has actual p-torsion image SL₂(F_p) whenever p>max(5,800N/7). The determinant is exactly one after choosing a Weil-pairing basis, because all pth roots of unity are constant. Changing the basis conjugates the image and does not change this conclusion. (BT16 Remark after Theorem 2 and footnote 3, p. 710; Abramovich Theorem 0.1, p. 1; BT16 line 70.)
+For each N>0, every nonisotrivial elliptic scheme E/U over C with gon(U)<N has actual p-torsion image SL₂(F_p) whenever p>max(5,800N/7). The determinant is exactly one after choosing a Weil-pairing basis, because all pth roots of unity are constant. Changing the basis conjugates the image and does not change this conclusion. (BT16 Remark after Theorem 2 and footnote 3, p. 710, BT16 lines 71–74 and 81–82; ABR96 Theorem 0.1, p. 1; the explicit constant follows from §§8.1–8.2.)
 
 One proof route proceeds as follows. Let H be the actual image. The level-frame torsor and moduli interpretation give a nonconstant classifying map U→Y_H, extending to the smooth proper modular quotient X_H. Its gonality is at most gon(U) by the generic finite-map gonality lemma. The effective image H̄≤PSL₂ gives a congruence quotient of index D. If H̄ is proper, D≥p and the 7/800 bound contradicts gon(U)<N. If H̄ is full but H is proper, the index of H in SL is at most two, contradicting the proper-index bound for p>3. Thus H is full. Do not replace actual image by projective or semisimplified image at the conclusion.
 
@@ -1112,11 +1132,11 @@ One proof route proceeds as follows. Let H be the actual image. The level-frame 
 
 ### 8.4 An actual full-image representation has no quadratic self-twist
 
-Let p>3 and ρ:Π→SL₂(F_p) be surjective. If χ:Π→𝔽_p× a homomorphism with χ(γ)²=1 for every γ and an invertible linear A satisfy Aρ(γ)=χ(γ)ρ(γ)A for all γ, then χ is trivial. This is a statement about an actual intertwiner, not equality of projectivizations. (BT16 Theorem 1, p. 710 (actual local systems); BT16 line 58.)
+Let p>3 and ρ:Π→SL₂(F_p) be surjective. If a homomorphism χ:Π→𝔽_p× and an invertible linear A satisfy Aρ(γ)=χ(γ)ρ(γ)A for all γ, then χ is trivial. This is a statement about an actual intertwiner, not equality of projectivizations. (Perfectness input: `Matrix.SL2.commutator_eq_top`, `Mathlib/LinearAlgebra/Matrix/SpecialLinearGroup.lean:804`; the kernel and character argument is given below.)
 
-The acceptance signature is `no_quadratic_self_twist`: Γ is any group, ρ:Γ→SL₂(𝔽_p) is a surjective homomorphism, χ:Γ→𝔽_p× satisfies χ(γ)²=1 for every γ, and A∈GL₂(𝔽_p) satisfies Aρ(γ)=χ(γ)ρ(γ)A for every γ; the conclusion is χ=1.
+No quadratic hypothesis on χ is needed: factoring through SL₂ and perfectness kill every scalar character satisfying this intertwining relation.
 
-One proof route proceeds as follows. For γ in ker ρ the equation forces χ(γ)=1, since A is invertible and p is odd. Hence χ factors through SL₂(F_p). Apply perfectness to the factored character. Scalar ambiguity in the choice of A is harmless; changing the basis conjugates the equation.
+One proof route proceeds as follows. For γ in ker ρ the equation forces χ(γ)=1, since A is invertible. Hence χ factors through SL₂(F_p). Apply perfectness to the factored character. Scalar ambiguity in the choice of A is harmless; changing the basis conjugates the equation.
 
 **Checks.**
 
@@ -1164,7 +1184,7 @@ One proof route proceeds as follows. Étale-locally choose a full level basis of
 
 - A nontrivial quadratic twist gives a projective torsion identification but need not supply the Ψ required by this constructor.
 
-*Needs:* §0.1; §0.2; ModularCurves §0D; ModularCurves §0E; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.1; AbelianSchemesAndArithmeticModuli A3.2; AbelianSchemesAndArithmeticModuli A3.7; ModularCurvesPartII §5.7; ModularCurvesPartII §3.9.
+*Needs:* §0.1; §0.2; ModularCurves §0D; ModularCurves §0E; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.1; AbelianSchemesAndArithmeticModuli A3.2; AbelianSchemesAndArithmeticModuli A3.7; ModularCurvesPartII §5.7; ModularCurvesPartII §3.9; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
 
 ### 9.2 The rank-one geometric Hom lattice
 
@@ -1178,7 +1198,7 @@ One proof route proceeds as follows. Import finite generation and torsion-freene
 
 - A primitive generator is determined up to sign. If h=af is an isogeny then deg h=a²deg f; if h is cyclic, |a|>1 would put E[|a|]≅(ℤ/|a|)² in its kernel and is impossible, so h=±f.
 
-*Needs:* AbelianSchemesAndArithmeticModuli A6.7; AbelianSchemesAndArithmeticModuli A6.1 and A6.6; AbelianSchemesAndArithmeticModuli A6.25; ModularCurves §0E; ComplexComparisonPartII §§C2.2, C4.1–C4.5; AbelianSchemesAndArithmeticModuli A3.1; AbelianSchemesAndArithmeticModuli A3.5; ModularCurvesPartII §1.2; ModularCurves §2C; SchemeAndStackFoundations §§0.8–0.9.
+*Needs:* AbelianSchemesAndArithmeticModuli A6.7; AbelianSchemesAndArithmeticModuli A6.1 and A6.6; AbelianSchemesAndArithmeticModuli A6.25; ModularCurves §0E; ComplexComparisonPartII §§C2.2, C4.1–C4.5; AbelianSchemesAndArithmeticModuli A3.1; AbelianSchemesAndArithmeticModuli A3.5; ModularCurvesPartII §1.2; ModularCurves §2C; SchemeAndStackFoundations §§0.8–0.9; `TauCeti.Isogeny.Hom.degree_zsmul`.
 
 ### 9.3 Hecke containment gives a geometric prime-to-p isogeny
 
@@ -1206,7 +1226,7 @@ One proof route proceeds as follows. For σ∈G_K the conjugate isogeny satisfie
 
 - With E′=E, Ψ=[−1] and f=id one has f[p]=−Ψ, a scalar multiple, and f descends, as it must.
 
-*Needs:* §9.2; §9.3; ModularCurves §0E; AbelianSchemesAndArithmeticModuli A6.7; AbelianSchemesAndArithmeticModuli A6.1 and A6.6; AbelianSchemesAndArithmeticModuli A6.34; SchemeAndStackFoundations §1.7; AbelianSchemesAndArithmeticModuli A6.20.
+*Needs:* §9.2; §9.3; ModularCurves §0E; AbelianSchemesAndArithmeticModuli A6.7; AbelianSchemesAndArithmeticModuli A6.1 and A6.6; AbelianSchemesAndArithmeticModuli A6.34; SchemeAndStackFoundations §0.11; AbelianSchemesAndArithmeticModuli A6.20; `TauCeti.Isogeny.existsUnique_map_eq_iff_galoisFixed`; `TauCeti.Isogeny.Hom.degree_zsmul`.
 
 ### 9.5 Uniform rigidity over any characteristic-zero k
 
@@ -1224,7 +1244,9 @@ One proof route proceeds as follows. Descend the proper base, the open subset, t
 
 ### 9.6 Full linear monodromy over any characteristic-zero k
 
-For every algebraically closed characteristic-zero field k, every integer N>0, every smooth connected k-curve U with gon(U)<N and every nonisotrivial elliptic scheme E/U, the actual p-torsion monodromy image is SL₂(F_p) for every prime p>max(5,800N/7), after a choice of basis with fixed Weil pairing. (BT16 Remark after Theorem 2 and footnote 3, p. 710; BT16 line 70.)
+For every algebraically closed characteristic-zero field k, every integer N>0, every smooth connected k-curve U with gon(U)<N and every nonisotrivial elliptic scheme E/U, the actual p-torsion monodromy image is SL₂(F_p) for every prime p>max(5,800N/7), after a choice of basis with fixed Weil pairing. (BT16 Remark after Theorem 2 and footnote 3, p. 710; BT16 lines 71–74 and 81–82.)
+
+The native function-field signature is `full_monodromy`. For a finite extension K of `RatFunc k` with compatible k-algebra tower, `gonality k K < N`, an elliptic Weierstrass curve W/K whose j-invariant is outside k, and a prime p with 5<p and 800N<7p, every additive automorphism of W[p](K̄) of determinant 1 is induced by some K-automorphism of K̄. Additive maps here are automatically ℤ/pℤ-linear. The Weil pairing makes every Galois action determinant one, so this surjectivity states equality with SL₂. The rank-two finite basis comes from elliptic p-torsion in characteristic zero; the total determinant's fallback value on modules without a finite basis is never used. For a good-reduction open U the generic torsion action factors through π₁(U) with the same image, identifying this signature with the family theorem. N=0 or N=1 has no function-field input of gonality <N.
 
 One proof route proceeds as follows. Descend U, a degree-n pencil with n<N, E and a geometric base point to a finitely generated subfield k₀⊂k, preserving smoothness, connectedness and nonconstant j; embed k₀ in C. Apply §8.3 over C. Invariance of the geometric finite étale fundamental group under algebraically closed characteristic-zero extension identifies the actual monodromy images; equivalently the connected finite covers that detect the image stay connected. The descended pencil gives gonality at most n; the exact minimum need not be preserved.
 
@@ -1232,7 +1254,7 @@ One proof route proceeds as follows. Descend U, a degree-n pencil with n<N, E an
 
 - The constant-j case is excluded, as over C.
 
-- This is a theorem of the roadmap in its own right; the descent of isogenies in Layer 9 does not use it.
+- At N=2 the prime p=229 satisfies 800N=1600<7p=1603, while p=227 gives 7p=1589 and fails that threshold. The determinant-one identity is induced by the identity field automorphism. For a constant elliptic curve over ℂ(t), the Galois image on p-torsion is {I}, which misses the determinant-one matrix [[1,1],[0,1]]; this is excluded by nonconstant j.
 
 *Needs:* §8.3; InverseGaloisAndArithmeticFundamentalGroups §IG.1.3 (characteristic-zero base extension); InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; ModularCurves §0E; SchemeAndStackFoundations §§0.8–0.9; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change.
 
@@ -1254,6 +1276,8 @@ One proof route proceeds as follows. Form the nonconstant classifying map, exten
 
 Equivalently, for every N>0 there is M_N such that for K=k(B), k algebraically closed of characteristic zero, B a smooth proper connected curve of gonality <N, and nonisotrivial elliptic curves E,E′/K, an actual G_K-equivariant F_p-linear isomorphism E[p]≃E′[p] for prime p>M_N implies a K-isogeny. Restricting to a common good-reduction open and extending its finite étale torsion data gives the family statement; taking generic fibres gives the converse. (BT16 Theorem 2, p. 710; BT16 line 67.)
 
+The acceptance signature is `geometric_frey_mazur`, using `gonality` from Conventions. It quantifies over N∈ℕ, with M chosen before k and K, then over every compatible one-variable function-field tower k⊂k(t)⊂K and elliptic Weierstrass curves W,W′/K with both j-invariants outside k. For prime p>M an additive isomorphism of the subgroups of geometric points killed by p, equivariant for every K-automorphism of K̄, yields `Nonempty (TauCeti.Isogeny W.toAffine W'.toAffine)`. This is an actual K-isogeny with no prime-to-p degree condition on the conclusion. The equivariance implication in the signature uses a torsion point Q equal to σ(P); such Q always exists because the additive Galois map preserves p-torsion. N=0 and N=1 are vacuous because function-field gonality is positive.
+
 One proof route proceeds as follows. An elliptic curve and a morphism of finite étale torsion group schemes spread over a common nonempty good-reduction open. Shrink finitely many points to make the two inverse torsion morphisms defined. The smooth proper model and hence gonality do not change under restriction to this open. Apply the family theorem and pass to the generic fibre. Conversely the function-field theorem followed by the extension theorem yields the original-base assertion.
 
 **Checks.**
@@ -1262,7 +1286,9 @@ One proof route proceeds as follows. An elliptic curve and a morphism of finite 
 
 - No equality of semisimplified Galois representations is substituted for the actual isomorphism.
 
-*Needs:* §9.7; AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5; NeronModelsAndSemistableAbelianVarieties §§1.3, 1.8; ModularCurves §0D; ModularCurves §0E; AlgebraicCurves Layer 12; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.1; AbelianSchemesAndArithmeticModuli A3.1.
+- For K=ℂ(t), N=2 and the Legendre curve y²=x(x−1)(x−t), j=256(1−t+t²)³/(t²(1−t)²) is nonconstant and gonality is 1<2. Taking E′=E and the identity torsion isomorphism gives the identity K-isogeny of degree 1; at the zero torsion point both equivariance sides are 0.
+
+*Needs:* §9.7; AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5; NeronModelsAndSemistableAbelianVarieties §§1.3, 1.8; ModularCurves §0D; ModularCurves §0E; AlgebraicCurves Layer 12; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.1; AbelianSchemesAndArithmeticModuli A3.1; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
 
 ### Examples
 
@@ -1298,7 +1324,7 @@ One proof route proceeds as follows. Apply the imported genus-zero and genus-one
 
 - A constant map from an elliptic curve does not produce an integral elliptic image curve.
 
-*Needs:* §9.5; §7.5; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change; AlgebraicCurves Layer 12.
+*Needs:* §9.5; §7.5; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change; AlgebraicCurves Layer 12; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization; SchemeAndStackFoundations §4.13 (finite normalization of integral curves).
 
 ### 10.3 The resolution and its known curve set
 
@@ -1330,7 +1356,7 @@ One proof route proceeds as follows. Read the stabilizer characters from the exa
 
 - The strict transform of a singular Hecke curve has the same normalization genus even when its arithmetic genus changes.
 
-*Needs:* §0.5; §0.6; SchemeAndStackFoundations §§4.11–4.13 and gap:cyclic-surface-resolution-and-contraction; SchemeAndStackFoundations §§5.9–5.10 and gap:surface-contraction-intersections.
+*Needs:* §0.5; §0.6; SchemeAndStackFoundations §§4.11–4.13 and gap:cyclic-surface-resolution-and-contraction; SchemeAndStackFoundations §§5.9–5.10 and gap:surface-contraction-intersections; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
 
 ### 10.4 Every rational curve on the resolution is known
 
@@ -1342,7 +1368,7 @@ One proof route proceeds as follows. If the curve is not exceptional, its image 
 
 - An exceptional component maps to a point of Z(p) and a strict transform maps birationally onto its Hecke curve; for p>M₃^geom no rational curve of a third kind exists.
 
-*Needs:* §10.3; §10.2; AlgebraicCurves Layer 12; SchemeAndStackFoundations §§4.11–4.13 and gap:cyclic-surface-resolution-and-contraction.
+*Needs:* §10.3; §10.2; AlgebraicCurves Layer 12; SchemeAndStackFoundations §§4.11–4.13 and gap:cyclic-surface-resolution-and-contraction; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization; SchemeAndStackFoundations §4.13 (finite normalization of integral curves).
 
 ### 10.5 A minimal model obtained by contracting known curves
 
@@ -1573,7 +1599,7 @@ For a proper H<SL₂(F_p), an index d<p would give an action on d letters killin
 
 For the descent step let K=k(U). Nonisotriviality implies geometric End(E)=Z: an extra geometric endomorphism spreads to a finite-type model and a finite cover, and over C its locally constant lattice action forces the period to be a fixed imaginary-quadratic value. Then j is constant, contrary to the original nonconstancy, which survives faithfully flat base change. For a geometric isogeny h:E→E′, composition with h∨ injects Hom(E,E′) into End(E)=Z: its kernel would map the connected E into a finite group. The image contains h∨h=[deg h], so the imported free finite Hom module has rank one. Its primitive generator f satisfies σf=χ(σ)f for a continuous quadratic character χ. A prime-to-p isogeny from Hecke containment implies p∤deg f by degree scaling.
 
-Let Ψ be the original actual torsion isomorphism and f the geometric cyclic isogeny supplied by containment in H_m. Its restriction is f[p]=λΨ for a fixed λ∈𝔽_p×. Every Galois conjugate σf has the same torsion restriction, since Ψ is equivariant and scalars are fixed. The rank-one geometric Hom lattice gives σf=±f. The negative choice would say f[p]=−f[p], impossible because f[p] is invertible and p is odd. Hence f is invariant and descends over k(U). This argument uses neither full monodromy nor the separate no-self-twist endpoint. A nontrivial quadratic twist has the same projective representation; its geometric isomorphism is not scalar-compatible with an actual equivariant torsion isomorphism.
+Let Ψ be the original actual torsion isomorphism and f the geometric cyclic isogeny supplied by containment in H_m. Its restriction is f[p]=λΨ for a fixed λ∈𝔽_p×. Every Galois conjugate σf has the same torsion restriction, since Ψ is equivariant and scalars are fixed. The rank-one geometric Hom lattice gives σf=±f. The negative choice would say f[p]=−f[p], impossible because f[p] is invertible and p is odd. Hence f is invariant and descends over k(U). This argument uses neither full monodromy nor the auxiliary self-twist argument. A nontrivial quadratic twist has the same projective representation; its geometric isomorphism is not scalar-compatible with an actual equivariant torsion isomorphism.
 
 Since E and E′ are abelian schemes over the regular smooth curve U, the Néron mapping property extends f uniquely over U (BLR §1.2 Proposition 8, page 15; §1.4 Proposition 2, page 19). Extend its dual as well; their compositions remain multiplication by deg f because equality holds generically and the targets are separated. The kernel lies in the finite étale torsion scheme, the image contains multiplication-by-degree, and the resulting homomorphism is a finite surjective isogeny over U. The mapping property is applied on U, where both schemes have good reduction.
 

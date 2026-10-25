@@ -5415,7 +5415,7 @@
     },
     {
       "slug": "gonality-norm-and-base-change",
-      "needs": "On smooth proper geometrically connected curves over algebraically closed fields, provide gonality as the minimum positive degree of a finite map to the projective line, realization by a base-point-free pencil, invariance under algebraically closed extension, gon(D)≤gon(B) under a nonconstant finite map B→D, gon≤g+1, and gonality 1 and 2 in genera zero and one.",
+      "needs": "On smooth proper geometrically connected curves over algebraically closed fields, provide gonality as the minimum positive degree of a finite map to the projective line, comparison with the minimum finite degree [K:k(f)] over transcendental f in the function field K, realization by a base-point-free pencil, invariance under algebraically closed extension, gon(D)≤gon(B) under a nonconstant finite map B→D, gon≤g+1, and gonality 1 and 2 in genera zero and one.",
       "supplier": "AlgebraicCurves",
       "section": "Layer 12, with Layers 3–5"
     },
@@ -5433,7 +5433,7 @@
     },
     {
       "slug": "curve-extension-and-normalization",
-      "needs": "For a smooth connected curve over an algebraically closed characteristic-zero field, extend a morphism to a proper target across the missing points of its smooth proper model and factor a nonconstant map through the smooth proper normalization of its integral image, and prove that birational integral curves have isomorphic normalization function fields and equal normalization genus.",
+      "needs": "For a smooth connected curve over an algebraically closed characteristic-zero field and a proper separated finite-type target, extend a morphism uniquely to its smooth proper model, factor the resulting nonconstant map through the finite normalization of its reduced integral image supplied by SchemeAndStackFoundations §4.13, and prove that birational integral curves have equal normalization genus.",
       "supplier": "AlgebraicCurves",
       "section": "Layer 12"
     },
