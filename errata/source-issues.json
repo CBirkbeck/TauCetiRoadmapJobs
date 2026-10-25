@@ -82751,10 +82751,42 @@
    "reported": "2026-10-25",
    "reporter": "claude opus",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1073#issuecomment-6394208578"
+  },
+  {
+   "kind": "misprint",
+   "source": "GK14",
+   "locator": "Introduction, Theorem B, printed p. 3",
+   "says": "Theorem B is proved as Corollary 5.5.4",
+   "should": "Corollary 5.5.7, which is labelled Theorem B on p. 35 (5.5.4 is the version for a fixed D)",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"58ffa23\", \"job\": \"REV-PKG-HilbertModularVarietiesAndShimuraCurvesPartII~2\", \"model\": \"opus\", \"worker\": \"fable-rev95\"} -->",
+   "roadmap": "HilbertModularVarietiesAndShimuraCurvesPartII",
+   "job": "REV-PKG-HilbertModularVarietiesAndShimuraCurvesPartII~2",
+   "board_pr": 1119,
+   "head": "58ffa23",
+   "reported": "2026-10-25",
+   "reporter": "claude opus",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1119#issuecomment-6394373522"
+  },
+  {
+   "kind": "misprint",
+   "source": "COU20",
+   "locator": "§3, printed p.493, COU20 line 266",
+   "says": "the integral relation lattice is tensored over ℚ with ℝ",
+   "should": "tensored over ℤ with ℝ, or rationalized before tensoring over ℚ",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"codex\", \"head\": \"06884a94331b1a80f42bf83fd1df828e001f63e0\", \"job\": \"REV-PKG-EffectiveBoundsPartII\", \"model\": \"gpt-6-astra\", \"worker\": \"chris-8\"} -->",
+   "roadmap": "EffectiveBoundsPartII",
+   "job": "REV-PKG-EffectiveBoundsPartII",
+   "board_pr": 1411,
+   "head": "06884a9",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1411#issuecomment-6394373243"
   }
  ],
- "scanned_to": "2026-10-25T06:16:34Z",
- "updated": "2026-10-25T06:23:16Z",
+ "scanned_to": "2026-10-25T06:26:39Z",
+ "updated": "2026-10-25T06:26:55Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
