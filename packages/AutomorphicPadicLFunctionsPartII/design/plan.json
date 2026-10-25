@@ -3158,40 +3158,6 @@
   ],
   "gaps": [
     {
-      "id": "AutomorphicPadicLFunctionsPartII:G1",
-      "title": "Residue, current and p-adic sign comparison",
-      "detail": "Prove the single commuting comparison from the algebraic residue normalization through the corrected current and the oriented unit fundamental cycle to the invariant p-adic differential. Local exterior-algebra checks force the recurrence and the factor (−1)^(|β|+1), but do not alone determine its cancellation or transport in the final unsigned interpolation convention. Track every determinant permutation, conjugate-dual identification and t↦t⁻¹ coordinate change; do not assume Theorem 5.27’s proof Step 1 resolves it.",
-      "neededBy": [
-        "AutomorphicPadicLFunctionsPartII:KV.3/current-equation",
-        "AutomorphicPadicLFunctionsPartII:KV.4/explicit-ek",
-        "AutomorphicPadicLFunctionsPartII:KV.5/partial-l-identity",
-        "AutomorphicPadicLFunctionsPartII:KV.8/smoothed-ray-measure",
-        "AutomorphicPadicLFunctionsPartII:KV.8/interpolation"
-      ]
-    },
-    {
-      "id": "AutomorphicPadicLFunctionsPartII:G2",
-      "title": "Uniform bounded division of smoothing factors",
-      "detail": "Prove the integral Iwasawa-algebra divisibility or uniform Kummer congruences in KV.8/bounded-desmoothing. The finite C_p example gives an explicit obstruction to deriving boundedness merely from integral individual character values. The cited de Shalit auxiliary-ideal argument was not accessible in a cleared source; no theorem from it is claimed as read.",
-      "neededBy": [
-        "AutomorphicPadicLFunctionsPartII:KV.8/bounded-desmoothing",
-        "AutomorphicPadicLFunctionsPartII:KV.8/interpolation"
-      ]
-    },
-    {
-      "id": "AutomorphicPadicLFunctionsPartII:G3",
-      "title": "Integral descent to full unit groups",
-      "detail": "The torsion-free cap is integral; normalized full-unit cap can require division by the torsion order. Prove the required specific divisibility for the trace-zero residue classes at all nonunit unit-group indices. Proposition 2.27’s unrestricted homology-transfer argument does not provide it. This affects the integral critical-value theorem and the bounded p-adic construction, without asserting that either published theorem is false.",
-      "neededBy": [
-        "AutomorphicPadicLFunctionsPartII:KV.5/eisenstein-integrality",
-        "AutomorphicPadicLFunctionsPartII:KV.5/partial-critical-integrality",
-        "AutomorphicPadicLFunctionsPartII:KV.5/critical-integrality",
-        "AutomorphicPadicLFunctionsPartII:KV.6/theta-class",
-        "AutomorphicPadicLFunctionsPartII:KV.7/eisenstein-measure",
-        "AutomorphicPadicLFunctionsPartII:KV.8/interpolation"
-      ]
-    },
-    {
       "slug": "unit-type-classification",
       "needs": "Classify integer embedding types trivial on a finite-index unit subgroup as norm pullbacks from the maximal CM subfield with parallel conjugate sum, or parallel norm powers when no CM subfield exists.",
       "supplier": "GlobalNumberFields",
@@ -3205,7 +3171,7 @@
     },
     {
       "slug": "equivariant-poincare-limit",
-      "needs": "Supply the inverse-limit and vanishing R¹lim comparison for finite-level equivariant completed Poincaré complexes, affine evaluation into group cohomology and the discrete-unit Borel smooth/coherent comparison.",
+      "needs": "Supply the inverse-limit and vanishing R¹lim comparison for finite-level equivariant completed Poincaré complexes and the discrete-unit Borel smooth/coherent comparison.",
       "supplier": "SchemeAndStackFoundations",
       "section": "§2.23"
     },
@@ -3220,12 +3186,6 @@
       "needs": "Supply top unit-torus integration and Stokes for that current resolution, with local analytic residue and trace identified with the rigidified algebraic coherent trace.",
       "supplier": "ComplexComparisonPartII",
       "section": "C5.4"
-    },
-    {
-      "slug": "group-torus-comparison",
-      "needs": "Supply the native discrete group-to-singular local-coefficient comparison for finite-rank free abelian groups on their logarithmic universal covers, naturally under finite-index maps.",
-      "supplier": "AlgebraicTopology",
-      "section": "Stage 5 items 3–4 and Stage 8.8"
     },
     {
       "slug": "torus-cap-projection",

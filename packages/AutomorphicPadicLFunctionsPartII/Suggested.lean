@@ -21,11 +21,12 @@ The following headline theorems are not statable at the pins:
 * The weak Deligne period relation: Hecke motives and determinant periods are missing.
 * The integral CM Eisenstein measure and its critical moments: ordinary theta data,
   integral multivariate Amice and Eisenstein–Kronecker coordinates are missing.
-* Bounded ray-class interpolation, uniqueness and the CM-field Katz comparison:
-  compatible arithmetic avatars, CM periods, the smoothed arithmetic family and
-  the Katz measure interface are missing.
+* Bounded ray-class interpolation and uniqueness:
+  the compatible arithmetic-avatar, CM-period and smoothed arithmetic-family
+  carriers are missing.
 
-The analytic continuation headline below uses the actual lattice series in Layer 3.
+The analytic continuation and functional-equation headlines below use the actual
+lattice series in Layer 3.
 The series is used through HasSum in its convergence half-plane; the total tsum
 outside that half-plane is not claimed to be its analytic continuation.
 -/
@@ -51,12 +52,6 @@ noncomputable def kroneckerTerm {d : ℕ} (h : Fin d → ℝ) (ν : Fin d → �
       Complex.exp ((2 * Real.pi * Complex.I) * (hermitianPairing h l w).im) /
       Complex.exp (s * (Real.log (hermitianPairing h (z + l) (z + l)).re : ℂ))
 
-/-- The generalized Eisenstein–Kronecker lattice series. In its convergence
-half-plane this is the sum of the terms in Kings–Sprang v4, Definition 3.11. -/
-noncomputable def kroneckerSeries {d : ℕ} (Λ : Submodule ℤ (Fin d → ℂ))
-    (h : Fin d → ℝ) (ν : Fin d → ℕ) (z w : Fin d → ℂ) (s : ℂ) : ℂ :=
-  ∑' l : Λ, kroneckerTerm h ν z w s l
-
 /-- For every positive diagonal Hermitian form and full real lattice in ℂᵈ,
 the generalized Kronecker series has meromorphic continuation, is analytic away
 from d (in particular at zero), and has at most a simple pole at d. For nonzero
@@ -72,12 +67,47 @@ theorem kronecker_meromorphic_continuation
     ∃ F : ℂ → ℂ,
       MeromorphicOn F Set.univ ∧
       (∀ s : ℂ, (d : ℝ) + (∑ i, (ν i : ℝ)) / 2 < s.re →
-        HasSum (fun l : Λ => kroneckerTerm h ν z w s l) (F s) ∧
-        F s = kroneckerSeries Λ h ν z w s) ∧
+        HasSum (fun l : Λ => kroneckerTerm h ν z w s l) (F s)) ∧
       (∀ s : ℂ, s ≠ (d : ℂ) → AnalyticAt ℂ F s) ∧
       (ν ≠ 0 → AnalyticAt ℂ F (d : ℂ)) ∧
       (∃ G : ℂ → ℂ, AnalyticAt ℂ G (d : ℂ) ∧
         ∀ s : ℂ, s ≠ (d : ℂ) → G s = (s - (d : ℂ)) * F s) := by
+  sorry
+
+/-- The gamma-completed Kronecker series satisfies the primal/alternating-dual
+functional equation with phase exp(2πi Im H(w,z)). The metric covolume is the
+Lebesgue covolume multiplied by ∏h_i. The uncompleted residue at d is
+π^d/(Γ(d)vol_H Λ) when ν=0 and w belongs to the alternating dual; otherwise w
+outside that dual gives regularity at d. The pointwise equation excludes Gamma
+poles and the possible poles of either uncompleted series. Kings–Sprang v4,
+Proposition 3.13 and its theta/Mellin proof, with the phase and completed residues
+as specified in README.md §3.4. -/
+theorem kronecker_functional_equation
+    (d : ℕ) (hd : 0 < d) (Λ Λd : Submodule ℤ (Fin d → ℂ))
+    [DiscreteTopology Λ] [IsZLattice ℝ Λ]
+    (h : Fin d → ℝ) (hh : ∀ i, 0 < h i)
+    (hΛd : ∀ l, l ∈ Λd ↔ ∀ m ∈ Λ, ∃ n : ℤ, (hermitianPairing h l m).im = n)
+    (ν : Fin d → ℕ) (z w : Fin d → ℂ) :
+    ∃ F G : ℂ → ℂ,
+      (∀ s : ℂ, (d : ℝ) + (∑ i, (ν i : ℝ)) / 2 < s.re →
+        HasSum (fun l : Λ => kroneckerTerm h ν z w s l) (F s)) ∧
+      (∀ s : ℂ, (d : ℝ) + (∑ i, (ν i : ℝ)) / 2 < s.re →
+        HasSum (fun l : Λd => kroneckerTerm h ν w z s l) (G s)) ∧
+      (∀ s : ℂ, s ≠ (d : ℂ) → AnalyticAt ℂ F s ∧ AnalyticAt ℂ G s) ∧
+      (∀ s : ℂ, (∀ n : ℕ, s ≠ -n) →
+        (∀ n : ℕ, ((d + ∑ i, ν i : ℕ) : ℂ) - s ≠ -n) →
+        s ≠ (d : ℂ) → ((d + ∑ i, ν i : ℕ) : ℂ) - s ≠ (d : ℂ) →
+        (Real.pi : ℂ) ^ (-s) * Complex.Gamma s * F s =
+          Complex.exp ((2 * Real.pi * Complex.I) * (hermitianPairing h w z).im) /
+            (((∏ i, h i) * ZLattice.covolume Λ : ℝ) : ℂ) *
+          ((Real.pi : ℂ) ^ (-(((d + ∑ i, ν i : ℕ) : ℂ) - s)) *
+            Complex.Gamma (((d + ∑ i, ν i : ℕ) : ℂ) - s) *
+            G (((d + ∑ i, ν i : ℕ) : ℂ) - s))) ∧
+      (ν = 0 → w ∈ Λd → Filter.Tendsto (fun s => (s - d) * F s)
+        (nhdsWithin (d : ℂ) {(d : ℂ)}ᶜ)
+        (nhds ((Real.pi : ℂ) ^ (d : ℂ) /
+          (Complex.Gamma d * (((∏ i, h i) * ZLattice.covolume Λ : ℝ) : ℂ))))) ∧
+      (w ∉ Λd → AnalyticAt ℂ F (d : ℂ)) := by
   sorry
 
 end TauCetiRoadmap.AutomorphicPadicLFunctionsPartII

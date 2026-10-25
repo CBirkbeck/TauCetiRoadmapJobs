@@ -1,21 +1,21 @@
 # Roadmap: automorphic p-adic L-functions, part II — critical Hecke values
 
-**Summary.** This roadmap extends the ray-class distributions and CM-field Katz interpolation of AutomorphicPadicLFunctions to critical algebraic Hecke values over a totally imaginary field containing a CM subfield. It builds integral equivariant coherent Eisenstein–Kronecker classes from completed Poincaré bundles, identifies them through meromorphic Kronecker series and oriented unit-torus integration, and constructs ordinary theta measures. Its end theorems are regularized critical-value integrality in both conductor cases, generalized Shimura algebraicity, the weak Deligne period relation, and bounded ordinary ray-class interpolation with all local factors. The three compatibility results needed for these conclusions—residue-to-moment signs, integral unit-index descent, and bounded division of auxiliary factors—are mathematical targets of the build.
+**Summary.** This roadmap combines the Hecke and ray-class theory of GlobalNumberFields Layers 2, 7 and 9–10, the CM geometry of ComplexMultiplicationAndExplicitReciprocity §1.3 and the measure theory of PadicMeasuresIwasawaAlgebras §§0–3 to construct critical algebraic Hecke values over a totally imaginary field containing a CM subfield. It builds integral equivariant coherent Eisenstein–Kronecker classes from completed Poincaré bundles, identifies them through meromorphic Kronecker series and oriented unit-torus integration, and constructs ordinary theta measures. Its end theorems are regularized critical-value integrality in both conductor cases, generalized Shimura algebraicity, the weak Deligne period relation, and bounded ordinary ray-class interpolation with all local factors. The three compatibility results needed for these conclusions—residue-to-moment signs, integral unit-index descent, and bounded division of auxiliary factors—are mathematical targets of the build.
 
 ## Scope and ownership
 
-This Part II owns the critical coefficient specialization, trace-zero residue classes, critical cap and conductor refinement, the CM Borel current, its unit-orbit evaluation, critical-value applications and the ordinary theta-to-ray-class construction. The base program stops at ray-class distributions and CM-field Katz interpolation; the extension here permits L to be a non-CM extension of its maximal CM subfield K and permits every admissible critical type and every tame integral conductor prime to p. Only the CM-field comparison at the end uses the narrower Katz overlap.
+This Part II owns the critical coefficient specialization, trace-zero residue classes, critical cap and conductor refinement, the CM Borel current, its unit-orbit evaluation, critical-value applications and the ordinary theta-to-ray-class construction. GlobalNumberFields Layers 2, 7 and 9–10 supply the character and ray-class objects, ComplexMultiplicationAndExplicitReciprocity §1.3 supplies the CM geometry, and PadicMeasuresIwasawaAlgebras §§0–3 supplies bounded measure theory without constructing an arithmetic p-adic L-function. The extension here constructs the critical Eisenstein classes and their arithmetic measures, permits L to be a non-CM extension of its maximal CM subfield K, and includes every admissible critical type and every tame integral conductor prime to p.
 
 The general objects have the following owners:
 
-- Mathlib owns `NumberField.IsCMField`, `IsZLattice`, the logarithmic unit lattice, `AbstractMeasure`, Dirac measures, pushforward and convolution, Mellin and Gamma integrals, Gaussian Fourier transforms and one-dimensional Schwartz Poisson summation. Tau Ceti owns the split comodule weight decomposition and its scalar point action. The continuation here is a lattice-parameter and polynomial-moment application of these analytic results.
+- Mathlib owns `NumberField.IsCMField`, `IsZLattice`, the logarithmic unit lattice, `AbstractMeasure`, Dirac measures, pushforward and convolution, Mellin and Gamma integrals, Gaussian Fourier transforms and one-dimensional Schwartz Poisson summation. **ThetaSeries**, Layer 1 and §§2A, 2C, owns lattice Poisson summation, its dual and covolume laws. Tau Ceti owns the split comodule weight decomposition and its scalar point action. The continuation here is a lattice-parameter and polynomial-moment application of these analytic results.
 - **GlobalNumberFields**, Layers 2, 7 and 9–10, owns Hecke characters, ideal-side characters, ray classes, algebraic infinity types, unit compatibility and purity. **ClassFieldTheory**, Layers 7 and 11–13, owns local and global arithmetic reciprocity. The critical admissibility and p-adic-avatar interfaces required in the exact contracts are extensions of these owners.
-- **AbelianSchemesAndArithmeticModuliPartII**, P0.1–P0.6, P1.1, P2.1–P2.8, P3.2–P3.4 and P4.1–P4.3, owns invariant tensors, shuffle products, universal extensions, completed Poincaré sheaves, their moments, splittings, connections and ordinary trivializations. **ComplexMultiplicationAndExplicitReciprocity**, §§0.1 and 1.3, owns CM types, Serre tensors, eigenspaces, ideal-kernel degrees and period pairings. This roadmap only chooses the based data and applies those maps to the residue class.
-- **SchemeAndStackFoundations**, §§2.7, 2.19–2.20 and 2.23, owns supports, coherent duality and derived equivariance. **AlgebraicTopology**, Stages 5–6 and 8.8, owns finite covers, torus homology, local-coefficient caps, fundamental classes and classifying models. **DifferentialGeometry**, Layers 0–1 and 9, owns generic forms and integration. **Hyperfunctions**, HF2.AnalyticPreparation.CurrentResolution, owns compact bundle-current regularization and its Dolbeault homotopies. **ComplexComparisonPartII**, C1.1 and C5.1/C5.4, owns the analytic/coherent comparisons; its current-resolution and trace compatibility extensions are named in the contracts.
+- **AbelianSchemesAndArithmeticModuliPartII**, P0.1–P0.6, P1.1, P2.1–P2.8, P3.2–P3.4 and P4.1–P4.3, owns invariant tensors, shuffle products, universal extensions, completed Poincaré sheaves, their moments, splittings, connections and ordinary trivializations. **ComplexMultiplicationAndExplicitReciprocity**, §1.3, owns lifted CM types, Serre tensors, eigenspaces, ideal-kernel degrees and period pairings. This roadmap only chooses the based data and applies those maps to the residue class.
+- **SchemeAndStackFoundations**, §§2.6–2.7, 2.19–2.20 and 2.23, owns supports, coherent duality and derived equivariance. **AlgebraicTopology**, Stages 5–6 and Stage 8 items 5, 7 and 8, owns finite covers, torus homology, local-coefficient caps, fundamental classes and classifying models. **DifferentialGeometry**, Layers 0–1 and 5, owns generic forms and integration. **Hyperfunctions**, HF2.AnalyticPreparation.CurrentResolution, owns compact bundle-current regularization and its Dolbeault homotopies. **ComplexComparisonPartII**, C1.1 and C5.1/C5.4, owns the analytic/coherent comparisons; its current-resolution and trace compatibility extensions are named in the contracts.
 - **FiniteFlatGroupsAndIntegralPadicHodgeTheory**, R07.1.7, R07.1.9 and R07.1.13, owns Cartier duality and connected–étale/formal group theory. **PadicMeasuresIwasawaAlgebras**, §§0.1, 1.2, 1.7, 2.1–2.2 and 3.1, owns the measure algebra, weighting, bounded Amice theory and pseudomeasures. The integral multivariate and bounded-divisibility extensions remain with that owner.
 - **AutomorphicLFunctionsAndLocalFactors**, AL.1 “Local epsilon factors and Gauss sums” and “Rank-one specialisation and Hecke comparison”, owns the analytic Hecke and local-factor interfaces. **PeriodsAndSpecialValues**, PS.0–PS.1, owns motives and determinant-period interfaces, specified below as supplier requirements.
 
-Nonordinary CM special values owns the independent inert-prime CM central-value direction. An inert imaginary-quadratic prime does not satisfy the ordinary predicate here (BKO-2021, Introduction, pp.943–944, BKO-2021 line 70). No nonordinary unit decomposition or main conjecture is a supplier for this build.
+NonordinaryCMSpecialValues owns the independent inert-prime CM central-value direction. An inert imaginary-quadratic prime does not satisfy the ordinary predicate here (BKO-2021, Introduction, pp.943–944, BKO-2021 line 70). No nonordinary unit decomposition or main conjecture is a supplier for this build.
 
 ## Conventions
 
@@ -37,7 +37,11 @@ Use `NumberField.IsCMField` in `Mathlib/NumberTheory/NumberField/CMField.lean:69
 
 Use `AbstractMeasure`, `AbstractMeasure.dirac` and `AbstractMeasure.map` in `Mathlib/NumberTheory/Padics/Measure/Basic.lean:40`, `:97` and `:105`. The carrier is a continuous linear functional on continuous maps; its definition imposes neither total mass one nor an operator bound of one. Use convolution and `AbstractMeasure.diracHom` from `Mathlib/NumberTheory/Padics/Measure/Monoid.lean`. `AbstractMeasure.amiceTransformEquiv` in `Mathlib/NumberTheory/Padics/Measure/AmiceTransform.lean:157` has domain measures on ℤ_p with ℤ_p coefficients; the coefficient-complete multivariate extension consumed here is the supplier gap below.
 
-Use `SchwartzMap.tsum_eq_tsum_fourier` in `Mathlib/Analysis/Fourier/PoissonSummation.lean:216` for real one-dimensional Schwartz functions, `fourier_gaussian_innerProductSpace` in `Mathlib/Analysis/SpecialFunctions/Gaussian/FourierTransform.lean:352` for a finite-dimensional real inner-product space and Re(b)>0, `mellin` in `Mathlib/Analysis/MellinTransform.lean:90`, and `Complex.Gamma_eq_integral` in `Mathlib/Analysis/SpecialFunctions/Gamma/Basic.lean:319` only for Re(s)>0. The lattice continuation iterates Poisson summation and retains the real change-of-basis determinant. `MeromorphicOn`, `AnalyticAt` and `HasSum` express its acceptance theorem.
+Use `fourier_gaussian_innerProductSpace` in `Mathlib/Analysis/SpecialFunctions/Gaussian/FourierTransform.lean:352` for a finite-dimensional real inner-product space and Re(b)>0, `mellin` in `Mathlib/Analysis/MellinTransform.lean:90`, and `Complex.Gamma_eq_integral` in `Mathlib/Analysis/SpecialFunctions/Gamma/Basic.lean:319` only for Re(s)>0. `MeromorphicOn`, `AnalyticAt` and `HasSum` express its acceptance theorems. Use `ZLattice.covolume` in `Mathlib/Algebra/Module/ZLattice/Covolume.lean:72` with the product Lebesgue measure on Fin d → ℂ; §3.3 multiplies this by ∏h_i to obtain the metric volume. `ZLattice.covolume_pos` in the same file, line 98, supplies positivity for a full discrete lattice. `Complex.Gamma_neg_nat_eq_zero` in `Mathlib/Analysis/SpecialFunctions/Gamma/Basic.lean:344` explains the excluded Gamma poles in §3.4.
+
+### From TauCetiRoadmap.ThetaSeries
+
+Consume Layer 1, items 1A, 1E and 1F, for lattice Poisson summation, separate summability and Gaussian Schwartz functions, and Layer 2, items 2A and 2C, for dual biduality and inverse covolumes. Apply them in the Euclidean model of (ℂ^d, Re H) given by x↦(√h_i·x_i). If Λ^∨ is the Re H-dual, the alternating dual in §3.3 is Λ*=i·Λ^∨: Im H(iu,m)=Re H(u,m). Metric covolumes therefore satisfy vol_H(Λ*)=vol_H(Λ)⁻¹.
 
 ### From Tau Ceti
 
@@ -61,17 +65,17 @@ Consume P0.1–P0.6 for invariant tensors, multigrading, shuffle multiplication 
 
 ### From TauCetiRoadmap.ComplexMultiplicationAndExplicitReciprocity
 
-Consume §0.1 for the lifted embedding partition and §1.3 for CM Serre tensors, CM Lie/Hodge eigenspaces, ideal-kernel degrees and both period pairings. The generic tensor is O_L⊗_(O_K)A₀, its dimension is [L:K]dim A₀, and the cotangent eigenspaces are trivialized only after the permitted base change. The ideal [c]-kernel has finite-flat rank Nc, including its inseparable part. The period pairing is conjugate on the A-cotangent factor and uses the trace-dual ideal with inverse different. The same §1.3 controls the complex periods, without an ordinary-prime hypothesis.
+Consume §1.3, including `cmHodgeEigenspaces`, for the lifted embedding partition, CM Serre tensors, CM Lie/Hodge eigenspaces, ideal-kernel degrees and both period pairings. The generic tensor is O_L⊗_(O_K)A₀, its dimension is [L:K]dim A₀, and the cotangent eigenspaces are trivialized only after the permitted base change. The ideal [c]-kernel has finite-flat rank Nc, including its inseparable part. The period pairing is conjugate on the A-cotangent factor and uses the trace-dual ideal with inverse different. The same §1.3 controls the complex periods, without an ordinary-prime hypothesis.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Consume §2.7's support localization triangle, §§2.19–2.20's regular-immersion/coherent duality and §2.23's derived equivariant sheaf cohomology and its spectral sequences. Γ acts on A over the fixed base; it need not act trivially on A. At a point the comparison is native discrete group cohomology, and in general equivariant cohomology is not defined by taking invariants after cohomology.
+Consume §2.6's affine quasi-coherent acyclicity, §2.7's support localization triangle, §§2.19–2.20's regular-immersion/coherent duality and §2.23's derived equivariant sheaf cohomology and its spectral sequences. Γ acts on A over the fixed base; it need not act trivially on A. At a point the comparison is native discrete group cohomology, and in general equivariant cohomology is not defined by taking invariants after cohomology.
 
-What SchemeAndStackFoundations must provide (gap:equivariant-poincare-limit): Supply the inverse-limit and vanishing R¹lim comparison for finite-level equivariant completed Poincaré complexes, affine evaluation into group cohomology and the discrete-unit Borel smooth/coherent comparison.
+What SchemeAndStackFoundations must provide (gap:equivariant-poincare-limit): Supply the inverse-limit and vanishing R¹lim comparison for finite-level equivariant completed Poincaré complexes and the discrete-unit Borel smooth/coherent comparison.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
-C1.1 supplies the local bundle-valued Dolbeault comparison; C5.1 supplies the ordinary algebraic/analytic de Rham comparison, and C5.4 supplies the generic current calculus, its test topology and regularization, real/complex comparison, integration and residue normalizations. Its form-first pairing converts to the test-first pairing here by (−1)^(k(N−k)) in real dimension N and form degree k; at N=2, k=1 this factor is −1. DifferentialGeometry Layers 0–1 and 9 supply the generic forms and integration on which those comparisons operate. The bundle-valued Borel current model uses the following extensions.
+C1.1 supplies the local bundle-valued Dolbeault comparison; C5.1 supplies the ordinary algebraic/analytic de Rham comparison, and C5.4 supplies the generic current calculus, its test topology and regularization, real/complex comparison, integration and residue normalizations. Its form-first pairing converts to the test-first pairing here by (−1)^(k(N−k)) in real dimension N and form degree k; at N=2, k=1 this factor is −1. DifferentialGeometry Layers 0–1 and 5 supply the generic forms and integration on which those comparisons operate. The bundle-valued Borel current model uses the following extensions.
 
 What ComplexComparisonPartII must provide (gap:borel-bundle-currents): Extend C5.4’s supplied bundle-test/current calculus to the mixed relative bidegrees on a complex manifold times a real contractible unit cover, with the local form/current resolution natural in finite Poincaré levels and flat connections.
 
@@ -83,9 +87,7 @@ Consume HF2.AnalyticPreparation.CurrentResolution for finite-rank bundle-valued 
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-Consume Stage 5 items 3–4 for finite-cover transfer and torus exterior-power homology, Stage 6 for singular local coefficients, cap products and oriented fundamental classes, and Stage 8.8 for the discrete-group classifying-space/bar comparison. The contract concerns a finite-rank free abelian unit group acting on its contractible logarithmic cover and its actual coefficient representation. It includes finite-index naturality and the top-degree identification with the coefficient line. No surjective transfer through a finite torsion group is part of the contract.
-
-What AlgebraicTopology must provide (gap:group-torus-comparison): Supply the native discrete group-to-singular local-coefficient comparison for finite-rank free abelian groups on their logarithmic universal covers, naturally under finite-index maps.
+Consume Stage 5 items 3–4 for finite-cover transfer and torus exterior-power homology, Stage 6 for singular local coefficients, cap products and oriented fundamental classes, and Stage 8 items 5, 7 and 8 for Whitehead equivalence, finite CW type of the compact torus and the discrete-group classifying-space/bar comparison. The contract concerns a finite-rank free abelian unit group acting on its contractible logarithmic cover and its actual coefficient representation. It includes finite-index naturality and the top-degree identification with the coefficient line. No surjective transfer through a finite torsion group is part of the contract.
 
 What AlgebraicTopology must provide (gap:torus-cap-projection): Supply the compatibility of the native group-cohomology comparison with the oriented local-coefficient torus cap, its top-degree coefficient-line identification and finite-cover projection formula.
 
@@ -117,7 +119,7 @@ What PeriodsAndSpecialValues must provide (gap:critical-cm-deligne-period): Supp
 
 ## How to read the build
 
-Layers 0–2 select the critical coefficient lines, construct the residue class and evaluate it integrally, with conductor refinement separated from unit-index normalization. Layers 3–4 construct the analytic representative and identify its unit-orbit series. Layer 5 converts this evaluation into period-normalized critical values, proves integral full-unit descent and deduces algebraicity and the weak period relation. Layers 6–7 use ordinary levels to turn the same class into theta functions and bounded Eisenstein measures. Layer 8 forms the ray-class measure, proves the residue-to-moment sign comparison and uniform bounded desmoothing, and gives the final interpolation theorem. Each *Needs:* line separates statement inputs from the suggested proof route. `Suggested.lean` is the acceptance test for the headline continuation theorem that is statable on native carriers; the other headline statements require the geometric and arithmetic interfaces specified here.
+Layers 0–2 select the critical coefficient lines, construct the residue class and evaluate it integrally, with conductor refinement separated from unit-index normalization. Layers 3–4 construct the analytic representative and identify its unit-orbit series. Layer 5 converts this evaluation into period-normalized critical values, proves integral full-unit descent and deduces algebraicity and the weak period relation. Layers 6–7 use ordinary levels to turn the same class into theta functions and bounded Eisenstein measures. Layer 8 forms the ray-class measure, proves the residue-to-moment sign comparison and uniform bounded desmoothing, and gives the final interpolation theorem. Each *Needs:* line separates statement inputs from the suggested proof route. `Suggested.lean` is the acceptance test for the headline continuation and functional-equation theorems that are statable on native carriers; the other headline statements require the geometric and arithmetic interfaces specified here.
 
 ## Layer 0: Critical types and CM coefficient lines
 
@@ -145,7 +147,7 @@ One proof route is to import the infinity-type and unit-character classification
 - A nonconstant assignment on embeddings above the same embedding of K is rejected even when its signs fit Σ.
 - No assertion that arbitrary totally imaginary fields are CM is used.
 
-*Needs:* GlobalNumberFields Layer 10 (gap:unit-type-classification); ComplexMultiplicationAndExplicitReciprocity §0.1; Mathlib `NumberField.IsCMField`; `TauCeti.Comodule.isInternal_weightSpace`; `TauCeti.Comodule.endOfPoint_tmul_of_mem_weightSpace`.
+*Needs:* GlobalNumberFields Layer 10 (gap:unit-type-classification); ComplexMultiplicationAndExplicitReciprocity §1.3; Mathlib `NumberField.IsCMField`; `TauCeti.Comodule.isInternal_weightSpace`; `TauCeti.Comodule.endOfPoint_tmul_of_mem_weightSpace`.
 
 ### 0.2 CM abelian data with bases and torsion
 
@@ -198,7 +200,7 @@ For ℚ(i), the weight (−2,1) has a=1, β=1; the unequal lifted pair (−1,−
 
 ### Dependencies
 
-GlobalNumberFields Layer 10 (gap:unit-type-classification); ComplexMultiplicationAndExplicitReciprocity §0.1; Mathlib `NumberField.IsCMField`; `TauCeti.Comodule.isInternal_weightSpace`; `TauCeti.Comodule.endOfPoint_tmul_of_mem_weightSpace`; ComplexMultiplicationAndExplicitReciprocity §1.3; AbelianSchemesAndArithmeticModuliPartII P0.6; AbelianSchemesAndArithmeticModuliPartII P0.3/P0.5. The individual statement and proof-route inputs are specified above.
+GlobalNumberFields Layer 10 (gap:unit-type-classification); ComplexMultiplicationAndExplicitReciprocity §1.3; Mathlib `NumberField.IsCMField`; `TauCeti.Comodule.isInternal_weightSpace`; `TauCeti.Comodule.endOfPoint_tmul_of_mem_weightSpace`; ComplexMultiplicationAndExplicitReciprocity §1.3; AbelianSchemesAndArithmeticModuliPartII P0.6; AbelianSchemesAndArithmeticModuliPartII P0.3/P0.5. The individual statement and proof-route inputs are specified above.
 
 ## Layer 1: Residues and equivariant Eisenstein–Kronecker classes
 
@@ -208,7 +210,7 @@ For an isogeny δ:A→A′ such that δ and δ∨ are étale and commute with Γ
 
 Assume R affine; finite étale D/R; x∈U for every evaluation. For D=A[c], Nc∈R× and c prime to the relevant torsion conductor; the two-auxiliary construction also requires Nc′∈R×.
 
-(KS-v4, Definition 2.18, Notation 2.19, pp.19–20; Definition 2.26, p.22; §4.4, p.52, KS-v4 line 836.)
+(KS-v4, Definition 2.18, Notation 2.19, pp.19–20; Definition 2.26, p.22, KS-v4 line 836; two-auxiliary construction in the proof of Theorem 4.10, p.53, KS-v4 line 2490.)
 
 The construction has the following API.
 
@@ -322,7 +324,7 @@ The construction has the following API.
 - For b=0 the moment is the rigidified augmentation.
 - For fixed (x,b,a), the class depends R-linearly on h.
 
-One proof route is to evaluate the finite-level derivative on x, then take mom_b using AbelianSchemesAndArithmeticModuliPartII P2.5 and P2.1. Apply the SchemeAndStackFoundations §2.23 affine comparison to identify equivariant coherent cohomology on Spec R with group cohomology.
+One proof route is to evaluate the finite-level derivative on x, then take mom_b using AbelianSchemesAndArithmeticModuliPartII P2.5 and P2.1. Combine the equivariant spectral sequence of SchemeAndStackFoundations §2.23 with affine quasi-coherent acyclicity from §2.6 to identify equivariant coherent cohomology on Spec R with group cohomology.
 
 **Checks.**
 
@@ -332,7 +334,7 @@ One proof route is to evaluate the finite-level derivative on x, then take mom_b
 - The target contains H, not H¹_dR with the contravariant action.
 - The zero moment is the augmentation of the torsion splitting.
 
-*Needs:* §1.4; AbelianSchemesAndArithmeticModuliPartII P2.5; AbelianSchemesAndArithmeticModuliPartII P2.1; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit).
+*Needs:* §1.4; AbelianSchemesAndArithmeticModuliPartII P2.5; AbelianSchemesAndArithmeticModuliPartII P2.1; SchemeAndStackFoundations §§2.6 and 2.23.
 
 ### 2.2 Orientation-normalized critical Eisenstein classes
 
@@ -349,18 +351,19 @@ The construction has the following API.
 - When |T| is invertible, normalized evaluation is |T|⁻¹ times evaluation on a free complement and satisfies full-index change of group.
 - For an invertible weight line, the canonical identification TSym^a(M)⊗M≃TSym^(a+1)(M) sends u^[a]⊗u to u^[a+1]. It is independent of the local generator and is distinct from shuffle multiplication, which gives (a+1)u^[a+1].
 
-One proof route is to use coefficient-invariants. The native logarithmic unit lattice and units-modulo-torsion equivalence identify Γ\EΓ with an oriented compact torus. Apply the requested comparison of group cohomology with its singular local-system model and the imported cap product. Glue the rank-one shift from local generators; its degree a+1 homogeneity makes it basis-independent. Check ordering independence by simultaneous orientation and determinant changes. Use transfer only in its valid form: in degree zero transfer across a finite-index subgroup multiplies by the index. The unrestricted surjectivity assertion in Proposition 2.27 is not used.
+One proof route is to use coefficient-invariants. The native logarithmic unit lattice and units-modulo-torsion equivalence identify Γ\EΓ with an oriented compact torus. The classifying map from Γ\EΓ to the bar model of Γ induces the identity on π₁=Γ; both spaces have contractible universal cover and CW type, so AlgebraicTopology Stage 8 items 5 and 7 make it a homotopy equivalence. Item 8 identifies its local-system cohomology with native group cohomology, naturally under finite-index inclusions. Apply the imported cap product from Stage 6. Glue the rank-one shift from local generators; its degree a+1 homogeneity makes it basis-independent. Check ordering independence by simultaneous orientation and determinant changes. Use transfer only in its valid form: in degree zero transfer across a finite-index subgroup multiplies by the index. The unrestricted surjectivity assertion in Proposition 2.27 is not used.
 
 **Checks.**
 
 - For d=1, Γ=1 and C=R, cap is the identity R→R.
+- For d=2, Γ=ℤ and trivial coefficients M, both the logarithmic circle and Bℤ have H¹=Hom(ℤ,M)=M; an index-m inclusion induces multiplication by m on H¹. With monodromy −1 on M=ℤ, both give H⁰=0 and H¹=ℤ/2, so replacing local coefficients by constant coefficients fails.
 - For d=2 a transposition reverses the BΓ orientation and the determinant basis, leaving the final tensor unchanged.
 - For d=1 and Γ=μ₂ over a ring with 2 noninvertible, no extension of cap on all H⁰ with the claimed index rule can be integral: it would send 1 to 1/2.
 - For a free rank-one line Ru and a=1, the determinant shift sends u⊗u to u^[2], whereas shuffle multiplication gives 2u^[2]. The shift remains an isomorphism when 2 is a nonunit.
 - For d=1 and Γ=1 the cap product is ordinary degree-zero evaluation.
 - For Γ=μ₂ and Γ₀=1, normalized evaluation requires 1/2; it is not an arbitrary integral R-linear operation.
 
-*Needs:* §2.1; §0.3; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit); Mathlib `NumberField.Units.logEmbeddingEquiv`; Mathlib `NumberField.Units.instZLattice_unitLattice`; AbelianSchemesAndArithmeticModuliPartII P0.4–P0.5; AlgebraicTopology Stage 5 items 3–4 and Stage 8.8 (gap:group-torus-comparison); AlgebraicTopology Stage 6 (gap:torus-cap-projection).
+*Needs:* §2.1; §0.3; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit); Mathlib `NumberField.Units.logEmbeddingEquiv`; Mathlib `NumberField.Units.instZLattice_unitLattice`; AbelianSchemesAndArithmeticModuliPartII P0.4–P0.5; AlgebraicTopology Stage 5 items 3–4 and Stage 8 items 5, 7 and 8; AlgebraicTopology Stage 6 (gap:torus-cap-projection).
 
 ### 2.3 Change of unit subgroup with its normalization
 
@@ -377,7 +380,7 @@ One proof route is to use the finite covering BΓ′→BΓ, cap-product projecti
 - A covering of oriented circles of degree m scales the integral by m.
 - The case μ₂⊃1 is not passed off as an integral surjective transfer.
 
-*Needs:* §2.2; AlgebraicTopology Stage 5 items 3–4 and Stage 8.8 (gap:group-torus-comparison); AlgebraicTopology Stage 6 (gap:torus-cap-projection).
+*Needs:* §2.2; AlgebraicTopology Stage 5 items 3–4 and Stage 8 items 5, 7 and 8; AlgebraicTopology Stage 6 (gap:torus-cap-projection).
 
 ### 2.4 Refined evaluation without inverting the conductor norm
 
@@ -447,7 +450,7 @@ For d=1 the free-group cap is R→R, r↦r. Extending it to Γ=μ₂ with the fu
 
 ### Dependencies
 
-Earlier layers 0, 1; AbelianSchemesAndArithmeticModuliPartII P2.5; AbelianSchemesAndArithmeticModuliPartII P2.1; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit); Mathlib `NumberField.Units.logEmbeddingEquiv`; Mathlib `NumberField.Units.instZLattice_unitLattice`; AbelianSchemesAndArithmeticModuliPartII P0.4–P0.5; AlgebraicTopology Stage 5 items 3–4 and Stage 8.8 (gap:group-torus-comparison); AlgebraicTopology Stage 6 (gap:torus-cap-projection); AbelianSchemesAndArithmeticModuliPartII P2.4; AbelianSchemesAndArithmeticModuliPartII P2.7; ComplexMultiplicationAndExplicitReciprocity §1.3; AbelianSchemesAndArithmeticModuliPartII P3.3. The individual statement and proof-route inputs are specified above.
+Earlier layers 0, 1; SchemeAndStackFoundations §2.6; AbelianSchemesAndArithmeticModuliPartII P2.5; AbelianSchemesAndArithmeticModuliPartII P2.1; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit); Mathlib `NumberField.Units.logEmbeddingEquiv`; Mathlib `NumberField.Units.instZLattice_unitLattice`; AbelianSchemesAndArithmeticModuliPartII P0.4–P0.5; AlgebraicTopology Stage 5 items 3–4 and Stage 8 items 5, 7 and 8; AlgebraicTopology Stage 6 (gap:torus-cap-projection); AbelianSchemesAndArithmeticModuliPartII P2.4; AbelianSchemesAndArithmeticModuliPartII P2.7; ComplexMultiplicationAndExplicitReciprocity §1.3; AbelianSchemesAndArithmeticModuliPartII P3.3. The individual statement and proof-route inputs are specified above.
 
 ## Layer 3: Analytic representatives and current normalization
 
@@ -506,7 +509,7 @@ One proof route is to use C1 local regularization and its homotopy to compare sm
 
 ### 3.3 Generalized Eisenstein–Kronecker series
 
-For a full lattice Λ⊂ℂ^d, H(z,w)=Σh_i z_i barw_i with h_i>0 and alternating pairing ⟨z,w⟩=Im H(z,w), define K^ν(H,z,w,s,Λ)=Σ_(λ∈Λ,λ≠−z) overline(z+λ)^ν · exp(2πi⟨λ,w⟩)/‖z+λ‖_H^(2s). The numerator is antiholomorphic. The positive real power is defined through its real logarithm before analytic continuation. Define Λ*={ℓ:⟨ℓ,Λ⟩⊂ℤ} and the completed Mellin function M^ν(s)=π^(−s)Γ(s)K^ν(s). In Re(s)>d+|ν|/2 the series converges absolutely and normally on compact sets with a uniform distance from nonomitted lattice singularities. Periods and the chosen H fix the covolume vol_HΛ. The simple native formulas are `hermitianPairing`, `kroneckerTerm` and `kroneckerSeries`: the squared norm denominator is exp(s log H(z+λ,z+λ)), and the term λ=−z is zero by an explicit branch. A lattice is a `Submodule` of Fin d → ℂ with `DiscreteTopology` and `IsZLattice` over ℝ.
+For a full lattice Λ⊂ℂ^d, H(z,w)=Σh_i z_i barw_i with h_i>0 and alternating pairing ⟨z,w⟩=Im H(z,w), define K^ν(H,z,w,s,Λ)=Σ_(λ∈Λ,λ≠−z) overline(z+λ)^ν · exp(2πi⟨λ,w⟩)/‖z+λ‖_H^(2s). The numerator is antiholomorphic. The positive real power is defined through its real logarithm before analytic continuation. Define Λ*={ℓ:⟨ℓ,Λ⟩⊂ℤ} and the completed Mellin function M^ν(s)=π^(−s)Γ(s)K^ν(s). In Re(s)>d+|ν|/2 the series converges absolutely and normally on compact sets with a uniform distance from nonomitted lattice singularities. Define vol_HΛ=(∏h_i)·covol_Leb(Λ), where covol_Leb is `ZLattice.covolume` for product Lebesgue measure on ℂ^d; this is the volume for Re H, since x↦(√h_i·x_i) has real determinant ∏h_i. It is positive. The simple native formulas are `hermitianPairing` and `kroneckerTerm`: the squared norm denominator is exp(s log H(z+λ,z+λ)), and the term λ=−z is zero by an explicit branch. A lattice is a `Submodule` of Fin d → ℂ with `DiscreteTopology` and `IsZLattice` over ℝ.
 
 Assume ν∈ℕ^d; full real rank 2d lattice; positive diagonal Hermitian form.
 
@@ -535,21 +538,24 @@ One proof route bounds the numerator by a constant times ‖z+λ‖^|ν| and app
 
 ### 3.4 Poisson continuation with completed residues
 
-K^ν extends meromorphically, and its completion satisfies M^ν(H,z,w,s,Λ)=exp(2πi⟨w,z⟩)/vol_HΛ · M^ν(H,w,z,d+|ν|−s,Λ*). The possible simple residues of M are −δ_(ν=0,z∈Λ) exp(2πi⟨−z,w⟩) at s=0 and δ_(ν=0,w∈Λ*)/vol_HΛ at s=d. Hence K is regular at zero and, when ν=0 and w∈Λ*, has residue π^d/(Γ(d)vol_HΛ) at d. These are corrected normalization statements, not the uncompleted residues attributed in Proposition 3.13. The headline `kronecker_meromorphic_continuation` states existence of a meromorphic F agreeing by `HasSum` with this series for Re(s)>d+|ν|/2, analytic at every s≠d and also at d for ν≠0. At d, (s−d)F(s) has an analytic extension. It does not assign the total sum at divergent s to the continuation.
+K^ν extends meromorphically, and its completion satisfies M^ν(H,z,w,s,Λ)=exp(2πi⟨w,z⟩)/vol_HΛ · M^ν(H,w,z,d+|ν|−s,Λ*). The possible simple residues of M are −δ_(ν=0,z∈Λ) exp(2πi⟨−z,w⟩) at s=0 and δ_(ν=0,w∈Λ*)/vol_HΛ at s=d. Hence K is regular at zero and, when ν=0 and w∈Λ*, has residue π^d/(Γ(d)vol_HΛ) at d. These are corrected normalization statements, not the uncompleted residues attributed in Proposition 3.13. The headline `kronecker_meromorphic_continuation` states existence of a meromorphic F agreeing by `HasSum` with this series for Re(s)>d+|ν|/2, analytic at every s≠d and also at d for ν≠0. At d, (s−d)F(s) has an analytic extension. The headline `kronecker_functional_equation` states the equation for continuations of the primal and alternating-dual series, the displayed residue of K at d, and regularity there when w∉Λ*. Its pointwise completed identity excludes s and d+|ν|−s in −ℕ and excludes either uncompleted pole at d; the meromorphic identity has the displayed completed residues. It does not assign the total sum at divergent s to the continuation.
 
 Assume kronecker-series hypotheses; the dual and volume use the same alternating pairing.
 
 (KS-v4, Proposition 3.13 and its theta transformation proof, pp.35–36, KS-v4 line 1521.)
 
-One proof route is to choose a real lattice basis and reduce lattice Poisson summation to iterated native SchwartzMap.tsum_eq_tsum_fourier on ℤ. Transform the Gaussian using native fourier_gaussian_innerProductSpace, differentiate to obtain the antiholomorphic moments, and retain the linear-change determinant/covolume. Absolute Schwartz decay justifies the iteration and differentiation. Retain the phase exp(2πi⟨w,z⟩), split the Mellin integral at t=1 and isolate the zero-frequency terms. Multiply by π^s/Γ(s) only after calculating residues of M.
+One proof route applies ThetaSeries Layer 1, items 1A, 1E and 1F, to x↦barx^ν·exp(−πt‖x‖²_H)·exp(2πi⟨x,w⟩), evaluated on z+Λ with the compensating factor exp(−2πi⟨z,w⟩). Use the Euclidean model and Λ*=i·Λ^∨ of the supplier contract. Transform the Gaussian using native fourier_gaussian_innerProductSpace and differentiate to obtain the antiholomorphic moments, retaining the metric covolume. Schwartz decay justifies differentiation. Retain the phase exp(2πi⟨w,z⟩), split the Mellin integral at t=1 and isolate the zero-frequency terms. Multiply by π^s/Γ(s) only after calculating residues of M.
 
 **Checks.**
 
 - Applying the functional equation twice gives identity using vol(Λ*)=vol(Λ)⁻¹ and ⟨z,w⟩=−⟨w,z⟩.
-- For Λ=ℤ[i], K⁰(s) has residue π at 1 and no pole at zero.
+- For Λ=ℤ[i] and h=1, K⁰(s) has residue π at 1 and no pole at zero; K⁰(0)=−1, so M has residue −1 at zero and 1 at one.
+- For d=1, h=2 and Λ=ℤ[i], Λ^∨=Λ*=½ℤ[i]. The Lebesgue covolumes are 1 and 1/4, while the metric covolumes are 2 and 1/2, with product 1. K(s)=2^(−s)K_(h=1)(s) has residue π/2 at one, agreeing with π/vol_HΛ.
+- For h=1 and Λ=2ℤ+iℤ, Λ^∨=½ℤ+iℤ while Λ*=ℤ+(i/2)ℤ. The vector 1/2 is in the real dual but pairs with i to −1/2, so it is not in the alternating dual. Both metric covolumes of the duals are 1/2, inverse to vol_HΛ=2.
+- For ν=0, z=w=0 and d=1, at s=0 the total Gamma value is 0 and the reflected K has a pole at one; the pointwise product would give 0, whereas M has residue −1 at zero and 1 at one. Gamma poles must be excluded from the pointwise identity.
 - For H standard, z=1/2 and w=i/2, ⟨w,z⟩=1/4 gives phase i; the reversed order gives −i. Applying the functional equation again multiplies the phases to 1.
 
-*Needs:* §3.3; Mathlib `SchwartzMap.tsum_eq_tsum_fourier`; Mathlib `fourier_gaussian_innerProductSpace`; Mathlib `mellin`; Mathlib `Complex.Gamma_eq_integral`.
+*Needs:* §3.3; ThetaSeries Layer 1 (1A, 1E, 1F), 2A and 2C; Mathlib `fourier_gaussian_innerProductSpace`; Mathlib `mellin`; Mathlib `Complex.Gamma_eq_integral`.
 
 ### 3.5 Residue-normalized Eisenstein–Kronecker current
 
@@ -601,7 +607,7 @@ For the square lattice, ν=z=w=0, the uncompleted series has residue π at 1 and
 
 ### Dependencies
 
-Earlier layers 0, 1, 2; AbelianSchemesAndArithmeticModuliPartII P3.2/P3.4; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit); Mathlib `NumberField.Units.logEmbeddingEquiv`; Mathlib `NumberField.Units.instZLattice_unitLattice`; ComplexComparisonPartII C1.1 (gap:borel-bundle-currents); ComplexComparisonPartII C5.4 (gap:current-residue-trace); Mathlib `Complex.Gamma_eq_integral`; Mathlib `SchwartzMap.tsum_eq_tsum_fourier`; Mathlib `fourier_gaussian_innerProductSpace`; Mathlib `mellin`; AbelianSchemesAndArithmeticModuliPartII P0.3/P0.5. The individual statement and proof-route inputs are specified above.
+Earlier layers 0, 1, 2; AbelianSchemesAndArithmeticModuliPartII P3.2/P3.4; SchemeAndStackFoundations §2.23 (gap:equivariant-poincare-limit); Mathlib `NumberField.Units.logEmbeddingEquiv`; Mathlib `NumberField.Units.instZLattice_unitLattice`; ComplexComparisonPartII C1.1 (gap:borel-bundle-currents); ComplexComparisonPartII C5.4 (gap:current-residue-trace); Mathlib `Complex.Gamma_eq_integral`; ThetaSeries Layer 1 (1A, 1E, 1F), 2A and 2C; Mathlib `fourier_gaussian_innerProductSpace`; Mathlib `mellin`; AbelianSchemesAndArithmeticModuliPartII P0.3/P0.5. The individual statement and proof-route inputs are specified above.
 
 ## Layer 4: Orbit sums and explicit critical classes
 
@@ -751,9 +757,9 @@ One proof route identifies the ideals in a fixed ray class with generators in 1+
 
 ### 5.4 Integrality of normalized Eisenstein sums
 
-Let f,b,c be pairwise coprime integral ideals, a=f b⁻¹, and use the O_L-structured based abelian scheme and the R-rational x_Ω from §5.1. For a trace-zero O_f×-invariant torsion function h, prove 𝒩_(α,β)(Σ_(t∈O_f×∖(c⁻¹a/a)) h(−t)E^(β,α)(t+1,0;a,O_f×))∈R[1/(f N(bc))]. Begin with the torsion-free-group formula, where the refined evaluation is integral, then justify the passage to the normalized full unit-orbit sum. When a torsion index is a unit its division is valid; when it is not, prove the specific divisibility statement for these residue classes. That latter passage is the integral unit-index descent of §5.4, not a consequence of the false unrestricted transfer claim. More precisely, integral full-unit descent must prove that for every finite-index torsion-free Γ₀⊂O_f× fixing the data, the oriented class EK_Γ₀ lies in [O_f×:Γ₀] times the integral critical tensor line whenever the full-unit normalized value is claimed integral; for theta and measure coefficients the divisibility holds in their entire integral coefficient modules. This is a special-residue theorem, not surjectivity of transfer on arbitrary cohomology.
+Let f,b,c be pairwise coprime integral ideals, a=f b⁻¹, and use the O_L-structured based abelian scheme and the R-rational x_Ω from §5.1. For a trace-zero O_f×-invariant torsion function h, prove 𝒩_(α,β)(Σ_(t∈O_f×∖(c⁻¹a/a)) h(−t)E^(β,α)(t+1,0;a,O_f×))∈R[1/(f N(bc))]. Begin with the torsion-free-group formula, where the refined evaluation is integral, then justify the passage to the normalized full unit-orbit sum. When a torsion index is a unit its division is valid; when it is not, prove the specific divisibility statement for these residue classes. That latter passage is the integral unit-index descent of §5.4, not a consequence of the false unrestricted transfer claim. More precisely, integral full-unit descent must prove that for every finite-index torsion-free Γ₀⊂O_f× fixing the data, the oriented class EK^(β,a)_(Γ₀)(h,x) lies in [O_f×:Γ₀] times the integral critical tensor line over R[1/(f N(bc))]; for theta and measure coefficients the divisibility holds in their entire integral coefficient modules. This is a special-residue theorem, not surjectivity of transfer on arbitrary cohomology.
 
-Assume α≥1, β≥0 critical; h∈R[1/Nc][D]^(0,O_f×); x avoids D. The common period data and all cotangent transports are fixed.
+Assume α≥1, β≥0 with β−α∈CI_L(O_f×); h∈R[1/Nc][D]^(0,O_f×); x avoids D. The common period data and all cotangent transports are fixed.
 
 (KS-v4, Theorem 4.9 and equation (4.3.1), pp.50–51, KS-v4 line 2353.)
 
@@ -763,6 +769,7 @@ One proof route is to apply §2.5 to A(a)→A(b⁻¹) with the bases [f]*([b]*)�
 
 - The theorem does not assume Nf is globally invertible in the initial datum.
 - A proof that only gives |tors(O_f×)| times the claimed value integral is insufficient when that integer is a nonunit.
+- For d=1, O_f×=μ₂ and Γ₀=1, the target is EK_1∈2C over the stated localization, equivalently EK_1/2∈C inside Frac(R)⊗C. At h=0 both values are 0; an arbitrary cohomology coordinate 1 over ℤ₂ gives 1/2∉ℤ₂, so the target must use the special residue class. At index one it reduces to EK_Γ₀∈C.
 
 *Needs:* §2.5; §4.3; §5.1; §5.2; §2.3.
 
@@ -887,7 +894,7 @@ One proof route is to specialize the generic connected/étale and Cartier-dual t
 - For L=K the predicate specializes to the CM-field place-separation condition.
 - On an ordinary Gaussian elliptic reduction at 5 with i acting on Lie by 3, 2+i has differential 0 and connected kernel, while 2−i has differential 4 and étale kernel. The latter is the complementary ideal direction of q_n.
 
-*Needs:* §0.2; §5.1; ComplexMultiplicationAndExplicitReciprocity §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.1.7/R07.1.9/R07.1.13 (gap:ordinary-cm-pairings); AbelianSchemesAndArithmeticModuliPartII P4.1.
+*Needs:* §0.2; §5.1; ComplexMultiplicationAndExplicitReciprocity §1.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.1.7/R07.1.9/R07.1.13 (gap:ordinary-cm-pairings); AbelianSchemesAndArithmeticModuliPartII P4.1.
 
 ### 6.2 Canonical differentials and p-adic periods
 
@@ -976,7 +983,7 @@ For ℚ(i), p=5 splits into (2+i)(2−i), while p=3 is inert and is rejected by 
 
 ### Dependencies
 
-Earlier layers 0, 1, 2, 3, 4, 5; ComplexMultiplicationAndExplicitReciprocity §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.1.7/R07.1.9/R07.1.13 (gap:ordinary-cm-pairings); AbelianSchemesAndArithmeticModuliPartII P4.1; AbelianSchemesAndArithmeticModuliPartII P4.2; AbelianSchemesAndArithmeticModuliPartII P4.3; AbelianSchemesAndArithmeticModuliPartII P2.1; PadicMeasuresIwasawaAlgebras §§2.1–2.2 (gap:integral-multivariate-amice). The individual statement and proof-route inputs are specified above.
+Earlier layers 0, 1, 2, 3, 4, 5; ComplexMultiplicationAndExplicitReciprocity §1.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.1.7/R07.1.9/R07.1.13 (gap:ordinary-cm-pairings); AbelianSchemesAndArithmeticModuliPartII P4.1; AbelianSchemesAndArithmeticModuliPartII P4.2; AbelianSchemesAndArithmeticModuliPartII P4.3; AbelianSchemesAndArithmeticModuliPartII P2.1; PadicMeasuresIwasawaAlgebras §§2.1–2.2 (gap:integral-multivariate-amice). The individual statement and proof-route inputs are specified above.
 
 ## Layer 7: Eisenstein measures and partial Fourier moments
 
@@ -1182,20 +1189,20 @@ One proof route is to use finite-order twists of one fixed critical algebraic ch
 
 For a p-ordinary lifted type Σ of L and a tame integral ideal f prime to p, construct a bounded O_(ℂ_p)-valued measure μ_f on G_f=Gal(L(p∞f)/L) such that for every critical algebraic χ of conductor dividing p∞f and infinity type β−α,
 (Ω_p^α(Ω_p∨)^β)⁻¹∫_(G_f)χ(g)dμ_f(g)=𝒩_(α,β)(Local(χ,Σ)·∏_(v∈Σ_p)(1−χ(v⁻¹)/Nv)·∏_(v∈barΣ_p)(1−χ(v))·L_f(χ,0)).
-The complex normalization on the right is algebraic by Layer 5 and is transported to ℂ_p by the chosen embeddings of the common algebraic coefficient field; no map from all of ℂ to ℂ_p is used. At a prime ramified in χ set the corresponding ideal-character value to zero so the omitted Euler factor is one; χ(v⁻¹)=0 in that convention is not the inverse of zero. Primitive versus f-imprimitive L-functions are related by exactly the displayed depletion factors. Prove uniqueness from the finite-order-twist density after boundedness has been established. The construction proves the sign, bounded-divisibility and integral unit-index targets of §§8.3–8.4 and 5.4 as part of Theorem 5.27’s interpolation assertion. At L=K, tame conductor f=O_K and the overlapping Katz infinity types −kΣ−Σ_σ d(σ)(σ−barσ), k≥1 and d(σ)≥0, compare with the CM-field Katz measure under the same periods, Artin convention, local factors and primitive/imprimitive convention. The comparison concerns this overlap; the interpolation theorem itself includes arbitrary admissible critical types and tame f.
+The complex normalization on the right is algebraic by Layer 5 and is transported to ℂ_p by the chosen embeddings of the common algebraic coefficient field; no map from all of ℂ to ℂ_p is used. At a prime ramified in χ set the corresponding ideal-character value to zero so the omitted Euler factor is one; χ(v⁻¹)=0 in that convention is not the inverse of zero. Primitive versus f-imprimitive L-functions are related by exactly the displayed depletion factors. Prove uniqueness from the finite-order-twist density after boundedness has been established. The construction proves the sign, bounded-divisibility and integral unit-index targets of §§8.3–8.4 and 5.4 as part of Theorem 5.27’s interpolation assertion.
 
 Assume ordinary standard datum, O_L Betti structure, complex and p-adic periods fixed; all characters read through the chosen embeddings. The proof includes the sign comparison of §8.3, the uniform bounded division of §8.4 and the integral unit-index descent of §5.4.
 
 (KS-v4, Theorem 5.27, p.74 and proof pp.74–79, KS-v4 line 3392.)
 
-One proof route is to combine the corrected smoothed interpolation with §8.4. At ramified and unramified Σ-places compute the separate Fourier contributions; collect the complete barΣ-depletion. Use density for uniqueness after boundedness. Compare with CM-field Katz comparison only at L=K, f=O_K and its stated overlapping infinity-type range, after transporting the conventions.
+One proof route is to combine the corrected smoothed interpolation with §8.4. At ramified and unramified Σ-places compute the separate Fourier contributions; collect the complete barΣ-depletion. Use density for uniqueness after boundedness.
 
 **Checks.**
 
 - For ℚ(i) at p=5, d=1 and α=2, β=1, the moment has period divisor Ω_p²Ω_p∨. For a degree-four CM field the divisor has two selected coordinates; the non-CM quartic of the worked example has the same coordinate count without a CM involution.
 - An inert prime for an imaginary quadratic K is outside this theorem; it belongs to the independent nonordinary direction.
 - For a unit u rescaling one selected algebraic differential, Ω and Ω_p both acquire u. Both normalized sides acquire u^(−α_σ), so the equality persists; for α_σ=2 and u=2 at p=5 this multiplier is 1/4.
-- The general interpolation target allows tame f prime to p and arbitrary admissible critical β−α; only its Katz comparison is restricted to the CM-field comparison range.
+- At L=K=ℚ(i), f=O_K and p=5, the types −kΣ−d(σ)(σ−barσ), k≥1 and d(σ)≥0, have α=k+d(σ)≥1 and β=d(σ)≥0 and are included whenever the finite unit character is compatible. In particular k=2, d(σ)=1 gives (α,β)=(3,1), whose unit weight is trivial on μ₄. The target also includes arbitrary admissible critical types and tame f prime to p.
 
 *Needs:* §8.4; §8.1; §6.2; §5.2; AutomorphicLFunctionsAndLocalFactors AL.1, “Local epsilon factors and Gauss sums”.
 
@@ -1209,7 +1216,7 @@ Earlier layers 0, 1, 2, 3, 4, 5, 6, 7; AutomorphicLFunctionsAndLocalFactors AL.1
 
 ## Downstream consumers
 
-The outputs support arithmetic applications of ordinary critical Hecke values and their integral comparisons: regularized values, CM period ratios and bounded ray-class measures. The analytic series and residue comparison are also independent inputs for polylogarithmic and regulator calculations. Nonordinary CM special values uses the shared CM/Hecke conventions but not the ordinary constructor at its inert prime. No Selmer characteristic-ideal identity or main conjecture is proved here.
+The outputs support arithmetic applications of ordinary critical Hecke values and their integral comparisons: regularized values, CM period ratios and bounded ray-class measures. The analytic series and residue comparison are also independent inputs for polylogarithmic and regulator calculations. NonordinaryCMSpecialValues uses the shared CM/Hecke conventions but not the ordinary constructor at its inert prime. No Selmer characteristic-ideal identity or main conjecture is proved here.
 
 ## Worked examples
 
