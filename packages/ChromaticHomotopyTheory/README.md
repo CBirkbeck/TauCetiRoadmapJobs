@@ -9,13 +9,14 @@ This roadmap owns unstable periodic homotopy, the Bousfield–Kuhn construction,
 The following constructions are stated by their named owners and are consumed here by section, including the Checks that compare their conventions with these applications.
 
 - GeneralizedCohomology G2–G3 and G5.1 own spectra, stable smash and mapping objects, spectral limits, localization at integers, connective covers and finite duality. The p-local finite/compact and duality specialization is the exact additional contract below.
-- GeneralizedCohomology G4.1 and BordismFormalGroups F1–F3/F5 own orientations, native formal groups, multiplication series and height, MU, Quillen universality, BP and its truncations, k(n), K(n), E(n), regular coefficient cofibers, Landweber realization and algebraic Lubin–Tate deformations. The pointwise geometric-height criterion used in Layer 8 is the spectral locality consequence, rather than a second algebraic height invariant.
-- BordismFormalGroups F6.1–F6.4 own homological Bousfield localization, its class order, Morava nilpotence, type, thick classification, periodicity and eventual centrality, positive-height telescope independence, p-local finite localization and its kernel, Ravenel’s class identities, Hopkins–Ravenel smashing and chromatic fracture. Layer 4 extends the finite tower to all spectra with S[1/p] at its bottom. Layer 8 compares telescopic localization on chromatically local objects.
-- BordismFormalGroups F6.5 owns coherent Borel actions, norms, generic Tate cofibers, lax monoidal and module structures, and K(n)-local Tate vanishing. Layer 9 proves the corresponding telescopic and finite-local conclusions. Generic norm and action carriers keep that owner.
-- StableHomotopyKTheory §3.18 owns space Postnikov sections and their convergent towers; §§7.21–7.27 own filtered-spectrum spectral sequences and convergence comparisons. AlgebraicTopology Stages 4–5 and 8 supply CW geometry, ordinary twisted Serre theory and homotopy exact sequences. HomotopySpheres §§3A–3B own convenient pointed spaces, Freudenthal stabilization, the James equivalence and its stable splitting.
-- TopologicalKTheory T7 owns real Bott coefficients and complexification; GeneralizedCohomology G5.4 owns ko, KO, ku, KU and multiplicative Bott inversion. Layer 11 proves their positive-height telescopic consequences.
+- GeneralizedCohomology G4.5 and BordismFormalGroups F1–F3/F5 own orientations, native formal groups, multiplication series and height, MU, Quillen universality, BP and its truncations, k(n), K(n), E(n), regular coefficient cofibers, Landweber realization and algebraic Lubin–Tate deformations. The pointwise geometric-height criterion used in Layer 8 is the spectral locality consequence, rather than a second algebraic height invariant.
+- BordismFormalGroups F6.1–F6.4 own homological Bousfield localization, its class order, Morava nilpotence, type, thick classification, periodicity and eventual centrality, positive-height telescopes, including ⟨K(n)⟩≤⟨T(n)⟩ and the choice-independence of ⟨T(n)⟩ consumed in §3.2, p-local finite localization and its kernel, Ravenel’s class identities, Hopkins–Ravenel smashing and chromatic fracture. Layer 4 extends the finite tower to all spectra with S[1/p] at its bottom. Layer 8 compares telescopic localization on chromatically local objects.
+- BordismFormalGroups F6.5 owns coherent Borel actions, norms, generic Tate cofibers, lax monoidal and module structures, K(n)-local Tate vanishing and the K(n)-localization formula for p-local spectra. Layer 9 proves the corresponding telescopic and finite-local conclusions. Generic norm and action carriers keep that owner.
+- StableHomotopyKTheory §3.18 owns space Postnikov sections and their convergent towers; §§7.21–7.27 own filtered-spectrum spectral sequences and convergence comparisons, including strong convergence for exhaustive filtrations bounded below (§7.24). AlgebraicTopology Stages 4–5 and 8 supply CW geometry, ordinary twisted Serre theory and homotopy exact sequences. HomotopySpheres §§3A–3B own convenient pointed spaces, Freudenthal stabilization, the word-length filtration of the James construction and the connected James equivalence; the stable James splitting is the contract gap:stable-james-splitting addressed to §3B.
+- HomotopySpheres §4B owns the real Bott theorem; TopologicalKTheory T7 owns the Clifford-module coefficient comparison with a²=4b; GeneralizedCohomology G5.4 owns ko, KO, ku, KU, multiplicative Bott inversion and the complexification values c(a)=2u², c(b)=u⁴. Layer 11 proves their positive-height telescopic consequences.
 - EllipticCohomology E1–E3 own elliptic moduli and its nodal compactification, elliptic cohomology triples, the topological structure sheaf, tmf, Tmf and TMF, and height-one/two Morava realization and its coherent actions. E4 owns the surviving discriminant class Δ²⁴ and its localization comparison. E6 owns the spectral level covers. Layer 7 extends the realization and action to heights at least three using the supplied obstruction machinery; Layer 12 owns spectral affineness, the resulting chromatic comparisons and the faithful spectral Galois assertions.
-- ModularCurves §§4B–4C and 7E own the smooth Weierstrass groupoid, the ordered full-level-three torsor, elliptic formal heights and the specified Serre–Tate comparisons. The compactified moduli carrier enters through EllipticCohomology E1, including its nodal boundary.
+- ModularCurves §§4B–4C, 7E and 7F own the smooth Weierstrass groupoid, the ordered full-level-three torsor, p-divisible groups with the ordinary/supersingular formal heights (§7E) and the Serre–Tate equivalence (§7F). The compactified moduli carrier enters through EllipticCohomology E1, including its nodal boundary.
+- RefinedTraceMethods owns the Segal comparison S^tC_p≃S_p^∧ (§2.3), THH of E₁-rings and of small stable ∞-categories with its cyclotomic Frobenius (§§2.6 and 2.10), TC (§2.9), connective and nonconnective K-theory of small stable ∞-categories (§4.9), the cyclotomic trace (§4.11) and the identification of K(1)-localization with p-completed KU-localization (§6.8). §8.3 and §9.5 consume them.
 
 Mathlib already supplies `FormalGroup`, `FormalGroup.IsComm`, `FormalGroup.Point`, `FormalGroup.map`, `FormalGroup.𝔾ₐ`, `FormalGroup.𝔾ₘ` and `CategoryTheory.ObjectProperty.isLocal`. Tau Ceti already supplies `WeierstrassCurve.formalGroup`. These are the native algebraic carriers; the ordinary precomposition predicate does not itself construct a spectral reflector. No formal-group point calculation is a substitute for a chromatic headline theorem.
 
@@ -27,7 +28,7 @@ Finite p-local means compact in Sp_(p), including retracts of finite p-local sph
 
 An m-connective space has π_i=0 for i<m, including the appropriate component condition, so it is (m−1)-connected. A map is m-connective when all its homotopy fibers are m-connective; it induces isomorphisms in degrees below m and a surjection in degree m. For r≥1, X⟨r⟩=fib(X→τ_≤(r−1)X). In particular the fiber of a simply connected space’s degree-two Postnikov section is X⟨3⟩. Space Postnikov sections are taken componentwise and retain fundamental-group transport; only the trivial-action stages are treated as principal fibrations.
 
-Use geometric formal-group height only at characteristic-p field points, with height∞ for the zero p-series and height 0 when p is invertible. A geometric height bound is uniform over all points. It is distinct from the ring height of Layer 10. Graded p-typical coefficients use v₀=p and |v_i|=2(pⁱ−1); fix Hazewinkel generators and the supplied coordinate conversions. For Morava E-theory write π_*E=π₀E[u,u⁻¹] with |u|=−2 after choosing a trivialization. For elliptic sheaves π_(2r)Otop=ωʳ; weight 12 for Δ therefore gives spectral degree 24, and Δ²⁴ has degree 576. Even periodicity on a chart includes a degree-two unit after trivializing its line and does not assert even global homotopy.
+Use geometric formal-group height only at characteristic-p field points, with height∞ for the zero p-series and height 0 when p is invertible. A geometric height bound is uniform over all points. It is distinct from the ring height of Layer 10. Graded p-typical coefficients use v₀=p and |v_i|=2(pⁱ−1); fix Hazewinkel generators and the supplied coordinate conversions. For Morava E-theory write π_*E=π₀E[u,u⁻¹] with |u|=−2 after choosing a trivialization (behrens, §1.6, p.28; behrens line 1024). EllipticCohomology E2 writes the height-one and height-two periodic coefficients with a generator of degree +2; that generator is u⁻¹ here, and ψ_(−1) at height one sends both u and u⁻¹ to their negatives. For elliptic sheaves π_(2r)Otop=ωʳ; weight 12 for Δ therefore gives spectral degree 24, and Δ²⁴ has degree 576. Even periodicity on a chart includes a degree-two unit after trivializing its line and does not assert even global homotopy.
 
 A finite-group action is a coherent functor from BG, not merely an action on homotopy groups. Tate always means the cofiber of the normalized Borel norm. A localized Tate conclusion names the localization explicitly. p-complete Thom spectra use the p-complete symmetric monoidal category: its tensor and colimits are the completions of ambient tensor and colimits.
 
@@ -51,19 +52,15 @@ Use `WeierstrassCurve.formalGroup` from `TauCeti/AlgebraicGeometry/EllipticCurve
 
 ### From TauCetiRoadmap.GeneralizedCohomology
 
-Consume G2’s actual symmetric spectral model, derived monoidal and module categories, commutative rings and algebra localization; G3.4/G3.7/G3.9’s homotopy-colimit, compact-object and integer-localization comparisons; G3.8’s multiplicative connective covers and spectral Postnikov sections; G4.1’s complex orientations; G5.1’s finite duality and G5.4’s real and complex Bott spectra. In particular retain the unit maps of Bott inversion and connective covers, not just their coefficient groups.
+Consume G2’s actual symmetric spectral model, derived monoidal and module categories, commutative rings and algebra localization; G3.4/G3.7/G3.9’s homotopy-colimit, compact-object and integer-localization comparisons; G3.8’s multiplicative connective covers and spectral Postnikov sections; G4.5’s real, complex and quaternionic orientation data; G5.1’s finite duality and G5.4’s real and complex Bott spectra. In particular retain the unit maps of Bott inversion and connective covers, not just their coefficient groups.
 
 What GeneralizedCohomology must provide (gap:p-local-finite-duality): For every prime p, identify compact p-local spectra with retracts of finite p-local cell spectra, present every p-local spectrum as their filtered colimit, and prove p-local Spanier–Whitehead duality with p-local targets.
 
 ### From TauCetiRoadmap.BordismFormalGroups
 
-Consume F1’s multiplication series, morphisms and geometric height, F2’s Quillen comparison and orientation-coordinate convention, F3’s actual BP-module cofibers and their associative-product qualifications, and F5’s invariant ideals and marked algebraic deformations. F6.1 supplies L_E with its mapping-space universal property, exactness, unit and class comparisons. F6.2–F6.3 supply all-prime nilpotence including the H𝔽_p endpoint, type, thick classification, periodicity, central powers, positive-height telescopes and the p-local compactly generated finite quotient. F6.3–F6.4 supply the Ravenel class identities and L_n smashing, including the pro-constancy content of the Adams tower. F6.5 supplies coherent actions, generic transfer/norm and Tate/module naturality, and general marked straightening and Kan extensions. The ring-acyclicity and telescopic Tate theorems below use these generic constructions.
+Consume F1’s multiplication series, morphisms and geometric height, F2’s Quillen comparison and orientation-coordinate convention, F3’s actual BP-module cofibers and their associative-product qualifications, its Adams splitting ku_(p)≃∏_(i=0)^(p−2)Σ^(2i)BP⟨1⟩ at odd p and ku_(2)≃BP⟨1⟩ with the Bott cyclic action between the factors, and F5’s invariant ideals and marked algebraic deformations. F6.1 supplies L_E with its mapping-space universal property, exactness, unit and class comparisons. F6.2–F6.3 supply all-prime nilpotence including the H𝔽_p endpoint, type, thick classification, periodicity, central powers, positive-height telescopes with ⟨K(n)⟩≤⟨T(n)⟩ and choice-independent Bousfield class, and the p-local compactly generated finite quotient. F6.3–F6.4 supply the Ravenel class identities, including ⟨E(n)⟩=⟨K(0)∨⋯∨K(n)⟩, and L_n smashing, including the pro-constancy content of the Adams tower. F6.5 supplies coherent actions, generic transfer/norm and Tate/module naturality, general marked straightening and Kan extensions, the E(n)-locality of Landweber-exact theories whose coefficients vanish modulo I_(n+1), and the formula L_(K(n))X≃holim_i(L_nX∧M_i) for p-local X over F6.3’s cofinal generalized Moore tower M_i. The ring-acyclicity and telescopic Tate theorems below use these generic constructions.
 
 Apply F6.5’s pointwise comma-category Kan-extension formula and composition theorem to a map f:X→Y of spaces and a spectrum-valued local system D: its left Kan extension at y is the colimit on fib_y(f), and taking the colimit over Y gives colim_XD. The slice is the homotopy fiber because X and Y are groupoids; all comparisons retain their naturality.
-
-What BordismFormalGroups must provide (gap:sphere-segal-comparison): For every prime p, prove that the specified trivial-action comparison from S to its C_p Tate spectrum identifies that Tate spectrum with the p-complete sphere.
-
-What BordismFormalGroups must provide (gap:completed-ku-locality): For every prime p, prove that the derived p-completion of the supplied complex KU spectrum is K(1)-local, with the standard Bott orientation and completion map.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -73,7 +70,7 @@ What EnhancedDerivedSheaves must provide (gap:spectral-ringed-sites): For an alg
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
-Consume §3.18’s space Postnikov sections and compatible convergent towers, with the twisted obstruction data of §3.21 for componentwise use; §§7.21–7.27’s coherent filtered spectra, exact couples, homological spectral sequences and their finite-filtration, bounded-below and derived-limit convergence criteria. A displayed E² page does not imply strong convergence for an arbitrary periodic coefficient spectrum.
+Consume §3.18’s space Postnikov sections and compatible convergent towers, with the twisted obstruction data of §3.21 for componentwise use; §§7.21–7.27’s coherent filtered spectra, exact couples, homological spectral sequences and their finite-filtration, bounded-below and derived-limit convergence criteria. By §7.24 the homological spectral sequence of an exhaustive filtration that vanishes in sufficiently negative filtration converges strongly, with no boundedness hypothesis on the coefficient spectrum; the lim¹ conditions of §7.26 concern complete towers and cohomological indexing.
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
@@ -81,11 +78,13 @@ Consume Stages 4–5’s based Hausdorff CW geometry, cofibrations, cellular and
 
 ### From TauCetiRoadmap.HomotopySpheres
 
-Consume §3A’s convenient pointed suspension–loop adjunction, finite-complex stable-range comparison and Freudenthal bounds, and §3B’s word filtration J_rW, its connected James equivalence and reduced stable splitting. The comparison J∞W≃ΩΣW requires connected W. The r-th word quotient is W^∧r and the reduced stable wedge begins at r=1.
+Consume §3A’s convenient pointed suspension–loop adjunction, finite-complex stable-range comparison and Freudenthal bounds, §3B’s word filtration J_rW, its quotients J_rW/J_(r−1)W≃W^∧r and its connected James equivalence, and §4B’s real Bott theorem. The comparison J∞W≃ΩΣW requires connected W. §3B does not state the stable splitting; it is the following contract, whose reduced wedge begins at r=1.
+
+What HomotopySpheres must provide (gap:stable-james-splitting): For every path-connected pointed CW complex W, construct a natural equivalence Σ∞ΩΣW≃⋁_(r≥1)Σ∞W^∧r compatible with the word-length filtration J_rW, whose r-th filtration quotient is W^∧r.
 
 ### From TauCetiRoadmap.TopologicalKTheory
 
-Consume T7’s real Bott theorem and Clifford-module coefficient comparison, with α²=4β, complexification α↦2b² and β↦b⁴. GeneralizedCohomology G5.4 supplies the corresponding coherent spectrum models.
+Consume T7’s Clifford-module coefficient comparison, with α²=4β, complexification α↦2b² and β↦b⁴; T7 and GeneralizedCohomology G5.4 write α, β and the complex Bott class b as a, b and u, in cohomological degrees −4, −8 and −2, so these are their relations a²=4b, c(a)=2u² and c(b)=u⁴. The real Bott theorem itself is HomotopySpheres §4B, and G5.4 supplies the corresponding coherent spectrum models.
 
 ### From TauCetiRoadmap.EllipticCohomology
 
@@ -93,19 +92,11 @@ Consume E1’s stable one-pointed genus-one compactification and Hodge line; E2�
 
 ### From TauCetiRoadmap.ModularCurves
 
-Consume §4B’s smooth Weierstrass presentation and effective descent, §4C’s full ordered level-three torsor over ℤ[1/3], and §7E’s ordinary/supersingular formal heights, connected p-divisible comparison and stated Serre–Tate deformation interface. No primitive cube root is fixed in the full-level problem; at 2 its deck group is GL₂(𝔽₃), of order 48.
-
-### From TauCetiRoadmap.GeneralAlgebraicKTheory
-
-Consume Layer 11’s enhanced Waldhausen and nonconnective comparison machinery for the K-theoretic witnesses of §8.3. The needed spectral perfect-module extension is a foundational K-theory input independent of the chromatic applications.
-
-What GeneralAlgebraicKTheory must provide (gap:spectral-perfect-k-theory): For each associative unital ring spectrum A, construct the small idempotent-complete stable category Perf(A) of perfect right A-modules and its functorial nonconnective K-theory spectrum, with extension of scalars, exact-sequence localization and the comparison with Waldhausen models, independently of chromatic localization or purity.
+Consume §4B’s smooth Weierstrass presentation and effective descent, §4C’s full ordered level-three torsor over ℤ[1/3], §7E’s p-divisible groups, connected p-divisible comparison and ordinary/supersingular formal heights, and §7F’s Serre–Tate equivalence and universal deformation of the supersingular p-divisible group. No primitive cube root is fixed in the full-level problem; at 2 its deck group is GL₂(𝔽₃), of order 48.
 
 ### From TauCetiRoadmap.RefinedTraceMethods
 
-The cyclotomic carriers and trace are inputs to §8.3; the chromatic non-hyperdescent and separating witness are targets of that subsection.
-
-What RefinedTraceMethods must provide (gap:cyclotomic-trace-carriers): For each associative unital ring spectrum A, supply THH(A), its coherent cyclotomic Frobenius and TC(A), and the natural trace from nonconnective K(A) with the descent comparison maps on homotopy-fixed-point diagrams used to formulate the cyclotomic non-hyperdescent target.
+Consume §2.3’s Segal comparison, identifying the trivial-action C_p Tate spectrum of S with S_p^∧; §2.6’s THH of E₁-rings with its circle action and cyclotomic Frobenius; §2.9’s TC; §2.10’s THH of small stable ∞-categories with THH(Perf(A))≃THH(A); §4.9’s connective and nonconnective K-theory of small stable ∞-categories, applied to Perf(A), the compact objects of the module category of an associative ring spectrum A (GeneralizedCohomology G2; EnhancedDerivedSheaves E5:presentability.1); §4.11’s natural cyclotomic trace K(A)→TC(A); and §6.8’s formula L_(K(1))X≃(L_(KU)X)_p^∧. For a functor F and a coherent G-object A, the comparison F(A^hG)→F(A)^hG is induced by applying F to the limit cone A^hG→A; it needs no further supplier. The chromatic non-hyperdescent and the separating witness are targets of §8.3.
 
 ## How to read the build
 
@@ -117,7 +108,7 @@ The finite category, p-local dual and localization unit enter through the exact 
 
 ### Examples
 
-For finite p-local spectra, The p-local sphere has π₀=ℤ_(p) and is compact in Sp_(p); S/p has π₀=𝔽_p and q acts invertibly for q≠p; the identity of ⋁_(j≥0)S_(p) cannot factor through a finite subwedge. (hs, Preliminaries, p.9; Theorem 7, p.3; hs line 129).
+For finite p-local spectra, the p-local sphere has π₀=ℤ_(p) and is compact in Sp_(p); S/p has π₀=𝔽_p and q acts invertibly for q≠p; the identity of ⋁_(j≥0)S_(p) cannot factor through a finite subwedge. (hs, Preliminaries, p.9; hs line 359; Theorem 7, p.3; hs line 129).
 
 **Checks.**
 
@@ -127,7 +118,7 @@ For finite p-local spectra, The p-local sphere has π₀=ℤ_(p) and is compact 
 
 - An infinite wedge of nonzero copies of S_(p) is not compact in Sp_(p).
 
-For Spanier–Whitehead duality, D(S/p)=Σ⁻¹S/p and D(S_(p))=S_(p). With V=S_(p), X=Hℤ, the two integral π₀ values are 0 and ℤ_(p), respectively. (hs, §1.4, p.14; proof of Theorem 7 in §2.2, p.19; hs line 129).
+For Spanier–Whitehead duality, D(S/p)=Σ⁻¹S/p and D(S_(p))=S_(p). With V=S_(p), X=Hℤ, the two integral π₀ values are 0 and ℤ_(p), respectively. (hs, §1.4, p.14; hs line 548; proof of Theorem 7 in §2.2, p.19; hs line 664).
 
 **Checks.**
 
@@ -135,9 +126,9 @@ For Spanier–Whitehead duality, D(S/p)=Σ⁻¹S/p and D(S_(p))=S_(p). With V=S_
 
 - D(S_(p))≃S_(p).
 
-- The p-locality of X matters: for V=S_(p) and X=Hℤ, π₀F(V,Hℤ)=Hom(ℤ_(p),Z)=0, whereas π₀(D V⊗Hℤ)=ℤ_(p).
+- The p-locality of X matters: for V=S_(p) and X=Hℤ, π₀F(V,Hℤ)=Hom(ℤ_(p),ℤ)=0, whereas π₀(D V⊗Hℤ)=ℤ_(p).
 
-For homological bousfield localization, L_0S=0, L_SS=S and L_HℚS=Hℚ. For q≠p, Hℚ∧S/q=0 but S[1/p]∧S/q=S/q≠0. (lmmt, Definition 2.5 and Lemma 2.8, p.8; lmmt line 301).
+For homological Bousfield localization, L_(zero spectrum)S=0, L_SS=S and L_HℚS=Hℚ. For q≠p, Hℚ∧S/q=0 but S[1/p]∧S/q=S/q≠0. (lmmt, Definition 2.5 and Lemma 2.8, p.8; lmmt line 322 and line 344).
 
 **Checks.**
 
@@ -157,7 +148,7 @@ The oriented theories and their native formal-law comparisons enter through the 
 
 ### Examples
 
-For complex orientations, For Hℤ, F(X,Y)=X+Y; for the degree-zero KU coordinate [L]−1, F=X+Y+XY. At p=2 its 2-series is 2X+X², reducing to X², so replacing this coordinate by its negative changes the displayed cross term. (behrens, Definitions 1.2.1, 1.2.6, Proposition 1.2.10, pp.4–6; behrens line 1160).
+For complex orientations, for Hℤ, F(X,Y)=X+Y; for the degree-zero KU coordinate [L]−1, F=X+Y+XY. At p=2 its 2-series is 2X+X², reducing to X², so replacing this coordinate by its negative changes the displayed cross term. (behrens, Definitions 1.2.1, 1.2.6, Proposition 1.2.10, pp.4–6; behrens line 132 and line 220).
 
 **Checks.**
 
@@ -167,7 +158,7 @@ For complex orientations, For Hℤ, F(X,Y)=X+Y; for the degree-zero KU coordinat
 
 - Changing coordinate does not change the geometric height; a random power series with nonunit linear term is not an orientation coordinate.
 
-For geometric height of an orientation, Over 𝔽₂, [2]_add=0 and [2]_mult=X²; over 𝔽₃, [3]_mult=X³. Ordinary and supersingular elliptic formal heights are 1 and 2; a square-zero coefficient does not replace a field in the height definition. (behrens, §1.5, p.21; §1.6, pp.27–28; behrens line 1160; goerss, §3.3, pp.238–239; goerss line 688).
+For geometric height of an orientation, over 𝔽₂, [2]_add=0 and [2]_mult=X²; over 𝔽₃, [3]_mult=X³. Ordinary and supersingular elliptic formal heights are 1 and 2; a square-zero coefficient does not replace a field in the height definition. (behrens, §1.5, p.21; behrens line 766; §1.6, pp.27–28; behrens line 1007; goerss, §3.3, pp.238–239; goerss line 670).
 
 **Checks.**
 
@@ -177,7 +168,7 @@ For geometric height of an orientation, Over 𝔽₂, [2]_add=0 and [2]_mult=X²
 
 - An ordinary elliptic formal group has height one and a supersingular elliptic formal group has height two; neither height is assigned to an arbitrary law merely because it has dimension one.
 
-For complex cobordism and brown–peterson theory, v₀=p has degree 0; |v₁|=2 at p=2 and 4 at p=3. At p=3, π₂BP=0 and π₂MU_(3)=ℤ_(3). (ravenel, §2, p.360; ravenel line 401; behrens, §1.2, pp.4–8; behrens line 1160).
+For complex cobordism and Brown–Peterson theory, v₀=p has degree 0; |v₁|=2 at p=2 and 4 at p=3. At p=3, π₂BP=0 and π₂MU_(3)=ℤ_(3). (ravenel, §2, p.360; ravenel line 379; behrens, §1.6, p.24; behrens line 876).
 
 **Checks.**
 
@@ -185,19 +176,19 @@ For complex cobordism and brown–peterson theory, v₀=p has degree 0; |v₁|=2
 
 - |v₁|=2p−2, including degree two at p=2.
 
-- At p=3, π₂BP=0 whereas π₂MU_(3)=Z_(3); the p-typical retract is not all of MU_(3).
+- At p=3, π₂BP=0 whereas π₂MU_(3)=ℤ_(3); the p-typical retract is not all of MU_(3).
 
-For morava k-theory and johnson–wilson spectra, K(0)_0=ℚ and K(0)_2=0; K(1) at 2 has 𝔽₂ in every even degree and zero in odd degrees; H𝔽₂ has only degree 0 coefficients. (ravenel, §2, p.360 and Theorem 2.1, pp.361–363; ravenel line 401).
+For Morava K-theory and Johnson–Wilson spectra, K(0)_0=ℚ and K(0)_2=0; K(1) at 2 has 𝔽₂ in every even degree and zero in odd degrees; H𝔽₂ has only degree 0 coefficients. (ravenel, §2, p.360 and Theorem 2.1, pp.361–363; ravenel line 386 and line 401).
 
 **Checks.**
 
-- K(0) has Q in degree zero and no other homotopy groups.
+- K(0) has ℚ in degree zero and no other homotopy groups.
 
 - For n≥1, K(n)_* is a graded field with a nonzero class precisely in degrees divisible by 2(p^n−1).
 
 - K(∞)=H𝔽_p is distinct from every periodic K(n).
 
-For connective periodic cofiber sequences, At p=2,n=1, the degree 2 v₁ quotient of BP⟨1⟩ has π₀=ℤ_(2), while that of k(1) has π₀=𝔽₂. The p-cofiber of Hℤ_(p) has π₀=𝔽_p. K(0)∧K(1)=0. (ravenel, Theorem 2.1(e),(f),(h),(i) and proof, pp.361–363; ravenel line 401).
+For connective periodic cofiber sequences, at p=2,n=1, the degree 2 v₁ quotient of BP⟨1⟩ has π₀=ℤ_(2), while that of k(1) has π₀=𝔽₂. The p-cofiber of Hℤ_(p) has π₀=𝔽_p. K(0)∧K(1)=0. (ravenel, Theorem 2.1(e),(f),(h),(i) and proof, pp.361–363; ravenel line 401).
 
 **Checks.**
 
@@ -207,7 +198,7 @@ For connective periodic cofiber sequences, At p=2,n=1, the degree 2 v₁ quotien
 
 ### Dependencies
 
-GeneralizedCohomology G4.1/G5.3; BordismFormalGroups F1–F3/F5; ModularCurves §7E.
+GeneralizedCohomology G4.5/G5.4; BordismFormalGroups F1–F3/F5; ModularCurves §7E.
 
 ## Layer 2: Nilpotence, type and periodicity
 
@@ -225,7 +216,7 @@ For chromatic type, type(S_(p))=0, type(S/p)=1 and type(0)=∞; max(0,1)=1 gives
 
 - The zero spectrum is in every C_n and must not be assigned any finite exact type.
 
-For nilpotence theorem, For R=H𝔽_p, K(i)∧R=0 at every finite i but H𝔽_p∧R≠0; the unit is not nilpotent. For R=0 the unit is zero and its first power is zero. (hs, Theorem 3, pp.2–3; its reduction in §2.1, pp.15–17; hs line 129; lmmt, Remark 2.4, p.8; lmmt line 301).
+For the nilpotence theorem, for R=H𝔽_p, K(i)∧R=0 at every finite i but H𝔽_p∧R≠0; the unit is not nilpotent. For R=0 the unit is zero and its first power is zero. (hs, Theorem 3, pp.2–3; hs line 89; its reduction in §2.1, pp.15–17; hs line 582; lmmt, Remark 2.4, p.8; lmmt line 317).
 
 **Checks.**
 
@@ -233,7 +224,7 @@ For nilpotence theorem, For R=H𝔽_p, K(i)∧R=0 at every finite i but H𝔽_p�
 
 - Testing only one fixed finite height does not give the stated criterion.
 
-For thick subcategory theorem, thick(S_(p))=C₀, thick(S/p)=C₁ and thick(0)={0}. Hℚ∧S_(p)=Hℚ≠0, while Hℚ∧S/p=0; hence C₁≠C₀. (hs, Theorem 7, p.3; proof in §2.2, pp.17–19; hs line 129).
+For the thick subcategory theorem, thick(S_(p))=C₀, thick(S/p)=C₁ and thick(0)={0}. Hℚ∧S_(p)=Hℚ≠0, while Hℚ∧S/p=0; hence C₁≠C₀. (hs, Theorem 7, p.3; proof in §2.2, pp.17–19; hs line 129).
 
 **Checks.**
 
@@ -241,7 +232,7 @@ For thick subcategory theorem, thick(S_(p))=C₀, thick(S/p)=C₁ and thick(0)={
 
 - C_n strictly contains C_(n+1) for every finite n.
 
-For periodic self-maps, p acts as 0 on K(1)_*(S/p), so it is not invertible there. A degree-d v-map has its a-th power in degree ad for a≥1. At height 0, π₀S[1/p]=ℤ[1/p], not ℚ. (lmmt, §2.1, p.6; lmmt line 301).
+For periodic self-maps, p acts as 0 on K(1)_*(S/p), so it is not invertible there. A degree-d v-map has its a-th power in degree ad for a≥1. At height 0, π₀S[1/p]=ℤ[1/p], not ℚ. (lmmt, §2.1, p.6; lmmt line 239).
 
 **Checks.**
 
@@ -251,7 +242,7 @@ For periodic self-maps, p acts as 0 on K(1)_*(S/p), so it is not invertible ther
 
 - For the height-zero sphere, inverting the degree-zero p map gives S[1/p], not its rationalization on all spectra.
 
-For periodicity and asymptotic centrality, For f=id and identical v-maps choose powers a=b=1; replacing v by v² is matched by (a,b)=(2,1), with degree 2d on both sides. A sign −1 in graded interchange has even power +1. (hs, Theorems 9 and 11, pp.4–6; Lemmas 3.5–3.6 and Corollaries 3.7–3.8, p.21; hs line 129; lmmt, Lemma 2.2(vii), p.7; lmmt line 301).
+For periodicity and asymptotic centrality, for f=id and identical v-maps choose powers a=b=1; replacing v by v² is matched by (a,b)=(2,1), with degree 2d on both sides. A sign −1 in graded interchange has even power +1. (hs, Theorems 9 and 11, pp.4–6; hs line 152 and line 166; Lemmas 3.5–3.6 and Corollaries 3.7–3.8, p.21; hs line 790; lmmt, Lemma 2.2(vii), p.7; lmmt line 265).
 
 **Checks.**
 
@@ -295,15 +286,15 @@ The construction has the following API.
 
 ### 3.2 Telescope acyclicity criteria
 
-For n≥1: (a) X and Ω∞X have the same v_n-periodic groups; (b) any integer connective cover of a spectrum, and any finite connected cover of a space, is a v_n-periodic equivalence; (c) K(i)⊗T(n)=0 for i≠n, including i=0,∞; (d) T(n)-acyclicity implies K(n)-acyclicity; (e) S/p-acyclicity implies T(n)-acyclicity; (f) X→X_p^∧ is a T(n)-equivalence, for arbitrary spectra with the imported derived p-completion; (g) the Bousfield class of T(n) is independent of (V_n,v_n); (h) X is T(n)-acyclic exactly when all its v_n-periodic groups vanish. At n=0 use the separate p-inversion convention of Layer 4. (lmmt, Lemma 2.2(i)–(viii) and proof, pp.6–7; lmmt line 257).
+For n≥1: (a) X and Ω∞X have the same v_n-periodic groups; (b) any integer connective cover of a spectrum, and any finite connected cover of a space, is a v_n-periodic equivalence; (c) K(i)⊗T(n)=0 for i≠n, including i=0,∞; (d) S/p-acyclicity implies T(n)-acyclicity; (e) X→X_p^∧ is a T(n)-equivalence, for arbitrary spectra with the imported derived p-completion; (f) X is T(n)-acyclic exactly when all its v_n-periodic groups vanish. The inequality ⟨K(n)⟩≤⟨T(n)⟩ and the choice-independence of ⟨T(n)⟩ are BordismFormalGroups F6.3 and are used here as stated there. At n=0 use the separate p-inversion convention of Layer 4. (lmmt, Lemma 2.2(i)–(viii) and proof, pp.6–7; lmmt line 257).
 
-*Proof route.* Use positive-degree suspension tails for cover invariance. Apply graded-field Künneth to the telescope; use finite p-power annihilation for the S/p comparison and the S/p-equivalence of derived completion. Dualize the finite source, then use eventually commuting powers and thick generation to compare detector classes. This identifies acyclicity, rather than an equivalence T(n)≃K(n).
+*Proof route.* Use positive-degree suspension tails for cover invariance. Apply graded-field Künneth to the telescope; use finite p-power annihilation for the S/p comparison and the S/p-equivalence of derived completion. Dualize the finite source to identify π_*(T(n)⊗X) with the v_n-periodic groups of X for the dual complex, and use the choice-independence of ⟨T(n)⟩ to pass between sources. This identifies acyclicity, rather than an equivalence T(n)≃K(n).
 
 **Checks.**
 
 - The p-completion map need not be a T(0)-equivalence.
 
-- The criterion is acyclicity, not an identification of T(n) with K(n) as spectra.
+- For X=Hℤ the groups [Σ^(k+rd)V,Hℤ] vanish for large r because V is finite, so (f) gives T(n)⊗Hℤ=0; for X=V itself the class of the identity survives in the colimit because v is not nilpotent, so T(n)⊗V≠0.
 
 - At positive n, T(n)∧Hℚ=0 and T(n)∧H𝔽_p=0; K(n)∧T(n)≠0. The completion S→S_p^∧ has height 0 π₀ map ℤ[1/p]→ℚ_p, which is not an isomorphism.
 
@@ -319,7 +310,7 @@ For n≥1 and any associative unital ring spectrum R, T(n)⊗R=0 if and only if 
 
 - The criterion applies to E₁ rings at p=2.
 
-- At height zero the ring HF_q, q≠p, separates S[1/p] from Hℚ.
+- At height zero the ring H𝔽_q, q≠p, separates S[1/p] from Hℚ.
 
 - R=0 gives both smash products 0; R=K(n) gives both nonzero by field Künneth. At height 0 and q≠p, S[1/p]∧H𝔽_q=H𝔽_q but Hℚ∧H𝔽_q=0.
 
@@ -327,7 +318,7 @@ For n≥1 and any associative unital ring spectrum R, T(n)⊗R=0 if and only if 
 
 ### Examples
 
-For telescopes, Tel(0)=0 and Tel(id_V)=V. For q≠p, Tel(p:S→S)∧S/q=S/q, since p is a unit mod q; its rational alternative is 0. (lmmt, §2.1 and Lemma 2.2(vii), pp.6–7; lmmt line 301).
+For telescopes, Tel(0)=0 and Tel(id_V)=V. For q≠p, Tel(p:S→S)∧S/q=S/q, since p is a unit mod q; its rational alternative is 0. (lmmt, §2.1 and Lemma 2.2(vii), pp.6–7; lmmt line 239 and line 265).
 
 **Checks.**
 
@@ -345,7 +336,7 @@ GeneralizedCohomology G2 (mapping spectra and suspension–loop adjunction); Hom
 
 ### 4.1 Finite chromatic localizations
 
-Write L_n=L_(K(0)∨⋯∨K(n)). On all spectra write L_n^f=L_(Hℚ∨T(1)∨⋯∨T(n)), so this includes p-localization, and write L_n^(p,f)=L_(S[1/p]∨T(1)∨⋯∨T(n)). For n=0 these are respectively Hℚ-localization and p-inversion. Construct units and tower maps L_n→L_(n−1), L_n^f→L_(n−1)^f and L_n^(p,f)→L_(n−1)^(p,f). The finite kernels and smashing property are theorems, not parts of the notation. (lmmt, Definition 2.5, p.8; lmmt line 321).
+Write L_n=L_(K(0)∨⋯∨K(n)). On all spectra write L_n^f=L_(Hℚ∨T(1)∨⋯∨T(n)), so this includes p-localization, and write L_n^(p,f)=L_(S[1/p]∨T(1)∨⋯∨T(n)). For n=0 these are respectively Hℚ-localization and p-inversion. Construct units and tower maps L_n→L_(n−1), L_n^f→L_(n−1)^f and L_n^(p,f)→L_(n−1)^(p,f). The finite kernels and smashing property are theorems, not parts of the notation. (lmmt, Definition 2.5, p.8; lmmt line 322).
 
 The construction has the following API.
 
@@ -391,7 +382,7 @@ For n≥0 the kernel of L_n^(p,f) on all spectra is the localizing subcategory g
 
 ### 4.3 Comparison on p-local spectra
 
-If X is p-local then L_n^(p,f)X≃L_n^fX, naturally and compatibly with tower units and transition maps. Both outputs are p-local. Without p-locality the comparison is false, as S/q with q≠p shows. The functor called finite localization in Clausen–Mathew’s p-local convention is the L_n^f specified here. (lmmt, Definition 2.5, p.8; consequence (i) of Lemma 2.8, p.9; lmmt line 356).
+If X is p-local then L_n^(p,f)X≃L_n^fX, naturally and compatibly with tower units and transition maps. Both outputs are p-local. Without p-locality the comparison is false, as S/q with q≠p shows. The functor L_n^(p,f) is the localization of the same name in cmnn line 97. (lmmt, Definition 2.5, p.8; consequence (i) of Lemma 2.8, p.9; lmmt line 356).
 
 *Proof route.* On p-local spectra, tensoring with S[1/p] is rationalization. The positive-height detectors are already p-local. Restrict the two localization universal properties to Sp_(p); their acyclics coincide there.
 
@@ -437,7 +428,7 @@ If X is T(1)-acyclic, then L_1^(p,f)X→X[1/p] is an equivalence, without a p-lo
 
 ### Examples
 
-For S_(p), both bottom outputs are Hℚ. For S/q with q≠p, the outputs are S/q and 0, so the unrestricted comparison fails.
+For every n≥0, both towers fix Hℚ and kill H𝔽_p: L_n^fHℚ=L_n^(p,f)Hℚ=Hℚ, because Hℚ is a module over both bottom detectors Hℚ and S[1/p] and hence local for each displayed wedge, while L_n^fH𝔽_p=L_n^(p,f)H𝔽_p=0, because Hℚ, S[1/p] and every T(i) with i≥1 annihilate H𝔽_p (§3.2). (lmmt, Definition 2.5, p.8; lmmt line 322.)
 
 ### Dependencies
 
@@ -503,7 +494,7 @@ The construction has the following API.
 
 ### 5.3 Detection by suspension and loops
 
-For n≥1, if Σ∞Ω∞f is a T(n)-equivalence then f is a T(n)-equivalence. Indeed L_(T(n))f is a retract of Φ_nΩ∞Σ∞Ω∞f by the suspension-loop unit and counit. At n=0 the corresponding detection holds for maps of connective spectra with p inverted. The positive-height functor Σ∞Ω∞ does not in general preserve T(n)-equivalences: Hℤ is T(n)-acyclic whereas Σ∞Ω∞Hℤ=Σ∞Z has nonzero sphere summands. (lmmt, Proposition 2.9 and Remark 2.10, p.9; lmmt line 361).
+For n≥1, if Σ∞Ω∞f is a T(n)-equivalence then f is a T(n)-equivalence. Indeed L_(T(n))f is a retract of Φ_nΩ∞Σ∞Ω∞f by the suspension-loop unit and counit. At n=0 the corresponding detection holds for maps of connective spectra with p inverted. The positive-height functor Σ∞Ω∞ does not in general preserve T(n)-equivalences: Hℤ is T(n)-acyclic whereas Σ∞Ω∞Hℤ=Σ∞ℤ has nonzero sphere summands. (lmmt, Proposition 2.9 and Remark 2.10, p.9; lmmt line 361).
 
 *Proof route.* Apply Φ_n to the suspension-loop triangle identity, giving a natural retract diagram. For the height-zero connective assertion compare the least nonzero p-inverted homotopy group using Hurewicz, and then the fiber. Use Hℤ and its discrete infinite loop space to test the absent preservation direction.
 
@@ -519,7 +510,7 @@ For n≥1, if Σ∞Ω∞f is a T(n)-equivalence then f is a T(n)-equivalence. In
 
 ### Examples
 
-Φ_nΩ∞0=0 and Φ_nΩ∞T(n)=L_T(n)T(n)≠0. Ω∞Σ⁻¹Hℚ=* but S[1/p]∧Σ⁻¹Hℚ=Σ⁻¹Hℚ≠0, excluding the unrestricted height 0 formula.
+For a discrete pointed space X, such as S⁰, Φ_n(X)=0 for every n≥1: π_jMap_*(V,X)=[Σ^jV,X]_* vanishes for j≥1 because Σ^jV is connected, so every periodic colimit is zero. Since L_(T(n))Σ∞S⁰=L_(T(n))S≠0, the functor Φ_n is not L_(T(n))Σ∞; only Φ_nΩ∞≃L_(T(n)) holds. (kuhn-guide, Theorem 1.1, pp.3–4; kuhn-guide line 113.)
 
 ### Dependencies
 
@@ -529,7 +520,7 @@ For n≥1, if Σ∞Ω∞f is a T(n)-equivalence then f is a T(n)-equivalence. In
 
 ### 6.1 Generalized Serre filtration
 
-For a fibration F→X→Y over a CW space and a spectrum E, filter E⊗Σ∞_+X by the inverse images of the skeleta of Y. The resulting homological spectral sequence has E²_(s,t)=H_s(Y; y↦E_t(F_y,+)) and d_r:(s,t)↦(s−r,t+r−1), with the full monodromy local system. Its total-degree target is π_(s+t)(E⊗Σ∞_+X). Assert strong convergence for a finite-dimensional base, or for a uniformly bounded-below fiberwise E-homology system; for arbitrary bases with periodic E state only the filtered object and conditional convergence criterion supplied by H.6. (lmmt, Proof of Proposition 2.11(ii), p.10; lmmt line 398; bhm, §3, Theorem 3.1, p.5; Lemmas 3.2–3.3, p.6; bhm line 225).
+For a fibration F→X→Y over a CW space and a spectrum E, filter E⊗Σ∞_+X by the inverse images of the skeleta of Y. The resulting homological spectral sequence has E²_(s,t)=H_s(Y; y↦E_t(F_y,+)) and d_r:(s,t)↦(s−r,t+r−1), with the full monodromy local system. Its total-degree target is π_(s+t)(E⊗Σ∞_+X). The filtration is exhaustive and starts at the inverse image of the empty skeleton, which is empty, so the spectral sequence converges strongly to π_(s+t)(E⊗Σ∞_+X) for every CW base and every spectrum E (StableHomotopyKTheory §7.24). (lmmt, Proof of Proposition 2.11(ii), p.10; lmmt line 398; bhm, Lemma 3.5, p.6; bhm line 258).
 
 The construction has the following API.
 
@@ -539,27 +530,27 @@ The construction has the following API.
 
 - The second page is homology with the full displayed monodromy system.
 
-- The imported exact-couple convergence criteria apply under their explicit boundedness or derived-limit hypotheses.
+- The filtration is exhaustive and zero in negative filtration, so the spectral sequence converges strongly, with E^∞ the associated graded of the image filtration on π_*(E⊗Σ∞_+X).
 
-*Proof route.* Pull back the skeletal filtration of the base. Trivialize over cells and identify its graded terms with sums of shifted fiber E-homology. The cellular boundary retains path transport, producing local coefficients. Apply finite-filtration or degreewise bounded-filtration convergence; use the supplier’s derived-limit criterion in the remaining cases.
+*Proof route.* Pull back the skeletal filtration of the base. Trivialize over cells and identify its graded terms with sums of shifted fiber E-homology. The cellular boundary retains path transport, producing local coefficients. Exhaustiveness holds because E⊗Σ∞_+ preserves the sequential homotopy colimit of the preimages of the skeleta; apply the convergence theorem for exhaustive filtrations bounded below.
 
 **Checks.**
 
 - For Y=* the target is E_*(F_+).
 
-- For E=Hℤ and the mapping torus of a degree −1 map S¹→S¹, monodromy acts by −1 on H₁ of the fiber. The spectral sequence gives H₁=Z⊕Z/2 and H₂=0; constant coefficients would incorrectly give the torus groups Z² and Z.
+- For E=Hℤ and the mapping torus of a degree −1 map S¹→S¹, monodromy acts by −1 on H₁ of the fiber. The spectral sequence gives H₁=ℤ⊕ℤ/2 and H₂=0; constant coefficients would incorrectly give the torus groups ℤ² and ℤ.
 
-- For an infinite base and a periodic E, no first-quadrant strong-convergence claim follows just from the displayed E² page.
+- For E=KU and the identity fibration of ℂP^∞, the base is infinite-dimensional and E is periodic, and the spectral sequence still converges strongly: E²_(s,t)=H_s(ℂP^∞;KU_t) is ℤ for s and t even and 0 otherwise, so every differential, which lowers total degree by one, vanishes, and the abutment is KU_*(ℂP^∞). The cohomological spectral sequence of the same filtration has entering differentials and needs the lim¹ conditions of StableHomotopyKTheory §7.26.
 
 - For the reflection mapping torus of S¹, 1−(−1)=2 on H₁(S¹); ker(2:ℤ→ℤ)=0 and coker(2)=ℤ/2, giving H₂=0 and H₁=ℤ⊕ℤ/2. Constant transport instead gives H₂=ℤ and H₁=ℤ².
 
-*Needs:* StableHomotopyKTheory §§7.21–7.27 (filtered spectra, exact couples and convergence); AlgebraicTopology Stages 4–5 (cellular local systems and fibration transport); GeneralizedCohomology G2 (smash and colimits).
+*Needs:* StableHomotopyKTheory §§7.21–7.23 (filtered spectra, exact couples and their spectral sequence) and §7.24 (strong convergence for exhaustive filtrations bounded below); AlgebraicTopology Stages 4–5 (cellular local systems and fibration transport); GeneralizedCohomology G2 (smash and colimits).
 
 ### 6.2 Fiberwise homology comparison
 
-Let f:X→Y be a map of spaces and E a spectrum. If for every y the augmentation E⊗Σ∞_+fib_y(f)→E is an equivalence, then E⊗Σ∞_+f is an equivalence, with no finiteness hypothesis on Y and no boundedness hypothesis on E. For pointed connected fibers the hypothesis says that their reduced E-homology vanishes. This theorem supplies the arbitrary-base comparison even when a periodic Serre spectral sequence has no established strong convergence. (lmmt, Proposition 2.11(ii) proof, p.10; lmmt line 398).
+Let f:X→Y be a map of spaces and E a spectrum. If for every y the augmentation E⊗Σ∞_+fib_y(f)→E is an equivalence, then E⊗Σ∞_+f is an equivalence, with no finiteness hypothesis on Y and no boundedness hypothesis on E. For pointed connected fibers the hypothesis says that their reduced E-homology vanishes. This theorem supplies the arbitrary-base comparison. (lmmt, Proposition 2.11(ii) proof, p.10; lmmt line 398).
 
-*Proof route.* Unstraighten f as a space-indexed local system of spaces; after applying E⊗Σ∞_+ its colimit over Y is E⊗Σ∞_+X. The fiber augmentations give a natural equivalence to the constant local system E. Take colimits. Compose the left Kan extension along f with that along Y→*; its pointwise fiber formula identifies the first colimit with E⊗Σ∞_+X and the constant-system colimit with E⊗Σ∞_+Y. The unstraightening and space-indexed Fubini comparison are explicit parts of the E3 request.
+*Proof route.* Unstraighten f as a space-indexed local system of spaces; after applying E⊗Σ∞_+ its colimit over Y is E⊗Σ∞_+X. The fiber augmentations give a natural equivalence to the constant local system E. Take colimits. Compose the left Kan extension along f with that along Y→*; its pointwise fiber formula identifies the first colimit with E⊗Σ∞_+X and the constant-system colimit with E⊗Σ∞_+Y. The unstraightening and the pointwise Kan-extension formulas and their composition are supplied by BordismFormalGroups F6.5.
 
 **Checks.**
 
@@ -605,7 +596,7 @@ For n≥1, Σ∞Ω∞ preserves m-connective L_n^(p,f)-equivalences of spectra, 
 
 ### Examples
 
-For postnikov and connected-cover conventions, τ_≤0S¹=*; for the pointed set {a,b}, τ_≤0 is {a,b} and X⟨1⟩={a}. K(A,2)⟨3⟩=* while τ_≤2K(A,2)=K(A,2). (lmmt, Lemma 2.2(ii), p.6; proof of Proposition 2.11, pp.9–10; lmmt line 301; bhm, §3, Theorem 3.1, p.5; Lemmas 3.2–3.3, p.6; bhm line 225).
+For Postnikov and connected-cover conventions, τ_≤0S¹=*; for the pointed set {a,b}, τ_≤0 is {a,b} and X⟨1⟩={a}. K(A,2)⟨3⟩=* while τ_≤2K(A,2)=K(A,2). (lmmt, Lemma 2.2(ii), p.6; proof of Proposition 2.11, pp.9–10; lmmt line 259; bhm, Lemma 3.2, p.6; bhm line 233).
 
 **Checks.**
 
@@ -617,13 +608,13 @@ For postnikov and connected-cover conventions, τ_≤0S¹=*; for the pointed set
 
 ### Dependencies
 
-StableHomotopyKTheory §§7.21–7.27 (filtered spectra, exact couples and convergence); AlgebraicTopology Stages 4–5 (cellular local systems and fibration transport); GeneralizedCohomology G2 (smash and colimits). BordismFormalGroups F6.5 (space-indexed unstraightening); BordismFormalGroups F6.5 (pointwise Kan formulas and composition); GeneralizedCohomology G2 (Σ∞_+ and tensor preserve colimits). §3.1–§3.2 (periodic equivalences); §6.2 (fiberwise comparison); StableHomotopyKTheory §3.18 (Postnikov towers); BordismFormalGroups F6.1/F6.3 (localization and finite type spectra); the nullification and Eilenberg–Mac Lane calculation constructed in this subsection. §6.3 (the m=n+1 bound and all-basepoint space comparison); §3.2 (agreement of stable and infinite-loop periodic groups); GeneralizedCohomology G2 (Ω∞ preserves homotopy fibers).
+StableHomotopyKTheory §§7.21–7.23 (filtered spectra, exact couples and their spectral sequence) and §7.24 (strong convergence for exhaustive filtrations bounded below); AlgebraicTopology Stages 4–5 (cellular local systems and fibration transport); GeneralizedCohomology G2 (smash and colimits). BordismFormalGroups F6.5 (space-indexed unstraightening); BordismFormalGroups F6.5 (pointwise Kan formulas and composition); GeneralizedCohomology G2 (Σ∞_+ and tensor preserve colimits). §3.1–§3.2 (periodic equivalences); §6.2 (fiberwise comparison); StableHomotopyKTheory §3.18 (Postnikov towers); BordismFormalGroups F6.1/F6.3 (localization and finite type spectra); the nullification and Eilenberg–Mac Lane calculation constructed in this subsection. §6.3 (the m=n+1 bound and all-basepoint space comparison); §3.2 (agreement of stable and infinite-loop periodic groups); GeneralizedCohomology G2 (Ω∞ preserves homotopy fibers).
 
 ## Layer 7: Morava E-theory and stabilizer actions
 
 ### 7.1 Morava E-theory
 
-For every perfect field k of characteristic p and one-dimensional commutative formal group G of finite height h≥3, extend the marked height-one/two realization interface to a K(h)-local even-periodic E∞ ring E(k,G) with π₀E=R(k,G), the marked algebraic universal deformation ring, and π_*E≅R(k,G)[u,u⁻¹], |u|=−2 after choosing a coordinate and periodicity generator. Its formal group is the universal deformation of G. The space of realizations together with that deformation identification is contractible. Together with the supplied h=1,2 realizations this gives one interface at every h≥1; neither the coordinate nor the polynomial presentation of R(k,G) is canonical. (goerss, §3.3, Theorem 3.6, pp.238–239; goerss line 688; behrens, Theorem 1.7.6 and discussion, pp.33–34; behrens line 1160).
+For every perfect field k of characteristic p and one-dimensional commutative formal group G of finite height h≥3, extend the marked height-one/two realization interface to a K(h)-local even-periodic E∞ ring E(k,G) with π₀E=R(k,G), the marked algebraic universal deformation ring, and π_*E≅R(k,G)[u,u⁻¹], |u|=−2 after choosing a coordinate and periodicity generator. Its formal group is the universal deformation of G. The space of realizations together with that deformation identification is contractible. Together with the supplied h=1,2 realizations this gives one interface at every h≥1; neither the coordinate nor the polynomial presentation of R(k,G) is canonical. (goerss, §3.3, Theorem 3.6, pp.238–239; goerss line 688; behrens, Theorem 1.7.6 and discussion, pp.33–34; behrens line 1252).
 
 The construction has the following API.
 
@@ -649,11 +640,13 @@ The height-one/two restriction agrees with the supplied marked realization and a
 
 - At h=1,k=𝔽_p the ring is ℤ_p and there are 0 parameters; at h=2 it is W(𝔽_(p²))[[u₁]]; at h=3 there are 2 parameters. The additive law has h=∞ and is excluded.
 
+- The degree convention agrees with the supplied h=1,2 realizations of EllipticCohomology E2, whose periodicity generator w has degree +2: under w=u⁻¹ the two Laurent rings coincide, and at h=1 and odd p the operation ψ_(−1) sends u to −u and w to (−u)⁻¹=−w. With |u|=−2 the coefficient map v_i↦u_iu^(1−pⁱ) has degree 2(pⁱ−1)=|v_i|; a generator of degree +2 in the same formula would give the negative degree 2(1−pⁱ).
+
 *Needs:* BordismFormalGroups F1/F5 (marked formal groups and universal deformation rings); EllipticCohomology E2.2–E2.3 (the h=1,2 interface and general realization/obstruction machinery); GeneralizedCohomology G2 (E∞ ring and module carriers).
 
 ### 7.2 Morava stabilizer actions
 
-Extend the supplied h=1,2 functoriality to h≥3, making E(k,G) functorial on the groupoid of perfect characteristic-p fields with specified isomorphisms of their height-h formal groups after coefficient transport. Aut(k,G) acts coherently through E∞ maps. For a Honda law over 𝔽_(p^h), specify the extended stabilizer G_h=Aut(G/𝔽_(p^h))⋊Gal(𝔽_(p^h)/𝔽_p). Its action on coefficients is continuous for the maximal-ideal topology, and its finite subgroup restrictions are coherent finite actions usable in Tate and homotopy fixed points. A profinite action is not modeled as a discrete finite-quotient action on E_h. (goerss, Theorem 3.6 and following paragraph, p.239; goerss line 688; behrens, §1.6, pp.27–28; behrens line 1160).
+Extend the supplied h=1,2 functoriality to h≥3, making E(k,G) functorial on the groupoid of perfect characteristic-p fields with specified isomorphisms of their height-h formal groups after coefficient transport. Aut(k,G) acts coherently through E∞ maps. For a Honda law over 𝔽_(p^h), specify the extended stabilizer G_h=Aut(G/𝔽_(p^h))⋊Gal(𝔽_(p^h)/𝔽_p). Its action on coefficients is continuous for the maximal-ideal topology, and its finite subgroup restrictions are coherent finite actions usable in Tate and homotopy fixed points. A profinite action is not modeled as a discrete finite-quotient action on E_h. (goerss, Theorem 3.6 and following paragraph, p.239; goerss line 688; behrens, §1.6, pp.27–28; behrens line 1016).
 
 The construction has the following API.
 
@@ -683,7 +676,7 @@ The height-one/two restriction agrees with the supplied marked realization and a
 
 ### Examples
 
-At h=1 and odd p, ψ_(−1) fixes π₀=ℤ_p and sends u to −u; its square fixes u. At h=2 the residue involution has square1 and is not discarded. At h=3 the residue field has Galois group of order 3.
+At h=1 with k=𝔽_p and G the multiplicative formal group, E(k,G) is p-complete complex K-theory KU_p^∧, with π₀=ℤ_p and Aut(k,G)=ℤ_p^×. The class a∈ℤ_p^× acts by the Adams operation ψ^a, which multiplies π_(2m) by a^m; in particular ψ^a(u)=a⁻¹u, and a=−1 recovers ψ_(−1)(u)=−u. (goerss, Theorem 3.6, p.239; goerss line 688; behrens, §1.6, p.28; behrens line 1016.)
 
 ### Dependencies
 
@@ -693,7 +686,7 @@ BordismFormalGroups F1/F5 (marked formal groups and universal deformation rings)
 
 ### 8.1 Finite-height locality
 
-Let R be a p-local even-periodic oriented homotopy commutative ring with geometric height at most n at every point of Spec π₀R. Then R and every R-module are L_n-local. The graded variant assumes the explicit unit-ideal criterion (p,v₁,…,v_n)=π_*R. The pointwise condition in the even-periodic case implies that criterion after converting the coefficients to degree zero. These statements require a uniform finite bound; no bound is inferred merely from having a one-dimensional law. (lmmt, Proof of Corollary 4.21, p.22; lmmt line 904; behrens, §1.6, pp.27–29; behrens line 1160).
+Let R be a p-local even-periodic oriented homotopy commutative ring with geometric height at most n at every point of Spec π₀R. Then R and every R-module are L_n-local. The graded variant assumes the explicit unit-ideal criterion (p,v₁,…,v_n)=π_*R. The pointwise condition in the even-periodic case implies that criterion after converting the coefficients to degree zero. These statements require a uniform finite bound; no bound is inferred merely from having a one-dimensional law. (lmmt, Proof of Corollary 4.21, p.22; lmmt line 904; behrens, §1.6, pp.27–29; behrens line 1048).
 
 *Proof route.* After p-typicalization and a degree-zero periodicity choice, show that the absence of points of height greater than n makes (p,v₁,…,v_n) the unit ideal. Cover by these finitely many principal opens. On each open construct the unital action of the appropriate inverted BP theory and use its Ravenel class and the module mapping adjunction to prove locality. Reconstruct every R-module by the finite Čech limit. A bound on a module’s Bousfield class alone does not prove it local.
 
@@ -711,7 +704,7 @@ Let R be a p-local even-periodic oriented homotopy commutative ring with geometr
 
 ### 8.2 Telescopes on chromatically local spectra
 
-For n≥1, every L_(n−1)-local spectrum is T(n)-acyclic. For every L_n-local X, the canonical comparison L_(T(n))X→L_(K(n))X is an equivalence. Both assertions require the stated chromatic locality and do not prove equality of the two localization functors on all spectra. The p-local chromatic level one agrees with KU_(p)-localization; global KU detects all primes. (lmmt, Proof of Corollary 4.21, p.22; lmmt line 920; behrens, Proposition 1.6.8 and the chromatic fracture square, pp.28–29; behrens line 1160).
+For n≥1, every L_(n−1)-local spectrum is T(n)-acyclic. For every L_n-local X, the canonical comparison L_(T(n))X→L_(K(n))X is an equivalence. Both assertions require the stated chromatic locality and do not prove equality of the two localization functors on all spectra. The p-local chromatic level one agrees with KU_(p)-localization; global KU detects all primes. (lmmt, Proof of Corollary 4.21, p.22; lmmt line 920; behrens, Proposition 1.6.8 and the chromatic fracture square, pp.28–29; behrens line 1048).
 
 *Proof route.* By Hopkins–Ravenel smashing, every L_(n−1)-local X is L_(n−1)S⊗X. Ravenel orthogonality makes the ring L_(n−1)S K(n)-acyclic; ring acyclicity then makes it T(n)-acyclic, and smashing with X proves the first assertion. This uses the ring comparison on the localized sphere, not on an arbitrary module. Apply the chromatic fracture square to L_n-local X; its lower piece is T(n)-acyclic and its height-n piece is detected by K(n). At height one compare the p-local KU Bousfield class with E(1) and Hℚ∨K(1), importing complex Bott theory. The comparison identifies the two natural units on each fracture piece and then on the pullback.
 
@@ -729,7 +722,7 @@ For n≥1, every L_(n−1)-local spectrum is T(n)-acyclic. For every L_n-local X
 
 At height one and every prime, ⟨T(1)⟩=⟨K(1)⟩. At every prime and every n≥2 there is a T(n)-local spectrum X which is not K(n)-local. More precisely, for every n≥2 and k≥0 construct the associative truncated Brown–Peterson model with its coherent Adams action of ℤ and set X(p,n,k)=L_(T(n))K(BP⟨n−1⟩^(h pᵏℤ)); prove that X(p,n,k) is not K(n)-local. The choice of multiplicative model and Adams action is part of this construction. Its cyclotomic non-hyperdescent argument is independent of the ring-acyclicity proof in Layer 3. Thus the restricted comparison of §8.2 cannot be extended to every spectrum. (bhls, Introduction, Theorem A, pp.2–4; bhls line 98).
 
-*Proof route.* At height 1 compare Miller’s odd-prime and Mahowald’s prime-two Adams computations with the supplied telescope and Morava detectors. At n≥2 construct the BHLS T(n)-localized algebraic K-theory witness and the Adams-operation homotopy-fixed-point comparison, and prove the cyclotomic non-hyperdescent separating its T(n) and K(n) localizations. The algebraic K-theory and cyclotomic carriers are the supplier contract below; the non-hyperdescent construction and its all-prime, all-height argument are part of this target.
+*Proof route.* At height 1 compare Miller’s odd-prime and Mahowald’s prime-two Adams computations with the supplied telescope and Morava detectors. At n≥2 construct the BHLS T(n)-localized algebraic K-theory witness and the Adams-operation homotopy-fixed-point comparison, and prove the cyclotomic non-hyperdescent separating its T(n) and K(n) localizations. The algebraic K-theory, THH, TC and trace carriers are RefinedTraceMethods §§2.6, 2.9, 2.10, 4.9 and 4.11; the non-hyperdescent construction and its all-prime, all-height argument are part of this target.
 
 **Checks.**
 
@@ -739,13 +732,13 @@ At height one and every prime, ⟨T(1)⟩=⟨K(1)⟩. At every prime and every n
 
 - For n=1 there is 0 separation between the two acyclic classes; for each p and n≥2 the BHLS witness has L_T(n)X=X and L_K(n)X≠X. For a ring, acyclicity comparison concerns zero localizations and does not identify these two nonzero outputs.
 
-*Needs:* BordismFormalGroups F6.1/F6.3 (the two local categories and T(n)); gap:spectral-perfect-k-theory (GeneralAlgebraicKTheory, Layer 11) and gap:cyclotomic-trace-carriers (RefinedTraceMethods, RT.2–RT.3); the Adams-operation and non-hyperdescent arguments of this subsection.
+*Needs:* BordismFormalGroups F6.1/F6.3 (the two local categories and T(n)); RefinedTraceMethods §4.9 (nonconnective K-theory of Perf(A)), §§2.6, 2.9 and 2.10 (THH with its cyclotomic Frobenius, and TC) and §4.11 (the cyclotomic trace); the Adams-operation and non-hyperdescent arguments of this subsection.
 
 ### 8.4 Chromatic support of BP truncations
 
-For n≥0 and i>n, BP⟨n⟩ is K(i)-acyclic and T(i)-acyclic. For n≥1 the map BP⟨n⟩→E(n) is a T(n)-equivalence, and is also a T(i)-equivalence for i>n because both objects are acyclic there. It is not an L_n^f-equivalence in general: the rational homotopy of BP⟨n⟩ is connective, whereas E(n) has negative rational classes for n≥1. (ravenel, Theorem 2.1(d)–(f), pp.361–363; ravenel line 401; lmmt, Corollary 4.12 and Remark 4.13, p.20; lmmt line 811).
+For n≥0 and i>n, BP⟨n⟩ is K(i)-acyclic and T(i)-acyclic. For n≥1 the map BP⟨n⟩→E(n) is a T(n)-equivalence, and is also a T(i)-equivalence for i>n because both objects are acyclic there. It is not an L_n^f-equivalence in general: the rational homotopy of BP⟨n⟩ is connective, whereas E(n) has negative rational classes for n≥1. (ravenel, Theorem 2.1(d)–(f), pp.361–363; ravenel line 405 and line 407; lmmt, Corollary 4.12 and Remark 4.13, p.20; lmmt line 808).
 
-*Proof route.* Smash Ravenel’s class formula ⟨BP⟨n⟩⟩=⟨E(n)∨H𝔽_p⟩ with T(i), i>n. The class of E(n) is the join of K(0),…,K(n), and each of those, as well as H𝔽_p, annihilates T(i) by telescope orthogonality. This proves the T(i)-vanishing without choosing a ring structure on BP⟨n⟩; the K(i)-vanishing follows from the same class formula. The successive v_n-cofibers are shifts of BP⟨n−1⟩. They are T(n)-acyclic, so the sequential inversion map is a T(n)-equivalence. At n=1, rationalization preserves the distinction between the connective polynomial coefficient ring and its Laurent localization, disproving the stronger routed assertion.
+*Proof route.* Induct on n, without choosing a ring structure on BP⟨n⟩. For n=0, BP⟨0⟩=Hℤ_(p) is bounded, so its v_i-periodic groups vanish and it is T(i)-acyclic for every i≥1 by §3.2. For n≥1 and i>n, smash the cofiber sequence Σ^(2(pⁿ−1))BP⟨n⟩→BP⟨n⟩→BP⟨n−1⟩ with T(i): the third term vanishes by induction, so v_n acts invertibly on T(i)⊗BP⟨n⟩ and T(i)⊗BP⟨n⟩≃T(i)⊗v_n⁻¹BP⟨n⟩=T(i)⊗E(n). This is zero because ⟨E(n)⟩=⟨K(0)∨⋯∨K(n)⟩ and K(j)⊗T(i)=0 for j≤n<i. K(i)-acyclicity follows from ⟨K(i)⟩≤⟨T(i)⟩. The cofibers of the powers of v_n are iterated extensions of shifts of BP⟨n−1⟩, which are T(n)-acyclic, so the sequential inversion map BP⟨n⟩→E(n) is a T(n)-equivalence. At n=1, rationalization preserves the distinction between the connective polynomial coefficient ring and its Laurent localization, disproving the stronger routed assertion.
 
 **Checks.**
 
@@ -755,11 +748,11 @@ For n≥0 and i>n, BP⟨n⟩ is K(i)-acyclic and T(i)-acyclic. For n≥1 the map
 
 - At n=1, (BP⟨1⟩⊗Hℚ)_−(2p−2)=0, whereas (E(1)⊗Hℚ)_−(2p−2)=ℚ. Its v₁-inversion cofiber is T(1)-acyclic; Hℤ_(p) has K(i)- and T(i)-homology0 for i≥1.
 
-*Needs:* BordismFormalGroups F3 and F6.3–F6.4 (BP truncations, cofibers and Ravenel classes); §3.2 (telescope orthogonality); GeneralizedCohomology G2 (filtered v_n inversion).
+*Needs:* BordismFormalGroups F3 (BP⟨n⟩, its v_n-cofiber sequences and E(n)=v_n⁻¹BP⟨n⟩), F6.3 (⟨K(i)⟩≤⟨T(i)⟩) and F6.4 (⟨E(n)⟩=⟨K(0)∨⋯∨K(n)⟩); §3.2 (telescope orthogonality and the periodic-group criterion); GeneralizedCohomology G2 (filtered v_n inversion).
 
 ### Examples
 
-For ravenel’s bousfield class formula, BP[p⁻¹] and Hℚ have equal acyclics, though π_(2p−2)BP[p⁻¹] contains ℚ and π_(2p−2)Hℚ=0. At n=1 the H𝔽_p term survives for BP⟨1⟩ and dies on v₁ inversion. (ravenel, Theorem 2.1(b),(d),(e),(f), pp.361–363; ravenel line 401; lmmt, Proof of Corollary 4.21, p.22; lmmt line 301).
+For Ravenel’s Bousfield class formula, BP[p⁻¹] and Hℚ have equal acyclics, though π_(2p−2)BP[p⁻¹] contains ℚ and π_(2p−2)Hℚ=0. At n=1 the H𝔽_p term survives for BP⟨1⟩ and dies on v₁ inversion. (ravenel, Theorem 2.1(b),(d),(e),(f), pp.361–363; ravenel line 401; lmmt, Proof of Corollary 4.21, p.22; lmmt line 904).
 
 **Checks.**
 
@@ -767,7 +760,7 @@ For ravenel’s bousfield class formula, BP[p⁻¹] and Hℚ have equal acyclics
 
 - The H𝔽_p summand is essential before v_n inversion.
 
-For hopkins–ravenel smashing theorem, At n=0, L₀S=Hℚ and L₀S∧X=Hℚ∧X. For X=S/p both outputs are 0. An inverse tower with growing filtration can converge without a uniform retraction; convergence is not used as that retraction. (mm, Theorems 4.6–4.7 and Corollary 4.8, pp.26–27; mm line 1729; lmmt, Proof of Corollary 4.21, p.22; lmmt line 301).
+For the Hopkins–Ravenel smashing theorem, at n=0, L₀S=Hℚ and L₀S∧X=Hℚ∧X. For X=S/p both outputs are 0. An inverse tower with growing filtration can converge without a uniform retraction; convergence is not used as that retraction. (mm, Theorems 4.6–4.7 and Corollary 4.8, pp.26–27; mm line 1244, line 1256 and line 1270; lmmt, Proof of Corollary 4.21, p.22; lmmt line 904).
 
 **Checks.**
 
@@ -777,7 +770,7 @@ For hopkins–ravenel smashing theorem, At n=0, L₀S=Hℚ and L₀S∧X=Hℚ∧
 
 ### Dependencies
 
-BordismFormalGroups F1/F5 (height ideals, coordinate invariance and finite invariant-ideal descent), F6.1 and F6.4 (locality and Ravenel classes); GeneralizedCohomology G2 (module adjunctions and finite Čech reconstruction). §3.3 (ring acyclicity on the localized sphere); BordismFormalGroups F6.4 (smashing, orthogonality and chromatic fracture); §8.1 (module locality); GeneralizedCohomology G5.4 and BordismFormalGroups F3 (KU and Adams-summand class comparison). BordismFormalGroups F6.1/F6.3 (the two local categories and T(n)); gap:spectral-perfect-k-theory (GeneralAlgebraicKTheory, Layer 11) and gap:cyclotomic-trace-carriers (RefinedTraceMethods, RT.2–RT.3); the Adams-operation and non-hyperdescent arguments of this subsection. BordismFormalGroups F3 and F6.3–F6.4 (BP truncations, cofibers and Ravenel classes); §3.2 (telescope orthogonality); GeneralizedCohomology G2 (filtered v_n inversion).
+BordismFormalGroups F1/F5 (height ideals, coordinate invariance and finite invariant-ideal descent), F6.1 and F6.4 (locality and Ravenel classes); GeneralizedCohomology G2 (module adjunctions and finite Čech reconstruction). §3.3 (ring acyclicity on the localized sphere); BordismFormalGroups F6.4 (smashing, orthogonality and chromatic fracture); §8.1 (module locality); GeneralizedCohomology G5.4 and BordismFormalGroups F3 (KU and Adams-summand class comparison). BordismFormalGroups F6.1/F6.3 (the two local categories and T(n)); RefinedTraceMethods §4.9 (nonconnective K-theory of Perf(A)), §§2.6, 2.9 and 2.10 (THH with its cyclotomic Frobenius, and TC) and §4.11 (the cyclotomic trace); the Adams-operation and non-hyperdescent arguments of this subsection. BordismFormalGroups F3 (BP⟨n⟩, its v_n-cofiber sequences and E(n)=v_n⁻¹BP⟨n⟩), F6.3 (⟨K(i)⟩≤⟨T(i)⟩) and F6.4 (⟨E(n)⟩=⟨K(0)∨⋯∨K(n)⟩); §3.2 (telescope orthogonality and the periodic-group criterion); GeneralizedCohomology G2 (filtered v_n inversion).
 
 ## Layer 9: Norms, Tate spectra and blueshift
 
@@ -851,9 +844,9 @@ For n≥1, if X is L_n^(p,f)-local with a coherent C_p-action, then its raw Tate
 
 ### 9.5 Nonzero raw Tate spectra
 
-For the trivial C_p-action on KU_p^∧, identify π₀((KU_p^∧)^tC_p) with ℚ_p(ζ_p), including ℚ₂ at p=2. This is nonzero, whereas its T(1)-localization vanishes. Compare the specified trivial-action sphere Tate spectrum with S_p^∧ through the supplier’s Segal comparison: the sphere is not a T(n)-local input to the telescopic vanishing theorem. (greenlees-sadofsky, Corollary 2.4, p.400; greenlees-sadofsky line 343; hesselholt-ku, p.844; hesselholt-ku line 1658; cm-tate, Remark 2.8, p.4; cm-tate line 129).
+For the trivial C_p-action on KU_p^∧, identify π₀((KU_p^∧)^tC_p) with ℚ_p(ζ_p), including ℚ₂ at p=2. This is nonzero, whereas its T(1)-localization vanishes. Compare the specified trivial-action sphere Tate spectrum with S_p^∧ through RefinedTraceMethods §2.3’s Segal comparison: the sphere is not a T(n)-local input to the telescopic vanishing theorem. (greenlees-sadofsky, Corollary 2.4, p.400; greenlees-sadofsky line 343; hesselholt-ku, p.844; hesselholt-ku line 1658; cm-tate, Remark 2.8, p.4; cm-tate line 129).
 
-*Proof route.* Apply the cyclic Tate comparison with the inverse Thom tower of the faithful complex line, and prove its completed KU Euler-inversion identification, with the inverse-limit and periodicity convergence conditions. Compare with the uncompleted KU formula in hesselholt-ku line 1658; the completed comparison is proved using the same oriented tower, rather than assuming Tate commutes with completion. In KU⁰(BC_p) the relation is (1+z)^p−1=0. After inverting z it becomes ((1+z)^p−1)/z=0. Weierstrass preparation identifies the resulting quotient with ℤ_p[ζ_p][1/(ζ_p−1)]=ℚ_p(ζ_p). Use the supplier’s K(1)-locality before invoking telescopic vanishing, and use the Segal comparison only for the separate sphere example.
+*Proof route.* Apply the cyclic Tate comparison with the inverse Thom tower of the faithful complex line, and prove its completed KU Euler-inversion identification, with the inverse-limit and periodicity convergence conditions. Compare with the uncompleted KU formula in hesselholt-ku line 1658; the completed comparison is proved using the same oriented tower, rather than assuming Tate commutes with completion. In KU⁰(BC_p) the relation is (1+z)^p−1=0. After inverting z it becomes ((1+z)^p−1)/z=0. Weierstrass preparation identifies the resulting quotient with ℤ_p[ζ_p][1/(ζ_p−1)]=ℚ_p(ζ_p). Establish the K(1)-locality of KU_p^∧ before invoking telescopic vanishing: inverting the Bott class in BordismFormalGroups F3’s Adams splitting gives KU_(p)≃∏_(i=0)^(p−2)Σ^(2i)E(1) at odd p and KU_(2)≃E(1); E(1) is E(1)-local by F6.5, being Landweber exact with E(1)_*/(p,v₁)=0; and F6.5’s formula at n=1, whose type-one tower is cofinal with the Moore spectra S/pⁱ, identifies L_(K(1))KU_(p) with holim_i KU/pⁱ=KU_p^∧. RefinedTraceMethods §6.8’s formula L_(K(1))X≃(L_(KU)X)_p^∧, applied to X=KU, gives the same conclusion directly. Use the Segal comparison only for the separate sphere example.
 
 **Checks.**
 
@@ -863,15 +856,15 @@ For the trivial C_p-action on KU_p^∧, identify π₀((KU_p^∧)^tC_p) with ℚ
 
 - At p=2, ((1+z)²−1)/z=2+z, so z=−2 and inverting z gives ℚ₂. At p=3 the equation is z²+3z+3=0, an Eisenstein polynomial, and the result is ℚ₃(ζ₃). Both are nonzero; their positive finite-height localizations are 0.
 
-*Needs:* §9.3 (localized Tate vanishing); §8.3 (height-one class equality); GeneralizedCohomology G5.4 (oriented KU); gap:completed-ku-locality and gap:sphere-segal-comparison; the Euler-inversion calculation in this subsection.
+*Needs:* §9.3 (localized Tate vanishing); §8.3 (height-one class equality); GeneralizedCohomology G5.4 (oriented KU); BordismFormalGroups F3 (Adams splitting of ku_(p) with its Bott action) and F6.5 (E(n)-locality of Landweber-exact theories and the K(n)-localization formula), or RefinedTraceMethods §6.8 (K(1)-localization as p-completed KU-localization); RefinedTraceMethods §2.3 (Segal comparison); the Euler-inversion calculation in this subsection.
 
 ### Examples
 
-At p=2, ((1+z)²−1)/z=2+z, so z=−2 and inverting z gives ℚ₂. At p=3 the equation is z²+3z+3=0, an Eisenstein polynomial, and the result is ℚ₃(ζ₃). Both are nonzero; their positive finite-height localizations are 0.
+For the trivial C₂-action on Hℤ, π_n(Hℤ^tC₂) is the Tate cohomology Ĥ^(−n)(C₂;ℤ): ℤ/2 for even n and 0 for odd n. The Tate spectrum is a sum of shifted copies of H𝔽₂, so S[1/2] and every T(i) with i≥1 annihilate it although it is nonzero. Hℤ is not L_n^(p,f)-local for any n at p=2, its localization being Hℤ[1/2], so this nonzero Tate spectrum does not conflict with §9.4. (cm-tate, Definition 2.2, p.2; cm-tate line 70.)
 
 ### Dependencies
 
-BordismFormalGroups F6.1 (exact homological localization) and F6.5 (Borel norm, Tate cofiber and lax monoidal module structure). §9.1 (localized norms); BordismFormalGroups F6.5 (transfer, module action and subgroup functoriality); the cyclic Kahn–Priddy section and prime-order reduction constructed in this subsection. §9.2 (transfer criterion, Kahn–Priddy and prime-order reduction); §5.2 (Bousfield–Kuhn with suspension shift); §9.1 (localized cofiber comparison). §9.3 (telescopic Tate vanishing); §4.1–§4.3 (finite towers and kernels); BordismFormalGroups F6.3/F6.5 (finite dualizability and Tate module action); the raw-telescope Tate lemma and lower-locality argument of this subsection. §9.3 (localized Tate vanishing); §8.3 (height-one class equality); GeneralizedCohomology G5.4 (oriented KU); gap:completed-ku-locality and gap:sphere-segal-comparison; the Euler-inversion calculation in this subsection.
+BordismFormalGroups F6.1 (exact homological localization) and F6.5 (Borel norm, Tate cofiber and lax monoidal module structure). §9.1 (localized norms); BordismFormalGroups F6.5 (transfer, module action and subgroup functoriality); the cyclic Kahn–Priddy section and prime-order reduction constructed in this subsection. §9.2 (transfer criterion, Kahn–Priddy and prime-order reduction); §5.2 (Bousfield–Kuhn with suspension shift); §9.1 (localized cofiber comparison). §9.3 (telescopic Tate vanishing); §4.1–§4.3 (finite towers and kernels); BordismFormalGroups F6.3/F6.5 (finite dualizability and Tate module action); the raw-telescope Tate lemma and lower-locality argument of this subsection. §9.3 (localized Tate vanishing); §8.3 (height-one class equality); GeneralizedCohomology G5.4 (oriented KU); BordismFormalGroups F3 (Adams splitting of ku_(p) with its Bott action) and F6.5 (E(n)-locality of Landweber-exact theories and the K(n)-localization formula), or RefinedTraceMethods §6.8 (K(1)-localization as p-completed KU-localization); RefinedTraceMethods §2.3 (Segal comparison); the Euler-inversion calculation in this subsection.
 
 ## Layer 10: Commutative rings and chromatic height
 
@@ -899,7 +892,7 @@ The construction has the following API.
 
 - The quotient [p](z)/z^(p^(k+1)) is formed only after reducing by I_(k+1), not as an integral power series in the original ring.
 
-- P(1)=1 and P(0)=0; the unquotiented cross term in P(1+1) is a transfer, not declared0. At p=2,h=2, the reduced p-series starts u₁z²+z⁴ (in the chosen p-typical normalization); division by z⁴ is invalid before killing u₁.
+- P(1)=1 and P(0)=0; the unquotiented cross term in P(1+1) is a transfer, not declared0. At p=2 and h=2, so that π₀E=W(𝔽₈)[[u₁,u₂]] and E has height 3, the 2-series modulo 2 is u₁z²+_F u₂z⁴+_F z⁸ in the chosen p-typical normalization; g₂=[2](z)/z⁴ exists only modulo (2,u₁), the case k=1, where its leading coefficient is u₂. The form u₁z²+_F z⁴ is the h=1 series, for which the range 1≤k<h is empty.
 
 *Needs:* §7.1 (Morava realization in every finite height); BordismFormalGroups F6.5 (extended powers and transfers); F1/F5 (p-series and height ideals); GeneralizedCohomology G2 (coherent E∞ algebra and iterated module cofibers).
 
@@ -921,7 +914,7 @@ For an E∞ ring spectrum R and h≥0, K(h)⊗R=0 implies K(h+1)⊗R=0. Conseque
 
 ### 10.3 Chromatic height of a commutative ring
 
-For an E∞ ring R define ht_p(R)=inf{n∈Z | n≥−1 and T(n+1)⊗R=0}, valued in {−1,0,1,…,∞}; an empty set has infimum ∞. Hahn’s theorem makes the vanishing heights an upper interval. This definition uses T(0)=S[1/p] at the bottom, even for a ring not p-local; it differs from geometric height of an oriented formal group. (lmmt, Introduction, chromatic height discussion, pp.3–4; lmmt line 164; hahn, Theorem 1.1, p.1; hahn line 19).
+For an E∞ ring R define ht_p(R)=inf{n∈ℤ | n≥−1 and T(n+1)⊗R=0}, valued in {−1,0,1,…,∞}; an empty set has infimum ∞. Hahn’s theorem makes the vanishing heights an upper interval. This definition uses T(0)=S[1/p] at the bottom, even for a ring not p-local; it differs from geometric height of an oriented formal group. (lmmt, Introduction, chromatic height discussion, pp.3–4; lmmt line 153; hahn, Theorem 1.1, p.1; hahn line 19).
 
 The construction has the following API.
 
@@ -941,7 +934,7 @@ The construction has the following API.
 
 - ht_p(Hℚ)=0.
 
-- For q≠p, ht_p(HF_q)=0 with this all-spectra convention, although its p-localization is zero.
+- For q≠p, ht_p(H𝔽_q)=0 with this all-spectra convention, although its p-localization is zero.
 
 - ht_p(0)=−1, ht_p(H𝔽_p)=−1, ht_p(Hℚ)=0 and ht_p(H𝔽_q)=0 for q≠p. The last two have nonzero T(0)-smash and zero T(1)-smash, so the threshold is exactly0.
 
@@ -949,7 +942,7 @@ The construction has the following API.
 
 ### 10.4 Tate height converse
 
-For an E∞ ring R with trivial C_p-action and i≥0, if L_(T(i))(R^tC_p)=0 then L_(T(j))R=0 for every j≥i+1. In particular T(i)-acyclicity of the trivial-action Tate spectrum forces T(i+1)-acyclicity of R. The action and coherent commutative structure are part of the hypotheses; no claim is made for an arbitrary group action on an arbitrary spectrum. (cmnn, Theorem 4.6 and Lemma 4.7, pp.19–20; cmnn line 827; hahn, Corollary 4.6.1 and Proposition 4.7, pp.9–10; hahn line 19).
+For an E∞ ring R with trivial C_p-action and i≥0, if L_(T(i))(R^tC_p)=0 then L_(T(j))R=0 for every j≥i+1. In particular T(i)-acyclicity of the trivial-action Tate spectrum forces T(i+1)-acyclicity of R. The action and coherent commutative structure are part of the hypotheses; no claim is made for an arbitrary group action on an arbitrary spectrum. (cmnn, Theorem 4.6 and Lemma 4.7, pp.19–20; cmnn line 827; hahn, Corollary 4.6.1 and Proposition 4.7, pp.9–10; hahn line 432 and line 442).
 
 *Proof route.* For i≥1 compute E_(i+1)⁰(BC_p) by Weierstrass preparation, prove finite freeness and the trivial-action comparison E^tC_p⊗_E M≃M^tC_p for K(i+1)-local E-modules. After quotienting by (p,u₁,…,u_(i−1)) and inverting u_i, identify a nonzero faithfully flat algebra over k((u_i)). This reflects K(i)-acyclicity to the input. Combine with Hahn and iterate. Treat i=0 separately by the rational Euler-inversion comparison; there is no negative-index u-parameter or ideal.
 
@@ -965,7 +958,7 @@ For an E∞ ring R with trivial C_p-action and i≥0, if L_(T(i))(R^tC_p)=0 then
 
 ### Examples
 
-ht_p(0)=−1, ht_p(H𝔽_p)=−1, ht_p(Hℚ)=0 and ht_p(H𝔽_q)=0 for q≠p. The last two have nonzero T(0)-smash and zero T(1)-smash, so the threshold is exactly0.
+For R=Hℤ_(p), T(0)⊗R=Hℚ≠0 and T(1)⊗R=0, so ht_p(Hℤ_(p))=0. For R=KU_p^∧, T(1)⊗R≠0 because K(1)⊗KU≠0 and §3.3 applies to this ring, while T(2)⊗R=0 because K(2)⊗KU=0, so ht_p(KU_p^∧)=1; it agrees with the geometric height one of its multiplicative formal group. (lmmt, Introduction, p.3; lmmt line 153.)
 
 ### Dependencies
 
@@ -987,29 +980,29 @@ For every prime p and n≥1, the supplied multiplicative connective-cover map ko
 
 - α²=4β gives complexification (2b²)²=4b⁴ on both sides; α²=β would give4b⁴=b⁴ over ℤ, which is false. Rational π_−8ko=0 and π_−8KO=ℚ after rationalization, so height 0 inversion is not an equivalence.
 
-*Needs:* GeneralizedCohomology G5.4 (ko→KO and E∞ Bott inversion); TopologicalKTheory T7 (real coefficients); §3.2 (positive-height connective-cover invariance); GeneralizedCohomology G2 (relative tensor base change).
+*Needs:* GeneralizedCohomology G5.4 (ko→KO and E∞ Bott inversion); HomotopySpheres §4B (real Bott theorem); TopologicalKTheory T7 (Clifford-module coefficients); §3.2 (positive-height connective-cover invariance); GeneralizedCohomology G2 (relative tensor base change).
 
 ### Examples
 
-For real topological k-theory, π₀ko=π₀KO=ℤ, π₁ko=π₂ko=ℤ/2 and π₃ko=0; π₈KO=ℤ generated by β. Under complexification β maps to b⁴, which has degree 8. (abs, Proposition 6.8, Theorems 6.9 and 11.5, pp.15–16,28–29; locator-only, uncertified; lmmt, Corollary 4.19 and proof, p.21; lmmt line 301).
+For real topological K-theory, π₀ko=π₀KO=ℤ, π₁ko=π₂ko=ℤ/2 and π₃ko=0; π₈KO=ℤ generated by β. Under complexification β maps to b⁴, which has degree 8. (abs, Proposition 6.8, Theorems 6.9 and 11.5, pp.15–16,28–29; locator-only, uncertified; lmmt, Corollary 4.19 and proof, p.21; lmmt line 876).
 
 **Checks.**
 
-- π₀ko=π₀KO=Z, with rank giving the coefficient identification.
+- π₀ko=π₀KO=ℤ, with rank giving the coefficient identification.
 
-- π₁ko=π₂ko=Z/2 and π₃ko=0; replacing ko by complex ku fails this test.
+- π₁ko=π₂ko=ℤ/2 and π₃ko=0; replacing ko by complex ku fails this test.
 
 - β has degree eight, while the imported complex Bott class has degree two.
 
 ### Dependencies
 
-GeneralizedCohomology G5.4 (ko→KO and E∞ Bott inversion); TopologicalKTheory T7 (real coefficients); §3.2 (positive-height connective-cover invariance); GeneralizedCohomology G2 (relative tensor base change).
+GeneralizedCohomology G5.4 (ko→KO and E∞ Bott inversion); HomotopySpheres §4B (real Bott theorem); TopologicalKTheory T7 (Clifford-module coefficients); §3.2 (positive-height connective-cover invariance); GeneralizedCohomology G2 (relative tensor base change).
 
 ## Layer 12: Topological modular forms
 
 ### 12.1 Affineness of elliptic spectral geometry
 
-For X=M̄_ell or M_ell equipped with Otop, global sections give a symmetric monoidal equivalence QCoh(X,Otop)≃Mod_(Γ(X,Otop)). In particular Γ on these quasicoherent spectral modules preserves all colimits. Tensoring a fixed spectrum V with a quasicoherent Otop-module is quasicoherent, and V⊗Γ(M)≃Γ(V⊗M). This theorem is specific to these spectral stacks; it is not ordinary affineness of the underlying algebraic moduli stack. (mm, Theorem 7.2, pp.35–37; mm line 1729; lmmt, Corollary 4.21 proof, p.22; lmmt line 1729).
+For X=M̄_ell or M_ell equipped with Otop, global sections give a symmetric monoidal equivalence QCoh(X,Otop)≃Mod_(Γ(X,Otop)). In particular Γ on these quasicoherent spectral modules preserves all colimits. Tensoring a fixed spectrum V with a quasicoherent Otop-module is quasicoherent, and V⊗Γ(M)≃Γ(V⊗M). This theorem is specific to these spectral stacks; it is not ordinary affineness of the underlying algebraic moduli stack. (mm, Theorem 7.2, pp.35–37; mm line 1729; lmmt, Corollary 4.21 proof, p.22; lmmt line 914).
 
 *Proof route.* Prove 0-affineness for the smooth and compactified elliptic spectral stacks by the formal-group moduli comparison and the Mathew–Meier descent argument. Identify the inverse of global sections as extension of scalars along the section algebra. The equivalence is symmetric monoidal and preserves colimits, so tensoring with any spectrum V gives the stated projection comparison for quasicoherent spectral modules.
 
@@ -1025,7 +1018,7 @@ For X=M̄_ell or M_ell equipped with Otop, global sections give a symmetric mono
 
 ### 12.2 Chromatic bounds for modular forms
 
-For each prime, Tmf_(p) and TM𝔽_(p) are L₂-local. The maps tmf→Tmf are T(n)-equivalences for all n≥1, both spectra are T(n)-acyclic for n≥3, and Tmf→TMF is a T(2)-equivalence. Consequently tmf→TMF→L_(K(2))TMF are T(2)-equivalences. These statements concern the input spectra; their algebraic K-theory consequences stay with the purity consumer. (lmmt, Corollary 4.21 proof, p.22; lmmt line 904; behrens, Propositions 1.6.8 and 1.6.12; chromatic fracture, pp.29–32; behrens line 1160).
+For each prime, Tmf_(p) and TMF_(p) are L₂-local. The maps tmf→Tmf are T(n)-equivalences for all n≥1, both spectra are T(n)-acyclic for n≥3, and Tmf→TMF is a T(2)-equivalence. Consequently tmf→TMF→L_(K(2))TMF are T(2)-equivalences. These statements concern the input spectra; their algebraic K-theory consequences stay with the purity consumer. (lmmt, Corollary 4.21 proof, p.22; lmmt line 904; behrens, Propositions 1.6.8 and 1.6.12; chromatic fracture, pp.29–32; behrens line 1160 and line 1183).
 
 *Proof route.* On each affine chart the formal group has geometric height at most two, including the height-one nodal boundary; apply finite-height locality and take the descent limit. Use connective-cover invariance at positive heights. For Tmf→TMF commute T(2) with global sections by affineness. Height-two support lies in the smooth open, so Δ inversion is already an equivalence on T(2)-localized sections. Apply the comparison between T(2) and K(2) on L₂-local spectra. Prove this support assertion on each chart: the discriminant-zero locus is nodal of formal height 1, so its T(2)-localized contribution is zero; apply the actual surviving discriminant localization to the quasicoherent module and then global sections.
 
@@ -1041,7 +1034,7 @@ For each prime, Tmf_(p) and TM𝔽_(p) are L₂-local. The maps tmf→Tmf are T(
 
 ### 12.3 Level-three Galois extension
 
-For a finite group G, a faithful G-Galois extension A→B of E∞ rings consists of a coherent G-action by A-algebra maps such that A→B^hG and B⊗_A B→∏_G B are equivalences, and tensoring with B is conservative on A-modules. Using the supplied full-level-three elliptic moduli cover, prove that TMF[1/3]→TMF(3) as a faithful GL₂(𝔽₃)-Galois extension. Its p=2 localization has that same group, including determinant and residue-field components. (mm, Theorem 7.6, p.38; mm line 1801).
+For a finite group G, a faithful G-Galois extension A→B of E∞ rings consists of a coherent G-action by A-algebra maps such that A→B^hG and B⊗_A B→∏_G B are equivalences, and tensoring with B is conservative on A-modules. Using the supplied full-level-three elliptic moduli cover, prove that TMF[1/3]→TMF(3) is a faithful GL₂(𝔽₃)-Galois extension. Its p=2 localization has that same group, including determinant and residue-field components. (mm, Theorem 7.6, p.38; mm line 1801).
 
 The construction has the following API.
 
@@ -1073,9 +1066,9 @@ This notion of faithful spectral Galois extension is used with the actual base a
 
 ### 12.4 Supersingular Morava comparison
 
-At p=2, L_(K(2))TMF(3)≃E(𝔽₄,Ĉ) for a supersingular elliptic curve with a chosen full level-three marking, equivariantly for the induced GL₂(𝔽₃) action, and L_(K(2))TMF≃E₂^hGL₂(𝔽₃). At p=3, L_(K(2))TMF≃E₂^hG₂₄, where G₂₄ is the automorphism group of the supersingular pair over 𝔽₃, including the order-two residue-field Galois factor. Here |Aut(C/𝔽₉)|=12 and the extended group has order 24. Choices of curve and marking give compatible equivalences, not an unmarked canonical coefficient-coordinate identification. (behrens, §1.6, Proposition 1.6.12, pp.30–31; behrens line 1160; lmmt, Corollary 4.21 proof, pp.22–23; lmmt line 1160).
+At p=2, L_(K(2))TMF(3)≃E(𝔽₄,Ĉ) for a supersingular elliptic curve with a chosen full level-three marking, equivariantly for the induced GL₂(𝔽₃) action, and L_(K(2))TMF≃E₂^hGL₂(𝔽₃). At p=3, L_(K(2))TMF≃E₂^hG₂₄, where G₂₄ is the automorphism group of the supersingular pair over 𝔽₃, including the order-two residue-field Galois factor. Here |Aut(C/𝔽₉)|=12 and the extended group has order 24. Choices of curve and marking give compatible equivalences, not an unmarked canonical coefficient-coordinate identification. (behrens, §1.6, Proposition 1.6.12, pp.30–31; behrens line 1160; lmmt, Corollary 4.21 proof, p.22; lmmt line 925).
 
-*Proof route.* Identify the formal completion of the supersingular elliptic moduli stack with the quotient of its Lubin–Tate deformation space by the extended automorphism group, using the imported Serre–Tate comparison. At two, full level three rigidifies the supersingular object to one formal deformation chart with residue field 𝔽₄. Apply Otop realization and finite-group descent; prove base change on the marked formal chart, retain the residue-field automorphism in its action, and identify the actual descent maps.
+*Proof route.* Identify the formal completion of the supersingular elliptic moduli stack with the quotient of its Lubin–Tate deformation space by the extended automorphism group, using the Serre–Tate comparison of ModularCurves §7F. At two, full level three rigidifies the supersingular object to one formal deformation chart with residue field 𝔽₄. Apply Otop realization and finite-group descent; prove base change on the marked formal chart, retain the residue-field automorphism in its action, and identify the actual descent maps.
 
 **Checks.**
 
@@ -1085,11 +1078,11 @@ At p=2, L_(K(2))TMF(3)≃E(𝔽₄,Ĉ) for a supersingular elliptic curve with 
 
 - At 2, the geometric automorphism order 24 times residue degree 2 gives 48. At 3, geometric order 12 times residue degree 2 gives 24. Omitting the residue involution divides each required group order by 2.
 
-*Needs:* EllipticCohomology E1–E3/E6 (formal supersingular charts and level sheaves); ModularCurves §7E (Serre–Tate comparison) and §4C (ordered level-three marking); §7.1–§7.2 (marked realization and finite actions); §12.3 (Galois descent).
+*Needs:* EllipticCohomology E1–E3/E6 (formal supersingular charts and level sheaves); ModularCurves §7F (Serre–Tate comparison) and §4C (ordered level-three marking); §7.1–§7.2 (marked realization and finite actions); §12.3 (Galois descent).
 
 ### Examples
 
-For elliptic cohomology theories, For an ordinary elliptic fiber the height is 1 and for a supersingular fiber it is 2. The additive law over 𝔽_p has infinite height and cannot be the completion of a smooth elliptic curve. (behrens, Definition 1.2.11, Remark 1.2.12 and Corollary 1.2.15, p.7; behrens line 1160).
+For elliptic cohomology theories, for an ordinary elliptic fiber the height is 1 and for a supersingular fiber it is 2. The additive law over 𝔽_p has infinite height and cannot be the completion of a smooth elliptic curve. (behrens, Definition 1.2.11, Remark 1.2.12 and Corollary 1.2.15, p.7; behrens line 233).
 
 **Checks.**
 
@@ -1099,7 +1092,7 @@ For elliptic cohomology theories, For an ordinary elliptic fiber the height is 1
 
 - An even-periodic ring with additive characteristic-p law cannot be elliptic cohomology of a smooth elliptic curve.
 
-For topological structure sheaf, At a nodal one-gon the identity formal group is multiplicative of height 1; at a supersingular smooth fiber it has height 2. A descent class of bidegree(s,2r) contributes degree 2r−s, which is odd when s is odd. (goerss, Theorem 1.2, pp.224–225; goerss line 688; mm, Theorem 7.1, p.35; mm line 1729).
+For the topological structure sheaf, at a nodal one-gon the identity formal group is multiplicative of height 1; at a supersingular smooth fiber it has height 2. A descent class of bidegree(s,2r) contributes degree 2r−s, which is odd when s is odd. (goerss, Theorem 1.2, pp.224–225; goerss line 152; mm, Theorem 7.1, p.35; mm line 1682).
 
 **Checks.**
 
@@ -1109,7 +1102,7 @@ For topological structure sheaf, At a nodal one-gon the identity formal group is
 
 - Even homotopy sheaves do not force Tmf to have no odd homotopy, because higher étale cohomology contributes.
 
-For topological modular forms, π_−1tmf=0 by the connective cover; Tmf retains negative degrees and TMF inverts the cusp discriminant. At 2, Δ has weight 12 and spectral degree 24, but the integral uniform lift is Δ²⁴ in degree 576. (lmmt, §4.3 preceding Corollary 4.21, p.22; lmmt line 301; behrens, §1.3, pp.9–13; §1.6, pp.31–32; behrens line 1160).
+For topological modular forms, π_−1tmf=0 by the connective cover; Tmf retains negative degrees and TMF inverts the cusp discriminant. At 2, Δ has weight 12 and spectral degree 24, but the integral uniform lift is Δ²⁴ in degree 576. (lmmt, §4.3 preceding Corollary 4.21, p.22; lmmt line 890; behrens, §1.3, pp.9–13; behrens line 455; §1.6, pp.31–32; behrens line 1183).
 
 **Checks.**
 
@@ -1119,7 +1112,7 @@ For topological modular forms, π_−1tmf=0 by the connective cover; Tmf retains
 
 - At primes two and three no degree-24 Bott class is assumed solely from the algebraic modular form Δ.
 
-For discriminant localization, weight(Δ²⁴)=12·24=288 and spectral degree is 2·288=576; at 2 the smaller surviving Δ⁸ has degree 192 and at 3 Δ³ has degree 72. The common exponent24 is divisible by 8 and 3. (behrens, §1.3, p.13; §1.5, Theorem 1.5.6, p.23; behrens line 1160; lmmt, §4.3 preceding Corollary 4.21 and its proof, p.22; lmmt line 301).
+For discriminant localization, weight(Δ²⁴)=12·24=288 and spectral degree is 2·288=576; at 2 the smaller surviving Δ⁸ has degree 192 and at 3 Δ³ has degree 72. The common exponent24 is divisible by 8 and 3. (behrens, §1.3, p.13; behrens line 457; §1.5, Theorem 1.5.6, p.23; behrens line 845; lmmt, §4.3 preceding Corollary 4.21 and its proof, p.22; lmmt line 890).
 
 **Checks.**
 
@@ -1129,13 +1122,13 @@ For discriminant localization, weight(Δ²⁴)=12·24=288 and spectral degree is
 
 ### Dependencies
 
-EllipticCohomology E1–E3 (the two spectral stacks and Otop); gap:spectral-ringed-sites; §8.1 (height-local module comparison); the elliptic 0-affineness argument in this subsection. EllipticCohomology E3–E4 (tmf→Tmf→TMF and actual Δ²⁴ inversion); §12.1 (spectral affineness); §8.1–§8.2 (height locality and restricted telescope comparison); §3.2 (connective-cover invariance); ModularCurves §7E (formal-height strata). EllipticCohomology E3/E6 (level-three sections and deck-group descent); ModularCurves §4C (the full ordered torsor); §12.1 (spectral affineness and module base change). EllipticCohomology E1–E3/E6 (formal supersingular charts and level sheaves); ModularCurves §7E (Serre–Tate comparison) and §4C (ordered level-three marking); §7.1–§7.2 (marked realization and finite actions); §12.3 (Galois descent).
+EllipticCohomology E1–E3 (the two spectral stacks and Otop); gap:spectral-ringed-sites; §8.1 (height-local module comparison); the elliptic 0-affineness argument in this subsection. EllipticCohomology E3–E4 (tmf→Tmf→TMF and actual Δ²⁴ inversion); §12.1 (spectral affineness); §8.1–§8.2 (height locality and restricted telescope comparison); §3.2 (connective-cover invariance); ModularCurves §7E (formal-height strata). EllipticCohomology E3/E6 (level-three sections and deck-group descent); ModularCurves §4C (the full ordered torsor); §12.1 (spectral affineness and module base change). EllipticCohomology E1–E3/E6 (formal supersingular charts and level sheaves); ModularCurves §7F (Serre–Tate comparison) and §4C (ordered level-three marking); §7.1–§7.2 (marked realization and finite actions); §12.3 (Galois descent).
 
 ## Layer 13: James filtrations and Thom spectra
 
 ### 13.1 Units and Thom spectra
 
-For an E∞ ring R, GL₁R is the union of the unit components in Ω∞R with its multiplicative group-like E∞ structure, and BGL₁R→Mod_R classifies the R-lines equivalent to R. For f:X→BGL₁R, define Mf=colim_X L_f in Mod_R. For n≥1, a based n-fold loop map yields an E_n R-algebra structure on Mf by the monoidal Thom construction. Preserve the actual twist and coherent multiplicative data. (thom, Definition 3.1 and Corollary 3.2, p.10; Theorem 3.5 and Corollary 3.9, p.11; Lemma 3.15 and Proposition 3.16, pp.13–14; thom line 400; akq, §2.1, p.5; akq line 632).
+For an E∞ ring R, GL₁R is the union of the unit components in Ω∞R with its multiplicative group-like E∞ structure, and BGL₁R→Mod_R classifies the R-lines equivalent to R. For f:X→BGL₁R, define Mf=colim_X L_f in Mod_R. For n≥1, a based n-fold loop map yields an E_n R-algebra structure on Mf by the monoidal Thom construction. Preserve the actual twist and coherent multiplicative data. (thom, Definition 3.1 and Corollary 3.2, p.10; Theorem 3.5 and Corollary 3.9, p.11; Lemma 3.15 and Proposition 3.16, pp.13–14; thom line 400; akq, §2.1, p.5; akq line 186).
 
 The construction has the following API.
 
@@ -1163,7 +1156,7 @@ The construction has the following API.
 
 ### 13.2 Hopkins–Mahowald Thom theorem
 
-Let (S³)_p^∧ be the p-completion of the nilpotent space S³ and let f_p:Ω²(S³)_p^∧→BGL₁(S_p^∧) be the E₂ map extending the class 1−p∈π₁BGL₁(S_p^∧)=ℤ_p^× in the p-complete convention. Its p-complete Thom E₂ ring is H𝔽_p. Set C_p=fib((S³)_p^∧→K(ℤ_p,3)), with the map inducing the identity on π₃. Restriction along Ω²C_p gives the p-complete Thom E₂ ring Hℤ_p. Here C_p is the fiber killing homotopy through degree 3 (the cover indexed4 under these conventions); using an uncompleted S³ with target K(ℤ_p,3) would give π₂=ℤ_p/Z instead. Thom tensor products and colimits in these assertions are taken in the p-complete symmetric monoidal category. (thom, Theorems 5.1 and 5.7, pp.19–22; thom line 768).
+Let (S³)_p^∧ be the p-completion of the nilpotent space S³ and let f_p:Ω²(S³)_p^∧→BGL₁(S_p^∧) be the E₂ map extending the class 1−p∈π₁BGL₁(S_p^∧)=ℤ_p^× in the p-complete convention. Its p-complete Thom E₂ ring is H𝔽_p. Set C_p=fib((S³)_p^∧→K(ℤ_p,3)), with the map inducing the identity on π₃. Restriction along Ω²C_p gives the p-complete Thom E₂ ring Hℤ_p. Here C_p is the fiber killing homotopy through degree 3 (the cover indexed4 under these conventions); using an uncompleted S³ with target K(ℤ_p,3) would give π₂=ℤ_p/ℤ instead. Thom tensor products and colimits in these assertions are taken in the p-complete symmetric monoidal category. (thom, Theorems 5.1 and 5.7, pp.19–22; thom line 768).
 
 *Proof route.* Construct nilpotent p-completion of the source space and compare fib((S³)_p^∧→K(ℤ_p,3)) with the completion of fib(S³→K(ℤ,3)). Apply the Thom universal property to identify the first Thom ring with the versal E₂ algebra killing p. Compute its mod-p homology and Dyer–Lashof operations and prove the map to H𝔽_p is an equivalence. For the connected-cover variant use the intermediate S¹ Thom construction and its characteristic-p quotient to obtain Hℤ_p. Every tensor and colimit in this comparison is taken in p-complete spectra.
 
@@ -1181,7 +1174,7 @@ Let (S³)_p^∧ be the p-completion of the nilpotent space S³ and let f_p:Ω²(
 
 ### 13.3 James-filtered Thom spectra
 
-For m≥0 restrict f_p along ΩJ_(p^m−1)S²→Ω²S³→Ω²(S³)_p^∧ and denote the resulting p-complete E₁ Thom ring by y(m). All colimits in this family are colimits in p-complete spectra, formed by completing ordinary spectral colimits. Then y(0)=S_p^∧, there are E₁ maps y(m)→y(m+1), and colim_m y(m)≃H𝔽_p. For m≥1, π₀y(m)=𝔽_p. At p=2 and m≥1 define z(m) by restricting along Ω(J_(2^m−1)S²⟨3⟩), where the inner connected cover is the fiber of J_(2^m−1)S²→K(Z,2), followed by completion in the p-complete convention. These E₁ rings map to y(m), and colim z(m)≃Hℤ₂. (lmmt, Thom construction preceding Lemma 4.15, p.20; lmmt line 837; akq, Construction 2.1 and Lemma 2.2, pp.5–6; akq line 210).
+For m≥0 restrict f_p along ΩJ_(p^m−1)S²→Ω²S³→Ω²(S³)_p^∧ and denote the resulting p-complete E₁ Thom ring by y(m). All colimits in this family are colimits in p-complete spectra, formed by completing ordinary spectral colimits. Then y(0)=S_p^∧, there are E₁ maps y(m)→y(m+1), and colim_m y(m)≃H𝔽_p. For m≥1, π₀y(m)=𝔽_p. At p=2 and m≥1 define z(m) by restricting along Ω(J_(2^m−1)S²⟨3⟩), where the inner connected cover is the fiber of J_(2^m−1)S²→K(ℤ,2), followed by completion in the p-complete convention. These E₁ rings map to y(m), and colim z(m)≃Hℤ₂. (lmmt, Thom construction preceding Lemma 4.15, p.20; lmmt line 834; akq, Construction 2.1 and Lemma 2.2, pp.5–6; akq line 218 and line 236).
 
 The construction has the following API.
 
@@ -1189,9 +1182,9 @@ The construction has the following API.
 
 - The y(0) object is S_p^∧ by the trivial Thom-line computation.
 
-- For m≥1, π₀y(m)=𝔽_p; the completed integral family has π₀=Z₂.
+- For m≥1, π₀y(m)=𝔽_p; the completed integral family has π₀=ℤ₂.
 
-- The z(m)→y(m) square agrees with Hℤ₂→HF₂ after passing to the colimit.
+- The z(m)→y(m) square agrees with Hℤ₂→H𝔽₂ after passing to the colimit.
 
 *Proof route.* Restrict the specified unit-classifying map along the looped finite James inclusions before taking the Thom colimit. Their connectivity proves the filtered loop comparison, and monoidal Thom functoriality gives the E₁ transition maps. Compute π₀ at the first nontrivial stage and carry it through the tower. For z(m), compare the integral degree-two Postnikov fiber before and after nilpotent completion. Complete the ambient filtered colimit; do not interchange this completion with arbitrary operations without that comparison.
 
@@ -1227,23 +1220,25 @@ For m≥1, y(m) is L_(m−1)^(p,f)-acyclic: T(i)⊗y(m)=0 for 0≤i<m. At p=2, z
 
 ### 13.5 Acyclicity under the James splitting
 
-Let W be a connected pointed CW space and let E=T(n)∨T(n−1), with n≥1. If E⊗Σ∞W=0 then E⊗Σ∞ΩΣW=0. In particular a connected finite p-local complex of type m>n meets this hypothesis; for n=1 its reduced rational triviality and p-locality also imply S[1/p]-acyclicity. This is the stable input for the corresponding Waldhausen A-theory purity application; no A-theory comparison is re-proved here. (lmmt, Corollary 4.14 proof, p.20; lmmt line 823).
+Let W be a connected pointed CW space and E any spectrum. If E⊗Σ∞W=0 then E⊗Σ∞ΩΣW=0. In particular, for n≥1 and E=T(n)∨T(n−1), a connected finite p-local complex of type m>n meets this hypothesis; for n=1 its reduced rational triviality and p-locality also imply S[1/p]-acyclicity. This is the stable input for the corresponding Waldhausen A-theory purity application; no A-theory comparison is re-proved here. (lmmt, Corollary 4.14 proof, p.20; lmmt line 823).
 
-*Proof route.* Smash the stable James splitting with E. Every positive smash power of W is E-acyclic because tensoring is associative. Tensor and coproduct commute; all terms of the wedge vanish.
+*Proof route.* Smash the stable James splitting with E. Every positive smash power of W is E-acyclic because Σ∞(W^∧k)≃Σ∞W⊗Σ∞W^∧(k−1) and tensoring is associative. Tensor and coproduct commute; all terms of the wedge vanish. No property of E is used.
 
 **Checks.**
 
 - The wedge starts at k=1, so no sphere summand invalidates the vanishing.
 
-- For n=1 the lower detector is S[1/p], with its specified convention.
+- For E=T(n)∨T(n−1) with n=1 the lower detector is S[1/p], with its specified convention.
+
+- For E=Hℚ and W=K(ℤ/p,1), the reduced rational homology of W is zero, so Hℚ⊗Σ∞W=0, and the conclusion gives Hℚ⊗Σ∞ΩΣW=0, as the rational Bott–Samelson tensor algebra on the zero module confirms; this E is not a telescope.
 
 - For W=*, all positive smash powers have zero reduced suspension. For W=S², the wedge has cells in degrees2,4,6,… and no degree 0 sphere. Adding a spurious r=0 term contributes E≠0 and would refute the vanishing argument.
 
-*Needs:* HomotopySpheres §3B (reduced stable James splitting); §3.2 (telescope/type orthogonality); GeneralizedCohomology G2 (tensor and coproduct comparison).
+*Needs:* gap:stable-james-splitting (HomotopySpheres §3B); §3.2 (telescope/type orthogonality, for the T(n)∨T(n−1) instance); GeneralizedCohomology G2 (tensor and coproduct comparison).
 
 ### Examples
 
-For the James construction, J₀S²=*; J₁S²=S²; J₂S² has reduced cells in degrees2 and 4. For S⁰, π₀J∞S⁰=ℕ whereas π₀ΩS¹=ℤ, so the disconnected comparison fails. (lmmt, Corollary 4.14 proof and following Thom-spectrum construction, p.20; lmmt line 301; akq, §2.1, p.5; akq line 632).
+For the James construction, J₀S²=*; J₁S²=S²; J₂S² has reduced cells in degrees2 and 4. For S⁰, π₀J∞S⁰=ℕ whereas π₀ΩS¹=ℤ, so the disconnected comparison fails. (lmmt, Corollary 4.14 proof and following Thom-spectrum construction, p.20; lmmt line 826 and line 834; akq, §2.1, p.5; akq line 205).
 
 **Checks.**
 
@@ -1255,7 +1250,7 @@ For the James construction, J₀S²=*; J₁S²=S²; J₂S² has reduced cells in
 
 ### Dependencies
 
-GeneralizedCohomology G2 (E∞ rings, module categories and monoidal colimits); BordismFormalGroups F6.5 (coherent local systems and monoidal rectification). §13.1 (units, multiplicative Thom colimits and their universal property); GeneralizedCohomology G3.9 (spectral p-completion); StableHomotopyKTheory §3.18 and AlgebraicTopology Stage 8 (connected covers); the nilpotent space-completion and free E₂ operation calculation in this subsection. HomotopySpheres §3B (James filtration and connected equivalence); §13.1–§13.2 (actual classifying map, completed Thom theorem and nilpotent source-space completion); StableHomotopyKTheory §3.18 (Postnikov section defining the cover). §13.3 (completed y(m), z(m) and coefficient comparisons); §3.3 (ring acyclicity); BordismFormalGroups F6.3 (v_i detection); the Margolis-homology and localized Adams vanishing-line calculations in this subsection. HomotopySpheres §3B (reduced stable James splitting); §3.2 (telescope/type orthogonality); GeneralizedCohomology G2 (tensor and coproduct comparison).
+GeneralizedCohomology G2 (E∞ rings, module categories and monoidal colimits); BordismFormalGroups F6.5 (coherent local systems and monoidal rectification). §13.1 (units, multiplicative Thom colimits and their universal property); GeneralizedCohomology G3.9 (spectral p-completion); StableHomotopyKTheory §3.18 and AlgebraicTopology Stage 8 (connected covers); the nilpotent space-completion and free E₂ operation calculation in this subsection. HomotopySpheres §3B (James filtration and connected equivalence); §13.1–§13.2 (actual classifying map, completed Thom theorem and nilpotent source-space completion); StableHomotopyKTheory §3.18 (Postnikov section defining the cover). §13.3 (completed y(m), z(m) and coefficient comparisons); §3.3 (ring acyclicity); BordismFormalGroups F6.3 (v_i detection); the Margolis-homology and localized Adams vanishing-line calculations in this subsection. gap:stable-james-splitting (HomotopySpheres §3B); §3.2 (telescope/type orthogonality, for the T(n)∨T(n−1) instance); GeneralizedCohomology G2 (tensor and coproduct comparison).
 
 ## Downstream consumers
 
@@ -1263,9 +1258,9 @@ The chromatic purity and redshift applications in GeneralAlgebraicKTheoryPartII 
 
 ## Worked examples
 
-For q≠p, multiplication by p is invertible on S/q, so S[1/p]∧S/q=S/q. Rationalization instead gives 0. For a p-local X, every q≠p is invertible already and then p-inversion gives X⊗Hℚ. Thus the two finite towers agree exactly on the stated p-local domain. (lmmt, Definition2.5 and the consequences of Lemma2.8, pp.8–9; lmmt line 321.)
+For q≠p, multiplication by p is invertible on S/q, so S[1/p]∧S/q=S/q. Rationalization instead gives 0. For a p-local X, every q≠p is invertible already and then p-inversion gives X⊗Hℚ. Thus the two finite towers agree exactly on the stated p-local domain. (lmmt, Definition2.5 and the consequences of Lemma2.8, pp.8–9; lmmt line 322.)
 
-For an additive law over a characteristic-p field, [p](X)=pX=0. For the native multiplicative law, [p](X)=(1+X)^p−1=X^p. At 2 these are 0 and X², and at 3 they are 0 and X³. They distinguish infinite height from height 1 on the actual formal-law carriers. A rescaling with nonunit derivative is not a coordinate isomorphism. (behrens, §1.5, p.21; behrens line 761.)
+For an additive law over a characteristic-p field, [p](X)=pX=0. For the native multiplicative law, [p](X)=(1+X)^p−1=X^p. At 2 these are 0 and X², and at 3 they are 0 and X³. They distinguish infinite height from height 1 on the actual formal-law carriers. A rescaling with nonunit derivative is not a coordinate isomorphism. (behrens, §1.5, p.21; behrens line 766.)
 
 For trivial-action completed KU at 2, Euler inversion imposes 2+z=0 and z invertible, yielding ℚ₂. At 3 it imposes z²+3z+3=0 and z invertible, yielding the ramified field ℚ₃(ζ₃). Its uniformizer is ζ₃−1, whose square is −3ζ₃. This proves that inverting that element in the integer ring inverts3; the spectral Euler-inversion theorem is the additional target of §9.5. (cm-tate, Remark2.8, p.4; cm-tate line 129, for nonzero lower-height Tate; the displayed field calculation is the oriented specialization proved in §9.5.)
 
@@ -1277,10 +1272,10 @@ For the completed-domain fiber of (S³)_p^∧→K(ℤ_p,3), the degree-three map
 
 ## References
 
-The keys below identify the legally retrieved versions in `sources.toml`; source line numbers refer to those versions’ numbered extractions. Numbering follows the version read. The single locator-only source is marked explicitly.
+The keys below identify the legally retrieved versions in the roadmap’s sources manifest; source line numbers refer to those versions’ numbered extractions. Numbering follows the version read. The single locator-only source is marked explicitly.
 
 - **lmmt** — Markus Land, Akhil Mathew, Lennart Meier, Georg Tamme, [Purity in chromatically localized algebraic K-theory](https://arxiv.org/abs/2001.10425v5), 2020. Introduction, pp.3–4, for the commutative-ring height convention.; §2.1–2.2, pp.6–10; Remark 3.9, pp.15–16; §4.2, pp.19–21; §4.3 and Corollary 4.21 with proof, pp.21–22.
-- **hs** — Michael J. Hopkins and Jeffrey H. Smith, [Nilpotence and stable homotopy theory II](https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HS.pdf), 1998. Theorems 3,7,9,11, pp.2–6; preliminaries, p.9; §1.1–1.4, pp.10–14; Lemma 2.1 and §2.1–2.2, pp.15–19; Lemmas 3.5–3.6 and Corollaries 3.7–3.8, p.21. The §4 periodicity construction is not audited (G2).
+- **hs** — Michael J. Hopkins and Jeffrey H. Smith, [Nilpotence and stable homotopy theory II](https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HS.pdf), 1998. Theorems 3,7,9,11, pp.2–6; preliminaries, p.9; §1.1–1.4, pp.10–14; Lemma 2.1 and §2.1–2.2, pp.15–19; Lemmas 3.5–3.6 and Corollaries 3.7–3.8, p.21.
 - **ravenel** — Douglas C. Ravenel, [Localization with respect to certain periodic homology theories](https://www.sas.rochester.edu/mth/sites/doug-ravenel/mypapers/loc.pdf), 1984. §2, definitions and Theorem 2.1 with proof, pp.360–363.
 - **kuhn-guide** — Nicholas J. Kuhn, [A guide to telescopic functors](https://arxiv.org/abs/0802.0510v1), 2008. Theorem 1.1, pp.3–4; §2.3, pp.7–9; §3.1 and Lemma 3.1, pp.9–11; §5, Theorem 5.2 and Lemmas 5.4–5.5, pp.15–18.
 - **kuhn-tate** — Nicholas J. Kuhn, [Tate cohomology and periodic localization of polynomial functors](https://arxiv.org/abs/math/0307173v1), 2003. Introduction, Theorem 1.5 and Corollaries 1.6–1.7, manuscript pp.4–6; §4 and Lemma 4.1, pp.15–17.

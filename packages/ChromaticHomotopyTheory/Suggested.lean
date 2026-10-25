@@ -14,7 +14,7 @@ The following headline theorems are not statable at the pins:
 - Bousfield–Kuhn existence and finite-source uniqueness (§5.1–§5.2): missing pointed derived spaces, mapping spectra, telescopes and spectral localization.
 - Suspension–loop detection (§5.3): missing the derived spectral suspension–loop adjunction and T(n)-localization.
 - Generalized Serre filtration with monodromy and convergence (§6.1): missing spectrum-valued fiber local systems and their filtered homotopy colimits.
-- Fiberwise generalized homology equivalence (§6.2): missing generalized spectral homology and derived space-indexed colimits.
+- Fiberwise generalized homology equivalence (§6.2): missing spectra and their smash with suspension spectra; the pinned Eilenberg–Steenrod homology pretheory has no excision axiom and no weak-equivalence invariance, and neither library has homotopy fibres of maps of spaces.
 - Sharp connective periodic vanishing and suspension–loop preservation (§6.3–§6.4): missing unstable periodic groups, nullification and the finite-local spectral tower.
 - Marked Morava E realization and coherent stabilizer actions at every finite height (§7.1–§7.2): missing E∞ ring spectra, marked spectral realizations and coherent actions.
 - Uniform geometric-height locality for every module (§8.1): missing oriented ring spectra, module spectra and Johnson–Wilson localization.
