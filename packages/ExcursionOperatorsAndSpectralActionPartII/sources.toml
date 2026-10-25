@@ -54,7 +54,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Locators refer to arXiv:2106.09120v2 (3 September 2021), not the 2023 Duke version of record; the preprint and publication are one work and one source key."
-cited_for = ["Layer 4.3 conditional consequence", "Source issues"]
+cited_for = ["Layer 4.3 atomic implication", "References"]
 
 [[source]]
 id = "H26"
@@ -82,7 +82,7 @@ year = 2022
 doi = "10.1017/fmp.2022.7"
 version_note = "Published version of record, Forum of Mathematics, Pi 10 (2022), e13; all page and theorem locators refer to this version."
 locator_scheme = "section"
-locator = "§3.1, pp. 12–13: rational torus finiteness and class topology; §3.2, pp. 14–16: inv[b], uniqueness and torus fibers; §3.3, pp. 17–18: Equation (3.3.3) sign; §6.4, pp. 61–62: finite length and the stated star-extension Mant functor; §6.5, pp. 65–66: Theorem 6.5.2; Appendix C, p. 75: Theorem C.1.1 characterizing nonelliptic virtual representations as proper-parabolic induced combinations; Appendix A.2, p. 72: Lemma A.2.1 and the half-sum convention for the sign in (3.3.3)"
+locator = "§3.1, Lemma 3.1.1 and proof, p. 13: rational torus finiteness and class topology; §3.2, pp. 14–16: inv[b], uniqueness and torus fibers; §3.4, p. 19: compatible orbital measures and the orbital-integral integrand used for inversion; §3.3, pp. 17–18: Equation (3.3.3) sign; §6.4, pp. 61–62: finite length and the stated star-extension Mant functor; §6.5, pp. 65–66: Theorem 6.5.2; Appendix C, p. 75: Theorem C.1.1 characterizing nonelliptic virtual representations as proper-parabolic induced combinations; Appendix A.2, p. 72: Lemma A.2.1 and the half-sum convention for the sign in (3.3.3)"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33A94496879999F3D63C2997F2D50D9D/S2050508622000075a.pdf/div-class-title-on-the-kottwitz-conjecture-for-local-shtuka-spaces-div.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33A94496879999F3D63C2997F2D50D9D/S2050508622000075a.pdf/div-class-title-on-the-kottwitz-conjecture-for-local-shtuka-spaces-div.pdf"
 fetched_at = "2026-10-24T22:55:59Z"
@@ -90,4 +90,4 @@ sha256 = "d05a7f84ce98862d470d114946b7002e8d5ab1df3c4d77fb4851ff45f5d80049"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Layers 1, 2, 5, 6"]
+cited_for = ["Layers 0, 1, 2, 5, 6"]

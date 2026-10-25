@@ -2072,37 +2072,49 @@
     "slug": "bernstein-distribution-realization",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "§SR.3.2",
-    "needs": "In §SR.3.2, identify the categorical Bernstein centre faithfully with essentially compact invariant distributions, with inversion and the convolution pairing fixed in Conventions (H26, §1.1 and Lemma 2.3, pp. 1–2 and 6; H26 line 32 and line 283)."
+    "needs": "In §SR.3.2, identify lim_K Z(H(G,K;ℂ)) faithfully with essentially compact invariant distributions, with inversion and z(f)=(z∗f^vee)(1) for the convolution convention fixed above (H26, §1.1 and Lemma 2.3, pp. 1–2 and 6; H26 line 32 and line 283)."
   },
   {
     "slug": "normalized-bernstein-levi",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "§SR.3.2, normalized induction and constant terms",
-    "needs": "For every E-rational Levi M of G, provide the Bernstein-centre restriction r_M:Z(G)→Z(M), with z·i_M^G(Θ)=i_M^G(r_M(z)·Θ) and (z∗f)_M=r_M(z)∗f_M in I(M), for normalized induction and constant terms (H26, §2.1, pp. 4–5; H26 line 192 and line 207)."
+    "needs": "For every E-rational Levi M of G, provide the Bernstein-centre restriction r_M:Z(G)→Z(M), with z·i_M^G(Θ)=i_M^G(r_M(z)·Θ) and tr σ((z∗f)_M)=tr σ(r_M(z)∗f_M) for every irreducible smooth σ of M(E) and f∈H(G), where f_M is the normalized constant term (H26, §2.1, pp. 4–5; H26 line 192 and line 207)."
   },
   {
     "slug": "all-weight-shriek-trace",
     "supplier": "HeckeStacksAndLocalShtukas",
     "section": "Trace continuation of §§HS3.8 and HS3.10",
-    "needs": "For dominant μ and basic b∈B(G,μ), prove bounded finite-length cohomology and the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190)."
+    "needs": "For dominant μ and basic b∈B(G,μ), prove the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190)."
   },
   {
     "slug": "elliptic-torus-representatives",
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
     "section": "§§1.3–1.16, maximal tori",
-    "needs": "For every connected reductive G over E/ℚ_p finite, provide finiteness of the set of G(E)-conjugacy classes of maximal E-tori of G (HKW22, Lemma 3.1.1 and proof, pp. 12–13; HKW22 line 577)."
+    "needs": "For every connected reductive G over E/ℚ_p finite, provide finiteness of the set of G(E)-conjugacy classes of maximal E-tori of G (HKW22, Lemma 3.1.1 and proof, p. 13; HKW22 line 577)."
   },
   {
     "slug": "stable-orbital-inversion-duality",
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-    "section": "§§2.1, 2.4 and 2.11, inversion and stable duality",
-    "needs": "In §§2.1, 2.4 and 2.11, provide invariance of U(G) under inversion and of the Weyl discriminant under stable conjugacy, and the sign-normalized identity Θ(f*)=Trans_G(Θ)(f) for matching functions and the stable tempered transfer of gap:stable-inner-character-transfer."
+    "section": "§§2.1 and 2.4, inversion of stable orbital integrals",
+    "needs": "For every connected reductive G/E and strongly regular γ, prove SO_γ(f^vee)=SO_(γ⁻¹)(f), so f↦f^vee preserves U(G), with the same centralizer measure for γ and γ⁻¹ (deduced by inverting the integrand in HKW22, §3.4, p. 19, HKW22 line 891, and summing the stable classes of H26, §1.1, p. 1, H26 line 39)."
   },
   {
-    "slug": "basic-weight-invariant-fibres",
+    "slug": "basic-invariant-comparison",
     "supplier": "BunGAndNewtonStrata",
-    "section": "§§1.18–1.19, 1.24 and 1.36, basic Levi lifts and invariant fibres",
-    "needs": "Identify HKW's inv[1] with the stable-class invariant of EndoscopicTransferAndUnitaryTraceComparison §1.14 under B(T)≃X_*(T)_Γ (§1.36) and its §1.2(a), integrally with torsion; for strongly regular elliptic g and basic b∈B(G,μ), prove existence and uniqueness of the rational class [g_b] for each weight λ occurring in V_μ with inv[b](g,g_b)=λ in B(T_g); for quasi-split G*, basic b∈B(G*) and every E-rational Levi M of G*_b, provide a standard Levi M* of G* and basic b_M∈B(M*) mapping to b, with M≃(M*)_(b_M), compatibly with their spectral-centre identifications (§§1.18–1.19, 1.24; HKW22 line 631 and line 649; FU25 line 955; H26 line 116 and line 566)."
+    "section": "§1.36, comparison with the stable-class invariant",
+    "needs": "For strongly regular stably conjugate g,g′ with centralizer T, identify HKW's inv[1](g,g′) with the image of the stable-class invariant of EndoscopicTransferAndUnitaryTraceComparison §1.14 under H¹(E,T)≃(X_*(T)_Γ)_tors⊂B(T)≃X_*(T)_Γ, using its §1.2(a) and BunGAndNewtonStrata §1.36 integrally with torsion (HKW22, Definition 3.2.2, p. 14; HKW22 line 631)."
+  },
+  {
+    "slug": "weight-fibre-classes",
+    "supplier": "BunGAndNewtonStrata",
+    "section": "§§1.18–1.19, 1.23 and 1.36, supported-weight invariant fibres",
+    "needs": "For strongly regular elliptic g∈G(E), dominant μ, basic b∈B(G,μ) and each weight λ of V_μ relative to T_g, prove existence and uniqueness of the G_b(E)-class [g_b] stably conjugate to g with inv[b](g,g_b)=λ̄ in B(T_g)≃X_*(T_g)_Γ (HKW22, Remark 3.2.5, p. 14; FU25, Lemma 4.2.7, pp. 24–25; HKW22 line 649 and FU25 line 955)."
+  },
+  {
+    "slug": "basic-levi-lift",
+    "supplier": "BunGAndNewtonStrata",
+    "section": "§§1.18–1.19 and 1.24, basic lifts for rational Levis",
+    "needs": "For quasi-split G*, basic b∈B(G*) and each E-rational parabolic Levi M of G*_b, provide a standard E-rational parabolic Levi M* of G* and basic b_M∈B(M*) mapping to b with M≃(M*)_(b_M), compatibly with the L-group identification of ReductiveGroupsPartII §RG2.5 (H26, Theorem 1.4(i), p. 3, and §2.4, p. 12; H26 line 116 and line 566)."
   },
   {
     "slug": "kazhdan-cuspidal-decomposition",
@@ -2131,14 +2143,14 @@
   {
     "slug": "bounded-elliptic-orbital-integrals",
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-    "section": "§§2.1 and 2.16",
-    "needs": "For every f∈H(G) and maximal E-torus T, prove boundedness of |D_G(t)|^(1/2)O_t(f) on the strongly regular elliptic locus of T(E) and compactness of its support closure in T(E) (H26, §2.3, p. 10; H26 line 486)."
+    "section": "§2.1, compact elliptic orbital support",
+    "needs": "For every f∈H(G) and elliptic maximal E-torus T, prove that the closure in T(E) of {t∈T(E)∩G(E)_ell : O_t(f)≠0} is compact (H26, §2.3, p. 10; H26 line 486)."
   },
   {
     "slug": "stable-inner-character-transfer",
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
     "section": "§§1.6, 1.13, 2.11 and 2.16",
-    "needs": "For each extended pure inner form G of quasi-split G*, provide stable tempered character transfer with elliptic value e(G)Θ(g*), its elliptic isomorphism, compatibility with induction from relevant Levis, and vanishing on irrelevant Levi summands (H26, §2.4, pp. 12–13; H26 line 586 and line 594)."
+    "needs": "For each extended pure inner form G of quasi-split G*, provide stable tempered character transfer with elliptic value e(G)Θ(g*), its elliptic isomorphism, compatibility with induction from relevant Levis, vanishing on irrelevant Levi summands, and Θ(f*)=Trans_G(Θ)(f) for Θ∈SD_temp(G*) and f*, f with matching stable orbital integrals for the factor e(G) (H26, §2.4, pp. 12–13; H26 line 586, line 594, line 597 and line 632)."
   }
 ],
   "restructure": [

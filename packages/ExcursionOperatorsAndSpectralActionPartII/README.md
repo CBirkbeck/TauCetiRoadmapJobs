@@ -1,10 +1,10 @@
 # Roadmap: excursion operators and the spectral action, part II
 
-**Summary.** Starting from the Fargues–Scholze spectral action, this roadmap proves that its image in the smooth Bernstein centre consists of very stable distributions for every connected reductive group over every p-adic field. Its quantitative Hecke averaging theorem gives constancy of semisimple parameters on atomically stable characters. For each extended pure inner form of a quasi-split group, it constructs a surjection between the two image centres and proves compatibility with normalized Levi restriction, stable tempered character transfer and matching test functions (H26, Theorems 1.1 and 1.4, pp. 2–3; H26 line 70 and line 114).
+**Summary.** Starting from the Fargues–Scholze excursion centre map Ψ_G of §0.0, this roadmap proves that its image in the smooth Bernstein centre consists of very stable distributions for every connected reductive group over every p-adic field. Its quantitative Hecke averaging theorem gives constancy of semisimple parameters on atomically stable characters. For each extended pure inner form of a quasi-split group, it constructs a surjection between the two image centres and proves compatibility with normalized Levi restriction, stable tempered character transfer and matching test functions (H26, Theorems 1.1 and 1.4, pp. 2–3; H26 line 70 and line 114).
 
 ## Scope and ownership
 
-The geometric Hecke family comes from HeckeStacksAndLocalShtukas HS1 and HS4; the abstract excursion centre map and semisimple reconstruction come from LanglandsParameterStacks LP2e.15, LP2e.9, LP2c.5 and LP2c.8. Section 0.0 owns their specialization to the lisse category on Bun_G, restriction to smooth basic strata, the FS parameter of an irreducible and normalized spectral Levi compatibility. The remaining targets are the stable and very stable central conditions, their character criteria, decategorified character operators, quantitative averaging, the stability argument and its atomic and inner-form consequences. The universal spectral action is outside this scope.
+The geometric Hecke family comes from HeckeStacksAndLocalShtukas HS1 and HS4; the abstract excursion centre map and semisimple reconstruction come from LanglandsParameterStacks LP2e.15, LP2e.9, LP2c.5 and LP2c.8. Section 0.0 owns their specialization to the lisse category on Bun_G, restriction to smooth basic strata, the FS parameter of an irreducible and normalized spectral Levi compatibility. The remaining targets are the stable and very stable central conditions, their character criteria, decategorified character operators, quantitative averaging, the stability argument and its atomic and inner-form consequences. The universal spectral action of FS24 Chapter X is used by no target here.
 
 SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.1, SR.2.2 and SR.3.1–SR.3.3 own the smooth category, convolution, normalized induction, finite length, Bernstein decomposition and centre. EndoscopicTransferAndUnitaryTraceComparison §§1.3, 1.13–1.16, 2.1, 2.4, 2.11, 2.16 and 4.7 own stable conjugacy, signs, orbital measures, matching, local character theory, Weyl integration and smooth transfer. The remaining general stable harmonic analysis belongs to the continuation of EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.11 and 2.16; the all-weight shriek trace theorem stays in the local-shtuka direction. They enter as the exact supplier contracts below, rather than additional harmonic-analysis or local-shtuka layers here.
 
@@ -12,11 +12,13 @@ BunGAndNewtonStrata §§0.5–0.6, 1.11, 1.13, 1.18–1.19, 1.23 and 1.36 own is
 
 The finite-support carrier, finite arithmetic mean, finite abelian Fourier basis, exact Grothendieck group and quotient-to-image equivalence are already in the library; their exact declarations are consumed below. The retained averaging kernel differs from generic finite Fourier theory by using the actual stable-class invariant and multiplicities of the specified dual-group representations. The retained image-centre map differs from the generic first isomorphism theorem by proving the geometric kernel inclusion that makes it applicable.
 
-The quasi-split assertion that the spectral map is injective and has image the whole stable centre remains the separate expectation following FS24 Conjecture I.9.5, p. 35 (FS24 line 1298). Conjecture I.9.5 itself concerns rationality and independence of ℓ (FS24 line 1294). The end theorems here concern inclusion and image quotients. The regular supercuspidal consequence in §4.3 assumes atomic stability of the character sums of nonempty Kaletha L-packets; identification of the common class with the defining parameter is a separate comparison (H26, p. 2; H26 line 79).
+The quasi-split assertion that the spectral map is injective and has image the whole stable centre remains the separate expectation following FS24 Conjecture I.9.5, p. 35 (FS24 line 1298). Conjecture I.9.5 itself concerns rationality and independence of ℓ (FS24 line 1294). The end theorems here concern inclusion and image quotients. Section 4.3 applies to any finite set of irreducibles with atomically stable character sum; construction and atomic stability of Kaletha’s regular supercuspidal packets, and identification with their defining parameter, are outside its scope (H26, p. 2; H26 line 79).
 
 ## Conventions
 
 Let E be any finite extension of ℚ_p, and G a smooth connected reductive E-group. In particular p is prime, the residue cardinality q is at least 2, and E has characteristic zero. Fix ℓ ≠ p, an algebraic closure ℚ̄_ℓ, a field isomorphism ι:ℚ̄_ℓ≃ℂ, a compatible square root of q, and compatible Haar and quotient measures. All representation and spectral coefficients are transported through this fixed dictionary. Continuity of Weil parameters is imposed in the supplied ℓ-adic or relatively discrete coefficient topology before transport; the field isomorphism is not assigned continuity for the usual complex topology (H26, p. 2, footnote 1; H26 line 91; FS24, §I.9, pp. 34–35).
+
+Put Z_spec(G)=O(Z¹(W_E,Ĝ)_(ℚ̄_ℓ))^Ĝ, the ring of global functions on the stack of L-parameters. By LanglandsParameterStacks §LP1.2 it is the product of the invariant coordinate rings of the disjoint clopen wild-kernel strata; the finite-wild pieces indexed by open wild subgroups themselves overlap and are not the factors of this product. Use the same notation after transport by ι (FS24, Definition I.9.2(iii), p. 35, and proof of Theorem IX.5.2, p. 329; FS24 line 1276 and line 12755).
 
 Write H(G) for the locally constant compactly supported complex functions on G(E), Z(G) for its smooth Bernstein centre realized as essentially compact invariant distributions, and Ψ_G:Z_spec(G)→Z(G) for the spectral map. Essential compactness means that central convolution takes H(G) to H(G). Set Z_FS(G)=range(Ψ_G), with its image-algebra structure. Work in fixed universes containing E, its separable closure, the smooth categories and their essentially small finite-length subcategories; representation indices in finite character sums are isomorphism classes. No cardinality cutoff restricts G or the representation dimensions (H26, §§1.1 and 2.1; H26 line 32 and line 217).
 
@@ -56,11 +58,15 @@ Use `TauCeti.formalCharacter_mul_weylDenominator_eq_weylNumerator` in `TauCeti/A
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
-Consume §§SR.0.4, SR.1.1, SR.2.2, SR.3.1–SR.3.3: the smooth category and its complex centre, compactly supported convolution, normalized induction and Jacquet functors, finite length and irreducible scalar actions; Bernstein restriction is the gap below. Section SR.3a.2 supplies admissibility of irreducibles, hence their scalar Schur endomorphisms over ℚ̄_ℓ or ℂ.
+Consume §§SR.0.4, SR.1.1, SR.2.2, SR.3.1–SR.3.3: the smooth category and its complex centre, compactly supported convolution, normalized induction and Jacquet functors, finite length and irreducible scalar actions; Bernstein restriction is the gap below. Section SR.1.3, “bernstein-centre-corners”, identifies this categorical centre with lim_K Z(H(G,K;ℂ)); §SR.0.4 supplies exact smooth duality over the coefficient field and the injective evaluation into the smooth bidual, and §SR.0d.2 supplies its derived form. Section SR.3a.2 supplies admissibility of irreducibles, hence their scalar Schur endomorphisms over ℚ̄_ℓ or ℂ.
 
-What SmoothRepresentationsOfLocalGroups must provide (gap:bernstein-distribution-realization): In §SR.3.2, identify the categorical Bernstein centre faithfully with essentially compact invariant distributions, with inversion and the convolution pairing fixed in Conventions (H26, §1.1 and Lemma 2.3, pp. 1–2 and 6; H26 line 32 and line 283).
+What SmoothRepresentationsOfLocalGroups must provide (gap:bernstein-distribution-realization): In §SR.3.2, identify lim_K Z(H(G,K;ℂ)) faithfully with essentially compact invariant distributions, with inversion and z(f)=(z∗f^vee)(1) for the convolution convention fixed above (H26, §1.1 and Lemma 2.3, pp. 1–2 and 6; H26 line 32 and line 283).
 
-What SmoothRepresentationsOfLocalGroups must provide (gap:normalized-bernstein-levi): For every E-rational Levi M of G, provide the Bernstein-centre restriction r_M:Z(G)→Z(M), with z·i_M^G(Θ)=i_M^G(r_M(z)·Θ) and (z∗f)_M=r_M(z)∗f_M in I(M), for normalized induction and constant terms (H26, §2.1, pp. 4–5; H26 line 192 and line 207).
+What SmoothRepresentationsOfLocalGroups must provide (gap:normalized-bernstein-levi): For every E-rational Levi M of G, provide the Bernstein-centre restriction r_M:Z(G)→Z(M), with z·i_M^G(Θ)=i_M^G(r_M(z)·Θ) and tr σ((z∗f)_M)=tr σ(r_M(z)∗f_M) for every irreducible smooth σ of M(E) and f∈H(G), where f_M is the normalized constant term (H26, §2.1, pp. 4–5; H26 line 192 and line 207).
+
+**Checks.**
+
+- For GL₂ with M=T and an irreducible χ of T(E), let z act by 2 on the block containing i_B(χ) and choose f with tr(f | i_B(χ))=3. Both constant-term traces are 6; using f=0 gives 0 on each side, and z=1 gives 3 on each side.
 
 Compatibility of these maps with the geometric spectral action is the local target of §0.0. Independence of irreducible characters is consumed from EndoscopicTransferAndUnitaryTraceComparison §2.16; together with finite length it identifies the complexified finite-length Grothendieck group with D(G).
 
@@ -68,15 +74,15 @@ Compatibility of these maps with the geometric spectral action is the local targ
 
 Consume §§HS1.1–HS1.3 and HS1.5–HS1.7 for normalized kernels, relative-homology Hecke operators, units, fusion, adjoints, compactness and duality; §§HS3.8 and HS3.10 supply the star finite-length comparison and basic-source enriched left adjoint. A geometric fibre gives the endofunctors used here. Their smooth categories and coefficient dictionary are the ones fixed above.
 
-Consume HS4.1's finite-set Hecke family and HS4.2's dual-leg excursion operations for the geometric specialization in §0.0; no spectral centre map is assumed from this supplier.
+Consume HS4.1's finite-set Hecke family and HS4.2's dual-leg excursion operations, §§HS1.8–HS1.9 for condensed enrichment and continuous Weil descent, and §HS4.7 for tensor compatibility, wild-inertia closure and continuous export for the geometric specialization in §0.0; §HS4.6 supplies its geometric parabolic and cyclotomic comparison on unstable strata for ℓ-power torsion coefficients. No spectral centre map is assumed from this supplier.
 
-What HeckeStacksAndLocalShtukas must provide (gap:all-weight-shriek-trace): For dominant μ and basic b∈B(G,μ), prove bounded finite-length cohomology and the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190).
+What HeckeStacksAndLocalShtukas must provide (gap:all-weight-shriek-trace): For dominant μ and basic b∈B(G,μ), prove the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190).
 
-The source and target of the first map are D(G_b) and D(G), and of the second D(G) and D(G_b). HKW22 Proposition 6.4.5 and Definition 6.4.6, pp. 61–62 use star extension (HKW22 line 3004 and line 3020); the smooth-duality argument inside that proof supplies finite length of the relevant shriek output (HKW22 line 3017). The elliptic trace comparison itself requires the stated duality/inversion transport of Theorem 6.5.2, pp. 65–66 (HKW22 line 3190). No global star-equals-shriek assertion and no refined-LLC hypothesis from Theorem 6.5.1 is part of this contract. Use gap:basic-weight-invariant-fibres for the invariant and its supported-weight existence and uniqueness; Kottwitz signs are those of EndoscopicTransferAndUnitaryTraceComparison §1.13.
+The source and target of the first map are D(G_b) and D(G), and of the second D(G) and D(G_b). HKW22 Proposition 6.4.5 and Definition 6.4.6, pp. 61–62 use star extension (HKW22 line 3004 and line 3020); finite length of the shriek outputs follows from the duality of HeckeStacksAndLocalShtukas §HS3.8 and exact smooth duality with injective bidual evaluation from SmoothRepresentationsOfLocalGroups §§SR.0.4 and SR.0d.2. Indeed the dual output has bounded finite-length cohomology, and each original cohomology object injects into its finite-length bidual; §HS3.10 also supplies compactness (HKW22 line 3017). The elliptic trace comparison itself requires the stated duality/inversion transport of Theorem 6.5.2, pp. 65–66 (HKW22 line 3190). No global star-equals-shriek assertion and no refined-LLC hypothesis from Theorem 6.5.1 is part of this contract. Use gap:basic-invariant-comparison for the stable-class comparison and gap:weight-fibre-classes for supported-weight existence and uniqueness; Kottwitz signs are those of EndoscopicTransferAndUnitaryTraceComparison §1.13.
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-Consume §§1.3, 1.6(ii)–(iii), 1.13–1.16 for stable conjugacy, rational-class fibres, Kottwitz signs and matching classes; §§2.1, 2.4 and 2.11 for compatible centralizer measures, stable sums and the matching-function quotient; §2.16 for local integrability, discriminant-weighted character boundedness and group Weyl integration; §4.7 for characteristic-zero smooth transfer at every residue characteristic. Section 1.14(b) supplies finite rational conjugacy classes of geometrically conjugate embeddings of a fixed torus; §§1.6(ii)–(iii) supply matching elliptic elements in the quasi-split form. For inner-form matching require the Kottwitz-sign specialization and vanishing on irrelevant quasi-split classes.
+Consume §§1.2(a), 1.3, 1.6(ii)–(iii), 1.13–1.16 for stable conjugacy, rational-class fibres, Kottwitz signs and matching classes; §§2.1, 2.4 and 2.11 for compatible centralizer measures, stable sums and the matching-function quotient; §2.16 for local integrability, discriminant-weighted character boundedness and group Weyl integration; §4.7 for characteristic-zero smooth transfer at every residue characteristic. Section 1.14(b) supplies finite rational conjugacy classes of geometrically conjugate embeddings of a fixed torus; §§1.6(ii)–(iii) supply matching elliptic elements in the quasi-split form. For inner-form matching require the Kottwitz-sign specialization and vanishing on irrelevant quasi-split classes. Section 2.1 `TauCeti.normalizedOrbitalIntegral_bounded` supplies boundedness of |D_G|^(1/2)O_γ(f) on G_reg(E) in its centralizer-quotient normalization; for elliptic T, the A_G(E)\G(E) normalization used in H26 differs by the finite positive factor vol(T(E)/A_G(E)), with compatible measures (H26 line 484 and line 489).
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:kazhdan-cuspidal-decomposition): For every connected reductive G/E, identify the common kernels of irreducible characters, tempered characters, regular orbital integrals and conjugation commutators, and split I(G) as cuspidal classes plus the annihilator of D_ell(G) (H26, §2.1, pp. 4–5; H26 line 181 and line 240).
 
@@ -86,21 +92,25 @@ What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:unstable-temp
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:stable-tempered-projection): For every connected reductive G/E, provide a projection P_st:D_temp(G)→SD_temp(G) whose elliptic restriction is finite arithmetic averaging over rational classes in each stable class (H26, §2.1 and Lemma 2.6, pp. 6 and 10–11; H26 line 262 and line 501).
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:bounded-elliptic-orbital-integrals): For every f∈H(G) and maximal E-torus T, prove boundedness of |D_G(t)|^(1/2)O_t(f) on the strongly regular elliptic locus of T(E) and compactness of its support closure in T(E) (H26, §2.3, p. 10; H26 line 486).
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:bounded-elliptic-orbital-integrals): For every f∈H(G) and elliptic maximal E-torus T, prove that the closure in T(E) of {t∈T(E)∩G(E)_ell : O_t(f)≠0} is compact (H26, §2.3, p. 10; H26 line 486).
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:stable-inner-character-transfer): For each extended pure inner form G of quasi-split G*, provide stable tempered character transfer with elliptic value e(G)Θ(g*), its elliptic isomorphism, compatibility with induction from relevant Levis, and vanishing on irrelevant Levi summands (H26, §2.4, pp. 12–13; H26 line 586 and line 594).
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:stable-inner-character-transfer): For each extended pure inner form G of quasi-split G*, provide stable tempered character transfer with elliptic value e(G)Θ(g*), its elliptic isomorphism, compatibility with induction from relevant Levis, vanishing on irrelevant Levi summands, and Θ(f*)=Trans_G(Θ)(f) for Θ∈SD_temp(G*) and f*, f with matching stable orbital integrals for the factor e(G) (H26, §2.4, pp. 12–13; H26 line 586, line 594, line 597 and line 632).
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:elliptic-torus-representatives): For every connected reductive G over E/ℚ_p finite, provide finiteness of the set of G(E)-conjugacy classes of maximal E-tori of G (HKW22, Lemma 3.1.1 and proof, pp. 12–13; HKW22 line 577).
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:elliptic-torus-representatives): For every connected reductive G over E/ℚ_p finite, provide finiteness of the set of G(E)-conjugacy classes of maximal E-tori of G (HKW22, Lemma 3.1.1 and proof, p. 13; HKW22 line 577).
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:stable-orbital-inversion-duality): In §§2.1, 2.4 and 2.11, provide invariance of U(G) under inversion and of the Weyl discriminant under stable conjugacy, and the sign-normalized identity Θ(f*)=Trans_G(Θ)(f) for matching functions and the stable tempered transfer of gap:stable-inner-character-transfer.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:stable-orbital-inversion-duality): For every connected reductive G/E and strongly regular γ, prove SO_γ(f^vee)=SO_(γ⁻¹)(f), so f↦f^vee preserves U(G), with the same centralizer measure for γ and γ⁻¹ (deduced by inverting the integrand in HKW22, §3.4, p. 19, HKW22 line 891, and summing the stable classes of H26, §1.1, p. 1, H26 line 39).
 
-Finiteness in gap:elliptic-torus-representatives is the finite representative input of HKW22 Lemma 3.1.1 and its proof, pp. 12–13 (HKW22 line 577). It makes no compactness claim about an entire rational conjugacy orbit. The duality contract fixes e(G) as in H26, p. 12, footnote 4 (H26 line 597).
+Finiteness in gap:elliptic-torus-representatives is the finite representative input of HKW22 Lemma 3.1.1 and its proof, p. 13 (HKW22 line 577). It makes no compactness claim about an entire rational conjugacy orbit. The stable-inner-character-transfer contract fixes e(G) as in H26, p. 12, footnote 4 (H26 line 597).
 
 ### From TauCetiRoadmap.BunGAndNewtonStrata
 
 Consume §§0.5–0.6 (G-isocrystals and B(G)), 1.11 (classification by both invariants), 1.13 and 1.18–1.19 (J_b, basicness and inner forms), 1.23 (B(G,μ)) and 1.36 (torus Kottwitz isomorphism and Newton average). The fundamental-group carrier is the integral coroot quotient with full Galois coinvariants of ReductiveGroupsPartII §RG2.1.5; its torsion is retained.
 
-What BunGAndNewtonStrata must provide (gap:basic-weight-invariant-fibres): Identify HKW's inv[1] with the stable-class invariant of EndoscopicTransferAndUnitaryTraceComparison §1.14 under B(T)≃X_*(T)_Γ (§1.36) and its §1.2(a), integrally with torsion; for strongly regular elliptic g and basic b∈B(G,μ), prove existence and uniqueness of the rational class [g_b] for each weight λ occurring in V_μ with inv[b](g,g_b)=λ in B(T_g); for quasi-split G*, basic b∈B(G*) and every E-rational Levi M of G*_b, provide a standard Levi M* of G* and basic b_M∈B(M*) mapping to b, with M≃(M*)_(b_M), compatibly with their spectral-centre identifications (§§1.18–1.19, 1.24; HKW22 line 631 and line 649; FU25 line 955; H26 line 116 and line 566).
+What BunGAndNewtonStrata must provide (gap:basic-invariant-comparison): For strongly regular stably conjugate g,g′ with centralizer T, identify HKW's inv[1](g,g′) with the image of the stable-class invariant of EndoscopicTransferAndUnitaryTraceComparison §1.14 under H¹(E,T)≃(X_*(T)_Γ)_tors⊂B(T)≃X_*(T)_Γ, using its §1.2(a) and BunGAndNewtonStrata §1.36 integrally with torsion (HKW22, Definition 3.2.2, p. 14; HKW22 line 631).
+
+What BunGAndNewtonStrata must provide (gap:weight-fibre-classes): For strongly regular elliptic g∈G(E), dominant μ, basic b∈B(G,μ) and each weight λ of V_μ relative to T_g, prove existence and uniqueness of the G_b(E)-class [g_b] stably conjugate to g with inv[b](g,g_b)=λ̄ in B(T_g)≃X_*(T_g)_Γ (HKW22, Remark 3.2.5, p. 14; FU25, Lemma 4.2.7, pp. 24–25; HKW22 line 649 and FU25 line 955).
+
+What BunGAndNewtonStrata must provide (gap:basic-levi-lift): For quasi-split G*, basic b∈B(G*) and each E-rational parabolic Levi M of G*_b, provide a standard E-rational parabolic Levi M* of G* and basic b_M∈B(M*) mapping to b with M≃(M*)_(b_M), compatibly with the L-group identification of ReductiveGroupsPartII §RG2.5 (H26, Theorem 1.4(i), p. 3, and §2.4, p. 12; H26 line 116 and line 566).
 
 These are the compatibilities used by H26 §2.2, pp. 6–9 (H26 line 296), HKW22 §3.2, pp. 14–16, and FU25 §§3.2 and 4.2 (FU25 line 778 and line 947). They concern arithmetic classes, not period-point existence.
 
@@ -114,7 +124,7 @@ Consume the main roadmap's Layers 1, 2 and 7 for representations as comodules, t
 
 ### From TauCetiRoadmap.LanglandsParameterStacks
 
-Consume LP2e.15, “Abstract excursion centre maps”, LP2e.9 for the rational excursion-to-invariant-functions isomorphism on finite-wild pieces, and LP2c.5, “Continuous semisimple parameter characters”, for the centre-valued excursion algebra and the bijection with continuous semisimple Weil-parameter classes with prescribed projection. LP2c.8, “Parameters of Schur objects”, supplies the invariant-coordinate characterization on Schur objects. The local continuity input for the geometric action is a target in §0.0; LP2c.5 then supplies continuous semisimple classification. Equality of all those scalars implies equality of conjugacy classes; a complex field isomorphism does not supply a new continuity theorem.
+Consume LP1.2, “Clopen finite-wild pieces”, for the parameter-stack decomposition defining Z_spec(G). Consume LP2e.15, “Abstract excursion centre maps”, LP2e.9 for the rational excursion-to-invariant-functions isomorphism on finite-wild pieces, and LP2c.5, “Continuous semisimple parameter characters”, for the centre-valued excursion algebra and the bijection with continuous semisimple Weil-parameter classes with prescribed projection. LP2c.8, “Parameters of Schur objects”, supplies the invariant-coordinate characterization on Schur objects. The local continuity input for the geometric action is a target in §0.0; LP2c.5 then supplies continuous semisimple classification. Equality of all those scalars implies equality of conjugacy classes; a complex field isomorphism does not supply a new continuity theorem.
 
 ## How to read the build
 
@@ -124,25 +134,39 @@ Layer 0 first specializes the excursion centre map to the geometric Hecke action
 
 ### 0.0 The Fargues–Scholze centre map
 
-For the standing E, G and ℚ̄_ℓ coefficients, specialize LanglandsParameterStacks LP2e.15 to the continuous finite-set Hecke action on D_lis(Bun_G) supplied by HeckeStacksAndLocalShtukas HS1 and HS4. Define the geometric spectral centre map Z_spec(G)→π₀End(id_(D_lis(Bun_G))) by its excursion operators. Prove that each compact object has an open wild-inertia subgroup acting trivially on all its Hecke transforms, apply LP2e.9 on these finite-wild pieces, and extend their compatible central actions to D_lis(Bun_G). Its image commutes with every Hecke functor, with unit and tensor compatibility. The coefficients have characteristic zero, so the finite order of π₀Z(G) is invertible (FS24, Proposition I.9.3, p. 35, and Proposition IX.5.1 and Theorem IX.5.2, pp. 327–329; FS24 line 1282, line 12683 and line 12745).
+**(a) Finite ramification.** For every compact A∈D_lis(Bun_G), prove that there is an open subgroup P of wild inertia such that P^I acts trivially on T_V(A) for every finite set I and every finite-leg representation V. Use the tensor generator, the continuous endomorphism algebra and the tensor-compatible closure operations supplied by HeckeStacksAndLocalShtukas §HS4.7 (FS24, Proposition IX.5.1, pp. 327–328; FS24 line 12683).
 
-Restrict this natural action along the fully faithful basic-stratum embedding D(G_b(E))→D_lis(Bun_G) to define Ψ_G^b:Z_spec(G)→Z(G_b). For b=1 this is Ψ_G; for basic b prove Ψ_G^b=Ψ_(G_b) after identifying the spectral centres by the inner twist. This is a comparison of the specified geometric actions, not an identification of the smooth centres (FS24, §IX.7.1 and Theorem IX.7.2, pp. 334–335; FS24 line 12950, line 12977 and line 12994).
+*Needs:* HeckeStacksAndLocalShtukas §§HS1.1–HS1.9, §§HS4.1–HS4.2 and §HS4.7; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”.
+
+**(b) Centre map and Hecke commutation.** Specialize LanglandsParameterStacks LP2e.15 to the continuous finite-set Hecke action on D_lis(Bun_G). Define the geometric spectral centre map Z_spec(G)→π₀End(id_(D_lis(Bun_G))) by its excursion operators: apply LP2e.9 on the finite-wild pieces controlled by (a), and extend their compatible central actions to D_lis(Bun_G). Its image commutes with every Hecke functor, with unit and tensor compatibility. The coefficients have characteristic zero, so the finite order of π₀Z(G) is invertible (FS24, Proposition I.9.3, p. 35, and Theorem IX.5.2, p. 329; FS24 line 1282 and line 12745).
+
+*Needs:* (a); LanglandsParameterStacks §§LP1.2, LP2e.9 and LP2e.15; HeckeStacksAndLocalShtukas §§HS1.8–HS1.9, §§HS4.1–HS4.2 and §HS4.7.
+
+**(c) Basic restriction.** Restrict this natural action along the fully faithful basic-stratum embedding D(G_b(E))→D_lis(Bun_G) to define Ψ_G^b:Z_spec(G)→Z(G_b). For b=1 this is Ψ_G; for every basic b prove Ψ_G^b=Ψ_(G_b) after identifying the spectral centres by the inner twist. This compares the specified geometric actions (FS24, §IX.7.1 and Theorem IX.7.2, pp. 334–335; FS24 line 12950, line 12977 and line 12994).
+
+*Needs:* (b); HeckeStacksAndLocalShtukas §HS3.10; BunGAndNewtonStrata §§1.13, 1.18–1.19; SmoothRepresentationsOfLocalGroups §SR.3.2; LanglandsParameterStacks §LP1.2; ReductiveGroupsPartII §RG2.5.
+
+**(d) Normalized parabolic compatibility.** For every E-rational parabolic P=MU and a∈Z_spec(G), prove r_M(Ψ_G(a))=Ψ_M(res_M(a)), where res_M:Z_spec(G)→Z_spec(M) is ordinary dual-Levi restriction. Start with the cyclotomic correction in FS24's unnormalized induction, and transport to the normalized convention fixed above. Use the torsion-coefficient comparison of HeckeStacksAndLocalShtukas §HS4.6 for excursion operators, then the ℓ-adic separation argument of FS24 Theorem IX.7.2 and the characteristic-zero excursion/function identification of (b); this imposes no extra condition on ℓ (FS24, Corollary IX.7.3, pp. 337–338; FS24 line 13097; H26 line 128).
+
+*Needs:* (b)–(c); gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.1.3 and SR.2.2; ReductiveGroupsPartII §RG2.5; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; HeckeStacksAndLocalShtukas §HS4.6 for its geometric parabolic and cyclotomic comparison.
 
 The centre-map construction has the following API.
 
 - The geometric map and every Ψ_G^b are unital algebra maps; an invariant matrix coefficient acts by the corresponding create–Weil-action–annihilate operator.
 - The geometric action commutes with each finite-leg Hecke functor, hence its two basic restrictions give the common action used in §1.5.
-- A basic inner twist transports the geometric action and identifies the source spectral algebras; its restriction agrees with the intrinsic map for G_b.
-- For every E-rational parabolic P=MU, prove r_M(Ψ_G(a))=Ψ_M(res_M(a)), where res_M:Z_spec(G)→Z_spec(M) is ordinary dual-Levi restriction. Start with the cyclotomic correction in FS24's unnormalized induction, and transport to the normalized convention fixed above (FS24, Corollary IX.7.3, pp. 337–338; FS24 line 13097; H26 line 128).
+- A basic inner twist identifies the source spectral algebras, and restriction agrees with the intrinsic map for G_b.
+- The restriction r_M of Ψ_G equals Ψ_M after ordinary dual-Levi restriction, in the normalized induction convention of (d).
 
 **Checks.**
 
-- For the trivial representation as excursion datum, the action is 1; taking the creation map zero gives 0. A zero centre map fails the first computation.
-- For G=GL₁ and an unramified character taking geometric reciprocity of Frobenius to 2, the standard excursion at geometric Frobenius acts by 2, and at its inverse by 1/2. The inverse reciprocity convention exchanges these values.
+- For the trivial representation as excursion datum, the action is 1; taking the creation map zero gives 0. A zero centre map fails the first computation. For the zero compact object, any open wild subgroup works in (a), since every Hecke transform is zero.
+- For G=GL₁ the unramified parameter locus has coordinate ring ℚ̄_ℓ[t,t⁻¹]. For an unramified character of geometric-Frobenius value 2, the evaluation is t↦2 and t⁻¹↦1/2. An arbitrary nonzero rescaling of the coordinate would fail the specified excursion evaluation. Wild inertia acts trivially on this datum, so P can be the full wild inertia group.
 - For b=1 the basic comparison fixes Ψ_G(0)=0 and Ψ_G(1)=1. On GL₁ every basic stratum has the same intrinsic centre map; translating the degree changes neither scalar 2 nor 1/2.
 - For GL₂ and its diagonal Levi, the trace coordinate restricts at torus values 2 and 3 to 2+3=5, agreeing with trace(diag(2,3)). The corresponding normalized spherical Hecke operator has eigenvalue 5√q, hence 5√2 at q=2, as in Conventions. An extra modulus twist changes the spectral restriction and fails the value 5.
 
-For every irreducible smooth ℚ̄_ℓ-representation π, admissibility and scalar Schur endomorphisms come from the supplied smooth theory. Define its FS parameter φ_π to be the unique Ĝ-conjugacy class of continuous semisimple Weil parameters with the prescribed Weil projection whose invariant-coordinate evaluations are the scalar actions of Ψ_G on π. Establish the continuity input for the actual geometric action and apply LanglandsParameterStacks LP2c.8 and LP2c.5, before transport by ι (FS24, Proposition I.9.1, p. 34, and Definition/Proposition IX.4.1, p. 327; FS24 line 1253 and line 12667).
+**(e) FS parameter.** For every irreducible smooth ℚ̄_ℓ-representation π, admissibility and scalar Schur endomorphisms come from the supplied smooth theory. Define its FS parameter φ_π to be the unique Ĝ-conjugacy class of continuous semisimple Weil parameters with the prescribed Weil projection whose invariant-coordinate evaluations are the scalar actions of Ψ_G on π. For every compact A and fixed excursion datum, prove that its excursion operator depends continuously on (γ_i)∈W_E^I in the relatively discrete condensed endomorphism algebra. Apply LanglandsParameterStacks LP2c.8 and LP2c.5 to the geometric action before transport by ι (FS24, Proposition I.9.1, p. 34, and Definition/Proposition IX.4.1, p. 327; FS24 line 1253 and line 12667).
+
+*Needs:* (a)–(c); HeckeStacksAndLocalShtukas §§HS1.8–HS1.9 and §HS4.7; LanglandsParameterStacks §§LP2c.5 and LP2c.8; SmoothRepresentationsOfLocalGroups §§SR.3.2 and SR.3a.2.
 
 The parameter construction has the following API.
 
@@ -152,17 +176,15 @@ The parameter construction has the following API.
 
 **Checks.**
 
-- For GL₁ and the unramified character of geometric Frobenius value 2, the parameter has value 2 there and 1/2 on its inverse; the value 3 is excluded by the same standard-character coordinate.
+- For GL₁ and the unramified character of geometric Frobenius value 2, the parameter has value 2 there and 1/2 on its inverse; the value 3 is excluded by the same standard-character coordinate. The excursion evaluation is constant on each inertia coset, so it is continuous in the supplied topology.
 - Semisimple unramified GL₂ parameters diag(2,3) and diag(3,2) give trace 5 and determinant 6; diag(2,4) gives 6 and 8 and is excluded.
 - The nonsemisimple SL₂ parameter sending unramified Frobenius to a nonidentity unipotent has trace 2 and determinant 1, like the trivial parameter. Only its semisimplification represents the FS class; omitting semisimplicity would destroy uniqueness (LanglandsParameterStacks §LP2c.5).
-
-*Needs:* HeckeStacksAndLocalShtukas §§HS1.1–HS1.7, §§HS4.1–HS4.2; BunGAndNewtonStrata §§1.13, 1.18–1.19; LanglandsParameterStacks §§LP2e.9, LP2e.15, LP2c.5 and LP2c.8; SmoothRepresentationsOfLocalGroups §§SR.3.2 and SR.3a.2; gap:normalized-bernstein-levi; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”.
 
 ### 0.1 Stable central distributions
 
 Define Z_st(G) as the intersection of Z(G) with the stable distributions of EndoscopicTransferAndUnitaryTraceComparison §2.4; equivalently it consists of z with z(f)=0 for every f in U(G), where z(f) is distribution evaluation. (H26, §1.1, pp. 1–2; H26 line 39.)
 
-Import the categorical Bernstein center from SmoothRepresentationsOfLocalGroups §SR.3.2 and the unstable test-function space from the stable-orbital measure and duality contract. Use gap:bernstein-distribution-realization for the essentially compact invariant-distribution realization and its pairing. The annihilator description follows from the weak closed-span duality of EndoscopicTransferAndUnitaryTraceComparison §§2.4 and 2.11; linearity gives the submodule structure.
+Import the categorical Bernstein center from SmoothRepresentationsOfLocalGroups §SR.3.2 and the unstable test-function space from its stable-orbital and matching-function contracts. Use gap:bernstein-distribution-realization for the essentially compact invariant-distribution realization and its pairing. The annihilator description follows from the weak closed-span duality of EndoscopicTransferAndUnitaryTraceComparison §§2.4 and 2.11; linearity gives the submodule structure.
 
 The construction has the following API.
 
@@ -178,7 +200,7 @@ The construction has the following API.
 - The convolution identity δ₁ belongs to Z_st(G), using the stable-δ₁ theorem: for unstable f its value f(1) is 0. This distinguishes stable evaluation at the identity from vanishing only on regular elliptic points.
 - For the pairing on ℂ² and U=span{(1,-1)}, the functional (a,b) annihilates U exactly when a=b; (1,0) fails. This checks the annihilator operation, without representing ℂ² as a p-adic character space.
 
-*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; Mathlib `Submodule`; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
+*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; Mathlib `Submodule`; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
 
 ### 0.2 Very stable central distributions
 
@@ -200,16 +222,17 @@ The construction has the following API.
 - For G=GL_n, n≥1, each strongly regular stable class is a single rational class, so U(G) is the null space of ordinary orbital integrals and Z_vst(G)=Z(G). Indeed Θ_π(z∗f)=z_πΘ_π(f)=0 for null f and every irreducible π; Kazhdan density makes z∗f null (EndoscopicTransferAndUnitaryTraceComparison §2.4; H26 line 188). This tests the actual centre beyond the torus case.
 - On ℂ² with U=span{(1,-1)}, diagonal convolution diag(a,b) preserves U exactly when a=b; diag(1,0) fails, despite sending zero to U.
 
-*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; Mathlib `Subalgebra`; gap:bernstein-distribution-realization; gap:kazhdan-cuspidal-decomposition.
+*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; Mathlib `Subalgebra`; gap:bernstein-distribution-realization; gap:kazhdan-cuspidal-decomposition.
 
 ### 0.3 Relations between the two stable centers
 
 Z_vst(G) embeds in Z_st(G), and Z_st(G) is a module over Z_vst(G) under convolution. In particular the convolution of a very stable element with a stable element is stable. (H26, §1.1, pp. 1–2; H26 line 48.)
 
-For z very stable and f unstable, inversion gives another unstable function f^vee(g)=f(g^(-1)). Then z*f^vee is unstable; the stability of δ₁ from the EndoscopicTransferAndUnitaryTraceComparison contracts and the usual distribution pairing give δ₁(z*f^vee)=z(f)=0. Put z^vee(f)=z(f^vee). Inversion preserves U(G) and intertwines central convolution, so z^vee is very stable. For stable y and unstable f, (y*z)(f)=y(z^vee*f)=0. These identities follow by unfolding convolution on the unimodular group.
+For z very stable and f unstable, inversion gives another unstable function f^vee(g)=f(g^(-1)). Then z*f^vee is unstable; the stability of δ₁ from the EndoscopicTransferAndUnitaryTraceComparison contracts and the usual distribution pairing give δ₁(z*f^vee)=z(f)=0. Put z^vee(f)=z(f^vee). Inversion preserves U(G) and intertwines central convolution, so z^vee is very stable. For stable y and unstable f, (y*z)(f)=y(z^vee*f)=0. These identities follow by unfolding convolution on the unimodular group. For inversion, the centralizers of γ and γ⁻¹ coincide, and (xγx⁻¹)⁻¹=xγ⁻¹x⁻¹ identifies the orbital integrands; inversion also bijects the rational classes in the two stable classes, giving SO_γ(f^vee)=SO_(γ⁻¹)(f) with the fixed measures.
 
 **Checks.**
 
+- For a torus and t²≠1, take f(t)=1 and f(t⁻¹)=0. Then SO_t(f^vee)=0=SO_(t⁻¹)(f) and SO_(t⁻¹)(f^vee)=1=SO_t(f); omitting inversion gives the wrong value in each test.
 - For G a torus and z=δ₁, convolution by z fixes a stable distribution y: (y∗δ₁)(f)=y(f). On the two-coordinate diagonal model with a=b=2 and stable functional (3,3), the product is (6,6); unequal diagonal entries would give unequal coordinates.
 
 *Needs:* §0.1; §0.2; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
@@ -224,7 +247,7 @@ The EndoscopicTransferAndUnitaryTraceComparison harmonic-analysis contracts iden
 
 - In the model U=span{(1,−1)} and stable dual line span{(1,1)}, diag(2,2) preserves both lines. diag(1,0) sends (1,−1) to (1,0) outside U and sends (1,1) to (1,0) outside the stable line. Both implications of the criterion distinguish the same failure.
 
-*Needs:* §0.2; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
+*Needs:* §0.2; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
 
 ### 0.5 Stable tempered characters detect the very stable center
 
@@ -236,7 +259,7 @@ The unstable-function criterion in the harmonic-analysis contract implies z*f li
 
 - For a torus, U=0, so the proof gives z∗f^vee=0 for all f and hence z(f)=0. In the scalar line model, scalar 2 acts nontrivially on the stable vector 1: 2·1=2; scalar 0 is the unique scalar annihilating that space.
 
-*Needs:* §0.2; §0.4; §0.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
+*Needs:* §0.2; §0.4; §0.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:bernstein-distribution-realization; gap:unstable-tempered-separation.
 
 ### Examples
 
@@ -244,7 +267,7 @@ The annihilator model on ℂ² is U=span{(1,−1)}. Its dual annihilator is span
 
 ### Dependencies
 
-HeckeStacksAndLocalShtukas HS1 and §§HS4.1–HS4.2; LanglandsParameterStacks §§LP2e.9, LP2e.15, LP2c.5 and LP2c.8; BunGAndNewtonStrata §§1.13, 1.18–1.19; GeometricSatakeAndFusion GS4; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.1 and SR.3.2; EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4 and 2.11; gap:bernstein-distribution-realization; gap:unstable-tempered-separation; gap:stable-orbital-inversion-duality; Mathlib submodules and subalgebras.
+HeckeStacksAndLocalShtukas §§HS1.1–HS1.9, §HS3.10, §§HS4.1–HS4.2, §HS4.6 and §HS4.7; LanglandsParameterStacks §§LP1.2, LP2e.9, LP2e.15, LP2c.5 and LP2c.8; BunGAndNewtonStrata §§1.13, 1.18–1.19; GeometricSatakeAndFusion GS4; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.1 and SR.3.2; EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4 and 2.11; gap:bernstein-distribution-realization; gap:unstable-tempered-separation; gap:stable-orbital-inversion-duality; Mathlib submodules and subalgebras.
 
 ## Layer 1: Hecke operators on character spaces
 
@@ -252,7 +275,7 @@ HeckeStacksAndLocalShtukas HS1 and §§HS4.1–HS4.2; LanglandsParameterStacks �
 
 For dominant μ with 1 in B(G,μ), set F_μ=i_1^* T_(V_μ dual) i_(1!). Its bounded finite-length cohomology defines an Euler-class map on K_0 of finite-length smooth representations. After ι and complex linearization obtain T_μ:D(G)→D(G), with T_μ([A])=sum_j (-1)^j [H^j F_μ(A)]. The condition on μ is equivalently trivial action of Z(Ĝ)^Γ on V_μ. Use the geometric-fibre Hecke family with the source, target and normalization of the all-weight shriek trace contract; no t-exactness assumption is made. (H26, §2.2, pp. 6–7; H26 line 296.)
 
-Import the normalized Hecke operator, its unit and duality from the exact HeckeStacksAndLocalShtukas HS1 sections, and basic-stratum shriek extensions from HeckeStacksAndLocalShtukas §HS3.10. HeckeStacksAndLocalShtukas §HS3.8 supplies bounded finite length in its star convention; the all-weight shriek trace contract supplies the adapted shriek statement. Do not replace i_! by i_*. The Euler relation sends distinguished triangles to sums, using the existing Grothendieck-group universal property. Identify the complexified finite-length Grothendieck group with the finite span of irreducible characters through the character-independence theorem of EndoscopicTransferAndUnitaryTraceComparison §2.16.
+Import the normalized Hecke operator, its unit and duality from the exact HeckeStacksAndLocalShtukas HS1 sections, and basic-stratum shriek extensions from HeckeStacksAndLocalShtukas §HS3.10. For finite-length inputs over ℚ̄_ℓ, HeckeStacksAndLocalShtukas §HS3.8 identifies the smooth dual of the shriek output with a bounded finite-length star output, after its duality and label transport. Exact smooth duality and injective bidual evaluation from SmoothRepresentationsOfLocalGroups §§SR.0.4 and SR.0d.2 make every shriek cohomology object a subobject of a finite-length bidual and detect its vanishing outside finitely many degrees; §HS3.10 supplies compactness preservation. The all-weight shriek trace contract supplies only the adapted elliptic trace identity. Do not replace i_! by i_*. The Euler relation sends distinguished triangles to sums, using the existing Grothendieck-group universal property. Identify the complexified finite-length Grothendieck group with the finite span of irreducible characters through the character-independence theorem of EndoscopicTransferAndUnitaryTraceComparison §2.16.
 
 The construction has the following API.
 
@@ -269,7 +292,7 @@ The construction has the following API.
 - For any input complex A and integer n, the Euler character of F_μ(A[n]) is (−1)^n times that of F_μ(A): a unit class shifted once has value −1 and shifted twice +1. Ignoring negative degrees or signs fails this computation.
 - For A direct-sum B, its output Euler character is the sum of the two outputs: two unit outputs give 1+1=2, even with cohomology in several degrees. Taking only degree-zero cohomology would not respect Euler additivity.
 
-*Needs:* HeckeStacksAndLocalShtukas §HS1.2; HeckeStacksAndLocalShtukas §HS1.3; HeckeStacksAndLocalShtukas §§HS1.5–HS1.7; HeckeStacksAndLocalShtukas §HS3.10; HeckeStacksAndLocalShtukas §HS3.8; BunGAndNewtonStrata §§0.5–0.6; BunGAndNewtonStrata §1.23; gap:basic-weight-invariant-fibres; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; ReductiveGroupsPartII §RG2.5; Tau Ceti `TauCeti.ExactK0`; Tau Ceti `TauCeti.ExactK0.lift`; Tau Ceti `TauCeti.AbelianK0.homologyEulerChar`; gap:bernstein-distribution-realization; gap:all-weight-shriek-trace; EndoscopicTransferAndUnitaryTraceComparison §2.16.
+*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4 and SR.0d.2; HeckeStacksAndLocalShtukas §HS1.2; HeckeStacksAndLocalShtukas §HS1.3; HeckeStacksAndLocalShtukas §§HS1.5–HS1.7; HeckeStacksAndLocalShtukas §HS3.10; HeckeStacksAndLocalShtukas §HS3.8; BunGAndNewtonStrata §§0.5–0.6; BunGAndNewtonStrata §1.23; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; ReductiveGroupsPartII §RG2.5; Tau Ceti `TauCeti.ExactK0`; Tau Ceti `TauCeti.ExactK0.lift`; Tau Ceti `TauCeti.AbelianK0.homologyEulerChar`; gap:bernstein-distribution-realization; gap:all-weight-shriek-trace; EndoscopicTransferAndUnitaryTraceComparison §2.16.
 
 ### 1.2 Hecke and excursion commutation on characters
 
@@ -287,19 +310,19 @@ Use the Hecke-compatible geometric center map and its restriction along the chos
 
 Let D_ind(G) be the span of characters induced from proper Levi subgroups, equivalently the kernel of elliptic restriction by the EndoscopicTransferAndUnitaryTraceComparison harmonic-analysis contracts. T_μ preserves D_ind(G). For every μ as in §1.1 and stable Θ in SD(G), T_μ(Θ) - (dim V_μ)Θ belongs to D_ind(G). (H26, Proposition 2.5, pp. 7–8; H26 line 338.)
 
-The all-weight shriek trace formula shows that T_μ(Θ) has zero elliptic restriction whenever Θ does. For stable Θ the invariant fibers contain exactly one rational conjugacy class for each occurring weight; replace all character values by Θ(g) and sum weight multiplicities to dim V_μ. Apply the elliptic-kernel theorem in the harmonic-analysis contract to both conclusions. The all-weight trace contract supplies the geometric formula; gap:basic-weight-invariant-fibres supplies its invariant fibres.
+The all-weight shriek trace formula shows that T_μ(Θ) has zero elliptic restriction whenever Θ does. For stable Θ the invariant fibers contain exactly one rational conjugacy class for each occurring weight; replace all character values by Θ(g) and sum weight multiplicities to dim V_μ. Apply the elliptic-kernel theorem in the harmonic-analysis contract to both conclusions. The all-weight trace contract supplies the geometric formula; gap:weight-fibre-classes supplies its invariant fibres.
 
 **Checks.**
 
 - For a stable constant elliptic value 3 and dim V_μ=5, the output has elliptic value 15, so the correction has value 15−15=0. An induced input has elliptic value 0 and therefore output value 0 there; neither computation identifies the correction with the zero virtual character.
 
-*Needs:* §1.1; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:arthur-stable-decompositions; gap:all-weight-shriek-trace; gap:basic-weight-invariant-fibres.
+*Needs:* §1.1; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:arthur-stable-decompositions; gap:all-weight-shriek-trace; gap:weight-fibre-classes.
 
 ### 1.4 Hecke operators between basic inner forms
 
-For any dominant μ and basic b in B(G,μ), let G_b be the associated extended pure inner form. The functors i_1^* T_(V_μ dual) i_(b!) and i_b^* T_(V_μ) i_(1!) yield complex-linear Euler maps T_μ:D(G_b)→D(G) and T_μ^rev:D(G)→D(G_b). The superscript rev names the reverse geometric operator and does not mean a linear transpose. Require bounded finite-length cohomology in both directions for every such μ, including nonminuscule μ, through gap:all-weight-shriek-trace. (H26, §2.2, p. 9; H26 line 408; HKW22, Proposition 6.4.5, pp. 61–62, HKW22 line 3004.)
+For any dominant μ and basic b in B(G,μ), let G_b be the associated extended pure inner form. The functors i_1^* T_(V_μ dual) i_(b!) and i_b^* T_(V_μ) i_(1!) yield complex-linear Euler maps T_μ:D(G_b)→D(G) and T_μ^rev:D(G)→D(G_b). The superscript rev names the reverse geometric operator and does not mean a linear transpose. Bounded finite-length cohomology in both directions follows from HeckeStacksAndLocalShtukas §HS3.8 duality, §HS3.10 compactness preservation and the exact smooth-duality argument of §1.1, for every such μ including nonminuscule μ. (H26, §2.2, p. 9; H26 line 408; HKW22, Proposition 6.4.5, pp. 61–62, HKW22 line 3004.)
 
-Apply the same Euler construction as the self-Hecke case to each pair of basic strata. Use dual V_μ only in the forward direction; fix weights and signs in the reverse character formula by the all-weight shriek trace contract duality comparison.
+Apply the same Euler construction and the finite-length argument of §1.1 to each pair of basic strata. Use dual V_μ only in the forward direction; fix weights and signs in the reverse character formula by the all-weight shriek trace contract duality comparison.
 
 The construction has the following API.
 
@@ -316,7 +339,7 @@ The construction has the following API.
 - For b=1 the forward formula uses V_μ dual and agrees with the self-Hecke formula, including cohomological signs: at μ=0 a class shifted by one has output −1 in either construction. A sign-free comparison would give +1.
 - For GL₁ and μ=1, the forward and reverse kernels have opposite representation labels −1 and +1. Their common dimension 1 cannot identify the labels; the supplied degree-shift check gives opposite shifts.
 
-*Needs:* §1.1; HeckeStacksAndLocalShtukas §HS1.2; HeckeStacksAndLocalShtukas §HS1.3; HeckeStacksAndLocalShtukas §§HS1.5–HS1.7; HeckeStacksAndLocalShtukas §HS3.10; HeckeStacksAndLocalShtukas §HS3.8; BunGAndNewtonStrata §§1.13, 1.18–1.19; BunGAndNewtonStrata §1.18; BunGAndNewtonStrata §1.23; §0.0; gap:all-weight-shriek-trace.
+*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4 and SR.0d.2; §1.1; HeckeStacksAndLocalShtukas §HS1.2; HeckeStacksAndLocalShtukas §HS1.3; HeckeStacksAndLocalShtukas §§HS1.5–HS1.7; HeckeStacksAndLocalShtukas §HS3.10; HeckeStacksAndLocalShtukas §HS3.8; BunGAndNewtonStrata §§1.13, 1.18–1.19; BunGAndNewtonStrata §1.23; §0.0; gap:all-weight-shriek-trace.
 
 ### 1.5 Central commutation across inner forms
 
@@ -338,9 +361,10 @@ Use the all-weight shriek trace contract: the adapted shriek HKW elliptic formul
 
 **Checks.**
 
+- For GL₂ and D× with μ=(1,0), the weights (1,0) and (0,1) both have coinvariant image 1 in X_*(T_g)_Γ≃ℤ for the elliptic quadratic torus. Each therefore determines the same unique class [g_b]; the multiplicity sum is 1+1=2, not one copy per distinct class.
 - For the GL₂/quaternion pair, e(G)e(G_b)=−1 and dim V_(1,0)=2. A stable elliptic value 3 gives −6 in both directed formulas. The trivial modification gives +1 times the original value; dropping the inner-form sign changes −6 to +6.
 
-*Needs:* §1.4; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; EndoscopicTransferAndUnitaryTraceComparison §1.13; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; ReductiveGroupsPartII §RG2.5; gap:all-weight-shriek-trace; gap:basic-weight-invariant-fibres.
+*Needs:* §1.4; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; EndoscopicTransferAndUnitaryTraceComparison §1.13; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; ReductiveGroupsPartII §RG2.5; gap:all-weight-shriek-trace; gap:weight-fibre-classes.
 
 ### Examples
 
@@ -348,7 +372,7 @@ A complex with cohomology dimensions 2 in degree 0 and 1 in degree 1 has Euler v
 
 ### Dependencies
 
-Layer 0 for the character conditions; HeckeStacksAndLocalShtukas HS1 and §§HS3.8, HS3.10; BunGAndNewtonStrata §§0.5–0.6, 1.13, 1.18–1.19 and 1.23; GeometricSatakeAndFusion GS4; gap:all-weight-shriek-trace; §0.0; gap:basic-weight-invariant-fibres; gap:bernstein-distribution-realization; gap:arthur-stable-decompositions; the exact K₀ and Euler-sum declarations.
+Layer 0 for the character conditions; HeckeStacksAndLocalShtukas HS1 and §§HS3.8, HS3.10; BunGAndNewtonStrata §§0.5–0.6, 1.13, 1.18–1.19 and 1.23; GeometricSatakeAndFusion GS4; gap:all-weight-shriek-trace; §0.0; gap:weight-fibre-classes; gap:bernstein-distribution-realization; gap:arthur-stable-decompositions; the exact K₀ and Euler-sum declarations.
 
 ## Layer 2: quantitative stable averaging
 
@@ -407,7 +431,7 @@ The construction has the following API.
 
 For m≥1 and g′ representing a class in R_g, define C_m(g,g′)=d_m^(-1) sum_(λ with coinvariant image inv(g,g′)) dim V_(μ_m)[λ]. This is a finitely supported weight sum, and each C_m is a nonnegative real rational number, with sum_(R_g) C_m(g,g′)=1. Equivalently it is the pushforward to H_g=ker(X_*(T_g)_Γ → π₁(G)_Γ) of the normalized weight multiplicity distribution, transported along the invariant bijection R_g≃H_g. (H26, Lemma 2.6 proof, p. 8; H26 line 382; FU25, Lemmas 3.2.1–3.2.3 and 4.2.7, pp. 20 and 24–25, FU25 line 794 and line 955.)
 
-Import integral π₁, the torus Kottwitz description and basic-class classification from BunGAndNewtonStrata §§1.11 and 1.36 and ReductiveGroupsPartII §RG2.1.5. Use gap:basic-weight-invariant-fibres for their compatibility with the stable-conjugacy invariant. Then use gap:basic-weight-invariant-fibres for uniqueness and existence of invariant fibers and Fu Lemmas 3.2.1–3.2.3 for the finite H_g quotient of the dual root lattice. Sum nonnegative integer weight dimensions over each fiber and divide by positive d_m. Each occurring weight has exactly one class, so the mass is one. The all-weight trace contract supplies the geometric formula; gap:basic-weight-invariant-fibres supplies its invariant fibres.
+Import integral π₁, the torus Kottwitz description and basic-class classification from BunGAndNewtonStrata §§1.11 and 1.36 and ReductiveGroupsPartII §RG2.1.5. Use gap:basic-invariant-comparison for their compatibility with the stable-conjugacy invariant. Then use gap:weight-fibre-classes for uniqueness and existence of invariant fibers and Fu Lemmas 3.2.1–3.2.3 for the finite H_g quotient of the dual root lattice. Sum nonnegative integer weight dimensions over each fiber and divide by positive d_m. Each occurring weight has exactly one class, so the mass is one. The all-weight trace contract supplies the geometric formula; gap:weight-fibre-classes supplies its invariant fibres.
 
 The construction has the following API.
 
@@ -419,16 +443,17 @@ The construction has the following API.
 
 **Checks.**
 
+- For an elliptic quadratic norm-one torus in SL₂, X_*(T)_Γ=ℤ/2 and π₁(SL₂)=0, so H_g=ℤ/2 has two invariant classes 0 and 1. Rationalizing the coinvariants gives 0 and would merge those distinct rational classes; the integral comparison must preserve both.
 - For a torus, H_g=0, R_g is a singleton and its coefficient is 1. An unnormalized weight count or an empty-fibre convention would lose this unit mass.
 - In dual type A1 with root lattice Z alpha and quotient Z/2 mapping alpha to 1, weights j alpha for -2m≤j≤2m have multiplicity one. The two masses are (2m+1)/(4m+1) and 2m/(4m+1), rather than exactly 1/2.
 - For m=1 in that quotient, the masses are 3/5 and 2/5 and their sum is 1; replacing the finite kernel by its limiting uniform distribution would incorrectly give 1/2 in each class.
 - For G=GL₁ the full cocharacter coinvariant group is Z but H_g=ker(Z→Z)=0. A construction averaging over all of Z fails both finiteness and the singleton coefficient test.
 
-*Needs:* §2.2; §2.1; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; ReductiveGroupsPartII §RG2.5; ReductiveGroupsPartII §RG2.1.5; BunGAndNewtonStrata §1.36; BunGAndNewtonStrata §1.11; gap:basic-weight-invariant-fibres; gap:all-weight-shriek-trace.
+*Needs:* §2.2; §2.1; EndoscopicTransferAndUnitaryTraceComparison §1.2(a); EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; ReductiveGroupsPartII §RG2.5; ReductiveGroupsPartII §RG2.1.5; BunGAndNewtonStrata §1.36; BunGAndNewtonStrata §1.11; gap:basic-invariant-comparison; gap:weight-fibre-classes; gap:all-weight-shriek-trace.
 
 ### 2.4 Uniform quantitative weight equidistribution
 
-First prove the root-lattice form `weightPushforward_sum_abs_sub_uniform_le`: for every finite-dimensional semisimple Lie algebra over an algebraically closed field K of characteristic zero, a Cartan subalgebra and a root-system base b, let Q be the additive subgroup generated by its roots. For every finite abelian group A and surjective homomorphism φ:Q→A, there is C≥0 such that, for every m≥1 and every finite-dimensional module M generated by a highest-weight vector of weight μ_m=2m·2ρ, the pushforward p_m of its weight multiplicities along φ, divided by dim M, satisfies sum_(a∈A)|p_m(a)−1/|A||≤C/m. C is independent of m and M. The nonzero highest-weight vector makes dim M positive; all its weights lie in Q. This is §2.4(a), the general root-lattice estimate underlying FU25 Proposition 3.3.1 (FU25 line 823 and line 852), with the quantitative Fourier deduction in H26 line 393.
+First prove the root-lattice form `weightPushforward_sum_abs_sub_uniform_le`: for every finite-dimensional semisimple Lie algebra over an algebraically closed field K of characteristic zero, a Cartan subalgebra and a root-system base b, let Q be the additive subgroup generated by its roots. For every finite abelian group A and surjective homomorphism φ:Q→A, there is C≥0 such that, for every m≥1 and every finite-dimensional module M generated by a highest-weight vector of weight μ_m=2m·2ρ, the pushforward p_m of its weight multiplicities along φ, divided by dim M, satisfies sum_(a∈A)|p_m(a)−1/|A||≤C/m. C is independent of m and M. The nonzero highest-weight vector makes dim M positive; all its weights lie in Q. This is §2.4(a), the general root-lattice estimate deduced here from FU25 Lemma 3.1.2 and the degree bound in the proof of Proposition 3.3.1, pp. 18–21 (FU25 line 719 and line 852); H26 uses the C/m rate in the proof of Lemma 2.6 (H26 line 393).
 
 For §2.4(b), transport that estimate through R_g≃H_g and finitely many rational torus types: there exists C_G≥0 such that for every strongly regular elliptic g and m≥1, sum_(g′ in R_g) |C_m(g,g′)-1/|R_g|| ≤ C_G/m. If N=0 then H_g and R_g are singletons and the left side is zero. (H26, Lemma 2.6 proof, pp. 8–9; H26 line 393; FU25, Proposition 3.3.1 and proof of Theorem 4.3.1, pp. 21 and 26–27, FU25 line 823 and line 1085.)
 
@@ -438,16 +463,17 @@ For N=0 the kernel is the trivial group and the error is zero. For N≥1, Fu ide
 
 - In the type-A₁ root-lattice quotient ℤ/2 the ℓ¹ error is 1/(4m+1): at m=1 and 2 it is 1/5 and 1/9. C=1/4 works in (a), since 1/(4m+1)≤1/(4m). For A=0, the normalized mass is 1 and the error is 0; if there are no roots, a surjection forces A=0 and a highest-weight-generated module has dimension 1. At m=0 for A=ℤ/2 the masses are (1,0) and the error is 1, whereas Lean's total C/0 is 0; this is why m≥1 is essential. A nonsurjective map from Q=ℤα to ℤ/2 with φ(α)=0 has masses (1,0), error 1 for every m, and violates every fixed C/m estimate. For a torus the error is 0 for every m, including the extension m=0; an estimate containing 1/m is asserted only for m≥1.
 
-*Needs:* For (a), Tau Ceti highest-weight and formal-character declarations and the pinned Weyl formulas, Mathlib finite Fourier theory; for (b), §2.3; §2.2; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:elliptic-torus-representatives; Mathlib `AddChar.complexBasis`; Mathlib `AddChar.wInner_cWeight_eq_boole`.
+*Needs:* For (a), Tau Ceti highest-weight and formal-character declarations and the pinned Weyl formulas, Mathlib finite Fourier theory; for (b), §2.3; gap:basic-invariant-comparison; gap:weight-fibre-classes; §2.2; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:elliptic-torus-representatives; Mathlib `AddChar.complexBasis`; Mathlib `AddChar.wInner_cWeight_eq_boole`.
 
 ### 2.5 Discriminant-weighted character averaging
 
 Let Θ be any element of D(G), and U a compact subset of G(E) with this property: for each elliptic stable class meeting U, U contains a representative of every rational conjugacy class in it. Then there is C_(Θ,U)≥0 such that for all m≥1 and g in U strongly regular elliptic, |D_G(g)|^(1/2) |d_m^(-1) T_(μ_m)(Θ)(g)-Av(Θ)(g)| ≤ C_(Θ,U)/m. (H26, Lemma 2.6, pp. 8–9; H26 line 368.)
 
-Use the all-weight shriek trace contract self-Hecke elliptic formula to identify d_m^(-1)T_(μ_m)(Θ)(g) with sum_(R_g) C_m(g,g′)Θ(g′). Subtract the arithmetic average and apply the sum of absolute coefficient errors from uniform weight equidistribution. The Weyl discriminant is stable-invariant; choose representatives in U and use EndoscopicTransferAndUnitaryTraceComparison §2.16 for local boundedness of |D|^(1/2)|Θ| on compact sets. The all-weight trace contract supplies the geometric formula; gap:basic-weight-invariant-fibres supplies its invariant fibres.
+Use the all-weight shriek trace contract self-Hecke elliptic formula to identify d_m^(-1)T_(μ_m)(Θ)(g) with sum_(R_g) C_m(g,g′)Θ(g′). Subtract the arithmetic average and apply the sum of absolute coefficient errors from uniform weight equidistribution. The Weyl discriminant is stable-invariant: stable conjugacy from EndoscopicTransferAndUnitaryTraceComparison §1.3 conjugates Ad(g) on Lie(G)/Lie(T_g) after extension to Ē, so det(1−Ad(g)) and hence D_G(g) agree in E. Choose representatives in U and use EndoscopicTransferAndUnitaryTraceComparison §2.16 for local boundedness of |D|^(1/2)|Θ| on compact sets. The all-weight trace contract supplies the geometric formula; gap:weight-fibre-classes supplies its invariant fibres.
 
 **Checks.**
 
+- For GL₂ over ℚ₅, g=diag(2,3) and its conjugate diag(3,2) have D=(1−2/3)(1−3/2)=−1/6 and |D|₅=1 in both orders. Inversion leaves the same product. The torus has an empty root product D=1; a diagonal matrix with repeated entries lies outside the strongly regular domain.
 - For two class values 2 and 6, A₁ quotient masses 3/5 and 2/5 give 18/5, whereas the average is 4; the error is 2/5. At m=2 the masses 5/9 and 4/9 give 34/9 and error 2/9. With discriminant norm 1 the weighted errors are those same values.
 
 *Needs:* §1.1; §2.3; §2.4; §2.1; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:all-weight-shriek-trace; EndoscopicTransferAndUnitaryTraceComparison §2.16.
@@ -458,13 +484,13 @@ For dual type A₁ and m=1, the five weights −2α,−α,0,α,2α project to th
 
 ### Dependencies
 
-Layer 1 character operators; BunGAndNewtonStrata §§1.11, 1.36 and gap:basic-weight-invariant-fibres; EndoscopicTransferAndUnitaryTraceComparison §§1.3, 1.14 and 2.16; gap:elliptic-torus-representatives; gap:all-weight-shriek-trace; the dual group/Satake and pinned Lie Weyl inputs; Mathlib finite Fourier theory.
+Layer 1 character operators; BunGAndNewtonStrata §§1.11, 1.36 and gap:basic-invariant-comparison; gap:weight-fibre-classes; EndoscopicTransferAndUnitaryTraceComparison §§1.3, 1.14 and 2.16; gap:elliptic-torus-representatives; gap:all-weight-shriek-trace; the dual group/Satake and pinned Lie Weyl inputs; Mathlib finite Fourier theory.
 
 ## Layer 3: stability of the Fargues–Scholze centre
 
 ### 3.1 Compact representatives for the cuspidal integrals
 
-Choose finitely many representatives T of rational elliptic maximal-torus conjugacy classes and compact subsets C_T of T(E). There is a compact U in G(E) containing all C_T such that every strongly regular elliptic stable class meeting U has representatives of every rational conjugacy class in U. (H26, §2.3, pp. 10–11, compact-U step; H26 line 505; HKW22, Lemma 3.1.1 and proof, pp. 12–13, HKW22 line 577.)
+Choose finitely many representatives T of rational elliptic maximal-torus conjugacy classes and compact subsets C_T of T(E). There is a compact U in G(E) containing all C_T such that every strongly regular elliptic stable class meeting U has representatives of every rational conjugacy class in U. (H26, §2.3, pp. 10–11, compact-U step; H26 line 505; HKW22, Lemma 3.1.1 and proof, p. 13, HKW22 line 577.)
 
 The elliptic-torus representative contract supplies finitely many torus types. EndoscopicTransferAndUnitaryTraceComparison §1.14(b) supplies finitely many rational conjugacy classes of E-embeddings of a fixed torus that are geometrically conjugate to its inclusion. For each T choose representatives for those embedding classes, including the inclusion and the finitely many geometric Weyl identifications. Take the union of their images of C_T. This finite union is compact. A strongly regular element in one image has that embedded torus as centralizer; every rational conjugacy class in its stable class is represented by another chosen embedding of the same original element.
 
@@ -478,13 +504,14 @@ The elliptic-torus representative contract supplies finitely many torus types. E
 
 For Ξ in D_temp(G) let P_st(Ξ) in SD_temp(G) be its stable projection from the EndoscopicTransferAndUnitaryTraceComparison contracts. For every cuspidal f in I(G)_cusp, (d_m^(-1)T_(μ_m)(Ξ)-P_st(Ξ))(f) tends to zero as m tends to infinity. More precisely, there exists C_(Ξ,f)≥0, depending only on Ξ and f, such that its absolute value is at most C_(Ξ,f)/m for every m≥1. (H26, §2.3, pp. 10–11; H26 line 497.)
 
-EndoscopicTransferAndUnitaryTraceComparison §2.16 and gap:bounded-elliptic-orbital-integrals give the cuspidal Weyl integration formula, with a finite sum of integrals over elliptic tori, compact orbital-support closures C_T, and bounded |D|^(1/2)O_t(f). Gap:stable-tempered-projection supplies P_st(Ξ)(g)=Av(Ξ)(g) for elliptic g. Choose compact U using compact stable representatives; character averaging bounds the other factor |D|^(1/2)(d_m^(-1)T(Ξ)-P_st Ξ) by C/m on all C_T. Extend that weighted factor by zero outside the strongly regular locus, and apply the pinned finite-measure integral norm bound on each compact C_T. Sum the finitely many Weyl coefficients.
+EndoscopicTransferAndUnitaryTraceComparison §2.16 gives the cuspidal Weyl integration formula, with a finite sum of integrals over elliptic tori. Its §2.1 normalized-orbital-integral theorem gives bounded |D|^(1/2)O_t(f), after the finite measure factor in the supplier contract; gap:bounded-elliptic-orbital-integrals supplies only the compact orbital-support closures C_T. Gap:stable-tempered-projection supplies P_st(Ξ)(g)=Av(Ξ)(g) for elliptic g. Choose compact U using compact stable representatives; character averaging bounds the other factor |D|^(1/2)(d_m^(-1)T(Ξ)-P_st Ξ) by C/m on all C_T. Extend that weighted factor by zero outside the strongly regular locus, and apply the pinned finite-measure integral norm bound on each compact C_T. Sum the finitely many Weyl coefficients.
 
 **Checks.**
 
+- For a torus G=T with H26’s central quotient, O_t(f)=c f(t), where c=vol(T(E)/A_T(E)) is finite and positive. Thus the nonzero orbital locus has closure supp(f), compact because f is locally constant and compactly supported; for f=0 it is empty. The test 1_(𝒪_E×) on GL₁ has compact support 𝒪_E×, whereas the constant function 1 is not in H(GL₁).
 - On a single compact torus piece of measure 2 with orbital factor bounded by 3 and weighted character error bounded by 5/m, the integral norm is at most 30/m. For f=0 both the integral and constant are 0. Keeping only one half-discriminant would not give the bounded product used in this estimate.
 
-*Needs:* §2.5; §3.1; §2.1; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; Mathlib `MeasureTheory.norm_integral_le_of_norm_le_const`; gap:arthur-stable-decompositions; gap:stable-tempered-projection; gap:bounded-elliptic-orbital-integrals; EndoscopicTransferAndUnitaryTraceComparison §2.16.
+*Needs:* §2.5; §3.1; §2.1; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; Mathlib `MeasureTheory.norm_integral_le_of_norm_le_const`; gap:arthur-stable-decompositions; gap:stable-tempered-projection; gap:bounded-elliptic-orbital-integrals; EndoscopicTransferAndUnitaryTraceComparison §2.16.
 
 ### 3.3 Very stability of the Fargues–Scholze center
 
@@ -530,7 +557,7 @@ The construction has the following API.
 - In the coefficient-space fixture SD=span{(1,2,0),(1,1,1)} in ℂ³, (1,1,1) is not support minimal because (1,2,0) has smaller support, although none of its nonempty proper 0/1 partial sums is in SD.
 - In the line submodule span{(1,2)} of ℂ², every nonzero vector is support minimal; this checks the exact Finsupp/Submodule criterion used on the finite-support carrier.
 
-*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; Mathlib `Finsupp`; Mathlib `Finsupp.mem_support_iff`; Mathlib `Submodule`; EndoscopicTransferAndUnitaryTraceComparison §2.16.
+*Needs:* SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.3.1–SR.3.3; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; Mathlib `Finsupp`; Mathlib `Finsupp.mem_support_iff`; Mathlib `Submodule`; EndoscopicTransferAndUnitaryTraceComparison §2.16.
 
 ### 4.2 Scalar rigidity on an atomic stable support
 
@@ -548,7 +575,7 @@ Very stability makes z·Θ stable. Fix i in S and subtract z_(π_i)Θ; the resul
 
 If Θ=sum_(i in S) a_i Θ_(π_i) is atomically stable, all π_i have the same Fargues–Scholze semisimple L-parameter conjugacy class. Equality is equality in the set of Ĝ-conjugacy classes of continuous semisimple Weil parameters with the prescribed Weil projection, using the coefficient topology of the supplied continuous Weil-parameter object before transport by ι. (H26, Corollary 1.2, p. 2; H26 line 77.)
 
-In particular, for nonempty regular supercuspidal L-packets Π_φ(G) of Kaletha whose character sums are atomically stable, the FS parameter is constant on each Π_φ(G). This is the implication underlying H26 Corollary 1.3, p. 2 (H26 line 79); atomicity under those hypotheses is an explicit assumption here (see Source issues).
+The statement applies to any finite set of irreducibles whose character sum is atomically stable. H26 Corollary 1.3 (p. 2; H26 line 79) is this instance for Kaletha’s regular supercuspidal packets, whose construction and atomic stability are not targets here; the FKS21v2 reference below records the scope of its stability theorem.
 
 Apply FS very stability and atomic scalar rigidity to every spectral central function. The geometric centre construction of §0.0 and LanglandsParameterStacks LP2c.8 identify these scalar evaluations with the invariant coordinates of the semisimple parameter. Apply LanglandsParameterStacks LP2c.5 to conclude equality of the conjugacy classes, with coefficients transported by the fixed ι.
 
@@ -572,14 +599,14 @@ Layer 0 and the stability theorem of Layer 3; §0.0; LanglandsParameterStacks §
 
 Let G* be quasi-split over E, let b be basic in B(G*), and put G=G*_b. Under the canonical identification of the spectral centers, ker(Ψ_(G*)) is contained in ker(Ψ_G). (H26, Theorem 1.4, p. 3; proof §2.4, pp. 11–12; H26 line 522.)
 
-Prove the contrapositive by semisimple-rank induction. If z=Ψ_G(a) is nonzero, §0.5 faithfulness and §3.3 very stability give a stable tempered character detected by z. Use the stable Arthur decomposition from the EndoscopicTransferAndUnitaryTraceComparison contracts. If an induced proper-Levi component is detected, the normalized center restriction is nonzero; choose M* and its basic lift b_M for the detected Levi M using gap:basic-weight-invariant-fibres; the smaller-rank kernel inclusion for M≃(M*)_(b_M), together with the normalized spectral-Levi target in §0.0, forces Ψ_(G*)(a) nonzero. Otherwise choose Θ in SD_ell(G) with z·Θ nonzero. Central invariance of the ordinary elliptic summand and injectivity of elliptic restriction, from the EndoscopicTransferAndUnitaryTraceComparison contracts, give an elliptic g with nonzero value. BunGAndNewtonStrata §1.23 supplies a dominant μ with b in B(G*,μ), by the lift calculation of §2.2; the all-weight shriek trace contract supplies the adapted shriek trace formula. EndoscopicTransferAndUnitaryTraceComparison §§1.6(ii)–(iii) supply a matching elliptic element g* in G*. The stable inner-Hecke formula makes T_μ(z·Θ)(g*)=e(G)dim(V_μ)(z·Θ)(g), which is nonzero. Inner central commutation identifies this with Ψ_(G*)(a)·T_μ(Θ), so Ψ_(G*)(a) cannot vanish. The rank-zero case uses the same elliptic argument.
+Prove the contrapositive by semisimple-rank induction. If z=Ψ_G(a) is nonzero, §0.5 faithfulness and §3.3 very stability give a stable tempered character detected by z. Use the stable Arthur decomposition from the EndoscopicTransferAndUnitaryTraceComparison contracts. If an induced proper-Levi component is detected, the normalized center restriction is nonzero; choose M* and its basic lift b_M for the detected Levi M using gap:basic-levi-lift; the smaller-rank kernel inclusion for M≃(M*)_(b_M), together with the normalized spectral-Levi target in §0.0, forces Ψ_(G*)(a) nonzero. Otherwise choose Θ in SD_ell(G) with z·Θ nonzero. Central invariance of the ordinary elliptic summand and injectivity of elliptic restriction, from the EndoscopicTransferAndUnitaryTraceComparison contracts, give an elliptic g with nonzero value. BunGAndNewtonStrata §1.23 supplies a dominant μ with b in B(G*,μ), by the lift calculation of §2.2; the all-weight shriek trace contract supplies the adapted shriek trace formula. EndoscopicTransferAndUnitaryTraceComparison §§1.6(ii)–(iii) supply a matching elliptic element g* in G*. The stable inner-Hecke formula makes T_μ(z·Θ)(g*)=e(G)dim(V_μ)(z·Θ)(g), which is nonzero. Inner central commutation identifies this with Ψ_(G*)(a)·T_μ(Θ), so Ψ_(G*)(a) cannot vanish. The rank-zero case uses the same elliptic argument.
 
 **Checks.**
 
 - For G=D×, the quaternionic inner form of G*=GL₂ with κ(b)=1, there is no proper E-rational parabolic Levi: the only M is G, with M*=GL₂ and b_M=b. The diagonal torus of GL₂ is the M* of no Levi of D×; it is irrelevant in §6.1.
 - For b=1 both kernels are the same ideal. In the elliptic detection step, scalar action value 3, dimension 2 and sign −1 give −6≠0, forcing the quasi-split operator to be nonzero. The zero spectral element maps to 0 on both forms.
 
-*Needs:* §0.5; §3.3; §1.5; §1.6; gap:normalized-bernstein-levi; BunGAndNewtonStrata §§1.13, 1.18–1.19; BunGAndNewtonStrata §1.18; BunGAndNewtonStrata §1.11; gap:basic-weight-invariant-fibres; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:elliptic-torus-representatives; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:arthur-stable-decompositions; gap:all-weight-shriek-trace; §0.0.
+*Needs:* §0.5; §3.3; §1.5; §1.6; gap:normalized-bernstein-levi; BunGAndNewtonStrata §§1.13, 1.18–1.19; BunGAndNewtonStrata §1.11; BunGAndNewtonStrata §1.23; gap:basic-levi-lift; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.6; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:elliptic-torus-representatives; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:arthur-stable-decompositions; gap:all-weight-shriek-trace; §0.0.
 
 ### 5.2 The surjective map between FS centers
 
@@ -608,7 +635,7 @@ The construction has the following API.
 
 ### 5.3 Compatibility of tau with Levi restriction
 
-If M is an E-rational parabolic Levi of G=G*_b, choose M* and a basic lift b_M as in gap:basic-weight-invariant-fibres, so M≃(M*)_(b_M); then r_M o τ_G = τ_M o r_(M*) on Z_FS(G*), with all four maps restricted to their FS image subalgebras and normalized parabolic induction. (H26, Theorem 1.4(i), p. 3; §2.4, p. 12; H26 line 566.)
+If M is an E-rational parabolic Levi of G=G*_b, choose M* and a basic lift b_M as in gap:basic-levi-lift, so M≃(M*)_(b_M); then r_M o τ_G = τ_M o r_(M*) on Z_FS(G*), with all four maps restricted to their FS image subalgebras and normalized parabolic induction. (H26, Theorem 1.4(i), p. 3; §2.4, p. 12; H26 line 566.)
 
 Use the normalized spectral-Levi target in §0.0 to obtain r_M(Ψ_G(a))=Ψ_M(res_(M*) a) and the corresponding identity on G*. Evaluate both composites on Ψ_(G*)(a), use the defining formulas for τ_G and τ_M, and then use surjectivity of Ψ_(G*) onto its own range.
 
@@ -616,7 +643,7 @@ Use the normalized spectral-Levi target in §0.0 to obtain r_M(Ψ_G(a))=Ψ_M(res
 
 - For the identity Levi M=G both composites are τ_G. Evaluated on Ψ_(G*)(a), each nontrivial Levi composite is Ψ_M(res a); at a=0 both give 0 and at a=1 both give 1. The required surjectivity is only onto the source image algebra.
 
-*Needs:* §5.2; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:basic-weight-invariant-fibres; §0.0.
+*Needs:* §5.2; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:basic-levi-lift; §0.0.
 
 ### Examples
 
@@ -624,7 +651,7 @@ For A=ℂ[X], the identity map to A and evaluation at zero have kernels 0 and (X
 
 ### Dependencies
 
-Layers 0, 1 and 3; gap:arthur-stable-decompositions; §0.0; gap:normalized-bernstein-levi; gap:basic-weight-invariant-fibres; gap:elliptic-torus-representatives; Mathlib image algebras and quotient equivalences.
+Layers 0, 1 and 3; gap:arthur-stable-decompositions; §0.0; gap:normalized-bernstein-levi; gap:basic-levi-lift; gap:elliptic-torus-representatives; Mathlib image algebras and quotient equivalences.
 
 ## Layer 6: stable transfer compatibility
 
@@ -632,13 +659,13 @@ Layers 0, 1 and 3; gap:arthur-stable-decompositions; §0.0; gap:normalized-berns
 
 For the extended pure inner form G=G*_b, z in Z_FS(G*) and Θ in SD_temp(G*), Trans_G(z·Θ)=τ_G(z)·Trans_G(Θ). Normalize Trans_G on elliptic stable characters by (Trans_G Θ)(g)=e(G)Θ(g*) for matching elliptic elements; it kills irrelevant Levi summands and commutes with induction from relevant Levi summands. (H26, Theorem 1.4(ii), p. 3; proof §2.4, pp. 12–13; H26 line 586.)
 
-Use gap:stable-inner-character-transfer for the stable tempered transfer decomposition and elliptic isomorphism; the Kottwitz-sign convention is fixed here and shared with the stable-orbital measure and duality contract. Induct on rank using the stable Arthur decomposition. On irrelevant Levi summands both sides vanish; on relevant proper-Levi summands choose the basic lift b_M from gap:basic-weight-invariant-fibres and use smaller-rank character-transfer compatibility, the Levi square for τ and central restriction. For elliptic Θ use reverse inner Hecke: its elliptic restriction is dim(V_μ)Trans_G(Θ). Thus T_μ^rev(Θ)-dim(V_μ)Trans_G(Θ) is in D_ind(G), by the elliptic-kernel theorem in the harmonic-analysis contract. Apply reverse central commutation. The center preserves D_ind(G) and the elliptic summand; the same elliptic comparison applied to stable z·Θ identifies the desired two elliptic restrictions. Divide by the positive dimension and use injectivity of elliptic restriction on D_ell(G).
+Use gap:stable-inner-character-transfer for the stable tempered transfer decomposition and elliptic isomorphism; the Kottwitz-sign convention and matching-function duality are fixed by that same contract. Induct on rank using the stable Arthur decomposition. On irrelevant Levi summands both sides vanish; on relevant proper-Levi summands choose the basic lift b_M from gap:basic-levi-lift and use smaller-rank character-transfer compatibility, the Levi square for τ and central restriction. For elliptic Θ use reverse inner Hecke: its elliptic restriction is dim(V_μ)Trans_G(Θ). Thus T_μ^rev(Θ)-dim(V_μ)Trans_G(Θ) is in D_ind(G), by the elliptic-kernel theorem in the harmonic-analysis contract. Apply reverse central commutation. The center preserves D_ind(G) and the elliptic summand; the same elliptic comparison applied to stable z·Θ identifies the desired two elliptic restrictions. Divide by the positive dimension and use injectivity of elliptic restriction on D_ell(G).
 
 **Checks.**
 
 - For an elliptic transferred value 3 with e(G)=−1 and common central scalar 2, the two sides have value −6 and −6. For an irrelevant Levi summand both sides are 0. An induced correction has elliptic value 0 even if its full virtual character is nonzero.
 
-*Needs:* §3.3; §5.2; §5.3; §1.5; §1.6; §1.3; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; EndoscopicTransferAndUnitaryTraceComparison §1.13; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; gap:arthur-stable-decompositions; gap:stable-inner-character-transfer; gap:basic-weight-invariant-fibres; §0.0.
+*Needs:* §3.3; §5.2; §5.3; §1.5; §1.6; §1.3; SmoothRepresentationsOfLocalGroups §SR.2.2; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §1.3; EndoscopicTransferAndUnitaryTraceComparison §1.14; EndoscopicTransferAndUnitaryTraceComparison §1.13; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:arthur-stable-decompositions; gap:stable-inner-character-transfer; gap:basic-levi-lift; §0.0.
 
 ### 6.2 FS central convolution preserves matching test functions
 
@@ -650,7 +677,7 @@ Use EndoscopicTransferAndUnitaryTraceComparison §4.7 smooth transfer in charact
 
 - If a matching elliptic pair has stable orbital values a and −a in the quaternion sign convention, scalar central element 2 gives 2a and −2a. For a=3 these are 6 and −6. An irrelevant class starts at 0 and remains 0; replacing matching representatives by unstable functions changes no stable orbital value.
 
-*Needs:* §6.1; §5.2; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:stable-orbital-inversion-duality; EndoscopicTransferAndUnitaryTraceComparison §4.7; §0.4; gap:unstable-tempered-separation.
+*Needs:* §6.1; gap:stable-inner-character-transfer; §5.2; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.11; EndoscopicTransferAndUnitaryTraceComparison §4.7; §0.4; gap:unstable-tempered-separation.
 
 ### Examples
 
@@ -658,20 +685,16 @@ In the GL₂/quaternion example, elliptic value 3 transfers to −3. A spectral 
 
 ### Dependencies
 
-Layers 0, 1, 3 and 5; gap:arthur-stable-decompositions; gap:stable-inner-character-transfer; gap:unstable-tempered-separation; gap:stable-orbital-inversion-duality; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §§1.13, 2.11 and 4.7.
+Layers 0, 1, 3 and 5; gap:arthur-stable-decompositions; gap:stable-inner-character-transfer; gap:unstable-tempered-separation; gap:normalized-bernstein-levi; EndoscopicTransferAndUnitaryTraceComparison §§1.13, 2.11 and 4.7.
 
 ## Downstream consumers
 
 The spectral image is a supply of very stable distributions without a classification of local L-packets. Its central scalar rigidity is an interface for comparisons of L-packets once a consumer supplies an atomically stable character. The inner-form image quotient is the algebraic interface for normalized test-function transfer and its global trace applications. None of these consumers supplies an input to the stability or kernel-inclusion proof.
 
-## Source issues
-
-H26 attributes atomic stability of the regular supercuspidal character sum to FKS (H26 line 81). FKS21v2 Theorem 4.4.4 states stability and endoscopic identities for its specified subset of the component group (FKS21v2 line 1281 and line 1299), under the exponential-convergence assumptions of §4.3 (FKS21v2 line 993). That statement alone supplies no deduction of support minimality against arbitrary complex coefficients under only tame splitting and p∤|W_G|. Section 4.3 therefore applies to such a sum with atomic stability as a hypothesis; it makes no unconditional assertion about regular packets. For type A₁ over ℚ₃, 3∤|W|=2, whereas the sufficient exponential bound for faithful dimension 2 is 3≥6 and fails.
-
 ## References
 
 - **H26.** David Hansen, *Excursion operators and the stable Bernstein center*, Forum of Mathematics, Pi 14 (2026), e10, pp. 1–14, DOI [10.1017/fmp.2026.10028](https://doi.org/10.1017/fmp.2026.10028). Definitions and Corollaries 1.2–1.3: pp. 1–2; harmonic analysis: §2.1, pp. 4–6; Hecke identities and averaging: §2.2, pp. 6–9; stability: §2.3, pp. 9–11; inner transfer: §2.4, pp. 11–13. The reverse extension in the p. 13 composite is i₁!, as its source and p. 9 definition require (H26 line 411 and line 622). The averaging highest weight uses the positive roots of Ĝ (H26 line 365; FU25 line 717).
-- **FU25.** Chenji Fu, *Stability of elliptic Fargues–Scholze L-packets*, [arXiv:2501.00652v1](https://arxiv.org/abs/2501.00652v1), dated 31 December 2024. Lemmas 3.1.2–3.1.3: pp. 18–19; Lemmas 3.2.1–3.2.3: pp. 20–21; Proposition 3.3.1: p. 21; Lemma 4.2.7: pp. 24–25; Theorem 4.3.1 and proof: pp. 26–27. The line locators above refer to this version.
-- **HKW22.** David Hansen, Tasho Kaletha and Jared Weinstein, *On the Kottwitz conjecture for local shtuka spaces*, Forum of Mathematics, Pi 10 (2022), e13, pp. 1–79, DOI [10.1017/fmp.2022.7](https://doi.org/10.1017/fmp.2022.7). Lemma 3.1.1: pp. 12–13; Definition 3.2.2 and Remark 3.2.5: pp. 14–15; (3.3.3): p. 18; Proposition 6.4.5 and Definition 6.4.6: pp. 61–62; Theorem 6.5.2: pp. 65–66; Lemma A.2.1: p. 72; Theorem C.1.1: p. 75. In (3.3.3), ρ is the half-sum, so 2ρ is the full positive-root sum once (HKW22 line 850 and line 3492).
+- **FU25.** Chenji Fu, *Stability of elliptic Fargues–Scholze L-packets*, [arXiv:2501.00652v1](https://arxiv.org/abs/2501.00652v1), dated 31 December 2024. Lemmas 3.1.2–3.1.3: pp. 18–19; Lemmas 3.2.1–3.2.3: p. 20; Proposition 3.3.1: p. 21; Lemma 4.2.7: pp. 24–25; Theorem 4.3.1 and proof: pp. 26–27. The line locators above refer to this version.
+- **HKW22.** David Hansen, Tasho Kaletha and Jared Weinstein, *On the Kottwitz conjecture for local shtuka spaces*, Forum of Mathematics, Pi 10 (2022), e13, pp. 1–79, DOI [10.1017/fmp.2022.7](https://doi.org/10.1017/fmp.2022.7). Lemma 3.1.1: p. 13; Definition 3.2.2 and Remark 3.2.5: pp. 14–15; (3.3.3): p. 18; Proposition 6.4.5 and Definition 6.4.6: pp. 61–62; Theorem 6.5.2: pp. 65–66; Lemma A.2.1: p. 72; Theorem C.1.1: p. 75. In (3.3.3), ρ is the half-sum, so 2ρ is the full positive-root sum once (HKW22 line 850 and line 3492).
 - **FS24.** Laurent Fargues and Peter Scholze, *Geometrization of the local Langlands correspondence*, [arXiv:2102.13459v4](https://arxiv.org/abs/2102.13459v4) (2024), §I.9, pp. 34–35. Conjecture I.9.5 and the distinct following stable-centre expectation are separated at FS24 line 1294 and line 1298.
-- **FKS21v2.** Jessica Fintzen, Tasho Kaletha and Loren Spice, *A twisted Yu construction, Harish-Chandra characters, and endoscopy*, [arXiv:2106.09120v2](https://arxiv.org/abs/2106.09120v2) (3 September 2021), §4.3, p. 20, and Theorem 4.4.4, p. 26; published as Duke Mathematical Journal 172 (2023), pp. 2241–2301, DOI [10.1215/00127094-2022-0080](https://doi.org/10.1215/00127094-2022-0080). The hypothesis and theorem locators used here belong to the stated preprint version (FKS21v2 line 993 and line 1281).
+- **FKS21v2.** Jessica Fintzen, Tasho Kaletha and Loren Spice, *A twisted Yu construction, Harish-Chandra characters, and endoscopy*, [arXiv:2106.09120v2](https://arxiv.org/abs/2106.09120v2) (3 September 2021), §4.3, p. 20, and Theorem 4.4.4, p. 26; published as Duke Mathematical Journal 172 (2023), pp. 2241–2301, DOI [10.1215/00127094-2022-0080](https://doi.org/10.1215/00127094-2022-0080). The hypothesis and theorem locators used here belong to the stated preprint version. Theorem 4.4.4 states stability across inner forms, and endoscopic identities only for the specified part of S_φ⁺, under §4.3’s convergence assumptions; it states no support minimality against arbitrary complex coefficients (FKS21v2 line 993, line 1281 and line 1299).
