@@ -1,680 +1,503 @@
-# Roadmap: generic crystalline monodromy
+# Roadmap: p-adic Hodge theory and geometric comparison, Part II: generic crystalline monodromy
 
-**Summary.** Build a bridge from a generic filtration of a crystalline G-object to a Galois representation whose image meets the rational derived group openly. The inputs are the shared rational p-adic Hodge and reductive-group theories. The main theorem applies to arbitrary connected reductive groups over Q_p: an acceptable Hodge–Newton irreducible datum has such a classical period point over a finite extension of breve Q_p. The argument passes through coefficient lines, lowest-weight inequalities and connected monodromy. Compact-image torsor components and a quasisplit converse are the final applications.
+**Summary.** This roadmap proves that a topologically generic filtration of an acceptable, Hodge–Newton irreducible pair (b, μ) for an arbitrary connected reductive group G over Q_p gives a crystalline Galois representation whose image meets G_der(Q_p) in an open subgroup (Gleason–Lim–Xu, Theorem 5.8 and Proposition 5.9). It is built from the rational period theory of PadicHodgeTheory and FiniteFlatGroupsAndIntegralPadicHodgeTheory, the isocrystal and B(G) theory of VectorBundlesAndIsocrystals and BunGAndNewtonStrata, the reductive-group theory of ReductiveGroups and ReductiveGroupsPartII, and the period towers of HeckeStacksAndLocalShtukas. The route runs through a decent fibre functor over a finite unramified field and Chen's coefficient-line description of the crystalline monodromy group (Layer 0), generic filtrations and Hodge–Newton estimates on highest weights (Layer 1), generic weak admissibility and derived monodromy (Layer 2), generic period points, the open-image point and its z-extension comparison (Layer 3), and the stabilizers of components of compact-image period torsors (Layer 4).
 
-## Why this roadmap
+PadicHodgeTheory stops at the group-valued period torsor and its neutrality (§5.5) and at Sen theory for p-adic representations (§4.4). For a weakly admissible pair (b, μ) over a finite extension of Q̆_p with [b] ∈ B(G,{μ}) it constructs a crystalline representation ξ: Γ_K → G(Q_p), unique up to conjugacy. It has no algebraic monodromy group of ξ, no generic filtration, and no comparison between the Hodge–Newton geometry of (b, μ) and the size of ξ(Γ_K); this Part II supplies them.
 
-Weak admissibility constrains every Frobenius-stable subspace, while large monodromy asks for control of every algebraic representation. The finite decent-field fibre functor connects these tests. Its rank-one coefficient subobjects can be described by a Newton eigenvalue and a full-period sum of filtration jumps. At a topologically generic flag, highest weights bound those sums. Strict Hodge–Newton positivity then forces every tested line to be fixed by the derived group.
+`README.md` states the full roadmap. `Suggested.lean` states no theorem, and its module docstring records why: every headline theorem (GLX26 Theorem 5.8(1) and (2), Proposition 5.9, the z-extension comparison of §3.5 and the compact-torsor theorem of §4.1) concerns carriers absent from the pinned Mathlib and Tau Ceti. These are filtered isocrystals with G-structure over finite extensions of Q̆_p and their weak admissibility, crystalline representations with G-structure, the flag variety Fl_μ, the admissible locus of the B_dR-Grassmannian, and locally profinite torsors over the diamond Spd K.
 
-The end theorem is the open-image point of Gleason–Lim–Xu, Proposition 5.9 (p. 844), using their Theorem 5.8 (pp. 842–844). The converse, Proposition 5.11 (p. 845), uses a distinct geometric implication from Theorem 6.1(a). The forward argument does not require the ADLV component classification.
+## Scope and ownership
 
-## What is available today
+This roadmap owns, layer by layer:
 
-The fixed libraries are Mathlib 082e2d37e8b0463410cdb532e111cd43d5a66174 and Tau Ceti f790474821cf4256814db967cb154e7af3d0c369. Mathlib already has submodules, p-typical Witt coordinates, Teichmüller lifts, Verschiebung, ghost polynomial identities, and algebraic independence. Its `WittVector.isocrystal_classification` is a rank-one result, so it is not a substitute for the full slope classification used here. The existing `TauCeti.Tannaka.fgPointTensorIsoEquiv` is the point reconstruction for finite comodules over a specified commutative Hopf algebra; abstract neutral-category fibre change is a separate input.
+- Layer 0: the filtration jump of a nonzero vector, the full-period Frobenius degree sum, the sets V^{s,k}_{b,μ}, the decent fibre functor ω_s and its tensor group H_cris,s, rank-one coefficient objects, Chen's invariant-line criterion, and the Tannakian description and period comparison of the full monodromy group (GLX26 §5.1; Chen14 §§3.1–3.3).
+- Layer 1: generic filtrations and the generic-flag equality, the quasisplit threshold formula in a form valid for nonnormal reflex fields, the orbit bound, Frobenius transport of isotypic components, and the Hodge–Newton inequalities (GLX26 §§5.2–5.3).
+- Layer 2: uniform descent of subisocrystals, generic minimality of Hodge degrees, generic weak admissibility and generic derived monodromy (GLX26 Theorem 5.8; Chen14 Théorème 5.0.6).
+- Layer 3: generic flags over finite extensions of Q̆_p, the open-image period point, Zariski density of open subgroups of rational points, central lifting of derived containment and the z-extension comparison (GLX26 Lemma 5.10, Proposition 5.9, Proposition 6.7).
+- Layer 4: components and stabilizers of compact-image period torsors and their images in an ambient tower (GLX26 Lemma 6.12 and its proof).
 
-The current Tau Ceti library a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039 also has `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer` in `Algebra/AlgebraicGroup/Representation/ExteriorStabilizer/Character.lean`. It gives the scheme-theoretic line stabilizer for a finitely generated Hopf ideal over a field, uniformly in value algebras. Reuse this theorem through the representation/comodule adapter. General Chevalley theory, Hopf-point Tannaka and Witt completeness are not new targets here.
+Supplied objects keep their owners' names and are imported, not restated: the filtered G-isocrystal functor, admissible pairs, the HN filtration of filtered isocrystals and the period torsor (PadicHodgeTheory §§3.4, 3.6, 5.5); weak admissibility, strictness and Colmez–Fontaine over arbitrary perfect residue fields (FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.2, R07.4.13); Dieudonné–Manin and the slope calculus (VectorBundlesAndIsocrystals VB0); neutral reconstruction and tensor-isomorphism torsors (MotivesAndAlgebraicCycles §§6.1–6.3, 6.8); Galois averages, Newton and Kottwitz invariants, decent representatives, acceptable classes and bounded lifting through z-extensions (BunGAndNewtonStrata §§1.7–1.9, 1.12, 1.23, 1.43); period towers, classical points, adjoint comparison, nonemptiness and transitivity (HeckeStacksAndLocalShtukas §§HS2.11–HS2.13, HS2.15, HS2.16); the point topology, openness of smooth maps, analytic charts and the completed unramified field (ReductiveGroupsPartII §§RG2.0.2, RG2.0.4); monodromy groups (ArithmeticGaloisRepresentations §§1.1, 7.6); parabolic-type flag varieties (ShimuraData §3.8); associated bundles (AutomorphicBundles §B0.4); rank loci (AlgebraicModuliForArithmeticGeometry §1.7); étale coordinates (SchemeAndStackFoundations §0.8); representations, Lie algebras, closed subgroups, derived groups, root data with Galois action and split highest weights (ReductiveGroups Layers 1, 2, 3, 6, 7, 10); and locally profinite torsors, components and limits of diamonds (DiamondsAndVStacks §§D0.6, D3.10, D5.3, D5.16, D6.5).
 
-## Prerequisites and boundaries
+Two inputs are supplier gaps, stated under Exact supplier contracts: the irreducible representations of quasisplit groups by Galois orbits of dominant weights (gap:quasisplit-highest-weights, ReductiveGroups Layer 10) and Sen's openness theorem for Hodge–Tate representations (gap:serre-sen-openness, PadicHodgeTheory §4.4).
 
-The mathematical supplier contracts are the following. Existing objects keep their original owners.
+The following are not targets of this roadmap:
 
-- **Rational periods and crystalline monodromy:** `PadicHodgeTheory:R06.1` and `PadicHodgeTheory:R06.2`. Use the exact nodes `period-functors-perfect-residue-base`, `weak-admissibility-is-admissibility`, `crystalline-g-fiber-functor`, `bounded-crystalline-g-torsor-triviality`, and `crystalline-monodromy-group-interface`. These supply the perfect-residue-field Colmez–Fontaine equivalence, bounded standard-fibre torsor triviality, and Serre–Sen openness. No second period ring, weak-admissibility category or general monodromy-group definition is introduced.
-- **Slopes:** `VectorBundlesAndIsocrystals:VB0/dieudonne-manin-isocrystals` and `tensor-and-dual-slopes`. Supply the full rational slope decomposition, normalized standard blocks, and exact tensor/dual compatibility. The finite fibre functor below is a new arithmetic realization of those shared isocrystals.
-- **Tensor categories:** `MotivesAndAlgebraicCycles:MC.6/neutral-tannaka-reconstruction` and `tensor-iso-torsor`. Supply the neutral reconstruction and fibre-isomorphism torsor; the objects and their morphisms are the shared ones.
-- **Invariants and decent representatives:** `BunGAndNewtonStrata:BG0` and `BG1`. Use `decent-representative`, `existence-of-decent-representative`, `newton-and-kottwitz-maps`, `admissible-pair`, `galois-average`, and `z-extension-bounded-lifting`. The notation HN-irreducible abbreviates strict positivity in the coroot expansion fixed below; it does not introduce another global HN predicate.
-- **Generic filtrations and highest weights:** `ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis` supplies the split geometric starting point. The additional quasisplit contract belongs to the proposed local-generation continuation of reductive groups. For a characteristic-zero field k, quasisplit connected reductive G/k, a dominant cocharacter μ over a finite reflex extension E/k, and a rational representation V, its generic filtration is V∩⋂_{g∈G(E)}g Fil_μ(V_E). It consists of G-subrepresentations and agrees with V∩Fil_η at a topologically generic flag. On a k-isotypic highest-weight orbit O its threshold is the minimum of ⟨w_0 average(C),μ⟩ over all distinct Γ_E-orbits C⊆O. The contract must include Galois descent with multiplicities, transport to a common normal closure for nonnormal E/k, Frobenius transport of isotypic summands, and the criterion that highest weights annihilating all coroots factor through G/G_der. The arithmetic estimates below depend on this full contract; the split character basis alone does not supply it.
-- **Algebraic structure and rational points:** the current `tauceti:TauCetiRoadmap/ReductiveGroups#layer-1-representations--comodules` supplies the shared representation dictionary. Its structure layer, `#layer-7-structure-theory`, supplies algebraic images, derived groups and rational cocharacter conjugacy. In particular, for a central torus quotient f:G_tilde→G and a closed subgroup J, f(J°)⊇G_der implies J°⊇G_tilde_der. To see the reduction, intersect with the inverse image of G_der: its connected image is reductive, its unipotent radical maps into a torus and is trivial, and its derived group maps centrally isogenously to G_der. The rational-point consequences needed from `ReductiveGroupsPartII:RG2.0` are Zariski density of nonempty analytic open subsets of connected smooth groups and openness on rational points of a characteristic-zero finite central isogeny. Rational surjectivity is not assumed.
-- **Period points:** `HeckeStacksAndLocalShtukas:HS2/classical-period-points`, `admissible-period-torsor`, and `adjoint-period-and-tower-comparison` supply the classical Bialynicki–Birula dictionary and bounded adjoint comparison after reflex-field base change. Only part (b) of `nonemptiness-and-period-connectedness` is used in the forward proof: an acceptable bounded datum has an admissible point over a finite extension of its completed reflex field. Its independent nonemptiness proof precedes generic monodromy. General Hecke or shtuka objects are not rebuilt.
-- **Smooth algebraic geometry:** `SchemeAndStackFoundations:SF.0` supplies determinantal rank loci and locally free universal filtration quotients, plus nonempty quasi-compact étale coordinates on a smooth variety, étale openness and base change, and the classification of quasi-compact étale schemes over a field as finite unions of finite separable spectra. The precise geometric inputs are Stacks Tags 054L, 02GL and 02GH.
-- **Torsor topology:** `ArithmeticGaloisRepresentations:R01.1/continuous-representation` supplies continuity. `DiamondsAndVStacks:D3/locally-profinite-torsors`, `D6/etale-site-comparison`, `D5/limits-and-finite-stage-comparisons`, and `D0/spectral-components-profinite` supply the torsor and limit interfaces. The D5 restricted-quotient interface must additionally verify compact-coset clopen separation in this application. A conditional quotient theorem is not an unrestricted component formula.
-- **The reverse geometric implication:** the GLX ADLV continuation must supply: for quasisplit G/Q_p and [b]∈B(G,μ), existence over finite K/breve Q_p of a crystalline representation of type (b,μ) with open derived intersection implies HN-irreducibility. This is only (4)⇒(3) of GLX Theorem 6.1(a), p. 845. Its proof through components and HN decomposition must be independent of the forward implication imported from this roadmap. The existing He21 dimension continuation does not provide this component theorem. Global transitivity on tower components is another explicit geometric input when applying the final stabilizer result to every component.
-
-The independent Simpson correspondence, relative crystalline local-system theory and equivariant Fargues–Fontaine curve proofs have their own directions. They share the rational period inputs, but no target below requires those correspondences.
+- The partial converse GLX26 Proposition 5.11 and the component theorem GLX26 Theorem 6.1. They follow from the circle of implications (3)⇒(4)⇒(5)⇒(1)⇒(2)⇒(3) of Theorem 6.1, whose step (3)⇒(4) is §3.2 here and whose step (4)⇒(5) consumes §4.2 here. They belong to the component theory of local shtuka towers, which consumes HeckeStacksAndLocalShtukas and Layers 2–4 of this roadmap.
+- Infinite transcendence of Q̆_p over Q_p and the Witt-digit estimate behind it: ReductiveGroupsPartII §RG2.0.4, `transcendenceDegree_infinite`.
+- The p-adic Simpson correspondence, crystalline local systems on smooth formal schemes and equivariant bundles on the Fargues–Fontaine curve, which are separate continuations of PadicHodgeTheory with their own directions.
 
 ## Conventions
 
-Fix a prime p, F=breve Q_p=Frac W(overline F_p), and a finite extension K/F. Write σ for the arithmetic Witt Frobenius and Q_{p^s} for the unramified degree-s subfield of F, with s>0. G is connected reductive over Q_p. For b∈G(F) and a filtration of type μ, the filtered-isocrystal functor sends ρ to (V⊗F,ρ(b)σ,Fil_μ). The filtration is decreasing and contains the μ-weight spaces of weight at least i in Fil^i. The Hodge degree is Σ_i i dim gr^i and the Newton degree uses v_p(det φ). Thus the covariant crystalline realization of Q_p(1) has φ=p^(-1)σ and filtration jump −1, while its cyclotomic Hodge–Tate weight in the parent convention is +1. This fixes the sign without identifying the two weight conventions.
+- p is a prime, p = 2 included. F = Q̆_p is the completed maximal unramified extension of ReductiveGroupsPartII §RG2.0.4, identified there with Frac W(F̄_p); σ is its arithmetic Frobenius and Q_{p^s} ⊂ F the unramified extension of degree s > 0. K/F is a finite extension and Γ_K = Gal(K̄/K). G is a connected reductive group over Q_p.
+- For b ∈ G(F) and a cocharacter μ of G_K, or a K-point η of the flag variety Fl_μ, F_{b,μ}(V) = (V⊗F, ρ(b)σ, Fil_μ V_K) is PadicHodgeTheory §3.6's `filteredGFunctor`. Filtrations decrease, and Fil^i_μ is the sum of the μ-weight spaces of weight at least i. The Hodge degree is t_H = Σ_i i·dim gr^i and the Newton degree t_N = v_p(det φ), with v_p(p) = 1. The covariant realization of Q_p(1) has φ = p⁻¹σ and filtration jump −1, as in PadicHodgeTheory's Conventions; its Hodge–Tate weight in that convention is +1.
+- GLX orientation: [b] ∈ B(G,μ) means κ(b) = μ^♮ and ν_b ≤ μ^◇, which is BunGAndNewtonStrata §1.23's `Acceptable`, with μ^♮ and μ^◇ the invariants `HodgeInvariants` of its §1.7. HeckeStacksAndLocalShtukas states its towers in the Berkeley orientation with B(G,μ⁻¹); its §HS2.12 states the GLX comparison through λ = μ⁻¹. Every use of HeckeStacksAndLocalShtukas below reads its μ as our μ⁻¹, including the Kottwitz sign κ(b) = −μ^♯ there.
+- Decency: b is s-decent when sν_b is integral and (bσ)^s = (sν_b)(p)σ^s in G(F)⋊⟨σ⟩, with exactly s factors (BunGAndNewtonStrata §1.9, `DecentRepresentative`); then b and ν_b are defined over Q_{p^s}. Enlarging s (BunGAndNewtonStrata §1.12), arrange that G_{Q_{p^s}} is quasisplit, that it splits over an extension of Q_{p^s} whose Galois closure is totally ramified, and that the Frobenius action σ_0 on the based root datum satisfies σ_0^s = 1. The dominant Newton point is arranged by σ-conjugating b by an element of G(Q_{p^s}). Such an element acts on Fl_μ over every field containing Q_{p^s} and the reflex field, so it preserves genericity. An element of G(F) is used only to transport a constructed period point between σ-conjugate representatives.
+- Hodge–Newton irreducibility (GLX26 Definition 2.1): for one positive absolute root system with simple roots Δ, μ^◇ − ν_b = Σ_{α∈Δ} c_α α^∨ with every c_α > 0, together with [b] ∈ B(G,μ). For a torus Δ is empty and the condition reduces to [b] ∈ B(G,μ). Every average is over a nonempty finite orbit and every quotient k/s has s > 0.
+- Monodromy: for a continuous ξ: Γ_K → G(Q_p), H ⊂ G is the full Zariski closure of ξ(Γ_K) and H° its identity component (ArithmeticGaloisRepresentations §7.6). GLX's Mumford–Tate group MT(b,η) is H°. The tensor group of the category generated by the image of F_{b,η} is H, not H°.
+- Torsors: in Layer 4, G(Q_p) acts on the geometric fibre G(Q_p) of a period torsor by left multiplication and Γ_K by right multiplication through ξ. The Γ_K-orbits are the cosets gC with C = ξ(Γ_K), and the left stabilizer of gC is gCg⁻¹.
 
-Use the GLX period orientation: [b]∈B(G,μ) means κ(b)=μ^natural and ν_b≤μ^diamond. The Berkeley-oriented HS2 nodes are used with μ replaced by μ^(-1), including the Kottwitz sign. No minuscule hypothesis is silently added to their finite-classical-point dictionary.
+## Exact supplier contracts
 
-An s-decent representative satisfies (bσ)^s=(sν_b)(p)σ^s, with exactly s factors on the left, and b,ν_b defined over Q_{p^s}. Increase s to make G_{Q_{p^s}} quasisplit, its splitting extension totally ramified, sν_b integral, and σ_0^s=1 on the chosen based root datum. The dominant Newton cocharacter is arranged by a translation defined over a finite algebraic coefficient field. An arbitrary translating element in G(F) need not preserve genericity over the original reflex field. Such translations are used only to transport the final period point.
+### From Mathlib
 
-For dominant μ and ν_b use one positive absolute root system Δ. HN-irreducibility means μ^diamond−ν_b=Σ_{α∈Δ}c_αα∨ with every c_α>0, together with [b]∈B(G,μ). For a torus Δ is empty and the derived group is trivial. Every average below is over a nonempty finite orbit, and every expression k/s uses s>0.
+At the pin: `Submodule` (`Mathlib/Algebra/Module/Submodule/Defs.lean`) carries the steps of every filtration; jumps are defined by membership and non-membership. `WittVector.isocrystal_classification` (`Mathlib/RingTheory/WittVector/Isocrystal.lean`:180) classifies one-dimensional isocrystals over an algebraically closed residue field; it does not treat higher rank, which is VectorBundlesAndIsocrystals VB0. `AlgebraicIndependent` (`Mathlib/RingTheory/AlgebraicIndependent/Defs.lean`:54) is injectivity of multivariable polynomial evaluation over the stated coefficient ring. `AlgebraicGeometry.UniversallyOpen.of_flat` (`Mathlib/AlgebraicGeometry/Morphisms/UniversallyOpen.lean`:142, Stacks 01UA) makes a flat morphism locally of finite presentation universally open, and `AlgebraicGeometry.Scheme.Hom.isOpenMap` (same file, line 43) extracts openness of the underlying map. `Algebra.FormallyEtale.iff_exists_algEquiv_prod` (`Mathlib/RingTheory/Etale/Field.lean`:194, Stacks 02GL) identifies a formally étale, essentially finite type algebra over a field with a finite product of finite separable field extensions.
 
-Write H for full Zariski monodromy and MT=H° for its identity component. The tensor group of the generated category is H. Its crystalline finite-field partner is also the full group. The period comparison is compatible with conjugation in the ambient G, which is stronger than a bare assertion that two groups are inner forms. A finite disconnected image illustrates why the full group cannot be silently replaced by MT. In the compact torsor application, G(Q_p) acts on the left, Γ_K acts by right multiplication through ξ, components are right cosets gC, and their stabilizers are gCg^(-1).
+### From Tau Ceti
 
-## Layer overview
+At the pin: `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer` (`TauCeti/Algebra/AlgebraicGroup/Representation/ExteriorStabilizer/Character.lean`:101) is Chevalley's theorem with the subgroup character. For a commutative Hopf algebra over a field and a Hopf ideal whose underlying ideal is finitely generated, the closed subgroup is the stabilizer, over every commutative value algebra, of a line in an exterior power of a finite-dimensional subcomodule, and that line lies in the weight space of a unique character of the subgroup. `TauCeti.Tannaka.fgPointTensorIsoEquiv` (`TauCeti/Algebra/AlgebraicGroup/Representation/Tannaka/Equivalence.lean`:188) and `TauCeti.Tannaka.pointsFunctorIsoTensorAutFunctor` (`TauCeti/Algebra/AlgebraicGroup/Representation/Tannaka/GroupFunctor.lean`:138) identify the algebra-valued points of such a Hopf algebra with the tensor automorphisms of scalar extension on its finite-dimensional comodules. Reconstruction for an abstract neutral category is MotivesAndAlgebraicCycles §§6.1–6.3.
 
-| Layer | New mathematical output |
-| --- | --- |
-| GM0 | Decent arithmetic fibres, nonzero degree equations, coefficient-line tests and ambient comparison |
-| GM1 | Weighted orbit, full-period Frobenius, Newton and strict-positive-coroot estimates |
-| GM2 | Uniform subobject descent, generic admissibility and derived monodromy |
-| GM3 | Infinite transcendence, actual generic classical flags, open-image points and central lifting |
-| GM4 | Compact torsor components, ambient stabilizers and the quasisplit converse |
+### From TauCetiRoadmap.PadicHodgeTheory
 
-The short Lean companion contains the two light definitions `DegreeAt` and `frobeniusDegreeSum`, their directly usable signatures and sample calculations, and the finite rational positivity milestone `positive_sum_forces_zero`. The remaining declarations require the shared filtered-isocrystal, group-scheme or diamond carriers and retain their full mathematical signatures here.
+Section 3.4 supplies weak admissibility of filtered isocrystals on Mathlib's isocrystal carrier and the Harder–Narasimhan filtration `filteredHN` in that filtered category. Section 3.6 supplies `filteredGFunctor` and `admissiblePair`: a pair (b, μ) is admissible when every F_{b,μ}(V) is weakly admissible. Section 5.5 supplies, for finite K/Q̆_p, the Colmez–Fontaine equivalence between weakly admissible filtered isocrystals and crystalline representations, and `periodTorsor_neutral`: for an admissible pair with [b] ∈ B(G,{μ}) there is a rational tensor trivialization, hence a continuous crystalline ξ: Γ_K → G(Q_p), unique up to G(Q_p)-conjugacy, whose crystalline realization is F_{b,μ} through the period comparison isomorphism over B_cris. Section 4.4 owns Sen theory for p-adic representations, including `senOperator` and `senOperator_zero_iff_finiteInertia`, proved through Sen's description of the Lie algebra of the inertia image.
+
+What PadicHodgeTheory must provide (gap:serre-sen-openness): for a complete discretely valued field K of characteristic zero whose residue field is algebraically closed of characteristic p, for instance a finite extension of Q̆_p, and a continuous Hodge–Tate representation ρ: Γ_K → GL_n(Q_p), prove that ρ(Γ_K) is open in the Q_p-points of its Zariski closure (Serre79 §1.3, Théorème 1, p. 158; Chen14 Proposition 3.2.1(2), pp. 740–741).
+
+### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
+
+Section R07.3.2 supplies the Hodge and Newton numbers, their additivity on strict exact sequences, the predicate `FilteredPhiNModule.IsWeaklyAdmissible`, and `IsWeaklyAdmissible.abelian`: weakly admissible objects form an abelian category, closed under extensions, in which every morphism is strict. Only the subcategory N = 0 is used. Section R07.4.13 supplies weakly admissible ⇒ admissible over the Kummer frame of §R07.4.1, which allows an arbitrary perfect residue field and so covers finite extensions of Q̆_p.
+
+### From TauCetiRoadmap.VectorBundlesAndIsocrystals
+
+Layer VB0 supplies, for every finite extension E of Q_p with residue cardinality q and in particular for E = Q_{p^s} with the q-Frobenius σ^s: "Finite isocrystals over the completed maximal unramified coefficient field", "Rational standard Frobenius blocks" D(s,r), "Dieudonné–Manin classification of finite isocrystals" (every finite isocrystal is a sum of coprime blocks, distinct slopes have no morphisms, short exact sequences split) and "Tensor and dual calculus for isocrystals" (tensor slopes add, dual slopes negate).
+
+### From TauCetiRoadmap.MotivesAndAlgebraicCycles
+
+Sections 6.1–6.3 supply neutral Tannakian reconstruction over any field, without a tensor generator. Section 6.8 supplies the tensor-isomorphism torsor of two fibre functors, its actions and its scalar extension.
+
+### From TauCetiRoadmap.BunGAndNewtonStrata
+
+Section 1.7 supplies `HodgeInvariants` (μ^♮ and the Galois average μ^◇); §1.8 supplies `Invariants.newton` and `Invariants.kottwitz`; §1.9 supplies `DecentRepresentative`; §1.12 supplies the existence of decent representatives with G quasisplit over Q_{p^s} and the Newton point in the chosen dominant chamber; §1.23 supplies `Acceptable`, the set B(G,{μ}); §1.43 supplies bounded lifting of acceptable classes through a z-extension, `ComponentCoset.liftZExtension`.
+
+### From TauCetiRoadmap.HeckeStacksAndLocalShtukas
+
+Section HS2.11 supplies the universal admissible period torsor and `admissiblePeriodTorsor.classical_point`: the fibre at a point over a finite extension L of the completed reflex field is the torsor of a crystalline ρ_x: Gal(L̄/L) → G(Q_p) with isocrystal b and Hodge filtration BB(x). Section HS2.12 supplies the Białynicki-Birula bijection between classical cell points and flag points, restricted to admissible points and weakly admissible filtrations. Section HS2.13 supplies the comparison of bounded Grassmannians, admissible loci and infinite-level towers along a map inducing an isomorphism of adjoint groups, after base change of reflex fields. Section HS2.15 supplies nonemptiness: for [b] in the acceptable set the admissible cell has a point over a finite extension of the completed reflex field. Section HS2.16 supplies transitivity of G(Q_p) on the connected components of the infinite-level tower over an algebraically closed field for minuscule μ, and for general μ under its finite-level openness hypothesis.
+
+### From TauCetiRoadmap.ReductiveGroupsPartII
+
+Section RG2.0.2 supplies *points-topological-group* (the topological group G(Q_p)), *smooth-morphism-open-map* (a smooth morphism of schemes over a local field is open on rational points) and *smooth-group-analytic-charts* (in characteristic zero, the points of a smooth affine group form an analytic manifold whose tangent space at the identity is the Lie algebra). Section RG2.0.4 supplies Q̆_p with its Frobenius, its comparison with Frac W(F̄_p), and `transcendenceDegree_infinite`: Q̆_p has infinite transcendence degree over Q_p. Section RG2.1.5 supplies z-extensions: central quotients by induced tori with simply connected derived group.
+
+### From TauCetiRoadmap.ArithmeticGaloisRepresentations
+
+Section 1.1 supplies continuous representations of Γ_K. Section 7.6 supplies the Zariski closure of a subgroup of G(K) through the vanishing ideal, the monodromy group and its identity component, the equality of the closure of α(Σ) with α of the closure for a homomorphism α of algebraic groups, and the compatibility of closures with field extension.
+
+### From TauCetiRoadmap.ShimuraData
+
+Section 3.8 supplies `parabolicTypeVariety`: for a reductive group scheme and an étale-locally constant parabolic type, the smooth projective scheme of parabolic subgroups of that type, equal to G_L/P over any extension L with an L-rational parabolic P of the type. Here Fl_μ denotes this scheme for the type of P_μ over the field of definition of μ.
+
+### From TauCetiRoadmap.AutomorphicBundles
+
+Section B0.4 supplies `associatedCoefficient`: for a flat affine group P over a base, a right P-torsor locally trivial for the fpqc topology and a representation on a finite locally free module, the associated finite locally free module, with its maps, tensor structure, base change and rank.
+
+### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
+
+Section 1.7 supplies `rankLocus`: for a map of finite locally free sheaves and r ≥ 0, the closed subscheme on which the rank is at most r, defined by the (r+1)-minors and compatible with base change. Its set of points is where the fibre rank is at most r; with source O and r = 0 it is the zero locus of a section.
+
+### From TauCetiRoadmap.SchemeAndStackFoundations
+
+Section 0.8 supplies `etale_coordinates`: a morphism smooth at x of relative dimension d admits, on an open neighbourhood of x, an étale map to affine d-space over the base (Stacks 054L).
+
+### From TauCetiRoadmap.ReductiveGroups
+
+Layer 1 supplies rational representations as comodules and the representation dictionary; Layer 2 the Lie algebra of a closed subgroup and dimension through Lie algebras; Layer 3 closed subgroups, Zariski closures and identity components; Layer 6 derived groups, central isogenies and semisimplicity of the derived group; Layer 7 Borel subgroups, maximal tori, parabolic subgroups P_G(λ) and the absolute root datum with its Galois action; Layer 10 (10B) the highest-weight theory of split groups: simples classified by dominant weights, the weights of the simple of highest weight λ lying between w_0λ and λ, and the one-dimensional simples for weights orthogonal to all coroots.
+
+What ReductiveGroups must provide (gap:quasisplit-highest-weights): for a quasisplit connected reductive group G over a field k of characteristic zero, with a k-Borel B ⊇ T and the Galois action on the dominant weights X*(T)^+, prove that the irreducible k-representations are the W_O for the Γ_k-orbits O of dominant weights, with W_O ⊗ k̄ ≅ ⊕_{λ∈O} W_λ, and that the W_O-isotypic part V_O of every representation satisfies V_O ⊗ k̄ = ⊕_{λ∈O} V^λ_{k̄}, γ(V^λ_{k̄}) = V^{γλ}_{k̄} for γ ∈ Γ_k, and V_O = (⊕_{λ∈O} V^λ_{k̄})^{Γ_k} (GLX26 §5.2, ¶18, arXiv v3 p. 35).
+
+## How to read the build
+
+Layer 0 sets up the arithmetic side: decent fibres turn crystalline monodromy into stabilizers of explicit lines, and the period comparison transfers derived containment back to the Galois side. Layer 1 is the representation theory of generic flags: it computes generic filtration jumps from highest weights and bounds the full-period degree sums by Galois averages. Layer 2 combines them: generic flags are weakly admissible, and strict Hodge–Newton positivity forces the derived group into the monodromy group. Layer 3 produces generic flags over finite extensions of Q̆_p, constructs the open-image point and compares it along z-extensions. Layer 4 reads off stabilizers of components of period torsors. Layers 0 and 1 are independent of each other; Layers 2–4 use their predecessors. Each layer ends with examples and its dependencies.
 
 ## Layer 0: decent fibres and crystalline invariant lines
 
-### The jump of a nonzero filtered vector
+### 0.1 The jump of a nonzero filtered vector
 
-For a field K, a K-vector space V and a decreasing, exhaustive and separated integer filtration F, DegreeAt(F,v,d) means v ∈ F^d and v ∉ F^(d+1). Every nonzero v has a unique such integer. The predicate itself is defined for any family of submodules; existence and uniqueness require the filtration hypotheses. No integer degree is assigned to zero.
+Let K be a field, V a K-vector space and Fil a decreasing ℤ-indexed family of subspaces of V. Define the jump predicate: v has jump d for Fil when v ∈ Fil^d and v ∉ Fil^{d+1}. If Fil is exhaustive (⋃ Fil^d = V) and separated (⋂ Fil^d = 0), every nonzero v has exactly one jump, written deg_Fil(v); zero has none. Construct the predicate on Mathlib's `Submodule` carrier by membership and non-membership. For v ≠ 0 the set of d with v ∈ Fil^d is nonempty by exhaustion, bounded above by separation and a lower set because Fil decreases; its maximum is the jump, and decrease gives uniqueness. (GLX26 §5.1, equation (5.2), arXiv v3 p. 32.) *Needs:* Mathlib `Submodule`.
 
-K is a field; V is a K-vector space. The filtration is bounded above and below for the existence assertion.
+The API:
 
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), §5.1, equation (5.2), p. 836.
-
-Define DegreeAt by membership and nonmembership in the existing Submodule carrier.
-
-For v ≠ 0, the set of indices containing v is a nonempty proper lower subset of the integers; its largest member is the required jump. Antitonicity proves uniqueness.
-
-The proposed declaration is `DegreeAt`.
-
-Its usable interface consists of:
-
-- `DegreeAt.mem`: DegreeAt(F,v,d) implies v ∈ F^d.
-- `DegreeAt.not_mem_succ`: DegreeAt(F,v,d) implies v ∉ F^(d+1).
-- `DegreeAt.unique`: For antitone F, DegreeAt(F,v,d) and DegreeAt(F,v,e) imply d=e.
-- `DegreeAt.exists_of_nonzero`: For a bounded exhaustive filtration and v ≠ 0, there exists d with DegreeAt(F,v,d).
-- `DegreeAt.smul`: Multiplication of v by a nonzero scalar preserves DegreeAt.
+- Membership: if v has jump d then v ∈ Fil^d and v ∉ Fil^{d+1}.
+- Uniqueness: for decreasing Fil, two jumps of the same vector are equal.
+- Existence: for exhaustive and separated Fil and v ≠ 0, a jump exists.
+- Scaling: multiplying v by a nonzero scalar preserves its jump.
+- Ultrametric inequality: for nonzero v, w with v + w ≠ 0, deg_Fil(v + w) ≥ min(deg_Fil v, deg_Fil w), with equality when the two jumps differ.
 
 **Checks.**
 
-- `degreeAt_rankOne`: For F^i=K when i≤a and F^i=0 otherwise, DegreeAt(F,1,a).
-- `degreeAt_zero`: DegreeAt(F,0,a) is false for every F and a.
-- `degreeAt_twoJumps`: For K e1 ⊕ K e2 with jumps 2 and -1, e1+e2 has degree -1; e1 has degree 2.
-- `degreeAt_not_grading`: The preceding vector e1+e2 is not homogeneous, but still has a unique filtration degree.
+- For Fil^i = K when i ≤ a and Fil^i = 0 otherwise, the vector 1 has jump a, including for negative a.
+- The zero vector lies in every Fil^d and so has no jump; a model assigning it jump +∞ or 0 is excluded.
+- In K e_1 ⊕ K e_2 with Fil^i = V for i ≤ −1, Fil^i = K e_1 for 0 ≤ i ≤ 2 and Fil^i = 0 for i ≥ 3, the vector e_1 has jump 2 and e_1 + e_2 has jump −1 = min(2, −1); taking the maximum, 2, would be the wrong rule.
 
-### The full-period Frobenius degree sum
+### 0.2 The full-period Frobenius degree sum
 
-For a set X of nonzero vectors, a degree d:X→ℤ and a self-map φ:X→X, frobeniusDegreeSum(d,φ,s,v)=Σ_{0≤i<s} d(φ^i(v)). In the crystalline application X is the nonzero subtype of V⊗F, φ=ρ(b)σ is bijective, s>0 is a decency period, and d is the μ-filtration jump over K. The summands need not be equal.
+For a set X, a function d: X → ℤ, a self-map φ of X and s ∈ ℕ, define the degree sum d_s(v) = Σ_{0≤i<s} d(φ^i(v)), a finite sum over i < s with ordinary iteration. In the crystalline application X is the set of nonzero vectors of V⊗F, φ = ρ(b)σ is bijective, s > 0 is a decency period, and d is the μ-filtration jump of §0.1 computed in V⊗K. (GLX26 §5.1, equation (5.4), arXiv v3 p. 33.) *Needs:* §0.1.
 
-s is a natural number; positivity is required only in the arithmetic application.
+The API:
 
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), §5.1, equation (5.4), p. 837.
-
-Take the finite sum over Finset.range s, using ordinary iteration.
-
-Instantiate the nonzero subtype using bijectivity of the isocrystal Frobenius; extend vectors to K only to evaluate the filtration.
-
-The proposed declaration is `frobeniusDegreeSum`.
-
-Its usable interface consists of:
-
-- `frobeniusDegreeSum_zero`: The sum for period zero equals 0.
-- `frobeniusDegreeSum_one`: The sum for period one equals d(v).
-- `frobeniusDegreeSum_succ`: The (s+1)-sum is the s-sum plus d(φ^s(v)).
-- `frobeniusDegreeSum_map`: A map intertwining φ and ψ and preserving degrees preserves all full-period sums.
+- Period zero: d_0(v) = 0.
+- Period one: d_1(v) = d(v).
+- Recursion: d_{s+1}(v) = d_s(v) + d(φ^s(v)).
+- Transport: a map X → Y intertwining φ and ψ and preserving degrees preserves every d_s.
 
 **Checks.**
 
-- `degreeSum_zero`: A zero-length orbit has sum 0 for every degree function.
-- `degreeSum_fixed`: For φ=id, the sum equals s·d(v).
-- `degreeSum_unequalCycle`: For the involution of a two-element set with degrees 1,-1, the 2-sum is 0 at either element.
-- `degreeSum_not_firstJump`: For that cycle starting at degree 1, the 2-sum is 0 and differs from 2 times its first jump.
+- For φ the identity, d_s(v) = s·d(v).
+- For the involution of a two-element set with degrees 1 and −1, the 2-sum at either point is 0; the model s·(first jump) would give 2 at the point of degree 1.
+- For a three-cycle with degrees 2, 0, −5 starting at the first point, d_3 = −3 and d_2 = 2; the summands are not equal and the partial sums depend on s.
 
-### Vectors satisfying the Newton and Hodge equations
+### 0.3 Vectors satisfying the Newton and Hodge equations
 
-Fix an s-decent b, s>0, K/F finite, a filtration μ and a rational representation ρ:G→GL(V). For k∈ℤ let V^{s,k}_{b,μ} be the set of nonzero v∈V⊗Q_p Q_{p^s} for which ρ((sν_b)(p))v=p^k v and d_s(v)=k. This is a set, not a declared subspace. The Frobenius sum is computed in V⊗F, where F=breve Q_p.
+Let b ∈ G(F) be s-decent with s > 0, K/F finite, μ a cocharacter of G_K (or η ∈ Fl_μ(K)) and ρ: G → GL(V) a rational representation. For k ∈ ℤ let V^{s,k}_{b,μ} be the set of nonzero v ∈ V⊗Q_{p^s} with ρ((sν_b)(p))v = p^k v and d_s(v) = k, where d_s is the degree sum of §0.2 for φ = ρ(b)σ and the μ-jump in V⊗K. It is a set, not a subspace. The Newton operator ρ((sν_b)(p)) is defined on V⊗Q_{p^s} because b and ν_b are defined over Q_{p^s}, and φ^i(v) ∈ V⊗Q_{p^s} for every i. (GLX26 §5.1, equations (5.3)–(5.5), arXiv v3 pp. 32–33.) *Needs:* §0.2; BunGAndNewtonStrata §1.9.
 
-b and ν_b descend to Q_{p^s}; sν_b is integral. All degree summands are evaluated on nonzero vectors using the μ-filtration over K.
+The API:
 
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), §5.1, equations (5.3)–(5.5), pp. 836–837.
-
-Use the imported decency identity to define the Newton operator on V⊗Q_{p^s}.
-
-Intersect its nonzero p^k-eigenvectors with the level set k of the degree sum; do not close under addition.
-
-The proposed declaration is `newtonHodgeVectors`.
-
-Its usable interface consists of:
-
-- `newtonHodgeVectors_mem`: Membership is equivalent to nonzero, the Newton eigenvalue equation, and the Hodge equality.
-- `newtonHodgeVectors_smul`: Multiplication by Q_{p^s}^× preserves membership and the represented line.
-- `newtonHodgeVectors_tensorMap`: A representation morphism preserving the filtered isocrystal sends a member to a member with the same k whenever its image is nonzero.
+- Membership: v ∈ V^{s,k}_{b,μ} iff v ≠ 0, the Newton eigenvalue equation holds and the degree sum equals k.
+- Scaling: multiplication by Q_{p^s}^× preserves membership.
+- Morphisms: assume (b, μ) admissible (PadicHodgeTheory §3.6). For a G-equivariant map f: V → W and v ∈ V^{s,k}_{b,μ} with f(v) ≠ 0, f(v) ∈ W^{s,k}_{b,μ}. The Newton equation passes through f; for the degree sum, v defines a nonzero map from the rank-one coefficient object of §0.5 with jumps deg(φ^i v), its composite with f is nonzero, hence injective, and strictness of morphisms of weakly admissible objects (FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.2) gives deg(φ^i f(v)) = deg(φ^i v).
 
 **Checks.**
 
-- `newtonHodge_rankOne`: For φ=p^aσ and μ of weight h, a nonzero rational vector belongs to V^{s,k} exactly when k=sa=sh.
-- `newtonHodge_zeroExcluded`: For the zero representation every V^{s,k} is empty.
-- `newtonHodge_wrongHodge`: For φ=σ and a rank-one filtration of jump 1, every nonzero vector satisfies the k=0 Newton equation but none satisfies both equations.
-- `newtonHodge_cyclicCoefficient`: For the coefficient object with jumps d_i and wrap p^k, its distinguished cyclic vector belongs exactly when Σ_i d_i=k.
+- For G = 𝔾_m, b = p^a and μ of weight h on the standard character, a nonzero vector belongs to V^{s,k} exactly when k = sa = sh; for h ≠ a every V^{s,k} is empty.
+- For φ = σ (b = 1) and the standard character with jump 1, every nonzero vector satisfies the Newton equation with k = 0 and has d_s = s, so V^{s,0} is empty.
+- Negative control for the morphism bullet: T = 𝔾_m², b = 1, s = 1, μ = (0,1), V = χ_1 ⊕ χ_2, v = e_1 + e_2. Then v has Newton exponent 0 and jump min(0,1) = 0, so v ∈ V^{1,0}, while its image e_2 under the projection to χ_2 has jump 1 ≠ 0. Here (b, μ) is not admissible, since F_{b,μ}(χ_2) has t_H = 1 > 0 = t_N; the admissibility hypothesis is needed.
+- With admissibility for a split torus, b is σ-conjugate to μ(p) and ν_b = μ, so components of v with equal Newton exponent have equal μ-weight and every equivariant projection preserves the degree sum.
 
-### The finite decent-field crystalline fibre functor
+### 0.4 The finite decent-field crystalline fibre functor
 
-On the full tensor subcategory of isocrystals whose slopes have denominators dividing s, define ω_s(N)=⊕_λ {x∈N_λ | φ^s(x)=p^{sλ}x}, a Q_{p^s}-vector space. This is an exact faithful tensor functor, with ω_s(N)⊗_{Q_{p^s}}F≅N. Restrict it to the subcategory C_{b,μ} generated by F_{b,μ}(Rep G), closed under subquotients. If b is s-decent, its composite with F_{b,μ} identifies canonically with V↦V⊗Q_{p^s}; hence the full group H_cris,s=Aut^⊗(ω_s|C_{b,μ}) embeds in G_{Q_{p^s}}.
+On the full tensor subcategory Isoc^s of isocrystals over F whose slopes have denominators dividing s, define ω_s(N) = ⊕_λ {x ∈ N_λ : φ^s(x) = p^{sλ}x}, a Q_{p^s}-vector space. Then ω_s is an exact faithful tensor functor and the natural map ω_s(N)⊗_{Q_{p^s}}F → N is an isomorphism. Restrict ω_s to the subcategory C_{b,μ} generated by F_{b,μ}(Rep G) under tensor operations and subquotients. If b is s-decent, ω_s∘F_{b,μ} is canonically V ↦ V⊗Q_{p^s}, so the full tensor group H_cris,s = Aut^⊗(ω_s|C_{b,μ}) embeds in G_{Q_{p^s}}. The unfiltered ω_s needs no admissibility; the restriction to C_{b,μ} and the group H_cris,s use an admissible pair. (Chen14 §3.1, pp. 739–740; Definition 3.3.1 and Lemma 3.3.2, p. 742; GLX26 §5.1 ¶14, arXiv v3 p. 32.)
 
-s>0 clears the slopes of a faithful representation, and therefore all tensor constructions and subquotients. The unfiltered ω_s is constructed without any admissibility assumption. Only its restriction to the admissible generated category and the named tensor group require an admissible pair.
+Construct ω_s slope by slope: on N_λ the map p^{−sλ}φ^s is a σ^s-semilinear bijection of slope zero, so Dieudonné–Manin for Q_{p^s}-isocrystals gives a basis of fixed vectors. Tensor and dual compatibility follow from additivity of slopes. Decency gives the identification with V⊗Q_{p^s}; neutral Tannakian reconstruction gives H_cris,s, kept as the full group. *Needs:* VectorBundlesAndIsocrystals VB0 ("Dieudonné–Manin classification of finite isocrystals", "Tensor and dual calculus for isocrystals"); PadicHodgeTheory §3.6; MotivesAndAlgebraicCycles §§6.1–6.3; BunGAndNewtonStrata §1.9.
 
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), §3.1, pp. 738–740; Definition 3.3.1 and Lemma 3.3.2, p. 742; [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), §5.1 ¶14, p. 836.
+The API:
 
-Apply Dieudonné–Manin to each slope summand and take its normalized φ^s-fixed vectors.
-
-Use tensor/dual slope addition and the scalar-extension comparison to prove exactness, faithfulness and the tensor constraints.
-
-Apply s-decency to the representations of G, then neutral Tannaka to the generated subcategory. Keep the full group; identity components are separate.
-
-The proposed declaration is `decentCrystallineFibreFunctor`.
-
-Its usable interface consists of:
-
-- `decentCrystallineFibreFunctor_scalarExtension`: The natural scalar extension of ω_s(N) to F is the underlying isocrystal vector space N.
-- `decentCrystallineFibreFunctor_tensor`: The canonical maps ω_s(N)⊗ω_s(M)→ω_s(N⊗M) and Q_{p^s}→ω_s(1) are isomorphisms with the tensor coherences.
-- `decentCrystallineFibreFunctor_decent`: For s-decent b, ω_s(F_{b,μ}(V))≅V⊗Q_{p^s}, naturally in V and respecting tensors.
-- `decentCrystallineFibreFunctor_subobject`: A filtered-isocrystal subobject induces the corresponding injective Q_{p^s}-linear map on fibres.
+- Scalar extension: ω_s(N)⊗_{Q_{p^s}}F → N is an isomorphism, natural in N.
+- Tensor structure: ω_s(N)⊗ω_s(M) → ω_s(N⊗M) and Q_{p^s} → ω_s(1) are isomorphisms satisfying the tensor coherences.
+- Exactness and faithfulness: ω_s is exact and faithful on Isoc^s.
+- Decent identification: for s-decent b, ω_s(F_{b,μ}(V)) = V⊗Q_{p^s}, naturally in V and compatibly with tensor products.
+- Subobjects: a subisocrystal N′ ⊆ N induces an injective Q_{p^s}-linear map ω_s(N′) → ω_s(N) with ω_s(N′)⊗F = N′.
 
 **Checks.**
 
-- `decentFibre_unit`: ω_s(F,σ)=Q_{p^s}, with unit tensor constraint the identity.
-- `decentFibre_slopeHalf`: The rank-two standard isocrystal of slope 1/2 has a two-dimensional ω_2-fibre over Q_{p^2}.
-- `decentFibre_scalarRecovery`: For any standard block of slope a/h with h|s, extension of ω_s to F recovers that block, including its full rank.
-- `decentFibre_not_naiveFixed`: For the rank-one object φ=pσ the unnormalized φ^s-fixed space is zero, while ω_s has dimension one.
+- For the unit (F, σ), ω_s = Q_{p^s}, with the identity unit constraint.
+- For the standard block of slope 1/2 (φe_1 = e_2, φe_2 = pe_1) and s = 2, φ²(ae_1 + be_2) = p(σ²(a)e_1 + σ²(b)e_2), so ω_2 = Q_{p²}e_1 ⊕ Q_{p²}e_2 has dimension 2 over Q_{p²}.
+- For the rank-one object φ = pσ, the unnormalized space {x : φ^s x = x} is zero, while ω_s = {x : σ^s x = x} has dimension one.
+- For b = p^m ∈ 𝔾_m(F), s = 1 and the standard representation V, ω_1(F_{b,μ}(V)) = {x ∈ V⊗F : p^mσx = p^m x} = V, as the decent identification requires; a representation of weights j contributes {x : p^{jm}σx = p^{jm}x}, again its rational points.
 
-### Rank-one coefficient objects and the degree equality
+### 0.5 Rank-one coefficient objects and the degree equality
 
-A rank-one object after scalar extension of the admissible filtered-isocrystal category to Q_{p^s} is represented, up to isomorphism, by integers d_0,…,d_{s-1}, k=Σ_i d_i, an F-basis e_0,…,e_{s-1}, φ(e_i)=e_{i+1} for i<s−1 and φ(e_{s−1})=p^k e_0, with coefficient a acting on e_i by σ^i(a), and filtration jump d_i on K e_i. Conversely these objects are weakly admissible. Inside F_{b,μ}(V)⊗Q_{p^s}, their fibre lines are precisely Q_{p^s}v for v∈V^{s,k}_{b,μ}, allowing all k.
+Let K/F be finite and s > 0. In the scalar extension to Q_{p^s} of the category of weakly admissible filtered isocrystals over K (objects with a Q_{p^s}-action, morphisms commuting with it), an object is of rank one when its underlying F-space has dimension s. Up to isomorphism the rank-one objects are X(d_0,…,d_{s−1}) for integers d_i, with F-basis e_0,…,e_{s−1}, φ(e_i) = e_{i+1} for i < s−1, φ(e_{s−1}) = p^k e_0 where k = Σ_i d_i, coefficient a ∈ Q_{p^s} acting on F e_i through σ^i(a), and filtration jump d_i on K e_i; each such object is weakly admissible. For an admissible pair (b, μ) with b s-decent, the nonzero morphisms X(d_0,…,d_{s−1}) → F_{b,μ}(V)⊗Q_{p^s} correspond, through the image of e_0, to the vectors v ∈ V^{s,k}_{b,μ} with deg(φ^i v) = d_i; in particular their fibre lines are the lines Q_{p^s}v for v ∈ V^{s,k}_{b,μ}, over all k. (Chen14 §3.3, Lemma 3.3.5 and Proposition 3.3.6 with its proof, pp. 744–745; Chen's statement writes the summands as Q_{p^s}-lines where F-lines are meant.)
 
-K/F finite and s>0. The scalar-extension category includes the coefficient action, not just a larger ground field.
-
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), §3.3, Lemma 3.3.5 and Proposition 3.3.6, pp. 744–745.
-
-Decompose the coefficient action using Q_{p^s}⊗F≅F^s. Frobenius cycles its factors; normalize the wraparound scalar by rank-one isocrystal classification.
-
-Each one-dimensional coefficient factor has one filtration jump. Total Hodge and Newton degrees are Σd_i and k.
-
-For the converse, the maximal destabilizing subobject is stable under the coefficient field. A proper nonzero coefficient-stable φ-subobject cannot occur because Frobenius cycles the rank-one factors; hence total degree equality implies weak admissibility.
-
-Identify a map into F_{b,μ}(V) by its first coefficient eigenvector. Strictness of morphisms gives jumps d_i=deg_μ(φ^iv); the two equations are exactly the existence criterion.
+Decompose the coefficient action through Q_{p^s}⊗F ≅ F^s: Frobenius cycles the factors and rank-one classification normalizes the wraparound scalar. The maximal destabilizing subobject of `filteredHN` is stable under the coefficient field, and a proper nonzero coefficient-stable φ-subobject cannot exist because Frobenius cycles the rank-one factors; so total degree equality gives weak admissibility. A nonzero map from a rank-one object is injective and, between weakly admissible objects, strict, which identifies the jumps. *Needs:* §§0.3, 0.4; VectorBundlesAndIsocrystals VB0 ("Rational standard Frobenius blocks", "Dieudonné–Manin classification of finite isocrystals"); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.2; PadicHodgeTheory §3.4 (`filteredHN`).
 
 **Checks.**
 
-- For s=1 this is t_H=t_N for an ordinary crystalline line.
-- For s=2, jumps 1 and −1 with k=0 give a rank-one coefficient object; equality of individual jumps is not required.
-- The same jumps with k=1 fail total degree equality.
+- For s = 1 the objects are rank-one filtered isocrystals with φ = p^k σ and jump k: equality t_H = t_N of an ordinary crystalline line.
+- For s = 2 and jumps (1, −1), k = 0: t_H = t_N = 0. Forgetting the coefficients, the φ-stable lines are F(e_0 + ce_1) with cσ(c) = 1; each meets Fil^0 = Ke_0 trivially, so it has t_H = −1 ≤ 0 = t_N, and the object is weakly admissible although its two jumps differ.
+- The same jumps with wraparound p e_0 (k = 1 ≠ 0 = Σ d_i) give t_N = 1 ≠ 0 = t_H, which is not weakly admissible and not of the listed form.
 
-### Chen’s invariant-line criterion for full monodromy
+### 0.6 Chen's invariant-line criterion for the full monodromy group
 
-As closed subgroup schemes of G_{Q_{p^s}}, H_cris,s is the intersection, over all rational representations V, integers k and v∈V^{s,k}_{b,μ}, of the stabilizers of the lines Q_{p^s}v. Consequently any subgroup scheme acting trivially on every such vector is contained in H_cris,s. The stabilizer condition permits nontrivial scalar action on a line.
+Let (b, μ) be admissible with b s-decent and K/F finite. As closed subgroup schemes of G_{Q_{p^s}}, H_cris,s is the intersection, over all rational representations V, all k ∈ ℤ and all v ∈ V^{s,k}_{b,μ}, of the scheme-theoretic stabilizers of the lines Q_{p^s}v. In particular a closed subgroup scheme of G_{Q_{p^s}} fixing every such v is contained in H_cris,s. Stabilizing a line allows a nontrivial scalar action on it; no connectedness is assumed. (Chen14 Proposition 3.3.4(1), pp. 742–744, and Proposition 3.3.6, pp. 744–745; GLX26 §5.1 ¶15, arXiv v3 p. 33.)
 
-The admissible pair and finite fibre functor are those of GM0. The category is closed under subquotients. No connectedness is assumed.
-
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Proposition 3.3.4(1), pp. 743–744; Proposition 3.3.6, p. 745; [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), §5.1 ¶15, p. 837.
-
-Every tensor automorphism preserves all rank-one coefficient subobjects, so it lies in the stated intersection.
-
-For the reverse containment use Chevalley’s line-stabilizer theorem for H_cris,s over Q_{p^s}. Restrict scalars on its ambient representation and retain the coefficient action to realize this line in the scalar-extended generated category.
-
-Apply rank-one coefficient objects and the degree equality to identify the defining line with one of the tested lines. Work functorially over value algebras, rather than equating only rational points.
+Every tensor automorphism of ω_s|C_{b,μ} preserves the fibres of the rank-one coefficient subobjects, which gives one inclusion. For the other, write H_cris,s as the stabilizer of a line by `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer`, transported through the representation/comodule dictionary; realize that line as a rank-one coefficient subobject using the Q_{p^s}-action, and identify it with a tested line by §0.5. Work with points over every Q_{p^s}-algebra, not only rational points. *Needs:* §§0.4, 0.5; Tau Ceti `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer`; ReductiveGroups Layer 1; MotivesAndAlgebraicCycles §§6.1–6.3.
 
 **Checks.**
 
-- For a torus, preserving a weight line does not require acting as the identity on it.
-- A finite disconnected algebraic monodromy group is not replaced by the trivial identity component in this criterion.
-- Use all representations; do not assume every representation embeds in a single mixed tensor power of a faithful one.
+- For G = 𝔾_m, b = p^m and μ = z^m with m ≠ 0 (an admissible pair), the generator e of the standard representation lies in V^{1,m}; the tensor powers of F_{b,μ}(V) are pairwise non-isomorphic, so H_cris,1 = 𝔾_m, which stabilizes Q_p e through a nontrivial character. Requiring g·v = v instead of g·v ∈ Q_{p^s}v would give the trivial group.
+- For b = 1 and μ = 0 every nonzero vector of every V⊗Q_{p^s} is tested (k = 0, all jumps 0). For faithful V, an element stabilizing every line of V ⊕ 1 acts on it by one scalar, which is 1 on the trivial summand, so the intersection of all line stabilizers is trivial, matching the trivial representation. For G = GL_2, testing only lines inside irreducible representations would give the centre 𝔾_m.
+- The criterion uses all representations: for G = 𝔾_m with faithful χ, every mixed tensor power χ^{⊗m_1}⊗(χ^∨)^{⊗m_2} is one-dimensional with the single weight m_1 − m_2, while 1 ⊕ χ has two weights and embeds in no single such power.
 
-### Ambient period comparison and derived containment
+### 0.7 The full monodromy group and the ambient period comparison
 
-Let H be the full Zariski closure of ξ_{b,μ}(Γ_K), and H_cris,s the full finite-field tensor group. The period Isom^⊗ torsor identifies H⊗B_cris and H_cris,s⊗B_cris by conjugation inside G_{B_cris}, compatibly with the standard fibres. Thus G_der,Q_{p^s}⊆H_cris,s implies G_der⊆H°, the parent Mumford–Tate group. The comparison is for full groups before passing to identity components.
+Let K/F be finite, b s-decent, (b, η) admissible with [b] ∈ B(G,μ), and ξ: Γ_K → G(Q_p) the crystalline representation of PadicHodgeTheory §5.5 for a chosen tensor trivialization. Let H be the Zariski closure of ξ(Γ_K) and T_{b,η} the Tannakian subcategory of crystalline representations generated by the representations ρ∘ξ, closed under tensor operations and subquotients.
 
-[b]∈B(G,μ) and the bounded period-fibre torsor has the parent’s trivialization. Both groups use the same generated tensor category under crystalline comparison.
+- Tannakian description: H = Aut^⊗(ω|T_{b,η}) inside G = Aut^⊗(ω_can), for the forgetful fibre functor ω (Chen14 Proposition 3.2.3, pp. 741–742).
+- Period comparison: there is g ∈ G(B_cris) with g·(H_cris,s ⊗_{Q_{p^s}} B_cris)·g⁻¹ = H ⊗_{Q_p} B_cris inside G_{B_cris}, compatibly with the standard fibres (Chen14 Proposition 3.3.3 and its proof, pp. 742–743).
+- Derived containment: if G_der,Q_{p^s} ⊆ H_cris,s, then G_der ⊆ H°.
 
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Proposition 3.3.3 and proof, pp. 742–743; [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), §5.1 ¶14, p. 836.
-
-Apply the period comparison isomorphism to all tensor objects and subquotients, producing the fibre-functor torsor and the full-group conjugation.
-
-Its compatibility with the ambient standard G-fibres is essential: G_der is normal in G, so conjugation by the period element preserves it.
-
-Containment descends along the faithfully flat coefficient extensions; connectedness of G_der then places it in H°. An abstract inner-form isomorphism by itself is insufficient.
+For the first item, ξ(Γ_K) ⊆ Aut^⊗(ω|T_{b,η})(Q_p) gives H ⊆ Aut^⊗; Chevalley's theorem writes H as the stabilizer of a line, which is a subobject in T_{b,η}. For the second, the crystalline comparison of fibre functors on T_{b,η}, restricted along F_{b,η} and the decent identification, is a tensor automorphism of ω_can⊗B_cris, that is, an element g ∈ G(B_cris), and it conjugates the two embedded groups. For the third, G_der is normal, so G_der,B_cris = g G_der,B_cris g⁻¹ ⊆ H_{B_cris}; containment of closed subgroup schemes descends along the faithfully flat Q_p → B_cris, and connectedness of G_der places it in H°. An abstract inner-form isomorphism between H_cris,s and H_{Q_{p^s}}, without the ambient conjugation, does not give this containment. GLX26 §5.1 ¶14 (arXiv v3 p. 32) calls H° the Tannakian group; the full closure H is meant. *Needs:* §§0.4, 0.6; PadicHodgeTheory §5.5; MotivesAndAlgebraicCycles §6.8; Tau Ceti `TauCeti.Tannaka.pointsFunctorIsoTensorAutFunctor` and `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer`; ArithmeticGaloisRepresentations §7.6; ReductiveGroups Layers 3 and 6.
 
 **Checks.**
 
-- Changing a chosen G-fibre trivialization conjugates both embedded groups.
-- For G a torus the derived containment is vacuous; no assertion that H is connected is produced.
+- For b = 1 and μ = 0, ξ is trivial and H = H_cris,s = 1.
+- For G = 𝔾_m, b = p^m and μ = z^m with m ≠ 0, ξ is the character χ^{−m} of the cyclotomic character χ; its image is open in ℤ_p^×, so H = 𝔾_m = H°, and H_cris,1 = 𝔾_m as in §0.6.
+- Changing the chosen trivialization by h ∈ G(Q_p) replaces ξ by hξh⁻¹ and H by hHh⁻¹, and conjugates the comparison element; G_der ⊆ H° is unchanged because G_der is normal.
+- For a torus the derived containment is the statement 1 ⊆ H° and says nothing about H.
 
 ### Examples
 
-For the rank-two coefficient object with s=2, φ(e_0)=e_1, φ(e_1)=e_0 and filtration jumps 1,−1, the distinguished vector has full-period degree 0 and Newton exponent k=0. The individual jumps differ. For a rank-one object φ=p^aσ with jump h, the two equations require k=sa and k=sh, so h=a. For Q_p(1), both are −1. A torus may act nontrivially by a character on a preserved line; the invariant-line test must allow that scalar action.
+For the rank-two coefficient object with s = 2, φ(e_0) = e_1, φ(e_1) = e_0 and jumps 1, −1, the distinguished vector e_0 has full-period degree 0 and Newton exponent 0 although its two jumps differ. For a rank-one object φ = p^a σ with jump h the two equations of §0.3 require k = sa and k = sh, so h = a; for Q_p(1) both are −1. A torus may act on a preserved line by a nontrivial character, which is why §0.6 tests line stabilizers.
 
 ### Dependencies
 
-The vector jump and Frobenius degree sum precede the coefficient-line criterion. The external interfaces used here are:
+Mathlib `Submodule`; Tau Ceti `TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer` and `TauCeti.Tannaka.pointsFunctorIsoTensorAutFunctor`; PadicHodgeTheory §§3.4, 3.6, 5.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.2; VectorBundlesAndIsocrystals VB0; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; BunGAndNewtonStrata §1.9; ArithmeticGaloisRepresentations §7.6; ReductiveGroups Layers 1, 3 and 6. Within the layer, §§0.1–0.3 precede §0.5, and §0.4 precedes §§0.5–0.7.
 
-- `BunGAndNewtonStrata:BG0/decent-representative`.
-- `MotivesAndAlgebraicCycles:MC.6/neutral-tannaka-reconstruction`.
-- `MotivesAndAlgebraicCycles:MC.6/tensor-iso-torsor`.
-- `PadicHodgeTheory:R06.2/bounded-crystalline-g-torsor-triviality`.
-- `PadicHodgeTheory:R06.2/crystalline-g-fiber-functor`.
-- `PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface`.
-- `PadicHodgeTheory:R06.2/filtered-isocrystal-harder-narasimhan`.
-- `PadicHodgeTheory:R06.2/plan/weakly-admissible-category-abelian`.
-- `VectorBundlesAndIsocrystals:VB0/dieudonne-manin-isocrystals`.
-- `VectorBundlesAndIsocrystals:VB0/tensor-and-dual-slopes`.
-- `mathlib:Submodule`.
-- `tauceti:TauCetiRoadmap/ReductiveGroups#layer-1-representations--comodules`.
+## Layer 1: generic filtrations and Hodge–Newton estimates
 
-## Layer 1: lowest weights and strict Hodge–Newton estimates
+### 1.1 Generic filtrations and generic flags
 
-### The corrected weighted orbit bound
+Let k be a field of characteristic zero, G a quasisplit connected reductive group over k with k-rational T ⊆ B, and μ a B-dominant cocharacter defined over a finite extension E/k. Let P_μ be the stabilizer of the μ-filtration, whose Lie algebra is the sum of the nonnegative μ-weight spaces, and Fl_μ = G_E/P_μ the flag variety (ShimuraData §3.8). For V ∈ Rep_k(G) define the generic filtration Fil^i_gen V = V ∩ ⋂_{g∈G(E)} ρ(g)Fil^i_μ V_E and its jump deg_gen(v) by §0.1. A map Spec K′ → Fl_μ is generic when its point is the generic point of Fl_μ. (GLX26 Definitions 5.3 and 5.5 with ¶17, arXiv v3 pp. 33–34.)
 
-Let k=Q_{p^s}, G_k be quasisplit and split over a finite totally ramified extension, and μ be dominant over its finite reflex extension E/k. For a nonzero v∈V_k, let O be any Γ_k-orbit of geometric highest weights occurring in v. Partition O into its distinct Γ_E-orbits C and put q_C=|C|^−1Σ_{λ∈C}λ. For a generic flag η, deg_η(v)≤m_O:=min_C⟨w_0q_C,μ⟩≤Σ_C(|C|/|O|)⟨w_0q_C,μ⟩=⟨w_0λ,bar μ⟩ for λ∈O, where bar μ is the inertia average. The component v_O itself has degree m_O.
+Prove:
 
-Use the generic-filtration and quasisplit highest-weight contracts stated in Prerequisites and boundaries. Every geometrically occurring highest-weight component of v in O is nonzero by Galois descent. E/k is not assumed normal.
+- each Fil^i_gen V is a G-subrepresentation of V, functorial in V and compatible with direct sums, and deg_gen(v) = min_{g∈G(E)} deg_μ(ρ(g)v) (GLX26 ¶17 and (5.9), arXiv v3 p. 34);
+- generic-flag equality: for every field K′ ⊇ E and every generic η: Spec K′ → Fl_μ, Fil^i_gen V = V ∩ Fil^i_η V_{K′}, and equally Fil^i_gen V = V ∩ ⋂_{x∈Fl_μ(E)} Fil^i_x V_E (GLX26 Proposition 5.6, arXiv v3 pp. 34–35; Chen14 Lemme 4.2.2, p. 747);
+- Galois invariance: for every k-embedding τ of E into k̄, the generic filtration of V attached to τμ equals that attached to μ (GLX26 Proposition 5.4, arXiv v3 p. 34).
 
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Proposition 5.7, pp. 840–841; equations (5.23)–(5.29), pp. 842–843.
+The universal filtration on Fl_μ is the associated bundle of the P_μ-torsor G_E → Fl_μ and the P_μ-stable steps Fil^i_μ V. Since V is a G-representation, the associated bundle is G_E-equivariantly the trivial bundle V⊗O, and the step Fil^i is the G_E-stable subbundle whose fibre at gP_μ is ρ(g)Fil^i_μ V; its steps are locally direct factors. A vector w ∈ V_E lies in Fil^i_x exactly where its section of the quotient bundle V⊗O/Fil^i vanishes, a closed locus. The E-points of the open big cell U_G(−μ)·P_μ/P_μ ≅ 𝔸^N_E are Zariski dense because E is infinite, so a closed locus containing the orbit G(E)·P_μ, or the generic point, is all of Fl_μ. Hence the intersection over G(E) equals the kernel of the G_E-equivariant map from V_E to the global sections of the quotient bundle, which is G_E-stable; this gives the first two items, intersecting with V commuting with the flat extension by the coordinate ring of G. The third item transports the intersection by τ, using that V is defined over k. *Needs:* ShimuraData §3.8 (`parabolicTypeVariety`); AutomorphicBundles §B0.4 (`associatedCoefficient`); AlgebraicModuliForArithmeticGeometry §1.7 (`rankLocus`); ReductiveGroups Layer 1 and Layer 7 (P_G(λ), U_G(λ) and the Bruhat decomposition).
 
-Use the supplier’s generic-filtration identity on k-rational vectors and its isotypic threshold m_O. A vector may meet several isotypic components; its degree is the minimum of their thresholds.
+The API:
 
-A minimum is at most a convex average. Weight the distinct refined orbits by their sizes; this recombines to the uniform average on O.
-
-Pairing equivariance identifies the full highest-weight orbit average with the inertia average of μ. The splitting field is totally ramified, so retain the residual unramified action for the full-period estimate.
+- Subrepresentations: each step is G-stable, and a G-map V → W sends Fil^i_gen V into Fil^i_gen W.
+- Generic-flag equality, in the two forms above.
+- Galois invariance under every k-embedding of E.
+- Exhaustion and separation: Fil^i_gen V = V for i ≤ min of the μ-weights and 0 above their maximum.
 
 **Checks.**
 
-- For the nonnormal cubic reflex extension of a restriction-of-scalars torus, the refined orbit sizes are 1 and 2; the minimum sees both.
-- With refined pairings 0 and 3 and sizes 1 and 2, the bound is 0≤2, not an unweighted average of 3/2.
-- An orbit with repeated refinements is counted once in the partition, even for a Galois reflex field.
+- For G = GL_2, μ = (1,0) and V standard, every E-line occurs as Fil^1_x, so Fil^1_gen V = 0 and Fil^0_gen V = V. A generic flag is the line K′(1,t) with t transcendental over E, which meets V trivially, whereas the rational flag [1:0] gives V ∩ Fil^1 = k e_1 ≠ 0: genericity is needed.
+- For V = det of GL_2 and μ = (1,0), the single weight is 1, so Fil^1_gen det = det: a nonzero jump survives on a character.
+- For k = Q_5, E = Q_5(5^{1/3}), G = Res_{E/k}𝔾_m, V = E and μ the cocharacter attached to the given embedding of E, Fl_μ is a point and V_E = E ⊗_k E is the product of E (weight 1) and a quadratic E-algebra (weight 0). The diagonal copy V meets the weight-one factor only in 0, so Fil^1_gen V = 0 although Fil^1_μ V_E ≠ 0.
 
-### The full-period Galois-average inequality
+### 1.2 The quasisplit threshold formula
 
-In the s-decent setup, choose s also so that G_{Q_{p^s}} is quasisplit, b and ν_b are defined there, the based root datum has σ_0^s=1, and the splitting extension is totally ramified. For generic η and every highest weight λ occurring in a nonzero v∈V⊗Q_{p^s}, d_s(v)≤s⟨w_0λ,μ^diamond⟩. Here μ^diamond=(1/s)Σ_{i=0}^{s−1}σ_0^i(bar μ), with repetitions permitted when s is enlarged.
+In the setting of §1.1, let O run over the Γ_k-orbits of dominant weights, V_O the W_O-isotypic part of V (gap:quasisplit-highest-weights) and w_0 the longest Weyl element, which commutes with Γ_k. Put m_O = min_{λ∈O} ⟨w_0λ, μ⟩. Then Fil^j_gen V = ⊕_{O : m_O ≥ j} V_O for every j. Since μ is fixed by Γ_E, the pairing ⟨w_0λ, μ⟩ is constant on each Γ_E-orbit C ⊆ O, so m_O = min_C ⟨w_0 q_C, μ⟩ with q_C = |C|⁻¹ Σ_{λ∈C} λ. Consequently deg_gen(v) = min{m_O : v_O ≠ 0}, and a nonzero v_O has jump m_O. E is not assumed normal over k. (GLX26 Proposition 5.7 and its proof, arXiv v3 pp. 36–37, in a corrected form: for a nonnormal reflex field the family indexed by Gal(E/k) there does not run over all Γ_E-orbits in O.)
 
-Use a common finite normal closure for all weight/reflex embeddings. All iterates φ^iv are nonzero and their occurring highest-weight orbits are σ_0^i-translates of those of v.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Theorem 5.8 proof, equations (5.30)–(5.36), p. 843.
-
-The factor ρ(b) preserves G-isotypic summands over Q_{p^s}; the semilinear Frobenius transports them by σ_0.
-
-Apply the corrected weighted orbit bound to the transported λ at each iterate and sum.
-
-Move σ_0 across the pairing using its inverse. Only after summing the entire s-period reindex inverse powers to positive powers and identify μ^diamond. This does not assert a termwise positive-power identity.
+If m_O ≥ j, every lowest weight w_0λ of V_O⊗k̄ = ⊕_{λ∈O} V^λ pairs with μ to at least j, and so does every weight of V^λ, which lies above w_0λ; hence V_O⊗E ⊆ Fil^j_μ V_E, and since V_O⊗E is G_E-stable it lies in every ρ(g)Fil^j_μ V_E. Conversely, Fil^j_gen V is a subrepresentation contained in Fil^j_μ V_E, hence the sum of its intersections with the V_O. A nonzero subrepresentation of V_O is a sum of copies of W_O, whose geometric fibre contains every W_λ with λ ∈ O and so every lowest weight w_0λ; it lies in Fil^j_μ V_E only if m_O ≥ j. A vector therefore lies in Fil^j_gen V iff each nonzero component v_O has m_O ≥ j. *Needs:* §1.1; gap:quasisplit-highest-weights; ReductiveGroups Layers 7 and 10.
 
 **Checks.**
 
-- For period two with unequal individual jumps, only their sum is compared with the average.
-- Enlarging a decency period by a positive multiple multiplies both sides by that multiple.
+- For the restriction-of-scalars torus of §1.1, O consists of the three embeddings, refined by Γ_E into orbits of sizes 1 and 2 with pairings 1 and 0, so m_O = 0, matching Fil^1_gen V = 0. A formula indexed by Gal(E/k) = {1} at the representative e_1 would predict jump 1.
+- For GL_2, μ = (1,0) and the standard representation, O = {(1,0)}, w_0λ = (0,1) and m_O = 0, so Fil^1_gen = 0; for det, λ = w_0λ = (1,1) and m_O = 1.
+- For E/k quadratic and Galois and the trivial weight, the orbit O = {0} is a single Γ_E-orbit and v_O = v; summing that refined component over both elements of Gal(E/k) would give 2v.
+- For μ = 0, m_O = 0 for every O, so Fil^0_gen V = V and Fil^1_gen V = 0.
 
-### The Newton lowest-weight inequality
+### 1.3 The orbit bound at a generic flag
 
-Suppose ν_b is dominant and v∈V^{s,k}_{b,η}. Every torus weight χ with nonzero component in v has ⟨χ,ν_b⟩=k/s. For every geometric highest weight λ occurring in v one has ⟨w_0λ,ν_b⟩≤k/s.
+In the setting of §1.2, let μ̄ = |Γ_k·μ|⁻¹ Σ_{μ′∈Γ_k·μ} μ′ be the Galois average of μ. For nonzero v ∈ V and every geometric highest weight λ occurring in v (that is, v_{O_λ} ≠ 0 for its orbit O_λ),
 
-s>0 and the Newton operator is ρ((sν_b)(p)). The dominant representative ν_b and the highest weights use the same positive roots.
+deg_gen(v) ≤ m_{O_λ} ≤ Σ_C (|C|/|O_λ|)⟨w_0 q_C, μ⟩ = ⟨w_0λ, μ̄⟩,
 
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Theorem 5.8 proof, equations (5.37)–(5.38), p. 844.
-
-Extend to a splitting field and decompose v into torus-weight spaces. The p^k-eigenvalue equation forces p^{s⟨χ,ν_b⟩}=p^k on every nonzero component, hence equality of integral exponents.
-
-The lowest weight w_0λ is below each weight χ in its highest-weight summand; pair their positive-root difference with dominant ν_b.
+the sum running over the Γ_E-orbits C ⊆ O_λ. In the arithmetic setting k = Q_{p^s}, G splits over an extension whose Galois closure is totally ramified over Q_{p^s}, so μ̄ is the inertia average of μ (GLX26 (2.6), arXiv v3 p. 15). (GLX26 Theorem 5.8 proof, equations (5.23)–(5.28), arXiv v3 p. 38, with the weights |C|/|O| replacing the sum over Gal(E/k) in (5.29).) A minimum is at most a convex average; equivariance of the pairing and invariance of w_0 identify the orbit average with ⟨w_0λ, μ̄⟩. *Needs:* §1.2.
 
 **Checks.**
 
-- For GL_2 with dominant ν=(a,b), a≥b, the standard lowest weight has value b; every eigenvector has slope at least b.
-- The zero vector would not determine any occurring weight; its exclusion is essential.
+- With refined orbits of sizes 1 and 2 and pairings 0 and 3 the bound reads 0 ≤ (1·0 + 2·3)/3 = 2; the unweighted average (0+3)/2 = 3/2 is not the orbit average.
+- For the restriction-of-scalars torus of §1.1, μ̄ = (1/3,1/3,1/3) and the bound reads 0 ≤ 0 ≤ 1/3.
+- For GL_2, μ = (1,0) and the standard representation, both sides equal ⟨(0,1),(1,0)⟩ = 0.
 
-### Strict Hodge–Newton positivity kills derived weights
+### 1.4 Frobenius transport of isotypic components
 
-Let Δ be the absolute simple roots, ν≤μ^diamond dominant, and μ^diamond−ν=Σ_{α∈Δ}c_α α∨ with every c_α>0. If λ is dominant and ⟨w_0λ,ν⟩≤q≤⟨w_0λ,μ^diamond⟩, then ⟨λ,α∨⟩=0 for every α∈Δ. Every irreducible of highest weight λ therefore factors through G/G_der. For Δ empty the conclusion about the derived group is vacuous.
-
-All pairings and coefficients are rational; no strict numerical hypothesis is dropped on a simple factor. The highest-weight representation is over a splitting field of characteristic zero.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), End of the proof of Theorem 5.8(2), p. 844.
-
-Antidominance gives a_α:=⟨w_0λ,α∨⟩≤0. The displayed sandwich gives 0≤Σ c_α a_α≤0. Strict positivity of the coefficients forces every a_α=0.
-
-Apply w_0 to the coroot system and use the supplier’s highest-weight criterion for a representation trivial on the derived group.
+Let s be as in the Conventions, with G_{Q_{p^s}} quasisplit, T ⊆ B over Q_{p^s}, σ_0 the Frobenius action on the based root datum, and b ∈ G(Q_{p^s}). For V ∈ Rep_{Q_p}(G) and a dominant Γ_{Q_{p^s}}-orbit O, the σ-semilinear bijection ρ(b)σ of V⊗Q_{p^s} carries the isotypic part (V⊗Q_{p^s})_O onto (V⊗Q_{p^s})_{σ_0(O)}. Hence ((ρ(b)σ)v)_{σ_0(O)} = (ρ(b)σ)(v_O), and the highest weights occurring in (ρ(b)σ)^i v are the σ_0^i-translates of those occurring in v. (GLX26 Theorem 5.8 proof, arXiv v3 p. 39.) The map 1⊗σ carries a subrepresentation to one isomorphic to its σ-twist, and the σ-twist of W_O is W_{σ_0(O)} because conjugating σ(T, B) back to (T, B) induces σ_0 on dominant weights; ρ(b) preserves every isotypic part because the isotypic parts are G-stable. *Needs:* gap:quasisplit-highest-weights; ReductiveGroups Layer 7 (absolute root datum with Galois action).
 
 **Checks.**
 
-- For SL_2, c>0 and an antidominant nonzero weight give a strict negative pairing, contradicting the sandwich.
-- If a simple-coroot coefficient is zero, a noncentral weight on that factor need not vanish.
-- The compact Lean milestone checks the finite positive-sum argument over rational numbers.
+- For G = Res_{Q_{p²}/Q_p}𝔾_m, s = 2, b = 1 and V = Q_{p²}, the decomposition V⊗Q_{p²} = Q_{p²} × Q_{p²} has the characters e_1, e_2, and 1⊗σ swaps the factors, matching σ_0(e_1) = e_2; a model in which ρ(b)σ preserves each isotypic part fails here.
+- For split G, σ_0 is the identity and every isotypic part is preserved.
+- For b ∈ G(Q_{p^s}) and σ omitted, ρ(b) alone preserves every isotypic part, so the transport comes from σ.
+
+### 1.5 The full-period Galois-average inequality
+
+Let b be s-decent with s as in the Conventions, K/F finite containing the field of definition E of the dominant representative μ, and η: Spec K → Fl_μ generic. For nonzero v ∈ V⊗Q_{p^s} and every highest weight λ occurring in v, d_s(v) ≤ s⟨w_0λ, μ^◇⟩, where d_s is the degree sum of §0.2 for the η-filtration and μ^◇ = (1/s)Σ_{0≤i<s} σ_0^i(μ̄). Repetitions in the average are permitted when s is enlarged. (GLX26 Theorem 5.8 proof, equations (5.30)–(5.36), arXiv v3 p. 39.)
+
+Each φ^i v = (ρ(b)σ)^i v lies in V⊗Q_{p^s} and, by §1.1, has η-jump equal to its generic jump over k = Q_{p^s}. By §1.4 the weight σ_0^i λ occurs in φ^i v, so §1.3 gives deg(φ^i v) ≤ ⟨w_0σ_0^iλ, μ̄⟩ = ⟨w_0λ, σ_0^{−i}μ̄⟩. Summing over a full period and reindexing with σ_0^s = 1 gives s⟨w_0λ, μ^◇⟩; the identity holds for the full sum, not term by term. *Needs:* §§0.2, 1.1, 1.3, 1.4; BunGAndNewtonStrata §§1.7, 1.9.
+
+**Checks.**
+
+- For G = 𝔾_m, b = p^m, μ = z^m and s = 1, d_1(v) = m = ⟨1, μ^◇⟩: equality.
+- For GL_2 with b basic of slope 1/2, s = 2, μ = (1,0) and the standard representation, d_2(v) ≤ 2⟨(0,1),(1,0)⟩ = 0 for every v, while V^{2,k} needs k = 1 (ν_b = (1/2,1/2)); so V^{2,1} is empty.
+- Replacing s by ms multiplies both sides by m: for s-decent b, φ^s v = ρ((sν_b)(p))v on V⊗Q_{p^s} and the generic jump is invariant under G(Q_{p^s}), so d_{ms}(v) = m·d_s(v), while μ^◇ does not depend on s.
+
+### 1.6 The Newton lowest-weight inequality
+
+Suppose ν_b is dominant, b is s-decent and v ∈ V^{s,k}_{b,μ}. Every torus weight χ with nonzero component in v satisfies ⟨χ, ν_b⟩ = k/s, and every geometric highest weight λ occurring in v satisfies ⟨w_0λ, ν_b⟩ ≤ k/s. (GLX26 Theorem 5.8 proof, equations (5.37)–(5.38), arXiv v3 pp. 39–40.) Over a splitting field, decompose v into weight vectors: the eigenvalue equation forces p^{s⟨χ,ν_b⟩} = p^k on every nonzero component. The lowest weight w_0λ lies below each weight χ of the summand of highest weight λ, and the difference pairs nonnegatively with dominant ν_b. *Needs:* §0.3; BunGAndNewtonStrata §§1.8, 1.12; ReductiveGroups Layer 10.
+
+**Checks.**
+
+- For GL_2 with ν = (a, b), a ≥ b, the standard lowest weight (0,1) has value b, and every eigenvector of the Newton operator has exponent in {sa, sb}, at least sb.
+- For a torus, highest weight and weight coincide and the inequality is the equality ⟨χ, ν_b⟩ = k/s.
+- The zero vector would have no occurring weight, which is why V^{s,k} excludes it.
+
+### 1.7 Strict Hodge–Newton positivity kills derived weights
+
+Let Δ be the simple absolute roots, ν ≤ μ^◇ dominant, and μ^◇ − ν = Σ_{α∈Δ} c_α α^∨ with every c_α > 0. If λ is dominant and ⟨w_0λ, ν⟩ ≤ q ≤ ⟨w_0λ, μ^◇⟩ for some rational q, then ⟨λ, α^∨⟩ = 0 for every α ∈ Δ; so the simple module of highest weight λ is one-dimensional and factors through G/G_der. For Δ empty the conclusion about G_der is vacuous. (GLX26, end of the proof of Theorem 5.8(2), arXiv v3 p. 40.) Antidominance gives a_α = ⟨w_0λ, α^∨⟩ ≤ 0, the sandwich gives 0 ≤ Σ c_α a_α ≤ 0, and strict positivity forces every a_α = 0; w_0 permutes the simple coroots up to sign. *Needs:* ReductiveGroups Layers 7 and 10.
+
+**Checks.**
+
+- For SL_2 with c > 0 and the antidominant weight −n (n > 0), the middle term is −cn < 0, contradicting the sandwich.
+- For GL_2 ordinary, ν = μ^◇ = (1,0), c = 0 and λ = (1,0): the sandwich 0 ≤ 0 ≤ 0 holds while ⟨λ, α^∨⟩ = 1, so the strict hypothesis cannot be weakened to c_α ≥ 0.
+- For a torus, Δ is empty, every λ is a character and the conclusion holds trivially.
 
 ### Examples
 
-For a refinement with two orbits of sizes 1 and 2 and respective pairings 0 and 3, the minimum is 0 and the full average is 2. An equal-weight average of the two refined pieces would give 3/2 and is not the orbit average. In root system A_1, a strict coefficient c>0 and an antidominant value a≤0 give ca=0 only when a=0. Setting c=0 destroys that conclusion.
+For the restriction-of-scalars torus attached to the nonnormal cubic field Q_5(5^{1/3}), the generic jump of V = E is 0, the minimum of the refined pairings 1 and 0, while the orbit average is 1/3. For refined orbits of sizes 1 and 2 and pairings 0 and 3, the minimum is 0 and the orbit average 2. In type A_1 a strict coefficient c > 0 and an antidominant value a ≤ 0 give ca = 0 only for a = 0; with c = 0 that conclusion fails.
 
 ### Dependencies
 
-Internal inputs are the definitions and coefficient-line results of GM0. The external interfaces used here are:
-
-- `BunGAndNewtonStrata:BG0/decent-representative`.
-- `BunGAndNewtonStrata:BG1/admissible-pair`.
-- `BunGAndNewtonStrata:BG1/galois-average`.
-- `BunGAndNewtonStrata:BG1/newton-and-kottwitz-maps`.
-- `ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis`.
-
-The generic-filtration and descent contract in Prerequisites and boundaries is required for the derived-monodromy branch.
+ShimuraData §3.8; AutomorphicBundles §B0.4; AlgebraicModuliForArithmeticGeometry §1.7; BunGAndNewtonStrata §§1.7–1.9, 1.12; ReductiveGroups Layers 1, 7 and 10; gap:quasisplit-highest-weights (§§1.2 and 1.4); Layer 0 for §§0.2–0.3 used in §§1.5–1.6. Within the layer, §1.1 precedes §1.2, which precedes §1.3; §§1.3–1.4 precede §1.5.
 
 ## Layer 2: generic admissibility and derived monodromy
 
-### Uniform decent-field descent of isocrystal subobjects
+### 2.1 Uniform decent-field descent of isocrystal subobjects
 
-For s-decent b and a rational representation V, every φ-stable F-subspace D′⊆V⊗F is the scalar extension of a Q_{p^s}-subspace of ω_s(V⊗F)=V⊗Q_{p^s}. The descended subspace is stable under ρ(b)σ and under the slope decomposition. In particular every subobject used to test weak admissibility is defined over one common finite coefficient field Q_{p^s}, independent of D′.
-
-s>0 clears the slopes and b,ν_b descend to Q_{p^s}.
-
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), §3.1, pp. 738–740, and proof of Theorem 5.0.6(1), pp. 750–751.
-
-Apply the exact finite-field fibre functor to the subisocrystal D′. Its inclusion gives a Q_{p^s}-subspace of the standard fibre.
-
-The scalar-recovery isomorphism recovers D′. Functoriality of the slope decomposition and φ shows stability; no countable enumeration of subobjects is used.
+For s-decent b and V ∈ Rep G, every φ-stable F-subspace D′ ⊆ V⊗F is the scalar extension of the Q_{p^s}-subspace ω_s(D′) ⊆ ω_s(V⊗F) = V⊗Q_{p^s}, which is stable under ρ(b)σ. Every subobject tested for weak admissibility is therefore defined over the single field Q_{p^s}, independently of D′. (Chen14 §3.1, pp. 739–740, and proof of Théorème 5.0.6(1), pp. 750–751.) The slopes of D′ are among those of V⊗F, so ω_s applies to D′; the subobject bullet of §0.4 gives ω_s(D′)⊗F = D′. No enumeration of subobjects is used. *Needs:* §0.4; BunGAndNewtonStrata §1.9; VectorBundlesAndIsocrystals VB0.
 
 **Checks.**
 
-- For b=1, a φ-stable line is generated by a Q_p-rational vector.
-- For a slope a/h block with h|s, descent retains its rank and slope rather than replacing it by a rank-one space.
+- For b = 1 and s = 1, a φ-stable line is F v′ with v′ ∈ V rational.
+- For the simple block of slope a/h with h | s, the only φ-stable subspaces are 0 and the block, and descent returns 0 and the whole Q_{p^s}-form of rank h.
+- For GL_2 with b = diag(p, 1), the φ-stable lines are the two slope lines Fe_1 and Fe_2, both defined over Q_p.
 
-### Generic flags minimize subobject Hodge degree
+### 2.2 Generic flags minimize subobject Hodge degree
 
-Let E/Q_p be finite and contain Q_{p^s}, b and the reflex data. For a fixed descended subisocrystal D′, the function x↦t_H(D′_K,Fil_x∩D′_K) on the flag variety Fl_μ/E is upper semicontinuous. Thus if η maps to the generic point, its value is at most the value at any geometric flag x. The total Hodge degree of the ambient representation is constant.
+Let E/Q_p be finite, containing Q_{p^s} and the field of definition of the dominant representative μ, with G_E quasisplit, and let D′_0 ⊆ V⊗E be a fixed E-subspace of rank r. On Fl_μ = G_E/P_μ the function x ↦ t_H(D′_0 ⊗ κ(x), Fil_x ∩ D′_0 ⊗ κ(x)) is upper semicontinuous. Hence its value at the generic point, equal to its value at any generic η: Spec K → Fl_μ, is at most its value at every point of Fl_μ, and in particular at every point over a finite extension of F. The total Hodge degree of V is constant on Fl_μ. (Chen14 proof of Théorème 5.0.6(1), pp. 750–751; GLX26 Theorem 5.8(1) proof, arXiv v3 p. 38.)
 
-D′ has constant rank and is defined over E. Fil_x is the universal bounded decreasing filtration of type μ. Hodge degree means Σ_i i·dim gr^i; Newton degree uses v_p(det φ).
-
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Proof of Theorem 5.0.6(1), pp. 750–751; [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Theorem 5.8(1) proof, p. 842.
-
-Choose uniform bounds A≤i≤B for the filtration jumps. Express t_H as A·rank(D′)+Σ_{i=A+1}^B dim(D′∩Fil_x^i).
-
-Each intersection dimension is upper semicontinuous by determinantal rank loci for the map D′⊗O→(V⊗O)/Fil^i. The finite sum is therefore upper semicontinuous.
-
-An upper closed rank locus containing the generic point contains the integral flag variety; the value there is minimal. Fixed μ fixes the ambient graded ranks.
+Choose integers A ≤ B with Fil^A_x = V and Fil^{B+1}_x = 0 for all x. Then t_H = A·r + Σ_{i=A+1}^{B} dim(D′_0 ∩ Fil^i_x). Each term is r minus the rank at x of D′_0⊗O → (V⊗O)/Fil^i, the map from a trivial bundle to the quotient of the universal filtration of §1.1, so it is upper semicontinuous by `rankLocus`; a finite sum of upper semicontinuous functions is upper semicontinuous, and an upper semicontinuous function on an irreducible space takes its minimum at the generic point. Fixed μ fixes the dimensions of the graded pieces. *Needs:* §1.1 (universal filtration); AlgebraicModuliForArithmeticGeometry §1.7 (`rankLocus`); ShimuraData §3.8; AutomorphicBundles §B0.4.
 
 **Checks.**
 
-- For a filtered plane with jumps 1,0, a fixed line has Hodge degree 1 on its incidence point and 0 on the generic complement.
-- For the whole plane the Hodge degree remains 1.
+- For a plane with jumps 1, 0 (Fil^1_x = ℓ_x a line) and a fixed line D′_0 = L, t_H = dim(L ∩ ℓ_x) is 1 at the single point ℓ_x = L and 0 on its complement, which contains the generic point.
+- For D′_0 the whole plane, t_H = 1 at every point.
+- The locus {x : dim(L ∩ ℓ_x) ≥ 1} is the rank locus rank(L → V/ℓ_x) ≤ 0, the closed point [L]; an open condition here would contradict the minimality at the generic point.
 
-### Generic acceptable decent pairs are admissible
+### 2.3 Generic acceptable decent pairs are admissible
 
-Let G/Q_p be connected reductive, b∈G(F) decent, [b]∈B(G,μ), K/F finite, and η:Spec K→Fl_μ map to the generic point over the finite reflex field. Then F_{b,η} takes every rational representation to a weakly admissible filtered isocrystal, and hence to an admissible one. This assertion needs no HN-irreducibility.
+Let G be connected reductive over Q_p, b ∈ G(F) decent, [b] ∈ B(G,μ), K/F finite containing the reflex field, and η: Spec K → Fl_μ generic over the reflex field. Then (b, η) is admissible: every F_{b,η}(V) is weakly admissible, hence admissible. No Hodge–Newton irreducibility is assumed. (GLX26 Theorem 5.8(1) and proof, arXiv v3 pp. 37–38; Chen14 Théorème 5.0.6(1), pp. 750–751.)
 
-F=breve Q_p and K contains the reflex field; use the GLX orientation κ(b)=μ^natural and ν_b≤μ^diamond. Genericity persists under the required finite algebraic coefficient extensions.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Theorem 5.8(1) and proof, p. 842; [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Theorem 5.0.6(1), pp. 750–751.
-
-Choose a common finite E containing the decency field and reflex data. Descend all subisocrystals using uniform decent-field descent of isocrystal subobjects.
-
-Import only part (b) of HS2/nonemptiness-and-period-connectedness, after changing the Berkeley sign by μ↦μ^−1. Its finite classical admissible point is obtained from bounded nonemptiness and does not use this generic-monodromy theorem. Apply HS2/classical-period-points to obtain a weakly admissible flag x.
-
-For each representation and each φ-subobject D′, the Hodge-degree specialization inequality gives t_H,η(D′)≤t_H,x(D′)≤t_N(D′). Total equality follows from the fixed Hodge type and admissible-pair invariants. This handles all subobjects without an infinite-intersection argument.
-
-Apply the parent’s perfect-residue-field weakly-admissible/admissible equivalence. The conclusion is the exact tensor functor, not yet a chosen trivialization of the standard-fibre torsor.
+Choose s and a finite E containing Q_{p^s} and the field of definition of μ; genericity over the reflex field persists over E because Fl_μ is geometrically irreducible. By §2.1 every φ-subobject D′ of V⊗F descends to D′_0 ⊆ V⊗Q_{p^s}. By HeckeStacksAndLocalShtukas §§HS2.15 and HS2.12 (with its μ read as our μ⁻¹), the admissible cell has a point over a finite extension of F, giving a weakly admissible flag x. By §2.2, t_H at η of D′ is at most t_H at x, which is at most t_N(D′); the total degrees agree because t_H(V) is constant on Fl_μ. This handles all subobjects at once. Weak admissibility gives admissibility by FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.13 (PadicHodgeTheory §5.5); the conclusion is the exact tensor functor, not a chosen trivialization. *Needs:* §§2.1, 2.2; HeckeStacksAndLocalShtukas §§HS2.12, HS2.15; PadicHodgeTheory §§3.6, 5.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.2, R07.4.13; BunGAndNewtonStrata §§1.9, 1.12, 1.23.
 
 **Checks.**
 
-- For a torus there are no flag-incidence variations; total degree equality controls the rank-one cases.
-- An unstable nongeneric filtered plane can fail weak admissibility even with the correct total degree.
-- The proof has no edge from the GM4 converse or from an ADLV component classification.
+- For GL_2, μ = (1,0) and b = diag(p,1), the flag Fil^1 = Ke_2 (the slope-zero line) gives that line t_H = 1 > 0 = t_N, so it is not weakly admissible although the total degrees agree; at a generic flag the same line has t_H = 0.
+- For G = 𝔾_m, b = p^m and μ = z^h, Fl_μ is a point and [b] ∈ B(G,μ) means m = h, which is exactly t_H = t_N for the standard character.
+- For the slope-1/2 basic b in GL_2 and μ = (1,0), the isocrystal of the standard representation is simple and its only test is the total degree 1 = 1. Every representation of GL_2 is a direct summand of sums of tensor constructions of the standard one, and a direct summand of a weakly admissible object is weakly admissible, so every flag, generic or not, is weakly admissible here.
 
-### Generic monodromy contains the derived group
+### 2.4 Generic monodromy contains the derived group
 
-Let (b,η) be a generic acceptable decent pair as above, and suppose μ^diamond−ν_b has strictly positive coefficients on all absolute simple coroots. Then the connected Mumford–Tate group MT(b,η)=H° contains G_der. The theorem holds for arbitrary connected reductive G/Q_p, including ramified and nonquasisplit groups.
+Let (b, η) be as in §2.3 and suppose (b, μ) is Hodge–Newton irreducible. Then H° = MT(b,η) contains G_der, for every connected reductive G over Q_p, including ramified and nonquasisplit groups. (GLX26 Theorem 5.8(2) and proof, arXiv v3 pp. 37–40.)
 
-b is decent; [b]∈B(G,μ); η is topologically generic over the reflex field. Fix an enlarged decency period and compatible dominant Newton point as in the estimates. Use the full generic-filtration and descent contract stated in Prerequisites and boundaries.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Theorem 5.8(2) and proof, pp. 842–844.
-
-Prove generic admissibility before constructing the coefficient-line category. Enlarge s so G_{Q_{p^s}} is quasisplit, its splitting extension is totally ramified and all slope/root periods divide s.
-
-Arrange the dominant Newton cocharacter by conjugation defined over a finite algebraic coefficient field. This preserves genericity. Do not claim that arbitrary G(F)-translation preserves a generic flag over the original reflex field.
-
-For every v∈V^{s,k}, the full-period Galois-average inequality and the Newton lowest-weight inequality give the sandwich at q=k/s for each occurring λ. The strict Hodge–Newton positivity argument makes each corresponding geometric summand trivial on G_der, so G_der fixes v.
-
-Apply Chen’s invariant-line criterion for full monodromy to obtain G_der⊆H_cris,s. The ambient period comparison then gives G_der⊆H° over Q_p.
+Replace b by a σ-conjugate under G(Q_{p^s}) with ν_b dominant (BunGAndNewtonStrata §1.12), which preserves genericity, and let ξ be given by PadicHodgeTheory §5.5. For v ∈ V^{s,k}_{b,η} and every highest weight λ occurring in v, §1.5 gives k/s ≤ ⟨w_0λ, μ^◇⟩ and §1.6 gives ⟨w_0λ, ν_b⟩ ≤ k/s. By §1.7 each such λ is orthogonal to all coroots, so G_der acts trivially on the corresponding summands and fixes v. By §0.6, G_der,Q_{p^s} ⊆ H_cris,s, and by §0.7, G_der ⊆ H°. *Needs:* §§0.6, 0.7, 1.5, 1.6, 1.7, 2.3; BunGAndNewtonStrata §1.12; PadicHodgeTheory §5.5; ReductiveGroups Layer 10.
 
 **Checks.**
 
-- For G=GL_2 and a strictly interior Newton polygon, the connected group contains SL_2.
-- For a torus the conclusion says 1⊆MT and adds no spurious claim about central monodromy.
-- If the HN difference vanishes on one simple factor, this argument gives no full derived containment on that factor.
+- For G = GL_2, μ = (1,0) and b basic of slope 1/2, μ^◇ − ν = (1/2)α^∨ is strictly positive and V^{2,1} of the standard representation is empty (§1.5); the theorem gives SL_2 ⊆ H°.
+- For a torus the conclusion is 1 ⊆ H° and adds nothing about the central part of the monodromy.
+- For GL_2 ordinary (b = diag(p,1), μ = (1,0)), c_α = 0. At a generic flag V^{1,0} of the standard representation is Q_p^×e_2 and V^{1,1} is empty (e_1 has generic jump 0). The sandwich at q = 0 holds for λ = (1,0) with ⟨λ, α^∨⟩ = 1, and indeed the slope-zero line Fe_2 has t_H = t_N = 0, so it is a weakly admissible subobject, ξ is reducible and H° does not contain SL_2.
 
 ### Examples
 
-Take G=GL_2, μ=(1,0) and b=diag(p,1). If Fil^1 is the slope-zero line, that subobject has t_H=1 and t_N=0, so the flag is not weakly admissible although the ambient total degrees agree. Moving the flag to its generic point makes that fixed line have Hodge degree 0. For the basic slope-(1/2,1/2) isocrystal, μ−ν=(1/2)α∨ is strictly positive. The standard representation has no tested coefficient line with Newton exponent 1 and full-period Hodge sum 0; the general representation argument yields SL_2 inside monodromy.
+Take G = GL_2, μ = (1,0) and b = diag(p,1). If Fil^1 is the slope-zero line, that subobject has t_H = 1 and t_N = 0, so the flag is not weakly admissible although the total degrees agree; moving the flag to the generic point gives that line Hodge degree 0. For the basic isocrystal of slopes (1/2, 1/2), μ − ν = (1/2)α^∨ is strictly positive, the standard representation has no tested coefficient line with Newton exponent 1 and full-period Hodge sum 1, and the argument of §2.4 yields SL_2 inside the monodromy group.
 
 ### Dependencies
 
-Internal inputs are the preceding layers in the order displayed above. The external interfaces used here are:
+Layers 0 and 1; PadicHodgeTheory §§3.6, 5.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.2, R07.4.13; HeckeStacksAndLocalShtukas §§HS2.12, HS2.15; BunGAndNewtonStrata §§1.9, 1.12, 1.23; AlgebraicModuliForArithmeticGeometry §1.7; ShimuraData §3.8; AutomorphicBundles §B0.4; VectorBundlesAndIsocrystals VB0; ReductiveGroups Layer 10. Section 2.3 does not use Layer 1 beyond §1.1, and §2.4 uses all of Layer 1.
 
-- `BunGAndNewtonStrata:BG0/decent-representative`.
-- `BunGAndNewtonStrata:BG0/existence-of-decent-representative`.
-- `BunGAndNewtonStrata:BG1/admissible-pair`.
-- `HeckeStacksAndLocalShtukas:HS2/classical-period-points`.
-- `HeckeStacksAndLocalShtukas:HS2/nonemptiness-and-period-connectedness`.
-- `PadicHodgeTheory:R06.2/crystalline-g-fiber-functor`.
-- `PadicHodgeTheory:R06.2/plan/weak-admissibility`.
-- `PadicHodgeTheory:R06.2/weak-admissibility-is-admissibility`.
-- `ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis`.
-- `SchemeAndStackFoundations:SF.0`.
-- `VectorBundlesAndIsocrystals:VB0/dieudonne-manin-isocrystals`.
+## Layer 3: generic period points, open image and central lifting
 
-The generic-filtration and descent contract in Prerequisites and boundaries is required for the derived-monodromy branch.
+### 3.1 Generic flags over finite extensions of Q̆_p
 
-## Layer 3: finite-extension period points and central lifting
+Let E/Q_p be finite and X a nonempty smooth geometrically integral E-variety, for instance Fl_μ. There are a finite extension K/F, an embedding E → K and a map Spec K → X whose point is the generic point of X. (GLX26 Lemma 5.10 and proof, arXiv v3 p. 40; Stacks 054L, 02GL, 03WT.)
 
-### The leading sparse Witt-coordinate term
-
-Work in the universal p-typical Witt vectors over F_p[X_i,Y_{k,j}], with A_m=Σ_{j≥r}V^j[Y_{m,j}], A_k=Σ_{j≥0}V^j[Y_{k,j}] for k<m, and X=Σ_{i≥0}V^i[X_i]. Write Σ_{k=0}^m A_k X^k=Σ_{n≥0}V^n[P_n], with m>0. For b≤n<bm+r, deg_{X_b}P_n<m p^{n−b}; at n=bm+r its degree is m p^{n−b}, with leading coefficient Y_{m,r}^{p^{bm}}. For n<b the polynomial is independent of X_b.
-
-p is prime; r,b are natural numbers. The degree of zero is treated as minus infinity. These are Witt coordinates, not coefficients of an ordinary power series.
-
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Lemma 2.0.4 and proof, pp. 735–737.
-
-Lift universal Witt operations to integer polynomial coordinates and apply the n-th ghost polynomial.
-
-Induct on n. Terms from lower Witt coordinates have strictly smaller X_b-degree; at n=bm+r only the leading coefficient of A_m and the m-th power of the b-th variable contribute to the extremal degree.
-
-Reduce the ghost identity modulo p^{n+1}, divide its p^n term, and then reduce modulo p. Keep the factor m outside the exponent: the degree is m·p^{n−b}.
+Let n = dim X and choose a nonempty affine open U with an étale map U → 𝔸^n_E (SchemeAndStackFoundations §0.8). Let FE be the compositum, finite over F. By ReductiveGroupsPartII §RG2.0.4 choose x_1,…,x_n ∈ F algebraically independent over Q_p, hence over E since E/Q_p is algebraic; they give Spec FE → 𝔸^n_E at the generic point. The étale map is open (Mathlib `AlgebraicGeometry.UniversallyOpen.of_flat`), so its image contains the generic point, and the pullback of U is a nonempty quasi-compact étale FE-scheme, a finite disjoint union of spectra of finite separable extensions (Mathlib `Algebra.FormallyEtale.iff_exists_algEquiv_prod`). Choose one, K. Its point in U lies over the generic point of 𝔸^n_E, so its residue field has transcendence degree n over E and it is the generic point of U and of X. For n = 0, geometric integrality makes X = Spec E, and K = FE. *Needs:* SchemeAndStackFoundations §0.8; ReductiveGroupsPartII §RG2.0.4 (`transcendenceDegree_infinite`); Mathlib `AlgebraicIndependent`, `AlgebraicGeometry.UniversallyOpen.of_flat`, `AlgebraicGeometry.Scheme.Hom.isOpenMap`, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`.
 
 **Checks.**
 
-- For b=r=0, the extremal degree is m and the leading coefficient is Y_{m,0}.
-- For m=1, r=0, X=V^b[u] and A_1=[a], the b-th coordinate is a^{p^b}u.
-- The expression m p^{n−b} must not be parsed as p^{n−bm}.
+- For X = ℙ^1_E, a generic point over K is a coordinate transcendental over E, such as an element of F transcendental over Q_p; no closed point is generic.
+- For a torus G, Fl_μ = Spec E is a point and K = FE works with no transcendental parameter.
+- A Zariski-dense set of closed points of X does not provide a generic point: every closed point of ℙ^1_E has a coordinate algebraic over E, and §2.2 needs the generic point itself.
 
-### Infinite transcendence of the completed unramified field
+### 3.2 A crystalline period point with open derived image
 
-For every prime p, F=Frac W(overline F_p)=breve Q_p has infinite transcendence degree over Q_p. Equivalently it contains an algebraically independent sequence indexed by ℕ over Q_p. For every finite E/Q_p embedded in an algebraic closure of F, the finite extension FE/F still contains arbitrarily large finite families algebraically independent over E.
+Let (G, b, μ) be a local shtuka datum over Q_p in the GLX orientation with (b, μ) Hodge–Newton irreducible. There are a finite extension K/F containing the reflex field and a point x of the admissible period cell Gr^b_μ over K whose crystalline representation ξ_x: Γ_K → G(Q_p) satisfies: ξ_x(Γ_K) ∩ G_der(Q_p) is open in G_der(Q_p). No minuscule or quasisplit hypothesis is imposed. (GLX26 Proposition 5.9 and proof, arXiv v3 p. 40; Theorem 5.2, arXiv v3 p. 32.)
 
-Use the canonical embedding Q_p→F from the complete unramified Witt construction. The assertion concerns Q_p, not merely Q.
-
-The source is [Chen](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Proposition 2.0.3 and its proof, pp. 734–735; Lemma 2.0.4, pp. 735–737.
-
-Following Chen, choose Witt vectors x_i supported at factorial digit positions. At a supported position b, use a residue digit of finite-field degree growing like (b^{i+1})!, while previous vectors and earlier digits lie in fields of much smaller degree.
-
-Assume a polynomial relation for x_i over Z_p[x_0,…,x_{i−1}], after clearing coefficient denominators. Let r be the first nonzero Witt digit of its leading coefficient and m its degree. Choose a supported b with no later support through n=bm+r.
-
-Choose a common finite-field degree M for the earlier digits and all coefficient digits through n. Require the new residue degree N to exceed M·m·p^{n−b}; the factorial growth permits this stronger bound, including the factor p^r.
-
-Apply the leading sparse Witt-coordinate estimate: the n-th output digit is a nonzero polynomial of degree m p^{n−b} over F_{p^M} in an element of degree greater than that bound. This contradicts the relation.
-
-Induct to obtain the sequence. Algebraic base extension from Q_p to E does not change transcendence degree, giving the final assertion.
+Replace b by a decent σ-conjugate b′ = gbσ(g)⁻¹ (BunGAndNewtonStrata §1.12). By §3.1 choose a generic η over a finite K; by §2.3 (b′, η) is admissible and PadicHodgeTheory §5.5 gives ξ; by §2.4, G_der ⊆ H°. By gap:serre-sen-openness, ξ(Γ_K) is open in H(Q_p), hence ξ(Γ_K) ∩ G_der(Q_p) is open in G_der(Q_p), which carries the subspace topology (ReductiveGroupsPartII §RG2.0.2). By HeckeStacksAndLocalShtukas §HS2.12, with its μ read as our μ⁻¹, η is BB(x′) for a point x′ of the admissible cell for b′ whose fibre is ξ (§HS2.11, `admissiblePeriodTorsor.classical_point`); changing the framing by g transports x′ to a point x for b with conjugate crystalline representation. *Needs:* §§2.3, 2.4, 3.1; gap:serre-sen-openness; BunGAndNewtonStrata §1.12; PadicHodgeTheory §5.5; HeckeStacksAndLocalShtukas §§HS2.11, HS2.12; ReductiveGroupsPartII §RG2.0.2.
 
 **Checks.**
 
-- A single vector with unbounded residue-field degrees is transcendental, but this alone does not prove a sequence is algebraically independent.
-- For every fixed flag dimension n, only n independent parameters are needed.
+- The image ξ_x(Γ_K) is compact; openness concerns its intersection with G_der(Q_p), not equality with a noncompact group.
+- After a finite extension K′/K the restricted image is closed of finite index in ξ_x(Γ_K), hence open in it, and its derived intersection stays open.
+- For a torus G_der = 1 and the assertion is automatic; for the quadratic norm-one torus T with μ = 0 and nontrivial κ(b) ∈ ℤ/2, [b] ∉ B(T,0) and no admissible point exists, so the acceptability hypothesis cannot be dropped.
 
-### Generic flags over finite extensions of breve Q_p
+### 3.3 Open subgroups of rational points are Zariski dense
 
-For a finite reflex field E/Q_p and its smooth geometrically integral flag variety Fl_μ/E, there is a finite extension K/F containing E and a map Spec K→Fl_μ whose underlying point is generic. More generally the same assertion holds for a nonempty smooth geometrically integral E-variety.
-
-F=breve Q_p; the embedding E→K is part of the conclusion. Choose a nonempty affine open and a quasi-compact étale coordinate chart of relative dimension n.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Lemma 5.10 and proof, pp. 844–845; [Stacks](https://stacks.math.columbia.edu), Tags 054L (Lemma 29.37.21), 02GL (Lemma 29.37.7), and 02GH (§29.37).
-
-Pass to FE/F finite. Infinite-transcendence supplies n algebraically independent parameters over E, giving a map Spec FE→A_E^n landing at the generic point.
-
-The image of a nonempty étale coordinate chart is open and contains that generic point. Its pullback is therefore a nonempty quasi-compact étale FE-scheme.
-
-By the field-fibre classification it is a finite disjoint union of spectra of finite separable extensions of FE. Choose one component, with field K. An étale coordinate map preserves the required generic point.
-
-For dimension zero the nonempty integral chart is already finite separable; the argument also covers a torus flag, which is a point.
+Let E be a nonarchimedean local field of characteristic zero, J a smooth connected affine group over E, and U ⊆ J(E) an open subgroup for the point topology. Then U is Zariski dense in J. Consequently, if J is a closed subgroup of an affine group G′ and U ⊆ H(E) for a closed subgroup H ⊆ G′, then J ⊆ H°. Let Z ⊆ J be the Zariski closure of U, a closed subgroup, smooth in characteristic zero. By the analytic charts of ReductiveGroupsPartII §RG2.0.2, Z(E) is a closed analytic submanifold of J(E) of dimension dim Z, cut out near 1 by dim J − dim Z local parameters with independent differentials. Since Z(E) contains the open set U, no such parameter exists, so dim Z = dim J and Z = J because J is connected. Serre79 §1.3, pp. 157–158, compares in the same way the Lie algebra of a compact subgroup of GL_V(Q_p) with that of its Zariski closure. DeligneWeightsAndPurity §2.2 states the case of Sp(V) over Q_ℓ. *Needs:* ReductiveGroupsPartII §RG2.0.2 (*smooth-group-analytic-charts*, *points-topological-group*); ReductiveGroups Layers 2 and 3; ArithmeticGaloisRepresentations §7.6.
 
 **Checks.**
 
-- A projective-line flag acquires a point with transcendental affine coordinate over E.
-- A zero-dimensional flag needs no transcendental parameter.
-- A merely dense collection of closed points would not give the topologically generic point required by GM2.
+- For J = 𝔾_m over Q_p and U = 1 + pℤ_p, the closure is 𝔾_m, since a proper closed subgroup of 𝔾_m is finite.
+- Connectedness is needed: for the disconnected orthogonal group O(2) over Q_p, the open subgroup SO(2)(Q_p) has closure SO(2) ≠ O(2).
+- Openness is needed: the compact subgroup of diagonal matrices in GL_2(ℤ_p) has Zariski closure the diagonal torus, not GL_2.
 
-### A crystalline period point with open derived image
+### 3.4 Central lifting of derived containment
 
-Let (G,b,μ) be a local shtuka datum in GLX orientation, with [b]∈B(G,μ) and μ^diamond−ν_b strictly positive on every absolute simple coroot. There are a finite extension K/F containing the reflex field and x∈Gr_μ^b(K) whose crystalline representation ξ_x:Γ_K→G(Q_p) satisfies ξ_x(Γ_K)∩G_der(Q_p) open in G_der(Q_p). No minuscule or quasisplit hypothesis is required.
-
-G is connected reductive over Q_p; F=breve Q_p. The monodromy theorem uses the full generic-filtration contract stated in Prerequisites and boundaries.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Proposition 5.9 and proof, p. 844; Theorem 5.2, p. 836.
-
-Replace b by a σ-conjugate decent representative using BG0 and choose a common decency/coefficient field. This replacement is used to construct an open-image point, not to assert arbitrary F-translations preserve genericity.
-
-Use infinite transcendence, étale coordinates and generic admissibility to obtain a generic admissible filtration for the decent datum. The bounded parent torsor-triviality theorem produces ξ after choosing its standard-fibre point.
-
-The derived-monodromy theorem gives G_der⊆MT. The parent crystalline-monodromy-group-interface supplies Serre–Sen openness in MT; intersect its open subgroup with G_der(Q_p).
-
-Use HS2/classical-period-points, with the explicit GLX/Berkeley sign dictionary, to lift the admissible flag to the Schubert-cell period point. Transport it back along σ-conjugacy to the original b.
+Let k be a field of characteristic zero, f: G̃ → G a surjective homomorphism of connected reductive k-groups with central kernel, and J ⊆ G̃ a closed subgroup. If f(J°) ⊇ G_der, then J° ⊇ G̃_der. The derived group D(J°) is connected and f(D(J°)) = D(f(J°)) ⊇ D(G_der) = G_der (Milne iAG Proposition 8.20 and Corollary 8.21, p. 131). As D(J°) ⊆ G̃_der and f restricts to a central isogeny G̃_der → G_der with finite kernel ker f ∩ G̃_der, dimension forces D(J°) = G̃_der. This repairs the crystalline step of GLX26 Proposition 6.7 (arXiv v3 p. 47), where the Galois image is treated as a subgroup of the derived group. *Needs:* ReductiveGroups Layers 3 and 6.
 
 **Checks.**
 
-- The image is compact; openness concerns its intersection with G_der, not equality with a noncompact group.
-- After any finite extension of K, the restricted image has finite index in the original image and its derived intersection remains open.
-- For a torus the derived group is trivial and the open-intersection assertion is automatic.
+- For GL_2 → PGL_2 (kernel 𝔾_m) and J = GL_2 or J = SL_2, f(J°) = PGL_2 and J° ⊇ SL_2.
+- For J a maximal torus of GL_2, f(J°) is a maximal torus of PGL_2, the hypothesis fails, and so does the conclusion.
+- The central kernel is needed: for det: GL_2 → 𝔾_m and J the diagonal torus, f(J°) ⊇ (𝔾_m)_der = 1 holds but J° does not contain SL_2.
 
-### Open derived image through a z-extension
+### 3.5 Open derived image through a z-extension
 
-Let f:G_tilde→G be a z-extension with central induced-torus kernel. Fix bounded lifted data [b_tilde]∈B(G_tilde,μ_tilde) mapping to [b]∈B(G,μ). Existence of a crystalline period point of this type with open intersection of its Galois image with the rational derived group is equivalent upstairs and downstairs, allowing a finite extension containing the lifted reflex field. This compares existence for the specified lifted data, not arbitrary continuous representations.
+Let f: G̃ → G be a z-extension (central kernel an induced torus, G̃_der simply connected; ReductiveGroupsPartII §RG2.1.5) and [b̃] ∈ B(G̃,μ̃) a lift of [b] ∈ B(G,μ) (BunGAndNewtonStrata §1.43). Then the following are equivalent: there are a finite K/F and a crystalline period point of type (b, μ) over K whose Galois image meets G_der(Q_p) openly; there are a finite L/F containing the reflex field of μ̃ and such a point of type (b̃, μ̃) for G̃. The comparison concerns the specified lifted data, not arbitrary continuous representations, and the derived map G̃_der → G_der is not assumed surjective on Q_p-points. (GLX26 Proposition 6.7, crystalline step, arXiv v3 p. 47; Proposition 6.6(1), arXiv v3 pp. 45–46.)
 
-Use the common admissible Grassmannian after base change of reflex fields. The derived morphism G_tilde_der→G_der is a finite central isogeny. It is not asserted surjective on Q_p-points.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Proposition 6.7, crystalline step, p. 851; Proposition 6.6(1), pp. 849–850.
-
-The HS2 adjoint period comparison identifies the admissible loci and the extension-of-structure-group torsors. Therefore a downstairs point lifts after finite reflex-field base extension, and the corresponding crystalline representations satisfy f∘ξ_tilde=ξ|Γ_L up to conjugacy.
-
-Let H_tilde and H be full algebraic monodromy groups. Their connected groups satisfy f(H_tilde°)=H° by density and closedness of homomorphism images. An open subgroup of a connected reductive group’s Q_p-points is Zariski dense.
-
-If f(ξ_tilde(Γ_L)) has open derived intersection, H° contains G_der. The algebraic central-lifting contract then forces H_tilde° to contain G_tilde_der. Apply the parent Serre–Sen theorem to ξ_tilde, giving an open derived intersection upstairs.
-
-Conversely the image of an upstairs open derived subgroup is open downstairs because a finite central isogeny in characteristic zero is étale on rational points. Restriction to a finite extension preserves openness by finite index.
+Upstairs to downstairs: f∘ξ̃ has type (b, μ), and f maps an open subgroup of G̃_der(Q_p) onto an open subgroup of G_der(Q_p) because the central isogeny is étale (ReductiveGroupsPartII §RG2.0.2, *smooth-morphism-open-map*). Downstairs to upstairs: HeckeStacksAndLocalShtukas §HS2.13 identifies the admissible loci after base change to L ⊇ K and the reflex field of μ̃, so x lifts to x̃ with f∘ξ̃ conjugate to ξ|Γ_L. The image ξ(Γ_L) has finite index in ξ(Γ_K), so its derived intersection is open; by §3.3 the closure H of ξ(Γ_L) contains G_der. The closure H̃ of ξ̃(Γ_L) satisfies f(H̃) = H (ArithmeticGaloisRepresentations §7.6), so f(H̃°) = H° ⊇ G_der and §3.4 gives H̃° ⊇ G̃_der. By gap:serre-sen-openness, ξ̃(Γ_L) is open in H̃(Q_p), and its intersection with G̃_der(Q_p) is open. *Needs:* §§3.3, 3.4; gap:serre-sen-openness; HeckeStacksAndLocalShtukas §HS2.13; BunGAndNewtonStrata §1.43; ReductiveGroupsPartII §§RG2.0.2, RG2.1.5; ArithmeticGaloisRepresentations §7.6; PadicHodgeTheory §5.5.
 
 **Checks.**
 
-- For SL_2→PGL_2, the rational image is open of finite index; its possible properness does not obstruct openness.
-- For G_tilde=G×G_m, a central character can change the lift; the conclusion concerns its derived intersection rather than containment of the entire image in G_tilde_der.
+- For the z-extension GL_2 → PGL_2, the image of SL_2(Q_p) in PGL_2(Q_p) is open of index [Q_p^× : Q_p^{×2}] (4 for odd p, 8 for p = 2); it is a proper subgroup, and openness, not surjectivity, is what transfers.
+- For G̃ = G × 𝔾_m → G with G_der simply connected, a lift may carry an extra central character, so ξ̃(Γ_L) need not lie in G̃_der; the conclusion concerns its intersection with G̃_der(Q_p).
+- If the crystalline step tested only ξ̃(Γ_L) ⊆ G̃_der, it would fail already for G̃ = GL_2, where det∘ξ̃ is a nontrivial power of the cyclotomic character for μ̃ = (1,0).
 
 ### Examples
 
-A projective-line flag requires one parameter transcendental over its reflex field, not a limit of rational closed points. A torus flag has dimension zero and requires no such parameter. For the central isogeny SL_2→PGL_2, the rational-point image can be a proper open subgroup. For G×G_m→G a lift may carry an extra central character; openness must be tested on intersection with the derived factor.
+A projective-line flag needs one parameter transcendental over its reflex field; a torus flag needs none. For the central isogeny SL_2 → PGL_2 the rational image is a proper open subgroup. For G × 𝔾_m → G a lift may carry an extra central character, so openness is tested on the intersection with the derived group. For det: GL_2 → 𝔾_m, whose kernel is not central, derived containment does not lift.
 
 ### Dependencies
 
-Internal inputs are the preceding layers in the order displayed above. The external interfaces used here are:
+Layer 2; SchemeAndStackFoundations §0.8; ReductiveGroupsPartII §§RG2.0.2, RG2.0.4, RG2.1.5; BunGAndNewtonStrata §§1.12, 1.43; HeckeStacksAndLocalShtukas §§HS2.11–HS2.13; PadicHodgeTheory §5.5; gap:serre-sen-openness (§§3.2, 3.5); ArithmeticGaloisRepresentations §7.6; ReductiveGroups Layers 2, 3 and 6; Mathlib `AlgebraicIndependent`, `AlgebraicGeometry.UniversallyOpen.of_flat`, `AlgebraicGeometry.Scheme.Hom.isOpenMap`, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`. Sections 3.3 and 3.4 are independent of Layers 0–2.
 
-- `BunGAndNewtonStrata:BG0/existence-of-decent-representative`.
-- `BunGAndNewtonStrata:BG1/z-extension-bounded-lifting`.
-- `HeckeStacksAndLocalShtukas:HS2/adjoint-period-and-tower-comparison`.
-- `HeckeStacksAndLocalShtukas:HS2/admissible-period-torsor`.
-- `HeckeStacksAndLocalShtukas:HS2/classical-period-points`.
-- `PadicHodgeTheory:R06.2/bounded-crystalline-g-torsor-triviality`.
-- `PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface`.
-- `PadicHodgeTheory:R06.2/period-functors-perfect-residue-base`.
-- `ReductiveGroupsPartII:RG2.0`.
-- `SchemeAndStackFoundations:SF.0`.
-- `mathlib:AlgebraicIndependent`.
-- `mathlib:WittVector.ghostComponent`.
-- `mathlib:WittVector.teichmuller`.
-- `mathlib:WittVector.verschiebung`.
-- `tauceti:TauCetiRoadmap/ReductiveGroups#layer-7-structure-theory`.
+## Layer 4: compact torsor stabilizers
 
-The generic-filtration and descent contract in Prerequisites and boundaries is required for the derived-monodromy branch.
+### 4.1 Compact crystalline-image torsor components
 
-## Layer 4: compact torsor stabilizers and the quasisplit converse
+Let K/F be finite, ξ: Γ_K → G(Q_p) continuous, and T_ξ → Spd K its locally profinite G(Q_p)-torsor. Put C = ξ(Γ_K), a compact closed subgroup. With the torsor conventions above, π_0(T_ξ) ≅ G(Q_p)/C equivariantly, and the component indexed by gC has stabilizer gCg⁻¹. This identifies actual connected components; no formula π_0(X/H) = π_0(X)/H for an arbitrary group action is used. (GLX26 proof of Lemma 6.12, arXiv v3 pp. 50–51.)
 
-### Compact crystalline-image torsor components
-
-Let ξ:Γ_K→G(Q_p) be continuous, K/F finite, and let T_ξ→Spd K be its associated locally profinite G(Q_p)-torsor. Put C=ξ(Γ_K), a compact closed subgroup. Choose the convention in which G(Q_p) acts on the geometric fibre on the left and Γ_K acts by right multiplication through ξ. Then π_0(T_ξ)≅G(Q_p)/C equivariantly, and the component indexed by gC has stabilizer gCg^−1. This identifies actual connected components, not an unrestricted orbit quotient for an arbitrary group action.
-
-G(Q_p) has its locally compact totally disconnected point topology. Use the étale/Galois classification over the analytic field K and its diamond.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Proof of Lemma 6.12, pp. 855–856.
-
-Compactness of Γ_K makes C compact and closed. Each geometric Galois orbit gC is compact and descends to a closed subdiamond T_{gC}.
-
-Present C as an inverse limit of finite transitive Γ_K-sets C/U. Their descended finite étale K-covers are connected fields. The qcqs inverse-limit comparison and the spectral clopen criterion show T_{gC} is connected.
-
-Use compactness of C and compact open subgroups of G(Q_p) to separate distinct cosets by C-invariant clopens. Their descended clopens separate distinct orbit subdiamonds, so every T_{gC} is a maximal connected subset.
-
-Compute the left-action stabilizer of gC. No use is made of a universal formula π_0(X/H)=π_0(X)/H.
+Each geometric Galois orbit gC is compact and descends to a closed subdiamond T_{gC}. Writing C as the inverse limit of the finite transitive Γ_K-sets C/U, the descended finite étale K-covers are connected, and the qcqs limit comparison with the spectral clopen criterion shows T_{gC} connected. Compactness of C and the compact open subgroups of G(Q_p) separate distinct cosets by C-invariant clopen sets, whose descents separate the orbit subdiamonds; so each T_{gC} is a maximal connected subset. The restricted-quotient interface of DiamondsAndVStacks §D5.16 is applied only after this separation is verified. *Needs:* ArithmeticGaloisRepresentations §1.1; DiamondsAndVStacks §§D0.6, D3.10, D5.3, D5.16, D6.5; ReductiveGroupsPartII §RG2.0.2 (*points-topological-group*).
 
 **Checks.**
 
-- If ξ is trivial, each component is one copy of Spd K and its stabilizer is trivial.
-- For finite image C, each orbit descends to a finite connected étale K-cover with stabilizer C.
-- For an infinite compact image, approximate by finite transitive quotients; declaring geometric fibre points to be components would give an incorrect trivial stabilizer.
+- If ξ is trivial, C = 1, each component is a copy of Spd K and every stabilizer is trivial.
+- For finite C, the identity coset C descends to a finite connected étale K-cover with stabilizer C, and the coset gC has stabilizer gCg⁻¹. For C = {1, diag(1,−1)} ⊂ GL_2(Q_p) and g = [[1,1],[0,1]], gCg⁻¹ contains [[1,−2],[0,−1]] ∉ C, so the stabilizer of gC is not C.
+- For an infinite compact C, the finite transitive quotients give the connected components; declaring the geometric fibre points to be components would give the wrong, trivial stabilizer.
 
-### Open derived stabilizers in the ambient tower
+### 4.2 Open derived stabilizers in the ambient tower
 
-Let y∈Gr_μ^b(K) be a crystalline period point with open derived image, T_y its period torsor and j:T_y→Y a G(Q_p)-equivariant map to a locally spatial diamond. Every connected component of Y containing the image of a component of T_y has stabilizer whose intersection with G_der(Q_p) is open. If G(Q_p) acts transitively on π_0(Y), the assertion holds for every component.
+Let y be a crystalline period point over finite K/F with open derived image (§3.2), T_y its period torsor and j: T_y → Y a G(Q_p)-equivariant map to a locally spatial diamond. Every connected component of Y containing the image of a component of T_y has a stabilizer whose intersection with G_der(Q_p) is open in G_der(Q_p). If G(Q_p) acts transitively on π_0(Y), this holds for every component of Y. Transitivity is a hypothesis; for the infinite-level local shtuka tower over an algebraically closed field it is HeckeStacksAndLocalShtukas §HS2.16 (for minuscule μ, and for general μ under the finite-level openness hypothesis stated there). (GLX26 Lemma 6.12 and proof, arXiv v3 pp. 50–51.)
 
-K/F finite; all groups and actions have the conventions of compact crystalline-image torsor components. For application to the whole local-shtuka tower, transitivity is a separate geometric supplier assumption.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Lemma 6.12 and its proof, pp. 855–856.
-
-A continuous map sends a connected component into a connected component. Equivariance includes the source component stabilizer in the target component stabilizer.
-
-Use the compact torsor component theorem to identify the source stabilizer with a conjugate of ξ_y(Γ_K). Its derived intersection is open by the chosen period point and normality of G_der.
-
-Under the stated transitivity hypothesis every component is a translate of one reached in this way; conjugate the inclusion. Do not infer transitivity merely from connectedness of a quotient.
+A continuous map sends a connected component into a connected component, and equivariance puts the source stabilizer inside the target stabilizer. By §4.1 the source stabilizer is a conjugate of ξ_y(Γ_K), whose derived intersection is open by §3.2 and normality of G_der. Under transitivity every component is a translate of one reached in this way; conjugate the inclusion. Connectedness of a quotient alone does not give transitivity. *Needs:* §§3.2, 4.1; HeckeStacksAndLocalShtukas §§HS2.11, HS2.16; DiamondsAndVStacks §D3.10.
 
 **Checks.**
 
-- The source stabilizer is equal to the compact image, while the ambient stabilizer is only asserted to contain it.
-- Without transitivity, the conclusion is restricted to components reached from the torsor.
-
-### The quasisplit converse as a component-theorem consumer
-
-Let G/Q_p be quasisplit, [b]∈B(G,μ), and η an admissible flag over a finite extension K/F for which the standard crystalline-fibre torsor is trivialized. If MT(b,η) contains G_der, then μ^diamond−ν_b is strictly positive on every absolute simple coroot. In particular, for a generic decent pair, derived containment is equivalent to HN-irreducibility using the reverse geometric implication stated in Prerequisites and boundaries.
-
-The reverse implication (4)⇒(3) of GLX Theorem 6.1(a), with full hypotheses, is the independent component/HN-decomposition contract stated in Prerequisites and boundaries. No quasisplit converse is claimed for arbitrary inner forms.
-
-The source is [Gleason–Lim–Xu](https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf), Proposition 5.11, p. 845; Theorem 6.1(a), equivalence of (3) and (4), p. 845.
-
-Apply the parent’s crystalline-monodromy-group-interface to obtain an open intersection ξ(Γ_K)∩G_der(Q_p). No new genericity choice is needed for this implication.
-
-Invoke only the reverse component/HN supplier (existence of such a crystalline representation ⇒ HN-irreducibility). Its proof may use the component argument, HN decomposition and group generation, but must not invoke this converse or the forward generic theorem as a prerequisite of the reverse implication.
-
-Combine with the derived-monodromy theorem to state the final equivalence for generic decent pairs. The forward proof remains entirely in GM0–GM3.
-
-**Checks.**
-
-- The dependency graph has no edge from GM0–GM3 back to GM4.
-- For a torus the simple-root set is empty; both the derived condition and strict-coroot condition are vacuous.
+- The source stabilizer equals a conjugate of the compact image, while the ambient stabilizer is only asserted to contain it; for Y a point it is all of G(Q_p).
+- Without transitivity the conclusion is restricted to components reached from T_y: for Y = T_y ⊔ (G(Q_p) × Spd K), with G(Q_p) translating the second summand, the components g × Spd K have trivial stabilizer, whose intersection with G_der(Q_p) is not open when G_der ≠ 1.
+- For a torus G_der = 1 and every stabilizer trivially has open derived intersection.
 
 ### Examples
 
-If ξ is trivial, the torsor is a product with the locally profinite fibre and every component stabilizer is trivial. If its image C is finite, a C-orbit descends to a finite connected field cover and its stabilizer is C. Infinite compact C is recovered from finite transitive quotients and can give a nontrivial stabilizer even though each geometric fibre point is separate. For an ambient component, only inclusion of this source stabilizer is asserted; equality would be an extra claim.
+If ξ is trivial, the torsor is G(Q_p) × Spd K and every component stabilizer is trivial. If C is finite, the identity coset descends to a finite connected field cover with stabilizer C, and the coset gC has stabilizer gCg⁻¹. An infinite compact C is recovered from its finite transitive quotients and gives a nontrivial stabilizer although the geometric fibre points are separate. For an ambient component only the inclusion of the source stabilizer is asserted.
 
 ### Dependencies
 
-Internal inputs are the preceding layers in the order displayed above. The external interfaces used here are:
-
-- `ArithmeticGaloisRepresentations:R01.1/continuous-representation`.
-- `DiamondsAndVStacks:D0/spectral-components-profinite`.
-- `DiamondsAndVStacks:D3/locally-profinite-torsors`.
-- `DiamondsAndVStacks:D5`.
-- `DiamondsAndVStacks:D5/limits-and-finite-stage-comparisons`.
-- `DiamondsAndVStacks:D6/etale-site-comparison`.
-- `HeckeStacksAndLocalShtukas:HS2/admissible-period-torsor`.
-- `PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface`.
-- `ReductiveGroupsPartII:RG2.0/points-topological-group`.
-
-The reverse geometric contract is used only by the final converse. The ambient stabilizer theorem requires transitivity only for its assertion about every component.
+Layer 3 (§3.2); ArithmeticGaloisRepresentations §1.1; DiamondsAndVStacks §§D0.6, D3.10, D5.3, D5.16, D6.5; HeckeStacksAndLocalShtukas §§HS2.11, HS2.16; ReductiveGroupsPartII §RG2.0.2.
 
 ## Downstream consumers
 
-The crystalline period point with open derived image is the arithmetic input to the GLX connected-component argument for local shtuka towers and affine Deligne–Lusztig varieties. The compact torsor theorem identifies the subgroup that stabilizes a component in a period fibre, and its equivariant application embeds that subgroup in an ambient stabilizer. Those statements do not provide the separate global transitivity, normalizer or isotropic-generation arguments of the component classification.
-
-The final converse imports only the reverse geometric implication; it does not make that implication a prerequisite of generic admissibility, the weighted estimates or the construction of the open-image point. In the quasisplit case it completes the equivalence between strict HN positivity and generic derived monodromy. No converse is asserted for arbitrary inner forms.
+The crystalline period point with open derived image (§3.2), the z-extension comparison (§3.5) and the ambient stabilizer theorem (§4.2) are the arithmetic inputs to the GLX component theorem for local shtuka towers and affine Deligne–Lusztig varieties: §3.2 is its step (3)⇒(4), §4.2 enters its step (4)⇒(5), and §3.5 its reduction to simply connected derived groups. The quasisplit converse, GLX26 Proposition 5.11, is deduced from that theorem and is not an input to any target here. Those consumers supply the global transitivity, normalizer and generation arguments of the component classification themselves.
 
 ## References
 
-- Ian Gleason, Dong Gyu Lim and Yujie Xu, [The connected components of affine Deligne–Lusztig varieties](https://doi.org/10.1007/s00222-025-01386-1), Inventiones mathematicae 243 (2026), 805–861. The locators above use the published text, not an older arXiv pagination.
-- Miaofen Chen, [Composantes connexes géométriques de la tour des espaces de modules de groupes p-divisibles](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf), Annales scientifiques de l’École normale supérieure (4) 47 (2014), 723–764. The coefficient-line and sparse-Witt arguments above are stated with the full tensor group and the strengthened residue-degree bound.
-- The Stacks Project, [Tag 054L](https://stacks.math.columbia.edu/tag/054L), [Tag 02GL](https://stacks.math.columbia.edu/tag/02GL), and [Tag 02GH](https://stacks.math.columbia.edu/tag/02GH), for smooth étale coordinates and their field fibres.
+- [GLX26] Ian Gleason, Dong Gyu Lim and Yujie Xu, *The connected components of affine Deligne–Lusztig varieties*, arXiv:2208.07195v3 (November 2025); published in Inventiones mathematicae (2026), [doi:10.1007/s00222-025-01386-1](https://doi.org/10.1007/s00222-025-01386-1). Theorem, section and equation numbers and the page numbers above refer to arXiv v3.
+- [Chen14] Miaofen Chen, *Composantes connexes géométriques de la tour des espaces de modules de groupes p-divisibles*, Annales scientifiques de l'École normale supérieure (4) 47 (2014), 723–764, [SMF](https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf). Page numbers are those of the journal.
+- [Serre79] Jean-Pierre Serre, *Groupes algébriques associés aux modules de Hodge–Tate*, Astérisque 65 (1979), 155–188, [Numdam](https://www.numdam.org/item/AST_1979__65__155_0/).
+- [Milne iAG] J. S. Milne, *Algebraic Groups: the theory of group schemes of finite type over a field*, version 2.00 (2015), [author page](https://www.jmilne.org/math/CourseNotes/iAG200.pdf).
+- [Stacks] The Stacks Project, Tags [054L](https://stacks.math.columbia.edu/tag/054L) (Lemma 29.37.21), [02GL](https://stacks.math.columbia.edu/tag/02GL) (Lemma 29.37.7), [03WT](https://stacks.math.columbia.edu/tag/03WT) (Lemma 29.37.13) and [01UA](https://stacks.math.columbia.edu/tag/01UA) (Lemma 29.26.10).
