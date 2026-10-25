@@ -1,5 +1,6 @@
 import Mathlib
 import TauCeti.RepresentationTheory.SymmetricPower
+import TauCeti.RepresentationTheory.ClassicalGroups.Restriction
 
 /-!
 # Algebraic modular forms and Serre weights, Part II: target signatures
@@ -48,13 +49,12 @@ namespace TauCetiRoadmap.AlgebraicModularFormsAndSerreWeightsPartII
 
 /-! ## Layer 8: Theta operators and low-weight injectivity -/
 
-/-- The standard two-dimensional representation of the finite special linear group,
-with its matrix entries extended to the coefficient field. -/
-def standardSL2 (p : ℕ) [Fact p.Prime] (k : Type) [Field k] [CharP k p] :
+/-- The standard two-dimensional representation of the finite special linear group
+`SL₂(𝔽_p)` over a field `k` of characteristic `p`: Tau Ceti's standard representation of
+`SL₂(k)` on column vectors, composed with the entrywise reduction `SL₂(𝔽_p) → SL₂(k)`. -/
+def standardSL2 (p : ℕ) (k : Type) [Field k] [CharP k p] :
     Representation k (Matrix.SpecialLinearGroup (Fin 2) (ZMod p)) (Fin 2 → k) :=
-  LinearEquiv.automorphismGroup.toLinearMapMonoidHom.comp
-    (Matrix.SpecialLinearGroup.toLin'.comp
-      (Matrix.SpecialLinearGroup.map (ZMod.castHom (dvd_refl p) k)))
+  (TauCeti.stdSLRep k 2).comp (Matrix.SpecialLinearGroup.map (ZMod.castHom (dvd_refl p) k))
 
 /-- Symmetric powers through degree p-1 of the natural SL2(Fp) representation
 are absolutely irreducible in characteristic p. -/
