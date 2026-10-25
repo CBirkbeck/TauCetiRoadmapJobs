@@ -18,7 +18,7 @@ The endpoints concern distinct polarized coarse CM points. André–Oort, o-mini
 
 Fix a CM field E/F with maximal order O_E, maximal real subfield F and [E:ℚ]=2g, g≥1. Write d=g in the total reflex layers. Use Mathlib's CM involution. D_E and D_F are positive absolute discriminants; d_E/F is the absolute norm of the relative different, so D_E=D_F²d_E/F. A CM algebra can be a nonempty product of fields; the empty direct-sum height is the scalar 0 convention, and is not treated as a CM field. All 2^g CM types occur with multiplicity one, including imprimitive types. The overlap functions are locally constant on the absolute Galois group; all character sums factor through finite Galois quotients.
 
-Write ℓ(s)=L_f′(s,χ_E/F)/L_f(s,χ_E/F) for the finite primitive quadratic Hecke function. Values divided by L_f are used only after regularity and nonvanishing at 0 or 1. Arithmetic Artin sends a uniformizer to arithmetic Frobenius; the Lubin–Tate unit action is inverse. Complex conjugation on E is not a single local decomposition-group element that exchanges all p-adic embedding pairs. Characteristic zero, separability, full integral lattices and positive field degrees are standing hypotheses; residue characteristics 2 and 3 are included. Linear and representation spaces use characteristic-zero rational or complex coefficients, as specified, in a fixed universe; field/embedding constructions transport through isomorphisms and universe changes.
+Write ℓ(s)=L_f′(s,χ_E/F)/L_f(s,χ_E/F) for the finite primitive quadratic Hecke function. Values divided by L_f are used only after regularity and nonvanishing at 0 or 1. Arithmetic Artin sends a uniformizer to arithmetic Frobenius; the Lubin–Tate unit action is inverse. ShimuraVarieties §4.1 uses the geometric map art_F(s)=rec_F(s)⁻¹; convert every supplied geometric reciprocity formula by s↦s⁻¹ before use, as in GrossZagierAndArithmeticHeights §0a.4. Complex conjugation on E is not a single local decomposition-group element that exchanges all p-adic embedding pairs. Characteristic zero, separability, full integral lattices and positive field degrees are standing hypotheses; residue characteristics 2 and 3 are included. Linear and representation spaces use characteristic-zero rational or complex coefficients, as specified, in a fixed universe; field/embedding constructions transport through isomorphisms and universe changes.
 
 The symbol h_Falt means the unscaled squared volume metric, with squared norm |∫α∧ᾱ|. The supplier's h_Fal has squared norm 2^(−g)|∫α∧ᾱ|. Thus h_Falt=h_Fal−(g/2)log 2 and h_YZ=h_Falt+(g/2)log(2π)=h_Fal+(g/2)log π. Component heights use h_YZ. These are logarithmic heights. The target formula is
 
@@ -31,7 +31,7 @@ For x∈A_g, the center order R_x is Z(End(A_x)), with one CM field per distinct
 **Checks.**
 
 - On the square elliptic torus ℂ/(ℤ+iℤ), |∫dz∧d z̄|=2. The three squared metrics are 2, 1 and 1/π; their height shifts are −log 2/2 and log(2π)/2 as above. Applying the latter twice gives an erroneous extra log(2π)/2.
-- For arithmetic Artin over ℚ₅, the unit 2 acts on Lubin–Tate 5-torsion by 2⁻¹=3 modulo 5, whereas geometric Artin would give 2. A uniformizer acts trivially on that torsion field.
+- For arithmetic Artin over ℚ₅, the unit 2 acts on Lubin–Tate 5-torsion by 2⁻¹=3 modulo 5, whereas the supplied geometric Artin action gives 2. Substituting 2⁻¹=3 into the geometric formula recovers the arithmetic action by 3. A uniformizer acts trivially on that torsion field.
 - A degree-two base change takes normalized degree a/d to 2a/(2d)=a/d; with [F:ℚ]=2, replacing [F(P):F] by [F(P):ℚ] changes a/d to a/(2d).
 - For E=ℚ(i), D_E=4, D_F=1, d_E/F=4. For an elliptic order of conductor 2 the center-order discriminant is 16, while its maximal-field discriminant stays 4.
 
@@ -69,6 +69,10 @@ What ArakelovGeometryAndAbelianHeights must provide (gap:ramified-component-dete
 
 Consume §§2.31d–2.31f, 2.32, 2.44–2.46 and 3.27: uniform fixed-degree residue bounds and Brauer–Siegel, primitive odd functional equations, regularized Hecke logarithmic derivatives and the degree-only ideal estimate. In particular |ℓ(1)|≤C_g,ε D_E^ε for every ε>0, uniformly as F varies; C_g,ε can be ineffective. Its conductor is D_E/D_F. The ideal count is at most C_n,ε X^(1+ε) for X≥1. These inputs include ramified Euler factors. General Artin holomorphy is no hypothesis.
 
+### From TauCetiRoadmap.Chebotarev
+
+Consume Layer 9, abelian Chebotarev: for the nonidentity element of Gal(E/F)≅C₂, unramified inert primes have Dirichlet density 1/2. Removing any finite set preserves that density and leaves infinitely many primes, supplying the auxiliary inert set in §7.1.
+
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
 Consume Layer AL.1, “CM quadratic completion and orbital comparisons”, for the precise quadratic finite/completed gamma adapter. Finite-image Artin local factors and induction use AdelicAlgebraicGroups §AA.2.4 through AnalyticNumberTheoryPartI §2.2 and its supplier contract. Odd-character regularity/nonvanishing at zero follows from that completed equation and the regularized endpoint interface. The trivial character uses ζ(0)=−1/2 and ζ′(0)/ζ(0)=log(2π), not an odd-character formula.
@@ -97,7 +101,7 @@ Consume ReductiveGroups Layer 4 for tori, character lattices, quotient tori and 
 
 ### From TauCetiRoadmap.ShimuraData and TauCetiRoadmap.ShimuraVarieties
 
-Consume ShimuraData Layers 1 and 3 for polarized rational Hodge data, Mumford–Tate groups and their Hodge cocharacters. Consume ShimuraVarieties §§4.1–4.6, 5.1–5.11 and 8.1–8.6 for arithmetic reciprocity, finite étale generic CM stacks, actual CM varieties, potential good reduction and the canonical Hecke tower.
+Consume ShimuraData Layers 1 and 3 for polarized rational Hodge data, Mumford–Tate groups and their Hodge cocharacters. Consume ShimuraVarieties §§4.1–4.6, 5.1–5.11, 6.1–6.2 and 8.1–8.6 for reciprocity in its geometric normalization, converted by s↦s⁻¹, finite étale generic CM stacks, actual CM varieties, potential good reduction, Hodge-type canonical models and the canonical Hecke tower.
 
 What ShimuraVarieties must provide (gap:quantitative-cm-torus-orbit): For a dimension-g CM Mumford–Tate torus T in GSp, maximal compact T(Ẑ), K=T(A_f)∩GSp(Ẑ), I=[T(Ẑ):K], bad set S={p:p divides [O_x:R_x]} and normal-closure reflex image r_T:Cl(L)→T(ℚ)\T(A_f)/T(Ẑ), prove after a dimension-bounded rigid level change that the absolute polarized orbit is at least c_g B_g^(#S) I |im r_T| with c_g>0 and 0<B_g≤1, compatibly with all primitive-factor projections.
 
@@ -129,7 +133,11 @@ What GlobalNumberFields must provide (gap:etale-order-discriminant): Extend the 
 
 Consume §§0.1–0.3, 1.2, 1.5 and 2.2, 2.7–2.9 for covolumes, successive minima, integral hermitian forms and local comparisons. In ordinary Lebesgue measure on ℂ^g the CM ideal covolume is 2^(−g)√D_E[O_E:I]; ℤ[i] gives 1. The CM order-sensitive rescaling argument and its algebraic-coordinate conversion are §13.2–§13.4 here.
 
-What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:quantitative-siegel-hermitian-reduction): In each fixed rank provide hermitian lattice balancing and a symplectic integral matrix taking any Z in Siegel space to the chosen standard fundamental set with all entries polynomially bounded in max(max|z_ij|,1/det Im Z), including repeated isotypic factors and all finite-prime lattice indices.
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:quantitative-siegel-hermitian-reduction): For each fixed g≥1 there are C_g,a_g>0 such that every Z in genus-g Siegel space admits γ∈Sp_(2g)(ℤ) with γZ in the chosen standard fundamental set and every entry of γ bounded in absolute value by C_g max(1,max_ij|z_ij|,1/det Im Z)^a_g.
+
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:quantitative-hermitian-lattice-balancing): For fixed n,r≥1 there are C_n,r,a_n,r>0 such that, for every degree-2n CM field E, conjugation-stable full order R⊂E, full R-stable lattice L⊂E^r, hermitian form h positive definite at every archimedean place, and integer N≥1 for which q=N Tr_E/ℚ h is integral on L, setting D=max(2,|disc R|,N,det Gram_L(q)), there are E-linearly independent v₁,…,v_r∈L for which every |σ(h(v_i,v_j))| and the finite index [L:Σ_i Rv_i] are at most C_n,r D^a_n,r.
+
+The Siegel matrix estimate uses [PT], Lemmas 3.4–3.5, preprint pp. 6–7 (PT lines 213–284). The independent-vector argument for hermitian balancing uses [PT], Lemma 3.7 and its proof, preprint p. 9 (PT lines 362–385); the contract also retains the index of the generated R-lattice.
 
 ### From TauCetiRoadmap.HilbertModularVarietiesAndShimuraCurves
 
@@ -145,7 +153,7 @@ Consume §§0a.4, 0.1, 0.5, 0.9–0.11, 2.1, 2.9, 2.14, 6.5–6.8, 6.21, 6.25, 6
 
 ### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
-Consume Layer 7 for the rank-one half-integral-weight and Whittaker framework. The orthogonal proper-intersection special divisors and support-controlled Borcherds inputs are the constructions of §§4.2–4.2a and §4.5 here.
+Consume Layers 4–7 for the adelic metaplectic cover and finite Weil representation, global theta kernels, Siegel–Weil and see-saw identities, and the half-integral-weight Whittaker framework. The orthogonal proper-intersection special divisors and support-controlled Borcherds inputs are the constructions of §§4.2–4.2a and §4.5 here.
 
 ### From TauCetiRoadmap.HeightsRationalPointsAndObstructions
 
@@ -289,7 +297,7 @@ The definition uses integral unit images, not all compact elements in T_so(ℚ_p
 **Checks.**
 
 - For d=1 recover the unit subgroup (O_E⊗ℤ_p)×.
-- For E_p/F_p ramified quadratic, the uniformizer class in E_p×/F_p× has order two but is not in the image of O_E,p×; reject it from K_so,p.
+- For E_p/F_p ramified quadratic, valuation identifies (E_p×/F_p×)/im(O_E,p×) with ℤ/2ℤ. A uniformizer maps to 1 and is excluded from K_so,p. In E_p=ℚ₃(√3), π=√3(1+√3) has valuation 1, but π²=12+6√3∉ℚ₃, so its class in E_p×/ℚ₃× does not have order two. Its square maps to 0 in the valuation quotient.
 - For E=ℚ(√−3) at 2 the unramified quadratic factor gives K₀,2=O_E,2×; 1 is included and the element 2, of valuation 1, is excluded. The same unit test agrees with the unramified integral-point subgroup at odd primes.
 
 *Needs:* §1.1 the cm height torus; ShimuraVarieties §§4.1–4.6.
@@ -298,7 +306,7 @@ The definition uses integral unit images, not all compact elements in T_so(ℚ_p
 
 Prove the following. For compact open K⊂T(A_f), import the canonical finite étale CM stack Y_K/E with its Artin reciprocity action, and normalize Spec O_E in it. At every p with K_p=K₀,p this normalization is finite étale over O_E⊗ℤ_p. In particular Y₀=Y_K₀ is finite étale over O_E. For smaller levels no unramifiedness assertion is made. ([A], §3.1 and Proposition 3.2.1, pp. 416–417; A line 1050.)
 
-One proof route is as follows. Apply the fixed arithmetic Artin map to the distinguished reflex norm. Show local inertia lands in the K₀,p unit image. Descend from a neat finite étale cover to the finite-inertia stack.
+One proof route is as follows. Convert the supplied geometric reciprocity formula by s↦s⁻¹ and apply the fixed arithmetic Artin map to the distinguished reflex norm. Show local inertia lands in the K₀,p unit image. Descend from a neat finite étale cover to the finite-inertia stack.
 
 A prime where K_p is smaller retains a potentially ramified normalization.
 
@@ -351,7 +359,7 @@ The coefficient is 1/(2d), not 2^(−d); the two coincide only accidentally in s
 
 ### Examples
 
-For E=ℚ(i,√2), the four types form two orbits of size two, so E♯=ℚ(i)×ℚ(√−2), not a quartic field. The total reflex abelian dimension is 2. At a ramified quadratic local factor a uniformizer has odd valuation and cannot represent the image of an integral unit, despite its compact order-two class in E_v×/F_v×.
+For E=ℚ(i,√2), the four types form two orbits of size two, so E♯=ℚ(i)×ℚ(√−2), not a quartic field. The total reflex abelian dimension is 2. At a ramified quadratic local factor a uniformizer has odd valuation and cannot represent the image of an integral unit, although E_v×/F_v× is compact. The valuation quotient by the integral-unit image is ℤ/2ℤ; the uniformizer class in E_v×/F_v× itself need not have order two.
 
 ### Dependencies
 
@@ -735,9 +743,13 @@ The proper-intersection and support hypotheses, p-self-duality, and c_f(0,0)≠0
 
 ### 4.6 The imaginary quadratic average
 
-Prove the following. For d=1, E imaginary quadratic and either CM type, h_Falt(E,Φ)=−(L_f′/L_f)(0,χ_E)/2−log D_E/4−log(2π)/2. This is the classical Chowla–Selberg case in the unscaled metric. It supplies the degree-one branch where the signature and positive-complement argument of Layer 4 is unavailable. Prove the component-period-to-height normalization from C Theorem 0.3 and the imaginary quadratic period relation; this is the degree-one endpoint, rather than an application of the d≥2 GSpin signature argument. ([A], §1.1, p. 392, remark preceding Theorem A; the classical input is cited there; A line 38.)
+Prove the following. For d=1, E imaginary quadratic and either CM type, h_Falt(E,Φ)=−(L_f′/L_f)(0,χ_E)/2−log D_E/4−log(2π)/2. This is the classical Chowla–Selberg case in the unscaled metric. It supplies the degree-one branch where the signature and positive-complement argument of Layer 4 is unavailable. Prove the component-period-to-height normalization from [C], Theorem 0.3(ii), p. 631 (C line 297), and the quadratic period identity and height conversion in §0.6, pp. 632–633 (C lines 339–370); this is the degree-one endpoint, rather than an application of the d≥2 GSpin signature argument. ([A], §1.1, p. 392, remark preceding Theorem A; the classical input is cited there; A line 38.)
 
-One proof route proves the classical CM elliptic period formula from the quadratic CM period relation, with its exact normalization. Convert to the stable height using the specified unscaled squared metric. Use conjugation invariance to obtain the same value for both types.
+One proof route proves the classical CM elliptic period formula from the quadratic CM period relation, with its exact normalization. Convert to the stable height using the specified unscaled squared metric. Use conjugation invariance to obtain the same value for both types. Theorem 0.5 of [C] alone leaves an ambiguity in ℚ log 2; §0.6 includes the exact elliptic period calculation, including the dyadic contribution.
+
+**Checks.**
+
+- For E=ℚ(i), put R_Γ=Γ(1/4)/Γ(3/4). Then ℓ(0)=−log 4+2 log R_Γ, and the stated unscaled height is −log R_Γ−(1/2)log π. An undetermined rational multiple of log 2 cannot certify this value.
 
 *Needs:* ArakelovGeometryAndAbelianHeights §§3.4–3.5; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10; §0.1 cm class functions and analytic heights; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27.
 
@@ -891,11 +903,15 @@ For F_v=ℚ_p(√p), p odd, the opposite-eigenvalue quotient of a rank-one latti
 
 Prove the following. For every CM E/F of degree 2g there is a totally definite incoherent quaternion algebra 𝔹/A_F admitting A_E→𝔹, with at least two ramified places, no finite place ramified in both E and 𝔹, and a maximal finite adelic order containing Ô_E. Choose finite inert S with g+|S| odd and ≥3: S=∅ for odd g≥3, |S|=1 for even g, and |S|=2 for g=1. Put U=Ô_𝔹×. For each real τ, switching its invariant gives the coherent curve algebra B(τ). ([Y], §1.1–1.2, pp. 536–537; existence is implicit in the deduction of Theorem 1.1; Y line 120.)
 
-One proof route is as follows. Use Chebotarev to choose enough inert primes outside the finite ramification set. Use the local embedding criterion and odd parity to form the incoherent datum. Embed the integral order locally into maximal orders and take their finite adelic product.
+One proof route is as follows. Use Chebotarev Layer 9 for Gal(E/F)≅C₂: its nonidentity Frobenius class has density 1/2, unchanged on removing any prescribed finite set, so choose enough unramified inert primes outside that set. Use the local embedding criterion and odd parity to form the incoherent datum. Embed the integral order locally into maximal orders and take their finite adelic product.
 
 For g=1 two inert finite primes are necessary for this compact setup; containment of Ô_E in the order is stronger than containment of its unit group in a maximal compact.
 
-*Needs:* HilbertModularVarietiesAndShimuraCurves Layer R18.1 (gap:embedded-quaternion-orders); HilbertModularVarietiesAndShimuraCurves §§R18.2.12–R18.2.18; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27.
+**Checks.**
+
+- For E=ℚ(i), the primes 3 and 7 are unramified inert, so S={3,7} gives g+|S|=3. Excluding either prime and any further finite set leaves density 1/2 and permits two replacements. For g=2 one inert prime gives 3; for g=3 the empty set already gives 3.
+
+*Needs:* Chebotarev Layer 9; HilbertModularVarietiesAndShimuraCurves Layer R18.1 (gap:embedded-quaternion-orders); HilbertModularVarietiesAndShimuraCurves §§R18.2.12–R18.2.18; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27.
 
 ### 7.2 Quaternionic CM point and height
 
@@ -915,7 +931,7 @@ The denominator is relative to F; absolute height conventions must be converted 
 
 **Checks.**
 
-- An extension of the field of definition multiplies both degree and denominator by the same amount.
+- In a normalization calculation take relative field degree 3 and arithmetic degree 6 log 2, giving height 2 log 2. A degree-two extension gives numerator 12 log 2 and denominator 6, again 2 log 2; leaving the numerator unchanged instead gives log 2. These numbers test the normalization, without specifying a CM point.
 - When [F:ℚ]>1, replacing the denominator by [F(P_U):ℚ] changes the value by 1/[F:ℚ] and is rejected.
 - For z=i and local section dz the norm is 2, not 1.
 
@@ -945,7 +961,7 @@ For z=i and z=1+i, the Petersson norm of dz is 2. An extension of a CM point fie
 
 ### Dependencies
 
-HilbertModularVarietiesAndShimuraCurves Layer R18.1 (gap:embedded-quaternion-orders); HilbertModularVarietiesAndShimuraCurves §§R18.2.12–R18.2.18; HilbertModularVarietiesAndShimuraCurves §§R18.2.17–R18.2.18 (gap:ramified-quaternionic-bridge); AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27; ShimuraVarieties §§4.1–4.6; GrossZagierAndArithmeticHeights §0a.4; ArakelovGeometryAndAbelianHeights §§1.3, 1.11; AutomorphicBundles §B4.10; ArakelovGeometryAndAbelianHeights §4.7 (gap:ramified-component-determinants); ArakelovGeometryAndAbelianHeights §§4.6–4.8; HilbertModularVarietiesAndShimuraCurves Layer R18.5; PELModuli §§M3.9, M5, M6.9; §5.4 average over nearby types; §6.5 the actual quaternionic graph kernel; §6.4 corrected nearby-height identity.
+Chebotarev Layer 9; HilbertModularVarietiesAndShimuraCurves Layer R18.1 (gap:embedded-quaternion-orders); HilbertModularVarietiesAndShimuraCurves §§R18.2.12–R18.2.18; HilbertModularVarietiesAndShimuraCurves §§R18.2.17–R18.2.18 (gap:ramified-quaternionic-bridge); AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27; ShimuraVarieties §§4.1–4.6; GrossZagierAndArithmeticHeights §0a.4; ArakelovGeometryAndAbelianHeights §§1.3, 1.11; AutomorphicBundles §B4.10; ArakelovGeometryAndAbelianHeights §4.7 (gap:ramified-component-determinants); ArakelovGeometryAndAbelianHeights §§4.6–4.8; HilbertModularVarietiesAndShimuraCurves Layer R18.5; PELModuli §§M3.9, M5, M6.9; §5.4 average over nearby types; §6.5 the actual quaternionic graph kernel; §6.4 corrected nearby-height identity.
 
 ## Layer 8: Quaternionic self-intersection and adjunction
 
@@ -957,7 +973,7 @@ One proof route is as follows. Import the parallel-weight-two analytic derivativ
 
 *Needs:* §7.2 quaternionic cm point and height; GrossZagierAndArithmeticHeights §§0.1, 0.5, 0.9–0.11; GrossZagierAndArithmeticHeights §§2.1, 2.9, 2.14; GrossZagierAndArithmeticHeights §§6.5–6.8, 6.21, 6.25, 6.56, 7.15, 7.65–7.66, 7.77; GrossZagierAndArithmeticHeights §§2.14, 7.28, 7.78.
 
-### 8.3 Height of the quaternionic CM point
+### 8.2 Height of the quaternionic CM point
 
 Prove the following. For the constructed compact maximal-order datum, h_L(P_U)=−(L_f′/L_f)(0,χ_E/F)+(1/2)log(d_𝔹/d_E/F). The value is independent of the chosen CM point and compatible with the integral Hodge-line convention above. ([Y], Theorem 1.7, p. 539; Theorems 9.1 and 9.3, pp. 624–635; Y line 241.)
 
@@ -985,7 +1001,7 @@ One proof route is as follows. Route A: for g≥2 use prime-by-prime error elimi
 
 All types are counted; the logarithmic term has the unscaled-metric sign and factor.
 
-*Needs:* §0.3 average cm character; §4.5 eliminate each bad-prime coefficient; §4.6 the imaginary quadratic average; §7.4 average height from the quaternionic point; §8.3 height of the quaternionic cm point; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10.
+*Needs:* §0.3 average cm character; §4.5 eliminate each bad-prime coefficient; §4.6 the imaginary quadratic average; §7.4 average height from the quaternionic point; §8.2 height of the quaternionic cm point; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10.
 
 ### Examples
 
@@ -993,7 +1009,7 @@ Substitute h_L=−ℓ(0)+(1/2)log(d_𝔹/d_E/F) into the quaternionic bridge: h_
 
 ### Dependencies
 
-§0.3 average cm character; §4.5 eliminate each bad-prime coefficient; §4.6 the imaginary quadratic average; §7.4 average height from the quaternionic point; §8.3 height of the quaternionic cm point; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10.
+§0.3 average cm character; §4.5 eliminate each bad-prime coefficient; §4.6 the imaginary quadratic average; §7.4 average height from the quaternionic point; §8.2 height of the quaternionic cm point; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10.
 
 ## Layer 10: Individual height bounds and distant isogenies
 
@@ -1187,11 +1203,18 @@ For ℚ(i), O_E has covolume 1: 2⁻¹√4=1; the printed discriminant without i
 
 Prove the following. Fix g and the chosen standard Siegel fundamental set F_g. Starting with the order-sensitive CM lattice and principal Riemann form, construct a symplectic period matrix whose coordinate heights, real sizes and reciprocal imaginary determinant are polynomial in D_x. A symplectic integral reduction into F_g preserves a polynomial bound on the algebraic coordinate heights. The reduction input uses h₀(Z)=max(max_ij|z_ij|,1/det Im Z); this analytic size is distinct from algebraic Weil height. Retain e_R=[O_x:R_x] in the product-decomposition isogeny and the hermitian balancing of every repeated block. Only the final polynomial in D_x absorbs these indices. A bound depending just on the maximal algebra discriminant does not control this step. ([PT], Pila–Tsimerman (2013), §3, Lemmas 3.4–3.7, preprint pp. 5–9; PT line 160.)
 
-One proof route is as follows. Balance the positive polarization using a bounded totally imaginary element and the unit action, retaining its multiplier order. For repeated simple factors reduce the hermitian matrix on the full isotypic lattice; glue distinct factors with the center-order index bound. Use the owner’s Siegel reduction matrix estimate polynomial in h₀, together with algebraic height rules for sums, products and inverses. 
+One proof route is as follows. Balance the positive polarization using a bounded totally imaginary element and the unit action, retaining its multiplier order. For repeated simple factors use the quantitative hermitian lattice contract on the full isotypic lattice, retaining the finite index [L:Σ_i Rv_i]; the independent vectors need not give a unimodular R-basis. Glue distinct factors with the center-order index bound. Use the owner’s Siegel reduction matrix estimate polynomial in h₀, together with algebraic height rules for sums, products and inverses.
 
-For the general-lattice index argument use disc R, not the discriminant of the maximal algebra independent of its order.
+For the general-lattice index argument use disc R, not the discriminant of the maximal algebra independent of its order. More precisely, the center-order product decomposition gives a sublattice of polynomial index in the original principally polarized lattice. The restrictions ψ to its isotypic blocks are integral alternating forms with positive determinants bounded by that index squared. On a block L⊂E^r with conjugation-stable acting order R, choose an integral totally imaginary ζ with the CM-type signs making h=ζH_ψ positive definite, where ψ=Tr_E/ℚ H_ψ. The bounded-element argument of [PT], preprint p. 9 (PT lines 353–379), bounds every conjugate of ζ by a power of D_x; since ζ is a nonzero algebraic integer, the norm product also bounds every conjugate of ζ⁻¹ by a power of D_x. Take N=[O_E:R], so Nζ∈R and q=N Tr h is integral on L. In rank 2nr over ℤ, det Gram_L(q)=N^(2nr)|Nm_E/ℚ(ζ)|^r det Gram_L(ψ). Thus |disc R|, N and this determinant, and hence the balancing parameter D, are polynomial in D_x. Apply the independent-vector argument of [PT], Lemma 3.7, preprint p. 9 (PT lines 362–385), with its finite index bounded by the quantitative supplier contract.
 
-*Needs:* §13.2 a bounded basis for cm lattices; §13.1 uniform degree of cm period coordinates; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §2.7 (gap:quantitative-siegel-hermitian-reduction); AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38.
+**Checks.**
+
+- For R=L=ℤ[i], h_m(x,y)=m x̄y and integer m≥1, N=1 gives Gram_L(q)=diag(2m,2m) and determinant 4m². The vector 1 has h_m(1,1)=m and index 1; a rank-only bound fails as m grows.
+- For R=ℤ[i], L=2ℤ[i] and h(x,y)=x̄y, N=1 gives Gram_L(q)=diag(8,8), determinant 64, and v₁=2 has hermitian entry 4 and index [L:Rv₁]=1.
+- In L=ℤ[i] the independent vector 2 instead spans index 4, so independence does not imply unimodularity. With ψ(x,y)=Im(x̄y), ζ=i and H_ψ(x,y)=−i x̄y/2, h=x̄y/2 and q=Re(x̄y); det Gram(q)=1=|Nm(i)| det Gram(ψ). Changing ζ to −i makes q negative definite and violates the positivity hypothesis.
+- In genus one, for an integer M≥1 the matrix ((1,−M),(0,1)) sends Z=M+i to i, with h₀(Z)=√(M²+1) and largest matrix entry M. The matrix ((0,−1),(1,0)) sends Z=i/M to iM, with h₀(Z)=M and largest entry 1. Both have determinant 1; the reduction matrix must account for translations as well as inversion.
+
+*Needs:* §13.2 a bounded basis for cm lattices; §13.1 uniform degree of cm period coordinates; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §2.7 (gap:quantitative-siegel-hermitian-reduction; gap:quantitative-hermitian-lattice-balancing); AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38.
 
 ### 13.4 Polynomial height of CM lifts
 
@@ -1219,7 +1242,7 @@ The safe real-coordinate degree bounds 2(2g)! are 4 for g=1 and 48 for g=2. A si
 
 ### Dependencies
 
-§12.1 the center order of a cm point; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; GeometryOfNumbersAndQuadraticArithmetic §§1.2, 1.5; GeometryOfNumbersAndQuadraticArithmetic §2.7 (gap:quantitative-siegel-hermitian-reduction); GlobalNumberFields Layer 11; `NumberField.exists_ideal_in_class_of_norm_le`; GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3; HeightsRationalPointsAndObstructions §§0.11–0.13, 0.16; §12.5 galois-orbit bound for every cm point.
+§12.1 the center order of a cm point; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; GeometryOfNumbersAndQuadraticArithmetic §§1.2, 1.5; GeometryOfNumbersAndQuadraticArithmetic §2.7 (gap:quantitative-siegel-hermitian-reduction; gap:quantitative-hermitian-lattice-balancing); GlobalNumberFields Layer 11; `NumberField.exists_ideal_in_class_of_norm_le`; GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3; HeightsRationalPointsAndObstructions §§0.11–0.13, 0.16; §12.5 galois-orbit bound for every cm point.
 
 ## Downstream consumers
 
@@ -1243,7 +1266,7 @@ Let E=ℚ(i,√2), a biquadratic CM field. Its four types are choices in its two
 
 ### Integral unit image is smaller than maximal compact
 
-For a ramified quadratic local field E_v/F_v, v_E(F_v×)=2Z. The class of an E_v-uniformizer has order two in E_v×/F_v× and is compact. It cannot be represented by a unit, since changing its representative by F_v× preserves odd valuation. The CM integral level uses the image of O_E,v×, excluding this class. It therefore cannot be defined as every compact element of the quotient.
+For a ramified quadratic local field E_v/F_v, v_E(F_v×)=2Z. The quotient E_v×/F_v× is compact, and its further quotient by the integral-unit image is ℤ/2ℤ via valuation. Every E_v-uniformizer maps to the nonzero class and cannot be represented by a unit, since multiplication by F_v× preserves odd valuation. A uniformizer need not have order two in E_v×/F_v×: for π=√3(1+√3) in ℚ₃(√3), π²=12+6√3∉ℚ₃, although π² lies in ℚ₃×O_E,v×. The CM integral level uses the image of O_E,v×, excluding this class. It therefore cannot be defined as every compact element of the quotient.
 
 ### Ramified embedding quotients require a determinant comparison
 
@@ -1279,4 +1302,4 @@ Square-bracket keys refer to the legally available editions below. Each claim al
 - [PT] Jonathan Pila; Jacob Tsimerman, [The André–Oort conjecture for the moduli space of Abelian surfaces](https://arxiv.org/pdf/1106.4023v1), arXiv:1106.4023v1, preprint pagination; Compositio 149 (2013), 204–216 edition identified but not collated. Locators used in the build: Lemma 3.2, preprint p. 4; §3, preprint pp. 3–9; Pila–Tsimerman (2013), Lemmas 3.2–3.3, preprint pp. 3–5; Pila–Tsimerman (2013), §3, Lemmas 3.4–3.7, preprint pp. 5–9; Theorem 3.1, preprint pp. 3–9.
 - [PT14] Jonathan Pila; Jacob Tsimerman, [Ax–Lindemann for A_g](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf), Annals 179 (2014), 659–681. Locators used in the build: Conjecture 7.1, p. 673; Lemma 7.4 and proof, p. 675.
 - [MZ] David Masser; Umberto Zannier, [Abelian varieties isogenous to no Jacobian](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf), Annals 191 (2020), 635–674, public supplemental article PDF. Locators used in the build: §5.4, p. 667.
-- [C] Pierre Colmez, [Périodes des variétés abéliennes à multiplication complexe](https://webusers.imj-prg.fr/~pierre.colmez/artin.pdf), Annals 138 (1993), 625–683; author-hosted scan. Locators used in the build: Component generators, p. 630; Theorem 0.3(i)–(ii), p. 631; Theorem 0.3, p. 631; Conjecture 0.4, p. 632.
+- [C] Pierre Colmez, [Périodes des variétés abéliennes à multiplication complexe](https://webusers.imj-prg.fr/~pierre.colmez/artin.pdf), Annals 138 (1993), 625–683; author-hosted scan. Locators used in the build: Component generators, p. 630; Theorem 0.3(i)–(ii), p. 631; Theorem 0.3, p. 631; Conjecture 0.4, p. 632; §0.6, pp. 632–633, exact quadratic period identity and height conversion.

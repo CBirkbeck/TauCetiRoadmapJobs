@@ -145,7 +145,7 @@ version_note = "Published pagination in the fetched legal copy."
 [[source]]
 id = "C"
 locator_scheme = "section"
-locator = "Component generators, p. 630; Theorem 0.3(i)–(ii), p. 631; Theorem 0.3, p. 631; Conjecture 0.4, p. 632"
+locator = "Component generators, p. 630; Theorem 0.3(i)–(ii), p. 631; Theorem 0.3, p. 631; Conjecture 0.4, p. 632; §0.6, pp. 632–633, exact quadratic period identity and height conversion"
 url = "https://webusers.imj-prg.fr/~pierre.colmez/artin.pdf"
 fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/artin.pdf"
 fetched_at = "2026-10-24T07:48:56Z"
@@ -153,7 +153,7 @@ sha256 = "58bfe161fbcdb8605c9c2fe50bbd390404376388db1133a0c5d53714e8125f01"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Layer 0"]
+cited_for = ["Layer 0", "Layer 4.6"]
 authors = "Pierre Colmez"
 title = "Périodes des variétés abéliennes à multiplication complexe"
 year = 1993
