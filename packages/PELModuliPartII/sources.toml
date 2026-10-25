@@ -152,7 +152,7 @@ title = "Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma"
 year = 2016
 arxiv = "1611.06520v2"
 locator_scheme = "theorem"
-locator = "Definitions 2.2, 2.7–2.8, 2.11, Proposition 2.12; Theorems 3.1, 3.3, Lemma 3.9, Corollary 3.10; Part III: Lemma 11.2, Definitions 11.6–11.9, Proposition 12.3"
+locator = "Definitions 2.2, 2.7–2.8, 2.11, Proposition 2.12; Theorems 3.1, 3.3, Lemma 3.9, Corollary 3.10; Part III: Lemma 11.2, Definitions 11.6–11.9, Proposition 12.11"
 url = "https://arxiv.org/abs/1611.06520v2"
 fetched_from = "https://arxiv.org/pdf/1611.06520v2"
 fetched_at = "2026-10-25T20:51:23Z"
@@ -280,7 +280,7 @@ title = "Period Spaces for p-divisible Groups"
 year = 1996
 venue = "Annals of Mathematics Studies 141, Princeton University Press"
 locator_scheme = "theorem"
-locator = "Theorem 2.16; Definition 3.21, Theorem 3.25; §§6.13–6.16; Lemma 6.28, Corollary 6.29, Theorems 6.24, 6.27, 6.30"
+locator = "Theorem 2.16; Propositions 2.34–2.37; Definition 3.21, Theorem 3.25; §§6.13–6.16; Theorem 6.23; Lemma 6.28, Corollary 6.29, Theorems 6.24, 6.27, 6.30"
 url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/Rapoport_Period%20spaces.pdf"
 fetched_from = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/Rapoport_Period%20spaces.pdf"
 fetched_at = "2026-10-25T21:08:28Z"
@@ -290,3 +290,19 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "author-hosted scan of the Princeton book; locators use the printed page numbers"
 cited_for = ["U0", "U9"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, chapter Morphisms of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "0B3H, 0C4M, 0C4N, 01WN, 0BCL"
+url = "https://stacks.math.columbia.edu/tag/0892"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=0892"
+fetched_at = "2026-10-25T22:48:34Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["U7/localized-smoothness", "U8/smooth-geometry-tangent"]
