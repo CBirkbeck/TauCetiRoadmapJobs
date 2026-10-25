@@ -1629,20 +1629,20 @@
   {
     "slug": "squarefree-base-change-signs",
     "supplier": "GL2AutomorphicRepresentationsAndTransfer",
-    "section": "R16.3.2, R16.3.5, R16.3.6 and R16.4.6",
-    "needs": "For every weight-two squarefree trivial-character newform, give the split/inert/ramified base-change sign table (split +1, inert special ± unramified-quadratic twist −1, ramified special −1, ramified nontrivial unramified-quadratic special twist +1, infinity −1), the elliptic multiplicative dictionary and squarefree exclusion of CM."
+    "section": "R16.3.2",
+    "needs": "For a quadratic étale algebra K_q over ℚ_q, q odd, and μ an unramified character with μ²=1, give the root number ε(1/2, BC_(K_q)(St⊗μ)) as +1 when K_q is split, −1 when K_q is the unramified field, and −μ(q) when K_q is ramified, independently of the additive character, and the archimedean root number −1 of the weight-two discrete series after base change to ℂ."
   },
   {
     "slug": "gl2-rational-kummer",
     "supplier": "SelmerIwasawaCohomology",
     "section": "2.12a, 4.9 and 4.26",
-    "needs": "Extend the canonical abelian Kummer and Bloch–Kato comparison to every coefficient component of A_f, identifying the rational Selmer cokernel with the corresponding rational Tate module of Sha, proving rational local vanishing away from p and compatibility at p with point logarithms and finite coefficient extension."
+    "needs": "Extend the canonical abelian Kummer and Bloch–Kato comparison to every coefficient component of A_f, identifying the rational Selmer cokernel with the corresponding rational Tate module of Sha, proving rational local vanishing away from p and compatibility with finite coefficient extension."
   },
   {
     "slug": "quadratic-abelian-sha",
     "supplier": "SelmerIwasawaCohomology",
     "section": "2.12a and 4.28",
-    "needs": "For every abelian variety A over a number field and quadratic extension K, supply the isogeny A × A^D → Res_(K/F) A of degree a power of two, the rational ± point and Selmer decompositions, and invariance of entire Sha finiteness under this isogeny with its finite two-primary restriction/corestriction errors retained."
+    "needs": "For every abelian variety A over a number field and quadratic extension K, supply the isogeny A × A^D → Res_(K/F) A of degree a power of two and the rational ± point and Selmer decompositions, with the finite two-primary restriction/corestriction errors retained."
   },
   {
     "slug": "ordinary-root-number-parity",
@@ -1669,12 +1669,6 @@
     "needs": "Extend characteristic divisors and faithful coefficient comparison to the completed maximal-unramified coefficient DVR and prove that, for finitely generated O[[T]]-modules, a torsion characteristic ideal contained in (T) after inverting p or positive Λ-rank forces positive O-rank of X/TX, while finite pseudo-null modules contribute no T-divisor."
   },
   {
-    "slug": "ordinary-wan-fitting",
-    "supplier": "AutomorphicCongruences",
-    "section": "Layer 2: ordinary Rankin–Selberg reverse divisibility (required interface)",
-    "needs": "Supply the published ordinary Wan fixed-weight imprimitive two-variable Fitting bound after inverting p with residual irreducibility over G_K, a nonsplit q∥N, the κ ≥ 6 even branch divisible by 2(p−1), the specified Γ_K-factorizing avatar, and all exceptional-prime and normality arguments needed for specialization."
-  },
-  {
     "slug": "wan-period-dictionary",
     "supplier": "GrossZagierAndArithmeticHeights",
     "section": "9.22",
@@ -1684,7 +1678,7 @@
     "slug": "gl2-full-forward",
     "supplier": "HeegnerPointEulerSystems",
     "section": "7.11–7.12",
-    "needs": "For weight-two trivial-character GL₂-type modular factors and their quadratic twists, prove that analytic order r ∈ {0,1} for a conjugate newform gives Mordell–Weil rank d r and finite entire Sha, and bridge the maximal-endomorphism-order and non-CM realization hypotheses of the RM descent to A_f and its Hodge/quaternionic realization without a squarefree restriction on the twist."
+    "needs": "For every weight-two trivial-character newform g of any positive level, including the primitive newforms of nonsquarefree quadratic twists f⊗χ_D, prove that L(g,1)≠0 implies finiteness of the entire Sha(A_g/ℚ), and that ord₁L(g,s)=1 implies rank_ℤ A_g(ℚ)=[M_g:ℚ] and finiteness of the entire Sha(A_g/ℚ), transferring the maximal-endomorphism-order and non-CM realization hypotheses of the RM descent to A_g and its Hodge or quaternionic realization."
   },
   {
     "slug": "gl2-analytic-products",
