@@ -16,6 +16,8 @@ The following headline theorems are not statable at the pins with a few simple d
   relative infinite gerbe and fpqc torsor groupoid carriers.
 * The root Picard square quotient and signed adelic equivalence lack the root Picard stack,
   its degree components and the completed-lattice gluing functor.
+* Rational DM perverse descent and proper quasi-finite intermediate-extension comparison lack
+  the native DM constructible derived category and its perverse heart.
 * Symmetric lisse lines across collisions and their multiplication lack the root symmetric-power
   stack and its adic lisse coefficient category.
 * Exterior-power cohomology of root symmetric powers lacks stack étale cohomology with these

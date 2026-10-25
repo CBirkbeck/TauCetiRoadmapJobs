@@ -208,7 +208,7 @@ sha256 = "700e0b09f2320912b75f5a16968c5aa3f96a0ad74e3ca375aacedec7e85d296c"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Worked examples", "§4.1–4.12", "§5.1–5.23", "§6.1–6.12", "§7.1–7.25", "§8.1–8.13", "§9.1–9.18", "§10.1–10.26", "§10.28–10.29", "§10.31"]
+cited_for = ["Worked examples", "§4.1–4.12", "§5.1–5.23", "§6.1–6.12", "§7.1–7.25", "§8.1–8.13", "§9.1–9.18", "§10.1–10.26", "§10.28–10.29", "§10.31", "§7.29"]
 authors = "Zhiwei Yun and Wei Zhang"
 title = "Shtukas and the Taylor expansion of L-functions (II)"
 year = 2019
@@ -454,7 +454,7 @@ title = "Revetements etales et groupe fondamental (SGA 1)"
 year = 2004
 arxiv = "math/0206203v2"
 locator_scheme = "section"
-locator = "Recomposed annotated arXiv:math/0206203v2, Exposé X, Corollaire 2.10; Exposé XI, Proposition 1.1, printed p.285"
+locator = "Recomposed annotated arXiv:math/0206203v2, Exposé X, Lemme 2.10, printed p.274 (recomposed p.210), SGA1 line 8303; Corollaire 2.11, SGA1 line 8308; Exposé XI, Proposition 1.1, printed p.285 (recomposed p.219), SGA1 line 8606"
 url = "https://arxiv.org/abs/math/0206203v2"
 fetched_from = "https://arxiv.org/pdf/math/0206203v2"
 fetched_at = "2026-10-24T19:12:15Z"
@@ -463,7 +463,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v2"
-cited_for = ["Layer 8 The scheme projective-space input", "§8.10"]
+cited_for = ["Exact supplier contracts: gap:normal-proper-hyperplane-covers", "Layer 8 The scheme projective-space input", "§8.10"]
 
 [[source]]
 id = "ACV01"
@@ -481,7 +481,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v1"
-cited_for = ["§7.27–7.28", "§8.11–8.12"]
+cited_for = ["§7.27–7.28", "§8.11–8.12", "§7.29"]
 
 [[source]]
 id = "StacksLisse"
@@ -610,3 +610,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["§2.17"]
+
+[[source]]
+id = "LO-P"
+authors = "Yves Laszlo, Martin Olsson"
+title = "Perverse sheaves on Artin stacks"
+year = 2006
+arxiv = "math/0606175v1"
+locator_scheme = "theorem"
+locator = "arXiv:math/0606175v1, Lemma 4.1 and Theorem 4.2, p.6; Section 6 and Lemma 6.2, pp.9–10; Proposition 7.1, pp.10–11; Section 8, pp.11–12"
+url = "https://arxiv.org/abs/math/0606175v1"
+fetched_from = "https://arxiv.org/pdf/math/0606175v1"
+fetched_at = "2026-10-25T14:28:23Z"
+sha256 = "9f3fe1f38d25746516064ac957c9e6f30c339e364396edd603d5b49383ad6738"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["§7.29"]

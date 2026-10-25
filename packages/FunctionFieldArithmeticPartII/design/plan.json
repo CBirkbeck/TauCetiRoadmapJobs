@@ -42244,6 +42244,12 @@
     "needs": "Make coherent universe enlargement on the essential image compatible with invertible sheaves, their sections, tensor product and pullback.",
     "supplier": "AlgebraicVectorBundles",
     "section": "L0A–L0B"
+  },
+  {
+    "slug": "normal-proper-hyperplane-covers",
+    "needs": "For every algebraically closed field k, proper normal irreducible k-scheme X, morphism g:X→ℙʳ_k with dim g(X)≥2 and hyperplane H, prove that Y=X×_(ℙʳ)H is connected and π₁(Y)→π₁(X) is surjective, equivalently every connected finite étale cover of X pulls back to a connected cover of Y (SGA1 Exposé X, Lemme 2.10 and Corollaire 2.11).",
+    "supplier": "EtaleCohomologyFoundations",
+    "section": "F.0.2"
   }
 ],
   "restructure": [
