@@ -15,7 +15,7 @@ sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["D7/residue-fields-of-finite-universal-homeomorphisms", "D7/plus-sheaf-mod-p-comparison", "D7/universal-homeomorphism-invariance", "D7/perfect-scheme-v-sheaf", "D7/minimal-point-lemma", "D7/perfect-scheme-full-faithfulness", "D10/lfft-generic-fibre-comparison", "D10/power-bounded-functions-theorem", "D10/classical-specialization-compatibility", "D10/maximal-diamond-open", "D10/generic-fibre-density", "D10/specialization-triple-full-faithfulness", "D10/formal-full-faithfulness", "D10/uniqueness-of-integral-models"]
+cited_for = ["D7/residue-fields-of-finite-universal-homeomorphisms", "D7/plus-sheaf-mod-p-comparison", "D7/universal-homeomorphism-invariance", "D7/perfect-scheme-v-sheaf", "D7/minimal-point-lemma", "D7/perfect-scheme-full-faithfulness", "D10/lfft-generic-fibre-comparison", "D10/classical-specialization-compatibility", "D10/maximal-diamond-open", "D10/generic-fibre-density", "D10/specialization-triple-full-faithfulness", "D10/formal-full-faithfulness", "D10/uniqueness-of-integral-models"]
 version_note = "Authors' copy dated 27 March 2020; cited printed pages are PDF pages minus 10."
 
 [[source]]
@@ -70,7 +70,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Citations use arXiv v1 (18 November 2017); Corollary 6.6 is distinguished from the adic-morphism Corollary 6.5."
-cited_for = ["D10/power-bounded-functions-theorem", "D10/generic-fibre-density", "D10/specialization-triple-full-faithfulness"]
+cited_for = ["D10/generic-fibre-density", "D10/specialization-triple-full-faithfulness"]
 
 [[source]]
 id = "DJ95"
@@ -86,7 +86,7 @@ sha256 = "7295b9cb11cb2fed09c139738f71d3983199373d7bf91e21f4278e9c0954cb7d"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["D10/lfft-generic-fibre-comparison", "D10/generic-fibre-of-normal-is-normal", "D10/power-bounded-functions-theorem", "D10/classical-specialization-compatibility", "D11/normal-formal-scheme-components"]
+cited_for = ["D10/lfft-generic-fibre-comparison", "D10/generic-fibre-of-normal-is-normal", "D10/complete-local-generic-fibre-connectedness", "D10/classical-specialization-compatibility", "D11/normal-formal-scheme-components"]
 version_note = "Numdam journal copy; printed pages are PDF pages plus 3."
 
 [[source]]
