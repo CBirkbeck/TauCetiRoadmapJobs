@@ -1,0 +1,358 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DrinfeldModulesAndTModulesPartII"
+
+[[source]]
+id = "ND21"
+locator_scheme = "theorem"
+locator = "§1.2, pp. 2–3; Theorems A, B, D and Corollary C, pp. 3–4; §2, pp. 5–14; §3, pp. 14–16; §4, pp. 16–18; §5, pp. 18–22; §6, Lemma 6.1, Theorem 6.2 and Remark 6.3, pp. 22–24."
+url = "https://hal.science/hal-03298790v1/document"
+fetched_from = "https://hal.science/hal-03298790v1/document"
+fetched_at = "2026-10-25T04:42:52Z"
+sha256 = "3141c9337b19447ee970498d30fd10cdcdb6333bb54f8a264440adf3ec513096"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MZ.0/index", "MZ.0/power-sum", "MZ.0/multiple-zeta-value", "MZ.0/mzv-nonvanishing", "MZ.0/weight-spaces", "MZ.0/index-families", "MZ.0/counting-sequences", "MZ.0/counting", "MZ.1/chen-coefficient", "MZ.1/chen-product", "MZ.1/power-sum-products", "MZ.2/binary-relation", "MZ.2/fundamental-relation", "MZ.2/todd-operators", "MZ.2/c-of-fundamental", "MZ.2/reduction-step", "MZ.2/admissible-reduction", "MZ.2/brown-spanning", "MZ.2/next-weight-relation", "MZ.3/anderson-thakur-polynomials", "MZ.3/anderson-thakur-interpolation", "MZ.3/deformation-series", "MZ.3/deformation-entire", "MZ.3/deformation-specialisation", "MZ.3/index-dual-motive", "MZ.3/mz-property-values", "MZ.3/prefix-system", "MZ.3/independence-criterion", "MZ.3/eulerian-tails", "MZ.4/monic-frobenius-descent", "MZ.4/two-row-system", "MZ.5/small-entry-independence", "MZ.5/thakur-basis-small-weight", "MZ.5/q-indivisible-independence", "MZ.5/theorem-d"]
+authors = "Tuan Ngo Dac"
+title = "On Zagier–Hoffman's conjectures in positive characteristic"
+year = 2021
+version_note = "HAL hal-03298790v1 (manuscript dated 29 March 2021, 26 printed pages after the HAL cover); Annals of Mathematics 194 (2021), no. 1, 361–392, doi:10.4007/annals.2021.194.1.6. Locators are the printed manuscript pages."
+doi = "10.4007/annals.2021.194.1.6"
+
+[[source]]
+id = "CCM23"
+authors = "Chieh-Yu Chang, Yen-Tsung Chen, Yoshinori Mishiba"
+title = "On Thakur's basis conjecture for multiple zeta values in positive characteristic"
+year = 2022
+arxiv = "2205.09929v2"
+locator_scheme = "theorem"
+locator = "§1.2, pp. 2–4; §§2.1–2.3, pp. 6–10; §§3.1–3.2, pp. 10–12; §§4.1–4.3, pp. 13–21; §§5.1–5.4, pp. 22–26; Appendix A.1–A.3, pp. 26–31."
+url = "https://arxiv.org/abs/2205.09929v2"
+fetched_from = "https://arxiv.org/pdf/2205.09929v2"
+fetched_at = "2026-10-25T04:42:56Z"
+sha256 = "05e1f6d6b1ef37068f73709928a9dcc7a0e50874aced170f0c92e07f0cd7413b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:2205.09929v2 (11 July 2022, 32 pages); Forum of Mathematics, Pi 11 (2023), e26, doi:10.1017/fmp.2023.26 (the published version numbers statements by section: arXiv Theorem 1.2.4 = published Theorem 1.5, Theorem 5.4.2 = Theorem 5.3)."
+cited_for = ["MZ.0/index", "MZ.0/power-sum", "MZ.0/multiple-zeta-value", "MZ.0/carlitz-multiple-polylogarithm", "MZ.0/carlitz-identity", "MZ.0/index-families", "MZ.0/counting-sequences", "MZ.0/counting", "MZ.0/zeta-q-minus-one", "MZ.0/eulerian", "MZ.1/chen-coefficient", "MZ.1/chen-product", "MZ.1/index-algebra", "MZ.1/realisation-maps", "MZ.1/realisations-multiplicative", "MZ.1/value-algebras", "MZ.1/period-power-in-weight-space", "MZ.2/binary-relation", "MZ.2/fundamental-relation", "MZ.2/todd-operators", "MZ.2/brown-spanning", "MZ.2/value-bridge", "MZ.2/rewriting-operator", "MZ.2/rewriting-theorem", "MZ.2/ind-spanning", "MZ.3/deformation-series", "MZ.3/deformation-entire", "MZ.3/deformation-specialisation", "MZ.3/chang-descent", "MZ.3/prefix-system", "MZ.3/independence-criterion", "MZ.3/eulerian-tails", "MZ.4/frobenius-system", "MZ.4/monic-frobenius-descent", "MZ.4/theta-degree-bound", "MZ.4/key-lemma", "MZ.4/solution-space-dimension", "MZ.5/cmpl-ind-basis", "MZ.5/thakur-basis-theorem", "MZ.5/all-relations", "MZ.5/v-adic-bound"]
+doi = "10.1017/fmp.2023.26"
+
+[[source]]
+id = "IKLNDP24"
+authors = "Bo-Hae Im, Hojin Kim, Khac Nhuan Le, Tuan Ngo Dac, Lan Huong Pham"
+title = "Zagier-Hoffman's conjectures in positive characteristic"
+year = 2022
+arxiv = "2205.07165v2"
+locator_scheme = "theorem"
+locator = "§§0.2–0.3, pp. 3–5; §§1.1–1.4, pp. 7–25; §§2.1–2.2, pp. 26–29; Theorem 2.4, Remark 2.5 and proof, pp. 29–33; §§3.1–3.3, pp. 33–42; §§4.1–4.3, pp. 43–58."
+url = "https://arxiv.org/abs/2205.07165v2"
+fetched_from = "https://arxiv.org/pdf/2205.07165v2"
+fetched_at = "2026-10-25T04:43:03Z"
+sha256 = "74a40b2e45b54760765247a010811d278e48f0b30f361bf3d9ca8cb92fd4b43e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:2205.07165v2 (10 June 2024, 60 pages); Forum of Mathematics, Pi 12 (2024), doi:10.1017/fmp.2024.18 (the published version numbers the introduction as §1, so its section numbers are one more than the preprint's: arXiv Theorem 3.4 = published Theorem 4.4)."
+cited_for = ["MZ.0/index", "MZ.0/power-sum", "MZ.0/multiple-zeta-value", "MZ.0/alternating-mzv", "MZ.0/mzv-nonvanishing", "MZ.0/carlitz-multiple-polylogarithm", "MZ.0/carlitz-identity", "MZ.0/weight-spaces", "MZ.0/index-families", "MZ.0/counting-sequences", "MZ.0/counting", "MZ.0/zeta-q-minus-one", "MZ.0/eulerian", "MZ.1/chen-coefficient", "MZ.1/chen-product", "MZ.1/power-sum-products", "MZ.1/value-algebras", "MZ.1/period-power-in-weight-space", "MZ.2/binary-relation", "MZ.2/fundamental-relation", "MZ.2/todd-operators", "MZ.2/c-of-fundamental", "MZ.2/reduction-step", "MZ.2/admissible-reduction", "MZ.2/brown-spanning", "MZ.2/value-bridge", "MZ.2/strong-brown", "MZ.2/next-weight-relation", "MZ.3/anderson-thakur-polynomials", "MZ.3/deformation-series", "MZ.3/deformation-specialisation", "MZ.3/index-dual-motive", "MZ.3/mz-property-values", "MZ.3/chang-descent", "MZ.3/prefix-system", "MZ.3/independence-criterion", "MZ.3/eulerian-tails", "MZ.4/frobenius-system", "MZ.4/monic-frobenius-descent", "MZ.4/theta-degree-bound", "MZ.4/twisted-system-solutions", "MZ.5/thakur-basis-theorem", "MZ.5/character-splitting", "MZ.5/acmpl-period-relations", "MZ.5/hoffman-basis", "MZ.5/amzv-dimension", "MZ.5/mzv-lower-bound-cmpl", "MZ.5/amzv-small-weight-bounds"]
+doi = "10.1017/fmp.2024.18"
+
+[[source]]
+id = "IKLNDP-NOTE"
+locator_scheme = "theorem"
+locator = "Propositions 1.3–1.4 and Theorems 1.5–1.6, pp. 3–4; §3.2, p. 12 (bijection); §4.1, pp. 12–14; §§5.1–5.8, pp. 15–29 (the ranges used here)"
+url = "https://hal.science/hal-04240841v3/document"
+fetched_from = "https://hal.science/hal-04240841v3/document"
+fetched_at = "2026-10-25T04:43:04Z"
+sha256 = "d84f1b57e59a5806b2255ca7c368efd6d091eec88e4f0ba3cdf0cb59e03656cf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MZ.5/amzv-small-weight-bounds"]
+authors = "Bo-Hae Im, Hojin Kim, Khac Nhuan Le, Tuan Ngo Dac and Lan Huong Pham"
+title = "Note on linear independence of alternating multiple zeta values in positive characteristic"
+year = 2024
+version_note = "HAL hal-04240841v3 (30 July 2024); Acta Mathematica Vietnamica 49 (2024), 485–521, doi:10.1007/s40306-024-00554-4. Locators are the printed pages of the HAL version."
+doi = "10.1007/s40306-024-00554-4"
+
+[[source]]
+id = "CHANG14"
+authors = "Chieh-Yu Chang"
+title = "Linear independence of monomials of multizeta values in positive characteristic"
+year = 2012
+venue = "Compositio Math. 150 (2014) 1789-1808"
+doi = "10.1112/S0010437X1400743X"
+arxiv = "1207.2326v4"
+locator_scheme = "theorem"
+locator = "§5.1, Definitions 5.1.1 and 5.1.3, Remark 5.1.4, p. 13; Remark 5.1.5, p. 13; §2.2, p. 5; Corollary 2.3.3 and Corollary 5.5.5, pp. 6 and 19; Theorem 5.5.1, p. 18; Lemma 5.3.1, (5.3.2), p. 14; Lemma 5.3.1 and its proof, pp. 14–15; Lemma 5.3.5, p. 16; Theorem 5.5.2, (5.5.3), p. 18; Definition 3.4.1 and Proposition 3.4.4, pp. 8–9; Proposition 5.4.1 and its proof, pp. 16–17; Theorem 3.4.5, p. 9, with proof in §§4.1–4.2, pp. 9–12; Proposition 4.3.1, p. 12; Theorem 2.2.1, p. 5; Theorem 5.4.3, p. 17; Corollary 5.5.5, p. 19"
+url = "https://arxiv.org/abs/1207.2326v4"
+fetched_from = "https://arxiv.org/pdf/1207.2326v4"
+fetched_at = "2026-10-25T04:43:08Z"
+sha256 = "d2a8138a6d45dc8f826a60f1c24528342cdb7a8fb3f2bc90d0f2a7db9955ddcc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1207.2326 (20 pages); Compositio Mathematica 150 (2014), 1789–1808."
+cited_for = ["MZ.0/carlitz-multiple-polylogarithm", "MZ.0/cmpl-nonvanishing", "MZ.0/weight-spaces", "MZ.0/eulerian", "MZ.3/anderson-thakur-polynomials", "MZ.3/anderson-thakur-interpolation", "MZ.3/deformation-series", "MZ.3/deformation-entire", "MZ.3/deformation-specialisation", "MZ.3/mz-property", "MZ.3/mz-property-values", "MZ.3/chang-descent"]
+
+[[source]]
+id = "CPY19"
+authors = "Chieh-Yu Chang, Matthew A. Papanikolas, Jing Yu"
+title = "An effective criterion for Eulerian multizeta values in positive characteristic"
+year = 2014
+venue = "J. Eur. Math. Soc. 21 (2019), no. 2, 405-440"
+doi = "10.4171/JEMS/840"
+arxiv = "1411.0124v2"
+locator_scheme = "theorem"
+locator = "Proposition 2.3.3, p. 7"
+url = "https://arxiv.org/abs/1411.0124v2"
+fetched_from = "https://arxiv.org/pdf/1411.0124v2"
+fetched_at = "2026-10-25T04:43:14Z"
+sha256 = "029b57501d8b37f292557044ab2789b30435ab0c8e4b6d739284ee94ec7c5549"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1411.0124 (32 pages); Journal of the European Mathematical Society 21 (2019), 405–440."
+cited_for = ["MZ.3/deformation-specialisation"]
+
+[[source]]
+id = "THAKUR09R"
+locator_scheme = "theorem"
+locator = "Theorem 5, §2.7.7, p. 2326, and its proof, §3.4.6, p. 2332"
+url = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/imrnrelation.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/imrnrelation.pdf"
+fetched_at = "2026-10-25T04:43:16Z"
+sha256 = "f330b56bd817c1057fb0f7558a8d265dd328618063209d5aa7a2e4789021ce51"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MZ.2/fundamental-relation"]
+authors = "Dinesh S. Thakur"
+title = "Relations between multizeta values for F_q[t]"
+year = 2009
+version_note = "International Mathematics Research Notices 2009, no. 12, 2318–2346 (author's copy); doi:10.1093/imrn/rnp018."
+doi = "10.1093/imrn/rnp018"
+
+[[source]]
+id = "THAKUR10"
+locator_scheme = "theorem"
+locator = "Theorem 3, p. 1978; Theorem 3(ii)–(iii), p. 1978"
+url = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/shufflepub.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/shufflepub.pdf"
+fetched_at = "2026-10-25T04:43:17Z"
+sha256 = "68507ceb78c64fb3ebd94ab2d3b6842a08555745c0d540aaf94f97372d1690a4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MZ.1/realisations-multiplicative", "MZ.1/power-sum-products", "MZ.1/value-algebras"]
+authors = "Dinesh S. Thakur"
+title = "Shuffle relations for function field multizeta values"
+year = 2010
+version_note = "International Mathematics Research Notices 2010, no. 11, 1973–1980 (author's copy); doi:10.1093/imrn/rnp202. The higher-depth induction is corrected in the author's updates list."
+doi = "10.1093/imrn/rnp202"
+
+[[source]]
+id = "THAKUR09P"
+locator_scheme = "theorem"
+locator = "Theorem 4 and its proof, §5.2, p. 542; Theorems 1–2, §4, pp. 540–541"
+url = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/ffafinal.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/ffafinal.pdf"
+fetched_at = "2026-10-25T04:43:19Z"
+sha256 = "d31f4a4be1e6cb1aaf9bdc574070066b1057f043df3ec437cd71784c0933168f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MZ.0/mzv-nonvanishing"]
+authors = "Dinesh S. Thakur"
+title = "Power sums with applications to multizeta and zeta zero distribution for F_q[t]"
+year = 2009
+version_note = "Finite Fields and Their Applications 15 (2009), 534–552 (author's copy); doi:10.1016/j.ffa.2009.04.002."
+doi = "10.1016/j.ffa.2009.04.002"
+
+[[source]]
+id = "CH21"
+authors = "Yen-Tsung Chen, Ryotaro Harada"
+title = "On lower bounds of the dimensions of multizeta values in positive characteristic"
+year = 2020
+venue = "Doc. Math. (26), 537-559 (2021)"
+doi = "10.25537/dm.2021v26.537-559"
+arxiv = "2012.00340v1"
+locator_scheme = "theorem"
+locator = "§2.4, Proposition 2.12, p. 13"
+url = "https://arxiv.org/abs/2012.00340v1"
+fetched_from = "https://arxiv.org/pdf/2012.00340v1"
+fetched_at = "2026-10-25T04:43:22Z"
+sha256 = "d46a2414f9e6865a8c75a333423ee913feb03a8d38c93ec43c4864ac75c36047"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:2012.00340; Documenta Mathematica 26 (2021), 537–559."
+cited_for = ["MZ.3/anderson-thakur-interpolation", "MZ.3/deformation-specialisation"]
+
+[[source]]
+id = "LRT14"
+authors = "José Alejandro Lara Rodríguez, Dinesh S. Thakur"
+title = "Zeta-like Multizeta Values for $\\mathbb{F}_q[t]$"
+year = 2013
+arxiv = "1312.4928v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1(2), p. 3"
+url = "https://arxiv.org/abs/1312.4928v1"
+fetched_from = "https://arxiv.org/pdf/1312.4928v1"
+fetched_at = "2026-10-25T04:43:28Z"
+sha256 = "a888fa8024f85fb75b8e58305033ddc733b6e99758d0649e745ea1c7085e8937"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1312.4928; Indian Journal of Pure and Applied Mathematics 45 (2014), 787–801."
+cited_for = ["MZ.2/fundamental-relation", "MZ.2/next-weight-relation"]
+
+[[source]]
+id = "PAP08"
+authors = "Matthew A. Papanikolas"
+title = "Tannakian duality for Anderson-Drinfeld motives and algebraic independence of Carlitz logarithms"
+year = 2005
+venue = "Invent. Math. 171 (2008) 123-174"
+doi = "10.1007/s00222-007-0073-y"
+arxiv = "math/0506078v2"
+locator_scheme = "theorem"
+locator = "§4.1.6, p. 22 (uniqueness of rigid analytic trivialisations), consulted for the DM.8 interface"
+url = "https://arxiv.org/abs/math/0506078v2"
+fetched_from = "https://arxiv.org/pdf/math/0506078v2"
+fetched_at = "2026-10-25T04:43:35Z"
+sha256 = "6b5d3436da4d309fa77de77d23a0ed1781ee7fe90c544e55a229ef5cae026cf3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:math/0506078v2; Inventiones Mathematicae 171 (2008), 123–174."
+cited_for = []
+
+[[source]]
+id = "ABP04"
+authors = "Greg W. Anderson, W. Dale Brownawell, Matthew A. Papanikolas"
+title = "Determination of the algebraic relations among special Gamma-values in positive characteristic"
+year = 2002
+venue = "Ann. of Math. (2) 160 (2004), 237-313"
+doi = "10.4007/annals.2004.160.237"
+arxiv = "math/0207168v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.1 statement and §3.1.2 (Ω and π̃), consulted for the DM.8 interface; Proposition 3.1.3, pp. 9–10 (entire-ness from a Tate solution)"
+url = "https://arxiv.org/abs/math/0207168v1"
+fetched_from = "https://arxiv.org/pdf/math/0207168v1"
+fetched_at = "2026-10-25T04:43:41Z"
+sha256 = "a22c328ea63a1d2d43309bc125b5f377c88d853ff0f1b21039fba14b924ff8c2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:math/0207168; Annals of Mathematics 160 (2004), 237–313."
+cited_for = []
+
+[[source]]
+id = "THAKUR-UPDATES"
+locator_scheme = "theorem"
+locator = "Entry 36, pp. 7–8"
+url = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/updates.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/updates.pdf"
+fetched_at = "2026-10-25T04:43:42Z"
+sha256 = "99e77414203a4fa724484acaaea3189173898be3af8d55ef2f8d64945f2095a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MZ.1/power-sum-products"]
+authors = "Dinesh S. Thakur"
+title = "Corrections and updates to publications"
+year = 2026
+version_note = "Author’s continuously maintained corrections list; downloaded 19 October 2026, 12 pages."
+
+[[source]]
+id = "CM21"
+authors = "Chieh-Yu Chang and Yoshinori Mishiba"
+title = "On a conjecture of Furusho over function fields"
+year = 2021
+arxiv = "1710.10849v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.2"
+url = "https://arxiv.org/abs/1710.10849v2"
+fetched_from = "https://arxiv.org/pdf/1710.10849v2"
+fetched_at = "2026-10-25T04:47:51Z"
+sha256 = "a9dd1501235bc1ad904d781769c9432fe9d68702b7dee57b0e6be855c289b7f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1710.10849v2; Theorem 1.2.2 is linear specialisation, not multiplicativity."
+cited_for = ["MZ.5/v-adic-bound"]
+doi = "10.1007/s00222-020-00988-1"
+
+[[source]]
+id = "AT09"
+authors = "Greg W Anderson, Dinesh S Thakur"
+title = "Multizeta values for F_q[t], their period interpretation and relations between them"
+year = 2009
+arxiv = "0902.1180v1"
+locator_scheme = "theorem"
+locator = "2.4.1"
+url = "https://arxiv.org/abs/0902.1180v1"
+fetched_from = "https://arxiv.org/pdf/0902.1180v1"
+fetched_at = "2026-10-25T04:49:13Z"
+sha256 = "6e8d1fe28f9cf2aca03b50592ffa7d59ce2080ddc64098b9af3f95a405976cda"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:0902.1180v1; cite the numbering of the version read, §2.4.1."
+cited_for = ["MZ.3/anderson-thakur-interpolation"]
+doi = "10.1093/imrp/rnp010"
+
+[[source]]
+id = "SHEATS98"
+authors = "Jeffrey T. Sheats"
+title = "The Riemann Hypothesis for the Goss zeta function for F_q[T]"
+year = 1998
+arxiv = "math/9801158v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.4 and §2, inequalities (2.7)–(2.8), pp. 6–9"
+url = "https://arxiv.org/abs/math/9801158v1"
+fetched_from = "https://arxiv.org/pdf/math/9801158v1"
+fetched_at = "2026-10-25T04:51:50Z"
+sha256 = "27086f1f6fe4089b4c7a6acd36f57f88c05800f9c1d95f6145ec5d5b4f9f8e47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:math/9801158v1; OCR extraction, whose page-count diagnostic is inconsistent with its 40-page text; locators refer to the numbered extraction."
+cited_for = ["MZ.0/mzv-nonvanishing"]
+doi = "10.1006/jnth.1998.2232"
+
+[[source]]
+id = "CCM-ALG"
+authors = "Chieh-Yu Chang, Yen-Tsung Chen, Yoshinori Mishiba"
+title = "Algebra structure of multiple zeta values in positive characteristic"
+year = 2020
+arxiv = "2007.08264v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.2.2–1.2.3, pp. 3–4"
+url = "https://arxiv.org/abs/2007.08264v1"
+fetched_from = "https://arxiv.org/pdf/2007.08264v1"
+fetched_at = "2026-10-25T04:52:07Z"
+sha256 = "afdd7b1656ada0eb70e1c5b5c9f10d0a70bfd67408f920c0fb2778b20e907b19"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:2007.08264v1; algebra structure and multiplicative specialisation are Theorem 1.2.3."
+cited_for = ["5.14"]
+
+[[source]]
+id = "AT90"
+locator_scheme = "equation"
+locator = "(3.7.3)–(3.7.4)"
+url = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/AT.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/dinesh-thakur/AT.pdf"
+fetched_at = "2026-10-25T04:52:17Z"
+sha256 = "563d646a80c5f1ab832aeac06ff0efab0bdf41901e2cdceac3377916dd514871"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.1–3.2"]
+authors = "Greg W. Anderson and Dinesh S. Thakur"
+title = "Tensor powers of the Carlitz module and zeta values"
+year = 1990
+doi = "10.2307/1971503"
+version_note = "Author-hosted copy of Annals of Mathematics 132 (1990), pp. 159–191; (3.7.3)–(3.7.4), printed p. 186."
