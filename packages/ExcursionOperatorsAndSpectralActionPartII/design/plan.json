@@ -2068,92 +2068,79 @@
     }
   ],
   "gaps": [
-    {
-      "id": "G1",
-      "title": "Harmonic-analysis continuation has no addressable layers yet",
-      "neededBy": [
-        "ExcursionOperatorsAndSpectralActionPartII:SC0/stable-center",
-        "ExcursionOperatorsAndSpectralActionPartII:SC0/very-stable-center",
-        "ExcursionOperatorsAndSpectralActionPartII:SC0/stability-algebra",
-        "ExcursionOperatorsAndSpectralActionPartII:SC0/very-stability-criterion",
-        "ExcursionOperatorsAndSpectralActionPartII:SC0/stable-tempered-faithfulness",
-        "ExcursionOperatorsAndSpectralActionPartII:SC1/self-hecke-character-operator",
-        "ExcursionOperatorsAndSpectralActionPartII:SC1/hecke-modulo-induction",
-        "ExcursionOperatorsAndSpectralActionPartII:SC2/character-averaging",
-        "ExcursionOperatorsAndSpectralActionPartII:SC3/cuspidal-pairing-limit",
-        "ExcursionOperatorsAndSpectralActionPartII:SC3/fargues-scholze-stability",
-        "ExcursionOperatorsAndSpectralActionPartII:SC4/atomic-stable-character",
-        "ExcursionOperatorsAndSpectralActionPartII:SC5/kernel-inclusion",
-        "ExcursionOperatorsAndSpectralActionPartII:SC6/character-transfer",
-        "ExcursionOperatorsAndSpectralActionPartII:SC6/matching-test-functions"
-      ],
-      "detail": "The accepted PAPER-HANSEN-26 route 2 assigns this input to SmoothRepresentationsCharactersPartII, but no roadmap definition, packet nodes or reserved stage IDs exist at the design audit. Required: the comparison of the existing categorical Bernstein center with essentially compact invariant distributions, faithful evaluation and the convolution/inversion pairing; irreducible-character independence and the finite-length K_0 character dictionary; Kazhdan density/null-function criterion; Arthur decompositions I(G)=direct sum_M I(M)_cusp^W and D_temp(G)=direct sum_M D_ell(M)^W with stable versions; D_ind=kernel of elliptic restriction and injectivity on D_ell; center preservation of these splittings and Hansen Lemma 2.1; unstable functions exactly those annihilated by SD_temp; stable delta_1; stable projection P_st agreeing with the finite elliptic average (Varma Lemma 3.4.5 as cited in Hansen p. 11); Harish-Chandra discriminant-weighted local character and orbital-integral bounds, cuspidal Weyl integration and compact orbital supports; stable tempered inner transfer with elliptic isomorphism, irrelevant-Levi vanishing and induction/Weyl compatibility, normalized by e(G). Hansen §2.1 and §§2.3–2.4, pp. 4–6 and 10–13, identify the interface. These are imported obligations, not new nodes here, and no fictitious stage identifier is used.",
-      "slug": "stable-character-harmonic-analysis",
-      "needs": "Over every finite extension of ℚ_p and for every connected reductive group with complex coefficients, provide the faithful essentially compact distribution realization of the Bernstein centre with inversion and convolution pairing, independence of irreducible characters and its finite-length K₀ comparison, Kazhdan density, the dual ordinary and stable Arthur decompositions with central invariance of the ordinary cuspidal and elliptic summands, the proper-induction kernel of elliptic restriction, separation of unstable functions by stable tempered characters, stability of δ₁, the stable tempered projection agreeing with finite elliptic averaging, bounded weighted elliptic orbital integrals with compact torus support, and sign-normalized stable inner transfer compatible with relevant induction and annihilating irrelevant Levi summands.",
-      "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "Character-theory continuation of §§SR.3.1–SR.3.3"
-    },
-    {
-      "id": "G2",
-      "title": "HKW continuation and the shriek character interface need supplier layers",
-      "neededBy": [
-        "ExcursionOperatorsAndSpectralActionPartII:SC1/self-hecke-character-operator",
-        "ExcursionOperatorsAndSpectralActionPartII:SC1/hecke-modulo-induction",
-        "ExcursionOperatorsAndSpectralActionPartII:SC1/inner-hecke-character-operators",
-        "ExcursionOperatorsAndSpectralActionPartII:SC1/stable-inner-hecke-formula",
-        "ExcursionOperatorsAndSpectralActionPartII:SC2/weight-averaging-kernel",
-        "ExcursionOperatorsAndSpectralActionPartII:SC2/character-averaging",
-        "ExcursionOperatorsAndSpectralActionPartII:SC5/kernel-inclusion"
-      ],
-      "detail": "The accepted PAPER-HANSEN-26 route 3 assigns the geometric/trace input to HeckeStacksAndLocalShtukasKottwitzPartII; there are no defined or reserved stage IDs. Required for all dominant mu and basic b: bounded finite-length cohomology and the HKW elliptic character sum for the actual shriek functors i_1^*T_(V_mu dual)i_(b!) and i_b^*T_(V_mu)i_(1!), with sign e(G)e(G_b); inv[b] from HKW Definition 3.2.2, pp. 14–15, uniqueness from Remark 3.2.5, p. 15, and supported-weight existence from Fu Lemma 4.2.7, p. 25. HKW Proposition 6.4.5 and Definition 6.4.6, pp. 61–62, state Mant with (i_b)_*, whereas Hansen uses (i_b)_!. The supplier must prove the adapted formula by the documented Verdier-duality/inversion and representation-duality comparisons, tracking sign, cohomological shifts and the reverse invariant. A global equality of star and shriek extensions is not an acceptable substitute. No refined LLC hypothesis from HKW Theorem 6.5.1 is imported into Theorem 6.5.2.",
-      "slug": "all-weight-shriek-trace",
-      "needs": "For every dominant μ and basic b∈B(G,μ), provide bounded finite-length cohomology and the elliptic character sum for the actual functors i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the invariant inv[b], supported-weight existence and uniqueness, Kottwitz sign e(G)e(G_b), and the explicit basic-label, modification-direction, Verdier-duality, inversion and representation-duality comparisons to its normalized Hecke convention and to HKW's star-extension Mant functor.",
-      "supplier": "HeckeStacksAndLocalShtukas",
-      "section": "Trace continuation of §§HS3.8 and HS3.10"
-    },
-    {
-      "id": "G3",
-      "title": "Regular-packet atomicity under the exact corollary hypotheses remains unverified",
-      "neededBy": [
-        "ExcursionOperatorsAndSpectralActionPartII:SC4/regular-supercuspidal-packet"
-      ],
-      "detail": "Hansen Corollary 1.3, p. 2, uses full atomic stability of the Kaletha regular supercuspidal packet sum assuming only tame splitting and p not dividing |W_G|. The inspected FKS arXiv:2106.09120v2 §4.3, p. 20, also assumes characteristic zero and convergence of the exponential map on the positive-depth Lie algebra; a sufficient bound is p >= (2+e)n. Its §4.4 retains those assumptions and Theorem 4.4.4, p. 26, states stability/endoscopy, not arbitrary-coefficient support minimality. Read the 2023 version of record or a subsequent primary source to verify whether the extra convergence condition was removed, and supply the atomicity argument under exactly Hansen’s hypotheses. Publisher full text was not obtained in this run. This is an unresolved source/supplier check, not a finding that the published corollary is false. The conditional implication from an atomic packet sum is already fully planned, and the main stability and inner-form theorems are independent of this gap.",
-      "slug": "regular-supercuspidal-atomicity",
-      "needs": "For every tamely split connected reductive E-group with p prime to the absolute Weyl-group order, provide all nonempty Kaletha L-packets of regular supercuspidal parameters as finite sets of pairwise nonisomorphic irreducibles and prove that each character sum is support minimal among nonzero stable combinations with arbitrary complex coefficients.",
-      "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "Regular-packet continuation of §SR.3.3"
-    },
-    {
-      "slug": "normalized-spectral-levi",
-      "needs": "For every rational Levi inclusion over E, provide the centre restriction and constant-term pairing for normalized induction and its compatibility with the common geometric spectral action, with the half-modulus and cyclotomic corrections cancelling to ordinary dual-Levi restriction.",
-      "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "§SR.2.2 and §SR.3.2, normalized spectral restriction"
-    },
-    {
-      "slug": "geometric-spectral-centre",
-      "needs": "Specialize the abstract excursion centre map of LanglandsParameterStacks LP2e.15 to the actual lisse geometric Hecke action, restrict it to each basic smooth stratum to obtain Ψ_G, and provide its Hecke-compatible common spectral action, basic-inner identification and continuous semisimple parameter assignment on irreducibles with invariant-coordinate evaluation equal to the scalar central action.",
-      "supplier": "HeckeStacksAndLocalShtukas",
-      "section": "HS1, geometric specialization of LanglandsParameterStacks LP2e.15"
-    },
-    {
-      "slug": "elliptic-torus-representatives",
-      "needs": "In the setting of §§1.3–1.16, provide finiteness of rational maximal-torus conjugacy types and of rational conjugacy classes of geometrically conjugate embeddings of a fixed torus, and matching of every strongly regular elliptic inner-form element with an elliptic element of its quasi-split form.",
-      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "§§1.3–1.16, elliptic tori and inner matching"
-    },
-    {
-      "slug": "stable-orbital-inversion-duality",
-      "needs": "In §§2.1, 2.4 and 2.11, provide invariance of U(G) under inversion and of the Weyl discriminant under stable conjugacy, and the sign-normalized identity Θ(f*)=Trans_G(Θ)(f) for matching functions and the stable tempered transfer of the character-theory contract.",
-      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "§§2.1, 2.4 and 2.11, inversion and stable duality"
-    },
-    {
-      "slug": "basic-weight-invariant-fibres",
-      "needs": "Refine §§1.11, 1.23 and 1.36 by proving that each basic b lies in B(G,μ) for some dominant μ, that 1∈B(G,μ) exactly when V_μ is trivial on Z(Ĝ)^Γ, and that the torus Kottwitz isomorphism identifies the stable-class invariant fibre at 1 with ker(X_*(T_g)_Γ→π₁(G)_Γ), integrally with torsion.",
-      "supplier": "BunGAndNewtonStrata",
-      "section": "§§1.11, 1.23 and 1.36, basic weight fibres"
-    }
-  ],
+  {
+    "slug": "bernstein-distribution-realization",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.3.2",
+    "needs": "In §SR.3.2, identify the categorical Bernstein centre faithfully with essentially compact invariant distributions, with inversion and the convolution pairing fixed in Conventions (H26, §1.1 and Lemma 2.3, pp. 1–2 and 6; H26 line 32 and line 283)."
+  },
+  {
+    "slug": "normalized-bernstein-levi",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.3.2, normalized induction and constant terms",
+    "needs": "For every E-rational Levi M of G, provide the Bernstein-centre restriction r_M:Z(G)→Z(M), with z·i_M^G(Θ)=i_M^G(r_M(z)·Θ) and (z∗f)_M=r_M(z)∗f_M in I(M), for normalized induction and constant terms (H26, §2.1, pp. 4–5; H26 line 192 and line 207)."
+  },
+  {
+    "slug": "all-weight-shriek-trace",
+    "supplier": "HeckeStacksAndLocalShtukas",
+    "section": "Trace continuation of §§HS3.8 and HS3.10",
+    "needs": "For dominant μ and basic b∈B(G,μ), prove bounded finite-length cohomology and the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190)."
+  },
+  {
+    "slug": "elliptic-torus-representatives",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§§1.3–1.16, maximal tori",
+    "needs": "For every connected reductive G over E/ℚ_p finite, provide finiteness of the set of G(E)-conjugacy classes of maximal E-tori of G (HKW22, Lemma 3.1.1 and proof, pp. 12–13; HKW22 line 577)."
+  },
+  {
+    "slug": "stable-orbital-inversion-duality",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§§2.1, 2.4 and 2.11, inversion and stable duality",
+    "needs": "In §§2.1, 2.4 and 2.11, provide invariance of U(G) under inversion and of the Weyl discriminant under stable conjugacy, and the sign-normalized identity Θ(f*)=Trans_G(Θ)(f) for matching functions and the stable tempered transfer of gap:stable-inner-character-transfer."
+  },
+  {
+    "slug": "basic-weight-invariant-fibres",
+    "supplier": "BunGAndNewtonStrata",
+    "section": "§§1.18–1.19, 1.24 and 1.36, basic Levi lifts and invariant fibres",
+    "needs": "Identify HKW's inv[1] with the stable-class invariant of EndoscopicTransferAndUnitaryTraceComparison §1.14 under B(T)≃X_*(T)_Γ (§1.36) and its §1.2(a), integrally with torsion; for strongly regular elliptic g and basic b∈B(G,μ), prove existence and uniqueness of the rational class [g_b] for each weight λ occurring in V_μ with inv[b](g,g_b)=λ in B(T_g); for quasi-split G*, basic b∈B(G*) and every E-rational Levi M of G*_b, provide a standard Levi M* of G* and basic b_M∈B(M*) mapping to b, with M≃(M*)_(b_M), compatibly with their spectral-centre identifications (§§1.18–1.19, 1.24; HKW22 line 631 and line 649; FU25 line 955; H26 line 116 and line 566)."
+  },
+  {
+    "slug": "kazhdan-cuspidal-decomposition",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§2.16",
+    "needs": "For every connected reductive G/E, identify the common kernels of irreducible characters, tempered characters, regular orbital integrals and conjugation commutators, and split I(G) as cuspidal classes plus the annihilator of D_ell(G) (H26, §2.1, pp. 4–5; H26 line 181 and line 240)."
+  },
+  {
+    "slug": "arthur-stable-decompositions",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§2.16",
+    "needs": "For every connected reductive G/E, supply the dual Arthur decompositions (1)–(3), the proper-induction kernel of elliptic restriction, its injectivity on D_ell(G), and central invariance of the ordinary cuspidal, noncuspidal and elliptic summands (H26, Lemma 2.1, pp. 5–6; H26 line 209, line 223 and line 244)."
+  },
+  {
+    "slug": "unstable-tempered-separation",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§§2.4 and 2.11",
+    "needs": "For every connected reductive G/E, prove that U(G) is the simultaneous annihilator of SD_temp(G), and that δ₁ is a stable distribution (H26, §2.1 and Lemma 2.3, p. 6; H26 line 266 and line 286)."
+  },
+  {
+    "slug": "stable-tempered-projection",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§2.16",
+    "needs": "For every connected reductive G/E, provide a projection P_st:D_temp(G)→SD_temp(G) whose elliptic restriction is finite arithmetic averaging over rational classes in each stable class (H26, §2.1 and Lemma 2.6, pp. 6 and 10–11; H26 line 262 and line 501)."
+  },
+  {
+    "slug": "bounded-elliptic-orbital-integrals",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§§2.1 and 2.16",
+    "needs": "For every f∈H(G) and maximal E-torus T, prove boundedness of |D_G(t)|^(1/2)O_t(f) on the strongly regular elliptic locus of T(E) and compactness of its support closure in T(E) (H26, §2.3, p. 10; H26 line 486)."
+  },
+  {
+    "slug": "stable-inner-character-transfer",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§§1.6, 1.13, 2.11 and 2.16",
+    "needs": "For each extended pure inner form G of quasi-split G*, provide stable tempered character transfer with elliptic value e(G)Θ(g*), its elliptic isomorphism, compatibility with induction from relevant Levis, and vanishing on irrelevant Levi summands (H26, §2.4, pp. 12–13; H26 line 586 and line 594)."
+  }
+],
   "restructure": [
     {
       "action": "create-supplier-continuation",

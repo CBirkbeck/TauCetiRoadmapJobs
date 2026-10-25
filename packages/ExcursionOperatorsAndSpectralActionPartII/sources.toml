@@ -26,7 +26,7 @@ title = "Geometrization of the local Langlands correspondence"
 year = 2021
 arxiv = "2102.13459v4"
 locator_scheme = "section"
-locator = "§I.9, pp. 34–35: Definition I.9.2, Proposition I.9.3, Conjecture I.9.5 and the separate following stable-center expectation"
+locator = "§I.9, pp. 34–35: Propositions I.9.1 and I.9.3, Definition I.9.2, Conjecture I.9.5 and the separate following stable-center expectation; §IX.4, Definition/Proposition IX.4.1, p. 327; §IX.5, Proposition IX.5.1 and Theorem IX.5.2, pp. 327–329; §IX.7.1, Theorem IX.7.2, pp. 334–335; §IX.7.2, Corollary IX.7.3, pp. 337–338"
 url = "https://arxiv.org/abs/2102.13459v4"
 fetched_from = "https://arxiv.org/pdf/2102.13459v4"
 fetched_at = "2026-10-24T22:55:28Z"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v4"
-cited_for = ["Scope and ownership"]
+cited_for = ["Scope and ownership", "Layer 0.0"]
 
 [[source]]
 id = "FKS21v2"
@@ -54,7 +54,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Locators refer to arXiv:2106.09120v2 (3 September 2021), not the 2023 Duke version of record; the preprint and publication are one work and one source key."
-cited_for = ["Layer 4.4"]
+cited_for = ["Layer 4.3 conditional consequence", "Source issues"]
 
 [[source]]
 id = "H26"
