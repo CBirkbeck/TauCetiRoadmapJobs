@@ -1,1693 +1,1336 @@
-# Complex Shimura varieties and canonical models, Part II: integral reduction and Frobenius classes
+# Roadmap: shimura varieties, part II — integral reduction and common Frobenius classes
 
-This continuation connects the canonical Shimura tower to integral reduction and to a rational conjugacy-quotient class for geometric Frobenius. It imports the normalized interior model, develops its canonical tensors and corrected local geometry, constructs abelian-type descent with conjugated levels, and proves ordinary special lifting and same-residue-field curve comparison. Generic local models, tensor displays and companion theorems remain explicit supplier contracts. Independent Honda–Tate classification, mod-p uniformization, orthogonal cycles and cohomology directions receive separate ownership proposals.
+**Summary.** This continuation of ShimuraVarieties builds normalized Hodge integral models from the canonical generic tower and Siegel moduli, constructs their tensor realizations and corrected local geometry, and descends to abelian-type parahoric models. It proves ordinary special lifting and curve comparison over the original residue field, culminating in Kisin–Zhou's rational common geometric-Frobenius point in the conjugacy quotient. The integral-model existence theorem covers every abelian-type datum at p>2 and every connected parahoric, including ramified primes; the common-class endpoint has the strongly acceptable, very-special hypotheses of KZ Theorem 5.1.4.
 
-This is a target-level design, not an implementation. Every target below has implementation status unchecked. All eight layers are planned; the 27 exact supplier contracts remain open, so no layer is labelled closed. The full dependency graph and machine-readable route audit accompany this reader in the packet.
+## Scope and ownership
 
-## Scope and conventions
+ShimuraVarieties §§4.5, 5.6, 6.3–6.7 and 8.1 supply toric reciprocity, CM potential good reduction, generic connected descent and canonical towers. This Part II begins at integral normalization and reduction, where that roadmap stops. PELModuli §§M4.5–M4.6 and M6 supply the Siegel integral models and universal abelian schemes. This roadmap owns the normalization of their Hodge closure; ShimuraCompactifications Layer C6 owns compactification geometry, with its integral component-specialization extension stated as a gap below.
 
-The endpoint is Kisin–Zhou Theorem 5.1.4: for a strongly acceptable triple and a special-fibre F_q-point, the exact geometric q-Frobenius determines one point of Conj(G)(Q), compatible with every ℓ≠p. The general abelian-type integral-model construction has a wider range than that endpoint. General Honda–Tate classification, all-isogeny-class CM lifts, arithmetic gerbs, Langlands–Rapoport, nearby cycles, orthogonal special divisors and automorphic cohomology have the separate owners listed below. The existing RG3.5 abelian-variety application imports this geometric theorem; it is not a prerequisite.
+FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII TD.2 owns very-goodness; TD.4 owns versal adapted deformations and general integral tensor frames; TD.6 owns ordinary adapted p-divisible lifts. Here the retained variants are their Shimura point comparison, normalization-branch identification and global special lift. ReductiveGroupsPartII RG2.3 owns fixers, connected parahorics and Lang's theorem. GeometricSatakeAndFusionPartII LM.3, LM.5 and LM.7 own integral local models and same-field Schubert curves. IgusaVarietiesAndTorsionConcentration Layers IG.0 and IG.2 own PEL Newton strata; the strata here apply to normalized Hodge models and agree in their common hyperspecial Siegel case.
 
-Fix an odd prime p, an embedding into Q_p-bar, and a place v of the reflex field E. Write O_E for its local ring, k_E for its residue field, k for an algebraic closure, L=Frac W(k), and σ for Witt Frobenius. Finite fields F_q are finite extensions of k_E with the chosen embedding. All tensor isomorphisms respect their coefficient fields. All local-model statements use the actual stated parahoric and Hodge embedding.
+ReductiveGroupsPartIII RG3.0–RG3.3 owns the conjugacy quotient, character separation, finite faithful quotient maps, number-field descent and arithmetic tori. Its RG3.5 targets auxiliary-hodge-embedding and common-frobenius-class, and the consumers of KZ Proposition 6.2.4 through Theorem 6.2.7, require a downstream owner after this roadmap; that ownership decision is outside this package. They cannot simultaneously be a supplied part of ReductiveGroupsPartIII and a consumer used to certify its supply direction here. The only RG3 inputs below are the individually declared upstream gaps. General Honda–Tate classification, mod-p uniformization and orthogonal cycles are outside this continuation.
 
-Notation translation is essential: KZ writes its script G for the connected parahoric and tilde G for the full fixer; KP and KPZ write script G for the full fixer and script G° for the connected parahoric. Here these are G^fix and G°. A very-special point becomes special after base change to the completed maximal unramified field. A good lattice embedding and a very-good tensor-compatible embedding are separate certificates. Very-good means the precise first-order tensor-compatible trivialization of the corrected display theory, not simply closed immersion or smoothness of the group.
+The pinned Tau Ceti abelian variety and endomorphism ring and Mathlib pointwise isocrystal are imported unchanged. The rank-two multiplier identity is already in Tau Ceti and remains a README Check. Suggested.lean is an acceptance test for headline theorems; its specification calls for no declarations because their Shimura, Newton and local-system carriers are absent at the pins.
 
-A good integral embedding is a closed immersion of the stabilizer into GL(Λ) whose generic representation is minuscule, contains the scalar group, and carries the Hodge cocharacter to the standard one, together with a closed immersion M_loc→Gr(Λ) extending the generic filtration map (KZ Definition 3.1.6, p.19). At a geometric point, use the universal filtration display over the completed local-model ring A_G, its Frobenius-image module M̃₁, and its constant counterpart Ũ₁. Very-good means that the canonical comparison c between these modules over the first-order quotient A_G/(m²+π_E A_G) fixes a tensor family cutting out the stabilizer; equivalently c is an isomorphism of the tensor-frame torsors. This condition is independent of the generating tensor family (KZ §3.2.5, p.23). These are imported local-model/display notions; the GS0 and R07.6 contracts own their general construction.
+## Conventions
 
-Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus. Conditions (D) and (E) are imposed where the component-descent target states them, not on the broader lattice-chain strict-henselian theorem. An abelian-type target uses an auxiliary Hodge cover satisfying these conditions; it does not assert that the target group itself has a very-good Hodge embedding.
+Let p>2, fix embeddings into C and Q̄_p, and take the reflex place induced by the latter. Let k be the algebraic closure of the reflex residue field, W=W(k), L=W[1/p], and σ its p-power Frobenius. All algebraic groups are affine of finite type; reductive means smooth and geometrically connected. Tensor stabilizers are equalities of group functors on every coefficient algebra, including square-zero algebras. Schemes and tensor categories are formed in fixed universes, enlarged together under scalar extension. Neat K^p means sufficiently small compatible prime-to-p level; arbitrary level is treated by the quotient stack.
 
-Use H¹ cohomology, dual to the Tate module. Its Hodge types are (1,0),(0,1); h acts on type (a,b) by z^(−a) zbar^(−b). The scalar cocharacter is the inverse Hodge weight. Geometric q-Frobenius on H¹ has Weil weight one and polarization multiplier q. Local models use {μ_h}; contravariant Dieudonné Newton admissibility uses {μ_h inverse}. Frobenius norms are δσ(δ)…σ^(r−1)(δ), never δ^r without a fixedness hypothesis.
+Write G^fix for the full fixer and G° for its connected parahoric. KZ writes these as G-tilde and G-script; KPZ writes G-script and G-script-degree-zero. Good and very good are the notions of FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII TD.2, imported through gap:ffg-very-good; no extra tensor-display definition is made here. A special Hodge model means the good Hodge normalization with G^fix=G°. Pointwise very-goodness is an extra hypothesis when stated and is a conclusion at ordinary points.
 
-Conj(G) is the affine invariant quotient for conjugation, imported from RG3.0. Its geometric points classify semisimple geometric conjugacy classes. A rational quotient point need not have a rational representative, and rational conjugacy is finer. A residue extension F_q→F_(q^m) replaces Frobenius by its m-th power; a theorem about that power does not settle the original point.
+The corrected global Hodge setup is used only in the targets that explicitly invoke KPZ §7.1.2: K_p=G^fix(Z_p), a facet-generic fixer, R-smooth G_Qp, p not dividing |π₁(G_der,Qp)|, and a globally very-good lattice embedding with Λ contained in its symplectic dual. Condition (D) says that for C=ker(G_sc→G_der), a class of H¹(Q,C) trivial at every finite ℓ≠p is trivial at p. Condition (E) says Z_G is an R-smooth torus. These are auxiliary-cover hypotheses in descent, not hypotheses that an abelian-type target group admits a Hodge embedding (KPZ §§7.1.2, 7.1.10, pp.72,75).
 
-## Baseline and imported interfaces
+Use the tower standard representation V=H₁; the coefficient local system is Isom_tensor(V_Qℓ,T_ℓ(A)⊗Q_ℓ). Its dual is H¹. For a symplectic multiplier c, V∨≅V⊗c⁻¹; thus the H¹ version is either the contragredient or this multiplier twist. Geometric q-Frobenius has multiplier q⁻¹ on H₁ and q on H¹. On H₁ the Hodge types are (−1,0),(0,−1); on H¹ they are (1,0),(0,1), with h(z) acting by z^(−a)zbar^(−b) on type (a,b). Local models use {μ_h} on V. Contravariant D and H¹ use the dual representation, so the Newton bound is written {μ_h inverse}. D(Q_p/Z_p) has F=σ and D(μ_(p∞)) has F=pσ. A tensor is transported to a dual factor by the inverse dual map (KZ §§4.1.7, 4.4.1, 5.1.1, pp.30–31,42,47).
 
-Pins: Tau Ceti f790474821cf4256814db967cb154e7af3d0c369; Mathlib 082e2d37e8b0463410cdb532e111cd43d5a66174. The reviewed ShimuraVarieties audit was read before planning. The current library and current upstream roadmaps were also checked for work newer than the atlas snapshot. No integral Shimura or tensor-family carrier was found. Three exact declarations were read at the pins:
+For an abelian F_q-fibre, π_x denotes its algebraic q-power Frobenius and γ_x=π_x⁻¹ its rational quasi-isogeny acting on H₁ as geometric Frobenius. Its contragredient on H¹ is inverse pullback by γ_x. In the dual crystalline tensor frame write F_D=ρ∨(δ)σ, δ∈G(W(F_q)[1/p]). Then N_r(δ)=δσ(δ)⋯σ^(r−1)(δ), r=[F_q:F_p], is the group norm: its standard realization is γ_x and its dual realization is π_x by pullback on D. For the matrix δ_D=ρ∨(δ), the crystalline norm is ρ∨(N_r(δ)); conflating δ_D with the standard tower matrix reverses the determinant. Neither norm is in general an ordinary r-th power.
 
-- **tauceti:TauCeti.AlgebraicGeometry.AbelianVariety** (TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean): An abelian variety over a field as a proper geometrically integral group scheme; does not supply integral abelian schemes or Shimura models.
-- **tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.End** (TauCeti/AlgebraicGeometry/AbelianVariety/End/Basic.lean): The integral endomorphism ring of a pinned abelian variety, using the Additive wrapper on its categorical endomorphisms; rationalization and tensor constraints are additional inputs.
-- **mathlib:WittVector.Isocrystal** (Mathlib/RingTheory/WittVector/Isocrystal.lean): A module over Frac W(k) with Frobenius-semilinear equivalence for a perfect characteristic-p domain; pointwise coefficient carrier, not G-tensors, families or Newton classification.
+Conj(G) denotes the affine conjugacy quotient of RG3.0 through gap:rg3-conjugacy-quotient. Geometric points classify semisimple geometric classes; rational points need not have rational representatives or distinguish rational conjugacy classes. The polynomial convention is det(T−g); its constant coefficient is (−1)^n det(g). Extending F_q to F_(q^m) replaces Frobenius by its m-th power.
 
-The normalized Hodge interior itself is already planned at ShimuraCompactificationsPartII:C7/normalized-interior-model; Zarhin’s self-dual enlargement is C7/zarhin-self-dual-replacement. They are imports, not duplicate constructions here. A4 supplies Tate/de Rham/Dieudonné objects, Serre–Tate and polarized effectivity through the exact nodes named in the packet; A6 supplies Rosati positivity, Frobenius semisimplicity and abelian torsor twisting. The endpoint imports the exact RG3.0 quotient/character/finite-map nodes and RG3.1 degree-one-residue descent. The ordinary and B(G) notions are exact BG0/BG1 imports, not new definitions of isocrystals or reductive groups.
+**Checks.**
 
-Current upstream ReductiveGroupsPartII already owns Lang’s finite-field and pro-connected-group theorems and connected parahorics. Its README explicitly excludes R-smoothness and the general adjoint association needed below. Those extension requests are recorded separately. Current OrthogonalSpinGroups owns the generic Clifford/Spin structures, and current ProfiniteArithmetic owns its profinite arithmetic foundations. None is re-planned here.
+- On an elliptic H¹, μ_h(z) acts by z⁻¹ on H^(1,0) and by 1 on H^(0,1); on H₁ the weights are z and 1. Its inverse induces Fil¹=H^(1,0) on the contravariant module. In D the ordinary slopes are (0,1), determinant valuation 1, and the supersingular slopes are (1/2,1/2), also determinant valuation 1. Intrinsically for the GL₂ tower, μ_h inverse has determinant exponent −1, ordinary slopes (0,−1) and basic slopes (−1/2,−1/2); κ_G=−1 for both. Evaluating in V∨ reverses the signs.
+- For E:y²=x³+x over F₅, the affine point counts at x=0,1,2,3,4 are 1,0,1,1,0; including infinity gives #E(F₅)=4 and trace 2. The H¹ polynomial is T²−2T+5. Inverting the two roots gives the tower polynomial T²−(2/5)T+1/5; twisting that representation by c⁻¹ multiplies its roots by 5 and restores T²−2T+5. The H₁ and H¹ multipliers are 1/5 and 5.
+- For a Teichmüller unit ζ of order 24 in W(F₂₅), δ=ζ has δσ(δ)=ζ⁶, whereas δ²=ζ². Over F₂₅ the preceding elliptic H¹ polynomial becomes T²+6T+25 and the tower polynomial T²+(6/25)T+1/25.
+- In SL₂(R), rotations through ±π/2 both have trace 0. A conjugator interchanging them anticommutes with the complex structure and has negative determinant, so they are geometrically conjugate but not SL₂(R)-conjugate. The rational quotient forgets that distinction.
 
-The following layer order is a build order. Each target gives its direct prerequisites; exact external nodes are distinguished from stage-level requests in the packet. Proof sketches cite results rather than reproducing source prose.
+## Exact supplier contracts
 
-## SV2.0: Canonical tensors on the integral tower
+From Mathlib at 6b7abb3c7686292736be2955bd3eb9ebf63b456a: `WittVector.Isocrystal` in Mathlib/RingTheory/WittVector/Isocrystal.lean:113 is a module with Frobenius-semilinear equivalence over Frac W(k), with perfect characteristic-p domain hypotheses. It supplies no G-tensors or families and imposes no finite-dimensionality in its class fields.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+From Tau Ceti at a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039: `TauCeti.AlgebraicGeometry.AbelianVariety` in TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean:95 is a proper geometrically integral group object over a field; it has no polarization field. `TauCeti.AlgebraicGeometry.AbelianVariety.End` in TauCeti/AlgebraicGeometry/AbelianVariety/End/Basic.lean:83 is the additive reindexing of categorical endomorphisms with composition as multiplication. `Matrix.transpose_mul_J_mul_eq_det_smul` in TauCeti/LinearAlgebra/Matrix/SymplecticMultiplier.lean:76 gives AᵀJA=det(A)J in rank two over a commutative ring.
 
-**Layer prerequisites:** `AbelianSchemesAndArithmeticModuli:A4`, `AlgebraicModuliForArithmeticGeometry:R09.3`, `AlgebraicModuliForArithmeticGeometry:R09.4`, `AutomorphicBundles:B2`, `BunGAndNewtonStrata:BG0`, `CrystallineCohomology:CR.7`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.2`, `MotivesAndAlgebraicCycles:MC.6`, `PELModuli:M4`, `ReductiveGroupsPartII:RG2.3`, `ShimuraCompactificationsPartII:C7`, `ShimuraVarieties:V8`.
+From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli: §§A4.1, A4.3, A4.8, A4.9 supply the Tate module, de Rham realization, polarized effectivity and Serre–Tate; §§A6.7, A6.20, A6.22 supply finite-rank Hom, finite-field descent and rational quasi-isogenies; §§A6.14, A6.21, A6.28–A6.29 supply Rosati positivity, Frobenius semisimplicity and torsor twists with all realizations.
 
-### Integral Hodge data
+From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry: Layer 6 supplies G-rings, henselian approximation and algebraization; rational local-model points are an additional input when ordinary henselizations are compared.
 
-**Target:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data` (definition). **Planet:** Integral Hodge data.
+From TauCetiRoadmap.ArithmeticGaloisRepresentations: §5.1 supplies auxiliary-prime Chebotarev; §5.13 supplies finite-field function-field Chebotarev and recognition of semisimple lisse representations on smooth open curves by closed-point polynomials.
 
-Fix p>2, a Hodge-type datum (G,X), v|p of E(G,X), and a symplectic embedding with a Z_(p)-lattice Λ. Integral Hodge data consist of a point of the extended building, its full fixer G^fix and connected parahoric G°, a closed lattice realization of the required model, a finite tensor family cutting out that model, and compatible sufficiently small prime-to-p Siegel levels. Record whether the embedding is good or very good; neither adjective is implicit. The associated normal model S is the imported C7 normalization of the Hodge closure, at the actual induced p-level.
+From TauCetiRoadmap.AutomorphicBundles: §§B2.4–B2.7 supply full-group Betti, étale and de Rham coefficients and tensor comparisons, including the Tate line; use the dual representation for H¹.
 
-**Construction/proof.**
-1. KZ specifies the global lattice and tensor setup; KPZ supplies the corrected distinction between good and very good embeddings.
-2. Use the imported normalization, retaining both full-fixer and connected levels as separate data.
+From TauCetiRoadmap.BunGAndNewtonStrata: §§0.5, 0.8 supply point and family G-isocrystals; §1.16 supplies finite-period Frobenius centralizers; §§1.22–1.26 supply dominance detection, acceptability and the ordinary class when it exists; §§1.28–1.29 supply ordinary isogeny and integral conjugacy; §§1.34, 1.37 supply rational-Newton witnesses and torus-special pairs; §2.16 supplies Kottwitz local constancy in families.
 
-**Direct prerequisites:** `ShimuraVarieties:V8`, `PELModuli:M4`, `ReductiveGroupsPartII:RG2.3`, `ShimuraCompactificationsPartII:C7/normalized-interior-model`, `tauceti:TauCeti.AlgebraicGeometry.AbelianVariety`.
+From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory: §R07.2 supplies contravariant Dieudonné theory and its base change, duals and descent, including ordinary elliptic slopes 0 and 1. Its ramification layer is not an adapted-deformation input.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.0/integral-shimura-stack`, `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface`, `ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison`.
+From TauCetiRoadmap.GeometricSatakeAndFusion: Layer GS0 supplies Witt affine-flag Schubert geometry, Bruhat order and Frobenius descent of indices. The finite-type canonical integral model is a separate gap.
 
-**API.**
+From TauCetiRoadmap.HeckeStacksAndLocalShtukas: §HS2 supplies generic local-shtuka period spaces and their universal torsors; the integral completion comparison and full-fixer refinement are gap:integral-local-shimura.
 
-- `IntegralHodgeData.model` (projection): Return S and its generic-fibre identification with Sh_K(G,X).
-- `IntegralHodgeData.levels` (data): Expose G^fix, G°, K_p and their inclusion; translate KZ’s connected G-script to KPZ’s G-script-degree-zero.
-- `IntegralHodgeData.changePrimeToPLevel` (functoriality): Compatible neat levels give the same normalized tower after finite étale pullback.
+From TauCetiRoadmap.MotivesAndAlgebraicCycles: Layer 6 supplies tensor-frame reconstruction and restriction from a tensor stabilizer to the Tannakian group of a generated category, without asserting equality of those two groups.
 
-**Discriminating checks.**
+From TauCetiRoadmap.PadicHodgeTheory: §5.5 supplies the tensor period-torsor invariant comparison, including equality of the integral Kottwitz and Hodge invariants for a crystalline representation with its given tensor fibre functor.
 
-- `IntegralHodgeData.siegel`: For G=GSp and the standard self-dual lattice, the normalized interior agrees with the corresponding Siegel moduli space.
-- `IntegralHodgeData.iwahori`: For a Siegel Iwahori chain the connected model is not relabelled as a hyperspecial stabilizer.
-- `IntegralHodgeData.goodNotVeryGood`: A closed lattice embedding with no tensor-compatible first-order trivialization supplies good data only; the very-good projection is unavailable.
+From TauCetiRoadmap.PELModuli: §§M4.5–M4.6 supply normalized integral Siegel models and changes of p-level; §§M6.1–M6.4 supply finite étale tame level maps and polarized moduli with the universal abelian scheme, including finite-flat polarization kernels when p divides the degree.
 
-**Acceptance:** A parahoric label alone must not certify the tensor-compatible deformation theorem.
+From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology: §RD.3.43 supplies Grothendieck–Katz semicontinuity for convergent F-isocrystals on noetherian perfect-characteristic bases, including singular bases; §RD.5.116 supplies the relative Zarhin enlargement and its principal polarization.
 
-**Source:** KZ, §4.1.2–4.1.7, pp.29–31; KPZ §7.1.2, p.72.
+From TauCetiRoadmap.ReductiveGroupsPartII: §RG2.0 supplies local point topology and closures; §RG2.1 supplies valued roots; §RG2.3 supplies full fixers, connected parahorics, central-surjection association, split-kernel exactness and Lang for connected smooth finite-field groups and the specified pro-connected inverse systems. The R-smooth and arbitrary-adjoint extensions are separate gaps.
 
-### Integral Shimura stacks
+From TauCetiRoadmap.SchemeAndStackFoundations: §§1.17–1.23 supply quotients, algebraic stacks, quotient-stack presentations, inertia and descent; Layer 3 here proves effectiveness for the specific arithmetic Δ-action, whose pro-level kernel need not be finite.
 
-**Target:** `ShimuraVarietiesPartII:SV2.0/integral-shimura-stack` (construction). **Planet:** Integral Shimura stack.
+From TauCetiRoadmap.ShimuraData: Layers 1 and 4 supply Mumford–Tate groups and Hodge/abelian-type data with connected lifts; the refined auxiliary cover is gap:hodge-cover-refinement.
 
-For a possibly non-neat K^p, choose neat normal K_1^p inside it and form the quotient stack [S_(K_p K_1^p)/(K^p/K_1^p)]. Comparison through a common neat normal subgroup makes this independent up to canonical equivalence. The generic fibre is the Shimura stack, and the construction carries the compatible prime-to-p Hecke action. A coarse quotient is not substituted for this stack.
+From TauCetiRoadmap.ShimuraVarieties: §4.5 supplies torus reciprocity at the reflex place; §5.6 supplies CM potential good reduction; §§6.3–6.6 supply generic component groups, star-products and central-isogeny descent; §8.1 supplies the canonical generic tower with right adelic action.
 
-**Construction/proof.**
-1. KZ permits arbitrary prime-to-p level by taking a quotient of a neat model.
-2. Pull the normalized models to a common finite étale level and apply quotient-stack descent.
+From TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties: §§5.1–5.2 supply the Néron–Ogg–Shafarevich criterion for excellent DVRs used to force good reduction from the full tame-level system.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `AlgebraicModuliForArithmeticGeometry:R09.4`, `AlgebraicModuliForArithmeticGeometry:R09.3`.
+From TauCetiRoadmap.IgusaVarietiesAndTorsionConcentration: Layers IG.0 and IG.2 supply the PEL Newton-stratum comparison in the hyperspecial Siegel Check.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.7/intrinsic-tower-local-system`.
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-very-good): TD.2/very-good. For a good integral Hodge embedding at a geometric local-model point in odd residue characteristic, supply tensor preservation by the canonical first-order display comparison, invariant under change of cutting tensor family.
 
-**API.**
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-versal): TD.4/versal-adapted. For a marked p-divisible group over an algebraically closed field of characteristic p>2 and an embedding very good at its local-model point, supply the normal versal adapted deformation ring with its integral-point criterion and tensor-compatible universal display, including the p-adic completeness and logarithmic-tail argument.
 
-- `IntegralShimuraStack.neatComparison` (equivalence): At neat K^p the stack is represented by the imported normal scheme S_K.
-- `IntegralShimuraStack.refine` (functoriality): A normal refinement realizes the forgetful map as the corresponding finite étale quotient-stack cover.
-- `IntegralShimuraStack.hecke` (functoriality): Prime-to-p right translations compose with the tower convention and commute with generic-fibre restriction.
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-integral-tensors): TD.4/crystalline-tensor-integrality; TD.4/integral-tensor-frame. For the prescribed smooth full-fixer tensor stabilizer and a crystalline lift over a finite totally ramified extension of Frac W(k), supply integral Dieudonné and Witt tensor frames and the cocharacter filtration, without a very-goodness hypothesis.
 
-**Discriminating checks.**
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-nonexceptional): TD.3/nonexceptional-embedding. For a local Hodge pair with neither quaternionic D nor type A of division index divisible by p, supply the very-good symplectic integral embedding under its R-smoothness and central hypotheses.
 
-- `IntegralShimuraStack.trivialQuotient`: For K_1^p=K^p neat, quotient by the trivial group returns S_K.
-- `IntegralShimuraStack.inertia`: An automorphism of a polarized abelian point preserving the level occurs in its stack inertia.
-- `IntegralShimuraStack.refinementSquare`: Two neat normal refinements give equivalent quotients via their intersection, including inertia, not just equal coarse point sets.
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-exceptional): TD.3/D-central-cover; TD.3/A-central-cover. Supply the very-good central-cover constructions in types D and exceptional A at p>2, with the exact smooth-intersection and centre hypotheses and without torsion-free coinvariants in the exceptional type-A case.
 
-**Acceptance:** Stabilizers at non-neat points remain visible.
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-polarized-chain): TD.3/polarized-chain. For the symplectic lattice data of the auxiliary Hodge covers, supply a self-dual periodic chain with the stated very-good tensor embedding and correct induced fixer.
 
-**Source:** KZ, §4.1.1 and §4.1.5, pp.28–30.
+What FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII must provide (gap:ffg-ordinary-lift): TD.6/ordinary-adapted-lift. For an ordinary tensor p-divisible group over F̄_p, p>2, with connected fixer and a pointwise very-good embedding, supply an adapted lift over a finite extension of breve Q_p carrying the full J_b(Q_p)-action by quasi-isogenies.
 
-### Prime-to-p integral tower
+What GeometricSatakeAndFusionPartII must provide (gap:local-models): LM.3/canonical-abelian-model; LM.7/general-normal-representative. For the odd-p minuscule Hodge and abelian-type fixer data used here, supply the canonical normal flat local model, central and adjoint comparisons, reduced special fibre with normal Schubert components, integral very-special special fibre and smooth extremal orbit, including the ramified cases.
 
-**Target:** `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower` (theorem).
+What GeometricSatakeAndFusionPartII must provide (gap:same-field-schubert-curves): LM.5/same-field-curve. At an F_q-rational point of a nonextremal Schubert stratum of the very-special local model, supply a curve over the same F_q through that point with dense open in higher strata, including the ramified rank-one cases.
 
-For a fixed admissible p-level and nested sufficiently small prime-to-p levels K_1^p normal in K_2^p, the transition S_(K_pK_1^p)→S_(K_pK_2^p) is finite étale with the expected finite level action; the pro-object carries a continuous G(A_f^p)-action. On normal components the promoted tensor-compatible level sections are uniquely determined by their generic restrictions.
+What GlobalShtukasAndFunctionFieldLanglands must provide (gap:open-curve-companions): §§6.1–6.2, Constant twists and Compatible systems on curves. Supply the stated algebraic p-plain companion theorem on smooth geometrically connected open curves over the original F_q, extended to semisimple sheaves by direct sums and allowing constant twists and finite coefficient extensions; the roadmap lies outside the prescribed merge order.
 
-**Construction/proof.**
-1. HT constructs the prime-to-p tower and extends its tensor-compatible sections across the normal model.
-2. Use the finite étale Siegel level maps and normalization to transfer the transition maps; extend equality of sections by normality.
+What HeckeStacksAndLocalShtukas must provide (gap:integral-local-shimura): §HS2, especially §§HS2.1, HS2.13. For an odd-p local Shimura datum (G,b,μ) with specified fixer, supply its integral local Shimura variety and the completion comparison used in KPZ Theorem 7.1.8, compatible with universal shtukas and derived-isomorphism maps as in KZ Proposition 4.3.2; include the full-fixer extension, not only a generic period tower.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `AbelianSchemesAndArithmeticModuli:A4/etale-tate-module`, `AlgebraicModuliForArithmeticGeometry:R09.3`.
+What HeckeStacksAndLocalShtukas must provide (gap:general-connected-reduction): §HS2. For the integral Hodge-model shtuka at an arbitrary odd-p full fixer, supply the reduction of the integral frame torsor to the connected fixer used in the proof of KPZ Corollary 7.2.24, compatible with adjoint descent.
 
-**Acceptance:** Keep pro-level extension statements separate from finite-level statements.
+What CrystallineCohomology must provide (gap:crystalline-hodge-families): §CR.7. Supply absolute-Hodge crystalline–de Rham compatibility and horizontal transport on normal formal branches, and the log-Dieudonné comparison, semistable-alteration descent and full faithfulness in the possibly singular and nonproper family scope used by HT Proposition 1.3.12 and Appendix A.
 
-**Source:** HT, §2.1.1–2.1.2, pp.20–21; KZ §4.1.5, p.30.
+What ArithmeticGaloisRepresentations must provide (gap:noot-coarse-comparison): Layer 6. For the tensor Hodge realization of an abelian special fibre, after an extension defining its geometric endomorphisms and a sufficiently divisible neat Frobenius power, supply equality and rationality of its Conj′ classes at all realizations as used in HT Corollary 2.1.9, independently of the full Conj(G) conclusion here.
 
-### Integral étale Hodge tensors
+What AlgebraicModuliForArithmeticGeometry must provide (gap:finite-field-bertini): Layer 1. For a smooth geometrically irreducible finite-type F_q-scheme of positive dimension, a specified F_q-point and a dense open, supply a smooth geometrically connected curve over F_q through that point whose inverse image of the open is nonempty, as used in KZ Corollary 5.2.7.
 
-**Target:** `ShimuraVarietiesPartII:SV2.0/etale-tensors` (construction).
+What AlgebraicModuliForArithmeticGeometry must provide (gap:rational-stack-presentation): Layer 4. For an algebraic stack of finite type over F_q and an F_q-object, supply a smooth scheme presentation with an F_q-rational point over that object, as used in KZ Corollary 5.2.7, without extending F_q.
 
-Pull the universal abelian scheme from the chosen Siegel model to a neat Hodge model. The absolute Hodge tensors give prime-to-p étale tensor sections on H¹, invariant under the arithmetic fundamental group and compatible with Hecke maps and base change; the tensor frame sheaf is the G(Q_ℓ)-torsor determined by the tower, for every ℓ≠p. Dualize the Tate module consistently: geometric q-Frobenius on H¹ has Weil weight 1.
+What ShimuraCompactifications must provide (gap:component-specialization): Layer C6, integral component specialization beyond the boundary construction. For the normal Hodge models S_K defined in Layer 0 at neat tame level over the completed maximal unramified local reflex ring, assuming their geometric special fibre is locally integral, prove that the special fibre of each connected integral component is geometrically irreducible, compatibly with specialization, as used in the proof of HT Corollary 1.3.16.
 
-**Construction/proof.**
-1. KZ identifies the tower frame torsor with the étale realizations of the defining Hodge tensors.
-2. Use the generic absolute-Hodge realization and normal extension of prime-to-p sections, then descend from neat covers.
+What ShimuraData must provide (gap:hodge-cover-refinement): Layer 4. Refine the connected Hodge lift of an abelian-type datum by the fundamental type-A and quaternionic-D representations and a CM scalar field split at all prescribed p-places, with Hodge cocharacters in the identity component of the matched-multiplier group, as used in KPZ §7.2.3.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `AbelianSchemesAndArithmeticModuli:A4/etale-tate-module`, `AutomorphicBundles:B2`.
+What ReductiveGroupsPartIII must provide (gap:rg3-conjugacy-quotient): RG3.0/conjugacy-quotient. For a connected reductive group over a characteristic-zero field, supply the affine conjugacy quotient with field base change and geometric semisimple-class interpretation.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action`, `ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group`, `ShimuraVarietiesPartII:SV2.7/intrinsic-tower-local-system`.
+What ReductiveGroupsPartIII must provide (gap:rg3-character-separation): RG3.0/character-separation. For semisimple geometric points of a connected reductive group in characteristic zero, supply separation of their quotient classes by all algebraic characters.
 
-**API.**
+What ReductiveGroupsPartIII must provide (gap:rg3-faithful-quotient-finite): RG3.0/faithful-quotient-finite. For a faithful finite-dimensional representation of a connected reductive group in characteristic zero, supply finiteness of its map to the general-linear conjugacy quotient.
 
-- `ShimuraEtaleTensors.frame` (characterisation): A tensor frame identifies the representation space with H¹_ét and its stabilizer with G_Qℓ.
-- `ShimuraEtaleTensors.pullback` (functoriality): Étale tensors pull back along prime-to-p Hecke and integral datum maps when those maps are established.
-- `ShimuraEtaleTensors.tateDual` (compatibility): Identify H¹_ét with the dual of the A4 Tate module; specify the induced pairing and Tate-line action.
+What ReductiveGroupsPartIII must provide (gap:rg3-degree-one-residue-descent): RG3.1/degree-one-residue-descent. For a number field having a degree-one place over almost every rational prime, prove it is Q and apply this to descent of an algebraic quotient point with rational local realizations.
 
-**Discriminating checks.**
+What ReductiveGroupsPartIII must provide (gap:rg3-elliptic-maximal-torus): RG3.2/elliptic-maximal-torus. For the rational-Newton special pair in the stated real-elliptic and p-adic transfer setup, supply the global maximal torus with the prescribed local transfers.
 
-- `ShimuraEtaleTensors.siegelMultiplier`: For a polarized Siegel point over F_q, geometric Frobenius has multiplier q on H¹ in the chosen pairing convention.
-- `ShimuraEtaleTensors.projection`: On a product, the projection idempotents are among the tensors; off-diagonal automorphisms fail to be tensor frames.
-- `ShimuraEtaleTensors.level`: Changing a tensor frame conjugates Frobenius in G(Q_ℓ); changing ℓ does not identify the coefficient fields.
+What ReductiveGroupsPartIII must provide (gap:rg3-cyclic-torus-and-neatness): RG3.3/cyclic-torus-and-neatness. For a semisimple rational algebraic-group point, supply a sufficiently divisible power with connected cyclic Zariski closure and the stable-centralizer comparison.
 
-**Acceptance:** The polarization is a similitude tensor with its Tate line; its scalar multiplier is not forced to one.
+What ReductiveGroupsPartIII must provide (gap:r-smooth-integral-groups): RG3.2, required local-integral extension. For reductive groups over finite extensions of Q_p, supply R-smooth tori and centralizers, fixer closed immersions, arbitrary adjoint association independent of central lifts, R-smooth central-extension exactness and connected-fixer criteria with the exact hypotheses of KZ §§2.3–2.4 and KPZ §§7.2.5–7.2.14; these are not assertions of the existing RG3.2 targets.
 
-**Source:** KZ, §4.1.6–4.1.7, pp.30–31; §5.1.1, p.47.
+What ReductiveGroupsPartIII must provide (gap:compact-quotient-borel): RG3.2, required split-group extension. For a connected split reductive group over a nonarchimedean local field and a reductive subgroup with compact homogeneous quotient, supply the Borel-containment argument used in K17 Proposition 2.1.6 and the resulting equality for a reductive centralizer; this input is absent from the existing point-topology scope.
 
-### Lift-independent crystalline tensors
+What ReductiveGroupsPartIII must provide (gap:hodge-representation-algebra): RG3.0 and RG3.2, required representation extension. Supply the fundamental symplectic Hodge representations, faithful tensor generation, matched-central-fibre-product calculations and type-D outer-orbit centralizer-dimension comparison used in KPZ §7.2 and HT §2.1.8; these extensions are not claimed as existing RG3.0 or RG3.2 targets.
 
-**Target:** `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors` (theorem).
+What NeronModelsAndSemistableAbelianVarieties must provide (gap:arbitrary-dvr-good-reduction): §§5.1–5.2, extension beyond excellent traits. Extend the good-reduction criterion and descent to an arbitrary mixed-characteristic DVR in the full prime-to-p level situation of HT Lemma 1.3.6, or supply descent from an excellent complete trait; the existing §§5.1–5.2 only state the excellent-DVR case.
 
-For a geometric special-fibre point x of the normal Hodge model, every characteristic-zero lift through x gives the same rational Frobenius-invariant tensors in D(A_x[p∞])[1/p]^⊗, under the crystalline–de Rham comparisons. This independence holds across the lifts belonging to that normalization point; equality of underlying Siegel points alone does not identify different normalization branches. Integrality is a separate assertion requiring the integral embedding input.
+## How to read the build
 
-**Construction/proof.**
-1. HT uses horizontal transport on the connected normal formal neighbourhood to compare the realizations from different lifts.
-2. Apply crystalline–de Rham compatibility for absolute Hodge cycles and uniqueness of parallel sections on the rigid generic fibre.
+Layers 0–1 construct the normalized tower, its tensors and the local comparisons; the latter separate pointwise very-good deformation theory from the broader lattice-chain shtuka comparison. Layers 2–3 provide auxiliary covers and integral descent, with conjugated levels retained. Layers 4–5 construct Newton strata, tensor isogeny groups and ordinary special lifts. Layer 6 reaches higher KR strata by curves over the original finite field, using the strongly acceptable connected-torsor route. Layer 7 compares all algebraic representations and descends their common geometric class to Q. Each Needs line lists the inputs to its statement and indicated proof route; a supplier gap records an obligation rather than a theorem hypothesis.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/etale-tensors`, `AbelianSchemesAndArithmeticModuli:A4/abelian-h1-de-rham`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.2`, `CrystallineCohomology:CR.7`.
 
-**Acceptance:** Do not deduce integral tensors solely from rational comparison.
+## Layer 0: Canonical tensors on the integral tower
 
-**Source:** HT, Proposition 1.3.7, pp.17–18.
+### 0.1 Integral Hodge data
 
-### Universal crystalline tensor functor
+The target SV2.0/integral-hodge-data defines the following. Fix p>2, a Hodge-type datum (G,X), v|p of E(G,X), and a symplectic embedding with a Z_(p)-lattice Λ. Integral Hodge data consist of a point of the extended building, its full fixer G^fix and connected parahoric G°, a closed lattice realization of the required model, a finite tensor family cutting out that model, and compatible sufficiently small prime-to-p Siegel levels. Record whether the embedding is good or very good; neither adjective is implicit. For neat compatible K^p and K_p=G^fix(Z_p), define S as the normalization of the Zariski closure of Sh_K(G,X) in the chosen integral Siegel model after base change to O_(E,v), or to its completion O_E. Its generic fibre is Sh_K(G,X). The construction retains the actual induced p-level.
 
-**Target:** `ShimuraVarietiesPartII:SV2.0/global-crystalline-realization` (construction). **Planet:** Crystalline realization.
+(KZ, §4.1.2–4.1.7, pp.29–31; KPZ §7.1.2, p.72).
 
-On the geometric special fibre of a neat normal Hodge model, the universal abelian p-divisible group determines a convergent F-isocrystal D together with global Frobenius-invariant defining tensors. Their fibres are the lift-independent tensors. Tensor frames give an exact faithful Q_p-linear tensor functor Rep(G_Qp)→F-Isoc(S_k), with scalar-extended fibre functors over L=Frac W(k). The Tannakian group of the subcategory generated by D is the monodromy envelope H⊂G_L; it need not equal G_L.
+A proof route: take the scheme-theoretic Zariski closure in the Siegel model and then its normalization in the generic Hodge variety. Retain the full fixer and connected parahoric as distinct data; use the induced lattice or lattice-chain Siegel level.
 
-**Construction/proof.**
-1. HT globalizes the crystalline tensor sections using semistable alterations and proper descent.
-2. Import the general log-Dieudonné comparison, alteration descent and convergent-isocrystal full faithfulness; specialize them to the universal Hodge family.
-3. Construct the Rep(G)-functor through the tensor frame torsor. Restriction to H explains why generated-category equivalence with all Rep(G) is unnecessary.
+*Needs:* ShimuraVarieties:§8.1; PELModuli:§§M4.5–M4.6,M6.1–M6.4; ReductiveGroupsPartII:§RG2.3; tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `CrystallineCohomology:CR.7`, `MotivesAndAlgebraicCycles:MC.6`, `BunGAndNewtonStrata:BG0/families-of-g-isocrystals`.
+The construction has the following API.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.4/point-newton-class`, `ShimuraVarietiesPartII:SV2.4/newton-semicontinuity`.
+- Return S and its generic-fibre identification with Sh_K(G,X).
+- Expose G^fix, G°, K_p and their inclusion; translate KZ’s connected G-script to KPZ’s G-script-degree-zero.
+- Compatible neat levels give the same normalized tower after finite étale pullback.
 
-**API.**
+**Checks.**
 
-- `ShimuraCrystallineRealization.fibre` (compatibility): The fibre at x is the pointwise G-isocrystal cut out by its canonical rational tensors.
-- `ShimuraCrystallineRealization.tensor` (structure): Preserve unit, duals, tensor products and exact sequences; compare the standard representation with D.
-- `ShimuraCrystallineRealization.baseChange` (functoriality): Pullback of the universal abelian scheme and of global tensor sections commutes with extension of the residue field.
+- For GSp₂=GL₂ at hyperspecial p-level and neat tame level, the Siegel modular curve is smooth and normal; its normalization map is the identity.
+- For a Siegel Iwahori chain the connected model is not relabelled as a hyperspecial stabilizer.
+- For GL₂ with empty cutting family, the smooth line local model is P¹ and every good embedding is very good. Over k[ε]/ε² the matrix [[1,ε],[0,1]] conjugates e₁=diag(1,0) to [[1,−ε],[0,0]], so an unmarked linear frame comparison cannot certify tensor preservation for a group cut out by e₁. This tests the extra tensor condition, not the existence of a non-very-good Hodge embedding.
+- For a symplectic lattice Λ the lattice in (V⊕V∨)^4 furnished by the Zarhin enlargement is self-dual (KZ §4.3.5, lines 1761–1763). On an elliptic curve E with principal polarization the enlargement is E⁸, of dimension 8, with product principal polarization; using only E×E∨ would give dimension 2.
 
-**Discriminating checks.**
+A parahoric label alone must not certify the tensor-compatible deformation theorem.
 
-- `ShimuraCrystallineRealization.constant`: A constant abelian family produces a constant isocrystal; its geometric monodromy subgroup can be proper in G.
-- `ShimuraCrystallineRealization.slopeConvention`: For the contravariant Dieudonné realization, an ordinary elliptic fibre has slopes 0 and 1, with Newton bound from μ_h inverse.
-- `ShimuraCrystallineRealization.tensorStabilizer`: Removing a tensor enlarges the allowed structure group; it cannot create an equivalence of the generated category with the unchanged Rep(G).
+### 0.2 Integral Shimura stacks
 
-**Acceptance:** A constant family has trivial geometric monodromy even when G is positive dimensional.
+The target SV2.0/integral-shimura-stack constructs the following. For a possibly non-neat K^p, choose neat normal K_1^p inside it and form the quotient stack [S_(K_p K_1^p)/(K^p/K_1^p)]. Comparison through a common neat normal subgroup makes this independent up to canonical equivalence. The generic fibre is the Shimura stack, and the construction carries the compatible prime-to-p Hecke action. A coarse quotient is not substituted for this stack.
 
-**Source:** HT, Proposition 1.3.12–1.3.13, p.19; Appendix A.4–A.7, pp.38–39.
+(KZ, §4.1.1 and §4.1.5, pp.28–30).
 
-## SV2.1: Corrected local geometry
+A proof route: KZ permits arbitrary prime-to-p level by taking a quotient of a neat model. Pull the normalized models to a common finite étale level and apply quotient-stack descent.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+*Needs:* ShimuraVarietiesPartII:SV2.0/integral-hodge-data; SchemeAndStackFoundations:§§1.17–1.23.
 
-**Layer prerequisites:** `AbelianSchemesAndArithmeticModuli:A4`, `AlgebraicModuliForArithmeticGeometry:R09.6`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.2`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `GeometricSatakeAndFusion:GS0:Witt-geometry`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `HeckeStacksAndLocalShtukas:HS2`, `PELModuli:M4`, `ReductiveGroupsPartII:RG2.3`, `ShimuraCompactificationsPartII:C7`, `ShimuraVarietiesPartII:SV2.0`.
+The construction has the following API.
 
-### Adapted normalization branches
+- At neat K^p the stack is represented by the normal scheme S_K of Layer 0.
+- A normal refinement realizes the forgetful map as the corresponding finite étale quotient-stack cover.
+- Prime-to-p right translations compose with the tower convention and commute with generic-fibre restriction.
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface` (theorem). **Planet:** Adapted normalization branch.
+**Checks.**
 
-At x above a point of the Siegel closure, assume the embedding is very good and the corrected tensor-display deformation theorem applies. The completion of the chosen normalization component identifies with the versal (G,μ)-adapted deformation ring R_G. An integral lift belongs to this branch exactly when its p-divisible group with the specified tensors is adapted. The condition uses the integral Frobenius tensors and the G-split Hodge filtration, not only the rational Newton class.
+- For K_1^p=K^p neat, quotient by the trivial group returns S_K.
+- An automorphism of a polarized abelian point preserving the level occurs in its stack inertia.
+- Two neat normal refinements give equivalent quotients via their intersection, including inertia, not just equal coarse point sets.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
+Stabilizers at non-neat points remain visible.
 
-**Construction/proof.**
-1. KZ identifies the completed branch using the tensor-compatible adapted deformation ring.
-2. Apply corrected integral comparison and Serre–Tate to the normalized Hodge closure; use the integral point criterion in both directions.
+### 0.3 Prime-to-p integral tower
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `AbelianSchemesAndArithmeticModuli:A4/serre-tate-equivalence`, `AlgebraicModuliForArithmeticGeometry:R09.6`, `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames`.
+The target SV2.0/prime-to-p-tower proves the following. For a fixed admissible p-level and nested sufficiently small prime-to-p levels K_1^p normal in K_2^p, the transition S_(K_pK_1^p)→S_(K_pK_2^p) is finite étale with the expected finite level action; the pro-object carries a continuous G(A_f^p)-action. On normal components the promoted tensor-compatible level sections are uniquely determined by their generic restrictions.
 
-**Acceptance:** The adapted-ring comparison must name a particular normalization branch.
+(HT, §2.1.1–2.1.2, pp.20–21; KZ §4.1.5, p.30).
 
-**Source:** KZ, Propositions 3.2.7 and 4.1.9, pp.23–24 and 31–32; KPZ Proposition 7.1.6, p.74.
+A proof route: HT constructs the prime-to-p tower and extends its tensor-compatible sections across the normal model. Use the finite étale Siegel level maps and normalization to transfer the transition maps; extend equality of sections by normality.
 
-### Integral crystalline tensor frames
+*Needs:* ShimuraVarietiesPartII:SV2.0/integral-hodge-data; AbelianSchemesAndArithmeticModuli:§A4.1; SchemeAndStackFoundations:§§1.17–1.23.
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames` (theorem).
+Keep pro-level extension statements separate from finite-level statements.
 
-Let p>2, x be a geometric point of the normalized Hodge model, and choose a lift over O_K for a finite extension K/breve Q_p. Assume its integral p-adic Hodge tensors are Galois invariant and their stabilizer is the prescribed smooth Bruhat–Tits full-fixer model with reductive generic fibre. Under the corrected integral comparison of KZ 3.3.2, the canonical rational tensors at x lie in D(A_x[p∞])^⊗, their integral stabilizer is that model, and a tensor frame over W(k) identifies the Hodge filtration of the lift with a G-cocharacter filtration conjugate to μ_h inverse. Tensor triviality and Frobenius compatibility are conclusions of the comparison, without assuming a very-good embedding.
+### 0.4 Integral étale Hodge tensors
 
-**Construction/proof.**
-1. KZ derives integral tensor frames from Breuil–Kisin comparison and the torsor extension result cited there.
-2. Transfer to Dieudonné tensors and their filtrations, preserving the contravariant convention.
+The target SV2.0/etale-tensors constructs the following. Pull the universal abelian scheme to a neat Hodge model. Its absolute Hodge tensors give prime-to-p étale tensor sections on H¹ and, by mixed-tensor duality, on H₁=T_ℓ(A)⊗Q_ℓ. They are invariant under the arithmetic fundamental group and compatible with Hecke maps and base change. The tower torsor is Isom_tensor(V_Qℓ,H₁), rather than the frame torsor of H¹. The cohomological realization H¹=H₁∨ is its contragredient; for a symplectic representation of multiplier c, H₁∨≅H₁⊗c⁻¹. Geometric q-Frobenius has multiplier q⁻¹ on H₁ and q on H¹.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.2`.
+(KZ, §4.1.6–4.1.7, pp.30–31; §5.1.1, p.47).
 
-**Acceptance:** Rationally equal tensors with different integral lattices do not pass this statement.
+A proof route: KZ identifies the tower frame torsor with the étale realizations of the defining Hodge tensors. Use the generic absolute-Hodge realization and normal extension of prime-to-p sections, then descend from neat covers.
 
-**Source:** KZ, Proposition 3.3.2, pp.24–25; §4.1.7, p.31.
+*Needs:* ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; AbelianSchemesAndArithmeticModuli:§A4.1; AutomorphicBundles:§§B2.4–B2.7.
 
-### Tensors distinguish normalization points
+The construction has the following API.
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/tensor-separation` (theorem).
+- A tower tensor frame identifies V_Qℓ with H₁=T_ℓ(A)⊗Q_ℓ; dualizing it identifies V_Qℓ∨ with H¹_ét.
+- Étale tensors pull back along prime-to-p Hecke and integral datum maps when those maps are established.
+- Transport the alternating pairing H₁×H₁→Q_ℓ(1); the dual pairing on H¹ takes values in Q_ℓ(−1), and H¹≅H₁⊗c⁻¹.
 
-Suppose two geometric points of the normal Hodge model have the same image in the Siegel closure and the induced identification of their abelian varieties identifies all their crystalline tensors. Under the adapted-branch hypotheses, the two normalization points are equal. No assertion is made from equality of the underlying abelian varieties without the tensors.
+**Checks.**
 
-**Construction/proof.**
-1. KZ detects the normalization branch by its adapted tensor deformation ring.
-2. The common tensors select the same completed component; use finiteness of normalization and the branch criterion to identify the points.
+- For E/F₅ of trace 2, H¹ has polynomial T²−2T+5 and multiplier 5. The tower on H₁ has polynomial T²−(2/5)T+1/5 and multiplier 1/5. Twisting H₁ by c⁻¹ multiplies both eigenvalues by 5, giving the H¹ polynomial again.
+- On a product, the projection idempotents are among the tensors; off-diagonal automorphisms fail to be tensor frames.
+- Changing a tensor frame conjugates Frobenius in G(Q_ℓ); changing ℓ does not identify the coefficient fields.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface`, `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames`.
+The polarization is a similitude tensor with its Tate line; its scalar multiplier is not forced to one.
 
-**Acceptance:** The identity on a Siegel fibre must still be tested on the complete tensor family.
+### 0.5 Lift-independent crystalline tensors
 
-**Source:** KZ, Proposition 4.1.9(3), pp.31–32.
+The target SV2.0/lift-independent-crystalline-tensors proves the following. For a geometric special-fibre point x of the normal Hodge model, every characteristic-zero lift through x gives the same rational Frobenius-invariant tensors in D(A_x[p∞])[1/p]^⊗, under the crystalline–de Rham comparisons. This independence holds across the lifts belonging to that normalization point; equality of underlying Siegel points alone does not identify different normalization branches. Integrality is a separate assertion requiring the integral embedding input.
 
-### Hodge local-model diagram
+(HT, Proposition 1.3.7, pp.17–18).
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram` (construction). **Planet:** Hodge local-model diagram.
+A proof route: HT uses horizontal transport on the connected normal formal neighbourhood to compare the realizations from different lifts. Apply crystalline–de Rham compatibility for absolute Hodge cycles and uniqueness of parallel sections on the rigid generic fibre.
 
-For the very-good full-fixer Hodge model of KPZ 7.1.2, the scheme of integral de Rham tensor frames is a G^fix-torsor π:S̃→S. Sending a frame to the Hodge filtration gives an equivariant smooth map q:S̃→M_loc(G,{μ_h}) of relative dimension dim G. The local model is the imported canonical flat closure. The smooth action morphism G^fix×M_loc→M_loc is not asserted to be a torsor.
+*Needs:* ShimuraVarietiesPartII:SV2.0/etale-tensors; AbelianSchemesAndArithmeticModuli:§A4.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory:§R07.2; gap:crystalline-hodge-families.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
+Do not deduce integral tensors solely from rational comparison.
 
-**Construction/proof.**
-1. KPZ repairs the tensor-compatible local-model comparison and proves smoothness of the frame-to-filtration map.
-2. Glue local tensor frames and identify the deformation map with the local-model action chart using the very-good trivialization.
+### 0.6 Universal crystalline tensor functor
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface`, `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames`, `AbelianSchemesAndArithmeticModuli:A4/abelian-h1-de-rham`, `GeometricSatakeAndFusion:GS0:loop-geometry`.
+The target SV2.0/global-crystalline-realization constructs the following. On the geometric special fibre of a neat normal Hodge model, the universal abelian p-divisible group determines a convergent F-isocrystal D together with global Frobenius-invariant defining tensors. Their fibres are the lift-independent tensors. Tensor frames give an exact faithful Q_p-linear tensor functor Rep(G_Qp)→F-Isoc(S_k), sending the dual of the standard tower representation to D, with scalar-extended fibre functors over L=Frac W(k). After scalar extension and choice of fibre functor, the Tannakian group H of the category generated by D is a subgroup of the tensor stabilizer in the cohomological representation; it need not be the full group. Geometric monodromy after forgetting Frobenius is a different subgroup.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.1/same-field-henselizations`, `ShimuraVarietiesPartII:SV2.1/special-fibre-geometry`, `ShimuraVarietiesPartII:SV2.3/connected-normalization-cover`.
+(HT, Proposition 1.3.12 and Corollary 1.3.13, p.19; Appendix A.4–A.7, pp.38–39).
 
-**API.**
+A proof route: HT globalizes the crystalline tensor sections using semistable alterations and proper descent. Import the general log-Dieudonné comparison, alteration descent and convergent-isocrystal full faithfulness; specialize them to the universal Hodge family. Construct the Rep(G)-functor through the tensor frame torsor. Restriction to H explains why generated-category equivalence with all Rep(G) is unnecessary.
 
-- `HodgeLocalModelDiagram.frame` (characterisation): Sections of π are integral tensor-compatible trivializations of H¹_dR.
-- `HodgeLocalModelDiagram.filtration` (projection): q sends a frame to the transported Hodge filtration and is G^fix-equivariant.
-- `HodgeLocalModelDiagram.baseChange` (functoriality): The frame diagram pulls back under residue-field and reflex-base extensions and finite prime-to-p level maps.
+*Needs:* ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors; gap:crystalline-hodge-families; MotivesAndAlgebraicCycles:Layer 6; BunGAndNewtonStrata:§0.8.
 
-**Discriminating checks.**
+The construction has the following API.
 
-- `HodgeLocalModelDiagram.siegel`: The standard Siegel frame diagram recovers its usual Lagrangian filtration map.
-- `HodgeLocalModelDiagram.dimension`: The relative dimension of q equals dim G, whereas dim S equals dim M_loc; q is not assigned relative dimension zero.
-- `HodgeLocalModelDiagram.stabilizer`: In the Siegel case, a frame change outside the filtration stabilizer moves q while fixing π. Thus q is not invariant for the frame-torsor action; smooth equivariance is its correct property.
+- The fibre at x is the pointwise G-isocrystal cut out by its canonical rational tensors.
+- Preserve unit, duals, tensor products and exact sequences; compare the dual of the standard tower representation with contravariant D.
+- Pullback of the universal abelian scheme and of global tensor sections commutes with extension of the residue field.
 
-**Acceptance:** Separate the torsor map π from the smooth map q.
+**Checks.**
 
-**Source:** KPZ, Theorem 7.1.3, pp.72–73; §7.3.1(1), p.85.
+- For a constant ordinary elliptic family, D has slopes (0,1) and determinant slope 1. Geometric horizontal monodromy after forgetting Frobenius is 1; the tensor category with Frobenius contains 1(−1) and has a nontrivial slope torus. It cannot have trivial Tannakian group.
+- For the contravariant Dieudonné realization, an ordinary elliptic fibre has slopes 0 and 1, with Newton bound from μ_h inverse.
+- Removing a tensor enlarges the allowed structure group; it cannot create an equivalence of the generated category with the unchanged Rep(G).
 
-### Same-field henselization comparison
+For a constant ordinary elliptic family, Frobenius-forgetting geometric monodromy is trivial, but the category generated by D contains its determinant 1(−1), so H has a nontrivial slope-torus quotient.
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/same-field-henselizations` (theorem). **Planet:** Same-field local comparison.
+### Examples
 
-Under KPZ 7.1.2 and G^fix=G°, for every x∈S(k′) with k′/k_E a finite residue-field extension there exists y∈M_loc(k′) for which the ordinary henselizations of the local rings at x and y are isomorphic as local base algebras. The residue field remains k′. Strict henselizations alone do not supply this assertion.
+At hyperspecial GL₂ level the normalization is the smooth modular curve. At non-neat level the central automorphism −1 survives as stack inertia. For p∤3 the cover Y(9)→Y(3) has degree 3⁴=81 on the full-level tower.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
+### Dependencies
 
-**Construction/proof.**
-1. KPZ gives the henselized comparison with a local-model point over the same residue field when the frame group is connected.
-2. Use smoothness and the connected-frame lifting argument in the corrected diagram.
+*Needs:* ShimuraVarieties:§8.1; PELModuli:§§M4.5–M4.6,M6.1–M6.4; ReductiveGroupsPartII:§RG2.3; tauceti:TauCeti.AlgebraicGeometry.AbelianVariety; SchemeAndStackFoundations:§§1.17–1.23; AbelianSchemesAndArithmeticModuli:§A4.1; AutomorphicBundles:§§B2.4–B2.7; AbelianSchemesAndArithmeticModuli:§A4.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory:§R07.2; gap:crystalline-hodge-families; MotivesAndAlgebraicCycles:Layer 6; BunGAndNewtonStrata:§0.8.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram`, `ReductiveGroupsPartII:RG2.3`, `AlgebraicModuliForArithmeticGeometry:R09.6`.
+## Layer 1: Corrected local geometry
 
-**Acceptance:** For finite k′, the local-model comparison point must be k′-rational.
+### 1.1 Adapted normalization branches
 
-**Source:** KPZ, Theorem 7.1.3(3), p.73.
+The target SV2.1/adapted-branch-interface proves the following. For the good Hodge normalization with G^fix=G°, neat K^p, and x above a point of the Siegel closure, assume the embedding is very good at its corresponding local-model point y. The completion of the chosen normalization component identifies with the versal (G,μ)-adapted deformation ring R_G. An integral lift belongs to this branch exactly when its p-divisible group with the specified tensors is adapted. The condition uses the integral Frobenius tensors and the G-split Hodge filtration, not only the rational Newton class.
 
-### Strict comparison with lattice-chain level
+(KZ, Proposition 4.1.9, pp.31–32, under §4.1.3 (A′)–(B′)).
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison` (theorem).
+A proof route: apply the supplier versal adapted deformation theorem at y. Use Serre–Tate and integral point recognition to identify the chosen branch, in both directions.
 
-Assume p>2 and a Hodge embedding into a Siegel datum with a self-dual periodic lattice chain L such that G^fix(breve Z_p)=G(breve Q_p)∩GSp(L)(breve Z_p). Take K_p=G^fix(Z_p) and the normalized Hodge closure in that chain-level Siegel model. At every geometric special point x there is a geometric local-model point y for which the strict henselizations, and their completions, are isomorphic. This model is canonical in the PR24 sense and independent of the embedding and lattice within this scope. No global very-good embedding or R-smoothness hypothesis is imposed on the given datum; the modern shtuka comparison imports the corrected very-good auxiliary theory in its proof. The result does not yield a rational local-model point over a prescribed finite residue field.
+*Needs:* ShimuraVarietiesPartII:SV2.0/integral-hodge-data; ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors; gap:ffg-very-good; gap:ffg-versal; AbelianSchemesAndArithmeticModuli:§A4.9; AlgebraicModuliForArithmeticGeometry:Layer 6; ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames.
 
-**Construction/proof.**
-1. KPZ derives the strict-henselian comparison through canonical integral-model and shtuka methods.
-2. Use the revised PR24/PR26/DvHKZ canonical-model comparison cited in KPZ 7.1.8–7.1.9. The older embedding-independence proof corrected in §7.3.2 cannot be used without its very-good restriction. Keep strict and ordinary henselizations distinct.
+The adapted-ring comparison must name a particular normalization branch.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `HeckeStacksAndLocalShtukas:HS2`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `AlgebraicModuliForArithmeticGeometry:R09.6`.
+### 1.2 Pointwise Hodge comparison
 
-**Acceptance:** The source gate for canonical-model uniqueness remains an explicit supplier request.
+The target SV2.1/integral-crystalline-frames proves the following. For p>2 and a geometric point x of the normalized Hodge model, choose a lift over O_K, with K a finite totally ramified extension of breve Q_p, and the prescribed smooth full-fixer integral tensor stabilizer. Apply the integral tensor comparison to the abelian fibre: the canonical tensors at x are integral in its contravariant Dieudonné module, the W(k)-frame transports the chosen lattice dual and tensors to that module, and the lift filtration is induced by a G-cocharacter conjugate to μ_h inverse. This is the Shimura point specialization of the imported comparison; the general crystalline tensor theorem and torsor triviality are owned by its supplier.
 
-**Source:** KPZ, Theorem 7.1.8 and Remark 7.1.9, p.74; §7.3.2, p.87.
+(KZ, §4.1.7, pp.30–31, especially (4.1.7.1)).
 
-### Pro-level DVR extension
+A proof route: identify the p-adic absolute Hodge tensors of the abelian lift and apply the integral tensor supplier. Transport the integral frame to crystalline and de Rham evaluation as in KZ §4.1.7.
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/pro-dvr-property` (theorem).
+*Needs:* ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors; gap:ffg-integral-tensors.
 
-For the normalized Hodge tower at fixed p-level and every discrete valuation O_E-algebra R of mixed characteristic (0,p), restriction gives a bijection lim_(K^p) S_(K_pK^p)(R)→Sh_(K_p)(R[1/p]). The proof uses the complete prime-to-p level system to force good reduction and then the normalization criterion. It does not assert that every finite-level generic point has good reduction.
+Rationally equal tensors with different integral lattices do not pass this statement.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
+### 1.3 Tensors distinguish normalization points
 
-**Construction/proof.**
-1. KPZ proves the extension property for the full prime-to-p tower.
-2. Apply the Siegel pro-level good-reduction criterion and lift to the normalization using its generic-fibre identification.
+The target SV2.1/tensor-separation proves the following. Suppose two geometric points of the normal Hodge model have the same image in the Siegel closure and the induced identification of their abelian varieties identifies all their crystalline tensors. For a good Hodge normalization with G^fix=G°, neat K^p and very-goodness at the corresponding point y, the two normalization points are equal. No assertion is made from equality of the underlying abelian varieties without the tensors.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `PELModuli:M4`, `ShimuraCompactificationsPartII:C7/normalized-interior-model`.
+(KZ, Proposition 4.1.9(3), pp.31–32).
 
-**Acceptance:** A finite-level abelian variety with bad reduction is not a counterexample to the pro-level statement.
+A proof route: KZ detects the normalization branch by its adapted tensor deformation ring. The common tensors select the same completed component; use finiteness of normalization and the branch criterion to identify the points.
 
-**Source:** KPZ, Theorem 7.1.3(1), p.73; HT Proposition 1.3.6, p.17.
+*Needs:* ShimuraVarietiesPartII:SV2.1/adapted-branch-interface; ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames.
 
-### Special fibre and very-special geometry
+The identity on a Siegel fibre must still be tested on the complete tensor family.
 
-**Target:** `ShimuraVarietiesPartII:SV2.1/special-fibre-geometry` (theorem).
+### 1.4 Hodge local-model diagram
 
-With the corrected local-model hypotheses, reducedness and normality of geometric irreducible components of the local-model special fibre transfer to the Hodge model. At very special parahoric level the relevant local-model special fibre is geometrically integral, and the Shimura special fibre is locally integral. This does not assert local integrality at an arbitrary parahoric crossing.
+The target SV2.1/de-rham-frame-diagram constructs the following. For the very-good full-fixer Hodge model of KPZ 7.1.2, the scheme of integral de Rham tensor frames is a G^fix-torsor π:S̃→S. Sending a frame to the Hodge filtration gives an equivariant smooth map q:S̃→M_loc(G,{μ_h}) of relative dimension dim G. The local model is the imported canonical flat closure. The smooth action morphism G^fix×M_loc→M_loc is not asserted to be a torsor.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
 
-**Construction/proof.**
-1. KZ uses the unique extremal Schubert component at very special level to obtain local integrality.
-2. Transfer reducedness, component normality and the very-special integral case through the smooth torsor diagram.
+(KPZ, Theorem 7.1.3, pp.72–73; §7.3.1(1), p.85).
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `GeometricSatakeAndFusion:GS0:Witt-geometry`.
+A proof route: KPZ repairs the tensor-compatible local-model comparison and proves smoothness of the frame-to-filtration map. Glue local tensor frames and identify the deformation map with the local-model action chart using the very-good trivialization.
 
-**Acceptance:** An Iwahori special-fibre crossing must not be declared locally integral.
+*Needs:* ShimuraVarietiesPartII:SV2.1/adapted-branch-interface; ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames; AbelianSchemesAndArithmeticModuli:§A4.3; gap:local-models.
 
-**Source:** KZ, Theorem 4.4.4, p.43; KPZ Theorem 7.2.21(2), pp.84–85.
+The construction has the following API.
 
-## SV2.2: Auxiliary Hodge covers
+- Sections of π are integral tensor-compatible trivializations of H¹_dR.
+- q sends a frame to the transported Hodge filtration and is G^fix-equivariant.
+- The frame diagram pulls back under residue-field and reflex-base extensions and finite prime-to-p level maps.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+**Checks.**
 
-**Layer prerequisites:** `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartII:RG2.3`, `ShimuraCompactificationsPartII:C7`, `ShimuraData:D4`.
+- The standard Siegel frame diagram recovers its usual Lagrangian filtration map.
+- The relative dimension of q equals dim G, whereas dim S equals dim M_loc; q is not assigned relative dimension zero.
+- In the Siegel case, a frame change outside the filtration stabilizer moves q while fixing π. Thus q is not invariant for the frame-torsor action; smooth equivariance is its correct property.
 
-### Strongly acceptable Shimura triples
+Separate the torsor map π from the smooth map q.
 
-**Target:** `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple` (definition). **Planet:** Strongly acceptable triple.
+### 1.5 Same-field henselization comparison
 
-A strongly acceptable triple is (G,X,G°) with (G,X) of Hodge type, G_der,Qp a product of restrictions of scalars of split reductive groups over finite extensions of Q_p, and Z_G^c generated by the maximal compact real central subtorus and Z_(G_der), such that Z_G^c,Qp is a product of induced tori. Its level model is the connected parahoric at a very-special building point: after base change to the completed maximal unramified field it is a special parahoric. The group-level adjective alone does not specify a parahoric.
+The target SV2.1/same-field-henselizations proves the following. Under KPZ 7.1.2 and G^fix=G°, for every x∈S(k′) with k′/k_E a finite residue-field extension there exists y∈M_loc(k′) for which the ordinary henselizations of the local rings at x and y are isomorphic as local base algebras. The residue field remains k′. Strict henselizations alone do not supply this assertion.
 
-**Construction/proof.**
-1. KZ isolates these local derived and central conditions for integral functoriality and the ordinary-lifting argument.
-2. Package the conditions with the datum and the chosen connected parahoric, exposing each hypothesis separately.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
 
-**Direct prerequisites:** `ShimuraData:D4`, `ReductiveGroupsPartII:RG2.3`, `ReductiveGroupsPartII:RG2.1`.
+(KPZ, Theorem 7.1.3(3), p.73).
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover`, `ShimuraVarietiesPartII:SV2.4/ordinary-locus`, `ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum`, `ShimuraVarietiesPartII:SV2.6/kr-stratification`.
+A proof route: KPZ gives the henselized comparison with a local-model point over the same residue field when the frame group is connected. Use smoothness and the connected-frame lifting argument in the corrected diagram.
 
-**API.**
+*Needs:* ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram; ReductiveGroupsPartII:§RG2.3; AlgebraicModuliForArithmeticGeometry:Layer 6.
 
-- `StronglyAcceptableTriple.derivedFactors` (projection): Expose the split restriction-of-scalars decomposition after Q_p base change.
-- `StronglyAcceptableTriple.compactCenter` (data): Expose Z_G^c and its induced-torus description, retaining its inclusion of the derived centre.
-- `StronglyAcceptableTriple.level` (projection): Return the connected parahoric and its verified very-special building point.
+For finite k′, the local-model comparison point must be k′-rational.
 
-**Discriminating checks.**
+### 1.6 Strict comparison with lattice-chain level
 
-- `StronglyAcceptableTriple.splitUnitary`: For the PEL datum GU(1,1) of an imaginary quadratic field split at p, the local derived group is SL₂ and Z_G^c,Qp is the split norm-one torus G_m. A hyperspecial vertex therefore gives a strongly acceptable triple.
-- `StronglyAcceptableTriple.siegelNonexample`: For GSp_(2g), g≥1, the maximal compact central subtorus is trivial and Z_G^c=μ₂. This finite group is not an induced torus, so a split group and hyperspecial level alone do not establish strong acceptability.
-- `StronglyAcceptableTriple.levelDistinction`: For the split-at-p unitary example, a hyperspecial vertex supplies a very-special triple, while an Iwahori does not.
+The target SV2.1/weaker-strict-comparison proves the following. Assume p>2 and a Hodge embedding into a Siegel datum with a self-dual periodic lattice chain L such that G^fix(breve Z_p)=G(breve Q_p)∩GSp(L)(breve Z_p). Take K_p=G^fix(Z_p) and the normalized Hodge closure in that chain-level Siegel model. At every geometric special point x there is a geometric local-model point y for which the strict henselizations, and their completions, are isomorphic. This model is canonical in the sense of KPZ Remark 7.1.9(b) and independent of the embedding and lattice within this scope. No global very-good embedding or R-smoothness hypothesis is imposed on the given datum; the modern shtuka comparison imports the corrected very-good auxiliary theory in its proof. The result does not yield a rational local-model point over a prescribed finite residue field.
 
-**Acceptance:** A strongly acceptable datum at an Iwahori does not define a strongly acceptable triple.
+(KPZ, Theorem 7.1.8 and Remark 7.1.9, p.74; §7.3.2, p.87).
 
-**Source:** KZ, Definition 4.2.2, p.34.
+A proof route: KPZ derives the strict-henselian comparison through canonical integral-model and shtuka methods. Use the integral-local-Shimura completion contract cited through KPZ Theorem 7.1.8 and Remark 7.1.9(b). The older embedding-independence proof corrected in §7.3.2 cannot be used without its very-good restriction. Keep strict and ordinary henselizations distinct.
 
-### Reflex splitting for auxiliary covers
+*Needs:* ShimuraVarietiesPartII:SV2.0/integral-hodge-data; gap:integral-local-shimura; gap:local-models; AlgebraicModuliForArithmeticGeometry:Layer 6; HeckeStacksAndLocalShtukas:§HS2.
 
-**Target:** `ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover` (theorem).
+The source gate for canonical-model uniqueness remains an explicit supplier request.
 
-For an abelian-type datum (G_2,X_2) and p>2, the auxiliary Hodge cover can be chosen so that every v_2|p of E_2 splits completely in E E_2/E_2. The CM scalar field is chosen to split at all the prescribed p-adic places while satisfying the archimedean Hodge choices. Consequently a chosen local reflex field for the target is unchanged on passing to the composite cover field.
+### 1.7 Canonical Hodge model and uniqueness
 
-**Construction/proof.**
-1. KPZ combines Deligne’s Hodge lifting with prescribed p-adic splitting of the CM scalar field.
-2. Import the generic torus approximation and Hodge-cover construction; impose all places over p simultaneously.
+The target SV2.1/canonical-hodge-model constructs the following. Under the lattice-chain fixer equality and p>2 hypotheses of the strict local comparison, equip the normal Hodge tower with its integral G-shtuka and its local completion identifications. It is the canonical integral model in the sense used in KPZ Remark 7.1.9(b); two choices of Hodge embedding and lattice satisfying those hypotheses have a unique isomorphism extending the generic identity, compatible with prime-to-p levels. The local integral moduli and their universal-shtuka comparisons are supplier inputs.
 
-**Direct prerequisites:** `ShimuraData:D4`, `ReductiveGroupsPartII:RG2.1`.
+(KPZ, Theorem 7.1.8 and Remark 7.1.9(b), p.74).
 
-**Acceptance:** Specifying one embedding into Q_p-bar must not be replaced by an arbitrary place over v_2.
+A proof route: construct the global integral shtuka from the abelian realization and glue the supplier local completion comparisons. Use the canonical extension characterization to prove uniqueness and compatibility with changes of embedding.
 
-**Source:** KPZ, §7.2.2–7.2.3, pp.77–78; Proposition 7.2.19(2), p.83.
+*Needs:* ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison; gap:integral-local-shimura; ShimuraVarieties:§8.1; HeckeStacksAndLocalShtukas:§HS2.
 
-### Non-exceptional very-good Hodge cover
+The construction has the following API.
 
-**Target:** `ShimuraVarietiesPartII:SV2.2/nonexceptional-cover` (construction). **Planet:** Very-good Hodge cover.
+- For each geometric point x, identify the v-sheaf completion of the local integral Shimura variety at its marked point with the diamond of the completed local ring at x, carrying the universal shtuka to the model shtuka.
+- The unique comparison between two choices is the identity on the generic Shimura tower and commutes with level changes.
+- Comparison isomorphisms compose transitively for three lattice and embedding choices.
 
-Suppose G_2^ad is Q-simple and its local adjoint pair has neither a D^H factor nor a type-A factor Res_(F/Qp) PGL_m(D) with p dividing the index of D. Construct a Hodge cover G with G_der=Res_(F0/Q) H^sharp, the same adjoint datum, split local reflex composite, a self-dual very-good lattice embedding for the stabilizer lifting the prescribed target parahoric, R-smooth torus centre, quasi-tame Z_G^c, and torsion-free inertia coinvariants of Z_G^c/Z_(G_der).
+**Checks.**
 
-**Construction/proof.**
-1. KPZ modifies Deligne’s fundamental Hodge cover by central tori and builds a corrected self-dual very-good embedding.
-2. Use the generic fundamental representation and invariant-form inputs, the corrected tensor-lattice theorem, and Zarhin’s imported self-dual enlargement.
-3. Check the centre and inertia coinvariants independently of the representation embedding.
+- For identical embeddings and lattices the generic comparison is identity and the unique integral extension is identity.
+- At a hyperspecial modular curve point both models have a one-dimensional smooth deformation ring, and the comparison respects its abelian p-divisible group.
+- The generic fibres of A¹_Zp and its blowup along (p,t) are both A¹_Qp, but the latter special fibre has two components and the former has one; a generic isomorphism alone does not imply an integral comparison. The canonical shtuka and completion conditions exclude this replacement.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover`, `ShimuraData:D4`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartII:RG2.3`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `ShimuraCompactificationsPartII:C7/zarhin-self-dual-replacement`.
+### 1.8 Pro-level DVR extension
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`.
+The target SV2.1/pro-dvr-property proves the following. For the normalized Hodge tower at fixed p-level and every discrete valuation O_E-algebra R of mixed characteristic (0,p), restriction gives a bijection lim_(K^p) S_(K_pK^p)(R)→Sh_(K_p)(R[1/p]). The proof uses the complete prime-to-p level system to force good reduction and then the normalization criterion. It does not assert that every finite-level generic point has good reduction.
 
-**API.**
+(HT, Lemma 1.3.6, p.17).
 
-- `AuxiliaryHodgeCover.adjoint` (projection): Return the isomorphism of adjoint Shimura data and the central isogeny of derived groups.
-- `AuxiliaryHodgeCover.veryGood` (projection): Return the chosen self-dual lattice and very-good tensor-compatible embedding, with its stabilizer model.
-- `AuxiliaryHodgeCover.localField` (compatibility): Identify the local reflex composite at each target p-place with the target local field.
+A proof route: KPZ proves the extension property for the full prime-to-p tower. Apply the Siegel pro-level good-reduction criterion and lift to the normalization using its generic-fibre identification.
 
-**Discriminating checks.**
+*Needs:* ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; PELModuli:§§M4.5–M4.6,M6.1–M6.4; ShimuraVarietiesPartII:SV2.0/integral-hodge-data; NeronModelsAndSemistableAbelianVarieties:§§5.1–5.2; gap:arbitrary-dvr-good-reduction.
 
-- `AuxiliaryHodgeCover.splitA`: For a split type-A local datum the non-exceptional path is available.
-- `AuxiliaryHodgeCover.divisionIndex`: A type-A division algebra of index divisible by p cannot use this constructor’s non-exceptional certificate.
-- `AuxiliaryHodgeCover.selfDual`: A perfect alternating form on the enlarged lattice must identify Λ with its dual; an arbitrary integral lattice fails.
+A finite-level abelian variety with bad reduction is not a counterexample to the pro-level statement.
 
-**Acceptance:** All five cover properties must be exported together, with the source’s non-exceptional restriction.
+### 1.9 Special fibre and very-special geometry
 
-**Source:** KPZ, Proposition 7.2.10, pp.78–80.
+The target SV2.1/special-fibre-geometry proves the following. With the corrected local-model hypotheses, reducedness and normality of geometric irreducible components of the local-model special fibre transfer to the Hodge model. At very special parahoric level the relevant local-model special fibre is geometrically integral, and the Shimura special fibre is locally integral. This does not assert local integrality at an arbitrary parahoric crossing.
 
-### Exceptional very-good Hodge covers
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.
 
-**Target:** `ShimuraVarietiesPartII:SV2.2/exceptional-cover` (construction).
+(KZ, Theorem 4.4.4, p.43; KPZ Theorem 7.2.21(2), pp.84–85).
 
-For a Q-simple abelian-type datum with D^H factors or a type-A local division algebra of index divisible by p, construct the Hodge cover with the properties of the preceding node except that torsion-free coinvariants of Z_G^c/Z_(G_der) are not promised in the exceptional type-A case. Use the appropriate fundamental symplectic representation and the self-dual lattice construction from KPZ §§6.2–6.3. Passing from the enlarged group to GSp requires smoothness of the scheme-theoretic intersection, R-smoothness, equal derived group and a lifting cocharacter.
+A proof route: KZ uses the unique extremal Schubert component at very special level to obtain local integrality. Transfer reducedness, component normality and the very-special integral case through the smooth torsor diagram.
 
-**Construction/proof.**
-1. KPZ treats the D^H and wild-index type-A representations separately and identifies the extra smooth-intersection hypotheses.
-2. Import the corresponding corrected local lattice theorems and the fundamental invariant-form classification.
-3. Use smooth multiplier maps at odd p to verify the intersection hypothesis rather than assuming it for an arbitrary closed subgroup.
+*Needs:* ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram; gap:local-models; GeometricSatakeAndFusion:Layer GS0.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover`, `ShimuraData:D4`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartII:RG2.3`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `ShimuraCompactificationsPartII:C7/zarhin-self-dual-replacement`.
+An Iwahori special-fibre crossing must not be declared locally integral.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`.
+### Examples
 
-**API.**
+For the hyperspecial modular curve, dim GL₂=4, dim S=dim P¹=1 and dim S̃=5; the filtration map is smooth of relative dimension 4. At a Γ₀(p) crossing the completed special local ring k[[u,v]]/(uv) has two components and is not integral.
 
-- `ExceptionalHodgeCover.toCover` (projection): Expose all cover data except the unproved torsion-free property in the type-A branch.
-- `ExceptionalHodgeCover.smoothIntersection` (data): Return the verified smooth scheme intersection needed to restrict the very-good embedding.
-- `ExceptionalHodgeCover.typeDcoinvariants` (characterisation): In the D^H branch the quotient coinvariants are torsion-free; in the wild-index type-A branch no such conclusion is supplied.
+### Dependencies
 
-**Discriminating checks.**
+*Needs:* ShimuraVarietiesPartII:SV2.0/integral-hodge-data; ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors; gap:ffg-very-good; gap:ffg-versal; AbelianSchemesAndArithmeticModuli:§A4.9; AlgebraicModuliForArithmeticGeometry:Layer 6; gap:ffg-integral-tensors; AbelianSchemesAndArithmeticModuli:§A4.3; gap:local-models; ReductiveGroupsPartII:§RG2.3; gap:integral-local-shimura; HeckeStacksAndLocalShtukas:§HS2; ShimuraVarieties:§8.1; ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; PELModuli:§§M4.5–M4.6,M6.1–M6.4; NeronModelsAndSemistableAbelianVarieties:§§5.1–5.2; gap:arbitrary-dvr-good-reduction; GeometricSatakeAndFusion:Layer GS0.
 
-- `ExceptionalHodgeCover.typeD`: For the D^H centre described by the split-at-p CM norm-one torus, its inertia-coinvariant quotient is free.
-- `ExceptionalHodgeCover.typeA`: A wild-index type-A input keeps the missing torsion-free assertion absent even after self-dual enlargement.
-- `ExceptionalHodgeCover.badIntersection`: Without smoothness of G′∩GSp(Λ), restriction of a very-good embedding is rejected.
+## Layer 2: Auxiliary Hodge covers
 
-**Acceptance:** The type-A output must not expose a torsion-free-coinvariant field.
+### 2.1 Strongly acceptable Shimura triples
 
-**Source:** KPZ, Proposition 7.2.16 and Lemmas 7.2.13–7.2.14, pp.81–83.
+The target SV2.2/strongly-acceptable-triple defines the following. A strongly acceptable triple is (G,X,G°) with (G,X) of Hodge type, G_der,Qp a product of restrictions of scalars of split reductive groups over finite extensions of Q_p, and Z_G^c generated by the maximal compact real central subtorus and Z_(G_der), such that Z_G^c,Qp is a product of induced tori. Its level model is the connected parahoric at a very-special building point: after base change to the completed maximal unramified field it is a special parahoric. The group-level adjective alone does not specify a parahoric.
 
-### Auxiliary cover for every abelian-type datum
+(KZ, Definition 4.2.2, p.34).
 
-**Target:** `ShimuraVarietiesPartII:SV2.2/general-abelian-cover` (construction). **Planet:** Abelian-type Hodge cover.
+A proof route: KZ isolates these local derived and central conditions for integral functoriality and the ordinary-lifting argument. Package the conditions with the datum and the chosen connected parahoric, exposing each hypothesis separately.
 
-For any abelian-type (G_2,X_2), p>2 and connected target parahoric, construct a Hodge cover (G,X) with the same adjoint datum and a central derived isogeny, satisfying: π₁(G_der) is a 2-group and is trivial without D^H factors; the local-to-global central-kernel condition (D); all target p-places split in E E_2; the centre is an R-smooth torus; Z_G^c is quasi-tame; and the lifting stabilizer has a self-dual very-good embedding. If no local adjoint factor involves a division algebra of index divisible by p, X_*(G_ab)_I is additionally torsion-free. Combine simple factors with a common similitude multiplier.
+*Needs:* ShimuraData:Layer 4; gap:hodge-cover-refinement; ReductiveGroupsPartII:§RG2.3; ReductiveGroupsPartII:§RG2.1.
 
-**Construction/proof.**
-1. KPZ assembles the simple-factor covers using a fibre product of their multiplier maps.
-2. Check the adjoint and derived maps factor by factor; central products control the centre and the 2-primary fundamental group.
-3. Retain the stated restriction on the torsion-free conclusion and the splitting at every target p-place.
+The construction has the following API.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.2/nonexceptional-cover`, `ShimuraVarietiesPartII:SV2.2/exceptional-cover`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartII:RG2.3`.
+- Expose the split restriction-of-scalars decomposition after Q_p base change.
+- Expose Z_G^c and its induced-torus description, retaining its inclusion of the derived centre.
+- Return the connected parahoric and its verified very-special building point.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover`, `ShimuraVarietiesPartII:SV2.3/reflex-units`, `ShimuraVarietiesPartII:SV2.3/abelian-integral-model`.
+**Checks.**
 
-**API.**
+- For the PEL datum GU(1,1) of an imaginary quadratic field split at p, the local derived group is SL₂ and Z_G^c,Qp is the split norm-one torus G_m. A hyperspecial vertex therefore gives a strongly acceptable triple.
+- For GSp_(2g), g≥1, the maximal compact central subtorus is trivial and Z_G^c=μ₂. This finite group is not an induced torus, so a split group and hyperspecial level alone do not establish strong acceptability.
+- For the split-at-p unitary example, a hyperspecial vertex supplies a very-special triple, while an Iwahori does not.
 
-- `GeneralAbelianCover.conditionD` (projection): For C=ker(G_sc→G_der), any global H¹(Q,C) class trivial at every finite ℓ≠p is trivial at p.
-- `GeneralAbelianCover.pinnedLocalModel` (compatibility): The cover and target local models identify through the adjoint minuscule datum using the imported central-isogeny comparison.
-- `GeneralAbelianCover.coinvariants` (projection): Expose torsion-free X_*(G_ab)_I only under the explicitly verified absence of p-divisible division indices.
+A strongly acceptable datum at an Iwahori does not define a strongly acceptable triple.
 
-**Discriminating checks.**
+### 2.2 Reflex splitting for auxiliary covers
 
-- `GeneralAbelianCover.multiplier`: Two factors with unequal similitude multipliers do not define a symplectic direct-sum similitude.
-- `GeneralAbelianCover.productField`: Every p-place of each target reflex factor must split in the composite; a choice at only one place is insufficient.
-- `GeneralAbelianCover.pi1`: The D^H branch permits 2-primary π₁ but cannot claim simply connected derived group.
+The target SV2.2/reflex-splitting-cover proves the following. For an abelian-type datum (G_2,X_2) and p>2, the auxiliary Hodge cover can be chosen so that every v_2|p of E_2 splits completely in E E_2/E_2. The CM scalar field is chosen to split at all the prescribed p-adic places while satisfying the archimedean Hodge choices. Consequently a chosen local reflex field for the target is unchanged on passing to the composite cover field.
 
-**Acceptance:** The output applies to every connected parahoric at odd p, including the exceptional factors, without adding the non-exceptional hypothesis.
+(KPZ, §7.2.2–7.2.3, pp.77–78; Proposition 7.2.19(2), p.83).
 
-**Source:** KPZ, Proposition 7.2.19, pp.83–84.
+A proof route: KPZ combines Deligne’s Hodge lifting with prescribed p-adic splitting of the CM scalar field. Import the generic torus approximation and Hodge-cover construction; impose all places over p simultaneously.
 
-### Strongly acceptable auxiliary cover
+*Needs:* ShimuraData:Layer 4; gap:hodge-cover-refinement; ReductiveGroupsPartII:§RG2.1.
 
-**Target:** `ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover` (theorem).
+Specifying one embedding into Q_p-bar must not be replaced by an arbitrary place over v_2.
 
-For a strongly acceptable target triple, choose the KZ auxiliary Hodge cover with derived group mapping centrally to the target, the reflex splitting and very-good lattice properties, compact centre Z_G^c a product of restrictions of tame tori, and torsion-free X_*(G_ab)_I. At the corresponding very-special building point the cover fixer is connected. The last coinvariant hypothesis is torsion-free, not torsion.
+### 2.3 Non-exceptional very-good Hodge cover
 
-**Construction/proof.**
-1. KZ strengthens the cover for strongly acceptable triples so that the full fixer agrees with the connected parahoric.
-2. Use the split restriction-of-scalars derived factors and induced central tori to verify the Kottwitz-kernel and torsion-free-coinvariant criterion.
+The target SV2.2/nonexceptional-cover constructs the following. Suppose G_2^ad is Q-simple and its local adjoint pair has neither a D^H factor nor a type-A factor Res_(F/Qp) PGL_m(D) with p dividing the index of D. Construct a Hodge cover G with G_der=Res_(F0/Q) H^sharp, the same adjoint datum, split local reflex composite, a self-dual very-good lattice embedding for the stabilizer lifting the prescribed target parahoric, R-smooth torus centre, quasi-tame Z_G^c, and torsion-free inertia coinvariants of Z_G^c/Z_(G_der).
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`, `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`, `ReductiveGroupsPartII:RG2.3`, `ReductiveGroupsPartII:RG2.1`.
+(KPZ, Proposition 7.2.10, pp.79–80).
 
-**Acceptance:** A zero coinvariant group is allowed; a nonzero finite torsion group cannot satisfy the freeness argument.
+A proof route: KPZ modifies Deligne’s fundamental Hodge cover by central tori and builds a corrected self-dual very-good embedding. Use the generic fundamental representation and invariant-form inputs, the corrected tensor-lattice theorem, and Zarhin’s imported self-dual enlargement. Check the centre and inertia coinvariants independently of the representation embedding.
 
-**Source:** KZ, Proposition 4.2.3 and Lemma 4.2.4, pp.34–35.
+*Needs:* ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover; ShimuraData:Layer 4; gap:hodge-cover-refinement; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; ReductiveGroupsPartII:§RG2.3; gap:r-smooth-integral-groups; gap:ffg-nonexceptional; gap:ffg-polarized-chain; PadicDifferentialEquationsAndRigidCohomology:§RD.5.116.
 
-## SV2.3: Integral component descent
+The construction has the following API.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+- Return the isomorphism of adjoint Shimura data and the central isogeny of derived groups.
+- Return the chosen self-dual lattice and very-good tensor-compatible embedding, with its stabilizer model.
+- Identify the local reflex composite at each target p-place with the target local field.
 
-**Layer prerequisites:** `AbelianSchemesAndArithmeticModuli:A6`, `AlgebraicModuliForArithmeticGeometry:R09.3`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `HeckeStacksAndLocalShtukas:HS2`, `ReductiveGroupsPartII:RG2.0`, `ReductiveGroupsPartII:RG2.3`, `ShimuraCompactificationsPartII:C7`, `ShimuraVarieties:V6`, `ShimuraVarietiesPartII:SV2.0`, `ShimuraVarietiesPartII:SV2.1`, `ShimuraVarietiesPartII:SV2.2`.
+**Checks.**
 
-### Integral component-action groups
+- For a split type-A local datum the non-exceptional path is available.
+- A type-A division algebra of index divisible by p cannot use this constructor’s non-exceptional certificate.
+- A perfect alternating form on the enlarged lattice must identify Λ with its dual; an arbitrary integral lattice fails.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/integral-component-groups` (definition). **Planet:** Integral component symmetries.
+All five cover properties must be exported together, with the source’s non-exceptional restriction.
 
-Import the characteristic-zero groups A(G), A(G)° and their actions from V6. Set A_int(G)=G(A_f^p)/closure(Z°(Z_(p))) *_(G°(Z_(p))_+/Z°(Z_(p))) G_ad°(Z_(p))_+ and define A_int(G)° by replacing the adelic numerator with the closure of G°(Z_(p))_+ in G(A_f^p). Here the star denotes the quotient of the semidirect product by the diagonal relation, with the integral adjoint parahoric group used in the gluing theorem. Retain the auxiliary tilde groups that also carry the p-adic parahoric factor when comparing kernels and cosets.
+### 2.4 Exceptional very-good Hodge covers
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+The target SV2.2/exceptional-cover constructs the following. For a Q-simple abelian-type datum with D^H factors or a type-A local division algebra of index divisible by p, construct the Hodge cover with the properties of the preceding node except that torsion-free coinvariants of Z_G^c/Z_(G_der) are not promised in the exceptional type-A case. Use the appropriate fundamental symplectic representation and the self-dual lattice construction from KPZ §§6.2–6.3. Passing from the enlarged group to GSp requires smoothness of the scheme-theoretic intersection, R-smoothness, equal derived group and a lifting cocharacter.
 
-**Construction/proof.**
-1. KP constructs integral analogues of the adelic component symmetries from parahoric arithmetic subgroups.
-2. Apply the imported generic star-product construction and topological closure/completion formalism to these specific groups.
+(KPZ, Proposition 7.2.16 and Lemmas 7.2.13–7.2.14, pp.81–83).
 
-**Direct prerequisites:** `ShimuraVarieties:V6`, `ReductiveGroupsPartII:RG2.3`, `ReductiveGroupsPartII:RG2.0`.
+A proof route: KPZ treats the D^H and wild-index type-A representations separately and identifies the extra smooth-intersection hypotheses. Import the corresponding corrected local lattice theorems and the fundamental invariant-form classification. Use smooth multiplier maps at odd p to verify the intersection hypothesis rather than assuming it for an arbitrary closed subgroup.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.3/reflex-units`, `ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action`, `ShimuraVarietiesPartII:SV2.3/component-galois-extension`.
+*Needs:* ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover; ShimuraData:Layer 4; gap:hodge-cover-refinement; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; ReductiveGroupsPartII:§RG2.3; gap:r-smooth-integral-groups; gap:ffg-exceptional; gap:ffg-polarized-chain; PadicDifferentialEquationsAndRigidCohomology:§RD.5.116.
 
-**API.**
+The construction has the following API.
 
-- `IntegralComponentGroups.relations` (characterisation): The pairs (γ,φ(γ) inverse) act trivially; expose the resulting quotient homomorphism.
-- `IntegralComponentGroups.neutral` (projection): Expose A_int°→A_int and the maps to A(G)°→A(G), with their topologies.
-- `IntegralComponentGroups.derivedCompletion` (compatibility): A_int° is the completion of the integral rational adjoint group for the congruence topology coming from the connected derived parahoric.
+- Expose all cover data except the unproved torsion-free property in the type-A branch.
+- Return the verified smooth scheme intersection needed to restrict the very-good embedding.
+- In the D^H branch the quotient coinvariants are torsion-free; in the wild-index type-A branch no such conclusion is supplied.
 
-**Discriminating checks.**
+**Checks.**
 
-- `IntegralComponentGroups.torus`: For a torus the derived congruence completion is trivial; the full adelic component group need not be.
-- `IntegralComponentGroups.diagonalRelation`: A rational integral element represented simultaneously in the two semidirect factors maps to the identity.
-- `IntegralComponentGroups.integralClosure`: Replacing the closure in G(A_f^p) by the closure in G(A_f) must require the tilde comparison and cannot be a definitional equality.
+- For the D^H centre described by the split-at-p CM norm-one torus, its inertia-coinvariant quotient is free.
+- A wild-index type-A input keeps the missing torsion-free assertion absent even after self-dual enlargement.
+- Without smoothness of G′∩GSp(Λ), restriction of a very-good embedding is rejected.
 
-**Acceptance:** The groups are topological quotients; the integral and full adelic closures are taken in different ambient groups.
+The type-A output must not expose a torsion-free-coinvariant field.
 
-**Source:** KP, §4.5.6 and §4.6.1–4.6.4, pp.195–199.
+### 2.5 Auxiliary cover for every abelian-type datum
 
-### Reflex units and unramified components
+The target SV2.2/general-abelian-cover constructs the following. For any abelian-type (G_2,X_2), p>2 and connected target parahoric, construct a Hodge cover (G,X) with the same adjoint datum and a central derived isogeny, satisfying: π₁(G_der) is a 2-group and is trivial without D^H factors; the local-to-global central-kernel condition (D); all target p-places split in E E_2; the centre is an R-smooth torus; Z_G^c is quasi-tame; and the lifting stabilizer has a self-dual very-good embedding. If no local adjoint factor involves a division algebra of index divisible by p, X_*(G_ab)_I is additionally torsion-free. Combine simple factors with a common similitude multiplier.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/reflex-units` (theorem).
+(KPZ, Proposition 7.2.19, pp.83–84).
 
-The reflex norm induced by μ_h inverse maps local reflex units to the connected parahoric modulo the simply connected derived image. Together with canonical reciprocity on components this shows that the geometric connected components at fixed connected p-level are defined over the maximal reflex extension unramified above p. Under condition (D), sufficiently small prime-to-p level has rational stabilizers in the connected p-level.
+A proof route: KPZ assembles the simple-factor covers using a fibre product of their multiplier maps. Check the adjoint and derived maps factor by factor; central products control the centre and the 2-primary fundamental group. Retain the stated restriction on the torsion-free conclusion and the splitting at every target p-place.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+*Needs:* ShimuraVarietiesPartII:SV2.2/nonexceptional-cover; ShimuraVarietiesPartII:SV2.2/exceptional-cover; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; ReductiveGroupsPartII:§RG2.3; gap:r-smooth-integral-groups.
 
-**Construction/proof.**
-1. KP computes the reflex norm on local units and uses it to control inertia on connected components.
-2. Use Néron connected torus units and reciprocity; use condition (D) for the small-level rational-stabilizer assertion.
+The construction has the following API.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/integral-component-groups`, `ShimuraVarieties:V6`, `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`, `ReductiveGroupsPartII:RG2.3`.
+- For C=ker(G_sc→G_der), any global H¹(Q,C) class trivial at every finite ℓ≠p is trivial at p.
+- The cover and target local models identify through the adjoint minuscule datum using the imported central-isogeny comparison.
+- Expose torsion-free X_*(G_ab)_I only under the explicitly verified absence of p-divisible division indices.
 
-**Acceptance:** Unramified component definition is weaker than a model over the original reflex field without descent data.
+**Checks.**
 
-**Source:** KP, Lemma 4.3.2, Lemma 4.3.5 and Corollary 4.3.9, pp.189–191; KPZ §7.1.10–7.1.11, pp.74–75.
+- Two factors with unequal similitude multipliers do not define a symplectic direct-sum similitude.
+- Every p-place of each target reflex factor must split in the composite; a choice at only one place is insufficient.
+- The D^H branch permits 2-primary π₁ but cannot claim simply connected derived group.
 
-### Connected-parahoric normalization cover
+The output applies to every connected parahoric at odd p, including the exceptional factors, without adding the non-exceptional hypothesis.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/connected-normalization-cover` (theorem). **Planet:** Connected-level cover.
+### 2.6 Strongly acceptable auxiliary cover
 
-For the full-fixer Hodge model satisfying the corrected (A)–(D) assumptions, normalize it in the generic connected-parahoric cover. The resulting morphism is finite étale; at sufficiently small prime-to-p level it splits after an unramified extension. Its component closures are the integral models used for the actual conjugate levels in descent.
+The target SV2.2/strong-auxiliary-cover proves the following. For a strongly acceptable target triple, choose the KZ auxiliary Hodge cover with derived group mapping centrally to the target, the reflex splitting and very-good lattice properties, compact centre Z_G^c a product of restrictions of tame tori, and torsion-free X_*(G_ab)_I. At the corresponding very-special building point the cover fixer is connected. The last coinvariant hypothesis is torsion-free, not torsion.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p.
+(KZ, Proposition 4.2.3 and Lemma 4.2.4, pp.34–35).
 
-**Construction/proof.**
-1. KPZ retains the finite étale connected-level passage after repairing the Hodge construction.
-2. Use the small-level splitting from rational stabilizers, extend over the unramified base, and descend along prime-to-p finite étale level change.
+A proof route: KZ strengthens the cover for strongly acceptable triples so that the full fixer agrees with the connected parahoric. Use the split restriction-of-scalars derived factors and induced central tori to verify the Kottwitz-kernel and torsion-free-coinvariant criterion.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram`, `ShimuraVarietiesPartII:SV2.3/reflex-units`, `ShimuraCompactificationsPartII:C7/normalized-interior-model`, `AlgebraicModuliForArithmeticGeometry:R09.3`.
+*Needs:* ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple; ShimuraVarietiesPartII:SV2.2/general-abelian-cover; ReductiveGroupsPartII:§RG2.3; gap:r-smooth-integral-groups; ReductiveGroupsPartII:§RG2.1.
 
-**Acceptance:** Finiteness is obtained from normalization in the finite generic cover, not from étaleness alone.
+A zero coinvariant group is allowed; a nonzero finite torsion group cannot satisfy the freeness argument.
 
-**Source:** KPZ, Proposition 7.1.11, p.75; KP Proposition 4.3.7, pp.190–191.
+### Examples
 
-### Integral adjoint twisting action
+For split GU(1,1), Z_G^c≅G_m locally and G_der≅SL₂. For GSp_(2g), Z_G^c=μ₂ is not a torus, so that group does not satisfy the stated strongly acceptable centre condition without an auxiliary cover.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action` (construction).
+### Dependencies
 
-For γ in the positive integral rational adjoint group, let P_γ be its central torsor. Twist the universal abelian object using the imported A6 construction, transport its weak polarization and conjugated prime-to-p level, and use normalization to obtain the integral γ-action. Together with prime-to-p Hecke maps this gives the A_int action; the diagonal rational relation acts trivially. Lift it to the adjoint tensor-frame torsor by quotienting out the central ambiguity of a lift of γ.
+*Needs:* ShimuraData:Layer 4; gap:hodge-cover-refinement; ReductiveGroupsPartII:§RG2.3; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; gap:r-smooth-integral-groups; gap:ffg-nonexceptional; gap:ffg-polarized-chain; PadicDifferentialEquationsAndRigidCohomology:§RD.5.116; gap:ffg-exceptional.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+## Layer 3: Integral component descent
 
-**Construction/proof.**
-1. KP extends the adjoint symmetry by central twisting of the universal abelian moduli point and its tensor frames.
-2. Check descent after a finite torsor trivialization, including conjugation of the prime-to-p level.
-3. Apply the normalization universal property and verify the diagonal relation on frames.
+### 3.1 Integral component-action groups
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/integral-component-groups`, `ShimuraVarietiesPartII:SV2.0/etale-tensors`, `AbelianSchemesAndArithmeticModuli:A6/abelian-torsor-twist`, `AbelianSchemesAndArithmeticModuli:A6/twist-realizations-polarizations-and-level`, `ShimuraCompactificationsPartII:C7/normalized-interior-model`.
+The target SV2.3/integral-component-groups defines the following. Import the characteristic-zero groups A(G), A(G)° and their actions from V6. Set A_int(G)=G(A_f^p)/closure(Z°(Z_(p))) *_(G°(Z_(p))_+/Z°(Z_(p))) G_ad°(Z_(p))_+ and define A_int(G)° by replacing the adelic numerator with the closure of G°(Z_(p))_+ in G(A_f^p). Here the star denotes the quotient of the semidirect product by the diagonal relation, with the integral adjoint parahoric group used in the gluing theorem. Retain the auxiliary tilde groups that also carry the p-adic parahoric factor when comparing kernels and cosets.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`, `ShimuraVarietiesPartII:SV2.3/free-descent-kernel`, `ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram`.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
 
-**API.**
+(KP, §4.5.6 and §4.6.1–4.6.4, pp.195–199).
 
-- `IntegralAdjointAction.generic` (compatibility): On the generic Shimura tower this agrees with V6’s adjoint action.
-- `IntegralAdjointAction.compose` (functoriality): The contracted-product law P_(γδ) gives the right-action composition law on models and adjoint frames.
-- `IntegralAdjointAction.localModel` (compatibility): The frame-to-filtration map is invariant under the arithmetic action and equivariant under the adjoint group scheme.
+A proof route: KP constructs integral analogues of the adelic component symmetries from parahoric arithmetic subgroups. Apply the imported generic star-product construction and topological closure/completion formalism to these specific groups.
 
-**Discriminating checks.**
+*Needs:* ShimuraVarieties:§§6.3–6.6; ReductiveGroupsPartII:§RG2.3; ReductiveGroupsPartII:§RG2.0.
 
-- `IntegralAdjointAction.lifted`: If γ lifts to integral g∈G, the twist trivializes and the action is the usual g-action.
-- `IntegralAdjointAction.centralAmbiguity`: Two lifts differing by the centre yield the same adjoint frame action, not necessarily the same raw G-frame.
-- `IntegralAdjointAction.levelConjugation`: Transport sends K^p to γK^pγ inverse in the lifted description; keeping K^p fixed without normality fails.
+The construction has the following API.
 
-**Acceptance:** A rational adjoint element need not admit a rational lift in G; the central torsor is essential.
+- The pairs (γ,φ(γ) inverse) act trivially; expose the resulting quotient homomorphism.
+- Expose A_int°→A_int and the maps to A(G)°→A(G), with their topologies.
+- A_int° is the completion of the integral rational adjoint group for the congruence topology coming from the connected derived parahoric.
 
-**Source:** KP, Lemmas 4.5.2, 4.5.4, 4.5.7 and 4.5.9, pp.194–197.
+**Checks.**
 
-### Galois component-stabilizer extension
+- For a torus the derived congruence completion is trivial; the full adelic component group need not be.
+- A rational integral element represented simultaneously in the two semidirect factors maps to the identity.
+- Replacing the closure in G(A_f^p) by the closure in G(A_f) must require the tilde comparison and cannot be a definitional equality.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/component-galois-extension` (construction).
+The groups are topological quotients; the integral and full adelic closures are taken in different ambient groups.
 
-Fix a connected component over the maximal extension unramified at p. Its stabilizer E_int in A_int×Gal(E^p/E) fits into 1→A_int°→E_int→Gal(E^p/E)→1. After restricting to a composite reflex field, a derived cover induces the compatible map of these extensions. The star amalgamation with A_int recovers A_int×Gal(E^p/E), encoding the semilinear descent action on the induced model.
+### 3.2 Reflex units and unramified components
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+The target SV2.3/reflex-units proves the following. The reflex norm induced by μ_h inverse maps local reflex units to the connected parahoric modulo the simply connected derived image. Together with canonical reciprocity on components this shows that the geometric connected components at fixed connected p-level are defined over the maximal reflex extension unramified above p. Under condition (D), sufficiently small prime-to-p level has rational stabilizers in the connected p-level.
 
-**Construction/proof.**
-1. KP organizes reciprocity on connected components as an extension compatible with central derived covers.
-2. Import the generic component torsor, apply the reflex-unit calculation and verify the induced extension maps through the common connected datum.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/reflex-units`, `ShimuraVarietiesPartII:SV2.3/integral-component-groups`, `ShimuraVarieties:V6`.
+(KP, Lemma 4.3.2, Lemma 4.3.5 and Corollary 4.3.9, pp.189–191; KPZ §7.1.10–7.1.11, p.75).
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`.
+A proof route: KP computes the reflex norm on local units and uses it to control inertia on connected components. Use Néron connected torus units and reciprocity; use condition (D) for the small-level rational-stabilizer assertion.
 
-**API.**
+*Needs:* ShimuraVarietiesPartII:SV2.3/integral-component-groups; ShimuraVarieties:§§6.3–6.6; ShimuraVarietiesPartII:SV2.2/general-abelian-cover; ReductiveGroupsPartII:§RG2.3.
 
-- `IntegralComponentExtension.kernel` (characterisation): The kernel of projection to Galois is exactly A_int°.
-- `IntegralComponentExtension.coverMap` (functoriality): A compatible derived cover induces a map after pullback to the common reflex field, preserving kernel and Galois quotient.
-- `IntegralComponentExtension.amalgamation` (universal-property): The star product of A_int and E_int over A_int° identifies with the product action group.
+Unramified component definition is weaker than a model over the original reflex field without descent data.
 
-**Discriminating checks.**
+### 3.3 Connected-parahoric normalization cover
 
-- `IntegralComponentExtension.identityCover`: The identity derived cover gives the identity extension map.
-- `IntegralComponentExtension.inertia`: Inertia above p acts trivially on components by the reflex-unit calculation.
-- `IntegralComponentExtension.nontrivialComponents`: A datum with several components retains the nontrivial A_int/A_int° action; the extension is not replaced by A_int° alone.
+The target SV2.3/connected-normalization-cover proves the following. For the full-fixer Hodge model satisfying the corrected (A)–(D) assumptions, normalize it in the generic connected-parahoric cover. The resulting morphism is finite étale; at sufficiently small prime-to-p level it splits after an unramified extension. Its component closures are the integral models used for the actual conjugate levels in descent.
 
-**Acceptance:** The construction keeps the semilinear Galois action; an abstract disjoint union without it is insufficient.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p.
 
-**Source:** KP, §4.6.5, Lemmas 4.6.6 and 4.6.9, pp.199–202.
+(KPZ, Proposition 7.1.11, p.75; KP Proposition 4.3.7, pp.190–191).
 
-### Gluing at conjugate parahoric levels
+A proof route: KPZ retains the finite étale connected-level passage after repairing the Hodge construction. Use the small-level splitting from rational stabilizers, extend over the unramified base, and descend along prime-to-p finite étale level change.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing` (construction). **Planet:** Conjugate-level gluing.
+*Needs:* ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram; ShimuraVarietiesPartII:SV2.3/reflex-units; ShimuraVarietiesPartII:SV2.0/integral-hodge-data; SchemeAndStackFoundations:§§1.17–1.23.
 
-For a Hodge cover with a central isogeny G_der→G_2,der identifying adjoint data, as in the corrected descent theorem, choose coset representatives J in G_2(Q_p) for the image of A_int(G_2) in A(G)°∖A(G_2)/K_2,p°. For each j use the connected component containing (j,X⁺); it is identified with the connected Shimura variety at jK_p°j inverse, not uniformly with the component at K_p°. Form the disjoint union over j of [S_(K_p°)^(j,+)×A_int(G_2)]/A_int(G)°. Its generic fibre is Sh_(K_2,p°)(G_2,X_2) and its semilinear action gives descent over the composite reflex field.
+Finiteness is obtained from normalization in the finite generic cover, not from étaleness alone.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+### 3.4 Integral adjoint twisting action
 
-**Construction/proof.**
-1. The published KPZ erratum replaces the repeated fixed-level connected piece by the pieces at conjugate parahoric levels.
-2. Use the Cartesian component-group square and its stabilizers to compute each j-piece before taking the quotient.
-3. Identify the generic induced variety and descend the semilinear action; apply the freeness argument separately to the integral action.
+The target SV2.3/adjoint-twisting-action constructs the following. For γ in the positive integral rational adjoint group, let P_γ be its central torsor. Twist the universal abelian object using the imported A6 construction, transport its weak polarization and conjugated prime-to-p level, and use normalization to obtain the integral γ-action. Together with prime-to-p Hecke maps this gives the A_int action; the diagonal rational relation acts trivially. Lift it to the adjoint tensor-frame torsor by quotienting out the central ambiguity of a lift of γ.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/connected-normalization-cover`, `ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action`, `ShimuraVarietiesPartII:SV2.3/component-galois-extension`, `AlgebraicModuliForArithmeticGeometry:R09.3`, `ShimuraVarieties:V6`.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.3/free-descent-kernel`, `ShimuraVarietiesPartII:SV2.3/abelian-integral-model`, `ShimuraVarietiesPartII:SV2.4/ordinary-density`, `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`, `ShimuraVarietiesPartII:SV2.5/ordinary-strong-special-lift`.
+(KP, Lemmas 4.5.2, 4.5.4, 4.5.7 and 4.5.9, pp.194–197).
 
-**API.**
+A proof route: KP extends the adjoint symmetry by central twisting of the universal abelian moduli point and its tensor frames. Check descent after a finite torsor trivialization, including conjugation of the prime-to-p level. Apply the normalization universal property and verify the diagonal relation on frames.
 
-- `ConjugateLevelGluing.genericFibre` (compatibility): The generic-fibre identification is equivariant for G_2(A_f^p) and the Galois action.
-- `ConjugateLevelGluing.changeRepresentative` (equivalence): Changing J or its representatives induces the canonical equivariant isomorphism through the computed stabilizers.
-- `ConjugateLevelGluing.chart` (projection): Expose the j-indexed component chart together with its conjugated p-level and quotient action.
+*Needs:* ShimuraVarietiesPartII:SV2.3/integral-component-groups; ShimuraVarietiesPartII:SV2.0/etale-tensors; AbelianSchemesAndArithmeticModuli:§§A6.28–A6.29; AbelianSchemesAndArithmeticModuli:§A6.29; ShimuraVarietiesPartII:SV2.0/integral-hodge-data.
 
-**Discriminating checks.**
+The construction has the following API.
 
-- `ConjugateLevelGluing.identity`: For the identity cover and the trivial coset, recover the original connected model and its component induction.
-- `ConjugateLevelGluing.nonNormalizer`: If jK_p°j inverse differs from K_p°, the j-piece cannot be identified with a fixed-level piece without a supplied Hecke comparison.
-- `ConjugateLevelGluing.representatives`: Equivalent representatives give isomorphic pieces via their actual stabilizer groups, including integral descent data.
+- On the generic Shimura tower this agrees with the adjoint action of ShimuraVarieties §§6.3–6.6.
+- The contracted-product law P_(γδ) gives the right-action composition law on models and adjoint frames.
+- The frame-to-filtration map is invariant under the arithmetic action and equivariant under the adjoint group scheme.
 
-**Acceptance:** A representative j outside the parahoric normalizer must change the connected piece’s level.
+**Checks.**
 
-**Source:** KPZ, §7.3.1(3), pp.86–87, correcting KP Lemma 4.6.13 and Corollary 4.6.15.
+- If γ lifts to integral g∈G, the twist trivializes and the action is the usual g-action.
+- Two lifts differing by the centre yield the same adjoint frame action, not necessarily the same raw G-frame.
+- Take γ=diag(ℓ,1), ℓ≠p, and K_ℓ=GL₂(Z_ℓ). Then γK_ℓγ⁻¹ contains [[1,ℓ],[0,1]] and [[1,0],[ℓ⁻¹,1]], whereas K_ℓ does not contain the latter. Thus the transported level is γK^pγ⁻¹; it is not generally K^p. For γ=1 the transport is identity.
 
-### Freeness of the integral descent kernel
+A rational adjoint element need not admit a rational lift in G; the central torsor is essential.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/free-descent-kernel` (theorem).
+### 3.5 Galois component-stabilizer extension
 
-For the cover and small-level conditions used in conjugate-level gluing, Δ=ker(A_int(G)°→A_int(G_2)) acts freely on the relevant integral connected tower pieces. The kernel need not be finite at the full tower; the representable finite-level quotients and their descent must be justified by the stated congruence and level conditions, not by an unproved finiteness assumption.
+The target SV2.3/component-galois-extension constructs the following. Fix a connected component over the maximal extension unramified at p. Its stabilizer E_int in A_int×Gal(E^p/E) fits into 1→A_int°→E_int→Gal(E^p/E)→1. After restricting to a composite reflex field, a derived cover induces the compatible map of these extensions. The star amalgamation with A_int recovers A_int×Gal(E^p/E), encoding the semilinear descent action on the induced model.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
 
-**Construction/proof.**
-1. KP’s twisting argument identifies an element fixing a point with a central integral lift and then with the trivial action.
-2. Use rigidity at sufficiently small prime-to-p level, the transported level identity and the connected rational stabilizer criterion.
-3. Apply the imported quotient/descent theorem at finite levels; carry the conjugate-level correction throughout.
+(KP, §4.6.5, Lemmas 4.6.6 and 4.6.9, pp.199–202).
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`, `ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action`, `ShimuraVarietiesPartII:SV2.3/reflex-units`, `AbelianSchemesAndArithmeticModuli:A6/twist-realizations-polarizations-and-level`, `AlgebraicModuliForArithmeticGeometry:R09.3`.
+A proof route: KP organizes reciprocity on connected components as an extension compatible with central derived covers. Import the generic component torsor, apply the reflex-unit calculation and verify the induced extension maps through the common connected datum.
 
-**Acceptance:** The proof must work with the integral moduli object and level, not only with its rational isogeny class.
+*Needs:* ShimuraVarietiesPartII:SV2.3/reflex-units; ShimuraVarietiesPartII:SV2.3/integral-component-groups; ShimuraVarieties:§§6.3–6.6.
 
-**Source:** KP, Proof of Corollary 4.6.15 and Corollary 4.6.18, pp.203–205; KPZ §7.3.1(3), pp.86–87.
+The construction has the following API.
 
-### Integral models of abelian type
+- The kernel of projection to Galois is exactly A_int°.
+- A compatible derived cover induces a map after pullback to the common reflex field, preserving kernel and Galois quotient.
+- The star product of A_int and E_int over A_int° identifies with the product action group.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/abelian-integral-model` (theorem). **Planet:** Abelian-type integral model.
+**Checks.**
 
-For every abelian-type datum, p>2 and connected parahoric K_2,p°, the corrected auxiliary cover and component gluing produce a normal integral pro-prime-to-p tower over the local reflex ring, with finite étale prime-to-p transitions, the pro-level DVR bijection and étale-local singularities modeled on M_loc(G_2,{μ_h,2}). The cover’s reflex splitting permits descent to the target local reflex field. The model is compared with the canonical model only when the canonical-uniqueness supplier hypotheses are verified.
+- The identity derived cover gives the identity extension map.
+- Inertia above p acts trivially on components by the reflex-unit calculation.
+- A datum with several components retains the nontrivial A_int/A_int° action; the extension is not replaced by A_int° alone.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+The construction keeps the semilinear Galois action; an abstract disjoint union without it is insufficient.
 
-**Construction/proof.**
-1. KPZ removes the tame restriction by the corrected very-good Hodge cover and integral component descent.
-2. Transfer the local-model and extension properties through the free quotient, identify the intrinsic local model, and use the split local reflex composite.
+### 3.6 Gluing at conjugate parahoric levels
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`, `ShimuraVarietiesPartII:SV2.3/free-descent-kernel`, `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`, `ShimuraVarietiesPartII:SV2.1/pro-dvr-property`, `GeometricSatakeAndFusion:GS0:loop-geometry`.
+The target SV2.3/conjugate-level-gluing constructs the following. For a Hodge cover with a central isogeny G_der→G_2,der identifying adjoint data, as in the corrected descent theorem, choose coset representatives J in G_2(Q_p) for the image of A_int(G_2) in A(G)°∖A(G_2)/K_2,p°. For each j use the connected component containing (j,X⁺); it is identified with the connected Shimura variety at jK_p°j inverse, not uniformly with the component at K_p°. Form the disjoint union over j of [S_(K_p°)^(j,+)×A_int(G_2)]/A_int(G)°. Its generic fibre is Sh_(K_2,p°)(G_2,X_2) and its semilinear action gives descent over the composite reflex field.
 
-**Acceptance:** The target applies to exceptional type A and D^H; no unproved torsion-free coinvariants are inserted.
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
 
-**Source:** KPZ, Theorem 7.2.21, pp.84–85; Proposition 7.1.14, pp.75–76.
+(KPZ, §7.3.1(3), pp.86–87, correcting KP Lemma 4.6.13 and Corollary 4.6.15).
 
-### Connected adjoint local-model diagram
+A proof route: the published KPZ erratum replaces the repeated fixed-level connected piece by the pieces at conjugate parahoric levels. Use the Cartesian component-group square and its stabilizers to compute each j-piece before taking the quotient. Identify the generic induced variety and descend the semilinear action; apply the freeness argument separately to the integral action.
 
-**Target:** `ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram` (construction). **Planet:** Connected adjoint diagram.
+*Needs:* ShimuraVarietiesPartII:SV2.3/connected-normalization-cover; ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action; ShimuraVarietiesPartII:SV2.3/component-galois-extension; SchemeAndStackFoundations:§§1.17–1.23; ShimuraVarieties:§§6.3–6.6.
 
-For the abelian-type model there is an adjoint frame torsor with a smooth equivariant map to the intrinsic local model of relative dimension dim G_ad. The elementary cover construction reduces the structure group to the connected adjoint parahoric in the non-exceptional case. For all cases the connected reduction is supplied by the integral-shtuka theorem cited in KPZ 7.2.24. These are two proof routes with different required inputs; the general reduction is not derived merely from the elementary quotient construction.
+The construction has the following API.
 
-**Additional hypotheses:** Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
+- The generic-fibre identification is equivariant for G_2(A_f^p) and the Galois action.
+- Changing J or its representatives induces the canonical equivariant isomorphism through the computed stabilizers.
+- Expose the j-indexed component chart together with its conjugated p-level and quotient action.
 
-**Construction/proof.**
-1. KPZ distinguishes the elementary non-exceptional connected reduction from the general shtuka-based reduction.
-2. Descend the adjoint Hodge frame diagram through the arithmetic action.
-3. Use the general integral-shtuka reduction when the elementary connectedness condition is unavailable.
+**Checks.**
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/abelian-integral-model`, `ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `HeckeStacksAndLocalShtukas:HS2`.
+- For the identity cover and the trivial coset, recover the original connected model and its component induction.
+- If jK_p°j inverse differs from K_p°, the j-piece cannot be identified with a fixed-level piece without a supplied Hecke comparison.
+- Equivalent representatives give isomorphic pieces via their actual stabilizer groups, including integral descent data.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.6/kr-stratification`, `ShimuraVarietiesPartII:SV2.6/rational-local-model-lift`.
+A representative j outside the parahoric normalizer must change the connected piece’s level.
 
-**API.**
+### 3.7 Freeness of the integral descent kernel
 
-- `AbelianLocalModelDiagram.structureGroup` (projection): Return the actual connected adjoint parahoric and the verified route to reduction of structure group.
-- `AbelianLocalModelDiagram.filtration` (projection): Expose the smooth equivariant map to M_loc(G_2,{μ_h,2}) and its relative dimension.
-- `AbelianLocalModelDiagram.level` (functoriality): Pullback along prime-to-p finite étale level maps preserves the torsor and local-model morphism.
+The target SV2.3/free-descent-kernel proves the following. For the cover and small-level conditions used in conjugate-level gluing, Δ=ker(A_int(G)°→A_int(G_2)) acts freely on the relevant integral connected tower pieces. The kernel need not be finite at the full tower; the representable finite-level quotients and their descent must be justified by the stated congruence and level conditions, not by an unproved finiteness assumption.
 
-**Discriminating checks.**
+Assume the corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding. Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p. Condition (E): Z_G is an R-smooth torus.
 
-- `AbelianLocalModelDiagram.nonExceptional`: For a non-exceptional cover the elementary connected reduction is available without the general shtuka theorem.
-- `AbelianLocalModelDiagram.exceptional`: An exceptional type-A cover uses the general reduction and cannot cite a missing torsion-free quotient.
-- `AbelianLocalModelDiagram.lang`: Over F_q a torsor under the connected smooth adjoint fibre is trivial by Lang; a disconnected full-fixer fibre cannot use that inference.
+(KP, Proof of Corollary 4.6.15 and Corollary 4.6.18, pp.203–205; KPZ §7.3.1(3), pp.86–87).
 
-**Acceptance:** At a finite-field point the connected structure group is what permits Lang triviality.
+A proof route: KP’s twisting argument identifies an element fixing a point with a central integral lift and then with the trivial action. Use rigidity at sufficiently small prime-to-p level, the transported level identity and the connected rational stabilizer criterion. Apply the imported quotient/descent theorem at finite levels; carry the conjugate-level correction throughout.
 
-**Source:** KPZ, Theorem 7.2.21(3) and Corollary 7.2.24, pp.84–85.
+*Needs:* ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing; ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action; ShimuraVarietiesPartII:SV2.3/reflex-units; AbelianSchemesAndArithmeticModuli:§A6.29; SchemeAndStackFoundations:§§1.17–1.23.
 
-## SV2.4: Newton classes and tensor isogenies
+The proof must work with the integral moduli object and level, not only with its rational isogeny class.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+### 3.8 Integral models of abelian type
 
-**Layer prerequisites:** `AbelianSchemesAndArithmeticModuli:A5`, `AbelianSchemesAndArithmeticModuli:A6`, `ArithmeticGaloisRepresentations:R01.5`, `ArithmeticGaloisRepresentations:R01.6`, `BunGAndNewtonStrata:BG0`, `BunGAndNewtonStrata:BG1`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4`, `PELModuli:M4`, `ReductiveGroupsPartII:RG2.0`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartIII:RG3.2`, `ReductiveGroupsPartIII:RG3.3`, `ShimuraCompactificationsPartII:C7`, `ShimuraVarieties:V4`, `ShimuraVarietiesPartII:SV2.0`, `ShimuraVarietiesPartII:SV2.1`, `ShimuraVarietiesPartII:SV2.2`, `ShimuraVarietiesPartII:SV2.3`.
+The target SV2.3/abelian-integral-model proves the following. For every abelian-type datum, p>2 and connected parahoric K_2,p°, the corrected auxiliary cover and component gluing produce a normal integral pro-prime-to-p tower over the local reflex ring, with finite étale prime-to-p transitions, the pro-level DVR bijection and étale-local singularities modeled on M_loc(G_2,{μ_h,2}). The cover’s reflex splitting permits descent to the target local reflex field.
 
-### Newton class of an integral point
+(KPZ, Theorem 7.2.21, pp.84–85; Proposition 7.1.14, pp.75–77).
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/point-newton-class` (construction). **Planet:** Shimura Newton class.
+A proof route: KPZ removes the tame restriction by the corrected very-good Hodge cover and integral component descent. Transfer the local-model and extension properties through the free quotient, identify the intrinsic local model, and use the split local reflex composite.
 
-For x on the geometric special fibre of the Hodge model, a tensor frame D_x≅V⊗L writes its semilinear Frobenius as b_xσ. Define the intrinsic map x↦[b_x]∈B(G_Qp), independent of frame and compatible with prime-to-p level and residue-field extension. The Hodge bound is {μ_h inverse} in the contravariant Dieudonné convention. The pointwise isocrystal specializes to Mathlib’s WittVector.Isocrystal after forgetting its G-tensors; that class alone supplies neither a family nor the B(G) classification.
+*Needs:* ShimuraVarietiesPartII:SV2.2/general-abelian-cover; ShimuraVarietiesPartII:SV2.3/free-descent-kernel; ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing; ShimuraVarietiesPartII:SV2.1/pro-dvr-property; gap:local-models.
 
-**Construction/proof.**
-1. HT trivializes the tensor frame torsor over L and records the resulting Frobenius up to sigma conjugacy.
-2. Changing a frame by g replaces b by g inverse b σ(g); apply the imported B(G) quotient.
+The target applies to exceptional type A and D^H; no unproved torsion-free coinvariants are inserted.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/global-crystalline-realization`, `BunGAndNewtonStrata:BG0/g-isocrystals-and-B-of-G`, `mathlib:WittVector.Isocrystal`.
+### 3.9 Connected adjoint local-model diagram
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.4/newton-admissibility`, `ShimuraVarietiesPartII:SV2.4/newton-strata`.
+The target SV2.3/adjoint-local-model-diagram constructs the following. For every abelian-type datum (G₂,X₂), p>2 and connected parahoric level, construct an adjoint fixer torsor π:S̃_ad→S and an equivariant smooth map q:S̃_ad→M_loc(G₂,{μ_h,2}) of relative dimension dim G₂_ad. The torsor reduces to the connected adjoint parahoric under the nonexceptional condition of KPZ Theorem 7.2.21, and in general by the integral-shtuka reduction of KPZ Corollary 7.2.24.
 
-**API.**
+(KPZ, Theorem 7.2.21(3), pp.84–85; Corollary 7.2.24, p.85).
 
-- `ShimuraNewtonClass.frameChange` (characterisation): Two tensor frames give sigma-conjugate elements and hence the same B(G) class.
-- `ShimuraNewtonClass.standardRealization` (compatibility): Forgetting the tensors gives the Frobenius-semilinear isocrystal on H¹_cris, compatible with WittVector.Isocrystal.
-- `ShimuraNewtonClass.hecke` (functoriality): Prime-to-p Hecke pullback and extension of the perfect residue field preserve the class under the canonical base-change maps.
+A proof route: descend the adjoint frame diagram using the auxiliary Hodge cover. For strongly acceptable data use connectedness of that auxiliary fixer; for the unrestricted connected reduction use the separate local-shtuka supplier.
 
-**Discriminating checks.**
+*Needs:* ShimuraVarietiesPartII:SV2.3/abelian-integral-model; ShimuraVarietiesPartII:SV2.3/adjoint-twisting-action; gap:local-models; gap:general-connected-reduction.
 
-- `ShimuraNewtonClass.ordinaryElliptic`: An ordinary elliptic fibre has Newton slopes {0,1} in the standard contravariant realization.
-- `ShimuraNewtonClass.supersingularElliptic`: A supersingular elliptic fibre has slopes {1/2,1/2}, distinct from the ordinary class.
-- `ShimuraNewtonClass.torus`: For a torus, the class has the Kottwitz invariant of μ_h inverse, not that of μ_h.
+The construction has the following API.
 
-**Acceptance:** The local-model cocharacter is μ_h while the Newton admissibility cocharacter is μ_h inverse.
+- Return the adjoint fixer torsor and its connected-parahoric reduction under the stated nonexceptional, strongly acceptable or general shtuka route, with the corresponding inputs.
+- Expose the smooth equivariant map to M_loc(G_2,{μ_h,2}) and its relative dimension.
+- Pullback along prime-to-p finite étale level maps preserves the torsor and local-model morphism.
 
-**Source:** HT, §1.3.8, p.18; KZ §4.4.2, p.43.
+**Checks.**
 
-### Admissibility of reduction
+- For a non-exceptional cover the elementary connected reduction is available without the general shtuka theorem.
+- An exceptional type-A cover uses the general reduction and cannot cite a missing torsion-free quotient.
+- Over F_q a torsor under the connected smooth adjoint fibre is trivial by Lang; a disconnected full-fixer fibre cannot use that inference.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/newton-admissibility` (theorem).
+At a finite-field point the connected structure group is what permits Lang triviality.
 
-Every pointwise class from the Hodge model belongs to B(G_Qp,{μ_h inverse}): its integral Kottwitz invariant equals the image of μ_h inverse and its dominant Newton point lies below the Galois average of that class. Both assertions are required. The conclusion follows from the Hodge filtration and crystalline representation of a lift, and is not obtained merely from a rational slope inequality.
+### 3.10 Connected adjoint diagram for strongly acceptable triples
 
-**Construction/proof.**
-1. HT applies the admissibility theorem for the crystalline Hodge realization, including the Kottwitz condition.
-2. Use a characteristic-zero lift, the specified comparison tensors and the imported integral admissibility criterion.
+The target SV2.3/strong-adjoint-local-model-diagram constructs the following. For a strongly acceptable triple (G₂,X₂,G₂°), p>2, take the integral model over its completed local reflex ring O_E₂. Construct π:S̃_ad→S as a torsor for the smooth connected adjoint parahoric and an equivariant smooth q:S̃_ad→M_loc(G₂,{μ_h,2}) of relative dimension dim G₂_ad. Prime-to-p Hecke actions commute with q when the local model has trivial Hecke action. The auxiliary Hodge cover has G^fix=G° by KZ Lemma 4.2.4, so KPZ Proposition 7.1.14 already gives the connected reduction; the general integral-shtuka reduction is not an input.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/point-newton-class`, `BunGAndNewtonStrata:BG1/admissible-pair`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4`, `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames`.
+(KZ, Theorem 4.2.6(3), Remark 4.2.7(2), pp.35–36; KPZ Proposition 7.1.14(3), pp.75–76).
 
-**Acceptance:** A class with correct Newton slopes but wrong integral Kottwitz invariant must fail admissibility.
+A proof route: Use the strongly acceptable auxiliary cover with connected fixer and its Hodge tensor-frame diagram. Apply adjoint descent and reflex splitting to obtain the diagram over O_E₂.
 
-**Source:** HT, Lemma 1.3.9, p.18.
+*Needs:* ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover; ShimuraVarietiesPartII:SV2.3/abelian-integral-model; ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram; gap:local-models.
 
-### Newton strata on the special fibre
+The construction has the following API.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/newton-strata` (definition). **Planet:** Newton strata.
+- The source of π is the connected adjoint frame space and its target is the integral model; π is a torsor under the specified smooth parahoric, not a disconnected full fixer.
+- The map q has the intrinsic local model as target, is equivariant under that connected group and has relative dimension dim G₂_ad.
+- Tame level pullback and reflex base change preserve π, q and their equivariance.
 
-For each admissible [b], let S_[b] be the locus of geometric special-fibre points whose canonical class is [b], endowed with its locally closed reduced structure once semicontinuity is proved. Define S_≤[b] using the dominant Newton order, within the fixed Kottwitz fibre. These loci are compatible with prime-to-p level and descent from perfectification. Nonemptiness is a theorem with a rational-Newton witness, not a field of this definition.
+**Checks.**
 
-**Construction/proof.**
-1. HT applies Newton semicontinuity to the universal G-isocrystal to construct the strata.
-2. Use representation-detection of dominance and the generic family semicontinuity contract, then equip the strata with reduced locally closed structures.
+- For the split-at-p GU(1,1) Shimura curve, dim G_ad=3, dim S=dim P¹=1, and dim S̃_ad=4; hence q has relative dimension 3. The full group has dimension 5 and its frame space has dimension 6, so those torsors cannot be interchanged.
+- For a CM torus with split p and strongly acceptable centre, G_ad=1 and the local model is a point; π is the identity and q has relative dimension 0.
+- Over F_q, a fibre under the connected smooth adjoint parahoric has H¹=1 and a rational frame. A constant Z/2-torsor instead has H¹(F_q,Z/2)=Z/2 and can lack a rational point, so the disconnected replacement cannot feed same-field lifting.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/point-newton-class`, `ShimuraVarietiesPartII:SV2.4/newton-admissibility`, `BunGAndNewtonStrata:BG1`.
+### Examples
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.4/newton-semicontinuity`, `ShimuraVarietiesPartII:SV2.4/ordinary-locus`.
+For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,d]]. With c=p this produces c/p=1, so jIj⁻¹ differs from I. Identity conjugation preserves the level.
 
-**API.**
+### Dependencies
 
-- `ShimuraNewtonStratum.mem` (characterisation): A geometric point belongs to S_[b] exactly when its canonical B(G) class equals [b].
-- `ShimuraNewtonStratum.level` (functoriality): The strata pull back under finite étale prime-to-p level transitions.
-- `ShimuraNewtonStratum.partition` (relation): The admissible strata form a disjoint partition of the geometric special fibre; the lower locus is the union over smaller classes in the fixed Kottwitz fibre.
+*Needs:* ShimuraVarieties:§§6.3–6.6; ReductiveGroupsPartII:§RG2.3; ReductiveGroupsPartII:§RG2.0; ShimuraVarietiesPartII:SV2.2/general-abelian-cover; ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram; ShimuraVarietiesPartII:SV2.0/integral-hodge-data; SchemeAndStackFoundations:§§1.17–1.23; ShimuraVarietiesPartII:SV2.0/etale-tensors; AbelianSchemesAndArithmeticModuli:§§A6.28–A6.29; AbelianSchemesAndArithmeticModuli:§A6.29; ShimuraVarietiesPartII:SV2.1/pro-dvr-property; gap:local-models; gap:general-connected-reduction; ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover.
 
-**Discriminating checks.**
+## Layer 4: Newton strata and tensor isogeny groups
 
-- `ShimuraNewtonStratum.ellipticPartition`: In the modular case, ordinary and supersingular loci are disjoint and exhaust the special fibre.
-- `ShimuraNewtonStratum.emptyAllowed`: The definition allows an empty admissible stratum until its nonemptiness hypotheses are verified.
-- `ShimuraNewtonStratum.kottwitz`: Equal rational Newton points in different integral Kottwitz fibres do not define one stratum.
+### 4.1 Newton class of an integral point
 
-**Acceptance:** Closure containment is recorded separately from equality of closures.
+The target SV2.4/point-newton-class constructs the following. For x on the geometric special fibre of the Hodge model, a tensor frame V∨⊗L≅D_x writes its semilinear Frobenius as ρ∨(b_x)σ, where ρ is the standard tower representation. Define the intrinsic map x↦[b_x]∈B(G_Qp), independent of frame and compatible with prime-to-p level and residue-field extension. The Hodge bound is {μ_h inverse} in the contravariant Dieudonné convention. The pointwise isocrystal specializes to Mathlib’s WittVector.Isocrystal after forgetting its G-tensors; that class alone supplies neither a family nor the B(G) classification.
 
-**Source:** HT, Theorem 1.3.14, pp.19–20.
+(HT, §1.3.8, p.18; KZ §4.4.2, p.43).
 
-### Newton specialization and closure containment
+A proof route: HT trivializes the tensor frame torsor over L and records the resulting Frobenius up to sigma conjugacy. Changing a frame by g replaces b by g inverse b σ(g); apply the imported B(G) quotient.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/newton-semicontinuity` (theorem).
+*Needs:* ShimuraVarietiesPartII:SV2.0/global-crystalline-realization; BunGAndNewtonStrata:§0.5; mathlib:WittVector.Isocrystal.
 
-For the universal G-isocrystal on the Hodge special fibre, S_≤[b] is Zariski closed and each Newton stratum is locally closed. The closure of S_[b] is contained in the union of strata with dominant Newton point at most ν_b in the source’s decreasing-slope convention and the same Kottwitz invariant. No converse inclusion or general equality of closures is asserted.
+The construction has the following API.
 
-**Construction/proof.**
-1. HT reduces the specialization claim to Newton polygon semicontinuity in faithful representations.
-2. Use the requested general Grothendieck–Katz family theorem and the representation-detection criterion; combine the finitely many admissible classes to obtain local closedness.
+- Two tensor frames give sigma-conjugate elements and hence the same B(G) class.
+- Applying the dual of the standard tower representation gives the contravariant isocrystal H¹_cris, compatible with WittVector.Isocrystal.
+- Prime-to-p Hecke pullback and extension of the perfect residue field preserve the class under the canonical base-change maps.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/newton-strata`, `ShimuraVarietiesPartII:SV2.0/global-crystalline-realization`, `BunGAndNewtonStrata:BG1`.
+**Checks.**
 
-**Acceptance:** An equality of closures requires additional geometry beyond this node.
+- An ordinary elliptic fibre has Newton slopes {0,1} in the standard contravariant realization.
+- A supersingular elliptic fibre has slopes {1/2,1/2}, distinct from the ordinary class.
+- For a torus, the class has the Kottwitz invariant of μ_h inverse, not that of μ_h.
 
-**Source:** HT, Theorem 1.3.14(1),(3), pp.19–20.
+The local-model cocharacter is μ_h while the Newton admissibility cocharacter is μ_h inverse.
 
-### Special-point nonemptiness of Newton strata
+### 4.2 Admissibility of reduction
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty` (theorem).
+The target SV2.4/newton-admissibility proves the following. Every pointwise class from the Hodge model belongs to B(G_Qp,{μ_h inverse}): its integral Kottwitz invariant equals the image of μ_h inverse and its dominant Newton point lies below the Galois average of that class. Both assertions are required. The conclusion follows from the Hodge filtration and crystalline representation of a lift, and is not obtained merely from a rational slope inequality.
 
-If [b]∈B(G_Qp,{μ_h inverse}) has a representative whose Newton cocharacter is defined over Q_p as in HT (1.1.3.1), then S_[b] is nonempty. This holds in particular for quasi-split G_Qp and for basic classes. Use a global special torus realizing the local special pair, its zero-dimensional canonical model, and the place of its reflex field induced by the fixed embedding i_p above v. Reduce that torus point to the normal Hodge model. An arbitrary place above v need not give the prescribed local class.
+(HT, Lemma 1.3.9, p.18).
 
-**Construction/proof.**
-1. HT realizes the class through a global special pair and reduces its toric canonical model.
-2. Import the rational Newton witness and global torus approximation, use potential good reduction of CM abelian varieties and the Hodge normalization extension criterion.
-3. The unique acceptable torus class identifies the reduction’s Newton class.
+A proof route: HT applies the admissibility theorem for the crystalline Hodge realization, including the Kottwitz condition. Use a characteristic-zero lift, the specified comparison tensors and the imported integral admissibility criterion.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/newton-admissibility`, `BunGAndNewtonStrata:BG1/rational-newton-witness`, `BunGAndNewtonStrata:BG1/torus-special-pair`, `ReductiveGroupsPartIII:RG3.2/elliptic-maximal-torus`, `ShimuraVarieties:V4`, `PELModuli:M4`, `ArithmeticGaloisRepresentations:R01.6`.
+*Needs:* ShimuraVarietiesPartII:SV2.4/point-newton-class; BunGAndNewtonStrata:§1.23; gap:ffg-integral-tensors; ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames; PadicHodgeTheory:§5.5.
 
-**Acceptance:** For a non-quasi-split nonbasic class, the rational-witness hypothesis cannot be omitted.
+A class with correct Newton slopes but wrong integral Kottwitz invariant must fail admissibility.
 
-**Source:** HT, Proposition 1.3.10, p.18, with §1.1.3 and §1.2.5.
+### 4.3 Newton strata on the special fibre
 
-### Mu-ordinary locus
+The target SV2.4/newton-strata defines the following. For each admissible [b], let S_[b] be the locus of geometric special-fibre points whose canonical class is [b], endowed with its locally closed reduced structure once semicontinuity is proved. Define S_≤[b] using the dominant Newton order, within the fixed Kottwitz fibre. These loci are compatible with prime-to-p level and descent from perfectification. Nonemptiness is a theorem with a rational-Newton witness, not a field of this definition.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/ordinary-locus` (definition). **Planet:** Mu-ordinary locus.
+(HT, Theorem 1.3.14, pp.19–20).
 
-Assume there is an ordinary class [b]_μ∈B(G,{μ_h inverse}), meaning that its dominant Newton point is exactly the Galois average of μ_h inverse. Define the ordinary locus as S_[b]_μ. It is not defined by replacing that equality with the unique maximal acceptable class for an arbitrary inner form. For a strongly acceptable triple the split restriction-of-scalars derived factors provide the required ordinary class.
+A proof route: HT applies Newton semicontinuity to the universal G-isocrystal to construct the strata. Use representation-detection of dominance and the generic family semicontinuity contract, then equip the strata with reduced locally closed structures.
 
-**Construction/proof.**
-1. KZ explicitly assumes the existence of the actual ordinary class before defining its locus.
-2. Use the imported ordinary-class criterion and the pointwise Newton stratification.
+*Needs:* ShimuraVarietiesPartII:SV2.4/point-newton-class; ShimuraVarietiesPartII:SV2.4/newton-admissibility; BunGAndNewtonStrata:§§1.22–1.26,2.16.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/newton-strata`, `BunGAndNewtonStrata:BG1/ordinary-class`, `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`.
+The construction has the following API.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.4/ordinary-density`, `ShimuraVarietiesPartII:SV2.5/ordinary-very-good`.
+- A geometric point belongs to S_[b] exactly when its canonical B(G) class equals [b].
+- The strata pull back under finite étale prime-to-p level transitions.
+- The admissible strata form a disjoint partition of the geometric special fibre; the lower locus is the union over smaller classes in the fixed Kottwitz fibre.
 
-**API.**
+**Checks.**
 
-- `ShimuraOrdinaryLocus.mem` (characterisation): x is ordinary exactly when ν_(b_x)=μ inverse diamond in the fixed Kottwitz fibre.
-- `ShimuraOrdinaryLocus.level` (functoriality): The ordinary open pulls back along prime-to-p levels and along the proved derived-isogeny maps.
-- `ShimuraOrdinaryLocus.elliptic` (compatibility): For the Siegel genus-one datum it agrees with the ordinary elliptic locus, equivalently p-rank one.
+- In the modular case, ordinary and supersingular loci are disjoint and exhaust the special fibre.
+- For the modular curve with tower μ_h=(1,0), B(GL₂,{μ_h inverse}) has ordinary representative diag(p⁻¹,1)σ and a basic class of tower slopes (−1/2,−1/2), both with κ=−1. In the dual contravariant realization their slopes are (0,1) and (1/2,1/2), and both strata occur. Basicness alone does not define the ordinary stratum.
+- In B(PGL₂) the basic classes of slopes (0,0) and (1/2,1/2) before quotient by scalars both have rational Newton point 0, but Kottwitz classes 0 and 1 in Z/2. Only the class with the fixed μ-image belongs to the prescribed B(G,{μ}); equality of rational Newton points alone loses this distinction.
+- For the hyperspecial Siegel datum, the genus-one PEL ordinary and supersingular strata have slopes (0,1) and (1/2,1/2), and p-ranks 1 and 0; they agree with the tensor-defined strata here (IgusaVarietiesAndTorsionConcentration Layers IG.0 and IG.2).
 
-**Discriminating checks.**
+Closure containment is recorded separately from equality of closures.
 
-- `ShimuraOrdinaryLocus.genusOne`: The slopes 0 and 1 give an ordinary point.
-- `ShimuraOrdinaryLocus.supersingular`: The supersingular elliptic slope pair is excluded.
-- `ShimuraOrdinaryLocus.innerForm`: A non-quasi-split inner form whose maximum has ν≠μ inverse diamond has no supplied ordinary locus certificate from maximality alone.
+### 4.4 Newton specialization and closure containment
 
-**Acceptance:** The ordinary equality and the unique-maximal-class assertion must remain distinct.
+The target SV2.4/newton-semicontinuity proves the following. For the universal G-isocrystal on the Hodge special fibre, S_≤[b] is Zariski closed and each Newton stratum is locally closed. The closure of S_[b] is contained in the union of strata with dominant Newton point at most ν_b in the source’s decreasing-slope convention and the same Kottwitz invariant. No converse inclusion or general equality of closures is asserted.
 
-**Source:** KZ, Definition 4.4.3 and its preceding assumption, p.43; HT §1.3.15, p.20.
+(HT, Theorem 1.3.14(1),(3), pp.19–20).
 
-### Openness and density of the ordinary locus
+A proof route: HT reduces the specialization claim to Newton polygon semicontinuity in faithful representations. Use the requested general Grothendieck–Katz family theorem and the representation-detection criterion; combine the finitely many admissible classes to obtain local closedness.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/ordinary-density` (theorem).
+*Needs:* ShimuraVarietiesPartII:SV2.4/newton-strata; ShimuraVarietiesPartII:SV2.0/global-crystalline-realization; BunGAndNewtonStrata:§§1.22–1.26,2.16; PadicDifferentialEquationsAndRigidCohomology:§RD.3.43.
 
-Assume an actual ordinary class exists, its rational-Newton witness holds, and the special fibre is locally integral with the connected-component specialization theorem of MP19 Corollary 4.1.11 available. Then the ordinary locus is nonempty open and dense on every component: semicontinuity gives openness, special reduction gives nonemptiness, and the component theorem plus Hecke transport spreads density. In particular the corrected very-special strongly acceptable model has dense ordinary locus. This does not assert density at arbitrary parahoric crossings.
+An equality of closures requires additional geometry beyond this node.
 
-**Construction/proof.**
-1. KZ obtains local integrality from the very-special local model and invokes the ordinary-density argument of HT.
-2. Use the explicit compactification/component-specialization request to make the step from local integrality to irreducible special fibres of connected components.
-3. Transport ordinary points between component pieces using tensor-compatible Hecke quasi-isogenies and the corrected conjugate-level construction.
+### 4.5 Special-point nonemptiness of Newton strata
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/ordinary-locus`, `ShimuraVarietiesPartII:SV2.4/newton-semicontinuity`, `ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty`, `ShimuraVarietiesPartII:SV2.1/special-fibre-geometry`, `ShimuraCompactificationsPartII:C7`, `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`.
+The target SV2.4/special-reduction-nonempty proves the following. If [b]∈B(G_Qp,{μ_h inverse}) has a representative whose Newton cocharacter is defined over Q_p as in HT (1.1.3.1), then S_[b] is nonempty. This holds in particular for quasi-split G_Qp and for basic classes. Use a global special torus realizing the local special pair, its zero-dimensional canonical model, and the place of its reflex field induced by the fixed embedding i_p above v. Reduce that torus point to the normal Hodge model. An arbitrary place above v need not give the prescribed local class.
 
-**Acceptance:** Local integrality by itself is not silently used as a proof of global component irreducibility.
+(HT, Proposition 1.3.10, p.18, with §1.1.3 and §1.2.5).
 
-**Source:** KZ, Theorem 4.4.4, p.43; HT Corollary 1.3.16, p.20.
+A proof route: HT realizes the class through a global special pair and reduces its toric canonical model. Import the rational Newton witness and global torus approximation, use potential good reduction of CM abelian varieties and the Hodge normalization extension criterion. The unique acceptable torus class identifies the reduction’s Newton class.
 
-### Tensor-preserving quasi-isogeny group
+*Needs:* ShimuraVarietiesPartII:SV2.4/newton-admissibility; BunGAndNewtonStrata:§1.34; BunGAndNewtonStrata:§1.37; gap:rg3-elliptic-maximal-torus; ShimuraVarieties:§4.5; PELModuli:§§M4.5–M4.6,M6.1–M6.4; ShimuraVarieties:§5.6.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group` (definition). **Planet:** Tensor isogeny group.
+For a non-quasi-split nonbasic class, the rational-witness hypothesis cannot be omitted.
 
-For x with abelian fibre A_x over F_p-bar, define I_x as the closed Q-subgroup of (End⁰(A_x))^× preserving the canonical crystalline tensors and all prime-to-p étale tensors; use the rational realization actions after scalar extension, so the functor is imposed on every Q-algebra. Define I_(x/Fq) similarly using End⁰_(Fq)(A_x). The polarization is included with its similitude/Tate line. Integral automorphisms are I_x(Q)∩Aut(A_x), not I_x(Q_p)∩Aut(A_x). This extends the pinned TauCeti abelian endomorphism ring by rationalization and tensor conditions.
+### 4.6 Mu-ordinary locus
 
-**Construction/proof.**
-1. HT defines the rational algebraic isogeny group through all realizations of the Hodge tensors.
-2. Use finite-dimensional End⁰ and the scheme-theoretic tensor stabilizer equations after coefficient extension; Noetherianity reduces the intersection of conditions to finitely many equations.
-3. Distinguish geometric endomorphisms, fixed-field endomorphisms and integral automorphisms.
+The target SV2.4/ordinary-locus defines the following. Assume there is an ordinary class [b]_μ∈B(G,{μ_h inverse}), meaning that its dominant Newton point is exactly the Galois average of μ_h inverse. Define the ordinary locus as S_[b]_μ. It is not defined by replacing that equality with the unique maximal acceptable class for an arbitrary inner form. For a strongly acceptable triple the split restriction-of-scalars derived factors provide the required ordinary class.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/etale-tensors`, `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `AbelianSchemesAndArithmeticModuli:A6/frobenius-semisimplicity`, `tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.End`, `AbelianSchemesAndArithmeticModuli:A5`.
+(KZ, Definition 4.4.3 and its preceding assumption, p.43; HT §1.3.15, p.20).
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.4/isogeny-realizations`, `ShimuraVarietiesPartII:SV2.4/rosati-reductivity`, `ShimuraVarietiesPartII:SV2.4/hecke-orbit-tensor-injectivity`.
+A proof route: KZ explicitly assumes the existence of the actual ordinary class before defining its locus. Use the imported ordinary-class criterion and the pointwise Newton stratification.
 
-**API.**
+*Needs:* ShimuraVarietiesPartII:SV2.4/newton-strata; BunGAndNewtonStrata:§1.26; ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple.
 
-- `TensorIsogenyGroup.realization` (projection): The Q-group maps to each étale tensor stabilizer and to the crystalline twisted centralizer.
-- `TensorIsogenyGroup.fixedField` (characterisation): The F_q-defined subgroup consists of tensor automorphisms commuting with the q-Frobenius endomorphism.
-- `TensorIsogenyGroup.changeTensors` (compatibility): Equivalent generating tensor families with the same realization stabilizers define the same subgroup of End⁰ units.
+The construction has the following API.
 
-**Discriminating checks.**
+- x is ordinary exactly when ν_(b_x)=μ inverse diamond in the fixed Kottwitz fibre.
+- The ordinary open pulls back along prime-to-p levels and along the proved derived-isogeny maps.
+- For the Siegel genus-one datum it agrees with the ordinary elliptic locus, equivalently p-rank one.
 
-- `TensorIsogenyGroup.siegel`: With only the Siegel polarization tensors, recover the Rosati-similitude subgroup of End⁰ units.
-- `TensorIsogenyGroup.product`: Adding projection tensors on A_1×A_2 excludes off-diagonal quasi-endomorphisms.
-- `TensorIsogenyGroup.integral`: A rational quasi-isogeny with a nonintegral denominator is in I_x(Q) when it preserves the tensors, but need not lie in Aut(A_x).
+**Checks.**
 
-**Acceptance:** All-prime tensor preservation is stronger than merely preserving the polarization.
+- The slopes 0 and 1 give an ordinary point.
+- The supersingular elliptic slope pair is excluded.
+- A non-quasi-split inner form whose maximum has ν≠μ inverse diamond has no supplied ordinary locus certificate from maximality alone.
 
-**Source:** HT, §2.1.3–2.1.5, pp.21–22; KZ §4.1.10, p.32.
+The ordinary equality and the unique-maximal-class assertion must remain distinct.
 
-### Isogeny-group realization maps
+### 4.7 Openness and density of the ordinary locus
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/isogeny-realizations` (construction).
+The target SV2.4/ordinary-density proves the following. Assume an actual ordinary class exists, its rational-Newton witness holds, and the geometric special fibre of the normal Hodge model is locally integral. Then the ordinary locus is nonempty open and dense on every component: semicontinuity gives openness, special reduction gives nonemptiness, and the component theorem plus Hecke transport spreads density. In particular the corrected very-special strongly acceptable model has dense ordinary locus. This does not assert density at arbitrary parahoric crossings.
 
-For x/F_q, geometric q-Frobenius gives γ_x∈I_(x/Fq)(Q). At ℓ≠p its realization is semisimple Frobenius. At p descend D_x to W(F_q)[1/p], with Frobenius δσ and tensor frame, and form δσ(δ)⋯σ^(r−1)(δ), r=[F_q:F_p]. After a sufficiently divisible extension F_(q^m), all geometric endomorphisms descend and the stable groups are Z_G(γ_ℓ^m) at ℓ and the finite-period twisted centralizer I_p inside J_δ at p. This finite-period subgroup need not equal J_δ.
+(KZ, Theorem 4.4.4, p.43; HT Corollary 1.3.16, p.20).
 
-**Construction/proof.**
-1. HT descends the canonical crystalline tensors and identifies the finite-field Frobenius with its twisted norm in a tensor frame.
-2. Use Frobenius invariance and uniqueness of the tensors for descent; apply the imported finite-period norm-centralizer theorem.
-3. Pass to a sufficiently divisible m to stabilize the endomorphism field and centralizers.
+A proof route: use the component-specialization supplier to prove irreducibility of the special fibre of each connected integral component. Apply semicontinuity, special reduction and tensor-compatible Hecke transport to prove density on every component.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group`, `BunGAndNewtonStrata:BG0/finite-frobenius-norm-centralizer`, `AbelianSchemesAndArithmeticModuli:A6/frobenius-semisimplicity`, `ReductiveGroupsPartIII:RG3.3/cyclic-torus-and-neatness`.
+*Needs:* ShimuraVarietiesPartII:SV2.4/ordinary-locus; ShimuraVarietiesPartII:SV2.4/newton-semicontinuity; ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty; ShimuraVarietiesPartII:SV2.1/special-fibre-geometry; gap:component-specialization; ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank`, `ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison`, `ShimuraVarietiesPartII:SV2.5/ordinary-hodge-special-lift`, `ShimuraVarietiesPartII:SV2.5/ordinary-rational-frobenius`.
+Local integrality by itself is not silently used as a proof of global component irreducibility.
 
-**API.**
+### 4.8 Tensor-preserving quasi-isogeny group
 
-- `TensorIsogenyRealizations.frobenius` (compatibility): The rational γ_x maps to the exact q-Frobenius in every realization, with the contravariant convention translated explicitly.
-- `TensorIsogenyRealizations.power` (functoriality): Extension F_q→F_(q^m) replaces the linear Frobenius by γ_x^m and the twisted norm by the corresponding longer product.
-- `TensorIsogenyRealizations.pInclusion` (projection): Expose I_p→J_δ, the finite-period centralizer comparison and the maps I_x,Qp→I_p.
+The target SV2.4/tensor-isogeny-group defines the following. For x with abelian fibre A_x over F_p-bar, define I_x as the closed Q-subgroup of (End⁰(A_x))^× preserving the canonical crystalline tensors and all prime-to-p étale tensors; use the rational realization actions after scalar extension, so the functor is imposed on every Q-algebra. Define I_(x/Fq) similarly using End⁰_(Fq)(A_x). The polarization is included with its similitude/Tate line. Integral automorphisms are I_x(Q)∩Aut(A_x). This extends the pinned TauCeti abelian endomorphism ring by rationalization and tensor conditions.
 
-**Discriminating checks.**
+(HT, §2.1.3–2.1.5, pp.21–22; KZ §4.1.10, p.32).
 
-- `TensorIsogenyRealizations.rankOneNorm`: For G=G_m, the q-Frobenius is the product of the r conjugates of δ, not δ raised to r without a fixedness hypothesis.
-- `TensorIsogenyRealizations.fieldExtension`: Passing from F_q to F_(q²) squares γ_x; it does not leave the Frobenius element unchanged.
-- `TensorIsogenyRealizations.JDistinction`: For the GL₂ isocrystal over F₅ with δ=[[0,−1],[5,0]], δ²=−5. Before extending the residue field, its finite-period automorphisms form Q₅(√−5)^×, whereas J_δ is the quaternion division group. Over F₂₅ the Frobenius square is scalar and the finite-period group enlarges.
+A proof route: HT defines the rational algebraic isogeny group through all realizations of the Hodge tensors. Use finite-dimensional End⁰ and the scheme-theoretic tensor stabilizer equations after coefficient extension; Noetherianity reduces the intersection of conditions to finitely many equations. Distinguish geometric endomorphisms, fixed-field endomorphisms and integral automorphisms.
 
-**Acceptance:** Use the iterated twisted product, and use the same chosen power in each realization.
+*Needs:* ShimuraVarietiesPartII:SV2.0/etale-tensors; ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors; AbelianSchemesAndArithmeticModuli:§A6.21; tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.End; AbelianSchemesAndArithmeticModuli:§§A6.7,A6.20,A6.22.
 
-**Source:** HT, §2.1.5–2.1.7, pp.22–24; Kisin 2017 §2.1.2, p.29.
+The construction has the following API.
 
-### Rosati compactness of tensor isogenies
+- The Q-group maps to each étale tensor stabilizer and to the crystalline twisted centralizer.
+- The F_q-defined subgroup consists of tensor automorphisms commuting with the q-Frobenius endomorphism.
+- Equivalent generating tensor families with the same realization stabilizers define the same subgroup of End⁰ units.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/rosati-reductivity` (theorem).
+**Checks.**
 
-The tensor isogeny group lies in the Rosati-similitude group. Its real points modulo the scalar weight group are compact; its identity component is reductive. After the all-prime comparison establishes connectedness, I_x is a connected reductive Q-group. The compactness assertion concerns a group modulo the weight scalars, not compactness of I_x(R) itself.
+- With only the Siegel polarization tensors, recover the Rosati-similitude subgroup of End⁰ units.
+- Adding projection tensors on A_1×A_2 excludes off-diagonal quasi-endomorphisms.
+- A rational quasi-isogeny with a nonintegral denominator is in I_x(Q) when it preserves the tensors, but need not lie in Aut(A_x).
 
-**Construction/proof.**
-1. The Rosati positivity argument in HT and Kisin makes the tensor-preserving subgroup compact modulo scalars.
-2. Use positive definiteness to exclude a nontrivial real unipotent radical; retain a possible finite component group until the realization comparison.
+All-prime tensor preservation is stronger than merely preserving the polarization.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group`, `AbelianSchemesAndArithmeticModuli:A6/rosati-positivity`, `ReductiveGroupsPartII:RG2.1`.
+### 4.9 Isogeny-group realization maps
 
-**Acceptance:** Positive scalar quasi-isogenies show why compactness cannot be asserted before quotienting scalars.
+The target SV2.4/isogeny-realizations constructs the following. For x/F_q with algebraic q-power Frobenius π_x, set γ_x=π_x⁻¹∈I_(x/Fq)(Q). On H₁ this is geometric q-Frobenius; on H¹ use the contragredient action, namely inverse pullback by γ_x. At ℓ≠p its realization is semisimple Frobenius. At p descend D_x to W(F_q)[1/p] and choose δ∈G(W(F_q)[1/p]) with F_D=ρ∨(δ)σ in the dual tensor frame. Form N_r(δ)=δσ(δ)⋯σ^(r−1)(δ), r=[F_q:F_p]. Its contragredient ρ∨(N_r(δ)) is π_x by crystalline pullback; the standard representation of N_r(δ) realizes γ_x. Thus the norm and the crystalline matrix are related by the specified dual representation. After a sufficiently divisible extension F_(q^m), all geometric endomorphisms descend and the stable groups are Z_G(γ_ℓ^m) at ℓ and the finite-period twisted centralizer I_p inside J_δ at p. This finite-period subgroup need not equal J_δ.
 
-**Source:** HT, §2.1.3 and Proposition 2.1.6, pp.21–23; Kisin 2017 Corollary 2.1.7, p.31.
+(HT, §2.1.5–2.1.7, pp.22–24; K17 §2.1.2, p.29).
 
-### Tensor detection on a prime-to-p Hecke orbit
+A proof route: HT descends the canonical crystalline tensors and identifies the finite-field Frobenius with its twisted norm in a tensor frame. Use Frobenius invariance and uniqueness of the tensors for descent; apply the imported finite-period norm-centralizer theorem. Pass to a sufficiently divisible m to stabilize the endomorphism field and centralizers.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/hecke-orbit-tensor-injectivity` (theorem).
+*Needs:* ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group; BunGAndNewtonStrata:§1.16; AbelianSchemesAndArithmeticModuli:§A6.21; gap:rg3-cyclic-torus-and-neatness.
 
-For the neat integral Hodge tower, two points obtained from the same A_x by prime-to-p tensor-compatible quasi-isogenies are equal exactly when the quasi-isogeny relating their complete prime-to-p level structures also identifies the canonical crystalline tensors. Thus the Hecke-orbit relation injects into the tensor-quasi-isogeny quotient relation. This is the prime-to-p statement needed in the rank argument; it is not a classification of all geometric isogeny classes or an ADLV uniformization theorem.
+The construction has the following API.
 
-**Construction/proof.**
-1. HT uses the promoted prime-to-p level structure and crystalline tensors to detect equality in the normalization.
-2. Apply the Siegel moduli comparison and then tensor separation of normalization points.
+- The rational γ_x acts on the Tate module as geometric q-Frobenius, and its contragredient on H¹ and D is the crystalline linear norm; these are compared through the stated dual representation.
+- Extension F_q→F_(q^m) replaces the linear Frobenius by γ_x^m and the twisted norm by the corresponding longer product.
+- Expose I_p→J_δ, the finite-period centralizer comparison and the maps I_x,Qp→I_p.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group`, `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `ShimuraVarietiesPartII:SV2.1/tensor-separation`.
+**Checks.**
 
-**Acceptance:** Equality in the Siegel moduli space alone must not prove equality in the Hodge normalization.
+- For the rank-one contravariant realization with crystalline matrix δ_D=ζ of order 24 over F₂₅, crystalline q-Frobenius is ζσ(ζ)=ζ⁶ while the standard tower scalar is ζ⁻⁶. The expression δ_D²=ζ² gives neither; both the norm and the duality translation are required.
+- Passing from F_q to F_(q²) squares γ_x; it does not leave the Frobenius element unchanged.
+- For the contravariant GL₂ isocrystal over F₅ with matrix δ_D=[[0,−1],[5,0]], δ_D²=−5. The standard tower matrix is δ_D⁻ᵀ and its square is −1/5. Before extending the residue field, its finite-period automorphisms form Q₅(√−5)^×, whereas J_δ is the quaternion division group. Over F₂₅ the Frobenius square is scalar and the finite-period group enlarges.
 
-**Source:** HT, §2.1.4, p.22; Proposition 2.1.6, pp.22–23.
+Use the iterated twisted product, and use the same chosen power in each realization.
 
-### Auxiliary-prime comparison and full rank
+### 4.10 Rosati compactness of tensor isogenies
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank` (theorem). **Planet:** Full-rank tensor isogenies.
+The target SV2.4/rosati-reductivity proves the following. The tensor isogeny group lies in the Rosati-similitude group. Its real points modulo the scalar weight group are compact; its identity component is reductive. After the all-prime comparison establishes connectedness, I_x is a connected reductive Q-group. The compactness assertion concerns a group modulo the weight scalars, not compactness of I_x(R) itself.
 
-Choose ℓ_0≠p where G splits and the characteristic polynomial of γ_x splits. After taking a sufficiently divisible finite-field power so the stable centralizer is connected, I_x,Qℓ0 identifies with that stable Frobenius centralizer, and rank I_x=rank G. The proof uses finiteness of the relevant finite-field Hecke orbit to make the quotient of local centralizer points compact, the split-group compact-quotient criterion, and Rosati reductivity. It uses no common Frobenius class from SV2.7.
+(HT, §2.1.3 and Proposition 2.1.6, pp.21–23; K17 Corollary 2.1.7, p.31).
 
-**Construction/proof.**
-1. HT generalizes Kisin’s finite-field orbit argument to the normal integral Hodge model.
-2. Use the split auxiliary prime to make the stable centralizer a split Levi; compactness forces the subgroup to contain a Borel.
-3. The homogeneous quotient is then proper and affine, so the connected centralizer equals the isogeny group after scalar extension.
+A proof route: the Rosati positivity argument in HT and Kisin makes the tensor-preserving subgroup compact modulo scalars. Use positive definiteness to exclude a nontrivial real unipotent radical; retain a possible finite component group until the realization comparison.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/hecke-orbit-tensor-injectivity`, `ShimuraVarietiesPartII:SV2.4/isogeny-realizations`, `ShimuraVarietiesPartII:SV2.4/rosati-reductivity`, `ReductiveGroupsPartII:RG2.0`, `ArithmeticGaloisRepresentations:R01.5`.
+*Needs:* ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group; AbelianSchemesAndArithmeticModuli:§A6.14; ReductiveGroupsPartII:§RG2.1.
 
-**Acceptance:** The existence of a suitable split auxiliary prime and the compact-quotient criterion are explicit requested inputs.
+Positive scalar quasi-isogenies show why compactness cannot be asserted before quotienting scalars.
 
-**Source:** HT, Proposition 2.1.6, pp.22–23; Kisin 2017 Corollary 2.1.7, p.31.
+### 4.11 Tensor detection on a prime-to-p Hecke orbit
 
-### Tate comparison with tensors
+The target SV2.4/hecke-orbit-tensor-injectivity proves the following. For the neat integral Hodge tower, two points obtained from the same A_x by prime-to-p tensor-compatible quasi-isogenies are equal exactly when the quasi-isogeny relating their complete prime-to-p level structures also identifies the canonical crystalline tensors. Thus the Hecke-orbit relation injects into the tensor-quasi-isogeny quotient relation. This is the prime-to-p statement needed in the rank argument; it is not a classification of all geometric isogeny classes or an ADLV uniformization theorem.
 
-**Target:** `ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison` (theorem). **Planet:** Tate theorem with tensors.
+(HT, §2.1.4, p.22; Proposition 2.1.6, pp.22–23).
 
-After the finite-field extension fixing all geometric endomorphisms and stable centralizers, the natural realization maps identify I_x,Qℓ with Z_G(γ_x,ℓ) for every ℓ≠p and I_x,Qp with the finite-period crystalline group I_p. Hence I_x is connected reductive of full rank. The remaining comparison of centralizer dimensions uses Noot’s coarser Conj′ Frobenius comparison and the type-D outer-orbit analysis, not the full Conj(G) independence theorem being proved here.
+A proof route: HT uses the promoted prime-to-p level structure and crystalline tensors to detect equality in the normalization. Apply the Siegel moduli comparison and then tensor separation of normalization points.
 
-**Construction/proof.**
-1. HT compares every realization with the split auxiliary prime using its independently established coarser Frobenius conjugacy theorem.
-2. Import Noot’s accommodating-embedding comparison, neat-power step and the Conj′ dimension invariance with the precise orthogonal outer action.
-3. Compare dimensions of the realization inclusions; descend connectedness and reductivity from the identified connected centralizer.
+*Needs:* ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group; ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; ShimuraVarietiesPartII:SV2.1/tensor-separation.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank`, `ShimuraVarietiesPartII:SV2.4/isogeny-realizations`, `ArithmeticGaloisRepresentations:R01.6`, `ReductiveGroupsPartII:RG2.1`.
+Equality in the Siegel moduli space alone must not prove equality in the Hodge normalization.
 
-**Acceptance:** No dependency from this theorem to SV2.7/common-frobenius-class is allowed.
+### 4.12 Auxiliary-prime comparison and full rank
 
-**Source:** HT, Theorem 2.1.9, pp.24–25.
+The target SV2.4/auxiliary-prime-rank proves the following. Choose ℓ_0≠p where G splits and the characteristic polynomial of γ_x splits. After taking a sufficiently divisible finite-field power so the stable centralizer is connected, I_x,Qℓ0 identifies with that stable Frobenius centralizer, and rank I_x=rank G. The proof uses finiteness of the relevant finite-field Hecke orbit to make the quotient of local centralizer points compact, the split-group compact-quotient criterion, and Rosati reductivity. It uses no common Frobenius class from SV2.7.
 
-## SV2.5: Ordinary special lifts and integral comparison
+(HT, Proposition 2.1.6, pp.22–23; K17 Corollary 2.1.7, p.31).
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+A proof route: HT generalizes Kisin’s finite-field orbit argument to the normal integral Hodge model. Use the split auxiliary prime to make the stable centralizer a split Levi; compactness forces the subgroup to contain a Borel. The homogeneous quotient is then proper and affine, so the connected centralizer equals the isogeny group after scalar extension.
 
-**Layer prerequisites:** `AbelianSchemesAndArithmeticModuli:A4`, `AutomorphicBundles:B2`, `BunGAndNewtonStrata:BG1`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `HeckeStacksAndLocalShtukas:HS2`, `PELModuli:M4`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartII:RG2.3`, `ShimuraCompactificationsPartII:C7`, `ShimuraData:D1`, `ShimuraData:D4`, `ShimuraVarietiesPartII:SV2.0`, `ShimuraVarietiesPartII:SV2.1`, `ShimuraVarietiesPartII:SV2.2`, `ShimuraVarietiesPartII:SV2.3`, `ShimuraVarietiesPartII:SV2.4`.
+*Needs:* ShimuraVarietiesPartII:SV2.4/hecke-orbit-tensor-injectivity; ShimuraVarietiesPartII:SV2.4/isogeny-realizations; ShimuraVarietiesPartII:SV2.4/rosati-reductivity; ReductiveGroupsPartII:§RG2.0; gap:compact-quotient-borel; ArithmeticGaloisRepresentations:§§5.1,5.13.
 
-### Integral maps under derived isomorphisms
+The existence of a suitable split auxiliary prime and the compact-quotient criterion are explicit requested inputs.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/integral-datum-maps` (theorem). **Planet:** Integral derived comparison.
+### 4.13 Tate comparison with tensors
 
-Let f:(G_1,X_1)→(G_2,X_2) be a morphism of Hodge data inducing an isomorphism of derived groups, with associated parahorics, compatible good embeddings and the level hypotheses of KZ 4.3.1. Over the composite local reflex base, its generic map extends to the normalized integral models. At corresponding geometric points the completed local rings are isomorphic. On the chosen neutral pro-components the induced comparison is an isomorphism in the situation of KZ 4.3.4. A central derived isogeny is not substituted for the derived isomorphism hypothesis of this statement.
+The target SV2.4/all-prime-tate-comparison proves the following. After the finite-field extension fixing all geometric endomorphisms and stable centralizers, the natural realization maps identify I_x,Qℓ with Z_G(γ_x,ℓ) for every ℓ≠p and I_x,Qp with the finite-period crystalline group I_p. Hence I_x is connected reductive of full rank. The remaining comparison of centralizer dimensions uses Noot’s coarser Conj′ Frobenius comparison and the type-D outer-orbit analysis, not the full Conj(G) independence theorem being proved here.
 
-**Construction/proof.**
-1. KZ extends derived-isomorphic Hodge maps by the local shtuka/canonical-model comparison and identifies their formal neighbourhoods.
-2. Use the integral comparison contract at associated parahorics, then compare the neutral towers using finite étale level normalizations.
+(HT, Corollary 2.1.9, pp.24–25).
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface`, `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `HeckeStacksAndLocalShtukas:HS2`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `ShimuraCompactificationsPartII:C7/normalized-interior-model`.
+A proof route: HT compares every realization with the split auxiliary prime using its independently established coarser Frobenius conjugacy theorem. Import Noot’s accommodating-embedding comparison, neat-power step and the Conj′ dimension invariance with the precise orthogonal outer action. Compare dimensions of the realization inclusions; descend connectedness and reductivity from the identified connected centralizer.
 
-**Acceptance:** An arbitrary pair of models with isomorphic derived groups does not give a chosen integral map without the compatible datum and level data.
+*Needs:* ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank; ShimuraVarietiesPartII:SV2.4/isogeny-realizations; gap:noot-coarse-comparison; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra.
 
-**Source:** KZ, Propositions 4.3.2 and 4.3.4, pp.37–40.
+No dependency from this theorem to SV2.7/common-frobenius-class is allowed.
 
-### Matched-multiplier comparison datum
+### Examples
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum` (construction). **Planet:** Matched-multiplier datum.
+An ordinary elliptic point has slopes (0,1), p-rank 1; a supersingular point has slopes (1/2,1/2), p-rank 0. Their Newton polygons specialize in the stated direction. For a supersingular elliptic curve, I=B× for the quaternion algebra ramified at p and infinity, of rank 2, and I(R)/R×≅SO(3) is compact.
 
-Let the auxiliary Hodge cover (G_1,X_1) and strongly acceptable target (G_2,X_2) share the adjoint datum and carry symplectic embeddings with characters c_1,c_2. Define G_3=(G_1×_(G_ad×G_m)G_2)°, matching both the adjoint image and c_1=c_2, with the induced Shimura conjugacy class. Its direct-sum representation on V_1⊕V_2 is symplectic because the multipliers agree. The projection to G_1 is derived-isomorphic in the source’s cover setup; the projection to G_2 is the corresponding central derived cover.
+### Dependencies
 
-**Construction/proof.**
-1. KZ uses the common-adjoint, common-multiplier fibre product to compare an arbitrary target Hodge embedding with the auxiliary one.
-2. Use generic fibre-product and centre calculations from the group supplier; check the Hodge homomorphism factors through the identity component.
-3. The block direct-sum form has one similitude factor exactly when the two nonzero blocks have the same multiplier.
+*Needs:* ShimuraVarietiesPartII:SV2.0/global-crystalline-realization; BunGAndNewtonStrata:§0.5; mathlib:WittVector.Isocrystal; BunGAndNewtonStrata:§1.23; gap:ffg-integral-tensors; ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames; PadicHodgeTheory:§5.5; BunGAndNewtonStrata:§§1.22–1.26,2.16; PadicDifferentialEquationsAndRigidCohomology:§RD.3.43; BunGAndNewtonStrata:§1.34; BunGAndNewtonStrata:§1.37; gap:rg3-elliptic-maximal-torus; ShimuraVarieties:§4.5; PELModuli:§§M4.5–M4.6,M6.1–M6.4; ShimuraVarieties:§5.6; BunGAndNewtonStrata:§1.26; ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple; ShimuraVarietiesPartII:SV2.1/special-fibre-geometry; gap:component-specialization; ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing; ShimuraVarietiesPartII:SV2.0/etale-tensors; ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors; AbelianSchemesAndArithmeticModuli:§A6.21; tauceti:TauCeti.AlgebraicGeometry.AbelianVariety.End; AbelianSchemesAndArithmeticModuli:§§A6.7,A6.20,A6.22; BunGAndNewtonStrata:§1.16; gap:rg3-cyclic-torus-and-neatness; AbelianSchemesAndArithmeticModuli:§A6.14; ReductiveGroupsPartII:§RG2.1; ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; ShimuraVarietiesPartII:SV2.1/tensor-separation; ReductiveGroupsPartII:§RG2.0; gap:compact-quotient-borel; ArithmeticGaloisRepresentations:§§5.1,5.13; gap:noot-coarse-comparison; gap:hodge-representation-algebra.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover`, `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`, `ReductiveGroupsPartII:RG2.1`, `ShimuraData:D4`.
+## Layer 5: Functoriality and ordinary special lifts
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`.
+### 5.1 Integral maps under derived isomorphisms
 
-**API.**
+The target SV2.5/integral-datum-maps proves the following. Let f:(G₁,X₁)→(G₂,X₂) be a morphism of Hodge data. Suppose both full fixers equal their connected parahorics, f extends to the parahoric group schemes, both Hodge embeddings are good, and f(K₁)⊂K₂ with K_i,p=G_i°(Z_p), as in KZ §4.3.1. Over the common local reflex base the generic Shimura map extends to a map of normalized integral models, compatibly with composition and tame levels. If in addition f induces an isomorphism of derived groups, the parahorics are associated and the levels are neat, its maps on completed local rings at corresponding geometric points are isomorphisms. On the neutral pro-components after maximal unramified reflex base change this is an isomorphism by KZ Corollary 4.3.4. A central derived isogeny alone does not imply this stronger comparison.
 
-- `MatchedMultiplierDatum.proj` (projection): Expose the two datum maps, their common adjoint image and their common multiplier.
-- `MatchedMultiplierDatum.blockScale` (characterisation): For nonzero alternating forms ψ_i and similitudes g_i of factors with c_i, the block operator scales ψ_1⊕ψ_2 by c exactly when c_1=c=c_2.
-- `MatchedMultiplierDatum.reflex` (compatibility): The reflex field lies in E_1E_2; at the chosen p-place the auxiliary reflex splitting identifies the composite local field with E_2,v.
+(KZ, Proposition 4.3.2 and Corollary 4.3.4, pp.37–40).
 
-**Discriminating checks.**
+A proof route: KZ extends derived-isomorphic Hodge maps by the local shtuka/canonical-model comparison and identifies their formal neighbourhoods. Use the integral comparison contract at associated parahorics, then compare the neutral towers using finite étale level normalizations.
 
-- `MatchedMultiplierDatum.equalFactors`: Two copies of one symplectic similitude with the same multiplier give a direct-sum similitude with that multiplier.
-- `MatchedMultiplierDatum.unequalMultipliers`: On two standard symplectic Q-planes, diag(2,1) and diag(3,1) have multipliers 2 and 3; their block sum is not a similitude.
-- `MatchedMultiplierDatum.projections`: Projection tensors on V_1⊕V_2 exclude a matrix mixing the two summands, even if it preserves their total symplectic form.
+*Needs:* ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; gap:integral-local-shimura; gap:local-models; ShimuraVarietiesPartII:SV2.0/integral-hodge-data; ShimuraVarietiesPartII:SV2.1/canonical-hodge-model.
 
-**Acceptance:** The plain product of two GSp groups does not act by similitudes on the direct-sum form.
+An arbitrary pair of models with isomorphic derived groups does not give a chosen integral map without the compatible datum and level data.
 
-**Source:** KZ, §4.3.7–Lemma 4.3.8, pp.40–42; §4.4.6–4.4.7, pp.43–44.
+### 5.2 Matched-multiplier comparison datum
 
-### Integral geometry of the matched datum
+The target SV2.5/matched-multiplier-datum constructs the following. Let the auxiliary Hodge cover (G_1,X_1) and strongly acceptable target (G_2,X_2) share the adjoint datum and carry symplectic embeddings with characters c_1,c_2. Define G_3=(G_1×_(G_ad×G_m)G_2)°, matching both the adjoint image and c_1=c_2, with the induced Shimura conjugacy class. Its direct-sum representation on V_1⊕V_2 is symplectic because the multipliers agree. The projection to G_1 is derived-isomorphic in the source’s cover setup; the projection to G_2 is the corresponding central derived cover.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison` (theorem).
+(KZ, §4.3.7–Lemma 4.3.8, pp.40–42; §4.4.6–4.4.7, pp.43–44).
 
-For the matched datum of the strongly acceptable setup, the compact-centre exact sequences and torsion-free coinvariants yield the required connected fixer and a good integral lattice embedding. Its projection to G_1 gives the integral map and completed-local-ring comparison of the derived-isomorphism theorem. Its map to G_2 is constructed by neutral-component descent. In this setup both comparison maps induce isomorphisms on completed local rings at corresponding geometric special points, and ordinary classes correspond under the derived maps.
+A proof route: KZ uses the common-adjoint, common-multiplier fibre product to compare an arbitrary target Hodge embedding with the auxiliary one. Use generic fibre-product and centre calculations from the group supplier; check the Hodge homomorphism factors through the identity component. The block direct-sum form has one similitude factor exactly when the two nonzero blocks have the same multiplier.
 
-**Construction/proof.**
-1. KZ checks the centre of the matched fibre product and uses the resulting integral maps to transport ordinary lifts.
-2. Use the corrected integral embedding contract and the group connected-fixer criterion.
-3. Distinguish the derived-isomorphism projection from the derived-cover projection and apply the appropriate descent comparison.
+*Needs:* ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover; ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; ShimuraData:Layer 4; gap:hodge-cover-refinement.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum`, `ShimuraVarietiesPartII:SV2.5/integral-datum-maps`, `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`, `BunGAndNewtonStrata:BG1/ordinary-derived-isogeny`, `ReductiveGroupsPartII:RG2.3`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`.
+The construction has the following API.
 
-**Acceptance:** The two projection maps must not be justified by the same derived-isomorphism assertion unless their hypotheses are checked.
+- Expose the two datum maps, their common adjoint image and their common multiplier.
+- For nonzero alternating forms ψ_i and similitudes g_i of factors with c_i, the block operator scales ψ_1⊕ψ_2 by c exactly when c_1=c=c_2.
+- The reflex field lies in E_1E_2; at the chosen p-place the auxiliary reflex splitting identifies the composite local field with E_2,v.
 
-**Source:** KZ, Lemma 4.3.8, pp.40–42; proof of Theorem 4.4.6, pp.45–46.
+**Checks.**
 
-### Integral Siegel map for a chosen Hodge embedding
+- Two copies of one symplectic similitude with the same multiplier give a direct-sum similitude with that multiplier.
+- On two standard symplectic Q-planes, diag(2,1) and diag(3,1) have multipliers 2 and 3; their block sum is not a similitude.
+- Projection tensors on V_1⊕V_2 exclude a matrix mixing the two summands, even if it preserves their total symplectic form.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map` (theorem).
+The plain product of two GSp groups does not act by similitudes on the direct-sum form.
 
-Given a strongly acceptable target and any Hodge embedding into a Siegel datum with a suitable self-dual lattice and compatible levels, the generic Siegel map extends over its constructed integral model. Use the auxiliary cover and matched datum to define and descend the map. The universal abelian scheme pulled back by this map is therefore available even when that embedding was not used to define the model.
+### 5.3 Integral geometry of the matched datum
 
-**Construction/proof.**
-1. KZ extends the arbitrary Hodge embedding by comparison with the very-good auxiliary embedding.
-2. Build the matched integral diagram and descend the Siegel map through the integral component action.
+The target SV2.5/matched-integral-comparison proves the following. For the matched datum of the strongly acceptable setup, the compact-centre exact sequences and torsion-free coinvariants yield the required connected fixer and a good integral lattice embedding. Its projection to G_1 gives the integral map and completed-local-ring comparison of the derived-isomorphism theorem. Its map to G_2 is constructed by neutral-component descent. In this setup both comparison maps induce isomorphisms on completed local rings at corresponding geometric special points, and ordinary classes correspond under the derived maps.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`, `ShimuraVarietiesPartII:SV2.3/free-descent-kernel`, `PELModuli:M4`, `ShimuraCompactificationsPartII:C7/zarhin-self-dual-replacement`.
+(KZ, Lemma 4.3.8, pp.40–42; proof of Theorem 4.4.6, pp.45–46).
 
-**Acceptance:** Changing the defining embedding is an asserted comparison theorem, not a redefinition of the integral model.
+A proof route: KZ checks the centre of the matched fibre product and uses the resulting integral maps to transport ordinary lifts. Use the corrected integral embedding contract and the group connected-fixer criterion. Distinguish the derived-isomorphism projection from the derived-cover projection and apply the appropriate descent comparison.
 
-**Source:** KZ, Proposition 4.3.6, p.40, with §4.3.7–4.3.8, pp.40–42.
+*Needs:* ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum; ShimuraVarietiesPartII:SV2.5/integral-datum-maps; ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing; BunGAndNewtonStrata:§1.28; ReductiveGroupsPartII:§RG2.3; gap:r-smooth-integral-groups; gap:ffg-nonexceptional; gap:ffg-polarized-chain.
 
-### Product comparison of abelian fibres
+The two projection maps must not be justified by the same derived-isomorphism assertion unless their hypotheses are checked.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/product-abelian-comparison` (theorem).
+### 5.4 Integral Siegel map for a chosen Hodge embedding
 
-The integral matched-multiplier diagram maps to the moduli space of pairs of polarized abelian schemes with a common similitude scalar. Pullback of the universal objects gives A_3≅j_1^*A_1×j_2^*A_2 over the common local base, and identifies the projection tensors, polarizations and all étale and crystalline realizations. This is a product of abelian schemes with specified tensors, not merely an isogeny of unstructured fibres.
+The target SV2.5/arbitrary-siegel-map proves the following. Given a strongly acceptable target and any Hodge embedding into a Siegel datum with a suitable self-dual lattice and compatible levels, the generic Siegel map extends over its constructed integral model. Use the auxiliary cover and matched datum to define and descend the map. The universal abelian scheme pulled back by this map is therefore available even when that embedding was not used to define the model.
 
-**Construction/proof.**
-1. KZ realizes the common-multiplier Siegel diagram by the product moduli problem.
-2. Apply normalization to the finite map from the common-multiplier moduli model and pull back the universal abelian schemes.
+(KZ, Proposition 4.3.6, p.40, with §4.3.7–4.3.8, pp.40–42).
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map`, `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`, `PELModuli:M4`, `AbelianSchemesAndArithmeticModuli:A4/etale-tate-module`, `AbelianSchemesAndArithmeticModuli:A4/abelian-h1-de-rham`.
+A proof route: KZ extends the arbitrary Hodge embedding by comparison with the very-good auxiliary embedding. Build the matched integral diagram and descend the Siegel map through the integral component action.
 
-**Acceptance:** The two projection idempotents must be retained in every realization.
+*Needs:* ShimuraVarietiesPartII:SV2.5/matched-integral-comparison; ShimuraVarietiesPartII:SV2.3/free-descent-kernel; PELModuli:§§M4.5–M4.6,M6.1–M6.4; PadicDifferentialEquationsAndRigidCohomology:§RD.5.116.
 
-**Source:** KZ, Proposition 4.4.8 and equation (4.4.9.1), pp.44–45.
+Changing the defining embedding is an asserted comparison theorem, not a redefinition of the integral model.
 
-### Exact sequences of tensor isogeny groups
+### 5.5 Product comparison of abelian fibres
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/isogeny-group-exact-sequences` (theorem).
+The target SV2.5/product-abelian-comparison proves the following. The integral matched-multiplier diagram maps to the moduli space of pairs of polarized abelian schemes with a common similitude scalar. Pullback of the universal objects gives A_3≅j_1^*A_1×j_2^*A_2 over the common local base, and identifies the projection tensors, polarizations and all étale and crystalline realizations. This is a product of abelian schemes with specified tensors, not merely an isogeny of unstructured fibres.
 
-At corresponding geometric points x_i of the matched integral diagram, let C_i=ker(G_3→G_i). Then 1→C_i→I_(x_3)→I_(x_i)→1 is an exact sequence of Q-algebraic groups for i=1,2. Projection tensors make the map on abelian products well-defined. Exactness can be checked at a prime using the all-prime tensor Tate theorem and compatible semisimple centralizers; it is not inferred solely from surjectivity of G_3→G_i.
+(KZ, Proposition 4.4.8 and equation (4.4.9.1), pp.44–45).
 
-**Construction/proof.**
-1. KZ identifies the tensor-isogeny group maps through the product abelian scheme and checks exactness in a realization.
-2. Use the projection tensors, realize the central kernels through specialization of their generic actions, and apply the compatible centralizer comparison.
+A proof route: KZ realizes the common-multiplier Siegel diagram by the product moduli problem. Apply normalization to the finite map from the common-multiplier moduli model and pull back the universal abelian schemes.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/product-abelian-comparison`, `ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison`, `ReductiveGroupsPartII:RG2.1`.
+*Needs:* ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map; ShimuraVarietiesPartII:SV2.5/matched-integral-comparison; PELModuli:§§M4.5–M4.6,M6.1–M6.4; AbelianSchemesAndArithmeticModuli:§A4.1; AbelianSchemesAndArithmeticModuli:§A4.3.
 
-**Acceptance:** Omitting projection tensors can allow off-diagonal endomorphisms and invalidates the proposed sequence.
+The two projection idempotents must be retained in every realization.
 
-**Source:** KZ, Proposition 4.4.10, p.45.
+### 5.6 Exact sequences of tensor isogeny groups
 
-### Ordinary points are very good
+The target SV2.5/isogeny-group-exact-sequences proves the following. At corresponding geometric points x_i of the matched integral diagram, let C_i=ker(G_3→G_i). Then 1→C_i→I_(x_3)→I_(x_i)→1 is an exact sequence of Q-algebraic groups for i=1,2. Projection tensors make the map on abelian products well-defined. Exactness can be checked at a prime using the all-prime tensor Tate theorem and compatible semisimple centralizers; it is not inferred solely from surjectivity of G_3→G_i.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/ordinary-very-good` (theorem).
+(KZ, Proposition 4.4.10, p.45).
 
-For the good Hodge embedding used in the special Hodge model, an ordinary point lies in the smooth extremal local-model locus and is a very-good point. Consequently the corrected adapted deformation comparison applies to its formal branch even if the embedding has only been assumed good globally. This is a pointwise conclusion on the actual ordinary locus.
+A proof route: KZ identifies the tensor-isogeny group maps through the product abelian scheme and checks exactness in a realization. Use the projection tensors, realize the central kernels through specialization of their generic actions, and apply the compatible centralizer comparison.
 
-**Construction/proof.**
-1. KZ locates ordinary points in the top smooth Schubert locus and applies the very-good trivialization criterion there.
-2. Use the ordinary integral-conjugacy and local-model smoothness inputs to verify the tensor-compatible first-order condition.
+*Needs:* ShimuraVarietiesPartII:SV2.5/product-abelian-comparison; ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.4/ordinary-locus`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `BunGAndNewtonStrata:BG1/ordinary-integral-conjugacy`.
+Omitting projection tensors can allow off-diagonal endomorphisms and invalidates the proposed sequence.
 
-**Acceptance:** A nonordinary singular local-model point is not certified very good by this theorem.
+### 5.7 Ordinary points are very good
 
-**Source:** KZ, Remark 4.1.13, p.33, and §3.2.4–3.2.7, pp.22–24.
+The target SV2.5/ordinary-very-good proves the following. For a special Hodge model, meaning a good Hodge normalization with G^fix=G°, an ordinary point lies in the smooth extremal local-model locus and is a very-good point. Consequently the corrected adapted deformation comparison applies to its formal branch even if the embedding has only been assumed good globally. This is a pointwise conclusion on the actual ordinary locus.
 
-### Ordinary Hodge special lift with isogeny action
+(KPZ, Corollary 5.3.16, p.60; KZ Remark 4.1.13, p.33).
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/ordinary-hodge-special-lift` (theorem). **Planet:** Ordinary special lift.
+A proof route: KZ locates ordinary points in the top smooth Schubert locus and applies the very-good trivialization criterion there. Use the ordinary integral-conjugacy and local-model smoothness inputs to verify the tensor-compatible first-order condition.
 
-At an ordinary point x of the special Hodge model where the embedding is very good, there is a finite extension K/breve Q_p and an integral lift with special generic point such that the entire I_x(Q)-action on A_x lifts in the isogeny category. Apply the ordinary p-divisible-group lifting theorem preserving J_b(Q_p), then Serre–Tate and polarized effectivity. Full rank of I_x forces the lifted Mumford–Tate group into a torus. Existence and the lifted action are asserted; no uniqueness or unramified field of definition is asserted.
+*Needs:* ShimuraVarietiesPartII:SV2.4/ordinary-locus; gap:local-models; gap:ffg-very-good; ShimuraVarietiesPartII:SV2.0/integral-hodge-data; BunGAndNewtonStrata:§1.29.
 
-**Construction/proof.**
-1. KZ lifts an ordinary tensor p-divisible group with its Newton automorphisms and realizes it in the Hodge branch.
-2. Use the exact ordinary lifting contract from R07.6, the adapted branch identification and algebraic effectivity.
-3. The lifted I_x(Q)-action centralizes the Mumford–Tate group; full rank places that group in the centralizer of a maximal torus, proving specialness.
+A nonordinary singular local-model point is not certified very good by this theorem.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/ordinary-very-good`, `ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank`, `ShimuraVarietiesPartII:SV2.4/isogeny-realizations`, `BunGAndNewtonStrata:BG1/ordinary-integral-conjugacy`, `FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6`, `AbelianSchemesAndArithmeticModuli:A4/serre-tate-equivalence`, `AbelianSchemesAndArithmeticModuli:A4/polarized-effectivity`, `ShimuraData:D1/mumford-tate-group`.
+### 5.8 Ordinary Hodge special lift with isogeny action
 
-**Acceptance:** A lift preserving only one Frobenius endomorphism does not satisfy the full I_x(Q)-action requirement.
+The target SV2.5/ordinary-hodge-special-lift proves the following. For a special Hodge model, meaning a good Hodge normalization with G^fix=G°, let x be an ordinary point where the embedding is very good. There is a finite extension K/breve Q_p and an integral lift with special generic point such that the entire I_x(Q)-action on A_x lifts in the isogeny category. Apply the ordinary p-divisible-group lifting theorem preserving J_b(Q_p), then Serre–Tate and polarized effectivity. Full rank of I_x forces the lifted Mumford–Tate group into a torus. Existence and the lifted action are asserted; no uniqueness or unramified field of definition is asserted.
 
-**Source:** KZ, Theorems 3.4.5 and 4.1.11, pp.27–28 and 32–33.
+(KZ, Theorem 4.1.11 and Remark 4.1.12, pp.32–33).
 
-### Ordinary special lifts for strongly acceptable triples
+A proof route: apply the ordinary adapted-lift supplier to the p-divisible group, retaining its entire J_b(Q_p)-action by quasi-isogenies. Use Serre–Tate and polarized effectivity to lift the abelian point on its identified branch; full rank forces a toric Mumford–Tate group.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/ordinary-strong-special-lift` (theorem). **Planet:** Strongly acceptable special lift.
+*Needs:* ShimuraVarietiesPartII:SV2.5/ordinary-very-good; ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank; ShimuraVarietiesPartII:SV2.4/isogeny-realizations; BunGAndNewtonStrata:§1.29; gap:ffg-ordinary-lift; AbelianSchemesAndArithmeticModuli:§A4.9; AbelianSchemesAndArithmeticModuli:§A4.8; ShimuraData:Layer 1.
 
-For every ordinary geometric point x on a strongly acceptable triple’s integral model, there exists an integral lift over a finite extension of breve Q_p whose generic point is special and whose abelian fibre carries a lift of I_x(Q) in the isogeny category. First transport a Hodge lift through the matched datum and the exact isogeny-group sequences; then reach every component using the corrected conjugate-level gluing, prime-to-p quasi-isogenies and the required p-power quasi-isogenies. All defining realizations are preserved.
+A lift preserving only one Frobenius endomorphism does not satisfy the full I_x(Q)-action requirement.
 
-**Construction/proof.**
-1. KZ carries the ordinary lift and its full isogeny action from the auxiliary model to the target.
-2. Use the formal comparison and exact isogeny-group sequences for points in the comparison image.
-3. For other component pieces use the actual conjugated p-level and transport the lift by the tensor-compatible quasi-isogenies.
+### 5.9 Ordinary special lifts for strongly acceptable triples
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/ordinary-hodge-special-lift`, `ShimuraVarietiesPartII:SV2.5/isogeny-group-exact-sequences`, `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`, `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`, `BunGAndNewtonStrata:BG1/ordinary-derived-isogeny`.
+The target SV2.5/ordinary-strong-special-lift proves the following. For every ordinary geometric point x on a strongly acceptable triple’s integral model, there exists an integral lift over a finite extension of breve Q_p whose generic point is special and whose abelian fibre carries a lift of I_x(Q) in the isogeny category. First transport a Hodge lift through the matched datum and the exact isogeny-group sequences; then reach every component using the corrected conjugate-level gluing, prime-to-p quasi-isogenies and the required p-power quasi-isogenies. All defining realizations are preserved.
 
-**Acceptance:** The construction must preserve the exact finite-field q-Frobenius endomorphism through the lifted rational isogeny action.
+(KZ, Theorem 4.4.6 and proof §4.4.11, pp.43–46).
 
-**Source:** KZ, Theorem 4.4.6 and proof §4.4.11, pp.43–46.
+A proof route: KZ carries the ordinary lift and its full isogeny action from the auxiliary model to the target. Use the formal comparison and exact isogeny-group sequences for points in the comparison image. For other component pieces use the actual conjugated p-level and transport the lift by the tensor-compatible quasi-isogenies.
 
-### Rational Frobenius at an ordinary point
+*Needs:* ShimuraVarietiesPartII:SV2.5/ordinary-hodge-special-lift; ShimuraVarietiesPartII:SV2.5/isogeny-group-exact-sequences; ShimuraVarietiesPartII:SV2.5/matched-integral-comparison; ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing; BunGAndNewtonStrata:§1.28.
 
-**Target:** `ShimuraVarietiesPartII:SV2.5/ordinary-rational-frobenius` (theorem). **Planet:** Ordinary rational Frobenius.
+The construction must preserve the exact finite-field q-Frobenius endomorphism through the lifted rational isogeny action.
 
-For an F_q-point x in the ordinary locus of a strongly acceptable triple, there is γ_0∈G(Q) whose image is G(Q_ℓ)-conjugate to the exact geometric q-Frobenius for every ℓ≠p. Moreover γ_0 is elliptic over R. Realize the rational q-Frobenius γ_x∈I_x(Q) on the Betti cohomology of the special lift preserving I_x(Q); compare with étale cohomology and use Rosati compactness modulo the weight scalars. No finite power replaces q-Frobenius in the conclusion.
+### 5.10 Rational Frobenius at an ordinary point
 
-**Construction/proof.**
-1. KZ embeds the lifted rational isogeny group into the Betti G and sends q-Frobenius to a rational representative.
-2. Use Betti–étale tensor comparison for each ℓ, and compactness of a containing torus modulo the weight group for ellipticity.
+The target SV2.5/ordinary-rational-frobenius proves the following. For an F_q-point x in the ordinary locus of a strongly acceptable triple, there is γ_0∈G(Q) whose image is G(Q_ℓ)-conjugate to the exact geometric q-Frobenius for every ℓ≠p. Moreover γ_0 is elliptic over R. Realize the rational q-Frobenius γ_x∈I_x(Q) on Betti homology of the special lift preserving I_x(Q); compare with the étale Tate-module realization and use Rosati compactness modulo the weight scalars. No finite power replaces q-Frobenius in the conclusion.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/ordinary-strong-special-lift`, `ShimuraVarietiesPartII:SV2.4/rosati-reductivity`, `ShimuraVarietiesPartII:SV2.4/isogeny-realizations`, `AutomorphicBundles:B2`.
+(KZ, Corollary 4.4.13 and Remark 4.4.14, p.46).
 
-**Acceptance:** The result is for the chosen F_q-point, so replacing it by F_(q^m) would prove a different statement.
+A proof route: KZ embeds the lifted rational isogeny group into the Betti G and sends q-Frobenius to a rational representative. Use Betti–étale tensor comparison for each ℓ, and compactness of a containing torus modulo the weight group for ellipticity.
 
-**Source:** KZ, Corollary 4.4.13 and Remark 4.4.14, p.46.
+*Needs:* ShimuraVarietiesPartII:SV2.5/ordinary-strong-special-lift; ShimuraVarietiesPartII:SV2.4/rosati-reductivity; ShimuraVarietiesPartII:SV2.4/isogeny-realizations; AutomorphicBundles:§§B2.4–B2.7.
 
-## SV2.6: Curves over the original residue field
+The result is for the chosen F_q-point, so replacing it by F_(q^m) would prove a different statement.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+### Examples
 
-**Layer prerequisites:** `AlgebraicModuliForArithmeticGeometry:R09.1`, `AlgebraicModuliForArithmeticGeometry:R09.4`, `GeometricSatakeAndFusion:GS0:Witt-geometry`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `ReductiveGroupsPartII:RG2.3`, `ShimuraVarietiesPartII:SV2.2`, `ShimuraVarietiesPartII:SV2.3`, `ShimuraVarietiesPartII:SV2.4`.
+On the rational symplectic plane, identity has multiplier 1 and diag(2,1) has multiplier 2. The block diagonal sum of diag(2,1) and diag(3,1) has no single multiplier: testing the two planes forces c=2 and c=3. Thus the matched multiplier is essential even though both blocks are similitudes.
 
-### Kottwitz–Rapoport strata at very special level
+### Dependencies
 
-**Target:** `ShimuraVarietiesPartII:SV2.6/kr-stratification` (construction). **Planet:** Kottwitz–Rapoport strata.
+*Needs:* ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; gap:integral-local-shimura; gap:local-models; ShimuraVarietiesPartII:SV2.0/integral-hodge-data; ShimuraVarietiesPartII:SV2.1/canonical-hodge-model; ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover; ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; ShimuraData:Layer 4; gap:hodge-cover-refinement; ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing; BunGAndNewtonStrata:§1.28; ReductiveGroupsPartII:§RG2.3; gap:r-smooth-integral-groups; gap:ffg-nonexceptional; gap:ffg-polarized-chain; ShimuraVarietiesPartII:SV2.3/free-descent-kernel; PELModuli:§§M4.5–M4.6,M6.1–M6.4; PadicDifferentialEquationsAndRigidCohomology:§RD.5.116; AbelianSchemesAndArithmeticModuli:§A4.1; AbelianSchemesAndArithmeticModuli:§A4.3; ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison; ShimuraVarietiesPartII:SV2.4/ordinary-locus; gap:ffg-very-good; BunGAndNewtonStrata:§1.29; ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank; ShimuraVarietiesPartII:SV2.4/isogeny-realizations; gap:ffg-ordinary-lift; AbelianSchemesAndArithmeticModuli:§A4.9; AbelianSchemesAndArithmeticModuli:§A4.8; ShimuraData:Layer 1; ShimuraVarietiesPartII:SV2.4/rosati-reductivity; AutomorphicBundles:§§B2.4–B2.7.
 
-For the strongly acceptable very-special model, pull back the Schubert stratification of the intrinsic local model through the connected adjoint frame diagram. The index set is the dominant inertia-coinvariant coweights λ≤μ_h, with Bruhat closure order and unique extremal index μ_h. The extremal KR stratum is open dense and smooth. Each stratum descends over the finite residue extension given by the Frobenius orbit of its index; do not assign all geometric strata individually to the base residue field.
+## Layer 6: Curves without residue extension
 
-**Construction/proof.**
-1. KZ identifies the very-special admissible Schubert indices and transfers them through the adjoint diagram.
-2. Use the imported affine flag closure and descent results; equivariance makes the inverse-image stratification independent of a frame.
+### 6.1 Kottwitz–Rapoport strata at very special level
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram`, `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`, `GeometricSatakeAndFusion:GS0:Witt-geometry`, `GeometricSatakeAndFusion:GS0:loop-geometry`.
+The target SV2.6/kr-stratification constructs the following. For the strongly acceptable very-special model, pull back the Schubert stratification of the intrinsic local model through the connected adjoint frame diagram. The index set is the dominant inertia-coinvariant coweights λ≤μ_h, with Bruhat closure order and unique extremal index μ_h. The extremal KR stratum is open dense and smooth. Each stratum descends over the finite residue extension given by the Frobenius orbit of its index; do not assign all geometric strata individually to the base residue field.
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.6/rational-local-model-lift`, `ShimuraVarietiesPartII:SV2.6/same-field-curves`.
+(KZ, §5.2.1, pp.48–49).
 
-**API.**
+A proof route: KZ identifies the very-special admissible Schubert indices and transfers them through the adjoint diagram. Use the imported affine flag closure and descent results; equivariance makes the inverse-image stratification independent of a frame.
 
-- `ShimuraKRStratum.mem` (characterisation): A framed point lies in index λ exactly when its local-model image lies in the corresponding Schubert orbit.
-- `ShimuraKRStratum.closure` (relation): The closure is the union of strata with indices below λ in the very-special Bruhat order.
-- `ShimuraKRStratum.frobenius` (functoriality): Residue Frobenius sends index λ to σλ; an orbit descends over its orbit field.
 
-**Discriminating checks.**
 
-- `ShimuraKRStratum.top`: The index μ_h gives the unique dense open Schubert stratum at very special level.
-- `ShimuraKRStratum.newtonDifferent`: On the split-at-p GU(1,1) hyperspecial curve, the minuscule local model has one KR stratum, while both ordinary and basic Newton classes occur. A basic point is therefore top KR and nonordinary.
-- `ShimuraKRStratum.orbitDescent`: A non-fixed geometric index is transported to a different index by residue Frobenius; individual descent requires its orbit field.
+*Needs:* ShimuraVarietiesPartII:SV2.3/strong-adjoint-local-model-diagram; ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple; GeometricSatakeAndFusion:Layer GS0; gap:local-models.
 
-**Acceptance:** The KR extremal stratum and the ordinary Newton locus are different stratifications.
+The construction has the following API.
 
-**Source:** KZ, §5.2.1, pp.48–49.
+- A framed point lies in index λ exactly when its local-model image lies in the corresponding Schubert orbit.
+- The closure is the union of strata with indices below λ in the very-special Bruhat order.
+- Residue Frobenius sends index λ to σλ; an orbit descends over its orbit field.
 
-### Rational lifting to the local-model diagram
+**Checks.**
 
-**Target:** `ShimuraVarietiesPartII:SV2.6/rational-local-model-lift` (theorem).
+- The index μ_h gives the unique dense open Schubert stratum at very special level.
+- On the split-at-p GU(1,1) hyperspecial curve, the minuscule local model has one KR stratum, while both ordinary and basic Newton classes occur. A basic point is therefore top KR and nonordinary.
+- A non-fixed geometric index is transported to a different index by residue Frobenius; individual descent requires its orbit field.
 
-For x∈S(F_q), a fibre of the connected adjoint tensor-frame torsor has an F_q-point by Lang’s theorem for its smooth connected special-fibre group. Its image is a local-model point over the same F_q in the corresponding KR stratum. The statement uses the actual connected reduction of the diagram; it does not follow from a disconnected full-fixer torsor or from strict-henselian comparison.
+The KR extremal stratum and the ordinary Newton locus are different stratifications.
 
-**Construction/proof.**
-1. KZ trivializes the connected adjoint frame torsor over the finite field before constructing the comparison curve.
-2. Apply Lang to the fibre, then the equivariant local-model map.
+### 6.2 Rational lifting to the local-model diagram
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram`, `ShimuraVarietiesPartII:SV2.6/kr-stratification`, `ReductiveGroupsPartII:RG2.3`.
+The target SV2.6/rational-local-model-lift proves the following. For x∈S(F_q), a fibre of the connected adjoint tensor-frame torsor has an F_q-point by Lang’s theorem for its smooth connected special-fibre group. Its image is a local-model point over the same F_q in the corresponding KR stratum. The statement uses the actual connected reduction of the diagram; it does not follow from a disconnected full-fixer torsor or from strict-henselian comparison.
 
-**Acceptance:** Both the framing point and its local-model image must be defined over F_q.
+(KZ, Proof of Corollary 5.2.7, pp.52–53).
 
-**Source:** KZ, Proof of Proposition 5.2.7, pp.52–53.
+A proof route: KZ trivializes the connected adjoint frame torsor over the finite field before constructing the comparison curve. Apply Lang to the fibre, then the equivariant local-model map.
 
-### Curves over the original residue field
 
-**Target:** `ShimuraVarietiesPartII:SV2.6/same-field-curves` (construction). **Planet:** Same-field comparison curve.
 
-For x∈S_(K,λ)(F_q) with λ below the top KR index, construct a smooth geometrically connected curve C/F_q, a rational point c∈C(F_q), and a map f:C→S with f(c)=x such that a dense open of C maps into a strictly higher KR stratum. Use the same-field local-model root-curve theorem, pull it through a smooth stack presentation retaining the rational point, and apply finite-field Bertini with prescribed point and prescribed nonempty open intersection. For a point already in the top stratum, use a curve meeting the dense ordinary open inside its smooth component. Throughout the residue field stays F_q.
+*Needs:* ShimuraVarietiesPartII:SV2.3/strong-adjoint-local-model-diagram; ShimuraVarietiesPartII:SV2.6/kr-stratification; ReductiveGroupsPartII:§RG2.3.
 
-**Construction/proof.**
-1. KZ first supplies local-model curves through rational points with a dense higher-stratum intersection, then transports them to the Shimura stack.
-2. Import the full same-field root-curve contract, including the ramified rank-one cases and the Lang argument for orbit representatives.
-3. Use the rational-point smooth stack presentation and Poonen’s finite-field Bertini with the required local condition and open intersection; shrink to a smooth geometrically connected curve.
+Both the framing point and its local-model image must be defined over F_q.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.6/rational-local-model-lift`, `ShimuraVarietiesPartII:SV2.6/kr-stratification`, `ShimuraVarietiesPartII:SV2.4/ordinary-density`, `GeometricSatakeAndFusion:GS0:loop-geometry`, `AlgebraicModuliForArithmeticGeometry:R09.4`, `AlgebraicModuliForArithmeticGeometry:R09.1`.
+### 6.3 Curves over the original residue field
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.7/representationwise-independence`.
+The target SV2.6/same-field-curves constructs the following. For x∈S_(K,λ)(F_q) with λ below the top KR index, construct a smooth geometrically connected curve C/F_q, a rational point c∈C(F_q), and a map f:C→S with f(c)=x such that a dense open of C maps into a strictly higher KR stratum. Use the same-field local-model root-curve theorem, pull it through a smooth stack presentation retaining the rational point, and apply finite-field Bertini with prescribed point and prescribed nonempty open intersection. For a point already in the top stratum, use a curve meeting the dense ordinary open inside its smooth component. Throughout the residue field stays F_q.
 
-**API.**
+(KZ, Proposition 5.2.3 and Corollary 5.2.7, pp.49–53).
 
-- `ShimuraComparisonCurve.markedPoint` (projection): Return c, f and the equality f(c)=x over F_q.
-- `ShimuraComparisonCurve.higherOpen` (data): Return the nonempty dense open meeting a higher KR stratum, or the ordinary open in the top-stratum step.
-- `ShimuraComparisonCurve.pullback` (functoriality): Pullback of every tower representation is lisse on C and has the original q-Frobenius at c.
+A proof route: KZ first supplies local-model curves through rational points with a dense higher-stratum intersection, then transports them to the Shimura stack. Import the full same-field root-curve contract, including the ramified rank-one cases and the Lang argument for orbit representatives. Use the rational-point smooth stack presentation and Poonen’s finite-field Bertini with the required local condition and open intersection; shrink to a smooth geometrically connected curve.
 
-**Discriminating checks.**
+*Needs:* ShimuraVarietiesPartII:SV2.6/rational-local-model-lift; ShimuraVarietiesPartII:SV2.6/kr-stratification; ShimuraVarietiesPartII:SV2.4/ordinary-density; gap:local-models; gap:rational-stack-presentation; gap:finite-field-bertini; gap:same-field-schubert-curves.
 
-- `ShimuraComparisonCurve.sameField`: For x/F_q the marked point has degree one over F_q; a curve whose marked point has degree m>1 fails.
-- `ShimuraComparisonCurve.notConstant`: At a lower-stratum x, a constant map C→{x} fails the required dense higher-stratum condition.
-- `ShimuraComparisonCurve.topNotOrdinary`: At a top-KR basic point on the split-at-p GU(1,1) hyperspecial curve, the comparison curve must meet ordinary points; top-KR membership alone cannot be the induction base.
+The construction has the following API.
 
-**Acceptance:** The q-Frobenius at c is the same q-Frobenius as at x, not a power coming from field extension.
+- Return c, f and the equality f(c)=x over F_q.
+- Return the nonempty dense open meeting a higher KR stratum, or the ordinary open in the top-stratum step.
+- Pullback of every tower representation is lisse on C and has the original q-Frobenius at c.
 
-**Source:** KZ, Propositions 5.2.3 and 5.2.7, pp.49–53.
+**Checks.**
 
-## SV2.7: A rational common Frobenius class
+- For x/F_q the marked point has degree one over F_q; a curve whose marked point has degree m>1 fails.
+- At a lower-stratum x, a constant map C→{x} fails the required dense higher-stratum condition.
+- At a top-KR basic point on the split-at-p GU(1,1) hyperspecial curve, the comparison curve must meet ordinary points; top-KR membership alone cannot be the induction base.
 
-**Status:** planned; supplier contracts listed in the closure register remain open.
+The q-Frobenius at c is the same q-Frobenius as at x, not a power coming from field extension.
 
-**Layer prerequisites:** `AbelianSchemesAndArithmeticModuli:A4`, `AbelianSchemesAndArithmeticModuli:A6`, `ArithmeticGaloisRepresentations:R01.5`, `ArithmeticGaloisRepresentations:R01.6`, `AutomorphicBundles:B2`, `GlobalShtukasAndFunctionFieldLanglands:GS.6`, `ReductiveGroupsPartII:RG2.1`, `ReductiveGroupsPartIII:RG3.0`, `ReductiveGroupsPartIII:RG3.1`, `ShimuraVarietiesPartII:SV2.0`, `ShimuraVarietiesPartII:SV2.5`, `ShimuraVarietiesPartII:SV2.6`.
+### Examples
 
-### Intrinsic group-valued tower local systems
+For split-at-p GU(1,1) at hyperspecial level the KR index set has one element while the Newton stratification has ordinary and basic parts. For a zero-dimensional torus component already in the ordinary locus, the constant map A¹→{x} with marked point 0 supplies the top-stratum curve; the positive-dimensional Bertini step is unnecessary.
 
-**Target:** `ShimuraVarietiesPartII:SV2.7/intrinsic-tower-local-system` (construction). **Planet:** Tower local system.
+### Dependencies
 
-For ℓ≠p, refine the ℓ-component of the prime-to-p Shimura tower to obtain its pro-étale K_ℓ-cover, then extend structure group to G(Q_ℓ). On the special fibre this defines a G(Q_ℓ)-local system L_ℓ. At neat level it agrees with the tensor-frame torsor of the abelian H¹ realization; it descends as a local system on the non-neat Shimura stack. A path or frame changes the associated fundamental-group homomorphism only by G(Q_ℓ)-conjugation.
+*Needs:* ShimuraVarietiesPartII:SV2.3/strong-adjoint-local-model-diagram; ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple; GeometricSatakeAndFusion:Layer GS0; gap:local-models; ReductiveGroupsPartII:§RG2.3; ShimuraVarietiesPartII:SV2.4/ordinary-density; gap:rational-stack-presentation; gap:finite-field-bertini; gap:same-field-schubert-curves.
 
-**Construction/proof.**
-1. KZ defines the group-valued local system intrinsically from the integral tower and identifies its tensor-frame realization.
-2. Extend structure group from the compact-level cover and descend along a neat normal quotient.
+## Layer 7: Geometric Frobenius classes
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `ShimuraVarietiesPartII:SV2.0/integral-shimura-stack`, `ShimuraVarietiesPartII:SV2.0/etale-tensors`, `AutomorphicBundles:B2`.
+### 7.1 Intrinsic group-valued tower local systems
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point`.
+The target SV2.7/intrinsic-tower-local-system constructs the following. For ℓ≠p, refine the ℓ-component of the prime-to-p Shimura tower to obtain its pro-étale K_ℓ-cover, then extend structure group to G(Q_ℓ). On the special fibre this defines a G(Q_ℓ)-local system L_ℓ. At neat level it agrees with the tensor-frame torsor of the abelian H₁=T_ℓ(A)⊗Q_ℓ realization; it descends as a local system on the non-neat Shimura stack. A path or frame changes the associated fundamental-group homomorphism only by G(Q_ℓ)-conjugation.
 
-**API.**
+(KZ, §5.1.1–5.1.2, p.47).
 
-- `ShimuraTowerLocalSystem.frameComparison` (compatibility): An available Hodge embedding identifies L_ℓ with Isom_tensor(V_Qℓ,H¹_ét(A)).
-- `ShimuraTowerLocalSystem.representation` (functoriality): An algebraic G-representation gives a lisse coefficient sheaf, preserving tensor, dual and coefficient extension.
-- `ShimuraTowerLocalSystem.level` (functoriality): Prime-to-p level maps pull back the local system compatibly with the pro-étale tower.
+A proof route: KZ defines the group-valued local system intrinsically from the integral tower and identifies its tensor-frame realization. Extend structure group from the compact-level cover and descend along a neat normal quotient.
 
-**Discriminating checks.**
+*Needs:* ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; ShimuraVarietiesPartII:SV2.0/integral-shimura-stack; ShimuraVarietiesPartII:SV2.0/etale-tensors; AutomorphicBundles:§§B2.4–B2.7.
 
-- `ShimuraTowerLocalSystem.trivialRep`: The trivial representation gives the constant rank-one sheaf with Frobenius 1.
-- `ShimuraTowerLocalSystem.frameChange`: A new frame conjugates the fundamental-group image; character values remain unchanged.
-- `ShimuraTowerLocalSystem.pExcluded`: The construction does not present the characteristic-p p-divisible group’s geometric points as an étale rank-2g local system.
+The construction has the following API.
 
-**Acceptance:** The local system is defined before choosing an auxiliary Hodge embedding.
+- A Hodge embedding identifies L_ℓ with Isom_tensor(V_Qℓ,H₁(A)); the dual representation gives H¹_ét(A).
+- An algebraic G-representation gives a lisse coefficient sheaf, preserving tensor, dual and coefficient extension.
+- Prime-to-p level maps pull back the local system compatibly with the pro-étale tower.
 
-**Source:** KZ, §5.1.1–5.1.2, p.47.
+**Checks.**
 
-### Frobenius point in the conjugacy quotient
+- The trivial representation gives the constant rank-one sheaf with Frobenius 1.
+- A new frame conjugates the fundamental-group image; character values remain unchanged.
+- The construction does not present the characteristic-p p-divisible group’s geometric points as an étale rank-2g local system.
 
-**Target:** `ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point` (construction). **Planet:** Frobenius quotient point.
+The local system is defined before choosing an auxiliary Hodge embedding.
 
-For an F_q-point y on the special-fibre Shimura stack, define γ_(y,ℓ)=χ_G(ρ_ℓ(Frob_q,geom))∈Conj(G)(Q_ℓ), where the conjugacy quotient χ_G is imported from RG3.0. The point is independent of paths, frames and the chosen neat cover. For every algebraic representation its characteristic polynomial is that of geometric Frobenius on the associated local-system fibre. A Q-rational quotient point is not by definition represented by an element of G(Q).
+### 7.2 Frobenius point in the conjugacy quotient
 
-**Construction/proof.**
-1. KZ sends the Frobenius of the intrinsic group-valued local system to the conjugacy quotient.
-2. Apply the imported quotient universal property and tensor-frame comparison to remove the choices.
+The target SV2.7/frobenius-quotient-point constructs the following. For an F_q-point y on the special-fibre Shimura stack, define γ_(y,ℓ)=χ_G(ρ_ℓ(Frob_q,geom))∈Conj(G)(Q_ℓ), where the conjugacy quotient χ_G is imported from RG3.0. The point is independent of paths, frames and the chosen neat cover. For every algebraic representation its characteristic polynomial is that of geometric Frobenius on the associated local-system fibre. A Q-rational quotient point is not by definition represented by an element of G(Q).
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.7/intrinsic-tower-local-system`, `ReductiveGroupsPartIII:RG3.0/conjugacy-quotient`, `AbelianSchemesAndArithmeticModuli:A6/frobenius-semisimplicity`.
+(KZ, §5.1.2–5.1.3, pp.47–48).
 
-**Consumers.** `ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues`, `ShimuraVarietiesPartII:SV2.7/algebraic-common-class`.
+A proof route: KZ sends the Frobenius of the intrinsic group-valued local system to the conjugacy quotient. Apply the imported quotient universal property and tensor-frame comparison to remove the choices.
 
-**API.**
+*Needs:* ShimuraVarietiesPartII:SV2.7/intrinsic-tower-local-system; gap:rg3-conjugacy-quotient; AbelianSchemesAndArithmeticModuli:§A6.21.
 
-- `ShimuraFrobeniusPoint.representation` (compatibility): Evaluation by a representation’s invariant characteristic-polynomial map gives its Frobenius characteristic polynomial.
-- `ShimuraFrobeniusPoint.residueExtension` (functoriality): Extension from F_q to F_(q^m) gives the quotient of the m-th power of the original Frobenius.
-- `ShimuraFrobeniusPoint.frameIndependent` (characterisation): Changing a path or tensor frame gives the same quotient point.
+The construction has the following API.
 
-**Discriminating checks.**
+- Evaluation by a representation’s invariant characteristic-polynomial map gives its Frobenius characteristic polynomial.
+- Extension from F_q to F_(q^m) gives the quotient of the m-th power of the original Frobenius.
+- Changing a path or tensor frame gives the same quotient point.
 
-- `ShimuraFrobeniusPoint.GLn`: For G=GL_n the coordinates are the coefficients of the monic Frobenius polynomial, including its nonzero constant coefficient.
-- `ShimuraFrobeniusPoint.elliptic`: For an elliptic F_q-point the standard H¹ polynomial has constant term q, not q inverse.
-- `ShimuraFrobeniusPoint.power`: The F_(q²) point has eigenvalues α_i²; it need not have the same quotient point as over F_q.
+**Checks.**
 
-**Acceptance:** Use geometric Frobenius consistently, with multiplier q in the H¹ convention.
+- For GL_n the coordinates are coefficients of det(T−g), with constant term (−1)ⁿdet(g) nonzero. For g=diag(1,1/5), the rank-two polynomial is T²−(6/5)T+1/5; using det(1−gT) as a monic polynomial would reverse these coordinates.
+- For E/F₅ with trace 2, the standard tower polynomial is T²−(2/5)T+1/5; its contragredient H¹ polynomial is T²−2T+5. The constants are 1/5 and 5, respectively.
+- For the same elliptic point over F₂₅, H¹ has trace 2²−2·5=−6 and determinant 25; the tower polynomial becomes T²+(6/25)T+1/25, distinct from the polynomial over F₅.
 
-**Source:** KZ, §5.1.2–5.1.3, pp.47–48.
+Use geometric Frobenius consistently, with multiplier q in the H¹ convention.
 
-### Unit eigenvalues in every representation
+### 7.3 Unit eigenvalues in every representation
 
-**Target:** `ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues` (theorem).
+The target SV2.7/representation-unit-eigenvalues proves the following. For every finite-dimensional algebraic representation θ of G over an algebraic coefficient field of characteristic zero and every special-fibre F_q-point, all Frobenius eigenvalues of θ are units at every finite place away from p. The faithful abelian H₁ realization has reciprocals of the H¹ Weil eigenvalues and these are such units; θ occurs as a subquotient of sums of tensor products of H₁ and H₁∨, so the unit property persists. No finite-order determinant hypothesis is imposed on θ itself.
 
-For every finite-dimensional algebraic representation θ of G over an algebraic coefficient field of characteristic zero and every special-fibre F_q-point, all Frobenius eigenvalues of θ are units at every finite place away from p. The faithful abelian H¹ realization has algebraic Weil eigenvalues and these are such units; θ occurs as a subquotient of sums of tensor products of that realization and its dual, so the unit property persists. No finite-order determinant hypothesis is imposed on θ itself.
+(KZ, Lemma 5.3.3, pp.53–54).
 
-**Construction/proof.**
-1. KZ propagates the prime-to-p unit property from the faithful abelian realization to all algebraic representations.
-2. Use the abelian Weil polynomial and its integral roots, duality, tensor products and the tensor-generator theorem for algebraic representations.
+A proof route: KZ propagates the prime-to-p unit property from the faithful abelian realization to all algebraic representations. Use the abelian Weil polynomial and its integral roots, duality, tensor products and the tensor-generator theorem for algebraic representations.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point`, `AbelianSchemesAndArithmeticModuli:A4/etale-tate-module`, `AbelianSchemesAndArithmeticModuli:A6/frobenius-semisimplicity`, `ArithmeticGaloisRepresentations:R01.6`, `ReductiveGroupsPartII:RG2.1`.
+*Needs:* ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point; AbelianSchemesAndArithmeticModuli:§A4.1; AbelianSchemesAndArithmeticModuli:§A6.21; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra.
 
-**Acceptance:** A determinant with nonzero Weil weight must be handled by coefficient twisting in the companion theorem, not falsely declared finite order.
+A determinant with nonzero Weil weight must be handled by coefficient twisting in the companion theorem, not falsely declared finite order.
 
-**Source:** KZ, Lemma 5.3.3, pp.53–54.
+### 7.4 Representation-wise Frobenius independence
 
-### Representation-wise Frobenius independence
+The target SV2.7/representationwise-independence proves the following. Fix y/F_q, primes ℓ,ℓ′≠p, algebraic closures and embeddings of a common algebraic coefficient field into them. For every algebraic representation θ of G over a number field large enough for the two algebraic Frobenius classes, the characteristic polynomials of θ(γ_(y,ℓ)) and θ(γ_(y,ℓ′)) agree under these embeddings. On a comparison curve use companions for semisimple algebraic lisse sheaves on a smooth open curve, allowing a constant twist and finite coefficient extension, and Chebotarev on its dense open. Start with ordinary points, then the top-KR curve meeting the ordinary locus, and descend through the finite KR order. Never extend F_q in this comparison.
 
-**Target:** `ShimuraVarietiesPartII:SV2.7/representationwise-independence` (theorem). **Planet:** Representation-wise independence.
+(KZ, Proposition 5.3.5 and proof, p.54).
 
-Fix y/F_q, primes ℓ,ℓ′≠p, algebraic closures and embeddings of a common algebraic coefficient field into them. For every algebraic representation θ of G over a number field large enough for the two algebraic Frobenius classes, the characteristic polynomials of θ(γ_(y,ℓ)) and θ(γ_(y,ℓ′)) agree under these embeddings. On a comparison curve use companions for semisimple algebraic lisse sheaves on a smooth open curve, allowing a constant twist and finite coefficient extension, and Chebotarev on its dense open. Start with ordinary points, then the top-KR curve meeting the ordinary locus, and descend through the finite KR order. Never extend F_q in this comparison.
+A proof route: KZ uses companions and Chebotarev on same-field curves to move the ordinary Frobenius equality down the KR order. Use the unit-eigenvalue lemma to check the open-curve companion hypotheses, allowing coefficient extension without residue-field extension. Identify the companion with the other pulled-back local system by equality on the dense higher-stratum open, then specialize to the rational marked point.
 
-**Construction/proof.**
-1. KZ uses companions and Chebotarev on same-field curves to move the ordinary Frobenius equality down the KR order.
-2. Use the unit-eigenvalue lemma to check the open-curve companion hypotheses, allowing coefficient extension without residue-field extension.
-3. Identify the companion with the other pulled-back local system by equality on the dense higher-stratum open, then specialize to the rational marked point.
+*Needs:* ShimuraVarietiesPartII:SV2.5/ordinary-rational-frobenius; ShimuraVarietiesPartII:SV2.6/same-field-curves; ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues; gap:open-curve-companions; ArithmeticGaloisRepresentations:§§5.1,5.13; gap:rg3-faithful-quotient-finite.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.5/ordinary-rational-frobenius`, `ShimuraVarietiesPartII:SV2.6/same-field-curves`, `ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues`, `GlobalShtukasAndFunctionFieldLanglands:GS.6`, `ArithmeticGaloisRepresentations:R01.5`, `ReductiveGroupsPartIII:RG3.0/faithful-quotient-finite`.
+The companion contract must cover smooth nonproper curves and semisimplifications; the projective finite-determinant statement in GS.6 alone is insufficient.
 
-**Acceptance:** The companion contract must cover smooth nonproper curves and semisimplifications; the projective finite-determinant statement in GS.6 alone is insufficient.
+### 7.5 A common algebraic conjugacy class
 
-**Source:** KZ, Proposition 5.3.5 and proof, p.54.
+The target SV2.7/algebraic-common-class proves the following. For a strongly acceptable triple and y/F_q, all representation characters identify the semisimple Frobenius quotient points over algebraic closures with one point in Conj(G)(Q-bar). Algebraicity of each local quotient point follows from the faithful abelian characteristic polynomial and the finite map of conjugacy quotients; equality follows from all algebraic characters, not the faithful characteristic polynomial alone.
 
-### A common algebraic conjugacy class
+(KZ, Proof of Theorem 5.1.4, §5.3.6, p.55).
 
-**Target:** `ShimuraVarietiesPartII:SV2.7/algebraic-common-class` (theorem).
+A proof route: KZ combines representation-wise equality with invariant characters to identify the algebraic semisimple class. Use RG3.0’s finite faithful-quotient map for algebraicity and its full character separation for equality.
 
-For a strongly acceptable triple and y/F_q, all representation characters identify the semisimple Frobenius quotient points over algebraic closures with one point in Conj(G)(Q-bar). Algebraicity of each local quotient point follows from the faithful abelian characteristic polynomial and the finite map of conjugacy quotients; equality follows from all algebraic characters, not the faithful characteristic polynomial alone.
+*Needs:* ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point; ShimuraVarietiesPartII:SV2.7/representationwise-independence; gap:rg3-character-separation; gap:rg3-faithful-quotient-finite.
 
-**Construction/proof.**
-1. KZ combines representation-wise equality with invariant characters to identify the algebraic semisimple class.
-2. Use RG3.0’s finite faithful-quotient map for algebraicity and its full character separation for equality.
+A faithful representation alone can merge distinct orthogonal conjugacy classes; all characters remove that ambiguity.
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point`, `ShimuraVarietiesPartII:SV2.7/representationwise-independence`, `ReductiveGroupsPartIII:RG3.0/character-separation`, `ReductiveGroupsPartIII:RG3.0/faithful-quotient-finite`.
+### 7.6 Rational common Frobenius class
 
-**Acceptance:** A faithful representation alone can merge distinct orthogonal conjugacy classes; all characters remove that ambiguity.
+The target SV2.7/common-frobenius-class proves the following. Let p>2, let (G,X,G°) be a strongly acceptable triple (including very-special level), and let y∈S_K(F_q) for a finite extension of the reflex residue field. There is a unique γ_y∈Conj(G)(Q) whose image in Conj(G)(Q_ℓ) is γ_(y,ℓ) for every ℓ≠p. Descend the common algebraic point using its rational local realizations at almost all primes and the degree-one-residue criterion of RG3.1. This theorem supplies a quotient point; a rational representative in G(Q) requires additional group hypotheses and belongs to the downstream KZ §6 arithmetic application.
 
-**Source:** KZ, Proof of Theorem 5.1.4, §5.3.6, p.55.
+(KZ, Theorem 5.1.4, p.48; proof §5.3.6, p.55).
 
-### Rational common Frobenius class
+A proof route: KZ descends the common algebraic class to Q by using its realization in Q_ℓ for every ℓ≠p. Apply the imported degree-one residue-field descent theorem to the field of definition of the common quotient point; separatedness gives uniqueness.
 
-**Target:** `ShimuraVarietiesPartII:SV2.7/common-frobenius-class` (theorem). **Planet:** Common Frobenius class.
+*Needs:* ShimuraVarietiesPartII:SV2.7/algebraic-common-class; gap:rg3-degree-one-residue-descent.
 
-Let p>2, let (G,X,G°) be a strongly acceptable triple (including very-special level), and let y∈S_K(F_q) for a finite extension of the reflex residue field. There is a unique γ_y∈Conj(G)(Q) whose image in Conj(G)(Q_ℓ) is γ_(y,ℓ) for every ℓ≠p. Descend the common algebraic point using its rational local realizations at almost all primes and the degree-one-residue criterion of RG3.1. This theorem supplies a quotient point; a rational representative in G(Q) requires additional group hypotheses and belongs to the already planned RG3.5 arithmetic application.
+The exact q-Frobenius is retained throughout; uniqueness is in the conjugacy quotient, not in G(Q).
 
-**Construction/proof.**
-1. KZ descends the common algebraic class to Q by using its realization in Q_ℓ for every ℓ≠p.
-2. Apply the imported degree-one residue-field descent theorem to the field of definition of the common quotient point; separatedness gives uniqueness.
+### Examples
 
-**Direct prerequisites:** `ShimuraVarietiesPartII:SV2.7/algebraic-common-class`, `ReductiveGroupsPartIII:RG3.1/degree-one-residue-descent`.
+For the elliptic trace-2 point over F₅ the tower quotient has coordinates (2/5,1/5); over F₂₅ they are (−6/25,1/25). For the trivial representation, Frobenius is 1 over both fields. These give different quotient points despite sharing the same geometric abelian fibre.
 
-**Acceptance:** The exact q-Frobenius is retained throughout; uniqueness is in the conjugacy quotient, not in G(Q).
+### Dependencies
 
-**Source:** KZ, Theorem 5.1.4, p.48; proof §5.3.6, p.55.
+*Needs:* ShimuraVarietiesPartII:SV2.0/prime-to-p-tower; ShimuraVarietiesPartII:SV2.0/integral-shimura-stack; ShimuraVarietiesPartII:SV2.0/etale-tensors; AutomorphicBundles:§§B2.4–B2.7; gap:rg3-conjugacy-quotient; AbelianSchemesAndArithmeticModuli:§A6.21; AbelianSchemesAndArithmeticModuli:§A4.1; ReductiveGroupsPartII:§RG2.1; gap:hodge-representation-algebra; ShimuraVarietiesPartII:SV2.5/ordinary-rational-frobenius; ShimuraVarietiesPartII:SV2.6/same-field-curves; gap:open-curve-companions; ArithmeticGaloisRepresentations:§§5.1,5.13; gap:rg3-faithful-quotient-finite; gap:rg3-character-separation; gap:rg3-degree-one-residue-descent.
 
-## Closure register
+## Downstream consumers
 
-All internal chains terminate in a pinned declaration, an exact external node, or one of these explicit requested contracts. There are no unassigned mathematical gaps in the design, and there are 27 open requests. This is planned coverage, not a claim that the suppliers have already proved the inputs. The named extensions in the ownership proposals must be allocated before calling the graph closed.
+The common rational point in Conj(G) supplies the geometric input for the abelian-variety application of KZ §6. Its consumer must follow this roadmap in supply order. Translation to an H¹-based arithmetic application uses the contragredient representation, or equivalently inversion on the conjugacy quotient followed by the dual-group identification; the elliptic coordinate pair (2/5,1/5) becomes (2,5). Integral datum maps and ordinary special lifts also supply such a downstream realization, preserving the original residue field.
 
-### AbelianSchemesAndArithmeticModuli:A5
+## Acceptance-test scope
 
-Finite-dimensional rational geometric endomorphism algebra and quasi-isogenies of abelian varieties, finite extension of definition of every geometric endomorphism, product/projector compatibility, and comparison of its ℓ-adic/crystalline realization actions. The pinned integral endomorphism ring is the baseline carrier; rationalization and these arithmetic results are imported here.
+The headline theorems are KZ Theorem 5.1.4, KPZ Theorem 7.2.21, KZ Theorem 4.4.6, KZ Corollary 4.4.13, HT Corollary 2.1.9, ordinary density with the existence and local-integrality hypotheses, and same-field curves. The acceptance-test specification for Suggested.lean requires one import Mathlib, one module docstring titled “Shimura varieties, Part II: target signatures”, and namespace TauCetiRoadmap.ShimuraVarietiesPartII. The docstring states that README.md is the roadmap and lists these headlines as not statable against the pinned APIs: the first needs integral Shimura fibres and their tower local systems evaluated in Conj(G); the second needs abelian-type integral models and local diagrams; the lifting and rational ordinary-class results need ordinary Shimura points, special lifts and isogeny actions; the Tate comparison needs tensor quasi-isogeny groups and crystalline realization groups; density needs B(G) and Newton strata; same-field curves need Shimura KR strata. There are no light definitions or substitute scalar statements that make those carriers available. The multiplier computations remain in Layer 5 as Checks.
 
-**Needed by:** `ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group`.
+## References
 
-### AlgebraicModuliForArithmeticGeometry:R09.1
 
-Finite-field Bertini with a prescribed rational smooth point, prescribed tangent/local condition and intersection with a chosen dense open, producing a smooth geometrically connected curve over the original F_q after shrinking. Projective parameter spaces alone do not prove this; propose AlgebraicModuliForArithmeticGeometryFiniteFieldCurvesPartII.
+- KZ: Mark Kisin; Rong Zhou. Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties. arXiv:2103.09945v2; printed preprint pagination, 63 pages; not collated with Annals 202 (2025). [Legal text](https://arxiv.org/pdf/2103.09945v2).
+- HT: Mark Kisin; Keerthi Madapusi Pera; Sug Woo Shin. Honda–Tate theory for Shimura varieties. Author PDF dated 27 January 2021, 41 pages; published Duke Math. J. 171 (2022); author pagination. [Legal text](https://math.berkeley.edu/~swshin/HT.pdf).
+- KPZ: Mark Kisin; Georgios Pappas; Rong Zhou. Integral models of Shimura varieties with parahoric level structure, II. Published Forum Math. Pi 14 (2026), e14; 89-page publisher PDF. [Legal text](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf).
+- KP: Mark Kisin; Georgios Pappas. Integral models of Shimura varieties with parahoric level structure. Published Publ. Math. IHÉS 128 (2018), 121–218; journal pagination. [Legal text](https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf).
+- K17: Mark Kisin. Mod p points on Shimura varieties of abelian type. Author manuscript dated 27 August 2016; published J. Amer. Math. Soc. 30 (2017); internal pagination. [Legal text](https://people.math.harvard.edu/~kisin/dvifiles/lr.pdf?download=1).
 
-**Needed by:** `ShimuraVarietiesPartII:SV2.6/same-field-curves`.
+### Source conventions and corrections
 
-### AlgebraicModuliForArithmeticGeometry:R09.3
-
-Representable finite-level quotient and normal descent for the actual integral arithmetic group actions. The tower kernel Δ need not be finite; identify finite-level representable quotients, finite étale transitions and effectiveness over the target local reflex ring under the specified small-level hypotheses.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/integral-shimura-stack`, `ShimuraVarietiesPartII:SV2.0/prime-to-p-tower`, `ShimuraVarietiesPartII:SV2.3/connected-normalization-cover`, `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`, `ShimuraVarietiesPartII:SV2.3/free-descent-kernel`.
-
-### AlgebraicModuliForArithmeticGeometry:R09.4
-
-Quotient stacks by the finite neat-level quotient with inertia and refinement independence. For a finite-field point of a smooth algebraic stack, supply a smooth presentation with a rational lift over that same finite field (LMB Theorem 6.3 as used by KZ 5.2.7); a presentation after finite extension is insufficient.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/integral-shimura-stack`, `ShimuraVarietiesPartII:SV2.6/same-field-curves`.
-
-### AlgebraicModuliForArithmeticGeometry:R09.6
-
-Effectivity/approximation and comparison of the chosen normal formal branch, ordinary henselizations and completed strict henselizations. The same-field theorem requires a rational local-model point; preserve this distinction when transferring local geometry.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface`, `ShimuraVarietiesPartII:SV2.1/same-field-henselizations`, `ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison`.
-
-### ArithmeticGaloisRepresentations:R01.5
-
-Chebotarev gives auxiliary primes splitting the group and the finitely generated Frobenius eigenvalue field, without assuming common G-conjugacy classes. On a smooth open finite-field curve, equality of semisimple lisse characteristic polynomials at closed points of a dense open determines the semisimplification by Chebotarev/Brauer–Nesbitt.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank`, `ShimuraVarietiesPartII:SV2.7/representationwise-independence`.
-
-### ArithmeticGaloisRepresentations:R01.6
-
-Independently of SV2.7, supply Noot’s coarser Conj′ Frobenius comparison for accommodating Hodge embeddings and the sufficiently neat/power step used in HT 2.1.9. R01.6/noot-specialization concerns characteristic-zero torsion specialization and does not discharge this contract. Also supply CM potential good reduction/Néron–Ogg–Shafarevich and the abelian Weil-polynomial prime-to-p-unit property. The coarser comparison is essential to avoid a cycle with the full Conj(G) theorem.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty`, `ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison`, `ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues`.
-
-### AutomorphicBundles:B2
-
-Tensor-compatible Betti–étale and absolute-Hodge specialization for the full G representation, including the Tate/similitude line and pullback to ordinary special lifts; flat full-G local systems rather than only automorphic Levi bundles. Supplies the rational I_x action on Betti H¹ used in SV2.5.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/etale-tensors`, `ShimuraVarietiesPartII:SV2.5/ordinary-rational-frobenius`, `ShimuraVarietiesPartII:SV2.7/intrinsic-tower-local-system`.
-
-### BunGAndNewtonStrata:BG1
-
-Grothendieck–Katz Newton semicontinuity for the universal convergent G-isocrystal over the possibly singular finite-type special fibre, local constancy of integral Kottwitz invariant, representation-detection of dominance, and descent of the reduced strata from perfectification. State closure containment only. This extends pointwise B(G) classification and must cover the actual family.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.4/newton-strata`, `ShimuraVarietiesPartII:SV2.4/newton-semicontinuity`.
-
-### CrystallineCohomology:CR.7
-
-Absolute Hodge crystalline–de Rham compatibility and horizontal transport on normal formal branches. Globalize the canonical tensors as convergent F-isocrystal sections by semistable alteration, log-Dieudonné comparison and proper descent, exactly in the possibly singular/nonproper family scope of HT Appendix A. Generic smooth proper comparison alone is insufficient; extend through CrystallineCohomologyIntegralFamiliesPartII.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `ShimuraVarietiesPartII:SV2.0/global-crystalline-realization`.
-
-### FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.2
-
-Contravariant Dieudonné theory for the universal abelian p-divisible group, Frobenius-semilinear comparison over W(k), descent from a finite residue field and filtration/dual/polarization compatibility. Ordinary elliptic slopes are 0,1. Rational J_b actions live in the isogeny category.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors`, `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames`.
-
-### FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4
-
-Integral Breuil–Kisin to Dieudonné comparison for the exact Hodge lattice and tensors, with torsor purity/extension as in KZ 3.3.2 and its Ans22 input; integrality and tensor frames, not merely a rational comparison. Include admissibility with the integral Kottwitz invariant and the inverse Hodge cocharacter.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames`, `ShimuraVarietiesPartII:SV2.4/newton-admissibility`.
-
-### FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.6
-
-Corrected integral tensor-display deformation rings R_G with G-split filtration, tensor-compatible very-good trivialization modulo m²+π, normality and the adapted-point criterion. Include KPZ 7.3.1(2)’s τ-topology repair: prove p-adic completeness and logarithmic-tail convergence in the existing coefficient ring. Supply KZ 3.4.5: an ordinary tensor p-divisible group has an adapted lift over a finite extension of breve Q_p preserving the whole J_b(Q_p)-action in the isogeny category. No uniqueness or unramified lifting claim.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.1/adapted-branch-interface`, `ShimuraVarietiesPartII:SV2.2/nonexceptional-cover`, `ShimuraVarietiesPartII:SV2.2/exceptional-cover`, `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`, `ShimuraVarietiesPartII:SV2.5/ordinary-very-good`, `ShimuraVarietiesPartII:SV2.5/ordinary-hodge-special-lift`.
-
-### GeometricSatakeAndFusion:GS0:Witt-geometry
-
-Witt-vector affine flag Schubert stratifications, finite admissible indexing and Bruhat closure, Frobenius action/descent on indices, and the very-special dominant-coweight description. Keep mixed-characteristic perfect geometry distinct from the finite-type local model and justify transfer to its reduced strata.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.1/special-fibre-geometry`, `ShimuraVarietiesPartII:SV2.6/kr-stratification`.
-
-### GeometricSatakeAndFusion:GS0:loop-geometry
-
-Canonical flat local models M_loc(G,{μ}) for the actual odd-p parahoric data, including ramified and non-quasi-tame cases used in KPZ; adjoint/central-isogeny comparison under its exact hypotheses; reduced special fibre with normal Schubert components, the geometrically integral very-special case, and smooth extremal orbit. Supply same-F_q root curves through rational points into higher Schubert strata, including ramified SL2/SU3 rank-one cases (KZ 5.2.3). This is the existing GeometricSatakeLocalModelsPartII continuation, not just split affine Grassmannian geometry.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram`, `ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison`, `ShimuraVarietiesPartII:SV2.1/special-fibre-geometry`, `ShimuraVarietiesPartII:SV2.3/abelian-integral-model`, `ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram`, `ShimuraVarietiesPartII:SV2.5/integral-datum-maps`, `ShimuraVarietiesPartII:SV2.5/ordinary-very-good`, `ShimuraVarietiesPartII:SV2.6/kr-stratification`, `ShimuraVarietiesPartII:SV2.6/same-field-curves`.
-
-### GlobalShtukasAndFunctionFieldLanglands:GS.6
-
-Companions for semisimple algebraic lisse sheaves on smooth geometrically connected OPEN curves over F_q with all eigenvalues units away from p, allowing finite coefficient extension and constant twists to finite determinant (Chin 4.6 as used in KZ 5.3.5). Preserve the original F_q and rational marked point. GS.6/companions-on-curves currently states only a projective finite-determinant version, so it does not discharge this contract.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.7/representationwise-independence`.
-
-### HeckeStacksAndLocalShtukas:HS2
-
-Integral canonical Shimura-model uniqueness and datum functoriality in precisely the scope used by KPZ 7.1.8–7.1.9 and KZ 4.3.2: PR24, revised PR26 and DvHKZ yield strict local comparison and canonicity for a lattice-chain stabilizer without assuming the given embedding globally very good or G R-smooth. This modern route uses corrected auxiliary very-good theory; the older P23 proof in KPZ 7.3.2 retains its very-good restriction and is not a substitute. Supply the general connected adjoint local-model torsor reduction of KPZ Corollary 7.2.24; the elementary non-exceptional proof does not establish it. Owner: HeckeStacksAndLocalShtukasIntegralPartII.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison`, `ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram`, `ShimuraVarietiesPartII:SV2.5/integral-datum-maps`.
-
-### MotivesAndAlgebraicCycles:MC.6
-
-Neutral Tannakian tensor-frame reconstruction over the coefficient field: the subcategory generated by a realization has group H⊂G, giving restriction Rep(G)→Rep(H), not an automatic equivalence with Rep(G). Exact faithful functors preserve the specified tensors and scalar extension.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/global-crystalline-realization`.
-
-### PELModuli:M4
-
-Integral Siegel moduli and the universal polarized abelian scheme at neat prime-to-p level, finite étale level transitions, and pro-level DVR good-reduction criterion. Where polarization degree is divisible by p, use the M6 finite-flat polarization stack, not a false étale-kernel or smoothness assertion.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `ShimuraVarietiesPartII:SV2.1/pro-dvr-property`, `ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty`, `ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map`, `ShimuraVarietiesPartII:SV2.5/product-abelian-comparison`.
-
-### ReductiveGroupsPartII:RG2.0
-
-Topological closures, congruence completions and the quotient maps used in integral component star-products; a split reductive subgroup with compact quotient in a split connected centralizer contains a Borel, and a proper affine homogeneous quotient is finite. The latter group theorem is an extension contract, not part of the point-topology scope.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.3/integral-component-groups`, `ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank`.
-
-### ReductiveGroupsPartII:RG2.1
-
-Import the existing valued-root and Kottwitz interfaces. Additional contracts: Deligne fundamental Hodge representations for types A and D^H; central fibre-product and centre calculations with matched multipliers; invariant symplectic forms; tensor generation by a faithful representation; the precise Conj′ orthogonal outer action and centralizer-dimension invariance. These unvalued/arithmetic extensions must have their own owner; they are not assertions about current RG2.1.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`, `ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover`, `ShimuraVarietiesPartII:SV2.2/nonexceptional-cover`, `ShimuraVarietiesPartII:SV2.2/exceptional-cover`, `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`, `ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover`, `ShimuraVarietiesPartII:SV2.4/rosati-reductivity`, `ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison`, `ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum`, `ShimuraVarietiesPartII:SV2.5/isogeny-group-exact-sequences`, `ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues`.
-
-### ReductiveGroupsPartII:RG2.3
-
-Import full-fixer and connected parahoric schemes, Lang surjectivity and its pro-connected version, and split-kernel exactness from current upstream. Additional local-integral contracts: associated parahorics for identified adjoint groups; R-smooth tori and fixer closed immersions; R-smooth central-extension exactness; connected-fixer criteria from torsion-free inertia coinvariants; triviality of finite-field torsors under the connected smooth fibre. Current upstream explicitly excludes the R-smooth extensions; see the Part IV proposal.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`, `ShimuraVarietiesPartII:SV2.1/same-field-henselizations`, `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`, `ShimuraVarietiesPartII:SV2.2/nonexceptional-cover`, `ShimuraVarietiesPartII:SV2.2/exceptional-cover`, `ShimuraVarietiesPartII:SV2.2/general-abelian-cover`, `ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover`, `ShimuraVarietiesPartII:SV2.3/integral-component-groups`, `ShimuraVarietiesPartII:SV2.3/reflex-units`, `ShimuraVarietiesPartII:SV2.5/matched-integral-comparison`, `ShimuraVarietiesPartII:SV2.6/rational-local-model-lift`.
-
-### ShimuraCompactificationsPartII:C7
-
-Connected-component specialization at very-special normal integral Hodge level as used in MP19 Corollary 4.1.11: local integrality plus the compactification/connectedness input gives geometrically irreducible special fibres of the connected pieces; state the exact base and level hypotheses. The already planned normalized interior is imported separately. This input is not proved by local integrality alone.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.4/ordinary-density`.
-
-### ShimuraData:D4
-
-Import connected Hodge lifting. Supply its auxiliary Hodge-cover refinement with fundamental type-A/D^H representations, CM scalar field split at every prescribed p-place, and Hodge cocharacters factoring through the matched-multiplier identity component. Global torus approximation comes from RG3.2; this request must not reprove it.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple`, `ShimuraVarietiesPartII:SV2.2/reflex-splitting-cover`, `ShimuraVarietiesPartII:SV2.2/nonexceptional-cover`, `ShimuraVarietiesPartII:SV2.2/exceptional-cover`, `ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum`.
-
-### ShimuraVarieties:V4
-
-Toric canonical models with reciprocity and the reduction at the reflex place induced by the fixed p-adic embedding. Combined with the CM good-reduction contract, identify the resulting torus isocrystal.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty`.
-
-### ShimuraVarieties:V6
-
-Generic connected-component action groups A(G), A(G)° and the star-product construction, their topologies, reciprocity and change-of-datum maps. Supply the generic construction only; SV2.3 defines its integral specialization and corrects conjugated levels.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.3/integral-component-groups`, `ShimuraVarietiesPartII:SV2.3/reflex-units`, `ShimuraVarietiesPartII:SV2.3/component-galois-extension`, `ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing`.
-
-### ShimuraVarieties:V8
-
-Canonical generic-fibre tower with right adelic action and its finite-level descent and reciprocity compatibility. Integral extension and tensor specializations are owned by SV2.0, not assumed here.
-
-**Needed by:** `ShimuraVarietiesPartII:SV2.0/integral-hodge-data`.
-
-## Route boundaries and ownership proposals
-
-Every routed identifier from the thirteen issue briefs is retained exactly once. This is a boundary and ownership audit of the extractions. Only the five sources and readSections in this packet support the core mathematical design; the other papers are design inputs to the independent continuations, not sources falsely reported as read.
-
-The packet retains all 594 routed identifiers in 13 inventories. Each has exactly one core target, existing owner, supplier contract or independent continuation. This preserves the issue’s full scope without treating unread independent papers as verified core sources.
-
-- **PAPER-KISIN-ZHOU-25**: 56 items; 46 core-specialization, 10 existing-owner.
-- **PAPER-KISIN-MADAPUSIPERA-SHIN-22**: 82 items; 36 core-specialization, 3 existing-owner, 25 independent-continuation, 18 supplier-contract.
-- **PAPER-KISIN-PAPPAS-ZHOU-26**: 53 items; 37 core-specialization, 3 existing-owner, 13 supplier-contract.
-- **PAPER-KISIN-PAPPAS-18**: 84 items; 62 core-specialization, 8 existing-owner, 3 independent-continuation, 11 supplier-contract.
-- **PAPER-KISIN-17**: 141 items; 24 core-specialization, 10 existing-owner, 106 independent-continuation, 1 supplier-contract.
-- **PAPER-VANHOFTEN-24**: 57 items; 5 core-specialization, 1 existing-owner, 50 independent-continuation, 1 supplier-contract.
-- **PAPER-GLEASON-LIM-XU-26**: 10 items; 2 core-specialization, 8 independent-continuation.
-- **PAPER-BOXER-PILLONI-26**: 4 items; 4 existing-owner.
-- **PAPER-PILLONI-20**: 7 items; 7 existing-owner.
-- **PAPER-ANDREATTA-GOREN-HOWARD-ETAL-18**: 37 items; 37 independent-continuation.
-- **PAPER-SHANKAR-SHANKAR-TANG-ETAL-22**: 21 items; 21 independent-continuation.
-- **PAPER-ICHINO-PRASANNA-23**: 7 items; 7 independent-continuation.
-- **PAPER-RICHARD-YAFAEV-25**: 35 items; 35 independent-continuation.
-
-**ShimuraVarietiesPartII, ShimuraVarietiesHondaTatePartII.** Thirteen extraction routes used several titles for one reduction continuation, and also include independent developments. Keep one owner for their shared integral, tensor and component descent inputs. Use ShimuraVarietiesPartII, stages SV2.0–SV2.7, for the proof from canonical towers to KZ 5.1.4. Treat ShimuraVarietiesHondaTatePartII as the old candidate alias, not as another prerequisite or a second integral-model construction. Keep the C7 normalized interior and existing C13/C14 Siegel level models at their current owners.
-
-**ShimuraVarietiesPartII, ShimuraVarietiesHondaTateAndCMPartIII.** General CM lifting and Honda–Tate classification require new global cohomological obstructions and are not needed to prove the geometric common-class theorem. Propose ShimuraVarietiesHondaTateAndCMPartIII: HT3.0 tensor isogeny torsors and all realizations; HT3.1 global special pairs and general CM lifts with their precise hypotheses; HT3.2 rational versus geometric conjugacy, Hasse obstruction and conditional Honda–Tate classification. Import SV2.0, SV2.4, SV2.5 and RG3.0–RG3.4. Keep conjectural statements explicitly conditional. Do not duplicate the generic arithmetic tori or the abelian-variety application in RG3.5.
-
-**ShimuraVarietiesPartII, ShimuraVarietiesModPPointsPartIII.** Gerbs, admissible morphisms, Kottwitz triples, ADLV uniformization and the full Langlands–Rapoport point formula are independent of ordinary lifting and curve comparison. Propose ShimuraVarietiesModPPointsPartIII: MP3.0 arithmetic gerbs/admissible morphisms; MP3.1 tensor quasi-isogeny classes and ADLV maps; MP3.2 isogeny-class uniformization and connected components; MP3.3 EKOR/almost-product geometry; MP3.4 Langlands–Rapoport/Kottwitz point formula with source restrictions retained. Import SV2.0–SV2.4, the existing ADLV component continuation and integral local-shtuka continuation; generic gerbs belong to the arithmetic-gerb supplier. K17, VH and GLX routes go here except their shared integral/tensor inputs.
-
-**ShimuraVarietiesPartII, ShimuraVarietiesNearbyCyclesPartIII.** Nearby cycles, Bernstein central functions and the Kottwitz test-function theorem require sheaf and Hecke theory absent from the common-class proof. Propose ShimuraVarietiesNearbyCyclesPartIII: NC3.0 integral local-model nearby cycles with the exact tame source hypotheses; NC3.1 inertia and semisimple trace; NC3.2 Bernstein/Kottwitz test functions and Shimura comparison. Import SV2.1/SV2.3, local models and the Hecke owner. Route KP’s nearby-cycle items here; do not extend the tame theorem to every KPZ model without a new source.
-
-**ShimuraVarietiesPartII, OrthogonalIntegralModelsAndKugaSatake.** The orthogonal/special-divisor routes include prime 2 and special endomorphism geometry, whereas the present integral comparison assumes p>2. Retain the named OrthogonalIntegralModelsAndKugaSatake candidate: OI.0 orthogonal datum and Clifford realization using current upstream OrthogonalSpinGroups; OI.1 all-prime integral models and Kuga–Satake extension; OI.2 special endomorphisms and special divisors with local equations; OI.3 the total-reflex embedding and the exact intersection/Picard-rank applications. Import odd-prime SV2.0–SV2.3 where applicable. Plan the prime-2 inputs at their proper suppliers. Keep all 58 AGHMP/Shankar-route items assigned; this proposal does not certify their extracted statements.
-
-**ShimuraVarietiesPartII, ShimuraVarietiesPartIIAutomorphicCohomology.** Automorphic-local-system cohomology and its Hodge realizations need cohomological comparison beyond the intrinsic lisse tower here. Keep ShimuraVarietiesPartIIAutomorphicCohomology: AC.0 coefficient systems and Hecke conventions, importing SV2.7 and AutomorphicBundles; AC.1 Betti/étale cohomology and comparison; AC.2 Hodge structures, cycle classes and the IP Jacquet–Langlands use. Reuse existing proper/compact-support cohomology suppliers. All seven IP-route items remain in this direction.
-
-**ShimuraVarietiesPartII, HeckeOrbitsAndAndrePinkZannier.** The RY route is an orbit-closure and unlikely-intersection argument, not a consequence needed for the integral Frobenius theorem. Keep HeckeOrbitsAndAndrePinkZannier: HO.0 generalized Hecke orbits and precise conjectures; HO.1 geometric/arithmetic orbit invariants; HO.2 height/degree/Galois bounds at their existing owners; HO.3 the stated conditional and unconditional André–Pink–Zannier results. Import ShimuraVarieties and ShimuraData. All 35 routed items are retained as design inputs, with no claim that their conjectures are proved.
-
-**ShimuraVarietiesPartII, ReductiveGroupsPartII, ReductiveGroupsPartIII, ReductiveGroupsPartIV.** Current upstream Part II explicitly excludes R-smoothness, arbitrary-adjoint parahoric association and R-smooth central-extension exactness. Part III already owns arithmetic conjugacy, so naming another Part III would conflict. Propose ReductiveGroupsPartIV: RG4.0 associated parahorics for common adjoint data; RG4.1 R-smooth torus and Néron-closure criteria; RG4.2 fixer immersions and R-smooth exact central extensions; RG4.3 the centre/coinvariant consequences needed for auxiliary covers. Route the extension portions of the RG2.1/RG2.3 contracts there after maintainer allocation. Import current Part II and RG3 arithmetic tori; never edit or replan current upstream targets. The generic fundamental Hodge-representation portions belong to ShimuraData, not valued-root theory.
-
-**ShimuraVarietiesPartII, FiniteFlatGroupsWithTensorsPartII, GeometricSatakeLocalModelsPartII, HeckeStacksAndLocalShtukasIntegralPartII.** The integral model proof needs more than generic displays, affine Grassmannians and local shtuka definitions. Retain these three extraction candidates as separate suppliers: tensor-display deformation and ordinary J_b-action lifting; canonical flat local models and same-field root curves; integral canonical-model uniqueness and connected adjoint torsor reduction. The exact contracts are the R07.6, GS0 and HS2 requests. They precede SV2.1/SV2.2/SV2.6. No generic theory is reconstructed inside this roadmap.
-
-**ShimuraVarietiesPartII, CrystallineCohomologyIntegralFamiliesPartII, AlgebraicModuliForArithmeticGeometryFiniteFieldCurvesPartII.** Two actual uses exceed the stated supplier stages: convergent tensors on singular/nonproper families, and rational-point-preserving finite-field curve construction. Create the named Part II extensions with stages for alteration/log-Dieudonné descent and absolute-Hodge horizontal transport, respectively same-field smooth stack presentations and finite-field Bertini with local/open conditions. Contracts CR.7, R09.4 and R09.1 state exactly what SV2.0/SV2.6 require. Keep requests routed to existing owner stages until these continuations are allocated.
-
-**ShimuraVarietiesPartII, ArithmeticGaloisRepresentationsFrobeniusComparisonsPartII, GlobalShtukasPartIICrystallineCompanions.** The existing arithmetic Noot-specialization node is a characteristic-zero statement, and the existing curve-companion node is projective. Neither supplies the precise finite-field comparison used here. Allocate the coarser Conj′ Frobenius theorem and its neat/power refinement to ArithmeticGaloisRepresentationsFrobeniusComparisonsPartII, independently of SV2.7. Extend the already proposed GlobalShtukasPartIICrystallineCompanions with the open-curve l-adic companion and constant-twist interface in the GS.6 request. Reuse Lafforgue/Chin inputs there; this is not a new copy of global Langlands or the existing Ramanujan/Arthur Part II. Keep these exact requests at R01.6 and GS.6 until the continuations receive stages.
-
-## Corrections and source versions
-
-KZ findings refer only to arXiv v2; HT findings refer only to the dated author copy. Published KP and KPZ were read, including the published correction section. No claim is made about wording of the uncollated Annals or Duke versions. Independent review should collate the version-scoped findings before attributing them to a published text.
-
-**ShimuraVarietiesPartII/E1 — misprint; KZ, arXiv v2 Proposition 4.2.3(5), p.34, compared with Lemma 4.2.4 and its use on p.41.** The auxiliary cover is said to have torsion inertia coinvariants X_*(G_ab)_I. The intended assertion is torsion-free inertia coinvariants. Check: The proof excludes the wild-index factor to invoke freeness, and the immediately following connected-fixer criterion requires torsion-free coinvariants. KPZ 7.2.19 supplies the free condition. Correction status: The proof and subsequent uses in the same preprint have the intended torsion-free condition; Annals version not collated.
-
-**ShimuraVarietiesPartII/E2 — error; KZ, arXiv v2 §5.1.3, p.47.** The F-points of a reductive conjugacy quotient are identified with semisimple H(F)-conjugacy classes for an arbitrary characteristic-zero field F. Geometric points classify semisimple geometric conjugacy classes. Rational quotient points encode Galois-stable geometric classes; they need not classify rational conjugacy or have an F-rational representative. Check: In SL₂(R), rotations by θ and −θ with sin θ nonzero have the same characteristic polynomial and geometric semisimple class, but no determinant-one real conjugator. A conjugator reverses the complex structure and has negative determinant. Correction status: Also noted by the existing ReductiveGroupsPartIII plan; no separate published correction identified. Finding scoped to arXiv v2, not to uncollated Annals text.
-
-**ShimuraVarietiesPartII/E3 — error; HT, Author PDF Corollary 1.3.13 proof, p.19.** The tensor category generated by the single isocrystal is identified with representations of the group preserving just the prescribed Hodge tensors. Use its actual Tannaka group H and its inclusion into G. Restriction of G-representations followed by the generated-category equivalence gives the required exact faithful functor. No equality H=G is required. Check: Extra horizontal/Frobenius-invariant tensors may shrink H. For a trivial rank-two isocrystal with no imposed extra tensors, its generated category has trivial group while the unconstrained tensor stabilizer is GL₂. The same formal issue persists for families with proper monodromy. Correction status: No separate correction identified on the author pages. Finding scoped to the dated author copy; the functor conclusion is retained with corrected reconstruction.
-
-**ShimuraVarietiesPartII/E4 — error; KP, Published KP local-model diagram, as corrected in published KPZ §7.3.1(1), p.85.** An action map used in the local-model smoothness argument is described as a torsor. It is a smooth group-action map. The frame projection is the torsor; the filtration map is smooth of the stated relative dimension. Check: For the natural action on tensor frames, q_loc transports the filtration and is not invariant, whereas the frame projection is invariant. The action map is smooth by composing (g,m)↦(g,gm) with projection; this is exactly the property needed. Correction status: Published KPZ §7.3.1(1), p.85.
-
-**ShimuraVarietiesPartII/E5 — gap; KP, Published KP Lemma 3.1.17 argument, corrected in published KPZ §7.3.1(2), pp.85–86.** The logarithm argument treats the τ-topologized display coefficient ring as complete for the limiting calculation. Prove that the existing ring W-hat(A)[1/p] is already complete and separated for its p-adic topology. Use Zink logarithmic coordinates to prove the shifted tails tend to zero in that topology. Check: Convergence in a noncomplete τ-topology does not justify the limit. The correction proves p-adic completeness and uses divisibility plus the logarithmic tail shift to establish the required convergence. Correction status: Published KPZ §7.3.1(2), pp.85–86.
-
-**ShimuraVarietiesPartII/E6 — error; KP, Published KP Corollary 4.6.15 and Corollary 4.6.18, corrected in published KPZ §7.3.1(3), pp.86–87.** The gluing formula uses the same connected p-level component for every coset representative j. The component associated with j has p-level jK_p°j^(-1). Glue the corresponding conjugated-level connected pieces with the transported actions. Check: Changing the p-component of a double-coset representative conjugates its stabilizer. The original identification only works uniformly if those representatives normalize the level. Correction status: Published KPZ §7.3.1(3), pp.86–87.
-
-**ShimuraVarietiesPartII/E7 — gap; KPZ, Published KPZ §7.3.2, p.87, correcting the cited Pappas embedding-independence proof.** The earlier embedding-independence argument was used without the very-good tensor-compatible embedding restriction. Use the theorem only for very-good embeddings in the stated local-model scope, unless a stronger independent canonical-model theorem is supplied. Check: The integral tensor/display comparison needs the first-order tensor-compatible trivialization; a closed good lattice embedding alone does not provide it. Correction status: The restriction and repaired use are stated explicitly in published KPZ §7.3.2.
-
-**ShimuraVarietiesPartII/E8 — gap; KP, Published KP local-model theorem and earlier KZ versions, as corrected by published KPZ Remark 7.1.4(1), p.73.** The local-model argument was applied to good lattice embeddings without requiring the tensor-compatible very-good condition. For that display-based local-model diagram require a very-good embedding, including the first-order tensor trivialization. Keep KPZ 7.1.8’s separate modern shtuka proof for the broader strict-henselian result. Check: The display comparison needs its canonical first-order identification to fix the defining tensors. A closed Grassmannian embedding alone does not establish that equality. Correction status: Published KPZ Remark 7.1.4(1), p.73; KZ arXiv v2 §3.2.5 includes the corrected hypothesis.
-
-**ShimuraVarietiesPartII/E9 — error; HT, Author PDF §1.3.15 and Corollary 1.3.16, p.20; compare KZ Definition 2.2.4 and Remark 2.2.5, p.10.** Ordinary-class existence is asserted for the inner-form setup without an additional existence hypothesis. Define the ordinary locus only after specifying an actual class with Newton point equal to the averaged inverse Hodge cocharacter. Quasi-splitness guarantees existence; general inner forms need not have such a class. Keep the separate local-integrality hypothesis for density. Check: For the quaternion division group, transfer to GL₂ over the unramified completion shifts both slopes by one half. Putative ordinary slopes (0,−1) would yield slopes (1/2,−1/2), each once, contradicting the denominator-divisibility constraint for isocrystals. This diagnoses a missing existence premise, not a counterexample to density under local integrality. Correction status: Previously confirmed at BunGAndNewtonStrata/E06, inherited from PAPER-KISIN-MADAPUSIPERA-SHIN-22/E8. The author-copy assertion and KZ’s explicit existence caveat were re-read for this design; the Duke edition is not collated.
-
-## Suggested Lean scope
-
-The suggested file follows the 2026-10-12 shape: light definitions with real bodies over pinned carriers, milestone statements that can actually be stated there, and a few concrete tests. It is not an exhaustive declaration checklist. Its matched-multiplier calculation is the linear-algebra specialization of SV2.5/matched-multiplier-datum. It tests the common multiplier, including the unequal-multiplier counterexample. It does not substitute an assumption record or an arbitrary predicate for a Shimura datum.
-
-Every geometric target SV2.0–SV2.7 remains a README target: integral Shimura stacks/towers, global tensor realizations, very-good embeddings, adapted deformations, local models, auxiliary covers, component descent, tensor quasi-isogeny groups, Newton/KR strata, ordinary lifts, same-field curves and group-valued Frobenius quotient points all need carriers not present at the pins. Their full specifications, APIs and checks above are definitive. The pinned pointwise isocrystal, abelian variety and integral endomorphism ring do not make those geometric carriers available. No heavy target is replaced by an uninterpreted proposition in the suggested file.
-
-The small pinned signatures are a check of the direct-sum multiplier condition only. The global common-class theorem is stated in full above, and intentionally has no artificial Lean signature over invented carriers.
-
-The light predicate `TauCetiRoadmap.ShimuraVarietiesPartII.HasMultiplier ψ g c` means ∀x,y, ψ(gx,gy)=cψ(x,y). It asserts scaling only; nondegeneracy, alternation and invertibility are separate geometric hypotheses. Its API signatures are `HasMultiplier.identity` (identity scales by 1), `HasMultiplier.comp` (multipliers multiply under composition), `HasMultiplier.unique` (a nonzero form over a domain has at most one specified multiplier), and `block_hasMultiplier_iff` (the block sum scales by c exactly when both blocks do, assuming the stated zero conditions). Its three examples are `identityPlane`, `diagonalTwo`, and `unequalBlocks`: the standard Q-plane has identity multiplier 1, diag(2,1) has multiplier 2, and block diag(diag(2,1),diag(3,1)) has no common multiplier. These checks use existing product/rational carriers and are the pinned specialization of the matched-multiplier target, not an additional general-theory roadmap.
-
-## Sources actually read
-
-- **KZ: Mark Kisin; Rong Zhou, Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties.** arXiv:2103.09945v2; printed preprint pagination, 63 pages; not collated with Annals 202 (2025). [Public text](https://arxiv.org/pdf/2103.09945v2). Read 2026-10-19: Introduction pp.1–6; §§2.1–2.4.3 pp.6–13; §§3–5 pp.18–55, including all proofs of the integral, ordinary-lifting and geometric common-class results. SHA-256 `62d26eb931f271404c333c4b9a929e85239222788834cf16dcec1dff230c34c8`.
-- **HT: Mark Kisin; Keerthi Madapusi Pera; Sug Woo Shin, Honda–Tate theory for Shimura varieties.** Author PDF dated 27 January 2021, 41 pages; published Duke Math. J. 171 (2022); author pagination. [Public text](https://math.berkeley.edu/~swshin/HT.pdf). Read 2026-10-19: Introduction pp.1–4; §1.3.1–1.3.18 pp.15–20; §2.1 pp.21–25; Appendix A pp.37–39. SHA-256 `fd22990bc3eff8a726375cf8f0c9015828c39f1c32b0717347a9ef23ce9b52db`.
-- **KPZ: Mark Kisin; Georgios Pappas; Rong Zhou, Integral models of Shimura varieties with parahoric level structure, II.** Published Forum Math. Pi 14 (2026), e14; 89-page publisher PDF. [Public text](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf). Read 2026-10-19: §§7.1–7.3 pp.72–87, including every published correction in §7.3. SHA-256 `d0438498fbe4501e6d9c0cc7cf3ea9fc02ba5e11d326f2d77dd42715658a198b`.
-- **KP: Mark Kisin; Georgios Pappas, Integral models of Shimura varieties with parahoric level structure.** Published Publ. Math. IHÉS 128 (2018), 121–218; journal pagination. [Public text](https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf). Read 2026-10-19: §4.2.6–4.2.12 pp.186–188, checked against the action-map correction; §§4.3–4.6.20 pp.189–205, including the integral component actions and abelian-type descent. SHA-256 `e2b4a0763f216be82da950f4c0dd2800adea8a0d911b12bfacf2b7e493b4618b`.
-- **K17: Mark Kisin, Mod p points on Shimura varieties of abelian type.** Author manuscript dated 27 August 2016; published J. Amer. Math. Soc. 30 (2017); internal pagination. [Public text](https://people.math.harvard.edu/~kisin/dvifiles/lr.pdf?download=1). Read 2026-10-19: §§2.1.1–2.1.7 pp.28–31, tensor isogeny groups and the auxiliary-prime comparison. SHA-256 `d3c19cddc9e8b073428de559a7215aae4f793490227b6c71d87477ccdb5d994a`.
-
-The local display/model theorems, semistable descent, finite-field Bertini and open-curve companions are exact supplier contracts. Their references inside the five read sources motivate those contracts; the underlying technical papers have not all been independently read in this design run. The independent orthogonal, cohomological and orbit papers were triaged from the issue’s extraction records only. No private reference-library source was used.
+- KZ, arXiv v2 Proposition 4.2.3(5), p.34, compared with Lemma 4.2.4 and its use on p.41: The intended assertion is torsion-free inertia coinvariants. The proof excludes the wild-index factor to invoke freeness, and the immediately following connected-fixer criterion requires torsion-free coinvariants. KPZ 7.2.19 supplies the free condition.
+- KZ, arXiv v2 §5.1.3, p.47: Geometric points classify semisimple geometric conjugacy classes. Rational quotient points encode Galois-stable geometric classes; they need not classify rational conjugacy or have an F-rational representative. In SL₂(R), rotations by θ and −θ with sin θ nonzero have the same characteristic polynomial and geometric semisimple class, but no determinant-one real conjugator. A conjugator reverses the complex structure and has negative determinant.
+- HT, Author PDF Corollary 1.3.13 proof, p.19: Use its actual Tannaka group H and its inclusion into G. Restriction of G-representations followed by the generated-category equivalence gives the required exact faithful functor. No equality H=G is required. Extra horizontal/Frobenius-invariant tensors may shrink H. For a trivial rank-two isocrystal with no imposed extra tensors, its generated category has trivial group while the unconstrained tensor stabilizer is GL₂. The same formal issue persists for families with proper monodromy.
+- KP, Theorem 4.2.7, p.186; corrected in KPZ §7.3.1(1), p.85: It is a smooth group-action map. The frame projection is the torsor; the filtration map is smooth of the stated relative dimension. For the natural action on tensor frames, q_loc transports the filtration and is not invariant, whereas the frame projection is invariant. The action map is smooth by composing (g,m)↦(g,gm) with projection; this is exactly the property needed.
+- KP, Published KP Lemma 3.1.17 argument, corrected in published KPZ §7.3.1(2), pp.85–86: Prove that the existing ring W-hat(A)[1/p] is already complete and separated for its p-adic topology. Use Zink logarithmic coordinates to prove the shifted tails tend to zero in that topology. Convergence in a noncomplete τ-topology does not justify the limit. The correction proves p-adic completeness and uses divisibility plus the logarithmic tail shift to establish the required convergence.
+- KP, Lemma 4.6.13 and Corollary 4.6.15, pp.202–203; formula (4.6.20) repeated in Corollary 4.6.18, p.205; corrected in KPZ §7.3.1(3), pp.86–87: The component associated with j has p-level jK_p°j^(-1). Glue the corresponding conjugated-level connected pieces with the transported actions. Changing the p-component of a double-coset representative conjugates its stabilizer. The original identification only works uniformly if those representatives normalize the level.
+- KPZ, Published KPZ §7.3.2, p.87, correcting the cited Pappas embedding-independence proof: Use the theorem only for very-good embeddings in the stated local-model scope, unless a stronger independent canonical-model theorem is supplied. The integral tensor/display comparison needs the first-order tensor-compatible trivialization; a closed good lattice embedding alone does not provide it.
+- KP, Published KP local-model theorem and earlier KZ versions, as corrected by published KPZ Remark 7.1.4(1), p.73: For that display-based local-model diagram require a very-good embedding, including the first-order tensor trivialization. Keep KPZ 7.1.8’s separate modern shtuka proof for the broader strict-henselian result. The display comparison needs its canonical first-order identification to fix the defining tensors. A closed Grassmannian embedding alone does not establish that equality.
+- HT, Author PDF §1.3.15 and Corollary 1.3.16, p.20; compare KZ Definition 2.2.4 and Remark 2.2.5, p.10: Define the ordinary locus only after specifying an actual class with Newton point equal to the averaged inverse Hodge cocharacter. Quasi-splitness guarantees existence; general inner forms need not have such a class. Keep the separate local-integrality hypothesis for density. For the quaternion division group, transfer to GL₂ over the unramified completion shifts both slopes by one half. Putative ordinary slopes (0,−1) would yield slopes (1/2,−1/2), each once, contradicting the denominator-divisibility constraint for isocrystals. This diagnoses a missing existence premise, not a counterexample to density under local integrality.
