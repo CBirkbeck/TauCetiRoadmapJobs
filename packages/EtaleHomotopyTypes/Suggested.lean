@@ -38,8 +38,9 @@ Layer 3:
   the field classifying equivalence and finite etale base change lack the rigid etale type.
 * Galois-equivariant geometric cohomology transport and the elementary-fibration homotopy
   sequence lack that type, its cover tower and its homotopy-fiber comparison.
-* The characteristic-zero finite etale product formula lacks the scheme finite-etale
-  fiber-functor fundamental group and its geometric product comparison interface.
+* The characteristic-zero finite etale product formula, over a field and over an algebraically
+  closed field, lacks the scheme finite-etale fiber-functor fundamental group and its geometric
+  product comparison interface.
 
 Layer 4:
 * Open arithmetic image lacks the scheme finite-etale fiber-functor fundamental group.

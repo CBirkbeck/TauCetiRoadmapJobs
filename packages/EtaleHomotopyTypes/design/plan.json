@@ -3236,6 +3236,24 @@
       "needs": "Define an elementary fibration X→Y as the complement of a finite étale relative divisor in a smooth proper geometrically connected relative curve over Y, with every complement fiber nonempty and affine; no existence theorem is requested.",
       "supplier": "SchemeAndStackFoundations",
       "section": "0.9–0.12"
+    },
+    {
+      "slug": "nonabelian-proper-base-change",
+      "needs": "For a proper morphism, prove base change for the direct image of an étale sheaf of sets and of the stack of torsors under a finite constant group (SGA 4 XII 5.1), and that proper surjective morphisms of finite presentation are of universal effective descent for étale sheaves and their torsor stacks (SGA 4 VIII 9.4).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.2.1"
+    },
+    {
+      "slug": "nonabelian-local-acyclicity",
+      "needs": "Define locally 0-acyclic and locally 1-aspheric morphisms for a set of primes through the fibres of strict localizations, and prove that smooth morphisms are universally locally 1-aspheric for the primes invertible on the base, that flat finitely presented morphisms with geometrically reduced fibres are universally locally 0-acyclic, and that a coherent morphism is 0-acyclic exactly when its geometric fibres are nonempty and connected (SGA 4 XV 1.11, 1.16, 2.1 and 4.1).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.2.3"
+    },
+    {
+      "slug": "constructible-set-subsheaves",
+      "needs": "Prove that on a noetherian scheme every subsheaf of a constructible étale sheaf of sets is constructible (SGA 4 IX 2.9).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.0.1"
     }
   ],
   "requests": [
