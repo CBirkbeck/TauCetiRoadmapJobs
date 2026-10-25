@@ -48,6 +48,8 @@ Use `Subgroup.closure` and `Subgroup.closure_le` in `Mathlib/Algebra/Group/Subgr
 
 `MeasureTheory.IsFundamentalDomain.quotientMeasure_eq` in `Mathlib/MeasureTheory/Group/FundamentalDomain.lean` identifies the pushforwards of restricted invariant measure for two almost-everywhere fundamental domains, with a countable acting group and measurable constant actions. It does not compute their total mass.
 
+`Complex.differentiableOn_update_limUnder_of_bddAbove` in `Mathlib/Analysis/Complex/RemovableSingularity.lean` extends a map holomorphic on a neighborhood of a point minus that point, with bounded norm there, holomorphically across the point by its punctured limit. Layer 3 applies it to a lift written in a disc coordinate around a removed cone lift, with values in the bounded Cayley disc.
+
 `IsCoveringMap.existsUnique_continuousMap_lifts_of_range_le` in `Mathlib/Topology/Homotopy/Lifting.lean` requires path-connected and locally path-connected source, compatible lifted basepoint and the inclusion of the induced fundamental-group ranges. Layer 3 proves that inclusion using cone meridian powers; it is not an extra conclusion assumed from the equivalence.
 
 ### From Tau Ceti
@@ -74,11 +76,15 @@ Consume §0.1, “Hyperbolic quotient measure”, at Γ=SL₂(ℤ), identifying 
 
 Consume §§1.14–1.15 for E and E*=Λ(2s)E with Λ(s)=π^(−s/2)Γ(s/2)ζ(s), primitive-pair factor 1/2 and Fourier constant term. Consume §2.17, `completed_eisenstein_fourier`, for the full K-Bessel expansion, its local convergence and parameter continuation; §2.18 for meromorphic continuation with poles only at s=0,1 and residues −1/2,+1/2; and §§0.27–0.28 for the positive-argument K-Bessel comparison and large-argument decay, including derivative estimates. Layer 5 deduces the termwise C¹ endpoint bounds from these inputs. Consume §4.17a for the arithmetic period, surface F_A, subgroup, projection, area, length and finite-width cusp. Consume §§4.18 and 4.20 for smooth cusp decay and uncompleted Eisenstein integrability, including vanishing horizontal flux. For t≠0 the completed specialization follows by scalar multiplication.
 
-What AutomorphicSpectralTheory must provide (gap:primitive-minus-cycle-interface): §4.17a must export the primitive reduced minus cycle as a complete narrow-class invariant up to cyclic rotation, its attracting Pell word ∏T^nS with least norm-one unit, and its compatibility with the IntegralLattices B2–B3 oriented dictionary specialized through GlobalNumberFields Layer 11 to the native narrow class group.
+What AutomorphicSpectralTheory must provide (gap:primitive-minus-cycle-invariant): §4.17a must prove that every narrow class has a primitive reduced minus period and that two narrow classes are equal exactly when their primitive reduced minus periods are cyclic rotations of each other.
+
+What AutomorphicSpectralTheory must provide (gap:primitive-pell-word): §4.17a must prove that for a primitive reduced minus period of A with reduced root w, the word ∏ₖT^nₖS is the primitive hyperbolic automorph fixing w and wσ, with attracting fixed point w, corresponding to multiplication by the least unit ε_D>1 of norm +1.
+
+What AutomorphicSpectralTheory must provide (gap:narrow-dictionary-compatibility): §4.17a must identify its narrow class group Cl⁺(K) and its form and ideal labels with the native `NumberField.NarrowClassGroup` through the IntegralLattices B2–B3 oriented dictionary specialized by GlobalNumberFields Layer 11, including the √D sign correction for a negative leading coefficient.
 
 What AutomorphicSpectralTheory must provide (gap:oriented-quadratic-cycle-reversal): §4.17a must identify the full primitive parametrized modular cycle C_(JA⁻¹) with C_A traversed in the opposite orientation.
 
-The first gap refines the period construction without adding another arithmetic reduction theory here. The second fixes the signed primitive boundary required for cancellation. The completed endpoint’s constant-term growth is deduced from §1.15 by cancellation of the two Laurent poles.
+The first three gaps refine the period construction without adding another arithmetic reduction theory here: the class invariant, the Pell automorph and the label dictionary have different consumers. The last fixes the signed primitive boundary required for cancellation. The completed endpoint’s constant-term growth is deduced from §1.15 by cancellation of the two Laurent poles.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
 
@@ -94,7 +100,7 @@ Consume §§2.3–2.4, especially `J_square_iff_sumTwoSquares`: for a positive f
 
 ### From TauCetiRoadmap.ConformalMapping
 
-Consume L2, “Schwarz lemma extensions”, for disc automorphisms and Schwarz–Pick equality, transported to the statement that biholomorphisms ℍ→ℍ are PSL₂(ℝ) transformations. Consume L4, “Analytic continuation and the reflection principle”, for analytic-arc reflection and removable extension in local discs. Reflection glues genuine boundary charts; it does not forget cone orders.
+Consume L2, “Schwarz lemma extensions”, for disc automorphisms and Schwarz–Pick equality, transported to the statement that biholomorphisms ℍ→ℍ are PSL₂(ℝ) transformations. Consume L4, “Analytic continuation and the reflection principle”, for analytic-arc reflection across genuine boundary charts. Reflection glues those charts; it does not forget cone orders. Removal of isolated lifted cone points is not an L4 input: it uses the Mathlib point-removability theorem in the Mathlib contract.
 
 ### From TauCetiRoadmap.ComplexCurveModuli
 
@@ -282,7 +288,7 @@ The order-two assertion is in PSL, never in SL. An all-2 word is excluded from t
 
 Raw-list construction: *Needs:* Mathlib `ModularGroup.S`; Mathlib `ModularGroup.T`; Mathlib `Subgroup.closure`; Mathlib `Subgroup.closure_le`; Tau Ceti `UpperHalfPlane.pslMk_smul`; Tau Ceti `psl2zToPSL2R_injective`.
 
-Arithmetic specialization: *Needs:* the raw-list construction; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-interface).
+Arithmetic specialization: *Needs:* the raw-list construction; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-invariant).
 
 ### 1.2 Ford polygon of a cycle
 
@@ -346,7 +352,7 @@ For [3,6]→[6,3], the conjugating translation is T⁻³. Reversal is not silent
 
 Raw-list conjugacy: *Needs:* §1.1; §0.2.
 
-Arithmetic representative independence: *Needs:* the raw-list conjugacy; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-interface).
+Arithmetic representative independence: *Needs:* the raw-list conjugacy; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-invariant).
 
 ### 1.5 Boundary word and endpoint ordering
 
@@ -360,7 +366,7 @@ One route is to proceed as follows. Telescope the conjugation powers in S₁⋯S
 
 For [3,6] the SL word is [[17,−3],[6,−1]], fixing (3±√7)/2. The all-2 parabolic word fails the strict hyperbolic hypothesis.
 
-*Needs:* §1.1; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts).
+*Needs:* §1.1; AutomorphicSpectralTheory §4.17a (gap:primitive-pell-word).
 
 ### 1.6 Infinite-index cycle subgroup
 
@@ -487,6 +493,8 @@ For a finite-area Nielsen core with t≥1 geodesic boundary circles, glue it to 
 
 The core is connected, nonelementary and geometrically finite; each genuine boundary component is a smooth closed geodesic without cone points.
 
+(DIT16, §2 pp.952–953, removed discs and their boundary geodesics, DIT16 line 164; the source does not double, and the doubling is the route stated here.)
+
 This is this roadmap's orbifold doubling route, extending the smooth double of ComplexCurveModuli D0.4 and the reflected geodesic-cut metric of D6.2.
 
 One route is to proceed as follows. Use half-disc charts along the boundary and the conjugate chart on the second copy. Geodesic reflection glues them analytically and isometrically; existing interior cone charts remain unchanged. Double a finite cut polygon. The inherited polygon theorem and reflected side identifications give the boundaryless orbifold quotient of ℍ; cusp ends stay complete. Compute Euler characteristic by gluing along t circles, each of Euler characteristic zero. Count the two copies of each cusp and cone orbit and compare area by integration.
@@ -517,13 +525,15 @@ An orientation-preserving conformal orbifold equivalence f:Core(Γ_A)→Core(Γ_
 
 A and B belong to the same fixed real quadratic field. The equivalence is holomorphic on the interior in orbifold charts and preserves its orientation and cone orders.
 
+(DIT16, proof of Theorem 1, final paragraph p.959, DIT16 line 387; the lift through the double replaces the source's nearest-boundary-point argument.)
+
 This is this roadmap's covering-lift route to conformal conjugacy, using the double of §3.1, the pinned based lifting criterion and the disc automorphism classification of ConformalMapping L2.
 
-One route is to proceed as follows. Double f by reflection using the analytic boundary charts. Remove the cone points and apply the pinned ordinary covering lifting criterion to the covers obtained from the reflected polygon groups, after rebasing the target cover by the doubled f. These punctured surfaces and covering spaces are path connected and locally path connected; choose matching lifted basepoints. The subgroup defining the orbifold universal cover is the normal closure of the mⱼth powers of small cone meridians. Cone-order preservation carries this subgroup to the matching subgroup, so the lift exists in both directions. Local maps extend across removed lifts by the removable-singularity theorem in disc coordinates. Choose matching lifted basepoints in the first halves of the doubles. Uniqueness of based lifts makes the two chosen lifts inverse and supplies deck equivariance; the pinned deck conjugation API packages the resulting cover isomorphism. The inverse lifts extend to a biholomorphism ℍ→ℍ; by the imported disc automorphism/Schwarz–Pick equality classification it is a PSL₂(ℝ) isometry. The corresponding connected preimage halves are the convex, hence simply connected, cores CΓ_A and CΓ_B; their stabilizers in the doubled polygon groups are exactly the original Γ_A and Γ_B. Thus the lift maps these halves onto each other and conjugates their stabilizers. This proves the required core-group conjugacy, not only conjugacy of the larger doubled groups. Conjugacy sends parabolics and their fixed points to parabolics. Since Γ_B has one cusp orbit, compose by its deck element to fix ∞. The real projective normal form is az+b with positive a.
+One route is to proceed as follows. Double f by reflection using the analytic boundary charts. Remove the cone points and apply the pinned ordinary covering lifting criterion to the covers obtained from the reflected polygon groups, after rebasing the target cover by the doubled f. These punctured surfaces and covering spaces are path connected and locally path connected; choose matching lifted basepoints. The subgroup defining the orbifold universal cover is the normal closure of the mⱼth powers of small cone meridians. Cone-order preservation carries this subgroup to the matching subgroup, so the lift exists in both directions. Local maps extend across removed lifts by Mathlib point-removability: in a disc coordinate around the removed lift the map is holomorphic off that point and, after the Cayley map, takes values in the unit disc, so it is bounded; the extension takes the punctured limit, which lies in the open disc by the open mapping theorem. Choose matching lifted basepoints in the first halves of the doubles. Uniqueness of based lifts makes the two chosen lifts inverse and supplies deck equivariance; the pinned deck conjugation API packages the resulting cover isomorphism. The inverse lifts extend to a biholomorphism ℍ→ℍ; by the imported disc automorphism/Schwarz–Pick equality classification it is a PSL₂(ℝ) isometry. The corresponding connected preimage halves are the convex, hence simply connected, cores CΓ_A and CΓ_B; their stabilizers in the doubled polygon groups are exactly the original Γ_A and Γ_B. Thus the lift maps these halves onto each other and conjugates their stabilizers. This proves the required core-group conjugacy, not only conjugacy of the larger doubled groups. Conjugacy sends parabolics and their fixed points to parabolics. Since Γ_B has one cusp orbit, compose by its deck element to fix ∞. The real projective normal form is az+b with positive a.
 
 The lift is derived from covering theory and cone meridians, not assumed as a field. Forgetting cone marks is expressly insufficient.
 
-*Needs:* §3.1; §1.3; ConformalMapping L2; ConformalMapping L4; FuchsianOrbifolds Layer 1; Mathlib `IsCoveringMap.existsUnique_continuousMap_lifts_of_range_le`; Tau Ceti `TauCeti.Deck.conjMulEquiv`.
+*Needs:* §3.1; §1.3; ConformalMapping L2; ConformalMapping L4; FuchsianOrbifolds Layer 1; Mathlib `Complex.differentiableOn_update_limUnder_of_bddAbove`; Mathlib `IsCoveringMap.existsUnique_continuousMap_lifts_of_range_le`; Tau Ceti `TauCeti.Deck.conjMulEquiv`.
 
 ### 3.3 Highest elliptic lifts
 
@@ -532,6 +542,8 @@ Prove the height bound and equality of the maximal-height fixed-point set with t
 For Γ(n), the union of all elliptic fixed points has maximal imaginary part 1, and the points attaining it are exactly {Nₖ+jm+i:0≤k<ℓ,j∈ℤ}. More precisely for γ represented by [[a,b],[c,d]] and Pₖ=Nₖ+i, Im(γPₖ)=1/((cNₖ+d)²+c²)≤1; equality holds exactly when γ∈⟨T^m⟩ or γ∈⟨T^m⟩Sₖ. The full stabilizer and the complete list of elliptic orbits are necessary inputs.
 
 n is admissible; matrix entries are integral and determinant one; Sₖ and γ are interpreted projectively. γ belongs to Γ(n), and 0≤k<ℓ. The equality classification is not asserted for arbitrary ambient modular matrices.
+
+(DIT16, proof of Theorem 1, final paragraph p.959, DIT16 line 393; the height normalization replaces the source's ordering of elliptic fixed points along the boundary geodesic.)
 
 This is this roadmap's arithmetic normalization route, using the height formula `ModularGroup.im_smul_eq_div_normSq` in `Mathlib/Analysis/Complex/UpperHalfPlane/MoebiusAction.lean` and the elliptic-orbit and full cusp-stabilizer conclusions of §1.3.
 
@@ -569,7 +581,7 @@ No claim is made for antiholomorphic equivalences, which reverse cyclic order. F
 
 Raw-list headline: *Needs:* §1.3; §1.4; §3.3.
 
-Class statement: *Needs:* §3.2; §3.3; §1.4; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-interface).
+Class statement: *Needs:* §3.2; §3.3; §1.4; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-invariant).
 
 ### Examples
 
@@ -667,7 +679,7 @@ The construction has the following API.
 
 Normalization uses Σℓ_A, not the number of classes. No division by zero is hidden in an empty genus or family.
 
-*Needs:* §4.2; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts); MultiquadraticPartII §§2.3–2.4; §4.1; Tau Ceti `NumberField.NarrowClassGroup.instFinite`.
+*Needs:* §4.2; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-invariant, gap:narrow-dictionary-compatibility); MultiquadraticPartII §§2.3–2.4; §4.1; Tau Ceti `NumberField.NarrowClassGroup.instFinite`.
 
 ### 4.4 Complementary class surfaces
 
@@ -683,7 +695,7 @@ The target comparison uses oriented parametrized arcs with their preimage multip
 
 For D=12 the pair has density 9; for D=28 it has density 21. If A=ι(A), the factor of two on the left is retained.
 
-*Needs:* §4.2; AnalyticNumberTheoryPartI §2.1 and AutomorphicSpectralTheory §4.17a; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts); §4.1; Tau Ceti `NumberField.NarrowClassGroup.mkPrincipal_sq`.
+*Needs:* §4.2; AnalyticNumberTheoryPartI §2.1 and AutomorphicSpectralTheory §4.17a (gap:oriented-quadratic-cycle-reversal, gap:narrow-dictionary-compatibility); §4.1; Tau Ceti `NumberField.NarrowClassGroup.mkPrincipal_sq`.
 
 ### 4.5 Exact genus covering
 
@@ -711,7 +723,7 @@ One route is to proceed as follows. Check reduced roots: D=12 uses 2+√3 and (3
 
 The D=12 example is checked arithmetically rather than attributed as a printed example. Areas count sheets, so their sums can exceed π/3.
 
-*Needs:* AnalyticNumberTheoryPartI §2.1 and AutomorphicSpectralTheory §4.17a; §4.4; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts).
+*Needs:* AnalyticNumberTheoryPartI §2.1 and AutomorphicSpectralTheory §4.17a; §4.4; AutomorphicSpectralTheory §4.17a (gap:primitive-pell-word, gap:narrow-dictionary-compatibility).
 
 ### Examples
 
