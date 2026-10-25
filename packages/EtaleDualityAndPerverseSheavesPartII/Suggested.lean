@@ -4,7 +4,8 @@ import Mathlib
 # Étale duality and perverse sheaves, part II: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the headline
-Cohen–Gabber theorems in equal and mixed characteristic and the partial algebraization theorems against the pinned APIs. The three
+Cohen–Gabber theorems in equal and mixed characteristic, the partial algebraization
+theorems and Gabber’s cohomological-dimension bound against the pinned APIs. The three
 structures only bundle native rings, ideals, localizations, completions and generic
 fibres needed by those statements.
 
@@ -19,9 +20,9 @@ geometric carriers and operations:
   over quasi-excellent bases.
 * Dimension-function existence and transport need étale immediate specializations,
   strict henselizations and excellent/regular-morphism interfaces.
-* Affine Lefschetz, including the trait theorem, and the cohomological-dimension
-  bound need scheme support dimensions and torsion étale cohomological dimension,
-  on their strict-local and quasi-excellent domains.
+* Affine Lefschetz, including the supplied trait theorem and its strict-local
+  consequence, needs dimension functions and constructible étale sheaves;
+  the quasi-excellent theorem also needs the quasi-excellence predicate.
 * The top local class and higher transitions need geometric local support complexes,
   Tate twists and specialization maps.
 * Potential-dualizing existence and uniqueness, Gabber biduality and excellent
@@ -43,7 +44,7 @@ open scoped TensorProduct
 
 namespace TauCetiRoadmap.EtaleDualityAndPerverseSheavesPartII
 
-/-! ## Layer EQ.1: Cohen–Gabber structure and partial algebraization -/
+/-! ## Layer 1: Cohen–Gabber structure and partial algebraization -/
 
 universe u v
 
@@ -253,6 +254,25 @@ theorem partialAlgebraization_mixedCharacteristic
         IsRegularLocalRing P.B ∧ CharZero P.B ∧
         CharP (IsLocalRing.ResidueField P.B) p ∧
         ringKrullDim P.B + 1 = ringKrullDim A := by
+  sorry
+
+/-! ## Layer 5: Dimension functions, affine Lefschetz and cohomological dimension -/
+
+/-- On every open subscheme of a strictly henselian noetherian local scheme of
+positive finite dimension d, every ell-primary torsion abelian étale sheaf has
+vanishing cohomology in degrees at least 2d. Torsion is tested sectionwise on the
+affine étale basis, without a uniform exponent (ILO XVIII-A 1.1; ILO14 line 16193). -/
+theorem cohomologicalDimension_le_of_strictlyLocal
+    (A : Type u) [CommRing A] [IsNoetherianRing A] [HenselianLocalRing A]
+    [IsSepClosed (IsLocalRing.ResidueField A)]
+    (d : ℕ) (hd : 0 < d) (hdim : ringKrullDim A = d)
+    (ℓ : ℕ) [Fact ℓ.Prime] (hℓ : IsUnit (ℓ : A))
+    (U : (AlgebraicGeometry.Spec (CommRingCat.of A)).Opens)
+    (F : CategoryTheory.Sheaf U.toScheme.smallEtaleTopology AddCommGrpCat.{u})
+    (htors : ∀ (V : U.toScheme.Etale), AlgebraicGeometry.IsAffine V.left →
+      ∀ (s : F.obj.obj (Opposite.op V)), ∃ k : ℕ, ℓ ^ k • s = 0)
+    (q : ℕ) (hq : 2 * d ≤ q) :
+    Subsingleton (F.H q) := by
   sorry
 
 end TauCetiRoadmap.EtaleDualityAndPerverseSheavesPartII
