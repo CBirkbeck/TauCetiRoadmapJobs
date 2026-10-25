@@ -35,7 +35,7 @@ library = "TauCetiProject/TauCeti"
 # Who may file targets: org teams ("team:org/slug") and bare logins. Other target issues are closed by board sync.
 target_filers = ["team:TauCetiProject/humans", "roed-math"]
 # Logins whose open roadmap pull requests count as ours in merge-order chains (the hosted workflow runs as a bot).
-operators = ["CBirkbeck"]
+operators = ["CBirkbeck", "roed-math"]
 # Label every job issue carries, so that a board inside the content repository stays separable.
 namespace_label = "roadmap-job"
 # Folder (in the packages repository) holding one sub-folder per roadmap: packages/<Name>/.
