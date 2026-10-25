@@ -2278,12 +2278,6 @@
       "needs": "Supply integral operational Chow groups, their product and evaluation on cycles, and the Kronecker isomorphism A^j(X)≅Hom(A_j(X),Z) for complete k-schemes with a split connected solvable group action and finitely many orbits, each k-isomorphic to a product of an affine space and a split torus, compatibly with field extension and the smooth intersection product."
     },
     {
-      "slug": "ample-degree-positivity",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "5.3–5.4",
-      "needs": "Export deg(c₁(H)^d∩[V])>0 for every field k, projective k-scheme X, ample line bundle H on X and d-dimensional integral closed subscheme V⊂X, hence positive ample degree for every nonzero effective cycle of pure dimension d."
-    },
-    {
       "slug": "ample-generic-cuts",
       "supplier": "SchemeAndStackFoundations",
       "section": "4.13",

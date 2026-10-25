@@ -10,6 +10,8 @@ The following objects are already in the library or stated by their named suppli
 
 The fixed smooth complete nonprojective threefold of Fujino–Sato is owned by WeilConjectures WC.6, “A smooth proper nonprojective threefold”, including its fan, integral model and fixed-fan Chow presentation. Here it is a Check of the general complete-fan comparison and hypersurface approximation, not another construction. The general operational Chow identification for every complete fan in §6.1 is broader than that fixed-fan presentation. SchemeAndStackFoundations owns the general operational and finite-orbit duality extensions in the contracts below; restricting §6.1 to regular fans would discard a theorem.
 
+AbelianSchemesAndArithmeticModuli §A2.7 owns `ampleIntersectionPositive`, the positivity of ample intersection numbers on nonempty closed subschemes proper over any field. Its specialization to repeated copies of H, summed over effective cycle components, supplies the positivity used in §§6.3–6.4.
+
 DeligneWeightsAndPurityPartII consumes the natural toric projection, cohomology and approximation conclusions; MotivesAndAlgebraicCyclesPartII consumes geometric neighbourhoods. Neither supplies a prerequisite. Connectedness, geometric irreducibility and selecting a geometric component are not conclusions of the approximation theorems.
 
 ## Conventions
@@ -80,9 +82,11 @@ What SchemeAndStackFoundations must provide (gap:split-torus-divisors): Export t
 
 What SchemeAndStackFoundations must provide (gap:operational-chow-finite-orbits): Supply integral operational Chow groups, their product and evaluation on cycles, and the Kronecker isomorphism A^j(X)≅Hom(A_j(X),Z) for complete k-schemes with a split connected solvable group action and finitely many orbits, each k-isomorphic to a product of an affine space and a split torus, compatibly with field extension and the smooth intersection product.
 
-What SchemeAndStackFoundations must provide (gap:ample-degree-positivity): Export deg(c₁(H)^d∩[V])>0 for every field k, projective k-scheme X, ample line bundle H on X and d-dimensional integral closed subscheme V⊂X, hence positive ample degree for every nonzero effective cycle of pure dimension d.
-
 What SchemeAndStackFoundations must provide (gap:ample-generic-cuts): For every infinite field k and projective k-scheme W of dimension d>0 with a fixed projective embedding, supply an m≥1 and a k-defined hypersurface in |O(m)| containing no top-dimensional geometric component of W, whose intersection with W is nonempty of dimension d−1.
+
+### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
+
+§A2.7 `ampleIntersectionPositive` supplies (L₁⋯L_d·V)>0 for every field k, proper k-scheme X, nonempty d-dimensional closed subscheme V⊂X and ample line bundles L₁,…,L_d on X. For a nonzero effective pure d-dimensional cycle Σ_i m_i[V_i], apply it with all d bundles equal to H on each integral component V_i and add the positive integers m_i deg(c₁(H)^d∩[V_i]). This includes d=0 and inseparable residue fields; no geometric-integrality hypothesis is imposed (STACKS, Lemma 33.45.9, tag 0BEV, p. 104; STACKS line 4827).
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
@@ -405,10 +409,8 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 - The tilt has the same perfected monomial cone over K♭, with sharp preserving a homogeneous degree.
 - For complete Σ the degree-zero piece is exactly K.
 - For z=(u,j)∈Q_D and c∈K, cχ^z is the singleton coefficient family of degree j.
-- The named convolution operation has coefficient (f*g)_z=Σ_(x+y=z) f_x g_y, defined by extension of finite-support monoid-algebra multiplication; its norm is at most ‖f‖‖g‖.
+- The named convolution operation has coefficient (f*g)_z=Σ_(x+y=z) f_x g_y, with the sum converging by the c₀ condition. It is defined by extension of finite-support monoid-algebra multiplication, and its norm is at most ‖f‖‖g‖.
 - (cχ^(u,j))*(dχ^(v,k))=(cd)χ^(u+v,j+k). This specifies both character multiplication and addition of homogeneous degrees.
-- At z∈Q_D the convolution coefficient is Σ_(x+y=z) f_x g_y; this sum converges by the c₀ condition.
-- ‖f*g‖≤‖f‖‖g‖ for the named convolution and coefficient Gauss norm.
 
 **Checks.**
 
@@ -701,15 +703,16 @@ Let XΣ,k be smooth projective of dimension n, D₁,…,D_c invariant Cartier di
 
 Here Σ projective; 0≤c≤n; the initial sections form a proper intersection of effective Cartier divisors, set-theoretically of codimension c; H ample.
 
-One proof route is the following. A smooth toric scheme is Cohen–Macaulay. Codimension c for c Cartier equations gives a regular-sequence intersection cycle with positive generic lengths. Apply SchemeAndStackFoundations §§5.3–5.4 Chern classes and gap:ample-degree-positivity to this nonzero effective (n−c)-cycle. Apply the preceding fan displacement product to its Cartier weights; the resulting integral degree is unchanged by coefficient field or characteristic. For arbitrary equations over the other coefficient field in the same powered divisor classes, put E=⊕_i O(p^(N_i)D_i) and let s:X→E be their section. SchemeAndStackFoundations §5.5 `Chow.gysin`, applied to the zero section 0:X→E and pulled back along s, gives 0_s^![X]∈CH_(n−c)(Z(s)). Its pushforward is c_c(E)∩[X]; this follows from the zero-section formula and homotopy invariance, using H:X×A¹→E, H(x,t)=t·s(x), to compare s with 0. Use the projection formula and `excess_intersection` for its ample degree and excess cases. A positive-degree class cannot be supported on an empty scheme. (SCH12, §8, Corollary 8.8 and proof, p. 307; SCH12 line 2501; FS94 line 385).
+One proof route is the following. A smooth toric scheme is Cohen–Macaulay. Codimension c for c Cartier equations gives a regular-sequence intersection cycle with positive generic lengths. Apply SchemeAndStackFoundations §§5.3–5.4 Chern classes and AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive`, with all n−c bundles equal to H on each integral component, and add with the positive cycle multiplicities. Apply the preceding fan displacement product to its Cartier weights; the resulting integral degree is unchanged by coefficient field or characteristic. For arbitrary equations over the other coefficient field in the same powered divisor classes, put E=⊕_i O(p^(N_i)D_i) and let s:X→E be their section. SchemeAndStackFoundations §5.5 `Chow.gysin`, applied to the zero section 0:X→E and pulled back along s, gives 0_s^![X]∈CH_(n−c)(Z(s)). Its pushforward is c_c(E)∩[X]; this follows from the zero-section formula and homotopy invariance, using H:X×A¹→E, H(x,t)=t·s(x), to compare s with 0. Use the projection formula and `excess_intersection` for its ample degree and excess cases. A positive-degree class cannot be supported on an empty scheme. (SCH12, §8, Corollary 8.8 and proof, p. 307; SCH12 line 2501; FS94 line 385).
 
 **Checks.**
 
-- For two distinct fibres of type (2,0) on ℙ¹×ℙ¹ and H=O(1,1), the degree is 2, while the support has two connected components; positive degree does not imply connectedness.
+- For the union of two distinct fibres of the first projection on ℙ¹×ℙ¹, the total class is (2,0) and its degree against H=O(1,1) is 2: each fibre has class (1,0) and degree 1. The fibres are disjoint, so the support has two connected components; positive degree does not imply connectedness.
 - On ℙ², two line classes give δ=1. For s=(ℓ,ℓ) in O(1)⊕O(1), Z(s) is the line L. The excess normal bundle is O(1)|_L, so 0_s^![ℙ²]=c₁(O(1)|_L)∩[L] in CH₀(L), of degree 1. The excess-dimensional zero locus remains nonempty.
 - Replacing those two line classes by pᴺ¹ and pᴺ² multiples changes δ from 1 to p^(N₁+N₂). For c=0, δ=deg(Hⁿ)>0; in rank zero this degree is 1.
+- For d=0, an integral closed point with residue degree p has ample degree p>0, also for the inseparable point xᵖ−t over 𝔽ₚ(t). More generally Σ_i m_i[V_i] has degree Σ_i m_i[k(V_i):k]>0 when the effective zero cycle is nonzero; the zero cycle has degree 0.
 
-*Needs:* §6.2; §0.5; ShimuraCompactifications C0.16; SchemeAndStackFoundations §§0.7, 0.17–0.18 (dimension, regular sequences and Cohen–Macaulayness); §§5.2–5.4 (degree, Chern classes and projection formula), gap:ample-degree-positivity; §5.5 `Chow.gysin`, `excess_intersection` and zero-section homotopy invariance (localized support).
+*Needs:* §6.2; §0.5; ShimuraCompactifications C0.16; SchemeAndStackFoundations §§0.7, 0.17–0.18 (dimension, regular sequences and Cohen–Macaulayness); §§5.2–5.4 (degree, Chern classes and projection formula); §5.5 `Chow.gysin`, `excess_intersection` and zero-section homotopy invariance (localized support); AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive` (ample degree of nonzero effective cycles).
 
 ### 6.4 Toric complete-intersection approximation
 
@@ -726,7 +729,7 @@ One proof route is the following. Apply the finite-family section-neighbourhood 
 - In ℙ², two identical lines give codimension 1 with two equations and are not an input with c=codim Y=2. Two distinct lines meeting in a point have c=2 and dim Y=0.
 - Over the imperfect field k₀=𝔽ₚ(t), xᵖ−t defines a reduced degree-p point, but after adjoining t^(1/p) its equation is (x−t^(1/p))ᵖ. Its geometric reduction has length 1, while the base-changed model has length p. The reduced geometric structure need not descend. This is an algebraic descent Check; it does not assert density of 𝔽ₚ(t) in a perfectoid field (STACKS, tags 020I and 035X; STACKS line 223 and line 229).
 
-*Needs:* §5.3; §6.3; SchemeAndStackFoundations §0.7 (dimension and height bounds); §4.13, gap:ample-generic-cuts (cuts over the infinite dense field); §§5.3–5.4, gap:ample-degree-positivity (nonemptiness of positive-dimensional ample cuts).
+*Needs:* §5.3; §6.3; SchemeAndStackFoundations §0.7 (dimension and height bounds); §4.13, gap:ample-generic-cuts (cuts over the infinite dense field); §§5.3–5.4 (Chern classes and degree); AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive` (nonemptiness of positive-dimensional ample cuts).
 
 ### Examples
 
@@ -734,7 +737,7 @@ On ℙ¹×ℙ¹, two distinct fibres of one projection have ample degree 2 and d
 
 ### Dependencies
 
-Layers 0 and 5; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.7, 0.17–0.18, 4.13 and 5.1–5.6, with gap:operational-chow-finite-orbits, gap:ample-degree-positivity and gap:ample-generic-cuts. The finite-torsion comparison is a separate downstream output and is not a premise of positive intersection degree.
+Layers 0 and 5; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.7, 0.17–0.18, 4.13 and 5.1–5.6, with gap:operational-chow-finite-orbits and gap:ample-generic-cuts; AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive`. The finite-torsion comparison is a separate downstream output and is not a premise of positive intersection degree.
 
 ## Downstream consumers
 
@@ -753,4 +756,4 @@ On ℙ¹×ℙ¹, the ray balance rows are (1,0,−1,0) and (0,1,0,−1). The vec
 - **SCH12.** Peter Scholze, *Perfectoid spaces*, Publications Mathématiques de l'IHÉS 116 (2012), 245–313, DOI 10.1007/s10240-012-0042-x. The published numbering is used: Theorems 1.5 and 1.13, Proposition 5.20, Lemma 6.5/Remark 6.6, Definition 7.14 through Corollary 7.19, and §8, especially Definition/Proposition 8.4 through Corollary 8.8. Legal published copy: https://www.numdam.org/article/PMIHES_2012__116__245_0.pdf.
 - **FS94.** William Fulton and Bernd Sturmfels, *Intersection theory on toric varieties*, arXiv:alg-geom/9403002v1 (1994), preprint pagination. Proposition 1.1, pp. 4–5; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; Proposition 3.1, p. 10; Theorem 3.2 and its proof, pp. 11–13. Legal preprint: https://arxiv.org/abs/alg-geom/9403002v1.
 - **FS25.** Osamu Fujino and Hiroshi Sato, *On non-projective complete toric varieties*, author version 0.27, 12 July 2025, Example 4.1, pp. 7–8. Legal author copy: https://www.math.kyoto-u.ac.jp/~fujino/toric-projectivity11.pdf.
-- **STACKS.** The Stacks Project authors, *Varieties*, §33.6, Lemmas 33.6.3 and 33.6.4, tags 020I and 035X; the chapter PDF labels them 6.3 and 6.4. These distinguish reduced from geometrically reduced over an imperfect field. Legal chapter: https://stacks.math.columbia.edu/download/varieties.pdf.
+- **STACKS.** The Stacks Project authors, *Varieties*, §33.6, Lemmas 33.6.3 and 33.6.4, tags 020I and 035X; the chapter PDF labels them 6.3 and 6.4. These distinguish reduced from geometrically reduced over an imperfect field. Lemma 33.45.9, tag 0BEV, p. 104, gives ample-intersection positivity. Legal chapter: https://stacks.math.columbia.edu/download/varieties.pdf.
