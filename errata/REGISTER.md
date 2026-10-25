@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6740 mistakes recorded on the board: 4172 misprints, 1720 errors, 649 gaps, 199 unparsed bullets.
+6749 mistakes recorded on the board: 4174 misprints, 1723 errors, 651 gaps, 201 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -207,6 +207,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (AlgebraicTopologyPartII, #1073 at 108b271, 2026-10-25): Error** in B19 at Lemma 7.3, printed pp.98–99: the source writes the integral lift as p*η plus ψ(ζ); since (7.2) uses (1,−φ) and ψ reduces modulo n to diag∘φ, it should be p*η minus ψ(ζ); affects a stated result. <!-- tauceti-roadmap-review {"agent": "claude", "head": "108b271", "job": "RT-AlgebraicTopologyPartII~2b", "model": "fable", "worker": "fable-rt56"} --> <!-- tauceti-roadmap-review {"agent": "claude", "head": "108b271", "job": "RT-AlgebraicTopologyPartII~2b", "model": "fable", "worker": "fable-rt56"} -->
 - **Unparsed** (GeometricFreyMazur, #1184 at 5c5e1c7, 2026-10-25): Error** in BT16 at Proposition 14, printed p. 725: states that close CM points of the same type on the same (anti-)Heegner fibre lie on a low-degree Hecke curve; false for anti-Heegner points, which lie on conjugate Hecke loci; affects a stated result; corrected in print at BTE Proposition 2.1, p. 2.
 - **Unparsed** (GeometricFreyMazur, #1184 at 5c5e1c7, 2026-10-25): Error** in BTE at §5, printed p. 4: asserts that all remaining statements and proofs of the published paper are correct; Propositions 17 and 27 are false as stated and the Corollary 8 and Lemma 5 proofs are incomplete; affects a stated result. <!-- tauceti-roadmap-review {"agent": "claude", "head": "5c5e1c726661377bfe05162ecf4b7902a283ef9f", "job": "RT-GeometricFreyMazur~1b", "model": "fable", "worker": "chris-k"} -->
+- **Unparsed** (ScholzeFunctorAndModpCohomologyOfTheLubinTateTower, #1702 at 90f788e, 2026-10-25): Error** in CDN23 at proof of Lemma 4.13, p. 44 (line 1855): the source calls every compact level group of the division algebra torsion-free; at level zero it contains roots of unity; the finiteness used needs only a compact p-adic Lie group; affects the proof.
+- **Unparsed** (ScholzeFunctorAndModpCohomologyOfTheLubinTateTower, #1702 at 90f788e, 2026-10-25): Misprint** in CDN23 at proof of Lemma 4.24, p. 48 (line 1998): the group and coefficient arguments of a first cohomology group are reversed; affects nothing.
 
 ## A
 
@@ -2456,11 +2458,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## CDN23
 
+- **Misprint** at Proposition 4.3, p. 37 (line 1575): the source says the conclusion says a character factors through the Galois group of K over ℚ_p although K is not assumed Galois; it should be the character is trivial on the absolute Galois group of K; affects nothing. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 - **Misprint** at Proposition 5.7 and Théorème 5.8 (pp.51–52): the source says the case condition on the p-quotient tower is M of level ≤ n; it should be M∈ΦNᵖ_n; affects a stated result. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 - **Gap** at Proposition 5.7, proof (p.51): the source says DLB's main theorem applies to every supercuspidal M∈ΦNᵖ, though DLB assumes trivial central character; it should be proved for general central characters; affects the proof. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
+- **Gap** at Remark 4.25, p. 48 (line 2015): the source says the two-dimensional supersingular-block support without proof; it should be proved by the supersingular argument of Theorem 4.23 together with Lemma 4.24; affects a stated result. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 - **Misprint** at Théorème 5.15 (p.55): the source says Ř is Hom(Ř,L); it should be the continuous L-dual of R; affects nothing. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 - **Gap** at Théorème 5.24(ii), proof (p.60): the source says the L-duals are finite locally free over R_{B,M}, without argument; it should be proved on each PID factor; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3e0777d", "job": "REV-DESIGN-PadicLocalLanglandsForGL2QpPartII", "model": "opus", "worker": "fable-rev16"} -->. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
+- **Error** at proof of Lemma 4.13, equation (4.15), p. 44 (line 1853): the source says the source identifies the components of the scalar-quotient infinite level with Fˣ modulo the subgroup generated by ϖ; it should be modulo the subgroup generated by ϖ², since the scalar acts on components by its determinant; affects the proof. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 - **Error** at proof of Lemma 4.13, equation (4.15), p. 44, lines 1852–1853: the source says the source identifies scalar-uniformiser quotient components with Fˣ/ϖ^ℤ; it should be Fˣ/ϖ^(2ℤ), retaining two height classes in rank two; affects the proof. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 52b1cfe, 2026-10-25, codex gpt-6-astra).
+- **Error** at proof of Lemma 4.13, equation (4.16), p. 44 (line 1866): the source says the component functions as coinduced from one unit coset; it should be two height cosets, each with zero first cohomology; affects the proof. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 - **Error** at proof of Lemma 4.13, p. 44, line 1855: the source says the source calls every indicated compact division-algebra level group torsion-free; it should be use compact analytic groups without that assertion, since level zero contains roots of unity; affects the proof. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 52b1cfe, 2026-10-25, codex gpt-6-astra).
 - **Error** at proof of Lemma 4.13, p. 44, line 1866: the source says one coinduced unit-function summand for the scalar action; it should be use two height-coset summands, each having zero first cohomology; affects the proof. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 52b1cfe, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 4.24 within Theorem 4.23, p. 48, line 1998: the source says the source reverses the group and coefficient arguments in H¹(T,H); it should be H¹(H,T); affects nothing. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 52b1cfe, 2026-10-25, codex gpt-6-astra).
@@ -3416,6 +3422,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Corollaries 7.7–7.8, printed pp. 42–43 (DPS lines 1950–1997): the source says evaluation is dense without excluding the zero tensor factor; it should be required that the factor is nonzero; affects a stated result; The design already corrects the BIP proof steps and the nonzero-factor errors, and does not import DPS's false injectivity assertion. The EP dimension correction changes a fixed multiplicative factor, not the growth exponent. For the counting correction, permissible depths have bounded gaps (choose n in a fixed admissible residue class modulo e), so cumulative counts still have the required bounded-ratio growth. These source errors do not supply additional design findings; R01 concerns the separate false equivalence introduced in the repaired design. <!-- tauceti-roadmap-review {"agent": "codex", "head": "777a863f346ef004000df8ce3742319ea1425315", "job": "REV-DESIGN-CompletedCohomologyAndLocalGlobalCompatibilityPartII~2", "model": "gpt-6-astra", "worker": "chris-26"} -->. Found by CompletedCohomologyAndLocalGlobalCompatibilityPartII (#252 at 777a863, 2026-10-25, codex gpt-6-astra).
 - **Error** at Corollary 7.7, printed p. 42 (DPS lines 1953–1960): the source says evaluation remains injective after an arbitrary finite-dimensional tensor factor; it should be only the density assertion for a nonzero factor, since T=L² already gives a three-dimensional kernel for the trivial group; affects a stated result. Found by CompletedCohomologyAndLocalGlobalCompatibilityPartII (#252 at 777a863, 2026-10-25, codex gpt-6-astra).
+
+## DPS23
+
+- **Gap** at Lemma 7.4, p. 31 (lines 1401–1404): the source says a Galois-equivariant twist isomorphism for every smooth torsion representation, although the Galois action exists only for locally admissible ones (an unramified shift representation has infinite Frobenius orbits); it should be Weil-equivariant in general; affects a stated result. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 
 ## Duke–Imamoḡlu–Tóth (DIT16), Ann. of Math. 184 (2016)
 
@@ -6334,6 +6344,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## LUD17
 
+- **Misprint** at proof of Theorem 4.6, p. 31 (line 1322): the source says the fibre result is called Lemma 3.23; it should be Proposition 3.23; affects nothing. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 - **Misprint** at proof of Theorem 4.6, p. 31, line 1322: the source says the source calls the perfectoid-fiber result Lemma 3.23; it should be Proposition 3.23; affects nothing. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 52b1cfe, 2026-10-25, codex gpt-6-astra).
 
 ## Lurie, Spectral Algebraic Geometry (SAG)
@@ -6905,6 +6916,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## PAS22
 
 - **Error** at Lemma 5.1, equation (26), p. 17: the source says the torsion dual of the lattice before tensoring with L/O; it should be use Hom_O(λ,O); affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "52b1cfe32410a5c7cf5e9a0c75db426097cf7f8f", "job": "REV-PKG-ScholzeFunctorAndModpCohomologyOfTheLubinTateTower", "model": "gpt-6-astra", "worker": "chris-13"} -->. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 52b1cfe, 2026-10-25, codex gpt-6-astra).
+- **Error** at Lemma 5.1, equation (26), p. 17: the source says the torsion dual of the coefficient lattice before tensoring; it should be use the lattice dual; affects the proof; corrected in print at DPS23 footnote 15, p. 40 (line 1896). <!-- tauceti-roadmap-review {"agent": "claude", "head": "90f788e", "job": "REV-PKG-ScholzeFunctorAndModpCohomologyOfTheLubinTateTower~2", "model": "fable", "worker": "fable-rev127"} -->. Found by ScholzeFunctorAndModpCohomologyOfTheLubinTateTower (#1702 at 90f788e, 2026-10-25, claude fable).
 
 ## Penneys
 
