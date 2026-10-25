@@ -5318,7 +5318,7 @@
   },
   {
     "slug": "ordinary-katz-igusa-monodromy",
-    "needs": "Supply the ordinary elliptic Katz–Igusa formal tower and generic fibre, its unit-root crystalline trivialization in the matching Tate normalization, geometrically connected full finite levels, surjective Z_p× monodromy and comparison with the integral frame reduction of the rational crystalline-frame torsor.",
+    "needs": "Compare the supplied ordinary elliptic Igusa tower and its full unit monodromy with the integral frame reduction of the rational crystalline-frame torsor, preserving the unit-root crystalline trivialization, Tate normalization and special/generic-fibre transition.",
     "supplier": "IgusaVarietiesAndTorsionConcentration",
     "section": "Layer IG.1"
   },

@@ -12,7 +12,7 @@ GeometricSatakeAndFusion GS0 owns the reductive Grassmannian and Schubert geomet
 
 PadicHodgeTheory §§5.5, 7.1 and 7.4 owns perfect-residue-field period functors, associated filtered-connection lattices, their position and uniqueness, and change of coefficient site. In §4.6, M0 is the trivial-filtration specialization of that associated-lattice functor; its construction and horizontal full faithfulness are imported. This roadmap proves the two-lattice essential-image and trace-exactness statements. MotivesAndAlgebraicCycles §§6.1–6.3 and 6.8 owns abstract neutral reconstruction, the subquotient/subobject criteria, connectedness recognition and tensor-Isom torsors. Only their application to the new categories belongs here; canonical reduction to the reconstructed subgroup is requested from MotivesAndAlgebraicCycles (gap:tannakian-canonical-reduction).
 
-ReductiveGroups Layers 1–3, 5, 6A and 7 owns representations, Lie theory, subgroups, quotients, the unipotent radical and parabolic Levi decomposition. HodgeTateAndCanonicalSubgroups §2.14 owns splitting and type of exact tensor filtrations, their stabilizers and flag schemes, including for finite-type affine groups; AdicSpacesPartII R1.3 owns their analytification. Layer 6A supplies the characteristic-zero Levi complement and equivariant vector-layer central series. The adjoint-kernel and observable-quotient refinements have the extension contracts below. AInfCohomology §§AI.2.2–AI.2.3 owns BKF modules, their valid operations, its crystalline-rigidified variant and finite-free Fargues classification; its extension supplies rational rigidified modifications. FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.4 owns finite-height Breuil–Kisin modules, which are a distinct category. The comparison in §2.7 consumes the BKF equivalence and is independent of Ax–Lindemann.
+ReductiveGroups Layers 1–3, 5, 6A and 7 owns representations, Lie theory, subgroups, quotients, the unipotent radical and parabolic Levi decomposition. HodgeTateAndCanonicalSubgroups §2.14 owns splitting and type of exact tensor filtrations, their stabilizers and flag schemes, including for finite-type affine groups; AdicSpacesPartII R1.3 owns their analytification. HodgeTateAndCanonicalSubgroups §5.1 owns the ordinary Igusa tower and finite étale formal models, and AlgebraicModularFormsAndSerreWeights R15.3, The Igusa interpretation, owns full finite-level unit monodromy. Layer 6A supplies the characteristic-zero Levi complement and equivariant vector-layer central series. The adjoint-kernel and observable-quotient refinements have the extension contracts below. AInfCohomology §§AI.2.2–AI.2.3 owns BKF modules, their valid operations, its crystalline-rigidified variant and finite-free Fargues classification; its extension supplies rational rigidified modifications. FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.4 owns finite-height Breuil–Kisin modules, which are a distinct category. The comparison in §2.7 consumes the BKF equivalence and is independent of Ax–Lindemann.
 
 At the library pins, Mathlib already provides one-dimensional isocrystals and their classification, the absolute de Rham completion, and the Baire theorems listed below. Tau Ceti already reconstructs points of a known Hopf algebra from tensor automorphisms, supplies finite-subcomodule exhaustion, and realizes closed subgroups with finitely generated defining ideals as exterior-line stabilizers with their subgroup characters. These are used directly. Its Frobenius orbit space is topological and does not supply the sheafed curve or the period moduli used here. General Galois theory, rigid Zariski geometry and six operations retain the owners in the contracts; their lemmas are not repackaged as new theorems.
 
@@ -85,7 +85,15 @@ What ReductiveGroups must provide (gap:observable-subgroup-embedding): Prove tha
 
 Use §2.14's fpqc-local splitting of exact tensor filtrations of fibre functors on Rep_k G for finite-type affine G, the cocharacter type, the filtration stabilizer P_mu and the flag scheme G/P_mu with base change. Over a characteristic-zero field the splitting torsor is under a split unipotent group and has a rational point. P_mu need not be parabolic when G is non-reductive.
 
-Consumed sections: HodgeTateAndCanonicalSubgroups §2.14.
+Use §5.1 at F=Q for the ordinary elliptic Igusa tower, its finite étale formal models, transition maps and tautological dual-canonical-subgroup trivializations. Retain all primes, including p=2 and 3.
+
+Consumed sections: HodgeTateAndCanonicalSubgroups §2.14; HodgeTateAndCanonicalSubgroups §5.1.
+
+### From TauCetiRoadmap.AlgebraicModularFormsAndSerreWeights
+
+Use R15.3, The Igusa interpretation (anchor target-igusa-interpretation-of-hasse-and-theta), for the full finite-level unit monodromy of the ordinary elliptic tower. Retain auxiliary rigidifying level before effective stabilizer quotients and the small primes. Surjectivity at every finite level gives surjectivity onto Z_p× by compactness of the profinite monodromy image.
+
+Consumed sections: AlgebraicModularFormsAndSerreWeights R15.3 / target-igusa-interpretation-of-hasse-and-theta.
 
 ### From TauCetiRoadmap.AdicSpacesPartII
 
@@ -133,9 +141,9 @@ What MotivesAndAlgebraicCycles must provide (gap:tannakian-canonical-reduction):
 
 ### From TauCetiRoadmap.DiamondsAndVStacks
 
-Use D3.10’s locally profinite torsor level spaces and inverse-limit identification, together with the specified covering, v-descent, locally spatial and small-stack constructions, locally closed generalizing subdiamonds, profinite products with universally closed projection, and seminormal rigid full faithfulness with their stated size and site hypotheses. For a profinite P in the chart universe and a locally spatial S, D5.10 identifies |P̲ × S| with P × |S| and makes the projection quasicompact, separated and universally closed.
+Use D3.10’s locally profinite torsor level spaces and inverse-limit identification over perfectoid bases, D3.6’s morphism classes and D3.9’s descent of separated étale morphisms to diamond targets, together with the specified covering, v-descent, locally spatial and small-stack constructions, locally closed generalizing subdiamonds, profinite products with universally closed projection, and seminormal rigid full faithfulness over a complete nonarchimedean extension of Q_p, with their stated size and site hypotheses. For a profinite P in the chart universe and a locally spatial S, D5.10 identifies |P̲ × S| with P × |S| and makes the projection quasicompact, separated and universally closed.
 
-Consumed sections: DiamondsAndVStacks D3 / locally-profinite-torsors; DiamondsAndVStacks D1 / universally-open-std-cover; DiamondsAndVStacks D2 / small-pro-etale-site-and-v-site; DiamondsAndVStacks D2 / v-descent-of-functions; DiamondsAndVStacks D2 / vector-bundles-across-pro-etale-and-v-sites; DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks; DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks; DiamondsAndVStacks D5 / locally-closed-generalizing-subdiamond; DiamondsAndVStacks D5 / spatial-diamond; DiamondsAndVStacks D5 / profinite-products-of-locally-spatial-diamonds; DiamondsAndVStacks D6 / etale-site-comparison; DiamondsAndVStacks D6 / gluing-and-the-diamond-functor; DiamondsAndVStacks D6 / seminormal-rigid-full-faithfulness.
+Consumed sections: DiamondsAndVStacks D3 / locally-profinite-torsors; DiamondsAndVStacks D3 / etale-and-quasi-pro-etale-morphisms-of-stacks; DiamondsAndVStacks D3 / v-local-nature-of-morphism-classes; DiamondsAndVStacks D1 / universally-open-std-cover; DiamondsAndVStacks D2 / small-pro-etale-site-and-v-site; DiamondsAndVStacks D2 / v-descent-of-functions; DiamondsAndVStacks D2 / vector-bundles-across-pro-etale-and-v-sites; DiamondsAndVStacks D4 / small-v-sheaves-and-small-v-stacks; DiamondsAndVStacks D4 / spaces-and-surjectivity-for-small-v-stacks; DiamondsAndVStacks D5 / locally-closed-generalizing-subdiamond; DiamondsAndVStacks D5 / spatial-diamond; DiamondsAndVStacks D5 / profinite-products-of-locally-spatial-diamonds; DiamondsAndVStacks D6 / etale-site-comparison; DiamondsAndVStacks D6 / gluing-and-the-diamond-functor; DiamondsAndVStacks D6 / seminormal-rigid-full-faithfulness.
 
 ### From TauCetiRoadmap.HeckeStacksAndLocalShtukas
 
@@ -193,11 +201,11 @@ Consumed sections: EndoscopicTransferAndUnitaryTraceComparison §12.11; Endoscop
 
 ### From TauCetiRoadmap.IgusaVarietiesAndTorsionConcentration
 
-Layer IG.1 supplies Igusa moduli and their group actions. The ordinary elliptic formal/generic tower and its full monodromy require the extension below.
+Layer IG.1 supplies Igusa moduli and their group actions. Import the ordinary elliptic tower and its finite étale formal models from HodgeTateAndCanonicalSubgroups §5.1, and full finite-level unit monodromy from AlgebraicModularFormsAndSerreWeights R15.3, The Igusa interpretation. The remaining extension compares these supplied objects with crystalline frames.
 
 Consumed sections: IgusaVarietiesAndTorsionConcentration Layer IG.1.
 
-What IgusaVarietiesAndTorsionConcentration must provide (gap:ordinary-katz-igusa-monodromy): Supply the ordinary elliptic Katz–Igusa formal tower and generic fibre, its unit-root crystalline trivialization in the matching Tate normalization, geometrically connected full finite levels, surjective Z_p× monodromy and comparison with the integral frame reduction of the rational crystalline-frame torsor.
+What IgusaVarietiesAndTorsionConcentration must provide (gap:ordinary-katz-igusa-monodromy): Compare the supplied ordinary elliptic Igusa tower and its full unit monodromy with the integral frame reduction of the rational crystalline-frame torsor, preserving the unit-root crystalline trivialization, Tate normalization and special/generic-fibre transition.
 
 ### From TauCetiRoadmap.PerfectoidShimuraVarieties
 
@@ -801,7 +809,7 @@ Define rigid analytic subdiamonds, coefficient and G-local systems, integral loc
 
 ### 4.1 Rigid analytic subdiamonds
 
-Fix a complete nonarchimedean field L. Use the rigid analytic points supplied by AdicSpacesPartIIPartII RZ.3 (finite-extension-valued points over L). A rigid analytic diamond is one isomorphic over Spd L to S^diamond for a seminormal rigid analytic L-variety S. A rigid analytic subdiamond is a locally closed subdiamond represented in this way; a closed rigid analytic subdiamond also has closed immersion into the ambient diamond. These notions retain the field of definition.
+Fix a complete nonarchimedean extension L/Q_p, with its nontrivial rank-one valuation. Use the rigid analytic points supplied by AdicSpacesPartIIPartII RZ.3 (finite-extension-valued points over L). A rigid analytic diamond is one isomorphic over Spd L to S^diamond for a seminormal rigid analytic L-variety S. A rigid analytic subdiamond is a locally closed subdiamond represented in this way; a closed rigid analytic subdiamond also has closed immersion into the ambient diamond. These notions retain the field of definition.
 
 (HKII, arXiv v2, Definition 2.2.1 and Lemma 2.2.3, pp. 15–16; HKII line 691, HKII line 711).
 
@@ -820,6 +828,7 @@ The consuming constructions use this interface as follows. Layer 5 §5.5: Makes 
 
 - The diamond of a rigid disc is rigid analytic, and a finite-extension-valued closed point is a rigid analytic point.
 - A general geometric C-point with transcendental coordinate in a disc is not automatically a rigid analytic point over L.
+- Over F₂((u)), the map T↦T² on the seminormal closed disc becomes an isomorphism after diamondification, but has no rigid analytic inverse: f(T)²=T would force 2·ord_T(f)=1. This excludes equal characteristic from the full-faithfulness assertion.
 - The cusp L⟨u²,u³⟩ and its seminormalization L⟨u⟩ have the same diamond in characteristic zero, while u is absent from the cusp ring. A criterion using only underlying topological spaces would miss the required seminormal representative.
 
 **Acceptance.** Do not identify every geometric point with a rigid analytic point.
@@ -1637,7 +1646,7 @@ The consuming constructions use this interface as follows. Layer 9 §9.2: Define
 
 ### 9.2 The two period maps
 
-On `M_{b,[mu]}`, pi_Let sends a modification to L_et∈`Gr_[mu]^{b-adm}`; it is a G(Q_p)-torsor. pi_LdR records L_dR in the Grassmannian of the trivial étale fibre. If b is basic, its image is X_[mu] and pi_LdR is a G_b(Q_p)-torsor. Their BB composites are the Hodge map to Fl_[mu^-1] and the Hodge–Tate map to Fl_[mu]. After choosing a p-adic reflex base L and C its completed algebraic closure, put I=Gal(Lbar/L). Apply DiamondsAndVStacks D3.10 (locally-profinite-torsors) to the G(Q_p)×I-torsor M_C over the L-admissible cell, and, for basic b, to its G_b(Q_p)×I-torsor over X_[mu],L. It supplies the compact-open quotients M_C/K, separated étale over the respective lattice targets, and identifies M_C with their inverse limit.
+On `M_{b,[mu]}`, pi_Let sends a modification to L_et∈`Gr_[mu]^{b-adm}`; it is a G(Q_p)-torsor. pi_LdR records L_dR in the Grassmannian of the trivial étale fibre. If b is basic, its image is X_[mu] and pi_LdR is a G_b(Q_p)-torsor. Their BB composites are the Hodge map to Fl_[mu^-1] and the Hodge–Tate map to Fl_[mu]. After choosing a p-adic reflex base L and C its completed algebraic closure, put I=Gal(Lbar/L). After perfectoid pullback, apply DiamondsAndVStacks D3.10 (locally-profinite-torsors) to the G(Q_p)×I-torsor M_C over the L-admissible cell, and, for basic b, to its G_b(Q_p)×I-torsor over X_[mu],L. By D3.6 and D3.9 the compact-open quotients M_C/K are separated étale over the respective lattice targets; M_C is their inverse limit, as checked after the same pullback.
 
 (HKII, arXiv v2, §8.3, equations (8.3.0.1)–(8.3.0.2), pp. 51–52; Lemma 8.3.1, p. 52; §1.1, p. 5; HKII line 2290, HKII line 2304, HKII line 2328).
 
@@ -1648,19 +1657,20 @@ The interface consists of the following operations and laws.
 - The two torsor groups are G(Q_p) for pi_Let and G_b(Q_p) for pi_LdR when b is basic.
 - The imported compact-open quotient diagrams recover the respective pro-étale tower and its limit.
 
-Read L_et and L_dR from the same comparison c_dR. Identify the frame fibres as the corresponding rational-point torsors. In the basic case transfer the slope grading and apply the Hodge moduli interpretation. Apply the imported level-space and inverse-limit theorem after perfectoid pullback; its separated étale quotients descend to the lattice targets by v-descent. Compact open subgroups are cofinal among open subgroups of these locally profinite groups.
+Read L_et and L_dR from the same comparison c_dR. Identify the frame fibres as the corresponding rational-point torsors. In the basic case transfer the slope grading and apply the Hodge moduli interpretation. Apply the imported level-space and inverse-limit theorem to the pullback of the torsor to each perfectoid space over the lattice target. The quotient v-sheaves M_C/K are separated étale over the target because these classes are v-local on the target (DiamondsAndVStacks D3.6 and D3.9); the inverse-limit identification is checked after the same pullback. Compact open subgroups are cofinal among open subgroups of these locally profinite groups.
 
 The consuming constructions use this interface as follows. Layer 9 §9.4: Compares specialness under each period structure. Layer 11 §11.4: Works at finite level étale over the appropriate lattice target.
 
 **Checks.**
 
+- For G=G_m, b=1, mu=0 and L=Q_p-breve, the target Spd L is not perfectoid. For K=Z_p××I the level quotient is Z×Spd L, and its pullback to Spd C is the discrete union of copies of Spd C indexed by Z. This is separated étale, so D3.9 descends that property; D3.10 alone cannot be applied directly to Spd L.
 - For a diagonal type (a1,…,an), the two flags have opposing cocharacter classes.
 - Without basicness pi_LdR is not asserted to be a G_b(Q_p)-torsor onto a Hodge domain.
 - For reductive minuscule data, BB identifies the lattice targets with the usual open flag period domains and gives the two familiar analytic towers.
 
 **Acceptance.** The second torsor structure has a basicness hypothesis.
 
-*Needs:* §9.1; §7.3; §2.4; §1.5; §5.6; ReductiveGroupsPartII RG2.0 / scheme-point-topology; ReductiveGroupsPartII RG2.0 / points-topological-group; ReductiveGroupsPartII RG2.0 / congruence-neighbourhood-basis; ReductiveGroupsPartII RG2.0 / smooth-morphism-open-map; DiamondsAndVStacks D3 / locally-profinite-torsors.
+*Needs:* §9.1; §7.3; §2.4; §1.5; §5.6; ReductiveGroupsPartII RG2.0 / scheme-point-topology; ReductiveGroupsPartII RG2.0 / points-topological-group; ReductiveGroupsPartII RG2.0 / congruence-neighbourhood-basis; ReductiveGroupsPartII RG2.0 / smooth-morphism-open-map; DiamondsAndVStacks D3 / locally-profinite-torsors; DiamondsAndVStacks D3 / etale-and-quasi-pro-etale-morphisms-of-stacks; DiamondsAndVStacks D3 / v-local-nature-of-morphism-classes.
 
 ### 9.3 Functoriality at infinite level
 
@@ -1763,6 +1773,8 @@ For the basic slope-zero matrix b = [[1,1],[0,1]] and x = diag(2,1), both fixed 
 ### Dependencies
 
 - DiamondsAndVStacks D3 / locally-profinite-torsors.
+- DiamondsAndVStacks D3 / etale-and-quasi-pro-etale-morphisms-of-stacks.
+- DiamondsAndVStacks D3 / v-local-nature-of-morphism-classes.
 
 - Layer 6.
 - Layer 1.
@@ -2062,7 +2074,7 @@ The consuming constructions use this interface as follows. Layer 12 §12.2: Cons
 
 - The trivial de Rham local system in weight zero is a variation.
 - The Tate local system has weight −2n with its de Rham comparison lattice.
-- A nontrivial finite étale rank-one character has de Rham weight zero and monodromy −1, whereas the neutral unit has monodromy 1. Equal geometric unit fibres do not identify these two families.
+- A nontrivial quadratic finite étale rank-one character has de Rham weight zero and monodromy image {1,−1}, whereas the neutral unit has image {1}. Equal geometric unit fibres do not identify these two families. Other finite orders are allowed: at p=7, a primitive cube root ζ₃ lies in Q₇, and the unramified character sending arithmetic Frobenius to ζ₃ has weight zero and image μ₃ of order 3. Finite étale pullback trivializes each finite character, giving its weight-zero de Rham filtration.
 
 **Acceptance.** The Q_p-local system is allowed to have monodromy here; this is a distinct family notion from the neutral category.
 
@@ -2093,7 +2105,7 @@ The consuming constructions use this interface as follows. Layer 12 §12.4: Unif
 
 **Acceptance.** The frame cover is a pro-étale torsor; this construction makes no general rigid representability assertion.
 
-*Needs:* §12.1; §1.5; §9.2; §4.5.
+*Needs:* §12.1; §1.5; §9.2; §4.5; HodgeTateAndCanonicalSubgroups §5.1; AlgebraicModularFormsAndSerreWeights R15.3 / target-igusa-interpretation-of-hasse-and-theta; IgusaVarietiesAndTorsionConcentration Layer IG.1 (gap:ordinary-katz-igusa-monodromy).
 
 ### 12.3 Katz–Igusa obstruction
 
@@ -2101,11 +2113,17 @@ On the ordinary locus of a connected finite-level modular curve without p-level,
 
 (HKII, arXiv v2, §10.1, p. 64; HKII line 2882).
 
-Import the ordinary Katz–Igusa formal tower, its geometric connectedness and its Z_p×-monodromy from the precise Igusa supplier request. It is not supplied by the Hodge-type perfectoid-tower theorem. Compare the rank-one crystalline realization with the unit-root factor in the matching covariant or dual Tate normalization; this identifies the integral frame reduction with the Katz–Igusa tower, and extension of structure group gives the full rational cover. A reduction to a rigid de Jong covering forces the corresponding compact fibre monodromy to have finite orbits, contradicting the infinite transitive Z_p× action. The obstruction is local finite type, not merely failure of quasicompactness.
+Import the ordinary elliptic formal tower and generic fibre from HodgeTateAndCanonicalSubgroups §5.1, and full finite-level unit monodromy from AlgebraicModularFormsAndSerreWeights R15.3, The Igusa interpretation. Compactness gives surjective Z_p× monodromy. Use the comparison requested from IgusaVarietiesAndTorsionConcentration (gap:ordinary-katz-igusa-monodromy) to identify its integral frames with the unit-root crystalline trivialization in the matching covariant or dual Tate normalization; extension of structure group then gives the full rational cover. A reduction to a rigid de Jong covering forces the corresponding compact fibre monodromy to have finite orbits, contradicting the infinite transitive Z_p× action. The obstruction is local finite type, not merely failure of quasicompactness.
+
+**Checks.**
+
+- For F=Q, the finite-level fibres are (Z/p^m)× of size p^(m−1)·(p−1); at p=2 and m=1,2,3 the degrees are 1,2,4. The degree-one first level does not make the inverse tower finite.
+- At p=2 the element −1 is 1 modulo 2 and 3 modulo 4; full monodromy includes this order-two element, as well as the deeper principal units. Replacing Z_2× by 1+4Z_2 would lose it.
+- Extending integral frames from Z_p× to Q_p× yields components indexed by v_p in Z. Each component retains the infinite profinite frame fibre; at p=2 the finite-level degrees above grow without bound, whereas a zero-dimensional rigid fibre locally of finite type is discrete.
 
 **Acceptance.** The infinite monodromy obstructs the stated rigid de Jong refinement; rational extension of frames preserves that obstruction in each valuation component.
 
-*Needs:* §12.2; IgusaVarietiesAndTorsionConcentration Layer IG.1.
+*Needs:* §12.2; HodgeTateAndCanonicalSubgroups §5.1; AlgebraicModularFormsAndSerreWeights R15.3 / target-igusa-interpretation-of-hasse-and-theta; IgusaVarietiesAndTorsionConcentration Layer IG.1 (gap:ordinary-katz-igusa-monodromy).
 
 ### 12.4 Conditional basic Hodge-type application
 
@@ -2139,7 +2157,7 @@ Apply the supplied Čerednik–Drinfeld theorem separately to each factor, track
 
 ### Examples
 
-For a variation the original graded de Rham local system can have nontrivial étale monodromy. M0 is formed from its associated flat bundle after forgetting the filtration. If the resulting bundle has fixed basic class b, its crystalline-frame cover is a G_b(Q_p)-torsor, and the original K-frame data gives the K-level period map. This is a frame construction; it makes no general potential-unramifiedness assertion. Under the ordinary Katz–Igusa tower and monodromy input requested from IgusaVarietiesAndTorsionConcentration (gap:ordinary-katz-igusa-monodromy), the tower on the ordinary modular locus has infinite Z_p× monodromy and gives the obstruction to a rigid analytic de Jong refinement described in HK II §10.1, pp. 63–64.
+For a variation the original graded de Rham local system can have nontrivial étale monodromy. M0 is formed from its associated flat bundle after forgetting the filtration. If the resulting bundle has fixed basic class b, its crystalline-frame cover is a G_b(Q_p)-torsor, and the original K-frame data gives the K-level period map. This is a frame construction; it makes no general potential-unramifiedness assertion. Using the ordinary tower from HodgeTateAndCanonicalSubgroups §5.1, the full unit monodromy from AlgebraicModularFormsAndSerreWeights R15.3, The Igusa interpretation, and their crystalline-frame comparison requested from IgusaVarietiesAndTorsionConcentration (gap:ordinary-katz-igusa-monodromy), the tower on the ordinary modular locus has infinite Z_p× monodromy and gives the obstruction to a rigid analytic de Jong refinement described in HK II §10.1, pp. 63–64.
 
 For a quaternion algebra D/Q split at infinity and ramified at p, its inner form B is ramified at infinity, split at p, and ramified at exactly the same finite places as D away from p. A chosen product component of the associated Shimura curves has a Čerednik–Drinfeld presentation Ω^n/Γ with the actual arithmetic component stabilizers. After base change to C, the local Drinfeld product, its two period maps and the global infinite tower are compared through this quotient. In a general Hodge-type basic locus the analogous step is conditional on the explicit basic uniformization contract, including the diagonal arithmetic quotient. Local special points concern the Q_p-structure of the p-divisible group and need not be global motivic CM points. (HK II §10.1–§10.2, pp. 64–66; HKII line 2892)
 
@@ -2153,7 +2171,9 @@ For a quaternion algebra D/Q split at infinity and ramified at p, its inner form
 - Layer 1.
 - Layer 9.
 - Layer 6.
-- IgusaVarietiesAndTorsionConcentration Layer IG.1.
+- HodgeTateAndCanonicalSubgroups §5.1.
+- AlgebraicModularFormsAndSerreWeights R15.3 / target-igusa-interpretation-of-hasse-and-theta.
+- IgusaVarietiesAndTorsionConcentration Layer IG.1 (gap:ordinary-katz-igusa-monodromy).
 - Layer 11.
 - PerfectoidShimuraVarieties §2.2.
 - PerfectoidShimuraVarieties §§3.1 and 3.5.
