@@ -1,15 +1,12 @@
 import Mathlib
-import TauCeti.AlgebraicGeometry.AbelianVariety.Isogeny
 import TauCeti.AlgebraicGeometry.AbelianVariety.Albanese
 
 /-!
 # Heights, rational points and obstructions, Part II: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states headline theorems
-against the pinned APIs. Intersection-field descent of abelian isogeny classes is
-statable on the native abelian-variety and intermediate-field carriers. Uniform
-Manin–Mumford and Mordell–Lang for curves, and the DGH rational-point bound,
-use the native Albanese property and the group of points of a group object.
+against the pinned APIs. Uniform Manin–Mumford and Mordell–Lang for curves,
+and the degree-free rational-point bound, use the native Albanese property and the group of points of a group object.
 The genus is the dimension of the Albanese variety. Multiplication of points
 in these signatures denotes the additive abelian-variety law. A translation
 accounts for every degree-one divisor class. For the rational-point bound a
@@ -91,14 +88,13 @@ theorem uniform_mordellLang_curves (g : ℕ) (hg : 2 ≤ g) :
           ≤ B ^ (1 + ρ) := by
   sorry
 
-/-- For fixed genus g at least two and number-field degree at most d, the
-number of rational points is bounded by B(g,d)^(1+ρ) when the Jacobian point
-group has rank at most ρ. A rational base point identifies the Albanese map;
-the empty rational-point case has count zero. Dimitrov–Gao–Habegger,
-Theorem 1.1. -/
-theorem uniform_rationalPoints_curves (g d : ℕ) (hg : 2 ≤ g) (hd : 1 ≤ d) :
+/-- For fixed genus g at least two, the number of rational points over every
+number field is bounded by B(g)^(1+ρ) when the Jacobian point group has rank
+at most ρ. A rational base point identifies the Albanese map; the empty
+rational-point case has count zero. Kühne, Theorem 4 and the remark after it;
+this implies Dimitrov–Gao–Habegger, Theorem 1.1. -/
+theorem uniform_rationalPoints_curves (g : ℕ) (hg : 2 ≤ g) :
     ∃ B : ℕ, 1 ≤ B ∧ ∀ (F : Type u) [Field F] [NumberField F],
-      Module.finrank ℚ F ≤ d →
       ∀ (X : Over (Spec (.of F))) [Smooth X.hom] [IsProper X.hom]
         [GeometricallyIntegral X.hom] (_ : topologicalKrullDim X.left = 1)
         (x₀ : 𝟙_ (Over (Spec (.of F))) ⟶ X)
@@ -110,28 +106,6 @@ theorem uniform_rationalPoints_curves (g d : ℕ) (hg : 2 ≤ g) (hd : 1 ≤ d) 
             ∃ n : ℕ, 0 < n ∧ p ^ n ∈ Subgroup.closure (s : Set _)) →
           (Set.univ : Set (𝟙_ (Over (Spec (.of F))) ⟶ X)).encard
             ≤ B ^ (1 + ρ) := by
-  sorry
-
-/-! ## Layer 9: Geometric Bogomolov in all characteristics -/
-
-/-- Two abelian varieties over algebraically closed intermediate fields with
-intersection equal to the algebraically closed ground field, isogenous after
-extension to a common field of finite transcendence degree, descend up to isogeny
-to the ground field. The descended variety is unique up to isogeny.
-Xie–Yuan, Proposition 3.2; no independence assumption on the two fields is made. -/
-theorem isogenyClass_descends_intersection
-    {k K : Type u} [Field k] [Field K] [Algebra k K] [IsAlgClosed k]
-    (k₁ k₂ : IntermediateField k K) [IsAlgClosed k₁] [IsAlgClosed k₂]
-    (hinter : k₁ ⊓ k₂ = ⊥) (htrdeg : Algebra.trdeg k K < Cardinal.aleph0)
-    (A₁ : AbelianVariety k₁) (A₂ : AbelianVariety k₂)
-    (hiso : ∃ f : A₁.baseChange K ⟶ A₂.baseChange K,
-      AbelianVariety.IsIsogeny f) :
-    ∃ A : AbelianVariety k,
-      (∃ f : A.baseChange k₁ ⟶ A₁, AbelianVariety.IsIsogeny f) ∧
-      (∃ f : A.baseChange k₂ ⟶ A₂, AbelianVariety.IsIsogeny f) ∧
-      ∀ B : AbelianVariety k,
-        (∃ f : B.baseChange k₁ ⟶ A₁, AbelianVariety.IsIsogeny f) →
-        ∃ f : A ⟶ B, AbelianVariety.IsIsogeny f := by
   sorry
 
 end TauCetiRoadmap.HeightsRationalPointsAndObstructionsPartII
