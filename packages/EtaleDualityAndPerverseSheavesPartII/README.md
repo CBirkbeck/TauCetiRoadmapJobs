@@ -18,7 +18,7 @@ Ownership is by mathematical object:
 
 - SchemeAndStackFoundations §0.7 and EtaleCohomologyFoundations §F.8 supply finite-type field dimension and middle perversity. Section 5.1 develops étale dimension functions on general locally noetherian schemes. Section 6.5 supplies a t-structure for every monotone perversity on a noetherian scheme; EtaleDualityAndPerverseSheaves §2.11 states only the finite-type-field nonconstructible conditions.
 
-- ArcTopologyAndDescent §§3.6, 8.3, 8.6–8.9, 11.1–11.2, 11.5 and 12.6 own valuation-product components, henselian completion, formal glueing and complete arc descent. PerfectoidQuotients §§0.4–0.6 own integral perfectoid operations and p-integral closure. PerfectoidQuotientsPartII §§Q5.1–Q5.3 and Q6.3–Q6.7 own the integral multiplicative tilt, product tilts, sharp quotients and valuation tilting. Section 8.2 adds the multiplicative identification after inverting ϖ; §8.4 uses the supplied product objects to compare their cohomology, rather than constructing them again.
+- ArcTopologyAndDescent §§3.6, 8.3, 8.6–8.9, 11.1–11.2, 11.5 and 12.6 own valuation-product components, henselian completion, formal glueing and complete arc descent; §11.2 also owns the splitting of every étale cover of a quasi-compact open in the spectrum of a product of valuation rings with algebraically closed fraction fields. PerfectoidQuotients §§0.4–0.6 own integral perfectoid operations and p-integral closure. PerfectoidQuotientsPartII §§Q5.1–Q5.3 and Q6.3–Q6.7 own the integral multiplicative tilt, product tilts, sharp quotients and valuation tilting. Section 8.2 adds the multiplicative identification after inverting ϖ; §8.4 uses the supplied product objects and split-cover theorem to compare their cohomology.
 
 Flat cohomology, virtual dimension and finite flat group schemes belong to PurityForFlatCohomology; there is no dependency on that consumer.
 
@@ -111,7 +111,7 @@ The source is Ill03, Théorème 2.4 (uncertified), as recalled in ILO14, XV 1.1.
 
 ### From TauCetiRoadmap.ArcTopologyAndDescent
 
-Section 3.6 supplies ultraproduct components of products of valuation rings, with no rank bound on the components. Sections 8.3 and 8.6–8.9 supply henselian rigidity, formal glueing and completion comparison for torsion étale cohomology, including support complexes. Sections 11.1–11.2 and 11.5 supply the I-complete arc topology, the product-of-complete-aic-valuations basis and complete/punctured étale hyperdescent for finitely generated I. Section 12.6 supplies invariance of these covering conditions under tilting. In Layer 7 completion comparison is applied to cohomology with closed support before reducing to complete regular local rings; it is not an unrestricted assertion about every principal open of a merely local ring.
+Section 3.6 supplies ultraproduct components of products of valuation rings, with no rank bound on the components. Sections 8.3 and 8.6–8.9 supply henselian rigidity, formal glueing and completion comparison for torsion étale cohomology, including support complexes. Sections 11.1–11.2 and 11.5 supply the I-complete arc topology, the product-of-complete-aic-valuations basis and complete/punctured étale hyperdescent for finitely generated I. In particular, §11.2 supplies that every étale cover of a quasi-compact open in the spectrum of a product of valuation rings with algebraically closed fraction fields has a section; this input needs neither perfectoidness nor a rank bound on the ultraproduct components (CS24, Lemma 2.2.4, pp. 19–20; CS24 lines 774–797). Section 12.6 supplies invariance of these covering conditions under tilting. In Layer 7 completion comparison is applied to cohomology with closed support before reducing to complete regular local rings; it is not an unrestricted assertion about every principal open of a merely local ring.
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
@@ -245,7 +245,15 @@ A proof route is as follows. Necessity: proper surjective generators lift over a
 
 Let A be an excellent henselian noetherian local ring with completion Â, S = Spec A, Ŝ = Spec Â, and write Ŝ = lim_α S_α with S_α smooth over S (Popescu). Let X be of finite type over Ŝ with a model X_(α0) over S_(α0). There are α1 ≥ α0 and integers n0 ≥ c > 0 such that for every n ≥ n0, α ≥ α1 and every section u of S_α → S that is (n+1)-close to the canonical map Ŝ → S_α, the pulled-back scheme X_u over S is (n+1−c)-isomorphic to X above the closed fibre (an approximation of order n − c). If X and Y are a-close at a point x of their common closed fibre, then (i) for a ≥ 1 they have the same dimension at x, and (ii) for a ≥ 2, X is regular at x iff Y is; (iii) if X is regular, every sufficiently fine approximation X_u is regular in an open neighbourhood of its closed fibre. (ILO14, Exposé III, Définition 4.2, Théorème 5.1, Définition 5.2 and Corollaire 5.4, pp. 39, 41–43 (printed); ILO14 line 1958).
 
-A excellent henselian noetherian local. For the closed-fibre ideals I and J, an a-isomorphism identifies the (a−1)-st infinitesimal fibres and the graded algebras gr^a_n = I^n/Iⁿ⁺ᵃ and J^n/Jⁿ⁺ᵃ for all integer n, taking I^n = O for n ≤ 0 (ILO III 4.2, p. 39). Agreement of a truncated ordinary associated graded alone is insufficient.
+A excellent henselian noetherian local. For a ≥ 1 and schemes X, Y over the same local base S (or Ŝ), let I, J be their closed-fibre ideals. An a-isomorphism consists of an isomorphism over the base φ : X_(a−1) ≅ Y_(a−1) of the infinitesimal fibres defined by I^a and J^a, together with an isomorphism φ⁻¹gr^a(O_Y) ≅ gr^a(O_X) of graded algebras over the base graded algebra gr^a(A) (respectively gr^a(Â)), compatible in degree zero with φ. Here gr^a_n = I^n/Iⁿ⁺ᵃ, respectively J^n/Jⁿ⁺ᵃ, for all integer n, with I^n = O and J^n = O for n ≤ 0 (ILO III 4.2, p. 39; ILO14 line 1887). Agreement of a truncated ordinary associated graded alone is insufficient.
+
+Its interface consists of the following facts (ILO III 4.2, p. 39; ILO14 line 1887).
+
+- For a ≥ 1, the identity of X_(a−1) and of gr^a(O_X) gives an a-isomorphism from X to itself over the base graded algebra.
+
+- The inverse infinitesimal-fibre and graded-algebra maps of an a-isomorphism X → Y give an a-isomorphism Y → X, preserving the base structure and degree-zero compatibility.
+
+- Composing the infinitesimal-fibre maps and the pulled-back graded-algebra maps of a-isomorphisms X → Y and Y → Z gives an a-isomorphism X → Z over the same base; this composition is associative and has the identity maps above as units.
 
 A proof route is as follows. Popescu's theorem writes the regular map A → Â as a filtered colimit of smooth A-algebras (SchemeAndStackFoundations §0.15, Néron–Popescu desingularization). Artin approximation gives sections u of S_α → S close to the canonical map; compare graded pieces gr^n of X and X_u via the Tougeron–type estimate of ILO III Proposition 4.5 to obtain the (n+1−c)-isomorphism (ILO III 5.1). Dimension and regularity are read from the normal cone and the Zariski tangent space, which are determined by low-order graded pieces (ILO III Corollaire 5.4).
 
@@ -256,6 +264,8 @@ A proof route is as follows. Popescu's theorem writes the regular map A → Â a
 - For X = Ŝ itself with the model X_α = S_α, every approximation X_u is S, and the closed fibres agree to all orders.
 
 - For X = Spec Â[t]/(t² − a) with a a unit and 2 invertible, the approximations Spec A[t]/(t² − a_u) with a_u close to a are étale over S. If A is also regular they are regular; étaleness alone does not make a singular base regular.
+
+- Over S = Spec k⟦t⟧, take X = S and Y = Spec k. Their closed fibres both equal Spec k, but for a = 1 their degree-one graded pieces are (t)/(t²) ≅ k and 0. They are not 1-isomorphic. The identity of X gives k ≅ k in degree one; a definition retaining only the closed fibre would wrongly identify X and Y.
 
 ### 0.6 Reduction of uniformization to local henselian excellent normal schemes
 
@@ -449,13 +459,15 @@ Let A be a complete noetherian local normal ring of mixed characteristic (0, p) 
 
 Mixed characteristic (0, p), d ≥ 2, ℓ ≠ p; finitely many closed subsets.
 
-A proof route is as follows. Apply §1.4 (2) to get B_0 = V⟦t_1, …, t_(d−1)⟧ → B with an ℓ-group H, and set A′ = B^H (ILO V 3.2.1). Algebraize ideals of A′ along V⟦t_1, …, t_(d−2)⟧[t_(d−1)] by the Weierstrass and Elkik arguments of the equal-characteristic case, keeping track of the H-action (ILO V 3.2.2 onwards). The geometric reformulation follows by taking S = Spec V⟦t_1, …, t_(d−2)⟧ (ILO V 3.1.3); Remark 3.1.4 gives the equal-characteristic case from §1.6.
+A proof route is as follows. Apply §1.4 (2) to get B_0 = V⟦t_1, …, t_(d−1)⟧ → B with an ℓ-group H, and set A′ = B^H (ILO V 3.2.1). The invariant coefficient ring V^H is a complete mixed-characteristic DVR: its valuation has a nonzero discrete value subgroup containing the value of p, and its fixed subring is closed in the complete ring V. After the equivariant Weierstrass change of variables, descend B_0 → B to a finite algebra B̃ over the henselization of V⟦t_1, …, t_(d−2)⟧[t_(d−1)] at the origin of its closed fibre, together with the compatible H-action. Take Ã′ = B̃^H; its completion is A′, since averaging by the unit |H| makes invariants commute with completion. Descend the prescribed ideal family to Ã′ using finiteness for the lower-dimensional supports and symbolic powers for the vertical height-one primary ideals, then descend the algebra and ideals from the henselian polynomial algebra over V^H⟦t_1, …, t_(d−2)⟧ to a finite-type algebra over that complete base (ILO V 3.2.3–3.2.4, pp. 67–68; ILO14 lines 2999–3035). Thus take S = Spec V^H⟦t_1, …, t_(d−2)⟧ in the geometric reformulation; it is regular of dimension 1 + (d − 2) = d − 1. Remark 3.1.4 gives the equal-characteristic case from §1.6.
 
 *Needs:* §1.5; §1.4; §1.6; SchemeAndStackFoundations §§0.12–0.16, 0.21.
 
 **Checks.**
 
 - For A = ℤ_p⟦x⟧ and the ideal (x − p), A′ = A works with S = Spec ℤ_p and Y = 𝔸¹_S.
+
+- For p = 3, ℓ = 2, W = W(𝔽̄₃), V = W[π]/(π² − 3) and B = V⟦x⟧, let H = C₂ negate π and fix x. Then V^H = W and A′ = B^H = W⟦x⟧. This A′ admits no unital V-algebra structure: the constant term b₀ of an image of π would satisfy b₀² = 3, forcing 2v₃(b₀) = 1 in W. Over the invariant base, C = W[x] and 𝔫 = (3,x) have completed localization A′, with dim W + 1 = 2, and (x − 3) descends literally. This is the ramified coefficient action of §1.4, where the invariant generic degree remains 1.
 
 - The generic degree of A → A′ may be divisible by p but never by ℓ.
 
@@ -1221,7 +1233,7 @@ On a strict regular trait, K=Λ(1)[2] has generic cohomology in degree −2 and 
 
 ### Dependencies
 
-Layers 1, 4–5; LefschetzPencilsAndVanishingCycles §§0.2–0.5, 0.10; AdicCoefficientsAndComparisonsPartII §PA.0.11; EtaleCohomologyFoundations §§0.7, F.5–F.6 with the general-base exceptional-pullback contract; EtaleDualityAndPerverseSheaves §§0.1–0.2 with the general-base open-duality contract; EnhancedDerivedSheaves §§0.1–0.4; ArcTopologyAndDescent §8.9; DeformationAndDerivedPatchingAlgebra §1.10.
+Layers 1, 4–5; LefschetzPencilsAndVanishingCycles §§0.2–0.5, 0.10; AdicCoefficientsAndComparisonsPartII §PA.0.11; EtaleCohomologyFoundations §§0.7, F.5–F.6, with exceptional pullback on the finite-cohomological-dimension domain of §F.2 and the separated finite-type noetherian geometry of §F.2.4; EtaleDualityAndPerverseSheaves §§0.1–0.2 for coefficient and finite-type duality; EnhancedDerivedSheaves §§0.1–0.4; ArcTopologyAndDescent §8.9; DeformationAndDerivedPatchingAlgebra §1.10. The open-immersion tensor–Hom exchange is §6.8, using EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4.
 
 ## Layer 7: Local Lefschetz and purity applications
 
@@ -1359,17 +1371,19 @@ A proof route is as follows. Replace A by its ϖ-adic completion; idempotents of
 
 ### 8.4 Étale cohomology of products of valuation rings and their tilts
 
-Let A = ∏_(i∈I) V_i with each V_i a ϖ-adically complete valuation ring of rank ≤ 1 with algebraically closed fraction field, over a perfectoid base as in §8.1. Use the supplied perfectoid structure and product tilt A^♭ = ∏ V_i^♭. Prove the cohomological comparison: for every quasi-compact open U ⊆ Spec A (resp. U^♭ ⊆ Spec A^♭) there are no nonsplit étale covers; RΓ_ét(U, G) and RΓ_ét(U^♭, G) are concentrated in degree 0, given by locally constant G-valued functions; and for matched (U, U^♭) they are identified functorially through §8.3. (CS24, Lemma 2.2.4, pp. 19–20, and proof of Theorem 2.2.7 (product case), pp. 21–22; CS24 line 774).
+Let A = ∏_(i∈I) V_i with each V_i a ϖ-adically complete valuation ring of rank ≤ 1 with algebraically closed fraction field, over a perfectoid base as in §8.1. Use the supplied perfectoid structure and product tilt A^♭ = ∏ V_i^♭. Prove the cohomological comparison: for quasi-compact opens U ⊆ Spec A and U^♭ ⊆ Spec A^♭, RΓ_ét(U, G) and RΓ_ét(U^♭, G) are concentrated in degree 0, given by locally constant G-valued functions; for matched (U, U^♭) they are identified functorially through §8.3. (CS24, Lemma 2.2.4, pp. 19–20, and proof of Theorem 2.2.7 (product case), pp. 21–22; CS24 lines 774, 864–871).
 
 V_i complete of rank ≤ 1 with algebraically closed fraction fields; G a torsion abelian group.
 
-A proof route is as follows. Use the supplied perfectoidness and product tilt (PerfectoidQuotients §0.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7). Connected components of Spec ∏ V_i are the spectra of ultraproducts, which are valuation rings with algebraically closed fraction fields (ArcTopologyAndDescent §3.6); quasi-compact opens therefore have strictly henselian local rings and no nonsplit étale covers (CS24 Lemma 2.2.4). Locally constant functions are determined by the Boolean algebra of clopens, which the idempotent bijection identifies compatibly with disjointness.
+A proof route is as follows. Use the supplied perfectoidness and product tilt (PerfectoidQuotients §0.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7). Apply the split-cover theorem of ArcTopologyAndDescent §11.2 to the quasi-compact opens of both valuation products. The splitting makes the global-sections functor exact, so higher cohomology vanishes; sections of the constant sheaf G are locally constant G-valued functions. The ultraproduct components are those of ArcTopologyAndDescent §3.6. For matched opens, §8.3 identifies their Boolean algebras of clopens compatibly with disjointness, and hence their locally constant functions, giving the new functorial comparison.
 
 *Needs:* §8.3; ArcTopologyAndDescent §3.6; ArcTopologyAndDescent §§11.1–11.2, 11.5; PerfectoidQuotients §§0.4–0.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7.
 
 **Checks.**
 
 - For I a singleton, V of rank one and 0 ≠ ϖ in its maximal ideal, U = Spec V[1/ϖ] is the spectrum of an algebraically closed field: RΓ = G in degree 0 on both sides. For V an algebraically closed characteristic-p field and ϖ = 0, the generic open is empty and its cohomology is 0; the whole spectrum has H⁰ = G.
+
+- For two such rank-one factors, take the generic open of their product. It is the disjoint union of two algebraically closed fields, so H⁰ = G² and H^q = 0 for q > 0 on both sides. The two primitive idempotents and their sum correspond through §8.3, excluding a comparison that collapses the two components.
 
 - For I infinite, an idempotent e_J with coordinates 1 on J and 0 elsewhere defines D(e_J); an ultrafilter component lies in it exactly when J belongs to that ultrafilter. The tilt preserves the same subsets J and this same membership condition.
 
