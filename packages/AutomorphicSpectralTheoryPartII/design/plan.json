@@ -4143,14 +4143,32 @@
     {
       "slug": "nash-schwartz-analysis",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "§§0.11–0.14",
-      "needs": "Supply the Nash Schwartz product and embedding comparisons, complete-target integration, strong duality between the continuous rapid zeroth-order space and polynomially weighted Radon measures, and the weak-convolution comparison with norm-smooth measure vectors used in §§1.1, 2.12–2.15."
+      "section": "§0.14",
+      "needs": "Supply the Nash Schwartz product and embedding comparison on real algebraic groups used in §§1.1 and 2.15."
     },
     {
-      "slug": "vector-holomorphy-slf",
+      "slug": "tensor-holomorphy",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "§§0.11–0.15",
-      "needs": "Supply weak-to-strong holomorphy for locally bounded families in complete nuclear Fréchet spaces, its completed-tensor compatibility, countable compact-isotypical Fréchet direct sums with induced closed-subspace topology and quotient-to-closed-image open mapping, and separately-to-jointly continuous bilinear maps on fixed Fréchet stages."
+      "section": "§0.15",
+      "needs": "Supply holomorphy of the completed projective tensor of two locally bounded holomorphic families in complete nuclear Fréchet spaces."
+    },
+    {
+      "slug": "slf-isotypic-sums",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§0.11",
+      "needs": "Supply the countable K_f-isotypical direct-sum description of an SLF representation for a fixed compact open K_f in G(𝔸_f), with Fréchet summands and the induced direct-sum topology on closed invariant subspaces."
+    },
+    {
+      "slug": "frechet-open-mapping",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§0.11",
+      "needs": "Supply the open mapping theorem for a continuous linear surjection between complex Fréchet spaces, hence the quotient-to-image topological isomorphism for a map with closed image."
+    },
+    {
+      "slug": "frechet-bilinear-continuity",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§0.11",
+      "needs": "Supply joint continuity of separately continuous bilinear maps from a product of two complex Fréchet spaces to a Hausdorff locally convex space."
     },
     {
       "slug": "real-point-root-data",
@@ -4177,16 +4195,52 @@
       "needs": "Supply the semisimple rapid-symbol multiplier from compact smooth finite-K-type stages to Schwartz stages and the split-centre Fourier–Laplace multiplier, with the nuclear Nash product comparison used in BPLZZ Appendix A."
     },
     {
-      "slug": "kostant-minimal-types",
+      "slug": "kostant-centralizer",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "§§2.1–2.4, 2.7",
-      "needs": "Supply finite freeness and the tensor-character annihilator for the enveloping-algebra centralizer, generic principal-series semisimplicity and finite minimal-K-type detection including limits of discrete series, together with polynomial K-type dimension and compact-Casimir seminorm bounds."
+      "section": "§2.2",
+      "needs": "Supply Kostant’s finite-free enveloping-algebra centralizer theorem with its tensor-character annihilator for finite-dimensional algebraic representations."
     },
     {
-      "slug": "quotient-height-cusps",
+      "slug": "generic-tensor-semisimplicity",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§2.3",
+      "needs": "Supply generic semisimplicity of minimal principal series tensored with a finite-dimensional algebraic representation, away from reducibility and character-collision hyperplanes."
+    },
+    {
+      "slug": "minimal-type-detection",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§2.4",
+      "needs": "Supply finite minimal-K-type detection for bounded discrete inducing parameters, uniformly under split twists and including limits of discrete series."
+    },
+    {
+      "slug": "k-type-growth",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§2.1",
+      "needs": "Supply polynomial compact-Casimir bounds for K-type dimensions and smooth seminorms in finite-length admissible moderate-growth Fréchet representations at each fixed finite level."
+    },
+    {
+      "slug": "quotient-height-comparison",
       "supplier": "AdelicAlgebraicGroups",
-      "section": "§§3.1, 3.4–3.6",
-      "needs": "Supply proper intermediate-quotient heights, compatible exponential Siegel weights, polynomial cusp-cover fiber bounds, deep-cusp uniqueness, quotient-neighborhood volume comparison and restriction-compatible depth functions."
+      "section": "§3.5",
+      "needs": "Supply proper heights on intermediate adelic parabolic quotients and their polynomial comparison with fixed Siegel-chart group heights."
+    },
+    {
+      "slug": "cusp-fiber-bounds",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§3.6",
+      "needs": "Supply, for standard P⊂Q, the polynomial bound c ε^(−r) for fibers of P(F)N_Q(𝔸)∖G(𝔸)→[G]_Q restricted to its Siegel cusp region of threshold ε, uniformly for 0 < ε ≤ 1."
+    },
+    {
+      "slug": "deep-cusp-uniqueness",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§3.6",
+      "needs": "Supply, for standard P⊂Q, deep-cusp uniqueness for P(F)N_Q(𝔸)∖G(𝔸)→[G]_Q: for every positive Siegel cusp threshold ε there is C > 0 such that points in the ε-region and C-region with the same image coincide."
+    },
+    {
+      "slug": "quotient-neighborhood-volumes",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§3.6",
+      "needs": "Supply comparison of quotient identity-neighborhood volumes on [G]_P with exp(−2⟨ρ₀,H₀(x)⟩) on fixed Siegel charts, uniformly at each fixed finite level."
     },
     {
       "slug": "cuspidal-data-central-comparison",
