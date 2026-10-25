@@ -112623,10 +112623,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1289#issuecomment-6404582565"
+  },
+  {
+   "kind": "misprint",
+   "source": "CS24",
+   "locator": "Example 5.6.7, printed p.75",
+   "says": "the display is introduced as a statement for degrees at least two but asserts surjectivity in degree one",
+   "should": "carry no opening restriction (surjective for i≥1, bijective for i≥2)",
+   "affects": "a stated result",
+   "note": "Already recorded as the plan's source issue E3; confirmed at CS24 lines 3166–3170. <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"9022ef2\", \"job\": \"REV-DESIGN-SchemeAndStackFoundationsPartII~2\", \"model\": \"fable\", \"worker\": \"fable-rev158\"} -->",
+   "roadmap": "SchemeAndStackFoundationsPartII",
+   "job": "REV-DESIGN-SchemeAndStackFoundationsPartII~2",
+   "board_pr": 420,
+   "head": "9022ef2",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/420#issuecomment-6404677225"
   }
  ],
- "scanned_to": "2026-10-25T22:58:53Z",
- "updated": "2026-10-25T23:01:20Z",
+ "scanned_to": "2026-10-25T23:07:23Z",
+ "updated": "2026-10-25T23:10:28Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
