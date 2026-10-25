@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6879 mistakes recorded on the board: 4234 misprints, 1759 errors, 668 gaps, 218 unparsed bullets.
+6880 mistakes recorded on the board: 4235 misprints, 1759 errors, 668 gaps, 218 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1138,6 +1138,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Bennis-Mahdou
 
 - **Misprint** at Theorem 2.7, arXiv: the source says math/0606770v1, printed p. 7 (Bennis-Mahdou line 219): the source says Holm’s direct-summand closure result is Proposition 2.5; it should be Theorem 2.5, printed p. 174 (Holm line 270); affects nothing. Found by GorensteinHomologicalAlgebra (ERRATA-GorensteinHomologicalAlgebra at 59db116, 2026-10-23, codex gpt-6-astra).
+
+## Ber92
+
+- **Misprint** at Ch. IV §1.1, printed page 84–85: the source says the two lemmas after Proposition 39 are numbered Lemma 38 and Lemma 39, repeating the numbers of Propositions 38–39 on the same pages; it should be distinct numbers; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "e4d41bc", "job": "REV-PKG-SmoothRepresentationsOfLocalGroupsPartII~2", "model": "fable", "worker": "fable-rev154"} -->. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-25, claude fable).
 
 ## Berger, Représentations p-adiques et équations différentielles
 
