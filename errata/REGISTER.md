@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5048 mistakes recorded on the board: 3323 misprints, 1252 errors, 371 gaps, 102 unparsed bullets.
+5067 mistakes recorded on the board: 3332 misprints, 1256 errors, 376 gaps, 103 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -110,6 +110,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Error** in morgan at Theorem 9.2, p. 195: the source treats the indecomposables of a minimal algebra as invariant under homotopic maps. Only the associated graded of the canonical filtration is invariant. Affects a stated result; corrected in print at IHÉS 64 (1986), p. 185. <!-- tauceti-roadmap-review {"agent": "claude", "head": "d9b1fec", "job": "REV-PKG-EllAdicHomotopyTypesAndWeights", "model": "opus", "worker": "fable-rev89"} -->
 - **Unparsed** (HeightsRationalPointsAndObstructionsPartII, #1129 at 0e276b6, 2026-10-25): Gap** in xy-2022 at Proposition 5.4, pp. 25–26: the source states the conclusion for every torsion point off the jump locus; the proof uses an étale torsion multisection, so only orders prime to the characteristic are covered; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "0e276b6", "job": "REV-PKG-HeightsRationalPointsAndObstructionsPartII~2", "model": "opus", "worker": "fable-rev94"} -->
 - **Unparsed** (AlgebraicTopologyPartII, #1073 at eabd8fb, 2026-10-25): Misprint** in BS at proof of Lemma 7.4, printed p.943: the source's final product has factors (1−qU^k) with no exponent; each factor should carry the exponent −e_k(N); affects the proof.
+- **Unparsed** (DirectSummandsAndBigCohenMacaulay, #1452 at 102f454, 2026-10-25): Gap** in ANDRE18B at Proposition 4.1.2, proof, p. 85: the source says B → D factors through the colimit algebra; the construction gives only choice-dependent linear maps into π^{−1/pⁿ}D; affects nothing.
 
 ## A
 
@@ -501,6 +502,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 10.10 proof, p. 35 (Ando-Hopkins-Rezk line 1898): the source says the constant term in the limit retains the free index k; it should be replace k by N(r) throughout that constant term; affects nothing. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Proposition 14.6 and Proposition 15.1, pp. 41–42 (Ando-Hopkins-Rezk line 2235): the source says the k-th characteristic term belongs to modular forms of weight 2k; it should be its weight is k, matching π₂ₖ and Theorem 12.1; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §11 and §12, pp. 36, 38 (Ando-Hopkins-Rezk line 1913): the source says U dilates q and V extracts every p-th coefficient, with the same interchange in the Hecke formula; it should be interchange these definitions; T_p f=Σa_{pn}qⁿ+p^{k−1}Σa_nq^{pn}, consistently with the later proof; affects a stated result. Found by StringOrientation (ERRATA-StringOrientation at 4397700, 2026-10-24, codex gpt-6-astra).
+
+## ANDRE18B
+
+- **Gap** at Lemme A.2.1(4), proof of (c) ⇒ (b), p. 90: the source says the dual over S and a single pair with value 1; it should be use Hom_R(S, R) and a finite sum of values equal to 1 (t ↦ Σ fᵢ(sᵢt)); affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Gap** at Lemme A.2.2, proof, p. 90: the source says the source tests purity of the completed map only on modules extended from R; it should be test every finite module over the completion, through its finite-length quotients; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at Proposition 4.4.1, p. 87: the source says D′ is almost Cohen–Macaulay for B with parameters x′; it should be for B′; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Error** at Proposition A.3.1, final assertion and Annexe A.3 Applications, p. 91: the source says pure integral extensions of regular rings split, and that V⟦T⟧ splits in its absolute integral closure for every DVR V; it should be require a complete base (an excellent Henselian DVR with zero Frobenius dual refutes it); affects a stated result. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Gap** at Proposition A.3.1, proof of (c) ⇒ (b), p. 91: the source says the source divides a functional by a power of r knowing only that R is r-adically separated; it should be also require r = 0 or r a nonzerodivisor; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at Proposition A.3.1, proof, p. 91: the source says the linear form on N; it should be on the chosen finite free summand M; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at footnote 7, pp. 86–87: the source says the Tor degree also as the length of the regular sequence and writes the third Tor term with M; it should be use the height of P and the module N; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Error** at §0.1, statement (4), p. 72: the source says the monomial equivalence for every local ring; it should be require dimension at least 1, since the empty product 1 never lies in the zero ideal; affects a stated result. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at §4.1, definition of partial modification, p. 85: the source says the source multiplies the relation by module elements of bounded degree; it should be multiply by scalar polynomials of bounded degree, with the variables carrying the distinguished element; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Gap** at §4.2, first paragraph, p. 86: the source says completing and killing nilpotents gives a ring without p-torsion; it should be also pass to a maximal-dimensional minimal prime, since ℤ_p⟦x⟧/(px) is reduced with p-torsion; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Error** at §4.3, proof of Théorème 0.7.2, p. 87: the source says the product over all local factors of the normalisation, including lower-dimensional ones that are not flat over the completed base; it should be keep only factors dominating it; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
 
 ## Andreatta–Iovita–Pilloni
 
@@ -987,6 +1002,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 6.6.4, proof, printed p. 53, bhatt-scholze line 2463: the source says g_m⁻¹x_m lifts x_n after choosing g_N f_mN(x_m)=x_N; it should be g_m x_m; also replace the undefined g_n in h_Nn(g_n) by g_N; affects the proof. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Lemma 6.7.16 and proof, printed p. 57, bhatt-scholze lines 2689 and 2691: the source says M is any bounded R-complex, but tensors over R/m^n and places the result over R/m^(n−1); it should be M∈D^b(R/m^n), and the proof's target should be D^b(Y_et,R/m^n), consistent with Lemma 6.7.17; affects a stated result. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Proposition 5.6.2, proof, printed p. 41, bhatt-scholze line 1931: the source says Rlim F_n=lim F_n by repleteness of X_proet although F_n are étale sheaves; it should be Rlim ν*F_n=lim ν*F_n on X_proet; affects the proof. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
+
+## BHATT12
+
+- **Misprint** at Lemma 2.2, p. 6: the source says the composite of the d maps the target K_d; it should be K_{d+1}; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at proof of Theorem 0.3, p. 9: the source says one letter for both the factorisation and the splitting and composes with an undefined letter; it should be compose the splitting after the factorisation; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "102f454", "job": "REV-PKG-DirectSummandsAndBigCohenMacaulay", "model": "opus", "worker": "fable-rev96"} -->. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Gap** at proof of Theorem 0.4, p. 9: the source says the source iterates the cover construction dim(X) times, which can be infinite for a Noetherian X; it should be iterate up to the cohomological amplitude bound given by a finite affine cover; affects the proof. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+
+## BHATT18
+
+- **Misprint** at Proposition 5.2(1), p. 8: the source says the source calls A an integral perfectoid K-algebra; it should be a K°-algebra; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Error** at Proposition 6.2, p. 11: the source says the unit is almost split for every proper map whose generic fibre is finite étale; it should be require that generic fibre map to be surjective (Spec(A/p) refutes it); affects a stated result. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at Theorem 5.4, p. 10: the source says splitting of a map to B₀ without introducing B₀; it should be it for a finite extension A₀ → B₀ of Noetherian rings with A₀ regular; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
+- **Misprint** at §1, sentence after Theorem 1.1, p. 1: the source says the trace argument works in characteristic 0; it should be when A₀ contains ℚ, since ℤ_p has characteristic 0; affects nothing. Found by DirectSummandsAndBigCohenMacaulay (#1452 at 102f454, 2026-10-25, claude opus).
 
 ## Bhatt–Morrow–Scholze 2019 (BMS19), Topological Hochschild homology and integral p-adic Hodge theory,
 
