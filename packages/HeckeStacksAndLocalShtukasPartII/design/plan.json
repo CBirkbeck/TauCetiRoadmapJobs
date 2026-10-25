@@ -3682,7 +3682,7 @@
     },
     {
       "slug": "parabolic-root-length",
-      "needs": "For the finite Weyl group of a reduced crystallographic root system, if wα is negative for every positive α with y⁻¹α negative, then ℓ(wy)=ℓw−ℓy (gh10, Lemma 2.6.1, PDF p. 10).",
+      "needs": "For a reduced crystallographic RootPairing P with finite root index type over a characteristic-zero integral domain and a chosen base, on its pinned RootPairing.weylGroup with ℓ the inversion count viewed in ℤ, if wα is negative for every positive α with y⁻¹α negative, then ℓ(wy)=ℓw−ℓy (gh10, Lemma 2.6.1, PDF p. 10).",
       "supplier": "RootSystemsPartII",
       "section": "RS2.1 (required root-sign length comparison)"
     },
@@ -3712,15 +3712,9 @@
     },
     {
       "slug": "newton-cell-greatest",
-      "needs": "For quasi-split G over 𝔽_q((t)) and an Iwahori double coset IẇI, its dense open Newton stratum has a greatest B(G)-class and this class remains greatest on the Bruhat closure ⋃_(v≤w)IṽI (mv20, Definition 3.1 and §3.1, arXiv v3, PDF p. 5; he21, proof of Theorem 4.2, p. 7; vie14, Proposition 5.5 and Corollary 5.6, pp. 1026–1028, for the reductive O_F-model case).",
+      "needs": "For quasi-split G over 𝔽_q((t)) and an Iwahori double coset IẇI, the locally closed admissible Newton stratification on bounded cell models and their completions, compatible with congruence truncation, whose dense open stratum has a greatest B(G)-class that remains greatest on the Bruhat closure ⋃_(v≤w)IṽI (mv20, Definition 3.1 and §3.1, Definitions 3.3 and 3.7, Corollary 3.6, arXiv v3, PDF pp. 5–7; he21, proof of Theorem 4.2, p. 7; vie14, Proposition 5.5 and Corollary 5.6, pp. 1026–1028, for the reductive O_F-model case).",
       "supplier": "BunGAndNewtonStrata",
       "section": "§1.21 (required equal-characteristic cell-closure comparison)"
-    },
-    {
-      "slug": "newton-cell-adlv-dimension",
-      "needs": "For every nonempty Newton stratum N_[b],w in an equal-characteristic Iwahori cell, dim X_w(b)=ℓw−〈2ρ,ν_b〉−codim(N_[b],w,IẇI), using minimal component codimension on bounded models, with X_w(b) equidimensional exactly when that Newton stratum is equidimensional, independently of cordiality (mv20, Corollary 3.12, arXiv v3, PDF p. 8; he15, Theorem 2.23, PDF p. 34, for the numerical comparison in either characteristic).",
-      "supplier": "BunGAndNewtonStrata",
-      "section": "§1.21 (required Newton-cell/ADLV dimension comparison)"
     },
     {
       "slug": "levi-intersection-dimension",
@@ -3730,7 +3724,7 @@
     },
     {
       "slug": "twisted-affine-cocenter",
-      "needs": "For the equal-parameter extended-affine datum with based σ, the cocenter over ℤ[v,v⁻¹] in the normalized basis T_w=v^(−ℓw)U_w, q=v² and T_s²=(v−v⁻¹)T_s+1, its minimal-σ-class basis, class polynomials in ℕ[z] with z=v−v⁻¹ and degree in z, their degree recursion, and the nonzero twisted-Coxeter coefficient with σ-saturated support.",
+      "needs": "For the equal-parameter extended-affine datum with based σ, the cocenter over ℤ[v,v⁻¹] in the normalized basis T_w=v^(−ℓw)U_w, q=v² and T_s²=(v−v⁻¹)T_s+1, its minimal-σ-class basis, class polynomials in ℕ[z] with z=v−v⁻¹ and degree in z, and their degree recursion.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.1.5 (required normalized twisted-cocenter extension)"
     }

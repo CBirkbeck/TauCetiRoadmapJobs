@@ -25,8 +25,9 @@ None of the following headline theorems is statable at the pins:
   Witt-vector isocrystal theory does not supply this interface.
 * The virtual dimension upper bound lacks affine Deligne–Lusztig geometric loci,
   their dimension, and the normal-form and Newton-invariant interface.
-* The greatest generic Newton class and its geometric dimension, cordial interval
-  saturation and numerical dimensions in either characteristic, and Newton-stratum
+* The Newton-cell/ADLV dimension comparison, the greatest generic Newton class
+  and its geometric dimension, cordial interval saturation and numerical dimensions
+  in either characteristic, and Newton-stratum
   closures and equidimensionality in equal characteristic, lack Newton-stratified
   Iwahori cells and their comparison with affine Deligne–Lusztig geometry.
 * Translation-family generic class and cordiality require those same geometric
@@ -36,9 +37,10 @@ None of the following headline theorems is statable at the pins:
 * The P-alcove Levi obstruction, the non-shrunken basic seed, and the comparison
   over all matching Levi classes lack the Levi and group affine Deligne–Lusztig
   loci and the integral map of Kottwitz sets.
-* The shrunken-chamber nonemptiness and dimension theorem, its basic specialization without a strict Newton gap,
-  and its large-translation specialization lack those loci, the affine apartment
-  and Iwahori–Weyl interface, and compatible original-group Newton invariants.
+* The shrunken-chamber nonemptiness and dimension theorem, its basic specialization
+  without a strict Newton gap, and its large-translation specialization lack those
+  loci, the affine apartment and Iwahori–Weyl interface, and compatible original-group
+  Newton invariants.
 
 The native scheme, subgroup, coset, root-pairing and isocrystal carriers do not by
 themselves provide these moduli constructions. Constructing them is substantial
