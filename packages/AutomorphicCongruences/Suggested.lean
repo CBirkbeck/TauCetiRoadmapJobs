@@ -24,17 +24,17 @@ and the carrier it lacks:
   addition, the localization of the anticyclotomic-by-cyclotomic Iwasawa algebra at its
   cyclotomic subring and the Castella–Liu–Wan p-adic L-function.
 * Fouquet–Wan's divisibility, crystalline-point and ordinary theorems and Wan's Rankin–Selberg
-  divisibility (README §3.6 and §§3.12–3.14) need Greenberg Selmer groups over the
+  divisibility (README §2.14 and §§2.20–2.22) need Greenberg Selmer groups over the
   ℤ_p²-extension of an imaginary quadratic field and the Greenberg and Rankin–Selberg p-adic
   L-functions.
-* Fouquet–Wan's universal-family and pointwise main conjectures (README §5.3 and §5.5) need
+* Fouquet–Wan's universal-family and pointwise main conjectures (README §4.3 and §4.5) need
   universal deformation rings of residual Galois representations, Selmer complexes over them,
   Knudsen–Mumford determinant lines and Nakamura's zeta morphism on completed homology.
-* Wan's parallel Hilbert-family divisibility (README §6.10) needs nearly ordinary Hilbert Hida
+* Wan's parallel Hilbert-family divisibility (README §5.10) needs nearly ordinary Hilbert Hida
   families, their Selmer groups over the ℤ_p-extensions of a CM field and Wan's p-adic
   L-function.
 * Burungale–Castella–Skinner's two-variable product divisibility and their rational and integral
-  cyclotomic theorems (README §7.6, §8.9 and §8.10) need the Pontryagin dual of the p-primary
+  cyclotomic theorems (README §6.6, §7.9 and §7.10) need the Pontryagin dual of the p-primary
   ordinary Selmer group of an elliptic curve over the cyclotomic ℤ_p-extension as a module over
   `ℤ_p⟦Gal(ℚ_∞/ℚ)⟧`, its characteristic ideal, and the Mazur–Swinnerton-Dyer p-adic L-function.
 -/
