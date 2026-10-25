@@ -42209,37 +42209,43 @@
     }
   ],
   "gaps": [
-    {
-      "slug": "finite-diagonalizable-coarse",
-      "needs": "Extend §1.23’s affine finite-group coarse quotient contract to finite locally free diagonalizable group schemes, including nonreduced ones, with invariants and arbitrary base-change compatibility.",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "1.23"
-    },
-    {
-      "slug": "invertible-section-coordinates",
-      "needs": "Identify its coherent tensor-section, free-unit and pullback maps with native invertible-sheaf coordinates, so that tensor sections evaluate to multiplication and the unit evaluates to one.",
-      "supplier": "AlgebraicVectorBundles",
-      "section": "L0A–L0B"
-    },
-    {
-      "slug": "completed-lattice-root-dictionary",
-      "needs": "Compare completed local lattices and their residue root frames with rationally framed line bundles, preserving weighted degrees and the sign π_x⁻¹↦O_X(x).",
-      "supplier": "AlgebraicCurves",
-      "section": "Layer 12"
-    },
-    {
-      "slug": "quadratic-root-residue-character",
-      "needs": "Specialize its local Artin and global norm quotient to quadratic covers in odd characteristic, identifying the ramified unit character with the residue-square character and the inverse-uniformizer value away from ramification with geometric Frobenius.",
-      "supplier": "FunctionFieldArithmetic",
-      "section": "4.1–4.5; 4.8–4.10"
-    },
-    {
-      "slug": "coherent-site-universe-lifts",
-      "needs": "Provide coherent universe enlargement of the scheme site, native invertible sheaves, sections, tensor products and pullback, restricted to the essential image of the smaller site.",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "1.18"
-    }
-  ],
+  {
+    "slug": "finite-diagonalizable-coarse",
+    "needs": "Extend §1.23’s affine finite-group coarse quotient contract to finite locally free diagonalizable group schemes, including nonreduced ones, with invariants and arbitrary base-change compatibility.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "1.23"
+  },
+  {
+    "slug": "invertible-section-coordinates",
+    "needs": "Identify its coherent tensor-section, free-unit and pullback maps with invertible-sheaf coordinates, so that tensor sections evaluate to multiplication and the unit evaluates to one.",
+    "supplier": "AlgebraicVectorBundles",
+    "section": "L0A–L0B"
+  },
+  {
+    "slug": "completed-lattice-root-dictionary",
+    "needs": "Compare completed local lattices with rationally framed line bundles, preserving weighted degrees and the sign π_x⁻¹↦O_X(x).",
+    "supplier": "AlgebraicCurves",
+    "section": "Layer 12"
+  },
+  {
+    "slug": "quadratic-root-residue-character",
+    "needs": "For a ramified quadratic extension of local function fields in odd characteristic, identify its local Artin unit character with the quadratic character of the residue field.",
+    "supplier": "FunctionFieldArithmetic",
+    "section": "4.1–4.2; 4.5"
+  },
+  {
+    "slug": "coherent-site-universe-lifts",
+    "needs": "Provide coherent universe enlargement of the scheme site and its stack pullback, restricted to the essential image of the smaller site.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "1.18"
+  },
+  {
+    "slug": "invertible-sheaf-universe-lifts",
+    "needs": "Make coherent universe enlargement on the essential image compatible with invertible sheaves, their sections, tensor product and pullback.",
+    "supplier": "AlgebraicVectorBundles",
+    "section": "L0A–L0B"
+  }
+],
   "restructure": [
     {
       "action": "split",
