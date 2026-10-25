@@ -62,7 +62,7 @@ Sections 1.3 and 1.12 supply induction from open subgroups, restriction and the 
 
 ### From `TauCetiRoadmap.HeightsRationalPointsAndObstructions`
 
-Sections 2.3–2.4 supply scheme adelic points and independence of integral models; for proper X these are the product of all local point sets. Section 2.11a supplies local topology and proper compactness. Sections 3.1–3.5 supply evaluation of torsors, twists, local matching and the finite étale descent set, with twisting convention eval(x)=ξ for a lift to the ξ-twist. Section 3.17d supplies the modified adelic carrier and its projection, replacing the archimedean factors by connected components. Its finite-cover locus and the global-section equivalence are constructed here.
+Sections 2.3–2.4 supply scheme adelic points and independence of integral models; §§2.3a and 2.11 supply the proper local-point compactness and product topology. Section 2.11a supplies local étale charts and smooth openness. Sections 3.1–3.5 supply evaluation of torsors, twists, local matching and the finite étale descent set, with twisting convention eval(x)=ξ for a lift to the ξ-twist. Section 3.17d supplies the modified adelic carrier and its projection, replacing the archimedean factors by connected components. Its finite-cover locus and the global-section equivalence are constructed here.
 
 ### From `TauCetiRoadmap.PadicHodgeTheory`
 
@@ -122,7 +122,7 @@ Layer R34.1 supplies unramified, pure and integral representations outside a fin
 
 ### From `TauCetiRoadmap.ClassFieldTheory`
 
-Layers 7 and 11 supply local and global reciprocity, compatibility with norms and the Galois/idele character dictionary. A uniformiser maps to arithmetic Frobenius; on a unit u the cyclotomic character is the inverse local norm. Over ℚ₃ the values on u=4 are 1/4 for χ_cyc and 4 for χ_cyc⁻¹.
+Layer 5 supplies the Kummer identification of power classes with degree-one Galois cohomology for nonzero n invertible in the field; §8.2 uses n=2 and n=3 over characteristic-zero local fields containing μ_n. Layers 7 and 11 supply local and global reciprocity, compatibility with norms and the Galois/idele character dictionary. A uniformiser maps to arithmetic Frobenius; on a unit u the cyclotomic character is the inverse local norm. Over ℚ₃ the values on u=4 are 1/4 for χ_cyc and 4 for χ_cyc⁻¹.
 
 ### From `TauCetiRoadmap.GlobalNumberFields`
 
@@ -130,7 +130,7 @@ Layers 2, 7 and 8 supply finite ray class groups for every modulus, their idele 
 
 ### From `TauCetiRoadmap.LocalFieldsRamification`
 
-Layers 0, 2 and 4 supply finite local extensions, unramified extensions of each degree, and the tame quotient with στσ⁻¹=τ^q. The residue-degree-two and residue-degree-three unramified subgroups generate the whole local Galois group because gcd(2,3)=1. At residue cardinality 5 the tame relation conjugates τ to τ⁵; replacing 5 by its inverse reverses this convention.
+Layers 0, 2 and 4 supply finite local extensions, unramified extensions of each degree, and the tame quotient with στσ⁻¹=τ^q. Layer 1, “Power classes, the primary statement” and “The dyadic square-class count”, supplies the square-class counts used in §8.2, including eight square classes over ℚ₂. The residue-degree-two and residue-degree-three unramified subgroups generate the whole local Galois group because gcd(2,3)=1. At residue cardinality 5 the tame relation conjugates τ to τ⁵; replacing 5 by its inverse reverses this convention.
 
 ### From `TauCetiRoadmap.LocalGaloisGroups`
 
@@ -808,13 +808,23 @@ Let X → Y′ → Y be an abelian-by-finite family over a scheme Y of character
 
 ⟨−1⟩ is the Tate twist of filtered modules, D_dR shifted so that its filtration jump moves by one; the identification of ℚₚ(−1) with ⟨−1⟩ uses the isomorphism a: B_dR(−1) ≅ B_dR⟨−1⟩ of CohomologyComparisons §6.5.
 
-(bs, §4.1.3, p. 35; bs line 1789; bs, Proposition 3.20(5)–(8), pp. 27–28; bs line 1358).
+(bs, §4.1.3, p. 35; bs line 1789; bs, Proposition 3.19(1)–(3), p. 27, and Proposition 3.20(5)–(8), pp. 27–28; bs lines 1367 and 1398).
 
 A proof can proceed as follows. Use CohomologyComparisons §§6.4–6.7 to carry the polarisation class, cup product, trace and Tate line through Scholze’s comparison. The étale and de Rham pairings then define a morphism in the filtered discrete category. Perfectness and the Lagrangian filtration are checked on the supplied realisations.
 
+The API includes the following facts.
+
+- The potentially semistable realisation is the pair (H⁰_pst, H¹_pst) obtained by applying D_pst to the étale pair, with its φ, N and G_v actions.
+- The de Rham realisation is (H⁰_dR, H¹_dR), with coefficient algebra H⁰_dR = O(Y′_y) and Lagrangian step F¹H¹_dR.
+- The supplied comparison identifies these algebra and module structures and carries the polarisation pairing to the de Rham pairing, using the trace-normalised Tate-line identification a.
+- The pairing is alternating, H⁰_pH-linear and perfect, with target H⁰_pH⟨−1⟩ of rank one over H⁰_pH; its de Rham filtration jump is 1.
+- For every finite extension E/K_v, restriction of this pair to G_E identifies with the pair of the base-changed fibre; the de Rham realisation extends scalars from K_v to E, compatibly with the comparison and pairing.
+
 **Checks.**
 
-- For an elliptic curve E over K_v, `H^{≤1}_pH(E/K_v)` is (1, H¹_pH(E)) with the pairing into 1⟨−1⟩ given by D_pst of the Weil pairing and the de Rham cup product.
+- For an elliptic fibre over F=K_v the degree-zero and degree-one ranks over their respective realisation fields are (1,2), the degree-one jumps are 0,1 and the pairing-target jump is 1. In a symplectic de Rham basis (e,f), ω(e,f)=1 and ω(f,e)=−1 in that line, including over ℚ₂; a symmetric pairing or the opposite Tate twist gives the wrong values.
+- For two elliptic components over F the ranks are (2,4), H⁰_dR=F×F and F¹H¹_dR has F-dimension 2. The two nontrivial idempotents (1,0) and (0,1) separate the components; replacing the algebra by F loses this decomposition.
+- For an elliptic curve over a quadratic field L/F, viewed as an F-scheme by structural composition, the ranks are again (2,4) and F¹ has F-dimension 2, but H⁰_dR=L has no nontrivial idempotent. After a finite extension E/F splitting L, E⊗_F L=E×E. This distinguishes the field algebra from F×F despite the identical ranks and tests finite-extension compatibility.
 
 *Needs:* §1.1; §1.2; §2.1; TauCetiRoadmap.CohomologyComparisons §§6.4–6.7, naturality, cup products, trace-normalised Tate line and first Chern classes; TauCetiRoadmap.MordellLawrenceVenkatesh §§2.1–2.4 and the model-free polarised-fibre contract.
 
@@ -972,9 +982,10 @@ The API includes the following facts.
 - For a constant family of positive relative dimension the period domain has positive dimension, the period map is constant and condition (i) fails; the criterion does not apply, consistently with the locus being all of Y(K_v).
 - `H_{y₀}(K_v)^LV_{X,S}` is a union of orbits of the automorphism group of the pair (H⁰_pst, H¹_pst) of the base fibre (§2.3).
 - Local finiteness alone does not imply global finiteness on a non-proper curve: for the Legendre family over P¹ ∖ {0, 1, ∞} over ℚₚ, the infinite set {`p^{−n}`} meets every closed disc in finitely many points (properness of Y excludes this behaviour).
+- P¹(F) is covered by the two compact coordinate discs |t|≤1 and |1/t|≤1, with the second containing infinity. For the extension of |p|=p⁻¹, the points p⁻ⁿ in A¹(F) have |p⁻ⁿ|=pⁿ, unbounded, so no finite union of compact coordinate discs covers them all. Local étale charts exist in both cases; proper compactness supplies the finite cover.
 - Condition (i) holds under full monodromy by the model-free extension of MordellLawrenceVenkatesh §3.18; (ii) is proved type by type in Layers 7 and 8.
 
-*Needs:* §6.2; §6.1; §5.2; §5.3; §2.1; TauCetiRoadmap.MordellLawrenceVenkatesh §§3.1–3.19 and the model-free period-map contract.
+*Needs:* §6.2; §6.1; §5.2; §5.3; §2.1; TauCetiRoadmap.HeightsRationalPointsAndObstructions §§2.3a, 2.11, proper local-point compactness and product topology, and §2.11a, local étale charts; TauCetiRoadmap.MordellLawrenceVenkatesh §§3.1–3.19 and the model-free period-map contract.
 
 ### 6.4 Interpolating pairs are S-good
 
@@ -1081,12 +1092,12 @@ The API includes the following facts.
 
 - Type (a): an index-≥4 point with GSp-irreducible fibre, for S-good global pairs.
 - Type (b): an index-≥4 point with an isotropic local subrepresentation of average Hodge–Tate weight ≥ 1/2.
-- Type (c): `#{ψ : [G_v : G_{w_ψ}] < 4}` ≥ dim A/(d + 1); for the split algebra of functions on a finite G_v-set Σ this is size_v(Σ) ≥ 1/(d + 1).
-- `Y(K_v)^LV_{X,S,(a)}`.
-- `Y(K_v)^LV_{X,(b)}`.
-- `Y(K_v)^LV_{X,(c)}`.
+- Type (c): `#{ψ : [G_v : G_{w_ψ}] < 4}` ≥ dim A/(d + 1); for the split algebra of functions on a nonempty finite G_v-set Σ this is size_v(Σ) ≥ 1/(d + 1).
+- A point y_v belongs to `Y(K_v)^LV_{X,S,(a)}` exactly when there exists an S-good global pair of type (a) whose restriction to G_v is isomorphic to the symplectic étale pair of X_y_v.
+- A point y_v belongs to `Y(K_v)^LV_{X,(b)}` exactly when its actual local symplectic étale fibre pair is of type (b).
+- A point y_v belongs to `Y(K_v)^LV_{X,(c)}` exactly when its degree-zero étale coefficient algebra is of type (c), with the family's relative dimension d in the inequality.
 - At a self-conjugate v, `Y(K_v)^LV_{X,S}` lies in the union of the three loci.
-- For split A, type (c) is size_v(Σ_A) ≥ 1/(d + 1) (§8.1).
+- For nonzero split A, type (c) is size_v(Σ_A) ≥ 1/(d + 1) (§8.1); #Σ_A=dim A>0 justifies division.
 
 **Checks.**
 
@@ -1096,6 +1107,8 @@ The API includes the following facts.
 - For V_ψ = `H¹_ét(E_{K̄}, ℚₚ)` of an elliptic curve with good ordinary reduction at w_ψ (rank two, so every line is isotropic), the unramified line is `G_{w_ψ}`-stable of Hodge–Tate weight 0 and gives nothing; type (b) needs a stable line of weight 1, which exists only when the extension of the weight-1 quotient by the unramified line splits, as for curves with complex multiplication split at w_ψ.
 - Points of type (a) are handled by Faltings' lemma and dimension counts, type (b) by the general-position lemma, and type (c) by choosing the family (Layers 7 and 8).
 - The ordinary elliptic-line check concerns the fibre condition only: an index-one coefficient point still gives neither type (a) nor type (b), whatever its Hodge weights.
+- For a constant elliptic family with Y′=Y, every coefficient point has index 1, so the local loci (a) and (b) are empty and (c) is all of Y(K_v): their membership values at every local point are false, false, true.
+- For the zero algebra A=ℚₚ^∅ and d=1, Σ_A=∅ and the cardinality definition of type (c) reads 0≥0, which is true. size_v(∅) is undefined; assigning it 0 would instead give the false inequality 0≥1/2. Only the cardinality definition applies to this algebra.
 
 *Needs:* §6.8; §6.1; §6.2; §6.7; §1.2.
 
@@ -1105,7 +1118,7 @@ For A=ℚₚ the unique coefficient point has index 1 and forces type (c), never
 
 ### Dependencies
 
-TauCetiRoadmap.WeightsInEtaleCohomology Layer R34.1 and §R34.2, geometric-Frobenius purity and integrality; TauCetiRoadmap.PadicHodgeTheory §§3.3–3.5, 5.1, 5.3, 7.3, 8.1–8.2 and the horizontal-period contract; TauCetiRoadmap.ArithmeticGaloisRepresentations §§1.3, 1.12, 2.1, induction, Mackey and local restriction; TauCetiRoadmap.MordellLawrenceVenkatesh §§1.2, 1.4–1.16; TauCetiRoadmap.MordellLawrenceVenkatesh §§2.1–2.4 and the model-free polarised-fibre contract; TauCetiRoadmap.MordellLawrenceVenkatesh §§3.1–3.19 and the model-free period-map contract; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.8 and the characteristic-zero local-fibre contract. Internal dependencies are specified in each subsection.
+TauCetiRoadmap.HeightsRationalPointsAndObstructions §§2.3a, 2.11, proper local-point compactness and product topology, and §2.11a, local étale charts; TauCetiRoadmap.WeightsInEtaleCohomology Layer R34.1 and §R34.2, geometric-Frobenius purity and integrality; TauCetiRoadmap.PadicHodgeTheory §§3.3–3.5, 5.1, 5.3, 7.3, 8.1–8.2 and the horizontal-period contract; TauCetiRoadmap.ArithmeticGaloisRepresentations §§1.3, 1.12, 2.1, induction, Mackey and local restriction; TauCetiRoadmap.MordellLawrenceVenkatesh §§1.2, 1.4–1.16; TauCetiRoadmap.MordellLawrenceVenkatesh §§2.1–2.4 and the model-free polarised-fibre contract; TauCetiRoadmap.MordellLawrenceVenkatesh §§3.1–3.19 and the model-free period-map contract; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.8 and the characteristic-zero local-fibre contract. Internal dependencies are specified in each subsection.
 
 ## Layer 7: Finiteness for points of types (a) and (b)
 
@@ -1185,9 +1198,19 @@ S suitable; any abelian-by-finite family of positive relative dimension, with th
 
 A proof can proceed as follows. A type-(a) global interpolant supplies a geometric coefficient point of index≥4. The interpolation algebra isomorphism carries it to a geometric point over one closed component y′_i, with a chosen residue-field embedding. Its corresponding period factor belongs to the type-(a) factor locus. The finite product decomposition and a finite union of proper closed factor conditions give non-density.
 
+The API includes the following facts.
+
+- The type-(a) period locus is contained in the full S-good period locus of §6.3.
+- If suitable sets satisfy S⊆S′, the type-(a) period locus for S is contained in that for S′.
+- The locus is invariant under the ℚₚ-points of the automorphism group of the unfiltered symplectic pair (H⁰_pst,H¹_pst): an automorphism identifies the corresponding retwists, so the same global interpolant works.
+- On a disc as in §5.3, the period image of the type-(a) local locus is contained in this period locus.
+- The type-(a) period locus has proper Zariski closure in H_y₀, without a full-monodromy assumption.
+
 **Checks.**
 
 - If every closed point of `Y′_{y₀}` has residue degree < 4 over K_v, the set is empty: type (a) needs an index-≥4 point.
+- Let L/K have degree 4 and a place w with [L_w:K_v]=4, and let E/K be a non-CM elliptic curve. For the constant family over Y′=Y×_K Spec L with elliptic fibre E_L, choose suitable S. The global fibre pair is S-good and its coefficient fibre H¹_ét(E_L,ℚₚ) is GSp-irreducible. Its actual Hodge point therefore belongs to the type-(a) period locus: the index is 4, d=1 and the cohomology ranks over K_v are (4,8). The degree-one constant elliptic family instead has index 1 and empty type-(a) locus. Thus the locus is not defined to be empty, and these tests require no full monodromy.
+- At (d,r)=(1,4), the scalar-quotiented orbit bound is 1·(2·1+1)=3 while the Weil-restricted period domain has dimension 4·1·2/2=4. At r=3 both numbers are 3, so this dimension argument gives no non-density there. A definition giving the whole domain at r=4 or extending this strict inequality to r=3 fails these tests.
 
 *Needs:* §7.1; §7.3; §5.4; §5.2; §6.9; TauCetiRoadmap.PadicHodgeTheory §§3.3–3.5, 5.1, 5.3, 7.3, 8.1–8.2 and the horizontal-period contract.
 
@@ -1235,9 +1258,17 @@ Use the pair `M^{≤1}(Φ)`, with its algebra and pairing, and require the inter
 
 A proof can proceed as follows. A type-(b) local pair gives a residue-field factor of degree≥4 with an isotropic subrepresentation of average jump≥1/2. Apply the factor non-density result to its D_pH subobject and use the product decomposition of the domain. No global finiteness theorem enters this step.
 
+The API includes the following facts.
+
+- The type-(b) period locus is invariant under the ℚₚ-points of the automorphism group of the unfiltered symplectic pair (H⁰_pst,H¹_pst), since its action identifies retwists and preserves the witnessing local pair.
+- On a disc as in §5.3, the period image of Y(K_v)^LV_X,(b) is contained in this period locus, using the actual local étale fibre pair as witness.
+- The type-(b) period locus has proper Zariski closure in H_y₀; no full-monodromy or global S-good condition is required.
+
 **Checks.**
 
-- No global input is used: type (b) is a condition on local representations, and the argument is explicit linear algebra.
+- For Y′=Y, the coefficient set has one point of index 1<4, so the period locus is empty even if the elliptic fibre has a stable weight-one line. The index condition cannot be omitted.
+- Take F=ℚ₅, L/F unramified of degree 4 and the constant family with finite base Y_F×_F Spec L and elliptic fibre E_L for E:y²=x³−x. Here #E(𝔽₅)=8 gives the unit trace a₅=−2, so the reduction is ordinary; the CM field ℚ(i) splits at 5. The two CM summands of H¹_ét have jumps 0 and 1. The weight-one line W is stable, has dimension 1 and is isotropic, with dim F¹D_dR(W)=1 and average jump 1≥1/2. Since the coefficient index is 4, the actual Hodge point belongs to the type-(b) period locus. Replacing this locus by the empty set would lose this point.
+- In the common symplectic plane obtained in §7.6 after splitting a degree-four factor, consider the four filtration lines span(e), span(f), span(e+f), span(e+2f). Their pairwise intersection dimensions are 0; a nonzero isotropic W would be a line and would need intersection dimension at least 1 with every one. The first two already force W=span(e)=span(f), impossible. Thus any period point with this tuple is excluded. Choosing a different line W for each embedding would incorrectly give four intersections of dimension 1.
 
 *Needs:* §7.6; §5.4; §5.2; §6.9; TauCetiRoadmap.PadicHodgeTheory §§3.3–3.5, 5.1, 5.3, 7.3, 8.1–8.2 and the horizontal-period contract.
 
@@ -1269,7 +1300,7 @@ TauCetiRoadmap.MordellLawrenceVenkatesh §§1.2, 1.4–1.16; TauCetiRoadmap.Padi
 
 ### 8.1 The proportion of points in small G_v-orbits
 
-Let K_v be a finite extension of ℚₚ and Σ a non-empty finite set with a continuous action of G_v. Then size_v(Σ) := #{x ∈ Σ : the G_v-orbit of x has fewer than 4 elements}/#Σ ∈ [0, 1]. If f: Σ → Σ′ is G_v-equivariant is surjective and all its fibres have the same positive cardinality, then size_v(Σ) ≤ size_v(Σ′). For a split algebra A in G_v-representations and d > 0, A is of type (c) (§6.9) exactly when size_v(Σ_A) ≥ 1/(d + 1).
+Let K_v be a finite extension of ℚₚ and Σ a non-empty finite set with a continuous action of G_v. Then size_v(Σ) := #{x ∈ Σ : the G_v-orbit of x has fewer than 4 elements}/#Σ ∈ [0, 1]. If f: Σ → Σ′ is G_v-equivariant and surjective and all its fibres have the same positive cardinality, then size_v(Σ) ≤ size_v(Σ′). For a nonzero split algebra A in G_v-representations and d > 0, A is of type (c) (§6.9) exactly when size_v(Σ_A) ≥ 1/(d + 1); here #Σ_A=dim A>0.
 
 The threshold 4 replaces the threshold 8 of Lawrence–Venkatesh Definition 5.2 (Betts–Stix footnote 22); the result MordellLawrenceVenkatesh Layer LV.7 and the four-isotropic-Lagrangian contract states the Lawrence–Venkatesh version for unramified sets and Frobenius orbits, while here Σ is any finite continuous G_v-set.
 
@@ -1282,18 +1313,19 @@ The API includes the following facts.
 - size_v(Σ) = #{x : #(G_v·x) < 4}/#Σ.
 - 0 ≤ size_v(Σ) ≤ 1.
 - size_v(Σ) ≤ size_v(Σ′) for an equivariant map surjection with fibres of equal positive size.
-- For split A, type (c) iff size_v(Σ_A) ≥ 1/(d + 1).
-- size_v of a disjoint union is the weighted average of the sizes.
+- For nonzero split A, type (c) iff size_v(Σ_A) ≥ 1/(d + 1).
+- For two nonempty finite G_v-sets, size_v of their disjoint union is the weighted average of their proportions, with weights their cardinalities. An empty summand contributes zero to the numerator and denominator counts without requiring size_v(∅).
 
 **Checks.**
 
 - For a trivial action, size_v(Σ) = 1.
 - For Σ = `Hom_{K_v}(L, K̄_v)` with [L : K_v] = 5, size_v(Σ) = 0.
 - For Σ = `Hom_{K_v}(L₃, K̄_v)` ⊔ `Hom_{K_v}(L₄, K̄_v)` with [L₃ : K_v] = 3, [L₄ : K_v] = 4, size_v(Σ) = 3/7.
-- The monotonicity needs equal fibres: for Σ a set of four fixed points mapping to the fixed point of Σ′ = {a fixed point} ⊔ {an orbit of size 4}, size_v(Σ) = 1 > size_v(Σ′) = 1/5, the fibres having sizes 4, 0, 0, 0, 0.
+- The monotonicity needs equal fibres even for surjections: use the unramified quotient G_v→C₄ and take Σ to be four fixed points disjoint union a regular C₄-orbit, and Σ′ one fixed point disjoint union that orbit. Collapse the four fixed points and use the identity on the regular orbit. The five fibre sizes are 4,1,1,1,1, all positive, but size_v(Σ)=4/8=1/2>1/5=size_v(Σ′).
 - For the regular S₃-set, the single orbit has size 6 and the proportion is 0; for the S₃-set S₃/C₂ it is 1 because all three points have orbit size 3. The threshold concerns the whole acting group, not a chosen generator.
+- For A=0=ℚₚ^∅ and d=1, type (c) is the true inequality 0≥0, while size_v(Σ_A) is undefined (totalising 0/0 to 0 would give 0≥1/2, false). For A=ℚₚ the two valid forms are 1≥1/2 and 1≥1/2; for the function algebra on a transitive five-point set they are 0≥5/2 and 0≥1/2, both false. Family fibres are nonempty because Y′→Y is a covering.
 
-*Needs:* Mathlib `MulAction.orbit`; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.7 and the four-isotropic-Lagrangian contract; §6.9.
+*Needs:* Mathlib `MulAction.orbit`; TauCetiRoadmap.LocalFieldsRamification Layers 2 and 4, the unramified quotient for the C₄ Check; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.7 and the four-isotropic-Lagrangian contract; §6.9.
 
 ### 8.2 Counting the quadratic and cubic extensions of a local field
 
@@ -1305,11 +1337,20 @@ The count is of subfields of a fixed algebraic closure; conjugate non-Galois ext
 
 A proof can proceed as follows. An index-m subgroup determines a transitive action on m points. If the full local Galois group has d=[F:ℚₚ]+2 generators, there are at most (m!)^d homomorphisms to S_m, so finitely many such subgroups and a bound depending only on d. For p≥5 use the tame relation to count three quadratic and four cubic subfields. Count conjugate nonnormal cubic subgroups separately.
 
+The API includes the following facts.
+
+- The set of embedded subfields of degrees 2 or 3 is finite, so n_v is a natural number counting fields, rather than isomorphism classes.
+- Any K_v-isomorphism between two algebraic closures induces a degree-preserving bijection on these subfields; hence n_v is independent of the chosen closure.
+- Writing t=[K_v:ℚₚ]+2, one has n_v≤2^t+6^t, by counting homomorphisms to S₂ and S₃. Thus the bound depends only on the local degree.
+- For residue characteristic at least 5, the quadratic and cubic counts are 3 and 4, giving n_v=7. The four cubic fields are all normal when q_v≡1 modulo 3, and otherwise consist of the unramified cubic and three conjugate nonnormal fields.
+
 **Checks.**
 
-- For K_v = ℚ₅ (q_v = 5 ≡ 2 mod 3): ℚ₅(√2), ℚ₅(√5), ℚ₅(√10), the unramified cubic and the three fields `ℚ₅(ζ_3^j 5^{1/3})`.
+- For ℚ₅ the quadratic fields are ℚ₅(√2), ℚ₅(√5), ℚ₅(√10); the cubic fields are the unramified one and ℚ₅(ζ₃ʲ·5^(1/3)), j=0,1,2. Thus n_v=3+1+3=7. The three ramified cubics are conjugate but distinct, so counting cubic isomorphism classes instead gives 2 and the wrong total 3+2=5.
+- For ℚ₇ the three quadratic fields and the four normal cubic fields give n_v=3+4=7. Since ℚ₇ contains μ₃, Kummer theory gives (3²−1)/(3−1)=4 cubic fields, one unramified and three totally ramified; this differs from the normality pattern over ℚ₅.
+- Over ℚ₂ there are eight square classes, represented by ±1,±2,±5,±10; omitting the square class 1 leaves seven quadratic fields. Cubic extensions are tame: besides the unramified cubic there are the three distinct conjugates ℚ₂(ζ₃ʲ·2^(1/3)), j=0,1,2. Hence n_v=7+4=11, excluding an extension of the formula n_v=7 to residue characteristic 2. The square-class input is LocalFieldsRamification Layer 1; the cubic count uses its Layers 2 and 4.
 
-*Needs:* TauCetiRoadmap.LocalFieldsRamification Layers 0, 2 and 4; Mathlib `IntermediateField`; TauCetiRoadmap.LocalGaloisGroups Layer 7.
+*Needs:* TauCetiRoadmap.LocalFieldsRamification Layers 0–2 and 4, finite extensions, power classes, unramified extensions and the tame quotient; TauCetiRoadmap.ClassFieldTheory Layer 5, the Kummer correspondence for the quadratic and normal cubic Checks; Mathlib `IntermediateField`; TauCetiRoadmap.LocalGaloisGroups Layer 7.
 
 ### 8.3 Few torsion classes lie in small G_v-orbits
 
@@ -1380,7 +1421,7 @@ Over ℚ₅ the quadratic subfields are ℚ₅(√2), ℚ₅(√5), ℚ₅(√10
 
 ### Dependencies
 
-Mathlib `MulAction.orbit`; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.7 and the four-isotropic-Lagrangian contract; TauCetiRoadmap.LocalFieldsRamification Layers 0, 2 and 4; Mathlib `IntermediateField`; TauCetiRoadmap.MordellLawrenceVenkatesh §§0.4–0.5, 0.9–0.12, 0.18; TauCetiRoadmap.EtaleDualityAndPerverseSheaves §§0.3, 0.5, curve H¹ duality and equivariant alternating cup product; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.8 and the characteristic-zero local-fibre contract; Mathlib `hasSum_zeta_four`; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.10, Kodaira–Parshin full monodromy; Mathlib `Nat.forall_exists_prime_gt_and_eq_mod`; TauCetiRoadmap.MordellLawrenceVenkatesh §§1.2, 1.4–1.16; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.11, admissible primes and the Mordell theorem; TauCetiRoadmap.Chebotarev Layer 10. Internal dependencies are specified in each subsection.
+TauCetiRoadmap.LocalFieldsRamification Layer 1, power classes and the dyadic square-class count; TauCetiRoadmap.ClassFieldTheory Layer 5, Kummer theory; Mathlib `MulAction.orbit`; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.7 and the four-isotropic-Lagrangian contract; TauCetiRoadmap.LocalFieldsRamification Layers 0, 2 and 4; Mathlib `IntermediateField`; TauCetiRoadmap.MordellLawrenceVenkatesh §§0.4–0.5, 0.9–0.12, 0.18; TauCetiRoadmap.EtaleDualityAndPerverseSheaves §§0.3, 0.5, curve H¹ duality and equivariant alternating cup product; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.8 and the characteristic-zero local-fibre contract; Mathlib `hasSum_zeta_four`; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.10, Kodaira–Parshin full monodromy; Mathlib `Nat.forall_exists_prime_gt_and_eq_mod`; TauCetiRoadmap.MordellLawrenceVenkatesh §§1.2, 1.4–1.16; TauCetiRoadmap.MordellLawrenceVenkatesh Layer LV.11, admissible primes and the Mordell theorem; TauCetiRoadmap.Chebotarev Layer 10. Internal dependencies are specified in each subsection.
 
 ## Layer 9: Finiteness of the Lawrence–Venkatesh locus and Theorems A and B
 
