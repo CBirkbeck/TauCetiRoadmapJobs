@@ -58,6 +58,8 @@ Consumers are not suppliers, so nothing else changes.
 - **Missing sources.** No `needs-references.toml` was produced: every text needed was readable.
 - **Style.** No LaTeX delimiters and no machine paths in the README. The `$` in `sources.toml` titles are the recorded bibliographic titles.
 
+- **Re-run on the committed head.** All five repairs were checked again in the README: §5.3 and §5.10 require κ0 > 2; β is defined on I[[Γ_M]]; KLZ17 uses the arXiv v6 pages; LZ14 is cited and has a References entry; RankOneConverse appears nowhere. The checks gave the same results: elaboration exit 0 with no output (3.6 s); `depcheck: 56 roadmaps, 664 edges, 0 problem(s)`; resolver "Lean names found nowhere: None."
+
 ## Adversarial pass (changed statements)
 
 | Statement | Instances | Values | Result / change |
