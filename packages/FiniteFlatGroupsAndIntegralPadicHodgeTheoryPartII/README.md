@@ -4,18 +4,18 @@
 
 ## Scope and ownership
 
-This roadmap owns the Zink coefficient construction, invariant frame-pair and tilde algebra, contravariant complete-local display comparison, first-order transport, tensor horizontality, very-good embeddings and their display consequences, adapted deformation and recognition theorems, hyperspecial tensor interfaces, lattice specialization, and the central ordinary lift. FiniteFlatGroupsAndIntegralPadicHodgeTheory stops at its §§R07.4.21 and R07.4.25 height-one classification and integral comparisons; it does not supply the tensor-display deformation theorem developed here. The perfect-ring comparison here extends its §R07.2.10 perfect-field classification to finite projective modules over arbitrary perfect rings.
+This roadmap owns the Zink coefficient construction, invariant frame-pair and tilde algebra, contravariant complete-local display comparison, first-order transport, tensor horizontality, very-good embeddings and their display consequences, adapted deformation and recognition theorems, hyperspecial tensor interfaces, lattice specialization, and the central ordinary lift. FiniteFlatGroupsAndIntegralPadicHodgeTheory stops at its §§R07.4.21 and R07.4.25 height-one classification and integral comparisons; it does not supply the tensor-display deformation theorem developed here. The perfect-ring comparison here extends its §R07.2.10 perfect-field classification to finite projective modules over arbitrary perfect rings. PELModuli §M2.15 owns displays over W(R) and Zink’s BT equivalence with formal p-divisible groups in its stated range. This roadmap owns the Ŵ(R)-frame Dieudonné displays of §0.11 and the anti-equivalence of §0.13 for all p-divisible groups; it uses no comparison along Ŵ(R)→W(R).
 
 The following ownership boundaries determine the direction of supply.
 
 - Finite flat groups, p-divisible groups, Tate modules, perfect-field classification, smooth-base de Jong theory, Breuil–Kisin coefficient rings and their height-one and all-weight functors are stated by FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.1–R07.1.22, R07.2.10–R07.2.12, R07.2.27 and R07.4.1–R07.4.25. They have no second construction here.
 - The crystalline Dieudonné crystal and Grothendieck–Messing equivalence are stated by AbelianSchemesAndArithmeticModuli §A4.CR.7.2. CrystallineCohomology §CR.7.1 supplies the general coefficient calculus. This distinction also fixes ownership when a declaration uses a crystalline namespace.
 - General Grassmannians belong to ModularCurves §0G; torsor descent, Hartogs, formal schemes, deformation functors and smooth lifting belong to SchemeAndStackFoundations §§0.6, 1.15, 2.3 and 4.1–4.12. Their tensor-display applications are the targets here.
-- ReductiveGroupsPartII §§RG2.1.5, RG2.3.3, RG2.3.5 and RG2.4.3 owns Kottwitz maps, parahorics, full fixers, classical lattice chains, paired lattices, scalar enlargements and affine Weyl combinatorics. In particular the ordinary-Levi fixer intersection is assigned to that owner through the exact contract below. The retained classical existence theorems add very-goodness to those algebraic lattice constructions.
+- ReductiveGroupsPartII §§RG2.1.5, RG2.3.3, RG2.3.5 and RG2.4.3 owns Kottwitz maps, parahorics, full fixers, classical lattice-chain stabilizers, tame hyperspecial lattices and affine Weyl combinatorics. In particular the ordinary-Levi fixer intersection is assigned to that owner through the exact contract below. Layer 3 owns the type-A and Dᴴ scalar enlargements and paired trace/different lattice constructions needed to prove its very-good existence theorems.
 - GeometricSatakeAndFusion GS0, “Witt affine flags and components” and “Bounded admissible affine flag loci”, owns the integral Grassmannian, component labels and v-sheaf local models. Its scheme-representative, normality, good-embedding and tangent extensions used here have the exact supplier contract below. They are geometric inputs, rather than consequences of a smooth integral fixer.
 - VectorBundlesAndIsocrystals VB4, “Integral group torsors and Frobenius”, states the integral scheme tensor–torsor dictionary. PadicHodgeTheory §5.5 states G-isocrystals, B(G), Newton and Kottwitz invariants, general perfect-residue admissibility and the period-torsor class theorem. The rational tensor-isomorphism torsor for two admissible, conjugate filtrations is a consequence of that theorem and is consumed here. These constructions are not repeated.
-- The Fontaine PD envelope and period-ring comparisons belong to DerivedDeRhamCohomology §PD.7 and PadicPeriodRings §3. This roadmap evaluates them on the specified relative geometric cover. The relative p-divisible comparison and its constants are a separate crystalline supplier extension.
-- ShimuraVarieties §7.0i owns absolute Hodge tensors and their rational family realizations. The integral realization extension is in its exact contract below; the local p-divisible comparison is owned here. LubinTateFormalModulesAndQuasiCanonicalLifts owns the independent formal-module, reciprocity and quasi-canonical directions, in its LT.0–LT.6 layers.
+- The Fontaine PD envelope and absolute period-ring structures belong to DerivedDeRhamCohomology §PD.7 and PadicPeriodRings §§3 and 4.1. This roadmap constructs the relative-cover Frobenius and filtration in §5.2 and the relative p-divisible comparison in §5.5. Only the relative ring constants theorem is a supplier extension.
+- ShimuraVarieties §7.0i owns absolute Hodge tensors and their rational family realizations. The rational absolute-Hodge crystalline comparison is the extension in its exact contract below; the local integral p-divisible comparison is owned here. Integral moduli spaces and global tensor extension on them are downstream applications. LubinTateFormalModulesAndQuasiCanonicalLifts owns the independent formal-module, reciprocity and quasi-canonical directions, in its LT.0–LT.6 layers.
 
 The ambient Witt operations, divided powers, fraction-field isocrystals, module tensor and dual constructions are already in the library. Mathlib's isocrystal class does not impose finite dimensionality by itself. The pinned libraries have no p-divisible-group/display comparison, integral parahoric local-model carrier, very-good embedding or tensor-adapted deformation carrier on which this roadmap's headline theorems can be stated. `Suggested.lean` therefore records those missing signatures in its module documentation, without scalar or matrix substitutes. The README specifies the complete mathematical library.
 
@@ -41,10 +41,6 @@ For Kottwitz use positive valuation: κ_Gm(p)=1. Write I for inertia and Γ for 
 
 Use `WittVector` in `Mathlib/RingTheory/WittVector/Defs.lean`, `WittVector.frobenius` and `WittVector.frobeniusEquiv` in `Mathlib/RingTheory/WittVector/Frobenius.lean`, and `WittVector.verschiebung` in `Mathlib/RingTheory/WittVector/Verschiebung.lean`. The ring operations require a prime parameter and a commutative coefficient ring; the Frobenius equivalence requires characteristic p and perfectness. Verschiebung is additive. Its coordinate-shift and injectivity results do not equip a mixed-characteristic complete-local ring with a Zink subring. For perfect-field rational coefficients use `WittVector.Isocrystal` in `Mathlib/RingTheory/WittVector/Isocrystal.lean`, together with explicit finiteness when needed. Use `DividedPowers` in `Mathlib/RingTheory/DividedPowers/Basic.lean` on an explicit ideal. Its scalar axiom is γ_n(ax)=aⁿγ_n(x), with the ideal-membership hypotheses retained. All polynomial, ideal, finite-projective, tensor, dual and matrix operations have their native meanings.
 
-### From Tau Ceti
-
-`TauCeti.WittVector.continuous_frobenius` and `TauCeti.WittVector.continuous_frobeniusEquiv_symm`, in `TauCeti/RingTheory/WittVector/Frobenius.lean`, give continuity for the specified (p,[ϖ])-adic topology, the inverse requiring a perfect characteristic-p coefficient ring. `TauCeti.WittVector.completeSpace_and_t2Space_adicTopology_span_p_teichmuller`, in `TauCeti/RingTheory/WittVector/Complete.lean`, gives both completeness and Hausdorffness for perfect characteristic-p R complete along ϖ. These inputs apply to the perfect coefficient comparisons, and do not substitute for the mixed-characteristic Zink construction.
-
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
 Consume §§R07.1.6–R07.1.8 and R07.1.22 for the p-divisible carrier, dual Tate pairing, Tate module and generic-fibre full faithfulness; §§R07.2.10–R07.2.12 for contravariant perfect-field Dieudonné theory and its rank-one normalizations; §R07.2.27 for the smooth-base equivalence. Consume §§R07.3.2–R07.3.3 and R07.4.13 for weak admissibility and its realization, with the variance adapter of PadicHodgeTheory §5.5. Consume §R07.4.1 for 𝔖, S and their scalar maps; §§R07.4.16–R07.4.21 for the all-weight tensor functor, height-one category and group equivalence; and §R07.4.25 for the integral φ*𝔐/u, φ*𝔐/E and PD comparisons. The all-weight functor's whole-ring nonexactness is retained. Punctured exactness is the additional application of Layer 4 here.
@@ -59,33 +55,37 @@ Section A4.CR.7.2 supplies the contravariant crystalline Dieudonné crystal, eva
 
 Section CR.7.1 supplies finite locally free coefficient evaluation, tensor and dual compatibility, completed crystal systems and their connection; Layer CR.1 supplies the common crystalline sites. Rationalization retains the integral system, and a connection on an arbitrary nonproper formal base is not silently algebraized.
 
-What CrystallineCohomology must provide (gap:relative-bt-comparison-and-constants): For the normal Noetherian integral p-complete p-torsion-free W(k)-algebras R with R/p≠0 and geometric cover R̄ of Kisin17 §1.1.15, prove the natural p-divisible comparison T_pH⊗A_cris(R)→Hom(D(H)(A_cris(R)),A_cris(R)) becomes an isomorphism after t-inversion and that the φ-fixed Fil⁰ constants in A_cris(R)[1/t] are ℚ_p, with filtration, tensor, Galois and specialization compatibility.
-
-This contract concerns the relative period ring with its geometric cover and the indicated normal-base comparison range; it makes no assertion about an arbitrary PD envelope (Kisin17, (1.1.16) and Lemma 1.1.17, pp.10–11; Kisin17 lines 449–463).
-
 ### From TauCetiRoadmap.DerivedDeRhamCohomology and TauCetiRoadmap.PadicPeriodRings
 
-DerivedDeRhamCohomology §PD.7 supplies the completed Fontaine envelope and its comparison `Crystalline.fontaineEnvelope_periodPDEnvelope`; PadicPeriodRings §3 supplies its period-ring, Frobenius and filtration interfaces. Layer 5 supplies the normal geometric-cover input on which they are evaluated. The absolute perfectoid specialization and the relative cover ring remain distinguished.
+DerivedDeRhamCohomology §PD.7 supplies the completed Fontaine envelope and its comparison `Crystalline.fontaineEnvelope_periodPDEnvelope`; PadicPeriodRings §§3 and 4.1 supplies the O_C envelope, Frobenius and filtered crystalline period rings. The relative Frobenius and PD filtration are constructed in §5.2. Layer 5 supplies the normal geometric-cover input on which they are evaluated. The absolute perfectoid specialization and the relative cover ring remain distinguished.
+
+What PadicPeriodRings must provide (gap:relative-crystalline-constants): For a normal Noetherian integral p-complete p-torsion-free W(k)-algebra R with R/p≠0 and the normal geometric cover of Kisin17 §1.1.15, the relative envelope of DerivedDeRhamCohomology §PD.7, with its induced Witt Frobenius and PD filtration extended by defining Filʳ(A_cris(R)[1/t]) as the union of t⁻ⁿFilʳ⁺ⁿA_cris(R) over n≥0, satisfies the identity that the φ-fixed part of Fil⁰ A_cris(R)[1/t] equals ℚ_p.
+
+This is the relative extension of PadicPeriodRings §4.3’s fundamental identity, a statement about rings independent of p-divisible groups (Kisin17, proof of Lemma 1.1.17, p.11; Kisin17 lines 474–476).
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations and TauCetiRoadmap.ModularCurves
 
 SchemeAndStackFoundations §0.6 supplies reflexive extension and Hartogs; §§1.15 and 2.3 supplies geometric and fppf torsors and their common class carrier; §§4.1–4.4 supplies smooth lifting, marked deformation functors and prorepresentability; §§4.7–4.8 supplies formal completion; §4.12 supplies flattening with its stated hypotheses. ModularCurves §0G supplies the relative Grassmannian and universal direct summand. These inputs do not identify an unproved tensor-isomorphism functor with a torsor.
 
-What SchemeAndStackFoundations must provide (gap:normal-base-integral-section-detection): For a flat normal complete local O_Ĕ-algebra R arising as a completed local ring of the finite-type local models here, prove that s∈R[1/p] belongs to R whenever every continuous O_Ĕ-map R→O_K to a finite extension sends s into O_K, and deduce the corresponding coordinatewise p-divisibility criterion in Ŵ(R).
+What SchemeAndStackFoundations must provide (gap:normal-base-integral-section-detection): For a Noetherian normal complete local domain R flat over a complete mixed-characteristic DVR O with perfect residue k, and with residue field finite over k, an element s∈R[1/p] belongs to R if and only if ξ(s)∈O_K for every continuous local O-map ξ:R→O_K with K/Frac(O) finite.
 
-What SchemeAndStackFoundations must provide (gap:tensor-isomorphism-flatness-descent): Establish the finite-presentation and completion hypotheses and the flatness descent theorem for the tensor-isomorphism scheme over Ŵ(R_G) used here, from its specified DVR pullbacks and the separating family of Witt-valued point maps, independently of integral tensor-section extension.
+What SchemeAndStackFoundations must provide (gap:tensor-isomorphism-flatness-descent): Let A be a henselian local ring, X→Spec A locally of finite presentation, x a point of its closed fibre, and ℱ an O_X-module of finite type; the functor on pointed local A-schemes requiring ℱ after base change to be flat at every closed-fibre point above x is represented by a closed subscheme of Spec A, finitely presented when ℱ is finitely presented, so local maps A→A_i with intersection of kernels zero and flat pullbacks at these points imply ℱ is A-flat at x (RG71, I, Theorem 4.1.2, p.27).
 
-What SchemeAndStackFoundations must provide (gap:formal-dvr-point-detection): Supply the reduced p-torsion-free complete-local lifting and DVR-point detection statements used in Hoff Lemma 2.35 and Theorem 2.36, together with separatedness and contraction of the completed ideals in the adapted factorization argument.
+What SchemeAndStackFoundations must provide (gap:formal-dvr-point-detection): For a reduced p-torsion-free complete Noetherian local O_Ĕ-algebra R with residue k, the continuous local maps R→O_K for finite K/Ĕ are jointly injective; for any Noetherian ring B complete for (T) with T∈Jac(B), every ideal I is T-adically closed, ∩ₙ(I+TⁿB)=I, and if B/I is p-torsion-free then I=B∩I[1/p].
 
-The first two contracts are distinct steps in KP18, Corollary 3.2.11 and proof, p.173; KP18 lines 2170–2188. The third is the formal-geometry input in Hoff23, Lemma 2.35 and Theorem 2.36, pp.28–29; Hoff23 lines 1323–1346. In particular pointwise integrality is not an assertion of flatness for every finite-presentation scheme.
+What SchemeAndStackFoundations must provide (gap:punctured-disc-torsor-patching): Let A=O[[u]] for a complete mixed-characteristic DVR O and let f∈A be a non-zero-divisor with (p,f) primary to the closed point; for a smooth affine A-group scheme, a torsor on D(f) and a torsor on the f-adic completion of A[1/p], with an isomorphism over its punctured f-adic completion, glue uniquely up to unique compatible isomorphism to a torsor on Spec A minus the closed point, by formal gluing on D(p) followed by Zariski descent (KP18, proof of Lemma 3.2.6, p.171; KP18 lines 2114–2122).
+
+The normal-section contract is the bounded-function theorem of deJong95, Proposition 7.3.6, p.88 (deJong95 lines 2952–2954), applied as in KP18 lines 2176–2178. Flatness uses the local henselian flattening functor, rather than arbitrary separating maps of rings (RG71, I, Theorem 4.1.2, p.27; KP18 lines 2185–2188). Point detection is used in Hoff23 lines 1371–1372; ideal contraction and T-adic separatedness are the complete-local inputs of the factorization argument (KP18, proof of Proposition 3.2.17, pp.175–177). The local-model lifting step of Hoff23 Lemma 2.35 is proved in §4.13, using local-model geometry.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
-Section RG2.1.5 supplies κ_G and π₁; §§RG2.3.3 and RG2.3.5 supplies parahorics, the Kottwitz-kernel fixer characterization, lattice-chain stabilizer schemes, tame hyperspecial realization, endomorphism cutouts, paired trace/different lattices, and the type-A and Dᴴ scalar-enlargement constructions. Section RG2.3.7 supplies connected finite-field Lang vanishing. Section RG2.4.3 supplies translations, affine Weyl length, dominant order and admissible sets. The pairing after restriction of scalars is Σ Tr(δ_i⁻¹ψ_i), with δ_i generating the different.
+Section RG2.1.5 supplies κ_G and π₁; §§RG2.3.3 and RG2.3.5 supplies parahorics, the Kottwitz-kernel fixer characterization, lattice-chain stabilizer schemes and tame hyperspecial realization; §RG2.2.4 (*division-algebra-building*) supplies O_D-chain stabilizers. Section RG2.3.7 supplies connected finite-field Lang vanishing. Section RG2.4.3 supplies translations, affine Weyl length, dominant order and admissible sets. The trace/different pairing and scalar enlargements used with these lattices are constructed in §§3.15–3.17.
 
-What ReductiveGroupsPartII must provide (gap:full-fixer-cutting-tensors): For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, including the ordinary-Levi fixer intersections and the classical scalar enlargements of §RG2.3.5.
+What ReductiveGroupsPartII must provide (gap:full-fixer-cutting-tensors): For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, for every faithful finite-free realization of these fixers; the ordinary-Levi intersection is the separate contract below.
 
-What ReductiveGroupsPartII must provide (gap:parahoric-disc-purity-and-components): For a connected parahoric 𝒫 over a complete mixed-characteristic DVR O with perfect residue, extend every 𝒫-torsor on Spec O[[u]] minus its closed point, deduce triviality for algebraically closed residue, and supply the separate component reduction and E-adic patching needed for a smooth full fixer.
+What ReductiveGroupsPartII must provide (gap:parahoric-disc-purity): For a complete discretely valued field E with perfect residue field k of characteristic p and a parahoric group scheme 𝒫/O_E, every 𝒫-torsor on U=Spec O_E[[z]] minus its closed point extends to Spec O_E[[z]] (Anschuetz22, Proposition 10.3, p.33; Anschuetz22 line 1388).
+
+What ReductiveGroupsPartII must provide (gap:full-fixer-component-reduction): For a complete DVR O with residue field k and a smooth affine O-group 𝒢 with connected reductive generic fibre and quotient sheaf 𝒢/𝒢°≅i_*Γ, where i:Spec k→Spec O and Γ/k is finite étale, a 𝒢-torsor on U=Spec O[[u]] minus its closed point whose induced Γ-torsor on Spec k((u)) is trivial reduces to a 𝒢°-torsor (KP18, (3.2.7)–(3.2.8), p.172; KP18 lines 2127–2135).
 
 What ReductiveGroupsPartII must provide (gap:ordinary-levi-full-fixer): Under the ordinary σ-straight normalization and the assumption that the ambient full fixer equals its connected parahoric, prove that the Newton-Levi model satisfies 𝒨(W)=M(K₀)∩𝒢(W) and that its full fixer equals its connected parahoric.
 
@@ -95,7 +95,13 @@ The purity ring is the one in Anschuetz22, §10 and Proposition 10.3, author p.3
 
 Consume GS0, “Witt affine flags and components”, for geometric component labels π₁(G)_I and residual Frobenius; “Bounded admissible affine flag loci” supplies the integral v-sheaf local model, admissible special fibre and functoriality. Connected parahoric and full-fixer components are different quotients. For G_m, the component of p is 1, and the standard lattice has component 0.
 
-What GeometricSatakeAndFusion must provide (gap:scheme-local-model-geometry): Extend GS0's integral v-sheaf local models to the flat normal scheme representatives, reduced special fibres, generic flag varieties, specified good minuscule Hodge immersions, adjoint and restriction comparisons and classical curve-spanned tangent statements required under KPZ26 Standard assumptions 3.1.5 and the hypotheses of Theorems 3.2.15, 3.3.25, 4.1.6 and 4.4.3.
+What GeometricSatakeAndFusion must provide (gap:scheme-local-model-representative): For a local-model triple over a p-adic field F satisfying p>2, local abelian type, and essentially tame classical adjoint factors without triality, the normalized flat projective scheme Mloc of KPZ26 (3.2.13), with reduced special fibre and generic flag variety, represents the intrinsic integral v-sheaf local model; retain its functorial adjoint and restriction-of-scalars comparisons (KPZ26, Theorem 3.2.15 and §3.4.2, pp.20 and 28; KPZ26 line 895).
+
+What GeometricSatakeAndFusion must provide (gap:scheme-local-model-hodge-immersion): For a quasi-tame local-model triple with G=∏ᵢ Res_(K_i/F) H_i, each H_i tamely split and classical, p odd, and a Hodge embedding factoring as KPZ26 (3.3.24), a finite repeated sum admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).
+
+What GeometricSatakeAndFusion must provide (gap:schubert-curve-spanned-tangents): For a mod-p abelian-type pair (G,μ) over k with p∤|π₁(Gder)| and no Dᴴ factors, every tangent space of the affine Schubert variety S_μ is spanned by tangent images of smooth formal k[[t]]-curves through that point (KPZ26, Theorem 4.1.6, p.31; KPZ26 lines 1363–1365).
+
+What GeometricSatakeAndFusion must provide (gap:local-model-curve-spanned-tangents): Under the standard assumptions p>2, local abelian type and essentially tame classical adjoint factors, if 𝒢≅Res_(O_K/O_F) ℋ for ℋ/O_K reductive, the tangent spaces of the special-fibre local model are spanned by smooth formal curves at every point of the minimal stratum, and at every point when there are no Dᴴ factors (KPZ26, Theorem 4.4.3, p.47; KPZ26 lines 2049–2055).
 
 The general geometry is consumed with the hypotheses of those four theorems; normality is not deduced from the immersion. The nonexceptional very-good theorem below also keeps its R-smooth centralizer and prime-to-p fundamental-group assumptions (KPZ26, §§3.1–3.4 and 4.1–4.4, pp.15–47; KPZ26 lines 717, 895, 1125, 1363 and 2049).
 
@@ -109,7 +115,7 @@ PadicHodgeTheory §5.5 supplies tensor G-isocrystals, B(G), ν_b, κ(b), admissi
 
 Section 7.0i supplies absolute Hodge tensors on abelian varieties and the rational compatible realizations of their flat families. For the Hodge-type application below the geometric family and its rational tensor system are inputs.
 
-What ShimuraVarieties must provide (gap:integral-hodge-realization-extension): Extend §7.0i's rational absolute-Hodge tensor realizations to the specified Hodge-type integral models with integral generic étale and de Rham tensors and their residual crystalline specialization, keeping the prime-to-p realizations separate from the local p-divisible comparison.
+What ShimuraVarieties must provide (gap:integral-hodge-realization-extension): For a complete mixed-characteristic DVR O_K with perfect residue field and an abelian scheme A/O_K, prove that the rational étale and de Rham realizations of an absolute Hodge tensor of A_K agree under the crystalline–de Rham comparison for H¹(A_K), with mixed tensors, duals and Tate twists; neither the existence of an integral moduli model nor integral tensor extension is an input to this rational comparison.
 
 The local interface uses vanHoften24 §§3.1.5–3.1.7, pp.27–28, and Kisin17 proof of Proposition 1.3.9, p.21; it makes no global component-surjectivity claim. In the nonordinary Levi application the specified M-valued filtration and very-good embedding are explicit hypotheses, rather than consequences of ordinary lifting.
 
@@ -200,7 +206,13 @@ A proof can proceed as follows. Use the PD Witt logarithm for nilpotent divided 
 
 ### 0.5 Perfect-ring height-one shtuka comparison
 
-Over a perfect F̄_p-algebra R, a finite projective W(R)-module M with F:σ*M→M whose linearization is an isomorphism after inverting p and satisfies pM⊂F(σ*M)⊂M determines V uniquely with FV=VF=p, and conversely. The resulting anti-equivalence with p-divisible groups is the perfect-ring comparison of Layer 0. This is the height-one local GL_n-shtuka interface; the general local-shtuka moduli problem remains with its owner. (vanHoften24, Example 2.2.10, p.14; vanHoften24 line 614; Zhu17, §3.2 and proof of Proposition 3.11, pp.461–463; Zhu17 line 2408).
+Over a perfect F_p-algebra R, a finite projective W(R)-module M with F:σ*M→M whose linearization is an isomorphism after inverting p and satisfies pM⊂F(σ*M)⊂M determines V uniquely with FV=VF=p, and conversely. The resulting anti-equivalence with p-divisible groups is the perfect-ring comparison of Layer 0. This is the height-one local GL_n-shtuka interface; the general local-shtuka moduli problem remains with its owner. (Lau14, Lemma 2.4, p.2216; Lau14 line 639; for the F̄_p instances, vanHoften24, Example 2.2.10, p.14; vanHoften24 line 614; Zhu17, §3.2 and proof of Proposition 3.11, pp.461–463; Zhu17 line 2408).
+
+**Checks.**
+
+- For R=F_p and M=Z_p with F=p, the formula gives V=1 and FV=VF=p.
+- With F=1 on the same module, V=p; interchanging these two cases reverses the étale and multiplicative normalizations.
+- The zero module has the unique F,V pair; on F_p×F_p a module of ranks (0,1) remains finite projective without a global rank-one basis.
 
 A proof can proceed as follows. Use that W(R) is p-torsion-free for perfect R and that σ is invertible. Define V=F⁻¹p on the rational module and use the height bound for its integral image, with the correct semilinearity. Invoke the existing perfect-ring anti-equivalence.
 
@@ -329,7 +341,7 @@ A proof can proceed as follows. Use a normal decomposition to recover Φ and Φ�
 
 ### 0.12 Base change of displays
 
-A strict frame map sends (M,M₁,Ψ) to the base-changed pair and Ψ′ obtained using the inverse strict base-change isomorphism for τ. This is functorial on display morphisms and preserves the residual marking. For R→R′ complete local maps inducing perfect residue-field maps, apply the induced strict Zink frame map. (Hoff23, §1.1, pp.8–10; Hoff23 line 614; KPZ26, §5.1.19, p.52; KPZ26 line 2060).
+A strict frame map sends (M,M₁,Ψ) to the base-changed pair and Ψ′ obtained using the inverse strict base-change isomorphism for τ. This is functorial on display morphisms and preserves the residual marking. For R→R′ complete local maps inducing perfect residue-field maps, apply the induced strict Zink frame map. (Hoff23, §1.1, pp.8–10; Hoff23 line 368; KPZ26, §5.1.19, p.52; KPZ26 line 2282).
 
 The API includes the following facts.
 
@@ -438,7 +450,7 @@ A proof can proceed as follows. Use I′=ker(Ŵ(R/a)→W(k)→k) and the chosen 
 
 ### 1.4 Canonical rational Witt section
 
-For a complete local p-torsion-free W(k)-algebra A with m_Aᴺ⊂pA for some N, and a marked display deformation, construct the unique Frobenius-equivariant rational section D(H₀)[1/p]→M_A[1/p] reducing to the residual identity. Convergence is measured using the lattice neighborhoods pⁿŴ(A) inside the localization, as corrected in KPZ26; do not use a topology defined by powers of the unit ideal (p) in Ŵ(A)[1/p]. Its specialization to A=O_K yields the filtered K-vector-space identification. (KP18, Lemma 3.1.17 and §3.1.18, pp.169–170; KP18 line 2011; KPZ26, §7.3.1(2), pp.85–86; KPZ26 line 2060).
+For a complete local p-torsion-free W(k)-algebra A with m_Aᴺ⊂pA for some N, and a marked display deformation, construct the unique Frobenius-equivariant rational section D(H₀)[1/p]→M_A[1/p] reducing to the residual identity. Convergence is measured using the lattice neighborhoods pⁿŴ(A) inside the localization, using this integral lattice; do not use a topology defined by powers of the unit ideal (p) in Ŵ(A)[1/p]. Its specialization to A=O_K yields the filtered K-vector-space identification. (KP18, Lemma 3.1.17 and §3.1.18, pp.169–170; KP18 line 2011; KPZ26, §7.3.1(2), pp.85–86; KPZ26 line 3790).
 
 The API includes the following facts.
 
@@ -459,7 +471,7 @@ A proof can proceed as follows. Iterate Frobenius on the maximal-ideal error and
 
 ### 1.5 Constancy of a display to first order
 
-In a marked module trivialization as above, call Ψ constant modulo a precisely when Ψ̄∘c=Ψ₀⊗1 as maps from `M̃_{0,1}⊗Ŵ(R/a)` to M₀⊗Ŵ(R/a). For an O_Ĕ-local model use a_G=m_G²+π_E R_G and first base change both ends of c along R_G/a→R_G/a_G. Constancy is relative to this marked trivialization; it is not literal equality of arbitrary normal-decomposition matrices. (KPZ26, §5.1.19, p.52 and (5.2.2), pp.53–54; KPZ26 line 2282; Hoff23, Remark 2.37, p.29; Hoff23 line 614).
+In a marked module trivialization as above, call Ψ constant modulo a precisely when Ψ̄∘c=Ψ₀⊗1 as maps from `M̃_{0,1}⊗Ŵ(R/a)` to M₀⊗Ŵ(R/a). For an O_Ĕ-local model use a_G=m_G²+π_E R_G and first base change both ends of c along R_G/a→R_G/a_G. Constancy is relative to this marked trivialization; it is not literal equality of arbitrary normal-decomposition matrices. (KPZ26, §5.1.19, p.52 and (5.2.2), pp.53–54; KPZ26 line 2282; Hoff23, Remark 2.37, p.29; Hoff23 line 1378).
 
 The API includes the following facts.
 
@@ -493,7 +505,7 @@ For surjections S→R of complete Noetherian local rings with perfect residue fi
 
 A proof can proceed as follows. Apply relative-frame crystalline descent, then recover the Hodge lift from the absolute frame pair. Use the imported crystalline site and GM functor, with the contravariant convention checked on the two rank-one displays.
 
-*Needs:* §0.13 (displays and p-divisible groups); §1.2 (tilde factorization through an enlarged frame ideal); AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1; AbelianSchemesAndArithmeticModuli §A4.CR.7.2.
+*Needs:* §0.13 (displays and p-divisible groups); §1.2 (tilde factorization through an enlarged frame ideal); AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1.
 
 
 ### 1.8 Universal display with rigid first order
@@ -516,6 +528,8 @@ Layer 0; ModularCurves §0G; SchemeAndStackFoundations §§4.1–4.4 and 4.7–4
 
 
 ## Layer 2: integral tensors and very good embeddings
+
+### 2.0 Rational σ-centralizer
 
 For G/K₀ and b∈G(K₀), use the rational σ-centralizer functor J_b(A)={g∈G(K₀⊗ℚ_p A) : g⁻¹bσ(g)=b} on commutative ℚ_p-algebras A. Its multiplication and inverse come from G, and J_b(ℚ_p) is exactly the tensor-preserving automorphism group of the G-isocrystal. Construct its affine reductive ℚ_p-model and identify it as an inner form of the Newton Levi for basic b in that Levi (KZ25, §3.4.4, p.27; KZ25 line 1183). Its source is the fixed G-isocrystal and its target is an affine ℚ_p-group scheme.
 
@@ -548,9 +562,9 @@ The API includes the following facts.
 - If the integral fixer is disconnected, identifying it with its connected parahoric is rejected.
 - The identity in Λ⊗Λ∨ is fixed by every automorphism; treating Λ∨ as another covariant copy fails.
 
-A proof can proceed as follows. Use the scheme stabilizer rather than only its Z_p-points. Import the group scheme and local-model carriers; package their specified embedding as input. The scheme-local-model extension is part of the exact supplier contracts, so this definition does not assert that every parahoric datum has a good embedding.
+A proof can proceed as follows. Use the scheme stabilizer rather than only its Z_p-points. Import the group scheme and local-model carriers; package their specified embedding as input. The scheme-local-model representative and Hodge-immersion extensions are part of the exact supplier contracts, so this definition does not assert that every parahoric datum has a good embedding.
 
-*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; SchemeAndStackFoundations §§1.15 and 2.3; PadicHodgeTheory §5.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.10–R07.2.12; the scheme-local-model supplier contract.
+*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; SchemeAndStackFoundations §§1.15 and 2.3; PadicHodgeTheory §5.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.10–R07.2.12; gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion; gap:full-fixer-cutting-tensors.
 
 
 ### 2.2 Height-one tensor filtration lattice
@@ -576,7 +590,7 @@ A proof can proceed as follows. Use the elementary modification associated with 
 
 ### 2.3 Completed orbit deformation ring
 
-For the supplied good embedding and x, let R_G be the completed local ring of `Mloc_{𝒢,μ}` at x after completion of the reflex field’s maximal unramified base to residue k. Let R_E be the corresponding completed Grassmannian ring. The embedding gives a continuous local surjection R_E→R_G; R_G is flat over O_Ĕ, normal, and its generic fibre is the prescribed orbit closure. The universal pair on R_E restricts to a pair on R_G. This construction assumes the named local-model geometric inputs and does not prove them by flatness of a universal group. (KPZ26, §5.2.1, pp.52–53; KPZ26 line 2298; KZ25, §3.2.3, p.23; KZ25 line 998).
+For the supplied good embedding and x, let R_G be the completed local ring of `Mloc_{𝒢,μ}` at x after completion of the reflex field’s maximal unramified base to residue k. Let R_E be the corresponding completed Grassmannian ring. The embedding gives a continuous local surjection R_E→R_G; R_G is flat over O_Ĕ and normal, R_G[1/p] is regular, and its filtration map lands in the prescribed generic flag variety. The universal pair on R_E restricts to a pair on R_G. This construction assumes the named local-model geometric inputs and does not prove them by flatness of a universal group. (KPZ26, §5.2.1, pp.52–53; KPZ26 line 2298; KZ25, §§3.2.2–3.2.3, p.22; KZ25 lines 984–990).
 
 The API includes the following facts.
 
@@ -586,24 +600,24 @@ The API includes the following facts.
 
 **Checks.**
 
-- For 𝒢=GL(Λ) and the full Grassmannian, R_G=R_E.
+- For 𝒢=GL(Λ) and the full Grassmannian, R_G=R_E; at h=2,d=1 this is O_Ĕ[[t]]. Its generic filtration is the graph line spanned by e₁+te₂, rather than the whole projective flag variety before completion.
 - A filtration outside the local-model closed subscheme does not correspond to a map from R_G.
 - For ramified E the base is O_Ĕ, not W(k) with the ramification silently removed.
 
-A proof can proceed as follows. Take the indicated completed local rings and pull back the universal summand. Obtain flatness, normality and the orbit description from the local-model input, which the scheme-local-model supplier contract specifies; formal completion alone does not establish these properties.
+A proof can proceed as follows. Take the indicated completed local rings and pull back the universal summand. Obtain flatness, normality and the orbit description from gap:scheme-local-model-representative, and the specified immersion from gap:scheme-local-model-hodge-immersion; formal completion alone does not establish these properties.
 
-*Needs:* §2.1 (integral tensor and local-model datum); §1.1 (universal marked filtration pair); SchemeAndStackFoundations §§4.1–4.4 and 4.7–4.8; ModularCurves §0G; the scheme-local-model supplier contract.
+*Needs:* §2.1 (integral tensor and local-model datum); §1.1 (universal marked filtration pair); SchemeAndStackFoundations §§4.1–4.4 and 4.7–4.8; ModularCurves §0G; gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion.
 
 
 ### 2.4 Integral tensors on the filtration lattice
 
-For a good integral Hodge embedding and the height-one lattice F associated with y∈Mloc(O_K), the rational cutting tensors lie in F^⊗ and their isomorphism scheme with (Λ,s_a) over 𝔖 is a trivial 𝒢-torsor, provided the full-fixer/component compatibility and the punctured-spectrum parahoric purity input hold. Under the older KP18 setup one may instead assume the explicit vanishing H¹(Spec𝔖\{(p,u)},𝒢)=1 together with its stated scalar and connected-generic-fibre conditions. The modern route uses Anschütz Proposition10.3 in its actual coefficient-ring generality. (KP18, Lemma 3.2.6 and proof, pp.171–172; KP18 line 2107; Hoff23, Lemma 2.7, pp.18–19; Hoff23 line 857; Anschuetz22, Proposition 10.3, p.33; Anschuetz22 line 1388).
+For a good integral Hodge embedding and the height-one lattice F associated with y∈Mloc(O_K), the rational cutting tensors lie in F^⊗ and their isomorphism scheme with (Λ,s_a) over 𝔖 is a trivial 𝒢-torsor, provided the full-fixer/component compatibility and the punctured-spectrum parahoric purity input hold. Under the older KP18 setup one may instead assume the explicit vanishing H¹(Spec𝔖\{(p,u)},𝒢°)=1 together with its scalar condition and the component reduction of KP18 (3.2.7)–(3.2.8). The modern route uses Anschütz Proposition10.3 in its actual coefficient-ring generality. (KP18, Lemma 3.2.6 and proof, pp.171–172; KP18 line 2107; Hoff23, Lemma 2.7, pp.18–19; Hoff23 line 857; Anschuetz22, Proposition 10.3, p.33; Anschuetz22 line 1388).
 
-A proof can proceed as follows. Construct the G-structure on F[1/E] by its inclusion in the original module. On the E-adic completion of 𝔖[1/p], use the generic cocharacter and its Henselian coefficient section to obtain a second reduction. Glue on the punctured spectrum by the precise Beauville–Laszlo theorem, extend using parahoric purity, and identify the resulting tensor lattice by Hartogs. Trivialize the smooth torsor using the algebraically closed residue field. Purity has the exact supplier contract stated above, not an elementary consequence of reductivity.
+A proof can proceed as follows. Construct the G-structure on F[1/E] by its inclusion in the original module. On the E-adic completion of 𝔖[1/p], use the generic cocharacter and its Henselian coefficient section to obtain a second reduction. Glue on the punctured spectrum by the precise Beauville–Laszlo theorem, extend using parahoric purity, and identify the resulting tensor lattice by Hartogs. For the full fixer first kill its component torsor on Spec k((u)), which is already trivial on D(E); then extend the connected parahoric torsor by purity. Trivialize the extended smooth torsor using the algebraically closed residue field. Purity has the exact supplier contract stated above, not an elementary consequence of reductivity.
 
 Distinguish integrality, torsor representability, torsor extension and existence of an integral frame as separate assertions. No theorem here changes an arbitrary full fixer to its connected parahoric.
 
-*Needs:* §2.2 (height-one tensor filtration lattice); SchemeAndStackFoundations §§1.15 and 2.3; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; the parahoric purity supplier contract.
+*Needs:* §2.2 (height-one tensor filtration lattice); SchemeAndStackFoundations §§1.15 and 2.3; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; gap:parahoric-disc-purity; gap:full-fixer-component-reduction; gap:punctured-disc-torsor-patching.
 
 
 ### 2.5 Breuil–Kisin to tilde lattice comparison
@@ -621,11 +635,15 @@ Check both rank-one filtrations; do not invert φ(E([π])) inside Ŵ(O_K).
 
 For the universal R_G-pair of a good embedding, the rational tensors s̃_a=φ*(s_a⊗1), viewed using j[1/p], are integral in M̃₁^⊗. Their tensor-isomorphism scheme `T=Isom_{s̃,s}(M̃₁,Λ⊗Ŵ(R_G))` is a trivial 𝒢-torsor, independent of the chosen cutting family. For Z_p coefficients the displayed φ* is harmless notation; for a nontrivial unramified coefficient ring it must remain. The result uses normality of R_G and the named pointwise integrality/flatness descent inputs. (KPZ26, §5.2.1, p.53; KPZ26 line 2317; KP18, Lemma 3.2.6, Lemma 3.2.9 and Corollary 3.2.11, pp.171–173; KP18 line 2170).
 
-A proof can proceed as follows. At the special point use `M̃_{0,1}=gΛ_W` for g∈G(W[1/p]); g fixes the tensors, proving special-fibre integrality. At every DVR-valued point use the preceding lattice comparison. Apply the explicit normal-base integral-section criterion and the pointwise-flatness criterion of KP18, with the hypotheses in the exact supplier contracts. Establish the smooth torsor, then trivialize it over the complete local Zink ring.
+A proof can proceed as follows. At the special point use `M̃_{0,1}=gΛ_W` for g∈G(W[1/p]); g fixes the tensors, proving special-fibre integrality. At every DVR-valued point use the preceding lattice comparison. Apply normal-section detection to the universal rational polynomials in the ghost coordinates of a Witt vector divided by p; their integral values give coordinatewise p-divisibility in Ŵ(R_G), using its inverse-limit description (KP18 lines 2179–2184). Iterate this for the bounded denominators of the finite tensor family. Prove T is finitely presented by its finite tensor equations inside GL_h; Ŵ(R_G) is henselian local by its Artin-limit Zink construction. Choose a point x of its nonempty closed fibre. For every local point map Ŵ(R_G)→Ŵ(O_K), the pullback T is a trivial 𝒢-torsor. The henselian flattening functor at x is a finitely presented closed subscheme; its ideal vanishes under every point map, hence is zero by joint injectivity. Thus T is flat at x. The local ring O_(T,x) is faithfully flat over the local base and gives a point of T; the isomorphism 𝒢×T≅T×T then makes T a 𝒢-torsor by fpqc descent. Trivialize over the henselian local base with algebraically closed residue.
 
-Separate the normality argument from the pointwise flatness argument; an integral tensor at closed points alone is not a proof of a flat torsor.
+**Checks.**
 
-*Needs:* §2.3 (completed orbit deformation ring); §2.5 (breuil–kisin to tilde lattice comparison); SchemeAndStackFoundations §§1.15 and 2.3; §0.10 (comparison with frobenius pullback); SchemeAndStackFoundations §§0.6 and 4.12; the separate normal-section and flatness supplier contracts.
+- In R=O_K, f=p has f/p=1 in Ŵ(R); for f=1 the same putative division has first coefficient 1/p∉O_K and is rejected.
+- In R=ℤ_p[[x]], s=x/p fails the integrality test at x↦π in O_K with π²=p, since v_K(π/p)=−1. The point x↦0 alone would miss it.
+- For empty tensors T=GL_h is already flat, and its local flattening ideal is zero. The field map ℤ_p→ℚ_p is injective and makes Spec(ℤ_p/p) empty and flat, but is not a local map of pointed local schemes; it cannot be used as a flatness detector at the closed point.
+
+*Needs:* §2.3 (completed orbit deformation ring); §2.5 (breuil–kisin to tilde lattice comparison); SchemeAndStackFoundations §§1.15 and 2.3; §0.10 (comparison with frobenius pullback); SchemeAndStackFoundations §§0.6 and 4.12; gap:normal-base-integral-section-detection; gap:tensor-isomorphism-flatness-descent.
 
 
 ### 2.7 First-order tensor horizontality
@@ -750,7 +768,7 @@ The API includes the following facts.
 
 A proof can proceed as follows. Use a determining segment to define the property. Segment independence is proved in §3.12, after the isomorphic-sum criterion.
 
-*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §2.10 (very good integral hodge embedding); ReductiveGroupsPartII §RG2.3.5.
+*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §2.10 (very good integral hodge embedding).
 
 
 ### Examples
@@ -804,9 +822,9 @@ A proof can proceed as follows. The product universal pair decomposes; τ and c 
 
 ### 3.5 Very-goodness for the generic neutral closure
 
-Let 𝒢 be smooth affine of finite type over Z_p, with reductive generic neutral group G°. Assume its schematic closure 𝒢⁰ in 𝒢 is a smooth stabilizer scheme, μ factors through G°, and both induced embeddings have the supplied good local-model properties, over their respective reflex bases. If c for 𝒢 preserves a cutting family, the induced 𝒢⁰ embedding is very good. 𝒢⁰ denotes this smooth schematic closure, not an unproved equality with the fibrewise identity component. (KPZ26, §5.3.19–Proposition 5.3.20, pp.61–62; KPZ26 line 2671).
+Let 𝒢 be smooth affine of finite type over Z_p, with reductive generic neutral group G°. Assume its schematic closure 𝒢⁰ in 𝒢 is a smooth stabilizer scheme, μ is minuscule on G°, and the induced 𝒢⁰ embedding is good over its reflex base E°; μ factors through G° because G_m is connected. If the canonical c on this local model preserves a family cutting out 𝒢, the induced 𝒢⁰ embedding is very good. 𝒢⁰ denotes this smooth schematic closure, not an unproved equality with the fibrewise identity component. (KPZ26, §5.3.19–Proposition 5.3.20, pp.61–62; KPZ26 lines 2663–2672).
 
-A proof can proceed as follows. Induce the relevant tensor torsors from 𝒢⁰ to 𝒢 and compare them after the possible reflex-field extension. Over the square-zero Zink kernel, smoothness and equality of generic dimensions identify the two congruence kernels. The comparison point therefore lies in 𝒢⁰.
+A proof can proceed as follows. Induce the relevant tensor torsors from 𝒢⁰ to 𝒢 and compare them over the 𝒢⁰ local model after the reflex-field extension. Over the square-zero Zink kernel, smoothness and equality of generic dimensions identify the two congruence kernels. The comparison point therefore lies in 𝒢⁰.
 
 Record the reflex extension E⊂E° and prove the smooth-closure hypothesis separately; do not replace it by generic connectedness.
 
@@ -853,7 +871,7 @@ A proof can proceed as follows. Repeat cotangent detection for the arithmetic-cu
 
 ### 3.10 Isomorphic copies preserve very-goodness
 
-If Λ₁≅Λ₂ intertwines the integral group action and local-model cocharacter types, and the first good representation is very good at x, then so is the second and their diagonal sum. Inductively any finite direct sum of isomorphic copies is very good. This theorem makes no assertion for the diagonal sum of two unrelated very-good representations of the same group. (KPZ26, Lemma 5.3.7(b) and Remark 5.3.8, pp.55–56; KPZ26 line 2356).
+If Λ₁≅Λ₂ intertwines the integral group action and local-model cocharacter types, and the first good representation is very good at x, then so is the second and their diagonal sum. Inductively any finite direct sum of isomorphic copies is very good. This theorem makes no assertion for the diagonal sum of two unrelated very-good representations of the same group. (KPZ26, Lemma 5.3.7(b) and Remark 5.3.8, pp.55–56; KPZ26 lines 2412 and 2439).
 
 A proof can proceed as follows. Transfer tensors across the intertwiner; projections and the intertwiner give the endomorphism equations cutting out the diagonal group inside a product. Apply the centralizer criterion.
 
@@ -864,14 +882,14 @@ A proof can proceed as follows. Transfer tensors across the intertwiner; project
 
 For K/Q_p finite, a central division K-algebra D and m≥1, put G=`Res_{K/Q_p}GL_m(D)`, with standard representation on D^m or its specified opposite-dual representation. Every building point has a right-O_D periodic chain realizing its fixer; for the weight-(0,1) Hodge cocharacter types of this standard representation, the resulting good integral embedding is very good at all points. This includes p|ind(D) for these representations and does not cover arbitrary central quotients or other fundamental-weight representations. (KPZ26, §6.3.1–Proposition 6.3.2 and Remark 6.3.3, pp.70–71; good-embedding input Theorem 3.3.25, p.26; KPZ26 line 3097).
 
-A proof can proceed as follows. Import the lattice-chain stabilizer from RG2.3 and the stated good local-model immersion from the scheme-local-model supplier contract. The standard integral group is cut out by the right-O_D endomorphisms, so apply the endomorphism criterion. The opposite action is the contragredient action, with its matching cocharacter sign.
+A proof can proceed as follows. Import the O_D-chain stabilizer from ReductiveGroupsPartII §RG2.2.4 (*division-algebra-building*) and the stated good local-model immersion from gap:scheme-local-model-hodge-immersion. The standard integral group is cut out by the right-O_D endomorphisms, so apply the endomorphism criterion. The opposite action is the contragredient action, with its matching cocharacter sign.
 
-*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.8 (endomorphism and centralizer criterion); the scheme-local-model supplier contract.
+*Needs:* ReductiveGroupsPartII §RG2.2.4 (*division-algebra-building*); §3.8 (endomorphism and centralizer criterion); gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion.
 
 
 ### 3.12 Independence of the determining segment
 
-Very-goodness of a periodic chain embedding is independent of its determining segment. Adding complete periodic repeats only adds isomorphic representations; removing them uses summand descent. Shifting the segment uses the periodicity isomorphisms of its lattices. All comparisons retain the chain’s transition maps and the induced local-model good embedding. (KPZ26, §5.2.4 and Lemma 5.3.7, pp.54–56; KPZ26 line 2356).
+Very-goodness of a periodic chain embedding is independent of its determining segment. Adding complete periodic repeats only adds isomorphic representations; removing them uses summand descent. Shifting the segment uses the periodicity isomorphisms of its lattices. All comparisons retain the chain’s transition maps and the induced local-model good embedding. (KPZ26, §5.2.4 and Lemma 5.3.7, pp.54–56; KPZ26 lines 2345 and 2412).
 
 A proof can proceed as follows. Place two determining segments in a common finite repeated segment. Use the periodic lattice scaling isomorphisms, then the two established very-goodness criteria. This supplies the segment API promised in Layer 2.
 
@@ -882,11 +900,11 @@ A proof can proceed as follows. Place two determining segments in a common finit
 
 Let (G,{μ},𝒢) satisfy p>2, local abelian type, and essentially tame classical adjoint factors, excluding triality. Assume (NE): no Dᴴ factor and no type-A adjoint factor `Res_{F/Q_p}PGL_m(D)` with p dividing ind(D). Let 𝒢 be the stabilizer of a point generic in its facet, let the centralizer of a maximal Q̆_p-split torus be R-smooth, and let p∤|π₁(Gder)|. Suppose `G⊂G′=∏Res_{F_i/Q_p}H_i` with equal derived groups, each H_i tamely split over F_i, and faithful minuscule representations ρ_i whose total ρ′ and restriction ρ are Hodge embeddings. There is a periodic Z_p-chain L in V such that the extension to GL(L), equivalently `ρ^{⊕r}` on tot(L), is good and very good at every local-model point. (KPZ26, Standard assumptions 3.1.5, p.16; Theorem 6.1.1, pp.62–65; KPZ26 line 2710).
 
-A proof can proceed as follows. Import the tame hyperspecial realization, fixed-point models, lattice-chain stabilizers and total-lattice direct-summand statements supplied by ReductiveGroupsPartII §RG2.3.5. Use the supplied local-model adjoint/restriction comparison and curve-spanned tangent theorem for the split classical model to get very-goodness of the ambient restriction-of-scalars embedding. Cut G out by endomorphisms; use summand descent and unramified detection to obtain the required total representation. The geometric tangent input has the scheme-local-model supplier contract.
+A proof can proceed as follows. Import the tame hyperspecial realization, fixed-point models, lattice-chain stabilizers and total-lattice direct-summand statements supplied by ReductiveGroupsPartII §RG2.3.5. Use the supplied local-model adjoint/restriction comparison and curve-spanned tangent theorem for the split classical model to get very-goodness of the ambient restriction-of-scalars embedding. Cut G out by endomorphisms; use summand descent and unramified detection to obtain the required total representation. The tangent inputs are gap:schubert-curve-spanned-tangents and gap:local-model-curve-spanned-tangents.
 
 Retain the Q̆_p-split-torus R-smoothness hypothesis and every representation condition; do not assert this for all wild type-A central quotients.
 
-*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.7 (curve-spanned tangent criterion); §3.8 (endomorphism and centralizer criterion); §3.6 (very-goodness descends to a summand); §2.12 (unramified coefficient detection); §3.12 (independence of the determining segment); the scheme-local-model supplier contract.
+*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.7 (curve-spanned tangent criterion); §3.8 (endomorphism and centralizer criterion); §3.6 (very-goodness descends to a summand); §2.12 (unramified coefficient detection); §3.12 (independence of the determining segment); gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion; gap:schubert-curve-spanned-tangents; gap:local-model-curve-spanned-tangents.
 
 
 ### 3.14 Very-good Dᴴ PEL representations
@@ -903,25 +921,43 @@ A proof can proceed as follows. Import ReductiveGroupsPartII §RG2.3.5’s GO⁺
 
 The RG supplier owns the algebraic lattice theorem. Verify connected-closure and pairing assumptions before invoking §3.5.
 
-*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.5 (very-goodness for the generic neutral closure); §3.8 (endomorphism and centralizer criterion); §2.12 (unramified coefficient detection); §3.13 (very-good chains in the nonexceptional cases); §3.10 (isomorphic copies preserve very-goodness); §3.6 (very-goodness descends to a summand); the scheme-local-model supplier contract.
+*Needs:* ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.5 (very-goodness for the generic neutral closure); §3.8 (endomorphism and centralizer criterion); §2.12 (unramified coefficient detection); §3.13 (very-good chains in the nonexceptional cases); §3.10 (isomorphic copies preserve very-goodness); §3.6 (very-goodness descends to a summand); gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion; gap:full-fixer-cutting-tensors.
 
 
 ### 3.15 Symplectic type-A central enlargement
 
-Let V=D^m and V̄=(Dopp)^m be the paired standard and opposite-dual modules. On W=V⊕V̄ use the alternating trace form ψ(x,y)=Σ_i Trd_(D×Dopp)/K(ξτ(x_i)y_i), where τ interchanges the two factors, ξ=(a,−a) and a∈K×; retain the supplied integral trace/different normalization. For the group G₁ generated by diagonal GL_m(D) and the two scalar factors, its representation and any s≥1 isomorphic copies have periodic selfdual chains with very-good embeddings. The paired chain has terms `Λ_i⊕(Λ_{−i})^⊥`; an arbitrary term Λ_i⊕Λ_i^⊥ need not form the required indexed selfdual chain. (KPZ26, §6.3.4–Corollary 6.3.5, p.71; KPZ26 line 3133).
+Let V=D^m and V̄=(Dopp)^m be the paired standard and opposite-dual modules. On W=V⊕V̄ use the alternating trace form ψ(x,y)=Σ_i Trd_(D×Dopp)/K(ξτ(x_i)y_i), where τ interchanges the two factors, ξ=(a,−a) and a∈K×; use Tr_(K/ℚ_p)(δ_K⁻¹ψ) for the ℚ_p-pairing, with δ_K generating the different. For the group G₁ generated by diagonal GL_m(D) and the two scalar factors, its representation and any s≥1 isomorphic copies have periodic selfdual chains with very-good embeddings. The paired chain has terms `Λ_i⊕(Λ_{−i})^⊥`; an arbitrary term Λ_i⊕Λ_i^⊥ need not form the required indexed selfdual chain. (KPZ26, §6.3.4–Corollary 6.3.5, p.71; KPZ26 line 3133).
 
-A proof can proceed as follows. Import the involutive trace-pairing and indexed paired lattice chain from RG2.3. The two standard representations give a very-good product embedding by A-standard and the product criterion. Check G₁=(G×G)∩GSp scheme-theoretically. The ambient GSp embedding is very good by the nonexceptional theorem applied to GSp. The union of the product and GSp cutting families is horizontal and defines this intersection. Apply isomorphic sums for s copies. Endomorphism equations alone do not impose the alternating similitude condition.
+The API includes the following facts.
+
+- The formula defines a nondegenerate alternating K-form on V⊕V̄, and its trace/different form is a nondegenerate ℚ_p-form.
+- Prove G₁=(G×G)∩GSp(W,ψ), as subgroup schemes, for the two standard/opposite actions.
+- For an increasing indexed periodic chain (Λ_i) in V, define Λ_i^♯ in V̄ by integral cross-pairing. The terms Λ_i⊕Λ_(−i)^♯ form an increasing periodic chain and their ψ-duals have index −i.
+
+**Checks.**
+
+- For D=K, m=1 and ξ=(1,−1), ψ((v,f),(w,g))=fw−vg. Thus ψ((1,0),(0,1))=−1 and the reverse is 1.
+- For Λ_i=p⁻ⁱℤ_pe, Λ_i^♯=p^iℤ_pf. The correctly indexed pair is p⁻ⁱ(ℤ_pe⊕ℤ_pf), whose dual is its term of index −i. The same-index pairs at i=0,1 are ℤ_p² and p⁻¹ℤ_pe⊕pℤ_pf; neither contains the other.
+- For D=K and m=2, (1,diag(1,2)) lies in GL₂×GL₂ but has cross-pairing multipliers 1 and 2, hence is excluded by the GSp intersection, including at p=3.
+
+A proof can proceed as follows. Construct the form, its cross-dual lattices and the indexed paired chain directly from the supplied O_D-chain and trace duality (KPZ26, §6.3.4 and proof of Corollary 6.3.5, p.71; KPZ26 lines 3115–3145). The two standard representations give a very-good product embedding by A-standard and the product criterion. Check G₁=(G×G)∩GSp scheme-theoretically. The ambient GSp embedding is very good by the nonexceptional theorem applied to GSp. The union of the product and GSp cutting families is horizontal and defines this intersection. Apply isomorphic sums for s copies. Endomorphism equations alone do not impose the alternating similitude condition.
 
 State the inverse indexing explicitly and test duality of the i-th and −i-th terms.
 
-*Needs:* §3.11 (standard wild type-a representations); §3.10 (isomorphic copies preserve very-goodness); §3.8 (endomorphism and centralizer criterion); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.4 (products preserve very-goodness); §3.13 (very-good chains in the nonexceptional cases).
+*Needs:* §3.11 (standard wild type-a representations); §3.10 (isomorphic copies preserve very-goodness); §3.8 (endomorphism and centralizer criterion); ReductiveGroupsPartII §§RG2.2.4 and RG2.3.5; §3.4 (products preserve very-goodness); §3.13 (very-good chains in the nonexceptional cases); gap:full-fixer-cutting-tensors.
 
 
 ### 3.16 Very-good chains with a perfect pairing
 
-In the nonexceptional setting suppose the H_i representations have perfect alternating F_i-pairings ψ_i and ρ(G) lies in the symplectic similitude group for `ψ=Σ_i Tr_{F_i/Q_p}(δ_i⁻¹ψ_i)`, where δ_i generates the different. The chain L can be chosen so that L, its ψ-dual L∨, and the specified paired chain L⊕L∨ have very-good total representations; the paired chain is selfdual with its required indexing. This is a theorem about this controlled dual construction, not a general rule for arbitrary sums of two good representations. (KPZ26, Theorem 6.1.9 and (6.1.10)–(6.1.11), pp.66–67; KPZ26 line 2900).
+In the nonexceptional setting suppose the H_i representations have perfect alternating F_i-pairings ψ_i and ρ(G) lies in the symplectic similitude group for `ψ=Σ_i Tr_{F_i/Q_p}(δ_i⁻¹ψ_i)`, where δ_i generates the different. The chain L can be chosen so that L, its ψ-dual L∨, and the specified paired chain L⊕L∨ have very-good total representations; the paired chain is selfdual with its required indexing. This is a theorem about this controlled dual construction, not a general rule for arbitrary sums of two good representations. (KPZ26, Theorem 6.1.9 and its proof, pp.66–67; KPZ26 line 2900).
 
-A proof can proceed as follows. Import the Γ-stable hyperspecial paired lattices and the tame duality formula (M^Γ)∨=(δ⁻¹M∨)^Γ. Apply very-goodness to the paired ambient construction, then descend to the required summands. Keep the trace/different normalization and the chain duality indexing.
+**Checks.**
+
+- With no field extension and δ=1, the dual of O_K e⊕O_K f for ψ(e,f)=1 is the same lattice; the different formula reduces to ordinary duality.
+- For the tame quadratic L=ℚ_p(π), π²=p, p>2, δ=2π and ψ(e,f)=1, take M=πO_L e⊕O_L f. Then M^Γ=pℤ_pe⊕ℤ_pf has dual ℤ_pe⊕p⁻¹ℤ_pf. The O_L-dual M^♯ is O_L e⊕π⁻¹O_L f, and (δ⁻¹M^♯)^Γ has exactly the same two summands. Omitting δ⁻¹ gives ℤ_pe⊕ℤ_pf and fails.
+- At Λ_i=p⁻ⁱℤ_p² the pairing dual is Λ_(−i); increasing both members of a pair by the same inverse-index rule preserves inclusion, whereas pairing Λ_i with Λ_i^∨ reverses its second inclusion.
+
+A proof can proceed as follows. Starting from the Γ-stable hyperspecial lattices, prove the required tame descent duality: for a finite tame Galois extension L/K, a Γ-stable O_L-lattice M in a semilinear space with a descended nondegenerate K-pairing, (M^Γ)^∨=(δ_(L/K)⁻¹M^♯)^Γ, where ♯ is the O_L-pairing dual and ∨ the O_K-pairing dual. Use trace duality and the integral averaging map, available because the ramification index is prime to p, after separating the unramified part. Construct the paired ambient lattices using this equality (KPZ26, proof of Theorem 6.1.9, p.66; KPZ26 lines 2909–2916). Apply very-goodness to the paired ambient construction, then descend to the required summands. Keep the trace/different normalization and the chain duality indexing.
 
 A lattice dual here is with respect to ψ; it is not the abstract linear-module dual without the pairing identification.
 
@@ -930,11 +966,23 @@ A lattice dual here is with respect to ψ; it is not the abstract linear-module 
 
 ### 3.17 Dᴴ central enlargement with very-good chains
 
-In the orthogonal case use V₀=K² and let K××K× scale its two coordinate lines separately; in the quaternionic case use T₀=D, choose an unramified quadratic L/K embedded in D, and let L× act on the left of T₀. Let G₁′ be the subgroup generated by GO⁺ or GU⁺ and these scalar actions and let σ₁ be its tautological representation. With G₁=Res_K/ℚp G₁′ and with weight-zero and weight-one spaces of equal dimensions, every s≥1 copies of σ₁ at a generic-facet fixer admit a periodic selfdual chain with very-good integral embedding. The enlargement and balanced scalar weights are part of the input; do not replace it by an arbitrary central extension of a Dᴴ group. (KPZ26, §6.2.8–Corollary 6.2.10, pp.69–70; KPZ26 line 3058).
+In the orthogonal case use V₀=K² and let K××K× scale its two coordinate lines separately; in the quaternionic case use T₀=D, choose an unramified quadratic L/K embedded in D, and let L× act on the left of T₀. Let G₁′ be the subgroup generated by GO⁺ or GU⁺ and these scalar actions and let σ₁ be its tautological representation. With G₁=Res_K/ℚp G₁′ and with weight-zero and weight-one spaces of equal dimensions, every s≥1 copies of σ₁ at a generic-facet fixer admit a periodic selfdual chain with very-good integral embedding. Construct this algebraic enlargement as well as its chain; the balanced scalar weights are hypotheses on the Hodge type; do not replace it by an arbitrary central extension of a Dᴴ group. (KPZ26, §6.2.8–Corollary 6.2.10, pp.69–70; KPZ26 line 3058).
 
-A proof can proceed as follows. Use the specified scalar enlargement and classical lattice model from ReductiveGroupsPartII §RG2.3.5. From D-PEL and summand descent obtain the very-good single GO⁺ representation, then use the product criterion for GO⁺×GO⁺. Its scheme-theoretic intersection with the ambient GSp is the required enlarged group. The GSp embedding is very good by the nonexceptional theorem applied to GSp. The union of the two cutting tensor families is horizontal and cuts out the intersection. Descend as in D-PEL and use isomorphic sums for s copies; keep the balanced Hodge weights.
+The API includes the following facts.
 
-*Needs:* §3.14 (very-good dᴴ pel representations); §3.10 (isomorphic copies preserve very-goodness); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.4 (products preserve very-goodness); §3.6 (very-goodness descends to a summand); §3.13 (very-good chains in the nonexceptional cases).
+- In the split orthogonal case, the map GO⁺(V,h)×G_m²→GL(V⊕V) sends (g,a,b) to diag(ag,bg); its scheme image is G₁′.
+- In the quaternionic case left multiplication by L× on D commutes with its right D-action, hence defines the stated action on D⊗_D T.
+- After the unramified quadratic splitting and Morita identification, the quaternionic enlargement becomes the orthogonal one; on selfdual split lattices its integral model is (GO⁺×GO⁺)∩GSp for the cross alternating pairing.
+
+**Checks.**
+
+- In the split case diag(a·1,b·1) has alternating similitude factor ab; a≠b is allowed and is absent from the diagonal copy of GO⁺.
+- For h the standard split form on K²ⁿ, the pair (1,g) with g noncentral in SO(h) belongs to GO⁺×GO⁺, but h(v,gw) is not a scalar multiple of h(v,w), so it fails the GSp intersection.
+- For l∈L×, l(xd)=(lx)d on T₀=D, so the action is balanced on D⊗_D T; right multiplication by a noncentral l would not commute with every right d-action.
+
+A proof can proceed as follows. Build the two scalar actions and the generated groups as in KPZ26 §6.2.8, pp.69–70 (KPZ26 lines 3040–3051); after splitting use the supplied classical selfdual lattices from ReductiveGroupsPartII §RG2.3.5 and prove the displayed scheme intersection. From D-PEL and summand descent obtain the very-good single GO⁺ representation, then use the product criterion for GO⁺×GO⁺. Its scheme-theoretic intersection with the ambient GSp is the required enlarged group. The GSp embedding is very good by the nonexceptional theorem applied to GSp. The union of the two cutting tensor families is horizontal and cuts out the intersection. Descend as in D-PEL and use isomorphic sums for s copies; keep the balanced Hodge weights.
+
+*Needs:* §3.14 (very-good dᴴ pel representations); §3.10 (isomorphic copies preserve very-goodness); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §3.4 (products preserve very-goodness); §3.6 (very-goodness descends to a summand); §3.13 (very-good chains in the nonexceptional cases); gap:full-fixer-cutting-tensors.
 
 
 ### Examples
@@ -944,7 +992,7 @@ For the nodal special fibre xy=0, the two coordinate curves have derivatives e�
 
 ### Dependencies
 
-Layers 0–2; ReductiveGroupsPartII §RG2.3.5; the scheme-local-model tangent and embedding contract.
+Layers 0–2; ReductiveGroupsPartII §RG2.3.5; gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion; gap:schubert-curve-spanned-tangents; gap:local-model-curve-spanned-tangents.
 
 
 ## Layer 4: adapted deformations and integral recognition
@@ -976,7 +1024,7 @@ For a crystalline Γ_K-lattice L and invariant cutting tensors with smooth full 
 
 A proof can proceed as follows. Apply the Dedekind-base integral Tannakian torsor theorem to the exact faithful tensor functor on U, using finite-rank stable pieces of the group coordinate algebra. Kill its connected-parahoric torsor by the stated H¹ vanishing, then extend the tensor frame through the puncture by Hartogs for finite free modules. Tannakian representability and purity have separate exact supplier contracts.
 
-*Needs:* §4.1 (exactness of the integral functor on the punctured disc); §4.2 (the crystalline galois image has trivial kottwitz invariant); SchemeAndStackFoundations §§1.15 and 2.3; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; SchemeAndStackFoundations §0.6; VectorBundlesAndIsocrystals VB4, “Integral group torsors and Frobenius”; the parahoric purity supplier contract.
+*Needs:* §4.1 (exactness of the integral functor on the punctured disc); §4.2 (the crystalline galois image has trivial kottwitz invariant); SchemeAndStackFoundations §§1.15 and 2.3; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; SchemeAndStackFoundations §0.6; VectorBundlesAndIsocrystals VB4, “Integral group torsors and Frobenius”; gap:parahoric-disc-purity.
 
 
 ### 4.4 Integral crystalline and Witt tensor comparison
@@ -1003,7 +1051,7 @@ Export both the generic conjugacy and the integral residual-filtration lift; nei
 
 ### 4.6 A tensor-preserving first-order rigid section
 
-Assume the tensor datum’s local-model acceptability and good-embedding conditions, and very-goodness at x. There is a section Ψ_G:M̃₁≅M of the tensor-frame torsor on Ŵ(R_G) with Ψ̄_Gc=Ψ₀ over Ŵ(R_G/a_G). It extends to a GL section Ψ_E over R_E with the same first-order condition. Its R_G-restriction preserves every invariant tensor. The choices of lifts are not asserted to be canonical. (KZ25, §3.2.5–3.2.6, p.23; KZ25 line 1044; KP18, §3.2.12, pp.173–174 (requires the correction in KPZ26 §5.2 and §7.1.4(1), p.73); KP18 line 2107).
+Assume the tensor datum’s local-model acceptability and good-embedding conditions, and very-goodness at x. There is a section Ψ_G:M̃₁≅M of the tensor-frame torsor on Ŵ(R_G) with Ψ̄_Gc=Ψ₀ over Ŵ(R_G/a_G). It extends to a GL section Ψ_E over R_E with the same first-order condition. Its R_G-restriction preserves every invariant tensor. The choices of lifts are not asserted to be canonical. (KZ25, §3.2.5–3.2.6, p.23; KZ25 line 1044; KP18, §3.2.12, pp.173–174 (requires the correction in KPZ26 §5.2 and §7.1.4(1), p.73); KP18 line 2189).
 
 The API includes the following facts.
 
@@ -1024,7 +1072,7 @@ A proof can proceed as follows. Very-goodness makes Ψ₀c⁻¹ a point of the r
 
 ### 4.7 Hoff’s infinitesimal compatibility condition
 
-For the same good integral embedding, identify the underlying module comparison of Hoff Lemma1.21 over Ŵ(R_G/a_G) with the canonical c used here, after inverting the cocharacter sign convention. Hoff Assumption2.28 is exactly the assertion that this comparison preserves the 𝒢 structures. Under the integral tensor-torsor identification, it is equivalent to very-goodness at x. It is an explicit condition on the embedding, not a consequence of naming a G-display. (Hoff23, Assumption 2.28 and Remark 2.29, pp.24–25; Hoff23 line 1192; KPZ26, Definition 5.2.5, p.54; KPZ26 line 248).
+For the same good integral embedding, identify the underlying module comparison of Hoff Lemma1.21 over Ŵ(R_G/a_G) with the canonical c used here, after inverting the cocharacter sign convention. Hoff Assumption2.28 is exactly the assertion that this comparison preserves the 𝒢 structures. Under the integral tensor-torsor identification, it is equivalent to very-goodness at x. It is an explicit condition on the embedding, not a consequence of naming a G-display. (Hoff23, Assumption 2.28 and Remark 2.29, pp.24–25; Hoff23 line 1192; KPZ26, Definition 5.2.5, p.54; KPZ26 line 2347).
 
 A proof can proceed as follows. Compare both maps through the relative-frame construction, including their first-order quotient and marked module trivialization. Use tensor-family independence to translate compatibility with the structure group into the cutting tensor equations.
 
@@ -1063,7 +1111,7 @@ A proof can proceed as follows. Check the coefficient and Zink-Witt fibre-produc
 
 ### 4.10 Four infinitesimal adaptedness criteria
 
-In the corrected tensor-section setup, let ξ:R_G→O_K and a marked O_K[ε]-display deformation of H_ξ be given. The following are equivalent: one ambient lift representing it factors through R_G; every such ambient lift factors through R_G; the canonical rationally transported tensors lie in Fil⁰; and those transported tensors are integral φ-invariant Fil⁰ tensors. The integral condition includes the marked integral tensor type. The tangent modules satisfying these conditions have rank dim(G/(G∩P_ξ)). (KP18, Lemma 3.2.14, (3.2.16) and proof, pp.174–175; KP18 line 2217).
+Under (A)–(C) of §4.12, with the tensor section of §4.6, let ξ:R_G→O_K and a marked O_K[ε]-display deformation of H_ξ be given. The following are equivalent: one ambient lift representing it factors through R_G; every such ambient lift factors through R_G; the canonical rationally transported tensors lie in Fil⁰; and those transported tensors are integral φ-invariant Fil⁰ tensors. The integral condition includes the marked integral tensor type. The tangent modules satisfying these conditions have rank dim(G/(G∩P_ξ)). (KP18, Lemma 3.2.14, (3.2.16) and proof, pp.174–175; KP18 line 2217).
 
 A proof can proceed as follows. GM represents the deformation by a filtration graph. Strictness of morphisms of weakly admissible tensor modules identifies the rational Fil⁰ constraint with Lie G+Lie P_ξ. Compare the two free O_K tangent modules using ambient universality. Their injection and equal ranks give a finite torsion cokernel, not automatically an isomorphism. Scale ε by a suitable pⁿ to put the class in the image; factorization for the original class follows by the injective map O_K[ε]→O_K[ε], ε↦pⁿε and the closed equations.
 
@@ -1074,20 +1122,20 @@ Do not infer equality of integral tangent lattices from equal ranks alone; retai
 
 ### 4.11 Adapted DVR points factor through the local-model quotient
 
-Under the corrected setup, normality and generic regularity of R_G, every continuous local map ξ:R_E→O_K whose induced deformation is (𝒢,μ_y)-adapted factors through R_G. Thus factorization is independent of the ambient coordinate map inducing the marked deformation. The converse follows by the tensor-preserving display section. The proof requires the named formal-completion, point-detection and separatedness inputs; they are not supplied merely by smoothness of the group. (KP18, Proposition 3.2.17, pp.175–177; KP18 line 2279; KZ25, Proposition 3.2.7, pp.24–25; KZ25 line 1046).
+Under (A)–(C) of §4.12, normality and generic regularity of R_G, every continuous local map ξ:R_E→O_K whose induced deformation is (𝒢,μ_y)-adapted factors through R_G. Thus factorization is independent of the ambient coordinate map inducing the marked deformation. The converse follows by the tensor-preserving display section. The proof requires the named formal-completion, point-detection and separatedness inputs; they are not supplied merely by smoothness of the group. (KP18, Proposition 3.2.17, pp.175–177; KP18 line 2279; KZ25, Proposition 3.2.7, pp.24–25; KZ25 line 1046).
 
 A proof can proceed as follows. After a finite scalar extension and a marked 𝒢 frame change, identify the two O_K filtration points. Interpolate their Ψ maps over O_K[[T]]. Put n_y=ker(y:R_G→O_K) for the chosen reference filtration point. For I_n=ker(R_E→S/Tⁿ), J_G=ker(R_E→R_G), and J_Gⁿ=ker(R_E→(R_G/n_yⁿ)[1/p]), apply the tangent criterion to the indicated common quotients. Over the fraction field the relevant descending finite-dimensional tangent subspaces stabilize. Generic regularity turns their equality into the needed completed-ideal containment. Contract through the p-torsion-free quotients, obtain J_G⊂I_n for every n and use ∩I_n=ker(R_E→S). Specialization at the second endpoint gives factorization.
 
 List precisely where regularity of R_G[1/p], finite-dimensional stabilization, p-torsion-freeness and T-adic separatedness are used.
 
-*Needs:* §4.10 (four infinitesimal adaptedness criteria); §4.9 (interpolation of two tensor displays); §1.6 (the rational section preserves lifted tensors); §2.3 (completed orbit deformation ring); SchemeAndStackFoundations §§4.1–4.4 and 4.7–4.8; ModularCurves §0G; the scheme-local-model supplier contract.
+*Needs:* §4.10 (four infinitesimal adaptedness criteria); §4.9 (interpolation of two tensor displays); §1.6 (the rational section preserves lifted tensors); §2.3 (completed orbit deformation ring); SchemeAndStackFoundations §§4.1–4.4 and 4.7–4.8; ModularCurves §0G; gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion; gap:formal-dvr-point-detection.
 
 
 ### 4.12 Versal adapted deformation theorem
 
-Under (A) local-model acceptability, (B) the specified good integral Hodge embedding of the full fixer, and (C) very-goodness at x, the ambient deformation over R_E obtained from a first-order rigid tensor section is versal. For every finite K/Ĕ and every local ξ:R_E→O_K, its deformation is (G̃,μ_y)-adapted if and only if ξ factors through R_G. It is this chosen quotient inside a versal ambient family, not an assertion that any good embedding automatically represents a tensor deformation problem. (KZ25, Proposition 3.2.7, pp.24–25; KZ25 line 1046; KPZ26, §7.1.3, pp.72–74; KPZ26 line 2060).
+Under (A) local-model acceptability, (B) the specified good integral Hodge embedding of the full fixer, and (C) very-goodness at x, the ambient deformation over R_E obtained from a first-order rigid tensor section is versal. For every finite K/Ĕ and every local ξ:R_E→O_K, its deformation is (G̃,μ_y)-adapted if and only if ξ factors through R_G. It is this chosen quotient inside a versal ambient family, not an assertion that any good embedding automatically represents a tensor deformation problem. (KZ25, Proposition 3.2.7, pp.24–25; KZ25 line 1046; KPZ26, §7.1.3, pp.72–74; KPZ26 line 3191).
 
-A proof can proceed as follows. Apply the universal display theorem to Ψ_E. Its restriction to R_G has integral invariant tensors and generic cocharacter type; the reverse direction is the preceding factorization theorem with the corrected c.
+A proof can proceed as follows. Apply the universal display theorem to Ψ_E. Its restriction to R_G has integral invariant tensors and generic cocharacter type; the reverse direction is the preceding factorization theorem with the canonical relative-frame c of §1.3.
 
 *Needs:* §4.6 (a tensor-preserving first-order rigid section); §1.8 (universal display with rigid first order); §4.11 (adapted dvr points factor through the local-model quotient).
 
@@ -1096,9 +1144,15 @@ A proof can proceed as follows. Apply the universal display theorem to Ψ_E. Its
 
 For Hoff’s parahoric local-model datum, assume the integral Hodge embedding conditions, the residual marked 𝒢-display and Assumption2.28 (equivalently very-goodness via the preceding comparison). The chosen first-order rigid 𝒢-display over R_G represents the functor of isomorphism classes of its marked deformations, on complete Noetherian local O_Ĕ-algebras with residue k, and prove the corresponding rigidity of marked morphisms. The associated map to ordinary display deformations has the local-model quotient image. This does not assert a representation theorem for all parahorics without the infinitesimal compatibility hypothesis. (Hoff23, Construction 2.27 and Theorem 2.36, pp.24–29; Hoff23 line 1346).
 
-A proof can proceed as follows. First prove equality of DVR-valued points using interpolation. Lift arbitrary deformations to reduced p-torsion-free bases as in Lemma2.35, detect them by DVR points and then descend the unique G-structure. Use the formal-DVR-point-detection supplier contract for the reduced-point step.
+A proof can proceed as follows. First prove equality of DVR-valued points using interpolation. For an arbitrary marked display over R, first lift its pair to a reduced p-torsion-free complete local base R′ using flatness and formal reducedness of the local model. Adjoin finitely many formal variables so that R′→R is surjective; smoothness of the tilde tensor-isomorphism torsor lifts Ψ to Ψ′. This proves the reduced-base lifting step here (Hoff23, Lemma 2.35, p.28; Hoff23 lines 1338–1345). Detect the lifted deformation by DVR points and descend the unique G-structure. Use gap:formal-dvr-point-detection for the reduced-point step.
 
-*Needs:* §4.7 (hoff’s infinitesimal compatibility condition); §4.6 (a tensor-preserving first-order rigid section); §4.9 (interpolation of two tensor displays); §4.11 (adapted dvr points factor through the local-model quotient); §2.8 (dieudonné display with parahoric structure).
+**Checks.**
+
+- For GL₂ with h=2,d=1 the reduced lifting base is O_Ĕ[[t]], and its quotient t↦0 returns the original constant pair.
+- A deformation over k[ε]/ε² is tested after lifting to O_Ĕ[[t]] with t↦ε; its nilpotent ε is invisible to every map from k[ε]/ε² to O_K. Reduced-base lifting is therefore necessary before point detection.
+- In O_K[[T]], the series T^m lies in (T^n) exactly when m≥n, so ∩ₙ(T^n)=0; separatedness retains the second interpolation endpoint.
+
+*Needs:* §4.7 (hoff’s infinitesimal compatibility condition); §4.6 (a tensor-preserving first-order rigid section); §4.9 (interpolation of two tensor displays); §4.11 (adapted dvr points factor through the local-model quotient); §2.8 (dieudonné display with parahoric structure); gap:formal-dvr-point-detection; gap:scheme-local-model-representative.
 
 
 ### 4.14 Recognition from integral étale tensors
@@ -1139,7 +1193,9 @@ Let R be a normal Noetherian integral p-adically complete p-torsion-free W(k)-al
 The API includes the following facts.
 
 - The coefficient ring is the existing Fontaine-envelope applied to R̂̄.
-- Automorphisms of the chosen geometric cover act compatibly with θ, φ and divided powers.
+- Extend Witt Frobenius uniquely to φ:A_cris(R)→A_cris(R) using the completed initial property on the canonical PD ideal J containing p. For x∈ker θ, write φ(x)=xᵖ+py; in the envelope xᵖ=p!γ_p(x), so φ(x)∈pA_cris(R)⊂J.
+- Define Filʳ for r≥1 as the p-adic closure of the r-th divided-power ideal generated by ker θ, and Filʳ=A_cris(R) for r≤0. This uses ker θ, not the larger ideal J containing p.
+- Automorphisms of the chosen geometric cover commute with θ, φ and the PD operations and preserve this filtration.
 - A compatible map of geometric cover systems induces the crystalline coefficient specialization.
 
 **Checks.**
@@ -1147,10 +1203,13 @@ The API includes the following facts.
 - For R=W(k), use the completed algebraic integral closure before applying the envelope; do not replace it by W(k) itself.
 - Changing the geometric closure transports the construction by an isomorphism, with the expected conjugacy of the Galois action.
 - A nonnormal coefficient algebra does not satisfy this input specification without first replacing its cover construction.
+- For R=W(k), its cover completes to O_C; φ agrees with PadicPeriodRings §4.1 under DerivedDeRhamCohomology §PD.7’s envelope comparison, and φ(t)=pt.
+- With compatible roots of p, x=[p♭]−p has θ(x)=0 but θ(φ(x))=pᵖ−p≠0. Thus φ does not preserve ker θ; the PD ideal J containing p is essential.
+- Fil⁰=A_cris(R) and Fil¹=ker θ_cris in this setting; θ_cris(p)=p≠0 excludes p from Fil¹, although p∈J.
 
-A proof can proceed as follows. Build the normal-cover system and its compatible Galois action, check the hypotheses making θ onto in this setting, and evaluate the existing Fontaine-envelope construction. All PD-envelope algebra remains with DerivedDeRhamCohomology §PD.7. The needed relative comparison has its own exact supplier contract.
+A proof can proceed as follows. Build the normal-cover system and its compatible Galois action, check the hypotheses making θ onto in this setting, and evaluate the existing Fontaine-envelope construction. Use DerivedDeRhamCohomology §PD.7’s completed initial property to extend Witt Frobenius into (A_cris(R),J); uniqueness gives Galois and specialization compatibility. Its PD-power construction supplies the filtration. Extend that filtration to the t-localization by the displayed shift convention.
 
-*Needs:* DerivedDeRhamCohomology §PD.7 and PadicPeriodRings §3; SchemeAndStackFoundations §§0.6 and 4.12; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1.
+*Needs:* DerivedDeRhamCohomology §PD.7, especially `Crystalline.fontaineEnvelope_initial` and `Crystalline.fontaineEnvelope_periodPDEnvelope`; PadicPeriodRings §§3 and 4.1; Mathlib `WittVector.frobenius`; SchemeAndStackFoundations §§0.6 and 4.12; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1.
 
 
 ### 5.3 Weak admissibility of the toral filtration
@@ -1185,11 +1244,17 @@ A proof can proceed as follows. Form the tensor condition on the imported PD cry
 
 ### 5.5 Relative comparison for p-divisible coefficients
 
-For the normal coefficient rings and geometric cover of the preceding construction, the natural map `T_pH⊗A_cris(R)→Hom_{A_cris(R)}(D(H)(A_cris(R)),A_cris(R))` is an isomorphism after inverting the standard period t. Moreover `(Fil⁰ A_cris(R)[1/t])^{φ=1}=Q_p` in this comparison setting. State naturality, tensor compatibility and the linear-dual variance. Proper smooth cohomology comparisons alone do not supply either assertion for these relative coefficients. (Kisin17, (1.1.16) and proof of Lemma 1.1.17, pp.10–11; Kisin17 line 456).
+For a p-divisible group H/R, with R and its geometric cover as in §5.2, the natural map `T_pH⊗A_cris(R)→Hom_{A_cris(R)}(D(H)(A_cris(R)),A_cris(R))` is an isomorphism after inverting the standard period t. State naturality, tensor compatibility and the linear-dual variance. Here T_pH is the geometric Tate module on the chosen cover and Hom uses the contravariant crystal. (Kisin17, (1.1.16) and proof of Lemma 1.1.17, pp.10–11; Kisin17 line 456).
 
-A proof can proceed as follows. Apply the relative finite-projective crystalline coefficient comparison and constants theorem. Apply the relative-comparison supplier contract with its geometric cover; proper smooth cohomological comparison is a separate statement.
+**Checks.**
 
-*Needs:* §5.2 (relative evaluation of the crystalline period construction); AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.8; CrystallineCohomology §CR.7.1 and the relative comparison supplier contract.
+- For H=ℚ_p/ℤ_p, evaluation of the identity Tate vector gives the identity on A_cris(R); the map is already an integral isomorphism.
+- For H=`μ_{p∞}`, a compatible Tate generator maps to t times a unit in a crystalline basis. Since θ_cris(t)=0 and the target of θ_cris is nonzero, t is not a unit; t-inversion is necessary.
+- For the zero p-divisible group both sides are zero and the comparison is their unique isomorphism; on the ordinary product the matrix is diag(t,1), up to units.
+
+A proof can proceed as follows. A compatible system of torsion points is a homomorphism ℚ_p/ℤ_p→H over the cover. Contravariant crystal evaluation and D(ℚ_p/ℤ_p)(A_cris(R))=A_cris(R) give the displayed map. Construct the corresponding map for H* and pair them using Cartier duality. Their composites are multiplication by t under the Tate pairing, so t-inversion gives the inverse. Functorial evaluation gives the tensor, filtration and Galois compatibilities (Kisin17 lines 455–462).
+
+*Needs:* §5.2 (relative evaluation of the crystalline period construction); AbelianSchemesAndArithmeticModuli §A4.CR.7.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.6–R07.1.8.
 
 
 ### 5.6 Hodge cocharacter and Frobenius double coset
@@ -1233,7 +1298,7 @@ A proof can proceed as follows. Bound denominators of g⁻¹dg by p^r. Frobenius
 
 ### 5.9 A correctly framed hyperspecial Dieudonné datum
 
-Over k=F̄_p let Λ be a faithful reductive tensor lattice and b∈G(W[1/p]) with pΛ_W⊂bΛ_W⊂Λ_W. Define D=Λ_W with F=bσ and V=pF⁻¹; its Hodge filtration is ker(F modulo p), equivalently the reduction of σ⁻¹(b⁻¹)pΛ_W. The perfect-field anti-equivalence realizes it by a p-divisible H₀ with this marked crystal. A prescribed μ-filtration can be included only when it equals that computed filtration in the chosen frame; a double coset for b alone does not force that equality. Isomorphisms preserve the marking. (Zhu17, §3.2, pp.460–461; Zhu17 line 2298; KZ25, §3.4.1, p.26; KZ25 line 998).
+Over k=F̄_p let Λ be a faithful reductive tensor lattice and b∈G(W[1/p]) with pΛ_W⊂bΛ_W⊂Λ_W. Define D=Λ_W with F=bσ and V=pF⁻¹; its Hodge filtration is ker(F modulo p), equivalently the reduction of σ⁻¹(b⁻¹)pΛ_W. The perfect-field anti-equivalence realizes it by a p-divisible H₀ with this marked crystal. A prescribed μ-filtration can be included only when it equals that computed filtration in the chosen frame; a double coset for b alone does not force that equality. Isomorphisms preserve the marking. (Zhu17, §3.2, pp.460–461; Zhu17 line 2298; KZ25, §3.4.1, p.26; KZ25 lines 1115–1140).
 
 The API includes the following facts.
 
@@ -1268,32 +1333,32 @@ The API includes the following facts.
 - No tensors impose the zero ideal and A′_G=A.
 - Connection coefficients must lie in Lie(G), and need not lie in the Lie algebra of its opposite unipotent; reject the latter replacement.
 
-A proof can proceed as follows. Construct the connection using the φ-stable Lie algebra in the corrected iteration. Formal characteristic-zero integration gives parallel sections. Express their images in the finite locally free quotient by Fil⁰ and take the closed ideal of their coefficients.
+A proof can proceed as follows. Construct the connection by iteration in the φ-stable Lie algebra Lie(G). Formal characteristic-zero integration gives parallel sections. Express their images in the finite locally free quotient by Fil⁰ and take the closed ideal of their coefficients.
 
 *Needs:* §5.4 (hyperspecial adapted lift); §1.6 (the rational section preserves lifted tensors); SchemeAndStackFoundations §§4.1–4.4 and 4.7–4.8; ModularCurves §0G; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1.
 
 
-### 5.11 Corrected equality of the horizontal and adapted loci
+### 5.11 Equality of the horizontal Fil⁰ locus and the adapted locus
 
-With the corrected universal connection, A′_G=A_G. The iterative connection lemma requires its coefficient Lie algebra Lie(H) to be stable under h↦φhφ⁻¹. The universal application has coefficients in Lie(G), not necessarily Lie(U_G°); the Lie-algebra stability hypothesis is retained. This equality is over the rational completed rings just defined. (Kisin17, Errata E.1 and Lemma E.3, p.96; Kisin17 line 4263).
+With the universal connection of §5.10, A′_G=A_G. The iterative connection lemma requires its coefficient Lie algebra Lie(H) to be stable under h↦φhφ⁻¹. The universal application has coefficients in Lie(G), not necessarily Lie(U_G°); the Lie-algebra stability hypothesis is retained. This equality is over the rational completed rings just defined. (Kisin17, Errata E.1 and Lemma E.3, p.96; Kisin17 line 4263).
 
-A proof can proceed as follows. Use Frobenius-compatible dual-number maps to identify the tensor-locus tangent space with the G-orbit tangent space. The corrected connection gives A_G→A′_G, and formal regularity of A_G plus the tangent calculation gives equality. Track the augmentation used for completion.
+A proof can proceed as follows. Use Frobenius-compatible dual-number maps to identify the tensor-locus tangent space with the G-orbit tangent space. The universal connection gives A_G→A′_G, and formal regularity of A_G plus the tangent calculation gives equality. Track the augmentation used for completion.
 
 *Needs:* §5.10 (horizontal fil⁰ deformation locus); §4.10 (four infinitesimal adaptedness criteria).
 
 
 ### 5.12 Formally smooth hyperspecial adapted deformation space
 
-For H₀ and reductive crystalline tensor data as in the hyperspecial definition, the universal marked deformation ring R has a quotient R_G formally smooth over W. For every finite totally ramified K/W[1/p], a W-map R→O_K factors through R_G exactly when its lift is adapted. Its relative dimension is `dim G/P_{μ₀}`. Use the corrected horizontal locus argument, or the very-good smooth local-model argument after identifying its conventions. (Kisin17, Proposition 1.1.10, p.9 and Errata E.2–E.4, p.96; Kisin17 line 386).
+For H₀ and reductive crystalline tensor data as in the hyperspecial definition, the universal marked deformation ring R has a quotient R_G formally smooth over W. For every finite totally ramified K/W[1/p], a W-map R→O_K factors through R_G exactly when its lift is adapted. Its relative dimension is `dim G/P_{μ₀}`. Use the horizontal Fil⁰ locus equality of §5.11, or the very-good smooth local-model argument after identifying its conventions. (Kisin17, Proposition 1.1.10, p.9 and Errata E.2–E.4, p.96; Kisin17 line 386).
 
 A proof can proceed as follows. The reductive flag variety gives a smooth local-model quotient. On rational completions use A′_G=A_G and horizontality of φ-invariant tensors, then descend the factorization to the p-torsion-free integral quotient. This replaces the connection argument with Frobenius-stable Lie algebra.
 
-*Needs:* §5.11 (corrected equality of the horizontal and adapted loci); §4.11 (adapted dvr points factor through the local-model quotient); §3.7 (curve-spanned tangent criterion); §5.4 (hyperspecial adapted lift).
+*Needs:* §5.11 (equality of the horizontal Fil⁰ locus and the adapted locus); §4.11 (adapted dvr points factor through the local-model quotient); §3.7 (curve-spanned tangent criterion); §5.4 (hyperspecial adapted lift).
 
 
 ### 5.13 Étale tensors in the hyperspecial universal family
 
-Assume the relative comparison and constants theorem, and the corrected parallel integral crystalline tensors on the universal family over R_G. They determine rational invariant étale tensor sections on Spec R_G[1/p] whose pullbacks at each DVR-valued point are the usual comparison tensors. Their integral tensor type is constant on the connected family once it is checked at the explicit adapted lift, so the sections are integral with that type throughout. (Kisin17, Lemma 1.1.17, pp.10–11 and proof of Proposition 1.1.13, pp.9–10; Kisin17 line 463).
+Assume the relative comparison and constants theorem, and the parallel integral crystalline tensors on the universal family over R_G. They determine rational invariant étale tensor sections on Spec R_G[1/p] whose pullbacks at each DVR-valued point are the usual comparison tensors. Their integral tensor type is constant on the connected family once it is checked at the explicit adapted lift, so the sections are integral with that type throughout. (Kisin17, Lemma 1.1.17, pp.10–11 and proof of Proposition 1.1.13, pp.9–10; Kisin17 line 463).
 
 The API includes the following facts.
 
@@ -1309,25 +1374,25 @@ The API includes the following facts.
 
 A proof can proceed as follows. Transport the horizontal φ-invariant Fil⁰ tensors through the relative comparison; the constants theorem descends them to Q_p-local-system sections. Test their integral lattice at the explicit lift and use the connected étale-local tensor sheaf to propagate the integral type.
 
-*Needs:* §5.5 (relative comparison for p-divisible coefficients); §5.12 (formally smooth hyperspecial adapted deformation space); §5.7 (explicit height-one adapted lift); §5.11 (corrected equality of the horizontal and adapted loci); SchemeAndStackFoundations §§1.15 and 2.3.
+*Needs:* §5.5 (relative comparison for p-divisible coefficients); §5.12 (formally smooth hyperspecial adapted deformation space); §5.7 (explicit height-one adapted lift); §5.11 (equality of the horizontal Fil⁰ locus and the adapted locus); SchemeAndStackFoundations §§1.15 and 2.3; gap:relative-crystalline-constants.
 
 
 ### 5.14 Hyperspecial étale recognition
 
-Under the residue-field hypotheses for integral hyperspecial frames and the Z_p tensor datum, a marked lift is hyperspecial-adapted if and only if its comparison tensors are integral étale tensors of that fixed reductive integral type. In that case D(H₀)(W)≅T_pH∨⊗W carries the tensors to each other. The fixed integral type and the frame hypotheses are retained explicitly; the printed covariant Tate-module tensor notation is corrected to the linear dual. (Kisin17, Proposition 1.1.13 and (1.1.14), pp.9–10; Kisin17 line 410).
+Under the residue-field hypotheses for integral hyperspecial frames and the Z_p tensor datum, a marked lift is hyperspecial-adapted if and only if its comparison tensors are integral étale tensors of that fixed reductive integral type. In that case D(H₀)(W)≅T_pH∨⊗W carries the tensors to each other. The fixed integral type and the frame hypotheses are retained explicitly; the tensor algebra is formed on the linear dual L=Hom_ℤp(T_pH,ℤ_p), including its covariant and dual factors. (Kisin17, Proposition 1.1.13 and (1.1.14), pp.9–10; Kisin17 line 410).
 
-A proof can proceed as follows. For an adapted lift use the universal tensor sections; for the converse use the integral tensor comparison, then the corrected adapted factorization. The W-frame is obtained using the stated residue-field torsor triviality.
+A proof can proceed as follows. For an adapted lift use the universal tensor sections; for the converse use the integral tensor comparison, then the adapted factorization of §4.11. The W-frame is obtained using the stated residue-field torsor triviality.
 
 *Needs:* §5.13 (étale tensors in the hyperspecial universal family); §5.1 (hyperspecial breuil–kisin tensor frames); §4.14 (recognition from integral étale tensors); §5.4 (hyperspecial adapted lift).
 
 
 ### 5.15 Comparison with geometric realization tensors
 
-For a Hodge-type geometric family with its independently constructed absolute-Hodge realization tensors, the p-adic comparison identifies its integral generic étale tensors with the de Rham tensors and the residual contravariant crystalline tensors. The local p-divisible assertions are §4.4 and §5.13. The existence and extension of the global Hodge tensors, including the prime-to-p realizations, belong to the Shimura integral-model owner and are the integral Hodge-realization supplier contract, not constructed by a display theorem. (vanHoften24, §3.1.5–3.1.7, pp.27–28; vanHoften24 line 1190; Kisin17, proof of Proposition 1.3.9, p.21; Kisin17 line 953).
+Let S be a given normal flat Hodge-type integral model, for example the normalization of the closure in a Siegel model, and A/S its pulled-back abelian scheme. Fix the mixed tensors cutting out its integral Hodge embedding. Assume their generic étale realizations are integral of the smooth full-fixer type of §4.4, and their de Rham realizations extend over S. At every O_K-valued point in the tensor-frame residue-field range of §4.3, the p-adic comparison identifies its integral generic étale tensors with the de Rham tensors and the residual contravariant crystalline tensors. The local p-divisible assertions are §4.4 and §5.13. The existence of S and global extension of its tensors remain downstream inputs; the supplier contract is only the rational absolute-Hodge comparison on the given abelian scheme, which does not consume §4.12. (vanHoften24, §3.1.5–3.1.7, pp.27–28; vanHoften24 line 1190; Kisin17, proof of Proposition 1.3.9, p.21; Kisin17 line 953).
 
-A proof can proceed as follows. Import the geometric family and its Hodge tensors, compare their generic realization maps, and specialize its p-divisible crystal using the stated integral comparison. Record the Blasius–Wintenberger absolute-Hodge comparison as the integral Hodge-realization supplier contract.
+A proof can proceed as follows. Import the geometric family and its Hodge tensors, compare their generic realization maps, and specialize its p-divisible crystal using the stated integral comparison. Use the rational absolute-Hodge comparison and §4.4 to identify the residual integral tensor images; §5.13 supplies the local universal-family compatibility.
 
-*Needs:* §4.4 (integral crystalline and witt tensor comparison); §5.13 (étale tensors in the hyperspecial universal family).
+*Needs:* §4.4 (integral crystalline and witt tensor comparison); §5.13 (étale tensors in the hyperspecial universal family); ShimuraVarieties §7.0i; gap:integral-hodge-realization-extension.
 
 
 ### 5.16 Specialization of a tensor-compatible Tate lattice
@@ -1397,10 +1462,12 @@ For G_m and g=p acting on the linear dual Tate lattice, the specialized crystal 
 
 ### Dependencies
 
-Layers 0–4; DerivedDeRhamCohomology §PD.7; PadicPeriodRings §3; CrystallineCohomology §CR.7.1; PadicHodgeTheory §5.5; GeometricSatakeAndFusion GS0; the relative-comparison, perfect-residue and integral Hodge-realization contracts.
+Layers 0–4; DerivedDeRhamCohomology §PD.7; PadicPeriodRings §§3 and 4.1; CrystallineCohomology §CR.7.1; PadicHodgeTheory §5.5; GeometricSatakeAndFusion GS0; the relative-constants, perfect-residue and rational absolute-Hodge comparison contracts.
 
 
 ## Layer 6: ordinary lifts and the rational centralizer action
+
+### 6.0 Ordinary integral σ-conjugacy normalization
 
 Before choosing the ordinary tensor datum, prove the following normalization. If the μ-ordinary class with ν=μ^⋄ exists and c lies both in that class and in the union of parahoric double cosets indexed by Adm(μ), then c is integrally σ-conjugate to a lift of a σ-straight translation `t_{μ′}`, with μ′ in the finite Weyl orbit of μ. Here σ-straight means ℓ(wσ(w)⋯σⁿ⁻¹(w))=nℓ(w) for every n≥1. For a dominant lift μ̃ and wμ=μ′, the cocharacter wμ̃ is central in the Newton Levi of this translation. Existence of the class is a hypothesis for a nonsplit inner form (KZ25, Definition 2.2.4, Lemmas 2.1.7, 2.1.9 and 2.2.6, Proposition 2.3.3, pp.8–12; KZ25 lines 336, 369, 437 and 526).
 
@@ -1412,7 +1479,7 @@ A proof route establishes within this normalization theorem the integral reducti
 - Slopes (1/2,1/2) have Newton average different from (1,0), so the supersingular class fails the ordinary hypothesis.
 - For a torus, length is zero and every translation has ℓ(wσ(w))=0=2ℓ(w); the ordinary-class existence condition still remains.
 
-*Needs:* PadicHodgeTheory §5.5; ReductiveGroupsPartII §RG2.4.3 (affine Weyl group, length and admissible set); the rational σ-centralizer construction of Layer 2.
+*Needs:* PadicHodgeTheory §5.5; ReductiveGroupsPartII §RG2.4.3 (affine Weyl group, length and admissible set); §2.0 (rational σ-centralizer).
 
 
 ### 6.1 Ordinary tensor datum
@@ -1433,16 +1500,16 @@ The API includes the following facts.
 
 A proof can proceed as follows. Use the ordinary class and integral conjugacy theorem of this layer, together with the supplied tensor Newton cocharacter; retain the existence condition ν=μ^⋄ for the ordinary class.
 
-*Needs:* §2.1 (integral tensor and local-model datum); PadicHodgeTheory §5.5; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; the ordinary normalization theorem in Layer 6.
+*Needs:* §2.1 (integral tensor and local-model datum); PadicHodgeTheory §5.5; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; §6.0 (ordinary integral σ-conjugacy normalization); gap:full-fixer-cutting-tensors.
 
 
 ### 6.2 Central Hodge filtration in the ordinary Levi
 
 In the ordinary normalization the special Hodge filtration lifts to an M-valued cocharacter λ̃ central in M, G-conjugate to the prescribed Hodge cocharacter. It is defined over a finite extension of the completed reflex base. For the toral local model of this central type, its chosen point yields an M-invariant direct-summand filtration after every allowed O_K extension. (KZ25, Lemma 3.4.3, p.27; KZ25 line 1168).
 
-A proof can proceed as follows. Import the σ-straight Levi normalization and its central cocharacter. Use the one-point generic torus orbit and its flat closure to lift the special filtration. The local-model existence statement is part of the scheme-local-model supplier contract.
+A proof can proceed as follows. Import the σ-straight Levi normalization and its central cocharacter. Use the one-point generic torus orbit and its flat closure to lift the special filtration. The central local-model point uses gap:scheme-local-model-representative.
 
-*Needs:* §6.1 (ordinary tensor datum); ReductiveGroupsPartII §RG2.3.3 and the ordinary-Levi supplier contract; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; the scheme-local-model supplier contract.
+*Needs:* §6.1 (ordinary tensor datum); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; gap:ordinary-levi-full-fixer; gap:scheme-local-model-representative; gap:scheme-local-model-hodge-immersion.
 
 
 ### 6.3 Central ordinary Breuil–Kisin lift
@@ -1464,7 +1531,7 @@ The API includes the following facts.
 
 A proof can proceed as follows. The elementary modification tensor torsor for M is trivial by the parahoric purity contract. Its u=0 point is the displayed σ⁻¹(b/p) map; scalar containment makes it tensor preserving. Smoothness lifts that specified point to Θ. Since E(0)/p is a unit, c_E is a unit times E(u), with c_E(0)=p. Thus its image lies in F and E(u) annihilates the Frobenius cokernel. Centrality of λ̃ makes every rational Newton-Levi endomorphism preserve the filtration. Apply the height-one classification and the canonical rational section to identify adaptedness.
 
-*Needs:* §6.2 (central hodge filtration in the ordinary levi); ReductiveGroupsPartII §RG2.3.3 and the ordinary-Levi supplier contract; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.25; §2.2 (height-one tensor filtration lattice); §2.4 (integral tensors on the filtration lattice); the parahoric purity supplier contract.
+*Needs:* §6.2 (central hodge filtration in the ordinary levi); ReductiveGroupsPartII §RG2.3.3 and the ordinary-Levi supplier contract; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.25; §2.2 (height-one tensor filtration lattice); §2.4 (integral tensors on the filtration lattice); gap:parahoric-disc-purity.
 
 
 ### 6.4 Existence of the adapted ordinary lift
@@ -1484,14 +1551,14 @@ A proof can proceed as follows. The basic M-isocrystal identifies J_b with the r
 
 For a central element p, verify that the lift gives a quasi-isogeny and not a unit automorphism.
 
-*Needs:* §6.4 (existence of the adapted ordinary lift); §6.3 (central ordinary breuil–kisin lift); FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.10–R07.2.12; the rational σ-centralizer construction in Layer 2.
+*Needs:* §6.4 (existence of the adapted ordinary lift); §6.3 (central ordinary breuil–kisin lift); FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.10–R07.2.12; §2.0 (rational σ-centralizer).
 
 
 ### 6.6 Adapted lift compatible with a specified Levi filtration
 
-Let M⊂G be a reductive subgroup containing b, whose fixer intersection is the specified parahoric, and suppose the special Hodge filtration lifts to an M-valued cocharacter G-conjugate to μ_y. If its M-embedding has the corrected very-good infinitesimal compatibility and the tensor-frame hypotheses, an M-adapted lift is also G-adapted and its étale tensors extend the G-tensor family. This supplies the p-divisible input used by van Hoften; existence of that M-filtration and any global component-surjectivity theorem are separate inputs. (Zhou20, Author arXiv v 2, §5.5, pp.18–19; Zhou20 line 753; vanHoften24, AppendixA.4.3, pp.64–65; vanHoften24 line 2799).
+Let M⊂G be a reductive subgroup containing b, whose fixer intersection is the specified parahoric, and suppose the special Hodge filtration lifts to an M-valued cocharacter G-conjugate to μ_y. If its M-embedding has the very-good infinitesimal compatibility of §4.7 and the tensor-frame hypotheses, an M-adapted lift is also G-adapted and its étale tensors extend the G-tensor family. This supplies the p-divisible input used by van Hoften; existence of that M-filtration and any global component-surjectivity theorem are separate inputs. (Zhou20, Author arXiv v 2, §5.5, pp.18–19; Zhou20 line 753; vanHoften24, AppendixA.4.3, pp.64–65; vanHoften24 line 2799).
 
-A proof can proceed as follows. Enlarge the invariant tensor family to cut out M. Apply the corrected versal theorem for M, compare the M and G local-model filtration maps, and forget the extra tensors. This retains the filtration assumption in Zhou; the general basic-Levi application cannot be inferred just from the μ-ordinary case.
+A proof can proceed as follows. Enlarge the invariant tensor family to cut out M. Apply §4.12 under (A)–(C) for M, compare the M and G local-model filtration maps, and forget the extra tensors. This retains the filtration assumption in Zhou; the general basic-Levi application cannot be inferred just from the μ-ordinary case.
 
 *Needs:* §4.12 (versal adapted deformation theorem); §4.4 (integral crystalline and witt tensor comparison); §4.14 (recognition from integral étale tensors); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5.
 
@@ -1521,7 +1588,7 @@ For a ramified reflex DVR with p=aπ_E², a∈O_E×, the quotients by m²+p and 
 
 ## References
 
-All statements are in the conventions above. The locators specify the editions used; line locators refer to the numbered legal-source extractions recorded by `sources.toml`.
+All statements are in the conventions above. The locators specify the editions used; line locators refer to the numbered legal-source extractions recorded by sources.toml.
 
 - **KPZ26.** Mark Kisin, Georgios Pappas and Rong Zhou, [Integral models of Shimura varieties with parahoric level structure, II](https://doi.org/10.1017/fmp.2026.10031), Forum of Mathematics, Pi 14 (2026), e14, 89-page published version. §§3.1–3.4, 4.1–4.4, 5.1–5.3, 6.1–6.3, 7.1.3–7.1.6 and 7.3.1–7.3.2.
 - **KP18.** Mark Kisin and Georgios Pappas, [Integral models of Shimura varieties with parahoric level structure](https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf), Publications Mathématiques de l'IHÉS 128 (2018), 121–218. §§3.1–3.3, pp.162–182, with the relative-frame construction and very-good hypothesis of KPZ26.
@@ -1534,4 +1601,6 @@ All statements are in the conventions above. The locators specify the editions u
 - **Anschuetz22.** Johannes Anschütz, [Extending torsors on the punctured Spec(A_inf)](https://arxiv.org/abs/1804.06356v2), arXiv v2, 21 October 2020; Journal für die reine und angewandte Mathematik 783 (2022), 227–268. Proposition 10.3 and proof, author p.33.
 - **Wintenberger97.** Jean-Pierre Wintenberger, [Propriétés du groupe tannakien des structures de Hodge p-adiques et torseur entre cohomologies cristalline et étale](https://aif.centre-mersenne.org/item/10.5802/aif.1600.pdf), Annales de l'Institut Fourier 47 (1997), 1289–1334. §4.5.2, Proposition 4.5.3 and its following unnumbered corollary, pp.1330–1332.
 - **Zhou20.** Rong Zhou, [Mod p isogeny classes on Shimura varieties with parahoric level structure](https://arxiv.org/abs/1707.09685v2), arXiv v2, February 2018; published 2020. The locators here use v2 §4.6, proof of Proposition 4.8, pp.14–15, and §5.5, pp.18–19. The M-valued filtration hypothesis is retained.
+- **RG71.** Michel Raynaud and Laurent Gruson, [Critères de platitude et de projectivité. Techniques de platification d’un module](https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0013/PPN356556735_0013.pdf), Inventiones Mathematicae 13 (1971), 1–89. I, Theorem 4.1.2, p.27.
+- **deJong95.** A. Johan de Jong, [Crystalline Dieudonné module theory via formal and rigid geometry](https://www.numdam.org/item/PMIHES_1995__82__5_0/), Publications Mathématiques de l’IHÉS 82 (1995), 5–96. Proposition 7.3.6, p.88.
 - **RZ96.** Michael Rapoport and Thomas Zink, [Period Spaces for p-divisible Groups](https://doi.org/10.1515/9781400882601), Annals of Mathematics Studies 141 (1996), Proposition 1.21. This is an uncertified locator-only reference for the toral criterion; the accessible account is Kisin17, proof of Theorem 2.2.3, p.32, Kisin17 line 1455.

@@ -26,13 +26,13 @@ mathematical carrier, rather than a few simple definitions on existing carriers:
   division-algebra lattice-chain representations, local models and tensor displays.
 * Integral crystalline tensor comparison and étale recognition: missing crystalline Galois
   lattices, p-divisible Tate modules, crystalline evaluation and integral tensor types.
-* Corrected versal adapted deformation theorem: missing marked p-divisible deformations,
+* Versal adapted deformation theorem: missing marked p-divisible deformations,
   tensor-adaptedness, very-good embeddings and the local-model quotient.
 * Universal marked parahoric displays: missing the parahoric display deformation category and
   its compatible local-model pair and tilde torsor.
-* Hyperspecial Breuil--Kisin tensor frames: missing the crystalline-lattice functor and reductive
+* Hyperspecial Breuil–Kisin tensor frames: missing the crystalline-lattice functor and reductive
   integral tensor-isomorphism torsors.
-* Explicit hyperspecial adapted lifts: missing height-one Breuil--Kisin modules, their integral
+* Explicit hyperspecial adapted lifts: missing height-one Breuil–Kisin modules, their integral
   crystalline comparison and the p-divisible-group realization functor.
 * Frobenius-pullback integrality of the connection: missing smooth-base Dieudonné crystals,
   their integral connection lattices and p-divisible-group realization.
@@ -41,7 +41,7 @@ mathematical carrier, rather than a few simple definitions on existing carriers:
 * Equality of the horizontal and adapted loci and the smooth hyperspecial quotient: missing
   the universal crystalline connection, its transported tensors and both formal loci.
 * Tensor-compatible lattice specialization and Kottwitz equality: missing the integral
-  Breuil--Kisin family, reductive affine Grassmannians and their component maps.
+  Breuil–Kisin family, reductive affine Grassmannians and their component maps.
 * Admissible-filtration realization by an adapted isogenous lift: missing filtered crystalline
   tensor data, the p-divisible realization functor and integral comparison lattices.
 * Ordinary integral sigma-conjugacy normalization: missing parahoric group schemes, the affine
@@ -53,7 +53,6 @@ mathematical carrier, rather than a few simple definitions on existing carriers:
 
 Mathlib's Witt-vector isocrystal class supplies a rational Frobenius module over a perfect field.
 It supplies neither the integral display carrier nor any of these tensor deformation problems.
-There are consequently no substitute scalar statements or admitted data definitions here.
 -/
 
 namespace TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII

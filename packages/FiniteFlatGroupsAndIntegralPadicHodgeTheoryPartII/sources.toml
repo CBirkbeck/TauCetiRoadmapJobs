@@ -208,3 +208,38 @@ licence_class = "none"
 status = "uncertified"
 version_note = "Published book; locator-only citation. Primary text was not read. Kisin17 author p.32 line 1455 supplies the accessible application."
 note = "The source service resolved the DOI to the publisher and JSTOR landing pages but found no legal open text; the book is cited by its published locator alone."
+
+[[source]]
+id = "RG71"
+authors = "Michel Raynaud and Laurent Gruson"
+title = "Critères de platitude et de projectivité. Techniques de platification d’un module"
+year = 1971
+doi = "10.1007/BF01390094"
+version_note = "Inventiones Mathematicae 13 (1971), 1–89; GDZ volume scan, printed page 27 is PDF page 34."
+locator_scheme = "theorem"
+locator = "I, Théorème 4.1.2, p.27"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0013/PPN356556735_0013.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0013/PPN356556735_0013.pdf"
+fetched_at = "2026-10-25T08:17:53Z"
+sha256 = "623b5e4f7182dc04bfa537ef2f656c979fcd93f7b08b179607e3cdfaab0a2a58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Exact supplier contracts; README §2.6 flatness criterion"]
+
+[[source]]
+id = "deJong95"
+authors = "A. Johan de Jong"
+title = "Crystalline Dieudonné module theory via formal and rigid geometry"
+year = 1995
+version_note = "Publications Mathématiques de l’IHÉS 82 (1995), 5–96; printed page 88 is PDF page 85."
+locator_scheme = "theorem"
+locator = "Proposition 7.3.6, p.88"
+url = "https://www.numdam.org/item/PMIHES_1995__82__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1995__82__5_0.pdf"
+fetched_at = "2026-10-25T08:18:21Z"
+sha256 = "7295b9cb11cb2fed09c139738f71d3983199373d7bf91e21f4278e9c0954cb7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Exact supplier contracts; README §2.6 integrality detection"]

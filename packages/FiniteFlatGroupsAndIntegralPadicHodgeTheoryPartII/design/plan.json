@@ -5297,67 +5297,97 @@
     }
   ],
   "gaps": [
-  {
-    "slug": "perfect-residue-bt-realization",
-    "needs": "Extend §R07.4.20 from finite extensions of ℚ_p to finite extensions of W(k)[1/p] for arbitrary perfect k, including F̄_p, preserving the contravariant dual-Tate convention and realization up to isogeny.",
-    "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
-    "section": "R07.4.20"
-  },
-  {
-    "slug": "relative-bt-comparison-and-constants",
-    "needs": "For the normal Noetherian integral p-complete p-torsion-free W(k)-algebras R with R/p≠0 and geometric cover R̄ of Kisin17 §1.1.15, prove the natural p-divisible comparison T_pH⊗A_cris(R)→Hom(D(H)(A_cris(R)),A_cris(R)) becomes an isomorphism after t-inversion and that the φ-fixed Fil⁰ constants in A_cris(R)[1/t] are ℚ_p, with filtration, tensor, Galois and specialization compatibility.",
-    "supplier": "CrystallineCohomology",
-    "section": "CR.7.1"
-  },
-  {
-    "slug": "normal-base-integral-section-detection",
-    "needs": "For a flat normal complete local O_Ĕ-algebra R arising as a completed local ring of the finite-type local models here, prove that s∈R[1/p] belongs to R whenever every continuous O_Ĕ-map R→O_K to a finite extension sends s into O_K, and deduce the corresponding coordinatewise p-divisibility criterion in Ŵ(R).",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "0.6"
-  },
-  {
-    "slug": "tensor-isomorphism-flatness-descent",
-    "needs": "Establish the finite-presentation and completion hypotheses and the flatness descent theorem for the tensor-isomorphism scheme over Ŵ(R_G) used here, from its specified DVR pullbacks and the separating family of Witt-valued point maps, independently of integral tensor-section extension.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "4.12"
-  },
-  {
-    "slug": "formal-dvr-point-detection",
-    "needs": "Supply the reduced p-torsion-free complete-local lifting and DVR-point detection statements used in Hoff Lemma 2.35 and Theorem 2.36, together with separatedness and contraction of the completed ideals in the adapted factorization argument.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "4.7–4.8"
-  },
-  {
-    "slug": "full-fixer-cutting-tensors",
-    "needs": "For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, including the ordinary-Levi fixer intersections and the classical scalar enlargements of §RG2.3.5.",
-    "supplier": "ReductiveGroupsPartII",
-    "section": "RG2.3.5"
-  },
-  {
-    "slug": "parahoric-disc-purity-and-components",
-    "needs": "For a connected parahoric 𝒫 over a complete mixed-characteristic DVR O with perfect residue, extend every 𝒫-torsor on Spec O[[u]] minus its closed point, deduce triviality for algebraically closed residue, and supply the separate component reduction and E-adic patching needed for a smooth full fixer.",
-    "supplier": "ReductiveGroupsPartII",
-    "section": "RG2.3.3"
-  },
-  {
-    "slug": "ordinary-levi-full-fixer",
-    "needs": "Under the ordinary σ-straight normalization and the assumption that the ambient full fixer equals its connected parahoric, prove that the Newton-Levi model satisfies 𝒨(W)=M(K₀)∩𝒢(W) and that its full fixer equals its connected parahoric.",
-    "supplier": "ReductiveGroupsPartII",
-    "section": "RG2.3.3"
-  },
-  {
-    "slug": "scheme-local-model-geometry",
-    "needs": "Extend GS0's integral v-sheaf local models to the flat normal scheme representatives, reduced special fibres, generic flag varieties, specified good minuscule Hodge immersions, adjoint and restriction comparisons and classical curve-spanned tangent statements required under KPZ26 Standard assumptions 3.1.5 and the hypotheses of Theorems 3.2.15, 3.3.25, 4.1.6 and 4.4.3.",
-    "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0, Bounded admissible affine flag loci"
-  },
-  {
-    "slug": "integral-hodge-realization-extension",
-    "needs": "Extend §7.0i's rational absolute-Hodge tensor realizations to the specified Hodge-type integral models with integral generic étale and de Rham tensors and their residual crystalline specialization, keeping the prime-to-p realizations separate from the local p-divisible comparison.",
-    "supplier": "ShimuraVarieties",
-    "section": "7.0i"
-  }
-],
+    {
+      "slug": "perfect-residue-bt-realization",
+      "needs": "Extend §R07.4.20 from finite extensions of ℚ_p to finite extensions of W(k)[1/p] for arbitrary perfect k, including F̄_p, preserving the contravariant dual-Tate convention and realization up to isogeny.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "R07.4.20"
+    },
+    {
+      "slug": "relative-crystalline-constants",
+      "needs": "For a normal Noetherian integral p-complete p-torsion-free W(k)-algebra R with R/p≠0 and the normal geometric cover of Kisin17 §1.1.15, the relative envelope of DerivedDeRhamCohomology §PD.7, with its induced Witt Frobenius and PD filtration extended by Filʳ(A_cris(R)[1/t])=∪_{n≥0}t⁻ⁿFilʳ⁺ⁿA_cris(R), satisfies (Fil⁰ A_cris(R)[1/t])^{φ=1}=ℚ_p.",
+      "supplier": "PadicPeriodRings",
+      "section": "4.3"
+    },
+    {
+      "slug": "normal-base-integral-section-detection",
+      "needs": "For a Noetherian normal complete local domain R flat over a complete mixed-characteristic DVR O with perfect residue k, and with residue field finite over k, an element s∈R[1/p] belongs to R if and only if ξ(s)∈O_K for every continuous local O-map ξ:R→O_K with K/Frac(O) finite.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.6"
+    },
+    {
+      "slug": "tensor-isomorphism-flatness-descent",
+      "needs": "Let A be a henselian local ring, X→Spec A locally of finite presentation, x a point of its closed fibre, and ℱ an O_X-module of finite type; the functor on pointed local A-schemes requiring ℱ after base change to be flat at every closed-fibre point above x is represented by a closed subscheme of Spec A, finitely presented when ℱ is finitely presented, so local maps A→A_i with intersection of kernels zero and flat pullbacks at these points imply ℱ is A-flat at x (RG71, I, Theorem 4.1.2, p.27).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "4.12"
+    },
+    {
+      "slug": "formal-dvr-point-detection",
+      "needs": "For a reduced p-torsion-free complete Noetherian local O_Ĕ-algebra R with residue k, the continuous local maps R→O_K for finite K/Ĕ are jointly injective; for any Noetherian ring B complete for (T) with T∈Jac(B), every ideal I is T-adically closed, ∩ₙ(I+TⁿB)=I, and if B/I is p-torsion-free then I=B∩I[1/p].",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "4.7–4.8"
+    },
+    {
+      "slug": "punctured-disc-torsor-patching",
+      "needs": "Let A=O[[u]] for a complete mixed-characteristic DVR O and let f∈A be a non-zero-divisor with (p,f) primary to the closed point; for a smooth affine A-group scheme, a torsor on D(f) and a torsor on the f-adic completion of A[1/p], with an isomorphism over its punctured f-adic completion, glue uniquely up to unique compatible isomorphism to a torsor on Spec A minus the closed point, by formal gluing on D(p) followed by Zariski descent (KP18, proof of Lemma 3.2.6, p.171; KP18 lines 2114–2122).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "1.15"
+    },
+    {
+      "slug": "full-fixer-cutting-tensors",
+      "needs": "For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, for every faithful finite-free realization of these fixers; the ordinary-Levi intersection is the separate contract below.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.5"
+    },
+    {
+      "slug": "parahoric-disc-purity",
+      "needs": "For a complete discretely valued field E with perfect residue field k of characteristic p and a parahoric group scheme 𝒫/O_E, every 𝒫-torsor on U=Spec O_E[[z]] minus its closed point extends to Spec O_E[[z]] (Anschuetz22, Proposition 10.3, p.33; Anschuetz22 line 1388).",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.3"
+    },
+    {
+      "slug": "full-fixer-component-reduction",
+      "needs": "For a complete DVR O with residue field k and a smooth affine O-group 𝒢 with connected reductive generic fibre and quotient sheaf 𝒢/𝒢°≅i_*Γ, where i:Spec k→Spec O and Γ/k is finite étale, a 𝒢-torsor on U=Spec O[[u]] minus its closed point whose induced Γ-torsor on Spec k((u)) is trivial reduces to a 𝒢°-torsor (KP18, (3.2.7)–(3.2.8), p.172; KP18 lines 2127–2135).",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.3"
+    },
+    {
+      "slug": "ordinary-levi-full-fixer",
+      "needs": "Under the ordinary σ-straight normalization and the assumption that the ambient full fixer equals its connected parahoric, prove that the Newton-Levi model satisfies 𝒨(W)=M(K₀)∩𝒢(W) and that its full fixer equals its connected parahoric.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.3"
+    },
+    {
+      "slug": "scheme-local-model-representative",
+      "needs": "For a local-model triple over a p-adic field F satisfying p>2, local abelian type, and essentially tame classical adjoint factors without triality, the normalized flat projective scheme Mloc of KPZ26 (3.2.13), with reduced special fibre and generic flag variety, represents the intrinsic integral v-sheaf local model; retain its functorial adjoint and restriction-of-scalars comparisons (KPZ26, Theorem 3.2.15 and §3.4.2, pp.20 and 28; KPZ26 line 895).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "scheme-local-model-hodge-immersion",
+      "needs": "For a quasi-tame local-model triple with G=∏Res_{K_i/F}H_i, each H_i tamely split and classical, p odd, and a Hodge embedding factoring as KPZ26 (3.3.24), a finite repeated sum admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "schubert-curve-spanned-tangents",
+      "needs": "For a mod-p abelian-type pair (G,μ) over k with p∤|π₁(Gder)| and no Dᴴ factors, every tangent space of the affine Schubert variety S_μ is spanned by tangent images of smooth formal k[[t]]-curves through that point (KPZ26, Theorem 4.1.6, p.31; KPZ26 lines 1363–1365).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "local-model-curve-spanned-tangents",
+      "needs": "Under the standard assumptions p>2, local abelian type and essentially tame classical adjoint factors, if 𝒢≅Res_{O_K/O_F}ℋ for ℋ/O_K reductive, the tangent spaces of the special-fibre local model are spanned by smooth formal curves at every point of the minimal stratum, and at every point when there are no Dᴴ factors (KPZ26, Theorem 4.4.3, p.47; KPZ26 lines 2049–2055).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "integral-hodge-realization-extension",
+      "needs": "For a complete mixed-characteristic DVR O_K with perfect residue field and an abelian scheme A/O_K, prove that the rational étale and de Rham realizations of an absolute Hodge tensor of A_K agree under the crystalline–de Rham comparison for H¹(A_K), with mixed tensors, duals and Tate twists; neither the existence of an integral moduli model nor integral tensor extension is an input to this rational comparison.",
+      "supplier": "ShimuraVarieties",
+      "section": "7.0i"
+    }
+  ],
   "sourceIssues": [
     {
       "id": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII/E01",
