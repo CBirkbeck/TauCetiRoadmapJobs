@@ -110,7 +110,7 @@ What GeometricSatakeAndFusion must provide (gap:algebraic-compatible-schubert-sp
 
 What GeometricSatakeAndFusion must provide (gap:algebraic-demazure-fibres): In GS0’s algebraic extension of “Relative-position flag correspondences”, prove geometric connectedness of the fibres of the Iwahori-to-parahoric projection of admissible loci, using the reduced-word resolutions from “Equal-characteristic Schubert models and coefficient comparison” (GL Lemma 5.2, p. 10; GL line 430).
 
-What GeometricSatakeAndFusion must provide (gap:algebraic-coherence): Give the equal-characteristic coherence and deformation theorem used for polynomial special fibres and the S₂ argument.
+What GeometricSatakeAndFusion must provide (gap:algebraic-coherence): In GS0’s algebraic Schubert prefix, prove two statements. (i) Coherence: for G=∏Res_(K_i/F)H_i with each H_i tamely split, any parahoric level, any dominant geometric cocharacter class μ and p∤|π₁(G^der)|, for n≫0 the dimension of global sections of the n-th power of the ample determinant line bundle on the reduced μ-admissible Schubert union in the companion affine flag over k((u)) equals that on the generic Schubert bound Gr_≤μ, so the special fibre of the polynomial closure of §1.2 is that reduced union (PZ (8.19), PZ line 2659; LEV Theorem 4.3.2, p. 29, LEV line 1243, and LEV line 1389). (ii) Cohen–Macaulay admissible loci: for a split group over k((t)) with simply connected derived group, Iwahori level and any dominant μ, the equal-characteristic local model is normal with Frobenius-split reduced special fibre, and that special fibre, the μ-admissible union, is Cohen–Macaulay, hence S₂ (GL Theorem 2.1, p. 4, GL line 149; GL Corollary 3.5, p. 7, GL line 288–297).
 
 
 
@@ -368,13 +368,15 @@ The construction does not assert normality when p divides the derived fundamenta
 
 ### 1.3 Normality and admissible special fibre
 
-If G is quasi-tame, μ is minuscule and p∤|π₁(G^der)|, M^pol_(𝒢,μ) is normal and its geometric special fibre is reduced, with the μ-admissible orbit stratification in the companion twisted affine flag. Each geometric irreducible component is normal and Cohen–Macaulay. After any finite reflex-field extension the base-changed model remains normal. No assertion here makes the whole reducible special fibre normal, and the component statement is not used as a proof of whole-fibre Cohen–Macaulayness. (KPZ, Theorem 3.2.9 and footnote 5, p. 19; KPZ line 859; LEV, Theorem 4.2.7, pp. 24–25; LEV line 1024; KP, Theorem 2.1.2 and Corollary 2.1.3, pp. 150–151; KP line 1279).
+Use the local model datum with general bound of §0.1. If G is quasi-tame, μ is dominant and p∤|π₁(G^der)|, M^pol_(𝒢,μ) is normal and its geometric special fibre is reduced, with the μ-admissible orbit stratification in the companion twisted affine flag. Each geometric irreducible component is normal, Cohen–Macaulay and Frobenius split. After any finite reflex-field extension the base-changed model remains normal. No assertion here makes the whole reducible special fibre normal, and the component statement is not used as a proof of whole-fibre Cohen–Macaulayness. (LEV, Theorem 4.2.7, pp. 24–25, LEV line 1024, for every dominant μ, and Theorem 4.3.2, p. 29, LEV line 1243; minuscule specialization: KPZ, Theorem 3.2.9 and footnote 5, p. 19; KPZ line 859; KP, Theorem 2.1.2 and Corollary 2.1.3, pp. 150–151; KP line 1279).
 
 One proof proceeds as follows. Import the common algebraic affine-flag Schubert normality, Demazure, admissible-set and coherence interfaces specified at GS0. Use Levin’s global convolution/coherence argument to identify the reduced special fibre and its components. For finite reflex extension preserve geometric reducedness; apply the specified trait normality criterion to the normal generic flag.
 
 An Iwahori special fibre can be reducible; test component normality separately.
 
-*Needs:* §1.2; gap:algebraic-schubert-normality; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17, 0.30 and 4.13; gap:trait-normality; gap:polynomial-parahoric-lifts.
+For hyperspecial GL₂ and the non-minuscule μ=(2,0), the admissible set is {t^(2,0),t^(1,1)} and the special fibre is the two-dimensional Schubert variety of t^(2,0) (dimension 〈2ρ,μ〉=〈(1,−1),(2,0)〉=2) containing the point of t^(1,1); it is irreducible, reduced and normal, with one singular point, and equals the special fibre of the constant model Gr_≤(2,0) over O_F. For μ=(1,0) the statement gives P¹_(O_F).
+
+*Needs:* §1.2; §0.1 (general bound); gap:algebraic-schubert-normality; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17, 0.30 and 4.13; gap:trait-normality; gap:polynomial-parahoric-lifts.
 
 ### 1.4 Polynomial adjoint and derived-isogeny comparisons
 
@@ -1035,9 +1037,9 @@ This is not a bound of two on the number of maximal translations of the entire a
 
 ### 7.3 The admissible locus has Serre S₂
 
-The perfected μ-admissible locus has a finite-type deperfection satisfying Serre S₂; its codimension ≤1 Bruhat open remains connected in every connected étale neighbourhood. Use the equivalent codimension 1 connectedness criterion for a Bruhat-union Schubert scheme together with equal-characteristic Frobenius splitting and the coherence/deformation input. This is an application to admissible loci, not a new general definition of S₂. (GL, Lemma 3.3, Proposition 3.4 and Corollary 3.5, pp. 6–7; GL line 255).
+The perfected μ-admissible locus has a finite-type deperfection satisfying Serre S₂; its codimension ≤1 Bruhat open remains connected in every connected étale neighbourhood. Use the equivalent codimension 1 connectedness criterion for a Bruhat-union Schubert scheme together with the Cohen–Macaulay admissible-locus input (ii) of gap:algebraic-coherence. That input is used only on a split group G′ over k((t)) with simply connected derived group whose admissible set Adm(μ′) equals Adm(μ) after passing to the adjoint group, as GL Corollary 3.5 does, so it is applied in the prime-to-p range alone; no Cohen–Macaulay input is available for G itself (for PGL₂ at p=2 all but finitely many Schubert varieties of the affine flag variety are neither normal nor S₂, HLR Theorem 1.1, p. 2, HLR line 69). This is an application to admissible loci, not a new general definition of S₂. (GL, Lemma 3.3, Proposition 3.4 and Corollary 3.5, pp. 6–7; GL line 255).
 
-One proof proceeds as follows. Use the canonical-module/local-cohomology criterion that a Schubert union is S₂ exactly when the indicated codimension 1 graph is connected. Apply the equal-characteristic deformation and coherence theorem, retaining the Frobenius-split admissible special fibre input and the deformation-of-depth theorem. Use étale stability of S₂ and connectedness after removing codimension ≥2. These general commutative-algebra inputs are explicit supplier requests.
+One proof proceeds as follows. Use the canonical-module/local-cohomology criterion that a Schubert union is S₂ exactly when the indicated codimension 1 graph is connected. Transfer the codimension 1 criterion to the split group G′ with the same admissible set, where the admissible union is Frobenius split and Cohen–Macaulay, hence S₂, and transfer the connectedness back. Use étale stability of S₂ and connectedness after removing codimension ≥2. These general commutative-algebra inputs are explicit supplier requests.
 
 Connectedness of the whole admissible set alone is insufficient to give S₂.
 
@@ -1051,7 +1053,7 @@ One proof proceeds as follows. Compare J_ν with its costandard object; kernel a
 
 The coefficient field is F_ℓ; do not use a rational decomposition theorem in this argument.
 
-The lowest costandard stalk needs only geometric unibranchness of the Schubert variety, not normality: for PU₃(F′/F) with F′/F totally ramified quadratic over a 3-adic field and μ=(1,0,0), the quasi-minuscule Schubert variety is not normal because 3 divides #π₁(G^der)=3 (HLR Example 9.4, p. 38; HLR line 1860), yet it is geometrically unibranch and its perfection is normal, so H^(−2)(∇)=F_ℓ at its singular point and the bound 1 holds there.
+The lowest costandard stalk needs only geometric unibranchness of the Schubert variety, not normality: for PU₃(F′/F) with F′/F totally ramified quadratic over a 3-adic field and μ=(1,0,0), the quasi-minuscule Schubert variety is not normal because 3 divides #π₁(G^der)=3 (HLR Example 9.4, p. 38; HLR line 1860), yet it is geometrically unibranch and its perfection is normal, so H^(−2)(∇)=F_ℓ at its singular point and the bound 1 holds there. Here ∇ is the costandard sheaf of the quasi-minuscule orbit at that absolutely special level, of dimension 〈2ρ,μ〉=〈(2,0,−2),(1,0,0)〉=2; the example tests the step that geometric unibranchness suffices for the lowest costandard stalk, which GL Lemma 5.4 applies at Iwahori level to the Schubert variety of t^ν, of the same dimension ℓ(t^ν)=2.
 
 *Needs:* §7.1; §7.2; gap:schubert-geometric-unibranchness; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10.
 
