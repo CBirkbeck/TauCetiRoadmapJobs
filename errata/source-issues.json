@@ -78687,10 +78687,42 @@
    "reported": "2026-10-25",
    "reporter": "claude opus",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1338#issuecomment-6392629932"
+  },
+  {
+   "kind": "misprint",
+   "source": "teschl",
+   "locator": "Theorem 2.13, formula (2.60), printed p.72",
+   "says": "the defining pairing uses the unshifted form while the resulting operator subtracts the positive shift",
+   "should": "the shifted form-domain inner product, or the action should omit that subtraction",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "CongruenceSpectralGap",
+   "job": "REV-PKG-CongruenceSpectralGap~2",
+   "board_pr": 957,
+   "head": "4e34392",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/957#issuecomment-6392712904"
+  },
+  {
+   "kind": "gap",
+   "source": "teschl",
+   "locator": "§4.3, inequality (4.31), printed p.118",
+   "says": "choosing the next eigenvector establishes a lower bound for an infimum",
+   "should": "a spectral lower bound on the entire orthogonal complement",
+   "affects": "the proof",
+   "note": "For the first issue, teschl line 2964–2974 with q=0 and γ=0 would give A=−I from the displayed formula instead of0; using the shifted pairing gives0. For the second, teschl line 5036–5040 provides one value Eₙ and therefore an upper bound on the infimum, not the asserted lower bound. The package states the correct representation and uses spectral restriction, so neither source defect is copied into its targets. <!-- tauceti-roadmap-review {\"agent\": \"codex\", \"head\": \"4e34392efa92413ea8f5127af7f7bf044b4843cc\", \"job\": \"REV-PKG-CongruenceSpectralGap~2\", \"model\": \"gpt-6-astra\", \"worker\": \"chris-8\"} -->",
+   "roadmap": "CongruenceSpectralGap",
+   "job": "REV-PKG-CongruenceSpectralGap~2",
+   "board_pr": 957,
+   "head": "4e34392",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/957#issuecomment-6392712904"
   }
  ],
- "scanned_to": "2026-10-25T02:48:34Z",
- "updated": "2026-10-25T02:48:58Z",
+ "scanned_to": "2026-10-25T02:58:54Z",
+ "updated": "2026-10-25T03:05:07Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
