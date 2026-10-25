@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6758 mistakes recorded on the board: 4180 misprints, 1726 errors, 651 gaps, 201 unparsed bullets.
+6760 mistakes recorded on the board: 4182 misprints, 1726 errors, 651 gaps, 201 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6325,6 +6325,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 3.14 proof, printed p.26 (LS line 1180): the source says unshifted hypersurface cohomology is concentrated in degree zero; it should be degree n−1, or degree zero after the perverse shift; affects the proof. Found by SheafConvolutionOnAbelianVarieties (#1674 at 00f55f8, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Lemma 3.14 proof, printed p.26 (LS line 1182): the source says the normalization input is Lemma 2.9(2); it should be Lemma 2.9, which has no numbered second part; affects nothing. Found by SheafConvolutionOnAbelianVarieties (#1674 at 00f55f8, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 3.8 proof, printed p. 21 (LS line 969): the source says the characteristic cycle of i_*Q[n] is the conormal of H; it should be i_*Q[n−1], the perverse shift of the (n−1)-dimensional H; affects nothing. Found by SheafConvolutionOnAbelianVarieties (#1674 at f1720ea, 2026-10-25, claude fable).
+- **Misprint** at Lemma 3.8 proof, printed p. 21 (LS line 971): the source says the minuscule input is [42, Corollary 1.0]; it should be Corollary 1.10 of that reference (K1 line 444); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f1720ea", "job": "REV-PKG-SheafConvolutionOnAbelianVarieties~2", "model": "fable", "worker": "fable-rev129"} -->. Found by SheafConvolutionOnAbelianVarieties (#1674 at f1720ea, 2026-10-25, claude fable).
 - **Gap** at Lemma 4.8 and proof, printed pp. 34–35, used in Corollary 4.10, p. 36: the source says avoidance holds for all torsion characters, for any order prime ℓ; it should be restricted to ℓ ≠ p, where the Weil-eigenvalue argument applies; affects a stated result. Found by LawrenceVenkateshMethod (#345 at 9ee7ac3, 2026-10-23, claude opus).
 - **Misprint** at Lemma 4.8 proof, printed p.35 (LS lines 1601–1602): the source says the upper bound counts tuples outside one exceptional coset; it should be the number inside that coset; affects the proof. Found by SheafConvolutionOnAbelianVarieties (#1674 at 00f55f8, 2026-10-25, codex gpt-6-astra).
 - **Error** at Lemma 4.8 proof, printed p.35 (LS lines 1606–1615): the source says an axis inverse image is a single restriction subtorus; it should be a finite union of torsion translates, retaining every resulting torsion value in the collision argument; affects the proof. Found by SheafConvolutionOnAbelianVarieties (#1674 at 00f55f8, 2026-10-25, codex gpt-6-astra).
