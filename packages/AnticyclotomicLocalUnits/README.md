@@ -13,9 +13,9 @@ The general objects below have these owners; the targets here are their arithmet
 - IntegralIwasawaTheory §7.1 owns the multiplicative determinant norm and unramified cyclotomic interpolation; ColemanPowerSeries Layer 1 supplies its explicit norm/evaluation refinements. Section 1.1 differs by its height-two formal module, rank-p² scalar algebra and π-division points.
 - LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2 own formal O-modules, logarithms, torsion, Tate modules and reciprocity; LT.4 owns the scalar-Frobenius and unramified Honda comparison; LT.5–LT.8 own integral lattice quotients, quasi-canonical fields, neighboring lattices and the tame/anticyclotomic field comparisons; LT.9 owns formal traces. Section 5.3 applies scalar Frobenius to cyclic-level subgroup descent, §6.1 builds modular images of the supplied quotients, and §6.3 identifies their supplied lattice orbits with the Hecke trace. None rebuilds those foundations.
 - NonordinaryCMSpecialValues NCM.0–NCM.4 own canonical CM characters, early normalized zeta classes, semilocal comparisons, root numbers and Finis’s unit-value specialization; NCM.5 owns the canonical unramified coefficient and scalar-to-tensor comparison. Section 4.1 owns the auxiliary field, §4.2 the local-unit projection composite, §4.3 the Coleman/dual-exponential normalization, and §§4.4–4.5 their application before signed freeness.
-- ClassFieldTheory Layers 0, 5–8 own cyclic Tate cohomology, local duality and local reciprocity. ArithmeticGaloisDuality §§R02.1.2–R02.1.3 own coefficient limits. The finite affine Cartier-dual functor is already in Tau Ceti. Section 2.1 owns its comparison with the specific formal division sequence and its obstruction maps, not generic Cartier duality or a new continuous-cohomology carrier.
+- The cyclic Tate and Herbrand formalism is already in Tau Ceti. ClassFieldTheory Layers 5–8 own local duality and local reciprocity. ArithmeticGaloisDuality §§R02.1.2–R02.1.3 own coefficient limits. The finite affine Cartier-dual functor is already in Tau Ceti. Section 2.1 owns its comparison with the specific formal division sequence and its obstruction maps, not generic Cartier duality or a new continuous-cohomology carrier.
 - ModularCurves Layers 5, 8–9 own affine fine level, cyclic subgroups and coarse stabilizers. ModularCurvesPartII §§3.2, 3.9, 5.2–5.3, 9.9–9.11, 13.2, 13.7 and 16.6 supply composite-level compactifications, good models, correspondences, differential lattices and genuine modular quotients. The genus formula is stated by ModularForms Layer 10B. EllipticCurveModularity R29.5–R29.6 owns the genuine modular parametrization and unconditional modularity. Section 5.2 applies the Manin-unit theorem at a good prime; its integral congruence comparison is the explicit contract below.
-- EllipticCurves Layers 1, 3–5 own isogenies, finite-field Frobenius, reduction and twists. Their finite-field extension requested below supplies Deuring/Schoof counts; §5.4 applies those counts without introducing a second supersingular predicate. ImaginaryQuadraticClassNumber H1–H2 owns forms, class numbers, splitting and the analytic class-number formula. The extra upper estimate needed for §4.1 is a supplier contract, not a new analytic-number-theory layer.
+- EllipticCurves Layers 1, 3–5 own isogenies, finite-field Frobenius, reduction and twists. Their finite-field extension requested below supplies trace-class counts and scalar-Frobenius representatives; ModularCurvesPartII §12.1 supplies the weighted supersingular mass and exceptional-j criteria. Section 5.4 applies these inputs without introducing a second supersingular predicate. ImaginaryQuadraticClassNumber H1–H2 owns forms, class numbers, splitting and the analytic class-number formula. The extra upper estimate needed for §4.1 is a supplier contract, not a new analytic-number-theory layer.
 
 ## Conventions
 
@@ -25,7 +25,7 @@ Use the supplied Lubin–Tate formal O-module F for π, with normalized logarith
 
 Write Φ_n=Φ(F[π^(n+1)]), Δ=Gal(Φ_0/Φ), ω=κ|Δ, and Γ=Gal(Φ∞/Φ_0)=Γ⁺×Γ⁻. The supplied character κ is the actual Tate action. Arithmetic reciprocity sends a uniformizer to arithmetic Frobenius and satisfies κ(Art_Φ(u))=u⁻¹ on Oˣ. Thus an Artin unit a acts on T by a⁻¹ and on its inverse twist by a. Conjugation c of Φ/ℚ_p fixes Γ⁺ and inverts Γ⁻: for u∈Γ⁻, c u c⁻¹=u⁻¹, and the product is 1. These comparisons are fixed by LubinTateFormalModulesAndQuasiCanonicalLifts LT.2 and LT.8 and ClassFieldTheory §§2.5–2.6, Layer 7.
 
-Use Θ_n=Φ_n^Δ and Ψ_n=Θ_n^(Γ⁺), so [Θ_n:Φ]=p^(2n), [Ψ_n:Φ]=pⁿ and Θ_0=Ψ_0=Φ. The full first tame degree is p²−1, while the primed ring-class tame degree is p+1: at p=5 these are 24 and 6. Put Λ₂=O[[Γ⁺×Γ⁻]] and Λ=O[[Γ⁻]], on the native completed group algebra. A quotient of a compact module uses the closed relation image. Completed actions are continuous and all compact modules are Hausdorff. Discrete point modules used in continuous cohomology have the discrete direct-limit topology, even though each finite field also has its valued topology.
+Use Θ_n=Φ_n^Δ and Ψ_n=Θ_n^(Γ⁺), so [Θ_n:Φ]=p^(2n), [Ψ_n:Φ]=pⁿ and Θ_0=Ψ_0=Φ. The full first tame degree is p²−1, while the primed ring-class tame degree is p+1: at p=5 these are 24 and 6. Put Λ₂=O[[Γ⁺×Γ⁻]] and Λ=O[[Γ⁻]], on the native completed group algebra. A quotient of a compact module uses the closed relation image. Completed actions are continuous and all compact modules are Hausdorff. Discrete point modules used in continuous cohomology have the discrete direct-limit topology, even though each finite extension of Φ also has its valued topology.
 
 A star means Hom_O(T,−) with diagonal action, never a scalar dual without the Tate action. The additive continuous O-dual has values in Φ/O; Γ acts on a dual by precomposition with g⁻¹. Over the unramified coefficient O, the trace pairing to ℚ_p/ℤ_p uses the unramified different O. It must not be transported unchanged to ramified coefficients.
 
@@ -57,6 +57,8 @@ Use `WeierstrassCurve.formalPointHomAdicCompletion` and `WeierstrassCurve.formal
 
 Use `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDuality` and `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDual` from TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean. This is affine finite locally free Cartier duality over an arbitrary commutative base ring; it does not identify F[π^k] with its own dual.
 
+Use `TauCeti.TateCohomology.H0IsoNormQuotient` and `TauCeti.TateCohomology.HNegOneIsoNormKernelQuotient` in TauCeti/RepresentationTheory/Homological/TateCohomology/LowDegree.lean for Ĥ⁰=M^G/NM and Ĥ⁻¹=ker N/I_GM on representations over a commutative ring of a finite group. For a finite cyclic group, `Rep.FiniteCyclicGroup.periodicIso` in Periodic.lean identifies Ĥ⁻¹ with H¹ and I_GM=(g−1)M for a generator g. Use `TauCeti.TateCohomology.herbrandQuotient`, `TauCeti.TateCohomology.herbrandQuotient_eq_one_of_finite`, `TauCeti.TateCohomology.herbrandQuotient_eq_natCard_H2_div_natCard_H1`, `TauCeti.TateCohomology.herbrandQuotient_eq_mul_of_shortExact` and `TauCeti.TateCohomology.herbrandQuotient_eq_of_finite_kernel_of_finite_cokernel` in HerbrandQuotient.lean in that directory. Multiplicativity requires finite degree-minus-one Tate groups on both outer terms of the short exact sequence; invariance requires a morphism with finite kernel and cokernel. The quotient is a rational number totalized by `Nat.card`: it is zero if either defining Tate group is infinite. Section 7.1 proves finiteness before using its classical cardinality ratio.
+
 ### From TauCetiRoadmap.LocalFieldsRamification and TauCetiRoadmap.ProfiniteArithmetic
 
 LocalFieldsRamification Layers 0–3 supply native finite-extension fields, their integer rings, residue fields, principal-unit filtration/topology, pro-p property, ramification and normal basis. ProfiniteArithmetic §1.3 supplies the continuous ℤ_p scalar action on abelian pro-p groups. At p=5 a degree-p² base scalar norm has exponent 25; finite Galois transport and coefficient tensoring retain that norm, not a guessed scalar endomorphism on arbitrary units.
@@ -73,17 +75,17 @@ What PadicMeasuresIwasawaAlgebras must provide (gap:compact-coefficient-duality)
 
 IntegralIwasawaTheory §7.1 supplies `colemanSeriesBasis`, `colemanNorm`, `colemanTrace`, `localUnitNormLimit` and `colemanInterpolation` for the multiplicative cyclotomic tower over every finite unramified coefficient field, retaining the coefficient Frobenius in interpolation. ColemanPowerSeries Layer 1 supplies the explicit multiplication-matrix and norm/evaluation comparisons. The finite-free scalar structure has rank p there, whereas §1.1 proves rank p² for [π]_F; the multiplicative theorem is not quoted as height-two interpolation.
 
-What IntegralIwasawaTheory must provide (gap:general-unit-norm-control): Supply general one-variable local-unit control for finite p-adic base fields and their ramified ℤ_p-extensions, including the torsion-corrected infinite unit module, the norm-kernel and injectivity statements used in Wintenberger §5.2 and their finite coinvariant comparison, so that the two-variable nonexceptional ω-freeness argument does not assume its own conclusion.
+What IntegralIwasawaTheory must provide (gap:general-unit-norm-control): For any prime p, finite K/ℚ_p and abelian K∞/K with G=Δ×Γ, Δ finite of order prime to p and Γ≃ℤ_p^r, r≥1, put Z(F)=lim_(K⊆E⊆F, [E:K]<∞) lim_m Eˣ/(Eˣ)^(p^m), with norm transitions in E, and Z∞=Z(K∞); require, for K⊆F⊆F′⊆K∞ with Gal(F′/F)≃ℤ_p and σ∈G restricting to its topological generator, ker(N:Z(F′)→Z(F))=(σ−1)Z(F′), Z(F)/N Z(F′)≃ℤ_p with trivial G-action, and injectivity of σ−1 on Z(F′); moreover, for each nontrivial irreducible ℚ_p-character ψ of Δ, with idempotent e_ψ and A_ψ=e_ψℤ_p[Δ], K_n=K∞^(p^nΓ) and I_n=(γ_1^(p^n)−1,…,γ_r^(p^n)−1) for a ℤ_p-basis γ_i of Γ, require ker(Z∞,ψ→Z(K_n)_ψ)=I_n Z∞,ψ for every n≥0, identifying these coinvariants with the norm image in Z(K_n)_ψ, and, when r=2 and either μ_(p∞)(K∞)={1} or ψ differs from the tame cyclotomic character, require these coinvariants to be finite free over A_ψ of rank [K:ℚ_p]p^(2n).
 
 ### From TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts
 
 Use LT.0 for the formal O-action and normalized logarithm, including inverse convergence on deep ideals; LT.1–LT.2 for Lubin–Tate construction, actual torsion, Tate module, κ and the local Artin comparison; LT.4 for the unramified Honda comparison with type p−εX² and parameter εp, and its elliptic specialization. Use LT.5–LT.6 for marked integral lattice quotients and descent; LT.7/bko-quasi-fields and LT.7/ringclass-galois for Ψ′_s with degree p^(s−1)(p+1), s≥1, and exact endomorphism order ℤ_p+p^sO. Use LT.7/lattice-neighbors for the one inward and p outward neighbors and their stabilizer orbits. Use LT.8/bko-character-data, LT.8/quadratic-directions, LT.8/bko-fields, LT.8/field-generator-comparisons and LT.8/sign-generator-comparison for the fixed fields, conductor filtration, κ/ω actions and the alternating π/p generators. Use LT.9 for formal traces, tame descent and the adjacent-field trace square. At p=5 the primed degrees 1,6,30 and the tame-fixed degrees 1,5,25 witness the shift.
 
-What LubinTateFormalModulesAndQuasiCanonicalLifts must provide (gap:formal-point-completion-realization): Identify the unramified quadratic local field and every finite field used for the elliptic formal-point comparison with a height-one completion of a number field, transporting integer rings, maximal ideals, the chosen elliptic model, formal logarithm, group law and the native formal-point homomorphism compatibly with the finite inclusions used here.
+What LubinTateFormalModulesAndQuasiCanonicalLifts must provide (gap:formal-point-completion-realization): Identify the unramified quadratic local field and every finite extension of Φ used for the elliptic formal-point comparison with a height-one completion of a number field, transporting integer rings, maximal ideals, the chosen elliptic model, formal logarithm, group law and the native formal-point homomorphism compatibly with the finite inclusions used here.
 
 ### From TauCetiRoadmap.ClassFieldTheory and TauCetiRoadmap.ArithmeticGaloisDuality
 
-ClassFieldTheory Layer 0 supplies finite cyclic Tate cohomology, norm descriptions Ĥ⁰=M^G/NM and H¹=ker N/(g−1)M, periodicity and Herbrand multiplicativity, including quotient one on finite modules and finite-index lattice invariance. Layer 5 supplies finite local Tate duality with the actual Cartier dual, evaluation cup product, coefficient trace and local invariant. Layers 6–8 supply local reciprocity, arithmetic Frobenius, the inverse action on units, norm/restriction adjunction and compatibility along finite towers. The coefficient trace in the unramified quadratic ring has Tr(1)=2, so no implicit scalar identification by trace alone is used.
+ClassFieldTheory Layer 5 supplies finite local Tate duality with the actual Cartier dual, evaluation cup product, coefficient trace and local invariant. Layers 6–8 supply local reciprocity, arithmetic Frobenius, the inverse action on units, norm/restriction adjunction and compatibility along finite towers. The coefficient trace in the unramified quadratic ring has Tr(1)=2, so no implicit scalar identification by trace alone is used.
 
 ArithmeticGaloisDuality §R02.1.2 supplies Tate’s inverse-limit sequence including lim¹, and §R02.1.3 supplies cohomology of the discrete quotient W=T⊗ℚ_p/ℤ_p with W[p^k]≃T/p^k and its specified transitions. For T=T_πF this is the underlying finite free ℤ_p-lattice. The discrete A⁻ cocycle argument of §7.2 is proved on the actual point module and is not inferred from that finite-lattice coefficient theorem.
 
@@ -97,11 +99,11 @@ PadicHodgeRegulators §1.4 supplies the de Rham dual exponential H¹(K,V)→Fil�
 
 Use Layers 1, 3–5 for isogenies, finite-field point counts and Frobenius polynomials, good reduction and twists. In particular the p²-trace of a trace-zero curve over 𝔽_p is −2p, and its point count over 𝔽_(p²) is (p+1)². For p=5 these values are −10 and 36.
 
-What EllipticCurves must provide (gap:supersingular-trace-classes): Extend Layer 3 by trace-zero existence over every 𝔽_p for p≥5, supersingular j rationality over 𝔽_(p²), the Deuring mass relation p−1=12m+4d+6e, and the twist-sensitive 𝔽_(p²)-isomorphism-class counts N(±2p)=(p+6−4(−3/p)−3(−1/p))/12, N(±p)=1−(−3/p) and N(0)=1−(−1/p), with the exceptional j criteria and scalar-Frobenius representatives.
+What EllipticCurves must provide (gap:supersingular-trace-classes): Extend Layer 3 by trace-zero existence over every 𝔽_p for p≥5, supersingular j rationality over 𝔽_(p²), and the twist-sensitive 𝔽_(p²)-isomorphism-class counts N(±2p)=(p+6−4(−3/p)−3(−1/p))/12, N(±p)=1−(−3/p) and N(0)=1−(−1/p), with scalar-Frobenius representatives.
 
 ### From TauCetiRoadmap.ModularCurves, TauCetiRoadmap.ModularCurvesPartII and TauCetiRoadmap.ModularForms
 
-Use ModularCurves Layer 5 for fine affine point-level moduli, Layer 8 for cyclic prime-to-p subgroups and transport, and Layer 9 for coarse stabilizers. Use ModularCurvesPartII §§3.2, 3.9, 5.2–5.3 for arbitrary composite-level proper coarse models and good-prime smoothness, §§9.9–9.11 and 13.2 for geometric and integral Hecke actions, §13.7 for integral weight-two differentials and §16.6 for the genuine trivial-character quotient of J₀(N). ModularForms Layer 10B supplies the genus/index formula. These apply at N=27,32 as well as squarefree N. For those levels μ=N∏_(l|N)(1+1/l) is 36,48 and g_N=1.
+Use ModularCurves Layer 5 for fine affine point-level moduli, Layer 8 for cyclic prime-to-p subgroups and transport, and Layer 9 for coarse stabilizers. Use ModularCurvesPartII §§3.2, 3.9, 5.2–5.3 for arbitrary composite-level proper coarse models and good-prime smoothness, §§9.9–9.11 and 13.2 for geometric and integral Hecke actions, §12.1 (`gammaZeroPrime_mass`) for the weighted supersingular mass and the exceptional-j criteria, §13.7 for integral weight-two differentials and §16.6 for the genuine trivial-character quotient of J₀(N). ModularForms Layer 10B supplies the genus/index formula. These apply at N=27,32 as well as squarefree N. For those levels μ=N∏_(l|N)(1+1/l) is 36,48 and g_N=1.
 
 What ModularCurvesPartII must provide (gap:mixed-level-disk-comparison): For arbitrary p∤NM with M≥6 and p∤φ(M), supply the mixed Γ₀(N),Γ₁(M) fine good model and the coarse-forgetful map on the chosen unramified locus, identifying completed local disks and their universal elliptic families compatibly with unramified coefficient extension and reduction, including the stabilizer-free loci at N=27,32.
 
@@ -178,13 +180,14 @@ Its API consists of the following facts on these same carriers and with these sa
 
 U∞ is a finite free Λ₂=O[[Γ]]-module of rank two, with its compact module topology.
 
-(Rubin87, Proposition 1.1, p.407; see Wintenberger §4, pp.91–92 and §5, pp.92–98; Win80, §4, theorem (i),(iii), pp.91–92; §5.2–5.5.3, pp.92–98; Rubin87 line 116; Win80 line 112.)
+(Rubin87, Proposition 1.1, p.407; Win80, §4, theorem (i),(iii), pp.91–92; §§5.2–5.5.3, pp.93–98; Rubin87 line 116; Win80 line 112; Win80 line 192; Win80 line 296.)
 
 A proof route is as follows. Apply the two-variable nonexceptional-character theorem to the ω-component, with base degree two. The cyclotomic tame character is ω^(p+1), distinct from ω. Prove its finite coinvariant and torsion-freeness hypotheses using the general norm-control contract; finite local reciprocity alone is insufficient.
 
 **Checks.**
 
 - At p=5 the tame exponents of ω and the cyclotomic character are 1 and 6 modulo 24, so the exceptional characters are different. Rank two gives finite coinvariant O-rank 2·5^(2n): 2 at n=0 and 50 at n=1.
+- For the cyclotomic ℤ_p-extension F′/Φ, local reciprocity identifies Z(Φ)/N Z(F′) with ℤ_p, with trivial Galois action; it is nonzero. On a nontrivial tame character this quotient has component zero, while the trivial component remains ℤ_p. The norm-control contract therefore does not assert surjectivity on every tame component.
 
 *Needs:* §0.2; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; IntegralIwasawaTheory §7.2 (gap:general-unit-norm-control).
 
@@ -369,19 +372,28 @@ The subsection *Needs:* lines give the internal dependencies. External inputs: C
 
 ## Layer 2: Formal Kummer duality and reciprocity
 
-Use the actual formal O-module, finite fields and local Artin normalization of the conventions. Every cohomology map is the connecting map of that formal division sequence, with its stated finite or discrete coefficient topology.
+Use the actual formal O-module, finite extensions of Φ and local Artin normalization of the conventions. Every cohomology map is the connecting map of that formal division sequence, with its stated finite or discrete coefficient topology.
 
 ### 2.1 Finite formal Kummer and Cartier comparison
 
 For every finite L/Φ in Θ∞ or Ψ∞ and k≥1, construct 0→F(L)/π^k→H¹(L,F[π^k])→H¹(L,F(Φ̄))[π^k]→0. Identify the finite Cartier dual of F[π^k] with Hom(F[π^k],μ_(p^k)) with its actual action, and compare the cup-product local invariant to the formal Kummer evaluation pairing. After inverse Tate twisting, the resulting limit pairing has values Φ/O.
 
-(BKO21, §4, equation (4.1), p.954; Rubin87 Lemma 5.1 and Proposition 5.2, pp.411–412; BKO21 line 516; Rubin87 line 283.)
+(BKO21, §4, equation (4.1), p.954; Rubin87 Lemma 5.1 and Proposition 5.2, pp.411–412; BKO21 line 516; Rubin87 line 292; Rubin87 line 306.)
 
 A proof route is as follows. Prove formal division over the algebraic closure and use its connecting map. Apply the supplied finite local duality to the actual finite Cartier dual, retaining evaluation, the trace O/π^k→ℤ/p^k and restriction/corestriction adjunction. The identification of formal Kummer obstructions and their transitions is proved here; self-duality of a height-two formal group is not assumed.
 
+Its API consists of the following facts on these same carriers and with these same hypotheses.
+
+- The connecting map F(L)→H¹(L,F[π^k]) is O-linear, has kernel [π^k]F(L), and identifies its quotient with the kernel of the map to H¹(L,F(Φ̄))[π^k]; the latter map is surjective.
+- Inclusion F[π^k]→F[π^(k+1)] corresponds to [π] on the formal-point quotients; multiplication by π on torsion corresponds to reduction F(L)/π^(k+1)→F(L)/π^k. These maps commute with the obstruction maps of the division sequences.
+- For finite L′/L in the stated towers, Kummer restriction agrees with inclusion of formal points, and Kummer corestriction agrees with formal trace.
+- The Cartier comparison uses evaluation into μ_(p^k) and the coefficient pairing (a,b)↦Tr_(O/ℤ_p)(ab) modulo p^k, followed by the local invariant; the unramified different makes this coefficient pairing perfect.
+
 **Checks.**
 
-- At k=1 the connecting-map kernel is [π]F(L), so a formal π-multiple maps to 0. For the finite unramified coefficient trace at p=5, Tr_(𝔽₂₅/𝔽₅)(1)=2, making the untwisted trace normalization explicit.
+- At k=1 a formal π-multiple maps to 0. A point Q∈F(Φ) with λ(Q)∈pO∖p²O has nonzero Kummer class; a zero connecting map would fail this test.
+- At L=Φ and k=1, λ identifies F(Φ) with pO, so the left term F(Φ)/πF(Φ) has cardinal |pO/p²O|=p², equal to 25 at p=5. The transition Q mod π↦[π]Q mod π² is nonzero for a primitive Q, whereas reduction of [π]Q modulo π is zero.
+- At p=5 the dual coefficient trace 𝔽₂₅→𝔽₅ takes 1 to 2 and 3 to 1, hence is surjective. The coefficient pairing takes (1,1) to 2, rather than 1; omitting the trace or treating it as an identity gives the wrong normalization.
 
 *Needs:* §0.4; ClassFieldTheory Layer 5; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; Tau Ceti affine Cartier duality; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2.
 
@@ -389,7 +401,7 @@ A proof route is as follows. Prove formal division over the algebraic closure an
 
 For the specified height-two F and each finite base L in Θ∞ or Ψ∞, the inverse limit of F(L′) over finite L′/L in the respective tower, with formal trace transition, is zero. The dual direct limit of the formal Kummer obstruction H¹(L′,F(Φ̄))[π^k] vanishes with the matching transition maps.
 
-(Haz77, Theorem 1.3, pp.305–306, and its proof §4, pp.312–314; Rubin87 Proposition 4.5 and Lemma 5.1, p.411; Rubin87, Proposition 4.5 and Lemma 5.1, p.411; Haz77 line 37; Rubin87 line 276.)
+(Haz77, Theorem 1.3, pp.305–306, and its proof §4, pp.312–314; Rubin87, Proposition 4.5 and Lemma 5.1, p.411; Haz77 line 37; Rubin87 line 276.)
 
 A proof route is as follows. For an absolutely unramified base Hazewinkel gives depth a_n=n−floor((n−1)/2), n≥1. Prove a shrinking-image estimate at every finite ramified base of each stated tower: for every depth a there is a level beyond which every formal trace lies in that depth at that base. For each finite base in Θ∞ choose a totally ramified ℤ_p subtower above that base; restriction of a fully norm-compatible family to that subtower kills its coordinate at the base. No rank-one subtower is claimed to be cofinal in the rank-two tower. These quantifiers kill every coordinate of a compatible family. Dualize the actual finite obstruction system of §2.1, retaining any inverse-limit derived term until its Mittag–Leffler hypothesis has been proved.
 
@@ -403,7 +415,7 @@ A proof route is as follows. For an absolutely unramified base Hazewinkel gives 
 
 Construct a perfect continuous/discrete O-duality F(Θ∞)⊗_O Φ/O ≃ Hom_O,cts(U∞*,Φ/O), equivalently F(Θ∞)⊗Φ/O ≃ Hom_O(U∞,F[π∞]); it is induced by the Kummer map and local reciprocity, not by selecting an arbitrary perfect pairing.
 
-(BKO21, §4, p.954; Rubin87 Proposition 5.2, p.412; BKO21 line 522; Rubin87 line 295.)
+(BKO21, §4, p.954; Rubin87 Proposition 5.2, p.412; BKO21 line 522; Rubin87 line 306.)
 
 A proof route is as follows. Pass to the limit in the finite Kummer comparison, using §2.2 to kill the obstruction. Restrict to the torsion extension, take exact tame invariants, and apply norm-compatible local Artin maps. The valuation and other tame eigenspaces have no ω-component. Compact/discrete biduality fixes both the actual pairing and its topology.
 
@@ -425,7 +437,7 @@ Its API consists of the following facts on these same carriers and with these sa
 
 The pairing induces a perfect Γ⁻-equivariant duality D=F(Ψ∞)⊗Φ/O ≃ Hom_O,cts(V∞*,Φ/O). In particular the annihilator of all formal points in V∞* is zero.
 
-(BKO21, §4, p.954; Rubin87 Proposition 5.4 and Lemma 4.4, pp.410–412; BKO21 line 527; Rubin87 line 318.)
+(BKO21, §4, p.954; Rubin87 Proposition 5.4 and Lemma 4.4, pp.410–412; BKO21 line 527; Rubin87 line 325.)
 
 A proof route is as follows. Dualize Γ⁺-coinvariants on units. The p-power fixed-field tower has no nonzero F[π]-torsion, since that torsion has nontrivial tame action. Use inflation–restriction and §2.2 to kill the invariant-sequence obstruction on the formal-point side.
 
@@ -439,7 +451,7 @@ A proof route is as follows. Dualize Γ⁺-coinvariants on units. The p-power fi
 
 For y∈F(Ψ_n), x∈V∞*, k≥0 and m sufficiently large relative to y and k, the Kummer pairing is ⟨y⊗π^(−k),x⟩=π^(−m−1−k) Tr_(Φ_m/Φ)(δ_m(x)λ(y)) modulo O. Here δ_m is computed on any lift of x to U∞*, and the formula is independent of the lift and of admissible m.
 
-(BKO21, §4, p.955; Rubin87 Theorem 5.3, p.412; Rubin87, Theorem 5.3, p.412; BKO21 line 543; Rubin87 line 310.)
+(BKO21, §4, p.955; Rubin87, Theorem 5.3, p.412; BKO21 line 543; Rubin87 line 322.)
 
 A proof route is as follows. Use finite explicit reciprocity with the π-adic Tate basis, its invariant differential and the arithmetic Artin convention of §2.1, then take the tame projection and Γ⁺-coinvariants. Establish a threshold m₀(y,k) such that the formula holds for every m≥m₀(y,k); show independence of lift modulo O. The explicit reciprocity proof is required as part of this theorem, rather than assumed from a freely chosen pairing. Its original bibliographic locator is Wiles78, pp.235–254 (uncertified); the stated local formula is the one read in Rubin87 Theorem 5.3 and BKO21 §4.
 
@@ -544,7 +556,7 @@ A proof route is as follows. Apply the integral trace projectors of §3.3 and in
 
 For each n, F(Ψ_n) is O-saturated in F(Ψ∞), and A_n^ε is O-saturated in A^ε. Consequently F(Ψ_n)⊗Φ/O→D and A_n^ε⊗Φ/O→D^ε are injective.
 
-(BKO21, The torsion-free Kummer argument in §4, p.954; Rubin87 Proposition 5.4 and Lemma 5.5, pp.412–413; Rubin87 line 318; Rubin87 line 361.)
+(BKO21, The torsion-free Kummer argument in §4, p.954; Rubin87 Proposition 5.4 and Lemma 5.5, pp.412–413; Rubin87 line 325; Rubin87 line 361.)
 
 A proof route is as follows. If [π]z lies in F(Ψ_n), each automorphism fixing Ψ_n makes gz−z a π-torsion point of F(Ψ∞), hence zero. Iterate and intersect with the signed conditions. Torsion-free quotients give the tensor injections.
 
@@ -572,7 +584,7 @@ A proof route is as follows. Insert direct-character logarithm covariance and in
 
 V∞*,+∩V∞*,−=0 and rank_Λ V∞*,ε≤1. Each quotient V∞*/V∞*,ε is O-torsion-free and has positive Λ-rank.
 
-(BKO21, §4, p.955; Rubin87 Corollary 5.8, p.414; BKO21 line 550; Rubin87 line 378.)
+(BKO21, §4, p.955; Rubin87 Corollary 5.8, p.414; BKO21 line 550; Rubin87 line 389.)
 
 A proof route is as follows. The sum D⁺+D⁻=D makes the two unit annihilators disjoint. Each quotient is O-torsion-free because D^ε is divisible. If its Λ-rank were zero, the one-variable structure theorem would make it finite over O, contradicting the unbounded finite signed coranks embedded by §3.5.
 
@@ -637,7 +649,7 @@ Its API consists of the following facts on these same carriers and with these sa
 
 For the projected class x∈U∞*⊗_O R, transport its finite Kummer class through the specified CM coefficient identification to H¹(Φ_n,T_φ⁻¹(1)). Compare the imported dual exponential, normalized by the chosen invariant differential ω_E, with the invariant Coleman derivative: its finite coefficient is π^(−n−1)δ_n(x), and the χ-weighted semilocal sum is δ_χ(x)ω_E. The ordered local Tate pairing, coefficient trace and differential comparison are part of this comparison theorem; the formula does not define a rescaled exponential.
 
-(BKO21, Equations (3.4)–(3.6), pp.952–953; BKO21 line 422; BKO21 line 467.)
+(Kato93, Chapter II, Theorem 2.1.7, uncertified; BKO21, Equations (3.4)–(3.6), pp.952–953; BKO21 line 422; BKO21 line 467.)
 
 A proof route is as follows. Apply PadicHodgeRegulators §1.4 with its ordered positive adjunction. Transport the CM Tate representation, good differential and semilocal trace through the supplied coefficient comparison, and prove finite explicit reciprocity with the π^(−n−1) factor. This is a distinct rational comparison from the Φ/O-valued formula of §2.5.
 
@@ -731,7 +743,7 @@ A proof route is as follows. Scalar multiplication preserves every geometric pri
 
 ### 5.4 Applying the supersingular mass and twist counts
 
-Apply the finite-field count contract below at q=p². Write p−1=12m+4d+6e, d,e∈{0,1}. Identify the m generic supersingular invariants after removing j=0 and j=1728 when present, and choose a scalar-Frobenius representative above each. Retain the distinction between geometric invariants and 𝔽_(p²)-isomorphism classes: a generic invariant has the two twists of traces ±2p. The trace-class formulas, including the exceptional twists, belong to the EllipticCurves Layer 3 supplier contract.
+At q=p² let d indicate supersingularity of j=0 and e that of j=1728, and let m count the other geometric supersingular invariants. ModularCurvesPartII §12.1 gives d=1 exactly when p≡2 mod 3, e=1 exactly when p≡3 mod 4, and `gammaZeroPrime_mass` gives m+e/2+d/3=(p−1)/12, equivalently p−1=12m+4d+6e. Choose a scalar-Frobenius representative above each invariant using the finite-field trace-class contract. Retain the distinction between geometric invariants and 𝔽_(p²)-isomorphism classes: a generic invariant has the two twists of traces ±2p. The trace-class formulas, including the exceptional twists, belong to the EllipticCurves Layer 3 supplier contract.
 
 (BKO21, Proof of Lemma 5.2(ii)–(iii), p.957; BKO21 line 617.)
 
@@ -739,9 +751,9 @@ A proof route is as follows. Use the supplied mass and twist counts, keeping j-i
 
 **Checks.**
 
-- At p=5: (m,d,e)=(0,1,0), N(±10)=1, N(±5)=2, N(0)=0. At p=7: (0,0,1), N(±14)=1, N(±7)=0, N(0)=2. At p=47: (3,1,1), N(±94)=5, N(±47)=2, N(0)=2.
+- At p=5: (m,d,e)=(0,1,0), mass 1/3=4/12, N(±10)=1, N(±5)=2, N(0)=0. At p=7: (0,0,1), mass 1/2=6/12, N(±14)=1, N(±7)=0, N(0)=2. At p=47: (3,1,1), mass 3+1/2+1/3=46/12, N(±94)=5, N(±47)=2, N(0)=2.
 
-*Needs:* §5.3; EllipticCurves Layer 3 (gap:supersingular-trace-classes).
+*Needs:* §5.3; ModularCurvesPartII §12.1 (`gammaZeroPrime_mass`); EllipticCurves Layer 3 (gap:supersingular-trace-classes).
 
 ### 5.5 The ramification bound for the parametrization
 
@@ -840,7 +852,7 @@ At p=5 use the conductor-27 class: μ=36, exceptional fibre bound 12, different 
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: EllipticCurveModularity R29.6; EllipticCurveModularity R29.5; EllipticCurves Layer 3 (gap:supersingular-trace-classes); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurvesPartII §§9.9–9.11, 13.2, 16.6; ModularCurves Layer 9; ModularCurvesPartII §§5.2–5.3, 13.7 (gap:integral-congruence-comparison); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurves Layers 8–9; EllipticCurves Layer 3 (gap:supersingular-trace-classes); ModularCurvesPartII §§5.2–5.3; ModularForms Layer 10B; ModularCurves Layer 8; ModularCurves Layer 5; ModularCurvesPartII §§3.2, 3.9, 5.2–5.3 (gap:mixed-level-disk-comparison); `WeierstrassCurve.formalPointHomAdicCompletion`; `WeierstrassCurve.formalPointHomAdicCompletion_injective`; `WeierstrassCurve.range_formalPointHomAdicCompletion`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.4 (gap:formal-point-completion-realization).
+The subsection *Needs:* lines give the internal dependencies. External inputs: EllipticCurveModularity R29.6; EllipticCurveModularity R29.5; EllipticCurves Layer 3 (gap:supersingular-trace-classes); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurvesPartII §§9.9–9.11, 13.2, 16.6; ModularCurves Layer 9; ModularCurvesPartII §§5.2–5.3, 13.7 (gap:integral-congruence-comparison); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurves Layers 8–9; ModularCurvesPartII §12.1 (`gammaZeroPrime_mass`); EllipticCurves Layer 3 (gap:supersingular-trace-classes); ModularCurvesPartII §§5.2–5.3; ModularForms Layer 10B; ModularCurves Layer 8; ModularCurves Layer 5; ModularCurvesPartII §§3.2, 3.9, 5.2–5.3 (gap:mixed-level-disk-comparison); `WeierstrassCurve.formalPointHomAdicCompletion`; `WeierstrassCurve.formalPointHomAdicCompletion_injective`; `WeierstrassCurve.range_formalPointHomAdicCompletion`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.4 (gap:formal-point-completion-realization).
 
 ## Layer 6: The optimal local trace system
 
@@ -929,7 +941,7 @@ A proof route is as follows. Set a_p(E)=0 in §6.3. At level zero the tame neigh
 
 For every s≥0, y_s∈A_s⁺ if s is even and y_s∈A_s⁻ if s is odd. For odd n≥1, Tr_(Ψ_n/Φ)y_n=(−1)^((n+1)/2) p^((n−1)/2)y.
 
-(BKO21, Theorem 5.5, p.959; Rubin87 Corollary 6.2, p.416 and Lemma 7.2, p.417; BKO21 line 748; Rubin87 line 493.)
+(BKO21, Theorem 5.5, p.959; Rubin87 Corollary 6.2, p.416 and Lemma 7.2, p.417; BKO21 line 748; Rubin87 line 474; Rubin87 line 519.)
 
 A proof route is as follows. Apply each character logarithm to the trace relations. A top-level character has the complementary allowed parity, while inherited characters reduce to the earlier recurrence. The initial trace and y_0 fix the trivial-character boundary. Total trace across an inherited point contributes an additional p at each two-step descent.
 
@@ -963,7 +975,7 @@ A proof route is as follows. Use a finite-index lattice with rational representa
 
 - At p=5,n=1 the Herbrand quotient is 1. At n=3 it is 5⁴·5^(−2)=25, and at n=5 it is 5⁸·5^(−4)=625. Using residue cardinality 5 instead of 25 would give 5 at n=3 and fails.
 
-*Needs:* §3.3; §3.2; §6.5; ClassFieldTheory Layer 0.
+*Needs:* §3.3; §3.2; `TauCeti.TateCohomology.H0IsoNormQuotient`; `TauCeti.TateCohomology.HNegOneIsoNormKernelQuotient`; `Rep.FiniteCyclicGroup.periodicIso`; `TauCeti.TateCohomology.herbrandQuotient`; `TauCeti.TateCohomology.herbrandQuotient_eq_one_of_finite`; `TauCeti.TateCohomology.herbrandQuotient_eq_natCard_H2_div_natCard_H1`; `TauCeti.TateCohomology.herbrandQuotient_eq_mul_of_shortExact`; `TauCeti.TateCohomology.herbrandQuotient_eq_of_finite_kernel_of_finite_cokernel`.
 
 ### 7.2 Vanishing of minus-point first cohomology
 
@@ -1013,7 +1025,7 @@ At p=5,n=3 the Herbrand quotient is 25 and the primitive trace spans 5Oy, so the
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: ClassFieldTheory Layer 0; PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §§4.2–4.5; Mathlib finite projective modules over local rings.
+The subsection *Needs:* lines give the internal dependencies. External inputs: Tau Ceti cyclic Tate cohomology, periodicity and Herbrand quotient (the pinned declarations in §7.1 and the supplier contract); PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §§4.2–4.5; Mathlib finite projective modules over local rings.
 
 ## Layer 8: Integral decomposition and finite Kummer images
 
@@ -1043,7 +1055,7 @@ A proof route is as follows. The plus inclusion into X⁻ is injective by disjoi
 
 **Checks.**
 
-- In the signed basis the addition map is the identity matrix on Λ² and has determinant 1. The pair Λe₁ and Λ(e₁+pe₂) is rationally complementary but has determinant p and quotient O/pO; it fails the integral surjectivity condition.
+- In the signed basis the addition map is the identity matrix on Λ² and has determinant 1. The pair Λe₁ and Λ(e₁+pe₂) is rationally complementary but has determinant p and quotient Λ/pΛ; it fails the integral surjectivity condition. At p=5 this cokernel is 𝔽₂₅[[T]]: its quotient by T has 25 elements, and the classes of 1 and T are linearly independent over 𝔽₂₅, so the cokernel is infinite and is not O/5O.
 
 *Needs:* §8.1; §3.7; §1.5.
 
@@ -1083,9 +1095,18 @@ For each n and ε, export the existing A_n^ε as {y∈F(Ψ_n):λ_χ(y)=0 for all
 
 A proof route is as follows. All characters above the finite level vanish automatically on its points. Use the actual connecting map and saturation for injectivity of the signed Kummer image. For χ factoring through Ψ_n, normalized logarithms satisfy λ_χ(Tr_(n+1/n)y)=pλ_χ(y); characters above the target level vanish there. This proves compatibility with restriction and corestriction without a finite-invariant control assertion.
 
+Its API consists of the following facts on these same carriers and with these same hypotheses.
+
+- A cohomology class belongs to the signed image exactly when it is the Kummer image of an element of A_n^ε⊗_O Φ/O; the signed point condition uses the same-parity logarithms at that level.
+- The map A_n^ε⊗_O Φ/O→H¹(Ψ_n,F[π∞]) is O-linear and injective, with its source included through the saturated formal-point submodule.
+- For m≥n, restriction takes the sign-ε image at n to that at m via point inclusion, and corestriction takes it at m to that at n via formal trace; the two squares with Kummer maps commute.
+- The image is an O-submodule: zero is the Kummer image of zero, and the sum of two Kummer classes is the class of the sum of their signed divisible points.
+
 **Checks.**
 
-- At n=0 the plus Kummer image is 0 and the minus image is the full base formal image. For a base point of logarithm a and a degree-5 trace, λ_1(Tr y)=5a=5λ_1(y); replacing 5 by π=−5 gives the wrong sign.
+- At n=0 the plus Kummer image is 0 and the minus image is the full base formal image, of O-corank one. A primitive base point Q gives a nonzero class Q⊗π⁻¹ in the minus image.
+- For a base point of logarithm a and a degree-5 trace, λ_1(Tr y)=5a=5λ_1(y); replacing 5 by π=−5 gives the wrong sign. The identity extension has trace and restriction equal to the identity.
+- At p=5,n=2, the plus Kummer image has O-corank 20, from the 20 exact-order-25 characters of odd conductor 3. The minus image has O-corank 5, from the trivial character and four exact-order-5 characters of even conductor; the sum 20+5=25 matches the full formal-point corank.
 
 *Needs:* §3.2; §2.1; §3.5; §3.6.
 
@@ -1099,7 +1120,7 @@ The subsection *Needs:* lines give the internal dependencies. External inputs: `
 
 ## Downstream consumers
 
-HeegnerPointEulerSystems consumes §8.5’s finite signed local conditions at inert supersingular places. Its global points, norm relations and global reciprocity laws retain that roadmap’s ownership. SelmerIwasawaCohomology and SelmerIwasawaCohomologyPartII consume the actual Kummer images and their orthogonality, rather than constructing another parity convention. Signed CM p-adic L-functions and global main-conjecture arguments use §8.2 and §8.4 through their named global owners. They are not inputs to the early CM argument here. The local cohomology calculation uses only the primitive system of Layer 6.
+InertAnticyclotomicCMMainConjecture imports §0.1’s conductor parity, §2.4’s anticyclotomic Kummer pairing, §§3.1–3.2’s character logarithms and signed points, §3.6’s annihilators, §§4.2–4.4’s projected CM class and its reciprocity values, §8.2’s integral decomposition, §8.4’s generator nonvanishing and §8.5’s finite Kummer images. Its global signed p-adic L-functions, Selmer conditions and main-conjecture arguments use these actual carriers and normalizations. HeegnerPointEulerSystems and SelmerIwasawaCohomologyPartII are prospective consumers of §8.5 when their scope includes inert supersingular signed local conditions. Their global constructions retain their own ownership. The early CM argument uses the supplier contracts above; the local cohomology calculation uses the primitive system of Layer 6.
 
 ## Worked examples
 
@@ -1124,3 +1145,5 @@ The locators above refer to the published versions and line-numbered source extr
 - **AU96** — A. Abbes and E. Ullmo, *À propos de la conjecture de Manin pour les courbes elliptiques modulaires*, Compositio Mathematica 103 (1996), 269–286. [Numdam copy](https://www.numdam.org/article/CM_1996__103_3_269_0.pdf). Theorem A, p.269; Propositions 3.3–3.4 and Zagier’s Lemma 3.2, pp.276–278; proof of Theorem A, p.279.
 
 - **Wiles78** — A. Wiles, *Higher explicit reciprocity laws*, Annals of Mathematics 107 (1978), 235–254, [published locator](https://doi.org/10.2307/1971143), uncertified. The local trace formula used here is stated in Rubin87 Theorem 5.3, p.412, and BKO21 §4, p.955; no assertion about an internal step of the original proof is used.
+
+- **Kato93** — K. Kato, *Lectures on the approach to Iwasawa theory for Hasse–Weil L-functions via B_dR. I*, in Arithmetic Algebraic Geometry (Trento, 1991), Lecture Notes in Mathematics 1553 (1993), 50–163. [Published locator](https://doi.org/10.1007/BFb0084729), Chapter II, Theorem 2.1.7, uncertified. BKO21 line 467 identifies this form of explicit reciprocity.

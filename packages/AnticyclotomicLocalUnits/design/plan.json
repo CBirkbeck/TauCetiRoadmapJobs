@@ -3174,19 +3174,19 @@
       "slug": "general-unit-norm-control",
       "supplier": "IntegralIwasawaTheory",
       "section": "7.2",
-      "needs": "Supply general one-variable local-unit control for finite p-adic base fields and their ramified ℤ_p-extensions, including the torsion-corrected infinite unit module, the norm-kernel and injectivity statements used in Wintenberger §5.2 and their finite coinvariant comparison, so that the two-variable nonexceptional ω-freeness argument does not assume its own conclusion."
+      "needs": "For any prime p, finite K/ℚ_p and abelian K∞/K with G=Δ×Γ, Δ finite of order prime to p and Γ≃ℤ_p^r, r≥1, put Z(F)=lim_(K⊆E⊆F, [E:K]<∞) lim_m Eˣ/(Eˣ)^(p^m), with norm transitions in E, and Z∞=Z(K∞); require, for K⊆F⊆F′⊆K∞ with Gal(F′/F)≃ℤ_p and σ∈G restricting to its topological generator, ker(N:Z(F′)→Z(F))=(σ−1)Z(F′), Z(F)/N Z(F′)≃ℤ_p with trivial G-action, and injectivity of σ−1 on Z(F′); moreover, for each nontrivial irreducible ℚ_p-character ψ of Δ, with idempotent e_ψ and A_ψ=e_ψℤ_p[Δ], K_n=K∞^(p^nΓ) and I_n=(γ_1^(p^n)−1,…,γ_r^(p^n)−1) for a ℤ_p-basis γ_i of Γ, require ker(Z∞,ψ→Z(K_n)_ψ)=I_n Z∞,ψ for every n≥0, identifying these coinvariants with the norm image in Z(K_n)_ψ, and, when r=2 and either μ_(p∞)(K∞)={1} or ψ differs from the tame cyclotomic character, require these coinvariants to be finite free over A_ψ of rank [K:ℚ_p]p^(2n)."
     },
     {
       "slug": "formal-point-completion-realization",
       "supplier": "LubinTateFormalModulesAndQuasiCanonicalLifts",
       "section": "LT.4",
-      "needs": "Identify the unramified quadratic local field and every finite field used for the elliptic formal-point comparison with a height-one completion of a number field, transporting integer rings, maximal ideals, the chosen elliptic model, formal logarithm, group law and the native formal-point homomorphism compatibly with the finite inclusions used here."
+      "needs": "Identify the unramified quadratic local field and every finite extension of Φ used for the elliptic formal-point comparison with a height-one completion of a number field, transporting integer rings, maximal ideals, the chosen elliptic model, formal logarithm, group law and the native formal-point homomorphism compatibly with the finite inclusions used here."
     },
     {
       "slug": "supersingular-trace-classes",
       "supplier": "EllipticCurves",
       "section": "Layer 3",
-      "needs": "Extend Layer 3 by trace-zero existence over every 𝔽_p for p≥5, supersingular j rationality over 𝔽_(p²), the Deuring mass relation p−1=12m+4d+6e, and the twist-sensitive 𝔽_(p²)-isomorphism-class counts N(±2p)=(p+6−4(−3/p)−3(−1/p))/12, N(±p)=1−(−3/p) and N(0)=1−(−1/p), with the exceptional j criteria and scalar-Frobenius representatives."
+      "needs": "Extend Layer 3 by trace-zero existence over every 𝔽_p for p≥5, supersingular j rationality over 𝔽_(p²), and the twist-sensitive 𝔽_(p²)-isomorphism-class counts N(±2p)=(p+6−4(−3/p)−3(−1/p))/12, N(±p)=1−(−3/p) and N(0)=1−(−1/p), with scalar-Frobenius representatives."
     },
     {
       "slug": "mixed-level-disk-comparison",
