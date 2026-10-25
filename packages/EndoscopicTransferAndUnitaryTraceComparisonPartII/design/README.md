@@ -4,9 +4,9 @@
 
 ## Scope and ownership
 
-EndoscopicTransferAndUnitaryTraceComparison supplies ordinary unitary Lie-algebra endoscopy in §§1.17, 2.12 and 4.4–4.7 and stops before symmetric-space endoscopy. This Part II owns the relative symmetric-space geometry and transfer relation, the Hermitian spherical module on X_n, the germ/descent reductions, the Friedberg–Jacquet unit theorem and the Fourier-defined full-module operator. The Jacquet–Rallis inputs consumed here are the explicit supplier gaps below; their allocation to a separate continuation requires an ownership decision and is not assumed.
+EndoscopicTransferAndUnitaryTraceComparison supplies ordinary unitary Lie-algebra endoscopy in §§1.17, 2.12 and 4.4–4.7 and stops before symmetric-space endoscopy. This Part II owns the relative symmetric-space geometry and transfer relation, the Hermitian spherical module on X_n, the germ/descent reductions, the Friedberg–Jacquet unit theorem and the Fourier-defined full-module operator. The Jacquet–Rallis inputs consumed here are the named supplier contracts below.
 
-Signed Hermitian carriers and integral lattice duals belong to GeometryOfNumbersAndQuadraticArithmetic §§2.7 and 2.9; its §3.2 owns general representation densities. The finite self-dual-overlattice count and its normalization against that density are the relative adapter of Layer 4. Quotient measures belong to AdelicAlgebraicGroups §2.2, spherical Satake and determinant-twisted Levi descent to SmoothRepresentationsOfLocalGroups §§SR.4.1 and SR.4.3, and Weil operators and the Weil index to MetaplecticAutomorphicForms §§2.1 and 2.5. None is constructed a second time. The matrix Hermitian-product and characteristic-polynomial identities used for coordinates are already in the pinned Mathlib and remain background facts here.
+Signed Hermitian carriers and integral lattice duals belong to GeometryOfNumbersAndQuadraticArithmetic §§2.7 and 2.9; its §3.2 owns general representation densities. The finite self-dual-overlattice count and its normalization against that density are the relative adapter of Layer 4. Quotient measures belong to AdelicAlgebraicGroups §2.2, spherical Satake and determinant-twisted Levi descent to SmoothRepresentationsOfLocalGroups §§SR.4.1 and SR.4.3, Weil operators and the Weil index to MetaplecticAutomorphicForms §§2.1 and 2.5, and the split étale Hermitian carrier A⊕A∨ over E=F×F, with its pairing and the identification of its isometry group with GL(A), to MetaplecticAutomorphicForms §3.2a. None is constructed a second time; on the split carrier Layer 0 adds only the paired-map description of Hom maps between two such carriers, their exchange adjoint and the off-diagonal block. The matrix Hermitian-product and characteristic-polynomial identities used for coordinates are already in the pinned Mathlib and remain background facts here.
 
 Unrestricted relative smooth transfer is open in Leslie19 Conjecture 4.4, p. 15, and full-module orbital transfer with augmented factors is open in Leslie25 Remark 3.7, p. 27; neither is a target. Layer 5 constructs the precisely defined Fourier operator alone. Exchanging contractions requires an explicit transport of nonisometric form data and is not an additional theorem of this roadmap.
 
@@ -96,6 +96,8 @@ Consume RG2.0, smooth-group-analytic-charts, for characteristic-zero analytic co
 
 Consume §2.1 `weilIndex` and §2.5 `weil_generators`, retaining the specified Weyl element, Weil scalars and self-dual polar-pairing measures. The quadratic spaces here have even F-dimension and are the hyperbolic linear form q(v,v*)=v*v and the Hermitian norm form q(w)=h(w,w). Agreement after descent to orbital images remains gap:jr-weil-descent, rather than a second construction of their Weil operators.
 
+Consume §3.2a `splitHermitianOscillator` with sign ε=+1, for the carrier only: over a field F of characteristic not two and E=F×F with the exchange involution, a finite projective E-module with a perfect Hermitian pairing is identified by the two idempotents with A⊕A∨, with pairing h((x,ℓ),(y,k))=(ℓ(y),k(x)) conjugate-linear in the first variable, and its isometry group is GL(A) acting by (g,(g⁻¹)∨). This covers rank zero (A=0). Its oscillator comparison is not used here.
+
 ## How to read the build
 
 Layer 0 constructs contractions, quotients and fibre integration, then proves the orbital comparison. Layer 1 pulls back the supplied ordinary endoscopic data and proves transfer away from the singular support. Layer 2 builds the full spherical module and compares Satake substitutions. Layer 3 proves the germ and Lie-descent implications and acts on the sum of orbital-image spaces. Layer 4 uses the independent product-group comparison, then the augmented and cyclic results, and finally compact determinant grades to prove the relative lattice-unit theorem. Layer 5 transports the full spherical operator through Hironaka's transform. Supplier gaps are prerequisites of the individual consumers; the product-group proof must not consume the relative lattice-unit theorem.
@@ -106,15 +108,15 @@ Construct the off-diagonal representation, its invariant quotients and stabilize
 
 ### 0.1 The off-diagonal unitary representation
 
-For nondegenerate Hermitian E-spaces W1,W2 of the same dimension n, put W=W1 ⊕ W2 and θ=Ad(1,-1). Identify the (-1)-eigenspace in Lie U(W) with Hom_E(W2,W1) by X mapping to the block matrix [[0,X],[-X^τ,0]], where h1(Xv,w)=h2(v,X^τ w). Its fixed-group action is (g1,g2).X=g1 X g2⁻¹. For split E=F×F, write each Hermitian module as M_i⊕M_i* with pairing h((v,ℓ),(w,m))=(ℓ(w),m(v)). Its unitary group is GL(M_i), and a Hom map is represented by paired maps A:M2→M1 and B:M1→M2; the adjoint exchanges the paired maps. This supplies the split model directly from finite-dimensional duality; the field-valued SignedHermitianSpace carrier is used only in the nonsplit case.
+For nondegenerate Hermitian E-spaces W1,W2 of the same dimension n, put W=W1 ⊕ W2 and θ=Ad(1,-1). Identify the (-1)-eigenspace in Lie U(W) with Hom_E(W2,W1) by X mapping to the block matrix [[0,X],[-X^τ,0]], where h1(Xv,w)=h2(v,X^τ w). Its fixed-group action is (g1,g2).X=g1 X g2⁻¹. For split E=F×F, take each Hermitian module to be the split carrier M_i⊕M_i* of MetaplecticAutomorphicForms §3.2a with sign +1, pairing h((v,ℓ),(w,m))=(ℓ(w),m(v)) and unitary group GL(M_i), with g acting on M_i* by the transpose of g⁻¹. On these carriers an E-linear Hom map is represented by paired maps A:M2→M1 and B:M1→M2 (B the transpose of the M2*→M1* component), and the adjoint exchanges the paired maps. The field-valued SignedHermitianSpace carrier is used in the nonsplit case.
 
 F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
 (Leslie25, Section 2.1, pp. 13–14; Section 1.2, pp. 3–4).
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §2.9; Mathlib `Matrix.conjTranspose`.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §2.9; MetaplecticAutomorphicForms §3.2a (splitHermitianOscillator); Mathlib `Matrix.conjTranspose`.
 
-A proof route solves the skew-adjoint block equations using the field adjoint for nonsplit E and the displayed dual-pair model for split E. Transport the fixed-group conjugation action through the block identification.
+A proof route solves the skew-adjoint block equations using the field adjoint for nonsplit E and, for split E, the imported split carrier and its GL identification, on which the adjoint of (A,B) is (B,A). Transport the fixed-group conjugation action through the block identification.
 
 The construction has the following API.
 
@@ -195,7 +197,7 @@ One proof route is the following. In split coordinates identify closed regular o
 
 **Checks.**
 
-- In rank one, r=−N(z) and charpoly δ=T²+N(z); z=0 gives T² and is not regular semisimple.
+- For rank-one forms Wi=⟨ai⟩, r=−(a1/a2)N(z) and charpoly δ=T²+(a1/a2)N(z); z=0 gives T² and is not regular semisimple. At a1=1, a2=π and z=1 the constant coefficient is π⁻¹, whereas the standard-form formula T²+N(z) would give 1.
 - For standard X=diag(1,π), charpoly r=(T+1)(T+π²) and charpoly δ=(T²+1)(T²+π²); both eigenvalues of r are distinct and nonzero.
 - In the split rank-two model A=diag(1,0), B=I gives charpoly δ=T²(T²+1). Although −AB has distinct eigenvalues, its zero eigenvalue prevents symmetric regular semisimplicity.
 
@@ -205,7 +207,7 @@ On invertible Hom maps, r1 is a U(W2)-torsor as a morphism of F-varieties over H
 
 F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-(Leslie25, Lemma 2.3, p. 15; Leslie19 Lemmas 3.6 and 3.9, pp. 12–13; Leslie19, Lemmas 3.6 and 3.9, pp. 12–13).
+(Leslie25, Lemma 2.3, p. 15; Leslie19, Lemmas 3.6 and 3.9, pp. 12–13).
 
 *Needs:* §0.4 (FJ.0/regular-invertible); EndoscopicTransferAndUnitaryTraceComparison §1.1; EndoscopicTransferAndUnitaryTraceComparison §1.5; EndoscopicTransferAndUnitaryTraceComparison §1.17; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:hermitian-field-classification.
 
@@ -268,7 +270,7 @@ For T=r1(X) in Ω(W1,W2), set r_!f(T)=integral over U(W2) of f(Xu) du. It is ind
 
 F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-(Leslie25, Equation (2.4) and discussion, p. 16; Leslie19 Section 3.2, pp. 12–13; Leslie19, Section 3.2, pp. 12–13; Leslie19, Appendix A, Proposition A.3, pp. 25–26).
+(Leslie25, Equation (2.4) and discussion, p. 16; Leslie19, Section 3.2, pp. 12–13, and Appendix A, Proposition A.3, pp. 25–26).
 
 *Needs:* §0.5 (FJ.0/torsor); AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); §0.6 (FJ.0/fibre-integration).
 
@@ -314,7 +316,7 @@ For standard rank one, X=1 gives δ=[[0,1],[−1,0]] and δ* = −δ; using a po
 
 ### Dependencies
 
-GeometryOfNumbersAndQuadraticArithmetic §2.9; Mathlib `Matrix.conjTranspose`; Mathlib `Matrix.IsHermitian`; Mathlib `Matrix.isHermitian_mul_conjTranspose_self`; Mathlib `Matrix.isHermitian_conjTranspose_mul_self`; SchemeAndStackFoundations §1.24; Mathlib `Matrix.charpoly`; EndoscopicTransferAndUnitaryTraceComparison §3.3; EndoscopicTransferAndUnitaryTraceComparison §1.17; Mathlib `Matrix.charpoly_mul_comm`; EndoscopicTransferAndUnitaryTraceComparison §1.1; EndoscopicTransferAndUnitaryTraceComparison §1.5; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:hermitian-field-classification; ReductiveGroupsPartII §RG2.0 (smooth-group-analytic-charts); Mathlib `HasStrictFDerivAt.implicitFunction`; AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages).
+GeometryOfNumbersAndQuadraticArithmetic §2.9; MetaplecticAutomorphicForms §3.2a (splitHermitianOscillator); Mathlib `Matrix.conjTranspose`; Mathlib `Matrix.IsHermitian`; Mathlib `Matrix.isHermitian_mul_conjTranspose_self`; Mathlib `Matrix.isHermitian_conjTranspose_mul_self`; SchemeAndStackFoundations §1.24; Mathlib `Matrix.charpoly`; EndoscopicTransferAndUnitaryTraceComparison §3.3; EndoscopicTransferAndUnitaryTraceComparison §1.17; Mathlib `Matrix.charpoly_mul_comm`; EndoscopicTransferAndUnitaryTraceComparison §1.1; EndoscopicTransferAndUnitaryTraceComparison §1.5; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:hermitian-field-classification; ReductiveGroupsPartII §RG2.0 (smooth-group-analytic-charts); Mathlib `HasStrictFDerivAt.implicitFunction`; AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages).
 
 ## Layer 1: relative endoscopic data and transfer
 
@@ -395,9 +397,9 @@ The construction has the following API.
 
 **Checks.**
 
-- For κ=1 the sum equals SRO.
-- For a stable class with D=C2 and RO-values A,B, the nontrivial character gives A-B.
-- In the same C2 example, changing the base orbit interchanges A,B and changes the weighted sum to B-A.
+- For a stable class with D=C2 and orbital values 2 at the base orbit and 5 at the other, SRO=7; the zero functional gives 0 and a sum over the base orbit alone gives 2.
+- In the same example the nontrivial character gives 2−5=−3; using the trivial character instead would give 7.
+- Changing the base orbit by the nontrivial d₀ gives 5−2=3=κ(d₀)⁻¹(−3) with κ(d₀)=−1; omitting the factor κ(d₀)⁻¹ would leave −3.
 
 Its direct consumers are FJ.1/smooth-transfer.
 
@@ -430,11 +432,11 @@ Its direct consumers are FJ.1/nonsingular-transfer, FJ.3/augmented-to-endoscopic
 
 ### 1.5 Transfer for tests supported on invertible maps
 
-If f has compact support contained in the invertible Hom locus, then for every relative datum Xi of §1.1 of §1.1 there exists a compact locally constant target transfer supported in the invertible target Hom locus. On the ordinary endoscopic side choose a transfer of r_!f, restrict it to the image of the target contraction, and lift it through target fiber integration. This theorem concerns support away from the singular locus and does not prove general relative transfer.
+If f has compact support contained in the invertible Hom locus, then for every relative datum Xi of §1.1 there exists a compact locally constant target transfer supported in the invertible target Hom locus. On the ordinary endoscopic side choose a transfer of r_!f, restrict it to the image of the target contraction, and lift it through target fiber integration. This theorem concerns support away from the singular locus and does not prove general relative transfer.
 
 F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-(Leslie25, Definition 2.10 and the following discussion, p. 21; Leslie19 Proposition 1.3 and Proposition 4.5, pp. 4, 15; Leslie19, Proposition 1.3, p. 4, and Proposition 4.5, p. 15).
+(Leslie25, Definition 2.10 and the following discussion, p. 21; Leslie19, Proposition 1.3, p. 4, and Proposition 4.5, p. 15).
 
 *Needs:* §0.8 (FJ.0/pushforward); §0.9 (FJ.0/orbital-comparison); §1.4 (FJ.1/smooth-transfer); EndoscopicTransferAndUnitaryTraceComparison §4.7; §0.6 (FJ.0/fibre-integration).
 
@@ -456,11 +458,11 @@ For a=b=1 over a quadratic field extension, the labels (1,1),(1,ε),(ε,1),(ε,�
 
 ## Layer 2: Hermitian spherical functions and base change
 
-Keep every dominant integral coweight and both Hermitian field-form classes. The Hironaka transform identifies the full module; its cyclic base-change submodule is strictly smaller in positive rank.
+Keep every dominant integral coweight and, in positive rank, both Hermitian field-form classes. The Hironaka transform identifies the full module; its cyclic base-change submodule is strictly smaller in positive rank.
 
 ### 2.1 The spherical module on all invertible Hermitian matrices
 
-Let Xn={y in GL_n(E): y*=y}, with g*y=g y g*. Retain both GL_n(E)-orbits of Hermitian forms. Define H(Xn)=C_c^∞(Xn)^(K_n,E), where K_n,E=GL_n(OE), as an H(GL_n(E))-module by (φ*f)(y)=integral φ(g⁻¹)*f(g*y) dg. Its basis consists of the indicators e_lambda of K_n,E*π^lambda under congruence, for dominant integral lambda, including negative entries. Write e_0 for the integral unimodular orbit indicator. No convolution on Xn is implicit in this definition.
+Let Xn={y in GL_n(E): y*=y}, with g*y=g y g*. For n>0 retain both GL_n(E)-orbits of Hermitian forms; X_0 is a single point, with one orbit, and H(X_0)=ℂe_0. Define H(Xn)=C_c^∞(Xn)^(K_n,E), where K_n,E=GL_n(OE), as an H(GL_n(E))-module by (φ*f)(y)=integral φ(g⁻¹)*f(g*y) dg. Its basis consists of the indicators e_lambda of K_n,E*π^lambda under congruence, for dominant integral lambda, including negative entries. Write e_0 for the integral unimodular orbit indicator. No convolution on Xn is implicit in this definition.
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
@@ -484,6 +486,7 @@ The construction has the following API.
 - For n=1, e_(-1) is the indicator of π⁻¹*OF^× and is a valid compact test.
 - The Hecke unit 1_K acts as the identity on every e_lambda.
 - Distinct dominant lambda have disjoint supports; in particular e_(0) and e_(1) are linearly independent in rank one.
+- For n=0 the only coweight is the empty tuple, X_0 is one point with det(∅)=1 and v(det)=0, and the basis is {e_0}; a two-orbit count would be wrong here.
 
 Its direct consumers are FJ.2/spherical-fourier, FJ.3/weil-orbital-sum, FJ.3/group-to-augmented, FJ.4/spherical-pushforward, FJ.4/product-group-contraction, FJ.4/contracted-lattice-function, FJ.4/degree-hecke-identities.
 
@@ -507,19 +510,20 @@ One proof route is the following. Use the unramified GL base-change Satake formu
 
 ### 2.3 Hironaka’s normalized spherical Fourier isomorphism
 
-Fix the invariant measure dμ(y)=C|det y|_F^(−n)dy on all X_n, where dy is additive Haar measure on Herm_n(E) with integral lattice volume one, and C>0 makes μ(K_n,E∗I_n)=1. The normalizing mass is positive because this orbit is nonempty compact open. Use Hironaka’s normalized spherical functions Y_z(y)=ω(y;z)/ω(I_n;z), as rational functions of the spectral variables, and the transform f↦∫_(X_n)f(y)Y_z(y⁻¹)dμ(y). The denominator is a nonzero rational function by Hironaka’s explicit formula. Identify its symmetric Laurent-polynomial image with the F-Satake algebra; this fixes H_n on every congruence orbit, including the nonreference form. Normalize the spherical Fourier transform to obtain a complex-linear isomorphism H_n:H(Xn) → H(GL_n(F)) such that H_n(e_0)=1_Kn and H_n(φ*f)=BC_n(φ)*H_n(f). It transports the GL_n(F) convolution algebra to an algebra structure on H(Xn). As an H_n,E-module H(Xn) is free of rank 2^n. The cyclic map φ → φ*e_0 is injective, but for n>0 is not surjective.
+Fix the invariant measure dμ(y)=C|det y|_F^(−n)dy on all X_n, where dy is additive Haar measure on Herm_n(E) with integral lattice volume one, and C>0 makes μ(K_n,E∗I_n)=1. The normalizing mass is positive because this orbit is nonempty compact open. Use Hironaka’s normalized spherical functions Y_z(y)=ω(y;z)/ω(I_n;z), as rational functions of the spectral variables U_i=q^(−z_i) attached to z by Hironaka’s change of variables (2.2), and the raw transform f̂(U)=∫_(X_n)f(y)Y_z(y⁻¹)dμ(y). The denominator is a nonzero rational function by Hironaka’s explicit formula, and f̂ is a symmetric Laurent polynomial in U_1,…,U_n. The E-Hecke algebra acts on these transforms through Hironaka’s (2.3), which is the normalized E-Satake transform evaluated at Z_i=U_i². Fix the spectral dictionary U_i↦−T_i in every rank n, where T_1,…,T_n are the normalized F-Satake variables, and define H_n(f) as the spherical function on GL_n(F) whose normalized F-Satake transform is f̂(−T_1,…,−T_n). The dictionary sends U_i² to T_i², the base-change substitution; since ê_λ is homogeneous of degree |λ| in U, the opposite dictionary U_i↦T_i has the same unit, module law and cyclic values but changes the sign of H_n on every e_λ with |λ| odd, that is on the whole nonreference form, so the dictionary is part of the definition. This gives a complex-linear isomorphism H_n:H(Xn) → H(GL_n(F)) such that H_n(e_0)=1_Kn and H_n(φ*f)=BC_n(φ)*H_n(f). It transports the GL_n(F) convolution algebra to an algebra structure on H(Xn). As an H_n,E-module H(Xn) is free of rank 2^n. The cyclic map φ → φ*e_0 is injective, but for n>0 is not surjective.
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-(Leslie25, Proposition 3.4 and Remarks 3.6–3.7, pp. 26–27; Hironaka99 Theorem 2, p. 571; Hironaka99, Section 2, Theorem 2, p. 571; normalization on pp. 570–571).
+(Leslie25, Proposition 3.4 and Remarks 3.6–3.7, pp. 26–27; Hironaka99, equations (2.2)–(2.3), p. 566, Theorem 1, p. 569, and equations (2.5)–(2.7) with Theorem 2, p. 571).
 
 *Needs:* §2.1 (FJ.2/hermitian-spherical-module); §2.2 (FJ.2/base-change-compatibility); SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); EndoscopicTransferAndUnitaryTraceComparison §4.9.
 
-One proof route is the following. Use the normalized spherical functions and Fourier image in Hironaka Theorem 2, matching q and the reference orbit. Identify the image with the F-Satake algebra and normalize the reference orbit to the unit. The symmetric Laurent algebra is free of rank 2^n over its squared-variable subalgebra, yielding freeness and cyclic injectivity.
+One proof route is the following. Use the normalized spherical functions and Fourier image in Hironaka Theorem 2, matching q and the reference orbit; Hironaka's (2.6) gives ê_λ as a multiple of the Hall–Littlewood polynomial P_λ(U;−q⁻¹) and (2.7) the orbit volumes. Apply the dictionary U_i↦−T_i, which is an isomorphism of symmetric Laurent algebras sending U_i² to T_i², and the inverse of normalized F-Satake. The symmetric Laurent algebra is free of rank 2^n over its squared-variable subalgebra, yielding freeness and cyclic injectivity.
 
 The construction has the following API.
 
 - The normalized isomorphism H_n between the full Hermitian module and the F-Hecke algebra.
+- The normalized F-Satake transform of H_n(f) is f̂ with U_i replaced by −T_i.
 - H_n(e_0)=1_Kn.
 - H_n(φ*f)=BC_n(φ)*H_n(f).
 - The inverse sends BC_n(φ) to φ*e_0, and both composites with H_n are identities on the full spaces.
@@ -531,7 +535,9 @@ The construction has the following API.
 - The π^d OE^× Hecke indicator sends e_(0) to e_(2d), and H_1(e_(2d)) is the π^(2d) OF^× Hecke indicator.
 - In rank one e_(1) lies outside the image of φ → φ*e_(0).
 - For f=e_(1), H_1⁻¹(H_1(f))=f; the inverse identity includes the noncyclic part.
-- In rank one H_1(e_j)=1_(π^j O_F×) for every j∈ℤ; j=1 fixes the noncyclic normalization rather than allowing an independent rescaling of the other form.
+- In rank one ê_j=(−1)^jU^j, so H_1(e_j)=1_(π^j O_F×) for every j∈ℤ; j=1 fixes the noncyclic normalization rather than allowing an independent rescaling of the other form, and the dictionary U↦T would give H_1(e_1)=−1_(πO_F×).
+- In rank two the orbit of π^(1,0) has volume q−1 and ê_(1,0)=√q(U_1+U_2). Since normalized Satake sends T_(1,0),F to √q(T_1+T_2), H_2(e_(1,0))=−T_(1,0),F; the dictionary U_i↦T_i would give +T_(1,0),F while agreeing on every cyclic Check.
+- In rank two ê_(2,0)=q(U_1²+U_2²)+(q+1)U_1U_2 and ê_(1,1)=−U_1U_2, so H_2(e_(2,0)+(q+1)e_(1,1))=T_(2,0),F−(q−1)T_(1,1),F=BC_2(T_(1,0),E). The rule H_n(e_λ)=T_λ,F fails already at e_(1,1), which lies on the reference form but outside the cyclic image.
 
 Its direct consumers are FJ.3/augmented-to-endoscopic, FJ.4/product-group-contraction, FJ.4/cyclic-endoscopic-transfer, FJ.5/full-spherical-extension.
 
@@ -571,7 +577,7 @@ Fix regular semisimple x in gl_n(F), cyclic v and v*, F[x]=product Fi and S1 as 
 
 F is a nonarchimedean local field of characteristic zero; E/F is any quadratic field extension, including ramified extensions and residue characteristic two. All torus maximal compact subgroups have volume one; quotient measures are transported through the fixed stabilizer identifications.
 
-(Leslie25, Section 4.2, p. 36; Xiao18 Section 2.1, equation (2) and Lemma 2.1, pp. 3–5; Xiao18, Section 2.1, equation (2), Lemma 2.1, pp. 3–5; Section 4.1, p. 15).
+(Leslie25, Section 4.2, p. 36; Xiao18, Section 2.1, equation (2) and Lemma 2.1, pp. 3–5, and Section 4.1, p. 15).
 
 *Needs:* §3.1 (FJ.3/pure-form-orbit-torsor); AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:jr-local-comparison.
 
@@ -598,7 +604,7 @@ Suppose f and the family {f_V} are augmented Jacquet–Rallis transfers for the 
 
 F is a nonarchimedean local field of characteristic zero; E/F is any quadratic field extension, including ramified extensions and residue characteristic two. All torus maximal compact subgroups have volume one; quotient measures are transported through the fixed stabilizer identifications.
 
-(Leslie25, Theorem 4.7, p. 36; Xiao18 Theorem 4.7 and its preceding inversion, pp. 20–21; Xiao18, Sections 4.1–4.5, pp. 15–21, especially Theorem 4.7).
+(Leslie25, Theorem 4.7, p. 36; Xiao18, Sections 4.1–4.5, pp. 15–21, especially Theorem 4.7 and the inversion preceding it, pp. 20–21).
 
 *Needs:* §3.1 (FJ.3/pure-form-orbit-torsor); §3.2 (FJ.3/generalized-nilpotent-integral); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:jr-local-comparison.
 
@@ -679,7 +685,7 @@ Let I_GL and I_U be the images of the augmented linear and reference-unitary tes
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two. psi has conductor OF; Fourier transforms use self-dual additive measures.
 
-(Leslie25, Proposition 5.1, p. 41; proof of Proposition 5.2, p. 43; Beuzart-Plessis21 Proposition 1, p. 7; BP21, Section 3, equations (4)–(5), pp. 5–6, and Proposition 1, p. 7).
+(Leslie25, Proposition 5.1, p. 41, and proof of Proposition 5.2, p. 43; BP21, Section 3, equations (4)–(5), pp. 5–6, and Proposition 1, p. 7).
 
 *Needs:* §2.1 (FJ.2/hermitian-spherical-module); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; AdelicAlgebraicGroups §2.2 (quotient-measure); MetaplecticAutomorphicForms §2.1 (weilIndex); MetaplecticAutomorphicForms §2.5 (weil_generators); gap:jr-weil-descent; gap:jr-local-comparison.
 
@@ -697,7 +703,7 @@ Fix n≥1 and φ in H_n,E. Suppose BC_n(φ) and {φ*e_0,0} match for the conjuga
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-(Leslie25, Proposition 5.2, pp. 42–43; Beuzart-Plessis21 Sections 2–3, pp. 3–8; BP21, Section 2, Lemma 1, pp. 4–5, and Section 3, Proposition 1 and proof, pp. 5–8).
+(Leslie25, Proposition 5.2, pp. 42–43; BP21, Section 2, Lemma 1, pp. 4–5, and Section 3, Proposition 1 and proof, pp. 5–8).
 
 *Needs:* §3.7 (FJ.3/weil-orbital-sum); §2.1 (FJ.2/hermitian-spherical-module); gap:unramified-hermitian-lattice-orbits; GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.dual); MetaplecticAutomorphicForms §2.1 (weilIndex); MetaplecticAutomorphicForms §2.5 (weil_generators); gap:jr-weil-descent; gap:unramified-unit-vector-transitivity; Tau Ceti `TauCeti.map_normUnits_unitFiltration`; gap:jr-local-comparison.
 
@@ -741,7 +747,7 @@ One proof route is the following. Apply TauCeti.map_normUnits_unitFiltration (F,
 
 ### 4.2 The cyclic embedding is contraction pushforward
 
-For every compact spherical φ on GL_n(E), viewed as a compact nonsingular matrix test, the positive-contraction pushforward r_plus,!φ equals φ*e_0 on all Xn, with zero on the other GL_n(E)-orbit of Hermitian forms. The signed pushforward gives the same function because multiplication by the unit c with norm -1 preserves a K_n,E-biinvariant φ.
+For every compact spherical φ on GL_n(E), viewed as a compact nonsingular matrix test, the positive-contraction pushforward r_plus,!φ equals φ*e_0 on all Xn; for n>0 it is zero on the other GL_n(E)-orbit of Hermitian forms. The signed pushforward gives the same function because multiplication by the unit c with norm -1 preserves a K_n,E-biinvariant φ.
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
@@ -763,7 +769,7 @@ Set m=n-1 and embed GL_m in GL_n by h → diag(h,1). For φ in H_n,E take Phi=1_
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-(Leslie25, Section 11.2, p. 86; equations (7.5)–(7.7) and Definition 7.4, pp. 50–51; Leslie25, Equations (7.5)–(7.7), Definition 7.4, pp. 50–51).
+(Leslie25, Section 11.2, p. 86; equations (7.5)–(7.7) and Definition 7.4, pp. 50–51).
 
 *Needs:* §2.3 (FJ.2/spherical-fourier); §2.1 (FJ.2/hermitian-spherical-module); AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages); EndoscopicTransferAndUnitaryTraceComparison §4.9; §4.2 (FJ.4/spherical-pushforward); gap:jr-local-comparison; gap:jr-product-base-change.
 
@@ -831,7 +837,7 @@ One proof route is the following. Use augmented-fundamental-lemma in all three r
 
 ### 4.7 The contracted lattice unit and its determinant grades
 
-Put Phi_n=r_minus,!1_End(Λ_n), equivalently r_plus,!1_End(Λ_n). For integer d let Xn,d={T in Xn:v_F(det T)=d} and Phi_n,d=Phi_n*1_Xn,d, where this star denotes pointwise multiplication only. Each Phi_n,d is a compact spherical function. It is zero if d<0 or d is odd. For d≥0, Phi_n,2d=sum_(lambda dominant,nonnegative,sum lambda=2d) m0(π^lambda)*e_lambda, where m0(T) is the finite number of self-dual integral overlattices of the lattice with Gram matrix T, and is zero if no such overlattice exists. Identify this count with the normalized square-rank representation density of GeometryOfNumbersAndQuadraticArithmetic §3.2 (density divided by the reference self-density). Phi_n itself is only almost compact: it has infinitely many nonzero grades. The reference self-density is ∏_(j=1)^n(1−(−q)^(−j))>0 for q≥2, so this division is defined; the empty product is 1.
+Put Phi_n=r_minus,!1_End(Λ_n), equivalently r_plus,!1_End(Λ_n). For integer d let Xn,d={T in Xn:v_F(det T)=d} and Phi_n,d=Phi_n*1_Xn,d, where this star denotes pointwise multiplication only. Each Phi_n,d is a compact spherical function. It is zero if d<0 or d is odd. For d≥0, Phi_n,2d=sum_(lambda dominant,nonnegative,sum lambda=2d) m0(π^lambda)*e_lambda, where m0(T) is the finite number of self-dual integral overlattices of the lattice with Gram matrix T, and is zero if no such overlattice exists. Identify this count with the normalized square-rank representation density of GeometryOfNumbersAndQuadraticArithmetic §3.2 (density divided by the reference self-density). For n>0, Phi_n itself is only almost compact: it has infinitely many nonzero grades. For n=0, X_0 is a point and Phi_0=Phi_0,0=e_0, with Phi_0,d=0 for d≠0, so Phi_0 is compact. The reference self-density is ∏_(j=1)^n(1−(−q)^(−j))>0 for q≥2, so this division is defined; the empty product is 1.
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
@@ -847,7 +853,7 @@ The construction has the following API.
 - Restrict Φ_n to determinant valuation d.
 - The support is contained in integral Hermitian matrices of determinant valuation d, and is empty for negative or odd d.
 - For nonnegative even d, the e_λ coefficient is m0(π^λ), the finite self-dual-overlattice count just defined; it is the supplied square-rank density divided by its reference self-density.
-- Each grade is a finite basis expansion in H(Xn), although the total function is not in H(Xn).
+- Each grade is a finite basis expansion in H(Xn); for n>0 the total function is not in H(Xn), while Φ_0=e_0 lies in H(X_0).
 
 **Checks.**
 
@@ -855,6 +861,7 @@ The construction has the following API.
 - Phi_1,1=0 even though e_(1) is a nonzero spherical Hermitian function.
 - Phi_n,d=0 for d<0.
 - Phi_1 has value one at π^(2d) for every d≥0, so it is not compactly supported within X1=F^×.
+- At n=0 the single grade is Φ_0,0=e_0, with self-density the empty product 1 and overlattice count 1; asserting infinitely many nonzero grades without n>0 would be false here.
 
 Its direct consumers are FJ.4/degree-hecke-identities, FJ.4/graded-transfer.
 
@@ -878,7 +885,7 @@ One proof route is the following. Use the Iwasawa decomposition in SR.4 to count
 
 ### 4.9 The lattice theorem is equivalent to compact graded transfer
 
-The relative unit fundamental lemma for a fixed datum Xi is equivalent to the following family of compact ordinary endoscopic transfer identities: for every d≥0, Phi_n,2d transfers to sum_(da+db=d) Phi_a,2da ⊗ Phi_b,2db for the reference pair (I_a,I_b), and the corresponding target contribution for every other form pair is zero. Matching preserves the product of characteristic polynomials and hence determinant valuation, so each regular matching orbit tests exactly one total grade.
+Fix n=a+b with a,b positive and an ordinary elliptic datum (U(Va)×U(Vb),s,ξ). The relative unit fundamental lemma of §4.10 for all relative data Xi=(U(Va)×U(Vb),s,ξ,α,β) on this ordinary datum, that is simultaneously for every pair (α,β) of Hermitian isometry classes in ranks a and b, is equivalent to the following family of compact ordinary endoscopic transfer identities: for every d≥0, Phi_n,2d on Herm(Vn) and sum_(da+db=d) Phi_a,2da ⊗ Phi_b,2db on Herm(Va)⊕Herm(Vb) are ordinary smooth transfers, with the matching identity and the unmatched-zero clause at every regular target orbit. The invertible locus of Herm(Va)⊕Herm(Vb) is the disjoint union of the open and closed contraction images Ω(Va,Vα)×Ω(Vb,Vβ) over the four pairs (α,β), and the displayed target is supported in the (I_a,I_b) image, so it restricts to zero on the other three. For a single Xi the relative assertion is equivalent only to these ordinary identities at the target orbits of its own image. Matching preserves the product of characteristic polynomials and hence determinant valuation, so each regular matching orbit tests exactly one total grade.
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
@@ -886,11 +893,12 @@ F is a nonarchimedean local field of characteristic zero; E/F is an unramified q
 
 *Needs:* §0.9 (FJ.0/orbital-comparison); §1.4 (FJ.1/smooth-transfer); §4.7 (FJ.4/contracted-lattice-function); §4.1 (FJ.4/contraction-sign-comparison).
 
-One proof route is the following. Compare relative and ordinary orbital integrals through orbital-comparison. A regular orbit has one fixed determinant valuation; use the compact grade corresponding to that valuation. For other form pairs the relevant contraction images do not intersect the reference norm components in at least one block; record the resulting zero condition.
+One proof route is the following. For each pair (α,β), compare relative and ordinary orbital integrals through orbital-comparison on both sides, with the target lift 1_End(Λa)⊗1_End(Λb) for (I_a,I_b) and the zero test otherwise; this gives the equivalence on that image. Every invertible regular target orbit lies in exactly one image, so the four statements together are the full ordinary identity. Source orbits outside the norm component and target orbits with a zero eigenvalue give 0=0, because every function involved is supported in the invertible norm components. A regular orbit has one fixed determinant valuation; use the compact grade corresponding to that valuation.
 
 **Checks.**
 
-- For a=b=1 and total grade 2, the target is e2⊗e0+e0⊗e2. At block valuations (2,0) it is 1; at (1,1) it is 0.
+- For a=b=1 and d=1 the target is e2⊗e0+e0⊗e2. At block valuations (2,0) it is 1, in the reference image; at (1,1) it is 0, and that orbit lies in the (ε,ε) image with ε=π a nonnorm, where the ordinary identity is the relative assertion with zero target.
+- For a=b=1 and Xi with (α,β)=(ε,1), ε=π, target contractions have odd and even valuations while every source contraction has even determinant valuation, so no source orbit matches and the assertion for this Xi alone holds for every source test. Replacing the source by twice the lattice indicator keeps that assertion true, while the ordinary identity with the displayed target fails at (2,0), where the required value becomes 2 instead of 1; a single Xi is not equivalent to the ordinary family.
 - If total determinant valuation is odd or negative, the source grade and every target grade product vanish, giving 0=0.
 - On a fixed matching pair, d_n=d_a+d_b. At (d_a,d_b)=(2,4), exactly total grade 6 contributes, so the orbital integral tests one grade rather than an infinite sum.
 
@@ -904,7 +912,7 @@ F is a nonarchimedean local field of characteristic zero; E/F is an unramified q
 
 *Needs:* §1.4 (FJ.1/smooth-transfer); §4.6 (FJ.4/cyclic-endoscopic-transfer); §4.8 (FJ.4/degree-hecke-identities); §4.9 (FJ.4/graded-transfer); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); gap:unramified-hermitian-lattice-orbits; gap:unitary-factor-all-quadratic.
 
-One proof route is the following. Apply cyclic-endoscopic-transfer to each determinant-shell test c_n,d. Use degree-hecke-identities to identify the transferred compact grade pair. Apply graded-transfer and the sign comparison to recover the full relative lattice indicators. Use the nonreference-form clause throughout, with the same datum labels and factor normalization.
+One proof route is the following. Apply cyclic-endoscopic-transfer to each determinant-shell test c_n,d. Use degree-hecke-identities to identify the transferred compact grade pair. Apply graded-transfer, which yields the assertion for all four pairs (alpha,beta) on the fixed ordinary datum at once, and the sign comparison to recover the full relative lattice indicators. Use the nonreference-form clause throughout, with the same datum labels and factor normalization.
 
 **Checks.**
 
@@ -926,7 +934,7 @@ Construct the full-module operator through the fixed Hironaka transform, with th
 
 ### 5.1 The Fourier-defined extension to the full spherical module
 
-For n=a+b with a,b positive, define ξ_X=(H_a⁻¹ ⊗ H_b⁻¹) composed with ξ_F composed with H_n on all H(Xn), using the normalized Hironaka isomorphisms. For the algebra structures transported by H, this is a unital complex algebra homomorphism. On the cyclic submodule it satisfies ξ_X(φ*e_0)=ξ_E(φ)*e_0. This specifies the extension as an operator.
+For n=a+b with a,b positive, define ξ_X=(H_a⁻¹ ⊗ H_b⁻¹) composed with ξ_F composed with H_n on all H(Xn), using the normalized Hironaka isomorphisms of §2.3, each with the spectral dictionary U_i↦−T_i. For the algebra structures transported by H, this is a unital complex algebra homomorphism. On the cyclic submodule it satisfies ξ_X(φ*e_0)=ξ_E(φ)*e_0. This specifies the extension as an operator.
 
 F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
@@ -950,8 +958,7 @@ The construction has the following API.
 - For n=2,a=b=1 and f=c_2,1*e_0, ξ_X(f)=e_(2) ⊗ e_(0)+e_(0) ⊗ e_(2).
 - For the noncyclic f=H_n⁻¹(1_K_F diag(π,1,..,1) K_F), applying H_a ⊗ H_b to ξ_X(f) gives ξ_F of that F-double-coset indicator; it is not forced to zero.
 - On f=1_(π K_n,E)*e_0, the image is q^(−2ab) × the two central cyclic indicators.
-
-Its direct consumers are .
+- For n=2, a=b=1 and the noncyclic f=e_(1,0): H_2(e_(1,0))=−T_(1,0),F, ξ_F sends √q(T_1+T_2) to X+Y, so ξ_F(T_(1,0),F)=T_1⊗1+1⊗T_1, and H_1⁻¹(T_1)=e_1. Hence ξ_X(e_(1,0))=−(e_1⊗e_0+e_0⊗e_1); the dictionary U_i↦T_i in rank two would give the opposite sign.
 
 ### Examples
 
@@ -1010,5 +1017,5 @@ The sum-space construction is explicit in Beuzart-Plessis arXiv:1901.02653v3, Se
 - **Leslie25:** Spencer Leslie, *The endoscopic fundamental lemma for unitary Friedberg–Jacquet periods*, Annals of Mathematics 201 (2025), 551–645. All locators here use [arXiv:1911.07907v3](https://arxiv.org/abs/1911.07907v3), with its own printed pagination.
 - **Leslie19:** Spencer Leslie, *Endoscopy for unitary symmetric spaces*, [arXiv:1910.09685v2](https://arxiv.org/abs/1910.09685v2), 2020 version.
 - **Xiao18:** Jingwei Xiao, *Endoscopic transfer for unitary Lie algebras*, [arXiv:1802.07624v1](https://arxiv.org/abs/1802.07624v1), 2018.
-- **Hironaka99:** Yumiko Hironaka, *Spherical functions and local densities on Hermitian forms*, Journal of the Mathematical Society of Japan 51 (1999), 553–581, [publisher scan](https://www.jstage.jst.go.jp/article/jmath1948/51/3/51_3_553/_pdf/-char/en), Theorem 2, p. 571.
+- **Hironaka99:** Yumiko Hironaka, *Spherical functions and local densities on Hermitian forms*, Journal of the Mathematical Society of Japan 51 (1999), 553–581, [publisher scan](https://www.jstage.jst.go.jp/article/jmath1948/51/3/51_3_553/_pdf/-char/en); equations (2.2)–(2.3), p. 566, Theorem 1, p. 569, equations (2.5)–(2.7) and Theorem 2, p. 571.
 - **BP21:** Raphaël Beuzart-Plessis, *A new proof of Jacquet–Rallis’s fundamental lemma*, Duke Mathematical Journal 170 (2021). All locators here use [arXiv:1901.02653v3](https://arxiv.org/abs/1901.02653v3), with its own printed pagination.
