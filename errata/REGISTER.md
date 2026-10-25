@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5198 mistakes recorded on the board: 3393 misprints, 1293 errors, 392 gaps, 120 unparsed bullets.
+5210 mistakes recorded on the board: 3400 misprints, 1296 errors, 394 gaps, 120 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -170,6 +170,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 5.5.6, p. 130 (AC line 5540): the source says the internal-Hom comparison lies in X's almost category; it should be in Y's almost category on both sides; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 5.5.5, p. 129: the source says derived pushforward as running from the target's almost category to the source's; it should be run from X to Y; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
 - **Misprint** at Theorem 5.5.5, p. 129 (AC line 5512): the source says derived pushforward runs from Y's almost category to X's; it should be from X's almost category to Y's; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
+
+## AGLR
+
+- **Error** at Proposition 2.39, pp. 18–19 (AGLR line 1044): the source says connected closed-point tubes imply normality over an arbitrary perfect residue field; it should be restricted to algebraically closed residue field for this argument, or strengthened with geometric connectedness and its proof; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
 
 ## AGV08
 
@@ -3194,6 +3198,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem 21, p.46: the source says the Khinchin-constant factor with the denominator k(k+1); it should be a(a+2) (equivalently k(k+2)); affects a stated result. Found by  (#172 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## GLE
+
+- **Misprint** at Proposition 1.19, p. 9, and Proposition 3.18, p. 25 (GLE lines 451 and 1271): the source says the reduced pair uses the displayed quotient of the original plus ring; it should be the integral closure of its image in the ambient quotient by the generated topologically nilpotent ideal; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 2.36, p. 22 (GLE line 1091): the source says a schematic closed subset is supported on an open prime ideal; it should be an arbitrary open ideal; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 4.45, p. 36 (GLE line 1789): the source says the constructible subset belongs to the underlying space of F; it should be a subset of the underlying reduction space; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 4.8(4), p. 29 (GLE line 1437): the source says quasiseparated diamonds cannot be v-formalizing; it should be restricted to nonempty quasiseparated diamonds; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Error** at proof of Lemma 4.25, p. 33 (GLE line 1638): the source says étale reduction data have a unique ordinary étale lift; it should be uniqueness after the specified completion, which removes generic-only components; affects the proof. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Gap** at proof of Lemma 4.55, p. 38 (GLE line 1885): the source says a common specialization can be chosen closed; it should be justified from additional kimberlite structure or an explicit closed-specialization hypothesis; affects the proof. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Proposition 4.41, p. 36 (GLE line 1761): the source says the partial-properness argument runs from F to the Heuer sheaf of G's reduction; it should be the composite from G through F's specialization, then the separated-target argument for G's own specialization; affects the proof. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+
 ## GLX, arXiv:2208.07195
 
 - **Error** at Lemma 3.2, second assertion: the source says a connected-component formula for the quotient by a group action, with no restriction on the action; it should be stated under additional component and Hausdorff hypotheses, since ℤ acting densely on ℤ_p violates it; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -4906,6 +4920,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §5, step (1), printed p. 53 (Loeffler-Stoll line 397): the source says the theta integral defining Λ₀ uses dt; it should be dt/t, as splitting the Mellin integral at 1 and substituting t ↦ 1/t shows; affects the proof. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §7, printed p. 55 (Loeffler-Stoll line 466): the source says the convergence boundary is named with a misspelled abscissa; it should be spelled abscissa; affects nothing. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §7, printed p. 55 (Loeffler-Stoll line 468): the source says the German institute name omits its linking s; it should be Forschungsinstitut für Mathematik; affects nothing. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
+
+## LOU17
+
+- **Misprint** at proof of Corollary 6.6, p. 18 (LOU17 line 648): the source says formal functions equal all analytic functions on the generic fibre; it should be the bounded integral analytic functions; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "fc307b1d03fbe73b7e282a7787dca493f1842fc3", "job": "REV-PKG-DiamondsAndVStacksPartII", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
 
 ## LP2018
 
@@ -7011,6 +7029,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## SW13
 
 - **Misprint** at Proposition 2.4.5, proof, p. 21 (SW13 line 779): the source says p-adic completion of the direct limit of the integral rings recovers A⁺ for any perfectoid field K; it should be complete along a pseudouniformizer of K; when char K=p, the p-adic topology is discrete and does not complete a perfectoid tower; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
+## SW20
+
+- **Error** at Lemma 18.3.2, p. 166 (SW20 line 6461): the source says a quasicompact space mapping to a valuation spectrum has a minimal image point; it should be restricted to nonempty source; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Remark 21.4.2, p. 195 (SW20 line 7494): the source says flatness and reduced special fibre imply normality; it should be read with the normal generic fibre from the local-model setting; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
+- **Gap** at §10.2 before Proposition 10.2.1, p. 77 (SW20 line 3113): the source says characteristic-zero universal homeomorphisms preserve completed residue fields without supplying an argument; it should be justified at the stated analytic generality, beyond the finite separable-degree argument; affects the proof. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
 
 ## Szego
 
