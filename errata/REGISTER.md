@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5135 mistakes recorded on the board: 3368 misprints, 1276 errors, 387 gaps, 104 unparsed bullets.
+5136 mistakes recorded on the board: 3369 misprints, 1276 errors, 387 gaps, 104 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2256,6 +2256,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## COU20
 
+- **Misprint** at §3, printed p.493 (COU20 line 266): the source says the integral relation lattice is extended to the reals by tensoring over ℚ; it should be tensoring over ℤ, or rationalizing first and then tensoring over ℚ; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "06884a94331b1a80f42bf83fd1df828e001f63e0", "job": "RT-EffectiveBoundsPartII~1a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by EffectiveBoundsPartII (#1411 at 06884a9, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §3, printed p.493, COU20 line 266: the source says the integral relation lattice is tensored over ℚ with ℝ; it should be tensored over ℤ with ℝ, or rationalized before tensoring over ℚ; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "06884a94331b1a80f42bf83fd1df828e001f63e0", "job": "REV-PKG-EffectiveBoundsPartII", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by EffectiveBoundsPartII (#1411 at 06884a9, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §3, printed p.494 (line 324): the source says the source calls the set of vectors of norm at most one in the real span of the relation lattice a sphere; it should be the closed unit ball, since a sphere has volume zero; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "06884a9", "job": "RT-EffectiveBoundsPartII~1b", "model": "opus", "worker": "fable-rt24"} -->. Found by EffectiveBoundsPartII (#1411 at 06884a9, 2026-10-25, claude opus).
 
