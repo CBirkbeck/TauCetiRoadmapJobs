@@ -16,7 +16,9 @@ morphism carriers are roadmap targets.
 
 Connectedness of the resolution of an irreducible space and the group form of subfield
 detection on G(C) are not statable: they need the rigid-space and rational-point-manifold
-carriers, respectively.
+carriers, respectively. The general algebraic-point atlas and its field-extension comparison
+require canonical analytic manifold structures on algebraic field-valued point sets, which
+are also not supplied by the pinned APIs.
 
 Gauss-point closure, constant rank on native finite-dimensional analytic manifolds and subfield
 detection of analytic germs use native carriers below. The rigid-space application of constant

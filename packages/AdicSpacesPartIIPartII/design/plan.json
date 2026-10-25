@@ -3828,6 +3828,12 @@
  ],
  "gaps": [
   {
+   "slug": "adic-proper-kiehl-proper",
+   "needs": "For every complete nontrivially valued rank-one nonarchimedean field K, every K-affinoid algebra A and every adic-proper morphism f : X → Spa(A,A°) of rigid K-spaces, f is Kiehl-proper: X has finite affinoid open covers (Vᵢ) and (Uᵢ) with Vᵢ relatively compact in Uᵢ over A for each i.",
+   "supplier": "AdicSpacesPartIII",
+   "section": "R3.6"
+  },
+  {
     "slug": "formal-affinoid-localization",
     "needs": "For every quasi-separated quasi-paracompact rigid K-space X and every affinoid open W = Spa(R, R°) ⊆ X, there are an admissible formal model 𝔛 of X and a formal affine open Spf(R₀) ⊆ 𝔛 with generic fibre W, where R₀ ⊆ R° is open and bounded, such that Spec(R°/R°°) → Spec(R₀/ϖR₀) is a homeomorphism for a pseudo-uniformizer ϖ of K.",
     "supplier": "AdicSpacesPartIII",

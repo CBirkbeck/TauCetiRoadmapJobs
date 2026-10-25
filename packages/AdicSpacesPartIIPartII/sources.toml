@@ -152,3 +152,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["5.1"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "054L"
+url = "https://stacks.math.columbia.edu/tag/054L"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=054L"
+fetched_at = "2026-10-25T15:58:12Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.4 algebraic-point analytic atlas"]
