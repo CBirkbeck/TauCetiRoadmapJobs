@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4710 mistakes recorded on the board: 3130 misprints, 1183 errors, 321 gaps, 76 unparsed bullets.
+4722 mistakes recorded on the board: 3135 misprints, 1184 errors, 324 gaps, 79 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -84,6 +84,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ExponentialSumsAndCircleMethodPartII, #1266 at 0a11907, 2026-10-24): Misprint** in BS20 at the proof of Lemma 3.7, printed p. 917: the source speaks of generic a₂,…,a_(n−1). It should be a₂,…,a_n, the other n−1 coordinates. Affects nothing.
 - **Unparsed** (ExponentialSumsAndCircleMethodPartII, #1266 at 0a11907, 2026-10-24): Error** in LR14v2 at Lemma 2.6, printed p. 5: the source claims equality deg(X∩H)=deg X also for affine X, which fails for y=x² and x=0 (degree 1 vs 2). It should give only the inequality that the sum of component degrees is at most deg X. Affects the proof (of Proposition 2.3(a), which needs only that inequality).
 - **Unparsed** (ExponentialSumsAndCircleMethodPartII, #1266 at 0a11907, 2026-10-24): Misprint** in LR14v2 at Proposition 2.3, printed p. 4: the source puts an affine subvariety "in P^n". It should be in A^n for the affine case. Affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "0a11907", "job": "REV-PKG-ExponentialSumsAndCircleMethodPartII", "model": "opus", "worker": "fable-rev72"} -->
+- **Unparsed** (ExoticMonoidalStructuresAndAbstractAutomorphicity, #1277 at 58a1131, 2026-10-25): Error** in Dor23 at Remark 3.47, p. 33: the source allows any h with hKh⁻¹ ∩ U equal to the kernel of θ; that kernel need not be compact (over 𝔽₃((t)) it contains u(t⁻²)), so it should be the conductor lattice u(π^{−ν}O); affects a stated result.
+- **Unparsed** (ExoticMonoidalStructuresAndAbstractAutomorphicity, #1277 at 58a1131, 2026-10-25): Misprint** in Dor23 at the proof of Proposition 4.9, p. 43: the Fourier integrals are written over M₂(F); they should be over M₂(A), with the sum still over M₂(F); affects nothing.
+- **Unparsed** (ExoticMonoidalStructuresAndAbstractAutomorphicity, #1277 at 58a1131, 2026-10-25): Gap** in Dor23 at Construction A.7 and Remark A.8, p. 51: independence of the rational section and multiplicativity of ι are asserted without computation; they should be proved by transporting Δ_A and m along ω ↦ a²ω and the inverse transpose; affects a stated result.
 
 ## A
 
@@ -2299,6 +2302,21 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the proof of Lemma 4.3 (cached lines 643–647): the source says an automorphism of order at most 2 of a free ℤ_ℓ-module acts trivially mod 2, false (the swap matrix on ℤ₂²); it should be an argument that tracks the integral extension terms, since (4.9) alone gives no bound on ρ(X); affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Error** at the proof of Theorem 3.3, p. 13 (cached lines 511–520): the source says only orders 11 and 15 survive as extra rank-20 candidates, but n=14 with (a₂,a₇,a₁₄)=(1,1,1) satisfies every relation; it should be a list that includes 14, excluded like the others (root lattice A₁₃⊕A₆⊕A₁, square discriminant 196); affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Dor21
+
+- **Misprint** at Remark B.2.1, p. 16: the source says the y-coordinate of the outer action uses det(g₁g₂ᵀ); it should be use det(g₁g₃ᵀ), as in Dor23 Example 2.14; affects nothing. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Gap** at Remark C.4.5, p. 49: the source says the source fixes a place of degree one, which need not exist when the curve has no rational point; it should be use an idele of degree one, which always exists; affects the proof. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Error** at the proof of Lemma C.4.9, p. 52: the source says a prime in the ray class of xy⁻¹, but classes of degree ≤ 0 contain no prime; it should be shift by elements of large positive degree and recover the class by the four-term convolution identity; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "58a1131", "job": "REV-PKG-ExoticMonoidalStructuresAndAbstractAutomorphicity", "model": "opus", "worker": "fable-rev74"} -->. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+
+## Dor23
+
+- **Gap** at Claim A.6, p. 51: the source says counitality is asserted although the global counit and the local transports of Remark 3.47 are never constructed; it should be construct ε_A from lattice-adapted local data and check both counit equations; affects the proof. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Misprint** at Construction 4.15, p. 45: the source says the Petersson pairing integrates over GL₂(A); it should be integrate over GL₂(F)\GL₂(A); affects nothing. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Misprint** at Warning 3.25, p. 25: the source says the source calls the degeneracy-free object the nontrivial extension of "the trivial representation St" by 1_G; it should be the nontrivial extension of St by the trivial representation 1_G (1_G as subobject); affects nothing. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Misprint** at the proof of Claim 4.3, p. 41: the source says the distinguished unit vector is written as the indicator of GL₂(F_v); it should be the indicator of GL₂(O_v); affects nothing. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Gap** at the proof of Lemma 2.20, p. 17: the source says the source derives vanishing of the (0,1) spectral-sequence term from vanishing SL₂-coinvariants alone; it should be add that SL₂ acts by the identity on Tor₁ by functoriality, so tensoring with Ṽ kills it; affects the proof. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
+- **Misprint** at the proof of Proposition 2.12, p. 14: the source says the torus is written as triples (a,b,c) in F× with abc = 1; it should be triples in (F×)³ with abc = 1; affects nothing. Found by ExoticMonoidalStructuresAndAbstractAutomorphicity (#1277 at 58a1131, 2026-10-25, claude opus).
 
 ## Dotto, Breuil–Mézard conjectures for central division algebras
 
