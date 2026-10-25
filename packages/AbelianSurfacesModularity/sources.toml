@@ -112,7 +112,7 @@ title = "The Taylor-Wiles method for reductive groups"
 year = 2022
 arxiv = "2205.05062v4"
 locator_scheme = "theorem"
-locator = "Definition 3.19, pages 23–24, lines 1011–1017; Section 4.3, pages 38–39, lines 1648–1688"
+locator = "Definition 3.15, page 22, lines 936–947; Definition 3.19 and Lemma 3.20, pages 23–24, lines 1011–1024; Section 4.3, pages 38–39, lines 1648–1688"
 url = "https://arxiv.org/abs/2205.05062v4"
 fetched_from = "https://arxiv.org/pdf/2205.05062v4"
 fetched_at = "2026-10-24T06:22:20Z"
@@ -121,7 +121,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Locators use arXiv v4, March 2026; Definition 3.19 has the same number as the BCGP25 citation. The legally fetched extraction was read with OCR."
-cited_for = ["Sections 1.4 and 7.1 reasonableness supplier contract"]
+cited_for = ["Exact supplier contracts and Sections 1.4 and 7.1 (reasonableness and symplectic adequacy)"]
 
 [[source]]
 id = "FC90"

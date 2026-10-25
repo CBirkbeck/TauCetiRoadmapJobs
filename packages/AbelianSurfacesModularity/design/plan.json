@@ -3022,7 +3022,7 @@
     "slug": "near-adequacy-reasonableness",
     "supplier": "ArithmeticGaloisRepresentations",
     "section": "7.9",
-    "needs": "Provide BCGP25 Definition 5.3.3 near adequacy and Whitmore reasonableness as distinct predicates with the actual cohomology and cyclotomic-image conditions, and their comparison with adequacy."
+    "needs": "Provide Whitmore Definition 3.19 reasonableness with its eventual cyclotomic-image H⁰ vanishing and semisimple-detection conditions, its conditional dual-adjoint H¹ vanishing, and the symplectic-adequacy comparison of Lemma 3.20."
   },
   {
     "slug": "integral-enormity",
