@@ -8,16 +8,17 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs: eventual Ax–Kochen transfer,
 Igusa–Poincaré rationality at every prime, MRDP, universal definability of the
 integers in ℚ, Diophantine rational nonintegers and nonsquares, the integer
-definition with one universal variable, and parameter-uniform Pila–Wilkie counting.
+definition with one universal variable, Diophantine nonpowers over number fields,
+and parameter-uniform rational and bounded-degree counting.
 
 Relative Denef–Pas elimination and general AKE lack three-sorted ac-valued
 structures and their syntax adapter. Cluckers–Loeser integration, specialization
 and integral transfer lack constructible motivic functions and graded pushforwards.
 Hilbert's tenth problem over ℤ lacks the computable polynomial-code adapter for
-native semidecidability. Dual Néron volumes lack gauge measures on Néron models;
+native semidecidability. Undecidability of the universal-existential rational
+theory (§4.26) also lacks a native `Primcodable` sentence-code adapter. Dual Néron volumes lack gauge measures on Néron models;
 the normic zero-cycle headline lacks normic compactifications and Brauer–Manin
-pairings. The wider-sector curve theorem lacks its analytic coefficient and
-localized function rings. Definable Chow lacks definable complex analytic spaces.
+pairings. Definable Chow lacks definable complex analytic spaces.
 The André–Oort and CM-pair reductions lack A_g with special subvarieties and
 uniformization; the mixed André–Oort reduction lacks the corresponding mixed
 Shimura carriers. The period-codimension consequence lacks Hodge–Deligne systems
@@ -28,7 +29,7 @@ namespace TauCetiRoadmap.LogicAndDefinabilityInNumberTheory
 
 open MvPolynomial
 
-/-! ## Layer 1: valued-field languages and prime divisors -/
+/-! ## Layer 1: valued-field languages and transfer -/
 
 /-- A fixed ring sentence has the same truth in ℚ_p and 𝔽_p((t)) at all
 sufficiently large primes; the bound depends on the sentence (§1.5). -/
@@ -42,7 +43,7 @@ theorem ax_kochen_ring (φ : FirstOrder.Language.ring.Sentence) :
 /-! ## Layer 2: local constructible integration and geometric measure -/
 
 /-- For a characteristic-zero DVR finite over ℤ_p, the congruence-counting series
-of every polynomial over that DVR is rational (§2.6, Denef 1984, Theorem 1.1).
+of every polynomial over that DVR is rational (§2.6, Denef 1984, Theorems 1.1–1.2).
 The maximal-ideal power at n=0 gives the one-element quotient. -/
 theorem igusa_poincare_rationality (p : ℕ) [Fact p.Prime]
     (O : Type*) [CommRing O] [IsDomain O] [CharZero O]
@@ -86,7 +87,7 @@ theorem rational_nonintegers_diophantine :
     rationalDiophantine rationalIntegersᶜ := by sorry
 
 /-- The complement of rational squares includes every negative rational and
-excludes zero (Koenigsmann, Proposition 21(a), pp.88–89). -/
+excludes zero (Koenigsmann, Proposition 21(b), p.88). -/
 theorem rational_nonsquares_diophantine :
     rationalDiophantine {x : ℚ | ¬ ∃ y : ℚ, y ^ 2 = x} := by sorry
 
@@ -98,11 +99,20 @@ theorem one_universal_variable :
         ∀ x : ℚ, ∃ y : Fin m → ℚ,
           eval₂ (Int.castRingHom ℚ) (Fin.cons t (Fin.cons x y)) p = 0 := by sorry
 
+/-- Over every number field, the nonzero elements that are not r-th powers,
+for r>1, form a Diophantine set in finite-system normal form (§4.31;
+Colliot-Thélène–Van Geel, Theorem 4.3, arXiv v1, pp.16–17). -/
+theorem nonpowers_diophantine (k : Type*) [Field k] [NumberField k]
+    (r : ℕ) (hr : 1 < r) :
+    ∃ (m s : ℕ) (p : Fin s → MvPolynomial (Fin (m + 1)) k),
+      ∀ x : k, (x ≠ 0 ∧ ¬ ∃ y : k, y ^ r = x) ↔
+        ∃ y : Fin m → k, ∀ j, eval (Fin.cons x y) (p j) = 0 := by sorry
+
 /-! ## Layer 6: o-minimal geometry and counting -/
 
 /-- An expansion of the real ordered field up to definability: order, addition
 and multiplication are definable, and every definable unary set has finite
-frontier. All real parameters are allowed (§6.1). -/
+topological boundary (Mathlib `frontier`, closure minus interior). All real parameters are allowed (§6.1). -/
 def IsOMinimalExpansion (L : FirstOrder.Language) [L.Structure ℝ] : Prop :=
   (Set.univ : Set ℝ).Definable L {x : Fin 2 → ℝ | x 0 < x 1} ∧
   (Set.univ : Set ℝ).Definable L {x : Fin 3 → ℝ | x 0 + x 1 = x 2} ∧
@@ -111,18 +121,19 @@ def IsOMinimalExpansion (L : FirstOrder.Language) [L.Structure ℝ] : Prop :=
     (frontier {x : ℝ | (fun _ : Fin 1 => x) ∈ s}).Finite
 
 /-- The union of connected positive-dimensional semialgebraic subsets of X
-(§6.21). A connected semialgebraic set has positive dimension precisely when
+(§6.15). A connected semialgebraic set has positive dimension precisely when
 it contains two distinct points. -/
 def algebraicPart {n : ℕ} (X : Set (Fin n → ℝ)) : Set (Fin n → ℝ) :=
   {x | ∃ S : Set (Fin n → ℝ), S ⊆ X ∧ TauCeti.IsSemialgebraic S ∧
     IsConnected S ∧ ¬ S.Subsingleton ∧ x ∈ S}
 
-/-- Maximum reduced numerator/denominator height of a rational tuple (§6.22),
-with height one for the empty tuple. -/
+/-- Maximum reduced numerator/denominator height of a rational tuple (§6.16),
+with height one for the empty tuple. Each coordinate term, cast to ℝ,
+equals `Height.mulHeight₁ (x i)` by `Rat.mulHeight₁_eq_max`. -/
 def rationalTupleHeight {n : ℕ} (x : Fin n → ℚ) : ℕ :=
   max 1 (Finset.univ.sup fun i => max (x i).num.natAbs (x i).den)
 
-/-- Pila–Wilkie (§6.25): the number of rational points outside a definable
+/-- Pila–Wilkie (§6.18): the number of rational points outside a definable
 fibre's algebraic part with maximum height at most T is at most C T^ε,
 uniformly in the parameter and in T≥1. -/
 theorem pila_wilkie (L : FirstOrder.Language) [L.Structure ℝ]
@@ -135,6 +146,22 @@ theorem pila_wilkie (L : FirstOrder.Language) [L.Structure ℝ]
       (({x : Fin n → ℚ | (fun i => (x i : ℝ)) ∈ Xt ∧
           (fun i => (x i : ℝ)) ∉ algebraicPart Xt ∧
           (rationalTupleHeight x : ℝ) ≤ T} : Set (Fin n → ℚ)).ncard : ℝ)
+        ≤ C * T ^ ε := by sorry
+
+/-- Algebraic points of coordinatewise degree at most k and absolute
+multiplicative height at most T outside each definable fibre's algebraic part
+satisfy C T^ε uniformly in the parameter and T≥1 (§6.20; Pila 2009,
+Theorems 1.6 and 5.3). Explicit algebraicity excludes total-function junk values. -/
+theorem bounded_degree_counting (L : FirstOrder.Language) [L.Structure ℝ]
+    (hL : IsOMinimalExpansion L) (n m : ℕ)
+    (X : Set (Fin (n + m) → ℝ))
+    (hX : (Set.univ : Set ℝ).Definable L X)
+    (k : ℕ) (hk : 1 ≤ k) (ε : ℝ) (hε : 0 < ε) :
+    ∃ C : ℝ, 0 < C ∧ ∀ (t : Fin m → ℝ) (T : ℝ), 1 ≤ T →
+      let Xt : Set (Fin n → ℝ) := {x | Fin.append x t ∈ X}
+      (({x : Fin n → ℝ | x ∈ Xt ∧ x ∉ algebraicPart Xt ∧
+          ∀ i, IsAlgebraic ℚ (x i) ∧ (minpoly ℚ (x i)).natDegree ≤ k ∧
+            NumberField.absMulHeight₁ (x i) ≤ T} : Set (Fin n → ℝ)).ncard : ℝ)
         ≤ C * T ^ ε := by sorry
 
 end TauCetiRoadmap.LogicAndDefinabilityInNumberTheory

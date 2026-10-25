@@ -1,0 +1,10 @@
+{
+  "gaps": [
+    {
+      "slug": "neron-pairing-perfect-finite-residue",
+      "needs": "Perfectness of the Galois-equivariant Grothendieck pairing on geometric component groups of an arbitrary abelian variety and its dual over a nonarchimedean local field with finite residue field, without semistability.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "4.6"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ authors = "L. P. D. van den Dries"
 title = "Tame Topology and O-minimal Structures"
 year = 1998
 locator_scheme = "section"
-locator = "Chapters 3–4, 8–10; Chapter 10 (2.15), p.166"
+locator = "Chapters 3–4 and 8–10; Chapter 10 (2.15), p.166 and (2.18), p.167"
 licence_class = "none"
 status = "waived"
 cited_for = ["6.1–6.9"]
@@ -30,11 +30,11 @@ title = "The rational points of a definable set"
 year = 2006
 doi = "10.1215/S0012-7094-06-13336-7"
 locator_scheme = "section"
-locator = "Theorems 1.8–1.10; §2; Corollary 4.4"
+locator = "Definition 1.4; Theorems 1.8–1.10"
 url = "https://doi.org/10.1215/S0012-7094-06-13336-7"
 licence_class = "none"
 status = "waived"
-cited_for = ["6.23; 6.25"]
+cited_for = ["6.15; 6.18"]
 
 [[source]]
 id = "cl_addenda"
@@ -175,7 +175,7 @@ venue = "Duke Math. J. 163, no. 8 (2014), 1549-1600"
 doi = "10.1215/00127094-2713482"
 arxiv = "1111.4405v2"
 locator_scheme = "section"
-locator = "§3, pp.10–15; Theorems 3.1.1, 3.1.3, 3.1.5 and 3.3.2; Theorems 2.1.3–2.1.6; Theorems 4.3.1–4.3.3; §4.5"
+locator = "Theorems 2.1.3–2.1.6, pp.5–9; §2.2, p.10; Theorems 3.1.1, 3.1.3, 3.1.5, pp.11–12; Theorem 3.3.2, p.15; Theorems 4.3.1–4.3.3, p.32; proofs §4.5, pp.37–40"
 url = "https://arxiv.org/abs/1111.4405v2"
 fetched_from = "https://arxiv.org/pdf/1111.4405v2"
 fetched_at = "2026-10-25T00:20:40Z"
@@ -183,7 +183,7 @@ sha256 = "a58248be5dbd8d7267dfda52d9c33b6ce33c785b2d70f3eb319932af962f30ad"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "arXiv v2; §3 theorem numbers agree with the published copy; author pages 10–15 for the fixed-p results, published pages explicitly labelled elsewhere."
+version_note = "arXiv v2; preprint numbering and pagination throughout: §3, pp.11–15, and §4.5."
 cited_for = ["2.2; 2.4"]
 
 [[source]]
@@ -218,7 +218,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Published Annals version; Proposition 23(c) states all positive exponents and its proof invokes nonpowers. Numbering differs from arXiv v2."
-cited_for = ["4.20–4.29; 4.31–4.33"]
+cited_for = ["4.20–4.29; 4.32–4.34"]
 
 [[source]]
 id = "hilbert_s_tenth_problem_is_unsolvable"
@@ -252,7 +252,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["4.29a–4.30; 4.32"]
+cited_for = ["4.30–4.31; 4.33"]
 
 [[source]]
 id = "bkt"
@@ -260,7 +260,7 @@ authors = "Benjamin Bakker, Bruno Klingler and Jacob Tsimerman"
 title = "Tame topology of arithmetic quotients and algebraicity of Hodge loci"
 year = 2020
 locator_scheme = "section"
-locator = "§1.1; Lemma 2.1; Definition 4.4; Lemma 4.5; Theorem 4.8; Lemma 4.10; Theorem 4.13; §4.5; Appendix A.1–A.3"
+locator = "§1.1; Lemma 2.1; Theorem 4.13; Appendix A.1–A.3"
 url = "https://benjamin-bakker.github.io/DefArith.pdf"
 fetched_from = "https://benjamin-bakker.github.io/DefArith.pdf"
 fetched_at = "2026-10-25T00:20:51Z"
@@ -268,7 +268,7 @@ sha256 = "b559c652490eb54595e86ec063945d016dd104949a91f9d6b4616cc4e25b8c8e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.2–6.3; 6.6–6.15; 6.18"]
+cited_for = ["6.2–6.3; 6.6–6.10; 6.12"]
 
 [[source]]
 id = "geometric_stabilisation_via_p_adic_integration"
@@ -286,7 +286,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["2.7–2.12; 5.4"]
+cited_for = ["2.7–2.13; 5.4"]
 
 [[source]]
 id = "mirror_symmetry_for_moduli_spaces_of_higgs_bundles_via_p_adic_int"
@@ -304,7 +304,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["2.7–2.12"]
+cited_for = ["2.7–2.13"]
 
 [[source]]
 id = "geometric_categories_and_o_minimal_structures"
@@ -312,7 +312,7 @@ authors = "Lou van den Dries and Chris Miller"
 title = "Geometric categories and o-minimal structures"
 year = 1996
 locator_scheme = "section"
-locator = "§§2.5–2.7; §§4.1–4.10, author pp.7–14"
+locator = "§2.5 and o-minimality definition, pp.8–9; §§4.1–4.10, pp.12–13"
 url = "https://people.math.osu.edu/miller.1987/newg.pdf"
 fetched_from = "https://people.math.osu.edu/miller.1987/newg.pdf"
 fetched_at = "2026-10-25T00:21:05Z"
@@ -336,7 +336,7 @@ sha256 = "ad48dae208b22a80836efeecd56bfdb9dc053f075ae70b5f1e96a69940d61a06"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.24"]
+cited_for = ["Source provenance"]
 
 [[source]]
 id = "peterzil_starchenko_agc"
@@ -352,7 +352,7 @@ sha256 = "e7556f77373bdc1e24e4f620413d674197f842569dde1a704555dd1d03f7856a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.17–6.18"]
+cited_for = ["6.11–6.12"]
 
 [[source]]
 id = "on_the_algebraic_points_of_a_definable_set"
@@ -368,7 +368,7 @@ sha256 = "4ff1a624d92a0a5cbe05d77c5ce097d29353d70445f10efa2ba72833b0821c59"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.21–6.22; 6.26–6.28"]
+cited_for = ["6.15–6.16; 6.17–6.20"]
 
 [[source]]
 id = "the_andr_oort_conjecture_for_a_g"
@@ -384,7 +384,7 @@ sha256 = "43259ca3cfedfb574bf1fe2f80e1023cb736ea299a76588536fd816340722abc"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.28; 6.30; 7.1–7.4; 7.8"]
+cited_for = ["6.20; 6.21; 7.1–7.4; 7.7"]
 
 [[source]]
 id = "abelian_varieties_isogenous_to_no_jacobian"
@@ -418,7 +418,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v5"
-cited_for = ["7.7"]
+cited_for = ["7.6"]
 
 [[source]]
 id = "the_ax_schanuel_conjecture_for_variations_of_hodge_structures"
@@ -436,7 +436,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["7.7"]
+cited_for = ["7.6"]
 
 [[source]]
 id = "ax_schanuel_for_shimura_varieties"
@@ -454,7 +454,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["6.17–6.18"]
+cited_for = ["6.11–6.12"]
 
 [[source]]
 id = "ax_lindemann_for_a_g"
@@ -470,7 +470,7 @@ sha256 = "261af339f1ff909701e74bc2e28fd9c77d186fb4df9e6eeb0b2aa411718143a7"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.20; 7.1–7.5"]
+cited_for = ["6.14; 7.1–7.5"]
 
 [[source]]
 id = "towards_the_andr_oort_conjecture_for_mixed_shimura_varieties_the_"
@@ -488,7 +488,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v6"
-cited_for = ["7.8"]
+cited_for = ["7.7"]
 
 [[source]]
 id = "presburger_sets_and_p_minimal_fields"
@@ -515,7 +515,7 @@ authors = "Dino Lorenzini"
 title = "Torsion and Tamagawa numbers"
 year = 2011
 locator_scheme = "section"
-locator = "Theorem 1.1, p.1997; Corollary 4.4, p.2009"
+locator = "Proposition 4.3 and Example 4.4, pp.2032–2033"
 url = "https://aif.centre-mersenne.org/item/10.5802/aif.2664.pdf"
 fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.2664.pdf"
 fetched_at = "2026-10-25T00:21:39Z"
@@ -523,7 +523,7 @@ sha256 = "bf4ed3bd45526085480ddaf37a55272e9f00d771de4a4d542108b8b6e423794e"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["2.10a"]
+cited_for = ["2.11"]
 
 [[source]]
 id = "the_stacks_project"
@@ -539,8 +539,8 @@ sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["1.11"]
 version_note = "Algebra extraction for 04GN/04GS and More on Algebra extraction for 0ASK; numbering checked against the stable tags."
+cited_for = ["Source provenance"]
 
 [[source]]
 id = "native_ultraproduct_structures_and_o_transfer"
@@ -556,7 +556,7 @@ sha256 = "0659ca3b3149bd68daf528f8f192c2d806063e4bab9a6f226c5ef51e6072297c"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["0.7; 1.4–1.5"]
+cited_for = ["1.4–1.5"]
 
 [[source]]
 id = "native_multiplicative_heights"
@@ -564,7 +564,7 @@ authors = "Mathlib contributors"
 title = "Native multiplicative heights"
 year = "undated"
 locator_scheme = "section"
-locator = "Mathlib/NumberTheory/Height/NumberField.lean: NumberField.mulHeight; NumberField.logHeight"
+locator = "Mathlib/NumberTheory/Height/NumberField.lean: Rat.mulHeight₁_eq_max, line 532; NumberField.absMulHeight₁, line 136"
 url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Height/NumberField.lean"
 fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Height/NumberField.lean"
 fetched_at = "2026-10-25T00:25:58Z"
@@ -572,7 +572,7 @@ sha256 = "3f0cf81276e074c3ba6ffe8b0d66ddd355a878fccd33e2bb48e2ec6da9bb4bee"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.22"]
+cited_for = ["Exact supplier contracts; 6.16; 6.20"]
 
 [[source]]
 id = "bosch_lutkebohmert_raynaud"
@@ -581,12 +581,12 @@ title = "Néron Models"
 year = 1990
 doi = "10.1007/978-3-642-51438-8"
 locator_scheme = "section"
-locator = "§7.3 Theorem 3; §9.6"
+locator = "§7.3, Proposition 6, p.180"
 url = "https://doi.org/10.1007/978-3-642-51438-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["2.10a"]
+cited_for = ["2.11"]
 
 [[source]]
 id = "schneider"
@@ -615,18 +615,18 @@ url = "https://doi.org/10.1017/CBO9780511551574"
 licence_class = "none"
 status = "uncertified"
 version_note = "Commercial publication cited by locator; no readable legal text resolved by the sources service."
-cited_for = ["0.1–0.6"]
+cited_for = ["0.1–0.4"]
 
 [[source]]
 id = "denef_1984"
-authors = "Ricardo Ma��"
-title = "On the instability of Herman rings"
-year = 1985
-venue = "Inventiones Mathematicae 81"
-doi = "10.1007/BF01388582"
-locator_scheme = "section"
+authors = "Jan Denef"
+title = "The rationality of the Poincaré series associated to the p-adic points on a variety"
+year = 1984
+venue = "Inventiones Mathematicae 77"
+doi = "10.1007/BF01389133"
+locator_scheme = "theorem"
 locator = "Theorems 1.1–1.2"
-url = "https://doi.org/10.1007/BF01388582"
+url = "https://doi.org/10.1007/BF01389133"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
@@ -650,7 +650,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["1.6; 1.8–1.9; 1.17–1.18"]
+cited_for = ["Source provenance"]
 
 [[source]]
 id = "pila_tsimerman_2013"
@@ -670,7 +670,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["7.8"]
+cited_for = ["7.7"]
 
 [[source]]
 id = "cattani_deligne_kaplan"
@@ -688,7 +688,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["7.7"]
+cited_for = ["7.6"]
 
 [[source]]
 id = "tauceti_pin"
@@ -696,7 +696,7 @@ authors = "Tau Ceti contributors"
 title = "Tau Ceti library"
 year = 2026
 locator_scheme = "section"
-locator = "Geometry/RealAlgebraic/Semialgebraic/Basic.lean; RingTheory/Valuation/Coarsen.lean; RingTheory/GrothendieckRing.lean; AlgebraicGeometry/AdicSpace/ValuationSpectrum/Basic.lean; AlgebraicGeometry/AdicSpace/PatchPresentation.lean"
+locator = "Geometry/RealAlgebraic/Semialgebraic/Basic.lean; RingTheory/GrothendieckRing.lean"
 url = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
 fetched_from = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
 fetched_at = "2026-10-25T00:27:22Z"
@@ -704,4 +704,4 @@ sha256 = "2db7aa02ab95a4b8b8a453d98d1b88267259c84482dc624700b0dc5c0867101b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Scope and ownership; Exact supplier contracts; 1.12; 3.2; 6.21"]
+cited_for = ["Scope and ownership; Exact supplier contracts; 3.2; 6.15"]
