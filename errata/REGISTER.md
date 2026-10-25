@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4727 mistakes recorded on the board: 3138 misprints, 1184 errors, 325 gaps, 80 unparsed bullets.
+4728 mistakes recorded on the board: 3139 misprints, 1184 errors, 325 gaps, 80 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -510,6 +510,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Arveson
 
 - **Misprint** at Theorem 1.4.2, proof, printed p. 160 (Arveson line 687): the source says the middle inner product uses η in both arguments after moving X across the adjoint; it should be ξ in the first argument, retaining η in the second; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
+
+## as-ref-022
+
+- **Misprint** at display (2), §1, manuscript p. 2: the source says the mean of `2^{rk₄}` over negative discriminants is a ratio whose denominator counts positive discriminants up to X; it should be the count of negative discriminants `0 < −D ≤ X`, as in the odd-p display above it; the limit 2 is unchanged, both counts being asymptotic to `3X/π²`; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "b571a4c", "job": "REV-PKG-ArithmeticStatistics~2", "model": "opus", "worker": "fable-rev78"} -->. Found by ArithmeticStatistics (#128 at b571a4c, 2026-10-25, claude opus).
 
 ## Asakura–Miyatani, arXiv:2007.14255v2
 
