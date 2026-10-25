@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4794 mistakes recorded on the board: 3182 misprints, 1194 errors, 332 gaps, 86 unparsed bullets.
+4817 mistakes recorded on the board: 3197 misprints, 1195 errors, 335 gaps, 90 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -94,6 +94,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (EtaleDualityAndPerverseSheavesPartII, #1338 at b61ddc0, 2026-10-25): Gap** in ILO14 at IX Théorème 1.2, printed p. 131: the source assumes only an irreducible generic fibre and invokes only condition (2.1.1) of de Jong; geometric irreducibility, giving de Jong's (2.1.5), is needed for the quotient clause (iii); affects a stated result; corrected in print at ILO-final-IX 1.2, p. 161.
 - **Unparsed** (EtaleDualityAndPerverseSheavesPartII, #1338 at b61ddc0, 2026-10-25): Error** in ILO14 at XII 2.1.1, printed p. 191: the source says finite limits of diagrams of noetherian schemes exist and are computed termwise; termwise fibre products of noetherian schemes need not be noetherian, so the category must be all schemes or finite type over a fixed noetherian base; affects a stated result; corrected in print at ILO-final-XII 2.1.1, p. 241.
 - **Unparsed** (EtaleDualityAndPerverseSheavesPartII, #1338 at b61ddc0, 2026-10-25): Gap** in Epp73 at the equal-characteristic Artin–Schreier step of the proof of Theorem 1.9 (page as located in K10, p. 2): the source assumes the most negative exponent carries a coefficient that is not a p-th power; coincident exponents can cancel, so the argument must recombine terms and iterate; affects the proof; corrected in print at K10, pp. 1–3. <!-- tauceti-roadmap-review {"agent": "claude", "head": "b61ddc0", "job": "REV-PKG-EtaleDualityAndPerverseSheavesPartII", "model": "opus", "worker": "fable-rev83"} -->
+- **Unparsed** (EllipticModularityEffectiveComparisons, #1361 at 29422ea, 2026-10-25): Error** in lemos-2017 at §2, proof of Theorem 1.1, p. 5 (lines 193–194): the source says the Jacobian of X₀(37) has rank zero; it has a rank-one quotient (37a, with (0,0) of infinite order), and the known point list of X₀(37) must be used instead; affects the proof.
+- **Unparsed** (EllipticModularityEffectiveComparisons, #1361 at 29422ea, 2026-10-25): Gap** in lemos-2017 at Theorem 3.3, p. 9 (line 349): the source cites Darmon–Merel Theorem 6.1 for r ∈ {5, 7, 13}; Darmon–Merel state it only for r = 1, 2, 3 (darmon-merel line 460), and the extension needs only that J₀(r) is zero; affects the proof.
+- **Unparsed** (EllipticModularityEffectiveComparisons, #1361 at 29422ea, 2026-10-25): Gap** in kraus-1997 at §3.3, proof of Théorème 4, p. 1146 (lines 435–441): the source asserts that E′/⟨P⟩ has full rational two-torsion when P is the only rational point of order two; this needs the square-class argument that four-divisibility forces b to be a square; affects the proof.
+- **Unparsed** (EllipticModularityEffectiveComparisons, #1361 at 29422ea, 2026-10-25): Misprint** in lemos-2017 at §1, p. 1 (line 34): the source attributes split Cartan exclusion for p ≥ 11, p ≠ 13, to Bilu–Parent–Rebolledo; their Theorem 1.1 states p > 11; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "29422ea", "job": "REV-PKG-EllipticModularityEffectiveComparisons", "model": "opus", "worker": "fable-rev84"} -->
 
 ## A
 
@@ -119,7 +123,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AC
 
 - **Misprint** at Lemma 4.9.7(2), p. 113: the source says the first argument bounded below and the second bounded above; it should be first bounded above, second bounded below, as in part (1); affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at Lemma 4.9.7(2), p. 113 (AC line 4852): the source says the first Hom argument is bounded below and the second bounded above; it should be the first bounded above and the second bounded below; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 5.5.6, p. 130 (AC line 5540): the source says the internal-Hom comparison lies in X's almost category; it should be in Y's almost category on both sides; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 5.5.5, p. 129: the source says derived pushforward as running from the target's almost category to the source's; it should be run from X to Y; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at Theorem 5.5.5, p. 129 (AC line 5512): the source says derived pushforward runs from Y's almost category to X's; it should be from X's almost category to Y's; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 
 ## AGV08
 
@@ -760,6 +767,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §3.1, printed p. 4 (beltagy line 276 and beltagy line 287): the source says receptive-field sizes are ℓw without dilation and ℓdw with dilation; it should be inclusive spans ℓw+1 and ℓdw+1 for interior tokens, clipped at boundaries. w=2 and ℓ=1 already gives three positions; affects a stated result. Found by StructuredBlockOperators (ERRATA-StructuredBlockOperators at 945f5e6, 2026-10-23, codex gpt-6-astra).
 
+## bennett-siksek-2020
+
+- **Misprint** at §2, gloss after eq. (3), p. 358 (line 174): the source says ord_q(x) is the largest power of q dividing x; it should be the exponent of that power; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 29422ea, 2026-10-25, claude opus).
+
 ## Bennis-Mahdou
 
 - **Misprint** at Theorem 2.7, arXiv: the source says math/0606770v1, printed p. 7 (Bennis-Mahdou line 219): the source says Holm’s direct-summand closure result is Proposition 2.5; it should be Theorem 2.5, printed p. 174 (Holm line 270); affects nothing. Found by GorensteinHomologicalAlgebra (ERRATA-GorensteinHomologicalAlgebra at 59db116, 2026-10-23, codex gpt-6-astra).
@@ -897,6 +908,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at equation (63), p. 16: the source says the source pairs ζ_{l1} with ζ_{l2}⁻¹ in the first factor; it should be ζ_{l1}⁻¹; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at §1, p. 1: the source says R2, R3 are defined similarly after defining R3; it should be R1, R2; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "4ba5ef1", "job": "REV-PKG-ArithmeticDynamicsPartII", "model": "opus", "worker": "fable-rev44"} -->. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 
+## BH
+
+- **Gap** at proof of Lemma 3.25, p. 25 (BH line 1113): the source says an arbitrary affinoid admits the toric perfectoid torsor used in its calculation; it should be applied to smooth toric charts after reduction of proper singular spaces to smooth proper hypercover terms; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "7de7f5adf7ed8ca6b81b025355e38169aea995d6", "job": "REV-PKG-ClassicalAdicEtaleCohomologyPartII~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
+
 ## Bhargava, The density of discriminants of quartic rings and fields (Annals 162, 2005)
 
 - **Error** at pp. 1056–1057 (argument for Proposition 23), with the similar estimate invoked in Lemma 12, p. 1045: the source says a compressed floor-exponent bound on suborders of given index, making index-p³ counts independent of p (they are 3, 4, 6, 8 at p = 2, 3, 5, 7); it should be p-dependent bounds such as index factor ≪ k^{1/2+ε} and Σ_{e≥1} s(p^e)/p^{2e} ≪ p^{−2} (Shankar–Tsimerman, arXiv:2503.02381v1, §11); affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -1009,6 +1024,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Bijakowski–Pilloni–Stroh, Classicité de formes modulaires surconvergentes (Ann. of Math. 2016)
 
 - **Misprint** at the determinant-polynomial evaluation in its signature argument (no printed locator given): the source says the source evaluates on diag(x, 1, …, 1) plus the identity; it should be diag(x − 1, 0, …, 0) plus the identity, that is diag(x, 1, …, 1); in rank one at x = 1 these give 2 and 1; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## bilu-parent-rebolledo
+
+- **Gap** at Proposition 5.9, p. 979 (line 971), and in the abstract: the source says the range is stated as 11 ⩽ p, but the proof uses Corollary 5.7, which assumes p > 11; it should be 11 < p, as in Theorem 1.1 and Corollary 5.10; affects a stated result. Found by EllipticModularityEffectiveComparisons (#1361 at 29422ea, 2026-10-25, claude opus).
 
 ## Birkbeck–Heuer–Williams (2019)
 
@@ -1960,6 +1979,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## cmnn
 
+- **Gap** at Lemma 4.7 and Theorem 4.6 proof, pp.19–20: the source says the positive-height ideal and Laurent-series field also at i=0; it should be separate the zero ideal and rational Witt-vector field case; affects the proof. Found by ChromaticHomotopyTheory (#986 at 5bbacd4, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Lemma 4.7 and the proof of Theorem 4.6, pp.19–20: the source says the theorem for i≥0 but writes the lemma with the ideal (p,v₁,…,v_(i−1)) and field k((v_i)); it should be a separate i=0 case with the zero ideal and the field W(k)[1/p]; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "0ea406d", "job": "REV-PKG-ChromaticHomotopyTheory", "model": "opus", "worker": "fable-rev33"} -->. Found by ChromaticHomotopyTheory (#986 at 0ea406d, 2026-10-23, claude opus).
 
 ## Cohen
@@ -2111,6 +2131,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## DAG13
 
 - **Misprint** at Theorem 3.4.12, p. 92 (DAG13 line 4146): the source says the source introduces a field k of characteristic p that never appears; it should be omit that clause; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "a872370", "job": "REV-PKG-EtaleHomotopyTypes", "model": "opus", "worker": "fable-rev77"} -->. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
+
+## darmon-merel
+
+- **Misprint** at Proposition 7.1, proof, author-version p. 21 (line 660): the source says the source equates L(f,1) with 2πi times the integral of f from 0 to i∞; it should be carry a minus sign, L(f,1) = −2πi∫; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 29422ea, 2026-10-25, claude opus).
 
 ## DarmonMerel2001
 
@@ -4476,6 +4500,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Redshift Theorem and its Nullstellensatz input, introduction, p.1014: the source says redshift holds for every E∞ ring of nonnegative height, with the global convention T(0)=S[1/p]; it should be restricted at height zero to R with nonzero rationalization (for example p-local R), since (HF₂)^tC₂ at an odd p has height 0 but K-theory of height at most 0; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 - **Misprint** at Remark 2.12, p.10: the source says T(i) kills K(π,r) for every finite group π when r>i; it should be every finite abelian p-group, since π=ℤ/q (q≠p) fails at r=1, i=0; affects nothing. Found by ChromaticHomotopyTheory (#986 at 0ea406d, 2026-10-23, claude opus).
+- **Misprint** at Remark 2.12, p.10: the source says finite-group Eilenberg–Mac Lane spaces vanish for every r>i; it should be finite abelian p-groups in this argument; affects nothing. Found by ChromaticHomotopyTheory (#986 at 5bbacd4, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Remark 3.11, p.1026: the source says the stabilized relative K-theory of S with coefficients in M is ΩM; it should be ΣM, the first derivative ΣTHH(S;M); affects nothing; (the contradiction holds for any shift). Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 - **Misprint** at Remark 3.11, printed p.16 (lmmt line 672): the source says the linearized relative K functor on sphere-bimodules is ΩM; it should be ΣM, as the square-zero K₁ calculation shows; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
 
@@ -4813,6 +4838,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Proposition 4.1, p.20: the source says θ is a section on Y; it should be a section on X of the relative r-fold top forms; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 - **Misprint** at the proof of Claim 4.2, p.20: the source says take η to be (dx₁∧⋯∧dxₙ)^⊗r; it should be dx₁∧⋯∧dxₙ, a 1-gauge form; affects the proof. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+
+## mm
+
+- **Misprint** at Example 7.5, p.37: the source says the source lists (0,1) as a 2-torsion point of the Legendre curve; it should be list (1,0); affects nothing; The first issue is witnessed by i=0,r=1,A=ℤ/q with q≠p: reduced H₁ after p-inversion is ℤ/q, not zero (lmmt line 410). The second is at cmnn lines 831–832 and does not refute the theorem; the package explicitly separates i=0. For the third, substituting (0,1) in y²=x(x−1)(x−λ) gives 1=0, while (1,0) gives 0=0 (mm line 1780). <!-- tauceti-roadmap-review {"agent": "codex", "head": "5bbacd4ec0c4e4372829de8f9b0eb73f8fb9d99e", "job": "REV-PKG-ChromaticHomotopyTheory~2", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by ChromaticHomotopyTheory (#986 at 5bbacd4, 2026-10-25, codex gpt-6-astra).
 
 ## Montgomery1987
 
@@ -7232,12 +7261,21 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Z
 
 - **Misprint** at Definition 5.2.1, p. 75: the source says the global trace a target shifted by [2d]; it should be [−2d], as in Theorem 5.1.1 and Definition 5.2.3; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at Definition 5.2.1, p. 75 (Z line 3640): the source says the global trace target has shift +2d; it should be −2d, as in the subsequent formula and Definition 5.2.3; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Lemma 2.2.7(2), p. 13: the source says upper shriek sends bounded coherent complexes on the source to the target; it should be send those on the target to the source; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at Lemma 2.2.7(2), p. 13 (Z line 558): the source says upper shriek sends complexes from the source scheme to the target; it should be from the target to the source; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Error** at Lemma 4.2.15, p. 54 (and the multiplication sentence after (4.6), p. 53): the source says multiplication of weight lines gives isomorphisms onto the sum weight; it should be injective with image scaled by block-parameter powers, so for uv=ϖ the product is ϖ times the trivial line; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Error** at Lemma 4.2.15, p. 54, and after equation (4.6), p. 53 (Z line 2536, Z line 2563): the source says multiplication identifies each pair of weight lines with the sum-weight line; it should be multiplication with block-parameter factors, giving pV₀ for V_uV_v when uv=p; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 4.4.24, p. 74: the source says the source omits the reduced special fibre (niceness) needed to define Faltings' pairing; it should be include it, as Theorem 4.1.2 on p. 49 and the section opening do; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at Theorem 4.4.24, p. 74 (Z line 3587): the source says local duality holds without restating reduced residue special fibre; it should be stated with niceness from Theorem 4.1.2 and the section's standing assumptions; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Theorems 5.5.2, 5.5.4 and 5.5.6, pp. 81–83 (Z line 3920, Z line 3968, Z line 3979): the source says derived trace pairings have unshifted coefficient targets; it should be coefficient targets shifted by −2d; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at equation (3.7), Theorem/Definition 3.4.13, p. 43 (Z line 2038): the source says the normalization includes an extra scalar (1−ζ_p)ⁿ; it should be the map without that scalar, agreeing with equation (3.6) and the inverse-Scholze normalization in Remark 3.4.15; affects a stated result. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 4.2.23, p. 55: the source says γ_i acts through γ_j(χ) with the j-th exponent and level; it should be γ_i(χ) with the i-th exponent and level; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at proof of Lemma 4.2.23, p. 55 (Z line 2644): the source says γ_i acts by the j-th character value; it should be the i-th character value and exponent; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Proposition 4.3.6, Case 2, p. 61: the source says the source bounds π against the p^n-th root of ϖ, where n is the number of block variables; it should be the p^m-th root, m the root level; affects the proof. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at proof of Proposition 4.3.6, Case 2, p. 61 (Z line 2965): the source says the bound on π uses a pⁿ-th root of the parameter; it should be the pᵐ-th root, where m is the root-tower level; affects the proof. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 4.4.24, Step 3, p. 74: the source says the source calls the map from X′_i to X′ a good quotient; it should be the map from X′_i to X_i; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at c41f55e, 2026-10-23, claude opus).
+- **Misprint** at proof of Theorem 4.4.24, Step 3, p. 74 (Z line 3596): the source says the map from X′_i to X′ is a good quotient; it should be the map from X′_i to X_i; affects nothing. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 7de7f5a, 2026-10-25, codex gpt-6-astra).
 
 ## Zagier, Ramanujan's mock theta functions and their applications, 2009
 
