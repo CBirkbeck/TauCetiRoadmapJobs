@@ -6,9 +6,7 @@ import Mathlib
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs.
 
-The infinite-family theorem of Layer 8 is statable on native representations and
-native degree-one group cohomology. Its short exact sequence predicate records
-actual extensions, including their extension classes.
+No headline theorem is statable at the pins.
 
 The following headline theorems are not statable at the pins:
 * Controlled G-valued finite-level towers: the fixed-quotient arithmetic lifting
@@ -17,7 +15,8 @@ The following headline theorems are not statable at the pins:
 * Finite-prime annihilation of relative Selmer images: the arithmetic finite
   adjoint coefficient systems, Selmer kernels and root local conditions are missing.
 * Finitely ramified geometric lifts with prescribed components and approximation,
-  the sl2 refinement and nongeometric lifts: the G-valued deformation spaces,
+  the sl2 refinement, nongeometric lifts and the irreducible specialization (§6.6):
+  the G-valued deformation spaces,
   their local components and regular de Rham conditions are missing.
 * Derived-dense lifts of Levi-valued residual representations: the arithmetic
   reductive-group lifting datum and its integral lattice comparison are missing.
@@ -38,35 +37,5 @@ The following headline theorems are not statable at the pins:
 -/
 
 namespace TauCetiRoadmap.GlobalGaloisDeformationsPartII
-
-universe u
-
-/-! ## Layer 8: actual reductions of modular forms -/
-
-/-- An actual extension of the line representation `τ` by the line representation
-`σ` is a short exact sequence with the given two-dimensional middle representation.
-The injection and quotient are equivariant maps, rather than trace identities. -/
-def IsCharacterExtension {L Γ : Type u} [Field L] [Group Γ]
-    (σ τ : Representation L Γ L) (ρ : Representation L Γ (L × L)) : Prop :=
-  ∃ (i : Representation.IntertwiningMap σ ρ)
-    (q : Representation.IntertwiningMap ρ τ),
-    Function.Injective i ∧ Function.Surjective q ∧
-      LinearMap.range i.toLinearMap = LinearMap.ker q.toLinearMap
-
-/-- If a line representation of a finite group, or its dual, has degree-one
-cohomology of dimension greater than one over an infinite field, there is a
-field-indexed family of pairwise inequivalent actual two-dimensional extensions
-with constituents the trivial line and that line. This is FKP22, Lemma 7.6,
-arXiv v5, pp.36–37. -/
-theorem infinitely_many_actual_extensions
-    (L Γ : Type u) [Field L] [Infinite L] [Group Γ] [Finite Γ]
-    (χ : Representation L Γ L)
-    (h : 1 < Module.finrank L (groupCohomology.H1 (Rep.of χ)) ∨
-      1 < Module.finrank L (groupCohomology.H1 (Rep.of χ.dual))) :
-    ∃ ρ : L → Representation L Γ (L × L),
-      (∀ a, IsCharacterExtension χ (Representation.trivial L Γ L) (ρ a) ∨
-        IsCharacterExtension (Representation.trivial L Γ L) χ (ρ a)) ∧
-      ∀ a b, a ≠ b → IsEmpty (Representation.Equiv (ρ a) (ρ b)) := by
-  sorry
 
 end TauCetiRoadmap.GlobalGaloisDeformationsPartII
