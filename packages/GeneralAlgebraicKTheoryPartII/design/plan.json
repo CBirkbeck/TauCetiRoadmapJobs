@@ -4273,40 +4273,130 @@
       "section": "§1.2"
     },
     {
-      "slug": "tc-connective-colimits",
-      "needs": "Prove that TC/p preserves small colimits of connective cyclotomic spectra and sifted colimits of connective E₁-rings, with the coherent THH cyclic-orbit comparison including infinite cyclic subgroups.",
+      "slug": "tc-mod-p-cyclotomic-colimits",
+      "needs": "Prove that TC/p preserves all small colimits of cyclotomic spectra whose underlying spectra are connective.",
       "supplier": "RefinedTraceMethods",
       "section": "§2.10"
     },
     {
-      "slug": "height-one-tc-values",
-      "needs": "Prove L_K(1)TC(ℤ)≠0 at every prime including 2, TC(ℤ[1/p])^∧p=0, and filtered-colimit preservation of L_K(1)TC on discrete rings.",
+      "slug": "tc-mod-p-ring-sifted-colimits",
+      "needs": "Prove that A↦TC(A)/p preserves sifted colimits of connective E₁-rings.",
       "supplier": "RefinedTraceMethods",
-      "section": "§§2.10 and 4.17"
+      "section": "§2.10"
     },
     {
-      "slug": "linear-additive-motives",
-      "needs": "Supply the κ-accessible A-linear weakly additive motive category, its monoidal unit, K₀-to-unit comparison and restriction/extension projection formula used by rational-transfer ε-generation.",
+      "slug": "thh-all-cyclic-assembly",
+      "needs": "Prove that for every discrete group G and connective E₁-ring R, colim_(G/H∈Or_Cyc(G))THH(R[H])→THH(R[G]) is an equivalence of cyclotomic spectra, with all cyclic subgroups including infinite cyclic ones.",
       "supplier": "RefinedTraceMethods",
-      "section": "§§4.6 and 4.10"
+      "section": "§2.10"
     },
     {
-      "slug": "spectral-etale-k",
-      "needs": "Extend periodic étale K-descent and strict-Henselian residue detection to the even-periodic spectral rings in Yuan §4, including K(L)^∧p≃ku^∧p for every algebraically closed characteristic-zero field L.",
+      "slug": "tc-z-k1-nonzero",
+      "needs": "Prove L_K(1)TC(ℤ)≠0 for every prime p, including p=2.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§4.17"
+    },
+    {
+      "slug": "tc-z-inverse-p-vanishing",
+      "needs": "Prove TC(ℤ[1/p])^∧p=0 for every prime p.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§2.10"
+    },
+    {
+      "slug": "k1-tc-filtered-colimits",
+      "needs": "Prove that A↦L_K(1)TC(A) preserves filtered colimits of discrete unital rings into K(1)-local spectra.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§2.10"
+    },
+    {
+      "slug": "linear-weak-additive-motives",
+      "needs": "For each E∞ ring A and sufficiently large regular κ, supply the stable category Mot_κ(A) and universal functor U_A for weakly additive invariants on κ-compact A-linear perfect categories.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§4.6"
+    },
+    {
+      "slug": "linear-motive-tensor-unit",
+      "needs": "Supply the symmetric monoidal structure on Mot_κ(A) whose unit is the motive of Perf(A), for commutative A and an accessibility cardinal κ as above.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§4.10"
+    },
+    {
+      "slug": "linear-motive-kzero-unit",
+      "needs": "Supply the natural map K₀(C)→π₀Map(U_A(Perf(A)),U_A(C)) for κ-compact A-linear C, sending [A] to the monoidal unit when C=Perf(A).",
+      "supplier": "RefinedTraceMethods",
+      "section": "§4.10"
+    },
+    {
+      "slug": "linear-motive-projection-formula",
+      "needs": "For a map A→B of E∞ rings with B perfect over A, prove that restriction and extension of A-linear perfect-category motives satisfy the tensor projection formula.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§4.10"
+    },
+    {
+      "slug": "spectral-etale-descent",
+      "needs": "For every E∞ ring R and n≥0, prove that Y↦L_T(n)K(Perf(Y)) is an étale sheaf on the spectral étale site of R (Yuan Theorem 4.3).",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§6.5a"
     },
     {
-      "slug": "cdh-geometric-inputs",
-      "needs": "Supply Perf-valued Nisnevich descent, derived abstract-blowup descent, noetherian approximation and platification domination for qcqs schemes with finitely presented proper modifications and finitely presented closed centers, as used in Land–Tamme Appendix A.2.",
-      "supplier": "SchemeKTheoryOperations",
-      "section": "§§4.12 and 5.7"
+      "slug": "spectral-strict-henselian-detection",
+      "needs": "For every E∞ ring R and n≥0 with L_T(n)K(R)≠0, prove that there exists a prime ideal 𝔭⊂π₀R for which L_T(n)K(R_𝔭^sh)≠0 (Yuan Lemma 4.5).",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§6.5a"
     },
     {
-      "slug": "kh-karoubi-villamayor",
-      "needs": "Supply KH(A)=|K(A[Δ•])| for arbitrary associative rings, its polynomial simplicial structure and regular comparison, together with the convergent relative Karoubi–Villamayor comparison and its nilpotent invariance in all Bass degrees.",
+      "slug": "suslin-algebraically-closed-comparison",
+      "needs": "Prove K(L)^∧p≃ku^∧p for every algebraically closed field L of characteristic zero and every prime p.",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§6.5a"
+    },
+    {
+      "slug": "localizing-nisnevich-descent",
+      "needs": "Prove that X↦E(Perf(X)) satisfies Nisnevich descent on qcqs schemes for every localizing invariant E, with value zero on the empty scheme.",
       "supplier": "SchemeKTheoryOperations",
-      "section": "§§5.2 and 5.6"
+      "section": "§4.12"
+    },
+    {
+      "slug": "localizing-derived-blowup",
+      "needs": "Prove that every localizing invariant of perfect categories carries the derived blowup square associated to a finite sequence in a commutative ring to a pullback square (Land–Tamme Lemma A.1(iii)).",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.7"
+    },
+    {
+      "slug": "abstract-blowup-noetherian-approximation",
+      "needs": "Prove that an abstract blowup square of qcqs schemes with finitely presented proper modification and finitely presented center is pulled back from such a square of noetherian schemes.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.7"
+    },
+    {
+      "slug": "abstract-blowup-platification-domination",
+      "needs": "For a proper modification of noetherian schemes that is an isomorphism on a schematically dense open U, prove domination by a blowup with center supported in the complement of U.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.7"
+    },
+    {
+      "slug": "kh-simplicial-model",
+      "needs": "Supply the natural homotopy K-spectrum KH(A)=|K(A[Δ•])| for every associative unital discrete ring A, using central polynomial variables and A[Δ^r]=A[x₀,…,x_r]/(Σx_i−1).",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.2"
+    },
+    {
+      "slug": "kh-regular-comparison",
+      "needs": "Prove K(A)→KH(A) is an equivalence for regular noetherian discrete rings A.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.2"
+    },
+    {
+      "slug": "kv-relative-comparison",
+      "needs": "Supply the convergent relative Karoubi–Villamayor polynomial-resolution spectral sequence from the simplicial relative K-groups to relative KH whenever the relative K-spectra have a uniform lower bound.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.6"
+    },
+    {
+      "slug": "kh-nilpotent-invariance",
+      "needs": "Prove KH(A)→KH(A/I) is an equivalence for every nilpotent two-sided ideal I of a discrete associative unital ring A, in all integer degrees.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.6"
     },
     {
       "slug": "stable-james-splitting",
@@ -4327,14 +4417,38 @@
       "section": "E3"
     },
     {
-      "slug": "elliptic-galois-comparisons",
-      "needs": "Supply the faithful GL₂(𝔽₃)-Galois extension TMF[1/3]→TMF(3) and the equivariant K(2)-local supersingular descriptions with the full order-48 group at 2 and the semilinear order-24 group at 3.",
+      "slug": "elliptic-level-three-galois",
+      "needs": "Supply the faithful GL₂(𝔽₃)-Galois extension TMF[1/3]→TMF(3), with its deck action.",
       "supplier": "EllipticCohomology",
-      "section": "E2 and E6"
+      "section": "E6"
     },
     {
-      "slug": "relative-monoidal-thom",
-      "needs": "Supply GL₁R and BGL₁R as the units and trivializable R-lines for arbitrary E∞ R, the Thom object as the colimit of its actual R-line local system, and its E_n multiplicative refinement for based n-fold loop maps.",
+      "slug": "elliptic-supersingular-at-two",
+      "needs": "Supply the GL₂(𝔽₃)-equivariant equivalence L_K(2)TMF(3)≃E₂ at p=2 for the supersingular formal group over 𝔽₄, identifying L_K(2)TMF→E₂ with the localized level-three Galois extension.",
+      "supplier": "EllipticCohomology",
+      "section": "E2"
+    },
+    {
+      "slug": "elliptic-supersingular-at-three",
+      "needs": "Supply L_K(2)TMF≃E₂^hG₂₄ at p=3 for the supersingular formal group over 𝔽₉, with G₂₄ the full semilinear automorphism group over 𝔽₃.",
+      "supplier": "EllipticCohomology",
+      "section": "E2"
+    },
+    {
+      "slug": "spectral-units-and-lines",
+      "needs": "Supply GL₁R as the multiplicative unit components of Ω∞R and BGL₁R as the classifier of R-lines equivalent to R, for every E∞ ring R.",
+      "supplier": "EllipticCohomology",
+      "section": "E5"
+    },
+    {
+      "slug": "relative-thom-colimit",
+      "needs": "For f:X→BGL₁R, supply its Thom R-module as colim_X L_f of the classified R-line local system, naturally in f and commutative R.",
+      "supplier": "EllipticCohomology",
+      "section": "E5"
+    },
+    {
+      "slug": "multiplicative-thom-refinement",
+      "needs": "For n≥1 and an n-fold loop map X→BGL₁R of group-like E_n spaces, prove the Thom colimit has its natural E_n R-algebra structure.",
       "supplier": "EllipticCohomology",
       "section": "E5"
     }

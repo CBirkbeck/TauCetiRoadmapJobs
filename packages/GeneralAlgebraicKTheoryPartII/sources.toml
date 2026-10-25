@@ -9,7 +9,7 @@ year = 2024
 doi = "10.1090/jams/1043"
 arxiv = "2001.10425"
 locator_scheme = "theorem"
-locator = "Theorems A, B and 1.1, Purity Theorem and Redshift Theorem, pp.1013–1014; Notation, p.1015; §2, Definition 2.1, Lemmas 2.2–2.8, Propositions 2.9 and 2.11, Remark 2.12; §3, Propositions 3.1, 3.4, 3.6 and 3.12, Lemmas 3.2, 3.3 and 3.7, Corollary 3.5, Theorem 3.8, Remarks 3.9 and 3.11, pp.1021–1027; §4, Corollary 4.2 through Corollary 4.34 and Proposition 4.33, with proofs and intervening definitions, examples and remarks, pp.1028–1036"
+locator = "Theorem A, pp.1012–1013; Theorems B and 1.1, Purity Theorem and Redshift Theorem, pp.1013–1014; Notation, p.1015; §2, Definition 2.1, Lemmas 2.2–2.8, pp.1015–1018, Propositions 2.9 and 2.11, Remark 2.12; §3, Propositions 3.1, 3.4, 3.6 and 3.12, Lemmas 3.2, 3.3 and 3.7, Corollary 3.5, Theorem 3.8, Remarks 3.9 and 3.11, pp.1021–1027; §4, Corollary 4.2 through Corollary 4.34 and Proposition 4.33, with proofs and intervening definitions, examples and remarks, pp.1028–1036"
 url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/LMMT2a.pdf"
 fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/LMMT2a.pdf"
 fetched_at = "2026-10-24T15:21:07Z"
@@ -18,7 +18,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Published JAMS 37 (2024), pp.1011–1040; journal theorem numbering and pagination, compared with the preprint."
-cited_for = ["Exact supplier contracts", "0.1 Thomason–Neeman localization", "1.1 General linear groups of connective ring spectra", "1.2 Additive ∞-categories and group-completion K-theory", "1.3 Additive and stable Schwede–Shipley comparison", "1.4 Waldhausen A-theory", "2.1 Truncating invariants on acyclic rings", "2.3 Rational and p-adic truncation", "3.2 Stable envelopes and additive nonconnective K-theory", "3.5 Finite-limit control of the stable envelope", "3.6 Levy’s bounded-heart fiber", "4.1 Telescopes", "4.2 Periodic homotopy groups", "4.3 Telescope acyclicity criteria", "4.4 Ring-spectrum acyclicity comparison", "4.5 Finite chromatic localizations", "4.6 Finite localization kernels", "4.7 Comparison on p-local spectra", "4.8 Chromatic fracture squares", "4.9 Bottom finite-local comparison", "4.12 Detection by suspension and loops", "4.13 Postnikov and connected-cover conventions", "4.14 Fiberwise homology comparison", "4.15 Connective periodic vanishing", "4.16 Connective preservation by suspension and loops", "4.17 Ravenel’s Bousfield class formula", "4.18 Finite-height locality", "4.19 Telescopes on chromatically local spectra", "4.21 Chromatic support of BP truncations", "4.25 Finite-local Tate blueshift", "4.28 Chromatic height of a commutative ring", "4.30 Chromatic bounds for modular forms", "4.32 James-filtered Thom spectra", "4.33 Acyclicity under the James splitting", "4.35 Nonpositive nilpotent invariance", "4.38 Highly connective chromatic invariance", "4.39 Connectivity of the replacement algebra", "4.40 One finite Postnikov stage suffices", "4.41 Telescopic K is truncating on finite-acyclic rings", "4.42 Finite p-power coefficient vanishing", "4.43 Acyclic additive and stable categories", "4.44 Compact chromatic kernel for ring modules", "4.45 Mitchell vanishing and the p-inverted sphere", "4.46 Theorem A in both forms", "5.1 High-height connective-cover invariance", "5.2 The high-height cyclotomic trace", "5.3 The finite-group K-theory transfer comparison", "5.4 CMNN finite-sphere vanishing", "5.5 The chromatic purity theorem", "5.6 Connective nilpotent comparisons for K and TC", "6.1 Theorem B and vanishing for algebras", "6.4 Redshift at nonnegative height", "6.5 Both heights in purity are necessary", "6.6 Redshift in chromatic graded pieces", "7.1 Nice maps of connective E∞-rings", "7.2 K preserves nice maps", "7.3 Iterated finite p-power K-theory", "7.4 K-theory of Morava K-theory", "7.5 K-theory of truncated spheres", "7.6 Truncated Brown–Peterson localization", "7.7 Purity for suspension A-theory", "7.8 K-theory of James-filtered Thom spectra", "8.6 Purity for ko-algebras", "8.7 Purity for tmf-algebras", "8.8 Supersingular fixed-point description", "8.9 Classical regular localization checks", "9.1 Height-one truncation and p-inversion", "9.2 Nilinvariance, Milnor excision and cdh-descent", "9.3 Flat and smooth spectral affine lines", "9.4 Height-one homotopy invariance", "9.5 Comparison with homotopy K-theory", "9.6 The height-one TC obstruction", "9.7 TC does not preserve filtered category colimits", "10.1 Chromatic consequences of the bounded-heart fiber", "10.2 Sifted colimits of high-height K-theory", "10.3 Cyclic orbit diagrams and assembly", "10.4 p-adic TC assembly for cyclic subgroups", "10.5 Telescopic Farrell–Jones assembly"]
+cited_for = ["Exact supplier contracts", "0.1 Thomason–Neeman localization", "1.1 General linear groups of connective ring spectra", "1.2 Additive ∞-categories and group-completion K-theory", "1.3 Additive and stable Schwede–Shipley comparison", "1.4 Waldhausen A-theory", "2.1 Truncating invariants on acyclic rings", "2.3 Rational and p-adic truncation", "3.2 Stable envelopes and additive nonconnective K-theory", "3.5 Finite-limit control of the stable envelope", "3.6 Levy’s bounded-heart fiber", "4.1 Telescopes", "4.2 Periodic homotopy groups", "4.3 Telescope acyclicity criteria", "4.4 Ring-spectrum acyclicity comparison", "4.5 Finite chromatic localizations", "4.6 Finite localization kernels", "4.7 Comparison on p-local spectra", "4.8 Chromatic fracture squares", "4.9 Bottom finite-local comparison", "4.12 Detection by suspension and loops", "4.13 Postnikov and connected-cover conventions", "4.14 Fiberwise homology comparison", "4.15 Connective periodic vanishing", "4.16 Connective preservation by suspension and loops", "4.17 Ravenel’s Bousfield class formula", "4.18 Finite-height locality", "4.19 Telescopes on chromatically local spectra", "4.21 Chromatic support of BP truncations", "4.25 Finite-local Tate blueshift", "4.28 Chromatic height of a commutative ring", "4.30 Chromatic bounds for modular forms", "4.32 James-filtered Thom spectra", "4.33 Acyclicity under the James splitting", "4.35 Nonpositive nilpotent invariance", "4.38 Highly connective chromatic invariance", "4.39 Connectivity of the replacement algebra", "4.40 One finite Postnikov stage suffices", "4.41 Telescopic K is truncating on finite-acyclic rings", "4.42 Finite p-power coefficient vanishing", "4.43 Acyclic additive and stable categories", "4.44 Compact chromatic kernel for ring modules", "4.45 Mitchell vanishing and the p-inverted sphere", "4.46 Theorem A in both forms", "5.1 High-height connective-cover invariance", "5.2 The high-height cyclotomic trace", "5.3 The finite-group K-theory transfer comparison", "5.4 CMNN finite-sphere vanishing", "5.5 The chromatic purity theorem", "5.6 Connective nilpotent comparisons for K and TC", "6.1 Theorem B and vanishing for algebras", "6.5 Redshift at nonnegative height", "6.6 Both heights in purity are necessary", "6.7 Redshift in chromatic graded pieces", "7.1 Nice maps of connective E∞-rings", "7.2 K preserves nice maps", "7.3 Iterated finite p-power K-theory", "7.4 K-theory of Morava K-theory", "7.5 K-theory of truncated spheres", "7.6 Truncated Brown–Peterson localization", "7.7 Purity for suspension A-theory", "7.8 K-theory of James-filtered Thom spectra", "8.6 Purity for ko-algebras", "8.7 Purity for tmf-algebras", "8.8 Supersingular fixed-point description", "8.9 Classical regular localization checks", "9.1 Height-one truncation and p-inversion", "9.2 Nilinvariance, Milnor excision and cdh-descent", "9.3 Flat and smooth spectral affine lines", "9.4 Height-one homotopy invariance", "9.5 Comparison with homotopy K-theory", "9.6 The height-one TC obstruction", "9.7 TC does not preserve filtered category colimits", "10.1 Chromatic consequences of the bounded-heart fiber", "10.2 Sifted colimits of high-height K-theory", "10.3 Cyclic orbit diagrams and assembly", "10.4 p-adic TC assembly for cyclic subgroups", "10.5 Telescopic Farrell–Jones assembly"]
 
 [[source]]
 id = "bgt"
@@ -200,7 +200,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:2111.10837v1."
-cited_for = ["6.2 Yuan’s Lubin–Tate nonvanishing input"]
+cited_for = ["6.3 Yuan’s Lubin–Tate nonvanishing input"]
 
 [[source]]
 id = "bsy"
@@ -218,7 +218,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:2207.09929v1."
-cited_for = ["6.3 The height-zero lower bound", "6.4 Redshift at nonnegative height", "6.7 Chromatic field maps", "10.5 Telescopic Farrell–Jones assembly"]
+cited_for = ["6.4 The height-zero lower bound", "6.5 Redshift at nonnegative height", "6.2 Chromatic field maps", "10.5 Telescopic Farrell–Jones assembly"]
 
 [[source]]
 id = "weibel"
@@ -270,7 +270,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Numbering of the author-hosted published text."
-cited_for = ["Layer 4 chromatic foundations"]
+cited_for = ["4.4 Ring-spectrum acyclicity comparison"]
 
 [[source]]
 id = "ravenel"
@@ -433,7 +433,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:1311.0514v5."
-cited_for = ["Layer 4 chromatic foundations"]
+cited_for = ["4.30 Chromatic bounds for modular forms"]
 venue = "J. Topol. 8 (2015), no. 2, 476--528"
 
 [[source]]
@@ -469,7 +469,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Numbering of the author-hosted published text."
-cited_for = ["Layer 4 chromatic foundations"]
+cited_for = ["8.8 Supersingular fixed-point description"]
 
 [[source]]
 id = "thom"
