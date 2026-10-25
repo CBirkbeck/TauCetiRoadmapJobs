@@ -2748,6 +2748,48 @@
   ],
   "gaps": [
     {
+      "slug": "dagger-de-rham-finiteness-over-c",
+      "needs": "Provide finite-dimensional de Rham cohomology over C in every degree for three classes of smooth dagger spaces over C: quasi-compact ones, naive interiors of smooth quasi-compact dagger spaces (in the sense of CN25 line 2291, footnote at line 2302), and dagger analytifications of smooth finite-type C-schemes.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.11 finiteness"
+    },
+    {
+      "slug": "dagger-strictness-kunneth-over-c",
+      "needs": "Provide over C the strictness and closed image of every de Rham differential on global sections of a smooth dagger affinoid or smooth dagger Stein space, for its fringe, respectively Fréchet, topology, and the cup-product Künneth isomorphism `⊕_(p+q=n) H^p_dR(X)⊗_C H^q_dR(Y)≅H^n_dR(X×Y)` for smooth dagger spaces X,Y over C whose de Rham cohomology is finite dimensional in every degree.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.9 differentials and the overconvergent de Rham complex; F1.11 finiteness (Künneth formula)"
+    },
+    {
+      "slug": "geometric-finiteness-tubes",
+      "needs": "Provide, for the two tube settings of §§3.6–3.7 (a weak formal model with local étale charts Spf(O_K{T₁,…,T_n}/(T₁⋯T_s−π)), 1≤s≤m≤n, smooth proper generic fibre and boundary the intersection or the union of the loci T_j=0 for s<j≤m; and a smooth scheme-theoretic complete intersection of c hypersurfaces of codimension c in Pⁿ_K with tubes |f_j|≤ε on integral trivializations), that restriction from the complement of the boundary to the complement of its tube is a quasi-isomorphism of unfiltered de Rham complexes over K and after base change to C, in the second setting for every ε∈|K×| below one bound ε₀ that serves every nonempty Čech intersection of the union case.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.11 finiteness (semistable tube invariance) and F1.16 formal tubes"
+    },
+    {
+      "slug": "proper-pair-resolution-over-c",
+      "needs": "Provide `properRigidLogResolution` over C, the completion of an algebraic closure of any complete discretely valued K of characteristic zero with perfect countable residue field, in particular for a smooth proper rigid X over C and the complement U of a nowhere dense closed analytic subspace Z, giving a proper surjective Y→X from a smooth proper rigid space, isomorphic over U, whose reduced inverse image of Z is a strict normal crossings divisor.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§2.7 Primitive comparison and integral finiteness, analytic log resolution"
+    },
+    {
+      "slug": "bounded-arithmetic-filtration",
+      "needs": "Provide continuous smooth-Galois period-Hom reconstruction for every acyclic arithmetic filtered (φ,N,G_K)-module over a complete discretely valued K with perfect countable residue field and, for each such acyclic module with φ-slopes in [0,r], Fil⁰M_K=M_K and Filʳ⁺¹M_K=0, a weakly admissible subfiltration with the same two filtration bounds (CN25 Lemma 5.4, line 1670).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§3.4, 3.7 and 5.2"
+    },
+    {
+      "slug": "positive-crystalline-hom",
+      "needs": "Provide the additional positivity criterion for the restricted natural period-Hom maps in the affinoid refinement that proves exact B_cris⁺ equality, distinguishing B_cris⁺ from B_max⁺ and retaining Frobenius compatibility after extension to the completed maximal unramified coefficient field.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§0.4–0.5 and 3.7"
+    },
+    {
+      "slug": "galois-period-hom-vanishing",
+      "needs": "Provide the continuous G_L-equivariant vanishing Hom(C,B_dR)=0 and Hom(tʲB_dR⁺/tᵏB_dR⁺,B_dR)=0 for integers j<k and finite extensions L/K, with compatible topologies, density and Tate twists, as in CN25 Proposition 2.14(iv), for every complete discretely valued K of characteristic zero with perfect countable residue field.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§0.1–0.3 and 3.7"
+    },
+    {
       "slug": "period-lattice-gluing",
       "needs": "Provide effective gluing of a finite projective B_e-module to a full B_dR⁺ lattice over their identified B_dR realization, compatibly with tensor, dual and cohomology, and identify the bounded simultaneous period eigenspace for every finite (φ,N)-module of slopes in [0,r] with the sections of its nonnegative-slope modification.",
       "supplier": "VectorBundlesAndIsocrystals",
@@ -2761,39 +2803,15 @@
     },
     {
       "slug": "natural-period-hom",
-      "needs": "Provide bounded-image vanishing of arbitrary VS natural Hom from finite torsion period modules to B_dR, the corresponding natural Ext¹ vanishing, the rank-equals-height period-Hom theorem for finite BC objects of curvature ≤0, and its comparison with TVS Hom on the objects used in geometric recovery.",
+      "needs": "Provide vanishing of natural VS Ext¹ into B_dR from finite BC objects of curvature ≤0, in particular from finite-length B_dR⁺-modules (CN25 Lemma 3.26(i)), the rank-equals-height theorem for natural VS Hom into B_dR from finite BC objects of curvature ≤0 (CN25 Proposition 3.27(i)), and the comparison of VS Hom with TVS Hom on the objects used in geometric recovery.",
       "supplier": "VectorBundlesAndIsocrystals",
       "section": "VB3, Period modules and curvature calculus"
     },
     {
-      "slug": "bounded-arithmetic-filtration",
-      "needs": "Provide continuous smooth-Galois period-Hom reconstruction for every acyclic arithmetic filtered (φ,N,G_K)-module over a complete discretely valued K with perfect countable residue field, together with a weakly admissible subfiltration that preserves any specified [0,r] Frobenius and filtration bounds.",
-      "supplier": "PadicHodgeTheory",
-      "section": "§§3.4, 3.7 and 5.2"
-    },
-    {
-      "slug": "analytic-syntomic-descent",
-      "needs": "Provide the model-free smooth dagger HK, B_dR⁺ and syntomic complexes with their strict derived completed comparisons, slope bound [0,min(i,dim X)], natural VS and TVS realizations, stable-range syntomic/pro-étale period map, filtered fiber triangle, Stein/affinoid syntomic diagram over C with its strict maps and cohomological topologies, and countable exhaustion descent, including comparison of derived systems with rigid completions after cofinal strict shrinkings.",
-      "supplier": "CohomologyComparisons",
-      "section": "§4.9a Analytic Hyodo–Kato realization and §§4.10–4.11"
-    },
-    {
-      "slug": "geometric-log-periods",
-      "needs": "Provide algebraic comparison over C, analytic HK GAGA and the proper logarithmic period sequence for smooth proper rigid pairs with simple normal crossings boundary, retaining the map from the logarithmic filtration to the naive analytic filtration and its compatibility with the common HK and unfiltered de Rham realizations.",
-      "supplier": "CohomologyComparisons",
-      "section": "§§4.8–4.11"
-    },
-    {
-      "slug": "geometric-finiteness-tubes",
-      "needs": "Provide finite-free B_dR⁺ and HK cohomology for small geometric classes over C, the strict-differential and finite-cohomology Künneth extensions over C, global proper-pair resolution in characteristic zero and the specified tube complements with compatible HK and unfiltered de Rham restrictions, full-lattice containment and common radius bounds on every Čech intersection used for union descent.",
-      "supplier": "AdicSpacesPartIV",
-      "section": "F1.11–F1.12 and F1.16"
-    },
-    {
-      "slug": "proper-rigid-integral-etale",
-      "needs": "Provide perfect integral Z_p-cohomology for a smooth proper rigid space over C, proper base change for its projection to any smooth rigid factor and the compatible rational étale/pro-étale realization on the quasi-compact completions used in strict Stein exhaustions.",
-      "supplier": "ClassicalAdicEtaleCohomology",
-      "section": "§§1.3–1.4, 8.4 and 9.7"
+      "slug": "strict-countable-derived-limits",
+      "needs": "Provide, for countable towers of uniformly bounded complexes in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, exactness of countable products, the Roos derived limit as the cone of 1−shift on the product in the strict derived category, its compatibility with left-heart cohomology, the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart, and vanishing of R^q lim for q≥2, all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.",
+      "supplier": "LocallyAnalyticDistributions",
+      "section": "§0.0 strict derived categories and left hearts; §0.2 strict countable inverse limits"
     },
     {
       "slug": "compact-extension-duality",
@@ -2802,16 +2820,28 @@
       "section": "§§0.0–0.2, strict sequences and compact-type duality"
     },
     {
-      "slug": "positive-crystalline-hom",
-      "needs": "Provide the additional positivity criterion for the restricted natural period-Hom maps in the affinoid refinement that proves exact B_cris⁺ equality, distinguishing B_cris⁺ from B_max⁺ and retaining Frobenius compatibility after extension to the completed maximal unramified coefficient field.",
-      "supplier": "PadicHodgeTheory",
-      "section": "§§0.4–0.5 and 3.7"
+      "slug": "analytic-syntomic-descent",
+      "needs": "Provide the model-free smooth dagger HK, B_dR⁺ and syntomic complexes with their cup products and their strict derived completed comparisons, slope bound [0,min(i,dim X)], natural VS and TVS realizations, stable-range syntomic/pro-étale period map, filtered fiber triangle, Stein/affinoid syntomic diagram over C with its strict maps and cohomological topologies, and countable exhaustion descent, including comparison of derived systems with rigid completions after cofinal strict shrinkings.",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization and §§4.10–4.11"
     },
     {
-      "slug": "galois-period-hom-vanishing",
-      "supplier": "PadicHodgeTheory",
-      "section": "§§0.1–0.3 and 3.7",
-      "needs": "Provide the continuous G_L-equivariant vanishing Hom(C,B_dR)=0 and Hom(tʲB_dR⁺/tᵏB_dR⁺,B_dR)=0 for integers j<k and finite extensions L/K, with compatible topologies, density and Tate twists, as in CN25 Proposition 2.14(iv), for every complete discretely valued K of characteristic zero with perfect countable residue field."
+      "slug": "overconvergent-crystalline-complex",
+      "needs": "Provide, for a smooth quasi-compact dagger space X over C, a functorial overconvergent log-crystalline complex RΓ_cris(X) built from semistable weak formal hypercoverings, with its Frobenius, its completion map to the filtered complex RΓ_dR(X/B_dR⁺), and a Frobenius-compatible strict quasi-isomorphism RΓ_cris(X)≃RΓ_HK(X)⊗̂B_cris⁺, not Galois equivariant, with the Hyodo–Kato complex over the completion of Fⁿʳ and compatible with its Fⁿʳ version, distinct from ordinary completed log-crystalline cohomology of a nonproper model (CN25 §7.3, lines 2394–2402).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "geometric-log-periods",
+      "needs": "Provide algebraic comparison over C, analytic HK GAGA and the proper logarithmic period sequence for smooth proper rigid pairs with simple normal crossings boundary, retaining the map from the logarithmic filtration to the naive analytic filtration and its compatibility with the common HK and unfiltered de Rham realizations.",
+      "supplier": "CohomologyComparisons",
+      "section": "§§4.8–4.11"
+    },
+    {
+      "slug": "proper-rigid-integral-etale",
+      "needs": "Provide perfect integral Z_p-cohomology for a smooth proper rigid space over C, proper base change for its projection to any smooth rigid factor and the compatible rational étale/pro-étale realization on the quasi-compact completions used in strict Stein exhaustions.",
+      "supplier": "ClassicalAdicEtaleCohomology",
+      "section": "§§1.3–1.4, 8.4 and 9.7"
     }
   ],
   "requests": [

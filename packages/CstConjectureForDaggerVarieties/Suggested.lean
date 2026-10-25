@@ -23,7 +23,7 @@ Tau Ceti's adic spaces and Frobenius orbit space do not supply these realization
 - The height formula and its sign (README §2.5): lacks analytic qBC cohomology with signed height and modified HK bundles.
 - The degreewise equivalence of comparison criteria (README §2.6): lacks small dagger spaces, qBC curvature and the adjacent syntomic cohomology object.
 - The four conjectural properties for a small variety (README §2.7): lacks small dagger cohomology, bundle acyclicity, qBC curvature and height.
-- Splitting the crystalline eigenspace complex (README §2.8): lacks the analytic log-crystalline complex and its derived Frobenius eigenspace in the strict category.
+- Splitting the crystalline eigenspace complex (README §2.8): lacks the overconvergent log-crystalline complex of a dagger space, its comparison with completed-unramified Hyodo–Kato cohomology and its derived Frobenius eigenspace in the strict category.
 - A noncanonical decomposition of syntomic cohomology (README §2.9): lacks the analytic syntomic TVS object and reasonable period Pairs.
 - Nonnegative de Rham slopes for products (README §3.2): lacks small dagger spaces with filtered HK modifications and compatible cup products.
 - Algebraic analytifications have nonnegative slopes (README §3.3): lacks dagger analytification and its filtered analytic HK realization.
