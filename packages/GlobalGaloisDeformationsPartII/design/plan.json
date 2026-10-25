@@ -4882,12 +4882,6 @@
   ],
   "gaps": [
     {
-      "slug": "auxiliary-field-independence",
-      "needs": "Under C1,C3,C4, at §3.2 construct a uniform ε>0 and arbitrarily long finite cocycle Frobenius-test families, respecting the norm and old-local-value constraints, with successive conditional success proportions at least ε; for every δ>0 and finite excluded set obtain joint failure density below δ, also for the finite tuples used in §3.4 with product-norm tuple density and a selected tuple family of positive upper density, including repeated simple constituents.",
-      "supplier": "GlobalGaloisDeformationsPartII",
-      "section": "§3.2"
-    },
-    {
       "slug": "fixed-quotient-global-obstructions",
       "needs": "The square-zero H¹ action, H² obstruction and global/local restriction diagram must apply to fixed-quotient G-valued lifts with prime-to-p components and reducible residual image, without asserting representability of the unframed functor.",
       "supplier": "GlobalGaloisDeformations",
@@ -4907,19 +4901,19 @@
     },
     {
       "slug": "large-prime-unipotent-exponential",
-      "needs": "For every split reductive root datum there is a prime bound for a P-equivariant variety isomorphism exp:Lie(U)→U preserving the ascending central series, inducing equivariant additive group isomorphisms on its graded pieces and satisfying the finite adjoint expansion on nilpotent elements.",
+      "needs": "For each split connected reductive root datum there is B such that, for every finite field k of characteristic p>B, every split connected reductive G/k of that datum and every k-parabolic P=MU with unipotent radical U, there is a P-equivariant variety isomorphism exp:Lie(U)→U preserving the ascending central series and inducing additive group isomorphisms on its graded pieces.",
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.1"
     },
     {
       "slug": "finite-image-semisimplification",
-      "needs": "Supply minimal-parabolic Levi projection and uniqueness of the G-semisimplification of a finite subgroup, its residue-field-extension behaviour after choosing a minimal parabolic again, and the parabolic adjoint filtration with graded terms m, u and u⁻.",
+      "needs": "For a split connected reductive G over a finite field k of characteristic sufficiently large in its root datum and a finite subgroup Γ⊂G(k), projection from a minimal k-parabolic P=MU containing Γ determines a G-completely reducible homomorphism Γ→G(k), unique up to G(k)-conjugacy independently of P and M.",
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.1"
     },
     {
       "slug": "uniform-finite-field-root-position",
-      "needs": "Supply a root vector outside any proper prime-field subspace of the derived Lie algebra and a toral element avoiding every root hyperplane with a prescribed nonzero root value, uniformly above a bound depending only on the root datum.",
+      "needs": "For each split connected reductive root datum there is B such that, over every finite field k of characteristic p>B, every split connected reductive G/k of that datum and every proper 𝔽_p-subspace W⊂Lie(Gᵈᵉʳ), some split maximal k-torus T⊂G, root α and vector X∈Lie(G)_α satisfy X∉W; the torus is allowed to depend on W.",
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.1"
     },
@@ -4931,13 +4925,13 @@
     },
     {
       "slug": "semisimple-lie-cohomology-vanishing",
-      "needs": "On the shared absolute Chevalley–Eilenberg complex export all-degree vanishing for a semisimple characteristic-zero Lie algebra acting on a finite-dimensional module with no invariants, and Whitehead vanishing in degrees one and two for every finite-dimensional module, compatibly with scalar extension to p-adic coefficient fields.",
+      "needs": "Extending the complex-simple Whitehead input of AffineLieAlgebras §A1 to the shared absolute Chevalley–Eilenberg complex of ArithmeticLocallySymmetricSpaces ALS.F.5, export all-degree vanishing for a semisimple characteristic-zero Lie algebra acting on a finite-dimensional module with no invariants, and Whitehead vanishing in degrees one and two for every finite-dimensional module, compatibly with scalar extension to p-adic coefficient fields.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "Layer 1, absolute Chevalley–Eilenberg comparison"
     },
     {
       "slug": "root-cocycle-lattices",
-      "needs": "At §2.28 export the fixed-quotient root lifting functors and explicit cocycle lattices of FKP19 Lemma 3.5, pp.17–18 and Lemma 6.7, pp.46–47, including divided coboundaries, coefficient short exactness, rank-one unramified quotients and stability of the nonempty higher lifting fibres.",
+      "needs": "At §2.28 export the fixed-quotient root lifting functors and explicit cocycle lattices of FKP19 Lemma 3.5, pp.17–18 and Lemma 6.7, pp.46–47, including divided coboundaries, coefficient short exactness, |Lᵅ_r|=|H⁰_w(M_r)|, rank-one unramified quotients and stability of the nonempty higher lifting fibres.",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§2.28"
     },
@@ -4946,12 +4940,6 @@
       "needs": "At §§1.22, 2.28 and 3.11 export smooth-point analytic neighborhoods, their cocycle lattices and exact tangent cardinalities, with one finite coefficient extension giving smooth points on the chosen components to every original-uniformizer accuracy.",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§§1.22, 2.28 and 3.11"
-    },
-    {
-      "slug": "full-torus-ordinary-character",
-      "needs": "At §§6.5 and 6.17, for a split maximal torus T of G and a prescribed continuous inertia character θ:I_v→T(O), imposing the values of a Z-basis of X*(T) fixes θ itself, including its central part, rather than just its simple-root characters.",
-      "supplier": "LocalGaloisDeformationRings",
-      "section": "§§6.5 and 6.17"
     },
     {
       "slug": "function-field-langlands-lattice-witness",
@@ -5032,16 +5020,34 @@
       "section": "§7.7"
     },
     {
-      "slug": "fixed-similitude-local-components",
-      "needs": "At §§2.5, 6.5 and 6.17, for a fixed-μ local datum and a nonempty regular ordinary locus at v|p, export that locus as a union of generic components of framed dimension dim Gᵈᵉʳ+[F_v:ℚ_p]dim Flag(G⁰); at v∤p, a chosen fixed-μ component containing a Steinberg lift must admit a smooth Steinberg point after finite coefficient extension.",
-      "supplier": "LocalGaloisDeformationRings",
-      "section": "§§2.5, 6.5, 6.17"
-    },
-    {
       "slug": "gl2-local-determinant-normalization",
-      "needs": "At §§2.14, 8.5 and 8.10, for p odd, r≥2 and an odd residual extension of 1 by χ̄≠κ̄⁻¹, export the ordinary potentially crystalline local lift over ℚ_p with unramified quotient and determinant μω, where μ=κʳ⁻¹[χ̄κ̄¹⁻ʳ] and ω is finite p-power order, residually trivial and trivial on Art_ℚp(p); at the extension-sensitive Serre weight export the compatible crystalline choice used in §8.3.",
+      "needs": "At §§2.14, 8.5 and 8.10, for p odd, r≥2 and an odd residual extension of 1 by χ̄≠κ̄⁻¹, export the ordinary potentially crystalline local lift over ℚ_p with unramified quotient and determinant μω₀, where μ=κʳ⁻¹[χ̄κ̄¹⁻ʳ] and ω₀ is finite p-power order, residually trivial and trivial on Art_ℚp(p); at the extension-sensitive Serre weight export the compatible crystalline choice used in §8.3.",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§§2.14, 8.5, 8.10"
+    },
+    {
+      "slug": "finite-image-semisimplification-scalar-extension",
+      "needs": "For a split connected reductive G over finite k of characteristic sufficiently large in its root datum, a finite Γ⊂G(k) and a finite extension k′/k, the G(k′)-conjugacy class obtained by semisimplifying the scalar-extended Levi projection equals the class obtained by semisimplifying Γ over k′, with a minimal k′-parabolic chosen anew.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "parabolic-adjoint-filtration",
+      "needs": "For a split connected reductive G over finite k of sufficiently large characteristic, a k-parabolic P=MU and a finite Γ⊂P(k), the Γ-module Lie(Gᵈᵉʳ) has the P-stable filtration Lie(U)⊂Lie(P)∩Lie(Gᵈᵉʳ)⊂Lie(Gᵈᵉʳ), whose graded modules are Lie(U), Lie(M)∩Lie(Gᵈᵉʳ) and Lie(G)/Lie(P), the last identified with Lie(U⁻) as an M-module.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "prescribed-root-regular-toral-element",
+      "needs": "For each split connected reductive root datum there is B such that, over every finite field k of characteristic p>B, every split connected reductive G/k of that datum, every split maximal k-torus T, root α and a∈k×, there is H∈Lie(T∩Gᵈᵉʳ) with dα(H)=a and dβ(H)≠0 for every root β.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "unipotent-adjoint-expansion",
+      "needs": "For each split connected reductive root datum there is B such that, over every finite field k of characteristic p>B, every split connected reductive G/k of that datum, every k-parabolic P=MU with unipotent radical U and X∈Lie(U), the exponential of gap:large-prime-unipotent-exponential satisfies Ad(exp X)(Y)=Σ_j (ad X)^j(Y)/j! for all Y∈Lie(G), with j below the uniform nilpotence bound and j! invertible in k.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
     }
   ],
   "sourceIssues": [

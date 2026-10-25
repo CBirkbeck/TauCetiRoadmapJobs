@@ -6,7 +6,10 @@ import Mathlib
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs.
 
-No headline theorem is statable at the pins.
+The general reducible lifting headlines and their applications retain the
+arithmetic selection hypothesis of README §3.2; the irreducible number-field
+theorem in §6.6 uses its independent FKP19 route. No headline theorem is statable
+at the pins.
 
 The following headline theorems are not statable at the pins:
 * Controlled G-valued finite-level towers: the fixed-quotient arithmetic lifting
@@ -23,8 +26,8 @@ The following headline theorems are not statable at the pins:
 * Actual reducible modularity at every weight and prime-to-p level at Serre weight:
   newform Galois attachments, their stable integral lattices and the
   extension-sensitive local Serre weight interface are missing.
-* The stable-lattice segment and fixed-weight-level finiteness: the arithmetic
-  action on the lattice tree and the newform attachment interface are missing.
+* Fixed-weight-level finiteness of actual reductions: the newform Galois
+  attachments with their stable integral lattices are missing.
 * Actual function-field automorphy, including the block applications: the global
   function-field automorphic representation and Lafforgue attachment carriers
   with their integral lattices are missing.
