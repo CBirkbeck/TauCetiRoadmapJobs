@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6760 mistakes recorded on the board: 4182 misprints, 1726 errors, 651 gaps, 201 unparsed bullets.
+6762 mistakes recorded on the board: 4182 misprints, 1727 errors, 652 gaps, 201 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5895,6 +5895,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## kraus-1997
 
+- **Gap** at §3.3, proof of Théorème 4, printed p.1146: the source says the curve has a rational point of order two by a cited reference and that quotienting by it suffices when it is the only one; it should be justify the rational two-point from the global four-divisibility and the full two-torsion of the quotient by the square-class argument; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-25, claude fable).
 - **Gap** at §3.3, proof of Théorème 4, printed p.1146 (lines 435–441): the source says quotienting the sole rational two-point gives full rational two-torsion; it should be supply the square-class consequence of global four-divisibility; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 
 ## KreckStolz
@@ -6078,6 +6079,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Theorem 3.3, p.9 (line 349): the source says the r=5,7,13 isogenies follow directly from Darmon–Merel's three-level theorem; it should be an explicitly justified extension of the mixed-level comparison; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §1, p.1 (line 34): the source says the source attributes split-Cartan exclusion starting at p=11 to Bilu–Parent–Rebolledo; it should be start strictly above 11, still excluding 13; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "249b80c88330b84c0676b6d3c2d9d946f9c34f63", "job": "REV-PKG-EllipticModularityEffectiveComparisons~2", "model": "gpt-6-astra", "worker": "chris-10"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §1, p.1 (line 34): the source says Bilu–Parent–Rebolledo excludes the split-Cartan case beginning at p=11; it should be strictly above 11, still excluding 13; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "b2c37f36014fad2ba75cf428be470830040636b8", "job": "REV-PKG-EllipticModularityEffectiveComparisons~3", "model": "gpt-6-astra", "worker": "chris-32"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
+- **Error** at §2, proof of Theorem 1.1, p.5: the source says the Jacobian of X₀(37) has rank zero; it should be that a rank-zero quotient exists while the Jacobian itself has positive rank, with the rational points of X₀(37) determined separately; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f72311b", "job": "REV-PKG-EllipticModularityEffectiveComparisons~4", "model": "fable", "worker": "fable-rev130"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-25, claude fable).
 - **Error** at §2, proof of Theorem 1.1, p.5 (lines 193–194): the source says the source assigns rank zero to J₀(37); it should be allow its rank-one elliptic quotient and use the independent rational-point exhaustion; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2, proof of Theorem 1.1, p.5 (lines 193–194): the source says J₀(37) has rank zero; it should be a positive-rank Jacobian, with an independent rational-point exhaustion used instead; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
 
