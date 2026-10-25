@@ -4267,6 +4267,12 @@
       "needs": "Provide the local maximal-order descriptions with an embedded quadratic integer ring in split and division quaternion algebras, including dyadic residue field 𝔽₂, sufficient to identify the different-torsion projection lattices of §6.5.",
       "supplier": "HilbertModularVarietiesAndShimuraCurves",
       "section": "Layer R18.1"
+    },
+    {
+      "slug": "absolute-hodge-padic-comparison",
+      "needs": "For an abelian variety A over a number field K, every finite place v of K and every rational absolute Hodge tensor on A in a tensor construction of H¹, its dual and Tate twists whose de Rham and p-adic étale realizations are defined over K, prove that the B_dR comparison of A over K_v carries the étale realization to the algebraic de Rham realization, compatibly with tensor operations, Tate twists and finite base extension, and, where A has good reduction at v, with the B_cris comparison.",
+      "supplier": "AutomorphicBundles",
+      "section": "§B1.3"
     }
   ],
   "sourceIssues": [

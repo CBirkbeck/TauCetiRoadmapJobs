@@ -6,9 +6,9 @@
 
 ComplexMultiplicationAndExplicitReciprocity stops at reflex pairs and orders (§§0.1–0.2), polarized CM lattices and marked reciprocity (§§2.1–2.3), and CM characters and reduction (Layers 4–5). This Part II owns CM height linearity, total reflex integral realizations, the CM-specific determinant and conductor comparisons, both averaged-height proofs, their quantitative CM consequences, and the center order attached to a polarized CM point. Its relative class-number estimate covers arbitrary CM fields; the abelian character-product results of CyclotomicClassGroupsAndStickelberger §3.4 have a different hypothesis and conclusion.
 
-The native CM field and conjugation, class number, regulator ratio, Minkowski representatives and coarse ideal count are already in the library. Their exact declarations are in the supplier contracts. The field-order index-square discriminant identity is stated by GlobalNumberFields Layer 11; the finite étale order extension belongs to that supplier. The class-group norm cokernel bound is stated by IntegralIwasawaTheory §3.4, in the case n=0. The varying-base quadratic Hecke estimates and near-linear ideal count are stated by AnalyticNumberTheoryPartI §§2.31f, 2.44–2.46 and 3.27. The general ramified component determinant comparison belongs to ArakelovGeometryAndAbelianHeights §4.7. These are consumed here; the CM decomposition, different-graph application and exponent argument are the kept specializations.
+The native CM field and conjugation, class number, regulator ratio, Minkowski representatives and coarse ideal count are already in the library, as are complex abelian varieties, their endomorphism rings, isogenies and the rank of a finite flat morphism. Their exact declarations are in the supplier contracts. The field-order index-square discriminant identity is stated by GlobalNumberFields Layer 11; the finite étale order extension belongs to that supplier. The class-group norm cokernel bound is stated by IntegralIwasawaTheory §3.4, in the case n=0. The varying-base quadratic Hecke estimates and near-linear ideal count are stated by AnalyticNumberTheoryPartI §§2.31f, 2.44–2.46 and 3.27. The general ramified component determinant comparison belongs to ArakelovGeometryAndAbelianHeights §4.7. These are consumed here; the CM decomposition, different-graph application and exponent argument are the kept specializations.
 
-ArakelovGeometryAndAbelianHeights §§1.11, 2.7, 3.4–3.5, 4.6–4.8 and 6.5 own weighted degrees, metric adapters, stable heights, component lines and the uniform lower bound. FaltingsFinitenessAndIsogenyTheoremsPartII QI.5 owns geometric isogeny estimates. AbelianSchemesAndArithmeticModuli owns abelian schemes, polarizations, Tate and de Rham realizations and the CM isotypic decomposition. ShimuraVarieties owns canonical CM stacks and reciprocity; HilbertModularVarietiesAndShimuraCurves owns quaternionic integral models and its saturated integral Kodaira–Spencer line. Only the comparison to the actual CM Hodge determinants is built here. Generic admissible intersections and analytic/arithmetic kernels belong to GrossZagierAndArithmeticHeights, quantitative hermitian/Siegel reduction to GeometryOfNumbersAndQuadraticArithmetic, and the absolute scalar height, minimal-polynomial comparison and bounded-degree Northcott theorem to DiophantineApproximationAndTranscendence §§0.2–0.3. IntegralLattices and OrthogonalSpinGroups own lattice duality and orthogonal group algebra. The orthogonal special-divisor intersection and support theorems in §§4.2–4.2d and §4.5 are included here: no separate accepted orthogonal-height supplier provides it.
+ArakelovGeometryAndAbelianHeights §§1.11, 2.7, 3.4–3.5, 4.6–4.8 and 6.5 own weighted degrees, metric adapters, stable heights, component lines and the uniform lower bound. FaltingsFinitenessAndIsogenyTheoremsPartII QI.5 owns geometric isogeny estimates. AbelianSchemesAndArithmeticModuli owns abelian schemes, polarizations, Tate and de Rham realizations and the CM isotypic decomposition. ShimuraVarieties owns canonical CM stacks and reciprocity; HilbertModularVarietiesAndShimuraCurves owns quaternionic integral models and its saturated integral Kodaira–Spencer line. Only the comparison to the actual CM Hodge determinants is built here. Generic admissible intersections and analytic/arithmetic kernels belong to GrossZagierAndArithmeticHeights, quantitative hermitian/Siegel reduction to GeometryOfNumbersAndQuadraticArithmetic, and the absolute scalar height, minimal-polynomial comparison and bounded-degree Northcott theorem to DiophantineApproximationAndTranscendence §§0.2–0.3. IntegralLattices and OrthogonalSpinGroups own lattice duality and orthogonal group algebra. The orthogonal special-divisor intersection and support theorems in §§4.2–4.2c, 4.3 and 4.5 are included here: no separate accepted orthogonal-height supplier provides it.
 
 The arithmetic adjunction identity i₀(P,P)/e=−h_L(P_U) is stated by GrossZagierAndArithmeticHeights §7.78. Its §0a.4 supplies the quaternionic CM point and its Artin action; §7.2 here defines only its normalized Hodge height. Its §§6.56, 7.15, 7.65–7.66 and 7.77 supply the analytic derivative, nonvanishing theta input, full height-series decomposition and local comparison with the noncuspidal terms retained. PELModuli §§M6.1, M6.8 and M6.10 supply bounded polarized descent with marked 3-torsion and finite level-forgetting.
 
@@ -43,9 +43,13 @@ Use `NumberField.IsCMField` in `Mathlib/NumberTheory/NumberField/CMField.lean` (
 
 Use `NumberField.classNumber`, `NumberField.classNumber_pos` and `NumberField.exists_ideal_in_class_of_norm_le` in `Mathlib/NumberTheory/NumberField/ClassNumber.lean` (lines 64, 69 and 77); the class number is that of the maximal order and the representative ideal is nonzero. `NumberField.discr` supplies its integral field discriminant. These are the native objects in `relative_class_number_growth`.
 
+Use `AlgebraicGeometry.Scheme.Hom.finrank` in `Mathlib/AlgebraicGeometry/Morphisms/FlatRank.lean` (line 88), the rank of a morphism at a point of its target, computed on an affine neighbourhood as the local rank of the algebra the morphism defines. For a finite flat morphism it is at least 1 everywhere exactly when the morphism is surjective (`AlgebraicGeometry.Scheme.Hom.one_le_finrank_iff_surjective`, line 201), and it is locally constant when the morphism is also locally of finite presentation (`AlgebraicGeometry.Scheme.Hom.isLocallyConstant_finrank`, line 231). It is the degree of an isogeny in `distant_cm_isogenies`; the library does not prove that isogenies are flat, and the theorem only evaluates it on isogenies. `NumberField.RingOfIntegers` supplies the maximal order O_E.
+
 ### From Tau Ceti
 
 `NumberField.card_ideal_absNorm_le`, `TauCeti/NumberTheory/EffectiveBounds/IdealCount/Basic.lean`, line 399, gives a finite count bounded by X²2^[E:ℚ] for X≥1. `NumberField.abs_discr_le_of_basis_isIntegral`, `TauCeti/NumberTheory/EffectiveBounds/Discriminant/Basic.lean`, line 61, bounds the field discriminant by the trace discriminant of an integral rational basis. The near-linear count and the exact order identity come from the separate contracts below.
+
+`TauCeti.AlgebraicGeometry.AbelianVariety` (`TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`, line 95) is a proper geometrically integral group scheme over a field; `TauCeti.AlgebraicGeometry.AbelianVariety.dim` (line 118) is the Krull dimension of the underlying scheme and `TauCeti.AlgebraicGeometry.AbelianVariety.zeroPoint` (line 171) is the identity point. `TauCeti.AlgebraicGeometry.AbelianVariety.End` (`TauCeti/AlgebraicGeometry/AbelianVariety/End/Basic.lean`, line 83) is the endomorphism ring, with `TauCeti.AlgebraicGeometry.AbelianVariety.End.toHom` (line 92) recovering the endomorphism. `TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny` (`TauCeti/AlgebraicGeometry/AbelianVariety/Isogeny.lean`, line 61) says that the underlying scheme morphism `TauCeti.AlgebraicGeometry.AbelianVariety.Hom.toSchemeHom` (`TauCeti/AlgebraicGeometry/AbelianVariety/Hom/Basic.lean`, line 133) is finite and surjective; it does not record a degree. These are the native carriers of `distant_cm_isogenies`.
 
 ### From TauCetiRoadmap.ComplexMultiplicationAndExplicitReciprocity
 
@@ -53,7 +57,7 @@ Consume §§0.1–0.2 for inverse-coset reflex pairs, integral reflex orders and
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
-Consume §§A4.1, A4.3, A4.CR.7.2, A5.1–A5.7, A6.22, A6.25 and A6.37–A6.38 for Tate/de Rham/crystalline realizations, integral Riemann forms, polarized equivalence, finite isogeny kernels, relative Hom extension over locally noetherian normal bases, simple-factor centers and the Hodge line. Covariant Tate lattices are dual to H¹. An integral polarization need not be principal. Extension of homomorphisms is §A6.25, separate from realizing the family.
+Consume §§A4.1, A4.3, A4.CR.7.2, A5.1–A5.7, A6.22, A6.25 and A6.37–A6.38 for Tate/de Rham/crystalline realizations, integral Riemann forms, polarized equivalence, finite isogeny kernels, relative Hom extension over locally noetherian normal bases, simple-factor centers and the Hodge line. Consume §A6.1 for the degree of a homomorphism, defined there as the same Mathlib rank at the zero point that `distant_cm_isogenies` uses, and §§A6.4–A6.5 and A6.8 for simplicity, Poincaré reducibility and semisimplicity of End⁰. Covariant Tate lattices are dual to H¹. An integral polarization need not be principal. Extension of homomorphisms is §A6.25, separate from realizing the family.
 
 ### From TauCetiRoadmap.ArakelovGeometryAndAbelianHeights
 
@@ -71,7 +75,9 @@ Consume Layer AL.1, “CM quadratic completion and orbital comparisons”, for t
 
 ### From TauCetiRoadmap.AutomorphicBundles
 
-Consume §§B1.1–B1.3, Layer B2 and §B4.10 for defining tensors, absolute Hodge tensor realizations, associated filtered bundles and the classical Hodge weight. The integral CM torsor on the locus with reductive unramified torus model is §2.4 here. Rational tensor descent does not imply an integral torsor at an arbitrary ramified prime.
+Consume §§B1.1–B1.3, Layer B2 and §B4.10 for defining tensors, absolute Hodge tensor realizations with their Betti–de Rham and Betti–étale comparisons and descent to the reflex field, associated filtered bundles and the classical Hodge weight. These sections make no crystalline or B_dR assertion (§B2.7 excludes them explicitly); the p-adic comparison of the tensors is the contract below. The integral CM torsor on the locus with reductive unramified torus model is §2.3 here. Rational tensor descent does not imply an integral torsor at an arbitrary ramified prime.
+
+What AutomorphicBundles must provide (gap:absolute-hodge-padic-comparison): For an abelian variety A over a number field K, every finite place v of K and every rational absolute Hodge tensor on A in a tensor construction of H¹, its dual and Tate twists whose de Rham and p-adic étale realizations are defined over K, prove that the B_dR comparison of A over K_v carries the étale realization to the algebraic de Rham realization, compatibly with tensor operations, Tate twists and finite base extension, and, where A has good reduction at v, with the B_cris comparison.
 
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
@@ -298,7 +304,17 @@ A prime where K_p is smaller retains a potentially ramified normalization.
 
 *Needs:* §1.2 the compact integral level; ShimuraVarieties §§4.1–4.6; ShimuraVarieties §§8.1–8.6.
 
-### 1.4 The total reflex CM pair
+### 1.4 Integral polarized CM families
+
+Prove the following. A faithful rational T-representation H of Hodge types (−1,0),(0,−1), with a polarizing T-equivariant alternating form valued in the norm character and a K-stable full adelic lattice on which that form is integral, gives a polarized abelian scheme A_H over the normalized integral CM model Y_K. Its generic fiber is the supplied canonical-model family and its ℓ-adic Tate module over Y_K[1/ℓ] is the chosen lattice. The alternating polarization form takes the chosen lattice into the integral lattice of its norm-character line; unimodularity is not required. ([A], Proposition 3.4.1, pp. 419–420; A line 1162.)
+
+One proof route is as follows. Apply the existing Siegel moduli comparison on the generic fiber. At each local model inertia acts trivially on the prime-to-p representation after passing to the field defined by Y_K. Use Néron–Ogg–Shafarevich and extension uniqueness, then descend to the stack.
+
+The conclusion is extension over the whole normalized model, not an assertion that every smaller-level model is étale.
+
+*Needs:* §1.1 the cm height torus; §1.3 finite étale cm models; AbelianSchemesAndArithmeticModuli §§A4.1, A4.3, A4.CR.7.2; AbelianSchemesAndArithmeticModuli §§A5.1–A5.7; ShimuraVarieties §§5.1–5.11; NeronModelsAndSemistableAbelianVarieties §§5.1–5.2; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38.
+
+### 1.5 The total reflex CM pair
 
 Construct the following CM object. Let E♯ be the finite étale ℚ-algebra whose embedding Γ_Q-set is CM(E). Complementing a type is its CM involution, so E♯ is a product of CM fields of total degree 2^d. For a chosen ι₀, Φ♯ consists of the types containing ι₀ and has size 2^(d−1). Its T-representation H♯=E♯ has character pullback [Φ]↦Σ_(ι∈Φ)[ι]. Choose ξ∈E♯× with ξ̄=−ξ and Im ι_Φ(ξ)>0 for Φ containing ι₀; after multiplying ξ by a positive integer so that ψ(x,y)=Tr(ξxȳ) is integral on O_E♯, this form polarizes H♯, giving an abelian scheme A♯/Y₀ of dimension 2^(d−1). Its maximal-order lattice is O_E♯. ([A], §3.4, Proposition 3.4.2, pp. 420–421; §9.2, p. 510; A line 1199.)
 
@@ -321,17 +337,7 @@ A nontransitive CM-type Γ_Q-set yields a product algebra, with no forced field 
 - For E=ℚ(i,√2), its four CM types split into two Galois orbits, giving E♯≅ℚ(i)×ℚ(√−2), not a quartic field.
 - When d=3, verify degree 8 and abelian dimension 4, and reject a pure-imaginary ξ with the wrong sign at one selected embedding.
 
-*Needs:* §1.1 the cm height torus; §1.3 finite étale cm models; §1.5 integral polarized cm families; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; ShimuraVarieties §§5.1–5.11; AbelianSchemesAndArithmeticModuli §§A5.1–A5.7.
-
-### 1.5 Integral polarized CM families
-
-Prove the following. A faithful rational T-representation H of Hodge types (−1,0),(0,−1), with a polarizing T-equivariant alternating form valued in the norm character and a K-stable full adelic lattice on which that form is integral, gives a polarized abelian scheme A_H over the normalized integral CM model Y_K. Its generic fiber is the supplied canonical-model family and its ℓ-adic Tate module over Y_K[1/ℓ] is the chosen lattice. The alternating polarization form takes the chosen lattice into the integral lattice of its norm-character line; unimodularity is not required. ([A], Proposition 3.4.1, pp. 419–420; A line 1162.)
-
-One proof route is as follows. Apply the existing Siegel moduli comparison on the generic fiber. At each local model inertia acts trivially on the prime-to-p representation after passing to the field defined by Y_K. Use Néron–Ogg–Shafarevich and extension uniqueness, then descend to the stack.
-
-The conclusion is extension over the whole normalized model, not an assertion that every smaller-level model is étale.
-
-*Needs:* §1.1 the cm height torus; §1.3 finite étale cm models; AbelianSchemesAndArithmeticModuli §§A4.1, A4.3, A4.CR.7.2; AbelianSchemesAndArithmeticModuli §§A5.1–A5.7; ShimuraVarieties §§5.1–5.11; NeronModelsAndSemistableAbelianVarieties §§5.1–5.2; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38.
+*Needs:* §1.1 the cm height torus; §1.3 finite étale cm models; §1.4 integral polarized cm families; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; ShimuraVarieties §§5.1–5.11; AbelianSchemesAndArithmeticModuli §§A5.1–A5.7.
 
 ### 1.6 Total reflex characters and heights
 
@@ -341,7 +347,7 @@ One proof route is as follows. Match each Galois orbit with the embeddings of th
 
 The coefficient is 1/(2d), not 2^(−d); the two coincide only accidentally in small degrees.
 
-*Needs:* §1.4 the total reflex cm pair; §0.2 cm-height invariance and colmez linearity; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; ArakelovGeometryAndAbelianHeights §§3.4–3.5.
+*Needs:* §1.5 the total reflex cm pair; §0.2 cm-height invariance and colmez linearity; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; ArakelovGeometryAndAbelianHeights §§3.4–3.5.
 
 ### Examples
 
@@ -373,23 +379,25 @@ Specializing M itself in place of φ*M must fail the comparison check. At a rami
 
 *Needs:* §2.1 local cm representations are crystalline; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4.
 
-### 2.3 CM bundles and crystals
+### 2.3 Integral CM tensor torsor
+
+Prove the following. Let D contain primes ramified in E and primes with K_p≠K₀,p. For a faithful polarized H and integral tensors whose pointwise stabilizer is T, the generic de Rham realizations of the tensors extend to horizontal sections of the tensor constructions of H_dR over all of Y_K. At a geometric point y over q|p the extension at Spec O_y is the de Rham tensor of the CM Breuil–Kisin comparison of §2.2: the B_dR comparison of A_H over Frac(O_y) carries the p-adic étale tensor to the generic de Rham tensor. This equality is the de Rham property of absolute Hodge tensors on abelian varieties (Blasius–Wintenberger), imported through the AutomorphicBundles supplier contract, and not algebraicity of arbitrary Hodge cycles; Betti–de Rham and Betti–étale comparisons and descent of the tensors to the reflex field do not give it. When the tensors have stabilizer T over Z[1/D], the tensor-preserving isomorphisms O⊗H_Z→H_dR form a T-torsor over Y_K[1/D], independent of the chosen faithful realization. ([A], Proof of Proposition 3.5.5, pp. 426–427; A line 1442.)
+
+One proof route is as follows. At each geometric point y compare the Breuil–Kisin de Rham tensors with the generic de Rham tensors through the supplied p-adic comparison; this extends the tensors over Y_K. Apply the integral tensor-stabilizer theorem at unramified maximal-level primes, where T extends to a torus over Z[1/D]. Compare two faithful realizations inside their direct sum to show independence.
+
+For the tensor unit and the identity endomorphism the comparison is the identity; for the polarization the equality holds in the Tate line, so the frame group is the similitude torus T and not its norm-one part.
+
+*Needs:* §1.4 integral polarized cm families; §2.2 cm breuil–kisin comparison; AutomorphicBundles §§B1.1–B1.3; AutomorphicBundles §B1.3 (gap:absolute-hodge-padic-comparison); FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4.
+
+### 2.4 CM bundles and crystals
 
 Prove the following. The generic tensor functor from T-representations to filtered de Rham bundles extends to integral lattices on Y_K. Its completions at y are the de Rham modules of the CM Breuil–Kisin comparison. At q where Y_K is étale over O_E, it also gives a compatible F-crystal with these crystalline fibers. For a polarized weight-one H, the resulting H_dR is the dual of H¹_dR(A_H/Y_K), with its dual Hodge filtration, and the crystals agree with the corresponding Dieudonné realization. At a geometric point y with residue field kbar, the pointwise crystalline realization is over W(kbar), using that geometric PD thickening. ([A], Proposition 3.5.5(1)–(5), pp. 425–427; A line 1400.)
 
-One proof route is as follows. Construct away from bad primes by the tensor-preserving torsor. Glue the local integral lattices using their rational comparison and uniqueness. Identify weight-one realizations with abelian de Rham and crystalline cohomology through the imported comparison.
+One proof route is as follows. Construct away from bad primes by the tensor-preserving torsor. Glue the local integral lattices using the rational comparison of §2.3 at each geometric point and uniqueness. Identify weight-one realizations with abelian de Rham and crystalline cohomology through the imported comparison.
 
 The global F-crystal assertion is restricted to the étale locus; the filtered integral bundle is global.
 
-*Needs:* §2.2 cm breuil–kisin comparison; §1.5 integral polarized cm families; AutomorphicBundles §§B1.1–B1.3; AutomorphicBundles Layer B2; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4; §2.4 integral cm tensor torsor.
-
-### 2.4 Integral CM tensor torsor
-
-Prove the following. Let D contain primes ramified in E and primes with K_p≠K₀,p. For a faithful polarized H and integral tensors with stabilizer T over Z[1/D], the tensor-preserving isomorphisms O⊗H_Z→H_dR form a T-torsor over Y_K[1/D]. The extended de Rham tensors are horizontal and independent of the chosen faithful realization. Their p-adic comparison with étale tensors uses compatibility with absolute Hodge cycles, not algebraicity of arbitrary Hodge cycles. The tensors are absolute Hodge tensors; prove their p-adic comparison and the tensor-frame torsor over the specified reductive locus using the supplied integral comparison. The canonical-model descent statement alone is not this assertion. ([A], Proof of Proposition 3.5.5, pp. 426–427; A line 1440.)
-
-One proof route is as follows. Import the absolute-Hodge p-adic comparison from AutomorphicBundles §§B1.1–B1.3. Apply the integral tensor-stabilizer theorem at unramified maximal-level primes. Compare two faithful realizations inside their direct sum to show independence.
-
-*Needs:* §1.5 integral polarized cm families; §2.2 cm breuil–kisin comparison; AutomorphicBundles §§B1.1–B1.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4.
+*Needs:* §2.2 cm breuil–kisin comparison; §1.4 integral polarized cm families; AutomorphicBundles §§B1.1–B1.3; AutomorphicBundles Layer B2; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4; §2.3 integral cm tensor torsor.
 
 ### 2.5 Integral Hecke and torus actions
 
@@ -399,7 +407,7 @@ One proof route is as follows. Descend the generic homomorphisms using the canon
 
 The faithful rational T-action is not promoted to an integral automorphism action for every rational point.
 
-*Needs:* §1.5 integral polarized cm families; §2.3 cm bundles and crystals; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; ShimuraVarieties §§8.1–8.6; AutomorphicBundles Layer B2.
+*Needs:* §1.4 integral polarized cm families; §2.4 cm bundles and crystals; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; ShimuraVarieties §§8.1–8.6; AutomorphicBundles Layer B2.
 
 ### 2.6 The standard CM quadratic line
 
@@ -423,7 +431,7 @@ The squared norm is positive on every nonzero Hodge vector.
 - For E=ℚ(i), f_i²=1, whereas the complex-linear multiplication-by-i map has square −1 and is excluded.
 - For E=ℚ(i) with Q₀(a)=|a|² and its associated bilinear form B(a,b)=2 Re(a b̄), take z=(1,i) in the complexified real plane. Then B(z,z̄)=4, so its squared norm is 4; the negative convention gives −4.
 
-*Needs:* §1.3 finite étale cm models; §2.3 cm bundles and crystals; ShimuraData Layer 1.
+*Needs:* §1.3 finite étale cm models; §2.4 cm bundles and crystals; ShimuraData Layer 1.
 
 ### 2.7 Tautological CM crystal
 
@@ -451,7 +459,7 @@ For the Gaussian CM elliptic curve at a split prime 5 the weight-one slopes are 
 
 ### Dependencies
 
-§1.3 finite étale cm models; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, “Comparison with local reciprocity”; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4; §1.5 integral polarized cm families; AutomorphicBundles §§B1.1–B1.3; AutomorphicBundles Layer B2; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; ShimuraVarieties §§8.1–8.6; ShimuraData Layer 1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.15–R07.2.16, R07.2.20.
+§1.3 finite étale cm models; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, “Comparison with local reciprocity”; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4; §1.4 integral polarized cm families; AutomorphicBundles §§B1.1–B1.3; AutomorphicBundles §B1.3 (gap:absolute-hodge-padic-comparison); AutomorphicBundles Layer B2; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; ShimuraVarieties §§8.1–8.6; ShimuraData Layer 1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.15–R07.2.16, R07.2.20.
 
 ## Layer 3: The total reflex determinant
 
@@ -478,7 +486,7 @@ The determinant exponent is the abelian dimension r, not the rational rank 2r.
 - On a square-zero base k[ε]/(ε²), multiplication by ε has nonzero determinant ε but ε²=0, so its zero scheme is not an effective Cartier divisor. This base lies outside the regular CM base hypotheses of the determinant-divisor assertion.
 - Over the generic splitting field each type coordinate is nonzero; after swapping the two Hodge pieces the inverse line is detected.
 
-*Needs:* §1.4 the total reflex cm pair; §2.6 the standard cm quadratic line; §2.3 cm bundles and crystals; ArakelovGeometryAndAbelianHeights §§1.3, 1.11.
+*Needs:* §1.5 the total reflex cm pair; §2.6 the standard cm quadratic line; §2.4 cm bundles and crystals; ArakelovGeometryAndAbelianHeights §§1.3, 1.11.
 
 ### 3.2 Partition quotient over a DVR
 
@@ -566,7 +574,7 @@ One proof route is as follows. Count choices away from 𝔭 and identify the loc
 
 The split local algebra is retained and gives its appropriate conductor contribution; the ramification normalization uses v_q on the actual integral base.
 
-*Needs:* §1.4 the total reflex cm pair; §0.3 average cm character; §2.3 cm bundles and crystals; §3.5 conductor values and positive lengths.
+*Needs:* §1.5 the total reflex cm pair; §0.3 average cm character; §2.4 cm bundles and crystals; §3.5 conductor values and positive lengths.
 
 ### 3.8 Total reflex height and the standard line
 
@@ -584,19 +592,33 @@ Take A=ℤ₃ and B=C=ℤ₃[π], π²=3. The singleton partition quotient is C/
 
 ### Dependencies
 
-§1.4 the total reflex cm pair; §2.6 the standard cm quadratic line; §2.3 cm bundles and crystals; ArakelovGeometryAndAbelianHeights §§1.3, 1.11; AutomorphicLFunctionsAndLocalFactors Layer AL.1, “CM quadratic completion and orbital comparisons”; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10; AutomorphicBundles Layer B2; §0.3 average cm character; §1.6 total reflex characters and heights; ArakelovGeometryAndAbelianHeights §§3.4–3.5.
+§1.5 the total reflex cm pair; §2.6 the standard cm quadratic line; §2.4 cm bundles and crystals; ArakelovGeometryAndAbelianHeights §§1.3, 1.11; AutomorphicLFunctionsAndLocalFactors Layer AL.1, “CM quadratic completion and orbital comparisons”; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10; AutomorphicBundles Layer B2; §0.3 average cm character; §1.6 total reflex characters and heights; ArakelovGeometryAndAbelianHeights §§3.4–3.5.
 
 ## Layer 4: The orthogonal averaged-height route
 
-### 4.1 Orthogonal Hodge-line degree adapter
+### 4.1 Auxiliary CM quadratic data
 
-Prove the following. For the auxiliary quadratic space V=(E,Tr_F/ℚ(ξ x x̄)) of signature (2d−2,2), its maximal lattice L and CM cycle Y, compare the restricted orthogonal Hodge line ω with ω₀ on the CM model. The required normalized difference deĝ(ω|Y)/deg_C Y−deĝ(ω₀)/deg_C Y₀ is the discriminant correction log D_F, up to the explicitly supported bad-prime logarithms in Proposition 9.5.1. The comparison must use the actual filtered Hodge sublattices, not a false equality of full V-lattices. ([A], Proposition 9.5.1, proof pp. 522–523; the full-lattice scaling assertion is corrected; A line 5607.)
+Use the following definition. An auxiliary pair is a fractional O_E-ideal a and ξ∈F× negative at the distinguished real embedding and positive at all others. It is good at p when ξ·Nm_E/F(a)·d_F/ℚ is the unit ideal after localizing at p. A compatible maximal ℤ-lattice L⊂(E,Tr_F/ℚ(ξx x̄)) is good at p in the integral quadratic sense of Definition 5.3.3. The field trace is Tr_F/ℚ, because its argument lies in F. Explicitly, at each place 𝔭 of F over p unramified in E, L_𝔭 is O_E,𝔭-stable and self-dual. At a ramified place, L_𝔭 is maximal and contains an O_E,𝔭-stable lattice Λ_𝔭 with Λ_𝔭⊂L_𝔭⊊δ_E,𝔭/F,𝔭⁻¹Λ_𝔭. The finite complementary set defines D_bad,L as the product of its rational primes. ([A], Definition 5.3.3, p. 460; §9.5, pp. 522–525; A line 2796.)
 
-One proof route is as follows. Compare rational CM quadratic representations and the archimedean Hodge metrics. Compute the integral filtered-line indices at each prime and normalize by the same stack degree. Prove the required correction on Hodge lines; use the filtered-line index rather than a scalar equality of full lattices.
+One proof route is as follows. Form the norm ideal and its local valuations. Use the existing maximal quadratic-lattice notion, including the dyadic integral convention. Separate goodness of the pair from goodness of a chosen maximal lattice.
 
-A global rescaling by an element of F need not solve all full-lattice norm equations; the required conclusion is the filtered-line degree identity.
+Its API comprises:
 
-*Needs:* §2.6 the standard cm quadratic line; §3.8 total reflex height and the standard line; AutomorphicBundles Layer B2.
+- Goodness at p is the vanishing of every local valuation of ξ Nm(a) d_F/ℚ over p.
+- Replacing a by ua and ξ by ξ/Nm(u) preserves goodness and the quadratic space up to isometry.
+- The trace form has signature (2d−2,2).
+- A fractional O_E-ideal a and ξ∈F× with the specified real signs give the quadratic lattice (a,Tr_F/ℚ(ξ Nm_E/F)); goodness is a separate local unit/maximal-lattice condition.
+- Replacing a by b a and ξ by ξ/(b b̄), b∈E×, gives an isometric quadratic lattice, preserving goodness at every prime and the real signature.
+
+Goodness is a local unit condition and survives multiplying a by a principal ideal with the corresponding inverse norm change in ξ.
+
+**Checks.**
+
+- For d=1 and a=O_E, ξ=−1, the signature is (0,2).
+- At a place where ξ Nm(a)d_F has valuation 1, reject goodness.
+- A positive ξ at every real place gives a positive definite form and fails the auxiliary signature condition.
+
+*Needs:* ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §§2.2, 2.7–2.9.
 
 ### 4.2 GSpin data and special divisors
 
@@ -611,7 +633,7 @@ Its API comprises:
 **Checks.**
 
 - On the negative plane Q(x,y)=−x²−y², z=(1,i) gives B(z,z̄)=−4 and squared norm 4. On the positive standard CM plane of §2.6 the bilinear value is +4 and its absolute value again gives 4.
-- For f=0 the principal-part sum and Green function are both zero; this does not allow division by its zero constant coefficient in §4.2c or §4.2d.
+- For f=0 the principal-part sum and Green function are both zero; this does not allow division by its zero constant coefficient in §4.2c or §4.3.
 - A point with automorphism group of order 2 contributes 1/2 to the degree; a degree-two finite étale cover doubles both weighted degrees and preserves their quotient.
 
 One proof route constructs the integral model and realization, defines special divisors through special endomorphisms and applies the regularized theta lift with the stated Hodge metric.
@@ -654,15 +676,15 @@ One proof route matches integral special-divisor lengths with local Eisenstein c
 - For weakly holomorphic f, ξ(f)=0 and L_shadow'(0,ξ(f))=0, leaving a(0,0)c_f(0,0)/Λ(0,χ). A nonzero shadow does not permit that deletion.
 - For degree-two finite étale pullback, [Z_hat(f):Y] and deg_C Y both double, while the displayed analytic quotient is unchanged.
 
-*Needs:* §4.2 gspin data and special divisors; §2.3 cm bundles and crystals; §0.3 average cm character; §4.3 auxiliary cm quadratic data; §1.2 the compact integral level; §1.3 finite étale cm models; MetaplecticAutomorphicForms Layers 4–7; ArakelovGeometryAndAbelianHeights §§1.3, 1.11.
+*Needs:* §4.2 gspin data and special divisors; §2.4 cm bundles and crystals; §0.3 average cm character; §4.1 auxiliary cm quadratic data; §1.2 the compact integral level; §1.3 finite étale cm models; MetaplecticAutomorphicForms Layers 4–7; ArakelovGeometryAndAbelianHeights §§1.3, 1.11.
 
 ### 4.2c Hodge-height identity
 
-For d≥2, an auxiliary maximal lattice L and a maximal enlargement L⋄ of signature (n⋄,2), n⋄≥3, with positive rank-two orthogonal complement, take a weakly holomorphic f of weight 1−n⋄/2 in its Weil representation with integral principal part and c_f(0,0)≠0. Assume proper intersection: for every μ∈L⋄∨/L⋄, c_f(−m,μ)=0 whenever m>0 is represented by the denominator lattice D_L⋄⁻¹Λ in that complement, as in Hypothesis 8.3.1. Prove
+For d≥2, an auxiliary maximal lattice L and a maximal lattice L⋄⊃L of signature (n⋄,2), n⋄≥3, whose orthogonal complement Λ=L^⊥⊂L⋄ is positive definite of rank n⋄−2d+2 (any rank, zero included), take a weakly holomorphic f of weight 1−n⋄/2 in its Weil representation with integral principal part and c_f(0,0)≠0. Assume proper intersection: for every μ∈L⋄∨/L⋄, c_f(−m,μ)=0 whenever m>0 is represented by the denominator lattice D_L⋄⁻¹Λ in that complement, as in Hypothesis 8.3.1. Prove
 
 `[omega:Y]/deg_C(Y) = -2*Lambda'(0,chi)/Lambda(0,chi) - d*log(4*pi*exp(gamma)) + [E_error(f):Y]/(c_f(0,0)*deg_C(Y))`
 
-in ℝ modulo the ℚ-span of logarithms of primes bad for L. The Hodge line is restricted from the enlargement; E_error(f) is its Borcherds vertical discrepancy, with the support prescribed in A (8.3.1). All denominators are nonzero: the CM degree is positive, the constant coefficient is assumed nonzero and Λ(0,χ)≠0. ([A], Hypothesis 8.3.1 and Proposition 8.3.3, pp. 505–507; A line 4927; Theorem 8.3.4, p. 508; A line 4989.)
+in ℝ modulo the ℚ-span of logarithms of primes bad for L. The Hodge line is restricted from the enlargement; E_error(f) is the Borcherds vertical discrepancy of L⋄, with the support of §4.2a applied to L⋄ and n⋄ (A Theorem 4.8.1, pp. 454–455): its odd p component vanishes when p² does not divide D_L⋄, and for n⋄≥5 it is dyadic and vanishes when L⋄ is self-dual at 2. The paragraph following A (8.3.1) reverses that odd-prime divisibility condition and writes L for L⋄; Theorem 4.8.1 is the operative statement. All denominators are nonzero: the CM degree is positive, the constant coefficient is assumed nonzero and Λ(0,χ)≠0. ([A], Hypothesis 8.3.1 and Proposition 8.3.3, pp. 505–507; A line 4927; Theorem 8.3.4, p. 508; A line 4989.)
 
 One proof route restricts the special divisors along the enlargement using the complement theta series, applies §4.2b and inserts the Borcherds relation of §4.2a. The stronger rational-complement avoidance in §4.5 implies the proper-intersection condition used here.
 
@@ -671,40 +693,27 @@ One proof route restricts the special divisors along the enlargement using the c
 - If the denominator complement lattice has a vector of norm 1, any c_f(−1,μ)=1 violates the hypothesis; requiring all coefficients c_f(−1,μ)=0 removes this obstruction.
 - If f is replaced by 2f and its section by Ψ(f)², its constant coefficient and vertical error both double, so the error quotient is unchanged.
 - When E_error(f)=0, expanding Λ'/Λ=ℓ(0)+(1/2)log(D_E/D_F)−(d/2)log(4π exp γ) makes the analytic side −2ℓ(0)−log(D_E/D_F); the gamma constants cancel.
+- A rank-one complement is admitted. For E=ℚ(i,√2), F=ℚ(√2) and ξ=√2, negative at the distinguished embedding, the form Tr_F/ℚ(ξ x x̄) is 8(a₁a₂+b₁b₂) on x=(a₁+a₂√2)+(b₁+b₂√2)i, rationally U⊕U, so L≅U⊕U of signature (2,2). Then L⋄=U⊕U⊕⟨1⟩ is maximal of signature (3,2), its one nontrivial dual coset having norm 1/4, and Λ=⟨1⟩ has rank 1. Here D_L⋄⁻¹Λ=(1/2)ℤ represents k²/4 for k≥1, so c_f(−1/4,1/2)=c_f(−1,0)=0 is required; the error quotient E_error(f)/(c_f(0,0)deg_C Y) is the same as for a rank-two complement.
 
-*Needs:* §4.2 gspin data and special divisors; §4.2a borcherds section and vertical support; §4.2b big-cm arithmetic degree; §4.3 auxiliary cm quadratic data; MetaplecticAutomorphicForms Layers 4–7 for the complement theta series.
+*Needs:* §4.2 gspin data and special divisors; §4.2a borcherds section and vertical support; §4.2b big-cm arithmetic degree; §4.1 auxiliary cm quadratic data; MetaplecticAutomorphicForms Layers 4–7 for the complement theta series.
 
-### 4.2d Average height error on the CM cycle
+### 4.2d Orthogonal Hodge-line degree adapter
 
-For d≥2, auxiliary L and the enlargement and admissible f of §4.2c, prove that the normalized average of h_Falt−h_Col equals [E_error(f):Y]/(4 c_f(0,0) deg_C Y), modulo rational multiples of log p at primes bad for L. This uses the unscaled Faltings height and the actual vertical divisor, with the proper-intersection and nonzero-constant hypotheses retained. ([A], Proposition 9.5.1, pp. 522–523; A line 5642.)
+Prove the following. For the auxiliary quadratic space V=(E,Tr_F/ℚ(ξ x x̄)) of signature (2d−2,2), its maximal lattice L and CM cycle Y, compare the restricted orthogonal Hodge line ω with ω₀ on the CM model. The required normalized difference deĝ(ω|Y)/deg_C Y−deĝ(ω₀)/deg_C Y₀ is the discriminant correction log D_F, up to the explicitly supported bad-prime logarithms in Proposition 9.5.1. The comparison must use the actual filtered Hodge sublattices, not a false equality of full V-lattices. ([A], Proposition 9.5.1, proof pp. 522–523; the full-lattice scaling assertion is corrected; A line 5607.)
 
-One proof route inserts the total reflex height and analytic character identities into §4.2c, using the filtered Hodge-line adapter of §4.1. The coefficient is 1/4: the Hodge degree enters the total reflex mean with that coefficient. A form with zero constant coefficient is inadmissible; bad-prime errors remain in the conclusion.
+One proof route is as follows. Compare rational CM quadratic representations and the archimedean Hodge metrics. Compute the integral filtered-line indices at each prime and normalize by the same stack degree. Prove the required correction on Hodge lines; use the filtered-line index rather than a scalar equality of full lattices.
 
-*Needs:* §4.2c hodge-height identity; §4.1 orthogonal hodge-line degree adapter; §3.8 total reflex height and the standard line; §0.3 average cm character.
+A global rescaling by an element of F need not solve all full-lattice norm equations; the required conclusion is the filtered-line degree identity.
 
-### 4.3 Auxiliary CM quadratic data
+*Needs:* §4.1 auxiliary cm quadratic data; §4.2 gspin data and special divisors; §2.6 the standard cm quadratic line; §3.8 total reflex height and the standard line; AutomorphicBundles Layer B2.
 
-Use the following definition. An auxiliary pair is a fractional O_E-ideal a and ξ∈F× negative at the distinguished real embedding and positive at all others. It is good at p when ξ·Nm_E/F(a)·d_F/ℚ is the unit ideal after localizing at p. A compatible maximal ℤ-lattice L⊂(E,Tr_F/ℚ(ξx x̄)) is good at p in the integral quadratic sense of Definition 5.3.3. The field trace is Tr_F/ℚ, because its argument lies in F. Explicitly, at each place 𝔭 of F over p unramified in E, L_𝔭 is O_E,𝔭-stable and self-dual. At a ramified place, L_𝔭 is maximal and contains an O_E,𝔭-stable lattice Λ_𝔭 with Λ_𝔭⊂L_𝔭⊊δ_E,𝔭/F,𝔭⁻¹Λ_𝔭. The finite complementary set defines D_bad,L as the product of its rational primes. ([A], Definition 5.3.3, p. 460; §9.5, pp. 522–525; A line 2796.)
+### 4.3 Average height error on the CM cycle
 
-One proof route is as follows. Form the norm ideal and its local valuations. Use the existing maximal quadratic-lattice notion, including the dyadic integral convention. Separate goodness of the pair from goodness of a chosen maximal lattice.
+For d≥2, auxiliary L, an enlargement L⋄ with positive definite complement of any rank and an admissible f as in §4.2c, prove that the normalized average of h_Falt−h_Col equals [E_error(f):Y]/(4 c_f(0,0) deg_C Y), modulo rational multiples of log p at primes bad for L. This uses the unscaled Faltings height and the actual vertical divisor, with the proper-intersection and nonzero-constant hypotheses retained. ([A], Proposition 9.5.1, pp. 522–523; A line 5642.)
 
-Its API comprises:
+One proof route inserts the total reflex height and analytic character identities into §4.2c, using the filtered Hodge-line adapter of §4.2d. The coefficient is 1/4: the Hodge degree enters the total reflex mean with that coefficient. A form with zero constant coefficient is inadmissible; bad-prime errors remain in the conclusion.
 
-- Goodness at p is the vanishing of every local valuation of ξ Nm(a) d_F/ℚ over p.
-- Replacing a by ua and ξ by ξ/Nm(u) preserves goodness and the quadratic space up to isometry.
-- The trace form has signature (2d−2,2).
-- A fractional O_E-ideal a and ξ∈F× with the specified real signs give the quadratic lattice (a,Tr_F/ℚ(ξ Nm_E/F)); goodness is a separate local unit/maximal-lattice condition.
-- Replacing a by b a and ξ by ξ/(b b̄), b∈E×, gives an isometric quadratic lattice, preserving goodness at every prime and the real signature.
-
-Goodness is a local unit condition and survives multiplying a by a principal ideal with the corresponding inverse norm change in ξ.
-
-**Checks.**
-
-- For d=1 and a=O_E, ξ=−1, the signature is (0,2).
-- At a place where ξ Nm(a)d_F has valuation 1, reject goodness.
-- A positive ξ at every real place gives a positive definite form and fails the auxiliary signature condition.
-
-*Needs:* ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §§2.2, 2.7–2.9.
+*Needs:* §4.2c hodge-height identity; §4.2d orthogonal hodge-line degree adapter; §3.8 total reflex height and the standard line; §0.3 average cm character.
 
 ### 4.4 Good data avoiding any finite prime set
 
@@ -712,7 +721,7 @@ Prove the following. For every finite set S of rational primes, auxiliary (a,ξ)
 
 One proof route is as follows. Apply the narrow-class norm image theorem supplied by class field theory. Use the narrow-class different-character identity in the supplier contract to satisfy the sign obstruction in the unramified case. Choose ideal representatives avoiding S, solve the sign condition and glue the prescribed local lattices to a global maximal lattice.
 
-*Needs:* §4.3 auxiliary cm quadratic data; ClassFieldTheory Layer 13 (gap:narrow-cm-norm-different); GeometryOfNumbersAndQuadraticArithmetic §§2.2, 2.7–2.9.
+*Needs:* §4.1 auxiliary cm quadratic data; ClassFieldTheory Layer 13 (gap:narrow-cm-norm-different); GeometryOfNumbersAndQuadraticArithmetic §§2.2, 2.7–2.9.
 
 ### 4.5 Eliminate each bad-prime coefficient
 
@@ -722,7 +731,7 @@ One proof route is as follows. Compare the two supported expressions to get a gl
 
 The proper-intersection and support hypotheses, p-self-duality, and c_f(0,0)≠0 are all necessary inputs; their existence is part of this target.
 
-*Needs:* §4.2d average height error on the cm cycle; §4.4 good data avoiding any finite prime set; MetaplecticAutomorphicForms Layer 7.
+*Needs:* §4.3 average height error on the cm cycle; §4.4 good data avoiding any finite prime set; MetaplecticAutomorphicForms Layer 7.
 
 ### 4.6 The imaginary quadratic average
 
@@ -738,7 +747,7 @@ With F_v=ℚ_p, E_v/F_v unramified quadratic and ξ=−p², the quadratic lattic
 
 ### Dependencies
 
-§2.6 the standard cm quadratic line; §3.8 total reflex height and the standard line; AutomorphicBundles Layer B2; §0.3 average cm character; ArakelovGeometryAndAbelianHeights §§1.3, 1.11; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §§2.2, 2.7–2.9; ClassFieldTheory Layer 13 (gap:narrow-cm-norm-different); ShimuraVarieties §§6.1–6.2; AbelianSchemesAndArithmeticModuli §§A4.3, A6.38; MetaplecticAutomorphicForms Layers 4–7; §2.3 cm bundles and crystals; §1.2 the compact integral level; §1.3 finite étale cm models; ArakelovGeometryAndAbelianHeights §§3.4–3.5; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10; §0.1 cm class functions and analytic heights; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27.
+§2.6 the standard cm quadratic line; §3.8 total reflex height and the standard line; AutomorphicBundles Layer B2; §0.3 average cm character; ArakelovGeometryAndAbelianHeights §§1.3, 1.11; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §§2.2, 2.7–2.9; ClassFieldTheory Layer 13 (gap:narrow-cm-norm-different); ShimuraVarieties §§6.1–6.2; AbelianSchemesAndArithmeticModuli §§A4.3, A6.38; MetaplecticAutomorphicForms Layers 4–7; §2.4 cm bundles and crystals; §1.2 the compact integral level; §1.3 finite étale cm models; ArakelovGeometryAndAbelianHeights §§3.4–3.5; ArakelovGeometryAndAbelianHeights §§2.1, 2.7, 2.10; §0.1 cm class functions and analytic heights; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27.
 
 ## Layer 5: Component heights and nearby types
 
@@ -1000,13 +1009,19 @@ The exponent is every value below 1/4, with uniform dimension constants and no G
 
 ### 10.2 Distant CM ideal isogenies
 
-Prove the following. For every g≥1 and ε>0 there is c_g,ε>0 such that for every primitive maximal-order CM type (E,Φ) with [E:ℚ]=2g and every A in its unpolarized maximal-CM class there is B in that class such that every complex isogeny A→B has degree≥c_g,ε D_E^(1/4−ε). Polarizations on B are not fixed in advance. Primitivity ensures the full endomorphism algebra is E, so Hom is described by ideals. ([T], Proposition 2.2 and preceding proof, p. 382; T line 116.)
+The headline theorem `distant_cm_isogenies` asserts the following. For every g≥1 and ε>0 there is c_g,ε>0 such that, for every CM field E of degree 2g and every complex abelian variety A of dimension g with a ring isomorphism ι:O_E≅End(A), there are a complex abelian variety B with a ring isomorphism κ:O_E≅End(B) and an isogeny A→B intertwining ι and κ, such that every isogeny f:A→B has degree at least c_g,ε D_E^(1/4−ε). The degree of an isogeny is the rank of its underlying finite flat scheme morphism at the identity point of B, Mathlib's `AlgebraicGeometry.Scheme.Hom.finrank`; an isogeny is finite and surjective between smooth varieties of the same dimension, hence flat, and over ℂ this rank is the order of the kernel. The ring identification makes A simple with End⁰(A)=E, so A has primitive CM by the maximal order; the intertwining isogeny gives B the same CM type. Every isogeny A→B is then O_E-linear, since it differs from the intertwining one by an element of End⁰(A)=E; so the bound covers all complex isogenies. Polarizations on B are not fixed in advance. The constant may be ineffective. ([T], §2.2, the ideal-isogeny correspondence and Proposition 2.2, p. 382; T lines 142–151.)
 
-One proof route is as follows. Identify the fixed-type class with the maximal-order ideal-class torsor. Count degree≤X isogeny targets by integral ideals, using AnalyticNumberTheoryPartI §3.27’s uniform fixed-degree X^(1+ε) ideal-count bound. Compare with h_E/h_F and choose X of the required exponent; adjust the ε budget.
+One proof route is as follows. Identify the fixed-type class with the maximal-order ideal-class torsor, the isogeny attached to a nonzero integral ideal I having degree N(I). Count degree≤X isogeny targets by integral ideals, using AnalyticNumberTheoryPartI §3.27’s uniform fixed-degree X^(1+ε) ideal-count bound. Compare with h_E≥h_E/h_F and choose X of the required exponent; adjust the ε budget. Over the finitely many fields of bounded discriminant and degree 2g, reduce c_g,ε so that the bound is at most 1, the degree of every isogeny being at least 1.
 
-The quantifier fixes A first. The baseline coarse X² ideal count alone loses the required 1/4 exponent.
+The quantifier fixes A first. The baseline coarse X² ideal count alone loses the required 1/4 exponent. The dimension hypothesis is what makes A a CM abelian variety: a very general member of the unitary family of signature (2,1) attached to an imaginary quadratic field K is a simple threefold with End(A)≅O_K and no CM.
 
-*Needs:* §10.1 relative cm class-number growth; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27; `NumberField.card_ideal_absNorm_le`.
+**Checks.**
+
+- For E=ℚ(i), A=ℂ/ℤ[i] and the ideal (1+i), the quotient by the kernel (1+i)⁻¹ℤ[i]/ℤ[i] is an O_E-linear isogeny of degree 2=N(1+i); multiplication by 2 has degree 4, not the lattice multiplier 2, and the identity has rank 1 at the identity point.
+- For ℚ(i) and ℚ(√−3), h_E=1, so B=A and the identity isogeny gives the minimum degree 1; with ε=1/8 and c=4^(−1/8) the lower bounds are 4^(−1/8)·4^(1/8)=1 and 4^(−1/8)·3^(1/8)≈0.9647, both at most 1.
+- For ε≥1/4 the exponent is nonpositive and the statement reduces to degrees being at least a constant at most 1; the content lies in small ε, where h_E/h_F grows at least like a constant times D_E^(1/4−ε).
+
+*Needs:* §10.1 relative cm class-number growth; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; AbelianSchemesAndArithmeticModuli §§A6.1, A6.4–A6.5, A6.8, A6.37; AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27; `NumberField.card_ideal_absNorm_le`; `TauCeti.AlgebraicGeometry.AbelianVariety`; `TauCeti.AlgebraicGeometry.AbelianVariety.End`; `TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny`; `AlgebraicGeometry.Scheme.Hom.finrank`.
 
 ### 10.3 Individual CM heights are subpolynomial
 
@@ -1024,7 +1039,7 @@ For m=2 and a lower bound b=−1, the heights (−1,3) have mean 1 and the upper
 
 ### Dependencies
 
-AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27; `NumberField.IsCMField.regulator_div_regulator_eq_two_pow_mul_indexRealUnits_inv`; `NumberField.classNumber_pos`; `NumberField.IsCMField.indexRealUnits_eq_one_or_two`; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; `NumberField.card_ideal_absNorm_le`; Layer 9 averaged Colmez; ArakelovGeometryAndAbelianHeights §6.5; §0.2 cm-height invariance and colmez linearity.
+AnalyticNumberTheoryPartI §§2.31d–2.32, 2.44–2.46, 3.27; `NumberField.IsCMField.regulator_div_regulator_eq_two_pow_mul_indexRealUnits_inv`; `NumberField.classNumber_pos`; `NumberField.IsCMField.indexRealUnits_eq_one_or_two`; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; AbelianSchemesAndArithmeticModuli §§A6.1, A6.4–A6.5, A6.8, A6.37; `NumberField.card_ideal_absNorm_le`; `TauCeti.AlgebraicGeometry.AbelianVariety`; `TauCeti.AlgebraicGeometry.AbelianVariety.End`; `TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny`; `AlgebraicGeometry.Scheme.Hom.finrank`; Layer 9 averaged Colmez; ArakelovGeometryAndAbelianHeights §6.5; §0.2 cm-height invariance and colmez linearity.
 
 ## Layer 11: Primitive CM Galois orbits
 
