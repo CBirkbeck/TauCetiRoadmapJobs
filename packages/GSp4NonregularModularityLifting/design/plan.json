@@ -3792,18 +3792,6 @@
       "section": "§6.4 and §7.11"
     },
     {
-      "slug": "dyadic-polarized-ordinary-global-data",
-      "supplier": "GlobalGaloisDeformations",
-      "section": "G7, extending §8.1 and R04.5–R04.6",
-      "needs": "Supply arbitrary-rank p=2 polarized ordinary deformation problems over their multivariable weight algebras, their h³-aware Selmer presentations and two-tame-type Taylor–Wiles data under the CM, near-adequate and strong-residual-oddness hypotheses of BCGP25 Theorem 5.7.14."
-    },
-    {
-      "slug": "dyadic-general-ordinary-local-image",
-      "supplier": "LocalGaloisDeformationRings",
-      "section": "§§6.3, 6.24",
-      "needs": "Construct the reduced 2-torsion-free ordinary local image ring for every ordered upper-triangular residual GLₙ flag and prove the exact finite-extension integer-point flag criterion of BCGP25 Proposition 5.6.6(1)–(2), retaining the trivial-residual large-degree hypotheses for the component theorem in (3)."
-    },
-    {
       "slug": "symplectic-descent-every-residue-characteristic",
       "needs": "Extend symplectic_coefficient_descent to every residue characteristic by removing p>2, keeping the continuous smaller-ring representation with the same nondegenerate alternating form and full multiplier and the similitude conjugator congruent to 1 modulo the larger maximal ideal (BCGP25 Lemma 7.4.8).",
       "supplier": "IntegralHeckeAndGaloisDeterminants",
@@ -3814,6 +3802,18 @@
       "needs": "For neat prime-to-p genus-two levels X₀(Q) over ℚ, non-Eisenstein m, a≥2 and L=ω(1,3−a), prove dim_E eαβH₁(X₀(Q),L)_(m,E)≤dim_E eαβH₀(X₀(Q),L)_(m,E), under the all-weight classification of packets and multiplicity hypotheses of IC.6–IC.8 and the normalized degree-one p-action, grouping the multiplicity-counted summands by finite part with the Serre-dual transported projector.",
       "supplier": "AutomorphicBundlesPartII",
       "section": "IC.8, using IC.6–IC.7 and IC.3–IC.4"
+    },
+    {
+      "slug": "dyadic-ordinary-support",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
+      "section": "OL.1–OL.3",
+      "needs": "Supply OL.1–OL.3 at p=2, including the arbitrary-rank definite-unitary ordinary tower and arithmetic control, the ordinary global dimension bound, and the finiteness and sufficiently-deep-level reduced R=T of BCGP25 Theorem 5.7.14 under all six hypotheses."
+    },
+    {
+      "slug": "symplectic-ordinary-component-support",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
+      "section": "OL.4–OL.5",
+      "needs": "Supply OL.4–OL.5, including the selected ordinary deformation problem and Hida Hecke map, and the finiteness and reduced R=T of BCGP25 Theorem 6.3.4 on the seed-selected components under Hypothesis 6.3.1, retaining q_v≡1 modulo 9 when p=3."
     }
   ],
   "sourceIssues": [

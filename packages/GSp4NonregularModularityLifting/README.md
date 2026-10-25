@@ -10,9 +10,7 @@ Generic determinant reconstruction, action images, finite local quotients, facto
 
 Integral coherent complexes, duality, Hochschild–Serre, vanishing, boundary localization, Arthur exclusions and the characteristic-zero dimension equality are stated by AutomorphicBundlesPartII IC.1–IC.8. All four higher-Hida/Coleman chambers, the completed filtration and the singular classicality criterion are imported from PadicFamiliesPartII E6, S7 and F8. The general analytic Bruhat coefficients belong to OverconvergentAutomorphicForms §§8.6–8.7. §1.1 owns the normalized genus-two H⁰ p-actions, §3.1 owns Hasse lifts and torsion congruences, §3.1a owns secondary Hasse geometry, and §4.2 owns the corrected theta construction and injectivity. Their general coherent-complex carriers remain with AutomorphicBundlesPartII. The selected all-degree p-action extension is an explicit supplier gap there. The regular Galois construction belongs to AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5–AG2.6; §3.4 assembles its selected integral images. Frobenius-annihilation isotypy belongs to ArithmeticGaloisRepresentations §7.6, and solvable GSp₄ descent to EndoscopicTransferAndUnitaryTraceComparison §13.2.
 
-The rank-two odd-characteristic definite-unitary ordinary tower is PotentialModularityAndCompatibleSystems §8.3; §11.0a extends that tower to arbitrary rank n and to p=2 with upper-Iwahori level above 2.
-
-The regular ordinary support results needed over CM and totally real fields, including the definite-unitary ordinary tower/control input, are targets §11.0a–§11.0b; their role is to establish support before rank is computed. The elementary exceptional isomorphism on the six-point symplectic module is a target in §8.4. Neither result is a dependency on an unnamed future construction. General local deformation and image theories remain with LocalGaloisDeformationRings and ArithmeticGaloisRepresentations, through the exact extensions below. Patching algebra is DeformationAndDerivedPatchingAlgebra §§5.5–5.8; Layer 8, Layer 9 and Layer 10 verify three different arithmetic applications.
+The arbitrary-rank dyadic definite-unitary ordinary tower, control, finiteness and reduced R=T are stated by OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.3; its OL.4–OL.5 state the seed-selected symplectic ordinary support theorem for p>2. §11.4 applies these interfaces to the component through the singular point. The rank-two odd-characteristic tower of PotentialModularityAndCompatibleSystems §8.3 is an input to that supplier, rather than a construction here. The elementary exceptional isomorphism on the six-point symplectic module is a target in §8.4. General local deformation and image theories remain with LocalGaloisDeformationRings and ArithmeticGaloisRepresentations, through the exact extensions below. Patching algebra is DeformationAndDerivedPatchingAlgebra §§5.5–5.8; Layer 8, Layer 9 and Layer 10 verify three different arithmetic applications.
 
 ## Conventions
 
@@ -89,8 +87,6 @@ What GlobalGaloisDeformations must provide (gap:gsp4-torus-tw-data): Supply the 
 
 What GlobalGaloisDeformations must provide (gap:p12-variable-weight-patching-data): Supply the P12 variable-weight ordinary minimal deformation problems with prescribed universal similitude and Taylor–Wiles presentations over the two-weight Borel and one-weight GL₂-parabolic algebras, with the specified ordered flags, tame types and augmentation maps.
 
-What GlobalGaloisDeformations must provide (gap:dyadic-polarized-ordinary-global-data): Supply arbitrary-rank p=2 polarized ordinary deformation problems over their multivariable weight algebras, their h³-aware Selmer presentations and two-tame-type Taylor–Wiles data under the CM, near-adequate and strong-residual-oddness hypotheses of BCGP25 Theorem 5.7.14.
-
 ### From TauCetiRoadmap.HodgeTateAndCanonicalSubgroups
 
 §§0.2–0.5 and 0.14–0.15. Use the finite-level and p-divisible Hodge–Tate maps, their linearization, isogeny functoriality and the ordinary-locus Hasse criterion. Actual rational Siegel period covers and coefficient sections are taken from AutomorphicBundles B3.HT, rather than inferred from a pointwise Hodge–Tate map.
@@ -111,13 +107,11 @@ What IntegralHeckeAndGaloisDeterminants must provide (gap:gsp4-pseudocharacter-r
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
-§§2.7, 2.12, 2.17, 6.3 and 6.26–6.29. Use minimal U/P/H inertia conditions, ordinary flag and plane deformation functors, their component comparisons and tame Taylor–Wiles scalar inertia. Section 6.27 is explicitly an odd-p B/P-ordinary comparison and does not supply dyadic regularity. Preserve its distinction between a full flag, the two Borel orderings and the P intersection. Pure conductor constancy is used only on the specified component.
+Section 2.7 supplies the residual U/P/H types; §2.25 supplies `GSp4.MinimalAt`, including Artinian nilpotent-orbit membership at U primes and reduction-injective P/H inertia. Section 6.14 supplies `GSp4.SiegelOrdinary`, its split unramified Lagrangian plane, zero (1,2),(3,4) entries, uniqueness and tangent space; §6.26 supplies its tangent dimension and finite-flat comparison. Use §2.17 for ordered distinct-root Taylor–Wiles scalar inertia. For the P12 ordered full-flag functor use §6.3 together with gap:p12-flag-orientation. For the BCGP branch use §6.27 only for the odd-p B/P comparison and §6.29 for the all-p ordinary flag-incidence image with its arithmetic point criterion. Preserve the distinction between the split unramified plane, a full flag, the two Borel orderings and their P intersection. Pure conductor constancy is used only on the specified component under gap:dyadic-ordinary-local-regularity.
 
 What LocalGaloisDeformationRings must provide (gap:p12-flag-orientation): Compare P12 automorphic and deformation ordinarity on specified ordered flags and Ext conventions, resolving both the opposite ratio directions of Definitions 3.2 and 5.3 and the exponent prescriptions iκ versus −iκ in §3.2 and Definition 5.3, including the parabolic ratio of §7.4, before transporting representability or Hida control.
 
 What LocalGaloisDeformationRings must provide (gap:dyadic-ordinary-local-regularity): Supply the p-distinguished pure semistable weight-two symplectic ordinary point regularity, dimensions and unique-component/conductor comparisons needed by BCGP25 §7 for every p, including p=2, with the chosen stabilization retained.
-
-What LocalGaloisDeformationRings must provide (gap:dyadic-general-ordinary-local-image): Construct the reduced 2-torsion-free ordinary local image ring for every ordered upper-triangular residual GLₙ flag and prove the exact finite-extension integer-point flag criterion of BCGP25 Proposition 5.6.6(1)–(2), retaining the trivial-residual large-degree hypotheses for the component theorem in (3).
 
 ### From TauCetiRoadmap.ModularityAndLanglandsExtensions
 
@@ -161,13 +155,24 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-pure-monodromy-un
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:projective-finite-group-satake): Supply the regular residual GSp₄ Satake-block comparison of BCGP25 Lemmas 7.4.11–7.4.12 on projective finite-group modules, compatibly with the partial central condition and diamond augmentation, without dividing by 8.
 
-### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
+### From TauCetiRoadmap.OrdinaryAutomorphicFormsAndModularityLiftingPartII
 
-Sections 7.4–7.6 supply algebraic modular forms on a definite reductive group with their actual coefficient action, finite stabilizer and central-character conditions, base change and automorphic realization. §11.0a builds the ordinary definite-unitary tower and its control comparisons on these carriers. The stabilizer-unit condition is retained at the sufficiently small levels; a 2-adic argument never averages over an even stabilizer order.
+OL.1–OL.3 supply the definite-unitary ordinary tower and control at p=2, the ordinary global ring and dimension bound, and OL.3/dyadic-ordinary-finiteness and OL.3/dyadic-ordinary-r-equals-t (BCGP25 Theorem 5.7.14, pp.134–135; BCGP25 line 6088). For n≥2 retain a CM field F with F/F⁺ unramified at finite places, splitting of places above 2 and below seed ramification, n[F⁺:ℚ] divisible by 4, an ordinary RACSDC residual seed, nearly adequate residual image containing a regular-semisimple element, and strong residual oddness when n is even. The finite set T consists of split places and contains those above 2 and below seed ramification. Finiteness over Λ=O[[T(2)]] requires no extra tame depth; the nilpotent-kernel Hecke comparison retains sufficiently deep level at T outside 2. The coefficient convention is f(gu)=u⁻¹f(g); use upper-Iwahori levels above 2 and the algebraic weight twist in arithmetic control.
 
-### From TauCetiRoadmap.PotentialModularityAndCompatibleSystems
+What OrdinaryAutomorphicFormsAndModularityLiftingPartII must provide (gap:dyadic-ordinary-support): Supply OL.1–OL.3 at p=2, including the arbitrary-rank definite-unitary ordinary tower and arithmetic control, the ordinary global dimension bound, and the finiteness and sufficiently-deep-level reduced R=T of BCGP25 Theorem 5.7.14 under all six hypotheses.
 
-§8.3 supplies the rank-two odd-characteristic definite-unitary ordinary tower, normalized Hecke operators, ordinary projector, big ordinary Hecke algebra and Λ-freeness at levels without p-torsion stabilizers, with its algebraic weight and tame-character conventions. §11.0a extends this input to arbitrary n≥2 and p=2.
+OL.4–OL.5 supply OL.4/ordinary-seed-datum, OL.4/selected-ordinary-problem, OL.4/gsp4-hida-galois-representation, OL.5/symplectic-ordinary-finiteness and OL.5/symplectic-ordinary-r-equals-t (BCGP25 Hypothesis 6.3.1 and Theorem 6.3.4, pp.146–148; BCGP25 line 6628 and line 6694). Retain p>2 split completely in F⁺, an ordinary cuspidal GSp₄ seed of central character |·|² in weight two or regular weight, reasonable and tidy residual image, compatible stabilizations and the unique seed component at each v|p. At tame R require trivial residual restriction, Iwahori seed vectors and q_v≡1 modulo p, strengthened to q_v≡1 modulo 9 at p=3. Use the neat auxiliary place supplied by tidiness and only the seed-selected local components, without imposing residual p-distinction.
+
+What OrdinaryAutomorphicFormsAndModularityLiftingPartII must provide (gap:symplectic-ordinary-component-support): Supply OL.4–OL.5, including the selected ordinary deformation problem and Hida Hecke map, and the finiteness and reduced R=T of BCGP25 Theorem 6.3.4 on the seed-selected components under Hypothesis 6.3.1, retaining q_v≡1 modulo 9 when p=3.
+
+**Checks for the regular ordinary imports.**
+
+- At n=4 and [F⁺:ℚ]=1 the dyadic divisibility test gives 4≡0 modulo 4; n=2 gives 2 and fails it. These are numerical controls, not existence assertions for such CM fields.
+- At u=diag(1,3) and n=2, the universal weight factor ∏u_i^(1−i) is 1/3; replacing it by 3 changes arithmetic specialization. For the contragredient coefficient rule, a one-dimensional coefficient action u↦3 gives f(gu)=f(g)/3, whereas u↦1 gives f(gu)=f(g).
+- At p=2, transpose fixes Iₙ, so the scalar adjoint invariant line has dimension 1; the polarized Selmer Euler count must retain h³. With n=2, [F⁺:ℚ]=2, #T=3 and #Q=5, h²=1 and h³=1 give h¹=5, while h³=0 gives 6.
+- At p=3, q_v=7 passes modulo 3 but fails modulo 9; q_v=19 passes both tests.
+- In E[x,y]/(xy), the origin lies on two components, so it cannot serve as the unique seed component even though it lies on x=0.
+- A nontrivial 2-power tame character ψ reduces to 1 but has inertia eigenvalue ψ(σ)≠1; ψ⊕1^(n−1) fails unipotent ramification. Solvable preparation controls restrictions of original local lifts, rather than all lifts over the larger field.
 
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
@@ -175,7 +180,7 @@ Sections R07.1–R07.2 supply the multiplicative-connected filtration, invariant
 
 ## How to read the build
 
-Layer 0–Layer 1 fix the data, levels and selected actions. Layer 2 constructs characteristic-zero interpolation independently of minimal patching, using the imported family theory. Layer 3 constructs Hasse lifts and the secondary determinant section and provides regular finite-quotient systems; Layer 4 proves cuspidal doubling; Layer 5 assembles the singular Galois deformation. Layer 6 controls Klingen level, Layer 7 isolates the defect on the selected summand, and Layer 8 applies balanced patching. Layer 9 is the independent ordinary-family branch. Layer 10 proves local freeness with rank allowed to be zero; Layer 11 supplies regular ordinary support, proves positive rank one in each chamber, and applies higher-Coleman classicality. A *Needs* line distinguishes statement carriers from the ingredients of the indicated proof route; another proof may replace that route without changing the statement.
+Layer 0–Layer 1 fix the data, levels and selected actions. Layer 2 constructs characteristic-zero interpolation independently of minimal patching, using the imported family theory. Layer 3 constructs Hasse lifts and the secondary determinant section and provides regular finite-quotient systems; Layer 4 proves cuspidal doubling; Layer 5 assembles the singular Galois deformation. Layer 6 controls Klingen level, Layer 7 isolates the defect on the selected summand, and Layer 8 applies balanced patching. Layer 9 is the independent ordinary-family branch. Layer 10 proves local freeness with rank allowed to be zero; Layer 11 applies the supplied regular ordinary support, proves positive rank one in each chamber, and applies higher-Coleman classicality. A *Needs* line distinguishes statement carriers from the ingredients of the indicated proof route; another proof may replace that route without changing the statement.
 
 ## Layer 0: Conventions, residual data and tame levels
 
@@ -240,13 +245,14 @@ The construction has the following interfaces.
 **Checks.**
 
 - For p=7, a=4 passes the weight range while a=6 fails the strict bound.
-- A lift that changes a U₁ inertia generator to rank-two monodromy fails minimality.
+- Over A=𝔽₇[η]/(η²), put N₀=E₂₃ and N=N₀+η(E₁₂−E₃₄) for the alternating form J₁₄=J₂₃=1, J₄₁=J₃₂=−1. Both satisfy NᵀJ+JN=0 and reduce to U₁, but N₀²=0 and N²=η(E₁₃−E₂₄)≠0; §2.25 excludes the second lift by Artinian orbit membership.
+- The symplectic candidate I+η(E₁₂−E₃₄) preserves the standard full flag and Lagrangian plane; its plane restriction I₂+ηE₁₂ has diagonal (1,1) but (1,2) entry η≠0. A full flag alone does not exclude this entry; §6.14 does and requires the plane itself to split as the two prescribed unramified characters.
 - For a=2 the multiplier is ε⁻¹; a representation with multiplier ε has the wrong normalization.
 - For p=7,a=5 the numerical inequality holds, but ν(c)=(−1)^(1−5)=1 violates oddness; a=4 gives ν(c)=−1.
 
 Do not replace Assumption 4.1 by adequacy, or the selected ordinary plane by an arbitrary filtration. The multiplier is ε^(1−a), with ε of Hodge–Tate weight −1 and geometric Frobenius ε(Frobℓ)=ℓ⁻¹.
 
-*Needs:* Layer 0 (nondegenerate ordinary roots); ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29.
+*Needs:* Layer 0 (nondegenerate ordinary roots); ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); LocalGaloisDeformationRings §§2.7, 2.25, 6.14.
 
 ### 0.4 Minimal tame levels and the neat auxiliary prime
 
@@ -302,7 +308,7 @@ Take p=11, a=4 and roots α=2, β=3 in 𝔽₁₁. The four-factor product is 7 
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; AutomorphicBundles B3; AutomorphicBundlesPartII IC.1–IC.3; AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); GlobalGaloisDeformations R04.5–R04.6 (gap:gsp4-cg-selmer-presentation); PadicFamiliesPartII E6/four-pieces and F8; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; ShimuraCompactifications C3.9–C3.10; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5; Mathlib `ZMod`. The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; AutomorphicBundles B3; AutomorphicBundlesPartII IC.1–IC.3; AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); GlobalGaloisDeformations R04.5–R04.6 (gap:gsp4-cg-selmer-presentation); PadicFamiliesPartII E6/four-pieces and F8; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; LocalGaloisDeformationRings §§2.7, 2.25, 6.14 and §2.17; ShimuraCompactifications C3.9–C3.10; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5; Mathlib `ZMod`. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 1: Selected cuspidal Hecke images
 
@@ -680,7 +686,7 @@ At high regular weight use vanishing, a torsion-free characteristic-zero eigenfo
 
 The proof must identify the local characters on the selected quotient; a p-polynomial identity requires more than a good-prime trace descent. Do not use the unproved torsion-freeness expectation of Remark 6.14.
 
-*Needs:* Layer 3 (selected annihilator quotients); Layer 3 (central characters and residual galois systems); Layer 2 (qualified crystalline specialization); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5; AutomorphicGaloisRepresentationsPartII AG2.6; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26.
+*Needs:* Layer 3 (selected annihilator quotients); Layer 3 (central characters and residual galois systems); Layer 2 (qualified crystalline specialization); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.25 and §6.3; AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5; AutomorphicGaloisRepresentationsPartII AG2.6; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26.
 
 ### Examples
 
@@ -688,7 +694,7 @@ With p=7, m=2, μ=(4,2) and the chosen lift of hʳ, take s=7t₀ for a positive 
 
 ### Dependencies
 
-AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5; AutomorphicGaloisRepresentationsPartII AG2.6; Layer 1; Layer 2; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5. The subsection *Needs* lines give the statement and route inputs separately.
+AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5; AutomorphicGaloisRepresentationsPartII AG2.6; Layer 1; Layer 2; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.25 and §6.3; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 4: Cuspidal Fourier doubling
 
@@ -722,11 +728,11 @@ Do not assert that every formal series is modular. The modularity of T and Q₂ 
 
 ### 4.2 Theta operators with corrected weights
 
-Construct the scalar theta operator Θ with Fourier multiplier det(Q) and its injectivity in the range 2≤k≤p+1, p∤k(2k−1), excluding k=p−1. Construct the vector operator θ₁ from weight (j,k) to (j+p−1,k+p+1) with coefficient con(a(F;Q)⊗Q), with no extra determinant factor. For the doubling use p>3 and p−1>j≥4, where θ₁ is injective on the required modular forms. These are geometric operator and injectivity targets of this subsection; the scalar Hasse exception and vector coefficient normalization are part of their statements.
+For p>3 construct the scalar theta operator Θ with Fourier multiplier det(Q) and its injectivity in the range 2≤k≤p+1, p∤k(2k−1), excluding k=p−1. For p>3, j≥k+2≥4 and j−k<p−2, construct the vector operator θ₁ from weight (j,k) to (j+p−1,k+p+1) with coefficient con(a(F;Q)⊗Q), with no extra determinant factor. Its target symmetric degree is j−k−2. Separately prove injectivity at k=2 and p−1>j≥4 for the doubling application. These are geometric operator and injectivity targets of this subsection; the scalar Hasse exception and vector coefficient normalization are part of their statements.
 
 The two characteristic-p operators have the following interfaces.
 
-- They are k-linear and preserve cuspidality, with scalar weight shift (p+1,p+1) and vector shift (p−1,p+1).
+- In their respective construction ranges they are linear over the residue field and preserve cuspidality, with scalar weight shift (p+1,p+1) and vector shift (p−1,p+1).
 - Scalar coefficients are multiplied by det(Q); vector coefficients use the fixed dual-basis contraction, with no additional determinant. The change-of-frame identities put these expressions in the indicated target coefficient bundles.
 - Extension of residue fields commutes with both constructions, their Fourier formulas and the stated injectivity comparisons in the same weight ranges.
 
@@ -741,7 +747,9 @@ Use the exact supplier contract for the geometric theta construction and its hol
 - In the p=7 contraction model, scaling the input coefficient by 2 changes contraction 5 to 3=2·5, while the zero input gives 0; field extension preserves these values.
 - At scalar k=p−1, the nonzero Hasse series 1 has theta equal to 0; this excludes an injectivity statement at that weight.
 - At p=7,k=p+1=8, k(2k−1)=120≡1 modulo 7, so the scalar arithmetic exclusion is satisfied.
-- For j=4 the vector target weight is (p+3,p+3). With the elementary contraction normalized by con(e₂²⊗f₁²)=−2 in dual bases, a rank-one index f₁² at p=7 gives contraction 5 and determinant 0; the extra determinant factor would change 5 to 0 (CG20 p.877; CG20 line 2951).
+- At p=7, (j,k)=(2,2) would give target (8,10) of symmetric degree −2, so it is excluded from the vector construction. The input (4,2) satisfies 2<5 and gives (10,10) of symmetric degree 0.
+- At p=7, (j,k)=(6,2) satisfies the construction bound 4<5, but fails the separate injectivity bound 6<6.
+- For (j,k)=(4,2) the vector target weight is (p+3,p+3). With the elementary contraction normalized by con(e₂²⊗f₁²)=−2 in dual bases, a rank-one index f₁² at p=7 gives contraction 5 and determinant 0; the extra determinant factor would change 5 to 0 (CG20 p.877; CG20 line 2951).
 
 The vector contraction has no determinant prefactor, and all stated theta identities are in characteristic p.
 
@@ -891,7 +899,7 @@ Use the two selected quotient maps to identify the global Galois representation 
 
 Two unramified characters appearing only as semisimplified constituents do not suffice; actual stable submodules and their independence are required.
 
-*Needs:* Layer 4 (the two hasse-projection injections); Layer 3 (regular-weight hecke-valued galois representation); Layer 0 (nonregular lifting data); IntegralHeckeAndGaloisDeterminants §§1.1–1.7.
+*Needs:* Layer 4 (the two hasse-projection injections); Layer 3 (regular-weight hecke-valued galois representation); Layer 0 (nonregular lifting data); LocalGaloisDeformationRings §6.14; IntegralHeckeAndGaloisDeterminants §§1.1–1.7.
 
 ### 5.2 Minimal Galois deformation over the singular Hecke algebra
 
@@ -909,7 +917,7 @@ Construct representations over the selected O/ϖᵐ image quotients by the two r
 
 Do not identify a torsion-ring representation merely from a characteristic-zero product embedding. The ring map is not yet an isomorphism.
 
-*Needs:* Layer 5 (the unramified ordinary two-plane); Layer 3 (selected annihilator quotients); Layer 3 (central characters and residual galois systems); GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; IntegralHeckeAndGaloisDeterminants IHG.4.
+*Needs:* Layer 5 (the unramified ordinary two-plane); Layer 3 (selected annihilator quotients); Layer 3 (central characters and residual galois systems); GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); LocalGaloisDeformationRings §§2.7, 2.25, 6.14 and §2.17; IntegralHeckeAndGaloisDeterminants IHG.4.
 
 ### Examples
 
@@ -917,7 +925,7 @@ For roots 2 and 3 over F₁₁, the two residual unramified lines are independen
 
 ### Dependencies
 
-Layer 0; Layer 3; Layer 4; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29. The subsection *Needs* lines give the statement and route inputs separately.
+Layer 0; Layer 3; Layer 4; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.25, 6.14 and §2.17. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 6: Klingen Taylor–Wiles level control
 
@@ -1255,7 +1263,7 @@ The construction has the following interfaces.
 
 This branch has no dyadic case and does not use the CG weight-(a,2) balanced module. Admissibility includes the actual automorphic seed, not only an abstract residual representation.
 
-*Needs:* ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; GlobalGaloisDeformations G7 (gap:p12-variable-weight-patching-data); LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation); PadicFamiliesPartII F8 (gap:p12-ordinary-horizontal-control in Layer 9).
+*Needs:* ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; GlobalGaloisDeformations G7 (gap:p12-variable-weight-patching-data); LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation); PadicFamiliesPartII F8 (gap:p12-ordinary-horizontal-control in Layer 9).
 
 ### 9.2 Variable-weight ordinary R = T
 
@@ -1291,7 +1299,7 @@ The local and residual conditions define an O-valued point of R̃ over κ′. Tr
 
 For κ′=(2,2), the conclusion remains p-adic; the BCGP classicality branch needs additional geometric and multiplicity inputs.
 
-*Needs:* Layer 9 (variable-weight ordinary r = t); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation).
+*Needs:* Layer 9 (variable-weight ordinary r = t); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation).
 
 ### 9.4 Parallel-weight parabolic ordinary lifting
 
@@ -1309,7 +1317,7 @@ Use the supplied parabolic horizontal-control theorem instead of the Borel Hida 
 
 Do not transfer a regular-weight classicality assertion to the parallel singular specialization.
 
-*Needs:* Layer 9 (pilloni ordinary admissibility data); Layer 9 (variable-weight ordinary r = t); PadicFamiliesPartII F8 (gap:p12-ordinary-horizontal-control in Layer 9); LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation).
+*Needs:* Layer 9 (pilloni ordinary admissibility data); Layer 9 (variable-weight ordinary r = t); PadicFamiliesPartII F8 (gap:p12-ordinary-horizontal-control in Layer 9); LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation).
 
 ### Examples
 
@@ -1317,7 +1325,7 @@ On the Borel weight algebra O[[w₁,w₂]], the parallel specialization sends w�
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; GlobalGaloisDeformations G7 (gap:p12-variable-weight-patching-data); GlobalGaloisDeformations R04.5–R04.6 (gap:p12-variable-weight-patching-data); PadicFamiliesPartII F8 (gap:p12-ordinary-horizontal-control in Layer 9); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation). The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; GlobalGaloisDeformations G7 (gap:p12-variable-weight-patching-data); GlobalGaloisDeformations R04.5–R04.6 (gap:p12-variable-weight-patching-data); PadicFamiliesPartII F8 (gap:p12-ordinary-horizontal-control in Layer 9); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; LocalGaloisDeformationRings §§6.3, 6.27 (gap:p12-flag-orientation). The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 10: Characteristic-zero higher-Hida patching
 
@@ -1345,7 +1353,7 @@ The construction has the following interfaces.
 
 The definition is independent of CG20’s small-weight and odd-p conditions.
 
-*Needs:* ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4.
+*Needs:* ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4.
 
 ### 10.2 Four localized higher-Hida multiplicity modules
 
@@ -1432,7 +1440,7 @@ If the localized module is zero, use the unique algebra map to its zero image. O
 
 Dense field-valued points do not automatically provide an integral GSp₄-valued representation over a nonreduced ring.
 
-*Needs:* Layer 10 (characteristic-zero auxiliary hecke image); IntegralHeckeAndGaloisDeterminants §1.5 (gap:symplectic-descent-every-residue-characteristic); Layer 2 (ordinary weight-two galois representation); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4.
+*Needs:* Layer 10 (characteristic-zero auxiliary hecke image); IntegralHeckeAndGaloisDeterminants §1.5 (gap:symplectic-descent-every-residue-characteristic); Layer 2 (ordinary weight-two galois representation); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4.
 
 ### 10.7 Projective Satake comparison and diamond coinvariants
 
@@ -1470,7 +1478,7 @@ In applying §5.8 of DeformationAndDerivedPatchingAlgebra, prove the uniform bou
 
 The patched ring action and lift are supplied by DeformationAndDerivedPatchingAlgebra §5.8; this target retains their hypotheses.
 
-*Needs:* Layer 10 (projective satake comparison and diamond coinvariants); DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity).
+*Needs:* Layer 10 (projective satake comparison and diamond coinvariants); DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity).
 
 ### Examples
 
@@ -1478,57 +1486,11 @@ For p=2, N=1 and a single two-direction auxiliary torus, Δ≅C₂² has order 4
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4; SmoothRepresentationsOfLocalGroups SR.4.1–SR.4.5; SmoothRepresentationsOfLocalGroups SR.4.5 (gap:projective-finite-group-satake). The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4; SmoothRepresentationsOfLocalGroups SR.4.1–SR.4.5; SmoothRepresentationsOfLocalGroups SR.4.5 (gap:projective-finite-group-satake). The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 11: Rank one and classical weight-two lifting
 
 Define the two-wall R-regular weight condition and compute multiplicity one only at nonzero regular points on the relevant component. Retain all five conditions of each dyadic/odd automorphic-seed alternative. Prove support through the singular point using the appropriate regular ordinary lifting and solvable descent suppliers, then rank one separately in all four chambers. Apply the image/de Rham/four-multiplicity higher-Coleman criterion to deduce classical weight-two modularity, retaining all explicit proof premises.
-
-### 11.0a Regular ordinary unitary finiteness and support
-
-For a CM extension F/F⁺ and n≥2, let r̄:G_F→GLₙ(k) be the residual representation of an ordinary RACSDC seed π. Assume F/F⁺ everywhere unramified; every place above 2 and every place below ramification of π splits in F; n[F⁺:ℚ] is divisible by 4; the residual image is nearly adequate and contains a regular-semisimple element; and, for even n, the polarized pair with multiplier ε̄^(1−n)δ_(F/F⁺)^n is strongly residually odd at an infinite place. Let T be a finite split set containing all places above 2 and all seed ramification. For the variable-weight ordinary polarized deformation problem with these fixed data, prove that R_(T,ord) is finite over its weight algebra Λ. At every sufficiently deep tame level of BCGP25 Definition 5.7.13, prove that its surjective ordinary Hecke map has nilpotent kernel and identifies the reduced deformation ring with the ordinary Hecke image. This is the general regular ordinary support theorem, rather than an assumption that the singular target is automorphic (BCGP25 Theorem 5.7.14, pp.134–135; BCGP25 line 6088).
-
-Use polarized global deformation and Taylor–Wiles theory, ordinary projective modules, both auxiliary tame deformation types and Ihara avoidance, retaining the dyadic global h³ term.
-
-For n=2 and odd residue characteristic use PotentialModularityAndCompatibleSystems §8.3. Extend its ordinary definite-unitary integral tower to arbitrary n≥2 and to p=2, on the group over F⁺ compact at infinity and quasi-split at finite places determined by these hypotheses. Its coefficient functions satisfy f(gu)=u⁻¹f(g) for the actual algebraic weight and the specified tame types. At places above 2 use upper-Iwahori level (b,c). For a_v,j=diag(ϖ_v,…,ϖ_v,1,…,1), with j copies of ϖ_v, normalize the double coset by U_v,j=(w₀λ)(a_v,j)⁻¹[U a_v,j U], where w₀ is the longest Weyl element. The algebraic character takes a_v,j to a nonzero E-value; prove integral preservation before reduction. Use the commuting torus diamonds and the ordinary summand from the supplied factorial projector. Form the direct limit of E/O-valued ordinary forms at deeper wild levels, its compact O-linear fraction-quotient dual, and the actual inverse-limit Hecke action image. The weight algebra is O[[T(2)]], where T(2) is the kernel of reduction of the product of local unit tori. On the universal λ=0 tower the weight action is u↦(∏τ∏_(i=1)^n τ(u_i)^(1−i))⟨u⟩; all indices i in this formula run from 1 to n. The nonzero unit factor is retained through arithmetic specialization. Prove finite generation of the Hecke image over this weight algebra and its arithmetic-character comparison with the corresponding finite-level ordinary Hecke characters, including the algebraic weight twist. At sufficiently small tame level prove the auxiliary finite-group projectivity, norm/descent and horizontal comparisons used by the free-module patching datum, for both chosen tame deformation types. These are supporting targets of this subsection, not a claim that the genus-two modules of PadicFamiliesPartII F8 supply arbitrary-rank unitary forms (BCGP25 §5.7, pp.130–134; BCGP25 line 5905 and line 5988).
-
-The tower has the following interfaces.
-
-- The coefficient action and normalized Hecke maps respect level inclusions, the weight character and the fixed central and tame types.
-- The E/O direct limit, compact dual and inverse-limit action image retain the same ordinary projector and prime-to-2 Hecke polynomials.
-- At the specified small levels the finite auxiliary-group norm gives the actual augmentation comparison, and regular arithmetic character specializations recover the stated finite-level systems.
-
-For even n at p=2 the dyadic global h³ term is 1, not 0: the scalar matrix is fixed by transpose conjugation. The Euler-characteristic and presentation calculation must include it. Solvable preparation concerns restrictions of original lifts; it does not say that every lift over the enlarged field is unipotently ramified. The necessary general ordinary coefficient/control input is the definite-unitary tower constructed in this subsection, together with the explicit dyadic local and global contracts. After solvable preparation, use the trivial-residual component theorem only when [F_v:ℚ₂]>n(n−1)/2+1 and after splitting the torsion-character components over E. At n=4 and degree 8 the local dimension is 1+16+8·10=97; degree 7 fails the strict large-degree hypothesis (BCGP25 Proposition 5.6.6 and Remark 5.6.7, p.129; BCGP25 line 5831).
-
-**Checks for unitary ordinary coefficients.**
-
-- At trivial weight and one free class, the coefficient module is O and the identity double coset acts by 1; an inverse coefficient convention is detected at a character with χ(u)=ζ₃, since u⁻¹ acts by ζ₃⁻¹.
-- On the regular k[C₂]-module the unnormalized norm sends [1] to 1+g, including at p=2; on the trivial k[C₂]-module it sends 1 to 0, so small-level projectivity cannot be discarded.
-- For n=2 and one embedding, the weight factor at u=diag(1,3) is 3⁻¹=1/3, rather than 3; both are 2-adic units but are distinct. For O[[z]], the two characters z↦0 and z↦ϖ evaluate 1+z to 1 and 1+ϖ; only specified arithmetic characters enter the control comparison.
-
-
-
-**Checks.**
-
-- With n=4 and F⁺=ℚ, n[F⁺:ℚ]=4 passes the divisibility condition; n=2 and F⁺=ℚ gives 2 and fails.
-- At p=2, transpose fixes Iₙ, so the scalar invariant line has dimension 1. Setting h³=0 changes the presentation Euler count by 1.
-- A nontrivial 2-power tame character ψ reduces to 1, but ψ⊕1^(n−1) is not unipotently ramified; preparation must quantify over restrictions of the original local lifts.
-
-*Needs:* ArithmeticGaloisRepresentations §§7.4, 7.9–7.12 (gap:integral-enormity-and-oddness); GlobalGaloisDeformations G7 (gap:dyadic-polarized-ordinary-global-data); LocalGaloisDeformationRings §§6.3, 6.24 (gap:dyadic-general-ordinary-local-image) and its tame quotients; DeformationAndDerivedPatchingAlgebra §§5.6–5.8; AutomorphicFormsOnReductiveGroups §§7.4–7.6 for definite algebraic coefficient spaces; PotentialModularityAndCompatibleSystems §8.3 for the rank-two odd-characteristic tower; the unitary ordinary tower and control targets in this subsection. The proof uses their finite class spaces, not coherent cohomology of a genus-two variety.
-
-### 11.0b Regular ordinary symplectic component support
-
-Let p>2 split completely in a totally real field F⁺, and let π be an ordinary cuspidal GSp₄/F⁺ seed of central character |·|², in weight two or regular algebraic weight. Let r̄=r̄π,p be GSp₄-reasonable and tidy. Choose compatible ordinary stabilizations at every v|p, with the seed point lying on a unique component of the ordinary local image ring. Let R be a finite set of prime-to-p places containing seed ramification; at each v∈R require trivial residual representation, q_v≡1 modulo p, q_v≡1 modulo 9 when p=3, and an Iwahori-fixed seed vector. Choose the neat prime w₀ provided by tidiness, and the ordinary global deformation problem with the seed-selected components at p and unipotent conditions at R. Prove that this component deformation ring is finite over Λ_(GSp₄,F⁺), and its surjective Hida Hecke map has nilpotent kernel and identifies its reduction with that Hecke quotient. The construction does not require residual p-distinction; it retains the scheme-theoretic ordinary image ring and its arithmetic point condition (BCGP25 Hypothesis 6.3.1 and Theorem 6.3.4, pp.146–148; BCGP25 line 6628 and line 6694).
-
-Use the general rank-four ordinary Taylor–Wiles datum, the two tame deformation types and componentwise Ihara avoidance. Establish full H⁰ adjoint vanishing in the reasonable-image input used to select primes, and retain the integral ordinary module/control comparison. A local point on a component is not enough unless that component is the one selected by the seed.
-
-**Checks.**
-
-- At p=3, q_v=7 is 1 modulo 3 but 7 modulo 9 and fails; q_v=19 is 1 modulo 9 and passes this congruence test.
-- In E[x,y]/(xy), the origin lies on two components. A seed there fails uniqueness even when the target lies on x=0 as well.
-- At the distinguished weight-two point the two unramified characters may have equal reductions; the scheme-theoretic ordinary image still has an arithmetic point, whereas a residual-distinct flag theorem does not cover it.
-
-*Needs:* ArithmeticGaloisRepresentations §§7.9–7.12 (gap:integral-enormity-and-oddness); GlobalGaloisDeformations G7 and R04.5–R04.6; LocalGaloisDeformationRings §6.29; AutomorphicGaloisRepresentationsPartII AG2.P and AG2.6, including the regular and weight-two Galois systems of §2.5; PadicFamiliesPartII F8 and the horizontal-control contract; DeformationAndDerivedPatchingAlgebra §§5.6–5.8; AutomorphicBundlesPartII IC.1–IC.5.
 
 ### 11.1 R-regular classical weights
 
@@ -1577,7 +1539,7 @@ The construction has the following interfaces.
 
 Do not strengthen residual matching to p-adic matching in a way that would assume the conclusion. Nearly adequate, reasonable and tidy are separate imported predicates with definition-level supplier requests.
 
-*Needs:* Layer 10 (characteristic-zero weight-two patching data); ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity).
+*Needs:* Layer 10 (characteristic-zero weight-two patching data); ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity).
 
 ### 11.3 Multiplicity one at a nonzero regular point
 
@@ -1595,7 +1557,7 @@ Use regular arithmetic control to identify the fiber with the sum of cuspidal au
 
 A point on another local deformation component is not covered by the conductor/refinement argument.
 
-*Needs:* Layer 11 (r-regular classical weights); Layer 10 (four localized higher-hida multiplicity modules); Layer 2 (pure general-type monodromy upgrade); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-paramodular-newvector); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-ordinary-neat-refinement-lines).
+*Needs:* Layer 11 (r-regular classical weights); Layer 10 (four localized higher-hida multiplicity modules); Layer 2 (pure general-type monodromy upgrade); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-paramodular-newvector); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-ordinary-neat-refinement-lines).
 
 ### 11.4 Support through the singular point
 
@@ -1603,19 +1565,21 @@ With Layer 10 data and one seed alternative, prove (M_w)q≠0 for all four w by 
 
 (BCGP25, Proposition 7.5.10 proof, pp.177–179; Lemma 7.5.4, p.176; Proposition 7.5.3, p.175; Theorems 5.7.14 (p.134) and 6.3.4 (p.148) as imported inputs; BCGP25 line 8169.)
 
-Apply the regular ordinary finiteness/automorphy targets §11.0a–§11.0b, including the dyadic near-adequacy and local component hypotheses. Use finiteness and the dimension lower bound to make a component through q dominate the relevant weight component, then prove density of regular arithmetic points there. Apply the appropriate regular automorphy theorem at those points and the source’s solvable descent Proposition 7.5.3 to put them in Hecke support. Pass from dense supported points to support of the selected component; since M_w is finite and locally free at q, infer its positive local rank.
+Apply OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.3 at p=2 (gap:dyadic-ordinary-support), or OL.4–OL.5 at p>2 (gap:symplectic-ordinary-component-support), under the full hypotheses in the exact supplier contracts. In the dyadic alternative, make the source’s solvable CM preparation so places above 2 and below ramification split, F/F⁺ is unramified at finite places and 4[F⁺:ℚ] is divisible by 4; retain near adequacy, regular semisimplicity and strong residual oddness. In the odd-prime alternative retain the unique seed component and the tame q_v≡1 modulo 9 condition when p=3. Use finiteness and the dimension lower bound to make a component through q dominate the relevant weight component, then prove density of regular arithmetic points there. Apply the appropriate regular automorphy theorem at those points and the source’s solvable descent Proposition 7.5.3 to put them in Hecke support. Pass from dense supported points to support of the selected component; since M_w is finite and locally free at q, infer its positive local rank.
 
-Use §11.0a for the dyadic regular ordinary finiteness/automorphy input and §11.0b for the odd-prime component input. The solvable-descent hypotheses include irreducibility of the restricted representation and the ε twist in the CM alternative. A dense subset is taken inside the same component through q and inside the neighborhood where the module is free.
+Use OL.3/dyadic-ordinary-finiteness and OL.3/dyadic-ordinary-r-equals-t at p=2, and OL.5/symplectic-ordinary-finiteness and OL.5/symplectic-ordinary-r-equals-t at p>2, through those same contracts. The solvable-descent hypotheses include irreducibility of the restricted representation and the ε twist in the CM alternative. A dense subset is taken inside the same component through q and inside the neighborhood where the module is free.
 
 **Checks.**
 
+- In the dyadic restriction step n=4, so n[F⁺:ℚ]=4[F⁺:ℚ] is divisible by 4. The n=2, [F⁺:ℚ]=1 control gives 2 and cannot use that imported theorem.
+- In the odd-prime preparation at p=3, q_v=7 fails the tame hypothesis while q_v=19 passes; seed and target must remain on the same chosen ordinary component.
 - For A=E×E and M=E×0, support is precisely the first component; a point on the second has zero fiber despite the existence of an automorphic point on the first.
 - A finite module has closed support; if its annihilator vanishes at a dense subset of a component, the entire component lies in its zero locus. On A=E[x], a polynomial vanishing on infinitely many E-points is 0.
 - A nilpotent thickening A=E[ε]/(ε²), M=E has full set-theoretic support but nonzero annihilator (ε); support does not imply a global reduced R=T comparison on unrelated components.
 
-This is the nonvanishing proof; local freeness alone gives no support. The regular ordinary support is §11.0a–§11.0b and the solvable descent is EndoscopicTransferAndUnitaryTraceComparison §13.2.
+This is the nonvanishing proof; local freeness alone gives no support. The regular ordinary support is OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.5 and the solvable descent is EndoscopicTransferAndUnitaryTraceComparison §13.2.
 
-*Needs:* Layer 11 (the dyadic and odd-prime automorphic seeds); Layer 10 (characteristic-zero local freeness); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; EndoscopicTransferAndUnitaryTraceComparison §13.2; §11.0a–§11.0b.
+*Needs:* Layer 11 (the dyadic and odd-prime automorphic seeds); Layer 10 (characteristic-zero local freeness); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; EndoscopicTransferAndUnitaryTraceComparison §13.2; OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.3 (gap:dyadic-ordinary-support) and OL.4–OL.5 (gap:symplectic-ordinary-component-support).
 
 ### 11.5 Rank one at the weight-two point
 
@@ -1659,13 +1623,13 @@ Choose a regular supported point with R=3 and (h₁,h₂)=(−4,−1); its two g
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; EndoscopicTransferAndUnitaryTraceComparison §13.2; Layer 10; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6/four-pieces and F8; ShimuraData §§5.9–5.10, 5.18; PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; LocalGaloisDeformationRings §§2.7, 2.12, 2.17, 6.3, 6.26–6.29; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4. The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; EndoscopicTransferAndUnitaryTraceComparison §13.2; Layer 10; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6/four-pieces and F8; ShimuraData §§5.9–5.10, 5.18; PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4. OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.3 (gap:dyadic-ordinary-support) and OL.4–OL.5 (gap:symplectic-ordinary-component-support). The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Conditional theorem contracts
 
 The CG minimal R=T implications use the actual cuspidal selected modules at every auxiliary level and coefficient quotient, the all-index Fourier annihilation and scalar kernel vanishing of Layer 4, and the selected defect inequality of §7.4. The last requires a compatible integral p-idempotent and a rank comparison on that same summand; balance of the full module is insufficient. In weight (2,2) the uniform H² vanishing on X₀(Q) and X₁(Q) is a separate premise. For 4≤a<p−1 the imported small-weight theorem supplies that premise at all the required levels.
 
-The P12 ordinary-family implications retain the strong-ordinary flag/Ext comparison, well-ramified local conditions and horizontal control. They yield ordinary p-adic cusp forms at integral weights; a classicality conclusion requires its own analytic and geometric hypotheses. The BCGP implications retain the marked characteristic-zero patching comparisons of §10.8, all hypotheses of one complete seed alternative, the support results of §11.0a–§11.0b and the four independent multiplicity equalities. They use the exact singular Sen/Cousin comparison and classification of packets in the supplied classicality theorem. No equality of all reduced global deformation components is required to conclude rank one on the component through q.
+The P12 ordinary-family implications retain the strong-ordinary flag/Ext comparison, well-ramified local conditions and horizontal control. They yield ordinary p-adic cusp forms at integral weights; a classicality conclusion requires its own analytic and geometric hypotheses. The BCGP implications retain the marked characteristic-zero patching comparisons of §10.8, all hypotheses of one complete seed alternative, the support contracts from OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.3 at p=2 and OL.4–OL.5 at p>2 and the four independent multiplicity equalities. They use the exact singular Sen/Cousin comparison and classification of packets in the supplied classicality theorem. No equality of all reduced global deformation components is required to conclude rank one on the component through q.
 
 Every classification-dependent assertion is an implication from the specified inputs on packets, multiplicities and twisted weighted stabilization. The local adjoint-L assertion for generic packets is an additional local input to the monodromy theorem, rather than a global analytic nonvanishing assumption (BCGP25 Remark 1.8.20, p.14; BCGP25 line 680).
 
