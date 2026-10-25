@@ -19,8 +19,8 @@ plain matrix identities and arbitrary complex functions do not replace them.
 * Highly ramified local stability (README §6.10): lacks those representation carriers and the canonical nongeneric GL pair factors.
 * Auxiliary GL pole domination and doubling pole attainment (README §§7.1–7.6): lacks generalized Speh matrix-coefficient integrals, their meromorphic families and Langlands data.
 * Nonessentially self-dual Speh Eisenstein holomorphy (README §§8.1–8.5): lacks residual automorphic Speh data, Eisenstein continuation and cuspidal-support exponents.
-* Generalized global unfolding, completed functional equation and strip bounds (README §§9.1–9.3): lacks cuspidal adelic classical-group representations, doubling Eisenstein kernels and completed local/global factors.
-* Highly ramified global entireness (README §9.4): lacks those automorphic and completed-factor carriers.
+* Generalized global unfolding, completed functional equation and strip bounds (README §§9.1–9.3, and for SO₂ and GSpin₂, whose doubling period diverges, the split-torus branch of §§6.11 and 9.5): lacks cuspidal adelic classical-group representations, doubling Eisenstein kernels and completed local/global factors.
+* Highly ramified global entireness (README §9.4, with the split-torus entireness criterion of §9.5): lacks those automorphic and completed-factor carriers.
 * Twisted outside-S converse theorem (README §10.3): lacks admissible adelic GL representations, automorphy and all-rank Rankin–Selberg completions.
 * Nongeneric cuspidal weak standard transfer (README §10.4): lacks cuspidal classical-group and automorphic GL representations, Satake parameters and archimedean standard transfer.
 * All-place coarse compatibility and local transfer existence (README §§10.5–10.6): lacks those local/global representation carriers, supercuspidal support and gamma tests.
