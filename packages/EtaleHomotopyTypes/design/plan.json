@@ -3196,12 +3196,6 @@
       "section": "G2.1"
     },
     {
-      "slug": "kan-quillen-simplicial",
-      "needs": "Prove the simplicial model axiom for the §G2.1 mapping objects: a cofibration i and Kan fibration p induce a Kan fibration of mapping spaces, trivial whenever i or p is trivial.",
-      "supplier": "GeneralizedCohomology",
-      "section": "G2.1"
-    },
-    {
       "slug": "surjective-nerve-fibration",
       "needs": "Supply the native Kan-fibration criterion for the nerve of a surjective group homomorphism, compatible with the translation-category quotient models of §§1.28–1.34 and their right actions.",
       "supplier": "StableHomotopyKTheory",

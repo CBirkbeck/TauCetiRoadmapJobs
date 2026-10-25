@@ -197,3 +197,18 @@ cited_for = ["Layer 3 cohomology comparison", "Layer 3 elementary-fibration homo
 licence_class = "none"
 status = "uncertified"
 version_note = "Publisher book cited by locator without text; the sources service could not classify its publisher landing host and no text was fetched."
+
+[[source]]
+id = "SGA5"
+authors = "Alexander Grothendieck; edited by Luc Illusie"
+title = "Cohomologie l-adique et fonctions L (SGA 5)"
+year = 1977
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0096802"
+locator_scheme = "section"
+locator = "Exposé I, 3.1.5"
+url = "https://doi.org/10.1007/BFb0096802"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.9a: strong desingularizability invoked by SGA1 XIII Proposition 4.6(a)"]

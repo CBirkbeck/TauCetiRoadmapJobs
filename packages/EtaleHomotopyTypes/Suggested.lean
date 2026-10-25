@@ -8,7 +8,7 @@ theorems when statable against the pinned APIs. None is statable at these pins: 
 one of the missing carriers listed below. No substitute assertion is stated.
 
 Layer 0:
-* Isaksen's simplicial model structure, properness and the strong-fibration presentation theorem
+* Isaksen's simplicial model structure, properness and the strong-fibration presentation result
   lack the homotopy pro-local-system carrier and its model structure on pro-simplicial sets.
 * Connected pointed homotopy detection and local-coefficient weak-equivalence detection lack
   those pro-local systems, their cohomology and the associated pointed homotopy category.
@@ -33,7 +33,7 @@ Layer 3:
 * The profinite-completion universal property for a pro-group lacks the native general pro-group
   carrier; ordinary group completion and finite-quotient presentations are native.
 * Profinite local-coefficient detection, raw K(pi,1) finite-cover effacement and its product
-  theorem lack the raw etale type and its homotopy pro-groups.
+  formula lack the raw etale type and its homotopy pro-groups.
 * Etale local-coefficient comparison, raw/finite fundamental-group comparison, raw profiniteness,
   the field classifying equivalence and finite etale base change lack the rigid etale type.
 * Galois-equivariant geometric cohomology transport and the elementary-fibration homotopy
@@ -45,7 +45,7 @@ Layer 4:
 * Open arithmetic image lacks the scheme finite-etale fiber-functor fundamental group.
 * Pointed arithmetic lifting, arithmetic isomorphism lifting, the geometric orbit surjection and
   bijection, the outer fundamental-group map, the open-image restriction and the product mapping
-  theorem lack the raw etale homotopy category and its arithmetic structural maps.
+  result lack the raw etale homotopy category and its arithmetic structural maps.
 
 Layer 5:
 * Algebraic evaluation representability lacks the supplied analytification/analytic-points

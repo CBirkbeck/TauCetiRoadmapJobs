@@ -10,7 +10,7 @@ The ordinary Pro category and its Hom formula are stated by AdicSpacesPartII §R
 
 The compact compatible-family theorems, topological finite-generation predicate and finitely generated abelian pro-p structure theorem are already in the library, in the Tau Ceti modules listed below. ProfiniteProPGroups Layers 0, 3 and 4 own their profinite group interfaces. Homotopy groups use those predicates and structures without a second definition. The native singular functor, simplicial sets, abstract model-category class and abelian sheaf cohomology are already in the library and are imported with their actual size and existence hypotheses.
 
-EtaleCohomologyFoundations §§F.0.2 and F.0.A2 own finite étale fundamental groups, étale paths and the arithmetic exact sequence; its §F.0.4 owns purely inseparable topological invariance and §F.2.6 owns finite-coefficient Künneth. SchemeAndStackFoundations §§0.9–0.12, 2.10 and 2.15 own approximation, geometric unibranchness, étale neighborhoods, site comparisons and cohomology limits. Orbifolds O4-N owns ordinary numerable-submersion Čech descent. EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and E2.6 own coherent categorical infrastructure, generic hypercovers and bounded-below cohomological descent. BordismFormalGroups §F6.5 owns generic model-diagram rectification, including Kan-complex diagrams; §6.9 here instantiates it for the étale functor and automorphism action. ComplexComparisonPartII §C−1.1 owns analytification, §§C5.1 and C6.1 own sheaf–singular comparison, and §§C6.2–C6.3 own Riemann existence and finite Artin comparison.
+EtaleCohomologyFoundations §§F.0.2 and F.0.A2 own finite étale fundamental groups, étale paths and the arithmetic exact sequence; its §F.0.4 owns purely inseparable topological invariance and §F.2.6 owns finite-coefficient Künneth. SchemeAndStackFoundations §§0.9–0.12, 2.10 and 2.15 own approximation, geometric unibranchness, étale neighborhoods, site comparisons and cohomology limits. Orbifolds O4-N owns ordinary numerable-submersion Čech descent. EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and E2.6 own coherent categorical infrastructure, generic hypercovers and bounded-below cohomological descent. BordismFormalGroups §F6.5 owns the Cartesian Kan–Quillen monoidal model axiom and generic model-diagram rectification, including Kan-complex diagrams; §6.9 here instantiates it for the étale functor and automorphism action. ComplexComparisonPartII §C−1.1 owns analytification, §§C5.1 and C6.1 own sheaf–singular comparison, and §§C6.2–C6.3 own Riemann existence and finite Artin comparison.
 
 The finite-coefficient K(π,1) applications, smooth-curve examples and geometric existence of hyperbolic neighborhoods belong to AnabelianGeometryAndNonabelianChabauty Layer 1. The raw effacement and product theorems needed before those applications are §§3.9a–3.9c here. The open-image and geometric-conjugacy adapters are §§4.0a–4.0b here; InverseGaloisAndArithmeticFundamentalGroups consumes them in its arithmetic applications. The general unstable-limit interface is an explicit contract with the supplied ordinary topology supplier. A¹-local realization and motivic K-theory belong to MotivicEtaleKTheory; ℓ-adic homotopy algebras and weights belong to EllAdicHomotopyTypesAndWeights; Generic Γ-spaces and group completion belong to StableHomotopyKTheory Layers 4–6; arithmetic identification of the spectrum-level symplectic Galois action belongs to ArithmeticKTheoryPartII. No geometric existence theorem is inferred from an elementary fibration supplied as input.
 
@@ -86,15 +86,13 @@ What AlgebraicTopology must provide (gap:multisimplicial-diagonal): For a map of
 
 ### From TauCetiRoadmap.GeneralizedCohomology
 
-Section G2.1 supplies the unpointed Kan–Quillen model, its pointed undercategory, simplicial mapping objects, tensors and cotensors, and realization–singular Quillen comparison. The following two model-compatibility statements are the precise additional inputs.
+Section G2.1 supplies the unpointed Kan–Quillen model, its pointed undercategory, simplicial mapping objects, tensors and cotensors, and realization–singular Quillen comparison. Its Cartesian simplicial model axiom follows from the BordismFormalGroups §F6.5 monoidal model axiom by tensor–Hom adjunction, as in §0.2. Properness is the additional input below.
 
 What GeneralizedCohomology must provide (gap:kan-quillen-properness): Prove that the §G2.1 Kan–Quillen model is left and right proper, using its native weak equivalences, cofibrations and fibrations.
 
-What GeneralizedCohomology must provide (gap:kan-quillen-simplicial): Prove the simplicial model axiom for the §G2.1 mapping objects: a cofibration i and Kan fibration p induce a Kan fibration of mapping spaces, trivial whenever i or p is trivial.
-
 ### From TauCetiRoadmap.BordismFormalGroups
 
-Section F6.5, “Coherent model diagrams and stable enhancements”, supplies the equivalence between coherent diagrams and strict model diagrams, including its Kan-complex instance, restriction functors and derived unit/counit. Use this theorem in §6.9 with the declared universe of schemes or of the discrete automorphism group; the actual étale diagram and its equivariant comparison are constructed here.
+Section F6.5 supplies the monoidal model axiom for the fixed Cartesian Kan–Quillen base: the pushout product of two cofibrations is a cofibration, trivial if either factor is trivial. Combine it with GeneralizedCohomology §G2.1’s Cartesian mapping objects, tensors and cotensors in §§0.2 and 6.2. Its “Coherent model diagrams and stable enhancements” block supplies the equivalence between coherent diagrams and strict model diagrams, including its Kan-complex instance, restriction functors and derived unit/counit. Use this theorem in §6.9 with the declared universe of schemes or of the discrete automorphism group; the actual étale diagram and its equivariant comparison are constructed here.
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
@@ -136,7 +134,7 @@ Section C−1.1 supplies `complexSchemeAnalytification` on all locally finite-ty
 
 ### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
-Sections 5.1–5.2 and 6.1–6.2 supply characteristic-zero embedded resolution, principalization and projective SNC compactification for finite-type schemes over a field, preserving the smooth locus and producing normal-crossing boundary after the specified blowups. Applied to the reduction and a projective compactification, these give the strong desingularizability hypothesis used in SGA1 XIII Proposition 4.6. The finite-cover product theorem of §3.9a retains this proof input and applies in characteristic zero, where prime-to-characteristic means all primes.
+Section 5.5 supplies local-isomorphism-compatible resolution of arbitrary reduced finite-type schemes over a characteristic-zero field, preserving the entire regular locus, without a separatedness or quasi-projectivity hypothesis. Sections 5.1–5.2 supply principalization on smooth schemes for ideals nonzero at every generic point and embedded resolution for reduced closed subschemes of smooth ambient schemes; §§5.3–5.4 supply resolved-pair preservation and boundary cleanup with their stated hypotheses. Section 6.1 supplies projective closure of reduced quasi-projective schemes with a chosen immersion; §6.2 supplies projective strict-SNC compactification of smooth quasi-projective varieties. The deduction of strong desingularizability for the full finite-type range in SGA1 XIII Proposition 4.6(a) is a target of §3.9a, using general resolution and boundary refinements; it makes no projective compactification assertion for arbitrary finite-type schemes.
 
 ### From TauCetiRoadmap.ProfiniteProPGroups
 
@@ -171,7 +169,7 @@ One proof route is the following. Use the imported Pro carrier and finite-diagra
 
 On Pro(SSet), take weak equivalences to be maps inducing an isomorphism of π_0 and of every homotopy pro-local system Π_nX→f*Π_nY, n≥1. Cofibrations are essentially levelwise monomorphisms, and fibrations have the right lifting property against trivial cofibrations. These classes form Isaksen’s simplicial model structure and induce its pointed model and homotopy categories. Every object is cofibrant. Its strict predecessor instead inverts essentially levelwise ordinary weak equivalences. Factorizations here are not asserted functorial. (I01, Definitions 6.1–6.3, Theorem 6.4, pp. 9–10; §§12–16, pp. 20–32; I01 line 412 and I01 line 423).
 
-One proof route is the following. Import the proper simplicial Kan–Quillen model from the supplied topology owner, including the ordinary obstruction theory requested there. Use cofinite reindexing and finite predecessor matching objects. The increasing connectivity bound gives Isaksen’s strong fibrations (Definition 6.5). Apply the two factorizations and lifting theorem, I01 Propositions 15.1, 15.2, 15.4; then the pushout-product argument of §16. Properness is isolated in the next target because its original proof needs the published correction.
+One proof route is the following. Use GeneralizedCohomology §G2.1’s Kan–Quillen model and Cartesian mapping objects, its properness contract, and BordismFormalGroups §F6.5’s fixed-base monoidal model axiom. For a cofibration i:A→B and a Kan fibration p:E→F, tensor–Hom adjunction identifies lifting a map j against Map(B,E)→Map(A,E)×_(Map(A,F))Map(B,F) with lifting i□j against p. If j is a horn inclusion, the supplied pushout product is trivial, giving a Kan fibration; if i or p is trivial, boundary inclusions j give trivial fibrancy. Retain the ordinary obstruction theory requested from AlgebraicTopology. Use cofinite reindexing and finite predecessor matching objects. The increasing connectivity bound gives Isaksen’s strong fibrations (Definition 6.5). Apply the two factorizations and lifting theorem, I01 Propositions 15.1, 15.2, 15.4; then the pushout-product argument of §16. Properness is isolated in the next target because its original proof needs the published correction.
 
 - Weak equivalence is equivalent to the stated π_0 and Π_n conditions.
 - Every pro-simplicial set, and every pointed one, is cofibrant.
@@ -183,8 +181,9 @@ One proof route is the following. Import the proper simplicial Kan–Quillen mod
 - On constant pointed connected Kan complexes, weak equivalence is the ordinary π_n equivalence in every degree.
 - For K=∏ₙ≥₁K(Z,n), the map cK→(P_m K)_m is an Isaksen equivalence but not a strict equivalence: every finite truncation misses nonzero higher homotopy groups. This avoids relying on a finiteness claim about a particular sphere.
 - The map from the singular S² to a point is not an Isaksen equivalence even though it preserves π_0 and π_1.
+- For i:∂Δ[1]→Δ[1] and p:BC₂→*, the mapping-space map (BC₂)^Δ[1]→BC₂×BC₂ is a Kan fibration whose fiber over the base vertices is the two-element loop space C₂, so it is not trivial. Replacing i by an endpoint inclusion gives evaluation (BC₂)^Δ[1]→BC₂ with contractible fiber. The horn lifts in the first case and boundary lifts in the second are adjoint to the supplied pushout-product lifts.
 
-*Needs:* §0.1; Mathlib `HomotopicalAlgebra.ModelCategory`; GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial); AlgebraicTopology Stage 8 (gap:simplicial-postnikov and gap:simplicial-moore-postnikov); AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-level-representations).
+*Needs:* §0.1; Mathlib `HomotopicalAlgebra.ModelCategory`; GeneralizedCohomology §G2.1 (gap:kan-quillen-properness); BordismFormalGroups §F6.5 (Cartesian Kan–Quillen monoidal model axiom); AlgebraicTopology Stage 8 (gap:simplicial-postnikov and gap:simplicial-moore-postnikov); AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-level-representations).
 
 ### 0.3 Properness and strong fibrations
 
@@ -216,7 +215,7 @@ The constant singular circle has π₁=cℤ and πₙ=0 for n≥2. The two-point
 
 ### Dependencies
 
-AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance, gap:pro-cofinite-reindexing and gap:pro-level-representations); Mathlib `CategoryTheory.Ind`, `SSet` and `HomotopicalAlgebra.ModelCategory`; AlgebraicTopology Stages 6 and 8 (direct local coefficients, homotopy groups, gap:local-coefficient-representability, gap:simplicial-postnikov, gap:simplicial-local-whitehead and gap:simplicial-moore-postnikov); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial). The item-level Needs lines give the direct inputs.
+AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance, gap:pro-cofinite-reindexing and gap:pro-level-representations); Mathlib `CategoryTheory.Ind`, `SSet` and `HomotopicalAlgebra.ModelCategory`; AlgebraicTopology Stages 6 and 8 (direct local coefficients, homotopy groups, gap:local-coefficient-representability, gap:simplicial-postnikov, gap:simplicial-local-whitehead and gap:simplicial-moore-postnikov); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness); BordismFormalGroups §F6.5 (Cartesian Kan–Quillen monoidal model axiom). The item-level Needs lines give the direct inputs.
 
 ## Layer 1: Coverings and classifying pro-spaces
 
@@ -436,7 +435,7 @@ One proof route is the following. Layer 2’s profinite homotopy-limit theorem g
 
 ### 2.8 Pointed lifting over a base
 
-Let pointed X,Y map to pointed B. If Y and B are path-connected and π_1^top(Y)→π_1^top(B) is surjective, forgetting points gives a surjection from Hom in Ho(Pro(SSet)_*)↓(B,b) to Hom in Ho(Pro(SSet))↓B. These are slices of homotopy categories: their structural triangles commute as morphism classes; no chosen null-homotopy is part of a morphism. (SS, Theorem A.13(a), pp. 860–862; SS line 1736).
+Let pointed X,Y map to pointed B. If Y and B are path-connected and π_1^top(Y)→π_1^top(B) is surjective, forgetting points gives a surjection from Hom in Ho(Pro(SSet)_*)↓(B,b) to Hom in Ho(Pro(SSet))↓B. These are slices of homotopy categories: their structural triangles commute as morphism classes; no chosen null-homotopy is part of a morphism. (SS, Theorem A.13(a), pp. 860–861; SS line 1736).
 
 One proof route is the following. Lift the underlying unpointed map to a pointed one using target path-connectedness. The two composites to B differ by a loop at b. Surjectivity on topological π_1 lifts that loop to Y. Transport by its inverse to obtain a pointed map in the relative Hom set.
 
@@ -444,7 +443,7 @@ One proof route is the following. Lift the underlying unpointed map to a pointed
 
 ### 2.9 Relative isomorphisms lift
 
-Under the hypotheses of §2.8, any isomorphism in Ho(Pro(SSet))↓B has a preimage that is an isomorphism in Ho(Pro(SSet)_*)↓(B,b). (SS, Theorem A.13(a), last assertion, pp. 860–862; SS line 1783).
+Under the hypotheses of §2.8, any isomorphism in Ho(Pro(SSet))↓B has a preimage that is an isomorphism in Ho(Pro(SSet)_*)↓(B,b). (SS, Theorem A.13(a), last assertion, pp. 860–861; SS line 1783).
 
 One proof route is the following. Use §2.8 to lift the given map. Its underlying unpointed map is an isomorphism, so it is an isomorphism in the pointed homotopy category. The inverse also commutes with the structure map because the original triangle does.
 
@@ -452,7 +451,7 @@ One proof route is the following. Use §2.8 to lift the given map. Its underlyin
 
 ### 2.10 Stabilizer quotient for relative maps
 
-With the same hypotheses, let S_X⊂π_1^top(B,b) be the stabilizer of the pointed structure class p_X under monodromy, and Δ_XY its preimage under π_1^top(Y,y)→π_1^top(B,b). Monodromy restricts to the pointed relative Hom set, and its Δ_XY-orbits biject with Hom_Ho(Pro(SSet))↓B(X,Y). The whole π_1(Y) need not preserve the relative subset. (SS, Theorem A.13(b), pp. 861–862; SS line 1743).
+With the same hypotheses, let S_X⊂π_1^top(B,b) be the stabilizer of the pointed structure class p_X under monodromy, and Δ_XY its preimage under π_1^top(Y,y)→π_1^top(B,b). Monodromy restricts to the pointed relative Hom set, and its Δ_XY-orbits biject with Hom_Ho(Pro(SSet))↓B(X,Y). The whole π_1(Y) need not preserve the relative subset. (SS, Theorem A.13(b), pp. 860–861; SS line 1743).
 
 One proof route is the following. Naturality of path transport identifies the loops preserving the structural triangle with Δ_XY. Use the absolute orbit theorem to characterize pairs with the same unpointed class; the relative constraint forces the loop into Δ_XY. Use the relative surjection for existence, giving the claimed bijection.
 
@@ -589,15 +588,20 @@ One proof route is the following. Import the geometric elementary-fibration inpu
 
 ### 3.9a Finite étale product formula
 
-For a characteristic-zero field k and geometrically connected geometrically unibranch finite-type k-varieties Y₁,Y₂, prove the canonical continuous isomorphism π₁^ét(Y₁ ×ₖ Y₂) ≃ π₁^ét(Y₁) ×_(Gₖ) π₁^ét(Y₂), with its two projections and chosen compatible geometric points (SS proof of Lemma 2.9, pp. 828–829; SS line 474; SGA1 XIII Proposition 4.6). Its route first proves the geometric product formula for finite étale covers and then uses the supplied arithmetic exact sequence. This finite-cover theorem uses no vanishing of higher raw homotopy groups. Its SGA1 XIII Proposition 4.6 route requires strong desingularizability of finite-type schemes over the algebraic closure; consume ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2 for this characteristic-zero input, retaining all primes (SGA1 line 12282).
+For a characteristic-zero field k and geometrically connected geometrically unibranch finite-type k-varieties Y₁,Y₂, prove the canonical continuous isomorphism π₁^ét(Y₁ ×ₖ Y₂) ≃ π₁^ét(Y₁) ×_(Gₖ) π₁^ét(Y₂), with its two projections and chosen compatible geometric points (SS proof of Lemma 2.9, pp. 828–829; SS line 474; SGA1 XIII Proposition 4.6). Its route first proves the geometric product formula for finite étale covers and then uses the supplied arithmetic exact sequence. This finite-cover theorem uses no vanishing of higher raw homotopy groups. Its geometric route uses SGA1 XIII Proposition 4.6(a), p. 310 (SGA1 line 12282), whose strong-desingularizability premise ranges over finite-type schemes over the algebraic closure of dimension at most that of the first factor.
+
+Prove the required adapter: for every algebraically closed field K of characteristic zero, every finite-type K-scheme T is strongly desingularizable in the sense required there (SGA5, Exposé I, §3.1.5, cited by locator without text). No reducedness, separatedness or quasi-projectivity is imposed on T. One proof route is to apply ResolutionOfSingularitiesCharacteristicZero §5.5 to T_red, with its local-isomorphism compatibility, and use §§5.1–5.4 for principalization and the boundary refinements, retaining the nonzero-at-generic-points hypothesis for each principalized ideal. This supplies the premise uniformly for all such T, not just the product factors. Projective closures and projective strict-SNC compactifications from §§6.1–6.2 are used only for their reduced quasi-projective and smooth quasi-projective inputs. Apply SGA1’s geometric formula, then the arithmetic exact sequences; in characteristic zero the prime-to-characteristic groups include all primes.
 
 **Checks.**
 
 - Over ℂ, two copies of Gₘ have fundamental group ℤ̂², and the projections select its two coordinates. Replacing the product by a single ℤ̂ loses one independent Kummer cover.
 - For Y₂=Spec k, the fiber product π₁^ét(Y₁) ×_(Gₖ) Gₖ is π₁^ét(Y₁), with inverse g ↦ (g,p(g)). This tests the structural map in the formula.
 - For Y₁=Y₂=Spec ℝ over ℝ, both sides are C₂: the fiber product is the diagonal {(1,1),(c,c)}. An ordinary direct product would have four elements and is wrong.
+- Let T be the affine line with doubled origin over K. It is smooth and finite-type, so its smooth resolution is the identity with empty boundary. Its two origins prevent separatedness: the map Spec K((t))→T through the common punctured line extends to two maps Spec K[[t]]→T, one meeting each origin. Consequently it has no open immersion into a projective K-scheme. The general strong-desingularizability input cannot be replaced by a projective compactification claim.
+- For the smooth quasi-projective curve Gₘ, §6.2 applies: its compactification is ℙ¹ with two reduced boundary points {0,∞}. For 𝔸¹ there is one boundary point; these boundary counts distinguish the two inputs.
+- For T=∅ the reduction and resolution are empty and no boundary is principalized. For T=Spec(K[ε]/ε²), T_red=Spec K has identity resolution and empty boundary; reduction does not assert a smooth morphism isomorphic to the nonreduced T on a dense open.
 
-*Needs:* EtaleCohomologyFoundations §§F.0.2 and F.0.A2; SGA1 XIII Proposition 4.6; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2.
+*Needs:* EtaleCohomologyFoundations §§F.0.2 and F.0.A2; SGA1 XIII Proposition 4.6; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.5, 6.1–6.2.
 
 ### 3.9b Finite effacement and profinite detection
 
@@ -635,7 +639,7 @@ Over a separably closed field the field type is a point; over 𝔽_q it is Bℤ�
 
 ### Dependencies
 
-Layers 0–2; Mathlib group completion, finite-quotient presentation and compact cofiltered limits; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance and gap:pro-level-representations); ProfiniteProPGroups Layer 0; SchemeAndStackFoundations §§0.9–0.12, 2.10 and 2.15 (gap:connected-etale-components and gap:elementary-fibration-carrier); EtaleCohomologyFoundations §§F.0.2, F.0.A2 and F.2.6; EnhancedDerivedSheaves §E2.6 (generic hypercovers and bounded-below descent); AlgebraicTopology Stages 6 and 8 (direct local coefficients, homotopy-fiber sequences, gap:simplicial-postnikov and gap:simplicial-moore-postnikov); ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2. The item-level Needs lines distinguish the independent finite-cover product formula from raw detection and raw products.
+Layers 0–2; Mathlib group completion, finite-quotient presentation and compact cofiltered limits; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance and gap:pro-level-representations); ProfiniteProPGroups Layer 0; SchemeAndStackFoundations §§0.9–0.12, 2.10 and 2.15 (gap:connected-etale-components and gap:elementary-fibration-carrier); EtaleCohomologyFoundations §§F.0.2, F.0.A2 and F.2.6; EnhancedDerivedSheaves §E2.6 (generic hypercovers and bounded-below descent); AlgebraicTopology Stages 6 and 8 (direct local coefficients, homotopy-fiber sequences, gap:simplicial-postnikov and gap:simplicial-moore-postnikov); ResolutionOfSingularitiesCharacteristicZero §§5.1–5.5, 6.1–6.2. The item-level Needs lines distinguish the independent finite-cover product formula from raw detection and raw products.
 
 ## Layer 4: Arithmetic relative mapping classes
 
@@ -858,7 +862,7 @@ One proof route is the following. Use the strict model on Pro(SSet) for this loc
 - For q≠p, the p-profinite completion of BC_q is contractible; mod-p acyclicity here is used together with its finite prime-to-p group structure.
 - The p-profinite completion of an infinite discrete set is its pro-finite-set completion, not the constant infinite discrete set and not a single connected point.
 
-*Needs:* §§6.1 and 0.2; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial); EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category and gap:coherent-pro-mapping).
+*Needs:* §§6.1 and 0.2; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness); BordismFormalGroups §F6.5 (Cartesian Kan–Quillen monoidal model axiom); EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category and gap:coherent-pro-mapping).
 
 ### 6.3 Model for homotopy-coherent p-profinite types
 
@@ -961,7 +965,7 @@ For B(C_p) the materialized p-type is BC_p and H¹=𝔽ₚ, so the sufficient H�
 
 ### Dependencies
 
-Layers 0–5; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial); AlgebraicTopology Stages 6 and 8 (direct local coefficients, gap:simplicial-postnikov and gap:multisimplicial-diagonal); ProfiniteProPGroups Layers 0, 3 and 4 and the native compactness, generation and abelian pro-p structure interfaces; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes) and §E2.6 (bounded-below descent); ComplexComparisonPartII §§C−1.1, C5.1 and C6.1–C6.3; BordismFormalGroups §F6.5 (model-diagram rectification). The item-level Needs lines give the direct inputs.
+Layers 0–5; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness); AlgebraicTopology Stages 6 and 8 (direct local coefficients, gap:simplicial-postnikov and gap:multisimplicial-diagonal); ProfiniteProPGroups Layers 0, 3 and 4 and the native compactness, generation and abelian pro-p structure interfaces; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes) and §E2.6 (bounded-below descent); ComplexComparisonPartII §§C−1.1, C5.1 and C6.1–C6.3; BordismFormalGroups §F6.5 (Cartesian Kan–Quillen monoidal model axiom and model-diagram rectification). The item-level Needs lines give the direct inputs.
 
 ## Downstream consumers
 
@@ -983,3 +987,4 @@ All statements are expressed here in the roadmap’s notation. Line locators ref
 - **AM:** Michael Artin and Barry Mazur, *Etale homotopy*, Lecture Notes in Mathematics 100 (1969). [Publisher citation](https://doi.org/10.1007/BFb0080957). Theorems 4.3 and 11.1, cited by locator without text.
 - **Fr:** Eric M. Friedlander, *Etale homotopy of simplicial schemes*, Annals of Mathematics Studies 104 (1982). [Publisher citation](https://doi.org/10.1515/9781400881499). Proposition 5.9 and Theorem 11.5, cited by locator without text.
 - **SGA1:** A. Grothendieck and M. Raynaud, *Revêtements étales et groupe fondamental*, revised arXiv:math/0206203v2. [Open edition](https://arxiv.org/abs/math/0206203v2). Exposé XIII, Proposition 4.6, for the characteristic-zero geometric finite-cover product formula; Exposé IX, Theorem 6.1, for the arithmetic sequence consumed through EtaleCohomologyFoundations.
+- **SGA5:** A. Grothendieck, edited by L. Illusie, *Cohomologie ℓ-adique et fonctions L (SGA 5)*, Lecture Notes in Mathematics 589 (1977). [Publisher citation](https://doi.org/10.1007/BFb0096802). Exposé I, §3.1.5, for the strong-desingularizability condition referenced by SGA1 XIII Proposition 4.6(a), cited by locator without text.
