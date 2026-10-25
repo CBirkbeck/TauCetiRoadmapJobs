@@ -26,7 +26,7 @@ Write G=G₂(F), H=PGSp₆(F), H₃=PGL₃(F)⋊C₂. In the E₆ division corre
 
 Take α short and β long. P=MN stabilizes a null plane, Q=LU a null line, and P∩Q=B for an incident flag. A bar denotes the opposite radical or parabolic. All local induction and Jacquet modules are normalized by the positive square root of the modulus, except the explicitly marked unnormalized inductions in the spin contracts and the unnormalized E₈ Jacquet quotient in §8.9. Thus I_P(s,τ)=Ind_P^G(|det|^s τ), with a one-dimensional χ meaning χ∘det. A J denotes a standard Langlands quotient and δ a discrete-series submodule; statements at negative exponents follow by smooth duality, which reverses exact sequences. Temperedness and square integrability use unitary central characters. Regular compact functions use left translation f(x)↦f(a⁻¹x) and commuting right translation f(x)↦f(xb); on a rank-one operator these give χ(a)χ(b)⁻¹ for a one-dimensional representation χ.
 
-The H Siegel Levi coordinate is its action on the three exterior-square basis vectors, not the unmodified GL₃ block coordinate. Arithmetic Frobenius has degree 1 and |Fr|=q⁻¹. In the SL₂-to-WD dictionary put r(w)=φ(w,diag(|w|¹ᐟ²,|w|⁻¹ᐟ²)) and N=dφ([[0,1],[0,0]]), so r(w)Nr(w)⁻¹=|w|N. At q=2, Fr scales the upper nilpotent matrix by 1/2; inverse Frobenius scales it by 2. Fourier inversion uses ψ and the ψ-self-dual Haar measure; replacing ψ by its conjugate also dualizes the oscillator. At a nonzero x with ψ(x)=ζ≠1, the two characters give ζ and ζ⁻¹, not an unchanged central action.
+The H Siegel Levi coordinate is its action on the three exterior-square basis vectors, not the unmodified GL₃ block coordinate. Arithmetic Frobenius has arithmetic degree 1 and |Fr|=q⁻¹. In the SL₂-to-WD dictionary put r(w)=φ(w,diag(|w|¹ᐟ²,|w|⁻¹ᐟ²)) and N=dφ([[0,1],[0,0]]), using positive real square roots, so r(w)Nr(w)⁻¹=|w|N. At q=2, Fr scales the upper nilpotent matrix by 1/2; inverse Frobenius scales it by 2. The comparison with LanglandsParameterStacks uses its geometric degree deg_LP=−deg_arithmetic and the separate LP-normalized WD conversion of §0.7: r_LP(w)=φ(w,diag(|w|⁻¹ᐟ²,|w|¹ᐟ²)), with the same N. At q=2 its Fr and inverse-Fr scaling factors are 2 and 1/2. Fourier inversion uses ψ and the ψ-self-dual Haar measure; replacing ψ by its conjugate also dualizes the oscillator. At a nonzero x with ψ(x)=ζ≠1, the two characters give ζ and ζ⁻¹, not an unchanged central action.
 
 For a number field k use compatible local measures and a fixed Haar measure on each adelic quotient; a nonvanishing assertion is invariant under positive rescaling of these measures. The theta integral is linear in the kernel f and conjugate linear in the cuspidal vector φ: Θ(if,φ)=iΘ(f,φ) and Θ(f,iφ)=−iΘ(f,φ). Harish–Chandra parameters use λ+ρ, with the ρ of the specified positive system. These numerical and two-term normalization witnesses are retained at every use in the layers below.
 
@@ -66,7 +66,7 @@ Consume LieGroups Layer 2 for the Lie structure on a closed subgroup of a real m
 
 ### From TauCetiRoadmap.ClassFieldTheory and TauCetiRoadmap.LanglandsParameterStacks
 
-ClassFieldTheory Layer 9 supplies the topological Weil group and degree map; the normalization of Fr and |Fr| is the one in Conventions. LanglandsParameterStacks LP0.5 supplies its classical admissible-parameter definition, and LP1.11–LP1.12 its coefficient-valued WD parameter and monodromy comparison. Compare the complex and ℓ-adic WD forms only after fixing a field isomorphism ℂ≅Q̄ℓ, a Frobenius normalization and finite inertia image. The wild-parameter stack does not by itself provide the exceptional complex split-group specializations of §0.7.
+ClassFieldTheory Layer 9 supplies the topological Weil group and degree map; the normalization of Fr and |Fr| is the one in Conventions. LanglandsParameterStacks LP0.5 supplies its classical admissible-parameter definition, and LP1.11–LP1.12 its coefficient-valued WD parameter and monodromy comparison. Its LP0.4 uses geometric degree deg_LP=−deg_arithmetic, so its arithmetic Frobenius scales N by q. Section 0.7 supplies the LP-normalized WD conversion from W_F×SL₂ parameters, with r_LP(w)=φ(w,diag(|w|⁻¹ᐟ²,|w|¹ᐟ²)) and unchanged N. Compare this pair with LP1.11–LP1.12 after fixing ℓ≠p and a field isomorphism ℂ≅Q̄ℓ; the inertia image is finite. This conversion changes the diagonal twist, and does not identify r_LP with r or invert Weil-group elements. The wild-parameter stack does not by itself provide the exceptional complex split-group specializations of §0.7.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -96,7 +96,7 @@ Consume §§0.15–0.17, 1.1 and 2.4a–2.7 for Schrödinger models, Stone–von
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison and TauCetiRoadmap.ModularityAndLanglandsExtensions
 
-SmoothRepresentationsOfLocalGroups §SR.5.2, “classical-llc-normalization”, supplies the classical GLₙ Weil–Deligne correspondence; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31 supplies its trace-map comparison and the essentially square-integrable inner-form Jacquet–Langlands comparison with its character normalization. ModularityAndLanglandsExtensions §3.5 supplies the Gan–Takeda GSp₄ correspondence, particularly part (vi), equality of Plancherel measures for the nongeneric supercuspidal and its parameter. It is used in §1.13 for τρ; its genericity indicator is 0, so a generic Shahidi theorem cannot apply directly to it. The common parameter, not a presumed generic functional on τρ, identifies the Plancherel scalar.
+SmoothRepresentationsOfLocalGroups §SR.5.2, “classical-llc-normalization”, supplies the classical GLₙ Weil–Deligne correspondence; its “wd-raw-parameters” uses arithmetic degree and scales N by q^(deg_arithmetic). The linear WD input from §0.7 is therefore (r_LP,N). EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31 supplies its trace-map comparison and the essentially square-integrable inner-form Jacquet–Langlands comparison with its character normalization. ModularityAndLanglandsExtensions §3.5 supplies the Gan–Takeda GSp₄ correspondence, particularly part (vi), equality of Plancherel measures for the nongeneric supercuspidal and its parameter. It is used in §1.13 for τρ; its genericity indicator is 0, so a generic Shahidi theorem cannot apply directly to it. The common parameter, not a presumed generic functional on τρ, identifies the Plancherel scalar.
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors and TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactorsPartII
 
@@ -240,13 +240,13 @@ A proof route uses the decomposition O=K⊕K⊥ and the induced 3-dimensional K-
 
 ### 0.6 Exceptional inclusions of complex dual groups
 
-Using the existing dual root datum construction, identify G₂∨=G₂(C), PGL₃∨=SL₃(C), and PGSp₆∨=Spin₇(C). Construct SL₃→G₂→Spin₇ compatibly with the octonion 7-module and spin 8-module. In G₂, the centralizers Z_G₂(SL₃)=μ₃ and Z_G₂(SO₃)=μ₃⋊C₂=S₃; the commuting long- and short-root SL₂ factors give (SL₂,l×SL₂,s)/μ₂=SO₄. (GS, §2.6, p. 8; §15.1, p. 52 (GS line 265)).
+Using the existing dual root datum construction, identify G₂∨=G₂(C), PGL₃∨=SL₃(C), and PGSp₆∨=Spin₇(C). Construct SL₃→G₂→Spin₇ compatibly with the octonion 7-module and spin 8-module, fixing the long-root SL₃ inclusion. On its standard three-dimensional module V fix a nondegenerate symmetric bilinear form b, and define the inclusion SO(V,b)→SL(V)→G₂ by determinant-one isometries followed by that fixed inclusion. Over C this is the SO₃ subgroup used here. In G₂, the centralizers Z_G₂(SL₃)=μ₃ and Z_G₂(im(SO(V,b)→G₂))=μ₃⋊C₂=S₃; the commuting long- and short-root SL₂ factors give (SL₂,l×SL₂,s)/μ₂=SO₄. (GS, §2.6, p. 8; Theorem 15.1(v), p. 52 (GS lines 282–288, 2009)).
 
 The construction has the following API.
 
 - The inclusions SL₃(C)→G₂(C)→Spin₇(C) are injective algebraic homomorphisms compatible with the stated dual root data.
 - Restriction of the seven-module to SL₃ is 1⊕3⊕3∨; restriction of the spin eight-module to G₂ is 1⊕7.
-- The long-root SL₃ centralizer and the indicated SO₃ centralizer have the stated group structures, and the kernel of SL₂,l×SL₂,s→SO₄ is the diagonal μ₂.
+- The long-root SL₃ centralizer and the centralizer of the specified composite SO(V,b)→SL(V)→G₂ have the stated group structures, and the kernel of SL₂,l×SL₂,s→SO₄ is the diagonal μ₂.
 
 A proof route is to compare weight lattices and root subgroups, compute centralizers on the octonion decomposition, and identify G₂ as a nonisotropic spinor stabilizer.
 
@@ -256,6 +256,7 @@ A proof route is to compare weight lattices and root subgroups, compute centrali
 
 - On the seven-dimensional octonion module, restriction to SL₃ has dimensions 1+3+3=7; the eight-dimensional spin module restricts to G₂ as 1+7=8.
 - The diagonal element (−1,−1) acts trivially in SO₄; dividing by either single μ₂ instead would give the wrong double covering.
+- On SO(V,b) the seven-module is 1⊕3⊕3, with invariant dimension 1; its centralizer has order 6. For the principal SL₂ image in G₂ the seven-module is Sym⁶(C²), with invariant dimension 0; its centralizer has order 1. Since −I acts as (−1)⁶=1, this principal image is also isomorphic to SO₃; the specified inclusion distinguishes the two. (GS, §3.4(1)–(2), p. 13 (GS lines 452–456)).
 - In μ₃⋊C₂, let ζ be a primitive cube root and c the involution. Then cζc⁻¹=ζ⁻¹=ζ²≠ζ, so this centralizer has order 6 and is nonabelian S₃; the abelian group μ₃×C₂ has order 6 but fails this test.
 
 ### 0.7 Complex local parameters
@@ -269,11 +270,11 @@ The construction has the following API.
 - Temperedness and discreteness descend to Ĝ-conjugacy classes.
 - An algebraic dual-group homomorphism transports a parameter when its image is Frobenius-semisimple; boundedness is preserved.
 - The chosen arithmetic-Frobenius WD dictionary preserves inertia, Frobenius semisimplicity and monodromy.
-- After a field isomorphism of ℂ with an algebraic closure of ℚ_ℓ, the Weil–Deligne form of a complex parameter is a Weil–Deligne parameter in the sense of LanglandsParameterStacks LP1.11–LP1.12 with the same Frobenius normalization; the two definitions are compared, not merged.
+- Define the LP-normalized WD conversion from representatives φ:W_F×SL₂(C)→Ĝ(C) of complex parameters to pairs (r_LP,N) by r_LP(w)=φ(w,diag(|w|⁻¹ᐟ²,|w|¹ᐟ²)) and N=dφ([[0,1],[0,0]]). It is equivariant for Ĝ-conjugation, hence induces a map on conjugacy classes. It has the same finite inertia restriction and nilpotent N as (r,N), and satisfies Ad(r_LP(w))N=|w|⁻¹N=q^(−deg_LP(w))N, with deg_LP=−deg_arithmetic. After fixing ℓ≠p and ℂ≅Q̄ℓ, transport this pair and the chosen square roots to obtain the split-group WD parameter of LanglandsParameterStacks LP1.11, to which LP1.12 applies. This is a conversion from φ, without an asserted equality r_LP=r. (LanglandsParameterStacks LP0.4, LP1.11–LP1.12.)
 
-A proof route is to form the representation type on the imported Weil carrier and complex dual group. Prove the dictionary with Frobenius-semisimple Weil–Deligne pairs, including r(w)Nr(w)⁻¹=|w|N after fixing the SL₂-to-WD twist.
+A proof route is to form the representation type on the imported Weil carrier and complex dual group. Prove the arithmetic dictionary with Frobenius-semisimple Weil–Deligne pairs, including r(w)Nr(w)⁻¹=|w|N. For the LP-normalized conversion, the two restrictions of φ commute and the diagonal twist is a homomorphism, so r_LP is a homomorphism. Conjugating the upper nilpotent matrix by diag(t,t⁻¹) multiplies it by t²; taking t=|w|⁻¹ᐟ² proves the LP scaling equation before the coefficient comparison.
 
-*Needs:* ClassFieldTheory Layer 9; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2.
+*Needs:* ClassFieldTheory Layer 9; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; LanglandsParameterStacks LP0.4, LP1.11–LP1.12.
 
 **Checks.**
 
@@ -281,6 +282,9 @@ A proof route is to form the representation type on the imported Weil carrier an
 - For positive semisimple rank, the parameter with trivial Weil part and principal Deligne SL₂ is discrete; erasing SL₂ gives the trivial parameter, which lies in a proper Levi. For Steinberg this SL₂ is nontrivial even though its Weil part is unramified.
 - The GL₁ character w↦|w| is not tempered, unlike the trivial character.
 - For arithmetic Frobenius Fr and q=2, |Fr|=1/2 and |Fr⁻¹|=2. The character |·| has unbounded image under positive and negative powers; the trivial character has image {1}.
+- For q=3, trivial Weil restriction and the identity Deligne SL₂ in GL₂, N=E₁₂ and r(Fr)=diag(1/√3,√3) give Ad(r(Fr))N=N/3. The converted r_LP(Fr)=diag(√3,1/√3) gives 3N, while r_LP(Fr⁻¹) gives N/3, as required by geometric degrees −1 and 1. A coefficient-field isomorphism fixes 1/3 and 3, so it cannot make the original pair satisfy the supplier equation.
+- With trivial Deligne SL₂, N=0 and r_LP(w)=r(w)=φ(w,1); both scaling laws have value 0. This case alone cannot detect the opposite twists.
+- On inertia, |i|=1, so r_LP(i)=r(i)=φ(i,1), even for a parameter with nontrivial finite inertia image. For a nonabelian S₃ Weil quotient with trivial Deligne SL₂, r_LP remains that homomorphism: if a=(12), b=(123), then (ab)⁻¹=(23) but a⁻¹b⁻¹=(13). Elementwise inversion would fail multiplicativity.
 
 ### 0.8 Raw and fixed-split component groups
 
@@ -301,7 +305,7 @@ A proof route is to take scheme-theoretic centralizers, then components over C; 
 **Checks.**
 
 - The principal SL₂ in SL₃ has raw centralizer μ₃, while the fixed-split component group is trivial.
-- The subregular SL₂ in G₂ has component group S₃, with all three irreducible enhancements available.
+- For the parameter with trivial Weil part and Deligne SL₂ mapping onto the SO(V,b) subgroup of §0.6, the component group is S₃, with all three irreducible enhancements available.
 - For the principal parameter in Spin₇, the raw μ₂ disappears in the split quotient; counting two split Steinberg representations is rejected.
 - The centralizers for principal SL₂ in SL₃ and Spin₇ have orders 3 and 2; after dividing by the full dual center both orders are 1. For G₂ the center has order 1, so this quotient changes nothing.
 
@@ -347,11 +351,11 @@ A proof route is to generate all coroots from the three displayed simple coroots
 
 ### Examples
 
-Write uᵢ for the top Zorn eᵢ and vᵢ for the bottom eᵢ. Then u₁²=v₂²=u₁v₂=v₂u₁=0, so F u₁⊂F u₁+F v₂ is a null flag of dimensions 1 and 2. In contrast u₁v₁ has diagonal (1,0). For a scalar z on F⁶, z²·z⁻²=1 in the H model. At s=(1,2,3), the third H reflection gives (6,−3,−2) and both quadratic values are 50.
+Write uᵢ for the top Zorn eᵢ and vᵢ for the bottom eᵢ. Then u₁²=v₂²=u₁v₂=v₂u₁=0, so F u₁⊂F u₁+F v₂ is a null flag of dimensions 1 and 2. In contrast u₁v₁ has diagonal (1,0). For q=3 and N=E₁₂, the arithmetic WD pair scales N by 1/3 at Fr; its LP-normalized conversion scales N by 3 at Fr and 1/3 at Fr⁻¹. The subregular SO(V,b) and principal SO₃ images have seven-module invariant dimensions 1 and 0 and centralizer orders 6 and 1. For a scalar z on F⁶, z²·z⁻²=1 in the H model. At s=(1,2,3), the third H reflection gives (6,−3,−2) and both quadratic values are 50.
 
 ### Dependencies
 
-The statement carriers and construction inputs are `TauCeti.Octonion`; `TauCeti.Octonion.norm_mul`; `TauCeti.Octonion.mul_self`; `TauCeti.Octonion.finrank_imaginary`; ReductiveGroups Layer 9; ReductiveGroups Layer 3; RepresentationTheory/LieHighestWeight Layer 8; SmoothRepresentationsOfLocalGroups §SR.5.1; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; RepresentationTheory/SpinRepresentations Layer 8; RepresentationTheory/SpinRepresentations Layer 4; ClassFieldTheory Layer 9; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40. The internal inputs are §0.1, §0.2, §0.3, §0.5, §0.7, §0.6, §0.9. The exact additional supplier gaps are those on the individual Needs lines.
+The statement carriers and construction inputs are `TauCeti.Octonion`; `TauCeti.Octonion.norm_mul`; `TauCeti.Octonion.mul_self`; `TauCeti.Octonion.finrank_imaginary`; ReductiveGroups Layer 9; ReductiveGroups Layer 3; RepresentationTheory/LieHighestWeight Layer 8; SmoothRepresentationsOfLocalGroups §SR.5.1; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; RepresentationTheory/SpinRepresentations Layer 8; RepresentationTheory/SpinRepresentations Layer 4; ClassFieldTheory Layer 9; LanglandsParameterStacks LP0.4, LP1.11–LP1.12; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40. The internal inputs are §0.1, §0.2, §0.3, §0.5, §0.7, §0.6, §0.9. The exact additional supplier gaps are those on the individual Needs lines.
 
 ## Layer 1: normalized local representation theory
 
@@ -445,7 +449,7 @@ A proof route is to specialize the general Langlands classification to the two m
 
 ### 1.8 Unipotent depth-zero supercuspidals
 
-Construct the G₂ depth-zero supercuspidals denoted πsc[1], πsc[ω], πsc[ω²] from cuspidal unipotent representations of the reductive quotient at a hyperspecial vertex and compact induction. Identify their Hecke eigenvalues and distinguish the three labels; the two nontrivial cubic labels are an unordered pair until an eigenvalue convention is chosen. Supply the exceptional finite-field character calculations needed to connect these labels with the subregular local parameterization. (GS, §3.4(2), pp. 12–13; Proposition 7.1(iii), p. 23 (GS line 401)).
+Construct the G₂ depth-zero supercuspidals denoted πsc[1], πsc[ω], πsc[ω²] from cuspidal unipotent representations of the reductive quotient at a hyperspecial vertex and compact induction. Identify their Hecke eigenvalues and distinguish the three labels; the two nontrivial cubic labels are an unordered pair until an eigenvalue convention is chosen. Supply the exceptional finite-field character calculations needed to connect these labels with the subregular local parameterization of §1.9. (GS, §3.4(2), pp. 12–13; Proposition 7.1(iii), p. 23 (GS line 401)).
 
 A proof route uses the parahoric quotient and cuspidal type criterion, compute the three unipotent cuspidal characters, and lift their matrix coefficients. Residue-characteristic restrictions of any finite-field calculation must be checked individually.
 
@@ -457,7 +461,7 @@ A proof route uses the parahoric quotient and cuspidal type criterion, compute t
 
 ### 1.9 The parameter labels needed by theta
 
-Record only the established labels used here: Levi parameters for noncuspidal series; nondiscrete tempered packets of size one or two with unique generic member; principal-SL₂ Steinberg; subregular component group S₃ with πgen[1],πdeg[1],πsc[1]; and the quadratic/cubic or dihedral labels of the reducibility nodes. Within the partial parameterization proved here, a member assigned a discrete parameter trivial on the Deligne SL₂ is supercuspidal. The completed bijection and all endoscopic identities for G₂ belong to LocalLanglandsCorrespondenceForG2, which consumes this roadmap and is never an input. (GS, §3.4, pp. 12–14 (GS line 401)).
+Record only the established labels used here: Levi parameters for noncuspidal series; nondiscrete tempered packets of size one or two with unique generic member; principal-SL₂ Steinberg; the subregular Deligne SL₂ with image the specified SO(V,b)⊂SL(V)⊂G₂ of §0.6, with trivial Weil part and component group S₃, giving πgen[1],πdeg[1],πsc[1]; and the quadratic/cubic or dihedral labels of the reducibility nodes. Within the partial parameterization proved here, a member assigned a discrete parameter trivial on the Deligne SL₂ is supercuspidal. The completed bijection and all endoscopic identities for G₂ belong to LocalLanglandsCorrespondenceForG2, which consumes this roadmap and is never an input. (GS, §3.4, pp. 12–14 (GS lines 401, 452–460)).
 
 A proof route is to compare the long/short-root centralizers with the explicitly constructed representations and the GL₂/GL₃ parameter maps; distinguish desiderata of a full LLC from identities actually used by the theta calculations.
 
@@ -465,8 +469,8 @@ A proof route is to compare the long/short-root centralizers with the explicitly
 
 **Checks.**
 
-- For subregular monodromy with trivial Weil part, S₃ has irreducible dimensions 1,2,1 and 1²+2²+1²=6; the three labels are distinct.
-- For principal monodromy the component group has order 1 and the single label is Steinberg.
+- For the specified subregular map through SO(V,b) and trivial Weil part, S₃ has irreducible dimensions 1,2,1 and 1²+2²+1²=6; the three labels are distinct. Its seven-module invariant dimension is 1.
+- For principal monodromy the seven-module is Sym⁶(C²), with invariant dimension 0, the component group has order 1 and the single label is Steinberg. Its image also has abstract group type SO₃, so that type alone cannot select the subregular labels.
 
 ### 1.10 Finite cubic models for nongeneric G₂
 
@@ -1346,7 +1350,7 @@ A proof route is to combine the three independent proofs and nontempered classif
 
 ### 8.4 The remaining tempered non-supercuspidal lifts
 
-For unitary discrete-series GL₂ τ, θH(IQ(τ))=I₂(τ⊗τ), matching generic/degenerate summands where these split; θH(δQ(τ))=δ₂(τ) when ωτ=1; θH(δP(τ))=δ₁₃(τ) in the selfdual determinant-trivial case. The S₃-dihedral, nontrivial quadratic and Steinberg entries are πgen[τ]↦σgen[τ], πgen[χ]↦σgen[χ], and StG₂↦StH. Together with the E₆ table and πdeg[1] on the division side this covers every tempered non-supercuspidal π. (GS, Theorem 15.3, p. 53 (GS line 2026)).
+For every unitary discrete-series GL₂ representation τ, θH(IQ(τ))=I₂(τ⊗τ), interpreted constituentwise as matching generic/degenerate summands where these split. For τ unitary, selfdual and supercuspidal with ωτ=1, θH(δQ(τ))=δ₂(τ) and θH(δP(τ))=δ₁₃(τ). The S₃-dihedral, nontrivial quadratic and Steinberg entries are πgen[τ]↦σgen[τ], πgen[χ]↦σgen[χ], and StG₂↦StH. Together with the E₆ table and πdeg[1] on the division side this covers every tempered non-supercuspidal π. (GS, Theorem 15.3(i)–(v), p. 53 (GS lines 2036–2060)).
 
 A proof route is to construct maps using the two G₂ Jacquet bottom pieces and follow their discrete-series submodules under the known reducibility filtrations; use genericity to select the correct member.
 
@@ -1354,7 +1358,8 @@ A proof route is to construct maps using the two G₂ Jacquet bottom pieces and 
 
 **Checks.**
 
-- The Steinberg input maps to St_H, with discrete-series indicator 1. The determinant-trivial supercuspidal GL₂ input gives two distinct constructions δQ↦δ₂ and δP↦δ₁₃.
+- The Steinberg input maps to St_H, with discrete-series indicator 1. A unitary selfdual supercuspidal GL₂ input with ωτ=1 gives two distinct constructions δQ↦δ₂ and δP↦δ₁₃.
+- For τ=St_GL₂, unitarity, selfduality and ωτ=1 hold, but supercuspidality fails. The socle of I_Q(1/2,τ) is πgen[1]⊕πdeg[1], with two constituents rather than a single δQ(τ). The two δ formulas do not apply; the unshifted formula still does. The constituent πdeg[1] has division lift 1, while πgen[1] has its nonzero H lift from §8.2. (GS, Proposition 3.2(ii), p. 10 (GS lines 354–362)).
 
 ### 8.5 The nongeneric πρ family
 
