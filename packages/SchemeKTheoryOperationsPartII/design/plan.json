@@ -47,7 +47,7 @@
  "gaps": [
   {
     "slug": "proper-formal-coherent-direct-images",
-    "needs": "For an adic proper finite-type morphism p of locally noetherian formal schemes, a target ideal of definition I and coherent F, provide coherent Rᵠp_*F with its canonical inverse-limit comparison for the reductions F/(I𝒪_{X′})ⁿ⁺¹F, the Mittag–Leffler assertion on every noetherian target open, and positive-degree coherent acyclicity on every affine formal scheme.",
+    "needs": "For an adic proper finite-type morphism p of locally noetherian formal schemes, a target ideal of definition I and coherent F, provide coherent Rᵠp_*F with its canonical inverse-limit comparison for the reductions F/(I𝒪_{X′})ⁿ⁺¹F and the Mittag–Leffler assertion on every noetherian target open.",
     "supplier": "AdicSpacesPartIII",
     "section": "F0.6 (general proper formal coherent direct images)"
   }

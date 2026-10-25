@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-SchemeKTheoryOperations owns the ordinary-scheme theory: strict and perfect models (§§1.5–1.6), coherent G-theory and proper transfers (§§2.1–2.3), coherent supported dévissage (§3.5), coniveau (Layer 4), products (§6.1), degree-zero supported operations and rational filtration products (§6.12), and cycle comparisons and Riemann–Roch (Layer 7). This Part II starts at formal support. Its affine comparison transports that theory from Spec A to Spf A; it does not construct scheme operations again.
+SchemeKTheoryOperations owns the ordinary-scheme theory: strict and perfect models (§§1.5–1.6), coherent G-theory, pullback and proper transfers (§§2.1–2.3), base change and projection formulas (§2.4), coherent supported dévissage (§3.5), coniveau (Layer 4), products (§6.1), degree-zero supported operations and rational filtration products (§6.12), and cycle comparisons and Riemann–Roch (Layer 7). This Part II starts at formal support. Its affine comparison transports that theory from Spec A to Spf A; it does not construct scheme operations again.
 
 AdicSpacesPartII §§R0.1a–R0.1b owns adic rings and noetherian completion. AdicSpacesPartIII §§F0.1–F0.8 owns completed localisations, locally ringed formal schemes, their coherent modules and the affine coherent equivalence. SchemeAndStackFoundations §§4.7–4.10 owns formal thickening systems and their algebraic completion comparisons. Those formal carriers, coherent categories and comparisons are imported rather than reconstructed. The new geometry here consists of the stalk-dimension conventions and formal-support adapters needed for supported K₀.
 
@@ -48,13 +48,15 @@ Sections R0.1a–R0.1b supply adic rings of finite ideal type and their noetheri
 
 ### From TauCetiRoadmap.AdicSpacesPartIII
 
-Section F0.1, *completed-localization*, supplies completed principal localisations, their quotient descriptions and flatness. F0.2 supplies Spf with its ring sheaf; F0.3 supplies locally noetherian formal schemes, gluing, the scheme embedding and *spf-morphism-correspondence*. F0.4 supplies adic, finite-type and proper morphisms, inverse images and coherent-ideal closed formal subschemes. F0.6, *associated-formal-module*, *affine-coherent-equivalence* and *coherent-as-inverse-system*, supplies association of finite modules, exactness, tensor and finite-projective comparisons. F0.8, *coherent-formal-module-properties*, supplies the coherent abelian category and coherent pullback. F0.6, *formal-direct-image-comparison*, compares proper algebraic morphisms with their completions; that does not by itself cover arbitrary proper formal morphisms.
+Section F0.1, *completed-localization*, supplies completed principal localisations, their quotient descriptions and flatness. F0.2 supplies Spf with its ring sheaf and *spf-morphism-correspondence*: morphisms from a formal scheme X to Spf A are the ring maps A → Γ(X, 𝒪_X) that are continuous on affine formal opens. F0.3 supplies locally noetherian formal schemes, gluing and the scheme embedding. F0.4 supplies adic, finite-type and proper morphisms, inverse images and coherent-ideal closed formal subschemes. F0.6, *associated-formal-module*, *affine-coherent-equivalence* and *coherent-as-inverse-system*, supplies association of finite modules, exactness, tensor and finite-projective comparisons. F0.8, *coherent-formal-module-properties*, supplies the coherent abelian category and coherent pullback. F0.6, *formal-direct-image-comparison*, compares proper algebraic morphisms with their completions; that does not by itself cover arbitrary proper formal morphisms.
 
-What AdicSpacesPartIII must provide (gap:proper-formal-coherent-direct-images): For an adic proper finite-type morphism p of locally noetherian formal schemes, a target ideal of definition I and coherent F, provide coherent Rᵠp_*F with its canonical inverse-limit comparison for the reductions `F/(I𝒪_{X′})ⁿ⁺¹F`, the Mittag–Leffler assertion on every noetherian target open, and positive-degree coherent acyclicity on every affine formal scheme. (EGA-III1 (3.4.2)–(3.4.4), pp. 119–120; EGA-III1 lines 4471–4507).
+Affine coherent acyclicity is imported from that comparison, not requested. Let B be an adic noetherian ring with ideal of definition J and M a finite B-module. Apply *formal-direct-image-comparison* to the identity of Spec B with closed subscheme V(J): the completion is Spf B, and M~ completes to M^Δ (*associated-formal-module*). It identifies `H^q(Spf B, M^Δ)` with the J-adic completion of `H^q(Spec B, M~)`, which is zero for q > 0 by scheme affine acyclicity (SchemeAndStackFoundations §2.6). Every coherent module on Spf B is some M^Δ (*affine-coherent-equivalence*), so coherent modules on affine noetherian formal schemes have no cohomology in positive degrees. For B = k⟦t⟧ and M = B/(t²), H⁰ is M, of length 2, and H¹ = 0.
+
+What AdicSpacesPartIII must provide (gap:proper-formal-coherent-direct-images): For an adic proper finite-type morphism p of locally noetherian formal schemes, a target ideal of definition I and coherent F, provide coherent Rᵠp_*F with its canonical inverse-limit comparison for the reductions `F/(I𝒪_{X′})ⁿ⁺¹F` and the Mittag–Leffler assertion on every noetherian target open. (EGA-III1 (3.4.2)–(3.4.4), pp. 119–120; EGA-III1 lines 4471–4507).
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Sections 0.16–0.18 supply catenarity, depth, Cohen–Macaulay local algebra and coherent support. Section 0.7 supplies neighbourhood dimension, which is distinguished from the stalk dimension defined here. Sections 2.2 and 2.6 supply Leray, coherent scheme cohomology, affine acyclicity and boundedness; §4.13 supplies regular schemes. Section 3.3, *vectorBundleDegree* and its tensor/dual formulas, supplies degree for finite locally free sheaves on arbitrary proper schemes of dimension at most one over a field. Section 5.7 supplies the scheme resolution-property predicate and scheme K₀/G₀ interfaces; their supported K-theory refinements are consumed from SchemeKTheoryOperations.
+Sections 0.16–0.18 supply catenarity, depth, Cohen–Macaulay local algebra and coherent support. Section 0.7 supplies neighbourhood dimension, which is distinguished from the stalk dimension defined here. Sections 2.2 and 2.6 supply Leray, coherent scheme cohomology, affine acyclicity, boundedness over an affine base, and finiteness of coherent cohomology on schemes proper over a noetherian ring; §4.13 supplies regular schemes. Section 3.3, *vectorBundleDegree* and its tensor/dual formulas, supplies degree for finite locally free sheaves on arbitrary proper schemes of dimension at most one over a field. Section 5.7 supplies the scheme resolution-property predicate and scheme K₀/G₀ interfaces; their supported K-theory refinements are consumed from SchemeKTheoryOperations.
 
 ### From TauCetiRoadmap.GrothendieckEulerForms and TauCetiRoadmap.GeneralAlgebraicKTheory
 
@@ -66,7 +68,7 @@ DerivedModuleAlgebra §0.K.1 supplies the finite Koszul complex, its signed tens
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
-Use §§1.5–1.6 and 2.5 for strict complexes and the strict/perfect comparison on schemes with the resolution property, §§2.1–2.3 for coherent G₀ and proper pushforward with base change, §3.5 for coherent supported dévissage, §4.4 for support filtrations, §6.1 for support products and pullback compatibility, and §6.12 for degree-zero strict support comparison and rational supported filtration multiplicativity on separated regular noetherian finite-dimensional schemes. Apply the last result to Spec A, where the resolution property holds. No multiplicativity input for non-affine formal schemes is supplied or assumed.
+Use §§1.5–1.6 and 2.5 for strict complexes and the strict/perfect comparison on schemes with the resolution property, §2.1 for coherent G₀, §2.2 for derived pullback and the underived flat pullback on G₀, §2.3 for proper pushforward on G₀ with its alternating higher-direct-image formula and composition, §2.4 for Tor-independent base change of G-transfers and the projection formula, §3.5 for coherent supported dévissage, §4.4 for support filtrations, §6.1 for support products and pullback compatibility, and §6.12 for degree-zero strict support comparison and rational supported filtration multiplicativity on separated regular noetherian finite-dimensional schemes. Apply the last result to Spec A, where the resolution property holds. No multiplicativity input for non-affine formal schemes is supplied or assumed.
 
 ## How to read the build
 
@@ -686,7 +688,7 @@ W a quasi-compact scheme (discretely ringed), not merely a formal scheme. A noet
 
 *Proof route.* On every affine open of the scheme W, continuity into its discrete structure sheaf kills some Iⁿ; quasi-compactness gives one exponent for W. Properness is then equivalent to scheme properness over a factorising thickening. Scheme proper coherent cohomology gives finite modules and a finite cohomological bound; changing the exponent composes with a closed immersion, preserving the underlying A-modules. For a DVR these torsion finite modules have finite A-length.
 
-*Needs:* AdicSpacesPartIII §F0.3 (spf-morphism-correspondence); AdicSpacesPartIII §F0.4; SchemeKTheoryOperations §2.2; Mathlib `Module.length`.
+*Needs:* AdicSpacesPartIII §F0.2 (spf-morphism-correspondence); AdicSpacesPartIII §F0.3 (scheme embedding); AdicSpacesPartIII §F0.4; SchemeAndStackFoundations §2.6 (finite coherent cohomology of proper schemes, bound over an affine base); Mathlib `Module.length`.
 
 **Checks.**
 
@@ -709,7 +711,7 @@ The API consists of these facts under the hypotheses above.
 
 *Proof route.* Use the factorising proper scheme morphism from §4.1. Coherent cohomology is bounded and has finite A-length. The long exact cohomology sequence proves additivity, and Leray for the closed immersion between two thickenings proves independence of the exponent. Coherent dévissage extends the map to formally supported classes.
 
-*Needs:* §4.1; §1.1; §1.2; SchemeKTheoryOperations §2.2; Mathlib `Module.length`.
+*Needs:* §4.1; §1.1; §1.2; SchemeKTheoryOperations §2.3 (proper pushforward on G₀); Mathlib `Module.length`.
 
 **Checks.**
 
@@ -763,7 +765,7 @@ Part (b) assumes a finite extension of complete discrete valuation rings, with f
 
 *Proof route.* For proper scheme maps use the bounded Leray spectral sequence. For a finite DVR extension, a composition series over A′ shows `length_A M = f length_{A′} M`. For a flat local map A → A′, flat scheme cohomology base change on a finite thickening identifies the new cohomology with the old tensor A′. A composition series over A gives `length_{A′}(M ⊗ A′) = e length_A M` because A′/ϖ_A A′ has length e. Neither formula requires separability; the flat formula allows an infinite residue-field extension.
 
-*Needs:* §4.2; SchemeKTheoryOperations §2.2; SchemeKTheoryOperations §2.3; Mathlib `Module.length`.
+*Needs:* §4.2; SchemeKTheoryOperations §2.2 (flat pullback on G₀); SchemeKTheoryOperations §2.3 (composition of proper pushforwards); SchemeKTheoryOperations §2.4 (Tor-independent base change of G-transfers); Mathlib `Module.length`.
 
 **Checks.**
 
@@ -812,9 +814,9 @@ Let p : X′ → X be adic, of finite type and proper between noetherian formal 
 
 p proper in EGA’s sense: adic, of finite type, with proper reductions. A proper reduced map alone is insufficient. The projection formula needs the regularity of X (finite Tor dimension) to define Lp^*. Support degree identities use compatible A-structures and a proper scheme target support W containing p(Y′). For the projection formula, p_* of a supported coherent class is taken by supported dévissage; the result lies in K′₀(Y ∩ p(Z′)).
 
-*Proof route.* Apply the general formal coherent-direct-image supplier contract. Cover X by finitely many affine formal opens and each proper preimage by finitely many affine formal opens. The preimage is separated over the affine base, so their intersections are affine. Affine coherent acyclicity gives a finite Čech cohomological bound independent of F and of reduction level. The finite long exact sequence defines the G₀ homomorphism, and Leray proves composition. For the projection formula construct the global derived transformation from the ringed adjunction. For a locally perfect first input it is an isomorphism: check on opens with a bounded finite free representative and use the derived composition and tensor identifications. The finite global Euler identities descend to the supported coherent groups. This local test proves invertibility of a derived morphism, not equality of K₀ classes by an affine cover. For finite flat p, tensor by the rank-d locally free `p_*O_{X′}`; near the finite support it is free of rank d, giving the degree scaling.
+*Proof route.* The general formal coherent-direct-image supplier contract gives coherence of Rᵠp_*F and its inverse-limit comparison. Cover X by finitely many affine formal opens and each proper preimage by finitely many affine formal opens. The preimage is separated over the affine base, so their intersections are affine. On each such intersection coherent modules have no positive-degree cohomology; this affine acyclicity is the identity case of AdicSpacesPartIII's algebraic/formal direct-image comparison recorded in the supplier contracts, not part of the requested contract. Leray's acyclic-cover theorem then gives vanishing in every degree at least the number of opens in the cover, a bound independent of F and of reduction level. The finite long exact sequence defines the G₀ homomorphism, and Leray proves composition. For the projection formula construct the global derived transformation from the ringed adjunction. For a locally perfect first input it is an isomorphism: check on opens with a bounded finite free representative and use the derived composition and tensor identifications. The finite global Euler identities descend to the supported coherent groups. This local test proves invertibility of a derived morphism, not equality of K₀ classes by an affine cover. For finite flat p, tensor by the rank-d locally free `p_*O_{X′}`; near the finite support it is free of rank d, giving the degree scaling.
 
-*Needs:* §1.1; §1.8; §4.4; §4.2; AdicSpacesPartIII §F0.4; AdicSpacesPartIII §§F0.1–F0.8; SchemeKTheoryOperations §6.1; SchemeKTheoryOperations §2.2; EnhancedDerivedSheaves §0.4 (projection transformation); EnhancedDerivedSheaves §E1.4.
+*Needs:* §1.1; §1.8; §4.4; §4.2; AdicSpacesPartIII §F0.4; AdicSpacesPartIII §§F0.1–F0.8; gap:proper-formal-coherent-direct-images; AdicSpacesPartIII §F0.6 (formal-direct-image-comparison at the identity of Spec B, associated-formal-module, affine-coherent-equivalence) and SchemeAndStackFoundations §§2.2, 2.6 (Leray's acyclic-cover theorem, affine acyclicity) for affine formal acyclicity and the Čech bound; SchemeKTheoryOperations §6.1; SchemeKTheoryOperations §2.2; EnhancedDerivedSheaves §0.4 (projection transformation); EnhancedDerivedSheaves §E1.4.
 
 **Checks.**
 
@@ -828,7 +830,7 @@ On Spf ℤ_p⟦t⟧ over ℤ_p, the two sections t = 0 and t = pⁿ have interse
 
 ### Dependencies
 
-Layers 0–3; AdicSpacesPartIII §§F0.3–F0.4 and the proper formal coherent-direct-image contract; SchemeAndStackFoundations §§2.2, 2.6, 3.3; EnhancedDerivedSheaves §§0.4, E1.4; SchemeKTheoryOperations §§2.2–2.3, 6.1.
+Layers 0–3; AdicSpacesPartIII §§F0.2–F0.4, §F0.6 (formal-direct-image-comparison, associated-formal-module, affine-coherent-equivalence) and the proper formal coherent-direct-image contract (gap:proper-formal-coherent-direct-images); SchemeAndStackFoundations §§2.2, 2.6, 3.3; EnhancedDerivedSheaves §§0.4, E1.4; SchemeKTheoryOperations §§2.2–2.4, 6.1.
 
 ## Downstream consumers
 
