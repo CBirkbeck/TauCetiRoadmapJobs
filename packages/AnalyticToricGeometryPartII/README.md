@@ -10,6 +10,8 @@ The following objects are already in the library or stated by their named suppli
 
 The fixed smooth complete nonprojective threefold of Fujino–Sato is owned by WeilConjectures WC.6, “A smooth proper nonprojective threefold”, including its fan, integral model and fixed-fan Chow presentation. Here it is a Check of the general complete-fan comparison and hypersurface approximation, not another construction. The general operational Chow identification for every complete fan in §6.1 is broader than that fixed-fan presentation. SchemeAndStackFoundations owns the general operational and finite-orbit duality extensions in the contracts below; restricting §6.1 to regular fans would discard a theorem.
 
+PerfectoidTowers P8.15 and P8.19 state, over ℂ_p, the Frobenius good tower of ℙ¹ and the two perfected-disc charts of its perfectoid limit, as Checks of their good-tower and analytic-separation theory. That is the ℙ¹-fan instance of §§2.1 and 3.2 over ℂ_p. This roadmap constructs the toric tower for every finite fan and every perfectoid K, builds no separate ℙ¹ instance, and records the agreement as a Check of §3.2.
+
 AbelianSchemesAndArithmeticModuli §A2.7 owns `ampleIntersectionPositive`, the positivity of ample intersection numbers on nonempty closed subschemes proper over any field. Its specialization to repeated copies of H, summed over effective cycle components, supplies the positivity used in §§6.3–6.4.
 
 DeligneWeightsAndPurityPartII consumes the natural toric projection, cohomology and approximation conclusions; MotivesAndAlgebraicCyclesPartII consumes geometric neighbourhoods. Neither supplies a prerequisite. Connectedness, geometric irreducibility and selecting a geometric component are not conclusions of the approximation theorems.
@@ -34,13 +36,13 @@ Coefficient cohomology is constant Λ=ℤ/ℓᵐ with ℓ prime, ℓ≠p and m�
 
 ### From Mathlib
 
-Use `PointedCone` and `ConvexCone.Salient` on the parent's lattice, `Finsupp` for finite character sums, `AddMonoidAlgebra` for convolution, and `ZeroAtInftyContinuousMap` for c₀ on a discrete index set. The monoid algebra definition and coefficient operations are in `Mathlib/Algebra/MonoidAlgebra/Defs.lean`; `MonoidAlgebra.mapDomainRingHom` in `Mathlib/Algebra/MonoidAlgebra/MapDomain.lean` supplies functorial exponent change after applying `Multiplicative`. The vanishing-at-infinity carrier in `Mathlib/Topology/ContinuousMap/ZeroAtInfty.lean` is a continuous map tending to zero along the cocompact filter; discreteness, a norm and convolution are not fields of that carrier. Use Mathlib's native scheme, module, tensor-product and category-of-sheaves carriers. None of these interfaces assumes coefficient rings are reduced.
+Use `PointedCone` and `ConvexCone.Salient` on the parent's lattice, `Finsupp` for finite character sums, `AddMonoidAlgebra` for convolution, and `ZeroAtInftyContinuousMap` for c₀ on a discrete index set. The monoid algebra definition and coefficient operations are in `Mathlib/Algebra/MonoidAlgebra/Defs.lean`; `MonoidAlgebra.mapDomainRingHom` in `Mathlib/Algebra/MonoidAlgebra/MapDomain.lean` supplies functorial exponent change after applying `Multiplicative`. The vanishing-at-infinity carrier in `Mathlib/Topology/ContinuousMap/ZeroAtInfty.lean` is a continuous map tending to zero along the cocompact filter; discreteness, a norm and convolution are not fields of that carrier. Use Mathlib's native scheme, module, tensor-product and category-of-sheaves carriers. None of these interfaces assumes coefficient rings are reduced. `AlgebraicGeometry.Smooth` in `Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean` asks that the ring map of every pair of affine opens be smooth; its ring-homomorphism property makes it local on the source. In `Mathlib/RingTheory/Smooth/Basic.lean`, `Algebra.Smooth` is formal smoothness with finite presentation, `Algebra.instFormallySmoothMvPolynomial` gives formal smoothness of polynomial algebras, `Algebra.Smooth.of_isLocalization_Away` gives smoothness of a localization at one element and `Algebra.Smooth.comp` composes; together they make R[x₁,…,x_r,y₁^(±1),…,y_s^(±1)] smooth over every commutative ring R.
 
 ### From Tau Ceti
 
 Use `TauCeti.Toric.Fan` in `TauCeti/Geometry/Toric/Algebraic/Fan/Basic.lean`, `TauCeti.Toric.IsToricCone` in `TauCeti/Geometry/Toric/Algebraic/Cone/Basic.lean`, `TauCeti.Toric.primitiveGenerator` in `TauCeti/Geometry/Toric/Algebraic/Ray/Primitive.lean`, `TauCeti.Toric.dualSemigroup` in `TauCeti/Geometry/Toric/Algebraic/DualSemigroup/Basic.lean`, and `TauCeti.Toric.IsToricCone.fg_dualSemigroup` in `TauCeti/Geometry/Toric/Algebraic/DualSemigroup/Finiteness.lean`. The latter requires an integral lattice; salience is an explicit part of the cone predicate. `TauCeti.Toric.Fan.algebraicRealization` in `TauCeti/Geometry/Toric/Algebraic/Fan/Scheme.lean` is the complex comparison object.
 
-Use `TauCeti.AlgebraicGeometry.SchemeWeilDivisor` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/Basic.lean`, the integer finitely supported functions on codimension-one points, and `TauCeti.AlgebraicGeometry.WeilDivisor.OrderSystem.ofScheme` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/Principal.lean`, requiring an integral noetherian scheme. `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.sheaf` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/Sheaf.lean` requires an integral locally noetherian scheme and discrete valuation rings at every codimension-one stalk. Apply it to normal field fibres; it is not a valuation-ring-model sheaf constructor without those hypotheses. The native `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.nonempty_iso_sheaf_of_linearlyEquivalent` in the same sheaf module transports linear equivalence to an isomorphism of divisor sheaves.
+Use `TauCeti.AlgebraicGeometry.SchemeWeilDivisor` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/Basic.lean`, the integer finitely supported functions on codimension-one points, and `TauCeti.AlgebraicGeometry.WeilDivisor.OrderSystem.ofScheme` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/Principal.lean`, requiring an integral noetherian scheme. `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.sheaf` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/Sheaf.lean` requires an integral locally noetherian scheme and discrete valuation rings at every codimension-one stalk. Apply it to normal field fibres; it is not a valuation-ring-model sheaf constructor without those hypotheses. The native `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.nonempty_iso_sheaf_of_linearlyEquivalent` in the same sheaf module transports linear equivalence to an isomorphism of divisor sheaves; besides the hypotheses of `sheaf` it requires `IsNoetherian X` (quasi-compact and locally noetherian), the hypothesis under which the order system `ofScheme` defines linear equivalence. Every field fibre XΣ,k of a finite fan satisfies it, being covered by the finitely many spectra of the finitely generated k-algebras k[P_σ].
 
 The carrier for geometric constructions is `TauCeti.AdicSpace`, with `TauCeti.PreAdicSpace.isAdic` and `TauCeti.PreAdicSpace.isAdic_restrict`, in `TauCeti/AlgebraicGeometry/AdicSpace/PreAdicSpace/Adic.lean`. Being adic means sheafy and locally affinoid; it does not assert properness, smoothness or the toric origin of a space.
 
@@ -50,9 +52,9 @@ Layer 0, “the algebraic supplier”, supplies dual semigroups, face localizati
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-C0.6–C0.7 supply face projections and off-face ideals for closed strata, with their coefficient change; C0.9 supplies face open immersions by inverting an exposing character; C0.16 supplies the finite-fan scheme over every commutative ring, its stratum ideals, torus action and coherent arbitrary coefficient change. C0.17 supplies the properness criterion: for the complete fan the structure morphism is proper over every base. C0.18 supplies the regular boundary's integral chart description. Completeness is not replaced by projectivity and the coefficient ring may be K°.
+C0.1 and C0.4–C0.5 supply the face projections, off-face ideals and stratum quotient algebras of closed strata, and C0.6–C0.7 their coefficient change; C0.9 supplies face open immersions by inverting an exposing character; C0.16 supplies the finite-fan scheme over every commutative ring, its stratum ideals, torus action and coherent arbitrary coefficient change. C0.17 supplies the properness criterion: for the complete fan the structure morphism is proper over every base. C0.18 supplies the regular boundary's integral chart description. C0.10 supplies, for a regular cone of dimension r in rank n and every commutative ring R, the chart isomorphism R[P_σ]≅R[x₁,…,x_r,y₁^(±1),…,y_(n−r)^(±1)]. With the C0.9 and C0.16 open charts and the Mathlib smoothness facts above, XΣ,R is therefore smooth over R for every regular finite fan Σ and every R, including K°; no further supplier statement is needed for this. Completeness is not replaced by projectivity and the coefficient ring may be K°.
 
-What ShimuraCompactifications must provide (gap:toric-field-fibres): Export normal geometrically integral field fibres for arbitrary finite rational fans, their distinct codimension-one ray orbit closures, and regular-fan smoothness over every coefficient ring, compatibly with the C0.16 chart gluing and coefficient change.
+What ShimuraCompactifications must provide (gap:toric-field-fibres): For every field k and every nonempty finite rational fan Σ, export that XΣ,k is normal and geometrically integral and that the ray orbit closures D_ρ are prime divisors with pairwise distinct codimension-one generic points, compatibly with the C0.16 chart gluing and with field extension.
 
 ### From TauCetiRoadmap.AdicSpaces and TauCetiRoadmap.AdicSpacesPartII
 
@@ -66,9 +68,13 @@ R2.2 supplies admissible formal schemes over an arbitrary complete rank-one valu
 
 P1.30 supplies perfected Tate algebras. P2.1 supplies homogeneous approximation on perfected polydiscs; P2.2–P2.3 supply the tilting homeomorphism and perfectoid rational localization; P2.9–P2.12 supply affinoid and glued perfectoid spaces and tilting. P3.18 and P3.20 supply the perfectoid étale site and its tilting equivalence. P7.1–P7.3 define the chart-density and residue-field tilde-limit relations; P7.11 supplies the completed-colimit criterion through AdicSpacesPartII R0.20.1; P7.12 supplies rational restriction and gluing; P7.13 supplies characteristic-p perfection towers; P7.15 supplies conversion from chart-density to residue-field tilde-limits for qcqs locally noetherian analytic finite levels, the fibred-topos limit, inseparable-tower invariance and torsion-cohomology continuity. The completed-colimit input requires a common pseudouniformizer and compatible integral rings of definition, both furnished by the Gauss models here. Perfection is used on split toric charts with their coefficient-field twists identified.
 
+### From TauCetiRoadmap.PerfectoidTowers
+
+P8.19 states, as its Check `PerfectoidSpace.goodTower_frobenius_P1`, that over ℂ_p the tower ℙ¹ ← ℙ¹ ← ⋯ with transition T↦Tᵖ is a good tower whose represented limit is the perfectoid projective line. P8.15 states, as `PerfectoidSpace.projectiveLine_perfectoid_charts`, that this limit has two perfected-disc charts covering it, with the perfected Laurent chart as their overlap. Only the ℙ¹ agreement Check of §3.2 uses them; the constructions of §§2.1 and 3.2 for an arbitrary fan and perfectoid K do not.
+
 What PerfectoidSpaces must provide (gap:perfected-cone-algebras): Extend perfected Tate algebras to coefficient-Gauss completions K⟨C∩L[1/p]⟩ for every rational polyhedral cone C in a finite-rank lattice L, including lineality, with their power-bounded plus rings, perfectoidness and monomial-compatible tilts.
 
-What PerfectoidSpaces must provide (gap:homogeneous-cone-approximation): Extend the homogeneous sharp estimate of P2.1 from perfected polydiscs to the perfected rational cone algebras with a linear Z[1/p]-grading and degree-zero piece K, for integral homogeneous f, rational c≥0 and ε∈Z[1/p] with 0<ε<1, preserving degree and the bound |f−g♯|≤|ϖ|^(1−ε) max(|f|,|ϖ|^c) when ϖ=(ϖ♭)♯ and ϖ^p divides p.
+What PerfectoidSpaces must provide (gap:homogeneous-cone-approximation): Extend the homogeneous sharp estimate of P2.1 from perfected polydiscs to the perfected rational cone algebras with a linear Z[1/p]-grading, for integral homogeneous f, rational c≥0 and ε∈Z[1/p] with 0<ε<1, preserving degree and the bound |f−g♯|≤|ϖ|^(1−ε) max(|f|,|ϖ|^c) when ϖ=(ϖ♭)♯ and ϖ^p divides p.
 
 ### From TauCetiRoadmap.AdicEtaleGeometry
 
@@ -114,7 +120,7 @@ On XΣ,k over a field k, let D_i be the reduced closure of the codimension-one o
 
 Here k is a field for the Weil-divisor interpretation.
 
-One proof route is the following. Import XΣ,A, torus action and base change from ShimuraCompactifications C0.16, and orbit ideals from C0.6–C0.7. Use the normal geometrically integral field-fibre and codimension-one orbit properties of gap:toric-field-fibres; arbitrary-ring chart construction alone does not assert normality. Use the primitive ray chart to identify its boundary coordinate; take its closure and codimension-one generic point. Map ray Finsupp coefficients to the native SchemeWeilDivisor by the injective ray-point map; do not reconstruct the generic divisor carrier. (SCH12, §8, Definition/Proposition 8.4, p. 304; SCH12 line 2381).
+One proof route is the following. Import XΣ,A, torus action and base change from ShimuraCompactifications C0.16, and orbit ideals with their stratum quotients and coefficient change from C0.1 and C0.4–C0.7. Use the normal geometrically integral field-fibre and codimension-one orbit properties of gap:toric-field-fibres; arbitrary-ring chart construction alone does not assert normality. Use the primitive ray chart to identify its boundary coordinate; take its closure and codimension-one generic point. Map ray Finsupp coefficients to the native SchemeWeilDivisor by the injective ray-point map; do not reconstruct the generic divisor carrier. (SCH12, §8, Definition/Proposition 8.4, p. 304; SCH12 line 2381).
 
 The API records these facts, with the hypotheses of this subsection. (SCH12, §8, Definition/Proposition 8.4, p. 304; SCH12 line 2381).
 
@@ -132,7 +138,7 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 
 All ray identifications agree on overlaps; coefficients retain multiplicities.
 
-*Needs:* ShimuraCompactifications C0.6–C0.7 and C0.16; `TauCeti.Toric.primitiveGenerator`; `TauCeti.AlgebraicGeometry.SchemeWeilDivisor`; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres.
+*Needs:* ShimuraCompactifications C0.1, C0.4–C0.7 and C0.16; `TauCeti.Toric.primitiveGenerator`; `TauCeti.AlgebraicGeometry.SchemeWeilDivisor`; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres.
 
 ### 0.2 Divisor character weights
 
@@ -245,7 +251,7 @@ On ℙ¹, D=dD₋ gives the basis 1,t,…,tᵈ for d≥0, no sections for d<0, a
 
 ### Dependencies
 
-Mathlib monoid algebras, modules and tensor products; Tau Ceti toric and Weil-divisor modules; AnalyticToricGeometry Layer 0; ShimuraCompactifications C0.6–C0.7 (orbit ideals), C0.9 and C0.16–C0.18; SchemeAndStackFoundations §3.4, gap:split-torus-divisors; AdicSpacesPartIII R2.2 and R2.10 for integral completion.
+Mathlib monoid algebras, modules and tensor products; Tau Ceti toric and Weil-divisor modules; AnalyticToricGeometry Layer 0; ShimuraCompactifications C0.1 and C0.4–C0.7 (orbit ideals, stratum quotients and their coefficient change), C0.9 and C0.16–C0.18; SchemeAndStackFoundations §3.4, gap:split-torus-divisors; AdicSpacesPartIII R2.2 and R2.10 for integral completion.
 
 ## Layer 1: unit toric formal generic fibres
 
@@ -285,7 +291,7 @@ One proof route is the following. Apply AdicSpacesPartIII R2 good-reduction-locu
 - For the ℙ¹ fan, the charts |t|≤1 and |t⁻¹|≤1 cover, and their intersection is |t|=1; the comparison is onto without a choice of projective embedding.
 - Apply the theorem to the fixed complete regular nonprojective fan of WeilConjectures WC.6: its unit model equals its full analytification although its ample support-function inequalities are inconsistent (FS25, Example 4.1, pp. 7–8; FS25 line 299 and line 318).
 
-*Needs:* §1.1; AdicSpacesPartIII R2.8; ShimuraCompactifications C0.16; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres.
+*Needs:* §1.1; AdicSpacesPartIII R2.8; ShimuraCompactifications C0.16; ShimuraCompactifications C0.17 (properness of the complete fan).
 
 ### 1.3 Toric power morphisms
 
@@ -397,9 +403,9 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 
 ### 2.4 Graded divisor algebras
 
-For integer D form R_D as the coefficient-Gauss completion of the finite-degree direct sum over j∈ℤ[1/p] of H⁰(TΣ,K,O_T(jD)); use convolution products and the integral coefficient lattice. Identify it isometrically with the PerfectoidSpaces cone algebra K⟨Q_D⟩, with homogeneous degree-j subspace c₀(W^p(jD),K). Thus R_D is perfectoid and R_D♭≅K♭⟨Q_D⟩, monomial compatibly. The completed grading is a c₀ direct sum, not a product, and sharp preserves homogeneous degrees; no additivity is assumed. When Σ is complete R_D has degree-zero part K and satisfies the exact hypotheses of the PerfectoidSpaces P2.1 homogeneous-cone contract. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
+For integer D form R_D as the coefficient-Gauss completion of the finite-degree direct sum over j∈ℤ[1/p] of H⁰(TΣ,K,O_T(jD)); use convolution products and the integral coefficient lattice. Identify it isometrically with the PerfectoidSpaces cone algebra K⟨Q_D⟩, with homogeneous degree-j subspace c₀(W^p(jD),K). Thus R_D is perfectoid and R_D♭≅K♭⟨Q_D⟩, monomial compatibly. The completed grading is a c₀ direct sum, not a product, and sharp preserves homogeneous degrees; no additivity is assumed. For every Σ, R_D with this grading satisfies the hypotheses of the PerfectoidSpaces P2.1 homogeneous-cone contract; when Σ is complete its degree-zero part is K. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
 
-One proof route is the following. Send the degree-j monomial χ^u to the monomial χ^(u,j) of Q_D. Check products and the integral coefficient lattices; complete the isometric monomial identification. Import perfected-cone perfectoidness/tilt from PerfectoidSpaces P2, rather than reproduce its Frobenius proof. For complete Σ the divisor-cone calculation verifies the degree-zero hypothesis of homogeneous approximation; the estimate itself is applied in §5.2. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
+One proof route is the following. Send the degree-j monomial χ^u to the monomial χ^(u,j) of Q_D. Check products and the integral coefficient lattices; complete the isometric monomial identification. Import perfected-cone perfectoidness/tilt from PerfectoidSpaces P2, rather than reproduce its Frobenius proof. The monomial identification carries the j-grading to a linear ℤ[1/p]-grading of K⟨Q_D⟩, as the homogeneous-cone contract requires; for complete Σ the divisor-cone calculation of §2.3 gives degree-zero part K. The estimate itself is applied in §5.2. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
 
 The API records these facts, with the hypotheses of this subsection. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
 
@@ -458,6 +464,7 @@ One proof route is the following. Use the shared pseudouniformizer and coefficie
 - At level n of the disc tower, the monomial t maps to t^(1/pⁿ); applying the next transition multiplies its exponent by p and recovers t^(1/pⁿ). Reversing these exponents fails compatibility.
 - The union of finite-level monomials contains every t^(a/pⁿ) with a≥0, and its finite sums are Gauss-dense; the nonvanishing coefficient-one infinite sum is excluded.
 - In rank zero all stages are Spa(K,K°), every transition is the identity and the topological inverse limit is that same space.
+- Over K=ℂ_p and the ℙ¹ fan, AΣ,K is (ℙ¹)ᵃⁿ by §1.2, and its φ_p-tower, with every level ℙ¹ and transition T↦Tᵖ as in the ℙ¹ Check of §1.3, is the Frobenius good tower of PerfectoidTowers P8.19. The ray charts K⟨t^(1/p^∞)⟩ and K⟨t^(−1/p^∞)⟩ of TΣ,K and their zero-cone overlap K⟨t^(±1/p^∞)⟩ are the two perfected-disc charts and the perfected Laurent overlap of PerfectoidTowers P8.15, and the two root coordinates multiply to 1 there. Identity transitions would instead give the constant ℙ¹ tower, which P8.19 records as not good in mixed characteristic.
 
 *Needs:* §2.1; §1.3; PerfectoidSpaces P7.11 (completed-colimit criterion); AdicSpacesPartII R0.20.1; PerfectoidSpaces P7.12; PerfectoidSpaces P7.15 (residue-field conversion).
 
@@ -549,7 +556,7 @@ A tilted classical coordinate x gives the compatible sequence ((x^(1/pⁿ))♯)�
 
 ### Dependencies
 
-Layers 1–2; PerfectoidSpaces P2.2–P2.12, P3.18, P3.20, P7.1–P7.4, P7.11–P7.15; AdicSpacesPartII R0.20.1; AdicEtaleGeometry A1.6. The full affine-line application additionally uses §1.2.
+Layers 1–2; PerfectoidSpaces P2.2–P2.12, P3.18, P3.20, P7.1–P7.4, P7.11–P7.15; AdicSpacesPartII R0.20.1; AdicEtaleGeometry A1.6. The full affine-line application additionally uses §1.2. The ℙ¹ agreement Check of §3.2 compares with PerfectoidTowers P8.15 and P8.19.
 
 ## Layer 4: prime-to-p torsion cohomology
 
@@ -567,7 +574,7 @@ One proof route is the following. Use ClassicalAdicEtaleCohomology §8.2 proper 
 - In mixed characteristic, with ℓ=p the same top-degree map is multiplication by p on ℤ/p and hence zero, which is not an automorphism; the excluded coefficient range is essential.
 - On the rank-zero algebraically closed point, H⁰=Λ and all positive-degree cohomology is zero, and the identity power map preserves this calculation.
 
-*Needs:* §1.3; §1.2; ShimuraCompactifications C0.16; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres; ClassicalAdicEtaleCohomology §8.2; ClassicalAdicEtaleCohomology §6.2; EtaleCohomologyFoundations §F.2.3; SchemeAndStackFoundations §0.29; SchemeAndStackFoundations §0.23a.
+*Needs:* §1.3; §1.2; ShimuraCompactifications C0.16; ShimuraCompactifications C0.10 with Mathlib `AlgebraicGeometry.Smooth` (smoothness of the regular K° model); ShimuraCompactifications C0.17 (properness of the complete fan); ClassicalAdicEtaleCohomology §8.2; ClassicalAdicEtaleCohomology §6.2; EtaleCohomologyFoundations §F.2.3; SchemeAndStackFoundations §0.29; SchemeAndStackFoundations §0.23a.
 
 ### 4.2 Toric torsion cohomology comparison
 
@@ -591,7 +598,7 @@ For p=2 and Λ=ℤ/3, the top cohomology transition of ℙ¹ is multiplication b
 
 ### Dependencies
 
-§§1.2–1.3, 3.4–3.6; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.23a, 0.29; EtaleCohomologyFoundations §F.2.3; ClassicalAdicEtaleCohomology §§1.1, 6.2, 8.2 and gap:geometric-morphism-cup-pullback; PerfectoidSpaces P7.15.
+§§1.2–1.3, 3.4–3.6; ShimuraCompactifications C0.10 and C0.16–C0.18; SchemeAndStackFoundations §§0.23a, 0.29; EtaleCohomologyFoundations §F.2.3; ClassicalAdicEtaleCohomology §§1.1, 6.2, 8.2 and gap:geometric-morphism-cup-pullback; PerfectoidSpaces P7.15.
 
 ## Layer 5: section tubes and hypersurface approximation
 
@@ -617,7 +624,7 @@ Let Σ be complete and regular, D integer invariant, f a nonzero integral degree
 
 Here Σ complete; k₀ is a specified dense subfield, not necessarily perfect or algebraically closed. f≠0; this is the equation of an effective Cartier hypersurface in the application.
 
-One proof route is the following. Use R_D=K⟨Q_D⟩ and its tilt with degree-zero K. Choose a rational c′≥c with |ϖ|^(c′)<‖f‖ at the multiplicative Gauss valuation, and apply the PerfectoidSpaces P2 homogeneous-cone approximation contract at c′. The estimate implies g≠0 at that point, and also implies the required estimate at the original c. On each integral frame, map the graded cone algebra to the perfected chart by (u,j)↦u−jm_σ. This is a bounded monomial map, so the pointwise estimate restricts to the chart. Choose a nonzero coefficient of g. Finite support is Gauss-dense; retain that coefficient and approximate the retained coefficients by k₀ with error strictly below both |(ϖ♭)^c| and its nonzero norm (and below 1). The selected coefficient stays nonzero, the section stays integral, and nonarchimedean inequalities preserve the original truncated norm domain. Choose N clearing the finitely many p-denominators. In characteristic p, taking p^N powers raises coefficients and weights termwise; coefficients remain in k₀, even if k₀ is imperfect. Use the characteristic-p perfection homeomorphism to transfer vanishing and containment down to the algebraic hypersurface analytification. (SCH12, §8, proof of Proposition 8.7, p. 306; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 1752 and line 2482).
+One proof route is the following. Use R_D=K⟨Q_D⟩ and its tilt K♭⟨Q_D⟩, with the grading by j. Choose a rational c′≥c with |ϖ|^(c′)<‖f‖ at the multiplicative Gauss valuation, and apply the PerfectoidSpaces P2 homogeneous-cone approximation contract at c′. The estimate implies g≠0 at that point, and also implies the required estimate at the original c. On each integral frame, map the graded cone algebra to the perfected chart by (u,j)↦u−jm_σ. This is a bounded monomial map, so the pointwise estimate restricts to the chart. Choose a nonzero coefficient of g. Finite support is Gauss-dense; retain that coefficient and approximate the retained coefficients by k₀ with error strictly below both |(ϖ♭)^c| and its nonzero norm (and below 1). The selected coefficient stays nonzero, the section stays integral, and nonarchimedean inequalities preserve the original truncated norm domain. Choose N clearing the finitely many p-denominators. In characteristic p, taking p^N powers raises coefficients and weights termwise; coefficients remain in k₀, even if k₀ is imperfect. Use the characteristic-p perfection homeomorphism to transfer vanishing and containment down to the algebraic hypersurface analytification. (SCH12, §8, proof of Proposition 8.7, p. 306; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 1752 and line 2482).
 
 **Checks.**
 

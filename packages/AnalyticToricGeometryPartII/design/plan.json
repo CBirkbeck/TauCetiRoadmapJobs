@@ -2257,7 +2257,7 @@
       "slug": "toric-field-fibres",
       "supplier": "ShimuraCompactifications",
       "section": "C0.16–C0.18",
-      "needs": "Export normal geometrically integral field fibres for arbitrary finite rational fans, their distinct codimension-one ray orbit closures, and regular-fan smoothness over every coefficient ring, compatibly with the C0.16 chart gluing and coefficient change."
+      "needs": "For every field k and every nonempty finite rational fan Σ, export that XΣ,k is normal and geometrically integral and that the ray orbit closures D_ρ are prime divisors with pairwise distinct codimension-one generic points, compatibly with the C0.16 chart gluing and with field extension."
     },
     {
       "slug": "perfected-cone-algebras",
@@ -2269,7 +2269,7 @@
       "slug": "homogeneous-cone-approximation",
       "supplier": "PerfectoidSpaces",
       "section": "P2.1",
-      "needs": "Extend the homogeneous sharp estimate of P2.1 from perfected polydiscs to the perfected rational cone algebras with a linear Z[1/p]-grading and degree-zero piece K, for integral homogeneous f, rational c≥0 and ε∈Z[1/p] with 0<ε<1, preserving degree and the bound |f−g♯|≤|ϖ|^(1−ε) max(|f|,|ϖ|^c) when ϖ=(ϖ♭)♯ and ϖ^p divides p."
+      "needs": "Extend the homogeneous sharp estimate of P2.1 from perfected polydiscs to the perfected rational cone algebras with a linear Z[1/p]-grading, for integral homogeneous f, rational c≥0 and ε∈Z[1/p] with 0<ε<1, preserving degree and the bound |f−g♯|≤|ϖ|^(1−ε) max(|f|,|ϖ|^c) when ϖ=(ϖ♭)♯ and ϖ^p divides p."
     },
     {
       "slug": "operational-chow-finite-orbits",
