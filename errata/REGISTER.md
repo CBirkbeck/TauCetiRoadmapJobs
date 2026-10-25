@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4755 mistakes recorded on the board: 3159 misprints, 1188 errors, 328 gaps, 80 unparsed bullets.
+4760 mistakes recorded on the board: 3162 misprints, 1190 errors, 328 gaps, 80 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3843,6 +3843,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at equation (4.4), p. 479 (Kato1984 line 520, scan page marker): the source says current squared velocity norm is bounded by initial squared norm plus accumulated dissipation; it should be current squared norm plus accumulated dissipation bounded by initial squared norm; affects a stated result. Found by IncompressibleFlows (ERRATA-IncompressibleFlows at 25bd83b, 2026-10-23, codex gpt-6-astra).
 
+## Kato2004
+
+- **Error** at Remark 12.8, (12.8.2), p. 223: the source says for every coefficient place of a non-CM form the image contains an open subgroup of `SL₂(ℤ_p)`; it should be require that Momose's quaternion algebra split at the place below, since division-algebra images contain no nontrivial unipotent; affects a stated result; (12.4 at such places, through 13.8). Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Misprint** at Theorem 14.5(3), p. 236: the source says the condition "(12.5.1)" of Theorem 12.5(4); it should be the image condition (12.5.2), which 14.14 uses; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Misprint** at Theorem 16.4(ii), p. 270: the source says the auxiliary vector lies in `D_crys` of the form's own representation; it should be `D_crys(V*(1))`, the space of η; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+
 ## Katz, p-adic properties of modular schemes and modular forms (LNM 350, 1973)
 
 - **Misprint** at §1.8, printed p. 87: the source says the source describes level-one forms as the fibre product of the full level-3 and level-4 form modules; it should be take their GL₂-invariant parts (with 3, resp. 4, inverted), as its own invariance argument uses; in characteristic two the dimensions differ (2 versus 1); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -4835,6 +4841,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at (22), p. 653, and at the Rosati discriminant display, p. 655: the source says the source equates the conjugate-transpose complex trace with the rational trace, but the complex one is half; it should be twice the real part of the complex trace; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at ddef4f3, 2026-10-24, claude opus).
 
+## Nakamura2023
+
+- **Misprint** at the proof of Theorem A.1, arXiv v2 p. 87: the source says the conductor-n smoothing factor has first scalar d; it should be `d²`, as in the conductor-one factor displayed just above it; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "5fb6ef4", "job": "REV-PKG-KatoEulerSystems~2", "model": "opus", "worker": "fable-rev81"} -->. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+
 ## native_multiplicative_heights
 
 - **Misprint** at the docstring of `NumberField.absMulHeight₁`: the source says the junk value off algebraic elements is 0; it should be 1, which the definition returns; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3062436", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~2", "model": "opus", "worker": "fable-rev80"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
@@ -5465,6 +5475,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rubin1987
 
 - **Error** at Lemma 4.2, p.410: the source says any continuous O-linear map X→O sending x to a unit makes x a generator; it should be assume augmentation covariance, since the T-coefficient on O[[T]] sends T to 1; affects a stated result. Found by ColemanPowerSeriesPartII (#963 at 2d17434, 2026-10-23, claude opus).
+
+## Rubin2000
+
+- **Error** at Proposition III.5.1, draft p. 48: the source says the dual exponential of the singular local classes is the local index times `p⁻¹ℤ_p` for every p, because the logarithm maps `E₁(ℚ_p)` onto `pℤ_p`; it should be restrict to odd p, since at p = 2 the image can be `4ℤ₂` (`y² + xy = x³ + 1`); affects a stated result. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 
 ## Rubin87
 
