@@ -95,7 +95,7 @@ Consume GS0, “Witt affine flags and components”, for geometric component lab
 
 What GeometricSatakeAndFusion must provide (gap:scheme-local-model-representative): For a local-model triple over a p-adic field F satisfying p>2, local abelian type, and essentially tame classical adjoint factors without triality, the normalized flat projective scheme Mloc of KPZ26 (3.2.13), with reduced special fibre and generic flag variety, represents the intrinsic integral v-sheaf local model; retain its functorial adjoint and restriction-of-scalars comparisons (KPZ26, Theorem 3.2.15 and §3.4.2, pp.20 and 28; KPZ26 line 895).
 
-What GeometricSatakeAndFusion must provide (gap:scheme-local-model-hodge-immersion): For a quasi-tame local-model triple with G=∏ᵢ Res_(K_i/F) H_i, each H_i tamely split and classical, p odd, and a Hodge embedding factoring as KPZ26 (3.3.24), a finite repeated sum admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).
+What GeometricSatakeAndFusion must provide (gap:scheme-local-model-hodge-immersion): For a quasi-tame local-model triple with G=∏ᵢ Res_(K_i/F) H_i, each H_i tamely split and classical, p odd, and a Hodge embedding ρ factoring as KPZ26 (3.3.24), some repeated sum ρ^⊕m with m≥1 admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).
 
 What GeometricSatakeAndFusion must provide (gap:schubert-curve-spanned-tangents): For a mod-p abelian-type pair (G,μ) over k with p∤|π₁(Gder)| and no Dᴴ factors, every tangent space of the affine Schubert variety S_μ is spanned by tangent images of smooth formal k[[t]]-curves through that point (KPZ26, Theorem 4.1.6, p.31; KPZ26 lines 1363–1365).
 
@@ -750,7 +750,7 @@ A proof can proceed as follows. Compare the two completed local models after the
 
 ### 2.13 Very-good periodic lattice-chain embedding
 
-For a periodic Z_p-lattice chain L in V, a determining segment has r lattices and total module `tot(L)=⊕_{i=1}^r Λ_i` in `V^{⊕r}`. A good embedding into GL(L) is very good at x when its diagonal representation on tot(L) is very good there. The group-scheme lattice-chain stabilizer and its transition maps are supplied by ReductiveGroupsPartII §RG2.3. A chain may be selfdual as an indexed chain without every individual lattice being selfdual. (KPZ26, §5.2.4, p.54; §6.1.1, p.62; KPZ26 line 2345).
+For a periodic Z_p-lattice chain L in V, a determining segment has r≥1 lattices and total module `tot(L)=⊕_{i=1}^r Λ_i` in `V^{⊕r}`. A good embedding into GL(L) is very good at x when its diagonal representation on tot(L) is very good there. The group-scheme lattice-chain stabilizer and its transition maps are supplied by ReductiveGroupsPartII §RG2.3. A chain may be selfdual as an indexed chain without every individual lattice being selfdual. (KPZ26, §5.2.4, p.54; §6.1.1, p.62; KPZ26 line 2345).
 
 The API includes the following facts.
 
@@ -869,11 +869,17 @@ A proof can proceed as follows. Repeat cotangent detection for the arithmetic-cu
 
 ### 3.10 Isomorphic copies preserve very-goodness
 
-If Λ₁≅Λ₂ intertwines the integral group action and local-model cocharacter types, and the first good representation is very good at x, then so is the second and their diagonal sum. Inductively any finite direct sum of isomorphic copies is very good. This theorem makes no assertion for the diagonal sum of two unrelated very-good representations of the same group. (KPZ26, Lemma 5.3.7(b) and Remark 5.3.8, pp.55–56; KPZ26 lines 2412 and 2439).
+If Λ₁≅Λ₂ intertwines the integral group action and local-model cocharacter types, and the first good representation is very good at x, then so is the second and their diagonal sum. More generally, let n≥1 and let Λ₁,…,Λ_n be representations of 𝒢 with isomorphisms h_i:Λ₁≅Λ_i (h₁ the identity), each intertwining the group action and the local-model cocharacter types; if Λ₁ is good and very good at x, the diagonal sum Λ₁⊕⋯⊕Λ_n is good and very good at x. The hypothesis n≥1 is needed: the empty sum is the zero representation, which is not faithful. This theorem makes no assertion for the diagonal sum of two unrelated very-good representations of the same group. (KPZ26, Lemma 5.3.7(b) and Remark 5.3.8, pp.55–56; KPZ26 lines 2412 and 2439).
 
-A proof can proceed as follows. Transfer tensors across the intertwiner; projections and the intertwiner give the endomorphism equations cutting out the diagonal group inside a product. Apply the centralizer criterion.
+**Checks.**
 
-*Needs:* §2.10 (very good integral hodge embedding); §3.8 (endomorphism and centralizer criterion).
+- For p=3, 𝒢=G_m and Λ=ℤ₃ with its weight-one action, zero copies give Λ⁰=0 and GL(0)={1}: the units 1 and −1 of ℤ₃ have the same image, the kernel is G_m, and the map is not a closed immersion. A statement allowing n=0 is false here.
+- In the same example n=1 gives a↦a and n=2 gives a↦diag(a,a), both with trivial kernel. With h₂ the identity, diag(a,b) commutes with the endomorphism carrying the first block to the second iff a=b, so the intertwiner equation cuts the diagonal G_m out of G_m×G_m.
+- The weight-one and weight-(−1) actions of G_m on ℤ₃ admit no intertwining isomorphism, since a≠a⁻¹ for a=2; their diagonal sum a↦diag(a,a⁻¹) is not covered by this theorem.
+
+A proof can proceed as follows. Transfer tensors across the intertwiners. For n≥1 the product 𝒢ⁿ on Λ₁⊕⋯⊕Λ_n, with the product cocharacter type, is good and very good at (x,…,x) by the product criterion, and the diagonal map of local models is a closed immersion into the product of Grassmannians, hence into Gr(nd,Λ₁⊕⋯⊕Λ_n). The diagonal 𝒢 is the scheme-theoretic intersection of 𝒢ⁿ with the centralizers of the n−1 endomorphisms carrying the first block to the i-th by h_i: an element (g₁,…,g_n) commutes with such an endomorphism iff ρ_i(g_i)h_i=h_iρ₁(g₁), iff g_i=g₁. Apply the centralizer criterion. For n=2 this is KPZ26 Lemma 5.3.7(b).
+
+*Needs:* §2.10 (very good integral hodge embedding); §3.4 (products preserve very-goodness); §3.8 (endomorphism and centralizer criterion).
 
 
 ### 3.11 Standard wild type-A representations
@@ -1049,7 +1055,7 @@ Export both the generic conjugacy and the integral residual-filtration lift; nei
 
 ### 4.6 A tensor-preserving first-order rigid section
 
-Assume the tensor datum’s local-model acceptability and good-embedding conditions, and very-goodness at x. There is a section Ψ_G:M̃₁≅M of the tensor-frame torsor on Ŵ(R_G) with Ψ̄_Gc=Ψ₀ over Ŵ(R_G/a_G). It extends to a GL section Ψ_E over R_E with the same first-order condition. Its R_G-restriction preserves every invariant tensor. The choices of lifts are not asserted to be canonical. (KZ25, §3.2.5–3.2.6, p.23; KZ25 line 1044; KP18, §3.2.12, pp.173–174 (requires the correction in KPZ26 §5.2 and §7.1.4(1), p.73); KP18 line 2189).
+Assume the tensor datum’s local-model acceptability and good-embedding conditions, and very-goodness at x. There is a section Ψ_G:M̃₁≅M of the tensor-frame torsor on Ŵ(R_G) with Ψ̄_Gc=Ψ₀ over Ŵ(R_G/a_G). It extends to a GL section Ψ_E over R_E with the same first-order condition. Its R_G-restriction preserves every invariant tensor. The choices of lifts are not asserted to be canonical. (KZ25, §§3.2.5–3.2.6, pp.23–24, especially the proof of Proposition 3.2.7, p.24; KZ25 lines 1055–1063; KP18, §3.2.12, pp.173–174 (requires the correction in KPZ26 §5.2 and §7.1.4(1), p.73); KP18 line 2189).
 
 The API includes the following facts.
 

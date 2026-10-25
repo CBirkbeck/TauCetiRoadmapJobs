@@ -5359,7 +5359,7 @@
     },
     {
       "slug": "scheme-local-model-hodge-immersion",
-      "needs": "For a quasi-tame local-model triple with G=∏Res_{K_i/F}H_i, each H_i tamely split and classical, p odd, and a Hodge embedding factoring as KPZ26 (3.3.24), a finite repeated sum admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).",
+      "needs": "For a quasi-tame local-model triple with G=∏Res_{K_i/F}H_i, each H_i tamely split and classical, p odd, and a Hodge embedding ρ factoring as KPZ26 (3.3.24), some repeated sum ρ^⊕m with m≥1 admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).",
       "supplier": "GeometricSatakeAndFusion",
       "section": "GS0, Bounded admissible affine flag loci"
     },
