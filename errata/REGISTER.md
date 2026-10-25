@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5358 mistakes recorded on the board: 3469 misprints, 1327 errors, 424 gaps, 138 unparsed bullets.
+5362 mistakes recorded on the board: 3469 misprints, 1327 errors, 424 gaps, 142 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -146,6 +146,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (LogicAndDefinabilityInNumberTheory, #164 at d36cfa5, 2026-10-25): Error** in koenigsmann_defining_z at Lemma 13, closing clause, p.82: the source says J_ab is the Jacobson radical of T_ab when ∞∉Δ and the dyadic condition holds; it fails for Δ=∅ (J=ℚ, Jac(ℚ)=0), so it needs Δ≠∅ as in Lemma 14; affects a stated result.
 - **Unparsed** (CountingBundlesAndHallAlgebrasOfCurves, #937 at 5a0a8bd, 2026-10-25): Misprint** in S16 at §6.10, p.350 (S16 line 3017): the source matches Higgs eigenvalues with bare Weil-number monomials; each should carry the factor q^D from the point count; affects the proof.
 - **Unparsed** (CountingBundlesAndHallAlgebrasOfCurves, #937 at 5a0a8bd, 2026-10-25): Gap** in S16 at Theorem 7.1 and §7.2, pp.352–353 (S16 line 3118 and S16 line 3123): the source places parabolic counts in the unlocalized invariant ring via a proof parallel to Theorem 1.1; that proof yields only K_g; affects a stated result. <!-- tauceti-roadmap-review {"agent": "claude", "head": "5a0a8bd", "job": "REV-PKG-CountingBundlesAndHallAlgebrasOfCurves~3", "model": "opus", "worker": "fable-rev110"} -->
+- **Unparsed** (CMRankZeroConverse, #993 at 6a76e15, 2026-10-25): Error** in Kato at (12.8.2), p. 223: the source says that for non-CM f, at every λ, the image of the Galois group over ℚ(μ_p∞) contains an open subgroup of SL₂(ℤ_p). It should exclude places over which Momose's quaternion algebra is a division algebra, where no nontrivial unipotent occurs. Affects a stated result.
+- **Unparsed** (CMRankZeroConverse, #993 at 6a76e15, 2026-10-25): Misprint** in BT at proof of Theorem 1.1, p. 6: the source says (line 256) that the dual Selmer group tensored with the number field K matches Selmer groups of the untwisted V(f) and V(f̄). It should use ℚ_p-coefficients and V(f)(1), V(f̄)(1). Affects the proof.
+- **Unparsed** (CMRankZeroConverse, #993 at 6a76e15, 2026-10-25): Gap** in BT at proof of Theorem 3.1, display (3.1), p. 6: the source says (lines 232–234) that Selmer vanishing gives rational H² vanishing directly from (14.9.3). A Poitou–Tate step proving the dual Selmer vanishing should come first. Affects the proof.
+- **Unparsed** (CMRankZeroConverse, #993 at 6a76e15, 2026-10-25): Gap** in BT at Theorem 3.5, p. 7: the source says (lines 272–275) that BKLOS Theorem 2.7 gives 3∞-Selmer corank zero. That theorem states rank zero only (BKLOS lines 196–198); it should cite the Selmer argument of BKLOS §9.2 with §11. Affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "6a76e15", "job": "REV-PKG-CMRankZeroConverse~3", "model": "opus", "worker": "fable-rev109"} -->
 
 ## A
 
