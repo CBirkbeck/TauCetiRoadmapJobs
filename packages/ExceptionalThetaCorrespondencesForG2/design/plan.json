@@ -4690,179 +4690,20 @@
   ],
   "gaps": [
   {
-    "id": "ExceptionalThetaCorrespondencesForG2/G1",
-    "title": "Octonion algebraic comparison and rational descent",
-    "detail": "The pinned library supplies the split Zorn algebra, but not its represented automorphism group, the Chevalley comparison, or the nonsplit quaternion descent used globally. Carry out the basis/root calculations and check rational centralizers; the API and discriminating tests specify the required result.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.0/octonion-group",
-      "ExceptionalThetaCorrespondencesForG2:EX.0/null-subspaces",
-      "ExceptionalThetaCorrespondencesForG2:EX.0/parabolics",
-      "ExceptionalThetaCorrespondencesForG2:EX.0/quadratic-stabilizers",
-      "ExceptionalThetaCorrespondencesForG2:EX.9/quaternion-pointwise-stabilizer",
-      "ExceptionalThetaCorrespondencesForG2:EX.2/exceptional-group-pairs",
-      "ExceptionalThetaCorrespondencesForG2:EX.2/triality-see-saw"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G2",
-    "title": "Primary minimal-model inputs not obtained",
-    "detail": "HKT A.4 provides the rank-one exact sequence but refers to earlier minimal-model constructions. The primary Gan–Savin 2005 model paper and the division Rumelhart input were not obtained; prove or audit the Weyl relations, unitarity, irreducibility and all local model comparisons before closing the minimal representation target.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.2/minimal-models",
-      "ExceptionalThetaCorrespondencesForG2:EX.3/orbit-kernels",
-      "ExceptionalThetaCorrespondencesForG2:EX.10/global-minimal-residue"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G3",
-    "title": "Residual-characteristic wavefront argument",
-    "detail": "GS Lemma 3.4 invokes wavefront and degenerate-character results. A full proof with exact source hypotheses, especially p=2,3, still needs to establish subregular maximality and finite cubic multiplicity; no all-primes theorem is claimed as already supplied.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.1/cubic-finiteness",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/nongeneric-tempered-uniqueness",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/weak-existence",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/cubic-period-chain"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G4",
-    "title": "Rank-one reducibility source chain",
-    "detail": "The rank-one intertwining and R-group arguments for the complete G₂ and PGSp₆ tables need their cited primary reducibility proofs (Muić for G₂, Shahidi and Gan–Takeda for the PGSp₆ Levis) with exact normalized exponents. For the nongeneric τ_ρ the route is fixed: Gan–Takeda part (vi) (ModularityAndLanglandsExtensions §3.5) gives its Plancherel measure, and the Harish-Chandra–Silberger criterion (requested from the SmoothRepresentationsOfLocalGroups Part II) turns it into reducibility; what remains is to carry out that comparison.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.1/g2-p-supercuspidal",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/g2-p-steinberg",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/g2-p-characters",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/g2-q-supercuspidal",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/g2-q-segments",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/g2-borel",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/pgsp-p2-p13",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/pgsp-p3",
-      "ExceptionalThetaCorrespondencesForG2:EX.1/pgsp-p1",
-      "ExceptionalThetaCorrespondencesForG2:EX.8/remaining-supercuspidal-lifts"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G5",
-    "title": "Finite-field cuspidal labels and examples",
-    "detail": "Verify the cuspidal unipotent character tables behind πsc[1],πsc[ω],πsc[ω²], and Gan’s regular finite-field construction behind the generic depth-zero example. Fix ranges in q,p and the two distinct cubic eigenvalue labels; the unrelated GS04 p≥5 example does not close this.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.1/depth-zero-unipotent",
-      "ExceptionalThetaCorrespondencesForG2:EX.5/division-nonvanishing",
-      "ExceptionalThetaCorrespondencesForG2:EX.8/depth-zero-spherical-example"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G6",
-    "title": "Triality structure and omitted Mackey proof",
-    "detail": "Supply the primary degenerate-intertwiner proof of both triality exact sequences, and the full orbit/stabilizer/modulus calculation of GS Proposition 5.4. The source states that Mackey calculation without details.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.4/spin8-degenerate-series",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/spin8-constituents",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/triality-mackey",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/triality-restriction-hom"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G7",
-    "title": "Schwartz Ext supplier obligations",
-    "detail": "The exact imported smooth-to-Schwartz Ext comparison and tempered discrete-series projectivity carry their supplier’s unresolved Schwartz-analysis obligation. Preserve its hypotheses and prove vanishing in the full smooth category by comparison; do not assert all-smooth projectivity of discrete series.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.4/division-ext-vanishing",
-      "ExceptionalThetaCorrespondencesForG2:EX.4/cubic-period-chain",
-      "ExceptionalThetaCorrespondencesForG2:EX.6/theta-dichotomy"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G8",
-    "title": "Exceptional raw coefficient proofs",
-    "detail": "Supply the disconnected C₂ action on the E₆ Whittaker/cubic/oscillator fibers, and the full E₇ N₂-twisted fiber computation before taking PGL₂ coinvariants. Connected stabilizers do not determine outer signs; GS gives the latter E₇ fiber without proof.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.5/e6-coefficient-models",
-      "ExceptionalThetaCorrespondencesForG2:EX.5/pgl3-clifford-labels",
-      "ExceptionalThetaCorrespondencesForG2:EX.7/minimal-shalika-fiber",
-      "ExceptionalThetaCorrespondencesForG2:EX.7/generic-period-chain"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G9",
-    "title": "Split Jacquet orbit twists",
-    "detail": "Complete the split Q orbit calculation, the omitted P₁ null-quadruple proof, and the two separate P₂ density calculations. No uniform character δ′ of M₂ gives both printed orbit actions; derive each actual twist directly.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.3/e7-g2-q-jacquet",
-      "ExceptionalThetaCorrespondencesForG2:EX.3/e7-h-p1-jacquet",
-      "ExceptionalThetaCorrespondencesForG2:EX.3/e7-h-p2-jacquet",
-      "ExceptionalThetaCorrespondencesForG2:EX.3/orbit-kernels"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G10",
-    "title": "Reverse exponent cases and both finiteness directions",
-    "detail": "Write the full seven-Levi chamber table for GS Lemma 13.8 using the second GL₂ factor in P₂ piece three; rerun P₁₂ with exchanged factors. Give all non-top reverse finiteness cases and the A₅ homogeneity character, which the source leaves compressed.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.3/nontempered-reverse",
-      "ExceptionalThetaCorrespondencesForG2:EX.6/e7-noncuspidal-finiteness",
-      "ExceptionalThetaCorrespondencesForG2:EX.6/a5-sp6-restriction",
-      "ExceptionalThetaCorrespondencesForG2:EX.3/tempered-compatibility"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G11",
-    "title": "Prime-degree torus distinction primary proof",
-    "detail": "The public Lonka–Tandon journal abstract and GS Theorem 7.2 give the degree-prime-to-p scope, but the primary proof of Theorem 2.4 was not obtained. Audit it before claiming the all-τ nonvanishing stage closed.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.5/division-nonvanishing"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G12",
-    "title": "Savin–Weissman supercuspidal and spin-factor proof audit",
-    "detail": "The generic dichotomy statement, Proposition 4.6 and Theorem 5.3 were read; the long local-coefficient proof of Theorem 5.3 and the entire earlier supercuspidal injectivity proof were not audited line by line. Finish the primary proof chain with exact Shahidi hypotheses.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.5/generic-supercuspidal-precursor",
-      "ExceptionalThetaCorrespondencesForG2:EX.8/spin-pole-criterion",
-      "ExceptionalThetaCorrespondencesForG2:EX.5/pgl3-howe-duality"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G13",
-    "title": "Global residue and number-field unfolding",
-    "detail": "Check non-spherical local identification of the minimal residue, all analytic interchanges in the exceptional kernel, and the full-rank coefficient and all three constant terms over a general totally real field. Gross–Savin’s read proof is over Q; its extension needs these explicit arithmetic and measure checks. For d = 8 Hanzer–Savin do not say which residue of Theorem 6.4 is the minimal representation; identify it at s = 5 (their remark on p. 192 does this for d = 4, and the trivial representation is the residue at s = 9).",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.10/global-minimal-residue",
-      "ExceptionalThetaCorrespondencesForG2:EX.10/global-exceptional-theta-kernel",
-      "ExceptionalThetaCorrespondencesForG2:EX.10/global-period-nonvanishing",
-      "ExceptionalThetaCorrespondencesForG2:EX.10/global-cuspidality-criteria"
-    ]
-  },
-  {
-    "id": "ExceptionalThetaCorrespondencesForG2/G14",
-    "title": "Real central-character source and range",
-    "detail": "The Huang–Pandžić–Savin primary real correspondence paper was not obtained. Supply its precise central-character polynomial map, shifts and real-form hypotheses; obtain the separate Vogan unitary range theorem before using the claimed discrete-series conclusion.",
-    "neededBy": [
-      "ExceptionalThetaCorrespondencesForG2:EX.10/real-infinitesimal-character-matching"
-    ]
-  },
-  {
     "slug": "quasisplit-whittaker",
     "needs": "For every connected quasi-split reductive group over a characteristic-zero nonarchimedean local field and every Whittaker datum, the Whittaker space of an irreducible smooth complex representation has dimension at most one.",
     "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
     "section": "SRU.3, extension of generic representation inputs"
   },
   {
-    "slug": "prasad-restriction",
-    "needs": "For generic irreducible admissible complex representations V of GLₙ(F) and W of the standard GLₙ₋₁(F), there is a nonzero GLₙ₋₁(F)-equivariant map V→W, in particular for n=3.",
-    "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
-    "section": "SRU.3, extension of generic representation inputs"
-  },
-  {
     "slug": "wavefront-all-residue",
-    "needs": "Provide the degenerate-Whittaker and maximal nilpotent character-expansion comparison over characteristic-zero local fields, including residue characteristic 2 and 3, with the rational-orbit multiplicity statement needed for finite G₂ cubic coefficients.",
+    "needs": "For a connected reductive group over a characteristic-zero nonarchimedean local field F of any residue characteristic, an irreducible smooth complex representation π and an F-rational nilpotent orbit O maximal among the orbits with nonzero coefficient in its Harish–Chandra–Howe local character expansion, prove that the generalized Whittaker space for O is finite-dimensional with dimension c_O, using a fixed nontrivial ψ, invariant pairing and compatible orbital-measure and Fourier normalizations.",
     "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
-    "section": "SRU.0, extension of local character theory"
+    "section": "SRU.3, extension of local character theory"
   },
   {
     "slug": "steinberg-unipotent",
-    "needs": "The smooth Steinberg representation restricted to a maximal unipotent subgroup is its compact regular representation, with the compatibility needed for all Siegel twisted coefficients of PGSp₆.",
+    "needs": "For a split connected reductive group H over the fixed characteristic-zero nonarchimedean F and a maximal unipotent U, identify the restriction St_H|U with the left regular module C_c^∞(U(F)) and deduce (St_H)_(N,χ)≠0 for every closed subgroup N⊂U(F) and smooth character χ:N→ℂˣ.",
     "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
     "section": "SRU.4, Steinberg extensions"
   },
@@ -4892,13 +4733,13 @@
   },
   {
     "slug": "ramified-spin-factor",
-    "needs": "Construct the normalized Langlands–Shahidi spin γ-, L- and ε-factors for generic PGSp₆ representations and the supercuspidal equivalence between a pole of the degree-eight spin L-factor at zero and a Shalika functional.",
+    "needs": "For generic irreducible admissible complex σ of PGSp₆(F), with F characteristic-zero nonarchimedean, construct Shahidi’s degree-eight L(s,σ,Spin) from the Heisenberg parabolic P₄=M₄N₄ of split F₄ with M₄=GSp₆, normalized by δP₄=|sim|⁸ and I(σ,s)=Ind_P₄^F₄(σ⊗|sim|^(s+4)) in unnormalized induction, and prove for supercuspidal σ that a pole at s=0 is equivalent to reducibility of I(σ,−1).",
     "supplier": "AutomorphicLFunctionsAndLocalFactorsPartII",
-    "section": "D.6 local factors, extension to exceptional dual representations"
+    "section": "D.6, extension to the exceptional Langlands–Shahidi spin factor"
   },
   {
     "slug": "regular-real-unitarity",
-    "needs": "For each specified real reductive group, give a bound C such that a unitary irreducible module with real integral discrete-series infinitesimal character whose positive-root coroot pairings all exceed C is discrete series, in the range used by the real exceptional matching theorem.",
+    "needs": "For each of split G₂(ℝ) and split PGSp₆(ℝ), with a fixed positive root system, prove that there exists C≥0 depending only on the group and that system such that every irreducible unitary Harish–Chandra module with real integral discrete-series infinitesimal character Λ and ⟨Λ,α∨⟩>C for every positive root α is a discrete-series module.",
     "supplier": "AutomorphicFormsOnReductiveGroups",
     "section": "§§2.4, 5.4, extension of real unitary theory"
   },
@@ -4907,6 +4748,12 @@
     "needs": "For an affine finite-type group over a characteristic-zero field and a closed subgroup, construct the scheme-theoretic centralizer as a closed subgroup scheme and prove its test-algebra and scalar-extension characterizations.",
     "supplier": "ReductiveGroups",
     "section": "Layer 3, closed subgroup schemes; Layer 3A.1 action stabilizers"
+  },
+  {
+    "slug": "bg-spin-integral",
+    "needs": "For generic irreducible admissible complex σ of GSp₆(F) with trivial central character over characteristic-zero nonarchimedean F, construct the Bump–Ginzburg–Vo local integral Z(s,W,f_s) for sections f_s in the unnormalized GL₂ series V(s)=Ind_B^GL₂(|a/d|^s), using the meromorphic intertwiner M*(s):V(s)→V(1−s) normalized by M*(s)f_s*=f*_(1−s) for f_s*=L_F(2s)f_s⁰ and f_s⁰(1)=1, and rational γ_BG(σ,s) with γ_BG(σ,s)Z(s,W,f_s)=Z(1−s,W,M*(s)f_s) and, for unramified σ and normalized spherical W, value L(s,σ,Spin) at f_s*, proving for supercuspidal σ that constant-section integrals are entire, some such integral is nonzero at each prescribed s, and γ_BG has the same zero and pole divisors as L(1−s,σ,Spin)/L(s,σ,Spin), with multiplicity.",
+    "supplier": "AutomorphicLFunctionsAndLocalFactorsPartII",
+    "section": "D.6, extension to the Bump–Ginzburg–Vo spin integral"
   }
 ],
   "sourceIssues": [

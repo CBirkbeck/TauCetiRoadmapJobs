@@ -70,7 +70,7 @@ year = 2009
 doi = "10.1112/S0010437X10005178"
 arxiv = "0908.3340v2"
 locator_scheme = "section"
-locator = "Introduction pp. 1–3; §3 (the dichotomy map) pp. 16–27; Proposition 4.6 p. 37; Theorem 5.3 pp. 37–38"
+locator = "Introduction pp. 1–3; §3 (the dichotomy map) pp. 16–27; Proposition 4.6 p. 37; Theorem 5.3 pp. 37–38; §5.1 Lemma 5.4 p. 38, Lemma 5.5 and Theorem 5.6 pp. 39–43; §§5.2–5.3 Propositions 5.7–5.9 and Theorem 5.10 pp. 43–47"
 url = "https://arxiv.org/abs/0908.3340v2"
 fetched_from = "https://arxiv.org/pdf/0908.3340v2"
 fetched_at = "2026-10-25T00:05:40Z"
@@ -79,7 +79,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["generic-supercuspidal-precursor", "spin-pole-criterion"]
+cited_for = ["generic-supercuspidal-precursor", "spin-pole-criterion", "ramified-spin-factor", "bg-spin-integral"]
 
 [[source]]
 id = "MS"
@@ -135,7 +135,7 @@ year = 1993
 [[source]]
 id = "LL"
 locator_scheme = "theorem"
-locator = "§§1–2 pp. 1–8; §3.5 p. 15; §§5–6 pp. 20–22; §8.4 p. 25; §10 pp. 27–30"
+locator = "§§1–2 pp. 1–8; §3.5, pp. 14–15; §§5–6 pp. 20–22; §8.4 p. 25; §10 pp. 27–30"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/the-local-langlands-conjecture-for-dollarg2dollar.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/the-local-langlands-conjecture-for-dollarg2dollar.pdf"
 fetched_at = "2026-10-25T00:06:12Z"
@@ -261,3 +261,18 @@ authors = "Sampath Lonka"
 title = "Zero weight space for tori inside a division algebra"
 year = 2018
 version_note = "University of Hyderabad thesis; Theorem 1.4.2 states the joint result with Rajat Tandon. Thesis numbering is used, rather than the journal article numbering."
+
+[[source]]
+id = "Var"
+authors = "Sandeep Varma"
+title = "On a result of Moeglin and Waldspurger in residual characteristic 2"
+year = 2014
+venue = "Mathematische Zeitschrift 277"
+doi = "10.1007/s00209-014-1292-8"
+locator_scheme = "theorem"
+locator = "main theorem, pp. 1027–1048 (cited in the proof of GS Lemma 3.4)"
+url = "https://doi.org/10.1007/s00209-014-1292-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["supplier contract wavefront-all-residue", "1.10"]
