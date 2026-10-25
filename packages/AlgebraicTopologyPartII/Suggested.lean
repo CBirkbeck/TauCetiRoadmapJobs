@@ -131,15 +131,6 @@ theorem tameFibreBouquet (n : ℕ) (hn : 2 ≤ n) (f : MvPolynomial (Fin n) ℂ)
         (sphereBouquet (n - 1) (milnorNumber f - fiberMilnorNumber f a) x)) := by
   sorry
 
-/-- For the sphere of dimension s + 2, the rational rank is one in degree s + 2 and,
-when s is even, in degree 2(s + 2) - 1; it is zero in every other degree k + 2. -/
-theorem rationalSphereRanks (s k : ℕ) (x : unitSphere (s + 2)) :
-    let P := ℚ ⊗[ℤ] Additive (HomotopyGroup (Fin (k + 2)) (unitSphere (s + 2)) x)
-    FiniteDimensional ℚ P ∧ Module.finrank ℚ P =
-      if k + 2 = s + 2 ∨ (Even (s + 2) ∧ k + 2 = 2 * (s + 2) - 1)
-      then 1 else 0 := by
-  sorry
-
 /-- Hilton and Serre give all rational ranks of a finite bouquet of spheres of dimension
 s + 2. The rank is zero off the indicated divisibility progression (BS Lemma 7.6). -/
 theorem rationalBouquetRanks (s N k : ℕ) (x : unitSphere (s + 2))
@@ -152,7 +143,7 @@ theorem rationalBouquetRanks (s N k : ℕ) (x : unitSphere (s + 2))
       else 0 := by
   sorry
 
-/-! ## Layer 5: double loops and Fermat connectivity -/
+/-! ## Layer 5: double loops and Fermat comparisons -/
 
 /-- The formal factor (1 - (-t)^(r*(n-2)-1))^(-e_r), with the signed exponent
 interpreted by the integral binomial series. Only positive degrees enter the headline theorem. -/
@@ -173,38 +164,6 @@ theorem doubleLoopBetti (s N j : ℕ) (x : unitSphere (s + 3))
     FiniteDimensional ℚ H ∧
       (Module.finrank ℚ H : ℚ) = PowerSeries.coeff j
         (∏ r ∈ Finset.range j, doubleLoopFactor (s + 4) N (r + 1) (by omega) (by omega)) := by
-  sorry
-
-/-- The complex Fermat fibre with exponent k and n coordinates, carrying the subspace topology. -/
-abbrev fermatFiber (n k : ℕ) :=
-  {z : Fin n → ℂ // ∑ i, z i ^ k = 1}
-
-/-- The Pham skeleton of the Fermat fibre: every coordinate kth power is real and nonnegative. -/
-def fermatSkeleton (n k : ℕ) : Set (fermatFiber n k) :=
-  {z | ∀ i, (z.val i ^ k).im = 0 ∧ 0 ≤ (z.val i ^ k).re}
-
-/-- Pham's strong deformation retraction onto the positive-power skeleton.
-The homotopy fixes the entire skeleton, and the retraction is the identity there. -/
-theorem fermatDeformationRetraction (n k : ℕ) (hn : 2 ≤ n) (hk : 2 ≤ k) :
-    ∃ r : C(fermatFiber n k, ↥(fermatSkeleton n k)),
-      (∀ z : ↥(fermatSkeleton n k), r z.val = z) ∧
-      Nonempty (ContinuousMap.HomotopyRel (ContinuousMap.id (fermatFiber n k))
-        ((⟨Subtype.val, continuous_subtype_val⟩ :
-          C(↥(fermatSkeleton n k), fermatFiber n k)).comp r) (fermatSkeleton n k)) := by
-  sorry
-
-/-- The Fermat fibre has the homotopy type of a bouquet of (k - 1)^n spheres
-of dimension n - 1, with any specified base point on the model sphere. -/
-theorem fermatBouquet (n k : ℕ) (hn : 2 ≤ n) (hk : 2 ≤ k)
-    (x : unitSphere (n - 1)) :
-    Nonempty (ContinuousMap.HomotopyEquiv (fermatFiber n k)
-      (sphereBouquet (n - 1) ((k - 1) ^ n) x)) := by
-  sorry
-
-/-- The double-loop space of the Fermat fibre is connected and simply connected
-for n >= 5, at every point of that fibre. -/
-theorem fermatDoubleLoopSimplyConnected (n k : ℕ) (hn : 5 ≤ n) (hk : 2 ≤ k)
-    (x : fermatFiber n k) : SimplyConnectedSpace (Ω^ (Fin 2) (fermatFiber n k) x) := by
   sorry
 
 end TauCetiRoadmap.AlgebraicTopologyPartII

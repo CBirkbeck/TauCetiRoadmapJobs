@@ -4015,16 +4015,10 @@
   ],
   "gaps": [
     {
-      "slug": "finite-free-tensor-adjoints",
-      "needs": "In §2.19, for abelian sheaves of modules over a commutative ring on a site with finite-group action, tensoring with a finite-rank free coefficient module with group action has exact left and right adjoints given by its dual, and hence preserves injectives; retain the equivariant structures and restriction compatibility.",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "2.19"
-    },
-    {
       "slug": "finite-group-borel-approximation",
-      "needs": "In §2.23, for a finite group acting on a site V, an equivariant abelian sheaf F and invariant closed supports Z, construct the comparison to a free approximation (V×E_s)/G with descended coefficients; assuming the projection has degree-zero direct image F and vanishing higher direct images in degrees 0<q<s, prove supported cohomology comparison in degrees i<s, natural in the approximation.",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "2.23"
+      "needs": "In §7.6b, expose the finite Borel approximation used for equivariant purity: for G=C₂ acting on a locally complete finite-atlas semialgebraic V over a real closed field and antipodally on S^s with s≥1, an invariant closed semialgebraic Z and an equivariant abelian sheaf F, descend pr_V*F to F_s on V_s=(V×S^s)/G and prove H_G,Z^i(V,F)≅H^i_(Z_s)(V_s,F_s) for i<s, where Z_s=(Z×S^s)/G, compatibly with the equatorial inclusions as s increases.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     },
     {
       "slug": "finite-group-ext-stalk",
@@ -4034,9 +4028,9 @@
     },
     {
       "slug": "real-closed-semialgebraic-geometry",
-      "needs": "Extend the geometry direction of Layers 3 and 6 in RealAlgebraicGeometry, Part II, with finite compatible semialgebraic triangulation, dimension, locally complete chart gluing and finite free quotients over arbitrary real closed fields.",
-      "supplier": "RealAlgebraicGeometry",
-      "section": "Layers 3 and 6 (Part II extension)"
+      "needs": "Extend A4.1’s finite compatible semialgebraic triangulation and dimension comparison to every real closed field, with compatibility for finite marked families and real closed extensions; noncompact locally closed sets are unions of open simplices in finite models.",
+      "supplier": "AffineMorseLefschetz",
+      "section": "A4.1"
     },
     {
       "slug": "configuration-cover-comparison",
@@ -4049,6 +4043,12 @@
       "needs": "Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring.",
       "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
       "section": "IG.5.1"
+    },
+    {
+      "slug": "semialgebraic-free-quotient-geometry",
+      "needs": "In §7.6a, construct the locally complete finite-atlas semialgebraic quotient V/G for a finite free semialgebraic action on a separated locally complete finite-atlas semialgebraic V over any real closed field, with its finite covering projection, invariant-open restrictions and real-closed-extension compatibility.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6a"
     },
     {
       "slug": "semialgebraic-equivariant-sites",
