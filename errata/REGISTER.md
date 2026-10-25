@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4728 mistakes recorded on the board: 3139 misprints, 1184 errors, 325 gaps, 80 unparsed bullets.
+4733 mistakes recorded on the board: 3142 misprints, 1185 errors, 326 gaps, 80 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2092,6 +2092,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2.2, following (2.6), p. 10 (Cwikel line 462): the source says the logarithm’s domain is the punctured right half-plane, although its argument ranges between zero and π; it should be use the punctured closed upper half-plane, Im(z)≥0; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §2.2, following (2.8), p. 10; §2.3, p. 19 (Cwikel line 482; Cwikel line 924): the source says the inverse conformal map omits the boundary point exp(iπθ); it should be the omitted point is exp(2iπθ), as follows directly from (2.8); affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §2.3, following Definition 2.15, p. 19 (Cwikel line 925): the source says ψ_k satisfies the strip-function conditions used for Stafney’s coefficients; it should be φ_k satisfies those conditions; ψ_k is defined on the disk; affects the proof. Found by NoncommutativeIntegration (ERRATA-NoncommutativeIntegration at 5272f8e, 2026-10-24, codex gpt-6-astra).
+
+## DAG13
+
+- **Misprint** at Theorem 3.4.12, p. 92 (DAG13 line 4146): the source says the source introduces a field k of characteristic p that never appears; it should be omit that clause; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "a872370", "job": "REV-PKG-EtaleHomotopyTypes", "model": "opus", "worker": "fable-rev77"} -->. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
 
 ## DarmonMerel2001
 
@@ -6068,6 +6072,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## SS
 
+- **Error** at Appendix A.2.3, p. 858 (SS line 1652): the source says the projection from the relative cylinder X∧I to X is a trivial fibration; it should be a weak equivalence (over a third unmarked point the fibre is Δ[1], which is not Kan); affects nothing. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
+- **Gap** at the proof of Proposition 2.4(c), p. 825 (SS line 365): the source says the image of the arithmetic fundamental group in G_k is open without argument; it should be cite finiteness of the components over k̄ and their open stabilizer; affects the proof. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
+- **Misprint** at the proof of Theorem A.13, p. 861 (SS line 1782): the source says the loop group at the point x of Y; it should be the loop group at y; affects nothing. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
+- **Misprint** at the proof of Theorem A.8, p. 857 (SS line 1619): the source says the source labels the product over chains of length n as Tot_n; it should be the n-th cosimplicial degree, with Tot_n its partial totalization; affects nothing. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
 - **Misprint** at §3, printed p.13: the source says raising λ to its p-th power preserves fibres, while fixing λ mixes them; it should be the reverse, as the displayed correction involving λ^p itself shows; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
 ## st
