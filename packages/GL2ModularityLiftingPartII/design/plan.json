@@ -3813,11 +3813,11 @@
         "GL2ModularityLiftingPartII:D1.10/minimal-bianchi-rt",
         "GL2ModularityLiftingPartII:D1.10/minimal-semistable-bianchi-lifting"
       ],
-      "detail": "At p=3 an order-three stabilizer invalidates an unlocalized noncompact-manifold argument. At each fixed Taylor–Wiles base and diamond level require localized degree-three homology and boundary cohomology vanishing with residue-field coefficients under cyclotomic absolute irreducibility. Finite coefficient filtrations and completeness give the integral amplitude used in §§9.3–9.4. The rank comparison uses the existing characteristic-zero duality, and finite-cover Tor edges follow by Pontryagin duality from ALS.6.1–ALS.6.2.",
+      "detail": "The p = 3 conclusions assume H₃(3), localized residue-field degree-three homology vanishing at every base and diamond level. CG18 does not establish this hypothesis; this gap requests its proof. Boundary vanishing is a separate non-neat boundary contract for every p ≥ 3.",
       "slug": "localized-three-primary-stabilizers",
       "supplier": "ArithmeticLocallySymmetricSpaces",
       "section": "ALS.0.8, ALS.4, ALS.5a.6, ALS.6.2",
-      "needs": "For p = 3, at each level Y₀(Q) and Y_Δ(Q) of §9.1 and every non-Eisenstein m associated to ρ̄ with ρ̄ restricted to G_(F(ζ₃)) absolutely irreducible, prove H₃(Y_?(Q),k)_m = 0 and Hᵢ(∂Y_?(Q),k)_m = 0 for every i≥0, where ? is 0 or Δ."
+      "needs": "Establish hypothesis H₃(3): for p = 3 unramified in imaginary quadratic F, at every level Y₀(Q) and Y_Δ(Q) of ArithmeticLocallySymmetricSpaces ALS.0.10(iv) and every non-Eisenstein m associated to ρ̄ with ρ̄ restricted to G_(F(ζ₃)) absolutely irreducible, H₃(Y_?(Q),k)_m = 0, where ? is 0 or Δ."
     },
     {
       "title": "Gap P — integral minimal type at Bianchi principal primes",
@@ -3858,16 +3858,10 @@
       "needs": "Provide CG18 Propositions 3.3 and 5.2 auxiliary sets of exactly q dual-Selmer-killing distinct-root primes for these unramified-at-p rational and imaginary-quadratic problems, including p=3 under the cyclotomic absolute-irreducibility hypothesis."
     },
     {
-      "slug": "rigidifying-prime",
-      "supplier": "GlobalGaloisDeformations",
-      "section": "5.2, 5.6–5.8",
-      "needs": "Provide a prime r≥5 away from Np with r≢1 mod p and residual Frobenius eigenvalue ratio outside {r,r⁻¹} for the unramified-at-p rational residual datum of §0.1."
-    },
-    {
       "slug": "defect-one-presentations",
       "supplier": "GlobalGaloisDeformations",
       "section": "3.6–3.7, R04.6",
-      "needs": "Provide the CG18 Propositions 3.2 and 5.1 tangent equality or inequality and q−1-variable presentations for the exact minimal problems in §§4.1 and 10.1, with the dual adjoint Tate twist and diamond augmentation quotient."
+      "needs": "Provide the CG18 Propositions 3.2 and 5.1 tangent equality or inequality and q−1-variable presentations for the CG18 Definition 3.1 minimal problem over ℚ unramified at p and the CG18 §5.1 minimal problem over imaginary quadratic F, with the dual adjoint Tate twist and diamond augmentation quotient."
     },
     {
       "slug": "rational-minimal-conditions",
@@ -3891,13 +3885,13 @@
       "slug": "scalar-conductor-comparison",
       "supplier": "GL2ModularityLifting",
       "section": "3.7, 4.1–4.2",
-      "needs": "Provide the finite global ordinary eigenvalue-adorned weight-two deformation presentation and generic-fibre Hecke component comparison for each character φ with the conductor-compatible local quotients of §7.2, retaining variable inertial determinant in the nonharmless self-extension case."
+      "needs": "Provide the finite global ordinary eigenvalue-adorned weight-two deformation presentation and generic-fibre Hecke component comparison for each character φ with the unipotent quotient at ramified Steinberg primes x ≡ −1 mod p and the minimal conditions of LocalGaloisDeformationRings §§2.1–2.5, 2.19 at the other primes away from p, retaining variable inertial determinant in the nonharmless self-extension case."
     },
     {
       "slug": "jacobian-residual-isotypy",
       "supplier": "SerreWeightAndLevelOptimisation",
       "section": "3.10–3.12",
-      "needs": "Provide full-ideal Jacobian residual isotypy for J₁(N*)[m] in the conductor-minimal odd-prime setup."
+      "needs": "Provide annihilation of J₁(N*)[p^∞]_m by the Cayley–Hamilton ideal of its Hecke-valued determinant at the full conductor-minimal non-Eisenstein ideal m, compatibly with the good-reduction Eichler–Shimura relation of ModularCurvesPartII §17.2."
     },
     {
       "slug": "carayol-diamond-quotient",
@@ -3916,6 +3910,18 @@
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
       "section": "R16.6.5–R16.6.6",
       "needs": "Provide the coefficient-field-compatible Bianchi degree-one cuspidal homology dictionary at the exact finite type spaces with arithmetic Frobenius and bad local-factor normalizations, retaining each local invariant-space dimension."
+    },
+    {
+      "slug": "selected-root-residual-only",
+      "supplier": "AutomorphyLiftingBeyondTaylorWiles",
+      "section": "BT.3/lemma-9-6",
+      "needs": "Provide the n = 2 selected-root comparison of BT.3/lemma-9-6 for Taylor–Wiles sets with p > 2 and distinct residual roots assuming only the residual part (i) of B^gal, with no Hecke-valued lift from part (ii)."
+    },
+    {
+      "slug": "non-neat-bianchi-boundary",
+      "supplier": "ArithmeticLocallySymmetricSpaces",
+      "section": "ALS.4",
+      "needs": "For p ≥ 3 unramified in imaginary quadratic F, at the non-neat projective levels Y₀(Q), Y_Δ(Q) of ArithmeticLocallySymmetricSpaces ALS.0.10(iv), prove localized boundary homology vanishing in all degrees and the ordinary-to-Borel–Moore homology isomorphism for every p-power quotient Δ and finitely generated O[Δ]-module μ at a non-Eisenstein ideal associated to an absolutely irreducible residual representation, without a Hecke-valued Galois lift or the general hypothesis ♠."
     }
   ],
   "sourceVersions": [
