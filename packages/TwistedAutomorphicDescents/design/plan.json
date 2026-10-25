@@ -3324,7 +3324,8 @@
         "TwistedAutomorphicDescents:TAD.6/central-value-period",
         "TwistedAutomorphicDescents:TAD.7/recovery"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "unitary-pairing-and-normalizer-dictionary"
     },
     {
       "title": "G2: Inner-form tower cuspidality proof",
@@ -3333,7 +3334,8 @@
         "TwistedAutomorphicDescents:TAD.1/first-cuspidal",
         "TwistedAutomorphicDescents:TAD.5/critical-cuspidality"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "inner-form-tower-cuspidality-proof"
     },
     {
       "title": "G3: Full relative Bruhat and open-cell comparison",
@@ -3343,7 +3345,8 @@
         "TwistedAutomorphicDescents:TAD.2/open-cell",
         "TwistedAutomorphicDescents:TAD.2/inner-datum"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "full-relative-bruhat-and-open-cell-comparison"
     },
     {
       "title": "G4: Unpublished local continuation and spherical calculation",
@@ -3354,16 +3357,18 @@
         "TwistedAutomorphicDescents:TAD.3/spherical-calculation",
         "TwistedAutomorphicDescents:TAD.3/euler-product"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "unpublished-local-continuation-and-spherical-calculation"
     },
     {
       "title": "G5: Appendix-A coordinate and archimedean verification",
-      "detail": "Recompute the multiplication used in (A.12)–(A.14) with typed rectangular blocks and the cross term arising from YY′E₂; justify its elimination on the chosen slice. Prove the compact-open/smooth open-cell section construction retains the prescribed nonzero pairing and is regular at each chosen s₀. Supply the continuity and Dixmier–Malliavin argument over R,C and a separate split-GL calculation. The source nonvanishing theorem is the target, not an axiom.",
+      "detail": "Recompute (A.12)–(A.14) with typed blocks and carry C E₂=(I−g)E₁+YY′E₂ through the quotient parameterization, Jacobian and open-cell section construction, since the cross term is nonzero on actual determinant-one isometries fixing the specified vector (README Section 3.6). Prove that the corrected compact-open or smooth section retains the prescribed nonzero pairing and is regular at each chosen s₀, with continuity and Dixmier–Malliavin over R,C and a separate split-GL calculation.",
       "neededBy": [
         "TwistedAutomorphicDescents:TAD.3/local-nonvanishing",
         "TwistedAutomorphicDescents:TAD.4/normalized-holomorphy"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "appendix-a-coordinate-and-archimedean-verification"
     },
     {
       "title": "G6: Acyclic all-place normalized-intertwiner import",
@@ -3372,7 +3377,8 @@
         "TwistedAutomorphicDescents:TAD.4/pole-order",
         "TwistedAutomorphicDescents:TAD.4/leading-residue"
       ],
-      "owner": "AutomorphicSpectralTheory with ModularityAndLanglandsExtensions"
+      "owner": "AutomorphicSpectralTheory with ModularityAndLanglandsExtensions",
+      "slug": "acyclic-all-place-normalized-intertwiner-import"
     },
     {
       "title": "G7: Nongeneric residual packet and all-member support",
@@ -3382,7 +3388,8 @@
         "TwistedAutomorphicDescents:TAD.5/critical-cuspidality",
         "TwistedAutomorphicDescents:TAD.5/critical-structure"
       ],
-      "owner": "ModularityAndLanglandsExtensions for classification; this roadmap for application"
+      "owner": "ModularityAndLanglandsExtensions for classification; this roadmap for application",
+      "slug": "nongeneric-residual-packet-and-all-member-support"
     },
     {
       "title": "G8: Complete critical Jacquet calculations",
@@ -3392,7 +3399,8 @@
         "TwistedAutomorphicDescents:TAD.5/critical-satake",
         "TwistedAutomorphicDescents:TAD.5/critical-structure"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "complete-critical-jacquet-calculations"
     },
     {
       "title": "G9: Original Fourier-support and regular-descent witnesses",
@@ -3402,7 +3410,8 @@
         "TwistedAutomorphicDescents:TAD.6/orthogonal-rank-one",
         "TwistedAutomorphicDescents:TAD.7/regular-case"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "original-fourier-support-and-regular-descent-witnesses"
     },
     {
       "title": "G10: Subregular orbit raising and unitary collapse",
@@ -3411,7 +3420,8 @@
         "TwistedAutomorphicDescents:TAD.7/subregular-summand",
         "TwistedAutomorphicDescents:TAD.7/subregular-recovery"
       ],
-      "owner": "This roadmap, proof and source comparison"
+      "owner": "This roadmap, proof and source comparison",
+      "slug": "subregular-orbit-raising-and-unitary-collapse"
     },
     {
       "title": "G11: Central character and discrete Fourier image",
@@ -3424,7 +3434,86 @@
         "TwistedAutomorphicDescents:TAD.5/critical-structure",
         "TwistedAutomorphicDescents:TAD.5/twisted-descent"
       ],
-      "owner": "This roadmap for the image comparison; AutomorphicFormsOnReductiveGroups for the Hilbert carrier"
+      "owner": "This roadmap for the image comparison; AutomorphicFormsOnReductiveGroups for the Hilbert carrier",
+      "slug": "central-character-and-discrete-fourier-image"
+    },
+    {
+      "slug": "hermitian-witt-complements",
+      "needs": "Supply Witt decomposition, extension and cancellation for nondegenerate finite-dimensional Hermitian spaces over every characteristic-zero field with quadratic étale coefficients, with prescribed complement isometries, arbitrary-form unitary groups and scalar-extension compatibility.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.4"
+    },
+    {
+      "slug": "rational-nilpotent-orbits",
+      "needs": "Extend the geometric orbit carrier to rational classical nilpotent orbits and localization, distinguishing geometric, Galois-stable and rational conjugacy and retaining the two very-even SO labels.",
+      "supplier": "LieHighestWeightPartII",
+      "section": "N0, nilpotent-orbit"
+    },
+    {
+      "slug": "classical-dominance",
+      "needs": "Supply dominance and special-expansion comparisons for the regular and subregular partitions in the ranks of Section 7.4, without inferring rational or automorphic nonvanishing from geometric admissibility.",
+      "supplier": "LieHighestWeightPartII",
+      "section": "N2, classical-partitions"
+    },
+    {
+      "slug": "rational-fourier-support",
+      "needs": "Supply generalized rational-nilpotent Fourier maps, root exchange, support and maximal-support carriers on actual automorphic realizations, with continuous constant-term comparisons and the topology for a verified cuspidal Hilbert closure.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "4.1–4.2, rational Fourier continuation"
+    },
+    {
+      "slug": "bessel-restriction-growth",
+      "needs": "Supply convergence and continuity of cuspidal Bessel periods against moderate-growth forms and restriction estimates into fixed-central-character or split-center-quotient Hilbert carriers, with all archimedean and split-torus cases.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "4.1–4.2, restriction and cuspidal realization"
+    },
+    {
+      "slug": "twisted-jacquet-filtration",
+      "needs": "Compare the geometric lemma and induction in stages with character-twisted Jacquet quotients for determinant-one orthogonal and split or nonsplit unitary groups over every finite extension of Q_p.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.2.2, geometric-lemma"
+    },
+    {
+      "slug": "spherical-whittaker-normalization",
+      "needs": "Supply hyperspecial Satake, spherical Whittaker and Cartan-volume formulas with normalized induction and specified Haar measures for every residue characteristic, including split unitary GL groups and unramified nonsplit forms.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.1–SR.4.4"
+    },
+    {
+      "slug": "all-place-signed-factors",
+      "needs": "Supply all-place tensor and signed Asai factors, tempered positive-half-plane regularity and standard-module multiplicativity with archimedean Gamma shifts and the actual unipotent-radical L-representation for the induction used here.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.4, local-parameter-comparison"
+    },
+    {
+      "slug": "type-poles-and-cross-factor",
+      "needs": "Supply the self-dual and conjugate-self-dual type-pole dichotomy, the distinct-block cross-factor regularity and the completed normalizer-factor identity in the bilinear conventions of Section 4.1.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3–AL.4, poles and factor operations"
+    },
+    {
+      "slug": "nongeneric-residual-packets",
+      "needs": "Supply membership in nongeneric residual packets and the necessary cuspidal-support and irreducibility theorems for the parameter built from two-dimensional SL₂ blocks on the specified inner forms, separately for the constructed residue and every discrete member of those packets.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.18, 3.22–3.25"
+    },
+    {
+      "slug": "coherent-classical-parameters",
+      "needs": "On the shared carriers for packets, prove comparisons of coherent generic global packets, generic discrete-member cuspidality, standard base change and its almost-everywhere uniqueness for all relevant orthogonal and unitary inner forms with the exact classification premises and dual or outer transport.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.18, 3.23"
+    },
+    {
+      "slug": "isobaric-eisenstein-continuation",
+      "needs": "Supply the Eisenstein continuation and constant-term formulas for unitary generic isobaric GL inducing data and the moderate-growth noncuspidal smaller datum permitted by the unfolding, with holomorphic smooth sections.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.4–2.7 and 2.14"
+    },
+    {
+      "slug": "all-place-intertwiner-comparison",
+      "needs": "Supply the holomorphic nonzero normalized intertwiner on Re(s) at least one half for the exact inner-form components, including archimedean and split unitary cases and a nonzero composition argument independent of the conclusions about residual packets.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.8–2.13"
     }
   ],
   "sourceIssues": [

@@ -1,0 +1,129 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TwistedAutomorphicDescents"
+
+[[source]]
+id = "JZ2020"
+authors = "Dihua Jiang; Lei Zhang"
+title = "Arthur parameters and cuspidal automorphic modules of classical groups"
+year = 2020
+doi = "10.4007/annals.2020.191.3.2"
+version_note = "Published Annals version; all journal-page locators use this version."
+locator_scheme = "theorem"
+locator = "Sections 2, 4–7; Appendices A–B, pp. 748–820"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p02-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p02-s.pdf"
+fetched_at = "2026-10-25T08:24:04Z"
+sha256 = "c016d9729f7f0cdca451e14a62015bd85cde861a9e07d3135e8feff071d0b15f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "Zhang2022"
+authors = "Lei Zhang"
+title = "Note on the unramified computation of Rankin-Selberg integrals for quasi-split classical groups of Bessel model case"
+year = 2022
+version_note = "RIMS Kokyuroku 2230 institutional PDF; PDF-page numbering; OCR extraction."
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Proposition 2.1; Sections 3–5"
+url = "https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2230-10.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2230-10.pdf"
+fetched_at = "2026-10-25T08:26:02Z"
+sha256 = "3a0b766dd859ae0faf2f8a7816a5a3034bf90c85ad3bccf315d869617b35b710"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.4"]
+
+[[source]]
+id = "JLS2016"
+authors = "Dihua Jiang, Baiying Liu, Gordan Savin"
+title = "Raising nilpotent orbits in wave-front sets"
+year = 2014
+arxiv = "1412.8742v2"
+locator_scheme = "theorem"
+locator = "Theorem 11.2"
+url = "https://arxiv.org/abs/1412.8742v2"
+fetched_from = "https://arxiv.org/pdf/1412.8742v2"
+fetched_at = "2026-10-25T08:27:25Z"
+sha256 = "677c0a9adabdf6b39e603d168964bec09948c9139395b346a71f7e108093045e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["7.4"]
+
+[[source]]
+id = "JSZ2010"
+authors = "Dihua Jiang, Binyong Sun, Chen-Bo Zhu"
+title = "Uniqueness of Bessel models: the archimedean case"
+year = 2009
+venue = "Geom. Funct. Anal. 20 (2010), 690-709"
+arxiv = "0908.1728v2"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/0908.1728v2"
+fetched_from = "https://arxiv.org/pdf/0908.1728v2"
+fetched_at = "2026-10-25T08:27:37Z"
+sha256 = "4eb27d5be576b980cf6fd49bc59df7c0a961f465f26299b314e608fa97d1c36b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["1.4"]
+
+[[source]]
+id = "JLXXZ2016"
+authors = "Dihua Jiang, Baiying Liu, Bin Xu, Lei Zhang"
+title = "The Jacquet–Langlands Correspondence via Twisted Descent"
+year = 2015
+venue = "International Mathematics Research Notices 2016"
+doi = "10.1093/imrn/rnv312"
+arxiv = "1501.00506v2"
+locator_scheme = "theorem"
+locator = "arXiv v2 Theorem 1.2(3),(6), PDF p.5; Proposition 3.3, PDF p.20"
+url = "https://arxiv.org/abs/1501.00506v2"
+fetched_from = "https://arxiv.org/pdf/1501.00506v2"
+fetched_at = "2026-10-25T08:27:40Z"
+sha256 = "44935ae35529b22a4f42372e05bc054d133cbfcfc03eb11a1e366b096be2e3fd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["6.3; 6.5"]
+
+[[source]]
+id = "AGRS2010"
+authors = "Avraham Aizenbud, Dmitry Gourevitch, Stephen Rallis, Gérard Schiffmann"
+title = "Multiplicity one theorems"
+year = 2010
+venue = "Annals of Mathematics 172"
+doi = "10.4007/annals.2010.172.1407"
+arxiv = "0709.4215v1"
+locator_scheme = "theorem"
+locator = "Theorem 1 prime"
+url = "https://arxiv.org/abs/0709.4215v1"
+fetched_from = "https://arxiv.org/pdf/0709.4215v1"
+fetched_at = "2026-10-25T08:29:08Z"
+sha256 = "3f197be72e37579768c85bbe87e65c5ffd5da7346c862afcb5bb546edfa9cf58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["1.4"]
+
+[[source]]
+id = "GRS2011"
+authors = "David Ginzburg; Stephen Rallis; David Soudry"
+title = "The descent map from automorphic representations of GL(n) to classical groups"
+year = 2011
+doi = "10.1142/9789814304993"
+url = "https://doi.org/10.1142/9789814304993"
+locator_scheme = "theorem"
+locator = "Theorems 5.1, 5.4, 5.6 and 7.3, as cited by JZ2020"
+cited_for = ["1.3", "5.4", "5.7", "6.3", "7.3"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Publisher book unavailable to the sources service; cited only by the secondary theorem locators in JZ2020, without the proof text."
+note = "Sources service reached the publisher DOI landing page and received HTTP 403; no proof text was read and no licence or hash is asserted. The open JZ2020 extraction supplies the secondary locators."
