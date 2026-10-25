@@ -4,13 +4,13 @@
 
 ## Scope and ownership
 
-This roadmap owns the GL₂-specific triality representation, spectral rigidification, exotic product, Whittaker-unit centre calculation, associator, categorical trace, theta multiplication, automorphic ideal I, its module category, spin spherical coalgebra and convolution, and the normalization-aware induction and component comparisons. The scalar metaplectic extension is imported; the rigidified lift of the specific triple GL₂ action is owned here. The matrix determinant pairing is a particular quadratic polarization, rather than a new theory of bilinear forms. The unit-free idempotent theorem is owned here because the categorical and monoidal roadmaps state neither its defect-intertwining hypotheses nor its conclusion.
+This roadmap owns the GL₂-specific triality representation, spectral rigidification, exotic product, Whittaker-unit centre calculation, associator, categorical trace, theta multiplication, automorphic ideal I, its module category, spin spherical coalgebra and convolution, and the normalization-aware induction and component comparisons. The scalar metaplectic extension is imported; the rigidified lift of the specific triple GL₂ action is owned here. The matrix determinant pairing is a particular quadratic polarization, rather than a new theory of bilinear forms. The unit-free idempotent theorem is owned here because the categorical and monoidal roadmaps state neither its defect-intertwining hypotheses nor its conclusion. The smooth Eilenberg–Watts coevaluation and triangle identities of §5.3, the spherical counit transports of §9.2, and the spin-section and inverse-transpose transport computations of §9.4 are targets of this roadmap.
 
 General smooth representations, their abelian and derived categories, compact induction, Jacquet and Whittaker functors, locally unital Hecke modules, averaging, Bernstein decomposition and the centre belong to SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4, SR.0d.1–SR.0d.2, SR.1.1–SR.1.3, SR.2.1–SR.2.3 and SR.3.2. Their constructions are not targets here. Section 3.2 only specializes the supplied module theory to the Bernstein direct sum and distinguishes full from finite-support Hom. The compact-projective and endomorphism calculation for compact induction from SL₂(O) is supplied there under the exact extension below; §4.3 owns the exotic coalgebra equivalence that uses it. Ordinary K-spherical Satake, owned by its §SR.4.1, does not identify this larger generator.
 
-MetaplecticAutomorphicForms §§0.15–0.18, 1.1–1.4, 2.4b–2.7, 4.1–4.6 and 5.1 own the oscillator representation, generator relations, scalar extension, rational splitting and theta invariance. Fourier analysis and scalar zeta theory belong to AutomorphicLFunctionsAndLocalFactors AL.0–AL.3. Its AL.3, Curve additive analysis, owns the completion-valued adeles, residue characters and Poisson summation; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, 4.8–4.10, 5.8 and 6.1–6.4 own arithmetic degrees, divisor lattices, ray classes, degree-sensitive Chebotarev and function-field automorphic carriers. Section 6.2 compares the imported quotient-function carrier with the transpose dual; it does not reconstruct that carrier. Local classification and generic models belong to GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8; cuspidal factorization belongs to §§R16.4.1–R16.4.3 with the function-field extension below.
+MetaplecticAutomorphicForms §§0.15–0.18, 1.1–1.4, 2.4b–2.7, 4.1, 4.1a and 4.2–4.4 own the local oscillator representation, generator relations, scalar extension, function-field vector-space Poisson adapter and rational symplectic splitting. Sections 6.1 and 6.3 own the restricted tensor triality kernel and its rational theta invariance. Fourier analysis and scalar zeta theory belong to AutomorphicLFunctionsAndLocalFactors AL.0–AL.3. Its AL.3, Curve additive analysis, owns the completion-valued adeles, residue characters and Poisson summation; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, 4.8–4.10, 5.8 and 6.1–6.4 own arithmetic degrees, divisor lattices, ray classes, degree-sensitive Chebotarev, adelic groups, central-lattice automorphic modules, constant terms and cusp finiteness. Section 6.2 forms compact and unrestricted smooth functions on the quotient of §6.1 using SmoothRepresentationsOfLocalGroups §SR.1.1, then compares the transpose dual. Local classification and generic models belong to GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8; function-field cuspidal factorization belongs to AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and cuspidal multiplicity one to its AL.3 with the extension below.
 
-AlgebraicVectorBundles §§L0B–L0C own line bundles and their tensor products. Completed/RestrictedProducts, Scope and ownership and Layer 1, owns coordinate maps, finite change of reference, reindexing and away-S decomposition; no generic restricted-product theorem is rebuilt. EnhancedDerivedSheaves §E5:presentability.2 owns presentable categorical tensors and their universal properties; the ordinary complex-linear extension below supplies the abelian version used in §5.3. This roadmap owns the smooth regular-bimodule coevaluation and its triangle identities. Mathlib supplies matrix determinant and trace, algebraic coinvariants, native functors/isomorphisms, symmetric categories, commutative monoid objects and module objects. The acceptance file adds only `AssociativeTensor` and `idempotent_coherence`; it introduces no second smooth or adelic representation category.
+AlgebraicVectorBundles §§L0B–L0C own line bundles and their tensor products. Completed/RestrictedProducts, Scope and ownership and Layer 1, owns coordinate maps, finite change of reference, reindexing and away-S decomposition; no generic restricted-product theorem is rebuilt. EnhancedDerivedSheaves §E5:presentability.2 owns presentable categorical tensors and their universal properties; the ordinary complex-linear extension below supplies the abelian version used in §5.3. Mathlib supplies matrix determinant and trace, algebraic coinvariants, native functors/isomorphisms, symmetric categories, commutative monoid objects and module objects.
 
 ## Conventions
 
@@ -20,7 +20,7 @@ All balanced tensors are smooth relative tensors with their residual actions. Or
 
 For a left action ρ, IRL gives the right action v·g = ρ(gᵀ)v. On the regular bimodule use (gL·f·gR)(h) = f(gR h gL). The ordinary smooth contragredient is D(V); in the spectral comparison Ṽ is that dual as a right module. In the left exotic category use Dτ(V) = D(V) ∘ τ, τ(g) = g⁻ᵀ. Thus the global function dual S̃ is Dτ(S), and its bilinear Petersson pairing is balanced on IRL(S) ⊗G S. No complex conjugation enters this bilinear pairing. Statements about arbitrary limits mean limits in the smooth category, with smoothing where required.
 
-Let Z = ⊕c Zc be the direct sum of the unital Bernstein block centres. A firm Z-module has an invertible multiplication Z ⊗Z M → M, equivalently every vector is fixed by a finite sum of block idempotents. Full central endomorphisms form ∏c Zc. Underlined Hom means ⊕c Hom(Mc,Nc); full Hom allows all block supports. Roughening means the nonsmooth Hecke module HomG(S(G),V), whose smooth part recovers V.
+Let Z = ⊕c Zc be the direct sum of the unital Bernstein block centres. A firm Z-module has an invertible multiplication Z ⊗Z M → M, equivalently every vector is fixed by a finite sum of block idempotents. For an idempotented algebra this is the nondegenerate module of SmoothRepresentationsOfLocalGroups §SR.1.3: HM = M, equivalently every vector is fixed by an algebra idempotent. Full central endomorphisms form ∏c Zc. Underlined Hom means ⊕c Hom(Mc,Nc); full Hom allows all block supports. Roughening means the nonsmooth Hecke module HomG(S(G),V), whose smooth part recovers V.
 
 **Global context A.** F is the function field of a smooth proper geometrically connected curve over its full finite constant field of odd characteristic; A is its completed projective adele ring, G = GL₂(A) and Γ = GL₂(F). Fix e on A/F, local self-dual measures and vol(U(F)\U(A)) = 1. Write Iunit,A, YA and EA when distinguishing local and global objects. S = S(Γ\G) has compact quotient support, whereas S̃ has unrestricted support and is smooth. Integrals on automorphic functions use Γ\G. The theta multiplication initially has target S̃; its compact restriction is a theorem. Idele degrees follow FunctionFieldArithmetic §0.1: a uniformizer at a degree-d place has degree d and norm q⁻ᵈ, while a rational idele has degree zero and norm one.
 
@@ -32,11 +32,11 @@ All categories have fixed object and morphism universes and all colimits are sma
 
 ### From Mathlib
 
-Use `Matrix.det_fin_two` in Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean, line 809, over a commutative ring, and `Matrix.trace` in Mathlib/LinearAlgebra/Matrix/Trace.lean, line 43. `Matrix.trace_transpose` and `Matrix.trace_mul_comm` give the native transpose and cyclic trace identities. These do not construct the GL₂ kernel. `Rep.coinvariantsTensor` in Mathlib/RepresentationTheory/Coinvariants.lean, line 410, supplies algebraic diagonal coinvariants, with no smoothness or residual smooth-action assertion. `CategoryTheory.SymmetricCategory` in Mathlib/CategoryTheory/Monoidal/Braided/Basic.lean, line 366, assumes a monoidal category with an associator. `CategoryTheory.CommMon` in Mathlib/CategoryTheory/Monoidal/CommMon_.lean, line 26, and `CategoryTheory.Mod` in Mathlib/CategoryTheory/Monoidal/Mod.lean, line 227, supply genuine algebra and module-object carriers once the exotic category exists. `CategoryTheory.Functor`, product categories and `CategoryTheory.Iso` supply all the data in the unit-free categorical acceptance theorem; no monoidal unit is assumed there.
+Use `Matrix.det_fin_two` in Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean, line 809, over a commutative ring, and `Matrix.trace` in Mathlib/LinearAlgebra/Matrix/Trace.lean, line 43. `Matrix.trace_transpose` and `Matrix.trace_mul_comm` give the native transpose and cyclic trace identities. These do not construct the GL₂ kernel. `Rep.coinvariantsTensor` in Mathlib/RepresentationTheory/Coinvariants.lean, line 410, supplies algebraic diagonal coinvariants, with no smoothness or residual smooth-action assertion. `CategoryTheory.SymmetricCategory` in Mathlib/CategoryTheory/Monoidal/Braided/Basic.lean, line 366, assumes a monoidal category with an associator. `CategoryTheory.CommMon` in Mathlib/CategoryTheory/Monoidal/CommMon_.lean, line 26, and `CategoryTheory.Mod` in Mathlib/CategoryTheory/Monoidal/Mod.lean, line 227, supply genuine algebra and module-object carriers once the exotic category exists. `CategoryTheory.Functor`, product categories and `CategoryTheory.Iso` supply the bifunctors and isomorphisms used in §5.1.
 
 ### From Tau Ceti
 
-The generic restricted-product coordinate and reference transports are consumed through Completed/RestrictedProducts, Layer 1, and the arithmetic specializations below. No Tau Ceti module is imported by Suggested.lean: its single categorical headline uses only Mathlib. The pinned type-D₄ diagram triality is a different object from the S₃ action on the triple GL₂ matrix kernel and is not a supplier for that action.
+The generic restricted-product coordinate and reference transports are consumed through Completed/RestrictedProducts, Layer 1, and the arithmetic specializations below. Suggested.lean imports Mathlib alone; the smooth and adelic carriers required by the headline theorems are absent at the pins. The pinned type-D₄ diagram triality is a different object from the S₃ action on the triple GL₂ matrix kernel and is not a supplier for that action.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -56,33 +56,37 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:twisted-spherical-cent
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
-Consume AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, for the compact-open Fourier model and self-dual inversion; AL.2, Godement–Jacquet standard functions, for local integrals, convergence and continuation; AL.3, Function-field local factors, multiplicity one and converse theorem, for Whittaker integrals and normalization conversion. AL.3, Curve additive analysis, supplies completion-valued adeles, residue characters, quotient measures, product formula and scalar Poisson summation, with finite-dimensional Poisson supplied by the metaplectic adapter. Use the negative kernel e(−xy); on the cyclic group of order three its normalized transform sends δ₁ to 3⁻¹ᐟ²(1,ζ⁻¹,ζ⁻²), and its square is δ₂. The zeta exponents are s+1/2 on det and s−1/2 on the Kirillov variable.
+Consume AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, for the compact-open Fourier model and self-dual inversion; AL.2, Godement–Jacquet standard functions, for local integrals, convergence and continuation; AL.3, Function-field local factors, multiplicity one and converse theorem, for Whittaker integrals and normalization conversion. Representation prerequisites, Restricted tensor realizations, supplies the function-field cuspidal restricted tensor factorization. AL.3, Curve additive analysis, supplies completion-valued adeles, residue characters, quotient measures, product formula and scalar Poisson summation, with finite-dimensional Poisson supplied by the metaplectic adapter. Use the negative kernel e(−xy); on the cyclic group of order three its normalized transform sends δ₁ to 3⁻¹ᐟ²(1,ζ⁻¹,ζ⁻²), and its square is δ₂. The zeta exponents are s+1/2 on det and s−1/2 on the Kirillov variable.
 
-What AutomorphicLFunctionsAndLocalFactors must provide (gap:equal-characteristic-fourier): Supply the local nonarchimedean Schwartz–Bruhat and self-dual Fourier interfaces for all local fields, including odd equal characteristic, with finite-dimensional and partial-transform compatibility.
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:equal-characteristic-fourier): Supply finite-dimensional Fourier transforms for perfect pairings and their partial-transform compatibilities over every nonarchimedean local field of characteristic different from two and every nontrivial continuous additive character, extending the scalar residue-character normalization of AL.3, Curve additive analysis.
 
 What AutomorphicLFunctionsAndLocalFactors must provide (gap:normalization-module-freeness): Supply the invertible firm convolution module S(F) over S(F×), with a noncanonical generator sending the unit-indicator on O× to that on O, and its torus-coordinate pullbacks and character twists.
 
-What AutomorphicLFunctionsAndLocalFactors must provide (gap:compact-data-global-zeta): Supply a common absolute-convergence half-plane and unfolding for the function-field GL₂ theta zeta integrals of arbitrary compact quotient functions, with continuation only where established.
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:compact-data-global-zeta): For each φ, φ′ ∈ C_c^∞(Γ\GL₂(A)) and Φ ∈ S(M₂(A)), supply a right half-plane of absolute convergence for the double Godement–Jacquet integral ∫GL₂(A) c(g)Φ(g)|det g|ˢ⁺¹ᐟ² d×g, where c(g)=∫Γ\GL₂(A) φ′(h⁻ᵀ)φ(hg)dh and Γ=GL₂(F) over a global function field.
+
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:function-field-cuspidal-multiplicity-one): Supply ordinary cuspidal multiplicity one for each fixed smooth central character in the smooth complex GL₂ cusp space over a global function field, with the quotient measures of Representation prerequisites, Restricted tensor realizations.
 
 ### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
-Consume §§0.15–0.18, 1.1, 1.3–1.4 for the smooth Schrödinger model and scalar intertwiner extension; §§2.4b–2.7 for Weil operators, relations, unramified splitting and character change; §§4.1–4.6, including §4.1a, for function-field vector-space Poisson, restricted tensor Weil representations and the rational splitting; §5.1 for rational theta invariance. Use the ℂ× scalar pushout of the normalizer extension, rather than claiming the whole triple GL₂ group splits the double cover. The negative B-Fourier operator squared sends Ψ(m,y) to Ψ(−m,y), with |y|² on each four-dimensional transform. This is the same w² witness as §0.4. Rational invariance uses the specified rational lift, never an arbitrary central scalar multiple.
+Consume §§0.15–0.18, 1.1, 1.3–1.4 for the smooth Schrödinger model and scalar intertwiner extension; §§2.4b–2.7 for Weil operators, relations, unramified splitting and character change; §§4.1, 4.1a and 4.2–4.4 for good lattices, function-field vector-space Poisson, the adelic cover, product formula and rational symplectic splitting. Use the ℂ× scalar pushout of the normalizer extension, rather than claiming the whole triple GL₂ group splits the double cover. The negative B-Fourier operator squared sends Ψ(m,y) to Ψ(−m,y), with |y|² on each four-dimensional transform. This is the same w² witness as §0.4. Rational invariance uses the specified rational lift, never an arbitrary central scalar multiple.
 
 ### From TauCetiRoadmap.FunctionFieldArithmetic
 
-Consume §§0.1–0.3 for degrees, degree-one divisors and Picard points; §§2.1–2.3 for completed adelic divisor lattices, self-dual measure and lattice transforms; §§4.8–4.10 for finite degree-zero ray classes and ray class fields; §5.8 for quantitative Chebotarev in each admissible degree; §§6.1–6.4 for adelic groups, compact and unrestricted smooth automorphic functions, constant terms and finite-dimensional cusp forms at fixed level and bounded degree. Its exact supplier contracts for ArithmeticGaloisDuality §R02.3.2 and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis, carry the canonical idele and residue interfaces. A degree-one divisor may be a difference of effective divisors; it is not a rational point. Degrees 2 and 3 give the degree-one idele combination 3−2 = 1 without a degree-one place. For two opposite traced residues r and −r the product phase is e₀(r)e₀(−r) = 1. For ω of order 2k, the scalar lattice is π⁻ᵏO, equal to its annihilator.
+Consume §§0.1–0.3 for degrees, degree-one divisors and Picard points; §§2.1–2.3 for completed adelic divisor lattices, self-dual measure and lattice transforms; §§4.8–4.10 for finite degree-zero ray classes and ray class fields; §5.8 for quantitative Chebotarev in each admissible degree; §6.1 for the locally profinite adelic group and its closed discrete rational subgroup; §§6.2–6.4 for central-lattice automorphic modules, constant terms and cusp finiteness with their Ξ-quotient conventions. The compact-support carrier on Γ\G comes from SmoothRepresentationsOfLocalGroups §SR.1.1; the unrestricted carrier is its smooth function dual as in §6.2 below. Its exact supplier contracts for ArithmeticGaloisDuality §R02.3.2 and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis, carry the canonical idele and residue interfaces. A degree-one divisor may be a difference of effective divisors; it is not a rational point. Degrees 2 and 3 give the degree-one idele combination 3−2 = 1 without a degree-one place. For two opposite traced residues r and −r the product phase is e₀(r)e₀(−r) = 1. For ω of order 2k, the scalar lattice is π⁻ᵏO, equal to its annihilator.
 
-What FunctionFieldArithmetic must provide (gap:function-field-quotient-constituents): Supply determinant pushforward on compact quotient functions with compatible fibre measures, rational/unipotent generation of SL₂(A), and classical automorphicity of every irreducible constituent of parabolic induction from automorphic torus characters.
+What FunctionFieldArithmetic must provide (gap:determinant-pushforward): Supply determinant pushforward C_c^∞(GL₂(F)\GL₂(A)) → C_c^∞(F×\A×) by integration on SL₂ quotient fibres, with compatible Haar disintegration.
 
-What FunctionFieldArithmetic must provide (gap:rational-theta-characteristic): Supply existence of a rational theta characteristic on a smooth proper geometrically connected curve over a finite field of odd characteristic, using the line-bundle tensor carriers of AlgebraicVectorBundles.
+What FunctionFieldArithmetic must provide (gap:sl2-rational-unipotent-generation): Supply the inclusion SL₂(A) ⊆ ⟨U(A), GL₂(F)⟩ inside GL₂(A), where U is the upper unipotent subgroup and F is a global function field.
+
+What FunctionFieldArithmetic must provide (gap:eisenstein-constituent-automorphicity): Supply classical automorphicity, as subquotients of unrestricted smooth functions on GL₂(F)\GL₂(A), of every irreducible constituent of global parabolic induction from a smooth character of T(F)\T(A).
+
+What FunctionFieldArithmetic must provide (gap:rational-theta-characteristic): Supply existence of a rational theta characteristic on a smooth proper geometrically connected curve over a finite field of odd characteristic, using the line-bundle tensor carriers of AlgebraicVectorBundles (Dor23, Remark A.2, p. 50, citing Armitage 1967, pp. 238–246; Dor23 line 2512).
 
 ### From TauCetiRoadmap.GL2AutomorphicRepresentationsAndTransfer
 
-Consume §§R16.2.1 and R16.2.8 for the explicit classification and supercuspidal Kirillov comparison, and §§R16.4.1–R16.4.3 for cuspidal factorization and multiplicity one at their stated scope. A supercuspidal has compact Kirillov functions and zero Jacquet boundary; a principal series has boundary and must not be assigned the same compact carrier. The trivial determinant character has zero nontrivial Whittaker quotient; Steinberg has Whittaker dimension one. These distinguish the extension contracts from a classification only by central character.
+Consume §§R16.2.1 and R16.2.8 for the explicit classification and supercuspidal Kirillov comparison at their stated scope, extended by the following contract. A supercuspidal has compact Kirillov functions and zero Jacquet boundary; a principal series has boundary and must not be assigned the same compact carrier. The trivial determinant character has zero nontrivial Whittaker quotient; Steinberg has Whittaker dimension one. These distinguish the extension contracts from a classification only by central character.
 
-What GL2AutomorphicRepresentationsAndTransfer must provide (gap:all-generic-kirillov): Supply the full uniformly smooth Kirillov realization and Jacquet boundary for every generic complex irreducible GL₂ representation over any nonarchimedean field of characteristic different from two, including both Steinberg/trivial extension orientations.
-
-What GL2AutomorphicRepresentationsAndTransfer must provide (gap:function-field-cuspidal-factorization): Supply cuspidal multiplicity one and restricted tensor factorization over global function fields with the quotient-function and finite-level conventions of FunctionFieldArithmetic §§6.1–6.4.
+What GL2AutomorphicRepresentationsAndTransfer must provide (gap:all-generic-kirillov): Supply the full uniformly smooth Kirillov realization and Jacquet boundary for every generic complex irreducible GL₂ representation over any nonarchimedean field of characteristic different from two.
 
 ### From TauCetiRoadmap.AlgebraicVectorBundles
 
@@ -90,7 +94,7 @@ Consume §§L0B–L0C: invertible sheaves and their tensor products, duals, sect
 
 ### From Completed/RestrictedProducts
 
-Consume Scope and ownership, Layer 1 and Change of family and double cosets: maps from eventually integral coordinates, finite changes of reference, reindexing and the finite exceptional-set decomposition. Inserting a reference vector at one extra unramified place changes no restricted tensor; changing reference data at infinitely many places is not a finite-change transport. These topological contracts are distinct from the restricted tensor of representation spaces, supplied by the arithmetic and oscillator contracts above.
+Consume Scope and ownership, Layer 1 and Change of family and double cosets: maps from eventually integral coordinates, finite changes of reference, reindexing and the finite exceptional-set decomposition. Inserting a reference vector at one extra unramified place changes no restricted tensor; changing reference data at infinitely many places is not a finite-change transport. These topological contracts are distinct from the restricted tensor of representation spaces, whose triality specialization is constructed in §6.1.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -139,7 +143,7 @@ The required interface has the following properties.
 
 Let H={(g₁,g₂,g₃)∈G³ | det(g₁)det(g₂)det(g₃)=1}. On M₂(F)⊗F² let H act by m⊗v↦g₁mg₃ᵀ⊗g₂v. The identification with a triple tensor of two-dimensional spaces extends this to a symplectic action of S₃⋉H; (13) sends m⊗v to mᵀ⊗v.
 
-(Dor23, Constructions 2.7 and 2.9, p. 11 (Dor23 line 505).)
+(Dor23, Constructions 2.7 and 2.9, p. 11 (Dor23 line 496; Dor23 line 509).)
 
 A proof route is as follows. The determinant pairing scales by det(g₁g₃), while the wedge scales by det(g₂). Use the standard symplectic identification of a two-dimensional space with its dual to permute the three tensor factors; check the semidirect relations.
 
@@ -215,7 +219,7 @@ The required interface has the following properties.
 
 **Checks.**
 
-- A function supported on det m≠0 remains there under the middle unipotent. The coordinate change sends (I₂,y) to (I₂,y) and (diag(π,1),y) to (diag(π,1),yπ); reciprocal scaling fails the second value.
+- A function supported on det m≠0 remains there under the middle unipotent. The coordinate change (m,y) ↦ (m,y·det m) of §1.3 sends (I₂,y) to (I₂,y) and (diag(π,1),y) to (diag(π,1),yπ); reciprocal scaling fails the second value.
 - A function supported on singular matrices cannot be an element of Y° unless it is zero. The zero matrix is excluded even when y = 1, so no singular orbit enters the open carrier.
 - A middle Fourier transform can acquire values at m=0; Y° must not be packaged with a full restricted middle G action. A Fourier transform of a small open compact ball around I₂ may have value at m = 0, detecting the failure of middle-G stability.
 
@@ -317,7 +321,7 @@ A proof route is as follows. Substitute the open integral and change y to y det 
 - At y ∈ O× the extra Mellin factor is one and the remaining coefficient integral has the stated group measure.
 - Zero Φ or zero f makes both sides zero; analytic continuation is used only after equality in a common convergence region.
 
-*Needs:* §1.4; AutomorphicLFunctionsAndLocalFactors AL.2, Godement–Jacquet standard functions; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem, and its compact-data zeta contract in Exact supplier contracts.
+*Needs:* §1.4; AutomorphicLFunctionsAndLocalFactors AL.2, Godement–Jacquet standard functions; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem.
 
 ### Examples
 
@@ -325,7 +329,7 @@ For supercuspidal V, Jac(V) = 0 and the singular contraction vanishes. For gener
 
 ### Dependencies
 
-§0.4; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; AutomorphicLFunctionsAndLocalFactors AL.2, Godement–Jacquet standard functions; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem, and its compact-data zeta contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+§0.4; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; AutomorphicLFunctionsAndLocalFactors AL.2, Godement–Jacquet standard functions; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem. The within-layer dependencies are the Needs lines above.
 
 ## Layer 2: Exotic product and Whittaker unit
 
@@ -335,7 +339,7 @@ Work in L, except that weak tensor data are defined for arbitrary categories in 
 
 For a smooth left G-module (V,ρ), define IRL(V) as the right module v·g=ρ(gᵀ)v. Its inverse uses transpose again. This is an equivalence between the left and right smooth representation categories, not the contragredient functor.
 
-(Dor23, Notation before Definition 3.2, pp. 18–19 (Dor23 line 948).)
+(Dor23, equation (3.2) and Definition 3.2, p. 19 (Dor23 line 969; Dor23 line 976).)
 
 A proof route is as follows. Transpose reverses multiplication and is continuous and involutive on GL₂(F). Keep the module and all linear morphisms unchanged and check the right action law.
 
@@ -666,8 +670,6 @@ Work in L for the exotic applications. The idempotent theorem itself concerns an
 
 In a category with a tensor bifunctor and a pentagon associator α, let θ:P⊗P≅P. Define a:P≅P by a∘θ∘(θ⊗id)=θ∘(id⊗θ)∘α. If θ∘(a⊗id)=a∘θ=θ∘(id⊗a), then a=id. The dual form applies to an invertible comultiplication after its compatibility equations have been proved from the two counit laws.
 
-Define `AssociativeTensor` to bundle a native bifunctor and a natural associator with its pentagon equation, without a tensor unit. Its tensor is a native functor on the product category, so functoriality is inherited. The headline `idempotent_coherence` states exactly the defect equation and both intertwining equations above, with θ and a genuine isomorphisms. In Lean, composition is written in diagrammatic order: f ≫ g means first f, then g.
-
 The required interface has the following properties.
 
 - Tensoring preserves identities and composition in the product category.
@@ -683,7 +685,7 @@ A proof route is as follows. Use naturality and the two intertwining equations t
 
 - For a one-dimensional complex tensor object and multiplication θ(x⊗y) = cxy with c ≠ 0, both triple products have coefficient c² and a = 1; the pentagon has values a² = a³ = 1.
 - For the zero tensor object, its unique endomorphism is its identity and a = id; zero as an endomorphism of a nonzero object also satisfies a² = a³ but is not invertible.
-- On sets use Cantor pairing θ(x,y) = (x+y)(x+y+1)/2+y on ℕ. At (0,0,1), the two triple products are 2 and 5; the defect sends 2 to 5 and fails the left-intertwining equation since it sends 0 to 0. Thus an arbitrary invertible multiplication is insufficient.
+- On sets use Cantor pairing θ(x,y) = (x+y)(x+y+1)/2+y on ℕ. At (0,0,1), the two triple products are 2 and 5; the defect has a(0) = 0 and a(2) = 5. At (x,y) = (0,1), θ(a(0),1) = 2 whereas a(θ(0,1)) = 5, so left intertwining fails. Thus an arbitrary invertible multiplication is insufficient.
 
 *Needs:* Mathlib `CategoryTheory.Functor`; Mathlib `CategoryTheory.Iso`; Mathlib product categories.
 
@@ -800,15 +802,15 @@ The required interface has the following properties.
 - The unramified unit vector is the class of 1GL₂(Ov), which has compact support. The whole Gv indicator would be noncompact and cannot represent this class.
 - At a ramified additive character the local reference data may change, but only finitely many such places occur. A character ramified at one place changes one factor; an infinite exceptional family is outside the restricted product contract.
 
-*Needs:* §5.2; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; MetaplecticAutomorphicForms §§4.1–4.6.
+*Needs:* §5.2; §4.2; §5.5; Completed/RestrictedProducts Layer 1; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; MetaplecticAutomorphicForms §§4.1, 4.1a and 4.2–4.4.
 
 ### 6.2 Compact automorphic function space
 
-Use the supplied S = S(Γ\G), acted on by right translation. Its transpose dual S̃=Dτ(S), where Dτ(V)=D(V)∘τ, D is the ordinary smooth contragredient and τ(g)=g⁻ᵀ, identifies with all smooth functions on Γ\G via the bilinear pairing B(f,f′)=∫Γ\G f(g)f′(g⁻ᵀ)d×g and a fixed quotient Haar measure. The inclusion S→S̃ is injective, not claimed to be surjective. The pairing is balanced on IRL(S)⊗G S and realizes the right-regular function model of Dτ(S).
+Form S = C_c^∞(Γ\G) using SmoothRepresentationsOfLocalGroups §SR.1.1 on the l-space Γ\G of FunctionFieldArithmetic §6.1, with right translation. Form the unrestricted carrier from functions fixed by some compact open subgroup of G; no central-lattice invariance is imposed. Its transpose dual S̃=Dτ(S), where Dτ(V)=D(V)∘τ, D is the ordinary smooth contragredient and τ(g)=g⁻ᵀ, identifies with all smooth functions on Γ\G via the bilinear pairing B(f,f′)=∫Γ\G f(g)f′(g⁻ᵀ)d×g and a fixed quotient Haar measure. The inclusion S→S̃ is injective, not claimed to be surjective. The pairing is balanced on IRL(S)⊗G S and realizes the right-regular function model of Dτ(S).
 
 (Dor23, §4.1, pp. 38–39; §4.3, p. 41; Construction 4.15, p. 45 (Dor23 line 1915).)
 
-A proof route is as follows. Use the discrete rational quotient and quotient measures. Smooth the algebraic dual and identify distributions against a compactly supported function with smooth quotient functions under the transpose convention.
+A proof route is as follows. Use the closed discrete rational subgroup to form the locally profinite quotient and its quotient measure. Apply the compact-support function carrier and smooth the algebraic dual and identify distributions against a compactly supported function with smooth quotient functions under the transpose convention.
 
 The required interface has the following properties.
 
@@ -823,7 +825,7 @@ The required interface has the following properties.
 - The integration domain is Γ\G; integrating over G would count rational translates repeatedly. For a compact quotient indicator, a rational translate represents the same summand, so counting all translates gives repeated mass.
 - Compact support is imposed on S, while a constant smooth quotient function belongs to S̃ even when its support is not compact. The constant function has value one everywhere and tests the support distinction.
 
-*Needs:* FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts.
+*Needs:* FunctionFieldArithmetic §6.1; SmoothRepresentationsOfLocalGroups §SR.1.1; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts.
 
 ### 6.3 Triality theta functional
 
@@ -831,7 +833,7 @@ For Ψ∈YA define Θ(Ψ)=Σξ∈M₂(F),q∈F× Ψ(ξ,q). This finite sum is in
 
 (Dor23, Definition 4.5, Remarks 4.6–4.8 and Proposition 4.9, pp. 42–43 (Dor23 line 2078).)
 
-A proof route is as follows. Discreteness and compact support make the rational sum finite. Outer Γ actions reindex rational matrices and q; transposition reindexes matrices. Apply the imported function-field Weil/theta contract for the remaining rational symplectic transformations; verify the Weyl integral is over the adeles, not the rational field.
+A proof route is as follows. Discreteness and compact support make the rational sum finite. Outer Γ actions and transpose reindex it. For middle [[a,b],[0,1]] with a ∈ F× and b ∈ F, the phase e(bq det ξ) and norm |a| are one, and q ↦ aq reindexes the sum. For middle w use MetaplecticAutomorphicForms §4.1a on M₂(A) with pairing −qB and |q|² = 1; the Fourier integral is adelic. For the remaining triality permutations identify the rational lifts of §0.3 with the theta-preserving splitting of MetaplecticAutomorphicForms §4.4, using its §4.3 product formula and §4.1a partial Fourier comparison.
 
 The required interface has the following properties.
 
@@ -844,9 +846,9 @@ The required interface has the following properties.
 
 - An elementary tensor integral at all but finitely many v reduces to a finite rational sum. On a support meeting one rational pair the sum is its single value, not an Euler product of unrelated sums.
 - Changing Ψ by transpose does not change Θ. The pair (E₀₁,1) is exchanged with (E₁₀,1), preserving the two-term sum.
-- The middle Weyl identity uses ∫M₂(A), while an integral over M₂(F) cannot be substituted. Self-dual Fourier inversion integrates on A⁴; the rational lattice supplies the discrete sum.
+- For rational q, |q|² = 1; in particular q = 1 and q = a² give the same global factor one. The phase e(bq det ξ) is one for rational b, q and ξ. With pairing −qB, self-dual Poisson equates the two rational sums with covolume one and integral over A⁴; an integral over M₂(F) gives no such identity.
 
-*Needs:* §6.1; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; MetaplecticAutomorphicForms §§4.1a, 4.4–4.5, 5.1.
+*Needs:* §6.1; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; MetaplecticAutomorphicForms §§4.1a, 4.3–4.4.
 
 ### 6.4 Theta multiplication
 
@@ -875,17 +877,18 @@ The required interface has the following properties.
 
 For φ,φ′∈S and Ψ(m,y)=Φ(m)f(y)∈YA, put φ′′=m(φ′⊗Ψ⊗φ)∈S̃. Then ZJL(φ′′,s)=ZGJ(φ′,φ,Φ,s)·∫A×f(y)|y|ˢ⁺¹ᐟ²d×y. Here ZGJ=∫G(∫Γ\G φ′(h⁻ᵀ)φ(hg)dh)Φ(g)|det g|ˢ⁺¹ᐟ²d×g, and ZJL=∫A×Wφ′′(diag(y,1))|y|ˢ⁻¹ᐟ²d×y, with Wφ′′(g)=∫U(F)\U(A)φ′′(ug)θ(u)du and quotient volume 1. Interpret equality first on the common absolute-convergence domain and then wherever the supplied continuations are defined; the multiplicative integrals run over A×.
 
-(Dor23, §4.1, pp. 38–39; Remark 4.11, p. 44 (Dor23 line 1915).)
+(Dor23, §4.1, pp. 38–39; Remark 4.11, p. 44 (Dor23 line 1915; Dor23 line 2181).)
 
-A proof route is as follows. Establish a common absolute-convergence region using compact quotient supports and the supplier estimates. Unfold the rational theta sum and apply local zeta comparison, tracking transpose, Whittaker sign and determinant exponents. A cuspidal specialization may then use the usual quotient unfolding. The compact-data global zeta contract supplies the general convergence estimates for S.
+A proof route is as follows. Use the compact-data global zeta contract only for absolute convergence of the Godement–Jacquet double integral. In this section construct the Whittaker coefficient of the theta product, unfold its rational sum by compact-support exhaustion, and bound the unfolded absolute integral by the absolute-value Godement–Jacquet double integral times ∫A× |f(y)|·|y|ᴿᵉ⁽ˢ⁾⁺¹ᐟ² d×y. This gives convergence of the theta side on the same half-plane and justifies Fubini there. Apply the local comparison, tracking transpose, Whittaker sign and both determinant exponents. Continue only where both sides have defined continuations.
 
 **Checks.**
 
 - The Whittaker coefficient of zero input is zero and both zeta integrals vanish.
+- Two unit-volume disjoint compact patches with integrand values 1 and −1 have signed integral 0 and absolute integral 2. The convergence bound uses the absolute double integral and ∫|f|, so cancellation cannot supply its majorant.
 - For a rational scalar idele a, |a| = 1; replacing A× by F×\A× in the displayed Mellin factor changes the specified integral.
 - At one local uniformizer shell, combining the Kirillov power s−1/2 with its extra y factor gives s+1/2; all but finitely many unit-shell factors have weight one.
 
-*Needs:* §1.5; §6.4; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem, and its compact-data zeta contract in Exact supplier contracts; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts.
+*Needs:* §1.5; §6.4; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem, and its compact-data zeta contract in Exact supplier contracts; FunctionFieldArithmetic §6.1.
 
 ### Examples
 
@@ -893,7 +896,7 @@ Take a test function supported on two rational pairs (E₀₁,1) and (E₁₀,1)
 
 ### Dependencies
 
-§5.2; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; MetaplecticAutomorphicForms §§4.1–4.6; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; MetaplecticAutomorphicForms §§4.1a, 4.4–4.5, 5.1; §1.5; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem, and its compact-data zeta contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+§5.2; §4.2; §5.5; Completed/RestrictedProducts Layer 1; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; MetaplecticAutomorphicForms §§4.1, 4.1a and 4.2–4.4; FunctionFieldArithmetic §6.1; SmoothRepresentationsOfLocalGroups §SR.1.1; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; MetaplecticAutomorphicForms §§4.1a, 4.3–4.4; §1.5; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem, and its compact-data zeta contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
 
 ## Layer 7: The compact automorphic algebra
 
@@ -959,7 +962,7 @@ The required interface has the following properties.
 - A nonzero nonnegative locally constant function supported in a compact open subset of Γ\G has a nonzero determinant pushforward: it is not in I. A determinant pullback need not have compact quotient support and is not used as a test element of S. With unit fibre volume and a product indicator, the fibre integral is one on its determinant patch, giving a concrete nonmember.
 - In the Eisenstein summand IEis, choose a nonzero compact function with nonzero constant term; its determinant pushforward is nevertheless zero. Thus I is larger than the cuspidal constant-term kernel. Its constant term is nonzero while p = 0, separating the two kernels.
 
-*Needs:* §7.1; §7.2; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis.
+*Needs:* §7.1; §7.2; FunctionFieldArithmetic §6.2 with gap:determinant-pushforward and §6.1 with gap:sl2-rational-unipotent-generation in Exact supplier contracts; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis.
 
 ### 7.4 Automorphic commutative algebra
 
@@ -1013,7 +1016,7 @@ A compact nonnegative indicator in a product chart of the determinant map has po
 
 ### Dependencies
 
-§6.2; §6.1; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; §6.4; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts; Mathlib `CategoryTheory.CommMon`; Mathlib `CategoryTheory.Mod`. The within-layer dependencies are the Needs lines above.
+§6.2; §6.1; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; §6.4; FunctionFieldArithmetic §6.2 with gap:determinant-pushforward and §6.1 with gap:sl2-rational-unipotent-generation in Exact supplier contracts; Mathlib `CategoryTheory.CommMon`; Mathlib `CategoryTheory.Mod`. The within-layer dependencies are the Needs lines above.
 
 ## Layer 8: Abstract automorphic modules
 
@@ -1115,7 +1118,7 @@ For fixed spin data and rational s, let EA=c-IndSL₂(O_A)^G1. The distribution 
 
 For each place choose a lattice-adapted local comparison from §4.2 whose conductor intersection is u(π⁻νvOv). Transport εv and Δv, including the qv⁻νv and determinant-coordinate factors, to Λω,v. Prove reference-vector preservation at almost every place, define εA:EA → Iunit,A by their restricted tensor, and prove both counit equations and invertibility of ΔA on elementary tensors. These are construction targets in this section, not consequences of the existence of local maps alone.
 
-(Dor23, Definition A.4, Construction A.5 and Claim A.6, p. 51; Remark 3.47, pp. 32–33 (Dor23 line 2535).)
+(Dor23, Definition A.4, Construction A.5 and Claim A.6, p. 51; Remark 3.47, p. 33 (Dor23 line 2535; Dor23 line 1620).)
 
 A proof route is as follows. Choose the local lattice-adapted h_v and compute how their middle actions transport the local rough distributions, including all scalar factors. Check that ε_v and Δ_v preserve the chosen reference vectors almost everywhere, so their restricted tensors exist. Check both adelic counit equations on elementary tensors and ΔA invertibility before applying idempotent coherence. The lattice-adapted counit and reference transports are part of this construction, including their exact local modulus factors.
 
@@ -1393,7 +1396,7 @@ The required interface has the following properties.
 - The quotient of iaut(1T) by its trivial irreducible subobject can have raut=0 while belonging to the Eisenstein side. The displayed object has restriction zero and cuspidal projection zero; a kernel-only definition of the cuspidal component fails.
 - The argument must work for curves without a rational point; a place of degree one cannot be a general input. Places of degrees 2 and 3 produce a degree-one idele as their difference without producing a rational point.
 
-*Needs:* §11.2; §7.4; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.4.1–R16.4.3 and its function-field contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §11.3; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis.
+*Needs:* §11.2; §7.4; FunctionFieldArithmetic §§6.3–6.4 with their central-lattice and fixed-central-degree conventions; AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and AL.3, Function-field local factors, multiplicity one and converse theorem, with gap:function-field-cuspidal-multiplicity-one in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §11.3; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis.
 
 ### 11.5 Automorphic component decomposition
 
@@ -1417,7 +1420,7 @@ Realization induces a bijection between irreducible objects of Modaut(G) and irr
 
 (Dor21, Theorem C.5.1 and Lemma C.5.2, pp. 53–54; Remark C.5.3, p. 54 (Dor21 line 2486).)
 
-A proof route is as follows. For Eisenstein components import automorphicity of all constituents of parabolic inductions from automorphic characters (the function-field Langlands theorem supplied by FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract). For cuspidal components use the local W-module lemma. In the Steinberg block compute products with both nonsplit extensions of 1G and St; identify all St-modules as sums of St. Use the component-centre action to reduce an irreducible to these cases. Agreement of the Bernstein centre alone is insufficient.
+A proof route is as follows. For Eisenstein components import automorphicity of all constituents of parabolic inductions from automorphic characters (FunctionFieldArithmetic §6.3 with gap:eisenstein-constituent-automorphicity in Exact supplier contracts). For cuspidal components use the local W-module lemma. In the Steinberg block compute products with both nonsplit extensions of 1G and St; identify all St-modules as sums of St. Use the component-centre action to reduce an irreducible to these cases. Agreement of the Bernstein centre alone is insufficient.
 
 **Checks.**
 
@@ -1425,7 +1428,7 @@ A proof route is as follows. For Eisenstein components import automorphicity of 
 - For a local Steinberg unit quotient, a Steinberg algebra module is a sum of Steinberg copies; a determinant character in the same Bernstein block is not such a module.
 - An automorphic determinant constituent of an induced torus character is included, although its nontrivial Whittaker quotient is zero.
 
-*Needs:* §11.5; §5.4; §8.2; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts.
+*Needs:* §11.5; §5.4; §8.2; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; FunctionFieldArithmetic §6.3 with gap:eisenstein-constituent-automorphicity in Exact supplier contracts.
 
 ### 11.7 Finite-length automorphic restriction
 
@@ -1449,7 +1452,7 @@ For an idele ratio of degree −m, choose z of degree N so that N, N−m and 2N�
 
 ### Dependencies
 
-FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; §10.5; §8.2; §10.1; FunctionFieldArithmetic §5.8; FunctionFieldArithmetic §§4.8–4.10; §7.4; FunctionFieldArithmetic §§6.1–6.4 and its quotient/constituent contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.4.1–R16.4.3 and its function-field contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §5.4; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; §10.5; §8.2; §10.1; FunctionFieldArithmetic §5.8; FunctionFieldArithmetic §§4.8–4.10; §7.4; FunctionFieldArithmetic §§6.3–6.4 with their central-lattice conventions and gap:eisenstein-constituent-automorphicity in Exact supplier contracts; AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and AL.3 with gap:function-field-cuspidal-multiplicity-one in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §5.4; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
 
 ## Downstream consumers
 
@@ -1466,4 +1469,5 @@ All statements are written in this roadmap's own words. Page numbers are the pri
 - **Dor23.** Gal Dor, [Exotic Monoidal Structures and Abstractly Automorphic Representations for GL(2)](https://doi.org/10.1017/fmp.2023.18), Forum of Mathematics, Pi 11 (2023), e20, pp. 1–52, version of record. §§2–4 and Appendix A. The local conductor intersection is a conductor lattice, the Weyl Fourier integral is adelic in the global proof, and Petersson integration is on the rational quotient. The spin coalgebra includes the explicit counit and transport targets of §9.2.
 - **Dor21.** Gal Dor, [Global Parabolic Induction and Abstract Automorphicity](https://arxiv.org/abs/2102.11820v1), arXiv:2102.11820v1 (2021), §§B.2–B.7 and C.2–C.5. Induction has direction from torus modules to group modules. Degree-generating ideles and the four-term convolution argument give the degree-uniform component proof in §§11.3–11.5.
 - **GH11.** Shamgar Gurevich and Ronny Hadani, [The categorical Weil representation](https://arxiv.org/abs/1108.0351v1), arXiv:1108.0351v1 (2011), Theorem 3.1.2, pp. 10–11, and Appendix A, p. 15 (GH11 line 481; GH11 line 705). Both defect-intertwining equations and invertibility are retained.
+- **Arm67.** J. V. Armitage, [On a theorem of Hecke in number fields and function fields](https://doi.org/10.1007/BF01425516), Inventiones mathematicae 2 (1967), pp. 238–246. Cited by Dor23 Remark A.2, p. 50, for existence of a rational theta characteristic; the text is uncertified and cited by locator alone.
 - **Dor20Z.** Gal Dor, [Modules of Zeta Integrals for GL(1)](https://arxiv.org/abs/2012.03068v1), arXiv:2012.03068v1 (2020), Appendix A, Theorem A.1 and Claims A.2–A.3, pp. 25–26 (Dor20Z line 1054; Dor20Z line 1060). Only the nonarchimedean local module-freeness result is consumed here; its torus pullback is the exact normalization-module contract.

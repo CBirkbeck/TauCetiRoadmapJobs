@@ -4690,31 +4690,6 @@
   ],
   "gaps": [
     {
-      "slug": "presentable-linear-category-self-duality",
-      "title": "G2: presentable linear category self-duality",
-      "neededBy": [
-        "ExoticMonoidalStructuresAndAbstractAutomorphicity:EX.5/frobenius-category"
-      ],
-      "detail": "No pinned/current library or existing roadmap found supplies the required 2-category of presentable ℂ-linear categories with Lurie tensor, its tensor universal property and smooth Eilenberg–Watts coevaluation. The local trace identity is planned separately and suffices for the explicit algebra/module constructions. Assign this generic infrastructure once to a category-theory owner and prove the self-duality triangle identities; do not encode them as unnamed Prop fields."
-    },
-    {
-      "slug": "adelic-spherical-counit-normalization",
-      "title": "G3: adelic spherical counit normalization",
-      "neededBy": [
-        "ExoticMonoidalStructuresAndAbstractAutomorphicity:EX.9/global-spherical-coalgebra",
-        "ExoticMonoidalStructuresAndAbstractAutomorphicity:EX.9/global-spherical-convolution"
-      ],
-      "detail": "Dor23 Appendix A does not define εA or compute the local transports of Construction 3.44 needed for 1M₂(Λ)δ1. Produce lattice-adapted h_v, compute all modulus scalars, show almost-everywhere reference compatibility, prove both counit equations and ΔA invertible. The proposed restricted tensor counit is a target, not a verified construction."
-    },
-    {
-      "slug": "spin-transport-and-involution-computations",
-      "title": "G4: spin transport and involution computations",
-      "neededBy": [
-        "ExoticMonoidalStructuresAndAbstractAutomorphicity:EX.9/spin-independence"
-      ],
-      "detail": "Construction A.7 asserts independence of the rational section, and Remark A.8 asserts multiplicativity of |det|⁻² times inverse transpose, without the calculations. Verify the transformations of ΔA and mI with ω↦a²ω, Λ↦a⁻¹Λ and the product formula; compare the resulting product on the same carrier. The heuristic unramified spectral picture does not discharge this debt."
-    },
-    {
       "slug": "smooth-balanced-tensor",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.2.1–SR.2.3",
@@ -4747,8 +4722,8 @@
     {
       "slug": "equal-characteristic-fourier",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels",
-      "needs": "Supply the local nonarchimedean Schwartz–Bruhat and self-dual Fourier interfaces for all local fields, including odd equal characteristic, with finite-dimensional and partial-transform compatibility."
+      "section": "AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels; AL.3, Curve additive analysis",
+      "needs": "Supply finite-dimensional Fourier transforms for perfect pairings and their partial-transform compatibilities over every nonarchimedean local field of characteristic different from two and every nontrivial continuous additive character, extending the scalar residue-character normalization of AL.3, Curve additive analysis."
     },
     {
       "slug": "normalization-module-freeness",
@@ -4760,37 +4735,49 @@
       "slug": "compact-data-global-zeta",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
       "section": "AL.3, Function-field local factors, multiplicity one and converse theorem",
-      "needs": "Supply a common absolute-convergence half-plane and unfolding for the function-field GL₂ theta zeta integrals of arbitrary compact quotient functions, with continuation only where established."
+      "needs": "For each φ, φ′ ∈ C_c^∞(Γ\\GL₂(A)) and Φ ∈ S(M₂(A)), supply a right half-plane of absolute convergence for the double Godement–Jacquet integral ∫GL₂(A) c(g)Φ(g)|det g|ˢ⁺¹ᐟ² d×g, where c(g)=∫Γ\\GL₂(A) φ′(h⁻ᵀ)φ(hg)dh and Γ=GL₂(F) over a global function field."
     },
     {
       "slug": "all-generic-kirillov",
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
       "section": "R16.2.1 and R16.2.8",
-      "needs": "Supply the full uniformly smooth Kirillov realization and Jacquet boundary for every generic complex irreducible GL₂ representation over any nonarchimedean field of characteristic different from two, including both Steinberg/trivial extension orientations."
-    },
-    {
-      "slug": "function-field-cuspidal-factorization",
-      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
-      "section": "R16.4.1–R16.4.3",
-      "needs": "Supply cuspidal multiplicity one and restricted tensor factorization over global function fields with the quotient-function and finite-level conventions of FunctionFieldArithmetic §§6.1–6.4."
-    },
-    {
-      "slug": "function-field-quotient-constituents",
-      "supplier": "FunctionFieldArithmetic",
-      "section": "6.1–6.4",
-      "needs": "Supply determinant pushforward on compact quotient functions with compatible fibre measures, rational/unipotent generation of SL₂(A), and classical automorphicity of every irreducible constituent of parabolic induction from automorphic torus characters."
+      "needs": "Supply the full uniformly smooth Kirillov realization and Jacquet boundary for every generic complex irreducible GL₂ representation over any nonarchimedean field of characteristic different from two."
     },
     {
       "slug": "rational-theta-characteristic",
       "supplier": "FunctionFieldArithmetic",
       "section": "0.3",
-      "needs": "Supply existence of a rational theta characteristic on a smooth proper geometrically connected curve over a finite field of odd characteristic, using the line-bundle tensor carriers of AlgebraicVectorBundles."
+      "needs": "Supply existence of a rational theta characteristic on a smooth proper geometrically connected curve over a finite field of odd characteristic, using the line-bundle tensor carriers of AlgebraicVectorBundles (Dor23, Remark A.2, p. 50, citing Armitage 1967, pp. 238–246; Dor23 line 2512)."
     },
     {
       "slug": "ordinary-presentable-linear-tensor",
       "supplier": "EnhancedDerivedSheaves",
       "section": "E5:presentability.2",
       "needs": "Supply the ordinary presentable complex-linear categorical tensor representing separately cocontinuous complex-bilinear functors and its comparison with the corresponding module-category universal property, without replacing smooth abelian categories by stable derived categories."
+    },
+    {
+      "slug": "determinant-pushforward",
+      "supplier": "FunctionFieldArithmetic",
+      "section": "6.2",
+      "needs": "Supply determinant pushforward C_c^∞(GL₂(F)\\GL₂(A)) → C_c^∞(F×\\A×) by integration on SL₂ quotient fibres, with compatible Haar disintegration."
+    },
+    {
+      "slug": "sl2-rational-unipotent-generation",
+      "supplier": "FunctionFieldArithmetic",
+      "section": "6.1",
+      "needs": "Supply the inclusion SL₂(A) ⊆ ⟨U(A), GL₂(F)⟩ inside GL₂(A), where U is the upper unipotent subgroup and F is a global function field."
+    },
+    {
+      "slug": "eisenstein-constituent-automorphicity",
+      "supplier": "FunctionFieldArithmetic",
+      "section": "6.3",
+      "needs": "Supply classical automorphicity, as subquotients of unrestricted smooth functions on GL₂(F)\\GL₂(A), of every irreducible constituent of global parabolic induction from a smooth character of T(F)\\T(A)."
+    },
+    {
+      "slug": "function-field-cuspidal-multiplicity-one",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3, Function-field local factors, multiplicity one and converse theorem",
+      "needs": "Supply ordinary cuspidal multiplicity one for each fixed smooth central character in the smooth complex GL₂ cusp space over a global function field, with the quotient measures of Representation prerequisites, Restricted tensor realizations."
     }
   ],
   "sourceIssues": [

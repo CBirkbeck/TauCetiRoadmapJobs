@@ -72,3 +72,18 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["Layers 0–9"]
+
+[[source]]
+id = "Arm67"
+authors = "J. V. Armitage"
+title = "On a theorem of Hecke in number fields and function fields"
+year = 1967
+venue = "Inventiones Mathematicae 2"
+doi = "10.1007/bf01425516"
+locator_scheme = "page"
+locator = "pp. 238–246"
+url = "https://doi.org/10.1007/bf01425516"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Exact supplier contracts, rational-theta-characteristic; 9.1"]

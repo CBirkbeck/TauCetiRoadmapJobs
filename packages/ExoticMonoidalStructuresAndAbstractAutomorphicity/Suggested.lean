@@ -4,8 +4,8 @@ import Mathlib
 # Exotic monoidal structures and abstract automorphicity: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
-headline theorems against the pinned APIs. The unit-free idempotent coherence
-headline is statable by bundling a native tensor functor and its associator.
+headline theorems against the pinned APIs when their carriers exist. None of
+these headlines is statable at the pins, for the reasons below.
 
 The following headlines are not statable at the pins:
 * the rigidified triality lift: the smooth scalar metaplectic extension is missing;
@@ -36,42 +36,5 @@ The following headlines are not statable at the pins:
 -/
 
 namespace TauCetiRoadmap.ExoticMonoidalStructuresAndAbstractAutomorphicity
-
-open CategoryTheory
-
-universe v u
-
-/-! ## Layer 5: Associativity, trace and local convolution -/
-
-/-- A tensor functor with a natural associator satisfying the pentagon, with no
-unit object assumed. This bundles native functors and isomorphisms; the two laws
-are equations on their actual morphisms. -/
-structure AssociativeTensor (C : Type u) [Category.{v} C] where
-  tensor : C × C ⥤ C
-  associator : ∀ X Y Z : C,
-    tensor.obj (tensor.obj (X, Y), Z) ≅ tensor.obj (X, tensor.obj (Y, Z))
-  naturality : ∀ {X Y Z X' Y' Z' : C}
-    (f : X ⟶ X') (g : Y ⟶ Y') (h : Z ⟶ Z'),
-    tensor.map (tensor.map (f, g), h) ≫ (associator X' Y' Z').hom =
-      (associator X Y Z).hom ≫ tensor.map (f, tensor.map (g, h))
-  pentagon : ∀ W X Y Z : C,
-    tensor.map ((associator W X Y).hom, 𝟙 Z) ≫
-        (associator W (tensor.obj (X, Y)) Z).hom ≫
-        tensor.map (𝟙 W, (associator X Y Z).hom) =
-      (associator (tensor.obj (W, X)) Y Z).hom ≫
-        (associator W X (tensor.obj (Y, Z))).hom
-
-/-- If the associativity defect of an invertible multiplication intertwines
-multiplication in both variables, then the defect is the identity. This is the
-unit-free idempotent theorem of Gurevich-Hadani, Theorem 3.1.2 and Appendix A. -/
-theorem idempotent_coherence
-    {C : Type u} [Category.{v} C] (T : AssociativeTensor C)
-    (P : C) (θ : T.tensor.obj (P, P) ≅ P) (a : P ≅ P)
-    (hdef : T.tensor.map (θ.hom, 𝟙 P) ≫ θ.hom ≫ a.hom =
-      (T.associator P P P).hom ≫ T.tensor.map (𝟙 P, θ.hom) ≫ θ.hom)
-    (hleft : T.tensor.map (a.hom, 𝟙 P) ≫ θ.hom = θ.hom ≫ a.hom)
-    (hright : T.tensor.map (𝟙 P, a.hom) ≫ θ.hom = θ.hom ≫ a.hom) :
-    a = Iso.refl P := by
-  sorry
 
 end TauCetiRoadmap.ExoticMonoidalStructuresAndAbstractAutomorphicity
