@@ -226,3 +226,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["8.7", "9.1"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Étale Cohomology, Topological invariance of the small étale site"
+year = 2026
+locator_scheme = "tag"
+locator = "§59.45, Theorem 59.45.2 (Tag 04DZ), Proposition 59.45.4 (Tag 03SI); PDF §§45.2, 45.4"
+url = "https://stacks.math.columbia.edu/tag/04DY"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=04DY"
+fetched_at = "2026-10-25T12:50:44Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["7.3; 9.1–9.4: invariance of the small étale site and cohomology under reduction"]

@@ -4,14 +4,14 @@
 
 ## Scope and ownership
 
-This roadmap owns coherent nilpotent pairs and their Jordan correspondences, the finite-field nilpotent enumeration, curve Hall convolution and its spherical generic form, ordered shuffle residues, the curve partition kernels, the positive canonical Higgs exact category and its coherent comparisons, the corrected two-line chart, central deformation and its counting application, the Higgs cohomological formulas, and the curve-specific Mellit deformation and its consequences. The positive exact category and stable canonical coarse geometry extend the supplied coherent Higgs carrier and the supplied bundle HN and deformation theory.
+This roadmap owns coherent nilpotent pairs and their Jordan correspondences, the finite-field nilpotent enumeration, curve Hall convolution and its spherical generic form, ordered shuffle residues, the curve partition kernels, the positive canonical Higgs exact category and its coherent comparisons, the fixed-source comparison for the supplied two-line chart, its Kronecker embedding, central deformation and its counting application, the Higgs cohomological formulas, and the curve-specific Mellit deformation and its consequences. The positive exact category and stable canonical coarse geometry extend the supplied coherent Higgs carrier and the supplied bundle HN and deformation theory.
 
 The following constructions are supplied elsewhere and have no second construction here.
 
 - AlgebraicVectorBundles Layers L0A–L2B owns finite locally free sheaves, ranks, tensor and dual, pullback and geometric total spaces. QuiverRepresentations Layer 1 owns representations and their kQ-module interpretation, and Layer 2 owns Krull–Schmidt theory; ArtinAlgebras Layer 0 owns general categorical decomposition and radicals. Section 1.1 here specializes the additive Hom comparison to the coherent category, and §1.2 applies the pinned module decomposition results; neither introduces a generic quiver carrier or another categorical Krull–Schmidt theorem.
 - SchemeAndStackFoundations §§1.18–1.21, 2.20, 3.3, 3.6–3.7 and 4.14 owns stacks and descent, duality, degree and Riemann–Roch, Picard torsors and Quot. GlobalShtukasAndFunctionFieldLanglands §§0.5–0.6 and 0.13 owns coherent HN theory, boundedness and the bundle/torsion mass formulas. Those masses are consumed in Hall pairings; their construction is not a target here.
 - WeilConjectures WC.1, “Finite groupoid mass”, owns rational finite groupoid mass, equivalence invariance, products, unions and action-groupoid cardinality. Section 2.1 adds homotopy-fibre Fubini for the Jordan correspondences, using that mass.
-- EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 owns the bundle Higgs stack, the coherent canonical Higgs carrier with ordinary slope stability, and existential good lines. AutomorphicSpectralTheory §6.22c owns ordinary bundle Higgs HN theory and coprime stability; §6.24 owns the canonical bundle Higgs deformation complex and strict-slope extension formula. Section 7.1 here adds the positive exact category and the coherent derived comparison, and §8.1 derives a sufficient numerical framing bound. ReductiveGroupsPartII §RG2.3.7 owns Lang's theorem; the descent-gerbe neutrality statement of §1.6 is a separate theorem.
+- EndoscopicTransferAndUnitaryTraceComparison §3.6 owns the reductive bundle Higgs stack in characteristic prime to the Weyl order; §3.7 owns the all-field coherent canonical Higgs carrier with ordinary slope stability, existential good lines, the smooth two-framing Quot chart, its cotangent moment map and its zero-level Higgs quotient. AutomorphicSpectralTheory §6.22c owns ordinary bundle Higgs HN theory and coprime stability; §6.24 owns the canonical bundle Higgs deformation complex and strict-slope extension formula. Section 7.1 here adds the positive exact category and the coherent derived comparison, and §8.1 derives a sufficient numerical framing bound. ReductiveGroupsPartII §RG2.3.7 owns Lang's theorem; the descent-gerbe neutrality statement of §1.6 is a separate theorem.
 - ClassicalGroupsPartII §§CG.0.4–CG.0.5 and CG.2.4–CG.2.6 owns the reciprocal torus, Weyl action and full character ring. Section 0.1 specializes them to counting coefficients. FunctionFieldArithmetic §§0.2–0.3 and 5.1–5.4 owns the degree-one divisor, Picard comparison and zeta formulas.
 - HabiroNahmSeries §5.1 owns the augmentation-complete ordinary multivariate logarithm and exponential over a ℚ-algebra, including their inverse and product laws. HabiroCyclotomicCompletions §1.1 owns elementary simultaneous q-and-series Adams substitution and its plethystic exponential on tℚ((q))[[t]]. The complete-Adams contract below extends that specialization to general complete rational λ-rings and supplies the inverse logarithm and coefficient functoriality.
 - QSeriesPartitionsAndMockModularForms §§2.4 and 3.5 owns the series interfaces extended by the contracts below; its symmetric-function Part II owns generic modified Macdonald admissibility and the regular-sequence deformation theorem. The latter theorem is an input to Layer 10, whose own deformation is the curve partition identity.
@@ -30,7 +30,7 @@ Exp and Log are plethystic; all coefficient parameters and grading variables par
 
 At u≠0, rRes is the coefficient of (1−z/u)⁻¹ in a function. The differential residue dRes applies to f(z)dz/z. At a simple pole dRes=−rRes; higher poles need their full differential expansion. Iterated block residues take the highest designated variable first, with the others in the coefficient field. Roots-of-unity Fourier extraction over a field K requires r>0 and (r:K)≠0; all universal applications satisfy this in characteristic zero.
 
-For g≥1 and coprime (r,d), put D=1+(g−1)r². The canonical stable Higgs coarse space has dimension 2D, its scalar-gerbe stack dimension 2D−1 and its nilpotent cone dimension D. An ℓ-adic assertion has ℓ prime, ℓ≠p, and rational coefficients. Geometric Frobenius acts on the twist (−a) by q^a; an affine fibre of rank a shifts compact degree by 2a. Cohomology is zero outside its natural range. Compact Poincaré polynomials carry the sign (−1)^n; the unsigned variant is stated separately. Equalities in a Frobenius Grothendieck group assert equality of semisimplifications and do not choose a splitting or assert arithmetic semisimplicity. Genus zero is proved by splitting on the projective line, which every finite-field genus-zero curve is; positive-genus Mellit and symplectic arguments retain g≥1.
+For g≥1 and coprime (r,d), put D=1+(g−1)r². The canonical stable Higgs coarse space has dimension 2D, its scalar-gerbe stack dimension 2D−1 and its reduced nilpotent cone dimension D. Write Λ_sch=h⁻¹(0) for the scheme-theoretic Hitchin fibre and Λ=(Λ_sch)_red for its reduced support; affine strata and the Lagrangian assertion refer to Λ. An ℓ-adic assertion has ℓ prime, ℓ≠p, and rational coefficients. Geometric Frobenius acts on the twist (−a) by q^a; an affine fibre of rank a shifts compact degree by 2a. Cohomology is zero outside its natural range. Compact Poincaré polynomials carry the sign (−1)^n; the unsigned variant is stated separately. Equalities in a Frobenius Grothendieck group assert equality of semisimplifications and do not choose a splitting or assert arithmetic semisimplicity. Genus zero is proved by splitting on the projective line, which every finite-field genus-zero curve is; positive-genus Mellit and symplectic arguments retain g≥1.
 
 Every API bullet and Check below has the hypotheses and source locators of its subsection. A route names sufficient inputs for that proof, not a restriction on other proofs.
 
@@ -66,7 +66,7 @@ Layers L0A–L0C supply the tensor, dual, constant-rank finite-locally-free shea
 
 ### From TauCetiRoadmap.QuiverRepresentations
 
-Layer 1 supplies representations of a finite quiver over k, their morphisms and the kQ-module comparison; Layer 2 supplies Krull–Schmidt theory. The Kronecker representation in §7.6 is their two-vertex case; only the sheaf chart, its conormal quotient and its moment comparison are constructed here. General categorical decomposition and radicals belong to ArtinAlgebras Layer 0; the coherent application below uses the pinned module theorems directly.
+Layer 1 supplies representations of a finite quiver over k, their morphisms and the kQ-module comparison; Layer 2 supplies Krull–Schmidt theory. The Kronecker representation in §7.6 is their two-vertex case; the two-framing sheaf chart and zero-level moment quotient come from EndoscopicTransferAndUnitaryTraceComparison §3.7, while its Kronecker embedding and conormal comparison are targets here. General categorical decomposition and radicals belong to ArtinAlgebras Layer 0; the coherent application below uses the pinned module theorems directly.
 
 ### From TauCetiRoadmap.ClassicalGroupsPartII
 
@@ -106,9 +106,9 @@ What AlgebraicModuliForArithmeticGeometry must provide (gap:reductive-character-
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-Section 3.7 supplies coherent canonical Higgs sheaves and ordinary geometric slope (semi)stability over every field, and the bounded good-line presentation. Section 3.6 supplies the general reductive bundle Higgs stack, with its stated restriction on the characteristic and Weyl order. Use the coherent GL_r carrier of §3.7; the adapter below identifies its locally free locus with the corresponding bundle stack while retaining every characteristic. Section 3.7(c) supplies kernel generation for epimorphisms L₁⊗V′→F, in particular the fixed source with dim V′=χ(L₁,F); §8.1 gives the explicit numerical bound used here.
+Section 3.7 supplies coherent canonical Higgs sheaves and ordinary geometric slope (semi)stability over every field, and the bounded good-line presentation. Section 3.6 supplies the general reductive bundle Higgs stack, with its stated restriction on the characteristic and Weyl order. Use the coherent GL_r carrier of §3.7 and its supplied smooth two-framing chart Q₁₂, cotangent moment map and zero-level Higgs quotient. The locally free open gives the all-characteristic bundle carrier; comparison with §3.6 uses that section’s characteristic restriction. Section 3.7(c) supplies kernel generation for epimorphisms L₁⊗V′→F, in particular the fixed source with dim V′=χ(L₁,F); §8.1 gives the explicit numerical bound used here.
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:fixed-source-good-lines): Identify the locally free locus of the coherent canonical Higgs carrier of §3.7 with the GL_r Higgs stack of §3.6 and its bounded charts in every characteristic.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:fixed-source-good-lines): For every field, construct the canonical GL_r Higgs bundle stack as the locally free open substack of the coherent canonical Higgs carrier of §3.7, with its bounded Quot charts; over finite fields identify it with the GL_r Hitchin stack of §3.6 when the characteristic does not divide r!.
 
 The new numerical estimate, stable canonical coarse geometry, positive exact category and central deformation are targets here. The generic higher-degree-twist smoothness and anisotropic properness results are not used as canonical-twist stable coarse theorems. For a fixed source L₁^l₁ the kernel has rank l₁−r and degree −d₁l₁−d; varying the source rank would change both.
 
@@ -767,9 +767,9 @@ One route is as follows. Take the generated subalgebra in the imported function 
 
 **Checks.**
 
-- Every line-bundle characteristic sum in one degree belongs to H_sph.
-- 1_(0,1) belongs to H_sph and is not a bundle generator.
-- The full characteristic 1_(r,d) need not be finitely supported, so membership is asserted in the completed spherical space.
+- On P¹/𝔽₂ the degree-zero line generator squared has value 3√2 on O²: there are three sublines O with quotient O and Euler twist √2. The rank-two degree-zero bundle characteristic has value 1 there.
+- The degree-one torsion generator has value 1 on κ(x) for a rational point x and value 0 on O; it is distinct from the line generator.
+- The pairwise nonisomorphic bundles O(m)⊕O(−m), m≥0, all have class (2,0), and its full characteristic takes value 1 on each. It has infinite support and requires the HN completion.
 
 ### 4.7 HN strata are spherical
 
@@ -781,7 +781,7 @@ One route is as follows. Apply the source’s induction on rank and HN polygon t
 
 **Checks.**
 
-- P¹, HN types (O,O) and (O(1),O(−1)): Each fixed type has one rational class; their unbounded union has infinitely many classes. Membership is finite per type, completed per class.
+- On P¹ the HN types ((2,0)) and ((1,1),(1,−1)) each have one rational bundle class, O² and O(1)⊕O(−1), respectively. The types ((1,m),(1,−m)), m>0, together with ((2,0)), give infinitely many classes in total class (2,0). The putative two-step type ((1,0),(1,0)) is inadmissible because its slopes are equal; its HN stratum is empty.
 
 ### 4.8 universal spherical Hall form
 
@@ -964,8 +964,8 @@ One route is as follows. Use the baseline YoungDiagram arms and legs; enumerate 
 **Checks.**
 
 - For λ=(1), `q^{g−1}J_(1)H_(1)=P(1)/((q−1)(1−z))`; omitting `q^{1−g}` in J_(1) fails this test.
-- λ=(2) has n=1 and no block residue; λ=(1,1) has n=2 and one block residue.
-- The constant coefficient of the partition generating series is exactly 1, enabling Log.
+- For λ=(2), n=1 and there is no block residue: the substitution z₁=z² gives H_(2)(z)=1/(1−z²), whose z and z² coefficients are 0 and 1. H_(1)(z)=1/(1−z) has both coefficients 1; replacing weighted size by multiplicity length fails.
+- The empty partition has J_empty=H_empty=1, whereas H_(1) has a pole at 1 and H_(2) has poles at both 1 and −1. The zero-partition convention cannot be obtained by using a nonempty block. λ=(1,1) has two variables and one block residue.
 
 ### 5.10 Jordan sum as a partition product
 
@@ -1145,7 +1145,7 @@ One route is as follows. Import Serre duality in its natural coherent form, not 
 
 ### 7.3 stable canonical Higgs moduli
 
-Define the following objects and their indicated structure. For g≥1,r>0,gcd(r,d)=1, construct the finite-type stable Higgs stack and its coarse smooth geometrically connected quasiprojective scheme H_(r,d), of dimension 2D, D=1+(g−1)r². The stack is a G_m-gerbe over H and has stable-locus dimension 2D−1. Construct `h:H→⊕_{i=1}^r H⁰(X,Ω_X^i)` by characteristic coefficients and prove it proper. Its zero fibre Λ is projective Lagrangian of pure dimension D. For g=0 use H_(1,d)=A⁰ and H_(r,d)=empty for r>1 in coprime classes. (S16, §6.2, p.337; §6.10–6.11, pp.349–352; S16 line 2408).
+Define the following objects and their indicated structure. For g≥1,r>0,gcd(r,d)=1, construct the finite-type stable Higgs stack and its coarse smooth geometrically connected quasiprojective scheme H_(r,d), of dimension 2D, D=1+(g−1)r². The stack is a G_m-gerbe over H and has stable-locus dimension 2D−1. Construct `h:H→⊕_{i=1}^r H⁰(X,Ω_X^i)` by characteristic coefficients and prove it proper. Write Λ_sch=h⁻¹(0) and Λ=(Λ_sch)_red. Prove that Λ is projective Lagrangian of pure dimension D, in every characteristic. Reduction identifies their points over every field, geometric irreducible components and ℓ-adic étale cohomology (Stacks, Tags 04DZ and 03SI, §59.45; STACKS line 3033 and STACKS line 3130). For g=0 use H_(1,d)=A⁰ and H_(r,d)=empty for r>1 in coprime classes. (S16, §6.2, p.337; §6.10–6.11, pp.349–352; S16 line 2408).
 
 The interface has the following properties.
 
@@ -1153,7 +1153,7 @@ The interface has the following properties.
 - For a fixed complex curve and its coprime stable Higgs scheme, the moduli construction spreads over a finitely generated integral subring of ℂ; after shrinking, every field fibre is the stable Higgs coarse space of the corresponding smooth genus-g curve, with the same rank and degree.
 - The stabilizer is exactly G_m; over a finite field the rational-point fibre is neutral, so stack mass is #H(k)/(q−1).
 - Under θ↦tθ, the i-th Hitchin coefficient scales by t^i.
-- Λ=h⁻¹(0) consists precisely of Higgs fields nilpotent under iterated Ω-twisted composition.
+- On a family base S, Λ_sch imposes vanishing of every characteristic coefficient, which implies θ^r=0 by Cayley–Hamilton. On field-valued points this is equivalent to nilpotence under iterated Ω-twisted composition. Over nonreduced S, a nilpotent field can have nonzero nilpotent characteristic coefficients; arbitrary nilpotent families need not factor through Λ_sch. The reduction Λ has the same field-valued points.
 
 One route is as follows. Use stable Higgs sheaf GIT and fixed-degree boundedness for the coarse moduli problem, retaining the scalar gerbe. Compute the tangent-obstruction complex; scalar automorphisms and their dual obstruction give the smooth coarse dimension 2D. Prove canonical Hitchin properness, geometric connectedness and the pure-D-dimensional nilpotent Lagrangian theorem, in every characteristic; these are geometric inputs to the subsequent framed comparison.
 
@@ -1164,10 +1164,12 @@ One route is as follows. Use stable Higgs sheaf GIT and fixed-degree boundedness
 - H_(1,d)=Pic^d×A^g, D=g, and Λ=Pic^d.
 - For a rational stable Higgs object the stack weight is 1/(q−1), whereas its coarse point counts as 1.
 - For rank two, trace scales with weight 1 and determinant with weight 2; the whole Hitchin base does not have weight 1.
+- In characteristic two on a genus-one curve, a stable rank-two degree-one bundle has scalar fields θ=a·Id after trivializing Ω. Their polynomial is t²+a², so the Hitchin fibre is locally Pic¹×Spec k[a]/(a²), whereas Λ=Pic¹ and D=1. Locally du∧da restricts nontrivially to the thickened fibre, but vanishes on its reduced core; only the latter is asserted Lagrangian.
+- Over k[ε]/(ε²), the rank-one field θ=ε is nilpotent but its characteristic polynomial t−ε has nonzero coefficient. It does not lie in Λ_sch, whose rank-one equation is θ=0. Nilpotence alone does not define the scheme-theoretic fibre on families.
 
-### 7.4 two-line framed quot chart
+### 7.4 fixed-source description of the supplied two-line chart
 
-Define the following objects and their indicated structure. Choose L_i of degree −d_i with the good-line properties of S16 Lemma 6.1, l_i=χ(L_i,F)=(1−g+d_i)r+d>0 and `V_i=k^{l_i}`. In Quot((L_1⊗V_1)⊕(L_2⊗V_2),(r,d)), let Q°° be the open on which both restricted maps L_i⊗V_i→F are epimorphisms and both frame maps V_i→Hom(L_i,F) are isomorphisms. This explicitly imposes strong generation; frame isomorphisms alone do not imply surjective evaluation. It is smooth; Q°°→Q°_(L1) is a principal GL(V_2)-bundle. With G=GL(V_1)×GL(V_2), [Q°°/G] is the open coherent stack of sheaves strongly generated by L_1. The good-line kernel bound is used only for epimorphisms from `L_1^{⊕l_1}`, a fixed source rank. (S16, §6.3–6.4, pp.337–339, especially Lemma 6.1 and the framed Quot opens; S16 line 2408).
+Use the smooth two-framing Quot chart Q₁₂ of EndoscopicTransferAndUnitaryTraceComparison §3.7. Choose L_i of degree −d_i with its good-line properties, l_i=χ(L_i,F)=(1−g+d_i)r+d>0 and `V_i=k^{l_i}`. Prove that its fixed-source strongly generated open is the following explicit Quot open, denoted Q°°: in Quot((L_1⊗V_1)⊕(L_2⊗V_2),(r,d)), both restricted maps L_i⊗V_i→F are epimorphisms and both frame maps V_i→Hom(L_i,F) are isomorphisms. The evaluation-surjectivity condition is essential; frame isomorphisms alone do not imply it. Under this comparison the supplied smoothness, principal GL(V_2)-bundle Q°°→Q°_(L1) and quotient [Q°°/G] identify with the strongly L₁-generated coherent open, G=GL(V_1)×GL(V_2). The good-line kernel bound is used for the fixed source `L_1^{⊕l_1}`. (S16, §6.3–6.4, pp.337–339, Lemma 6.1 and framed Quot opens; S16 line 2504).
 
 The interface has the following properties.
 
@@ -1175,7 +1177,7 @@ The interface has the following properties.
 - The quotient groupoid over every test scheme is the strongly L_1-generated sheaf groupoid, with descent respected.
 - At φ the Quot tangent space is Hom(kerφ,F), with the imported scheme tangent identification.
 
-One route is as follows. Import strong generation as Ext¹(L,F)=0 plus surjective evaluation, and the routed good-line theorem. Use cohomology-and-base-change to make the frame-isomorphism condition open. Identify fibres of forgetting the second frame with GL(V_2) and use the Quot tangent and obstruction groups to prove smoothness.
+One route is as follows. Compare the functor of points of the supplied strongly generated chart with the two evaluation epimorphisms and Hom frames. Strong generation includes Ext¹(L,F)=0 and surjective evaluation. Use cohomology-and-base-change and frame torsors to prove that this identification respects families, forgetting a frame and the supplied tangent identification.
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations §4.14; EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 and its locally-free-locus contract; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§1.18–1.21.
 
@@ -1188,11 +1190,11 @@ One route is as follows. Import strong generation as Ext¹(L,F)=0 plus surjectiv
 
 ### 7.5 cotangent sequence and Higgs zero level
 
-Prove the following statement. At φ in Q°°, with L=(L_1⊗V_1)⊕(L_2⊗V_2), the dual tangent sequence is 0→Ext¹(F,F)*→Hom(kerφ,F)*→Hom(L,F)*→End(F)*→0. Dualizing the infinitesimal G-action defines μ:T*Q°°→g*, and [μ⁻¹(0)/G] identifies with the canonical Higgs stack on the strongly generated coherent open. (S16, §6.4, equation (6.2), p.340; §6.6, equation (6.3), p.341; S16 line 2527).
+Prove the following statement. At φ in Q°°, with L=(L_1⊗V_1)⊕(L_2⊗V_2), the dual tangent sequence is 0→Ext¹(F,F)*→Hom(kerφ,F)*→Hom(L,F)*→End(F)*→0. For the cotangent moment map and zero-level Higgs quotient supplied by EndoscopicTransferAndUnitaryTraceComparison §3.7, prove that this exact sequence identifies the supplied zero-level equivalence with the natural coherent Serre-duality equivalence of §7.2, compatibly with families and changes of frames. (S16, §6.4, equation (6.2), p.340; §6.6, equation (6.3), p.341; S16 line 2527).
 
-One route is as follows. Apply Hom(−,F) to the universal quotient and use strong-generation Ext vanishing. Dualize the finite-dimensional exact sequence and identify the infinitesimal frame action. Use Serre duality to identify the moment-map zero fibre with Higgs fields, naturally in families.
+One route is as follows. Apply Hom(−,F) to the universal quotient and use strong-generation Ext vanishing. Dualize the finite-dimensional exact sequence and identify the infinitesimal frame action. Compare the supplied zero-level identification with natural Serre duality on the kernel, rather than constructing another quotient equivalence.
 
-*Needs:* §7.4; §7.2; SchemeAndStackFoundations §§4.1, 4.5, 4.14.
+*Needs:* §7.4; §7.2; EndoscopicTransferAndUnitaryTraceComparison §3.7; SchemeAndStackFoundations §§4.1, 4.5, 4.14.
 
 **Checks.**
 
@@ -1299,7 +1301,9 @@ One route is as follows. The cotangent exact sequence says λ belongs to the ima
 
 Prove the following statement. With the framing dimensions and coprimality of §8.1, every γ-semistable point of T*P lies in the cotangent chart T*Q°°, in every characteristic. The induced G/G_m action is free there. The ambient moment map μ:T*Q°°→(Lie(G/G_m))* is submersive at each such point; consequently its base change `μ⁻¹(kλ)^{γ-ss}→kλ` is smooth. The target of this last map is the central line; the inclusion, freeness and submersivity require no p>C bound. (S16, Lemmas 6.4–6.5, p.345, with the effective moment target; S16 line 2744).
 
-One route is as follows. Test the subrepresentation generated by all images of x and the common kernel of x; King inequalities force generation and injectivity of the frame maps. Use the stability criterion to identify automorphisms with scalars. The ambient cotangent derivative is dual to the injective infinitesimal projective-group action, giving submersivity at the specified points. Base change along kλ→(Lie(G/G_m))* gives the smooth map to the line; only this central-line map descends to the quotient.
+The vanishing needed for frame bijectivity is a separate target: for every geometric γ-semistable point u∈T*P with the dimensions of §8.1 and x=j(φ), where φ∈Q°_(L₁,L₂) has φ₁ surjective and φ₂*:V₂→Hom(L₂,F) bijective, prove Ext¹(L₁,F)=0, in every characteristic. Here Q°_(L₁,L₂) denotes this intermediate locally closed Quot locus, without a first-frame isomorphism condition. Riemann–Roch then gives dim Hom(L₁,F)=l₁. This vanishing is required independently of injectivity; the dimension equality used in S16 Lemma 6.4 does not follow for arbitrary φ in the intermediate locus (S16 line 2522 and S16 line 2753).
+
+One route is as follows. Test the subrepresentation generated by all images of x and the common kernel of x; King inequalities give Im(x)=V₂, hence φ₁ surjective, and V₁↪Hom(L₁,F). Apply the stated Ext¹-vanishing target to conclude that the first frame is bijective; combined with evaluation surjectivity this places the point in Q°°. Use the stability criterion to identify automorphisms with scalars. The ambient cotangent derivative is dual to the injective infinitesimal projective-group action, giving submersivity at the specified points. Base change along kλ→(Lie(G/G_m))* gives the smooth map to the line; only this central-line map descends to the quotient.
 
 *Needs:* §8.2; §7.6; §8.1.
 
@@ -1308,6 +1312,9 @@ One route is as follows. Test the subrepresentation generated by all images of x
 - For a scalar stable stabilizer, the effective stabilizer has dimension 0, so the ambient moment differential is surjective at that point. For O_X⊕L with deg L=1 on a genus-one curve at θ=0, a diagonal projector gives a positive-dimensional effective stabilizer and prevents ambient surjectivity.
 - For an elliptic curve over 𝔽₂ with origin o and (r,d)=(1,0), §8.1 gives d₁=2,d₂=7,l₁=2,l₂=7,C=14. Take F=O_X, L_i=O_X(−d_i o) and zero cotangent coordinate. A one-dimensional U₁ has five-dimensional image under multiplication by Hom(L₂,L₁), so its test weight is at most 7−2·5=−3; the full two-dimensional U₁ generates all seven dimensions, and (0,U₂) has weight −2 dim U₂. Thus the point is γ-stable and lies in the chart although p=2≤14.
 - Over 𝔽₃, take two arrows, V₁=k, V₂=k², x₁=e₁, x₂=e₂, y₁=e₁*, y₂=e₂*. The moment value is (2,−I₂)=λ. The ambient moment differential has rank 4, the dimension of the effective dual; after restriction to the central-line inverse image its image has dimension 1. A claim that the restricted map surjects onto the four-dimensional dual fails this example.
+- For g=2,r=2,d=1,d₁=5,d₂=24, let F=L₁⊕B with deg B=6. Then l₁=9,l₂=47, dim Hom(L₁,F)=11 and dim Ext¹(L₁,F)=2. A generating nine-dimensional first frame can be injective without being surjective. At zero cotangent coordinate, the pair cut out by B has dimensions (8,29) and is invariant under x and y=0. Its weight is 9·29−47·8=−115, so it cannot be semistable. Injectivity alone would wrongly admit this example.
+- On an elliptic curve F=O with L₁ of degree −2 has h⁰(L₁⁻¹)=2 and h¹=0; an injective two-dimensional frame is bijective, as the vanishing target requires.
+- The genus-two example F=(L₁⊗M)⊕B of §7.4 has h¹=0 and h⁰=9 but nonsurjective first evaluation. Thus cohomology vanishing repairs frame bijectivity only; the separate generation conclusion remains necessary.
 
 ### 8.5 Higgs stability versus quiver stability
 
@@ -1346,7 +1353,7 @@ One route is as follows. Use affine character GIT on the invariant central-level
 
 ### 8.7 Białynicki–Birula deformation comparison
 
-Prove the following statement. First prove the BB–Hesselink theorem for a smooth quasiprojective scheme with a G_m action, projective fixed locus, limits at zero for all geometric points and an equivariant projective map to an affine scheme with positive weights: the attracting strata form a filtration by locally closed affine bundles over the smooth projective fixed components, with ranks equal to the positive tangent dimensions. Construct its opposite-action version on the proper core. Then let f:Y→A¹ be the preceding smooth quasiprojective G_m-equivariant family, with f(t·y)=t f(y), a projective fixed locus, limits as t→0 for all geometric points, and an equivariant projective morphism to an affine scheme with positive weights. The BB–Hesselink strata are affine bundles of ranks n_i over smooth projective fixed components Z_i; the zero-fibre strata have ranks n_i−1 over the same Z_i. Over every finite extension k′/k, #Y(k′)=#k′·#Y_0(k′). Together with the nonzero-fibre trivialization this gives #Y_1(k′)=#Y_0(k′). (S16, §6.9, Proposition 6.9 and proof following it, pp.348–349; S16 line 2886).
+Prove the following statement. First prove the BB–Hesselink theorem for a smooth quasiprojective scheme with a G_m action, projective fixed locus, limits at zero for all geometric points and an equivariant projective map to an affine scheme with positive weights: the attracting strata form a filtration by locally closed affine bundles over the smooth projective fixed components, with ranks equal to the positive tangent dimensions. Construct its opposite-action version on the reduced proper core, with the reduced induced strata; no affine-bundle assertion is made for a nonreduced scheme-theoretic fibre. Then let f:Y→A¹ be the preceding smooth quasiprojective G_m-equivariant family, with f(t·y)=t f(y), a projective fixed locus, limits as t→0 for all geometric points, and an equivariant projective morphism to an affine scheme with positive weights. The BB–Hesselink strata are affine bundles of ranks n_i over smooth projective fixed components Z_i; the zero-fibre strata have ranks n_i−1 over the same Z_i. Over every finite extension k′/k, #Y(k′)=#k′·#Y_0(k′). Together with the nonzero-fibre trivialization this gives #Y_1(k′)=#Y_0(k′). (S16, §6.9, Proposition 6.9 and proof following it, pp.348–349; S16 line 2886).
 
 The supporting input is HES81, Theorem 5.7, pp.55–89, locator-only.
 
@@ -1357,6 +1364,7 @@ One route is as follows. Use the GIT projective map to the affine quotient to pr
 **Checks.**
 
 - Y=A¹×A^a over 𝔽_Q: Counts Q^(a+1)=Q·Q^a; Y₀ and Y₁ both Q^a; ranks n=a+1,n−1=a. Include projectivity to the positive affine quotient and limits.
+- For the characteristic-two elliptic Higgs surface of §7.3, the opposite stratum is Pic¹ with affine rank zero. The thickening Pic¹×Spec k[a]/(a²) is not that affine bundle, although its field-valued points and étale cohomology agree with Pic¹.
 
 ### 8.8 stable Higgs point count
 
@@ -1372,15 +1380,19 @@ One route is as follows. By Lang and neutrality, identify rational coarse points
 
 ### 8.9 HN integration for canonical Higgs sheaves
 
-Prove the following statement. For g≥1 use A_K^+ and its relative semistability from §7.1. For r>0,d≥0 define `I_K^+(r,d)=q^{(1−g)r²}mass(all canonical Higgs bundles of class (r,d) with underlying μ_min≥0)`. Define Ω_K^+ by `1+∑_{r>0,d≥0}I_K^+(r,d)T^rz^d=Exp(∑Ω_K^+(r,d)T^rz^d/(q−1))`. MS14 Theorem 1.2 identifies each fixed-slope Exp factor with the `q^{(1−g)r²}`-normalized mass of relatively semistable positive Higgs bundles. With quotient-left/subobject-right multiplication, the HN product places smaller slopes on the left. For usual semistable E,F with μ(E)<μ(F), Ext²(E,F)=Hom(F,E)*=0; the positive-category factorization uses the ordered integration theorem of MS14 §3.1, rather than identifying relative factors with usual ones. No Green bialgebra for the whole Higgs category is inferred. The untruncated DT invariants are defined separately by `1+∑_{r>0,d/r=τ}q^{(1−g)r²}mass(Higgs^ss_(r,d))T^rz^d=Exp(∑_{d/r=τ}Ω_K(r,d)T^rz^d/(q−1))`. (MS14, Theorem 1.2, p.2; §2.1–2.3, pp.3–5; §3.1, pp.6–7; MS14 line 58).
+Prove the following statement. For g≥1 use A_K^+ and its relative semistability from §7.1. For r>0,d≥0 define `I_K^+(r,d)=q^{(1−g)r²}mass(all canonical Higgs bundles of class (r,d) with underlying μ_min≥0)`. Define Ω_K^+ by `1+∑_{r>0,d≥0}I_K^+(r,d)T^rz^d=Exp(∑Ω_K^+(r,d)T^rz^d/(q−1))`. MS14 Theorem 1.2 (4) identifies each positive-slope Exp factor with the `q^{(1−g)r²}`-normalized mass of relatively semistable positive Higgs bundles. Prove the slope-zero identity as well: extract z⁰ from the ordered HN integration product over τ∈[0,+∞), so that only its slope-zero factor remains, and compare plethystic logarithms (MS14, proof of Theorem 1.2, pp.6–7; MS14 line 427 and MS14 line 442). With quotient-left/subobject-right multiplication, the HN product places smaller slopes on the left. For usual semistable E,F with μ(E)<μ(F), Ext²(E,F)=Hom(F,E)*=0; the positive-category factorization uses the ordered integration theorem of MS14 §3.1, rather than identifying relative factors with usual ones. No Green bialgebra for the whole Higgs category is inferred. The untruncated DT invariants are defined separately by `1+∑_{r>0,d/r=τ}q^{(1−g)r²}mass(Higgs^ss_(r,d))T^rz^d=Exp(∑_{d/r=τ}Ω_K(r,d)T^rz^d/(q−1))`. (MS14, Theorem 1.2, p.2; §2.1–2.3, pp.3–5; §3.1, pp.6–7; MS14 line 58).
 
-One route is as follows. Use AutomorphicSpectralTheory §§6.22c and 6.24 for the bundle deformation complex, Serre duality and Ext² vanishing for usual semistable factors in the displayed slope order. Apply MS14 Theorem 1.2 and §3.1 to the positive-category HN factorization, with relative semistable factors and the normalization `q^{(1−g)r²}`; keep this separate from any claim that relative semistability is usual semistability. Take the coefficientwise plethystic logarithm and its slope factors to define Ω_K^+. Define Ω_K by the independent usual-semistable same-slope formula; compare them only in the eventual degree range.
+One route is as follows. Use AutomorphicSpectralTheory §§6.22c and 6.24 for the bundle deformation complex, Serre duality and Ext² vanishing for usual semistable factors in the displayed slope order. Apply MS14 Theorem 1.2 and §3.1 to the positive-category HN factorization, with relative semistable factors and the normalization `q^{(1−g)r²}`; keep this separate from any claim that relative semistability is usual semistability. For slope zero use the z⁰ extraction just stated; then take the coefficientwise plethystic logarithm and its slope factors to define Ω_K^+. Define Ω_K by the independent usual-semistable same-slope formula; compare them only in the eventual degree range.
 
 *Needs:* §7.1; §3.1; §4.5; AutomorphicSpectralTheory §§6.22c, 6.24; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
 
 **Checks.**
 
-- Rank1 positive class at q=2,g=1; two unequal usual slopes: I⁺=2A⁺/(2−1)=2A⁺; Ext²(E,F)=Hom(F,E)*=0 for μ(E)<μ(F). Relative factors are not usual factors outside the degree range.
+- At q=2,g=1,r=1 and d≥0 on E:y²+y=x³, P(1)=3, so I_K^+(1,d)=2·3/(2−1)=6 and the Tz^d coefficient of Exp gives Ω_K^+(1,d)=6. The usual rank-one same-slope formula also gives Ω_K(1,d)=6. The mass is 6, whereas the unnormalized bundle mass alone is 3.
+- At q=2,g=2,r=1,d≥0, there are q²P(1) Higgs fields over the line classes. Thus I_K^+=q⁻¹q²P(1)/(q−1)=2P(1), and Ω_K^+=Ω_K=2P(1). Reversing the normalization to `q^(g-1)` gives 8P(1), which fails this computation within g≥1.
+- At q=2,g=1 and d=0 on that elliptic curve, rank-two Higgs mass is 30: the three distinct pairs of rational lines contribute 12, three doubled lines contribute 8, three nonsplit self-extensions contribute 6, and the three degree-two line orbits contribute 4. Therefore I_K^+(2,0)=30. In the plethystic logarithm subtract 6²/2=18 and the second-Adams contribution (4·9/(4−1))/2=6; the remainder is Ω_K^+(2,0)/(2−1)=6. Positive underlying degree-zero bundles are semistable, so the usual slope-zero factor also gives Ω_K(2,0)=6. This tests the slope-zero comparison and the Adams action on the field cardinality and Picard count.
+- For r=1,d=−1 on the same elliptic curve the usual invariant is Ω_K(1,−1)=6, while the positive generating series has coefficient 0 in negative degree. The two definitions do not agree in every degree.
+- For usual semistable E,F with μ(E)<μ(F), Ext²(E,F)=Hom(F,E)*=0; for E=F=(O_X,0) it has dimension 1. The ordered integration cannot discard the strict slope condition or replace relative factors by usual ones outside their comparison range.
 
 ### 8.10 all-characteristic coprime Higgs count
 
@@ -1434,25 +1446,28 @@ For g=2,r=2,d=1, the framing choice has B=−3/2, d₁=5, l₁=9, d₂=24, l₂=
 
 Prove the following statement. For g≥1,r>0,gcd(r,d)=1 and ℓ≠p, the geometric compactly supported cohomology H_c^n(H,Q_ℓ) is pure of weight n. For the scaling fixed components Z_i, put m_i=dim Z_i and `b_i=dim T_{Z_i}^{<0}`. The weight-one symplectic form gives m_i+b_i=D and `dim T^{>0}=D`. In the Grothendieck group of continuous Frobenius representations, `[H_c^n(H)]=∑_i[H^{n−2D}(Z_i)(−D)]` and `[H^n(Λ)]=∑_i[H^{n−2b_i}(Z_i)(−b_i)]`. These are identities of semisimplified representations; a canonical splitting is not claimed. (S16, §6.10–6.11, pp.349–352, equations (6.11)–(6.13), with doubled cohomological shifts; S16 line 2926).
 
-One route is as follows. The proper weighted Hitchin map gives limits and projective smooth fixed components. Use the symplectic form of scaling weight one to pair tangent weights a and 1−a and obtain the dimension identities. Apply the BB filtrations and the compact cohomology of affine bundles. Purity of the projective bases forces the spectral sequences to degenerate by weights; use the opposite action for Λ.
+One route is as follows. The proper weighted Hitchin map gives limits and projective smooth fixed components. Use the symplectic form of scaling weight one to pair tangent weights a and 1−a and obtain the dimension identities. Apply the BB filtrations and the compact cohomology of affine bundles. Purity of the projective bases forces the spectral sequences to degenerate by weights; use the opposite action on the reduced core Λ. The comparisons with Λ_sch use reduction invariance, not affine strata on the thickening.
 
 *Needs:* §7.3; §8.7; DeligneWeightsAndPurity §§0.10, 0.12, 0.16–0.18, 1.7; EtaleDualityAndPerverseSheaves §§0.4, 0.6–0.7; CompactSupport Layers 6–8; EllAdicRealization Layers 7–9; TraceFormula Layers 11–12; DeligneWeightsAndPurity §§7.15, 8.8–8.11; EtaleDualityAndPerverseSheaves, affine-bundle contract.
 
 **Checks.**
 
 - Rank1,g=2; affine fibre A¹: m=2,b=0,D=2; H_c^n=H^(n−4)(Pic)(−2), cone H^n(Pic); A¹ contributes only degree2,twist−1. Double the affine rank in cohomological degree.
+- For g=1,r=2,d=1 in characteristic two, m=1,b=0,D=1 and Λ=Pic¹. The scheme fibre has local equation a²=0, but both fibres have the same H^n(Pic¹); the BB formula applies to the reduced core.
 
 ### 9.2 trace reconstruction and coprime positivity
 
-Prove the following statement. In coprime classes, the universal count `A_{g,r,d}` extends regularly to the paired affine cone and `A_{g,r,d}(−α_1,…,−α_{2g})` is represented by a Weyl-invariant polynomial with nonnegative integer coefficients in the α_j. Its total degree is 2D and its diagonal specialization has leading coefficient 1. The Higgs Frobenius eigenvalues are products `q^D∏α_j^{e_j}` with total weight n in H_c^n, and their multiplicities are recovered from the signed count polynomial; equal specialized monomials are grouped before comparing multiplicities. (S16, Corollary 1.5, pp.301–302; §6.10, equations (6.9)–(6.10), pp.349–350; §6.11, p.352; S16 line 162).
+Prove the following statement. For g≥1,r>0 and gcd(r,d)=1, the universal count `A_{g,r,d}` extends to the paired affine-cone ring of §6.5. Its class `A_{g,r,d}(−α_1,…,−α_{2g})` is Weyl invariant and admits a polynomial representative with nonnegative integer coefficients in the α_j, of degree 2D. The representative need not be Weyl invariant before imposing the paired-coordinate relations. Its diagonal specialization is monic of degree 2D. The Higgs Frobenius eigenvalues are products `q^D∏α_j^{e_j}` with total weight n in H_c^n, and their multiplicities are recovered from the signed count polynomial; equal specialized monomials are grouped before comparing multiplicities. (S16, Corollary 1.5, pp.301–302; §6.10, equations (6.9)–(6.10), pp.349–350; §6.11, p.352; S16 line 162).
 
-One route is as follows. Clear the q^m−1 denominators by a monic polynomial in q. Use equality of all power sums from finite extensions to identify signed eigenvalue multisets. Separate weights by purity and cancel the highest-weight terms inductively; use universal Weil density to identify the resulting invariant polynomial. Connectedness and smooth dimension 2D fix the top coefficient. Prove independence of the polynomial representative on the paired affine cone and perform the denominator cancellation universally.
+One route is as follows. Clear the q^m−1 denominators by a monic polynomial in q. Use equality of all power sums from finite extensions to identify signed eigenvalue multisets. Separate weights by purity and cancel the highest-weight terms inductively; use universal Weil density to identify the invariant class on the paired cone. Connectedness and smooth dimension 2D fix the top coefficient. Prove independence of that class, rather than of its polynomial representatives, and perform the denominator cancellation universally.
 
 *Needs:* §9.1; §8.10; §4.9; §0.1; §6.5; DeligneWeightsAndPurity §§0.10, 0.12, 0.16–0.18, 1.7.
 
 **Checks.**
 
 - Rank1,g=1, q=α₁α₂: A(−α)=(1+α₁)(1+α₂)=1+α₁+α₂+q; diagonal leading term t² has coefficient1. Group equal monomials before traces.
+- For g=2,r=2,d=1, D=5 and the top diagonal term is t¹⁰. A nonnegative integral polynomial with monic diagonal has just one top monomial; Weyl invariance in the free polynomial ring would make its four exponents equal, forcing 10 to be divisible by 4. Thus such an invariant representative is impossible.
+- The class q⁵ has positive representatives α₁⁵α₂⁵ and α₃⁵α₄⁵, interchanged by swapping pairs. They agree on the cone and each specializes to t¹⁰; their invariant average has coefficients 1/2. Keeping q as a variable of weight two gives the invariant monomial q⁵.
 
 ### 9.3 compact Poincaré polynomial over ℂ
 
@@ -1470,7 +1485,7 @@ One route is as follows. For the specified complex curve, spread the curve, a de
 
 ### 9.4 nilpotent-cone trace and components
 
-Prove the following statement. For g≥1 and gcd(r,d)=1, Λ is pure and `#Λ(F_q)=q^D A_{g,r,d}(α_1⁻¹,…,α_{2g}⁻¹)`, where inversion also sends q to q⁻¹. Moreover `dim H^{2D}(Λ_kbar,Q_ℓ)=dim H^{2D}(H_kbar,Q_ℓ)=A_{g,r,d}(0)`, the number of geometric irreducible components of Λ. The same component number holds over C. The reciprocal trace formula holds after every finite extension. (S16, Corollary 1.4, pp.301–302 (corrected exponent); §6.11, pp.351–352; S16 line 162).
+Prove the following statement. For g≥1 and gcd(r,d)=1, Λ=(Λ_sch)_red is pure and `#Λ(F_q)=q^D A_{g,r,d}(α_1⁻¹,…,α_{2g}⁻¹)`, where inversion also sends q to q⁻¹. Moreover `dim H^{2D}(Λ_kbar,Q_ℓ)=dim H^{2D}(H_kbar,Q_ℓ)=A_{g,r,d}(0)`, the number of geometric irreducible components of Λ. The same component number holds over C. The reciprocal trace formula holds after every finite extension. The same point, component and étale-cohomology formulas hold for Λ_sch by reduction invariance. (S16, Corollary 1.4, pp.301–302 (corrected exponent); §6.11, pp.351–352; S16 line 162).
 
 One route is as follows. Combine the two BB formulas using m_i+b_i=D and projective Poincaré duality on each Z_i. Take traces to obtain the reciprocal formula with q^D. Use purity and the degree shifts by twice the affine ranks to identify top cohomology with the origin coefficient; use top cohomology of a proper equidimensional scheme to count geometric components.
 
@@ -1518,9 +1533,9 @@ One route is as follows. Form the partition products over the existing finite Yo
 
 **Checks.**
 
-- The one-box term gives `H_{g,1}(z=1;q,α)=P_X(1)`.
-- Taking T=0 gives Ω_g=1 and H_g=0.
-- For genus one the z=1 count in every positive rank is #Pic⁰(k).
+- At g=1,q=2,α₁=−1, the one-box coefficient is H₁(z)=3(z+1), so H₁(1)=6 and H₁(0)=3.
+- Swapping α₁ with q/α₁=−2 gives H₁(z)=2(z+2), with H₁(1)=6 but H₁(0)=4. Reciprocal invariance belongs to the specialization at z=1; the full kernel is different. These are formal reciprocal tuples, not Weil tuples.
+- For g=1,q=2 and the actual elliptic curve y²+y=x³, the reciprocal pair has sum 0 and product 2, so H₁(1)=1+2=3. This differs from the formal tuple’s value 6. Taking T=0 gives Ω_g=1 and H_g=0.
 
 ### 10.2 Schiffmann kernel as a regular deformation
 
@@ -1560,9 +1575,9 @@ One route is as follows. Compare the S16 logarithmic numerator and Mellit H usin
 
 ### 10.5 positivity and constants in every degree
 
-Prove the following statement. For g≥1 and every r>0,d∈Z, `A_{g,r,d}=A_{g,r,1}`. Consequently it has a nonnegative invariant representative in the variables −α_j, is regular at the affine-cone origin, has total degree 2D with monic diagonal specialization, and its origin value is independent of d. This comparison does not identify a noncoprime stable Higgs moduli space with a coprime one. (M20, Mellit 2020 Theorem 1.1, pp.302–303, combined with S16 Corollary 1.5, pp.301–302).
+Prove the following statement. For g≥1 and every r>0,d∈Z, `A_{g,r,d}=A_{g,r,1}`. Consequently its Weyl-invariant class has a representative with nonnegative integer coefficients in the variables −α_j, without requiring the representative to be invariant in the free polynomial ring; it is regular at the affine-cone origin, has total degree 2D with monic diagonal specialization, and its origin value is independent of d. This comparison does not identify a noncoprime stable Higgs moduli space with a coprime one. (M20, Mellit 2020 Theorem 1.1, pp.302–303, combined with S16 Corollary 1.5, pp.301–302).
 
-One route is as follows. Apply degree independence with d′=1, which is coprime to every positive r. Transfer each universal polynomial and local-ring property from that coprime class.
+One route is as follows. Apply degree independence with d′=1, which is coprime to every positive r. Transfer the invariant class, its positive representative and its local-ring properties from that coprime class.
 
 *Needs:* §10.4; §9.2; §6.5.
 
@@ -1612,6 +1627,7 @@ One route is as follows. Use the supplier bundle and fibre functors and relative
 
 - With no marked points the count recovers A_X(r,d).
 - For rank one every admissible flag is unique and the count is #Pic⁰(k).
+- On P¹ take O² with three rational marks and fibre lines ke₁, ke₂, k(e₁+e₂). An endomorphism preserving the first two is diagonal; preserving the third forces its two entries equal. Thus its geometric endomorphism ring is k̄ and the flagged object is absolutely indecomposable, although O² is decomposable. With only the first two flags it splits into two flagged lines. All three marks exist even over 𝔽₂.
 - A closed point of residue degree e>1 is outside this theorem and needs extra arithmetic parameters.
 
 ### 11.2 universal parabolic counting functions
@@ -1648,9 +1664,9 @@ One route is as follows. Use the imported HN type and its scalar-extension compa
 
 **Checks.**
 
-- If ν=d/r the ≥ν count equals the count of absolute indecomposable semistable bundles.
-- If ν>d/r the ≥ν count is zero.
-- A nontrivial HN filtration is not a direct-sum decomposition; an indecomposable may have several HN factors.
+- For rank one and ν=0, degrees −1 and 0 give lower-cut counts 0 and P(1); the degree-zero line is semistable at the boundary ν=d/r.
+- For the nonsplit genus-two bundle in the next Check, μ=1/2 but μ_min=0, so its ≥1/2 indicator is 0. For any ν>1/2 the class-(2,1) lower-cut count is also 0; an average-slope cutoff would wrongly admit that bundle at 1/2.
+- On a genus-two curve with rational P, Ext¹(O,O(P))=H¹(O(P))=k. A nonzero extension 0→O(P)→E→O→0 has exact HN classes ((1,1),(1,0)) and is absolutely indecomposable: a decomposition would split this unique HN extension, while its nonzero class stays nonzero over k̄. The split extension has the same HN type and is not absolutely indecomposable.
 
 ### 11.4 universal slope-cut counting functions
 
@@ -1683,13 +1699,13 @@ One route is as follows. Construct Euler pushforward on the relevant finite-type
 **Checks.**
 
 - Over characteristic zero a scalar multiple of the Hopf unit is primitive only when it is zero.
-- The mixed x⊗y and y⊗x terms cancel in Δ[x,y].
+- On P¹_C the torsion degree-one characteristic is primitive. Its quotient-left product with the degree-d line characteristic takes value χ(P¹)=2 on O(d+1), from the sublines O(d+1)(−x). The reversed product has value 0 because a line has no torsion subsheaf. The commutator therefore has value 2, fixing the Hall order.
 - The K_g function (q−1)⁻¹ has a pole at the proposed α=1 limit, so naive numerical evaluation does not define the Euler Hall product.
 - For an unrestricted constructible function on a product moduli space, the direct-sum pullback need not be a finite sum of separated-variable functions. The coproduct is first defined on the product function space; the spherical closure theorem supplies the algebraic tensor target.
 
 ### 11.6 precise remaining Hall and HN conjectures
 
-Define the following objects and their indicated structure. Formulate the following conjectures: (i) for every exact HN type β its absolute count is a specialization of some `A_{g,β}∈R_g`; (ii) each difference `A^{≥i}_{g,r,d}−A^{≥i+1}_{g,r,d}`, i≥0, has a nonnegative invariant representative in the variables −α_j; (iii) h_X^sph is independent of X of genus g, has finite-dimensional graded pieces, and `dim h^sph_(r,d)=A_{g,r,d}(0)`; (iv) for `H_sph^{≥0}`, the subalgebra of spherical functions supported on the nonnegative HN category, `∑_β dim H_sph,β^{≥0}z^β=Exp(∑_β A_{g,β}^{≥0}(0)z^β)`. (v) for every admissible quasi-parabolic type with at least one rational marked point, the localized A of §11.2 belongs to R_g. Any origin evaluation in (ii)–(iv) includes the regularity assertion needed to define it. The commuting-variety K-theory/cohomology degeneration mentioned in S16 is a separate proposed geometric mechanism, not a proved consequence. (S16, §8.1 remarks and §8.2–8.3, Conjectures 8.2–8.4, pp.353–355; S16 line 3116; the marked integrality assertion strengthens the localized parallel argument of §7.2, S16 line 3123).
+Define the following objects and their indicated structure. Formulate the following conjectures: (i) for every exact HN type β its absolute count is a specialization of some `A_{g,β}∈R_g`; (ii) each difference `A^{≥i}_{g,r,d}−A^{≥i+1}_{g,r,d}`, i≥0, has a Weyl-invariant class on the paired affine cone with a representative having nonnegative integer coefficients in the variables −α_j; invariance of the representative before the paired relations is not asserted; (iii) h_X^sph is independent of X of genus g, has finite-dimensional graded pieces, and `dim h^sph_(r,d)=A_{g,r,d}(0)`; (iv) for `H_sph^{≥0}`, the subalgebra of spherical functions supported on the nonnegative HN category, `∑_β dim H_sph,β^{≥0}z^β=Exp(∑_β A_{g,β}^{≥0}(0)z^β)`. (v) for every admissible quasi-parabolic type with at least one rational marked point, the localized A of §11.2 belongs to R_g. Any origin evaluation in (ii)–(iv) includes the regularity assertion needed to define it. The commuting-variety K-theory/cohomology degeneration mentioned in S16 is a separate proposed geometric mechanism, not a proved consequence. (S16, §8.1 remarks and §8.2–8.3, Conjectures 8.2–8.4, pp.353–355; S16 line 3116; the marked integrality assertion strengthens the localized parallel argument of §7.2, S16 line 3123).
 
 The interface has the following properties.
 
@@ -1756,3 +1772,4 @@ For the origin formula in genus two, the rank-one logarithmic coefficient is z/(
 - **FH58.** N. J. Fine, I. N. Herstein, [The probability that a matrix be nilpotent](https://doi.org/10.1215/ijm/1255454112), 1958. Theorem 1, p.499, proof pp.499–503. The same count is stated in S16, Corollary 2.5, p.309. Citation by locator only; the text is uncertified.
 - **SPR66.** T. A. Springer, [Nonabelian H² in Galois cohomology](https://www-fourier.univ-grenoble-alpes.fr/~panchish/ETE%20LAMA%202018-AP/Borel_Algebraic%20Groups%20and%20Discontinuous%20Subgroups.pdf), 1966. Theorem 3.5, p.179; SPR66 line 6739.
 - **HES81.** W. H. Hesselink, [Concentration under actions of algebraic groups](https://doi.org/10.1007/BFb0090380), 1981. Theorem 5.7, pp.55–89. Citation by locator only; the text is uncertified.
+- **STACKS.** The Stacks Project Authors, [Topological invariance of the small étale site](https://stacks.math.columbia.edu/tag/04DY), §59.45, Theorem 59.45.2 (Tag 04DZ) and Proposition 59.45.4 (Tag 03SI); STACKS line 3033 and STACKS line 3130.

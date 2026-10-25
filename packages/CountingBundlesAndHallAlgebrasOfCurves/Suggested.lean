@@ -23,12 +23,13 @@ The other headlines are not statable at the pins:
 * The origin constant formula lacks the universal count and its regular extension to
   the paired affine cone.
 * Stable canonical Higgs geometry and the central deformation comparison lack the
-  coarse Higgs scheme, two-line Quot moment chart, character quotient and affine strata.
+  coarse Higgs scheme, supplied Quot moment chart and its frame-cohomology comparison,
+  character quotient and affine strata.
 * The all-characteristic coprime Higgs count lacks canonical stable coarse moduli;
   its absolute bundle-count side is defined below.
 * Higgs purity and the compact Poincare formula lack the actual Higgs carrier and its
   Frobenius compact cohomology and complex comparison.
-* The nilpotent-cone reciprocal trace and component formula lack the stable Hitchin
+* The nilpotent-cone reciprocal trace and component formula lack the stable reduced Hitchin
   zero fibre, its cohomology and the universal count.
 * Mellit's Laurent integrality lacks the plethystic logarithm on its rational
   coefficient series. The scalar degree-independence consequence is stated below;

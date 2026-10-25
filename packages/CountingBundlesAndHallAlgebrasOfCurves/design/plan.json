@@ -5382,7 +5382,7 @@
       "slug": "fixed-source-good-lines",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "§3.7",
-      "needs": "Identify the locally free locus of the coherent canonical Higgs carrier of §3.7 with the GL_r Higgs stack of §3.6 and its bounded charts in every characteristic."
+      "needs": "For every field, construct the canonical GL_r Higgs bundle stack as the locally free open substack of the coherent canonical Higgs carrier of §3.7, with its bounded Quot charts; over finite fields identify it with the GL_r Hitchin stack of §3.6 when the characteristic does not divide r!."
     },
     {
       "slug": "reductive-character-git",
