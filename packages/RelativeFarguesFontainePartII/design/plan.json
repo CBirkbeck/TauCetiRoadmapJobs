@@ -5473,6 +5473,42 @@
       "neededBy": [
         "RelativeFarguesFontainePartII:HF10/bundle-galois-descent"
       ]
+    },
+    {
+      "slug": "perfectoid-quantitative-cochains",
+      "supplier": "PerfectoidSpaces",
+      "section": "P3.7 and P3.11–P3.12",
+      "needs": "Provide norm-controlled continuous additive and principal-unit cochain corrections for complete perfect characteristic-p fields and every marked perfectoid untilt, including finite-dimensional semilinear residue modules, with compatible bounds under finite extension and inverse limits."
+    },
+    {
+      "slug": "crystalline-pro-final-radius",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.1.1",
+      "needs": "Identify the p-completed PD envelope of ker(W(O_F)→O_F/a_ρ), compatible with the base divided powers on p, as the pro-final p-adic thickening computing degree-zero crystalline sections, with the ring and affine universal-property directions specified."
+    },
+    {
+      "slug": "lubin-tate-all-local-fields",
+      "supplier": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+      "section": "LT.0 analytic-log; LT.1 lt-module; LT.2 tate-module-comparison",
+      "needs": "Provide the formal-module, inverse-division Tate-module and normalized convergent logarithm interfaces over every complete discretely valued field with finite residue field, including equal characteristic and its additive coefficient action."
+    },
+    {
+      "slug": "positive-degree-two-obstruction",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB3 general-BC",
+      "needs": "Prove the explicit obstruction to representing the degree-two Banach–Colmez diamond B^{φ=p²} for F=ℂ_p^♭ by an analytic or perfectoid space, separately from the sufficient positive-slope representability criterion."
+    },
+    {
+      "slug": "closed-infimal-convolution",
+      "supplier": "OptimalTransport",
+      "section": "Layer 5(1)–(2)",
+      "needs": "Provide the closed infimal-convolution conjugacy identity for proper lower-semicontinuous extended-real convex functions whenever the closed convolution is proper, including the real one-dimensional decreasing polygons with infinite endpoint values."
+    },
+    {
+      "slug": "finite-group-free-scheme-quotient",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "1.23",
+      "needs": "For a finite constant group action on a scheme whose every orbit lies in an affine open, construct the scheme quotient and prove that freeness on geometric points makes the quotient map a finite étale torsor, without assuming the group order is invertible."
     }
   ],
   "sourceIssues": [
