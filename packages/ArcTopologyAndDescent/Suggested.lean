@@ -1,12 +1,12 @@
 import Mathlib
-import TauCeti.RingTheory.MvPowerSeries.TateAlgebra.Basic
+import TauCeti.RingTheory.Huber.TopologicallyFiniteType
 
 /-!
 # Arc topology and descent: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs. Its real-bodied predicates only express
-valuation lifting, finite Tate presentations and coefficient torsion on native
+valuation lifting, perfect characteristic-p schemes and coefficient torsion on native
 carriers; they do not construct replacement sites, topoi or cohomology theories.
 
 The following headline theorems are not statable at the pins:
@@ -20,11 +20,8 @@ The following headline theorems are not statable at the pins:
 * Characteristic-zero h-differential and h-de Rham arc-descent lacks the h-form
   cohomology functor, its coherent finitary extension and filtered enhancement.
 * Perfect-complex arc-hyperdescent lacks the coherent symmetric monoidal Perf
-  functor and scheme perfection; the algebraic-space mapping descent theorem
-  additionally lacks the general reconstruction interface.
-* The universally effective epimorphism criterion lacks the category of qcqs
-  perfect F_p-schemes. Perf and algebraic-space reconstruction are proof inputs,
-  not carriers in this criterion's statement.
+  functor and scheme perfection.
+* Mapping descent into algebraic spaces lacks algebraic spaces and scheme perfection.
 * Arbitrary-parameter completed-generic-fibre hyperdescent and its Kunneth theorem
   lack coherent derived etale sections on the complete sites and the compatible
   monoidal totalization/completed-tensor functors.
@@ -38,30 +35,12 @@ of PrismaticCohomology section 2.0 are supplier inputs, not additional targets h
 -/
 
 open CategoryTheory CategoryTheory.Limits AlgebraicGeometry Opposite
-open scoped TensorProduct
 
 universe u
 
 namespace TauCetiRoadmap.ArcTopologyAndDescent
 
 /-! ## Layer 2: Arc-covers and spectral submersions -/
-
-/-- The affine rank-at-most-one valuative lifting predicate on a ring map. -/
-def IsRingArcCover {A B : Type u} [CommRing A] [CommRing B] (f : A →+* B) : Prop :=
-  ∀ (V : Type u) [CommRing V] [IsDomain V] [ValuationRing V] [Ring.KrullDimLE 1 V]
-    (a : A →+* V),
-    ∃ (W : Type u) (_ : CommRing W) (_ : IsDomain W) (_ : ValuationRing W)
-      (_ : Ring.KrullDimLE 1 W) (e : V →+* W) (b : B →+* W),
-      Function.Injective e ∧ IsLocalHom e ∧ b.comp f = e.comp a
-
-/-- Universal injectivity after each rank-at-most-one valuation base change is equivalent to arc covering (BM21 Proposition 2.11). -/
-theorem arc_affine_purity (A B : Type u) [CommRing A] [CommRing B] [Algebra A B] :
-    IsRingArcCover (algebraMap A B) ↔
-      ∀ (V : Type u) [CommRing V] [IsDomain V] [ValuationRing V]
-        [Ring.KrullDimLE 1 V] [Algebra A V],
-        ∀ (M : Type u) [AddCommGroup M] [Module V M],
-          Function.Injective (fun m : M => m ⊗ₜ[V] (1 : V ⊗[A] B)) := by
-  sorry
 
 /-- The rank-at-most-one valuative lifting predicate on a scheme morphism. -/
 def IsSchemeArcCover {X Y : Scheme.{u}} (f : Y ⟶ X) : Prop :=
@@ -84,19 +63,31 @@ theorem arc_spectral_characterization (X Y : Scheme.{u})
             IsCompact ((pullback.snd f g) ⁻¹' U) → IsOpen U := by
   sorry
 
-/-! ## Layer 10: Kunneth and affinoid vanishing -/
+/-! ## Layer 7: Constructible complexes, differentials and perfect schemes -/
 
-/-- The underlying algebra of a strict affinoid algebra has a finite Tate presentation. -/
-def HasAffinoidPresentation (K A : Type u) [NontriviallyNormedField K]
-    [IsUltrametricDist K] [CommRing A] [Algebra K A] : Prop :=
-  ∃ n : ℕ, ∃ f : MvPowerSeries.IsRestricted.subring (R := K) (fun _ : Fin n => (1 : ℝ)) →ₐ[K] A,
-    Function.Surjective f
+/-- For prime p, every open-section ring has p = 0 and bijective Frobenius; the empty scheme is included. -/
+def IsPerfectFpScheme (p : ℕ) (X : Scheme.{u}) : Prop :=
+  ∀ U : X.Opens, (p : Γ(X, U)) = 0 ∧ Function.Bijective (fun x : Γ(X, U) => x ^ p)
+
+/-- The object property defining the full category of qcqs perfect F_p-schemes, for prime p. -/
+def QcqsPerfectFp (p : ℕ) : ObjectProperty Scheme.{u} :=
+  fun X => CompactSpace X ∧ QuasiSeparatedSpace X ∧ IsPerfectFpScheme p X
+
+/-- On qcqs perfect F_p-schemes, arc-covers are exactly universally effective epimorphisms (BM21 Theorem 5.17). -/
+theorem arcCover_iff_universallyEffectiveEpi (p : ℕ) [Fact p.Prime]
+    {X Y : (QcqsPerfectFp.{u} p).FullSubcategory} (f : Y ⟶ X) :
+    IsSchemeArcCover f.hom ↔
+      ∀ (T P : (QcqsPerfectFp.{u} p).FullSubcategory) (g : T ⟶ X)
+        (f' : P ⟶ T) (g' : P ⟶ Y),
+        IsPullback g' f' f g → EffectiveEpi f' := by
+  sorry
+
+/-! ## Layer 10: Kunneth and affinoid vanishing -/
 
 /-- Torsion is tested on the affine basis of the small étale site. -/
 def IsTorsionEtaleSheaf (X : Scheme.{u})
     (F : Sheaf X.smallEtaleTopology AddCommGrpCat.{u}) : Prop :=
-  ∀ U : X.AffineEtale, ∀ x : F.obj.obj (op ((Scheme.AffineEtale.Spec X).obj U)),
-    ∃ n : ℕ, 0 < n ∧ n • x = 0
+  ∀ U : X.AffineEtale, IsAddTorsion (F.obj.obj (op ((Scheme.AffineEtale.Spec X).obj U)))
 
 /-- Prime-power torsion is tested on the same affine basis. -/
 def IsPrimePowerTorsionEtaleSheaf (X : Scheme.{u})
@@ -106,8 +97,9 @@ def IsPrimePowerTorsionEtaleSheaf (X : Scheme.{u})
 
 /-- Arbitrary torsion étale cohomology of a d-dimensional affinoid vanishes above d+1 (BM21 Theorem 7.3(1)). -/
 theorem affinoid_artin_grothendieck (K A : Type u) [NontriviallyNormedField K]
-    [IsUltrametricDist K] [CompleteSpace K] [IsAlgClosed K]
-    [CommRing A] [Algebra K A] (hA : HasAffinoidPresentation K A)
+    [IsUltrametricDist K] [NonarchimedeanRing K] [CompleteSpace K] [IsAlgClosed K]
+    [CommRing A] [TopologicalSpace A] [Algebra K A]
+    (hA : TauCeti.Huber.IsStrictlyTopologicallyFiniteType (algebraMap K A))
     (d : ℕ) [Ring.KrullDimLE d A]
     (F : Sheaf (Spec (CommRingCat.of A)).smallEtaleTopology AddCommGrpCat.{u})
     (hF : IsTorsionEtaleSheaf _ F) (q : ℕ) (hq : d + 1 < q) :
@@ -116,8 +108,9 @@ theorem affinoid_artin_grothendieck (K A : Type u) [NontriviallyNormedField K]
 
 /-- Residue-invertible prime-power torsion vanishes above d (BM21 Theorem 7.3(2)). -/
 theorem affinoid_artin_grothendieck_prime_to_residue (K A : Type u)
-    [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K] [IsAlgClosed K]
-    [CommRing A] [Algebra K A] (hA : HasAffinoidPresentation K A)
+    [NontriviallyNormedField K] [IsUltrametricDist K] [NonarchimedeanRing K]
+    [CompleteSpace K] [IsAlgClosed K] [CommRing A] [TopologicalSpace A] [Algebra K A]
+    (hA : TauCeti.Huber.IsStrictlyTopologicallyFiniteType (algebraMap K A))
     (d : ℕ) [Ring.KrullDimLE d A] (ℓ : ℕ) [Fact ℓ.Prime] (hℓ : ‖(ℓ : K)‖ = 1)
     (F : Sheaf (Spec (CommRingCat.of A)).smallEtaleTopology AddCommGrpCat.{u})
     (hF : IsPrimePowerTorsionEtaleSheaf _ F ℓ) (q : ℕ) (hq : d < q) :

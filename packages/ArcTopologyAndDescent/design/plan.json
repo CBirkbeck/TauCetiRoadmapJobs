@@ -5913,9 +5913,9 @@
   "gaps": [
   {
     "slug": "coherent-topos-pushouts",
-    "needs": "For essentially small finite-limit sites with finite covering subfamilies, supply coherence of sheafified representables, the coherent-quotient criterion for finite coproducts of these representables with quasi-compact relation, and coherence of pushouts of coherent objects along monomorphisms.",
+    "needs": "For essentially small finite-limit sites whose covering families have finite covering subfamilies, supply that sheafified representables are coherent (quasi-compact and quasi-separated) objects, so the sheaf topos is algebraic and coherent in the sense of AdicSpacesPartII §R0.19.10.",
     "supplier": "SchemeAndStackFoundations",
-    "section": "§2.3 (coherent-site extension)"
+    "section": "§2.5 (coherent-site extension)"
   },
   {
     "slug": "algebraic-space-perf-tannaka",
