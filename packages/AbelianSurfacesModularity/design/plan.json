@@ -3055,12 +3055,6 @@
     "needs": "For ℓ ≠ p and unramified residual representations with no Frobenius eigenvalue ratio ℓ, prove every continuous lift to a complete local p-adic coefficient algebra is unramified, including nonreduced coefficient algebras."
   },
   {
-    "slug": "projective-thin-count",
-    "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
-    "section": "IG.2.5",
-    "needs": "Extend the integral-box thin-set bound to rational points of projective height at most H on ℙⁿ for n ≥ 1, with bound O(H^(n+1/2) log H), and give a positive H^(n+1) lower bound in any finite collection of nonempty local open conditions."
-  },
-  {
     "slug": "genus-two-level-three-monodromy",
     "supplier": "AbelianSchemesAndArithmeticModuli",
     "section": "A3.8 and A4.9",
@@ -3112,7 +3106,7 @@
     "slug": "strong-odd-symplectic-criterion",
     "supplier": "PotentialAutomorphyInfrastructurePartII",
     "section": "PL.4, Strong residual oddness at a real place",
-    "needs": "Provide the general-rank characteristic-two criterion of BCGP25 Lemmas 5.2.3 and 5.2.7, including the nonalternating symmetric-form condition, its nonzero-diagonal equivalent, and the involution-class count n + 1 + floor(n/2)."
+    "needs": "Translate the general even-rank symmetric-form dichotomy of PL.4 to the matrix ψ(c_v)J of BCGP25 Lemma 5.2.7, prove its nonzero-diagonal test, and count the involution classes as n + 1 + floor(n/2) in symplectic rank n over a finite field of characteristic two."
   },
   {
     "slug": "ordinary-polarized-three-model",
@@ -3131,6 +3125,12 @@
     "supplier": "ShimuraVarieties",
     "section": "1.2 and 5.0",
     "needs": "For each g ≥ 1 and a connected fixed-pairing fine Siegel chart of level N ≥ 3 in characteristic zero, prove that adjoining symplectic level ℓ with prime ℓ not dividing N gives a geometrically connected cover with group Sp_(2g)(𝔽_ℓ), compatibly with the universal family and level change."
+  },
+  {
+    "slug": "polarized-toric-algebraization",
+    "supplier": "NeronModelsAndSemistableAbelianVarieties",
+    "section": "3.14",
+    "needs": "For a rank-g torus over a complete discretely valued field, split by a finite unramified extension, and a Galois-stable rank-g period lattice, algebraize the rigid quotient when an equivariant period-to-character lattice isomorphism makes the period pairing symmetric with positive definite valuation, preserving its principal polarization, unramified descent, torsion cone and evaluation Weil pairing."
   }
 ],
  "sourceIssues": [

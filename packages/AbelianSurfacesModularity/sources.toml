@@ -46,7 +46,7 @@ venue = "Publications Mathématiques de l'IHÉS 134"
 doi = "10.1007/s10240-021-00128-2"
 arxiv = "1812.09269v3"
 locator_scheme = "theorem"
-locator = "Proposition 10.2.3 and Lemma 10.2.4; Definitions 7.5.11, 9.1.8; Section 9.2; Remark 9.1.7 (arXiv v3 numbering)"
+locator = "Definition 10.2.2, Proposition 10.2.3 and Lemma 10.2.4; Definitions 7.5.11, 9.1.8; Section 9.2; Remark 9.1.7 (arXiv v3 numbering)"
 url = "https://arxiv.org/abs/1812.09269v3"
 fetched_from = "https://arxiv.org/pdf/1812.09269v3"
 fetched_at = "2026-10-24T05:49:05Z"
@@ -55,7 +55,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Numbering and page locators use arXiv v3 (2021): Proposition 10.2.3 is equivariant rationality of the untwisted space; Lemma 10.2.4 is rationality of P(rho). The published DOI is recorded for the same work."
-cited_for = ["Layer 0 weight-two dictionary; Layer 6 odd-theta rationality; Layer 8 Galois types", "Layers 0, 6, 8"]
+cited_for = ["Conventions and §0.1; §§1.4 and 7.1 (tidiness); §4.8 (odd-theta rationality); §8.3 (Galois types)"]
 
 [[source]]
 id = "KIS99"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v2"
-cited_for = ["Section 8.9 endomorphism types"]
+cited_for = ["Section 8.3 endomorphism types"]
 
 [[source]]
 id = "THORNE17"
@@ -103,7 +103,7 @@ url = "https://doi.org/10.1007/s00209-016-1681-2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Section 2.6 adequacy comparison"]
+cited_for = ["Section 2.5 adequacy comparison"]
 
 [[source]]
 id = "WHITMORE22"
@@ -122,3 +122,17 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Locators use arXiv v4, March 2026; Definition 3.19 has the same number as the BCGP25 citation. The legally fetched extraction was read with OCR."
 cited_for = ["Sections 1.4 and 7.1 reasonableness supplier contract"]
+
+[[source]]
+id = "FC90"
+authors = "Gerd Faltings, Ching-Li Chai"
+title = "Degeneration of Abelian Varieties"
+year = 1990
+doi = "10.1007/978-3-662-02632-8"
+locator_scheme = "theorem"
+locator = "Chapter II Theorem 6.2 and Remark 6.3; Chapter III Theorem 7.1 and Corollaries 7.2–7.4"
+url = "https://doi.org/10.1007/978-3-662-02632-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Section 4.7 polarized toric period construction"]
