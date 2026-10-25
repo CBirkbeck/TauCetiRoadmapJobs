@@ -109503,10 +109503,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1098#issuecomment-6401448939"
+  },
+  {
+   "kind": "misprint",
+   "source": "ZHANG21",
+   "locator": "Appendix B.1, formal-support paragraph, printed p. 971 (ZHANG21 line 4520)",
+   "says": "the sheaf associated with the ideal J describes the support of the module M",
+   "should": "the sheaf associated with M",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "SchemeKTheoryOperationsPartII",
+   "job": "REV-PKG-SchemeKTheoryOperationsPartII~2",
+   "board_pr": 1694,
+   "head": "639903e",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1694#issuecomment-6401520507"
+  },
+  {
+   "kind": "error",
+   "source": "LIZHANG22",
+   "locator": "§1.8, direct-image paragraph, arXiv v3 printed p. 9 (LIZHANG22 lines 370–372)",
+   "says": "properness of the induced map on reduced schemes suffices for a coherent direct image with the alternating formula",
+   "should": "require EGA properness (adic, finite type, proper reduction), since Spf k⟦t⟧ → Spec k has proper reduction but non-coherent π_*O",
+   "affects": "a stated result",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"639903e\", \"job\": \"REV-PKG-SchemeKTheoryOperationsPartII~2\", \"model\": \"fable\", \"worker\": \"fable-rev119\"} -->",
+   "roadmap": "SchemeKTheoryOperationsPartII",
+   "job": "REV-PKG-SchemeKTheoryOperationsPartII~2",
+   "board_pr": 1694,
+   "head": "639903e",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1694#issuecomment-6401520507"
   }
  ],
- "scanned_to": "2026-10-25T18:25:59Z",
- "updated": "2026-10-25T18:32:16Z",
+ "scanned_to": "2026-10-25T18:32:37Z",
+ "updated": "2026-10-25T18:37:32Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
