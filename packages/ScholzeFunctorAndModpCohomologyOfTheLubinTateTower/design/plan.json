@@ -2634,6 +2634,12 @@
     "needs": "For p>2 and every finite K/ℚ_p, every continuous two-dimensional residual representation of Gal_K over a finite field of characteristic p has a potentially Barsotti–Tate lift after a finite coefficient extension.",
     "supplier": "LocalGaloisDeformationRings",
     "section": "3.4"
+  },
+  {
+    "slug": "lubin-tate-arithmetic-descent",
+    "needs": "For every finite F/ℚ_p and rank-two level n≥0, the full-height Lubin–Tate level modulo ϖ^ℤ in the centre of Dˣ descends effectively from F̆ to F by its Weil cocycle with height translation, compatibly with level maps, the Dˣ/ϖ^ℤ- and GL₂(O_F)-actions and base change to finite K/F.",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "12.19"
   }
 ],
  "sourceIssues": [

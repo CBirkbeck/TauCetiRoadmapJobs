@@ -13,6 +13,9 @@ The following headlines are not statable at the pins:
 * Strauch's components: the Lubin–Tate tower and its component map are missing.
 * Scholze finiteness with complete noetherian local coefficients: the sheaf on
   the Gross–Hopkins torsor is missing.
+* Almost finite images under strict restriction: the analytic étale integral
+  sheaf O⁺/p and the valuatively strict open immersion of adic spaces are
+  missing.
 * Frobenius rigidity: valuation-ring almost modules and their scalar-extension
   interface are missing.
 * Fust's Ext comparison, reductive finiteness and block vanishing: the derived
@@ -36,6 +39,7 @@ No abstract predicates or arbitrary complexes replace these geometric objects.
 
 namespace TauCetiRoadmap.ScholzeFunctorAndModpCohomologyOfTheLubinTateTower
 
+open CategoryTheory
 open scoped Manifold ContDiff
 
 universe u
@@ -74,6 +78,30 @@ theorem compactLie_cohomology_finite (p d : ℕ) [Fact p.Prime]
   sorry
 
 /-! ## Layer 2: continuous cohomology and tower comparison -/
+
+/-- Shapiro's lemma for continuous induction along a closed subgroup with a
+continuous section of the right-coset quotient. Here H is locally profinite,
+X is a topological R[J]-module whose action map J × X → X is jointly
+continuous, and the induced module is Mathlib's continuous coinduction: the
+continuous f : H → X with f(jh) = j f(h), with the compact-open topology and
+right translation. Its continuous cohomology is isomorphic, as a topological
+R-module in every degree, to that of X; the isomorphism is restriction followed
+by evaluation at 1. See BW00, Chapter IX, Proposition 2.3; FUST22, §2,
+p. 281; CDN23, proof of Corollary 3.13, p. 37. -/
+theorem continuousCohomology_coind_iso
+    (R H : Type u) [CommRing R] [TopologicalSpace R] [IsTopologicalRing R]
+    [Group H] [TopologicalSpace H] [IsTopologicalGroup H] [T2Space H]
+    [LocallyCompactSpace H] [TotallyDisconnectedSpace H]
+    (J : Subgroup H) (hJ : IsClosed (J : Set H))
+    (X : TopRep.{u} R J)
+    (hact : Continuous (fun z : J × X => X.ρ z.1 z.2))
+    (s : Quotient (QuotientGroup.rightRel J) → H) (hs : Continuous s)
+    (hsec : Function.RightInverse s (Quotient.mk (QuotientGroup.rightRel J)))
+    (i : ℕ) :
+    Nonempty (continuousCohomology i
+      (TopRep.of (X.ρ.coind ⟨J.subtype, continuous_subtype_val⟩)) ≅
+        continuousCohomology i X) := by
+  sorry
 
 /-- For an odd prime p, continuous degree-two cohomology of SL₂(ℚ_p)
 with trivial discrete 𝔽_p coefficients vanishes. Moore's local covering

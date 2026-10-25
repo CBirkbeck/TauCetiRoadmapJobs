@@ -6,11 +6,11 @@
 
 This roadmap owns the equivariant-site limit and cohomology refinements in §0.1, Strauch’s component/action comparison in §0.2, complete-local-coefficient cohomological finiteness in §0.3 and Layer 1, Fust’s comparison for locally profinite groups and noncompact continuous induction in §2.1, the continuous-cocycle consequence of Moore’s classification in §2.2, and the tower-specific comparisons and end theorems in Layers 2–6.
 
-The basic Gross–Hopkins torsor, equivariant site, associated sheaf, mod-p functor and admissible O-torsion extension are stated by CompletedCohomologyAndLocalGlobalCompatibility §0.6; they are imported once. Layer 1 differs by allowing every complete noetherian local coefficient ring with finite residue field, and by supplying the strict-image, Frobenius, central-character and twist refinements. The torsor construction itself is not a second target here. EndoscopicTransferAndUnitaryTraceComparison §§12.2–12.8, 12.11, 12.14, 12.19 and 12.21 owns the finite towers, period maps, perfectoid limits, EL duality, central quotients, arithmetic descent and Stein-cover Mittag–Leffler input.
+The basic Gross–Hopkins torsor, equivariant site, associated sheaf, mod-p functor and admissible O-torsion extension are stated by CompletedCohomologyAndLocalGlobalCompatibility §0.6; they are imported once. Layer 1 differs by allowing every complete noetherian local coefficient ring with finite residue field, and by supplying the strict-image, Frobenius, central-character and twist refinements. The torsor construction itself is not a second target here. EndoscopicTransferAndUnitaryTraceComparison §§12.2–12.8, 12.11, 12.14, 12.19 and 12.21 owns the finite towers, period maps, perfectoid limits, EL duality, central quotients, arithmetic descent of the Drinfeld quotient and Stein-cover Mittag–Leffler input; arithmetic descent of the Lubin–Tate quotient is the contract gap:lubin-tate-arithmetic-descent of the same roadmap, recorded below.
 
 The coefficient-linear compact–discrete and Schikhof dualities belong to PadicLocalLanglandsForGL2Qp §§0.1, 0.3. Smoothness, smooth admissibility and the derived smooth category belong to SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4, SR.0d.1–SR.0d.2; bounded O-torsion admissibility and finite-presentation calculus belong to ModpRepresentationsOfGL2OverLocalFields MP.0–MP.1. The generic finite-presentation and finite-length criteria are imported, rather than reproved as part of the tower application. PadicLocalLanglandsForGL2Qp Layers 2–3 and §§5.1–5.4, 6.7–6.8 owns the mod-p classification, Montréal functor, blocks, centres and abstract occurrence theorem. Layer 4 adds the specified global quaternionic instance and its characteristic-zero point.
 
-Moore’s local rank-two covering classification belongs to KTheoryLowDegrees §11.5. Here its continuous-cochain dictionary and the odd-prime degree-two consequence are the targets; stable K₂ does not replace the rank-two theorem. Continuous cohomology, smooth discrete objects, profinite Shapiro maps, their quasi-isomorphism and finite-coefficient dévissage are already in the library as specified below. Section 2.1 extends the Shapiro comparison to the noncompact, continuously split quotient and prodiscrete coefficients used by the period torsor.
+Moore’s local rank-two covering classification belongs to KTheoryLowDegrees §11.5. Here its continuous-cochain dictionary and the odd-prime degree-two consequence are the targets; stable K₂ does not replace the rank-two theorem. Continuous cohomology, smooth discrete objects, profinite Shapiro maps, their quasi-isomorphism and finite-coefficient dévissage are already in the library as specified below. Continuous induction itself is Mathlib’s `ContRepresentation.coindV` with `ContRepresentation.coind`. Section 2.1 extends the Shapiro comparison to the noncompact, continuously split quotient and prodiscrete coefficients used by the period torsor.
 
 The arithmetic finite-presentation theorem for Drinfeld levels belongs to ProetaleCohomologyOfPAdicCurvesAndTowers, in its arithmetic finite-presentation section. Its exact contract is recorded below. The passage from that theorem to geometric finite presentation by finite-group coinvariants belongs to §6.2 here. Characteristic-zero factorisation over blocks and Kisin rings belongs to PadicLocalLanglandsForGL2Qp, Part II; it consumes the mod-p end theorems of this roadmap. No finite-length theorem for arithmetic Drinfeld cohomology over arbitrary F is asserted: §6.1 gives the full general-F multiplicity theorem, while the arithmetic finite-length and geometric finite-length theorems have the ℚ_p and odd-prime hypotheses of their sources.
 
@@ -33,7 +33,7 @@ For smooth characters χ₁,χ₂:ℚ_pˣ→k̄ˣ put I(χ₁,χ₂)=Ind_B^G(χ�
 - In ℚ₅ with δ(5)=1 and δ(2)=2 in 𝔽₅ˣ, replacing a torsor lift x by x·2 multiplies evaluation by 3. Acting by d=2 on S⁰(δ) multiplies it by 2; acting by w with Art(w)=2 multiplies it by 3. Hence the two actions have different inverses, and twisting by δ then δ⁻¹ has scalar 2·3=1.
 - For the unramified 𝔽₅-valued character with δ(ϖ)=2 and trivial unit restriction, geometric Frobenius acts on S⁰(δ) by 3 and arithmetic Frobenius by 2; d=ϖ acts by 2. This fixes both the Frobenius direction and the inverse in the Galois factor.
 - In rank two, v(det(ϖI₂))=2. Heights 0 and 1 remain distinct after the central quotient. In rank one the height shift is 1. No formula uses r=0 or the non-subgroup 1+M₂(O_F) as level zero.
-- The Tate twist is fixed by the Kummer trace H²(ℙ¹_C,k(1))→k sending the class of a degree-one divisor to 1; degree-two divisors give 2, which is 0 when p=2.
+- The Tate twist is fixed by the Kummer trace H²(ℙ¹_C,k(1))→k sending the class of a degree-one divisor to 1; degree-two divisors give 2, which is 0 when p=2. This is the algebraic trace of EtaleCohomologyFoundations §§0.9, 0.11 with n=p, legitimate because p is invertible on ℙ¹ over the characteristic-zero field C, transported to the analytic side by the proper comparison of ClassicalAdicEtaleCohomology §8.2.
 - For a scalar weight u=2 over ℤ₅ the lattice-dual scalar is 1/2, so evaluation has scalar 1. With λ=O, Hom_O(λ,O)⊗L/O=L/O, whereas (L/O)⊗(L/O)=0. The latter cannot model the coefficient system.
 
 ## Exact supplier contracts
@@ -47,6 +47,7 @@ Use the following pinned declarations directly. Module paths are relative to the
 | `continuousCohomology`, `TopRep.homogeneousCochains` | `Mathlib/RepresentationTheory/Homological/ContCohomology/Basic.lean` | Homology of continuous homogeneous cochains as topological modules; the group topology is retained. |
 | `TopRep`, `TopRep.of`, `TopRep.coind₁`, `TopRep.res` | `Mathlib/RepresentationTheory/Continuous/TopRep.lean` | Topological modules with continuous individual operators, continuous-function coinduction and restriction. Joint continuity of the group action is an additional condition. |
 | `ContRepresentation.trivial`, `ContRepresentation.toRepresentation` | `Mathlib/RepresentationTheory/Continuous/Basic.lean` | Trivial coefficients and the underlying algebraic representation. |
+| `ContRepresentation.coindV`, `ContRepresentation.coind` | `Mathlib/RepresentationTheory/Continuous/Basic.lean` | Continuous coinduction along a continuous homomorphism φ:J→H: the submodule of `C(H,V)` of f with f(φ(j)h)=j·f(h), with the compact-open subspace topology and right-translation H-action. It carries no compact-support condition. |
 | `Representation`, `Representation.invariants` | `Mathlib/RepresentationTheory/Basic.lean`, `Mathlib/RepresentationTheory/Invariants.lean` | Linear actions and their fixed submodules. |
 | `CategoryTheory.Abelian.Ext` | `Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean` | Small Ext in an abelian category with the required derived-category/Ext hypotheses; it does not select the smooth category. |
 | `ContinuousMap`, `LocallyConstant` | `Mathlib/Topology/ContinuousMap/Defs.lean`, `Mathlib/Topology/LocallyConstant/Basic.lean` | Continuous and locally constant section maps. |
@@ -80,7 +81,7 @@ Sections 1.5–1.7 supply the Shimura-curve and definite quaternionic towers, th
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-Sections 12.2–12.8 supply the full formal O_F- and special O_D-module towers, their quasi-isogeny heights, period maps, infinite-level moduli, commuting actions, effective Weil descent and perfectoid limits. Section 12.11 supplies the marked EL duality with the group dictionary. Sections 12.14 and 12.19 supply the rank-two scalar quotient and arithmetic descent to F. Section 12.21 supplies perfectoid Stein exhaustions, the dense restriction maps and Mittag–Leffler cohomology needed for the inverse-limit topology. The equality of scalar actions and height shift v(det(ϖI₂))=2 must be preserved when transporting these objects.
+Sections 12.2–12.8 supply the full formal O_F- and special O_D-module towers, their quasi-isogeny heights, period maps, infinite-level moduli, commuting actions, effective Weil descent and perfectoid limits. Section 12.11 supplies the marked EL duality with the group dictionary. Section 12.14 supplies the rank-two scalar quotient, and §12.19 its arithmetic descent to F for the Drinfeld tower only. What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:lubin-tate-arithmetic-descent): For every finite F/ℚ_p and rank-two level n≥0 (level GL₂(O_F) at n=0, 1+ϖⁿM₂(O_F) for n≥1), the full-height Lubin–Tate level modulo the subgroup ϖ^ℤ of the centre of Dˣ descends effectively from F̆ to F by its Weil cocycle with height translation, compatibly with level maps, the Dˣ/ϖ^ℤ- and GL₂(O_F)-actions and base change to finite K/F; this is the Lubin–Tate counterpart of §12.19, defining `LT⁽ϖ⁾_{n,K}` (CDN23, §4.3.3, p. 48; CDN23 line 2021). Its geometric base change at n=0 is two open discs, one per height class, not two copies of Ω_F; an infinite-level isomorphism does not identify the finite Lubin–Tate and Drinfeld levels. Section 12.21 supplies perfectoid Stein exhaustions, the dense restriction maps and Mittag–Leffler cohomology needed for the inverse-limit topology. The equality of scalar actions and height shift v(det(ϖI₂))=2 must be preserved when transporting these objects.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -92,7 +93,7 @@ MP.0/torsion-admissibility supplies admissibility for O-torsion representations.
 
 ### From TauCetiRoadmap.PadicLocalLanglandsForGL2Qp
 
-Sections 0.1 and 0.3 supply coefficient-linear compact–discrete duality, biduality, the contragredient action, lattice/Schikhof duals and coefficient changes. Sections 2.1–2.6 supply irreducibles, locally admissible finite length, principal series and Steinberg representations. Layer 3 supplies the Montréal functor and its values on irreducibles. Sections 5.1–5.4 supply blocks, their Galois labels, projective envelopes and pseudo-deformation rings. Sections 6.7–6.8 supply finite-length residual fibres and the abstract occurrence argument. In the quaternionic application the central-character quotient of O[[K]] is used; projectivity is asserted in that fixed-character category.
+Sections 0.1 and 0.3 supply coefficient-linear compact–discrete duality, biduality, the contragredient action, lattice/Schikhof duals and coefficient changes. Sections 2.1–2.7 supply irreducibles, locally admissible finite length, principal series and Steinberg representations, and the classification of irreducible mod-p representations of GL₂(ℚ_p) (§2.7). Layer 3 supplies the Montréal functor and its values on irreducibles. Sections 5.1–5.4 supply blocks, their Galois labels, projective envelopes and pseudo-deformation rings. Sections 6.7–6.8 supply finite-length residual fibres and the abstract occurrence argument. In the quaternionic application the central-character quotient of O[[K]] is used; projectivity is asserted in that fixed-character category.
 
 ### From TauCetiRoadmap.KTheoryLowDegrees
 
@@ -138,9 +139,13 @@ Layer 3 supplies completed-tower continuous dual and coefficient-limit compariso
 
 R0.10–R0.18 supplies separatedness, smooth local charts, closures and the valuative criteria. What AdicSpacesPartII must provide (gap:temkin-good-germs): For a separated quasicompact analytic adic space V over a complete algebraically closed C, a maximal point whose closure is the full Riemann–Zariski space of its completed residue field has an affinoid neighbourhood containing that closure. This is the precise geometric input to the strict-image argument of SCH18, Corollary 3.6, pp. 12–13 (SCH18 line 551).
 
+### From TauCetiRoadmap.EtaleCohomologyFoundations
+
+Section 0.9 supplies the Kummer cycle classes and the projective bundle formula with degree-one point normalisation, for n invertible on the base and finite coefficients annihilated by n; over a separably closed field ℙᵐ has one Λ(−i) summand in degree 2i for 0≤i≤m. Section 0.11 supplies the normalised algebraic smooth trace, whose ℙ¹ trace sends c₁(O(1)) to 1. Over C of characteristic zero these apply with n=pᵃ, so H²(ℙ¹_C,ℤ/pᵃ(1))≃ℤ/pᵃ algebraically, and the class of a degree-d divisor has trace d.
+
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-Sections 1.1, 1.3 and 1.5 supply torsion sheaf cohomology, descent and inverse-limit comparisons with their topologies. What ClassicalAdicEtaleCohomology must provide (gap:analytic-topology-dimension): For a d-dimensional rigid analytic space over a complete nonarchimedean field, cohomology of every abelian sheaf in the analytic topology vanishes in degrees greater than d. What ClassicalAdicEtaleCohomology must provide (gap:arithmetic-stein-hochschild-serre): For a quasicompact or Stein rigid analytic space X over a finite extension K of ℚ_p and a torsion coefficient ring Λ, construct the continuous Hochschild–Serre spectral sequence from Gal_K acting on geometric étale cohomology to H⁎_ét(X,Λ), compatible with the prodiscrete Stein limits and strict low-degree sequences. These are the analytic dimension input of SCH18 §3 and LUD17 Theorem 4.6, and the descent input of CDN23 Corollary 2.12 and Lemma 4.13 (SCH18 line 769; LUD17 line 1303; CDN23 line 1289, line 1818).
+Sections 1.1, 1.3 and 1.5 supply torsion sheaf cohomology, descent and inverse-limit comparisons with their topologies. Section 8.2 supplies the proper algebraic comparison for proper schemes and arbitrary torsion coefficients, including p-torsion over C; applied to ℙ¹_C it identifies the algebraic and analytic H²(ℙ¹_C,k(1)) and carries the algebraic trace to the analytic one. What ClassicalAdicEtaleCohomology must provide (gap:analytic-topology-dimension): For a d-dimensional rigid analytic space over a complete nonarchimedean field, cohomology of every abelian sheaf in the analytic topology vanishes in degrees greater than d. What ClassicalAdicEtaleCohomology must provide (gap:arithmetic-stein-hochschild-serre): For a quasicompact or Stein rigid analytic space X over a finite extension K of ℚ_p and a torsion coefficient ring Λ, construct the continuous Hochschild–Serre spectral sequence from Gal_K acting on geometric étale cohomology to H⁎_ét(X,Λ), compatible with the prodiscrete Stein limits and strict low-degree sequences. These are the analytic dimension input of SCH18 §3 and LUD17 Theorem 4.6, and the descent input of CDN23 Corollary 2.12 and Lemma 4.13 (SCH18 line 769; LUD17 line 1303; CDN23 line 1289, line 1818).
 
 ### From TauCetiRoadmap.PerfectoidShimuraVarieties
 
@@ -184,7 +189,7 @@ What ProetaleCohomologyOfPAdicCurvesAndTowers must provide (gap:proetale-finite-
 
 ## How to read the build
 
-Layer 0 fixes the component and cohomological interfaces on the supplied torsor. Layer 1 extends coefficients and proves the technical almost/Frobenius results and action formulas. Layer 2 compares Sⁱ with continuous cochains and tower multiplicities. Layer 3 constructs Ludwig’s quotient and its vanishing theorem. Layer 4 provides the global instance needed for the local Galois criterion. Layer 5 turns finite support of multiplicities into arithmetic finite length. Layer 6 proves the general-F multiplicity theorem and the residual-Galois and smooth-vector consequences. Each subsection gives its statement, an API in mathematical prose where it defines an object, discriminating Checks and its direct statement/proof inputs. The headlines in §§0.3 and 2.2 have Lean declarations in Suggested.lean; the other headlines require the geometric carriers listed in its module docstring.
+Layer 0 fixes the component and cohomological interfaces on the supplied torsor. Layer 1 extends coefficients and proves the technical almost/Frobenius results and action formulas. Layer 2 compares Sⁱ with continuous cochains and tower multiplicities. Layer 3 constructs Ludwig’s quotient and its vanishing theorem. Layer 4 provides the global instance needed for the local Galois criterion. Layer 5 turns finite support of multiplicities into arithmetic finite length. Layer 6 proves the general-F multiplicity theorem and the residual-Galois and smooth-vector consequences. Each subsection gives its statement, an API in mathematical prose where it defines an object, discriminating Checks and its direct statement/proof inputs. The headlines in §§0.3, 2.1 (noncompact Shapiro) and 2.2 have Lean declarations in Suggested.lean; the other headlines require the geometric carriers listed in its module docstring.
 
 ## Layer 0: equivariant descent, components and compact cohomology
 
@@ -238,7 +243,7 @@ The component-label API consists of the following facts.
 
 ### 0.3 Compact p-adic Lie groups and complete local coefficients
 
-For a p-adic Lie group H and the smooth admissible A-modules of Conventions, prove that admissible objects form a Serre subcategory and that restriction to an open subgroup preserves admissibility. If H is compact and V is killed by 𝔪ⁱ, admissibility is equivalent to finite generation of V∨ over A[[H]]. Prove that every Hʲ_cont(H,V) is finite over A/𝔪ⁱ, hence is a finite set, for all j≥0 (SCH18, Lemma 3.13, Definition 4.1 and Theorem 4.3, pp. 17–18; FUST22, Lemma 6.2, p. 291; SCH18 line 727, line 792; FUST22 line 478).
+For a p-adic Lie group H and the smooth admissible A-modules of Conventions, prove that admissible objects form a Serre subcategory and that restriction to an open subgroup preserves admissibility. If H is compact and V is killed by 𝔪ⁱ, admissibility is equivalent to finite generation of V∨ over A[[H]]. Prove that every Hʲ_cont(H,V) is finite over A/𝔪ⁱ, hence is a finite set, for all j≥0 (SCH18, Lemma 3.13, Definition 4.1 and Theorem 4.3, pp. 17–18; FUST22, Lemma 6.2, p. 290; SCH18 line 727, line 792; FUST22 line 478).
 
 The headline `compactLie_cohomology_finite` states this result on Mathlib’s finite-dimensional analytic `LieGroup` carrier, modelled on `Fin d → Padic p`, including d=0, with `IsAdicComplete` for algebraic 𝔪-adic completeness. Its simple native predicate `AdmissibleCompactInvariants` tests finite generation of the compact-open fixed submodules of a bounded coefficient object. Smoothness, the positive exponent j, annihilation by 𝔪ʲ, noetherianity, finite residue field and its characteristic are separate explicit binders. Use the discrete scalar topology on A in the `TopRep` model: this does not change the underlying A[G]-module or its group cochain complex.
 
@@ -315,7 +320,7 @@ For a compact object M in the dual category of locally admissible smooth O-torsi
 - The sequence 0→μ∘det→Ind_B^G(μ⊗μ)→St⊗μ∘det→0 gives a long exact cohomology sequence. It does not make S¹ an exact functor.
 - For a rank-one central character ζ, naturality of π(z) and central Dˣ-action gives the same scalar ζ(z) on every Sⁱ. At ζ(2)=2 mod 5 the scalar is 2 in both constructions.
 
-*Needs:* §1.1; §§0.1, 0.3; DiamondsAndVStacks D0; PadicLocalLanglandsForGL2Qp §§0.1, 0.3; `PadicComplex`, `continuousCohomology`.
+*Needs:* §1.1; §§0.1, 0.3; DiamondsAndVStacks D0; PadicLocalLanglandsForGL2Qp §§0.1, 0.3; EtaleCohomologyFoundations §§0.9, 0.11 and ClassicalAdicEtaleCohomology §8.2 for the trace normalisation; `PadicComplex`, `continuousCohomology`.
 
 ### 1.3 Almost finite images under strict restriction
 
@@ -372,11 +377,11 @@ A route proves the strict-image argument for the regular compact representation 
 
 ### 1.6 Galois action, degree zero, central characters and twists
 
-At C=ℂ_p prove that the continuous discrete W_F-action on Sⁱ(π) extends uniquely to Gal_F, commuting with Dˣ. For arbitrary r≥1 compute `S⁰(π)=π^{SLᵣ(F)}` by evaluation on the component labels, with (w,d) acting through Nrd(d)Art_F(w)⁻¹. In particular the map `S⁰(π^{SLᵣ(F)})→S⁰(π)` is an isomorphism (SCH18, Propositions 4.6–4.7, p. 20, with the component convention of §0.2; SCH18 line 871, line 892; DPS23 line 1418).
+At C=ℂ_p and for every smooth A[GLᵣ(F)]-module π, the W_F-action on Sⁱ(π) from inertia and Weil descent is continuous and commutes with Dˣ. For admissible π prove that it extends uniquely to a continuous Gal_F-action, commuting with Dˣ; admissibility is necessary, since a continuous action of the profinite Gal_F on a discrete set has finite orbits. For admissible π and arbitrary r≥1 compute `S⁰(π)=π^{SLᵣ(F)}` by evaluation on the component labels, with (w,d)∈W_F×Dˣ acting through Nrd(d)Art_F(w)⁻¹. In particular the map `S⁰(π^{SLᵣ(F)})→S⁰(π)` is an isomorphism (SCH18, Propositions 4.6–4.7, p. 20, with the component convention of §0.2; SCH18 line 871, line 892; DPS23 line 1418).
 
-Prove that a central character ζ of π is also the Dˣ-central character of Sⁱ(π), and for a smooth character δ obtain Sⁱ(π⊗δ∘det)≃Sⁱ(π)⊗(δ⁻¹⊠δ), the first factor through Galois reciprocity and the second through reduced norm. For r=2 and bounded 𝔪-power-torsion A, this gives S¹(δ∘det)=0 and S²(δ∘det)=A(−1)⊗(δ⁻¹⊠δ), free of rank one (DPS23, Lemmas 7.3–7.4; DPS23 line 1387, line 1401).
+Prove that a central character ζ of a smooth π is also the Dˣ-central character of Sⁱ(π), and for a smooth character δ obtain Sⁱ(π⊗δ∘det)≃Sⁱ(π)⊗(δ⁻¹⊠δ), the first factor through reciprocity and the second through reduced norm. For every smooth π this isomorphism is W_F×Dˣ-equivariant; for admissible π both sides carry the Gal_F-actions above and it is Gal_F×Dˣ-equivariant. For r=2 and bounded 𝔪-power-torsion A, the admissible character δ∘det gives S¹(δ∘det)=0 and S²(δ∘det)=A(−1)⊗(δ⁻¹⊠δ), free of rank one as a Gal_F×Dˣ-module (DPS23, Lemmas 7.3–7.4; DPS23 line 1387, line 1401).
 
-One route extends the Weil action on finite compact-open invariant torsion pieces, where both inertia and a power of Frobenius have finite image. The character twist isomorphism is the cup product with the degree-zero character sheaf; twisting by δ⁻¹ gives its inverse. The equality of central actions follows from zx=xz and the inverse in the section-equivariance formula.
+One route reduces to π killed by 𝔪ʲ and extends the Weil action on the compact-open invariants, which are finite by §1.5 for admissible π, so that both an open subgroup of inertia and a power of Frobenius act trivially. The character twist isomorphism is the cup product with the degree-zero character sheaf; twisting by δ⁻¹ gives its inverse. The equality of central actions follows from zx=xz and the inverse in the section-equivariance formula.
 
 **Checks.**
 
@@ -385,8 +390,10 @@ One route extends the Weil action on finite compact-open invariant torsion piece
 - A generic rank-two principal series has no SL₂(F)-invariants, so S⁰=0. A character has a one-dimensional S⁰ instead.
 - Twisting by δ and then δ⁻¹ returns the identity; the two scalars at 2 mod 5 multiply to 1. Their central restrictions are δ(zʳ) and its inverse, as det(zIᵣ)=Nrd(z)=zʳ.
 - For r=2 and trivial character, S¹=0 and S²=A(−1). The trace-normalised degree-one cycle has value 1; degree two has value 2, including its zero value in characteristic 2.
+- Negative control for admissibility: r=1, A=k, π=k[t,t⁻¹] with O_Fˣ acting trivially and ϖ by multiplication by t. Then π is smooth, S⁰=π, and geometric Frobenius acts by t⁻¹, so the orbit {tⁿ : n∈ℤ} of 1 is infinite; O_Fˣ-invariants are all of π, so π is not admissible and no continuous Gal_F-extension exists.
+- Positive control: π=k[t,t⁻¹]/(tᵐ−1) with m≥1 has dimension m and is admissible; every Frobenius orbit has at most m elements, the W_F-action factors through ℤ/m, and it extends through Gal_F→Ẑ→ℤ/m. At m=1 this is the trivial character with orbit size 1.
 
-*Needs:* §§0.2 and 1.1–1.5; EndoscopicTransferAndUnitaryTraceComparison §12.7; ClassFieldTheory Layers 5 and 9; the Tate trace on projective space from ClassicalAdicEtaleCohomology §1.4.
+*Needs:* §§0.2 and 1.1–1.5; EndoscopicTransferAndUnitaryTraceComparison §12.7; ClassFieldTheory Layers 5 and 9; for the trace normalisation, the algebraic cycle classes and smooth trace of EtaleCohomologyFoundations §§0.9, 0.11 and the proper algebraic comparison of ClassicalAdicEtaleCohomology §8.2.
 
 ### Examples
 
@@ -402,16 +409,16 @@ The statements of §§1.1–1.2 need only the associated torsor and sheaf-cohomo
 
 For a locally profinite group H, a commutative ring R and a smooth discrete R[H]-module V, prove the natural isomorphism `Hⁱ_cont(H,V)≃Extⁱ_{Sm_R(H)}(R,V)` for every i≥0. The Ext category is the full smooth category, with trivial representation R; a bare TopRep with discontinuous orbit maps is excluded. Compare iterated continuous-function cochains with continuous maps Hⁱ⁺¹→V using local compactness. The proof applies smooth vectors to the cochain resolution and proves its derived-invariant acyclicity (FUST22, Corollary 4.4, pp. 287–288; FUST22 line 358).
 
-For a closed J≤H with a continuous section of H→J∖H and a topological R[J]-module V with jointly continuous action, construct continuous induction as the submodule of C(H,V) satisfying f(jh)=j f(h), with compact-open topology and right-translation action. Prove Hⁱ_cont(H,Ind_J^H V)≃Hⁱ_cont(J,V), for all i, by restriction and evaluation on cochains. The section gives an inverse up to continuous cochain homotopy; no termwise cochain isomorphism is asserted. This covers prodiscrete V in the tower application. For J=1, the conversion from the native twisted coinduction is (Tf)(x)=x·f(x⁻¹), and T²=1 (FUST22, Lemma 2.1 and induction convention, p. 281; BW00, Chapter IX, Proposition 2.3; CDN23, proof of Corollary 3.13, p. 37; FUST22 line 100, line 107; CDN23 line 1555).
+For a closed J≤H with a continuous section of H→J∖H and a topological R[J]-module V with jointly continuous action, continuous induction Ind_J^H V is Mathlib’s `ContRepresentation.coind` on `ContRepresentation.coindV`: the submodule of C(H,V) satisfying f(jh)=j f(h), with compact-open topology and right-translation action. Prove `continuousCohomology_coind_iso`: Hⁱ_cont(H,Ind_J^H V)≃Hⁱ_cont(J,V) as topological R-modules, for all i, by restriction and evaluation on cochains; H is Hausdorff, locally compact and totally disconnected, which gives the exponential law for the iterated cochain spaces. The section gives an inverse up to continuous cochain homotopy; no termwise cochain isomorphism is asserted. This covers prodiscrete V in the tower application. For J=1, the conversion from the native twisted coinduction is (Tf)(x)=x·f(x⁻¹), and T²=1 (FUST22, Lemma 2.1 and induction convention, p. 281; BW00, Chapter IX, Proposition 2.3; CDN23, proof of Corollary 3.13, p. 37; FUST22 line 100, line 107; CDN23 line 1555).
 
 The induction API consists of the following facts.
 
-- Its elements are precisely continuous functions satisfying f(jh)=j f(h); evaluation at 1 is a continuous J-equivariant coefficient map.
+- Membership in the imported carrier is the condition f(jh)=j f(h); evaluation at 1 is a continuous J-equivariant coefficient map.
 - A continuous J-equivariant R-linear coefficient map induces postcomposition on induction, preserving identities, composition and the H-action.
 - Restriction and evaluation give the Shapiro cochain map; a continuous quotient section gives an inverse up to continuous cochain homotopy. These maps induce mutually inverse cohomology maps, naturally in coefficients.
 - On profinite groups and discrete smooth coefficients the induced map agrees with the supplied Shapiro map. Compact support modulo J is the separate compact-induction condition, not a condition on this continuous induction.
 
-Let H be the F-points of a connected reductive group over any finite F/ℚ_p, and O the integers of a finite coefficient extension of ℚ_p. For every a≥1 and admissible smooth O/ϖ_Lᵃ[H]-module V, prove that Hⁱ_cont(H,V) is finite over O/ϖ_Lᵃ for every i. Construct the oriented-facet resolution of the trivial module from the contractible Bruhat–Tits building. It has finitely many facet orbits; stabiliser cohomology reduces to compact-open normal subgroups and finitely generated central quotients. Section 0.3 and the resulting double-complex spectral sequence give the conclusion (FUST22, Lemmas 6.2–6.6, pp. 291–295; FUST22 line 478, line 598).
+Let H be the F-points of a connected reductive group over any finite F/ℚ_p, and O the integers of a finite coefficient extension of ℚ_p. For every a≥1 and admissible smooth O/ϖ_Lᵃ[H]-module V, prove that Hⁱ_cont(H,V) is finite over O/ϖ_Lᵃ for every i. Construct the oriented-facet resolution of the trivial module from the contractible Bruhat–Tits building. It has finitely many facet orbits; stabiliser cohomology reduces to compact-open normal subgroups and finitely generated central quotients. Section 0.3 and the resulting double-complex spectral sequence give the conclusion (FUST22, Lemmas 6.2–6.6, pp. 290–295; FUST22 line 478, line 598).
 
 For any finite k of characteristic p and absolutely irreducible smooth π of GL₂(ℚ_p), prove Hⁱ(SL₂(ℚ_p),π)=0 for every i if no character twist of π is 1, St or Ind_B^Gα, where α(diag(a,d)u)=ε(a)ε(d)⁻¹. The exclusions are stated as representations, including small-prime coincidences, rather than assuming a three-element block for every p. If the SL₂-centre acts nontrivially, central-element homotopy gives vanishing first. Otherwise extend to Z·SL₂ with the specified central character and use blockwise Ext orthogonality and exact adjunction (FUST22, Proposition 5.1 and Corollary 5.2, pp. 288–290; FUST22 line 399, line 434).
 
@@ -421,13 +428,13 @@ Finally, for an admissible smooth k-representation of GL₂(F) with a central ch
 
 - H⁰(H,V)=Vᴴ=Hom_H(R,V)=Ext⁰_H(R,V). For H=1 and zero V both sides are zero.
 - For H=ℤ_p and V=𝔽_p, degrees 1 and 2 are 𝔽_p and 0 on both sides. For H=ℤ_p and regular V=C⁰(H,𝔽_p), positive degrees are zero.
-- For H=C₂, J=1, V=𝔽₂, continuous induction has dimension 2, while V has dimension 1. Their degree-zero cohomology has dimension 1 on both sides; the unequal cochain terms exclude a termwise isomorphism.
+- For H=C₂, J=1, V=𝔽₂, continuous induction has dimension 2, while V has dimension 1. Their degree-zero cohomology has dimension 1 on both sides, and every positive degree is 0 on both sides, since the induced module is coinduced from the trivial group; the unequal cochain terms exclude a termwise isomorphism.
 - For H=S₃, J=1 and trivial coefficients, induction is the six-dimensional function module. Its invariant functions are the one-dimensional constants, giving the same degree-zero Shapiro result for a nonabelian group.
 - For GL₂(F)→Fˣ the section t↦diag(t,1) has determinant t, including t=ϖ. Replacing it by tI₂ has determinant t² and is not a section.
 - For supersingular π the SL₂ cohomology vanishes in every degree. For π=1 its degree-zero cohomology is k, so the excluded block is necessary. For p=2 or 3 the representation exclusions are interpreted before grouping them into blocks.
 - The untwisting map satisfies T(Tf)(x)=x·(x⁻¹·f(x))=f(x). On a character with value 2 mod 5 at x, the two factors are 2 and 3; omitting the value action fails this check.
 
-*Needs:* §0.3; `continuousCohomology`, `TopRep.coind₁`, `CategoryTheory.Abelian.Ext`, `TauCeti.IsSmoothDiscrete`; SmoothRepresentationsOfLocalGroups §§SR.0d.1–SR.0d.2 and SR.2.1; PadicLocalLanglandsForGL2Qp §§2.1–2.6, 5.1–5.2; ReductiveGroupsPartII RG2.2; profinite Shapiro from Tau Ceti for the compact specialisation.
+*Needs:* §0.3; `continuousCohomology`, `TopRep.coind₁`, `ContRepresentation.coindV`, `ContRepresentation.coind`, `CategoryTheory.Abelian.Ext`, `TauCeti.IsSmoothDiscrete`; SmoothRepresentationsOfLocalGroups §§SR.0d.1–SR.0d.2 and SR.2.1; PadicLocalLanglandsForGL2Qp §§2.1–2.7, 5.1–5.2; ReductiveGroupsPartII RG2.2; profinite Shapiro from Tau Ceti for the compact specialisation.
 
 ### 2.2 Moore’s covering calculation and continuous degree-two vanishing
 
@@ -502,7 +509,7 @@ For F=ℚ_p and irreducible π, prove that the middle comparison is an isomorphi
 - For π=δ∘det, SL₂ acts trivially and its H¹ is zero. Thus S¹ injects into the multiplicity space, and for odd p both vanish in the unquotiented infinite tower.
 - For p≥5 the exceptional irreducibles lie in twists of {χ,St⊗χ,I(χ,χε)}. At p=2 or 3 use the representation exclusions themselves; no assertion of three distinct objects is made.
 
-*Needs:* §§0.2, 1.6 and 2.1–2.4; ModpRepresentationsOfGL2OverLocalFields MP.0/scalar-extension; PadicLocalLanglandsForGL2Qp §§2.1–2.6, 5.1–5.2. The character vanishing Check additionally uses §2.2.
+*Needs:* §§0.2, 1.6 and 2.1–2.4; ModpRepresentationsOfGL2OverLocalFields MP.0/scalar-extension; PadicLocalLanglandsForGL2Qp §§2.1–2.7, 5.1–5.2. The character vanishing Check additionally uses §2.2.
 
 ### Examples
 
@@ -518,7 +525,7 @@ Fust’s comparison uses the smooth derived category and compact cohomology, whi
 
 Fix F=ℚ_p and rank two. Construct M_∞/B(ℚ_p) in the category of preadic spaces from its quotient topology and invariant structure sheaf, and prove that it is perfectoid. Distinguish M_B=M_∞⁽⁰⁾/B(ℤ_p), the intermediate perfectoid limit of height-zero finite-level Borel quotients, from the final quotient. With G⁰={g:det(g)∈ℤ_pˣ} and B′=B∩G⁰, identify M_∞/B with M_∞⁽⁰⁾/B′. The final perfectoid charts are open subsets obtained from local sections of the level-zero Gross–Hopkins map, not a single globally étale map from M_B (LUD17, Theorem 3.11, Corollary 3.13 and Theorem 3.14, pp. 20–23; LUD17 line 862, line 916, line 922).
 
-Factor the period map through q:M_∞→M_∞/B and π̄:M_∞/B→ℙ¹_C, and prove π̄ quasicompact. For every geometric point x and chosen lift y, identify its completed fibre with y×ℙ¹(ℚ_p), and prove it affinoid perfectoid, including higher-rank valuation points by the completed-fibre argument (LUD17, Propositions 3.15, 3.17, 3.22 and Lemma 3.23, pp. 23–27; LUD17 line 958, line 972, line 1159).
+Factor the period map through q:M_∞→M_∞/B and π̄:M_∞/B→ℙ¹_C, and prove π̄ quasicompact. For every geometric point x and chosen lift y, identify its completed fibre with y×ℙ¹(ℚ_p), and prove it affinoid perfectoid, including higher-rank valuation points by the completed-fibre argument (LUD17, Propositions 3.15, 3.17 and 3.23 and Lemma 3.22, pp. 23–27; LUD17 line 958, line 972, line 1159).
 
 For a smooth B-character χ:B→kˣ, construct the rank-one local system ℱ_χ on the quotient by B-equivariant continuous maps from the pulled-back B-torsor. Prove `π̄_*ℱ_χ≃ℱ_{Ind_B^Gχ}`, and Rⁱπ̄_*𝒢=0 for i>0 for every abelian étale sheaf 𝒢. Deduce Sⁱ(Ind_B^Gχ)≃Hⁱ_ét(M_∞/B,ℱ_χ) for all i. The fibre calculation and geometric stalks, rather than a prime-to-p proper-base-change assertion, prove the higher-direct-image vanishing (LUD17, Proposition 4.2, Lemma 4.3 and Proposition 4.4, pp. 28–30; LUD17 line 1230, line 1236, line 1252).
 
@@ -715,7 +722,7 @@ The S¹-invariant spaces in §5.2 are finite-dimensional by admissibility. After
 - Twists by characters of ℚ_pˣ/p²ℤ that are trivial on `N_{K/ℚ_p}Kˣ` permute the relevant supports through the twist comparison. The twist preserves the Gal_K-invariant condition precisely because its Galois restriction is trivial.
 - For p=3, ℚ₃ˣ/3ℤ has prime-to-3 character quotient 𝔽₃ˣ of order 2, giving two possible absolute central characters. At p=2 the global theorem is outside its prime range even though that character quotient has order 1.
 
-*Needs:* §§1.5–1.6, 2.5, 4.4 and 5.1–5.2; ModpRepresentationsOfGL2OverLocalFields MP.0/scalar-extension, MP.1/central-ext; PadicLocalLanglandsForGL2Qp §§2.1–2.6, 5.1–5.2.
+*Needs:* §§1.5–1.6, 2.5, 4.4 and 5.1–5.2; ModpRepresentationsOfGL2OverLocalFields MP.0/scalar-extension, MP.1/central-ext; PadicLocalLanglandsForGL2Qp §§2.1–2.7, 5.1–5.2.
 
 ### 5.4 Finite length of arithmetic Drinfeld cohomology
 
@@ -733,7 +740,7 @@ As the geometric corollary, prove for every smooth admissible k[G′]-module π 
 - At exponent a=1 the coefficient theorem is the k result. For a=2 the sequence 0→ϖ_LO/ϖ_L²→O/ϖ_L²→k→0 has two k-graded pieces; their long exact cohomology sequence preserves finite length without dividing by p.
 - For F≠ℚ_p and n>0, arithmetic cohomology can have non-admissible dual at sufficiently large K. The general-F theorem of §6.1 is about multiplicities instead (CDN23, Theorem 2.13, p. 30; CDN23 line 1307).
 
-*Needs:* §§0.3 and 5.1–5.3; ProetaleCohomologyOfPAdicCurvesAndTowers gap:proetale-finite-presentation; ModpRepresentationsOfGL2OverLocalFields MP.0/finite-presentation and MP.1/cosocle-length; PadicLocalLanglandsForGL2Qp §2.1–§2.6; the central-character and coefficient dévissage specified here; EndoscopicTransferAndUnitaryTraceComparison §12.19.
+*Needs:* §§0.3 and 5.1–5.3; ProetaleCohomologyOfPAdicCurvesAndTowers gap:proetale-finite-presentation; ModpRepresentationsOfGL2OverLocalFields MP.0/finite-presentation and MP.1/cosocle-length; PadicLocalLanglandsForGL2Qp §§2.1–2.7; the central-character and coefficient dévissage specified here; EndoscopicTransferAndUnitaryTraceComparison §12.19.
 
 ### Examples
 
@@ -808,7 +815,7 @@ A route first compares geometric Galois invariants with arithmetic cohomology up
 
 ### 6.4 Smooth vectors in Lubin–Tate cohomology
 
-For F=ℚ_p, p>2, n≥0 and finite K/ℚ_p, prove that the Dˣ-smooth vectors in `H¹_ét(LT⁽ᵖ⁾_{n,K},k)` form a finite-dimensional k-space. Here LT_n is level G₀=GL₂(ℤ_p) at n=0 and G_n=1+pⁿM₂(ℤ_p) for n≥1, the scalar quotient is taken in Z(Dˣ), and arithmetic descent is the supplied quotient descent (CDN23, Theorem 4.26, p. 48; CDN23 line 2021).
+For F=ℚ_p, p>2, n≥0 and finite K/ℚ_p, prove that the Dˣ-smooth vectors in `H¹_ét(LT⁽ᵖ⁾_{n,K},k)` form a finite-dimensional k-space. Here LT_n is level G₀=GL₂(ℤ_p) at n=0 and G_n=1+pⁿM₂(ℤ_p) for n≥1, the scalar quotient is taken in Z(Dˣ), and arithmetic descent is the Lubin–Tate quotient descent of gap:lubin-tate-arithmetic-descent, not the Drinfeld descent of EndoscopicTransferAndUnitaryTraceComparison §12.19 (CDN23, Theorem 4.26, p. 48; CDN23 line 2021).
 
 Prove the two intermediate assertions: for every j≥0 the G-smooth vectors of `H¹_ét(M⁽ᵖ⁾_∞,k)^{Gal_K×Ǧ_j}` are finite-dimensional, and H¹_ét(M⁽ᵖ⁾_∞,k) has no nonzero finite-dimensional continuous G-submodule. In the first statement the inherited action is continuous and “smooth” means open stabilisers; the finite-dimensional submodules in the second carry their induced Hausdorff topology, hence are discrete over finite k. The first assertion follows from arithmetic finite length and finite-error descent. For the second, every nonzero finite-dimensional smooth G-module has a character submodule after finite scalar extension, since every map from an additive root group ℚ_p to a finite group is zero by divisibility, and those root groups generate SL₂(ℚ_p). Section 2.5 embeds any such character multiplicity between S¹ of a character and the degree-two group of §2.2, both zero. Thus the smooth subspace in the first assertion is actually zero. Pullback from finite Lubin–Tate level has only finite-dimensional descent errors, proving the headline result (CDN23, Lemmas 4.27–4.28, pp. 48–49; CDN23 line 2031, line 2041).
 
@@ -822,7 +829,7 @@ Prove also the equivalence of this smooth-vector finiteness theorem with the ari
 - For odd p the character multiplicity is bounded by 0→Hom_G(δ,H¹(M_∞,k))→H²(SL₂(ℚ_p),k)=0. At p=2 the right-hand group is k, so this proof does not establish the theorem there.
 - At an identity level map, the two induced pullback maps and their smooth-vector restrictions are identities. For zero coefficient the finite-dimensional smooth space has dimension 0.
 
-*Needs:* §§0.2, 1.6, 2.2, 2.5, 5.2 and 5.4; EndoscopicTransferAndUnitaryTraceComparison §§12.7, 12.11, 12.14, 12.19; ModpRepresentationsOfGL2OverLocalFields MP.1/smooth-dual-length; the compact-continuous dual topology and finite-dimensional descent error terms.
+*Needs:* §§0.2, 1.6, 2.2, 2.5, 5.2 and 5.4; EndoscopicTransferAndUnitaryTraceComparison §§12.7, 12.11, 12.14, 12.19 and gap:lubin-tate-arithmetic-descent; ModpRepresentationsOfGL2OverLocalFields MP.1/smooth-dual-length; the compact-continuous dual topology and finite-dimensional descent error terms.
 
 ### Examples
 
