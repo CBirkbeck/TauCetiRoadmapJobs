@@ -110,7 +110,7 @@ authors = "Jérôme Poineau"
 title = "Les espaces de Berkovich sont angéliques"
 year = 2013
 locator_scheme = "theorem"
-locator = "§4, Definition 4.1, Lemma 4.4, Remark 4.14, Corollaries 4.15–4.18, pp. 283–288"
+locator = "Notations, p. 271; §4, Definition 4.1, Lemma 4.4, Remark 4.14, Corollaries 4.15–4.18, pp. 283–288"
 url = "https://www.numdam.org/article/BSMF_2013__141_2_267_0.pdf"
 fetched_from = "https://www.numdam.org/article/BSMF_2013__141_2_267_0.pdf"
 fetched_at = "2026-10-24T05:14:27Z"
@@ -119,3 +119,36 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["Layer 4"]
+
+[[source]]
+id = "ANDRE74"
+authors = "Michel André"
+title = "Localisation de la lissité formelle"
+year = 1974
+venue = "Manuscripta Mathematica 13"
+doi = "10.1007/bf01168230"
+locator_scheme = "page"
+locator = "pp. 297–307; localization of formal smoothness"
+url = "https://doi.org/10.1007/bf01168230"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.5"]
+
+[[source]]
+id = "CONRAD06"
+authors = "Brian Conrad"
+title = "Relative ampleness in rigid-analytic geometry"
+year = 2006
+venue = "Annales de l’Institut Fourier 56 (2006), 1049–1126"
+doi = "10.5802/aif.2207"
+locator_scheme = "theorem"
+locator = "Definition 4.1.1 and following properties, pp. 1096–1097"
+url = "https://www.numdam.org/item/AIF_2006__56_4_1049_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIF_2006__56_4_1049_0.pdf"
+fetched_at = "2026-10-25T04:05:21Z"
+sha256 = "7525678b9e010121991c14a73ac498c8b1252d91c3a83e23f15d68594d524b66"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["5.1"]

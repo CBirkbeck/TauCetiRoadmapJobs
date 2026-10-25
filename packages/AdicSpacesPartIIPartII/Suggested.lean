@@ -12,8 +12,7 @@ theorems, Riemann extension and connectedness, regular/smooth loci and smooth st
 Shilov and weakly Shilov characterizations and avoidance, rigid blowups and functorial rigid
 resolution, polydisc neighbourhoods and rational-point manifolds and submersions are not
 statable at the pins: the shared rigid-space, affinoid-algebra, coherent-ideal and analytic
-morphism carriers are roadmap targets. The diamond interpretations of finite-field points and
-resolution covers additionally need the diamond functor and v-sheaf carriers.
+morphism carriers are roadmap targets.
 
 Gauss-point closure, constant rank on native finite-dimensional analytic manifolds and subfield
 detection of analytic germs use native carriers below. The rigid-space application of constant

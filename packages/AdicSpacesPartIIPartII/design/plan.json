@@ -3829,19 +3829,19 @@
  "gaps": [
   {
     "slug": "formal-affinoid-localization",
-    "needs": "For every quasi-separated quasi-paracompact rigid K-space X, every weakly Shilov affinoid neighbourhood W of x can, after shrinking W around x and admissible modification of a formal model of X, be realized as the generic fibre of a formal affine open whose special-fibre generic points identify with those of the canonical reduction of W.",
-    "supplier": "AdicSpacesPartII",
-    "section": "R1.7 (formal-model localization interface)"
+    "needs": "For every quasi-separated quasi-paracompact rigid K-space X and every affinoid open W = Spa(R, R°) ⊆ X, there are an admissible formal model 𝔛 of X and a formal affine open Spf(R₀) ⊆ 𝔛 with generic fibre W, where R₀ ⊆ R° is open and bounded, such that Spec(R°/R°°) → Spec(R₀/ϖR₀) is a homeomorphism for a pseudo-uniformizer ϖ of K.",
+    "supplier": "AdicSpacesPartIII",
+    "section": "R2.4–R2.5"
   },
   {
     "slug": "generically-reduced-functorial-resolution",
-    "needs": "Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps, with countable invariant values for synchronization.",
+    "needs": "Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps; for both the reduced and generically reduced functors, provide a common countable ordered set of invariant values for synchronization.",
     "supplier": "ResolutionOfSingularitiesCharacteristicZero",
     "section": "7.5–7.6"
   },
   {
     "slug": "represented-smooth-homogeneous-quotient",
-    "needs": "For a smooth finite-type affine group G over a characteristic-zero field and a closed subgroup H with represented fppf quotient G/H, provide the smooth surjective H-torsor G → G/H, Cartier smoothness of H, and the same smoothness for the orbit morphism through every rational quotient point after arbitrary field extension.",
+    "needs": "For a smooth finite-type affine group G over a field of characteristic zero and a closed subgroup scheme H whose fppf quotient G/H is represented by a scheme, the quotient morphism G → G/H is smooth and surjective.",
     "supplier": "ReductiveGroups",
     "section": "Layer 3"
   }
