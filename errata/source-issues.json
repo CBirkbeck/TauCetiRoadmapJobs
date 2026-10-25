@@ -109471,10 +109471,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1225#issuecomment-6401224511"
+  },
+  {
+   "kind": "misprint",
+   "source": "Feng24",
+   "locator": "Example 3.4, printed p.14, Feng24 line 643",
+   "says": "the source calls the four-term periodic complex nullhomotopic",
+   "should": "exact (acyclic), since a σ-equivariant contraction would split a trivial module off an induced one",
+   "affects": "nothing",
+   "note": "(the argument uses only that the middle terms vanish in the quotient). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"7d8ff96\", \"job\": \"REV-PKG-SheafTheoreticSmithTheory~2\", \"model\": \"fable\", \"worker\": \"fable-rev117\"} -->",
+   "roadmap": "SheafTheoreticSmithTheory",
+   "job": "REV-PKG-SheafTheoreticSmithTheory~2",
+   "board_pr": 1658,
+   "head": "7d8ff96",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1658#issuecomment-6401415235"
   }
  ],
- "scanned_to": "2026-10-25T18:06:31Z",
- "updated": "2026-10-25T18:11:04Z",
+ "scanned_to": "2026-10-25T18:22:53Z",
+ "updated": "2026-10-25T18:24:59Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
