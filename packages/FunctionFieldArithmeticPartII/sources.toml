@@ -40,6 +40,9 @@ cited_for = ["Worked examples", "§1.1–1.2", "§1.6–1.7", "§1.9–1.13", "�
 
 [[source]]
 id = "STACKS-KUMMER"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 040N"
+year = 2026
 locator_scheme = "tag"
 locator = "Section 59.28, tags 03PK and 040N; Lemma 59.28.3"
 url = "https://stacks.math.columbia.edu/tag/040N"
@@ -50,14 +53,13 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["Worked examples", "§1.2–1.3", "§1.9–1.14", "§1.20", "§1.26", "§1.28", "§1.41–1.42", "§1.51–1.52", "§1.67–1.71", "§1.78–1.81", "§1.89–1.91", "§1.97–1.99", "§1.101", "§1.112–1.119", "§1.124–1.127", "§1.134–1.138", "§1.145–1.146", "§1.151–1.155", "§1.159", "§1.162–1.171", "§1.176–1.178", "§1.184–1.187", "§1.195–1.197", "§1.204–1.206", "§1.215", "§1.226–1.227", "§1.235–1.238", "§4.10"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 040N"
-year = 2026
-
 related_urls = ["https://stacks.math.columbia.edu/tag/03PK"]
 
 [[source]]
 id = "FramedRoot-codex-rtOQ9t"
+authors = "Jarod Alper"
+title = "Stacks and Moduli"
+year = 2026
 locator_scheme = "section"
 locator = "Draft of 5 January 2026, Examples 4.9.21–4.9.22 and Exercise 4.9.23, pp.159–160"
 url = "https://sites.math.washington.edu/~jarod/moduli.pdf"
@@ -67,13 +69,13 @@ sha256 = "f07437af689e9ae4ccd355183f357d234474606a4e0d6511ff2d4ac0a4f14d6d"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Worked examples", "§1.4", "§1.15–1.18", "§1.29–1.39", "§1.54–1.64", "§1.82–1.87", "§1.102–1.107", "§1.128–1.129", "§1.147–1.149"]
-authors = "Jarod Alper"
-title = "Stacks and Moduli"
-year = 2026
+cited_for = ["Worked examples", "§1.4", "§1.15–1.17", "§1.29–1.39", "§1.54–1.64", "§1.82–1.87", "§1.102–1.107", "§1.128–1.129", "§1.147–1.149"]
 
 [[source]]
 id = "NormalizationThree-codex-rtOQ9t"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 01JO"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 01JO"
 url = "https://stacks.math.columbia.edu/tag/01JO"
@@ -84,12 +86,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§1.5", "§1.21–1.22", "§1.43–1.45", "§1.72–1.73", "§1.92–1.95", "§1.119–1.121", "§1.136", "§1.139–1.143", "§1.153", "§1.156–1.158", "§1.163–1.166", "§1.168", "§1.172–1.175", "§1.179–1.183", "§1.188–1.194", "§1.198–1.203", "§1.208–1.212", "§1.219–1.224", "§1.229–1.234", "§1.239", "§3.115", "§3.139", "§3.161–3.162", "§3.191", "§3.222", "§3.248", "§3.270–3.271", "§3.338–3.339", "§3.348", "§3.357–3.358", "§3.368–3.369", "§3.377–3.381"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 01JO"
-year = 2026
 
 [[source]]
 id = "FramedFppfCover-codex-rtOQ9t"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 021M"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 021M"
 url = "https://stacks.math.columbia.edu/tag/021M"
@@ -100,12 +102,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§1.19", "§1.40", "§1.65–1.66", "§1.88", "§1.108–1.111", "§1.130–1.133", "§1.150"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 021M"
-year = 2026
 
 [[source]]
 id = "FramedNormalizationArrows-codex-rtOQ9t"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 04V8"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 04V8"
 url = "https://stacks.math.columbia.edu/tag/04V8"
@@ -116,12 +118,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = []
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 04V8"
-year = 2026
 
 [[source]]
 id = "STACKIFICATION"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 02ZO"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 02ZO"
 url = "https://stacks.math.columbia.edu/tag/02ZO"
@@ -132,12 +134,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§1.240–1.242"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 02ZO"
-year = 2026
 
 [[source]]
 id = "AOV08"
+authors = "Dan Abramovich, Martin Olsson and Angelo Vistoli"
+title = "Tame stacks in positive characteristic"
+year = 2008
 locator_scheme = "section"
 locator = "Definition 3.1, Theorem 3.2 and Corollary 3.3, pp.1077–1078"
 url = "https://www.numdam.org/item/10.5802/aif.2378.pdf"
@@ -148,12 +150,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["Worked examples", "§2.16"]
-authors = "Dan Abramovich, Martin Olsson and Angelo Vistoli"
-title = "Tame stacks in positive characteristic"
-year = 2008
 
 [[source]]
 id = "B24"
+authors = "Giulio Bresciani"
+title = "On the birational section conjecture with strong birationality assumptions"
+year = 2024
 locator_scheme = "section"
 locator = "pp.133, 135–136"
 url = "https://link.springer.com/content/pdf/10.1007/s00222-023-01220-6.pdf"
@@ -161,12 +163,12 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Worked examples", "§3.2", "§3.14", "§3.62", "§3.78", "§3.80–3.81", "§3.97", "§3.120–3.121", "§3.404", "§3.409", "§3.413", "§3.418", "§3.427–3.428"]
-authors = "Giulio Bresciani"
-title = "On the birational section conjecture with strong birationality assumptions"
-year = 2024
 
 [[source]]
 id = "AffineRootPointGroupoid-rtOQ9t"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 022Y"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 022Y"
 url = "https://stacks.math.columbia.edu/tag/022Y"
@@ -177,12 +179,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§3.10", "§3.30–3.33", "§3.49–3.56", "§3.69–3.77", "§3.92–3.96", "§3.117–3.119", "§3.143", "§3.166–3.169", "§3.194–3.197", "§3.223", "§3.249–3.251", "§3.359", "§3.370", "§3.387", "§3.396–3.397", "§3.408", "§3.411–3.412", "§3.417", "§3.422–3.423"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 022Y"
-year = 2026
 
 [[source]]
 id = "Stacks-finite-root-projections-codex-7e92bd"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 01YW"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 01YW"
 url = "https://stacks.math.columbia.edu/tag/01YW"
@@ -193,12 +195,14 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§3.116", "§3.140–3.142", "§3.163–3.165", "§3.192–3.193", "§3.340", "§3.349", "§3.360", "§3.388–3.389"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 01YW"
-year = 2026
 
 [[source]]
 id = "YZ19"
+authors = "Zhiwei Yun and Wei Zhang"
+title = "Shtukas and the Taylor expansion of L-functions (II)"
+year = 2019
+doi = "10.4007/annals.2019.189.2.2"
+arxiv = "1712.08026"
 locator_scheme = "section"
 locator = "Appendix A.1–A.3, Definitions A.1–A.3, Lemmas A.4–A.10, Propositions A.11–A.12, pp.514–526; §6.2.1, pp.496–497"
 url = "https://math.mit.edu/~zyun/GZW_ramified_published.pdf"
@@ -208,16 +212,14 @@ sha256 = "700e0b09f2320912b75f5a16968c5aa3f96a0ad74e3ca375aacedec7e85d296c"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Worked examples", "§4.1–4.12", "§5.1–5.23", "§6.1–6.12", "§7.1–7.25", "§8.1–8.13", "§9.1–9.18", "§10.1–10.26", "§10.28–10.29", "§10.31", "§7.29"]
-authors = "Zhiwei Yun and Wei Zhang"
-title = "Shtukas and the Taylor expansion of L-functions (II)"
-year = 2019
-doi = "10.4007/annals.2019.189.2.2"
-arxiv = "1712.08026"
 version_note = "Theorem numbering and page locators refer to the published author-hosted PDF."
+cited_for = ["Worked examples", "§4.1–4.12", "§5.1–5.23", "§6.1–6.12", "§7.1–7.25", "§8.1–8.13", "§9.1–9.18", "§10.1–10.26", "§10.28–10.29", "§10.31", "§7.29"]
 
 [[source]]
 id = "StacksPic"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0372"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0372"
 url = "https://stacks.math.columbia.edu/tag/0372"
@@ -228,12 +230,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§4.4"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0372"
-year = 2026
 
 [[source]]
 id = "StacksRes"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 05Y8"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 05Y8"
 url = "https://stacks.math.columbia.edu/tag/05Y8"
@@ -244,12 +246,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§4.6"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 05Y8"
-year = 2026
 
 [[source]]
 id = "STACKS-DIV"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0B9C"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0B9C"
 url = "https://stacks.math.columbia.edu/tag/0B9C"
@@ -260,12 +262,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§5.11", "§5.13", "§5.23"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0B9C"
-year = 2026
 
 [[source]]
 id = "STACKS-PROP"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0CL4"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0CL4"
 url = "https://stacks.math.columbia.edu/tag/0CL4"
@@ -276,12 +278,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§5.19", "§5.23"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0CL4"
-year = 2026
 
 [[source]]
 id = "STACKS-QF"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 06PT"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 06PT"
 url = "https://stacks.math.columbia.edu/tag/06PT"
@@ -292,12 +294,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§5.23"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 06PT"
-year = 2026
 
 [[source]]
 id = "STACKS-RES"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 06MC"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 06MC"
 url = "https://stacks.math.columbia.edu/tag/06MC"
@@ -308,9 +310,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§5.23"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 06MC"
-year = 2026
 
 [[source]]
 id = "ETINGOF"
@@ -350,6 +349,9 @@ cited_for = ["§7.2", "§7.11", "§7.14"]
 
 [[source]]
 id = "STACKS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0BSE"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0BSE"
 url = "https://stacks.math.columbia.edu/tag/0BSE"
@@ -359,10 +361,7 @@ sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["§7.2–7.3", "§7.7"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0BSE"
-year = 2026
+cited_for = ["§7.3", "§7.7"]
 
 [[source]]
 id = "NOOHI"
@@ -384,6 +383,9 @@ cited_for = ["§7.3", "§7.26"]
 
 [[source]]
 id = "CONRAD-EXT"
+authors = "Keith Conrad"
+title = "Exterior powers"
+year = 2026
 locator_scheme = "section"
 locator = "§§3–5, exterior products and naturality"
 url = "https://kconrad.math.uconn.edu/blurbs/linmultialg/extmod.pdf"
@@ -393,14 +395,14 @@ sha256 = "95c48ea826b3c74d5bdbb36ea002f46dd747c7c42e164ce2fee5f95b1fae62e1"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["§7.5", "§7.9"]
-authors = "Keith Conrad"
-title = "Exterior powers"
-year = 2026
 version_note = "Undated author notes; year records the accessed edition."
+cited_for = ["§7.5", "§7.9"]
 
 [[source]]
 id = "MILNE-CFT"
+authors = "James S. Milne"
+title = "Class Field Theory"
+year = 2020
 locator_scheme = "section"
 locator = "Version 4.03, Chapter II, Proposition 1.30 and Corollary 1.31"
 url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
@@ -411,12 +413,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§7.6"]
-authors = "James S. Milne"
-title = "Class Field Theory"
-year = 2020
 
 [[source]]
 id = "StacksVanishing"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0E3A"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0E3A"
 url = "https://stacks.math.columbia.edu/tag/0E3A"
@@ -427,12 +429,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§8.5"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0E3A"
-year = 2026
 
 [[source]]
 id = "StacksBaseChange"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 07VJ"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 07VJ"
 url = "https://stacks.math.columbia.edu/tag/07VJ"
@@ -443,9 +445,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["Worked examples", "§8.5"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 07VJ"
-year = 2026
 
 [[source]]
 id = "SGA1"
@@ -485,6 +484,9 @@ cited_for = ["§7.27–7.28", "§8.11–8.12", "§7.29"]
 
 [[source]]
 id = "StacksLisse"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0DV4"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0DV4"
 url = "https://stacks.math.columbia.edu/tag/0DV4"
@@ -495,12 +497,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§8.12"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0DV4"
-year = 2026
 
 [[source]]
 id = "STACKS-TORSORS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 03AG"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 03AG"
 url = "https://stacks.math.columbia.edu/tag/03AG"
@@ -511,12 +513,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§10.8", "§10.26–10.27"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 03AG"
-year = 2026
 
 [[source]]
 id = "MILNE-LEC"
+authors = "James S. Milne"
+title = "Lectures on Etale Cohomology"
+year = 2013
 locator_scheme = "section"
 locator = "Version 2.21, §9 property (c), pp.64–66; §11, Theorem 11.4, pp.76–79"
 url = "https://www.jmilne.org/math/CourseNotes/LEC.pdf"
@@ -527,12 +529,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["Worked examples", "§10.8", "§10.27–10.29"]
-authors = "James S. Milne"
-title = "Lectures on Etale Cohomology"
-year = 2013
 
 [[source]]
 id = "STACKS-NORMS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0BCX"
+year = 2026
 locator_scheme = "tag"
 locator = "Tag 0BCX"
 url = "https://stacks.math.columbia.edu/tag/0BCX"
@@ -543,12 +545,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§10.8–10.9", "§10.21", "§10.31"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0BCX"
-year = 2026
 
 [[source]]
 id = "STACKS-FLAT-COLIMIT"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 090N"
+year = 2026
 locator_scheme = "tag"
 locator = "Lemma 10.39.20, tag 090N"
 url = "https://stacks.math.columbia.edu/tag/090N"
@@ -559,12 +561,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§2.17", "§3.13"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 090N"
-year = 2026
 
 [[source]]
 id = "STACKS-AFFINE-DESCENT"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 0245"
+year = 2026
 locator_scheme = "tag"
 locator = "Lemma 35.37.1, tag 0245"
 url = "https://stacks.math.columbia.edu/tag/0245"
@@ -575,12 +577,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§3.13"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 0245"
-year = 2026
 
 [[source]]
 id = "STACKS-DESCENT-PROPERTIES"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, 02KY"
+year = 2026
 locator_scheme = "tag"
 locator = "Lemmas 35.23.13, 35.23.17 and 35.23.25, tags 02KY, 02L2, 02LA"
 url = "https://stacks.math.columbia.edu/tag/02KY"
@@ -591,9 +593,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 cited_for = ["§3.13"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project, 02KY"
-year = 2026
 
 [[source]]
 id = "STACKS-STACK-REGULARITY"
@@ -628,3 +627,19 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
 cited_for = ["§7.29"]
+
+[[source]]
+id = "STACKS-KAROUBIAN"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Homological Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 09SF"
+url = "https://stacks.math.columbia.edu/tag/09SF"
+fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=09SF"
+fetched_at = "2026-10-25T19:30:18Z"
+sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["§7.2"]
