@@ -4738,6 +4738,12 @@
       "needs": "For each φ, φ′ ∈ C_c^∞(Γ\\GL₂(A)) and Φ ∈ S(M₂(A)), supply a right half-plane of absolute convergence for the double Godement–Jacquet integral ∫GL₂(A) c(g)Φ(g)|det g|ˢ⁺¹ᐟ² d×g, where c(g)=∫Γ\\GL₂(A) φ′(h⁻ᵀ)φ(hg)dh and Γ=GL₂(F) over a global function field."
     },
     {
+      "slug": "odd-equal-characteristic-gl2-classification",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "R16.2.1",
+      "needs": "Extend §R16.2.1 to every nonarchimedean local field F of positive odd characteristic with ν = |·|F, complex coefficients and smooth quasicharacters χ₁,χ₂: normalized I(χ₁,χ₂) is irreducible exactly when χ₁χ₂⁻¹ ∉ {ν,ν⁻¹}, and every irreducible smooth GL₂(F)-representation is a determinant character, an irreducible principal series, an essentially Steinberg representation or a supercuspidal representation, the last three classes being generic and the first nongeneric, using the existing SmoothRepresentationsOfLocalGroups §SR.3a.1 and §SR.5.2 inputs."
+    },
+    {
       "slug": "all-generic-kirillov",
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
       "section": "R16.2.1 and R16.2.8",

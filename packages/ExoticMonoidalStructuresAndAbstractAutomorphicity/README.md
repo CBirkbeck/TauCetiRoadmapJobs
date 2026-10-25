@@ -6,9 +6,9 @@
 
 This roadmap owns the GL₂-specific triality representation, spectral rigidification, exotic product, Whittaker-unit centre calculation, associator, categorical trace, theta multiplication, automorphic ideal I, its module category, spin spherical coalgebra and convolution, and the normalization-aware induction and component comparisons. The scalar metaplectic extension is imported; the rigidified lift of the specific triple GL₂ action is owned here. The matrix determinant pairing is a particular quadratic polarization, rather than a new theory of bilinear forms. The unit-free idempotent theorem is owned here because the categorical and monoidal roadmaps state neither its defect-intertwining hypotheses nor its conclusion. The smooth Eilenberg–Watts coevaluation and triangle identities of §5.3, the spherical counit transports of §9.2, and the spin-section and inverse-transpose transport computations of §9.4 are targets of this roadmap.
 
-General smooth representations, their abelian and derived categories, compact induction, Jacquet and Whittaker functors, locally unital Hecke modules, averaging, Bernstein decomposition and the centre belong to SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4, SR.0d.1–SR.0d.2, SR.1.1–SR.1.3, SR.2.1–SR.2.3 and SR.3.2. Their constructions are not targets here. Section 3.2 only specializes the supplied module theory to the Bernstein direct sum and distinguishes full from finite-support Hom. The compact-projective and endomorphism calculation for compact induction from SL₂(O) is supplied there under the exact extension below; §4.3 owns the exotic coalgebra equivalence that uses it. Ordinary K-spherical Satake, owned by its §SR.4.1, does not identify this larger generator.
+General smooth representations, their abelian and derived categories, compact induction, Jacquet and Whittaker functors, locally unital Hecke modules, averaging, Bernstein decomposition and the centre belong to SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4, SR.0d.1–SR.0d.2, SR.1.1–SR.1.3, SR.2.1–SR.2.3 and SR.3.2. Jacquet subrepresentation and countable Schur belong to its §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles. The unnormalized mirabolic functors and their exact adjunction sequence belong to its §SR.5.1, mirabolic-derivatives and derivative-exactness; the two segment orientations belong to its §SR.5.2, segment-representations. Their constructions are not targets here. Section 3.2 only specializes the supplied module theory to the Bernstein direct sum and distinguishes full from finite-support Hom. The compact-projective and endomorphism calculation for compact induction from SL₂(O) is supplied there under the exact extension below; §4.3 owns the exotic coalgebra equivalence that uses it. Ordinary K-spherical Satake, owned by its §SR.4.1, does not identify this larger generator.
 
-MetaplecticAutomorphicForms §§0.15–0.18, 1.1–1.4, 2.4b–2.7, 4.1, 4.1a and 4.2–4.4 own the local oscillator representation, generator relations, scalar extension, function-field vector-space Poisson adapter and rational symplectic splitting. Sections 6.1 and 6.3 own the restricted tensor triality kernel and its rational theta invariance. Fourier analysis and scalar zeta theory belong to AutomorphicLFunctionsAndLocalFactors AL.0–AL.3. Its AL.3, Curve additive analysis, owns the completion-valued adeles, residue characters and Poisson summation; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, 4.8–4.10, 5.8 and 6.1–6.4 own arithmetic degrees, divisor lattices, ray classes, degree-sensitive Chebotarev, adelic groups, central-lattice automorphic modules, constant terms and cusp finiteness. Section 6.2 forms compact and unrestricted smooth functions on the quotient of §6.1 using SmoothRepresentationsOfLocalGroups §SR.1.1, then compares the transpose dual. Local classification and generic models belong to GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8; function-field cuspidal factorization belongs to AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and cuspidal multiplicity one to its AL.3 with the extension below.
+MetaplecticAutomorphicForms §§0.15–0.18, 1.1–1.4, 2.4b–2.7, 4.1, 4.1a and 4.2–4.4 own the local oscillator representation, generator relations, scalar extension, function-field vector-space Poisson adapter and rational symplectic splitting. Sections 6.1 and 6.3 own the restricted tensor triality kernel and its rational theta invariance. Fourier analysis and scalar zeta theory belong to AutomorphicLFunctionsAndLocalFactors AL.0–AL.3. Its AL.3, Curve additive analysis, owns the completion-valued adeles, residue characters and Poisson summation; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, 4.8–4.10, 5.8 and 6.1–6.4 own arithmetic degrees, divisor lattices, ray classes, degree-sensitive Chebotarev, adelic groups, central-lattice automorphic modules, constant terms and cusp finiteness. Section 6.2 forms compact and unrestricted smooth functions on the quotient of §6.1 using SmoothRepresentationsOfLocalGroups §SR.1.1, then compares the transpose dual. Local classification and generic models belong to GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with the separate odd equal-characteristic classification and all-generic Kirillov extensions in Exact supplier contracts; function-field cuspidal factorization belongs to AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and cuspidal multiplicity one to its AL.3 with the extension below.
 
 AlgebraicVectorBundles §§L0B–L0C own line bundles and their tensor products. Completed/RestrictedProducts, Scope and ownership and Layer 1, owns coordinate maps, finite change of reference, reindexing and away-S decomposition; no generic restricted-product theorem is rebuilt. EnhancedDerivedSheaves §E5:presentability.2 owns presentable categorical tensors and their universal properties; the ordinary complex-linear extension below supplies the abelian version used in §5.3. Mathlib supplies matrix determinant and trace, algebraic coinvariants, native functors/isomorphisms, symmetric categories, commutative monoid objects and module objects.
 
@@ -40,7 +40,7 @@ The generic restricted-product coordinate and reference transports are consumed 
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
-Consume §§SR.0.1–SR.0.4 for smoothness, abelian structure, compact averaging, smooth duals and countable Schur; §SR.0d.1 for the derived smooth category and Ext; §§SR.1.1–SR.1.3 for the actual compact-support function carrier, convolution, locally unital modules and the Hecke equivalence; §§SR.2.1–SR.2.3 for compact induction in stages, adjunctions, Jacquet modules and Whittaker exactness; §SR.3.2 for Bernstein blocks and centres. Use the nonarchimedean field scope stated there. The ordinary Satake theorem in §SR.4.1 supplies only its stated spherical corner.
+Consume §§SR.0.1–SR.0.4 for smoothness, abelian structure, compact averaging and smooth duals; §SR.0d.1 for the derived smooth category and Ext; §§SR.1.1–SR.1.3 for the actual compact-support function carrier, convolution, locally unital modules and the Hecke equivalence; §§SR.2.1–SR.2.3 for compact induction in stages, adjunctions, Jacquet modules and Whittaker exactness; §SR.3.2 for Bernstein blocks and centres. Use §SR.3a.1, jacquet-subrepresentation, for embedding irreducibles into normalized induction from cuspidal data, and admissibility-of-irreducibles for countable Schur: an irreducible smooth complex representation of a locally profinite group countable at infinity has EndG(V) = ℂ. Use §SR.5.2, segment-representations, for the two Steinberg/character subquotient orientations. Use §SR.5.1, mirabolic-derivatives and derivative-exactness, on P₂ = F×⋉F with coefficients ℂ and the chosen nontrivial smooth θ: Φ⁻ takes θ-coinvariants, Φ⁺ is its compact-induction left adjoint, and Ψ⁻ and Ψ⁺ are ordinary coinvariants and inflation. These are the unnormalized functors, with Φ⁻Φ⁺ ≅ Id and exact sequence 0 → Φ⁺Φ⁻ → Id → Ψ⁺Ψ⁻ → 0. The residue characteristic p is invertible in ℂ and every nonzero character difference is a unit, as required by the supplier's generic-character specialization. Use the nonarchimedean field scope stated there. The ordinary Satake theorem in §SR.4.1 supplies only its stated spherical corner.
 
 The following contracts isolate the additional smooth and centre inputs. Compact averaging uses normalized Haar over ℂ: on C₂, averaging (x,y) gives ((x+y)/2,(x+y)/2); the corresponding coinvariant class is the same class, while unnormalized averaging doubles an invariant vector.
 
@@ -84,7 +84,9 @@ What FunctionFieldArithmetic must provide (gap:rational-theta-characteristic): S
 
 ### From TauCetiRoadmap.GL2AutomorphicRepresentationsAndTransfer
 
-Consume §§R16.2.1 and R16.2.8 for the explicit classification and supercuspidal Kirillov comparison at their stated scope, extended by the following contract. A supercuspidal has compact Kirillov functions and zero Jacquet boundary; a principal series has boundary and must not be assigned the same compact carrier. The trivial determinant character has zero nontrivial Whittaker quotient; Steinberg has Whittaker dimension one. These distinguish the extension contracts from a classification only by central character.
+Consume §§R16.2.1 and R16.2.8 for the explicit classification and supercuspidal Kirillov comparison over characteristic-zero local fields, with the two separate extensions below. The classification uses normalized induction I(χ₁,χ₂), with upper-Borel covariance δB¹ᐟ²χ₁χ₂ and right translation; put χ₁χ₂⁻¹ in that order and write ν = |·|F. This normalization is separate from the unnormalized functors in the conventions. SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations, supply the existing subrepresentation, admissibility and segment-orientation inputs, rather than an unconditional classification at this scope. A supercuspidal has compact Kirillov functions and zero Jacquet boundary; a principal series has boundary and must not be assigned the same compact carrier. The trivial determinant character has zero nontrivial Whittaker quotient; Steinberg has Whittaker dimension one. These distinguish the extension contracts from a classification only by central character.
+
+What GL2AutomorphicRepresentationsAndTransfer must provide (gap:odd-equal-characteristic-gl2-classification): Extend §R16.2.1 to every nonarchimedean local field F of positive odd characteristic with ν = |·|F, complex coefficients and smooth quasicharacters χ₁,χ₂: normalized I(χ₁,χ₂) is irreducible exactly when χ₁χ₂⁻¹ ∉ {ν,ν⁻¹}, and every irreducible smooth GL₂(F)-representation is a determinant character, an irreducible principal series, an essentially Steinberg representation or a supercuspidal representation, the last three classes being generic and the first nongeneric, using the existing SmoothRepresentationsOfLocalGroups §SR.3a.1 and §SR.5.2 inputs.
 
 What GL2AutomorphicRepresentationsAndTransfer must provide (gap:all-generic-kirillov): Supply the full uniformly smooth Kirillov realization and Jacquet boundary for every generic complex irreducible GL₂ representation over any nonarchimedean field of characteristic different from two.
 
@@ -208,7 +210,7 @@ Let Y°=S(G×F×), embedded in Y by extension by zero. It is stable under the tw
 
 (Dor23, §2.1, equations (2.1)–(2.2), p. 8; Lemma 2.19, p. 15; Remark 2.22, p. 17 (Dor23 line 768).)
 
-A proof route is as follows. Use openness of det≠0 to extend compactly supported locally constant functions. For generation apply exact mirabolic functors Φ⁺Φ⁻: their image in Y is exactly the functions supported on invertible matrices, and use the Weyl element.
+A proof route is as follows. Use openness of det≠0 to extend compactly supported locally constant functions. For generation apply the unnormalized exact mirabolic functors Φ⁺Φ⁻ from SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness: their image in Y is exactly the functions supported on invertible matrices, and use the Weyl element.
 
 The required interface has the following properties.
 
@@ -220,10 +222,11 @@ The required interface has the following properties.
 **Checks.**
 
 - A function supported on det m≠0 remains there under the middle unipotent. The coordinate change (m,y) ↦ (m,y·det m) of §1.3 sends (I₂,y) to (I₂,y) and (diag(π,1),y) to (diag(π,1),yπ); reciprocal scaling fails the second value.
-- A function supported on singular matrices cannot be an element of Y° unless it is zero. The zero matrix is excluded even when y = 1, so no singular orbit enters the open carrier.
+- The function Ψ(m,y) = 1M₂(O)(m)·1O×(y) belongs to Y. Over F = 𝔽₃((t)), Ψ(0,1) = Ψ(I₂,1) = 1 and Ψ(t⁻¹I₂,1) = 0. Every extension by zero from Y° vanishes at (0,1), so Ψ is not in its image; taking Y° = Y fails this Check.
+- On the inflated trivial mirabolic line, Φ⁻ = 0 because 1−θ(u) is a nonzero complex unit for some u. On Φ⁺(ℂ), Φ⁻ returns ℂ, so Φ⁺Φ⁻ is zero on the trivial orbit and the identity on the nontrivial character orbit.
 - A middle Fourier transform can acquire values at m=0; Y° must not be packaged with a full restricted middle G action. A Fourier transform of a small open compact ball around I₂ may have value at m = 0, detecting the failure of middle-G stability.
 
-*Needs:* §0.4; AutomorphicLFunctionsAndLocalFactors AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, with its equal-characteristic contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts.
+*Needs:* §0.4; AutomorphicLFunctionsAndLocalFactors AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, with its equal-characteristic contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness.
 
 ### Examples
 
@@ -231,7 +234,7 @@ For m = E₀₁ and n = E₁₀, B(m,n) = −1 and B(m,m) = 0. With g₁ = diag(
 
 ### Dependencies
 
-Mathlib `Matrix.det_fin_two`; Mathlib `Matrix.trace`; MetaplecticAutomorphicForms §§0.15–0.18, 1.1, 1.3–1.4; MetaplecticAutomorphicForms §§2.4b–2.7; AutomorphicLFunctionsAndLocalFactors AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, with its equal-characteristic contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+Mathlib `Matrix.det_fin_two`; Mathlib `Matrix.trace`; MetaplecticAutomorphicForms §§0.15–0.18, 1.1, 1.3–1.4; MetaplecticAutomorphicForms §§2.4b–2.7; AutomorphicLFunctionsAndLocalFactors AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, with its equal-characteristic contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness. The within-layer dependencies are the Needs lines above.
 
 ## Layer 1: Spectral rigidification and local zeta integrals
 
@@ -267,7 +270,7 @@ A proof route is as follows. Separate the rank-zero and rank-one strata. The zer
 - The same identity action on Tor¹ gives E²₀,₁ = 0 after tensoring with Ṽ; this is a functorial calculation, not a flatness claim.
 - For V = 1G the hypothesis fails and the zero stratum has nonzero balanced quotient; omitting the hypothesis loses that term.
 
-*Needs:* §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts.
+*Needs:* §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts.
 
 ### 1.3 Open spectral integral
 
@@ -275,7 +278,7 @@ For generic irreducible V and β(g)=⟨ṽ,π(g)v⟩, the formula μ(β⊗Ψ)(y)
 
 (Dor23, Equation (2.2), p. 8; Remark 2.21, p. 17 (Dor23 line 768).)
 
-A proof route is as follows. Use the regular bimodule identification for S(G), Schur duality for irreducible V, and change of variables to prove balancing. Integrate the compact g-support; establish the inverse using a matrix coefficient pairing normalized to 1.
+A proof route is as follows. Use the regular bimodule identification for S(G), countable Schur from SmoothRepresentationsOfLocalGroups §SR.3a.1, admissibility-of-irreducibles, for irreducible V (G is countable at infinity), and change of variables to prove balancing. Integrate the compact g-support; establish the inverse using a matrix coefficient pairing normalized to 1.
 
 The required interface has the following properties.
 
@@ -287,9 +290,9 @@ The required interface has the following properties.
 
 - On Ψ(g,y)=Φ(g)f(y det g), μ gives (∫β(g)Φ(g)d×g)f(y). Normalize the coefficient integral to one to obtain f(y); using y/det g twice gives a different Mellin power.
 - Changing a representative by an outer balanced relation leaves μ unchanged. For a translated compact indicator the change of variable restores exactly the same value and Haar factor.
-- A direct sum V₁⊕V₂ must not be given the same irreducible-isomorphism theorem. Taking two identical irreducible summands gives a 2×2 coefficient space, hence four copies instead of one.
+- A direct sum V₁⊕V₂ must not be given the same irreducible-isomorphism theorem. For a character line ℂχ, EndG(ℂχ) = ℂ has dimension one; two identical copies have EndG(ℂχ⊕ℂχ) = M₂(ℂ) of dimension four, hence four coefficient copies instead of one.
 
-*Needs:* §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4.
+*Needs:* §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §SR.3a.1, admissibility-of-irreducibles (countable Schur).
 
 ### 1.4 Kirillov spectral extension
 
@@ -303,9 +306,10 @@ A proof route is as follows. Use Y° generation for uniqueness. Compare its quot
 
 - For a supercuspidal, Jac(V) = 0 and the full target equals compact Kirillov functions.
 - A principal series has a nonzero torus boundary, so compact support alone is too small.
+- Over F = 𝔽₃((t)), ν(t) = 1/3 and ν⁻¹(t) = 3, the two excluded inducing-character ratios. Normalized I(ν¹ᐟ²,ν⁻¹ᐟ²) has Steinberg subobject and trivial quotient, with Whittaker dimensions 1 and 0; swapping the characters reverses the subobject and quotient. The ratio 1 is neither excluded value, so I(1,1) is irreducible and generic. These cases use the classification extension and the supplied segment orientations separately.
 - Replacing the middle action by a free action agreeing only on zero functions fails the open-part rigidification for a coefficient integral equal to one.
 
-*Needs:* §1.3; §1.2; §1.1; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts.
+*Needs:* §1.3; §1.2; §1.1; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations.
 
 ### 1.5 Local zeta comparison
 
@@ -329,7 +333,7 @@ For supercuspidal V, Jac(V) = 0 and the singular contraction vanishes. For gener
 
 ### Dependencies
 
-§0.4; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; AutomorphicLFunctionsAndLocalFactors AL.2, Godement–Jacquet standard functions; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem. The within-layer dependencies are the Needs lines above.
+§0.4; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §0.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; AutomorphicLFunctionsAndLocalFactors AL.2, Godement–Jacquet standard functions; AutomorphicLFunctionsAndLocalFactors AL.3, Function-field local factors, multiplicity one and converse theorem; SmoothRepresentationsOfLocalGroups §SR.3a.1, admissibility-of-irreducibles (countable Schur); SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations. The within-layer dependencies are the Needs lines above.
 
 ## Layer 2: Exotic product and Whittaker unit
 
@@ -469,7 +473,7 @@ The required interface has the following properties.
 - IsDegenerate D ↔ Φ⁻D=0.
 - The two vanishing conditions for every degenerate D.
 - Both predicates are preserved by representation isomorphisms.
-- The essential-image theorem §3.1-equivalence supplies closure under colimits.
+- The essential-image theorem §3.5 supplies closure under colimits.
 
 **Checks.**
 
@@ -478,7 +482,7 @@ The required interface has the following properties.
 - The nonsplit extension 0→1G→Eext→St→0 is degeneracy-free. Reversing the Hom/Ext arguments would wrongly exclude this object.
 - The product 1G⊛1G has a Steinberg subobject, so the degenerate subcategory is not a tensor ideal. Its Whittaker quotient is nonzero, contradicting tensor-ideal closure.
 
-*Needs:* §2.5; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts.
+*Needs:* §2.5; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness.
 
 ### 3.2 Locally unital Bernstein modules
 
@@ -529,7 +533,7 @@ The Whittaker functor refines to Φ⁻enh:Mod(G)→Modfirm(Z), and F(N)=N⊗Z Iu
 
 (Dor23, Claims 3.30, 3.32–3.33 and Lemma 3.35, pp. 27–29 (Dor23 line 1360).)
 
-A proof route is as follows. Prove the blockwise roughening/smoothing comparison of Lemma 3.35, using compact projective generators from the exact supplier contracts. Use §3.3 to identify underlineEndG(Iunit) with Z. Construct the adjunction by the enriched tensor-Hom correspondence. Compute the unit and the product comparison on Z and extend by colimits.
+A proof route is as follows. Prove the blockwise roughening/smoothing comparison of Lemma 3.35, using compact projective generators from the exact supplier contracts and the unnormalized mirabolic adjunction of SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness (Dor23 line 1425). Use §3.3 to identify underlineEndG(Iunit) with Z. Construct the adjunction by the enriched tensor-Hom correspondence. Compute the unit and the product comparison on Z and extend by colimits.
 
 The required interface has the following properties.
 
@@ -545,7 +549,7 @@ The required interface has the following properties.
 - For N supported on a single block the construction has no other block component. For e_cN = N and d ≠ c, e_dF(N) = 0.
 - For any firm N, applying Φ⁻enh to N⊗Z Iunit returns N, including infinite direct sums. For ⊕n Nn the returned vector has finite support, excluding a product in place of the colimit.
 
-*Needs:* §3.2; §2.4; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; §3.3.
+*Needs:* §3.2; §2.4; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; §3.3; SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness.
 
 ### 3.5 Degeneracy-free equivalence
 
@@ -569,7 +573,7 @@ The trivial representation has Φ⁻ = 0. Steinberg has Φ⁻ of dimension one b
 
 ### Dependencies
 
-§2.5; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §1.1; §2.4; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+§2.5; SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4; SmoothRepresentationsOfLocalGroups §SR.0d.1 and the smooth-Tor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §1.1; §2.4; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.5.1, mirabolic-derivatives and derivative-exactness. The within-layer dependencies are the Needs lines above.
 
 ## Layer 4: Spherical generator and centre equivalence
 
@@ -652,7 +656,7 @@ A proof route is as follows. Combine the two fully faithful component functors a
 - The mixed product (Z,0)⊗(0,Zsph) is (0,Zsph), matching Iunit⊛E = E.
 - A mixed map E → Iunit such as ε is absent from the product category; faithfulness therefore must not be promoted to fullness.
 
-*Needs:* §3.5; §4.3; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts.
+*Needs:* §3.5; §4.3; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations.
 
 ### Examples
 
@@ -660,7 +664,7 @@ Choose a ramified χ:F× → ℂ×. Then χ∘det has an SL₂(O)-fixed vector a
 
 ### Dependencies
 
-SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §2.4; §0.4; AutomorphicLFunctionsAndLocalFactors AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, with its equal-characteristic contract in Exact supplier contracts; §3.2; SmoothRepresentationsOfLocalGroups §SR.4.1 and its twisted-spherical-centre contract in Exact supplier contracts; §3.5; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §2.4; §0.4; AutomorphicLFunctionsAndLocalFactors AL.0, Local Schwartz–Bruhat spaces and finite Fourier levels, with its equal-characteristic contract in Exact supplier contracts; §3.2; SmoothRepresentationsOfLocalGroups §SR.4.1 and its twisted-spherical-centre contract in Exact supplier contracts; §3.5; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations. The within-layer dependencies are the Needs lines above.
 
 ## Layer 5: Associativity, trace and local convolution
 
@@ -744,7 +748,7 @@ The required interface has the following properties.
 - For Steinberg the conclusion holds although Steinberg is not degeneracy-free. Its nonzero Whittaker line supplies the unit quotient despite Ext¹(St,1G) ≠ 0.
 - For a determinant character there is no nonzero map Iunit→V, so this construction cannot be applied. The Whittaker quotient is zero, so a putative nonzero unit quotient would contradict exactness.
 
-*Needs:* §5.2; §2.5; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; Mathlib `CategoryTheory.CommMon`; §1.4.
+*Needs:* §5.2; §2.5; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; Mathlib `CategoryTheory.CommMon`; §1.4.
 
 ### 5.5 Spherical algebra of invariants
 
@@ -775,7 +779,7 @@ On a complex line, θ(x⊗y) = cxy has the two triple products c²xyz, and resca
 
 ### Dependencies
 
-Mathlib `CategoryTheory.Functor`, `CategoryTheory.Iso` and product categories; §4.4; §3.4; §4.3; §2.3; §2.5; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; Mathlib `CategoryTheory.CommMon`; §1.4; §4.2; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; EnhancedDerivedSheaves §E5:presentability.2 with its ordinary linear tensor contract. The within-layer dependencies are the Needs lines above.
+Mathlib `CategoryTheory.Functor`, `CategoryTheory.Iso` and product categories; §4.4; §3.4; §4.3; §2.3; §2.5; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; Mathlib `CategoryTheory.CommMon`; §1.4; §4.2; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; EnhancedDerivedSheaves §E5:presentability.2 with its ordinary linear tensor contract. The within-layer dependencies are the Needs lines above.
 
 ## Layer 6: Adelic product and theta multiplication
 
@@ -1428,7 +1432,7 @@ A proof route is as follows. For Eisenstein components import automorphicity of 
 - For a local Steinberg unit quotient, a Steinberg algebra module is a sum of Steinberg copies; a determinant character in the same Bernstein block is not such a module.
 - An automorphic determinant constituent of an induced torus character is included, although its nontrivial Whittaker quotient is zero.
 
-*Needs:* §11.5; §5.4; §8.2; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts; FunctionFieldArithmetic §6.3 with gap:eisenstein-constituent-automorphicity in Exact supplier contracts.
+*Needs:* §11.5; §5.4; §8.2; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; FunctionFieldArithmetic §6.3 with gap:eisenstein-constituent-automorphicity in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations.
 
 ### 11.7 Finite-length automorphic restriction
 
@@ -1452,7 +1456,7 @@ For an idele ratio of degree −m, choose z of degree N so that N, N−m and 2N�
 
 ### Dependencies
 
-FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; §10.5; §8.2; §10.1; FunctionFieldArithmetic §5.8; FunctionFieldArithmetic §§4.8–4.10; §7.4; FunctionFieldArithmetic §§6.3–6.4 with their central-lattice conventions and gap:eisenstein-constituent-automorphicity in Exact supplier contracts; AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and AL.3 with gap:function-field-cuspidal-multiplicity-one in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §5.4; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 and its full-Kirillov contract in Exact supplier contracts. The within-layer dependencies are the Needs lines above.
+FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, and AutomorphicLFunctionsAndLocalFactors AL.3, Curve additive analysis; SmoothRepresentationsOfLocalGroups §§SR.1.1–SR.1.3 and its firm-enrichment contract in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts; §10.5; §8.2; §10.1; FunctionFieldArithmetic §5.8; FunctionFieldArithmetic §§4.8–4.10; §7.4; FunctionFieldArithmetic §§6.3–6.4 with their central-lattice conventions and gap:eisenstein-constituent-automorphicity in Exact supplier contracts; AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and AL.3 with gap:function-field-cuspidal-multiplicity-one in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3.2 and its transpose-distribution contract in Exact supplier contracts; §5.4; GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with gap:odd-equal-characteristic-gl2-classification and gap:all-generic-kirillov in Exact supplier contracts; SmoothRepresentationsOfLocalGroups §SR.3a.1, jacquet-subrepresentation and admissibility-of-irreducibles, and §SR.5.2, segment-representations. The within-layer dependencies are the Needs lines above.
 
 ## Downstream consumers
 
