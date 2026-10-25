@@ -77935,10 +77935,26 @@
    "reported": "2026-10-25",
    "reporter": "claude opus",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1314#issuecomment-6391952754"
+  },
+  {
+   "kind": "misprint",
+   "source": "as-ref-022",
+   "locator": "equation (2), author manuscript p. 2 (as-ref-022 line 93)",
+   "says": "the negative-discriminant numerator is divided by the positive-discriminant count",
+   "should": "divided by the negative-discriminant count, consistently with M⁻",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"codex\", \"head\": \"b571a4cd35d3bd8aa74cb9d292e21421cdc19a60\", \"job\": \"REV-PKG-ArithmeticStatistics~2\", \"model\": \"gpt-6-astra\", \"worker\": \"chris-7\"} -->",
+   "roadmap": "ArithmeticStatistics",
+   "job": "REV-PKG-ArithmeticStatistics~2",
+   "board_pr": 128,
+   "head": "b571a4c",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/128#issuecomment-6391961506"
   }
  ],
- "scanned_to": "2026-10-25T01:28:38Z",
- "updated": "2026-10-25T01:28:57Z",
+ "scanned_to": "2026-10-25T01:29:43Z",
+ "updated": "2026-10-25T01:33:47Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
