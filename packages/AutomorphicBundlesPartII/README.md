@@ -508,7 +508,7 @@ Its API is:
 - On fixed legs two correspondences agree exactly when their coefficient arrows Lp₂*F→p₁!G agree.
 - For fixed legs the coefficient arrows form an O-module; coefficient pre/postcomposition is O-linear.
 
-*Needs:* SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
+*Needs:* SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §3.0a for the solid branch.
 
 **Checks.**
 
@@ -550,7 +550,7 @@ For two correspondences with proper first legs and coefficient morphisms T,S, fo
 
 A proof route is to use the fibre-product correspondence and the base-change transformation for the middle legs. Compose the coefficient morphisms through the upper-shriek projection formula. Use adjunction coherence to identify global actions; use the solid coherence constructed in §3.0a.
 
-*Needs:* §3.2; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
+*Needs:* §3.2; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §3.0a for the solid branch.
 
 **Checks.**
 
@@ -614,7 +614,7 @@ Under a base change S′→S, coherent upper-shriek base change transports T if 
 
 A proof route is to write both base-change squares, including the one for C and p₁, and impose Tor-independence. Use the coherent base-change transformation for upper shriek and pullback. Identify global operators by proper base change, separately from underived sheaf base change.
 
-*Needs:* §3.1; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
+*Needs:* §3.1; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §3.0a for solid base change and its discrete comparison.
 
 **Checks.**
 
@@ -661,17 +661,22 @@ A proof route is to apply the quasi-isogeny to both graded logarithmic Hodge fac
 
 ### 3.9 The transpose correspondence
 
-For smooth X,C over S and finite locally free legs p₁,p₂, coherent duality transposes T:p₂*F→p₁!G into Tᵗ:p₁*D_XG→p₂!D_XF, where D_X=RHom(−,f!O_S), for dualizable coefficients in the stated bounded categories. With X proper, its RΓ action is adjoint to RΓ(T). Swapping the legs also swaps and dualizes the coefficient; a Hecke double coset need not be self-adjoint.
+Let S be Noetherian and f:X→S and c:C→S smooth separated finite-type morphisms. For a correspondence of §3.1 and perfect coefficients F,G in Dᵇ_coh(X), coherent duality transposes T:Lp₂*F→p₁!G into Tᵗ:Lp₁*D_XG→p₂!D_XF, where D_X=RHom(−,f!O_S) and D_C=RHom(−,c!O_S). Use the bounded coherent-duality categories of SchemeAndStackFoundations §§2.18–2.21, with their finite-Tor and perfectness hypotheses; the smooth structural morphisms give invertible relative dualizing objects, and each leg is lci. No finiteness or flatness of the legs is required. When the legs are proper, §3.0a transports this statement to the solid category on the same bounded perfect inputs.
 
-(BP26, Proposition 2.7.3, pp. 23–24; CG20 Appendix A.3.2, pp. 86–88).
+For the two global actions require both p₁ and p₂ proper. If f is proper, joint properness in §3.1 ensures this, and the induced maps Rf_*F→Rf_*G and Rf_*D_XG→Rf_*D_XF are adjoint under relative coherent duality. Over S=Spec A the identity reads ⟨RΓ(T)x,y⟩_G=⟨x,RΓ(Tᵗ)y⟩_F for the derived A-valued evaluation pairings. Finite-flat trace is a specialization. Swapping the legs also swaps and dualizes the coefficient; a Hecke double coset need not be self-adjoint.
 
-A proof route is to dualize the coefficient morphism and identify the duals of pullback and upper shriek. Use biduality and finite-flat duality to put it in the reversed-leg form. Apply proper global duality to prove the pairing identity; evaluate the inverse double coset and central character separately.
+(BP26, Proposition 2.7.3 and proof, pp. 23–24, BP26 line 1182; extension from finite locally free sheaves to perfect complexes uses the same tensor-duality identities; CG20 Appendix A.3.2, pp. 86–88.)
 
-*Needs:* §3.2; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; DeformationAndDerivedPatchingAlgebra §§7.1–7.9.
+A proof route is to apply D_C to the coefficient morphism. The lci formula pᵢ!K≃Lpᵢ*K⊗pᵢ!O_X and the invertibility of pᵢ!O_X identify D_C(p₁!G)≃Lp₁*D_XG and D_C(Lp₂*F)≃p₂!D_XF. Perfectness supplies tensor duality and biduality. Apply proper relative duality and its counit to obtain adjointness; evaluate the inverse double coset and central character separately.
+
+*Needs:* §3.1; §3.2; §3.0a for the solid comparison; SchemeAndStackFoundations §§2.18–2.21.
 
 **Checks.**
 
 - On three points over ℚ with the sum pairing, let σ cycle the basis e₁→e₂→e₃→e₁. The transpose sends e₁ to e₃, whereas σ sends e₁ to e₂: ⟨σe₁,e₂⟩=1=⟨e₁,σ⁻¹e₂⟩ and ⟨e₁,σe₂⟩=0.
+- Let both legs be b:C=Bl_point(ℙ²_k)→X=ℙ²_k, with exceptional divisor E and F=G=O_X. Then b!O_X=O_C(E), and use the fundamental class O_C→O_C(E). The cokernel is O_E(−1), with H⁰=H¹=0; together with Rb_*O_C=O_X this identifies Rb_*O_C→Rb_*O_C(E) with id on O_X. The trace is identity off E and hence everywhere. The action on H⁰(O_X)=k and its transpose on H²(ω_X)=k are both 1; evaluation gives 1=1. The fibre E≃ℙ¹ has dimension one, so these proper legs are not finite.
+- For the closed point i:Spec k→X=𝔸¹_k, take p₁=p₂=i, F=O_X and G=O_X[1]. Here i!O_X=k[−1], D_XF=O_X[1] and D_XG=O_X. The coefficient arrow k→i!G=k and its transpose k→i!D_XF=k are both identity. The shift −1 is necessary even though both schemes are smooth; the proper-X global pairing assertion does not apply to this X.
+- For the split degree-two cover of Spec k, the unit coefficient arrow and finite-flat trace give global scalar 2 and transpose scalar 2. The pairing on (1,1) gives 2=2, including 0=0 in characteristic two; when 2 is invertible, replacing the trace by an averaged trace would instead give 1 and fail.
 
 ### 3.10 Contracted support filtrations
 
@@ -689,7 +694,7 @@ Its API is:
 - Intersecting each Z_l with a correspondence-stable open preserves contraction.
 - Transposing the legs exchanges contracted and expanded filtrations, including the empty and total closed sets.
 
-*Needs:* §3.1.
+*Needs:* §3.1; §3.0a for the enhanced support diagrams.
 
 **Checks.**
 
@@ -721,7 +726,7 @@ Let X be qcqs over the fixed base, F∈D⁻(O_(X,solid)), and ∅=Z_(−1)⊆Z�
 
 A proof route is to use the complementary inclusion of inverse-image opens to construct the j! transformation through unit, T and the shriek counit. Use the solid completion localization triangles to assemble one filtered transformation; retain §3.0a for the stable enhancement and its coherences. Apply the filtered-complex spectral-sequence construction of BP26 Theorem 2.9.7; this is the completion/compact-support spectral sequence, rather than the ordinary Kempf resolution.
 
-*Needs:* §3.10; §3.2; §3.11.
+*Needs:* §3.10; §3.2; §3.11; §3.0a for the solid filtered coherence.
 
 **Checks.**
 
@@ -922,7 +927,7 @@ Its API is:
 - Restriction to a boundary chart and an allowed fan refinement preserves the completed expansion and its finite filtration.
 - A coefficient isomorphism carrying the chart filtrations and monomial expansions transports the formally canonical property.
 
-*Needs:* AutomorphicBundles B3.10; §1.2; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; §3.0b.
+*Needs:* AutomorphicBundles B3.10; §1.2; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; §3.0b; §5.0 for quotient descent.
 
 **Checks.**
 
@@ -1059,7 +1064,7 @@ At hyperspecial p-level on the smooth Hilbert–Siegel toroidal model, filter by
 
 A proof route is to use the EO codimension, affine-image and regular-thickening results of §5.0. Apply the general Kempf resolution to the MCM coefficient and identify the support terms by cofinal Koszul thickenings. Use relative vanishing over the affine minimal stratum image to prove the required term acyclicity.
 
-*Needs:* AutomorphicBundles B3.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §5.2; ShimuraCompactifications C3.3–C3.10 and C5.
+*Needs:* §5.0 for the EO geometry and regular thickenings; AutomorphicBundles B3.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §5.2; ShimuraCompactifications C3.3–C3.10 and C5.
 
 **Checks.**
 
@@ -1073,7 +1078,7 @@ For the preceding EO filtration, restriction of every Cousin term of a subcanoni
 
 A proof route is to express the Cousin term as the filtered colimit of Ext groups for the regular thickenings. Prove boundary regularity on each quotient from the geometric non-containment and CM hypotheses. Localize at the boundary equation and use the resulting injection in every term.
 
-*Needs:* AutomorphicBundles B3.10; §5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
+*Needs:* §5.0 for boundary regularity; AutomorphicBundles B3.10; §5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
 
 **Checks.**
 
@@ -1101,7 +1106,7 @@ For the BCGP21 Hilbert–Siegel models with p split completely in F and K_p=∏_
 
 A proof route is to establish the convolution relations on the open Shimura variety using its finite étale correspondences. Use termwise interior injection to prove those same relations on the integral Cousin complex. Pass from the modulo-pⁿ models through derived formal completion to RΓ. Obtain the canonical-coefficient result by duality using the actual integral dual coefficient (divided powers where required), and descend to G₁ only under the explicit component-group condition.
 
-*Needs:* AutomorphicBundles B3.10; §5.12; §5.11; §3.13; §3.11; SmoothRepresentationsOfLocalGroups SR.1; SchemeAndStackFoundations §§4.8–4.10; DeformationAndDerivedPatchingAlgebra §§7.1–7.9.
+*Needs:* §5.0 for compactified quotient descent; AutomorphicBundles B3.10; §5.12; §5.11; §3.13; §3.11; SmoothRepresentationsOfLocalGroups SR.1; SchemeAndStackFoundations §§4.8–4.10; DeformationAndDerivedPatchingAlgebra §§7.1–7.9.
 
 **Checks.**
 
