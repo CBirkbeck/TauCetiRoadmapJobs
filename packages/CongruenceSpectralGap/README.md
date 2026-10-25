@@ -10,11 +10,12 @@ The following objects are supplied once and consumed by section.
 
 - The congruence predicate and finite-index implication, orbit quotient, fundamental-domain measure independence, complex L², partial linear maps, Mellin transforms, gamma factor and finite characters are already in the library; their exact declarations are in the supplier contracts. No replacement carriers or independent orthogonality theorem for all characters are built here.
 - TauCetiRoadmap.FuchsianOrbifolds Layers 0–3 owns the effective projective action, elliptic quotient charts, covolume and cusp coordinates. The upstairs volume comparison is already in the library as `UpperHalfPlane.riemannianVolume_eq_volume`.
-- TauCetiRoadmap.DifferentialGeometry Layer 12 owns gradients, volume density and Green identities. TauCetiRoadmap.PDE owns local weak derivatives and Sobolev energy. Their supplied local objects are used to prove quotient density and closability.
-- TauCetiRoadmap.OperatorTheory/SelfAdjointSpectralTheory SA-C and SA-E01–SA-E14 owns unbounded self-adjoint spectral calculus. TauCetiRoadmap.UnboundedOperators UO-D06 owns closed-form representation and Friedrichs extension; §§0.6–0.7 of TauCetiRoadmap.AutomorphicSpectralTheory owns its automorphic transport. The abstract representation theorem is not a target of this part.
-- TauCetiRoadmap.AutomorphicSpectralTheory §§1.16 and 1.16a owns the differential expression and Γ₀(N) operator; §§4.3–4.4 and 4.8 owns spectral orthosums, residual spaces and modular Eisenstein expansions. This part compares those objects with the arbitrary-congruence operator instead of reconstructing generic spectral decomposition.
-- TauCetiRoadmap.AutomorphicFormsOnReductiveGroups §§2.5–2.7, 3.1 and 3.4–3.5 owns local parameters, generic unitary classification, classical comparison and representation factorization. Cuspidal carriers and their discrete constituent decomposition are stated by TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.F.6. TauCetiRoadmap.GlobalNumberFields Layer 9 owns the unique real shift and unitary part of a Hecke character.
+- TauCetiRoadmap.DifferentialGeometry Layer 12 owns gradients, volume density and Green identities. TauCetiRoadmap.PDE Lane A, item 1, owns weak derivatives and the Sobolev spaces built from them, and its Lane E owns local elliptic regularity. Their supplied local objects are used to prove quotient density and closability.
+- TauCetiRoadmap.OperatorTheory/SelfAdjointSpectralTheory SA-C and SA-E01–SA-E13 owns partial-operator adjoints, the unbounded spectral measure and its form bounds from spectral support; TauCetiRoadmap.UnboundedOperators UO-A01–UO-A03 owns the unbounded spectral integral and its functional calculus. TauCetiRoadmap.UnboundedOperators UO-D06 owns closed-form representation and Friedrichs extension; §§0.6–0.7 of TauCetiRoadmap.AutomorphicSpectralTheory owns its automorphic transport. The abstract representation theorem is not a target of this part.
+- TauCetiRoadmap.AutomorphicSpectralTheory §§1.16 and 1.16a owns the differential expression and Γ₀(N) operator; §§4.3–4.4, 4.8 and 4.14a owns spectral orthosums, residual spaces, number-field GLₙ residual blocks and modular Eisenstein expansions. The quotient Friedrichs operator at every congruence level is owned here (§0.2); the base supplies only the operator-independent adelic decomposition at principal level, which §0.6 transports to that operator instead of reconstructing generic spectral decomposition.
+- TauCetiRoadmap.AutomorphicFormsOnReductiveGroups §§2.5–2.7, 3.1 and 3.4–3.5 owns local parameters, generic unitary classification, classical comparison and representation factorization; its §4.5 owns the Maass cusp forms of a congruence subgroup and their level-one adelic comparison. Cuspidal carriers and their discrete constituent decomposition are stated by TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.F.6. TauCetiRoadmap.GlobalNumberFields Layer 9 owns the unique real shift and unitary part of a Hecke character.
 - TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors AL.1–AL.3 owns local and global factors, continuation, functional equations, genericity, self-pair positivity and character transport. Its exact extra contracts below retain ramified places. TauCetiRoadmap.GL2AutomorphicRepresentationsAndTransfer §R17.4.13, adjoint-lift, owns the Gelbart–Jacquet lift, its local compatibility and self-twist branch, including the highly ramified converse and metaplectic proof inputs of R17.4. No second lift or converse is constructed.
+- TauCetiRoadmap.ZerosOfLFunctions Layers 1 and 3 owns the complex Stirling asymptotics of gamma factors and Phragmén–Lindelöf convexity for continued uncompleted L-functions; the nonvanishing of Γ is already in the library. Neither is reproved here.
 - TauCetiRoadmap.DeligneWeightsAndPurity §§7.12 and DWP.10 supplies the finite-field trace and weight theory. This part owns the raw all-rank hyper-Kloosterman sum and its numerical Deligne bound (§§4.2a–4.2b), together with its Kloosterman sheaf realization. TauCetiRoadmap.EtaleCohomologyFoundations F.0–F.6 and F.10 supplies the constructible and adic direct-image, base-change, duality and trace carriers. Rigid realizations, differential equations and moment motives belong to downstream roadmaps.
 - The full Wiener–Ikehara theorem and qualitative prime-ideal theorem are already in the library. TauCetiRoadmap.ArithmeticDirichletSeries Layer 6 supplies Abel summation; TauCetiRoadmap.AnalyticNumberTheoryPartI §3.26 supplies the uniform divisor subpower estimate. Prime counting and divisor bounds are not reproved.
 
@@ -47,6 +48,8 @@ Consume the following pinned declarations and their stated hypotheses.
 - `mellin`, `mellinInv`, `mellin_comp_inv`, in `Mathlib/Analysis/MellinTransform.lean`, and `mellinInv_mellin_eq`, in `Mathlib/Analysis/MellinInversion.lean`: inversion at x>0 in a complete complex normed space requires Mellin convergence on the chosen line, vertical integrability of the transform, and continuity at x. The cutoff proof establishes each hypothesis.
 - `Complex.Gammaℝ`, `Complex.Gammaℝ_eq_zero_iff`, `Complex.Gammaℝ_residue_zero`, in `Mathlib/Analysis/SpecialFunctions/Gamma/Deligne.lean`: the totalized real gamma factor and its punctured residue convention.
 - `DirichletCharacter.sum_characters_eq`, in `Mathlib/NumberTheory/DirichletCharacter/Orthogonality.lean`: full character orthogonality over a nonzero modulus and an integral domain with enough roots of unity. Apply it over ℂ before projecting to even nonprincipal characters. `gaussSum`, in `Mathlib/NumberTheory/GaussSum.lean`, and `ZMod.stdAddChar`, `ZMod.isPrimitive_stdAddChar`, in `Mathlib/Analysis/SpecialFunctions/Complex/CircleAddChar.lean`, fix the raw finite sum and its positive standard additive character.
+- `Complex.Gamma_ne_zero` and `Complex.differentiable_one_div_Gamma`, in `Mathlib/Analysis/SpecialFunctions/Gamma/Beta.lean`: Γ does not vanish off the nonpositive integers and 1/Γ is entire, so Γ has no meromorphic zeros.
+- `InnerProductSpace.instLaplacian`, in `Mathlib/Analysis/InnerProductSpace/Laplacian.lean`: the Laplacian of a function on a finite-dimensional real inner product space, the trace of its second derivative; on ℂ with its real inner product the orthonormal basis 1, i makes it ∂ₓ²+∂ᵧ². `UpperHalfPlane.SLAction`, in `Mathlib/Analysis/Complex/UpperHalfPlane/MoebiusAction.lean`: the Möbius action of SL₂(ℤ) on ℍ.
 
 ### From Tau Ceti
 
@@ -60,25 +63,25 @@ Layers 0–1 supply the faithful projective action, proper discontinuity, finite
 
 ### From TauCetiRoadmap.DifferentialGeometry and TauCetiRoadmap.PDE
 
-DifferentialGeometry Layer 12 supplies gradient, div-grad Laplacian, Riemannian volume and Green identities. PDE's weak-derivative and Sobolev energy targets supply the local testing and completion facts used in invariant charts. The compact-support real Dirichlet problem is a local input; the quotient's global form domain is obtained by cusp cutoff and chart descent.
+DifferentialGeometry Layer 12 supplies gradient, div-grad Laplacian, Riemannian volume and Green identities. PDE Lane A, item 1, weak derivatives and the Sobolev spaces built from them, supplies the local testing and completion facts used in invariant charts. The compact-support real Dirichlet problem is a local input; the quotient's global form domain is obtained by cusp cutoff and chart descent.
 
 ### From TauCetiRoadmap.OperatorTheory/SelfAdjointSpectralTheory and TauCetiRoadmap.UnboundedOperators
 
-SelfAdjointSpectralTheory SA-C supplies actual partial-operator domains and adjoints; SA-E01–SA-E14 supplies the unbounded spectral measure, functional calculus and spectral Rayleigh comparison. UnboundedOperators UO-D06 supplies the densely defined closed semibounded Hermitian form, its injective dense Hilbert-domain inclusion, the unique represented self-adjoint partial operator, square-root domain and form identity, and Friedrichs realization without a compactness hypothesis (teschl, Theorems 2.12–2.13, pp.70–72; teschl line 2914 and line 2960).
+SelfAdjointSpectralTheory SA-C supplies actual partial-operator domains and adjoints; SA-E01–SA-E13 supplies the unbounded spectral measure, spectral projections and reduced restrictions, and the form bounds from spectral support (SA-E11–SA-E13) behind the spectral Rayleigh comparison. UnboundedOperators UO-A01–UO-A03 supplies the unbounded spectral integral, its exact domains and its functional calculus. UnboundedOperators UO-D06 supplies the densely defined closed semibounded Hermitian form, its injective dense Hilbert-domain inclusion, the unique represented self-adjoint partial operator, square-root domain and form identity, and Friedrichs realization without a compactness hypothesis (teschl, Theorems 2.12–2.13, pp.70–72; teschl line 2914 and line 2960).
 
 What UnboundedOperators must provide (gap:form-rayleigh-core): For a densely defined closed nonnegative complex Hermitian form, provide the operator-domain form core and equality of the operator-domain, form-domain and spectral Rayleigh infima on a nonzero reducing orthogonal complement.
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
-Sections 0.6–0.7 transport supplied self-adjoint calculus and its actual domains to the automorphic realization. Sections 1.16–1.16a supply the positive hyperbolic expression, Γ₀(N) Friedrichs operator, cusp Fourier modes and elliptic-chart regularity. Sections 4.3–4.4 supply the spectral orthosum and residual construction; §4.8 supplies the modular expansion with one family per cusp. The exact arbitrary-level specialization requires the following additional contract; the displayed one-cusp formula is used only at level one.
+Sections 0.6–0.7 transport supplied self-adjoint calculus and its actual domains to the automorphic realization. Sections 1.16–1.16a supply the positive hyperbolic expression, Γ₀(N) Friedrichs operator, cusp Fourier modes and elliptic-chart regularity. Sections 4.3–4.4 supply the spectral orthosum and residual construction on L²([G]¹), §4.6 the transport of that decomposition under twisting by unitary global characters, §4.14a the number-field GLₙ residual blocks, and §4.8 the level-one modular expansion, noting one family per cusp at higher level. The quotient Friedrichs operator ΔΓ at every congruence level is built in §0.2 here; the contract below asks only for the operator-independent adelic decomposition at principal level, which §0.6 transports to ΔΓ. The displayed one-cusp formula is used only at level one.
 
-What AutomorphicSpectralTheory must provide (gap:all-level-spectral-realization): Extend the modular spectral realization to every principal congruence level and every intermediate congruence subgroup, compatibly with its quotient Friedrichs operator, with one scattering channel per cusp, absolutely continuous spectrum [1/4,∞), no singular continuous spectrum, finite small spectrum and residual space exactly the constants.
+What AutomorphicSpectralTheory must provide (gap:all-level-spectral-realization): For GL₂ over ℚ and every principal level K(N)={k∈GL₂(ℤ̂) : k≡1 mod N}, N≥1, specialize §§4.3–4.4, 4.8 and 4.14a to the right-K(N)·SO(2)-invariant part of L²([GL₂]¹), all central characters trivial on the positive real scalars: it is the orthogonal sum of the span of the functions τ∘det for Hecke characters τ trivial on the positive real scalars and on det K(N), the cuspidal part, on which the positive Casimir operator (normalized to act as Δ on weight-zero vectors) has pure point spectrum with finite multiplicities and finitely many eigenvalues in each bounded interval, and the Eisenstein integrals, on which that operator is 1/4+t² on the fibre at t, with multiplicity on (1/4,∞) the number of cusps of the level-K(N) quotient, so that its continuous spectrum is absolutely continuous and equals [1/4,∞).
 
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups and TauCetiRoadmap.ArithmeticLocallySymmetricSpaces
 
-AutomorphicFormsOnReductiveGroups §§2.5–2.7 supplies archimedean Weil parameters, the generic unitary classification, SO(2) and O(2) types and their smooth globalizations; §3.1 supplies classical component comparison, §§3.4–3.5 restricted tensor factorization. ArithmeticLocallySymmetricSpaces ALS.F.6 supplies actual cuspidal automorphic representations, rapid decay, the discrete unitary constituent decomposition and finite multiplicity. The latter theorem is required to extract a constituent from a classical eigenfunction; occurrence does not follow from the representation definition alone.
+AutomorphicFormsOnReductiveGroups §§2.5–2.7 supplies archimedean Weil parameters, the generic unitary classification, SO(2) and O(2) types and their smooth globalizations; §3.1 supplies classical component comparison, §§3.4–3.5 restricted tensor factorization. ArithmeticLocallySymmetricSpaces ALS.F.6 supplies actual cuspidal automorphic representations, rapid decay, the discrete unitary constituent decomposition and finite multiplicity. The latter theorem is required to extract a constituent from a classical eigenfunction; occurrence does not follow from the representation definition alone. AutomorphicFormsOnReductiveGroups §4.5 supplies `MaassCuspForm(Γ,λ)` for every finite-index congruence subgroup Γ of SL₂(ℤ): smooth Γ-invariant functions on ℍ, square-integrable for dxdy/y², with −y²(∂ₓ²+∂ᵧ²)φ=λφ and zero constant term at every cusp; and `maassClassicalEquiv`, which identifies `MaassCuspForm(SL₂(ℤ),λ)` with the right-PGL₂(ℤ̂)·SO(2)-invariant Laplace λ-eigenspace of the ALS.F.6 cusp space. §3.1's `classicalEquiv` restricts adelic automorphic forms at any compact open level J to the actual rational stabilizers of the components.
 
-What AutomorphicFormsOnReductiveGroups must provide (gap:principal-level-classical-constituents): Provide the norm-compatible principal-level classical–adelic comparison and passage to invariants of each intermediate congruence subgroup, intertwining the weight-zero Casimir with the positive hyperbolic Laplacian and the cuspidal constituent extraction of ArithmeticLocallySymmetricSpaces ALS.F.6.
+What AutomorphicFormsOnReductiveGroups must provide (gap:principal-level-classical-constituents): For every N≥1, extend §4.5's `maassClassicalEquiv` from level one to the principal level K(N) through §3.1's `classicalEquiv` at J=K(N), whose components in the positive-determinant convention are indexed by (ℤ/N)ˣ with rational stabilizer Γ(N) each: an isometry, for the normalized quotient measures, from the right-K(N)·SO(2)-invariant part of L²([GL₂]¹) onto the sum over (ℤ/N)ˣ of copies of L²(Γ(N)\ℍ, dxdy/y²), equivariant for GL₂(ℤ̂)/K(N) and the action of SL₂(ℤ)/Γ(N) on the identity component, carrying the positive Casimir operator on compactly supported smooth vectors to −y²(∂ₓ²+∂ᵧ²) and the Casimir λ-eigenspace of the ALS.F.6 cusp space on the identity component onto `MaassCuspForm(Γ(N),λ)`.
 
 ### From TauCetiRoadmap.GlobalNumberFields
 
@@ -90,15 +93,17 @@ R17.4.13, adjoint-lift, supplies Ad(π)=Sym²(π)⊗ωπ⁻¹, self-duality, tri
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
-Use AL.3, Global Whittaker factorization, for local genericity. The named AL.3 sections Rankin–Selberg local L-factor, Nonarchimedean factors under normalized induction, Continuation and the Rankin–Selberg pole criterion, The global Rankin–Selberg functional equation, and Rankin–Selberg nonvanishing on the boundary supply the local product, global continuation, poles, equation and regular boundary factors. AL.1, Canonical archimedean factors, supplies the gamma parameters and normalization. AL.3, L-function data and derived products, supplies the canonical completed-function strip bounds. These completed bounds are kept distinct from finite-function polynomial bounds.
+Use AL.3, Global Whittaker factorization, for local genericity. The named AL.3 sections Rankin–Selberg local L-factor, Nonarchimedean factors under normalized induction, Continuation and the Rankin–Selberg pole criterion, The global Rankin–Selberg functional equation, and Rankin–Selberg nonvanishing on the boundary supply the local product, global continuation, poles, equation and regular boundary factors. AL.1, Canonical archimedean factors, supplies the gamma parameters and normalization. AL.3, Hecke, eigensystem and Rankin–Selberg data, supplies `rsDatum` and `IsNicePinned`: outside the norm-twist pole case, the entire completed pair function, bounded on finite vertical strips, with its functional equation, specified root number and conductor; AL.3, L-function data and derived products, supplies the underlying `LDatum` record, which carries no analytic assertion. These completed bounds are kept distinct from the polynomial strip bounds of the finite function, which come from ZerosOfLFunctions Layer 3.
 
 What AutomorphicLFunctionsAndLocalFactors must provide (gap:all-prime-self-pair-positivity): For unitary cuspidal GL_m over ℚ provide nonnegative full finite self-pair coefficients including ramified primes, coefficient one at n=1, a positive simple residue at s=1 and continuous pole-subtracted boundary values on Re(s)≥1.
 
 What AutomorphicLFunctionsAndLocalFactors must provide (gap:self-pair-local-character-transport): Provide unramified-character transport of every local self-pair L and epsilon factor including ramified representations, and at an unramified rank-m prime the primitive conductor-q twist formulas L=1 and epsilon=τ(χ)^(m²)q^(−m²s) in the stated positive Gauss convention.
 
-What AutomorphicLFunctionsAndLocalFactors must provide (gap:complex-gamma-strip-estimates): Provide zero-free meromorphic Gamma factors, their pole orders and complex Stirling estimates on finite vertical strips away from poles, including polynomial growth of the balanced ratio A(1−s)/A(s).
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:finite-rs-polynomial-strips): For unitary cuspidal π of GL_m over ℚ and each nonprincipal even character χ of prime conductor q>2 with q∤fπ, realize the twisted self-pair `rsDatum (π⊗χ) π∨` as an `LFunctions.AnalyticLFunctionData` record meeting the hypotheses of ZerosOfLFunctions Layer 3, item 3: Dirichlet agreement with coefficients b(n)χ(n), empty polar divisor, finite-order entire completion, functional equation against its dual record with conductor fq^(m²) and root number τπχ(f)τ(χ)^(m²)(fq^(m²))^(−1/2), and the average coefficient bound.
 
-What AutomorphicLFunctionsAndLocalFactors must provide (gap:finite-rs-polynomial-strips): For each fixed entire prime-twisted finite Rankin–Selberg function provide polynomial growth on every finite vertical strip by finite-order continuation and Phragmén–Lindelöf, with constants permitted to depend on the twist.
+### From TauCetiRoadmap.ZerosOfLFunctions
+
+Layer 1, items 2–5, supplies the normalized holomorphic log Γ on sectors with its Stirling asymptotic, the vertical-strip asymptotic of log‖Γ(σ+it)‖ uniformly for σ in a compact interval, and, for a gamma factor ∏Γℝ(s+μⱼ)∏Γℂ(s+νₖ) of degree d, the asymptotic log‖γ(σ+it)‖=−(πd/4)|t|+A(σ)log|t|+O(1) as |t|→∞, together with the absence of zeros and the exact poles and pole orders. Applied to A(s) and to A(1−s), whose shifts are −μⱼ−conj μₖ, the two exponential terms cancel, so G(s)=A(1−s)/A(s) grows at most polynomially in |t| on each closed vertical strip outside fixed neighbourhoods of its finitely many poles there. Layer 3, items 1–3, supplies Phragmén–Lindelöf for the pole-cleared continued uncompleted function `continuedL` of an `LFunctions.AnalyticLFunctionData` record with finite-order completion, functional equation against its dual record and average coefficient bound: a bound polynomial in the analytic conductor on every closed strip −δ≤Re s≤1+δ. Bounding the completed function and dividing by its gamma factor does not give this.
 
 ### From TauCetiRoadmap.DeligneWeightsAndPurity and TauCetiRoadmap.EtaleCohomologyFoundations
 
@@ -145,7 +150,7 @@ The API proves the following facts.
 
 For every congruence Γ, construct the densely defined nonnegative self-adjoint Friedrichs realization ΔΓ of −y²(∂ₓ²+∂ᵧ²) on HΓ=L²(XΓ,μΓ). Close the energy initially defined on compactly supported orbifold-smooth functions, using invariant smooth lifts in each elliptic chart. Its kernel is exactly the complex constants. This is the arbitrary-congruence extension of the Γ₀(N) operator, with a canonical agreement comparison on that family.
 
-A route to the result is as follows. Import ordinary gradient, volume and Green identity from DifferentialGeometry, and local weak derivatives from PDE/Sobolev; descend through the Fuchsian isometric orbifold charts. Density uses a locally finite partition and cusp truncations. Closability follows by testing a candidate gradient limit against compactly supported vector fields in each chart; finite isotropy averaging preserves the test core. Apply the generic closed-form representation/Friedrichs extension, then the LinearPMap self-adjoint API. Cut off constants far into each cusp with energy tending to zero. Zero energy forces local constancy and connectedness forces a single constant. A nonconstant orbifold-smooth bump in a free chart belongs to the initial differential-operator domain and has nonzero Laplacian, by the kernel characterization; this supplies the nontriviality test.
+A route to the result is as follows. Import ordinary gradient, volume and Green identity from DifferentialGeometry, and weak derivatives from PDE Lane A; descend through the Fuchsian isometric orbifold charts. Density uses a locally finite partition and cusp truncations. Closability follows by testing a candidate gradient limit against compactly supported vector fields in each chart; finite isotropy averaging preserves the test core. Apply the generic closed-form representation/Friedrichs extension, then the LinearPMap self-adjoint API. For the maximal domain choose N with Γ(N)≤Γ and put N′=3N; then Γ(N′)≤Γ is a torsion-free normal subgroup of finite index, so Γ(N′)\ℍ is a connected complete Riemannian surface. On it prove, by Gaffney's cutoff argument, that the scalar Laplacian d⁎d on compactly supported smooth functions is essentially self-adjoint, so that its closure is the maximal operator, whose domain is the set of L² functions with distributional Laplacian in L². Local elliptic regularity in charts puts the maximal domain in W^(1,2)_loc: a mollifier step passes from L²_loc to W^(1,2)_loc, and PDE Lane E, item 20, continues to W^(2,2)_loc (bms02, Assumption B, p.5, bms02 line 196); the cutoffs χ(d(x,x₀)/R), built from the distance to a base point, are compactly supported by completeness and have gradient at most sup|χ′|/R, so the boundary terms of Green's identity vanish as R→∞ and the maximal operator is symmetric (bms02, §2.1, p.4, and Corollary 2.10 with D=d, p.7; bms02 line 151 and line 245). The finite group Γ/Γ(N′) acts by isometries commuting with d⁎d, and averaging over it maps compactly supported smooth functions onto compactly supported orbifold-smooth functions, so the invariant restriction is essentially self-adjoint too. Its closure is a self-adjoint extension of the initial operator and therefore equals the Friedrichs realization. Cut off constants far into each cusp with energy tending to zero. Zero energy forces local constancy and connectedness forces a single constant. A nonconstant orbifold-smooth bump in a free chart belongs to the initial differential-operator domain and has nonzero Laplacian, by the kernel characterization; this supplies the nontriviality test.
 
 The API proves the following facts.
 
@@ -153,6 +158,7 @@ The API proves the following facts.
 - Its operator domain is dense in L².
 - For every u in its domain, Re⟨u,Δu⟩≥0.
 - For u in the domain, Δu=0 iff u equals a complex constant almost everywhere.
+- Maximal domain: an L² class f lies in the operator domain iff the distributional expression −y²(∂ₓ²+∂ᵧ²) of its Γ-invariant lift, tested against compactly supported smooth functions on ℍ, is the lift of an L² class; ΔΓf is then that class. Equivalently, the expression restricted to compactly supported orbifold-smooth functions is essentially self-adjoint and its closure is ΔΓ.
 
 **Checks.**
 
@@ -161,9 +167,9 @@ The API proves the following facts.
 - If Δu≠0 then Re⟨u,Δu⟩>0; the opposite sign convention fails. The negative sign convention makes the nonzero quadratic pairing negative.
 - For every allowed Γ there is an operator-domain u with Δu≠0; the zero operator fails. The zero operator fails the nonconstant free-chart bump test.
 
-(teschl, §2.3, Theorems 2.12–2.13, pp.70–72; teschl line 2914 and line 2960.)
+(teschl, §2.3, Theorems 2.12–2.13, pp.70–72; teschl line 2914 and line 2960; bms02, Corollary 2.10, p.7, bms02 line 245, for the maximal domain.)
 
-*Needs:* §0.1; `MeasureTheory.Lp`; `LinearPMap`; Tau Ceti formal-adjoint pairing; FuchsianOrbifolds Layers 1 and 3; DifferentialGeometry Layer 12; PDE local weak derivatives; UnboundedOperators UO-D06; AutomorphicSpectralTheory §§0.6–0.7 and 1.16a.
+*Needs:* §0.1; `MeasureTheory.Lp`; `LinearPMap`; Tau Ceti formal-adjoint pairing; FuchsianOrbifolds Layers 1 and 3; DifferentialGeometry Layer 12; PDE Lane A, item 1, and Lane E; UnboundedOperators UO-D06; AutomorphicSpectralTheory §§0.6–0.7 and 1.16a.
 
 ### 0.3 Mean-zero Hilbert subspace
 
@@ -186,7 +192,7 @@ The API proves the following facts.
 
 (teschl, §4.3, Theorem 4.10, pp.118–119; teschl line 5044.)
 
-*Needs:* §§0.1–0.2; `MeasureTheory.Lp`; finite-measure integration; SelfAdjointSpectralTheory SA-E01–SA-E14.
+*Needs:* §§0.1–0.2; `MeasureTheory.Lp`; finite-measure integration; SelfAdjointSpectralTheory SA-E01–SA-E13; UnboundedOperators UO-A01–UO-A03.
 
 ### 0.4 Positive spectral bottom
 
@@ -209,7 +215,7 @@ The API proves the following facts.
 
 (teschl, §4.3, Theorem 4.10, pp.118–119; teschl line 5044.)
 
-*Needs:* §§0.2–0.3 and 0.6; SelfAdjointSpectralTheory SA-E01–SA-E14; UnboundedOperators UO-D06 and gap:form-rayleigh-core; AutomorphicSpectralTheory §4.8 and gap:all-level-spectral-realization.
+*Needs:* §§0.2–0.3 and 0.6; SelfAdjointSpectralTheory SA-E01–SA-E13; UnboundedOperators UO-A01–UO-A03, UO-D06 and gap:form-rayleigh-core; AutomorphicSpectralTheory §4.8 and gap:all-level-spectral-realization.
 
 ### 0.5 Clipped eigenvalue convention
 
@@ -235,9 +241,9 @@ The API proves the following facts.
 
 ### 0.6 Congruence spectral description
 
-For every congruence Γ, identify the supplied arbitrary-level spectral realization with ΔΓ. The residual weight-zero L² subspace is exactly the constants; the absolutely continuous spectrum is [1/4,∞), with one Eisenstein channel per cusp and its scattering matrix; there is no singular continuous spectrum. Every spectral value in (0,1/4) is a finite-multiplicity cuspidal eigenvalue, and there are finitely many of them. This comparison uses the all-level supplier contract, including its residual classification.
+For every congruence Γ, transport the principal-level adelic decomposition of gap:all-level-spectral-realization to ΔΓ through the classical comparison of gap:principal-level-classical-constituents. The residual weight-zero L² subspace is exactly the constants; the absolutely continuous spectrum is [1/4,∞), with one Eisenstein channel per cusp and its scattering matrix; there is no singular continuous spectrum. Every spectral value in (0,1/4) is a finite-multiplicity eigenvalue whose eigenspace consists of the classes of Maass cusp forms, elements of `MaassCuspForm(Γ,λ)` in the sense of AutomorphicFormsOnReductiveGroups §4.5, and there are finitely many of them.
 
-A route to the result is as follows. Use the supplied spectral orthosum and arbitrary-level scattering and residual classification, then identify the actual domains and actions under the quotient L² comparison. At principal level retain the finite-level action; passing to Γ-invariants gives its cusp channels. The residual input must exclude every positive residual value rather than treating it as cuspidal.
+A route to the result is as follows. Choose N with Γ(N)≤Γ. The comparison of gap:principal-level-classical-constituents identifies the right-K(N)·SO(2)-invariant classes on the identity component with L²(Γ(N)\ℍ) and the positive Casimir operator with Δ on compactly supported smooth vectors. By the maximal-domain identification of §0.2, ΔΓ(N) is the closure of Δ on those vectors, hence the transported self-adjoint Casimir. Restriction to the identity component commutes with the cuspidal, residual and continuous projections, because it is an average of multiplications by τ∘det for characters τ of (ℤ/N)ˣ and these preserve the decomposition (AutomorphicSpectralTheory §4.6). The residual part becomes the constants, since each τ∘det is constant on each component; the continuous part becomes [1/4,∞) with one channel per cusp of Γ(N); the cuspidal part becomes the Maass cusp forms. Finally pass to invariants of the finite group Γ/Γ(N), which acts by isometries commuting with Δ and the three projections: invariant channels correspond to Γ-orbits of cusps of Γ(N), that is, to cusps of Γ, and invariant constants are constants. The residual input must exclude every positive residual value rather than treating it as cuspidal.
 
 **Checks.**
 
@@ -247,7 +253,7 @@ A route to the result is as follows. Use the supplied spectral orthosum and arbi
 
 (lrs95, Theorem 1.1 p.387 and §1 pp.389–390.)
 
-*Needs:* §0.2; AutomorphicSpectralTheory §§4.3–4.4 and 4.8; gap:all-level-spectral-realization; AutomorphicLFunctionsAndLocalFactors AL.3 boundary regularity.
+*Needs:* §0.2; AutomorphicSpectralTheory §§4.3–4.4, 4.6, 4.8 and 4.14a; gap:all-level-spectral-realization; AutomorphicFormsOnReductiveGroups §§3.1 and 4.5; gap:principal-level-classical-constituents; AutomorphicLFunctionsAndLocalFactors AL.3 boundary regularity.
 
 ### 0.7 Rayleigh and clipped spectrum comparison
 
@@ -263,7 +269,7 @@ A route to the result is as follows. Restrict the spectral calculus to constants
 
 (teschl, §4.3, Theorem 4.10 p.119; teschl line 5044.)
 
-*Needs:* §§0.3–0.6; SelfAdjointSpectralTheory SA-E01–SA-E14; UnboundedOperators UO-D06 and gap:form-rayleigh-core.
+*Needs:* §§0.3–0.6; SelfAdjointSpectralTheory SA-E01–SA-E13; UnboundedOperators UO-A01–UO-A03, UO-D06 and gap:form-rayleigh-core.
 
 ### Examples
 
@@ -271,7 +277,7 @@ At level one the constant projection of u is (3/π)∫u dμ. At level two it is 
 
 ### Dependencies
 
-Mathlib congruence, measure, L² and partial-operator APIs; Tau Ceti Poincaré volume, weak derivatives and adjoints; FuchsianOrbifolds Layers 0–3; DifferentialGeometry Layer 12; UnboundedOperators UO-D06; SelfAdjointSpectralTheory SA-C and SA-E01–SA-E14; AutomorphicSpectralTheory §§0.6–0.7, 1.16a and 4.3–4.8.
+Mathlib congruence, measure, L² and partial-operator APIs; Tau Ceti Poincaré volume, local energy forms and formal adjoints; FuchsianOrbifolds Layers 0–3; DifferentialGeometry Layer 12; PDE Lane A; UnboundedOperators UO-A01–UO-A03 and UO-D06; SelfAdjointSpectralTheory SA-C and SA-E01–SA-E13; AutomorphicSpectralTheory §§0.6–0.7, 1.16a, 4.3–4.8 and 4.14a; AutomorphicFormsOnReductiveGroups §§3.1 and 4.5; ArithmeticLocallySymmetricSpaces ALS.F.6.
 
 ## Layer 1: Exceptional GL₂ forms and the adjoint
 
@@ -283,7 +289,7 @@ For allowed Γ and an eigenvalue 0<λ<1/4, a cuspidal GL₂(Aℚ) unitary repres
 
 Assume Γ≤SL₂(ℤ) contains Γ(N) for some N≥1; its effective image acts on ℍ. Metric ds²=(dx²+dy²)/y² has curvature −1; all functions are complex-valued. u is a nonzero positive exceptional eigenfunction.
 
-A route to the result is as follows. Apply AutomorphicLFunctionsAndLocalFactors AL.3/global-whittaker-factorization to the cuspidal GLn representation to obtain genericity of every local component before invoking the generic unitary classification. Cuspidality alone is not a definition of genericity. Use Layer 0 residual classification to identify u as cuspidal. Lift u to Γ(N) and apply AutomorphicFormsOnReductiveGroups §3.1 classical comparison at principal level, then extract a cuspidal constituent using ArithmeticLocallySymmetricSpaces ALS.F.6 cuspidal discreteness, not merely the definition of a cuspidal representation. Compute the normalized Casimir on the SO(2)-fixed line using AutomorphicFormsOnReductiveGroups §2.6 real local classification. Write the unitary principal-series characters as sgn^ε|.|^r and sgn^ε|.|^−r after the central norm normalization. Allow both ε=0 and ε=1; the geometric eigenvalue does not force reflection-even parity.
+A route to the result is as follows. Apply AutomorphicLFunctionsAndLocalFactors AL.3/global-whittaker-factorization to the cuspidal GLn representation to obtain genericity of every local component before invoking the generic unitary classification. Cuspidality alone is not a definition of genericity. Use Layer 0 residual classification to identify u as an element of `MaassCuspForm(Γ,λ)` (AutomorphicFormsOnReductiveGroups §4.5). Regard u as Γ(N)-invariant and apply the principal-level comparison of gap:principal-level-classical-constituents, which extends §4.5's level-one comparison through §3.1 at K(N), then extract a cuspidal constituent using ArithmeticLocallySymmetricSpaces ALS.F.6 cuspidal discreteness, not merely the definition of a cuspidal representation. Compute the normalized Casimir on the SO(2)-fixed line using AutomorphicFormsOnReductiveGroups §2.6 real local classification. Write the unitary principal-series characters as sgn^ε|.|^r and sgn^ε|.|^−r after the central norm normalization. Allow both ε=0 and ε=1; the geometric eigenvalue does not force reflection-even parity.
 
 **Checks.**
 
@@ -293,7 +299,7 @@ A route to the result is as follows. Apply AutomorphicLFunctionsAndLocalFactors 
 
 (lrs95, §1 pp.389–390, GL₂ eigenvalue and GL₃ lift discussion.)
 
-*Needs:* §0.6; AutomorphicFormsOnReductiveGroups §§2.5–2.7 and 3.1; gap:principal-level-classical-constituents; ArithmeticLocallySymmetricSpaces ALS.F.6; AutomorphicLFunctionsAndLocalFactors AL.3 Global Whittaker factorization.
+*Needs:* §0.6; AutomorphicFormsOnReductiveGroups §§2.5–2.7, 3.1 and 4.5; gap:principal-level-classical-constituents; ArithmeticLocallySymmetricSpaces ALS.F.6; AutomorphicLFunctionsAndLocalFactors AL.3 Global Whittaker factorization.
 
 ### 1.2 Monomial archimedean temperance
 
@@ -360,7 +366,7 @@ A route to the result is as follows. Apply AutomorphicLFunctionsAndLocalFactors 
 
 (lrs95, §2.1 pp.391–392 and Lemma 2.1 pp.392–394.)
 
-*Needs:* AutomorphicLFunctionsAndLocalFactors AL.3 Global Whittaker factorization, Rankin–Selberg local factors, induced products, poles, functional equation, boundary nonvanishing and L-function data; AL.1 Canonical archimedean factors; gaps:all-prime-self-pair-positivity and self-pair-local-character-transport; AutomorphicFormsOnReductiveGroups §2.6; `TauCeti.LSeries.wienerIkehara`.
+*Needs:* AutomorphicLFunctionsAndLocalFactors AL.3 Global Whittaker factorization, Rankin–Selberg local factors, induced products, poles, functional equation, boundary nonvanishing and Hecke, eigensystem and Rankin–Selberg data; AL.1 Canonical archimedean factors; gap:all-prime-self-pair-positivity; gap:self-pair-local-character-transport; AutomorphicFormsOnReductiveGroups §2.6; `TauCeti.LSeries.wienerIkehara`.
 
 ### 2.2 Archimedean trivial zero
 
@@ -378,7 +384,7 @@ A route to the result is as follows. Use AutomorphicFormsOnReductiveGroups §2.6
 
 (lrs95, Theorem 1.2 discussion pp.389–390 and proof p.395.)
 
-*Needs:* §2.1; `Complex.Gammaℝ`; `Complex.Gammaℝ_eq_zero_iff`; `Complex.Gammaℝ_residue_zero`; gap:complex-gamma-strip-estimates; AutomorphicFormsOnReductiveGroups §2.6.
+*Needs:* §2.1; `Complex.Gammaℝ`; `Complex.Gammaℝ_eq_zero_iff`; `Complex.Gammaℝ_residue_zero`; `Complex.Gamma_ne_zero`; `Complex.differentiable_one_div_Gamma`; ZerosOfLFunctions Layer 1, item 5; AutomorphicFormsOnReductiveGroups §2.6.
 
 ### Examples
 
@@ -386,7 +392,7 @@ For a spherical rank-two example with parameters r,−r, the self-pair gamma shi
 
 ### Dependencies
 
-AutomorphicFormsOnReductiveGroups §2.6; AutomorphicLFunctionsAndLocalFactors AL.1–AL.3 and the four analytic gaps; Tau Ceti Wiener–Ikehara. This layer does not use the final parameter bound.
+AutomorphicFormsOnReductiveGroups §2.6; AutomorphicLFunctionsAndLocalFactors AL.1–AL.3 with gap:all-prime-self-pair-positivity and gap:self-pair-local-character-transport; Mathlib nonvanishing of Γ; ZerosOfLFunctions Layer 1; Tau Ceti Wiener–Ikehara. This layer does not use the final parameter bound.
 
 ## Layer 3: Mellin cutoffs and the exact two-kernel identity
 
@@ -407,7 +413,7 @@ The API proves the following facts.
 
 **Checks.**
 
-- F₁(0,x)=0 for every x. The zero integrand gives zero.
+- For c>0 and φ_c(y)=φ(y/c), F₁(φ_c,x)=F₁(φ,x/c), by the substitution y=ct, which leaves dy/y unchanged. An ordinary dy tail would acquire the extra factor c.
 - If φ vanishes below 1, φ/y is integrable on (0,∞) and mellin(φ,0)=1, F₁(φ,1/2)=1. The multiplicative mass is exactly one; ordinary unit dx mass would not imply this.
 - If φ vanishes above 2, F₁(φ,3)=0. The integration tail misses the support and is zero.
 
@@ -429,8 +435,9 @@ The API proves the following facts.
 
 **Checks.**
 
-- φ=0 gives F₂=0 for any G, β and x. The transform integrand is zero.
 - G=0 gives F₂=0 for any φ, β and x. The transform integrand is zero.
+- For smooth compact positive-support φ, x>0 and G(w)=w, the integrand is mellin(φ,−s)(β/s−1), so F₂(φ,G,β,x)=βF₁(φ∘inv,x)−φ(1/x), by `mellin_comp_inv`, §3.1 for φ∘inv and Mellin inversion of φ∘inv. The orientation G(β+s) would give βF₁(φ∘inv,x)+φ(1/x); for φ supported in [3,4] the two differ wherever φ(1/x)≠0, which happens only for x in (1/4,1/3).
+- For G=1, a multiplicatively normalized φ supported in [3,4] and x=1/5, F₂=F₁(φ∘inv,1/5)=1, because the reflected support [1/4,1/3] lies above 1/5. Dropping the factor 1/s would give the inverse transform φ(5)=0.
 - For smooth compact positive support, G=1 and x=2, F₂=F₁(φ∘inv,2), detecting the sign of the Mellin argument. For a multiplicatively normalized φ supported in [3,4], the reflected support is [1/4,1/3], so the value at x=2 is zero, while the unreflected tail is one.
 
 (lrs95, Equation (3.7), Lemma 3.1 p.396.)
@@ -443,7 +450,7 @@ For φ smooth with compact support in (0,∞), mellin(φ,0)=1, the Layer 2 gamma
 
 Assume m≥2 and π is unitary cuspidal on GLm(Aℚ). π∞ is O(m)-spherical; L∞(s,π)=∏j Γℝ(s−μj). d=m², β₀=2 maxj Re μj; unitarity gives β₀∈[0,1). φ is smooth, compactly supported in (0,∞), mellin(φ,0)=1. 0<Re β<1 and ε>0.
 
-A route to the result is as follows. Integration by parts in log y makes k(s)=mellin(φ,s) entire and rapidly decreasing in vertical strips. Import the complex gamma Stirling bounds from AutomorphicLFunctionsAndLocalFactors AL.1; the ratio G has polynomial strip growth. Shift to the right for rapid decay, and to the left for near-zero behavior. The gamma-ratio poles have rightmost possible real part σ+β₀−1 and order at most d. The factor 1/s adds one to the order if a gamma pole coincides with zero. Absorb the resulting finite powers of |log x| into x⁻ε; this handles all repeated poles and the zero-pole collision when σ+β₀=1.
+A route to the result is as follows. Integration by parts in log y makes k(s)=mellin(φ,s) entire and rapidly decreasing in vertical strips. Import the vertical-strip asymptotics of ZerosOfLFunctions Layer 1, items 3 and 5, for A(s) and A(1−s), with the gamma parameters of AutomorphicLFunctionsAndLocalFactors AL.1: the factors exp(−πd|t|/4) cancel, so the ratio G has polynomial strip growth away from its poles. Shift to the right for rapid decay, and to the left for near-zero behavior. The gamma-ratio poles have rightmost possible real part σ+β₀−1 and order at most d. The factor 1/s adds one to the order if a gamma pole coincides with zero. Absorb the resulting finite powers of |log x| into x⁻ε; this handles all repeated poles and the zero-pole collision when σ+β₀=1.
 
 **Checks.**
 
@@ -453,7 +460,7 @@ A route to the result is as follows. Integration by parts in log y makes k(s)=me
 
 (lrs95, Lemma 3.1 p.396, contour-shift proof.)
 
-*Needs:* §§2.1 and 3.1–3.2; AutomorphicLFunctionsAndLocalFactors AL.1 and gap:complex-gamma-strip-estimates; meromorphic orders and rectangle contour limits.
+*Needs:* §§2.1 and 3.1–3.2; AutomorphicLFunctionsAndLocalFactors AL.1 Canonical archimedean factors; ZerosOfLFunctions Layer 1, items 3 and 5; `Complex.Gamma_ne_zero`; meromorphic orders and rectangle contour limits.
 
 ### 3.4 Approximate functional equation
 
@@ -461,7 +468,7 @@ For the Layer 2 data, smooth compact positive-support φ with mellin(φ,0)=1, 0<
 
 Assume m≥2 and π is unitary cuspidal on GLm(Aℚ). π∞ is O(m)-spherical; L∞(s,π)=∏j Γℝ(s−μj). d=m², β₀=2 maxj Re μj; unitarity gives β₀∈[0,1). χ is a nonprincipal even character of prime conductor q>2, q∤fπ, where fπ is the standard conductor. 0<Re β<1, Y>1, and the normalized φ of Layer 3.
 
-A route to the result is as follows. Put k(s)=mellin(φ,s) and integrate k(s)Lχ(β+s)Y^s/s on Re s=2, exchange the absolutely convergent series and integral, and identify F₁. Shift to Re s=−1: the sole crossed pole is s=0 because the finite twisted Lχ is entire. Use the supplied polynomial vertical-strip growth of the finite Lχ, together with rapid decay of k, to kill the horizontal contours. Boundedness of the completed Λ alone does not justify this step. Apply the functional equation, replace s by −s and shift the resulting integral to Re s=2 in the pole-free right region. Expanding Lχ̄(1−β+s) gives F₂ with the exact conductor and power of n. Use rapid kernel decay and the positive partial-sum bound from Layer 2 for absolute summability.
+A route to the result is as follows. Put k(s)=mellin(φ,s) and integrate k(s)Lχ(β+s)Y^s/s on Re s=2, exchange the absolutely convergent series and integral, and identify F₁. Shift to Re s=−1: the sole crossed pole is s=0 because the finite twisted Lχ is entire. Use the polynomial strip bound of ZerosOfLFunctions Layer 3, item 3, for the record of gap:finite-rs-polynomial-strips, whose `continuedL` is the finite Lχ, together with rapid decay of k, to kill the horizontal contours. Boundedness of the completed Λ alone does not justify this step. Apply the functional equation, replace s by −s and shift the resulting integral to Re s=2 in the pole-free right region. Expanding Lχ̄(1−β+s) gives F₂ with the exact conductor and power of n. Use rapid kernel decay and the positive partial-sum bound from Layer 2 for absolute summability.
 
 **Checks.**
 
@@ -471,7 +478,7 @@ A route to the result is as follows. Put k(s)=mellin(φ,s) and integrate k(s)Lχ
 
 (lrs95, Lemma 3.2 and its proof pp.396–397.)
 
-*Needs:* §§2.1 and 3.1–3.3; AutomorphicLFunctionsAndLocalFactors AL.3, L-function data and derived products, and gap:finite-rs-polynomial-strips.
+*Needs:* §§2.1 and 3.1–3.3; AutomorphicLFunctionsAndLocalFactors AL.3, Hecke, eigensystem and Rankin–Selberg data, and gap:finite-rs-polynomial-strips; ZerosOfLFunctions Layer 3, items 1–3.
 
 ### Examples
 
@@ -479,7 +486,7 @@ A smooth nonnegative nonzero cutoff supported inside [1,2] can be divided by its
 
 ### Dependencies
 
-Layer 2; Mathlib Mellin inversion; AutomorphicLFunctionsAndLocalFactors AL.1 gamma strip estimates and AL.3 finite-function polynomial strips; convergent contour calculus.
+Layer 2; Mathlib Mellin inversion; AutomorphicLFunctionsAndLocalFactors AL.1 gamma parameters, AL.3 Rankin–Selberg data and gap:finite-rs-polynomial-strips; ZerosOfLFunctions Layers 1 and 3; convergent contour calculus.
 
 ## Layer 4: Even prime twists and their first moment
 
@@ -586,7 +593,7 @@ The uniform norm estimate is the headline `gauss_power_even_average_bound` in `S
 - For q=3,k=1,r=1, Kl₁(1)+Kl₁(−1)=−1 and the right side is −1−(−1)=0, agreeing with the empty character sum.
 - For q=3,k=2,r=1, Kl₂(1)=−1 and Kl₂(−1)=2, so the right side is (−1+2)−1=0. The sign of the principal correction is essential.
 - For q=5,k=2 the even quadratic Gauss sum is √5; its square times χ(r) is 5 at r=1 and −5 at r=2, and both have norm 5≤8√5+1.
-- Rank k=0 is excluded; the empty-product fibre would force a different identity. Nonunit r is excluded before inversion.
+- Rank k=0 is excluded because the norm bound fails there, although the identity persists: at q=7 and r=1 there are two even nonprincipal characters, so the left side is 2, and the right side is 3(1+0)−1=2, while (q−1)·0·q^(−1/2)+1=1<2. Nonunit r is excluded before inversion.
 
 (lrs95, Equations (3.18)–(3.20) p.398.)
 
@@ -685,15 +692,20 @@ Assume Γ≤SL₂(ℤ) contains Γ(N) for some N≥1; its effective image acts o
 
 A route to the result is as follows. Every 0<λ<1/4 is cuspidal by the congruence spectral description. Apply the exceptional dictionary and the adjoint parameter comparison. The m=3 instance of the spherical parameter bound gives 2r≤2/5. The arithmetic of §5.2 gives λ≥21/100. The continuous threshold 1/4 is also ≥21/100. Use the Rayleigh–clipping comparison and the lower-infimum API to combine these cases without choosing a nonexistent least eigenfunction.
 
+Prove `congruence_eigenvalue_bound`, the same bound in classical eigenfunction form on the native carriers: let Γ≤SL₂(ℤ) satisfy `CongruenceSubgroup.IsCongruenceSubgroup Γ`, let u:ℂ→ℂ be C² on the open upper half-plane, invariant under the Möbius action of every element of Γ on ℍ, bounded on ℍ and not constant on ℍ, and let λ be real with −y²(Δu)(z)=λu(z) at every z∈ℍ, where Δ is Mathlib's Laplacian on the real inner product space ℂ, that is ∂ₓ²+∂ᵧ². Then λ≥21/100 (lrs95, Theorem 1.1 p.387). A route: u descends to a bounded measurable function on XΓ, hence to an L² class since μΓ(XΓ)<∞ (§0.1). Its distributional expression is the class of λu, which lies in L², so by the maximal-domain identification of §0.2 u lies in Dom ΔΓ and ΔΓu=λu. If λ=0, the kernel characterization of §0.2 makes u almost everywhere constant, hence constant on ℍ by continuity, which is excluded. If λ≠0, self-adjointness and ΔΓ1=0 give λ∫u dμΓ=⟨1,ΔΓu⟩=⟨ΔΓ1,u⟩=0, so u lies in HΓ⁰ (§0.3). It is a nonzero class, being continuous and nonzero on an open subset of ℍ, whose image has positive μΓ-measure. The last API fact of §0.4 gives λ=Re⟨u,ΔΓu⟩/‖u‖₂²≥λ′₁(Γ), and the bound above concludes. The boundedness hypothesis loses no small eigenvalue: by §0.6 an eigenvalue in (0,1/4) has an eigenfunction in `MaassCuspForm(Γ,λ)`, which is smooth and, through gap:principal-level-classical-constituents, a cusp form in the sense of ArithmeticLocallySymmetricSpaces ALS.F.6(iii), hence bounded.
+
 **Checks.**
 
 - The rational comparisons are 3/16=75/400, 21/100=84/400 and 1/4=100/400; the improvement is 9/400.
 - An empty small spectrum gives λ′₁=1/4≥21/100.
 - Level zero does not witness congruence, and a finite-index noncongruence subgroup does not satisfy the theorem hypothesis.
+- For the eigenfunction form at Γ=SL₂(ℤ), the constant function 1 satisfies every hypothesis except nonconstancy, and its equation −y²Δ1=λ·1 forces λ=0<21/100; nonconstancy is necessary.
+- Boundedness is necessary: the level-one Eisenstein series E(z,3/2)=Σ Im(γz)^(3/2), over Γ∞\SL₂(ℤ), converges absolutely and is invariant, smooth and nonconstant, with −y²ΔE=(3/2)(1−3/2)E=−(3/4)E. It grows like y^(3/2) in the cusp, and −3/4<21/100.
+- The sign of the equation is fixed by y^s=(Im z)^s, which is not invariant but tests the convention: Mathlib's Laplacian gives s(s−1)y^(s−2), so −y²Δy^s=s(1−s)y^s, and s=1/2+it gives 1/4+t². With +y² in place of −y² every eigenvalue would change sign: the continuous threshold 1/4 would become −1/4, and no positive lower bound could hold.
 
-(lrs95, Theorem 1.1 p.387; GL₃ reduction pp.389–390; proof of Theorem 1.2 p.395.)
+(lrs95, Theorem 1.1 p.387; GL₃ reduction pp.389–390; proof of Theorem 1.2 p.395; bms02, Corollary 2.10, p.7, bms02 line 245, for the maximal domain used by the eigenfunction form.)
 
-*Needs:* §§0.6–0.7, 1.1–1.3 and 5.1–5.2.
+*Needs:* §§0.6–0.7, 1.1–1.3 and 5.1–5.2. The eigenfunction form also needs §§0.1–0.4, including the maximal domain of §0.2; `CongruenceSubgroup.IsCongruenceSubgroup`; `UpperHalfPlane.SLAction`; `InnerProductSpace.instLaplacian`.
 
 ### 5.4 Congruence Rayleigh inequality
 
@@ -738,7 +750,7 @@ The exact numerical chain is 3/16<21/100<1/4, with difference 9/400 and 1/4−(1
 
 ### Dependencies
 
-Layers 0–4; AutomorphicFormsOnReductiveGroups §2.6; UnboundedOperators UO-D06 and its form-core contract; DifferentialGeometry Layer 12 for the constant-scaling calculation.
+Layers 0–4; AutomorphicFormsOnReductiveGroups §2.6; UnboundedOperators UO-D06 and its form-core contract; DifferentialGeometry Layer 12 for the constant-scaling calculation; Mathlib's Laplacian and the action of SL₂(ℤ) on ℍ for the eigenfunction form.
 
 ## Downstream consumers
 
@@ -755,4 +767,5 @@ The unscaled and scaled Rayleigh witnesses must agree: with ‖u‖²=1 and q(u,
 - **lrs95.** Wenzhi Luo, Zeev Rudnick and Peter Sarnak, *On Selberg's eigenvalue conjecture*, Geometric and Functional Analysis 5 (1995), 387–401, [published citation](https://doi.org/10.1007/BF01895672). Theorem 1.1 p.387, Theorem 1.2 pp.389–390, Lemma 2.1 pp.392–394, (3.6)–(3.7) and Lemmas 3.1–3.2 pp.395–397, (3.11)–(3.12) p.397, (3.18)–(3.20) p.398 and Proposition 3.1 pp.395–399. The manifest records this work as uncertified; these are published locators without certification of the source text.
 - **gj78.** Stephen Gelbart and Hervé Jacquet, *A relation between automorphic representations of GL(2) and GL(3)*, Annales scientifiques de l’École Normale Supérieure 11 (1978), 471–542, [Numdam](https://www.numdam.org/article/ASENS_1978_4_11_4_471_0.pdf). Definition 3.1.3 and Proposition 3.2 pp.485–486; §3.7 p.491; Theorem 9.3 and Remark 9.9 pp.534–541. The local adjoint convention and self-twist branch are located at gj78 line 528, line 538 and line 721.
 - **katz-gkm.** Nicholas M. Katz, *Gauss Sums, Kloosterman Sums, and Monodromy Groups*, Annals of Mathematics Studies 116 (1988), [author scan](https://web.math.princeton.edu/~nmk/Katz-GKM.pdf), §4.0 pp.47–48 and Theorem 4.1.1 pp.48–49; katz-gkm line 1845, line 1871 and line 1902.
+- **bms02.** Maxim Braverman, Ognjen Milatovic and Mikhail Shubin, *Essential self-adjointness of Schrödinger type operators on manifolds*, Russian Mathematical Surveys 57:4 (2002), 641–692, [arXiv:math/0201231v3](https://arxiv.org/abs/math/0201231v3). §2.1, p.4, minimal and maximal operators (bms02 line 151); Assumption B, p.5 (bms02 line 196); Corollary 2.10, p.7, essential self-adjointness of D⁎D for a complete metric (bms02 line 245); numbering of the arXiv text.
 - **teschl.** Gerald Teschl, *Mathematical Methods in Quantum Mechanics*, [author text](https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf), author-hosted 12 February 2009 edition, GSM 99: §2.3, Theorems 2.12–2.13 pp.70–72 (teschl line 2914 and line 2960); §4.3, Theorem 4.10 and the form-domain observation p.119 (teschl line 5044 and line 5053). The quotient-chart and cusp-cutoff arguments above are specializations requiring their stated geometry, not assertions that this textbook constructs an orbifold Laplacian.

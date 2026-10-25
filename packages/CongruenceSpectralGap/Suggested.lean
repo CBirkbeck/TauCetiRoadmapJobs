@@ -7,10 +7,12 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs.
 
 The following headlines are not statable at the pins:
-* The congruence spectral gap, operator and closed-form Rayleigh inequalities,
-  spectral clipping comparison, and constant-metric rescaling lack the canonical
-  finite-area orbifold closed-energy domain and quotient Friedrichs realization.
-  `LinearPMap` alone does not construct that operator.
+* The Rayleigh-infimum form λ′₁ of the congruence gap, the operator and
+  closed-form Rayleigh inequalities, the spectral clipping comparison and the
+  constant-metric rescaling lack the canonical finite-area orbifold closed-energy
+  domain and quotient Friedrichs realization. `LinearPMap` alone does not
+  construct that operator. The gap itself is stated below in its classical
+  eigenfunction form, on Mathlib's Laplacian and the action of `SL(2, ℤ)` on `ℍ`.
 * The spherical GL_m/Q parameter bound, exceptional cuspidal dictionary and
   spherical adjoint GL_3 comparison lack native cuspidal automorphic
   representations, occurrence spaces, canonical archimedean parameters and lifts.
@@ -56,6 +58,24 @@ theorem gauss_power_even_average_bound
     ‖∑ χ : DirichletCharacter ℂ q with χ ≠ 1 ∧ χ (-1) = 1,
         star (χ (r : ZMod q)) * (gaussSum χ (ZMod.stdAddChar (N := q))) ^ k‖ ≤
       ((q : ℝ) - 1) * (k : ℝ) * (q : ℝ) ^ (((k : ℝ) - 1) / 2) + 1 := by
+  sorry
+
+/-! ## Layer 5: The parameter bound and congruence gap -/
+
+open UpperHalfPlane Laplacian in
+/-- Luo–Rudnick–Sarnak, Theorem 1.1, in eigenfunction form: for a congruence subgroup `Γ`
+of `SL(2, ℤ)`, every nonconstant bounded `Γ`-invariant `C²` eigenfunction of the positive
+hyperbolic Laplacian `−y²(∂ₓ² + ∂ᵧ²)` on the upper half-plane has eigenvalue at least
+`21/100`. Boundedness puts the eigenfunction in `L²` of the finite-area quotient, so this is
+the eigenfunction form of the bound `λ′₁(Γ) ≥ 21/100`. -/
+theorem congruence_eigenvalue_bound (Γ : Subgroup (Matrix.SpecialLinearGroup (Fin 2) ℤ))
+    (hΓ : CongruenceSubgroup.IsCongruenceSubgroup Γ) (u : ℂ → ℂ)
+    (hu : ContDiffOn ℝ 2 u {z : ℂ | 0 < z.im})
+    (hinv : ∀ γ ∈ Γ, ∀ z : ℍ, u ((γ • z : ℍ) : ℂ) = u (z : ℂ))
+    (hbdd : ∃ C : ℝ, ∀ z : ℍ, ‖u (z : ℂ)‖ ≤ C)
+    (hnc : ∃ z w : ℍ, u (z : ℂ) ≠ u (w : ℂ))
+    (lam : ℝ) (heig : ∀ z : ℍ, -((z.im : ℂ) ^ 2) * Δ u (z : ℂ) = (lam : ℂ) * u (z : ℂ)) :
+    (21 / 100 : ℝ) ≤ lam := by
   sorry
 
 end TauCetiRoadmap.CongruenceSpectralGap

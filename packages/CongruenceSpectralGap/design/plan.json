@@ -1950,14 +1950,14 @@
     {
       "slug": "all-level-spectral-realization",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "1.16a and 4.8",
-      "needs": "Extend the modular spectral realization to every principal congruence level and every intermediate congruence subgroup, compatibly with its quotient Friedrichs operator, with one scattering channel per cusp, absolutely continuous spectrum [1/4,∞), no singular continuous spectrum, finite small spectrum and residual space exactly the constants."
+      "section": "4.3–4.4, 4.8 and 4.14a",
+      "needs": "For GL₂ over ℚ and every principal level K(N)={k∈GL₂(ℤ̂) : k≡1 mod N}, N≥1, specialize §§4.3–4.4, 4.8 and 4.14a to the right-K(N)·SO(2)-invariant part of L²([GL₂]¹), all central characters trivial on the positive real scalars: it is the orthogonal sum of the span of the functions τ∘det for Hecke characters τ trivial on the positive real scalars and on det K(N), the cuspidal part, on which the positive Casimir operator (normalized to act as Δ on weight-zero vectors) has pure point spectrum with finite multiplicities and finitely many eigenvalues in each bounded interval, and the Eisenstein integrals, on which that operator is 1/4+t² on the fibre at t, with multiplicity on (1/4,∞) the number of cusps of the level-K(N) quotient, so that its continuous spectrum is absolutely continuous and equals [1/4,∞)."
     },
     {
       "slug": "principal-level-classical-constituents",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "3.1",
-      "needs": "Provide the norm-compatible principal-level classical–adelic comparison and passage to invariants of each intermediate congruence subgroup, intertwining the weight-zero Casimir with the positive hyperbolic Laplacian and the cuspidal constituent extraction of ArithmeticLocallySymmetricSpaces ALS.F.6."
+      "section": "3.1 and 4.5",
+      "needs": "For every N≥1, extend §4.5's `maassClassicalEquiv` from level one to the principal level K(N) through §3.1's `classicalEquiv` at J=K(N), whose components in the positive-determinant convention are indexed by (ℤ/N)ˣ with rational stabilizer Γ(N) each: an isometry, for the normalized quotient measures, from the right-K(N)·SO(2)-invariant part of L²([GL₂]¹) onto the sum over (ℤ/N)ˣ of copies of L²(Γ(N)\\ℍ, dxdy/y²), equivariant for GL₂(ℤ̂)/K(N) and the action of SL₂(ℤ)/Γ(N) on the identity component, carrying the positive Casimir operator on compactly supported smooth vectors to −y²(∂ₓ²+∂ᵧ²) and the Casimir λ-eigenspace of the ALS.F.6 cusp space on the identity component onto `MaassCuspForm(Γ(N),λ)`."
     },
     {
       "slug": "all-prime-self-pair-positivity",
@@ -1972,16 +1972,10 @@
       "needs": "Provide unramified-character transport of every local self-pair L and epsilon factor including ramified representations, and at an unramified rank-m prime the primitive conductor-q twist formulas L=1 and epsilon=τ(χ)^(m²)q^(−m²s) in the stated positive Gauss convention."
     },
     {
-      "slug": "complex-gamma-strip-estimates",
-      "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "AL.1, Canonical archimedean factors",
-      "needs": "Provide zero-free meromorphic Gamma factors, their pole orders and complex Stirling estimates on finite vertical strips away from poles, including polynomial growth of the balanced ratio A(1−s)/A(s)."
-    },
-    {
       "slug": "finite-rs-polynomial-strips",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
-      "section": "AL.3, L-function data and derived products",
-      "needs": "For each fixed entire prime-twisted finite Rankin–Selberg function provide polynomial growth on every finite vertical strip by finite-order continuation and Phragmén–Lindelöf, with constants permitted to depend on the twist."
+      "section": "AL.3, Hecke, eigensystem and Rankin–Selberg data",
+      "needs": "For unitary cuspidal π of GL_m over ℚ and each nonprincipal even character χ of prime conductor q>2 with q∤fπ, realize the twisted self-pair `rsDatum (π⊗χ) π∨` as an `LFunctions.AnalyticLFunctionData` record meeting the hypotheses of ZerosOfLFunctions Layer 3, item 3: Dirichlet agreement with coefficients b(n)χ(n), empty polar divisor, finite-order entire completion, functional equation against its dual record with conductor fq^(m²) and root number τπχ(f)τ(χ)^(m²)(fq^(m²))^(−1/2), and the average coefficient bound."
     },
     {
       "slug": "additive-character-sheaf-weight",

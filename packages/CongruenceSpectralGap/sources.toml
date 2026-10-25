@@ -64,3 +64,22 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
 cited_for = ["Layer 4 general hyper-Kloosterman sum and bound"]
+
+[[source]]
+id = "bms02"
+authors = "Maxim Braverman, Ognjen Milatovic, Mikhail Shubin"
+title = "Essential self-adjointness of Schroedinger type operators on manifolds"
+year = 2002
+doi = "10.1070/RM2002v057n04ABEH000532"
+arxiv = "math/0201231v3"
+locator_scheme = "theorem"
+locator = "Section 2.1, Assumption B and Corollary 2.10, printed pp. 4–7 of arXiv v3"
+url = "https://arxiv.org/abs/math/0201231v3"
+fetched_from = "https://arxiv.org/pdf/math/0201231v3"
+fetched_at = "2026-10-25T01:14:45Z"
+sha256 = "28e5ce3be552637742704c510d363f837f977b4f3ff09c13ec8d60950e9a06cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3 (29 July 2002); section and corollary numbering of the arXiv text, which is the version read; published in Russian Mathematical Surveys 57:4 (2002)."
+cited_for = ["0.2", "5.3"]
