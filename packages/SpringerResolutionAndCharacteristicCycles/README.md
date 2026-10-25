@@ -1,17 +1,19 @@
 # Roadmap: springer resolutions and characteristic cycles
 
-**Summary.** Build the Grothendieck simultaneous resolution and its double incidence components from split reductive groups, flag quotients and algebraic vector bundles. Prove that the incidence scheme is a reduced local complete intersection, that its components are geometrically Cohen–Macaulay and normal, and that their Cartan maps are flat. Construct the Springer conormal geometry, algebraic D-modules and flag localisation that identify the Verma, simple and component cycle bases. The end theorems are parabolic invariance, the zero-operator tangent bound and the completed Kazhdan–Lusztig cycle identity. [Suggested.lean](Suggested.lean) records the acceptance boundary of the pinned APIs; this README is the roadmap.
+**Summary.** Build the Grothendieck simultaneous resolution and its double incidence components from split reductive groups, flag quotients and algebraic vector bundles. Prove that the incidence scheme is a reduced local complete intersection, that its components are geometrically Cohen–Macaulay and normal, and that their Cartan maps are flat. Compare the supplied Springer geometry over general characteristic-zero fields and reductive groups, and construct its double-incidence conormals, algebraic D-modules and flag localisation that identify the Verma, simple and component cycle bases. The end theorems are parabolic invariance, the zero-operator tangent bound and the completed Kazhdan–Lusztig cycle identity. [Suggested.lean](Suggested.lean) records the acceptance boundary of the pinned APIs; this README is the roadmap.
 
 ## Scope and ownership
 
-This roadmap owns the resolution incidence schemes, their Weyl-labelled closures, normality and Cartan geometry; the algebraic D-module, filtration, holonomic and localisation theory used by their cycles; and the integral cycle comparisons and their completions. Its generic constructions apply to every smooth separated finite-type characteristic-zero scheme, rather than only flag varieties. Flags and associated bundles retain their natural base-change interfaces in every characteristic. The component regularity results have the explicit characteristic hypotheses below; those hypotheses do not restrict the foundational carriers or replace the positive-characteristic theory used to prove them.
+This roadmap owns the Grothendieck simultaneous and double incidence schemes, their Weyl-labelled closures, normality and Cartan geometry; the field and reductive-centre comparisons of the supplied Springer geometry; the algebraic D-module, filtration, holonomic and localisation theory used by their cycles; and the integral cycle comparisons and their completions. Its generic constructions apply to every smooth separated finite-type characteristic-zero scheme, rather than only flag varieties. Flags and associated bundles retain their natural base-change interfaces in every characteristic. The component regularity results have the explicit characteristic hypotheses below; those hypotheses do not restrict the foundational carriers or replace the positive-characteristic theory used to prove them.
 
-- ReductiveGroups Layers 2–3 and 7–9 own Lie algebras and adjoint actions, parabolic quotients, root data, standard parabolics, Bruhat decomposition, central isogenies and integral Chevalley models. The flag and orbit comparisons in Layer 1 specialize those objects; they introduce no second quotient or Weyl carrier.
+- ReductiveGroups Layers 2–3 and 7–9 own Lie algebras and adjoint actions, parabolic quotients, root data, standard parabolics, Bruhat decomposition, central isogenies and integral Chevalley models. Layers 10A–10B own the actual torus-character lattice, rational highest-weight modules and their integration/differentiation interface; Layers 11C–11D own the complex regular-semisimple quotient and cameral comparisons. The flag and orbit comparisons in Layer 1 specialize those objects; the residual Lie contract concerns their additional field/characteristic and Borel-cover comparisons.
 - RepresentationTheory/LieHighestWeight Layers 3–4, 7 and 9 own enveloping algebras, semisimple Verma and simple modules, finite-dimensional highest weights, central characters and reductive decomposition. The extension here fixes the scalar action of the centre and the algebraic principal category O. Neither finite-dimensional semisimple classification nor Harish–Chandra theory is rebuilt.
-- FormalConnectionsOpers F2.2 owns all-order algebraic differential operators, their restriction/gluing, principal parts, Lie–Rinehart enveloping algebras and filtered PBW, including the smooth characteristic-zero comparison with ordinary operators. Layer 8 consumes that theory and owns its coherent D-module categories, good filtrations and characteristic cycles.
-- AlgebraicVectorBundles L0A–L2B owns sheaf tensor, dual, symmetric algebras, relative Spec and geometric total spaces. Associated-bundle comparisons use these constructions. Mathlib supplies scheme pullbacks, ordinary symmetric algebras, module length, finite-support sums and adic completion. Tau Ceti supplies finitely presented sheaves and the sheaf tensor/dual substrate.
+- SchubertGeometry S1 and S2.3 own the root-cell and subword/closure interfaces for split reductive flags. Section 1.4 compares their closures with diagonal relative-position orbits, transporting the opposite-Borel convention.
+- NilpotentOrbits N1, N5.0 and N7 own the complex adjoint semisimple nilpotent cone, its reduced quotient-ideal scheme, Springer incidence resolution, cotangent identification and scheme fibres. Sections 6.1–6.3 here compare those objects over arbitrary characteristic-zero fields and split reductive groups, preserving their maps; the double-incidence and conormal comparisons are additional targets.
+- FormalConnectionsOpers F4.3 owns characteristic-zero coaction-invariant Chevalley restriction, polynomial generators with central factors, field descent and unique regular-nilpotent Borels. Section 6.1 uses these exports. F2.2 owns all-order algebraic differential operators, their restriction/gluing, principal parts, Lie–Rinehart enveloping algebras and filtered PBW, including the smooth characteristic-zero comparison with ordinary operators. Layer 8 consumes that theory and owns its coherent D-module categories, good filtrations and characteristic cycles.
+- AlgebraicVectorBundles L0A–L2B owns sheaf tensor, dual, symmetric algebras, relative Spec and geometric total spaces. Associated-bundle linear, subbundle and incidence comparisons use these constructions and the contract below; SchemeAndStackFoundations §§1.1 and 1.16 own quasi-coherent descent and geometric contracted products with base change. Mathlib supplies scheme pullbacks, ordinary symmetric algebras, module length, finite-support sums and adic completion. Tau Ceti supplies finitely presented sheaves and the sheaf tensor/dual substrate.
 - SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.16–0.21, 0.30, 1.1, 2.6, 2.18 and 5.1 owns coherent extension, dimension, spreading, CM and Serre conditions, excellence, normal schemes, descent, coherent cohomology, ordinary derived quasi-coherent operations and dimension-graded cycles. The finite-type dimension grading is consumed from §5.1. Layer 7 identifies its finite component basis and extends the component-support subgroup to arbitrary Noetherian finite-dimensional schemes, including completed local spectra.
-- DeformationAndDerivedPatchingAlgebra §6.7 owns affine generic-length module cycles and exact additivity. Layer 7 glues that affine construction on schemes and identifies the Springer support; it does not redefine the affine cycle. Its §§1.13–1.15 supply finite-module completion and local-map comparisons. EnhancedDerivedSheaves §§0.1–0.4 and E1.3–E1.4 owns generic derived sheaf enhancement and functor coherence; Layer 9 owns the D-specific transfer and filtered homological results.
+- DeformationAndDerivedPatchingAlgebra §6.7 owns affine generic-length module cycles and exact additivity. Layer 7 glues that affine construction on schemes and identifies the Springer support; it does not redefine the affine cycle. Its §§1.13–1.15 supply finite-module completion and §1.16 supplies maps on local completions and their flatness. EnhancedDerivedSheaves §§0.1–0.4 and E1.3–E1.4 owns generic derived sheaf enhancement and functor coherence; Layer 9 owns the D-specific transfer and filtered homological results.
 
 Analytic or completed category O, Galois representations, trianguline spaces, general Springer representations and rational-equivalence quotients are outside the scope. The strict algebraic category O, its integrability and its KL multiplicities are placed in §§10.4, 12.1 and 11.3, respectively, so localisation and the cycle identities have a single direction of supply. The root-wall and Lie-invariant comparisons needed by the geometry are specified as supplier contracts, not inferred from the existence of root data.
 
@@ -23,7 +25,7 @@ The characteristic hypothesis for Layers 2–5 is char(k)=0 or char(k)=p>h, wher
 
 Associated bundles use (g,x)∼(gb,Ad(b⁻¹)x). The second Cartan coordinate on X_w is w⁻¹ times the first. Fix a nondegenerate invariant symmetric form when identifying adjoint with coadjoint geometry; on a reductive centre choose a nondegenerate form separately. Cotangent incidence uses (−ψ,ψ), so the diagonal moment map is zero. The symbol of a derivation has positive order one. D-modules are left modules with quasi-coherent underlying O-module; coherence means locally finite over D. Cohomological shifts use Hⁱ(K[a])=Hⁱ⁺ᵃ(K). The normalized inverse image is f†=Lf*[dim source−dim target]; smooth abelian inverse image is Lf*, and closed inverse image of codimension c is Li*[−c].
 
-The functional ρ is half the positive-root sum, with zero central component; it need not be a character of G. The dot action is w·λ=w(λ+ρ)−ρ, and M_w=M(ww₀·0)=M(−wρ−ρ), with simple quotient L_w. The reduction U_χ₀ uses the actual central character of the trivial representation, not its generalized eigenspace. Ordinary D_F has Beilinson–Bernstein twisting parameter ρ. Cycle coefficients are integers obtained from finite generic lengths; reduction of a support never reduces the module used to compute its coefficient. Empty support contributes the zero cycle. All sheaves, schemes and small sites use a fixed universe and their native category universes; no large quotient is disguised as a type in the same universe.
+The algebraic weight lattice is X*(T) for the specified isogeny form of G, mapped to t* by differentiation in characteristic zero. Distinguish it as a notion from X*(G) and from the full abstract weight lattice of the semisimple Lie algebra; these lattices can coincide in particular cases. The functional ρ is half the positive-root sum, with zero central component; it need not belong to X*(T), although −wρ−ρ does. The dot action is w·λ=w(λ+ρ)−ρ, and M_w=M(ww₀·0)=M(−wρ−ρ), with simple quotient L_w. The reduction U_χ₀ uses the actual central character of the trivial representation, not its generalized eigenspace. Ordinary D_F has Beilinson–Bernstein twisting parameter ρ. Cycle coefficients are integers obtained from finite generic lengths; reduction of a support never reduces the module used to compute its coefficient. Empty support contributes the zero cycle. All sheaves, schemes and small sites use a fixed universe and their native category universes; no large quotient is disguised as a type in the same universe.
 
 **Checks.**
 
@@ -40,6 +42,8 @@ The functional ρ is half the positive-root sum, with zero central component; it
 
 Use `AlgebraicGeometry.Scheme` in Mathlib/AlgebraicGeometry/Scheme.lean and `CategoryTheory.Limits.pullback` in Mathlib/CategoryTheory/Limits/Shapes/Pullback/HasPullback.lean, with the scheme pullback instances in Mathlib/AlgebraicGeometry/Pullbacks.lean. These provide schemes and categorical fibre products with actual stalks; a pullback alone supplies no reducedness or dimension assertion. `AlgebraicGeometry.AlgebraicCycle` in Mathlib/AlgebraicGeometry/AlgebraicCycle/Basic.lean:44 is a locally finitely supported function on scheme points. Its definition imposes neither a dimension grading nor rational equivalence.
 
+Use `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite` in Mathlib/AlgebraicGeometry/ZariskisMainTheorem.lean:372 for a proper locally quasi-finite scheme morphism.
+
 Use `Module.length` and `Module.length_eq_add_of_exact` in Mathlib/RingTheory/Length.lean:30,168. Length takes values in extended naturals; the second statement assumes an injective first map, a surjective second map and `Function.Exact`. `Finsupp` and `Finsupp.linearCombination` supply the finite free additive carrier and evaluation of its integer linear combinations. `AdicCompletion` in Mathlib/RingTheory/AdicCompletion/Basic.lean is the compatible quotient inverse limit, not a sheaf or D-module completion theorem. `LinearMap.ker` and `Module.finrank` supply fixed subspaces and their finite-dimensional dimensions. `SymmetricAlgebra` supplies the ordinary symmetric algebra. `SheafOfModules` and `DerivedCategory` provide module sheaves and ordinary derived-category carriers under their own sheafification and derived-category hypotheses; neither supplies D-transfer or holonomic duality.
 
 ### From Tau Ceti
@@ -48,31 +52,47 @@ Use `TauCeti.AlgebraicGeometry.FinitelyPresentedSheaf` in TauCeti/AlgebraicGeome
 
 ### From TauCetiRoadmap.ReductiveGroups
 
-Layers 2, 3, 7, 8 and 9 supply, respectively, the Lie/adjoint dictionary, quotient and torsor interfaces, split roots and Bruhat decomposition, central isogenies, and pinned Chevalley–Demazure models. The root-subgroup and flag comparisons retain the specified B and T after base change. Layer 7's decomposition is not alone a scheme-theoretic Schubert closure-order theorem.
+Layers 2, 3, 7, 8 and 9 supply, respectively, the Lie/adjoint dictionary, quotient and torsor interfaces, split roots and Bruhat decomposition, central isogenies, and pinned Chevalley–Demazure models. Layers 10A–10B supply rational T-weight labels, integration with its toral and root-action equations, and split dominant highest-weight modules with field descent and characteristic-zero simplicity. Layers 11C–11D supply the complex regular-semisimple centralizer and cameral quotient. The root-subgroup and flag comparisons retain the specified B and T after base change. Layer 7's decomposition is not alone a scheme-theoretic Schubert closure-order theorem.
 
-What ReductiveGroups must provide (gap:lie-invariants): For split reductive G in characteristic zero or p>h provide Lie Jordan and centralizer theory, regular-Borel covers, invariant forms, Bruhat closure order and central-isogeny comparisons, together in characteristic zero with Chevalley restriction, polynomial invariants, the reduced nilpotent quotient fibre and unique regular-nilpotent flags.
+What ReductiveGroups must provide (gap:lie-invariants): For split connected reductive G over a field of characteristic zero or p>h, supply the arbitrary-field Lie Jordan and centralizer-dimension comparisons needed in §§2.2–2.3, the regular-semisimple Borel W-torsor and quasi-finiteness of the regular-Borel morphism; supply invariant symmetric forms and Lie/flag comparisons under central isogenies of invertible degree, the rank-one centralizer/root-vector regularity on a single root wall used in §5.3 in the same characteristic range.
 
-The extension is in the ReductiveGroups, Part II direction. This contract concerns algebraic groups over fields, distinct from the local-field building and parahoric direction of ReductiveGroupsPartII. The root-wall input is used in §5.3, and the characteristic-zero invariant quotient in §6.1; neither consumes Springer normality.
+The extension is in the ReductiveGroups, Part II direction. This contract concerns algebraic groups over fields, distinct from the local-field building and parahoric direction of ReductiveGroupsPartII. The root-wall input is used in §5.3; the characteristic-zero invariant quotient in §6.1 uses FormalConnectionsOpers F4.3. Neither consumes Springer normality.
 
 ### From TauCetiRoadmap.AlgebraicVectorBundles
 
 L0A supplies monoidal sheaf operations; L0B–L0C supply finite locally free duals and symmetric/exterior powers; L1A–L1B supply relative Spec and affine comparison; L2A–L2B supply geometric total spaces, with Tot(E)=Spec Sym(E∨), and their linear morphisms and pullbacks. The associated Lie bundles in §§2.1 and 6.2 use these finite locally free carriers.
 
-What AlgebraicVectorBundles must provide (gap:associated-bundle-descent): Descend finite-rank representations along representable fppf torsors to associated bundles with subbundle and incidence comparisons and arbitrary base change, including the integral Chevalley Borel Lie bundles.
+What AlgebraicVectorBundles must provide (gap:associated-bundle-descent): For a flat affine group scheme H over S₀, a representable fpqc H-torsor P→S and a finite locally free H-representation V over S₀, compare the total space of its descended module with the geometric contracted product P×ᴴTot(V) supplied by SchemeAndStackFoundations §1.16, preserving the inverse-action descent datum, linear maps, tensor and dual structure and arbitrary base change; compare invariant locally direct summands and their incidence embeddings, including integral Chevalley Borel Lie bundles, using the descent equivalence of §1.1.
+
+**Checks.**
+
+- On the right frame torsor of O_(P¹)(1), with right action by composition, the relation (p,v)∼(pg,g⁻¹v) for weight 1 gives O(1), of degree 1; the linear and geometric constructions must identify the evaluation map [p,v]↦p(v).
+- The dual weight −1 on that same torsor gives O(−1), of degree −1; reversing the inverse-action convention would exchange these two bundles.
+- Weight 0 gives O, of degree 0; on a trivial torsor a rank-a representation gives O^a, including rank 0, and base change preserves those ranks.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Use §0.4 for extension of coherent submodules, §0.7 for local dimensions and finite-type dimension formulas, §§0.8–0.9 for spreading and field descent, §§0.16–0.18 for catenarity, depth, CM and Serre conditions, §§0.19–0.21 for CM loci, excellence and regular-map preservation of reducedness/normality, §§0.30 and 4.13 for normal-scheme comparisons and Serre normality, Layer 1's fpqc/fppf descent, §2.6 for quasi-coherent cohomology and Serre vanishing, §2.18 for ordinary derived quasi-coherent operations, and §5.1 for dimension-graded cycles before rational equivalence. At finite type over a field its top-degree subgroup is the finite free group on top-dimensional components; the completed local schemes instead use the affine module-cycle grading of DeformationAndDerivedPatchingAlgebra §6.7.
+Use §0.4 for extension of coherent submodules, §0.7 for local dimensions and finite-type dimension formulas, §§0.8–0.9 for spreading and field descent, §§0.16–0.18 for catenarity, depth, CM and Serre conditions, §§0.19–0.21 for CM loci, excellence and regular-map preservation of reducedness/normality, §§0.30 and 4.13 for normal-scheme comparisons and Serre normality, §1.1 for quasi-coherent fpqc descent, §1.16 for geometric contracted products and arbitrary base change, §4.11 for `IsModification.isIso_of_isFinite` on normal integral targets, §2.6 for quasi-coherent cohomology and Serre vanishing, §2.18 for ordinary derived quasi-coherent operations, and §5.1 for dimension-graded cycles before rational equivalence. At finite type over a field its top-degree subgroup is the finite free group on top-dimensional components; the completed local schemes instead use the affine module-cycle grading of DeformationAndDerivedPatchingAlgebra §6.7.
 
-What SchemeAndStackFoundations must provide (gap:local-geometric-comparisons): Supply proper quasi-finite finiteness and finite birational comparison to a normal target, and the equidimensionality of completed prime quotients of pure finite-type schemes at closed points, with the scheme and completed-local cycle comparisons used here.
+What SchemeAndStackFoundations must provide (gap:local-geometric-comparisons): For a reduced pure d-dimensional finite-type k-scheme Y, a closed point x and each irreducible component C through x, prove that the completion of O_(C,x) is equidimensional of dimension d, and compare the generic-length cycles of the component quotient and its completed branches with the scheme cycles; use excellence for reducedness of the completed quotient, and retain the specified component ideals and maps in the scheme-to-affine and completed-local cycle comparisons.
 
 Use §0.17 for CM plus generic reducedness through the R₀ and S₁ criterion, §0.21 for reduced/normal preservation under the regular completion map, and §4.13 for Serre normality. DeformationAndDerivedPatchingAlgebra §§3.3–3.4 supplies local miracle flatness and the regular-sequence criterion. In its ring specialization, the local map R→S has R regular, S CM and dim S=dim R+dim(S/m_RS). The gap concerns the additional scheme and equidimensional-completion comparisons, with no inference of geometric reducedness from a merely reduced base.
 
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
-Section 6.7 supplies the finite-module generic-length cycle on Spec A for Noetherian A, finite M and dim Supp M≤d, including exact additivity, vanishing below d and quotient comparisons. Its localization comparison retains ambient dimensions. Sections 3.3–3.4 supply local module miracle flatness and regular-sequence/CI criteria; §§1.13–1.15 supply finite-module completion/flatness and local-map comparisons; the coefficient ring, ideal and actual comparison maps remain fixed. These affine inputs are glued in §7.2 and applied to completed local rings in Layer 14; the intrinsic dimension of a surviving localization is not silently identified with its dimension in the original global scheme.
+Section 6.7 supplies the finite-module generic-length cycle on Spec A for Noetherian A, finite M and dim Supp M≤d, including exact additivity, vanishing below d and quotient comparisons. Its localization comparison retains ambient dimensions. Sections 3.3–3.4 supply local module miracle flatness and regular-sequence/CI criteria; §§1.13–1.15 supply finite-module completion/flatness, and §1.16 supplies the induced maps on maximal-adic local completions, their flatness for flat local maps and their completed closed-fibre comparison; the coefficient ring, ideal and actual comparison maps remain fixed. These affine inputs are glued in §7.2 and applied to completed local rings in Layer 14; the intrinsic dimension of a surviving localization is not silently identified with its dimension in the original global scheme.
+
+### From TauCetiRoadmap.SchubertGeometry
+
+Use S1 and S2.3 for the root-cell dictionary, proper reduced-word maps and subword/Bruhat closure criterion. Its standard cells use the opposite Borel; transport the chosen positive-Borel flags by opposition before applying the criterion in §1.4.
+
+### From TauCetiRoadmap.NilpotentOrbits
+
+N1 supplies the complex adjoint semisimple cone as the actual zero-fibre scheme, its nilradical incidence bundle and projection. N5.0 supplies reducedness and the complete-intersection quotient ideal. N7 supplies the cotangent isomorphism with its moment projection, proper birational Springer map and scheme fibres. The adapters in §§6.1–6.3 identify their characteristic-zero field extensions and split reductive central factors with these same objects after matching the invariant form; they retain the closed ideals and maps, including on nonreduced test algebras.
 
 ### From TauCetiRoadmap.FormalConnectionsOpers
+
+F4.3 supplies coaction-invariant Chevalley restriction, homogeneous polynomial generators, central affine factors, characteristic-zero field descent and the unique Borel containing a regular nilpotent. These are inputs to §§6.1–6.2; no new invariant-theory contract is requested for them.
 
 F2.2 supplies the sheaf of order-filtered algebraic differential operators via iterated commutators, its module/principal-parts universal property and localization/gluing over arbitrary commutative bases, the Lie–Rinehart enveloping algebra and PBW when its Lie module is projective, and gr D_Y≅Sym T_Y for smooth characteristic-zero Y. These operators are relative k-linear operators; an O-linear endomorphism is only an order-zero operator. Sections 8.1–8.2 use this object to construct the coherent D-module category and prove its filtered Noetherian and cotangent-sheaf comparisons. No connection/jet or recursive operator carrier is duplicated.
 
@@ -84,7 +104,7 @@ What EnhancedDerivedSheaves must provide (gap:derived-bimodule-sheaves): Supply 
 
 ### From TauCetiRoadmap.RepresentationTheory/LieHighestWeight
 
-Layers 3, 4 and 7 supply PBW and semisimple Verma/simple modules, finite-dimensional highest weights and Harish–Chandra central characters with the dot shift. Layer 9 supplies reductive decomposition and the central scalar parameter. The native semisimple Verma carrier is retained on the derived summand. Section 10.4 here forms the fixed-central-action extension and its strict algebraic category O; §10.1 proves the finite-dimensional group-character integration needed by D-affinity and §12.1 proves parabolic integrability; §11.3 proves its multiplicity theorem. None of those inputs depends on the resulting Springer cycle formula.
+Layers 3, 4 and 7 supply PBW and semisimple Verma/simple modules, finite-dimensional highest weights and Harish–Chandra central characters with the dot shift. Layer 9 supplies reductive decomposition and the central scalar parameter. The native semisimple Verma carrier is retained on the derived summand. Section 10.4 here forms the fixed-central-action extension and its strict algebraic category O; §10.1 compares the supplied rational highest-weight actions with the D-affinity projection and §12.1 proves parabolic integrability; §11.3 proves its multiplicity theorem. None of those inputs depends on the resulting Springer cycle formula.
 
 ## How to read the build
 
@@ -94,7 +114,7 @@ Layers 1–3 give flags, simultaneous resolution and double incidence. Layer 4 e
 
 ### 1.1 The flag scheme
 
-Let G, B and T be as in the conventions. Let F be the scheme representing the fppf quotient G/B. The quotient map G→F is a right B-torsor, and its functor of points is the sheafification of S↦G(S)/B(S), rather than the naive quotient on every S. Fix the base flag eB and the left G-action. (BHS19, §2.1, p. 309 (BHS19 line 426)).
+Let G, B and T be as in the conventions. Let F be the scheme representing the fppf quotient G/B. The quotient map G→F is a right B-torsor, and its functor of points is the sheafification of S↦G(S)/B(S), rather than the naive quotient on every S. Fix the base flag eB and the left G-action. (BHS19, §2.1, p. 310 (BHS19 lines 470–488)).
 
 Use the supplied quotient and prove its identification with B-reductions of the trivial torsor; the representing scheme and torsor are inputs. No representability theorem is proved a second time.
 
@@ -118,7 +138,7 @@ The construction has the following API.
 
 ### 1.2 Smooth projectivity of the flag variety
 
-Let G, B and T be as in the conventions. F is smooth, projective and geometrically integral over k, of dimension N=dim U; D=dim G=r+2N and dim B=r+N, where r=dim T. These dimension equalities persist after extension of k. (BHS19, §2.1, pp. 309–310 (BHS19 line 426)).
+Let G, B and T be as in the conventions. F is smooth, projective and geometrically integral over k, of dimension N=dim U; D=dim G=r+2N and dim B=r+N, where r=dim T. These dimension equalities persist after extension of k. (BHS19, §2.1, p. 310 (BHS19 lines 470–488)).
 
 The quotient geometry and root count require no restriction on the characteristic; this subsection is valid for a split connected reductive group over any field.
 
@@ -133,7 +153,7 @@ One proof route is as follows. Use the big Bruhat cell, a product of the negativ
 
 ### 1.3 Relative position orbits
 
-Let G, B and T be as in the conventions. For w∈W=N_G(T)/T, choose a representative ŵ and let U_w⊂F×F be the diagonal G-orbit of (eB,ŵB), with its locally closed reduced orbit scheme. Define Ū_w as its reduced closed closure. These constructions are independent of ŵ. (BHS19, §2.1, p. 309; Lemma 2.2.4, pp. 312–313 (BHS19 line 426)).
+Let G, B and T be as in the conventions. For w∈W=N_G(T)/T, choose a representative ŵ and let U_w⊂F×F be the diagonal G-orbit of (eB,ŵB), with its locally closed reduced orbit scheme. Define Ū_w as its reduced closed closure. These constructions are independent of ŵ. (BHS19, §2.1, p. 310; Lemma 2.2.4, pp. 312–313 (BHS19 lines 470–474 and 565–574)).
 
 The quotient and orbit construction is valid over any field. Its points are compared after fppf lifting, rather than by assuming rational representatives exist over every test scheme.
 
@@ -157,16 +177,16 @@ The construction has the following API.
 
 ### 1.4 Dimensions and closures of the Bruhat orbits
 
-Let G, B and T be as in the conventions. The U_w are smooth geometrically integral, dim U_w=N+ℓ(w), and F×F is their disjoint stratification. The support of Ū_w is the union of U_v for v≤w in Bruhat order. In particular Ū_w is geometrically integral and U_w is its dense smooth open stratum. (BHS19, §2.1, p. 309; Proposition 2.2.1, pp. 311–312 (BHS19 line 426)).
+Let G, B and T be as in the conventions. The U_w are smooth geometrically integral, dim U_w=N+ℓ(w), and F×F is their disjoint stratification. The support of Ū_w is the union of U_v for v≤w in Bruhat order. In particular Ū_w is geometrically integral and U_w is its dense smooth open stratum. (BHS19, §2.1, p. 310; Proposition 2.2.1, pp. 311–312 (BHS19 lines 470–474)).
 
-One proof route is as follows. The stabilizer has Lie algebra t⊕(u∩Ad(ŵ)u) of dimension r+N−ℓ(w); its root-subgroup description gives smoothness. Pull back along G→F in the first coordinate; the second coordinate becomes the usual Bruhat stratification of F. Use the supplied Schubert closure order, then descend the statements through the torsor.
+One proof route is as follows. The stabilizer has Lie algebra t⊕(u∩Ad(ŵ)u) of dimension r+N−ℓ(w); its root-subgroup description gives smoothness. Pull back along G→F in the first coordinate; the second coordinate becomes the usual Bruhat stratification of F. Use SchubertGeometry S1 and S2.3 after the opposition comparison for its Borel convention, then descend the statements through the torsor.
 
 **Checks.**
 
 - For SL₂, U_e is the one-dimensional diagonal and U_s the two-dimensional distinct-pair open; only the latter closure is all P¹×P¹.
 - For SL₂ e,s; torus, compute: orbit dimensions 1+0=1, 1+1=2; 0+0=0, with e≤s. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §1.3; §1.2; ReductiveGroups Layer 7.
+*Needs:* SchubertGeometry S1 and S2.3; §1.3; §1.2; ReductiveGroups Layer 7.
 
 ### 1.5 Intersection of subvector bundles
 
@@ -191,7 +211,7 @@ ranks 0,1; over k[ε]/ε² the actual intersection is (ε)e₁, fibre intersecti
 
 ### Dependencies
 
-Mathlib `AlgebraicGeometry.Scheme`; Mathlib `LinearMap.ker`; ReductiveGroups Layer 3; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
+SchubertGeometry S1 and S2.3; Mathlib `AlgebraicGeometry.Scheme`; Mathlib `LinearMap.ker`; ReductiveGroups Layer 3; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
 
 ## Layer 2: The Grothendieck simultaneous resolution
 
@@ -251,7 +271,7 @@ One proof route is as follows. Smoothness and dimension follow from the bundle o
 - For SL₂, the regular semisimple fibre has two flags, while a regular nonzero nilpotent has one geometric flag. The latter statement is not a claim of étaleness there; q is ramified and is not birational.
 - For torus; SL₂ generic semisimple; regular nilpotent, compute: degrees 1,2; one geometric flag at E₁₂ with ramification, so generic degree 2 is not birational. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §2.1; §1.2; §2.2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
+*Needs:* Mathlib `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite`; §2.1; §1.2; §2.2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
 
 ### Examples
 
@@ -259,7 +279,7 @@ degrees 1,2; one geometric flag at E₁₂ with ramification, so generic degree 
 
 ### Dependencies
 
-AlgebraicVectorBundles L0B–L2B and the associated-bundle descent contract; Mathlib `CategoryTheory.Limits.pullback`; ReductiveGroups Layer 2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
+Mathlib `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite`; AlgebraicVectorBundles L0B–L2B and the associated-bundle descent contract; Mathlib `CategoryTheory.Limits.pullback`; ReductiveGroups Layer 2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
 
 ## Layer 3: Double incidence and its components
 
@@ -407,14 +427,16 @@ One proof route is as follows. A CM noetherian scheme has no embedded associated
 
 Assume the reductive-group and characteristic hypotheses of the conventions. For i=1,2, pr_i,w:X_w→g̃ is proper birational and restricts to an isomorphism above g̃ʳᵉᵍ. In particular that inverse-image open of X_w is smooth. The full q is not asserted birational when W is nontrivial. (BHS19, Theorem 2.2.6(ii), pp. 313–314 (BHS19 line 566)).
 
-One proof route is as follows. Properness is inherited from the base-changed proper q. Over gʳˢ, V_w gives the graph of the deck transformation labelled by w; hence degree one on each component. Over g̃ʳᵉᵍ, quasi-finiteness of q makes pr_i,w finite. It is birational onto the normal smooth scheme g̃ʳᵉᵍ, so the finite birational comparison is an isomorphism.
+One proof route is as follows. Properness is inherited from the base-changed proper q. Over gʳˢ, V_w gives the graph of the deck transformation labelled by w; hence degree one on each component. Over g̃ʳᵉᵍ, quasi-finiteness of q makes pr_i,w finite. The source open and the smooth target g̃ʳᵉᵍ are integral, and the proper projection is birational with generic degree one. Apply the native proper locally quasi-finite finiteness theorem and then the finite-modification isomorphism for a normal integral target (SchemeAndStackFoundations §4.11).
 
 **Checks.**
+
+- For the identity of a normal integral scheme, the finite modification has degree 1 and induces the identity on every local ring.
 
 - For SL₂ each X_w→g̃ has degree one above the regular locus, although g̃→g has generic degree two. For a torus both projections are identities on t.
 - For SL₂ e,s; torus, compute: component projection degrees 1,1 over regular locus versus q degree 2; torus identity degree 1. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §3.5; §2.3; §3.8; §3.6; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
+*Needs:* Mathlib `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite`; SchemeAndStackFoundations §4.11; §3.5; §2.3; §3.8; §3.6; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
 
 ### Examples
 
@@ -422,7 +444,7 @@ component projection degrees 1,1 over regular locus versus q degree 2; torus ide
 
 ### Dependencies
 
-SchemeAndStackFoundations §§0.17–0.18; DeformationAndDerivedPatchingAlgebra §3.4 and SchemeAndStackFoundations §0.18; SchemeAndStackFoundations §0.17; Mathlib `CategoryTheory.Limits.pullback`; ReductiveGroups Layer 2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
+Mathlib `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite`; SchemeAndStackFoundations §4.11; SchemeAndStackFoundations §§0.17–0.18; DeformationAndDerivedPatchingAlgebra §3.4 and SchemeAndStackFoundations §0.18; SchemeAndStackFoundations §0.17; Mathlib `CategoryTheory.Limits.pullback`; ReductiveGroups Layer 2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
 
 ## Layer 4: Cohen–Macaulay components and flat Cartan maps
 
@@ -447,7 +469,7 @@ The theorem includes the following D-independent convolution targets. On the coa
 
 For the positive-characteristic localisation used in this route, construct crystalline differential operators on G/U and the B/U-invariant pushforward D̃ to F. Its Frobenius centre is the sheaf on g̃^(1)×_(t*^(1))t* defined by x↦x^p−x^[p]. Prove that it is Azumaya and splits on the formal neighbourhood of the Springer fibre B_χ^(1) at every nilpotent p-character χ and integral weight λ with ⟨λ+ρ,α∨⟩∉pZ for every root α. With a chosen normalized splitting bundle, prove RΓ and derived localisation are inverse equivalences DᵇCoh_(B_χ^(1))(g̃^(1))≃DᵇMod^fg_(λ,χ)(U(g)); the right side means generalized compatible Harish–Chandra and Frobenius central character. Here generalized reduction is part of this positive-characteristic theorem and is not the strict characteristic-zero category of Layer 10 (BR12 §§2.3–2.4, pp. 559–561, BR12 lines 1054, 1092 and 1119).
 
-For each reduced word, let K_w be its convolution of simple graph structure sheaves and define K_w^∨=O_(X_sₘ)(−ρ,ρ−αₘ)⋆⋯⋆O_(X_s₁)(−ρ,ρ−α₁), where sᵢ=s_(αᵢ) and a twist (a,b) tensors by the pullbacks of the line bundles of weights a and b on the two flag factors. Prove Hⁱ(K_w)=Hⁱ(K_w^∨)=0 for every i≠0. For f:g̃×g̃→g*×_(t*/W)t* induced by the second factor, prove the evaluation f* f_* K_w→K_w is surjective. These precise concentration and generation statements identify the kernel with the graph structure sheaf; their statements do not assume component CM (BR12 Proposition 2.6.7 and Proposition 2.8.1, pp. 565–568, BR12 lines 1346 and 1579).
+For each reduced word, let K_w be its convolution of simple graph structure sheaves and define K_w^∨=O_(X_sₘ)(−ρ,ρ−αₘ)⋆⋯⋆O_(X_s₁)(−ρ,ρ−α₁), where sᵢ=s_(αᵢ) and a twist (a,b) tensors by the pullbacks of the line bundles of weights a and b on the two flag factors. Prove Hⁱ(K_w)=Hⁱ(K_w^∨)=0 for every i≠0. For f:g̃×g̃→g*×_(t*/W)t* induced by the second factor, prove the evaluation f* f_* K_w→K_w is surjective. These precise concentration and generation statements identify the kernel with the graph structure sheaf; their statements do not assume component CM (BR12 Proposition 2.6.7, p. 565, and Proposition 2.8.1, pp. 567–568, for concentration and generation; §2.10, p. 571, for the evaluation-map consequence, BR12 lines 1346 and 1575–1584).
 
 One proof route is as follows. BR works with annihilators in g* and labels the orbit by w⁻¹. Use an invariant form in this characteristic range and replace w by w⁻¹ to compare the closures. Prove the structure-sheaf convolution identity by Bruhat induction using the positive-characteristic localisation, concentration and generation targets of this subsection. Use BR Remark 2.11.1 for the actual scheme special fibre; topological equality would not suffice.
 
@@ -572,24 +594,27 @@ SchemeAndStackFoundations §4.13; Mathlib `LinearMap.ker`; ReductiveGroups Layer
 
 ### 6.1 Chevalley restriction and the nilpotent fibre
 
-In characteristic zero the adjoint quotient is c=Spec k[g]^G≅Spec k[t]^W=t/W≅Aʳ. Its zero fibre has reduced support equal to the nilpotent elements of g, and is the reduced nilpotent cone 𝒩. The composite g̃→g→c equals g̃→κ t→t/W. A nondegenerate invariant symmetric form g≅g* exists for reductive G; the Killing form alone is not adequate on the centre. (BHS19, Beginning of §2.4, pp. 319–320; Lemma 2.3.4, p. 316 (BHS19 line 800)).
+In characteristic zero use the coaction-invariant quotient c=Spec k[g]^G≅Spec k[t]^W=t/W≅Aʳ and its specified augmentation at zero. Compare its scheme zero fibre with NilpotentOrbits N1 and N5.0, rather than defining a second complex cone. The additional target is that for every split connected reductive G over every characteristic-zero k, this zero fibre 𝒩 is geometrically reduced and its field and central-isogeny comparisons identify the quotient ideals. On the Lie decomposition g=z(g)⊕g_der, the comparison is 𝒩≅{0}×𝒩_der. The composite g̃→g→c is κ followed by t→t/W. A nondegenerate invariant symmetric form g≅g* uses a chosen form on the centre. (BHS19, beginning of §2.4, pp. 319–320; Lemma 2.3.4, p. 316, BHS19 lines 711 and 842.)
 
-Here nilpotent means the zero fibre of the adjoint quotient, including zero central coordinate. Adjoint-nilpotence alone would incorrectly include the entire centre of a torus.
+Here nilpotent means the scheme zero fibre of the augmented quotient, including zero central coordinate. Adjoint-nilpotence alone would include the entire centre of a torus.
 
-One proof route is as follows. Use restriction of invariant polynomials and the Weyl invariant-polynomial theorem to construct the quotient comparison. Separate the central summand from the semisimple derived summand. On the Borel, invariant functions depend only on the toral quotient. The zero toral value forces the central component to vanish and the derived component to be nilpotent. Use the invariant form on the derived summand and any nondegenerate form on the centre. The the Lie-invariant contract input includes the precise reduced nilpotent-fibre statement, rather than deriving reducedness from its set of points.
+One proof route is to consume FormalConnectionsOpers F4.3's restriction, generators and field descent. Use the split Chevalley model over Q, pass to C to identify its quotient-ideal fibre with N1 and apply N5.0, then descend geometric reducedness faithfully and extend to arbitrary characteristic-zero k. Central isogenies have invertible differential in characteristic zero and identify the derived Lie algebras and flags. Separate the central polynomial coordinates: their zero fibre is the origin, without a central affine factor. The comparison retains the augmentation, all defining equations and base-change maps, including on nonreduced test algebras. On b, invariant functions factor through t, giving the displayed equality of quotient maps. This route does not infer reducedness from geometric points.
 
 **Checks.**
+
+- For PGL₂ over C the adapter retains the quotient-ideal ring C[a,b,c]/(a²+bc), with nilradical zero. Over Q the same equation has the same geometrically reduced cone.
+- For the rank-one torus over k[ε]/ε², the scalar ε has nilpotent adjoint action but nonzero central quotient coordinate ε, so it is excluded from the zero fibre. The zero scalar is included.
 
 - For GL₂ the quotient coordinates can be trace and determinant, and their zero fibre is the nilpotent cone. The centre gives a direct counterexample to using the Killing form as a nondegenerate reductive form.
 - For torus; sl₂; gl₂ invariant form, compute: quotient t→t identity, zero fibre point; sl₂ quotient coordinate a²+bc; trace form on gl₂ nondegenerate while Killing form vanishes on scalar centre. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* ReductiveGroups Layer 2; ReductiveGroups Layer 7; §2.2; §3.2; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
+*Needs:* ReductiveGroups Layers 8–9 and the Lie-invariant contract; NilpotentOrbits N1 and N5.0; FormalConnectionsOpers F4.3; ReductiveGroups Layer 2; ReductiveGroups Layer 7; §2.2; §3.2; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
 
 ### 6.2 The Springer resolution
 
-In characteristic zero define 𝒩̃=G×ᴮu as the closed subbundle of g̃ cut out by κ=0, and μ:𝒩̃→𝒩 by q. Its incidence points are (gB,ψ) with Ad(g⁻¹)ψ∈u. The map μ is the Springer resolution: proper birational, with smooth source of dimension 2N. (BHS19, §2.4, p. 320 (BHS19 line 842)).
+In characteristic zero compare the supplied Springer incidence object with the closed subbundle g̃×_t{0}≅G×ᴮu and compare its map μ:𝒩̃→𝒩 with q restricted to that zero fibre. In the complex adjoint semisimple case these are exactly NilpotentOrbits N1 and N7's objects and maps. The additional target extends this comparison to every characteristic-zero k and split connected reductive G: μ is proper birational with smooth source of dimension 2N, and the comparisons identify its scheme fibres and commute with field extension. Incidence means Ad(g⁻¹)ψ∈u, with the full subbundle equations on every test algebra. (BHS19, §2.4, p. 320, BHS19 line 842.)
 
-One proof route is as follows. Descend u⊂b and compare its associated bundle with the scheme zero fibre of b→t. The incidence projection is proper, and nilpotent elements admit compatible Borel flags. The regular nilpotent locus has a unique such flag, yielding birationality. The nilpotent-orbit input is kept in the Lie-invariant contract.
+One proof route is to identify the closed ideals after torsor pullback using b→t. The field and central-isogeny adapters of §6.1, and descent of the Lie/flag bundles, compare this map with N1 and N7 over C; faithful descent gives properness and smoothness over the split Q-model and then over k. Alternatively use closed incidence properness and FormalConnectionsOpers F4.3's unique regular-nilpotent Borel to prove birationality on its dense open. Retain the full scheme fibres; their reduction is a separate operation. A reductive central factor contributes zero to both source and target, so it adds no Springer fibre direction.
 
 The construction has the following API.
 
@@ -600,25 +625,29 @@ The construction has the following API.
 
 **Checks.**
 
+- For PGL₂ over C, the comparison preserves the cone a²+bc=0, the total space O_(P¹)(−2), the scheme fibre P¹ at zero and a single reduced flag over a regular nilpotent.
+
 - For a torus 𝒩=𝒩̃=Spec k, although g̃=t.
 - For SL₂, 𝒩̃≅Tot O_(P¹)(−2), of dimension 2.
 - μ⁻¹(0)=F; for a nonzero regular nilpotent in SL₂ the fibre is a single reduced flag.
 - For torus; SL₂ zero; E₁₂, compute: point→point; zero fibre P¹; regular nilpotent reduced fibre one flag, total space O(−2) dimension 2. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §2.1; §6.1; ReductiveGroups Layer 7; §1.2.
+*Needs:* NilpotentOrbits N1 and N7; FormalConnectionsOpers F4.3; §2.1; §6.1; ReductiveGroups Layer 7; §1.2.
 
 ### 6.3 Cotangent and conormal identifications
 
-The fixed invariant form identifies T*F≅𝒩̃, because the annihilator of b is u. Under T*(F×F)≅𝒩̃×𝒩̃, embed a triple (F₁,F₂,ψ) as ((F₁,−ψ),(F₂,ψ)). The moment map for diagonal G is ξ₁+ξ₂, so its zero locus corresponds to the common-operator incidence condition. Over U_w its reduced zero locus is T*_(U_w)(F×F). (BHS19, §2.4, pp. 320–321; proof of Lemma 2.4.8, p. 324, with the Springer cotangent factors (BHS19 line 842)).
+For every characteristic-zero k and split connected reductive G, compare T*F≅𝒩̃ with NilpotentOrbits N7 after matching the invariant form; this is its field and reductive-centre adapter. The fibre map sends a cotangent functional to the unique ψ∈Ad(g)u representing it under that form, since b⊥=u. It preserves the projection to F, the G-action and the moment map to g*; under g≅g* the latter is μ. Under T*(F×F)≅𝒩̃×𝒩̃, embed a triple (F₁,F₂,ψ) as ((F₁,−ψ),(F₂,ψ)). The moment map for diagonal G is ξ₁+ξ₂, so its zero locus corresponds to the common-operator incidence condition. Over U_w its reduced zero locus is T*_(U_w)(F×F). (BHS19, §2.4, pp. 320–321; proof of Lemma 2.4.8, p. 324, with the Springer cotangent factors (BHS19 line 842)).
 
 One proof route is as follows. Compute T*_(gB)F=Ad(g)b⊥=Ad(g)u. The natural moment map is the operator coordinate. A covector annihilates the diagonal orbit tangent exactly when the two moment maps add to zero. Use a minus sign in the first factor and the identity in the second. Descend the orbitwise identification and compare dimensions. The product is of two Springer resolutions; substituting two Grothendieck resolutions would give dimension 4N+2r.
 
 **Checks.**
 
+- For SL₂ with the trace pairing, at the flag ke₁ the tangent vector represented by E₂₁ pairs with ψ=E₁₂ to 1. With twice that form, the same functional is represented by E₁₂/2, so comparison with N7 must match the form. A central torus changes neither side.
+
 - For a positive-rank torus T*F is a point while g̃=t has positive dimension. For SL₂ the signed pair (−ψ,ψ) has moment sum zero; the unsigned pair need not.
 - For SL₂; two cotangent factors; torus, compute: dim T*F=2; product 4 and moment −ψ+ψ=0 versus 2ψ; torus cotangent point versus g̃×g̃ dimension 2r. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §6.2; §1.3; ReductiveGroups Layer 2.
+*Needs:* NilpotentOrbits N7; §6.2; §1.3; ReductiveGroups Layer 2.
 
 ### 6.4 The reduced Steinberg variety
 
@@ -676,7 +705,7 @@ conormal ranks 1,0 added to orbit dimensions 1,2 give 2,2; torus 0+0=0. The subs
 
 ### Dependencies
 
-ReductiveGroups Layer 2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
+NilpotentOrbits N1, N5.0 and N7; FormalConnectionsOpers F4.3; ReductiveGroups Layer 2; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
 
 ## Layer 7: Integral cycles and Cartan zero fibres
 
@@ -834,11 +863,13 @@ The construction has the following API.
 
 ### 8.4 Existence and comparison of good filtrations
 
-k is a field of characteristic zero; Y is a smooth separated finite-type k-scheme of pure dimension n. All D-modules are left modules with quasi-coherent underlying O_Y-module; coherent means finite over D_Y, not necessarily finite over O_Y. Every coherent D_Y-module admits good filtrations locally. A global coherent O_Y-generating subsheaf yields a global good filtration; on the flag varieties used here such generating subsheaves exist. Any two good filtrations are locally comparable up to bounded shifts. In a short exact sequence of coherent D-modules, choose a good middle filtration and induced filtrations on submodule and quotient; these are good and their graded sequence is exact. (BHS19, §2.4, p. 321 (BHS19 line 885); M23, Propositions 3.24, 3.25 and 3.33, pp. 14–16 (M23 line 723)).
+k is a field of characteristic zero; Y is a smooth separated finite-type k-scheme of pure dimension n. All D-modules are left modules with quasi-coherent underlying O_Y-module; coherent means finite over D_Y, not necessarily finite over O_Y. Every coherent D_Y-module admits a global good filtration. Any two global good filtrations F and G are globally comparable: there is an integer a≥0 such that F_j⊂G_(j+a) and G_j⊂F_(j+a) for every integer j. In a short exact sequence of coherent D-modules, choose a good middle filtration and induced filtrations on submodule and quotient; these are good and their graded sequence is exact. (BHS19, §2.4, p. 321 (BHS19 line 885); M23, Propositions 3.24, 3.25 and 3.33, pp. 14–16 (M23 lines 754–784 and 843–859)).
 
-One proof route is as follows. Choose finite local D-generators to construct a good filtration by their orders. On a quasi-projective flag variety, extend the local generators to a coherent O-subsheaf generating M. Express finite homogeneous generators for each filtration in bounded degrees of the other, giving the two inclusions after shifts. Noetherianity of gr D makes the induced submodule finite. The induced quotient filtration then gives degreewise exactness.
+One proof route is as follows. Choose a finite affine cover U₁,…,U_s and coherent O_(U_i)-submodules generating M locally over D. Extend each to a coherent O_Y-submodule of M by SchemeAndStackFoundations §0.4. Their finite sum M₀ is coherent and generates M globally. Put F_jM=0 for j<0 and F_jM=D_(≤j)M₀ for j≥0. Express finite homogeneous generators for each of two filtrations in bounded degrees of the other locally. The maximum of the finitely many bounds gives both global inclusions. Noetherianity of gr D makes the induced submodule finite. The induced quotient filtration then gives degreewise exactness.
 
 **Checks.**
+
+- A cover by s affine opens gives s extended coherent pieces and one generating sum, including s=1; no projective embedding enters. On A¹ the global order filtration of D has gr D=k[x,ξ], while the global filtration of O has gr O=k[x] with ξ=0.
 
 - Shifting a good filtration by any integer changes its degrees but preserves goodness. For a short exact sequence, taking induced filtrations must yield an exact graded sequence; unrelated independently chosen filtrations need not do so.
 - For O filtration shift by 1; induced ε extension, compute: shift bound 1 in both directions; strict sub/quotient filtrations give lengths 1+1=2, arbitrary unrelated filtrations need not give degreewise exactness. The computed values fix the normalization and test the asserted hypotheses.
@@ -869,33 +900,36 @@ The construction has the following API.
 
 ### 8.6 The characteristic cycle
 
-k is a field of characteristic zero; Y is a smooth separated finite-type k-scheme of pure dimension n. All D-modules are left modules with quasi-coherent underlying O_Y-module; coherent means finite over D_Y, not necessarily finite over O_Y. Ch(M) is empty or pure n-dimensional; no holonomic-category carrier is needed to state this condition. For a coherent D_Y-module M whose reduced characteristic support is empty or pure n-dimensional, define CC(M)=Σ_C length_(O_(T*Y),ηC)((gr_FM)_ηC)[C], over its n-dimensional characteristic components, and set CC(0)=0. This support hypothesis can be stated before the holonomic category is named. Bernstein inequality will identify it with holonomicity. Independence of F is a theorem; generic length, rather than rank after tensoring with the reduced component, is essential. (BHS19, §2.4, p. 321; Theorem 2.4.7, pp. 322–323 (BHS19 line 885); M23, Definition 6.40 and Proposition 6.41, pp. 55–56 (M23 line 2708); G98, Definition 1.1.12, p. 5, using generic length (G98 line 151)).
+k is a field of characteristic zero; Y is a smooth separated finite-type k-scheme of pure dimension n. All D-modules are left modules with quasi-coherent underlying O_Y-module; coherent means finite over D_Y, not necessarily finite over O_Y. For every coherent D_Y-module M define CC(M)=Σ_C length_(O_(T*Y),ηC)((gr_FM)_ηC)[C], over all irreducible components C of Ch(M), in the ungraded native cycle group, equivalently the direct sum of its dimension-graded groups. Set CC(0)=0. No dimension condition on Ch(M) is imposed. For holonomic M this cycle lies in degree n by Bernstein inequality. Independence of F is a theorem; generic length, rather than rank after tensoring with the reduced component, is essential. (BHS19, §2.4, p. 321; Theorem 2.4.7, pp. 322–323 (BHS19 line 885); M23, Definition 6.40 and Proposition 6.41, pp. 55–56 (M23 lines 2728–2768); G98, Definition 1.1.12, p. 5, using generic length (G98 line 151)).
 
-One proof route is as follows. Apply the generic-length cycle construction directly to the coherent graded module with pure n-dimensional support. The stated support hypothesis, rather than a subsequent holonomic theorem, supplies the dimension needed here. Compare adjacent Rees lattices. Their comparison has kernel and cokernel equal up to grading shift after reduction by the Rees parameter; their cycles cancel by length additivity. A bounded comparison reduces general filtrations to this case.
+One proof route is as follows. Use the reduced characteristic support from §8.5 and take the finite generic length at each of its irreducible components, retaining components of every dimension. At each such generic point the graded module has zero-dimensional support, so its localized length is finite. Compare adjacent good filtrations: the kernel and cokernel of their graded comparison differ only by a grading shift as ungraded modules. Localize at each common support generic point, where all four modules have finite length, and cancel the equal kernel and cokernel lengths. Global bounded comparison from §8.4 reduces arbitrary filtrations to finitely many adjacent ones. This proves independence without asserting additivity of all-component cycles for arbitrary mixed-dimensional exact sequences; §9.5 proves additivity for holonomic modules.
 
 The construction has the following API.
 
 - CC(M) is the same for every good filtration.
 - Its C coefficient is the finite generic length, a nonnegative integer.
 - Restriction to an open subset discards components missing it and restricts the others.
-- CC(0)=0.
+- CC(0)=0; for holonomic M all components have dimension n.
 
 **Checks.**
+
+- CC(D_A¹)=[A²], with characteristic dimension 2 and generic length 1; for the trivial group this is a strongly equivariant coherent example in §9.8. CC(0)=0 is the empty sum.
+- For D_A¹⊕O_A¹ the characteristic support is A² and the all-component cycle is [A²]; the embedded zero section is not an irreducible support component. The split exact sequence has cycles [A²] and [ξ=0] on its ends, so unrestricted all-component additivity would be false.
 
 - CC(O_A¹)=[zero section].
 - For M=D_A¹/D_A¹x², CC(M)=2[cotangent fibre over 0 in A¹]; reducing the graded support first would yield multiplicity 1.
 - An integrable connection of rank a on a smooth n-fold has CC=a[zero section].
 - For O_A¹; D/Dx²; rank-a connection, compute: [zero section]; 2[cotangent fibre] versus reduced-rank 1; a[zero section]. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §7.2; §8.5; §8.4.
+*Needs:* §7.2 for the generic-length argument in each pure-dimensional support case; SchemeAndStackFoundations §5.1 and Mathlib `AlgebraicGeometry.AlgebraicCycle` for the ambient all-dimensional carrier; §8.5; §8.4.
 
 ### Examples
 
-[zero section]; 2[cotangent fibre] versus reduced-rank 1; a[zero section]. The subsection Checks give the representative computations with their hypotheses.
+[A²] for D_A¹; [zero section] for O_A¹; 2[cotangent fibre] for D/Dx²; a[zero section] for a rank-a connection; 0 for zero. The subsection Checks give the representative computations with their hypotheses.
 
 ### Dependencies
 
-Mathlib `SheafOfModules`; Mathlib `SymmetricAlgebra`; ReductiveGroups Layer 2; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13; `TauCeti.AlgebraicGeometry.FinitelyPresentedSheaf`. Internal inputs are the precise subsections cited in each needs line.
+Mathlib `AlgebraicGeometry.AlgebraicCycle`; SchemeAndStackFoundations §5.1; Mathlib `SheafOfModules`; Mathlib `SymmetricAlgebra`; ReductiveGroups Layer 2; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13; `TauCeti.AlgebraicGeometry.FinitelyPresentedSheaf`. Internal inputs are the precise subsections cited in each needs line.
 
 ## Layer 9: Holonomic operations and equivariance
 
@@ -1036,18 +1070,20 @@ The construction has the following API.
 
 ### 9.8 Strong algebraic equivariance
 
-k is a field of characteristic zero; Y is a smooth separated finite-type k-scheme of pure dimension n. All D-modules are left modules with quasi-coherent underlying O_Y-module; coherent means finite over D_Y, not necessarily finite over O_Y. H is a smooth algebraic k-group acting on Y. For a smooth algebraic group H acting on Y, a strongly H-equivariant D-module is a D-module M with an isomorphism a^*M≅p^*M on H×Y, identity and cocycle compatibilities, whose differentiated H-action agrees with the infinitesimal action from D_Y. Both a and p are smooth of relative dimension dim H; a* and p* mean their abelian pullbacks Lf*=f†[−dim H]. Weak equivariance without this differentiated compatibility is insufficient. (BHS19, §2.4, p. 321; proof of Lemma 2.4.8, p. 324 (BHS19 line 885); BHS19, Remark 2.4.3, p. 321 (BHS19 line 901)).
+k is a field of characteristic zero; Y is a smooth separated finite-type k-scheme of pure dimension n. All D-modules are left modules with quasi-coherent underlying O_Y-module; coherent means finite over D_Y, not necessarily finite over O_Y. H is a smooth algebraic k-group acting on Y. For a smooth algebraic group H acting on Y, a strongly H-equivariant D-module is a D-module M with a D_(H×Y)-linear isomorphism a^*M≅p^*M on H×Y satisfying the identity and cocycle compatibilities. Equivalently, its underlying weak H-linearization is compatible with the D_Y-action and its differentiated H-action equals the infinitesimal action from D_Y. Both a and p are smooth of relative dimension dim H; a* and p* mean their abelian pullbacks Lf*=f†[−dim H]. Weak equivariance without this differentiated compatibility is insufficient. (EH18, §4.3.1, p. 63, Definition 4.10 and the preceding paragraph, EH18 lines 1725–1740, for a general smooth variety with algebraic group action over an algebraically closed characteristic-zero field; the arbitrary-field comparison is the target below. BHS19, §2.4, p. 321 and Lemma 2.4.8, p. 324, BHS19 lines 891–910 and 1033–1048, give the flag applications).
 
-One proof route is as follows. Use smooth inverse image to formulate the descent isomorphism and impose the unit and multiplication diagrams. Differentiate at the identity and require equality with the vector-field action on M.
+One proof route is as follows. Use smooth inverse image to formulate the descent isomorphism and impose the unit and multiplication diagrams. Prove the equivalence with weak linearization plus equality of the differentiated and vector-field actions: in smooth local coordinates on H the additional D_(H×Y)-linearity is precisely compatibility in the H-derivation directions. Translate the identity calculation to every H-point and descend the equality of sheaf maps. Prove compatibility with arbitrary characteristic-zero field extension and faithful descent: smooth pullback, derivations and the cocycle diagrams base change, and equality and invertibility of their maps are detected faithfully. This supplies the arbitrary-field and smooth-group formulation, including nonconnected H, beyond the algebraically closed source convention.
 
 The construction has the following API.
 
 - The isomorphism satisfies the identity and multiplication cocycles on H×H×Y.
 - The Lie(H)-action equals the action through its image in T_Y⊂D_Y.
 - A subgroup H′⊂H gives a strongly H′-equivariant object.
-- Ch(M) and CC(M) are invariant under the cotangent H-action.
+- For coherent M, Ch(M) and the all-component CC(M) of §8.6 are invariant under the cotangent H-action.
 
 **Checks.**
+
+- For H={1} acting on A¹, M=D_A¹ is strongly equivariant and coherent: its cycle is [A²] and its invariance reads [A²]=[A²], even though it is not holonomic.
 
 - On a point with connected H=G_m, only trivial algebraic H-representations give strongly equivariant D-modules; nonzero weights fail differentiated compatibility.
 - For H={1}, the equivariant category is the original D-module category.
@@ -1085,16 +1121,18 @@ AlgebraicVectorBundles L0A–L0C; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E
 
 char(k)=0; G is split connected reductive, F=G/B, χ₀ is the central character at highest weight 0. In characteristic zero the ordinary sheaf D_F has Γ(F,D_F)≅U(g)⊗_(Z(U(g)),χ₀)k=:U_χ₀, where χ₀ is the infinitesimal character of the trivial representation. Every O-quasi-coherent D_F-module is generated by its global sections and has vanishing H^i(F,M) for i>0. In the Beilinson–Bernstein parameter χ, ordinary D_F is χ=ρ, not χ=0; χ₀ denotes a central character, not this twisting parameter. (BHS19, §2.4, p. 321 (BHS19 line 885); ElliottBB, Theorem 1 and §4, pp. 6–10 (ElliottBB lines 174, 227 and 270)).
 
-Prove that the infinitesimal action U(g)→Γ(F,D_F) is surjective and its kernel is exactly the ideal generated by ker χ₀; an abstract algebra isomorphism without this map does not fix the convention. The filtered-section calculation, ample coherent twists and the projection to the selected regular dominant central summand are targets of this subsection. Integrate the finite-dimensional representations selected by actual G-characters; the assertion is not integration of every integral Lie weight for every isogeny form. For a reductive centre, its infinitesimal vector field on F vanishes, so the strict trivial central character kills that summand (ElliottBB Theorem 1 and §4, pp. 6–10, ElliottBB lines 174 and 227; BHS19 line 891).
+Prove that the infinitesimal action U(g)→Γ(F,D_F) is surjective and its kernel is exactly the ideal generated by ker χ₀; an abstract algebra isomorphism without this map does not fix the convention. The filtered-section calculation, ample coherent twists and the projection to the selected regular dominant central summand are targets of this subsection. Use ReductiveGroups §§10A–10B to integrate the finite-dimensional modules at dominant λ∈X*(T), retaining their specified T-weights and the differential equal to the Lie action. Compare those supplied actions with the enveloping-algebra action in the projection argument. The lattice belongs to the actual isogeny form, not every integral weight of its simply connected cover. For a reductive centre, its infinitesimal vector field on F vanishes, so the strict trivial central character kills that summand (ElliottBB Theorem 1 and §4, pp. 6–10, ElliottBB lines 174 and 227; BHS19 line 891).
 
-One proof route is as follows. The infinitesimal G-action gives U(g)→Γ(D_F); the Harish–Chandra character computes its central kernel. The filtered global-section calculation identifies the quotient with all global operators. The finite-dimensional modules chosen in the projection argument must integrate for the selected group characters; the Lie highest-weight classification alone does not supply this group-action comparison (§10.1). For D-affinity use ample weights, Serre vanishing on coherent generating submodules, filtered-colimit compatibility, tensoring with finite-dimensional highest-weight modules and projection to the regular dominant central summand. Serre vanishing is applied to each coherent submodule with its own sufficiently large twist, not uniformly to every quasi-coherent O-module (ElliottBB, section 4, pp. 9–10, ElliottBB lines 275–312). Keep the two rho normalizations explicit, including for groups where rho is not an integral character. Use SchemeAndStackFoundations §§0.4 and 2.6 for coherent extension and Serre vanishing; prove the filtered section calculation in this subsection.
+One proof route is as follows. The infinitesimal G-action gives U(g)→Γ(D_F); the Harish–Chandra character computes its central kernel. The filtered global-section calculation identifies the quotient with all global operators. Use the integration/differentiation maps of ReductiveGroups §§10A–10B for the selected dominant weights in X*(T), and compare their actions with the localisation tensor functors. For D-affinity use ample weights, Serre vanishing on coherent generating submodules, filtered-colimit compatibility, tensoring with finite-dimensional highest-weight modules and projection to the regular dominant central summand. Serre vanishing is applied to each coherent submodule with its own sufficiently large twist, not uniformly to every quasi-coherent O-module (ElliottBB, section 4, pp. 9–10, ElliottBB lines 275–312). Keep the two rho normalizations explicit, including for groups where rho is not an integral character. Use SchemeAndStackFoundations §§0.4 and 2.6 for coherent extension and Serre vanishing; prove the filtered section calculation in this subsection.
 
 **Checks.**
+
+- For SL₂, the dominant weight ω gives the two-dimensional representation although X*(SL₂)=0. For PGL₂, ω is absent from X*(T), whereas 2ω is present and gives its three-dimensional representation. Ample flag weights can be chosen in this actual lattice.
 
 - For SL₂, ordinary D_(P¹) uses BB parameter ρ and the Casimir central character of the trivial module. For a torus its global differential algebra after this central reduction is k.
 - For torus; SL₂; trivial module, compute: ΓD=k after centre generator z→0; parameter ρ not 0; localisation of trivial module O_F has Γ=k and higher cohomology 0. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §1.1; §1.2; §8.1; RepresentationTheory/LieHighestWeight Layer 3; RepresentationTheory/LieHighestWeight Layer 4; RepresentationTheory/LieHighestWeight Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
+*Needs:* ReductiveGroups §§10A–10B; §1.1; §1.2; §8.1; RepresentationTheory/LieHighestWeight Layer 3; RepresentationTheory/LieHighestWeight Layer 4; RepresentationTheory/LieHighestWeight Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13.
 
 ### 10.2 Beilinson–Bernstein localisation
 
@@ -1251,11 +1289,11 @@ ReductiveGroups Layer 7; the Hecke/KL and multiplicity constructions of this sub
 
 ### 12.1 The parabolic attached to a simple module
 
-char(k)=0; the weights are integral and use the fixed dot action. For λ_w=ww₀·0=−wρ−ρ define I_w={α simple positive:⟨λ_w,α∨⟩≥0}, and P_w the standard parabolic generated by B and the negative root subgroups for I_w. It is the largest standard parabolic whose Levi has λ_w dominant. The highest-weight action on L_w extends to an algebraic P_w-action compatible with the Lie action. (BHS19, Lemma 2.4.8 and preceding paragraph, p. 324 (BHS19 line 1023)).
+char(k)=0; the algebraic weights lie in X*(T) and use its differential in t* and the fixed dot action. For λ_w=ww₀·0=−wρ−ρ define I_w={α simple positive:⟨λ_w,α∨⟩≥0}, and P_w the standard parabolic generated by B and the negative root subgroups for I_w. It is the largest standard parabolic whose Levi has λ_w dominant. The highest-weight action on L_w extends to an algebraic P_w-action compatible with the Lie action. (BHS19, Lemma 2.4.8 and preceding paragraph, p. 324 (BHS19 line 1023)).
 
-Prove the highest-weight integrability criterion: for a simple highest-weight module whose weight is a G-character, the negative simple-root operator is locally nilpotent exactly at the nonnegative simple-coroot pairings. Prove that these operators and the B-action integrate uniquely to the indicated standard parabolic, compatible with the Lie action. The underlying module is a rational, possibly infinite-dimensional representation: local finiteness of the parabolic action, rather than finite-dimensionality of L_w, is the required property (BHS19 Lemma 2.4.8 proof, pp. 323–324, BHS19 line 1011).
+Prove the highest-weight integrability criterion: for a simple highest-weight module whose highest weight λ belongs to X*(T), the negative simple-root operator is locally nilpotent exactly at the nonnegative simple-coroot pairings. For any set I of simple roots with ⟨λ,α∨⟩≥0 for every α∈I, prove that these locally nilpotent operators and the B-action integrate uniquely to P_I, compatible with the Lie action and the given T-characters. The largest such I gives the indicated standard parabolic. The underlying module is a rational, possibly infinite-dimensional representation: local finiteness of the parabolic action, rather than finite-dimensionality of L_w, is the required property (BHS19 Lemma 2.4.8 proof, pp. 323–324, BHS19 line 1011).
 
-One proof route is as follows. Use the simple-root inequalities to define I_w and the existing standard parabolic construction. Import the highest-weight integrability criterion: the negative simple-root operator is locally nilpotent exactly for α∈I_w. Together with the B-action it integrates to P_w; compatibility on root subgroups gives uniqueness. This extension is included in §§10.4 and 12.1.
+One proof route is as follows. Use the simple-root inequalities to define I_w and the existing standard parabolic construction. Prove the highest-weight integrability criterion in this subsection: the negative simple-root operator is locally nilpotent exactly for α∈I_w. Together with the B-action it integrates to P_w; compatibility on root subgroups gives uniqueness. This extension is included in §§10.4 and 12.1.
 
 The construction has the following API.
 
@@ -1265,6 +1303,8 @@ The construction has the following API.
 - P_w contains the fixed B, using negative root groups for the chosen Levi roots.
 
 **Checks.**
+
+- For SL₂, λ_e=−α pairs to −2 and integrates to B although it is not a character of SL₂; λ_s=0 pairs to 0 and integrates to G. For PGL₂, ω is excluded from X*(T) but −α=−2ω and 2ω are included.
 
 - For SL₂ and w=e, λ=−2ρ, so I_e=∅ and P_e=B.
 - For SL₂ and w=s=w₀, λ=0, so P_s=G.
@@ -1327,7 +1367,7 @@ One proof route is as follows. The finite quotient t→t/W separates W-orbits of
 **Checks.**
 
 - In rank one the ring is k[x,y]/(x²−y²): its two reduced graphs intersect at zero. In the torus case there is only the diagonal graph.
-- For SL₂ char 0; char 2 negative control, compute: (x−y)(x+y) gives two reduced intersecting lines; in char 2 becomes (x−y)² so graph reducedness assertion cannot be extended blindly. The computed values fix the normalization and test the asserted hypotheses.
+- For SL₂ in characteristic zero, (x−y)(x+y) gives two distinct reduced intersecting graphs. In characteristic two the Weyl action on t is trivial, so invariants formed over k are k[t], and t×_(t/W)t is the reduced diagonal with coordinate ring k[t] and nilradical 0; the e and s graph labels coincide. Reduction of the integral square-invariant quotient instead gives k[x,ε]/ε² with ε=x−y nonzero and ε²=0. That double line uses a different quotient: in the actual characteristic-two fibre product ε=0. Thus distinct graph labels, rather than reducedness of the actual diagonal, fail in this test.
 
 *Needs:* §13.1; §6.1; ReductiveGroups Layer 7; SchemeAndStackFoundations §0.17.
 
@@ -1335,14 +1375,16 @@ One proof route is as follows. The finite quotient t→t/W separates W-orbits of
 
 char(k)=0; x is closed and belongs to X_w. Let x be a closed point of X_w, and y=κ(x)∈𝒯_w. The map of completed local schemes (X_w)^∧_x→𝒯^∧_y factors through (𝒯_(w′))^∧_y if and only if w′=w. When y∉𝒯_(w′), that closed subscheme has empty completion and cannot contain the nonempty source. The generic point used in the proof lies on 𝒯_w, not on X. (BHS19, Lemma 2.5.2, pp. 325–326, generic-point misprint with the Cartan generic point in its Cartan completion (BHS19 line 1062)).
 
-One proof route is as follows. Normality and excellence make the completion of the local ring of X_w normal and integral. Its map to the smooth graph is induced by the flat surjective Cartan map, and remains schematically dominant after completion. If it factored through a distinct graph, that dominance would put all of 𝒯_w in its intersection with 𝒯_(w′), contradicting distinct graph generic points. Faithful flatness of local completion preserves the nonempty dense image. Record separately the standard excellent-normal-completion and completion-flatness comparisons; their native scheme application lies in the local geometric comparison contract.
+One proof route is as follows. Normality and excellence make the completion of the local ring of X_w normal and integral. Its map to the smooth graph is induced by the flat surjective Cartan map, and remains schematically dominant after completion. If it factored through a distinct graph, that dominance would put all of 𝒯_w in its intersection with 𝒯_(w′), contradicting distinct graph generic points. Faithful flatness of local completion preserves the nonempty dense image. Use SchemeAndStackFoundations §0.21 for excellent-normal completion and DeformationAndDerivedPatchingAlgebra §1.16 for the actual induced map of local completions, its flatness and closed-fibre comparison. A flat local map of nonzero local rings is faithfully flat, which supplies schematic dominance over the completed graph.
 
 **Checks.**
+
+- The flat local map k[x]_(x)→k[x,y]_(x,y) induces k[[x]]→k[[x,y]]. Its closed fibre is k[[y]], with dimensions 2=1+1; substituting the uncompleted fibre k[y]_(y) would change that comparison. The identity local map induces the identity completion with closed fibre k and dimension formula 1=1+0.
 
 - At the SL₂ zero operator both Cartan graphs meet, but the completed local map of a fixed X_w still detects its one graph label. Set-theoretic membership of the closed point in both graphs is insufficient.
 - For SL₂ origin on both graphs; torus, compute: on graph e, y−x=0 and y+x=2x≠0 formally; on graph s the equations swap; torus sole graph. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §5.4; §13.1; §13.2; DeformationAndDerivedPatchingAlgebra §§1.13–1.15; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13; §4.4.
+*Needs:* §5.4; §13.1; §13.2; DeformationAndDerivedPatchingAlgebra §§1.13–1.16; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13; §4.4.
 
 ### 13.4 The tangent-space upper bound
 
@@ -1359,7 +1401,7 @@ One proof route is as follows. Use the differential of π and bound its image by
 
 ### 13.5 Smoothness from the tangent bound
 
-The hypotheses of §13.4 and the two displayed additional conditions hold. With x and v as in the tangent bound, assume Ū_w is smooth at πx and codim_t ker(wv⁻¹−id)=ℓ(w)−ℓ(v). Then X_w is smooth at x. This is a sufficient criterion; no converse is asserted. (BHS19, Proposition 2.5.3(ii), p. 327 (BHS19 line 1131)).
+The hypotheses of §13.4 and the two displayed additional conditions hold. With x and v as in the tangent bound, assume Ū_w is smooth at πx and codim_t ker(wv⁻¹−id)=ℓ(w)−ℓ(v). Then X_w is smooth at x. This is a sufficient criterion; no converse is asserted. (BHS19, Proposition 2.5.3(ii), statement p. 326 and proof pp. 326–327 (BHS19 lines 1116–1121 and 1143–1154)).
 
 At a closed point in characteristic zero, the residue extension is separable, so the regularity criterion yields smoothness over k.
 
@@ -1378,7 +1420,7 @@ codim fixed space 1=1−0, 0=1−1; bound/local dimension 3=3; torus r=r. The su
 
 ### Dependencies
 
-DeformationAndDerivedPatchingAlgebra §§1.13–1.15; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; SchemeAndStackFoundations §0.17; Mathlib `CategoryTheory.Limits.pullback`; Mathlib `LinearMap.ker`; Mathlib `Module.finrank`; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
+DeformationAndDerivedPatchingAlgebra §§1.13–1.16; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; SchemeAndStackFoundations §0.17; Mathlib `CategoryTheory.Limits.pullback`; Mathlib `LinearMap.ker`; Mathlib `Module.finrank`; ReductiveGroups Layer 7; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
 
 ## Layer 14: Completed characteristic-cycle identities
 
@@ -1404,7 +1446,7 @@ The construction has the following API.
 - For V(xy) at the point (1,0), only the component y=0 contributes; the component x=0 contributes zero.
 - For A¹ at 0; irreducible node; axes at (1,0), compute: [k[[t]]]; y²−x²(1+x)=(y−x√(1+x))(y+x√(1+x)), two length-1 branches; surviving y=0 coefficient 1, missing x=0 coefficient 0. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §7.1; §7.2; DeformationAndDerivedPatchingAlgebra §§1.13–1.15; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13; Mathlib `AdicCompletion`; Mathlib `Finsupp.linearCombination`.
+*Needs:* §7.1; §7.2; DeformationAndDerivedPatchingAlgebra §§1.13–1.16; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13; Mathlib `AdicCompletion`; Mathlib `Finsupp.linearCombination`.
 
 ### 14.2 Generic-length cycles under completion
 
@@ -1419,7 +1461,7 @@ One proof route is as follows. Take a prime filtration of the finite local modul
 - For a point and a two-dimensional module, completion leaves cycle coefficient 2. For the irreducible nodal curve in the nodal-curve example in §14.1, completion must preserve the sum of both formal branches rather than one chosen branch.
 - For point k²; node structure sheaf; smaller-support point on curve, compute: 2=2·1; one global coefficient 1 becomes (1,1) on two formal branches; degree-1 cycle of point module 0 before and after completion. The computed values fix the normalization and test the asserted hypotheses.
 
-*Needs:* §14.1; §7.2; §7.4; §6.6; DeformationAndDerivedPatchingAlgebra §§1.13–1.15; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract.
+*Needs:* §14.1; §7.2; §7.4; §6.6; DeformationAndDerivedPatchingAlgebra §§1.13–1.16; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract.
 
 ### 14.3 The completed simple cycles
 
@@ -1462,7 +1504,7 @@ for w=s, coefficients (1,1)=(1,0)+(0,1); off Z_s equality 1=1+0; torus 1=1. The 
 
 ### Dependencies
 
-DeformationAndDerivedPatchingAlgebra §§1.13–1.15; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; Mathlib `AdicCompletion`; Mathlib `Finsupp.linearCombination`; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
+DeformationAndDerivedPatchingAlgebra §§1.13–1.16; SchemeAndStackFoundations §§0.16, 0.21 and the equidimensional-completion contract; Mathlib `AdicCompletion`; Mathlib `Finsupp.linearCombination`; SchemeAndStackFoundations §§0.4, 0.7–0.9, 0.17–0.21, 4.13. Internal inputs are the precise subsections cited in each needs line.
 
 ## Downstream consumers
 
@@ -1489,3 +1531,5 @@ All statements above are restated in this roadmap's own words. A line locator re
 - **M23.** Mircea Mustață, [D-modules and singularities](https://websites.umich.edu/~mmustata/DmodulesNotes.pdf), Math 732 notes (2023). §§2–3, pp. 1–17; §5.1, pp. 35–36; §§6.1–6.8, pp. 43–77; §7.4.3, pp. 93–94. M23 lines 218–300, 717–886, 1700–1731, 2378–2533, 2728–2779, 3712–3976 and 4819–4852. The PBW inclusion directions, finite-projective double dual and Tor degrees use the corrected formulas in Layers 8–9.
 - **ElliottBB.** Aron Heleodoro, [Notes on “Localisation of g-modules”](https://www.ihes.fr/~celliott/Beilinson_Bernstein_talk.pdf), January 12, 2014. Theorem 1, pp. 5–7, and Theorem 2 with its proof, pp. 7–8 (ElliottBB lines 174–260), give the sections-map and general D-affinity/localisation route; §4, pp. 9–10, gives the ample-twist projection route. The algebraic group in these notes is semisimple over an algebraically closed characteristic-zero field. The reductive central scalar extension and arbitrary characteristic-zero field comparison are explicit targets in §§9.7, 10.1 and 10.4; their validity is not inferred from the notes. The twisting parameter and Weyl labels use the independent convention of BHS19 §2.4.
 - **G98.** Victor Ginzburg, with Vladimir Baranovsky and Sam Evens, [Lectures on D-modules](https://math.berkeley.edu/~nadler/ginzburg.dmodules.pdf), Winter 1998 notes. §1.1, pp. 4–6; §2.1, pp. 23–24; §4.1, pp. 60–61. G98 line 191 for reduced characteristic support and the multiplicity discussion; use generic length as in M23 Definition 6.40, rather than rank after reducing the component.
+
+- **EH18.** Karim El Haloui, [Smooth Projective Stacks: Ample bundles and D-affinity](https://wrap.warwick.ac.uk/id/eprint/108879/1/WRAP_Theses_El_Haloui_2018.pdf), Warwick PhD thesis (2018), §4.3.1, p. 63, Definition 4.10 and preceding paragraph, EH18 lines 1725–1740. The chapter assumes an algebraically closed characteristic-zero field; §9.8 states the field-extension and descent comparison used here.

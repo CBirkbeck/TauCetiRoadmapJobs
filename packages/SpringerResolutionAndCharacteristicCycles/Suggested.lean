@@ -14,8 +14,8 @@ definitions on native carriers:
 - Birational component projections (README §3.9) lacks the component projections and regular Lie-algebra open.
 - Cohen–Macaulay components and flat Cartan maps (README §4.2–4.4) lacks the integral graph-closure models and Cartan morphisms.
 - Geometric normality of incidence components (README §5.4) lacks the Weyl-labelled incidence components as schemes.
-- Springer resolution and Steinberg conormal components (README §6.2–6.6) lacks the nilpotent cone, Springer morphism and scheme cotangent/conormal bundles.
-- Filtration-independent characteristic cycles (README §8.2–8.6) lacks the sheaf of differential operators, good filtrations and its cotangent graded sheaf.
+- Field and reductive-centre Springer comparisons and Steinberg conormal components (README §6.1–6.6) lacks the nilpotent cone, Springer morphism and scheme cotangent/conormal bundles.
+- Filtration-independent all-component characteristic cycles of coherent D-modules (README §8.2–8.6) lacks the sheaf of differential operators, good filtrations and its cotangent graded sheaf.
 - Kashiwara equivalence and Bernstein inequality (README §9.2–9.3) lacks algebraic D-module categories, transfer functors and characteristic support.
 - Finite holonomic length and intermediate extension (README §9.5–9.6) lacks the holonomic heart and its normalized image-extension functor.
 - Beilinson–Bernstein and equivariant principal-block equivalences (README §10.1–10.4) lacks the differential-operator sheaf, localisation functors and strict principal category O.
@@ -27,7 +27,9 @@ definitions on native carriers:
 
 A native Scheme, algebraic-cycle group, Verma module or ordinary derived category
 does not provide these missing geometric objects or their structure maps.
-Their construction is part of the roadmap. No arbitrary predicates, abstract
+Their field and central-factor comparisons, double-incidence comparisons and
+D-module constructions are part of the roadmap; the complex Springer construction
+is supplied by NilpotentOrbits N1, N5.0 and N7. No arbitrary predicates, abstract
 cycle matrices or scalar identities stand in for the missing headlines.
 -/
 

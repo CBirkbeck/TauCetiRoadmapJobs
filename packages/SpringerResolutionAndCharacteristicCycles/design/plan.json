@@ -5138,31 +5138,31 @@
     }
   ],
   "gaps": [
-  {
-    "slug": "lie-invariants",
-    "needs": "For split reductive G in characteristic zero or p>h provide Lie Jordan and centralizer theory, regular-Borel covers, invariant forms, Bruhat closure order and central-isogeny comparisons, together in characteristic zero with Chevalley restriction, polynomial invariants, the reduced nilpotent quotient fibre and unique regular-nilpotent flags.",
-    "supplier": "ReductiveGroups",
-    "section": "Layers 2, 3, 7–9 (Part II extension)"
-  },
-  {
-    "slug": "associated-bundle-descent",
-    "needs": "Descend finite-rank representations along representable fppf torsors to associated bundles with subbundle and incidence comparisons and arbitrary base change, including the integral Chevalley Borel Lie bundles.",
-    "supplier": "AlgebraicVectorBundles",
-    "section": "L0B–L2B"
-  },
-  {
-    "slug": "local-geometric-comparisons",
-    "needs": "Supply proper quasi-finite finiteness and finite birational comparison to a normal target, and the equidimensionality of completed prime quotients of pure finite-type schemes at closed points, with the scheme and completed-local cycle comparisons used here.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "§§0.7, 0.16–0.21, 0.30, 4.13"
-  },
-  {
-    "slug": "derived-bimodule-sheaves",
-    "needs": "Supply associative-ring sheaf bimodule derived tensor, internal Hom and pushforward with their actions, associativity, adjunction, restriction and affine comparisons compatible with additive K-injective models and bounded coherent D-module transfer.",
-    "supplier": "EnhancedDerivedSheaves",
-    "section": "§§0.1–0.4, E1.3–E1.4"
-  }
-],
+    {
+      "slug": "lie-invariants",
+      "needs": "For split connected reductive G over a field of characteristic zero or p>h, supply the arbitrary-field Lie Jordan and centralizer-dimension comparisons needed in §§2.2–2.3, the regular-semisimple Borel W-torsor and quasi-finiteness of the regular-Borel morphism; supply invariant symmetric forms and Lie/flag comparisons under central isogenies of invertible degree, the rank-one centralizer/root-vector regularity on a single root wall used in §5.3 in the same characteristic range.",
+      "supplier": "ReductiveGroups",
+      "section": "Layers 2, 3, 7–9 (Part II extension)"
+    },
+    {
+      "slug": "associated-bundle-descent",
+      "needs": "For a flat affine group scheme H over S₀, a representable fpqc H-torsor P→S and a finite locally free H-representation V over S₀, compare the total space of its descended module with the geometric contracted product P×ᴴTot(V) supplied by SchemeAndStackFoundations §1.16, preserving the inverse-action descent datum, linear maps, tensor and dual structure and arbitrary base change; compare invariant locally direct summands and their incidence embeddings, including integral Chevalley Borel Lie bundles, using the descent equivalence of §1.1.",
+      "supplier": "AlgebraicVectorBundles",
+      "section": "L0B–L2B"
+    },
+    {
+      "slug": "local-geometric-comparisons",
+      "needs": "For a reduced pure d-dimensional finite-type k-scheme Y, a closed point x and each irreducible component C through x, prove that the completion of O_(C,x) is equidimensional of dimension d, and compare the generic-length cycles of the component quotient and its completed branches with the scheme cycles; use excellence for reducedness of the completed quotient, and retain the specified component ideals and maps in the scheme-to-affine and completed-local cycle comparisons.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§0.7, 0.16–0.21, 5.1"
+    },
+    {
+      "slug": "derived-bimodule-sheaves",
+      "needs": "Supply associative-ring sheaf bimodule derived tensor, internal Hom and pushforward with their actions, associativity, adjunction, restriction and affine comparisons compatible with additive K-injective models and bounded coherent D-module transfer.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§§0.1–0.4, E1.3–E1.4"
+    }
+  ],
   "sourceIssues": [
     {
       "id": "SpringerResolutionAndCharacteristicCycles/E1",
