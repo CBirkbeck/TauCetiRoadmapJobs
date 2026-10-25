@@ -26,7 +26,7 @@ In every auxiliary asymptotic, first α tends to infinity with d,κ fixed, then 
 
 ### From Mathlib
 
-Use `PowerSeries.coeff` and `PowerSeries.coeff_rescale` in `Mathlib/RingTheory/PowerSeries/Basic.lean`, lines 76 and 583: coefficient n of rescale a is a^n times coefficient n. `PowerSeries.subst` and `PowerSeries.substAlgHom` in `Mathlib/RingTheory/PowerSeries/Substitution.lean`, lines 155 and 170, use `PowerSeries.HasSubst`; over our fields a zero constant term suffices. These definitions do not assert complex convergence. `RatFunc.coeToLaurentSeries` in `Mathlib/RingTheory/LaurentSeries.lean`, line 391, is the canonical field embedding. `RatFunc.liftAlgebra` in `Mathlib/FieldTheory/RatFunc/Basic.lean`, line 756, is a scoped instance; the Lean file opens its scope to express algebraicity over ℚ(x). `IntermediateField.adjoin` supplies the generated field. `RatFunc.finrank_eq_max_natDegree` in `Mathlib/FieldTheory/RatFunc/IntermediateField.lean`, line 162, gives the maximum reduced numerator/denominator degree; nonconstancy is needed to interpret this as a finite extension degree. A constant rational function has native finrank zero because the extension is infinite, not degree zero.
+Use `PowerSeries.coeff` and `PowerSeries.coeff_rescale` in `Mathlib/RingTheory/PowerSeries/Basic.lean`, lines 76 and 583: coefficient n of rescale a is a^n times coefficient n. `PowerSeries.subst` and `PowerSeries.substAlgHom` in `Mathlib/RingTheory/PowerSeries/Substitution.lean`, lines 157 and 170, use `PowerSeries.HasSubst`; over our fields a zero constant term suffices. These definitions do not assert complex convergence. For a series P over a commutative ring, `PowerSeries.substInv` and `PowerSeries.subst_substInv_right`, `PowerSeries.subst_substInv_left` in the same file, lines 456, 510 and 542, supply its compositional inverse and both inverse identities when its constant coefficient is zero and its linear coefficient is invertible; this applies over ℤ to tangent-to-identity series. `RatFunc.coeToLaurentSeries` in `Mathlib/RingTheory/LaurentSeries.lean`, line 391, is the canonical field embedding. `RatFunc.liftAlgebra` in `Mathlib/FieldTheory/RatFunc/Basic.lean`, line 756, is a scoped instance; the Lean file opens its scope to express algebraicity over ℚ(x). `IntermediateField.adjoin` supplies the generated field. `RatFunc.finrank_eq_max_natDegree` in `Mathlib/FieldTheory/RatFunc/IntermediateField.lean`, line 162, gives the maximum reduced numerator/denominator degree; nonconstancy is needed to interpret this as a finite extension degree. A constant rational function has native finrank zero because the extension is infinite, not degree zero.
 
 `IsAlgebraic.exists_integral_multiple` in `Mathlib/RingTheory/Algebraic/Integral.lean`, line 146, gives a nonzero integral scalar multiple of one algebraic element; §0.4 derives a single exponential scale for the whole series. `Int.Matrix.exists_ne_zero_int_vec_norm_le` in `Mathlib/NumberTheory/SiegelsLemma.lean`, line 155, gives a nonzero integral kernel vector when 0<row count<column count, with sup norm at most (column count·max(1,matrix norm))^(rows/(columns−rows)). Zero rows are treated separately. `fieldOfFiniteDimensional` in `Mathlib/LinearAlgebra/FiniteDimensional/Basic.lean`, line 521, makes a finite-dimensional domain algebra over a field into a field, compatibly with its ring operations. `Stirling.factorial_isEquivalent_stirling` in `Mathlib/Analysis/SpecialFunctions/Stirling.lean`, line 246, gives d/(d!)^(1/d)→e.
 
@@ -44,7 +44,7 @@ Use `PowerSeries.coeff` and `PowerSeries.coeff_rescale` in `Mathlib/RingTheory/P
 
 ### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
 
-Consume §5.1, “D-finite series and minimal equations”: a nonzero polynomial-coefficient annihilator is equivalent to a finite derivative span, with sum and product closure, descent and complex initial-value existence and uniqueness on positive-radius discs. The derivative convention is ordinary differentiation: x² has initial second derivative 2. The arithmetic coefficient condition and the full meromorphic local basis condition of §4.1 are additional restrictions on those generators. No E-/G-function denominator theorem is assumed in the elementary Eisenstein proof.
+Consume §5.1, “D-finite series and minimal equations”: a nonzero polynomial-coefficient annihilator is equivalent to a finite derivative span, with sum and product closure and complex initial-value existence and uniqueness on positive-radius discs. The derivative convention is ordinary differentiation: x² has initial second derivative 2. The arithmetic coefficient condition and the full meromorphic local basis condition of §4.1 are additional restrictions on those generators. No E-/G-function denominator theorem is assumed in the elementary Eisenstein proof.
 
 ### From TauCetiRoadmap.ConformalMappingPartII
 
@@ -67,6 +67,8 @@ Consume §§6.18–6.19 and §6.40 for finite Fekete diameters, monic Chebyshev 
 What ClassicalArithmeticCompletion must provide (gap:complex-logarithmic-equilibrium): For every nonempty compact K⊆ℂ, provide logarithmic energy of Borel probabilities with diagonal value +∞ via bounded-below kernel truncations, weak lower semicontinuity and a minimizing measure, identify exp(−inf I) with the transfinite diameter of §6.18, prove uniqueness of the minimizer when this value is positive, and identify the equilibrium probabilities of every circle and closed disc of positive radius as normalized boundary arc measure, compatibly with nonzero affine changes of coordinates.
 
 This contract extends §§6.18,6.40 in their own potential-theory direction. It is consumed in §§3.7–3.8 and §5. A radius-r circle has minimum energy −log r and capacity r, so at r=2 the values are −log 2 and 2; using the reciprocal capacity would reverse both. At r=0 a point mass has energy +∞ and capacity zero, so no positive-capacity uniqueness assertion applies. (Saff10, Lemmas 1.6–1.7, Definition 1.8 and Theorem 1.9, pp.171–173, Saff10 line 272; Example 1.10, p.173, Saff10 line 387.)
+
+The arbitrary-compact replacement obligation DiophantineApproximationAndTranscendencePartII/G1 has no assigned supplier. It requires a source-supported theorem with exact base-point-sensitive geometric hypotheses, or a maintainer scope decision releasing that obligation. The energy/equilibrium contract supplies no such rank theorem; neither the centred theorem nor the counterexample depends on G1.
 
 ## How to read the build
 
@@ -186,7 +188,7 @@ The geometric series 1/(1−x) at radius exactly 1 prevents a non-strict radius 
 
 ### 0.4 Eisenstein denominators for algebraic series
 
-Prove `eisenstein_denominators`. Let y(u)=Σ a_nu^n∈ℚ̄[[u]] be algebraic over ℚ̄(u). There exist positive rational integers c,M such that c M^n a_n is an algebraic integer for every n≥0. If a_0 is an algebraic integer, some positive M′ alone suffices: (M′)^n a_n is integral for every n. The same statement applies to a nonnegative Puiseux series after putting u=x^(1/N), N>0. No variable-only claim is made for a nonintegral constant term. (BB11, §1, p.1, Theorem 6.1, pp.10–11 and §8, p.14, BB11 line 26 and BB11 line 543.)
+Let y(u)=Σ a_nu^n∈ℚ̄[[u]] be algebraic over ℚ̄(u). There exist positive rational integers c,M such that c M^n a_n is an algebraic integer for every n≥0. If a_0 is an algebraic integer, some positive M′ alone suffices: (M′)^n a_n is integral for every n. The same statement applies to a nonnegative Puiseux series after putting u=x^(1/N), N>0. No variable-only claim is made for a nonintegral constant term. (BB11, §1, p.1, Theorem 6.1, pp.10–11 and §8, p.14, BB11 line 26 and BB11 line 543.)
 
 Write f=y and use the elementary tail-series argument of BB11 §1, p.1. Choose a square-free annihilator P(x,y) over a number field. Since P_y(x,f) is nonzero, let s be its finite order and choose N>s. Write f=b(x)+x^N g with b the truncation below N. The polynomial Q(x,Y)=x^(−N−s)P(x,b(x)+x^N Y) has coefficients in a finite extension containing the finitely many coefficients of b, and Q(0,Y)=aY+b₀ with a≠0. Indeed the constant term is divisible by x^(N+s) because P(x,f)=0, the linear term has exactly that order, and each higher term has order at least 2N>N+s. Include g(0) in that finite extension. After Y=g(0)+u and division by a the equation is u+xR(x,u)=0 for a polynomial R with algebraic coefficients. Choose a positive integer M clearing the finitely many algebraic coefficients of R, the nonconstant coefficients of b and the scalar g(0), using the native integral-multiple theorem. The equation for u(Mt) is u(Mt)=−Mt R(Mt,u(Mt)). Its nth coefficient is an integral polynomial in earlier coefficients, so induction shows u(Mt) has algebraic-integer coefficients. Thus all positive-degree coefficients of f(Mt) are integral after enlarging M if necessary. The same recurrence also places every coefficient in the chosen finite extension. Choose c to clear the remaining constant coefficient. Equivalently, if a first argument gives cM^n a_n integral, an integral a_0 permits replacing M by cM since (cM)^n a_n=c^(n−1)(cM^n a_n) for n≥1. Apply the identical univariate argument after putting u=x^(1/N) for the Puiseux variant.
 
@@ -204,7 +206,7 @@ y=1/2 requires the scalar c; no change of variable alters its constant term. The
 
 Let p∈ℚ(x) be nonconstant and regular at zero, and χ(t)∈t+t²ℚ[[t]] satisfy p(χ(t))∈ℤ[[t]]. There is a positive integer M depending only on p such that χ(Mt)/M∈t+t²ℤ[[t]]. Its formal inverse τ has τ(Mx)/M∈x+x²ℤ[[x]]. Consequently, for every f∈ℚ[[x]], f(χ(t))∈ℤ[[t]] implies f(Mx)∈ℤ[[x]]. One may bound M in terms of the degree and rational coefficient height of p; it is independent of f and of the auxiliary dimension. (CDT25, Proof of Lemma 2.1.2, pp.637–638, CDT25 line 576.)
 
-Write b(p(x)−p(0))/c=x^N+O(x^(N+1)), N>0, with b a nonzero integer and c>0 integral. The normalized inverse Puiseux branch has constant zero. Apply Eisenstein and absorb its scalar. Apply the coefficient estimate (1+u)^(1/N)∈ℤ[[u/N²]] to the normalized Nth root of the integral pullback. The branch with leading term t is selected by χ′(0)=1. The denominator calculation on pp.637–638 supplies M=c²N⁴M₁², with M₁ the scale of that normalized inverse branch. The rescaled series χ(Mt)/M=t+O(t²) has integral coefficients; recursive formal inversion over ℤ has integral coefficients. Rescale back to obtain the identical tangent lattice for τ. Compose the integral series f∘χ with τ(Mx), which has integral coefficients and zero constant. For uniform dependence on degree and height, the displayed algebraic construction depends only on p; finitely many rational coefficient lists of bounded degree and height also give a uniform bound.
+Write b(p(x)−p(0))/c=x^N+O(x^(N+1)), N>0, with b a nonzero integer and c>0 integral. The normalized inverse Puiseux branch has constant zero. Apply Eisenstein and absorb its scalar. Apply the coefficient estimate (1+u)^(1/N)∈ℤ[[u/N²]] to the normalized Nth root of the integral pullback. The branch with leading term t is selected by χ′(0)=1. The denominator calculation on pp.637–638 supplies M=c²N⁴M₁², with M₁ the scale of that normalized inverse branch. The rescaled series χ(Mt)/M=t+O(t²) has integral coefficients; the native compositional inverse over ℤ has integral coefficients and satisfies both inverse identities. Rescale back to obtain the identical tangent lattice for τ. Compose the integral series f∘χ with τ(Mx), which has integral coefficients and zero constant. For uniform dependence on degree and height, the displayed algebraic construction depends only on p; finitely many rational coefficient lists of bounded degree and height also give a uniform bound.
 
 Both zero constant term and linear coefficient 1 are used to preserve the lowest integral jet.
 
@@ -216,9 +218,9 @@ Both zero constant term and linear coefficient 1 are used to preserve the lowest
 
 - For p=x, the hypotheses already force χ integral, so M=1 works.
 
-- For p=x+x⁴/32, its tangent inverse satisfies p∘χ=t but χ is not integral: its fourth coefficient is −1/32. Thus integrality of p∘χ must not be confused with integrality of χ.
+- For p=x+x⁴/32, its tangent inverse starts t−t⁴/32+t⁷/256 and satisfies p∘χ=t but is not integral. Tangent scaling M=4 gives coefficients −4³/32=−2 and 4⁶/256=16; the integral series p(4x)/4=x+2x⁴ has integral inverse χ(4t)/4.
 
-*Needs:* §0.4; Mathlib `PowerSeries.substAlgHom`; §0.1.
+*Needs:* §0.4; Mathlib `PowerSeries.substAlgHom`; Mathlib `PowerSeries.substInv`; Mathlib `PowerSeries.subst_substInv_right`; Mathlib `PowerSeries.subst_substInv_left`; §0.1.
 
 ### Examples
 
@@ -236,7 +238,7 @@ Let p∈ℚ(x) be nonconstant and regular at zero. If f₁,…,f_m∈ℚ[[x]] ar
 
 In one variable, group the powers of p into polynomial coefficients of the f_i. Nonconstancy of p makes powers of p independent over ℚ. For a finite independent family of coefficient sequences choose finitely many coefficient functionals giving an injective map to a finite-dimensional rational space. In d separate variables the corresponding coefficient matrix is a tensor product of injective matrices. Its column independence proves the claim without evaluating an arbitrary formal series at a nonzero rational point.
 
-The scalar field in the hypothesis is ℚ(p); the pair 1,p disproves the version with only ℚ-independence. For f₁=1 the assertion is the independence of separate-variable powers of a nonconstant p. The hypothesis is over ℚ(p), not merely over ℚ; the pair 1,p is a counterexample to the weaker premise.
+The scalar field in the hypothesis is ℚ(p); the pair 1,p disproves the version with only ℚ-independence. For f₁=1 the assertion is the independence of separate-variable powers of a nonconstant p.
 
 **Checks.**
 
@@ -280,7 +282,7 @@ The coefficient multiplier is a^β, with β the order of F, not the degree of an
 
 ### 1.4 Cauchy extrapolation with a normalized multiplier
 
-Under §1.2's complete arithmetic and analytic hypotheses, let h be holomorphic near the closed unit disc with h(0)=1 and let g uniformize p. Define `multiplierLogBound` as A(h,g)=log(max(sup_𝕋|h|,sup_𝕋|hg|)); equivalently it is the logarithm of the supremum of the pointwise maximum. The boundary compactness gives finite suprema, and the maximum principle gives A≥0. For κ∈(0,1) and d≥d₁(κ), Cauchy extrapolation after α→∞ gives log λ≤[d/(m(d!)^(1/d))](1+1/κ)^(1/d) A+κC. (CDT25, §2.2, (2.2.1)–(2.2.3) and the estimates following them, pp.638–639, CDT25 line 614.)
+Under §1.2's complete arithmetic and analytic hypotheses, let h be holomorphic near the closed unit disc with h(0)=1 and let g uniformize p. Define the multiplier bound as A(h,g)=log(max(sup_𝕋|h|,sup_𝕋|hg|)); equivalently it is the logarithm of the supremum of the pointwise maximum. The boundary compactness gives finite suprema, and the maximum principle gives A≥0. For κ∈(0,1) and d≥d₁(κ), Cauchy extrapolation after α→∞ gives log λ≤[d/(m(d!)^(1/d))](1+1/κ)^(1/d) A+κC. (CDT25, §2.2, (2.2.1)–(2.2.3) and the estimates following them, pp.638–639, CDT25 line 614.)
 
 Its API comprises:
 
@@ -292,7 +294,7 @@ Its API comprises:
 
 Form H(z)=∏h(z_j)^D F(φ(z₁),…,φ(z_d)), holomorphic near the closed unit polydisc. The supplied polydisc Cauchy coefficient formula bounds every coefficient by its boundary supremum. Rewrite each factor h^D g^k as h^(D−k)(hg)^k. The product is bounded by exp(dDA), times the fixed f_i boundary norms. The number of summands is (mD)^d with logarithm o(α); the fixed f_i norms contribute o(α). Compare the integral lower coefficient |a|^β, β≥α, to obtain αlogλ≤dDA+κCα+o(α). Divide and pass to the first limit. The maximum principle and h(0)=1 imply sup|h|≥1, so A≥0 and no logarithm of a nonpositive bound is used.
 
-The Cauchy argument uses holomorphy on a neighbourhood of the compact polydisc and a nonzero lowest jet. For g=h=1, A=0, not 1. The estimate uses holomorphicity near a compact polydisc and no probabilistic independence assumption.
+The Cauchy argument uses holomorphy on a neighbourhood of the compact polydisc and a nonzero lowest jet. For g=h=1, A=0, not 1.
 
 **Checks.**
 
@@ -306,7 +308,7 @@ The Cauchy argument uses holomorphy on a neighbourhood of the compact polydisc a
 
 ### 1.5 Arithmetic rank bound with a holomorphic multiplier
 
-Prove `multiplier_rank_bound`. Under the full arithmetic and analytic hypotheses of §1.2, every holomorphic h near the closed unit disc with h(0)=1 satisfies m≤e A/logλ, with A=log(max(sup_𝕋|h|,sup_𝕋|hg|)) and λ=|φ′(0)|>1. Equivalently A=max(sup log|h|,sup log|hg|), with logarithmic zeros interpreted as −∞ for these suprema. The native theorem includes the empty family, for which m=0; §1.2 supplies the nonempty case. (CDT25, Lemma 2.0.8, p.636; proof §2.2, pp.638–639, CDT25 line 519.)
+Under the full arithmetic and analytic hypotheses of §1.2, every holomorphic h near the closed unit disc with h(0)=1 satisfies m≤e A/logλ, with A=log(max(sup_𝕋|h|,sup_𝕋|hg|)) and λ=|φ′(0)|>1. Equivalently A=max(sup log|h|,sup log|hg|), with logarithmic zeros interpreted as −∞ for these suprema. The statement includes the empty family, for which m=0; §1.2 supplies the nonempty case. (CDT25, Lemma 2.0.8, p.636; proof §2.2, pp.638–639, CDT25 line 519.)
 
 For fixed κ, let d→∞ in the Cauchy extrapolation inequality: d/(d!)^(1/d)→e and (1+1/κ)^(1/d)→1. Then let κ decrease to zero, using the independence of C from d and κ. Rearrange using logλ>0. Use the same bound for arbitrary finite families of powers to obtain algebraicity, as detailed in §2.2.
 
@@ -364,7 +366,7 @@ Algebraicity is weaker than rationality, including for rational-coefficient seri
 
 ### 2.3 André’s open-disc algebraicity criterion
 
-Prove `andre_algebraicity`. Let f∈ℤ[[x]]. Suppose φ is holomorphic on the open unit disc, φ(0)=0 and |φ′(0)|>1, and the formal pullback has a holomorphic realization on that disc in the germ sense of §0.2. Then f is algebraic over ℚ(x). (CDT25, §1.1.1, pp.630–631; derived from Theorem 2.0.1, CDT25 line 169.)
+Let f∈ℤ[[x]]. Suppose φ is holomorphic on the open unit disc, φ(0)=0 and |φ′(0)|>1, and the formal pullback has a holomorphic realization on that disc in the germ sense of §0.2. Then f is algebraic over ℚ(x). (CDT25, §1.1.1, pp.630–631; derived from Theorem 2.0.1, CDT25 line 169.)
 
 Choose r<1 so close to 1 that r|φ′(0)|>1. The maps φ(rz) and the corresponding uniformized f are holomorphic on a neighbourhood of the closed unit disc. Use p=x, χ=t; the integral pullback of p is t. Apply arithmetic algebraicity. The argument derives this open-disc theorem directly from the closed-disc rank theorem.
 
@@ -379,8 +381,6 @@ CDT25 (1.1.4)–(1.1.5), p.631, supplies the named boundary benchmark F(x)=Σ bi
 - Strictness is necessary even for the identity coordinate: −log(1−x)=Σx^n/n does not supply an integral test, whereas the lacunary integral series Σ_(k≥0)x^(2^k) is analytic on the unit disc and is not algebraic (its singularities at dyadic roots of unity are dense). It has φ(z)=z with derivative 1.
 
 - For m≥2 the series (1−m²x)^(1/m) has integral coefficients: for n≥1 the binomial coefficient times m^(2n) is integral by its prime valuations. The map φ=(1−exp(Mz))/m² has derivative modulus M/m²>1 when M>m² and uniformization exp(Mz/m).
-
-- CDT25 (1.1.4)–(1.1.5), p.631 (CDT25 line 242), supplies the named boundary benchmark F(x)=Σ binomial(2n,n)²x^n: it is integral and transcendental, while φ(q)=λ(q)/16 has φ′(0)=1 and F∘φ=(Σ_(n∈ℤ)q^(n²))² on |q|<1. Thus equality at the derivative threshold cannot imply algebraicity. These modular identity data are source benchmark inputs, not a second development of modular functions here.
 
 *Needs:* §2.2; §0.2.
 
@@ -408,7 +408,7 @@ The auxiliary function of Layer 1 also proves the identical mean rank bound m≤
 
 Separate-variable tangent substitutions preserve the least lexicographic exponent vector and its coefficient; coordinatewise higher terms cannot create a smaller vector. Hence the least coefficient after φ is a^β times a nonzero integer, β≥α. The pointwise triangle inequality gives log|F(φ(z))|≤DΣ_j log⁺|g(z_j)|+κCα+o(α). Integrate and apply the lexicographic inequality to bound that coefficient above. Compare αlogλ≤dDJ(g)+κCα+o(α). Pass through α→∞, d→∞ and κ→0 in that order. This recovers the same theorem with an independent analytic interior.
 
-The least lexicographic exponent has total degree β≥α, which suffices for the lower bound. Both proof routes have the same arithmetic data and the same factor e. The lexicographically least exponent may have total degree larger than the order of F; β≥α is all the lower bound needs.
+The least lexicographic exponent has total degree β≥α, which suffices for the lower bound. Both proof routes have the same arithmetic data and the same factor e.
 
 **Checks.**
 
@@ -430,7 +430,7 @@ Layer 1 for auxiliary functions and the normalized-multiplier estimate; Conforma
 
 ### 3.1 Circular box discrepancy
 
-For d≥1 and an indexed tuple z₁,…,z_d on 𝕋, define `circleDiscrepancy`, denoted D_circ(z)=sup_(a∈ℝ,0≤ℓ≤1)|d^(−1)#{j:z_j∈I(a,ℓ)}−ℓ|, where I(a,ℓ)={exp(2πit): frac(t−a)∈[0,ℓ)}; I(a,0) is empty and I(a,1)=𝕋. Points are counted with multiplicity. Equivalently take the supremum over cuts a of the supplied star discrepancy of the rotated arguments frac(arg(z_j)/(2π)−a). On a Borel probability ν on 𝕋 use the same arc formula with ν(I) in place of the empirical frequency. This is an adapter to the owner’s star discrepancy, not a second general discrepancy library. Assign value zero to the empty tuple separately; every sampling inequality below assumes d≥1. (CDT25, Definition 2.5.4, p.644; adaptation of the existing ProbabilisticAndMetricNumberTheory §2.7 star-discrepancy node, CDT25 line 1082.)
+For d≥1 and an indexed tuple z₁,…,z_d on 𝕋, define circular discrepancy, denoted D_circ(z)=sup_(a∈ℝ,0≤ℓ≤1)|d^(−1)#{j:z_j∈I(a,ℓ)}−ℓ|, where I(a,ℓ)={exp(2πit): frac(t−a)∈[0,ℓ)}; I(a,0) is empty and I(a,1)=𝕋. Points are counted with multiplicity. Equivalently take the supremum over cuts a of the supplied star discrepancy of the rotated arguments frac(arg(z_j)/(2π)−a). On a Borel probability ν on 𝕋 use the same arc formula with ν(I) in place of the empirical frequency. This is an adapter to the owner’s star discrepancy, not a second general discrepancy library. Assign value zero to the empty tuple separately; every sampling inequality below assumes d≥1. (CDT25, Definition 2.5.4, p.644; adaptation of the existing ProbabilisticAndMetricNumberTheory §2.7 star-discrepancy node, CDT25 line 1082.)
 
 Its API comprises:
 
@@ -508,7 +508,7 @@ For a nonempty d-tuple z_j∈𝕋 and K≥1, D_circ(z)≤3[1/(K+1)+Σ_(k=1)^K (1
 
 Apply the owner’s star-discrepancy inequality to the arguments after an arbitrary rotation of the cut. Every kth exponential mean changes only by a unit scalar, so the right side is independent of the cut. Take the supremum over cuts using the rotated-star identity. This retains the constant 3; the rough D_circ≤2D* comparison would unnecessarily double it.
 
-The Fourier comparison has constant 3; the damping route uses Koksma and energy independently of it. For a regular d-gon all Fourier means of orders 1,…,d−1 vanish. The circle Fourier inequality is a separate comparison; the damping proof uses Koksma and the energy gap rather than Erdős–Turán.
+The Fourier comparison has constant 3; the damping route uses Koksma and energy independently of it. For a regular d-gon all Fourier means of orders 1,…,d−1 vanish.
 
 **Checks.**
 
@@ -540,11 +540,11 @@ The expression log|h| without the positive cutoff can have logarithmic singulari
 
 ### 3.6 Fekete’s extremal Vandermonde on the circle
 
-Prove `fekete_circle`. For d≥1 and z_j∈𝕋, let V(z)=∏_(i<j)(z_i−z_j). Then |V(z)|≤d^(d/2), with equality precisely when the tuple, up to permutation, is a rotation of all dth roots of unity. For d=1 every singleton is such a rotation; repeated points give zero when d≥2. (CDT25, (2.5.2), Lemma 2.5.3, p.644, CDT25 line 1063.)
+For d≥1 and z_j∈𝕋, let V(z)=∏_(i<j)(z_i−z_j). Then |V(z)|≤d^(d/2), with equality precisely when the tuple, up to permutation, is a rotation of all dth roots of unity. For d=1 every singleton is such a rotation; repeated points give zero when d≥2. (CDT25, (2.5.2), Lemma 2.5.3, p.644, CDT25 line 1063.)
 
 Apply GeometryOfNumbersAndQuadraticArithmetic §0.1.1 to the native Vandermonde rows, each of Euclidean norm √d; dependent rows give determinant zero. This supplies the upper bound without constructing another general Hadamard theorem. For equality, inspect the Gram–Schmidt norm factors: equality forces the rows to be pairwise orthogonal. Their pairwise inner products are the finite sums Σ_(k=0)^(d−1)(z_i/z_j)^k. Thus every distinct ratio is a nontrivial dth root of unity. Fixing one row and using distinctness gives every vertex of a rotated regular d-gon, and the converse follows from the same finite geometric sums.
 
-The determinant identity fixes the sign; its modulus bound and polygon equality require the norm argument. d=2 gives |z₁−z₂|≤2 with equality at antipodal pairs. The determinant formula alone does not supply this norm inequality or its equality case.
+The determinant identity fixes the sign; its modulus bound and polygon equality require the norm argument. d=2 gives |z₁−z₂|≤2 with equality at antipodal pairs.
 
 **Checks.**
 
@@ -574,11 +574,11 @@ Finite empirical measures retain infinite self-energy. A point mass has energy +
 
 ### 3.8 Exponential Vandermonde loss away from Haar
 
-Prove `vandermonde_discrepancy_gap`. For each ε∈(0,1] there are c_ε>0 and d₀≥1 such that if d≥d₀ and z∈𝕋^d has D_circ(z)≥ε, then |V(z)|<exp(−c_ε d²). The assertion allows collisions and requires no explicit dependence of c_ε,d₀ on ε. (CDT25, Lemma 2.5.9 and proof, pp.645–646, CDT25 line 1134.)
+For each ε∈(0,1] there are c_ε>0 and d₀≥1 such that if d≥d₀ and z∈𝕋^d has D_circ(z)≥ε, then |V(z)|<exp(−c_ε d²). The assertion allows collisions and requires no explicit dependence of c_ε,d₀ on ε. (CDT25, Lemma 2.5.9 and proof, pp.645–646, CDT25 line 1134.)
 
 If no such gap exists, choose dimensions tending to infinity and tuples with discrepancy at least ε and normalized off-diagonal energy tending to a nonpositive value. Collisions already give the desired conclusion and can be excluded from the contrary sequence. Compactness of probability measures supported on the compact metric circle gives a weakly convergent subsequence ν_d→ν; sequential extraction follows from metrizability. Discrepancy continuity shows ν≠Haar. For A>0 use the continuous bounded kernel k_A(z,w)=min(A,log(1/|z−w|)), with k_A(z,z)=A. Product weak convergence and the empirical formula give ∫k_A dν²≤limsup[2d^(−2)Σ_(i<j)log(1/|z_i−z_j|)+A/d]≤0. Let A→∞ by monotone convergence after adding log2. Obtain I(ν)≤0, contradicting uniqueness of the Haar minimizer. This treats atomic and atomless limits uniformly. If the resulting uniform lower bound for normalized off-diagonal energy is non-strict, shrink c_ε to get the displayed strict exponential inequality.
 
-The truncated diagonal A/d is removed by the d-limit before taking A→∞. The diagonal contribution is A/d and disappears before A→∞; dropping it at finite d would use the infinite self-energy of the empirical measure incorrectly. Finite-dimensional logarithmic factors from the Fekete maximum are negligible beside d².
+The diagonal contribution is A/d and disappears before A→∞; dropping it at finite d would use the infinite self-energy of the empirical measure incorrectly. Finite-dimensional logarithmic factors from the Fekete maximum are negligible beside d².
 
 **Checks.**
 
@@ -596,7 +596,7 @@ Fix the arithmetic data, ε∈(0,1], κ∈(0,1), and d≥max(d₀(ε),d₁(κ)).
 
 On the region D_circ<ε, Koksma bounds Σlog⁺|g(z_j)| by dJ(g)+εdV(log⁺|g|). Bound the Vandermonde factor by d^(dM/2). On its complement, |V|≤exp(−c_εd²) and the choice of M cancels the crude dDS growth term. The ceiling avoids a rounding remainder; it changes the good-region estimate by O(d log d), which is o(α) for fixed d. The supplied polydisc Cauchy coefficient bound controls all coefficients of H by the combined boundary supremum. Among the lowest total-degree terms of F choose the lexicographically greatest exponent. Multiply it by the greatest exponent of V^M. Their sum is uniquely greatest among terms of that lowest degree, so cancellation is impossible; its coefficient is a nonzero integer times φ′(0)^β, up to the sign of the Vandermonde product.
 
-The derivative exponent is the order β of F before Vandermonde multiplication. The derivative exponent is β, not β+M·binomial(d,2), since V is multiplied after substituting φ. Using the global Fekete upper bound on the bad region would lose the integrated growth improvement.
+The derivative exponent is β, not β+M·binomial(d,2), since V is multiplied after substituting φ. Using the global Fekete upper bound on the bad region would lose the integrated growth improvement.
 
 **Checks.**
 
@@ -612,7 +612,7 @@ The Vandermonde-damped coefficient bounds yield the same rank bound m≤eJ(g)/lo
 
 Compare the coefficient lower bound αlogλ with the damped upper bound and divide by α. For fixed ε and κ let d→∞. Since D/α=O(1/d), the term M d logd/α is O_ε(logd/d) and tends to zero. The Koksma error tends to at most a constant times ε V(log⁺|g|). Let κ→0, then ε→0. The Siegel constant is independent of d and κ. The order of all four limits is α, d, κ, ε.
 
-All three arguments use the same normalized mean and factor e. The three analytic proofs agree on every normalization and on the final factor e. Erdős–Turán is a companion target and does not supply the energy gap used here.
+The three analytic proofs agree on every normalization and on the final factor e. Erdős–Turán is a companion target and does not supply the energy gap used here.
 
 **Checks.**
 
@@ -650,9 +650,11 @@ Its API comprises:
 
 - For χ=t the ring is a ℤ[x]-algebra; when p has no poles in U and p∘χ is integral it is a ℤ[p]-algebra.
 
-- Membership forgets to the parent roadmap’s D-finite predicate over ℚ̄; rationality of f also gives D-finiteness over ℚ by coefficient-linear-system descent.
+- Membership implies D-finiteness over ℚ̄ and, because f has rational coefficients, D-finiteness over ℚ by the coefficient descent proved in this subsection.
 
 Intersect the integral-pullback predicate with existence of the imported differential equation and its full meromorphic-basis property. Keep the local condition at every singularity in U, including the initial point when it is singular; the series f itself has no negative powers at zero. Use the closure theorem below to supply the subring structure.
+
+For every f∈ℚ[[x]], a nonzero ℚ̄[x]-coefficient annihilator of order n and coefficient degrees at most d yields a nonzero ℚ[x]-coefficient annihilator of the same order and degree bound. This coefficient descent is a target here. Clear rational-function denominators, take a ℚ-basis of the finite number field generated by the operator coefficients, and expand each polynomial in that basis. Since every derivative of f has rational coefficients, each basis component annihilates f. At least one component of the leading polynomial is nonzero; choosing it preserves the order. This is a linear-algebra consequence of the annihilator condition in Definition 2.0.4, rather than an additional local-basis assertion. (CDT25, Definition 2.0.4, p.635, CDT25 line 467.)
 
 A pole is allowed for other local solutions; it is only the chosen formal f that must be regular at zero.
 
@@ -660,13 +662,17 @@ A pole is allowed for other local solutions; it is only the chosen formal f that
 
 - The series 1 belongs even for U=ℂ: its pullback coefficients are (1,0,0,…) and y′=0 has the full basis {1}, excluding a zero-only arithmetic ring.
 
-- For χ=t, 1/(1−x) belongs on ℂ and its first-order equation has a meromorphic basis at 1.
+- For χ=t, f=1/(1−x) belongs on ℂ: (1−x)f′−f=0 has rational coefficients and the full meromorphic basis {1/(1−x)} at 1. Multiplying this operator by √2 and expanding in the basis (1,√2) recovers that same rational annihilator.
 
-- exp(x) is D-finite and entire but fails integral coefficients for χ=t, since its x² coefficient is 1/2.
+- For f=exp(x), an order-one constant-coefficient annihilator a₀f+a₁f′=0 imposes a₀+a₁=0: the coefficient matrix has rank 1 and kernel spanned by (−1,1) over both ℚ and ℚ̄. Nevertheless f fails integral coefficients for χ=t, since its x² coefficient is 1/2.
 
 - Put L(t)=−log(1−t), χ=L/(1+L), and f(x)=exp(x/(1−x)). Then χ=t+O(t²) is rational-coefficient and f∘χ=1/(1−t) is integral. The rational-coefficient germ f is D-finite, satisfying (1−x)²f′−f=0, but f does not belong to H(ℂ,χ,ℤ): its essential singularity at 1 precludes every full-meromorphic-basis annihilator. Thus the local condition is independent of D-finiteness and integral pullback.
 
 - For f=x² the annihilator y‴=0 has the ordinary basis (1,x,x²), with unscaled jets (1,0,0),(0,1,0),(0,0,2) at zero; Taylor coefficients instead give (0,0,1) for the last vector.
+
+- The zero series has the rational order-zero annihilator 1·f=0; after scalar extension this remains nonzero.
+
+- The rational-coefficient premise in order-preserving descent is essential: exp(√2x) satisfies f′−√2f=0, but a rational order-one annihilator would give p₀+√2p₁=0 with p₁≠0, contradicting independence of 1 and √2 over ℚ.
 
 - Identity of topological monodromy alone is insufficient: exp(1/(x−α)) has identity monodromy but an essential singularity.
 
@@ -678,7 +684,7 @@ For U,χ as above, H(U,χ,ℤ) is a subring of ℚ[[x]]. If p∈ℚ(x) is regula
 
 Integral pullbacks are closed under the ring operations. Use the parent D-finite closure construction on finite-dimensional ℚ̄(x) differential modules: direct sums for sums and tensor products for products. On a punctured neighbourhood the input differential modules have full horizontal meromorphic bases. Their direct sums and tensors do too. The cyclic differential subquotient defining the resulting scalar equation inherits this property: a horizontal frame identifies these modules and their subquotients with constant finite-dimensional spaces. This also covers any new apparent singularities of the cyclic presentation. The rational function p has a first-order meromorphic solution module (or is constant). Tensor with it; at its zeros a basis can still be meromorphic. The assumption of no poles in U ensures p itself is holomorphic at zero and that p∘χ multiplication stays within formal power series. For χ=t, x has integral pullback and is regular everywhere.
 
-Arithmetic derivative closure is not asserted for arbitrary χ; rational multipliers are unrestricted only in the scalar spans. The derivative need not preserve the arithmetic ring for arbitrary χ; no derivative-closure API is asserted. An arbitrary rational multiplier can destroy integral coefficients and is available only after taking the scalar spans.
+The derivative need not preserve the arithmetic ring for arbitrary χ; no derivative-closure API is asserted. An arbitrary rational multiplier can destroy integral coefficients and is available only after taking the scalar spans.
 
 **Checks.**
 
@@ -708,7 +714,7 @@ Its API comprises:
 
 Use native scalar restriction and submodule spans in the common Laurent-series field; rational functions are interpreted through their Laurent expansion at zero. Expand each finite span explicitly. Closure of H under multiplication makes both spans subalgebras over their respective scalar fields, containing 1. The inclusions of scalar fields and the iterated finite-span identity give W⊆V and V=ℚ(x)W.
 
-The scalar field in a dimension statement is part of its type. The definition does not force x∈W when χ has nonintegral coefficients. Scalar fields belong to the dimension statement, and x need not belong to W before finiteness when χ is nonintegral.
+The scalar field in a dimension statement is part of its type; x need not belong to W before finiteness when χ is nonintegral.
 
 **Checks.**
 
@@ -762,7 +768,7 @@ Under §4.5, W and V are fields in ℚ((x)), finite over ℚ(p) and ℚ(x), resp
 
 Apply Mathlib’s `fieldOfFiniteDimensional` to W as a finite-dimensional domain over ℚ(p). Its inverse agrees with the ambient Laurent inverse because multiplication by a nonzero element is injective. A ℚ(p)-basis of W spans V over ℚ(x), giving its dimension bound and then its field structure by the same native construction. Import the native rational-function extension-degree formula: for nonconstant p=a/b in reduced form, [ℚ(x):ℚ(p)]=max(deg a,deg b)<∞. The scalar tower formula gives the second displayed inequality. If χ is integral then x∈H. The field W consequently contains ℚ(x), so V=ℚ(x)W=W.
 
-The degree factor is retained for general χ, while qualitative finiteness over ℚ(x) holds. Multiplication by n is indispensable in the general χ statement about dimension over ℚ(p). The printed first, qualitative finiteness claim is preserved.
+Multiplication by n is indispensable in the general χ statement about dimension over ℚ(p). The printed first, qualitative finiteness claim is preserved.
 
 **Checks.**
 
@@ -792,17 +798,17 @@ The map criterion has a strict derivative bound and is meaningful on nonhyperbol
 
 In the published Corollary 2.0.5, take U=ℂ, p=x+x⁴/32, χ the formal inverse of p tangent to the identity, and φ(z)=2z. Then p∘χ=t∈ℤ[[t]] and all printed hypotheses hold. Since 1∈H, dim_(ℚ(p))V≥[ℚ(x):ℚ(p)]=4. However J(p∘φ)≤log(5/2), so eJ(p∘φ)/log2<4. Thus the printed (2.0.7) for V is false for general rational χ. (CDT25, Definition 2.0.4, pp.635–636; Corollary 2.0.5, (2.0.7), p.636, CDT25 line 492.)
 
-Formal inversion exists because p(0)=0 and p′(0)=1; its fourth coefficient is −1/32, so χ is rational but nonintegral. On |z|=1, |p(2z)|=|2z+z⁴/2|≤5/2. Hence its positive-log average is at most log(5/2). The polynomial p has degree 4, giving the extension degree 4. Finally e<3 and (5/2)³=125/8<16=2⁴ show e log(5/2)/log2<4. All points of U are allowed because p is a polynomial. The counterexample concerns the scalar extension in this corollary, not the validity of the main analytic theorem.
+The native formal inverse exists because p(0)=0 and p′(0)=1; both compositions are the identity. Its fourth coefficient is −1/32, so χ is rational but nonintegral. On |z|=1, |p(2z)|=|2z+z⁴/2|≤5/2. Hence its positive-log average is at most log(5/2). The polynomial p has degree 4, giving the extension degree 4. Finally e<3 and (5/2)³=125/8<16=2⁴ show e log(5/2)/log2<4. All points of U are allowed because p is a polynomial.
 
 The degree-four counterexample concerns scalar extension; it does not contradict the integrated rank theorem. Taking p=x would conceal this problem because its scalar fields coincide. The corrected W bound and the integral-coordinate bound survive this example.
 
 **Checks.**
 
-- The tangent inverse begins χ=t−t⁴/32+O(t⁷); p∘χ=t while coefficient 4 is −1/32.
+- The tangent inverse begins χ=t−t⁴/32+t⁷/256+O(t¹⁰); p∘χ=t while coefficient 4 is −1/32. The coefficients at degrees 4 and 7 in both p∘χ and χ∘p are 0: −1/32+1/32=0 and 1/256−4/32²=0.
 
 - The boundary bound is 5/2; (5/2)³=125/8<16=2⁴ and e<3 give B<4, whereas the scalar extension contributes dimension at least 4.
 
-*Needs:* §4.3; §4.6; §2.1; Mathlib `RatFunc.finrank_eq_max_natDegree`.
+*Needs:* §4.3; §4.6; §2.1; Mathlib `RatFunc.finrank_eq_max_natDegree`; Mathlib `PowerSeries.substInv`; Mathlib `PowerSeries.subst_substInv_right`; Mathlib `PowerSeries.subst_substInv_left`.
 
 ### Examples
 
@@ -820,7 +826,7 @@ Assume U,χ,p as in §4.5, and let φ be holomorphic on a neighbourhood of the c
 
 Apply §4.5 to ψ(z)=φ(rz). Its derivative modulus is r|φ′(0)| and its circle integral is the displayed equilibrium integral. Import capacity of the disc and circle as r and the uniqueness of their rotationally invariant equilibrium probability. This proves the formula exactly for both centred shapes, including r≠1. Use the scalar-span comparison for the asserted V versions.
 
-The denominator is positive, and the centre of the sampling circle is the analytic base point zero. The denominator must be positive, not merely nonzero. For r=1 this recovers the corrected circle corollary. The conformal centre is fixed at 0; translation of K while leaving φ(0)=0 fixed is not a consequence.
+The denominator must be positive, not merely nonzero. For r=1 this recovers the corrected circle corollary. The conformal centre is fixed at 0; translation of K while leaving φ(0)=0 fixed is not a consequence.
 
 **Checks.**
 
@@ -836,7 +842,7 @@ Let K be the closed disc with centre 1/2 and radius 1/4, contained in the open u
 
 For every z∈K, Re z≥1/4 and |z|≤3/4, hence |φ(z)|≤6exp(−5)<1. The integrand vanishes pointwise on K, so its integral is zero for the supplied equilibrium probability. Translation invariance and the disc capacity value give cap K=1/4. Since 8·(1/4)=2, the denominator is log 2>0. The constant germ 1 lies in H and gives a nonzero vector in W=V, so the proposed rank bound would force 1≤0. This counterexample specifies the obstruction to a general compact-set extension: an admissible replacement must connect its sampling set to the distinguished analytic base point. The positive centred statement is §5.1.
 
-Positive capacity, a positive denominator and entire φ all hold in the counterexample. The compactum has positive capacity and the denominator is strictly positive, so neither degeneracy explains the failure. The map is entire and p has no poles anywhere; shrinking away from singularities cannot repair this example.
+The compactum has positive capacity and the denominator is strictly positive, so neither degeneracy explains the failure. The map is entire and p has no poles anywhere; shrinking away from singularities cannot repair this example.
 
 **Checks.**
 
