@@ -277,7 +277,7 @@ the finite factor η_σ(w) = σ⁻¹(y)x using the supplied unique normal form w
 left W₀-coset. Define the virtual dimension by d_w(b) = (ℓw + ℓη_σ(w) − def_G(b))/2 − 〈ν_b,ρ〉 in ℚ. Here ρ is
 the weight with 〈α∨,ρ〉 = 1 for every simple coroot, and def_G(b) uses F-split ranks. This scalar expression
 also applies to reductive product data with a compatible normal form, including the GL₂ Checks below. (he21,
-§2.2, (2.1)–(2.2), p. 5).
+§2.2, equation (2.1) and the subsequent unnumbered definitions, p. 5).
 
 A proof route is as follows. Use the supplied normal form and split-rank defect, and the finite factor η
 defined here. Define the scalar expression over ℚ and its coercion to extended dimension.
@@ -339,13 +339,18 @@ ReductiveGroupsPartII RG2.4, length-and-bruhat-order.
 ### 0.4 Exact and bounded spherical loci
 
 Use the reductive O_F-model spherical datum, with perfect k-algebras in mixed characteristic. For the
-hyperspecial affine Grassmannian Gr_G, evaluated over O_L with b fixed over L, and dominant μ, construct the
-functor X_≤μ(b)(R) of modifications (E,β) with Inv_x(β⁻¹bσ(β))≤_ℤμ at every geometric point x of Spec R. The
-exact equality condition defines X_μ(b). In the equal-characteristic scheme setting take the reduced loci; in
-mixed characteristic take perfect spaces. On k-points these are the closed K-double-coset union and the exact
-Kt^μK condition, respectively. (zhu17, §3.1.1, (3.1.1)–(3.1.2), p. 455; Lemma 1.22, p. 428).
+hyperspecial affine Grassmannian Gr_G, evaluated over O_L with b fixed over L, and dominant μ, define
+X_≤μ(b) and X_μ(b) in equal characteristic as the reductions of the scheme-theoretic pullbacks of the closed
+relative-position bound ≤μ and the exact position μ along the bσ graph. On geometric field points their
+modifications (E,β) satisfy Inv(β⁻¹bσ(β))≤_ℤμ and Inv(β⁻¹bσ(β))=μ, respectively. These field-point criteria
+do not specify the functors on arbitrary nonreduced algebras. In mixed characteristic construct the perfect
+spaces: on perfect k-algebras R the bounded functor consists of modifications satisfying
+Inv_x(β⁻¹bσ(β))≤_ℤμ at every geometric point x of Spec R, and equality defines the exact functor. On k-points
+these are the closed K-double-coset union and the exact Kt^μK condition, respectively. (he14, Definition 1.1,
+p. 372, for the classical geometric point condition; zhu17, §3.1.1, (3.1.1)–(3.1.2), p. 455, and Lemma 1.22,
+p. 428, for perfect test algebras).
 
-For a connected σ-stable parahoric level P, use the supplied partial affine flag space Fl_P and define the parahoric relative-Frobenius locus at a double-coset position z by the bσ-graph pullback of its exact position stratum; its geometric points satisfy g⁻¹bσ(g)∈P ż P. A closed bound is the pullback of the corresponding finite Schubert union. At a special maximal parahoric, the dominant coinvariant λ labels this exact position. This is the parahoric variant used by §4.1; its hyperspecial specialization is the spherical functor above. (he21, Theorem 4.4, p. 7; he14, §7.1, pp. 389–390.)
+For a connected σ-stable parahoric level P, use the supplied partial affine flag space Fl_P and define the parahoric relative-Frobenius locus at a double-coset position z by the bσ-graph pullback of its exact position stratum; its geometric points satisfy g⁻¹bσ(g)∈P ż P. A closed bound is the pullback of the corresponding finite Schubert union. Take reductions in the classical scheme setting and perfect pullbacks in the perfect setting. At a special maximal parahoric, the dominant coinvariant λ labels this exact position. This is the parahoric variant used by §4.1; at hyperspecial level it agrees with the spherical construction in the same setting. (he21, Theorem 4.4, p. 7; he14, §7.1, pp. 389–390.)
 
 A proof route is as follows. Pull back the relative-position strata along the bσ graph in the supplied
 Grassmannian. Use closedness of ≤μ and openness of equality inside it; the admissible union is not a single
@@ -355,13 +360,13 @@ The symbol X_μ means the exact stratum; X_≤μ means the closed union. These t
 
 The construction has the following API.
 
-- The functor of relative-position bounds at every geometric point.
+- The reduced scheme-theoretic graph pullbacks in equal characteristic, with the stated geometric field points; on perfect test algebras in the perfect setting, the pointwise relative-position functors.
 - The open equality locus in the bound.
 - k-points are ⋃_(λ≤_ℤμ) X_λ(b)(k).
 - A canonical locally closed immersion X_μ(b)→Gr_G factoring through X_≤μ(b).
 - μ≤_ℤμ′ gives the inclusion of bounded loci.
 - At P=I the parahoric graph pullback has the flag point condition of §0.1 and the realization of §0.5.
-- At a hyperspecial P=K the parahoric exact locus is the spherical exact locus with the same μ and b.
+- At a hyperspecial P=K the parahoric and spherical graph pullbacks agree for the same μ and b, after reduction in the classical setting and as perfect spaces in the perfect setting.
 - For I⊂P, forgetting the I-level gives a morphism from the flag exact locus at w to the parahoric exact locus at the image of w in the parahoric double-coset set; the same forgetting map respects closed Schubert bounds.
 
 **Checks.**
@@ -369,6 +374,7 @@ The construction has the following API.
 - For G=G_m, μ=0 and b=ϖ, both loci are empty since valuation is 1, although the numerical dimension expression is 0.
 - For GL₂, b=1 and μ=(1,−1), the identity point lies in X_0(1)⊂X_≤μ(1) but not in X_μ(1).
 - For a torus, the dominance interval has one element, so the exact and bounded loci coincide.
+- In equal characteristic take R=k[ε]/(ε²), G=GL₂, b=1, μ=0 and g=1+εt⁻¹E₁₂. Arithmetic q-Frobenius gives σ(g)=1, so r_b(g)=1−εt⁻¹E₁₂∉GL₂(R[[t]]). Every geometric fibre has position 0, but g fails the scheme-theoretic zero-position graph condition and therefore its reduction. The coset is nontrivial since its t⁻¹ coefficient is ε≠0; faithful flat base change cannot kill ε. The identity g=1 satisfies both conditions. A pointwise-only definition would wrongly include g.
 - For k of characteristic p, the k-algebra k[ε]/(ε²) is not perfect, because its nonzero ε has ε^p=0; it is outside the mixed-characteristic perfect functor’s domain.
 - For the zero test algebra Spec(0)=∅, a sheaf has its required singleton value. A geometrically empty ADLV still has no geometric field points and has dimension −∞; “empty” does not mean an everywhere empty presheaf.
 - For G_m the connected parahoric and Iwahori are both O_L×; the two point conditions coincide, and a valuation-1 b at the zero bound is empty in both.
@@ -390,10 +396,11 @@ deperfection, invariance under universal homeomorphisms and the bounded fibre es
 perfect space of positive dimension is not asserted finite type. (he14, Definition 1.1 and §1.3, pp. 371–372;
 zhu17, §3.1.1, p. 455; Definition A.13 and Proposition A.15–Corollary A.16, pp. 471–472).
 
-A proof route is as follows. Use the supplied flag/Grassmannian geometry; identify the reduced pullback with
-the point condition. Descend bounded perfect diagrams to compatible finite-type models and use the topological
-invariance of Krull dimension. For a surjective morphism on bounded models with every geometric fibre of
-dimension ≥n, prove dim(source)≥dim(target)+n at generic points; pass to the supremum. Construct the
+A proof route is as follows. Use the supplied flag/Grassmannian geometry; identify the geometric field
+points of the reduced pullback with the point condition. Descend bounded perfect diagrams to compatible
+finite-type models and use the topological invariance of Krull dimension. For a surjective morphism on bounded
+models with every geometric fibre of dimension ≥n, prove dim(source)≥dim(target)+n at generic points; pass to
+the supremum. Construct the
 compatible bounded source diagram over each target generic point; global component finiteness is not a
 hypothesis.
 
@@ -634,7 +641,7 @@ The maximum is over integers n≥0 only when a∈A; outside A the value is −�
 The construction has the following API.
 
 - A, φ, the inequalities and sequence-decomposition property.
-- Equality in the upper bound everywhere on A.
+- The extended semi-module is cyclic if and only if equality holds in the upper bound at every a∈A; general extended semi-modules need not satisfy this equality.
 - Finitely many extended types for a fixed μ.
 - The leading-index and Frobenius-divisibility construction of §2.3.
 - V(A,φ)={(a,b)∈A²:b>a, φ(a)>φ(b)>φ(a−h)}.
@@ -645,6 +652,7 @@ The construction has the following API.
 - The constant function 0 on A fails φ(a+h)≥φ(a)+1.
 - Giving a finite value at −1 for A=ℕ violates the support condition.
 - For the cyclic small example the set V is empty, so its chart dimension is 0.
+- For (h,m)=(5,4), put B={−2,−1,2,5,6}, A=B+5ℕ and μ=(0,0,0,2,2). Set φ=−∞ off A, φ(−1)=0, and φ(a)=max{n≥0:a+4−5n∈A} on A∖{−1}. The basis sum is 10=5·4/2. The five sequences start at −2,2,5,4,−1, with initial φ-values 0,0,2,2,0; the first four advance by 5 and the last is −1,6,11,16,… . They satisfy the extended conditions, but at −1 the upper bound is 1 since 3,−2∈A and −7∉A. Thus this type is noncyclic and remains among the strata of §§2.3–2.5. (vie06, Example 3.5, PDF p. 4).
 
 *Needs:* §2.1.
 
@@ -833,8 +841,8 @@ The superbasic-classification supplier extension includes the anisotropic-classi
 
 Use the reductive O_F-model spherical datum, with perfect k-algebras in mixed characteristic. The
 representative b lies in M(L) and is basic in M; retain κ_M(b) when indexing the retraction strata. Let M be a
-standard Levi, P=MN, and b∈M(L) basic in M, with M-dominant Newton point ν_M and G-dominant representative
-ν_G. Let S_M(μ,κ_M(b)) be the finite set of M-dominant relative positions occurring under the Iwasawa
+standard Levi, P=MN, K_M=M(O_L), and b∈M(L) basic in M, with M-dominant Newton point ν_M and G-dominant
+representative ν_G. Let S_M(μ,κ_M(b)) be the finite set of M-dominant relative positions occurring under the Iwasawa
 retraction of Gr_μ and having κ_M=κ_M(b). Put d(μ,μ_M)=dim(N(L)t^(μ_M)K/K∩Gr_μ). The retraction is a morphism
 on suitable locally closed pieces; over x∈X^M_(μ_M)(b) its fibre has dimension
 d(μ,μ_M)+〈ρ,ν_M−ν_G〉−〈2ρ_N,ν_M〉. Thus dim X^G_μ(b) is the maximum of dim X^M_(μ_M)(b)+this correction over
@@ -851,10 +859,18 @@ chart, Lang and pullback comparisons of §§2.3–3.7.
 All correction terms are retained before specializing to the Newton Levi. Empty Levi strata do not contribute
 to the maximum.
 
+The indexing set and intersection dimension have the following API, using the supplied intersection geometry
+(ham15, Definition 2.5, Lemma 2.6 and Definition 2.7, PDF pp. 4–5).
+
+- An M-dominant μ_M belongs to S_M(μ,κ_M(b)) if and only if N(L)t^(μ_M)K/K∩Gr_μ is nonempty and its integral M-Kottwitz label equals κ_M(b). This set is finite, since its occurring positions lie among the M-dominant coweights whose G-dominant representative is ≤_ℤμ.
+- For any M-dominant μ_M, d(μ,μ_M) is the geometric dimension of this specified intersection, with value −∞ when the intersection is empty.
+- If m∈K_M t^(μ_M)K_M, write mK=k_M t^(μ_M)K with k_M∈K_M. Left multiplication by k_M identifies the intersection over t^(μ_M)K with N(L)mK/K∩Gr_μ, since K_M normalizes N and preserves Gr_μ. Hence d is unchanged within the K_M-orbit of the Levi point.
+
 **Checks.**
 
 - For M=G, N=1 and μ_M=μ, the intersection dimension and both Newton corrections are 0, so the retraction is the identity.
 - For GL₂, M=T, b=1, μ=(1,−1) and μ_M=0, the semi-infinite dimension is 〈ρ,(1,−1)〉=1 and both Newton terms vanish: the value is the torus dimension 0 plus 1. Dropping the intersection term gives the wrong value 0.
+- In equal characteristic, for GL₂ with upper-triangular N, M=T, μ=(1,0), b=diag(1,t) and μ_M=(0,1), the intersection is a point: n(u)diag(1,t) has position μ exactly for u∈t⁻¹k[[t]], all giving the same coset. Thus d=0; κ_T(b)=(0,1), ν_M=(0,1), ν_G=(1,0), ρ=(1/2,−1/2), and 2ρ_N=(1,−1). The fibre dimension is 0+(−1)−(−1)=0. Omitting 〈ρ,ν_M−ν_G〉 would give 1. For the empty intersection at μ_M=(2,−1), d=−∞ and μ_M is excluded from S_M; replacing the Levi point by any point in its K_M-orbit preserves d.
 
 *Needs:* §0.5; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; GeometricSatakeAndFusion GS1;
 §3.1; GeometricSatakeAndFusion GS1, semi-infinite-affineness; gap:levi-intersection-dimension.
@@ -862,29 +878,33 @@ to the maximum.
 ### 3.5 Iterated spherical affine Deligne–Lusztig loci
 
 Use the reductive O_F-model spherical datum, with perfect k-algebras in mixed characteristic. Fix a local
-field E, d≥1, dominant bounds μ₁,…,μ_d and b∈G(L_E). Construct the perfect locus of O_(L_E)-torsors E₀,…,E_d,
+field E, d≥1, dominant bounds μ₁,…,μ_d and b∈G(L_E). Construct the locus of O_(L_E)-torsors E₀,…,E_d,
 with E_d=σ_E^*E₀, modifications Φ_i:E_i[1/ϖ]≃E_(i−1)[1/ϖ] bounded by μ_i, and a generic-fibre framing
 β:E₀[1/ϖ]≃E_triv[1/ϖ] satisfying βΦ₁⋯Φ_d=bσ_E(β). For GL_h these torsors are lattices. Equivalently take the
-fibre product of the convolution Grassmannian’s endpoint map with the bσ_E graph. Keep exact endpoint strata
-X_λ(b) separate from X_≤Σμ(b). (zhu17, §3.1.3, Proposition 3.3 and diagrams (3.1.4)–(3.1.5), pp. 457–458).
+fibre product of the convolution Grassmannian’s endpoint map with the bσ_E graph, followed by reduction in
+the equal-characteristic scheme setting; its perfect variant is the perfection. In mixed characteristic use
+the perfect pullback on perfect test algebras. The bounds are scheme-theoretic in the classical branch;
+pointwise bounds alone on nonreduced algebras do not define it. Keep exact endpoint strata X_λ(b) separate
+from X_≤Σμ(b). (zhu17, §3.1.3, Proposition 3.3 and diagrams (3.1.4)–(3.1.5), pp. 457–458).
 
 A proof route is as follows. Form the supplied convolution diagram and its endpoint pullback. Use the torsor
 description to compare the two functors and retain the order of all modifications.
 
-The graph square uses the specified Frobenius power. A bound on a convolution fibre is applied over an exact
-endpoint stratum.
+The graph square uses the specified Frobenius power. In equal characteristic the square is cartesian before
+reduction; after reduction it is a pullback in reduced schemes. In the perfect branch it is cartesian in
+perfect spaces. A bound on a convolution fibre is applied over an exact endpoint stratum.
 
 The construction has the following API.
 
 - The chain and Frobenius framing functor.
-- The cartesian endpoint square.
+- The cartesian endpoint square before reduction and its reduced or perfect pullback in the corresponding category.
 - The proper map to X_≤Σμ(b).
-- For d=1 recover the bounded spherical locus.
-- The λ-endpoint fibre is the pullback over X_λ(b).
+- For d=1 recover §0.4’s reduced bounded graph pullback in the classical setting and its perfect version in the perfect setting.
+- The λ-endpoint piece is the reduced or perfect pullback of the convolution diagram over X_λ(b), in the same setting.
 
 **Checks.**
 
-- d=1 gives the original bound, with no extra intermediate parameter.
+- d=1 gives §0.4’s bounded graph pullback in the same reduced or perfect setting, with no extra intermediate parameter. In equal characteristic the GL₂ deformation g=1+εt⁻¹E₁₂ at b=1, μ=0 still fails the graph condition, while g=1 satisfies it.
 - For a torus the only possible endpoint is Σμ and the convolution fibre is a point.
 - Interchanging noncommuting modification matrices changes the chain product; no commutative product convention is allowed.
 - For GL₂ a smaller endpoint λ<Σμ is not assigned the top-endpoint fibre dimension 0.
@@ -903,7 +923,8 @@ dimension. (zhu17, Lemma 3.5 and Lemma 3.7, p. 459).
 
 A proof route is as follows. Write the d transition equations and eliminate successively, preserving
 multiplication order. Construct the inverse on torsors and descent data, not only on algebraically closed
-points. Use the imported centralizer isomorphism to compare F-split defects.
+points. Apply reduction or perfection in the matching branches of §§0.4 and 3.5. Use the imported centralizer
+isomorphism to compare F-split defects.
 
 At d=1 both functor and norm comparisons are identities. At d=2 the norm is b₀σ(b₁), not σ(b₁)b₀. Absolute
 ranks cannot replace split ranks in the defect. In degree 3 the component formula is (σb)_τ₀=σ(b_(σ⁻¹τ₀));
@@ -1040,7 +1061,7 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 proof uses the equal-characteristic tame adjoint setting of the Conventions; the general flag theorem includes
 the specified transfer. For w define B(G)_w={[b]:X_w(b)≠∅}. For every supported local-field datum it has a greatest element [b_w]. In equal characteristic construct its dense open Newton stratum in IẇI and prove that the same greatest element occurs in the Bruhat closure ⋃_(v≤w)IṽI. For other local fields transfer greatestness of B(G)_w through §1.3, preserving the affine root datum, σ, integral κ and Newton invariants; no topological closure statement is inferred from that numerical transfer. The order is the Kottwitz-compatible Newton order imported
 from B(G); this is not a total ordering of all classes. (he21, §4.1, p. 7; vie14, Proposition 5.5 and
-Corollary 5.6, pp. 1027–1028; mv20, §3.1, arXiv v3, PDF pp. 5–7).
+Corollary 5.6, pp. 1026–1028; mv20, §3.1, arXiv v3, PDF pp. 5–7).
 
 A proof route is as follows. Work on admissible bounded models of the loop-group cell, prove generic constancy
 and greatestness, then compare its closure. Use gap:newton-cell-greatest for this equal-characteristic geometric assertion; construct the generic stratum on admissible bounded models before passing to the loop cell. Section 1.3 supplies characteristic-independent occurrence of each class.
@@ -1256,7 +1277,7 @@ The construction has the following API.
 - In adjoint A₁, λ=ω∨ and y=s give λ−ρ_J∨=0. Least dominant subtraction of ω∨ from 0 in the required coroot coset is ω∨, so λ^♭♭=λ. Clipping the ordinary difference to zero loses the odd coroot coset.
 - For A₂ with σ interchanging nodes and J={s₁}, the input −σ⁻¹ω₁∨ is −ω₂∨ and its dominant representative is ω₁∨. Omitting σ⁻¹ instead gives dominant representative ω₂∨.
 - In quasi-split adjoint unitary A₂, λ=ρ∨=ω₁∨+ω₂∨ and y=s₁ give λ_w^♭♭=ω₁∨. Thus λ−λ_w^♭♭=ω₂∨∉Q∨, excluding an unconditional integral upper bound. The lower-bound difference is ω₁∨−(ρ∨−2ω₁∨)=α₁∨. On P∨/Q∨≅ℤ/3, σ acts by −1, so the σ-coinvariants vanish and the two images agree. For x=s₁, η_σ(w)=s₂s₁ has full σ-support and the alcove’s α₁,α₂,θ ranges are (0,1),(−3,−2),(−2,−1), so this is also a shrunken example.
-- With the same unitary datum, λ=ω₁∨ and y=s₁ instead give λ_w^♭♭=ω₂∨. The difference λ−λ_w^♭♭=(α₁∨−α₂∨)/3 is not rationally positive; the repaired lower-bound difference is ω₁∨+ω₂∨=α₁∨+α₂∨.
+- With the same unitary datum, λ=ω₁∨ and y=s₁ instead give λ_w^♭♭=ω₂∨. The difference λ−λ_w^♭♭=(α₁∨−α₂∨)/3 is not rationally positive; the lower-bound difference is ω₁∨+ω₂∨=α₁∨+α₂∨.
 
 *Needs:* RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction;
 ReductiveGroupsPartII RG2.4, dominant-normal-form.
@@ -1477,7 +1498,7 @@ by each route.
 Use the simple quasi-split flag datum and apartment orientation of the Conventions. For σ-stable J⊂S, standard
 P_J=M_JN_J and x∈W₀, call w a (J,x,σ)-alcove element when x⁻¹wσ(x)∈W̃_J and (xN_Jx⁻¹)∩(wIw⁻¹)⊂(xN_Jx⁻¹)∩I. All
 superscripts on subgroups in the source mean conjugation. This definition uses the conjugator x, not
-automatically σ⁻¹(y) from the normal form. (ghn15, Definition 3.3, PDF p. 10; he21, §6.1, p. 12).
+automatically σ⁻¹(y) from the normal form. (ghn15, §3.3, PDF p. 10; he21, §6.1, p. 13).
 
 A proof route is as follows. Use the generic root-group and parabolic data to express both conditions. Relate
 the subgroup containment to root inequalities with the fixed apartment orientation.
