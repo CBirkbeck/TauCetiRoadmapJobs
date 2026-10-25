@@ -86239,10 +86239,42 @@
    "reported": "2026-10-25",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1197#issuecomment-6395983931"
+  },
+  {
+   "kind": "misprint",
+   "source": "SCH12",
+   "locator": "Proposition 9.1, printed p. 307 (line 2524)",
+   "says": "the exponential uses a tame character evaluated at an unbound g",
+   "should": "evaluated at the quantified σ",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "DeligneWeightsAndPurityPartII",
+   "job": "REV-PKG-DeligneWeightsAndPurityPartII",
+   "board_pr": 1502,
+   "head": "4c08cd9",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1502#issuecomment-6396092825"
+  },
+  {
+   "kind": "gap",
+   "source": "SCH12",
+   "locator": "the proof of Theorem 9.6, printed p. 309, and Lemma 9.9, printed p. 311 (lines 2609, 2647)",
+   "says": "a smooth projective alteration has a one-dimensional geometric top group",
+   "should": "chosen geometrically connected after a finite extension, since an integral alteration can acquire several geometric components",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"codex\", \"head\": \"4c08cd9bafebba08ecd2b1beaaf7f21cf68927cb\", \"job\": \"REV-PKG-DeligneWeightsAndPurityPartII\", \"model\": \"gpt-6-astra\", \"worker\": \"chris-7\"} -->",
+   "roadmap": "DeligneWeightsAndPurityPartII",
+   "job": "REV-PKG-DeligneWeightsAndPurityPartII",
+   "board_pr": 1502,
+   "head": "4c08cd9",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1502#issuecomment-6396092825"
   }
  ],
- "scanned_to": "2026-10-25T09:32:00Z",
- "updated": "2026-10-25T09:43:07Z",
+ "scanned_to": "2026-10-25T09:43:52Z",
+ "updated": "2026-10-25T09:46:36Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
