@@ -21,7 +21,8 @@ The following headline theorems are not statable at the pins:
 * The weak Deligne period relation: Hecke motives and determinant periods are missing.
 * The integral CM Eisenstein measure and its critical moments: ordinary theta data,
   integral multivariate Amice and Eisenstein–Kronecker coordinates are missing.
-* Bounded ray-class interpolation and uniqueness:
+* Signed bounded ray-class interpolation, integral unit-index descent of the
+  weighted ray pushforward and uniqueness:
   the compatible arithmetic-avatar, CM-period and smoothed arithmetic-family
   carriers are missing.
 

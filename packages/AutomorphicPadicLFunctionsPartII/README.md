@@ -27,7 +27,7 @@ R is a noetherian arithmetic subring of ℂ and an O_(L^gal)[1/d_L]-algebra. Bas
 
 All conductor, auxiliary and fractional ideals are nonzero; the unit ideal is permitted wherever stated and the zero ideal is excluded. Thus every ideal norm used as a denominator is positive. Write h for a residue function and f for a conductor ideal. Mathematical symbols EK(h), θ(h) and μ(h) always carry their datum and group. Hecke values use χ((λ))=λ^(β−α) for principal ray generators. The idelic infinity exponent is the opposite of this ideal exponent. Arithmetic Artin maps a prime ideal to arithmetic Frobenius. Ramified ideal values, including the notation χ(v⁻¹), are set to zero only inside the specified Euler-factor extension; zero is never inverted. At an unramified prime, χ(v⁻¹)=χ(v)⁻¹. For conjugate-sum weight w the ideal-unitary shift is L(χ,s)=L(χᵘ,s−w/2), with χᵘ(a)=χ(a)Na^(−w/2) (KS-v4, §4.1, pp.46–47, KS-v4 line 2158).
 
-The Hermitian form is linear in the first variable: H(z,w)=Σh_i z_i barw_i, h_i>0; ⟨z,w⟩=Im H(z,w). Its alternating dual fixes both lattice characters and covolumes. Currents pair by η↦∫η∧ω. The unit torus is oriented by dr₁/r₁∧⋯∧dr_(d−1)/r_(d−1). Every use of a cap is integral for torsion-free Γ; the normalized extension through finite torsion first inverts its order. Dividing by a nonunit group index requires the particular residue-class divisibility theorem in §5.4. These normalizations are tested in the layers that use them (KS-v4, §§2.4, 3.2–3.4, pp.22–23,33–39, KS-v4 lines 961, 1383, 1486, 1506).
+The Hermitian form is linear in the first variable: H(z,w)=Σh_i z_i barw_i, h_i>0; ⟨z,w⟩=Im H(z,w). Its alternating dual fixes both lattice characters and covolumes. Currents pair by η↦∫η∧ω. The unit torus is oriented by dr₁/r₁∧⋯∧dr_(d−1)/r_(d−1). Every use of a cap is integral for torsion-free Γ; the normalized extension through finite torsion first inverts its order. Division by a nonunit group index uses §5.4 for critical coordinates and §8.3 for weighted ray-quotient measures. Theta functions and Eisenstein measures before that pushforward use torsion-free groups. The class sign ε(d,β) of §4.3 is retained in the critical moments and interpolation. These normalizations are tested in the layers that use them (KS-v4, §§2.4, 3.2–3.4, pp.22–23,33–39, KS-v4 lines 961, 1383, 1486, 1506).
 
 ## Exact supplier contracts
 
@@ -119,7 +119,7 @@ What PeriodsAndSpecialValues must provide (gap:critical-cm-deligne-period): Supp
 
 ## How to read the build
 
-Layers 0–2 select the critical coefficient lines, construct the residue class and evaluate it integrally, with conductor refinement separated from unit-index normalization. Layers 3–4 construct the analytic representative and identify its unit-orbit series. Layer 5 converts this evaluation into period-normalized critical values, proves integral full-unit descent and deduces algebraicity and the weak period relation. Layers 6–7 use ordinary levels to turn the same class into theta functions and bounded Eisenstein measures. Layer 8 forms the ray-class measure, proves the residue-to-moment sign comparison and uniform bounded desmoothing, and gives the final interpolation theorem. Each *Needs:* line separates statement inputs from the suggested proof route. `Suggested.lean` is the acceptance test for the headline continuation and functional-equation theorems that are statable on native carriers; the other headline statements require the geometric and arithmetic interfaces specified here.
+Layers 0–2 select the critical coefficient lines, construct the residue class and evaluate it integrally, with conductor refinement separated from unit-index normalization. Layers 3–4 construct the analytic representative and identify its unit-orbit series. Layer 5 converts this evaluation into period-normalized critical values, proves integral full-unit descent of critical coordinates and deduces algebraicity and the weak period relation. Layers 6–7 use ordinary levels and torsion-free unit groups to turn the same class into theta functions and bounded Eisenstein measures. Layer 8 proves integral unit-index descent on the weighted ray quotient, translates the conductor-one family by its second auxiliary Artin atom, and proves signed interpolation and uniform bounded desmoothing. Each *Needs:* line separates statement inputs from the suggested proof route. `Suggested.lean` is the acceptance test for the headline continuation and functional-equation theorems that are statable on native carriers; the other headline statements require the geometric and arithmetic interfaces specified here.
 
 ## Layer 0: Critical types and CM coefficient lines
 
@@ -129,7 +129,7 @@ Let L be totally imaginary of degree 2d and contain its maximal CM subfield K. A
 
 Assume d≥1; specified embeddings into ℂ and a specified maximal CM subfield K when a critical type is present.
 
-(KS-v4, §1.1, Definition 1.2, Notation 1.3, Proposition 1.5, pp.6–8; Theorem 1.1, p.7, KS-v4 line 324.)
+(KS-v4, Theorem 1.1, p.7, KS-v4 line 289, for weight decomposition; the classification discussion, p.7, KS-v4 lines 296–322; Definition 1.2, pp.7–8, KS-v4 line 324; Notation 1.3 and Proposition 1.5, p.8, KS-v4 lines 342, 357.)
 
 The construction has the following API.
 
@@ -658,7 +658,7 @@ One proof route is to unfold BΓ and the unit orbit simultaneously; use absolute
 
 ### 4.3 Explicit critical class in analytic and algebraic bases
 
-For torsion-free Γ the corrected conventions give EK^(β,a)_Γ(h,x)=ε(d,β)·a!·Σ_(t∈Γ\D) h(−t)E^(β,a+1)(t+x,0;Λ,Γ) dz^[a+1]⊗ubar^[β], where ε(d,β)=(-1)^(d(d−1)/2+|β|+1). The top-degree BΓ representative is the top contraction of the corrected current, projected to (a,β), differentiated by a, and evaluated at x; thus it has this same sign relative to Proposition 3.23. In the algebraic bases replace ubar^[β] by q^(−β)ω_A∨^[β], q=⟨barω_A,ω_A∨⟩_dR. The period conversion is Ω∨=2πi q/barΩ, so both the conjugation in q and this factor survive the comparison. For torsion Γ use only the localized normalization of Layer 2. The formula includes the residue-to-current and orientation compatibility. Section 8.3 extends that comparison to canonical p-adic moments; the local contraction calculation alone does not determine the final interpolation sign.
+For torsion-free Γ the corrected conventions give EK^(β,a)_Γ(h,x)=ε(d,β)·a!·Σ_(t∈Γ\D) h(−t)E^(β,a+1)(t+x,0;Λ,Γ) dz^[a+1]⊗ubar^[β], where ε(d,β)=(-1)^(d(d−1)/2+|β|+1). The top-degree BΓ representative is the top contraction of the corrected current, projected to (a,β), differentiated by a, and evaluated at x; thus it has this same sign relative to Proposition 3.23. In the algebraic bases replace ubar^[β] by q^(−β)ω_A∨^[β], q=⟨barω_A,ω_A∨⟩_dR. The period conversion is Ω∨=2πi q/barΩ, so both the conjugation in q and this factor survive the comparison. For torsion Γ use only the localized normalization of Layer 2. The formula includes the residue-to-current and orientation compatibility. The moment map of §7.1 identifies its moments with these coordinates, and the linear combinations of §7.4 and weighted pushforward of §8.3 retain ε(d,β).
 
 Assume standard datum, x outside D; β−a−1 critical; torsion-free Γ for the integral cap. The analytic trace convention of §3.2 is used.
 
@@ -757,7 +757,7 @@ One proof route identifies the ideals in a fixed ray class with generators in 1+
 
 ### 5.4 Integrality of normalized Eisenstein sums
 
-Let f,b,c be pairwise coprime integral ideals, a=f b⁻¹, and use the O_L-structured based abelian scheme and the R-rational x_Ω from §5.1. For a trace-zero O_f×-invariant torsion function h, prove 𝒩_(α,β)(Σ_(t∈O_f×∖(c⁻¹a/a)) h(−t)E^(β,α)(t+1,0;a,O_f×))∈R[1/(f N(bc))]. Begin with the torsion-free-group formula, where the refined evaluation is integral, then justify the passage to the normalized full unit-orbit sum. When a torsion index is a unit its division is valid; when it is not, prove the specific divisibility statement for these residue classes. That latter passage is the integral unit-index descent of §5.4, not a consequence of the false unrestricted transfer claim. More precisely, integral full-unit descent must prove that for every finite-index torsion-free Γ₀⊂O_f× fixing the data, the oriented class EK^(β,a)_(Γ₀)(h,x) lies in [O_f×:Γ₀] times the integral critical tensor line over R[1/(f N(bc))]; for theta and measure coefficients the divisibility holds in their entire integral coefficient modules. This is a special-residue theorem, not surjectivity of transfer on arbitrary cohomology.
+Let f,b,c be pairwise coprime integral ideals, a=f b⁻¹, and use the O_L-structured based abelian scheme and the R-rational x_Ω from §5.1. For a trace-zero O_f×-invariant torsion function h, prove 𝒩_(α,β)(Σ_(t∈O_f×∖(c⁻¹a/a)) h(−t)E^(β,α)(t+1,0;a,O_f×))∈R[1/(f N(bc))]. Begin with the torsion-free-group formula, where the refined evaluation is integral, then justify the passage to the normalized full unit-orbit sum. When a torsion index is a unit its division is valid; when it is not, prove the specific divisibility statement for these residue classes. More precisely, for every finite-index torsion-free Γ₀⊂O_f× fixing the data, prove that the oriented critical class EK^(β,a)_(Γ₀)(h,x) lies in [O_f×:Γ₀] times the integral critical tensor line over R[1/(f N(bc))]. This is a statement about the selected critical coordinates. The integral descent of weighted ray-quotient measures is the separate theorem of §8.3.
 
 Assume α≥1, β≥0 with β−α∈CI_L(O_f×); h∈R[1/Nc][D]^(0,O_f×); x avoids D. The common period data and all cotangent transports are fixed.
 
@@ -770,6 +770,7 @@ One proof route is to apply §2.5 to A(a)→A(b⁻¹) with the bases [f]*([b]*)�
 - The theorem does not assume Nf is globally invertible in the initial datum.
 - A proof that only gives |tors(O_f×)| times the claimed value integral is insufficient when that integer is a nonunit.
 - For d=1, O_f×=μ₂ and Γ₀=1, the target is EK_1∈2C over the stated localization, equivalently EK_1/2∈C inside Frac(R)⊗C. At h=0 both values are 0; an arbitrary cohomology coordinate 1 over ℤ₂ gives 1/2∉ℤ₂, so the target must use the special residue class. At index one it reduces to EK_Γ₀∈C.
+- On the ordinary dyadic datum in §6.3, α=2 and β=0 are μ₂-compatible and this theorem concerns only that critical coordinate; the odd residue −1 excludes divisibility of the entire theta function by 2.
 
 *Needs:* §2.5; §4.3; §5.1; §5.2; §2.3.
 
@@ -815,12 +816,13 @@ Assume standard global period data; f integral; c,c′ nonzero integral ideals w
 
 (KS-v4, Theorem 4.10 and its proof in §4.4, pp.51–53, KS-v4 line 2413.)
 
-One proof route is to sum §5.6 over ray classes and choose representatives away from each prime at which integrality is tested. For f=O_L introduce c′ and the support excluding the identity, then derive the second smoothing factor. Control changes of model and exhibit nonvanishing smoothing factors to deduce algebraicity.
+One proof route is to sum §5.6 over ray classes and choose representatives away from each prime at which integrality is tested. For f=O_L introduce c′ and the support excluding the identity. Its four-term distribution gives the raw factor (χ(c′)⁻¹−1)(Nc−χ(c)⁻¹); multiplying by χ(c)χ(c′) gives (1−χ(c′))(χ(c)Nc−1). These character values are units after the stated localization at N(cc′), so this multiplication preserves integrality. On measures the χ(c′) multiplication is the Artin translation of §8.3. Control changes of model and exhibit nonvanishing smoothing factors to deduce algebraicity.
 
 **Checks.**
 
 - State both conductor cases; omitting (1−χ(c′)) in conductor one is incorrect.
 - The claimed algebraicity is in a field, including zero, rather than automatically in its multiplicative group.
+- For χ((λ))=λ⁻⁴ on ℚ(i), c=(7) and c′=(3), the raw distribution factor is 80·(49−2401)=−188160. Multiplying by χ(c)χ(c′)=1/(2401·81) gives (80/81)(49/2401−1)=−1280/1323. These scalars lie in the localization at N(cc′)=441; neither requires division by a smoothing factor that could vanish.
 
 *Needs:* §5.6; §5.1; GlobalNumberFields Layers 2, 7 and 9; ClassFieldTheory Layers 11–13 (gap:ray-tower-tame-unit-kernel).
 
@@ -926,7 +928,7 @@ One proof route is to pull back invariant dlog differentials from the formal mul
 
 For a torsion section y∈U killed by an isogeny with étale dual, restrict EK_Γ(h) to the formal neighborhood of y, translate to the identity, and use the imported ordinary Poincaré trivialization on formal A×formal A∨. Cap the resulting degree-(d−1) group-cohomology class with the same torsion-free oriented fundamental cycle and identify det ω_A using ω_can(A). This defines θ_Γ(h,y)∈H⁰(formal A×formal A∨,O). It is integral over O_(ℂ_p). For arbitrary torsion y the same procedure gives a generic-fiber theta function; integrality then requires an extra argument. Restriction to a finite-index torsion-free subgroup scales theta by the subgroup index.
 
-Assume torsion-free Γ fixes y and h; ordinary level structures; h trace zero. Integral version requires the killing dual étale; torsion-normalized Γ requires its order invertible or the integral unit-index descent of §5.4 divisibility input.
+Assume torsion-free Γ fixes y and h; ordinary level structures; h trace zero. The integral version requires the killing dual étale. Carry these torsion-free theta functions through Layer 7; normalization by a nonunit full-unit index takes place only on the weighted ray quotient in §8.3.
 
 (KS-v4, Lemma 5.15, p.63; Definition 5.16 and Lemma 5.17, p.64, KS-v4 line 2941.)
 
@@ -948,6 +950,7 @@ One proof route is to apply AbelianSchemesAndArithmeticModuliPartII P4.2–P4.3 
 - For d=1, Γ=1 and β=a=0, θ(h,y)(0,0)=Ω_p e_(0,0)(h,y). Thus a value with e_(0,0)≠0 cannot be replaced by the zero formal function.
 - Do not declare every summand in the translation formula integral.
 - The cap convention is identical to §2.2, including the determinant factor responsible for α=a+1.
+- For L=ℚ(√−7), p=2, Γ₀=1 and full units μ₂, use E:y²+xy=x³−x²−2x−1, with Δ=−343, j=−3375 and #E(𝔽₂)=2, hence a₂=1. The polynomial X²−X+2 reduces to X(X−1), so 2 is unramified and ordinary. After a finite extension splitting the prime-to-2 torsion, take c=(3), c′=(5), D=E[15] minus e and y=e. The §1.1 function is 8 at 24 points, −1 at 192 points and 0 at 8 points, with trace 24·8−192=0. It is μ₂-invariant, and α=2, β=0 is critical for μ₂. Yet θ_1(h,e) is not in 2O_(ℂ₂)[[T,S]]: its rigidified augmentation at S=0 is the formal expansion of a meromorphic differential with residue −1 at a point of D. Divisibility by 2 would make that expansion vanish after reduction in characteristic 2. Injectivity into the completion on the smooth integral elliptic special fibre would then make the reduced rational differential zero, contradicting its residue 1. No inversion of 2 is permitted in this example (KS-v4, Definition 2.18 and Theorem 2.20, pp.19–20, KS-v4 lines 836, 870; Definition 5.16, p.64, KS-v4 line 2941).
 
 *Needs:* §1.3; §2.2; §6.2; AbelianSchemesAndArithmeticModuliPartII P4.3; AbelianSchemesAndArithmeticModuliPartII P4.2.
 
@@ -989,9 +992,9 @@ Earlier layers 0, 1, 2, 3, 4, 5; ComplexMultiplicationAndExplicitReciprocity §1
 
 ### 7.1 The CM Eisenstein measure and its moments
 
-Let μ_Eis,Γ(h,x) be the bounded O_(ℂ_p)-valued measure on the additive finite free ℤ_p-module O_L⊗ℤ_p corresponding to θ_Γ(h,x) under the basis-independent multivariate Amice isomorphism. Use Mathlib AbstractMeasure for the underlying continuous linear functional. For critical β−a−1 its moments satisfy (Ω_p^(a+1)(Ω_p∨)^β)⁻¹∫t^a s^β dμ_Eis=e_(β,a), the coordinate of EK in the algebraic divided-power bases. More generally the projected noncritical coefficient components vanish under the corresponding Γ-weight condition. Dependence on h is linear and subgroup normalization follows that of theta.
+Let μ_Eis,Γ(h,x) be the bounded O_(ℂ_p)-valued measure on the additive finite free ℤ_p-module O_L⊗ℤ_p corresponding to θ_Γ(h,x) under the basis-independent multivariate Amice isomorphism. Use Mathlib AbstractMeasure for the underlying continuous linear functional. For critical β−a−1 its moments satisfy (Ω_p^(a+1)(Ω_p∨)^β)⁻¹∫t^a s^β dμ_Eis=e_(β,a), the coordinate of EK in the algebraic divided-power bases, including the factor ε(d,β) of §4.3. More generally the projected noncritical coefficient components vanish under the corresponding Γ-weight condition. Dependence on h is linear and restriction to a finite-index torsion-free subgroup multiplies the measure by its index.
 
-Assume integral theta data; coefficient ring O_(ℂ_p); finite free rank 2d module. The multivariate, coefficient-complete, equivariant Amice contract in the integral multivariate Amice contract is needed; a one-variable field statement alone is insufficient.
+Assume integral theta data for torsion-free Γ; coefficient ring O_(ℂ_p); finite free rank 2d module. The multivariate, coefficient-complete, equivariant Amice contract in the integral multivariate Amice contract is needed; a one-variable field statement alone is insufficient.
 
 (KS-v4, Definition 5.21 and Theorem 5.22, pp.65–66; Proposition 5.20 imported from the general Amice owner, KS-v4 line 3004.)
 
@@ -1010,6 +1013,8 @@ One proof route is to apply the inverse Amice equivalence to θ, which has integ
 - At derivative index a=0 the algebraic-to-canonical moment conversion still contributes one Ω_p in each Σ coordinate.
 - At a=β=0 the total mass is Ω_p^1 times the (0,0) EK coordinate, not just that coordinate.
 - Transport under an integral basis change of O_L⊗ℤ_p gives the same measure.
+- At d=1, β=0 and a=3 the normalized fourth-critical-value coordinate has ε(1,0)=−1; the Amice moment equals that signed coordinate. At β=1 the sign is ε(1,1)=+1. Moment formation introduces no further minus sign.
+- On the dyadic datum of §6.3, μ_Eis,1 is not in 2Meas(O_L⊗ℤ₂,O_(ℂ₂)): integral Amice is linear, so such divisibility would put θ_1 in 2O_(ℂ₂)[[T,S]], contradicting the residue 1 after reduction. The selected critical-coordinate descent does not imply divisibility of this entire measure.
 
 *Needs:* §6.3; §6.4; PadicMeasuresIwasawaAlgebras §§2.1–2.2 (gap:integral-multivariate-amice); Mathlib `AbstractMeasure`.
 
@@ -1062,7 +1067,7 @@ One proof route specializes AutomorphicLFunctionsAndLocalFactors AL.0 finite Fou
 
 For ρ:O_L/p^nO_L→Qbar and critical β−a−1, (Ω_p^(a+1)(Ω_p∨)^β)⁻¹∫t^a s^βρ(t,s)dμ_Eis(h,x)=Σ_(u∈A_(n)[p^n]) (P_Aρ)(u)·e_(β,a),A_(n)(h′,x′+u). The differential bases on A_(n) and its dual are uniquely transported by the two paired isogenies so that the p-adic periods on the left remain the common periods. Every right-hand term is initially interpreted generically.
 
-Assume finite-level ρ; translation theorem and compatible bases; Γ may be replaced by a subgroup fixing the level, with its index explicitly included.
+Assume finite-level ρ; translation theorem and compatible bases; Γ is torsion-free and may be replaced by a torsion-free subgroup fixing the level, with its index explicitly included.
 
 (KS-v4, Corollary 5.25, pp.71–72, KS-v4 line 3244.)
 
@@ -1072,6 +1077,7 @@ One proof route is to expand ρ in the finite character basis. Apply theta trans
 
 - For ρ=1 the identity recovers the original moment formula after the correct distribution sum.
 - A level increase does not multiply the integral by the size of the inflated group.
+- Every summand has the same critical indices and hence the same factor ε(d,β). For d=1, β=0, a two-term combination with Fourier coefficients A,B and unsigned EK values v,w is −Av−Bw=−(Av+Bw). At A=2, B=3, v=5, w=7 both sides are −31; dropping the common sign gives +31.
 
 *Needs:* §7.1; §7.2; §7.3; §6.2.
 
@@ -1142,19 +1148,29 @@ One proof route is to use Mathlib Dirac measures, addition and scalar multiplica
 
 ### 8.3 Smoothed ray-class measures from the CM Eisenstein measure
 
-For f≠O_L construct bounded measures μ_(f,c) by choosing ray-class representatives a_i, the Serre tensors A_i=(a_i⁻¹f)⊗A and their compatible periods, evaluating μ_Eis at x_i=Ω mod a_i⁻¹fΩ, and restricting to (O_L⊗ℤ_p)×. Set U_f=O_f× (global units congruent to 1 mod f) and G⁰_f=(O_L⊗ℤ_p)×/closure(U_f), and use the exact sequence 1→G⁰_f→G_f→Cl_f→1. Let q_f:(O_L⊗ℤ_p)×→G⁰_f be the quotient map and include G⁰_f into its chosen ray-class coset. On each coset push the weighted measure by (t,s)↦q_f(t⁻¹,s), with weight ∏_(σ∈Σ)σ(t)⁻¹, then sum the finitely many cosets. This uses U_f, not all global units for nontrivial tame f. With the sign comparison below and integral unit-index descent of §5.4, its moments are δ_c(χ) times the right side of the final interpolation formula. For f=O_L use two coprime auxiliaries and the function pulled back from h_c on (A[c′]\{e})×A[c], yielding μ_(O_L,c,c′) with the extra factor δ′_(c′)(χ). The sign comparison is the equality of the map from h through algebraic residue, oriented current integration and the canonical formal differential with the map from h through the rigidified theta function and invariant moments. Its sources are R[D]^(0,Γ) and its targets are scalar extensions of the same critical coordinate line over the common algebraic coefficient field, with the specified complex and p-adic period conversions; the signed analytic representative and the unsigned interpolation coefficient must be reconciled by these actual comparison maps.
+Set U_f=O_f× (global units congruent to 1 mod f) and G⁰_f=(O_L⊗ℤ_p)×/closure(U_f), and use the exact sequence 1→G⁰_f→G_f→Cl_f→1. Let q_f:(O_L⊗ℤ_p)×→G⁰_f be the quotient map. For f≠O_L choose ray-class representatives a_i, the Serre tensors A_i=(a_i⁻¹f)⊗A and their compatible periods, and x_i=Ω mod a_i⁻¹fΩ. Choose a finite-index torsion-free Γ₀⊂U_f fixing the residue data. Restrict μ_Eis,Γ₀(h_c,x_i) to (O_L⊗ℤ_p)×, multiply by ∏_(σ∈Σ)σ(t)⁻¹ and push forward by (t,s)↦Art(a_i)q_f(t⁻¹,s) into G_f. Denote the sum over cosets by ν_(f,c,Γ₀). Its source measure is on the local unit group and its target is Meas(G_f,O_(ℂ_p)). This construction uses the closure of U_f.
 
-Assume ordinary based datum, tame f prime to p, compatible ideal structures and roots of unity. Unit subgroup changes used to fix finite levels carry their exact index; normalized integral descent requires the integral unit-index descent of §5.4.
+Prove integral unit-index descent on this weighted pushforward: for every such Γ₀, with m=[U_f:Γ₀], ν_(f,c,Γ₀) belongs to m·Meas(G_f,O_(ℂ_p)), where integral measures have operator norm at most one. Equivalently, for every finite continuous quotient π:G_f→Q and q∈Q, prove ν_(f,c,Γ₀)(π⁻¹{q})∈mO_(ℂ_p). For Γ₁⊂Γ₀ prove ν_(f,c,Γ₁)=[Γ₀:Γ₁]ν_(f,c,Γ₀). Only after this theorem define μ_(f,c)=ν_(f,c,Γ₀)/m; it is integral and independent of Γ₀ by passage to intersections. This arithmetic theorem concerns the actual weighted ray-quotient measure; §5.4's integrality of individual critical coordinates is not its proof.
 
-(KS-v4, Theorem 5.27, proof Steps 1 and 3, equations (5.7.1)–(5.7.4), pp.74–78, KS-v4 line 3417.)
+Its smoothed interpolation is
+(Ω_p^α(Ω_p∨)^β)⁻¹∫χ dμ_(f,c)=ε(d,β)·(Nc−χ(c)⁻¹)·𝒩_(α,β)(Local(χ,Σ)·∏_(v∈Σ_p)(1−χ(v⁻¹)/Nv)·∏_(v∈barΣ_p)(1−χ(v))·L_f(χ,0)).
+The comparison from the algebraic residue through the oriented current and from the same residue through theta and canonical moments takes values in scalar extensions of the same critical coordinate line. It preserves ε(d,β)=(-1)^(d(d−1)/2+|β|+1); weighting, inversion and coset summation give the displayed factors without an additional constant sign.
+
+For f=O_L use two coprime auxiliaries and the function pulled back from h_c on (A[c′] minus e)×A[c], extended by zero as in §1.1. With x_i=e form the corresponding ν_(O_L,c,c′,Γ₀) and prove the same integral divisibility and subgroup law before defining μ^raw_(O_L,c,c′)=ν_(O_L,c,c′,Γ₀)/[O_L×:Γ₀]. Its normalized χ-moment has the extra factor χ(c′)⁻¹−1 multiplying the signed smoothed expression. Define μ_(O_L,c,c′)=δ_(Art(c′))*μ^raw_(O_L,c,c′). This translation is an integral bounded automorphism, and it changes that factor to χ(c′)(χ(c′)⁻¹−1)=1−χ(c′), exactly δ′_(c′)(χ) from §8.2, including for finite-order twists.
+
+Assume ordinary based datum, tame f prime to p, compatible ideal structures and roots of unity; integral auxiliaries c prime to pf, and c′ prime to pc when f=O_L. Use the §1.1 residue functions and torsion-free theta data of §§6.3–7.4. A subgroup used to fix a finite p-power level carries its index; no subgroup is required to fix every level simultaneously. The unit-index divisibility theorem above is required before normalized integral descent.
+
+(KS-v4, Theorem 5.27, proof Steps 1 and 3, equations (5.7.1)–(5.7.4), pp.74–78, KS-v4 lines 3417, 3468, 3507, 3681; retain the class sign at KS-v4 line 3514 and apply the Artin translation to the four-term distribution at KS-v4 lines 2491–2498. Integral unit-index descent on the weighted quotient is a theorem target here, rather than an assertion of divisibility of the theta function.)
 
 The construction has the following API.
 
-- Critical character moments are the target expression multiplied by Nc−χ(c)⁻¹, and by 1−χ(c′) in tame conductor one, after the sign and unit-index comparisons.
+- Critical character moments are the signed expression of §8.5 multiplied by Nc−χ(c)⁻¹, and by 1−χ(c′) in tame conductor one after the Artin translation.
+- For every finite quotient, each mass of ν_(f,c,Γ₀) is divisible by [U_f:Γ₀] in O_(ℂ_p), with the same assertion for the raw conductor-one family. The normalized measures have norm at most one and are compatible with subgroup change.
 - For b,c prime to pf, δ_b*μ_(f,c)=δ_c*μ_(f,b); establish equality using density of finite-order twists of a fixed critical character.
+- In conductor one the translated family satisfies δ_b*μ_(O_L,c,c′)=δ_c*μ_(O_L,b,c′) and δ′_(b′)*μ_(O_L,c,c′)=δ′_(c′)*μ_(O_L,c,b′) whenever the auxiliary pairs are permitted. Artin translation commutes with convolution and preserves subgroup relations and the norm bound; its inverse is translation by Art(c′)⁻¹.
 - Changing coset representatives transports the same weighted measure; the exact sequence uses the tame-congruence unit closure.
 
-One proof route is to use the native abstract-measure pushforward and PadicMeasuresIwasawaAlgebras §2.1 continuous weighting and projection formula. Restrict to the clopen unit locus by extension of test functions by zero, then apply the indicated continuous inversion and determinant weight; compactness makes these operations bounded. Show the correct tame-unit quotient and representatives identify it with the ray-class tower. Insert the locally constant moment formula; compute ramified local factors from PF and unramified corrections from the difference between F and the zero extension. Use the corrected explicit EK formula and complete the sign comparison of §8.3 before identifying its moment sign with the unsigned target.
+One proof route uses the native pushforward and PadicMeasuresIwasawaAlgebras §2.1 weighting and projection formula. Restrict to the clopen unit locus, then apply continuous inversion and the determinant weight. Prove the finite-quotient mass divisibilities for these residue measures and their compatibility under refinement, using the torsion-free cap and residue distribution; critical moment integrality alone is insufficient. Divide on the ray quotient only after that step. Insert §7.4, compute ramified local factors from PF and unramified corrections from the difference between F and zero extension, and retain the sign in §4.3. In conductor one compute the four-term distribution first and then translate by Art(c′). Use the resulting moments and boundedness to prove the auxiliary-family relations by density.
 
 **Checks.**
 
@@ -1165,12 +1181,16 @@ One proof route is to use the native abstract-measure pushforward and PadicMeasu
 - At nontrivial f, replacing closure(U_f) by closure(O_L×) can change the kernel and the available character moments.
 - The unramified barΣ-depletion is the full product over barΣ_p, not a single prime.
 - For α=2, β=1, evaluating the algebraic character at (t⁻¹,s) gives t²s; the determinant weight t⁻¹ gives ts. At t=2, s=3 the result is 6, whereas omission of the determinant weight gives 12.
+- For L=ℚ(i), p=5, f=(3), χ((λ))=λ⁻⁴ and c=(7), the conductor-one character is allowed at the tame modulus (3), and U_f=1. Let U be the unsigned right side of §8.5. Then ε(1,0)=−1, χ(c)=7⁻⁴, Nc=49 and δ_c(χ)=−2352. Thus the constructed normalized moment and εδ_cU both equal +2352U. Here U≠0: the L-series at zero converges absolutely with |χ(a)|=Na⁻² and has nonzero Euler product; its omitted factor at (3) is 80/81, Local=1, and the two p-factors at (2+i) and (2−i) are (12−24i)/5 and (632−24i)/625. All periods are nonzero. Omitting ε gives −2352U and fails this check.
+- For the same character at tame conductor one and c′=(3), the raw second factor is χ(c′)⁻¹−1=80, whereas δ′_(c′)(χ)=80/81. Relative to the unsigned conductor-one expression, the raw signed multiplier is 188160. Translation multiplies it by χ(c′)=1/81 and gives 62720/27=2352·80/81. For a finite-order twist ψ, translation multiplies the raw moment by (χψ)(c′), giving 1−(χψ)(c′); at ψ(c′)=−1 the raw factor is −82 and translation gives (−1/81)(−82)=82/81. No inverse smoothing factor is used.
+- On ℤ₂× the measure δ_1−δ_(−1) has Amice transform 2T−T²+T³−⋯; half of it has power moments 0,1,0,1,… but takes the indicator of 1+4ℤ₂ to 1/2. Weighting by t⁻¹ gives δ_1+δ_(−1), whose pushforward to the ±1 quotient is 2δ_[1]. Division there gives the integral δ_[1], with mass 1. This is the quotient counterpart to the theta obstruction of §6.3.
+- At subgroup index one ν=μ; for zero residue data both are zero at every finite quotient. In a chain with [U_f:Γ₀]=2 and [Γ₀:Γ₁]=3, ν_(Γ₀)=2η and ν_(Γ₁)=6η give the same normalized η. Thus the subgroup rule and divisibility must hold together, including when p=2 or 3.
 
-*Needs:* §7.1; §7.4; §8.1; §8.2; §5.7; §2.3; GlobalNumberFields Layers 2, 7 and 9; ClassFieldTheory Layers 11–13 (gap:ray-tower-tame-unit-kernel); GlobalNumberFields Layers 9–10 (gap:hecke-padic-avatar); ComplexMultiplicationAndExplicitReciprocity §1.3; PadicMeasuresIwasawaAlgebras §2.1.
+*Needs:* §7.1; §7.4; §8.1; §8.2; §5.7; §2.3; §1.1 and §5.5 for the residue distribution; §4.3 for the class sign; GlobalNumberFields Layers 2, 7 and 9; ClassFieldTheory Layers 11–13 (gap:ray-tower-tame-unit-kernel); GlobalNumberFields Layers 9–10 (gap:hecke-padic-avatar); ComplexMultiplicationAndExplicitReciprocity §1.3; PadicMeasuresIwasawaAlgebras §§1.2 and 2.1 for bounded Artin translation, convolution and pushforward.
 
 ### 8.4 Bounded removal of auxiliary ideals
 
-Establish a bounded O_(ℂ_p)-valued measure μ_f independent of c such that δ_c*μ_f=μ_(f,c) when f≠O_L, and δ_c*δ′_(c′)*μ_(O_L)=μ_(O_L,c,c′) when f=O_L. The required output is a continuous O_(ℂ_p)-linear functional on C(G_f,O_(ℂ_p)) with norm at most one. Prove it by an integral measure-algebra divisibility argument or by Kummer congruences: for every m≥0, every finite family χ₁,…,χ_r of finite-order twists of a fixed critical avatar and every coefficient family a₁,…,a_r∈ℂ_p, if Σa_iχ_i(g) lies in p^m O_(ℂ_p) for every g∈G_f, then Σa_iM(χ_i) lies in p^m O_(ℂ_p). Here M(χ) is the proposed normalized moment, and the implication is uniform in r, the common finite level and m. The case m=0 gives the operator bound of one; scaling gives continuity on the dense span. Treat torsion components of G_f, shared zeros of the smoothing factors and conductor one explicitly. Merely knowing that each individual character value is integral, or that the family has greatest common divisor one in an unspecified ring, does not prove this statement. The uniform congruence argument is part of this theorem.
+Establish a bounded O_(ℂ_p)-valued measure μ_f independent of c such that δ_c*μ_f=μ_(f,c) when f≠O_L, and δ_c*δ′_(c′)*μ_(O_L)=μ_(O_L,c,c′) for the translated conductor-one family of §8.3. The required output is a continuous O_(ℂ_p)-linear functional on C(G_f,O_(ℂ_p)) with norm at most one. Prove it by an integral measure-algebra divisibility argument or by Kummer congruences: for every m≥0, every finite family χ₁,…,χ_r of finite-order twists of a fixed critical avatar and every coefficient family a₁,…,a_r∈ℂ_p, if Σa_iχ_i(g) lies in p^m O_(ℂ_p) for every g∈G_f, then Σa_iM(χ_i) lies in p^m O_(ℂ_p). Here the proposed full character moment is M(χ)=Ω_p^α(Ω_p∨)^β·ε(d,β)·𝒩_(α,β)(Local(χ,Σ)·∏_(v∈Σ_p)(1−χ(v⁻¹)/Nv)·∏_(v∈barΣ_p)(1−χ(v))·L_f(χ,0)), with the algebraic normalized value transported to ℂ_p as in §8.5. The implication is uniform in r, the common finite level and m. The case m=0 gives the operator bound of one; scaling gives continuity on the dense span. Treat torsion components of G_f, shared zeros of the smoothing factors and conductor one explicitly. Merely knowing that each individual character value is integral, or that the family has greatest common divisor one in an unspecified ring, does not prove this statement. The uniform congruence argument is part of this theorem.
 
 Assume compatible smoothed measures and their cross-relations; the generic pseudomeasure localization and boundedness criterion are imported from PadicMeasuresIwasawaAlgebras §3.1. All density arguments are made for continuous linear functionals with an established bound.
 
@@ -1182,18 +1202,19 @@ One proof route is to use finite-order twists of one fixed critical algebraic ch
 
 - On a finite cyclic group C_p, p⁻¹Σ_gδ_g has integral character values 1 or 0 but takes the indicator of the identity to 1/p; the proposed proof must rule out this failure.
 - Do not assume every δ_c is a unit or equate a height-one gcd statement with a unit-ideal statement.
+- For χ((λ))=λ⁻⁴ in the nonzero example of §8.3, M(χ)=−Ω_p⁴U, so δ_(7)(χ)M(χ)=2352Ω_p⁴U. In conductor one the translated second factor gives 2352·(80/81) times the corresponding unsigned full moment, agreeing with the defining family relations.
 
 *Needs:* §8.3; §8.2; §5.7; PadicMeasuresIwasawaAlgebras §3.1 (gap:bounded-fraction-criterion); Mathlib `AbstractMeasure`.
 
 ### 8.5 Critical Hecke-value interpolation over totally imaginary fields
 
 For a p-ordinary lifted type Σ of L and a tame integral ideal f prime to p, construct a bounded O_(ℂ_p)-valued measure μ_f on G_f=Gal(L(p∞f)/L) such that for every critical algebraic χ of conductor dividing p∞f and infinity type β−α,
-(Ω_p^α(Ω_p∨)^β)⁻¹∫_(G_f)χ(g)dμ_f(g)=𝒩_(α,β)(Local(χ,Σ)·∏_(v∈Σ_p)(1−χ(v⁻¹)/Nv)·∏_(v∈barΣ_p)(1−χ(v))·L_f(χ,0)).
-The complex normalization on the right is algebraic by Layer 5 and is transported to ℂ_p by the chosen embeddings of the common algebraic coefficient field; no map from all of ℂ to ℂ_p is used. At a prime ramified in χ set the corresponding ideal-character value to zero so the omitted Euler factor is one; χ(v⁻¹)=0 in that convention is not the inverse of zero. Primitive versus f-imprimitive L-functions are related by exactly the displayed depletion factors. Prove uniqueness from the finite-order-twist density after boundedness has been established. The construction proves the sign, bounded-divisibility and integral unit-index targets of §§8.3–8.4 and 5.4 as part of Theorem 5.27’s interpolation assertion.
+(Ω_p^α(Ω_p∨)^β)⁻¹∫_(G_f)χ(g)dμ_f(g)=ε(d,β)·𝒩_(α,β)(Local(χ,Σ)·∏_(v∈Σ_p)(1−χ(v⁻¹)/Nv)·∏_(v∈barΣ_p)(1−χ(v))·L_f(χ,0)).
+Here ε(d,β)=(-1)^(d(d−1)/2+|β|+1), the class sign of §4.3. The complex normalization on the right is algebraic by Layer 5 and is transported to ℂ_p by the chosen embeddings of the common algebraic coefficient field; no map from all of ℂ to ℂ_p is used. At a prime ramified in χ set the corresponding ideal-character value to zero so the omitted Euler factor is one; χ(v⁻¹)=0 in that convention is not the inverse of zero. Primitive versus f-imprimitive L-functions are related by exactly the displayed depletion factors. Prove uniqueness from the finite-order-twist density after boundedness has been established. The construction retains the class-to-moment sign, uses the conductor-one Artin translation, and proves integral descent on the weighted ray quotient and bounded auxiliary division in §§8.3–8.4.
 
-Assume ordinary standard datum, O_L Betti structure, complex and p-adic periods fixed; all characters read through the chosen embeddings. The proof includes the sign comparison of §8.3, the uniform bounded division of §8.4 and the integral unit-index descent of §5.4.
+Assume ordinary standard datum, O_L Betti structure, complex and p-adic periods fixed; all characters read through the chosen embeddings. The proof uses the signed moments, translated conductor-one family and integral ray-quotient descent of §8.3, and the uniform bounded division of §8.4.
 
-(KS-v4, Theorem 5.27, p.74 and proof pp.74–79, KS-v4 line 3392.)
+(KS-v4, Theorem 5.27, p.74 and proof pp.74–79, KS-v4 line 3392, with ε(d,β) retained from the class formula at KS-v4 lines 3507–3514 and with the conductor-one Artin translation specified in §8.3.)
 
 One proof route is to combine the corrected smoothed interpolation with §8.4. At ramified and unramified Σ-places compute the separate Fourier contributions; collect the complete barΣ-depletion. Use density for uniqueness after boundedness.
 
@@ -1203,6 +1224,7 @@ One proof route is to combine the corrected smoothed interpolation with §8.4. A
 - An inert prime for an imaginary quadratic K is outside this theorem; it belongs to the independent nonordinary direction.
 - For a unit u rescaling one selected algebraic differential, Ω and Ω_p both acquire u. Both normalized sides acquire u^(−α_σ), so the equality persists; for α_σ=2 and u=2 at p=5 this multiplier is 1/4.
 - At L=K=ℚ(i), f=O_K and p=5, the types −kΣ−d(σ)(σ−barσ), k≥1 and d(σ)≥0, have α=k+d(σ)≥1 and β=d(σ)≥0 and are included whenever the finite unit character is compatible. In particular k=2, d(σ)=1 gives (α,β)=(3,1), whose unit weight is trivial on μ₄. The target also includes arbitrary admissible critical types and tame f prime to p.
+- For the nonzero χ((λ))=λ⁻⁴ example in §8.3, ε(1,0)=−1, so the unsmoothed normalized moment is −U. Multiplication by δ_(7)(χ)=−2352 gives +2352U, in agreement with the constructed smoothed moment. For d=1, β=1 the sign is +1, whereas for d=2, β=0 it is +1; a single global negation cannot replace ε(d,β) across all critical types.
 
 *Needs:* §8.4; §8.1; §6.2; §5.2; AutomorphicLFunctionsAndLocalFactors AL.1, “Local epsilon factors and Gauss sums”.
 
@@ -1220,7 +1242,7 @@ The outputs support arithmetic applications of ordinary critical Hecke values an
 
 ## Worked examples
 
-For L=ℚ(i), Γ in the kernel of the unit weight, α=2 and β=1, the derivative index is a=1. The complex multiplier is (2πi)/(Ω²Ω∨), and the p-adic moment divisor is Ω_p²Ω_p∨. The extra Σ-period is the determinant contribution, so replacing a+1 by a changes the result even at a=0. At p=5 the two place sets are disjoint. At p=3 the two embeddings have the same place, so no measure from this ordinary datum is asserted (KS-v4, Definitions 5.2–5.7 and Theorem 5.22, pp.56–59,65–66, KS-v4 lines 2625, 3089).
+For L=ℚ(i), Γ in the kernel of the unit weight, α=2 and β=1, the derivative index is a=1. The complex multiplier is (2πi)/(Ω²Ω∨), and the p-adic moment divisor is Ω_p²Ω_p∨. Here ε(1,1)=+1. The extra Σ-period is the determinant contribution, so replacing a+1 by a changes the result even at a=0. At p=5 the two place sets are disjoint. At p=3 the two embeddings have the same place, so no measure from this ordinary datum is asserted (KS-v4, Definitions 5.2–5.7 and Theorem 5.22, pp.56–59,65–66, KS-v4 lines 2625, 3009).
 
 For L=ℚ(i,√(1+i)) over K=ℚ(i), the polynomial over ℚ is X⁴−2X²+2. The chosen square root has complex norm-square √2. Its complex conjugate is not in L: that would put √2 in L, but writing an element of K(√(1+i)) as a+b√(1+i) and squaring shows √2 would require 1−i to be a square in K; its norm 2 is not a square in ℚ. The lifted type has two embeddings over the selected embedding of K. Hence α=(1,2) cannot descend from K, while α=(2,2), β=(1,1) does and has parallel conjugate sum −1. Its Serre construction has dimension 2 and repeats both K-period exponents twice. At p=5 restriction to K still separates the two ordinary place sets (KS-v4, §1.1, Theorem 1.1 and Remark 1.10, pp.7–10, KS-v4 line 279; Corollary 4.14, p.54, KS-v4 line 2534).
 
