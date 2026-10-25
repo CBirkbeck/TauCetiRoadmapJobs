@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5010 mistakes recorded on the board: 3303 misprints, 1243 errors, 364 gaps, 100 unparsed bullets.
+5046 mistakes recorded on the board: 3321 misprints, 1252 errors, 371 gaps, 102 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -108,6 +108,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Error** in weil-II at (5.1.5), last paragraph, p. 235: the source says coefficient change to any quotient B of A is an isomorphism off the diagonal. That fails for an infinitely generated ideal on an infinite discrete simplicial set; it should be restricted to finitely generated (for example principal) ideals. Affects nothing, since only ℓ-power quotients are used.
 - **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Gap** in weil-II at Lemme (5.3.5), p. 241: the source says a common stable filtration exists for finitely many automorphisms and leaves the proof to the reader. It should be proved, since unrestricted conjugacy in Théorème 5.3.4 depends on it. Affects a stated result.
 - **Unparsed** (EllAdicHomotopyTypesAndWeights, #1396 at d9b1fec, 2026-10-25): Error** in morgan at Theorem 9.2, p. 195: the source treats the indecomposables of a minimal algebra as invariant under homotopic maps. Only the associated graded of the canonical filtration is invariant. Affects a stated result; corrected in print at IHÉS 64 (1986), p. 185. <!-- tauceti-roadmap-review {"agent": "claude", "head": "d9b1fec", "job": "REV-PKG-EllAdicHomotopyTypesAndWeights", "model": "opus", "worker": "fable-rev89"} -->
+- **Unparsed** (HeightsRationalPointsAndObstructionsPartII, #1129 at 0e276b6, 2026-10-25): Gap** in xy-2022 at Proposition 5.4, pp. 25–26: the source states the conclusion for every torsion point off the jump locus; the proof uses an étale torsion multisection, so only orders prime to the characteristic are covered; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "0e276b6", "job": "REV-PKG-HeightsRationalPointsAndObstructionsPartII~2", "model": "opus", "worker": "fable-rev94"} -->
+- **Unparsed** (AlgebraicTopologyPartII, #1073 at eabd8fb, 2026-10-25): Misprint** in BS at proof of Lemma 7.4, printed p.943: the source's final product has factors (1−qU^k) with no exponent; each factor should carry the exponent −e_k(N); affects the proof.
 
 ## A
 
@@ -344,6 +346,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AHK07
 
 - **Error** at Lemma 1.6(2), p. 4: the source says the rank ρ(Y) is positive; it should be restrict to positive-dimensional Y, since a point gives 0; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Error** at Lemma 1.6(2), p. 4: the source says strictly positive rank without a dimension restriction; it should be restrict positivity to positive-dimensional Y, since a point has rank zero; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 1.6(1), p. 4: the source says the source prescribes n−e+2 additional hyperplane cuts; it should be prescribe n−e−2 so the remaining dimension is two; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Lemma 1.6(1), p. 4: the source says dim X − e + 2 hyperplane cuts on X; it should be dim X − e − 2, leaving a surface; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 
 ## AHR
@@ -1084,13 +1088,21 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BKO21
 
 - **Misprint** at Corollary 5.6, p.959: the source says the quotient with an unstarred ambient module V∞; it should be V∞*/V∞*,−; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at Corollary 5.6, printed p.959: the source says the ambient quotient uses unstarred V∞; it should be use V∞*/V∞*,−; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Error** at Lemma 5.1(ii), p.956: the source says a lift of a curve with a_(p²)=±2p has Honda type ±x²+p and Lubin–Tate parameter ∓p; it should be type p∓x² and parameter ±p, since an a_p=0 curve has a_(p²)=−2p and parameter −p; affects a stated result. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Error** at Lemma 5.1(ii), printed p.956: the source says trace 2εp gives Honda type p+εX² and parameter −εp; it should be type p−εX² and parameter εp; affects a stated result. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Lemma 5.2(ii), p.956: the source says the displayed lower bound gives an unramified supersingular point for every p≥31; at p=47 that bound equals 0; it should be use the exact generic count μ⌊(p−1)/12⌋=3μ (or part (iii)); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Gap** at Lemma 5.2(ii), printed p.956: the source says its displayed bound ensures an unramified supersingular point for every p≥31; it should be use the exact generic count, since the displayed bound at 47 is zero; affects the proof. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 5.5(ii), p.959: the source says the first-type lattices with the scalar (1+ap^s), which is a ℤ_p-unit, so all p lattices coincide; it should be use (1+ap^sθ) with O=ℤ_p⊕ℤ_pθ; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
 - **Misprint** at proof of Theorem 5.5(ii), p.959: the source says the source sums over Δ at s=0; it should be sum over Δ′, the order-(p+1) torsion subgroup of Gal(Ψ′∞/Φ); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at proof of Theorem 5.5(ii), printed p.959: the source says the outward lattice generators use scalar 1+ap^s; it should be use 1+ap^sθ for O=Z_p⊕Z_pθ, producing distinct directions; affects the proof. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 5.5(ii), printed p.959: the source says the boundary sum runs over Δ; it should be run over Δ′, of order p+1; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §3.0.2 and proof of Theorem 3.4, pp.952–954: the source says l^m both as the order and as the conductor of ν; it should be index z and the ring class field by the conductor, with m=r+1 for exact order l^r; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at §3.0.2 and proof of Theorem 3.4, printed pp.952–954: the source says l^m indexes both order and conductor of the nontrivial auxiliary character; it should be use conductor l^(r+1) for exact order l^r; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §5.0.2, p.958: the source says the source labels the quasi-canonical field degree [Φ′_s:Φ]; it should be [Ψ′_s:Φ]=p^(s−1)(p+1); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at §5.0.2, printed p.958: the source says the quasi-canonical degree is indexed by Φ′_s; it should be indexed by Ψ′_s; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §6.0.2, p.962: the source says characters factoring through Gal(Ψ_n/Ψ); it should be Gal(Ψ_n/Φ); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at §6.0.2, printed p.962: the source says finite characters factor through Gal(Ψ_n/Ψ); it should be Gal(Ψ_n/Φ); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 
 ## bkt
 
@@ -1575,7 +1587,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BS
 
 - **Error** at Lemma 7.6, printed p.944: the source says the double-loop Betti formula holds for n>2; it should be n>3, since at n=3 the double loop of a bouquet of 2-spheres has ℤ^N components and the first factor degenerates; affects a stated result. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
+- **Error** at Lemma 7.6, printed p.944: the source says the source assumes n>2 for the double-loop Betti formula; it should be n>3, since at n=3 the double loop of a wedge of 2-spheres has ℤ^N components; affects a stated result. Found by AlgebraicTopologyPartII (#1073 at eabd8fb, 2026-10-25, claude opus).
 - **Misprint** at proof of Lemma 7.4, printed p.942: the source says the first trace sum uses compactly supported cohomology with ordinary weights q^(m−i); it should be ordinary cohomology H^i, dualised to H_c only afterwards; affects the proof. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
+- **Misprint** at proof of Lemma 7.4, printed p.942: the source says the source's first trace sum pairs compact-support cohomology with the ordinary weights q^(m−i); it should be use ordinary cohomology H^i there, dualising to compact supports only afterwards; affects the proof. Found by AlgebraicTopologyPartII (#1073 at eabd8fb, 2026-10-25, claude opus).
 - **Misprint** at proof of Lemma 7.4, printed p.943: the source says the final Euler product has factors (1−qU^k) with no exponent; it should be carry the exponent −e_k(N) on each factor; affects the proof. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
 - **Misprint** at proof of Lemma 7.6, printed p.944: the source says the hypersurface is homotopic to a smash of N spheres; it should be the wedge of N copies of S^(n−1); affects nothing. Found by AlgebraicTopologyPartII (#1073 at 6bb3946, 2026-10-24, claude opus).
 
@@ -2208,6 +2222,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CT20
 
 - **Misprint** at Lemma 2.17, p. 17: the source says the divisor M lives on Y, which does not occur; it should be on S; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Misprint** at Lemma 2.17, p. 17: the source says the descended divisor on an undefined Y; it should be place it on S; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 
 ## Cwikel
 
@@ -3027,10 +3042,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## ggk-2026
 
+- **Misprint** at Proposition 7.2, proof, p. 223: the source says the source sets c₀ to the larger of c₁ and c₃; it should be take the larger of 1/c₁ and c₃, so that the cutoff 1/c₀ stays below the gap threshold c₁; affects the proof. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 0e276b6, 2026-10-25, claude opus).
 - **Misprint** at Proposition A.3(ii), p. 228: the source says the exceptional degree is strictly below (deg X)^{2 dim X}; it should be at most, which is what the proof gives; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Misprint** at Proposition A.3(ii), p. 228: the source says a strict bound for the degree of the exceptional set; it should be non-strict, as the Bézout count in its proof gives; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 0e276b6, 2026-10-25, claude opus).
 - **Misprint** at Theorem 1.3, p. 192: the source says both constants are c₃; it should be name the cardinality bound c₄; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Misprint** at Theorem 1.3, p. 192: the source says the source names both constants c₃; it should be call the counting bound c₄; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 0e276b6, 2026-10-25, claude opus).
 - **Misprint** at §7.1, (7.4), p. 221: the source says each covering ball holds at most c₀ points; it should be c₀^{rk Γ+1} by (7.1); affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
 - **Error** at §7.3, proof of Theorem 1.1′, p. 224: the source says the rank-ρ finitely generated Γ₀ may be chosen End(A)-stable; it should be drop stability, since the swap on E×E sends rank-one ℤ(P,0) to rank two; affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 8a8594b, 2026-10-24, claude opus).
+- **Error** at §7.3, proof of Theorem 1.1′, p. 224: the source says the rank-ρ group Γ₀ may be chosen stable under End(A); it should be drop that stability, since End(A)·Γ₀ can have larger rank (swap on E×E); affects nothing. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 0e276b6, 2026-10-25, claude opus).
 
 ## ghn15
 
@@ -3347,6 +3366,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Haz77
 
 - **Misprint** at Theorem 1.3, p.306: the source says the integral part [r] as the smallest integer ≤ r; it should be the largest integer ≤ r; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "1b5329b", "job": "REV-PKG-AnticyclotomicLocalUnits", "model": "opus", "worker": "fable-rev47"} -->. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Misprint** at Theorem 1.3, printed p.306: the source says the integral part is the smallest integer at most r; it should be the largest integer at most r; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "aecb5008a63396012f21bc74f45b25d85f1261f1", "job": "REV-PKG-AnticyclotomicLocalUnits~2", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 
 ## HB-SIEVES
 
@@ -4196,6 +4216,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Remark 1.4.2 (with Definitions 1.2.8 and 1.4.1, pp. 7, 9–10): the source says the intrinsic radius equals |u| times R; it should be R divided by |u|; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## KEE99
+
+- **Gap** at proof of Lemma 1.7, printed p. 262: the source says the source applies an ample-plus-effective decomposition to a merely proper scheme; it should be first pass to a projective modification and compare bigness; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
+- **Gap** at proof of Lemma 2.16, printed p. 270: the source says finite-type Picard parameterization for a fixed Hilbert polynomial on arbitrary projective E; it should be use finite type of Pic^τ, since opposite multidegrees defeat the assertion; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
+
 ## KervaireMilnor
 
 - **Misprint** at Lemma 8.2 proof, p. 533 (KervaireMilnor line 1089): the source says the obstruction groups use the undefined pair (H,L); it should be amended to use the domain pair (K,L); affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
@@ -4316,6 +4341,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Definition 1.4.1, p. 19, displayed identity (KL16 line 734): the source says the coefficient multiplying w²−x² in the expansion of (w−x)³ is 3(x−w); it should be −3(w+x); affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
 - **Error** at Theorem 8.2.3, proof, p. 163, invoking Remark 8.1.4, p. 159 (KL16 line 6277): the source says seminormality implies O_X = f_*O_X′ for a proper smooth resolution; it should be impose the descent equalizer: normalization of K⟨T,U⟩/(TU) gives K⟨T⟩×K⟨U⟩, which contains the additional idempotent (1,0); affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
+
+## KLE05
+
+- **Misprint** at Example 4.14, printed p. 33, line 1564: the source says the proper image of the bad locus as the desired open neighbourhood; it should be take the complement of that image in T; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "ac20a1ed573a5b3da6078dc5e1d7bcd11fec099e", "job": "REV-PKG-AlgebraicModuliForArithmeticGeometryPartII~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 
 ## KM-21
 
@@ -4638,6 +4667,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## LIP69
 
+- **Misprint** at proof of Lemma (14.1), printed p. 224: the source says the source allows any nonunit r; it should be require r nonzero as well, so its valuation coefficients are finite; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Lemma (14.1), p. 224: the source says r is any non-unit; it should be any nonzero non-unit; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "26cf02f", "job": "REV-PKG-AlgebraicModuliForArithmeticGeometryPartII", "model": "opus", "worker": "fable-rev50"} -->. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 
 ## Lipnowski–Tsimerman, arXiv:1511.02212
@@ -5740,8 +5770,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rubin87
 
 - **Error** at Lemma 4.2, p.410: the source says a continuous homomorphism X→O with a unit value at x forces x to generate the free rank-one module X; it should be require Λ-linearity for the augmentation, because the coefficient-of-T functional is a counterexample; affects a stated result. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Error** at Lemma 4.2, printed p.410: the source says continuity and a unit value force generation of a free rank-one Iwasawa module; it should be require augmentation Λ-linearity, since coefficient extraction sends nonunit T to 1; affects a stated result. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Gap** at proof of Lemma 5.1, p.411: the source says the source deduces that the norm limit of E(Θ_n) vanishes from Proposition 4.5(i), which only kills the base-level coordinate; it should be also bound norms into each ramified level Θ_m, which lies outside Hazewinkel's unramified hypothesis; affects the proof. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Gap** at proof of Lemma 5.1, printed p.411: the source says vanishing of the base-coordinate norm image kills the whole inverse limit; it should be establish shrinking norms into every finite, possibly ramified, base; affects the proof. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2, p.407: the source says a p-adic Tate-module generator for the Lubin–Tate group with parameter −p; it should be use the π-adic generator, which differs by (−1)^n at level n; affects the proof; corrected in print at BKO21 §2, footnote 2, p.948. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+- **Error** at §2, printed p.407: the source says to use a p-adic Tate generator with Lubin–Tate parameter −p; it should be use a π-adic generator, differing at level n by (−1)^n; affects the proof; corrected in print at BKO21 §2, footnote 2, printed p.948. Found by AnticyclotomicLocalUnits (#1062 at aecb500, 2026-10-25, codex gpt-6-astra).
 
 ## ry25
 
@@ -5834,7 +5867,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## SCH23
 
 - **Misprint** at Lemma 1.1, p. 5: the source says the exponent d may be zero; it should be d ≥ 1, since d = 0 satisfies the condition for every X; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Misprint** at Lemma 1.1, p. 5: the source says a nonnegative descent exponent suffices; it should be positive, because zero kills every geometric class; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Error** at Proposition 1.2, p. 6: the source says the criterion holds for one-dimensional X; it should be require every irreducible component to be one-dimensional, since P¹_ℝ ⊔ Spec ℂ has constant Num but a non-bijective graph map; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Error** at Proposition 1.2, p. 6: the source says the source assumes only dimension one; it should be require every component to have dimension one, excluding P¹_ℝ disjoint union Spec ℂ; affects a stated result. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Proposition 11.3 proof, printed p. 38 (SCH23 lines 1693–1698): the source says the two vertical subconfigurations lie in distinct partner fibres; it should be first exclude their occupying one fibre using the weighted intersection bound; affects the proof. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Proposition 12.3 proof, printed p. 43 (SCH23 lines 1959–1961): the source says full Picard of the generic fibre equals Num(Y)/S; it should be the degree-zero Picard group; affects a stated result. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Proposition 5.4 proof, printed p. 15 (SCH23 lines 646–647): the source says the inverse of O→L² acts on a product in L⁻²; it should be use the dual map L⁻²→O; affects the proof. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
@@ -5844,12 +5879,19 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Proposition 9.3(v) proof, printed p. 25 (SCH23 lines 1126–1128): the source says Tsen makes Br(F₂(t)) vanish; it should be apply Tsen over algebraically closed constants and then descend the classes; affects the proof. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
 - **Error** at Proposition 9.5 proof, printed p. 26 (SCH23 lines 1183–1186): the source says the III* and II* graphs have at most one unmarked terminal vertex; it should be distinguish their two unmarked terminals by multiplicities and distances; affects the proof. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
 - **Gap** at Theorem 2.1(ii), p. 8: the source says label preservation is immediate from (i); it should be first prove κ(a) = k, since a purely inseparable residue extension multiplies k-intersections by its degree squared; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Gap** at Theorem 2.1(ii), p. 8: the source says the source declares label preservation immediate; it should be justify residue-field and multiplicity compatibility, for example by descending geometrically integral component divisors; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Theorem 9.4 proof, printed p. 27 (SCH23 lines 1222–1225): the source says projection to the dual component lattice preserves the square needed for parity; it should be justify the orthogonal complement contribution before concluding evenness; affects the proof. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
+- **Gap** at proof of Lemma 1.1, p. 5: the source says the full Picard scheme after extension and asserts higher-direct-image vanishing; it should be use the τ-component and Leray injectivity, which suffices; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Lemma 1.4, p. 8: the source says the source reverses the degree-two Leray edge; it should be point from base cohomology of h_*G_m to total-space cohomology; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
+- **Gap** at proof of Theorem 2.1, fibre-type case, p. 9: the source says the source infers fixed components from two overlapping negative subcurves; it should be separate each distinct pair using negative self-intersection and nonnegative mutual intersection; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Gap** at the proof of Lemma 1.1, p. 5: the source says the comparison group is the full Picard scheme of X⊗E and that its first direct image vanishes by Lemma 1.4's argument; it should be the τ-component of X⊗E, with Leray injectivity sufficing (no vanishing claim); affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 - **Misprint** at the proof of Lemma 1.4, p. 8: the source says the Leray edge goes from the cohomology of X to that of the base; it should be go from H²(S, h_*G_m) to H²(X, G_m); affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 - **Gap** at the proof of Theorem 2.1, fibre-type case, p. 9: the source says injectivity on two overlapping subcurves fixes all components; it should be separate each pair by (C_i − C_j)·C_i < 0, because the subcurves never contain C₁ and C_r together; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Error** at §1 before Proposition 1.2, p. 6: the source says component maps preserve edges; it should be allow an edge to collapse when its endpoints have the same image; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Error** at §1, paragraph before Proposition 1.2, p. 6: the source says component-preserving maps send edges to edges; it should be edges go to edges or collapse to a vertex (x²+y²=0 over ℝ); affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Misprint** at §2 and proof of Theorem 2.1, pp. 8–9: the source says the source sometimes denotes the surface by X; it should be consistently use S; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §2 and the proof of Theorem 2.1, pp. 8–9: the source says X for the surface in several places; it should be S; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
+- **Error** at §2 before Theorem 2.1, p. 8: the source says the source lists only birational and curve-target contractions; it should be include the structure contraction to Spec k; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at ac20a1e, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2, p. 8: the source says every contraction of S is birational or of fibre type; it should be also list the structure morphism to Spec k, a contraction because h⁰(O_S) = 1; affects nothing. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at 26cf02f, 2026-10-24, claude opus).
 - **Misprint** at §5 rank-two group law, printed p. 14 (SCH23 line 614): the source says the cross term has positive sign with ab=2 and f²=af; it should be have negative sign in that coordinate convention; affects a stated result. Found by EnriquesSurfacesAndIntegralNonexistence (#139 at 9db3d35, 2026-10-23, codex gpt-6-astra).
 
