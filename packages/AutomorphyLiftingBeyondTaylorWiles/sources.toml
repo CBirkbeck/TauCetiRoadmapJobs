@@ -36,7 +36,7 @@ sha256 = "8389edfec6576b92aea1fd4dbf6c96ccb86b2186a6f244ab46c4abf1c02e2bed"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Sections 0.2, 0.4, 1.1, 1.2, 2.1, 2.5, 3.6, 5.4, 5.5, 5.6"]
+cited_for = ["Sections 0.2, 0.4, 1.1, 1.2, 2.1, 2.5, 3.6, 3.7, 5.4, 5.5, 5.6"]
 
 [[source]]
 id = "KT17"
@@ -54,4 +54,4 @@ sha256 = "f8a86b8d7dfd290b9b4199931238f21392cb9c82d609f0879060a890e58ec0b4"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Sections "]
+cited_for = ["Sections 3.6, 3.7"]

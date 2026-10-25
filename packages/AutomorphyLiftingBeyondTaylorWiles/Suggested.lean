@@ -37,10 +37,11 @@ None of the following headline theorems is statable on the pinned carriers:
 * The imaginary-quadratic and defect-zero applications lack those same
   arithmetic cohomology and automorphic carriers.
 
-The conditional weight-zero lifting endpoint (CG18 Theorem 5.16) is consumed
-from ModularityAndLanglandsExtensions Sections 2.7–2.8. README Section 5.8 supplies
-its strengthened-input arithmetic deduction; it is not a second copy of the
-supplier's endpoint.
+The support-to-eigenclass deduction (README Section 5.8) is a variant, under
+the Res PGL_n hypothesis package of README Layer 2, of the conditional
+weight-zero lifting endpoint (CG18 Theorem 5.16) stated by
+ModularityAndLanglandsExtensions Section 2.8 for its GL_n form of Conjecture B;
+it is not a copy of that endpoint.
 
 No simple definitions suffice to supply these missing carriers. In particular,
 an arbitrary complex, a bare polynomial identity or an unspecified automorphy
