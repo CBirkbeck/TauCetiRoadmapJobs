@@ -50,7 +50,7 @@ at these pins using only a few simple definitions on native carriers.
 
 - PA.6.4 — Desingularization by residue-characteristic alterations: not statable. Quasi-excellence and excellence, projective morphisms and SNC boundaries are absent.
 
-- PA.6.5–PA.6.6 — Residue-characteristic desingularization of morphisms and source refinement: not statable. The prime-supported alteration diagram, scheme-theoretic image, SNC boundaries and log smoothness carriers are absent.
+- PA.6.5–PA.6.6 — Residue-characteristic desingularization of morphisms and source refinement: not statable. The prime-supported alteration diagram, SNC boundaries and log smoothness carriers are absent; scheme-theoretic images exist (`AlgebraicGeometry.Scheme.Hom.image`, `AlgebraicGeometry.Scheme.Hom.imageι`, `AlgebraicGeometry.Scheme.Hom.toImage`).
 
 - PA.6.7 — Gabber prime-to-ell alteration theorem over a field: not statable. Projective and quasi-projective morphisms and relative strict normal crossings divisors are absent; residue degrees exist (`AlgebraicGeometry.Scheme.Hom.residueDegree`).
 
