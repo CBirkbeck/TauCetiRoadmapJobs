@@ -12,7 +12,13 @@ Geometric connectedness of the absolute trace-minus-two level stack and the gene
 coarse-degree congruence are not statable at the pins: the elliptic G-level stack,
 its rigidified compactification and its coarse forgetful degree are missing.
 Finite primitive-group structure and its quantitative order and section bounds
-are supporting targets in README.md. The all-prime connectivity conjecture is not asserted.
+are supporting targets in README.md.
+The explicit connectivity criteria of README §§5.13–5.14 are not statable here:
+the cage orbit and its endgame range have no pinned carrier. Alternating
+containment in §7.4a is not stated: it needs the permutation action on the
+sign quotient and its comparison with the Markoff group image. The primitivity
+headline is statable using invariant equivalence relations on native triples.
+The all-prime connectivity conjecture is not asserted.
 -/
 
 open Classical
@@ -213,6 +219,25 @@ def mpCondition (p : ℕ) [Fact p.Prime] : Prop :=
 /-- A composite-modulus point is primitive when every prime reduction is nonzero. -/
 def primitivePoint (n : ℕ) (x : Fin 3 → ZMod n) : Prop :=
   ∀ p : ℕ, p.Prime → ∀ h : p ∣ n, ∃ i, ZMod.castHom h (ZMod p) (x i) ≠ 0
+
+/-- One double sign change negates the two coordinates other than a chosen index. -/
+def signStep {R : Type*} [CommRing R] (x y : Fin 3 → R) : Prop :=
+  ∃ i : Fin 3, y = fun j => if j = i then x j else -x j
+
+/-- Meiri–Puder primitivity: under transitivity and the order condition, an invariant
+ equivalence relation containing the sign changes restricts to sign equivalence or
+ to the universal relation on the nonzero coefficient-one Markoff surface. -/
+theorem block_action_primitive (p : ℕ) [Fact p.Prime] (hp : 5 ≤ p) (hmp : mpCondition p)
+    (htrans : ∀ x y : Fin 3 → ZMod p, markoffEquation 1 x → x ≠ 0 →
+      markoffEquation 1 y → y ≠ 0 → Relation.ReflTransGen (gammaStep 1) x y)
+    (r : (Fin 3 → ZMod p) → (Fin 3 → ZMod p) → Prop) (hr : Equivalence r)
+    (hsign : ∀ x y, signStep x y → r x y)
+    (hvieta : ∀ i x y, r x y → r (vietaMove 1 i x) (vietaMove 1 i y))
+    (hperm : ∀ (σ : Equiv.Perm (Fin 3)) x y, r x y → r (x ∘ σ) (y ∘ σ)) :
+    (∀ x y, markoffEquation 1 x → x ≠ 0 → markoffEquation 1 y → y ≠ 0 → r x y →
+      Relation.ReflTransGen signStep x y) ∨
+    (∀ x y, markoffEquation 1 x → x ≠ 0 → markoffEquation 1 y → y ≠ 0 → r x y) := by
+  sorry
 
 /-- Local transitivity and MP imply one global Vieta word reaches every primitive point. -/
 theorem squarefree_transitivity (n : ℕ) (hn : 1 < n) (hsq : Squarefree n)

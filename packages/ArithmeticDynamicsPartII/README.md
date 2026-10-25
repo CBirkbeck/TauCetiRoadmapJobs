@@ -12,11 +12,11 @@ Tau Ceti owns the commutator trace identity, `Matrix.SpecialLinearGroup.trace_co
 
 General scheme, stack, coarse moduli and stable-curve carriers come from SchemeAndStackFoundations. InverseGaloisAndArithmeticFundamentalGroups §IG.5.4 owns balanced admissible-cover stacks, including connected covers at (g,n)=(1,1). Their center-rigidified elliptic finite-group level specialization, its compactification and its coarse-degree congruence are owned in §6.0, before their finite-field applications and downstream modular geometry. PolynomialGaloisGroupsPartII §4.4 owns Babai’s distinguisher estimate. The primitive-group socle structure and quantitative section theorems needed by the diagonal action are owned in §7.5a; its order bound consumes that estimate. General quotient and action notions retain the library meanings. The Lean predicates on native triples are only notation for acceptance signatures, with comparison to the supplied surface and move definitions; they are not another surface library.
 
-Integral orbit growth, renewal and counting, complex bifurcation and critical-height uniformity are outside these eight layers. All-prime connectivity is a conjectural proposition in §4.4, separate from the eventual and explicit theorems.
+Integral orbit growth, renewal and counting, complex bifurcation and critical-height uniformity are outside these eight layers. All-prime connectivity is a conjectural proposition in §4.4, separate from the eventual and explicit theorems. Alternating containment for general primes p≡3 modulo 4 under MP(p), proved using the classification of finite simple groups in MP18 Theorem 1.4 (§4.3; MP18 line 483), is outside this roadmap; §7.5 uses primitivity and the general primitive-group theory of §7.5a. The finite containment at 11 is included in §7.4a.
 
 ## Conventions
 
-Work over arbitrary commutative rings for polynomial surfaces and moves, fields for weights, and finite fields K of cardinality q=pᶠ for traces. A prime-field theorem has p prime. Put M(R)={x²+y²+z²=3xyz} and X(R)={x²+y²+z²=xyz}; a star removes precisely the origin. Coordinates are ordered, indexed by Fin 3 cyclically. The function-valued zero means all three coordinates vanish. The signature predicate `markoffEquation` also permits an arbitrary coefficient c over a commutative ring; the arithmetic endpoints use c=1 or 3. No claim about nonzero points is made over the zero ring.
+Work over arbitrary commutative rings for polynomial surfaces and moves, fields for weights, and finite fields K of cardinality q=pᶠ for traces. A prime-field theorem has p prime. Put M(R)={x²+y²+z²=3xyz} and X(R)={x²+y²+z²=xyz}; a star removes precisely the origin. ClassicalArithmeticCompletion §4.3 calls the coefficient-three surface X(R), X*(R); these are M(R), M*(R) here, and its §4.111 predicate targets M*. Its §4.58 trace-coordinate surface is the X(R) used here. Coordinates are ordered, indexed by Fin 3 cyclically. The function-valued zero means all three coordinates vanish. The signature predicate `markoffEquation` also permits an arbitrary coefficient c over a commutative ring; the arithmetic endpoints use c=1 or 3. No claim about nonzero points is made over the zero ring.
 
 The supplied twist sends M to X by multiplying each coordinate by 3. Its inverse over R requires 3 to be a unit; its integral bijection uses the separate integral divisibility theorem. Its two-term witness is (1,1,1)↦(3,3,3), followed by (1,1,2)↦(3,3,6). Over 𝔽₃ it is the zero map: M* has eight points and X* is empty. Every use of the twist respects this exception.
 
@@ -52,7 +52,7 @@ Consume §§4.3 and 4.58 for the two surfaces; §§4.23, 4.42–4.44 and 4.62 fo
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
-Consume §IG.3.2, “Branch tuples, Nielsen classes and braids”, in particular “Exterior epimorphisms and T-systems”, for exterior epimorphisms, simultaneous inner conjugacy and precomposition descending to Out(Fᵣ). The target group is the actual finite image, and an exterior epimorphism is a surjection before taking the quotient. Consume §IG.5.4, “Admissible covers and versal families”, specifically “General-genus Hurwitz comparison” and “Admissible stacks and stable marked G-curves”, at (g,n)=(1,1). Use its connected-cover locus over ℤ[1/#H], proper balanced admissible-cover stack, smooth tame-cover locus, base change and vertical automorphisms Z(H). Section 6.0 constructs the center-rigidified level stack and its compactification from these objects; §6.1 supplies the SL₂ trace dictionary.
+Consume §IG.3.2, “Branch tuples, Nielsen classes and braids”, in particular “Exterior epimorphisms and T-systems”, for exterior epimorphisms, simultaneous inner conjugacy and precomposition descending to Out(Fᵣ). Consume §IG.0.T3, “Rational constructible trace formula for all powers”, for compactly supported rational constructible coefficients on separated finite-type schemes over finite fields, with descent, geometric Frobenius and finite-group compatibility. The target group is the actual finite image, and an exterior epimorphism is a surjection before taking the quotient. Consume §IG.5.4, “Admissible covers and versal families”, specifically “General-genus Hurwitz comparison” and “Admissible stacks and stable marked G-curves”, at (g,n)=(1,1). Use its connected-cover locus over ℤ[1/#H], proper balanced admissible-cover stack, smooth tame-cover locus, base change and vertical automorphisms Z(H). Section 6.0 constructs the center-rigidified level stack and its compactification from these objects; §6.1 supplies the SL₂ trace dictionary.
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
@@ -66,9 +66,17 @@ Consume §§1.18–1.19 for stacks in groupoids, stackification, representabilit
 
 Consume WC.5, “Compatibility with curve and elliptic bounds”, WC.5, “The independent surface route to curve bounds”, and WC.7, “Curves and their Jacobians”: for every smooth projective geometrically connected genus-g curve over 𝔽_q and every r≥1, |#C(𝔽_(qʳ))−qʳ−1|≤2gq^(r/2), with genus equal to half the first cohomological dimension. Removing b geometric points changes the count by at most b. Layer 3 proves irreducibility, smooth-model genus and puncture bounds for each cover before applying this theorem; the constant is controlled by those bounds.
 
+### From TauCetiRoadmap.EtaleCohomologyFoundations
+
+Consume §0.7 for localization with supports, §§F.2.4–F.2.5 and F.3 for compactly supported cohomology and finiteness, §F.4.5 for finite-dimensional rational realization and scalar extension, and §§F.5–F.6 for duality and finite-action compatibility. Apply them to smooth curves and their finite étale double covers with a coefficient prime ℓ≠2,p; the deck projectors (1±ι)/2 act on these rational spaces. Localization identifies the boundary contribution and duality identifies the extreme degrees; §3.0 computes their anti-invariant parts for its particular cover.
+
+### From TauCetiRoadmap.DeligneWeightsAndPurity
+
+Consume §1.7, “The weights of H⁰, H¹ and H² of a curve over 𝔽_q”: for smooth projective geometrically connected curves and ℓ∤q, geometric Frobenius on H¹ has absolute value √q under every complex embedding, H⁰ has weight 0 and H² is the Tate line of weight 2. Section 3.0 applies this to the smooth completion of its double cover; finite boundary permutation spaces have weight 0. General lisse-sheaf majoration is not needed for this cover argument.
+
 ### From TauCetiRoadmap.ErdosProgressionPowers
 
-Consume §0.9, “Prime estimates in the progression factorial argument”: for every ε>0 an effective N_ε bounds τ(n)≤n^ε for all n≥N_ε. Section 5.4 supplies the elementary comparison n/φ(n)≤τ(n); §5.14 uses the effective threshold without prescribing a numerical value.
+Consume §0.9, “Prime estimates in the progression factorial argument”: for every ε>0 an effective N_ε bounds τ(n)≤n^ε for all n≥N_ε. Section 3.0 supplies the elementary comparison n/φ(n)≤τ(n); §5.14 uses the effective threshold without prescribing a numerical value.
 
 ### From TauCetiRoadmap.PolynomialGaloisGroupsPartII
 
@@ -288,7 +296,7 @@ Obtain the giant orbit from increasing rotation orders and uniform arithmetic es
 
 ### 3.0 Finite-field curve estimates
 
-Develop the following general estimates, using the supplier smooth-model and sharp curve bound rather than a point-count constant that depends invisibly on the cover. For odd q, let C be a geometrically connected smooth curve over 𝔽_q, C̄ its smooth projective completion of genus g, and f a nonzero rational function on C̄ that is not a square after extending constants to 𝔽̄_q. Let S be a finite Frobenius-stable set of geometric points containing the entire boundary C̄∖C and every zero and pole of f, and put s=#S and U=C̄∖S. Construct the geometrically connected finite étale Kummer double cover U_f→U given by w²=f. Prove |Σ_(x∈U(𝔽_q)) χ_q(f(x))|≤(2g−2+s)√q, where χ_q is the quadratic character. The bound comes from the anti-invariant compactly supported cohomology of this cover; its dimension is 2g−2+s, and its Frobenius eigenvalues have absolute value at most √q. Even-order zeros and poles and all original boundary points are included in S. For a nonconstant squarefree degree-d polynomial (d≥1) on the affine line this gives |Σ_x χ(f(x))|≤(d−1)√q. A nonzero constant square gives q and is excluded; f=X over 𝔽₅ gives 0; f=X(X−1) gives −1. Distinct-root and pole divisors, rather than the printed degree alone, govern the rational-function form. (CZ13, §4, pp. 1936–1939; CZ13 line 110; WeilConjectures WC.5 curve-bound comparison.)
+Develop the following general estimates, using the supplier smooth-model and sharp curve bound rather than a point-count constant that depends invisibly on the cover. For odd q, let C be a geometrically connected smooth curve over 𝔽_q, C̄ its smooth projective completion of genus g, and f a nonzero rational function on C̄ that is not a square after extending constants to 𝔽̄_q. Let S be a finite Frobenius-stable set of geometric points containing the entire boundary C̄∖C and every zero and pole of f, and put s=#S and U=C̄∖S. Construct the geometrically connected finite étale Kummer double cover U_f→U given by w²=f. Prove |Σ_(x∈U(𝔽_q)) χ_q(f(x))|≤(2g−2+s)√q, where χ_q is the quadratic character. Use rational ℓ-adic coefficients with ℓ≠2,p and geometric Frobenius. Let r be the number of points of S at which f has odd order. Riemann–Hurwitz gives genus g_f=2g−1+r/2 for the smooth projective double cover. Pullback and trace identify its deck-invariant H¹ with H¹(C̄), so its anti-invariant H¹ has dimension 2g_f−2g=2g−2+r and is pure of weight 1. Localization adds an anti-invariant boundary space of dimension s−r, with weight 0; the anti-invariant H⁰_c and H²_c vanish because the cover is geometrically connected. Thus the anti-invariant H¹_c has dimension 2g−2+s, with Frobenius eigenvalues of absolute value at most √q. The supplied trace formula identifies the character sum with minus its Frobenius trace. This uses projective purity and localization, beyond an estimate for two point counts. Even-order zeros and poles and all original boundary points are included in S. For a nonconstant squarefree degree-d polynomial (d≥1) on the affine line this gives |Σ_x χ(f(x))|≤(d−1)√q. A nonzero constant square gives q and is excluded; f=X over 𝔽₅ gives 0; f=X(X−1) gives −1. Distinct-root and pole divisors, rather than the printed degree alone, govern the rational-function form. (CZ13, §4, pp. 1936–1939; CZ13 line 110; DeligneWeightsAndPurity §1.7; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3.)
 
 For the cover attached to (C̄,S,f), the defining API is:
 
@@ -307,9 +315,28 @@ For every integer d≥1 and real δ>0, prove that there exist ε>0 and Z such th
 - For f=X(X−1)² on ℙ¹ over 𝔽₅, the even-order zero 1 remains in S={0,1,∞}; the sum is −1 and 1≤√5. On U the equation w²=f is étale, whereas retaining the zero in its base would destroy this property.
 - For the curve x+y=1 over 𝔽₅ and m=n=4, there are 3 torus points; χ=1, d₁=d₂=1 and the bound is max(3·32^(1/3),192/5), which exceeds 3. The two terms have different roles.
 - The diagonal x=y meets μ₄×μ₄ in 4 points, but is a subtorus and is excluded from the gcd and low-order statements. The non-square condition also excludes f=X², whose quadratic-character sum over 𝔽₅ is 4 rather than 0.
-- For the Markoff curve αx+β/x=y+y⁻¹, the smooth model has g=1 and four boundary points, so χ=4. Taking χ=3 from only the three projective points at infinity gives the wrong constant.
+- In odd characteristic, for a≠0,±2 and αβ=a²/(a²−4), the curve αx+β/x=y+y⁻¹ has a genus-one smooth model and four boundary points, so χ=4. Over 𝔽₅, a=1, α=1, β=3 gives αβ=3≠0,1. In contrast α=β=1 gives (x−y)(xy−1)=0 after clearing units: two rational components, excluded from this genus-one assertion.
+- On E:y²=x³−x over 𝔽₅, take f=x and S={(0,0),∞}. Here div(x)=2(0,0)−2∞ and the class of (0,0)−∞ is nontrivial two-torsion, so f is geometrically nonsquare; the double cover is unramified, with g=g_f=1 and r=0. The six remaining points give character sum 1−2−2+1=−2. The projective anti-invariant dimension is 0, the boundary dimension is 2, and 2≤2√5; omitting the boundary would predict the false bound 2≤0.
 
-*Needs:* SchemeAndStackFoundations §§3.1–3.3, 5.9–5.11; WeilConjectures WC.5 and WC.7 sharp curve and model comparison; native finite fields, function fields, divisors and resultants; Mathlib `quadraticChar`; for the Kummer target, the smooth projective completion C̄, the full boundary in S, and the finite étale cover over U=C̄∖S defined above. The arithmetic elimination target is: for every degree bound d there exist positive constants A_d,C_d such that, for every T≥2, there is a nonzero integer U(d,T) with at most C_d T^A_d prime divisors, and for every prime not dividing U every degree-at-most-d polynomial with no translated-subtorus factor has at most 11d³+d torus zeros with ord(x)+ord(y)<T. Establish this coefficient-uniform statement from CKSZ14 §4, treating d=1 separately. Choosing T=z^(δ/(2A_d)) and then increasing Z absorbs C_d and gives the claimed subpower exceptional set.
+*Needs:* SchemeAndStackFoundations §§3.1–3.3 (including §3.2 Riemann–Hurwitz), 5.9–5.11; WeilConjectures WC.5 and WC.7 sharp curve and model comparison; DeligneWeightsAndPurity §1.7 projective-curve purity; EtaleCohomologyFoundations §0.7, §§F.2.4–F.2.5, F.3, F.4.5 and F.5–F.6 localization, rational compact supports and duality; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3 rational constructible trace formula; native finite fields, function fields, divisors and resultants; Mathlib `quadraticChar`; for the Kummer target, the smooth projective completion C̄, the full boundary in S, and the finite étale cover over U=C̄∖S defined above. The arithmetic elimination target is: for every degree bound d there exist positive constants A_d,C_d such that, for every T≥2, there is a nonzero integer U(d,T) with at most C_d T^A_d prime divisors, and for every prime not dividing U every degree-at-most-d polynomial with no translated-subtorus factor has at most 11d³+d torus zeros with ord(x)+ord(y)<T. Establish this coefficient-uniform statement from CKSZ14 §4, treating d=1 separately. Choosing T=z^(δ/(2A_d)) and then increasing Z absorbs C_d and gives the claimed subpower exceptional set.
+
+For every integer n≥1, prove n/φ(n)≤τ(n): at n=1 both sides are 1; for each prime-power factor p^a with a≥1, p/(p−1)≤2≤a+1, and multiplication gives the claim. Thus φ(n)>0 on the entire stated domain. This elementary target uses the native totient and divisor count, not an additional analytic supplier. (EFLMT24, Appendix Proposition 6.1, pp. 28–29; EFLMT24 line 1306.)
+
+**Checks.**
+
+- For n=1, n/φ(n)=1=τ(n).
+- For n=12, n/φ(n)=3≤6=τ(n); for n=2, equality is 2=2.
+- At n=0, φ(0)=0 and the real quotient is the totalized value 0/0=0; the Euler-factor proof and positive-denominator assertion require n≥1.
+
+*Needs:* Mathlib `Nat.totient_eq_prod_factorization`; Mathlib `Nat.card_divisors`.
+
+### 3.0a The symmetric root orbit
+
+For every prime p, on coefficient-three M*(F_p), Γ(p)·(1,1,1)=V(p)·(1,1,1). Hence Γ(p) is transitive iff G_p is connected. By ClassicalArithmeticCompletion §4.111 `markoffStrongApproximation_iff_orbit`, these conditions are equivalent to its positive prime strong-approximation predicate. (M25, §1, pp. 623–624; locator-only citation; BGS16, §1, pp. 1–2; BGS16 line 8.)
+
+One proof route is as follows. Use normality of V to move every coordinate permutation in a Γ-word to the right. Every coordinate permutation fixes the root, so it disappears on evaluation.
+
+*Needs:* SchemeAndStackFoundations §§0.1–0.2; §0.1; §0.3; ClassicalArithmeticCompletion §4.92; ClassicalArithmeticCompletion §4.106; ClassicalArithmeticCompletion §4.111.
 
 ### 3.1 The cage
 
@@ -323,7 +350,7 @@ The defining API is:
 
 **Checks.**
 
-- Having merely a coordinate of order dividing p−1 is insufficient: the required order is p−1.
+- At p=13, (0,1,8) lies on X*: its coordinate eigenvalue orders are 4,6,7, so it is outside the cage. In contrast (9,0,6) has order-12 coordinate 9, and (2,0,3) is parabolic; both belong to the cage predicate. These test membership independently of the eventual single-orbit theorem.
 - For p≡3 mod4 no parabolic point is added, since those slices are empty.
 - At a=0 an eigenvalue has order 4; it is not treated as a generic maximal-order nondegenerate trace.
 
@@ -345,7 +372,7 @@ Fix δ>0. For sufficiently large p, any nondegenerate rotation orbit of length L
 
 One proof route is as follows. Write the intersection as αt+β/t=y+y⁻¹ with αβ=κ≠1. Use BGS Lemma 8’s factorization argument for irreducibility of the power-cover curves, with uniform genus and puncture bounds, then apply the sharp curve Weil bound in the supplier contract. Use Möbius inclusion-exclusion over divisors of p±1 and `phi(n)/n = n^(-o(1))` to obtain positive primitive counts. The Möbius sum P(H) counts pairs (cycle parameter t, primitive eigenvalue y). Each resulting cycle point has exactly the two inverse choices y,y⁻¹ for a nonparabolic primitive trace. Divide P(H) by 2; the norm-one case has the same factor. Positivity and the eventual endgame are unchanged. Combine primitive intersections to connect maximal slices, including the explicit parabolic adapters.
 
-*Needs:* §3.1; §3.2; §2.2; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”; WeilConjectures, WC.5, “Compatibility with curve and elliptic bounds”, and WC.5, “The independent surface route to curve bounds”.
+*Needs:* §3.1; §3.2; §2.2; §3.0 elementary totient comparison; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”; WeilConjectures, WC.5, “Compatibility with curve and elliptic bounds”, and WC.5, “The independent surface route to curve bounds”.
 
 ### 3.4 The middle game
 
@@ -383,7 +410,7 @@ The headline `sparse_exceptional_primes` uses the equivalent coefficient-three d
 
 One proof route is as follows. Apply the arithmetic low-order curve theorem §3.0 to the degree-four curves obtained by eliminating the fixed Markoff coordinate in eigenvalue variables. Verify that these curves have no component contained in a translate of a subtorus; isolate the finitely many exceptional fixed coordinates. Outside at most T^ε primes, all but boundedly many points on each relevant curve have a coordinate of order at least p^η. The opening-game lower bound eventually exceeds the bounded exceptional set, so every orbit enters the cage.
 
-*Needs:* §3.5; §3.4; §3.0 arithmetic low-order curve estimate.
+*Needs:* §3.5; §3.4; §3.0 arithmetic low-order curve estimate; §3.0a symmetric-root bridge; §0.4 for p=2,3; ClassicalArithmeticCompletion §4.108 for p≠3.
 
 ### Examples
 
@@ -391,7 +418,7 @@ For a=1 over 𝔽₅, κ=1/(1−4)=3≠1, and the nonsplit slice has 6 points. T
 
 ### Dependencies
 
-SchemeAndStackFoundations §§3.1–3.3, 5.9–5.11; §2.1; §2.2; §3.0 quadratic-character, function-field gcd and arithmetic low-order estimates; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”; WeilConjectures, WC.5, “Compatibility with curve and elliptic bounds”, and WC.5, “The independent surface route to curve bounds”; Mathlib `RingOfIntegers.dvd_norm`; Mathlib `Algebra.norm_eq_prod_embeddings`; Mathlib `Algebra.norm_ne_zero_iff`; Mathlib `IsCyclotomicExtension.finrank`; §2.3.
+SchemeAndStackFoundations §§3.1–3.3, 5.9–5.11; DeligneWeightsAndPurity §1.7; EtaleCohomologyFoundations §0.7, §§F.2.4–F.2.5, F.3, F.4.5 and F.5–F.6; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3; §0.1; §0.3; ClassicalArithmeticCompletion §§4.92, 4.106, 4.108 and 4.111; §2.1; §2.2; §3.0 quadratic-character, function-field gcd and arithmetic low-order estimates; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”; WeilConjectures, WC.5, “Compatibility with curve and elliptic bounds”, and WC.5, “The independent surface route to curve bounds”; Mathlib `RingOfIntegers.dvd_norm`; Mathlib `Algebra.norm_eq_prod_embeddings`; Mathlib `Algebra.norm_ne_zero_iff`; Mathlib `IsCyclotomicExtension.finrank`; §2.3.
 
 ## Layer 4: prime approximation and the symmetric root
 
@@ -405,7 +432,6 @@ The defining API is:
 
 - Every residue point has an integral preimage precisely when this canonical point map is surjective.
 - An integral isomorphism of affine varieties preserves the predicate, by its commuting square with reduction.
-- Connectedness of the prime Markoff graph implies the affine predicate after adjoining the origin, with the coefficient-three and coefficient-one comparison as in §4.3.
 
 **Checks.**
 
@@ -413,15 +439,7 @@ The defining API is:
 - For x²+1=0 the residues 2 and 3 modulo 5 satisfy the equation, whereas there is no integer root. The affine predicate is false despite two residue points.
 - On the Markoff surface at modulus 65 the mixed point (40,40,40) is a residue point without an integral lift; restricting to the primitive locus changes the assertion.
 
-*Needs:* SchemeAndStackFoundations §§0.1–0.2 relative spectra and base change; ClassicalArithmeticCompletion §§4.3, 4.58 and 4.111; §4.3 for the Markoff comparison.
-
-### 4.1 The symmetric root orbit
-
-For every prime p, on coefficient-three M*(F_p), Γ(p)·(1,1,1)=V(p)·(1,1,1). Hence Γ(p) is transitive iff G_p is connected. By ClassicalArithmeticCompletion §4.111 `markoffStrongApproximation_iff_orbit`, these conditions are equivalent to its positive prime strong-approximation predicate. (M25, §1, pp. 623–624; locator-only citation; BGS16, §1, pp. 1–2; BGS16 line 8.)
-
-One proof route is as follows. Use normality of V to move every coordinate permutation in a Γ-word to the right. Every coordinate permutation fixes the root, so it disappears on evaluation.
-
-*Needs:* SchemeAndStackFoundations §§0.1–0.2; §0.1; §0.3; ClassicalArithmeticCompletion §4.92; ClassicalArithmeticCompletion §4.106; ClassicalArithmeticCompletion §4.111.
+*Needs:* SchemeAndStackFoundations §§0.1–0.2 relative spectra and base change; ClassicalArithmeticCompletion §§4.3, 4.58 and 4.111.
 
 ### 4.2 Eventual Markoff connectivity
 
@@ -431,7 +449,7 @@ The headlines `eventual_connectivity` and `eventual_positive_lifting` express re
 
 One proof route is as follows. The complement is stable under all Vieta moves, so its size is divisible by p. A multiple of p smaller than p is zero. Apply the giant theorem with ε=1/2 and transport coefficients using ClassicalArithmeticCompletion §4.108 for p>3. Use the root bridge to obtain graph connectivity and the integer lift.
 
-*Needs:* §1.4; §3.6; §4.1.
+*Needs:* §1.4; §3.6; §3.0a.
 
 ### 4.3 Prime strong approximation
 
@@ -441,7 +459,7 @@ The headline `prime_affine_lifting` has connectivity as its hypothesis and inclu
 
 One proof route is as follows. Lift a nonzero point by a Vieta word applied to the root over Z. Lift the origin by the origin; transport through the twist only when legal. Separate p=3 rather than invert 3.
 
-*Needs:* §4.1; §0.4; ClassicalArithmeticCompletion §4.108; ClassicalArithmeticCompletion §4.101; ClassicalArithmeticCompletion §4.58.
+*Needs:* §3.0a; §0.4; ClassicalArithmeticCompletion §4.108; ClassicalArithmeticCompletion §4.101; ClassicalArithmeticCompletion §4.58.
 
 ### 4.4 All-prime connectivity conjecture
 
@@ -457,11 +475,11 @@ The defining API is:
 
 - Its p=2 specialization is true by the four-vertex graph.
 - Its p=3 specialization refers to the eight coefficient-three vertices, not to an empty graph.
-- The proposition holds iff the positive root reduction is surjective for every prime, with the same universal quantifier.
+- At p=5 the coefficient-three nonzero graph has one component of size 40; adjoining the origin gives components of sizes 40 and 1, so the full affine graph is disconnected.
 
 One proof route is as follows. Package the universal statement as a proposition over Nat primes. Record the elementary small-prime checks and the eventual theorem as evidence, without proving the universal quantifier.
 
-*Needs:* §0.2; §4.1.
+*Needs:* §0.2; §3.0a.
 
 ### Examples
 
@@ -527,15 +545,7 @@ For a prime p>3 in the explicitly proved cage/endgame range, disconnectedness im
 
 One proof route is as follows. Take the largest order d in the complement; rotations cannot increase it without leaving the complement. Cover its lower coordinate orders by maximal divisors and sum the local intersection estimate: d≤(3/2)M max((32d²)^(1/3),16d²/p). The two terms give d≤108M³ or d≥p/(24M). Count all low-order points and compare with 4p to obtain the lower bound in the first case. Use the explicit endgame cutoff K_p^± for the upper bound in the second. Recheck equality cases instead of importing the source’s strict inequalities unchanged.
 
-For every integer n≥1, prove n/φ(n)≤τ(n): at n=1 both sides are 1; for each prime-power factor p^a with a≥1, p/(p−1)≤2≤a+1, and multiplication gives the claim. Thus φ(n)>0 on the entire stated domain. This elementary target uses the native totient and divisor count, not an additional analytic supplier. (EFLMT24, Appendix Proposition 6.1, pp. 28–29; EFLMT24 line 1306.)
-
-**Checks.**
-
-- For n=1, n/φ(n)=1=τ(n).
-- For n=12, n/φ(n)=3≤6=τ(n); for n=2, equality is 2=2.
-- At n=0, φ(0)=0 and the real quotient is the totalized value 0/0=0; the Euler-factor proof and positive-denominator assertion require n≥1.
-
-*Needs:* §5.1; §5.2; §5.3; §3.3; Mathlib `Nat.totient_eq_prod_factorization`; Mathlib `Nat.card_divisors`.
+*Needs:* §5.1; §5.2; §5.3; §3.3; §3.0 elementary totient comparison.
 
 ### 5.5 Reducing functions
 
@@ -652,21 +662,21 @@ The criterion has the following API:
 
 One proof route is as follows. Choose reduced representatives n₋,n₊ from §5.8 and select n among them with larger central rank C. Section 5.10 bounds M_d(p) by 2C. The first order interval gives the strict inequality in the last Check, while n+2≤4p. Its contradiction and the assumed exclusion of the second interval eliminate every obstruction in §5.4.
 
-*Needs:* §5.10; §5.8; §5.4; §4.1.
+*Needs:* §5.10; §5.8; §5.4; §3.0a.
 
 ### 5.14 Connectivity above a uniform threshold
 
 Let L≥3 be an integer. Suppose the cage/endgame and sign-invariance hypotheses of §§5.3–5.4 hold for every prime p>L, the second order interval is empty at every such prime, and n+2≥1492992C(n)⁸ for every reduced integer n≥L. Prove connectivity and positive integral lifting for every prime p>L. The endpoint is specified by these uniform inequalities, without an asserted numerical value. (EFLMT24, Theorem 4.2, pp. 21–22; EFLMT24 line 974; the constants follow from §5.1.)
 
-One proof route is as follows. Apply §5.13 with U=p and then §4.1. The effective divisor-subpower estimate supplies thresholds for the rank and second-interval inequalities: once τ(n)≤n^(1/16), the rank bound follows for n≥1492992². Writing B_p=τ(p−1)+τ(p+1), §5.4 gives K_p^±≤8√p·τ(p±1)². Thus K_p^±<p/(24B_p) follows from 384(p+1)^(3/16)<√p, which holds for all sufficiently large p. Since M_d(p)≤B_p, this excludes the second interval. These estimates do not replace the separately quantified cage/endgame hypothesis.
+One proof route is as follows. Apply §5.13 with U=p and then §3.0a. The effective divisor-subpower estimate supplies thresholds for the rank and second-interval inequalities: once τ(n)≤n^(1/16), the rank bound follows for n≥1492992². Writing B_p=τ(p−1)+τ(p+1), §5.4 gives K_p^±≤8√p·τ(p±1)². Thus K_p^±<p/(24B_p) follows from 384(p+1)^(3/16)<√p, which holds for all sufficiently large p. Since M_d(p)≤B_p, this excludes the second interval. These estimates do not replace the separately quantified cage/endgame hypothesis.
 
 **Checks.**
 
 - If τ(n)≤n^(1/16), then 1492992C(n)⁸≤1492992√n≤n at n≥1492992²; the same bound holds for n+2.
 - After substituting the divisor-subpower upper bounds, the sufficient second-interval comparison becomes 384(p+1)^(3/16)<√p; for p≥2, the stronger integer inequality p⁵>8·384¹⁶ suffices because p+1≤2p.
-- A threshold satisfying only the rank inequality does not meet the theorem's hypotheses: the second interval and the cage/endgame range are independent inputs.
+- At p=5,d=1, M₁(5)=2 and K₅⁻=48√5. Thus 5/48≤1≤48√5, so the second order interval is nonempty and its exclusion is a substantive hypothesis.
 
-*Needs:* §5.13; §4.1; §5.4; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”.
+*Needs:* §5.13; §3.0a; §5.4; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”.
 
 ### Examples
 
@@ -674,7 +684,7 @@ For 12 the rank polynomial is 1+2T+2T²+T³ and M₆(12)={4,6}. At n=4 the rank-
 
 ### Dependencies
 
-§2.2; §3.0 function-field gcd bound; Mathlib `Nat.divisors`; Mathlib `Nat.totient`; Mathlib `Nat.card_divisors`; Mathlib `ArithmeticFunction.cardFactors`; §1.4; §3.1; §3.3; Mathlib `Nat.minFac`; §4.1; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”.
+§2.2; §3.0 function-field gcd bound; Mathlib `Nat.divisors`; Mathlib `Nat.totient`; Mathlib `Nat.card_divisors`; Mathlib `ArithmeticFunction.cardFactors`; §1.4; §3.1; §3.3; Mathlib `Nat.minFac`; §3.0a; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”.
 
 ## Layer 6: oriented traces and level structures
 
@@ -694,10 +704,11 @@ The defining API is:
 **Checks.**
 
 - For H trivial, the identity elliptic cover has one exterior epimorphism and ord(c)=1. Its reduced ramification divisor is empty, of degree 0, whereas the full marked fibre has degree 1. There is no ramification component here, so neither d nor its marked cotangent-character exponent is supplied by this construction. The unramified object remains in Level(H). (C24, Definition 2.2.2 and Proposition 2.2.3, p. 324; C24 line 956 and line 963.)
-- For H=SL₂(𝔽₅) and noncentral trace −2, ord(c)=10, d=1 and m∣24; the degree 40 of the Markoff component gives 12·10∣24·40, namely 120∣960. The scalar −I has order 2 and is excluded.
+- For H=SL₂(𝔽₅) and noncentral trace −2, ord(c)=10, d=1 and m∣24. The trace orbit has size 40; its H-level coarse component has degree 40 or 80 according to the diagonal normalizer factor, giving 120∣960 or 120∣1920. The scalar −I has order 2 and is excluded. (C24 line 4568.)
 - For H=SL₂(𝔽₄), a nonsplit element of order 5 has centralizer order 5 and vertical center 1; its torus quotient is 1. A split-only characteristic-two model would instead use the impossible divisor 5 of 3.
+- The nonsplit-torus normalizer D₁₀≤SL₂(𝔽₄) is absolutely irreducible but dihedral. A generating-pair commutator has order 5, and its cusp forces 5∣m, contradicting m∣12 if the non-dihedral hypothesis were omitted. Its coarse component has degree 3, consistent with the general finite-group theorem. (C24 lines 3493–3509.)
 
-Over an algebraically closed characteristic-zero field, prove also the general finite-group degree congruence. If ℓ is prime, r=v_ℓ(ord c), v_ℓ(#H)=r+s, no proper normal subgroup of H has order divisible by ℓ^(j+1), and r≥3s+j, then ℓ^ceil((r−3s−j)/2) divides the coarse degree of every nonempty c-component. Derive the finite-SL₂ refinement by bounding the actual vertical and cotangent character exponents: m∣24 in odd characteristic and m∣12 in even characteristic; centralizer quotient divides (q−1)/ord(c) or (q+1)/ord(c), according to splitting. For odd prime-field noncentral trace −2, the centralizer has order 2p, hence quotient 1. Prove the corresponding degree divisibility before passing to trace orbits. (C24, Theorem 1.1.1(a), p. 304, Corollary 4.12.5, p. 391, and Theorem 5.4.3, p. 412; C24 line 154, line 3599 and line 4501.)
+Over an algebraically closed characteristic-zero field, prove also the general finite-group degree congruence. If ℓ is prime, r=v_ℓ(ord c), v_ℓ(#H)=r+s, no proper normal subgroup of H has order divisible by ℓ^(j+1), and r≥3s+j, then ℓ^ceil((r−3s−j)/2) divides the coarse degree of every nonempty c-component. For q≥3 and an absolutely irreducible subgroup H≤SL₂(𝔽_q) not of dihedral type, choose a nonempty component with noncentral ramification element c∈H and tr(c)≠2. On a ramification component the actual cotangent-character exponent satisfies m∣24 for odd q and m∣12 for even q. If c is semisimple, the ramification degree d divides |C_H(c)/⟨c⟩|, which divides (q−1)/ord(c) in the split case and (q+1)/ord(c) in the nonsplit case. These restrictions apply to the actual image H, including proper subgroups. For odd prime-field noncentral trace −2, the centralizer has order 2p, hence quotient 1. Prove the corresponding degree divisibility before passing to trace orbits. (C24, Theorem 1.1.1(a), p. 304, Corollary 4.12.5, p. 391, and Theorem 5.4.3, p. 412; C24 line 154, line 3599, lines 4429–4447 and line 4501.)
 
 *Needs:* ArithmeticGaloisRepresentations §4.4 (finite projective subgroup classification); SchemeAndStackFoundations §§1.18–1.19, 1.21, 1.23 and 4.15; InverseGaloisAndArithmeticFundamentalGroups §§IG.3.2 and IG.5.4 exterior epimorphisms, general-genus Hurwitz comparison and connected balanced admissible-cover stacks; the determinant-one orbit specialization and, for the ramification/cotangent congruence, ord(c)>1 and a chosen nonempty component of the reduced ramification divisor in this subsection. The ramification and degeneration work has the following outputs: at a smooth marked ramification point its vertical automorphisms are Z(H)∩⟨c⟩; the boundary centralizer action embeds in the corresponding finite-group cusp automorphism group; and the full cotangent-character exponent divides 12 times the vertical exponent. Establish these on the admissible-cover stack before applying the coarse-degree identity. The prime-power automorphism estimate is the general finite-group theorem quantified above, not a hypothesis containing the required congruence. (C24, Proposition 3.5.2, Theorems 4.10.3 and 4.10.5 and Corollary 4.12.5; C24 line 2361, line 3340, line 3429 and line 3599.)
 
@@ -740,7 +751,7 @@ The defining API is:
 
 - Over F₅, a noncentral trace −2 matrix has order 10, whereas the scalar −I has order 2.
 - Over F₄, a nonidentity unipotent trace-zero matrix has order 2.
-- In a semisimple slice the trace order agrees with Layer 2’s eigenvalue order, independent of the inverse root.
+- Over 𝔽₇, trace 1 has inverse eigenvalues 3 and 5, each of order 6; trace 6 has inverse eigenvalues 2 and 4, each of order 3. Changing the trace sign can change the order, while inversion cannot.
 
 One proof route is as follows. Use the Jordan forms of noncentral two-by-two determinant-one matrices to prove independence of the chosen element. Use λ↔λ⁻¹ invariance in the semisimple cases. Separate noncentral Jordan matrices from the scalar matrices ±I.
 
@@ -804,7 +815,7 @@ Keep the same word at every prime, proving independence before applying integral
 
 ### 7.1 Primitive squarefree locus
 
-For `n = prod_(p in S) p` with S a nonempty finite set of distinct primes ≥5, let X_prim(n) be the coefficient-one solutions over ZMod n whose reduction at every p∈S is nonzero. CRT identifies this set with `prod_(p in S) X*(F_p)`. Γ acts diagonally by the same integral word at every prime. The similarly defined M_prim(n) is equivalent by the factor-three twist. This is stricter than merely deleting the global origin. (MP18, §1, pp. 3–4; MP18 line 121; C24, Theorem 5.5.8(a), p. 417; C24 line 4680.)
+For `n = prod_(p in S) p` with S a nonempty finite set of distinct primes, let X_prim(n) be the coefficient-one solutions over ZMod n whose reduction at every p∈S is nonzero. CRT identifies this set with `prod_(p in S) X*(F_p)`. Γ acts diagonally by the same integral word at every prime. The similarly defined M_prim(n) is equivalent by the factor-three twist when 3∤n. This is stricter than merely deleting the global origin. (MP18, §1, pp. 3–4; MP18 line 121; C24, Theorem 5.5.8(a), p. 417; C24 line 4680.)
 
 The predicate `primitivePoint` is the actual local nonvanishing condition using the canonical ring maps to prime factors.
 
@@ -827,7 +838,9 @@ One proof route is as follows. Iterate the binary Chinese remainder ring equival
 
 ### 7.2 Sign blocks
 
-For odd p, let K₄ act on X*(F_p) by double sign changes and Y*(p)=X*(F_p)/K₄. Its four-element blocks are [x,y,z]={ (x,y,z),(x,−y,−z),(−x,y,−z),(−x,−y,z) }. Γ normalizes K₄, hence induces a permutation image Q_p on Y*(p). Use Mathlib’s block and preprimitive-action predicates to discuss the Q_p action; Y* itself is a quotient by signs, not the set of Γ-orbits. (MP18, §1, pp. 2–3; §2, pp. 6–8; MP18 line 64.)
+For every prime p, let K₄ act on X*(F_p) by double sign changes and Y*(p)=X*(F_p)/K₄. For odd p its four-element blocks are [x,y,z]={ (x,y,z),(x,−y,−z),(−x,y,−z),(−x,−y,z) }. Γ normalizes K₄, hence induces a permutation image Q_p on Y*(p). Use Mathlib’s block and preprimitive-action predicates to discuss the Q_p action; Y* itself is a quotient by signs, not the set of Γ-orbits. (MP18, §1, pp. 2–3; §2, pp. 6–8; MP18 line 64.)
+
+The signature relation `signStep` negates the two coordinates other than one chosen index. Its reflexive transitive closure is the K₄ orbit relation on native triples. At p=2 this is equality, so Y*(2)=X*(𝔽₂) with singleton blocks.
 
 The defining API is:
 
@@ -840,9 +853,10 @@ The defining API is:
 
 - At p=5 the quotient has 10 blocks; at p=7 it has 7.
 - The sign block of (3,3,3) has four points, whereas the full Γ-orbit at p=5 has 40.
-- At p=2 the four displayed signs coincide; the odd-characteristic four-element statement fails.
+- At p=2 the four displayed signs coincide, so all four points give singleton blocks. The three Vieta moves swap 111 with 011, 101 and 110 respectively; these star transpositions generate Q₂=S₄.
+- Over 𝔽₅, a sign step fixing coordinate 0 sends 333 to 322, whereas 233 is not sign-equivalent to 333: its sign product is −1. Composing the sign steps fixing 0 and 1 gives the one fixing 2, while repeating one gives the identity. Thus the closure includes equality and precisely the even sign changes.
 
-One proof route is as follows. Freeness follows because two zero coordinates force the origin. Check conjugation of each Vieta move and coordinate permutation on K₄, then descend the action. Import the existing primitive-action carrier rather than define another general block theory.
+One proof route is as follows. For odd p, freeness follows because a fixed nonidentity double sign change forces two zero coordinates, hence the origin. At p=2 the action is trivial. Check conjugation of each Vieta move and coordinate permutation on K₄, then descend the action. Import the existing primitive-action carrier rather than define another general block theory.
 
 *Needs:* §0.1; §7.1; Mathlib `MulAction.IsBlock`; Mathlib `MulAction.IsPreprimitive`.
 
@@ -862,7 +876,7 @@ The defining API is:
 
 - MP(5) and MP(13) hold by the first branch.
 - MP(7) fails the order branch: any order divides 6 or 8, while the square threshold is 8192.
-- The two roots for p≠5 are inverse, so their computed multiplicative orders must coincide.
+- Over 𝔽₁₁, T²−3T+1 has inverse roots 5 and 9, both of order 5. Thus 25<1024·12=12288 and MP(11) is false; §7.4a supplies its separate finite-action input.
 
 One proof route is as follows. Solve T²−3T+1 in `F_(p^2)`; the product of its roots is 1. Use inversion invariance of order. For p≡3 mod4 use the squared exact inequality (ord ω)²≥1024(p+1) to avoid an executable real square root.
 
@@ -870,7 +884,7 @@ One proof route is as follows. Solve T²−3T+1 in `F_(p^2)`; the product of its
 
 ### 7.4 Primitivity of the Markoff block action
 
-For p≥5, if Γ is transitive on X*(F_p) and MP(p) holds, then Q_p acts primitively on Y*(p). In the p≡1 mod4 branch, transitivity of Q_p alone suffices for this primitivity conclusion: a nontrivial block containing the parabolic p-cycle must contain all parabolic slices and is Γ-invariant. For p≡3 mod4, any proper block has at least two homogeneous coordinate types and meets a sufficiently long rotation cycle in at most one point of a given signed coordinate. (MP18, §3, p. 9; Theorem 4.1 and Propositions 4.2–4.3, pp. 9–17; MP18 line 485.)
+For p≥5, if Γ is transitive on X*(F_p) and MP(p) holds, then Q_p acts primitively on Y*(p). The headline `block_action_primitive` expresses this on native triples: any equivalence relation containing the double sign changes and invariant under every Vieta move and coordinate permutation restricts on X* either to sign equivalence or to the universal relation. In the p≡1 mod4 branch, transitivity of Q_p alone suffices for this primitivity conclusion: a nontrivial block containing the parabolic p-cycle must contain all parabolic slices and is Γ-invariant. For p≡3 mod4, any proper block has at least two homogeneous coordinate types and meets a sufficiently long rotation cycle in at most one point of a given signed coordinate. (MP18, §3, p. 9; Theorem 4.1 and Propositions 4.2–4.3, pp. 9–17; MP18 line 485.)
 
 One proof route is as follows. Use the parabolic p-cycle and its intersections for p≡1 mod4; no Jordan or CFSG theorem is needed just for primitivity. For p≡3 mod4 prove the two-homogeneous-coordinate property using the index-at-most-two rotation subgroup. Parametrize two long split or norm-one cycles and count simultaneous type mismatches via quadratic characters. Show the polynomials k₁,k₂,k₁k₂ are not squares by their root divisors, and apply the §3.0 quadratic-character bound. A proper block containing [3,3,3] cannot contain a second point: rotate and interchange coordinates to contradict the no-correlation property.
 
@@ -918,15 +932,15 @@ One proof route for the order bound is to apply PolynomialGaloisGroupsPartII §4
 
 ### 7.5 Independence of prime actions
 
-For distinct primes p₁,…,pᵣ≥5 with primitive Q_p-actions, order the primes by the order of a slice rotation on Y*(p), with decreasing prime as the tie-break. For Ωⱼ, the kernel of the action on the first j block factors, prove that its image on the next factor contains a transitive direct product of nonabelian simple groups, and hence the full product action is transitive. The two-prime input contains the next socle; the induction uses a transitive product of simple groups, without claiming it equals the socle at every induction step. (MP18, Corollary 5.11, Theorem 5.12 and Lemma 5.13, pp. 25–27; MP18 line 1362.)
+For distinct primes p₁,…,pᵣ other than 3 with nontrivial primitive Q_p-actions (using the singleton sign blocks at p=2), order the primes by the order of a slice rotation on Y*(p), with decreasing prime as the tie-break. For 1≤j<r and Ωⱼ the kernel of the action on the first j block factors, prove that its image on the next factor contains a transitive direct product of nonabelian simple groups, and hence the full product action is transitive. The prime 2, when present, is first because its rotation order is 3; no nonabelian-simple subgroup is claimed inside Q₂=S₄. The two-prime input contains the next socle; the induction uses a transitive product of simple groups, without claiming it equals the socle at every induction step. (MP18, Corollary 5.11, Theorem 5.12 and Lemma 5.13, pp. 25–27; MP18 line 1362.)
 
-One proof route is as follows. Use §7.5a for primitive-group structure and section bounds. Outside p=7 the block degree is not a prime power; at 7 a rotation power fixes more than half the block set and excludes the affine case. Different rotation orders give a nontrivial kernel element; commute it separately with the two simple factors when both occur, keeping the later-prime image throughout. Equal orders require p²−1=q(q²−1), with p>q, p≡3 modulo 4 and q≡1 modulo 4. Use §7.4a to obtain A(Y*(q))≤Q_q. If Q_p contains A(Y*(p)), its only nonabelian composition factor is that larger alternating group, so it has no A(Y*(q)) factor. Otherwise use §7.5a: prove the quantitative large-q order comparison in the non-two-transitive case and the alternating-section exclusion in the two-transitive case. Use the finite coincidence fact: for primes p>q≥5 with q<203897, p≡3 mod4, q≡1 mod4 and p²−1=q(q²−1), the only pair is (p,q)=(11,5); use the separate A₂₂≤Q₁₁ target of §7.4a to exclude its A₁₀ composition factor (MP18, Lemma 5.13 proof, p. 26; MP18 line 1435). Nested commutators give the transitive simple-product subgroup needed for induction.
+One proof route is as follows. Use §7.5a for primitive-group structure and section bounds on the later factors p≥5. Among these, outside p=7 the block degree is not a prime power; at 7 a rotation power fixes more than half the block set and excludes the affine case. Different rotation orders give a nontrivial kernel element; commute it separately with the two simple factors when both occur, keeping the later-prime image throughout. Equal orders require p²−1=q(q²−1), with p>q, p≡3 modulo 4 and q≡1 modulo 4. Use §7.4a to obtain A(Y*(q))≤Q_q. If Q_p contains A(Y*(p)), its only nonabelian composition factor is that larger alternating group, so it has no A(Y*(q)) factor. Otherwise use §7.5a: prove the quantitative large-q order comparison in the non-two-transitive case and the alternating-section exclusion in the two-transitive case. Use the finite coincidence fact: for primes p>q≥5 with q<203897, p≡3 mod4, q≡1 mod4 and p²−1=q(q²−1), the only pair is (p,q)=(11,5); use the separate A₂₂≤Q₁₁ target of §7.4a to exclude its A₁₀ composition factor (MP18, Lemma 5.13 proof, p. 26; MP18 line 1435). Nested commutators give the transitive simple-product subgroup needed for induction.
 
 *Needs:* §7.4; §7.4a (parabolic and exceptional-prime alternating containment); §7.2; §7.5a (primitive-group structure and quantitative section bounds).
 
 ### 7.6 Lifting sign blocks simultaneously
 
-Under these local primitivity hypotheses prove that the kernel Λⱼ of the action on the first j full nonzero triple sets acts transitively on the next one. The quotient Ωⱼ/Λⱼ embeds in a product of four-point symmetric groups and is solvable with composition primes 2 and 3. Combine persistence of the required nonabelian simple factors with explicit sign changes from rotation commutators. Use the product-770 transitivity fact: Γ acts transitively on the primitive coefficient-one locus at 770=2·5·7·11, of size 4·40·28·88=394240 (MP18, proof of Theorem 1.6, p. 22; MP18 line 1240), then project away auxiliary factors. This is a theorem about the diagonal action on ordered triples, not a consequence of point-set CRT. (MP18, Lemmas 5.4–5.5 and Proposition 5.6, pp. 21–24; MP18 line 1200.)
+Adjoin the auxiliary primes 2,7,11,5, in that rotation-order sequence, and order all remaining primes as in §7.5. For 4≤j<r prove that the kernel Λⱼ of the action on the first j full nonzero triple sets acts transitively on the next one; every new prime is then at least 13. Start the induction from the simultaneous four-prime fact below. The quotient Ωⱼ/Λⱼ embeds in a product of four-point symmetric groups and is solvable with composition primes 2 and 3. Combine persistence of the required nonabelian simple factors with explicit sign changes from rotation commutators. Use the product-770 transitivity fact: Γ acts transitively on the primitive coefficient-one locus at 770=2·5·7·11, of size 4·40·28·88=394240 (MP18, proof of Theorem 1.6, p. 22; MP18 line 1240), then project away auxiliary factors. The auxiliary block actions are primitive: Q₂=S₄ by §7.2, Q₇ is transitive of prime degree 7 by §0.4 and §7.2, and §7.4a gives A₁₀≤Q₅ and A₂₂≤Q₁₁. Their rotation orders are respectively 3,12,30,30, with 11 preceding 5 by the tie-break. (MP18, Notation 5.2 and Lemmas 5.3–5.5; MP18 lines 1135–1196.) This is a theorem about the diagonal action on ordered triples, not a consequence of point-set CRT. (MP18, Lemmas 5.4–5.5 and Proposition 5.6, pp. 21–24; MP18 line 1200.)
 
 One proof route is as follows. Nonabelian simple factors survive the solvable sign quotient. Prove the commutator identities with distinct coordinate rotations: the second commutator uses the second rotation in both positions. For p≡3 modulo 4 use a point with two elliptic coordinates of orders divisible by 4; the character count is at least (p−11√p)/4 for p>121. Use that same finite transitivity fact for the auxiliary primes. For 11<p≤121 with p≡3 mod4, retain the finite two-elliptic-coordinate existence fact in MP18 Proposition 5.6, pp. 23–24 (MP18 line 1322); the general character estimate covers p>121.
 
