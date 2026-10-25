@@ -3159,6 +3159,54 @@
         "EtaleHomotopyTypes:EH.6/comparison-zigzag",
         "EtaleHomotopyTypes:EH.6/automorphism-naturality"
       ]
+    },
+    {
+      "slug": "pro-simplicial-reindexing",
+      "needs": "Extend §R0.19.9 to the declared universes of simplicial sets with cofinite directed reindexing, level representations of finite diagrams and monomorphisms, cofinal-refinement invariance and comparison of the small geometric-point indexing choices.",
+      "supplier": "AdicSpacesPartII",
+      "section": "R0.19.9"
+    },
+    {
+      "slug": "ordinary-simplicial-homotopy",
+      "needs": "Extend Stage 8 by the proper simplicial Kan–Quillen model on native simplicial sets, functorial finite and first Postnikov truncations, local-coefficient Whitehead and Moore–Postnikov obstruction theory, and simplicial covering classification compared with the supplied topological covers.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "unstable-limits-and-coefficients",
+      "needs": "Extend Stages 6 and 8 by arbitrary abelian local-coefficient cohomology and its derived mapping interpretation, unstable Reedy homotopy limits over small cofiltered indices, nonabelian lim¹ and higher abelian derived limits, and the connectivity and complete-convergence statements BK XI 5.2, XI 7.1, IX 5.1 and IX 5.4 require.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stages 6 and 8"
+    },
+    {
+      "slug": "surjective-nerve-fibration",
+      "needs": "Supply the native Kan-fibration criterion for the nerve of a surjective group homomorphism, compatible with the translation-category quotient models of §§1.28–1.34 and their right actions.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "1.28–1.34"
+    },
+    {
+      "slug": "coherent-pro-spaces",
+      "needs": "Supply the homotopy-coherent Pro category of an essentially small infinity-category, its mapping-space limit/colimit formula, universe comparisons and coherent diagram rectification on simplicial-set models.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E0.2–E0.5 and E0.8"
+    },
+    {
+      "slug": "topological-hypercover-realization",
+      "needs": "Extend §E2.6 by the weak-homotopy-equivalence realization theorem for topological hypercovers whose matching maps admit local sections, with analytic étale refinement and levelwise-to-diagonal comparison for multisimplicial singular sets.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E2.6"
+    },
+    {
+      "slug": "rigid-components-and-curve-families",
+      "needs": "Supply open connected components of locally noetherian étale neighborhoods with size-controlled geometric points and separated matching fiber products, and the elementary-fibration input consisting of a smooth proper geometrically connected relative curve with finite étale boundary and nonempty affine complement fibers.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.9–0.12, 2.10 and 2.15"
+    },
+    {
+      "slug": "analytic-smooth-local-sections",
+      "needs": "Supply the compatibility of §C−1.1’s analytification with smooth maps between smooth quasi-projective schemes as surjective submersions when surjective, together with local analytic sections for those maps on the same carrier.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C−1.1"
     }
   ],
   "requests": [
