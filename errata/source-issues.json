@@ -110799,10 +110799,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1129#issuecomment-6402685512"
+  },
+  {
+   "kind": "misprint",
+   "source": "CG20",
+   "locator": "Definition 8.19, internal p. 72 (journal 872), CG20 line 2780",
+   "says": "the coset set S is the coset space of diag(1,p) in Γ",
+   "should": "the double coset of diag(p,1) used in Lemma 8.3 (they agree only when the two double cosets coincide, as at full level)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "AlgebraicModularFormsAndSerreWeightsPartII",
+   "job": "REV-PKG-AlgebraicModularFormsAndSerreWeightsPartII~4",
+   "board_pr": 1087,
+   "head": "1ef45f0",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1087#issuecomment-6402766048"
+  },
+  {
+   "kind": "gap",
+   "source": "CG20",
+   "locator": "the proof of Lemma 8.20, internal p. 72 (journal 872), CG20 line 2803",
+   "says": "pM⁻¹ lies in S for a congruence subgroup Γ prime to p",
+   "should": "require Γ diag(1,p) Γ = Γ diag(p,1) Γ or state the reverse double coset",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"1ef45f018c3087e1b5a023d7acbc5963e16d9648\", \"job\": \"REV-PKG-AlgebraicModularFormsAndSerreWeightsPartII~4\", \"model\": \"fable\", \"worker\": \"chris-i\"} -->",
+   "roadmap": "AlgebraicModularFormsAndSerreWeightsPartII",
+   "job": "REV-PKG-AlgebraicModularFormsAndSerreWeightsPartII~4",
+   "board_pr": 1087,
+   "head": "1ef45f0",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1087#issuecomment-6402766048"
   }
  ],
- "scanned_to": "2026-10-25T20:19:37Z",
- "updated": "2026-10-25T20:20:24Z",
+ "scanned_to": "2026-10-25T20:25:26Z",
+ "updated": "2026-10-25T20:26:04Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
