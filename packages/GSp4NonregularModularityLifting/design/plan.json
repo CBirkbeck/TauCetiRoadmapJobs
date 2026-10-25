@@ -3695,79 +3695,127 @@
     }
   ],
   "gaps": [
-  {
-    "slug": "gsp4-pseudocharacter-reconstruction",
-    "needs": "Reconstruct a continuous semisimple GSp₄-valued representation with its full multiplier from a continuous GSp₄ pseudocharacter over an algebraically closed characteristic-zero field, compatibly with affinoid specialization.",
-    "supplier": "IntegralHeckeAndGaloisDeterminants",
-    "section": "§1.7, extending §0.7"
-  },
-  {
-    "slug": "normalized-integral-siegel-p-actions",
-    "needs": "Extend the normalized H⁰ actions constructed in NR1.1 to the needed cuspidal coherent complexes and make their commuting idempotents compatible with coefficient change, duality and deck descent in degrees zero and one.",
-    "supplier": "AutomorphicBundlesPartII",
-    "section": "IC.3–IC.4"
-  },
-  {
-    "slug": "p12-ordinary-horizontal-control",
-    "needs": "Supply the Borel two-weight and GL₂-parabolic one-weight ordinary Siegel Hida modules, their dual Iwasawa finiteness, arithmetic control and horizontal Λ[Δ]-freeness at the P12 tame levels and ordered flags.",
-    "supplier": "PadicFamiliesPartII",
-    "section": "F8, Borel and GL₂-parabolic specialization"
-  },
-  {
-    "slug": "p12-flag-orientation",
-    "needs": "Compare P12 automorphic and deformation strong ordinarity on one fixed ordered flag and Ext convention, resolving the opposite ratio directions in Definitions 3.2 and 5.3 before applying representability or Hida control.",
-    "supplier": "LocalGaloisDeformationRings",
-    "section": "§§6.3, 6.27"
-  },
-  {
-    "slug": "integral-enormity-and-oddness",
-    "needs": "Provide BCGP25 integral enormousness, near adequacy, strongly residual oddness and GSp₄-reasonableness with their exact adjoint conditions, coefficient fields and restriction behavior, without identifying them with CG big image or ACC enormousness.",
-    "supplier": "ArithmeticGaloisRepresentations",
-    "section": "§§7.4, 7.9–7.12"
-  },
-  {
-    "slug": "gsp4-global-patching-data",
-    "needs": "Supply the CG fixed-multiplier Selmer presentation with qTW≥1 and the BCGP25 two-torus-direction integral-enormity auxiliary sets and uniform marked cotangent bounds, including the dyadic and variable-weight coefficient hypotheses.",
-    "supplier": "GlobalGaloisDeformations",
-    "section": "G7 and R04.5–R04.6"
-  },
-  {
-    "slug": "dyadic-ordinary-local-regularity",
-    "needs": "Supply the p-distinguished pure semistable weight-two symplectic ordinary point regularity, dimensions and unique-component/conductor comparisons needed by BCGP25 §7 for every p, including p=2, with the chosen stabilization retained.",
-    "supplier": "LocalGaloisDeformationRings",
-    "section": "§6.29, extending §§6.26–6.27"
-  },
-  {
-    "slug": "gsp4-local-blocks-and-monodromy",
-      "needs": "Supply the normalized GSp₄ Steinberg U-eigenvalue, Klingen no-newforms and spherical-to-refinement calculation, generic paramodular newvector uniqueness at the conductor, regular ordinary and neat-prime refinement lines, and adjoint-L holomorphy at s=1 for generic packets with the pure-monodromy uniqueness comparison.",
-    "supplier": "SmoothRepresentationsOfLocalGroups",
-    "section": "SR.4.5"
-  },
-  {
-    "slug": "projective-finite-group-satake",
-    "needs": "Supply the regular residual GSp₄ Satake-block comparison of BCGP25 Lemmas 7.4.11–7.4.12 on projective finite-group modules, compatibly with the partial central condition and diamond augmentation, without dividing by 8.",
-    "supplier": "SmoothRepresentationsOfLocalGroups",
-    "section": "SR.4.5"
-  },
-  {
-    "slug": "weil-restriction-big-image",
-    "needs": "For an imaginary quadratic K and a non-CM elliptic curve E/K not isogenous over the algebraic closure to its conjugate, prove that the dual mod-p representations of E and its conjugate map the cyclotomic kernel onto SL₂(𝔽_p)² for all sufficiently large p, supplying the induced CG big-image example.",
-    "supplier": "ArithmeticGaloisRepresentations",
-    "section": "§6.4 and §7.11"
-  },
-  {
-    "slug": "dyadic-polarized-ordinary-global-data",
-    "supplier": "GlobalGaloisDeformations",
-    "section": "G7, extending §8.1 and R04.5–R04.6",
-    "needs": "Supply arbitrary-rank p=2 polarized ordinary deformation problems over their multivariable weight algebras, their h³-aware Selmer presentations and two-tame-type Taylor–Wiles data under the near-adequate and strong-residual-oddness hypotheses of NR11.0a."
-  },
-  {
-    "slug": "dyadic-general-ordinary-local-image",
-    "supplier": "LocalGaloisDeformationRings",
-    "section": "§§6.3, 6.24",
-    "needs": "Construct the reduced 2-torsion-free ordinary local image ring for every ordered upper-triangular residual GLₙ flag and prove the exact finite-extension integer-point flag criterion of BCGP25 Proposition 5.6.6(1)–(2), retaining the trivial-residual large-degree hypotheses for the component theorem in (3)."
-  }
-],
+    {
+      "slug": "gsp4-pseudocharacter-reconstruction",
+      "needs": "Reconstruct a continuous semisimple GSp₄-valued representation with its full multiplier from a continuous GSp₄ pseudocharacter over an algebraically closed characteristic-zero field, compatibly with affinoid specialization.",
+      "supplier": "IntegralHeckeAndGaloisDeterminants",
+      "section": "§1.7, extending §0.7"
+    },
+    {
+      "slug": "normalized-integral-siegel-p-actions",
+      "needs": "Construct normalized integral Siegel p-operators Tp,1 and Qp,2 on RΓ(X₁(Q),ω(a,2)(−D)) in degrees zero and one for the CG weights and coefficients O/ϖᵐ, O and E/O, agreeing in degree zero with the q-expansion operators of CG20 §8.4, with commuting idempotents compatible with coefficient change, Serre duality and deck descent.",
+      "supplier": "AutomorphicBundlesPartII",
+      "section": "IC.3–IC.4"
+    },
+    {
+      "slug": "p12-ordinary-horizontal-control",
+      "needs": "Supply the Borel two-weight and GL₂-parabolic one-weight ordinary Siegel Hida modules, their dual Iwasawa finiteness, arithmetic control and horizontal Λ[Δ]-freeness at the P12 tame levels and ordered flags.",
+      "supplier": "PadicFamiliesPartII",
+      "section": "F8, Borel and GL₂-parabolic specialization"
+    },
+    {
+      "slug": "p12-flag-orientation",
+      "needs": "Compare P12 automorphic and deformation ordinarity on specified ordered flags and Ext conventions, resolving both the opposite ratio directions of Definitions 3.2 and 5.3 and the exponent prescriptions iκ versus −iκ in §3.2 and Definition 5.3, including the parabolic ratio of §7.4, before transporting representability or Hida control.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§6.3, 6.27"
+    },
+    {
+      "slug": "integral-enormity-and-oddness",
+      "needs": "Provide BCGP25 integral enormousness, near adequacy, strongly residual oddness and GSp₄-reasonableness with their exact adjoint conditions, coefficient fields and restriction behavior, without identifying them with CG big image or ACC enormousness.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§§7.4, 7.9–7.12"
+    },
+    {
+      "slug": "gsp4-cg-selmer-presentation",
+      "needs": "Supply the CG fixed-full-multiplier Selmer presentation with qTW≥1 and labelled Klingen Taylor–Wiles sets of cardinality qTW at every requested depth, under CG20 Assumptions 4.1–4.3.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 and R04.5–R04.6"
+    },
+    {
+      "slug": "gsp4-torus-tw-data",
+      "needs": "Supply the BCGP25 two-torus-direction Taylor–Wiles sets and uniform marked cotangent bounds under integral enormousness, with the weight algebra and marked coefficient sections retained, including p=2.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 and R04.5–R04.6"
+    },
+    {
+      "slug": "p12-variable-weight-patching-data",
+      "needs": "Supply the P12 variable-weight ordinary minimal deformation problems with prescribed universal similitude and Taylor–Wiles presentations over the two-weight Borel and one-weight GL₂-parabolic algebras, with the specified ordered flags, tame types and augmentation maps.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 and R04.5–R04.6"
+    },
+    {
+      "slug": "dyadic-ordinary-local-regularity",
+      "needs": "Supply the p-distinguished pure semistable weight-two symplectic ordinary point regularity, dimensions and unique-component/conductor comparisons needed by BCGP25 §7 for every p, including p=2, with the chosen stabilization retained.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§6.29, extending §§6.26–6.27"
+    },
+    {
+      "slug": "gsp4-steinberg-u-eigenvalue",
+      "needs": "Compute the normalized GSp₄ Steinberg Ux,1 eigenvalue x^((j+k−6)/2) in weight (j,k), including finite unramified unit twists, in the Fourier-lattice normalization of CG20 Theorem 5.9.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "gsp4-klingen-level-comparison",
+      "needs": "Prove the Klingen no-newforms result and compute the spherical-to-labelled-refinement pullback/trace constant for the regular residual block in CG20 Theorem 7.3, including its congruence to 1 at x≡1 modulo p.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "gsp4-paramodular-newvector",
+      "needs": "Prove that a generic GSp₄ representation has a unique paramodular newvector line at its conductor, with the normalization used in BCGP25 Proposition 7.5.1.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "gsp4-ordinary-neat-refinement-lines",
+      "needs": "Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses used in BCGP25 Lemma 7.5.2.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "gsp4-pure-monodromy-uniqueness",
+      "needs": "Prove the local uniqueness of monodromy with the given semisimplification under purity and the adjoint holomorphy condition, in the geometric-Frobenius convention of BCGP25 Remark 1.8.20.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "projective-finite-group-satake",
+      "needs": "Supply the regular residual GSp₄ Satake-block comparison of BCGP25 Lemmas 7.4.11–7.4.12 on projective finite-group modules, compatibly with the partial central condition and diamond augmentation, without dividing by 8.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "weil-restriction-big-image",
+      "needs": "For an imaginary quadratic K and a non-CM elliptic curve E/K not isogenous over the algebraic closure to its conjugate, prove that the dual mod-p representations of E and its conjugate map the cyclotomic kernel onto SL₂(𝔽_p)² for all sufficiently large p, supplying the induced CG big-image example.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§6.4 and §7.11"
+    },
+    {
+      "slug": "dyadic-polarized-ordinary-global-data",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7, extending §8.1 and R04.5–R04.6",
+      "needs": "Supply arbitrary-rank p=2 polarized ordinary deformation problems over their multivariable weight algebras, their h³-aware Selmer presentations and two-tame-type Taylor–Wiles data under the CM, near-adequate and strong-residual-oddness hypotheses of BCGP25 Theorem 5.7.14."
+    },
+    {
+      "slug": "dyadic-general-ordinary-local-image",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§6.3, 6.24",
+      "needs": "Construct the reduced 2-torsion-free ordinary local image ring for every ordered upper-triangular residual GLₙ flag and prove the exact finite-extension integer-point flag criterion of BCGP25 Proposition 5.6.6(1)–(2), retaining the trivial-residual large-degree hypotheses for the component theorem in (3)."
+    },
+    {
+      "slug": "symplectic-descent-every-residue-characteristic",
+      "needs": "Extend symplectic_coefficient_descent to every residue characteristic by removing p>2, keeping the continuous smaller-ring representation with the same nondegenerate alternating form and full multiplier and the similitude conjugator congruent to 1 modulo the larger maximal ideal (BCGP25 Lemma 7.4.8).",
+      "supplier": "IntegralHeckeAndGaloisDeterminants",
+      "section": "§1.5"
+    },
+    {
+      "slug": "selected-coherent-rank-inequality",
+      "needs": "For neat prime-to-p genus-two levels X₀(Q) over ℚ, non-Eisenstein m, a≥2 and L=ω(1,3−a), prove dim_E eαβH₁(X₀(Q),L)_(m,E)≤dim_E eαβH₀(X₀(Q),L)_(m,E), under the all-weight classification of packets and multiplicity hypotheses of IC.6–IC.8 and the normalized degree-one p-action, grouping the multiplicity-counted summands by finite part with the Serre-dual transported projector.",
+      "supplier": "AutomorphicBundlesPartII",
+      "section": "IC.8, using IC.6–IC.7 and IC.3–IC.4"
+    }
+  ],
   "sourceIssues": [
     {
       "id": "GSp4NonregularModularityLifting/E1",
