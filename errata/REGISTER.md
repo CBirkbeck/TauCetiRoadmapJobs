@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5939 mistakes recorded on the board: 3772 misprints, 1493 errors, 506 gaps, 168 unparsed bullets.
+5954 mistakes recorded on the board: 3777 misprints, 1499 errors, 510 gaps, 168 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -692,6 +692,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Ash–Brakenhoff–Zarrabi, Equality of polynomial and field discriminants (Experimental Math. 16, 2007)
 
 - **Misprint** at the table of Theorem 6.8 (with Propositions 6.4 and 6.7), pp. 371–372: the source says the local density formula has exponent −n; it should be 2−n, as the paper's own coefficient computation and concluding table give, consistent with ν₁(4,3) = 8/81; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## AT09
+
+- **Misprint** at §2.3, printed p. 4 (AT09 line 195, also confirmed on the page image): the source says base-q digits may satisfy 0≤n_i≤q; it should be 0≤n_i<q, ensuring the unique base-q expansion used for the Carlitz factorial; affects a stated result; The author’s correction to THAKUR10 is recorded in THAKUR-UPDATES entry 36, printed pp. 7–8 (THAKUR-UPDATES lines 308–334). These are source errata, not package findings. The package uses the corrected exponent, empty convention, full tree, mixed-product induction, rational intertwiner and ordinary base-q expansion. For the last item, n=q would otherwise allow digits (q,0) or (0,1), giving factorials 1 or D₁; §3.1's base-q convention and Check Γ_(q+1)=D₁ choose the correct one. <!-- tauceti-roadmap-review {"agent": "codex", "head": "9500295f50d3ee0b34eea0f8d44847758e13689c", "job": "REV-PKG-DrinfeldModulesAndTModulesPartII~2", "model": "gpt-6-astra", "worker": "chris-22"} -->. Found by DrinfeldModulesAndTModulesPartII (#1436 at 9500295, 2026-10-25, codex gpt-6-astra).
 
 ## Atiyah
 
@@ -2168,6 +2172,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CCM23
 
 - **Error** at Definition 2.2.2 (2.2.4) and following factorisation, printed p. 8 (CCM23 lines 354, 378): the source says empty truncation at zero is zero while the depth-one factorisation applies there; it should be restricted to positive cutoff or use empty truncation one with adjusted difference laws; affects a stated result. Found by DrinfeldModulesAndTModulesPartII (#1436 at c38e224, 2026-10-25, codex gpt-6-astra).
+- **Error** at Definition 2.2.2, (2.2.4) and the following factorisation, printed p. 8 (CCM23 lines 354, 378): the source says empty truncation at zero is zero while the depth-one factorisation applies there; it should be restricted to positive cutoff or use empty truncation one with adjusted difference laws; affects a stated result. Found by DrinfeldModulesAndTModulesPartII (#1436 at 9500295, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §2.2 before Definition 2.2.2, printed p. 7 (CCM23 line 329): the source says the power-sum denominator has exponent d; it should be exponent s; affects a stated result. Found by DrinfeldModulesAndTModulesPartII (#1436 at c38e224, 2026-10-25, codex gpt-6-astra).
 
 ## CDHHLMNNS-II-v5
@@ -3293,15 +3298,26 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## FKP19
 
+- **Misprint** at Claim 6.14 proof, p.54 (FKP19 line 2435): the source says the modifying cocycle lies in the dual adjoint module; it should be a cocycle in the primal adjoint module acting on the lifting fibre; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "add59962af6e548ff5c3b0a0d51872a38da37e19", "job": "REV-PKG-GlobalGaloisDeformationsPartII~3", "model": "gpt-6-astra", "worker": "chris-20"} -->. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
+- **Error** at Definition 1.2 discussion, pp.2–3 (FKP19 line 114): the source says numerical oddness forces total reality without qualification; it should be restricted to positive derived rank, or total reality assumed separately; affects a stated result. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Lemma A.6, p.63: the source says the proof invokes Lemma A.1(2), which assumes p>2(dim gᵈᵉʳ+1), and treats G as adjoint; it should be obtain O_p(Γ)=1 by Borel–Tits and pass to the adjoint quotient; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7ceac20", "job": "REV-PKG-GlobalGaloisDeformationsPartII", "model": "opus", "worker": "fable-rev62"} -->. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
 - **Misprint** at Proposition 5.12, p.35: the source says equal root-group values at τ_{v_n} and τ_{v′_n}; it should be give −X_n and 2X_n, from the doubling class of equation (4); affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
 
 ## FKP22
 
 - **Misprint** at Appendix A, before Lemma A.3, p.44: the source says the source indexes the factors Σ_{i+1}/Σ_i by i=1,…,n; it should be 0≤i<n; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Gap** at Corollary 8.3 proof, p.39 (FKP22 line 1772): the source says nonsplitting supplies noninjectivity of projection to the Levi image; it should be justified using sufficiently-large-characteristic complete reducibility; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
+- **Error** at Example A.16, p.50 (FKP22 line 2289): the source says the separation character is the determinant of the GL₂ block; it should be that determinant divided by the similitude character δ; affects a stated result. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
+- **Error** at Example A.17, p.50 (FKP22 line 2296): the source says comparisons involving only the two nonzero exponents suffice; it should be the full D condition, including zero exponents; affects a stated result. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 3.4(2) proof, p.12 (FKP22 line 510): the source says the dimension increment is one for every Z; it should be dim_Fp(F_p Z), zero when Z=0; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
+- **Gap** at Lemma 3.7 proof, pp.15–16, and Proposition 3.8 proof, p.18 (FKP22 line 682; line 804): the source says generation in each cyclic factor ensures independence of their compositum; it should be a joint-inertia generation statement, or use a separate arithmetic selection argument; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
 - **Error** at Lemma 3.7, pp.15–16: the source says strong disjointness of all K_{η_b^{(v)}} as v and b vary; it should be assume that the conjugates of joint inertia at each v generate the product, which fails for repeated constituents; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Error** at Lemma A.9(3), p.46, applied in Corollary 8.4, p.39: the source says separate determinant-character field bounds provide the needed exclusion; it should be a bound using the joint character-field compositum; affects a stated result. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Proposition 3.8, p.16: the source says equal root-group values at τ_{v_n} and τ_{v′_n}; it should be give the values −X and 2X from the class used in the proof, nonzero but unequal unless p=3; affects nothing. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Gap** at Proposition 9.1 final proof paragraph, p.43 (FKP22 line 1959): the source says one Steinberg place supplies regular unipotents for every coefficient prime; it should be supplemented at its own residue characteristic, for example with a second Steinberg place; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
+- **Gap** at Theorem 7.4 proof, p.36 (FKP22 line 1629; line 1636): the source says the selected local correction extends globally by Kronecker–Weber; it should be normalized to have value one on local Artin of p before extension; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
 - **Gap** at the proof of Lemma A.4, p.44: the source says the source replaces Γ by π⁻¹(Γ̄), which loses the original Σ's factors; it should be filter Σ by Σ∩U_i(k) and then apply Lemma A.3; affects the proof. Found by GlobalGaloisDeformationsPartII (#1174 at 7ceac20, 2026-10-24, claude opus).
+- **Misprint** at §9 ordinary-weight discussion and Proposition 9.1 proof, p.41 (FKP22 line 1861; line 1888): the source says ordinary weights are negatives of ξ_{τ,2n−i+1}+i−1 under HT(κ)=−1; it should be the positive expression in this convention; affects a stated result. Found by GlobalGaloisDeformationsPartII (#1174 at add5996, 2026-10-25, codex gpt-6-astra).
 
 ## FKS05
 
@@ -3457,6 +3473,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 3.2, p. 11: the source says the generic displacement avoids finitely many proper subspaces of N_γ⊗ℝ; it should be subspaces of N⊗ℝ (images in (N/N_γ)⊗ℝ), since displacements inside the span of γ never separate cones; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at Theorem 3.2, printed p. 11 (FS94 line 400): the source says generic displacement avoids subspaces in N_γ; it should be in N, or in N/N_γ after passing to the quotient fan; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 10a4560, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 3.2, printed p. 11 (FS94 line 400): the source says the generic displacement vector lies in N_γ; it should be chosen in N, with its image used in N/N_γ; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 7e4f54f, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at equation (2.3), p. 7 (FS94 line 235): the source says u(ρ) − u(ρ′) = c(σ)·m_{ρ,σ} with c(σ) the degree of L on V(σ), while pointing to Fulton §3.4 for the u(ρ); with Fulton's convention ⟨u(ρ),v_i⟩ = −a_i this gives c = −deg on ℙ¹ (L = O(D₋): u(ρ₊) − u(ρ₋) = 0 − 1 = −1 = c·1); it should be u(ρ′) − u(ρ) = c(σ)·m_{ρ,σ}, or the u(ρ) read as local-equation weights; affects nothing; (README §6.1 already uses the degree-consistent reading and pins it by the ℙ¹ value +1). <!-- tauceti-roadmap-review {"agent": "claude", "head": "7e4f54f", "job": "RT-AnalyticToricGeometryPartII~1b", "model": "fable", "worker": "fable-rt35"} -->. Found by AnalyticToricGeometryPartII (#1067 at 7e4f54f, 2026-10-25, claude fable).
 - **Error** at paragraph after Corollary 1.2, printed p. 4 (FS94 line 132): the source says smooth toric varieties have free Chow groups without requiring completeness; it should be restricted to complete smooth toric varieties: the incomplete regular two-ray fan (1,0),(1,2) has CH¹=ℤ/2; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "7e4f54f033282df2f8c15c24b71439cbc6ef3d63", "job": "REV-PKG-AnalyticToricGeometryPartII~3", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by AnalyticToricGeometryPartII (#1067 at 7e4f54f, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 3.4, p. 12: the source says it proves Lemma 3.3 in the case d = n−1; it should be Lemma 3.4, since 3.3 is an Example; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "29d6cf7", "job": "REV-PKG-AnalyticToricGeometryPartII", "model": "opus", "worker": "fable-rev48"} -->. Found by AnalyticToricGeometryPartII (#1067 at 29d6cf7, 2026-10-24, claude opus).
 - **Misprint** at proof of Lemma 3.4, printed p. 12 (FS94 line 442): the source says the argument proves Lemma 3.3, which is numbered as an example; it should be Lemma 3.4; affects nothing. Found by AnalyticToricGeometryPartII (#1067 at 7e4f54f, 2026-10-25, codex gpt-6-astra).
@@ -8066,6 +8083,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## THAKUR10
 
 - **Error** at Theorem 3 proof, fourth display equality, printed p. 1979 (THAKUR10 lines 267–276): the source says ordering the leading degrees permits concatenating entire vector tails; it should be the corrected mixed-product induction followed by the equal-degree induction; affects the proof. Found by DrinfeldModulesAndTModulesPartII (#1436 at c38e224, 2026-10-25, codex gpt-6-astra).
+- **Error** at Theorem 3 proof, fourth display equality, printed p. 1979 (THAKUR10 lines 267–276): the source says ordering leading degrees permits concatenating entire vector tails; it should be the corrected mixed-product induction followed by the equal-degree induction; affects the proof. Found by DrinfeldModulesAndTModulesPartII (#1436 at 9500295, 2026-10-25, codex gpt-6-astra).
 
 ## the source cited as "Lerch III" (Lerch zeta function, part III)
 
