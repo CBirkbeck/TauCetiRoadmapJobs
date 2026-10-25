@@ -25,8 +25,8 @@ at these pins with only a few simple definitions on existing carriers.
 * Complex minimal-model comparison lacks that algebra, Sullivan models, and polynomial forms.
 * Frobenius–Hodge weight comparison lacks the geometric cohomology realizations and
   their common filtered comparison.
-* Stable minimal representatives lack Sullivan minimal algebras, polynomial homotopies,
-  and admissible finite-type filtrations.
+* Stable minimal representatives with scalar-extension compatibility lack Sullivan minimal
+  algebras, polynomial homotopies, and admissible finite-type filtrations.
 * The minimal-model eigenvalue product theorem lacks the Sullivan carrier with its
   ordered Hirsch-extension filtration.
 * The common-filtration theorem for actual automorphisms lacks the same carrier and

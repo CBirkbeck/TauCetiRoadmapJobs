@@ -384,8 +384,7 @@ A proof can proceed as follows. Take the filtered colimit separately in every bi
 
 **Checks.**
 
-- For X_α=X with identity transitions, both finite-coefficient constructions equal their ordinary versions.
-- Replacing a tower by its even-indexed cofinal subtower preserves the output.
+- For the map from two discrete points to one point, pullback on Ω_n⁰ is Rγₙ→R²γₙ, a↦(a,a). Over R=𝔽₃ it sends 1 to (1,1), not (0,0); a covariant summation map would have the opposite domain.
 - On a constant point pro-object the colimit in bidegree (0,n) is Rγₙ; replacing the colimit by zero would lose this rank-one piece.
 - The module control lim_r colim_N(ℤ/ℓʳ)^N contains the infinite-support sequence (ℓⁱ)ᵢ, while colim_N lim_r(ℤ/ℓʳ)^N contains only finite-support sequences; interchanging the two operations changes the object.
 
@@ -483,7 +482,7 @@ Layer 2; EtaleHomotopyTypes §EH.0’s pro-cohomology convention; the pinned sim
 
 ### 4.1 Étale realization of the homotopy algebra
 
-For a separated finite-type scheme X over algebraically closed k with ℓ invertible, descend X to a model X₁ over a countable algebraically closed subfield k₁⊂k and take its supplied raw étale type Et(X₁). Write A_ℓ,rig(X) for §3.5’s homotopy algebra of that raw rigid pro-simplicial set. Use the finite-component representative A_ℓ,fin(X) of §4.1a to represent the same localized object A_ℓ(X). Finite-coefficient étale finiteness gives (F) for the raw presentation, and the supplied hypercover cohomology comparison and algebraically closed field-extension invariance give H*(A_ℓ(X))≃H*_ét(X,ℚ_ℓ) as rings. Common fields and common refinements compare all choices by quasi-isomorphisms. This is a contravariant functor into the localization of commutative DG algebras at quasi-isomorphisms. Apply connected minimal models to each connected component. X is separated and of finite type over algebraically closed k; ℓ≠char(k). ([weil-II](#ref-weil-ii), §5 (5.2.2), p. 238, including the final hypercover remark (weil-II line 3801)).
+For a separated finite-type scheme X over algebraically closed k with ℓ invertible, descend X to a model X₁ over a countable algebraically closed subfield k₁⊂k and take its supplied raw étale type Et(X₁). Write A_ℓ,rig(X) for §3.5’s homotopy algebra of that raw rigid pro-simplicial set. Let A_ℓ(X) be the image of A_ℓ,rig(X) in the localization of commutative DG algebras at quasi-isomorphisms. Finite-coefficient étale finiteness gives (F) for the raw presentation, and the supplied hypercover cohomology comparison and algebraically closed field-extension invariance give H*(A_ℓ(X))≃H*_ét(X,ℚ_ℓ) as rings. Common fields and common refinements compare all choices by quasi-isomorphisms. This is a contravariant functor into the localization of commutative DG algebras at quasi-isomorphisms. Apply connected minimal models to each connected component. X is separated and of finite type over algebraically closed k; ℓ≠char(k). ([weil-II](#ref-weil-ii), §5 (5.2.2), p. 238, including the final hypercover remark (weil-II line 3801)).
 
 The interface has the following laws.
 
@@ -495,7 +494,7 @@ The interface has the following laws.
 
 A proof can proceed as follows. Spread the finitely many defining equations to a countable subfield and take its algebraic closure inside k. Use EtaleHomotopyTypes §EH.3 and EtaleCohomologyFoundations §§F.2.2–F.3 for the étale hypercover, finiteness and algebraically closed extension inputs to identify the pro-simplicial cohomology. The proper-hypercover node is not sufficient for this étale assertion. For two fields or hypercover systems pass to a common countable overfield and common refinements. Use cohomology equivalences to obtain quasi-isomorphisms and functoriality in the localization.
 
-*Needs:* §3.5; EtaleHomotopyTypes §EH.3; EtaleCohomologyFoundations §§F.2.2–F.3 and F.4.2–F.4.5; SchemeAndStackFoundations §0.9; §0.1; Mathlib `CategoryTheory.MorphismProperty.Localization` and `CategoryTheory.MorphismProperty.Q`; §4.1a for the finite-component representative.
+*Needs:* §3.5; EtaleHomotopyTypes §EH.3; EtaleCohomologyFoundations §§F.2.2–F.3 and F.4.2–F.4.5; SchemeAndStackFoundations §0.9; §0.1; Mathlib `CategoryTheory.MorphismProperty.Localization` and `CategoryTheory.MorphismProperty.Q`.
 
 **Checks.**
 
@@ -506,7 +505,7 @@ A proof can proceed as follows. Spread the finitely many defining equations to a
 
 ### 4.1a Finite-component representative and comparison
 
-For the countable field-of-definition model X₁ of §4.1, use EtaleHomotopyTypes §EH.3 through finite-component-etale-presentation to obtain E_fin and a refinement pro-map Et_rig(X₁)→E_fin. Define A_ℓ,fin(X)=A_ℓ(E_fin) and A_ℓ,rig(X)=A_ℓ(Et_rig(X₁)), using §3.5. Prove that the induced map A_ℓ,fin(X)→A_ℓ,rig(X) is a quasi-isomorphism respecting the ordinary étale cohomology ring, coefficients, common refinements and Galois descent data. Both presentations satisfy (F). This identifies their localized algebras and permits either representative in the weight and minimal-model theorems. X is separated finite type, k₁ is countable algebraically closed, and ℓ is invertible in k₁. This is the form-algebra comparison of two presentations, with the finite-component geometric presentation requested from its owner. (Weil II §5.2.2–§5.2.3, pp. 238–239; weil-II line 3804; weil-II line 3823.)
+For the countable field-of-definition model X₁ of §4.1, use EtaleHomotopyTypes §EH.3 through finite-component-etale-presentation to obtain E_fin and a refinement pro-map Et_rig(X₁)→E_fin. Define A_ℓ,fin(X)=A_ℓ(E_fin) and A_ℓ,rig(X)=A_ℓ(Et_rig(X₁)), using §3.5. Prove that the induced map A_ℓ,fin(X)→A_ℓ,rig(X) is a quasi-isomorphism respecting the ordinary étale cohomology ring, coefficients, common refinements and Galois descent data. Both presentations satisfy (F). Consequently A_ℓ,fin(X) is another representative of the localized object constructed in §4.1; either representative can be used in the weight and minimal-model theorems. X is separated finite type, k₁ is countable algebraically closed, and ℓ is invertible in k₁. This is the form-algebra comparison of two presentations, with the finite-component geometric presentation requested from its owner. (Weil II §5.2.2–§5.2.3, pp. 238–239; weil-II line 3804; weil-II line 3823.)
 
 The interface has the following laws.
 
@@ -641,17 +640,19 @@ A proof can proceed as follows. Represent subalgebras with inherited grading and
 
 ### 6.2 Stable representatives of homotopy automorphisms
 
-For a connected nonnegative commutative DG algebra A over a characteristic-zero field, with each H^i(A) finite-dimensional, a chosen minimal model M admits an admissible finite-type filtration such that every automorphism of M is homotopic to an automorphism preserving that filtration. In particular an automorphism of A can be lifted, up to homotopy, to a filtration-preserving automorphism of M. This assertion does not say that the original automorphism preserves the chosen filtration. H⁰(A)=K; every H^i(A) finite-dimensional; K characteristic zero. ([weil-II](#ref-weil-ii), §5 (5.3.1), first paragraph, p. 240 (weil-II line 3867); [morgan](#ref-morgan), §5, pp. 167–169 (morgan line 1166)).
+For a connected nonnegative commutative DG algebra A over a characteristic-zero field, with each H^i(A) finite-dimensional, a chosen minimal model M admits an admissible finite-type filtration such that every automorphism of M is homotopic to an automorphism preserving that filtration. In particular an automorphism of A can be lifted, up to homotopy, to a filtration-preserving automorphism of M. The filtration can be chosen so that, for every extension L/K of characteristic-zero fields, every automorphism of M⊗_K L is homotopic over L to an automorphism carrying each M_n⊗_K L onto itself. The same K-defined filtration is used for all L. This assertion does not say that the original automorphism preserves the chosen filtration. H⁰(A)=K; every H^i(A) finite-dimensional; K characteristic zero. ([weil-II](#ref-weil-ii), §5 (5.3.1), (5.3.3) and proof of (5.3.4), pp. 240–241 (weil-II line 3867; weil-II line 3909; weil-II line 3919); [morgan](#ref-morgan), §5, pp. 167–169 (morgan line 1166)).
 
-A proof can proceed as follows. Construct a countable sequence of finite Hirsch-extension blocks, closing each block under the finitely many differential dependencies. Use the homotopy lifting/obstruction calculation to replace an arbitrary automorphism by one adapted to those blocks. For degree-one extensions and higher degrees verify that finite cohomology is sufficient for the finite-block choices. Construct the exhaustive blocks and the adapted representative simultaneously; finite-dimensionality of M^i is not an assumption.
+A proof can proceed as follows. Construct a countable sequence of finite Hirsch-extension blocks, closing each block under the finitely many differential dependencies. Use the homotopy lifting/obstruction calculation to replace an arbitrary automorphism by one adapted to those blocks. For degree-one extensions and higher degrees verify that finite cohomology is sufficient for the finite-block choices. Choose the exhaustive blocks over K before adapting any automorphism. Prove the adaptation by induction for an arbitrary automorphism over L on these scalar-extended blocks: the finite-dimensional cycle, boundary and obstruction kernels and images commute with flat field extension, and the Hirsch lifting equations are linear in each new generator image. Thus the chosen blocks retain the stable-representative property over L without selecting a new filtration there. Finite-dimensionality of M^i is not an assumption.
 
-*Needs:* AlgebraicTopologyPartII §AT2.4 through gap:sullivan-minimal-models and gap:sullivan-homotopy-lifting; §6.1.
+*Needs:* AlgebraicTopologyPartII §AT2.4 through gap:sullivan-minimal-models, gap:sullivan-homotopy-lifting and gap:sullivan-scalar-extension; §6.1.
 
 **Checks.**
 
 - For K[x₂]⊗Λ(y₃), dy=x², a finite block containing x and y contains their differential x²; a block containing y alone does not.
 - For the three-punctured line, H¹ has dimension 2 and H²=0 but its free fundamental group is nonnilpotent and its degree-one Hirsch tower continues indefinitely; a finite degree-one generator-space assumption would exclude it.
 - For Λ(a₁,b₁), d=0, the maps a↦a+b, b↦b and a↦a, b↦a+b both preserve the constant filtration, while their matrices do not commute.
+- Take M=Λ_ℚ(a₁,b₁), d=0, with constant filtration and L=ℚ₇. For α²=2 with α≡3 mod 7, the L-automorphism a↦a, b↦b+αa preserves the extended filtration and sends [b] to [b]+α[a]. Its H¹ matrix has off-diagonal entry α∉ℚ, so the law must cover automorphisms not defined over ℚ.
+- The filtration Λ(a₁)⊂Λ(a₁,b₁) is admissible but lacks the stable-representative property: the swap a↦b, b↦a cannot be homotopic to a map preserving its first stage, since [b]∉L·[a] in H¹. The scalar-extension assertion concerns the specially constructed filtration, not every admissible one.
 
 ### 6.3 Multiplicative generalized eigenvalue grading
 
@@ -759,7 +760,6 @@ A proof can proceed as follows. Describe a map on each finite generating set by 
 **Checks.**
 
 - For Λ(a₁) with a closed of weight 1, the compatible section is a↦λa and U is trivial.
-- On a vector space with weights 1 and 2, a filtration-lowering shear is identity on Gr^W but can be nonidentity on the filtered vector space.
 - For M=Λ(a₁,b₁), d=0, M₀=Λ(a₁) and M₁=M, the swap a↦b,b↦a is a DG automorphism of M₁ but cannot restrict to an automorphism of M₀ because b∉M₀.
 - At λ=2, weights 1 and 2 give scalar factors 2 and 4 on the two generator lines; swapping the weight sign would give 1/2 and 1/4.
 - For closed degree-one a,b of weights 1,2, the shear b↦b+a fixes both associated graded lines but sends [b] to [b]+[a]≠[b].
@@ -782,7 +782,7 @@ A proof can proceed as follows. Use the triangular minimal-generator filtration 
 
 For a connected separated finite-type complex variety X and a Sullivan rational minimal model M_Q of X(C), there is a Z-grading M_Q=⊕_w M_(Q,w) by commutative DG subspaces inducing the Hodge weight filtration on cohomology: W_m H^i(X(C),Q)=⊕_(w≤m)H^i(M_Q)_w. This is the complex-variety rational statement of Weil II 5.3.4, not a theorem stated only for varieties over a finite field. The upper index in the sum is m, the same filtration index on the left. X connected separated finite type over C; geometric mixed Hodge weight filtration supplied as in Layer 5. ([weil-II](#ref-weil-ii), §5 (5.3.3) and Théorème (5.3.4), pp. 240–241 (weil-II line 3916)).
 
-A proof can proceed as follows. Choose a good Frobenius and a filtration-preserving lift on M_Q⊗ℚ_ℓ; apply the Weil-weight construction and Layer 5. This gives a section of the weight extension after ℚ_ℓ scalar extension. Descend scheme-surjectivity and use the prounipotent splitting theorem over Q. Read the resulting 𝔾_m action as a rational grading and compare cohomology weight pieces.
+A proof can proceed as follows. Choose a good Frobenius and lift it to a homotopy class on M_Q⊗ℚ_ℓ. Use §6.2’s scalar-extension law for the filtration (M_n) of M_Q chosen for §7.1 to obtain a representative preserving each M_n⊗ℚ_ℓ; apply the Weil-weight construction on these extended rational blocks and Layer 5. This gives a section of the weight extension after ℚ_ℓ scalar extension. Descend scheme-surjectivity and use the prounipotent splitting theorem over Q. Read the resulting 𝔾_m action as a rational grading and compare cohomology weight pieces.
 
 *Needs:* §6.2; §6.5; §5.2; §7.1; §7.2.
 
@@ -843,7 +843,7 @@ A proof can proceed as follows. Use DeligneWeightsAndPurity §§7.12 and 7.15 pu
 
 ### 8.3 The Lie tower dual to a 1-minimal model
 
-For a nonnegative connected commutative DG K-algebra A with finite-dimensional H¹ and H², construct a 1-minimal map M^(1)→A as an increasing union of finite degree-one Hirsch extensions, giving an H¹ isomorphism and an H² injection. If V_n is the finite-dimensional generator space of a finite stage, define the bracket on V_n∨ by the negative transpose of d:V_n→Λ²V_n under (a∧b)(u,v)=a(u)b(v)−a(v)b(u). Thus dφ(u,v)=−φ([u,v]); d²=0 gives Jacobi. These finite nilpotent Lie algebras and their surjective transition maps form a pronilpotent tower. A compatible integer grading on M^(1) dualizes with opposite signs on the Lie tower. K characteristic zero; H⁰(A)=K; H¹,H² finite-dimensional. The tower is indexed by finite 1-minimal Hirsch stages; it is not obtained by dualizing an arbitrary infinite vector space without a topology. ([morgan](#ref-morgan), §5, pp. 168–169; §9, Theorem 9.4 and proof, pp. 198–199 (morgan line 1190); [poids](#ref-poids), §10, p. 83 (poids line 164)).
+For a nonnegative connected commutative DG K-algebra A with finite-dimensional H¹, construct a 1-minimal map M^(1)→A as an increasing union of finite degree-one Hirsch extensions, giving an H¹ isomorphism and an H² injection. If V_n is the finite-dimensional generator space of a finite stage, define the bracket on V_n∨ by the negative transpose of d:V_n→Λ²V_n under (a∧b)(u,v)=a(u)b(v)−a(v)b(u). Thus dφ(u,v)=−φ([u,v]); d²=0 gives Jacobi. These finite nilpotent Lie algebras and their surjective transition maps form a pronilpotent tower. A compatible integer grading on M^(1) dualizes with opposite signs on the Lie tower. K characteristic zero; H⁰(A)=K; H¹ finite-dimensional. The tower is indexed by finite 1-minimal Hirsch stages; it is not obtained by dualizing an arbitrary infinite vector space without a topology. ([morgan](#ref-morgan), §5, pp. 168–169; §9, Theorem 9.4 and proof, pp. 198–199 (morgan line 1175; morgan line 2245); [poids](#ref-poids), §10, p. 83 (poids line 164)).
 
 The interface has the following laws.
 
@@ -853,7 +853,7 @@ The interface has the following laws.
 - The map to A is an H¹ isomorphism and H² injection, the exact conditions used in the relation theorem.
 - Weight-w generators dualize to Lie weight −w, with additive bracket weights.
 
-A proof can proceed as follows. Adjoin H¹ generators, then degree-one generators killing the H² kernel, with finite choices at each step. Use the Lie algebra carrier and the negative transpose of the quadratic differential at each finite stage. Compare this tower with the supplier’s unipotent fundamental group; the comparison is a separate target, not part of the definition.
+A proof can proceed as follows. Adjoin H¹ generators, then degree-one generators killing the H² kernel. Each finite degree-one stage has finite-dimensional H², so the kernel of its map to H²(A) is finite-dimensional even when H²(A) is infinite-dimensional. Adjoining generators for this kernel preserves finite stages. Use the Lie algebra carrier and the negative transpose of the quadratic differential at each finite stage. Compare this tower with the supplier’s unipotent fundamental group; the comparison is a separate target, not part of the definition.
 
 *Needs:* AlgebraicTopologyPartII §AT2.4 through gap:sullivan-minimal-models; Mathlib Lie algebras and finite-dimensional linear duals; §6.5 only when a geometric model weight grading is used.
 
@@ -865,6 +865,7 @@ A proof can proceed as follows. Adjoin H¹ generators, then degree-one generator
 - The sign reversal turns cohomological weights 1,2 into Lie generator weights −1,−2.
 - At the stage Λ(a₁,b₁,c₁), da=db=0, dc=ab, the dual basis A,B,C has [A,B]=−C and [A,C]=[B,C]=0. Therefore dc(A,B)=1=−c([A,B]); using the positive transpose would give −1 in this convention. Weights (2,2,4) dualize to (−2,−2,−4).
 - For ℙ¹ the 1-minimal model is K, with H²=0 injecting into H²(ℙ¹)=K; its full minimal model has H²=K. Replacing the injection by an isomorphism would fail.
+- For the square-zero DG algebra A=K⊕⊕_(j≥0)Ke_j, with |e_j|=2 and d=0, H¹=0 and H²=⊕_(j≥0)Ke_j is infinite-dimensional. Its 1-minimal map is K→A: H¹ is 0→0 and H² is the injection 0→⊕_(j≥0)Ke_j; every Lie stage is zero. Requiring finite-dimensional H²(A) would reject this valid input.
 
 ### 8.4 Comparison with the unipotent étale fundamental group
 
