@@ -17,7 +17,7 @@ The following subjects have their own owners and are consumed here.
 - CrystallineCohomology CR.5:log-algebra.1–4 supplies monoids, log structures, charts, fs fibre products, log smoothness, log regularity and logarithmic Abhyankar. The closed-subset log structure contract below extends its divisorial interface. This roadmap’s pair retains its exact boundary, rather than merely a chosen fs log structure.
 - LefschetzPencilsAndVanishingCycles §0.10 supplies logarithmic group actions, very tameness, very tame quotients, log blow-ups, regular log resolution and the separated absolute and relative Gabber modification theorems. Those targets are not reconstructed here. PA.4 adds normalized blow-up comparison, functoriality on monoidally smooth maps and the inertia specializing non-separated variants.
 - ClassicalAdicEtaleCohomology §2.4 supplies the affine Zariski–Riemann model-limit presentation. PA.1 compares its space with the pointed locally ringed limit, including centres and stalks.
-- Tau Ceti supplies the valuation spectrum and its patch compactness, residue degrees of scheme morphisms with their tower law, and affine invariant quotients. StableReduction Layer 2 supplies projective morphisms and relative Proj, Layer 4 blow-ups of quasi-coherent finite-type ideals, and Layer 3 proper semistable pointed curves; PA.5 retains non-proper curves and stability relative to the modification, with ordered markings only after an étale splitting.
+- Tau Ceti supplies the valuation spectrum and its patch compactness, residue degrees of scheme morphisms with their tower law, and affine invariant quotients. StableReduction Layer 2 supplies projective morphisms, relative Proj and proper-curve dualizing theory, Layer 4 blow-ups of quasi-coherent finite-type ideals, and Layer 3 proper pointed prestable families and the pointed stability criterion. PA.5 retains non-proper curves, the local complete-intersection extension of dualizing sheaves, and stability relative to the modification, with ordered markings only after an étale splitting. Its semistability means nodality with étale smooth-locus markings; it does not imply the genus bound and absence of rational tails required by the supplier’s semistability predicate.
 
 The de Jong equivariant field theorem in PA.6 includes the group surjection, purely inseparable invariant extension and G-strict projective compactification, beyond the non-equivariant field theorem of SchemeAndStackFoundations §4.19. The arithmetic theorem there is over a global-field Dedekind base, beyond its §4.20 trait theorem.
 
@@ -102,7 +102,7 @@ What LefschetzPencilsAndVanishingCycles must provide (gap:very-tame-local-quotie
 
 The fine log blow-up of a coherent log ideal I is universal among maps on which its pullback becomes invertible; its saturated form is the fs saturation. Both maps have source the appropriate blow-up log scheme and target (X, M). The unit ideal and every invertible log ideal give the identity (ilo14 VIII §§3.3.7–3.3.11, pp. 107–108, ilo14 line 4761).
 
-What LefschetzPencilsAndVanishingCycles must provide (gap:log-blowup-universal-property): The log blow-up carrier of §0.10 has the universal property for making a coherent log ideal invertible, and its fs saturation supplies the saturated log blow-up on the same shared log-scheme carrier.
+What LefschetzPencilsAndVanishingCycles must provide (gap:log-blowup-universal-property): The log blow-up carrier of §0.10 has the universal property for making a coherent log ideal invertible, and its fs saturation supplies the saturated log blow-up on the same shared log-scheme carrier. This includes the empty ideal, whose blow-up is empty; the universal property alone does not assert that the blow-up is a modification.
 
 The action API consumed here includes pointwise and global very tameness, implication to tameness, openness of its locus and the stated abelian-inertia conclusion with admissibility and generic freeness (ilo14 VI Theorem 3.2, Corollary 3.3, Proposition 3.5 and Corollary 3.6, pp. 73–75, ilo14 lines 3279, 3290).
 
@@ -119,7 +119,7 @@ Consume §2.4, normal models and Zariski–Riemann vanishing, specifically its h
 
 ### From TauCetiRoadmap.StableReduction
 
-Consume Layer 2, projective morphisms, relative Proj of finitely generated graded quasi-coherent algebras and relative ampleness; Layer 4, blow-ups of quasi-coherent finite-type ideals with their universal property, projectivity, strict transforms and affine charts; and Layer 3, proper prestable, semistable and stable pointed curves, the relative dualizing sheaf and the fibrewise ampleness criterion for the stable pointed case. Neither pinned library has projective morphisms or global blow-ups; Tau Ceti has only affine blow-up charts. PA.5 uses this after splitting the finite étale marking and only on proper contracted fibres; an identity modification of an unmarked P¹ is permitted despite dualizing degree −2.
+Consume Layer 2, projective morphisms, relative Proj of finitely generated graded quasi-coherent algebras, relative ampleness, and dualizing sheaves for proper Gorenstein curves with base change and component degrees under its base conventions; Layer 4, blow-ups of quasi-coherent finite-type ideals with their universal property, projectivity, strict transforms and affine charts; and Layer 3, proper pointed prestable families and the positive-degree criterion for pointed stability. Neither pinned library has projective morphisms or global blow-ups; Tau Ceti has only affine blow-up charts. The comparison of a proper semistable multipointed curve with geometrically connected fibres, after étale splitting of its finite étale marking, is with pointed prestable families, not with the supplier’s stronger semistability predicate. PA.5 extends the dualizing construction locally by complete intersections to non-proper curves over arbitrary bases and applies the proper pointed stability criterion to contracted fibres. An identity modification of an unmarked P¹ is permitted despite dualizing degree −2.
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
@@ -973,25 +973,27 @@ For the cusp over an infinite field k the classes of x² + a x³, a ∈ k, alrea
 
 For a log regular fs scheme (X, M), prove that log ideals I ⊆ M correspond bijectively to the ideals I O_X they generate. Identify the underlying schemes of the supplied fine log blow-up and saturated log blow-up with `Bl_{I O_X}(X)` and its normalization, respectively, compatibly with strict morphisms of log regular fs schemes. The source and target of both comparison isomorphisms are over X.
 
-Work under these precise hypotheses: (X, M) log regular fs and I a coherent log ideal; strict comparison maps have log regular fs source and target. The projectivity conclusion additionally assumes X quasi-excellent noetherian.
+Work under these precise hypotheses: (X, M) log regular fs and I a coherent log ideal; strict comparison maps have log regular fs source and target. Projectivity additionally assumes X quasi-excellent noetherian. The modification conclusion further requires I to have a nonempty stalk at every geometric point; equivalently in this coherent log regular setting, I O_X is the unit ideal at every generic point. Global nonemptiness alone does not suffice on a disconnected X.
 
 The API records the following facts.
 
 - For (X, M) log regular fs: the underlying scheme of the saturated log blow-up I is `Bl_{I O_X}(X)^{nor}`.
 - For strict f, the (saturated) log blow-up of f⁻¹I is the pullback of that of I.
 - Saturated log blow-ups of log regular fs log schemes are log regular and log étale over the base.
-- If X is quasi-excellent and noetherian, the normalized blow-up is a projective modification: normalization is finite.
+- If X is quasi-excellent and noetherian, the normalized blow-up is projective because normalization is finite. If also every geometric stalk of I is nonempty, it is a modification, since the centre misses every generic point.
 
-One proof route is as follows. Use the log blow-up and saturation of LefschetzPencilsAndVanishingCycles §0.10 and the shared chart and fs-fibre-product carriers of CrystallineCohomology CR.5:log-algebra. On a chart P, compare the Rees algebra of the monoidal ideal with its pullback to O_X; logarithmic regularity gives the required Tor vanishing (ILO VIII Lemma 3.4.6). For quasi-excellent noetherian X, normalization is finite, so the resulting morphism is a projective modification.
+One proof route is as follows. Use the log blow-up and saturation of LefschetzPencilsAndVanishingCycles §0.10 and the shared chart and fs-fibre-product carriers of CrystallineCohomology CR.5:log-algebra. On a chart P, compare the Rees algebra of the monoidal ideal with its pullback to O_X; logarithmic regularity gives the required Tor vanishing (ILO VIII Lemma 3.4.6). For quasi-excellent noetherian X, normalization is finite, so the resulting morphism is projective. If every geometric stalk of I is nonempty, its ordinary ideal is the unit ideal at every generic point: nonempty monoidal generators become units there. Coherence makes the unit-ideal locus open, and it is dense on every component. The blow-up and its normalization are isomorphisms there, giving a projective modification. An empty stalk instead deletes its component locally and cannot be allowed in this conclusion (ilo14 VIII §3.1.19, p. 101, ilo14 line 4451).
 
 (ilo14, Exposé VIII, §§3.3.7–3.3.11, arXiv v1 pp. 107–108 (ilo14 line 4761); ilo14, Exposé VIII, Lemma 3.4.3, §3.4.5 and Lemma 3.4.6, arXiv v1 pp. 110–111 (ilo14 line 4910).)
 
 **Checks.**
 
 - For (A^2_k, V(xy)) and the ideal (x, y) of N², the log blow-up is Bl_0 A^2 with the divisorial log structure of the total transform. In the x-chart, y = xv and the boundary is xv = 0.
-- The log blow-up of the unit ideal M is the identity. The unit ideal is already invertible.
+- The log blow-up of the unit ideal M is the identity. The unit ideal is already invertible; its generic degree is 1.
+- On Spec F₂ with trivial log structure and I empty, I O_X = 0 and the Rees algebra has zero positive-degree part. Its Proj and normalization are empty, so the map to Spec F₂ is projective but not a modification. Coherence does not exclude the empty ideal.
+- On the disjoint union of two copies of Spec F₂, take I empty on the first and the unit log ideal on the second. The blow-up retains only the second point. I is nonempty on one component but has empty stalks on the other; there is no dense open of X on which this map is an isomorphism.
 - The log blow-up of an invertible log ideal is the identity. Universality gives the identity on both sides.
-- For the A_1 monoid P ⊂ Z² generated by (2,0), (1,1), (0,2) (Spec k[P] = Spec k[u, v, w]/(uw − v²)) and the ideal of P generated by (2,0) and (0,2), the unsaturated log blow-up, which is the ordinary blow-up along (u, w), has the non-normal chart Spec k[u, v, s]/(v² − u²s) with s = w/u; its saturation adjoins v/u and is the normalized blow-up, with regular chart Spec k[u, v/u]. The integral element v/u is absent from the ordinary blow-up chart and present in its normalization.
+- For the A_1 monoid P ⊂ Z² generated by (2,0), (1,1), (0,2) (Spec k[P] = Spec k[u, v, w]/(uw − v²)) and the ideal of P generated by (2,0) and (0,2), the unsaturated log blow-up, which is the ordinary blow-up along (u, w), has the non-normal chart Spec k[u, v, s]/(v² − u²s) with s = w/u; its saturation adjoins v/u and is the normalized blow-up, with regular chart Spec k[u, v/u]. The integral element v/u is absent from the ordinary blow-up chart and present in its normalization. The ideal has nonempty stalks everywhere; the ordinary chart and its normalization both have fraction field k(u,v), so the normalized map has generic degree 1.
 
 For (A^2_k, V(xy)) and I the maximal ideal of N², the log blow-up is the blow-up of the origin with its divisorial log structure.
 
@@ -1001,14 +1003,23 @@ For (A^2_k, V(xy)) and I the maximal ideal of N², the log blow-up is the blow-u
 
 There is a saturated monoidal desingularization functor F̃^log: to every log regular fs log scheme (X, M) (more generally every monoidally torsion-free fine log scheme) it assigns a tower of saturated log blow-ups X′ → X, finite on quasi-compact sources, after which every stalk of M̄ is free; for a log regular source, X′ is regular and its non-triviality locus is a normal crossings divisor (snc when the log structure is Zariski). It is functorial for monoidally smooth morphisms: for monoidally smooth φ : Y → X, F̃^log(Y) is the contraction of the strict transform of F̃^log(X), and for strict φ it is the pullback. For quasi-excellent noetherian X the underlying morphism X′ → X is a projective modification. On arbitrary log regular schemes retain the normalized tower and its functoriality, without inferring finite normalization. For a non-quasi-compact fine log scheme the tower is locally finite; a quasi-compact source has a finite tower. Freeness of characteristic monoids implies underlying regularity only under the log-regular hypothesis, not for arbitrary fine log schemes.
 
-Work under these precise hypotheses: (X, M) log regular fs, or a fine log scheme whose characteristic groups are torsion free. A map is monoidally smooth when its maps of characteristic monoid stalks are locally of the form P → P ⊕ ℕ^r; strict maps have r = 0.
+Work under these precise hypotheses: (X, M) log regular fs, or a fine log scheme whose characteristic groups are torsion free. A log morphism f : (Y, N) → (X, M) is monoidally smooth if, for every geometric y of Y over x of X, the characteristic map M̄_x → N̄_y extends to an isomorphism M̄_x ⊕ ℕ^r ≅ N̄_y for some nonnegative integer r, with the given map the first-factor inclusion (ilo14 VIII §3.3.14, p. 109, ilo14 line 4847).
 
-One proof route is as follows. Resolve fans: a functorial saturated desingularization of fine torsion-free fans (ILO VIII §3.1–3.2, toric resolution through characteristic-zero functorial resolution of toric varieties, VIII §2). Descend to log schemes with fan charts by pullback, uniquely and functorially for monoidally smooth morphisms (VIII 3.3.15). For log regular log schemes the tower is a normalized blow-up tower of X (§PA.4.2), giving the desingularization F̃ with the stated functoriality (VIII 3.4.9); M̄ free means X regular with normal crossings boundary (VIII 3.4.4, VI 1.7).
+The API for monoidally smooth morphisms records the following facts.
+
+- The identity is monoidally smooth with r = 0; composites are monoidally smooth, since two successive free-factor inclusions add their numbers of generators.
+- Every strict log morphism is monoidally smooth with r = 0. No smoothness of its underlying scheme morphism is required.
+- The criterion is stalkwise at geometric points and invariant under isomorphisms of the source and target log schemes: it asks for a splitting that identifies the actual characteristic map with the first-factor inclusion, not merely an abstract isomorphism between its source and a factor of its target.
+
+One proof route is as follows. Resolve fans: a functorial saturated desingularization of fine torsion-free fans (ILO VIII §3.1–3.2, toric resolution through characteristic-zero functorial resolution of toric varieties, VIII §2). Descend to log schemes with fan charts by pullback, uniquely and functorially for monoidally smooth morphisms (VIII 3.3.15). The fan blow-up centres have nonempty stalks, and their pullbacks retain this property (ilo14 VIII §3.1.19, ilo14 line 4451). For log regular log schemes the tower is a normalized blow-up tower of X (§PA.4.2), giving the desingularization F̃ with the stated functoriality (VIII 3.4.9); M̄ free means X regular with normal crossings boundary (VIII 3.4.4, VI 1.7).
 
 (ilo14, Exposé VIII, Theorem 3.3.15, arXiv v1 p. 109 (ilo14 line 4849); ilo14, Exposé VIII, §3.4.8 and Theorem 3.4.9, arXiv v1 p. 111 (ilo14 line 4967); temkin17, proof of Theorem 4.2.1, Step 10, p. 123; Remark 4.3.4, p. 124 (temkin17 line 1074).)
 
 **Checks.**
 
+- The strict closed immersion Spec k → A¹_k at the origin with trivial logs has characteristic map 0 → 0 and group cokernel 0 at its source point. It is monoidally smooth with r = 0, although its underlying morphism is not smooth.
+- The projection (A²_k, V(xy)) → (A¹_k, V(t)), t ↦ x, has at the origin the characteristic inclusion ℕ → ℕ², 1 ↦ (1,0), with group cokernel ℤ and r = 1. Along x = 0 away from the origin it is ℕ → ℕ, the identity; along y = 0 with x ≠ 0 it is 0 → ℕ; elsewhere it is 0 → 0. All stalks satisfy the criterion, although the map is not strict.
+- Over a field of characteristic 3, the square map of (A¹_k, V(t)) has at the origin characteristic map ℕ → ℕ, 1 ↦ 2, and group cokernel ℤ/2. It is Kummer étale, since 2 is invertible in k, but not monoidally smooth: equal ranks force r = 0 and multiplication by 2 is not an isomorphism.
 - With trivial characteristic monoid, the singular cusp remains singular under every monoidal blow-up. Freeness alone gives regularity only for a log regular source.
 
 For X regular with snc boundary, F̃^log(X) is the identity. For the log regular pair (Spec k[u, v, w]/(uw − v²), V(v)), F̃^log is the toric resolution given by subdividing the cone of the A_1 singularity, whose underlying morphism is the blow-up of the vertex. (ILO VIII 1.2(b) identifies the log blow-up of the vertex with the canonical resolution of this toric singularity.)
@@ -1120,9 +1131,9 @@ The API records the following facts.
 - A stable modification is semistable and has no contracted exceptional component in any geometric fibre.
 - Semistability is stable under arbitrary base change S′ → S.
 - (C, D) is semistable ⇔ all geometric fibres are semistable multipointed curves.
-- For C → S proper with geometrically connected fibres, after an étale base change splitting the finite étale marking D into ordered sections, the semistable pair gives a semistable pointed curve of StableReduction Layer 3.
+- For C → S proper with geometrically connected fibres, after an étale base change splitting the finite étale marking D into ordered sections, the semistable pair gives a pointed prestable family in the terminology of StableReduction Layer 3; its stronger semistability predicate need not hold.
 
-One proof route is as follows. Define the predicates fibrewise; semistability is a property of geometric fibres by the fibre criterion of étaleness for D. For proper C with geometrically connected fibres, D is finite étale in the semistable case. After an étale cover splitting D into n ordered sections, compare with the semistable pointed curves of StableReduction Layer 3. Stability of a modification concerns only contracted components and differs from stability of a pointed curve: the identity of an unmarked P¹ is a stable modification. For a semistable pair, define the invertible sheaf `ω_{(C,D)/S}` = `ω_{C/S}(D)` locally from the relative complete-intersection description; it commutes with base change.
+One proof route is as follows. Define the predicates fibrewise; semistability is a property of geometric fibres by the fibre criterion of étaleness for D. For proper C with geometrically connected fibres, D is finite étale in the semistable case. After an étale cover splitting D into n ordered sections, compare with the pointed prestable families of StableReduction Layer 3. Temkin’s semistability here imposes neither a positive-genus bound nor absence of rational tails, unlike that supplier’s semistability predicate. Stability of a modification concerns only contracted components and differs from stability of a pointed curve: the identity of an unmarked P¹ is a stable modification. For a semistable pair, define the invertible sheaf `ω_{(C,D)/S}` = `ω_{C/S}(D)` locally from the relative complete-intersection description; it commutes with base change.
 
 (temkin10, §1.2, arXiv v3 pp. 2–3 (temkin10 line 57); ilo14, Exposé X, §3.2.2, arXiv v1 p. 158 (ilo14 line 7276).)
 
@@ -1133,11 +1144,12 @@ One proof route is as follows. Define the predicates fibrewise; semistability is
 - (Spec k[x, y]/(y² − x³), ∅) over k is not semistable: the cusp is not an ordinary double point. The tangent cone is a double line, not two transverse branches.
 - Blowing up a smooth point of the special fibre of A^1_R over a DVR gives a semistable modification that is not stable: the exceptional P^1 meets the rest of the fibre in one point and is contracted. The exceptional dualizing degree is −2 + 1 = −1.
 - A marking D through the node of Spec R[u, v]/(uv − π) is not allowed. A marking must be étale and lie in the smooth locus.
-- For C = P¹_k and D = ∅, the identity is a stable modification although deg ω_C = −2 and C is not a stable pointed curve. Relative ampleness for the identity imposes no positive-degree condition on C itself.
+- For C = P¹_k and D = ∅, the arithmetic genus is 0 and deg ω_C = −2. This is a proper pointed prestable family and a semistable multipointed curve here, but fails the supplier’s semistability and pointed stability predicates. Its identity is a stable modification, since it contracts no component; relative ampleness for the identity imposes no positive-degree condition on C itself. Splitting the empty marking changes nothing.
+- Over an algebraically closed field, for an unmarked smooth proper connected genus-one curve E with a single P¹ attached transversely at one point, the arithmetic genus is 1 + 0 + 0 = 1. The dualizing degrees on E and the tail are respectively 2·1 − 2 + 1 = 1 and 2·0 − 2 + 1 = −1. It is pointed prestable and semistable here, but its rational tail excludes the supplier’s semistability predicate, and the negative degree excludes pointed stability. The identity still contracts no component and is a stable modification; its empty marking is already split.
 
 (A^1_S, ∅) with A^1 → S is a semistable multipointed curve; (Spec O_S[u, v]/(uv − π), ∅) over a DVR is semistable but not smooth.
 
-*Needs:* TauCetiRoadmap.StableReduction Layer 3; Mathlib `AlgebraicGeometry.Flat`; Mathlib `AlgebraicGeometry.Etale`; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20.
+*Needs:* TauCetiRoadmap.StableReduction Layers 2–3; Mathlib `AlgebraicGeometry.Flat`; Mathlib `AlgebraicGeometry.Etale`; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20.
 
 ### 5.2 Stable modification theorem: projectivity
 
@@ -1151,7 +1163,7 @@ One proof route is as follows. Relative ampleness is checked on fibres C′_x ov
 
 For a semistable (C, D) the identity is a stable modification, and `ω_{(C,D)/S}` is C-ample relative to the identity.
 
-*Needs:* §PA.5.1; TauCetiRoadmap.StableReduction Layer 3.
+*Needs:* §PA.5.1; TauCetiRoadmap.StableReduction Layers 2–3 (dualizing base change, component degrees and the pointed stability criterion).
 
 ### 5.2a One-dimensional analytic fields
 
@@ -1197,7 +1209,7 @@ The API records the following facts.
 
 - The unramified quadratic extension of Q_p has e = 1, f = 2 and degree 2, hence defect 1. Stability through e alone would fail.
 - For F₂((t)) ⊂ F₂((t^(1/2))) and F₃((t)) ⊂ F₃((t^(1/3))), respectively, (e,f,degree) = (2,1,2) and (3,1,3), so defect is 1 even though the extensions are inseparable. These complete discretely valued fields are stable.
-- For K = C((t)), p = 1 and K/K is immediate of degree 1, but K is stable. The unrestricted existence statement is true while instability is false; the repaired conjunction has value false, since p > 1 fails.
+- For K = C((t)), p = 1 and K/K is immediate of degree 1, but K is stable. The unrestricted existence statement is true while instability is false; the conjunction of p > 1 with the existence of an immediate degree-p extension has value false, since p > 1 fails.
 - For every analytic K the identity extension has e = f = degree = 1. Immediate degree 1 extensions never witness defect.
 
 **Generator types.** An element z ∈ K ∖ k is an unramified generator, respectively a moderately ramified generator, when K is finite unramified, respectively finite tame, over the closure of k(z), in the henselian sense of LocalFieldsRamificationPartII GF.2 (temkin10 §2.1, p. 10, temkin10 lines 460–470; §6.3, p. 48, temkin10 line 2339).
@@ -1363,7 +1375,7 @@ Blowing up a smooth special-fibre point on A¹_R creates an exceptional P¹ meet
 
 ### Dependencies
 
-The statements and routes use §PA.5.5a; Mathlib `algebraicClosure`; Mathlib Scheme.Hom.normalization and SchemeAndStackFoundations §0.20; §PA.0.3; §PA.0.4; §PA.0.5; §PA.0.6; §PA.0.7; §PA.0.8; §PA.0.9; §PA.1.4; §PA.3.1; §PA.3.6; §PA.3.7; §PA.4.1; §PA.4.3; §PA.4.6; TauCetiRoadmap.StableReduction Layer 3; Mathlib `AlgebraicGeometry.Flat`; Mathlib `AlgebraicGeometry.Etale`; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1–4 (log-smooth-chart-criterion); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1–4 (log-smooth-over-log-regular); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1–4 (log-abhyankar); TauCetiRoadmap.LocalFieldsRamificationPartII GF.1/normalization-and-prolongations; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/tame-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/unramified-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/abhyankar-and-rank; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/unramified-composition.
+The statements and routes use §PA.5.5a; Mathlib `algebraicClosure`; Mathlib Scheme.Hom.normalization and SchemeAndStackFoundations §0.20; §PA.0.3; §PA.0.4; §PA.0.5; §PA.0.6; §PA.0.7; §PA.0.8; §PA.0.9; §PA.1.4; §PA.3.1; §PA.3.6; §PA.3.7; §PA.4.1; §PA.4.3; §PA.4.6; TauCetiRoadmap.StableReduction Layers 2–3; Mathlib `AlgebraicGeometry.Flat`; Mathlib `AlgebraicGeometry.Etale`; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1–4 (log-smooth-chart-criterion); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1–4 (log-smooth-over-log-regular); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1–4 (log-abhyankar); TauCetiRoadmap.LocalFieldsRamificationPartII GF.1/normalization-and-prolongations; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/tame-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/unramified-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/abhyankar-and-rank; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/unramified-composition.
 
 ## Layer PA.6: Prime-to-degree desingularization
 
