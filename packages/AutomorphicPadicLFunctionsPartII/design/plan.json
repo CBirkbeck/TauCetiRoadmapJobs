@@ -3189,7 +3189,7 @@
     },
     {
       "slug": "torus-cap-projection",
-      "needs": "Supply the compatibility of the native group-cohomology comparison with the oriented local-coefficient torus cap, its top-degree coefficient-line identification and finite-cover projection formula.",
+      "needs": "Supply the compatibility of the native group-cohomology comparison with the oriented local-coefficient torus cap into H₀(Γ;M)=M_Γ for an arbitrary coefficient module M, its top-degree coefficient-line identification and finite-cover projection formula.",
       "supplier": "AlgebraicTopology",
       "section": "Stage 6"
     },
