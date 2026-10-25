@@ -10,7 +10,7 @@ The following objects retain their single earlier owner. DeformationAndDerivedPa
 
 AlgebraicModularFormsAndSerreWeights §§R15.1–R15.3 owns Katz forms, Hodge and cusp geometry, small-level descent, q-expansions, normalized Hecke operators, Hasse, theta and twisted coherent duality. IntegralHeckeAndGaloisDeterminants §§1.3, 2.1–2.2 owns determinant reconstruction and represented Hecke images. AutomorphicGaloisRepresentations §§2.8–2.10, 4.1–4.6, 5.1, 6.8–6.12 owns high-weight and Artin Galois attachments. GL2AutomorphicRepresentationsAndTransfer §§R16.2.11, R16.3.9, R16.4, R16.6 owns the CDT type and local/global multiplicity dictionary. SerreWeightAndLevelOptimisation §§3.4, 3.10–3.13 owns field-valued weight-one unramifiedness, the Gross sequence, known multiplicity one, scalar lower bounds and the minimal Katz witness. The new weight-one result is over the entire torsion Hecke image, and the new scalar result is the multiplicity-two upper bound. Full-boundary vanishing is supplied by AlgebraicModularFormsAndSerreWeights §R15.2, Eisenstein boundary eigensystems; the construction and injectivity of the finite-coefficient Hasse double are supplied by §R15.3, Weight-one Tₚ with torsion coefficients. The arithmetic matrix and localized ordinary-image assertions here differ by computing the action on the selected residual double. The generic twisted Φ/Ψ identity remains with that supplier; the weight-one module/rank specialization is the target here.
 
-ArithmeticLocallySymmetricSpaces §§ALS.0–ALS.6 owns the arithmetic quotient, local systems, groupoid homology comparisons, compactification, Hecke, duality and finite-cover descent. Here their PGL₂ imaginary-quadratic specialization carries the exact minimal levels and residual ideals. ClassFieldTheory Layers 7 and 12 supplies reciprocity and ray-class finiteness. Mathlib's matrix characteristic polynomial, Cayley–Hamilton and two-by-two determinant, and Tau Ceti's coefficient-sum augmentation, are already in the library; only the arithmetic correspondence identities are targets here. The analytic modular-form carriers are imported, not used in place of torsion Katz forms. General GLₙ complex patching and nonminimal lifting belong to their own extensions and are not prerequisites of this minimal theory.
+ArithmeticLocallySymmetricSpaces §§ALS.0–ALS.6 owns the arithmetic quotient, local systems, groupoid homology comparisons, compactification, Hecke, duality and finite-cover descent. In particular §ALS.0.10 owns the congruence subgroups and diamond levels, §ALS.4.10 the Eisenstein predicate, and §ALS.4.12(b) ordinary/Borel–Moore comparison. AutomorphyLiftingBeyondTaylorWiles target BT.3/lemma-9-6 owns selected-root cohomology comparison; §9.2 here owns its homological translation. Here the PGL₂ imaginary-quadratic specialization chooses the exact minimal levels and residual ideals. ClassFieldTheory Layers 7 and 11–12 supplies reciprocity and ray-class finiteness. Mathlib's matrix characteristic polynomial, Cayley–Hamilton and two-by-two determinant, and Tau Ceti's coefficient-sum augmentation, are already in the library; only the arithmetic correspondence identities are targets here. The analytic modular-form carriers are imported, not used in place of torsion Katz forms. General GLₙ complex patching and nonminimal lifting belong to their own extensions and are not prerequisites of this minimal theory.
 
 ## Conventions
 
@@ -20,7 +20,73 @@ Fix separable closures and compatible embeddings for decomposition groups. Frobe
 
 Matrices act on columns; the first column is the image of the first summand. Weights n are integers unless a high-weight range is specified. A good weight-n Hecke operator satisfies aⱼ(Tₓf) = aₓⱼ(f) + xⁿ⁻¹⟨x⟩aⱼ/ₓ(f), with the last term defined to be zero unless x divides j. A positive prime x invertible in O is the only source of 1/x; no formula divides by p in torsion coefficients. For weight one the Frobenius polynomial is X² − TₓX + ⟨x⟩. For Bianchi trivial-central-character coefficients it is X² − TₓX + N(x). All q-series and local power-series rings are formal and complete; finite diamond group algebras remain finite group algebras (CG22, pp. 855–856).
 
-For weight one fix odd absolutely irreducible continuous ρ̄:G_ℚ→GL₂(k), unramified at p, of prime-to-p Artin conductor N. At a ramified reducible decomposition group impose ρ̄ᴵ ≠ 0; genuinely minimal lifts retain the specified inertial type or invariant direct summand, not merely its dimension. The determinant of the normalized minimal problem is the Teichmüller lift of det ρ̄. More precisely, minimal outside Q means: fixed Teichmüller determinant; unramified outside S(ρ̄)∪Q, hence at p; reduction identifies the full inertial image at each vexing prime; and at a nonvexing ramified prime with reducible residual decomposition representation, the inertia invariants are a rank-one direct summand over the coefficient ring. The other local cases use the specified minimal-condition classification (CG18, Definition 3.1, pp. 310–311; cg18 line 584). A conductor-level Katz/descent module is distinguished from the fine Γ₁(r) proof model. The fixed admissible r is not a Taylor–Wiles variable. A repeated r-root leaves two old copies in one local factor; all final conductor rank statements use the comparison algebra omitting Uᵣ.
+For weight one fix odd absolutely irreducible continuous ρ̄:G_ℚ→GL₂(k), unramified at p, of prime-to-p Artin conductor N. Local residual reducibility is tested over k̄. At a ramified reducible decomposition group impose ρ̄ᴵ ≠ 0; genuinely minimal lifts retain the specified inertial type or invariant direct summand, not merely its dimension. The determinant of the normalized minimal problem is the Teichmüller lift of det ρ̄. More precisely, minimal outside Q means: fixed Teichmüller determinant; unramified outside S(ρ̄)∪Q, hence at p; reduction identifies the full inertial image at each vexing prime; and at a nonvexing ramified prime with reducible residual decomposition representation, the inertia invariants are a rank-one direct summand over the coefficient ring. The other local cases use the specified minimal-condition classification (CG18, Definition 3.1, pp. 310–311; cg18 line 584). A conductor-level Katz/descent module is distinguished from the fine Γ₁(r) proof model. The fixed admissible r is not a Taylor–Wiles variable. A repeated r-root leaves two old copies in one local factor; all final conductor rank statements use the comparison algebra omitting Uᵣ.
+
+For the headline signatures, O is presented as a characteristic-zero complete DVR finite over ℤₚ, with a local scalar map. This is the same coefficient class as the integers of a finite extension of ℚₚ. For a complete Noetherian local O-algebra A, the residue identifications O/m_O ≃ k and A/m_A ≃ k commute with the scalar map. The following transparent predicates specialize native carriers; their representability and comparison theory belongs to gap:rational-minimal-conditions (CG18 §3.1, Definition 3.1, pp. 310–311; cg18 lines 569–595).
+
+Define `IsPlaceAbove` for ℓ and a valuation subring v of ℚ̄ by primality of ℓ and characteristic ℓ of the residue field. Its API identifies valuations extending the ℓ-adic place, excludes nonprime labels and retains every conjugate place.
+
+**Checks.**
+
+- An extension of the 3-adic valuation has residue characteristic 3, so the label 3 is accepted and 5 is rejected.
+- The trivial valuation has residue characteristic 0; no prime label is accepted.
+- Labels 0 and 1 fail primality even if used as junk inputs; neither denotes a finite prime.
+
+Define `IsUnramifiedAt` for a representation and ℓ by requiring every inertia subgroup at every v above ℓ to act trivially. Its API gives trivial inertia action, independence of the place by conjugacy, and preservation under coefficient maps.
+
+**Checks.**
+
+- The trivial representation sends every inertia element to I₂ and is unramified at every prime.
+- The inertial matrix diag(ζₚ,1), with ζₚ ≠ 1, differs from I₂ and is ramified, although its reduction is I₂.
+- At ℓ = 1 there is no place above ℓ and the universal condition is vacuous; arithmetic theorems quantify only over primes.
+
+Define `IsArithFrobAt` for ℓ, v and g in G_ℚ by membership in the decomposition group at v and the action a ↦ a^ℓ on its residue field, together with `IsPlaceAbove`. Its API fixes the arithmetic direction, allows the inertia coset of g, and makes the trace independent of that coset for an unramified representation.
+
+**Checks.**
+
+- In 𝔽₂₇ = 𝔽₃[t]/(t³−t−1), arithmetic Frobenius sends t to t³ = t+1; its inverse sends t to t⁹ = t+2. This distinguishes the two directions.
+- Multiplying an arithmetic Frobenius by inertia leaves its residue action a³ and its trace under an unramified representation unchanged.
+- An element moving v to a different place fails decomposition-group membership, even if a residue-field identification could be chosen separately.
+
+Define `IsAdicallyContinuous` by continuity of each of the four matrix entries into the maximal-ideal-adic topology of the coefficient ring. Its API uses the Krull topology on G_ℚ, agrees with the matrix subspace topology on GL₂ and specializes to discrete continuity for a field.
+
+**Checks.**
+
+- A constant representation has four constant continuous entries.
+- For a field the maximal ideal is 0, so its powers are 0 and the adic topology is discrete; continuity forces an open kernel for a representation into a finite field.
+- For A = O[ε]/ε², m_A = (π,ε) and m_A² = (π²,πε); the ε direction is detected by the topology. An indiscrete topology would lose this condition.
+
+Define `IsReducibleOn` for a residual representation and a subgroup H by the existence, after extension to k̄, of an H-invariant submodule of dimension one. Its API tests absolute reducibility on the actual subgroup, is invariant under basis changes and includes the trivial subgroup as reducible.
+
+**Checks.**
+
+- For diagonal matrices the line k̄e₁ has dimension one and is invariant.
+- The standard two-dimensional representation of S₃ over 𝔽₅ has no invariant line over k̄: a 3-cycle has two eigenlines and a transposition exchanges them. Thus absolute reducibility fails.
+- For H = 1 every line is invariant, whereas the 0 and whole submodules have dimensions 0 and 2 and cannot witness this predicate.
+
+Define `inertiaInvariants` as the intersection of the kernels of ρ(g)−I₂ for g in the inertia subgroup, using matrix linear maps. Its API is the actual fixed submodule, compatibility with conjugacy and the inclusion into the original free module; base change is asserted only under its appropriate hypotheses.
+
+**Checks.**
+
+- Trivial inertia gives the whole rank-two module, since every ρ(g)−I₂ is zero.
+- Inertia diag(u,1) with u−1 a unit gives exactly Ae₂, a rank-one direct summand.
+- Over A = ℤ/9 with generator diag(4,1), the fixed module is 3Ae₁ ⊕ Ae₂ because 3a = 0. It is not a free rank-one direct summand; reducing an invariant-space dimension cannot replace the defining submodule.
+
+Define `IsWeightOneResidual` by p ≥ 3, adic continuity, absolute irreducibility, unramifiedness at p and oddness, together with nonzero inertia invariants at every ramified absolutely reducible decomposition group. Oddness is determinant −1 on complex conjugation, identified through an embedding ℚ̄ → ℂ. Its API fixes precisely these standing hypotheses and retains scalar, nonscalar repeated and distinct Frobenius cases (CG18 §3.1, pp. 310–311; cg18 lines 569–578).
+
+**Checks.**
+
+- At p = 3 complex conjugation diag(1,−1) has determinant −1 = 2 ≠ 1, fixing the odd parity.
+- A diagonal global representation has an invariant line, so it fails absolute irreducibility even if its determinant on conjugation is −1.
+- A ramified scalar inertial character χ ≠ 1 has invariant subspace 0 and fails the ramified-reducible hypothesis; p = 2 also fails the explicit lower bound.
+
+Define `IsMinimalLift` by reduction to the specified residual representation; determinant values whose (|k|−1)-st powers are 1; no ramification outside the residual ramification set; injectivity of reduction on the full inertial image at vexing places; and a rank-one direct summand of inertia invariants at ramified reducible decomposition groups. Here vexing means ℓ ≡ −1 mod p, absolutely irreducible residual decomposition action and reducible residual inertia action. A rank-one invariant submodule is expressed by an A-linear equivalence with A and an actual complementary submodule. Since |k|−1 is prime to p, Hensel uniqueness identifies the determinant with the Teichmüller lift. The last condition is disjoint from the vexing case. Its API is exactly CG18 Definition 3.1 with Q empty, including reduction of full inertia images, invariance under strict equivalence and the specified determinant (cg18 lines 584–595).
+
+**Checks.**
+
+- For k = 𝔽₃ the determinant exponent is 2. In ℤ/9, the lift 4 of residual determinant 1 has 4² = 7 ≠ 1 and is rejected; the Teichmüller lift 1 has square 1.
+- For residual χ̄ ⊕ 1 with nontrivial prime-to-p χ̄, the lift Teich(χ̄)ψ ⊕ 1 with ψ of order p still fixes exactly the second line, but ψ^(|k|−1) ≠ 1; the determinant condition rejects it.
+- At a vexing place any new inertial element mapping to I₂ violates injectivity on the inertial image; the full residual inertial image itself has an injective identity reduction. At an unramified place any nonidentity inertial image violates unramifiedness.
 
 Write Hᵢ(X,L) = Hom_O(Hⁱ(X,(Ω¹⊗L∨)_(K/O)),K/O), for i = 0,1, with compact topology and transposed Hecke action. Its underlying module is H¹⁻ⁱ(X,L); its Hecke comparison includes the stated adjoint. The root-Fricke twisted cohomological map Φ satisfies ΦTₓ = x¹⁻ⁿTₓ∨Φ. For its dual Ψ the equivalent identity is Tₓ,hom Ψ = x¹⁻ⁿ ΨTₓ,sections. Weight one makes the scalar one. Untwisted type duality sends σ to σ* and the residual Hecke ideal to its inverse-diamond adjoint.
 
@@ -37,6 +103,8 @@ Use `Matrix.charpoly` and `Matrix.aeval_self_charpoly` in `Mathlib/LinearAlgebra
 ### From Tau Ceti
 
 Use `TauCeti.MonoidAlgebra.augmentation` and `TauCeti.MonoidAlgebra.augmentation_single` in `TauCeti/Algebra/MonoidAlgebra/Exactness.lean`. For a ring O and monoid Δ the map O[Δ]→O sums coefficients and sends every group basis element to one. For Δ = C₃, the element [g] has augmentation 1 although its coefficient at the identity is 0. The ring structure requires no commutativity of Δ; the Taylor–Wiles groups here are abelian p-groups.
+
+Use `HeckeRing.GL2.Newform` in `TauCeti/NumberTheory/ModularForms/Newforms/Newform.lean`: for nonzero level N and integer weight k it bundles a nonzero Γ₁(N) cusp form, nebentypus χ, good-index Hecke eigenvalues, membership in the new subspace and first q-coefficient 1. Use `HeckeRing.GL2.IsEigenformAwayFromLevel` in `TauCeti/NumberTheory/ModularForms/Eigenform.lean` for simultaneous classical Hecke eigen-equations away from N; this predicate alone does not require nonzeroness. Use `HeckeRing.GL2.Newform.eq_of_forall_prime_eigenvalue_eq` in `TauCeti/NumberTheory/ModularForms/Newforms/StrongMultiplicityOne.lean`: two newforms at the same nonzero level and integer weight, with equal nebentypus and equal eigenvalues at every prime coprime to N, are equal. These supply the classical uniqueness steps of §§4.3–4.4 and 6.4; the geometric/classical dictionary and Artin attachment have their separate suppliers.
 
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
@@ -62,7 +130,9 @@ The Hasse supplier gives ψ(f,g) = φ(f)+(φTₚ−Uₚφ)(g) with second expans
 - At p = 3 and m = 1 the construction is defined even though p = 0 in k. It uses no 1/p; theta is applied to the characteristic-p socle.
 - Over ℤ/9, theta(V₃(q)) = 3q³ ≠ 0; over 𝔽₃ it is 0. Applying theta to all torsion coefficients instead of the socle would give a false proof of injectivity.
 
-What AlgebraicModularFormsAndSerreWeights must provide (gap:coherent-conductor-descent): Provide coherent conductor-level descent through common fine rigidifications and compactified p-power diamond covers, with Hodge coefficients, finite and K/O coefficients, Hecke-compatible Cartan–Leray and its Pontryagin-dual Tor edge maps.
+What AlgebraicModularFormsAndSerreWeights must provide (gap:conductor-rigidified-descent): Provide coherent conductor-level descent through common fine rigidifications with Hodge coefficients and finite and K/O coefficients.
+
+What AlgebraicModularFormsAndSerreWeights must provide (gap:diamond-cover-cartan-leray): Provide Hecke-compatible Cartan–Leray descent and its Pontryagin-dual Tor edge maps for compactified p-power diamond covers with Hodge coefficients over finite quotients and K/O.
 
 What AlgebraicModularFormsAndSerreWeights must provide (gap:minimal-torsion-bad-hecke): Provide the integral bad-prime U action on the conductor-minimal Hasse subquotient, compatible with invariant-line Frobenius and the zero-invariant newvector case, over every finite coefficient quotient.
 
@@ -76,13 +146,17 @@ Sections 2.1–2.5 and 2.19 supply the away-p minimal and unipotent local condit
 
 What LocalGaloisDeformationRings must provide (gap:scalar-variable-determinant): Provide the conductor-at-most-one local deformation family with variable p-primary inertial determinant over its diamond algebra at a ramified unramified-character self-extension of norm one, and its matching local types for the global type-three comparison.
 
-What LocalGaloisDeformationRings must provide (gap:minimal-local-classification): Provide CG18 Definition 3.1 invariant-direct-summand minimality and the absolute Bianchi S/P/M/H conditions with finite-flat precedence on every Artinian quotient, including the conductor-compatible Steinberg quotient at norm −1.
+What LocalGaloisDeformationRings must provide (gap:rational-minimal-conditions): Provide the CG18 Definition 3.1 local minimal deformation conditions over ℚ, including invariant-direct-summand minimality on every Artinian coefficient quotient.
+
+What LocalGaloisDeformationRings must provide (gap:bianchi-local-types): Provide the absolute Bianchi S/P/M/H conditions with finite-flat precedence on every Artinian quotient, including the conductor-compatible Steinberg quotient at norm −1.
 
 ### From TauCetiRoadmap.GlobalGaloisDeformations
 
 Sections 3.3–3.7 supply fixed-determinant global condition quotients, their tangent/obstruction comparison and framed presentations. Sections 5.1–5.8 supply auxiliary data and Chebotarev selection under their stated residual-image hypotheses; §§6.2–6.8 supply trace-generation, inertia/diamond maps and augmentation specialization. In this roadmap the exact specializations are CG18 Definition 3.1 and Propositions 3.2–3.3, 5.1–5.2: the rational tangent equality and imaginary-quadratic inequality have the dual module ad⁰ρ̄(1), and the latter includes the complex-place term −3. Once the dual Selmer group is killed the coefficient source has q−1 variables, not q. No stronger residual-image condition is silently substituted for the source's cyclotomic absolute irreducibility.
 
-What GlobalGaloisDeformations must provide (gap:defect-one-primes): Provide CG18 Propositions 3.3 and 5.2 auxiliary sets of exactly q dual-Selmer-killing distinct-root primes for these unramified-at-p rational and imaginary-quadratic problems, including p=3 under the cyclotomic absolute-irreducibility hypothesis, and the admissible rigidifying prime.
+What GlobalGaloisDeformations must provide (gap:taylor-wiles-sets): Provide CG18 Propositions 3.3 and 5.2 auxiliary sets of exactly q dual-Selmer-killing distinct-root primes for these unramified-at-p rational and imaginary-quadratic problems, including p=3 under the cyclotomic absolute-irreducibility hypothesis.
+
+What GlobalGaloisDeformations must provide (gap:rigidifying-prime): Provide a prime r≥5 away from Np with r≢1 mod p and residual Frobenius eigenvalue ratio outside {r,r⁻¹} for the unramified-at-p rational residual datum of §0.1.
 
 What GlobalGaloisDeformations must provide (gap:defect-one-presentations): Provide the CG18 Propositions 3.2 and 5.1 tangent equality or inequality and q−1-variable presentations for the exact minimal problems in §§4.1 and 10.1, with the dual adjoint Tate twist and diamond augmentation quotient.
 
@@ -104,7 +178,9 @@ What GL2AutomorphicRepresentationsAndTransfer must provide (gap:bianchi-classica
 
 Sections 3.4 and 3.13 supply field-valued Katz weight-one unramifiedness for p > 2, including repeated roots, and a proper conductor-level weight-one ideal. These are residual inputs, not the torsion-Hecke-valued conclusion. Sections 3.10–3.12 supply the ordinary connected/étale Tate sequence, the known nonexceptional multiplicity-one cases and the scalar lower bound. The connected Tate module is free rank one over the full Hecke algebra; its étale partner is its Zₚ-dual. Freeness of the middle module over a non-Gorenstein Hecke algebra is not assumed. The full residual ideal includes Uₚ.
 
-What SerreWeightAndLevelOptimisation must provide (gap:jacobian-isotypy-quotient): Provide full-ideal Jacobian residual isotypy for J₁(N*)[m] in the conductor-minimal odd-prime setup and the Carayol diamond-quotient comparison with p≠3 and the Q(√−3)-induction exclusion.
+What SerreWeightAndLevelOptimisation must provide (gap:jacobian-residual-isotypy): Provide full-ideal Jacobian residual isotypy for J₁(N*)[m] in the conductor-minimal odd-prime setup.
+
+What SerreWeightAndLevelOptimisation must provide (gap:carayol-diamond-quotient): Provide the Carayol diamond-quotient comparison with p≠3 and the Q(√−3)-induction exclusion.
 
 ### From TauCetiRoadmap.GL2ModularityLifting
 
@@ -114,17 +190,19 @@ What GL2ModularityLifting must provide (gap:scalar-conductor-comparison): Provid
 
 ### From TauCetiRoadmap.ArithmeticLocallySymmetricSpaces
 
-ALS.0–ALS.1 supplies the PGL₂ quotient, finite arithmetic-lattice components, stabilizers, local coefficients and groupoid chains. ALS.2 and ALS.4 supplies Borel–Serre compactification, boundary and its Eisenstein characters. ALS.3 supplies normalized transfer/conjugation/pushforward Hecke, including its component permutation and coefficient compatibility. ALS.5a.2–ALS.5a.6 supplies oriented ordinary/compact-support duality on its stated coefficient domain; ALS.5b.5–ALS.5b.8 supplies the characteristic-zero cuspidal cohomological comparison. ALS.6.1–ALS.6.3 supplies finite-cover groupoid descent. For p ≥ 5 the relevant finite stabilizer orders are prime to p; for p = 3 localized control of the order-three contribution is required. At a point with stabilizer C₃, Hᵢ(C₃,𝔽₃) has dimension one in every degree, including i = 3; its coarse point has H₃ = 0. This is the negative control for using a coarse noncompact three-manifold argument.
+ALS.0.10 supplies the projective congruence subgroups and intermediate diamond levels. ALS.4.10 supplies `LocallySymmetric.IsEisensteinCG`; ALS.4.12(b) supplies the localized ordinary/Borel–Moore comparison with finite O[Δ]-coefficients. ALS.0–ALS.1 supplies the PGL₂ quotient, finite arithmetic-lattice components, stabilizers, local coefficients and groupoid chains. ALS.2 and ALS.4 supplies Borel–Serre compactification, boundary and its Eisenstein characters. ALS.3 supplies normalized transfer/conjugation/pushforward Hecke, including its component permutation and coefficient compatibility. ALS.5a.2–ALS.5a.6 supplies oriented ordinary/compact-support duality on its stated coefficient domain; ALS.5b.5–ALS.5b.8 supplies the characteristic-zero cuspidal cohomological comparison. ALS.6.1–ALS.6.3 supplies finite-cover groupoid descent. Apply its cohomological spectral sequence to K/O-valued dual coefficients and then exact Pontryagin duality: the result is Tor_i^(O[Δ])(H_j(Y_Δ,O),O) ⇒ H_(i+j)(Y₀,O). If localized H₀ vanishes, its degree-two edge is H₂(Y_Δ,O)_Δ → H₂(Y₀,O) → Tor₁^(O[Δ])(H₁(Y_Δ,O),O) → 0. This derived consequence needs no extra duality or edge-map supplier contract. For p ≥ 5 the relevant finite stabilizer orders are prime to p; for p = 3 localized control of the order-three contribution is required. At a point with stabilizer C₃, Hᵢ(C₃,𝔽₃) has dimension one in every degree, including i = 3; its coarse point has H₃ = 0. This is the negative control for using a coarse noncompact three-manifold argument.
 
-What ArithmeticLocallySymmetricSpaces must provide (gap:localized-three-primary-stabilizers): Provide localized 3-primary stabilizer and Farrell-homology vanishing with boundary and duality for the selected cyclotomically absolutely irreducible Bianchi residual systems at every fixed Taylor–Wiles level.
+What ArithmeticLocallySymmetricSpaces must provide (gap:localized-three-primary-stabilizers): For p = 3, at each level Y₀(Q) and Y_Δ(Q) of §9.1 and every non-Eisenstein m associated to ρ̄ with ρ̄ restricted to G_(F(ζ₃)) absolutely irreducible, prove H₃(Y_?(Q),k)_m = 0 and Hᵢ(∂Y_?(Q),k)_m = 0 for every i≥0, where ? is 0 or Δ.
 
 What ArithmeticLocallySymmetricSpaces must provide (gap:integral-principal-types): Provide the integral Bianchi minimal principal-type coefficient model for the half-conductor or twisted spherical selectors, with arbitrary coefficient change, Hecke, diamond-cover descent and duality, on which the all-level Conjecture A hypothesis can be imposed.
 
-What ArithmeticLocallySymmetricSpaces must provide (gap:homological-cover-duality): Provide the homological Tor edge maps and oriented finite-level Poincaré–Borel–Moore duality for these orbifold quotients when all stabilizer orders are invertible, without requiring an invertible-order neat-cover quotient, compatibly with Hecke, coefficients and the inverse dual ideal.
+### From TauCetiRoadmap.AutomorphyLiftingBeyondTaylorWiles
+
+Target BT.3/lemma-9-6 supplies the n = 2 selected-root cohomology comparison for every Taylor–Wiles set over a number field, with p > 2, distinct residual roots and a residual Galois-type maximal ideal associated to ρ̄. Section 9.2 transports it through universal coefficients and Pontryagin duality with the transposed Hecke action.
 
 ### From TauCetiRoadmap.ClassFieldTheory
 
-Layer 7 supplies arithmetic and geometric Artin maps, norm/conductor compatibility and the uniformizer inversion convention. Layer 12 supplies global reciprocity, ray-class finiteness and the norm-index/class-field correspondence. These imply in §§4.5 and 6.5 that a torsion-free abelian pro-p extension unramified at every p-adic place and outside finitely many other primes is trivial: the allowed local p-primary unit quotients and the class group are finite. Section 10.6 uses the full order h = pᵇ relation for ray-class splitting; the p-th-power test alone is insufficient for b > 1. The reciprocity witness 2 ↔ 4 over 𝔽₇ is retained at every use of a geometric local character.
+Layer 7 supplies arithmetic and geometric Artin maps, norm/conductor compatibility and the uniformizer inversion convention. Layers 11–12 supply global reciprocity, ray-class finiteness and the norm-index/class-field correspondence. These imply in §§4.5 and 6.5 that a torsion-free abelian pro-p extension unramified at every p-adic place and outside finitely many other primes is trivial: the allowed local p-primary unit quotients and the class group are finite. Section 10.6 uses the full order h = pᵇ relation for ray-class splitting; the p-th-power test alone is insufficient for b > 1. The reciprocity witness 2 ↔ 4 over 𝔽₇ is retained at every use of a geometric local character.
 
 ## How to read the build
 
@@ -153,7 +231,7 @@ The construction has the following API.
 - The coarse level-one curve at p=3 is not accepted as fine Hodge data without rigidification/descent.
 - If ρ̄(Frob_r) has eigenvalue ratio r, reject r even when r∤Np.
 
-*Needs:* AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions).
+*Needs:* AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions). gap:conductor-rigidified-descent; gap:rigidifying-prime.
 
 ### 0.2 Weight-one arithmetic Hecke data
 
@@ -235,7 +313,7 @@ For a base level L prime to p and x∤Lp, work on an imported fine model (or its
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. The weight-one residual representation is continuous, odd, absolutely irreducible and unramified at p; at a ramified reducible decomposition group its inertia invariants are nonzero. Determinant-normalized minimal lifts have Teichmüller determinant.
 
-A proof route uses these inputs. Allow x=r when removing the rigidifying prime: in that application the base is level N, not level Nr. Make the correspondence calculation on a common fine refinement and descend it through R15.1. Define pullback using the universal isogeny and trace using the finite map; normalize both maps consistently. Compute U_xπ₁*=π₁*T_x−x⁻¹V_x and U_xV_x=x⟨x⟩π₁*. Prove π₁*trπ₁W_x=xU_x+W_x directly by summing the cyclic subgroups in the moduli correspondence. No cancellation of a possibly noninjective π₁* is used. (CG18, Lemma 3.5, pp. 318–320; Lemma 3.6, p. 321; cg18 line 818.)
+A proof route uses these inputs. Allow x=r when removing the rigidifying prime: in that application the base is level N, not level Nr. Make the correspondence calculation on a common fine refinement and descend it through R15.1. Define pullback using the universal isogeny and trace using the finite map; normalize both maps consistently. Compute U_xπ₁*=π₁*T_x−x⁻¹V_x and U_xV_x=x⟨x⟩π₁*. Prove π₁*trπ₁W_x=xU_x+W_x directly by summing the cyclic subgroups in the moduli correspondence. No cancellation of a possibly noninjective π₁* is used. (CG18, Lemma 3.5, pp. 318–320; Lemma 3.6, p. 321; cg18 line 870.)
 
 The construction has the following API.
 
@@ -250,7 +328,7 @@ The construction has the following API.
 - For x=2,T=0,d=3 over Q the upper-right entry is 6 and lower-left −1/2, excluding the transposed formula.
 - If α=xβ, the specialized pairing determinant is zero; the construction alone does not assert ψ invertible.
 
-*Needs:* §0.2; §0.3; Mathlib `Matrix.det_fin_two`; AlgebraicModularFormsAndSerreWeights §R15.2 (integral q-expansions and coherent Hecke); AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer); Mathlib `Matrix.det_fin_two`, `Matrix.charpoly`, `Matrix.aeval_self_charpoly`.
+*Needs:* §0.2; §0.3; Mathlib `Matrix.det_fin_two`; AlgebraicModularFormsAndSerreWeights §R15.2 (integral q-expansions and coherent Hecke); AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer); Mathlib `Matrix.det_fin_two`, `Matrix.charpoly`, `Matrix.aeval_self_charpoly`. gap:conductor-rigidified-descent.
 
 ### 1.2 Selected-root oldform comparison
 
@@ -282,7 +360,7 @@ A proof route uses these inputs. The determinant is x⁻¹(α−xβ)(β−xα), 
 - Over 𝔽₅ take x = 2, α = β = 1. The determinant is 2⁻¹(1−2)² = 3, while U = [[2,2],[2,0]] has (U−1)² = 0 and U−1 ≠ 0; its one local factor contains two old copies.
 - For x = 2, α = 2, β = 1 over 𝔽₅, α = xβ and the pairing determinant is 0; an auxiliary prime away from Np alone is insufficient.
 
-*Needs:* §1.1; AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer).
+*Needs:* §1.1; AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer). gap:conductor-rigidified-descent.
 
 ### 1.4 Coherent diamond-cover descent
 
@@ -298,7 +376,7 @@ A proof route uses these inputs. Use AlgebraicModularFormsAndSerreWeights §R15.
 - At Δ = 1, S = O, Tor₁ over S with O is zero, and augmentation coinvariants are the original module; the edge segment ends with 0.
 - For the toy coefficient module k over O[Cₚ] with trivial action, Tor₁ with O is k and cannot be discarded merely because the cover is finite; this tests the edge term, not an assertion that k is the arithmetic module.
 
-*Needs:* §0.3; §1.1; AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer).
+*Needs:* §0.3; §1.1; AlgebraicModularFormsAndSerreWeights §R15.1 (geometric forms, small-level descent and logarithmic Kodaira–Spencer). gap:diamond-cover-cartan-leray.
 
 ### 1.5 Balanced coherent homology
 
@@ -337,7 +415,7 @@ A proof route computes both columns using the supplied U/V coefficient formulas,
 
 **Checks.**
 
-- The matrix has upper-right diamond and lower-left −1; checking a diamond value different from −1 must distinguish it from the source’s swap.
+- The printed matrix [[Tₚ,1],[−⟨p⟩,0]] equals the column-action matrix here exactly when ⟨p⟩ = 1. At Tₚ = 0 and ⟨p⟩ = 3 over ℚ, our matrix sends (0,1) to (3,0), while the printed matrix sends it to (1,0); at ⟨p⟩ = 1 the two matrices coincide.
 - With T = 0 and diamond 3 over ℚ, U = [[0,3],[−1,0]] sends (1,0) to (0,−1) and (0,1) to (3,0); U² = −3I. Interchanging the off-diagonal entries gives the wrong columns.
 - For T = 3 and diamond 2 over 𝔽₅ the roots are 1 and 2; det U = 2 is a unit, so zero is not an ordinary eigenvalue.
 
@@ -494,7 +572,7 @@ A proof route uses these inputs. The preceding three cases and high-weight inter
 - For p = 3 a character value 1+3 in ℤ/9 has the unique square root congruent to 1 given by 7, since 7² = 4 modulo 9. At p = 2 the value 1 has roots 1 and 3 modulo 4, so the normalization is not unique.
 - For determinant 6 and arithmetic roots 2,3 over 𝔽₇ the polynomial is X²−5X+6; replacing Frobenius by its inverse gives trace 2⁻¹+3⁻¹ = 4+5 = 2, which is different from 5.
 
-*Needs:* §3.4; §2.3; LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); ClassFieldTheory Layer 7 (arithmetic and geometric local reciprocity); GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations).
+*Needs:* §3.4; §2.3; LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); ClassFieldTheory Layer 7 (arithmetic and geometric local reciprocity); GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations). gap:rational-minimal-conditions; gap:integral-ordinary-hasse.
 
 ### Examples
 
@@ -527,7 +605,7 @@ The construction has the following API.
 - Every group basis element of S_a maps to 1 under TauCeti.MonoidAlgebra.augmentation; augmentation is not coefficient extraction at the identity.
 - A nonzero H killed by a power of π is admissible; requiring O-flat H excludes the main defect-one case.
 
-*Needs:* §3.5; §1.2; §1.5; GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`.
+*Needs:* §3.5; §1.2; §1.5; GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`. gap:taylor-wiles-sets; gap:defect-one-presentations.
 
 ### 4.2 Minimal weight-one R = T
 
@@ -559,27 +637,28 @@ A proof route uses these inputs. In characteristic zero use GL₂ global multipl
 - For T = k[ε]/ε², its dual has a one-dimensional maximal-ideal eigenspace even though T has k-length 2. The normalized first q-coefficient tests the eigenspace, rather than total k-dimension.
 - At an inertia-invariant line of dimension 1 the bad operator is its Frobenius scalar u; at invariant dimension 0 the corresponding minimal newvector operator is 0. The same conductor exponent need not choose this split.
 
-*Needs:* §4.2; §3.5; AlgebraicModularFormsAndSerreWeights §R15.2 (integral q-expansions and coherent Hecke); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); §1.3.
+*Needs:* §4.2; §3.5; AlgebraicModularFormsAndSerreWeights §R15.2 (integral q-expansions and coherent Hecke); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); §1.3. gap:minimal-torsion-bad-hecke. Tau Ceti `HeckeRing.GL2.Newform`, `HeckeRing.GL2.IsEigenformAwayFromLevel` and `HeckeRing.GL2.Newform.eq_of_forall_prime_eigenvalue_eq` (classical forms and uniqueness).
 
 ### 4.4 Minimal weight-one modularity lifting
 
-Assume the no-vexing and ramified-reducible invariant-line standing hypotheses. Let ρ:G_Q→GL₂(O′), with O′ finite over O, be an odd continuous lift of an absolutely irreducible ρ̄ unramified at p, with fixed Teichmüller determinant, unramified at p and genuinely minimal at every other prime in the deformation condition of R_min. Then ρ is attached to a characteristic-zero weight-one cuspidal eigenform, hence has finite image. A lift with only dimρ^(I_x)=dimρ̄^(I_x)=1 is not accepted as minimal if its inertial character acquires new p-power ramification.
+Assume the no-vexing and ramified-reducible invariant-line standing hypotheses. Let ρ:G_Q→GL₂(O′), with O′ the integers of a finite extension of ℚₚ and finite over O, be an odd continuous lift of an absolutely irreducible ρ̄ unramified at p, with fixed Teichmüller determinant, unramified at p and genuinely minimal at every other prime in the deformation condition of R_min. Then `minimal_weight_one_modularity` realizes ρ by a normalized weight-one newform f of some nonzero level L: for an embedding Frac(O′)→ℂ and every prime ℓ coprime to Lp, ρ is unramified at ℓ, the coefficient a_ℓ(f) is its arithmetic Frobenius trace and the nebentypus value is its determinant. In particular ρ has finite image. A lift with only dimρ^(I_x)=dimρ̄^(I_x)=1 is not accepted as minimal if its inertial character acquires new p-power ramification.
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. The weight-one residual representation is continuous, odd, absolutely irreducible and unramified at p; at a ramified reducible decomposition group its inertia invariants are nonzero. Determinant-normalized minimal lifts have Teichmüller determinant. For the untyped Galois and R = T assertions the vexing set is empty. Auxiliary fine-level copies are compared with the conductor-level module as in Layer 0–Layer 1.
 
-A proof route uses these inputs. The minimal lifting datum defines an O′-point of R_min=T_m. Interpret the corresponding generic-fibre Hecke system by the geometric/classical weight-one comparison. Apply the imported Deligne–Serre Artin representation and trace uniqueness. The vexing version uses Layer 6. (CG18, Corollary 1.5, p. 304; §3.9.2, p. 354; cg18 line 303.)
+A proof route uses these inputs. The minimal lifting datum defines an O′-point of R_min=T_m. Interpret the corresponding generic-fibre Hecke system by the geometric/classical weight-one comparison. Apply the imported Deligne–Serre Artin representation and trace uniqueness. The same two Lean headlines include vexing primes using Layer 6; the untyped argument here assumes none. (CG18, Corollary 1.5, p. 304; §3.9.2, p. 354; cg18 line 303.)
 
 **Checks.**
 
 - Reject a lift with unchanged invariant dimension but new p-power inertial determinant; genuine minimality is necessary.
-- A diagonal inertial lift diag(ζₚ,1) reduces to diag(1,1) but has a new p-power inertial character. Counting only the invariant line can admit ramification absent from the fixed minimal problem.
+- At v ≡ 1 mod p take residual inertia χ̄ ⊕ 1 with nontrivial prime-to-p χ̄, and lift it to Teich(χ̄)ψ ⊕ 1 with ψ of order p. Both inertia-invariant spaces are lines, but the lifted determinant is Teich(χ̄)ψ rather than Teich(χ̄); the fixed determinant excludes this lift.
+- For good Frobenius diag(2,3), the matching q-coefficient is 5 and the nebentypus is 6; replacing Frobenius by its inverse would give trace 5/6 and determinant 1/6.
 - A finite-order character twist of a finite image of size a by a character of order b gives an image of size at most ab; undoing it preserves finiteness.
 
-*Needs:* §4.2; AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions).
+*Needs:* §4.2; AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions). gap:rational-minimal-conditions. Tau Ceti `HeckeRing.GL2.Newform`, `HeckeRing.GL2.IsEigenformAwayFromLevel` and `HeckeRing.GL2.Newform.eq_of_forall_prime_eigenvalue_eq` (classical forms and uniqueness).
 
 ### 4.5 Finite image over complete local coefficient rings
 
-Under the no-vexing and ramified-reducible invariant-line hypotheses, for p≥3 and odd absolutely irreducible ρ̄ unramified at p, every minimal lift to a complete Noetherian local O-algebra A with residue k has finite image. The argument must control the universal ring, including its π-torsion and nilpotents; finiteness of its characteristic-zero point images alone is insufficient.
+Under the no-vexing and ramified-reducible invariant-line hypotheses, for p≥3 and odd absolutely irreducible ρ̄ unramified at p, `minimal_lift_finite_image` says that every adically continuous lift satisfying `IsMinimalLift` to a complete Noetherian local O-algebra A with the specified common residue k has finite image. The argument must control the universal ring, including its π-torsion and nilpotents; finiteness of its characteristic-zero point images alone is insufficient.
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. The weight-one residual representation is continuous, odd, absolutely irreducible and unramified at p; at a ramified reducible decomposition group its inertia invariants are nonzero. Determinant-normalized minimal lifts have Teichmüller determinant. For the untyped Galois and R = T assertions the vexing set is empty. Auxiliary fine-level copies are compared with the conductor-level module as in Layer 0–Layer 1.
 
@@ -591,7 +670,7 @@ A proof route uses these inputs. R_min is finite over O by R = T. There are fini
 - If a finite O-algebra has torsion ideal of size s, at most s⁴ matrices can lie over a fixed two-by-two matrix in its torsion-free quotient; this bounds the universal-image kernel by a finite set.
 - The ring O[ε]/ε² has finite-image scalar field specializations but admits the infinite subgroup {I+aεE₁₂ : a∈O}. Infinitesimal rigidity is therefore essential before deducing universal finite image.
 
-*Needs:* §4.2; §4.4; GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); ClassFieldTheory Layer 12 (ray-class reciprocity and finiteness).
+*Needs:* §4.2; §4.4; GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); ClassFieldTheory Layers 11–12 (ray-class reciprocity and finiteness).
 
 ### Examples
 
@@ -599,7 +678,7 @@ When q = 1, A∞ = O and the group algebra still has one augmentation variable. 
 
 ### Dependencies
 
-GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`; DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); AlgebraicModularFormsAndSerreWeights §R15.2 (integral q-expansions and coherent Hecke); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); ClassFieldTheory Layer 12 (ray-class reciprocity and finiteness). Earlier internal targets are specified individually in the Needs lines.
+GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`; DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); AlgebraicModularFormsAndSerreWeights §R15.2 (integral q-expansions and coherent Hecke); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); ClassFieldTheory Layers 11–12 (ray-class reciprocity and finiteness). Earlier internal targets are specified individually in the Needs lines.
 
 ## Layer 5: Vexing-prime coefficient bundles
 
@@ -632,7 +711,7 @@ For f:X_V→X_U and its G-action define L_σ=(f_*(O_(X_V)⊗_O W_σ))^G and L_σ
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. The weight-one residual representation is continuous, odd, absolutely irreducible and unramified at p; at a ramified reducible decomposition group its inertia invariants are nonzero. Determinant-normalized minimal lifts have Teichmüller determinant.
 
-A proof route uses these inputs. Use the finite morphism and its actual G-action to form the equivariant pushforward. Take invariants sheafwise and define the natural inclusion of the subcuspidal version. Repeat at auxiliary levels; compare on the open curves first, then extend using the cusp calculation of the next target. (CG18, §3.9.1, pp. 343–344; cg18 line 1901.)
+A proof route uses these inputs. Use the finite morphism and its actual G-action to form the equivariant pushforward. Take invariants sheafwise and define the natural inclusion of the subcuspidal version. Repeat at auxiliary levels; compare on the open curves first, then extend using the cusp calculation of the next target. (CG18, §3.9.1, pp. 343–344; cg18 line 1925.)
 
 The construction has the following API.
 
@@ -704,7 +783,7 @@ For the away-type correspondences at U,Q,Δ, construct T_x,U_y and diamond actio
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. The weight-one residual representation is continuous, odd, absolutely irreducible and unramified at p; at a ramified reducible decomposition group its inertia invariants are nonzero. Determinant-normalized minimal lifts have Teichmüller determinant.
 
-A proof route uses these inputs. The correspondences commute with G, so act on invariant pushforward sections. Verify the maps at cusp formal neighborhoods and keep the separately defined coefficient bundles on both sides. Compute dual isogenies and trace to get the transpose normalization; descend finite-level actions. (CG18, §3.9.1, pp. 344–345; §3.9.2, pp. 351–353; cg18 line 1920.)
+A proof route uses these inputs. The correspondences commute with G, so act on invariant pushforward sections. Verify the maps at cusp formal neighborhoods and keep the separately defined coefficient bundles on both sides. Compute dual isogenies and trace to get the transpose normalization; descend finite-level actions. (CG18, §3.9.1, pp. 344–345; §3.9.2, pp. 351–353; cg18 line 1957.)
 
 The construction has the following API.
 
@@ -723,7 +802,7 @@ The construction has the following API.
 
 ### Examples
 
-At tame cusp indices 5 and 7 put t = q⁵ = u⁷ and q = w⁷, u = w⁵ in the normalized common cover. An old character line pulls back to w⁷O[[u]], whereas the independently normalized line is w²O[[u]]; their ratio is u. Agreement off the cusp does not identify their compactified extensions (CG18, §3.9.1, pp. 344–345, comparison of invariant pushforwards; cg18 line 1920).
+At tame cusp indices 5 and 7 put t = q⁵ = u⁷ and q = w⁷, u = w⁵ in the normalized common cover. An old character line pulls back to w⁷O[[u]], whereas the independently normalized line is w²O[[u]]; their ratio is u. Agreement off the cusp does not identify their compactified extensions (CG18, §3.9.1, pp. 344–345, comparison of invariant pushforwards; cg18 line 1957).
 
 ### Dependencies
 
@@ -777,7 +856,7 @@ A proof route uses these inputs. Embed type-coefficient weight-one torsion in th
 - On two components interchanged by a type-group element, an equivariant p-operator that is zero on one component is zero on the other. Without equivariance the matrix diag(0,1) supplies a counterexample.
 - For the trivial type of rank 1, all three Frobenius matrices diag(1,2), [[1,1],[0,1]], I recover the untyped cases with traces 3,2,2 over 𝔽₅.
 
-*Needs:* §5.1; §5.6; §5.5; §3.4; GL2AutomorphicRepresentationsAndTransfer §R16.2.11; GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§6.8–6.9, 6.12 (integral determinant and reconstruction); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility).
+*Needs:* §5.1; §5.6; §5.5; §3.4; GL2AutomorphicRepresentationsAndTransfer §R16.2.11; GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§6.8–6.9, 6.12 (integral determinant and reconstruction); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility). gap:integral-ordinary-hasse; gap:rational-minimal-conditions.
 
 ### 6.4 Minimal weight-one R = T with vexing types
 
@@ -793,7 +872,7 @@ A proof route uses these inputs. Repeat the arithmetic Taylor–Wiles constructi
 - For a character type with diamond value 2 over 𝔽₇, its contragredient has value 4, so using σ in place of σ* changes the actual homological eigenspace.
 - If a finite free T-module has rank r and nonzero generic fibre, a one-dimensional exact type/newvector fibre forces r = 1. A purely torsion generic fibre has dimension 0 for every r and yields no such rank conclusion.
 
-*Needs:* §6.2; §6.3; §4.1; DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients).
+*Needs:* §6.2; §6.3; §4.1; DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients). Tau Ceti `HeckeRing.GL2.Newform`, `HeckeRing.GL2.IsEigenformAwayFromLevel` and `HeckeRing.GL2.Newform.eq_of_forall_prime_eigenvalue_eq` (classical forms and uniqueness).
 
 ### 6.5 Minimal lifting and finite image with types
 
@@ -801,7 +880,7 @@ For the same residual ρ̄, including nonempty vexing set, genuinely minimal lif
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. The weight-one residual representation is continuous, odd, absolutely irreducible and unramified at p; at a ramified reducible decomposition group its inertia invariants are nonzero. Determinant-normalized minimal lifts have Teichmüller determinant.
 
-A proof route uses these inputs. Replace the no-vexing R = T input in Layer 4 by the type-coefficient theorem. Apply the same generic-fibre Artin comparison and global unramified-at-p infinitesimal-rigidity argument. The finite π-torsion kernel in the universal ring controls specializations to arbitrary complete local A. Use ray-class reciprocity to extend the prescribed finite prime-to-p local unit characters away from p to a finite-order global character unramified at p; enlarge coefficients if necessary. The determinant quotient has values in 1+m, is unramified at p and outside finitely many primes, so factors through a finite ray-class p-quotient. Twisting preserves finite image and the normalized minimal local problem; use the normalized conductor when invoking R = T. (CG18, Corollaries 1.5–1.6, p. 304; §3.9.2, p. 354; Lemma 4.14, pp. 366–368; cg18 line 2823.)
+The headline `minimal_lift_finite_image` includes these vexing minimal lifts, and `minimal_weight_one_modularity` gives their characteristic-zero newforms with the same Frobenius trace and nebentypus determinant normalization. A proof route uses these inputs. Replace the no-vexing R = T input in Layer 4 by the type-coefficient theorem. Apply the same generic-fibre Artin comparison and global unramified-at-p infinitesimal-rigidity argument. The finite π-torsion kernel in the universal ring controls specializations to arbitrary complete local A. Use ray-class reciprocity to extend the prescribed finite prime-to-p local unit characters away from p to a finite-order global character unramified at p; enlarge coefficients if necessary. The determinant quotient has values in 1+m, is unramified at p and outside finitely many primes, so factors through a finite ray-class p-quotient. Twisting preserves finite image and the normalized minimal local problem; use the normalized conductor when invoking R = T. (CG18, Corollaries 1.5–1.6, p. 304; §3.9.2, p. 354; Lemma 4.14, pp. 366–368; cg18 line 2823.)
 
 **Checks.**
 
@@ -809,7 +888,7 @@ A proof route uses these inputs. Replace the no-vexing R = T input in Layer 4 by
 - If a representation has image size a and the two finite twisting characters have orders b,c, undoing them gives image size at most abc; the finite-image property survives both operations.
 - A ramified finite character changes the Artin conductor; even a one-dimensional unramified character of conductor 0 becomes one of positive conductor after a ramified twist. The minimal ring must belong to the normalized twist.
 
-*Needs:* §6.4; §4.4; §4.5; AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); ClassFieldTheory Layer 12 (ray-class reciprocity and finiteness).
+*Needs:* §6.4; §4.4; §4.5; AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); ClassFieldTheory Layers 11–12 (ray-class reciprocity and finiteness).
 
 ### Examples
 
@@ -817,7 +896,7 @@ For a diamond value 2 over 𝔽₇, the dual value is 4. A non-self-dual type mu
 
 ### Dependencies
 
-DeformationAndDerivedPatchingAlgebra §5.1 (balanced presentations); AlgebraicModularFormsAndSerreWeights §R15.3, Twisted duality and the supersingular boundary; GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients); GL2AutomorphicRepresentationsAndTransfer §R16.2.11; GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§6.8–6.9, 6.12 (integral determinant and reconstruction); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); ClassFieldTheory Layer 12 (ray-class reciprocity and finiteness). Earlier internal targets are specified individually in the Needs lines.
+DeformationAndDerivedPatchingAlgebra §5.1 (balanced presentations); AlgebraicModularFormsAndSerreWeights §R15.3, Twisted duality and the supersingular boundary; GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients); GL2AutomorphicRepresentationsAndTransfer §R16.2.11; GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); AutomorphicGaloisRepresentations §§6.8–6.9, 6.12 (integral determinant and reconstruction); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); AutomorphicGaloisRepresentations §§2.8–2.10 (weight-one Artin representations); ClassFieldTheory Layers 11–12 (ray-class reciprocity and finiteness). Earlier internal targets are specified individually in the Needs lines.
 
 ## Layer 7: Scalar Frobenius and Jacobian multiplicity
 
@@ -846,7 +925,7 @@ The construction has the following API.
 
 ### 7.2 Global scalar eigenvalue ring and type
 
-In the scalar unramified-at-p setting, impose the additional restriction that no nonharmless x≡1 mod p has ρ̄|D_x a nontrivial ramified extension of an unramified character by itself. For each φ let R̃_φ be the global ordinary deformation ring with chosen Frobenius eigenvalue at p, determinant χ_φ, and the conductor-compatible local quotients away from p (in particular the unipotent/Steinberg quotient for ramified Steinberg residual type at x≡−1 mod p). Subject to the exact generic-fibre component comparison requested from GL2ModularityLifting §§3.7, 4.1–4.2, R̃_φ is finite flat over O, Cohen–Macaulay of type three, and maps isomorphically to the matching T_(φ,m). The unrestricted theorem requires the variable-determinant scalar comparison contract. The unrestricted comparison uses the variable-determinant local family at the self-extension primes; the type-three assertion for its matched global quotient is part of the scalar comparison contract, rather than a consequence of determinant normalization.
+In the scalar unramified-at-p setting, impose the additional restriction that no nonharmless x≡1 mod p has ρ̄|D_x a nontrivial ramified extension of an unramified character by itself. For each φ let R̃_φ be the global ordinary deformation ring with chosen Frobenius eigenvalue at p, determinant χ_φ, and the conductor-compatible local quotients away from p (in particular the unipotent/Steinberg quotient for ramified Steinberg residual type at x≡−1 mod p). Subject to the exact generic-fibre component comparison by gap:scalar-conductor-comparison (GL2ModularityLifting §§3.7, 4.1–4.2), R̃_φ is finite flat over O, Cohen–Macaulay of type three, and maps isomorphically to the matching T_(φ,m). The unrestricted theorem requires the variable-determinant scalar comparison contract. The unrestricted comparison uses the variable-determinant local family at the self-extension primes; the type-three assertion for its matched global quotient is part of the scalar comparison contract, rather than a consequence of determinant normalization.
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k.
 
@@ -858,7 +937,7 @@ A proof route uses these inputs. Import global finiteness, presentation and gene
 - The parameter quotient k[x,y,z]/(x,y,z)² has basis 1,x,y,z, length 4 and socle dimension 3; k[ε]/ε⁴ instead has length 4 but socle dimension 1.
 - At a norm-one ramified self-extension, the inertial pairs (ψ,1) and (1,ψ⁻¹) have distinct determinants ψ and ψ⁻¹ but normalize to the same unordered pair (ψ¹ᐟ²,ψ⁻¹ᐟ²). The variable-determinant comparison cannot be replaced by an injective fixed-determinant twist.
 
-*Needs:* §7.1; LocalGaloisDeformationRings §6.18 (normal Cohen–Macaulay type three); GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); GL2ModularityLifting §§3.7, 4.1–4.2 (component support and integral comparison); DeformationAndDerivedPatchingAlgebra §§3.1, 3.9 (depth, canonical modules and type).
+*Needs:* §7.1; LocalGaloisDeformationRings §6.18 (normal Cohen–Macaulay type three); GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); GL2ModularityLifting §§3.7, 4.1–4.2 (component support and integral comparison); DeformationAndDerivedPatchingAlgebra §§3.1, 3.9 (depth, canonical modules and type). gap:scalar-variable-determinant; gap:scalar-conductor-comparison.
 
 ### 7.3 Integral character-twisting identity
 
@@ -882,7 +961,7 @@ Under the restricted scalar hypotheses of the type-three target, J₁(N*)[m]≅�
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k.
 
-A proof route uses these inputs. The group algebra O[Φ] is finite flat Gorenstein; tensoring preserves canonical-module type three. Hence Hom_Zp(T_m,Z_p)/m has residue dimension three. The Gross sequence gives dim_k G⁰[m]=3 and dim_k Gᵉ[m]=1, but m-torsion is only left exact. It yields 3≤dim_k G[m]≤4. Import the Jacobian residual-isotypy theorem from SerreWeightAndLevelOptimisation §§3.4, 3.10–3.13: at this full non-Eisenstein Hecke ideal, J₁(N*)[m] is a direct sum of copies of the absolutely irreducible ρ̄. This requires the Jacobian/Eichler–Shimura annihilator input, not merely reconstruction of one rank-two representation over the Hecke ring. Its dimension is even, hence four and the multiplicity is two. Do not assert that the full Tate module is free of rank two over the non-Gorenstein Hecke algebra. (CG18, Theorem 4.8 and closing calculation, pp. 361–366; cg18 line 2801.)
+A proof route uses these inputs. The group algebra O[Φ] is finite flat Gorenstein; tensoring preserves canonical-module type three. Hence Hom_Zp(T_m,Z_p)/m has residue dimension three. The Gross sequence gives dim_k G⁰[m]=3 and dim_k Gᵉ[m]=1, but m-torsion is only left exact. It yields 3≤dim_k G[m]≤4. Use gap:jacobian-residual-isotypy (SerreWeightAndLevelOptimisation §§3.10–3.12): at this full non-Eisenstein Hecke ideal, J₁(N*)[m] is a direct sum of copies of the absolutely irreducible ρ̄. This requires the Jacobian/Eichler–Shimura annihilator input, not merely reconstruction of one rank-two representation over the Hecke ring. Its dimension is even, hence four and the multiplicity is two. Do not assert that the full Tate module is free of rank two over the non-Gorenstein Hecke algebra. (CG18, Theorem 4.8 and closing calculation, pp. 361–366; cg18 line 2801.)
 
 **Checks.**
 
@@ -890,7 +969,7 @@ A proof route uses these inputs. The group algebra O[Φ] is finite flat Gorenste
 - The Gross bounds give dimensions in {3,4}; a sum of two-dimensional residual constituents has even dimension, so the intersection {3,4}∩2ℤ is {4} and the multiplicity is 4/2 = 2.
 - For a type-three local order the canonical module needs three generators; replacing it by a free line would give 1 and incorrectly impose a Gorenstein hypothesis.
 
-*Needs:* §7.3; §7.2; SerreWeightAndLevelOptimisation §3.10 (ordinary Tate sequence); DeformationAndDerivedPatchingAlgebra §§3.1, 3.9 (depth, canonical modules and type); AutomorphicGaloisRepresentations §§6.8–6.9, 6.12 (integral determinant and reconstruction); SerreWeightAndLevelOptimisation §§3.10–3.13 (Gross sequence, known multiplicities and minimal witness).
+*Needs:* §7.3; §7.2; SerreWeightAndLevelOptimisation §3.10 (ordinary Tate sequence); DeformationAndDerivedPatchingAlgebra §§3.1, 3.9 (depth, canonical modules and type); AutomorphicGaloisRepresentations §§6.8–6.9, 6.12 (integral determinant and reconstruction); SerreWeightAndLevelOptimisation §§3.10–3.13 (Gross sequence, known multiplicities and minimal witness). gap:jacobian-residual-isotypy.
 
 ### 7.5 Multiplicity-one alternatives and quotient Jacobians
 
@@ -906,7 +985,7 @@ A proof route uses these inputs. Import the Gross/Edixhoven/Buzzard/Wiese altern
 - At nonscalar repeated Frobenius [[1,1],[0,1]], the discriminant is 0 but the known nonexceptional multiplicity is one; scalar I has the same polynomial and the type-three branch has multiplicity two.
 - For p = 3 or induction from ℚ(√−3), the diamond-quotient comparison has a failed hypothesis; the full-level multiplicities 1 or 2 alone give no quotient multiplicity.
 
-*Needs:* §7.1; §7.4; SerreWeightAndLevelOptimisation §§3.10–3.13 (Gross sequence, known multiplicities and minimal witness).
+*Needs:* §7.1; §7.4; SerreWeightAndLevelOptimisation §§3.10–3.13 (Gross sequence, known multiplicities and minimal witness). gap:carayol-diamond-quotient.
 
 ### Examples
 
@@ -940,15 +1019,15 @@ The construction has the following API.
 - Locally over ℤₚ, μₚ⊕ℤ/p is finite flat and ordinary, with inertia characters ε̄ and 1. The Kummer extension given by p is ordinary but fails finite flatness, while a unit Kummer class gives a finite-flat extension; ordinarity alone does not identify the local condition.
 - A ramified inertia image χ⊗[[1,*],[0,1]] with χ nontrivial quadratic and nonzero extension is neither S nor semisimple P and is rejected.
 
-*Needs:* GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); LocalGaloisDeformationRings §4.1 (flat deformations).
+*Needs:* GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions); LocalGaloisDeformationRings §4.1 (flat deformations). gap:bianchi-local-types.
 
 ### 8.2 Bianchi arithmetic levels and matched types
 
-For G=Res_(F/Q)PGL₂ let Y(K)=G(Q)\G(A)/(K_∞⁰K), using orbifold/group homology on each arithmetic lattice component. Define Γ₀(v^c), Γ₁(v^c), Γ_p(v^c) in PGL₂(O_(F_v)) by normalized matrices [[1,*],[0,d]] modulo v^c, with d arbitrary, d=1 and d of p-power order, respectively. At Q take K_Q=Γ₁(v), L_Q=Γ₀(v); outside Q,Sp take maximal level; at v|p take maximal PGL₂(O_(F_v)) if ρ̄ is flat and Γ₀(v) otherwise; at S take Γ₀(v). For M,H retain Γ_p(v^(a(ρ̄_v))). At P the source’s Γ_p(v^(2a(ψ))) is not minimal-type matching: for ψ²≠1 request the Γ₀(v^(a(ψ))) character type ψ(a/d), and for ψ²=1 request the twisted spherical type ψ∘det on PGL₂(O_(F_v)). Denote by H_i^min the homology after a supplied integral minimal-type projector; the S-only case needs no P correction. At quadratic ψ the character ψ∘det descends to PGL₂ because ψ(a²) = 1 for every scalar a. For arbitrary principal types use the supplied integral coefficient model; a central idempotent is not assumed when its denominator is divisible by p.
+For G=Res_(F/Q)PGL₂ let Y(K)=G(Q)\G(A)/(K_∞⁰K), using orbifold/group homology on each arithmetic lattice component. Use the projective congruence subgroups of ArithmeticLocallySymmetricSpaces §ALS.0.10(ii). At Q take K_Q=Γ₁(v), L_Q=Γ₀(v); outside Q,Sp take maximal level; at v|p take maximal PGL₂(O_(F_v)) if ρ̄ is flat and Γ₀(v) otherwise; at S take Γ₀(v). For M,H retain Γ_p(v^(a(ρ̄_v))). At P the source’s Γ_p(v^(2a(ψ))) is not minimal-type matching: for ψ²≠1 use the Γ₀(v^(a(ψ))) character type ψ(a/d), and for ψ²=1 the twisted spherical type ψ∘det on PGL₂(O_(F_v)), by gap:principal-local-selectors. Denote by H_i^min the homology after a supplied integral minimal-type projector; the S-only case needs no P correction. At quadratic ψ the character ψ∘det descends to PGL₂ because ψ(a²) = 1 for every scalar a. For arbitrary principal types use the supplied integral coefficient model; a central idempotent is not assumed when its denominator is divisible by p.
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply.
 
-A proof route uses these inputs. Specialize the existing PGL₂ quotient and its finite arithmetic-lattice components, retaining stabilizers. Define Γ-groups on projective matrix classes, so the scalar normalization is well defined. At type P separate the source’s level from the matched local-type spaces. Their integral Hecke/cover/duality compatibility is the explicit supplier request and the integral principal-type contract; do not silently replace one space by the other. (CG18, §§5.2–5.2.1, pp. 371–373; Theorem 1.3, p. 302; cg18 line 3020.)
+A proof route uses these inputs. Specialize the existing PGL₂ quotient and its finite arithmetic-lattice components, retaining stabilizers. Use ArithmeticLocallySymmetricSpaces §ALS.0.10(ii) for the projective congruence subgroups. At type P separate the source’s level from the matched local-type spaces. Their integral Hecke/cover/duality compatibility is by gap:integral-principal-types; do not silently replace one space by the other. (CG18, §§5.2–5.2.1, pp. 371–373; Theorem 1.3, p. 302; cg18 line 3020.)
 
 The construction has the following API.
 
@@ -963,15 +1042,15 @@ The construction has the following API.
 - At order-3 stabilizers with p=3, group homology can be nonzero above the manifold dimension; coarse-space homology is not substituted.
 - For principal type ψ⊕ψ⁻¹ of a(ψ)=1 and ψ²≠1, Γ_p(v²) admits more than the minimal-type vectors; it is not identified with the matched type space.
 
-*Needs:* §8.1; ArithmeticLocallySymmetricSpaces §§ALS.0.1–ALS.0.9 (quotients and stabilizers); ArithmeticLocallySymmetricSpaces §ALS.1 (groupoid coefficients and universal coefficients); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types).
+*Needs:* §8.1; ArithmeticLocallySymmetricSpaces §§ALS.0.1–ALS.0.10 (quotients, stabilizers and levels); ArithmeticLocallySymmetricSpaces §ALS.1 (groupoid coefficients and universal coefficients); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types). gap:principal-local-selectors; gap:integral-principal-types.
 
 ### 8.3 Bianchi Hecke data and residual ideals
 
-On H₁(Y₁(Q),O), or on a supplied H₁^min type summand, let T_Q^an be the finite O-image of T_α away from Q∪S∪{v|p}; let T_Q also include operators supported at Q and the relevant diamonds. A residual minimal modularity datum is the assertion that m_∅=(π,T_λ−trρ̄(Frob_λ)) is proper at Q=∅. Extend it by U_x−α_x at Q, using chosen uniformizers; the residual class of U_x is independent of the uniformizer only when the residual diamond character is trivial. An ideal is Eisenstein if T_λ≡2 at almost all primes splitting in one fixed finite abelian extension of F.
+On H₁(Y₁(Q),O), or on a supplied H₁^min type summand, let T_Q^an be the finite O-image of T_α away from Q∪S∪{v|p}; let T_Q also include operators supported at Q and the relevant diamonds. A residual minimal modularity datum is the assertion that m_∅=(π,T_λ−trρ̄(Frob_λ)) is proper at Q=∅. Extend it by U_x−α_x at Q, using chosen uniformizers; the residual class of U_x is independent of the uniformizer only when the residual diamond character is trivial. Use `LocallySymmetric.IsEisensteinCG` from ArithmeticLocallySymmetricSpaces §ALS.4.10 for the Eisenstein condition.
 
 O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply.
 
-A proof route uses these inputs. Use the existing integral Hecke-image construction on the arithmetic homology, not a generic new algebra. For each prime away from the level fix the ideal Hecke operator; for a level prime record the uniformizer dependence through diamonds. Treat properness at minimal level as an input. Residual modularity at some higher level does not supply it. (CG18, Definition 5.4–5.5 and Remark 5.7, pp. 374–375; §5.4, pp. 378–379; cg18 line 3100.)
+A proof route uses these inputs. Use the existing integral Hecke-image construction on the arithmetic homology, not a generic new algebra. For each prime away from the level fix the ideal Hecke operator; for a level prime record the uniformizer dependence through diamonds. Treat properness at minimal level as an input. Residual modularity at some higher level does not supply it. (CG18, Definition 5.4–5.5 and Remark 5.7, pp. 374–375; §5.4, pp. 378–379; cg18 line 3126.)
 
 The construction has the following API.
 
@@ -986,7 +1065,7 @@ The construction has the following API.
 - If the residual diamond at u equals c≠1, the residual U_(uπ) eigenvalue is cα, so uniformizer independence is rejected.
 - If localized H₁ is nonzero and killed by π, its Hecke image is allowed to be a finite k-algebra.
 
-*Needs:* §8.2; IntegralHeckeAndGaloisDeterminants §§2.1–2.2 (images and local factors); ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences).
+*Needs:* ArithmeticLocallySymmetricSpaces §ALS.4.10 (Eisenstein ideals); §8.2; IntegralHeckeAndGaloisDeterminants §§2.1–2.2 (images and local factors); ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences).
 
 ### 8.4 Conjecture A local–global contract
 
@@ -1009,7 +1088,7 @@ The construction has the following API.
 - A proof at Q=∅ alone supplies no contract at Q_a and cannot instantiate the patching theorem.
 - If ρ̄ is not finite flat but is ordinary at v|p, the contract asks for ordinary compatibility and does not assert an unconditional flat lift.
 
-*Needs:* §8.1; §8.3; ClassFieldTheory Layer 7 (arithmetic and geometric local reciprocity); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions).
+*Needs:* §8.1; §8.3; ClassFieldTheory Layer 7 (arithmetic and geometric local reciprocity); LocalGaloisDeformationRings §§2.1–2.5, 2.19 (minimal away-p conditions). gap:integral-principal-types.
 
 ### 8.5 Conjectural Galois representation generates Hecke
 
@@ -1039,15 +1118,14 @@ GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); 
 
 ### 9.1 Bianchi diamond-cover datum
 
-For Q as above set Δ_Q=∏_(x∈Q)(O_F/x)×, choose a p-power quotient Δ, and let Y_Δ(Q)→Y₀(Q) be the associated orbifold cover between Y₁(Q) and Y₀(Q). Put S=O[Δ]. Every finite O[Δ]-module μ gives a local coefficient system on Y₀(Q), and Shapiro identifies H_i(Y₀(Q),S)≅H_i(Y_Δ(Q),O). The chosen Hecke ideal includes U_x−α_x and the residual trivial diamond conditions.
+For Q as above use Δ_Q, its p-power quotient Δ and the intermediate orbifold cover Y_Δ(Q)→Y₀(Q) of ArithmeticLocallySymmetricSpaces §ALS.0.10(iv). Put S=O[Δ]. Every finite O[Δ]-module μ gives a local coefficient system on Y₀(Q), and Shapiro identifies H_i(Y₀(Q),S)≅H_i(Y_Δ(Q),O). The chosen Hecke ideal includes U_x−α_x and the residual trivial diamond conditions.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
-A proof route uses these inputs. Use the actual quotient of K/L at the auxiliary places and form the groupoid cover component by component. Identify the regular local system with induced trivial coefficients on each arithmetic lattice. Apply the pinned group-homology Shapiro isomorphism, then assemble the Hecke-compatible component maps. A type projector requires the compatibility supplied in Layer 8. (CG18, §5.3.1, p. 376; cg18 line 3219.)
+A proof route uses these inputs. Use the intermediate levels and deck action of ArithmeticLocallySymmetricSpaces §ALS.0.10(iv). Identify the regular local system with induced trivial coefficients on each arithmetic lattice. Apply the pinned group-homology Shapiro isomorphism, then assemble the Hecke-compatible component maps. A type projector requires the compatibility supplied in Layer 8. (CG18, §5.3.1, p. 376; cg18 line 3219.)
 
 The construction has the following API.
 
-- Return Δ_Q↠Δ, the normal intermediate level and its deck action.
 - H_i(Y₀(Q),O[Δ])≅H_i(Y_Δ(Q),O), as S-modules with the same normalized Hecke action.
 - Quotients Δ↠Δ′ induce the expected covering transfer maps and augmenting to Δ′=1 recovers base level.
 - Under the Shapiro equivalence, the map to base level uses the coefficient-sum augmentation S→O: every deck basis element [δ] maps to 1, including in residue characteristic dividing |Δ|.
@@ -1058,15 +1136,15 @@ The construction has the following API.
 - For Δ=C₃, the regular O-module has rank three, even when p=3; it is not replaced by its rank-one coinvariants before descent.
 - A normal lattice cover remains an orbifold cover with deck group Δ even when its map of coarse spaces is ramified.
 
-*Needs:* §8.2; §8.3; ArithmeticLocallySymmetricSpaces §ALS.1 (groupoid coefficients and universal coefficients); ArithmeticLocallySymmetricSpaces §§ALS.6.1–ALS.6.3 (finite-cover descent); Mathlib `groupHomology.indIso`.
+*Needs:* ArithmeticLocallySymmetricSpaces §ALS.0.10 (levels and deck groups); §8.2; §8.3; ArithmeticLocallySymmetricSpaces §ALS.1 (groupoid coefficients and universal coefficients); ArithmeticLocallySymmetricSpaces §§ALS.6.1–ALS.6.3 (finite-cover descent); Mathlib `groupHomology.indIso`.
 
 ### 9.2 Bianchi selected-root comparison
 
 At Taylor–Wiles primes Q with N(x)≡1 mod p and distinct residual roots, the ideal selecting U_x=α_x gives H₁(Y₀(Q),O)_m≅H₁(Y,O)_(m_∅), compatible with the anaemic Hecke action. The assertion is for the selected local factor and is valid on a supplied compatible minimal-type summand. It does not identify the entire two-copy oldspace with base level.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
-A proof route uses these inputs. Use universal coefficients to dualize H₁ to H¹ with K/O coefficients. Apply the two degeneracy correspondences and the determinant identity with x replaced by N(x); it is a unit at the distinct-root Taylor–Wiles ideal. Eliminate the complementary newspace by the local correspondence identity, then select one root. (CG18, Lemma 5.8, p. 376; cg18 line 3205.)
+A proof route uses these inputs. Use universal coefficients and Pontryagin duality to translate the selected-root cohomology comparison of AutomorphyLiftingBeyondTaylorWiles target BT.3/lemma-9-6 to H₁, with the transposed Hecke action and the corresponding dual residual ideal. The residual Galois-type hypothesis is supplied by the association of m to ρ̄; ArithmeticLocallySymmetricSpaces §ALS.3.14 supplies its two degeneracy correspondences. The complementary-newspace elimination belongs to the imported target. (CG18, Lemma 5.8, p. 376; cg18 line 3205.)
 
 **Checks.**
 
@@ -1074,15 +1152,15 @@ A proof route uses these inputs. Use universal coefficients to dualize H₁ to H
 - At residual norm 1 over 𝔽₇ with roots 2,4, the oldform determinant is −(2−4)² = 3, a unit, and the selected factor has one base copy.
 - At repeated roots 1,1 the same determinant is 0, so this comparison is outside its hypotheses; the whole oldspace cannot be silently selected.
 
-*Needs:* §9.1; §1.2; ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences).
+*Needs:* §9.1; AutomorphyLiftingBeyondTaylorWiles target BT.3/lemma-9-6 (selected-root cohomology); ArithmeticLocallySymmetricSpaces §§ALS.1, ALS.3.14 (universal coefficients and degeneracy maps).
 
 ### 9.3 Localized Bianchi amplitude and boundary
 
-Assume p ≥ 3, the stated localized stabilizer/boundary/duality contract (automatic from the tame-stabilizer specialization for p ≥ 5), the non-Eisenstein residual ideal of Layer 8 and finite μ over O[Δ]. Then H₀(Y₀(Q),μ)_m=H₃(Y₀(Q),μ)_m=0 and H_i(Y₀(Q),μ)_m≅H_i^(BM)(Y₀(Q),μ)_m for every i. If μ is O-flat, H₂(Y₀(Q),μ)_m is O-torsion-free. Retain the same assertions on a compatible direct minimal-type summand. For p=3 these claims require localized control of 3-primary stabilizer homology and duality; that extension is the localized 3-primary stabilizer contract.
+Assume p ≥ 3 and gap:localized-three-primary-stabilizers when p = 3, the non-Eisenstein residual ideal of Layer 8 and finite μ over O[Δ]. Then H₀(Y₀(Q),μ)_m=H₃(Y₀(Q),μ)_m=0; use the ordinary/Borel–Moore comparison of ArithmeticLocallySymmetricSpaces §ALS.4.12(b). If μ is O-flat, H₂(Y₀(Q),μ)_m is O-torsion-free. Retain the same assertions on a compatible direct minimal-type summand. For p=3 the degree-three and boundary vanishing are the explicit hypotheses of gap:localized-three-primary-stabilizers; the integral coefficient statements follow by filtration and completeness, without integral duality.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
-A proof route uses these inputs. For p≥5 finite stabilizers in these PGL₂ arithmetic lattices have order prime to p (possible torsion element orders are 1,2,3,4,6). Group homology may therefore be computed by the orbifold cellular chains over O. Noncompactness and dimension three give H₃ with residual coefficients zero. H₀ carries degree times a permutation of determinant components; its eigensystems are Eisenstein. Induct on finite coefficient quotients and then use completeness for μ. Boundary components are torus orbifolds; compute their two-character Hecke eigensystems through the Borel–Serre boundary and localize them away. This gives ordinary/Borel–Moore comparison. For O-flat μ, use the homology coefficient exact sequence and H₃(Y,μ/π)_m=0 to deduce H₂(Y,μ)_m[π]=0. (CG18, Lemma 5.9 and proof, pp. 376–377; cg18 line 3235.)
+A proof route uses these inputs. For p≥5 finite stabilizers in these PGL₂ arithmetic lattices have order prime to p (possible torsion element orders are 1,2,3,4,6). Group homology may therefore be computed by the orbifold cellular chains over O. Noncompactness and dimension three give H₃ with residual coefficients zero. H₀ carries degree times a permutation of determinant components; its eigensystems are Eisenstein. Induct on finite coefficient quotients and then use completeness for μ. Use ArithmeticLocallySymmetricSpaces §ALS.4.12(b) for boundary localization and ordinary/Borel–Moore comparison. For O-flat μ, use the homology coefficient exact sequence and H₃(Y,μ/π)_m=0 to deduce H₂(Y,μ)_m[π]=0. (CG18, Lemma 5.9 and proof, pp. 376–377; cg18 line 3235.)
 
 **Checks.**
 
@@ -1090,15 +1168,15 @@ A proof route uses these inputs. For p≥5 finite stabilizers in these PGL₂ ar
 - For a point with stabilizer C₃, dim H₃(C₃,𝔽₃) = 1 whereas the coarse point has H₃ = 0. This is a negative control for the p = 3 argument before localization.
 - For a two-component space and a Hecke correspondence of degree 2 interchanging components, its H₀ matrix is [[0,2],[2,0]], with eigenvalues 2 and −2; replacing it by 2I loses the permutation.
 
-*Needs:* §9.1; ArithmeticLocallySymmetricSpaces §§ALS.2, ALS.4.1–ALS.4.12 (compactification and boundary); ArithmeticLocallySymmetricSpaces §§ALS.5a.2–ALS.5a.6 (finite-level duality); ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences).
+*Needs:* §9.1; ArithmeticLocallySymmetricSpaces §§ALS.2, ALS.4.1–ALS.4.12 (compactification and boundary); ArithmeticLocallySymmetricSpaces §ALS.5a.6 (finite-level duality over K); ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences). gap:localized-three-primary-stabilizers.
 
 ### 9.4 Balanced Bianchi homology
 
-Under p≥5 and the preceding level, coefficient and localization hypotheses, M=H₁(Y_Δ(Q),O)_m is a finite balanced S=O[Δ]-module. Explicitly, with r=rank_O M_Δ, d_S(M)=r−dim_k(Tor₁^S(M,O)/π)≥0. If p=3 the same implication holds after supplying the localized vanishing and duality missing in the localized 3-primary stabilizer contract.
+Under p≥5 and the preceding level, coefficient and localization hypotheses, M=H₁(Y_Δ(Q),O)_m is a finite balanced S=O[Δ]-module. Explicitly, with r=rank_O M_Δ, d_S(M)=r−dim_k(Tor₁^S(M,O)/π)≥0. If p=3 the same implication holds under gap:localized-three-primary-stabilizers; the rank comparison uses only characteristic-zero duality.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
-A proof route uses these inputs. Hochschild–Serre gives Tor_i^S(H_j(Y_Δ,O)_m,O)⇒H_(i+j)(Y₀,O)_m. H₀=0 gives M_Δ≅H₁(Y₀,O)_m and H₂(Y_Δ,O)_(m,Δ)→H₂(Y₀,O)_m→Tor₁^S(M,O)→0. The preceding theorem makes H₂(Y₀,O)_m O-free. Poincaré duality and ordinary/Borel–Moore comparison give its rank equal to rank H₁(Y₀,O)_m. Track the dual Hecke ideal: for PGL₂ the inverse correspondence differs only by the matching trivial-central-character normalization. Apply the low-degree Tor dimension formula from the imported balanced-module API; the right-exact segment bounds Tor₁/π by r. (CG18, Proposition 5.10, pp. 377–378; cg18 line 3268.)
+A proof route uses these inputs. Hochschild–Serre gives Tor_i^S(H_j(Y_Δ,O)_m,O)⇒H_(i+j)(Y₀,O)_m. H₀=0 gives M_Δ≅H₁(Y₀,O)_m and H₂(Y_Δ,O)_(m,Δ)→H₂(Y₀,O)_m→Tor₁^S(M,O)→0. The preceding theorem makes H₂(Y₀,O)_m O-free. After tensoring with K, ArithmeticLocallySymmetricSpaces §ALS.5a.6 and its ordinary/Borel–Moore comparison give its rank equal to rank H₁(Y₀,O)_m; every finite neat-cover degree is invertible in K. Track the dual Hecke ideal: for PGL₂ the inverse correspondence differs only by the matching trivial-central-character normalization. Apply the low-degree Tor dimension formula from the imported balanced-module API; the right-exact segment bounds Tor₁/π by r. (CG18, Proposition 5.10, pp. 377–378; cg18 line 3268.)
 
 **Checks.**
 
@@ -1106,7 +1184,7 @@ A proof route uses these inputs. Hochschild–Serre gives Tor_i^S(H_j(Y_Δ,O)_m,
 - For Δ = 1 and M = Oʳ ⊕ kˢ, Tor₀ with k has dimension r+s and Tor₁ has dimension s, so d = r, matching r−0.
 - For an H₂ rank bound r = 2 and Tor₁/π dimension 1 the defect is 1; if the edge map were incorrectly made injective it would assert extra information absent from the right-exact sequence.
 
-*Needs:* §9.1; §9.3; DeformationAndDerivedPatchingAlgebra §5.1 (balanced presentations); ArithmeticLocallySymmetricSpaces §§ALS.5a.2–ALS.5a.6 (finite-level duality); ArithmeticLocallySymmetricSpaces §§ALS.6.1–ALS.6.3 (finite-cover descent); DeformationAndDerivedPatchingAlgebra §5.1 (Tor defect identity).
+*Needs:* §9.1; §9.3; DeformationAndDerivedPatchingAlgebra §5.1 (balanced presentations); ArithmeticLocallySymmetricSpaces §ALS.5a.6 (finite-level duality over K); ArithmeticLocallySymmetricSpaces §§ALS.6.1–ALS.6.3 (finite-cover descent); DeformationAndDerivedPatchingAlgebra §5.1 (Tor defect identity). gap:localized-three-primary-stabilizers.
 
 ### Examples
 
@@ -1114,15 +1192,15 @@ The regular coefficient system O[C₃] has rank 3, its coinvariants have rank 1 
 
 ### Dependencies
 
-ArithmeticLocallySymmetricSpaces §ALS.1 (groupoid coefficients and universal coefficients); ArithmeticLocallySymmetricSpaces §§ALS.6.1–ALS.6.3 (finite-cover descent); Mathlib `groupHomology.indIso`; ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences); ArithmeticLocallySymmetricSpaces §§ALS.2, ALS.4.1–ALS.4.12 (compactification and boundary); ArithmeticLocallySymmetricSpaces §§ALS.5a.2–ALS.5a.6 (finite-level duality); DeformationAndDerivedPatchingAlgebra §5.1 (balanced presentations). Earlier internal targets are specified individually in the Needs lines.
+ArithmeticLocallySymmetricSpaces §§ALS.0.10, ALS.3.14, ALS.4.12(b); AutomorphyLiftingBeyondTaylorWiles target BT.3/lemma-9-6; gap:localized-three-primary-stabilizers. ArithmeticLocallySymmetricSpaces §ALS.1 (groupoid coefficients and universal coefficients); ArithmeticLocallySymmetricSpaces §§ALS.6.1–ALS.6.3 (finite-cover descent); Mathlib `groupHomology.indIso`; ArithmeticLocallySymmetricSpaces §ALS.3 (Hecke correspondences); ArithmeticLocallySymmetricSpaces §§ALS.2, ALS.4.1–ALS.4.12 (compactification and boundary); ArithmeticLocallySymmetricSpaces §ALS.5a.6 (finite-level duality over K); DeformationAndDerivedPatchingAlgebra §5.1 (balanced presentations). Earlier internal targets are specified individually in the Needs lines.
 
 ## Layer 10: Conditional Bianchi R = T and lifting
 
 ### 10.1 Bianchi Taylor–Wiles system
 
-For the Bianchi minimal datum, let q=dim_k H¹_∅(F,ad⁰ρ̄(1)), which is at least one. For each a≥1 choose Q_a with |Q_a|=q, norms 1 mod p^a and distinct residual roots, killing this dual Selmer group. With Δ_a=(Z/p^aZ)^q, S_a=O[Δ_a], A_∞=O[[z₁,…,z_(q−1)]], let H_a=H₁(Y_(Δ_a)(Q_a),O)_(m_a) and H=H₁(Y,O)_(m_∅). Assume Conjecture A for all Q_a and p≥5, or supply the missing localized p=3 amplitude/duality. With compatible minimal-type summands when needed, this is a balanced patching system: H_a,Δ_a≅H, diamond images lie in the A_∞ image, and augmentation specializes R_(Q_a) to R_min. Distinct original prime sets need not be nested and no transition map between them is required; coefficient and deck quotient compatibilities apply to the maps that are actually defined.
+For the Bianchi minimal datum, let q=dim_k H¹_∅(F,ad⁰ρ̄(1)), which is at least one. For each a≥1 choose Q_a with |Q_a|=q, norms 1 mod p^a and distinct residual roots, killing this dual Selmer group. With Δ_a=(Z/p^aZ)^q, S_a=O[Δ_a], A_∞=O[[z₁,…,z_(q−1)]], let H_a=H₁(Y_(Δ_a)(Q_a),O)_(m_a) and H=H₁(Y,O)_(m_∅). Assume Conjecture A for all Q_a and p≥5, or assume gap:localized-three-primary-stabilizers for p=3. With compatible minimal-type summands when needed, this is a balanced patching system: H_a,Δ_a≅H, diamond images lie in the A_∞ image, and augmentation specializes R_(Q_a) to R_min. Distinct original prime sets need not be nested and no transition map between them is required; coefficient and deck quotient compatibilities apply to the maps that are actually defined.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
 A proof route uses these inputs. Import the imaginary-quadratic tangent bound dim t_(R_Q)≤dim dualSelmer−1+Σ_(x∈Q)dim H⁰(F_x,ad⁰ρ̄(1)) and the simultaneous prime-selection theorem from GlobalGaloisDeformations §§3.6–3.7, 5.1–5.8, 6.2–6.8. Choose the q−1-variable surjections onto R_(Q_a), then act on H_a through the Conjecture A surjections. Use localized H₀=0 and Hochschild–Serre for coinvariants, followed by the selected-root comparison. Use Conjecture A(3) and the geometric-Artin diamond comparison for the scalar-image and augmentation conditions. (CG18, Propositions 5.1–5.2, pp. 370–371; proof of Theorem 5.11, pp. 379–380; cg18 line 3333.)
 
@@ -1135,17 +1213,17 @@ The construction has the following API.
 
 **Checks.**
 
-- The variable count uses H¹_dual(ad⁰ρ̄(1)), not the untwisted adjoint Selmer group source’s at p. 379.
+- The variable count uses the dual Selmer group of ad⁰ρ̄(1). Using H¹ of ad⁰ρ̄ instead changes q in general.
 - q=0 is excluded by the tangent bound and existence of R_min; A_∞ is not assigned a negative number of variables.
 - Coinvariants recover the selected H₁(Y₀(Q_a)) factor and then H; using the entire two-copy oldspace gives the wrong rank.
 
-*Needs:* §8.5; §9.2; §9.4; GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`.
+*Needs:* §8.5; §9.2; §9.4; GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`. gap:taylor-wiles-sets; gap:defect-one-presentations.
 
 ### 10.2 Conditional minimal Bianchi R = T
 
 Assume the Bianchi minimal datum, proper residual minimal ideal, Conjecture A for every auxiliary Q and p≥5. At levels with no P primes, the map R_min→T_(m_∅) is an isomorphism and H₁(Y,O)_(m_∅) is nonzero finite free over it. The matched minimal-type version with P primes has the same conclusion provided its integral projector/Hecke/duality/Conjecture A package is supplied (the integral principal-type contract). The intended p=3 theorem requires the localized 3-primary stabilizer contract to be resolved. O-flatness of H or T is not an assumption.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
 A proof route uses these inputs. Apply the balanced patching engine to the exact Bianchi system. Use the surjective deformation-to-Hecke map and positive-rank freeness to identify their faithful action images. Keep the coefficient-type and stabilizer hypotheses explicit in both the module and ring statements. (CG18, Theorem 5.11, pp. 379–380; Theorem 1.3, p. 302; cg18 line 3324.)
 
@@ -1161,9 +1239,9 @@ A proof route uses these inputs. Apply the balanced patching engine to the exact
 
 Under the hypotheses of the Bianchi R = T target, if the Krull dimension of T_m is 0, then T_m is a complete intersection. The patching presentation is T_m≅O[[z₁,…,z_(q−1)]]/(f₁,…,f_q); its regular ambient ring has dimension q and the ideal is m-primary, so f₁,…,f_q form a regular sequence. This does not say that every positive-dimensional T_m is a complete intersection.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
-A proof route uses these inputs. Keep the q augmentation equations in the conclusion of the balanced patching proof. Dimension zero makes them a parameter system in the q-dimensional regular local ambient ring. Apply the requested regular-local/CM parameter-sequence criterion. (CG18, Closing remarks after Theorem 5.11, p. 380; cg18 line 3372.)
+A proof route uses these inputs. Keep the q augmentation equations in the conclusion of the balanced patching proof. Dimension zero makes them a parameter system in the q-dimensional regular local ambient ring. Apply DeformationAndDerivedPatchingAlgebra §§3.4–3.5: in a complete Cohen–Macaulay ambient ring, the dimension bound makes these equations a regular sequence, and a regular ambient ring gives a complete intersection. (CG18, Closing remarks after Theorem 5.11, p. 380; cg18 line 3372.)
 
 **Checks.**
 
@@ -1171,13 +1249,13 @@ A proof route uses these inputs. Keep the q augmentation equations in the conclu
 - For q = 1 and f₁ = π², the ambient DVR O has dimension 1 and T = O/π² has dimension 0; one nonzero regular equation gives a complete intersection of O-length 2.
 - For q = 1 and f₁ = 0 the quotient is O of dimension 1, so the parameter-system argument has a failed dimension hypothesis even though this particular quotient is itself regular.
 
-*Needs:* §10.2; DeformationAndDerivedPatchingAlgebra §§3.1, 3.9 (depth, canonical modules and type).
+*Needs:* §10.2; DeformationAndDerivedPatchingAlgebra §§3.4–3.5 (complete intersections and formal dimension criterion).
 
 ### 10.4 Bianchi generic rank with local multiplicities
 
 If H₁(Y,O)_m[1/p]≠0 under the Bianchi R = T hypotheses, its free rank equals the contribution of the characteristic-zero automorphic representation at the actual chosen finite-level type spaces. In the S-only Γ₀ minimal-level situation each local factor is one-dimensional and the free rank is one. At Γ_p levels for P/M/H there can be a prime-to-p diamond orbit of several local vectors, so global automorphic multiplicity one does not imply module rank one. For matched types, rank one needs a separately verified one-dimensional type/newvector selector.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
 A proof route uses these inputs. Decompose characteristic-zero homology by cuspidal automorphic representations and the degree-one cohomology at infinity. Apply global multiplicity one, then retain dim π_f^K or its type-selected analogue rather than replacing it by one. Use the exact local invariant calculation at each place; Γ_p/Γ₁ retains prime-to-p diamond multiplicities. (CG18, Theorem 1.3, p. 302; remarks after Theorem 5.11, p. 380; cg18 line 3372.)
 
@@ -1187,13 +1265,13 @@ A proof route uses these inputs. Decompose characteristic-zero homology by cuspi
 - For one automorphic representation of global multiplicity 1 with local invariant dimensions 2 and 3, its finite-level contribution is 1·2·3 = 6, not 1.
 - At an S-only conductor-minimal Γ₀ level each local newvector dimension is 1; multiplying the local factors and the degree-one infinite contribution gives rank 1.
 
-*Needs:* §10.2; GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); ArithmeticLocallySymmetricSpaces §§ALS.5b.5–ALS.5b.8 (cuspidal comparison).
+*Needs:* §10.2; GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); ArithmeticLocallySymmetricSpaces §§ALS.5b.5–ALS.5b.8 (cuspidal comparison). gap:bianchi-classical-dictionary.
 
 ### 10.5 Minimal semistable Bianchi modularity lifting
 
 Let p≥5 be unramified in imaginary quadratic F. Assume Conjecture A for all auxiliary levels. Let ρ:G_F→GL₂(O) be continuous, determinant ε, unramified outside finitely many places, semistable at every finite place (unipotent inertia away from p), and at each v|p finite flat or ordinary. Suppose ρ̄|G_(F(ζ_p)) is absolutely irreducible, ρ̄ occurs in mod-p homology at its minimal level N(ρ̄), and ρ satisfies the minimal local conditions including finite-flat precedence. Then ρ is associated to a regular algebraic cuspidal GL₂/F representation π with matching unramified local factors and L-function under the fixed normalization. At p=3 the stated target additionally depends on the localized 3-primary stabilizer contract.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
 A proof route uses these inputs. The lift defines an O-point of the minimal deformation ring; semistability away from p uses only the S-type part of the local classification. R = T produces a characteristic-zero cuspidal Hecke class; non-Eisenstein localization and the automorphic/cohomological comparison exclude boundary classes. Compare the associated Galois representation with ρ by Frobenius density and residual absolute irreducibility; use local compatibility for the bad factors. (CG18, Theorem 1.2, p. 301; Theorem 1.3, p. 302; §5.4, pp. 378–380; cg18 line 3311.)
 
@@ -1209,7 +1287,7 @@ A proof route uses these inputs. The lift defines an O-point of the minimal defo
 
 PGL₂ removes the odd p-primary unramified central-character twists that would remain in the same residual GL₂ Hecke factor. If such twists are modeled by a cyclic C_p, their universal character algebra O[C_p] has O-rank p and cannot be the image of the scalar coefficient map O→O[C_p]. This algebraic obstruction explains the source’s expected GL example; no unconditional automorphic isomorphism T=O[C_p] is asserted. In a GL ray-class replacement, for a class a of order h=p^b with a^h=(α), splitting the ray-class extension requires the h-th-power Kummer condition α^((N(x)−1)/h)≡1 at primes with h|N(x)−1, equivalently the corresponding splitting in F(α^(1/h),ζ_h). A p-th-power condition alone is insufficient when b>1.
 
-O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Geometric vanishing and duality are proved here for p≥5; use at p=3 needs the localized 3-primary stabilizer contract. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
+O is the ring of integers in a finite extension of Q_p, p≥3, with uniformizer π, fraction field K and finite residue field k; all CNL maps are continuous local O-algebra maps inducing the identity on k. F is imaginary quadratic, p is unramified in F, detρ̄=barε and ρ̄|G_(F(ζ_p)) is absolutely irreducible; the local S/P/M/H and coefficient hypotheses of Layer 8 apply. Integral amplitude is proved here for p≥5; at p=3 it uses gap:localized-three-primary-stabilizers. The rank comparison uses duality over K from ArithmeticLocallySymmetricSpaces §ALS.5a.6. A matched P-type summand needs the integral principal-type contract and all its Hecke/cover/duality compatibilities.
 
 A proof route uses these inputs. The residual p-power characters are all trivial modulo π, so localization does not separate them. The PGL determinant-component quotient is modulo squares; p odd removes the p-primary central twisting contribution. For the proposed GL alternative, compute the order-h lifting relation in the ray class extension; verify the required Kummer exponent is h and note that the source gives only a sketch of this alternative. (CG18, §5.5 and Remark 5.12, pp. 380–382; cg18 line 3377.)
 
@@ -1219,7 +1297,7 @@ A proof route uses these inputs. The residual p-power characters are all trivial
 - For p = 3, h = 9 and residue group 𝔽₁₉× = ⟨g⟩, take α = g³. Then α⁶ = 1 but α² = g⁶ ≠ 1. The cubic test holds and the ninth-power test fails.
 - For C₃, O[C₃] has O-rank 3 while scalar O has rank 1; the scalar coefficient map cannot be onto. For the trivial class group both ranks are 1.
 
-*Needs:* §8.3; ClassFieldTheory Layer 12 (ray-class reciprocity and finiteness); ArithmeticLocallySymmetricSpaces §§ALS.0.1–ALS.0.9 (quotients and stabilizers).
+*Needs:* §8.3; ClassFieldTheory Layers 11–12 (ray-class reciprocity and finiteness); ArithmeticLocallySymmetricSpaces §§ALS.0.1–ALS.0.9 (quotients and stabilizers).
 
 ### Examples
 
@@ -1227,7 +1305,7 @@ For q = 1 the dimension-zero presentation O/(π²) has one regular parameter equ
 
 ### Dependencies
 
-GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`; DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); DeformationAndDerivedPatchingAlgebra §§3.1, 3.9 (depth, canonical modules and type); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); AutomorphicGaloisRepresentations §§5.1, 6.12 (ordinary lattice and quotient conditions); ClassFieldTheory Layer 12 (ray-class reciprocity and finiteness); ArithmeticLocallySymmetricSpaces §§ALS.0.1–ALS.0.9 (quotients and stabilizers). Earlier internal targets are specified individually in the Needs lines.
+GlobalGaloisDeformations §§3.3–3.7 (condition quotients and presentations); GlobalGaloisDeformations §§5.1–5.8 (Taylor–Wiles selection); GlobalGaloisDeformations §§6.2–6.8 (trace rings and auxiliary specialization); Tau Ceti `TauCeti.MonoidAlgebra.augmentation`; DeformationAndDerivedPatchingAlgebra §5.5 (balanced patching); DeformationAndDerivedPatchingAlgebra §§3.4–3.5 (complete intersections and formal dimension criterion); GL2AutomorphicRepresentationsAndTransfer §§R16.2.7, R16.2.11, R16.3.9 (newvectors and CDT types); GL2AutomorphicRepresentationsAndTransfer §R16.4 (global multiplicity and contragredients); GL2AutomorphicRepresentationsAndTransfer §§R16.6.5–R16.6.6 (conductor and weight-one comparisons); AutomorphicGaloisRepresentations §§3.7, 4.1–4.6, 6.12 (local compatibility); AutomorphicGaloisRepresentations §§5.1, 6.12 (ordinary lattice and quotient conditions); ClassFieldTheory Layers 11–12 (ray-class reciprocity and finiteness); ArithmeticLocallySymmetricSpaces §§ALS.0.1–ALS.0.9 (quotients and stabilizers). Earlier internal targets are specified individually in the Needs lines.
 ## Downstream consumers
 
 The minimal weight-one theorem supplies finite-image and modularity consequences for deformation problems unramified at p; the coefficient-bundle theory supplies their exact vexing-type versions. The scalar theorem supplies the exceptional upper bound for the Jacobian multiplicity theory whose nonexceptional branch belongs to SerreWeightAndLevelOptimisation §§3.10–3.12. The Bianchi theorem supplies minimal, determinant-ε modularity lifting with torsion homology and the exact local multiplicity, rather than an assertion that every finite level has rank one. General positive-defect nonminimal lifting and arbitrary-rank complex patching consume these arithmetic examples without supplying any prerequisite here.
