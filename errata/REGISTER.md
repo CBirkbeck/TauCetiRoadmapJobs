@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6288 mistakes recorded on the board: 3943 misprints, 1602 errors, 567 gaps, 176 unparsed bullets.
+6297 mistakes recorded on the board: 3950 misprints, 1604 errors, 567 gaps, 176 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5096,9 +5096,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at 1.9, printed p. 124: the source says the last term of the leading q-exponent is `a/(2N²)`; it should be `a²/(2N²)`, so that the exponent is half of `B₂(a/N)`; affects nothing. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Error** at Remark 12.8, (12.8.2), p. 223: the source says for every coefficient place of a non-CM form the image contains an open subgroup of `SL₂(ℤ_p)`; it should be require that Momose's quaternion algebra split at the place below, since division-algebra images contain no nontrivial unipotent; affects a stated result; (12.4 at such places, through 13.8). Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 - **Error** at Remark 12.8, (12.8.2), p. 223: the source says the image contains an open subgroup of `SL₂(ℤ_p)` at every coefficient place of a non-CM form; it should be restricted to places where Momose's quaternion algebra splits, since a division algebra contains no `M₂(ℚ_p)`; affects a stated result. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
+- **Error** at Remark 12.8, (12.8.2), printed p. 223: the source says every coefficient place of a non-CM form has an open SL₂ subgroup in its image; it should be restrict this conclusion to split places of Momose's quaternion algebra; affects a stated result. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Theorem 12.5(4), printed p. 222: the source says the displayed length inequality uses rational coefficient modules; it should be use H²(T) and H¹(T)/Z(f,T) for the integral assertion, as in §13.14; affects a stated result. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 14.5(3), p. 236: the source says the condition "(12.5.1)" of Theorem 12.5(4); it should be the image condition (12.5.2), which 14.14 uses; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 - **Misprint** at Theorem 14.5(3), p. 236: the source says the exceptional condition (12.5.1) of Theorem 12.5(4) is assumed; it should be the image condition (12.5.2), on which 14.14 rests; affects nothing. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
+- **Misprint** at Theorem 14.5(3), printed p. 236: the source says condition (12.5.1) from Theorem 12.5(4) is required; it should be refer to the integral image condition (12.5.2); affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 16.4(ii), p. 270: the source says the auxiliary vector lies in `D_crys` of the form's own representation; it should be `D_crys(V*(1))`, the space of η; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Misprint** at Theorem 16.4(ii), printed p. 270: the source says the auxiliary vector is in the crystalline space of the modular form's representation; it should be lie in D_crys(V*(1)), like η; affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §1.9, printed p. 124: the source says the last contribution to the q-exponent is linear in a; it should be a²/(2N²), giving B₂(a/N)/2; affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 
 ## Katz, p-adic properties of modular schemes and modular forms (LNM 350, 1973)
 
@@ -6328,6 +6333,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Nakamura2023
 
+- **Misprint** at Appendix A, conductor-n smoothing display, arXiv v2 p. 87: the source says the second smoothing factor starts with d; it should be start with d², consistently with conductor one and the geometric construction; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "05901946c882bb9eded68437430f6036a53b31d3", "job": "REV-PKG-KatoEulerSystems~4", "model": "gpt-6-astra", "worker": "chris-30"} -->. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Corollary 3.6, arXiv v2 p. 48: the source says uniqueness follows using Lemma 3.4(1); it should be invoke the injectivity statement in Lemma 3.4(2); affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 5.2, arXiv v2 pp. 75–76: the source says the stronger integral result is Kato Theorem 12.4(4); it should be refer to Kato Theorem 12.5(4); affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Theorem A.1, arXiv v2 p. 87: the source says the conductor-n smoothing factor has first scalar d; it should be `d²`, as in the conductor-one factor displayed just above it; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "5fb6ef4", "job": "REV-PKG-KatoEulerSystems~2", "model": "opus", "worker": "fable-rev81"} -->. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 
 ## native_multiplicative_heights
@@ -7022,6 +7030,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Rubin2000
 
+- **Error** at Proposition III.5.1 and proof, draft p. 48: the source says the formal logarithm sends E₁(ℚ_p) onto pℤ_p without a dyadic restriction; it should be exclude p=2 or use the actual logarithm lattice, which is 4ℤ₂ for y²+xy=x³+1; affects a stated result. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Error** at Proposition III.5.1, draft p. 48: the source says the dual exponential of the singular local classes is the local index times `p⁻¹ℤ_p` for every p, because the logarithm maps `E₁(ℚ_p)` onto `pℤ_p`; it should be restrict to odd p, since at p = 2 the image can be `4ℤ₂` (`y² + xy = x³ + 1`); affects a stated result. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 - **Error** at Proposition III.5.1, draft p. 48: the source says the logarithm maps `E₁(ℚ_p)` onto `pℤ_p` for every p; it should be exclude p = 2, where `y² + xy = x³ + 1` has image `4ℤ₂`; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "a3ba9c5", "job": "REV-PKG-KatoEulerSystems~3", "model": "opus", "worker": "fable-rev108"} -->. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 
