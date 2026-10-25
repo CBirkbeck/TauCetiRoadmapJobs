@@ -4183,6 +4183,12 @@
     "needs": "In the SR.4.1 companion comparison extension, for the tame Pappas–Zhu companion datum identify the parahoric Hecke algebras through their matching Iwahori–Weyl basis and parameters, compatibly with Bernstein elements and normalized parahoric idempotents (PZ §9.d.2–§9.d.3, pp. 75–76; PZ line 3091).",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "SR.4.1; companion comparison extension"
+  },
+  {
+    "slug": "schubert-geometric-unibranchness",
+    "needs": "In GS0’s Witt affine flags, for every connected reductive G over a p-adic field, every parahoric level and every residue characteristic, prove that every Schubert perfect variety of the partial affine flag variety over the algebraically closed residue field is normal with perfectly smooth dense open orbit, so that every finite-type deperfection of it, and every irreducible component of a Bruhat-union Schubert scheme, is geometrically unibranch even when it is not normal; and deduce, through the Witt Grassmannian of the split form, that the generic Schubert bound Gr_≤μ over C has lowest IC cohomology sheaf H^(−〈2ρ,μ〉)(IC_μ)=F_ℓ (AGLR Proposition 3.7, p. 21, AGLR line 1222; GL Lemma 5.1, p. 10, GL line 420, and Lemma 5.4, pp. 10–11, GL line 459; HLR Theorem 1.1, p. 2, HLR line 69, and Proposition 3.4, p. 11, HLR line 526).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Witt affine flags and components"
   }
 ],
   "sourceIssues": [

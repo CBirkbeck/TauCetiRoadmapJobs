@@ -19,7 +19,7 @@ None of the following geometric headlines is statable at these pins:
   (Layer 3) lack integral local-model v-sheaves and their scheme comparison morphisms.
 * General minuscule weak normal representability (Layer 3) lacks those v-sheaves,
   kimberlites and the specialization-triple comparison.
-* Root and Cartan tangent equalities for the Finkelberg–Mirkovic bound (Layer 4)
+* Root and Cartan tangent equalities for the Finkelberg–Mirković bound (Layer 4)
   lack algebraic affine Schubert schemes and their representation-bound subschemes.
 * Formal-curve spanning of Schubert and reductive Weil-restriction special-fibre
   tangent spaces (Layer 4) lacks those schemes and the pointed formal-curve derivative

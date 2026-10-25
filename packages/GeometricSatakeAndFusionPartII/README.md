@@ -104,6 +104,8 @@ What GeometricSatakeAndFusion must provide (gap:prime-to-p-central-components): 
 
 What GeometricSatakeAndFusion must provide (gap:algebraic-schubert-normality): Give algebraic Schubert normality, geometric unibranchness and normal Cohen–Macaulay components in the prime-to-p companion range.
 
+What GeometricSatakeAndFusion must provide (gap:schubert-geometric-unibranchness): In GS0’s Witt affine flags, for every connected reductive G over a p-adic field, every parahoric level and every residue characteristic, prove that every Schubert perfect variety of the partial affine flag variety over the algebraically closed residue field is normal with perfectly smooth dense open orbit, so that every finite-type deperfection of it, and every irreducible component of a Bruhat-union Schubert scheme, is geometrically unibranch even when it is not normal; and deduce, through the Witt Grassmannian of the split form, that the generic Schubert bound Gr_≤μ over C has lowest IC cohomology sheaf H^(−〈2ρ,μ〉)(IC_μ)=F_ℓ (AGLR Proposition 3.7, p. 21, AGLR line 1222; GL Lemma 5.1, p. 10, GL line 420, and Lemma 5.4, pp. 10–11, GL line 459; HLR Theorem 1.1, p. 2, HLR line 69, and Proposition 3.4, p. 11, HLR line 526).
+
 What GeometricSatakeAndFusion must provide (gap:algebraic-compatible-schubert-splitting): For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced. This is the affine-flag extension of GS0 “Equal-characteristic Schubert models and coefficient comparison” used in §2.6 (GORGL Corollary 3.4.4, p. 19, GORGL line 643; GORSP Theorem 3.3, p. 9, GORSP line 352).
 
 What GeometricSatakeAndFusion must provide (gap:algebraic-demazure-fibres): In GS0’s algebraic extension of “Relative-position flag correspondences”, prove geometric connectedness of the fibres of the Iwahori-to-parahoric projection of admissible loci, using the reduced-word resolutions from “Equal-characteristic Schubert models and coefficient comparison” (GL Lemma 5.2, p. 10; GL line 430).
@@ -182,7 +184,7 @@ Layer 0 fixes data, conventions and model specifications. Layer 1 constructs pol
 
 ### 0.1 Local model data and morphisms
 
-A minuscule local model datum is (F,G,{μ},𝒢): F is a finite extension of Q_p, G/F is connected reductive, {μ} is a geometric minuscule conjugacy class, E/F is its reflex field, and 𝒢 is smooth affine with generic fibre G and connected component 𝒢° parahoric. Permit the full facet fixer as a quasiparahoric level. A morphism is a group morphism carrying {μ} to the indicated class and extending over the specified integral models; it is not, by definition, a closed immersion on local models. (KPZ, §3.1.1, pp. 15–16; KPZ line 686; KZ, §3.1.1, p. 18; Definition 3.1.6(1), p. 19; KZ line 811).
+A minuscule local model datum is (F,G,{μ},𝒢): F is a finite extension of Q_p, G/F is connected reductive, {μ} is a geometric minuscule conjugacy class, E/F is its reflex field, and 𝒢 is smooth affine with generic fibre G and connected component 𝒢° parahoric. Permit the full facet fixer as a quasiparahoric level. A local model datum with general bound is the same quadruple (F,G,{μ},𝒢) with {μ} any geometric dominant conjugacy class of cocharacters, E its reflex field; the minuscule datum is the special case, required exactly where a statement says minuscule; the polynomial Schubert-bound closures of §1.2, the imported v-models of §0.4, the kimberlites of §3.5, the tubes of §7.5 and the nearby cycles of Layer 8 use general bounds. A morphism is a group morphism carrying {μ} to the indicated class and extending over the specified integral models; it is not, by definition, a closed immersion on local models. (KPZ, §3.1.1, pp. 15–16; KPZ line 686; KZ, §3.1.1, p. 18; Definition 3.1.6(1), p. 19; KZ line 811).
 
 One proof proceeds as follows. Bundle the reductive-group, facet and connected-parahoric data; add the cocharacter orbit and its field of definition. Compose the generic and integral morphisms and check compatibility on generic fibres.
 
@@ -197,7 +199,7 @@ The construction has the following properties:
 
 - For GL₂ and μ=(1,0), E=F and the generic flag variety is P¹_F.
 - For μ=0 the generic flag variety is Spec F.
-- The GL₂ class (2,0) is excluded from the minuscule datum although it is permitted in the polynomial Schubert-bound construction of §1.2 and the general v-model of Layer 3.
+- The GL₂ class (2,0) is excluded from the minuscule datum (〈(2,0),α〉=2 for the positive root α) but is a datum with general bound, the one used in the polynomial Schubert-bound construction of §1.2 and the general v-model of Layer 3; its reflex field is F and its generic Schubert bound has dimension 〈2ρ,(2,0)〉=2.
 
 Changing the connected component of the level is an explicit comparison, not equality of the ambient Grassmannians.
 
@@ -342,7 +344,7 @@ Let K₀/F be finite unramified, P(u)∈O_(K₀)[u] monic and 𝓗 smooth affine
 
 ### 1.2 Schematic local-model closure
 
-For quasi-tame G with a specified polynomial parahoric lift and any dominant geometric cocharacter class {ν} with reflex field E, define M^pol_(𝒢,ν) as the schematic closure of the generic closed Schubert bound Gr_≤ν in the polynomial Grassmannian over O_E. Use the group, level and reflex-field data of §0.1 without its minuscule restriction. For ∏ Res_(K_i/F)H_i take the product of the factor closures after extension from each factor reflex field to E. This closure is flat and projective with generic fibre Gr_≤ν; when ν is minuscule this fibre is the flag G/P_ν. It is distinguished from both an EL/PEL naive determinant model and the canonical normal minuscule model. (LEV Definition 4.2.1 and Proposition 4.2.6, pp. 23–24; LEV line 949 and LEV line 1007; minuscule specialization: KPZ Definition 3.2.6 and §3.2.8, p. 19, KPZ line 839; KP §2.1.1, p. 150, KP line 1235).
+For quasi-tame G with a specified polynomial parahoric lift and any dominant geometric cocharacter class {ν} with reflex field E, define M^pol_(𝒢,ν) as the schematic closure of the generic closed Schubert bound Gr_≤ν in the polynomial Grassmannian over O_E. Use the local model datum with general bound of §0.1. For ∏ Res_(K_i/F)H_i take the product of the factor closures after extension from each factor reflex field to E. This closure is flat and projective with generic fibre Gr_≤ν; when ν is minuscule this fibre is the flag G/P_ν. It is distinguished from both an EL/PEL naive determinant model and the canonical normal minuscule model. (LEV Definition 4.2.1 and Proposition 4.2.6, pp. 23–24; LEV line 949 and LEV line 1007; minuscule specialization: KPZ Definition 3.2.6 and §3.2.8, p. 19, KPZ line 839; KP §2.1.1, p. 150, KP line 1235).
 
 One proof proceeds as follows. Choose a finite projective bounded piece containing Gr_≤ν. Take the schematic closure; torsion-freeness over O_E supplies flatness. Construct factorwise closure and compare generic Schubert bounds after reflex base change.
 
@@ -362,7 +364,7 @@ The construction has the following properties:
 
 The construction does not assert normality when p divides the derived fundamental group.
 
-*Needs:* §1.1; §0.1 with arbitrary dominant class; GeometricSatakeAndFusion GS0, “Generic Schubert bounds”; gap:algebraic-loop-representability; SchemeAndStackFoundations §0.8.
+*Needs:* §1.1; §0.1 (general bound); GeometricSatakeAndFusion GS0, “Generic Schubert bounds”; gap:algebraic-loop-representability; SchemeAndStackFoundations §0.8.
 
 ### 1.3 Normality and admissible special fibre
 
@@ -1013,13 +1015,13 @@ PELModuli M0; gap:ramified-local-pel-data; ReductiveGroupsPartII RG2.2; SchemeAn
 
 ### 7.1 Tube components from the lowest nearby-cycle stalk
 
-After base change to Spd O_C with C complete algebraically closed, let d=〈2ρ,μ〉 and use coefficients F_ℓ, ℓ≠p. For a closed geometric point x of A_(𝒢,μ), the tube has finitely many connected components and #π₀(M^v_/x)=dim_(F_ℓ)H^(−d)(RΨ IC_μ)_x. Here IC_μ has lowest cohomology sheaf the constant F_ℓ in degree −d; the needed generic Schubert unibranchness is an upstream Grassmannian input. (GL, Lemma 5.1 and Theorem 4.7(1), pp. 9–10; GL line 418).
+After base change to Spd O_C with C complete algebraically closed, let d=〈2ρ,μ〉 and use coefficients F_ℓ, ℓ≠p. For a closed geometric point x of A_(𝒢,μ), the tube has finitely many connected components and #π₀(M^v_/x)=dim_(F_ℓ)H^(−d)(RΨ IC_μ)_x. Here IC_μ has lowest cohomology sheaf the constant F_ℓ in degree −d, because generic Schubert bounds are geometrically unibranch at every p (gap:schubert-geometric-unibranchness). (GL, Lemma 5.1 and Theorem 4.7(1), pp. 9–10; GL line 418).
 
 One proof proceeds as follows. Use the unibranch generic Schubert comparison to obtain H^(−d)IC_μ=F_ℓ. Apply the general tube-stalk comparison of D11, retaining its spatiality, finite cohomological dimension and coefficient hypotheses. Identify H⁰ of the tube with locally constant F_ℓ-valued functions and use finite-dimensional constructibility to count components.
 
 A minuscule generic flag has IC=F_ℓ[d], so the formula reduces directly to H⁰ of the tube.
 
-*Needs:* §3.5; DiamondsAndVStacksPartII §D11.5; DiamondsAndVStacksPartII D11; gap:general-tube-cohomology; gap:algebraic-schubert-normality; gap:central-nearby-cycles-algebraicity.
+*Needs:* §3.5; DiamondsAndVStacksPartII §D11.5; DiamondsAndVStacksPartII D11; gap:general-tube-cohomology; gap:schubert-geometric-unibranchness; gap:central-nearby-cycles-algebraicity.
 
 ### 7.2 Two maximal translations above a divisor
 
@@ -1039,7 +1041,7 @@ One proof proceeds as follows. Use the canonical-module/local-cohomology criteri
 
 Connectedness of the whole admissible set alone is insufficient to give S₂.
 
-*Needs:* GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:algebraic-coherence.
+*Needs:* GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:schubert-geometric-unibranchness; gap:algebraic-coherence.
 
 ### 7.4 Extremal Wakimoto stalk bounds
 
@@ -1049,7 +1051,9 @@ One proof proceeds as follows. Compare J_ν with its costandard object; kernel a
 
 The coefficient field is F_ℓ; do not use a rational decomposition theorem in this argument.
 
-*Needs:* §7.1; §7.2; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10.
+The lowest costandard stalk needs only geometric unibranchness of the Schubert variety, not normality: for PU₃(F′/F) with F′/F totally ramified quadratic over a 3-adic field and μ=(1,0,0), the quasi-minuscule Schubert variety is not normal because 3 divides #π₁(G^der)=3 (HLR Example 9.4, p. 38; HLR line 1860), yet it is geometrically unibranch and its perfection is normal, so H^(−2)(∇)=F_ℓ at its singular point and the bound 1 holds there.
+
+*Needs:* §7.1; §7.2; gap:schubert-geometric-unibranchness; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10.
 
 ### 7.5 Connected tubes for every local-model bound
 
@@ -1097,7 +1101,7 @@ For the zero bound, the model is Spd O_E and the geometric tube is a point: both
 
 ### Dependencies
 
-DiamondsAndVStacksPartII §D11.5; DiamondsAndVStacksPartII D11; gap:general-tube-cohomology; gap:algebraic-schubert-normality; gap:central-nearby-cycles-algebraicity; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:algebraic-coherence; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10; gap:connected-fibre-tube-transfer; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; GeometricSatakeAndFusion GS0, “Relative-position flag correspondences”; gap:algebraic-demazure-fibres; DiamondsAndVStacksPartII §D11.20; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.8, 0.30 and 4.13; SchemeAndStackFoundations §1.1; gap:fpqc-normality-descent; ReductiveGroupsPartII RG2.3; DiamondsAndVStacksPartII §D10.15; gap:r-smooth-full-fixer-embeddings; gap:wild-admissible-closedness. The internal section references above give the additional ordering within this layer.
+DiamondsAndVStacksPartII §D11.5; DiamondsAndVStacksPartII D11; gap:general-tube-cohomology; gap:schubert-geometric-unibranchness; gap:central-nearby-cycles-algebraicity; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:algebraic-coherence; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10; gap:connected-fibre-tube-transfer; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; GeometricSatakeAndFusion GS0, “Relative-position flag correspondences”; gap:algebraic-demazure-fibres; DiamondsAndVStacksPartII §D11.20; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.8, 0.30 and 4.13; SchemeAndStackFoundations §1.1; gap:fpqc-normality-descent; ReductiveGroupsPartII RG2.3; DiamondsAndVStacksPartII §D10.15; gap:r-smooth-full-fixer-embeddings; gap:wild-admissible-closedness. The internal section references above give the additional ordering within this layer.
 
 ## Layer 8: nearby cycles and central test functions
 
@@ -1205,7 +1209,7 @@ Integral Hodge embeddings and the curve-spanning theorems supply the tensor and 
 - **FHLR.** Najmuddin Fakhruddin, Thomas Haines, João Lourenço and Timo Richarz. *Singularities of local models*. Lemma 5.27, p. 34; finite universal homeomorphism onto the image. Legal text: [FHLR](https://www.math.univ-paris13.fr/~lourenco/singlocmodels.pdf). The section citations use this version and the line locators recorded in sources.toml.
 - **RZ17.** Michael Rapoport and Thomas Zink. *On the Drinfeld moduli problem of p-divisible groups*. arXiv:1408.4071v2, §5; version-specific numbering. Legal text: [RZ17](https://arxiv.org/pdf/1408.4071). The section citations use this version and the line locators recorded in sources.toml.
 - **KRZ.** Stephen Kudla, Michael Rapoport and Thomas Zink. *On the p-adic uniformization of unitary Shimura curves*. arXiv:2007.05211v2, §§1.3 and 2.1; the signature convention. Legal text: [KRZ](https://arxiv.org/pdf/2007.05211). The section citations use this version and the line locators recorded in sources.toml.
-- **HLR.** Thomas Haines, João Lourenço and Timo Richarz. *On the normality of Schubert varieties: Remaining cases in positive characteristic*. arXiv:1806.11001v5; Corollary 9.2 and Example 9.4, pp. 37–38. Legal text: [HLR](https://arxiv.org/pdf/1806.11001v5). The section citations use this version.
+- **HLR.** Thomas Haines, João Lourenço and Timo Richarz. *On the normality of Schubert varieties: Remaining cases in positive characteristic*. arXiv:1806.11001v5; Theorem 1.1, p. 2; Proposition 3.4, p. 11; Corollary 9.2 and Example 9.4, pp. 37–38. Legal text: [HLR](https://arxiv.org/pdf/1806.11001v5). The section citations use this version.
 
 - **GORGL.** Ulrich Görtz. *On the flatness of models of certain Shimura varieties of PEL-type*. arXiv:math/9912064v1, §4.1 and Theorem 4.5.3 / Corollary 4.5.4, pp. 22, 37; numbering of this version. Legal text: [GORGL](https://arxiv.org/pdf/math/9912064v1).
 - **GORSP.** Ulrich Görtz. *On the flatness of local models for the symplectic group*. arXiv:math/0011202v1, §2 and Theorem 2.1, pp. 3–4; numbering of this version. Legal text: [GORSP](https://arxiv.org/pdf/math/0011202v1).
