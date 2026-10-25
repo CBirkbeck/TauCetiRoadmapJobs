@@ -5824,36 +5824,6 @@
  ],
  "gaps": [
   {
-    "slug": "scheme-v-covers",
-    "supplier": "ArcTopologyAndDescent",
-    "section": "§1.2",
-    "needs": "For qcqs schemes, define a v-cover by lifting every Spec V → T, for valuation rings V of arbitrary rank, after an extension of valuation rings V ⊂ W; on perfect affine targets a small covering family must have a finite subfamily with this property."
-  },
-  {
-    "slug": "perfect-scheme-v-subcanonicity",
-    "supplier": "ArcTopologyAndDescent",
-    "section": "§1.5",
-    "needs": "For every perfect scheme X of characteristic p, with no finiteness or separatedness assumption, prove that Hom(−,X) on perfect affine schemes is a sheaf for the scheme v-topology."
-  },
-  {
-    "slug": "discrete-adic-v-cover-detection",
-    "supplier": "ArcTopologyAndDescent",
-    "section": "§1.7",
-    "needs": "For any ring map A → B, prove that Spec B → Spec A is a v-cover if and only if Spa(B,B) → Spa(A,A), with discrete topologies, is surjective, and prove universal submersiveness of scheme v-covers."
-  },
-  {
-    "slug": "perfect-valuation-product-covers",
-    "supplier": "ArcTopologyAndDescent",
-    "section": "§3.10",
-    "needs": "Prove that every perfect affine scheme in characteristic p has a v-cover by Spec(∏ Vᵢ) for perfect valuation rings Vᵢ of arbitrary rank, with size bounded after increasing the cutoff cardinal."
-  },
-  {
-    "slug": "perfect-scheme-representable-descent",
-    "supplier": "ArcTopologyAndDescent",
-    "section": "§7.8",
-    "needs": "For qcqs perfect schemes over 𝔽_p, prove representable arc-descent, hence v-descent, and prove that a singleton qcqs map is an arc-cover if and only if it is a universally effective epimorphism in the qcqs perfect-scheme category; arbitrary perfect target schemes use the v-subcanonicity contract in §1.5, with no finite-type restriction."
-  },
-  {
     "slug": "completed-etale-lifts",
     "supplier": "SchemeAndStackFoundations",
     "section": "§0.14 / §0.23a",
@@ -5875,7 +5845,7 @@
     "slug": "absolute-weak-normality-formal",
     "supplier": "SchemeAndStackFoundations",
     "section": "§0.26",
-    "needs": "Supply scheme absolute weak normalization with its universal property, finiteness for excellent rings with characteristic-zero generic fields, and preservation and descent under regular completion and formal localization maps."
+    "needs": "Define absolute weak normality of rings and schemes (AGLR Definition 2.12) and supply scheme absolute weak normalization with its universal property, finiteness for excellent rings with characteristic-zero generic fields, and preservation and descent under regular completion and formal localization maps."
   },
   {
     "slug": "completed-residue-fields-general-universal-homeomorphisms",

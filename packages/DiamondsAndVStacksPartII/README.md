@@ -6,13 +6,13 @@
 
 This roadmap owns Layers D7–D11 below. SchemeAndStackFoundations §§4.9–4.10 owns formal functions and the proper-scheme existence and morphism theorems; the corresponding AdicSpacesPartIII F0 interfaces are adapters of those results. DiamondsAndVStacks stops at D6.9: it supplies small v-sheaves and v-stacks, diamonds, underlying spaces and morphism classes (D0–D5), analytic diamondification and its étale comparison (D6.1–D6.5), pre-adic diamondification (D6.6), the integral Galois quotient (D6.7), its point map (D6.8), and seminormal rigid full faithfulness (D6.9). Those constructions are imported without a second definition. D7 adds universal-homeomorphism invariance, through the general residue-field supplier contract, and the full theory for perfect discrete sources, rather than another analytic diamondification.
 
-SchemeAndStackFoundations §§0.14, 0.21, 0.23–0.26 owns henselian pairs, excellence, scheme universal homeomorphisms, perfection and weak normality. Its §0.23a includes arbitrary elementwise nil ideals. Its scheme and formal extensions of mixed-characteristic weak normality and absolute weak normalization are supplier contracts below. The contracts for ArcTopologyAndDescent §§1.2, 1.5, 1.7, 3.10 and 7.8 below request scheme v-covers, their adic detection, subcanonicity on perfect schemes, valuation-product covers and perfect-scheme descent. D7.10 owns the comparison with surjectivity of the associated v-sheaves.
+SchemeAndStackFoundations §§0.14, 0.21, 0.23–0.26 owns henselian pairs, excellence, scheme universal homeomorphisms, perfection and weak normality. Its §0.23a includes arbitrary elementwise nil ideals. Its scheme and formal extensions of mixed-characteristic weak normality and absolute weak normalization are supplier contracts below. PrismaticCohomology §2.0 owns scheme v-covers tested by valuation rings of arbitrary rank, and SchemeKTheoryOperations §4.10 owns the v-topology on qcqs perfect 𝔽_p-schemes. ArcTopologyAndDescent §§1.5–1.7, 3.10 and 7.8 own subcanonicity on qcqs perfect schemes, right cancellation, universal submersiveness and adic detection of v-covers, valuation-product covers and representable descent for perfect schemes. D7.6 extends subcanonicity to arbitrary perfect schemes, and D7.10 owns the comparison with surjectivity of the associated v-sheaves.
 
 AdicSpacesPartII R0 and R1 owns Huber pairs, adic morphisms, finite morphisms, rigid spaces, relative scheme–adic fibre products and rigid–adic comparison. AdicSpacesPartIII F0 and R2 owns formal schemes, completions, generic fibres, classical specialization, classical tubes and the formal-scheme adapters for formal functions and formal GAGA. F0.3 owns the finite-ideal formal-scheme carrier without noetherianity; the contract below requests its reduction interface and the extension of R2.3's comparison to that generality. FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27 owns the global bounded-function recovery theorem, including restriction compatibility and its corrected de Jong proof route; D10.4 owns only the local connectedness theorem used by D11.15. AdicCoefficientsAndComparisons L1 owns the analytic scheme functor on schemes locally of finite type over O; D10.1 extends its domain to all O-schemes and identifies the restriction with that functor. D10.2 extends the R2.9 comparison from topologically finite type to locally formally finite type by taking the relative generic fibre; it does not identify that fibre with the entire analytic locus. PerfectoidSpaces owns perfectoid spaces, marked untilts, tilting and perfectoid residue fields. DiamondEtaleCohomology C4 supplies partial properness and properness. These notions are not reconstructed here.
 
 At the library level, Mathlib owns schemes, prime spectra, perfect closures, valuations, pullback squares, adjunctions, constructible topologies and connected components. In particular, the pointwise ideal of elements of valuation less than one uses `Valuation.ltIdeal` and `Valuation.mem_ltIdeal_iff`, pulled back to the chosen bounded subring; no separate pointwise specialization-ideal definition or membership API is owned here. Constructible density uses `Dense` with `constructibleTopology`, without a second generic density predicate. Tau Ceti owns the valuation spectrum, its analytic locus and pre-adic-space carriers. The precise contracts follow below.
 
-GeometricSatakeAndFusion GS0, “Integral bounded Grassmannian families”, “Integral parahoric ind-properness” and “Bounded admissible affine flag loci”, owns the integral Grassmannians, Schubert bounds, change of group and v-sheaf local models. D10.15 applies integral recovery to supplied local-model data; it constructs no Grassmannian or local model. The general linear minuscule identification is an explicit hypothesis there. GeometricSatakeAndFusionPartII LM.3 and HeckeStacksAndLocalShtukas consume kimberlite theory for their geometric applications. Their connected-tube and shtuka theorems are not suppliers for this roadmap.
+GeometricSatakeAndFusion GS0, “Integral bounded Grassmannian families”, “Integral parahoric ind-properness” and “Bounded admissible affine flag loci”, owns the integral Grassmannians, Schubert bounds, change of group and v-sheaf local models. D10.15 applies integral recovery to supplied local-model data; it constructs no Grassmannian or local model. The general linear minuscule identification is an explicit hypothesis there. GeometricSatakeAndFusionPartII Layers 0, 3, 6 and 7 consume D10 and D11 for integral local models, and HeckeStacksAndLocalShtukas HS2.16 is a downstream consumer of component comparisons of the kind D11.14 proves. Their connected-tube and shtuka theorems are not suppliers for this roadmap.
 
 ## Conventions
 
@@ -39,7 +39,7 @@ For X over Spd O, X_η = X ×_(Spd O) Spd F and X_s = X ×_(Spd O) Spd k. The sp
 
 Use the pinned `AlgebraicGeometry.Scheme` in `Mathlib/AlgebraicGeometry/Scheme.lean`, `PrimeSpectrum` in `Mathlib/RingTheory/Spectrum/Prime/Defs.lean`, its Zariski topology in `Mathlib/RingTheory/Spectrum/Prime/Topology.lean`, and `PrimeSpectrum.zeroLocus` in `Mathlib/RingTheory/Spectrum/Prime/Basic.lean`. Prime ideals are proper, so Spec 0 is empty. Use `PerfectRing` in `Mathlib/FieldTheory/Perfect.lean` together with characteristic p and primality of p; the class alone only asserts bijectivity of the specified power map. Use `PerfectClosure` in `Mathlib/FieldTheory/PerfectClosure.lean` for the colimit along Frobenius, not the inverse-limit construction called perfection elsewhere.
 
-Use `Valuation` in `Mathlib/RingTheory/Valuation/Basic.lean`, `Valuation.integer`, `Valuation.ltIdeal` and `Valuation.mem_ltIdeal_iff` in `Mathlib/RingTheory/Valuation/Integers.lean`; the last ideal is on the valuation's integer subring. For a merely bounded subring take its comap. Use `ValuationSubring.valuation_lt_one_iff` in `Mathlib/RingTheory/Valuation/ValuationSubring.lean` for the maximal ideal of a valuation subring. A bounded unit has value one; strict inequality singles out nonunits. `IsIntegrallyClosed` in `Mathlib/RingTheory/IntegralClosure/IntegrallyClosed.lean` refers to the general fraction ring and is combined with domain hypotheses where needed.
+Use `Valuation` in `Mathlib/RingTheory/Valuation/Basic.lean`, `Valuation.integer`, `Valuation.ltIdeal` and `Valuation.mem_ltIdeal_iff` in `Mathlib/RingTheory/Valuation/Integers.lean`; the last ideal is on the valuation's integer subring. For a merely bounded subring take its comap. Use `ValuationSubring.valuation_lt_one_iff` in `Mathlib/RingTheory/Valuation/ValuationSubring.lean` for the maximal ideal of a valuation subring. A bounded unit has value one; strict inequality singles out nonunits. `IsIntegrallyClosed` in `Mathlib/RingTheory/IntegralClosure/IntegrallyClosed.lean` refers to the general fraction ring and is combined with domain hypotheses where needed. `AlgebraicGeometry.Scheme.Pullback.exists_preimage_pullback` in `Mathlib/AlgebraicGeometry/PullbackCarrier.lean` gives, for x ∈ X and y ∈ Y with the same image in S, a point of X ×_S Y over both; D7.6 uses it to descend underlying maps along v-covers.
 
 Use `CategoryTheory.Adjunction` in `Mathlib/CategoryTheory/Adjunction/Basic.lean`, `CategoryTheory.IsPullback` in `Mathlib/CategoryTheory/Limits/Shapes/Pullback/IsPullback/Defs.lean`, and `CategoryTheory.Limits.PreservesLimitsOfShape` in `Mathlib/CategoryTheory/Limits/Preserves/Basic.lean`. Reduction is the right adjoint, hence preserves limits; diamondification is the left adjoint. No abstract adjunction theorem is a new target here.
 
@@ -55,19 +55,17 @@ For strongly noetherian complete separated Tate rings, use `TauCeti.Huber.PairOf
 
 D0.1 and AdicSpacesPartII R0.19.1–R0.19.3 supply local spectrality, patch topology and closure of proconstructible subsets; D0's cutoff-cardinal targets and D2's cutoff independence supply size control. D1.1, D1.4 and D1.9 supply totally and strictly totally disconnected perfectoid covers. D2 supplies the v-site, descent of functions and higher v-acyclicity. D3.6–D3.10 supplies étale and quasi-pro-étale maps, sub-v-sheaves of totally disconnected spaces, immersion classes, their v-locality and locally profinite torsors. D4 supplies smallness, underlying spaces, surjectivity and isomorphism detection. D5 supplies spatiality, relative representability, étale local structure and finite étale permanence. D6.1–D6.9 supplies the diamondification, gluing, site comparison, pre-adic point map, integral Galois quotient and seminormal rigid full faithfulness specified in Scope and ownership. In particular the structure map to Spd E remains part of every generic-fibre Hom set.
 
+### From TauCetiRoadmap.PrismaticCohomology
+
+§2.0 supplies `Arc.VCover`: a qcqs map Y → T is a v-cover when every Spec V → T, for V a valuation ring of arbitrary rank, lifts to Y after an injective local extension of valuation rings V → W. It supplies stability of v-covers under composition and base change, their finite-presentation refinement, and `Arc.Cover.ofVCover`, by which every v-cover is an arc-cover. This is the scheme v-cover of GLE Definition 3.4(1) (GLE line 1119).
+
+### From TauCetiRoadmap.SchemeKTheoryOperations
+
+§4.10 supplies `PerfectScheme.vTopology`, the v-topology on qcqs perfect 𝔽_p-schemes generated by valuation lifting after extension, with its identity, composition, refinement and base-change rules. On perfect affine schemes a small family covers exactly when a finite subfamily has a v-covering disjoint union (GLE Definition 3.4(2), GLE line 1125): a covering sieve contains a finite jointly covering family, each member factors through some member of the given family, and the right-cancellation rule of ArcTopologyAndDescent §1.6 passes the cover to that finite subfamily.
+
 ### From TauCetiRoadmap.ArcTopologyAndDescent
 
-These scheme-theoretic inputs are supplier obligations, with the intended sections specified below (GLE Definition 3.4, Lemma 3.5 and Remark 3.8, GLE lines 1119, 1129 and 1144). They retain arbitrary-rank valuations and arbitrary perfect schemes.
-
-What ArcTopologyAndDescent must provide (gap:scheme-v-covers): In §1.2, for qcqs schemes, define a v-cover by lifting every Spec V → T, for valuation rings V of arbitrary rank, after an extension of valuation rings V ⊂ W; on perfect affine targets a small covering family must have a finite subfamily with this property.
-
-What ArcTopologyAndDescent must provide (gap:perfect-scheme-v-subcanonicity): In §1.5, for every perfect scheme X of characteristic p, with no finiteness or separatedness assumption, prove that Hom(−,X) on perfect affine schemes is a sheaf for the scheme v-topology.
-
-What ArcTopologyAndDescent must provide (gap:discrete-adic-v-cover-detection): In §1.7, for any ring map A → B, prove that Spec B → Spec A is a v-cover if and only if Spa(B,B) → Spa(A,A), with discrete topologies, is surjective, and prove universal submersiveness of scheme v-covers.
-
-What ArcTopologyAndDescent must provide (gap:perfect-valuation-product-covers): In §3.10, prove that every perfect affine scheme in characteristic p has a v-cover by Spec(∏ Vᵢ) for perfect valuation rings Vᵢ of arbitrary rank, with size bounded after increasing the cutoff cardinal.
-
-What ArcTopologyAndDescent must provide (gap:perfect-scheme-representable-descent): In §7.8, for qcqs perfect schemes over 𝔽_p, prove representable arc-descent, hence v-descent, and prove that a singleton qcqs map is an arc-cover if and only if it is a universally effective epimorphism in the qcqs perfect-scheme category; arbitrary perfect target schemes use the v-subcanonicity contract in §1.5, with no finite-type restriction.
+§1.5 supplies subcanonicity of the v-topology on qcqs perfect 𝔽_p-schemes; D7.6 extends it to arbitrary perfect schemes. §1.6 supplies right cancellation: if g ∘ f is a v-cover then g is a v-cover. §1.7 supplies the equivalence of v-covers with universally subtrusive maps, universal submersiveness of v-covers, and the adic valuation test: Spec B → Spec A is a v-cover if and only if Spa(B,B) → Spa(A,A), with discrete topologies, is surjective (GLE Lemma 3.5, GLE line 1129). §3.10 supplies, for every ring A, a v-cover Spec(∏ Vᵢ) → Spec A by absolutely integrally closed valuation domains Vᵢ of unrestricted rank, chosen of cardinality at most max(|A|, ℵ₀) through its §0.3. When A is perfect of characteristic p each Vᵢ is perfect: Frobenius is injective on a domain of characteristic p, and xᵖ − a has a root in Vᵢ (GLE Remark 3.8, GLE line 1144). §7.8 supplies arc-descent, hence v-descent, of Hom(−, Y) on perfect schemes for every qcqs perfect 𝔽_p-scheme Y, and the characterization of arc-covers of qcqs perfect 𝔽_p-schemes as universally effective epimorphisms.
 
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
@@ -80,7 +78,7 @@ What SchemeAndStackFoundations must provide (gap:mixed-characteristic-weak-norma
 
 What SchemeAndStackFoundations must provide (gap:finite-geometric-fibre-radiciality): In §0.26, for a finite surjection Y → X of finite-type schemes over an algebraically closed field k, prove that singleton geometric fibres over all closed points imply universal injectivity, hence a universal homeomorphism.
 
-What SchemeAndStackFoundations must provide (gap:absolute-weak-normality-formal): In §0.26, supply scheme absolute weak normalization with its universal property, finiteness for excellent rings with characteristic-zero generic fields, and preservation and descent under regular completion and formal localization maps.
+What SchemeAndStackFoundations must provide (gap:absolute-weak-normality-formal): In §0.26, define absolute weak normality of rings and schemes (AGLR Definition 2.12) and supply scheme absolute weak normalization with its universal property, finiteness for excellent rings with characteristic-zero generic fields, and preservation and descent under regular completion and formal localization maps.
 
 ### From TauCetiRoadmap.AdicSpacesPartII
 
@@ -130,6 +128,9 @@ GS0, “Integral bounded Grassmannian families” and “Integral parahoric ind-
 - For Spf ℤ_p, reduction is Spec 𝔽_p and the pre-adic space is Spa(ℤ_p,ℤ_p); the comparison restricts to R2.3's functor.
 - For Spf O_C, with C a completed algebraic closure of ℚ_p, choose a ∈ O_C with a² = p. The defining ideals (p) and (a) both contain p and have radical m_C, so both reductions are Spec k_C. F0.3's carrier admits this nonnoetherian object, while R2.3's locally noetherian comparison does not; the extended comparison gives Spa(O_C,O_C).
 - For the zero ring, the reduced quotient is zero for every defining ideal; the formal scheme, reduction and pre-adic space all have zero points. A nonemptiness requirement would exclude this compatible empty case.
+- On the perfect affine line Spec 𝔽_p[`t^(1/p^∞)`], the two basic opens D(t) and D(t − 1) form a finite cover. The family of all closed points misses the generic point, so no finite subfamily is a v-cover and the family does not cover, although its members are jointly surjective onto the closed points.
+- ArcTopologyAndDescent §1.5 concerns qcqs targets. For X = ⨿_(n∈ℕ) Spec 𝔽_p, perfect but not quasicompact, a map Spec A → X is a locally constant function |Spec A| → ℕ, with finitely many values. Along a v-cover Spec B → Spec A, a labelling of Spec B with equal pullbacks is constant on fibres and descends through the quotient map |Spec B| → |Spec A|, as in the extension proved in D7.6.
+- An absolutely integrally closed valuation domain of characteristic p is perfect: in the valuation ring of an algebraic closure of 𝔽_p((t)), the root of xᵖ − t is t^(1/p). The ring 𝔽_p[[t]] is neither, since t has no p-th root.
 
 ## How to read the build
 
@@ -313,7 +314,7 @@ For example, for B = A discrete and Z = Spo(A, A) itself, I = 0. For A discrete 
 
 Perfect affine schemes; a family is a v-cover when a finite subfamily is.
 
-*Proof sketch.* Quasicompactness: for perfect discrete A, the bounded locus of Spd(A) is everything, and maps of bounded loci along adic maps are representable in spatial diamonds (Gleason Lemma 2.26). For quasicompact maps surjectivity of v-sheaves is surjectivity on underlying spaces (DiamondsAndVStacks D4). Through D7/olivine-comparison, surjectivity of |Spd(B)| → |Spd(A)| is surjectivity of Spo(B, B) → Spo(A, A), which is surjectivity of Spa(B) → Spa(A) by Proposition 2.34. The adic-spectrum criterion for universal subtrusiveness is requested from ArcTopologyAndDescent §1.7 (gap:discrete-adic-v-cover-detection).
+*Proof sketch.* Quasicompactness: for perfect discrete A, the bounded locus of Spd(A) is everything, and maps of bounded loci along adic maps are representable in spatial diamonds (Gleason Lemma 2.26). For quasicompact maps surjectivity of v-sheaves is surjectivity on underlying spaces (DiamondsAndVStacks D4). Through D7/olivine-comparison, surjectivity of |Spd(B)| → |Spd(A)| is surjectivity of Spo(B, B) → Spo(A, A), which is surjectivity of Spa(B) → Spa(A) by Proposition 2.34. The adic-spectrum criterion for universal subtrusiveness is the adic valuation test of ArcTopologyAndDescent §1.7.
 
 For example, The identity of a perfect affine scheme is a v-cover and its ⋄ is surjective. A proper surjection of perfect schemes, such as the perfected blow-up of the origin in the perfect affine plane, is a v-cover. Non-example: the inclusion of the generic point Spec 𝔽_p(t)^perf → Spec 𝔽_p[t]^perf is not a v-cover, and its ⋄ misses the points of the closed points.
 
@@ -323,7 +324,7 @@ For example, The identity of a perfect affine scheme is a v-cover and its ⋄ is
 - For a perfect rank-one valuation ring V with fraction field K and residue field κ, Spec(K × κ) → Spec V is surjective on ordinary points but not a v-cover: no extension of V lifts the full generic-to-closed specialization into either component. The discrete adic spectrum map is therefore not surjective.
 - The identity and a proper surjection are v-covers; the generic-point inclusion into the perfect affine line omits every closed point and fails both cover tests.
 
-*Needs:* [D7.8](#d78-the-olivine-spectrum-computes-spdb-b), [D7.9](#d79-schematic-closed-subsets-of-the-olivine-spectrum-are-zero-loci-of-open-ideals), ArcTopologyAndDescent §1.2 (gap:scheme-v-covers), ArcTopologyAndDescent §1.7 (gap:discrete-adic-v-cover-detection), DiamondsAndVStacks D4.8, DiamondsAndVStacks D5.12, [D7.4](#d74-the-v-sheaf-x-of-a-scheme-over-𝔽_p).
+*Needs:* [D7.8](#d78-the-olivine-spectrum-computes-spdb-b), [D7.9](#d79-schematic-closed-subsets-of-the-olivine-spectrum-are-zero-loci-of-open-ideals), PrismaticCohomology §2.0, SchemeKTheoryOperations §4.10, ArcTopologyAndDescent §1.7, DiamondsAndVStacks D4.8, DiamondsAndVStacks D5.12, [D7.4](#d74-the-v-sheaf-x-of-a-scheme-over-𝔽_p).
 
 ([GLE](#references) §3.1, Definition 3.4, Lemma 3.5, Lemma 3.6 and Proposition 3.7, pp. 22–23; GLE line 1119.)
 
@@ -333,13 +334,13 @@ For example, The identity of a perfect affine scheme is a v-cover and its ⋄ is
 
 No finiteness or separatedness hypotheses on X or Y.
 
-*Proof sketch.* Affine target X = Spec R: both sides turn colimits in Y into limits, so take Y = Spec S; the v-cover Spa(S((`t^(1/p^∞)`)), S[[`t^(1/p^∞)`]]) of Y^⋄ embeds Hom(Y^⋄, X^⋄) into Hom(R, S[[`t^(1/p^∞)`]]), and equality of the two pullbacks to the self-product forces the image to lie in S, checked after mapping S to fields. Faithfulness in general: two maps with the same ⋄ agree on underlying spaces, by surjectivity of |Y^⋄| → |Y| (DiamondsAndVStacks D6.8), and then agree by the affine case. Fullness: successively for Y = Spec K (one point, factor through an affine open), Y = Spec V a valuation ring (the key case, using D7/minimal-point-lemma to show the map factors through U^⋄ for an affine U), Y = Spec ∏V_i (Stone–Čech compactification of the index set and splitting of open covers), and general Y by the representable-descent contract for perfect schemes. v-descent: Hom(−, X) is a v-sheaf on perfect schemes, so a map of v-sheaves defined on a v-cover by products of valuation rings descends.
+*Proof sketch.* Affine target X = Spec R: both sides turn colimits in Y into limits, so take Y = Spec S; the v-cover Spa(S((`t^(1/p^∞)`)), S[[`t^(1/p^∞)`]]) of Y^⋄ embeds Hom(Y^⋄, X^⋄) into Hom(R, S[[`t^(1/p^∞)`]]), and equality of the two pullbacks to the self-product forces the image to lie in S, checked after mapping S to fields. Faithfulness in general: two maps with the same ⋄ agree on underlying spaces, by surjectivity of |Y^⋄| → |Y| (DiamondsAndVStacks D6.8), and then agree by the affine case. Fullness: successively for Y = Spec K (one point, factor through an affine open), Y = Spec V a valuation ring (the key case, using D7/minimal-point-lemma to show the map factors through U^⋄ for an affine U), Y = Spec ∏V_i (Stone–Čech compactification of the index set and splitting of open covers), and general Y by Zariski gluing and v-descent. For affine Y, ArcTopologyAndDescent §3.10 gives a v-cover q : Spec(∏V_i) → Y by absolutely integrally closed valuation domains, which are perfect in characteristic p; the previous case gives f with f^⋄ = ψ ∘ q^⋄, faithfulness makes the two pullbacks of f to the perfect fibre product agree, f descends to h : Y → X, and h^⋄ = ψ because q^⋄ is surjective (D7.10). The descent uses that Hom(−, X) is a v-sheaf on perfect affine schemes for every perfect X. For qcqs X this is ArcTopologyAndDescent §1.5, and also §7.8 through arc-descent. For arbitrary X let q : Spec B → Spec A be a v-cover and g : Spec B → X a map whose two pullbacks to the perfect fibre product agree. Points of a fibre product of schemes surject onto pairs of points with a common image (Mathlib `AlgebraicGeometry.Scheme.Pullback.exists_preimage_pullback`), and perfection does not change underlying spaces, so |g| is constant on the fibres of |q|. As q is surjective and submersive (ArcTopologyAndDescent §1.7), |g| factors through a continuous φ : |Spec A| → |X|. Two descents of g have the underlying map φ, and over each basic open D(a) with φ(D(a)) inside an affine open U of X they agree by the affine case applied to the base-changed cover; this is uniqueness. Over each such D(a), g restricted to q⁻¹(D(a)) lands in U and descends by the affine case, and uniqueness on the basic opens of the overlaps glues these local descents.
 
 For example, for X = Spec 𝔽_p[`t^(1/p^∞)`], the endomorphisms of the v-sheaf X^⋄ are exactly the ring endomorphisms of 𝔽_p[`t^(1/p^∞)`]. Non-example for non-perfect schemes: Spec 𝔽_p[t] and its perfection have isomorphic ⋄, but are not isomorphic. Compatibility: Gleason's Theorem 2.32 (D7/discrete-source-full-faithfulness) specializes to this statement when the target is a perfect scheme.
 
 Applications include SW20 proof of Proposition 18.4.1: recovers (𝔛_red)^perf from the closed complement of the analytic locus.
 
-*Needs:* [D7.4](#d74-the-v-sheaf-x-of-a-scheme-over-𝔽_p), [D7.5](#d75-quasicompact-spaces-over-a-valuation-spectrum-have-a-minimal-image-point), [D7.10](#d710-v-covers-of-perfect-affine-schemes-are-detected-by-), DiamondsAndVStacks D6.8, DiamondsAndVStacks D1.4, ArcTopologyAndDescent §7.8 (gap:perfect-scheme-representable-descent), ArcTopologyAndDescent §1.5 (gap:perfect-scheme-v-subcanonicity), ArcTopologyAndDescent §3.10 (gap:perfect-valuation-product-covers).
+*Needs:* [D7.4](#d74-the-v-sheaf-x-of-a-scheme-over-𝔽_p), [D7.5](#d75-quasicompact-spaces-over-a-valuation-spectrum-have-a-minimal-image-point), [D7.10](#d710-v-covers-of-perfect-affine-schemes-are-detected-by-), DiamondsAndVStacks D6.8, DiamondsAndVStacks D1.4, ArcTopologyAndDescent §1.5, ArcTopologyAndDescent §1.7, ArcTopologyAndDescent §3.10, ArcTopologyAndDescent §7.8, PrismaticCohomology §2.0, Mathlib `AlgebraicGeometry.Scheme.Pullback.exists_preimage_pullback`.
 
 ([SW20](#references) Lecture 18, §18.3, Proposition 18.3.1 and proof, pp. 163–166; SW20 line 6290; [GLE](#references) §3.2, Proposition 3.16(1), p. 25; GLE line 1253.)
 
@@ -366,7 +367,7 @@ For the cuspidal cubic, t ↦ (t²,t³) has residue extension degree one and giv
 
 ### Dependencies
 
-AdicSpacesPartII R0.13, R1.7; ArcTopologyAndDescent contracts §§1.2, 1.5, 1.7, 3.10, 7.8; DiamondsAndVStacks D0–D6; PerfectoidSpaces P2; SchemeAndStackFoundations §§0.23–0.24.
+AdicSpacesPartII R0.13, R1.7; ArcTopologyAndDescent §§1.5–1.7, 3.10, 7.8; PrismaticCohomology §2.0; SchemeKTheoryOperations §4.10; DiamondsAndVStacks D0–D6; PerfectoidSpaces P2; SchemeAndStackFoundations §§0.23–0.24.
 
 ## Layer D8: Scheme-theoretic v-sheaves and the reduction functor
 
@@ -376,9 +377,9 @@ The functor S ↦ S^⋄ from perfect affine schemes is continuous for the v-topo
 
 **Construction.** For a cutoff cardinal κ let PCAlg^op_κ be the category of perfect affine 𝔽_p-schemes whose underlying space and ring of global sections have cardinality at most κ, with the v-topology (a small family is a cover when a finite subfamily is universally subtrusive), and SchPerf~_κ its topos. For κ < λ the inverse-image (extension) functor induced by inclusion of sites gives fully faithful embeddings SchPerf~_κ → SchPerf~_λ; the category SchPerf~ of small scheme-theoretic v-sheaves is the filtered union over all cutoff cardinals. Representable functors of perfect schemes are objects; the topology is subcanonical.
 
-Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology requested in the ArcTopologyAndDescent §1.2 contract (gap:scheme-v-covers), made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
+Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology `PerfectScheme.vTopology` of SchemeKTheoryOperations §4.10, whose covers are the v-covers of PrismaticCohomology §2.0, made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
 
-*Proof sketch.* Every morphism from a perfect affine scheme to a κ-small one factors through a κ-small v-cover (Gleason Lemma 3.10), so v-covers are filtered colimits of κ-small v-covers. Hence the inverse-image extension from the κ-small to the λ-small topos is fully faithful (Gleason Proposition 3.9), and the colimit over cutoff cardinals exists as in DiamondsAndVStacks D0.23. Subcanonicity is requested from ArcTopologyAndDescent §1.5 (gap:perfect-scheme-v-subcanonicity).
+*Proof sketch.* Every morphism from a perfect affine scheme to a κ-small one factors through a κ-small v-cover (Gleason Lemma 3.10), so v-covers are filtered colimits of κ-small v-covers. Hence the inverse-image extension from the κ-small to the λ-small topos is fully faithful (Gleason Proposition 3.9), and the colimit over cutoff cardinals exists as in DiamondsAndVStacks D0.23. Subcanonicity: ArcTopologyAndDescent §1.5 gives it for qcqs perfect schemes, and the descent of the underlying map with gluing over affine opens in the proof of D7.6 extends it to every perfect scheme.
 
 The construction has the following properties:
 
@@ -397,7 +398,7 @@ For example, A perfect scheme represents an object of SchPerf~.
 
 Applications include Gleason Definition 3.12: target category of the reduction functor; AGLR Definition 2.19: X^red is a small v-sheaf on perfect k-schemes; GLX §3.4: the reduction of an integral shtuka moduli space is a perfect scheme in this category.
 
-*Needs:* ArcTopologyAndDescent §1.2 (gap:scheme-v-covers), ArcTopologyAndDescent §1.5 (gap:perfect-scheme-v-subcanonicity), DiamondsAndVStacks D0.23, DiamondsAndVStacks D2.3, Mathlib `PerfectRing`.
+*Needs:* SchemeKTheoryOperations §4.10, PrismaticCohomology §2.0, ArcTopologyAndDescent §1.5, ArcTopologyAndDescent §1.6, [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D0.23, DiamondsAndVStacks D2.3, Mathlib `PerfectRing`.
 
 ([GLE](#references) §3.1, the paragraph after Remark 3.8, Lemma 3.10, Proposition 3.9 and the definition of SchPerf~, pp. 23–24; GLE line 1151.)
 
@@ -405,9 +406,9 @@ Applications include Gleason Definition 3.12: target category of the reduction f
 
 **Construction.** For S ∈ SchPerf~, |S| is the set of equivalence classes of maps Spec k → S from perfect fields, two maps being equivalent if they are dominated by a common perfect field. Choosing a surjection X = ⨿ S_i → S from perfect affine schemes and a surjection Y → X ×_S X of the same kind, |S| = |X|/|Y| with the quotient topology, independent of choices; maps of scheme-theoretic v-sheaves induce continuous maps, and for S representable by a perfect scheme |S| is its Zariski space.
 
-Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology requested in the ArcTopologyAndDescent §1.2 contract (gap:scheme-v-covers), made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
+Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology `PerfectScheme.vTopology` of SchemeKTheoryOperations §4.10, whose covers are the v-covers of PrismaticCohomology §2.0, made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
 
-*Proof sketch.* Existence of the presentations: smallness (Gleason Proposition 3.14(1)). Independence of choices and functoriality as for small v-sheaves (DiamondsAndVStacks D4.5 and D4.8), using that v-covers of perfect schemes are surjective on points and submersive (ArcTopologyAndDescent §1.7 (gap:discrete-adic-v-cover-detection)).
+*Proof sketch.* Existence of the presentations: smallness (Gleason Proposition 3.14(1)). Independence of choices and functoriality as for small v-sheaves (DiamondsAndVStacks D4.5 and D4.8), using that v-covers of perfect schemes are surjective on points and submersive (ArcTopologyAndDescent §1.7).
 
 The construction has the following properties:
 
@@ -426,7 +427,7 @@ For example, for S = Spec A perfect, |S| = Spec A with the Zariski topology.
 
 Applications include Gleason Definition 4.12: target space of the specialization map sp_F : |F| → |F^red|; Gleason Lemma 4.53, 4.55: π₀(|F^red|) and local noetherianity of |F^red|.
 
-*Needs:* [D8.1](#d81-small-scheme-theoretic-v-sheaves), ArcTopologyAndDescent §1.7 (gap:discrete-adic-v-cover-detection), DiamondsAndVStacks D4.5 and D4.8, Mathlib `PrimeSpectrum`.
+*Needs:* [D8.1](#d81-small-scheme-theoretic-v-sheaves), ArcTopologyAndDescent §1.7, DiamondsAndVStacks D4.5 and D4.8, Mathlib `PrimeSpectrum`.
 
 ([GLE](#references) §3.1, definition of |S| after Remark 3.13 and Proposition 3.14, pp. 24–25; GLE line 1229.)
 
@@ -434,7 +435,7 @@ Applications include Gleason Definition 4.12: target space of the specialization
 
 **Construction.** The functor S ↦ S^⋄ of D7/perfect-scheme-v-sheaf on perfect affine schemes is continuous for the v-topologies, so it extends uniquely to a colimit-preserving functor ⋄ : SchPerf~ → (small v-sheaves) commuting with finite limits, with (Spec A)^⋄ = Spd(A, A) for A perfect and discrete; the extension is compatible with the passage between cutoff cardinals.
 
-Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology requested in the ArcTopologyAndDescent §1.2 contract (gap:scheme-v-covers), made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
+Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology `PerfectScheme.vTopology` of SchemeKTheoryOperations §4.10, whose covers are the v-covers of PrismaticCohomology §2.0, made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
 
 *Proof sketch.* Continuity: v-covers of perfect affine schemes go to surjections (D7/perfect-v-covers) and ⋄ preserves fibre products (D7/perfect-scheme-v-sheaf). The general topos formalism (the morphism-of-topoi formalism of DiamondsAndVStacks D0) extends a continuous finite-limit-preserving functor on the site to the inverse image of a morphism of topoi f_κ : (v-sheaves)_κ → SchPerf~_κ, compatible in κ (Gleason Proposition 3.11).
 
@@ -463,7 +464,7 @@ Applications include Gleason Definition 3.20: the square (F^red)^⋄ → F defin
 
 **Construction.** The reduction functor (−)^red from small v-sheaves to small scheme-theoretic v-sheaves is the right adjoint of ⋄: F^red(Spec R) = Hom(Spec(R)^⋄, F) = F(Spd(R, R)) for R perfect. It preserves limits and smallness, and comes with the counit (F^red)^⋄ → F and the unit S → (S^⋄)^red.
 
-Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology requested in the ArcTopologyAndDescent §1.2 contract (gap:scheme-v-covers), made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
+Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology `PerfectScheme.vTopology` of SchemeKTheoryOperations §4.10, whose covers are the v-covers of PrismaticCohomology §2.0, made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
 
 *Proof sketch.* Right adjoint of the inverse image of the morphism of topoi of D8/diamond-functor-on-scheme-theoretic-v-sheaves, assembled over cutoff cardinals; the formula is the adjunction applied to representables (Gleason Remark 3.13). Smallness: the direct image preserves κ-smallness (Gleason Proposition 3.11), so F^red is small.
 
@@ -496,7 +497,7 @@ Applications include Gleason §4: target of the specialization map and of Heuer'
 
 **Definition.** A small scheme-theoretic v-sheaf S is reduced if the unit S → (S^⋄)^red is an isomorphism. Every perfect scheme is reduced, and ⋄ is fully faithful on reduced objects: Hom(G^⋄, F^⋄) = Hom(G, F) for G arbitrary and F reduced.
 
-Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology requested in the ArcTopologyAndDescent §1.2 contract (gap:scheme-v-covers), made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
+Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology `PerfectScheme.vTopology` of SchemeKTheoryOperations §4.10, whose covers are the v-covers of PrismaticCohomology §2.0, made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
 
 *Proof sketch.* Representables: Theorem 2.32 of Gleason (D7/discrete-source-full-faithfulness) applied to Y = Spec R and X perfect gives (X^⋄)^red = X. Full faithfulness: Hom(G^⋄, F^⋄) = Hom(G, (F^⋄)^red) = Hom(G, F) by adjunction.
 
@@ -669,7 +670,7 @@ Reduction sends Spd ℤ_p to Spec 𝔽_p and Spd ℚ_p to ∅. For Spd(ℤ_p[[T]
 
 ### Dependencies
 
-D7; DiamondsAndVStacks D0–D6; DiamondEtaleCohomology C8.24; ArcTopologyAndDescent contracts §§1.2, 1.5, 1.7; AdicSpacesPartIII F0.4; Mathlib adjunctions and pullbacks.
+D7; DiamondsAndVStacks D0–D6; DiamondEtaleCohomology C8.24; ArcTopologyAndDescent §§1.5–1.7; PrismaticCohomology §2.0; SchemeKTheoryOperations §4.10; AdicSpacesPartIII F0.4; Mathlib adjunctions and pullbacks.
 
 ## Layer D9: Specializing v-sheaves, prekimberlites and formal neighbourhoods
 
@@ -847,7 +848,7 @@ Applications include Gleason Definition 4.18: formal neighbourhoods of locally c
 
 **Theorem.** Let 𝔛 be a separated formal scheme over ℤ_p, locally Spf A with A complete and separated for a finitely generated ideal of definition I containing p, and let 𝔛^ad = t(𝔛) be its pre-adic space. Then 𝔛^♢ := (𝔛^ad)^♢ is a prekimberlite with (𝔛^♢)^red = (𝔛_red)^perf, its counit is the closed immersion ((𝔛_red)^perf)^⋄ → 𝔛^♢ of the non-analytic locus, and (𝔛^♢)^an = (𝔛^ad_a)^♢ is the diamond of the analytic locus.
 
-Here formal schemes have the Zariski-sheaf description on p-nilpotent algebras of GLE Convention 1, without local noetherianity, using AdicSpacesPartIII F0.3's finite-ideal carrier. Separated means 𝔛_red is a separated scheme. The reduction interface and fully faithful pre-adic comparison t use AdicSpacesPartIII F0.3/R2.3 (gap:finite-ideal-formal-schemes); t restricts on locally noetherian objects to R2.3's functor.
+Here formal schemes have the Zariski-sheaf description on p-nilpotent algebras of GLE Convention 1, without local noetherianity, using AdicSpacesPartIII F0.3's finite-ideal carrier: a formal scheme is the colimit of its thickenings, locally Spec(A/Iⁿ⁺¹), and its morphisms are the compatible systems of morphisms of thickenings (AdicSpacesPartIII F0.3, *thickening-colimit-finite-ideal-type* and *morphisms-as-compatible-systems-finite-ideal-type*), so Spf A has the value colimₙ Hom(A/Iⁿ, B) on Spec B for B with p nilpotent. Separated means 𝔛_red is a separated scheme. The reduction interface and fully faithful pre-adic comparison t use AdicSpacesPartIII F0.3/R2.3 (gap:finite-ideal-formal-schemes); t restricts on locally noetherian objects to R2.3's functor.
 
 *Proof sketch.* v-locally formal: 𝔛^♢ is covered by the Spd(A) of affine opens Spf A. Reduction: D8/reduction-of-huber-pairs gives (𝔛^♢)^red = (𝔛^na,♢)^red = (𝔛_red)^perf; the counit is the map of the non-analytic locus, a closed immersion (Gleason Proposition 1.21(6); DiamondsAndVStacks D6.6 the formal complement comparison). Separatedness over Spd ℤ_p: quasiseparatedness from quasicompactness of affine intersections and representability of the diagonal; the valuative criterion (DiamondsAndVStacks D3) reduces to separatedness of 𝔛_red via maps Spf(K⁺) → 𝔛 as pairs of a map from Spf(O_K) and a map from Spec(K⁺/K°°). The closed counit already established is a monomorphism. Apply D8/adjunction-injectivity-criterion to obtain formal adicness of the diagonal, and combine it with separatedness proved above. This proves formal separatedness without assuming that the structure map to Spd ℤ_p is formally p-adic.
 
@@ -861,7 +862,7 @@ For example, for 𝔛 = Spf ℤ_p⟨T⟩ the prekimberlite is Spd(ℤ_p⟨T⟩) 
 
 Applications include SW20 Proposition 18.4.1: the source category of the full-faithfulness theorem; Gleason Corollary 4.28: étale formal neighbourhoods of formal schemes are formal schemes.
 
-*Needs:* [D9.6](#d96-prekimberlites-and-their-analytic-locus), [D8.6](#d86-reduction-of-spda-a-and-of-pre-adic-spaces), [D8.11](#d811-spd-ℤ_p-is-formally-separated-and-formally-p-adic-sheaves-have-formally-adic-diagonal), AdicSpacesPartIII F0.3, AdicSpacesPartIII R2.3, DiamondsAndVStacks D6.6, DiamondsAndVStacks D3.8, [D8.12](#d812-injectivity-of-the-reduction-counit-and-the-formally-adic-criterion), AdicSpacesPartIII F0.3/R2.3 (gap:finite-ideal-formal-schemes).
+*Needs:* [D9.6](#d96-prekimberlites-and-their-analytic-locus), [D8.6](#d86-reduction-of-spda-a-and-of-pre-adic-spaces), [D8.11](#d811-spd-ℤ_p-is-formally-separated-and-formally-p-adic-sheaves-have-formally-adic-diagonal), AdicSpacesPartIII F0.3, AdicSpacesPartIII F0.3 *thickening-colimit-finite-ideal-type*, AdicSpacesPartIII F0.3 *morphisms-as-compatible-systems-finite-ideal-type*, AdicSpacesPartIII R2.3, DiamondsAndVStacks D6.6, DiamondsAndVStacks D3.8, [D8.12](#d812-injectivity-of-the-reduction-counit-and-the-formally-adic-criterion), AdicSpacesPartIII F0.3/R2.3 (gap:finite-ideal-formal-schemes).
 
 ([GLE](#references) §4.3, Convention 1, Proposition 4.16 and Proposition 4.17 with proof, pp. 30–31; GLE line 1516; [SW13](#references) §2.2, Proposition 2.2.1, p. 15; SW13 line 561.)
 
@@ -971,11 +972,11 @@ Applications include Gleason Definition 4.30: valuative prekimberlites: SP_F par
 
 **Lemma.** For a quasicompact separated étale map V → X of perfect 𝔽_p-schemes, `V^(⋄/◦)` → `X^(⋄/◦)` is separated, quasicompact, formally adic and étale. On affine tests Spa(R,R⁺), use the unique completed formally étale lift of the prescribed étale algebra over the reduced integral ring. Its generic fibre, with the canonical integral subring, represents the pullback; work on affine étale charts and glue. Uniqueness is in the category of complete formal lifts, not among all ordinary étale R⁺-algebras.
 
-*Proof sketch.* X ↦ `X^(⋄/◦)` commutes with finite limits and open immersions; separatedness from the open-and-closed diagonal. For formal adicness, compare V^⋄ with `V^(⋄/◦)` `×_(X^(⋄/◦))` X^⋄ on formalized tests. Étale-site invariance under perfection and nil ideals identifies the reduction data, and completed henselian lifting gives the formally étale lift over R⁺; here R⁺ can be nonnoetherian. On affine étale charts, take the completed lift, invert a pseudo-uniformizer, and use its canonical integral subring to obtain the étale adic pullback. Glue the charts. Finite presentation and the quasicompact separated hypothesis give quasicompactness and separatedness.
+*Proof sketch.* X ↦ `X^(⋄/◦)` commutes with finite limits and open immersions; separatedness from the open-and-closed diagonal. For formal adicness, compare V^⋄ with `V^(⋄/◦)` `×_(X^(⋄/◦))` X^⋄ on formalized tests. Étale-site invariance under perfection and nil ideals identifies the reduction data, and completed henselian lifting gives the formally étale lift over R⁺ (SchemeAndStackFoundations §0.14 / §0.23a, gap:completed-etale-lifts); here R⁺ can be nonnoetherian. On affine étale charts, take the completed lift, invert a pseudo-uniformizer, and use its canonical integral subring to obtain the étale adic pullback. Glue the charts. Finite presentation and the quasicompact separated hypothesis give quasicompactness and separatedness.
 
 For example, for V → X an open immersion, `V^(⋄/◦)` → `X^(⋄/◦)` is an open immersion. For the identity residue algebra, R⁺ and R⁺ × R⁺[1/ϖ] are distinct ordinary étale lifts with the same reduction. Completion removes the second factor, so uniqueness must be formulated for completed lifts.
 
-*Needs:* [D9.10](#d910-heuers-v-sheaf-x-of-a-perfect-scheme), [D8.8](#d88-formally-adic-morphisms-of-v-sheaves), DiamondsAndVStacks D3.6, SchemeAndStackFoundations:SF.0.
+*Needs:* [D9.10](#d910-heuers-v-sheaf-x-of-a-perfect-scheme), [D8.8](#d88-formally-adic-morphisms-of-v-sheaves), DiamondsAndVStacks D3.6, SchemeAndStackFoundations:SF.0, SchemeAndStackFoundations §0.14 / §0.23a (gap:completed-etale-lifts).
 
 ([GLE](#references) §4.4, Lemma 4.25 and proof, p. 33; GLE line 1623.)
 
@@ -1028,7 +1029,7 @@ The formal neighbourhood of the origin in Spd(ℤ_p⟨T⟩) is Spd(ℤ_p[[T]]) w
 
 ### Dependencies
 
-D7–D8; AdicSpacesPartIII F0.2–F0.5, R2.4, R2.9; SchemeAndStackFoundations §§0.14, 0.23a–0.24 and the completed étale-lift contract; DiamondsAndVStacks D1–D6; PerfectoidSpaces P1.
+D7–D8; AdicSpacesPartIII F0.2–F0.5, R2.4, R2.9; SchemeAndStackFoundations §§0.14, 0.23a–0.24, with §0.14 / §0.23a (gap:completed-etale-lifts); DiamondsAndVStacks D1–D6; PerfectoidSpaces P1.
 
 ## Layer D10: Integral models from their v-sheaves
 
@@ -1265,7 +1266,7 @@ For example, for X = Y = `P^n_(O_E)` the endomorphisms of (P^n)^♢ over Spd O_E
 
 **Theorem.** (1) For an affine formal scheme Spf A over O_E with finitely generated ideal of definition I, and B the I-adic completion of the absolute weak normalization of A, Spf(B)^♢ → Spf(A)^♢ is an isomorphism. (2) The functor 𝔛 ↦ 𝔛^♢ from absolutely weakly normal formal schemes flat, separated and topologically of finite type over O_E to v-sheaves over Spd O_E is fully faithful. (3) For a proper flat O_E-scheme X, X^awn is proper and flat and (X^awn)^♢ → X^♢ is an isomorphism; X ↦ X^♢ is fully faithful on proper flat absolutely weakly normal O_E-schemes.
 
-Use the standing FS convention: continuous structure maps are allowed, including the (π,q)-adic formal disc. Absolute weak normality is imported from SF.0 (AGLR Definition 2.12): seminormality together with the condition that for every prime ℓ, an equality ℓ^ℓ a = b^ℓ has a unique c with a = c^ℓ and b = ℓc. This is not closure under arbitrary ℓ-th roots. For 𝔽_p-algebras it is equivalent to perfectness.
+Use the standing FS convention: continuous structure maps are allowed, including the (π,q)-adic formal disc. Absolute weak normality (AGLR Definition 2.12) and absolute weak normalization are requested from SchemeAndStackFoundations §0.26 (gap:absolute-weak-normality-formal), whose characteristic-p weak normality covers only reduced schemes of finite type over a perfect field. Absolute weak normality is seminormality together with the condition that for every prime ℓ, an equality ℓ^ℓ a = b^ℓ has a unique c with a = c^ℓ and b = ℓc. This is not closure under arbitrary ℓ-th roots. For 𝔽_p-algebras it is equivalent to perfectness.
 
 *Proof sketch.* (1): affinoid perfectoid test objects have v-covers Spa(R, R⁺) with R⁺ a product of perfectoid valuation rings with algebraically closed fraction fields, which are absolutely weakly normal, so maps factor through the absolute weak normalization. (2): faithfulness since A injects into a product of perfectoid valuation rings; fullness by producing ψ_η from DiamondsAndVStacks D6.9 (A[1/π] is seminormal), a map from the image A'' of B ⊗ A in A[1/π], and comparing the closed sub-v-sheaves (X'')^♢ and Γ_f through density of the generic fibre (D10/generic-fibre-density); special fibres agree by D7/perfect-scheme-full-faithfulness, so A → A'' is a universal homeomorphism and A'' = A by absolute weak normality; globalize with the specialization map. (3): X^awn → Spec O_E is of finite type by excellence and the embedding into the normalization in characteristic 0; π-adic completion preserves absolute weak normality (regular maps); then (2) and Grothendieck existence.
 
@@ -1273,7 +1274,7 @@ For example, for normal A this recovers D10/formal-full-faithfulness in the topo
 
 Applications include AGLR Theorem 1.1 and §4: uniqueness and representability of scheme-theoretic local models.
 
-*Needs:* [D10.7](#d107-the-generic-fibre-is-dense-in-the-v-sheaf-of-a-flat-formal-scheme), [D10.10](#d1010-formal-schemes-are-determined-by-their-specialization-triples-lourenço), [D10.1](#d101-the-two-v-sheaves-x-and-x-of-an-o-scheme), [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D6.9, SchemeAndStackFoundations:SF.0, SchemeAndStackFoundations §4.10, through AdicSpacesPartIII F0.8.
+*Needs:* [D10.7](#d107-the-generic-fibre-is-dense-in-the-v-sheaf-of-a-flat-formal-scheme), [D10.10](#d1010-formal-schemes-are-determined-by-their-specialization-triples-lourenço), [D10.1](#d101-the-two-v-sheaves-x-and-x-of-an-o-scheme), [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D6.9, SchemeAndStackFoundations:SF.0, SchemeAndStackFoundations §4.10, through AdicSpacesPartIII F0.8, SchemeAndStackFoundations §0.26 (gap:absolute-weak-normality-formal).
 
 ([AGLR](#references) §2.2, Definition 2.12, Lemma 2.13, Definition 2.14, Proposition 2.15, Theorem 2.16 and Proposition 2.18 with proofs, pp. 12–14; AGLR line 671.)
 
@@ -1314,7 +1315,7 @@ The rings of bounded functions on the open and closed unit discs are O_E[[q]] an
 
 ### Dependencies
 
-D7–D9; AdicSpacesPartII R0.9, R0.13, R1.2–R1.7 and the pseudorigid contract; AdicSpacesPartIII F0.6–F0.8, R2.2–R2.4, R2.9; SchemeAndStackFoundations §0.21 and the absolute weak-normality contract; DiamondsAndVStacks D3–D6; DiamondEtaleCohomology C4; AdicCoefficientsAndComparisons L1 on its locally finite-type domain; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27; GeometricSatakeAndFusion GS0 for D10.15.
+D7–D9; AdicSpacesPartII R0.9, R0.13, R1.2–R1.7, with R0.9 / R0.18 (gap:pseudorigid-jacobson-flatness) and R0.18 (gap:noetherian-definition-rational-flatness); AdicSpacesPartIII F0.6–F0.8, R2.2–R2.4, R2.9; SchemeAndStackFoundations §0.21 and §0.26 (gap:absolute-weak-normality-formal); DiamondsAndVStacks D3–D6; DiamondEtaleCohomology C4; AdicCoefficientsAndComparisons L1 on its locally finite-type domain; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27; GeometricSatakeAndFusion GS0 for D10.15.
 
 ## Layer D11a: Kimberlites and tubular neighbourhoods
 
@@ -1788,7 +1789,7 @@ For example, Spd O satisfies the hypotheses.
 
 **Theorem.** Let O be a complete discrete valuation ring flat over ℤ_p with algebraically closed residue field k and uniformizer π. Let A be a flat, weakly normal, π-adically complete domain topologically of finite type over O, with A[1/π] normal. If the tube at every closed point of Spec(A/π), equivalently the rigid generic fibre of the corresponding complete local formal scheme, is connected, then A is normal. Algebraic closedness is an extra hypothesis correcting AGLR Proposition 2.39; connectedness alone over a merely perfect k is insufficient.
 
-O is a complete discrete valuation ring flat over ℤ_p, with uniformizer π, fraction field F and algebraically closed residue field k. Weak normality excludes a proper finite birational universal-homeomorphism modification by a reduced scheme (SF.0).
+O is a complete discrete valuation ring flat over ℤ_p, with uniformizer π, fraction field F and algebraically closed residue field k. Weak normality excludes a proper finite birational universal-homeomorphism modification by a reduced scheme (SchemeAndStackFoundations §0.26, gap:mixed-characteristic-weak-normality).
 
 *Proof sketch.* Use D9/formal-neighbourhood to identify each tube with the generic fibre of the completion at its closed point. Let B be the normalization of A in A[1/π]; excellence makes B finite, and B[1/π] = A[1/π]. The completion of B over a closed point x decomposes as the product of its complete local factors. Their generic fibres are disjoint, nonempty (flatness and the flat-kimberlite specialization theorem), and have union the tube of A at x. Connectedness gives exactly one point of Spec(B/π) above x. All these closed residue fields are k because k is algebraically closed. Thus the finite special-fibre map has one geometric point in each closed fibre. The Jacobson/constructibility criterion for finite maps of finite-type k-schemes gives universal injectivity everywhere; integral surjectivity makes it a universal homeomorphism. Together with the generic-fibre isomorphism this makes Spec B → Spec A a finite birational universal homeomorphism. Weak normality now implies A = B directly. No absolute-weak-normality full-faithfulness theorem is needed.
 
@@ -1806,11 +1807,11 @@ Spd O is flat with specialization 1 → 1; a nonzero perfect discrete k-algebra 
 
 ### Dependencies
 
-D7–D10, D11a–D11b; SchemeAndStackFoundations §§0.21, 0.23, 0.25 and the weak-normality contracts; DiamondEtaleCohomology C4; AdicSpacesPartIII R2.2–R2.4; PerfectoidSpaces P1–P2.
+D7–D10, D11a–D11b; SchemeAndStackFoundations §§0.21, 0.23, 0.25 and §0.26 (gap:mixed-characteristic-weak-normality, gap:finite-geometric-fibre-radiciality); DiamondEtaleCohomology C4; AdicSpacesPartIII R2.2–R2.4; PerfectoidSpaces P1–P2.
 
 ## Downstream consumers
 
-GeometricSatakeAndFusionPartII LM.3 uses D8–D11 for the reduction, formal neighbourhoods and connected tubes of integral local models. HeckeStacksAndLocalShtukas uses the same interfaces for integral shtuka moduli and specialization on connected components. GeometricSatakeAndFusionPartII LM.0/scheme-local-model and LM.3/normalization-of-image use D10.12's proper-scheme recovery theorem; LM.6/pel-bdr-kernel uses D10.14's flat-closure theorem. The general theory here supplies these applications without assuming their local-model or shtuka comparison theorems.
+GeometricSatakeAndFusionPartII applies D10 and D11 to integral local models. Its §0.4 uses the v-closure of D10.9; §§0.5, 3.2, 6.5 and 6.6 use D10.12's proper-scheme recovery theorem; §§3.1 and 7.7 use D10.15; §3.5 uses the kimberlite structure of D11.11, D11.17 and D11.19; §3.6 uses D10.13 and D11.18; §6.4 uses D10.14's flat-closure theorem; §§7.1 and 7.5 use the tubes of D11.5 and the tube theory of D11; and §7.6 uses the normality criterion D11.20. HeckeStacksAndLocalShtukas HS2.16 states a specialization criterion for open components of shtuka moduli that assumes an identification of finite-level components with the components of the special fibre; D11.14's component bijection for topologically normal rich smelted kimberlites is a theorem of that kind, as in GLX Theorem 3.9. The general theory here supplies these applications without assuming their local-model or shtuka comparison theorems.
 
 ## Worked examples
 
