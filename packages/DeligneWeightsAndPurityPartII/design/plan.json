@@ -2330,6 +2330,12 @@
  ],
  "gaps": [
   {
+    "slug": "huber-compact-support-nearby-cycles",
+    "needs": "For a strictly henselian microbial valuation ring R with separable closure, a separated finite-type f : X → Spec R and a torsion étale sheaf F on X, the stalk of R^n d(f)_! F^a at the closed geometric point of Spa(L,R) is Galois-equivariantly isomorphic to H^n_c of the geometric special fibre with coefficients in the sliced nearby cycles of F, compatibly with specialization maps.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "4.5, 5.2, 8.3–8.4"
+  },
+  {
     "slug": "analytic-comparison-automorphisms",
     "needs": "For a proper variety defined over a complete field K, the algebraic–adic cohomology comparison over its completed algebraic closure C commutes with every continuous K-automorphism of C, with cup products and coefficient reductions.",
     "supplier": "ClassicalAdicEtaleCohomology",

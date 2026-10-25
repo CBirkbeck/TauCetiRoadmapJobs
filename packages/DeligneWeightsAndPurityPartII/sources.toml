@@ -27,7 +27,7 @@ title = "Uniform local constancy of étale cohomology of rigid analytic varietie
 year = 2020
 arxiv = "2008.07794v1"
 locator_scheme = "theorem"
-locator = "Theorems 1.1–1.2 and 1.4, §1.2, Proposition 4.1, Lemma 4.3, Theorems 4.5 and 4.9, Corollary 4.11, Proposition 6.6, Theorem 6.10, Lemma 6.11, Lemmas 7.1–7.7, pp. 1–4, 19–23, 33–46"
+locator = "Theorems 1.1–1.2 and 1.4, §1.2, §2.1, Definitions 2.1–2.2 and 2.5, Remark 2.3, Theorem 2.7, §3.1, Proposition 3.1, Theorem 3.3, Definition 3.4, Lemmas 3.5–3.16, Corollary 3.17, Proposition 4.1, Lemma 4.3, Theorems 4.5 and 4.9, Corollary 4.11, Theorem 5.3, Proposition 5.5, Definition 6.1, Theorems 6.2–6.3, Definition 6.5, Propositions 6.6–6.7, Theorem 6.10, Lemma 6.11, Lemmas 7.1–7.7, Appendix A (Theorem A.6, Propositions A.8, Lemma A.11), pp. 1–54"
 url = "https://arxiv.org/abs/2008.07794v1"
 fetched_from = "https://arxiv.org/pdf/2008.07794v1"
 fetched_at = "2026-10-25T07:09:33Z"
@@ -93,12 +93,12 @@ year = 1996
 venue = "Aspects of Mathematics"
 doi = "10.1007/978-3-663-09991-8"
 locator_scheme = "theorem"
-locator = "Theorems 3.7.2, 3.8.1, pp. 224–228"
+locator = "Theorems 3.7.2, 3.8.1, pp. 224–228; Lemma 2.7.11 and Theorem 5.7.8 (as recalled in ITO20, proof of Theorem 6.10 and Theorem 5.3)"
 url = "https://doi.org/10.1007/978-3-663-09991-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["§4.2"]
+cited_for = ["§4.2", "§3.4"]
 
 [[source]]
 id = "HUB98"

@@ -23,7 +23,8 @@ The following headlines are not statable at the pins:
   covers. Huber's characteristic-zero locally constant-sheaf neighbourhood theorem and
   Ito's all-invertible-order constant-coefficient theorem in either characteristic
   (§3.4), with its Galois-stable application (§3.6), lack analytic and pseudo-adic
-  support cohomology, uniform annular direct images and their descent comparisons.
+  support cohomology, sliced nearby cycles over general bases, uniform annular direct
+  images and their descent comparisons.
   Cup compatibility (§3.5) uses native Ext functoriality, but its geometric
   application lacks those sites and the module-sheaf cohomology comparison.
 * The tilted approximation (§4.1) lacks the toric models, open projection and tube
