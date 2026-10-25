@@ -483,7 +483,7 @@ For k = ℤ or a field and X flat essentially quasi-projective integral over k, 
 
 ### 2.4 Density of divisorial points
 
-Let X be flat essentially quasi-projective integral over k and U a quasi-projective model. The map X^an → U^an is continuous and injective with dense image, and the points v ∈ X^an whose valuation on the function field is discrete or archimedean (with arbitrary positive rescaling) are dense in U^an. For S a positive-dimensional quasi-projective variety over a trivially valued field, points given by nontrivial discrete divisorial valuations of k(S)/k are dense in S^an; in dimension zero only the trivial valuation occurs. (yuan-zhang-2025, Lemma 3.1.1(1), pp. 67–68, yuan-zhang-2025 line 2417; yuan-2026, §3.2, p. 47, yuan-2026 line 1581).
+Let X be flat essentially quasi-projective integral over k and U a quasi-projective model. The map X^an → U^an is continuous and injective with dense image, and the points v ∈ X^an whose absolute value on the function field F is discrete or archimedean are dense in U^an. Here a discrete point is exp(−t·ord) for a discrete valuation ord of F and any t > 0; an archimedean point (only for k = ℤ) is |σ(·)|_∞^t for an embedding σ : F → ℂ, up to complex conjugation, with 0 < t ≤ 1, the exponents for which this is still an absolute value, so that it lies over the archimedean ray of M(ℤ) (§2.1; yuan-zhang-2025, proof of Lemma 3.1.1, p. 68, yuan-zhang-2025 line 2434). For S a positive-dimensional quasi-projective variety over a trivially valued field, points given by nontrivial discrete divisorial valuations of k(S)/k are dense in S^an; in dimension zero only the trivial valuation occurs. (yuan-zhang-2025, Lemma 3.1.1(1), pp. 67–68, yuan-zhang-2025 line 2417; yuan-2026, §3.2, p. 47, yuan-2026 line 1581).
 
 *Route.* Reduce to the generic point (Spec F)^an ⊂ U^an and prove density fibrewise over M(k) (Yuan–Zhang Lemma 3.1.1(1)).
 
@@ -491,6 +491,7 @@ Let X be flat essentially quasi-projective integral over k and U a quasi-project
 
 - For S = 𝔸¹ over a trivially valued field, rescaled valuations ord₍(f)₎ for irreducible f and ord_∞ give the divisorial test points; the corresponding generic-function-field valuations are dense in the Berkovich line.
 - For k(t), ord₀ gives |t|=e⁻¹ and ord∞ gives |t|=e; rescaling ord₀ by a→0 gives |t|→1; Spec k has only the value 1 on k×.
+- On Spec ℤ the archimedean test points are |·|_∞^t with 0 < t ≤ 1: at t = 1/2, |1 + 1| = √2 ≤ 2 = |1| + |1|, while t = 2 would give |1 + 1| = 4 > 2 and is not a point of M(ℤ). The 2-adic points |·|_2^s are allowed for every s > 0, and s = 2 gives |2| = 1/4, still ultrametric.
 
 *Needs:* §2.1.
 
@@ -1116,7 +1117,7 @@ The basic API comprises these facts.
 **Checks.**
 
 - With good reduction, the pair is the model pair from the smooth model (§7.6).
-- Replacing |·| by |·|^a replaces the metrics by their a-th powers.
+- K is nonarchimedean here, so |·|^a is an absolute value for every a > 0, and replacing |·| by |·|^a replaces the metrics by their a-th powers (§7.6(1)); with |ϖ| = e⁻¹ and a = 2, a Green value 1 becomes 2.
 - For g = 2, c₁(ω) = 2μ_a has total mass 2.
 - On the genus-two, three-unit-edge banana reduction of §7.2, the model metric of ω has atomic curvature δ_v₁ + δ_v₂ and fails (b), whose right side is (2/3)Σ_e δ_e. Bad reduction alone is insufficient for this test: for two elliptic components meeting in one node the model curvature already equals 2μ_a.
 - At g = 1, (b) says c₁(ω) = 0 and does not involve μ_a, so (c) is tested against c₁(O(x)) = μ_a alone. With good reduction the canonical metric on ω_C ≅ O_C gives an invariant differential of the smooth model norm 1; multiplying that metric by e^c, c ≠ 0, keeps (a)–(c) and violates (d).
@@ -1139,16 +1140,20 @@ Let K be complete discretely valued with e_K = |ϖ|⁻¹, C/K of genus g ≥ 1 w
 
 ### 7.6 Rescaling, good reduction and trivially valued fields
 
-Let C/K be smooth projective geometrically integral of genus g ≥ 1. (1) Replacing |·| by |·|^a (a > 0) replaces the canonical admissible metrics by their a-th powers and Green functions by a times their values. (2) If C extends to a smooth projective model over O_K, the canonical admissible metrics on ω_C and O(Δ) are the model metrics of ω_model and O(Δ_model) on the smooth model and its square. (3) If K is trivially valued, the canonical admissible metrics are the canonical (trivial-model) metrics of §2.7. (4) At archimedean places the canonical metrics are the Arakelov metrics of GrossZagierAndArithmeticHeights §§2.8 and 2.10, descended through complex conjugation at real places (§2.13 there). (yuan-2026, §A.5, p. 117; §A.6, pp. 118–119, yuan-2026 line 3946).
+Let C/K be smooth projective geometrically integral of genus g ≥ 1 over a complete valued field K. If K is archimedean, it is ℝ or ℂ and |·| = |·|_∞^b for a unique b with 0 < b ≤ 1, the exponents for which |·|_∞^b still satisfies the triangle inequality (Ostrowski); this is the archimedean ray of M(ℤ) in §2.1 (yuan-zhang-2025, p. 68, yuan-zhang-2025 line 2434). (1) Let a > 0 be such that |·|^a is again an absolute value on K: every a > 0 when K is nonarchimedean (the trivial absolute value is fixed), and exactly the a with ab ≤ 1 when K is archimedean. Raising every seminorm to the a-th power is a homeomorphism from C^an over (K, |·|) to C^an over (K, |·|^a), and likewise on (C²)^an; along it the canonical admissible metrics over (K, |·|^a) are the a-th powers of those over (K, |·|), and their Green functions are a times the old values. (2) If K is nonarchimedean (trivially valued included) and C extends to a smooth projective model over the valuation ring O_K, the canonical admissible metrics on ω_C and O(Δ) are the model metrics of ω_model and O(Δ_model) on the smooth model and its square. (3) If K is trivially valued, the canonical admissible metrics are the canonical (trivial-model) metrics of §2.7. (4) If K is archimedean with |·| = |·|_∞^b, the canonical metrics are the b-th powers of the Arakelov metrics of GrossZagierAndArithmeticHeights §§2.8 and 2.10 (for b = 1, the Arakelov metrics themselves), descended through complex conjugation when K = ℝ (§2.13 there). (yuan-2026, §A.5, p. 117, lines 3946–3950, stated there for a nonarchimedean field; §A.6, pp. 118–119, yuan-2026 lines 4011–4033).
 
-*Route.* (1) Conditions (a)–(d) are homogeneous under |·| ↦ |·|^a. (2) Model metrics on a smooth model have curvature the Dirac mass at the Gauss point, satisfy (c)–(d) by adjunction on the smooth model, and uniqueness applies. (3) The trivial model is smooth; apply (2) with O_K = K.
+*Route.* (1) Nonarchimedean K: conditions (a)–(d) of §7.4 are homogeneous under |·| ↦ |·|^a, and uniqueness in §7.4 gives the a-th powers (Yuan p. 117); the trivial absolute value is fixed by every a, and its trivial-model metrics are norm-equivariant (§2.2), so they are the a-th powers along the homeomorphism. Archimedean K: by (4), since (|·|_∞^b)^a = |·|_∞^(ab) with ab ≤ 1 and the (ab)-th power of the Arakelov metrics is the a-th power of their b-th power. (2) Model metrics on a smooth model have curvature the Dirac mass at the Gauss point, satisfy (c)–(d) by adjunction on the smooth model, and uniqueness applies. (3) The trivial model is smooth; apply (2) with O_K = K. (4) For b = 1 this is Yuan §A.6. For b < 1, the b-th powers of the Arakelov metrics are metrics over (K, |·|_∞^b), since a scalar λ multiplies their norms by |λ|_∞^b; they keep the curvature and the zero-mean condition, and make the residue map an isometry onto (K, |·|_∞^b); taking 1/b-th powers reduces their uniqueness to that of GrossZagierAndArithmeticHeights §§2.8 and 2.10. This is the norm-equivariance of §2.2 along the archimedean ray of M(ℤ).
 
 **Checks.**
 
 - Good reduction everywhere outside finitely many places is what makes the global bundles of §7.7 adelic.
-- An exponent a=2 sends Green value 1 to 2 and norm e⁻¹ to e⁻²; a=1 fixes both. The trivial valuation gives canonical norm of a model generator 1.
+- Nonarchimedean, K = ℚ₂: the exponent a = 2 is allowed, |2| changes from 1/2 to 1/4, Green value 1 becomes 2 and norm e⁻¹ becomes e⁻²; a = 1 fixes both. The ultrametric inequality survives every power.
+- Archimedean, negative control: the usual absolute value on ℝ with a = 2 is not an absolute value, since |1 + 1|² = 4 > 2 = |1|² + |1|²; (1) does not apply, and an unrestricted rescaling rule would assign metrics over a non-normed field.
+- Archimedean, positive controls: the usual absolute value on ℝ with a = 1/2 gives |1 + 1|^(1/2) = √2 ≤ 2; Green value 1 becomes 1/2 and norm e⁻¹ becomes e^(−1/2). Starting from the square-root absolute value (b = 1/2), a = 2 is allowed (ab = 1) and returns the usual absolute value and the Arakelov metrics themselves.
+- Over a trivially valued field every a > 0 is allowed and fixes the absolute value of K; the canonical norm of a model generator is 1 before and after, since 1^a = 1.
+- (2) is a statement about nonarchimedean K: the closed unit ball of the usual absolute value on ℝ is not a ring, since 1 + 1 = 2 lies outside it, so there is no valuation ring and no smooth model at an archimedean place.
 
-*Needs:* §7.4; §2.7; GrossZagierAndArithmeticHeights §§2.8, 2.10 and 2.13.
+*Needs:* §7.4; §2.7; §2.1; §2.2; GrossZagierAndArithmeticHeights §§2.8, 2.10 and 2.13.
 
 ### 7.7 The admissible bundles ω₍C/K,a₎ and O(Δ)_a over a global field
 
@@ -1433,9 +1438,9 @@ For a pm-graph Γ of genus g ≥ 2: (1) r(x, y) is at most the length of any pat
 
 ### 10.3 The local φ-invariant of a curve over a complete field
 
-For C smooth projective geometrically connected of genus g > 1 over a complete valued field K (archimedean via C_ℂ), with Zhang's admissible metrics (Layer 7; GrossZagierAndArithmeticHeights §§2.8 and 2.10 at archimedean places), φ(C) = −∫₍(C×C)^an₎ g₍Δ,a₎ c₁(O(Δ)_a)². (1) Non-archimedean, split semistable reduction, |ϖ| = e⁻¹, unit-edge reduction graph Γ: φ(C) = φ(Γ) of §10.1. (2) Archimedean: with an L²-orthonormal basis ω₁, …, ω_g of H⁰(C, ω) for (i/2)∫α∧β̄ and an orthonormal eigenbasis φ_λ of the Arakelov Laplacian, φ(C) = Σ₍λ>0₎ Σ₍j,k₎ (2/λ)|∫_C φ_λ ω_j ∧ ω̄_k|², so φ(C) > 0. (3) φ(C) ≥ 0 at non-archimedean places. Under a finite extension K′/K with the extended absolute value, φ is unchanged; with |ϖ| = e⁻¹ renormalized on K′, φ is multiplied by e(K′/K). (yuan-2026, §3.3.1, pp. 48–49, yuan-2026 lines 1642–1689; zhang-2010, Theorem 1.3.1, pp. 6–7; Proposition 2.5.3, p. 38, zhang-2010 line 206; wilms-2017, (2.11), p. 10, wilms-2017 line 31).
+For C smooth projective geometrically connected of genus g > 1 over a complete valued field K (archimedean via C_ℂ), with Zhang's admissible metrics (Layer 7; GrossZagierAndArithmeticHeights §§2.8 and 2.10 at archimedean places), φ(C) = −∫₍(C×C)^an₎ g₍Δ,a₎ c₁(O(Δ)_a)². (1) Non-archimedean, split semistable reduction, |ϖ| = e⁻¹, unit-edge reduction graph Γ: φ(C) = φ(Γ) of §10.1. (2) Archimedean with the usual absolute value: with an L²-orthonormal basis ω₁, …, ω_g of H⁰(C, ω) for (i/2)∫α∧β̄ and an orthonormal eigenbasis φ_λ of the Arakelov Laplacian, φ(C) = Σ₍λ>0₎ Σ₍j,k₎ (2/λ)|∫_C φ_λ ω_j ∧ ω̄_k|², so φ(C) > 0; for |·| = |·|_∞^b (0 < b ≤ 1) φ(C) is b times this sum, by §7.6(4), and is again > 0. (3) φ(C) ≥ 0 at non-archimedean places. (4) For a > 0 such that |·|^a is again an absolute value on K (every a > 0 when K is nonarchimedean; ab ≤ 1 when |·| = |·|_∞^b), replacing |·| by |·|^a multiplies φ(C) by a. Under a finite extension K′/K with the extended absolute value, φ is unchanged; with |ϖ| = e⁻¹ renormalized on K′, φ is multiplied by e(K′/K). (yuan-2026, §3.3.1, pp. 48–49, yuan-2026 lines 1642–1689; zhang-2010, Theorem 1.3.1, pp. 6–7; Proposition 2.5.3, p. 38, zhang-2010 line 206; wilms-2017, (2.11), p. 10, wilms-2017 line 31).
 
-*Route.* (1) Integrate the explicit graph formulas of §7.5 (Zhang 2010 Theorem 1.3.1 and Lemma 3.5.4; finite-extension normalization by ramification index). (2) Spectral expansion of the Arakelov Green function (Zhang 2010 Proposition 2.5.3); positivity since each term is ≥ 0 and not all vanish. (3) From §10.2(3).
+*Route.* (1) Integrate the explicit graph formulas of §7.5 (Zhang 2010 Theorem 1.3.1 and Lemma 3.5.4; finite-extension normalization by ramification index). (2) Spectral expansion of the Arakelov Green function (Zhang 2010 Proposition 2.5.3); positivity since each term is ≥ 0 and not all vanish. (3) From §10.2(3). (4) By §7.6(1) the Green function g₍Δ,a₎ is multiplied by a, while c₁(O(Δ)_a)², a measure on (C×C)^an, is unchanged along the homeomorphism of §7.6(1).
 
 The basic API comprises these facts.
 
@@ -1444,7 +1449,7 @@ The basic API comprises these facts.
 - Spectral formula at archimedean places.
 - φ > 0 at archimedean places.
 - φ ≥ 0 at non-archimedean places.
-- Replacing |·| by |·|^a multiplies φ by a.
+- Replacing |·| by |·|^a multiplies φ by a, for every a > 0 at a nonarchimedean K and for ab ≤ 1 at an archimedean K with |·| = |·|_∞^b.
 - An isomorphism of curves transports the normalized admissible metric and leaves φ unchanged; extending the absolute value preserves φ, while renormalizing a uniformizer introduces precisely the ramification factor.
 
 **Checks.**
@@ -1454,8 +1459,9 @@ The basic API comprises these facts.
 - For a totally ramified extension K′/K of degree e with the normalization |ϖ₍K′₎| = e⁻¹ on K′, φ(C₍K′₎) = e·φ(C): the unit-edge reduction graph over K′ has every edge subdivided e times.
 - Dividing the node count by [K′ : K] instead of the ramification index gives the wrong value after an unramified extension.
 - A type-zero node at g=2 of thickness 1 gives φ=1/12; an unramified quadratic extension still gives 1/12 and a ramified quadratic renormalization gives 1/6; good reduction gives 0.
+- Scaling: the nonarchimedean unit loop at g=2 has φ=1/12, and a=2 gives 1/6. At a real place the usual absolute value admits a=1/2, halving φ while keeping it positive; a=2 is not admissible there, since |1+1|² = 4 > 2.
 
-*Needs:* §7.4; §7.5; §10.1; §10.2; GrossZagierAndArithmeticHeights §§2.8 and 2.10.
+*Needs:* §7.4; §7.5; §7.6; §10.1; §10.2; GrossZagierAndArithmeticHeights §§2.8 and 2.10.
 
 ### 10.4 The global ε divisor E_S
 
@@ -1495,7 +1501,7 @@ In the setting of §10.4, (2g − 2)Δ_S − E_S is an effective adelic divisor 
 
 ### 10.6 The global φ divisor Φ_S
 
-Let k be ℤ or a field, S flat quasi-projective normal integral over k, π : X → S smooth of genus g > 1, P = π_*⟨w, w⟩ and D = Ō(Δ)_a. Using the canonical algebraic identification (π, π)_*⟨O(Δ), O(Δ), O(Δ)⟩ ≅ π_*⟨ω, ω⟩, define Φ_S ∈ D̂iv(S/k) as the adelic divisor of the corresponding trivializing section of P − (π, π)_*⟨D, D, D⟩; its underlying divisor is 0. At a discrete or archimedean v ∈ S^an its Green function is ∫₍((X×_S X)_v)^an₎ log‖1‖₍Δ,a₎ c₁(O(Δ)_a)² = φ(X₍H_v₎), in the normalization e_v = e and its rescaling for other norms. (yuan-2026, §3.3.2, pp. 49–50, yuan-2026 line 1652).
+Let k be ℤ or a field, S flat quasi-projective normal integral over k, π : X → S smooth of genus g > 1, P = π_*⟨w, w⟩ and D = Ō(Δ)_a. Using the canonical algebraic identification (π, π)_*⟨O(Δ), O(Δ), O(Δ)⟩ ≅ π_*⟨ω, ω⟩, define Φ_S ∈ D̂iv(S/k) as the adelic divisor of the corresponding trivializing section of P − (π, π)_*⟨D, D, D⟩; its underlying divisor is 0. At a discrete or archimedean v ∈ S^an its Green function is ∫₍((X×_S X)_v)^an₎ log‖1‖₍Δ,a₎ c₁(O(Δ)_a)² = φ(X₍H_v₎), the φ-invariant of §10.3 for the absolute value of H_v itself: at a discrete point exp(−t·ord_v) it is t times its value at e_v = e, and at an archimedean point |σ(·)|_∞^t (0 < t ≤ 1, §2.4) it is t times the value of §10.3(2) at the usual absolute value (§10.3(4)). (yuan-2026, §3.3.2, pp. 49–50, yuan-2026 line 1652).
 
 *Route.* Algebraic identification of the triple self-pairing of the diagonal with π_*⟨ω, ω⟩ by adjunction twice. Green function: the metric of P − (π,π)_*⟨D,D,D⟩ at v is computed fibrewise by the Deligne pairing metric (§0.2) and equals the local φ integral (Yuan §3.3.2).
 
@@ -1510,12 +1516,12 @@ The basic API comprises these facts.
 **Checks.**
 
 - At a discrete v over which X has good reduction, g₍Φ_S₎(v) = 0.
-- At an archimedean v, g₍Φ_S₎(v) = φ(X_v) > 0.
+- At an archimedean v, g₍Φ_S₎(v) = φ(X_v) > 0; on the archimedean ray over the same complex point the value at |·|_∞^(1/2) is half the value at |·|_∞, and no point with exponent above 1 occurs.
 - Integrating over X_v^an (the printed domain) instead of (X ×_S X)_v^an is not defined: the integrand lives on the square.
 - For S = Spec O_K[1/N] and a curve with good reduction outside N, the Green function at an archimedean place is φ(C_σ).
 - For the genus-two unit loop, g_Φ=1/12 at log e=1, and at good reduction 0; the archimedean value is φ>0. Its integral is on the two-dimensional curve square, where c₁(D)² is top degree.
 
-*Needs:* §8.3; §10.3; §3.2; §0.2.
+*Needs:* §8.3; §10.3; §3.2; §0.2; §2.4.
 
 ### 10.7 The triple self-pairing of the difference map
 
@@ -1648,12 +1654,12 @@ The basic API comprises these facts.
 
 There is no universal arithmetic adelic divisor on curve moduli whose non-archimedean values are ε(Γ_v)log e_v and whose archimedean values are identically zero. For a degenerating family, continuity on the hybrid analytification fails. Thus δ also has no universal globalization with its usual archimedean values, since Ξ_S already globalizes δ + ε. Special families with zero correction are allowed. The targets here are the hybrid obstruction and the existence of Φ and Ξ; their coercive boundary consequences are proved in §§11.1 and 13.8. (yuan-2026, Remark 3.11, p. 59; Remark 4.13, p. 91, yuan-2026 line 1995).
 
-*Route.* Use a one-parameter complex smoothing with a nonseparating node and parameter t. For t_i → 0, rescale the complex absolute value by a_i = 1/log(1/|t_i|); then |t_i|^(a_i) = e⁻¹, while a_i → 0 makes the norm on constants trivial. In the hybrid space these points approach a nontrivial divisorial valuation with ε(Γ) > 0. The proposed archimedean-zero Green function stays zero along the sequence but would be positive at the limit. The obstruction is at this valuation, not at the trivial valuation on the function field. This explains the general obstruction of Yuan Remark 4.13(1). Use only continuity on the hybrid space for this obstruction; the coercivity targets below do not assume a sharp asymptotic expansion.
+*Route.* Use a one-parameter complex smoothing with a nonseparating node and parameter t. For t_i → 0 with |t_i| ≤ e⁻¹, rescale the complex absolute value by a_i = 1/log(1/|t_i|); then 0 < a_i ≤ 1, so |·|^(a_i) is again an absolute value and the rescaled point lies on the archimedean ray of M(ℤ) (§2.1), |t_i|^(a_i) = e⁻¹, and a_i → 0 makes the norm on constants trivial. In the hybrid space these points approach a nontrivial divisorial valuation with ε(Γ) > 0. The proposed archimedean-zero Green function stays zero along the sequence but would be positive at the limit. The obstruction is at this valuation, not at the trivial valuation on the function field. This explains the general obstruction of Yuan Remark 4.13(1). Use only continuity on the hybrid space for this obstruction; the coercivity targets below do not assume a sharp asymptotic expansion.
 
 **Checks.**
 
 - Φ_S and Ξ_S exist arithmetically; the E_S construction here is geometric. The obstruction concerns a universal rule for degenerating families, and does not exclude E_S = 0 on a special good-reduction family.
-- In a unit type-zero g=2 smoothing, |t_i|^(1/log(1/|t_i|))=e⁻¹. Proposed archimedean ε-values remain 0, while the limiting divisorial value is 1/6, contradicting continuity.
+- In a unit type-zero g=2 smoothing, |t_i|^(1/log(1/|t_i|))=e⁻¹; at |t_i| = e⁻ⁿ the exponent is 1/n ≤ 1, whereas |t_i| = e^(−1/2) would need the inadmissible exponent 2. Proposed archimedean ε-values remain 0, while the limiting divisorial value is 1/6, contradicting continuity.
 
 *Needs:* §10.4; §10.13; §10.6; §2.1; TropicalAndBerkovichArithmetic §0.23.
 
@@ -1698,7 +1704,7 @@ Let k be a field, S quasi-projective normal integral over k and π : X → S smo
 
 Let S be flat quasi-projective normal integral over ℤ, π : X → S smooth of genus g > 1 with maximal variation, d = dim S and P = π_*⟨w, w⟩. Then P = (2/(3g − 1))O(c₀) + nef + effective with c₀ = c₀(g) of §11.1, where O(c₀) is the trivial bundle on Spec ℤ with ‖1‖ = e^(−c₀); hence P^d ≥ (2c₀/(3g − 1))·(P|₍S_ℚ/ℚ₎)ᵈ⁻¹ > 0, and P is nef and big on S/ℤ. (yuan-2026, Proof of the arithmetic case of Theorem 3.2, p. 57; §1.4, p. 14, yuan-2026 line 1329).
 
-*Route.* By §10.7, P = (2/(3g − 1))O(Φ_S) + nef. Φ_S − c₀ is effective: its Green function is φ at archimedean points (≥ c₀ by §11.1) and φ ≥ 0 at non-archimedean points (§10.3(3)). Expand P^d = Pᵈ⁻¹·((2/(3g−1))O(c₀) + nef + eff) ≥ (2c₀/(3g − 1))(P|₍S_ℚ₎)ᵈ⁻¹, and (P|₍S_ℚ₎)ᵈ⁻¹ > 0 by §11.2 over ℚ; conclude by §4.3.
+*Route.* By §10.7, P = (2/(3g − 1))O(Φ_S) + nef. Φ_S − c₀ is effective: its Green function is φ at the usual archimedean points (≥ c₀ by §11.1), both terms are multiplied by t at |·|_∞^t (0 < t ≤ 1; §10.3(4) and §2.3), and it is φ ≥ 0 at non-archimedean points (§10.3(3)). Expand P^d = Pᵈ⁻¹·((2/(3g−1))O(c₀) + nef + eff) ≥ (2c₀/(3g − 1))(P|₍S_ℚ₎)ᵈ⁻¹, and (P|₍S_ℚ₎)ᵈ⁻¹ > 0 by §11.2 over ℚ; conclude by §4.3.
 
 **Checks.**
 
@@ -1706,7 +1712,7 @@ Let S be flat quasi-projective normal integral over ℤ, π : X → S smooth of 
 - For d=1 and generic field K, the empty geometric intersection on S_ℚ=Spec K is [K:ℚ]. At g=2 and [K:ℚ]=2, the displayed expansion gives (2c₀/5)·2=4c₀/5, while replacing the empty degree by 1 would give only 2c₀/5.
 - At g=2,d=1, the normalized lower bound is 2c₀/5; over [K:ℚ]=2 raw degree is at least 4c₀/5, so omission of the field degree halves the raw bound.
 
-*Needs:* §10.7; §11.1; §10.3; §11.2; §4.3; §3.1.
+*Needs:* §10.7; §11.1; §10.3; §11.2; §4.3; §3.1; §2.3.
 
 ### 11.4 Bigness of the admissible canonical bundle
 
@@ -1965,7 +1971,7 @@ The basic API comprises these facts.
 - D_S = (3/(2c) + 3)Φ_S − Ξ_S.
 - D̃ − c(g)Δ ≥ 0 over S_ℚ.
 - Archimedean Green function bounded below by c₅′(g).
-- Its underlying divisor is zero; at a normalized non-archimedean point its Green value is (3/(2c)+3)φ−δ−ε, and at an archimedean point it is (3/(2c)+3)φ−δ+4g log(2π). These follow from Φ_S and Ξ_S and determine the divisor.
+- Its underlying divisor is zero; at a normalized non-archimedean point its Green value is (3/(2c)+3)φ−δ−ε, and at a normalized archimedean point (the usual absolute value) it is (3/(2c)+3)φ−δ+4g log(2π), multiplied by t at |·|_∞^t. These follow from Φ_S and Ξ_S and determine the divisor.
 
 **Checks.**
 
