@@ -3,7 +3,7 @@ import TauCeti.AlgebraicGeometry.EllipticCurve.PointCount
 import TauCeti.AlgebraicGeometry.EllipticCurve.QuadraticTwist.Basic
 
 /-!
-# Elliptic Legendre character interfaces: target signatures
+# Elliptic curves, Part II — Legendre models, descent and character interfaces: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned APIs. The odd-character-conductor divisibility theorem is not
@@ -71,18 +71,20 @@ theorem legendre_two_by_four_subgroup
       Function.Injective f := by
   sorry
 
-/-- The full projective minus-one point count has exact two-adic valuation three. -/
+/-- Over a finite field of cardinality congruent to five modulo eight, the full projective
+minus-one point count has exact two-adic valuation three. -/
 theorem legendre_minus_one_point_count_v_two
-    (p : ℕ) [Fact p.Prime] (hp : p % 8 = 5) :
-    padicValNat 2 (legendre (-1 : ZMod p)).pointCount = 3 := by
+    {F : Type*} [Field F] [Fintype F] (hF : Fintype.card F % 8 = 5) :
+    padicValNat 2 (legendre (-1 : F)).pointCount = 3 := by
   sorry
 
 /-! ## Layer 5: Trace and downstream interfaces -/
 
-/-- The odd symmetric cubic has point count p+1 and trace zero when minus one is a nonsquare. -/
+/-- Over a finite field of cardinality q congruent to three modulo four, every symmetric
+cubic L(u,−1), including u=0, has projective point count q+1 and trace zero. -/
 theorem scaledLegendre_minus_one_trace_zero
-    (p : ℕ) [Fact p.Prime] (hp : p % 4 = 3) (u : ZMod p) :
-    (scaledLegendre u (-1)).pointCount = p + 1 ∧
+    {F : Type*} [Field F] [Fintype F] (hF : Fintype.card F % 4 = 3) (u : F) :
+    (scaledLegendre u (-1)).pointCount = Fintype.card F + 1 ∧
       (scaledLegendre u (-1)).frobeniusTrace = 0 := by
   sorry
 
