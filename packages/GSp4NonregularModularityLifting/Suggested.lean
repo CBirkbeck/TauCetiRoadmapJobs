@@ -32,8 +32,8 @@ No headline theorem is statable at the pins. The missing carriers are:
 * Variable-weight ordinary R=T and control (§9.2), ordinary p-adic modularity
   (§9.3), and parallel parabolic lifting (§9.4) lack Siegel Hida families and
   their universal ordinary deformation rings.
-* Characteristic-zero local freeness (§10.8), regular-point multiplicity one
-  (§11.3), component support and four-chamber rank one (§11.4–5), and classical
+* Characteristic-zero local freeness (§10.8), multiplicity one over residue fields
+  at regular points (§11.3), component support and four-chamber rank one (§11.4–5), and classical
   weight-two modularity lifting (§11.6) lack the actual four higher-Hida modules,
   their arithmetic specialization, Hecke support and higher-Coleman comparison.
 

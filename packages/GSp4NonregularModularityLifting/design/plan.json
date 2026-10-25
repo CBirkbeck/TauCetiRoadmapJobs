@@ -3769,7 +3769,7 @@
     },
     {
       "slug": "gsp4-ordinary-neat-refinement-lines",
-      "needs": "Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses used in BCGP25 Lemma 7.5.2.",
+      "needs": "Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses in the proof of BCGP25 Lemma 7.5.8, pp.176–177, especially p.177 (BCGP25 line 8119), invoking BCGP21 Propositions 2.4.24 and 2.4.26, pp.26–27.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.4.5"
     },

@@ -14,7 +14,7 @@ The arbitrary-rank dyadic definite-unitary ordinary tower, control, finiteness a
 
 ## Conventions
 
-Let E/ℚₚ be finite, O its integers, ϖ a uniformizer and k its finite residue field; enlarge E to contain the indicated roots and characters. O/ϖᵐ, E/O and E-valued fibers are distinct coefficient objects. An eigenform or eigenclass witnessing occurrence is nonzero. A coherent section is cuspidal when it belongs to the subcanonical coefficient ω(μ)(−D), where X is the supplied toroidal compactification and D its boundary. The notation XΔ(Q) uses the intermediate cover for a quotient Δ of the full diamond group. A superscript “selected” always denotes the simultaneous generalized-root summand of two commuting p-actions. For the Weil–Deligne convention, geometric Frobenius has norm q⁻¹: with r(F)=diag(1,q) and N=E₁₂ one has r(F)Nr(F)⁻¹=q⁻¹N, giving N/3 at q=3. All geometric constructions are functorial for the specified levels and coefficient maps; thresholds for positive twists may depend on the finite list of levels.
+Let E/ℚₚ be finite, O its integers, ϖ a uniformizer and k its finite residue field; enlarge E to contain the indicated roots and characters. O/ϖᵐ, E/O and characteristic-zero fibers are distinct coefficient objects; a closed arithmetic fiber is a vector space over its residue field E′=κ(q′), finite over E. An eigenform or eigenclass witnessing occurrence is nonzero. A coherent section is cuspidal when it belongs to the subcanonical coefficient ω(μ)(−D), where X is the supplied toroidal compactification and D its boundary. The notation XΔ(Q) uses the intermediate cover for a quotient Δ of the full diamond group. A superscript “selected” always denotes the simultaneous generalized-root summand of two commuting p-actions. For the Weil–Deligne convention, geometric Frobenius has norm q⁻¹: with r(F)=diag(1,q) and N=E₁₂ one has r(F)Nr(F)⁻¹=q⁻¹N, giving N/3 at q=3. All geometric constructions are functorial for the specified levels and coefficient maps; thresholds for positive twists may depend on the finite list of levels.
 
 Use geometric Frobenius and ε of Hodge–Tate weight −1, with ε(Frobℓ)=ℓ⁻¹ at ℓ≠p. Local reciprocity sends a uniformizer to geometric Frobenius. CG weights (a,2) have multiplier ε^(1−a) and Hodge–Tate multiset 0,0,a−1,a−1. The BCGP arithmetic weight-two representation has multiplier ε⁻¹; its coherent dual-spin normalization is ρf=ρπ∨ε⁻³. The P12 list iκ=(0,2−k₂,1−k₁,3−k₁−k₂) gives the automorphic cyclotomic exponents in §3.2, so in this Hodge–Tate convention its automorphic Hodge–Tate weights are −iκ. Definition 5.3 instead prescribes deformation characters λr|Ip=ε^(−ir); this opposite sign, as well as its flag-ratio direction, is included in gap:p12-flag-orientation. For κ=(2,2), the automorphic exponents 0,0,−1,−1 give weights 0,0,1,1, while the printed deformation prescription gives exponents 0,0,1,1. No comparison of these prescriptions is assumed without the supplier dictionary (P12 line 639, line 665 and line 987). Full multipliers are carried independently of their determinant squares, including at trace zero.
 
@@ -149,7 +149,7 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-klingen-level-com
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-paramodular-newvector): Prove that a generic GSp₄ representation has a unique paramodular newvector line at its conductor, with the normalization used in BCGP25 Proposition 7.5.1.
 
-What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-ordinary-neat-refinement-lines): Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses used in BCGP25 Lemma 7.5.2.
+What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-ordinary-neat-refinement-lines): Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses in the proof of BCGP25 Lemma 7.5.8, pp.176–177, especially p.177 (BCGP25 line 8119), invoking BCGP21 Propositions 2.4.24 and 2.4.26, pp.26–27.
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-pure-monodromy-uniqueness): Prove the local uniqueness of monodromy with the given semisimplification under purity and the adjoint holomorphy condition, in the geometric-Frobenius convention of BCGP25 Remark 1.8.20.
 
@@ -169,7 +169,7 @@ What OrdinaryAutomorphicFormsAndModularityLiftingPartII must provide (gap:symple
 
 - At n=4 and [F⁺:ℚ]=1 the dyadic divisibility test gives 4≡0 modulo 4; n=2 gives 2 and fails it. These are numerical controls, not existence assertions for such CM fields.
 - At u=diag(1,3) and n=2, the universal weight factor ∏u_i^(1−i) is 1/3; replacing it by 3 changes arithmetic specialization. For the contragredient coefficient rule, a one-dimensional coefficient action u↦3 gives f(gu)=f(g)/3, whereas u↦1 gives f(gu)=f(g).
-- At p=2, transpose fixes Iₙ, so the scalar adjoint invariant line has dimension 1; the polarized Selmer Euler count must retain h³. With n=2, [F⁺:ℚ]=2, #T=3 and #Q=5, h²=1 and h³=1 give h¹=5, while h³=0 gives 6.
+- At p=2, n=2 and #T=3, the supplier’s polarized strict-conjugacy deformation complex with local classes µ_v has h³=0 and h² equal to the dimension of its dual H¹ Selmer group. If h²=1, that dual dimension is 1. Transpose fixes I₂, but Tr(I₂I₂)=Tr(I₂)=1+1=0, so the scalar-class pairing is zero. For T the finite places of S, a scalar-derived class survives in the dual H¹ at every sufficiently deep Taylor–Wiles level; it contributes through H² (BCGP25 §5.4, pp.122–123, and Lemma 5.5.3, p.125; BCGP25 line 5567 and line 5640).
 - At p=3, q_v=7 passes modulo 3 but fails modulo 9; q_v=19 passes both tests.
 - In E[x,y]/(xy), the origin lies on two components, so it cannot serve as the unique seed component even though it lies on x=0.
 - A nontrivial 2-power tame character ψ reduces to 1 but has inertia eigenvalue ψ(σ)≠1; ψ⊕1^(n−1) fails unipotent ramification. Solvable preparation controls restrictions of original local lifts, rather than all lifts over the larger field.
@@ -1335,7 +1335,7 @@ Fix the distinct BCGP25 weight-two and integral-enormity data, including its dya
 
 A BCGP characteristic-zero datum consists of p≥2 and ρ:GQ→GSp₄(O), unramified outside finitely many primes, with multiplier ε⁻¹, absolutely irreducible residual representation, pure, ordinary semistable of weight two and p-distinguished at p, with a chosen p-stabilization (αp,βp). Require ρ(GQ(ζp∞)) integrally enormous in Definition 7.1.1, meaning absolute irreducibility on E⁴ and, for every simple E[H]-submodule W⊂E⊗ad⁰ with H=ρ(GQ(ζp∞)), existence of h∈H whose reduction has four distinct roots and whose action on W has eigenvalue 1. For p=2 require ρ̄(GQ(i))=ρ̄(GQ); for odd p require a regular-semisimple element in ρ̄(GQ) outside Sp₄(Fp). Choose the neat prime r>5 with ρ itself unramified at r, residual regular-semisimple Frobenius, r≢1 mod p if p is odd and r≢1 mod 4 if p=2. Order its symplectic Frobenius roots as αr,1,αr,2,rαr,2⁻¹,rαr,1⁻¹.
 
-(BCGP25, Definitions 7.1.1–7.1.2 and Hypothesis 7.1.3, pp.152–154; Definition 7.4.1, p.167; BCGP25 line 6927.)
+(BCGP25, Definition 7.1.1, Lemma 7.1.2 and Hypothesis 7.1.3, pp.153–154; Definition 7.4.1, p.167; BCGP25 line 6927 and line 6933.)
 
 Specialize the global and local deformation objects with the exact weight-two ordinary semistable condition and chosen unramified plane. Use the integral enormous-image condition of this source, which is not ACC+ enormous image; the latter has different mod-p adjoint cohomology conditions and cannot be substituted at p=2. Choose the neat r under the appropriate odd/dyadic congruence and verify unramifiedness of ρ, not merely of ρ̄.
 
@@ -1543,16 +1543,17 @@ Do not strengthen residual matching to p-adic matching in a way that would assum
 
 ### 11.3 Multiplicity one at a nonzero regular point
 
-Choose Kℓ=Par(ℓ^a(ρ|GQℓ)) at ℓ∉{p,r}. Let q′ be a characteristic-zero point on a common irreducible component of RS[1/p] with q. For sufficiently large R, if q′ has R-regular classical weight and (M_w)q′≠0, then dimE(M_w/q′M_w)[1/p]=1 for each w. The nonzero hypothesis is essential; this theorem does not construct a classical point in the support.
+Choose Kℓ=Par(ℓ^a(ρ|GQℓ)) at ℓ∉{p,r}. Let q′ be a closed arithmetic point of RS[1/p], with finite residue field E′=κ(q′) over E, on a common irreducible component with q. For sufficiently large R and every chamber w, if q′ has R-regular classical weight and (M_w)q′≠0, then dim_E′(M_w ⊗_RS E′)=1. The nonzero hypothesis is essential; this theorem does not construct a classical point in the support.
 
 (BCGP25, Proposition 7.5.1 and Lemma 7.5.2, pp.174–175; equation (7.5.5) and Lemma 7.5.8, pp.176–177; BCGP25 line 8103.)
 
-Use regular arithmetic control to identify the fiber with the sum of cuspidal automorphic representations having the same Galois point and the specified refinements. Use localized boundary/interior comparison and global multiplicity one for general-type packets; these are supplier inputs, not new classification theorems here. At ℓ≠p,r use the unique generic paramodular newvector at the conductor and constancy of the relevant pure local conductor on the component. At p use the one-dimensional simultaneous ordinary refinement eigenspace of the regular principal series; at r use the one-dimensional selected Iwahori block and residual regular semisimplicity.
+Apply the source after a finite coefficient extension L/E containing E′ and the point’s refinements, with integers O_L, so the point is represented by RS→O_L. Carry the chosen component, conductor, stabilization and nonzero-support hypotheses through coefficient change. Arithmetic control and field base change identify the resulting fiber with (M_w ⊗_RS E′) ⊗_E′ L; its L-dimension equals the original E′-dimension. The source’s E-dimension formula is its O-valued-point case (BCGP25 line 8085 and line 8096). Use regular arithmetic control to identify this fiber with the sum of cuspidal automorphic representations having the same Galois point and the specified refinements. Use localized boundary/interior comparison and global multiplicity one for general-type packets; these are supplier inputs, not new classification theorems here. At ℓ≠p,r use the unique generic paramodular newvector at the conductor and constancy of the relevant pure local conductor on the component. At p use the one-dimensional simultaneous ordinary refinement eigenspace of the regular principal series; at r use the one-dimensional selected Iwahori block and residual regular semisimplicity.
 
 **Checks.**
 
-- A nonzero free rank-one fiber has dimension 1; the zero fiber has dimension 0 and is excluded from this assertion.
-- At each local factor a unique selected line contributes 1, so their tensor product contributes 1; two p-refinement lines would instead contribute 2.
+- An E-rational nonzero rank-one fiber has E-dimension 1; a zero fiber has dimension 0 over its residue field and is excluded from this assertion.
+- For E=ℚ₇, A=E[t] and M=A, the closed point (t²−3) has residue field E′=ℚ₇(√3): the squares modulo 7 are 0,1,2,4, so [E′:E]=2. Its fiber has E′-dimension 1 and E-dimension 2. In general restriction of scalars gives dim_E(M_w ⊗_RS E′)=[E′:E] for a rank-one E′-fiber.
+- After a common splitting extension L of the point’s residue field E′, each unique selected local line has L-dimension 1, so their tensor product has L-dimension 1; two p-refinement lines would instead contribute 2. Field base change preserves the fiber’s E′-dimension.
 - At R=3 the weight (−4,−1) has gaps 3 and 3, whereas (0,3) has gaps 3 and −5 and is not regular.
 
 A point on another local deformation component is not covered by the conductor/refinement argument.
@@ -1587,13 +1588,13 @@ Under the running Layer 10 data, the complete seed alternative and the corrected
 
 (BCGP25, Proposition 7.5.10 conclusion and final proof paragraph, pp.177–179; BCGP25 line 8232.)
 
-Use finite local freeness at q to obtain a neighborhood on which each module has constant rank. Choose a dense R-regular arithmetic point on the supported component in that neighborhood. Apply regular multiplicity one at this nonzero point and identify the free-module fiber dimension with the constant rank. Repeat for each w, retaining all four one-dimensional fibers.
+Use finite local freeness at q to obtain a neighborhood on which each module has constant rank. Choose a closed R-regular arithmetic point q′ on the supported component in that neighborhood, from the dense set supplied by §11.4, and put E′=κ(q′). Apply regular multiplicity one at this nonzero point and identify dim_E′(M_w ⊗_RS E′) with the constant rank. Repeat for each w, retaining all four one-dimensional fibers over E′.
 
 **Checks.**
 
-- Four free fibers of dimension 1 have individual rank 1 and total dimension 4; total rank is not 1.
-- On a neighborhood where a finite module is free of rank d, its fiber at every point has dimension d; one nonzero regular fiber of dimension 1 forces d=1.
-- A rank-zero module has zero fiber at every nearby point and fails the nonvanishing input.
+- Over the same residue field E′, four free fibers of dimension 1 have individual rank 1 and direct-sum dimension 4. If [E′:E]=2, their individual E-dimensions are 2 and their direct-sum E-dimension is 8; the individual local ranks remain 1.
+- On a neighborhood where a finite module is free of rank d, its fiber at a closed point q′ has dimension d over κ(q′); one nonzero regular fiber of κ(q′)-dimension 1 forces d=1.
+- A rank-zero module has fiber dimension 0 over every nearby point’s residue field and fails the nonvanishing input.
 
 The argument needs the regular point in the free neighborhood and in support, not merely somewhere on the deformation space.
 
@@ -1605,11 +1606,11 @@ Assume Layer 10 data, the full dyadic or odd seed alternative, the explicit corr
 
 (BCGP25, Theorem 7.5.11, p.179; Theorem 4.12.4 and Remarks 4.12.5–4.12.6, pp.113–114; BCGP25 line 8241.)
 
-At q use the arithmetic specialization/control theorem to obtain the ordinary overconvergent eigensystem with the same full good-prime data. Use isotypy to identify its completed eigenspace with ρ⊗W, not just an unspecified four-dimensional representation. The four rank-one graded pieces give equal multiplicities n=1 and total dimension 4. Semistability gives de Rhamness and semisimplicity of the required Sen operator. Apply the imported classicality theorem; retain the classification input on packets used to pass from higher-degree classicality to the degree-zero cusp form. Compare the geometric and dual-spin conventions before concluding that the form realizes the original ρ.
+At the E-rational point q use the arithmetic specialization/control theorem to obtain the ordinary overconvergent eigensystem with the same full good-prime data. Use isotypy to identify its completed eigenspace with ρ⊗W, not just an unspecified four-dimensional representation. The four rank-one graded pieces give equal multiplicities n=1 and total dimension 4. Semistability gives de Rhamness and semisimplicity of the required Sen operator. Apply the imported classicality theorem; retain the classification input on packets used to pass from higher-degree classicality to the degree-zero cusp form. Compare the geometric and dual-spin conventions before concluding that the form realizes the original ρ.
 
 **Checks.**
 
-- With four graded dimensions 1, their sum is 4; isotypy gives total dimension 4n with n≥1, hence n=1.
+- At q the four graded E-dimensions are 1, with sum 4; isotypy gives total E-dimension 4n with n≥1, hence n=1.
 - For a repeated Sen block [[a,1],[0,a]], the nilpotent part has rank 1; de Rham semisimplicity forces rank 0, killing the singular differential.
 - The two weights at a=2 are 0 and 1, each repeated twice; replacing the four chamber multiplicities by one total bound does not verify four equal graded dimensions.
 
@@ -1619,7 +1620,7 @@ Classicality requires both de Rhamness and the four matching multiplicities. All
 
 ### Examples
 
-Choose a regular supported point with R=3 and (h₁,h₂)=(−4,−1); its two gaps are 3 and 3. If each of the four modules is free in a neighborhood containing that point and the weight-two point, regular multiplicity one forces each local rank to be 1. Their four singular graded dimensions sum to 4, so completed isotypy 4n=4 gives n=1; de Rhamness then supplies the independent Sen hypothesis for classicality.
+Choose a regular supported point with R=3 and (h₁,h₂)=(−4,−1); its two gaps are 3 and 3. If each of the four modules is free in a neighborhood containing that point and the weight-two point, regular multiplicity one over the regular point’s residue field forces each local rank to be 1. At the E-rational weight-two point their four singular graded E-dimensions sum to 4, so completed isotypy 4n=4 gives n=1; de Rhamness then supplies the independent Sen hypothesis for classicality.
 
 ### Dependencies
 
