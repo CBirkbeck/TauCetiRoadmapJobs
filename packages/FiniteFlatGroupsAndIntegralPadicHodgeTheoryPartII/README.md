@@ -43,7 +43,7 @@ Use `WittVector` in `Mathlib/RingTheory/WittVector/Defs.lean`, `WittVector.frobe
 
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
-Consume §§R07.1.6–R07.1.8 and R07.1.22 for the p-divisible carrier, dual Tate pairing, Tate module and generic-fibre full faithfulness; §§R07.2.10–R07.2.12 for contravariant perfect-field Dieudonné theory and its rank-one normalizations; §R07.2.27 for the smooth-base equivalence. Consume §§R07.3.2–R07.3.3 and R07.4.13 for weak admissibility and its realization, with the variance adapter of PadicHodgeTheory §5.5. Consume §R07.4.1 for 𝔖, S and their scalar maps; §§R07.4.16–R07.4.21 for the all-weight tensor functor, height-one category and group equivalence; and §R07.4.25 for the integral φ*𝔐/u, φ*𝔐/E and PD comparisons. The all-weight functor's whole-ring nonexactness is retained. Punctured exactness is the additional application of Layer 4 here.
+Consume §§R07.1.6–R07.1.8 and R07.1.22 for the p-divisible carrier, dual Tate pairing, Tate module and generic-fibre full faithfulness; §§R07.2.10–R07.2.12 for contravariant perfect-field Dieudonné theory and its rank-one normalizations; §R07.2.27 for the smooth-base equivalence and `deJongBoundedFormalFunctions`. For a Noetherian normal complete local domain R flat over a complete mixed-characteristic DVR O with perfect residue k and residue field finite over k, apply the latter theorem to Spf R with its maximal-ideal topology. This formal scheme is O-flat and formally normal, and its reduction is of finite type over k. An element s∈R[1/p] is analytic on its generic fibre; its values have norm at most one exactly when ξ(s)∈O_K for every continuous local O-map ξ:R→O_K with K/Frac(O) finite. The bounded-function isomorphism, including injectivity, identifies these elements with R (deJong95, Proposition 7.3.6, p.88 and Theorem 7.4.1, pp.90–91; deJong95 lines 2952 and 2988). Consume §§R07.3.2–R07.3.3 and R07.4.13 for weak admissibility and its realization, with the variance adapter of PadicHodgeTheory §5.5. Consume §R07.4.1 for 𝔖, S and their scalar maps; §§R07.4.16–R07.4.21 for the all-weight tensor functor, height-one category and group equivalence; and §R07.4.25 for the integral φ*𝔐/u, φ*𝔐/E and PD comparisons. The all-weight functor's whole-ring nonexactness is retained. Punctured exactness is the additional application of Layer 4 here.
 
 What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:perfect-residue-bt-realization): Extend §R07.4.20 from finite extensions of ℚ_p to finite extensions of W(k)[1/p] for arbitrary perfect k, including F̄_p, preserving the contravariant dual-Tate convention and realization up to isogeny.
 
@@ -67,19 +67,17 @@ This is the relative extension of PadicPeriodRings §4.3’s fundamental identit
 
 SchemeAndStackFoundations §0.6 supplies reflexive extension and Hartogs; §§1.15 and 2.3 supplies geometric and fppf torsors and their common class carrier; §§4.1–4.4 supplies smooth lifting, marked deformation functors and prorepresentability; §§4.7–4.8 supplies formal completion; §4.12 supplies flattening with its stated hypotheses. ModularCurves §0G supplies the relative Grassmannian and universal direct summand. These inputs do not identify an unproved tensor-isomorphism functor with a torsor.
 
-What SchemeAndStackFoundations must provide (gap:normal-base-integral-section-detection): For a Noetherian normal complete local domain R flat over a complete mixed-characteristic DVR O with perfect residue k, and with residue field finite over k, an element s∈R[1/p] belongs to R if and only if ξ(s)∈O_K for every continuous local O-map ξ:R→O_K with K/Frac(O) finite.
-
 What SchemeAndStackFoundations must provide (gap:tensor-isomorphism-flatness-descent): Let A be a henselian local ring, X→Spec A locally of finite presentation, x a point of its closed fibre, and ℱ an O_X-module of finite type; the functor on pointed local A-schemes requiring ℱ after base change to be flat at every closed-fibre point above x is represented by a closed subscheme of Spec A, finitely presented when ℱ is finitely presented, so local maps A→A_i with intersection of kernels zero and flat pullbacks at these points imply ℱ is A-flat at x (RG71, I, Theorem 4.1.2, p.27).
 
 What SchemeAndStackFoundations must provide (gap:formal-dvr-point-detection): For a reduced p-torsion-free complete Noetherian local O_Ĕ-algebra R with residue k, the continuous local maps R→O_K for finite K/Ĕ are jointly injective; for any Noetherian ring B complete for (T) with T∈Jac(B), every ideal I is T-adically closed, ∩ₙ(I+TⁿB)=I, and if B/I is p-torsion-free then I=B∩I[1/p].
 
 What SchemeAndStackFoundations must provide (gap:punctured-disc-torsor-patching): Let A=O[[u]] for a complete mixed-characteristic DVR O and let f∈A be a non-zero-divisor with (p,f) primary to the closed point; for a smooth affine A-group scheme, a torsor on D(f) and a torsor on the f-adic completion of A[1/p], with an isomorphism over its punctured f-adic completion, glue uniquely up to unique compatible isomorphism to a torsor on Spec A minus the closed point, by formal gluing on D(p) followed by Zariski descent (KP18, proof of Lemma 3.2.6, p.171; KP18 lines 2114–2122).
 
-The normal-section contract is the bounded-function theorem of deJong95, Proposition 7.3.6, p.88 (deJong95 lines 2952–2954), applied as in KP18 lines 2176–2178. Flatness uses the local henselian flattening functor, rather than arbitrary separating maps of rings (RG71, I, Theorem 4.1.2, p.27; KP18 lines 2185–2188). Point detection is used in Hoff23 lines 1371–1372; ideal contraction and T-adic separatedness are the complete-local inputs of the factorization argument (KP18, proof of Proposition 3.2.17, pp.175–177). The local-model lifting step of Hoff23 Lemma 2.35 is proved in §4.13, using local-model geometry.
+Flatness uses the local henselian flattening functor, rather than arbitrary separating maps of rings (RG71, I, Theorem 4.1.2, p.27; KP18 lines 2185–2188). Point detection is used in Hoff23 lines 1371–1372; ideal contraction and T-adic separatedness are the complete-local inputs of the factorization argument (KP18, proof of Proposition 3.2.17, pp.175–177). The local-model lifting step of Hoff23 Lemma 2.35 is proved in §4.13, using local-model geometry.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
-Section RG2.1.5 supplies κ_G and π₁; §§RG2.3.3 and RG2.3.5 supplies parahorics, the Kottwitz-kernel fixer characterization, lattice-chain stabilizer schemes and tame hyperspecial realization; §RG2.2.4 (*division-algebra-building*) supplies O_D-chain stabilizers. Section RG2.3.7 supplies connected finite-field Lang vanishing. Section RG2.4.3 supplies translations, affine Weyl length, dominant order and admissible sets. The trace/different pairing and scalar enlargements used with these lattices are constructed in §§3.15–3.17.
+Section RG2.1.5 supplies κ_G and π₁; §§RG2.3.3 and RG2.3.5 supplies parahorics, the Kottwitz-kernel fixer characterization, lattice-chain stabilizer schemes and tame hyperspecial realization; §RG2.2.4 (*division-algebra-building*) supplies O_D-chain stabilizers. Section RG2.3.7 supplies connected finite-field Lang vanishing. Section RG2.4.3 supplies translations, affine Weyl length, dominant order and admissible sets. Its translation labelled λ has Kottwitz class −λ and split representative λ(p)⁻¹. Layer 6 uses the same elements with labels t_here^λ=t_RG^(−λ) and Adm_here(μ)=Adm_RG(dom(−μ)); its convention adapter transports Frobenius, Bruhat order and length without altering the positive valuation normalization. The trace/different pairing and scalar enlargements used with these lattices are constructed in §§3.15–3.17.
 
 What ReductiveGroupsPartII must provide (gap:full-fixer-cutting-tensors): For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, for every faithful finite-free realization of these fixers; the ordinary-Levi intersection is the separate contract below.
 
@@ -635,15 +633,15 @@ Check both rank-one filtrations; do not invert φ(E([π])) inside Ŵ(O_K).
 
 For the universal R_G-pair of a good embedding, the rational tensors s̃_a=φ*(s_a⊗1), viewed using j[1/p], are integral in M̃₁^⊗. Their tensor-isomorphism scheme `T=Isom_{s̃,s}(M̃₁,Λ⊗Ŵ(R_G))` is a trivial 𝒢-torsor, independent of the chosen cutting family. For Z_p coefficients the displayed φ* is harmless notation; for a nontrivial unramified coefficient ring it must remain. The result uses normality of R_G and the named pointwise integrality/flatness descent inputs. (KPZ26, §5.2.1, p.53; KPZ26 line 2317; KP18, Lemma 3.2.6, Lemma 3.2.9 and Corollary 3.2.11, pp.171–173; KP18 line 2170).
 
-A proof can proceed as follows. At the special point use `M̃_{0,1}=gΛ_W` for g∈G(W[1/p]); g fixes the tensors, proving special-fibre integrality. At every DVR-valued point use the preceding lattice comparison. Apply normal-section detection to the universal rational polynomials in the ghost coordinates of a Witt vector divided by p; their integral values give coordinatewise p-divisibility in Ŵ(R_G), using its inverse-limit description (KP18 lines 2179–2184). Iterate this for the bounded denominators of the finite tensor family. Prove T is finitely presented by its finite tensor equations inside GL_h; Ŵ(R_G) is henselian local by its Artin-limit Zink construction. Choose a point x of its nonempty closed fibre. For every local point map Ŵ(R_G)→Ŵ(O_K), the pullback T is a trivial 𝒢-torsor. The henselian flattening functor at x is a finitely presented closed subscheme; its ideal vanishes under every point map, hence is zero by joint injectivity. Thus T is flat at x. The local ring O_(T,x) is faithfully flat over the local base and gives a point of T; the isomorphism 𝒢×T≅T×T then makes T a 𝒢-torsor by fpqc descent. Trivialize over the henselian local base with algebraically closed residue.
+A proof can proceed as follows. At the special point use `M̃_{0,1}=gΛ_W` for g∈G(W[1/p]); g fixes the tensors, proving special-fibre integrality. At every DVR-valued point use the preceding lattice comparison. Apply FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27, `deJongBoundedFormalFunctions`, on Spf R_G with its maximal-ideal topology, as specialized in the supplier contract, to the universal rational polynomials in the ghost coordinates of a Witt vector divided by p; their integral values give coordinatewise p-divisibility in Ŵ(R_G), using its inverse-limit description (KP18 lines 2179–2184). Iterate this for the bounded denominators of the finite tensor family. Prove T is finitely presented by its finite tensor equations inside GL_h; Ŵ(R_G) is henselian local by its Artin-limit Zink construction. Choose a point x of its nonempty closed fibre. For every local point map Ŵ(R_G)→Ŵ(O_K), the pullback T is a trivial 𝒢-torsor. The henselian flattening functor at x is a finitely presented closed subscheme; its ideal vanishes under every point map, hence is zero by joint injectivity. Thus T is flat at x. The local ring O_(T,x) is faithfully flat over the local base and gives a point of T; the isomorphism 𝒢×T≅T×T then makes T a 𝒢-torsor by fpqc descent. Trivialize over the henselian local base with algebraically closed residue.
 
 **Checks.**
 
 - In R=O_K, f=p has f/p=1 in Ŵ(R); for f=1 the same putative division has first coefficient 1/p∉O_K and is rejected.
-- In R=ℤ_p[[x]], s=x/p fails the integrality test at x↦π in O_K with π²=p, since v_K(π/p)=−1. The point x↦0 alone would miss it.
+- In R=ℤ_p[[x]], s=x/p is analytic on the open unit disc but fails boundedness at x↦π in O_K with π²=p: with v_K(π)=1, v_K(π/p)=−1. Thus it is absent from both R and the bounded analytic functions; the point x↦0 alone would miss it. In contrast s=1 belongs to R and has norm one at every rigid point.
 - For empty tensors T=GL_h is already flat, and its local flattening ideal is zero. The field map ℤ_p→ℚ_p is injective and makes Spec(ℤ_p/p) empty and flat, but is not a local map of pointed local schemes; it cannot be used as a flatness detector at the closed point.
 
-*Needs:* §2.3 (completed orbit deformation ring); §2.5 (breuil–kisin to tilde lattice comparison); SchemeAndStackFoundations §§1.15 and 2.3; §0.10 (comparison with frobenius pullback); SchemeAndStackFoundations §§0.6 and 4.12; gap:normal-base-integral-section-detection; gap:tensor-isomorphism-flatness-descent.
+*Needs:* §2.3 (completed orbit deformation ring); §2.5 (breuil–kisin to tilde lattice comparison); SchemeAndStackFoundations §§1.15 and 2.3; §0.10 (comparison with frobenius pullback); SchemeAndStackFoundations §§0.6 and 4.12; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27 (`deJongBoundedFormalFunctions`); gap:tensor-isomorphism-flatness-descent.
 
 
 ### 2.7 First-order tensor horizontality
@@ -778,7 +776,7 @@ For the split height-two filtration the Eisenstein modification is 𝔖e₁⊕E(
 
 ### Dependencies
 
-Layers 0–1; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; PadicHodgeTheory §5.5; the scheme-local-model, purity, normal-section and flatness supplier contracts.
+Layers 0–1; ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; PadicHodgeTheory §5.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27 (`deJongBoundedFormalFunctions`); the scheme-local-model, purity and flatness supplier contracts.
 
 
 ## Layer 3: very-good criteria and existence theorems
@@ -828,7 +826,7 @@ A proof can proceed as follows. Induce the relevant tensor torsors from 𝒢⁰ 
 
 Record the reflex extension E⊂E° and prove the smooth-closure hypothesis separately; do not replace it by generic connectedness.
 
-*Needs:* §2.10 (very good integral hodge embedding); §2.6 (integral tilde tensors and tensor frames); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; the separate normal-section and flatness supplier contracts.
+*Needs:* §2.10 (very good integral hodge embedding); §2.6 (integral tilde tensors and tensor frames); ReductiveGroupsPartII §§RG2.3.3 and RG2.3.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.27 (`deJongBoundedFormalFunctions`); gap:tensor-isomorphism-flatness-descent.
 
 
 ### 3.6 Very-goodness descends to a summand
@@ -1319,7 +1317,7 @@ A proof can proceed as follows. Verify the height-one F,V relations, apply the c
 
 ### 5.10 Horizontal Fil⁰ deformation locus
 
-In the hyperspecial ambient deformation ring R and reductive quotient R_G, complete R[1/p] and R_G[1/p] at the common deformation origin to A and A_G. Parallel transport the constant crystalline tensors by the universal integrable connection to sections σ_a on A. Let A′_G be the largest closed formal subscheme of Spf A on which every σ_a lies in Fil⁰. This is a quotient of the rational completion, not an integral quotient defined by assumed convergent coordinates. (Kisin17, Errata E.1–E.3, p.96; Kisin17 line 4253).
+In the hyperspecial ambient deformation ring R and reductive quotient R_G, complete R[1/p] and R_G[1/p] at the common deformation origin to A and A_G. Construct the universal integrable connection on the ambient Dieudonné module over R, with connection form in Lie(GL(D))⊗Ω¹_R/W in the marked frame, and parallel transport the crystalline tensors from their value at the origin to sections σ_a on A. On the tensor-adapted quotient R_G, its pullback in the tensor frame has coefficients in Lie(G); the iterative construction there uses stability of Lie(G) after inverting p under Frobenius conjugation h↦φhφ⁻¹ (Kisin17, Errata E.1, p.96; Kisin17 lines 4253–4258). Let A′_G be the largest closed formal subscheme of Spf A on which every σ_a lies in Fil⁰. This is a quotient of the rational completion, not an integral quotient defined by assumed convergent coordinates. (Kisin17, Errata E.1–E.3, p.96; Kisin17 line 4253).
 
 The API includes the following facts.
 
@@ -1331,18 +1329,18 @@ The API includes the following facts.
 
 - The origin factors through A′_G.
 - No tensors impose the zero ideal and A′_G=A.
-- Connection coefficients must lie in Lie(G), and need not lie in the Lie algebra of its opposite unipotent; reject the latter replacement.
+- For R=W[[t]], φ(t)=tᵖ, Fil¹=Re₁, G the diagonal torus fixing E₁₁, and F(t)=(1+tE₂₁)diag(p,1), write ∇=d+N(t)dt. Horizontality gives dF+NF=Fφ(N)p t^(p−1)dt, so N(0)=−E₂₁ and [N(0),E₁₁]=−E₂₁≠0: the ambient coefficient is outside Lie(G). The formal solution is N(t)=−(Σ_(r≥0) t^(pʳ−1))E₂₁. On A=K₀[[t]], the transported tensor is E₁₁+h(t)E₂₁ with h(t)=Σ_(r≥0) t^(pʳ)/pʳ and linear coefficient 1. It preserves Fil¹ exactly when h=0, and (h)=(t). On the adapted quotient t=0, dt pulls back to zero, the connection form is zero and E₁₁ is horizontal.
 
-A proof can proceed as follows. Construct the connection by iteration in the φ-stable Lie algebra Lie(G). Formal characteristic-zero integration gives parallel sections. Express their images in the finite locally free quotient by Fil⁰ and take the closed ideal of their coefficients.
+A proof can proceed as follows. Construct the ambient connection by crystalline evaluation. Its rational construction can also use iteration in the Frobenius-stable Lie algebra Lie(GL(D[1/p])). Formal characteristic-zero integration gives its parallel sections on A. Apply the iteration separately on R_G in Lie(G) after inverting p, retaining Frobenius-conjugation stability; identify the result with the pulled-back connection by Frobenius horizontality and uniqueness. Express their images in the finite locally free quotient by Fil⁰ and take the closed ideal of their coefficients.
 
 *Needs:* §5.4 (hyperspecial adapted lift); §1.6 (the rational section preserves lifted tensors); SchemeAndStackFoundations §§4.1–4.4 and 4.7–4.8; ModularCurves §0G; AbelianSchemesAndArithmeticModuli §A4.CR.7.2; CrystallineCohomology §CR.7.1.
 
 
 ### 5.11 Equality of the horizontal Fil⁰ locus and the adapted locus
 
-With the universal connection of §5.10, A′_G=A_G. The iterative connection lemma requires its coefficient Lie algebra Lie(H) to be stable under h↦φhφ⁻¹. The universal application has coefficients in Lie(G), not necessarily Lie(U_G°); the Lie-algebra stability hypothesis is retained. This equality is over the rational completed rings just defined. (Kisin17, Errata E.1 and Lemma E.3, p.96; Kisin17 line 4263).
+With the universal connection of §5.10, A′_G=A_G. The ambient connection has coefficients in Lie(GL(D)); its restriction to R_G in the tensor frame has coefficients in Lie(G), using the Frobenius-stability hypothesis of Kisin17 E.1. Consequently σ_a restricted to A_G equals s_a⊗1. The restricted assertion, together with the G-valued Hodge filtration, gives the inclusion Spf A_G⊂Spf A′_G. This equality is over the rational completed rings just defined. (Kisin17, Errata E.1 and Lemma E.3, p.96; Kisin17 line 4263).
 
-A proof can proceed as follows. Use Frobenius-compatible dual-number maps to identify the tensor-locus tangent space with the G-orbit tangent space. The universal connection gives A_G→A′_G, and formal regularity of A_G plus the tangent calculation gives equality. Track the augmentation used for completion.
+A proof can proceed as follows. The restricted connection makes the constant tensors horizontal and gives a surjection A′_G→A_G. For the reverse inclusion, use Frobenius-compatible dual-number maps to identify the tensor-locus tangent space with the G-orbit tangent space; formal regularity of A_G and that tangent calculation give equality. Track the augmentation used for completion.
 
 *Needs:* §5.10 (horizontal fil⁰ deformation locus); §4.10 (four infinitesimal adaptedness criteria).
 
@@ -1351,7 +1349,7 @@ A proof can proceed as follows. Use Frobenius-compatible dual-number maps to ide
 
 For H₀ and reductive crystalline tensor data as in the hyperspecial definition, the universal marked deformation ring R has a quotient R_G formally smooth over W. For every finite totally ramified K/W[1/p], a W-map R→O_K factors through R_G exactly when its lift is adapted. Its relative dimension is `dim G/P_{μ₀}`. Use the horizontal Fil⁰ locus equality of §5.11, or the very-good smooth local-model argument after identifying its conventions. (Kisin17, Proposition 1.1.10, p.9 and Errata E.2–E.4, p.96; Kisin17 line 386).
 
-A proof can proceed as follows. The reductive flag variety gives a smooth local-model quotient. On rational completions use A′_G=A_G and horizontality of φ-invariant tensors, then descend the factorization to the p-torsion-free integral quotient. This replaces the connection argument with Frobenius-stable Lie algebra.
+A proof can proceed as follows. The reductive flag variety gives a smooth local-model quotient. On rational completions use A′_G=A_G and horizontality of φ-invariant tensors, then descend the factorization to the p-torsion-free integral quotient. The connection argument uses Lie(GL(D)) on the ambient ring and Lie(G) only on the adapted quotient, with Frobenius-conjugation stability after inverting p.
 
 *Needs:* §5.11 (equality of the horizontal Fil⁰ locus and the adapted locus); §4.11 (adapted dvr points factor through the local-model quotient); §3.7 (curve-spanned tangent criterion); §5.4 (hyperspecial adapted lift).
 
@@ -1467,24 +1465,27 @@ Layers 0–4; DerivedDeRhamCohomology §PD.7; PadicPeriodRings §§3 and 4.1; Cr
 
 ## Layer 6: ordinary lifts and the rational centralizer action
 
+Use the following convention adapter for the affine Weyl objects of ReductiveGroupsPartII §RG2.4.3. Relabel the same translation element by t_here^λ=t_RG^(−λ); for a split cocharacter its representative is λ(p), so its Kottwitz class is the image of λ. Keep the same affine Weyl elements, base alcove and parahoric subgroups. Transport Frobenius, Bruhat order and length through this identification: σ(t_here^λ)=t_here^(σλ), w≤_here v if and only if w≤_RG v for the identified elements, and ℓ_here(w)=ℓ_RG(w). Define Adm_here(μ)=Adm_RG(dom(−μ)), equivalently the lower set with endpoints t_here^(uμ) for u in the finite Weyl group; take its image in the parahoric double-coset space when required. Here dom uses the supplier’s chosen chamber, and −μ can be used directly if no dominant label is required. Thus σ-straightness is transported with the actual Frobenius action; negation is a change of translation labels, with no assertion that negating labels preserves Bruhat order at a fixed label. All ordinary translations and admissible sets in this layer use this adapter, independently of the inverse Hodge label for the filtration local model (KZ25, §§2.1–2.2 and §3.4.1–3.4.3, pp.7–10 and 26–27; KZ25 lines 336, 389 and 1133–1176).
+
 ### 6.0 Ordinary integral σ-conjugacy normalization
 
-Before choosing the ordinary tensor datum, prove the following normalization. If the μ-ordinary class with ν=μ^⋄ exists and c lies both in that class and in the union of parahoric double cosets indexed by Adm(μ), then c is integrally σ-conjugate to a lift of a σ-straight translation `t_{μ′}`, with μ′ in the finite Weyl orbit of μ. Here σ-straight means ℓ(wσ(w)⋯σⁿ⁻¹(w))=nℓ(w) for every n≥1. For a dominant lift μ̃ and wμ=μ′, the cocharacter wμ̃ is central in the Newton Levi of this translation. Existence of the class is a hypothesis for a nonsplit inner form (KZ25, Definition 2.2.4, Lemmas 2.1.7, 2.1.9 and 2.2.6, Proposition 2.3.3, pp.8–12; KZ25 lines 336, 369, 437 and 526).
+Before choosing the ordinary tensor datum, prove the following normalization. If the μ-ordinary class with ν=μ^⋄ exists and c lies both in that class and in the union of parahoric double cosets indexed by Adm_here(μ), then c is integrally σ-conjugate to a lift of a σ-straight translation t_here^(μ′), with μ′ in the finite Weyl orbit of μ. Here σ-straight means ℓ(wσ(w)⋯σⁿ⁻¹(w))=nℓ(w) for every n≥1. For a dominant lift μ̃ and wμ=μ′, the cocharacter wμ̃ is central in the Newton Levi of this translation. Existence of the class is a hypothesis for a nonsplit inner form (KZ25, Definition 2.2.4, Lemmas 2.1.7, 2.1.9 and 2.2.6, Proposition 2.3.3, pp.8–12; KZ25 lines 336, 369, 437 and 526).
 
 A proof route establishes within this normalization theorem the integral reduction to a minimal Iwahori Bruhat representative, the existence of a σ-straight representative below its admissible index, and the single integral σ-orbit property of a straight Iwahori double coset. The ordinary equality ν=μ^⋄ forces the length to equal the translation length; the admissible inequality then forces that index to be a translation. These are group-theoretic subtargets of the normalization, independent of display universality (KZ25, proof of Proposition 2.3.3, p.12; KZ25 lines 533–544).
 
 **Checks.**
 
-- In GL₂ with μ=(1,0), the ordinary Newton slopes are (1,0), its Newton Levi is G_m×G_m, and μ is central there.
+- For G_m and μ=1, t_here¹=t_RG^(−1) is represented by p, has κ=ν=1 and satisfies pW⊂pW⊂W. The unadapted t_RG¹ is represented by p⁻¹, has κ=ν=−1 and fails p⁻¹W⊂W.
+- In GL₂ with μ=(1,0), t_here^(1,0) is represented by diag(p,1), has determinant valuation 1, Hodge rank 1, length 1 and ordinary Newton slopes (1,0). Its Newton Levi is G_m×G_m and μ is central there. The unadapted diag(p⁻¹,1) has determinant valuation −1 and fails bW²⊂W²; dom(−μ)=(0,−1) gives the supplier label for the adapted admissible set.
 - Slopes (1/2,1/2) have Newton average different from (1,0), so the supersingular class fails the ordinary hypothesis.
-- For a torus, length is zero and every translation has ℓ(wσ(w))=0=2ℓ(w); the ordinary-class existence condition still remains.
+- For a torus, length is zero and every translation has ℓ(wσ(w))=0=2ℓ(w); the ordinary-class existence condition still remains. For an unramified rank-two torus with σ interchanging the split factors, λ=(1,0) gives σλ=(0,1) and t_here^λ σ(t_here^λ)=t_here^(1,1), with valuation vector (1,1). For the trivial group and μ=0 the adapted translation, its Frobenius and its square are the identity, with length and Kottwitz value zero and admissible set {1}.
 
-*Needs:* PadicHodgeTheory §5.5; ReductiveGroupsPartII §RG2.4.3 (affine Weyl group, length and admissible set); §2.0 (rational σ-centralizer).
+*Needs:* PadicHodgeTheory §5.5; ReductiveGroupsPartII §RG2.4.3 (affine Weyl group, length and admissible set through this layer’s adapter); §2.0 (rational σ-centralizer).
 
 
 ### 6.1 Ordinary tensor datum
 
-Take k=F̄_p, p>2 and the acceptable good tensor local-model datum of Layer 2, now requiring that the full fixer equals the connected parahoric. Normalize its σ-conjugacy class to `b=σ(ṫ_{μ′})`, where `t_{μ′}` is σ-straight and σ⁻¹(b) is μ_y-ordinary with its required admissible double-coset condition. Let M be the Newton Levi and choose the central M-cocharacter λ̃ lifting the special Hodge filtration with the normalization established in the ordinary normalization above. Its field of definition is retained as part of the datum. Very-goodness is not an extra hypothesis for the explicit ordinary construction. (KZ25, §3.4.1–3.4.2, pp.26–27; KZ25 line 1115).
+Take k=F̄_p, p>2 and the acceptable good tensor local-model datum of Layer 2, now requiring that the full fixer equals the connected parahoric. Normalize its σ-conjugacy class to b=σ(ṫ_here^(μ′)), where t_here^(μ′) is σ-straight and σ⁻¹(b) is μ_y-ordinary with its double-coset index in Adm_here(μ_y). Let M be the Newton Levi and choose the central M-cocharacter λ̃ lifting the special Hodge filtration with the normalization established in the ordinary normalization above. Its field of definition is retained as part of the datum. Very-goodness is not an extra hypothesis for the explicit ordinary construction. (KZ25, §3.4.1–3.4.2, pp.26–27; KZ25 line 1115).
 
 The API includes the following facts.
 
@@ -1494,7 +1495,7 @@ The API includes the following facts.
 
 **Checks.**
 
-- For the height-two ordinary group M is the diagonal Levi and the two slopes are 0 and 1.
+- For the height-two ordinary group b=σ(diag(p,1))=diag(p,1), M is the diagonal Levi, the slopes are 1 and 0, and the Hodge lattice is diag(1,p)W², reducing to ke₁.
 - A height-two supersingular group is not μ-ordinary for the ordinary GL₂ Hodge type.
 - A disconnected full fixer cannot be silently substituted for the connected parahoric required here.
 

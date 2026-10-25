@@ -5310,12 +5310,6 @@
       "section": "4.3"
     },
     {
-      "slug": "normal-base-integral-section-detection",
-      "needs": "For a Noetherian normal complete local domain R flat over a complete mixed-characteristic DVR O with perfect residue k, and with residue field finite over k, an element s∈R[1/p] belongs to R if and only if ξ(s)∈O_K for every continuous local O-map ξ:R→O_K with K/Frac(O) finite.",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "0.6"
-    },
-    {
       "slug": "tensor-isomorphism-flatness-descent",
       "needs": "Let A be a henselian local ring, X→Spec A locally of finite presentation, x a point of its closed fibre, and ℱ an O_X-module of finite type; the functor on pointed local A-schemes requiring ℱ after base change to be flat at every closed-fibre point above x is represented by a closed subscheme of Spec A, finitely presented when ℱ is finitely presented, so local maps A→A_i with intersection of kernels zero and flat pullbacks at these points imply ℱ is A-flat at x (RG71, I, Theorem 4.1.2, p.27).",
       "supplier": "SchemeAndStackFoundations",
