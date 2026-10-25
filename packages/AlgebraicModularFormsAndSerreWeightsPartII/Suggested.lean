@@ -25,11 +25,14 @@ The following headline theorems are not statable at the pins:
 * Equivariant torsion Hasse weight shifts and the two-affine minimal cover lack
   the Siegel section modules, Hasse sections and minimal formal model.
 * Integral residual Hecke coefficients and the corrected Q2 theorem lack the
-  covariant all-component binary-index series with level transports and the
-  rational GSp4 double-coset coefficient action. A scalar operator identity on
-  arbitrary endomorphisms would not state this theorem.
+  covariant all-component binary-index series with transported tame markings,
+  the local unramified p-correspondence with identity tame component, and its
+  comparison with the rational GSp4 coefficient action. Literal rational
+  binary double cosets additionally carry the tame intersection multiplicity.
+  A scalar operator identity on arbitrary endomorphisms would not state this theorem.
 * Oriented neighbor reciprocity at tame level lacks the marked binary-index
-  orbit/coset correspondence with its coefficient and cusp transports.
+  local-branch and literal-coset correspondences with their distinct tame
+  multiplicities, coefficient maps and cusp transports.
 * Integral geometric T and Q2 actions with finite and K/O coefficients and
   formal Hartogs lack the integral coherent isogeny correspondences, the
   associated bundle cohomology and the open formal-model comparison.

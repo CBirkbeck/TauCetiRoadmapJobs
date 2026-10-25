@@ -6,7 +6,7 @@
 
 The base roadmap AlgebraicModularFormsAndSerreWeights R15.1–R15.6 supplies the modular-curve direction, elliptic Hasse and theta theory, Serre weights and classical residual witnesses. This Part II owns the genus-two specializations and comparisons in Layers 1–9. It does not duplicate the elliptic theory or the independent generic GL₃ weight-and-lattice direction.
 
-Generic tensor, symmetric-power, determinant and dual bundle constructions are stated by AlgebraicVectorBundles §§L0A–L0C and AutomorphicBundles B2–B3. Canonical and subcanonical extensions and their generic vector expansion principle are stated by AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15; §§1.1–1.4 below specialize them to binary Fourier indices and all geometric components. The generic componentwise coefficient-recognition proof is imported. The double-coset Hecke ring, its finite left-coset decompositions, the degree map and the elementary-divisor parametrization are stated by ModularForms Layer 2; §5.2 owns the ℙ¹(𝔽_p) parametrization of the determinant-p left cosets, their normalized binary-index integrality and the arbitrary prime-to-p congruence-level extension. Binary quadratic forms with their discriminant and SL₂-action are Tau Ceti's; §1.2 adds the determinant-normalized GL₂(ℚ) action used for Fourier indices. The projective-zero theorem is stated by ClassicalArithmeticCompletion §1.17; §6.2 applies it to labeled neighbor occurrences.
+Generic tensor, symmetric-power, determinant and dual bundle constructions are stated by AlgebraicVectorBundles §§L0A–L0C and AutomorphicBundles B2–B3. Canonical and subcanonical extensions and their generic vector expansion principle are stated by AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15; §§1.1–1.4 below specialize them to binary Fourier indices and all geometric components. The generic componentwise coefficient-recognition proof is imported. The double-coset Hecke ring, its finite left-coset decompositions, the degree map and the elementary-divisor parametrization are stated by ModularForms Layer 2; §5.2 owns the binary-index integrality comparison at arbitrary tame level: the literal rational double coset has a tame multiplicity, whereas the local unramified p-correspondence has p+1 branches with transported tame markings. The general adelic correspondence and degree belong to AdelicAlgebraicGroups §4.5; this roadmap specializes them at the genus-two cusp. Binary quadratic forms with their discriminant and SL₂-action are Tau Ceti's; §1.2 adds the determinant-normalized GL₂(ℚ) action used for Fourier indices. The projective-zero theorem is stated by ClassicalArithmeticCompletion §1.17; §6.2 applies it to labeled neighbor occurrences.
 
 The primary semiabelian Hasse section and its ordinary and minimal-model comparisons are stated by HodgeTateAndCanonicalSubgroups §§0.12–0.16. General BT₁ filtration, Hasse–Witt complexes and Fargues determinant duality are stated by FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.2, R07.2.21–R07.2.23. Layers 2–3 own the genus-two reducedness, secondary invariant, rank-one flags and its global extension and root. The split subgroup recipes use these imported carriers; they introduce no second BT₁ or primary-Hasse theory. The general finite-field Lang theorem belongs to ReductiveGroupsPartII §RG2.3.7; §8.4 uses its SL₂ specialization for normalized frames.
 
@@ -24,7 +24,7 @@ Write S=V(h), the closed nonordinary divisor, Z_red for the reduced rank-zero cu
 
 At a marked split cusp, Q=(m,r,n) denotes mx²+rxy+ny² and, when 2 is invertible, the symmetric matrix [[m,r/2],[r/2,n]]. Set Δ=r²−4mn=−4det Q. The normalized action is M·Q=(det M)⁻¹MQMᵗ. Its discriminant identity uses every invertible matrix, whereas semidefinite support is preserved only when det M>0. Indices have a fixed tame denominator bound prime to p, and coefficient functions are extended by zero at inadmissible indices. At p=2 use the binary polynomial without r/2; do not silently interpret division by zero.
 
-The rational Hecke normalization is the similitude character to power −3. Write T for β₁=diag(1,1,p,p), T₂ for β₂=diag(1,p,p,p²), and S_c for the central pI₄ operator when confusion with the divisor S is possible. These are Pilloni’s T_(p,2), T_(p,1), T_(p,0), respectively. C_r denotes Pilloni’s composite T of §7. A displayed central scalar assumes the trivial central/diamond sector with specified component identifications; otherwise retain the actual central map. No negative power of p acts on torsion coefficients. The finite sum Z₂=UZ is distinct from the diagonal U₂=−1+pX₂.
+The rational Hecke normalization is the similitude character to power −3. Write T for β₁=diag(1,1,p,p), T₂ for β₂=diag(1,p,p,p²), and S_c for the central pI₄ operator when confusion with the divisor S is possible. These are Pilloni’s T_(p,2), T_(p,1), T_(p,0), respectively. C_r denotes Pilloni’s composite T of §7. A displayed central scalar assumes the trivial central/diamond sector with specified component identifications; otherwise retain the actual central map. No negative power of p acts on torsion coefficients. The finite sum Z₂=UZ is distinct from the diagonal U₂=−1+pX₂. Throughout the spherical coefficient formulas, Z and Z₂ use the local p-correspondence with identity component away from p, on the all-component marked cusp family. Literal rational double-coset sums are denoted Z_Δ and UZ_Δ; their tame branches are retained separately as in §5.2.
 
 For the ordinary tower, the right frame change ψ↦ψg induces the left action (g·f)(ψ)=f(ψg), and the differential frame changes by g⁻ᵗ. Use the upper unipotent U⁺ and the diagonal character χ(diag(t₁,t₂))=κ(t₁)(t₁t₂)ʳ for κ:ℤ_pˣ→Oˣ. For κ(t)=tᵈ the weight is (d+r,r). Coefficients of a U⁺-invariant function are functions on the right quotient GL₂(ℤ_p)/U⁺. The limit order is lim_m colim_n, with m the coefficient depth and n the Igusa level.
 
@@ -46,6 +46,8 @@ Use `TauCeti.stdSLRep` in TauCeti/RepresentationTheory/ClassicalGroups/Restricti
 
 Use `TauCeti.BinaryQuadraticForm` in TauCeti/NumberTheory/BinaryQuadraticForm/Basic.lean, line 94, the form ax²+bxy+cy² recorded by its coefficients over a ring, with `TauCeti.BinaryQuadraticForm.discrim` (line 146), the discriminant b²−4ac over a commutative ring, the left SL₂-action γ•f=f∘γ⁻¹ (line 194) and `TauCeti.BinaryQuadraticForm.discrim_smul` (line 203), invariance of the discriminant under that action. The determinant-normalized GL₂(ℚ) action of §1.2 is this roadmap's own: it admits rational matrices of any nonzero determinant, divides by the determinant, and acts through the transpose, so that on SL₂(ℤ) it is M·Q=(Mᵗ)⁻¹•Q.
 
+Use `HeckeRing.GL2.degree_diagCoset_prime_pow` in TauCeti/NumberTheory/HeckeRing/GL2/Degree.lean, line 54, for the full-level prime-power degree. Use `HeckeRing.GL2.doubleCoset_natDiagGL_eq_iUnion_rightCosets_of_prime` in TauCeti/NumberTheory/HeckeRing/GL2/Gamma1/CoprimeCosets.lean, line 325, and `HeckeRing.GL2.doubleCoset_natDiagGL_Gamma0_eq_iUnion_rightCosets_of_prime` in TauCeti/NumberTheory/HeckeRing/GL2/Gamma0/Diagonal/PrimeCosets.lean, line 124, for the Γ₁(N) and Γ₀(N) decompositions with their twist matrix and prime hypotheses. These use the cosets written ΓM; translate their orientation before applying the MΓ convention below. They do not give an arbitrary-subgroup covering theorem.
+
 The Tau Ceti modules imported by Suggested.lean are TauCeti.RepresentationTheory.SymmetricPower and TauCeti.RepresentationTheory.ClassicalGroups.Restriction.
 
 ### From TauCetiRoadmap.AlgebraicModularFormsAndSerreWeights
@@ -62,11 +64,15 @@ B2.1 supplies the automorphic vector bundle; B3.2–B3.4 its canonical and subca
 
 ### From TauCetiRoadmap.ModularForms
 
-Layer 2 supplies the double-coset Hecke ring with its finite left-coset decompositions, representative independence, the degree map and the elementary-divisor parametrization of double cosets, at level SL₂(ℤ) and at the congruence pairs Γ₀(N) and Γ₁(N). This roadmap's §5.2 owns the ℙ¹(𝔽_p) parametrization of the determinant-p left cosets, the binary integrality condition and any additional prime-to-p congruence-level specialization.
+Layer 2 supplies the double-coset Hecke ring with its finite left-coset decompositions, representative independence, the degree map and the elementary-divisor parametrization of double cosets, at level SL₂(ℤ) and at the congruence pairs Γ₀(N) and Γ₁(N). This roadmap's §5.2 owns the binary integrality map, its tame fibers at arbitrary congruence level, and its comparison with the local p-branches; the full-level and Γ₀/Γ₁ decompositions are imported through the pinned declarations above.
+
+### From TauCetiRoadmap.AdelicAlgebraicGroups
+
+§4.5 supplies Hecke correspondences for compact open U and finite-adelic g, with intermediate level U∩gUg⁻¹ and degree [U:U∩gUg⁻¹]. Use its finite-coset and rational adelic maps for the correspondence whose p-component is diag(p,1) and whose other components are identity, retaining all source and target components; Layer 7 supplies the integral geometric extension at p. Its general construction is imported; §5.2 proves the marked binary-lattice specialization and the comparison with a literal rational double coset.
 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
-§1.17 supplies the projective-zero count for a nonzero binary quadratic form over 𝔽_p, p odd, with discriminant r²−4mn, and the separate p+1 count for the zero form. This roadmap's §6.2 transports this theorem through its labeled-coset bijection.
+§1.17 supplies the projective-zero count for a nonzero binary quadratic form over 𝔽_p, p odd, with discriminant r²−4mn, and the separate p+1 count for the zero form. This roadmap's §6.2 applies it to local labeled branches and, with the tame fiber multiplicity, to literal rational cosets.
 
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
@@ -639,54 +645,57 @@ Formal operator identities do not by themselves show that their outputs are geom
 
 ### 5.2 Determinant-p cosets and integral neighbors
 
-Let Γ̄ be a congruence subgroup of SL₂(Z) of level prime to p. Import the double-coset ring and its finite left-coset decompositions from ModularForms Layer 2. The left cosets MΓ̄ in Γ̄ diag(p,1) Γ̄ have p+1 integral representatives M of determinant p and are parametrized by P¹(F_p). For the full group one may take diag(1,p) and [[p,a],[0,1]] for 0≤a<p, with the chosen action on Q; at general level choose compatible lifts by prime-to-p approximation. Only terms with M⁻¹·Q p-integral contribute. The associated projective line is the one on which the reduction of Q must vanish; specify it through this integrality criterion rather than an ambiguous kernel/image convention. (CG20, Lemma 8.3, internal p. 58 (858); Definition 8.19, p. 72 (872); CG20 line 2266).
+Let Γ(N)⊂Γ̄⊂SL₂(ℤ), with N≥1 and p∤N, put H=red_N(Γ̄), and write g=diag(p,1). Conjugation by g is defined modulo N. Put e=[H:H∩gHg⁻¹]. For the literal rational double coset Δ_p=Γ̄gΓ̄, its left cosets MΓ̄ have integral determinant-p representatives and degree e(p+1). The map sending MΓ̄ to the image of adj(M)ᵗ modulo p in ℙ¹(𝔽_p) is well defined, surjective, and has fibers of size e. For a p-integral binary form Q, M⁻¹·Q is p-integral exactly when Q vanishes at that point. This refines the tame-level assertion accompanying CG20 Lemma 8.3, internal p. 58 (858), CG20 line 2282–2303, by retaining its tame intersection index.
 
-p is prime and the level of Γ̄ is prime to p. The matrices are representatives of left cosets; the covariance acts on coefficients from the left.
+Separately, at the binary Levi take hyperspecial GL₂(ℤ_p) and the actual compact open tame level. Specialize the imported adelic correspondence to the element g_p with p-component diag(p,1) and identity components away from p. On the all-component marked cusp family, its binary-lattice branches are the p+1 index-p modifications of a rank-two ℤ_p-lattice. The prime-to-p Tate lattice and its marking are transported by the isogeny. In rational frames write each branch as (c,Q)←(c_b,M_b⁻¹·Q), with coefficient map ρ_d(M_b) from the target coefficient fiber to the source; c_b includes the target tame marking. One may choose integral determinant-p M_b locally in these frames. Changing such a frame changes both the index and its tame/coefficient transport. Prove that these branches give precisely the p+1-term middle contribution to the spherical GSp₄ coefficient formulas of §5.6 (CG20, Lemmas 8.3–8.4, internal p. 58; CG20 line 2273–2313; P20, §5.1.3, p. 21; P20 line 902–910).
 
-A proof route is as follows. Import the finite left-coset decomposition and elementary divisors from ModularForms Layer 2. Parametrize the left cosets of determinant p by ℙ¹(𝔽_p) here, sending MΓ̄ to the image line of the reduction modulo p of adj(M)ᵗ, which has rank one; since M⁻¹·Q is the matrix p⁻¹adj(M)Q adj(M)ᵗ, this is the point at which Q must vanish (for M=diag(p,1) it is [1:0], and M⁻¹·(m,r,n)=(m/p,r,pn)). For the stated arbitrary prime-to-p congruence subgroup, use Γ(N)⊂Γ̄ and prime-to-p approximation to lift compatible representatives; prove any level extension not covered by the imported Γ₀/Γ₁ interfaces here. Changing M to Mγ, γ∈Γ̄, cancels using a(γ⁻¹·Q)=ρ_d(γ⁻¹)a(Q); then identify the projective line through the integral-transform criterion.
+A proof route is as follows. For the literal cosets, compute [Γ̄:Γ̄∩gΓ̄g⁻¹]. The integrality condition on g⁻¹γg is the triangular condition at p. Modulo N it is red_N(γ)∈H∩gHg⁻¹. Surjectivity of SL₂(ℤ) reduction modulo Np and the Chinese remainder theorem make these conditions independent, giving e(p+1) and e elements over each projective line. Right multiplication M→Mγ leaves the image of adj(M)ᵗ unchanged. In an index-p lattice basis, M⁻¹·Q=p⁻¹adj(M)Q adj(M)ᵗ, so its only obstruction to p-integrality is Q on that line; at p=2 use the binary polynomial version. For the local correspondence, identify branches with index-p lattices and transport the tame marking through the prime-to-p isomorphism. In rational frames the literal correspondence additionally carries the tame correspondence of g modulo N, with e branches: use the intermediate tame group H∩gHg⁻¹, with its inclusion to H on the source and conjugation by g⁻¹ to H on the target. Its completion at cusps gives the comparison of the two branch families, with these maps and the induced coefficient transports, not just an equality of degrees. When e=1, g normalizes H, and after the explicit resulting tame relabeling the literal sum agrees with the local sum. Without that relabeling no equality is asserted. For e>1 retain each tame branch and its transport; no averaging by e is used.
 
 The API records the following facts.
 
-- The representative set has cardinality p+1.
-- Its cosets correspond bijectively to projective F_p-lines with the specified integral-transform criterion.
-- The coefficient sum defining Z is independent of the representative choice.
-- A prime-to-p change of level gives the compatible double-coset correspondence and coefficient transport.
-- M⁻¹·Q is p-integral iff Q vanishes at the corresponding projective point.
+- The literal degree is e(p+1), independent of the chosen N with Γ(N)⊂Γ̄ and p∤N, since it computes the intrinsic coset index.
+- Its projective integrality map has constant fiber size e; the local p-branch map is bijective with ℙ¹(𝔽_p).
+- Each local branch retains its source and target tame markings and coefficient map. The literal branches retain their additional tame transports.
+- Both finite coefficient sums are independent of representative/frame choices by covariance: ρ_d(Mγ)a(γ⁻¹·P)=ρ_d(M)a(P).
+- Prime-to-p level change is compared using the actual intermediate levels and their branches, rather than assuming an arbitrary level-change square is Cartesian.
+- Equality of literal and local sums requires e=1 and the stated tame relabeling. Equal branch counts alone do not identify untransported coefficients.
 
 **Checks.**
 
-- For p=3 and Γ̄=SL₂(Z), there are four left cosets.
-- Every coset is admissible for Q≡0 mod p.
-- At p=3, Q=x²+y² has no admissible coset, because its reduction has no projective zero.
-- At p=3 the zero form permits 4 representatives, x² permits 1 and x²+y² permits 0; these are integrality counts for the chosen orientation.
+- At p=3 and Γ̄=SL₂(ℤ), e=1, the literal and local degrees are 4, and the admissible counts for Q=0,x²,x²+y² are 4,1,0.
+- For Γ̄=Γ(5), p=3, H={1} and e=1. The literal degree is 4, but its target marking includes diag(3,1) modulo 5; forgetting that transport would erase the orientation witness of §6.3.
+- Let ℓ=⟨(1,1)⟩⊂𝔽₅² and Γ̄=Γ(7)∩red₅⁻¹Stab(ℓ). At p=3, N=35, |Stab(ℓ)|=20 and |Stab(ℓ)∩Stab(⟨(3,1)⟩)|=4, so e=5. The p-index is 24/6=4 and the literal degree is 20. The admissible literal counts for Q=0,x²,x²+y² are 20,5,0; the local counts are 4,1,0. Changing representatives cannot turn a five-to-one map into a bijection.
+- At p=3, let Γ̄=Γ(5)∩red₇⁻¹H with H generated by [[0,−1],[1,−1]] modulo 7. Then |H|=3 and H∩diag(3,1)Hdiag(3,1)⁻¹={1}, so e=3 and the literal degree is 12. The local degree is 4; modulo 3 these constants are 0 and 1. Thus even scalar averaging by e can be undefined on torsion coefficients.
+- For M=diag(p,1) and M=diag(1,p), the projective points are [1:0] and [0:1], and the inverse transforms of (m,r,n) are (m/p,r,pn) and (pm,r,n/p). At p=3 and Q=x² these are x²/3 and 3x²: only the second is integral, fixing the orientation.
+- At p=2 the full-level branch count is 3. For Q=0,x²,x²+y² the counts are 3,1,1, directly from the binary polynomials on ℙ¹(𝔽₂); the odd-prime discriminant formula is not used.
 
-*Needs:* §5.1; ModularForms Layer 2.
+*Needs:* §5.1; ModularForms Layer 2; AdelicAlgebraicGroups §4.5; AutomorphicBundles §B5.19.
 
 ### 5.3 The formal U, Z and V operators
 
-For formal series define (UF)(Q)=a(F,pQ), (VF)(Q)=a(F,Q/p) with zero extension, and (ZF)(Q)=Σ_M ρ_d(M)a(F,M⁻¹·Q), summed over the determinant-p representatives. Define Z₂=UZ, so (Z₂F)(Q)=Σ_Mρ_d(M)a(F,M⁻¹·pQ). These operators preserve integral coefficient modules and covariance, with the all-component Hecke transport attached when the level has multiple components. They satisfy UV=1, Z₂=UZ, and UZ₂=Z₂U. No identity UZ=ZU is asserted. (CG20, Lemmas 8.3–8.4 and the display after Lemma 8.4, internal pp. 58–59 (858–859); CG20 line 2266).
+For formal series define (UF)(Q)=a(F,pQ), (VF)(Q)=a(F,Q/p) with zero extension, and (ZF)(Q)=Σ_M ρ_d(M)a(F,M⁻¹·Q), summed over the local p-branches of §5.2, with a(F,M⁻¹·Q) meaning the coefficient at the transported target cusp c_b when the source is c. Define Z₂=UZ, so (Z₂F)(Q)=Σ_Mρ_d(M)a(F,M⁻¹·pQ). These operators preserve integral coefficient modules and covariance on the all-component marked cusp family. Define the separate literal operator Z_Δ by the same summand over all e(p+1) cosets of Δ_p, keeping its tame transports; it is not substituted for Z. They satisfy UV=1, Z₂=UZ, and UZ₂=Z₂U. No identity UZ=ZU is asserted. (CG20, Lemmas 8.3–8.4 and the display after Lemma 8.4, internal pp. 58–59 (858–859); CG20 line 2273–2313, 2346).
 
 The tame denominator bound can be enlarged within the same fixed level lattice when required by its marked cusp; p-denominators remain forbidden. The coefficients carry the symmetric-power matrix action ρ_d.
 
-A proof route is as follows. Define U and V by reindexing and Z by its finite sum. Check covariance by permuting cosets, then prove the identities coefficientwise; scalar multiplication of Q commutes with the normalized matrix action. For UZ₂=Z₂U both coefficient formulas evaluate a(F,p²M⁻¹·Q), with the same zero-extension convention.
+A proof route is as follows. Define U and V by reindexing and Z by its finite sum. Check covariance by permuting marked local branches, then prove the identities coefficientwise; scalar multiplication of Q commutes with the normalized matrix action. For UZ₂=Z₂U both coefficient formulas evaluate a(F,p²M⁻¹·Q), with the same zero-extension convention.
 
 The API records the following facts.
 
 - a(UF,Q)=a(F,pQ).
 - a(VF,Q)=a(F,Q/p), with inadmissible indices zero.
-- a(ZF,Q)=Σ_Mρ_d(M)a(F,M⁻¹·Q).
-- a(Z₂F,Q)=Σ_Mρ_d(M)a(F,M⁻¹·pQ).
+- a_c(ZF,Q)=Σ_bρ_d(M_b)a_(c_b)(F,M_b⁻¹·Q), with exactly p+1 local branches.
+- a_c(Z₂F,Q)=Σ_bρ_d(M_b)a_(c_b)(F,M_b⁻¹·pQ), with the same branch transports.
 - UV=1 on the coefficient module; VU is the projection retaining indices divisible by p.
-- UZ₂=Z₂U; integrality is preserved by all four operators.
+- UZ₂=Z₂U; integrality is preserved by all four operators. The literal sum separately satisfies U(UZ_Δ)=(UZ_Δ)U, but its branch multiplicity remains e.
 
 **Checks.**
 
 - At every Q, a(UVF,Q)=a(F,Q).
 - For p-primitive Q, a(VUF,Q)=0, even if a(F,Q)≠0.
-- For d=0, a(ZF,n,r,m)=a(F,pn,r,m/p)+Σ_(0≤a<p)a(F,(n+ar+a²m)/p,r+2ma,pm), with nonintegral terms zero.
-- For the scalar constant series at p=3, U and V have constant value 1 while Z and Z₂ have value 4. A primitive index with coefficient 1 is killed by VU, whereas UV retains it.
+- For d=0 at full level, a(ZF,n,r,m)=a(F,pn,r,m/p)+Σ_(0≤a<p)a(F,(n+ar+a²m)/p,r+2ma,pm), with nonintegral terms zero.
+- For the scalar constant series at p=3, U and V have constant value 1 while Z and Z₂ have value 4. Here the scalar constant series has value 1 at Q=0 on every marked component. For the level-35 subgroup of §5.2, Z_Δ and UZ_Δ instead have constant value 20. A primitive index with coefficient 1 is killed by VU, whereas UV retains it.
 
-For d=0 recover the two scalar formulas recorded in the worked examples. In CG20’s formal spherical congruences, U_(p,2) denotes Z₂. The marked Klingen operator of §9.4 is defined by its own normalized trace; U₂ denotes the diagonal operator of §5.4.
+For d=0 at full level recover the scalar formulas of CG20 Lemma 8.4; at general tame level retain each target cusp and marking in those formulas. In CG20’s formal spherical congruences, U_(p,2) denotes Z₂. The marked Klingen operator of §9.4 is defined by its own normalized trace; U₂ denotes the diagonal operator of §5.4.
 
 *Needs:* §5.1; §5.2.
 
@@ -737,11 +746,11 @@ The relation UX₂=0 need not hold over O. At a p-primitive nonsingular index th
 
 ### 5.6 Rational Hecke decomposition and residual V₂
 
-Fix j≥k≥2, d=j−k, and the CG20 similitude^(−3) normalization of the rational spherical double cosets T=[diag(1,1,p,p)], T₂=[diag(1,p,p,p²)] and S=[pI₄]. In the trivial central/diamond sector with its chosen component identifications, S=p^(j+k−6). Their coefficient operators satisfy T=U+p^(k−2)Z+p^(j+k−3)V and T₂=p^(j+k−6)U₂+p^(k−3)Z₂+p^(j+2k−6)V₂. Define the rational residual V₂ by the second equality, using the rational T₂ and the other defined terms. The rational residual V₂ is the scalar extension of a finite O-linear coefficient operator, natural in the coefficient module: for every O-module M there is an O-linear operator V₂^M on formal series with coefficients in Sym^d(O²)⊗M whose coefficient at Q is a finite sum, over the left cosets of the residual determinant-p² part of the double coset, of integral symmetric-power transports of coefficients of F at p-integral transformed indices (zero at inadmissible ones), with integral multiplicities; V₂^M is natural in M, and V₂^O⊗K is the rational residual V₂. At a disconnected adelic level retain the central and cusp transport actions; the displayed scalar S formula requires the stated trivial sector. (CG20, §5.5 and Remark 5.10, internal pp. 33–34 (833–834); Lemmas 8.3–8.4, p. 58 (858), where the integrality of V₂ is stated and its coset formula is not printed; CG20 line 1315, 2306–2313; P20, §5.1.3, p. 21; §14.9.2, p. 104; P20 line 900).
+Fix j≥k≥2, d=j−k, and the CG20 similitude^(−3) normalization of the rational spherical double cosets, supported at p with identity tame component, T=[diag(1,1,p,p)], T₂=[diag(1,p,p,p²)] and S=[pI₄]. In the trivial central/diamond sector with its chosen component identifications, S=p^(j+k−6). Using the local Z and Z₂ of §§5.2–5.3 with their tame marking transports, their coefficient operators satisfy T=U+p^(k−2)Z+p^(j+k−3)V and T₂=p^(j+k−6)U₂+p^(k−3)Z₂+p^(j+2k−6)V₂. Define the rational residual V₂ by the second equality, using the rational T₂ and the other defined terms. The rational residual V₂ is the scalar extension of a finite O-linear coefficient operator, natural in the coefficient module: for every O-module M there is an O-linear operator V₂^M on formal series with coefficients in Sym^d(O²)⊗M whose coefficient at Q is a finite sum, over the left cosets of the residual determinant-p² part of the double coset, of integral symmetric-power transports of coefficients of F at p-integral transformed indices (zero at inadmissible ones), with integral multiplicities; V₂^M is natural in M, and V₂^O⊗K is the rational residual V₂. At a disconnected adelic level retain the central and cusp transport actions; the displayed scalar S formula requires the stated trivial sector. (CG20, §5.5 and Remark 5.10, internal pp. 33–34 (833–834); Lemmas 8.3–8.4, p. 58 (858), where the integrality of V₂ is stated and its coset formula is not printed; CG20 line 1315, 2306–2313; P20, §5.1.3, p. 21; §14.9.2, p. 104; P20 line 900).
 
 p is odd, as required for the discriminant and X₂ interface. Negative p-exponents in these rational identities are interpreted only after inverting p. The second equality is the characterization of V₂, not a definition of integral T₂ on torsion forms.
 
-A proof route is as follows. Use the imported prime-to-p/rational automorphic-bundle Hecke pullback-and-trace convention with similitude^(−3). Compute the rational double-coset action at the split cusp, sorting the left cosets of the double coset of diag(1,p,p,p²) in Siegel-parabolic form by the elementary divisors of their Levi block, and group terms as the three displayed summands. For the residual determinant-p² cosets, sum the exponential factors over the unipotent parts to obtain the integrality condition on the transformed index and the multiplicity, and check that the resulting p-power is absorbed by p^(j+2k−6); the formula so obtained is natural in M because it only uses ρ_d of integral matrices, reindexing and integer multiples. Lattice preservation over O alone does not give a natural transformation of all coefficient modules.
+A proof route is as follows. Use the imported prime-to-p/rational automorphic-bundle Hecke pullback-and-trace convention with similitude^(−3). Compute the rational double-coset action at the split cusp, sorting the local p-cosets of diag(1,p,p,p²), with identity tame component, in Siegel-parabolic form by the elementary divisors of their Levi block, and group terms as the three displayed summands. For the residual determinant-p² cosets, sum the exponential factors over the unipotent parts to obtain the integrality condition on the transformed index and the multiplicity, and check that the resulting p-power is absorbed by p^(j+2k−6); the formula so obtained is natural in M because it only uses ρ_d of integral matrices, reindexing and integer multiples. The cusp comparison must identify the p+1 local middle branches of §5.2, not the e(p+1) cosets of a literal rational Γ̄gΓ̄. Lattice preservation over O alone does not give a natural transformation of all coefficient modules.
 
 The API records the following facts.
 
@@ -749,7 +758,7 @@ The API records the following facts.
 - T₂=p^(j+k−6)U₂+p^(k−3)Z₂+p^(j+2k−6)V₂ on rational expansions.
 - The second identity uniquely specifies V₂ after p is inverted.
 - For every O-module M the residual coset formula defines V₂^M on series with coefficients in Sym^d(O²)⊗M; an O-linear map M→N intertwines V₂^M and V₂^N, and V₂^O⊗K is the characterized V₂.
-- A nontrivial central/diamond action is retained rather than replaced by its scalar trivial-character specialization.
+- A nontrivial central/diamond action is retained rather than replaced by its scalar trivial-character specialization. The local-to-cusp comparison retains each middle and residual branch’s target tame marking.
 
 **Checks.**
 
@@ -759,15 +768,15 @@ The API records the following facts.
 - At p=3,(j,k)=(3,3), the four coefficients in T₂=−1+pX₂+Z₂+p³V₂ are −1,3,1,27; at (2,2) the central scalar is 1/9.
 - On K/O-coefficients the class 1/p+O is killed by p. V₂^(K/O) is given by the coset formula, whereas solving the rational characterization for V₂ would divide by p^(j+2k−6), which is 27 at (j,k)=(3,3), p=3, and is not defined on this class.
 
-The integral normalized output constructed in Layer 7 is T and Q₂, not unnormalized T₂ in all weights.
+For the level-35 subgroup of §5.2 at p=3, the middle local constant sum is 4 and the literal one is 20; replacing Z by Z_Δ changes the rational T formula even at scalar weight (2,2). The integral normalized output constructed in Layer 7 is T and Q₂, not unnormalized T₂ in all weights.
 
 *Needs:* §5.3; §5.4; AutomorphicBundles §§B5.10–B5.11, B5.19.
 
 ### 5.7 Integral corrected Q₂ operator
 
-For j≥k≥2 in the normalization just fixed, cancel negative powers in (pT₂+(p+p³)S)p^(2−k) before reducing coefficients. The result is the integral formal operator Q₂=p^(j−2)X₂+Z₂+p^(j+k−3)V₂+p^(j−1)·1. Thus Q₂≡Z₂ mod p except at (j,k)=(2,2), where Q₂≡Z₂+X₂. The extra identity term comes from p³S and is retained in the exact integral identity. In particular at (3,3) Q₂≡Z₂ even though T₂≡Z₂−1. (CG20, Definition at start of §8.4, internal p. 59 (859); Lemma 8.12, p. 64 (864); CG20 line 2315).
+For j≥k≥2 in the normalization just fixed, cancel negative powers in (pT₂+(p+p³)S)p^(2−k) before reducing coefficients. The result is the integral formal operator Q₂=p^(j−2)X₂+Z₂+p^(j+k−3)V₂+p^(j−1)·1. Thus Q₂≡Z₂ mod p except at (j,k)=(2,2), where Q₂≡Z₂+X₂. The extra identity term comes from p³S and is retained in the exact integral identity. In particular at (3,3) Q₂≡Z₂ even though T₂≡Z₂−1. (CG20, Definition at start of §8.4, internal p. 59 (859); Lemma 8.12, p. 64 (864); CG20 line 2363, 2501–2521).
 
-The displayed scalar expression is in the trivial central/diamond sector; retain central transport on other sectors. Use the integral natural coefficient operator supplied by §5.6, with its explicit residual finite-sum formula.
+Here Z₂ and V₂ are the local spherical coefficient operators with identity tame component and their transported target markings, as in §§5.2–5.6. The displayed scalar expression is in the trivial central/diamond sector; retain central transport on other sectors. Use the integral natural coefficient operator supplied by §5.6, with its explicit residual finite-sum formula.
 
 A proof route is as follows. Substitute the T₂ decomposition and S=p^(j+k−6). The U₂ and pS terms combine as p^(j−3)(U₂+1)=p^(j−2)X₂. The p³S term becomes p^(j−1), and the remaining coefficients have nonnegative exponents. Reduce only after this cancellation.
 
@@ -796,13 +805,13 @@ At (2,2), Q₂=X₂+Z₂+pV₂+p, and at (3,3), Q₂=pX₂+Z₂+p³V₂+p². At 
 
 ### Dependencies
 
-Layer 1; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; ModularForms Layer 2; Mathlib `legendreSym`; AutomorphicBundles §§B5.10–B5.11, B5.19.
+Layer 1; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; ModularForms Layer 2; AdelicAlgebraicGroups §4.5; Mathlib `legendreSym`; AutomorphicBundles §§B5.10–B5.11, B5.19.
 
 ## Layer 6: Binary quadratic neighbors
 
 ### 6.1 Binary-form neighbor multiset
 
-Fix the oriented double coset Δ_p=Γ̄ diag(p,1)Γ̄ from Layer 5. For a p-integral index Q, let ℱ_Δ([Q]) (abbreviated ℱ([Q])) be the multiset of Γ̄-equivalence classes [M⁻¹·Q] contributed by the determinant-p left cosets whose transform is p-integral. Count each contributing coset once, including when different cosets give the same class. The construction depends only on [Q]. Its coefficient realization retains, for each contributing M and its transformed representative P, the intertwiner ρ_d(M): a(ZF,Q)=Σ_Mρ_d(M)a(F,P). It is not an unweighted sum of abstract orbit coefficients. (CG20, Definition 8.19 and the coefficient identity following it, internal p. 72 (872); CG20 line 2770).
+Fix the oriented double coset Δ_p=Γ̄ diag(p,1)Γ̄ from Layer 5. For a p-integral index Q, let ℱ_Δ([Q]) (abbreviated ℱ([Q])) be the multiset of Γ̄-equivalence classes [M⁻¹·Q] contributed by the determinant-p left cosets whose transform is p-integral. Count each contributing coset once, including when different cosets give the same class. The construction depends only on [Q]. Its literal coefficient realization retains, for each contributing M and its transformed representative P, the intertwiner ρ_d(M): a(Z_Δ F,Q)=Σ_Mρ_d(M)a(F,P). Separately define ℱ_p([c,Q]) from the local p-branches of §5.2; a neighbor is the marked pair [c_b,M_b⁻¹·Q], modulo the stabilizer of that target marking. Its coefficient realization is the local Z of §5.3. The branch identification with the cusp correspondence is part of §5.2; it is not a bijection from the literal cosets when e>1. It is not an unweighted sum of abstract orbit coefficients. (CG20, Definition 8.19 and the coefficient identity following it, internal p. 72 (872); CG20 line 2773–2792).
 
 Γ̄, indices and zero extension are as in Layer 5. For statements about positive discriminant classes use Δ as defined in Layer 1; semidefinite Fourier indices have Δ≤0.
 
@@ -811,54 +820,56 @@ A proof route is as follows. Use the determinant-p coset parametrization and cov
 The API records the following facts.
 
 - Equivalent Q give the same multiset of classes by permutation of left cosets.
-- Its multiset cardinality counts all admissible projective points.
-- A labeled occurrence consists of a determinant-p M and P=M⁻¹·Q, not just an unlabelled orbit.
-- Z is the sum of ρ_d(M)a(F,P) over those occurrences.
+- The local multiset cardinality counts admissible projective points; the literal multiset cardinality counts e occurrences over each such point.
+- A literal labeled occurrence consists of a determinant-p M and P=M⁻¹·Q; a local occurrence also records the transported target marking c_b.
+- Z_Δ sums the literal occurrences with ρ_d(M); Z sums the local occurrences with their coefficient and target-cusp transports.
 - Every neighbor occurrence has Δ(P)=Δ(Q).
 
 **Checks.**
 
 - For p=5,Q=x²+y²,Γ̄=SL₂(Z), the two isotropic projective points give the same discriminant −4 class twice.
-- If Q≡0 mod p, every one of the p+1 cosets contributes.
+- If Q≡0 mod p, all e(p+1) literal cosets and all p+1 local branches contribute. At the level-35 subgroup with p=3, these cardinalities are 20 and 4.
 - For d=1 and M=diag(p,1), a contributing coefficient x is weighted to px, whereas a coefficient y is weighted to y. Replacing ρ₁(M) by the scalar 1 loses the first value and cannot define the same neighbor operator.
 - At Γ̄=Γ(5), p=3 and Q=x², each M in Δ_p is diag(3,1) modulo 5, so its integral neighbor is 2x² modulo 5. A second forward neighbor is 4x² modulo 5, not Q; the reverse double coset is necessary.
-- At p=5, the two roots [2:1],[3:1] of x²+y² give multiset cardinality 2 even if the support has cardinality 1. The zero form has multiset cardinality 6.
+- At p=5 and full level, the two roots [2:1],[3:1] of x²+y² give multiset cardinality 2 even if the support has cardinality 1. The zero form has multiset cardinality 6.
 
-Equal classes contributed by two different projective points are not deduplicated.
+Equal classes contributed by different projective points, or different tame branches over the same point, are not deduplicated. For the level-35 subgroup at p=3 and Q=x², the literal multiset has 5 occurrences over its one root; the local multiset has 1.
 
 *Needs:* §1.2; §5.2; §5.3.
 
 ### 6.2 Projective-zero count of neighbors
 
-If Q is p-primitive and p odd, |ℱ([Q])|=1+legendreSym(p,Δ(Q)), giving 0,1,2 according as the discriminant is nonsquare, zero or a nonzero square modulo p. If Q≡0 mod p the cardinality is p+1. The bijection is between labeled admissible determinant-p cosets and zeros of Q in P¹(F_p), so the count is a multiset count. (CG20, Lemma 8.21 and preceding paragraph, internal pp. 72–73 (872–873); CG20 line 2770).
+For p-integral Q and odd p, the local multiset ℱ_p([c,Q]) has cardinality 1+legendreSym(p,Δ(Q)) if Q is p-primitive, and p+1 if Q≡0 mod p. The literal multiset ℱ_Δ([Q]) has cardinality e(1+legendreSym(p,Δ(Q))) in the primitive case and e(p+1) in the zero-reduction case. These are occurrence counts, not counts of distinct target classes. At e=1 they recover CG20 Lemma 8.21 and its preceding paragraph, internal pp. 72–73 (872–873), CG20 line 2778–2815; the general literal formula uses the fiber calculation of §5.2.
 
-Q is p-integral and p odd; the primitive branch requires the nonzero reduction of Q.
-
-A proof route is as follows. Use the coset integrality/projective-zero equivalence. Apply the imported binary-quadratic projective-zero theorem; the zero form is its separate p+1-point case.
+A proof route is as follows. Apply ClassicalArithmeticCompletion §1.17 to Q on ℙ¹(𝔽_p), treating the identically zero form separately. The local branch map is a bijection, while each projective point has e preimages for the literal map. Thus the primitive local counts 0,1,2 become the literal counts 0,e,2e. Keep every associated coefficient and tame transport in the operator realization; a cardinality formula does not identify these maps.
 
 **Checks.**
 
-- At p=3, x²+y² has 0 projective zeros, x² has 1 and xy has 2; the three Legendre values are −1,0,1.
+- At p=3, x²+y² has 0 projective zeros, x² has 1 and xy has 2; the three Legendre values are −1,0,1. These are local neighbor counts, and literal counts at full level.
 - The zero reduction at p=3 has all 4 projective points as zeros; substituting the primitive formula would incorrectly give 1.
-- At p=5, x²+y² has zeros [2:1] and [3:1], counted twice even when their neighbor classes agree.
+- At p=5 and full level, x²+y² has zeros [2:1] and [3:1], counted twice even when their neighbor classes agree.
+- At the level-35 subgroup of §5.2 with p=3, the literal counts for 0,x²,x²+y² are 20,5,0, while the local counts are 4,1,0. The form xy has 10 literal occurrences and 2 local ones.
 
-At p=3 the positive form x²+y² has no neighbor. For x² the count is one, despite Δ=0.
+At p=3 the positive form x²+y² has no neighbor in either correspondence. For x² the local count is one despite Δ=0; its literal count is e.
 
 *Needs:* §6.1; ClassicalArithmeticCompletion §1.17; Mathlib `legendreSym`.
 
 ### 6.3 Reciprocity of neighbor classes
 
-Let Δ_p^∨={pM⁻¹:M∈Δ_p}. If [P] occurs in ℱ_Δ([Q]), then [Q] occurs in ℱ_(Δ^∨)([P]). For Q=M·P the reverse action uses pM⁻¹, an integral determinant-p matrix. If Δ_p^∨=Δ_p, in particular for Γ̄=SL₂(Z), this is the symmetric relation [P]∈ℱ([Q]) iff [Q]∈ℱ([P]). At general tame level keep the reverse correspondence and cusp/diamond transport; prime-to-p level alone does not imply equality of the two double cosets. No inverse of ρ_d(M) on torsion coefficients is asserted. (CG20, Lemma 8.20 and proof, internal p. 72 (872); CG20 line 2770).
+Let Δ_p^∨={pM⁻¹:M∈Δ_p}. If [P] occurs in ℱ_Δ([Q]), then [Q] occurs in ℱ_(Δ^∨)([P]). For Q=M·P the reverse action uses pM⁻¹, an integral determinant-p matrix. If Δ_p^∨=Δ_p, in particular for Γ̄=SL₂(Z), this is the symmetric relation [P]∈ℱ([Q]) iff [Q]∈ℱ([P]). At general tame level keep the reverse correspondence and cusp/diamond transport; prime-to-p level alone does not imply equality of the two double cosets. No inverse of ρ_d(M) on torsion coefficients is asserted. (CG20, Lemma 8.20 and proof, internal p. 72 (872); CG20 line 2793–2803).
+
+For the local marked multiset use the dual lattice/isogeny branch, with matrix pM_b⁻¹. Its source is (c_b,P) and its target is (c^(p),Q), where c^(p) retains the central transport induced by the composite [p]; on the tame marking η this is η↦[p]η. The normalized action of pI₂ fixes Q, but the marking is not silently identified with c. Its source and target stabilizers need not be the same subgroup. Prove oriented reciprocity by Q=M_b·P and (pM_b⁻¹)·Q=P, and use the specified central/diamond relabeling when comparing c^(p) with c. Identify this reverse correspondence with a forward one only after proving that identification. This is reciprocity of occurrences, not an inverse coefficient map.
 
 Fix the equivalence classes and oriented double cosets of Layers 5–6. The same-coset equivalence requires equality of the reverse and forward double cosets, or an explicitly proved diamond/cusp identification; use oriented reciprocity without that extra hypothesis.
 
-A proof route is as follows. Conjugate within Γ̄ to an index-p lattice normal form. Use (pM⁻¹)·Q=P, since the normalized action of scalar pI is identity on quadratic forms. The reverse matrix belongs to Δ_p^∨ by definition. Identify it with the forward double coset only under the stated self-duality hypothesis; prime-to-p congruence lifting does not supply that identification.
+A proof route is as follows. Conjugate within Γ̄ to an index-p lattice normal form. Use (pM⁻¹)·Q=P, since the normalized action of scalar pI is identity on quadratic forms. The reverse matrix belongs to Δ_p^∨ by definition. For local branches perform the same calculation in the source and target lattice frames and carry the adjugate branch’s marking transport. Identify a reverse correspondence with the forward one only under the stated self-duality hypothesis; prime-to-p congruence lifting does not supply that identification.
 
 **Checks.**
 
 - For M=diag(3,1), its adjugate is diag(1,3), and their product is 3I; the normalized action of 3I on x² is x².
 - At Γ(5),p=3 the forward coefficients change x² to 2x² and then to 4x² modulo 5; the reverse changes 2x² to x².
-- For d=1, the coefficient map diag(3,1) sends x to 3x=0 in characteristic 3, so reciprocity cannot assert an inverse coefficient map.
+- For d=1, the coefficient map diag(3,1) sends x to 3x=0 in characteristic 3, so reciprocity cannot assert an inverse coefficient map. The two matrix transports compose to ρ₁(3I₂)=3·1=0 modulo 3, while the index transport is identity; on a full tame marking modulo 5 the composite is multiplication by 3, rather than 1.
+- For the level-35 subgroup at p=3 the forward and reverse tame indices are both 20/4=5. There are 5 literal occurrences over the unique root of x², each reversed with its own tame transport; the local count is 1. Matching only the root loses four occurrences.
 
 No inverse of a determinant-p coefficient matrix is used modulo p.
 
@@ -866,7 +877,7 @@ No inverse of a determinant-p coefficient matrix is used modulo p.
 
 ### Examples
 
-For p=5, Q=x²+y² has roots [2:1],[3:1], yielding two labeled neighbor occurrences. At Γ(5),p=3, the two successive forward coefficient reductions are 2x² and 4x², so reciprocity uses the adjugate orientation (CG20 Definition 8.19 and Lemmas 8.20–8.21, pp. 72–73; CG20 line 2773).
+For p=5 at full level, Q=x²+y² has roots [2:1],[3:1], yielding two labeled neighbor occurrences. At Γ(5),p=3, e=1 and the two successive literal forward coefficient reductions are 2x² and 4x², so reciprocity uses the adjugate orientation (CG20 Definition 8.19 and Lemmas 8.20–8.21, pp. 72–73; CG20 line 2773).
 
 ### Dependencies
 
@@ -933,7 +944,7 @@ The API records the following facts.
 - For an étale kernel all p³ divisibility comes from the trace, not the differential.
 - At p=3,d=0,r=2 the normalized divisibilities are 3⁴/3³=3, 3²·3/3³=1, and 3³/3³=1; all are integral before reduction.
 
-The formula at weight (d+r,r) agrees with U+p^(r−2)Z+p^(d+2r−3)V. No analogous RΓ construction is claimed for the nonminuscule β₂ generator.
+The formula at weight (d+r,r) agrees with U+p^(r−2)Z+p^(d+2r−3)V, where Z uses the local p-correspondence with identity tame component and the transported cusp markings of §5.2. No analogous RΓ construction is claimed for the nonminuscule β₂ generator.
 
 *Needs:* §7.2; §7.1; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); ShimuraCompactifications §§C3.8–C3.9.
 
@@ -986,13 +997,13 @@ The difference C_r−Q₂ is (1+p²)p^(j−2), including a unit term when j=2. I
 
 For j≥k≥2, T and Q₂ act O-linearly on M_(j,k)(O/ϖ^m), S_(j,k)(O/ϖ^m), and their K/O versions. T is the restriction of the integral minuscule correspondence, extended by Hartogs. Q₂ is the integral paramodular composite C_k minus (1+p²)p^(j−2), for every p. For odd p its rational comparison and all-component expansion identify T and Q₂ with the Layer 5 operators, whose discriminant term X₂ is defined only for odd p. The actions commute with coefficient transitions, tame deck transformations, prime-to-p Hecke operators and common fan refinements. Rationally they have the prescribed spherical normalization. No action of bare T₂ on these torsion spaces is inferred. (CG20, Lemma 8.8, internal p. 60 (860); Lemma 8.12, p. 64 (864); CG20 line 2364; P20, §7, pp. 37–40; P20 line 1638).
 
-Use the trivial central/diamond sector for the scalar Layer 5 expression, or retain and verify the full central transport operator before generalizing. The integral correspondence, including gap:lci-fundamental-class, is constructed before coefficient reduction.
+Use the trivial central/diamond sector for the scalar Layer 5 expression, or retain and verify the full central transport operator before generalizing. The spherical adelic elements have identity tame component as in §5.6. The integral correspondence, including gap:lci-fundamental-class, is constructed before coefficient reduction.
 
-A proof route is as follows. Construct T on the formal open using its normalized integral sheaf correspondence, then transport H⁰ through Hartogs. Construct Q₂ by the paramodular composite and integral central subtraction. Take derived tensor with O/ϖ^m; the derived projection formula identifies the cohomology of the coefficient sheaf because the models and bundles are O-flat. Check the rational coefficient formula on every component. The integral correspondence gives the finite-level map itself, rather than a claim that every torsion form lifts. Take the filtered colimit along O/ϖ^m→K/O and use uniqueness plus disjoint-support correspondence composition to prove commutation.
+A proof route is as follows. Construct T on the formal open using its normalized integral sheaf correspondence, then transport H⁰ through Hartogs. Construct Q₂ by the paramodular composite and integral central subtraction. Take derived tensor with O/ϖ^m; the derived projection formula identifies the cohomology of the coefficient sheaf because the models and bundles are O-flat. Check the rational coefficient formula on every component by the local branch comparison of §5.2: the middle term has p+1 branches with identity tame component, even when the literal rational Γ̄gΓ̄ has e(p+1) cosets. The integral correspondence gives the finite-level map itself, rather than a claim that every torsion form lifts. Take the filtered colimit along O/ϖ^m→K/O and use uniqueness plus disjoint-support correspondence composition to prove commutation.
 
 The API records the following facts.
 
-- For odd p their expansions are exactly the Layer 5 formulas with every component transport included.
+- For odd p their expansions are exactly the local spherical Layer 5 formulas with every component and tame-marking transport included; no literal rational sum is substituted when e>1.
 - The all-component expansion principle determines each operator uniquely.
 - The actions commute with reduction and the maps to K/O.
 - They commute with prime-to-p Hecke actions, tame U actions and deck transformations.
@@ -1003,17 +1014,17 @@ The API records the following facts.
 - Applying the integral operator then reducing mod ϖ gives the same coefficients as the characteristic-p formula.
 - Testing only an untransported cusp on one component does not determine a global Hecke action.
 - In weight (2,2), the Q₂ coefficient has X₂+Z₂ modulo p, so replacing Q₂ by Z₂ fails.
-- At p=3,(j,k)=(2,2), the formal constant coefficient has X₂=3 and Z₂=4, hence Q₂≡1, while a primitive anisotropic index tests X₂≡−1. Coefficient reduction sends the integral operator values to the same residues.
+- At p=3,(j,k)=(2,2), the formal constant coefficient has X₂=3 and Z₂=4, hence Q₂≡1, while a primitive anisotropic index tests X₂≡−1. At the level-35 subgroup of §5.2 the same local Z₂ value is 4; the literal UZ_Δ value is 20≡2 mod 3 and would give the wrong constant Q₂ residue 2. Coefficient reduction sends the integral local operator values to the same residues.
 
 A torsion form need not lift to characteristic zero; the proof works by reduction of an integral derived correspondence. The exact central subtraction agrees at weights (2,2) and (3,3). At p=2 the integral operators exist, but the expansion comparison with Layer 5 is not asserted, since X₂ needs the Legendre symbol at an odd prime.
 
-*Needs:* §7.3; §7.5; §7.4; §1.4; §5.7; AutomorphicBundles §§B5.10–B5.11, B5.19.
+*Needs:* §7.3; §7.5; §7.4; §1.4; §5.2; §5.7; AutomorphicBundles §§B5.10–B5.11, B5.19.
 
 ### 7.7 Hasse equivariance at p
 
 Let p be odd. In characteristic p, multiplication by h commutes with T and Q₂ for weights j≥k≥3. The source and target symmetric degrees agree, and h has expansion 1. T reduces to U in both weights; Q₂ reduces to Z₂ in both, including weight (3,3). For k=2, T initially reduces to U+Z and Q₂ has the additional X₂ term at (2,2), so no such unrestricted commutation claim is made. (CG20, Lemma 6.2(2), internal p. 36 (836); Lemma 8.12, p. 64 (864); CG20 line 1438).
 
-Operators are those of the global H⁰ action, with matching cusp/component transports.
+Operators are those of the global H⁰ action and the local p-branch formulas, with matching tame-marking and cusp/component transports. Hasse expansion 1 is used at every transported target cusp.
 
 A proof route is as follows. Use the exact Layer 5 formulas to reduce modulo p before comparing the two weights. At (3,3), retain the cancellation in Q₂; bare T₂ has an extra −1 and does not justify the conclusion. Apply the all-component expansion principle.
 
@@ -1022,6 +1033,7 @@ A proof route is as follows. Use the exact Layer 5 formulas to reduce modulo p b
 - For p=5 and weight (3,3), T reduces to U and Q₂ to Z₂; after the Hasse shift to (7,7) the same two values occur.
 - At weight (2,2), T reduces to U+Z while the shifted T reduces to U; on the constant formal scalar series Z has value p+1≡1, detecting the difference.
 - At (3,3), bare T₂ reduces to Z₂−1 while Q₂ reduces to Z₂; the constant correction cannot be omitted.
+- At p=3 and the level-35 subgroup of §5.2, the local Z₂ constant is 4≡1 before and after the Hasse shift from (3,3) to (5,5). The literal UZ_Δ constant is 20≡2 and is not the spherical coefficient formula in either weight.
 
 The proof explicitly includes (3,3). No p-adic lifting of theta is used in this comparison.
 
@@ -1302,7 +1314,7 @@ Define the degree-zero marked operator U_(p,2)^ord on V_(κ,r) by the integral n
 
 Its all-frame expansion is obtained by pulling the cusp expansion along t₂, applying φ_norm, and taking the normalized t₁-trace on the marked cusp correspondence. Explicitly, for each marked cusp c, `Exp_c(U_(p,2)^ord f) = (p^(-3) Tr_(t1,c))(phi_(norm,c)(t2,c* Exp(f)))`, where the trace includes the finite branch degrees and the induced coefficient, index and cusp transports. This expansion preserves the integral lattice and hence, by §9.2, the integral function module; it commutes with coefficient reduction and the tower transitions. Its indexing retains L∩H_m=0 throughout. At algebraic weight it intertwines the evaluation of §9.3, pulled back to the multiplicative Klingen component, with p^(3−r)U_(Kli(p),1) in Layer 5’s similitude^(−3) normalization (P20, §10, p. 57; P20 line 2616–2617; §13.3.1, p. 89; P20 line 4094–4099).
 
-A proof route is as follows. Base-change the compactified factorization to the marked tower. Construct its normalized trace using the ordinary Serre–Tate equations and the boundary fundamental classes of §7.5. Normalize the coefficient pullback on the character lattice before tensoring, transport the marked frames, and compute expansions by that same pullback–trace. Compare the algebraic specialization using P20 §10.4, and pass to the coefficient and tower limits of §9.1. Integral trace and coefficient maps, followed by saturation, give lattice preservation. A comparison with the full spherical formal sum Z₂ after forgetting or summing markings requires a separate identity with its marking multiplicities.
+A proof route is as follows. Base-change the compactified factorization to the marked tower. Construct its normalized trace using the ordinary Serre–Tate equations and the boundary fundamental classes of §7.5. Normalize the coefficient pullback on the character lattice before tensoring, transport the marked frames, and compute expansions by that same pullback–trace. Compare the algebraic specialization using P20 §10.4, and pass to the coefficient and tower limits of §9.1. Integral trace and coefficient maps, followed by saturation, give lattice preservation. A comparison with the full local spherical formal sum Z₂ after forgetting or summing Klingen markings requires a separate identity with its marking multiplicities. This Z₂ has identity tame component and p+1 binary branches as in §5.2; the literal UZ_Δ has e(p+1) branches and additionally requires its own tame correspondence comparison.
 
 The API records the following facts.
 
@@ -1313,12 +1325,13 @@ The API records the following facts.
 
 **Checks.**
 
-- Over a geometric ordinary interior point with G[p²]=μ_(p²)²⊕(ℤ/p²)² and fixed H₁⊂μ_p², the multiplicative part of L is a line different from H₁. There are p choices. For each, the two monic Serre–Tate equations have degrees p and p², so each branch has degree p³ and deg(t₁)=p⁴. At weight zero φ_norm=1, giving U_(p,2)^ord(1)=p⁴/p³=p. At p=3 this is 81/27=3, and at p=5 it is 625/125=5. The formal Z₂(1) instead equals 4 and 6, respectively; modulo p the values are 0 and 1.
+- Over a geometric ordinary interior point with G[p²]=μ_(p²)²⊕(ℤ/p²)² and fixed H₁⊂μ_p², the multiplicative part of L is a line different from H₁. There are p choices. For each, the two monic Serre–Tate equations have degrees p and p², so each branch has degree p³ and deg(t₁)=p⁴. At weight zero φ_norm=1, giving U_(p,2)^ord(1)=p⁴/p³=p. At p=3 this is 81/27=3, and at p=5 it is 625/125=5. The local spherical Z₂(1) instead equals 4 and 6, respectively; modulo p the values are 0 and 1.
 - In an adapted algebraic frame the degree-p³ factor acts on E by diag(p,1). At d=1,r=1 it sends x,y to p²x,py before determinant normalization and to px,y afterwards; the étale factor contributes an invertible differential. At p=3 these normalized values are 3x,y.
-- At p=2 the same branch count is 2·8=16 and the normalized constant trace is 16/8=2, whereas Z₂(1)=3; no odd-prime discriminant formula is used.
+- At p=2 the same branch count is 2·8=16 and the normalized constant trace is 16/8=2, whereas the local spherical Z₂(1)=3; no odd-prime discriminant formula is used.
+- At the level-35 subgroup of §5.2 and p=3, the marked normalized constant trace is still 3, the local spherical Z₂ constant is 4, and the literal UZ_Δ constant is 20. Their residues are 0,1,2; neither forgetting Klingen marking nor forgetting tame branches is an operator identity.
 - For κ:ℤ₃ˣ→Oˣ, κ(1)=1 is defined while κ(3) has no domain value. The transported-frame definition supplies the continuous-weight action without such a value.
 
-*Needs:* §9.1; §9.2; §9.3; §7.5; §3.8; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames).
+*Needs:* §9.1; §9.2; §9.3; §5.2; §7.5; §3.8; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames).
 
 ### Examples
 
@@ -1330,7 +1343,7 @@ Layers 1, 3, 5 and 7; ShimuraCompactifications §C5 (gap:siegel-parahoric-models
 
 ## Downstream consumers
 
-Subsequent higher Hida and Coleman comparison theorems consume the integral ordinary coefficient target, full-frame expansion and algebraic specialization of Layer 9; any analytic-to-Igusa map must identify the marked pullback–trace and rational normalization p^(3−r)U_(Kli(p),1) of §9.4, retaining L∩H_m=0 and the trace multiplicities (P20, §§10.1–10.4, pp. 57–63). Its algebraic specialization is the marked Klingen action; comparison with the full formal Z₂ sum requires an additional forgetting-or-summing identity. Torsion and ordinary automorphic applications consume Layer 7 with all finite and K/O coefficient maps, and Layer 8 with its exact prime and weight bounds. A consumer using a symmetric binary-neighbor relation at arbitrary tame level must supply the explicit diamond/cusp identification of the two orientations; §6.3 supplies the general oriented relation. The independent generic GL₃ Serre-weight and Breuil-lattice continuation imports no genus-two result merely from sharing the parent roadmap.
+Subsequent higher Hida and Coleman comparison theorems consume the integral ordinary coefficient target, full-frame expansion and algebraic specialization of Layer 9; any analytic-to-Igusa map must identify the marked pullback–trace and rational normalization p^(3−r)U_(Kli(p),1) of §9.4, retaining L∩H_m=0 and the trace multiplicities (P20, §§10.1–10.4, pp. 57–63). Its algebraic specialization is the marked Klingen action; comparison with the full local spherical Z₂ sum requires an additional forgetting-or-summing identity. A literal rational Γ̄diag(p,1)Γ̄ sum additionally retains the tame multiplicity e of §5.2 and its coefficient transports; it agrees with the local sum only when e=1 and the specified tame relabeling is made. Torsion and ordinary automorphic applications consume Layer 7 with all finite and K/O coefficient maps, and Layer 8 with its exact prime and weight bounds. A consumer using a symmetric binary-neighbor relation at arbitrary tame level must supply the explicit diamond/cusp identification of the two orientations; §6.3 supplies the general oriented relation. The independent generic GL₃ Serre-weight and Breuil-lattice continuation imports no genus-two result merely from sharing the parent roadmap.
 
 ## Worked examples
 
@@ -1338,9 +1351,11 @@ At (j,k)=(2,2), the separate rational terms contain negative p-powers. Combining
 
 At (3,3), T₂=−1+pX₂+Z₂+p³V₂ and Q₂=pX₂+Z₂+p³V₂+p². Therefore T₂ reduces to Z₂−1 and Q₂ to Z₂. Also C₃−Q₂=p+p³. Hasse equivariance at this weight uses the corrected Q₂ congruence.
 
-For p=3 and Q=x²+y², Δ=−4≡2, so the projective-zero count is zero, X₂ has integral multiplier −1 and U₂ has multiplier −4. For Q=3(x²+y²), the zero reduction has four projective zeros and X₂ has multiplier 3, not the Legendre value zero until reduction. For p=5 and the primitive form x²+y², the two isotropic lines give two neighbor occurrences even though their integral SL₂(Z) classes coincide.
+For p=3 and Q=x²+y², Δ=−4≡2, so the projective-zero count is zero, X₂ has integral multiplier −1 and U₂ has multiplier −4. For Q=3(x²+y²), the zero reduction has four projective zeros and X₂ has multiplier 3, not the Legendre value zero until reduction. For p=5 at full level and the primitive form x²+y², the two isotropic lines give two neighbor occurrences even though their integral SL₂(Z) classes coincide.
 
-For the tame-orientation check take Γ̄=Γ(5), p=3, Q=x² and M=[[3,5],[30,51]]. Then M=[[1,5],[10,51]]diag(3,1), with the left factor in Γ(5), and the normalized inverse image is 3(17x−10y)². Its coefficients reduce to (2,0,0) modulo 5. Every determinant-three matrix in the forward double coset reduces to diag(3,1), so a second forward neighbor has coefficients (4,0,0) modulo 5. Γ(5) preserves these reductions. Thus it cannot recover the Γ(5)-class of Q; the reciprocal relation must use the reverse double coset unless level transport identifies the two.
+For a tame-multiplicity check take Γ̄=Γ(7)∩red₅⁻¹Stab⟨(1,1)⟩ at p=3. The tame index is 20/4=5, so the literal degree is 5·4=20. The literal admissible counts for 0,x²,x²+y² are 20,5,0, and the local counts are 4,1,0. On the scalar constant family the marked Klingen operator, local Z₂ and literal UZ_Δ have values 3,4,20. Their reductions modulo 3 are 0,1,2. No division by 5 identifies their transported coefficient sums.
+
+For the literal tame-orientation check take Γ̄=Γ(5), p=3, Q=x² and M=[[3,5],[30,51]]. Then M=[[1,5],[10,51]]diag(3,1), with the left factor in Γ(5), and the normalized inverse image is 3(17x−10y)². Its coefficients reduce to (2,0,0) modulo 5. Every determinant-three matrix in the forward double coset reduces to diag(3,1), so a second forward neighbor has coefficients (4,0,0) modulo 5. Γ(5) preserves these reductions. Thus it cannot recover the Γ(5)-class of Q; the reciprocal relation must use the reverse double coset unless level transport identifies the two.
 
 For the normalized contraction at d=2, con₂(x²⊗y²)=1/3 and con₂(y²⊗x²)=1/3 in the determinant-square target. The second input has rank one, showing why the vector theta coefficient has no extra det Q. In the scalar case the Hasse invariant has expansion 1 and Θh=0. At p=5 its weight k=4 satisfies p∤k(2k−1) and k≤p+1; the excluded Hasse weight is therefore essential.
 
