@@ -79407,10 +79407,26 @@
    "reported": "2026-10-25",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/957#issuecomment-6392991546"
+  },
+  {
+   "kind": "misprint",
+   "source": "BS20",
+   "locator": "the proof of Lemma 6.6, p.371 (BS20 line 718)",
+   "says": "the displayed point P lies in E(𝔽_p) and doubles to (2λ,0); at p = 5, t = v = 2, i = 3 it is (4,4), which is not on the curve",
+   "should": "P = (2λ+4itv, 8itv(t+iv)) on F′_λ(𝔽_p), with the x-coordinate and θ′₃ unchanged",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"8320d52\", \"job\": \"REV-PKG-EllipticLegendreCharacterInterfaces\", \"model\": \"opus\", \"worker\": \"fable-rev85\"} -->",
+   "roadmap": "EllipticLegendreCharacterInterfaces",
+   "job": "REV-PKG-EllipticLegendreCharacterInterfaces",
+   "board_pr": 1373,
+   "head": "8320d52",
+   "reported": "2026-10-25",
+   "reporter": "claude opus",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1373#issuecomment-6393123197"
   }
  ],
- "scanned_to": "2026-10-25T03:47:14Z",
- "updated": "2026-10-25T03:48:50Z",
+ "scanned_to": "2026-10-25T03:49:15Z",
+ "updated": "2026-10-25T03:51:54Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
