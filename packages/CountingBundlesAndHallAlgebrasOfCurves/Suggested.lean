@@ -7,8 +7,8 @@ import TauCeti.AlgebraicGeometry.LineBundle.Basic
 # Counting bundles and Hall algebras of curves: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
-headline theorems against the pinned APIs: finite-field nilpotent matrix enumeration
-and degree independence of the absolute indecomposable bundle count. The latter uses
+headline theorem against the pinned APIs: degree independence of the absolute
+indecomposable bundle count. It uses
 native fixed-rank sheaves, coherent Euler characteristics and indecomposability.
 
 The other headlines are not statable at the pins:
@@ -74,17 +74,6 @@ noncomputable def absIndecCount (k : Type u) [Field k] (X : Scheme.{u})
   Nat.card (Skeleton (ObjectProperty.FullSubcategory
     (fun E : FiniteLocallyFreeSheaf.FixedRank X r =>
       bundleDegree k X E = d ∧ IsAbsolutelyIndecomposable k X E)))
-
-/-! ## Layer 1: coherent decomposition and finite-field enumeration -/
-
-/-- Over every finite field K and for every n, the number of nilpotent n by n
-matrices is |K| raised to n(n - 1), including the empty matrix when n = 0.
-This is the nilpotent enumeration used in the coherent endomorphism mass formula
-(Schiffmann, Corollary 2.5 and its Fine–Herstein input, p. 309). -/
-theorem nilpotent_matrix_count (K : Type*) [Field K] [Finite K] (n : ℕ) :
-    Nat.card { M : Matrix (Fin n) (Fin n) K // IsNilpotent M } =
-      Nat.card K ^ (n * (n - 1)) := by
-  sorry
 
 /-! ## Layer 10: Mellit integrality and degree independence -/
 

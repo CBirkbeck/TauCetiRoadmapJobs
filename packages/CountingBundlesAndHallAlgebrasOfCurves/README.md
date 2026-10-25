@@ -8,15 +8,15 @@ This roadmap owns coherent nilpotent pairs and their Jordan correspondences, the
 
 The following constructions are supplied elsewhere and have no second construction here.
 
-- AlgebraicVectorBundles Layers L0A–L2B owns finite locally free sheaves, ranks, tensor and dual, pullback and geometric total spaces. QuiverRepresentations Layer 1 owns representations and their kQ-module interpretation, and Layer 2 owns Krull–Schmidt theory; ArtinAlgebras Layer 0 owns general categorical decomposition and radicals. Section 1.1 here specializes the additive Hom comparison to the coherent category, and §1.2 applies the pinned module decomposition results; neither introduces a generic quiver carrier or another categorical Krull–Schmidt theorem.
+- AlgebraicVectorBundles Layers L0A–L2B owns finite locally free sheaves, ranks, tensor and dual, pullback and geometric total spaces. QuiverRepresentations Layer 1 owns representations and their kQ-module interpretation, and Layer 2 owns Krull–Schmidt theory; ArtinAlgebras Layer 0 owns general categorical decomposition and radicals. Section 1.2 applies the categorical recognition and uniqueness theorems to coherent sheaves; it introduces no second decomposition theory.
 - SchemeAndStackFoundations §§1.18–1.21, 2.20, 3.3, 3.6–3.7 and 4.14 owns stacks and descent, duality, degree and Riemann–Roch, Picard torsors and Quot. GlobalShtukasAndFunctionFieldLanglands §§0.5–0.6 and 0.13 owns coherent HN theory, boundedness and the bundle/torsion mass formulas. Those masses are consumed in Hall pairings; their construction is not a target here.
 - WeilConjectures WC.1, “Finite groupoid mass”, owns rational finite groupoid mass, equivalence invariance, products, unions and action-groupoid cardinality. Section 2.1 adds homotopy-fibre Fubini for the Jordan correspondences, using that mass.
 - EndoscopicTransferAndUnitaryTraceComparison §3.6 owns the reductive bundle Higgs stack in characteristic prime to the Weyl order; §3.7 owns the all-field coherent canonical Higgs carrier with ordinary slope stability, existential good lines, the smooth two-framing Quot chart, its cotangent moment map and its zero-level Higgs quotient. AutomorphicSpectralTheory §6.22c owns ordinary bundle Higgs HN theory and coprime stability; §6.24 owns the canonical bundle Higgs deformation complex and strict-slope extension formula. Section 7.1 here adds the positive exact category and the coherent derived comparison, and §8.1 derives a sufficient numerical framing bound. ReductiveGroupsPartII §RG2.3.7 owns Lang's theorem; the descent-gerbe neutrality statement of §1.6 is a separate theorem.
 - ClassicalGroupsPartII §§CG.0.4–CG.0.5 and CG.2.4–CG.2.6 owns the reciprocal torus, Weyl action and full character ring. Section 0.1 specializes them to counting coefficients. FunctionFieldArithmetic §§0.2–0.3 and 5.1–5.4 owns the degree-one divisor, Picard comparison and zeta formulas.
-- HabiroNahmSeries §5.1 owns the augmentation-complete ordinary multivariate logarithm and exponential over a ℚ-algebra, including their inverse and product laws. HabiroCyclotomicCompletions §1.1 owns elementary simultaneous q-and-series Adams substitution and its plethystic exponential on tℚ((q))[[t]]. The complete-Adams contract below extends that specialization to general complete rational λ-rings and supplies the inverse logarithm and coefficient functoriality.
-- QSeriesPartitionsAndMockModularForms §§2.4 and 3.5 owns the series interfaces extended by the contracts below; its symmetric-function Part II owns generic modified Macdonald admissibility and the regular-sequence deformation theorem. The latter theorem is an input to Layer 10, whose own deformation is the curve partition identity.
+- SchemeKTheoryOperations §§6.2.1–6.2.2 owns special λ-rings and Adams operations. HabiroNahmSeries §5.1 owns the augmentation-complete ordinary multivariate logarithm and exponential over a ℚ-algebra and the plethystic coefficient family over ℚ(q), including uniqueness and admissibility. HabiroCyclotomicCompletions §1.1 owns elementary simultaneous q-and-series Adams substitution and its plethystic exponential on tℚ((q))[[t]]. The complete-Adams contract below extends the supplied plethystic calculus to complete filtered rational special λ-algebras and their coefficient parameters.
+- QSeriesPartitionsAndMockModularForms §§2.4 and 3.5 owns q-binomial and ordinary partition-series interfaces; gap:macdonald-admissibility asks for a symmetric-function Part II supplying generic modified Macdonald admissibility and the regular-sequence deformation theorem. The latter theorem is an input to Layer 10, whose own deformation is the curve partition identity.
 - DeligneWeightsAndPurity §§0.10, 0.12, 0.16–0.18, 7.15 and 10.5 owns Frobenius linear algebra, projective purity and equidistribution. EtaleDualityAndPerverseSheaves §§0.4 and 0.6–0.7 owns duality and trace comparisons. CohomologicalPointCounting’s “The combined endpoint” section and ComplexComparisonPartII §C6.6 own compact cohomology and comparison. Section 9.3 compares the compact cohomology of a fixed complex Higgs space with a finite-field fibre of its spread-out.
-- Mathlib already has Young diagrams, transpose, Jacobson-radical structure and the general-linear-group cardinality; Tau Ceti already has arm and leg lengths and the module Krull–Schmidt theorems. These are used with their pinned hypotheses. No second partition carrier or general-linear-group counting theorem is planned.
+- Mathlib already has Young diagrams, transpose, Jacobson-radical structure and the general-linear-group cardinality; Tau Ceti already has arm and leg lengths; these are used with their pinned hypotheses. No second partition carrier or general-linear-group counting theorem is planned.
 
 ## Conventions
 
@@ -46,7 +46,7 @@ Every API bullet and Check below has the hypotheses and source locators of its s
 
 ### From Mathlib
 
-Use `Matrix`, `IsNilpotent` and `Nat.card` for the headline `nilpotent_matrix_count`. `Matrix.card_GL_field` in `Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean`, line 120, supplies the product `∏_{i:Fin n}(Q^n−Q^i)` for a finite field; its n=0 value is 1. `IsArtinianRing.isNilpotent_jacobson_bot` in `Mathlib/RingTheory/Artinian/Ring.lean`, line 54, assumes an associative ring and its Artinian condition. `IsArtinianRing.isSemisimpleRing_iff_jacobson` in `Mathlib/RingTheory/Artinian/Module.lean`, line 641, supplies the radical criterion. `Finite.isDomain_to_isField` in `Mathlib/RingTheory/LittleWedderburn.lean`, line 176, applies to a finite ring with a domain instance, including the residue division ring.
+Use `Matrix`, `IsNilpotent` and `Nat.card` for finite-field nilpotent enumeration. `Matrix.card_GL_field` in `Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean`, line 120, supplies the product `∏_{i:Fin n}(Q^n−Q^i)` for a finite field; its n=0 value is 1. `IsArtinianRing.isNilpotent_jacobson_bot` in `Mathlib/RingTheory/Artinian/Ring.lean`, line 54, assumes an associative ring and its Artinian condition. `IsArtinianRing.isSemisimpleRing_iff_jacobson` in `Mathlib/RingTheory/Artinian/Module.lean`, line 641, supplies the radical criterion. `Finite.isDomain_to_isField` in `Mathlib/RingTheory/LittleWedderburn.lean`, line 176, applies to a finite ring with a domain instance, including the residue division ring.
 
 Use `Indecomposable` in `Mathlib/CategoryTheory/Limits/Shapes/BinaryBiproducts.lean`, line 1096: it excludes zero and requires every binary biproduct decomposition to have a zero summand. `Skeleton` in `Mathlib/CategoryTheory/Skeletal.lean`, line 74, identifies objects up to isomorphism, and `ObjectProperty.FullSubcategory` in `Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean`, line 39, retains all morphisms between objects satisfying the degree and geometric predicate. These provide the native absolute bundle count, not its finiteness theorem.
 
@@ -56,8 +56,6 @@ Use `YoungDiagram` and `YoungDiagram.transpose` in `Mathlib/Combinatorics/Young/
 
 `FiniteLocallyFreeSheaf.FixedRank` and its pullback in `TauCeti/AlgebraicGeometry/VectorBundle/FixedRank.lean`, lines 69 and 104, supply the native fixed-rank carrier and field-base-change functor. `Scheme.Modules.eulerCharBelow` in `TauCeti/AlgebraicGeometry/Cohomology/EulerCharacteristic.lean`, line 105, is the truncated alternating finrank, with no cohomological finiteness or vanishing hypotheses. `InvertibleSheaf.trivial` in `TauCeti/AlgebraicGeometry/LineBundle/Basic.lean`, line 131, supplies O_X. The proper smooth curve hypotheses in §10.4 ensure that truncation 2 computes χ; an infinite-dimensional finrank would otherwise contribute its total-function value zero.
 
-`TauCeti.exists_equiv_linearEquiv_of_directSum_of_isLocalRing_end` in `TauCeti/RingTheory/KrullSchmidt/DirectSum.lean`, line 154, compares finite external decompositions with local endomorphism rings on one side and nonzero indecomposables on the other; the ambient module need not have finite length. `TauCeti.isLocalRing_end_of_isIndecomposable` in `TauCeti/RingTheory/KrullSchmidt/Indecomposable.lean`, line 266, requires finite length over the module's ring. Section 1.1 supplies this condition through finite-dimensional Hom modules, not by asserting that Coh(X) has finite length.
-
 `YoungDiagram.armLength` and `YoungDiagram.legLength` in `TauCeti/Combinatorics/Young/HookLength/Basic.lean`, lines 136 and 140, are the row and column lengths minus the cell coordinate and one. They are total natural-number functions; statements about cells retain membership. For λ=(2), its left cell has arm 1 and leg 0; for λ=(1,1), its upper indexed cell has arm 0 and leg 1. An out-of-diagram coordinate is not used in a product.
 
 ### From TauCetiRoadmap.AlgebraicVectorBundles
@@ -66,7 +64,11 @@ Layers L0A–L0C supply the tensor, dual, constant-rank finite-locally-free shea
 
 ### From TauCetiRoadmap.QuiverRepresentations
 
-Layer 1 supplies representations of a finite quiver over k, their morphisms and the kQ-module comparison; Layer 2 supplies Krull–Schmidt theory. The Kronecker representation in §7.6 is their two-vertex case; the two-framing sheaf chart and zero-level moment quotient come from EndoscopicTransferAndUnitaryTraceComparison §3.7, while its Kronecker embedding and conormal comparison are targets here. General categorical decomposition and radicals belong to ArtinAlgebras Layer 0; the coherent application below uses the pinned module theorems directly.
+Layer 1 supplies representations of a finite quiver over k, their morphisms and the kQ-module comparison; Layer 2 supplies Krull–Schmidt theory. The Kronecker representation in §7.6 is their two-vertex case; the two-framing sheaf chart and zero-level moment quotient come from EndoscopicTransferAndUnitaryTraceComparison §3.7, while its Kronecker embedding and conormal comparison are targets here. General categorical decomposition and radicals belong to ArtinAlgebras Layer 0; §1.2 uses its recognition, uniqueness and local-endomorphism criteria.
+
+### From TauCetiRoadmap.ArtinAlgebras
+
+Layer 0, “Recognition”, “Uniqueness” and “Indecomposables”, supplies Krull–Schmidt recognition for idempotent-complete Hom-finite categories over a commutative Artinian ring, uniqueness of finite decompositions and local endomorphism rings. Apply it to the abelian category Coh(X), Hom-finite over k by SchemeAndStackFoundations §2.6. The zero object has the empty decomposition; a line has local endomorphism ring k, whereas O² has endomorphism ring M₂(k).
 
 ### From TauCetiRoadmap.ClassicalGroupsPartII
 
@@ -94,8 +96,6 @@ Sections 1.18–1.21 give effective coherent and flag descent, quotient stacks, 
 
 What SchemeAndStackFoundations must provide (gap:coherent-ext-serre-duality): For every smooth projective geometrically connected curve and coherent U,V, provide a natural isomorphism Ext¹(U,V)* ≃ Hom(V,U⊗Ω), compatible with restriction, pushout and field extension, without requiring U locally free.
 
-What SchemeAndStackFoundations must provide (gap:degree-only-strong-generation): For every coherent F on a smooth projective genus-g curve and every line L of degree −a, prove strong generation by L when μ_min(F)+a>2g−1, treating torsion sheaves and the zero sheaf separately.
-
 The general coherent Ext–Hom contract is restricted here to smooth curves: on a nodal cubic the node skyscraper has Ext¹ dimension 2 but self-Hom dimension 1. On a smooth local curve k[t], Ext¹(k,k) and Hom(k,k) both have dimension 1. Strong generation means both Ext¹(L,F)=0 and surjectivity of Hom(L,F)⊗L→F; on P¹ the line O(−1) has Ext¹(O,O(−1))=0 but zero evaluation.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
@@ -106,9 +106,11 @@ What AlgebraicModuliForArithmeticGeometry must provide (gap:reductive-character-
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-Section 3.7 supplies coherent canonical Higgs sheaves and ordinary geometric slope (semi)stability over every field, and the bounded good-line presentation. Section 3.6 supplies the general reductive bundle Higgs stack, with its stated restriction on the characteristic and Weyl order. Use the coherent GL_r carrier of §3.7 and its supplied smooth two-framing chart Q₁₂, cotangent moment map and zero-level Higgs quotient. The locally free open gives the all-characteristic bundle carrier; comparison with §3.6 uses that section’s characteristic restriction. Section 3.7(c) supplies kernel generation for epimorphisms L₁⊗V′→F, in particular the fixed source with dim V′=χ(L₁,F); §8.1 gives the explicit numerical bound used here.
+Section 3.7 supplies coherent canonical Higgs sheaves and ordinary geometric slope (semi)stability over every field, and the bounded good-line presentation. Section 3.6 supplies the general reductive bundle Higgs stack, with its stated restriction on the characteristic and Weyl order. Use the coherent GL_r carrier of §3.7 and its smooth two-framing chart Q₁₂, cotangent moment map and zero-level Higgs quotient, restricted to the generation open in §7.4 under gap:two-line-chart-epimorphism. The locally free open gives the all-characteristic bundle carrier; comparison with §3.6 uses that section’s characteristic restriction. Section 3.7(c) supplies kernel generation for epimorphisms L₁⊗V′→F, in particular the fixed source with dim V′=χ(L₁,F); §8.1 gives the explicit numerical bound used here.
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:fixed-source-good-lines): For every field, construct the canonical GL_r Higgs bundle stack as the locally free open substack of the coherent canonical Higgs carrier of §3.7, with its bounded Quot charts; over finite fields identify it with the GL_r Hitchin stack of §3.6 when the characteristic does not divide r!.
+
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:two-line-chart-epimorphism): In §3.7 distinguish the two-Hom-frame Quot open Q₁₂ of S16 §6.4 from its first-evaluation epimorphism open; restrict to the latter before identifying the quotient with strongly L₁-generated sheaves, and restrict the supplied cotangent zero-level equivalence accordingly.
 
 The new numerical estimate, stable canonical coarse geometry, positive exact category and central deformation are targets here. The generic higher-degree-twist smoothness and anisotropic properness results are not used as canonical-twist stable coarse theorems. For a fixed source L₁^l₁ the kernel has rank l₁−r and degree −d₁l₁−d; varying the source rank would change both.
 
@@ -122,7 +124,13 @@ Section RG2.3.7, “Lang's theorem and lifting”, supplies surjectivity of g↦
 
 ### From TauCetiRoadmap.HabiroNahmSeries
 
-Section 5.1 supplies ordinary multivariate augmentation logarithms and exponentials over a ℚ-algebra, their inverse and product/sum laws, and coefficientwise finite zero-augmentation substitutions. These are the ordinary log and exp inside the plethystic definitions; the coefficient Adams structure on R_g is additional. For log(1+uv), the coefficients of uv and u²v² are 1 and −1/2, and exp(log(1+uv))=1+uv.
+Section 5.1 supplies ordinary multivariate augmentation logarithms and exponentials over a ℚ-algebra, their inverse and product/sum laws, and coefficientwise finite zero-augmentation substitutions. It also supplies the unique plethystic family L_n for constant-one series over ℚ(q), its triangular coefficient laws, product/inversion closure and Laurent admissibility. With the conventions here, L_n=(q−1)[t^n]Log F; the coefficient Adams structure on R_g is additional. For log(1+uv), the coefficients of uv and u²v² are 1 and −1/2, and exp(log(1+uv))=1+uv.
+
+What HabiroNahmSeries must provide (gap:complete-adams-series): Extend the plethystic coefficient family and inverse Exp/Log calculus of §5.1 from ℚ(q) coefficients to augmentation-complete series over complete filtered rational special λ-algebras supplied by SchemeKTheoryOperations §§6.2.1–6.2.2, with continuous Adams operations acting on every coefficient parameter and grading variable; include coefficientwise functoriality, the finite-extension Möbius identity and agreement with HabiroCyclotomicCompletions §1.1 under Laurent-series specialization.
+
+### From TauCetiRoadmap.SchemeKTheoryOperations
+
+Sections 6.2.1–6.2.2 supply pre-λ and special λ-rings, the line-monomial structure and Newton Adams operations, with ψ_mψ_n=ψ_(mn) and ψ_m(a)=a^m for line elements. Restrict the rational line-monomial structure to reciprocal Weyl invariants and extend the Adams maps to K_g; the complete-series extension uses this structure. For a line variable a, ψ₂(a)=a²; for the integer 2 in the binomial structure, ψ₂(2)=2, not 4.
 
 ### From TauCetiRoadmap.HabiroCyclotomicCompletions
 
@@ -130,13 +138,11 @@ Section 1.1 supplies the simultaneous substitutions q↦q^m, t↦t^m on tℚ((q)
 
 ### From TauCetiRoadmap.QSeriesPartitionsAndMockModularForms
 
-Sections 2.4 and 3.5 supply q-binomial and Euler series and native partition adapters. Use the formal Euler specialization at base v=q⁻¹ for Heine summation; the corresponding logarithm is formed with the ordinary augmentation calculus supplied by HabiroNahmSeries §5.1, and the Laurent-series specialization agrees with HabiroCyclotomicCompletions §1.1. The complete Adams and symmetric-function extensions have these exact contracts.
-
-What QSeriesPartitionsAndMockModularForms must provide (gap:complete-adams-series): Provide complete filtered rational λ-rings with commuting Adams operations, coefficientwise inverse plethystic Exp and Log acting on every coefficient and grading variable, and the finite-extension Möbius identity.
+Sections 2.4 and 3.5 supply q-binomial and Euler series and native partition adapters. Use the formal Euler specialization at base v=q⁻¹ for Heine summation; the corresponding logarithm is formed with the ordinary augmentation calculus supplied by HabiroNahmSeries §5.1, and the Laurent-series specialization agrees with HabiroCyclotomicCompletions §1.1. The symmetric-function continuation has the following exact contract.
 
 What QSeriesPartitionsAndMockModularForms must provide (gap:macdonald-admissibility): Provide modified Macdonald functions, the Hall S pairing, ∇ and τ, integral HLV logarithms and Mellit’s regular symmetric Laurent sequence deformation theorem over rational λ-rings with injective localization.
 
-Specifically, for a rational λ-ring R containing ℚ(t)[q±1], with injective localization `R→R⊗_{ℚ(t)[q±1]}ℚ(q,t)`, take Ω=∑c_λ H̃_λ with c_empty=1 and (q−1)Log Ω integral over R. For a regular symmetric Laurent sequence `f(u)=1+∑_{j>0}u^j f^(j)`, the deformed Ω_f has (q−1)Log Ω_f in R[[u]], with the same reduction modulo q−1. Here q is the deformation variable, which becomes z in Layer 10; the Hall pairing uses S=−(q−1)(t−1). The sequence condition is `f_{n+1}(1,x₁,…,x_n)=f_n(qx₁,…,qx_n)`. The supplier's Part II also proves the integral HLV conclusion (M20, Definition 5.1 and Lemma 5.1, pp.315–319, locator-only; M18, Theorem 7.1 and Corollary 7.2, pp.29–31). This is a generic theorem, so Layer 10 uses it rather than reconstructing it.
+Specifically, for a rational λ-ring R containing ℚ(t)[q±1], with injective localization `R→R⊗_{ℚ(t)[q±1]}ℚ(q,t)`, take Ω=∑c_λ H̃_λ with c_empty=1 and (q−1)Log Ω integral over R. For a regular symmetric Laurent sequence `f(u)=1+∑_{j>0}u^j f^(j)`, the deformed Ω_f has (q−1)Log Ω_f in R[[u]], with the same reduction modulo q−1. Here q is the deformation variable, which becomes z in Layer 10; the Hall pairing uses S=−(q−1)(t−1). The sequence condition is `f_{n+1}(1,x₁,…,x_n)=f_n(qx₁,…,qx_n)`. The same contract also asks for the integral HLV conclusion (M20, Definition 5.1 and Lemma 5.1, pp.315–319, locator-only; M18, Theorem 7.1 and Corollary 7.2, pp.29–31). Layer 10 consumes this generic theorem subject to the contract, rather than reconstructing it.
 
 For a single degree variable T, Exp(T)=1+T+T²+⋯; fixing T under Adams would give exp(T) instead, whose T² coefficient is 1/2. For q=2, ψ₂((q−1)⁻¹)=1/3, not 1. These witnesses apply also to the Hall and Mellit series.
 
@@ -144,21 +150,9 @@ For a single degree variable T, Exp(T)=1+T+T²+⋯; fixing T under Adams would g
 
 Sections 0.10, 0.12 and 0.16–0.18 supply power-sum determination of signed finite eigenvalue multisets, extension-field powers, perfect-pairing reciprocity and disjoint weights, without a diagonalizability hypothesis. Section 1.7 supplies curve H¹ weight one, §7.15 smooth projective purity, and §10.5 the degree-fibre Frobenius equidistribution of Weil II (3.5.3). Sections 7.12 and 8.8–8.11 supply the weight bounds used on localization and affine strata. No canonical arithmetic Frobenius splitting is assumed. For A¹ the sole compact eigenvalue is q in degree 2; for P¹ it is 1 in degree 0 and q in degree 2. Inverting this convention changes the trace from q to q⁻¹ (WII, (3.5.1)–(3.5.3), pp.210–211).
 
-### From TauCetiRoadmap.LefschetzPencilsAndVanishingCycles
-
-Section 5.11 supplies Frobenius polynomials of pencil fibres. Its universal-family density extension uses the monodromy supplied below and DeligneWeightsAndPurity §10.5.
-
-What LefschetzPencilsAndVanishingCycles must provide (gap:universal-curve-weil-density): For every g≥1, apply DeligneWeightsAndPurity §10.5 to the odd-degree hyperelliptic family with the symplectic monodromy of ArithmeticStatisticsPartVIII §5.17 to prove Zariski density of genus-g curve Weil tuples in T_g/W_g, retaining the varying q coordinate after half-Tate normalization.
-
 ### From TauCetiRoadmap.ArithmeticStatisticsPartVIII
 
 Section 5.17, “Mod l hyperelliptic monodromy is symplectic”, “Integral lift of full mod l symplectic image” and “Monodromy of the odd degree polynomial family”, supplies geometric symplectic monodromy for y²=∏ᵢ(x−aᵢ), with 1≤i≤2g+1, over the configuration space of distinct branch points in odd characteristic. For the density route choose an auxiliary ℓ≥5 different from the characteristic, so the genus-one lifting exception at ℓ=3 never enters. This is a route for universal uniqueness, not a restriction on the counting theorems. For g=0 the infinitely many q-coordinates are dense in G_m (S16, Proposition 4.7 and Appendix B, pp.321,357–358; S16 line 1250 and S16 line 3319).
-
-**Checks.**
-
-- At g=1, ℓ=5 the integral geometric image is Sp₂(ℤ₅); the full mod-3 image alone would allow a proper genus-one subgroup of index 27.
-- At a fixed odd q₀ and extension degree m, half-Tate normalization changes the multiplier q₀^m to 1; the unnormalized q coordinate is still q₀^m. Setting it to 1 would lose the radial density step.
-- At g=0, a Laurent polynomial vanishing on all q₀^m, m≥1, has infinitely many distinct roots and is zero; keeping only q=q₀ would leave the nonzero polynomial q−q₀.
 
 ### From TauCetiRoadmap.EtaleDualityAndPerverseSheaves
 
@@ -180,7 +174,7 @@ Section 9.3 uses a dense open with locally constant compact-cohomology ranks in 
 
 ## How to read the build
 
-Layers 0–2 fix coefficients and residues, transfer decomposition to coherent sheaves, and express nilpotent-pair masses by Jordan flags and a finite-field tower exponential. Layers 3–5 turn those flags into Hall pairings, construct the universal spherical form and evaluate the pairings by ordered shuffle residues. Layer 6 extracts bundle counts and their origin constants. Layers 7–8 build coherent canonical Higgs geometry, compare slope and character stability, and prove both the geometric large-characteristic comparison and the all-characteristic Hall comparison. Layer 9 converts those counts into pure cohomology, positivity and nilpotent-cone invariants. Layer 10 applies the supplied Macdonald theorem to the curve kernel to prove Laurent integrality and degree independence. Layer 11 treats quasi-parabolic counts, exact HN types and constructible Hall theory. Within a layer, named dependencies determine the construction order. Suggested.lean states the nilpotent matrix enumeration and degree independence of the native absolute bundle count; its docstring identifies the other headlines and their missing carriers.
+Layers 0–2 fix coefficients and residues, apply categorical decomposition to coherent sheaves, and express nilpotent-pair masses by Jordan flags and a finite-field tower exponential. Layers 3–5 turn those flags into Hall pairings, construct the universal spherical form and evaluate the pairings by ordered shuffle residues. Layer 6 extracts bundle counts and their origin constants. Layers 7–8 build coherent canonical Higgs geometry, compare slope and character stability, and prove both the geometric large-characteristic comparison and the all-characteristic Hall comparison. Layer 9 converts those counts into pure cohomology, positivity and nilpotent-cone invariants. Layer 10 applies the supplied Macdonald theorem to the curve kernel to prove Laurent integrality and degree independence. Layer 11 treats quasi-parabolic counts, exact HN types and constructible Hall theory. Within a layer, named dependencies determine the construction order. Suggested.lean states degree independence of the native absolute bundle count; its docstring identifies the other headlines and their missing carriers.
 
 ## Layer 0: universal coefficients, absolute counts and residues
 
@@ -196,7 +190,7 @@ The interface has the following properties.
 
 One route is as follows. Base-change the supplier lattice and invariant presentation to Q. Localize at the W-fixed elements q^m−1 and use their nonvanishing at prime powers. Check ψ_l preserves the multiplicative set and sends a curve specialization to the corresponding finite extension.
 
-*Needs:* ClassicalGroupsPartII §CG.0.4; ClassicalGroupsPartII §CG.0.5; ClassicalGroupsPartII §CG.2.6; FunctionFieldArithmetic §§5.1–5.4; DeligneWeightsAndPurity §§0.10, 0.12, 0.16–0.18, 1.7; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* ClassicalGroupsPartII §CG.0.4; ClassicalGroupsPartII §CG.0.5; ClassicalGroupsPartII §CG.2.6; FunctionFieldArithmetic §§5.1–5.4; DeligneWeightsAndPurity §§0.10, 0.12, 0.16–0.18, 1.7; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -298,7 +292,7 @@ For a line bundle the unweighted absolute count is P_X(1). The universal express
 - ClassicalGroupsPartII §CG.2.6.
 - FunctionFieldArithmetic §§5.1–5.4.
 - DeligneWeightsAndPurity §§0.10, 0.12, 0.16–0.18, 1.7.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 - GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13.
 - SchemeAndStackFoundations §§1.18–1.21, 3.3 and 4.14.
 - `FiniteLocallyFreeSheaf.FixedRank` and `FiniteLocallyFreeSheaf.FixedRank.pullback`.
@@ -306,37 +300,17 @@ For a line bundle the unweighted absolute count is P_X(1). The universal express
 
 ## Layer 1: coherent decomposition and finite-field enumeration
 
-### 1.1 coherent additive hom transfer
-
-Define the following objects and their indicated structure. For M∈Coh(X), let add(M) consist of direct summands of finite sums of M. Hom(M,−) is a fully faithful additive functor from add(M) to finite projective left modules over End(M)^op, and is essentially surjective. End(M) is a finite-dimensional k-algebra. Its functor sends decompositions and idempotent splittings to the corresponding module decompositions. (The additive-Hom equivalence is the standard matrix-and-idempotent argument given below; S16, Lemma 2.3, p.309, supplies the coherent decomposition statements of §1.2, not this equivalence; S16 line 619).
-
-The interface has the following properties.
-
-- The natural Hom map is bijective and additive on add(M).
-- A finite biproduct maps to the corresponding finite direct sum of modules.
-- The endomorphism ring of N∈add(M) identifies with the module endomorphism ring of Hom(M,N).
-
-One route is as follows. Use proper coherent Hom finiteness and the abelian category’s splitting of idempotents. On finite sums compute Hom by matrices over End(M)^op; restrict to idempotent images for full faithfulness. A finite projective module is an idempotent image of a finite free module, which lifts to an idempotent of a sum of M.
-
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; `TauCeti.exists_equiv_linearEquiv_of_directSum_of_isLocalRing_end`.
-
-**Checks.**
-
-- M maps to the regular rank-one End(M)^op-module.
-- The zero summand maps to the zero module, and conversely by full faithfulness.
-- For a positive-degree line bundle L, its coherent subsheaf chain L(−nx) does not make L an Artinian object of Coh(X); no such premise enters this transfer.
-
 ### 1.2 Krull–Schmidt for coherent sheaves
 
 Prove the following statement. Every coherent sheaf is a finite direct sum of nonzero indecomposables, uniquely up to permutation and isomorphism. The endomorphism algebra of an indecomposable is local with finite residue division field k_M/F_q. Every endomorphism of an indecomposable is either a unit or nilpotent. (S16, §2.2, Lemma 2.3 and Corollary 2.5, p.309; S16 line 615).
 
-One route is as follows. Find a minimal finite decomposition by splitting idempotents; the dimension of End decreases on proper summands. Apply the finite-length module local-ring theorem through hom-transfer; apply direct-sum uniqueness in the same way. Use Wedderburn’s finite division-ring theorem for the residue field.
+One route is as follows. Coh(X) is abelian, has finite biproducts and is Hom-finite over k by SchemeAndStackFoundations §2.6. Apply ArtinAlgebras Layer 0, “Recognition”, “Uniqueness” and “Indecomposables”. Its finite-dimensional local endomorphism algebra has nilpotent Jacobson radical, so every nonunit is nilpotent. Apply Wedderburn’s finite division-ring theorem to its residue division ring.
 
-*Needs:* §1.1; `TauCeti.isLocalRing_end_of_isIndecomposable`; `TauCeti.exists_equiv_linearEquiv_of_directSum_of_isLocalRing_end`; `Finite.isDomain_to_isField`.
+*Needs:* ArtinAlgebras Layer 0; SchemeAndStackFoundations §2.6; `IsArtinianRing.isNilpotent_jacobson_bot`; `Finite.isDomain_to_isField`.
 
 **Checks.**
 
-- 0; L; L²: Summand counts 0,1,2; End(L)/rad=k; for L² the quotient is M₂(k), which is not local. Apply module decomposition after transfer.
+- 0; L; L²: Summand counts 0,1,2; End(L)/rad=k; for L² the quotient is M₂(k), which is not local. Categorical recognition applies although a line has the infinite coherent subsheaf chain L(−nx).
 
 ### 1.3 radical and semisimple matrix quotient
 
@@ -352,7 +326,7 @@ One route is as follows. Write composition in block matrices and identify the id
 
 ### 1.4 finite-field nilpotent matrix count
 
-Prove the following statement. For a finite field K of cardinality Q and n≥0, `#{u∈M_n(K):u is nilpotent}=Q^{n(n−1)}`. The empty matrix counts once. The unit denominator used in §1.5 is the supplied general-linear-group cardinality. This is the headline `nilpotent_matrix_count` in Suggested.lean, for every field K with a finite underlying type and every natural n. (S16, §2.2, Corollary 2.5, p.309; Appendix A, p.356 (Fine–Herstein input); S16 line 615).
+Prove the following statement. For a finite field K of cardinality Q and n≥0, `#{u∈M_n(K):u is nilpotent}=Q^{n(n−1)}`. The empty matrix counts once. The unit denominator used in §1.5 is the supplied general-linear-group cardinality. The formula holds for every field K with a finite underlying type and every natural n. (S16, §2.2, Corollary 2.5, p.309; Appendix A, p.356 (Fine–Herstein input); S16 line 615).
 
 The supporting input is FH58, Theorem 1, p.499, proof pp.499–503; the same count is stated in S16, Corollary 2.5, p.309.
 
@@ -422,7 +396,7 @@ Prove the following statement. If M is an indecomposable vector bundle of rank r
 
 One route is as follows. A larger slope gap kills the relevant Ext¹ by Serre duality and forces a direct-sum decomposition. Bound the spread of at most r positive-rank HN factors and compare the mean degree to the minimum. Use genus-zero splitting for the exceptional negative value of 2g−2.
 
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; §1.2.
+*Needs:* GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract; §1.2.
 
 **Checks.**
 
@@ -434,7 +408,7 @@ Prove the following statement. For r>0 the count is finite, A_X(r,d+r)=A_X(r,d),
 
 One route is as follows. Tensor with O(D_1) for a degree-one integer divisor, preserving all decompositions after base change. Dualization reverses degree and preserves absolute indecomposability. Use the Picard torsor and finite-field descent for rank one; use the genus-zero splitting theorem for higher ranks. Finiteness follows from §1.9 and HN boundedness.
 
-*Needs:* §0.2; FunctionFieldArithmetic §0.2; FunctionFieldArithmetic §§5.1–5.4; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; §1.9.
+*Needs:* §0.2; FunctionFieldArithmetic §0.2; FunctionFieldArithmetic §§5.1–5.4; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract; §1.9.
 
 **Checks.**
 
@@ -447,9 +421,9 @@ Over 𝔽₂ the four nilpotent 2×2 matrices are the zero matrix and the three 
 ### Dependencies
 
 - GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13.
-- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
-- `TauCeti.exists_equiv_linearEquiv_of_directSum_of_isLocalRing_end`.
-- `TauCeti.isLocalRing_end_of_isIndecomposable`.
+- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
+- ArtinAlgebras Layer 0.
+- SchemeAndStackFoundations §2.6.
 - `Finite.isDomain_to_isField`.
 - `IsArtinianRing.isNilpotent_jacobson_bot`.
 - `IsArtinianRing.isSemisimpleRing_iff_jacobson`.
@@ -479,9 +453,9 @@ One route is as follows. Identify the fibre groupoid of a representative with th
 
 **Checks.**
 
-- mass(BGL₁(F₃))=1/2.
-- The homotopy fibre of Id:BG→BG is equivalent to a point and has mass 1, although BG has mass 1/#G.
-- The empty groupoid has mass 0; disjoint union adds masses.
+- For Id:BS₃→BS₃ the homotopy fibre has mass 1, and Fubini gives 1/6=1·(1/6).
+- For BC₂→BS₃ induced by a transposition subgroup, the fibre is the three-element coset set, and 1/2=3·(1/6).
+- For B(C₂×C₂)→BC₂ induced by projection, the fibre is BC₂, and 1/4=(1/2)·(1/2). Taking inverse images of isomorphism classes instead would lose these fibre automorphisms.
 
 ### 2.2 nilpotent-pair groupoids
 
@@ -509,7 +483,7 @@ Prove the following statement. In Q[[u,v]] with α=(r,d), r,d≥0, `∑_α mass(
 
 One route is as follows. Factor the sum into one Euler factor per k-indecomposable, using Krull–Schmidt and the unit ratio. Use Heine’s series for each multiplicity. Regroup Frobenius orbits with the divisor identity from galois-orbits.
 
-*Needs:* §2.2; §1.5; §1.7; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §2.2; §1.5; §1.7; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -551,9 +525,9 @@ One route is as follows. Use the supplier abelian category and flag isomorphisms
 
 **Checks.**
 
-- Filt_(α)≃Coh_α.
-- A zero quotient forces `H_i=H_{i−1}`.
-- A flag of a decomposable bundle in increasing slope order is still a flag; no decreasing-slope axiom belongs in Filt.
+- On P¹ the flag 0⊂O(−1)⊂O², with quotient O(1), has total minimum slope 0 and passes the cutoff at 0, although its first graded piece has slope −1. A cutoff on every graded piece would reject it.
+- The flag 0⊂O(1)⊂O(1)⊕O(−1) has total minimum slope −1 and fails the cutoff at 0, although its first graded piece has positive slope.
+- Over 𝔽₂ the flags with fixed total O² and graded pieces O,O give three subobjects. Their quotient by GL₂(𝔽₂), of order 6, has mass 3/6=1/2; counting unweighted isomorphism classes would give 1.
 
 ### 2.6 Jordan grading functors
 
@@ -571,9 +545,10 @@ One route is as follows. Identify the i-th graded quotient with the kernel quoti
 
 **Checks.**
 
-- θ=0 gives the one-step identity flag on F.
-- A length-two block gives H_1=0,H_2=H.
-- The inverse image of the total-H cutoff is exactly the total-F cutoff, including torsion objects.
+- The zero endomorphism on O has H=O, H₁=O and gives the one-step identity flag.
+- A length-two block has H₁=0,H₂=H, rather than a nonzero first step.
+- On F=O(−1)² over P¹, let θ send the second summand identically to the first and kill the first. Then H=O(−1), H₁=0,H₂=H. Both total-F and total-H cutoffs at 0 are false, with minimum slopes −1.
+- At a rational point x, take F=k[t]/(t²) and θ multiplication by t. Then H=k_x, H₁=0,H₂=k_x and α₂=(0,1). F and H have degrees 2 and 1 and minimum slope +∞, so both cutoffs at 0 are true.
 
 ### 2.7 Jordan fibre mass formula
 
@@ -581,7 +556,7 @@ Prove the following statement. Write E(α,β)=(1−g)rr′+rd′−r′d and S(�
 
 One route is as follows. Build the nilpotent diagram from its last nonzero step by extension torsors. At each stage the automorphisms and possible lifts contribute q^(dim Ext¹−dim Hom). Apply Euler–Riemann–Roch and telescope to the displayed exponents; apply Fubini to the cutoff square.
 
-*Needs:* §2.6; §2.1; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+*Needs:* §2.6; §2.1; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 
 **Checks.**
 
@@ -599,9 +574,9 @@ For a single absolute line species over 𝔽₂, multiplicity two contributes 2/
 - §1.9.
 - §1.5.
 - §1.7.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 - `YoungDiagram`.
-- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 
 ## Layer 3: the curve Hall algebra and flag masses
 
@@ -618,7 +593,7 @@ The interface has the following properties.
 
 One route is as follows. Push and pull along the groupoid of short exact sequences, using homotopy-fibre mass. Identify the product with actual subobjects and the coproduct with extension classes divided by Hom. Adjoin the numerical group algebra and prove the stated commutation relations.
 
-*Needs:* §2.1; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+*Needs:* §2.1; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 
 **Checks.**
 
@@ -632,7 +607,7 @@ Prove the following statement. The extended curve Hall algebra with the specifie
 
 One route is as follows. Compare two-step exact-sequence diagrams and their homotopy fibres; hereditary Coh(X) eliminates Ext². Prove Green’s coefficient identity with the numerical Euler twist. Verify pairing adjunction on delta functions and extend to the stated support domains.
 
-*Needs:* §3.1; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+*Needs:* §3.1; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 
 **Checks.**
 
@@ -678,7 +653,7 @@ On P¹/𝔽₂, the sheaf O² has three O-subobjects with quotient O and six aut
 
 - §2.1.
 - GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13.
-- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 - §2.5.
 
 ## Layer 4: Eisenstein series and universal Hall forms
@@ -699,9 +674,9 @@ One route is as follows. Package homogeneous characteristic coefficients as form
 
 **Checks.**
 
-- E_0^vec(z)=1, whereas E_0(z) has nonzero torsion coefficients.
-- The coefficient of z^d in E_1^vec is the characteristic of Pic^d.
-- E_1^vec has arbitrarily negative degrees, so it is not declared to be a formal power series in z.
+- On P¹/𝔽₂ evaluate the rank-one torsion factorization on O⊕k_x for rational x. The unique torsion subobject has Hall factor v and the substituted E₀ coefficient has factor v⁻¹, giving z on both sides. Omitting the substitution gives vz.
+- On O(1)⊕O(−1), the degree-zero coefficient of E₂ has value 1 and its ≥0 restriction has value 0; on O² both values are 1. Restricting by average slope would fail this test.
+- On O(−1), E₁^vec evaluates to z⁻¹, its ≥0 restriction to 0 and its <0 restriction to z⁻¹. Thus the unrestricted series needs negative degrees.
 
 ### 4.2 Harder hecke commutation
 
@@ -799,15 +774,29 @@ One route is as follows. Use the shuffle presentation to construct the torus coe
 
 Prove the following statement. There are unique elements C_α(K_g) for the truncated coherent masses and N_α(K_g) for the truncated nilpotent masses, and `A_{g,α}^{≥0}∈K_g`, whose specializations are their named finite-field values. Their plethystic relation is `Exp(∑_{α≠0}A_{g,α}^{≥0}u^r z^d/(q−1))=∑_α N_αu^r z^d`. For r>0 eventual periodicity defines a unique `A_{g,r,d}∈K_g` specializing to A_X(r,d). (S16, §4.5, Corollaries 4.5–4.6, pp.320–321; §4.6, p.321; Theorem 1.1, p.299; S16 line 1179).
 
-One route is as follows. Express every fixed-cutoff flag mass by spherical pairings and apply generic-form. Sum finitely many Jordan types in each class and apply the plethystic logarithm coefficient recursion. Use large-degree and tensor periodicity to remove the cutoff; use the universal-curve density contract for uniqueness.
+One route is as follows. Express every fixed-cutoff flag mass by spherical pairings and apply generic-form. Sum finitely many Jordan types in each class and apply the plethystic logarithm coefficient recursion. Use large-degree and tensor periodicity to remove the cutoff; use §4.10 for uniqueness.
 
-*Needs:* §4.8; §3.4; §2.7; §2.3; §1.9; §1.10; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract; LefschetzPencilsAndVanishingCycles §5.11 and its universal-curve density contract; DeligneWeightsAndPurity §10.5.
+*Needs:* §4.8; §3.4; §2.7; §2.3; §1.9; §1.10; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5; §4.10.
 
 **Checks.**
 
 - Write N(T,z)=∑N_(r,d)T^rz^d and N₀(z)=[T⁰]N(T,z). The zero-class mass is 1, while N₀ includes nonzero torsion sheaves and need not equal 1.
 - After dividing out N₀(z), the rank-one coefficient is P(1)/((q−1)(1−z)); multiplying the rank-one coefficient of Log N by q−1 recovers P(1)/(1−z). Adams operations of index greater than one cannot contribute to rank one. The torsion cancellation is the passage from (5.19) to (5.20) (S16, p.334; S16 line 2224 and S16 line 2246).
 - On P¹/𝔽₂, N₀=1+3z+O(z²) and [T]N=N₀/(1−z)=1+4z+O(z²), whereas [Tz](N/N₀)=1. In class (1,1), O(1) contributes 1 and each of the three O⊕κ(x) contributes 2/2=1: nilpotence forces both diagonal entries to vanish and leaves two choices for the off-diagonal entry. All four sheaves satisfy the cutoff. Dropping torsion from N would give 1 instead of 4.
+
+### 4.10 density of curve Weil tuples
+
+Prove the following statement. For every g≥1, the classes σ_X in T_g/W_g of smooth projective geometrically connected genus-g curves over finite fields of odd characteristic are Zariski dense, with q retained as the unnormalized multiplier coordinate. For g=0, the prime-power values of q are dense in G_m. This density subset suffices for uniqueness of functions whose specializations are asserted over every finite field. (S16, Proposition 4.7 and Appendix B, pp.321,357–358; S16 line 1258 and S16 line 3321).
+
+One route is as follows. Fix an odd q₀ and an auxiliary ℓ≥5 prime to q₀. Use the odd-degree hyperelliptic family of ArithmeticStatisticsPartVIII §5.17, whose geometric monodromy is Sp_(2g)(ℤ_ℓ). Half-Tate normalization puts its classes in the compact symplectic group; apply DeligneWeightsAndPurity §10.5 on the degree fibres. To recover the radial direction, pull a Weyl-invariant Laurent function back along (z,t)↦(tz₁,…,tz_(2g)), so q=t², and divide by its highest power of t. The leading coefficient h₀(z) is nonzero if the function is nonzero, and all remaining powers of t are negative. Equidistribution supplies normalized tuples z_m approaching a point with h₀≠0 along unbounded extension degrees m. At t=q₀^(m/2), the lower terms tend to zero while h₀(z_m) tends to a nonzero value, contradicting vanishing on every curve tuple. This uses boundedness of the coefficient functions on the compact torus; density in q alone would not prove the claim. For g=0 a nonzero Laurent polynomial has only finitely many nonzero roots (S16 line 3363).
+
+*Needs:* §0.1; ArithmeticStatisticsPartVIII §5.17; DeligneWeightsAndPurity §§1.7, 10.5.
+
+**Checks.**
+
+- At g=1, ℓ=5 the integral geometric image is Sp₂(ℤ₅); the full mod-3 image alone would allow a proper genus-one subgroup of index 27.
+- At q₀=3 and extension degrees 1 and 2, half-Tate normalization changes multipliers 3 and 9 to 1 and 1. The unnormalized q coordinate still takes values 3 and 9; replacing it by 1 loses the radial direction.
+- At g=0, a Laurent polynomial vanishing on every 3^m, m≥1, is zero. The nonzero polynomial q−3 vanishes at q=3 but takes value 6 at q=9. In the radial argument, (q−3)/t²=1−3/t² at t=3^(m/2) has values 0, 2/3 and 8/9 for m=1,2,3 and tends to 1, contradicting vanishing along an unbounded-degree sequence.
 
 ### Examples
 
@@ -828,8 +817,10 @@ At rank one the bundle mass V₁ is P_X(1)/(q−1); at rank zero the bundle seri
 - §2.3.
 - §1.9.
 - §1.10.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
-- LefschetzPencilsAndVanishingCycles §5.11 and its universal-curve density contract; DeligneWeightsAndPurity §10.5.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
+- §4.10.
+- ArithmeticStatisticsPartVIII §5.17.
+- DeligneWeightsAndPurity §§1.7, 10.5.
 
 ## Layer 5: shuffle pairings and partition kernels
 
@@ -860,7 +851,7 @@ Prove the following statement. With n=∑r_i and X=[1−∑α_j+q], set `X_r(z;w
 
 One route is as follows. Insert E_r=E_r^vec E_0(q^−r/2 z) in the ordered product. Commute all torsion factors to the right using the Hecke identity. Pair them against `E_n^{≥0}`; collect cross terms and use the torsion mass exponential.
 
-*Needs:* §5.1; §4.2; §4.3; supplier contract for GlobalShtukasAndFunctionFieldLanglands §0.13; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §5.1; §4.2; §4.3; supplier contract for GlobalShtukasAndFunctionFieldLanglands §0.13; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -940,7 +931,7 @@ Prove the following statement. For `λ=(1^{r_1}2^{r_2}…)` and `r_[i,j]=∑_{k=
 
 One route is as follows. Group the cells by their positive arm length and by the multiplicity blocks of their row lengths. Telescope the powers of q for fixed arm length. Apply ζ(t)=Exp(Xt) and additivity of Exp.
 
-*Needs:* §0.1; §5.7; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract; `YoungDiagram.armLength`; `YoungDiagram.legLength`; FunctionFieldArithmetic §§5.1–5.4.
+*Needs:* §0.1; §5.7; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5; `YoungDiagram.armLength`; `YoungDiagram.legLength`; FunctionFieldArithmetic §§5.1–5.4.
 
 **Checks.**
 
@@ -990,7 +981,7 @@ The one-box partition gives q^(g−1)J_(1)H_(1)=P(1)/((q−1)(1−z)). The two p
 - §4.2.
 - §4.3.
 - supplier contract for GlobalShtukasAndFunctionFieldLanglands §0.13.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 - §4.5.
 - FunctionFieldArithmetic §§5.1–5.4.
 - §4.4.
@@ -1011,7 +1002,7 @@ Prove the following statement. In K_g[[T,z]], `Exp(∑_{r>0,d≥0} A_{g,r,d}^{�
 
 One route is as follows. Sum the Jordan product over all partitions, coefficientwise. Identify absolute indecomposable torsion sheaves over every extension field and cancel their exponential. Use the universal coefficient specialization and density to obtain equality in K_g.
 
-*Needs:* §5.10; §2.3; §4.9; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §5.10; §2.3; §4.9; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -1035,11 +1026,14 @@ Prove the following statement. Define `A_{g,r}(z)` by `∑_{r≥1}A_{g,r}(z)T^r=
 
 One route is as follows. Apply Log to the universal generating identity. Identify `A_{g,r}(z)` with the generating series of truncated counts. Apply residue-extraction; finite rank bounds the partition sum and all Adams divisors.
 
-*Needs:* §6.1; §6.2; §5.9; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §6.1; §6.2; §5.9; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
 - Rank 1: `A_{g,1}(z)=P(1)/(1−z)`, dRes at 1=−P(1); negative extraction gives P(1). Keep minus differential-residue sign.
+
+- On P¹ the rank-two logarithmic coefficient is identically zero; its differential residues at 1 and −1 are both zero and give count 0 in every degree.
+- On E/𝔽₂ with #E(𝔽₂)=3, the rank-two coefficient is 3/(1−z). Its differential residues at 1 and −1 are −3 and 0, so the negative Fourier sum is 3 for either degree class. A spurious pole at −1 would change one parity.
 
 ### 6.4 rank-two universal check
 
@@ -1079,7 +1073,7 @@ Prove the following statement. For g≥1 set `K_λ(z)=∏_i∏_{j=1}^{r_i}(1−z
 
 One route is as follows. Evaluate the regular partition factors at the origin and combine the surviving binomial factors into K_λ. Keep the minus sign in the definition of A⁰ and use the negative differential-residue extraction, as in §6.2. Compute partitions through rank four and prove the fixed-rank polynomial degree in g.
 
-*Needs:* §6.5; §6.2; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §6.5; §6.2; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -1095,7 +1089,7 @@ With q=2 and paired eigenvalues (−1,−2), P=6, U=15, V=0 and S=5/6. The rank-
 - §5.10.
 - §2.3.
 - §4.9.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 - §0.3.
 - §1.10.
 - §1.9.
@@ -1119,7 +1113,7 @@ The interface has the following properties.
 
 One route is as follows. Use the supplied coherent Higgs carrier and identify its locally free locus with the bundle carrier. The invariant torsion subsheaf supplies the first ordinary HN factor; apply the supplied bundle HN theorem to its quotient. For the coherent deformation comparison, totalize the two columns of derived Hom, obtaining the long exact sequence of MS14 Theorem 2.1. Restrict to the HN-nonnegative exact category and establish its relative HN induction using positive quotients and bounded slopes. For a semistable Higgs bundle of rank s, consecutive underlying HN slopes differ by at most 2g−2. The binomial degree bound forces positivity; applying the same bound to a semistable destabilizer proves the converse comparison of the two stability conditions (MS14 Corollary 3.3).
 
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; SchemeAndStackFoundations §§1.18–1.21; EndoscopicTransferAndUnitaryTraceComparison §3.6; EndoscopicTransferAndUnitaryTraceComparison §3.7. AutomorphicSpectralTheory §§6.22c, 6.24; SchemeAndStackFoundations §2.18.
+*Needs:* GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract; SchemeAndStackFoundations §§1.18–1.21; EndoscopicTransferAndUnitaryTraceComparison §3.6; EndoscopicTransferAndUnitaryTraceComparison §3.7. AutomorphicSpectralTheory §§6.22c, 6.24; SchemeAndStackFoundations §2.18.
 
 **Checks.**
 
@@ -1137,7 +1131,7 @@ Prove the following statement. For coherent V,W on the smooth projective curve, 
 
 One route is as follows. Import Serre duality in its natural coherent form, not an isomorphism chosen separately for each pair. Identify the two maps with restriction and the inclusion of W⊗Ω in V⊗Ω. Read preservation as factorization.
 
-*Needs:* §7.1; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+*Needs:* §7.1; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 
 **Checks.**
 
@@ -1169,7 +1163,7 @@ One route is as follows. Use stable Higgs sheaf GIT and fixed-degree boundedness
 
 ### 7.4 fixed-source description of the supplied two-line chart
 
-Use the smooth two-framing Quot chart Q₁₂ of EndoscopicTransferAndUnitaryTraceComparison §3.7. Choose L_i of degree −d_i with its good-line properties, l_i=χ(L_i,F)=(1−g+d_i)r+d>0 and `V_i=k^{l_i}`. Prove that its fixed-source strongly generated open is the following explicit Quot open, denoted Q°°: in Quot((L_1⊗V_1)⊕(L_2⊗V_2),(r,d)), both restricted maps L_i⊗V_i→F are epimorphisms and both frame maps V_i→Hom(L_i,F) are isomorphisms. The evaluation-surjectivity condition is essential; frame isomorphisms alone do not imply it. Under this comparison the supplied smoothness, principal GL(V_2)-bundle Q°°→Q°_(L1) and quotient [Q°°/G] identify with the strongly L₁-generated coherent open, G=GL(V_1)×GL(V_2). The good-line kernel bound is used for the fixed source `L_1^{⊕l_1}`. (S16, §6.3–6.4, pp.337–339, Lemma 6.1 and framed Quot opens; S16 line 2504).
+Use the smooth two-framing Quot chart Q₁₂ of EndoscopicTransferAndUnitaryTraceComparison §3.7. Choose L_i of degree −d_i with its good-line properties, l_i=χ(L_i,F)=(1−g+d_i)r+d>0 and `V_i=k^{l_i}`. The chart Q₁₂ is the open of Quot((L₁⊗V₁)⊕(L₂⊗V₂),(r,d)) where both frame maps V_i→Hom(L_i,F) are isomorphisms. There Ext¹(L_i,F)=0, since dim V_i=χ(L_i,F). Define Q°°⊂Q₁₂ by the additional open condition that L₁⊗V₁→F is an epimorphism. Prove that L₂⊗V₂→F is then also an epimorphism: a quotient of a direct sum of l₁ copies of L₁ has μ_min≥−d₁, and d₂−d₁≥2g in §8.1 gives strong generation by L₂. Prove that forgetting the second frame is a principal GL(V₂)-bundle Q°°→Q°_(L₁), and that [Q°°/G] is the strongly L₁-generated coherent open, G=GL(V₁)×GL(V₂). Smoothness restricts from Q₁₂; the torsor and strong-generation identification are assertions for Q°°, not for all of Q₁₂. The good-line kernel bound is used for the fixed source `L_1^{⊕l_1}`. (S16, §6.3–6.4, pp.337–339, Lemma 6.1 and framed Quot opens; S16 line 2504).
 
 The interface has the following properties.
 
@@ -1177,20 +1171,20 @@ The interface has the following properties.
 - The quotient groupoid over every test scheme is the strongly L_1-generated sheaf groupoid, with descent respected.
 - At φ the Quot tangent space is Hom(kerφ,F), with the imported scheme tangent identification.
 
-One route is as follows. Compare the functor of points of the supplied strongly generated chart with the two evaluation epimorphisms and Hom frames. Strong generation includes Ext¹(L,F)=0 and surjective evaluation. Use cohomology-and-base-change and frame torsors to prove that this identification respects families, forgetting a frame and the supplied tangent identification.
+One route is as follows. Restrict the supplied two-frame chart to the first-evaluation epimorphism locus and compare its functor of points with the two evaluation epimorphisms and Hom frames. Strong generation includes Ext¹(L,F)=0 and surjective evaluation. Use cohomology-and-base-change and frame torsors to prove that this identification respects families, forgetting a frame and the supplied tangent identification.
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations §4.14; EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 and its locally-free-locus contract; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§1.18–1.21.
+*Needs:* AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations §4.14; EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 and its locally-free-locus contract; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13; SchemeAndStackFoundations §§1.18–1.21; §8.1; EndoscopicTransferAndUnitaryTraceComparison §3.7 under gap:two-line-chart-epimorphism.
 
 **Checks.**
 
-- Changing either chosen basis changes the chart point but not the sheaf in [Q°°/G].
-- A quotient with a nonisomorphic frame map lies outside Q°° even when the combined quotient is surjective.
-- The kernel has rank l_1−r and degree −d_1l_1−d for the one-line presentation; allowing arbitrary larger V would change this bound.
-- In genus two choose a nonspecial effective degree-two line M with h⁰(M)=1. With deg L₁=−5 and deg B=4, F=(L₁⊗M)⊕B has class (2,1), Ext¹(L₁,F)=0 and dim Hom(L₁,F)=1+8=9, but its first evaluation has basepoints. A sufficiently negative L₂, for example degree −24, generates F. Both Hom frames and the combined epimorphism can therefore exist while the first restricted evaluation fails. Such choices exist after a finite field extension; the point must be excluded from the two-line open.
+- For an elliptic curve with F=O, d₁=2,d₂=7 and (l₁,l₂)=(2,7), swapping the two basis vectors in V₁ changes the first frame but represents the same sheaf O in [Q°°/G]. The quotient must identify these presentations.
+- With the same elliptic data, set the first restricted map to zero and take a generating second Hom frame. The combined map is surjective, but its first frame has rank 0 instead of 2, so the point lies outside Q₁₂ and Q°°.
+- With those elliptic data, the kernel of L₁²↠O has rank 2−1=1 and degree −2·2−0=−4. Adding one redundant source copy would change them to rank 2 and degree −6, so the fixed source is essential.
+- In genus two choose a nonspecial effective degree-two line M with h⁰(M)=1. With deg L₁=−5 and deg B=4, F=(L₁⊗M)⊕B has class (2,1), Ext¹(L₁,F)=0 and dim Hom(L₁,F)=1+8=9, but its first evaluation has basepoints. A sufficiently negative L₂, for example degree −24, generates F. Both Hom frames and the combined epimorphism can therefore exist while the first restricted evaluation fails. Such choices exist after a finite field extension; the point lies in Q₁₂ and must be excluded from Q°°. Its second Hom dimension is 20+27=47 and both Ext¹ groups vanish; thus the cotangent sequence remains valid even at this point outside Q°°.
 
 ### 7.5 cotangent sequence and Higgs zero level
 
-Prove the following statement. At φ in Q°°, with L=(L_1⊗V_1)⊕(L_2⊗V_2), the dual tangent sequence is 0→Ext¹(F,F)*→Hom(kerφ,F)*→Hom(L,F)*→End(F)*→0. For the cotangent moment map and zero-level Higgs quotient supplied by EndoscopicTransferAndUnitaryTraceComparison §3.7, prove that this exact sequence identifies the supplied zero-level equivalence with the natural coherent Serre-duality equivalence of §7.2, compatibly with families and changes of frames. (S16, §6.4, equation (6.2), p.340; §6.6, equation (6.3), p.341; S16 line 2527).
+Prove the following statement. At φ in Q°°, with L=(L_1⊗V_1)⊕(L_2⊗V_2), the dual tangent sequence is 0→Ext¹(F,F)*→Hom(kerφ,F)*→Hom(L,F)*→End(F)*→0. For the cotangent moment map and zero-level Higgs quotient supplied by EndoscopicTransferAndUnitaryTraceComparison §3.7, prove that this exact sequence identifies the supplied zero-level equivalence, restricted to Q°°, with the natural coherent Serre-duality equivalence of §7.2, compatibly with families and changes of frames. (S16, §6.4, equation (6.2), p.340; §6.6, equation (6.3), p.341; S16 line 2527).
 
 One route is as follows. Apply Hom(−,F) to the universal quotient and use strong-generation Ext vanishing. Dualize the finite-dimensional exact sequence and identify the infinitesimal frame action. Compare the supplied zero-level identification with natural Serre duality on the kernel, rather than constructing another quotient equivalence.
 
@@ -1231,7 +1225,7 @@ For rank one, H=Pic^d×A^g and Λ=Pic^d; its scalar stack has one fewer dimensio
 - SchemeAndStackFoundations §2.18.
 
 - GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13.
-- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 - SchemeAndStackFoundations §§1.18–1.21.
 - EndoscopicTransferAndUnitaryTraceComparison §3.6.
 - EndoscopicTransferAndUnitaryTraceComparison §3.7.
@@ -1252,18 +1246,21 @@ The interface has the following properties.
 - Every degree −d_i line with these bounds has the strong-generation properties stated in two-line-chart.
 - If p>l_1l_2, then for 0≤a_i≤l_i, (a_1,a_2) neither zero nor full, the integer l_2a_1−l_1a_2 is nonzero in k.
 
-One route is as follows. For an indecomposable bundle or semistable canonical Higgs bundle, the adjacent HN gaps are ≤l=2g−2, so μ_min≥μ−(r−1)l≥B. A positive-rank semistable destabilizer has rank s≤r and slope>d/r, hence the same bound B. Every torsion sheaf is strongly generated by any line: its H¹ vanishes and its evaluation is surjective. Use the degree-only generation contract μ_min(F)+d_i>2g−1 for strong generation. For a nonzero kernel K of `L1^{l1}↠F`, let t=rk K=l1−r. Since μ_max(K)≤−d1 and deg K=−l1d1−d, μ_min(K)≥deg K−(t−1)μ_max(K)≥−d−(r+1)d1. If t=0, K is the zero bundle and is strongly generated. The bound on d2 is strictly stronger than the generation threshold for these kernels and for L1. The congruence gives l2≡r mod l1, while l1≡d mod r, so gcd(l1,l2)=1. Every nonzero proper bounded dimension vector has nonzero integer determinant, of absolute value at most l1l2; characteristic p>l1l2 preserves nonvanishing.
+One route is as follows. For an indecomposable bundle or semistable canonical Higgs bundle, the adjacent HN gaps are ≤l=2g−2, so μ_min≥μ−(r−1)l≥B. A positive-rank semistable destabilizer has rank s≤r and slope>d/r, hence the same bound B. Every torsion sheaf is strongly generated by any line: its H¹ vanishes and its evaluation is surjective. Apply the strong-generation lemma below with μ_min(F)+d_i>2g−1. For a nonzero kernel K of `L1^{l1}↠F`, let t=rk K=l1−r. Since μ_max(K)≤−d1 and deg K=−l1d1−d, μ_min(K)≥deg K−(t−1)μ_max(K)≥−d−(r+1)d1. If t=0, K is the zero bundle and is strongly generated. The bound on d2 is strictly stronger than the generation threshold for these kernels and for L1. The congruence gives l2≡r mod l1, while l1≡d mod r, so gcd(l1,l2)=1. Every nonzero proper bounded dimension vector has nonzero integer determinant, of absolute value at most l1l2; characteristic p>l1l2 preserves nonvanishing.
+
+Strong-generation lemma. For a nonzero coherent F on a smooth projective geometrically connected genus-g curve over a finite field and a line L of degree −a, if μ_min(F)+a>2g−1 then L strongly generates F. The zero sheaf is strongly generated by every line, with no slope assigned to it. After geometric field extension, every point x has degree one; HN Hom vanishing gives Hom(F,L⊗Ω_X(x))=0, since its target line has degree 2g−1−a<μ_min(F). SchemeAndStackFoundations §3.3, curve_serre_duality_ext_hom with locally free first input L(x), gives H¹(F⊗L^∨(−x))=0. The point-evaluation sequence, including its possible torsion kernel, and H²=0 on a curve give surjectivity onto the fibre and H¹(F⊗L^∨)=0. Nakayama gives global generation and faithful flat descent gives the statement over the original field. For torsion F, H¹=0 and global generation also follow directly. The HN field-extension comparison is §0.2; the criterion combines it with the supplied locally free-input Serre duality (S16, proof of Lemma 6.1, pp.338–339; S16 line 2495).
 
 For every subspace U⊆V₁, let W be the image of L₁⊗U→F and put r′=rank W. Since F/W is also a quotient of L₁^l₁, deg W≤d+(r−r′)d₁. Its presentation kernel K_U has rank dim U−r′, maximum slope at most −d₁ and minimum slope at least −deg W−(r′+1)d₁≥−d−(r+1)d₁ when nonzero. Thus the same d₂ strongly generates every K_U, not only the kernel of the full presentation. This is the fixed-source subspace version needed for the two-line tight-pair argument in §8.5; it makes no assertion for arbitrarily varying source dimensions or target classes.
 
-*Needs:* EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 and its locally-free-locus contract; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; FunctionFieldArithmetic §0.2; §1.9; §7.1.
+*Needs:* EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 and its locally-free-locus contract; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract; FunctionFieldArithmetic §0.2; §1.9; §7.1; §0.2; GlobalShtukasAndFunctionFieldLanglands §0.5; SchemeAndStackFoundations §2.6.
 
 **Checks.**
 
-- l_2≡r mod l_1 forces gcd(l_1,l_2)=1, including l_1=1.
-- The zero and full dimension vectors have determinant zero and must be excluded.
-- The theorem uses p>C as sufficient; a smaller p may also work when none of the proper determinants vanish.
-- For g=2,r=2,d=1 the one-line kernel has rank 7 and degree −46. The estimate μ_min(K)≥−16 and deg L₂=−24 gives μ_min(K)+24≥8>3=2g−1. Thus the fixed-source generation inequality is strict.
+- For g=1,r=1,d=0 the least choices are d₁=2,l₁=2,d₂=7,l₂=7,C=14. Proper dimension determinants are nonzero even integers of absolute value at most 14 or odd integers of absolute value at most 7; none is divisible by 11. Thus p>C is sufficient but not necessary.
+- For g=1,r=1,d=3 the choices are d₁=0,l₁=3,d₂=7,l₂=10,C=30. The vector (1,0) has l₂a₁−l₁a₂=10, which vanishes in characteristic 2; in characteristic 31 every proper determinant stays nonzero. Zero and full vectors have determinant zero in all characteristics.
+- For g=2,r=2,d=1 the one-line kernel has rank 7 and degree −46. The estimate μ_min(K)≥−16 and deg L₂=−24 gives μ_min(K)+24≥8>3=2g−1, so its generation inequality is strict.
+- For L=O on P¹, F=O has μ_min=0>−1, H¹=0 and surjective evaluation; F=O(−1) has μ_min=−1 at equality, H¹=0 but zero evaluation. Weakening the strict bound would admit this failure.
+- For a rational skyscraper k_x, μ_min=+∞, Ext¹(L,k_x)=0 and Hom(L,k_x)⊗L→k_x is onto for every line L. For F=0, Hom and Ext¹ are zero and the zero evaluation is an epimorphism. Torsion and zero cause no exception to strong generation.
 
 ### 8.2 King character and slope determinant
 
@@ -1310,7 +1307,7 @@ One route is as follows. Test the subrepresentation generated by all images of x
 **Checks.**
 
 - For a scalar stable stabilizer, the effective stabilizer has dimension 0, so the ambient moment differential is surjective at that point. For O_X⊕L with deg L=1 on a genus-one curve at θ=0, a diagonal projector gives a positive-dimensional effective stabilizer and prevents ambient surjectivity.
-- For an elliptic curve over 𝔽₂ with origin o and (r,d)=(1,0), §8.1 gives d₁=2,d₂=7,l₁=2,l₂=7,C=14. Take F=O_X, L_i=O_X(−d_i o) and zero cotangent coordinate. A one-dimensional U₁ has five-dimensional image under multiplication by Hom(L₂,L₁), so its test weight is at most 7−2·5=−3; the full two-dimensional U₁ generates all seven dimensions, and (0,U₂) has weight −2 dim U₂. Thus the point is γ-stable and lies in the chart although p=2≤14.
+- For an elliptic curve over 𝔽₂ with origin o and (r,d)=(1,0), §8.1 gives d₁=2,d₂=7,l₁=2,l₂=7,C=14. Take F=O_X, L_i=O_X(−d_i o) and zero cotangent coordinate. A one-dimensional U₁ has five-dimensional image under multiplication by Hom(L₂,L₁), so its smallest invariant pair has δ(1,5)=2·5−7=3>0 and enlarging U₂ increases δ; the full two-dimensional U₁ generates all seven dimensions, and every nonzero (0,U₂) has δ=2 dim U₂>0. Thus the point is γ-stable and lies in the chart although p=2≤14.
 - Over 𝔽₃, take two arrows, V₁=k, V₂=k², x₁=e₁, x₂=e₂, y₁=e₁*, y₂=e₂*. The moment value is (2,−I₂)=λ. The ambient moment differential has rank 4, the dimension of the effective dual; after restriction to the central-line inverse image its image has dimension 1. A claim that the restricted map surjects onto the four-dimensional dual fails this example.
 - For g=2,r=2,d=1,d₁=5,d₂=24, let F=L₁⊕B with deg B=6. Then l₁=9,l₂=47, dim Hom(L₁,F)=11 and dim Ext¹(L₁,F)=2. A generating nine-dimensional first frame can be injective without being surjective. At zero cotangent coordinate, the pair cut out by B has dimensions (8,29) and is invariant under x and y=0. Its weight is 9·29−47·8=−115, so it cannot be semistable. Injectivity alone would wrongly admit this example.
 - On an elliptic curve F=O with L₁ of degree −2 has h⁰(L₁⁻¹)=2 and h¹=0; an injective two-dimensional frame is bijective, as the vanishing target requires.
@@ -1372,7 +1369,7 @@ Prove the following statement. For g≥1,r>0,gcd(r,d)=1 and p>C(g,r,d), #H_(r,d)
 
 One route is as follows. By Lang and neutrality, identify rational coarse points of Y_1 with the corresponding quotient groupoid and its scalar gerbe factor. For each indecomposable F the contribution is `(q−1)q^{dim Ext¹(F,F)}/#Aut(F)`. Since `#Aut(F)=(q−1)q^{dim End(F)−1}`, its value is `q^{1−χ(F,F)}=q^D`. Apply the BB fibre-count equality.
 
-*Needs:* §8.7; §8.3; §1.8; §0.2; ReductiveGroupsPartII §RG2.3.7, Lang’s theorem; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; §1.6.
+*Needs:* §8.7; §8.3; §1.8; §0.2; ReductiveGroupsPartII §RG2.3.7, Lang’s theorem; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract; §1.6.
 
 **Checks.**
 
@@ -1384,7 +1381,7 @@ Prove the following statement. For g≥1 use A_K^+ and its relative semistabilit
 
 One route is as follows. Use AutomorphicSpectralTheory §§6.22c and 6.24 for the bundle deformation complex, Serre duality and Ext² vanishing for usual semistable factors in the displayed slope order. Apply MS14 Theorem 1.2 and §3.1 to the positive-category HN factorization, with relative semistable factors and the normalization `q^{(1−g)r²}`; keep this separate from any claim that relative semistability is usual semistability. For slope zero use the z⁰ extraction just stated; then take the coefficientwise plethystic logarithm and its slope factors to define Ω_K^+. Define Ω_K by the independent usual-semistable same-slope formula; compare them only in the eventual degree range.
 
-*Needs:* §7.1; §3.1; §4.5; AutomorphicSpectralTheory §§6.22c, 6.24; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §7.1; §3.1; §4.5; AutomorphicSpectralTheory §§6.22c, 6.24; SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -1400,7 +1397,7 @@ Prove the following statement. For every finite field and g≥1, Ω_K(r,d)=q A_X
 
 One route is as follows. For the positive bundle cutoff, apply the same Krull–Schmidt Euler product to the Serre-dual cotangent fibre: `∑I_K^+=Exp(∑q A_X^{≥0}/(q−1))`. Compare the relative positive-category slope factors using MS14 Theorem 1.2. For d>binom(r,2)(2g−2), MS14 Corollary 3.3 and Theorem 1.2 identify both the positive Higgs invariants and the indecomposable cutoff counts with the untruncated ones. Remove the cutoff by degree-r periodicity; in a coprime class convert the stable stack mass to coarse points by its neutral G_m-gerbe.
 
-*Needs:* §8.9; §2.3; §1.7; §1.9; §1.10; §7.2; §7.3; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §8.9; §2.3; §1.7; §1.9; §1.10; §7.2; §7.3; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -1417,8 +1414,9 @@ For g=2,r=2,d=1, the framing choice has B=−3/2, d₁=5, l₁=9, d₂=24, l₂=
 - AutomorphicSpectralTheory §§6.22c, 6.24.
 
 - EndoscopicTransferAndUnitaryTraceComparison §§3.6–3.7 and its locally-free-locus contract.
-- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality and generation contracts.
+- SchemeAndStackFoundations §§2.20, 3.3, 3.6–3.7 and its coherent-duality contract.
 - FunctionFieldArithmetic §0.2.
+- GlobalShtukasAndFunctionFieldLanglands §0.5; SchemeAndStackFoundations §2.6.
 - §1.9.
 - §7.1.
 - §7.6.
@@ -1435,7 +1433,7 @@ For g=2,r=2,d=1, the framing choice has B=−3/2, d₁=5, l₁=9, d₂=24, l₂=
 - §1.6.
 - §3.1.
 - §4.5.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 - §2.3.
 - §1.7.
 - §1.10.
@@ -1529,7 +1527,7 @@ The interface has the following properties.
 
 One route is as follows. Form the partition products over the existing finite Young diagrams. Work coefficientwise in T over the generic rational function field, then apply the imported plethystic logarithm. Check reciprocal-coordinate and normalization compatibility with the S16 kernel.
 
-*Needs:* §0.1; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams and Macdonald contracts; `YoungDiagram.armLength`; `YoungDiagram.legLength`.
+*Needs:* §0.1; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §3.5 and its Macdonald contract; `YoungDiagram.armLength`; `YoungDiagram.legLength`.
 
 **Checks.**
 
@@ -1543,7 +1541,7 @@ Prove the following statement. Write `N_λ(u)=∏_{s∈λ}(z^{a(s)}−u q^{l(s)+
 
 One route is as follows. Rewrite the S16 J and H factors using the explicit permutation shuffle sum in equation (5); verify the factors rather than identify similarly named kernels. Prove the pole cancellation and padding identity from §4. Use the degree bound of the symmetric shuffle numerator to obtain f_λ(0)=1 and bounded denominators.
 
-*Needs:* §5.9; §10.1; §5.10; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams and Macdonald contracts.
+*Needs:* §5.9; §10.1; §5.10; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §3.5 and its Macdonald contract.
 
 **Checks.**
 
@@ -1555,7 +1553,7 @@ Prove the following statement. For every g≥1,r>0, `H_{g,r}` belongs to Z[q±1,
 
 One route is as follows. Apply HLV-kernel admissibility to remove denominators from H_g. Apply the regular-sequence deformation and finite denominator bounds to obtain the global Laurent conclusion of Mellit Theorem 5.2(i); use part (ii) for equality at z=1. Keep q_M=z and t_M=q throughout. Upgrade rational coefficients to integral coefficients through the integral modified-Macdonald expansion. Use the integral HLV supplier theorem.
 
-*Needs:* supplier contract for QSeriesPartitionsAndMockModularForms (gap:macdonald-admissibility); §10.2; §10.1; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams and Macdonald contracts.
+*Needs:* supplier contract for QSeriesPartitionsAndMockModularForms (gap:macdonald-admissibility); §10.2; §10.1; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §3.5 and its Macdonald contract.
 
 **Checks.**
 
@@ -1567,7 +1565,7 @@ Prove the following statement. For every g≥1,r>0,d∈Z, `A_{g,r,d}=H_{g,r}(z=1
 
 One route is as follows. Compare the S16 logarithmic numerator and Mellit H using the regular deformation. Global Laurentness of H^Sch=(1−z)A removes every nonzero finite pole of A except possibly 1. The Layer 6 Taylor expansion at 0 removes negative powers there. Its rational form is therefore a polynomial plus H^Sch(1)/(1−z); the polynomial changes only finitely many truncated coefficients. Fourier residue extraction gives the same eventual count H(1) in every degree class. Use universal density to promote equality at every curve to equality in R_g.
 
-*Needs:* §10.3; §6.3; §6.2; §4.9; §1.10; LefschetzPencilsAndVanishingCycles §5.11 and its universal-curve density contract; DeligneWeightsAndPurity §10.5.
+*Needs:* §10.3; §6.3; §6.2; §4.9; §1.10; §4.10.
 
 **Checks.**
 
@@ -1592,7 +1590,7 @@ The one-box Mellit coefficient is ∏ᵢ(z−aᵢ)(1−q/aᵢ); its value at z=1
 ### Dependencies
 
 - §0.1.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams and Macdonald contracts.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §3.5 and its Macdonald contract.
 - `YoungDiagram.armLength`.
 - `YoungDiagram.legLength`.
 - §5.9.
@@ -1602,7 +1600,7 @@ The one-box Mellit coefficient is ∏ᵢ(z−aᵢ)(1−q/aᵢ); its value at z=1
 - §6.2.
 - §4.9.
 - §1.10.
-- LefschetzPencilsAndVanishingCycles §5.11 and its universal-curve density contract; DeligneWeightsAndPurity §10.5.
+- §4.10.
 - §9.2.
 - §6.5.
 
@@ -1640,7 +1638,7 @@ For parabolic bundles of ordinary classes (r,d),(s,e) and flag jumps mᵢⱼ,n�
 
 One route is as follows. Construct the parabolic coherent Hall algebra with local flag generators, the displayed Euler form and hereditary correspondence. Prove its generic form, HN membership and shuffle specialization, then repeat the nilpotent groupoid calculation. Prove density using the open configuration space of distinct rational marks on the universal smooth curve, allowing all finite extensions, and track only the q^m−1 denominators of K_g. The unmarked Mellit theorem is not used to infer parabolic denominator removal.
 
-*Needs:* §11.1; §4.8; §4.9; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13.
+*Needs:* §11.1; §4.8; §4.9; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5; GlobalShtukasAndFunctionFieldLanglands §§0.1, 0.5–0.6, 0.13.
 
 **Checks.**
 
@@ -1674,7 +1672,7 @@ Prove the following statement. For every rational ν and class (r,d) with r>0, t
 
 One route is as follows. Use HN characteristic functions in the generic spherical Hall algebra for the specified cutoff. Apply truncated nilpotent counting and coefficientwise plethystic logarithms. Identify the specialization and use universal density for uniqueness.
 
-*Needs:* §11.3; §4.7; §4.8; §2.3; §4.9; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §11.3; §4.7; §4.8; §2.3; §4.9; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -1716,7 +1714,7 @@ The interface has the following properties.
 
 One route is as follows. Form each proposition using the imported graded coefficient and algebra notions. Keep the underlying universal count, denominator-removal and finite-dimensionality assertions separate. Keep these conjectures separate from the preceding theorems; no theorem uses them as hypotheses.
 
-*Needs:* §11.2; §11.3; §11.4; §11.5; §6.5; §4.6; QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+*Needs:* §11.2; §11.3; §11.4; §11.5; §6.5; §4.6; HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 
 **Checks.**
 
@@ -1736,7 +1734,7 @@ No marked points, or only flags of length one, recovers ordinary bundles. Every 
 - §0.2.
 - §4.8.
 - §4.9.
-- QSeriesPartitionsAndMockModularForms §§2.4, 3.5 and its complete-Adams contract.
+- HabiroNahmSeries §5.1 and its complete-Adams contract; QSeriesPartitionsAndMockModularForms §§2.4, 3.5.
 - §4.7.
 - §2.3.
 - §3.1.
