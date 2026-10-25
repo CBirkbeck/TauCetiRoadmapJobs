@@ -39,8 +39,9 @@ Layer 3:
 * Galois-equivariant geometric cohomology transport and the elementary-fibration homotopy
   sequence lack that type, its cover tower and its homotopy-fiber comparison.
 * The characteristic-zero finite etale product formula, over a field and over an algebraically
-  closed field, lacks the scheme finite-etale fiber-functor fundamental group and its geometric
-  product comparison interface.
+  closed field, and the homotopy exact sequence of fundamental groups it rests on lack the scheme
+  finite-etale fiber-functor fundamental group and its geometric product comparison interface;
+  Mathlib's finite etale algebras over a ring cover only affine schemes.
 
 Layer 4:
 * Open arithmetic image lacks the scheme finite-etale fiber-functor fundamental group.
