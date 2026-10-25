@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5354 mistakes recorded on the board: 3467 misprints, 1325 errors, 424 gaps, 138 unparsed bullets.
+5358 mistakes recorded on the board: 3469 misprints, 1327 errors, 424 gaps, 138 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4367,8 +4367,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Kato2004
 
+- **Misprint** at 1.9, printed p. 124: the source says the last term of the leading q-exponent is `a/(2N²)`; it should be `a²/(2N²)`, so that the exponent is half of `B₂(a/N)`; affects nothing. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Error** at Remark 12.8, (12.8.2), p. 223: the source says for every coefficient place of a non-CM form the image contains an open subgroup of `SL₂(ℤ_p)`; it should be require that Momose's quaternion algebra split at the place below, since division-algebra images contain no nontrivial unipotent; affects a stated result; (12.4 at such places, through 13.8). Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Error** at Remark 12.8, (12.8.2), p. 223: the source says the image contains an open subgroup of `SL₂(ℤ_p)` at every coefficient place of a non-CM form; it should be restricted to places where Momose's quaternion algebra splits, since a division algebra contains no `M₂(ℚ_p)`; affects a stated result. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Misprint** at Theorem 14.5(3), p. 236: the source says the condition "(12.5.1)" of Theorem 12.5(4); it should be the image condition (12.5.2), which 14.14 uses; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Misprint** at Theorem 14.5(3), p. 236: the source says the exceptional condition (12.5.1) of Theorem 12.5(4) is assumed; it should be the image condition (12.5.2), on which 14.14 rests; affects nothing. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Misprint** at Theorem 16.4(ii), p. 270: the source says the auxiliary vector lies in `D_crys` of the form's own representation; it should be `D_crys(V*(1))`, the space of η; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 
 ## Katz, p-adic properties of modular schemes and modular forms (LNM 350, 1973)
@@ -6093,6 +6096,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Rubin2000
 
 - **Error** at Proposition III.5.1, draft p. 48: the source says the dual exponential of the singular local classes is the local index times `p⁻¹ℤ_p` for every p, because the logarithm maps `E₁(ℚ_p)` onto `pℤ_p`; it should be restrict to odd p, since at p = 2 the image can be `4ℤ₂` (`y² + xy = x³ + 1`); affects a stated result. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Error** at Proposition III.5.1, draft p. 48: the source says the logarithm maps `E₁(ℚ_p)` onto `pℤ_p` for every p; it should be exclude p = 2, where `y² + xy = x³ + 1` has image `4ℤ₂`; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "a3ba9c5", "job": "REV-PKG-KatoEulerSystems~3", "model": "opus", "worker": "fable-rev108"} -->. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 
 ## Rubin87
 
