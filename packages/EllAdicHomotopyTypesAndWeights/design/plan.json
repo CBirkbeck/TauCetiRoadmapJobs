@@ -2932,13 +2932,13 @@
       "slug": "polynomial-forms-de-rham",
       "supplier": "AlgebraicTopologyPartII",
       "section": "AT2.4",
-      "needs": "For every simplicial set X and characteristic-zero field K, extend §AT2.4 to its compatible-family polynomial-form algebra A_PL(X;K) with a natural multiplicative de Rham isomorphism H*(A_PL(X;K))≃H*(X,K) (DGMS Theorem 2.1, p. 255; dgms line 448; Sullivan Theorem 7.1 and its polynomial-form example, pp. 296–299; sullivan line 1121)."
+      "needs": "For every simplicial set X and characteristic-zero field K, provide A_PL(Δʳ;K) as the polynomial/exterior algebra with Σxᵢ=1, Σdxᵢ=0 and d(xᵢ)=dxᵢ, and A_PL(X;K) as its degreewise compatible-family algebra, with equality detected by simplex evaluations, contravariant pullbacks and a natural multiplicative de Rham isomorphism H*(A_PL(X;K))≃H*(X,K); the simplex filtration counting both coordinates and differentials is preserved by d, faces and degeneracies, while the full compatible-family algebra permits unbounded simplexwise degrees (DGMS §2, Theorem 2.1, pp. 254–255; dgms line 448; Sullivan Theorem 7.1 and its polynomial-form example, pp. 296–299; sullivan line 1121)."
     },
     {
       "slug": "sullivan-minimal-models",
       "supplier": "AlgebraicTopologyPartII",
       "section": "AT2.4",
-      "needs": "For every connected nonnegative commutative DG algebra over a characteristic-zero field, extend §AT2.4 to existence of ordered full and 1-minimal Sullivan model maps, without a nilpotence hypothesis on a realizing space (Morgan Theorem 5.6, pp. 164–166; morgan line 1064)."
+      "needs": "Over every characteristic-zero field define positive-degree Sullivan algebras as free graded-commutative algebras with ordered Hirsch extensions, call them minimal when generator differentials are decomposable, identify their indecomposable quotient M⁺/(M⁺)² with zero induced differential in the minimal case, prove that a DG map out of a Hirsch extension is determined by its restriction to the base and generator images satisfying the differential equation, and give every connected nonnegative commutative DG algebra ordered full and 1-minimal model maps, respectively quasi-isomorphisms and H¹ isomorphisms with H² injections, without a nilpotence hypothesis on a realizing space (Morgan Definitions 5.1–5.3 and Theorem 5.6, pp. 163–166; morgan line 1017; morgan line 1064)."
     },
     {
       "slug": "sullivan-quasi-isomorphism-rigidity",
@@ -2950,7 +2950,7 @@
       "slug": "sullivan-homotopy-lifting",
       "supplier": "AlgebraicTopologyPartII",
       "section": "AT2.4",
-      "needs": "In §AT2.4, every quasi-isomorphism A→B of nonnegative commutative DG algebras over a characteristic-zero field induces a bijection [M,A]→[M,B] on polynomial-homotopy classes for every ordered positive-degree Sullivan source M (Morgan Theorem 5.7 and the relative uniqueness argument, pp. 166–167; morgan line 1119)."
+      "needs": "Over a characteristic-zero field define polynomial homotopies M→A⊗K[t,dt], d(t)=dt, with endpoint evaluations killing dt, and prove equal induced cohomology maps, constant paths, pre- and postcomposition, an equivalence relation for ordered positive-degree Sullivan sources with a single homotopy for transitivity, bijectivity [M,A]→[M,B] for every quasi-isomorphism A→B of nonnegative commutative DG algebras, and lifting of each automorphism of a connected target to a homotopy class of automorphisms of a chosen minimal model, without asserting a compatible choice of actual lifts (Morgan Proposition 5.5, Theorems 5.6–5.7 and the relative uniqueness argument, pp. 164–167; morgan line 1043; morgan line 1119; DGMS Theorem 1.2 and Corollaries 1.3–1.6, pp. 252–253; dgms line 331)."
     },
     {
       "slug": "sullivan-scalar-extension",
@@ -2987,6 +2987,18 @@
       "supplier": "AnabelianGeometryAndNonabelianChabauty",
       "section": "2.2–2.3",
       "needs": "Extend §§2.2–2.3’s pointed unipotent étale Tannakian category, finite-dimensional quotient towers and H¹/Ext¹ and H² obstruction interfaces to every connected normal separated finite-type variety over an algebraically closed field with ℓ invertible."
+    },
+    {
+      "slug": "finite-component-etale-presentation",
+      "supplier": "EtaleHomotopyTypes",
+      "section": "EH.3",
+      "needs": "For every separated finite-type scheme over a countable algebraically closed field k₁, provide a small cofiltered presentation E_fin by connected components of étale hypercovers with finitely many components in every simplicial degree, and a refinement pro-map Et_rig→E_fin inducing the ordinary finite-coefficient étale cohomology isomorphism for every invertible prime ℓ and r≥1, naturally in maps, coefficients and common fields of definition; for a descent to k₀ choose the presentation Galois-compatible, with finite Galois orbits of each truncated stage and finite-extension descent of its components and maps (Weil II §5.2.2–§5.2.3, pp. 238–239; weil-II line 3804; weil-II line 3823)."
+    },
+    {
+      "slug": "ordinary-cohomology-weight-bounds",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "7.12–7.14, 8.24",
+      "needs": "For every separated finite-type scheme X over an algebraically closed field k, every prime ℓ invertible in k and every i≥0, the spread-independent filtration on ordinary Hⁱ_ét(X,ℚ_ℓ) satisfies Gr_w^W Hⁱ=0 for w<0 or w>2i, including when X is neither smooth nor proper (Poids §7.1, p. 82; poids line 127; Weil II §5.3.6, p. 241; weil-II line 3938)."
     }
   ],
   "coverage": [

@@ -20,6 +20,8 @@ at these pins with only a few simple definitions on existing carriers.
   and its comparison map.
 * The étale realization theorem for separated finite-type varieties lacks A_ℓ and the
   étale ℚ_ℓ cohomology ring of a variety.
+* The finite-component/raw rigid form comparison lacks the hypercover presentations,
+  their refinement pro-map, and their completed form algebras.
 * Complex minimal-model comparison lacks that algebra, Sullivan models, and polynomial forms.
 * Frobenius–Hodge weight comparison lacks the geometric cohomology realizations and
   their common filtered comparison.
