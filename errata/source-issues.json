@@ -110175,10 +110175,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1674#issuecomment-6402242633"
+  },
+  {
+   "kind": "gap",
+   "source": "kraus-1997",
+   "locator": "§3.3, proof of Théorème 4, printed p.1146",
+   "says": "the curve has a rational point of order two by a cited reference and that quotienting by it suffices when it is the only one",
+   "should": "justify the rational two-point from the global four-divisibility and the full two-torsion of the quotient by the square-class argument",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "EllipticModularityEffectiveComparisons",
+   "job": "REV-PKG-EllipticModularityEffectiveComparisons~4",
+   "board_pr": 1361,
+   "head": "f72311b",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1361#issuecomment-6402322173"
+  },
+  {
+   "kind": "error",
+   "source": "lemos-2017",
+   "locator": "§2, proof of Theorem 1.1, p.5",
+   "says": "the Jacobian of X₀(37) has rank zero",
+   "should": "that a rank-zero quotient exists while the Jacobian itself has positive rank, with the rational points of X₀(37) determined separately",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"f72311b\", \"job\": \"REV-PKG-EllipticModularityEffectiveComparisons~4\", \"model\": \"fable\", \"worker\": \"fable-rev130\"} -->",
+   "roadmap": "EllipticModularityEffectiveComparisons",
+   "job": "REV-PKG-EllipticModularityEffectiveComparisons~4",
+   "board_pr": 1361,
+   "head": "f72311b",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1361#issuecomment-6402322173"
   }
  ],
- "scanned_to": "2026-10-25T19:38:36Z",
- "updated": "2026-10-25T19:40:02Z",
+ "scanned_to": "2026-10-25T19:46:03Z",
+ "updated": "2026-10-25T19:46:25Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
