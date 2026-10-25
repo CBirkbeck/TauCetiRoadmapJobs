@@ -17,9 +17,9 @@ The following headline theorems are not statable at the pins:
 - Fiberwise generalized homology equivalence (§6.2): missing spectra and their smash with suspension spectra; the pinned Eilenberg–Steenrod homology pretheory has no excision axiom and no weak-equivalence invariance, and neither library has homotopy fibres of maps of spaces.
 - Finite nullification and its periodic comparison, sharp connective periodic vanishing, including arbitrary-endpoint maps with the relative height-zero condition, and suspension–loop preservation (§6.3–§6.4): missing unstable periodic groups, derived space fibers, finite nullification and the finite-local spectral tower.
 - Marked Morava E realization and coherent stabilizer actions at every finite height (§7.1–§7.2): missing E∞ ring spectra, marked spectral realizations and coherent actions.
-- Uniform geometric-height locality for every module (§8.1): missing oriented ring spectra, module spectra and Johnson–Wilson localization.
+- Uniform geometric-height locality for every homotopy-unital action (§8.1), including coherent modules of an E₁ refinement: missing oriented ring spectra, spectral actions and Johnson–Wilson localization.
 - T(n)/K(n) comparison on chromatically local spectra (§8.2): missing spectral chromatic reflectors and their natural transformations.
-- Height-one equality and higher-height telescope separation (§8.3): missing the two spectral local categories and nonconnective K-theory of spectral rings.
+- Height-one equality and higher-height telescope separation (§8.3), the latter requiring the purity/trace and BP redshift supplier contracts: missing the two spectral local categories, nonconnective K-theory of spectral rings and cyclotomic TC.
 - Chromatic support and inversion comparison for BP truncations (§8.4): missing BP-module spectra, their truncations and spectral localization.
 - Localized transfer criterion and telescopic Tate vanishing (§9.1–§9.3): missing coherent finite-group spectra, normalized norms and Tate cofibers.
 - Raw finite-local Tate blueshift (§9.4): missing coherent finite-group spectra, raw Tate cofibers and finite-local reflectors.
@@ -31,7 +31,7 @@ The following headline theorems are not statable at the pins:
 - Chromatic comparisons for tmf, Tmf and TMF (§12.2): missing the three modular-form spectra and their spectral localization units.
 - Faithful full-level spectral Galois extensions for every N≥1, including the small-level stack cases, and supersingular comparisons (§12.3–§12.4): missing spectral level stacks, E∞ spectral algebras, relative tensor, Morava E-theory and coherent fixed points.
 - Hopkins–Mahowald completed Thom equivalences (§13.1–§13.2): missing p-complete spectra, spectral units, E₂ Thom rings and nilpotent space completion.
-- James-filtered Thom colimits and chromatic acyclicity (§13.3–§13.4): missing completed E₁ Thom spectra, homotopy colimits and Morava homology.
+- James-filtered mod-p and integral Thom colimits and chromatic acyclicity at every prime (§13.3–§13.4): missing completed E₁ Thom spectra, homotopy colimits and Morava homology.
 - James splitting acyclicity application (§13.5): missing reduced suspension spectra and the stable James splitting.
 
 The pinned algebraic formal-group and ordinary category-localization APIs do not

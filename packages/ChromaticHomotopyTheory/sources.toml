@@ -151,7 +151,7 @@ title = "Ambidexterity in Chromatic Homotopy Theory"
 year = 2018
 arxiv = "1811.02057v3"
 locator_scheme = "section"
-locator = "Introduction, Theorem E; §5.4, Theorem 5.4.4 and Remark 5.4.5, pp.83–84."
+locator = "Introduction, Theorem E; Definition 5.1.4, p.73; Corollary 5.3.7, p.81; §5.4, Theorem 5.4.4 and Remark 5.4.5, pp.83–84."
 url = "https://arxiv.org/abs/1811.02057v3"
 fetched_from = "https://arxiv.org/pdf/1811.02057v3"
 fetched_at = "2026-10-23T19:36:10Z"
@@ -294,7 +294,7 @@ title = "K-theoretic counterexamples to Ravenel's telescope conjecture"
 year = 2023
 arxiv = "2310.17459v1"
 locator_scheme = "section"
-locator = "Introduction, Theorem A and the three localization categories, pp.2–5."
+locator = "Introduction, Theorem A and the three localization categories, pp.2–5; Definition 4.2, p.37; Theorem 5.4, pp.53–54; Theorem 6.1 and Corollary 6.3, pp.66–67; Theorem 6.25, pp.73–74."
 url = "https://arxiv.org/abs/2310.17459v1"
 fetched_from = "https://arxiv.org/pdf/2310.17459v1"
 fetched_at = "2026-10-23T19:42:49Z"
@@ -338,3 +338,78 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-23"
 cited_for = ["9.5"]
+
+[[source]]
+id = "miller"
+authors = "Haynes R. Miller"
+title = "On relations between Adams spectral sequences, with an application to the stable homotopy of a Moore space"
+year = 1981
+venue = "Journal of Pure and Applied Algebra 20 (1981), 287–312"
+doi = "10.1016/0022-4049(81)90064-5"
+locator_scheme = "theorem"
+locator = "Theorem 4.11 and Corollary 4.12, pp.294–295"
+url = "https://math.mit.edu/~hrm/papers/miller-relations-between-adams-spectral-sequences.pdf"
+fetched_from = "https://math.mit.edu/~hrm/papers/miller-relations-between-adams-spectral-sequences.pdf"
+fetched_at = "2026-10-25T13:28:23Z"
+sha256 = "2f94bf4110a424f10b44d80b62b78b46b0bf613a456f32037edd6d95fed08a48"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["8.3 height-one telescope equality at odd primes"]
+
+[[source]]
+id = "mahowald"
+authors = "Mark Mahowald"
+title = "bo-resolutions"
+year = 1981
+venue = "Pacific Journal of Mathematics 92 (1981), 365–383"
+doi = "10.2140/pjm.1981.92.365"
+locator_scheme = "section"
+locator = "Theorem 6.3, p.382, with its correction in mahowald-addendum §2"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mahowald-bo.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mahowald-bo.pdf"
+fetched_at = "2026-10-25T13:30:14Z"
+sha256 = "bb31b3b645bdd765979950bc5f87044a5d4645994ef1400f695b24c3f8aafe47"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Theorem 6.3 is read with the corrected proof in mahowald-addendum §2; Theorem 1.1(c) and its vanishing line are corrected there in §§1 and 3."
+cited_for = ["8.3 height-one telescope equality at p=2"]
+
+[[source]]
+id = "mahowald-addendum"
+authors = "Mark Mahowald"
+title = "An addendum to: bo-resolutions"
+year = 1984
+venue = "Pacific Journal of Mathematics 111 (1984), 117–123"
+doi = "10.2140/pjm.1984.111.117"
+locator_scheme = "section"
+locator = "§1, pp.117–118, corrected Theorem 1.1(c); §2, pp.118–119, corrected proof of Theorem 6.3; §3, pp.119–123, vanishing line"
+url = "https://msp.org/pjm/1984/111-1/pjm-v111-n1-p10-s.pdf"
+fetched_from = "https://msp.org/pjm/1984/111-1/pjm-v111-n1-p10-s.pdf"
+fetched_at = "2026-10-25T13:29:53Z"
+sha256 = "458695a15e48e9ba9dc31cd0edcf1b5f7f87c448fc838a9cf9781f325eab2f33"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["8.3 corrected bo-resolution proof of height-one telescope equality at p=2"]
+
+[[source]]
+id = "hahn-wilson"
+authors = "Jeremy Hahn, Dylan Wilson"
+title = "Redshift and multiplication for truncated Brown–Peterson spectra"
+year = 2022
+doi = "10.4007/annals.2022.196.3.6"
+venue = "Annals of Mathematics 196 (2022), 1277–1351"
+arxiv = "2012.00864v5"
+locator_scheme = "theorem"
+locator = "Theorem B and its following corollary, p.3; Corollary 5.0.2 with proof, p.40"
+url = "https://arxiv.org/abs/2012.00864v5"
+fetched_from = "https://arxiv.org/pdf/2012.00864v5"
+fetched_at = "2026-10-25T13:34:44Z"
+sha256 = "356f7d169bd899c7ab2540d26bae37c0e4a08c4cce06eb8475d312ee6e31b5ec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Numbering and page locators refer to arXiv v5, not the published pagination."
+cited_for = ["8.3 BP Lichtenbaum–Quillen and redshift supplier contract"]
