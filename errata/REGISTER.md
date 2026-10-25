@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4890 mistakes recorded on the board: 3229 misprints, 1215 errors, 350 gaps, 96 unparsed bullets.
+4926 mistakes recorded on the board: 3251 misprints, 1227 errors, 352 gaps, 96 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -713,7 +713,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## BCGP21
 
+- **Error** at Lemma 3.8.5, printed p. 220: the source says every finite étale Galois cover splits into invariants and augmentation terms; it should be restricted to invertible group order for this decomposition, as the trivial characteristic-two double cover shows; affects the proof. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
+- **Gap** at Lemma 3.9.12, printed p. 230: the source says restriction of Cousin terms to the interior is immediate; it should be an argument establishing boundary regularity on the relevant Cohen–Macaulay thickenings and excluding associated boundary components; affects the proof. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 3.10.7, printed p. 238: the source says the four Satake monomials but repeats [1,ϖ,1,ϖ]; it should be list [1,1,ϖ,ϖ],[1,ϖ,1,ϖ],[ϖ,1,ϖ,1],[ϖ,ϖ,1,1]; affects the proof. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at proof of Lemma 3.10.7, printed p. 238: the source says the four spin monomials with a repeated diagonal; it should be the four distinct diagonals (1,1,ϖ,ϖ), (1,ϖ,1,ϖ), (ϖ,1,ϖ,1), (ϖ,ϖ,1,1); affects the proof. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 
 ## BCGP25
 
@@ -914,9 +917,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## BGS16
 
+- **Error** at Lemmas 4–5, pp. 5–6: the source says every hyperbolic or elliptic trace has respectively p−1 or p+1 nonzero slice points; it should be exclude trace 0: its counts are 2(p−1) or0; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 12 proof, p. 17: the source says the all-zero trace exception has three eigenvalue orders equal to 2; it should be use order 4, since each eigenvalue is ±i; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Proposition 12, proof, pp. 16–17: the source says the source labels the excluded case as orders (2,2,2) with ζ=±i; it should be (4,4,4), since ±i has order 4; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at equation (63), p. 16: the source says the source pairs ζ_{l1} with ζ_{l2}⁻¹ in the first factor; it should be ζ_{l1}⁻¹; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at equation(63), p. 16: the source says the first eigenvalue is paired with the second eigenvalue's inverse; it should be pair the first eigenvalue with its own inverse in both occurrences; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at equation(9), p. 5: the source says a norm-one torus generator is obtained by exponent p+1 from a quadratic-field generator; it should be use exponent p−1; at p=5 the printed exponent gives order 4 instead of 6; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §1, p. 1: the source says R2, R3 are defined similarly after defining R3; it should be R1, R2; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "4ba5ef1", "job": "REV-PKG-ArithmeticDynamicsPartII", "model": "opus", "worker": "fable-rev44"} -->. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at §1, p. 1: the source says R₂ and R₃ remain to be defined after defining R₃; it should be R₁ and R₂; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "cd26b109a1a52fa2483ed93e6d8a39183ea304b5", "job": "REV-PKG-ArithmeticDynamicsPartII~2", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 
 ## BH
 
@@ -1403,7 +1411,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BP26
 
 - **Misprint** at proof of Proposition 2.9.9, p. 29: the source says the target uses (j_l)_* and places the inverse-image opens in X; it should be use (j_l)_! with opens in C; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "db967e1", "job": "REV-PKG-AutomorphicBundlesPartII", "model": "opus", "worker": "fable-rev41"} -->. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at proof of Proposition 2.9.9, p. 29: the source says the target uses open direct image and places inverse-image opens in X; it should be extension by zero with the inverse-image opens in C; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "eab6b3794d4f04e80dd7b9d4048eecb73506c782", "job": "REV-PKG-AutomorphicBundlesPartII~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §4.3.1, p. 46: the source says the left translation sends f to m↦f(m⁻¹m′), which fails the identity law; it should be m↦f(m′⁻¹m); affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at §4.3.1, p. 46: the source says the left action evaluates at m⁻¹m′; it should be evaluation at m′⁻¹m; affects nothing. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 
 ## bpcz
 
@@ -1697,7 +1707,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## C24
 
+- **Error** at Proposition 3.2.2(a), p. 352: the source says the reduced ramification divisor has degree #G/e without excluding e=1; it should be impose e≥2; the reduced ramification divisor is empty when e=1; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Error** at Proposition 5.4.2 and Theorems 5.4.3–5.4.4, pp. 411–413: the source says even characteristic permits only the split torus case; it should be classify using polynomial splitting; the nonsplit order5 case over 𝔽₄ requires q+1; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 5.4.2 proof, p. 411: the source says conjugacy ACA⁻¹=Cⁿ sends λ-eigenvectors to λⁿ-eigenvectors under A; it should be that direction for A⁻¹; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Error** at Proposition 5.4.2 proof, p. 412: the source says Frobenius proportionality forces an arbitrary eigenvector's coordinates to be Frobenius-fixed; it should be normalize one nonzero coordinate and descend the coordinate ratio; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Error** at Proposition 5.4.2(b) and Theorems 5.4.3–5.4.4, pp. 411–413: the source says in even characteristic every trace is the square case with order dividing q−1; it should be split by roots of T²−tT+1, since over 𝔽₄ nonsplit order-5 elements exist; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Error** at Remark 2.2.4, p. 324: the source says the reduced ramification divisor is absolutely reduced exactly when the base is reduced; it should be require a surjective ramification divisor for the converse; an empty divisor is reduced over a nonreduced base; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Error** at Theorem 5.5.7's precise prime range, p. 416: the source says the geometric connectedness clause holds at every prime outside the exceptional set; it should be restrict that clause to p≥5, since the indicated epimorphism locus is empty at 2 and 3; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Error** at Theorem 5.5.8 proof, p. 417: the source says the coefficient-three surface modulo3 consists of two singleton orbits; it should be have the origin and one eight-point nonzero orbit; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Error** at Theorem 5.5.8(b), p. 417: the source says full affine strong approximation holds at the stated squarefree moduli; it should be give the origin plus the primitive locus; the mixed point404040 modulo65 has no lift; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Error** at Theorem 5.5.8(b), pp. 416–417: the source says X and M satisfy strong approximation modulo squarefree n; it should be the image is the origin plus the primitive locus, since (40,40,40) mod 65 has no lift; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Error** at Theorem 5.5.8, proof, p. 417: the source says M(𝔽₃) has two singleton orbits, the origin and (1,1,1); it should be the origin and one eight-point orbit, as on p. 415; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 
@@ -1919,7 +1937,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Theorem 6.13, pp.842–843: the source says multiplication by A^s maps β-parts to β-parts modulo ϖ^m and transfers the p-polynomial factorization, citing Lemmas 6.2(2) and 6.4; it should be justified separately, since those lemmas give p-operator equivariance only modulo ϖ and use the full-space annihilator; affects the proof. Found by GSp4NonregularModularityLifting (#1219 at f7b2dd9, 2026-10-24, claude opus).
 - **Gap** at proof of Theorem 9.1, step (c), p.880: the source says H_N is balanced by Theorem 7.11; it should be justified for the α,β-summand, since Theorem 7.11 treats the full localized module and a summand of a balanced module can have negative defect; affects the proof. Found by GSp4NonregularModularityLifting (#1219 at f7b2dd9, 2026-10-24, claude opus).
 - **Misprint** at the proof of Lemma 8.6, internal p.59: the source says the indices R in Z₂ have det(R)=0; it should be det R = p²det Q ≡ 0 mod p; affects nothing. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
+- **Error** at §5.3, p. 26: the source says the g-dependent inverse similitude twist is rationally equivariant; it should be corrected by an adelic norm/sign factor cancelling the extra rational scalar; affects the proof. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §5.3, p. 28: the source says Weyl chambers C₀,…,C₄; it should be the four chambers C₀,…,C₃; affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at §5.3, p. 28: the source says the chambers are indexed from zero through four; it should be zero through three; affects nothing. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §6.3 (definition of e_β), p.841, and §6.4 (e_{α,β}), p.845: the source says the idempotent is the limit of n!-th powers of the product of both shifted p-operators, which projects where both shifts are units; it should be the product of the two separate generalized-eigenspace projectors 1−lim(T−c)^{n!}; affects nothing. Found by GSp4NonregularModularityLifting (#1219 at f7b2dd9, 2026-10-24, claude opus).
 
 ## CGH20
@@ -2491,9 +2511,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## EFLMT24
 
 - **Error** at Lemma 2.1, proof, pp. 4–5: the source says the curve's zero/pole set is three points and takes coordinate degrees t, d, giving χ=3; it should be four points (adding [1:α:0]), χ=4, degrees 2t, 2d, bound (3/2)·max((32td)^(1/3), 16td/p); affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Error** at Lemma 2.1, proof, pp. 4–5: the source says the cubic has three boundary points and uses degrees t,d; it should be four boundary points, degrees2t,2d, and χ=4, giving the conservative bound in §5.1; affects a stated result. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Lemma 3.7, proof, p. 9: the source says the least prime factor of a coprime product is the minimum over factors; it should be treat a quotient equal to 1 separately, since λ(1)=1; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Gap** at Lemma 3.7, proof, p. 9: the source says the least-prime-factor product identity applies to all quotient pairs; it should be treat quotient1 separately, because λ(1)=1 invalidates that minimum identity; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Remark 4.1, p. 21: the source says Theorem 3.2 gives a reduced number in [B, 4B−2]; it should be Theorem 3.14; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at Remark 4.1, p. 21: the source says Theorem 3.2 provides a reduced integer in the required interval; it should be Theorem 3.14; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §4.1 and Theorem 4.2 proof, pp. 20–21: the source says M_d is the cardinality of a union of the two maximal-divisor sets; it should be the sum of their cardinalities, retaining common divisors twice, as in Theorem 3.2; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §4.1, p. 20: the source says the first interval of Theorem 3.14 should be empty; it should be Theorem 3.2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at §4.1, p. 20: the source says the first obstruction interval belongs to Theorem 3.14; it should be Theorem 3.2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 
 ## EGS15
 
@@ -3483,6 +3508,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at §6.3, Propositions 16–17 and (42), arXiv v2 printed pp.13–14 (HK01 line 616): the source says every binary subgroup has the stated zigzag comparison, including the order-two subgroup; it should be an explicit extension beyond §3’s simple-graph definition for the double-edge case, with separately distinguished arrows in the small cyclic presentations; affects a stated result. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §6.3, Remark after Proposition 21, arXiv v2 printed p.15 (HK01 line 688): the source says substitute the finite-dimensional skew-zigzag algebra for A!(Γ_aff) in the polynomial-side argument; it should be substitute it for A(Γ_aff), or substitute its quadratic dual for A!(Γ_aff); affects the proof. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6.3, before Proposition 19, arXiv v2 printed p.14 (HK01 line 650): the source says T*ℙ¹/G′ has two singularities for cyclic G′; it should be two only for nontrivial cyclic G′; G={±I} gives G′=1 and the smooth surface T*ℙ¹; affects a stated result. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
+
+## HKI
+
+- **Misprint** at §4.4, printed p. 36: the source says the isocrystal of a weight-w Hodge structure is built from Hom out of O(w/2) tensored with the slope −w/2 isocrystal, with weight equal to −2 times slope; it should be Hom out of O(−w/2) tensored with the slope w/2 isocrystal, so weight is twice slope, as Definition 4.2.1 and Remark 4.2.2 require; affects nothing. Found by AdmissiblePairsAndPadicHodgeStructures (#1092 at 57fb70a, 2026-10-25, claude opus).
+
+## HKII
+
+- **Misprint** at §10.1, printed p. 64: the source says each component of the basic locus is the product of the finite-level local Shimura variety with the discrete group Γ; it should be the quotient of that space by Γ ≤ G_b(Q_p); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "57fb70a", "job": "REV-PKG-AdmissiblePairsAndPadicHodgeStructures~2", "model": "opus", "worker": "fable-rev88"} -->. Found by AdmissiblePairsAndPadicHodgeStructures (#1092 at 57fb70a, 2026-10-25, claude opus).
 
 ## HKW22
 
@@ -4943,7 +4976,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## MP18
 
+- **Error** at Corollary 5.11 proof, p. 25: the source says the Markoff block degree is never a prime power; it should be separate p=7, whose degree is7, and use the supplied fixed-point argument; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Error** at Corollary 5.11, proof, p. 25: the source says p(p±3)/4 is never a prime power; it should be exclude p=7, where it is 7 and the fixed-point argument given there is needed; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
+- **Misprint** at Lemma 5.13 proof, p. 26: the source says both commutator components use h₁; it should be use h₂ in the second component; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 5.13 proof, p. 26: the source says the relevant normal subgroups belong to Q_p; it should be Q_q; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 5.13 proof, p. 26: the source says the resulting socle lies in the image under π_p; it should be π_q; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Lemma 5.13, proof, p. 26: the source says the commutator's second component with h1; it should be h2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at Lemma 5.13, proof, p. 26: the source says the source speaks of normal subgroups of Q_p; it should be Q_q; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at Lemma 5.13, proof, p. 26: the source says the source concludes containment in the image under π_p; it should be π_q; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
@@ -5087,10 +5124,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## P20
 
 - **Misprint** at Corollary 15.2.3.1, p. 108: the source says the H¹ identity without the subscript m; it should be localized at m like the H⁰ identity; affects a stated result. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at Corollary 15.2.3.1, p. 108: the source says the degree-one equality without residual localization on its left side; it should be localized at m, matching the congruence-restricted right side; affects a stated result. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 15.2.2.1(2), p. 108: the source says the large-weight condition is λ₁≥R although λ₁=−k−1<0; it should be −λ₁≥R; affects a stated result. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at Theorem 15.2.2.1(2), p. 108: the source says the negative parameter satisfies λ₁≥R in the large-weight range; it should be −λ₁≥R; affects a stated result. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Corollary 15.2.3.1, p. 109: the source says the boundary sheaf ω² occurs when k=2; it should be when k=0, as two lines earlier; affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at proof of Corollary 15.2.3.1, p. 109: the source says the exceptional boundary sheaf ω² occurs at k=2; it should be k=0; affects nothing. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Lemma 6.4.1, p.35: the source says the source's Frobenius matrix has Fe₂ = pe₃, which with the form J of §5.1 gives ⟨Fe₂,Fe₃⟩ = −p; it should be −pe₃; affects nothing; (the Hasse term −Y is unchanged). <!-- tauceti-roadmap-review {"agent": "claude", "head": "6c5e47e", "job": "REV-PKG-AlgebraicModularFormsAndSerreWeightsPartII", "model": "opus", "worker": "fable-rev51"} -->. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
 - **Misprint** at §5.3, p. 24: the source says the holomorphic parameter is (1−k+r,2−r;k+2r); it should be (1−k−r,2−r;k+2r), as on p. 25; affects nothing. Found by AutomorphicBundlesPartII (#1029 at db967e1, 2026-10-24, claude opus).
+- **Misprint** at §5.3, p. 24: the source says the holomorphic parameter starts 1−k+r; it should be 1−k−r, agreeing with the following page; affects nothing. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §5.3, p. 25: the source says the tensor-twisted correspondence targets p₁!O; it should be p₁!Ω^(k,r), retaining the coefficient just tensored into the fundamental class; affects nothing. Found by AutomorphicBundlesPartII (#1029 at eab6b37, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §6.4, p.35: the source says the rank-r stratum dimension 3−r and defines the closed and open strata by strict inequalities; it should be dimension r+1 with "at most" and "at least"; affects nothing. Found by AlgebraicModularFormsAndSerreWeightsPartII (#1087 at 6c5e47e, 2026-10-24, claude opus).
 
 ## parshin
