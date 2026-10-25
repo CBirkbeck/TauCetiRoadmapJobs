@@ -42,7 +42,7 @@ TauCeti/AlgebraicGeometry/EllipticCurve/MordellWeil/XSubT.lean supplies the moni
 
 TauCeti/AlgebraicGeometry/EllipticCurve/MordellWeil/TwoTorsion.lean supplies `WeierstrassCurve.Affine.card_ker_nsmul_two`; it counts roots, and does not export the labelled set equality. Affine/Point/VariableChange.lean supplies `WeierstrassCurve.Affine.Point.addEquivVariableChange` from points on C•W to points on W. `WeierstrassCurve.Affine.Point.equivVariableChange` is its underlying bijection, not itself the additive equivalence. NormalForms.lean supplies the root-point test `WeierstrassCurve.y_eq_zero_of_order_two`.
 
-TauCeti/AlgebraicGeometry/EllipticCurve/PointCount.lean supplies `WeierstrassCurve.pointCount`, `WeierstrassCurve.pointCount_eq_card_point`, `WeierstrassCurve.frobeniusTrace` and `WeierstrassCurve.frobeniusTrace_def`. The count is the cardinality of all affine solutions plus one, so the comparison with nonsingular points requires ellipticity and finite affine solution set. Affine/FinitePoint.lean supplies `WeierstrassCurve.Affine.finite_point` over finite coefficients. QuadraticTwist/Basic.lean supplies `WeierstrassCurve.quadraticTwistOf`, `WeierstrassCurve.Δ_quadraticTwistOf`, `WeierstrassCurve.c₄_quadraticTwistOf`, `WeierstrassCurve.j_quadraticTwistOf` and `WeierstrassCurve.isElliptic_quadraticTwistOf_iff`, including the unit twisting-discriminant condition over rings.
+TauCeti/AlgebraicGeometry/EllipticCurve/PointCount.lean supplies `WeierstrassCurve.pointCount`, `WeierstrassCurve.pointCount_eq_card_point`, `WeierstrassCurve.frobeniusTrace` and `WeierstrassCurve.frobeniusTrace_def`. The count is the cardinality of all affine solutions plus one, so the comparison with nonsingular points requires ellipticity and finite affine solution set. SingularPointCount.lean supplies `WeierstrassCurve.frobeniusTrace_eq_zero_of_c₄_eq_zero`: over a finite field, a model with Δ=0 and c₄=0 has trace 0. Affine/FinitePoint.lean supplies `WeierstrassCurve.Affine.finite_point` over finite coefficients. QuadraticTwist/Basic.lean supplies `WeierstrassCurve.quadraticTwistOf`, `WeierstrassCurve.Δ_quadraticTwistOf`, `WeierstrassCurve.c₄_quadraticTwistOf`, `WeierstrassCurve.j_quadraticTwistOf` and `WeierstrassCurve.isElliptic_quadraticTwistOf_iff`, including the unit twisting-discriminant condition over rings.
 
 ### From TauCetiRoadmap.EllipticCurves
 
@@ -106,7 +106,7 @@ Specify the coefficients and factor the cubic. At 2≠0 compare all five coeffic
 
 **Checks.**
 
-- Over ℚ, d=4 and λ=3 give a₂=−16 and a₄=48. An admissible coordinate dilation (x,y)↦(4²x,4³y) of L(3) instead gives a₂=−64 and a₄=768. These distinguish root scaling from coordinate dilation.
+- Over ℚ, d=4 and λ=3 give a₂=−16 and a₄=48. The admissible change with u=1/4 (x_old=x_new/16, y_old=y_new/64, so a point (x,y) of L(3) goes to (16x,64y)) instead gives a₂=−64 and a₄=768, that is L(16,3); the change with u=4 gives a₂=−1/4 and a₄=3/256. These fix the weights d and d² of root scaling against the weights u⁻² and u⁻⁴ of an admissible change; root scaling by the square 4 is the change with u=1/2.
 - L(2,1/2) over ℚ has a₂=−3,a₄=2,Δ=64. Both roots 1 and 1/2 are scaled by 2, giving roots 2 and 1.
 - For d=0 all five coefficients vanish, and Δ=0, for every λ. This tests that the scaled model is total at d=0 and is not elliptic over a field there.
 - d=2 gives native twist parameters (0,−1/2), with twisting discriminant 2; parameters (0,−2) instead give twisting discriminant 8. This fixes the scalar normalization.
@@ -150,7 +150,7 @@ Substitute the five coefficients into native b₂,b₄,b₆,b₈,c₄,Δ. Factor
 
 - Over ℚ, λ=2 and λ=1/2 give (Δ,c₄,j)=(64,48,1728) and (1,12,1728). Different invariants can yield the same j.
 - At λ=−1 over ℚ, (Δ,c₄,j)=(64,48,1728). This tests the sign and factors in the native invariant formulas.
-- In characteristic 2, Δ=0 for every λ; over 𝔽₃, λ=2 has Δ=1 and j=0. This tests the sign and factors in the native invariant formulas.
+- In characteristic 2, Δ=0 for every λ; over 𝔽₃, λ=2 has Δ=1 and j=0. These test that the ellipticity criterion needs 2≠0 and that characteristic three is not excluded.
 
 *Needs:* §0.1; Mathlib `WeierstrassCurve.Δ`; Mathlib `WeierstrassCurve.c₄`; Mathlib `WeierstrassCurve.j`; Mathlib `WeierstrassCurve.IsElliptic`.
 
@@ -166,7 +166,7 @@ Compute the coefficients or specialize the native discriminant and c₄ twist id
 
 - At d=2,λ=1/2 over ℚ, (Δ,c₄,j)=(64,48,1728). This tests the powers d² and d⁶ in c₄ and Δ.
 - At d=0 over ℚ, Δ=c₄=0 and the equation is singular for every λ, so no native j is formed.
-- For d=2,λ=3, Δ=36864 and c₄=448; the powers d⁶ and d² distinguish root scaling from a coordinate isomorphism. This tests the different powers d² and d⁶ in c₄ and Δ.
+- For d=2,λ=3, Δ=36864=2⁶·576 and c₄=448=2²·112, where 576 and 112 are Δ and c₄ of L(3). Scaling a₂ by d² and a₄ by d⁴, which is the change with u=1/d and gives L(d²,λ), would instead give Δ=2¹²·576=2359296 and c₄=2⁴·112=1792.
 
 *Needs:* §0.2; §0.4; Tau Ceti `WeierstrassCurve.Δ_quadraticTwistOf`; Tau Ceti `WeierstrassCurve.c₄_quadraticTwistOf`; Tau Ceti `WeierstrassCurve.j_quadraticTwistOf`.
 
@@ -182,13 +182,13 @@ Write every quotient in terms of d=e₁−e₀ and λ using e₂−e₀=dλ. Can
 
 - Roots (0,1,−1) produce exactly the labelled exceptional tuple; roots (0,1,3) produce the generic tuple. This tests the order of the numerator and denominator in the root ratio.
 - Roots (3,5,9) give ratios (3,1/3,−2,−1/2,3/2,2/3). This tests the order of the numerator and denominator in the root ratio.
-- Coincident roots (0,0,1) give a zero denominator in the first ratio; total division yields 0 rather than a legitimate parameter. This tests the order of the numerator and denominator in the root ratio.
+- Coincident roots (0,0,1) give a zero denominator in the first ratio; total division yields 0 rather than a legitimate parameter. This tests the junk value of total division, which the distinctness hypothesis excludes.
 
 *Needs:* §0.3.
 
 ### 0.8 Legendre normalization of a split cubic
 
-Let W over a field K with 2≠0 be in native normal form a₁=a₃=0, with cubic f=(X−e₀)(X−e₁)(X−e₂) and pairwise distinct roots. Set d=e₁−e₀, λ=(e₂−e₀)/d. Translation x_old=x_new+e₀,y_old=y_new gives a native admissible coordinate change C with C•W=L(d,λ). Hence W is a quadratic twist of L(λ) in the precise native coefficient sense, d≠0 and λ≠0,1. Reordering roots yields exactly the six parameters, with the corresponding twist scalar recomputed.
+Let W over a field K with 2≠0 be in native normal form a₁=a₃=0, with cubic f=(X−e₀)(X−e₁)(X−e₂) and pairwise distinct roots. Set d=e₁−e₀, λ=(e₂−e₀)/d. Translation x_old=x_new+e₀,y_old=y_new gives a native admissible coordinate change C with C•W=L(d,λ). Hence C•W is the native quadratic twist of L(λ) with parameters (0,−d/4), so W is K-isomorphic to a quadratic twist of L(λ); here d≠0 and λ≠0,1. Reordering roots yields exactly the six parameters, with the corresponding twist scalar recomputed.
 
 (Bennett–Siksek, §6, Legendre discussion p.367 and proof of Lemma 6.2 p.368; BS20 line 544.)
 
@@ -197,7 +197,7 @@ Expand the split monic cubic and translate by e₀ using the native admissible c
 **Checks.**
 
 - For roots (3,5,9), d=2,λ=3; the original coefficients (−17,87,−135) become (−8,12,0) under translation by +3, giving y²=x(x−2)(x−6). This fixes the direction of the coordinate translation.
-- Over ℚ the resulting d=2 is nonsquare; an unscaled normalization requiring √2 over ℚ fails. This fixes the direction of the coordinate translation.
+- Over ℚ the ordering (3,5,9) gives the nonsquare d=2, and L(2,3) is not ℚ-isomorphic to L(3): an admissible change multiplies Δ by u⁻¹², while Δ(L(2,3))/Δ(L(3))=2⁶ is not the twelfth power of a rational. The ordering (5,9,3) gives d=4 and λ=−1/2, and the change with u=2,r=5 sends y²=(x−3)(x−5)(x−9) to L(−1/2). This distinguishes K-isomorphism to L(d,λ) from K-isomorphism to an unscaled Legendre model, which depends on the ordering.
 
 *Needs:* §0.2; §0.5; §0.6; Mathlib `WeierstrassCurve.VariableChange`; Tau Ceti `WeierstrassCurve.Affine.f`.
 
@@ -235,8 +235,8 @@ Use §0.5 for ellipticity and the factored equation to prove each displayed poin
 **Checks.**
 
 - For d=1,λ=−1 over ℚ the labelled coordinates are (0,0),(1,0),(−1,0). This distinguishes affine root points from O.
-- For d=2,λ=1/2 over ℚ the coordinates are (0,0),(2,0),(1,0). This distinguishes affine root points from O.
-- For d=1,λ=3 over ℚ the sum of the three labelled native points is O, and each is killed by doubling. This distinguishes affine root points from O.
+- For d=2,λ=1/2 over ℚ the coordinates are (0,0),(2,0),(1,0); the third x-coordinate is smaller than the second. This tests the label order (0,d,dλ) rather than increasing size.
+- For d=1,λ=3 over ℚ the sum of the three labelled native points is O, and each is killed by doubling. This tests the horizontal-line relation T₀+T_d+T_dλ=O; a tuple with O in place of one root point would sum to the omitted root point instead.
 - For L(−1)/𝔽₃ the four points are O,(0,0),(1,0),(2,0); all are killed by 2. This tests both inclusions and the count even at j=0.
 
 *Needs:* §0.2; §0.5; Mathlib `WeierstrassCurve.Affine.Point`; Tau Ceti `WeierstrassCurve.y_eq_zero_of_order_two`; Tau Ceti `WeierstrassCurve.Affine.card_ker_nsmul_two`.
@@ -261,9 +261,9 @@ Apply native padicValRat.add_eq_min to λ+(1−λ)=1; the three bad cases above 
 
 **Checks.**
 
-- At λ=2,p=2, v₂(j)=6 but v₂(λ)=1; the odd-prime hypothesis is necessary. This distinguishes integral j from unit j and exposes the excluded dyadic case.
-- At λ=3,p=3, (v₃(λ),v₃(1−λ),v₃(j))=(1,0,−2); at λ=1/3 the triple is (−1,−1,−2). This distinguishes integral j from unit j and exposes the excluded dyadic case.
-- At λ=−1,p=3, the triple is (0,0,3); integral j need not be a unit. This distinguishes integral j from unit j and exposes the excluded dyadic case.
+- At λ=2,p=2, v₂(j)=6 but v₂(λ)=1, so integral j does not force unit parameters at p=2. This exposes the excluded dyadic case, where the factor 256 of j is not a unit.
+- At λ=3,p=3, (v₃(λ),v₃(1−λ),v₃(j))=(1,0,−2); at λ=1/3 the triple is (−1,−1,−2); at λ=−2 it is (0,1,−2). These test the three alternatives a>0, a<0 and b>0 with their values −2a, 2a and −2b.
+- At λ=−1,p=3, the triple is (0,0,3). This distinguishes integral j, which is all the conclusion a=b=0 needs, from unit j.
 
 *Needs:* §0.4; Mathlib `padicValRat`; Mathlib `padicValRat.mul`; Mathlib `padicValRat.div`; Mathlib `padicValRat.add_eq_min`.
 
@@ -278,8 +278,8 @@ At a good minimal local model, c₄ is integral and Δ is a unit, so j is integr
 **Checks.**
 
 - For F:y²=x³−x at p=5, the parameters −1,2,1/2 have complements 2,−1,1/2; all six valuations are 0. This tests the root-ordering independence at a good prime.
-- For F=L(−1), p=3 gives v₃(−1)=v₃(2)=0 while v₃(j)=3; the proof cannot demand unit j. This tests curve-level good reduction rather than the displayed discriminant.
-- Over ℚ₃, dilating L(−1) by (x,y)↦(3²x,3³y) gives y²=x³−81x, with Δ=64·3¹² and v₃(Δ)=12. The curve still has good reduction, witnessed by L(−1), whose discriminant has valuation 0.
+- For F=L(−1), p=3 gives v₃(−1)=v₃(2)=0 while v₃(j)=3; the proof cannot demand unit j.
+- Over ℚ₃, the admissible change with u=1/3 (x_old=x_new/9, y_old=y_new/27, so a point (x,y) of L(−1) goes to (9x,27y)) gives y²=x³−81x, with Δ=64·3¹² and v₃(Δ)=12; the change with u=3 would give a₄=−1/81 instead. The curve still has good reduction, witnessed by L(−1), whose discriminant has valuation 0. This tests curve-level good reduction rather than the displayed discriminant.
 
 *Needs:* §1.1; §0.9; §0.5; TauCetiRoadmap.EllipticCurves Layer 4; Mathlib `WeierstrassCurve.map_j`; Mathlib `WeierstrassCurve.integralModel_c₄_eq`; Mathlib `WeierstrassCurve.integralModel_Δ_eq`; Mathlib `Padic.valuation_ratCast`; Mathlib `WeierstrassCurve.variableChange_j`; Mathlib `WeierstrassCurve.minimal`.
 
@@ -294,7 +294,7 @@ The coefficients −(1+λ),λ are integral; Δ=16λ²(1−λ)² is a unit. For a
 **Checks.**
 
 - At λ=3,p=5, Δ=576≡1 and λ̄=3,1−λ̄=3 are nonzero; at p=3, v₃(Δ)=2 and λ̄=0. This tests minimal good reduction of the unscaled equation.
-- At p=2, even two parameter units cannot occur in 𝔽₂: λ̄=1 forces 1−λ̄=0. This tests minimal good reduction of the unscaled equation.
+- At p=2 two parameter units cannot occur: in 𝔽₂, λ̄=1 forces 1−λ̄=0. The unit hypotheses are therefore unsatisfiable at p=2, so the statement is vacuous there; the factor 16 of Δ is in any case a 2-adic nonunit.
 
 *Needs:* §0.4; §0.1; Mathlib `Padic.valuation_ratCast`; Mathlib `WeierstrassCurve.IsIntegral`; Mathlib `WeierstrassCurve.IsMinimal`; Mathlib `WeierstrassCurve.HasGoodReduction`; Mathlib `WeierstrassCurve.hasGoodReduction_iff_isElliptic_reduction`.
 
@@ -309,7 +309,7 @@ Use ClassicalArithmeticCompletion §§1.8, 1.51 to identify χ and to read an od
 **Checks.**
 
 - For λ=2 and λ=1/2, the radicands at ω=1,−1,2,−2 have conductors 8,8,1,4, respectively; each odd part is 1. This tests invariance under rational squares.
-- For λ=3, the four radicands 3,−3,6,−6 have conductors 12,3,24,24, all with odd part 3. This tests the primitive conductor, including conductor 1.
+- For λ=3, the four radicands 3,−3,6,−6 have conductors 12,3,24,24, all with odd part 3. This tests the odd prime 3, where v₃(ωλ)=1 is odd and v₃(j)=−2 makes 3 bad, and the conductor 3 rather than 12 of −3.
 - For λ=−1 the radicands −1,1,−2,2 have conductors 4,1,8,8; their odd parts are all 1. This tests the primitive conductor, including conductor 1.
 
 *Needs:* §1.2; TauCetiRoadmap.ClassicalArithmeticCompletion §§1.8, 1.51; Mathlib `padicValRat.mul`.
@@ -325,7 +325,7 @@ The supplier gives squarefree odd character conductor. The support theorem puts 
 **Checks.**
 
 - F:y²=x³−x has conductor 32; all four ω at λ=−1 give characters with odd conductor 1, so the result is valid without a nontrivial-character hypothesis. This distinguishes conductor divisibility from conductor nontriviality.
-- For λ=3, ω=1, the character has N=12 and odd part 3; the displayed discriminant 576 is not the definition of M. This distinguishes conductor divisibility from conductor nontriviality.
+- For λ=3, ω=1, the character has N=12 and odd part 3. At p=3 the integral equation L(3) has v₃(Δ)=2<12, so it is minimal, and v₃(c₄)=v₃(112)=0, so reduction is multiplicative and 3 divides M exactly once although 3² divides Δ=576. This distinguishes the elliptic conductor from the displayed discriminant.
 
 *Needs:* §1.4; TauCetiRoadmap.ClassicalArithmeticCompletion §§1.8, 1.51; TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties §§5.3a, 5.3g; TauCetiRoadmap.EllipticCurves Layer 4.
 
@@ -358,8 +358,8 @@ The three linear factors are pairwise coprime because d, dλ, d(1−λ) are nonz
 
 **Checks.**
 
-- At d=1,λ=−1 over ℚ, the root maps to (0,1,−1). This tests the fixed root order and unit domain of the equivalence.
-- At d=2,λ=1/2 over ℚ, the root maps to (0,2,1). This tests the fixed root order and unit domain of the equivalence.
+- At d=1,λ=−1 over ℚ, the root maps to (0,1,−1). This tests the fixed root order (0,d,dλ).
+- At d=2,λ=1/2 over ℚ, the root maps to (0,2,1), whose third entry is smaller than the second. This tests that the order is (0,d,dλ) rather than increasing size.
 - The class of X is not a unit, since its first coordinate is zero; its squareclass is not formed. This tests the fixed root order and unit domain of the equivalence.
 - At d=2,λ=3, the class of X+1 maps to (1,3,7), the class of X² maps to (0,4,36), and constant 1 maps to (1,1,1). These computations distinguish the root order.
 
@@ -400,7 +400,7 @@ Use native μ_apply followed by μ₀_some to pass from μ of the affine point t
 **Checks.**
 
 - On L(4)/𝔽₇, P=(3,1) has representatives (3,2,6), product 36≡1=y² and squareclass signs (−1,+1,−1). Replacing all differences by root-minus-x gives product −1, a nonsquare.
-- On L(−1)/𝔽₅, P=(2,4) has representatives (2,1,3), product 6≡1=y² and squareclass pattern (nonsquare,square,nonsquare). This distinguishes the nonroot representative from the corrected root branch.
+- On L(−1)/𝔽₅, P=(2,4) has representatives (2,1,3), product 6≡1=y² and squareclass pattern (nonsquare,square,nonsquare). Its nontrivial first class shows, by §2.8, that P is not a double, although 2P=(0,0).
 - At a root x=0 the uncorrected first entry would be 0, which is not a unit; that point belongs to the separate root branch. This distinguishes the nonroot representative from the corrected root branch.
 
 *Needs:* §2.3; §2.1; §0.2; Tau Ceti `WeierstrassCurve.Affine.μ`; Tau Ceti `WeierstrassCurve.Affine.μ_apply`; Tau Ceti `WeierstrassCurve.Affine.μX_of_eval_f_ne_zero`; Tau Ceti `WeierstrassCurve.Affine.μ₀_zero`; Tau Ceti `WeierstrassCurve.Affine.μ₀_some`.
@@ -432,7 +432,7 @@ For O, use native μ_apply and μ₀_zero and the multiplicative equivalence, so
 **Checks.**
 
 - At T₀ on L(2,3) over ℚ, the corrected representatives are (12,−2,−6), with product 144=12². The uncorrected first representative 0 gives product 0 and no unit squareclass.
-- At O the product is 1·1·1=1; at P=(2,4) over 𝔽₅ it is [2·1·3]=[1]. This tests the product condition also at roots and O.
+- At O the product is 1·1·1=1; at P=(2,4) over 𝔽₅ it is [2·1·3]=[1]. This tests the product condition at O and at a nonroot point over a finite field.
 
 *Needs:* §2.3; §2.1; Tau Ceti `WeierstrassCurve.Affine.normM_μ₀_eq_one`; Tau Ceti `WeierstrassCurve.Affine.μ_apply`; §2.5; §2.6; Tau Ceti `WeierstrassCurve.Affine.μ₀_zero`; §0.2.
 
@@ -514,8 +514,8 @@ The finite-field supplementary laws give quadraticChar(F)(2)=−1 and quadraticC
 **Checks.**
 
 - At p=5 the point group has 8 elements but exponent 4; thus 8|#E does not imply an order-eight element. This separates group order from the existence of an order-eight element.
-- At p=13, the point count is 8 and every point has order 1,2 or 4. This separates group order from the existence of an order-eight element.
-- At p=41, P=(6,13) has order 8 and the full count is 32; p≡1 mod4 alone is insufficient. This separates group order from the existence of an order-eight element.
+- At p=13, the point count is 8 and every point has order 1,2 or 4, so the point group is ℤ/2×ℤ/4 itself. This tests a second prime q≡5 mod8.
+- At p=41, P=(6,13) has order 8 and the full count is 32; p≡1 mod4 alone is insufficient. This tests that the congruence q≡5 mod8 is the hypothesis that excludes order eight.
 
 *Needs:* §3.2; §2.6; §0.10; §2.8; Mathlib `quadraticChar_two`; Mathlib `quadraticChar_neg_one`; Mathlib `quadraticChar_eq_pow_of_char_ne_two`; Tau Ceti `WeierstrassCurve.Affine.ker_μ_eq`.
 
@@ -587,20 +587,21 @@ Layer 0 scaled equation, invariants and root points; Layer 2 nonroot descent; Ma
 
 For every finite field F of odd characteristic, with q elements, and every native Weierstrass equation W with a₁=a₃=0, put f(x)=x³+a₂x²+a₄x+a₆. Prove (W.pointCount:ℤ)=q+1+Σ_x quadraticChar(F)(f(x)), and W.frobeniusTrace=−Σ_x quadraticChar(F)(f(x)). These assertions include singular equations and their singular solutions. For each x, the number of square roots of f(x) is 1+quadraticChar(F)(f(x)); sum this pinned square-root identity and add O. (Silverman, S09 §V.1, counting points over finite fields; the formula is derived from Mathlib `quadraticChar_card_sqrts`.)
 
-For every finite field F with q≡3 mod4 elements and every u∈F, the equation y²=x(x−u)(x+u), namely L(u,−1), has projective point count q+1 and Frobenius trace 0. It is elliptic when u≠0; at u=0 its singular solution is included. The headline is `scaledLegendre_minus_one_trace_zero`. (Koblitz, K84 p.41, cited by locator without the text; BS20 line 464 points to this page for the prime-field elliptic case. The character cancellation below proves the stated finite-field generality.)
+Call y²=x³+a·x, the native equation (0,0,0,a,0), a symmetric cubic: its cubic f(x)=x³+a·x satisfies f(−x)=−f(x). For every finite field F with q≡3 mod4 elements and every a∈F, the symmetric cubic has projective point count q+1 and Frobenius trace 0. It is elliptic when a≠0; at a=0 its singular solution is included. The headline is `symmetric_cubic_trace_zero`. The Legendre equation L(u,−1): y²=x(x−u)(x+u) is the case a=−u², by §0.2, so it has count q+1 and trace 0 for every u∈F; since −1 is a nonsquare, these cases are exactly the a with −a a square, and the Legendre form alone omits the other half of the nonzero a. (Koblitz, K84 p.41, cited by locator without the text; BS20 line 464 points to this page for the prime-field elliptic Legendre case. The character cancellation below proves the stated finite-field generality.)
 
-The cubic satisfies f(−x)=−f(x). Since −1 is a nonsquare, the character values at x and −x cancel, including zeros. The integer sum is zero and the native trace definition gives the result, also for u=0.
+The congruence q≡3 mod4 makes q odd, so the count formula above applies, and makes −1 a nonsquare in F. Since f(−x)=−f(x), the character values at x and −x cancel, including zeros. The integer sum is zero and the native trace definition gives the result, also for a=0, where the equation is the cusp y²=x³ and Tau Ceti `WeierstrassCurve.frobeniusTrace_eq_zero_of_c₄_eq_zero` gives the trace directly.
 
 **Checks.**
 
-- At p=3,u=1 the square-root counts at x=0,1,2 are 1,1,1; the count is 4 and trace 0. This includes characteristic three and O.
-- At p=7,u=2 the character values in x-order are (0,1,0,1,−1,0,−1), sum 0; the count is 8 and trace 0. This fixes the cancellation and trace signs.
-- At p=3,u=0 the affine counts are 1,2,0, so the singular cubic still has projective count 4 and trace 0. This tests the count's domain.
-- At p=5,u=1 the count is 8 and trace −2. This detects omission of the congruence hypothesis.
-- Over 𝔽₂₇, u=1 and u=0 both give count 28 and trace 0. Over 𝔽₉, u=1 gives count 16 and trace −6, so odd characteristic alone does not suffice; the cardinality congruence matters.
+- At p=3,u=1, that is a=−1, the square-root counts at x=0,1,2 are 1,1,1; the count is 4 and trace 0. This includes characteristic three and O.
+- At p=7,u=2, that is a=−4=3, the character values in x-order are (0,1,0,1,−1,0,−1), sum 0; the count is 8 and trace 0. This fixes the cancellation and trace signs.
+- At p=7,a=1 the square-root counts at x=0,…,6 are (1,2,0,2,0,2,0); the count is 8 and trace 0. Since −1 is a nonsquare in 𝔽₇, a=1 is not −u² for any u, so a statement about L(u,−1) alone would omit this equation.
+- At p=3,a=0 the affine counts are 1,2,0, so the singular cubic still has projective count 4 and trace 0. This tests the count's domain.
+- At p=5,u=1 the count is 8 and trace −2, and at p=5,a=1 the count is 4 and trace 2. This detects omission of the congruence hypothesis.
+- Over 𝔽₂₇, every a∈𝔽₂₇ gives count 28 and trace 0. Over 𝔽₉, u=1 gives count 16 and trace −6, so odd characteristic alone does not suffice; the cardinality congruence matters.
 - Over 𝔽₂, y²=x³+1 has count 3, whereas 2+1+Σ_x quadraticChar(𝔽₂)(x³+1)=4. The character-sum formula needs odd characteristic.
 
-*Needs:* §0.2 for the symmetric specialization; Mathlib `WeierstrassCurve.IsCharNeTwoNF`; Mathlib `quadraticChar`; Mathlib `quadraticChar_card_sqrts`; Mathlib `quadraticChar_neg_one`; Tau Ceti `WeierstrassCurve.pointCount`; Tau Ceti `WeierstrassCurve.frobeniusTrace_def`.
+*Needs:* §0.2 for the Legendre specialization; Mathlib `WeierstrassCurve.IsCharNeTwoNF`; Mathlib `quadraticChar`; Mathlib `quadraticChar_card_sqrts`; Mathlib `quadraticChar_neg_one`; Tau Ceti `WeierstrassCurve.pointCount`; Tau Ceti `WeierstrassCurve.frobeniusTrace_def`; Tau Ceti `WeierstrassCurve.frobeniusTrace_eq_zero_of_c₄_eq_zero` for the cusp.
 
 ### 5.2 Quadratic-twist trace over odd finite fields
 
@@ -622,7 +623,7 @@ The Legendre consequence is a_q(L(d,λ))=quadraticChar(F)(d)·a_q(L(λ)), by §0
 
 ### Examples
 
-For λ=3 over 𝔽₅ the character sum is −2 before scaling and 2 after scaling by 2. Thus the counts are 4 and 8, traces 2 and −2, and Euler polynomials 1−2T+5T² and 1+2T+5T². For u=2 over 𝔽₇, the symmetric cubic has character sum 0, count 8 and trace 0.
+For λ=3 over 𝔽₅ the character sum is −2 before scaling and 2 after scaling by 2. Thus the counts are 4 and 8, traces 2 and −2, and Euler polynomials 1−2T+5T² and 1+2T+5T². For u=2 over 𝔽₇, the symmetric cubic L(2,−1), with a=−4, has character sum 0, count 8 and trace 0; so has a=1, which is not of Legendre form over 𝔽₇.
 
 ### Dependencies
 
@@ -636,7 +637,7 @@ The exports include all four characters at ω=±1,±2, all six root labels with 
 
 ## References
 
-- Michael A. Bennett and Samir Siksek, *A conjecture of Erdős, supersingular primes and short character sums*, Annals of Mathematics 191 (2020), 355–392, DOI 10.4007/annals.2020.191.2.2. Publisher version: https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf. BS20 line 462 is the symmetric cubic, line 513 is equation (17), lines 526–546 are Lemma 6.2, lines 547–557 are Lemma 6.3, lines 655–672 are the descent display and Lemma 6.5, and lines 703–727 are the local part of Lemma 6.6. The order-four witness uses the corrected y-coordinate proved in Layer 4; line 718 is the printed expression tested there.
+- Michael A. Bennett and Samir Siksek, *A conjecture of Erdős, supersingular primes and short character sums*, Annals of Mathematics 191 (2020), 355–392, DOI 10.4007/annals.2020.191.2.2. Publisher version: https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf. BS20 lines 462–464 are the symmetric Legendre cubic and its trace, line 513 is equation (17), lines 526–546 are Lemma 6.2, lines 547–557 are Lemma 6.3, lines 655–672 are the descent display and Lemma 6.5, and lines 703–727 are the local part of Lemma 6.6. The order-four witness uses the corrected y-coordinate proved in Layer 4; line 718 is the printed expression tested there.
 - The Mathlib and Tau Ceti modules named in the exact supplier contracts fix the formal conventions. The cross-roadmap contracts refer to EllipticCurves Layer 4 and Layer 5, ModularCurves §§4C, 9E, ClassicalArithmeticCompletion §§1.7, 1.8, 1.51 and NeronModelsAndSemistableAbelianVarieties §§5.3a, 5.3g.
 
 - Joseph H. Silverman, *The Arithmetic of Elliptic Curves*, second edition, 2009, S09 §§III.1–III.2 (invariants and two-torsion), §V.1 (finite-field point counting), §X.1, Proposition 1.4 (split two-descent), DOI 10.1007/978-0-387-09494-6. Uncertified: cited by locator without the text.

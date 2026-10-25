@@ -80,12 +80,13 @@ theorem legendre_minus_one_point_count_v_two
 
 /-! ## Layer 5: Trace and downstream interfaces -/
 
-/-- Over a finite field of cardinality q congruent to three modulo four, every symmetric
-cubic L(u,−1), including u=0, has projective point count q+1 and trace zero. -/
-theorem scaledLegendre_minus_one_trace_zero
-    {F : Type*} [Field F] [Fintype F] (hF : Fintype.card F % 4 = 3) (u : F) :
-    (scaledLegendre u (-1)).pointCount = Fintype.card F + 1 ∧
-      (scaledLegendre u (-1)).frobeniusTrace = 0 := by
+/-- Over a finite field of cardinality q congruent to three modulo four, every symmetric cubic
+y² = x³ + a·x, the singular a = 0 included, has projective point count q+1 and trace zero.
+The Legendre equations L(u,−1) are the cases a = −u². -/
+theorem symmetric_cubic_trace_zero
+    {F : Type*} [Field F] [Fintype F] (hF : Fintype.card F % 4 = 3) (a : F) :
+    (⟨0, 0, 0, a, 0⟩ : WeierstrassCurve F).pointCount = Fintype.card F + 1 ∧
+      (⟨0, 0, 0, a, 0⟩ : WeierstrassCurve F).frobeniusTrace = 0 := by
   sorry
 
 /-- For a normal-form equation over an odd finite field, twisting scales the trace by the
