@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5182 mistakes recorded on the board: 3384 misprints, 1286 errors, 392 gaps, 120 unparsed bullets.
+5187 mistakes recorded on the board: 3386 misprints, 1289 errors, 392 gaps, 120 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1941,6 +1941,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at p. 549, lines −15 and −11, as corrected in BCDT lines 4456–4457: the source says the level factors are `U_{r,r′,p}` and `U′_S/U′_{0,S}`; it should be `U_{r,p}` and `V₀/V₁`; affects the proof; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 - **Error** at p. 552, line 4, as corrected in BCDT lines 4458–4460: the source says the assertion applies for every `ℓ≥5`; it should be restricted further by `j(E)≢1728 mod ℓ`; affects a stated result; corrected in print at BCDT §10, p. 937. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6.2, p. 546, as corrected in BCDT lines 4440–4455: the source says the original arithmetic group meets Theorem 6.1.1 and uses dual coefficient modules; it should be replaced by the modified levels and `L_n⊗k` with the corrected Hom module; affects the proof; corrected in print at BCDT §10, pp. 937–938. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+
+## CDT25
+
+- **Misprint** at (2.5.2), printed p.644: the source says the product over i < j of (z_i − z_j) equals the Vandermonde determinant; it should be that the determinant equals this product times (−1)^(d(d−1)/2); affects nothing. Found by DiophantineApproximationAndTranscendencePartII (#1467 at b314373, 2026-10-25, claude opus).
+- **Error** at Corollary 2.0.5, (2.0.7), printed p.636: the source says the ℚ(p)-dimension of the ℚ(x)-span V is at most e·J/log|φ′(0)| for any rational tangent coordinate (p = x + x⁴/32, φ = 2z gives dimension ≥ 4 > e); it should be that bound for the ℚ(p)-span W, with the factor [ℚ(x):ℚ(p)] for V unless the coordinate is integral; affects a stated result. Found by DiophantineApproximationAndTranscendencePartII (#1467 at b314373, 2026-10-25, claude opus).
+- **Error** at the proof of Lemma 2.3.1, (2.3.2), printed p.640: the source says the displayed quotient of two exponentials equals G; it should be that quotient multiplied by the unit G(0)/|G(0)|, or an equality of moduli only; affects the proof. Found by DiophantineApproximationAndTranscendencePartII (#1467 at b314373, 2026-10-25, claude opus).
+- **Misprint** at the proof of Lemma 2.3.1, printed p.641: the source says the supremum of |h| is bounded by the mean of log⁺|g|; it should be the supremum of log|h|; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "b314373", "job": "REV-PKG-DiophantineApproximationAndTranscendencePartII", "model": "opus", "worker": "fable-rev102"} -->. Found by DiophantineApproximationAndTranscendencePartII (#1467 at b314373, 2026-10-25, claude opus).
+- **Error** at §2.5.27, (2.5.28), printed p.649: the source says the capacity bound holds for every compact K inside the open unit disc; it should be restricted to discs and circles centred at 0 (it fails for the disc of centre ½ and radius ¼ with φ = 8z·e^(−20z)); affects a stated result. Found by DiophantineApproximationAndTranscendencePartII (#1467 at b314373, 2026-10-25, claude opus).
 
 ## CDvN-DSS
 
