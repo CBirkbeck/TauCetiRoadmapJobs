@@ -14,10 +14,8 @@ The polarized rational isogeny estimate also requires represented polarizations
 and that height.
 Polarization-free discriminant bounds, quantitative
 simple factorization and the rational, relative and geometric isogeny bounds require
-stable Faltings height and the abelian degree API. The sharp surface avoidance-period
-estimate requires polarized period lattices and the Hermitian cotangent slope;
-the quadratic elliptic stable-height bound of §6.3 requires stable Faltings height.
-The j-height bound of §6.4 is statable using native Weierstrass curves, isogenies
+stable Faltings height and the abelian degree API.
+The j-height bound of §6.1 is statable using native Weierstrass curves, isogenies
 and absolute logarithmic Weil height, and is stated below. The adelic product
 comparison, uniform residual Tate refinement, uniform integral number-field theorem,
 finitely generated field Tate comparison, endomorphism-preserving specialization,

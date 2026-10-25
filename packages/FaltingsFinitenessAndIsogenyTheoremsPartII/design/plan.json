@@ -3140,6 +3140,12 @@
       "needs": "For a polarized abelian variety (A,L)/K, use the integral tangent lattice of its Néron model and the Riemann metric after a finite semistable extension; this Hermitian tangent bundle, its dual and their symmetric powers pull back isometrically under further finite extensions, so their normalized slopes are independent of the chosen semistable extension.",
       "supplier": "ArakelovGeometryAndAbelianHeights",
       "section": "2.4, 3.4"
+    },
+    {
+      "slug": "cubist-model-symmetric-ample",
+      "needs": "Extend the §5.8 Moret–Bailly construction from the symmetric principally polarizing line to every symmetric ample line L on an abelian variety A of dimension g≥1 over a number field K: after a finite extension K′/K there are a smooth separated semistable group scheme model π:𝒜→Spec O_K′, possibly with disconnected fibres, and a cubist Hermitian extension ℒ of L rigidified at zero, whose curvature at each complex place is the translation-invariant form of the Riemann form of L, such that for every n≥1 the pushforward π_*ℒ^⊗n with the L² metric for probability Haar measure is a semistable Hermitian vector bundle of rank ρ=χ(L^⊗n)=n^gχ(L) satisfying the §5.8 degree identity deĝ(π_*ℒ^⊗n)/(ρ[K′:ℚ])=−½h_Del(A)+¼ log(ρ/(2π)^g), with h_Del(A)=h_F(A)+(g/2)log π the Deligne normalization of §2.7, the height of algebraic points defined by ℒ is the Néron–Tate height of L, and all of these data pull back isometrically under further finite extension.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "5.8"
     }
   ],
   "restructure": [
