@@ -17,13 +17,13 @@ local-shtuka diamonds. The latter comparison belongs to the integral continuatio
 
 The following objects have other owners, and are not additional constructions here.
 
-- Mathlib supplies subgroup double cosets, nonnormal left-coset quotients and finite sets; Tau Ceti supplies the left double-coset invariance lemma identified below.
+- Mathlib supplies subgroup double cosets, nonnormal left-coset quotients and finite sets; Tau Ceti supplies subgroup-factor invariance and the Coxeter parabolic factorization identified below.
 - ReductiveGroupsPartII RG2.1, RG2.3 and RG2.4 supplies apartments, root groups, connected parahorics, Lang theory, Iwahori–Weyl groups, normal forms, lengths, Bruhat order and integral Kottwitz homomorphisms. The finite factor η and geometric cordiality are defined and proved in §§0.2 and 4.7 here, using that normal form and length formula.
-- RootSystems Layers 3, 4 and 6 owns generic Coxeter, chamber and integral root-data theory. RootSystemsPartII RS2.1 owns integral dominance on the retained lattice; its supplier extensions below own Demazure products, twisted Red-Min and dominant subtraction. The minimal-reduction input is the full extended-affine theorem in that supplier contract.
-- BunGAndNewtonStrata §§0.5–0.6 and 1.7–1.45 owns B(G), σ-centralizers, split-rank defect, integral κ, Newton invariants and their order, Levi comparison, straight classes, Galois averages, ordered norms and central lifts. The generic norm and centralizer comparison are used only to construct the geometric isomorphism in §3.6. The superbasic classification and Newton-cell inputs are supplier extensions of that direction.
+- RootSystems Layers 3, 4 and 6 owns generic Coxeter, chamber and integral root-data theory. RootSystemsPartII RS2.1 owns integral dominance on the retained lattice. The affine combinatorics and dominant-subtraction extensions requested below are supplier gaps, rather than assertions of RS2.1. This roadmap owns the shrunken-chamber condition (§0.3), its ADLV factorization (§5.2) and the 2ρ∨ Newton range (§8.4).
+- BunGAndNewtonStrata §§0.5–0.6 and 1.7–1.45 owns B(G), σ-centralizers, split-rank defect, integral κ, Newton invariants and their order, Levi comparison, straight classes, Galois averages, ordered norms and central lifts. The generic norm and centralizer comparison are used only to construct the geometric isomorphism in §3.6. Superbasic classification and the four Newton-poset/cell inputs below remain supplier gaps in that direction.
 - GeometricSatakeAndFusion GS0, “Witt bounds, determinant lines and projective models”, owns flag and Grassmannian carriers, flag incidence and its two fibre bounds; GS1 owns semi-infinite geometry; GS2, rational-special-fibre-convolution, owns spherical geometric semismallness. The variants here are their bσ-graph pullbacks and top-stratum attainment, with explicit bounded-model compatibility.
 - SchemeAndStackFoundations §§0.7, 0.9, 0.23–0.26 and Layer 1 owns general dimension, limits, perfection and descent. TraceFormula Layer 11 owns the finite-type Grothendieck–Lefschetz theorem in the CohomologicalPointCounting family. Its application to the perfect models in §3.1 is part of the local Lang comparison, not a second generic trace theorem.
-- SmoothRepresentationsOfLocalGroups SR.1.5 owns the affine-Hecke algebra direction and its twisted cocenter extension. The geometric dimension-equals-degree comparison belongs to §1.3 here.
+- SmoothRepresentationsOfLocalGroups SR.1.5 owns the affine-Hecke algebra direction; its twisted cocenter extension is requested as gap:twisted-affine-cocenter. The geometric dimension-equals-degree comparison belongs to §1.3 here.
 
 HeckeStacksAndLocalShtukasComponentsPartII owns rational strata, centralizer actions on component sets,
 parahoric and very-special reductions, Hodge–Newton irreducible component theorems and comparison with
@@ -83,7 +83,8 @@ comparison in §3.2.
 
 Use `DoubleCoset.doubleCoset` and `DoubleCoset.mem_doubleCoset` in `Mathlib/GroupTheory/DoubleCoset.lean`: the
 carrier is a product of two arbitrary sets with a singleton, and its membership criterion supplies two
-factors. It imposes no subgroup or normality hypotheses. Use `QuotientGroup.leftRel` and
+factors. It imposes no subgroup or normality hypotheses. For subgroups H,K, use
+`DoubleCoset.doubleCoset_eq_of_mem` in the same file: b∈HaK implies HbK=HaK, so changing either subgroup factor preserves the double coset. Use `QuotientGroup.leftRel` and
 `QuotientGroup.leftRel_apply` in `Mathlib/GroupTheory/Coset/Defs.lean`: for a subgroup, the relation is x⁻¹y ∈
 I and the quotient represents left cosets. Normality is required only for a quotient group structure. Use
 `Finset` in `Mathlib/Data/Finset/Defs.lean` as a finite duplicate-free carrier; semi-modules themselves are
@@ -93,7 +94,11 @@ subsets of ℤ.
 
 Use `DoubleCoset.mul_mem_doubleCoset_iff` in `TauCeti/GroupTheory/DoubleCoset/Basic.lean`, for H,K subgroups
 and b ∈ H: bz ∈ HaK iff z ∈ HaK. The hypothesis is subgroup membership of b, with no normality assumption.
-Right invariance in §0.1 follows by the analogous subgroup factor calculation.
+Both subgroup-factor invariances also follow from Mathlib’s `DoubleCoset.doubleCoset_eq_of_mem`.
+
+Use `CoxeterSystem.parabolic`, `CoxeterSystem.IsMinimalCosetRep`,
+`CoxeterSystem.existsUnique_isMinimalCosetRep_mul` and `CoxeterSystem.length_mul_of_isMinimalCosetRep` in
+`TauCeti/GroupTheory/Coxeter/Parabolic.lean`. For a Coxeter system and any simple-index subset J, the parabolic is the subgroup generated by J; minimality means ℓu≤ℓ(uv) for every v∈W_J. Every w has a unique factorization w=uv with u minimal in uW_J and v∈W_J, and ℓw=ℓu+ℓv. No finiteness of W_J is required.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -102,13 +107,17 @@ fundamental groups and representative integral κ; RG2.3, parahoric-subgroup, as
 lang-theorem and lang-for-pro-algebraic-groups; RG2.4, affine-tits-system, iwahori-weyl-group,
 length-and-bruhat-order, dominant-coinvariant-cocharacters, dominant-normal-form, translation-length-formula,
 kottwitz-quotient, iwahori-bruhat-decomposition and simple-cell-multiplication. The normal form is unique and
-its length is ℓx + ℓt^λ − ℓy. The chamber and translation orientation is transported to the convention above
-before using any formula. The supplier's SL₂ witness has translation length 2 and left-reflection translation
-length 3; reversing both the apartment coordinate and chamber gives the same lengths here.
+its length is ℓx + ℓt^λ − ℓy. Transport the translation parameter by λ↦−λ and the positive-root choice by Φ⁺↦−Φ⁺ before applying the supplier’s chamber formulas. In this README a split cocharacter has representative t^λ=λ(ϖ), whereas RG2.4 labels that representative t^(−λ). Arithmetic κ and ν are evaluated on that same representative.
 
-What ReductiveGroupsPartII must provide (gap:unipotent-linearization): The M-equivariant F-scheme comparison
-of a parabolic unipotent radical with its Lie algebra at its exact characteristic hypotheses, together with a
-characteristic-independent replacement sufficient for the twisted Lang dimension calculation.
+**Checks.**
+
+- In split GL₂, this README’s t^(1,0)=diag(ϖ,1) is RG2.4’s t^(−1,0); κ=+1 and ν=(1,0). Its inverse is RG2.4’s t^(1,0), with κ=−1 and ν=(0,−1). Using the latter as the bound in §4.1 excludes the κ=+1 basic class.
+- For diag(ϖ²,1) the two translation labels are (2,0) here and (−2,0) there, with κ=2 and ν=(2,0); inversion instead gives κ=−2.
+- In SL₂, t^α∨ and s t^α∨ have lengths 2 and 3 in the transported chamber. Lengths alone cannot distinguish the two signs of κ in the GL₂ tests.
+
+What ReductiveGroupsPartII must provide (gap:unipotent-linearization): For a reductive O_F-model and an O_F-parabolic P=MN, a finite decreasing M-stable normal filtration N=N[1]⊃⋯⊃N[r+1]=1 by smooth subgroup schemes, compatible with unramified base change and σ, whose quotients N[i]/N[i+1] are M-equivariantly the additive groups of Lie N[i]/Lie N[i+1], in every residue characteristic.
+
+The split construction uses heights in the simple roots outside M, with [N[i],N[j]]⊂N[i+j], then descends along an unramified splitting extension. Conjugation by m∈M(L) and σ induce Ad(m) and its σ-semilinear version on the quotients. This is the precise input to §3.1, with no whole-group logarithm assumed (ghkr06, proof of Proposition 5.3.2, equation (5.3.4), PDF p. 21).
 
 ### From TauCetiRoadmap.RootSystems and TauCetiRoadmap.RootSystemsPartII
 
@@ -118,17 +127,25 @@ positive root cone on the retained lattice and its flipped coroot version. For a
 2 in ℤ, 0 ≤_ℤ 2 and 0 ≰_ℤ 1. No saturation of that integral cone is allowed. The Red-Min input says that each
 extended-affine w reaches a minimal element of its σ-class by length-nonincreasing simple twisted
 conjugations, and minimal elements of one class satisfy strong twisted conjugacy; a merely terminal word is
-insufficient (hn14, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; Proposition 2.7, PDF pp. 9–10).
+insufficient (hn14, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; Proposition 2.7, PDF p. 10).
 
-What RootSystemsPartII must provide (gap:twisted-redmin-demazure): The associative extended-affine Demazure
-product with support union, parabolic minimum comparisons, twisted Red-Min and strong conjugacy, and
-straight–finite-parabolic decomposition, including the finite-Coxeter basic-class input.
+What RootSystemsPartII must provide (gap:demazure-product): For an affine Coxeter system (W_a,S_aff) with length-zero automorphisms Ω and based σ preserving S_aff, the associative Bruhat-monotone product on W̃⋊〈σ〉 defined by the greatest product of Bruhat-lower factors, with unit and ℓ(u*v)=ℓu+ℓ(u⁻¹(u*v)).
 
-What RootSystemsPartII must provide (gap:dominant-subtraction): Least dominant subtraction in the specified
-integral coroot coset of the full coweight lattice, with existence, monotonicity, associativity,
-fundamental-coweight comparisons and the original-lattice map.
+For Coxeter factors x,y, supp(x*y)=supp x∪supp y. On the extension write u=xτ, v=yυ with τ,υ length zero: u*v=(x*τ(y))τυ, so support of its Coxeter factor is supp x∪τ(supp y). In particular untwisted support union applies to the finite W₀ products of §5.2 (gh10, Lemma 2.5.1, PDF p. 6).
 
-The precise combinatorial locators are hn14 line 398 (finite-parabolic comparison), hn14 line 434 and hn14 line 470 (minimal reduction and conjugacy).
+What RootSystemsPartII must provide (gap:twisted-redmin): For an extended affine Weyl group and σ permuting the affine simple reflections, every element reaches a minimum of its σ-conjugacy class by length-nonincreasing simple σ-conjugations, and any two minima in that class are connected by strong σ-conjugacy (hn14, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; he14, Theorem 2.1, p. 374).
+
+What RootSystemsPartII must provide (gap:straight-finite-parabolic): For every such σ-class, reduction reaches a minimal ux with J⊂S_aff, W_J finite, u∈W_J, x σ-straight, x minimal on both sides modulo W_J and W_(σJ), and xσ(J)x⁻¹=J, preserving the class’s Newton and Kottwitz invariants (he14, Theorem 2.3, p. 376; hn14, Proposition 2.7, PDF p. 10).
+
+What RootSystemsPartII must provide (gap:finite-coxeter-basic-class): For an irreducible extended affine root datum, τ∈Ω, a σ-Coxeter element w∈W₀ and μ∈P∨ with κ(t^μ)=κ(τ), reduction of t^μw reaches a minimal cτ with J a maximal proper Ad(τ)σ-stable affine-simple subset, W_J finite and c∈W_J an Ad(τ)σ-twisted Coxeter element, where (J,c) may depend on (μ,w) (he14, Proposition 11.7, pp. 400–401).
+
+What RootSystemsPartII must provide (gap:parabolic-root-length): For the finite Weyl group of a reduced crystallographic root system, if wα is negative for every positive α with y⁻¹α negative, then ℓ(wy)=ℓw−ℓy (gh10, Lemma 2.6.1, PDF p. 10).
+
+The unique minimal-coset factorization used in §5.2 is supplied by `CoxeterSystem.existsUnique_isMinimalCosetRep_mul` and `CoxeterSystem.length_mul_of_isMinimalCosetRep`; the root-sign comparison in gap:parabolic-root-length is the separate input.
+
+What RootSystemsPartII must provide (gap:dominant-subtraction): For dominant λ,μ in the full coweight lattice P∨, the least dominant ν with ν+μ≥_ℤλ, denoted λ−_domμ, agreeing with λ−μ when that is dominant, satisfying iterated subtraction, and bounded above by dom(λ−uμ′) for u∈W₀ and dominant μ≥_ℤμ′, with the image of the original lattice Y tracked separately (he21, Proposition 5.1 and Corollaries 5.3–5.4, pp. 8–9).
+
+The combinatorial locators are hn14, Proposition 2.7, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11.
 
 ### From TauCetiRoadmap.BunGAndNewtonStrata
 
@@ -144,9 +161,13 @@ What BunGAndNewtonStrata must provide (gap:superbasic-classification): Superbasi
 proper F-Levi, the criterion that J_b/Z(G) is F-anisotropic and the unramified F-simple adjoint classification as
 restrictions of PGL_h, with a GL_h lift preserving the specified integral component.
 
-What BunGAndNewtonStrata must provide (gap:newton-cell-purity): The Newton-poset length formula, strong
-topological purity on equal-characteristic Iwahori cells and their bounded completions, greatestness on cell
-closures, and the cell-to-ADLV dimension comparison without relying on cordial saturation.
+What BunGAndNewtonStrata must provide (gap:newton-poset-length): For [b]≤[b′] in one integral κ-fibre of B(G), every maximal chain between them has length (〈2ρ,ν_b′−ν_b〉+def(b)−def(b′))/2 (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9).
+
+What BunGAndNewtonStrata must provide (gap:newton-cell-strong-purity): For quasi-split G over 𝔽_q((t)), the Newton stratification on Noetherian bounded Iwahori-cell models and their completions has topological strong purity: for each [c], each maximal [c′]<[c] in its κ-fibre, and each irreducible component Z of the ≤[c] locus, Z∩(≤[c′]) is empty or pure of codimension at most one in Z (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9; ham17, Definition 2.1(3), arXiv v3, PDF p. 4, for this notion).
+
+What BunGAndNewtonStrata must provide (gap:newton-cell-greatest): For quasi-split G over 𝔽_q((t)) and an Iwahori double coset IẇI, its dense open Newton stratum has a greatest B(G)-class and this class remains greatest on the Bruhat closure ⋃_(v≤w)IṽI (mv20, Definition 3.1 and §3.1, arXiv v3, PDF p. 5; he21, proof of Theorem 4.2, p. 7; vie14, Proposition 5.5 and Corollary 5.6, pp. 1026–1028, for the reductive O_F-model case).
+
+What BunGAndNewtonStrata must provide (gap:newton-cell-adlv-dimension): For every nonempty Newton stratum N_[b],w in an equal-characteristic Iwahori cell, dim X_w(b)=ℓw−〈2ρ,ν_b〉−codim(N_[b],w,IẇI), using minimal component codimension on bounded models, with X_w(b) equidimensional exactly when that Newton stratum is equidimensional, independently of cordiality (mv20, Corollary 3.12, arXiv v3, PDF p. 8; he15, Theorem 2.23, PDF p. 34, for the numerical comparison in either characteristic).
 
 ### From TauCetiRoadmap.GeometricSatakeAndFusion
 
@@ -161,9 +182,7 @@ change before their ADLV application.
 What GeometricSatakeAndFusion must provide (gap:levi-intersection-dimension): The general-Levi bound d(μ,μ_M)
 ≤ 〈ρ,μ+μ_M〉 − 〈2ρ_M,μ_M〉 and equality at M-maximal positions on compatible perfect models.
 
-What GeometricSatakeAndFusion must provide (gap:general-flag-geometry): The σ-twisted ramified and
-mixed-characteristic flag moduli and incidence comparisons, with compatible bounded perfect models and the
-ordinary and Demazure fibre bounds for every local-field datum used here.
+The ramified and mixed-characteristic flag carriers, classical models and their perfections, incidence correspondences and fibre bounds are consumed from GS0, parahoric-ind-projectivity, equal-characteristic-schubert-models, flag-incidence-correspondences and flag-convolution-fibres, with their stated connected-parahoric and bounded-pfp hypotheses. The relative-Frobenius graph pullbacks and their compatibility are constructed in §§0.5 and 6.1 here.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -184,15 +203,11 @@ above. No restriction ℓ ≠ 2 is imposed when p ≠ 2.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
-Consume SR.1.5, presentations of the Iwahori–Hecke algebra, over the integral Laurent coefficient ring. The
-required twisted cocenter extension is specified below; specializing a numerical Hecke parameter before
-constructing integral class polynomials would lose the degree information used by §1.3.
+Consume SR.1.5, iwahori-matsumoto, for the split presentation over ℤ[v,v⁻¹] with q=v². Its basis U_w satisfies (U_s−q)(U_s+1)=0. Here T_w=v^(−ℓw)U_w, so T_s²=(v−v⁻¹)T_s+1. The equal-parameter extended-affine σ-twisted cocenter for the general based datum is the extension below; SR.1.5 alone does not supply it. Degrees in §1.3 are degrees in z=v−v⁻¹ before specialization (he14, §§2.2–2.3, pp. 374–375).
 
-What SmoothRepresentationsOfLocalGroups must provide (gap:twisted-affine-cocenter): The integral twisted
-affine-Hecke cocenter basis, positive class polynomials with their degree recursion, and the nonzero
-twisted-Coxeter coefficient with corrected twisted support.
+What SmoothRepresentationsOfLocalGroups must provide (gap:twisted-affine-cocenter): For the equal-parameter extended-affine datum with based σ, the cocenter over ℤ[v,v⁻¹] in the normalized basis T_w=v^(−ℓw)U_w, q=v² and T_s²=(v−v⁻¹)T_s+1, its minimal-σ-class basis, class polynomials in ℕ[z] with z=v−v⁻¹ and degree in z, their degree recursion, and the nonzero twisted-Coxeter coefficient with σ-saturated support.
 
-The integral class-polynomial and cocenter locators are hn14, Theorems 5.3 and 6.7, PDF pp. 25–26 and 29 (hn14 line 1068; hn14 line 1242), together with he14 §§2 and 11.
+The integral class-polynomial and cocenter locators are hn14, Theorems 5.3 and 6.7, PDF pp. 25–26 and 29, together with he14 §§2 and 11.
 
 ## How to read the build
 
@@ -209,7 +224,7 @@ The headline results are the minimal-class and reduction theorems, dimension equ
 superbasic charts, Lang and Levi dimension comparisons, norm and iterated spherical dimension theorems,
 spherical nonemptiness, the virtual upper bound, generic Newton dimension and cordial saturation,
 translation-family cordiality, the two-correspondence reduction, Levi obstruction and the basic seed, and the
-final shrunken criterion with its basic and large-translation specializations. Their actual moduli carriers
+final shrunken criterion, the basic theorem without a strict Newton gap, and the large-translation specialization. Their actual moduli carriers
 are substantial constructions. Suggested.lean explains why none of these geometric headlines is statable on
 the pinned APIs; it introduces no surrogate geometric predicates.
 
@@ -220,7 +235,7 @@ the pinned APIs; it introduces no surrogate geometric predicates.
 H is an arbitrary group, σ∈Aut(H), I≤H and σ(I)=I. For a group H, an automorphism σ, a subgroup I with σ(I)=I
 and b,w∈H, set r_b(g)=g⁻¹bσ(g) and X_I(w,b)={gI : r_b(g)∈IwI}⊂H/I. This is a set of left cosets, without a
 normality assumption. For H=G(L) and w a chosen lift of an Iwahori–Weyl element this is X_w(b)(k). (he21,
-§2.2, p. 5; he14, Definition 1.1, p. 372). Source extraction: he21 line 186.
+§2.2, p. 5; he14, Definition 1.1, p. 372).
 
 A proof route is as follows. Compute r_b(gi)=i⁻¹r_b(g)σ(i); subgroup double-coset invariance proves descent to
 H/I. Replacing w by i₁wi₂ leaves the set unchanged; use the existing double-coset carrier.
@@ -243,7 +258,7 @@ The construction has the following API.
 - In S₃ with I={1}, σ=id, b=(12), the class of g=(123) belongs to the locus labelled g⁻¹bg=(13), and not to the locus labelled b.
 - For the trivial group both quotient and locus have one point. In S₃ with I=〈(12)〉, I is not normal; replacing g by g(12) changes r_b by left multiplication by (12) and right multiplication by σ((12)), so membership is invariant without a quotient-group law.
 
-*Needs:* `DoubleCoset.doubleCoset`; `DoubleCoset.mem_doubleCoset`; `QuotientGroup.leftRel_apply`;
+*Needs:* `DoubleCoset.doubleCoset`; `DoubleCoset.mem_doubleCoset`; `DoubleCoset.doubleCoset_eq_of_mem`; `QuotientGroup.leftRel_apply`;
 `DoubleCoset.mul_mem_doubleCoset_iff`.
 
 ### 0.2 Virtual dimension
@@ -253,7 +268,7 @@ the finite factor η_σ(w) = σ⁻¹(y)x using the supplied unique normal form w
 left W₀-coset. Define the virtual dimension by d_w(b) = (ℓw + ℓη_σ(w) − def_G(b))/2 − 〈ν_b,ρ〉 in ℚ. Here ρ is
 the weight with 〈α∨,ρ〉 = 1 for every simple coroot, and def_G(b) uses F-split ranks. This scalar expression
 also applies to reductive product data with a compatible normal form, including the GL₂ Checks below. (he21,
-§2.2, (2.1)–(2.2), p. 5). Source extraction: he21 line 198.
+§2.2, (2.1)–(2.2), p. 5).
 
 A proof route is as follows. Use the supplied normal form and split-rank defect, and the finite factor η
 defined here. Define the scalar expression over ℚ and its coercion to extended dimension.
@@ -286,7 +301,7 @@ system associated with the affine Weyl group and He’s apartment convention, re
 {v:−1<〈α,v〉<0} for all positive roots α. A shrunken chamber is a connected component of the subset. Say w is
 shrunken when its base-alcove image lies in such a component. This geometric hypothesis is retained
 independently of all lower bounds on λ_w^♦. (he21, §2.2, p. 5; Theorem 6.1 and Corollary 6.4, pp. 13–14; he15,
-§2.9.4, PDF pp. 36–37). Source extraction: he15 line 1464.
+§2.9.4, PDF pp. 36–37).
 
 A proof route is as follows. Use the existing affine apartment and root pairings; define the removed subset
 and alcove containment. Translate root inequalities to the Iwahori–Weyl chamber convention only through an
@@ -319,7 +334,7 @@ hyperspecial affine Grassmannian Gr_G, evaluated over O_L with b fixed over L, a
 functor X_≤μ(b)(R) of modifications (E,β) with Inv_x(β⁻¹bσ(β))≤_ℤμ at every geometric point x of Spec R. The
 exact equality condition defines X_μ(b). In the equal-characteristic scheme setting take the reduced loci; in
 mixed characteristic take perfect spaces. On k-points these are the closed K-double-coset union and the exact
-Kt^μK condition, respectively. (zhu17, §3.1.1, (3.1.1)–(3.1.2), p. 455; Lemma 1.22, p. 428). Source extraction: zhu17 line 2111.
+Kt^μK condition, respectively. (zhu17, §3.1.1, (3.1.1)–(3.1.2), p. 455; Lemma 1.22, p. 428).
 
 For a connected σ-stable parahoric level P, use the supplied partial affine flag space Fl_P and define the parahoric relative-Frobenius locus at a double-coset position z by the bσ-graph pullback of its exact position stratum; its geometric points satisfy g⁻¹bσ(g)∈P ż P. A closed bound is the pullback of the corresponding finite Schubert union. At a special maximal parahoric, the dominant coinvariant λ labels this exact position. This is the parahoric variant used by §4.1; its hyperspecial specialization is the spherical functor above. (he21, Theorem 4.4, p. 7; he14, §7.1, pp. 389–390.)
 
@@ -327,8 +342,7 @@ A proof route is as follows. Pull back the relative-position strata along the b�
 Grassmannian. Use closedness of ≤μ and openness of equality inside it; the admissible union is not a single
 double coset.
 
-The symbol X_μ always means the exact stratum here. The component continuation must give an explicit
-dictionary to the component continuation’s closed-union notation.
+The symbol X_μ means the exact stratum; X_≤μ means the closed union. These two objects remain distinct in component comparisons.
 
 The construction has the following API.
 
@@ -337,7 +351,6 @@ The construction has the following API.
 - k-points are ⋃_(λ≤_ℤμ) X_λ(b)(k).
 - A canonical locally closed immersion X_μ(b)→Gr_G factoring through X_≤μ(b).
 - μ≤_ℤμ′ gives the inclusion of bounded loci.
-
 - At P=I the parahoric graph pullback has the flag point condition of §0.1 and the realization of §0.5.
 - At a hyperspecial P=K the parahoric exact locus is the spherical exact locus with the same μ and b.
 - For I⊂P, forgetting the I-level gives a morphism from the flag exact locus at w to the parahoric exact locus at the image of w in the parahoric double-coset set; the same forgetting map respects closed Schubert bounds.
@@ -366,7 +379,7 @@ mixed-characteristic spherical loci construct locally perfectly finite type spac
 on bounded finite-type models, valued in ℚ∪{−∞}, with dim ∅=−∞. Show independence of a finite-type
 deperfection, invariance under universal homeomorphisms and the bounded fibre estimates actually used below. A
 perfect space of positive dimension is not asserted finite type. (he14, Definition 1.1 and §1.3, pp. 371–372;
-zhu17, §3.1.1, p. 455; Definition A.13 and Proposition A.15–Corollary A.16, pp. 471–472). Source extraction: he14 line 203.
+zhu17, §3.1.1, p. 455; Definition A.13 and Proposition A.15–Corollary A.16, pp. 471–472).
 
 A proof route is as follows. Use the supplied flag/Grassmannian geometry; identify the reduced pullback with
 the point condition. Descend bounded perfect diagrams to compatible finite-type models and use the topological
@@ -375,9 +388,7 @@ dimension ≥n, prove dim(source)≥dim(target)+n at generic points; pass to the
 compatible bounded source diagram over each target generic point; global component finiteness is not a
 hypothesis.
 
-Bounded exhaustion and independence proofs must precede the inequalities in HSD6. General ramified perfect
-flag geometry is a separate scope transfer the general flag-geometry transfer; the unramified spherical
-construction does not supply it.
+Bounded exhaustion and independence proofs precede the inequalities in §6.3. For ramified and mixed-characteristic flags, use the GS0 parahoric models and construct the bounded relative-Frobenius pullbacks below.
 
 The construction has the following API.
 
@@ -400,7 +411,7 @@ SchemeAndStackFoundations §§0.7, 0.9, 0.23–0.26; SchemeAndStackFoundations L
 §0.7, fibre_dimension_formula.
 
 The general flag realization extends the reduced construction to σ-twisted ramified and mixed-characteristic
-local-field data through gap:general-flag-geometry. Identify the geometric relative-Frobenius pullback on each
+local-field data using GS0, parahoric-ind-projectivity and equal-characteristic-schubert-models. Identify the geometric relative-Frobenius pullback on each
 bounded flag model, compare classical and perfect realizations wherever both are defined, and prove invariance
 of nonemptiness and dimension under the stated comparison morphisms. The initial tame classical proof retains
 p ∤ |π₁(G_der)|; the general target includes the replacement argument at the excluded characteristics. The
@@ -413,7 +424,7 @@ Appendix A, pp. 471–472.)
  For b′=h b σ(h)⁻¹, left multiplication gI↦hgI identifies X_w(b) with X_w(b′); for j∈J_b(F) it acts on X_w(b).
 These maps extend to the geometric realizations and respect spherical bounds. Nonemptiness implies
 κ_G(b)=κ_G(w) (or κ_G(b)=μ^natural in the spherical case). (he14, §1.3, p. 372 and proof of Theorem 4.8, pp.
-382–383; he21, §6.2, p. 13). Source extraction: he14 line 213.
+382–383; he21, §6.2, p. 13).
 
 A proof route is as follows. Compute (hg)⁻¹b′σ(hg)=g⁻¹bσ(g). Apply the integral Kottwitz homomorphism to
 g⁻¹bσ(g) and take σ-coinvariants; I lies in its kernel.
@@ -444,7 +455,7 @@ RG2.4, dominant-coinvariant-cocharacters; ReductiveGroupsPartII RG2.4, dominant-
 ReductiveGroupsPartII RG2.4, kottwitz-quotient; ReductiveGroupsPartII RG2.4, length-and-bruhat-order;
 SchemeAndStackFoundations Layer 1; SchemeAndStackFoundations §0.7, fibre_dimension_formula;
 SchemeAndStackFoundations §§0.7, 0.9, 0.23–0.26; `DoubleCoset.doubleCoset`; `DoubleCoset.mem_doubleCoset`;
-`DoubleCoset.mul_mem_doubleCoset_iff`; `QuotientGroup.leftRel_apply`. The individual Needs paragraphs specify
+`DoubleCoset.mul_mem_doubleCoset_iff`; `DoubleCoset.doubleCoset_eq_of_mem`; `QuotientGroup.leftRel_apply`. The individual Needs paragraphs specify
 the additional comparison constructions used by each route.
 
 ## Layer 1: reduction and class-polynomial dimensions
@@ -458,21 +469,20 @@ The initial classical proof uses the equal-characteristic tame adjoint setting o
 flag theorem includes the specified transfer. If w is minimal in its σ-conjugacy class in the extended affine
 Weyl group, then X_w(b) is nonempty iff [b]=[ẇ], and in that case dim X_w(b)=ℓw−〈ν_b,2ρ〉. Representatives of
 the same Weyl-group class are compared in B(G), not identified as group elements. (he21, Theorem 3.2, p. 6;
-he14, Theorem 4.8, pp. 382–383). Source extraction: he14 line 610.
+he14, Theorem 4.8, pp. 382–383).
 
 A proof route is as follows. Use the straight–finite-parabolic decomposition, whose missing generic
-root-theoretic contract is in the root-combinatorics supplier extensions. The finite parabolic Lang
+root-theoretic contract is gap:straight-finite-parabolic. The finite parabolic Lang
 calculation supplies nonemptiness and the length contribution; transport the lift through B(G).
 
-The theorem is geometric in the He14 setting; a mixed-characteristic generalization requires the general
-flag-geometry transfer.
+The theorem is geometric in the He14 setting; a mixed-characteristic generalization requires the bounded ADLV comparisons of §0.5.
 
 **Checks.**
 
 - For a dominant straight GL₂ translation t^(1,0), length 1 and 〈ν,2ρ〉=1 give dimension 0. At a class with κ=0 the locus is empty and has dimension −∞.
 - For the finite A₁ reflection s and b=1, length 1 and Newton pairing 0 give dimension 1.
 
-*Needs:* the RootSystemsPartII Red-Min supplier contract; §0.5; BunGAndNewtonStrata Layer 1,
+*Needs:* gap:twisted-redmin; gap:straight-finite-parabolic; §0.5; BunGAndNewtonStrata Layer 1,
 straight-weyl-classification; ReductiveGroupsPartII RG2.3, lang-for-pro-algebraic-groups.
 
 ### 1.2 Deligne–Lusztig reduction and dimension recurrence
@@ -482,13 +492,11 @@ flag theorem includes the specified transfer. Length-preserving simple σ-conjug
 homeomorphisms between the corresponding reduced ADLVs. If ℓ(s w σ(s))=ℓw−2, decompose X_w(b) into a closed
 piece universally homeomorphic to an A¹-fibration over X_(s w σ(s))(b) and an open piece universally
 homeomorphic to a G_m-fibration over X_(s w)(b). Thus dim X_w(b)=1+max(dim X_(s w)(b),dim X_(s w σ(s))(b)),
-with −∞ conventions. (gh10, Proposition 2.5.2 and Corollary 2.5.3, PDF pp. 7–9; he21, Proposition 3.3, p. 6).
-Source extraction: gh10 line 300.
+with −∞ conventions. (gh10, Proposition 2.5.2 and Corollary 2.5.3, PDF pp. 6–10; he21, Proposition 3.3, p. 6).
 
 A proof route is as follows. Apply simple-cell multiplication to the endpoint correspondence; keep the open
 and closed cases separate. Descend the universal-homeomorphism diagrams to bounded models before applying
-dimension. Prove the σ-twisted and general local-field versions through the general flag-geometry transfer of
-§0.5.
+dimension. Prove the σ-twisted and general local-field versions through the bounded ADLV comparisons of §0.5.
 
 Empty terms remain −∞. A length-preserving move changes neither nonemptiness nor dimension; it does not
 automatically preserve η.
@@ -498,32 +506,31 @@ automatically preserve η.
 - For w=s₀s₁s₀ in split affine A₁ and b=1, the two reduced endpoints are s₁s₀ and s₁. The first is a straight nonbasic translation and gives −∞; the second has dimension 1. The recurrence gives 1+max(−∞,1)=2.
 - If both branches are empty, 1+max(−∞,−∞)=−∞. An empty branch must not be assigned dimension 0.
 
-*Needs:* §0.5; the RootSystemsPartII Red-Min supplier contract; ReductiveGroupsPartII RG2.4,
+*Needs:* §0.5; gap:twisted-redmin; ReductiveGroupsPartII RG2.4,
 simple-cell-multiplication.
 
 ### 1.3 Class polynomials detect dimension and nonemptiness
 
 The initial classical proof uses the equal-characteristic tame adjoint setting of the Conventions; the general
-flag theorem includes the specified transfer. Given the σ-twisted affine-Hecke cocenter basis T_O and
-expansion T_w=Σ_O f_(w,O)(v−v⁻¹)T_O with nonnegative integral class polynomials, define deg 0=−∞. Then dim
+flag theorem includes the specified transfer. Use the normalized basis T_w=v^(−ℓw)U_w with q=v², so T_s²=(v−v⁻¹)T_s+1. Given its σ-twisted affine-Hecke cocenter basis T_O, write T_w=Σ_O f_(w,O)(z)T_O, where z=v−v⁻¹ and f_(w,O)∈ℕ[z]. Define degree in z, with deg 0=−∞. Then dim
 X_w(b)=max_(O mapping to [b]) ((ℓw+ℓO+deg f_(w,O))/2−〈ν_b,2ρ〉). In particular X_w(b) is nonempty iff at least
 one such polynomial is nonzero. The generic cocenter and its recursion are supplier obligations, not newly
-owned objects here. (he14, §2.2–§2.5, pp. 374–376; Theorem 6.1 and Corollary 6.2, pp. 387–388). Source extraction: he14 line 777.
+owned objects here. (he14, §2.2–§2.5, pp. 374–376; Theorem 6.1 and Corollary 6.2, pp. 387–388).
 
 A proof route is as follows. Use the genuine cocenter basis, integral positivity and degree recursion of the
 twisted-cocenter supplier contract. Induct along Red-Min and compare the polynomial and geometric max
 recurrences, with the same σ-conjugacy-to-B(G) map.
 
 The index includes every Weyl-group class mapping to [b]; it is not a sum over B(G) alone. No polynomial
-degree is assigned a finite value for zero.
+degree is assigned a finite value for zero. The formula holds in either characteristic: after constructing the geometric realizations, the normalized recursion and its minimal-class terms depend only on the based affine datum and the Newton and Kottwitz invariants (mv20, Remark 1.3, arXiv v3, PDF p. 3; he15, Theorem 2.23, PDF p. 34).
 
 **Checks.**
 
 - At a minimal w in its own twisted class O, f_(w,O)=1 has degree 0, so the formula is ℓw−〈ν,2ρ〉; all other coefficients vanish and contribute −∞.
-- For split affine A₁, w=s₀s₁s₀ and b=1, reduction gives the basic minimal class of s₁, of length 1, with degree 0: (3+1+0)/2=2. The other branch is the nonbasic straight translation. A spurious degree 1 gives 5/2 and violates parity.
+- For split affine A₁, w=s₀s₁s₀ and b=1, the normalized cocenter relation is T_w≡zT_(s₁s₀)+T_s₁. The basic-class coefficient is 1 of degree 0, giving (3+1+0)/2=2; the straight nonbasic branch does not contribute. The unnormalized coefficient q=v² would give (3+1+2)/2=3 if v-degree were inserted, or 5/2 if q-degree were inserted. Neither is the required z-degree.
 
 *Needs:* §1.1; §1.2; BunGAndNewtonStrata Layer 1, straight-weyl-classification;
-SmoothRepresentationsOfLocalGroups SR.1.
+SmoothRepresentationsOfLocalGroups SR.1.5; gap:twisted-affine-cocenter.
 
 ### 1.4 Universal dimension advantage
 
@@ -531,7 +538,7 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 every [b] with X_v(b) nonempty, X_w(b) is nonempty and dim X_w(b)−dim X_v(b)≥(ℓw+ℓηw−ℓv−ℓηv)/2. This
 implication formulation avoids subtracting −∞. It is equivalent to comparing dim X−d in the extended order.
 The relation is reflexive and transitive; length-preserving reduction equivalence together with ℓηw≤ℓηv
-implies w⇒_σv. (he21, §3.3, p. 6). Source extraction: he21 line 242.
+implies w⇒_σv. (he21, §3.3, p. 6).
 
 A proof route is as follows. Define the relation using the implication and rational inequality. Cancel virtual
 dimensions for the equivalent form; prove composition by addition when the right-hand locus is nonempty.
@@ -564,7 +571,7 @@ b=1 these branches have dimensions 1 and −∞, giving 2. The minimal-class pol
 
 Layers 0; BunGAndNewtonStrata Layer 1, straight-weyl-classification; ReductiveGroupsPartII RG2.3,
 lang-for-pro-algebraic-groups; ReductiveGroupsPartII RG2.4, simple-cell-multiplication;
-SmoothRepresentationsOfLocalGroups SR.1. The individual Needs paragraphs specify the additional comparison
+SmoothRepresentationsOfLocalGroups SR.1.5; gap:twisted-affine-cocenter. The individual Needs paragraphs specify the additional comparison
 constructions used by each route.
 
 ## Layer 2: superbasic lattice charts
@@ -575,7 +582,7 @@ Fix h ≥ 1 and m ≥ 1 with gcd(m,h)=1. A central shift makes the lattice appli
 Its residue basis B=A∖(h+A) has one element in every residue class modulo h. It is normalized when
 ΣB=h(h−1)/2. For b₀=min B, enumerate b_i=b_(i−1)+m−μ′_i h through B, with b_h=b₀ and each μ′_i maximal subject
 to membership in A. This defines the type μ′ with the specified starting convention. (vie06, Definition 3.1
-and Lemma 3.3, PDF p. 3 (with Remark 3.2)). Source extraction: vie06 line 106.
+and Lemma 3.3, PDF p. 3 (with Remark 3.2)).
 
 A proof route is as follows. Prove existence and uniqueness of the residue basis, then the unique integral
 translation normalizing its sum. Use coprimality for the cycle enumeration and recover A from B+hℕ.
@@ -607,7 +614,7 @@ nonnegative increasing h-tuple μ of sum m, an extended semi-module is φ:ℤ→
 φ(a+h)≥φ(a)+1; φ(a)≤max{n:a+m−nh∈A}, with equality whenever every integer ≥a belongs to A; and a decomposition
 of A into h increasing infinite sequences along which φ increases by 1. A successor is a+h when φ(a+h)=φ(a)+1
 and is >a+h otherwise. The multiset of initial values is μ. It is cyclic when the displayed upper bound is an
-equality for every a∈A. (vie06, Definition 3.4 and Lemmas 3.6–3.8, PDF pp. 3–5). Source extraction: vie06 line 133.
+equality for every a∈A. (vie06, Definition 3.4 and Lemmas 3.6–3.8, PDF pp. 3–5).
 
 A proof route is as follows. Package the finite-type data and the required decomposition, without choosing
 arbitrary ordered labels on equal initial values. Prove only finitely many extended semi-modules occur at
@@ -641,7 +648,7 @@ A(M) set φ_M(a)=max{n≥0: some v∈M of leading index a has ϖ^(−n)bσ(v)∈
 A(M) is normalized, and the exact Hodge locus of increasing type μ is the finite disjoint union of its locally
 closed extended-semi-module strata S_(A,φ). The shift e_i↦e_(i+1), commuting with bσ, transports determinant
 components. Finiteness is asserted on each fixed determinant component, not on the entire locus. (vie06, §2,
-PDF p. 2; §4, PDF pp. 5–8; zhu17, End of the proof of Proposition 3.3, p. 460). Source extraction: vie06 line 206.
+PDF p. 2; §4, PDF pp. 5–8; zhu17, End of the proof of Proposition 3.3, p. 460).
 
 A proof route is as follows. Prove the lattice conditions give every clause of the extended semi-module
 definition. Construct bounded locally closed strata using coefficient conditions, then prove finite exhaustion
@@ -677,7 +684,7 @@ nonempty open U⊂A^V mapping to S_(A,φ), with the coefficient construction ind
 algebraically closed points. Prove from this construction, finite-type models and the requisite
 radicial/universal-homeomorphism argument that dim S_(A,φ)=|V|. For a cyclic extended semi-module U is all of
 A^V. Consequently dim X_μ(b) on each determinant component is max |V|. (vie06, Theorem 4.3, PDF pp. 5–8;
-zhu17, End of the proof of Proposition 3.3, p. 460). Source extraction: vie06 line 266.
+zhu17, End of the proof of Proposition 3.3, p. 460).
 
 A proof route is as follows. Read the triangular coefficient recursion as a morphism, not merely a
 parametrization of points. Establish the geometric comparison in the perfect chart, Lang and pullback
@@ -701,7 +708,7 @@ superbasic shift of slope m/h, and a dominant μ in the matching determinant com
 dim X_μ(b)=〈ρ,μ−ν_b〉−(h−1)/2. In Viehmann’s increasing convention ρ=((1−h)/2,(3−h)/2,…,(h−1)/2). Every
 extended semi-module has |V| at most this value, and the cyclic type μ attains it. A central shift removes the
 nonnegativity restriction on μ. (vie06, Proposition 5.2 and Theorem 5.3, PDF pp. 8–9, with proof through p.
-12; zhu17, End of the proof of Proposition 3.3, p. 460). Source extraction: vie06 line 382.
+12; zhu17, End of the proof of Proposition 3.3, p. 460).
 
 A proof route is as follows. Prove the finite combinatorial bound by the inversion count and compare to the
 cyclic case. Convert the increasing convention to the chosen descending dominance convention and use
@@ -729,23 +736,20 @@ individual Needs paragraphs specify the additional comparison constructions used
 
 Use the reductive O_F-model spherical datum, with perfect k-algebras in mixed characteristic. For the Newton
 Levi M and its parabolic unipotent radical N, establish the equal- and mixed-characteristic loop-space
-comparison needed for the twisted Lang-map fibre calculation. Where an M-equivariant F-scheme identification
-N≃Lie N is used, obtain it with its exact hypotheses from the reductive-group owner; in mixed characteristic
-it is not an identification of k-ind-schemes. Prove the required admissibility and dimension statements for
+comparison needed for the twisted Lang-map fibre calculation. Use the finite M-stable filtration of gap:unipotent-linearization for the reductive O_F-model and its parabolic; each quotient is the additive group of the corresponding Lie quotient in every residue characteristic. Its loop realization in mixed characteristic is constructed on admissible perfect models. Prove the required admissibility and dimension statements for
 the resulting p-adic loop spaces, and the finite fixed-point calculation used in GHKR Lemma 5.4.3 by the
 perfect-space trace argument. More precisely, for m∈M(L) with M-dominant Newton point ν_M, the map
 f_m(n)=n⁻¹mσ(n)m⁻¹ on N(L) is surjective, inverse images of all admissible subsets are ind-admissible, and for every nonempty admissible Y, dim
 f_m⁻¹(Y)−dim Y=Σ_(α∈R_N) min(〈α,ν_M〉,0)=〈ρ,ν_M−ν_G〉. Prove the same normalized formula on the perfect models
 used in the Levi reduction; ν_G is the G-dominant representative. (zhu17, Proof of Theorem 3.1, §3.1.2, pp.
-456–457; ghkr06, Proposition 5.3.1, PDF pp. 19–21; Lemma 5.4.3, PDF pp. 27–28). Source extraction: ghkr06 line 835.
+456–457; ghkr06, Proposition 5.3.1, PDF pp. 19–21; Lemma 5.4.3, PDF pp. 27–28).
 
-A proof route is as follows. Separate the generic equivariant-linearization supplier from the new loop-space
+A proof route is as follows. Separate the supplied equivariant vector-group quotients from the new loop-space
 construction. Check that coefficient truncations define admissible perfect morphisms and that the dimension
 correction is the root-slope sum. Construct compatible perfect and finite-type models, then apply the
 TraceFormula supplier at ℓ ≠ p with bounded constructible compactly supported coefficients.
 
-This is a geometric proof obligation, not a consequence of an abstract bijection N(F)≃Lie N(F). The
-replacement at excluded characteristics is part of gap:unipotent-linearization. For the cohomological
+The Lang comparison requires geometric loop models, admissibility and dimensions in addition to the filtration; it does not follow from a point-set bijection with a Lie algebra. For the cohomological
 application take ℓ ≠ p and the constant ℚ_ℓ-complex on the separated finite-type model over a common finite residue extension; geometric
 Frobenius on H²_c(A¹) has trace q and on H¹_c(A¹) trace 0. Transfer this trace through the étale comparison of
 perfection before the fixed-point argument (zhu17, Appendix A.3.4, pp. 480–481).
@@ -754,6 +758,7 @@ perfection before the fixed-point argument (zhu17, Appendix A.3.4, pp. 480–481
 
 - For G=GL₂ and upper-triangular N, ν_M=(a,b) has one N-root slope a−b. Values a−b=2 and −2 give corrections min(2,0)=0 and min(−2,0)=−2; their dominant-reordering pairings 〈ρ,ν_M−ν_G〉 are 0 and −2.
 - For N=1 the sum is empty, the Lang map is the identity of a point, and the correction is 0. Over 𝔽₂ the additive Lang polynomial u²−u has two roots and derivative −1=1; residue characteristic 2 does not remove this case.
+- For the upper unipotent subgroup of GL₃, N[2]=U₁₃ and N[3]=1 give quotients G_a² and G_a in every characteristic. The commutator of 1+E₁₂ and 1+E₂₃ is 1+E₁₃, also in characteristic 2, whereas a whole-group additive identification would have trivial commutator.
 
 *Needs:* ReductiveGroupsPartII RG2.3, parahoric-subgroup; SchemeAndStackFoundations §§0.7, 0.9, 0.23–0.26;
 TraceFormula Layer 11 and its coefficient and compact-support suppliers; GeometricSatakeAndFusion GS0, Witt
@@ -770,7 +775,7 @@ the component maps used for dimension reduction; no global surjectivity over unm
 In the ramified equal-characteristic flag argument retain p∤|π₁(G_ad)| when using GHN’s corrected statement;
 the resulting map of the entire flag varieties need not be an immersion. For unramified spherical perfect loci
 prove the relevant model-level component comparison separately. (ham15, arXiv v2, reduction after Proposition
-2.10, PDF pp. 6–7; ghnerr, Proposition 0.0.1, p. 1; zhu17, §3.1.2, pp. 456–457). Source extraction: ghnerr line 16.
+2.10, PDF pp. 6–7; ghnerr, Proposition 0.0.1, p. 1; zhu17, §3.1.2, pp. 456–457).
 
 A proof route is as follows. Compare parahoric quotients and the Kottwitz component labels; prove the induced
 component maps are the stated isomorphisms or universal homeomorphisms. Check compatibility of bσ and bounds
@@ -799,7 +804,7 @@ Res_(E/F) PGL_h for E/F finite unramified. Using the specified integral componen
 comparison to a Res_(E/F) GL_h lift with a superbasic representative. Track the central cocharacter and
 determinant. Combined with products and Levi retraction, this is the geometric reduction to the lattice charts
 of Layer 2 and the norm isomorphism of §3.6; the abstract classification itself is not a second target here.
-(ckv15, Lemma 3.1.1, PDF pp. 20–21; zhu17, §3.1.2, pp. 456–457). Source extraction: ckv15 line 931.
+(ckv15, Lemma 3.1.1, PDF pp. 20–21; zhu17, §3.1.2, pp. 456–457).
 
 A proof route is as follows. Use the superbasic definition, classification and lift of the BunGAndNewtonStrata
 supplier contract. Use the integral component comparison to lift and then apply the ordered norm construction.
@@ -813,7 +818,7 @@ The superbasic-classification supplier extension includes the anisotropic-classi
 - For h=1 the GL₁ chart has defect 0; an F-simple adjoint factor is required to have positive semisimple rank, so PGL₁ is not a new simple factor.
 - For GL₂ with ordinary slopes (1,0), J_b=G_m² has J_b/Z(G)=G_m of split rank 1; it fails the anisotropy criterion. The basic slope-1/2 division-algebra group has quotient split rank 0. Using the center of J_b instead of Z(G) would wrongly accept the ordinary class.
 
-*Needs:* §3.2; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; BunGAndNewtonStrata Layer 1.
+*Needs:* §3.2; BunGAndNewtonStrata §1.45, general-levi-newton-comparison; gap:superbasic-classification.
 
 ### 3.4 Spherical Levi fibres and dimension reduction
 
@@ -827,7 +832,7 @@ d(μ,μ_M)+〈ρ,ν_M−ν_G〉−〈2ρ_N,ν_M〉. Thus dim X^G_μ(b) is the ma
 nonempty terms indexed by S_M(μ,κ_M(b)). Use d≤〈ρ,μ+μ_M〉−〈2ρ_M,μ_M〉, with equality for an M-maximal μ_M. For
 M=Cent_G(ν_b), choose the representative basic in M and ν_M=ν_G. (ham15, arXiv v2, Definitions 2.5 and 2.7,
 Lemma 2.8 and Proposition 2.9, PDF pp. 4–6; ghkr06, Proposition 5.6.1 and Theorem 5.8.1, PDF pp. 29–32; zhu17,
-§3.1.2, pp. 456–457). Source extraction: ham15 line 193.
+§3.1.2, pp. 456–457).
 
 A proof route is as follows. Use the supplied semi-infinite intersection geometry and its exact relative
 positions. Apply the twisted Lang map on N and calculate its dimension shift using root slopes. Stratify the
@@ -853,7 +858,6 @@ with E_d=σ_E^*E₀, modifications Φ_i:E_i[1/ϖ]≃E_(i−1)[1/ϖ] bounded by �
 β:E₀[1/ϖ]≃E_triv[1/ϖ] satisfying βΦ₁⋯Φ_d=bσ_E(β). For GL_h these torsors are lattices. Equivalently take the
 fibre product of the convolution Grassmannian’s endpoint map with the bσ_E graph. Keep exact endpoint strata
 X_λ(b) separate from X_≤Σμ(b). (zhu17, §3.1.3, Proposition 3.3 and diagrams (3.1.4)–(3.1.5), pp. 457–458).
-Source extraction: zhu17 line 2195.
 
 A proof route is as follows. Form the supplied convolution diagram and its endpoint pullback. Use the torsor
 description to compare the two functors and retain the order of all modifications.
@@ -886,7 +890,7 @@ unramified of degree d and G=Res_(E/F)H. Order embeddings τ_i=σ^(−i)τ₀, w
 ordered norm Nm(b)=b₀σ(b₁)⋯σ^(d−1)(b_(d−1)), with σ_E=σ^d. Construct an isomorphism from X^G_≤μ(b) to the
 iterated H-locus with these framed modifications and bounds (μ_τ₀,σμ_τ₁,…,σ^(d−1)μ_τ_(d−1)). Import the B(G)
 norm, centralizer and defect comparison rather than redefining them; verify the ρ-pairing identity needed for
-dimension. (zhu17, Lemma 3.5 and Lemma 3.7, p. 459). Source extraction: zhu17 line 2254.
+dimension. (zhu17, Lemma 3.5 and Lemma 3.7, p. 459).
 
 A proof route is as follows. Write the d transition equations and eliminate successively, preserving
 multiplication order. Construct the inverse on torsors and descent data, not only on algebraically closed
@@ -911,7 +915,7 @@ and λ≤_ℤΣμ_i, the supplied convolution map has fibres over Gr_λ of dimen
 over the exact X_λ(b), this bounds the iterated ADLV piece by dim X_λ(b)+〈ρ,Σμ_i−λ〉. Prove separately that the
 top endpoint λ=Σμ_i is nonempty when its ADLV is nonempty and that its convolution fibre has dimension 0,
 giving the lower bound required for the iterated dimension formula. (zhu17, Proposition 2.3, p. 432; proof of
-Proposition 3.3, pp. 459–460). Source extraction: zhu17 line 2283.
+Proposition 3.3, pp. 459–460).
 
 A proof route is as follows. Import the geometric stratified semismallness bound from
 GS2:correspondences/rational-special-fibre-convolution; its statement concerns actual fibres, not only sheaf
@@ -934,7 +938,7 @@ nonempty for an unramified reductive O_F-model, then dim X_μ(b)=dim X_≤μ(b)=
 is empty, its dimension is −∞ and the numerical expression is not asserted equal to it. More generally a
 nonempty iterated locus has dimension 〈ρ,Σμ_i−ν_b〉−def_G(b)/2. Prove nonemptiness/top-stratum attainment
 before equating the exact and closed dimensions. (zhu17, Theorem 0.5, p. 410; Theorem 3.1, p. 456; Proposition
-3.3, pp. 457–460; ham15, arXiv v2, Theorem 1.1, PDF p. 2; setup p. 1). Source extraction: zhu17 line 2137.
+3.3, pp. 457–460; ham15, arXiv v2, Theorem 1.1, PDF p. 2; setup p. 1).
 
 A proof route is as follows. Reduce to the Newton Levi and then superbasic adjoint factors. Apply norm
 geometry and the GL chart calculation. Apply the exact endpoint bounds and prove lower endpoints cannot exceed
@@ -962,7 +966,6 @@ supported flag setting, dim X_w(b)≤d_w(b). Derive the σ-twisted form using th
 estimates; track the η convention in the survey’s normalized Newton-stratum formula. That stratum dimension
 equals the ADLV dimension plus 〈ν_b,2ρ〉, so its plus-Newton term must not be copied into the ADLV formula.
 (he21, Theorem 2.1, p. 5; he14, Theorem 10.3 and Corollary 10.4, pp. 396–397; he15, Theorem 2.30, PDF p. 38).
-Source extraction: he21 line 210.
 
 A proof route is as follows. Reduce to the spherical bound and control the extra flag fibres by finite Weyl
 lengths. Prove the Frobenius-convention comparison between yσ(x) and σ⁻¹(y)x. Prove the general-σ and
@@ -1006,12 +1009,11 @@ indicated special maximal parahoric K, the exact locus X^K_λ(b) is nonempty exa
 sufficiency already holds on the exact top stratum. In particular any class occurring in Kt^λK has ν_b≤λ^♦,
 and [t^λ] realizes the greatest class with ν=λ^♦ and defect 0 in the ordinary translation situation used here.
 Distinguish rational Newton dominance from the integral relative-position bound. (he21, Theorem 4.4, p. 7;
-he14, Theorem 7.1, pp. 389–390). Source extraction: he21 line 283.
+he14, Theorem 7.1, pp. 389–390).
 
 A proof route is as follows. Apply the integral κ obstruction and Newton semicontinuity for necessity. Use the
 straight representative and Levi reduction for sufficiency. Check special-parahoric and root-datum generality
-before passing from unramified spherical geometry to the He21 setting; this is part of the general
-flag-geometry transfer.
+before passing from unramified spherical geometry to the He21 setting; this is part of the bounded ADLV comparisons of §0.5.
 
 A torus with different valuation is empty even though rational dominance in semisimple directions is vacuous.
 
@@ -1027,16 +1029,12 @@ galois-average; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G.
 
 Use the simple quasi-split flag datum and apartment orientation of the Conventions. The initial classical
 proof uses the equal-characteristic tame adjoint setting of the Conventions; the general flag theorem includes
-the specified transfer. For w define B(G)_w={[b]:X_w(b)≠∅}. In the equal-characteristic setting construct its
-unique greatest element [b_w], realized on a dense open Newton stratum of IẇI. Show that the same greatest
-element occurs in the Bruhat closure ⋃_(v≤w)IṽI. The order is the Kottwitz-compatible Newton order imported
+the specified transfer. For w define B(G)_w={[b]:X_w(b)≠∅}. For every supported local-field datum it has a greatest element [b_w]. In equal characteristic construct its dense open Newton stratum in IẇI and prove that the same greatest element occurs in the Bruhat closure ⋃_(v≤w)IṽI. For other local fields transfer greatestness of B(G)_w through §1.3, preserving the affine root datum, σ, integral κ and Newton invariants; no topological closure statement is inferred from that numerical transfer. The order is the Kottwitz-compatible Newton order imported
 from B(G); this is not a total ordering of all classes. (he21, §4.1, p. 7; vie14, Proposition 5.5 and
-Corollary 5.6, pp. 1027–1028; mv20, §3.1, arXiv v3, PDF pp. 5–7). Source extraction: vie14 line 768.
+Corollary 5.6, pp. 1027–1028; mv20, §3.1, arXiv v3, PDF pp. 5–7).
 
 A proof route is as follows. Work on admissible bounded models of the loop-group cell, prove generic constancy
-and greatestness, then compare its closure. Record the topology and purity inputs in the Newton-cell purity
-supplier extension; construct the generic stratum on admissible bounded models before passing to the loop
-cell.
+and greatestness, then compare its closure. Use gap:newton-cell-greatest for this equal-characteristic geometric assertion; construct the generic stratum on admissible bounded models before passing to the loop cell. Section 1.3 supplies characteristic-independent occurrence of each class.
 
 Unique maximal and greatest must be distinguished until finiteness/comparability is proved. No assertion that
 every class below [b_w] occurs is made here.
@@ -1044,9 +1042,9 @@ every class below [b_w] occurs is made here.
 The construction has the following API.
 
 - B(G)_w defined by nonemptiness.
-- The unique greatest class with dense open Newton stratum.
+- The greatest occurring class in every supported local-field datum, realized on a dense open Newton stratum in equal characteristic.
 - Every occurring class is ≤[b_w].
-- Passing to the Bruhat closure does not change the greatest class.
+- In equal characteristic, passing to the Bruhat closure does not change the greatest class.
 - The generic stratum meets the cell, so X_w(b_w) is nonempty.
 
 **Checks.**
@@ -1057,7 +1055,7 @@ The construction has the following API.
 - Greatestness alone must not produce all lower classes; saturation is a separate cordial theorem.
 
 *Needs:* §0.5; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G; ReductiveGroupsPartII RG2.4,
-iwahori-bruhat-decomposition; BunGAndNewtonStrata Layer 1; gap:newton-cell-purity.
+iwahori-bruhat-decomposition; §1.3; gap:newton-cell-greatest.
 
 ### 4.3 Dimension at the generic class
 
@@ -1065,10 +1063,9 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 proof uses the equal-characteristic tame adjoint setting of the Conventions; the general flag theorem includes
 the specified transfer. At [b_w], dim X_w(b_w)=ℓw−〈ν_(b_w),2ρ〉. Relate the codimension of the generic Newton
 stratum in IẇI to ADLV dimension using the established bounded loop-group/flag comparison. (he21, §4.1, p. 7;
-he15, Theorem 2.23, PDF p. 34). Source extraction: mv20 line 266.
+he15, Theorem 2.23, PDF p. 34; mv20, Lemma 3.2, arXiv v3, PDF p. 5).
 
-A proof route is as follows. Use the dense open Newton stratum to get codimension zero. Apply the dimension
-comparison, retaining the 〈ν,2ρ〉 correction.
+A proof route in equal characteristic uses the dense open Newton stratum to get codimension zero and applies the cell/ADLV dimension comparison, retaining the 〈ν,2ρ〉 correction. Transfer the numerical equality to other local fields by §1.3; density is used only on the equal-characteristic models.
 
 Do not replace the generic class by an arbitrary greatest rational cocharacter.
 
@@ -1076,7 +1073,7 @@ Do not replace the generic class by an arbitrary greatest rational cocharacter.
 
 - For GL₂, t^(1,0) has generic ν=(1,0), and dimension 1−1=0. For the finite A₁ simple cell, generic ν=0 and dimension 1−0=1.
 
-*Needs:* §4.2; §1.3; BunGAndNewtonStrata Layer 1; gap:newton-cell-purity.
+*Needs:* §4.2; §1.3; gap:newton-cell-adlv-dimension for the equal-characteristic geometric route.
 
 ### 4.4 Cordial elements
 
@@ -1085,7 +1082,7 @@ proof uses the equal-characteristic tame adjoint setting of the Conventions; the
 the specified transfer. A Weyl-group element w is cordial when ℓw−ℓη_σ(w)=〈ν_(b_w),2ρ〉−def_G(b_w).
 Equivalently dim X_w(b_w)=d_w(b_w). The definition is a property of the given based Frobenius datum and
 generic class, not a condition imposed on all b by definition. (he21, §4.1, p. 7; mv20, Definition 3.14, arXiv
-v3, PDF p. 8). Source extraction: mv20 line 404.
+v3, PDF p. 8).
 
 A proof route is as follows. Define the scalar equality and use the generic-dimension theorem for the
 equivalent form.
@@ -1114,7 +1111,6 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 proof uses the equal-characteristic tame adjoint setting of the Conventions; the general flag theorem includes
 the specified transfer. If w⇒_σv and v⇒_σw, then B(G)_w=B(G)_v and their greatest classes agree. At every
 occurring class dim X_w−d_w=dim X_v−d_v. Consequently w is cordial iff v is cordial. (he21, §4.1, p. 7).
-Source extraction: he21 line 265.
 
 A proof route is as follows. Use the nonemptiness implications in each direction to identify the sets.
 Antisymmetry of the rational inequalities gives equality of dimension defects; evaluate at the common generic
@@ -1130,30 +1126,18 @@ Only mutual advantage, not a single inequality, gives the equivalence.
 
 ### 4.6 Cordial saturation and dimensions
 
-Use the simple quasi-split flag datum and apartment orientation of the Conventions. The initial classical
-proof uses the equal-characteristic tame adjoint setting of the Conventions; the general flag theorem includes
-the specified transfer. If w is cordial, [b]∈B(G)_w, and [b]≤[b′]≤[b_w], then [b′]∈B(G)_w. Every nonempty
-X_w(b) is equidimensional of dimension d_w(b) in the equal-characteristic setting with the purity inputs. In
-the cell, the closure of each occurring Newton stratum is the union of the occurring strata below it. The
-interval starts at a known occurring [b], not at an arbitrary lower bound; the general local-field transfer is
-the general flag-geometry transfer. (mv20, Theorem 3.16 and Corollary 3.17, arXiv v3, PDF pp. 8–9; he21,
-Theorem 4.1, p. 7). Source extraction: mv20 line 418.
+Use the simple quasi-split flag datum and apartment orientation of the Conventions. For every supported local field, if w is cordial, [b]∈B(G)_w and [b]≤[b′]≤[b_w], then [b′]∈B(G)_w; every nonempty X_w(b) has dimension d_w(b). The interval starts at a known occurring [b]. In equal characteristic, also prove that every such ADLV is equidimensional and that, inside IẇI, the closure of N_[b],w is the union of the occurring N_[c],w with [c]≤[b]. The closure and equidimensionality conclusions retain their equal-characteristic hypotheses (mv20, Theorem 3.16(3) and Corollary 3.17, arXiv v3, PDF pp. 8–9; Remark 1.3, PDF p. 3; he21, Theorem 4.1, p. 7).
 
-A proof route is as follows. Use the Newton-poset length formula and strong topological purity named in the
-Newton-cell purity supplier extension. Propagate codimension equality from the generic stratum down an
-occurring interval. Translate normalized cell dimensions to ADLV dimensions; keep equidimensionality within
-the established source setting.
+A proof route in equal characteristic uses gap:newton-poset-length, gap:newton-cell-strong-purity and gap:newton-cell-adlv-dimension. Propagate codimension equality from the generic stratum down each occurring interval. Transfer saturation and the numerical dimension equality to the same based affine datum over other local fields using §1.3 and its characteristic-independent class polynomials (he15, Theorem 2.23, PDF p. 34). This route makes no transfer claim for Newton-stratum closures or equidimensionality.
 
-A basic seed must be supplied before applying saturation. Prove the general mixed-characteristic flag transfer
-on the specified bounded models.
+A basic seed must be supplied before applying saturation. Generic greatestness alone supplies no lower endpoint.
 
 **Checks.**
 
-- For split GL₂, w=s t^(1,0) has generic ordinary slopes (1,0) and basic slopes (1/2,1/2) below them; its dimensions are 1 and 1 from d=(2+1−def)/2−〈ν,ρ〉.
-- For a split torus, fixed κ gives one Newton class; the interval and its closure reduce to equality and the nonempty dimension is 0.
+- For split GL₂, w=s t^(1,0) has generic ordinary slopes (1,0) and basic slopes (1/2,1/2) below them. The ordinary dimension is (2+1−0)/2−1/2=1 and the basic dimension is (2+1−1)/2−0=1, in either characteristic. The chain length is (1+1−0)/2=1; in equal characteristic the basic Newton stratum has codimension 2−0−1=1 and its closure is itself, whereas the ordinary stratum’s closure contains both strata.
+- For a split torus, fixed κ gives one Newton class; the interval is a singleton and the nonempty dimension is 0. In equal characteristic its stratum closure is that same stratum.
 
-*Needs:* §4.4; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G; §3.9; BunGAndNewtonStrata Layer 1;
-gap:newton-cell-purity.
+*Needs:* §4.4; §4.2; §1.3; §3.9; BunGAndNewtonStrata §1.21, partial-order-on-B-of-G; gap:newton-poset-length; gap:newton-cell-strong-purity; gap:newton-cell-adlv-dimension for the equal-characteristic route.
 
 ### 4.7 Generic class of x t^λ and the dominant family
 
@@ -1164,7 +1148,7 @@ t^λ I) ⊂ overline(K t^λ K) in the source’s closure sense, and use spherica
 the greatest class. Then prove x t^λ cordial: the supplied length formula gives ℓ(x t^λ) − ℓη_σ(x t^λ) = ℓt^λ
 = 〈λ^♦,2ρ〉, while [t^λ] has defect zero. For w = w_S t^λ y in the dominant chamber, prove the
 length-preserving σ-rotation to σ⁻¹(y)w_S t^λ with equal η length; derive its generic class and cordiality.
-This rotation is asserted only for this chamber family. (he21, Theorem 4.2, p. 7, and §4.4, p. 8). Source extraction: he21 line 273.
+This rotation is asserted only for this chamber family. (he21, Theorem 4.2, p. 7, and §4.4, p. 8).
 
 A proof route is as follows. Use Bruhat closures, spherical nonemptiness, generic-cell dimension
 and the supplied translation lengths; the finite η-factor is σ⁻¹(y)x throughout.
@@ -1203,11 +1187,11 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 realized in its adjoint/full coweight lattice P∨ with its based σ-action. Conclusions about the original
 cocharacter lattice require §3.2. Write w=x t^λ y in the imported normal form. Let J={s∈S:s y<y},
 ρ_J∨=Σ_(s∈J)ω_s∨, and η_J∨ the dominant representative of −σ⁻¹(ρ_J∨). In the full coweight lattice define
-λ_w^♭♭=(λ−ρ_J∨)−_domη_J∨=λ−_dom(ρ_J∨+η_J∨). Prove it is dominant and ≤_ℤλ. This is generally an auxiliary
-adjoint-lattice cocharacter, not an element of the original Y. (he21, §5.2, p. 9). Source extraction: he21 line 347.
+λ_w^♭♭=(λ−ρ_J∨)−_domη_J∨=λ−_dom(ρ_J∨+η_J∨). Prove it is dominant, λ_w^♭♭≥_ℤλ−ρ_J∨−η_J∨, and its image in the σ-coinvariants of P∨/Q∨ equals that of λ. If ρ_J∨+η_J∨∈Q∨, also prove λ_w^♭♭≤_ℤλ; this includes trivial diagram action. This is generally an auxiliary
+adjoint-lattice cocharacter, not an element of the original Y. (he21, §5.2, p. 9, and §6.4, p. 14).
 
 A proof route is as follows. Use the generic fundamental coweights, dominant representative and normalized
-subtraction contract. Track the original cocharacter sublattice separately.
+subtraction contract. Track the original cocharacter sublattice separately. Modulo Q∨, λ_w^♭♭≡λ+(σ⁻¹−1)ρ_J∨. For the conditional upper bound, ρ_J∨+η_J∨ is dominant and, when in Q∨, is a nonnegative integral sum of simple coroots, making λ feasible for least dominant subtraction. With trivial diagram action this sum is ρ_J∨−w₀ρ_J∨∈Q∨.
 
 Do not replace η_J∨ by −ρ_J∨ or drop σ⁻¹. Do not assert an integral lift to G when only a P∨ construction has
 been given.
@@ -1218,7 +1202,9 @@ The construction has the following API.
 - The sum of fundamental coweights in P∨.
 - The dominant representative of −σ⁻¹ρ_J∨.
 - Both normalized subtraction expressions define the same dominant auxiliary coweight in P∨.
-- Dominant and bounded by λ in the stated integral coroot coset.
+- Dominant, with λ_w^♭♭≥_ℤλ−ρ_J∨−η_J∨.
+- It has the same image as λ in (P∨/Q∨)_σ.
+- If ρ_J∨+η_J∨∈Q∨ then λ_w^♭♭≤_ℤλ; no such upper bound is asserted for arbitrary twisted σ.
 - Records P∨ membership and any separately proved lift to Y.
 
 **Checks.**
@@ -1230,8 +1216,10 @@ The construction has the following API.
 - For y=s₁s₂ in A₂, the left descent set is {s₁}, while the right descent set is {s₂}. The input ρ_J∨ must use ω₁∨.
 - In adjoint A₁, λ=ω∨ and y=s give λ−ρ_J∨=0. Least dominant subtraction of ω∨ from 0 in the required coroot coset is ω∨, so λ^♭♭=λ. Clipping the ordinary difference to zero loses the odd coroot coset.
 - For A₂ with σ interchanging nodes and J={s₁}, the input −σ⁻¹ω₁∨ is −ω₂∨ and its dominant representative is ω₁∨. Omitting σ⁻¹ instead gives dominant representative ω₂∨.
+- In quasi-split adjoint unitary A₂, λ=ρ∨=ω₁∨+ω₂∨ and y=s₁ give λ_w^♭♭=ω₁∨. Thus λ−λ_w^♭♭=ω₂∨∉Q∨, excluding an unconditional integral upper bound. The lower-bound difference is ω₁∨−(ρ∨−2ω₁∨)=α₁∨. On P∨/Q∨≅ℤ/3, σ acts by −1, so the σ-coinvariants vanish and the two images agree. For x=s₁, η_σ(w)=s₂s₁ has full σ-support and the alcove’s α₁,α₂,θ ranges are (0,1),(−3,−2),(−2,−1), so this is also a shrunken example.
+- With the same unitary datum, λ=ω₁∨ and y=s₁ instead give λ_w^♭♭=ω₂∨. The difference λ−λ_w^♭♭=(α₁∨−α₂∨)/3 is not rationally positive; the repaired lower-bound difference is ω₁∨+ω₂∨=α₁∨+α₂∨.
 
-*Needs:* RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1 and its two supplier extensions;
+*Needs:* RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction;
 ReductiveGroupsPartII RG2.4, dominant-normal-form.
 
 ### 5.2 Parabolic factorization data and invariant ledger
@@ -1243,7 +1231,7 @@ cocharacter lattice require §3.2. For shrunken w=x t^λy, set J as above, J′=
 representative and choose y′ minimal modulo Stab_S γ with β=y′γ. Define w₁=x z⁻¹t^(λ−ρ_J∨)y′, w₂=(y′)⁻¹z
 t^(ρ_J∨)y. Then w=w₁w₂, ℓw=ℓw₁+ℓw₂, γ≥_ℤλ_w^♭♭, and a=σ⁻¹((y′)⁻¹z)*(x′y′) has supp_σ(a)⊇supp_σ(η_σ(w)). Retain
 κ in the auxiliary adjoint coinvariants; transferring it to G requires the basic-seed and original-lattice
-comparisons of §§7.4 and 3.2. (he21, §5.4, pp. 10–12). Source extraction: he21 line 375.
+comparisons of §§7.4 and 3.2. (he21, §5.4, pp. 10–12).
 
 A proof route is as follows. Use the Demazure product and parabolic normal forms of the root-combinatorics
 supplier contract. Check the displayed product by the semidirect multiplication law. Use the shrunken root
@@ -1265,10 +1253,12 @@ The construction has the following API.
 - For y=1 the correction ρ_J∨ is zero, β=λ and γ=λ.
 - In split adjoint A₁ take x=y=s and λ=2ω∨. Then J={s}, J′=∅, x′=z=y′=1, β=γ=2ω∨, w₁=s t^ω∨ and w₂=t^ω∨s. Their product is s t^(2ω∨)s=t^(−2ω∨), and the lengths are 2+0=2.
 - For a simple reflection s, s*s=s, whereas s·s=1; support must be computed from the former.
+- In the unitary A₂ example of §5.1 with x=y=s₁ and λ=ρ∨, J′={s₁}, x′=s₂, z=s₁ and y′=1 give β=γ=ω₁∨=λ_w^♭♭. Here w₁=t^ω₂∨ and w₂=t^(−ω₁∨+ω₂∨) have lengths 2 and 2; their product is t^α₂∨ of length 4. The terminal factor is a=s₂*s₂=s₂, with full σ-support. Its original κ comparison is in σ-coinvariants, as required.
 - Equality after mapping to P∨ coinvariants cannot be used as equality of original integral κ when the map has a kernel.
 
 *Needs:* §5.1; §0.3; ReductiveGroupsPartII RG2.4, length-and-bruhat-order; RootSystems Layers 3–4 and 6;
-RootSystemsPartII RS2.1 and its two supplier extensions.
+RootSystemsPartII RS2.1; gap:dominant-subtraction; gap:demazure-product; gap:parabolic-root-length;
+`CoxeterSystem.parabolic`; `CoxeterSystem.IsMinimalCosetRep`; `CoxeterSystem.existsUnique_isMinimalCosetRep_mul`; `CoxeterSystem.length_mul_of_isMinimalCosetRep`.
 
 ### Examples
 
@@ -1279,8 +1269,7 @@ cocharacter lattice ℤα∨.
 ### Dependencies
 
 Layers 0; ReductiveGroupsPartII RG2.4, dominant-normal-form; ReductiveGroupsPartII RG2.4,
-length-and-bruhat-order; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1 and its two supplier
-extensions. The individual Needs paragraphs specify the additional comparison constructions used by each
+length-and-bruhat-order; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction; gap:demazure-product; gap:parabolic-root-length; the pinned Coxeter parabolic API. The individual Needs paragraphs specify the additional comparison constructions used by each
 route.
 
 ## Layer 6: the two geometric correspondences
@@ -1297,11 +1286,11 @@ inv(h,bσ(g))=v and inv(g,bσ(g))=z. The intermediate flag remains part of the m
 ordinary and Demazure fibre bounds from GeometricSatakeAndFusion GS0, flag-convolution-fibres. The rotation
 map is F_b(gI)=bσ(g)I, with r_b(F_b(g))=σ(r_b(g)); compare these rotations by universal homeomorphisms on the
 stated geometric models; no new generic flag-incidence definition or fibre theorem is owned here. (he21,
-Proposition 5.6 and §5.4, pp. 10–12; gh10, Proposition 2.5.2, PDF pp. 6–8). Source extraction: he21 line 368.
+Proposition 5.6 and §5.4, pp. 10–12; gh10, Proposition 2.5.2, PDF pp. 6–8).
 
 A proof route is as follows. Pull back the supplied endpoint projection along the bσ graph on compatible
 bounded pieces. Check the relative-Frobenius identity on points and identify the pullbacks used by the five
-chain spaces. Use the supplier’s bounds after base change; the general flag-geometry transfer retains any
+chain spaces. Use the supplier’s bounds after base change; the bounded ADLV comparisons of §0.5 retains any
 comparison between the classical and perfect carriers.
 
 Every chain equation is checked against the point-level product r_b.
@@ -1335,7 +1324,7 @@ B=t^(ρ_J∨)y. Rotate the chain w₁,w₂ into X₁ with steps w₂,σ(w₁). R
 position from g₃ to bσ(g₁) to σ(x′y′t^γ), obtaining X₂. Forget the B-intermediate flag and split the latter
 endpoint into σ(x′y′),σ(t^γ), obtaining X₃. Restrict the position g₁→g₄ to σ(a), obtaining X₄, and forget g₃
 to obtain X₅, whose steps are σ(a),σ(t^γ). Supply every map and cartesian square; X₅ compares by the indicated
-Frobenius universal homeomorphism with X_(a t^γ)(b). (he21, §5.4, pp. 11–12). Source extraction: he21 line 401.
+Frobenius universal homeomorphism with X_(a t^γ)(b). (he21, §5.4, pp. 11–12).
 
 A proof route is as follows. Write the complete flag tuples and relative positions for X₁,…,X₅. Use the
 product identities for the first restriction and Demazure endpoint for the second. Verify each rotation and
@@ -1386,7 +1375,7 @@ the specified transfer. The reduced root datum is realized in its adjoint/full c
 based σ-action. Conclusions about the original cocharacter lattice require §3.2. The maps X₂→X₃ and X₄→X₅ are
 surjective, with geometric fibre dimensions at least N₁=(ℓB+ℓw₁−ℓ(x′y′t^γ))/2 and N₂=ℓA+ℓ(x′y′)−ℓa=ℓη_σ(w)−ℓa,
 respectively. On compatible bounded models deduce dim X_w(b)≥dim X_(a t^γ)(b)+N₁+N₂. The factorization length
-identities give N₁+N₂=d_w(b)−d_(a t^γ)(b). (he21, §5.4, pp. 11–12). Source extraction: he21 line 427.
+identities give N₁+N₂=d_w(b)−d_(a t^γ)(b). (he21, §5.4, pp. 11–12).
 
 A proof route is as follows. Restrict to a bounded model containing a generic point of a maximal-dimensional
 target component. Use fibre lower bounds on a compatible finite-type source model and the locally closed
@@ -1413,7 +1402,7 @@ based σ-action. Conclusions about the original cocharacter lattice require §3.
 the auxiliary full-coweight datum, construct dominant γ ≥_ℤ λ_w^♭♭ and a ∈ W₀ with supp_σ(a) ⊇ supp_σ(η_σ(w)),
 κ(a t^γ) = κ(w) in that datum, and w ⇒_σ a t^γ. Section 4.7 supplies the target family’s cordiality. No
 shrunkenness of a t^γ is imposed. Transfer this comparison to the original group through §3.2, retaining its
-original integral κ. (he21, Theorem 5.5, p. 9, proved in §5.4, pp. 10–12). Source extraction: he21 line 352.
+original integral κ. (he21, Theorem 5.5, p. 9, proved in §5.4, pp. 10–12).
 
 A proof route is as follows. Assemble γ, a, support and κ from factor data. Use the chain dimension inequality
 for every b with the target nonempty. Use §4.7 only after matching geometric and Frobenius conventions.
@@ -1449,7 +1438,7 @@ by each route.
 Use the simple quasi-split flag datum and apartment orientation of the Conventions. For σ-stable J⊂S, standard
 P_J=M_JN_J and x∈W₀, call w a (J,x,σ)-alcove element when x⁻¹wσ(x)∈W̃_J and (xN_Jx⁻¹)∩(wIw⁻¹)⊂(xN_Jx⁻¹)∩I. All
 superscripts on subgroups in the source mean conjugation. This definition uses the conjugator x, not
-automatically σ⁻¹(y) from the normal form. (ghn15, Definition 3.3, PDF p. 10; he21, §6.1, p. 12). Source extraction: ghn15 line 383.
+automatically σ⁻¹(y) from the normal form. (ghn15, Definition 3.3, PDF p. 10; he21, §6.1, p. 12).
 
 A proof route is as follows. Use the generic root-group and parabolic data to express both conditions. Relate
 the subgroup containment to root inequalities with the fixed apartment orientation.
@@ -1481,7 +1470,7 @@ the specified transfer. If w is a (J,x,σ)-alcove element and κ_(M_J)(x⁻¹wσ
 {κ_(M_J)(b_M):[b_M]∈B(M_J), [b_M] maps to [b]∈B(G)}, then X_w(b)=∅. The obstruction quantifies over every Levi
 class in the fibre. Only for basic [b], under the corrected theorem’s hypotheses, may that fibre be replaced
 by at most one Levi class. (he21, Theorem 6.3, p. 13; ghn15, Theorem 3.3.1, PDF p. 11; ghnerr, Proposition
-0.0.2, p. 2). Source extraction: he21 line 496.
+0.0.2, p. 2).
 
 A proof route is as follows. Apply the P-alcove Hodge–Newton reduction with the correct component statement.
 If a point exists, extract a Levi σ-class of the stated κ; take the contrapositive.
@@ -1503,7 +1492,7 @@ proof uses the equal-characteristic tame adjoint setting of the Conventions; the
 the specified transfer. For shrunken w=x t^λy with λ^♦−ν_b a positive rational combination of every simple
 coroot, supp_σ(η_σ(w))≠S implies X_w(b)=∅. Put J=supp_σ(η_σ(w)); then w is a (J,x,σ)-alcove element and
 x⁻¹wσ(x)=t^λσ(η_σ(w)). Show its Levi κ cannot equal that of any Levi class mapping to [b]. (he21, §6.2, p. 13;
-ghn15, Lemma 3.6.3 and §3.6, PDF pp. 14–15). Source extraction: he21 line 499.
+ghn15, Lemma 3.6.3 and §3.6, PDF pp. 14–15).
 
 A proof route is as follows. Verify the P-alcove condition using x and the specified root inequalities.
 Project the strict Newton difference to the center of the proper Levi; show every candidate Levi class has
@@ -1515,7 +1504,7 @@ Strict positivity is required in every simple direction. Full σ-support is an o
 
 - In split adjoint A₁, w=t^(nα∨), n≥1, has η=1 and proper support; for b=1 the gap is strictly positive and the locus is empty. With b=t^(nα∨) the gap is 0 and the same exact translation locus has dimension 0, so strictness is necessary.
 
-*Needs:* §7.2; §0.3; BunGAndNewtonStrata Layer 1, galois-average.
+*Needs:* §7.2; §0.3; BunGAndNewtonStrata §1.7, galois-average; BunGAndNewtonStrata §1.45, general-levi-newton-comparison.
 
 ### 7.4 Basic nonemptiness seed without shrunkenness
 
@@ -1528,7 +1517,7 @@ t^γ. Establish X_(a t^γ)(τ)≠∅ without assuming a t^γ shrunken. For γ=0 
 theory. For γ≠0 use the positive cocenter comparison to a suitable twisted Coxeter translation and a nonzero
 class-polynomial coefficient, with its corrected twisted induction. Prove the characteristic and datum
 transfers through §0.5, and preserve the original lattice through §3.2. (he21, §6.3, pp. 13–14; he14,
-Propositions 11.6–11.7, pp. 399–401, and Corollary 6.2, p. 388; he15, Theorem 2.27, PDF p. 37). Source extraction: he14 line 1244.
+Propositions 11.6–11.7, pp. 399–401, and Corollary 6.2, p. 388; he15, Theorem 2.27, PDF p. 37).
 
 A proof route is as follows. Treat γ=0 independently by the finite quotient. For γ≠0 specialize Proposition
 11.6 to J=S and its finite factor y=1, preserving full twisted support. Repair the printed variable and
@@ -1541,11 +1530,12 @@ A citation to the shrunken basic theorem is insufficient. The proof constructs t
 
 **Checks.**
 
-- For γ=0 and a=s in split A₁, the finite-quotient locus is P¹ minus P¹(𝔽_q), which is nonempty of dimension 1, including q=2. The base reflection is not shrunken.
+- For γ=0 and a=s in split A₁, the finite-quotient locus is P¹ minus P¹(𝔽_q), which is nonempty of dimension 1, including q=2. Its alcove has α-values (0,1), so it is shrunken.
+- In split adjoint A₂, γ=0 and a=s₁s₂ have full support but are not shrunken: (s₁s₂)⁻¹α₂=α₁, so the α₂-values stay in (−1,0). The locus over the standard σ-stable vertex contains the classical Coxeter Deligne–Lusztig variety of PGL₃, of dimension 2=(2+2−0)/2=d_(s₁s₂)(1). This supplies a nonshrunken basic seed.
 - For a=1 and a positive straight translation, the basic class need not occur: full σ-support cannot be discarded.
 
 *Needs:* §1.3; ReductiveGroupsPartII RG2.3, lang-theorem; BunGAndNewtonStrata Layer 1,
-classification-by-two-invariants; SmoothRepresentationsOfLocalGroups SR.1.
+classification-by-two-invariants; SmoothRepresentationsOfLocalGroups SR.1.5; gap:twisted-affine-cocenter; gap:finite-coxeter-basic-class.
 
 ### 7.5 Scope of the proper-Levi continuation
 
@@ -1559,7 +1549,7 @@ root group, prove it injective. Two source points in any one fibre have I_M-σ-c
 For each [b_M] in B(M_J) mapping to [b] with κ_M(b_M) = κ_M(x⁻¹wσ(x)), compare the corresponding Levi ADLV to
 its image after framing transport and J_b(F)-translation. The union of these images covers X_w(b) on geometric
 points. Keep every such Levi class, its M_J-Newton point and its M_J-defect as the invariants of that source. The image-cover statement asserts surjectivity on geometric points; dimensions are compared only after the bounded morphism and its fibre dimensions have been identified as in §0.5. (he21, §6.5, p. 14; ghn15, Theorem 3.3.1,
-PDF p. 11). Source extraction: ghn15 line 409.
+PDF p. 11).
 
 A proof route is as follows. List the Levi classes in the B(M) fibre and compare their Kottwitz invariants.
 State the Hodge–Newton comparison with its actual hypotheses and account for fibre dimensions. Keep the image
@@ -1591,7 +1581,7 @@ the specified transfer. The reduced root datum is realized in its adjoint/full c
 based σ-action. Conclusions about the original cocharacter lattice require §3.2. For the reduced target a t^γ,
 if κ(b)=κ(a t^γ), ν_b≤γ^♦ and the basic seed exists, then X_(a t^γ)(b) is nonempty and has virtual dimension.
 Indeed the basic class [τ] is ≤[b]≤[t^γ]=[b_(a t^γ)]; use the family cordiality of §4.7 and the saturation
-theorem of §4.6. (he21, §6.3, pp. 13–14). Source extraction: he21 line 508.
+theorem of §4.6. (he21, §6.3, pp. 13–14).
 
 A proof route is as follows. Compare κ in the same integral lattice and Newton order. Use the basic seed for
 the lower endpoint and the identified generic translation class for the upper endpoint. Apply saturation and
@@ -1617,7 +1607,7 @@ P¹(𝔽_q), nonempty even when q=2.
 Layers 0, 1, 4; BunGAndNewtonStrata Layer 1, classification-by-two-invariants; BunGAndNewtonStrata Layer 1,
 galois-average; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; BunGAndNewtonStrata Layer 1,
 partial-order-on-B-of-G; ReductiveGroupsPartII RG2.3, lang-theorem; ReductiveGroupsPartII RG2.3,
-parahoric-subgroup; ReductiveGroupsPartII RG2.4, iwahori-weyl-group; SmoothRepresentationsOfLocalGroups SR.1.
+parahoric-subgroup; ReductiveGroupsPartII RG2.4, iwahori-weyl-group; SmoothRepresentationsOfLocalGroups SR.1.5; gap:twisted-affine-cocenter.
 The individual Needs paragraphs specify the additional comparison constructions used by each route.
 
 ## Layer 8: the shrunken nonemptiness and dimension theorem
@@ -1628,7 +1618,6 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 ν_b. Prove X_w(b) ≠ ∅ if and only if κ_G(w) = κ_G(b) and supp_σ(η_σ(w)) = S. This is the theorem for the
 original local-field datum, including its general flag-geometry and original-lattice comparisons; the
 constructions and supplier contracts in the preceding layers are its proof inputs. (he21, Theorem 6.1, p. 13).
-Source extraction: he21 line 480.
 
 A proof route is as follows. Necessity is the integral κ obstruction and the proper-support Levi obstruction.
 For sufficiency reduce to a t^γ with γ≥λ^♭♭ and full support, compare γ^♦≥ν_b, establish the basic seed, and
@@ -1648,7 +1637,7 @@ compared in §3.2.
 Use the simple quasi-split flag datum and apartment orientation of the Conventions. Under the hypotheses of
 §8.1, if the equivalent nonemptiness conditions hold, dim X_w(b)=d_w(b)=(ℓw+ℓη_σ(w)−def_G(b))/2−〈ν_b,ρ〉. Use
 the reduced target’s virtual dimension and universal dimension advantage for the lower bound, then the
-independent virtual upper bound for equality. (he21, Theorem 6.1 and §6.3, pp. 13–14). Source extraction: he21 line 520.
+independent virtual upper bound for equality. (he21, Theorem 6.1 and §6.3, pp. 13–14).
 
 A proof route is as follows. For the nonempty reduced target, apply w⇒a t^γ to dim−d. Its actual dimension
 equals its virtual dimension, giving dim X_w≥d_w. Combine with the virtual upper bound; no equidimensionality
@@ -1661,29 +1650,22 @@ gives dimension n+1. The base alcove has α-values (−1,0); its image has value
 **Checks.**
 
 - For PGL₂, b=1 and w=s t^(nα∨), n≥1, λ^♭♭=nα∨, ℓw=2n+1, ℓη=1 and defect 0 give n+1. Values n=1 and n=2 give dimensions 2 and 3.
+- For the unitary A₂ example of §§5.1–5.2 and b=1, λ^♦=ρ∨, (λ_w^♭♭)^♦=ρ∨/2, κ=0 and supp_σ(η)=S. The strict λ-gap and double-flat bound hold, so ℓw=4, ℓη=2 and defect 0 give dimension 3, despite λ_w^♭♭ not being integrally below λ.
 
 *Needs:* §8.1; §7.6; §6.4; §3.9.
 
 ### 8.3 The basic specialization
 
-Use the simple quasi-split flag datum and apartment orientation of the Conventions. For basic b, shrunken w
-and the same strict λ-gap, the double-flat Newton inequality required in the main theorem follows from the
-matching κ and the dominant auxiliary construction in the supported adjoint setting. Hence nonemptiness is
-equivalent to integral κ equality and full σ-support, with dimension (ℓw+ℓη−def_G(b))/2−〈ν_b,ρ〉. This
-corollary does not remove shrunkenness or the characteristic and descent constructions of §§0.5 and 3.2.
-(he21, §1.4, pp. 3–4; §6.3, pp. 13–14; ghn15, Theorem B, PDF p. 3, with the official erratum). Source extraction: he21 line 526.
+Use the simple quasi-split flag datum and apartment orientation of the Conventions. For basic b and shrunken w, prove X_w(b)≠∅ exactly when κ_G(w)=κ_G(b) and supp_σ(η_σ(w))=S. On this nonempty locus prove dim X_w(b)=(ℓw+ℓη_σ(w)−def_G(b))/2−〈ν_b,ρ〉. No strict λ-gap is required. Retain the general-datum constructions of §§0.5 and 3.2 (ghn15, Theorem B, PDF p. 3, with the official erratum; he15, Theorems 2.27 and 2.31, PDF pp. 37 and 39; he14, Theorem 12.1, p. 401).
 
-A proof route is as follows. Compare the basic central Newton vector to the dominant auxiliary bound after
-matching κ. Apply the main criterion and formula, with the same descent restrictions.
-
-A minuscule λ may have λ^♭♭=λ; the strict-gap hypothesis of the main theorem cannot be silently replaced by a
-non-strict one.
+A proof route works in the auxiliary adjoint datum and transports the result through §3.2. For basic b the semisimple Newton point is zero. If λ≠0, a nonzero dominant coweight in the irreducible root system has positive coefficients on every simple coroot; §5.1 gives the double-flat Newton inequality, so §§8.1–8.2 apply. If λ=0, shrunkenness forces w=w₀: any positive root left positive by w⁻¹ would retain a critical strip (ghn15, proof of Proposition 3.6.5, PDF p. 15). Matching κ then selects the identity basic class. Finite-quotient Lang theory gives nonemptiness and dimension ℓw₀=(ℓw₀+ℓη)/2; §1.3 gives the numerical comparison in either characteristic. The cited he14 Theorem 12.1 supplies the direct cocenter route as well.
 
 **Checks.**
 
-- For the basic class b=1 in split adjoint A₁, ν=0, λ=nα∨ and η=s give (2n+1+1)/2=n+1. A minuscule λ can satisfy λ^♭♭=λ, so equality of the two bounds does not imply a strict λ-gap.
+- For b=1 in split adjoint A₁, w=s t^(nα∨) and n≥1 give ν=0, η=s and dimension (2n+1+1)/2=n+1.
+- For b=1 in split adjoint A₂ and w=w₀, λ=0 and the strict gap fails. Nevertheless η=w₀ has full support, κ=0 and the finite Deligne–Lusztig locus is nonempty of dimension (3+3−0)/2=3. The image alcove lies in the positive chamber with every positive-root value in (0,1), hence is shrunken.
 
-*Needs:* §8.2; §5.1; BunGAndNewtonStrata Layer 1, classification-by-two-invariants.
+*Needs:* §8.2; §5.1; §1.3; §§0.5 and 3.2; RootSystems Layers 4 and 6; ReductiveGroupsPartII RG2.3, lang-theorem; BunGAndNewtonStrata §1.11, classification-by-two-invariants.
 
 ### 8.4 A usable large-translation range
 
@@ -1691,10 +1673,8 @@ Use the simple quasi-split flag datum and apartment orientation of the Conventio
 assume λ_w^♦≥ν_b+2ρ∨. Then the strict λ-gap and double-flat inequality of the main theorem hold. Therefore
 X_w(b) is nonempty iff κ_G(w)=κ_G(b) and supp_σ(η_σ(w))=S, and its nonempty dimension is d_w(b). The bound is
 a sufficient explicit range, while shrunkenness remains a separate hypothesis. (he21, Corollary 6.4, p. 14).
-Source extraction: he21 line 535.
 
-A proof route is as follows. Bound the two fundamental-coweight corrections by 2ρ∨ and use monotonicity of
-normalized subtraction. Check strict positivity in every simple coroot after averaging. Apply the main theorem
+A proof route is as follows. Use §5.1 to obtain λ_w^♭♭≥_ℤλ−ρ_J∨−η_J∨. The difference 2ρ∨−ρ_J∨−η_J∨ is dominant and hence rationally coroot-positive. Averaging gives (λ_w^♭♭)^♦≥λ^♦−2ρ∨≥ν_b. The positive simple-coroot coefficients of 2ρ∨ also give the strict λ-gap. Apply the main theorem
 with the geometric and original-lattice comparisons of §§0.5 and 3.2.
 
 The coweight is 2ρ∨, not 2ρ. An arbitrary large λ statement cannot drop the shrunken condition.
@@ -1704,7 +1684,7 @@ The coweight is 2ρ∨, not 2ρ. An arbitrary large λ statement cannot drop the
 - In adjoint A₂, ν=0 and λ=6ω₁∨=4α₁∨+2α₂∨ satisfy λ−2ρ∨=2α₁∨, but 〈α₂,λ〉=0: translation preserves the α₂-critical strip and fails shrunkenness. The numerical bound alone does not apply the theorem.
 - For adjoint A₁, λ=α∨=2ρ∨ and w=s t^λ satisfy the range; the dimension is 2.
 
-*Needs:* §8.2; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1 and its two supplier extensions; §5.1.
+*Needs:* §8.2; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction; §5.1.
 
 ### Examples
 
@@ -1716,7 +1696,7 @@ locus.
 ### Dependencies
 
 Layers 0, 3, 5, 6, 7; BunGAndNewtonStrata Layer 1, classification-by-two-invariants; ReductiveGroupsPartII
-RG2.3; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1 and its two supplier extensions. The individual
+RG2.3; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction. The individual
 Needs paragraphs specify the additional comparison constructions used by each route.
 
 ## Downstream consumers
@@ -1733,7 +1713,7 @@ local-shtuka cohomology follows just from equality of the dimensions in Layer 8.
 
 All statements are formulated here in their own mathematical terms. Page numbers for published sources are
 printed pages; PDF pages are explicitly marked. The source manifest fixes the exact legally read versions and
-extraction locators.
+theorem, section and page locators.
 
 - **he21.** Xuhua He, *Cordial elements and dimensions of affine Deligne–Lusztig varieties*. Forum of Mathematics, Pi 9 (2021), e9; published 15-page article. [Legal text](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5A27DBF48CAEF6DA56A313061848574C/S205050862100010Xa.pdf/cordial-elements-and-dimensions-of-affine-deligne-lusztig-varieties.pdf).
 
@@ -1762,3 +1742,5 @@ extraction locators.
 - **vie14.** Eva Viehmann, *Truncations of level 1 of elements in the loop group of a reductive group*. Annals of Mathematics 179 (2014), 1009–1040; published version. [Legal text](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n3-p03-p.pdf).
 
 - **hn14.** Xuhua He and Sian Nie, *Minimal length elements of extended affine Weyl groups*. Author copy; Compositio Mathematica 150 (2014), 1903–1927. [Legal text](https://archive.ymsc.tsinghua.edu.cn/pacm_download/315/8989-affmin-2.pdf).
+
+- **ham17.** Paul Hamacher, *The almost product structure of Newton strata in the deformation space of a Barsotti–Tate group with crystalline Tate tensors*. Locators use arXiv:1601.03131v3, Definition 2.1(3), PDF p. 4, and Corollary 2.7, PDF p. 5; Math. Z. 287 (2017), 1255–1277. [Legal text](https://arxiv.org/pdf/1601.03131v3).

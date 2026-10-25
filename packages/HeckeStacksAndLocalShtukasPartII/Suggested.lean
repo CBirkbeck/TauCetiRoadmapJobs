@@ -26,7 +26,8 @@ None of the following headline theorems is statable at the pins:
 * The virtual dimension upper bound lacks affine Deligne–Lusztig geometric loci,
   their dimension, and the normal-form and Newton-invariant interface.
 * The greatest generic Newton class and its geometric dimension, cordial interval
-  saturation, Newton-stratum closures and equidimensionality lack Newton-stratified
+  saturation and numerical dimensions in either characteristic, and Newton-stratum
+  closures and equidimensionality in equal characteristic, lack Newton-stratified
   Iwahori cells and their comparison with affine Deligne–Lusztig geometry.
 * Translation-family generic class and cordiality require those same geometric
   carriers; a scalar equality about abstract length functions is not this result.
@@ -35,7 +36,7 @@ None of the following headline theorems is statable at the pins:
 * The P-alcove Levi obstruction, the non-shrunken basic seed, and the comparison
   over all matching Levi classes lack the Levi and group affine Deligne–Lusztig
   loci and the integral map of Kottwitz sets.
-* The shrunken-chamber nonemptiness and dimension theorem, its basic specialization,
+* The shrunken-chamber nonemptiness and dimension theorem, its basic specialization without a strict Newton gap,
   and its large-translation specialization lack those loci, the affine apartment
   and Iwahori–Weyl interface, and compatible original-group Newton invariants.
 

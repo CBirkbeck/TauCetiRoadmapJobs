@@ -3651,22 +3651,76 @@
   ],
   "gaps": [
     {
-      "slug": "twisted-redmin-demazure",
-      "needs": "The associative extended-affine Demazure product with support union, parabolic minimum comparisons, twisted Red-Min and strong conjugacy, and straight–finite-parabolic decomposition, including the finite-Coxeter basic-class input.",
+      "slug": "unipotent-linearization",
+      "needs": "For a reductive O_F-model and an O_F-parabolic P=MN, a finite decreasing M-stable normal filtration N=N[1]⊃⋯⊃N[r+1]=1 by smooth subgroup schemes, compatible with unramified base change and σ, whose quotients N[i]/N[i+1] are M-equivariantly the additive groups of Lie N[i]/Lie N[i+1], in every residue characteristic.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3 (required parabolic unipotent filtration)"
+    },
+    {
+      "slug": "demazure-product",
+      "needs": "For an affine Coxeter system (W_a,S_aff) with length-zero automorphisms Ω and based σ preserving S_aff, the associative Bruhat-monotone product on W̃⋊〈σ〉 defined by the greatest product of Bruhat-lower factors, with unit and ℓ(u*v)=ℓu+ℓ(u⁻¹(u*v)).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (extension of integral-order and affine combinatorics)"
+      "section": "RS2.1 (required affine-combinatorics extension)"
+    },
+    {
+      "slug": "twisted-redmin",
+      "needs": "For an extended affine Weyl group and σ permuting the affine simple reflections, every element reaches a minimum of its σ-conjugacy class by length-nonincreasing simple σ-conjugations, and any two minima in that class are connected by strong σ-conjugacy (hn14, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; he14, Theorem 2.1, p. 374).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
+    },
+    {
+      "slug": "straight-finite-parabolic",
+      "needs": "For every such σ-class, reduction reaches a minimal ux with J⊂S_aff, W_J finite, u∈W_J, x σ-straight, x minimal on both sides modulo W_J and W_(σJ), and xσ(J)x⁻¹=J, preserving the class’s Newton and Kottwitz invariants (he14, Theorem 2.3, p. 376; hn14, Proposition 2.7, PDF p. 10).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
+    },
+    {
+      "slug": "finite-coxeter-basic-class",
+      "needs": "For an irreducible extended affine root datum, τ∈Ω, a σ-Coxeter element w∈W₀ and μ∈P∨ with κ(t^μ)=κ(τ), reduction of t^μw reaches a minimal cτ with J a maximal proper Ad(τ)σ-stable affine-simple subset, W_J finite and c∈W_J an Ad(τ)σ-twisted Coxeter element, where (J,c) may depend on (μ,w) (he14, Proposition 11.7, pp. 400–401).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
+    },
+    {
+      "slug": "parabolic-root-length",
+      "needs": "For the finite Weyl group of a reduced crystallographic root system, if wα is negative for every positive α with y⁻¹α negative, then ℓ(wy)=ℓw−ℓy (gh10, Lemma 2.6.1, PDF p. 10).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required root-sign length comparison)"
     },
     {
       "slug": "dominant-subtraction",
-      "needs": "Least dominant subtraction in the specified integral coroot coset of the full coweight lattice, with existence, monotonicity, associativity, fundamental-coweight comparisons and the original-lattice map.",
+      "needs": "For dominant λ,μ in the full coweight lattice P∨, the least dominant ν with ν+μ≥_ℤλ, denoted λ−_domμ, agreeing with λ−μ when that is dominant, satisfying iterated subtraction, and bounded above by dom(λ−uμ′) for u∈W₀ and dominant μ≥_ℤμ′, with the image of the original lattice Y tracked separately (he21, Proposition 5.1 and Corollaries 5.3–5.4, pp. 8–9).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (integral-order)"
+      "section": "RS2.1 (required dominant-subtraction extension)"
     },
     {
-      "slug": "twisted-affine-cocenter",
-      "needs": "The integral twisted affine-Hecke cocenter basis, positive class polynomials with their degree recursion, and the nonzero twisted-Coxeter coefficient with corrected twisted support.",
-      "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "SR.1.5 (presentations of the Iwahori–Hecke algebra)"
+      "slug": "superbasic-classification",
+      "needs": "Superbasic classes as those meeting no proper F-Levi, the criterion that J_b/Z(G) is F-anisotropic and the unramified F-simple adjoint classification as restrictions of PGL_h, with a GL_h lift preserving the specified integral component.",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.18 (basic sigma class; required superbasic extension)"
+    },
+    {
+      "slug": "newton-poset-length",
+      "needs": "For [b]≤[b′] in one integral κ-fibre of B(G), every maximal chain between them has length (〈2ρ,ν_b′−ν_b〉+def(b)−def(b′))/2 (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required Newton chain-length extension)"
+    },
+    {
+      "slug": "newton-cell-strong-purity",
+      "needs": "For quasi-split G over 𝔽_q((t)), the Newton stratification on Noetherian bounded Iwahori-cell models and their completions has topological strong purity: for each [c], each maximal [c′]<[c] in its κ-fibre, and each irreducible component Z of the ≤[c] locus, Z∩(≤[c′]) is empty or pure of codimension at most one in Z (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9; ham17, Definition 2.1(3), arXiv v3, PDF p. 4, for this notion).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required equal-characteristic cell purity)"
+    },
+    {
+      "slug": "newton-cell-greatest",
+      "needs": "For quasi-split G over 𝔽_q((t)) and an Iwahori double coset IẇI, its dense open Newton stratum has a greatest B(G)-class and this class remains greatest on the Bruhat closure ⋃_(v≤w)IṽI (mv20, Definition 3.1 and §3.1, arXiv v3, PDF p. 5; he21, proof of Theorem 4.2, p. 7; vie14, Proposition 5.5 and Corollary 5.6, pp. 1026–1028, for the reductive O_F-model case).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required equal-characteristic cell-closure comparison)"
+    },
+    {
+      "slug": "newton-cell-adlv-dimension",
+      "needs": "For every nonempty Newton stratum N_[b],w in an equal-characteristic Iwahori cell, dim X_w(b)=ℓw−〈2ρ,ν_b〉−codim(N_[b],w,IẇI), using minimal component codimension on bounded models, with X_w(b) equidimensional exactly when that Newton stratum is equidimensional, independently of cordiality (mv20, Corollary 3.12, arXiv v3, PDF p. 8; he15, Theorem 2.23, PDF p. 34, for the numerical comparison in either characteristic).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required Newton-cell/ADLV dimension comparison)"
     },
     {
       "slug": "levi-intersection-dimension",
@@ -3675,28 +3729,10 @@
       "section": "GS1, semi-infinite-affineness"
     },
     {
-      "slug": "unipotent-linearization",
-      "needs": "The M-equivariant F-scheme comparison of a parabolic unipotent radical with its Lie algebra at its exact characteristic hypotheses, together with a characteristic-independent replacement sufficient for the twisted Lang dimension calculation.",
-      "supplier": "ReductiveGroupsPartII",
-      "section": "RG2.3 (parahoric-subgroup and root-group structure)"
-    },
-    {
-      "slug": "general-flag-geometry",
-      "needs": "The σ-twisted ramified and mixed-characteristic flag moduli and incidence comparisons, with compatible bounded perfect models and the ordinary and Demazure fibre bounds for every local-field datum used here.",
-      "supplier": "GeometricSatakeAndFusion",
-      "section": "GS0, flag-incidence-correspondences and flag-convolution-fibres"
-    },
-    {
-      "slug": "superbasic-classification",
-      "needs": "Superbasic classes as those meeting no proper F-Levi, the criterion that J_b/Z(G) is F-anisotropic and the unramified F-simple adjoint classification as restrictions of PGL_h, with a GL_h lift preserving the specified integral component.",
-      "supplier": "BunGAndNewtonStrata",
-      "section": "§1.18 (basic sigma class)"
-    },
-    {
-      "slug": "newton-cell-purity",
-      "needs": "The Newton-poset length formula, strong topological purity on equal-characteristic Iwahori cells and their bounded completions, greatestness on cell closures, and the cell-to-ADLV dimension comparison without relying on cordial saturation.",
-      "supplier": "BunGAndNewtonStrata",
-      "section": "§1.21 (Newton partial order with Kottwitz fibre)"
+      "slug": "twisted-affine-cocenter",
+      "needs": "For the equal-parameter extended-affine datum with based σ, the cocenter over ℤ[v,v⁻¹] in the normalized basis T_w=v^(−ℓw)U_w, q=v² and T_s²=(v−v⁻¹)T_s+1, its minimal-σ-class basis, class polynomials in ℕ[z] with z=v−v⁻¹ and degree in z, their degree recursion, and the nonzero twisted-Coxeter coefficient with σ-saturated support.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.1.5 (required normalized twisted-cocenter extension)"
     }
   ],
   "restructure": [
