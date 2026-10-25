@@ -4,11 +4,11 @@
 
 ## Scope and ownership
 
-This roadmap owns the arithmetic lattices, the germ relation, uniform inverse-coordinate denominators, arithmetic auxiliary functions, all three integrated-rank arguments, circular discrepancy adapters, the circle Vandermonde equality and discrepancy gap, and the arithmetic holonomic ring with its two scalar spans. The holonomic theorem controls W, the ℚ(p)-span of the arithmetic generators; V is their ℚ(x)-span. It also owns the centred-disc specialization and the explicit obstruction to an unrestricted compact-set formula.
+This roadmap owns the arithmetic lattices, the germ relation, uniform inverse-coordinate denominators, arithmetic auxiliary functions, all three integrated-rank arguments, circular discrepancy adapters, the circle Vandermonde equality and discrepancy gap, and the arithmetic holonomic ring with its two scalar spans, including closure with full meromorphic local bases. The holonomic theorem controls W, the ℚ(p)-span of the arithmetic generators; V is their ℚ(x)-span. It also owns the centred-disc specialization and the explicit obstruction to an unrestricted compact-set formula.
 
 DiophantineApproximationAndTranscendence §§0.2–0.3,2.8,5.1–5.3 retain heights, general Siegel estimates, D-finiteness, differential equations and E-/G-functions. ConformalMappingPartII §§0.1–0.6,1.3–1.4,3.5–3.7 supplies scalar-equation germs, continuation, full meromorphic local bases, rational pole clearing, hyperbolic conformal radius and normalized quotient representation. ProbabilisticAndMetricNumberTheory §2.7 supplies interval star discrepancy, Koksma and Erdős–Turán; only the circular-coordinate comparisons live here. GeometryOfNumbersAndQuadraticArithmetic §0.1 supplies the general complex Hadamard bound; the retained Fekete variant adds the regular-polygon equality characterization. ClassicalArithmeticCompletion §§6.18–6.19,6.40 owns finite Fekete diameters, their limiting capacity normalization and elementary compact-set values; its energy and equilibrium extension is specified in the supplier contract below.
 
-Power-series rescaling, substitution, Laurent embeddings, rational-function extension degree, integer-matrix Siegel bounds, finite-dimensional domain field structure, one-variable Cauchy and Jensen estimates, finite empirical measures, and the polydisc Cauchy formula are already in the libraries listed below. They are inputs, not additional constructions. The lattice predicates specialize native series; the holonomic spans use the native Laurent-series field. The arithmetic mean-rank theorem is distinct from general Nevanlinna quotient representation and from general potential theory. Modular functions and their benchmark identities are used as examples from CDT25; modular curves, modularity and unbounded denominators for modular forms are outside this ownership.
+Power-series rescaling, substitution, Laurent embeddings, rational-function extension degree, integer-matrix Siegel bounds, finite-dimensional domain field structure, one-variable Cauchy and Jensen estimates, finite empirical measures, the C¹ metric-variation identity, and the polydisc Cauchy formula are already in the libraries listed below. They are inputs, not additional constructions. The lattice predicates specialize native series; the holonomic spans use the native Laurent-series field. The arithmetic mean-rank theorem is distinct from general Nevanlinna quotient representation and from general potential theory. Modular functions and their benchmark identities are used as examples from CDT25; modular curves, modularity and unbounded denominators for modular forms are outside this ownership.
 
 ## Conventions
 
@@ -42,6 +42,8 @@ Use `PowerSeries.coeff` and `PowerSeries.coeff_rescale` in `Mathlib/RingTheory/P
 
 `DifferentiableOn.torusIntegral_prod_sub_inv_smul` in `TauCeti/Analysis/Complex/CauchyIntegralPolydisc.lean`, line 116, supplies the polydisc Cauchy formula on finite coordinate spaces, with complex factor (2πi)^d. Use it on smaller closed polydiscs inside the holomorphic neighbourhood, and differentiate its kernel for Taylor coefficients. For G(z₁,z₂)=z₁z₂ the (1,1) coefficient is 1, not (2πi)²; normalized Haar coefficients divide out that factor. The one-variable estimate supplies the same normalization at d=1.
 
+`TauCeti.eVariationOn_eq_lintegral_enorm_derivWithin` in `TauCeti/Analysis/Calculus/MetricVariation.lean`, line 276, identifies metric variation on [a,b] with the nonnegative integral of the norm of the within derivative for a C¹ curve into a complete real normed space. Apply it to real angular pullbacks on [0,1]; the endpoints are null, and C¹ regularity makes the integral finite. The pullback cos(2πt) gives 4 on both sides, whereas a constant gives 0.
+
 ### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
 
 Consume §5.1, “D-finite series and minimal equations”: a nonzero polynomial-coefficient annihilator is equivalent to a finite derivative span, with sum and product closure and complex initial-value existence and uniqueness on positive-radius discs. The derivative convention is ordinary differentiation: x² has initial second derivative 2. The arithmetic coefficient condition and the full meromorphic local basis condition of §4.1 are additional restrictions on those generators. No E-/G-function denominator theorem is assumed in the elementary Eisenstein proof.
@@ -68,7 +70,7 @@ What ClassicalArithmeticCompletion must provide (gap:complex-logarithmic-equilib
 
 This contract extends §§6.18,6.40 in their own potential-theory direction. It is consumed in §§3.7–3.8 and §5. A radius-r circle has minimum energy −log r and capacity r, so at r=2 the values are −log 2 and 2; using the reciprocal capacity would reverse both. At r=0 a point mass has energy +∞ and capacity zero, so no positive-capacity uniqueness assertion applies. (Saff10, Lemmas 1.6–1.7, Definition 1.8 and Theorem 1.9, pp.171–173, Saff10 line 272; Example 1.10, p.173, Saff10 line 387.)
 
-The arbitrary-compact replacement obligation DiophantineApproximationAndTranscendencePartII/G1 has no assigned supplier. It requires a source-supported theorem with exact base-point-sensitive geometric hypotheses, or a maintainer scope decision releasing that obligation. The energy/equilibrium contract supplies no such rank theorem; neither the centred theorem nor the counterexample depends on G1.
+No compact-set rank theorem generalizing §5.1 is imported: §5.2 refutes the printed arbitrary-compact formula. The generalization problem DiophantineApproximationAndTranscendencePartII/G1 asks for exact base-point-sensitive geometric hypotheses and a rank theorem under them. The energy/equilibrium contract supplies no such rank theorem; nothing in Layers 0–5 depends on G1.
 
 ## How to read the build
 
@@ -334,7 +336,7 @@ Layer 0 for uniform denominator scales and germs, the integer-matrix Siegel theo
 
 ### 2.1 Integrated arithmetic rank bound
 
-Prove `mean_rank_bound`. Let p∈ℚ(x)\ℚ be regular at 0; χ∈t+t²ℚ[[t]] with p∘χ∈ℤ[[t]]; φ holomorphic on a neighbourhood of the closed unit disc with φ(0)=0, λ=|φ′(0)|>1, and g the holomorphic uniformization of p there. For any m≥0, let f₁,…,f_m∈ℚ[[x]] be ℚ(p)-linearly independent, with f_i∘χ integral and holomorphic uniformized realizations on the same neighbourhood. Then m≤e J(g)/logλ, where J(g)=∫_𝕋 log(max(1,|g|)) dμ_Haar. (CDT25, Theorem 2.0.1 and (2.0.3), p.635; §2.3, Lemma 2.3.1, pp.640–641, CDT25 line 440.)
+Prove `mean_rank_bound`. Let p∈ℚ(x)\ℚ be regular at 0; χ∈t+t²ℚ[[t]] with p∘χ∈ℤ[[t]]; φ holomorphic on a neighbourhood of the closed unit disc with φ(0)=0, λ=|φ′(0)|>1, and g the holomorphic uniformization of p there. For any m≥0, let f₁,…,f_m∈ℚ[[x]] be ℚ(p)-linearly independent, with f_i∘χ integral and holomorphic uniformized realizations on the same neighbourhood. Then m≤e J(g)/logλ, where J(g)=∫_𝕋 log(max(1,|g|)) dμ_Haar. (CDT25, Theorem 2.0.1 and (2.0.3), p.635, CDT25 line 440; §2.3, Lemma 2.3.1, pp.639–641, CDT25 line 711.)
 
 For every ε>0 import the corrected Nevanlinna quotient representation: a holomorphic h with h(0)=1 has max(sup log|h|,sup log|hg|)≤J(g)+ε. Apply the multiplier bound and let ε decrease to zero. The source’s missing constant phase in reconstruction has no effect on the norm estimates; its supremum must be logarithmic. All arithmetic inputs are unchanged by the choice of h. This proof only imports the quotient theorem, not the rest of punctured-plane uniformization.
 
@@ -500,7 +502,7 @@ The variation is computed in turns, retaining the actual values at sample discon
 
 - For a constant c, quadrature c minus mean c is 0 and variation is 0; multiplying arclength by 2π again would spoil the convention.
 
-*Needs:* §3.1; ProbabilisticAndMetricNumberTheory §2.7; Mathlib `eVariationOn`.
+*Needs:* §3.1; ProbabilisticAndMetricNumberTheory §2.7; Mathlib `eVariationOn`; §3.5 for the C¹ specialization.
 
 ### 3.4 Erdős–Turán for circular arcs
 
@@ -522,7 +524,7 @@ The Fourier comparison has constant 3; the damping route uses Koksma and energy 
 
 For h:𝕋→ℂ of class C¹, the real function log(max(1,|h|)) has finite native variation in the angular parameter t∈[0,1]. For a real C¹ function g on 𝕋 that variation equals ∫_0^1 |d/dt g(exp(2πit))|dt. Boundary zeros of h cause no singularities in the positive logarithm. (CDT25, Definition 2.5.5 and (2.5.6), p.645; sentence applying it to log⁺ in §2.5.14, p.647, CDT25 line 1096.)
 
-On ℂ the function w↦log(max(1,|w|)) is 1-Lipschitz: the radial scalar map is 1-Lipschitz and the norm is 1-Lipschitz. The angular pullback of h is C¹ on a compact interval, hence Lipschitz and of bounded variation. Compose using the supplied variation theorem. The real C¹ variation identity follows from the FTC upper bound on partition sums and approximation of the integral of |g′| by fine partitions; this is the specific calculus bridge, not a new variation carrier.
+On ℂ the function w↦log(max(1,|w|)) is 1-Lipschitz: the radial scalar map is 1-Lipschitz and the norm is 1-Lipschitz. The angular pullback of h is C¹ on a compact interval, hence Lipschitz and of bounded variation. Compose using the supplied variation theorem. For the C¹ identity for g, apply `TauCeti.eVariationOn_eq_lintegral_enorm_derivWithin` to its real angular pullback on [0,1], replace the within derivative by the ordinary derivative away from the null endpoints, and convert the finite nonnegative integral to a real integral. The target ℝ is complete.
 
 The expression log|h| without the positive cutoff can have logarithmic singularities at boundary zeros and is not the function used in Koksma.
 
@@ -536,7 +538,7 @@ The expression log|h| without the positive cutoff can have logarithmic singulari
 
 - For h(z)=z it is 0; for h(z)=2z it is also 0.
 
-*Needs:* Mathlib `eVariationOn`; Mathlib `LipschitzWith.comp_boundedVariationOn`.
+*Needs:* Mathlib `eVariationOn`; Mathlib `LipschitzWith.comp_boundedVariationOn`; Tau Ceti `TauCeti.eVariationOn_eq_lintegral_enorm_derivWithin`.
 
 ### 3.6 Fekete’s extremal Vandermonde on the circle
 
@@ -628,7 +630,7 @@ A singleton has circular discrepancy 1; an antipodal pair has 1/2; the regular d
 
 ### Dependencies
 
-Layer 1 auxiliary functions and integral jets; ProbabilisticAndMetricNumberTheory §2.7 for the interval inequalities; GeometryOfNumbersAndQuadraticArithmetic §0.1 for Hadamard; ClassicalArithmeticCompletion §§6.18,6.40 and its energy/equilibrium contract; native weak-measure compactness, product continuity and variation; Tau Ceti empirical measures and the polydisc Cauchy formula. Erdős–Turán is a circle comparison, not an input to the damping gap.
+Layer 1 auxiliary functions and integral jets; ProbabilisticAndMetricNumberTheory §2.7 for the interval inequalities; GeometryOfNumbersAndQuadraticArithmetic §0.1 for Hadamard; ClassicalArithmeticCompletion §§6.18,6.40 and its energy/equilibrium contract; native weak-measure compactness, product continuity and variation; Tau Ceti empirical measures, the C¹ metric-variation identity and the polydisc Cauchy formula. Erdős–Turán is a circle comparison, not an input to the damping gap.
 
 ## Layer 4: holonomic rings and scalar spans
 
@@ -682,7 +684,7 @@ A pole is allowed for other local solutions; it is only the chosen formal f that
 
 For U,χ as above, H(U,χ,ℤ) is a subring of ℚ[[x]]. If p∈ℚ(x) is regular throughout U and p∘χ is integral, then multiplication by p preserves H; hence it is a ℤ[p]-algebra. For χ=t, multiplication by x preserves H and it is a ℤ[x]-algebra. (CDT25, Ring and module assertions following Definition 2.0.4, pp.635–636; rational differential-module closure spells out the property used there, CDT25 line 473.)
 
-Integral pullbacks are closed under the ring operations. Use the parent D-finite closure construction on finite-dimensional ℚ̄(x) differential modules: direct sums for sums and tensor products for products. On a punctured neighbourhood the input differential modules have full horizontal meromorphic bases. Their direct sums and tensors do too. The cyclic differential subquotient defining the resulting scalar equation inherits this property: a horizontal frame identifies these modules and their subquotients with constant finite-dimensional spaces. This also covers any new apparent singularities of the cyclic presentation. The rational function p has a first-order meromorphic solution module (or is constant). Tensor with it; at its zeros a basis can still be meromorphic. The assumption of no poles in U ensures p itself is holomorphic at zero and that p∘χ multiplication stays within formal power series. For χ=t, x has integral pullback and is regular everywhere.
+Integral pullbacks are closed under the ring operations. Part I §5.1 supplies finite-dimensional derivative spans. Here form the direct sum and tensor product of the finite-dimensional ℚ̄(x) differential modules generated by f and g. Take the cyclic submodules generated by f⊕g and f⊗g, respectively, and obtain scalar annihilators of f+g and fg from linear dependence of successive derivatives. Tracking full meromorphic local bases through these constructions is part of this closure target. On a punctured neighbourhood the input differential modules have full horizontal meromorphic bases. Their direct sums and tensors do too. The cyclic differential subquotient defining the resulting scalar equation inherits this property: a horizontal frame identifies these modules and their subquotients with constant finite-dimensional spaces. This also covers any new apparent singularities of the cyclic presentation. The rational function p has a first-order meromorphic solution module (or is constant). Tensor with it; at its zeros a basis can still be meromorphic. The assumption of no poles in U ensures p itself is holomorphic at zero and that p∘χ multiplication stays within formal power series. For χ=t, x has integral pullback and is regular everywhere.
 
 The derivative need not preserve the arithmetic ring for arbitrary χ; no derivative-closure API is asserted. An arbitrary rational multiplier can destroy integral coefficients and is available only after taking the scalar spans.
 
@@ -690,7 +692,11 @@ The derivative need not preserve the arithmetic ring for arbitrary χ; no deriva
 
 - For χ=t, multiplying 1 by x gives x∈H; multiplying 1 by the rational constant 1/2 gives nonintegral constant coefficient 1/2.
 
-- For χ=t, 1/(1−x) and its square have first-order rational annihilators and meromorphic poles at 1, so multiplication preserves membership.
+- For χ=t and f=g=1/(1−x), write D=d/dx. The sum 2/(1−x) has annihilator (1−x)D−1 and the product (1−x)⁻² has annihilator (1−x)D−2. Their full local bases have pole orders 1 and 2 at 1; a construction retaining only the selected holomorphic germ would miss these poles.
+
+- For f=1 and g=−1, f+g=0 admits the order-zero annihilator 1 and its solution space has dimension 0. The cyclic module generated by (1,−1) instead has dimension 1 and annihilator D; passage to the sum can lower order.
+
+- For χ=t and f=g=x, the product x² satisfies (xD−2)y=0, with full meromorphic basis {x²} at 0. Its value there is 0, so invertibility of evaluation at the singular point cannot replace the meromorphic-basis condition.
 
 *Needs:* §4.1; DiophantineApproximationAndTranscendence §5.1; ConformalMappingPartII §0.2; ConformalMappingPartII §0.5.
 
@@ -816,7 +822,7 @@ For χ=t, the rational germ 1/(1−x) is arithmetic and has only a meromorphic p
 
 ### Dependencies
 
-Layer 0 formal arithmetic and germ conventions; Layer 2 mean rank; DiophantineApproximationAndTranscendence §5.1 for D-finiteness and differential-module closure; ConformalMappingPartII §§0.2–0.6 for full meromorphic bases, simultaneous pole clearing and continuation, and §§1.3–1.4 only for the hyperbolic-radius equivalence; native Laurent embeddings and rational-function degree.
+Layer 0 formal arithmetic and germ conventions; Layer 2 mean rank; DiophantineApproximationAndTranscendence §5.1 for D-finiteness and finite derivative spans; §4.2 for closure preserving full meromorphic local bases; ConformalMappingPartII §§0.2–0.6 for full meromorphic bases, simultaneous pole clearing and continuation, and §§1.3–1.4 only for the hyperbolic-radius equivalence; native Laurent embeddings and rational-function degree.
 
 ## Layer 5: centred capacity bounds and the compact-set obstruction
 
