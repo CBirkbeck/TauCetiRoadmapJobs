@@ -5824,20 +5824,52 @@
  ],
  "gaps": [
   {
-   "title": "Completed residue fields of a general universal homeomorphism",
-   "neededBy": [
-    "DiamondsAndVStacksPartII:D7/universal-homeomorphism-invariance"
-   ],
-   "detail": "Scholze–Weinstein (§10.2, p. 77) assert without proof that in characteristic 0 a universal homeomorphism of analytic adic spaces induces isomorphisms of completed residue fields. This packet proves it for finite morphisms of adic spaces locally of finite type over a nonarchimedean field (D7/residue-fields-of-finite-universal-homeomorphisms), which covers seminormalization and cuspidal normalization (general normalizations need not be universal homeomorphisms), and states SW20 Proposition 10.2.1 under the residue-field hypothesis. The general assertion for arbitrary analytic pre-adic spaces over Spa Q_p needs an argument that a nontrivial extension of complete nonarchimedean fields K(x)/K(x') produces several points after base change to a completed algebraic closure; no source proof was found."
+    "slug": "completed-residue-fields-general-universal-homeomorphisms",
+    "title": "Completed residue fields of a general universal homeomorphism",
+    "neededBy": [
+      "DiamondsAndVStacksPartII:D7/universal-homeomorphism-invariance"
+    ],
+    "detail": "Scholze–Weinstein (§10.2, p. 77) assert without proof that in characteristic 0 a universal homeomorphism of analytic adic spaces induces isomorphisms of completed residue fields. This packet proves it for finite morphisms of adic spaces locally of finite type over a nonarchimedean field (D7/residue-fields-of-finite-universal-homeomorphisms), which covers seminormalization and cuspidal normalization (general normalizations need not be universal homeomorphisms), and states SW20 Proposition 10.2.1 under the residue-field hypothesis. The general assertion for arbitrary analytic pre-adic spaces over Spa Q_p needs an argument that a nontrivial extension of complete nonarchimedean fields K(x)/K(x') produces several points after base change to a completed algebraic closure; no source proof was found."
   },
   {
-   "title": "Closed specializations in the unrestricted component criterion",
-   "neededBy": [
-    "DiamondsAndVStacksPartII:D11/connected-components-theorem"
-   ],
-   "detail": "The passage to a common closed specialization in Gleason Lemma 4.55, p. 38, is not justified by Definition 4.52, which only requires the underlying reduction space to be locally noetherian. A perfect scheme can have locally noetherian topology without closed points: remove the closed point from the spectrum of a perfect valuation ring whose prime ideals form an infinite ascending chain with a maximal limit. Its remaining points have finite-chain open neighborhoods. This is a counterexample to the topological inference, not a constructed counterexample to the kimberlite theorem. The packet proves the theorem with an explicit closed-specialization condition. Derive that condition from the other kimberlite axioms, or supply a proof in their absence, before asserting the printed generality."
+    "slug": "closed-specializations-unrestricted-components",
+    "title": "Closed specializations in the unrestricted component criterion",
+    "neededBy": [
+      "DiamondsAndVStacksPartII:D11/connected-components-theorem"
+    ],
+    "detail": "The passage to a common closed specialization in Gleason Lemma 4.55, p. 38, is not justified by Definition 4.52, which only requires the underlying reduction space to be locally noetherian. A perfect scheme can have locally noetherian topology without closed points: remove the closed point from the spectrum of a perfect valuation ring whose prime ideals form an infinite ascending chain with a maximal limit. Its remaining points have finite-chain open neighborhoods. This is a counterexample to the topological inference, not a constructed counterexample to the kimberlite theorem. The packet proves the theorem with an explicit closed-specialization condition. Derive that condition from the other kimberlite axioms, or supply a proof in their absence, before asserting the printed generality."
+  },
+  {
+    "slug": "completed-etale-lifts",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.14 / §0.23a",
+    "needs": "For an integral perfectoid ring R⁺ and pseudouniformizer ϖ, supply effective and unique completed formally étale lifts of quasicompact separated étale reduction data, compatibly with nil-ideal invariance, perfection, localization and gluing."
+  },
+  {
+    "slug": "mixed-characteristic-weak-normality",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.26",
+    "needs": "Supply mixed-characteristic weak normality and its finite birational universal-homeomorphism criterion with formal localization, and the finite-map Jacobson criterion for radicial geometric closed fibres over an algebraically closed field."
+  },
+  {
+    "slug": "absolute-weak-normality-formal",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.26",
+    "needs": "Supply scheme absolute weak normalization with its universal property, finiteness for excellent rings with characteristic-zero generic fields, and preservation and descent under regular completion and formal localization maps."
+  },
+  {
+    "slug": "finite-residue-and-integral-stalks",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.13 / R0.18",
+    "needs": "Supply finite completed residue extensions and integral closure of valuation subrings for finite adic maps, and identification of integral structure-sheaf stalks modulo pⁿ with integral completed residue fields modulo pⁿ on analytic spaces over Spa(ℚ_p,ℤ_p)."
+  },
+  {
+    "slug": "pseudorigid-jacobson-flatness",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.9 / R0.18",
+    "needs": "Supply the pseudorigid Jacobson–Tate theorem with excellent rings of definition and flat rational localization of noetherian-type Huber pairs, including punctured charts for locally formally finite-type flat formal schemes."
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "DiamondsAndVStacksPartII/E1",
