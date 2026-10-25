@@ -1,6 +1,6 @@
 # Roadmap: logic, definability, valued fields and motivic integration
 
-**Summary.** Build the logical interfaces that turn arithmetic descriptions into transferable statements, integrals and counting estimates. Starting from native first-order semantics, valuation rings, polynomial functions and computability, construct quotient interpretations, valued-field elimination, local and motivic integration, and the full MRDP theorem. Develop analytic and exponential o-minimal geometry through Pila–Wilkie, block and semi-rational counting. The arithmetic endpoints include a universal definition of the integers in the rationals and the reduction of André–Oort for A_g, and of its abelian, Hodge-theoretic and mixed relatives, to explicitly stated functional-transcendence and Galois-orbit inputs.
+**Summary.** Build the logical interfaces that turn arithmetic descriptions into transferable statements, integrals and counting estimates. Starting from native first-order semantics, valuation rings, polynomial functions and computability, construct quotient interpretations, valued-field elimination, local and motivic integration, and the full MRDP theorem. Develop analytic and exponential o-minimal geometry through Pila–Wilkie and bounded-degree counting, using the supplied semirational block theorem. The arithmetic endpoints include a universal definition of the integers in the rationals and the reduction of André–Oort for A_g, and of its Hodge-theoretic and mixed relatives, to explicitly stated functional-transcendence and Galois-orbit inputs.
 
 ## Scope and ownership
 
@@ -8,21 +8,25 @@ This roadmap owns definable quotient presentations and their semantic translatio
 
 The following are prerequisites and boundaries.
 
+- **TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero** §6.2, **TauCetiRoadmap.WeilConjectures**, “Curve RH from the surface bound”, **TauCetiRoadmap.Chebotarev** Layer 14 and **TauCetiRoadmap.ClassFieldTheory** Layers 5, 10–13 own the compactification, curve estimate, auxiliary-prime existence and reciprocity inputs used by §4.29a.
+- **TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII** B2.6, B2.7, B2.14, B2.15 and B2.18 own semirational block counting with its parameter-uniform decomposition, free matrix word growth, the invariant Ax-type torus theorem, abelian Ax–Lindemann and invariant algebraic subvarieties. Section 6.27 here adds integral-point and image-block corollaries; the abelian group-action results are consumed from that roadmap.
+- **TauCetiRoadmap.AdelicAlgebraicGroups** §2.4 owns gauge Haar measures and Weil volumes for characteristic-zero smooth affine groups. Sections 2.7 and 2.9 here extend the constructions to arbitrary analytic manifolds with tensor forms and arbitrary smooth finite-type models.
+- **TauCetiRoadmap.SchemeAndStackFoundations** §§0.12–0.14 own local-ring henselization and its universal property; §1.11 here supplies the arbitrary-rank valued-field comparison.
 - Mathlib owns first-order languages, formulas, structures, realization, definability, compactness and ultraproducts. Use its native syntax throughout. A finite tagged encoding of several sorts is an adapter to that syntax.
 - Mathlib owns `Poly`, `Dioph`, `Dioph.DiophFn`, Pell-based Diophantine exponentiation, `REPred` and the halting obstruction. The missing work here is the syntax comparison and full computation-to-polynomial argument.
 - Mathlib owns `ValuationSubring`, its actual value group, `HenselianLocalRing`, fraction rings, prime fields and transcendence degree. A prime-divisor predicate adds the arithmetic dimension condition to those carriers.
-- Tau Ceti's `TauCeti/RingTheory/Valuation/Coarsen.lean` owns convex-subgroup coarsening. Reuse `TauCeti.coarsenMapOfValueGroup` and `Valuation.coarsenByUnits`. The additional target is the Dittmann–Pop cut/localization comparison on arbitrary ordered value groups.
+- Tau Ceti's `TauCeti/RingTheory/Valuation/Coarsen.lean` owns convex-subgroup coarsening. Reuse `TauCeti.coarsenMapOfValueGroup` and `Valuation.coarsenByUnits`. The valuation-ring comparisons use these operations on their actual ordered groups.
 - Tau Ceti's `TauCeti/RingTheory/GrothendieckRing.lean` owns general ring completion of a semiring, including `Algebra.GrothendieckAddGroup.instCommRing`, `ofRingHom` and `liftRingHom`. The additional target is the residue-definable scissor semiring and its particular functorial maps.
 - **TauCetiRoadmap.RealAlgebraicGeometry**, from [Layer 3: sign determination and semialgebraic descriptions](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RealAlgebraicGeometry/README.md#layer-3-sign-determination-and-semialgebraic-descriptions) through [Layer 6: CAD and quantifier elimination](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/RealAlgebraicGeometry/README.md#layer-6-cad-and-quantifier-elimination), owns semialgebraic syntax, CAD, projection closure and the semialgebraic/ordered-field-definability dictionary over ℝ. Its elimination theorem is over ℝ; it does not supply elimination over every real closed field. This supplies the semialgebraic o-minimal reduct used here. General o-minimal expansions, analytic/exponential theorems, general definable dimension and triangulation belong here. The existing Tau Ceti semialgebraic formula/QE modules make their projection-closure hypothesis explicit; they do not by themselves establish projection closure.
 - **TauCetiRoadmap.DifferentialGeometry**, [“Boundary and corners”](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DifferentialGeometry/README.md#boundary-and-corners) and item 5.5 in [Layer 5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DifferentialGeometry/README.md#layer-5-integration-and-stokes-theorem), owns the abstract local-face boundary and immersion. This roadmap adds analytic and finite-definable chart certificates to that object. Its local-field analytic integration is a separate theory over a nonarchimedean field, with its own inverse/substitution and measure-gluing targets.
-- **TauCetiRoadmap.AdicSpaces, Layer 1**, owns valuation spectra and their patch topology. The current Tau Ceti modules `TauCeti/AlgebraicGeometry/AdicSpace/ValuationSpectrum/Basic.lean` and `PatchPresentation.lean` provide `TauCeti.ValuationSpectrum.ofValuation`, `ofValuation_eq_of_isEquiv`, `basicOpen_one_right` and `isClopen_patchTopology_basicOpen`. The field-membership dictionary here adds their pullback comparison on native valuation subrings of a field.
+- **TauCetiRoadmap.AdicSpaces, Layer 1**, owns valuation spectra and their patch topology. The Tau Ceti modules `TauCeti/AlgebraicGeometry/AdicSpace/ValuationSpectrum/Basic.lean` and `PatchPresentation.lean` provide `TauCeti.ValuationSpectrum.ofValuation`, `ofValuation_eq_of_isEquiv`, `basicOpen_one_right` and `isClopen_patchTopology_basicOpen`. The field-membership dictionary here adds their pullback comparison on native valuation subrings of a field.
 - **TauCetiRoadmap.QuadraticFormInvariants**, Layer 2 (quaternion algebras, reduced norm and trace) and §6C items 9–12 (the closed Hilbert symbol in odd residue characteristic, the closed formula and the 8×8 table over ℚ₂), and **TauCetiRoadmap.GlobalQuadraticForms**, §§4.1–4.4 (vector weak approximation, the global square theorem, the quadratic Hasse norm theorem, Hilbert sign prescription), §5.5 (Hasse–Minkowski isotropy) and §6.1 (scalar representation at all finite and real places), own the quadratic-form theory used in Layer 4. This roadmap builds the definable trace images, the local trace ranges at division places and the prime-parameter formulas.
 - Mathlib supplies schemes, affine opens, closed immersions, fibre products, smooth morphisms, finite-type presentations as quotients of polynomial rings and Kähler differentials with their exterior powers. **TauCetiRoadmap.SchemeAndStackFoundations** §0.7 supplies dimension theory of schemes of finite type over a field and §2.20 the identification of the relative dualising module of a smooth morphism with the top exterior power of its differentials. Global motivic integration on varieties uses closed embeddings of affine charts into affine space (§3.1).
 - **TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties** supplies Néron models, isogeny functoriality (§2.5) and Grothendieck's pairing on component groups (§4.6). The point-count identity for the Néron models of dual abelian varieties over a local field with finite residue field, needed by the dual-volume comparison, is §2.10a here.
 - **TauCetiRoadmap.MotivesAndAlgebraicCycles** §4.20 supplies K₀(Var_k), its compactly supported motivic measure χ^c into the triangulated Grothendieck ring of geometric motives and the image of 𝕃. The realization of the residue classes of Layer 3 in the localized target is §3.11 here; no equality of definable and geometric coefficient rings is assumed.
 - **TauCetiRoadmap.DiophantineApproximationAndTranscendence** §§0.1–0.3 owns the rational height identity, the Mahler and absolute-height comparisons and bounded-degree Northcott. Its Layer 5 functional-transcendence results (differential-exponential Ax–Schanuel, §5.6) are different statements from the abelian, Shimura and Hodge theorems that appear as Layer 7 hypotheses. **TauCetiRoadmap.HeightsRationalPointsAndObstructions** §2.20 supplies the Brauer pairing on zero-cycles of arbitrary degree; the effective zero-cycle theorem for normic bundles of Colliot-Thélène–Van Geel is §4.29a here. Its §§5.1, 5.6 and 5.8 own Manin–Mumford and its uniform family version, including torsion cosets of positive dimension.
 - **TauCetiRoadmap.ShimuraVarieties** §3.5a owns the o-minimality of R_an,exp with finite cell decomposition, definable dimension and the finite-atlas calculus in that structure; §3.5d owns the definable Chow theorem on smooth complex algebraic varieties; §3.6 owns the R_an,exp comparison between the arithmetic and the algebraic definable structures of a torsion-free arithmetic Hermitian quotient with fixed maximal compact, including the fact that R_an does not suffice at a cusp. This roadmap consumes §3.5a in §6.3 and §3.5d in §6.18, and keeps the general theory: arbitrary o-minimal expansions, R_an and R_exp separately, analytic cells, singular ambient varieties and Boolean combinations.
-- Shimura-variety and Hodge-theoretic functional transcendence (special and weakly special subvarieties, definability of uniformizations on fundamental sets, hyperbolic and mixed Ax–Lindemann, Ax–Schanuel for variations of Hodge structure), Ax's theorem for subvarieties of abelian varieties, and the Galois-orbit and lift-height bounds for CM points are not proved here. Layer 7 states each of them, with its source, as a hypothesis of the theorems that use it.
+- Shimura-variety and Hodge-theoretic functional transcendence (special and weakly special subvarieties, definability of uniformizations on fundamental sets, hyperbolic and mixed Ax–Lindemann, Ax–Schanuel for variations of Hodge structure), the Galois-orbit and lift-height bounds for CM points are not proved here. Layer 7 states each of them, with its source, as a hypothesis of the theorems that use it.
 
 ## Conventions
 
@@ -46,11 +50,9 @@ The algebraic part X_alg is the union of connected positive-dimensional semialge
 
 ### From Mathlib
 
-The pinned API is Mathlib `082e2d37e8b0463410cdb532e111cd43d5a66174` with Tau Ceti `f790474821cf4256814db967cb154e7af3d0c369`. The native-carrier statements in [Suggested.lean](Suggested.lean) use these APIs. The current Tau Ceti facilities identified under Scope and ownership are imports for the mathematical build; no declaration available only there is used to type a pinned signature.
+The APIs are pinned by lake-manifest.json: Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a` and Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
 
 For logic use `FirstOrder.Language`, `FirstOrder.Language.Formula`, `FirstOrder.Language.ring`, `Set.Definable` and `FirstOrder.Language.BoundedFormula.IsExistential`. The last predicate is the native quantifier-free/existential fragment. `FirstOrder.Language.Ultraproduct.«structure»`, `realize_formula_cast` and `sentence_realize` give the structure and Łoś transfer on `Filter.Product`. Interpretations, their quotient invariance and the existential-preservation/diagram theorem must still be proved here.
-
-For finite hyperreals use `ArchimedeanClass.stdPart`, `stdPart_add`, `stdPart_mul` and `mk_sub_pos_iff`, with their finiteness hypotheses `0 ≤ ArchimedeanClass.mk x`. `Hyperreal.stdPart_coe` fixes the embedded real numbers. `Hyperreal.stdPart_omega = 0` is the total map's default at an infinite element and is not an approximation theorem. An arithmetic/hyperreal comparison must use the same ultrafilter.
 
 For valued and finitely generated fields use `ValuationSubring`, `ValuationSubring.ValueGroup`, `HenselianLocalRing`, `IntermediateField.FG`, `Algebra.trdeg`, `Subfield.bot_eq_of_charZero`, `Subfield.bot_eq_of_zMod_algebra` and `IsFractionRing`. The value group has zero in the native multiplicative presentation; any additive comparison is named explicitly. Finite field generation does not mean finite generation as a ℤ-algebra.
 
@@ -58,41 +60,93 @@ For polynomial normal forms use `Poly.ext`, `Poly.proj`, `Poly.const`, `Poly.ind
 
 `Dioph`, `Dioph.DiophFn` and `Dioph.pow_dioph` supply the existing Diophantine vocabulary and exponentiation. `REPred` uses the existing `Primcodable` encoding; `ComputablePred.halting_problem` supplies undecidability. `Nat.chineseRemainder`, `Nat.sum_four_squares` and `Nat.forall_exists_prime_gt_and_modEq` provide CRT, four squares and primes in coprime arithmetic progressions, with their actual hypotheses. None supplies the missing uniform native computation adapter by itself.
 
-### From algebraic geometry and measure theory
+For charts use `AlgebraicGeometry.IsAffineOpen`, `AlgebraicGeometry.IsClosedImmersion`, fibre products of schemes, `AlgebraicGeometry.Smooth` and `AlgebraicGeometry.QuasiCompact`; a finitely generated algebra over a field is a quotient of a polynomial ring in finitely many variables (`Algebra.FiniteType.iff_quotient_mvPolynomial''`), which gives a closed embedding of every affine chart into affine space. An affine variety need not be an open subset of affine space, so closed embeddings, not open ones, are used to globalize integrals. Relative differentials are `KaehlerDifferential` with `ExteriorAlgebra.exteriorPower`. Haar measure on a local field and its products is `MeasureTheory.Measure.addHaar`, normalized by the measure of the ring of integers; countable gluing uses `MeasureTheory.Measure.sum` and `MeasureTheory.Measure.restrict`.
 
-For charts use `AlgebraicGeometry.IsAffineOpen`, `AlgebraicGeometry.IsClosedImmersion`, fibre products of schemes, `AlgebraicGeometry.Smooth` and `AlgebraicGeometry.QuasiCompact`; a finitely generated algebra over a field is a quotient of a polynomial ring in finitely many variables (`Algebra.FiniteType.iff_quotient_mvPolynomial''`), which gives a closed embedding of every affine chart into affine space. An affine variety need not be an open subset of affine space, so closed embeddings, not open ones, are used to globalize integrals. Relative differentials are `KaehlerDifferential` with `exteriorPower`. Haar measure on a local field and its products is `MeasureTheory.Measure.addHaar`, normalized by the measure of the ring of integers; countable gluing uses `MeasureTheory.Measure.sum` and `MeasureTheory.Measure.restrict`.
+Use `FirstOrder.Language.presburger` and `FirstOrder.Language.presburger.definable_iff_isSemilinearSet` on ℕ, and `FirstOrder.Language.presburger.mul_not_definable` (Mathlib/ModelTheory/Arithmetic/Presburger/Definability.lean). The integer multiplication negative control restricts to nonnegative inputs before applying this native theorem. `FirstOrder.Ring.compatibleRingOfRing` gives the ring structures for `ax_kochen_ring`; `IsDiscreteValuationRing`, `Ideal.Quotient.mk` and `PowerSeries.mk` give the congruence-series carriers.
 
-From [TauCetiRoadmap.SchemeAndStackFoundations, §0.7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#07-local-dimension-and-dimension-theory-of-schemes-of-finite-type-over-a-field), use `dim O_{X,x}+trdeg κ(x)=dim_x X` and the dimension theory of schemes of finite type over a field; from [§2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison), use the identification of the relative dualising module of a smooth morphism of relative dimension d with the d-th exterior power of its differentials. The analytic manifold structure on the F-points of a smooth F-variety uses the locally analytic inverse function theorem over a complete nonarchimedean field (Schneider, *p-Adic Lie Groups*, Proposition 6.4, p.42, and §7 for charts and atlases).
+### From Tau Ceti
+
+Use `TauCeti.IsSemialgebraic` from TauCeti/Geometry/RealAlgebraic/Semialgebraic/Basic.lean: it is the Boolean algebra generated by polynomial zero and positivity sets; projection closure is a separate theorem. Use `TauCeti.coarsenMapOfValueGroup` and `Valuation.coarsenByUnits` from TauCeti/RingTheory/Valuation/Coarsen.lean, and `Algebra.GrothendieckAddGroup.instCommRing`, `ofRingHom` and `liftRingHom` from TauCeti/RingTheory/GrothendieckRing.lean. Valuation-spectrum comparisons use `TauCeti.ValuationSpectrum.ofValuation`, `ofValuation_eq_of_isEquiv`, `basicOpen_one_right` and `isClopen_patchTopology_basicOpen` in TauCeti/AlgebraicGeometry/AdicSpace/ValuationSpectrum/Basic.lean and PatchPresentation.lean.
+
+### From TauCetiRoadmap.SchemeAndStackFoundations
+
+From [TauCetiRoadmap.SchemeAndStackFoundations, §0.7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#07-local-dimension-and-dimension-theory-of-schemes-of-finite-type-over-a-field), use `dim O_{X,x}+trdeg κ(x)=dim_x X` and the dimension theory of schemes of finite type over a field; from [§2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison), use the identification of the relative dualising module of a smooth morphism of relative dimension d with the d-th exterior power of its differentials. The analytic manifold structure on the F-points of a smooth F-variety uses the locally analytic inverse function theorem over a complete nonarchimedean field (Schneider, *p-Adic Lie Groups*, Proposition 6.4, p.42, and §7 for charts and atlases). Its §§0.12–0.14 supply the henselization of the local-ring pair and its universal property; §1.11 here proves the valued-field comparison.
+
+### From TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties
 
 From [TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md), use Néron models, their identity components and component groups, isogeny functoriality ([§2.5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md#25-functoriality-under-isogeny)) and Grothendieck's pairing ([§4.6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md#46-grothendiecks-pairing-on-component-groups)). Those sections are stated for semistable abelian varieties; the general prime-to-p extension, the identity-component count and the equality of component-group orders for dual abelian varieties over a local field with finite residue field are §2.10a here.
 
-From [TauCetiRoadmap.MotivesAndAlgebraicCycles, §4.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/MotivesAndAlgebraicCycles/README.md#420-the-scissor-ring-and-motivic-measure), use `K₀Var k`, the ring structure on `TriangulatedK0` of the geometric motives `DM_gm(k,ℚ)` and the ring homomorphism χ^c:K₀Var k→TriangulatedK0(DM_gm(k,ℚ)), [X]↦[M^c(X)], with χ^c(𝕃)=[ℚ(1)]. That section inverts 1−𝕃^{−i} only in a designated localized target; §3.11 here constructs that target and the realization of residue classes into it.
+### From TauCetiRoadmap.MotivesAndAlgebraicCycles
+
+From [TauCetiRoadmap.MotivesAndAlgebraicCycles, §4.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/MotivesAndAlgebraicCycles/README.md#420-the-scissor-ring-and-motivic-measure), use `K₀Var k`, the ring structure on `TriangulatedK0` of the geometric motives `DM_gm(k,ℚ)` and the ring homomorphism χ^c:K₀Var k→TriangulatedK0(DM_gm(k,ℚ)), [X]↦[M^c(X)], with χ^c(𝕃)=[ℚ(1)]. That section inverts `1−𝕃^{−i}` only in a designated localized target; §3.11 here constructs that target and the realization of residue classes into it.
+
+### From TauCetiRoadmap.HeightsRationalPointsAndObstructions
 
 From [TauCetiRoadmap.HeightsRationalPointsAndObstructions, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#220-brauer-pairing-on-zero-cycles), use the Brauer evaluation of zero-cycles of arbitrary degree on smooth projective varieties over a number field and its orthogonality to global Brauer classes. The effective symmetric-power theorem for the normic bundles of Colliot-Thélène–Van Geel, with its Brauer-group computation and the finiteness of obstructed parameter classes, is §4.29a here.
 
-From [TauCetiRoadmap.QuadraticFormInvariants](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md), use the quaternion algebra (a,b), its reduced norm and trace and the four-fold splitting criterion of Layer 2, and from §6C the Hilbert symbol with its closed formula in odd residue characteristic (item 9), the closed formula over ℚ₂ (item 10) and the 8×8 table on the basis {−1,2,5} of ℚ₂ˣ/ℚ₂ˣ² (item 12). From [TauCetiRoadmap.GlobalQuadraticForms](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md), use vector weak approximation (§4.1), the global square theorem (§4.2), the quadratic Hasse norm theorem at finite, real and complex places (§4.3), Hilbert sign prescription (§4.4), Hasse–Minkowski isotropy (§5.5) and scalar representation at all finite and real places (§6.1). The rational norm-one witnesses of §4.21 come from §6.1 applied to the ternary form ⟨a,b,−ab⟩; the local trace ranges at division places, including the dyadic and real ones, are computed in §4.21.
+### From TauCetiRoadmap.QuadraticFormInvariants
+
+From [TauCetiRoadmap.QuadraticFormInvariants](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md), use the quaternion algebra (a,b), its reduced norm and trace and the four-fold splitting criterion of Layer 2, and from §6C the Hilbert symbol with its closed formula in odd residue characteristic (item 9), the closed formula over ℚ₂ (item 10) and the 8×8 table on the basis {−1,2,5} of ℚ₂ˣ/ℚ₂ˣ² (item 12).
+
+### From TauCetiRoadmap.GlobalQuadraticForms
+
+From [TauCetiRoadmap.GlobalQuadraticForms](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md), use vector weak approximation (§4.1), the global square theorem (§4.2), the quadratic Hasse norm theorem at finite, real and complex places (§4.3), Hilbert sign prescription (§4.4), Hasse–Minkowski isotropy (§5.5) and scalar representation at all finite and real places (§6.1). The rational norm-one witnesses of §4.21 come from §6.1 applied to the ternary form ⟨a,b,−ab⟩; the local trace ranges at division places, including the dyadic and real ones, are computed in §4.21.
+
+### From TauCetiRoadmap.AdicSpaces
 
 The field-membership patch adapter uses **TauCetiRoadmap.AdicSpaces** Layer 1: for every a in the field, valuation-ring membership and nonmembership must be patch-clopen, invariant under equivalent valuations, and agree with the corresponding spectral inequalities. Coarsening uses the actual convex quotient; no integer-valued normalization is inserted.
 
-### From counting and o-minimality
+### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
 
 From [TauCetiRoadmap.DiophantineApproximationAndTranscendence](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md), use the rational height identity H(p/r)=max(|p|,r) for p/r in lowest terms with r>0 ([§0.1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#01-primitive-polynomials-and-coefficient-height)), the comparison 2^(−d)H(x)≤H_abs(x)^d≤√(d+1)·H(x) between the coefficient height of the minimal polynomial and the absolute multiplicative height of an algebraic number of degree d ([§0.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#02-mahler-measure-house-and-absolute-height)), and bounded-degree Northcott `finite_setOf_absMulHeight₁_le` ([§0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates)). Keep the degree fixed when converting coefficient height to absolute multiplicative height. In the native absolute-height convention, the total multiplicative definition takes value 1 outside the algebraic domain, while the logarithmic height takes value 0; every counting application is restricted to algebraic coordinates.
 
+### From TauCetiRoadmap.ShimuraVarieties
+
 From [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp), use R_an,exp (the real exponential and every restricted analytic function, zero outside the closed cube), its o-minimality, finite cell decomposition, definable dimension with its product, projection and fibre laws, and its finite-atlas calculus; from [§3.5d](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35d-definable-chow), use the definable Chow theorem: a closed complex analytic subset of a smooth complex algebraic variety that is definable in an o-minimal expansion of R_an is algebraic. The comparison of the arithmetic and algebraic definable structures of a Hermitian arithmetic quotient is [§3.6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#36-definable-comparison-with-the-algebraic-target) there and is not restated here.
+
+### From TauCetiRoadmap.AdelicAlgebraicGroups
+
+Use §2.4, “The Haar measure of a gauge form over a local field” and “Weil’s volume formula for integral points”, for characteristic-zero smooth affine groups and smooth affine group models. Sections 2.7 and 2.9 here extend to analytic manifolds with tensor densities and arbitrary smooth finite-type models, respectively.
+
+### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII
+
+Use B2.6 for parameter-uniform semirational block counting, including its block decomposition; B2.7 for free matrix word growth; B2.14 for invariant Ax-type subsets of real tori; B2.15 for the abelian Ax input and real-period adapter; and B2.18 for monodromy-invariant subvarieties. Section 6.27 here gives only integral-height and image-block corollaries of B2.6. These supplied abelian results are not targets of this roadmap.
+
+### From TauCetiRoadmap.RealAlgebraicGeometry
+
+Use Layer 3 (sign conditions and semialgebraic descriptions) and Layer 6 (projection closure and quantifier elimination over ℝ) for the semialgebraic/ordered-field definability dictionary and dimension comparison of §6.21.
+
+### From TauCetiRoadmap.DifferentialGeometry
+
+Use “Boundary and corners” and Layer 5, item 5.5, for the abstract local-face boundary and its immersion; §§6.6–6.8 here supply finite definable and analytic charts on those carriers.
+
+### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
+
+Use §6.2, the smooth projective compactification with strict normal-crossing boundary for smooth quasi-projective varieties over a characteristic-zero field, in the normic-bundle construction of §4.29a.
+
+### From TauCetiRoadmap.WeilConjectures
+
+Use “Curve RH from the surface bound”, including its all-conjugates reciprocal-root bound, for the point estimate on smooth projective curves over finite fields in §4.29a.
+
+### From TauCetiRoadmap.Chebotarev
+
+Use Layer 14, natural-density Chebotarev and its finite-exception invariance: a nonempty conjugacy class in a finite Galois extension supplies infinitely many unramified primes with that Frobenius class, outside any finite excluded set. Section 4.29a applies this to the auxiliary cyclic extensions.
+
+### From TauCetiRoadmap.ClassFieldTheory
+
+Use Layers 5 and 10 for cyclic algebras, local Brauer invariants and their global sum, and Layers 11–13 for global reciprocity, class fields and norm conditions on the auxiliary primes in §4.29a.
 
 ### Input hypotheses of Layer 7
 
-The theorems of Layer 7 carry their geometric and arithmetic inputs as hypotheses, each a proposition about fixed objects, stated exactly in §§7.1, 7.5–7.8 with the source that proves it: the André–Oort input datum for A_g (definability on Siegel sets, the structure of weakly special subvarieties, hyperbolic Ax–Lindemann, the Galois-orbit lower bound and the lift-height bound), the product-locus input for A₁×A₁, the Ax-type property of images of subvarieties of a complex abelian variety, the Ax–Schanuel conclusion for a polarized variation of Hodge structure, and the mixed input datum of Gao. No Layer 7 theorem assumes its own conclusion: each uses Layer 6 counting to pass from its inputs to a finiteness or special-subvariety statement that the inputs do not contain. The roadmaps that prove the inputs consume Layer 6; they discharge the hypotheses (Downstream consumers).
+The theorems of Layer 7 carry their geometric and arithmetic inputs as hypotheses, each a proposition about fixed objects, stated exactly in §§7.1, 7.5, 7.7–7.8 with the source that proves it: the André–Oort input datum for A_g (definability on Siegel sets, the structure of weakly special subvarieties, hyperbolic Ax–Lindemann, the Galois-orbit lower bound and the lift-height bound), the product-locus input for A₁×A₁, the Ax–Schanuel conclusion for a polarized variation of Hodge structure, and the mixed input datum of Gao. No Layer 7 theorem assumes its own conclusion: each uses Layer 6 counting to pass from its inputs to a finiteness or special-subvariety statement that the inputs do not contain. The reductions retain these hypotheses explicitly.
 
 ## How to read the build
 
-Layer 0 fixes semantic transport. Layer 1 provides the languages and valuation interfaces used by Layer 2 local integration and Layer 3 motivic integration. Layer 4 is the separate computation and arithmetic-definability branch; it begins with polynomial comparison and finite witnesses. Layer 5 connects normalized local coefficients to arithmetic consumers while preserving the distinction between finite computation and unrestricted decision problems. Layer 6 builds real definability and counting: o-minimal geometry, rough-function estimates for period maps, definable complex algebraicity, Pila–Wilkie, block, bounded-degree and semi-rational counting, the orbit-counting bridge and the torus lemma behind the abelian group-action application. Layer 7 combines Layer 6 with explicitly stated functional-transcendence and Galois-orbit inputs. Within each layer, subsections follow their prerequisites. The README is the mathematical specification; [Suggested.lean](Suggested.lean) contains only the definitions and milestones directly statable on the pinned carriers.
+Layer 0 fixes semantic transport. Layer 1 provides the languages and valuation interfaces used by Layer 2 local integration and Layer 3 motivic integration. Layer 4 is the separate computation and arithmetic-definability branch; it begins with polynomial comparison and finite witnesses. Layer 5 connects normalized local coefficients to arithmetic consumers while retaining the stated measure normalizations. Layer 6 builds real definability and counting: o-minimal geometry, rough-function estimates for period maps, definable complex algebraicity, Pila–Wilkie, block and bounded-degree counting and the orbit-counting bridge. Layer 7 combines Layer 6 with explicitly stated functional-transcendence and Galois-orbit inputs. Within each layer, subsections follow their prerequisites. The README is the mathematical specification; [Suggested.lean](Suggested.lean) contains only the definitions and milestones directly statable on the pinned carriers.
 
 ## Layer 0: interpretations and arithmetic transfer
 
 Specify definable domains, kernels and symbol graphs before translating formulas. Semantic composition supplies the two comparisons in a bi-interpretation. Fraction presentations and arithmetic ultrapowers test that equality and quantifier witnesses are transported correctly.
-
-<a id="ld0-interpretation"></a>
 
 ### 0.1 Interpretations on definable quotients
 
@@ -102,23 +156,21 @@ Use the existing definable-set predicate for D, the kernel and symbol graphs. Fo
 
 The basic interface must include:
 
-- `interpretation.domain`: The finite-power domain and kernel are definable over the recorded parameters.
-- `interpretation.translate`: Every L_B-formula has an E-invariant L_A-formula on representative tuples, with the same semantic truth value.
-- `interpretation.function_total`: For each source function and representative input there exists an output in D unique modulo E.
-- `interpretation.change_parameters`: Enlarging the named parameter tuple transports an interpretation without changing its quotient structure.
+- The finite-power domain and kernel are definable over the recorded parameters.
+- Every L_B-formula has an E-invariant L_A-formula on representative tuples, with the same semantic truth value.
+- For each source function and representative input there exists an output in D unique modulo E.
+- Enlarging the named parameter tuple transports an interpretation without changing its quotient structure.
 
 **Checks.**
 
-- `interpretation.identity`: D=A, E=equality and identity symbol graphs recover the original native structure.
-- `interpretation.fractions`: For an integral domain R, pairs (a,b) with b≠0 and relation ad=bc interpret Frac(R); (1,2) and (2,4) have the same class when 2≠0.
-- `interpretation.nonfunctional`: The graph assigning both 0 and 1 to one input over a two-element equality quotient fails the function uniqueness axiom.
-- `interpretation.residue`: A definable ideal I gives R/I by a quotient; no definable transversal is required.
+- D=A, E=equality and identity symbol graphs recover the original native structure.
+- For an integral domain R, pairs (a,b) with b≠0 and relation ad=bc interpret Frac(R); (1,2) and (2,4) have the same class when 2≠0.
+- The graph assigning both 0 and 1 to one input over a two-element equality quotient fails the function uniqueness axiom.
+- A definable ideal I gives R/I by a quotient; no definable transversal is required.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, Theorems 1.1–1.2, pp.1–4; §5, Facts 5.2 and final proof, pp.16–18 (arXiv v2).)
+(Wilfrid Hodges, *Model Theory*, §5.3, interpretations and composition.)
 
 *Needs:* Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `Set.Definable`.
-
-<a id="ld0-interpretation-semantics"></a>
 
 ### 0.2 Semantics and composition of interpretations
 
@@ -126,11 +178,9 @@ An interpretation I:B in A gives, for every finite tuple of B-elements and any r
 
 Induct over native formulas: equality uses E; symbol atoms use their defining graphs; Boolean operations are native; quantified witnesses range over D and quotient surjectivity supplies representatives. For composition flatten the two finite tuples, translate the inner domain and equivalence, and apply the first semantic equivalence twice. No elimination of imaginaries is assumed.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, Theorems 1.1–1.2, pp.1–4; §5, Facts 5.2 and final proof, pp.16–18 (arXiv v2).)
+(Wilfrid Hodges, *Model Theory*, §5.3, interpretations and composition.)
 
-*Needs:* [0.1 Interpretations on definable quotients](#ld0-interpretation); Mathlib `FirstOrder.Language.Formula`.
-
-<a id="ld0-biinterpretation"></a>
+*Needs:* [0.1 Interpretations on definable quotients](#01-interpretations-on-definable-quotients); Mathlib `FirstOrder.Language.Formula`.
 
 ### 0.3 Parametric bi-interpretations
 
@@ -140,23 +190,21 @@ Take the two interpretation records together with quotient-compatible definable 
 
 The basic interface must include:
 
-- `biinterpretation.forward`: Extract the interpretation of B in A and its parameter tuple.
-- `biinterpretation.comparison`: Extract definable graphs identifying both composite quotients with the original structures.
-- `biinterpretation.symm`: Interchange the two interpretations and their comparison isomorphisms.
-- `biinterpretation.trans`: Compose bi-interpretations using translated comparison graphs and accumulated parameters.
+- Extract the interpretation of B in A and its parameter tuple.
+- Extract definable graphs identifying both composite quotients with the original structures.
+- Interchange the two interpretations and their comparison isomorphisms.
+- Compose bi-interpretations using translated comparison graphs and accumulated parameters.
 
 **Checks.**
 
-- `biinterpretation.identity`: The identity quotient in each direction with identity comparison graphs is a bi-interpretation.
-- `biinterpretation.finite_obstruction`: No finite structure can be bi-interpreted with the infinite ring of integers: every definable finite-power quotient of a finite structure is finite.
-- `biinterpretation.parameter_transport`: Relabeling a finite tuple of named parameters gives isomorphic composite quotients.
-- `biinterpretation.comparisons_required`: Providing two interpretations alone leaves the bi-interpretation record incomplete until both definable composite maps are supplied.
+- The identity quotient in each direction with identity comparison graphs is a bi-interpretation.
+- No finite structure can be bi-interpreted with the infinite ring of integers: every definable finite-power quotient of a finite structure is finite.
+- Relabeling a finite tuple of named parameters gives isomorphic composite quotients.
+- Providing two interpretations alone leaves the bi-interpretation record incomplete until both definable composite maps are supplied.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, Theorems 1.1–1.2, pp.1–4; §5, Facts 5.2 and final proof, pp.16–18 (arXiv v2).)
+(Wilfrid Hodges, *Model Theory*, §5.3, interpretations and composition.)
 
-*Needs:* [0.1 Interpretations on definable quotients](#ld0-interpretation); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
-
-<a id="ld0-biinterpretation-transitivity"></a>
+*Needs:* [0.1 Interpretations on definable quotients](#01-interpretations-on-definable-quotients); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations).
 
 ### 0.4 Transitivity of parametric bi-interpretability
 
@@ -164,11 +212,9 @@ Parametric bi-interpretability is symmetric and transitive. If A and B, and B an
 
 Compose both forward and reverse quotient interpretations. Translate the middle composite comparison and compose with the outer comparison; do the same in the other ambient structure. This verifies the stronger definable-composite condition rather than merely two interpretations.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, Theorems 1.1–1.2, pp.1–4; §5, Facts 5.2 and final proof, pp.16–18 (arXiv v2).)
+(Wilfrid Hodges, *Model Theory*, §5.3, interpretations and composition.)
 
-*Needs:* [0.3 Parametric bi-interpretations](#ld0-biinterpretation); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
-
-<a id="ld0-fraction-interpretation"></a>
+*Needs:* [0.3 Parametric bi-interpretations](#03-parametric-bi-interpretations); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations).
 
 ### 0.5 Fraction fields as interpreted structures
 
@@ -178,23 +224,21 @@ Use the native fraction field universal property to identify the cross-multiplic
 
 The basic interface must include:
 
-- `fraction_interpretation.quotient_equiv`: The quotient is ring-isomorphic to Frac(R), sending [(a,b)] to a/b.
-- `fraction_interpretation.realize`: Translated ring formulas agree with realization in the native fraction field.
-- `fraction_interpretation.numerator_embed`: The interpretation of r∈R is the class of (r,1).
-- `fraction_interpretation.denominator_guard`: A representative is legal exactly when its denominator is nonzero.
+- The quotient is ring-isomorphic to Frac(R), sending [(a,b)] to a/b.
+- Translated ring formulas agree with realization in the native fraction field.
+- The interpretation of r∈R is the class of (r,1).
+- A representative is legal exactly when its denominator is nonzero.
 
 **Checks.**
 
-- `fraction_interpretation.Z_to_Q`: For R=ℤ the quotient is ℚ with the usual arithmetic.
-- `fraction_interpretation.zero_denominator`: The pair (1,0) is excluded even though cross multiplication alone would not define a fraction.
-- `fraction_interpretation.negative`: For R=ℤ, the class of (−1,2) plus that of (1,2) is zero; in a general domain the denominator requires 2≠0.
-- `fraction_interpretation.field`: When R is already a field, [(a,b)] corresponds to ab⁻¹ in R.
+- For R=ℤ the quotient is ℚ with the usual arithmetic.
+- The pair (1,0) is excluded even though cross multiplication alone would not define a fraction.
+- For R=ℤ, the class of (−1,2) plus that of (1,2) is zero; in a general domain the denominator requires 2≠0.
+- When R is already a field, [(a,b)] corresponds to ab⁻¹ in R.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, Theorems 1.1–1.2, pp.1–4; §5, Facts 5.2 and final proof, pp.16–18 (arXiv v2).)
+(Wilfrid Hodges, *Model Theory*, §5.3, interpretations and composition.)
 
-*Needs:* [0.1 Interpretations on definable quotients](#ld0-interpretation); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); Mathlib `IsFractionRing`.
-
-<a id="ld0-arithmetic-translation"></a>
+*Needs:* [0.1 Interpretations on definable quotients](#01-interpretations-on-definable-quotients); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); Mathlib `IsFractionRing`.
 
 ### 0.6 Explicit arithmetic semantics bridges
 
@@ -202,11 +246,9 @@ For every supplied interpretation of an arithmetic ring or field, translate its 
 
 Instantiate the interpretation semantics theorem with the native ring language and the appropriate quotient isomorphism. Keep parameter representatives in the formula; any algorithmic transfer additionally needs an effective syntax translation, as in Layer 4.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, Theorems 1.1–1.2, pp.1–4; §5, Facts 5.2 and final proof, pp.16–18 (arXiv v2).)
+(Wilfrid Hodges, *Model Theory*, §5.3, interpretations and composition.)
 
-*Needs:* [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); [0.5 Fraction fields as interpreted structures](#ld0-fraction-interpretation).
-
-<a id="ld0-arithmetic-ultrapower"></a>
+*Needs:* [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); [0.5 Fraction fields as interpreted structures](#05-fraction-fields-as-interpreted-structures).
 
 ### 0.7 A chosen nonstandard arithmetic extension
 
@@ -218,37 +260,21 @@ Apply native formula transfer to constant representative tuples to obtain elemen
 
 The basic interface must include:
 
-- `arithmetic_ultrapower.diagonal`: The diagonal map is elementary and injective in the fixed arithmetic language.
-- `arithmetic_ultrapower.oversized_index`: For every n∈ℕ, the index class H exceeds diagonal(n).
-- `arithmetic_ultrapower.formula_transfer`: A formula evaluated on representative sequences is true exactly on a U-large set.
-- `arithmetic_ultrapower.standard_residue`: For m>0, a class has a unique standard remainder r<m modulo diagonal(m), by finite partition and ultrafilter maximality.
+- The diagonal map is elementary and injective in the fixed arithmetic language.
+- For every n∈ℕ, the index class H exceeds diagonal(n).
+- A formula evaluated on representative sequences is true exactly on a U-large set.
+- For m>0, a class has a unique standard remainder r<m modulo diagonal(m), by finite partition and ultrafilter maximality.
 
 **Checks.**
 
-- `arithmetic_ultrapower.numeral`: The diagonal image of 2+3 equals that of 5.
-- `arithmetic_ultrapower.infinite`: H is not equal to the diagonal of any natural number.
-- `arithmetic_ultrapower.finite_partition`: Modulo 2, the class of the index sequence has precisely one of the two standard remainders, determined by U.
-- `arithmetic_ultrapower.principal`: A principal ultrafilter does not give an element larger than every standard n.
+- The diagonal image of 2+3 equals that of 5.
+- H is not equal to the diagonal of any natural number.
+- Modulo 2, the class of the index sequence has precisely one of the two standard remainders, determined by U.
+- A principal ultrafilter does not give an element larger than every standard n.
 
-([Mathlib contributors, *Native ultraproduct structures and Łoś transfer*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/ModelTheory/Ultraproducts.lean), Ultraproduct.realize_formula_cast and sentence_realize at the pinned commit.)
+([Mathlib contributors, *Native ultraproduct structures and Łoś transfer*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/ModelTheory/Ultraproducts.lean), Ultraproduct.realize_formula_cast and sentence_realize at the pinned commit.)
 
 *Needs:* Mathlib `FirstOrder.Language.Ultraproduct.realize_formula_cast`; Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`.
-
-<a id="ld0-standard-part-interface"></a>
-
-### 0.8 Standard parts with explicit domains
-
-On finite native hyperreals, the native standard part is the unique real infinitesimally close to the input, preserves addition and multiplication on that finite subring, and fixes embedded reals. The native total function has default values outside this domain: stdPart(omega)=0 does not make omega infinitesimally close to zero. For the chosen arithmetic ultrapower use standard remainders modulo each fixed positive integer instead. No global ring retraction *ℕ→ℕ is asserted; any comparison to native hyperreals requires a same-ultrafilter adapter.
-
-Compare the chosen ultrapower convention to the native hyperreal construction only after choosing the same ultrafilter or an explicit comparison map. Use existing finite-domain standard-part laws, with finiteness hypotheses on both inputs; use finite partitions, rather than real completeness, for arithmetic residue shadows.
-
-Every occurrence of a real standard part has a finiteness proof. An infinite arithmetic element is handled by finite quotients, and is never declared finite.
-
-Prove an explicit same-ultrafilter realization before comparing the arithmetic ultrapower to the native hyperreal type. A different fixed nonprincipal ultrafilter does not supply a canonical identification. The existing standard-part laws apply only after this adapter and the finiteness condition are established.
-
-([Mathlib contributors, *Native hyperreal and finite-domain standard part*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Analysis/Real/Hyperreal.lean), Mathlib/Algebra/Order/Ring/StandardPart.lean: stdPart_add, stdPart_mul and mk_sub_pos_iff; Hyperreal.stdPart_coe and stdPart_omega, at the pin.)
-
-*Needs:* [0.7 A chosen nonstandard arithmetic extension](#ld0-arithmetic-ultrapower); Mathlib `ArchimedeanClass.stdPart`; Mathlib `Hyperreal.stdPart_coe`; Mathlib `Hyperreal.stdPart_omega`; Mathlib `ArchimedeanClass.stdPart_add`; Mathlib `ArchimedeanClass.stdPart_mul`; Mathlib `ArchimedeanClass.mk_sub_pos_iff`.
 
 ### Examples
 
@@ -256,107 +282,101 @@ In the fraction interpretation of ℤ, (1,2) and (2,4) give the same rational, a
 
 ### Dependencies
 
-Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `Set.Definable`; Mathlib `IsFractionRing`; Mathlib `FirstOrder.Language.Ultraproduct.realize_formula_cast`; Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`; Mathlib `ArchimedeanClass.stdPart`; Mathlib `Hyperreal.stdPart_coe`; Mathlib `Hyperreal.stdPart_omega`; Mathlib `ArchimedeanClass.stdPart_add`; Mathlib `ArchimedeanClass.stdPart_mul`; Mathlib `ArchimedeanClass.mk_sub_pos_iff`.
+Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `Set.Definable`; Mathlib `IsFractionRing`; Mathlib `FirstOrder.Language.Ultraproduct.realize_formula_cast`; Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`.
 
 ## Layer 1: valued-field languages and prime divisors
 
 Build the three-sorted adapter and its chosen angular components, then relative valued-field elimination and transfer. The arithmetic valuation branch uses finite transcendence degree and actual ordered groups, including higher-rank henselian extensions.
 
-<a id="ld1-denef-pas-language"></a>
-
 ### 1.1 The Denef–Pas language
 
-Use a tagged disjoint union of the valued-field, residue-field and value-group carriers to encode a three-sorted language in native first-order syntax. The first two sorts have ring language; the third has Presburger +,−,0,1,≤ and congruences modulo every positive integer. Cross-sort symbols are ord:VF×→VG and ac:VF→RF; a total ord on VF is allowed only with a specified value at 0 and every genuine valuation comparison guarded against 0. Quantifiers are relativized to their named sort. Coefficients and extra constants are recorded by a parameter diagram.
+Use a tagged disjoint union of the valued-field, residue-field and value-group carriers to encode a three-sorted language in native first-order syntax. The first two sorts have ring language; the third has any fixed expansion L_Ord of the ordered abelian group language +,−,0,≤, and RF may have any fixed expansion L_Res of rings. The specialization for Layers 2–3 uses a ℤ-group in Presburger language, with 1 and congruences modulo positive integers. Cross-sort symbols are ord:VF×→VG and ac:VF→RF; a total ord on VF is allowed only with a specified value at 0 and every genuine valuation comparison guarded against 0. Quantifiers are relativized to their named sort. Coefficients and extra constants are recorded by a parameter diagram.
 
 Tag each carrier and add sort predicates, with disjointness and exhaustiveness axioms. Totalize irrelevant symbol inputs by fixed tagged zeros, and guard every translated atom. Induct on sorted formulas to prove equivalence between sorted semantics and the tagged native semantics; changing the off-sort totalization leaves sorted truth unchanged.
 
 The basic interface must include:
 
-- `denef_pas_language.sort_realize`: A sorted quantifier ranges over exactly its tagged carrier in the native encoding.
-- `denef_pas_language.ring_reduct`: VF and RF reducts agree with the native ring language on correctly sorted tuples.
-- `denef_pas_language.zero_guard`: An atom ord(x)=γ used as a nonzero valuation assertion includes x≠0.
-- `denef_pas_language.parameters`: Named coefficient maps and their residue interpretations are preserved by the syntax translation.
+- A sorted quantifier ranges over exactly its tagged carrier in the native encoding.
+- VF and RF reducts agree with the native ring language on correctly sorted tuples.
+- An atom ord(x)=γ used as a nonzero valuation assertion includes x≠0.
+- Named coefficient maps and their residue interpretations are preserved by the syntax translation.
 
 **Checks.**
 
-- `denef_pas_language.mixed_sort`: The expression ac(ξ) for a residue-field variable ξ is rejected by the sorted syntax.
-- `denef_pas_language.zero_order`: Changing the chosen total value ord(0) cannot change the truth of a guarded sorted formula.
-- `denef_pas_language.congruence`: In the value sort, γ≡1 mod 2 holds at γ=3 and fails at γ=2.
-- `denef_pas_language.residue_only`: A residue-field sentence translates to that ring sentence on RF, with no VF witnesses.
+- The expression ac(ξ) for a residue-field variable ξ is rejected by the sorted syntax.
+- Changing the chosen total value ord(0) cannot change the truth of a guarded sorted formula.
+- In the value sort, γ≡1 mod 2 holds at γ=3 and fails at γ=2.
+- A residue-field sentence translates to that ring sentence on RF, with no VF witnesses.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §2.1, Theorem 2.1.1 and Corollary 2.1.2, author pp.8–10 (Theorem p.9, Corollary p.10).)
 
-*Needs:* Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `FirstOrder.Language.ring`; [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
-
-<a id="ld1-angular-component"></a>
+*Needs:* Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `FirstOrder.Language.ring`; [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations).
 
 ### 1.2 Angular components and valued structures
 
-A Denef–Pas valued structure consists of a nontrivially valued henselian field K, its native valuation subring O, residue field k, a chosen surjective additive normalization ord:K×→Γ with Γ≡ℤ in Presburger language, and a map ac:K→k satisfying ac(0)=0, ac(xy)=ac(x)ac(y), and ac(u)=res(u) for units u∈O. On nonzero inputs ac takes values in k×. This is additional structure, not a canonical map supplied by every valued field.
+A Denef–Pas valued structure consists of a henselian valued field K, its native valuation subring O, residue field k, a chosen surjective additive valuation ord:K×→Γ with arbitrary ordered abelian Γ and fixed expansions L_Res,L_Ord, and a map ac:K→k satisfying ac(0)=0, ac(xy)=ac(x)ac(y), and ac(u)=res(u) for units u∈O. On nonzero inputs ac takes values in k×. This is additional structure, not a canonical map supplied by every valued field.
 
 Compare O and its residue quotient to native ValuationSubring and IsLocalRing.ResidueField. Convert the native multiplicative valuation convention to the chosen additive normalization explicitly. For a discretely valued field with chosen uniformizer π, define ac(x)=res(π^(−ord x)x) for x≠0; verify its laws using the unit factor and set ac(0)=0.
 
 The basic interface must include:
 
-- `angular_component.unit`: On valuation-ring units, ac is exactly the native residue map.
-- `angular_component.multiplicative`: ac(xy)=ac(x)ac(y), including zero inputs.
-- `angular_component.uniformizer`: For the uniformizer-defined ac, ac(π)=1 and ac(π^n u)=res(u).
-- `angular_component.change_uniformizer`: Replacing π by ε π multiplies the nonzero angular component by res(ε)^(−ord x); formulas cannot ignore this choice.
+- On valuation-ring units, ac is exactly the native residue map.
+- ac(xy)=ac(x)ac(y), including zero inputs.
+- For the uniformizer-defined ac, ac(π)=1 and ac(π^n u)=res(u).
+- Replacing π by ε π multiplies the nonzero angular component by res(ε)^(−ord x); formulas cannot ignore this choice.
 
 **Checks.**
 
-- `angular_component.zero`: ac(0)=0, whereas ac(1)=1.
-- `angular_component.Laurent`: In k((t)) with π=t, ac(t³(2+t))=2 when 2≠0 in k, and ord is 3.
-- `angular_component.unit`: For every unit u of O, the new ac agrees with the native residue map.
-- `angular_component.choice`: Choosing π′=ε π with res ε≠1 changes ac(π) to (res ε)⁻¹.
+- ac(0)=0, whereas ac(1)=1.
+- In k((t)) with π=t, ac(t³(2+t))=2 when 2≠0 in k, and ord is 3.
+- For every unit u of O, the new ac agrees with the native residue map.
+- Choosing π′=ε π with res ε≠1 changes ac(π) to (res ε)⁻¹.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §2.1, Theorem 2.1.1 and Corollary 2.1.2, author pp.8–10 (Theorem p.9, Corollary p.10).)
 
-*Needs:* [1.1 The Denef–Pas language](#ld1-denef-pas-language); Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; Mathlib `HenselianLocalRing`.
-
-<a id="ld1-valued-field-qe"></a>
+*Needs:* [1.1 The Denef–Pas language](#11-the-denefpas-language); Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; Mathlib `HenselianLocalRing`.
 
 ### 1.3 Relative elimination of valued-field quantifiers
 
-Over henselian Denef–Pas structures of characteristic (0,0), every formula is equivalent, uniformly in such structures, to a finite disjunction of a residue-field formula in ac(f_i(x)) and RF variables, conjoined with a Presburger formula in ord(f_i(x)) and VG variables, with all zero cases separated. Here f_i are finitely many VF polynomials with the named coefficients. RF and VG quantifiers may remain. For a definable parameter base S, the corresponding relative form holds over its parameter diagram.
+Over H_ac,0, the henselian ac-valued structures of residue characteristic zero with arbitrary ordered abelian value group and fixed expansions L_Res,L_Ord, every formula is equivalent, uniformly in such structures, to a finite disjunction of a residue-field formula in ac(f_i(x)) and RF variables, conjoined with an L_Ord-formula in ord(f_i(x)) and VG variables, with all zero cases separated. Here f_i are finitely many VF polynomials with the named coefficients. RF and VG quantifiers may remain. For a definable parameter base S, the corresponding relative form holds over its parameter diagram.
 
 Prepare the finite polynomial family by induction on degree, refining cells prepared for the derivative family. Partition according to which Taylor terms have least valuation. A unique least term determines the order and angular component. If several least terms cancel, residue characteristic zero makes the relevant integer derivatives units; the henselian root lemma supplies a unique new centre in the prescribed order/angular-component ball. Prove that centre strongly definable using the lower-degree preparation, then recenter so that the linear Taylor term controls the remaining cell. Record each polynomial's angular component by an additional residue parameter. Relative elimination follows by applying this simultaneous preparation to one valued-field quantifier: the fibre's existence conditions are now RF/VG formulas. Separate f_i=0 from nonzero valuation atoms, distribute finite Boolean combinations, and retain RF/VG quantifiers. The parameter form follows by naming the parameter tuple and using its diagram.
 
 The theorem does not assert elimination of residue-field quantifiers. No mixed-characteristic field ℚ_p satisfies the characteristic-(0,0) hypothesis. The parameter diagram preserves the chosen coefficient and angular-component data.
 
-Cluckers–Loeser gives the precise relative elimination statement. The preparation and proof source is Pas 1989, Theorem 3.2, pp.142–143, with proof in §§3.6–3.8, pp.144–155, and Theorem 4.1 and proof, pp.155–157. Its hypotheses are in §2.4, p.140; the henselian root and definable-centre steps are Lemmas 3.5 and 3.7, pp.143–144 and 151–154. Pas uses a value group with ∞ for zero; the guarded presentation above must preserve that case when translating to the integer sort.
+**Checks.**
+
+- The Hahn field ℂ((t^ℚ)) has residue ℂ, value group ℚ and leading-coefficient angular component. Its value group is divisible, so it is included here although it is not a ℤ-group.
+- For ℂ((t)), ord(t³(2+t))=3 and ac(t³(2+t))=2; this also belongs to the Presburger specialization.
+- ℚ₂ has residue characteristic 2, so it is outside H_ac,0; the fixed-prime theorems of Layer 2 apply to it.
+
+Cluckers–Loeser gives the precise relative elimination statement. The preparation and proof source is Pas 1989, Theorem 3.2, pp.142–143, with proof in §§3.6–3.8, pp.144–155, and Theorem 4.1 and proof, pp.155–157. Its hypotheses are in §2.4, p.140; the henselian root and definable-centre steps are Lemmas 3.5 and 3.7, pp.143–144 and 151–154. Pas uses a value group with ∞ for zero; the guarded presentation above must preserve that case when translating to the ordered-group sort.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §2.1, Theorem 2.1.1 and Corollary 2.1.2, author pp.8–10 (Theorem p.9, Corollary p.10).)
 
-*Needs:* [1.1 The Denef–Pas language](#ld1-denef-pas-language); [1.2 Angular components and valued structures](#ld1-angular-component).
-
-<a id="ld1-ake-equichar-zero"></a>
+*Needs:* [1.1 The Denef–Pas language](#11-the-denefpas-language); [1.2 Angular components and valued structures](#12-angular-components-and-valued-structures).
 
 ### 1.4 Ax–Kochen–Ershov in the selected language
 
-For the equicharacteristic-zero henselian ac-valued structures of valued-field-qe, elementary equivalence of their residue fields and of their Presburger value groups, compatibly with all named coefficient data, implies elementary equivalence of their Denef–Pas structures. The reduct conclusion is a source-scoped AKE principle; no assertion is made for arbitrary imperfect residue fields or for all mixed-characteristic henselian fields.
+For the H_ac,0 structures of §1.3, elementary equivalence of their L_Res residue fields and of their L_Ord value groups, compatibly with all named coefficient data, implies elementary equivalence of their Denef–Pas structures. The reduct conclusion is a source-scoped AKE principle; no assertion is made for arbitrary imperfect residue fields or for all mixed-characteristic henselian fields.
 
 A sentence in the VF-quantifier-free normal form has only RF and VG truth data once its coefficient diagram is fixed. Apply the two elementary equivalences to each finite disjunct. State the coefficient-free special case separately from any relative version.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §2.1, Theorem 2.1.1 and Corollary 2.1.2, author pp.8–10 (Theorem p.9, Corollary p.10).)
 
-*Needs:* [1.3 Relative elimination of valued-field quantifiers](#ld1-valued-field-qe); Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`.
-
-<a id="ld1-almost-all-transfer"></a>
+*Needs:* [1.3 Relative elimination of valued-field quantifiers](#13-relative-elimination-of-valued-field-quantifiers); Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`.
 
 ### 1.5 Finite-formula transfer for large residue characteristic
 
-For a fixed sentence in the coefficient-free Denef–Pas language, its truth in sufficiently large residue-characteristic local fields is determined by the isomorphism class of the residue field, provided the two fields carry the stipulated ac and Presburger structures. There exists a bound N depending on that sentence; this gives the same truth for ℚ_p and ℤ/pℤ((t)) for all sufficiently large primes p. The assertion is eventual, with no claimed effective or uniform-in-all-formulas N.
+For a fixed sentence in the coefficient-free Denef–Pas language, its truth in sufficiently large residue-characteristic local fields is determined by the isomorphism class of the residue field, provided the two fields carry the stipulated ac and Presburger structures. There exists a bound N depending on that sentence; this gives the same truth for ℚ_p and ℤ/pℤ((t)) for all sufficiently large primes p. The assertion is eventual, with no claimed effective or uniform-in-all-formulas N. The ring-language headline is `ax_kochen_ring` in Suggested.lean.
 
 Assume infinitely many counterexamples with residue characteristics tending to infinity. Choose a nonprincipal ultrafilter on them. The ultraproducts have characteristic (0,0), henselian valuation rings, compatible residue fields and Presburger groups. Apply AKE and native Łoś to contradict the differing fixed sentence. A contradiction to unbounded counterexamples produces an existential finite exceptional set; it does not supply its numerical elements.
 
-The bound depends on a fixed sentence. Small residue characteristics remain excluded unless a separate proof treats them.
+The bound depends on a fixed sentence. This logical transfer assertion is eventual; the fixed-prime integration results of Layer 2 have no such exclusion.
 
 ([Raf Cluckers and François Loeser, *Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022), §9.2, Proposition 9.2.1 and its proof, author pp.44–46; cf. the integral transfer in Theorem 9.2.4, p.46.)
 
-*Needs:* [1.4 Ax–Kochen–Ershov in the selected language](#ld1-ake-equichar-zero); Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`.
-
-<a id="ld1-kronecker-dimension"></a>
+*Needs:* [1.4 Ax–Kochen–Ershov in the selected language](#14-axkochenershov-in-the-selected-language); Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`.
 
 ### 1.6 Kronecker dimension
 
@@ -366,36 +386,20 @@ Take the finite natural value of the native transcendence degree and add the cha
 
 The basic interface must include:
 
-- `kronecker_dimension.char_zero`: In characteristic zero, dim_Kr K=trdeg_ℚ K+1.
-- `kronecker_dimension.char_pos`: In characteristic p>0, dim_Kr K=trdeg_𝔽_p K.
-- `kronecker_dimension.algebraic`: An algebraic extension of fields of finite absolute transcendence degree preserves dim_Kr.
-- `kronecker_dimension.iso`: Field isomorphisms preserve Kronecker dimension.
+- In characteristic zero, dim_Kr K=trdeg_ℚ K+1.
+- In characteristic p>0, dim_Kr K=trdeg_𝔽_p K.
+- An algebraic extension of fields of finite absolute transcendence degree preserves dim_Kr.
+- Field isomorphisms preserve Kronecker dimension.
 
 **Checks.**
 
-- `kronecker_dimension.finite`: Every finite field has dimension 0.
-- `kronecker_dimension.global`: ℚ and 𝔽_p(t) both have dimension 1.
-- `kronecker_dimension.offset`: ℚ(t) has dimension 2, whereas 𝔽_p(t) has dimension 1.
+- Every finite field has dimension 0.
+- ℚ and 𝔽_p(t) both have dimension 1.
+- ℚ(t) has dimension 2, whereas 𝔽_p(t) has dimension 1.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, p.1; Proposition 3.2(3), pp.6–7.)
+([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, p.1, definition of Kronecker dimension.)
 
 *Needs:* Mathlib `Algebra.trdeg`; Mathlib `Subfield.bot_eq_of_charZero`; Mathlib `Subfield.bot_eq_of_zMod_algebra`.
-
-<a id="ld1-constant-field-classification"></a>
-
-### 1.7 Constants of finitely generated fields
-
-Use the native relative algebraic closure of the prime subfield in K as its constant field. If K is finitely generated as a field over its prime field, that constant field is finite in positive characteristic and a number field in characteristic zero. Field finite generation also gives K as the fraction field of an integral domain finitely generated over the prime ring, after adjoining inverses of finitely many denominators. This does not say that K is finitely generated as a ℤ-algebra.
-
-Choose a finite transcendence basis and a finite algebraic generating tuple; its algebraic constant subextension has finite degree over the prime field. Clear finitely many coefficients and denominators in generators and minimal polynomials. The resulting finite-type domain has fraction field K.
-
-ℚ is field-finitely-generated but is not a finite-type ℤ-algebra. The constants in ℚ(√2)(t) are ℚ(√2), not merely ℚ.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, p.1; §3, Proposition 3.2 and its setup, pp.5–7.)
-
-*Needs:* [1.6 Kronecker dimension](#ld1-kronecker-dimension); Mathlib `IntermediateField.FG`.
-
-<a id="ld1-prime-divisor"></a>
 
 ### 1.8 Geometric and arithmetic prime divisors
 
@@ -405,23 +409,21 @@ Bundle the native valuation subring and the nontriviality, discreteness and resi
 
 The basic interface must include:
 
-- `prime_divisor.residue_dim`: The residue Kronecker dimension is exactly one smaller.
-- `prime_divisor.equivalent`: Equivalent valuations determine the same divisor data on their common valuation ring.
-- `prime_divisor.geometric`: Geometric is equality of field and residue characteristics.
-- `prime_divisor.arithmetic`: Arithmetic is the complementary residue-characteristic drop for a divisor.
+- The residue Kronecker dimension is exactly one smaller.
+- Equivalent valuations determine the same divisor data on their common valuation ring.
+- Geometric is equality of field and residue characteristics.
+- Arithmetic is the complementary residue-characteristic drop for a divisor.
 
 **Checks.**
 
-- `prime_divisor.t_adic`: The t-adic valuation of 𝔽_p(t) is geometric.
-- `prime_divisor.p_adic`: The p-adic valuation of ℚ is arithmetic.
-- `prime_divisor.trivial`: The trivial valuation on K fails nontriviality and does not drop dimension.
-- `prime_divisor.nondiscrete`: The valuation on 𝔽_p(t^(1/p^∞)) with value group ℤ[1/p] is not a prime divisor of a finitely generated field.
+- The t-adic valuation of 𝔽_p(t) is geometric.
+- The p-adic valuation of ℚ is arithmetic.
+- The trivial valuation on K fails nontriviality and does not drop dimension.
+- On 𝔽_p(s,t), the monomial valuation v(s)=1, v(t)=√2 has value group ℤ+√2ℤ and residue 𝔽_p. Its group is not cyclic and its residue satisfies 0+1≠2, so it is not a prime divisor despite finite generation of the field.
 
 ([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, p.2 before hypothesis (H_d).)
 
-*Needs:* [1.6 Kronecker dimension](#ld1-kronecker-dimension); Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`.
-
-<a id="ld1-divisorial-discreteness"></a>
+*Needs:* [1.6 Kronecker dimension](#16-kronecker-dimension); Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`.
 
 ### 1.9 Residue dimension detects divisorial valuations
 
@@ -433,51 +435,35 @@ No hypothesis assumes the value group is already cyclic. The infinite purely ins
 
 Use dim_Kr(Kv)+1=dim_Kr(K), together with the finite-generation hypotheses, as the exact dimension equality. A formula using truncated natural subtraction alone accepts the trivial valuation of a finite field and is therefore unsuitable.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, p.2, Engler–Prestel Theorem 3.4.3 citation; direct finite-basis proof specified here.)
+([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §1, p.2, residue-dimension characterization; direct finite-basis proof specified here.)
 
-*Needs:* [1.6 Kronecker dimension](#ld1-kronecker-dimension); [1.8 Geometric and arithmetic prime divisors](#ld1-prime-divisor); Mathlib `ValuationSubring`.
-
-<a id="ld1-valuation-dimension-drop"></a>
-
-### 1.10 Kronecker dimension drops under valuation
-
-For any field K of finite absolute transcendence degree and any nontrivial valuation v, dim_Kr(Kv)<dim_Kr K. This includes non-discrete valuations and fields that are not finitely generated. In characteristic (0,0), a henselian coefficient-field route is allowed only after its existence theorem is supplied; the direct residue-lift proof avoids that extra input.
-
-In equal characteristic the prime field is trivially valued; lift any finite algebraically independent residue tuple to units. Its rational subfield is trivially valued, and an element of positive value is transcendental over it by the unique-smallest-value argument. In mixed characteristic the lifted residue tuple is algebraically independent over ℚ: divide any polynomial relation by a coefficient of least p-adic valuation and reduce to a nonzero polynomial over 𝔽_p. The characteristic offset supplies the strict inequality. Apply these finite-tuple inequalities to the finite absolute transcendence degrees. No completion, discreteness, or coefficient field is needed.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Proposition 3.2(3), proof p.7 (arXiv v2).)
-
-*Needs:* [1.6 Kronecker dimension](#ld1-kronecker-dimension); Mathlib `ValuationSubring`.
-
-<a id="ld1-henselization"></a>
+*Needs:* [1.6 Kronecker dimension](#16-kronecker-dimension); [1.8 Geometric and arithmetic prime divisors](#18-geometric-and-arithmetic-prime-divisors); Mathlib `ValuationSubring`.
 
 ### 1.11 Henselizations with valuation embeddings
 
 For a field F with a chosen valuation subring O, construct a chosen henselization F^h with a valuation-preserving embedding F→F^h, separable algebraic and immediate, initial among valuation-preserving embeddings into henselian valued extensions. Its residue field and value group identify with those of F. A completion is a different object and is not used as this construction.
 
-Take the henselization O→O^h of the local ring O and put F^h=Frac(O^h). O^h is henselian, a filtered colimit of étale O-algebras with maximal ideal generated by that of O and the same residue field (Stacks, Lemma 10.155.1, tag 04GN); for a valuation ring, O⊂O^h is an extension of valuation rings inducing a bijection on value groups (Stacks, Lemma 15.125.6, tag 0ASK). Étale algebras over O have separable algebraic generic fibres, so F^h/F is separable algebraic. A local homomorphism from O to a henselian local ring factors uniquely through O^h (Stacks, Lemma 10.155.6, tag 04GS, applied with S=S^h), which is the initial valued-embedding property; the decomposition-field description (fixed field of the decomposition group of an extension of the valuation to F^sep) is an equivalent presentation and is not needed. No rank hypothesis enters.
+Use the henselization O→O^h of the local ring from TauCetiRoadmap.SchemeAndStackFoundations §§0.12–0.14 and put F^h=Frac(O^h). The additional target is the arbitrary-rank valued-field comparison, including immediacy. O^h is henselian, a filtered colimit of étale O-algebras with maximal ideal generated by that of O and the same residue field (Stacks, Lemma 10.155.1, tag 04GN); for a valuation ring, O⊂O^h is an extension of valuation rings inducing a bijection on value groups (Stacks, Lemma 15.125.6, tag 0ASK). Étale algebras over O have separable algebraic generic fibres, so F^h/F is separable algebraic. A local homomorphism from O to a henselian local ring factors uniquely through O^h (Stacks, Lemma 10.155.6, tag 04GS, applied with S=S^h), which is the initial valued-embedding property; the decomposition-field description (fixed field of the decomposition group of an extension of the valuation to F^sep) is an equivalent presentation and is not needed. No rank hypothesis enters.
 
 The basic interface must include:
 
-- `henselization.embed`: F embeds as a valued subfield of F^h.
-- `henselization.immediate`: Residue field and actual value group are unchanged.
-- `henselization.lift`: Every valued embedding from F into a henselian valued extension extends uniquely through F^h.
-- `henselization.already_henselian`: If O is already henselian, its henselization is canonically isomorphic as a valued F-field.
+- F embeds as a valued subfield of F^h.
+- Residue field and actual value group are unchanged.
+- Every valued embedding from F into a henselian valued extension extends uniquely through F^h.
+- If O is already henselian, its henselization is canonically isomorphic as a valued F-field.
 
 **Checks.**
 
-- `henselization.henselian_field`: A complete discretely valued field compares isomorphically with its henselization.
-- `henselization.not_completion`: The henselization of ℚ at p is algebraic over ℚ, whereas ℚ_p is not algebraic over ℚ.
-- `henselization.immediate`: Neither the residue field nor value group gains elements in F^h.
-- `henselization.trivial`: For the trivial valuation, a field is already henselian and its henselization is itself.
+- A complete discretely valued field compares isomorphically with its henselization.
+- The henselization of ℚ at p is algebraic over ℚ, whereas ℚ_p is not algebraic over ℚ.
+- Neither the residue field nor value group gains elements in F^h.
+- For the trivial valuation, a field is already henselian and its henselization is itself.
 
 Existence, separability, immediacy and the initial valued-embedding property hold at arbitrary rank by the cited lemmas; Dittmann–Pop invoke this theory without reproving it. A completion cannot discharge this target: it is not algebraic over F.
 
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), §2(b); Proposition 3.2 and Lemma 3.9, pp.5–7,11–12; [The Stacks project](https://stacks.math.columbia.edu/tag/0BSK), Lemmas 10.155.1 and 10.155.6 (tags 04GN, 04GS) and [Lemma 15.125.6](https://stacks.math.columbia.edu/tag/0ASK) (tag 0ASK).)
+([The Stacks project](https://stacks.math.columbia.edu/tag/04GN), Lemmas 10.155.1 and 10.155.6 (tags 04GN, 04GS) and [Lemma 15.125.6](https://stacks.math.columbia.edu/tag/0ASK) (tag 0ASK).)
 
-*Needs:* Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; Mathlib `HenselianLocalRing`.
-
-<a id="ld1-patch-field-dictionary"></a>
+*Needs:* TauCetiRoadmap.SchemeAndStackFoundations §§0.12–0.14; Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; Mathlib `HenselianLocalRing`.
 
 ### 1.12 Patch membership on valuation rings
 
@@ -489,74 +475,6 @@ Use Φ(O)=ofValuation(O.valuation). Native `ValuationSubring.valuation_le_one_if
 
 *Needs:* Mathlib `ValuationSubring`; [TauCetiRoadmap.AdicSpaces, layer 1 valuation spectra and continuous valuations](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AdicSpaces/README.md#layer-1-valuation-spectra-and-continuous-valuations).
 
-<a id="ld1-henselian-simple-generator"></a>
-
-### 1.13 A simple-reduction generator in a henselization
-
-If E/F is a finite subextension of the henselization for a fixed valuation w, choose an integral primitive element η for E/F whose monic minimal polynomial has η reducing to 1 at the distinguished prolongation and has simple root 1 in its reduction. The coefficient and simple-root conditions can be enforced by finitely many valuation-ring membership and unit conditions.
-
-Pass to finite normal closure and track the finitely many primes above the chosen valuation prime. The henselization embedding selects a decomposition orbit. Use the finite-prime Chinese remainder construction to choose an element with residue 1 at the selected prime and 0 at the others, then arrange primitivity. The conjugate polynomial reduces as X^(n−1)(X−1) at the selected prime, so 1 is simple. Translate integral coefficients and derivative-unit conditions into a finite clopen neighborhood.
-
-The required simple-reduction generator is stronger than an arbitrary primitive element. Apply Kuhlmann–Novacoski Theorem 1.2 to the valuation ring and the chosen finite subextension of the henselization, which lies in the absolute inertia field. In the proof's CRT construction take the residue generator to be 1, since this residue extension is trivial. Lemmas 3.2–3.3 identify the distinguished conjugate and force every other conjugate to reduce to 0; the distinct conjugates certify primitivity. This gives the stated reduction, including degree one. It uses no rank-one or discreteness assumption.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Lemma 3.9(1), pp.11–12; [Franz-Viktor Kuhlmann and Josnei Novacoski, *Henselian elements*](https://www.fvkuhlmann.de/Henselt.pdf), Theorem 1.2, p.2; Definition 3.1 and Lemmas 3.2–3.3, pp.9–11; proof of Theorem 1.2, p.11.)
-
-*Needs:* [1.11 Henselizations with valuation embeddings](#ld1-henselization); [1.12 Patch membership on valuation rings](#ld1-patch-field-dictionary).
-
-<a id="ld1-henselian-embedding-open"></a>
-
-### 1.14 Henselian embeddability is patch open
-
-For a finite extension E/F, the set of valuations w of F for which E admits a valuation-compatible F-embedding into the chosen w-henselization is open in the patch topology. Near any such w, a monic primitive polynomial with an integral simple residue root gives a finite clopen neighborhood contained in that set.
-
-Use henselian-simple-generator at a point w in the locus. Impose the finitely many coefficient-integrality, root-congruence and derivative-unit conditions. At every valuation in that clopen neighborhood, native HenselianLocalRing lifting gives a root in its henselization. Primitivity identifies an F-embedding of E.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Lemma 3.9(1), pp.11–12.)
-
-*Needs:* [1.13 A simple-reduction generator in a henselization](#ld1-henselian-simple-generator); [1.12 Patch membership on valuation rings](#ld1-patch-field-dictionary); [1.11 Henselizations with valuation embeddings](#ld1-henselization); Mathlib `HenselianLocalRing`.
-
-<a id="ld1-coarsening-prime"></a>
-
-### 1.15 Coarsening from an infinitely large coefficient
-
-Let w:F×→Γ be an additive valuation, a_d∈F×, d=w(a_d)>0, and assume 0≤w(a_i) and Nw(a_i)<d for every positive integer N and each nonzero lower coefficient a_i. Put Δ={γ∈Γ: N|γ|<d for every N>0} and p={0}∪{x∈O_w∖{0}: d≤Nw(x) for some N>0}. Then Δ is convex, p is prime, a_d∈p and every nonzero lower coefficient a_i is outside p. The coarsening by Γ/Δ has ring (O_w)_p. Compare to the current native coarsening interface, retaining Γ rather than imposing rank one.
-
-Closure and convexity of Δ follow by applying the bound with 2N to each summand; the domination hypotheses put lower coefficients in Δ and d outside it. For nonnegative values, membership outside Δ is the displayed existential cut. Valuation inequalities prove ideal closure, and if neither value crosses the cut then neither does their sum, proving primality. The quotient valuation ring equals localization at p: values in Δ become units, and the ordered quotient has nonnegative image exactly when a denominator outside p clears the original value. Reuse current coarsenByUnits rather than reconstructing it.
-
-The basic interface must include:
-
-- `coarsening_prime.prime`: The displayed existential valuation cut is prime; the distinguished coefficient lies in it and lower coefficients do not.
-- `coarsening_prime.ring`: The coarsened valuation ring is O_w localized at that prime, using the actual value group.
-- `coarsening_prime.inclusion`: O_w is contained in the coarser valuation ring; the inclusion points toward coarsening.
-- `coarsening_prime.units`: Elements in the killed convex subgroup become units in the coarsened valuation ring.
-
-**Checks.**
-
-- `coarsening_prime.rank_two`: For lexicographic ℤ², quotienting the smaller convex subgroup yields the first-coordinate valuation.
-- `coarsening_prime.direction`: The coarsened valuation ring contains the original ring; reversing this inclusion fails on a rank-two example.
-- `coarsening_prime.zero_lower_coefficient`: A zero lower coefficient belongs to p, so the outside-p conclusion is restricted to nonzero lower coefficients.
-- `coarsening_prime.infinitesimal_lower_value`: For lexicographic ℤ² with d=(1,0) and a lower coefficient of value (0,1), every positive multiple of the lower value is below d, and the lower coefficient becomes a unit after coarsening.
-
-Only the cut, convex-subgroup identification and valuation-ring localization comparison are new here; the general quotient coarsening is the existing import identified under Scope and ownership. Prove the comparison without assuming the ordered group is archimedean or integer-valued.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Proposition 3.10(a), p.13, and its prime-ideal construction.)
-
-*Needs:* Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; [1.12 Patch membership on valuation rings](#ld1-patch-field-dictionary).
-
-<a id="ld1-coarsening-henselian-inclusion"></a>
-
-### 1.16 Henselizations under valuation coarsening
-
-If w is finer than v on F, then under compatible choices inside a common separable closure, the v-henselization embeds as a valued F-subfield of the w-henselization. In particular the localization coarsening in Proposition 3.10 has the inclusion in this direction. The induced residual valuation must also be recorded when composing the places.
-
-A henselian valuation remains henselian after coarsening, so the w-henselization with the coarsened valuation is a henselian valued v-extension. Apply the initial property of the v-henselization and use compatible extensions in the separable closure to identify the embedding with inclusion.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Proposition 3.10(a), p.13.)
-
-*Needs:* [1.11 Henselizations with valuation embeddings](#ld1-henselization); [1.15 Coarsening from an infinitely large coefficient](#ld1-coarsening-prime).
-
-<a id="ld1-residue-interpretation"></a>
-
 ### 1.17 Residue fields of definable valuations
 
 If the valuation ring O⊂K is definable in the field K over a finite tuple a, interpret its residue field using D=O and E(x,y) iff x−y belongs to the maximal ideal, where m={x∈O:x=0 or x⁻¹∉O}. Ring operation graphs are induced from O. Parameters remain a; residue representatives are not selected.
@@ -565,23 +483,21 @@ Use the field formula for nonunits to define m, then translate quotient equality
 
 The basic interface must include:
 
-- `residue_interpretation.kernel`: Two integral elements have the same residue exactly when their difference is in m.
-- `residue_interpretation.native_residue`: The interpreted quotient is ring-isomorphic to the native residue field.
-- `residue_interpretation.translate`: A residue-field formula translates to a field formula on integral representatives.
-- `residue_interpretation.parameters`: The ring-defining tuple remains explicit in the interpreted residue language.
+- Two integral elements have the same residue exactly when their difference is in m.
+- The interpreted quotient is ring-isomorphic to the native residue field.
+- A residue-field formula translates to a field formula on integral representatives.
+- The ring-defining tuple remains explicit in the interpreted residue language.
 
 **Checks.**
 
-- `residue_interpretation.p_adic`: For the p-adic ring in ℚ, the interpreted residue field has p elements.
-- `residue_interpretation.unit`: The unit 1 does not lie in the kernel ideal.
-- `residue_interpretation.same_residue`: x and x+u have equal classes whenever u lies in m.
-- `residue_interpretation.no_section`: The construction works without a definable field section of the residue map.
+- For the p-adic ring in ℚ, the interpreted residue field has p elements.
+- The unit 1 does not lie in the kernel ideal.
+- x and x+u have equal classes whenever u lies in m.
+- The construction works without a definable field section of the residue map.
 
 ([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Fact 5.2, pp.16–17.)
 
-*Needs:* Mathlib `ValuationSubring`; [0.1 Interpretations on definable quotients](#ld0-interpretation); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
-
-<a id="ld1-composition-definability"></a>
+*Needs:* Mathlib `ValuationSubring`; [0.1 Interpretations on definable quotients](#01-interpretations-on-definable-quotients); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations).
 
 ### 1.18 Composite valuations are definable by translation
 
@@ -591,61 +507,19 @@ Translate the residual ring-membership formula through residue-interpretation, k
 
 ([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Fact 5.2, pp.16–17.)
 
-*Needs:* [1.17 Residue fields of definable valuations](#ld1-residue-interpretation); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); Mathlib `ValuationSubring`.
-
-<a id="ld1-maximal-geometric-flags"></a>
-
-### 1.19 Full-rank geometric flags
-
-Let K be finitely generated of characteristic zero and trdeg_ℚ K=e. A maximal chain of e geometric prime divisors gives a composite valuation with value group order-isomorphic to lexicographic ℤ^e and number-field final residue. Conversely construct such chains from a transcendence flag and prolongation to a finite extension. This family is named G_T here: the source W_T notation already denotes rank-one divisors and is not reused for the higher-rank composite.
-
-Choose successive variable-adic places of a rational subfield and prolong them through the finite extension. Each step has finite residue extension and discrete value group. Iterate the residue-dimension criterion. The successive value-group extensions split as abelian groups because each quotient is ℤ; the order is the flag lexicographic order. Final transcendence degree zero and finite generation give a number field. Keep rank-one and composite flags as different families.
-
-Call the composite family G_T and state its rank e; a length-e composite is not a member of the rank-one divisor family when e>1. In the avoidance step choose the nonzero residue-polynomial locus inside the torus (G_m)^e over the algebraic closure of the finite residue field. This supplies nonzero coordinates, hence roots of unity of order prime to the characteristic, before lifting (Dittmann–Pop §5, pp.16–17).
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Proposition 5.1 proof, p.16; Fact 5.2, pp.16–17.)
-
-*Needs:* [1.8 Geometric and arithmetic prime divisors](#ld1-prime-divisor); [1.9 Residue dimension detects divisorial valuations](#ld1-divisorial-discreteness); [1.18 Composite valuations are definable by translation](#ld1-composition-definability).
-
-<a id="ld1-quadratic-root-fields"></a>
-
-### 1.20 Auxiliary quadratic root fields
-
-For the nonzero parameters in Dittmann–Pop Notations 4.1(3), choose actual root fields F(α), F(β) with α²−α=a_d/θ² and β²−β=τ²/a_d. Use their separable minimal-polynomial factors and finite coordinate bases. Each extension may be trivial. Translate first-order ring formulas in these fields into F-formulas by their finite multiplication tables; never use F[X]/(X²−X−c) as a field when that polynomial is reducible.
-
-Separate degree one and degree two minimal polynomials. Represent elements in a basis and write equality and operations coordinatewise. For every quantified variable quantify its one or two coordinates. Transport each atomic formula by the multiplication table, then induct on formulas.
-
-The basic interface must include:
-
-- `quadratic_root_fields.root`: The selected root satisfies the specified Artin–Schreier-shaped quadratic equation.
-- `quadratic_root_fields.degree`: The actual root extension has degree 1 or 2; reducibility is handled by the degree-one branch.
-- `quadratic_root_fields.translate`: Coordinate translation preserves realization of every ring formula with transported parameters.
-- `quadratic_root_fields.basis_change`: Changing the finite basis gives equivalent translated formulas through its linear coordinate map.
-
-**Checks.**
-
-- `quadratic_root_fields.split`: For c=0 the chosen root field of X²−X is F, while its quotient algebra is F×F in every characteristic. In characteristic two its roots 0 and 1 are still distinct and its derivative is 1.
-- `quadratic_root_fields.nonsplit`: Over ℚ, a root of X²−X−1 gives a degree-two field.
-- `quadratic_root_fields.denominator`: The construction rejects θ=0 or a_d=0 where the displayed coefficients are undefined.
-- `quadratic_root_fields.semantics`: The translated assertion α²−α=c is true exactly because the chosen multiplication table satisfies its minimal polynomial.
-
-([Philip Dittmann and Florian Pop, *Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2), Notations 4.1(3)–(4), p.13; opening of §4.)
-
-*Needs:* Mathlib `FirstOrder.Language.ring`; [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
+*Needs:* [1.17 Residue fields of definable valuations](#117-residue-fields-of-definable-valuations); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); Mathlib `ValuationSubring`.
 
 ### Examples
 
-In a lexicographically ordered rank-two value group, d=(1,0) dominates every positive multiple of (0,1). Quotienting by the corresponding convex subgroup makes an element of value (0,1) a unit. The valuation ring grows under coarsening, and the coarser henselization embeds in the finer henselization. For k((t)), ac_t(t³(2+t))=2 when char k≠2; changing t to εt multiplies that angular component by res(ε)⁻³.
+For k((t)), ac_t(t³(2+t))=2 when char k≠2; changing t to εt multiplies that angular component by res(ε)⁻³.
 
 ### Dependencies
 
-Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `FirstOrder.Language.ring`; [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; Mathlib `HenselianLocalRing`; Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`; Mathlib `Algebra.trdeg`; Mathlib `Subfield.bot_eq_of_charZero`; Mathlib `Subfield.bot_eq_of_zMod_algebra`; Mathlib `IntermediateField.FG`; [TauCetiRoadmap.AdicSpaces, layer 1 valuation spectra and continuous valuations](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AdicSpaces/README.md#layer-1-valuation-spectra-and-continuous-valuations); [0.1 Interpretations on definable quotients](#ld0-interpretation).
+Mathlib `FirstOrder.Language`; Mathlib `FirstOrder.Language.Formula`; Mathlib `FirstOrder.Language.ring`; [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); Mathlib `ValuationSubring`; Mathlib `ValuationSubring.ValueGroup`; Mathlib `HenselianLocalRing`; Mathlib `FirstOrder.Language.Ultraproduct.sentence_realize`; Mathlib `FirstOrder.Language.Ultraproduct.«structure»`; Mathlib `Algebra.trdeg`; Mathlib `Subfield.bot_eq_of_charZero`; Mathlib `Subfield.bot_eq_of_zMod_algebra`; Mathlib `IntermediateField.FG`; [TauCetiRoadmap.AdicSpaces, layer 1 valuation spectra and continuous valuations](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/AdicSpaces/README.md#layer-1-valuation-spectra-and-continuous-valuations); [0.1 Interpretations on definable quotients](#01-interpretations-on-definable-quotients).
 
 ## Layer 2: local constructible integration and geometric measure
 
 Cell fibres and normalized Haar measure supply the local integral. Construct the analytic substitution and chart-gluing theory over the local field itself, then use differential forms to relate volumes to residue counts. Integrability remains a hypothesis throughout.
-
-<a id="ld2-cells"></a>
 
 ### 2.1 Denef–Pas cells and presentations
 
@@ -655,35 +529,39 @@ Form the displayed definable graphs and fibres in the fixed language. The presen
 
 The basic interface must include:
 
-- `cells.zero_fibre`: A 0-cell fibre is one point, z=c(y).
-- `cells.one_fibre`: A nonempty 1-cell fixes a nonzero angular component and one valuation of z−c(y).
-- `cells.presentation`: The presentation and inverse are definable over S and commute with the VF coordinate projection.
-- `cells.refine`: A definable partition of the auxiliary base pulls back to a compatible partition of the cell.
+- A 0-cell fibre is one point, z=c(y).
+- A nonempty 1-cell fixes a nonzero angular component and one valuation of z−c(y).
+- The presentation and inverse are definable over S and commute with the VF coordinate projection.
+- A definable partition of the auxiliary base pulls back to a compatible partition of the cell.
 
 **Checks.**
 
-- `cells.one_ball`: Over a local field with q residue elements, ord z=0 and ac z=1 has Haar measure q⁻¹.
-- `cells.zero_cell`: The graph z=0 is a 0-cell and has zero one-dimensional Haar measure.
-- `cells.zero_ac`: A putative 1-cell with ξ=0 is invalid; it must not model an annulus.
-- `cells.auxiliary`: The units split into q−1 angular-component fibres after residue specialization, not into one fibre of volume q⁻¹.
+- Over a local field with q residue elements, ord z=0 and ac z=1 has Haar measure q⁻¹.
+- The graph z=0 is a 0-cell and has zero one-dimensional Haar measure.
+- A putative 1-cell with ξ=0 is invalid; it must not model an annulus.
+- The units split into q−1 angular-component fibres after residue specialization, not into one fibre of volume q⁻¹.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §7.1, unnumbered 0-cell, 1-cell and presentation definitions, p.37; Remark 7.1.1.)
 
-*Needs:* [1.1 The Denef–Pas language](#ld1-denef-pas-language); [1.2 Angular components and valued structures](#ld1-angular-component).
-
-<a id="ld2-cell-decomposition"></a>
+*Needs:* [1.1 The Denef–Pas language](#11-the-denefpas-language); [1.2 Angular components and valued structures](#12-angular-components-and-valued-structures).
 
 ### 2.2 Cell decomposition and preparation
 
-In the equicharacteristic-zero Denef–Pas setting, a definable subset of S×VF admits a finite partition into presented 0- and 1-cells. The partition can be chosen adapted to finitely many definable integer-valued functions and positive constructible functions: after the presentation, their relevant values factor through the auxiliary base. For the selected local-field specialization the same fixed formulas give cells for sufficiently large residue characteristic; no all-prime assertion is inferred.
+In the equicharacteristic-zero Denef–Pas setting, a definable subset of S×VF admits a finite partition into presented 0- and 1-cells. The partition can be chosen adapted to finitely many definable integer-valued functions and positive constructible functions: after the presentation, their relevant values factor through the auxiliary base. For the selected local-field specialization the same fixed formulas give cells for sufficiently large residue characteristic; the following fixed-prime theorem supplies every finite extension of ℚ_p separately.
 
 Apply the relative valued-field preparation theorem to the finitely many polynomials in the quantifier-eliminated formulas. Record their orders and angular components in auxiliary variables, then partition by the finitely many zero/nonzero patterns. Use the factorization over the resulting base to prepare integer-valued and constructible functions, with the degree induction and henselian recentering specified in §1.3.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), Theorem 7.2.1 and proof, pp.37–39; [Johan Pas, *Uniform p-adic cell decomposition and local zeta functions*](https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0399/LOG_0010.pdf), Theorem 3.2, pp.142–143; proof in §§3.6–3.8, pp.144–155.)
 
-*Needs:* [2.1 Denef–Pas cells and presentations](#ld2-cells); [1.3 Relative elimination of valued-field quantifiers](#ld1-valued-field-qe).
+*Needs:* [2.1 Denef–Pas cells and presentations](#21-denefpas-cells-and-presentations); [1.3 Relative elimination of valued-field quantifiers](#13-relative-elimination-of-valued-field-quantifiers).
 
-<a id="ld2-local-constructible-functions"></a>
+For every prime p and every finite extension F/ℚ_p, prove finite semialgebraic cell decomposition and preparation for finite families of definable integer-valued functions over F in the Macintyre language (ring language with coefficients from F and predicates for nonzero n-th powers, n>1). The cells use valuation bounds, centers and power-coset conditions; they need not be the uniform Denef–Pas cells. There is no restriction on p or the ramification index (Cluckers–Gordon–Halupczok, §3, Theorem 3.3.2).
+
+**Checks.**
+
+- Over ℚ₂, the polynomial 1 has order 0 everywhere and needs only a constant-order piece.
+- For x²+y² over ℚ₂ the point (0,0) is a zero fibre; its value has no finite valuation and is separated from the prepared nonzero pieces.
+- In ℚ₂(√2), a uniformizer π=√2 has ord π=1 and ord 2=2. Preparation retains this ramified normalization.
 
 ### 2.3 Local constructible functions
 
@@ -693,27 +571,25 @@ Evaluate the indicated generators as ordinary functions on local-field points an
 
 The basic interface must include:
 
-- `local_constructible_functions.indicator`: A fixed definable subset contributes its indicator function.
-- `local_constructible_functions.pullback`: Composition with a definable map preserves the constructible algebra.
-- `local_constructible_functions.specialize`: Motivic L^β and integer-function generators specialize to q^β and α.
-- `local_constructible_functions.integrability`: Absolute integrability is a separate predicate, and need not hold for the constant function 1 on all of F.
+- A fixed definable subset contributes its indicator function.
+- Composition with a definable map preserves the constructible algebra.
+- Motivic L^β and integer-function generators specialize to q^β and α.
+- Absolute integrability is a separate predicate, and need not hold for the constant function 1 on all of F.
 
 **Checks.**
 
-- `local_constructible_functions.ball`: The indicator of O_F is constructible and has integral 1 with the chosen normalization.
-- `local_constructible_functions.unbounded`: The constant function 1 on F is constructible but not integrable.
-- `local_constructible_functions.geometric`: The sum over n≥0 of q^(−n) equals (1−q⁻¹)⁻¹.
-- `local_constructible_functions.empty`: The indicator of the empty definable set is zero.
+- The indicator of O_F is constructible and has integral 1 with the chosen normalization.
+- The constant function 1 on F is constructible but not integrable.
+- The sum over n≥0 of q^(−n) equals (1−q⁻¹)⁻¹.
+- The indicator of the empty definable set is zero.
 
 ([Raf Cluckers and François Loeser, *Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022), §9.1, specialization conventions, pp.40–42; Cluckers–Loeser 2008 §4.1 and §5.2.)
 
-*Needs:* [2.1 Denef–Pas cells and presentations](#ld2-cells); [1.1 The Denef–Pas language](#ld1-denef-pas-language).
-
-<a id="ld2-local-integration"></a>
+*Needs:* [2.1 Denef–Pas cells and presentations](#21-denefpas-cells-and-presentations); [1.1 The Denef–Pas language](#11-the-denefpas-language).
 
 ### 2.4 Constructible local integration
 
-Normalize additive Haar measure on F^m by vol(O_F^m)=1. For a chosen definable family X⊆S×F^m and a local constructible function φ on X, the integral s↦∫_{X_s}φ(s,x)dx is constructible on a specified definable parameter locus on which absolute integrability has been proved, in the source-scoped large-residue-characteristic family. The normalization for a 1-cell fibre ord(z−c)=a, ac(z−c)=ξ≠0 is q^(−a−1). Zero-dimensional sets are null for positive-dimensional Haar measure.
+Normalize additive Haar measure on F^m by vol(O_F^m)=1. For a chosen definable family X⊆S×F^m and a local constructible function φ on X, the integral `s↦∫_{X_s}φ(s,x)dx` is constructible on a specified definable parameter locus on which absolute integrability has been proved, in the uniform large-residue-characteristic family. Separately, for every finite extension F/ℚ_p at every prime, the same integration assertion holds for semialgebraic constructible functions: the ℚ-algebra generated by definable integer-valued functions and their q-powers, including indicators. Its integrability locus is a constructible zero locus, and an everywhere-integrable constructible replacement agrees on integrable fibres. This fixed-F theorem uses Macintyre cells (Cluckers–Gordon–Halupczok, §3.1, Theorems 3.1.1, 3.1.3 and 3.1.5); it supplies no uniform bound in p. The normalization for a 1-cell fibre ord(z−c)=a, ac(z−c)=ξ≠0 is q^(−a−1). Zero-dimensional sets are null for positive-dimensional Haar measure.
 
 For a fixed uniform constructible presentation φ, extended by zero off X, also construct uniform constructible functions h and G on S and an N such that, for every allowed local field F of residue characteristic greater than N and every s∈S(F), h_F(s)=0 if and only if φ_F(s,−) is absolutely integrable, and G_F(s) is its integral whenever this condition holds. The value of G outside that locus is unspecified. Construct an everywhere fibre-integrable constructible replacement agreeing with φ on every integrable fibre. Clear the fixed rational coefficient denominators before applying the integral-coefficient motivic theorem, and divide the resulting integral by that nonzero constant. The full integrability locus is a zero locus of a constructible function; it need not be definable. Restriction to a certified definable integrability domain recovers the initial assertion.
 
@@ -721,15 +597,13 @@ Use finite cell preparation and integrate each 1-cell by q^(−a−1). Remove lo
 
 For Presburger summation, use parametric rectilinearization to reduce fibres to Λ_s×ℕ^ℓ, with Λ_s finite, and functions to finite sums c_i(s)y^a_i q^(b_i·y), combining repeated exponent pairs first. On an unbounded coordinate, terms with b_ij≥0 obstruct absolute summability unless their combined coefficient function vanishes identically. Certify that vanishing by a constructible zero locus, and discard those terms to obtain the everywhere-summable replacement. Finite fibres are summed directly; on ℕ, differentiate the convergent geometric series to sum each y^a q^(by) with b<0. The finite bound on zeros needed for coefficient detection can be proved here for the fixed nonnegative integer powers by repeated Rolle arguments after factoring an exponential, with bound Σ_b(deg P_b+1)−1 for a nonzero Σ_b P_b(y)q^(by). This avoids making local integration depend on the o-minimality theorem of Layer 6. Rectilinearization with parameters is Cluckers' theorem: a ∅-definable Presburger set in G^(m+n) has a finite definable partition such that on each piece a definable family of linear bijections, indexed by the parameter, maps the fibre onto ℕ^ℓ×Λ_λ with Λ_λ bounded and ℓ fixed on the piece (Cluckers, *Presburger sets and p-minimal fields*, Theorem 3 and proof, pp.6–7 of arXiv:math/0206197; induction on the fibre dimension through Theorem 2).
 
-**Negative control.** Let a,b,c range over the value-group integers and let φ(a,b,c;x)=ab−c on all of F. Products of integer-valued generators are constructible. The fibre is integrable exactly when c=ab, because the zero function is integrable and any nonzero constant on F is not. This multiplication graph is not Presburger-definable. Thus an API returning a definable set for every integrability locus would be false, even though h(a,b,c)=ab−c is a constructible zero-locus certificate.
+**Negative control.** Let a,b,c range over the value-group integers and let φ(a,b,c;x)=ab−c on all of F. Products of integer-valued generators are constructible. The fibre is integrable exactly when c=ab, because the zero function is integrable and any nonzero constant on F is not. This multiplication graph is not Presburger-definable: restricting a putative integer definition to a,b,c≥0 would contradict Mathlib `FirstOrder.Language.presburger.mul_not_definable`, which is stated on ℕ. Thus an API returning a definable set for every integrability locus would be false, even though h(a,b,c)=ab−c is a constructible zero-locus certificate.
 
 Prove the full Presburger preparation/summation and interpolation arguments without inferring an effective residue bound. Local diffeomorphisms use the locally analytic inverse function theorem over F (Schneider, *p-Adic Lie Groups*, Proposition 6.4, p.42) and the determinant substitution of §2.5.
 
 ([Raf Cluckers and François Loeser, *Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022), Theorem 9.1.5, p.43, with §9.1 conventions, pp.40–42; Cluckers–Loeser 2008 §9.1, pp.49–53; [Raf Cluckers, Julia Gordon and Immanuel Halupczok, *Integrability of oscillatory functions on local fields: transfer principles*](https://rcluckers.perso.math.cnrs.fr/prints/CGH.pdf), Theorems 2.1.3–2.1.6 and proofs, pp.1554–1558, uniform-base versions §2.2, pp.1559–1560; Theorems 4.3.1–4.3.3, pp.1585–1586; proofs in §4.5, pp.1593–1595 and 1597; [Raf Cluckers, *Presburger sets and p-minimal fields*](https://arxiv.org/pdf/math/0206197), Theorems 2–3, pp.5–7.)
 
-*Needs:* [2.2 Cell decomposition and preparation](#ld2-cell-decomposition); [2.3 Local constructible functions](#ld2-local-constructible-functions).
-
-<a id="ld2-jacobian-change-variables"></a>
+*Needs:* [2.2 Cell decomposition and preparation](#22-cell-decomposition-and-preparation); [2.3 Local constructible functions](#23-local-constructible-functions).
 
 ### 2.5 Jacobian change of variables
 
@@ -739,49 +613,51 @@ Refine to analytic cells with constant order of the Jacobian and ball-to-ball ma
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), Theorem 7.5.3 and Corollary 7.5.4, pp.43–45; Proposition 9.3.2 (relative dimension one), pp.58–59; Theorem 12.1.1 (general motivic isomorphism), p.74.)
 
-*Needs:* [2.2 Cell decomposition and preparation](#ld2-cell-decomposition); [2.4 Constructible local integration](#ld2-local-integration).
-
-<a id="ld2-igusa-rationality"></a>
+*Needs:* [2.2 Cell decomposition and preparation](#22-cell-decomposition-and-preparation); [2.4 Constructible local integration](#24-constructible-local-integration).
 
 ### 2.6 Igusa and local Poincaré rationality
 
-For fixed integral polynomial data f in m variables over O_F, let Z_f(T)=∑_{k≥0}vol{x∈O_F^m:ord f(x)=k}T^k, omitting f(x)=0. For each F in the fixed sufficiently large-residue-characteristic family this is a rational function with coefficients in ℚ, arising from a uniform constructible coefficient algebra, with denominators products of 1−q^a T^b (a∈ℤ,b>0), after cancellation as necessary. Z_f(q^(−s)) is initially the usual Igusa integral for Re(s)>0. The normalized congruence Poincaré series A_f(T)=∑_{n≥0}q^(−mn)#\{x mod π^n:f(x)=0 mod π^n\}T^n is rational as well, with TZ_f(T)=1+(T−1)A_f(T). Singular zero loci and the identically zero polynomial are treated by this formal identity.
+For fixed integral polynomial data f in m variables over O_F, let `Z_f(T)=∑_{k≥0} vol{x∈O_F^m : ord f(x)=k} T^k`, omitting f(x)=0. For every prime p, every finite extension F/ℚ_p and every f over O_F, both Z_f and the normalized congruence series A_f defined below are rational over ℚ, with denominators products of 1−q^(−a)T^b, a≥0 and b>0 (Denef 1984, Theorems 1.1–1.2; the tail identity below). The fixed-F route uses the Macintyre preparation of §2.2. In addition, for F in a fixed sufficiently large-residue-characteristic family, Z_f is a rational function with coefficients in ℚ, arising from a uniform constructible coefficient algebra, with denominators products of 1−q^a T^b (a∈ℤ,b>0), after cancellation as necessary. This latter statement retains uniform constructible data across the family. Z_f(q^(−s)) is initially the usual Igusa integral for Re(s)>0. The normalized congruence Poincaré series `A_f(T)=∑_{n≥0} q^(−mn) #{x mod π^n : f(x)=0 mod π^n} T^n` is rational as well, with TZ_f(T)=1+(T−1)A_f(T). Singular zero loci and the identically zero polynomial are treated by this formal identity.
 
 After cell preparation, orders and volumes are affine Presburger data, so sum the resulting geometric progressions with polynomial factors. Write a_n=vol{ord f≥n}; then vol{ord f=k}=a_k−a_(k+1), with a_0=1. Summing coefficientwise gives T Z=1+(T−1)A without assuming the zero locus has measure zero. State possible denominator factors separately from genuine poles: cancellation can remove a factor. The analytic integral and its meromorphic extension in s require the substitution T=q^(−s).
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), Theorem 14.4.1, p.80; Theorem 4.4.1, p.21; specialization Theorem 16.4.1, p.90; own coefficientwise tail identity.)
 
-*Needs:* [2.4 Constructible local integration](#ld2-local-integration); [2.5 Jacobian change of variables](#ld2-jacobian-change-variables).
+**Checks.**
 
-<a id="ld2-gauge-measure"></a>
+- For f=0, Z_f=0 and A_f=(1−T)⁻¹; both sides of TZ_f=1+(T−1)A_f are zero. The nonzero-valuation layers omit the whole zero fibre.
+- For f=1, Z_f=A_f=1; both sides of the tail identity equal T, including the level-zero quotient.
+- For f=x, Z_f=(1−q⁻¹)/(1−q⁻¹T) and A_f=1/(1−q⁻¹T). At q=2 these are (1/2)/(1−T/2) and 1/(1−T/2); no prime is omitted.
+
+The acceptance theorem `igusa_poincare_rationality` uses a characteristic-zero DVR O finite as a module over ℤ_p, equivalently a ring of integers of a finite extension of ℚ_p. It states rationality of the raw counts in O/mⁿ for every polynomial over O. Multiplying its n-th coefficient by q^(−mn) gives A_f; conversely substituting q^m T in A_f recovers the raw series. The algebra over ℤ_p and module finiteness are explicit hypotheses.
+
+*Needs:* [2.2 Cell decomposition and preparation](#22-cell-decomposition-and-preparation); [2.4 Constructible local integration](#24-constructible-local-integration); [2.5 Jacobian change of variables](#25-jacobian-change-of-variables).
 
 ### 2.7 Measures attached to gauge forms
 
-Let F be a nonarchimedean local field, X a second-countable Hausdorff F-analytic manifold of pure dimension d, r≥1, and ω a section of (Ω_X^d)⊗r. In a chart write ω=f(x)(dx₁∧⋯∧dx_d)⊗r and assign density |f(x)|^(1/r) against normalized additive Haar measure. Glue these local measures by analytic substitution. When ω never vanishes call it an r-gauge form. For a geometrically reduced algebraic X, extend the measure on its smooth locus by zero across the singular locus when using the stated Yasuda-style measure.
+Extend the characteristic-zero algebraic-group gauge measures of TauCetiRoadmap.AdelicAlgebraicGroups §2.4 to arbitrary F-analytic manifolds and tensor powers. Let F be a nonarchimedean local field, X a second-countable Hausdorff F-analytic manifold of pure dimension d, r≥1, and ω a section of (Ω_X^d)⊗r. In a chart write ω=f(x)(dx₁∧⋯∧dx_d)⊗r and assign density |f(x)|^(1/r) against normalized additive Haar measure. Glue these local measures by analytic substitution. When ω never vanishes call it an r-gauge form. For a geometrically reduced algebraic X, extend the measure on its smooth locus by zero across the singular locus when using the stated Yasuda-style measure.
 
-In a chart construct the density-weighted measure. The determinant transformation of an r-fold top form exactly cancels the r-th root after substitution. Use measure gluing on a countable chart cover after the chart substitution theorem of §2.5; use a disjoint measurable refinement for uniqueness. For the singular extension, define zero on the complement of the smooth locus. Geometric reducedness gives the required full-dimensional smooth locus; null-set comparisons are §2.8. For an algebraic X, the F-points of its smooth locus form an F-analytic manifold: cover X by finitely many affine opens, embed each as a closed subvariety of affine space, and at each point choose coordinates whose differentials restrict to a basis of the cotangent space; the locally analytic inverse function theorem makes the projection a chart (Schneider, *p-Adic Lie Groups*, Proposition 6.4, p.42). Two such charts differ by a locally analytic isomorphism, so the measure of §2.7 does not depend on the affine cover, the closed embeddings or the coordinate choice, by `gauge_measure.pullback`.
+In a chart construct the density-weighted measure. The determinant transformation of an r-fold top form exactly cancels the r-th root after substitution. Use measure gluing on a countable chart cover after the chart substitution theorem of §2.5; use a disjoint measurable refinement for uniqueness. For the singular extension, define zero on the complement of the smooth locus. Geometric reducedness gives the required full-dimensional smooth locus; null-set comparisons are §2.8. For an algebraic X, the F-points of its smooth locus form an F-analytic manifold: cover X by finitely many affine opens, embed each as a closed subvariety of affine space, and at each point choose coordinates whose differentials restrict to a basis of the cotangent space; the locally analytic inverse function theorem makes the projection a chart (Schneider, *p-Adic Lie Groups*, Proposition 6.4, p.42). Two such charts differ by a locally analytic isomorphism, so the measure of §2.7 does not depend on the affine cover, the closed embeddings or the coordinate choice, by analytic pullback invariance.
 
 The basic interface must include:
 
-- `gauge_measure.chart_density`: The measure in a chart is |f|^(1/r) times normalized Haar measure.
-- `gauge_measure.pullback`: An analytic isomorphism pulls the gauge measure back to the measure of its pulled-back form.
-- `gauge_measure.unit_scale`: Multiplication by an analytic unit of norm one leaves the measure unchanged.
-- `gauge_measure.power`: Replacing a 1-gauge form η by η⊗r leaves its measure unchanged.
+- The measure in a chart is |f|^(1/r) times normalized Haar measure.
+- An analytic isomorphism pulls the gauge measure back to the measure of its pulled-back form.
+- Multiplication by an analytic unit of norm one leaves the measure unchanged.
+- Replacing a 1-gauge form η by η⊗r leaves its measure unchanged.
 
 **Checks.**
 
-- `gauge_measure.affine`: For ω=dx₁∧⋯∧dx_d on O_F^d, the volume is 1.
-- `gauge_measure.root_factor`: For ω=π²(dx)⊗2, the volume of O_F is q⁻¹, not q⁻².
-- `gauge_measure.zero`: The zero section gives the zero measure; it is not a gauge form.
-- `gauge_measure.unit`: A constant unit u with |u|=1 does not alter the normalized chart measure.
+- For ω=dx₁∧⋯∧dx_d on O_F^d, the volume is 1.
+- For ω=π²(dx)⊗2, the volume of O_F is q⁻¹, not q⁻².
+- The zero section gives the zero measure; it is not a gauge form.
+- A constant unit u with |u|=1 does not alter the normalized chart measure.
 
 Glue chart measures over a countable disjoint measurable refinement of the chart cover (`MeasureTheory.Measure.sum` of restrictions). For a relative morphism X→Y, the relative top section lives on X. A local ordinary top form η has tensor degree one, so the reference tensor is η⊗r, not a second tensor power of an already r-fold form (GWZ mirror, Proposition 4.1 and Claim 4.2, p.20).
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), §2.1, p.5; Proposition 2.1, p.6; [Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Mirror symmetry for moduli spaces of Higgs bundles via p-adic integration*](https://arxiv.org/pdf/1707.06417v3), §4.1, pp.19–21 in arXiv v3; published pp.536–539.)
 
-*Needs:* [2.5 Jacobian change of variables](#ld2-jacobian-change-variables); Mathlib `MeasureTheory.Measure.addHaar`; Mathlib `AlgebraicGeometry.IsAffineOpen`; Mathlib `Algebra.FiniteType.iff_quotient_mvPolynomial''`; Mathlib `AlgebraicGeometry.IsClosedImmersion`; Mathlib `AlgebraicGeometry.Smooth`; Mathlib `KaehlerDifferential`; [TauCetiRoadmap.SchemeAndStackFoundations, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison).
-
-<a id="ld2-null-loci"></a>
+*Needs:* [2.5 Jacobian change of variables](#25-jacobian-change-of-variables); Mathlib `MeasureTheory.Measure.addHaar`; Mathlib `AlgebraicGeometry.IsAffineOpen`; Mathlib `Algebra.FiniteType.iff_quotient_mvPolynomial''`; Mathlib `AlgebraicGeometry.IsClosedImmersion`; Mathlib `AlgebraicGeometry.Smooth`; Mathlib `KaehlerDifferential`; [TauCetiRoadmap.SchemeAndStackFoundations, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison).
 
 ### 2.8 Positive-codimension loci are null
 
@@ -793,11 +669,11 @@ Prove the local analytic positive-codimension zero-locus nullity needed to disca
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), Proposition 2.1(a), p.6; GWZ mirror, Proposition 4.4, p.21 (published p.539).)
 
-*Needs:* [2.7 Measures attached to gauge forms](#ld2-gauge-measure).
-
-<a id="ld2-weil-volume"></a>
+*Needs:* [2.7 Measures attached to gauge forms](#27-measures-attached-to-gauge-forms).
 
 ### 2.9 Weil volume and residue point counts
+
+The smooth affine group case is the Weil volume theorem of TauCetiRoadmap.AdelicAlgebraicGroups §2.4. The additional target is the formula for arbitrary smooth finite-type models, with their gauge form.
 
 If X is smooth of pure relative dimension d over O_F and ω is an integral nowhere-vanishing top form (or an integral r-gauge form), then vol_ω(X(O_F))=#X(k_F)/q^d. Assume X is of finite type so the count is finite. Each residue fibre has analytic residue coordinates in (πO_F)^d, of normalized mass q^(−d). For non-global gauge forms, the canonical local unit-compatible measure gives the same formula.
 
@@ -807,9 +683,7 @@ The smooth lifting and local chart argument uses the stated finite-type integral
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), Theorem 1.4, p.3; §2.1, p.5.)
 
-*Needs:* [2.7 Measures attached to gauge forms](#ld2-gauge-measure); [2.8 Positive-codimension loci are null](#ld2-null-loci).
-
-<a id="ld2-finite-quotient-measure"></a>
+*Needs:* [2.7 Measures attached to gauge forms](#27-measures-attached-to-gauge-forms); [2.8 Positive-codimension loci are null](#28-positive-codimension-loci-are-null).
 
 ### 2.10 Generically free finite quotients
 
@@ -821,53 +695,47 @@ Use the map from the upstairs smooth locus to the downstairs smooth locus. A spl
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), Proposition 2.1(b), p.6.)
 
-*Needs:* [2.7 Measures attached to gauge forms](#ld2-gauge-measure); [2.8 Positive-codimension loci are null](#ld2-null-loci).
-
-<a id="ld2-dual-neron-counts"></a>
+*Needs:* [2.7 Measures attached to gauge forms](#27-measures-attached-to-gauge-forms); [2.8 Positive-codimension loci are null](#28-positive-codimension-loci-are-null).
 
 ### 2.10a Néron point counts of dual abelian varieties
 
-Let F be a nonarchimedean local field with finite residue field k of characteristic p and q elements. For an abelian variety A over F write 𝒜 for its Néron model over O_F, 𝒜° for the identity component, and Φ_A for the finite étale component group of the special fibre. Prove `dualNeronPointCount`:
+Let F be a nonarchimedean local field with finite residue field k of characteristic p and q elements. For an abelian variety A over F write 𝒜 for its Néron model over O_F, 𝒜° for the identity component, and Φ_A for the finite étale component group of the special fibre. Prove the dual Néron point-count theorem:
 
 - (a) every isogeny φ:A→B of degree prime to p extends to a homomorphism φ:𝒜→ℬ of Néron models, there is ψ:ℬ→𝒜 with ψ∘φ=[deg φ], and φ restricts to an étale isogeny 𝒜°→ℬ° of identity components;
 - (b) #𝒜(k)=#𝒜°(k)·#Φ_A(k), and an étale isogeny of smooth connected commutative k-groups preserves the number of k-points;
-- (c) #Φ_A(k)=#Φ_{A^∨}(k) for the dual abelian variety A^∨.
+- (c) `#Φ_A(k)=#Φ_{A^∨}(k)` for the dual abelian variety A^∨.
 
 Hence, for dual abelian varieties A and B=A^∨ and an isogeny of degree prime to p, #𝒜(k)=#ℬ(k). No semistability hypothesis is made, and no claim that φ is finite flat on the whole Néron model.
 
-For (a), extend φ and an isogeny φ′:B→A with φ′∘φ=[l], l=deg φ, by the Néron mapping property; since l is a unit in O_F, multiplication by l is étale on the smooth group 𝒜, so φ is unramified, hence étale, on identity components (Bosch–Lütkebohmert–Raynaud, *Néron Models*, §7.3, Proposition 6, p.180). For (b), the sequence 0→𝒜°_k→𝒜_k→Φ_A→0 and Lang's theorem H¹(k,𝒜°_k)=0 give the product formula; for an étale isogeny G→H with finite kernel K, the long exact sequence 0→K(k)→G(k)→H(k)→H¹(k,K)→H¹(k,G)=0 and #H¹(k,K)=#K(k) for a finite Galois module over a finite field (the cokernel and kernel of Frobenius−1 on a finite group have the same order) give #G(k)=#H(k). For (c), Grothendieck's pairing Φ_A×Φ_{A^∨}→ℚ/ℤ is perfect when k is finite (McCallum), and for a finite module Φ with an action of the cyclic group Gal(k′/k) through which Galois acts, #Φ^G=#(Φ/(σ−1)Φ), which dualizes to #Φ_A(k)=#Φ_{A^∨}(k) (Lorenzini, Proposition 4.3 and proof, pp.2032–2033).
+For (a), extend φ and an isogeny φ′:B→A with φ′∘φ=[l], l=deg φ, by the Néron mapping property; since l is a unit in O_F, multiplication by l is étale on the smooth group 𝒜, so φ is unramified, hence étale, on identity components (Bosch–Lütkebohmert–Raynaud, *Néron Models*, §7.3, Proposition 6, p.180). For (b), the sequence 0→𝒜°_k→𝒜_k→Φ_A→0 and Lang's theorem H¹(k,𝒜°_k)=0 give the product formula; for an étale isogeny G→H with finite kernel K, the long exact sequence 0→K(k)→G(k)→H(k)→H¹(k,K)→H¹(k,G)=0 and #H¹(k,K)=#K(k) for a finite Galois module over a finite field (the cokernel and kernel of Frobenius−1 on a finite group have the same order) give #G(k)=#H(k). For (c), Grothendieck's pairing `Φ_A×Φ_{A^∨}→ℚ/ℤ` is perfect when k is finite (McCallum), and for a finite module Φ with an action of the cyclic group Gal(k′/k) through which Galois acts, #Φ^G=#(Φ/(σ−1)Φ), which dualizes to `#Φ_A(k)=#Φ_{A^∨}(k)` (Lorenzini, Proposition 4.3 and proof, pp.2032–2033).
 
 The basic interface must include:
 
-- `dual_neron_point_count.extend`: the prime-to-p isogeny extends, with an isogeny in the other direction composing to multiplication by its degree.
-- `dual_neron_point_count.identity_component`: #𝒜°(k)=#ℬ°(k) for isogenous A,B with prime-to-p isogeny.
-- `dual_neron_point_count.component_groups`: #Φ_A(k)=#Φ_{A^∨}(k).
-- `dual_neron_point_count.total`: #𝒜(k)=#ℬ(k) for dual A,B.
+- the prime-to-p isogeny extends, with an isogeny in the other direction composing to multiplication by its degree.
+- #𝒜°(k)=#ℬ°(k) for isogenous A,B with prime-to-p isogeny.
+- `#Φ_A(k)=#Φ_{A^∨}(k).`
+- #𝒜(k)=#ℬ(k) for dual A,B.
 
 **Checks.**
 
-- `dual_neron_point_count.good_reduction`: For A with good reduction, Φ_A is trivial and #𝒜(k)=#𝒜_k(k), the point count of the reduction, which equals that of the dual reduction.
-- `dual_neron_point_count.tate_curve`: For a Tate curve E with ord(Δ)=n split multiplicative, Φ_E(k)=ℤ/n, #𝒜°(k)=q−1 and #𝒜(k)=n(q−1); E is its own dual, so (c) is the identity n=n.
-- `dual_neron_point_count.frobenius_orders`: For Φ=ℤ/3 with Frobenius acting by −1, Φ(k)=0 while Φ/(σ−1)Φ=ℤ/3/(2·ℤ/3)=0; the cyclic-group identity #Φ^G=#(Φ/(σ−1)Φ) is what (c) uses. For the noncyclic group S₃ acting on M=(𝔽₃)³/diagonal, M^G=0 while (M*)^G has order 3 (Lorenzini, Example 4.4), so cyclicity of the residue Galois group is essential.
-- `dual_neron_point_count.wild_isogeny`: The hypothesis that p does not divide deg φ is needed for étaleness: a degree-p isogeny of an elliptic curve with good supersingular reduction reduces to a purely inseparable isogeny of the special fibre, which is not étale.
+- For A with good reduction, Φ_A is trivial and #𝒜(k)=#𝒜_k(k), the point count of the reduction, which equals that of the dual reduction.
+- For a Tate curve E with ord(Δ)=n split multiplicative, Φ_E(k)=ℤ/n, #𝒜°(k)=q−1 and #𝒜(k)=n(q−1); E is its own dual, so (c) is the identity n=n.
+- For Φ=ℤ/3 with Frobenius acting by −1, Φ(k)=0 while Φ/(σ−1)Φ=ℤ/3/(2·ℤ/3)=0; the cyclic-group identity #Φ^G=#(Φ/(σ−1)Φ) is what (c) uses. For the noncyclic group S₃ acting on M=(𝔽₃)³/diagonal, M^G=0 while (M*)^G has order 3 (Lorenzini, Example 4.4), so cyclicity of the residue Galois group is essential.
+- The hypothesis that p does not divide deg φ is needed for étaleness: a degree-p isogeny of an elliptic curve with good supersingular reduction reduces to a purely inseparable isogeny of the special fibre, which is not étale.
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), proof of Proposition 2.2, p.6; Bosch–Lütkebohmert–Raynaud, *Néron Models*, §7.3, Proposition 6, p.180; [Dino Lorenzini, *Torsion and Tamagawa numbers*](https://aif.centre-mersenne.org/item/10.5802/aif.2664.pdf), Annales de l’Institut Fourier 61 (2011), Proposition 4.3 and proof, pp.2032–2033, citing McCallum for perfectness over finite residue fields.)
 
 *Needs:* [TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties, §2.5](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md#25-functoriality-under-isogeny); [TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties, §4.6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md#46-grothendiecks-pairing-on-component-groups).
 
-<a id="ld2-dual-isogeny-volume"></a>
-
 ### 2.11 Dual abelian isogeny volume invariance
 
-Let A and B be dual abelian varieties over a nonarchimedean local field F of residue characteristic p, and let φ:A→B be an isogeny whose degree is prime to p. For every ω∈H⁰(B,Ω_B^top), ∫_{A(F)}|φ*ω|=∫_{B(F)}|ω|. The zero form is allowed. The proof needs the identity-component and dual component-group comparison of §2.10a; it does not require declaring the entire Néron-model morphism finite flat.
+Let A and B be dual abelian varieties over a nonarchimedean local field F of residue characteristic p, and let φ:A→B be an isogeny whose degree is prime to p. For every ω∈H⁰(B,Ω_B^top), `∫_{A(F)}|φ*ω|=∫_{B(F)}|ω|.` The zero form is allowed. The proof needs the identity-component and dual component-group comparison of §2.10a; it does not require declaring the entire Néron-model morphism finite flat.
 
 Scale ω by an element of F so that it extends to a generator of the top differentials of ℬ; translation invariance makes its pole order constant on each component of the special fibre. The extension of φ is étale on identity components (§2.10a(a)), so φ*ω generates the top differentials of 𝒜. By Weil volume (§2.9) both integrals equal point counts of the special fibres divided by q^dim, and §2.10a gives #𝒜(k)=#ℬ(k).
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), Proposition 2.2 and proof, p.6.)
 
-*Needs:* [2.7 Measures attached to gauge forms](#ld2-gauge-measure); [2.9 Weil volume and residue point counts](#ld2-weil-volume); [2.10a Néron point counts of dual abelian varieties](#ld2-dual-neron-counts).
-
-<a id="ld2-submersion-fubini"></a>
+*Needs:* [2.7 Measures attached to gauge forms](#27-measures-attached-to-gauge-forms); [2.9 Weil volume and residue point counts](#29-weil-volume-and-residue-point-counts); [2.10a Néron point counts of dual abelian varieties](#210a-néron-point-counts-of-dual-abelian-varieties).
 
 ### 2.12 Fubini for relative top forms
 
@@ -879,7 +747,7 @@ In submersion coordinates the Fubini comparison is the product-measure Fubini th
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), §2.2, equations (6)–(8), pp.6–7; [Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Mirror symmetry for moduli spaces of Higgs bundles via p-adic integration*](https://arxiv.org/pdf/1707.06417v3), Proposition 4.1, Claim 4.2, Lemma 4.3, pp.20–21 (published pp.537–538).)
 
-*Needs:* [2.7 Measures attached to gauge forms](#ld2-gauge-measure); [2.8 Positive-codimension loci are null](#ld2-null-loci); Mathlib `AlgebraicGeometry.IsClosedImmersion`; Mathlib `AlgebraicGeometry.Smooth`; Mathlib `KaehlerDifferential`; [TauCetiRoadmap.SchemeAndStackFoundations, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison).
+*Needs:* [2.7 Measures attached to gauge forms](#27-measures-attached-to-gauge-forms); [2.8 Positive-codimension loci are null](#28-positive-codimension-loci-are-null); Mathlib `AlgebraicGeometry.IsClosedImmersion`; Mathlib `AlgebraicGeometry.Smooth`; Mathlib `KaehlerDifferential`; [TauCetiRoadmap.SchemeAndStackFoundations, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison).
 
 ### Examples
 
@@ -887,69 +755,63 @@ For fixed ac(x)=ξ≠0 and ord(x)=a, the ball has mass q⁻ᵃ⁻¹. Summing ove
 
 ### Dependencies
 
-[1.1 The Denef–Pas language](#ld1-denef-pas-language); [1.2 Angular components and valued structures](#ld1-angular-component); [1.3 Relative elimination of valued-field quantifiers](#ld1-valued-field-qe); Mathlib `AlgebraicGeometry.IsClosedImmersion`; Mathlib `MeasureTheory.Measure.addHaar`; [TauCetiRoadmap.SchemeAndStackFoundations, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison); [TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties, §§2.5 and 4.6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md#25-functoriality-under-isogeny).
+[1.1 The Denef–Pas language](#11-the-denefpas-language); [1.2 Angular components and valued structures](#12-angular-components-and-valued-structures); [1.3 Relative elimination of valued-field quantifiers](#13-relative-elimination-of-valued-field-quantifiers); Mathlib `AlgebraicGeometry.IsClosedImmersion`; Mathlib `MeasureTheory.Measure.addHaar`; [TauCetiRoadmap.SchemeAndStackFoundations, §2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#220-relative-dualising-complexes-and-modules-serre-duality-curve-comparison); [TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties, §§2.5 and 4.6](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/NeronModelsAndSemistableAbelianVarieties/README.md#25-functoriality-under-isogeny).
 
 ## Layer 3: motivic functions, integration and transfer
 
 Fix the characteristic-zero coefficient field and build residue scissor objects, Presburger coefficients and dimension grades. The integration theorem specifies the pushforward laws, and specialization turns the formal L factors into actual local volumes after a fixed residue-characteristic threshold.
 
-<a id="ld3-definable-subassignment"></a>
-
 ### 3.1 Definable subassignments
 
 Fix a characteristic-zero base field k and named coefficients in k((t)). A definable subassignment of h[m,n,r] assigns to each extension field K/k the subset of K((t))^m×K^n×ℤ^r satisfying one fixed Denef–Pas formula with those coefficients. A map is specified by one uniformly definable graph that is a function in every K. This is a subassignment of point sets; it need not be a subfunctor under arbitrary field extensions because quantified formulas need not be extension invariant. Gluing along finite algebraic charts is a separate global construction.
 
-Assign formula realizations for each extension K with the named ac_t and ord_t structures. Define morphisms by graph formulas with totality and uniqueness in every K. Boolean operations, fibre products and images are defined uniformly by formulas; these are categorical constructions of subassignments, without claiming functoriality in K. For globalization to subassignments of h_W with W=𝒳×X×ℤ^r (𝒳 a k((t))-variety, X a k-variety), cover W by finitely many affine opens U and choose closed embeddings ι:U↪𝔸^m_{k((t))}×𝔸^n_k×ℤ^r; then S∩h_U is a definable subassignment of h[m,n,r]. Two closed embeddings of the same U differ by the isomorphism of definable subassignments ι′∘ι⁻¹, whose graph and inverse graph are polynomial on the images, so every construction that is invariant under definable isomorphisms (CL Lemma 15.1.1, p.83) is independent of the embedding. Varieties are separated, so U∩U′ is affine; on overlaps both restrictions are computed in the embedding of U∩U′, and a finite definable partition of S subordinate to the cover, with additivity and extension by zero, glues the local data. Intrinsic K-dimension does not depend on the embedding. This replaces CL's assertion on p.83 that each affine open is isomorphic to an open subset of affine space, which fails in general.
+Assign formula realizations for each extension K with the named ac_t and ord_t structures. Define morphisms by graph formulas with totality and uniqueness in every K. Boolean operations, fibre products and images are defined uniformly by formulas; these are categorical constructions of subassignments, without claiming functoriality in K. For globalization to subassignments of h_W with W=𝒳×X×ℤ^r (𝒳 a k((t))-variety, X a k-variety), cover W by finitely many affine opens U and choose closed embeddings `ι:U↪𝔸^m_{k((t))}×𝔸^n_k×ℤ^r;` then S∩h_U is a definable subassignment of h[m,n,r]. Two closed embeddings of the same U differ by the isomorphism of definable subassignments ι′∘ι⁻¹, whose graph and inverse graph are polynomial on the images, so every construction that is invariant under definable isomorphisms (CL Lemma 15.1.1, p.83) is independent of the embedding. Varieties are separated, so U∩U′ is affine; on overlaps both restrictions are computed in the embedding of U∩U′, and a finite definable partition of S subordinate to the cover, with additivity and extension by zero, glues the local data. Intrinsic K-dimension does not depend on the embedding. This replaces CL's assertion on p.83 that each affine open is isomorphic to an open subset of affine space, which fails in general.
 
 The basic interface must include:
 
-- `definable_subassignment.realize`: Evaluate the assigned set in any chosen extension K/k.
-- `definable_subassignment.graph`: A morphism is a uniformly definable functional graph.
-- `definable_subassignment.image`: The image is defined by existential quantification in the fixed language.
-- `definable_subassignment.base_change`: A definable map S′→S induces a fibre-product pullback of subassignments over S.
+- Evaluate the assigned set in any chosen extension K/k.
+- A morphism is a uniformly definable functional graph.
+- The image is defined by existential quantification in the fixed language.
+- A definable map S′→S induces a fibre-product pullback of subassignments over S.
 
 **Checks.**
 
-- `definable_subassignment.point`: h[0,0,0] assigns one point to every K.
-- `definable_subassignment.sqrt`: The residue-field formula ∃y, y²=−1 changes truth between K=ℝ and K=ℂ, so its truth set is not a subfunctor on those field embeddings.
-- `definable_subassignment.graph`: The VF graph z=x² is a morphism and evaluates to ordinary squaring.
-- `definable_subassignment.sorts`: h[0,1,0](K)=K and h[0,0,1](K)=ℤ; their sorts are not interchangeable.
+- h[0,0,0] assigns one point to every K.
+- For ∀y, y²≠−1 the truth set is {⋆} over ℝ and ∅ over ℂ, so the assignment is not a subfunctor for ℝ⊂ℂ. For ∃y, y²=−1 the truth sets instead give the compatible inclusion ∅→{⋆}.
+- The VF graph z=x² is a morphism and evaluates to ordinary squaring.
+- h[0,1,0](K)=K and h[0,0,1](K)=ℤ; their sorts are not interchangeable.
 
 An affine elliptic curve, for instance y²=x³−x over k((t)), is not isomorphic to an open subset of 𝔸¹ (an open subset of 𝔸¹ has genus zero), so CL's open-coordinate reduction does not apply to it; its closed embedding in 𝔸² does (CL §15.1, p.83).
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §2.2–2.3, pp.10–11; global subassignments §2.4, pp.11–13; global volume-form gluing §15.1, pp.82–84.)
 
-*Needs:* [1.1 The Denef–Pas language](#ld1-denef-pas-language); [1.3 Relative elimination of valued-field quantifiers](#ld1-valued-field-qe); Mathlib `AlgebraicGeometry.IsAffineOpen`; Mathlib `Algebra.FiniteType.iff_quotient_mvPolynomial''`; [TauCetiRoadmap.SchemeAndStackFoundations, §0.7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#07-local-dimension-and-dimension-theory-of-schemes-of-finite-type-over-a-field).
-
-<a id="ld3-residue-grothendieck"></a>
+*Needs:* [1.1 The Denef–Pas language](#11-the-denefpas-language); [1.3 Relative elimination of valued-field quantifiers](#13-relative-elimination-of-valued-field-quantifiers); Mathlib `AlgebraicGeometry.IsAffineOpen`; Mathlib `Algebra.FiniteType.iff_quotient_mvPolynomial''`; [TauCetiRoadmap.SchemeAndStackFoundations, §0.7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#07-local-dimension-and-dimension-theory-of-schemes-of-finite-type-over-a-field).
 
 ### 3.2 Residue-field Grothendieck semirings
 
-For S∈Def_k let RDef_S consist of definable maps Y→S with Y⊂S×RF^n for some finite n. Its Grothendieck semiring SK₀(RDef_S) is generated by definable isomorphism classes, with empty class zero, scissor relation [Y]=[Z]+[Y\Z], product by fibre product over S and unit [S]. Its additive group completion K₀(RDef_S) is a ring. Import the existing current Tau Ceti general Grothendieck completion and its universal property; construct only this particular definable scissor semiring. These are neither K₀(Var_k) nor a category of Chow motives.
+For S∈Def_k let RDef_S consist of definable maps Y→S with Y⊂S×RF^n for some finite n. Its Grothendieck semiring SK₀(RDef_S) is generated by definable isomorphism classes, with empty class zero, scissor relation [Y]=[Z]+[Y\Z], product by fibre product over S and unit [S]. Its additive group completion K₀(RDef_S) is a ring. Import the existing Tau Ceti general Grothendieck completion and its universal property; construct only this particular definable scissor semiring. These are neither K₀(Var_k) nor a category of Chow motives.
 
-Form the commutative semiring presentation of definable residue objects by isomorphism and scissor relations. Verify fibre product respects those relations. Reuse Algebra.GrothendieckAddGroup with the current TauCeti/RingTheory/GrothendieckRing.lean instCommRing, ofRingHom and liftRingHom. Pullback is multiplicative; direct image along residue-sort structure maps is additive with the projection formula, not generally a ring homomorphism.
+Form the commutative semiring presentation of definable residue objects by isomorphism and scissor relations. Verify fibre product respects those relations. Reuse Algebra.GrothendieckAddGroup with the TauCeti/RingTheory/GrothendieckRing.lean instCommRing, ofRingHom and liftRingHom. Pullback is multiplicative; direct image along residue-sort structure maps is additive with the projection formula, not generally a ring homomorphism.
 
 The basic interface must include:
 
-- `residue_grothendieck.scissor`: [Y]=[Z]+[Y\Z] for a definable subobject Z.
-- `residue_grothendieck.pullback`: A map S′→S induces a semiring/ring pullback by fibre product.
-- `residue_grothendieck.pushforward`: If S→T is a residue-sort object of RDef_T, composition induces additive direct image, satisfying f_!(a·f*b)=f_!(a)·b.
-- `residue_grothendieck.completion`: Additive maps from the scissor semiring to an abelian group extend uniquely to K₀; positivity is not identified with an injective subset of the completion.
+- [Y]=[Z]+[Y\Z] for a definable subobject Z.
+- A map S′→S induces a semiring/ring pullback by fibre product.
+- If S→T is a residue-sort object of RDef_T, composition induces additive direct image, satisfying f_!(a·f*b)=f_!(a)·b.
+- Additive maps from the scissor semiring to an abelian group extend uniquely to K₀; positivity is not identified with an injective subset of the completion.
 
 **Checks.**
 
-- `residue_grothendieck.empty`: The empty object has class 0 and [S] is the multiplicative unit over S.
-- `residue_grothendieck.line`: Over a point, [RF]=[RF×]+1, so the punctured line has class L−1 in the ring.
-- `residue_grothendieck.two_points`: The map from two points to one point sends the unit to 2 under direct image; direct image is not unital or multiplicative.
-- `residue_grothendieck.fibre_product`: The product of two residue objects specializes to the Cartesian fibre product count over each base point.
+- The empty object has class 0 and [S] is the multiplicative unit over S.
+- Over a point, [RF]=[RF×]+1, so the punctured line has class L−1 in the ring.
+- The map from two points to one point sends the unit to 2 under direct image; direct image is not unital or multiplicative.
+- The product of two residue objects specializes to the Cartesian fibre product count over each base point.
 
 Construct the definable scissor semiring and its maps, and apply the existing general completion from Scope and ownership. Pullback is multiplicative; direct image is additive with the projection formula. The two-point map gives direct image 2 rather than a ring homomorphism (CL §5.1.2, p.28, and §5.6, p.30).
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §5.1.1–5.1.2, pp.26–28 (scissor semiring, completion and maps).)
 
-*Needs:* [3.1 Definable subassignments](#ld3-definable-subassignment).
-
-<a id="ld3-motivic-coefficient-ring"></a>
+*Needs:* [3.1 Definable subassignments](#31-definable-subassignments).
 
 ### 3.3 The motivic coefficient ring
 
@@ -959,23 +821,21 @@ Use native polynomial/Laurent polynomial localization with its universal propert
 
 The basic interface must include:
 
-- `motivic_coefficient_ring.eval`: For q>1, evaluation is a ring homomorphism A→ℝ with L↦q.
-- `motivic_coefficient_ring.denominator`: Evaluation of (1−L^(−i))⁻¹ is (1−q^(−i))⁻¹ for i>0.
-- `motivic_coefficient_ring.positive`: a∈A_+ exactly when every real q>1 specialization is nonnegative.
-- `motivic_coefficient_ring.localization`: A coefficient map extends iff it makes L and every required denominator invertible.
+- For q>1, evaluation is a ring homomorphism A→ℝ with L↦q.
+- Evaluation of (1−L^(−i))⁻¹ is (1−q^(−i))⁻¹ for i>0.
+- a∈A_+ exactly when every real q>1 specialization is nonnegative.
+- A coefficient map extends iff it makes L and every required denominator invertible.
 
 **Checks.**
 
-- `motivic_coefficient_ring.geometric`: ∑_{n≥0}q^(−n)=eval_q((1−L⁻¹)⁻¹).
-- `motivic_coefficient_ring.q_one`: q=1 is excluded because 1−L⁻¹ would specialize to zero.
-- `motivic_coefficient_ring.not_positive`: L−2 is not in A_+, since its value is negative for 1<q<2.
-- `motivic_coefficient_ring.L_positive`: L, L⁻¹ and 1−L⁻¹ are positive under every permitted specialization.
+- `∑_{n≥0}q^(−n)=eval_q((1−L⁻¹)⁻¹).`
+- q=1 is excluded because 1−L⁻¹ would specialize to zero.
+- L−2 is not in A_+, since its value is negative for 1<q<2.
+- L, L⁻¹ and 1−L⁻¹ are positive under every permitted specialization.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §4.1, pp.18–19; evaluation and positivity conventions, §4.2, pp.19–20.)
 
-*Needs:* [3.2 Residue-field Grothendieck semirings](#ld3-residue-grothendieck).
-
-<a id="ld3-presburger-functions"></a>
+*Needs:* [3.2 Residue-field Grothendieck semirings](#32-residue-field-grothendieck-semirings).
 
 ### 3.4 Presburger constructible functions
 
@@ -985,23 +845,21 @@ Generate the subalgebra of A-valued pointwise functions by the stated functions.
 
 The basic interface must include:
 
-- `presburger_functions.pullback`: Pullback of α and L^β is composition with a definable map.
-- `presburger_functions.indicator`: A definable subset contributes its indicator in P⁰ and hence P.
-- `presburger_functions.sum`: On the integrable Presburger locus, fibre summation agrees under every q>1 evaluation with absolutely convergent integer summation.
-- `presburger_functions.cone`: A nonnegative ray weighted by L^(−n) sums to (1−L⁻¹)⁻¹.
+- Pullback of α and L^β is composition with a definable map.
+- A definable subset contributes its indicator in P⁰ and hence P.
+- On the integrable Presburger locus, fibre summation agrees under every q>1 evaluation with absolutely convergent integer summation.
+- A nonnegative ray weighted by L^(−n) sums to (1−L⁻¹)⁻¹.
 
 **Checks.**
 
-- `presburger_functions.empty_sum`: Summing over an empty integer fibre gives 0.
-- `presburger_functions.constant_ray`: The constant function 1 on ℕ is not summable under any q>1 evaluation.
-- `presburger_functions.weighted_ray`: L^(−n) on n≥0 has sum (1−L⁻¹)⁻¹.
-- `presburger_functions.congruence`: The weight L^(−n) on nonnegative even n sums to (1−L⁻²)⁻¹.
+- Summing over an empty integer fibre gives 0.
+- The constant function 1 on ℕ is not summable under any q>1 evaluation.
+- L^(−n) on n≥0 has sum (1−L⁻¹)⁻¹.
+- The weight L^(−n) on nonnegative even n sums to (1−L⁻²)⁻¹.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §4.2–4.5, pp.19–24; Theorem 4.4.1, p.21.)
 
-*Needs:* [3.3 The motivic coefficient ring](#ld3-motivic-coefficient-ring); [3.1 Definable subassignments](#ld3-definable-subassignment).
-
-<a id="ld3-constructible-motivic-functions"></a>
+*Needs:* [3.3 The motivic coefficient ring](#33-the-motivic-coefficient-ring); [3.1 Definable subassignments](#31-definable-subassignments).
 
 ### 3.5 Constructible motivic functions
 
@@ -1011,23 +869,21 @@ Construct the common P⁰-algebra structures, check indicator scissor relations,
 
 The basic interface must include:
 
-- `constructible_motivic_functions.tensor_relation`: A common P⁰ generator acts identically from either tensor factor.
-- `constructible_motivic_functions.pullback`: Definable pullback is a ring map respecting residue and Presburger generators.
-- `constructible_motivic_functions.positive_map`: The canonical positive-to-ring map is used without an injectivity claim.
-- `constructible_motivic_functions.residue_pushforward`: Projection along RF variables is additive class composition, with the projection formula; it is not multiplicative.
+- A common P⁰ generator acts identically from either tensor factor.
+- Definable pullback is a ring map respecting residue and Presburger generators.
+- The canonical positive-to-ring map is used without an injectivity claim.
+- Projection along RF variables is additive class composition, with the projection formula; it is not multiplicative.
 
 **Checks.**
 
-- `constructible_motivic_functions.indicator`: An indicator taken from either tensor factor has the same class in C(S).
-- `constructible_motivic_functions.line`: The residue affine-line class equals L and its punctured-line class equals L−1.
-- `constructible_motivic_functions.two_points`: Pushing 1 from two residue points gives 2, so a ring-homomorphism pushforward definition is rejected.
-- `constructible_motivic_functions.empty`: C(∅) has only the zero function class.
+- An indicator taken from either tensor factor has the same class in C(S).
+- The residue affine-line class equals L and its punctured-line class equals L−1.
+- Pushing 1 from two residue points gives 2, so a ring-homomorphism pushforward definition is rejected.
+- C(∅) has only the zero function class.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §5.2, pp.28–29; §5.3–5.8, pp.29–35.)
 
-*Needs:* [3.2 Residue-field Grothendieck semirings](#ld3-residue-grothendieck); [3.4 Presburger constructible functions](#ld3-presburger-functions); [3.3 The motivic coefficient ring](#ld3-motivic-coefficient-ring).
-
-<a id="ld3-dimension-graded-functions"></a>
+*Needs:* [3.2 Residue-field Grothendieck semirings](#32-residue-field-grothendieck-semirings); [3.4 Presburger constructible functions](#34-presburger-constructible-functions); [3.3 The motivic coefficient ring](#33-the-motivic-coefficient-ring).
 
 ### 3.6 Dimension-graded constructible Functions
 
@@ -1037,23 +893,21 @@ Generate the filtration ideals by indicators of definable subassignments with th
 
 The basic interface must include:
 
-- `dimension_graded_functions.grade`: A function supported in VF-dimension ≤d determines a degree-d Function.
-- `dimension_graded_functions.lower_support`: Its degree-d class vanishes if its support has VF-dimension <d.
-- `dimension_graded_functions.relative`: Relative grading uses fibre dimension over the declared base, not total dimension.
-- `dimension_graded_functions.restriction`: Restriction respects support filtrations and hence the graded object.
+- A function supported in VF-dimension ≤d determines a degree-d Function.
+- Its degree-d class vanishes if its support has VF-dimension <d.
+- Relative grading uses fibre dimension over the declared base, not total dimension.
+- Restriction respects support filtrations and hence the graded object.
 
 **Checks.**
 
-- `dimension_graded_functions.point`: A singleton has nonzero counting contribution in degree zero.
-- `dimension_graded_functions.ambient_null`: The same singleton is zero in degree one; this does not erase its degree-zero class.
-- `dimension_graded_functions.graph`: A graph over a d-dimensional base has relative dimension zero and total dimension d.
-- `dimension_graded_functions.empty`: The empty-support class is zero in every degree.
+- A singleton has nonzero counting contribution in degree zero.
+- The same singleton is zero in degree one; this does not erase its degree-zero class.
+- A graph over a d-dimensional base has relative dimension zero and total dimension d.
+- The empty-support class is zero in every degree.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §6.1–6.2, pp.35–36; §10.1, pp.59–60.)
 
-*Needs:* [3.5 Constructible motivic functions](#ld3-constructible-motivic-functions); [2.2 Cell decomposition and preparation](#ld2-cell-decomposition).
-
-<a id="ld3-motivic-pushforward"></a>
+*Needs:* [3.5 Constructible motivic functions](#35-constructible-motivic-functions); [2.2 Cell decomposition and preparation](#22-cell-decomposition-and-preparation).
 
 ### 3.7 Cluckers–Loeser motivic pushforward
 
@@ -1065,9 +919,7 @@ The proof includes general graph factorization, bicell Fubini, independence of v
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), Theorem 10.1.1, pp.59–60; construction §11, pp.61–73; signed extension §13.2, p.77; relative Theorem 14.1.1, p.78.)
 
-*Needs:* [3.6 Dimension-graded constructible Functions](#ld3-dimension-graded-functions); [3.5 Constructible motivic functions](#ld3-constructible-motivic-functions); [3.4 Presburger constructible functions](#ld3-presburger-functions); [2.1 Denef–Pas cells and presentations](#ld2-cells); [2.5 Jacobian change of variables](#ld2-jacobian-change-variables).
-
-<a id="ld3-motivic-change-variables"></a>
+*Needs:* [3.6 Dimension-graded constructible Functions](#36-dimension-graded-constructible-functions); [3.5 Constructible motivic functions](#35-constructible-motivic-functions); [3.4 Presburger constructible functions](#34-presburger-constructible-functions); [2.1 Denef–Pas cells and presentations](#21-denefpas-cells-and-presentations); [2.5 Jacobian change of variables](#25-jacobian-change-of-variables).
 
 ### 3.8 Motivic change of variables and Fubini
 
@@ -1077,9 +929,7 @@ Apply graph factorization and the graph axiom to the isomorphism and its inverse
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), Theorem 12.1.1, p.74; relative Theorem 14.1.1 A0(c), p.78.)
 
-*Needs:* [3.7 Cluckers–Loeser motivic pushforward](#ld3-motivic-pushforward); [3.6 Dimension-graded constructible Functions](#ld3-dimension-graded-functions); [2.5 Jacobian change of variables](#ld2-jacobian-change-variables).
-
-<a id="ld3-specialization"></a>
+*Needs:* [3.7 Cluckers–Loeser motivic pushforward](#37-cluckersloeser-motivic-pushforward); [3.6 Dimension-graded constructible Functions](#36-dimension-graded-constructible-functions); [2.5 Jacobian change of variables](#25-jacobian-change-of-variables).
 
 ### 3.9 Specialization to local-field integrals
 
@@ -1089,9 +939,7 @@ Define specialization on the two tensor factors and verify the common P⁰ relat
 
 ([Raf Cluckers and François Loeser, *Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022), Definition 9.1.1, p.40; Theorem 9.1.5, p.43; Theorem 9.1.6, p.44.)
 
-*Needs:* [3.7 Cluckers–Loeser motivic pushforward](#ld3-motivic-pushforward); [3.5 Constructible motivic functions](#ld3-constructible-motivic-functions); [2.4 Constructible local integration](#ld2-local-integration).
-
-<a id="ld3-integral-transfer"></a>
+*Needs:* [3.7 Cluckers–Loeser motivic pushforward](#37-cluckersloeser-motivic-pushforward); [3.5 Constructible motivic functions](#35-constructible-motivic-functions); [2.4 Constructible local integration](#24-constructible-local-integration).
 
 ### 3.10 Transfer of integral identities
 
@@ -1101,13 +949,11 @@ Express the obstruction to a universal identity as the nonvanishing of a fixed c
 
 ([Raf Cluckers and François Loeser, *Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022), Theorem 9.2.4, p.46, with §9.1 conventions.)
 
-*Needs:* [3.9 Specialization to local-field integrals](#ld3-specialization); [1.5 Finite-formula transfer for large residue characteristic](#ld1-almost-all-transfer).
-
-<a id="ld3-geometric-realization-interface"></a>
+*Needs:* [3.9 Specialization to local-field integrals](#39-specialization-to-local-field-integrals); [1.5 Finite-formula transfer for large residue characteristic](#15-finite-formula-transfer-for-large-residue-characteristic).
 
 ### 3.11 Geometric realizations remain distinct
 
-Let M_loc be the localization of TriangulatedK0(DM_gm(k,ℚ)) at the classes [ℚ(1)] and 1−[ℚ(−i)] for all i>0. Construct the realization `residueMotivicRealization`: SK₀(RDef_k)⊗_{ℕ[𝕃−1]}A₊→M_loc as the composite of the change of theory from the empty theory to algebraically closed fields (CL Proposition 16.1.1), the identification of K₀ of residue objects over algebraically closed fields with K₀(Var_k) by Chevalley constructibility (CL §16.2), the canonical map γ into K₀(Var_k)⊗_{ℤ[𝕃]}A (CL §16.3), and χ^c⊗A, which sends 𝕃 to [ℚ(1)] and each denominator 1−𝕃^(−i) to the invertible class 1−[ℚ(−i)]. Invertibility holds by construction of M_loc; no injectivity is asserted, and M_loc may be smaller than expected. There is no automatic equality between K₀(RDef), K₀(Var), Chow-motive Grothendieck rings and the coefficient ring C(S). No such realization is required for the point-count specialization theorem.
+Let M_loc be the localization of TriangulatedK0(DM_gm(k,ℚ)) at the classes [ℚ(1)] and 1−[ℚ(−i)] for all i>0. Construct the realization the residue motivic realization: `SK₀(RDef_k)⊗_{ℕ[𝕃−1]}A₊→M_loc` as the composite of the change of theory from the empty theory to algebraically closed fields (CL Proposition 16.1.1), the identification of K₀ of residue objects over algebraically closed fields with K₀(Var_k) by Chevalley constructibility (CL §16.2), the canonical map γ into `K₀(Var_k)⊗_{ℤ[𝕃]}A` (CL §16.3), and χ^c⊗A, which sends 𝕃 to [ℚ(1)] and each denominator 1−𝕃^(−i) to the invertible class 1−[ℚ(−i)]. Invertibility holds by construction of M_loc; no injectivity is asserted, and M_loc may be smaller than expected. There is no automatic equality between K₀(RDef), K₀(Var), Chow-motive Grothendieck rings and the coefficient ring C(S). No such realization is required for the point-count specialization theorem.
 
 The composite respects definable isomorphisms, scissor relations and products because each factor does: theory change is a ring map, Chevalley constructibility identifies residue objects with constructible sets, and χ^c is a ring homomorphism with the scissor relation (MotivesAndAlgebraicCycles §4.20). The localization universal property extends it to the inverted classes. The realization of 𝔾_m is [ℚ(1)]−1 and of ℙ¹ is 1+[ℚ(1)]; an odd shift would introduce a sign, the even shift [2] in the Lefschetz object does not.
 
@@ -1115,7 +961,7 @@ The general definable residue quotient is not declared identical to a variety cl
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), Proposition 16.1.1, p.88; §16.2, p.88; §16.3, p.89.)
 
-*Needs:* [3.2 Residue-field Grothendieck semirings](#ld3-residue-grothendieck); [3.5 Constructible motivic functions](#ld3-constructible-motivic-functions); [3.3 The motivic coefficient ring](#ld3-motivic-coefficient-ring); [TauCetiRoadmap.MotivesAndAlgebraicCycles, §4.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/MotivesAndAlgebraicCycles/README.md#420-the-scissor-ring-and-motivic-measure).
+*Needs:* [3.2 Residue-field Grothendieck semirings](#32-residue-field-grothendieck-semirings); [3.5 Constructible motivic functions](#35-constructible-motivic-functions); [3.3 The motivic coefficient ring](#33-the-motivic-coefficient-ring); [TauCetiRoadmap.MotivesAndAlgebraicCycles, §4.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/MotivesAndAlgebraicCycles/README.md#420-the-scissor-ring-and-motivic-measure).
 
 ### Examples
 
@@ -1123,13 +969,11 @@ The residue affine line specializes to q points. A one-cell of order a and one a
 
 ### Dependencies
 
-[1.1 The Denef–Pas language](#ld1-denef-pas-language); [1.3 Relative elimination of valued-field quantifiers](#ld1-valued-field-qe); [TauCetiRoadmap.SchemeAndStackFoundations, §0.7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#07-local-dimension-and-dimension-theory-of-schemes-of-finite-type-over-a-field); [2.2 Cell decomposition and preparation](#ld2-cell-decomposition); [2.1 Denef–Pas cells and presentations](#ld2-cells); [2.5 Jacobian change of variables](#ld2-jacobian-change-variables); [2.4 Constructible local integration](#ld2-local-integration); [1.5 Finite-formula transfer for large residue characteristic](#ld1-almost-all-transfer); [TauCetiRoadmap.MotivesAndAlgebraicCycles, §4.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/MotivesAndAlgebraicCycles/README.md#420-the-scissor-ring-and-motivic-measure).
+[1.1 The Denef–Pas language](#11-the-denefpas-language); [1.3 Relative elimination of valued-field quantifiers](#13-relative-elimination-of-valued-field-quantifiers); [TauCetiRoadmap.SchemeAndStackFoundations, §0.7](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/SchemeAndStackFoundations/README.md#07-local-dimension-and-dimension-theory-of-schemes-of-finite-type-over-a-field); [2.2 Cell decomposition and preparation](#22-cell-decomposition-and-preparation); [2.1 Denef–Pas cells and presentations](#21-denefpas-cells-and-presentations); [2.5 Jacobian change of variables](#25-jacobian-change-of-variables); [2.4 Constructible local integration](#24-constructible-local-integration); [1.5 Finite-formula transfer for large residue characteristic](#15-finite-formula-transfer-for-large-residue-characteristic); [TauCetiRoadmap.MotivesAndAlgebraicCycles, §4.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/MotivesAndAlgebraicCycles/README.md#420-the-scissor-ring-and-motivic-measure).
 
 ## Layer 4: Diophantine normal forms and arithmetic definability
 
 First compare native polynomial functions with integer polynomial syntax and compress only the existential witnesses. Effective coding and Diophantine exponentiation then give MRDP and integer undecidability. The rational branch uses quaternion trace images and semilocal rings to obtain universal integer predicates, with existential integer definability kept conditional.
-
-<a id="ld4-to-dioph-poly"></a>
 
 ### 4.1 Integer polynomials as native polynomial functions
 
@@ -1141,28 +985,24 @@ Use the existing commutative ring on Poly α; the integer cast there is its cons
 
 The basic interface must include:
 
-- `toDiophPoly_C`: Tα(C c) = Poly.const(c) for every integer c.
-- `toDiophPoly_X`: Tα(Xᵢ) = Poly.proj(i).
-- `toDiophPoly_apply`: For p and a natural assignment x, Tα(p)(x) = p evaluated at the integer casts of x.
-- `toDiophPoly_add`: Tα(p+q)=Tα(p)+Tα(q).
-- `toDiophPoly_mul`: Tα(pq)=Tα(p)Tα(q).
-- `toDiophPoly_sub`: Tα(p−q)=Tα(p)−Tα(q), using integer subtraction.
-- `toDiophPoly_ext`: If Tα(p) and Tα(q) agree at every natural assignment, they are equal as native Poly elements.
+- Tα(C c) = Poly.const(c) for every integer c.
+- Tα(Xᵢ) = Poly.proj(i).
+- For p and a natural assignment x, Tα(p)(x) = p evaluated at the integer casts of x.
+- Tα(p+q)=Tα(p)+Tα(q).
+- Tα(pq)=Tα(p)Tα(q).
+- Tα(p−q)=Tα(p)−Tα(q), using integer subtraction.
+- If Tα(p) and Tα(q) agree at every natural assignment, they are equal as native Poly elements.
 
 **Checks.**
 
-- `constant_negative`: With no variables, the image of constant −3 evaluates to −3 on the unique assignment.
-- `two_coordinates`: At (1,3), the image of X₀−2X₁ has value −5, not a truncated natural difference.
-- `native_eval`: Evaluation agrees with native MvPolynomial.eval at every natural assignment cast to integers.
-- `distinct_coordinates`: The images of X₀ and X₁ in two variables differ: assignment (0,1) distinguishes them.
-
-The representative signature is `Diophantine.toDiophPoly` in Suggested.lean.
+- With no variables, the image of constant −3 evaluates to −3 on the unique assignment.
+- At (1,3), the image of X₀−2X₁ has value −5, not a truncated natural difference.
+- Evaluation agrees with native MvPolynomial.eval at every natural assignment cast to integers.
+- The images of X₀ and X₁ in two variables differ: assignment (0,1) distinguishes them.
 
 ([Cameron Freer, *Hilbert10 polynomial bridge*](https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/PolyBridge.lean), toDiophPoly and its evaluation lemmas; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
 *Needs:* Mathlib `Poly`; Mathlib `Poly.proj`; Mathlib `Poly.const`; Mathlib `MvPolynomial.eval₂Hom`; Mathlib `Int.castRingHom`; Mathlib `MvPolynomial.eval₂Hom_C`; Mathlib `MvPolynomial.eval₂Hom_X'`; Mathlib `Poly.ext`; Mathlib `Poly.const_apply`; Mathlib `Poly.proj_apply`.
-
-<a id="ld4-to-dioph-poly-eval"></a>
 
 ### 4.2 Evaluation on natural assignments
 
@@ -1174,13 +1014,9 @@ Induct on p by MvPolynomial.induction_on. The constant case uses the parent cons
 
 Negative coefficients and products give their integer values.
 
-The representative signature is `Diophantine.toDiophPoly_apply` in Suggested.lean.
-
 ([Cameron Freer, *Hilbert10 polynomial bridge*](https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/PolyBridge.lean), toDiophPoly and its evaluation lemmas; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-*Needs:* [4.1 Integer polynomials as native polynomial functions](#ld4-to-dioph-poly); Mathlib `MvPolynomial.induction_on`; Mathlib `Poly.const_apply`; Mathlib `Poly.proj_apply`; Mathlib `Poly.add_apply`; Mathlib `Poly.mul_apply`.
-
-<a id="ld4-to-dioph-poly-surjective"></a>
+*Needs:* [4.1 Integer polynomials as native polynomial functions](#41-integer-polynomials-as-native-polynomial-functions); Mathlib `MvPolynomial.induction_on`; Mathlib `Poly.const_apply`; Mathlib `Poly.proj_apply`; Mathlib `Poly.add_apply`; Mathlib `Poly.mul_apply`.
 
 ### 4.3 Every native polynomial has integer polynomial syntax
 
@@ -1194,9 +1030,7 @@ No finite input-type hypothesis. No executable syntax recovery is claimed.
 
 ([Cameron Freer, *Hilbert10 polynomial bridge*](https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/PolyBridge.lean), exists_mvPolynomial and its constructor induction; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-*Needs:* [4.1 Integer polynomials as native polynomial functions](#ld4-to-dioph-poly); Mathlib `Poly.induction`.
-
-<a id="ld4-to-dioph-poly-injective"></a>
+*Needs:* [4.1 Integer polynomials as native polynomial functions](#41-integer-polynomials-as-native-polynomial-functions); Mathlib `Poly.induction`.
 
 ### 4.4 Polynomial identity from natural assignments
 
@@ -1208,11 +1042,9 @@ Let Tα(p)=Tα(q). By to-dioph-poly-eval their evaluations agree on all tuples o
 
 X(X−1) is distinguished from zero by assignment 2, even though both vanish at 0 and 1.
 
-([The Mathlib contributors, *Multivariate polynomial extensionality on infinite boxes*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MvPolynomial/Funext.lean), funext_set, lines 51–74; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
+([The Mathlib contributors, *Multivariate polynomial extensionality on infinite boxes*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Funext.lean), funext_set, lines 51–74; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-*Needs:* [4.2 Evaluation on natural assignments](#ld4-to-dioph-poly-eval); Mathlib `MvPolynomial.funext_set`; Mathlib `Nat.cast_injective`; Mathlib `Set.infinite_range_of_injective`.
-
-<a id="ld4-poly-mvpolynomial-equiv"></a>
+*Needs:* [4.2 Evaluation on natural assignments](#42-evaluation-on-natural-assignments); Mathlib `MvPolynomial.funext_set`; Mathlib `Nat.cast_injective`; Mathlib `Set.infinite_range_of_injective`.
 
 ### 4.5 Polynomial ring equivalence
 
@@ -1224,30 +1056,26 @@ Combine the separately proved injectivity and surjectivity into bijectivity. App
 
 The basic interface must include:
 
-- `mvPolynomialEquiv_toRingHom`: The forward ring map of Eα is Tα.
-- `mvPolynomialEquiv_symm_apply`: Evaluating Eα⁻¹(f) at the integer casts of x gives f(x).
-- `mvPolynomialEquiv_symm_const`: Eα⁻¹(Poly.const(c))=C c for every integer c.
-- `mvPolynomialEquiv_symm_proj`: Eα⁻¹(Poly.proj(i))=Xᵢ.
-- `mvPolynomialEquiv_symm_add`: Eα⁻¹(f+g)=Eα⁻¹(f)+Eα⁻¹(g).
-- `mvPolynomialEquiv_symm_mul`: Eα⁻¹(fg)=Eα⁻¹(f)Eα⁻¹(g).
-- `mvPolynomialEquiv_left_inv`: Eα⁻¹(Eα(p))=p.
-- `mvPolynomialEquiv_right_inv`: Eα(Eα⁻¹(f))=f.
-- `mvPolynomialEquiv_rename`: For any map h:α→β, Eβ(rename(h,p))=Poly.map(h,Eα(p)); injectivity of h is not required.
+- The forward ring map of Eα is Tα.
+- Evaluating Eα⁻¹(f) at the integer casts of x gives f(x).
+- Eα⁻¹(Poly.const(c))=C c for every integer c.
+- Eα⁻¹(Poly.proj(i))=Xᵢ.
+- Eα⁻¹(f+g)=Eα⁻¹(f)+Eα⁻¹(g).
+- Eα⁻¹(fg)=Eα⁻¹(f)Eα⁻¹(g).
+- Eα⁻¹(Eα(p))=p.
+- Eα(Eα⁻¹(f))=f.
+- For any map h:α→β, Eβ(rename(h,p))=Poly.map(h,Eα(p)); injectivity of h is not required.
 
 **Checks.**
 
-- `empty_inverse`: With no variables, E⁻¹(Poly.const(−7)) is C(−7).
-- `product_inverse`: In two variables, E⁻¹(Poly.proj(0)·Poly.proj(1)) is X₀X₁.
-- `inverse_native_eval`: For every native f and natural assignment x, eval(cast∘x,E⁻¹(f))=f(x).
-- `boolean_grid_insufficient`: E(X₀(X₀−1)) is nonzero: its value at 2 is 2. Sampling only a Boolean grid is insufficient.
+- With no variables, E⁻¹(Poly.const(−7)) is C(−7).
+- In two variables, E⁻¹(Poly.proj(0)·Poly.proj(1)) is X₀X₁.
+- For every native f and natural assignment x, eval(cast∘x,E⁻¹(f))=f(x).
+- E(X₀(X₀−1)) is nonzero: its value at 2 is 2. Sampling only a Boolean grid is insufficient.
 
-The representative signature is `Diophantine.polynomial_comparison` in Suggested.lean.
+([Mario Carneiro and the Mathlib contributors, *Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Dioph.lean), Poly, Poly.induction and the comparison its comments record as missing, lines 48–51,93,197–204; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-([Mario Carneiro and the Mathlib contributors, *Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/NumberTheory/Dioph.lean), Poly, Poly.induction and the comparison its comments record as missing, lines 48–51,93,197–204; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
-
-*Needs:* [4.1 Integer polynomials as native polynomial functions](#ld4-to-dioph-poly); [4.3 Every native polynomial has integer polynomial syntax](#ld4-to-dioph-poly-surjective); [4.4 Polynomial identity from natural assignments](#ld4-to-dioph-poly-injective); [4.2 Evaluation on natural assignments](#ld4-to-dioph-poly-eval); Mathlib `RingEquiv.ofBijective`.
-
-<a id="ld4-poly-equiv-rename"></a>
+*Needs:* [4.1 Integer polynomials as native polynomial functions](#41-integer-polynomials-as-native-polynomial-functions); [4.3 Every native polynomial has integer polynomial syntax](#43-every-native-polynomial-has-integer-polynomial-syntax); [4.4 Polynomial identity from natural assignments](#44-polynomial-identity-from-natural-assignments); [4.2 Evaluation on natural assignments](#42-evaluation-on-natural-assignments); Mathlib `RingEquiv.ofBijective`.
 
 ### 4.6 Renaming compatibility
 
@@ -1259,11 +1087,9 @@ Compare values at every β-indexed natural assignment using Poly.ext. The equiva
 
 Collapsing both variables of X₀−X₁ to the same coordinate produces zero; this naturality identity does not assert injectivity of renaming.
 
-([Mario Carneiro and the Mathlib contributors, *Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/NumberTheory/Dioph.lean), Poly.map and map_apply, lines 226–234; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
+([Mario Carneiro and the Mathlib contributors, *Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Dioph.lean), Poly.map and map_apply, lines 226–234; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-*Needs:* [4.5 Polynomial ring equivalence](#ld4-poly-mvpolynomial-equiv); [4.2 Evaluation on natural assignments](#ld4-to-dioph-poly-eval); Mathlib `Poly.ext`; Mathlib `Poly.map_apply`; Mathlib `MvPolynomial.eval_rename`.
-
-<a id="ld4-finite-right-support"></a>
+*Needs:* [4.5 Polynomial ring equivalence](#45-polynomial-ring-equivalence); [4.2 Evaluation on natural assignments](#42-evaluation-on-natural-assignments); Mathlib `Poly.ext`; Mathlib `Poly.map_apply`; Mathlib `MvPolynomial.eval_rename`.
 
 ### 4.7 Finite witness support with fixed inputs
 
@@ -1275,11 +1101,9 @@ Apply MvPolynomial.exists_finset_rename to p, obtaining a finite set s of sum va
 
 No domain or characteristic assumption on R. No finite input-type assumption. A polynomial involving only inputs admits t empty.
 
-([Cameron Freer, *Compact only the right summand of a sum of polynomial variables*](https://github.com/leanprover-community/mathlib4/pull/42203), PR body, exists_finset_right_rename and proof route; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
+(Mathlib MvPolynomial.exists_finset_rename and the fixed-input support proof of §4.7; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
 *Needs:* Mathlib `MvPolynomial.exists_finset_rename`; Mathlib `Finset.toRight`; Mathlib `Finset.mem_toRight`; Mathlib `MvPolynomial.rename`; Mathlib `MvPolynomial.rename_rename`.
-
-<a id="ld4-finite-right-rename"></a>
 
 ### 4.8 Finite witness enumeration
 
@@ -1291,11 +1115,9 @@ Apply finite-right-support to obtain t and its polynomial q₀. Choose e:t≃Fin
 
 If β is empty the witness block has size zero. Inputs are not silently permuted when witnesses are numbered.
 
-([Cameron Freer, *Compact only the right summand of a sum of polynomial variables*](https://github.com/leanprover-community/mathlib4/pull/42203), PR body, exists_fin_right_rename and finite enumeration; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
+(Mathlib MvPolynomial.exists_finset_rename and the fixed-input support proof of §4.7; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-*Needs:* [4.7 Finite witness support with fixed inputs](#ld4-finite-right-support); Mathlib `Fintype.equivFin`; Mathlib `MvPolynomial.rename_rename`.
-
-<a id="ld4-right-rename-solutions"></a>
+*Needs:* [4.7 Finite witness support with fixed inputs](#47-finite-witness-support-with-fixed-inputs); Mathlib `Fintype.equivFin`; Mathlib `MvPolynomial.rename_rename`.
 
 ### 4.9 Preservation of existential natural roots
 
@@ -1311,8 +1133,6 @@ For q(u,v)=u−v−1, collapsing both witnesses makes the equation unsatisfiable
 
 *Needs:* Mathlib `MvPolynomial.eval_rename`; Mathlib `Function.extend`; Mathlib `Function.Injective.extend_apply`.
 
-<a id="ld4-dioph-finite-mvpolynomial"></a>
-
 ### 4.10 Finite Diophantine normal form
 
 For every type α and S⊆(α→ℕ), native Dioph(S) holds exactly when there are m∈ℕ and p∈MvPolynomial (α⊕Fin m) ℤ such that, for every input x, x∈S if and only if there exists y:Fin m→ℕ with eval(cast∘Sum.elim(x,y),p)=0. This holds without assuming α finite.
@@ -1323,38 +1143,32 @@ Unpack native Dioph(S) as a polynomial function f on α⊕β and its existential
 
 Even natural inputs are represented by X−2Y. A nonzero constant polynomial has no root, including with zero inputs and witnesses. The statement specializes both to finite tuples and to α=ℕ. Zero witness variables means a polynomial condition, not automatic truth.
 
-The representative signature is `Diophantine.dioph_iff_exists_fin_mvPolynomial` in Suggested.lean.
-
 ([Cameron Freer, *Hilbert10 finite Diophantine normal form*](https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/NormalForm.lean), dioph_iff_exists_fin_mvPolynomial and dioph_iff_exists_finite_mvPolynomial; [Bjorn Poonen, *Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf), Definition 1 and footnote 4, author-copy p.2.)
 
-*Needs:* [4.5 Polynomial ring equivalence](#ld4-poly-mvpolynomial-equiv); [4.2 Evaluation on natural assignments](#ld4-to-dioph-poly-eval); [4.8 Finite witness enumeration](#ld4-finite-right-rename); [4.9 Preservation of existential natural roots](#ld4-right-rename-solutions); Mathlib `Dioph`; Mathlib `MvPolynomial.eval_rename`.
-
-<a id="ld4-effective-polynomial-coding"></a>
+*Needs:* [4.5 Polynomial ring equivalence](#45-polynomial-ring-equivalence); [4.2 Evaluation on natural assignments](#42-evaluation-on-natural-assignments); [4.8 Finite witness enumeration](#48-finite-witness-enumeration); [4.9 Preservation of existential natural roots](#49-preservation-of-existential-natural-roots); Mathlib `Dioph`; Mathlib `MvPolynomial.eval_rename`.
 
 ### 4.11 Effective polynomial and witness coding
 
 Choose a primitive-recursive finite syntax for integer-coefficient polynomials in finitely many free and witness variables. Decode into MvPolynomial and prove evaluation agrees with a computable syntax evaluator on natural and integer assignments. Enumerate witness tuples by a native computable encoding of finite tuples. Any effective input carries its finite syntax explicitly. A bare native Poly is a function with a propositional polynomiality certificate, so neither its classical polynomial representative nor Poly.induction into Prop is a computable reification algorithm.
 
-Encode constants, variables, addition and multiplication, and signed coefficients; prove decoding and evaluation by structural recursion. Enumerate finite witness tuples and dovetail across arities and steps. Prove each actual solution is eventually visited. An explicit finite code gives both its decoded MvPolynomial and, by toDiophPoly, its native Poly with the same values. Conversely the classical comparison gives existence of a representative for a bare Poly, with no computability assertion. Normalize by recursion only on supplied code; no algorithm takes arbitrary native functions as input.
+Encode constants, variables, addition and multiplication, and signed coefficients; prove decoding and evaluation by structural recursion. Enumerate finite witness tuples and dovetail across arities and steps. Prove each actual solution is eventually visited. An explicit finite code gives both its decoded MvPolynomial and, by the syntax evaluation map, its native Poly with the same values. Conversely the classical comparison gives existence of a representative for a bare Poly, with no computability assertion. Normalize by recursion only on supplied code; no algorithm takes arbitrary native functions as input.
 
 The basic interface must include:
 
-- `effective_polynomial_coding.decode_eval`: Decoded syntax and its computable evaluator have identical integer values.
-- `effective_polynomial_coding.enumerate`: Every finite tuple occurs in the effective witness enumeration.
-- `effective_polynomial_coding.normalize_code`: Given an explicit finite polynomial code, recursively normalize that code and preserve evaluation and free/witness variable order. A code representing a native Poly is supplied with an evaluation certificate; no computable map from arbitrary Poly is asserted.
+- Decoded syntax and its computable evaluator have identical integer values.
+- Every finite tuple occurs in the effective witness enumeration.
+- Given an explicit finite polynomial code, recursively normalize that code and preserve evaluation and free/witness variable order. A code representing a native Poly is supplied with an evaluation certificate; no computable map from arbitrary Poly is asserted.
 
 **Checks.**
 
-- `effective_polynomial_coding.negative`: The code for X−2 evaluates to −2 at zero, retaining signed coefficients.
-- `effective_polynomial_coding.roles`: The code for free X−witness Y distinguishes the two variable blocks.
-- `effective_polynomial_coding.empty`: An empty witness block is evaluated once; it is not interpreted as an empty search space.
-- `effective_polynomial_coding.presentation_required`: A bare Poly with only its IsPoly proof supplies no executable constructor tree. The code-level algorithms require a supplied finite code; the classical comparison asserts representation existence only.
+- The code for X−2 evaluates to −2 at zero, retaining signed coefficients.
+- The code for free X−witness Y distinguishes the two variable blocks.
+- An empty witness block is evaluated once; it is not interpreted as an empty search space.
+- A bare Poly with only its IsPoly proof supplies no executable constructor tree. The code-level algorithms require a supplied finite code; the classical comparison asserts representation existence only.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §7, pp.260–261; §8, pp.262–264.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §7, pp.260–261; §8, pp.262–264.)
 
-*Needs:* [4.10 Finite Diophantine normal form](#ld4-dioph-finite-mvpolynomial); Mathlib `REPred`.
-
-<a id="ld4-dioph-to-re"></a>
+*Needs:* [4.10 Finite Diophantine normal form](#410-finite-diophantine-normal-form); Mathlib `REPred`.
 
 ### 4.12 Diophantine sets are recursively enumerable
 
@@ -1362,23 +1176,19 @@ For each n and S⊆ℕ^n, native Dioph S implies native REPred (fun x => x∈S),
 
 Dovetail the witness enumeration, evaluate the coded polynomial, and halt precisely on a zero. Prove termination iff a finite witness exists; the zero-witness case reduces to a computable equality.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §7, witness-search argument p.264; §8, Definition 8.1 and Theorem 8.1, p.264; code enumeration §7, pp.260–261.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §7, witness-search argument p.264; §8, Definition 8.1 and Theorem 8.1, p.264; code enumeration §7, pp.260–261.)
 
-*Needs:* [4.11 Effective polynomial and witness coding](#ld4-effective-polynomial-coding); Mathlib `REPred`; [4.10 Finite Diophantine normal form](#ld4-dioph-finite-mvpolynomial).
-
-<a id="ld4-diophantine-sequence-coding"></a>
+*Needs:* [4.11 Effective polynomial and witness coding](#411-effective-polynomial-and-witness-coding); Mathlib `REPred`; [4.10 Finite Diophantine normal form](#410-finite-diophantine-normal-form).
 
 ### 4.13 Diophantine sequence number theorem
 
 There is a Diophantine relation Seq(i,u,a) on positive integers that is single-valued in a and codes every prescribed finite list: for every a₁,…,a_n>0 some u satisfies Seq(i,u,a_i) for 1≤i≤n. The zero-based natural version shifts indices and entries explicitly. Its finite-list surjectivity is sufficient; no unique code or total decoder on malformed codes is assumed.
 
-Use the corrected positive pairing P(x,y)=T(x+y−2)+y and its polynomial inverse graph; keep the possible zero remainder represented by the positive modulus itself. The target relation may restrict to the legal decoding cases. Choose y larger than all desired positive entries and divisible by 1,…,n. The moduli 1+iy are pairwise coprime: any common prime divides i−j and hence y, a contradiction. Iterate native CRT, choose a positive x with the required remainders and put u=P(x,y). The remainder graph is a finite polynomial system with inequalities expressed by positive or natural slack variables; combine equations by sums of squares. Shift indices and entries explicitly for the zero-based natural interface. Factorial, binomial and AP-product representability is used in bounded-universal-closure, not needed for this elementary coding theorem.
+Use the positive pairing P(x,y)=T(x+y−2)+y and its polynomial inverse graph; keep the possible zero remainder represented by the positive modulus itself. The target relation may restrict to the legal decoding cases. Choose y larger than all desired positive entries and divisible by 1,…,n. The moduli 1+iy are pairwise coprime: any common prime divides i−j and hence y, a contradiction. Iterate native CRT, choose a positive x with the required remainders and put u=P(x,y). The remainder graph is a finite polynomial system with inequalities expressed by positive or natural slack variables; combine equations by sums of squares. Shift indices and entries explicitly for the zero-based natural interface. Factorial, binomial and AP-product representability is used in bounded-universal-closure, not needed for this elementary coding theorem.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §1, Theorem 1.1 and Theorems 1.2–1.3 with complete CRT proof, pp.236–238; with the positive-domain pairing convention stated here.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §1, Theorem 1.1 and Theorems 1.2–1.3 with complete CRT proof, pp.236–238; with the positive-domain pairing convention stated here.)
 
 *Needs:* Mathlib `Nat.chineseRemainder`.
-
-<a id="ld4-bounded-universal-closure"></a>
 
 ### 4.14 Bounded universal Diophantine closure
 
@@ -1386,11 +1196,9 @@ For a Diophantine predicate P(x,i) on natural tuples, the predicate ∀i<n, P(x,
 
 Bound the finitely many witnesses at a given input by one auxiliary integer and encode their list. Using native Dioph.pow_dioph, derive Davis Theorem 4.1: binomial coefficients from the large-base binomial expansion and remainder, factorials from the large-binomial floor estimate, and products of an arithmetic progression from their binomial congruence. Then apply Lemmas 5.1–5.2: one bound for all witnesses, factorial moduli 1+kt, CRT encoding, and divisibility by their product replace the bounded universal block. Keep this non-routine construction inside the key theorem; every step is explicit, so tracking codes through it gives the uniform effective form. Convert the resulting finite system to one polynomial over ℕ or ℤ by sums of squares, preserving the positive-to-natural shift.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §4, Theorem 4.1 and Lemmas 4.1–4.7, pp.249–252; §5, Theorem 5.1 and Lemmas 5.1–5.2 with final reduction, pp.253–256.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §4, Theorem 4.1 and Lemmas 4.1–4.7, pp.249–252; §5, Theorem 5.1 and Lemmas 5.1–5.2 with final reduction, pp.253–256.)
 
-*Needs:* [4.13 Diophantine sequence number theorem](#ld4-diophantine-sequence-coding); Mathlib `Dioph.pow_dioph`.
-
-<a id="ld4-recursive-computation-graphs"></a>
+*Needs:* [4.13 Diophantine sequence number theorem](#413-diophantine-sequence-number-theorem); Mathlib `Dioph.pow_dioph`.
 
 ### 4.15 Diophantine computation graphs
 
@@ -1400,11 +1208,9 @@ Prove graph closure under initial functions and composition using the native Dio
 
 Prove equivalence between the source’s positive recursive presentation and native Partrec, including a uniform code translation. Davis Theorem 6.1 concerns total positive-integer functions. A native partial computation trace must certify defined outputs and defined earlier values during minimization; an undefined earlier computation cannot be skipped.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §6, Theorem 6.1 and proof, pp.257–260 (total positive-integer functions); §8, Theorem 8.1, p.264; the comparison with native partial recursion is part of this target.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §6, Theorem 6.1 and proof, pp.257–260 (total positive-integer functions); §8, Theorem 8.1, p.264; the comparison with native partial recursion is part of this target.)
 
-*Needs:* [4.13 Diophantine sequence number theorem](#ld4-diophantine-sequence-coding); [4.14 Bounded universal Diophantine closure](#ld4-bounded-universal-closure); Mathlib `REPred`; Mathlib `Dioph.pow_dioph`.
-
-<a id="ld4-mrdp"></a>
+*Needs:* [4.13 Diophantine sequence number theorem](#413-diophantine-sequence-number-theorem); [4.14 Bounded universal Diophantine closure](#414-bounded-universal-diophantine-closure); Mathlib `REPred`; Mathlib `Dioph.pow_dioph`.
 
 ### 4.16 Matiyasevich–Robinson–Davis–Putnam theorem
 
@@ -1414,13 +1220,11 @@ Represent semidecision by the projected halting computation graph. Compress all 
 
 The code-level comparison with native Partrec (§4.15) and the uniform bounded-universal translation (§4.14) are part of the proof. Existing Diophantine exponentiation and a classical polynomial inverse do not supply them. The Lean milestone `Diophantine.mrdp` uses native REPred on finite tuples, exactly as this statement requires.
 
-The representative signature is `Diophantine.mrdp` in Suggested.lean.
+The acceptance signature is `Diophantine.mrdp` in Suggested.lean.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §8, Definition 8.1, Theorem 8.1 and proof, p.264, using Theorems 1.3, 5.1 and 6.1.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §8, Definition 8.1, Theorem 8.1 and proof, p.264, using Theorems 1.3, 5.1 and 6.1.)
 
-*Needs:* [4.15 Diophantine computation graphs](#ld4-recursive-computation-graphs); [4.12 Diophantine sets are recursively enumerable](#ld4-dioph-to-re); [4.10 Finite Diophantine normal form](#ld4-dioph-finite-mvpolynomial).
-
-<a id="ld4-h10-integers"></a>
+*Needs:* [4.15 Diophantine computation graphs](#415-diophantine-computation-graphs); [4.12 Diophantine sets are recursively enumerable](#412-diophantine-sets-are-recursively-enumerable); [4.10 Finite Diophantine normal form](#410-finite-diophantine-normal-form).
 
 ### 4.17 Undecidability of Hilbert tenth over integers
 
@@ -1428,11 +1232,9 @@ There is no total computable decision procedure which, on every finite code for 
 
 Choose a recursively enumerable undecidable native halting set. If polynomial solvability were decidable then its effective MRDP representation would decide that set. Substitute a sum of four squares for every natural variable; every natural value is attained by the native Nat.sum_four_squares theorem, and every such integer value is nonnegative. Keep signed coefficients and arbitrary finite arity in the code transformation.
 
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §7, Theorems 7.2–7.4, pp.261–262; §8, Theorem 8.1, p.264; positive/integer witness conversion is a separate four-square argument.)
+([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447), §7, Theorems 7.2–7.4, pp.261–262; §8, Theorem 8.1, p.264; positive/integer witness conversion is a separate four-square argument.)
 
-*Needs:* [4.16 Matiyasevich–Robinson–Davis–Putnam theorem](#ld4-mrdp); Mathlib `ComputablePred.halting_problem`; Mathlib `Nat.sum_four_squares`; [4.11 Effective polynomial and witness coding](#ld4-effective-polynomial-coding).
-
-<a id="ld4-ring-diophantine-sets"></a>
+*Needs:* [4.16 Matiyasevich–Robinson–Davis–Putnam theorem](#416-matiyasevichrobinsondavisputnam-theorem); Mathlib `ComputablePred.halting_problem`; Mathlib `Nat.sum_four_squares`; [4.11 Effective polynomial and witness coding](#411-effective-polynomial-and-witness-coding).
 
 ### 4.18 Diophantine sets over a commutative ring
 
@@ -1442,25 +1244,23 @@ Use a finite tuple of witness variables and a finite tuple of equations. Prove i
 
 The basic interface must include:
 
-- `ring_diophantine_sets.project`: Projection appends a finite witness block.
-- `ring_diophantine_sets.inter_union`: Intersection concatenates systems. Finite union is closed over domains using polynomial products, or over rings with no nontrivial idempotents using a selector; unrestricted-ring union is not asserted.
-- `ring_diophantine_sets.pullback`: Polynomial substitution pulls Diophantine sets back.
-- `ring_diophantine_sets.field_existential`: Over a field, existential ring formulas with parameters define precisely these finite-system sets.
+- Projection appends a finite witness block.
+- Intersection concatenates systems. Finite union is closed over domains using polynomial products, or over rings with no nontrivial idempotents using a selector; unrestricted-ring union is not asserted.
+- Polynomial substitution pulls Diophantine sets back.
+- Over a field, existential ring formulas with parameters define precisely these finite-system sets.
 
 **Checks.**
 
-- `ring_diophantine_sets.complex_system`: Over ℂ, x²+y²=0 need not imply x=y=0, so it cannot replace that two-equation system.
-- `ring_diophantine_sets.empty`: The equation 1=0 defines the empty set over a nonzero ring.
-- `ring_diophantine_sets.zero_divisors`: In ℤ/6, a product equation can vanish with both factors nonzero; the domain-only union proof must not be applied.
-- `ring_diophantine_sets.field_nonzero`: Over ℚ, ∃z,xz=1 defines precisely x≠0.
+- Over ℂ, x²+y²=0 need not imply x=y=0, so it cannot replace that two-equation system.
+- The equation 1=0 defines the empty set over a nonzero ring.
+- In ℤ/6, a product equation can vanish with both factors nonzero; the domain-only union proof must not be applied.
+- Over ℚ, ∃z,xz=1 defines precisely x≠0.
 
 For unary subsets of ℚ, `rationalDiophantine` in Suggested.lean specializes this theory to a single equation with a finite witness block; `rationalIntegers` is the actual embedded integer set. Zero and −7 belong to that integer set, whereas 1/2 does not. The empty Diophantine set is witnessed by 1=0 with no witnesses; x≠0 by xy−1=0. These are checks of the specialization, not existential definitions of the integer set.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), §1, pp.73–75, and §3, pp.87–91.)
 
-*Needs:* [0.6 Explicit arithmetic semantics bridges](#ld0-arithmetic-translation); [4.10 Finite Diophantine normal form](#ld4-dioph-finite-mvpolynomial).
-
-<a id="ld4-diophantine-interpretation-transfer"></a>
+*Needs:* [0.6 Explicit arithmetic semantics bridges](#06-explicit-arithmetic-semantics-bridges); [4.10 Finite Diophantine normal form](#410-finite-diophantine-normal-form).
 
 ### 4.19 Effective Diophantine undecidability transfer
 
@@ -1468,13 +1268,9 @@ Let A have an undecidable finite-system existential theory with a fixed effectiv
 
 Translate each input equation using the domain and operation graphs, retaining quotient equality and coefficient codes. Prove both solvability directions by interpretation semantics. A hypothetical target decider composed with this computable translation decides the source problem. For the conditional integer predicate in ℚ, its complement also has an existential certificate: write t=m/n in coprime integer terms with n≠0,±1, witnessing coprimality by um+vn=1. This proves Observation 0 without assuming an unconditional existential integer definition.
 
-The representative signature is `diophantine_integer_transfer (its conditional embedded-integer specialization)` in Suggested.lean.
-
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), §1, Corollaries 3 and 3′, pp.74–75; §3, p.91.)
 
-*Needs:* [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets); [4.17 Undecidability of Hilbert tenth over integers](#ld4-h10-integers); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
-
-<a id="ld4-quaternion-trace-sets"></a>
+*Needs:* [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring); [4.17 Undecidability of Hilbert tenth over integers](#417-undecidability-of-hilbert-tenth-over-integers); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations).
 
 ### 4.20 Quaternion trace and semilocal sets
 
@@ -1484,22 +1280,20 @@ Compare the displayed norm polynomial with the existing quaternion norm and trac
 
 The basic interface must include:
 
-- `quaternion_trace_sets.trace_equations`: The trace-set predicate has the displayed norm-one existential representation.
-- `quaternion_trace_sets.sum`: T membership is witnessed by two S elements.
-- `quaternion_trace_sets.units`: A rational unit of T is tested by x and x⁻¹ membership.
-- `quaternion_trace_sets.equiv`: Quaternion presentation changes preserving trace and norm preserve S and T.
+- The trace-set predicate has the displayed norm-one existential representation.
+- T membership is witnessed by two S elements.
+- A rational unit of T is tested by x and x⁻¹ membership.
+- Quaternion presentation changes preserving trace and norm preserve S and T.
 
 **Checks.**
 
-- `quaternion_trace_sets.one`: 2∈S_ab via x₁=1 and x₂=x₃=x₄=0.
-- `quaternion_trace_sets.real_ramified`: For a,b<0 the real trace range is [−2,2], so the real condition cannot be dropped.
-- `quaternion_trace_sets.split`: When the quaternion algebra is split at every place, T_ab=ℚ and Δ_ab is empty.
+- 2∈S_ab via x₁=1 and x₂=x₃=x₄=0.
+- For a,b<0 the real trace range is [−2,2], so the real condition cannot be dropped.
+- When the quaternion algebra is split at every place, T_ab=ℚ and Δ_ab is empty.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), §2, definitions and local facts preceding Proposition 6, pp.75–78.)
 
-*Needs:* [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets); [TauCetiRoadmap.QuadraticFormInvariants, layer 2 quaternion algebras and the four fold splitting criterion](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#layer-2-quaternion-algebras-and-the-four-fold-splitting-criterion); [TauCetiRoadmap.QuadraticFormInvariants, 6c the hilbert symbol and the local hasse invariant](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#6c-the-hilbert-symbol-and-the-local-hasse-invariant).
-
-<a id="ld4-semilocal-trace-description"></a>
+*Needs:* [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring); [TauCetiRoadmap.QuadraticFormInvariants, layer 2 quaternion algebras and the four fold splitting criterion](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#layer-2-quaternion-algebras-and-the-four-fold-splitting-criterion); [TauCetiRoadmap.QuadraticFormInvariants, 6c the hilbert symbol and the local hasse invariant](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#6c-the-hilbert-symbol-and-the-local-hasse-invariant).
 
 ### 4.21 Local trace and semilocal integrality theorem
 
@@ -1511,60 +1305,54 @@ In the dyadic trace calculation for a=6,b=15, the auxiliary triple (1,1,1) gives
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Proposition 6, pp.77–79; Remark 8(a), statement p.79 and proof pp.79–80.)
 
-*Needs:* [4.20 Quaternion trace and semilocal sets](#ld4-quaternion-trace-sets); [TauCetiRoadmap.GlobalQuadraticForms, layer 4 global square norm and approximation lemmas](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-4-global-square-norm-and-approximation-lemmas); [TauCetiRoadmap.GlobalQuadraticForms, layer 6 representation and isometry](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-6-representation-and-isometry); [TauCetiRoadmap.QuadraticFormInvariants, 6c the hilbert symbol and the local hasse invariant](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#6c-the-hilbert-symbol-and-the-local-hasse-invariant).
-
-<a id="ld4-prime-class-rings"></a>
+*Needs:* [4.20 Quaternion trace and semilocal sets](#420-quaternion-trace-and-semilocal-sets); [TauCetiRoadmap.GlobalQuadraticForms, layer 4 global square norm and approximation lemmas](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-4-global-square-norm-and-approximation-lemmas); [TauCetiRoadmap.GlobalQuadraticForms, layer 6 representation and isometry](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-6-representation-and-isometry); [TauCetiRoadmap.QuadraticFormInvariants, 6c the hilbert symbol and the local hasse invariant](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#6c-the-hilbert-symbol-and-the-local-hasse-invariant).
 
 ### 4.22 Prime-class semilocal rings
 
-For k∈{1,3,5,7}, let P^[k] be the odd primes congruent to k mod8, P(p) the primes where v_ℓ(p) is odd, and P^[k](p)=P(p)∩P^[k]. For p,q∈ℚ× put R³_p=T_(−1,−p)+T_(2,−p), R⁵_p=T_(−2,−p)+T_(2,−p), R⁷_p=T_(−1,−p)+T_(−2,p), and R¹_pq=T_(−2p,q)+T_(2p,q). If p∈k+8ℤ_(2), then R^k_p=∩_{ℓ∈P^[k](p)}ℤ_(ℓ) for k=3,5,7; otherwise an additional 2-integrality condition may occur. If p∈1+8ℤ_(2) and q∈3+8ℤ_(2), R¹_pq is the intersection over Δ_(−2p,q)∩Δ_(2p,q). Empty intersections are ℚ. All displayed rings have uniform existential definitions.
+For k∈{1,3,5,7}, let P^[k] be the odd primes congruent to k mod8, P(p) the primes where v_ℓ(p) is odd, and P^[k](p)=P(p)∩P^[k]. For p,q∈ℚ× put R³_p=T_(−1,−p)+T_(2,−p), R⁵_p=T_(−2,−p)+T_(2,−p), R⁷_p=T_(−1,−p)+T_(−2,p), and R¹_pq=T_(−2p,q)+T_(2p,q). If p∈k+8ℤ_(2), then `R^k_p=∩_{ℓ∈P^[k](p)}ℤ_(ℓ)` for k=3,5,7; otherwise an additional 2-integrality condition may occur. If p∈1+8ℤ_(2) and q∈3+8ℤ_(2), R¹_pq is the intersection over Δ_(−2p,q)∩Δ_(2p,q). Empty intersections are ℚ. All displayed rings have uniform existential definitions.
 
 Define the finite prime sets and the four ring expressions exactly as displayed. Apply the local trace sum theorem and Hilbert symbol computations with exactly the stated congruence guards. Without those guards retain any extra dyadic condition; do not identify the ring with the odd-prime intersection. Keep the prime 2 and the real place outside the odd class partition.
 
 The basic interface must include:
 
-- `prime_class_rings.membership`: Each ring has its finite-prime intersection description under the displayed congruence guard, with any dyadic correction retained otherwise.
-- `prime_class_rings.diophantine`: Each ring membership predicate is existential uniformly in its nonzero parameters.
-- `prime_class_rings.empty_support`: Under the corresponding congruence guard, empty prime support gives ℚ.
+- Each ring has its finite-prime intersection description under the displayed congruence guard, with any dyadic correction retained otherwise.
+- Each ring membership predicate is existential uniformly in its nonzero parameters.
+- Under the corresponding congruence guard, empty prime support gives ℚ.
 
 **Checks.**
 
-- `prime_class_rings.square`: For p=1 and q=3 the class-one common ramification support is empty and R¹_1,3=ℚ.
-- `prime_class_rings.class`: R³_3=ℤ_(3), R⁵_5=ℤ_(5), and R⁷_7=ℤ_(7); each parameter satisfies its own congruence guard.
-- `prime_class_rings.dyadic`: For p=5 the odd class-three support is empty but R³_5=ℤ_(2), demonstrating the necessary dyadic correction outside the class-three guard.
+- For p=1 and q=3 the class-one common ramification support is empty and R¹_1,3=ℚ.
+- R³_3=ℤ_(3), R⁵_5=ℤ_(5), and R⁷_7=ℤ_(7); each parameter satisfies its own congruence guard.
+- For p=5 the odd class-three support is empty but R³_5=ℤ_(2), demonstrating the necessary dyadic correction outside the class-three guard.
 
 Keep the first quaternion entries in Definition 7 fixed: the class-five formula uses −2 and 2, and the class-seven formula uses −1 and −2. The altered entries in the proof of Proposition 10(b), p.81, are not alternative definitions.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Definitions 7 and 9, pp.79–80; Proposition 10, pp.80–81.)
 
-*Needs:* [4.20 Quaternion trace and semilocal sets](#ld4-quaternion-trace-sets); [4.21 Local trace and semilocal integrality theorem](#ld4-semilocal-trace-description).
-
-<a id="ld4-diophantine-radicals"></a>
+*Needs:* [4.20 Quaternion trace and semilocal sets](#420-quaternion-trace-and-semilocal-sets); [4.21 Local trace and semilocal integrality theorem](#421-local-trace-and-semilocal-integrality-theorem).
 
 ### 4.23 Diophantine semilocal radicals
 
-For a,b,c∈ℚ× set I^c_ab=cℚ²T_ab×∩(1−ℚ²T_ab×), allowing the zero square, and J_ab=(I^a_ab+I^a_ab)∩(I^b_ab+I^b_ab). Put Δ′=Δ_ab∖{2,∞} when 2 ramifies and both v₂(a),v₂(b) are even, and Δ′=Δ_ab∖{∞} otherwise. Then J_ab=∩_{ℓ∈Δ′}ℓℤ_(ℓ), with empty intersection ℚ. If ∞ does not ramify, Δ′ is the full finite ramification set and is nonempty, this is the Jacobson radical of T_ab. For pairs (a,b),(c,d) with nonempty common finite ramification support, no common dyadic ramification, and at least one of a,b,c,d positive, J_ab+J_cd is the Jacobson radical of T_ab+T_cd. Empty support is handled separately: Jac(ℚ)={0}.
+For a,b,c∈ℚ× set I^c_ab=cℚ²T_ab×∩(1−ℚ²T_ab×), allowing the zero square, and J_ab=(I^a_ab+I^a_ab)∩(I^b_ab+I^b_ab). Put Δ′=Δ_ab∖{2,∞} when 2 ramifies and both v₂(a),v₂(b) are even, and Δ′=Δ_ab∖{∞} otherwise. Then `J_ab=∩_{ℓ∈Δ′}ℓℤ_(ℓ),` with empty intersection ℚ. If ∞ does not ramify, Δ′ is the full finite ramification set and is nonempty, this is the Jacobson radical of T_ab. For pairs (a,b),(c,d) with nonempty common finite ramification support, no common dyadic ramification, and at least one of a,b,c,d positive, J_ab+J_cd is the Jacobson radical of T_ab+T_cd. Empty support is handled separately: Jac(ℚ)={0}.
 
 Translate T units into simultaneous membership of x and x⁻¹. Compute valuations of square-times-units and of 1 minus such elements; separate the odd and dyadic cases in Lemma 13. For sums of semilocal rings with nonempty common support, combine the two radical ideals by the source intersection formula.
 
 The basic interface must include:
 
-- `diophantine_radicals.nonempty_radical`: With nonempty support and the stated parity hypotheses the J formula is the Jacobson radical.
-- `diophantine_radicals.existential`: The displayed I and J expressions use existential ring conditions.
-- `diophantine_radicals.sum_radical`: Lemma 14 combines radicals after checking nonempty common support.
-- `diophantine_radicals.empty`: The radical of the field ℚ is {0}; no empty-intersection formula changes it to ℚ.
+- With nonempty support and the stated parity hypotheses the J formula is the Jacobson radical.
+- The displayed I and J expressions use existential ring conditions.
+- Lemma 14 combines radicals after checking nonempty common support.
+- The radical of the field ℚ is {0}; no empty-intersection formula changes it to ℚ.
 
 **Checks.**
 
-- `diophantine_radicals.singleton`: For R=ℤ_(3), Jac(R)=3ℤ_(3).
-- `diophantine_radicals.two_primes`: For R=ℤ_(3)∩ℤ_(5), Jac(R)=3ℤ_(3)∩5ℤ_(5).
-- `diophantine_radicals.field`: For R=ℚ, Jac(R)={0}, while the unguarded existential expression can be ℚ.
+- For R=ℤ_(3), Jac(R)=3ℤ_(3).
+- For R=ℤ_(3)∩ℤ_(5), Jac(R)=3ℤ_(3)∩5ℤ_(5).
+- For R=ℚ, Jac(R)={0}, while the unguarded existential expression can be ℚ.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Definition 12, pp.81–82; Lemma 13, pp.82–83; Lemma 14, p.83.)
 
-*Needs:* [4.22 Prime-class semilocal rings](#ld4-prime-class-rings); [4.20 Quaternion trace and semilocal sets](#ld4-quaternion-trace-sets); [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets).
-
-<a id="ld4-prime-parameter-families"></a>
+*Needs:* [4.22 Prime-class semilocal rings](#422-prime-class-semilocal-rings); [4.20 Quaternion trace and semilocal sets](#420-quaternion-trace-and-semilocal-sets); [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring).
 
 ### 4.24 Prime-covering Diophantine parameter families
 
@@ -1574,35 +1362,31 @@ Use the source existential expressions for rational positivity and congruences, 
 
 The basic interface must include:
 
-- `prime_parameter_families.existential`: Each allowed parameter predicate has a fixed existential ring formula.
-- `prime_parameter_families.support_nonempty`: Every allowed radical use has nonempty prime support.
-- `prime_parameter_families.prime_cover`: For each odd prime a permitted parameter has support exactly that prime.
+- Each allowed parameter predicate has a fixed existential ring formula.
+- Every allowed radical use has nonempty prime support.
+- For each odd prime a permitted parameter has support exactly that prime.
 
 **Checks.**
 
-- `prime_parameter_families.three`: p=3 is in Φ₃ and detects 3-integrality.
-- `prime_parameter_families.negative`: p=−3 fails the positivity condition even though its odd prime divisor is 3.
-- `prime_parameter_families.square`: A rational square cannot be a member of Φ₃, Φ₅ or Φ₇, by its 2-adic unit congruence.
+- p=3 is in Φ₃ and detects 3-integrality.
+- p=−3 fails the positivity condition even though its odd prime divisor is 3.
+- A rational square cannot be a member of Φ₃, Φ₅ or Φ₇, by its 2-adic unit congruence.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Corollary 15 and Proposition 16, pp.84–86.)
 
-*Needs:* [4.23 Diophantine semilocal radicals](#ld4-diophantine-radicals); [4.22 Prime-class semilocal rings](#ld4-prime-class-rings); [4.21 Local trace and semilocal integrality theorem](#ld4-semilocal-trace-description); Mathlib `Nat.forall_exists_prime_gt_and_modEq`.
-
-<a id="ld4-universal-integers"></a>
+*Needs:* [4.23 Diophantine semilocal radicals](#423-diophantine-semilocal-radicals); [4.22 Prime-class semilocal rings](#422-prime-class-semilocal-rings); [4.21 Local trace and semilocal integrality theorem](#421-local-trace-and-semilocal-integrality-theorem); Mathlib `Nat.forall_exists_prime_gt_and_modEq`.
 
 ### 4.25 Universal definition of integers in rationals
 
-There is a parameter-free universal first-order formula in the ring language defining ℤ⊂ℚ; equivalently ℚ∖ℤ is Diophantine over ℚ. For a nonempty finite S and R=∩_{ℓ∈S}ℤ_(ℓ), the source universal predicate R̃={x:¬∃y∈Jac(R),xy=1} equals ⋃_{ℓ∈S}ℤ_(ℓ), not R itself. Intersect its instances over Φ₃,Φ₅,Φ₇ and Ψ, together with the fixed dyadic integrality predicate, to recover ℤ.
+There is a parameter-free universal first-order formula in the ring language defining ℤ⊂ℚ; equivalently ℚ∖ℤ is Diophantine over ℚ. For a nonempty finite S and `R=∩_{ℓ∈S}ℤ_(ℓ),` the source universal predicate R̃={x:¬∃y∈Jac(R),xy=1} equals `⋃_{ℓ∈S}ℤ_(ℓ),` not R itself. Intersect its instances over Φ₃,Φ₅,Φ₇ and Ψ, together with the fixed dyadic integrality predicate, to recover ℤ.
 
 For x≠0 compare x⁻¹∈Jac(R) with v_ℓ(x)<0 for all ℓ∈S; at x=0 the universal condition holds. Each integer passes every local integrality test. A noninteger has a negative valuation at some prime; choose a singleton-support parameter, or the dyadic test, that rejects it. All guards have existential descriptions, so their implications can be placed under universal quantifiers. Negate the resulting formula and combine equations using formal reality of ℚ.
 
-The representative signature is `universal_integers and rational_nonintegers_diophantine` in Suggested.lean.
+The acceptance signature is `universal_integers` and `rational_nonintegers_diophantine` in Suggested.lean.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Lemma 17, p.85, and Proposition 18, p.86; Theorem 1 and Corollary 2, pp.73–74.)
 
-*Needs:* [4.24 Prime-covering Diophantine parameter families](#ld4-prime-parameter-families); [4.23 Diophantine semilocal radicals](#ld4-diophantine-radicals); [4.22 Prime-class semilocal rings](#ld4-prime-class-rings); [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets).
-
-<a id="ld4-rational-mixed-theory-undecidable"></a>
+*Needs:* [4.24 Prime-covering Diophantine parameter families](#424-prime-covering-diophantine-parameter-families); [4.23 Diophantine semilocal radicals](#423-diophantine-semilocal-radicals); [4.22 Prime-class semilocal rings](#422-prime-class-semilocal-rings); [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring).
 
 ### 4.26 Undecidable universal-existential rational theory
 
@@ -1612,69 +1396,61 @@ Translate integer polynomial solvability as an existential rational tuple with u
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Corollaries 3 and 3′, pp.74–75.)
 
-*Needs:* [4.25 Universal definition of integers in rationals](#ld4-universal-integers); [4.17 Undecidability of Hilbert tenth over integers](#ld4-h10-integers); [0.6 Explicit arithmetic semantics bridges](#ld0-arithmetic-translation).
-
-<a id="ld4-square-detection-unions"></a>
+*Needs:* [4.25 Universal definition of integers in rationals](#425-universal-definition-of-integers-in-rationals); [4.17 Undecidability of Hilbert tenth over integers](#417-undecidability-of-hilbert-tenth-over-integers); [0.6 Explicit arithmetic semantics bridges](#06-explicit-arithmetic-semantics-bridges).
 
 ### 4.27 Square-detection unions of local rings
 
-For p∈Φ₁ define S_p={x:∃q, (p,q)∈Ψ, q∈(R¹_pq)× and x∈R¹_pq}. Its membership is uniformly Diophantine and S_p=⋃_{ℓ∈P(p)}ℤ_(ℓ). For square p∈Φ₁ this union is empty. The parameter guard p∈Φ₁ is essential: this is not a formula for arbitrary nonzero rational p. The notation is S_p from Definition 19, not a one-parameter R¹_p.
+For p∈Φ₁ define S_p={x:∃q, (p,q)∈Ψ, q∈(R¹_pq)× and x∈R¹_pq}. Its membership is uniformly Diophantine and `S_p=⋃_{ℓ∈P(p)}ℤ_(ℓ).` For square p∈Φ₁ this union is empty. The parameter guard p∈Φ₁ is essential: this is not a formula for arbitrary nonzero rational p. The notation is S_p from Definition 19, not a one-parameter R¹_p.
 
 Expand Ψ, the unit test and R membership into existential conditions. Use Lemma 20 to prove both containments and construct q for each selected odd-valuation prime, with the dyadic case separated as in the source.
 
 The basic interface must include:
 
-- `square_detection_unions.exists_formula`: S_p has a uniform existential ring definition.
-- `square_detection_unions.square_empty`: For square p∈Φ₁ the set is empty.
-- `square_detection_unions.nonsquare_union`: For p∈Φ₁, the set equals the union over its odd-valuation primes.
+- S_p has a uniform existential ring definition.
+- For square p∈Φ₁ the set is empty.
+- For p∈Φ₁, the set equals the union over its odd-valuation primes.
 
 **Checks.**
 
-- `square_detection_unions.square`: S_1 is empty.
-- `square_detection_unions.prime`: S_17=ℤ_(17), since the prime 17 lies in Φ₁.
-- `square_detection_unions.two_primes`: For p=17·41∈Φ₁, S_p=ℤ_(17)∪ℤ_(41), so 1/17 belongs; the intersection would reject it.
+- S_1 is empty.
+- S_17=ℤ_(17), since the prime 17 lies in Φ₁.
+- For p=17·41∈Φ₁, S_p=ℤ_(17)∪ℤ_(41), so 1/17 belongs; the intersection would reject it.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Definition 19, p.86; Lemma 20, pp.86–87.)
 
-*Needs:* [4.24 Prime-covering Diophantine parameter families](#ld4-prime-parameter-families); [4.22 Prime-class semilocal rings](#ld4-prime-class-rings); [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets); Mathlib `Nat.forall_exists_prime_gt_and_modEq`.
-
-<a id="ld4-nonsquares-and-nonnorms"></a>
+*Needs:* [4.24 Prime-covering Diophantine parameter families](#424-prime-covering-diophantine-parameter-families); [4.22 Prime-class semilocal rings](#422-prime-class-semilocal-rings); [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring); Mathlib `Nat.forall_exists_prime_gt_and_modEq`.
 
 ### 4.28 Diophantine nonsquares and quadratic nonnorms
 
-The subsets ℚ∖ℚ² and {(x,y)∈(ℚ×)²: x is not a norm from ℚ(√y)} are Diophantine over ℚ, with the split case y square contributing no nonnorms. The prime-disjointness and empty-prime-class predicates used in the proof are Diophantine with the corrected multiplicative square-class parametrizations. For class 3, use {±1,±2}(ℚ×)² ∏_{k∈{1,5,7}}Φ′_kΦ′_k for P^[3](x)=∅, where Φ′_k is Φ_k∪{1}; do not use the erroneous union of two equal products.
+The subsets ℚ∖ℚ² and {(x,y)∈(ℚ×)²: x is not a norm from ℚ(√y)} are Diophantine over ℚ, with the split case y square contributing no nonnorms. The prime-disjointness and empty-prime-class predicates used in the proof are Diophantine with multiplicative square-class parametrizations. For class 3, use {±1,±2}(ℚ×)² `∏_{k∈{1,5,7}}Φ′_kΦ′_k` for P^[3](x)=∅, where Φ′_k is Φ_k∪{1}; multiplication of square classes uses the product of the two factors.
 
 Express disjoint finite prime supports by the radical criterion. Prove the nonsquare and empty-class tests by parity of valuations, retaining rational square factors and signs. Use the quadratic Hasse norm theorem and local norm/Hilbert symbol tests; include the real-place obstruction when appropriate.
 
 For an odd prime ℓ≡3 mod 8, (2/ℓ)=−1 by the supplementary reciprocity law. For the class-three empty-support predicate, 35 requires both the class-five and class-seven factors, while squares and signed unit multiples require the square and {±1,±2} factors. Keep ℤ_(ℓ) for the rational ring in the norm formula (Koenigsmann Proposition 21(b),(d),(e), pp.88–90).
 
-The representative signature is `rational_nonsquares_diophantine` in Suggested.lean.
+The acceptance signature is `rational_nonsquares_diophantine` in Suggested.lean.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Proposition 21(a)–(e), pp.88–90.)
 
-*Needs:* [4.27 Square-detection unions of local rings](#ld4-square-detection-unions); [4.24 Prime-covering Diophantine parameter families](#ld4-prime-parameter-families); [4.23 Diophantine semilocal radicals](#ld4-diophantine-radicals); [TauCetiRoadmap.GlobalQuadraticForms, layer 4 global square norm and approximation lemmas](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-4-global-square-norm-and-approximation-lemmas); [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets); Mathlib `Nat.forall_exists_prime_gt_and_modEq`.
-
-<a id="ld4-one-universal-variable"></a>
+*Needs:* [4.27 Square-detection unions of local rings](#427-square-detection-unions-of-local-rings); [4.24 Prime-covering Diophantine parameter families](#424-prime-covering-diophantine-parameter-families); [4.23 Diophantine semilocal radicals](#423-diophantine-semilocal-radicals); [TauCetiRoadmap.GlobalQuadraticForms, layer 4 global square norm and approximation lemmas](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-4-global-square-norm-and-approximation-lemmas); [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring); Mathlib `Nat.forall_exists_prime_gt_and_modEq`.
 
 ### 4.29 Integer definition with one universal variable
 
-There exists an integer polynomial P(t,x,y₁,…,y_m) such that for t∈ℚ, t∈ℤ iff ∀x∈ℚ ∃y∈ℚ^m, P(t,x,y)=0. The single universally quantified variable is x; the witness arity m is fixed. Use S_x from Definition 19 for the class-one clause, and the corrected rational 2-local residue classes k+8ℤ_(2) in the source proof.
+There exists an integer polynomial P(t,x,y₁,…,y_m) such that for t∈ℚ, t∈ℤ iff ∀x∈ℚ ∃y∈ℚ^m, P(t,x,y)=0. The single universally quantified variable is x; the witness arity m is fixed. Use S_x from Definition 19 for the class-one clause, and the rational 2-local residue classes k+8ℤ_(2) in the source proof.
 
 Use the Diophantine complements of the Φ_k guards and the S_x characterization to obtain one universal parameter. Combine finitely many rational polynomial conditions by a product for disjunction and sums of squares for conjunction.
 
 The class-one clause uses the one-parameter S_p, not an undefined one-parameter R¹_p. The dyadic guards are k+8ℤ_(2); k+ℤ_(2) cannot distinguish odd residue classes (Koenigsmann Corollary 22, pp.90–91).
 
-The representative signature is `one_universal_variable` in Suggested.lean.
+The acceptance signature is `one_universal_variable` in Suggested.lean.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Corollary 22, pp.90–91.)
 
-*Needs:* [4.27 Square-detection unions of local rings](#ld4-square-detection-unions); [4.28 Diophantine nonsquares and quadratic nonnorms](#ld4-nonsquares-and-nonnorms); [4.25 Universal definition of integers in rationals](#ld4-universal-integers); [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets).
-
-<a id="ld4-normic-zero-cycles"></a>
+*Needs:* [4.27 Square-detection unions of local rings](#427-square-detection-unions-of-local-rings); [4.28 Diophantine nonsquares and quadratic nonnorms](#428-diophantine-nonsquares-and-quadratic-nonnorms); [4.25 Universal definition of integers in rationals](#425-universal-definition-of-integers-in-rationals); [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring).
 
 ### 4.29a Effective zero-cycles on normic bundles
 
-Let k be a number field, p a prime, K/k a cyclic field extension of degree p, and P=QR∈k[x] separable of degree 2p with Q,R irreducible of degree p and without zero in K. Let U=U(K/k,P) be the smooth affine k-variety N_{K/k}(Ξ)=P(x)≠0. Prove `normicZeroCycles`:
+Let k be a number field, p a prime, K/k a cyclic field extension of degree p, and P=QR∈k[x] separable of degree 2p with Q,R irreducible of degree p and without zero in K. Let U=U(K/k,P) be the smooth affine k-variety `N_{K/k}(Ξ)=P(x)≠0.` Prove the effective normic zero-cycle theorem:
 
 - (a) U has a smooth projective model X with a morphism π:X→ℙ¹ extending (Ξ,x)↦x, whose generic fibre is the Severi–Brauer variety of dimension p−1 of the cyclic algebra (K/k,P(x)); the classes (K/k,Q(x)) and (K/k,R(x)) of Br k(x) lie in Br X, and Br X/Br k is cyclic of order p generated by (K/k,Q(x)).
 - (b) If an adelic point (M_v)∈∏_v U(k_v) is orthogonal to (K/k,Q(x)), then U has a point over a field extension L/k of degree 2p+1; in particular Sym^(2p+1)U and Sym^(2p+1)X have k-points.
@@ -1685,37 +1461,33 @@ For (a), glue the two affine charts x and y=1/x of the norm equation, replace th
 
 The basic interface must include:
 
-- `normic_zero_cycles.brauer`: Br X/Br k is cyclic of order p, generated by (K/k,Q(x)).
-- `normic_zero_cycles.effective`: orthogonality of one adelic point to (K/k,Q(x)) yields a point over an extension of degree exactly 2p+1.
-- `normic_zero_cycles.symmetric_power_map`: a point over a degree-N extension gives a k-point of Sym^N U, and conversely a k-point of Sym^N U is an effective Galois-stable zero-cycle of degree N.
-- `normic_zero_cycles.finite_classes`: the obstructed parameters form finitely many classes of k×/k×p.
+- Br X/Br k is cyclic of order p, generated by (K/k,Q(x)).
+- orthogonality of one adelic point to (K/k,Q(x)) yields a point over an extension of degree exactly 2p+1.
+- a point over a degree-N extension gives a k-point of Sym^N U, and conversely a k-point of Sym^N U is an effective Galois-stable zero-cycle of degree N.
+- the obstructed parameters form finitely many classes of k×/k×p.
 
 **Checks.**
 
-- `normic_zero_cycles.split_algebra`: If K/k is not a field (split étale algebra), X is k-birational to ℙ^p and Br X=Br k, so there is no obstruction (CTV Proposition 2.2(ii)).
-- `normic_zero_cycles.degree_p_point`: U has a point over K itself, since over K the norm form splits and represents every nonzero value. Since gcd(p,2p+1)=1, a point of degree 2p+1 from (b) and this point of degree p give the zero-cycle of degree (2p+1)−2p=1; in the family of (d) no such cycle exists, so the obstruction is what removes the degree-(2p+1) point.
-- `normic_zero_cycles.symmetric_power_count`: For N=1, Sym¹U=U; for N=2p+1 the effective cycle of a closed point of degree 2p+1 is one k-point of Sym^(2p+1)U.
-- `normic_zero_cycles.orthogonality_needed`: In the family of (d), every completion has points but the Brauer evaluation of (d,Q(x))_ζ on degree-one zero-cycles never sums to zero, so (b) cannot hold without its orthogonality hypothesis.
+- If K/k is not a field (split étale algebra), X is k-birational to ℙ^p and Br X=Br k, so there is no obstruction (CTV Proposition 2.2(ii)).
+- U has a point over K itself, since over K the norm form splits and represents every nonzero value. Since gcd(p,2p+1)=1, a point of degree 2p+1 from (b) and this point of degree p give the zero-cycle of degree (2p+1)−2p=1; in the family of (d) no such cycle exists, so the obstruction is what removes the degree-(2p+1) point.
+- For N=1, Sym¹U=U; for N=2p+1 the effective cycle of a closed point of degree 2p+1 is one k-point of Sym^(2p+1)U.
+- In the family of (d), every completion has points but the Brauer evaluation of (d,Q(x))_ζ on degree-one zero-cycles never sums to zero, so (b) cannot hold without its orthogonality hypothesis.
 
 ([Jean-Louis Colliot-Thélène and Jan Van Geel, *Le complémentaire des puissances n-ièmes dans un corps de nombres est un ensemble diophantien*](https://arxiv.org/pdf/1401.0915), Proposition 2.2, pp.5–7; Theorem 3.1, pp.8–9; Corollary 3.2, p.10; Proposition 3.4, pp.10–14; Lemma 4.1, pp.14–15; Proposition 4.2, pp.15–16.)
 
 *Needs:* [TauCetiRoadmap.HeightsRationalPointsAndObstructions, §2.16b](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#216b-brauer-residues); [§2.17](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#217-unramified-brauer-groups); [§2.20](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#220-brauer-pairing-on-zero-cycles); [§2.21](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#221-hararis-formal-lemma); [TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero, §6.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ResolutionOfSingularitiesCharacteristicZero/README.md#62-snccompactification); [TauCetiRoadmap.WeilConjectures, curve Riemann hypothesis](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/WeilConjectures/README.md#curve-rh-from-the-surface-bound); [TauCetiRoadmap.Chebotarev](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/Chebotarev/README.md); [TauCetiRoadmap.ClassFieldTheory](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ClassFieldTheory/README.md).
 
-<a id="ld4-nonpowers"></a>
-
 ### 4.30 Nonpowers over a number field
 
 For a number field k and integer r>1, k×∖k×r is Diophantine over k; equivalently it is a finite union of polynomial-system images on k-rational points. Zero is excluded by an inverse witness. For r=1 the set is empty, which is Diophantine separately. The prime-exponent reduction and the descent from a root-of-unity extension are part of the finite-dimensional interpretation.
 
-Reduce r to prime factors and pass to a finite extension containing the needed roots of unity, recording norm/power and restriction-of-scalars comparisons (CTV p.16, citing Poonen and Várilly-Alvarado–Viray). For r=p, the sets N_v=k×∖(k×∩k_v×p) are Diophantine; D₁={u: Sym^(2p+1)U_u(k)≠∅} is Diophantine as the image of the k-points of the relative symmetric power over k[u,1/u]. Put D₂=D₁∪⋃_{v∈S}N_v. By §4.29a(b) its complement E lies in the obstructed set, which by §4.29a(c) is a finite union of k×p-classes, and by §4.29a(d) the class k×p lies in E. Hence D₃=E∖k×p is a finite union of classes, each Diophantine, and k×∖k×p=D₂∪D₃. Enforce x≠0 explicitly.
+Reduce r to prime factors and pass to a finite extension containing the needed roots of unity, recording norm/power and restriction-of-scalars comparisons (CTV p.16, citing Poonen and Várilly-Alvarado–Viray). For r=p, the sets N_v=k×∖(k×∩k_v×p) are Diophantine; D₁={u: Sym^(2p+1)U_u(k)≠∅} is Diophantine as the image of the k-points of the relative symmetric power over k[u,1/u]. Put `D₂=D₁∪⋃_{v∈S}N_v.` By §4.29a(b) its complement E lies in the obstructed set, which by §4.29a(c) is a finite union of k×p-classes, and by §4.29a(d) the class k×p lies in E. Hence D₃=E∖k×p is a finite union of classes, each Diophantine, and k×∖k×p=D₂∪D₃. Enforce x≠0 explicitly.
 
 The effective zero-cycle theorem and the Brauer computations are §4.29a; a general Brauer pairing on zero-cycles by itself gives neither the degree bound 2p+1 nor the finiteness of obstructed classes.
 
 ([Jean-Louis Colliot-Thélène and Jan Van Geel, *Le complémentaire des puissances n-ièmes dans un corps de nombres est un ensemble diophantien*](https://arxiv.org/pdf/1401.0915), Theorem 4.3 and proof, pp.16–17.)
 
-*Needs:* [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets); [4.29a Effective zero-cycles on normic bundles](#ld4-normic-zero-cycles).
-
-<a id="ld4-existential-model-interfaces"></a>
+*Needs:* [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring); [4.29a Effective zero-cycles on normic bundles](#429a-effective-zero-cycles-on-normic-bundles).
 
 ### 4.31 Existential closure and model completeness
 
@@ -1725,37 +1497,33 @@ Define relative existential closure using native BoundedFormula.IsExistential an
 
 The basic interface must include:
 
-- `existential_model_interfaces.parameters`: Existential closure allows arbitrary parameters from the smaller model.
-- `existential_model_interfaces.elementary`: An elementary embedding is existentially closed.
-- `existential_model_interfaces.robinson`: T is model complete iff embeddings between its models are existentially closed.
+- Existential closure allows arbitrary parameters from the smaller model.
+- An elementary embedding is existentially closed.
+- T is model complete iff embeddings between its models are existentially closed.
 
 **Checks.**
 
-- `existential_model_interfaces.identity`: Every structure is existentially closed in itself.
-- `existential_model_interfaces.rational_real`: ℚ is not existentially closed in ℝ: X²=2 acquires a root.
-- `existential_model_interfaces.direction`: Existential closure only descends existential truths; it does not assert arbitrary elementary equivalence.
+- Every structure is existentially closed in itself.
+- ℚ is not existentially closed in ℝ: X²=2 acquires a root.
+- Existential closure only descends existential truths; it does not assert arbitrary elementary equivalence.
 
 Prove the existential-preservation theorem by the native compactness/diagram argument, retaining all parameters from the smaller model. A new syntax for existential formulas is unnecessary.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), §4, preservation criterion before Proposition 23, p.91; Remark 24, p.92.)
 
-*Needs:* [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); Mathlib `FirstOrder.Language.BoundedFormula.IsExistential`.
-
-<a id="ld4-rational-model-preservation"></a>
+*Needs:* [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); Mathlib `FirstOrder.Language.BoundedFormula.IsExistential`.
 
 ### 4.32 Rational-model preservation criteria
 
 For K⊂L both models of Th(ℚ), let Z_K,Z_L be defined by a fixed universal integer formula. Then (a) Z_L∩K⊂Z_K; (b) Z_L∩K is integrally closed in K; (c) for every positive n, L^n∩K=K^n, so K is radically closed in L. Conditionally, if ℤ is Diophantine in ℚ, then (d) Z_L∩K=Z_K and K is relatively algebraically closed in L. More generally, ℤ has an existential definition in ℚ iff Z_K⊂Z_L for every such embedding. Finally Th(ℚ) is not model complete: model completeness would make every definable rational subset existential, contradicting the non-RE complement of an RE undecidable subset of the defined integer ring. No unconditional existential integer definition follows.
 
-Use downward preservation of universal formulas for the first containment. Use monic-equation witnesses for integral closure and Diophantine nonpowers for radical closure. Apply the model-theoretic existential preservation theorem to the fixed universal formula, using the complete theory Th(ℚ). For non-model-completeness, take an RE nonrecursive set represented in interpreted arithmetic and use existential normal forms to derive the impossible RE complement.
+Koenigsmann’s published Proposition 23(c) states all positive n; its proof uses the nonpower theorem of §4.30 for n>2. Use downward preservation of universal formulas for the first containment. Use monic-equation witnesses for integral closure and Diophantine nonpowers for radical closure. Apply the model-theoretic existential preservation theorem to the fixed universal formula, using the complete theory Th(ℚ). For non-model-completeness, take an RE nonrecursive set represented in interpreted arithmetic and use existential normal forms to derive the impossible RE complement.
 
 For the conditional relative-algebraic-closure conclusion, formalize the monic-root decision predicate and its uniform MRDP translation from Koenigsmann Proposition 23(d). The diagram/preservation theorem is §4.31. Neither conclusion supplies an unconditional existential integer definition.
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), §4, Proposition 23(a)–(d), pp.91–92; Remark 24, p.92.)
 
-*Needs:* [4.31 Existential closure and model completeness](#ld4-existential-model-interfaces); [4.25 Universal definition of integers in rationals](#ld4-universal-integers); [4.30 Nonpowers over a number field](#ld4-nonpowers); [4.16 Matiyasevich–Robinson–Davis–Putnam theorem](#ld4-mrdp).
-
-<a id="ld4-two-universal-integers"></a>
+*Needs:* [4.31 Existential closure and model completeness](#431-existential-closure-and-model-completeness); [4.25 Universal definition of integers in rationals](#425-universal-definition-of-integers-in-rationals); [4.30 Nonpowers over a number field](#430-nonpowers-over-a-number-field); [4.16 Matiyasevich–Robinson–Davis–Putnam theorem](#416-matiyasevichrobinsondavisputnam-theorem).
 
 ### 4.33 Two-universal-variable integer formula
 
@@ -1767,7 +1535,7 @@ There are exactly two universally quantified and seven existentially quantified 
 
 ([Jochen Koenigsmann, *Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf), Step 1 conclusion, p.79; introduction p.75.)
 
-*Needs:* [4.21 Local trace and semilocal integrality theorem](#ld4-semilocal-trace-description); Mathlib `Nat.sum_four_squares`; [4.18 Diophantine sets over a commutative ring](#ld4-ring-diophantine-sets).
+*Needs:* [4.21 Local trace and semilocal integrality theorem](#421-local-trace-and-semilocal-integrality-theorem); Mathlib `Nat.sum_four_squares`; [4.18 Diophantine sets over a commutative ring](#418-diophantine-sets-over-a-commutative-ring).
 
 ### Examples
 
@@ -1775,13 +1543,11 @@ The syntax X₀−2X₁ evaluates at (1,3) to −5. X(X−1) vanishes on {0,1} y
 
 ### Dependencies
 
-Mathlib `Poly`; Mathlib `Poly.proj`; Mathlib `Poly.const`; Mathlib `MvPolynomial.eval₂Hom`; Mathlib `Int.castRingHom`; Mathlib `MvPolynomial.eval₂Hom_C`; Mathlib `MvPolynomial.eval₂Hom_X'`; Mathlib `Poly.ext`; Mathlib `Poly.const_apply`; Mathlib `Poly.proj_apply`; Mathlib `MvPolynomial.induction_on`; Mathlib `Poly.add_apply`; Mathlib `Poly.mul_apply`; Mathlib `Poly.induction`; Mathlib `MvPolynomial.funext_set`; Mathlib `Nat.cast_injective`; Mathlib `Set.infinite_range_of_injective`; Mathlib `RingEquiv.ofBijective`; Mathlib `Poly.map_apply`; Mathlib `MvPolynomial.eval_rename`; Mathlib `MvPolynomial.exists_finset_rename`; Mathlib `Finset.toRight`; Mathlib `Finset.mem_toRight`; Mathlib `MvPolynomial.rename`; Mathlib `MvPolynomial.rename_rename`; Mathlib `Fintype.equivFin`; Mathlib `Function.extend`; Mathlib `Function.Injective.extend_apply`; Mathlib `Dioph`; Mathlib `REPred`; Mathlib `Nat.chineseRemainder`; Mathlib `Dioph.pow_dioph`; Mathlib `ComputablePred.halting_problem`; Mathlib `Nat.sum_four_squares`; [0.6 Explicit arithmetic semantics bridges](#ld0-arithmetic-translation); [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); [TauCetiRoadmap.QuadraticFormInvariants, layer 2 quaternion algebras and the four fold splitting criterion](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#layer-2-quaternion-algebras-and-the-four-fold-splitting-criterion); [TauCetiRoadmap.QuadraticFormInvariants, 6c the hilbert symbol and the local hasse invariant](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#6c-the-hilbert-symbol-and-the-local-hasse-invariant); [TauCetiRoadmap.GlobalQuadraticForms, layer 4 global square norm and approximation lemmas](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-4-global-square-norm-and-approximation-lemmas); [TauCetiRoadmap.GlobalQuadraticForms, layer 6 representation and isometry](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-6-representation-and-isometry); Mathlib `Nat.forall_exists_prime_gt_and_modEq`; [TauCetiRoadmap.HeightsRationalPointsAndObstructions, §§2.16b–2.21](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#layer-2-adelic-spaces-and-brauer-evaluation); [TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero, §6.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ResolutionOfSingularitiesCharacteristicZero/README.md#62-snccompactification); [TauCetiRoadmap.WeilConjectures, curve Riemann hypothesis](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/WeilConjectures/README.md#curve-rh-from-the-surface-bound); [TauCetiRoadmap.Chebotarev](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/Chebotarev/README.md); [TauCetiRoadmap.ClassFieldTheory](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ClassFieldTheory/README.md); Mathlib `FirstOrder.Language.BoundedFormula.IsExistential`.
+Mathlib `Poly`; Mathlib `Poly.proj`; Mathlib `Poly.const`; Mathlib `MvPolynomial.eval₂Hom`; Mathlib `Int.castRingHom`; Mathlib `MvPolynomial.eval₂Hom_C`; Mathlib `MvPolynomial.eval₂Hom_X'`; Mathlib `Poly.ext`; Mathlib `Poly.const_apply`; Mathlib `Poly.proj_apply`; Mathlib `MvPolynomial.induction_on`; Mathlib `Poly.add_apply`; Mathlib `Poly.mul_apply`; Mathlib `Poly.induction`; Mathlib `MvPolynomial.funext_set`; Mathlib `Nat.cast_injective`; Mathlib `Set.infinite_range_of_injective`; Mathlib `RingEquiv.ofBijective`; Mathlib `Poly.map_apply`; Mathlib `MvPolynomial.eval_rename`; Mathlib `MvPolynomial.exists_finset_rename`; Mathlib `Finset.toRight`; Mathlib `Finset.mem_toRight`; Mathlib `MvPolynomial.rename`; Mathlib `MvPolynomial.rename_rename`; Mathlib `Fintype.equivFin`; Mathlib `Function.extend`; Mathlib `Function.Injective.extend_apply`; Mathlib `Dioph`; Mathlib `REPred`; Mathlib `Nat.chineseRemainder`; Mathlib `Dioph.pow_dioph`; Mathlib `ComputablePred.halting_problem`; Mathlib `Nat.sum_four_squares`; [0.6 Explicit arithmetic semantics bridges](#06-explicit-arithmetic-semantics-bridges); [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); [TauCetiRoadmap.QuadraticFormInvariants, layer 2 quaternion algebras and the four fold splitting criterion](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#layer-2-quaternion-algebras-and-the-four-fold-splitting-criterion); [TauCetiRoadmap.QuadraticFormInvariants, 6c the hilbert symbol and the local hasse invariant](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/QuadraticFormInvariants/README.md#6c-the-hilbert-symbol-and-the-local-hasse-invariant); [TauCetiRoadmap.GlobalQuadraticForms, layer 4 global square norm and approximation lemmas](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-4-global-square-norm-and-approximation-lemmas); [TauCetiRoadmap.GlobalQuadraticForms, layer 6 representation and isometry](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/GlobalQuadraticForms/README.md#layer-6-representation-and-isometry); Mathlib `Nat.forall_exists_prime_gt_and_modEq`; [TauCetiRoadmap.HeightsRationalPointsAndObstructions, §§2.16b–2.21](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/HeightsRationalPointsAndObstructions/README.md#layer-2-adelic-spaces-and-brauer-evaluation); [TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero, §6.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ResolutionOfSingularitiesCharacteristicZero/README.md#62-snccompactification); [TauCetiRoadmap.WeilConjectures, curve Riemann hypothesis](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/WeilConjectures/README.md#curve-rh-from-the-surface-bound); [TauCetiRoadmap.Chebotarev](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/Chebotarev/README.md); [TauCetiRoadmap.ClassFieldTheory](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ClassFieldTheory/README.md); Mathlib `FirstOrder.Language.BoundedFormula.IsExistential`.
 
 ## Layer 5: normalized local densities and arithmetic consumers
 
 Normalize congruence counts before forming a generating series or naming a density. Uniform local identities transfer through fixed motivic data; global analytic conclusions remain the consumers’ responsibility.
-
-<a id="ld5-congruence-density-series"></a>
 
 ### 5.1 Congruence counts and normalized local densities
 
@@ -1791,23 +1557,21 @@ Define the level sets and measure coefficients, then prove the reduction-fibre m
 
 The basic interface must include:
 
-- `congruence_density_series.count_measure`: For reduction-invariant Φ, normalized finite counts equal Haar volumes.
-- `congruence_density_series.series`: The series records the displayed coefficients with its formal variable T.
-- `congruence_density_series.base_change`: Allowed coefficient specializations preserve the defining formula after its fixed finite residue bound.
-- `congruence_density_series.limit`: A density value is introduced only with a proved convergence statement.
+- For reduction-invariant Φ, normalized finite counts equal Haar volumes.
+- The series records the displayed coefficients with its formal variable T.
+- Allowed coefficient specializations preserve the defining formula after its fixed finite residue bound.
+- A density value is introduced only with a proved convergence statement.
 
 **Checks.**
 
-- `congruence_density_series.whole`: For all of O_K^d, N_n=q^(dn) and a_n=1.
-- `congruence_density_series.one_ball`: For x∈πO_K in one variable, a_n=q^−1 for n≥1.
-- `congruence_density_series.raw`: Raw counts of all of O_K grow with n and cannot be called a probability density.
-- `congruence_density_series.level_zero`: At n=0 the reduction ring has one element; its use requires the formula’s level-zero interpretation.
+- For all of O_K^d, N_n=q^(dn) and a_n=1.
+- For x∈πO_K in one variable, a_n=q^−1 for n≥1.
+- Raw counts of all of O_K grow with n and cannot be called a probability density.
+- At n=0 the reduction ring has one element; its use requires the formula’s level-zero interpretation.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §14.4, Theorem 14.4.1, pp.79–81; §16.4, pp.89–90.)
 
-*Needs:* [1.1 The Denef–Pas language](#ld1-denef-pas-language); [2.6 Igusa and local Poincaré rationality](#ld2-igusa-rationality); [3.9 Specialization to local-field integrals](#ld3-specialization).
-
-<a id="ld5-uniform-density-transfer"></a>
+*Needs:* [1.1 The Denef–Pas language](#11-the-denefpas-language); [2.6 Igusa and local Poincaré rationality](#26-igusa-and-local-poincaré-rationality); [3.9 Specialization to local-field integrals](#39-specialization-to-local-field-integrals).
 
 ### 5.2 Uniform identities for local counting series
 
@@ -1817,61 +1581,43 @@ Represent each normalized counting coefficient or rational expression by the cho
 
 ([Raf Cluckers and François Loeser, *Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022), Theorem 9.2.4, p.46; §9.1, pp.40–44.)
 
-*Needs:* [5.1 Congruence counts and normalized local densities](#ld5-congruence-density-series); [3.10 Transfer of integral identities](#ld3-integral-transfer).
-
-<a id="ld5-zeta-density-consumer"></a>
+*Needs:* [5.1 Congruence counts and normalized local densities](#51-congruence-counts-and-normalized-local-densities); [3.10 Transfer of integral identities](#310-transfer-of-integral-identities).
 
 ### 5.3 Local zeta and arithmetic-statistics interface
 
-Export the local rational function, normalized measure, parameter domain and finite exceptional-prime policy to arithmetic-statistics consumers. For a polynomial f and Re(s)>0 put T=q^(−s), compare the specialized generating function with ∫_{O_K^d}|f|^s, and only then identify the consumer’s local factor. Euler-product convergence, orbit stabilizers, global counting asymptotics and functional equations are additional consumer inputs, not consequences of local definability.
+Export the local rational function, normalized measure, parameter domain and finite exceptional-prime policy to arithmetic-statistics consumers. For a polynomial f and Re(s)>0 put T=q^(−s), compare the specialized generating function with `∫_{O_K^d}|f|^s,` and only then identify the consumer’s local factor. Euler-product convergence, orbit stabilizers, global counting asymptotics and functional equations are additional consumer inputs, not consequences of local definability.
 
 Match the generating-variable convention and Haar mass of O_K before substituting T. Derive the valuation-layer identity term by term in an absolute-convergence half-plane. Export the resulting formula with its poles and finite exceptional set.
 
 ([Raf Cluckers and François Loeser, *Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203), §14.4, pp.79–81, and §16.4, p.90.)
 
-*Needs:* [5.1 Congruence counts and normalized local densities](#ld5-congruence-density-series); [2.6 Igusa and local Poincaré rationality](#ld2-igusa-rationality); [3.9 Specialization to local-field integrals](#ld3-specialization).
-
-<a id="ld5-singular-fibre-example"></a>
+*Needs:* [5.1 Congruence counts and normalized local densities](#51-congruence-counts-and-normalized-local-densities); [2.6 Igusa and local Poincaré rationality](#26-igusa-and-local-poincaré-rationality); [3.9 Specialization to local-field integrals](#39-specialization-to-local-field-integrals).
 
 ### 5.4 Singular-fibre integral for the product map
 
 For a nonarchimedean local field with residue size q and Haar mass µ(O)=1, the number of residue-field solutions of xy=0 is 2q−1. Over nonzero a∈m, the fibre of xy=a in O² is parametrized by |a|≤|x|≤1 with relative density |dx/x|, whose mass is (v(a)+1)(1−q^−1). Integrating this mass over a∈m∖{0} and multiplying by q² gives 2q−1. The singular fibre a=0 is not a smooth fibre endowed with that relative formula.
 
-Count the two residue coordinate axes and subtract their shared origin. For v(a)=n≥1 split the annulus into shells v(x)=0,…,n, each with logarithmic mass 1−q^−1. Sum q²(1−q^−1)²Σ_{n≥1}(n+1)q^−n and evaluate the elementary series.
-
-The representative signature is `product_zero_residue_count (the finite residue-field count)` in Suggested.lean.
+Count the two residue coordinate axes and subtract their shared origin. For v(a)=n≥1 split the annulus into shells v(x)=0,…,n, each with logarithmic mass 1−q^−1. Sum `q²(1−q^−1)²Σ_{n≥1}(n+1)q^−n` and evaluate the elementary series.
 
 ([Michael Groechenig, Dimitri Wyss and Paul Ziegler, *Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2), Example 2.4, p.7, equations (8)–(9).)
 
-*Needs:* [2.12 Fubini for relative top forms](#ld2-submersion-fubini); [2.9 Weil volume and residue point counts](#ld2-weil-volume).
-
-<a id="ld5-algorithmic-frontier"></a>
-
-### 5.5 Certified algorithms and undecidability boundaries
-
-For fixed K with effective finite residue rings and a reduction-invariant polynomial congruence formula, every finite-level count N_n is computable by exhaustive enumeration with a checkable witness trace. This coexists with undecidability of unrestricted integer polynomial solvability. A witness search semidecides positive solvability; a timeout is not a proof of absence. Rational H10 and other-field variants receive no unconditional verdict from this roadmap; each needs its own interpretation theorem and coefficient presentation.
-
-Enumerate the finite residue domain and evaluate the fixed formula when its chosen finite presentation admits decidable evaluation. Prove the enumeration count equals the mathematical finite count. Separate this termination proof from the unbounded search problem to which MRDP applies.
-
-([Martin Davis, *Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf), §7, Theorem 7.4, p.262; §8, Theorem 8.1, p.264; scope comparison with Koenigsmann Corollary 3, pp.74–75.)
-
-*Needs:* [5.1 Congruence counts and normalized local densities](#ld5-congruence-density-series); [4.17 Undecidability of Hilbert tenth over integers](#ld4-h10-integers); [4.19 Effective Diophantine undecidability transfer](#ld4-diophantine-interpretation-transfer); [4.12 Diophantine sets are recursively enumerable](#ld4-dioph-to-re).
+*Needs:* [2.12 Fubini for relative top forms](#212-fubini-for-relative-top-forms); [2.9 Weil volume and residue point counts](#29-weil-volume-and-residue-point-counts).
 
 ### Examples
 
-For all of O^d at level n, the raw count is q^(dn) and its normalized measure is 1. For xy=0 over the residue field, the axes contribute q+q−1=2q−1. At v(a)=n≥1, the nonzero fibre xy=a has logarithmic mass (n+1)(1−q⁻¹). Its sum over a∈m∖{0}, multiplied by q², is q²(1−q⁻¹)²∑_{n≥1}(n+1)q⁻ⁿ=2q−1. This calculation uses only smooth nonzero fibres; it gives no relative smooth measure to the singular fibre itself.
+For all of O^d at level n, the raw count is q^(dn) and its normalized measure is 1. For xy=0 over the residue field, the axes contribute q+q−1=2q−1. At v(a)=n≥1, the nonzero fibre xy=a has logarithmic mass (n+1)(1−q⁻¹). Its sum over a∈m∖{0}, multiplied by q², is `q²(1−q⁻¹)²∑_{n≥1}(n+1)q⁻ⁿ=2q−1.` This calculation uses only smooth nonzero fibres; it gives no relative smooth measure to the singular fibre itself.
 
 ### Dependencies
 
-[1.1 The Denef–Pas language](#ld1-denef-pas-language); [2.6 Igusa and local Poincaré rationality](#ld2-igusa-rationality); [3.9 Specialization to local-field integrals](#ld3-specialization); [3.10 Transfer of integral identities](#ld3-integral-transfer); [2.12 Fubini for relative top forms](#ld2-submersion-fubini); [2.9 Weil volume and residue point counts](#ld2-weil-volume); [4.17 Undecidability of Hilbert tenth over integers](#ld4-h10-integers); [4.19 Effective Diophantine undecidability transfer](#ld4-diophantine-interpretation-transfer); [4.12 Diophantine sets are recursively enumerable](#ld4-dioph-to-re).
+[1.1 The Denef–Pas language](#11-the-denefpas-language); [2.6 Igusa and local Poincaré rationality](#26-igusa-and-local-poincaré-rationality); [3.9 Specialization to local-field integrals](#39-specialization-to-local-field-integrals); [3.10 Transfer of integral identities](#310-transfer-of-integral-identities); [2.12 Fubini for relative top forms](#212-fubini-for-relative-top-forms); [2.9 Weil volume and residue point counts](#29-weil-volume-and-residue-point-counts); [4.17 Undecidability of Hilbert tenth over integers](#417-undecidability-of-hilbert-tenth-over-integers); [4.19 Effective Diophantine undecidability transfer](#419-effective-diophantine-undecidability-transfer); [4.12 Diophantine sets are recursively enumerable](#412-diophantine-sets-are-recursively-enumerable).
 
 ## Layer 6: o-minimal geometry and counting
 
 This layer builds analytic/exponential definability, finite atlases, rough-function estimates for period maps, complex algebraicity, uniform rational, bounded-degree and semi-rational counting, the orbit-counting bridge and the torus lemma behind the abelian group-action application. It uses no functional-transcendence or Galois-orbit input; Layer 7 adds those as hypotheses. Real analytic cells used for algebraic unions are a selected-structure theorem, distinct from finite C^p cell decomposition in an arbitrary expansion.
 
-<a id="ld6-o-minimal-expansion"></a>
-
 ### 6.1 O-minimal expansions of the real field
+
+The acceptance predicate `IsOMinimalExpansion` uses native `Set.Definable` with all real parameters: the graphs of order, addition and multiplication are definable, and every definable unary subset of ℝ has finite frontier. On ℝ this is equivalent to being a finite union of points and intervals, so it states an expansion of the ordered real field up to definability.
 
 An expansion is a native first-order language L with an interpretation of the ordered-ring symbols on ℝ and its fixed L-structure. Definability means native Set.Definable with real parameters in that structure. It is o-minimal when every definable subset of ℝ is a finite union of points and intervals, allowing unbounded intervals and each endpoint convention. Boolean operations, projections, graphs and composition use the native definability API. Do not create a second general formula or definable-set calculus.
 
@@ -1879,61 +1625,53 @@ Use a named ordered-ring language map and its realization comparison. State the 
 
 The basic interface must include:
 
-- `o_minimal_expansion.ordered_ring`: Every ordered-ring definable set is L-definable.
-- `o_minimal_expansion.unary`: Every unary definable set has the stated finite decomposition.
-- `o_minimal_expansion.reduct`: An ordered-field reduct of an o-minimal expansion is o-minimal.
-- `o_minimal_expansion.parameters`: Adding named real parameters preserves o-minimality.
+- Every ordered-ring definable set is L-definable.
+- Every unary definable set has the stated finite decomposition.
+- An ordered-field reduct of an o-minimal expansion is o-minimal.
+- Adding named real parameters preserves o-minimality.
 
 **Checks.**
 
-- `o_minimal_expansion.interval`: An open interval and a singleton are definable, with their different endpoint behaviour.
-- `o_minimal_expansion.integers`: An expansion defining ℤ⊂ℝ is not o-minimal.
-- `o_minimal_expansion.finite`: The empty set is the empty finite union, and every finite real set is allowed.
+- An open interval and a singleton are definable, with their different endpoint behaviour.
+- An expansion defining ℤ⊂ℝ is not o-minimal.
+- The empty set is the empty finite union, and every finite real set is allowed.
 
 ([Lou van den Dries and Chris Miller, *Geometric categories and o-minimal structures*](https://people.math.osu.edu/miller.1987/newg.pdf), §2, pp.7–9; §4.1, p.12 (revised author copy).)
 
-*Needs:* [0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics).
-
-<a id="ld6-restricted-analytic-expansions"></a>
+*Needs:* [0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations).
 
 ### 6.2 Restricted analytic and exponential expansions
 
 A restricted analytic n-variable symbol denotes a real analytic function on a neighbourhood of [−1,1]^n, restricted to that cube and extended by zero outside it. R_alg is the ordered real field reduct, R_an adds all such symbols, R_exp adds the unrestricted real exponential, and R_an,exp combines them. R_an-definable sets are exactly the globally subanalytic sets under the standard compactifying coordinate map. The real exponential is unrestricted; unrestricted real sine is not included.
 
-Interpret the function symbols on the real carrier with the specified zero extension. Compare the semialgebraic reduct with the current RealAlgebraicGeometry syntax and QE theorem rather than redefining it. State inclusion maps among the expansions and the globally subanalytic equivalence.
+Interpret the function symbols on the real carrier with the specified zero extension. Compare the semialgebraic reduct with the RealAlgebraicGeometry syntax and QE theorem rather than redefining it. State inclusion maps among the expansions and the globally subanalytic equivalence.
 
 The basic interface must include:
 
-- `restricted_analytic_expansions.restrict`: Each analytic neighbourhood germ supplies the stated total restricted function.
-- `restricted_analytic_expansions.inclusions`: R_alg embeds as a reduct in each selected expansion, and R_an,R_exp in R_an,exp.
-- `restricted_analytic_expansions.subanalytic`: R_an definability is globally subanalytic definability, not arbitrary local subanalyticity.
+- Each analytic neighbourhood germ supplies the stated total restricted function.
+- R_alg embeds as a reduct in each selected expansion, and R_an,R_exp in R_an,exp.
+- R_an definability is globally subanalytic definability, not arbitrary local subanalyticity.
 
 **Checks.**
 
-- `restricted_analytic_expansions.cube_boundary`: The function agrees with its analytic representative on the closed cube.
-- `restricted_analytic_expansions.outside`: Its specified extension is zero outside the cube, even if that extension is discontinuous at its boundary.
-- `restricted_analytic_expansions.sine`: Restricted sine is allowed; unrestricted sine would define an infinite discrete zero set.
-- `restricted_analytic_expansions.exp`: The unrestricted exponential belongs to R_exp and R_an,exp; it is not introduced as one restricted symbol.
+- The function agrees with its analytic representative on the closed cube.
+- Its specified extension is zero outside the cube, even if that extension is discontinuous at its boundary.
+- Restricted sine is allowed; unrestricted sine would define an infinite discrete zero set.
+- The unrestricted exponential belongs to R_exp and R_an,exp; it is not introduced as one restricted symbol.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), §1.1, pp.2–3; Appendix A, pp.19–21; van den Dries–Miller §2.5–2.7, pp.8–9.)
 
-*Needs:* [6.1 O-minimal expansions of the real field](#ld6-o-minimal-expansion).
-
-<a id="ld6-selected-o-minimality"></a>
+*Needs:* [6.1 O-minimal expansions of the real field](#61-o-minimal-expansions-of-the-real-field).
 
 ### 6.3 O-minimality of the selected expansions
 
 R_an, R_exp and R_an,exp are o-minimal, R_an-definable sets are exactly the globally subanalytic sets, and R_an,exp has analytic cell decomposition. No quantifier-elimination or effective decision assertion for R_exp or R_an,exp is included.
 
-The o-minimality of R_an,exp, with finite cell decomposition and definable dimension, is [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp) (van den Dries–Miller 1994). R_an and R_exp are reducts of R_an,exp, so their o-minimality follows from `o_minimal_expansion.reduct` of §6.1; R_alg is compared with the semialgebraic dictionary of RealAlgebraicGeometry. The identification of R_an-definable sets with globally subanalytic sets (subanalytic in the compactifying coordinates t↦t/√(1+t²)) is Gabrielov's complement theorem in van den Dries' formulation. Analytic cell decomposition for R_an and R_an,exp is stated by van den Dries–Miller §4.2, p.12, citing van den Dries–Macintyre–Marker and van den Dries–Miller 1994; it is used for the identity theorem on connected cells in §6.20. Finite C^p cells in a general expansion do not substitute for analytic cells.
-
-**Gap.** The proofs of the globally subanalytic comparison and of analytic cell decomposition for R_an,exp are those of the cited original papers; this roadmap states the results as van den Dries–Miller §§2.5–2.7 and 4.2 do and does not reproduce the arguments.
+The o-minimality of R_an,exp, with finite cell decomposition and definable dimension, is [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp). R_an and R_exp are reducts of R_an,exp, so their o-minimality follows from the reduct theorem of §6.1; R_alg is compared with the semialgebraic dictionary of RealAlgebraicGeometry. The identification of R_an-definable sets with globally subanalytic sets (subanalytic in the compactifying coordinates t↦t/√(1+t²)) is Gabrielov's complement theorem in van den Dries' formulation. Analytic cell decomposition for R_an and R_an,exp is stated by van den Dries–Miller §4.2, p.12, citing van den Dries–Macintyre–Marker; it is used for the identity theorem on connected cells in §6.20. Finite C^p cells in a general expansion do not substitute for analytic cells.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), §1.1, pp.2–3; van den Dries–Miller §4.1 and §4.2, p.12; [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp).)
 
-*Needs:* [6.2 Restricted analytic and exponential expansions](#ld6-restricted-analytic-expansions); [6.1 O-minimal expansions of the real field](#ld6-o-minimal-expansion); [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp).
-
-<a id="ld6-o-minimal-cell-decomposition"></a>
+*Needs:* [6.2 Restricted analytic and exponential expansions](#62-restricted-analytic-and-exponential-expansions); [6.1 O-minimal expansions of the real field](#61-o-minimal-expansions-of-the-real-field); [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp).
 
 ### 6.4 O-minimal cell decomposition
 
@@ -1943,13 +1681,9 @@ Prove one-variable monotonicity and finite continuity partition from o-minimalit
 
 For R_an,exp this is [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp); the statement here is for an arbitrary o-minimal expansion. Semialgebraic CAD is not a proof for analytic or exponential expansions.
 
-**Gap.** Van den Dries–Miller §4 states these results and refers their proofs to van den Dries' monograph on tame topology (their reference [4]); the proof steps above follow that statement and the semialgebraic case, and the full argument for an arbitrary expansion is the monograph's.
-
 ([Lou van den Dries and Chris Miller, *Geometric categories and o-minimal structures*](https://people.math.osu.edu/miller.1987/newg.pdf), §4.2–4.3, pp.12–13; §4.8, p.14.)
 
-*Needs:* [6.1 O-minimal expansions of the real field](#ld6-o-minimal-expansion); [6.3 O-minimality of the selected expansions](#ld6-selected-o-minimality).
-
-<a id="ld6-definable-geometry"></a>
+*Needs:* [6.1 O-minimal expansions of the real field](#61-o-minimal-expansions-of-the-real-field); [6.3 O-minimality of the selected expansions](#63-o-minimality-of-the-selected-expansions).
 
 ### 6.5 Definable dimension, choice and finite topology
 
@@ -1959,13 +1693,11 @@ Use cell dimensions and projection induction for the fibre dimension formula and
 
 For a line X⊂ℝ², cl(X)∖X is empty although its ambient topological boundary equals X. The constant surjection ℝ→{0} has a section but cannot have a left inverse. An open interval triangulates to open simplices; it is not identified with a compact closed simplex.
 
-**Gap.** As in §6.4, the full proofs of the general dimension, component, choice and triangulation theorems are those of van den Dries' monograph cited by van den Dries–Miller. Definable choice gives a right inverse: for a surjection f, f(g(y))=y. The constant map from two points to one point has such a section and has no left inverse. This fixes the direction in van den Dries–Miller §4.5, p.13.
+Definable choice gives a right inverse: for a surjection f, f(g(y))=y. The constant map from two points to one point has such a section and has no left inverse. This is the section convention of van den Dries–Miller §4.5, p.13.
 
 ([Lou van den Dries and Chris Miller, *Geometric categories and o-minimal structures*](https://people.math.osu.edu/miller.1987/newg.pdf), Component and choice theorems 4.3–4.5, p.13; dimension 4.7, p.13; triangulation 4.10, p.13 (author revision).)
 
-*Needs:* [6.4 O-minimal cell decomposition](#ld6-o-minimal-cell-decomposition).
-
-<a id="ld6-finite-definable-atlas"></a>
+*Needs:* [6.4 O-minimal cell decomposition](#64-o-minimal-cell-decomposition).
 
 ### 6.6 Finite definable atlases and corners
 
@@ -1975,23 +1707,21 @@ Add a finite definability certificate to the existing topological/charted-space 
 
 The basic interface must include:
 
-- `finite_definable_atlas.change_atlas`: Equivalent finite atlases give the same definable subsets and maps.
-- `finite_definable_atlas.map_graph`: A map is definable exactly when its chart graphs are definable.
-- `finite_definable_atlas.products`: Finite chart products define the product manifold with corners.
-- `finite_definable_atlas.images_gluing`: Definable images, pullbacks and finite gluing are definable.
+- Equivalent finite atlases give the same definable subsets and maps.
+- A map is definable exactly when its chart graphs are definable.
+- Finite chart products define the product manifold with corners.
+- Definable images, pullbacks and finite gluing are definable.
 
 **Checks.**
 
-- `finite_definable_atlas.line`: The usual one-chart atlas makes ℝ an R_alg-definable manifold.
-- `finite_definable_atlas.quadrant`: The closed quadrant has its relative-open orthant charts; it is not ambient-open at its vertex.
-- `finite_definable_atlas.infinite_atlas`: A countably infinite family of isolated point charts does not by itself give a finite definable atlas.
-- `finite_definable_atlas.transition_direction`: For charts from coordinates to X the mixed map is φ_j⁻¹∘φ_i.
+- The usual one-chart atlas makes ℝ an R_alg-definable manifold.
+- The closed quadrant has its relative-open orthant charts; it is not ambient-open at its vertex.
+- A countably infinite family of isolated point charts does not by itself give a finite definable atlas.
+- For charts from coordinates to X the mixed map is φ_j⁻¹∘φ_i.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Appendix A.1–A.2, pp.19–20.)
 
-*Needs:* [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry); [6.2 Restricted analytic and exponential expansions](#ld6-restricted-analytic-expansions).
-
-<a id="ld6-analytic-boundary-comparison"></a>
+*Needs:* [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology); [6.2 Restricted analytic and exponential expansions](#62-restricted-analytic-and-exponential-expansions).
 
 ### 6.7 Definable analytic boundary comparison
 
@@ -1999,11 +1729,9 @@ Import DifferentialGeometry’s abstract boundary ∂̃X of pairs (x,local bound
 
 Restrict an orthant chart to each individual coordinate face and glue using the existing local-face transport. Show its transition maps are analytic/definable by restriction. Count local faces at each depth. Use finite chart image closure to prove definability of the boundary image and interior.
 
-([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Appendix A.1–A.3, pp.19–21; compare current DifferentialGeometry, Boundary and corners and Layer 5.5.)
+([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Appendix A.1–A.3, pp.19–21; compare DifferentialGeometry, Boundary and corners and Layer 5.5.)
 
-*Needs:* [6.6 Finite definable atlases and corners](#ld6-finite-definable-atlas).
-
-<a id="ld6-compact-analytic-corners"></a>
+*Needs:* [6.6 Finite definable atlases and corners](#66-finite-definable-atlases-and-corners).
 
 ### 6.8 Restricted-analytic structure of compact corners
 
@@ -2013,23 +1741,23 @@ Shrink analytic charts twice so their closures lie inside the domains of analyti
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Proposition A.2, pp.20–21.)
 
-*Needs:* [6.6 Finite definable atlases and corners](#ld6-finite-definable-atlas); [6.7 Definable analytic boundary comparison](#ld6-analytic-boundary-comparison); [6.2 Restricted analytic and exponential expansions](#ld6-restricted-analytic-expansions).
-
-<a id="ld6-proper-definable-quotient"></a>
+*Needs:* [6.6 Finite definable atlases and corners](#66-finite-definable-atlases-and-corners); [6.7 Definable analytic boundary comparison](#67-definable-analytic-boundary-comparison); [6.2 Restricted analytic and exponential expansions](#62-restricted-analytic-and-exponential-expansions).
 
 ### 6.9 Definably proper equivalence-relation quotients
 
-Let X⊂ℝ^n be locally closed and definable in the fixed o-minimal structure. Let E⊂X×X be a closed definable equivalence relation whose coordinate projections to X are definably proper. The quotient is a Hausdorff definable space Q and continuous definable quotient map q:X→Q, with q(x)=q(y) iff E(x,y), the quotient topology and factorization of continuous definable E-invariant maps. In particular, for a semialgebraic group G and compact semialgebraic subgroup M, G/M has its semialgebraic quotient and semialgebraic G-action. The compact-group case does not imply the general theorem.
+Let X⊂ℝ^n be locally closed and definable in the fixed o-minimal structure. Let E⊂X×X be a closed definable equivalence relation whose coordinate projections to X are definably proper. The quotient is a Hausdorff definable space Q and continuous definable quotient map q:X→Q, with q(x)=q(y) iff E(x,y), the quotient topology and factorization of continuous definable E-invariant maps. In particular, for a semialgebraic group G and compact semialgebraic subgroup M, G/M has its semialgebraic quotient and semialgebraic G-action. The general quotient theorem is van den Dries, *Tame Topology*, Chapter 10 (2.15), p.166; BKT Lemma 2.1 supplies its compact-group application.
 
 Use the general quotient theorem in the category of locally closed definable spaces with the exact properness hypotheses. For G/M verify properness of the relation projections using compactness of M, then descend multiplication by the universal property.
 
-**Gap.** The general quotient theorem for locally closed definable sets with definably proper projections is van den Dries' monograph, Chapter 10, (2.15), p.166, as cited by BKT; it is not restated here. BKT Lemma 2.1 proves the compact-group case G/M directly (two proofs, pp.7–8); no other target of this roadmap uses the general case.
-
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Lemma 2.1 and second proof, pp.7–8; cited quotient theorem (2.15) at p.166.)
 
-*Needs:* [6.6 Finite definable atlases and corners](#ld6-finite-definable-atlas); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
+*Needs:* [6.6 Finite definable atlases and corners](#66-finite-definable-atlases-and-corners); [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
-<a id="ld6-sector-cover"></a>
+**Checks.**
+
+- For E the diagonal on X=ℝ, both projections are identities and the quotient is ℝ with q(x)=x.
+- For E=X×X on X=[0,1], both projections are definably proper and the quotient has one point; every invariant continuous map is constant.
+- On X=ℝ, the equivalence classes {0} and ℝ∖{0} give a nonclosed relation: (1,1/n) tends to (1,0), which is not related. The nonzero class is not closed, so the two-point quotient is not Hausdorff and the theorem does not apply.
 
 ### 6.10 Definable exponential cover on bounded sectors
 
@@ -2039,9 +1767,7 @@ Write real and imaginary parts as exp(−2πy)cos(2πx) and exp(−2πy)sin(2πx
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), §4.2, Lemma 4.2, pp.13–14.)
 
-*Needs:* [6.2 Restricted analytic and exponential expansions](#ld6-restricted-analytic-expansions); [6.3 O-minimality of the selected expansions](#ld6-selected-o-minimality); [6.6 Finite definable atlases and corners](#ld6-finite-definable-atlas).
-
-<a id="ld6-rough-coefficient-ring"></a>
+*Needs:* [6.2 Restricted analytic and exponential expansions](#62-restricted-analytic-and-exponential-expansions); [6.3 O-minimality of the selected expansions](#63-o-minimality-of-the-selected-expansions); [6.6 Finite definable atlases and corners](#66-finite-definable-atlases-and-corners).
 
 ### 6.11 Analytic coefficient and Laurent polynomial rings
 
@@ -2051,21 +1777,19 @@ Take the image of the coefficient and Laurent polynomial evaluation homomorphism
 
 The basic interface must include:
 
-- `rough_coefficient_ring.eval`: Finite Laurent expressions define actual functions.
-- `rough_coefficient_ring.restriction`: Restricting a function commutes with ring operations.
-- `rough_coefficient_ring.nowhere_zero`: A denominator gives a function quotient only on its checked nonvanishing domain.
+- Finite Laurent expressions define actual functions.
+- Restricting a function commutes with ring operations.
+- A denominator gives a function quotient only on its checked nonvanishing domain.
 
 **Checks.**
 
-- `rough_coefficient_ring.inverse_y`: y_i⁻¹ is defined because y_i>c>0.
-- `rough_coefficient_ring.coefficient`: A real analytic function of q and its conjugate is included after the stated shrinking.
-- `rough_coefficient_ring.pole`: The expression 1/(x₁−1/2) is not an everywhere-defined quotient on a sector containing x₁=1/2.
+- y_i⁻¹ is defined because y_i>c>0.
+- A real analytic function of q and its conjugate is included after the stated shrinking.
+- The expression 1/(x₁−1/2) is not an everywhere-defined quotient on a sector containing x₁=1/2.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Definition 4.4, p.14, with a specified smaller polydisk.)
 
-*Needs:* [6.10 Definable exponential cover on bounded sectors](#ld6-sector-cover).
-
-<a id="ld6-rough-monomial"></a>
+*Needs:* [6.10 Definable exponential cover on bounded sectors](#610-definable-exponential-cover-on-bounded-sectors).
 
 ### 6.12 Rough monomial comparison
 
@@ -2075,98 +1799,88 @@ Define Laurent monomial evaluation for integer exponents on positive y coordinat
 
 The basic interface must include:
 
-- `rough_monomial.mul`: Products add exponent vectors and multiply bounding constants.
-- `rough_monomial.inverse`: A reciprocal negates exponents and inverts the constants.
-- `rough_monomial.restrict`: Restriction preserves the same exponent and constants.
-- `rough_monomial.nonzero`: The lower bound implies nonvanishing everywhere.
+- Products add exponent vectors and multiply bounding constants.
+- A reciprocal negates exponents and inverts the constants.
+- Restriction preserves the same exponent and constants.
+- The lower bound implies nonvanishing everywhere.
 
 **Checks.**
 
-- `rough_monomial.monomial`: ∏y_i^s_i has constants C₁=C₂=1.
-- `rough_monomial.zero`: The zero function is never roughly monomial.
-- `rough_monomial.sum_cancellation`: Two signed rough monomials can cancel, so arbitrary sums are not closed.
-- `rough_monomial.width`: A bound on Σ^1 does not by itself supply a bound on every Σ^R.
+- ∏y_i^s_i has constants C₁=C₂=1.
+- The zero function is never roughly monomial.
+- Two signed rough monomials can cancel, so arbitrary sums are not closed.
+- A bound on Σ^1 does not by itself supply a bound on every Σ^R.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Definition 4.4, p.14.)
 
-*Needs:* [6.11 Analytic coefficient and Laurent polynomial rings](#ld6-rough-coefficient-ring).
+*Needs:* [6.11 Analytic coefficient and Laurent polynomial rings](#611-analytic-coefficient-and-laurent-polynomial-rings).
 
-<a id="ld6-rough-polynomial-localization"></a>
+### 6.13 Rough polynomial localization
 
-### 6.13 Corrected rough polynomial localization
-
-Let S⊂A consist of those actual Laurent polynomial functions whose absolute values are roughly monomial. It is multiplicatively closed and consists of nowhere-zero functions. Define the rough polynomial ring as the image of S⁻¹A in functions on the sector: f=g/h with g∈A and h∈S. This is a repaired definition, scoped as a variant of BKT Definition 4.4. The broader printed class allowing an arbitrary roughly monomial rational function as denominator is not used as a ring.
+Let S⊂A consist of those actual Laurent polynomial functions whose absolute values are roughly monomial. It is multiplicatively closed and consists of nowhere-zero functions. Define the rough polynomial ring as the image of S⁻¹A in functions on the sector: f=g/h with g∈A and h∈S. This is a variant of BKT Definition 4.4 with denominators in the Laurent polynomial ring. The broader printed class allowing an arbitrary roughly monomial rational function as denominator is not used as a ring.
 
 Show that S contains 1 and is closed under multiplication by the two-sided comparison. Use the localization universal property and nonvanishing to map into the pointwise function ring. Check that clearing denominators reduces a comparison to one between a Laurent polynomial numerator and a monomial.
 
 The basic interface must include:
 
-- `rough_polynomial_localization.add_mul`: (g/h)+(g′/h′)=(gh′+g′h)/(hh′) and products remain in the class.
-- `rough_polynomial_localization.embed`: Every g∈A is represented by g/1.
-- `rough_polynomial_localization.restrict`: Sector restriction induces a localization map when its denominator bounds persist.
-- `rough_polynomial_localization.clear`: Inequalities may be cleared using the two-sided positive denominator bound.
+- (g/h)+(g′/h′)=(gh′+g′h)/(hh′) and products remain in the class.
+- Every g∈A is represented by g/1.
+- Sector restriction induces a localization map when its denominator bounds persist.
+- Inequalities may be cleared using the two-sided positive denominator bound.
 
 **Checks.**
 
-- `rough_polynomial_localization.laurent`: Every Laurent monomial and its inverse belong.
-- `rough_polynomial_localization.sum`: The sum of two checked localization fractions has denominator hh′∈S.
-- `rough_polynomial_localization.arbitrary_denominator`: For c=(x−1/2)²+y⁻², k=(c+y⁻¹)/(c+2y⁻¹) is comparable to 1 but is not thereby a Laurent polynomial denominator.
-- `rough_polynomial_localization.zero_denominator`: Zero is excluded from S even though it is in A.
+- Every Laurent monomial and its inverse belong.
+- The sum of two checked localization fractions has denominator hh′∈S.
+- For c=(x−1/2)²+y⁻², k=(c+y⁻¹)/(c+2y⁻¹) is comparable to 1 but is not thereby a Laurent polynomial denominator.
+- Zero is excluded from S even though it is in A.
 
 The restriction to denominators in A is substantive. With c=(x−1/2)²+y⁻² and k=(c+y⁻¹)/(c+2y⁻¹), both k and 1/k are comparable to 1. In the broader class, 1/k and −1 are admitted but their sum y⁻¹/(c+y⁻¹) cannot be P/h with P a finite Laurent polynomial with the declared analytic q-coefficients and h roughly monomial: away from x=1/2 its required leading growth drops by one power of y, forcing polynomial leading coefficients to vanish on an open set and hence also at x=1/2, where that power is needed. Exponentially small q-terms cannot repair the discrepancy. Use the stated localization, with a separate consumer comparison, rather than asserting equality with the broader printed class.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Definition 4.4, p.14; proof of Lemma 4.5, p.15.)
 
-*Needs:* [6.11 Analytic coefficient and Laurent polynomial rings](#ld6-rough-coefficient-ring); [6.12 Rough monomial comparison](#ld6-rough-monomial).
-
-<a id="ld6-sector-exponential-decay"></a>
+*Needs:* [6.11 Analytic coefficient and Laurent polynomial rings](#611-analytic-coefficient-and-laurent-polynomial-rings); [6.12 Rough monomial comparison](#612-rough-monomial-comparison).
 
 ### 6.14 Exponential decay against sector powers
 
-For positive c₀, integer exponents s_i on the ordered tail y_i≥⋯≥y_n≥1, and ε>0, exp(−c₀y_i)∏_{j≥i} y_j^s_j<ε once y_i is sufficiently large; in particular this holds once y_n is sufficiently large. Constants are uniform on the stated tail. Analytic coefficients on a closed smaller polydisk have uniform bounds. This does not control an unbounded earlier variable y_j with j<i or turn the complement of y_n≫1 into a compact set.
+For positive c₀, integer exponents s_i on the ordered tail y_i≥⋯≥y_n≥1, and ε>0, `exp(−c₀y_i)∏_{j≥i}` y_j^s_j<ε once y_i is sufficiently large; in particular this holds once y_n is sufficiently large. Constants are uniform on the stated tail. Analytic coefficients on a closed smaller polydisk have uniform bounds. This does not control an unbounded earlier variable y_j with j<i or turn the complement of y_n≫1 into a compact set.
 
 Bound positive powers of subsequent coordinates by powers of y_i and discard negative powers using y_j≥1. Use elementary exponential domination of a single polynomial power. Use compactness of the smaller coefficient polydisk for uniform coefficient bounds.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Lemma 4.10 proof, p.17.)
 
-*Needs:* [6.11 Analytic coefficient and Laurent polynomial rings](#ld6-rough-coefficient-ring); [6.12 Rough monomial comparison](#ld6-rough-monomial).
-
-<a id="ld6-rough-curve-test"></a>
+*Needs:* [6.11 Analytic coefficient and Laurent polynomial rings](#611-analytic-coefficient-and-laurent-polynomial-rings); [6.12 Rough monomial comparison](#612-rough-monomial-comparison).
 
 ### 6.15 Wider-sector rational curve test
 
-For R>0 let Σ_n^R={z∈ℍⁿ: 0<x_i<R, y₁≥⋯≥y_n>1}, so that BKT's region is Σ_n=Σ_n^1. The coefficient functions of §6.11 are real analytic in the real and imaginary parts of q_i=e(z_i) on a neighbourhood of the closed polydisc |q_i|≤e^(−2π); they are 1-periodic in each x_i, so A=O[x,y,y⁻¹] is a ring of functions on {y_i>1} that restricts injectively to every Σ_n^R. Write S_R⊂A for the elements whose absolute value is roughly monomial on Σ_n^R (§6.12); the property depends on R. An admissible curve in Σ_n^R is a set Σ_n^R∩{α₁z₁+β₁=⋯=α_{n₀}z_{n₀}+β_{n₀}, z_j=ζ_j for j>n₀} with 1≤n₀≤n, α_i∈ℚ_{>0}, β_i∈ℝ and ζ_j∈ℍ.
+For R>0 let Σ_n^R={z∈ℍⁿ: 0<x_i<R, y₁≥⋯≥y_n>1}, so that BKT's region is Σ_n=Σ_n^1. The coefficient functions of §6.11 are real analytic in the real and imaginary parts of q_i=e(z_i) on a neighbourhood of the closed polydisc |q_i|≤e^(−2π); they are 1-periodic in each x_i, so A=O[x,y,y⁻¹] is a ring of functions on {y_i>1} that restricts injectively to every Σ_n^R. Write S_R⊂A for the elements whose absolute value is roughly monomial on Σ_n^R (§6.12); the property depends on R. An admissible curve in Σ_n^R is a set `Σ_n^R∩{α₁z₁+β₁=⋯=α_{n₀}z_{n₀}+β_{n₀},` z_j=ζ_j for j>n₀} with 1≤n₀≤n, `α_i∈ℚ_{>0},` β_i∈ℝ and ζ_j∈ℍ.
 
-Prove `roughCurveTest`: let f=P/h and g=Q/k with P,Q∈A and h,k∈⋂_R S_R, and suppose |g| is roughly monomial on every Σ_n^R. If for every R and every admissible curve τ⊂Σ_n^R there is C_τ with |f|≤C_τ|g| on τ, then for every R there is C_R with |f|≤C_R|g| on Σ_n^R. The constants C_τ may depend on the curve. For R=1 this is the conclusion of BKT Lemma 4.5; the hypothesis is required on every width.
+Prove the wider-sector curve theorem: let f=P/h and g=Q/k with P,Q∈A and h,k∈⋂_R S_R, and suppose |g| is roughly monomial on every Σ_n^R. If for every R and every admissible curve τ⊂Σ_n^R there is C_τ with |f|≤C_τ|g| on τ, then for every R there is C_R with |f|≤C_R|g| on Σ_n^R. The constants C_τ may depend on the curve. For R=1 this is the conclusion of BKT Lemma 4.5; the hypothesis is required on every width.
 
 1. Clearing. On Σ_n^R, |h|, |k| and |g| are within constant factors of Laurent monomials, so the claim is |P|≤C_R·y^s for one monomial y^s; multiplying by y^(−s)∈A reduces to: P∈A bounded on every admissible curve of every width is bounded on every Σ_n^R.
 2. Removing q₁. Write P=Σ_j a_j x₁^(j₁)y₁^(j₂) with j₁≥0, the a_j analytic in q₁,q̄₁ and Laurent polynomial in the other coordinates. Replacing each a_j by its value at q₁=0 changes P by O(y₁^A e^(−2πy₁)) uniformly on Σ_n^R, because x₁<R, 1≤y_j≤y₁ for j≥2 and the coefficient functions are uniformly Lipschitz on the closed polydisc (§6.14). The error is bounded, so assume the a_j are independent of q₁; the expansion in x₁ and y₁^(±1) over the remaining coordinates is then unique.
-3. Nonpositive y₁-powers. If some a_j with j₂>0 is nonzero, take the largest such j₂, fix (z₂,…,z_n) and x₁ where its coefficient polynomial in x₁ is nonzero, and let y₁→∞ along the admissible curve with n₀=1; |P| is unbounded, a contradiction. Hence j₂≤0 for all j, and |a_j|y₁^(j₂)≤|a_j|y₂^(j₂) on Σ_n^R. It suffices to bound |a_j|y₂^(j₂) on Σ_{n−1}^R in the ordered coordinates z₂,…,z_n.
-4. Substitution. For integers m≥1 and c≥0 the map z′↦(mz₂+c,z′) sends Σ_{n−1}^{R′} into Σ_n^{mR′+c}, since 0<mx₂+c<mR′+c and my₂≥y₂, and sends each admissible curve of Σ_{n−1}^{R′} into an admissible curve of Σ_n^{mR′+c}: adjoin the relation 1·z₁+0=mz₂+c and rescale the other relations by m/α₂. So f_{m,c}(z′)=P(mz₂+c,z′)∈A_{n−1} is bounded on every admissible curve of every width, and the induction hypothesis — this statement for n−1 coordinates and all widths — bounds it on every Σ_{n−1}^{R′}. For m≥2 the substituted points leave Σ_n^1 even when R′=1, which is why every width is needed.
-5. Finite differences. Let r be the largest j₁. The r-th forward difference in c of (mx₂+c)^(j₁) is r! when j₁=r and 0 when j₁<r, so F_m=(1/r!)Σ_{c=0}^{r}(−1)^(r−c)·binom(r,c)·f_{m,c}=Σ_{j₂}a_{(r,j₂)}m^(j₂)y₂^(j₂) is bounded on Σ_{n−1}^R. For K distinct values of m the matrix (m^(j₂)) is invertible, since a nonzero sum of K distinct real powers of m has at most K−1 positive zeros (Descartes' rule of signs). Hence each a_{(r,j₂)}y₂^(j₂) is a fixed combination of the F_m and is bounded.
-6. Descent. Each term a_{(r,j₂)}x₁^r y₁^(j₂) is bounded on Σ_n^R by R^r|a_{(r,j₂)}|y₂^(j₂), so subtracting the terms with j₁=r preserves the curve hypothesis in every width and lowers r. For n=1 the admissible curve with n₀=1 is Σ_1^R itself.
+3. Nonpositive y₁-powers. If some a_j with j₂>0 is nonzero, take the largest such j₂, fix (z₂,…,z_n) and x₁ where its coefficient polynomial in x₁ is nonzero, and let y₁→∞ along the admissible curve with n₀=1; |P| is unbounded, a contradiction. Hence j₂≤0 for all j, and |a_j|y₁^(j₂)≤|a_j|y₂^(j₂) on Σ_n^R. It suffices to bound |a_j|y₂^(j₂) on `Σ_{n−1}^R` in the ordered coordinates z₂,…,z_n.
+4. Substitution. For integers m≥1 and c≥0 the map z′↦(mz₂+c,z′) sends `Σ_{n−1}^{R′}` into `Σ_n^{mR′+c},` since 0<mx₂+c<mR′+c and my₂≥y₂, and sends each admissible curve of `Σ_{n−1}^{R′}` into an admissible curve of `Σ_n^{mR′+c}:` adjoin the relation 1·z₁+0=mz₂+c and rescale the other relations by m/α₂. So `f_{m,c}(z′)=P(mz₂+c,z′)∈A_{n−1}` is bounded on every admissible curve of every width, and the induction hypothesis — this statement for n−1 coordinates and all widths — bounds it on every `Σ_{n−1}^{R′}.` For m≥2 the substituted points leave Σ_n^1 even when R′=1, which is why every width is needed.
+5. Finite differences. Let r be the largest j₁. The r-th forward difference in c of (mx₂+c)^(j₁) is r! when j₁=r and 0 when j₁<r, so `F_m=(1/r!)Σ_{c=0}^{r}(−1)^(r−c)·binom(r,c)·f_{m,c}=Σ_{j₂}a_{(r,j₂)}m^(j₂)y₂^(j₂)` is bounded on `Σ_{n−1}^R.` For K distinct values of m the matrix (m^(j₂)) is invertible, since a nonzero sum of K distinct real powers of m has at most K−1 positive zeros (Descartes' rule of signs). Hence each `a_{(r,j₂)}y₂^(j₂)` is a fixed combination of the F_m and is bounded.
+6. Descent. Each term `a_{(r,j₂)}x₁^r` y₁^(j₂) is bounded on Σ_n^R by `R^r|a_{(r,j₂)}|y₂^(j₂),` so subtracting the terms with j₁=r preserves the curve hypothesis in every width and lowers r. For n=1 the admissible curve with n₀=1 is Σ_1^R itself.
 
 The basic interface must include:
 
-- `rough_curve_test.clear`: the reduction of step 1 to a Laurent polynomial and the constant monomial on each Σ_n^R.
-- `rough_curve_test.substitute`: the substitution of step 4 maps admissible curves of width R′ to admissible curves of width mR′+c.
-- `rough_curve_test.difference`: the r-th finite difference of step 5 isolates the top x₁-degree.
-- `rough_curve_test.width_one`: the case R=1 of the conclusion.
+- the reduction of step 1 to a Laurent polynomial and the constant monomial on each Σ_n^R.
+- the substitution of step 4 maps admissible curves of width R′ to admissible curves of width mR′+c.
+- the r-th finite difference of step 5 isolates the top x₁-degree.
+- the case R=1 of the conclusion.
 
 **Checks.**
 
-- `rough_curve_test.width_escape`: With R′=1, m=2 and c=0, the point z′ with x₂=3/4 is sent to x₁=3/2, outside Σ_n^1; a hypothesis confined to Σ_n^1 does not apply to f_{2,0} there.
-- `rough_curve_test.width_dependent_denominator`: h=(x₁−2)²+y₁^(−2) satisfies 1≤h≤5 on Σ_1^1 but at x₁=2 equals y₁^(−2) on Σ_1^3, so h∈S_1∖S_3; denominators are required in S_R for every R.
-- `rough_curve_test.positive_power`: P=y₁ on Σ_1^R is unbounded along its own admissible curve, so step 3 detects it; P=y₁⁻¹ is bounded by 1.
-- `rough_curve_test.vandermonde`: For exponents {0,−1} and m∈{1,2}, the matrix [[1,1],[1,1/2]] has determinant −1/2≠0, so a₀ and a₋₁y₂⁻¹ are recovered from F₁ and F₂.
-
-The Hodge-norm consumer applies this lemma with R=1 to f=h_z(e_i,e_j) and g=h_z(e_i) for a rational basis e adapted to the weight splitting (BKT §4.5, proof of Theorem 1.5, pp.17–18). It verifies the hypotheses on every width as follows; the Hodge objects are defined in that roadmap, so this verification is given downstream there. First, the Cattani–Kaplan–Schmid norm estimates hold uniformly for real parts in any bounded interval: translation z_j↦z_j+1 acts through the unipotent monodromy T_j=exp N_j, which preserves the relevant weight filtrations and is the identity on their graded pieces, so a width-R sector is a finite union of translates of width-one sectors on which the estimates of BKT Theorem 4.8 and Lemma 4.10 apply; hence the denominators B(γ·w_{K_i}^det) of BKT (4.2)–(4.5) lie in S_R for every R. Second, an admissible curve with α_i=p_i/q_i is the image of a punctured disc u↦(c_i u^(a_i)) with positive integers a_i, and the restriction of the variation to it has unipotent monodromy Σa_iN_i, so Schmid's one-variable theorem and the basis change at the end of BKT §4.5 give reducedness with a curve-dependent constant on each bounded interval of real parts. Width one is the case TauCetiRoadmap.ShimuraVarieties §3.5b.2 states for its ordered-sector estimates; the wider sectors are covered by the same translation argument.
+- With R′=1, m=2 and c=0, the point z′ with x₂=3/4 is sent to x₁=3/2, outside Σ_n^1; a hypothesis confined to Σ_n^1 does not apply to `f_{2,0}` there.
+- h=(x₁−2)²+y₁^(−2) satisfies 1≤h≤5 on Σ_1^1 but at x₁=2 equals y₁^(−2) on Σ_1^3, so h∈S_1∖S_3; denominators are required in S_R for every R.
+- P=y₁ on Σ_1^R is unbounded along its own admissible curve, so step 3 detects it; P=y₁⁻¹ is bounded by 1.
+- For exponents {0,−1} and m∈{1,2}, the matrix [[1,1],[1,1/2]] has determinant −1/2≠0, so a₀ and a₋₁y₂⁻¹ are recovered from F₁ and F₂.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Definition 4.4, p.14; Lemma 4.5 and proof, p.15; Theorem 4.8, Lemma 4.10 and §4.5, pp.15–18.)
 
-*Needs:* [6.13 Corrected rough polynomial localization](#ld6-rough-polynomial-localization); [6.12 Rough monomial comparison](#ld6-rough-monomial); [6.14 Exponential decay against sector powers](#ld6-sector-exponential-decay).
-
-<a id="ld6-algebraic-definable-structure"></a>
+*Needs:* [6.13 Rough polynomial localization](#613-rough-polynomial-localization); [6.12 Rough monomial comparison](#612-rough-monomial-comparison); [6.14 Exponential decay against sector powers](#614-exponential-decay-against-sector-powers).
 
 ### 6.16 Definable structure of complex algebraic varieties
 
@@ -2176,46 +1890,52 @@ Rewrite complex polynomial equations by their real and imaginary parts. Use fini
 
 The basic interface must include:
 
-- `algebraic_definable_structure.affine`: An affine variety is the common zero locus of the real and imaginary polynomial equations.
-- `algebraic_definable_structure.morphism`: Regular maps and their compositions are definable.
-- `algebraic_definable_structure.smooth`: The manifold claim is restricted to the smooth locus.
-- `algebraic_definable_structure.cover`: Changing a finite affine cover preserves definable subsets.
+- An affine variety is the common zero locus of the real and imaginary polynomial equations.
+- Regular maps and their compositions are definable.
+- The manifold claim is restricted to the smooth locus.
+- Changing a finite affine cover preserves definable subsets.
 
 **Checks.**
 
-- `algebraic_definable_structure.line`: The complex affine line gives ℝ².
-- `algebraic_definable_structure.projective`: The two standard charts of ℙ¹ have definable inversion on their overlap.
-- `algebraic_definable_structure.node`: A nodal curve is definable but is not declared a smooth manifold at its node.
+- The complex affine line gives ℝ².
+- The two standard charts of ℙ¹ have definable inversion on their overlap.
+- A nodal curve is definable but is not declared a smooth manifold at its node.
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), Theorem 4.13 context, p.18; Mok–Pila–Tsimerman §2.2, p.5.)
 
-*Needs:* [6.6 Finite definable atlases and corners](#ld6-finite-definable-atlas); Mathlib `AlgebraicGeometry.IsAffineOpen`; Mathlib `Algebra.FiniteType.iff_quotient_mvPolynomial''`.
-
-<a id="ld6-definable-remmert-stein"></a>
+*Needs:* [6.6 Finite definable atlases and corners](#66-finite-definable-atlases-and-corners); Mathlib `AlgebraicGeometry.IsAffineOpen`; Mathlib `Algebra.FiniteType.iff_quotient_mvPolynomial''`.
 
 ### 6.17 Definable Remmert–Stein closure
 
-For a definable complex manifold M, a closed definable complex analytic subset E, and a definable closed complex analytic subset A of M∖E, the closure of A in M is complex analytic and definable. Definability supplies the tameness needed at E; without it the unrestricted closure assertion is false. Use the exact definable analytic-space version when the ambient is singular.
+In an o-minimal expansion of R_an, let Y be a complex quasi-projective variety, E⊂Y a closed definable complex analytic subset, and A⊂Y∖E a relatively closed definable complex analytic subset. Prove that its closure in Y is definable and complex analytic, including singular Y. The manifold closure theorem used in the proof is imported from ShimuraVarieties §3.5d.
 
-In the manifold case, by Peterzil–Starchenko Theorem 4.1 it suffices that dim_ℝ fr_U(A∩U)≤dim_ℝ(A∩U)−2 for every open U; working locally with A definable, Theorem 3.2 applied to each connected component M_i of the regular locus of A∩U gives M_i⊆E or dim_ℝ(cl(M_i)∩E)≤dim_ℝM_i−2, and the first alternative is excluded because A∩E=∅. For a singular quasi-projective ambient Y, write Y as a closed subvariety of an open subset W of projective space: W is a smooth definable complex manifold, E is closed analytic in W, and A is closed analytic in W∖E, so the manifold theorem in W gives the closure, which lies in Y because Y is closed in W. Mok–Pila–Tsimerman §2.2 states the application.
+The manifold case is supplied by TauCetiRoadmap.ShimuraVarieties §3.5d; the additional target is closure in a singular quasi-projective ambient space. By the local criterion of Peterzil–Starchenko Theorem 4.1, it suffices that dim_ℝ fr_U(A∩U)≤dim_ℝ(A∩U)−2 for every open U; working locally with A definable, Theorem 3.2 applied to each connected component M_i of the regular locus of A∩U gives M_i⊆E or dim_ℝ(cl(M_i)∩E)≤dim_ℝM_i−2, and the first alternative is excluded because A∩E=∅. For a singular quasi-projective ambient Y, write Y as a closed subvariety of an open subset W of projective space: W is a smooth definable complex manifold, E is closed analytic in W, and A is closed analytic in W∖E, so the manifold theorem in W gives the closure, which lies in Y because Y is closed in W. Mok–Pila–Tsimerman §2.2 states the application.
 
 ([Ya’acov Peterzil and Sergei Starchenko, *Complex analytic geometry and analytic-geometric categories*](https://math.haifa.ac.il/kobi/analytic.pdf), Theorem 3.2, p.10; Theorem 4.1, p.10; Theorem 4.4 and proof, p.12, author copy dated 22 July 2005; [Ngaiming Mok, Jonathan Pila and Jacob Tsimerman, *Ax–Schanuel for Shimura varieties*](https://arxiv.org/pdf/1711.02189), Theorem 2.1, §2.2, p.5.)
 
-*Needs:* [6.16 Definable structure of complex algebraic varieties](#ld6-algebraic-definable-structure); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
+*Needs:* TauCetiRoadmap.ShimuraVarieties §3.5d; [6.16 Definable structure of complex algebraic varieties](#616-definable-structure-of-complex-algebraic-varieties); [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
-<a id="ld6-definable-chow"></a>
+**Checks.**
+
+- In Y=ℂ with E={0} and A=ℂ∖{0}, the closure is ℂ, defined by the zero ideal.
+- In the node Y={xy=0}, with E={(0,0)} and A={(x,0):x≠0}, the closure is the single branch {y=0}, including its singular meeting point.
+- For E=Y the only permitted A is ∅ and its closure is ∅; no positive dimension is imposed on an empty locus.
 
 ### 6.18 Definable complex analytic Chow theorem
 
-If Y is a complex quasiprojective variety and A⊂Y is closed in Y, complex analytic and definable in the fixed o-minimal expansion (with the hypotheses of the chosen analytic-closure theorem), then A is algebraic. For a smooth Y and an expansion containing R_an this includes BKT Theorem 4.13. Boolean combinations of closed definable complex analytic sets are constructible algebraic. Closedness is relative to Y, not necessarily to a projective compactification.
+If Y is a complex quasiprojective variety and A⊂Y is closed in Y, complex analytic and definable in an o-minimal expansion of R_an, then A is algebraic. For a smooth Y and an expansion containing R_an this includes BKT Theorem 4.13. Boolean combinations of closed definable complex analytic sets are constructible algebraic. Closedness is relative to Y, not necessarily to a projective compactification.
 
 For smooth Y this is [TauCetiRoadmap.ShimuraVarieties, §3.5d](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35d-definable-chow). For general quasi-projective Y, write Y as a closed subvariety of an open subset W of projective space; A is closed in Y, hence closed complex analytic and definable in the smooth variety W, so §3.5d makes A algebraic in W and therefore in Y. Boolean combinations follow by induction on the finite Boolean decomposition. Peterzil–Starchenko prove the affine case by definable Remmert–Stein (§6.17) for the closure in ℙⁿ followed by Chow's theorem (Corollary 4.5).
 
 ([Ya’acov Peterzil and Sergei Starchenko, *Complex analytic geometry and analytic-geometric categories*](https://math.haifa.ac.il/kobi/analytic.pdf), Corollary 4.5 and proof, p.12, for the affine case; [Ngaiming Mok, Jonathan Pila and Jacob Tsimerman, *Ax–Schanuel for Shimura varieties*](https://arxiv.org/pdf/1711.02189), Theorem 2.2 and Corollary 2.3, p.5; BKT Theorem 4.13, p.18.)
 
-*Needs:* [6.17 Definable Remmert–Stein closure](#ld6-definable-remmert-stein); [6.16 Definable structure of complex algebraic varieties](#ld6-algebraic-definable-structure); [TauCetiRoadmap.ShimuraVarieties, §3.5d](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35d-definable-chow).
+*Needs:* [6.17 Definable Remmert–Stein closure](#617-definable-remmertstein-closure); [6.16 Definable structure of complex algebraic varieties](#616-definable-structure-of-complex-algebraic-varieties); [TauCetiRoadmap.ShimuraVarieties, §3.5d](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35d-definable-chow).
 
-<a id="ld6-dense-extension"></a>
+**Checks.**
+
+- The branch {y=0} in the nodal variety {xy=0} is closed analytic and algebraic although the ambient is singular.
+- In ℂ×, the subset {1} is relatively closed and algebraic, with ideal (z−1) in ℂ[z,z⁻¹]; properness of the ambient is unnecessary.
+- The empty subset has ideal (1), and the whole variety has ideal (0). Their Boolean difference is again constructible.
 
 ### 6.19 Definability of continuous dense extensions
 
@@ -2225,9 +1945,7 @@ Continuity and density put every (x,f̄(x)) in the graph closure. At a point out
 
 ([Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, *Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf), §1.1 definable topology and Appendix A.2, pp.2–3 and 20; elementary graph-closure argument.)
 
-*Needs:* [6.6 Finite definable atlases and corners](#ld6-finite-definable-atlas); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
-
-<a id="ld6-countable-algebraic-union"></a>
+*Needs:* [6.6 Finite definable atlases and corners](#66-finite-definable-atlases-and-corners); [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
 ### 6.20 Finite reduction of a definable algebraic union
 
@@ -2241,47 +1959,49 @@ Use real analytic cells for R_an,exp and closed algebraic members. On one cell B
 
 ([Jonathan Pila and Jacob Tsimerman, *Ax-Lindemann for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf), Lemma 7.7 and proof, p.678.)
 
-*Needs:* [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry); [6.3 O-minimality of the selected expansions](#ld6-selected-o-minimality); [6.16 Definable structure of complex algebraic varieties](#ld6-algebraic-definable-structure).
-
-<a id="ld6-algebraic-part"></a>
+*Needs:* [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology); [6.3 O-minimality of the selected expansions](#63-o-minimality-of-the-selected-expansions); [6.16 Definable structure of complex algebraic varieties](#616-definable-structure-of-complex-algebraic-varieties).
 
 ### 6.21 Algebraic part of a definable set
 
 For X⊂ℝ^n define X_alg as the union of all connected positive-dimensional semialgebraic subsets of X; define X_trans=X∖X_alg. This algebraic part is a set, not a claim that the union is definable. Real parameters are permitted in the semialgebraic pieces. Positive dimension and containment in X are required.
 
-Use the semialgebraic predicate and dimension from the current RealAlgebraicGeometry interface and the dimension comparison. Form the set-theoretic union; prove monotonicity and the effect of semialgebraic coordinate maps.
+Use native `TauCeti.IsSemialgebraic`, with the semialgebraic/definable dimension comparison of RealAlgebraicGeometry. The acceptance definition `algebraicPart` expresses positive dimension of a connected semialgebraic set by the equivalent condition that it is not a subsingleton. Form the set-theoretic union; prove monotonicity and the effect of semialgebraic coordinate maps.
 
 The basic interface must include:
 
-- `algebraic_part.mono`: X⊂Y implies X_alg⊂Y_alg.
-- `algebraic_part.positive_piece`: Every connected positive-dimensional semialgebraic subset of X is in X_alg.
-- `algebraic_part.finite`: For finite X, X_alg=∅.
-- `algebraic_part.semialgebraic`: A positive-dimensional connected semialgebraic component contributes itself; isolated points do not.
+- X⊂Y implies X_alg⊂Y_alg.
+- Every connected positive-dimensional semialgebraic subset of X is in X_alg.
+- For finite X, X_alg=∅.
+- A positive-dimensional connected semialgebraic component contributes itself; isolated points do not.
 
 **Checks.**
 
-- `algebraic_part.interval`: For X=(0,1), X_alg=X.
-- `algebraic_part.isolated`: For X={0}, X_alg=∅.
-- `algebraic_part.graph_exp`: The graph of real exp on an interval has no positive-dimensional semialgebraic arc.
-- `algebraic_part.not_definable`: The algebraic part of the restricted x^y surface can have infinitely many components, so it is not given a definability instance.
+- For X=(0,1), X_alg=X.
+- For X={0}, X_alg=∅.
+- The graph of real exp on an interval has no positive-dimensional semialgebraic arc.
+- The algebraic part of the restricted x^y surface can have infinitely many components, so it is not given a definability instance.
 
-([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/Pila-WIlkie.pdf), Definition 1.4 and §1, pp.592–594; Pila 2009 §3 examples, p.5.)
+([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://doi.org/10.1215/S0012-7094-06-13336-7), Definition 1.4 and §1, pp.592–594; Pila 2009 §3 examples, p.5.)
 
-*Needs:* [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
-
-<a id="ld6-counting-height-interface"></a>
+*Needs:* [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
 ### 6.22 Rational and algebraic counting height interface
+
+The acceptance definition `rationalTupleHeight` takes the maximum of 1 and all reduced numerator absolute values and positive denominators.
 
 For rational a/b in lowest terms with b>0 use H=max(|a|,b), and for a tuple use the maximum coordinate height, with H(())=1. Import absolute multiplicative Weil height and bounded-degree Northcott from DiophantineApproximationAndTranscendence §§0.2–0.3 for algebraic coordinates. Keep degree bounded separately in each coordinate; the field generated by all coordinates need not have that same degree. Relate polynomial coefficient heights to Weil height using the Mahler inequalities of DiophantineApproximationAndTranscendence §0.2 before transferring a counting estimate.
 
 Use the rational height identity of DiophantineApproximationAndTranscendence §0.1 and the maximum over finitely many coordinates. Convert coefficient height ≤2^kH^k using the comparison of §0.2 there, keeping k fixed. Apply bounded-degree Northcott coordinatewise to make each counting set finite.
 
-([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/Pila-WIlkie.pdf), §1, pp.591–593; Pila 2009 §5, pp.7–8.)
+([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://doi.org/10.1215/S0012-7094-06-13336-7), §1, pp.591–593; Pila 2009 §5, pp.7–8.)
 
 *Needs:* [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.1](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#01-primitive-polynomials-and-coefficient-height); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#02-mahler-measure-house-and-absolute-height); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
 
-<a id="ld6-bounded-derivative-parametrization"></a>
+**Checks.**
+
+- For −3/4, the reduced numerator absolute value is 3 and denominator 4, giving H=4; the sign has no effect.
+- The tuple (−3,2) has H=max(3,2)=3, while the empty tuple has H=1.
+- The rational 0 has numerator 0 and denominator 1, so H(0)=1 rather than 0.
 
 ### 6.23 Uniform bounded-derivative parametrization
 
@@ -2291,39 +2011,35 @@ Prove the one-variable derivative normalization by monotonicity and inverse chan
 
 For higher derivatives use the complete finite Faà di Bruno expansion. With f(t)=t and ψ(t)=t², a formula retaining only f″(ψ)(ψ′)² gives 0, whereas (f∘ψ)″=2. Bounding every chain-rule term inductively repairs the normalization argument (PW Corollary 4.4 proof, p.607).
 
-([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/Pila-WIlkie.pdf), Theorems 2.3 and 2.5, pp.597–599; proof §§3–5, pp.599–609; Corollaries 5.1–5.2, p.609.)
+([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://doi.org/10.1215/S0012-7094-06-13336-7), Theorems 2.3 and 2.5, pp.597–599; proof §§3–5, pp.599–609; Corollaries 5.1–5.2, p.609.)
 
-*Needs:* [6.4 O-minimal cell decomposition](#ld6-o-minimal-cell-decomposition); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
-
-<a id="ld6-determinant-hypersurface-cover"></a>
+*Needs:* [6.4 O-minimal cell decomposition](#64-o-minimal-cell-decomposition); [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
 ### 6.24 Determinant hypersurface covering theorem
 
 For k<n and each degree d≥1 there are r(k,n,d), C>0 and η(k,n,d)>0 with η→0 as d→∞ such that the rational points of height ≤T in the image of a C^r map (0,1)^k→ℝ^n whose derivatives up to r are bounded by 1 lie on at most C T^η real algebraic hypersurfaces of degree ≤d, for every T≥1. Zero-dimensional images are handled separately. The family version combines a uniform finite number of such maps.
 
-For 1≤k<n, put D=binomial(n+d,n), let b satisfy binomial(k+b,k)≤D<binomial(k+b+1,k), and take r=b+1. Let L_k(j)=binomial(k+j−1,k−1) and B=Σ_{j=0}^b jL_k(j)+(D−binomial(k+b,k))(b+1). Taylor expansion of the D evaluated monomials has determinant bounded by C₀ρ^B on a parameter cube of side ρ. Terms using more than L_k(j) independent degree-j Taylor monomials vanish; this gives the exponent B. Derivatives of these monomials are bounded in terms of k,n,d alone. Each finite point configuration has compact convex hull inside (0,1)^k, so Taylor expansion uses no extension across the boundary of the parameter domain.
+For 1≤k<n, put D=binomial(n+d,n), let b satisfy binomial(k+b,k)≤D<binomial(k+b+1,k), and take r=b+1. Let L_k(j)=binomial(k+j−1,k−1) and `B=Σ_{j=0}^b` jL_k(j)+(D−binomial(k+b,k))(b+1). Taylor expansion of the D evaluated monomials has determinant bounded by C₀ρ^B on a parameter cube of side ρ. Terms using more than L_k(j) independent degree-j Taylor monomials vanish; this gives the exponent B. Derivatives of these monomials are bounded in terms of k,n,d alone. Each finite point configuration has compact convex hull inside (0,1)^k, so Taylor expansion uses no extension across the boundary of the parameter domain.
 
 For tuple height ≤T, a common denominator for one rational image point is at most T^n. Clearing each column by its common denominator to power d shows that a nonzero D-by-D determinant has absolute value at least T^(−ndD). Thus cubes of side cT^(−ndD/B), with c chosen from C₀, have all such minors zero. The monomial evaluation vectors of all rational image points from one cube span a proper subspace, giving one nonzero polynomial of degree ≤d for that whole cube. There are at most C T^η cubes, where η=nkdD/B and C depends only on k,n,d. Since D has order d^n and B has order d^(n(k+1)/k), η tends to zero for k<n. For k=0 the image is a singleton and one linear hypersurface suffices when n>0.
 
 The source uses common projective denominator height before passing to maximum coordinate height. The bound H_projective≤H_tuple^n accounts for the factor n in η; no equality of those heights is assumed.
 
-([Jonathan Pila, *Integer points on the dilation of a subanalytic surface*](https://people.maths.ox.ac.uk/pila/isurface.pdf), Lemma 3.1, author p.6; Proposition 4.2, p.8; Remark 4.5, p.9, in *Quarterly Journal of Mathematics* 55 (2004), 207–223; [Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/Pila-WIlkie.pdf), Proposition 6.1 and Main Lemma 6.2, pp.610–611.)
+([Jonathan Pila, *Integer points on the dilation of a subanalytic surface*](https://people.maths.ox.ac.uk/pila/isurface.pdf), Lemma 3.1, author p.6; Proposition 4.2, p.8; Remark 4.5, p.9, in *Quarterly Journal of Mathematics* 55 (2004), 207–223; [Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://doi.org/10.1215/S0012-7094-06-13336-7), Proposition 6.1 and Main Lemma 6.2, pp.610–611.)
 
-*Needs:* [6.23 Uniform bounded-derivative parametrization](#ld6-bounded-derivative-parametrization); [6.22 Rational and algebraic counting height interface](#ld6-counting-height-interface).
-
-<a id="ld6-pila-wilkie"></a>
+*Needs:* [6.23 Uniform bounded-derivative parametrization](#623-uniform-bounded-derivative-parametrization); [6.22 Rational and algebraic counting height interface](#622-rational-and-algebraic-counting-height-interface).
 
 ### 6.25 Pila–Wilkie rational-point counting
 
-For every definable family X⊂ℝ^n×ℝ^m and every ε>0 there is C(X,ε)>0 such that for every parameter t and every T≥1, #{x∈X_t∩ℚ^n:H(x)≤T, x∉(X_t)_alg}≤C T^ε. The stronger source form removes a definable family X_{t,ε}⊂(X_t)_alg instead. Constants may depend on the family and ε but not on t or T. No computable constant or logarithmic bound is claimed.
+The acceptance theorem `pila_wilkie` states the parameter-uniform bound below on native definable fibres, using `algebraicPart` and `rationalTupleHeight`.
+
+For every definable family X⊂ℝ^n×ℝ^m and every ε>0 there is C(X,ε)>0 such that for every parameter t and every T≥1, #{x∈X_t∩ℚ^n:H(x)≤T, x∉(X_t)_alg}≤C T^ε. The stronger source form removes a definable family `X_{t,ε}⊂(X_t)_alg` instead. Constants may depend on the family and ε but not on t or T. No computable constant or logarithmic bound is claimed.
 
 Reduce to bounded cubes by sign and reciprocal coordinate changes, preserving rational heights. Induct on fibre dimension. For lower-dimensional hypersurface intersections apply the induction hypothesis; choose the determinant exponent smaller than the desired ε after accounting for all finite projection choices. At regular points where the intersection retains full dimension, identify a local positive-dimensional semialgebraic piece, hence remove those points into X_alg. Union the finitely many exceptional families and track one constant uniform in the parameter.
 
-([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/Pila-WIlkie.pdf), Theorems 1.8 and 1.10, pp.595–597; proof §7, pp.611–613.)
+([Jonathan Pila and Alex Wilkie, *The rational points of a definable set*](https://doi.org/10.1215/S0012-7094-06-13336-7), Theorems 1.8 and 1.10, pp.595–597; proof §7, pp.611–613.)
 
-*Needs:* [6.21 Algebraic part of a definable set](#ld6-algebraic-part); [6.22 Rational and algebraic counting height interface](#ld6-counting-height-interface); [6.23 Uniform bounded-derivative parametrization](#ld6-bounded-derivative-parametrization); [6.24 Determinant hypersurface covering theorem](#ld6-determinant-hypersurface-cover); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
-
-<a id="ld6-definable-blocks"></a>
+*Needs:* [6.21 Algebraic part of a definable set](#621-algebraic-part-of-a-definable-set); [6.22 Rational and algebraic counting height interface](#622-rational-and-algebraic-counting-height-interface); [6.23 Uniform bounded-derivative parametrization](#623-uniform-bounded-derivative-parametrization); [6.24 Determinant hypersurface covering theorem](#624-determinant-hypersurface-covering-theorem); [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
 ### 6.26 Definable semialgebraic blocks
 
@@ -2333,61 +2049,43 @@ Package the ambient semialgebraic locus and regularity certificate. For positive
 
 The basic interface must include:
 
-- `definable_blocks.singleton`: Every point is a zero-dimensional basic block.
-- `definable_blocks.image`: A continuous semialgebraic map sends a basic block to a block.
-- `definable_blocks.positive`: A positive-dimensional block in X is contained in X_alg.
-- `definable_blocks.family_union`: The union of positive-dimensional fibres of a block family is definable and contained in X_alg.
+- Every point is a zero-dimensional basic block.
+- A continuous semialgebraic map sends a basic block to a block.
+- A positive-dimensional block in X is contained in X_alg.
+- The union of positive-dimensional fibres of a block family is definable and contained in X_alg.
 
 **Checks.**
 
-- `definable_blocks.point`: A point is allowed but contributes nothing to X_alg.
-- `definable_blocks.arc`: A connected open interval is a positive-dimensional basic block.
-- `definable_blocks.exponential_image`: An arbitrary definable image, such as the graph of exp, need not be a block; the image map must be semialgebraic.
-- `definable_blocks.nonsemialgebraic_domain`: A definable open subset of a semialgebraic manifold can be a basic block without being globally semialgebraic.
+- A point is allowed but contributes nothing to X_alg.
+- A connected open interval is a positive-dimensional basic block.
+- An arbitrary definable image, such as the graph of exp, need not be a block; the image map must be semialgebraic.
+- A definable open subset of a semialgebraic manifold can be a basic block without being globally semialgebraic.
 
 ([Jonathan Pila, *On the algebraic points of a definable set*](https://people.maths.ox.ac.uk/pila/Algebraic.pdf), Definition 3.2 and Proposition 3.4, pp.5–6 (author copy); Selecta pp.157–158.)
 
-*Needs:* [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry); [6.21 Algebraic part of a definable set](#ld6-algebraic-part).
+*Needs:* [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology); [6.21 Algebraic part of a definable set](#621-algebraic-part-of-a-definable-set).
 
-<a id="ld6-block-counting"></a>
+### 6.27 Integral points and images of blocks
 
-### 6.27 Uniform rational and integral block counting
+Use the parameter-uniform block decomposition of TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII B2.6. The additional statements here are its integral-point and continuous-semialgebraic-image corollaries. Integral tuples of maximum absolute coordinate ≤T, T≥1, have rational height ≤T and therefore admit the same O(T^ε) covering by blocks. A continuous semialgebraic map, defined on semialgebraic ambient sets containing the blocks, takes that covering to at most the same number of image blocks; positive-dimensional images lie in the algebraic part, and zero-dimensional images are points (Pila 2009, Theorem 3.5 and Proposition 3.4, pp.5–6).
 
-For every definable family X and ε>0 there are finitely many basic block families contained fibrewise in X and C>0 such that all rational points of height ≤T in each fibre are covered by at most C T^ε of their blocks, uniformly for T≥1 and the family parameter. The same applies to integral points with maximum absolute coordinate ≤T. Under a continuous semialgebraic map from the family, the images are at most that many blocks; positive-dimensional image blocks lie in the algebraic part of the image, whereas zero-dimensional blocks are single points.
+**Checks.**
 
-Retain the finitely many families of regular semialgebraic pieces in the PW dimension induction rather than only their union. Cover the rational points by the resulting O(T^ε) individual fibres. Use the block image definition and integral-to-rational height equality for the two consumer forms.
+- The integer tuple (−3,2) has rational height 3, equal to its maximum absolute coordinate.
+- A constant map sends the interval (0,1) to one point, a zero-dimensional image block with empty algebraic part.
+- The identity on (0,1) preserves its positive-dimensional block and its algebraic part. The map t↦(t,exp t) is not semialgebraic and has no such image-block conclusion.
 
-([Jonathan Pila, *On the algebraic points of a definable set*](https://people.maths.ox.ac.uk/pila/Algebraic.pdf), Theorem 3.5, p.6 (Selecta p.158); Masser–Zannier §3.2, pp.649–650.)
-
-*Needs:* [6.26 Definable semialgebraic blocks](#ld6-definable-blocks); [6.25 Pila–Wilkie rational-point counting](#ld6-pila-wilkie); [6.24 Determinant hypersurface covering theorem](#ld6-determinant-hypersurface-cover).
-
-<a id="ld6-bounded-degree-counting"></a>
+*Needs:* TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII B2.6; [6.26 Definable semialgebraic blocks](#626-definable-semialgebraic-blocks); [6.22 Rational and algebraic counting height interface](#622-rational-and-algebraic-counting-height-interface).
 
 ### 6.28 Counting algebraic points of bounded degree
 
-Fix k≥1, a definable family X and ε>0. The points x in each fibre whose real coordinates are algebraic of degree individually ≤k and absolute multiplicative Weil height ≤T are covered by at most C(X,k,ε)T^ε blocks. Consequently the number outside X_alg has that bound. Encode each coordinate by a nonzero coefficient vector (a₀,…,a_k) of length k+1 and polynomial Σ_{j=0}^k a_j t^j; the k-coefficient author-copy indexing is corrected explicitly.
+Fix k≥1, a definable family X and ε>0. The points x in each fibre whose real coordinates are algebraic of degree individually ≤k and absolute multiplicative Weil height ≤T are covered by at most C(X,k,ε)T^ε blocks. Consequently the number outside X_alg has that bound. Encode each coordinate by a nonzero coefficient vector (a₀,…,a_k) of length k+1 and polynomial `Σ_{j=0}^k` a_j t^j; the constant term and all k other coefficients are retained.
 
 Use the height comparison of DiophantineApproximationAndTranscendence §0.2 to find a coefficient vector of height ≤2^kT^k for every coordinate. Partition the nonzero coefficient space into semialgebraic strata with continuous ordered real-root branches; a polynomial of degree ≤k has at most k roots. Apply block counting in coefficient space with exponent smaller than ε/k and push blocks through these root branches. Use Northcott only after fixing the coordinatewise degree and height bounds.
 
 ([Jonathan Pila, *On the algebraic points of a definable set*](https://people.maths.ox.ac.uk/pila/Algebraic.pdf), Theorem 1.6, p.2; §5, Lemma 5.2 and Theorem 5.3, pp.7–8; Tsimerman §§6.2–6.3, pp.387–388.)
 
-*Needs:* [6.27 Uniform rational and integral block counting](#ld6-block-counting); [6.22 Rational and algebraic counting height interface](#ld6-counting-height-interface); [6.26 Definable semialgebraic blocks](#ld6-definable-blocks); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#02-mahler-measure-house-and-absolute-height).
-
-<a id="ld6-semi-rational-counting"></a>
-
-### 6.29 Semi-rational counting and marked projections
-
-For a definable family F_t⊂ℝ^m×ℝ^n, fixed algebraic degree bound k and ε>0, there is C such that if Σ consists of points (y,z)∈F_t with degree/height bound k,T on y alone and #π₂Σ>C T^ε, there is a continuous definable β:[0,1]→F_t with π₁β semialgebraic and analytic on (0,1), π₂β nonconstant, and π₂β(0)∈π₂Σ. If the structure has analytic cell decomposition, β can be made analytic on (0,1). The conclusion does not state β(0)∈Σ after that analytic rescaling.
-
-Separate isolated and nonisolated fibres over y. A nonisolated point supplies a definable path with y fixed. For isolated fibres use uniform finite fibre bounds and definable choice to split into finitely many graphs of continuous definable functions. Cover their algebraic y-coordinates by O(T^ε) blocks and use pigeonhole to choose two different z-values in one graph. Join them by a semialgebraic path in the base block. Rescale the first interval with nonconstant second projection; this preserves π₂β(0) but need not preserve y(0). For Theorem 7.1 isolate the zero-dimensional fibres by a quantified local-isolation formula. In adapted cells use dim C_y=dim C−dim π(C), not dim C−1 for an m-dimensional parameter block; the latter printed claim is the fibre-dimension correction.
-
-The marked datum after analytic rescaling is π₂β(0), not the full β(0): the rescaled path starts at the left end of the first analytic piece on which π₂β is nonconstant, where π₂β still has its initial value but π₁β may have moved. Consumers therefore use the existential form, a point σ∈Σ with π₂σ=π₂β(0); §6.31 shows that this suffices for the abelian group-action application. In the isolation reduction use dim(C_y)=dim(C)−dim(π(C)); for C=(0,1)²×(0,1), the fibre dimension is 1, not dim(C)−1=2 (HP Theorem 7.1, p.23).
-
-([Philipp Habegger and Jonathan Pila, *O-minimality and certain atypical intersections*](https://arxiv.org/pdf/1409.0771), Theorem 7.1, Corollary 7.2 and proof, pp.23–25.)
-
-*Needs:* [6.28 Counting algebraic points of bounded degree](#ld6-bounded-degree-counting); [6.26 Definable semialgebraic blocks](#ld6-definable-blocks); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
-
-<a id="ld6-orbit-counting-bridge"></a>
+*Needs:* TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII B2.6; [6.27 Integral points and images of blocks](#627-integral-points-and-images-of-blocks); [6.22 Rational and algebraic counting height interface](#622-rational-and-algebraic-counting-height-interface); [6.26 Definable semialgebraic blocks](#626-definable-semialgebraic-blocks); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.2](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#02-mahler-measure-house-and-absolute-height).
 
 ### 6.30 Orbit growth versus definable counting
 
@@ -2397,51 +2095,23 @@ Insert T=CD_s^A into the uniform block estimate and compare exponents. For large
 
 ([Jacob Tsimerman, *The André–Oort conjecture for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf), §6.2–6.4, pp.387–388.)
 
-*Needs:* [6.28 Counting algebraic points of bounded degree](#ld6-bounded-degree-counting); [6.27 Uniform rational and integral block counting](#ld6-block-counting).
-
-<a id="ld6-ax-type-torus-lemma"></a>
-
-### 6.31 Invariant Ax-type subsets of tori
-
-Let Tⁿ=ℝⁿ/ℤⁿ with exp:ℝⁿ→Tⁿ, and for X⊆Tⁿ put X̃=exp⁻¹(X)∩[0,1]ⁿ; call X definable when X̃ is R_an-definable. Define `AxType X`: for every continuous semialgebraic y:[0,1]→X̃ that is real analytic on (0,1) there is a closed subgroup G⊆Tⁿ with exp(y([0,1]))⊆exp(y(0))+G⊆X. Prove `axTypeTorusLemma`: if X⊆Tⁿ is closed, definable and of Ax-type, and a subgroup Γ⊆GL_n(ℤ), free on two generators, satisfies γ(X)=X for all γ∈Γ, then either (1) X lies in a finite union of proper closed subgroups of Tⁿ, or (2) there are a nonempty open U⊆X and a closed connected infinite subgroup G⊆Tⁿ with U+G⊆X.
-
-Choose c≥2 bounding the Euclidean operator norms of both generators and both inverses; then |γ|≤c^ℓ(γ) for the reduced word length ℓ, and at least 2^t elements have ℓ(γ)≤t. For x∈X̃ and γ∈Γ let y_γ=γx−a_γ∈X̃ with a_γ∈ℤⁿ; then H(a_γ)≤2n²H(γ). Apply §6.29 to the definable family Z_x={(γ,a,y)∈GL_n(ℝ)×ℝⁿ×X̃: γx−a=y}, parametrized by x∈X̃, with (γ,a) the rational coordinates and y the free coordinates, and ε=(log 2)/(2 log c). If two elements γ≠γ′ of height ≤T give the same y, exp(x) lies in the closed proper subgroup fixed by γ⁻¹γ′; there are finitely many such subgroups for the fixed T, and if they cover X we are in case (1). Otherwise, on the nonempty open complement V the y_γ are distinct, and their number exceeds c(Z,ε)T^ε for large T. §6.29 gives β(s)=(γ(s),a(s),y(s)) with γ(·),a(·) semialgebraic, y nonconstant and analytic on (0,1), and y(0)=y_{γ₀}=γ₀x−a₀ for some (γ₀,a₀,y(0))∈Σ with γ₀∈Γ; the rescaled γ(0) itself need not lie in Γ. Since x is fixed, y is semialgebraic, so Ax-type gives a closed subgroup G′, which may be taken connected and is infinite because exp∘y is nonconstant, with exp(y([0,1]))⊆exp(y(0))+G′⊆X. As exp(y(0))=γ₀·exp(x) and γ₀X=X, exp(x)+γ₀⁻¹G′⊆X. So every point of V lies in some E(G)={z∈V: z+G⊆X}, a closed subset of V; Tⁿ has countably many closed subgroups, and Baire's theorem in the locally compact space V gives one G with E(G) of nonempty interior, which is case (2).
-
-The basic interface must include:
-
-- `ax_type.coset`: a closed subgroup, and each of its cosets, is of Ax-type.
-- `ax_type.finite`: a finite set is of Ax-type, with G trivial.
-- `ax_type_torus_lemma.word_growth`: |γ|≤c^ℓ(γ) with c bounding both generators and both inverses.
-- `ax_type_torus_lemma.existential_endpoint`: the existential endpoint of §6.29 is enough for the translation step.
-
-**Checks.**
-
-- `ax_type.subtorus`: X=T¹×{0}⊆T² is of Ax-type with G=X.
-- `ax_type.curve`: X=exp{(t,t²): t∈[0,1]}⊆T² is not of Ax-type: along y(t)=(t,t²) the subgroup would contain a nonconstant arc through 0 and so a one-dimensional subtorus, which X does not contain.
-- `ax_type.points`: a finite X is of Ax-type, since continuous paths in the finite set X̃ are constant.
-- `ax_type_torus_lemma.inverse_bound`: for the generators γ₁=[[1,2],[0,1]] and γ₂=[[1,0],[2,1]] of a free subgroup of SL₂(ℤ), c must bound the inverses [[1,−2],[0,1]] and [[1,0],[−2,1]] as well; a bound on repeated γ₁ alone does not bound words containing γ₁⁻¹γ₂.
-
-([Ziyang Gao and Philipp Habegger, *Heights in families of abelian varieties and the geometric Bogomolov conjecture*](https://arxiv.org/pdf/1801.05762v3), §5.1, definition of Ax-type and Lemma 5.2 with proof, pp.18–20; [Philipp Habegger and Jonathan Pila, *O-minimality and certain atypical intersections*](https://arxiv.org/pdf/1409.0771), Corollary 7.2 and proof, pp.23–26.)
-
-*Needs:* [6.29 Semi-rational counting and marked projections](#ld6-semi-rational-counting); [6.2 Restricted analytic and exponential expansions](#ld6-restricted-analytic-expansions); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
+*Needs:* [6.28 Counting algebraic points of bounded degree](#628-counting-algebraic-points-of-bounded-degree); [6.27 Integral points and images of blocks](#627-integral-points-and-images-of-blocks).
 
 ### Examples
 
-For a line X⊂ℝ², cl(X)∖X=∅ although its ambient topological boundary is X. A singleton has empty algebraic part. In the quadrant, the abstract boundary has two distinct points over the vertex, so its immersion is not injective. The set [0,1]×{z₀} may contain many rational first coordinates but has only one second projection and cannot force a path with nonconstant second coordinate. If an orbit supplies cD^δ lifts of height at most CD^A, choose ε<δ/A; for large D their number exceeds the O(D^(Aε)) singleton blocks. With Σ={(0,0),(1,1/2)} and β(s)=(s,max(0,s−1/2)), restricting to (1/2,1) moves the initial point to (1/2,0)∉Σ, whose second projection 0 is still that of (0,0)∈Σ.
+For a line X⊂ℝ², cl(X)∖X=∅ although its ambient topological boundary is X. A singleton has empty algebraic part. In the quadrant, the abstract boundary has two distinct points over the vertex, so its immersion is not injective. For the supplied semirational counting theorem, the set [0,1]×{z₀} may contain many rational first coordinates but has only one second projection and cannot force a path with nonconstant second coordinate. If an orbit supplies cD^δ lifts of height at most CD^A, choose ε<δ/A; for large D their number exceeds the O(D^(Aε)) singleton blocks. With Σ={(0,0),(1,1/2)} and β(s)=(s,max(0,s−1/2)), restricting to (1/2,1) moves the initial point to (1/2,0)∉Σ, whose second projection 0 is still that of (0,0)∈Σ.
 
 ### Dependencies
 
-[0.2 Semantics and composition of interpretations](#ld0-interpretation-semantics); Mathlib `AlgebraicGeometry.IsAffineOpen`; [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp); [TauCetiRoadmap.ShimuraVarieties, §3.5d](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35d-definable-chow); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §§0.1–0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#layer-0-heights-and-approximation-exponents).
+[0.2 Semantics and composition of interpretations](#02-semantics-and-composition-of-interpretations); Mathlib `AlgebraicGeometry.IsAffineOpen`; [TauCetiRoadmap.ShimuraVarieties, §3.5a](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35a-the-o-minimal-structure-r_anexp); [TauCetiRoadmap.ShimuraVarieties, §3.5d](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/ShimuraVarieties/README.md#35d-definable-chow); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §§0.1–0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#layer-0-heights-and-approximation-exponents).
 
 ## Layer 7: Pila–Zannier reductions under explicit inputs
 
-Each theorem here combines the counting of Layer 6 with geometric and arithmetic inputs from the theory of Shimura varieties, Hodge theory and complex multiplication. Each input is a named hypothesis with its exact content and the source that proves it; no theorem of this layer depends on a roadmap that consumes Layer 6. Discharging the hypotheses gives the unconditional theorems of Tsimerman, André, Gao–Habegger, Lawrence–Sawin and Gao.
-
-<a id="ld7-andre-oort-input"></a>
+Each theorem here combines the counting of Layer 6 with geometric and arithmetic inputs from the theory of Shimura varieties, Hodge theory and complex multiplication. Each input is a named hypothesis with its exact content and the source that proves it; no theorem of this layer depends on a roadmap that consumes Layer 6. Discharging the hypotheses gives the unconditional theorems of Tsimerman, André, Lawrence–Sawin and Gao.
 
 ### 7.1 The André–Oort input datum for A_g
 
-Fix g≥1. Let ℋ_g⊂Sym_g(ℂ) be the Siegel space, Γ=Sp_{2g}(ℤ), A_g=Γ\ℋ_g the coarse moduli variety over ℂ with its quasi-projective structure and the R_alg-definable structure of §6.16, and π:ℋ_g→A_g the uniformization. Let 𝔉_g be the standard Siegel fundamental set and 𝔉̄_g its closure in ℋ_g. For a special point x write A_x for the CM abelian variety, R_x for the centre of End(A_x) and D(x)=|disc R_x|. Weakly special subvarieties are the images of X₁⁺×{y} for a Shimura subdatum (H,X_H) of the Siegel datum and a splitting (H^ad,X⁺)=(H₁,X₁⁺)×(H₂,X₂⁺); they are special when y is special (Pila–Tsimerman 2014, §2, p.663). Define `AgAndreOortInput g` as the conjunction of the following propositions about these fixed objects.
+Fix g≥1. Let ℋ_g⊂Sym_g(ℂ) be the Siegel space, `Γ=Sp_{2g}(ℤ),` A_g=Γ\ℋ_g the coarse moduli variety over ℂ with its quasi-projective structure and the R_alg-definable structure of §6.16, and π:ℋ_g→A_g the uniformization. Let 𝔉_g be the standard Siegel fundamental set and 𝔉̄_g its closure in ℋ_g. For a special point x write A_x for the CM abelian variety, R_x for the centre of End(A_x) and D(x)=|disc R_x|. Weakly special subvarieties are the images of X₁⁺×{y} for a Shimura subdatum (H,X_H) of the Siegel datum and a splitting (H^ad,X⁺)=(H₁,X₁⁺)×(H₂,X₂⁺); they are special when y is special (Pila–Tsimerman 2014, §2, p.663). Define the André–Oort input datum for g as the conjunction of the following propositions about these fixed objects.
 
 - (I-def) (a) The restriction of π to 𝔉̄_g is definable in R_an,exp (Peterzil–Starchenko's definability of restricted theta functions, as used in Tsimerman §6.3, p.388). (b) For every Shimura subdatum (G,X_G) of the Siegel datum there is a semialgebraic S_G⊆X_G⁺ with G(ℤ)⁺·S_G=X_G⁺ and π|S_G definable in R_an,exp (Pila–Tsimerman 2014, Theorem 4.4(1),(3), p.668).
 - (I-ws) From Pila–Tsimerman 2014: (a) a weakly special subvariety is special if and only if it contains a special point (p.663, citing Moonen). (b) An irreducible algebraic S⊆ℋ_g is weakly special if and only if π(S) is algebraic (Ullmo–Yafaev; Lemma 2.1, p.663). (c) Every weakly special subvariety is G₀(ℝ)⁺·Z₀ for a semisimple ℚ-subgroup G₀ without compact ℚ-factors (Lemma 2.3, pp.663–664). (d) For irreducible V⊆A_g and each F in the class 𝒞 of Pila–Tsimerman §7, N(F) is reductive and only finitely many special N(F)_sh(ℝ)⁺-orbits occur; when N(F)_sh=G, the splitting map ψ identifies the special F-orbits in V with the special points of an auxiliary closed V′⊆A_g of smaller dimension (Lemmas 7.2–7.3, pp.674–675, and pp.676–677). (e) The union of the positive-dimensional weakly special subvarieties of V is a countable union of algebraic subvarieties and is R_an,exp-definable (Lemmas 7.5–7.6, p.677).
@@ -2453,91 +2123,69 @@ The constants are ineffective, and nothing is computed from them.
 
 The basic interface must include:
 
-- `ag_andre_oort_input.bounded_discriminant`: by (I-lift) and bounded-degree Northcott, only finitely many special x have D(x)<B (Pila–Tsimerman 2014, Lemma 7.4, p.675).
-- `ag_andre_oort_input.conjugate_lifts`: for V defined over a number field L and special x∈V, the Gal(ℚ̄/L)-conjugates of x lie on V, have the same D, and give at least (D(x)/c_g)^(1/b_g)/[L:ℚ] distinct points of π⁻¹(V)∩𝔉̄_g of coordinate degree at most k_g and height at most C_g·D(x)^(a_g).
-- `ag_andre_oort_input.promote`: by (I-AL) and (I-ws)(a), a connected positive-dimensional semialgebraic subset of π⁻¹(V) through a lift of a special point x lies in π⁻¹ of a positive-dimensional special subvariety of V through x.
+- by (I-lift) and bounded-degree Northcott, only finitely many special x have D(x)<B (Pila–Tsimerman 2014, Lemma 7.4, p.675).
+- for V defined over a number field L and special x∈V, the Gal(ℚ̄/L)-conjugates of x lie on V, have the same D, and give at least (D(x)/c_g)^(1/b_g)/[L:ℚ] distinct points of π⁻¹(V)∩𝔉̄_g of coordinate degree at most k_g and height at most C_g·D(x)^(a_g).
+- by (I-AL) and (I-ws)(a), a connected positive-dimensional semialgebraic subset of π⁻¹(V) through a lift of a special point x lies in π⁻¹ of a positive-dimensional special subvariety of V through x.
 
 **Checks.**
 
-- `ag_andre_oort_input.genus_one_lift`: For g=1 and the reduced form (a,b,c) of discriminant D=b²−4ac<0, |b|≤a≤c, the lift τ=(−b+√D)/(2a) has Re τ=−b/(2a) rational of height at most 2a≤|D| (as 3a²≤|D|), and Im τ=√|D|/(2a) has minimal polynomial dividing 4a²X²−|D|, of degree at most 2: so k₁=2=2g and a₁=1 suffice.
-- `ag_andre_oort_input.genus_one_orbit`: For g=1, #(Gal·j(τ))=h(𝒪) for the order 𝒪 of discriminant D=disc R_x, and (I-orbit) is the Landau–Siegel bound h(𝒪)≫_ε|D|^(1/2−ε); any b₁>2 works, ineffectively.
-- `ag_andre_oort_input.fundamental_set`: π itself is not definable in any o-minimal structure, since its fibre over a point is an infinite discrete Γ-orbit; definability is asserted only on S_G and 𝔉̄_g.
-- `ag_andre_oort_input.special_point_clause`: In A₁ every point is a zero-dimensional weakly special subvariety but only CM points are special; the clause (I-ws)(a) is what turns the weakly special output of (I-AL) into a special subvariety.
+- For g=1 and the reduced form (a,b,c) of discriminant D=b²−4ac<0, |b|≤a≤c, the lift τ=(−b+√D)/(2a) has Re τ=−b/(2a) rational of height at most 2a≤|D| (as 3a²≤|D|), and Im τ=√|D|/(2a) has minimal polynomial dividing 4a²X²−|D|, of degree at most 2: so k₁=2=2g and a₁=1 suffice.
+- For g=1, #(Gal·j(τ))=h(𝒪) for the order 𝒪 of discriminant D=disc R_x, and (I-orbit) is the Landau–Siegel bound h(𝒪)≫_ε|D|^(1/2−ε); any b₁>2 works, ineffectively.
+- π itself is not definable in any o-minimal structure, since its fibre over a point is an infinite discrete Γ-orbit; definability is asserted only on S_G and 𝔉̄_g.
+- In A₁ every point is a zero-dimensional weakly special subvariety but only CM points are special; the clause (I-ws)(a) is what turns the weakly special output of (I-AL) into a special subvariety.
 
-*Needs:* [6.16 Definable structure of complex algebraic varieties](#ld6-algebraic-definable-structure); [6.22 Rational and algebraic counting height interface](#ld6-counting-height-interface); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
-
-<a id="ld7-finite-exceptional-cm"></a>
+*Needs:* [6.16 Definable structure of complex algebraic varieties](#616-definable-structure-of-complex-algebraic-varieties); [6.22 Rational and algebraic counting height interface](#622-rational-and-algebraic-counting-height-interface); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
 
 ### 7.2 Finite exceptional CM points
 
-Assume `AgAndreOortInput g`. For an algebraic V⊆A_g defined over a number field, only finitely many special points of V lie on no positive-dimensional special subvariety contained in V.
+Assume the André–Oort input datum for g. For an algebraic V⊆A_g defined over a number field, only finitely many special points of V lie on no positive-dimensional special subvariety contained in V.
 
-Fix a number field L of definition and work componentwise. Use Y⁰=π⁻¹(V)∩𝔉̄_g, definable by (I-def)(a), as the ambient counting family. For a special x avoiding the positive-dimensional special subvarieties of V, `ag_andre_oort_input.conjugate_lifts` gives a finite set Σ_x of at least (D(x)/c_g)^(1/b_g)/[L:ℚ] lifts of degree at most k_g and height at most C_g·D(x)^(a_g); Σ_x need not be definable. Avoidance persists under conjugation over L, since conjugates of special subvarieties of V are special subvarieties of V. If D(x) is large, §6.30 with §6.28 places some member of Σ_x in a positive-dimensional block, hence in a connected positive-dimensional semialgebraic subset of Y⁰; `ag_andre_oort_input.promote` gives a positive-dimensional special subvariety of V through that conjugate, and conjugating back contradicts avoidance. So D(x) is bounded, and `ag_andre_oort_input.bounded_discriminant` finishes. Neither the union of the special subvarieties of V nor its complement is assumed definable.
+Fix a number field L of definition and work componentwise. Use Y⁰=π⁻¹(V)∩𝔉̄_g, definable by (I-def)(a), as the ambient counting family. For a special x avoiding the positive-dimensional special subvarieties of V, ag andre oort input conjugate lifts gives a finite set Σ_x of at least (D(x)/c_g)^(1/b_g)/[L:ℚ] lifts of degree at most k_g and height at most C_g·D(x)^(a_g); Σ_x need not be definable. Avoidance persists under conjugation over L, since conjugates of special subvarieties of V are special subvarieties of V. If D(x) is large, §6.30 with §6.28 places some member of Σ_x in a positive-dimensional block, hence in a connected positive-dimensional semialgebraic subset of Y⁰; ag andre oort input promote gives a positive-dimensional special subvariety of V through that conjugate, and conjugating back contradicts avoidance. So D(x) is bounded, and ag andre oort input bounded discriminant finishes. Neither the union of the special subvarieties of V nor its complement is assumed definable.
 
 ([Jonathan Pila and Jacob Tsimerman, *Ax-Lindemann for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf), proof of Theorem 7.1, first paragraph, p.676; [Jacob Tsimerman, *The André–Oort conjecture for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf), §§6.1–6.4, pp.387–388.)
 
-*Needs:* [7.1 The André–Oort input datum for A_g](#ld7-andre-oort-input); [6.30 Orbit growth versus definable counting](#ld6-orbit-counting-bridge); [6.28 Counting algebraic points of bounded degree](#ld6-bounded-degree-counting).
-
-<a id="ld7-special-family-induction"></a>
+*Needs:* [7.1 The André–Oort input datum for A_g](#71-the-andréoort-input-datum-for-a_g); [6.30 Orbit growth versus definable counting](#630-orbit-growth-versus-definable-counting); [6.28 Counting algebraic points of bounded degree](#628-counting-algebraic-points-of-bounded-degree).
 
 ### 7.3 Finite special families and dimension induction
 
-Assume `AgAndreOortInput g`. Every irreducible closed V⊆A_g contains only finitely many maximal special subvarieties.
+Assume the André–Oort input datum for g. Every irreducible closed V⊆A_g contains only finitely many maximal special subvarieties.
 
 Induct on dim V; it suffices to show that V is special when its special points are Zariski dense. By §7.2 all but finitely many special points of V lie on positive-dimensional special subvarieties of V, so it suffices to show that there are finitely many maximal positive-dimensional ones. Each is π(F(ℝ)⁺·y) for some F∈𝒞 by (I-ws)(c). If N(F)_sh≠G, (I-ws)(d) places these in finitely many special subvarieties meeting V properly, and induction applies. If N(F)_sh=G, (I-ws)(d) identifies them with the special points of V′ of smaller dimension, and induction gives finiteness. By (I-ws)(e) the union of the positive-dimensional weakly special subvarieties of V is a definable countable union of algebraic subvarieties, so §6.20 reduces it to finitely many F, and Zariski density of special points in each special subvariety places it in one of the finitely many corresponding special families. Definability of a countable union does not by itself make an arbitrary family finite; the algebraic-family and maximality inputs are used.
 
 ([Jonathan Pila and Jacob Tsimerman, *Ax-Lindemann for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf), Theorem 7.1, p.673, and proof with Lemmas 7.2–7.7, pp.674–678; [Jacob Tsimerman, *The André–Oort conjecture for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf), §6.5, p.388.)
 
-*Needs:* [7.2 Finite exceptional CM points](#ld7-finite-exceptional-cm); [6.20 Finite reduction of a definable algebraic union](#ld6-countable-algebraic-union); [6.5 Definable dimension, choice and finite topology](#ld6-definable-geometry).
-
-<a id="ld7-andre-oort-ag"></a>
+*Needs:* [7.2 Finite exceptional CM points](#72-finite-exceptional-cm-points); [6.20 Finite reduction of a definable algebraic union](#620-finite-reduction-of-a-definable-algebraic-union); [6.5 Definable dimension, choice and finite topology](#65-definable-dimension-choice-and-finite-topology).
 
 ### 7.4 André–Oort for A_g under its input datum
 
-Assume `AgAndreOortInput g`. For every algebraic V⊆A_g the Zariski closure of the special points of V is a finite union of special subvarieties. Each input is a theorem: (I-def) is Pila–Tsimerman 2014 Theorem 4.4, (I-ws) is their §§2 and 7 with Moonen and Ullmo–Yafaev, (I-AL) is their Theorem 6.1, (I-orbit) is Tsimerman's Theorem 5.2 (via the averaged Colmez formula and isogeny estimates), and (I-lift) is Pila–Tsimerman 2013 Theorem 3.1. With them discharged this is Tsimerman's unconditional Theorem 1.3 for every g≥1. No statement for general or mixed Shimura varieties is made here.
+Assume the André–Oort input datum for g. For every algebraic V⊆A_g the Zariski closure of the special points of V is a finite union of special subvarieties. Each input is a theorem: (I-def) is Pila–Tsimerman 2014 Theorem 4.4, (I-ws) is their §§2 and 7 with Moonen and Ullmo–Yafaev, (I-AL) is their Theorem 6.1, (I-orbit) is Tsimerman's Theorem 5.2 (via the averaged Colmez formula and isogeny estimates), and (I-lift) is Pila–Tsimerman 2013 Theorem 3.1. With them discharged this is Tsimerman's unconditional Theorem 1.3 for every g≥1. No statement for general or mixed Shimura varieties is made here.
 
 Pass to the irreducible components of the Zariski closure of the special points; each has dense special points, so by §7.3 it is special. Zero-dimensional components are special points.
 
 ([Jacob Tsimerman, *The André–Oort conjecture for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf), Theorem 1.3, p.380; Theorem 5.3, p.386; §6, pp.387–388.)
 
-*Needs:* [7.3 Finite special families and dimension induction](#ld7-special-family-induction); [7.2 Finite exceptional CM points](#ld7-finite-exceptional-cm).
-
-<a id="ld7-cm-pairs"></a>
+*Needs:* [7.3 Finite special families and dimension induction](#73-finite-special-families-and-dimension-induction); [7.2 Finite exceptional CM points](#72-finite-exceptional-cm-points).
 
 ### 7.5 CM-pair finiteness on a nonmodular curve
 
-Let ι:A₁×A₁→A₂ send (E₁,E₂) to E₁×E₂ with the product principal polarization, and identify A₁×A₁ with ℂ² by (j₁,j₂). Define `ProductLocusInput` as the conjunction of: (P1) ι is a finite morphism of Shimura varieties onto a special surface, and every irreducible component of the preimage under ι of a special subvariety is special; (P2) the positive-dimensional proper special subvarieties of ℂ² are the lines {j₁=a} and {j₂=a} where a is a CM j-invariant and the modular curves Φ_N(j₁,j₂)=0, N≥1. Assume `AgAndreOortInput 2` and `ProductLocusInput`. Then for every irreducible algebraic curve C⊆ℂ² that is none of these special curves, only finitely many points of C have both coordinates CM j-invariants.
+Let ι:A₁×A₁→A₂ send (E₁,E₂) to E₁×E₂ with the product principal polarization, and identify A₁×A₁ with ℂ² by (j₁,j₂). Define the product-locus input datum as the conjunction of: (P1) ι is a finite morphism of Shimura varieties onto a special surface, and every irreducible component of the preimage under ι of a special subvariety is special; (P2) the positive-dimensional proper special subvarieties of ℂ² are the lines {j₁=a} and {j₂=a} where a is a CM j-invariant and the modular curves Φ_N(j₁,j₂)=0, N≥1. Assume the André–Oort input datum for g=2 and the product-locus input datum. Then for every irreducible algebraic curve C⊆ℂ² that is none of these special curves, only finitely many points of C have both coordinates CM j-invariants.
 
 A point with both coordinates CM maps to a special point of the curve ι(C)⊆A₂. If C has infinitely many, §7.4 for g=2 makes ι(C) special; by (P1), C is a component of the preimage of ι(C) and so special, and (P2) contradicts the choice of C. In the Masser–Zannier application the curve f(y₁,y₂)=0 is absolutely irreducible, involves both variables and is not modular, which excludes every special alternative.
 
 The basic interface must include:
 
-- `product_locus_input.preimage`: components of ι-preimages of special subvarieties are special.
-- `product_locus_input.special_curves`: the list of (P2).
+- components of ι-preimages of special subvarieties are special.
+- the list of (P2).
 
 **Checks.**
 
-- `product_locus_input.diagonal`: Φ₁(j₁,j₂)=j₁−j₂, so the diagonal is the modular curve N=1 and carries the infinitely many CM pairs (j,j).
-- `product_locus_input.cm_line`: {j₁=1728} is special, since 1728=j(i) is a CM value, and contains the infinitely many CM pairs (1728,j).
-- `product_locus_input.noncm_line`: {j₁=1} contains no CM pair, since 1 is not a CM j-invariant (the integral CM values of class number one are 0, 1728, −3375, 8000, −32768, 54000, 287496, −884736, −12288000, 16581375, −884736000, −147197952000, −262537412640768000); it is not special.
+- Φ₁(j₁,j₂)=j₁−j₂, so the diagonal is the modular curve N=1 and carries the infinitely many CM pairs (j,j).
+- {j₁=1728} is special, since 1728=j(i) is a CM value, and contains the infinitely many CM pairs (1728,j).
+- {j₁=1} contains no CM pair, since 1 is not a CM j-invariant (the integral CM values of class number one are 0, 1728, −3375, 8000, −32768, 54000, 287496, −884736, −12288000, 16581375, −884736000, −147197952000, −262537412640768000); it is not special.
 
 ([David Masser and Umberto Zannier, *Abelian varieties isogenous to no Jacobian*](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf), §3.2, p.648 (André's theorem as input); pp.649–650 (block consumer); [Jonathan Pila and Jacob Tsimerman, *Ax-Lindemann for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf), p.673, recalling André's theorem for the product of two modular curves.)
 
-*Needs:* [7.4 André–Oort for A_g under its input datum](#ld7-andre-oort-ag); [7.1 The André–Oort input datum for A_g](#ld7-andre-oort-input).
-
-<a id="ld7-abelian-group-action"></a>
-
-### 7.6 Invariant subvarieties of abelian varieties under monodromy
-
-Let A be a complex abelian variety of dimension g≥1 with a real-analytic group isomorphism b:A(ℂ)→T^(2g), through which a group Γ⊆GL_{2g}(ℤ) acts continuously and faithfully on A(ℂ). Assume (I-Ax): for every Zariski closed Z⊆A, b(Z(ℂ)) is closed, definable in R_an and of Ax-type in the sense of §6.31 (Ax's theorem on analytic subgroups; Gao–Habegger p.19, citing Ax). Assume that Γ is of monodromy type (γ(B(ℂ))=B(ℂ) for every abelian subvariety B and every γ∈Γ), contains a free subgroup on two generators, and fixes no nonzero vector of ℤ^(2g). Then every irreducible closed Z⊆A with γ(Z(ℂ))=Z(ℂ) for all γ∈Γ is contained in a proper torsion coset or satisfies Z+B=Z for an abelian subvariety B of positive dimension.
-
-Apply §6.31 to X=b(Z(ℂ)) and a free subgroup. In case (1), Baire gives one proper closed subgroup G₁ with X∩G₁ of nonempty interior in X; arc-connectedness of the smooth locus of Z^an and the identity theorem for the real-analytic integral relations defining G₁ give b(Z)⊆G₁, so Z⊆P+B for a proper abelian subvariety B, generated by sums of Z−Z. With a complementary abelian subvariety B′ and the monodromy-type hypothesis, γ(P)−P∈(B∩B′)(ℂ), so Q=[#(B∩B′)]P is fixed by Γ; the absence of Γ-invariant vectors makes Q, hence P, torsion. In case (2), Z−P=Z for P in the Zariski-dense b⁻¹(U), hence for P in the Zariski closure of b⁻¹(G), which is an abelian subvariety of positive dimension because G is connected and infinite. The differential-exponential Ax–Schanuel theorem for the exponential function is not a substitute for (I-Ax).
-
-([Ziyang Gao and Philipp Habegger, *Heights in families of abelian varieties and the geometric Bogomolov conjecture*](https://arxiv.org/pdf/1801.05762v3), §5.1, Proposition 5.3 and proof, pp.20–22.)
-
-*Needs:* [6.31 Invariant Ax-type subsets of tori](#ld6-ax-type-torus-lemma); [6.16 Definable structure of complex algebraic varieties](#ld6-algebraic-definable-structure).
-
-<a id="ld7-period-codimension"></a>
+*Needs:* [7.4 André–Oort for A_g under its input datum](#74-andréoort-for-a_g-under-its-input-datum); [7.1 The André–Oort input datum for A_g](#71-the-andréoort-input-datum-for-a_g).
 
 ### 7.7 Complex period codimension consequence
 
@@ -2547,19 +2195,23 @@ Treat a zero-dimensional component separately. For a positive-dimensional compon
 
 ([Brian Lawrence and Will Sawin, *The Shafarevich conjecture for hypersurfaces in abelian varieties*](https://arxiv.org/pdf/2004.09046v5), §6.1, Lemma 6.3 and proof, pp.64–65; [Benjamin Bakker and Jacob Tsimerman, *The Ax–Schanuel conjecture for variations of Hodge structures*](https://arxiv.org/pdf/1712.05088), Theorem 1.1, p.2.)
 
-*Needs:* [6.18 Definable complex analytic Chow theorem](#ld6-definable-chow).
-
-<a id="ld7-mixed-andre-oort"></a>
+*Needs:* [6.18 Definable complex analytic Chow theorem](#618-definable-complex-analytic-chow-theorem).
 
 ### 7.8 Mixed André–Oort under its input datum
 
-Let S=Γ\X⁺ be a connected mixed Shimura variety of abelian type (its pure part is of abelian type), with uniformization unif:X⁺→S. Define `MixedAndreOortInput S` as the conjunction of: (M-def) there is a fundamental set 𝔉 with unif|𝔉 definable in R_an,exp (Gao §10.1, p.33); (M-AL) maximal irreducible algebraic subsets of unif⁻¹(Y) are weakly special for every closed irreducible Y⊆S (mixed Ax–Lindemann, Gao Theorem 1.2, p.3), and a weakly special subvariety containing a special point is special; (M-red) if the positive-dimensional weakly special subvarieties of Y are Zariski dense in Y, then Y is special if and only if its image under the quotient by the associated normal subgroup is special (Gao Theorem 12.2, p.42); (M-orbit) if the pure lower bound (I-orbit) holds for the pure part of S, then #(Gal(ℚ̄/k)·x)≫H(x̃)^ε for special points x with lifts x̃∈𝔉 (Gao Theorem 13.3, p.48, and Remark 13.5, p.49); (M-lift) the heights of lifts of special points are polynomially bounded in the discriminant of the pure part and the order of the torsion part (Pila–Tsimerman 2013, Theorem 3.1, and Gao Remark 4.4, p.16). Assume `MixedAndreOortInput S` and (I-orbit) for the pure part of S. Then every closed irreducible Y⊆S with a Zariski-dense set of special points is special. With (I-orbit) from Tsimerman, this is unconditional for every mixed Shimura variety whose pure part is a Shimura subvariety of some A_g; the input is the pure orbit bound, not pure André–Oort.
+Let S=Γ\X⁺ be a connected mixed Shimura variety of abelian type (its pure part is of abelian type), with uniformization unif:X⁺→S. Define the mixed André–Oort input datum for S as the conjunction of: (M-def) there is a fundamental set 𝔉 with unif|𝔉 definable in R_an,exp (Gao §10.1, p.33); (M-AL) maximal irreducible algebraic subsets of unif⁻¹(Y) are weakly special for every closed irreducible Y⊆S (mixed Ax–Lindemann, Gao Theorem 1.2, p.3), and a weakly special subvariety containing a special point is special; (M-red) if the positive-dimensional weakly special subvarieties of Y are Zariski dense in Y, then Y is special if and only if its image under the quotient by the associated normal subgroup is special (Gao Theorem 12.2, p.42); (M-orbit) if the pure lower bound (I-orbit) holds for the pure part of S, then #(Gal(ℚ̄/k)·x)≫H(x̃)^ε for special points x with lifts x̃∈𝔉 (Gao Theorem 13.3, p.48, and Remark 13.5, p.49); (M-lift) the heights of lifts of special points are polynomially bounded in the discriminant of the pure part and the order of the torsion part (Pila–Tsimerman 2013, Theorem 3.1, and Gao Remark 4.4, p.16). Assume the mixed André–Oort input datum for S and (I-orbit) for the pure part of S. Then every closed irreducible Y⊆S with a Zariski-dense set of special points is special. With (I-orbit) from Tsimerman, this is unconditional for every mixed Shimura variety whose pure part is a Shimura subvariety of some A_g; the input is the pure orbit bound, not pure André–Oort.
 
 Pass to a neat level and to the smallest mixed Shimura subvariety containing Y, so that Y is Hodge generic and defined over a number field k. By (M-red) assume that the positive-dimensional special subvarieties of Y are not Zariski dense. For a special point x outside them, (M-lift) and (M-orbit) give polynomially many conjugate lifts in unif⁻¹(Y)∩𝔉 of polynomially bounded height; Pila–Wilkie (§6.25) puts one in a positive-dimensional semialgebraic set, hence in a positive-dimensional maximal algebraic subset, which (M-AL) makes weakly special, and special because it contains a special point. So the heights of the remaining special points are bounded, Northcott makes them finitely many, and Zariski density forces Y special.
 
 ([Ziyang Gao, *Towards the André-Oort conjecture for mixed Shimura varieties: the Ax-Lindemann theorem and lower bounds for Galois orbits of special points*](https://arxiv.org/pdf/1310.1302v6), Theorem 13.6 and proof, pp.49–50; [Jacob Tsimerman, *The André–Oort conjecture for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf), Introduction, p.380.)
 
-*Needs:* [7.1 The André–Oort input datum for A_g](#ld7-andre-oort-input); [6.25 Pila–Wilkie rational-point counting](#ld6-pila-wilkie); [6.28 Counting algebraic points of bounded degree](#ld6-bounded-degree-counting); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
+*Needs:* [7.1 The André–Oort input datum for A_g](#71-the-andréoort-input-datum-for-a_g); [6.25 Pila–Wilkie rational-point counting](#625-pilawilkie-rational-point-counting); [6.28 Counting algebraic points of bounded degree](#628-counting-algebraic-points-of-bounded-degree); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
+
+**Checks.**
+
+- A special singleton has one special point, dense in itself; the conclusion returns that special point.
+- In a CM elliptic fibre, a torsion singleton has one special point, while a non-torsion singleton has zero and fails special-point density.
+- For a pure Shimura variety the torsion part has order 1; its lift bound reduces to the pure discriminant bound.
 
 ### Examples
 
@@ -2567,54 +2219,42 @@ For g=1 the datum of §7.1 is classical: a CM point of discriminant D has the qu
 
 ### Dependencies
 
-[6.16 Definable structure of complex algebraic varieties](#ld6-algebraic-definable-structure); [6.18 Definable complex analytic Chow theorem](#ld6-definable-chow); [6.20 Finite reduction of a definable algebraic union](#ld6-countable-algebraic-union); [6.25 Pila–Wilkie rational-point counting](#ld6-pila-wilkie); [6.28 Counting algebraic points of bounded degree](#ld6-bounded-degree-counting); [6.30 Orbit growth versus definable counting](#ld6-orbit-counting-bridge); [6.31 Invariant Ax-type subsets of tori](#ld6-ax-type-torus-lemma); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
+[6.16 Definable structure of complex algebraic varieties](#616-definable-structure-of-complex-algebraic-varieties); [6.18 Definable complex analytic Chow theorem](#618-definable-complex-analytic-chow-theorem); [6.20 Finite reduction of a definable algebraic union](#620-finite-reduction-of-a-definable-algebraic-union); [6.25 Pila–Wilkie rational-point counting](#625-pilawilkie-rational-point-counting); [6.28 Counting algebraic points of bounded degree](#628-counting-algebraic-points-of-bounded-degree); [6.30 Orbit growth versus definable counting](#630-orbit-growth-versus-definable-counting); [TauCetiRoadmap.DiophantineApproximationAndTranscendence, §0.3](https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/TauCetiRoadmap/DiophantineApproximationAndTranscendence/README.md#03-finiteness-and-size-estimates).
 
 ## Downstream consumers
 
-Layer 5 exports the precise formula, coefficient domain, Haar normalization, rational generating-variable convention and finite exceptional-prime policy to local-density and arithmetic-statistics consumers. AnalyticNumberTheory consumes these local factors with its own global orbit, convergence and functional-equation inputs. The finite-level enumeration theorem exports checkable finite counts; it makes no inference from a search timeout.
-
-Layer 6 exports o-minimal geometry and uniform rational, bounded-degree and semi-rational counting. HodgeStructuresPartII applies §6.15 with R=1 to the Hodge norms of a polarized degeneration after the width-R verification described there, and uses §§6.6, 6.10–6.14, 6.18 and 6.19 for definable period maps and Hodge loci.
-
-Layer 7 states its inputs as hypotheses. A functional-transcendence roadmap for Shimura varieties that proves (I-def), (I-ws), (I-AL), the product-locus input and Gao's mixed inputs, together with the CM-orbit and lift-height bounds stated in the second part of ComplexMultiplicationAndExplicitReciprocity, discharges them downstream and obtains the unconditional theorems of §§7.4, 7.5 and 7.8. AbelianVarietiesIsogenousToNoJacobian consumes §7.5 and the bounded-degree counting of Layer 6; AbelianSchemesAndArithmeticModuliPartII consumes §§6.31 and 7.6 with Ax's theorem; the Lawrence–Sawin application consumes §7.7 with the Bakker–Tsimerman theorem. These applications do not strengthen the universal integer theorem into an existential definition in ℚ.
+Local-density applications consume the exact formula, coefficient domain, Haar normalization and generating-variable convention of Layer 5. The fixed-prime theorem supplies every p-adic field; uniform transfer carries its separate finite exceptional set. Definable geometry applications consume the counting and algebraicity theorems with their stated height and analytic hypotheses. Layer 7 exports reductions under the specified functional-transcendence and Galois-orbit inputs.
 
 ## References
 
 Page numbers for author copies are the printed page numbers of the indicated PDF, unless a published page range is specified. Every target gives its local theorem/section/page locator above. The following list fixes the source identities and the design provenance; it does not replace those locators.
 
 - Bjorn Poonen, [*Undecidability in number theory*](https://math.mit.edu/~poonen/papers/h10_notices.pdf). Author-hosted eight-page copy of the Notices AMS 55 (2008), no.3, 344–350 survey.
-- Mario Carneiro and the Mathlib contributors, [*Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/NumberTheory/Dioph.lean). Pinned source, Apache-2.0.
+- Mario Carneiro and the Mathlib contributors, [*Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Dioph.lean). Pinned source, Apache-2.0.
 - Cameron Freer, [*Hilbert10 polynomial bridge*](https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/PolyBridge.lean). Public independent formalization, commit 25b42fcd6c6c5af710c514638a6fcb4e22d00a30, Apache-2.0.
 - Cameron Freer, [*Hilbert10 finite Diophantine normal form*](https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/NormalForm.lean). Public independent formalization, same pinned commit, Apache-2.0.
-- Cameron Freer, [*Compact only the right summand of a sum of polynomial variables*](https://github.com/leanprover-community/mathlib4/pull/42203). Independent design contribution in Mathlib pull request #42203, head fc45c15e7908c6f31b0b5efc447b8d8a5800d051.
-- The Mathlib contributors, [*Multivariate polynomial extensionality on infinite boxes*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Algebra/MvPolynomial/Funext.lean). Pinned source, Apache-2.0.
+- The Mathlib contributors, [*Multivariate polynomial extensionality on infinite boxes*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Funext.lean). Pinned source, Apache-2.0.
 - Raf Cluckers and François Loeser, [*Constructible motivic functions and motivic integration*](https://arxiv.org/pdf/math/0410203). arXiv:math/0410203v3, 29 May 2008; author pagination.
 - Raf Cluckers and François Loeser, [*Constructible exponential functions, motivic Fourier transform and transfer principle*](https://arxiv.org/pdf/math/0512022). arXiv:math/0512022v1, 1 December 2005.
 - Raf Cluckers, Julia Gordon and Immanuel Halupczok, [*Integrability of oscillatory functions on local fields: transfer principles*](https://rcluckers.perso.math.cnrs.fr/prints/CGH.pdf). Duke Mathematical Journal 163 (2014), 1549–1600; author-hosted published copy, journal pagination.
-- Johan Pas, [*Cell decomposition and local zeta functions in a tower of unramified extensions of a p-adic field*](https://numdam.org/item/AST_1991__198-199-200__265_0.pdf). Astérisque 198–200 (1991), 265–271, Numdam scan.
 - Johan Pas, [*Uniform p-adic cell decomposition and local zeta functions*](https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0399/LOG_0010.pdf). Journal für die reine und angewandte Mathematik 399 (1989), 137–172, GDZ scan.
 - Philip Dittmann and Florian Pop, [*Characterizing finitely generated fields by a single field axiom*](https://arxiv.org/pdf/2012.01307v2). arXiv:2012.01307v2, 27 April 2023.
-- Franz-Viktor Kuhlmann and Josnei Novacoski, with an appendix by Hagen Knaf, [*Henselian elements*](https://www.fvkuhlmann.de/Henselt.pdf). Author-hosted Henselt.pdf; author pagination.
 - Jochen Koenigsmann, [*Defining Z in Q*](https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf). Annals of Mathematics 183 (2016), 73–93; version of record.
-- Martin Davis, [*Hilbert’s tenth problem is unsolvable*](https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf). American Mathematical Monthly 80 (1973), 233–269; public scan.
+- Martin Davis, [*Hilbert’s tenth problem is unsolvable*](https://doi.org/10.2307/2318447). American Mathematical Monthly 80 (1973), 233–269; published locator.
 - Jean-Louis Colliot-Thélène and Jan Van Geel, [*Le complémentaire des puissances n-ièmes dans un corps de nombres est un ensemble diophantien*](https://arxiv.org/pdf/1401.0915). arXiv:1401.0915v1.
-- Bhargav Bhatt and Akhil Mathew, [*The arc-topology*](https://arxiv.org/pdf/1807.04725v4). arXiv:1807.04725v4.
 - Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, [*Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArith.pdf). Author-hosted DefArith.pdf, 22 pages; scoped to this author copy.
-- Benjamin Bakker, Bruno Klingler and Jacob Tsimerman, [*Erratum to Tame topology of arithmetic quotients and algebraicity of Hodge loci*](https://benjamin-bakker.github.io/DefArithErr.pdf). Author-hosted DefArithErr.pdf, 2023, three pages.
 - Michael Groechenig, Dimitri Wyss and Paul Ziegler, [*Geometric stabilisation via p-adic integration*](https://arxiv.org/pdf/1810.06739v2). arXiv:1810.06739v2.
 - Michael Groechenig, Dimitri Wyss and Paul Ziegler, [*Mirror symmetry for moduli spaces of Higgs bundles via p-adic integration*](https://arxiv.org/pdf/1707.06417v3). arXiv:1707.06417v3.
 - Lou van den Dries and Chris Miller, [*Geometric categories and o-minimal structures*](https://people.math.osu.edu/miller.1987/newg.pdf). Revised author copy newg.pdf, forty-one pages; author pagination.
-- Jonathan Pila and Alex Wilkie, [*The rational points of a definable set*](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/Pila-WIlkie.pdf). Duke Mathematical Journal 133 (2006), 591–616; public author scan.
+- Jonathan Pila and Alex Wilkie, [*The rational points of a definable set*](https://doi.org/10.1215/S0012-7094-06-13336-7). Duke Mathematical Journal 133 (2006), 591–616; published locator.
 - Jonathan Pila, [*Integer points on the dilation of a subanalytic surface*](https://people.maths.ox.ac.uk/pila/isurface.pdf). Quarterly Journal of Mathematics 55 (2004), 207–223; author copy dated 2003IX19, eighteen pages.
 - Ya’acov Peterzil and Sergei Starchenko, [*Complex analytic geometry and analytic-geometric categories*](https://math.haifa.ac.il/kobi/analytic.pdf). Author copy dated 22 July 2005, thirty-two pages; Theorem 4.4 and Corollary 4.5, p.12.
 - Jonathan Pila, [*On the algebraic points of a definable set*](https://people.maths.ox.ac.uk/pila/Algebraic.pdf). Author copy dated 20080627; Selecta Mathematica 15 (2009), 151–170; author and journal pagination distinguished.
-- Philipp Habegger and Jonathan Pila, [*O-minimality and certain atypical intersections*](https://arxiv.org/pdf/1409.0771). arXiv:1409.0771v1.
 - Jacob Tsimerman, [*The André–Oort conjecture for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf). Annals of Mathematics 187 (2018), 379–390; version of record.
 - David Masser and Umberto Zannier, [*Abelian varieties isogenous to no Jacobian*](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf). Annals of Mathematics 191 (2020), 635–674; version of record.
-- Ziyang Gao and Philipp Habegger, [*Heights in families of abelian varieties and the geometric Bogomolov conjecture*](https://arxiv.org/pdf/1801.05762v3). arXiv:1801.05762v3.
 - Brian Lawrence and Will Sawin, [*The Shafarevich conjecture for hypersurfaces in abelian varieties*](https://arxiv.org/pdf/2004.09046v5). arXiv:2004.09046v5.
 - Benjamin Bakker and Jacob Tsimerman, [*The Ax–Schanuel conjecture for variations of Hodge structures*](https://arxiv.org/pdf/1712.05088). arXiv:1712.05088v1.
 - Ngaiming Mok, Jonathan Pila and Jacob Tsimerman, [*Ax–Schanuel for Shimura varieties*](https://arxiv.org/pdf/1711.02189). arXiv:1711.02189v3.
-- Sean Howe and Christian Klevdal, [*Admissible pairs and p-adic Hodge structures II: the bi-analytic Ax-Lindemann theorem*](https://arxiv.org/pdf/2308.11064v2). arXiv:2308.11064v2, 28 February 2025.
 - Jonathan Pila and Jacob Tsimerman, [*Ax-Lindemann for A_g*](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf). Annals of Mathematics 179 (2014), 659–681; version of record.
 - Ziyang Gao, [*Towards the André-Oort conjecture for mixed Shimura varieties: the Ax-Lindemann theorem and lower bounds for Galois orbits of special points*](https://arxiv.org/pdf/1310.1302v6). arXiv:1310.1302v6, 54 pages; author pagination.
 - Raf Cluckers, [*Presburger sets and p-minimal fields*](https://arxiv.org/pdf/math/0206197). Journal of Symbolic Logic 68 (2003), 153–162; arXiv:math/0206197, author pagination.
@@ -2622,7 +2262,11 @@ Page numbers for author copies are the printed page numbers of the indicated PDF
 - Siegfried Bosch, Werner Lütkebohmert and Michel Raynaud, *Néron Models*, Ergebnisse der Mathematik und ihrer Grenzgebiete (3) 21, Springer, 1990.
 - Peter Schneider, *p-Adic Lie Groups*, Grundlehren der mathematischen Wissenschaften 344, Springer, 2011.
 - The Stacks project authors, [*The Stacks project*](https://stacks.math.columbia.edu), tags 04GN, 04GS (henselization) and 0ASK (henselization of valuation rings).
-- Raf Cluckers, [*Addenda and corrigenda*](https://rcluckers.perso.math.cnrs.fr/prints/list-of-addenda.pdf). Author-hosted list dated 20 April 2026, four pages.
-- Mathlib contributors, [*Native ultraproduct structures and Łoś transfer*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/ModelTheory/Ultraproducts.lean). Pinned source.
-- Mathlib contributors, [*Native hyperreal and finite-domain standard part*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/Analysis/Real/Hyperreal.lean). Pinned source.
-- Mathlib contributors, [*Native multiplicative heights*](https://github.com/leanprover-community/mathlib4/blob/082e2d37e8b0463410cdb532e111cd43d5a66174/Mathlib/NumberTheory/Height/NumberField.lean). Pinned source.
+- Mathlib contributors, [*Native ultraproduct structures and Łoś transfer*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/ModelTheory/Ultraproducts.lean). Pinned source.
+- Mathlib contributors, [*Native multiplicative heights*](https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Height/NumberField.lean). Pinned source.
+- Wilfrid Hodges, *Model Theory*, Cambridge University Press, 1993, §5.3.
+- Jan Denef, [*The rationality of the Poincaré series associated to the p-adic points on a variety*](https://doi.org/10.1007/BF01388582), Inventiones Mathematicae 77 (1984), 1–23, Theorems 1.1–1.2.
+- Jonathan Pila and Jacob Tsimerman, [*The André–Oort conjecture for the moduli space of abelian surfaces*](https://arxiv.org/pdf/1106.4023v1), Theorem 3.1.
+- Eduardo Cattani, Pierre Deligne and Aroldo Kaplan, [*On the locus of Hodge classes*](https://arxiv.org/pdf/alg-geom/9402009), Theorem 1.1.
+- Lou van den Dries, *Tame Topology and O-minimal Structures*, Cambridge University Press, 1998, Chapters 3–4 and 8–10; Chapter 10 (2.15), p.166.
+- Lou van den Dries, Angus Macintyre and David Marker, *The Elementary Theory of Restricted Analytic Fields with Exponentiation*, 1994, analytic cell decomposition as cited by van den Dries–Miller §4.2, p.12.

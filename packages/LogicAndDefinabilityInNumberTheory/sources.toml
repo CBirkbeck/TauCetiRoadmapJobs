@@ -1,0 +1,707 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LogicAndDefinabilityInNumberTheory"
+
+[[source]]
+id = "vd_dr_tame"
+authors = "L. P. D. van den Dries"
+title = "Tame Topology and O-minimal Structures"
+year = 1998
+locator_scheme = "section"
+locator = "Chapters 3–4, 8–10; Chapter 10 (2.15), p.166"
+licence_class = "none"
+status = "waived"
+cited_for = ["6.1–6.9"]
+
+[[source]]
+id = "vd_dr_macintyre_marker"
+authors = "Lou van den Dries, Angus Macintyre, David Marker"
+title = "The Elementary Theory of Restricted Analytic Fields with Exponentiation"
+year = 1994
+locator_scheme = "section"
+locator = "Analytic cell decomposition, cited in van den Dries–Miller §4.2, p.12"
+licence_class = "none"
+status = "waived"
+cited_for = ["6.3"]
+
+[[source]]
+id = "pila_wilkie"
+authors = "Jonathan Pila and Alex Wilkie"
+title = "The rational points of a definable set"
+year = 2006
+doi = "10.1215/S0012-7094-06-13336-7"
+locator_scheme = "section"
+locator = "Theorems 1.8–1.10; §2; Corollary 4.4"
+url = "https://doi.org/10.1215/S0012-7094-06-13336-7"
+licence_class = "none"
+status = "waived"
+cited_for = ["6.23; 6.25"]
+
+[[source]]
+id = "cl_addenda"
+authors = "Raf Cluckers and Francois Loeser"
+title = "List of addenda"
+year = "undated"
+locator_scheme = "section"
+locator = "Addenda to motivic integration"
+licence_class = "none"
+status = "waived"
+cited_for = []
+
+[[source]]
+id = "undecidability_in_number_theory"
+authors = "Bjorn Poonen"
+title = "Undecidability in number theory"
+year = 2008
+locator_scheme = "section"
+locator = "Definition 1 and footnote 4, author p.2"
+url = "https://math.mit.edu/~poonen/papers/h10_notices.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/h10_notices.pdf"
+fetched_at = "2026-10-25T00:20:21Z"
+sha256 = "baaf73c4ed8e57f78c52fddb5fc81718a42e804995c565686300726e749435f8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.1–4.10"]
+
+[[source]]
+id = "diophantine_functions_and_matiyasevic_s_theorem_native_poly_and_d"
+authors = "Mario Carneiro and the Mathlib contributors"
+title = "Diophantine functions and Matiyasevic’s theorem: native Poly and Dioph"
+year = "undated"
+locator_scheme = "section"
+locator = "Mathlib/NumberTheory/Dioph.lean: Poly; Poly.induction; Dioph; Dioph.pow_dioph"
+url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Dioph.lean"
+fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Dioph.lean"
+fetched_at = "2026-10-25T00:25:56Z"
+sha256 = "79af19deb9fb9ffb39fbb70a3aebf9f909a6faab3a31d1d4c129659a5bc87b5d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "hilbert10_polynomial_bridge"
+authors = "Cameron Freer"
+title = "Hilbert10 polynomial bridge"
+year = "undated"
+locator_scheme = "section"
+locator = "Hilbert10/PolyBridge.lean: toDiophPoly; toDiophPoly_apply; mvPolynomialEquiv"
+url = "https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/PolyBridge.lean"
+fetched_from = "https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/PolyBridge.lean"
+fetched_at = "2026-10-25T00:20:23Z"
+sha256 = "b786548e95cb10e59d0830e0aeb95a2eee78297629bac9efc2261b805ea2b8a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.1–4.6"]
+
+[[source]]
+id = "hilbert10_finite_diophantine_normal_form"
+authors = "Cameron Freer"
+title = "Hilbert10 finite Diophantine normal form"
+year = "undated"
+locator_scheme = "section"
+locator = "Hilbert10/NormalForm.lean: exists_finset_right_rename; dioph_iff_exists_fin_mvPolynomial"
+url = "https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/NormalForm.lean"
+fetched_from = "https://github.com/cameronfreer/hilbert10/blob/25b42fcd6c6c5af710c514638a6fcb4e22d00a30/Hilbert10/NormalForm.lean"
+fetched_at = "2026-10-25T00:20:24Z"
+sha256 = "3f9bc08bda18fcdb4e52895c6a42739d14a4c830ed8421f5bafa5d230f92b7bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.7–4.10"]
+
+[[source]]
+id = "multivariate_polynomial_extensionality_on_infinite_boxes"
+authors = "The Mathlib contributors"
+title = "Multivariate polynomial extensionality on infinite boxes"
+year = "undated"
+locator_scheme = "section"
+locator = "Mathlib/Algebra/MvPolynomial/Funext.lean: MvPolynomial.funext_set"
+url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Funext.lean"
+fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/MvPolynomial/Funext.lean"
+fetched_at = "2026-10-25T00:25:56Z"
+sha256 = "e5c8f63a5844c5cc293bde4cf52eb9cae67ad61b5fa27a9e3aae6f17718560e3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.4"]
+
+[[source]]
+id = "cluckers_loeser_2008"
+authors = "R. Cluckers, F. Loeser"
+title = "Constructible motivic functions and motivic integration"
+year = 2008
+venue = "Invent. Math. 173 (2008), 23--121"
+doi = "10.1007/s00222-008-0114-1"
+arxiv = "math/0410203v3"
+locator_scheme = "section"
+locator = "Theorem 2.1.1; Corollary 2.1.2; §§4.1–6.2; Theorem 7.2.1; Theorem 7.5.3; Corollary 7.5.4; §9.1; Proposition 9.3.2; Theorems 10.1.1, 12.1.1, 14.1.1, 14.4.1; §§11–16; Proposition 16.1.1; Theorem 16.4.1"
+url = "https://arxiv.org/abs/math/0410203v3"
+fetched_from = "https://arxiv.org/pdf/math/0410203v3"
+fetched_at = "2026-10-25T00:20:29Z"
+sha256 = "145f4095453727b1f90acba4a38926e353c59073fcc5dfa996819dc41218e71d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3, 29 May 2008; theorem numbers and author page numbers used in README."
+cited_for = ["Layers 1–3"]
+
+[[source]]
+id = "cluckers_loeser_exp"
+authors = "R. Cluckers, F. Loeser"
+title = "Constructible exponential functions, motivic Fourier transform and transfer principle"
+year = 2005
+venue = "Annals of Mathematics 171, 1011-1065 (2010)"
+arxiv = "math/0512022v1"
+locator_scheme = "section"
+locator = "§9.1; Theorems 9.1.5–9.1.6; Proposition 9.2.1; Theorem 9.2.4"
+url = "https://arxiv.org/abs/math/0512022v1"
+fetched_from = "https://arxiv.org/pdf/math/0512022v1"
+fetched_at = "2026-10-25T00:20:34Z"
+sha256 = "038442068cd0f108a21a0bc1ecd2b6ba79219950e25a3f4335f90aa8fe47d993"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["1.5; 2.3–2.4; 3.9–3.10"]
+
+[[source]]
+id = "integrability_of_oscillatory_functions_on_local_fields_transfer_p"
+authors = "Raf Cluckers, Julia Gordon, Immanuel Halupczok"
+title = "Integrability of oscillatory functions on local fields: transfer principles"
+year = 2014
+venue = "Duke Math. J. 163, no. 8 (2014), 1549-1600"
+doi = "10.1215/00127094-2713482"
+arxiv = "1111.4405v2"
+locator_scheme = "section"
+locator = "§3, pp.10–15; Theorems 3.1.1, 3.1.3, 3.1.5 and 3.3.2; Theorems 2.1.3–2.1.6; Theorems 4.3.1–4.3.3; §4.5"
+url = "https://arxiv.org/abs/1111.4405v2"
+fetched_from = "https://arxiv.org/pdf/1111.4405v2"
+fetched_at = "2026-10-25T00:20:40Z"
+sha256 = "a58248be5dbd8d7267dfda52d9c33b6ce33c785b2d70f3eb319932af962f30ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2; §3 theorem numbers agree with the published copy; author pages 10–15 for the fixed-p results, published pages explicitly labelled elsewhere."
+cited_for = ["2.2; 2.4"]
+
+[[source]]
+id = "pas_1989"
+authors = "Johan Pas"
+title = "Uniform p-adic cell decomposition and local zeta functions"
+year = 1989
+locator_scheme = "section"
+locator = "§2.4, p.140; Theorem 3.2, pp.142–143; Lemmas 3.5 and 3.7; §§3.6–3.8; Theorem 4.1, p.155"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0399/LOG_0010.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0399/LOG_0010.pdf"
+fetched_at = "2026-10-25T00:20:41Z"
+sha256 = "7d64143c75e0e663eb9aaca2ba940abbd190d2c5a8a89109679287a130d45654"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "GDZ scan; published theorem and section locators; general elimination also certified by cluckers_loeser_2008 Theorem 2.1.1."
+cited_for = ["1.3; 2.2"]
+
+[[source]]
+id = "koenigsmann_defining_z"
+authors = "Jochen Koenigsmann"
+title = "Defining Z in Q"
+year = 2016
+locator_scheme = "section"
+locator = "Theorem 1; Corollaries 2–3; §2; Proposition 6; Remark 8(a); Definition 10; Lemmas 11–17; Proposition 18; Definition 19; Lemma 20; Proposition 21; Corollary 22; Proposition 23; Remark 24; published pp.73–93"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf"
+fetched_at = "2026-10-25T00:20:42Z"
+sha256 = "f26c2e155d025978045a0c68073505631677624ef4d6f9b461640c6fbe1d3c93"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published Annals version; Proposition 23(c) states all positive exponents and its proof invokes nonpowers. Numbering differs from arXiv v2."
+cited_for = ["4.20–4.29; 4.31–4.33"]
+
+[[source]]
+id = "hilbert_s_tenth_problem_is_unsolvable"
+authors = "Martin Davis"
+title = "Hilbert’s tenth problem is unsolvable"
+year = 1973
+doi = "10.2307/2318447"
+locator_scheme = "section"
+locator = "§§3–8; Theorem 8.1, p.264"
+url = "https://doi.org/10.2307/2318447"
+licence_class = "none"
+status = "uncertified"
+version_note = "Commercial publication cited by locator; no readable legal text resolved by the sources service."
+cited_for = ["References"]
+
+[[source]]
+id = "le_compl_mentaire_des_puissances_n_i_mes_dans_un_corps_de_nombres"
+authors = "Jean-Louis Colliot-Thélène, Jan Van Geel"
+title = "Le complémentaire des puissances $n$-ièmes dans un corps de nombres est un ensemble diophantien"
+year = 2014
+venue = "Compositio Mathematica 151 (2015) 1965-1980"
+doi = "10.1112/S0010437X15007368"
+arxiv = "1401.0915v1"
+locator_scheme = "section"
+locator = "Proposition 2.2; Theorem 3.1; §§4–5; Theorem 1.1"
+url = "https://arxiv.org/abs/1401.0915v1"
+fetched_from = "https://arxiv.org/pdf/1401.0915v1"
+fetched_at = "2026-10-25T00:20:51Z"
+sha256 = "a8a5a538032fa92b7d90404308522c5abef12f86ea8e9cf13760305d6df59b41"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["4.29a–4.30; 4.32"]
+
+[[source]]
+id = "bkt"
+authors = "Benjamin Bakker, Bruno Klingler and Jacob Tsimerman"
+title = "Tame topology of arithmetic quotients and algebraicity of Hodge loci"
+year = 2020
+locator_scheme = "section"
+locator = "§1.1; Lemma 2.1; Definition 4.4; Lemma 4.5; Theorem 4.8; Lemma 4.10; Theorem 4.13; §4.5; Appendix A.1–A.3"
+url = "https://benjamin-bakker.github.io/DefArith.pdf"
+fetched_from = "https://benjamin-bakker.github.io/DefArith.pdf"
+fetched_at = "2026-10-25T00:20:51Z"
+sha256 = "b559c652490eb54595e86ec063945d016dd104949a91f9d6b4616cc4e25b8c8e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.2–6.3; 6.6–6.15; 6.18"]
+
+[[source]]
+id = "geometric_stabilisation_via_p_adic_integration"
+authors = "Michael Groechenig, Dimitri Wyss, Paul Ziegler"
+title = "Geometric stabilisation via p-adic integration"
+year = 2018
+arxiv = "1810.06739v2"
+locator_scheme = "section"
+locator = "Theorem 1.4; §2.1; Proposition 2.1; Example 2.4"
+url = "https://arxiv.org/abs/1810.06739v2"
+fetched_from = "https://arxiv.org/pdf/1810.06739v2"
+fetched_at = "2026-10-25T00:20:57Z"
+sha256 = "0139fc5ac0c4109e049b52c8bd298312954f84e63b29a4cb10b34cf66491a5f2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["2.7–2.12; 5.4"]
+
+[[source]]
+id = "mirror_symmetry_for_moduli_spaces_of_higgs_bundles_via_p_adic_int"
+authors = "Michael Groechenig, Dimitri Wyss, Paul Ziegler"
+title = "Mirror symmetry for moduli spaces of Higgs bundles via p-adic integration"
+year = 2017
+arxiv = "1707.06417v3"
+locator_scheme = "section"
+locator = "§4.1; Propositions 4.1 and 4.4; Claim 4.2; Lemma 4.11"
+url = "https://arxiv.org/abs/1707.06417v3"
+fetched_from = "https://arxiv.org/pdf/1707.06417v3"
+fetched_at = "2026-10-25T00:21:03Z"
+sha256 = "f63d8093b87ce2fd380dc86c299e2959040ef9963c58227fb6e171ce4dfd9b31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["2.7–2.12"]
+
+[[source]]
+id = "geometric_categories_and_o_minimal_structures"
+authors = "Lou van den Dries and Chris Miller"
+title = "Geometric categories and o-minimal structures"
+year = 1996
+locator_scheme = "section"
+locator = "§§2.5–2.7; §§4.1–4.10, author pp.7–14"
+url = "https://people.math.osu.edu/miller.1987/newg.pdf"
+fetched_from = "https://people.math.osu.edu/miller.1987/newg.pdf"
+fetched_at = "2026-10-25T00:21:05Z"
+sha256 = "6914f87bf21cde56c7aa6546577a571d7c1b6879dba13d5b72b63e88b58c601c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.1–6.5"]
+
+[[source]]
+id = "integer_points_on_the_dilation_of_a_subanalytic_surface"
+authors = "Jonathan Pila"
+title = "Integer points on the dilation of a subanalytic surface"
+year = 2004
+locator_scheme = "section"
+locator = "Lemma 3.1, p.6; Proposition 4.2, p.8; Remark 4.5, p.9"
+url = "https://people.maths.ox.ac.uk/pila/isurface.pdf"
+fetched_from = "https://people.maths.ox.ac.uk/pila/isurface.pdf"
+fetched_at = "2026-10-25T00:21:06Z"
+sha256 = "ad48dae208b22a80836efeecd56bfdb9dc053f075ae70b5f1e96a69940d61a06"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.24"]
+
+[[source]]
+id = "peterzil_starchenko_agc"
+authors = "Ya’acov Peterzil and Sergei Starchenko"
+title = "Complex analytic geometry and analytic-geometric categories"
+year = 2005
+locator_scheme = "section"
+locator = "Theorems 3.2 and 4.1; Theorem 4.4; Corollary 4.5, author pp.10–12; standing setting p.5"
+url = "https://math.haifa.ac.il/kobi/analytic.pdf"
+fetched_from = "https://math.haifa.ac.il/kobi/analytic.pdf"
+fetched_at = "2026-10-25T00:21:07Z"
+sha256 = "e7556f77373bdc1e24e4f620413d674197f842569dde1a704555dd1d03f7856a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.17–6.18"]
+
+[[source]]
+id = "on_the_algebraic_points_of_a_definable_set"
+authors = "Jonathan Pila"
+title = "On the algebraic points of a definable set"
+year = 2009
+locator_scheme = "section"
+locator = "Theorem 1.6; Definition 3.2; Proposition 3.4; Theorem 3.5; Lemma 5.2; Theorem 5.3, author pp.2–8"
+url = "https://people.maths.ox.ac.uk/pila/Algebraic.pdf"
+fetched_from = "https://people.maths.ox.ac.uk/pila/Algebraic.pdf"
+fetched_at = "2026-10-25T00:21:08Z"
+sha256 = "4ff1a624d92a0a5cbe05d77c5ce097d29353d70445f10efa2ba72833b0821c59"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.21–6.22; 6.26–6.28"]
+
+[[source]]
+id = "the_andr_oort_conjecture_for_a_g"
+authors = "Jacob Tsimerman"
+title = "The André–Oort conjecture for A_g"
+year = 2018
+locator_scheme = "section"
+locator = "Theorems 5.2 and 5.3; §§6.2–6.5, published pp.385–390; Introduction p.380"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf"
+fetched_at = "2026-10-25T00:21:09Z"
+sha256 = "43259ca3cfedfb574bf1fe2f80e1023cb736ea299a76588536fd816340722abc"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.28; 6.30; 7.1–7.4; 7.8"]
+
+[[source]]
+id = "abelian_varieties_isogenous_to_no_jacobian"
+authors = "David Masser and Umberto Zannier"
+title = "Abelian varieties isogenous to no Jacobian"
+year = 2020
+locator_scheme = "section"
+locator = "§3.2, published pp.648–650"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf"
+fetched_at = "2026-10-25T00:21:10Z"
+sha256 = "8b76bfac88374180701992e242d88f5d38fbe0b0cdb39c6c40c3c3fbbb874b60"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["7.5"]
+
+[[source]]
+id = "the_shafarevich_conjecture_for_hypersurfaces_in_abelian_varieties"
+authors = "Brian Lawrence, Will Sawin"
+title = "The Shafarevich conjecture for hypersurfaces in abelian varieties"
+year = 2020
+arxiv = "2004.09046v5"
+locator_scheme = "section"
+locator = "§6.1, Lemma 6.3 and proof, pp.64–65"
+url = "https://arxiv.org/abs/2004.09046v5"
+fetched_from = "https://arxiv.org/pdf/2004.09046v5"
+fetched_at = "2026-10-25T00:21:15Z"
+sha256 = "5e5f829e2841637de38852bde0d5f0a0b80183e6f9d23b60250cc2be1ee21d97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v5"
+cited_for = ["7.7"]
+
+[[source]]
+id = "the_ax_schanuel_conjecture_for_variations_of_hodge_structures"
+authors = "Benjamin Bakker, Jacob Tsimerman"
+title = "The Ax-Schanuel conjecture for variations of Hodge structures"
+year = 2017
+arxiv = "1712.05088v1"
+locator_scheme = "section"
+locator = "Theorem 1.1, p.2"
+url = "https://arxiv.org/abs/1712.05088v1"
+fetched_from = "https://arxiv.org/pdf/1712.05088v1"
+fetched_at = "2026-10-25T00:21:20Z"
+sha256 = "a60d609ebb57ad818bde9bcfe89cdf2124758cf3e03e53d44a80a7a4cf61cb49"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["7.7"]
+
+[[source]]
+id = "ax_schanuel_for_shimura_varieties"
+authors = "Ngaiming Mok, Jonathan Pila, Jacob Tsimerman"
+title = "Ax-Schanuel for Shimura varieties"
+year = 2017
+arxiv = "1711.02189v3"
+locator_scheme = "section"
+locator = "§2.2, Theorems 2.1–2.2; Corollary 2.3, p.5"
+url = "https://arxiv.org/abs/1711.02189v3"
+fetched_from = "https://arxiv.org/pdf/1711.02189v3"
+fetched_at = "2026-10-25T00:21:26Z"
+sha256 = "b3de4f10ea6243fafcfc4a12adc939b1c8c6fab620afa00d2860d5313e1c0167"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["6.17–6.18"]
+
+[[source]]
+id = "ax_lindemann_for_a_g"
+authors = "Jonathan Pila and Jacob Tsimerman"
+title = "Ax-Lindemann for A_g"
+year = 2014
+locator_scheme = "section"
+locator = "Theorem 2.6; Lemmas 2.1, 2.3; Theorem 4.4; Theorem 6.1; Conjecture 7.1; Lemmas 7.2–7.7; Theorem 7.1, published pp.663–678"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf"
+fetched_at = "2026-10-25T00:21:27Z"
+sha256 = "261af339f1ff909701e74bc2e28fd9c77d186fb4df9e6eeb0b2aa411718143a7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.20; 7.1–7.5"]
+
+[[source]]
+id = "towards_the_andr_oort_conjecture_for_mixed_shimura_varieties_the_"
+authors = "Ziyang Gao"
+title = "Towards the André-Oort conjecture for mixed Shimura varieties: the Ax-Lindemann theorem and lower bounds for Galois orbits of special points"
+year = 2013
+arxiv = "1310.1302v6"
+locator_scheme = "section"
+locator = "Theorem 1.2; Remark 4.4; §10.1; Theorem 12.2; Theorem 13.3; Remark 13.5; Theorem 13.6 and proof"
+url = "https://arxiv.org/abs/1310.1302v6"
+fetched_from = "https://arxiv.org/pdf/1310.1302v6"
+fetched_at = "2026-10-25T00:21:33Z"
+sha256 = "1bf9f3d56804f29d4a21579fbc7bc80bc2b886411a36e7583c1950889ff2fc2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v6"
+cited_for = ["7.8"]
+
+[[source]]
+id = "presburger_sets_and_p_minimal_fields"
+authors = "Raf Cluckers"
+title = "Presburger sets and p-minimal fields"
+year = 2002
+venue = "J. Symbolic Logic 68 (2003), 153--162"
+arxiv = "math/0206197v1"
+locator_scheme = "section"
+locator = "Theorems 2–3, author pp.5–7"
+url = "https://arxiv.org/abs/math/0206197v1"
+fetched_from = "https://arxiv.org/pdf/math/0206197v1"
+fetched_at = "2026-10-25T00:21:38Z"
+sha256 = "cbda756386d013b97ca0a673eed170031b558e836495f0b174c796e8df667d28"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["2.4"]
+
+[[source]]
+id = "torsion_and_tamagawa_numbers"
+authors = "Dino Lorenzini"
+title = "Torsion and Tamagawa numbers"
+year = 2011
+locator_scheme = "section"
+locator = "Theorem 1.1, p.1997; Corollary 4.4, p.2009"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.2664.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.2664.pdf"
+fetched_at = "2026-10-25T00:21:39Z"
+sha256 = "bf4ed3bd45526085480ddaf37a55272e9f00d771de4a4d542108b8b6e423794e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["2.10a"]
+
+[[source]]
+id = "the_stacks_project"
+authors = "The Stacks project authors"
+title = "The Stacks project"
+year = 2026
+locator_scheme = "tag"
+locator = "Tags 04GN, 04GS, 0ASK; Lemmas 10.155.1, 10.155.6, 15.125.6"
+url = "https://stacks.math.columbia.edu/tag/0ASK"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0ASK"
+fetched_at = "2026-10-25T00:28:00Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["1.11"]
+version_note = "Algebra extraction for 04GN/04GS and More on Algebra extraction for 0ASK; numbering checked against the stable tags."
+
+[[source]]
+id = "native_ultraproduct_structures_and_o_transfer"
+authors = "Mathlib contributors"
+title = "Native ultraproduct structures and Łoś transfer"
+year = "undated"
+locator_scheme = "section"
+locator = "Mathlib/ModelTheory/Ultraproducts.lean: realize_formula_cast; sentence_realize"
+url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/ModelTheory/Ultraproducts.lean"
+fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/ModelTheory/Ultraproducts.lean"
+fetched_at = "2026-10-25T00:25:57Z"
+sha256 = "0659ca3b3149bd68daf528f8f192c2d806063e4bab9a6f226c5ef51e6072297c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["0.7; 1.4–1.5"]
+
+[[source]]
+id = "native_multiplicative_heights"
+authors = "Mathlib contributors"
+title = "Native multiplicative heights"
+year = "undated"
+locator_scheme = "section"
+locator = "Mathlib/NumberTheory/Height/NumberField.lean: NumberField.mulHeight; NumberField.logHeight"
+url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Height/NumberField.lean"
+fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/NumberTheory/Height/NumberField.lean"
+fetched_at = "2026-10-25T00:25:58Z"
+sha256 = "3f0cf81276e074c3ba6ffe8b0d66ddd355a878fccd33e2bb48e2ec6da9bb4bee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.22"]
+
+[[source]]
+id = "bosch_lutkebohmert_raynaud"
+authors = "Siegfried Bosch, Werner Lütkebohmert, Michel Raynaud"
+title = "Néron Models"
+year = 1990
+doi = "10.1007/978-3-642-51438-8"
+locator_scheme = "section"
+locator = "§7.3 Theorem 3; §9.6"
+url = "https://doi.org/10.1007/978-3-642-51438-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.10a"]
+
+[[source]]
+id = "schneider"
+authors = "Peter Schneider"
+title = "p-Adic Lie Groups"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-21147-8"
+locator_scheme = "section"
+locator = "Proposition 6.4; §7"
+url = "https://doi.org/10.1007/978-3-642-21147-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.7"]
+
+[[source]]
+id = "hodges"
+authors = "Wilfrid Hodges"
+title = "Model Theory"
+year = 1993
+doi = "10.1017/CBO9780511551574"
+locator_scheme = "section"
+locator = "§5.3"
+url = "https://doi.org/10.1017/CBO9780511551574"
+licence_class = "none"
+status = "uncertified"
+version_note = "Commercial publication cited by locator; no readable legal text resolved by the sources service."
+cited_for = ["0.1–0.6"]
+
+[[source]]
+id = "denef_1984"
+authors = "Ricardo Ma��"
+title = "On the instability of Herman rings"
+year = 1985
+venue = "Inventiones Mathematicae 81"
+doi = "10.1007/BF01388582"
+locator_scheme = "section"
+locator = "Theorems 1.1–1.2"
+url = "https://doi.org/10.1007/BF01388582"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.6"]
+
+[[source]]
+id = "dittmann_pop"
+authors = "Philip Dittmann, Florian Pop"
+title = "Characterizing finitely generated fields by a single field axiom"
+year = 2023
+venue = "Ann. of Math. (2) 198 (2023), no. 3, 1203-1227"
+doi = "10.4007/annals.2023.198.3.4"
+arxiv = "2012.01307v2"
+locator_scheme = "section"
+locator = "§1, pp.1–2, Kronecker dimension and prime divisors; Fact 5.2, p.16"
+url = "https://arxiv.org/abs/2012.01307v2"
+fetched_from = "https://arxiv.org/pdf/2012.01307v2"
+fetched_at = "2026-10-25T00:22:21Z"
+sha256 = "f9f26f7d8d6b5cb6bf86d04bf97f8f99069d8d676623cebe706e90ea8dcb2c1f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["1.6; 1.8–1.9; 1.17–1.18"]
+
+[[source]]
+id = "pila_tsimerman_2013"
+authors = "Jonathan Pila, Jacob Tsimerman"
+title = "The Andre-Oort conjecture for the moduli space of Abelian Surfaces"
+year = 2011
+venue = "Compositio Math. 149 (2013) 204-216"
+doi = "10.1112/S0010437X12000589"
+arxiv = "1106.4023v1"
+locator_scheme = "section"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/1106.4023v1"
+fetched_from = "https://arxiv.org/pdf/1106.4023v1"
+fetched_at = "2026-10-25T00:22:30Z"
+sha256 = "c84c82b6df4b3c59b015228658005fd2fca11aac87948094ab1cc75cab0b599d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["7.8"]
+
+[[source]]
+id = "cattani_deligne_kaplan"
+authors = "Eduardo Cattani, Pierre Deligne, Aroldo Kaplan"
+title = "On the Locus of Hodge Classes"
+year = 1994
+arxiv = "alg-geom/9402009v1"
+locator_scheme = "section"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/alg-geom/9402009v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9402009v1"
+fetched_at = "2026-10-25T00:22:39Z"
+sha256 = "d81863135f0d107ef193987bd163b8227b5736cc0a6200c2f05ab0caee7c9f01"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["7.7"]
+
+[[source]]
+id = "tauceti_pin"
+authors = "Tau Ceti contributors"
+title = "Tau Ceti library"
+year = 2026
+locator_scheme = "section"
+locator = "Geometry/RealAlgebraic/Semialgebraic/Basic.lean; RingTheory/Valuation/Coarsen.lean; RingTheory/GrothendieckRing.lean; AlgebraicGeometry/AdicSpace/ValuationSpectrum/Basic.lean; AlgebraicGeometry/AdicSpace/PatchPresentation.lean"
+url = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+fetched_from = "https://github.com/TauCetiProject/TauCeti/tree/a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+fetched_at = "2026-10-25T00:27:22Z"
+sha256 = "2db7aa02ab95a4b8b8a453d98d1b88267259c84482dc624700b0dc5c0867101b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Scope and ownership; Exact supplier contracts; 1.12; 3.2; 6.21"]
