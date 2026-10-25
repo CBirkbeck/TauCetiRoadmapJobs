@@ -6,11 +6,11 @@
 
 This roadmap owns the diagonal quotient surface and its Hecke images, the signed special strata, the modular systole and height comparisons, repulsion and overlap estimates, the four multiplicity estimates, the pencil/wreath construction, and their rigidity, descent and surface applications. It supplies the characteristic-zero geometric theorem for every prime above a bound depending only on gonality; no exceptional family of otherwise large primes is discarded.
 
-ModularCurves §§0D–0E, 2C and 5B–5C own ordinary elliptic torsion, descent and twists. ModularCurvesPartII §§1.2–1.3, 2.3, 3.9, 3.14, 4.1, 4.7–4.10, 5.7, 5.13, 5.16, 6.1 and 9.13 own the elliptic uniformizations, projective scalar-level curve, its polygon compactification, components, conjugation and cyclic boundary Hecke correspondence with projection degree ψ(m). Those constructions are imported. The retained frame comparison fixes the left action, and the retained Hecke construction adds only the finite images H_m and restrictions on this surface.
+ModularCurves §§0D–0E, 2C and 5B–5C own ordinary elliptic torsion, descent and twists. ModularCurvesPartII §§1.2–1.3, 2.3, 3.9, 3.14, 4.1, 4.7–4.10, 5.7, 5.13, 5.16, 6.1, 8.4–8.5 and 9.13 own the elliptic uniformizations, projective scalar-level curve, its polygon compactification, components, conjugation and cyclic boundary Hecke correspondence with projection degree ψ(m). Those constructions are imported. The retained frame comparison fixes the left action, and the retained Hecke construction adds only the finite images H_m and restrictions on this surface.
 
-SchemeAndStackFoundations §1.17 owns projective finite quotients and norm polarization; §§5.1–5.3 and 5.9–5.10 own cycles, weighted pushforward, flat pullback and intersection theory. The symmetric-power subsection specializes that quotient to a surface and applies its relative cycle contract; it does not construct a second general quotient. AlgebraicCurves Layers 3–7 and 12 own divisors, Riemann–Roch, Hurwitz and the proper-model dictionary. FuchsianOrbifolds Layers 0–5 own effective projective actions, quotient charts, polygons, cusps, compactification and analytic degree theory. ComplexKahlerGeometry K3 and K6.1 own analytic cycles and their general local volume interfaces; RiemannianGeometry R7.0 and R8 own the general singular-metric Li–Yau interface requested below. The local application-specific signed estimates remain here.
+SchemeAndStackFoundations §1.17 owns projective finite quotients and norm polarization; §§5.1–5.3 and 5.9–5.10 own cycles, weighted pushforward, flat pullback and intersection theory. The symmetric-power subsection specializes that quotient to a surface and applies its relative cycle contract; it does not construct a second general quotient. AlgebraicCurves Layers 3–7 and 12 own divisors, Riemann–Roch, Hurwitz and the proper-model dictionary. FuchsianOrbifolds Layers 0–5 own effective projective actions, quotient charts, polygons, cusps, compactification and analytic degree theory. ComplexKahlerGeometry K3 and K6.1 own analytic sets, compact integration and their local volume interfaces; ComplexComparisonPartII C5.4 owns general complex currents, weighted analytic-cycle integration and Poincaré–Lelong, while its C−1.3 is the owner requested for finite-group-quotient analytification; RiemannianGeometry R7.0 and R8 own the general singular-metric Li–Yau interface requested below. The local application-specific signed estimates remain here.
 
-AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5 and A6.25 and NeronModelsAndSemistableAbelianVarieties §§1.3 and 1.8 supply extension of generic homomorphisms over a Dedekind base and the finite-kernel criterion. There is no separate general extension theorem here. The geometric rank-one Hom application adds nonisotriviality and the scalar-compatible descent argument to A6.7. CongruenceSpectralGap CSG.5 supplies the all-level spectral bound. Full monodromy is an independent endpoint; the auxiliary self-twist argument and full monodromy are not inputs to scalar-compatible isogeny descent.
+AbelianSchemesAndArithmeticModuli A1.6 owns the relative elliptic/abelian equivalence. Its A1.8, A3.1–A3.5 and A6.25 and NeronModelsAndSemistableAbelianVarieties §§1.3 and 1.8 supply extension of generic homomorphisms over a Dedekind base and the finite-kernel criterion. There is no separate general extension theorem here. The geometric rank-one Hom application adds nonisotriviality and the scalar-compatible descent argument to A6.7. CongruenceSpectralGap §5.3 supplies the all-level spectral bound. Full monodromy is an independent endpoint; the auxiliary self-twist argument and full monodromy are not inputs to scalar-compatible isogeny descent.
 
 The pinned library supplies the actual matrix/projective groups, the entrywise matrix norm, symmetric multisets, transvection generation and SL₂ perfectness listed below. Their generic theories are not targets. The subgroup-index and self-twist arguments are auxiliary README targets. The acceptance signatures state full torsion monodromy and function-field geometric Frey–Mazur on native function-field, elliptic-point and isogeny carriers.
 
@@ -35,14 +35,14 @@ Its API is the following.
 
 Write X(p) for the two-component scalar-framed coarse curve, Y(p) for its elliptic open, G=PGL₂(𝔽_p), S=X(p)×X(p), and Z(p)=S/G. A fixed-pairing component has stabilizer G₀=PSL₂(𝔽_p). A frame is a map 𝔽_p²→E[p], with left action g·φ=φ∘g̃⁻¹. Two frames differ projectively by a scalar. The determinant square class labels components; a nonsquare transports a component and conjugates the selected G₀ presentation. The elliptic automorphism [−1] is still inertia on the projective-frame stack. Coarse points do not carry a universal elliptic family. Actual finite étale module isomorphisms and their inverses are retained separately from their projective classes.
 
-After complex realization, all hyperbolic metrics have curvature −1. Finite distances are taken on specified connected components. A tube in a disconnected product is the union of its compatible componentwise tubes; incompatible component labels do not satisfy a finite-distance inequality. Component transport is an isometry, and no finite distance is assigned between different components. Product distance is the maximum of coordinate distances; curve area is the sum of pulled-back coordinate area forms. A disc has a(r)=4π sinh²(r/2); injectivity radius is half a shortest nontrivial closed-geodesic length. The cusped radius uses loops nontrivial after filling. Canonical degree and volume satisfy vol(C)=2π Deg(C). With dᶜ=i(∂̄−∂)/(4π), ddᶜ log|z|² is the unit point current and ω_𝔻=4π ddᶜ(−log(1−|z|²)). This dᶜ is the unnormalized convention divided by 4π; supplier comparisons carry the factor explicitly. Ordinary graph tubes have matched-coordinate threshold 2r, and conjugate tubes use conjugation on the second factor. If c₂ is this real involution and T_m is the imported cyclic correspondence of §0.6, write T̄_m=c₂(T_m); §3.4 develops its API and tangent properties. Conjugate Hecke loci are real analytic and have no divisor intersection operation in the original complex structure.
+After complex realization, all hyperbolic metrics have curvature −1. Finite distances are taken on specified connected components. A tube in a disconnected product is the union of its compatible componentwise tubes; incompatible component labels do not satisfy a finite-distance inequality. Component transport is an isometry, and no finite distance is assigned between different components. Product distance is the maximum of coordinate distances; curve area is the sum of pulled-back coordinate area forms. A disc has a(r)=4π sinh²(r/2); injectivity radius is half a shortest nontrivial closed-geodesic length. The cusped radius uses loops nontrivial after filling. Canonical degree and volume satisfy vol(C)=2π Deg(C). With dᶜ=i(∂̄−∂)/(4π), ddᶜ log|z|² is the unit point current and ω_𝔻=4π ddᶜ(−log(1−|z|²)). For a meromorphic f vanishing identically on no component, the ComplexComparisonPartII C5.4 convention is (i/π)∂∂̄log|f|=[div f]; since log|f|²=2log|f|, it equals our ddᶜlog|f|² with ddᶜ=(i/2π)∂∂̄. Ordinary graph tubes have matched-coordinate threshold 2r, and conjugate tubes use conjugation on the second factor. If c₂ is this real involution and T_m is the imported cyclic correspondence of §0.6, write T̄_m=c₂(T_m); §3.4 develops its API and tangent properties. Conjugate Hecke loci are real analytic and have no divisor intersection operation in the original complex structure.
 
 In formulas such as 2g−2, subtraction is in ℤ; analytic exponents and division are in ℝ, with positive radii and nonzero denominators stated at their use. Every asymptotic is along all primes p tending to infinity. Constants are uniform in curves, parametrization degrees, selected components and k, unless their indicated fixed parameters vary. Small positive parameters and all enlargement constants are chosen before p. The common elliptic type is 2 or 3; the cusp type is p. Every Hecke index m is a positive integer prime to p. Its cyclic degree is ψ(m)=m∏_(ℓ|m)(1+1/ℓ); σ₁(m) refers to all subgroups instead. All maps and cycles lie in one fixed ambient universe at a time; a larger algebraically closed field is handled by finite-presentation descent and base change, with no cardinality bound on k.
 
 **Checks.**
 
 - At p=7, 3 is nonsquare while 2²=4 is square; (e₁,3e₂) changes component and (2e₁,2e₂) does not. The inverse in the left action gives g·(h·φ)=φ∘h⁻¹∘g⁻¹=(gh)·φ.
-- In the disc, |z|=tanh(1/2) has distance 1 and area a(1)=4π sinh²(1/2); near zero a(r)/r² tends to π. The current ddᶜ log|z|² has mass 1, fixing the sign and 4π factor.
+- In the disc, |z|=tanh(1/2) has distance 1 and area a(1)=4π sinh²(1/2); near zero a(r)/r² tends to π. The current ddᶜ log|z|² has mass 1, fixing the sign and 4π factor; for f=z², both our ddᶜlog|f|² and the supplier’s (i/π)∂∂̄log|f| have mass 2. For f=1 both vanish. A cycle 2[L] integrates a test form with ∫_Lη=1 to 2 in either convention, rather than the reduced value 1.
 - A matched pair of coordinates at distance 3r/2 lies in the radius-r graph tube by taking their midpoints, each at distance 3r/4. Using threshold r would reject it.
 - The diagonal X→X² has degree 2(2g_X−2) and area 4π(2g_X−2); a q-fold parametrization multiplies both by q. A constant cusp coordinate contributes zero.
 - At m=4, ψ(4)=6 and σ₁(4)=7; at m=1 the cyclic correspondence is the diagonal. At m=p multiplication by p is zero on p-torsion and gives no torsion isomorphism.
@@ -67,7 +67,7 @@ These normalizations use BT16 §1.3, p. 713 (BT16 line 167), §§2.1–2.5, pp. 
 
 ### From TauCetiRoadmap.ModularCurves and TauCetiRoadmap.ModularCurvesPartII
 
-ModularCurves §§0D–0E supply the field finite-étale/Galois dictionary and effective descent; §2C supplies the two dual-isogeny identities; §§5B–5C supply ordered full bases, the Weil-pairing convention and twists. ModularCurvesPartII §§1.2–1.3 supply pointed complex elliptic uniformization and lattice/isogeny compatibility; §2.3 supplies polygon automorphisms; §§3.9, 3.14 supply frame torsors, level-H data and open uniformization; §§4.1, 4.7–4.10 supply formal cusp charts, the prime-level application, q-parameter agreement and fixed-pairing connectedness; §§5.7, 5.13, 5.16 and 6.1 supply the scalar coarse quotient, fixed-pairing compactification, subgroup quotients, characteristic-zero component comparison and complex conjugation. Section 9.13 supplies the cyclic projective-level boundary correspondence, the domains ℤ/(pd) and ℤ/p of its polygon maps, and the weighted canonical-degree multiplier ψ(m). This includes the cyclic-kernel filter; no degree σ₁(m) is substituted.
+ModularCurves §§0D–0E supply the field finite-étale/Galois dictionary and effective descent; §2C supplies the two dual-isogeny identities; §§5B–5C supply ordered full bases, the Weil-pairing convention and twists. ModularCurvesPartII §§1.2–1.3 supply pointed complex elliptic uniformization and lattice/isogeny compatibility; §2.3 supplies polygon automorphisms; §§3.9, 3.14 supply frame torsors, level-H data and open uniformization; §§4.1, 4.7–4.10 supply formal cusp charts, the prime-level application, q-parameter agreement and fixed-pairing connectedness; §§5.7, 5.13, 5.16 and 6.1 supply the scalar coarse quotient, fixed-pairing compactification, subgroup quotients and compact complex comparison. Section 8.4, `complexConjugationComparison`, supplies conjugation and pairing inversion; §8.5, `genericBaseChangeAndLevelCompatibility`, supplies compatibility of the generic-fibre comparisons with characteristic-zero field extension and the permitted level and Hecke maps. Section 9.13 supplies the cyclic projective-level boundary correspondence, the domains ℤ/(pd) and ℤ/p of its polygon maps, and the weighted canonical-degree multiplier ψ(m). This includes the cyclic-kernel filter; no degree σ₁(m) is substituted.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -95,9 +95,9 @@ What FuchsianOrbifolds must provide (gap:hyperbolic-trigonometry): Provide the m
 
 ### From TauCetiRoadmap.ComplexKahlerGeometry
 
-Use K3 for analytic subvarieties and normalization interfaces and K6.1 for positive analytic integration and Stokes, on the same smooth-form carrier. The following local current and hyperbolic-volume extensions retain every branch and weight. They use the dᶜ convention stated above and have no smoothness assumption on the analytic cycle.
+Use K3 for analytic subvarieties and normalization interfaces and K6.1 for positive analytic integration and Stokes, on the same smooth-form carrier. General current calculus, weighted analytic-cycle integration and Poincaré–Lelong are imported from ComplexComparisonPartII C5.4. The following transport and hyperbolic-volume extensions retain every branch and weight on K6.1’s integration carrier, identified with that cycle current by the imported compact comparison. They use the dᶜ convention stated above and have no smoothness assumption on the analytic cycle.
 
-What ComplexKahlerGeometry must provide (gap:analytic-cycle-current-transport): For locally finite effective analytic one-cycles in complex manifolds, provide proper normalization with branch weights, finite holomorphic pushforward and pullback integration, local multiplicity, positive ddᶜ currents, Poincaré–Lelong, Green and Stokes formulas on relatively compact sublevels, and the zero-atom integrable extension of cusp densities, compatible with the compact analytic integration theory.
+What ComplexKahlerGeometry must provide (gap:analytic-cycle-current-transport): For locally finite effective analytic one-cycles in finite-dimensional Hausdorff second-countable complex manifolds, provide proper normalization with branch weights, integration of pulled-back forms and weighted pushforward under finite holomorphic maps of curves, local-multiplicity transport, Green and Stokes identities on relatively compact sublevels, and the zero-atom integrable extension of cusp densities, compatible with K6.1’s compact analytic integration.
 
 What ComplexKahlerGeometry must provide (gap:hyperbolic-cycle-volume-comparisons): For curvature −1 disc products with maximum distance and sum area, provide the point bound V(r)≥4π sinh²(r/2) mult, the ordinary-diagonal bound V(r)≥8π sinh²(r/2)(C·Δ), the analogous double-diagonal point-multiplicity bound, and monotonicity of ordinary tube volume divided by cosh r and conjugate-diagonal tube volume divided by sinh r for 0<r<ρ/2, with no ordinary diagonal component and with all effective cycle weights retained.
 
@@ -111,7 +111,17 @@ What RiemannianGeometry must provide (gap:singular-metric-li-yau): For a compact
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
-Use §§C−1.1–C−1.3 for analytic spaces, analytification, maps and finite quotients; §C2.2 for projective ideal/closed-subspace comparisons; §§C4.1–C4.5 for proper-map algebraicity and the curve connectedness comparisons; §C5.4 for integration over analytic cycles, Poincaré–Lelong and Chern/intersection normalization; and §C6.2 for finite-type Riemann existence. The identities of algebraic closed Hecke loci descend by faithful flatness, rather than by a claim that an arbitrary analytic isogeny descends.
+Use §§C−1.1–C−1.3 for analytic spaces, analytification, maps and étale-presentation quotients; §C2.2 for projective ideal/closed-subspace comparisons; §§C4.1–C4.5 for proper-map algebraicity and the curve connectedness comparisons; §C5.4 for `CurrentCalculus`, `AnalyticCycleIntegration`, `lelongPoincareSection` and Chern/intersection normalization, including weighted positive cycle currents on noncompact manifolds; and §C6.2 for finite-type Riemann existence. The identities of algebraic closed Hecke loci descend by faithful flatness, rather than by a claim that an arbitrary analytic isogeny descends.
+
+What ComplexComparisonPartII must provide (gap:finite-group-quotient-analytification): For a finite group G acting on a projective complex scheme X with finite scheme quotient q:X→Y supplied by SchemeAndStackFoundations §1.17, identify q^an with the finite categorical analytic quotient, with O_(Y^an)=((q^an)_*O_(X^an))^G, orbit fibres and local stabilizer-invariant rings, retaining nilpotents and compatibly with equivariant morphisms.
+
+A proof route uses §C1.9’s proper coherent pushforward comparison and the characteristic-zero averaging idempotent on q_*O_X. The algebraic quotient is the one from SchemeAndStackFoundations §1.17; this contract compares its analytification, including ramified points.
+
+**Checks.**
+
+- For the sign action on P¹, a coordinate at zero gives w=z² and invariant analytic germs ℂ{z²}. The local degree is 2 and the derivative is 0 at zero; the quotient is not an étale presentation there.
+- For the trivial action on the projective dual-number point, the invariant analytic local ring is ℂ[ε]/(ε²), with ε≠0. Replacing the quotient by its reduced orbit set would give ℂ and lose this element.
+- The sign-equivariant map z↦z³ on P¹ induces w↦w³ on the quotient: both composites pull w back to z⁶. The comparison must respect this equivariant map as well as the identity.
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
@@ -119,11 +129,11 @@ Section IG.0.3 supplies actual finite étale local systems and based fundamental
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli and TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties
 
-AbelianSchemesAndArithmeticModuli A1.1 identifies elliptic schemes with relative dimension-one abelian schemes; A1.8 extends generic morphisms over a connected Dedekind base; A3.1–A3.5 supply isogenies, finite locally free torsion, quotients and dual identities; A3.7–A3.8 supply the polarized pairing and frame torsor; A6.1, A6.6–A6.7 give degree scaling and the finite free geometric Hom lattice; A6.20 supplies full-level Hom descent; A6.25 gives normal-base Hom extension; A6.34 supplies geometric quadratic twists. NeronModelsAndSemistableAbelianVarieties §§1.3 and 1.8 identify good abelian schemes as marked Néron models and extend generic maps uniquely. Applying extension to an isogeny and its dual, with degree n, gives both compositions [n]; in characteristic zero the kernel is contained in finite étale n-torsion and the isogeny criterion gives a finite locally free surjection over the original open curve. A rational map between arbitrary proper models does not supply the group-scheme extension hypothesis. On restricting that curve further, uniqueness gives the restriction of the same extension (BLR90 §1.2 Proposition 8, p. 15; §1.4 Proposition 2, p. 19, cited by locator alone).
+AbelianSchemesAndArithmeticModuli A1.6, `relativeEllipticEquivalence`, identifies elliptic schemes with relative dimension-one abelian schemes; A1.8 extends generic morphisms over a connected Dedekind base; A3.1–A3.5 supply isogenies, finite locally free torsion, quotients and dual identities; A3.7–A3.8 supply the polarized pairing and frame torsor; A6.1, A6.6–A6.7 give degree scaling and the finite free geometric Hom lattice; A6.20 supplies full-level Hom descent; A6.25 gives normal-base Hom extension; A6.34 supplies geometric quadratic twists. NeronModelsAndSemistableAbelianVarieties §§1.3 and 1.8 identify good abelian schemes as marked Néron models and extend generic maps uniquely. Applying extension to an isogeny and its dual, with degree n, gives both compositions [n]; in characteristic zero the kernel is contained in finite étale n-torsion and the isogeny criterion gives a finite locally free surjection over the original open curve. A rational map between arbitrary proper models does not supply the group-scheme extension hypothesis. On restricting that curve further, uniqueness gives the restriction of the same extension (BLR90 §1.2 Proposition 8, p. 15; §1.4 Proposition 2, p. 19, cited by locator alone).
 
 ### From TauCetiRoadmap.CongruenceSpectralGap
 
-CSG.5/congruence-bound supplies λ′₁≥21/100 for every congruence subgroup, in curvature −1 and with λ′₁ the clipped Friedrichs gap, equal to 1/4 when the small discrete spectrum is empty. The effective group is its image in PSL₂(ℤ). It is consumed only by the separate monodromy branch.
+Section 5.3 supplies λ′₁≥21/100 for every congruence subgroup, in curvature −1 and with λ′₁ the clipped Friedrichs gap, equal to 1/4 when the small discrete spectrum is empty. The effective group is its image in PSL₂(ℤ). It is consumed only by the separate monodromy branch.
 
 ## How to read the build
 
@@ -135,7 +145,7 @@ Layer 0 fixes the imported modular conventions and defines the quotient and its 
 
 Use the projective level curve X(p) of ModularCurvesPartII §5.7 over an algebraically closed characteristic-zero field: for a prime p>3, the coarse quotient of honest full level p by scalar change of frame, compactified by p-gons, with two geometric components labelled by the Weil-pairing value of a frame modulo squares and [−1] still an automorphism of every point. This construction fixes the conventions used here: G=PGL₂(F_p) acts on the left by g·(E,[φ])=(E,[φ∘g̃⁻¹]) for any lift g̃, its component stabilizer is PSL₂(F_p), and one component is selected and identified with the fixed-pairing curve, the other being its transport by an element of nonsquare determinant. This fixes the action and component conventions for the quotient. (BT16 §§2.1–2.2, pp. 713–715; BT16 line 195.)
 
-One proof route proceeds as follows. Read the two components, the effective PSL₂(F_p) action, the [−1] inertia and the p-gon compactification from the supplier contract; the component count is also §4.7. Descend the right GL₂ action on frames to a left G-action through the inverse, and compare the selected component with the fixed-pairing Γ(p) quotient, accounting for the central ±I. Complex conjugation sends the pairing value ζ to ζ⁻¹ (§6.1 (conjugation)), which changes the square class by −1; characteristic-zero base change commutes with the scalar quotient by flat base change of invariants.
+One proof route proceeds as follows. Read the two components, the effective PSL₂(F_p) action, the [−1] inertia and the p-gon compactification from the supplier contract; the component count is also §4.7. Descend the right GL₂ action on frames to a left G-action through the inverse, and compare the selected component with the fixed-pairing Γ(p) quotient, accounting for the central ±I. Complex conjugation sends the pairing value ζ to ζ⁻¹ (§8.4 (`complexConjugationComparison`)), which changes the square class by −1; characteristic-zero base change commutes with the scalar quotient by flat base change of invariants.
 
 **Checks.**
 
@@ -145,9 +155,9 @@ One proof route proceeds as follows. Read the two components, the effective PSL�
 
 - [−1] preserves every projective frame, so the curve is not a fine moduli space.
 
-- Complex conjugation preserves each component when p≡1 mod 4 and exchanges them when p≡3 mod 4.
+- At p=5, −1=4=2², so conjugation preserves each component; at p=7, −1=6 is nonsquare, so it exchanges them. These compute the p≡1 and p≡3 mod 4 alternatives.
 
-*Needs:* ModularCurves §5B; `Matrix.ProjGenLinGroup`; `Matrix.ProjGenLinGroup.mk_eq_mk_iff`; ModularCurvesPartII §5.7; ModularCurvesPartII §4.7; ModularCurvesPartII §4.10; ModularCurvesPartII §6.1 (conjugation); ModularCurvesPartII §§5.7, 5.13, 6.1; ModularCurvesPartII §2.3.
+*Needs:* ModularCurves §5B; `Matrix.ProjGenLinGroup`; `Matrix.ProjGenLinGroup.mk_eq_mk_iff`; ModularCurvesPartII §5.7; ModularCurvesPartII §4.7; ModularCurvesPartII §4.10; ModularCurvesPartII §8.4 (`complexConjugationComparison`); ModularCurvesPartII §§5.7, 5.13, 6.1, 8.5; ModularCurvesPartII §2.3.
 
 ### 0.2 The diagonal quotient surface
 
@@ -167,7 +177,7 @@ The defining construction has the following API.
 
 - The finite quotient and its classifying map commute with characteristic-zero algebraically closed base change.
 
-One proof route proceeds as follows. Apply the finite quotient universal property to S, using a norm of an ample line bundle to supply an invariant projective embedding. Composition φ₂φ₁⁻¹ is invariant under simultaneous framing change. Conversely two framed presentations of the same triple differ by a diagonal element of G. Reduce each G-orbit to a selected first component. Its stabilizer is PSL₂, while the second component records the determinant square class; a chosen nonsquare identifies that component with the first and conjugates its action. Prove independence before using the erratum’s fixed-pairing notation.
+One proof route proceeds as follows. Apply the finite quotient universal property to S, using a norm of an ample line bundle to supply an invariant projective embedding. Composition φ₂φ₁⁻¹ is invariant under simultaneous framing change. Conversely two framed presentations of the same triple differ by a diagonal element of G. Reduce each G-orbit to a selected first component. Its stabilizer is PSL₂, while the second component records the determinant square class; a chosen nonsquare identifies that component with the first and conjugates its action. Prove independence before using the erratum’s fixed-pairing notation. Over ℂ, use ComplexComparisonPartII C−1.3, gap:finite-group-quotient-analytification, to identify this finite scheme quotient with the analytic quotient and its stabilizer-invariant local rings.
 
 **Checks.**
 
@@ -181,7 +191,7 @@ One proof route proceeds as follows. Apply the finite quotient universal propert
 
 - For a nonsquare determinant ψ, restricting both factors to the same fixed-pairing component without twisting loses that component.
 
-*Needs:* §0.1; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; SchemeAndStackFoundations §1.17; ModularCurvesPartII §5.7; ModularCurvesPartII §§5.7, 5.13, 6.1.
+*Needs:* §0.1; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; ComplexComparisonPartII C−1.3, gap:finite-group-quotient-analytification; ModularCurvesPartII §5.7; ModularCurvesPartII §§5.7, 5.13, 6.1, 8.5.
 
 ### 0.3 Heegner and anti-Heegner CM strata
 
@@ -215,7 +225,7 @@ One proof route proceeds as follows. Use the faithful action of Aut(E) on Lie(E)
 
 - For the order-3 lift [[0,1],[-1,-1]], the other eigenvalue is −1−t, rather than −t.
 
-*Needs:* §0.1; FuchsianOrbifolds Layer 1; ModularCurvesPartII §1.3; ModularCurvesPartII §4.6; ModularCurvesPartII §4.7; ModularCurvesPartII §6.1 (conjugation).
+*Needs:* §0.1; FuchsianOrbifolds Layer 1; ModularCurvesPartII §1.3; ModularCurvesPartII §4.6; ModularCurvesPartII §4.7; ModularCurvesPartII §8.4 (`complexConjugationComparison`).
 
 ### 0.4 Singular bicusps
 
@@ -286,7 +296,7 @@ The defining construction has the following API.
 
 - The prime-to-p construction and its boundary extension commute with permitted base change and conjugation.
 
-One proof route proceeds as follows. Take T_m, its projections, boundary extension and degree identity from §9.13 (projective cyclic boundary correspondence), which uses the cyclic count ψ(m) and records σ₁(m) only for the full-subgroup convention. Define H_m as the image of T_m under the finite map S→Z(p) and check its independence of the scalar representatives and its determinant component, which is multiplied by the class of m. Apply flat pullback and proper pushforward with the projection formula for weighted cycles; transport under conjugation and characteristic-zero base change through ModularCurvesPartII §6.1.
+One proof route proceeds as follows. Take T_m, its projections, boundary extension and degree identity from §9.13 (projective cyclic boundary correspondence), which uses the cyclic count ψ(m) and records σ₁(m) only for the full-subgroup convention. Define H_m as the image of T_m under the finite map S→Z(p) and check its independence of the scalar representatives and its determinant component, which is multiplied by the class of m. Apply flat pullback and proper pushforward with the projection formula for weighted cycles; transport under conjugation and characteristic-zero base change through ModularCurvesPartII §§8.4–8.5.
 
 **Checks.**
 
@@ -300,7 +310,7 @@ One proof route proceeds as follows. Take T_m, its projections, boundary extensi
 
 - m divisible by p is outside this torsion-isomorphism correspondence; multiplication by p gives zero on p-torsion.
 
-*Needs:* §0.2; ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; FuchsianOrbifolds Layers 2 and 5; ComplexComparisonPartII §C5.4; ModularCurvesPartII §9.13 (projective cyclic boundary correspondence); ModularCurvesPartII §§5.7, 5.13, 6.1; SchemeAndStackFoundations §5.2.
+*Needs:* §0.2; ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; ComplexComparisonPartII §C5.4; FuchsianOrbifolds Layers 2 and 5; ModularCurvesPartII §9.13 (projective cyclic boundary correspondence); ModularCurvesPartII §§5.7, 5.13, 6.1, 8.5; SchemeAndStackFoundations §5.2; ModularCurvesPartII §8.4 (`complexConjugationComparison`).
 
 ### Examples
 
@@ -366,9 +376,11 @@ One proof route proceeds as follows. Verify integrality, determinant one and red
 
 **Checks.**
 
-- Check the two exact word identities and the positive leading trace separately for p≡1 and p≡2 mod 3.
+- At p=7, r=2 and x=1, the word −L(4)U(3)L(−3)U(3) equals [[8,21],[35,92]]. Its determinant is 8·92−21·35=1, its trace is 100=2·7²+2, and its reduction modulo 7 is I.
 
-- Check p=7 and 11 as integer examples; asymptotics alone do not specify an explicit numerical final threshold.
+- At p=11, r=3 and x=2, the word L(7)U(−3)L(−4)U(1)L(1)U(1) equals [[23,33],[154,221]]. Its determinant is 23·221−33·154=1, its trace is 244=2·11²+2, and its reduction modulo 11 is I.
+
+- In the two deformed words the leading traces are respectively 9α² and −α²(−9), with α=√3/(2π); both equal 27/(4π²)≈0.683918>0. The integer examples do not give a universal threshold for hyperbolicity after filling.
 
 *Needs:* §1.2; §1.1; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 2, gap:hyperbolic-trigonometry.
 
@@ -550,13 +562,13 @@ Statement prerequisites from other layers: §1.2, §1.6, §1.7, §1.5, §1.1. Th
 
 Fix A. A unique invertible projective 2×2 solution over F_p of integral linear equations with coefficients bounded by p^(Aδ) has a primitive integral representative Q of height p^(O_A(δ)), for sufficiently small δ and large p. Put m=|det Q|; then p∤m. If det Q>0 its Smith form gives a cyclic degree-m holomorphic isogeny; if det Q<0, composition with the fixed real reflection gives the corresponding conjugate Hecke locus after complex realization. On cusp data the two cases give the respective ordinary or conjugate Hecke boundary incidence. Uniqueness does not determine the sign, and multiplication by −1 cannot change it. (BT16 Proofs of Lemma 15 (pp. 726–727), Proposition 17 case (2) (p. 728) and Proposition 18 case 2(2) (p. 731); BT16 line 718.)
 
-One proof route proceeds as follows. Uniqueness of an invertible projective solution forces a one-dimensional kernel for p>3: in a projective line of matrices the determinant is a quadratic, so an invertible point would give at least p−1 invertible projective points. Thus the modular rank is three. A nonzero rank-three minor and its cofactors give the kernel vector. All relevant rank-four minors are bounded by p^(O_A(δ))<p, so their vanishing modulo p implies vanishing over Z; the same rational kernel is one-dimensional. The cofactor vector is nonzero modulo p and has the required height. Divide out the gcd; reduction is still the same invertible projective matrix, so p∤det Q. Keep the sign. Positive determinant is automatic only in the definite CM centralizer application. For negative determinant factor Q as a positive-determinant matrix times the integral reflection diag(1,−1). Use Smith normal form for the primitive positive lattice map. For a negative map use the conjugate complex structure and ModularCurvesPartII §6.1, then the same positive Smith form. Check the p-gon toric and component factors separately at the boundary; the sign is the ordinary versus conjugate Hecke distinction.
+One proof route proceeds as follows. Uniqueness of an invertible projective solution forces a one-dimensional kernel for p>3: in a projective line of matrices the determinant is a quadratic, so an invertible point would give at least p−1 invertible projective points. Thus the modular rank is three. A nonzero rank-three minor and its cofactors give the kernel vector. All relevant rank-four minors are bounded by p^(O_A(δ))<p, so their vanishing modulo p implies vanishing over Z; the same rational kernel is one-dimensional. The cofactor vector is nonzero modulo p and has the required height. Divide out the gcd; reduction is still the same invertible projective matrix, so p∤det Q. Keep the sign. Positive determinant is automatic only in the definite CM centralizer application. For negative determinant factor Q as a positive-determinant matrix times the integral reflection diag(1,−1). Use Smith normal form for the primitive positive lattice map. For a negative map use the conjugate complex structure and ModularCurvesPartII §8.4, `complexConjugationComparison`, then the same positive Smith form. Check the p-gon toric and component factors separately at the boundary; the sign is the ordinary versus conjugate Hecke distinction.
 
 **Checks.**
 
 - A negative determinant lift gives an antiholomorphic correspondence and is not silently called a Hecke isogeny.
 
-*Needs:* §2.1; ModularCurvesPartII §1.3; ModularCurvesPartII §9.13 (projective cyclic boundary correspondence); ModularCurvesPartII §6.1 (conjugation).
+*Needs:* §2.1; ModularCurvesPartII §1.3; ModularCurvesPartII §9.13 (projective cyclic boundary correspondence); ModularCurvesPartII §8.4 (`complexConjugationComparison`).
 
 ### 3.2 The distinct-Heegner centralizer equations have rank three
 
@@ -606,7 +618,7 @@ The defining construction has the following API.
 
 - A primitive negative-determinant rational matrix, factored through the fixed integral reflection, represents the conjugate cyclic Hecke locus of index |det|, including its p-gon boundary data and determinant component.
 
-One proof route proceeds as follows. Take the set image under the antiholomorphic isometry in one factor. Keep the conjugate complex structure explicit when applying the imported conjugate-diagonal volume estimate. Define neighborhoods by the transported max metric; retain complex curves and their original complex orientation for area integration. Use ModularCurvesPartII §6.1 to make the component and conjugation comparisons. The underlying algebraic Hecke correspondences base change, while this real analytic construction is made only after complex realization.
+One proof route proceeds as follows. Take the set image under the antiholomorphic isometry in one factor. Keep the conjugate complex structure explicit when applying the imported conjugate-diagonal volume estimate. Define neighborhoods by the transported max metric; retain complex curves and their original complex orientation for area integration. Use ModularCurvesPartII §8.4, `complexConjugationComparison`, to make the component and conjugation comparisons; §8.5, `genericBaseChangeAndLevelCompatibility`, transports the algebraic Hecke data. The underlying algebraic Hecke correspondences base change, while this real analytic construction is made only after complex realization.
 
 **Checks.**
 
@@ -616,7 +628,7 @@ One proof route proceeds as follows. Take the set image under the antiholomorphi
 
 - An attempted divisor intersection C·T̄₁ is rejected; its ε-tube volume is meaningful.
 
-*Needs:* §0.6; §0.3; §3.3; ComplexKahlerGeometry K6.1, gap:hyperbolic-cycle-volume-comparisons; §3.1; ModularCurvesPartII §6.1 (conjugation).
+*Needs:* §0.6; §0.3; §3.3; ComplexKahlerGeometry K6.1, gap:hyperbolic-cycle-volume-comparisons; §3.1; ModularCurvesPartII §8.4 (`complexConjugationComparison`); ModularCurvesPartII §8.5 (`genericBaseChangeAndLevelCompatibility`).
 
 ### 3.5 Hecke curves avoid anti-Heegner CM points
 
@@ -690,7 +702,7 @@ One proof route proceeds as follows. Use the graph of the diagonal action on bot
 
 - The conjugate m=1 restriction is real analytic and is not assigned a Cartier divisor class.
 
-*Needs:* §0.2; §0.6; FuchsianOrbifolds Layer 2, gap:hyperbolic-trigonometry; ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; §3.4.
+*Needs:* §0.2; §0.6; FuchsianOrbifolds Layer 2, gap:hyperbolic-trigonometry; ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; ComplexComparisonPartII §C5.4; §3.4.
 
 ### 4.2 Quadratic centralizers give only logarithmically many small elements
 
@@ -724,9 +736,11 @@ One proof route proceeds as follows. Attach the two projected bicusp centres fro
 
 **Checks.**
 
-- R→0 recovers a bound proportional to pR/sinh d plus 1.
+- At R=10, sinh R≈11013.232875, whereas R=10; replacing sinh R by R loses a factor of about 1101.323. As R tends to zero, sinh R/R tends to 1, so only that limit permits the linear approximation.
 
-- For R=δρ_X growing with p, test sinh R instead of its small-R linear approximation.
+- At p=7, d=1 and R=1/2, the displacements for k=0,1,2,3,4,5,6 are approximately 0, 0.980099, 1.645565, 1.961531, 1.961531, 1.645565, 0.980099. Exactly k=0,1,6 move by less than 2R=1; omitting the identity would count 2 instead of 3.
+
+- At d=0 every rotation fixes the centre, so the count is p (7 at p=7); division by sinh d is not used there.
 
 *Needs:* §4.3; §1.2; §1.5; §1.7; FuchsianOrbifolds Layer 2, gap:hyperbolic-trigonometry.
 
@@ -754,7 +768,7 @@ One proof route proceeds as follows. Apply the imported cycle normalization and 
 
 - A constant cusp coordinate contributes zero to the degree.
 
-*Needs:* ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; FuchsianOrbifolds Layers 2 and 5; ComplexComparisonPartII §C5.4; ComplexComparisonPartII §C2.2; ComplexComparisonPartII §C5.4; AlgebraicCurves Layer 12; SchemeAndStackFoundations §5.2; SchemeAndStackFoundations §§5.2–5.3.
+*Needs:* ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; ComplexComparisonPartII §C5.4; FuchsianOrbifolds Layers 2 and 5; ComplexComparisonPartII §C2.2; AlgebraicCurves Layer 12; SchemeAndStackFoundations §5.2; SchemeAndStackFoundations §§5.2–5.3.
 
 ### 5.2 Heegner multiplicity decay
 
@@ -792,7 +806,7 @@ One proof route proceeds as follows. Use signed three-bicusp repulsion, so balls
 
 - The output is p·mult_SBC=o(Deg), which absorbs order-p inertia.
 
-- The weaker p^(−1+ε) bound does not pass this acceptance check.
+- A bound mult≤p^(−9/10)Deg gives only p·mult≤p^(1/10)Deg, with a growing coefficient. A bound mult≤p^(−101/100)Deg instead gives p·mult≤p^(−1/100)Deg, with a decaying coefficient.
 
 *Needs:* §5.1; §3.6; §2.6; §0.6; §1.7; ComplexKahlerGeometry K6.1, gap:hyperbolic-cycle-volume-comparisons; §3.4; §2.7.
 
@@ -826,7 +840,7 @@ One proof route proceeds as follows. Use the imported cusp-pullback integration 
 
 - A degree-q parametrization multiplies the pushforward measure by q.
 
-*Needs:* §5.1; §1.6; ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport.
+*Needs:* §5.1; §1.6; ComplexKahlerGeometry K3 and K6.1, gap:analytic-cycle-current-transport; ComplexComparisonPartII §C5.4.
 
 ### 5.6 Uniform cusped-volume error
 
@@ -864,7 +878,7 @@ One proof route proceeds as follows. Apply the imported double-diagonal point-vo
 
 - For C inside T₁×T₁ with generic ample underlying curve, the unrestricted ratio tends to 3 and does not decay.
 
-- The final pullback application must establish the projected non-Hecke condition before applying this estimate.
+- For n=2 in the non-Hecke pencil construction, a generic fibre consists of two distinct points b₁,b₂. The birational map f:B→Z has f(b₁)≠f(b₂), so no Δ_g contains that tuple; each one-slot projection still dominates the non-Hecke image. Replacing the pair by (b₁,b₁) would put it on Δ₁.
 
 *Needs:* §5.1; §4.1; §4.3; §4.4; §3.6; §2.7; §1.8; §5.7; §5.6; §0.6; ComplexKahlerGeometry K6.1, gap:hyperbolic-cycle-volume-comparisons; §3.4; ComplexKahlerGeometry K6.1, gap:relative-point-ball-volume.
 
@@ -896,7 +910,7 @@ The defining construction has the following API.
 
 - Finite quotient, norm polarization and relative cycle morphism commute with characteristic-zero base change and conjugation.
 
-One proof route proceeds as follows. Take the permutation action on the n-fold product and descend the norm of an ample bundle. Apply the supplied finite quotient with an invariant projective embedding. Apply gap:free-locus-and-relative-cycle to a finite flat degree-n family; its fibre lengths give the cycle morphism to the permutation quotient. Check characteristic-zero base change, product permutations and both determinant components; complex conjugation commutes with the algebraic quotient.
+One proof route proceeds as follows. Take the permutation action on the n-fold product and descend the norm of an ample bundle. Apply the supplied finite quotient with an invariant projective embedding. Apply gap:free-locus-and-relative-cycle to a finite flat degree-n family; its fibre lengths give the cycle morphism to the permutation quotient. Check characteristic-zero base change, product permutations and both determinant components; complex conjugation commutes with the algebraic quotient. Over ℂ its analytic quotient interpretation uses ComplexComparisonPartII C−1.3, gap:finite-group-quotient-analytification.
 
 **Checks.**
 
@@ -910,7 +924,7 @@ One proof route proceeds as follows. Take the permutation action on the n-fold p
 
 - [z₁]+[z₂]=[z₂]+[z₁], but equals 2[z₁] only when z₁=z₂.
 
-*Needs:* §0.2; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; `Sym`; `Sym.map`; `Sym.map_map`; SchemeAndStackFoundations §1.17.
+*Needs:* §0.2; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; ComplexComparisonPartII C−1.3, gap:finite-group-quotient-analytification; `Sym`; `Sym.map`; `Sym.map_map`; SchemeAndStackFoundations §1.17.
 
 ### 6.2 Reduction to the normalization of the image
 
@@ -972,7 +986,7 @@ The defining construction has the following API.
 
 - Under algebraically closed extension normalization and component choices transport after choosing a compatible geometric component; W-conjugate choices give the same estimates.
 
-One proof route proceeds as follows. Use finite base change, existence and finiteness of curve normalization. The map ψ is generically birational to its image because φ is birational onto its image. Over the generic unramified locus, the finite quotient fibre is a single W-orbit and W permutes its irreducible components transitively. The stabilizer H acts transitively on the generic fibre in the chosen component, so its invariant function field is k(P¹). Normalize the quotient and identify it with P¹ by the smooth proper curve/function-field dictionary. Do not assume an unramified pullback at branch points.
+One proof route proceeds as follows. Use finite base change, existence and finiteness of curve normalization. The map ψ is generically birational to its image because φ is birational onto its image. Over the generic unramified locus, the finite quotient fibre is a single W-orbit and W permutes its irreducible components transitively. The stabilizer H acts transitively on the generic fibre in the chosen component, so its invariant function field is k(P¹). Normalize the quotient and identify it with P¹ by the smooth proper curve/function-field dictionary. For complex local inertia, identify q^an with the finite analytic quotient through ComplexComparisonPartII C−1.3, gap:finite-group-quotient-analytification. Do not assume an unramified pullback at branch points.
 
 **Checks.**
 
@@ -986,7 +1000,7 @@ One proof route proceeds as follows. Use finite base change, existence and finit
 
 - A pullback meeting a branch point is normalized; it is not declared étale by the fibre-product notation.
 
-*Needs:* §6.3; §0.2; §6.1; AlgebraicCurves Layer 12; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization; SchemeAndStackFoundations §4.13 (finite normalization of integral curves).
+*Needs:* §6.3; §0.2; §6.1; ComplexComparisonPartII C−1.3, gap:finite-group-quotient-analytification; AlgebraicCurves Layer 12; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization; SchemeAndStackFoundations §4.13 (finite normalization of integral curves).
 
 ### 6.5 Weighted projection cycles and nondegeneracy
 
@@ -1092,7 +1106,7 @@ Statement prerequisites from other layers: §6.4, §6.5, §0.5, §4.1, §5.2, §
 
 For every congruence subgroup Γ≤PSL₂(Z) of finite index D, the compactified complex modular curve satisfies gon(X_Γ)≥7D/800. Interpret λ′₁=min(λ₁,1/4) by the supplied Friedrichs/continuous-spectrum convention, including no discrete eigenvalue below 1/4. (ABR96 Abramovich, Theorem 0.1, p. 1, and §§1.4–1.7, pp. 2–3; ABR96 line 14.)
 
-One proof route proceeds as follows. Import CongruenceSpectralGap:CSG.5/congruence-bound to obtain λ′₁≥21/100 for the effective congruence quotient. Import Li–Yau in the finite-area singular-metric setting: λ′₁ Area≤8π gon. Import the Fuchsian area Area=πD/3. Divide by 8π to obtain gon≥(21/100)D/24=7D/800. This application supplies the number; the general analytic and spectral results remain in their owners.
+One proof route proceeds as follows. Import CongruenceSpectralGap §5.3 to obtain λ′₁≥21/100 for the effective congruence quotient. Import Li–Yau in the finite-area singular-metric setting: λ′₁ Area≤8π gon. Import the Fuchsian area Area=πD/3. Divide by 8π to obtain gon≥(21/100)D/24=7D/800. This application supplies the number; the general analytic and spectral results remain in their owners.
 
 **Checks.**
 
@@ -1100,7 +1114,7 @@ One proof route proceeds as follows. Import CongruenceSpectralGap:CSG.5/congruen
 
 - At the level-one cusp the supplied metric has a cusp and finite total area π/3, whereas the round metric on its genus-zero compactification has area 4π. Substituting 4π into the same numerical expression would give 21/200 instead of 7/800, a factor of 12 error.
 
-*Needs:* CongruenceSpectralGap CSG.5/congruence-bound; RiemannianGeometry R7.0 and R8, gap:singular-metric-li-yau; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 4.
+*Needs:* CongruenceSpectralGap §5.3; RiemannianGeometry R7.0 and R8, gap:singular-metric-li-yau; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 4.
 
 ### 8.2 Proper subgroup indices grow at least like p
 
@@ -1178,13 +1192,13 @@ One proof route proceeds as follows. Étale-locally choose a full level basis of
 
 - For E′=E and Ψ=[a] with a∈F_p^×, the map f_Ψ lands on H₁ for every a, since the projective class forgets scalars.
 
-- For E′=E and Ψ=id the image lies on H₁.
+- At a geometric fibre with symplectic bases, p=7 and Ψ=diag(1,3) give Weil multiplier 3. The nonzero squares are {1,2,4}, so this fibre lies on the other determinant component; a simultaneous basis change cannot turn it into the identity component.
 
-- Ψ and −Ψ yield the same map for odd p, while the input is still an actual module isomorphism.
+- For the Legendre family y²=x(x−1)(x−t) over P¹∖{0,1,∞}, the identity torsion isomorphism has first j-coordinate 256(1−t+t²)³/(t²(1−t)²). It has a pole at t=0, with j(2)=1728 and j(3)=21952/9, so its classifying map is nonconstant even though its image lies on H₁.
 
 - A nontrivial quadratic twist gives a projective torsion identification but need not supply the Ψ required by this constructor.
 
-*Needs:* §0.1; §0.2; ModularCurves §0D; ModularCurves §0E; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.1; AbelianSchemesAndArithmeticModuli A3.2; AbelianSchemesAndArithmeticModuli A3.7; ModularCurvesPartII §5.7; ModularCurvesPartII §3.9; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
+*Needs:* §0.1; §0.2; ModularCurves §0D; ModularCurves §0E; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.6; AbelianSchemesAndArithmeticModuli A3.2; AbelianSchemesAndArithmeticModuli A3.7; ModularCurvesPartII §5.7; ModularCurvesPartII §3.9; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
 
 ### 9.2 The rank-one geometric Hom lattice
 
@@ -1238,9 +1252,9 @@ One proof route proceeds as follows. Descend the proper base, the open subset, t
 
 - A field k of cardinality greater than that of C is permitted; only a finitely generated field is embedded.
 
-- Spread the pencil and the actual isomorphism, rather than a numerical claim about gonality or a semisimplified representation.
+- For the pulled-back ideal I of a fixed H_m, extension to k′ sends I=0 to 0 and I=(1) to (1). Faithful flatness detects vanishing in both directions, so a nonzero ideal cannot become zero after extension; the fixed Hecke containment descends.
 
-*Needs:* §7.5; §9.1; ModularCurves §0E; ComplexComparisonPartII §§C2.2, C4.1–C4.5; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change; ModularCurvesPartII §9.13 (projective cyclic boundary correspondence); ModularCurvesPartII §§5.7, 5.13, 6.1; SchemeAndStackFoundations §§0.8–0.9.
+*Needs:* §7.5; §9.1; ModularCurves §0E; ComplexComparisonPartII §§C2.2, C4.1–C4.5; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change; ModularCurvesPartII §9.13 (projective cyclic boundary correspondence); ModularCurvesPartII §§5.7, 5.13, 6.1, 8.5; SchemeAndStackFoundations §§0.8–0.9.
 
 ### 9.6 Full linear monodromy over any characteristic-zero k
 
@@ -1288,7 +1302,7 @@ One proof route proceeds as follows. An elliptic curve and a morphism of finite 
 
 - For K=ℂ(t), N=2 and the Legendre curve y²=x(x−1)(x−t), j=256(1−t+t²)³/(t²(1−t)²) is nonconstant and gonality is 1<2. Taking E′=E and the identity torsion isomorphism gives the identity K-isogeny of degree 1; at the zero torsion point both equivariance sides are 0.
 
-*Needs:* §9.7; AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5; NeronModelsAndSemistableAbelianVarieties §§1.3, 1.8; ModularCurves §0D; ModularCurves §0E; AlgebraicCurves Layer 12; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.1; AbelianSchemesAndArithmeticModuli A3.1; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
+*Needs:* §9.7; AbelianSchemesAndArithmeticModuli A1.8, A3.1–A3.5; NeronModelsAndSemistableAbelianVarieties §§1.3, 1.8; ModularCurves §0D; ModularCurves §0E; AlgebraicCurves Layer 12; InverseGaloisAndArithmeticFundamentalGroups §IG.0.3; AbelianSchemesAndArithmeticModuli A1.6; AbelianSchemesAndArithmeticModuli A3.1; AlgebraicCurves Layer 12, gap:curve-extension-and-normalization.
 
 ### Examples
 
@@ -1380,7 +1394,7 @@ One proof route proceeds as follows. Import Castelnuovo contraction and terminat
 
 - A curve of self-intersection −2 is not contractible to a smooth point by the (−1)-curve theorem.
 
-- A subsequent (−1)-curve may have self-intersection below −1 on Z̃; update intersections after each preceding contraction.
+- If C²=−2 and C·E=1 for the preceding smooth rational (−1)-curve E, contraction gives C_new²=−2+1²=−1. If C·E=2 it instead gives −2+2²=2. The first case explains how a later contraction centre can start below −1 on Z̃.
 
 *Needs:* §10.4; §10.3; SchemeAndStackFoundations §§4.11–4.13 and gap:cyclic-surface-resolution-and-contraction; SchemeAndStackFoundations §§5.9–5.10 and gap:surface-contraction-intersections.
 
@@ -1569,7 +1583,7 @@ Checks for this theorem matter. A coordinate fibre through zero has V(t)=4πsinh
 
 V(t)/a(t)=1+a²(1−q)/(1−a²q),
 
-which decreases. Thus the theorem deliberately keeps its fixed constant and linear factor in r. The proof uses gap:analytic-cycle-current-transport and the positive-current and Stokes theory of ComplexKahlerGeometry K6.1, together with the explicit Green/coarea bridge in gap:relative-point-ball-volume. It also gives the point-multiplicity lower bound: N(s) is at least the multiplicity at zero, and integrating h″ from −∞ gives V(R)≥4πsinh²(R/2)mult₀C. 
+which decreases. Thus the theorem deliberately keeps its fixed constant and linear factor in r. The proof uses gap:analytic-cycle-current-transport for normalization and sublevel Green/Stokes transport, and the imported current calculus and weighted analytic-cycle integration of ComplexComparisonPartII C5.4, together with the explicit Green/coarea bridge in gap:relative-point-ball-volume. It also gives the point-multiplicity lower bound: N(s) is at least the multiplicity at zero, and integrating h″ from −∞ gives V(R)≥4πsinh²(R/2)mult₀C.
 
 (BT16 Proposition 27 proof, p. 739, BT16 line 1280; the Green/coarea estimate is proved above rather than attributed to Proposition 23.)
 

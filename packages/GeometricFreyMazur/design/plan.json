@@ -5390,8 +5390,14 @@
   ],
   "gaps": [
     {
+      "slug": "finite-group-quotient-analytification",
+      "needs": "For a finite group G acting on a projective complex scheme X with finite scheme quotient q:X→Y supplied by SchemeAndStackFoundations §1.17, identify q^an with the finite categorical analytic quotient, with O_(Y^an)=((q^an)_*O_(X^an))^G, orbit fibres and local stabilizer-invariant rings, retaining nilpotents and compatibly with equivariant morphisms.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C−1.3"
+    },
+    {
       "slug": "analytic-cycle-current-transport",
-      "needs": "For locally finite effective analytic one-cycles in complex manifolds, provide proper normalization with branch weights, finite holomorphic pushforward and pullback integration, local multiplicity, positive ddᶜ currents, Poincaré–Lelong, Green and Stokes formulas on relatively compact sublevels, and the zero-atom integrable extension of cusp densities, compatible with the compact analytic integration theory.",
+      "needs": "For locally finite effective analytic one-cycles in finite-dimensional Hausdorff second-countable complex manifolds, provide proper normalization with branch weights, integration of pulled-back forms and weighted pushforward under finite holomorphic maps of curves, local-multiplicity transport, Green and Stokes identities on relatively compact sublevels, and the zero-atom integrable extension of cusp densities, compatible with K6.1’s compact analytic integration.",
       "supplier": "ComplexKahlerGeometry",
       "section": "K3 and K6.1"
     },
