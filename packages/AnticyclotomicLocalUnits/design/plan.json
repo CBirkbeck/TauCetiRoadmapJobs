@@ -3162,7 +3162,7 @@
       "slug": "quadratic-coefficient-coordinates",
       "supplier": "PadicMeasuresIwasawaAlgebras",
       "section": "4.5",
-      "needs": "For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, identify the native O completed algebras with O[[S,T]] and O[[T]], continuously and compatibly with coefficient extension, κ-twisting, generator change and quotient by the plus coordinate, with the needed noetherian local-domain properties."
+      "needs": "For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, extend the supplied one-variable O-coordinate to a continuous coefficient-preserving two-variable equivalence O[[Γ⁺×Γ⁻]]≃O[[S,T]], with continuous inverse and two-variable noetherian local-domain properties, compatibly with coefficient extension, generator changes and κ-twisting, so that after inverse twisting the plus relation σ−1 corresponds to S and specialization S=0 recovers the supplied one-variable Γ⁻ coordinate."
     },
     {
       "slug": "compact-coefficient-duality",

@@ -9,12 +9,12 @@ This roadmap owns the arithmetic inverse limit and its ω-component, the inverse
 The general objects below have these owners; the targets here are their arithmetic applications.
 
 - The unit filtration and formal-to-elliptic point homomorphism are already in Tau Ceti. LocalFieldsRamification Layer 1 supplies principal-unit topology and pro-p structure; ProfiniteArithmetic §1.3 supplies continuous p-adic scalar powers. No second filtration, formal-point homomorphism or scalar-power construction is defined here.
-- The completed group algebra and its compact-module action are already in Tau Ceti. PadicMeasuresIwasawaAlgebras §§1.7, 4.2–4.5 and 5.2 supply measure comparison, coefficient coordinates, one-variable module structure and topological Nakayama. The generic algebra and generic ring-theoretic generation criterion are not targets here. Section 8.1 applies them to the actual derivative and optimal unit.
+- The completed group algebra and its compact-module action are already in Tau Ceti. PadicMeasuresIwasawaAlgebras §§1.7, 4.2–4.5 and 5.2 supply measure comparison, coefficient extension, the continuous one-variable O-coordinate with generator comparison, one-variable ring and module structure, and topological Nakayama. The generic algebra and generic ring-theoretic generation criterion are not targets here. Section 8.1 applies them to the actual derivative and optimal unit.
 - IntegralIwasawaTheory §7.1 owns the multiplicative determinant norm and unramified cyclotomic interpolation; ColemanPowerSeries Layer 1 supplies its explicit norm/evaluation refinements. Section 1.1 differs by its height-two formal module, rank-p² scalar algebra and π-division points.
 - LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2 own formal O-modules, logarithms, torsion, Tate modules and reciprocity; LT.4 owns the scalar-Frobenius and unramified Honda comparison; LT.5–LT.8 own integral lattice quotients, quasi-canonical fields, neighboring lattices and the tame/anticyclotomic field comparisons; LT.9 owns formal traces. Section 5.3 applies scalar Frobenius to cyclic-level subgroup descent, §6.1 builds modular images of the supplied quotients, and §6.3 identifies their supplied lattice orbits with the Hecke trace. None rebuilds those foundations.
 - NonordinaryCMSpecialValues NCM.0–NCM.4 own canonical CM characters, early normalized zeta classes, semilocal comparisons, root numbers and Finis’s unit-value specialization; NCM.5 owns the canonical unramified coefficient and scalar-to-tensor comparison. Section 4.1 owns the auxiliary field, §4.2 the local-unit projection composite, §4.3 the Coleman/dual-exponential normalization, and §§4.4–4.5 their application before signed freeness.
 - The cyclic Tate and Herbrand formalism is already in Tau Ceti. ClassFieldTheory Layers 5–8 own local duality and local reciprocity. ArithmeticGaloisDuality §§R02.1.2–R02.1.3 own coefficient limits. The finite affine Cartier-dual functor is already in Tau Ceti. Section 2.1 owns its comparison with the specific formal division sequence and its obstruction maps, not generic Cartier duality or a new continuous-cohomology carrier.
-- ModularCurves Layers 5, 8–9 own affine fine level, cyclic subgroups and coarse stabilizers. ModularCurvesPartII §§3.2, 3.9, 5.2–5.3, 9.9–9.11, 13.2, 13.7 and 16.6 supply composite-level compactifications, good models, correspondences, differential lattices and genuine modular quotients. The genus formula is stated by ModularForms Layer 10B. EllipticCurveModularity R29.5–R29.6 owns the genuine modular parametrization and unconditional modularity. Section 5.2 applies the Manin-unit theorem at a good prime; its integral congruence comparison is the explicit contract below.
+- ModularCurves Layers 5, 8–9 own affine fine level, cyclic subgroups and coarse stabilizers. ModularCurvesPartII §§3.2, 3.9, 5.2–5.3, 9.9–9.11, 13.2, 13.7 and 16.6 supply composite-level compactifications, good models, correspondences, differential lattices and genuine modular quotients. The genus formula is stated by ModularForms Layer 10B; SchemeAndStackFoundations §3.2 owns scheme Riemann–Hurwitz with different multiplicities, including wild ramification. EllipticCurveModularity R29.5–R29.6 owns the genuine modular parametrization and unconditional modularity. Section 5.2 applies the Manin-unit theorem at a good prime; its integral congruence comparison is the explicit contract below.
 - EllipticCurves Layers 1, 3–5 own isogenies, finite-field Frobenius, reduction and twists. Their finite-field extension requested below supplies trace-class counts and scalar-Frobenius representatives; ModularCurvesPartII §12.1 supplies the weighted supersingular mass and exceptional-j criteria. Section 5.4 applies these inputs without introducing a second supersingular predicate. ImaginaryQuadraticClassNumber H1–H2 owns forms, class numbers, splitting and the analytic class-number formula. The extra upper estimate needed for §4.1 is a supplier contract, not a new analytic-number-theory layer.
 
 ## Conventions
@@ -65,9 +65,9 @@ LocalFieldsRamification Layers 0–3 supply native finite-extension fields, thei
 
 ### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
 
-Use §1.7 for the measure/completed-algebra comparison and coefficient extension, §§4.2–4.5 for one-variable O[[T]] structure, Weierstrass preparation and local/domain properties, and §5.2 for compact inverse-limit exactness and topological Nakayama. Quotient duality always uses the actual compact topology and the discrete Φ/O-valued dual. The residual example Λ/(p,T)=𝔽_(p²) has cardinal p², equal to 25 at p=5.
+Use §1.7 for the measure/completed-algebra comparison and coefficient extension, §§4.3–4.4 for one-variable O[[T]] ring properties and Weierstrass preparation, §4.2 for module structure, and §4.5 (`TauCeti.Iwasawa.exists_completedCoordinate` and its continuous-coordinate API) for the coefficient-preserving O-coordinate, inverse continuity and generator comparison T↦(1+T)^a−1 for a∈ℤ_p×. Use §5.2 for compact inverse-limit exactness and topological Nakayama. Quotient duality always uses the actual compact topology and the discrete Φ/O-valued dual. The residual example Λ/(p,T)=𝔽_(p²) has cardinal p², equal to 25 at p=5.
 
-What PadicMeasuresIwasawaAlgebras must provide (gap:quadratic-coefficient-coordinates): For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, identify the native O completed algebras with O[[S,T]] and O[[T]], continuously and compatibly with coefficient extension, κ-twisting, generator change and quotient by the plus coordinate, with the needed noetherian local-domain properties.
+What PadicMeasuresIwasawaAlgebras must provide (gap:quadratic-coefficient-coordinates): For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, extend the supplied one-variable O-coordinate to a continuous coefficient-preserving two-variable equivalence O[[Γ⁺×Γ⁻]]≃O[[S,T]], with continuous inverse and two-variable noetherian local-domain properties, compatibly with coefficient extension, generator changes and κ-twisting, so that after inverse twisting the plus relation σ−1 corresponds to S and specialization S=0 recovers the supplied one-variable Γ⁻ coordinate.
 
 What PadicMeasuresIwasawaAlgebras must provide (gap:compact-coefficient-duality): Finite free coefficient extension must commute with these compact inverse limits, and continuous O-duality into Φ/O must identify invariants with the dual of closed coinvariants and give biduality for the compact modules used here.
 
@@ -110,6 +110,10 @@ What ModularCurvesPartII must provide (gap:mixed-level-disk-comparison): For arb
 What ModularCurvesPartII must provide (gap:good-model-hecke-comparison): Identify the integral T_p correspondence on these arbitrary composite-level good models with the geometric p+1 subgroup quotient correspondence, its transported prime-to-p marking and the Hecke action on the cusp-normalized modular quotient, compatibly with the tame/relative traces of its marked CM points.
 
 What ModularCurvesPartII must provide (gap:integral-congruence-comparison): Extend §13.7 by the exact Néron-differential and q-expansion lattices, degree/congruence identity and p-unit cokernel comparison at p∤N used in AU96 Propositions 3.3–3.4 and Zagier’s Lemma 3.2, retaining optimality and integrality so that the good-prime Manin-unit theorem can be applied to every conductor N.
+
+### From TauCetiRoadmap.SchemeAndStackFoundations
+
+Use §3.2’s scheme Riemann–Hurwitz theorem for a finite generically étale morphism f:X→Y of smooth proper geometrically connected curves over a field: 2g_X−2=deg(f)(2g_Y−2)+deg(Different), where the different has the lengths of the relative differentials as multiplicities, also in wild ramification. After geometric base change every ramification point contributes at least one. Section 5.5 applies this to the good reduced parametrization with genus-one target; the good-model genus comparison and modular genus/index formula remain the inputs named above.
 
 ### From TauCetiRoadmap.EllipticCurveModularity
 
@@ -241,7 +245,7 @@ Its API consists of the following facts on these same carriers and with these sa
 
 ### Examples
 
-At p=5, [Φ_0:Φ]=24 and Ψ_0=Φ; the first wild anticyclotomic degree is 5. The ω-projector acts as 1 on its own eigenspace and 0 on a distinct tame character. A change of plus generator by the unit 6 preserves the quotient ideal.
+At p=5, [Φ_0:Φ]=24 and Ψ_0=Φ; the first wild anticyclotomic degree is 5. The ω-projector acts as 1 on its own eigenspace and 0 on a distinct tame character. A change of plus generator by the unit 6 preserves the quotient ideal. In the supplied one-variable O-coordinate γ maps to 1+T and level zero sends T to 0; the parameter associated to γ⁶ is (1+T)⁶−1=6T+15T²+20T³+15T⁴+6T⁵+T⁶, with unit linear coefficient 6. The two-variable comparison specializes its plus coordinate S to 0 and gives that same Γ⁻ coordinate.
 
 ### Dependencies
 
@@ -427,9 +431,9 @@ Its API consists of the following facts on these same carriers and with these sa
 
 **Checks.**
 
-- Pairing a point killed by π^k has value in π^(−k)O/O.
-- Restriction on points is adjoint to norm on units.
-- The zero point pairs to zero with every unit; replacing formal Kummer by arbitrary lattice duality does not satisfy the finite comparison.
+- Let Q generate the base formal O-lattice F(Φ). Through the actual connecting-map/Cartier evaluation pairing of §2.1, choose a compatible dual coordinate x whose value on Q⊗π^(−2) is π^(−2) modulo O. Its value on Q⊗π^(−1) is π^(−1)≠0 modulo O. At p=5 these two values are 1/25 and −1/5; their orders are π² and π. The zero pairing fails both values. The base classes retain these orders in Θ∞: if [π]R is a base point, then gR−R is π-torsion in the tame-fixed tower, hence zero, so R is itself a base point.
+- With that same actual dual coordinate, multiplying Q⊗π^(−2) by π gives Q⊗π^(−1), and multiplying once more gives zero. At p=5 the paired values are (−5)(1/25)=−1/5 and (−5)(−1/5)=1=0 modulo O. The finite restriction/norm adjunction uses the same evaluation and local invariant; at the identity extension both sides have the nonzero value −1/5.
+- In O/5O the unramified coefficient trace in the finite Cartier comparison has Tr(1)=2 and Tr(3)=6=1 modulo 5. Thus the order-5 values 1/5 and 3/5 trace to 2/5 and 1/5 modulo ℤ₅; an identity scalar map instead gives 1/5 and 3/5. This tests the coefficient trace as well as nondegeneracy.
 
 *Needs:* §2.2; §0.2; §0.4; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; PadicMeasuresIwasawaAlgebras §5.2 (gap:compact-coefficient-duality).
 
@@ -757,17 +761,18 @@ A proof route is as follows. Use the supplied mass and twist counts, keeping j-i
 
 ### 5.5 The ramification bound for the parametrization
 
-Let μ=N∏_(l|N)(1+1/l)=deg(X₀(N)→X(1)), and g_N be the genus. The number of geometric ramification points of the separable reduced parametrization is at most deg(Different)=2g_N−2≤μ/6.
+Let μ=N∏_(l|N)(1+1/l)=deg(X₀(N)→X(1)), and g_N be the genus, identified with the good-fibre genus by the supplied smooth proper model comparison. The reduced parametrization f̄_E:X₀(N)_(𝔽_p)→E_(𝔽_p) is a finite generically étale map of smooth proper geometrically connected curves. Its number of geometric ramification points is at most deg(Different)=2g_N−2≤μ/6.
 
 (BKO21, Lemma 5.2(i), pp.956–957; BKO21 line 590.)
 
-A proof route is as follows. Apply separable Riemann–Hurwitz to the smooth connected curve and its genus-one target, so every geometric ramification point contributes at least one to the different, even in wild ramification. Use the supplied genus/index formula for the composite level.
+A proof route is as follows. The nonconstant separable map of §5.2 between the good smooth proper curves is finite and generically étale. Apply SchemeAndStackFoundations §3.2 over the algebraic closure of 𝔽_p: its genus-one target makes the term deg(f̄_E)(2g_E−2) zero, and every geometric ramification point contributes at least one to the different, including in wild ramification. Use the supplied good-fibre genus comparison and the genus/index formula for the composite level.
 
 **Checks.**
 
 - For N=27, μ=36, genus 1, hence different degree 0≤6. For N=32, μ=48, genus 1, hence 0≤8. For the identity map between genus-one curves the different has degree 0.
+- In characteristic 5 the relative Frobenius of an elliptic curve has degree 5 and zero differential; it is not generically étale and does not satisfy the hypotheses of the supplied formula. A tame local parameter map t↦t² instead has different multiplicity 1=e−1 at t=0, so that ramification point contributes one.
 
-*Needs:* §5.2; ModularCurvesPartII §§5.2–5.3; ModularForms Layer 10B.
+*Needs:* §5.2; SchemeAndStackFoundations §3.2; ModularCurvesPartII §§5.2–5.3; ModularForms Layer 10B.
 
 ### 5.6 The generic supersingular-point bound
 
@@ -852,7 +857,7 @@ At p=5 use the conductor-27 class: μ=36, exceptional fibre bound 12, different 
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: EllipticCurveModularity R29.6; EllipticCurveModularity R29.5; EllipticCurves Layer 3 (gap:supersingular-trace-classes); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurvesPartII §§9.9–9.11, 13.2, 16.6; ModularCurves Layer 9; ModularCurvesPartII §§5.2–5.3, 13.7 (gap:integral-congruence-comparison); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurves Layers 8–9; ModularCurvesPartII §12.1 (`gammaZeroPrime_mass`); EllipticCurves Layer 3 (gap:supersingular-trace-classes); ModularCurvesPartII §§5.2–5.3; ModularForms Layer 10B; ModularCurves Layer 8; ModularCurves Layer 5; ModularCurvesPartII §§3.2, 3.9, 5.2–5.3 (gap:mixed-level-disk-comparison); `WeierstrassCurve.formalPointHomAdicCompletion`; `WeierstrassCurve.formalPointHomAdicCompletion_injective`; `WeierstrassCurve.range_formalPointHomAdicCompletion`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.4 (gap:formal-point-completion-realization).
+The subsection *Needs:* lines give the internal dependencies. External inputs: EllipticCurveModularity R29.6; EllipticCurveModularity R29.5; EllipticCurves Layer 3 (gap:supersingular-trace-classes); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurvesPartII §§9.9–9.11, 13.2, 16.6; ModularCurves Layer 9; ModularCurvesPartII §§5.2–5.3, 13.7 (gap:integral-congruence-comparison); LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurves Layers 8–9; ModularCurvesPartII §12.1 (`gammaZeroPrime_mass`); EllipticCurves Layer 3 (gap:supersingular-trace-classes); SchemeAndStackFoundations §3.2; ModularCurvesPartII §§5.2–5.3; ModularForms Layer 10B; ModularCurves Layer 8; ModularCurves Layer 5; ModularCurvesPartII §§3.2, 3.9, 5.2–5.3 (gap:mixed-level-disk-comparison); `WeierstrassCurve.formalPointHomAdicCompletion`; `WeierstrassCurve.formalPointHomAdicCompletion_injective`; `WeierstrassCurve.range_formalPointHomAdicCompletion`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.4 (gap:formal-point-completion-realization).
 
 ## Layer 6: The optimal local trace system
 
