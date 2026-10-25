@@ -3,10 +3,9 @@ import Mathlib
 /-!
 # Étale homotopy types: target signatures
 
-The roadmap is README.md; this file is not the roadmap. It records which of the roadmap's
-headline theorems can be stated against the pinned APIs. It states higher derived-limit
-vanishing for finite abelian inverse systems. The following other headline theorems are
-not statable at the pins without a heavy construction or an artificial substitute.
+The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
+theorems when statable against the pinned APIs. None is statable at these pins: each requires
+one of the missing carriers listed below. No substitute assertion is stated.
 
 Layer 0:
 * Isaksen's simplicial model structure, properness and the strong-fibration presentation theorem
@@ -25,7 +24,6 @@ Layer 1:
 Layer 2:
 * The derived constant/limit adjunction and nonabelian profinite derived-limit vanishing lack
   the unstable derived limit and nonabelian derived-limit carriers on these small pro-diagrams.
-  The abelian higher-derived-limit assertion is stated below on native additive functors.
 * Homotopy groups of materialization for profinite pro-spaces lack their derived materialization.
 * Absolute monodromy orbit bijection, pointed isomorphism lifting, relative pointed surjectivity,
   relative isomorphism lifting and the stabilizer orbit bijection lack the pro-space homotopy
@@ -33,7 +31,7 @@ Layer 2:
 
 Layer 3:
 * The profinite-completion universal property for a pro-group lacks the native general pro-group
-  carrier and its finite-quotient completion construction.
+  carrier; ordinary group completion and finite-quotient presentations are native.
 * Profinite local-coefficient detection, raw K(pi,1) finite-cover effacement and its product
   theorem lack the raw etale type and its homotopy pro-groups.
 * Etale local-coefficient comparison, raw/finite fundamental-group comparison, raw profiniteness,
@@ -64,28 +62,9 @@ Layer 6:
   objects, field-automorphism naturality, and strictification of the functor and action lack the
   rigid etale realization, its completion, the analytic functor and coherent action carriers.
 
-The stated theorem uses native injective resolutions and the native right-derived limit
-functor. No substitute predicates, admitted data, API lemmas or boundary-case theorems are asserted.
+No substitute predicates, admitted data, API lemmas or boundary-case theorems are asserted.
 -/
 
 namespace TauCetiRoadmap.EtaleHomotopyTypes
-
-open CategoryTheory CategoryTheory.Limits
-
-universe u
-
-/-! ## Layer 2: Materialization and relative monodromy -/
-
-/-- Every positive right-derived inverse limit of a finite abelian group system over a
-small cofiltered category vanishes. This is the abelian assertion of Schmidt–Stix Lemma A.7.
-The native derived functor retains its injective-resolution existence hypothesis. -/
-theorem finiteAbelianHigherLimits (I : Type u) [SmallCategory I] [IsCofiltered I]
-    [HasInjectiveResolutions (I ⥤ AddCommGrpCat.{u})]
-    (A : I ⥤ AddCommGrpCat.{u}) (hA : ∀ i, Finite (A.obj i))
-    (n : ℕ) (hn : 0 < n) :
-    letI : (lim : (I ⥤ AddCommGrpCat.{u}) ⥤ AddCommGrpCat.{u}).Additive :=
-      Functor.additive_of_preserves_binary_products _
-    IsZero (((lim : (I ⥤ AddCommGrpCat.{u}) ⥤ AddCommGrpCat.{u}).rightDerived n).obj A) := by
-  sorry
 
 end TauCetiRoadmap.EtaleHomotopyTypes

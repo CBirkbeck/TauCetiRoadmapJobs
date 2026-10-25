@@ -163,7 +163,7 @@ url = "https://doi.org/10.1007/BFb0080957"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 3 geometric-unibranch profiniteness"]
+cited_for = ["Layer 3 geometric-unibranch profiniteness", "Layer 3 finite-effacement and profinite local-coefficient detection"]
 
 [[source]]
 id = "SGA1"

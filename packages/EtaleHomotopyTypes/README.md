@@ -6,13 +6,13 @@
 
 This roadmap owns homotopy pro-local systems, Isaksen’s pro-space model, pro-coverings and pro-classifying spaces, the rigid simultaneous étale construction, its raw comparisons and fiber theorem, arithmetic relative mapping-class adapters, and the p-finite model comparison and complex comparison zigzag. Ordinary spaces, the generic Pro carrier, finite étale Galois categories, analytic spaces and ordinary sheaf cohomology are supplied objects.
 
-The ordinary Pro category and its Hom formula are stated by AdicSpacesPartII §R0.19.9; DiamondsAndVStacks §D0.13 and PerfectoidSpaces §P6.10 own bounded presentations. The specialization to simplicial sets retains their carrier and makes its additional size and reindexing requirements explicit. AlgebraicTopology Stages 6 and 8 own ordinary local coefficients, homotopy groups, Whitehead theory and representability; Completed/UniversalCovers Stages 2–4 own ordinary universal covers and deck transformations. StableHomotopyKTheory §§1.19–1.23 and 1.28–1.34 own discrete group nerves, translation categories and their covering/asphericity comparisons. The pro-level constructions here differ by their cofiltered diagrams and derived mapping problem.
+The ordinary Pro category and its Hom formula are stated by AdicSpacesPartII §R0.19.9; DiamondsAndVStacks §D0.13 and PerfectoidSpaces §P6.10 own bounded presentations. The specialization to simplicial sets retains their carrier and makes its additional size and reindexing requirements explicit. GeneralizedCohomology §G2.1 owns the ordinary unpointed and pointed Kan–Quillen model and simplicial enrichment; AlgebraicTopology Stages 6 and 8 own ordinary local coefficients, homotopy groups, Whitehead theory and representability; Completed/UniversalCovers Stages 2–4 own ordinary universal covers and deck transformations. StableHomotopyKTheory §§1.19–1.23 and 1.28–1.34 own discrete group nerves, translation categories and their covering/asphericity comparisons. The pro-level constructions here differ by their cofiltered diagrams and derived mapping problem.
 
 The compact compatible-family theorems, topological finite-generation predicate and finitely generated abelian pro-p structure theorem are already in the library, in the Tau Ceti modules listed below. ProfiniteProPGroups Layers 0, 3 and 4 own their profinite group interfaces. Homotopy groups use those predicates and structures without a second definition. The native singular functor, simplicial sets, abstract model-category class and abelian sheaf cohomology are already in the library and are imported with their actual size and existence hypotheses.
 
-EtaleCohomologyFoundations §§F.0.2 and F.0.A2 own finite étale fundamental groups, étale paths and the arithmetic exact sequence; its §F.0.4 owns purely inseparable topological invariance and §F.2.6 owns finite-coefficient Künneth. SchemeAndStackFoundations §§2.5, 2.10 and 2.15 own cohomology limits, finite étale sites and descent. Orbifolds O4-N owns ordinary numerable-submersion Čech descent. EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and E2.6 own coherent categorical infrastructure, generic hypercovers and bounded-below cohomological descent. ComplexComparisonPartII §C−1.1 owns analytification, §§C5.1 and C6.1 own sheaf–singular comparison, and §§C6.2–C6.3 own Riemann existence and finite Artin comparison.
+EtaleCohomologyFoundations §§F.0.2 and F.0.A2 own finite étale fundamental groups, étale paths and the arithmetic exact sequence; its §F.0.4 owns purely inseparable topological invariance and §F.2.6 owns finite-coefficient Künneth. SchemeAndStackFoundations §§0.9–0.12, 2.10 and 2.15 own approximation, geometric unibranchness, étale neighborhoods, site comparisons and cohomology limits. Orbifolds O4-N owns ordinary numerable-submersion Čech descent. EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and E2.6 own coherent categorical infrastructure, generic hypercovers and bounded-below cohomological descent. BordismFormalGroups §F6.5 owns generic model-diagram rectification, including Kan-complex diagrams; §6.9 here instantiates it for the étale functor and automorphism action. ComplexComparisonPartII §C−1.1 owns analytification, §§C5.1 and C6.1 own sheaf–singular comparison, and §§C6.2–C6.3 own Riemann existence and finite Artin comparison.
 
-The finite-coefficient K(π,1) applications, smooth-curve examples and geometric existence of hyperbolic neighborhoods belong to AnabelianGeometryAndNonabelianChabauty Layer 1. The raw effacement/product theorem needed before those applications is §3.9 here. The open-image and geometric-conjugacy adapters are §§4.0a–4.0b here; InverseGaloisAndArithmeticFundamentalGroups consumes them in its arithmetic applications. The general unstable-limit interface is an explicit contract with the supplied ordinary topology supplier. A¹-local realization and motivic K-theory belong to MotivicEtaleKTheory; ℓ-adic homotopy algebras and weights belong to EllAdicHomotopyTypesAndWeights; Generic Γ-spaces and group completion belong to StableHomotopyKTheory Layers 4–6; arithmetic identification of the spectrum-level symplectic Galois action belongs to ArithmeticKTheoryPartII. No geometric existence theorem is inferred from an elementary fibration supplied as input.
+The finite-coefficient K(π,1) applications, smooth-curve examples and geometric existence of hyperbolic neighborhoods belong to AnabelianGeometryAndNonabelianChabauty Layer 1. The raw effacement and product theorems needed before those applications are §§3.9a–3.9c here. The open-image and geometric-conjugacy adapters are §§4.0a–4.0b here; InverseGaloisAndArithmeticFundamentalGroups consumes them in its arithmetic applications. The general unstable-limit interface is an explicit contract with the supplied ordinary topology supplier. A¹-local realization and motivic K-theory belong to MotivicEtaleKTheory; ℓ-adic homotopy algebras and weights belong to EllAdicHomotopyTypesAndWeights; Generic Γ-spaces and group completion belong to StableHomotopyKTheory Layers 4–6; arithmetic identification of the spectrum-level symplectic Galois action belongs to ArithmeticKTheoryPartII. No geometric existence theorem is inferred from an elementary fibration supplied as input.
 
 ## Conventions
 
@@ -24,38 +24,77 @@ Relative morphisms are in the slice of the homotopy category over B, with triang
 
 For schemes use the small étale topology and native abelian sheaf cohomology, with sheafification and Ext existence installed in the stated universes. Raw locally constant abelian coefficients include arbitrary constant abelian groups. Finite-coefficient comparison has finite abelian coefficients. A variety means a separated finite-type scheme over the indicated field; reducedness is not needed for the raw construction, and nilpotent thickenings use étale topological invariance. A geometric closure in positive characteristic is a separable closure or an algebraic closure with the purely inseparable comparison retained. No prime is excluded from raw characteristic-zero fiber or product statements.
 
-For the complex comparison, schemes are degreewise quasi-projective over ℂ. Analytic points have their ordinary Euclidean topology; n-simplices use the real standard n-simplex with Mathlib’s explicit universe lift. On Δ¹ the ordered vertices are 0 and 1, and restriction of a singular path evaluates its corresponding endpoints. Discrete points of a simplicial scheme have degree n equal to Xₙ(ℂ). A grading is specified open-and-closed simplicial subschemes preserved by every operator, together with grade maps on morphisms. Fix a prime p, including p=2 and p=3; p=1 and p=0 are excluded. Continuous mod-p cohomology of a pro-object is a filtered colimit; ordinary cohomology of its materialization is a separate object. Cohomology of ordinary coproducts uses products; homology uses direct sums.
+For the complex comparison, the input schemes are degreewise quasi-projective over ℂ; analytic realizations of their hypercover pieces use the supplier’s full locally finite-type domain, allowing infinite disjoint unions. Analytic points have their ordinary Euclidean topology; n-simplices use the real standard n-simplex with Mathlib’s explicit universe lift. On Δ¹ the ordered vertices are 0 and 1, and restriction of a singular path evaluates its corresponding endpoints. Discrete points of a simplicial scheme have degree n equal to Xₙ(ℂ). A grading is specified open-and-closed simplicial subschemes preserved by every operator, together with grade maps on morphisms. Fix a prime p, including p=2 and p=3; p=1 and p=0 are excluded. Continuous mod-p cohomology of a pro-object is a filtered colimit; ordinary cohomology of its materialization is a separate object. Cohomology of ordinary coproducts uses products; homology uses direct sums.
 
 ## Exact supplier contracts
 
 ### From Mathlib
 
-- `SSet` is the presheaf category on the simplex category (`Mathlib/AlgebraicTopology/SimplicialSet/Basic.lean`, line 33). `SSet.KanComplex` and `SSet.KanComplex.hornFilling` (`Mathlib/AlgebraicTopology/SimplicialSet/KanComplex.lean`, lines 41 and 46) supply the fibrancy predicate and horn extension; no pro-space model instance is part of that predicate. `HomotopicalAlgebra.ModelCategory` (`Mathlib/AlgebraicTopology/ModelCategory/Basic.lean`, line 43) supplies abstract CM1–CM5, including finite limits/colimits, lifting and factorizations, without a chosen functorial factorization.
-- `TopCat.toSSet`, `TopCat.toSSetObjEquiv`, `SSet.toTop`, `sSetTopAdj` and `TopCat.toSSetIsoConst` (`Mathlib/AlgebraicTopology/SingularSet.lean`, lines 50, 57, 66, 73 and 99) supply singular simplices, realization and the adjunction. The constant comparison assumes `TotallyDisconnectedSpace`; it assumes neither nonemptiness nor compactness. `CategoryTheory.Functor.diag` and `CategoryTheory.Functor.uncurry` supply the ordinary diagonal of the singular bisimplicial diagram.
+- `SSet` is the presheaf category on the simplex category (`Mathlib/AlgebraicTopology/SimplicialSet/Basic.lean`, line 33). `SSet.KanComplex` and `SSet.KanComplex.hornFilling` (`Mathlib/AlgebraicTopology/SimplicialSet/KanComplex.lean`, lines 40 and 45) supply the fibrancy predicate and horn extension; no pro-space model instance is part of that predicate. `HomotopicalAlgebra.ModelCategory` (`Mathlib/AlgebraicTopology/ModelCategory/Basic.lean`, line 43) supplies abstract CM1–CM5, including finite limits/colimits, lifting and factorizations, without a chosen functorial factorization.
+- `TopCat.toSSet`, `TopCat.toSSetObjEquiv`, `SSet.toTop`, `sSetTopAdj` and `TopCat.toSSetIsoConst` (`Mathlib/AlgebraicTopology/SingularSet.lean`, lines 50, 56, 65, 73 and 97) supply singular simplices, realization and the adjunction. The constant comparison assumes `TotallyDisconnectedSpace`; it assumes neither nonemptiness nor compactness. `CategoryTheory.Functor.diag` and `CategoryTheory.Functor.uncurry` supply the ordinary diagonal of the singular bisimplicial diagram.
 - `AlgebraicGeometry.Scheme.smallEtaleTopology` (`Mathlib/AlgebraicGeometry/Sites/Etale.lean`, line 50) supplies the site, and `CategoryTheory.Sheaf.H` (`Mathlib/CategoryTheory/Sites/SheafCohomology/Basic.lean`, line 56) is Ext from the constant integral sheaf. It requires `HasSheafify` and `HasExt`; these are retained, rather than inferred from the notation H.
 - `ContinuousMap.evalAlgHom` and `ContinuousMap.compRightAlgHom` in `Mathlib/Topology/ContinuousMap/Algebra.lean` supply point evaluation and precomposition with their topological algebra hypotheses. `CategoryTheory.Ind` in `Mathlib/CategoryTheory/Limits/Indization/Category.lean` supplies the native carrier underlying ordinary Pro.
-
-The derived-limit acceptance theorem uses `CategoryTheory.Functor.rightDerived` (`Mathlib/CategoryTheory/Abelian/RightDerived.lean`, line 108), `CategoryTheory.HasInjectiveResolutions` and `CategoryTheory.Limits.lim` (`Mathlib/CategoryTheory/Limits/HasLimits.lean`, line 555). The limit functor’s additive structure is supplied locally by `CategoryTheory.Functor.additive_of_preserves_binary_products` (`Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean`, line 231). The injective-resolution structure is an explicit hypothesis in the signature; the statement is on the actual inverse-system functor and has no bounded or countable-index restriction.
+- `CategoryTheory.Functor.rightDerived` (`Mathlib/CategoryTheory/Abelian/RightDerived.lean`, line 108), `CategoryTheory.HasInjectiveResolutions` (`Mathlib/CategoryTheory/Preadditive/Injective/Resolution.lean`, line 70) and `CategoryTheory.Limits.lim` (`Mathlib/CategoryTheory/Limits/HasLimits.lean`, line 555) supply the abelian derived-limit formalism. The resolution class asserts existence; it is not chosen resolution data. `CategoryTheory.Functor.additive_of_preserves_binary_products` (`Mathlib/CategoryTheory/Preadditive/AdditiveFunctor.lean`, line 231) supplies additivity of the limit functor.
+- `ProfiniteGrp.profiniteCompletion`, `ProfiniteGrp.ProfiniteCompletion.homEquiv` and `ProfiniteGrp.ProfiniteCompletion.adjunction` (`Mathlib/Topology/Algebra/Category/ProfiniteGrp/Completion.lean`, lines 191, 205 and 215) supply ordinary group completion and its continuous-target universal property. `ProfiniteGrp.toFiniteQuotientFunctor` and `ProfiniteGrp.continuousMulEquivLimittoFiniteQuotientFunctor` (`Mathlib/Topology/Algebra/Category/ProfiniteGrp/Limits.lean`, lines 48 and 138) present a profinite group as the limit of its finite quotients.
+- `nonempty_sections_of_finite_cofiltered_system` (`Mathlib/CategoryTheory/CofilteredSystem.lean`, line 79) supplies compatible sections of a diagram of nonempty finite sets over a small cofiltered category. `TopCat.nonempty_limitCone_of_compact_t2_cofiltered_system` (`Mathlib/Topology/Category/TopCat/Limits/Konig.lean`, line 126) supplies the compact Hausdorff version. Neither needs surjective transitions or a directed-preorder presentation; both also allow an empty index, whose limit is a point.
 
 ### From Tau Ceti
 
 - `TauCeti.LocalCoefficientSystem` (`TauCeti/AlgebraicTopology/LocalCoefficient.lean`, line 43) is a functor from the fundamental groupoid to `ModuleCat`; `TauCeti.LocalCoefficientSystem.pullback`, `TauCeti.LocalCoefficientSystem.pullbackIdIso`, `TauCeti.LocalCoefficientSystem.pullbackCompIso` and `TauCeti.LocalCoefficientSystem.transport` (lines 75, 102, 136 and 252) supply ordinary coefficient transport. This carrier has no finite-rank or finite-monodromy condition. The pro-local-system construction is its filtered level version, using the ordinary topology comparison on simplicial realizations.
-- `TauCeti.exists_forall_map_eq_of_compact_t2` and `TauCeti.exists_forall_map_eq_of_finite` (`TauCeti/Topology/Compactness/InverseSystem.lean`, lines 78 and 96) supply compatible families for nonempty compact Hausdorff systems with continuous transitions, and nonempty finite systems over a directed preorder. Surjectivity of transition maps is not required. Reindexing supplies the required directed presentation.
+- `TauCeti.exists_forall_map_eq_of_compact_t2` and `TauCeti.exists_forall_map_eq_of_finite` (`TauCeti/Topology/Compactness/InverseSystem.lean`, lines 78 and 96) supply compatible families for nonempty compact Hausdorff systems with continuous transitions, and nonempty finite systems over a directed preorder. Surjectivity of transition maps is not required. For general cofiltered categories use the two native Mathlib results above directly; the Tau Ceti versions serve directed presentations.
+- `TauCeti.LocalCoefficientSystem.twistedCochainComplex` and `TauCeti.LocalCoefficientSystem.twistedCohomology` (`TauCeti/AlgebraicTopology/Cohomology/Twisted/Basic.lean`, lines 79 and 84) apply Hom into a coefficient module to twisted chains. Their convention is dual-system cohomology; arbitrary direct L-valued cochains are supplied by AlgebraicTopology Stage 6, without a reflexivity assumption.
+- `TauCeti.ProfiniteCompletion.continuousMonoidHomEquiv` and `TauCeti.ProfiniteCompletion.etaFn_bijective_of_finite` (`TauCeti/Topology/Algebra/Group/Profinite/Completion.lean`, lines 179 and 68) supply the unbundled continuous-target universal property, allowing a larger target universe, and bijectivity of the unit on finite groups.
 - `TauCeti.IsTopologicallyFinitelyGenerated` (`TauCeti/Topology/Algebra/Group/Generation.lean`, line 73) means that a finite subset generates a dense subgroup. `TauCeti.IsProP.exists_continuousMulEquiv_pi_padicInt_prod_pi_zmod` (`TauCeti/Topology/Algebra/Group/Profinite/ProP/StructureTheorem.lean`, line 59) supplies the decomposition into finitely many ℤₚ factors and finite cyclic p-power factors. Its assumptions are a prime p, a compact totally disconnected topological commutative group, the pro-p predicate and topological finite generation. Use it on higher homotopy groups after identifying their profinite topology.
 
 ### From TauCetiRoadmap.AdicSpacesPartII
 
 Section R0.19.9 supplies the Ind-opposite Pro carrier, the double-limit Hom formula with stage representatives and naturality, finite limits and flattening as cofiltered limit cones. DiamondsAndVStacks §D0.13 and PerfectoidSpaces §P6.10 supply bounded presentations and cardinal comparisons.
 
-What AdicSpacesPartII must provide (gap:pro-simplicial-reindexing): Extend §R0.19.9 to the declared universes of simplicial sets with cofinite directed reindexing, level representations of finite diagrams and monomorphisms, cofinal-refinement invariance and comparison of the small geometric-point indexing choices.
+What AdicSpacesPartII must provide (gap:pro-universe-extension): For the native category of simplicial sets in a fixed universe and diagrams small in a fixed larger universe, extend the Ind-opposite Pro carrier with a fully faithful comparison under further universe enlargement.
+
+What AdicSpacesPartII must provide (gap:pro-cofinal-invariance): For a small cofiltered diagram in the declared Pro carrier, prove that restriction along a cofinal inverse-index functor induces an isomorphism of pro-objects, naturally in the diagram.
+
+What AdicSpacesPartII must provide (gap:pro-cofinite-reindexing): For every small cofiltered diagram in the declared universes, supply a cofinal presentation indexed by a cofinite directed poset.
+
+What AdicSpacesPartII must provide (gap:pro-level-representations): For every finite loopless diagram (with no nonidentity endomorphisms) of pro-objects in a locally small category, supply an isomorphic diagram represented levelwise over one small cofiltered index.
+
+What AdicSpacesPartII must provide (gap:pro-monomorphism-presentations): For a monomorphism of small pro-groups, supply an isomorphic level representation by injective group homomorphisms.
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-Stages 6 and 8 supply ordinary local cohomology, Kan/cubical homotopy comparison, Whitehead and obstruction theory at their stated scopes; Completed/UniversalCovers Stages 2–4 supply ordinary covering classification and induced homotopy maps. The coefficient carrier and its pullback laws are the native Tau Ceti objects above.
+Stages 6 and 8 supply ordinary local cohomology, Kan/cubical homotopy comparison, Whitehead and obstruction theory at their stated scopes; Completed/UniversalCovers Stages 2–4 supply ordinary covering classification and induced homotopy maps. Stage 6.1 supplies direct L-valued cochains for arbitrary abelian local systems, including non-reflexive fibers. The coefficient carrier and its pullback laws are the native Tau Ceti objects above; abelian right-derived limits use Mathlib rather than another supplier construction.
 
-What AlgebraicTopology must provide (gap:ordinary-simplicial-homotopy): Extend Stage 8 by the proper simplicial Kan–Quillen model on native simplicial sets, functorial finite and first Postnikov truncations, local-coefficient Whitehead and Moore–Postnikov obstruction theory, and simplicial covering classification compared with the supplied topological covers.
+What AlgebraicTopology must provide (gap:simplicial-postnikov): For a Kan simplicial set K and n≥0, supply functorial truncations K→P_n K inducing isomorphisms on π_i for i≤n and vanishing π_i for i>n, with compatible transition maps and the fundamental-groupoid model for P_1.
 
-What AlgebraicTopology must provide (gap:unstable-limits-and-coefficients): Extend Stages 6 and 8 by arbitrary abelian local-coefficient cohomology and its derived mapping interpretation, unstable Reedy homotopy limits over small cofiltered indices, nonabelian lim¹ and higher abelian derived limits, and the connectivity and complete-convergence statements BK XI 5.2, XI 7.1, IX 5.1 and IX 5.4 require.
+What AlgebraicTopology must provide (gap:simplicial-local-whitehead): For a map of simplicial sets inducing a bijection on components and isomorphisms on fundamental groups at every basepoint, prove that it is a weak equivalence if it induces isomorphisms in every degree for every abelian local coefficient system on the target.
+
+What AlgebraicTopology must provide (gap:simplicial-moore-postnikov): For a Kan fibration, supply its functorial Moore–Postnikov lifting tower, with each abelian-stage obstruction in the local system of the fiber homotopy group and vanishing equivalent to a lift after the specified preceding-stage adjustment.
+
+What AlgebraicTopology must provide (gap:simplicial-covering-classification): For connected pointed simplicial sets, identify coverings with vertex-unique lifting with subgroups of π_1, compatibly with pullback and geometric realization as ordinary covering spaces.
+
+What AlgebraicTopology must provide (gap:local-coefficient-representability): For a simplicial set K, an abelian local system L and n≥1, identify H^n(K,L) with homotopy classes of sections of the associated twisted K(L,n)-fibration over K, naturally in K and L.
+
+What AlgebraicTopology must provide (gap:reedy-homotopy-limits): For a diagram of Kan simplicial sets over a small category, identify its homotopy limit, with its projection maps, with the totalization of a Reedy fibrant cosimplicial replacement.
+
+What AlgebraicTopology must provide (gap:nonabelian-lim1): For a levelwise inclusion G↪E of group diagrams over a small cofiltered category, define lim¹G as π_0(holim BG) and prove the natural pointed-set exact sequence 1→lim G→lim E→lim(E/G)→lim¹G→lim¹E.
+
+What AlgebraicTopology must provide (gap:bk-homotopy-limit-spectral-sequence): For a small cofiltered diagram of connected pointed Kan spaces, identify the E₂ˢ,ᵗ terms of the partial-totalization homotopy spectral sequence with limˢ π_t for 0≤s≤t, retaining the nonabelian group and pointed-set fringe (BK XI 5.2 and XI 7.1; cited by locator without text).
+
+What AlgebraicTopology must provide (gap:bk-tower-convergence): For the Reedy fibrant cosimplicial replacement of a small cofiltered diagram of connected pointed Kan spaces, prove that vanishing of all E₂ˢ,ᵗ for 1≤s≤t, including the nonabelian fringe, makes totalization connected and its edge maps π_n Tot→E₂⁰,ⁿ isomorphisms for n≥1 (BK XI 5.2, XI 7.1, IX 5.1 and IX 5.4; cited by locator without text).
+
+What AlgebraicTopology must provide (gap:multisimplicial-diagonal): For a map of bisimplicial sets that is a weak equivalence in every row, prove that its diagonal is a weak equivalence, naturally and iterably for finitely many simplicial directions.
+
+### From TauCetiRoadmap.GeneralizedCohomology
+
+Section G2.1 supplies the unpointed Kan–Quillen model, its pointed undercategory, simplicial mapping objects, tensors and cotensors, and realization–singular Quillen comparison. The following two model-compatibility statements are the precise additional inputs.
+
+What GeneralizedCohomology must provide (gap:kan-quillen-properness): Prove that the §G2.1 Kan–Quillen model is left and right proper, using its native weak equivalences, cofibrations and fibrations.
+
+What GeneralizedCohomology must provide (gap:kan-quillen-simplicial): Prove the simplicial model axiom for the §G2.1 mapping objects: a cofibration i and Kan fibration p induce a Kan fibration of mapping spaces, trivial whenever i or p is trivial.
+
+### From TauCetiRoadmap.BordismFormalGroups
+
+Section F6.5, “Coherent model diagrams and stable enhancements”, supplies the equivalence between coherent diagrams and strict model diagrams, including its Kan-complex instance, restriction functors and derived unit/counit. Use this theorem in §6.9 with the declared universe of schemes or of the discrete automorphism group; the actual étale diagram and its equivariant comparison are constructed here.
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
@@ -65,21 +104,27 @@ What StableHomotopyKTheory must provide (gap:surjective-nerve-fibration): Supply
 
 ### From TauCetiRoadmap.Orbifolds
 
-Section O4-N, under O4 item 3, supplies realization descent for the Čech nerve of a numerable surjective submersion using actual local sections and a subordinate partition of unity. The smooth quasi-projective complex application in §5.3 verifies those hypotheses on its analytic carrier. The distinct general hypercover and multisimplicial extension is the EnhancedDerivedSheaves contract below.
+Section O4-N, under O4 item 3, supplies realization descent for the Čech nerve of a numerable surjective submersion using actual local sections and a subordinate partition of unity. The smooth quasi-projective complex application in §5.3a verifies those hypotheses on its analytic carrier. General hypercover realization is the EnhancedDerivedSheaves contract below; the multisimplicial diagonal comparison is the AlgebraicTopology contract above.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
 Sections E0.2–E0.5 and E0.8 supply mapping spaces, coherent localizations, functor categories, spaces, smallness and filtered diagrams. Section E2.6 supplies generic hypercovers with degree-zero matching and uniformly bounded-below cohomological descent, including refinement. Its sheaf-descent conclusion is used only for cohomology.
 
-What EnhancedDerivedSheaves must provide (gap:coherent-pro-spaces): Supply the homotopy-coherent Pro category of an essentially small infinity-category, its mapping-space limit/colimit formula, universe comparisons and coherent diagram rectification on simplicial-set models.
+What EnhancedDerivedSheaves must provide (gap:coherent-pro-category): For an essentially small infinity-category C, construct Pro(C) as its free completion under small cofiltered limits, retaining its coherent universal property.
 
-What EnhancedDerivedSheaves must provide (gap:topological-hypercover-realization): Extend §E2.6 by the weak-homotopy-equivalence realization theorem for topological hypercovers whose matching maps admit local sections, with analytic étale refinement and levelwise-to-diagonal comparison for multisimplicial singular sets.
+What EnhancedDerivedSheaves must provide (gap:coherent-pro-mapping): For small cofiltered diagrams X:I→C and Y:J→C, prove Map_Pro(C)(X,Y)≃lim_j colim_i Map_C(X_i,Y_j), as an equivalence of spaces natural in both diagrams.
+
+What EnhancedDerivedSheaves must provide (gap:coherent-pro-universes): For a fully faithful universe enlargement C→C′, prove full faithfulness of the induced Pro comparison on diagrams whose indexing categories lie in the smaller specified universe.
+
+What EnhancedDerivedSheaves must provide (gap:topological-hypercover-realization): For an augmented simplicial topological space U_•→T whose every matching map, including U_0→T, has local continuous sections covering its target, prove diag Sing(U_•)→Sing(T) a weak equivalence, without a finiteness assumption on the set of pieces.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
 Sections 0.9–0.12 supply approximation, geometric unibranchness and étale neighborhoods; §§2.10 and 2.15 supply site comparisons and étale cohomology. Section 2.15 supplies continuity of abelian sheaf cohomology for qcqs inverse systems with affine transitions and compatible coefficient sheaves. Its geometric field-extension application uses constant coefficients and does not assume descent of arbitrary infinite-group torsors.
 
-What SchemeAndStackFoundations must provide (gap:rigid-components-and-curve-families): Supply open connected components of locally noetherian étale neighborhoods with size-controlled geometric points and separated matching fiber products, and the elementary-fibration input consisting of a smooth proper geometrically connected relative curve with finite étale boundary and nonempty affine complement fibers.
+What SchemeAndStackFoundations must provide (gap:connected-etale-components): For a locally noetherian scheme and a separated étale neighborhood, prove that the connected component through a specified geometric point is open and remains separated étale over the base.
+
+What SchemeAndStackFoundations must provide (gap:elementary-fibration-carrier): Define an elementary fibration X→Y as the complement of a finite étale relative divisor in a smooth proper geometrically connected relative curve over Y, with every complement fiber nonempty and affine; no existence theorem is requested.
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
@@ -87,13 +132,11 @@ Section F.0.2 supplies finite étale Galois categories, the geometric fiber func
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
-Section C−1.1 supplies the single analytic-space carrier, scheme analytification, complex-point topology, finite fiber products, nilpotent compatibility and étale local analytic isomorphisms. Sections C5.1 and C6.1 supply analytic sheaf/singular comparison with their local-contractibility hypotheses; §§C6.2–C6.3 supply finite-cover Riemann existence and finite-coefficient Artin comparison. On Spec ℂ the constant-coefficient degree-zero comparison is the identity. On Gₘ, the positive loop and ζₙ=exp(2πi/n) identify the coordinate’s Kummer class with 1; no inverse normalization is introduced here.
-
-What ComplexComparisonPartII must provide (gap:analytic-smooth-local-sections): Supply the compatibility of §C−1.1’s analytification with smooth maps between smooth quasi-projective schemes as surjective submersions when surjective, together with local analytic sections for those maps on the same carrier.
+Section C−1.1 supplies `complexSchemeAnalytification` on all locally finite-type complex schemes, including infinite disjoint unions. Its `complexSchemeAnalytification.complexPoints`, `complexSchemeAnalytification.fibreProduct`, `complexSchemeAnalytification.reduction`, `complexSchemeAnalytification.etaleLocalIso` and `complexSchemeAnalytification.smooth` supply the point topology, finite fiber products, nilpotent compatibility, étale local analytic isomorphisms and smooth local product charts. Those product charts give local sections through each chosen point of a smooth morphism and manifold charts when the scheme is smooth; surjectivity supplies a point above each base point. Sections C5.1 and C6.1 supply analytic sheaf/singular comparison with their local-contractibility hypotheses; §§C6.2–C6.3 supply finite-cover Riemann existence and finite-coefficient Artin comparison. On Spec ℂ the constant-coefficient degree-zero comparison is the identity. On Gₘ, the positive loop and ζₙ=exp(2πi/n) identify the coordinate’s Kummer class with 1; no inverse normalization is introduced here.
 
 ### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
-Sections 5.1–5.2 and 6.1–6.2 supply characteristic-zero embedded resolution, principalization and projective SNC compactification for finite-type schemes over a field, preserving the smooth locus and producing normal-crossing boundary after the specified blowups. Applied to the reduction and a projective compactification, these give the strong desingularizability hypothesis used in SGA1 XIII Proposition 4.6. The finite-cover product theorem of §3.9 retains this proof input and applies in characteristic zero, where prime-to-characteristic means all primes.
+Sections 5.1–5.2 and 6.1–6.2 supply characteristic-zero embedded resolution, principalization and projective SNC compactification for finite-type schemes over a field, preserving the smooth locus and producing normal-crossing boundary after the specified blowups. Applied to the reduction and a projective compactification, these give the strong desingularizability hypothesis used in SGA1 XIII Proposition 4.6. The finite-cover product theorem of §3.9a retains this proof input and applies in characteristic zero, where prime-to-characteristic means all primes.
 
 ### From TauCetiRoadmap.ProfiniteProPGroups
 
@@ -107,7 +150,7 @@ Layer 0 fixes the raw homotopy model and its detection theorems; Layer 1 adds co
 
 ### 0.1 Homotopy pro-local systems
 
-Specialize the supplied size-controlled Pro category to simplicial sets, with pointed objects represented by compatible actual vertices. A local system on X=(X_i) is a local system on one level, modulo pullback to a later level; its morphisms use the corresponding filtered colimit. The homotopy pro-local system Π_nX consists of the ordinary fundamental-groupoid homotopy local systems on the levels. For a pointed representative put π_n(X,x)=(π_n(X_i,x_i)); π_0 is pro-set-valued, π_1 pro-group-valued, and π_n is pro-abelian for n≥2. Connected means isomorphic to a levelwise connected diagram. This does not mean that its homotopy limit is path-connected. (I01, §§4–6, pp. 6–10; Corollary 7.5, pp. 12–13; I01 line 260).
+Specialize the supplied size-controlled Pro category to simplicial sets, with pointed objects represented by compatible actual vertices. A local system on X=(X_i) is a local system on one level, modulo pullback to a later level; its morphisms use the corresponding filtered colimit. The homotopy pro-local system Π_nX consists of the ordinary fundamental-groupoid homotopy local systems on the levels. For a pointed representative put π_n(X,x)=(π_n(X_i,x_i)); π_0 is pro-set-valued, π_1 pro-group-valued, and π_n is pro-abelian for n≥2. Connected means isomorphic to a levelwise connected diagram. This does not mean that its homotopy limit is path-connected. (I01, §§4–6, pp. 6–10; Corollary 7.5, pp. 12–13; I01 line 281 and I01 line 340).
 
 One proof route is the following. Use the imported Pro carrier and finite-diagram reindexing; retain the universe of the indexing category. Pull local systems back along transition maps and pass to the filtered colimit category. Ordinary homotopy groups and their path transport come from AlgebraicTopology. Define the homotopy pro-local systems with their transition morphisms, and compare evaluation at a compatible vertex with the levelwise π_n system.
 
@@ -122,11 +165,11 @@ One proof route is the following. Use the imported Pro carrier and finite-diagra
 - The constant two-point set has π_0 with two elements; a single basepoint cannot detect deletion of the other component.
 - On the constant circle, the integral sign local system has monodromy -1, unlike the constant integral system; both must occur in the local-system category.
 
-*Needs:* AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; Mathlib `CategoryTheory.Ind`; Mathlib `SSet`; AlgebraicTopology Stage 8 and its ordinary simplicial contract; AlgebraicTopology Stage 6 and its local-coefficient contract.
+*Needs:* AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance and gap:pro-level-representations); Mathlib `CategoryTheory.Ind` and `SSet`; AlgebraicTopology Stages 6 and 8 (direct local coefficients, ordinary homotopy groups and path transport).
 
 ### 0.2 Isaksen homotopy model structure
 
-On Pro(SSet), take weak equivalences to be maps inducing an isomorphism of π_0 and of every homotopy pro-local system Π_nX→f*Π_nY, n≥1. Cofibrations are essentially levelwise monomorphisms, and fibrations have the right lifting property against trivial cofibrations. These classes form Isaksen’s simplicial model structure and induce its pointed model and homotopy categories. Every object is cofibrant. Its strict predecessor instead inverts essentially levelwise ordinary weak equivalences. Factorizations here are not asserted functorial. (I01, Definitions 6.1–6.3, Theorem 6.4, pp. 9–10; §§12–16, pp. 20–32; I01 line 398).
+On Pro(SSet), take weak equivalences to be maps inducing an isomorphism of π_0 and of every homotopy pro-local system Π_nX→f*Π_nY, n≥1. Cofibrations are essentially levelwise monomorphisms, and fibrations have the right lifting property against trivial cofibrations. These classes form Isaksen’s simplicial model structure and induce its pointed model and homotopy categories. Every object is cofibrant. Its strict predecessor instead inverts essentially levelwise ordinary weak equivalences. Factorizations here are not asserted functorial. (I01, Definitions 6.1–6.3, Theorem 6.4, pp. 9–10; §§12–16, pp. 20–32; I01 line 412 and I01 line 423).
 
 One proof route is the following. Import the proper simplicial Kan–Quillen model from the supplied topology owner, including the ordinary obstruction theory requested there. Use cofinite reindexing and finite predecessor matching objects. The increasing connectivity bound gives Isaksen’s strong fibrations (Definition 6.5). Apply the two factorizations and lifting theorem, I01 Propositions 15.1, 15.2, 15.4; then the pushout-product argument of §16. Properness is isolated in the next target because its original proof needs the published correction.
 
@@ -141,7 +184,7 @@ One proof route is the following. Import the proper simplicial Kan–Quillen mod
 - For K=∏ₙ≥₁K(Z,n), the map cK→(P_m K)_m is an Isaksen equivalence but not a strict equivalence: every finite truncation misses nonzero higher homotopy groups. This avoids relying on a finiteness claim about a particular sphere.
 - The map from the singular S² to a point is not an Isaksen equivalence even though it preserves π_0 and π_1.
 
-*Needs:* §0.1; Mathlib `HomotopicalAlgebra.ModelCategory`; AlgebraicTopology Stage 8 and its ordinary simplicial contract; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract.
+*Needs:* §0.1; Mathlib `HomotopicalAlgebra.ModelCategory`; GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial); AlgebraicTopology Stage 8 (gap:simplicial-postnikov and gap:simplicial-moore-postnikov); AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-level-representations).
 
 ### 0.3 Properness and strong fibrations
 
@@ -149,7 +192,7 @@ Isaksen’s model structure is left and right proper. A strong fibration is a fi
 
 One proof route is the following. Left properness follows from cofibrancy of every object. For right properness, reduce a fibration to a retract of a strong fibration and use the levelwise connectivity criterion. Use the level-presentation repair of IStr, proof of Theorem 4.15 and Remark 4.16, pp. 11–12 (IStr line 507): insert an intervening pro-isomorphism before applying levelwise right properness; a simultaneous favorable level presentation is not assumed. Apply the right-proper pullback square; do not substitute the strict model’s weak equivalences.
 
-*Needs:* §0.2; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+*Needs:* §0.2; GeneralizedCohomology §G2.1 (gap:kan-quillen-properness).
 
 ### 0.4 Connected pointed homotopy detection
 
@@ -165,7 +208,7 @@ A map f:X→Y of pro-spaces is an Isaksen weak equivalence if and only if π_0(f
 
 One proof route is the following. A weak equivalence admits a level presentation with connectivity increasing arbitrarily far, so ordinary local-coefficient comparison gives every fixed cohomological degree in the filtered colimit. Conversely replace by a cofibration and test maps into strongly fibrant objects. A finite Moore–Postnikov lifting tower has obstruction classes in local cohomology; kill each using the assumed isomorphisms. Pass to the inverse limit of the matching fibrations and use the model’s fibrant retract theorem. The ordinary local-coefficient Whitehead and Moore–Postnikov inputs are explicitly specified in the AlgebraicTopology contract, not asserted by its existing Kan predicate.
 
-*Needs:* §0.1; §0.2; AlgebraicTopology Stage 6 and its local-coefficient contract; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+*Needs:* §§0.1–0.2; AlgebraicTopology Stages 6 and 8 (direct L-valued cochains, gap:local-coefficient-representability, gap:simplicial-local-whitehead and gap:simplicial-moore-postnikov).
 
 ### Examples
 
@@ -173,17 +216,17 @@ The constant singular circle has π₁=cℤ and πₙ=0 for n≥2. The two-point
 
 ### Dependencies
 
-AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; Mathlib `CategoryTheory.Ind`; Mathlib `SSet`; AlgebraicTopology Stage 8 and its ordinary simplicial contract; AlgebraicTopology Stage 6 and its local-coefficient contract; Mathlib `HomotopicalAlgebra.ModelCategory`. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance, gap:pro-cofinite-reindexing and gap:pro-level-representations); Mathlib `CategoryTheory.Ind`, `SSet` and `HomotopicalAlgebra.ModelCategory`; AlgebraicTopology Stages 6 and 8 (direct local coefficients, homotopy groups, gap:local-coefficient-representability, gap:simplicial-postnikov, gap:simplicial-local-whitehead and gap:simplicial-moore-postnikov); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial). The item-level Needs lines give the direct inputs.
 
 ## Layer 1: Coverings and classifying pro-spaces
 
 ### 1.1 Coverings of pro-spaces
 
-A simplicial covering p:E→X has the unique lifting property for every vertex inclusion Δ[0]→Δ[n], including every choice of vertex. A §1.1 is a pro-morphism isomorphic to a levelwise simplicial covering; connected Galois coverings have a levelwise presentation with E_i/Aut_Xi(E_i)≅X_i. Universal pointed coverings are formed from the levelwise universal simplicial coverings. The deck group is a pro-group, not an unqualified single discrete group. (SS, Appendix A.1, Definition A.1 and preceding paragraphs, p. 853; SS line 1430).
+A simplicial covering p:E→X has the unique lifting property for every vertex inclusion Δ[0]→Δ[n], including every choice of vertex. A pro-covering is a pro-morphism isomorphic to a levelwise simplicial covering; connected Galois coverings have a levelwise presentation with E_i/Aut_Xi(E_i)≅X_i. Universal pointed coverings are formed from the levelwise universal simplicial coverings. The deck group is a pro-group, not an unqualified single discrete group. (SS, Appendix A.1, Definition A.1 and preceding paragraphs, p. 853; SS line 1457).
 
 One proof route is the following. Import ordinary simplicial covering theory, compared by realization with the supplied topological universal-cover API; this extension is specified in the AlgebraicTopology contract. Use the supplied reindexing to make a finite covering diagram levelwise. Define the pro-cover property invariantly under pro-isomorphism. Apply the ordinary pointed universal-cover functor levelwise and retain its transition maps and deck actions.
 
-- Pullback of a §1.1 is a §1.1; finite degree is preserved under base change.
+- Pullback of a pro-covering is a pro-covering; finite degree is preserved under base change.
 - On connected pointed levels the universal covering kills π_1 and preserves π_n for n≥2.
 - The deck pro-group of the pointed universal covering is π_1(X,x).
 - For a constant simplicial covering its realization agrees with the ordinary covering-space interface.
@@ -194,7 +237,7 @@ One proof route is the following. Import ordinary simplicial covering theory, co
 - The connected degree-two cover of the singular circle corresponds to 2Z⊂Z and has deck group Z/2.
 - The Kan fibration Sing(S¹)→* is not a covering: the fiber contains nonconstant singular simplices, violating uniqueness over a vertex.
 
-*Needs:* §0.1; AlgebraicTopology Stage 8 and its ordinary simplicial contract; StableHomotopyKTheory §§1.19–1.23, 1.28–1.34.
+*Needs:* §0.1; AlgebraicTopology Stage 8 (gap:simplicial-covering-classification); Completed/UniversalCovers Stages 2–4; StableHomotopyKTheory §§1.19–1.23, 1.28–1.34.
 
 ### 1.2 Covering associated to a sub-pro-group
 
@@ -213,7 +256,7 @@ One proof route is the following. Represent the subgroup monomorphism levelwise 
 - For U=π_1(X), h is an isomorphism over X. Replacing it by the universal cover of the circle would give π₁=0 instead of ℤ.
 - For U=0⊂Z the cover of Sing(S¹) is universal and has infinite fiber; restricting the construction to finite covers would fail this test.
 
-*Needs:* §1.1; §0.2; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract.
+*Needs:* §1.1; §0.2; AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing, gap:pro-level-representations and gap:pro-monomorphism-presentations).
 
 ### 1.3 Coverings under homotopy equivalence
 
@@ -225,23 +268,23 @@ One proof route is the following. Transport sub-pro-groups along the pro-π_1 is
 
 ### 1.4 Coverings are pro-fibrations
 
-Every §1.1 is a fibration in Isaksen’s model structure. (SS, Lemma A.4, p. 854; SS line 1493).
+Every pro-covering is a fibration in Isaksen’s model structure. (SS, Lemma A.4, p. 854; SS line 1493).
 
 One proof route is the following. For fibrancy use a cofinite level presentation; the relative matching maps are coverings, hence co-1-fibrations. Apply the strong-fibration criterion, and pass to isomorphic presentations.
 
-*Needs:* §1.1; §0.2; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract.
+*Needs:* §§1.1 and 0.2; AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-level-representations).
 
 ### 1.5 Base change of homotopy isomorphisms
 
-For maps f:X→W and g:Y→W and an isomorphism γ:X≅Y in Ho(Pro(SSet)) with gγ=f, every §1.1 W′→W admits an isomorphism γ′:X×_W W′≅Y×_W W′ in the homotopy category, compatible with γ and the maps to W′. Choices can be made compatibly with morphisms of the covering. If W′/W is connected Galois, the induced cohomology isomorphisms with any constant abelian group A are equivariant for its deck pro-group action. Existence, rather than uniqueness of γ′, is asserted. (SS, Proposition A.6, pp. 855–856; SS line 1512).
+For maps f:X→W and g:Y→W and an isomorphism γ:X≅Y in Ho(Pro(SSet)) with gγ=f, every pro-covering W′→W admits an isomorphism γ′:X×_W W′≅Y×_W W′ in the homotopy category, compatible with γ and the maps to W′. Choices can be made compatibly with morphisms of the covering. If W′/W is connected Galois, the induced cohomology isomorphisms with any constant abelian group A are equivariant for its deck pro-group action. Existence, rather than uniqueness of γ′, is asserted. (SS, Proposition A.6, pp. 855–856; SS line 1512).
 
 One proof route is the following. Replace W by a fibrant object and transport the connected covering category along the equivalence; handle components separately. Represent γ and the structural homotopy by actual maps into fibrant replacements. Lift that homotopy along the covering to make the maps compatible. Right properness identifies the strict pullbacks with the required derived pullbacks. Deck transformations commute with these lifted maps, giving equivariance after cohomology.
 
-*Needs:* §1.3; §0.3; AlgebraicTopology Stage 6 and its local-coefficient contract; §1.4.
+*Needs:* §1.3; §0.3; AlgebraicTopology Stage 6 (direct local coefficients); §1.4.
 
 ### 1.6 Classifying pro-space and fibrant replacement
 
-For a pro-group G=(G_i) use the supplied discrete nerves BG_i and EG_i levelwise. On a cofinite directed presentation define G_i* = ∏ⱼ≤ᵢG_j, embed G_i by all transition maps (including the identity factor), and set B*G_i=E(G_i*)/G_i for the resulting right action. Then BG→B*G is a levelwise ordinary weak equivalence and B*G is fibrant in the Isaksen pointed model. BG is not declared fibrant merely because each level is Kan. (SS, Lemma A.14, pp. 862–864; SS line 1810).
+For a pro-group G=(G_i) use the supplied discrete nerves BG_i and EG_i levelwise. On a cofinite directed presentation define G_i* = ∏ⱼ≤ᵢG_j, embed G_i by all transition maps (including the identity factor), and set B*G_i=E(G_i*)/G_i for the resulting right action. Then BG→B*G is a levelwise ordinary weak equivalence and B*G is fibrant in the Isaksen pointed model. BG is not declared fibrant merely because each level is Kan. (SS, Lemma A.14, pp. 862–864; SS line 1833).
 
 One proof route is the following. Import the discrete free, contractible EG and its quotient; build G* from finite predecessor products. The diagonal inclusion of G_i into G_i* is injective, and the product projection to predecessor factors is surjective. The associated nerve map is a Kan fibration; this discrete lemma is the StableHomotopyKTheory nerve contract. Check the relative matching maps for B*G are co-1-fibrations. Both quotient models have π_1=G_i and no higher groups, so the comparison is a level weak equivalence.
 
@@ -256,7 +299,7 @@ One proof route is the following. Import the discrete free, contractible EG and 
 - For constant C_p, BC_p has π_1=C_p and all π_n for n≥2 zero; it need not have finitely many nondegenerate simplices.
 - For G=(Z/p^r), π_1(BG) is this inverse system; it is not the constant discrete additive group Z_p.
 
-*Needs:* §0.2; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; StableHomotopyKTheory §§1.19–1.23, 1.28–1.34.
+*Needs:* §0.2; AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-cofinal-invariance); StableHomotopyKTheory §§1.19–1.23, 1.28–1.34 (gap:surjective-nerve-fibration).
 
 ### 1.7 Full faithfulness of pro-classifying spaces
 
@@ -272,13 +315,13 @@ For connected pointed X and any pro-group G, π_1 induces a natural bijection Ho
 
 One proof route is the following. Use the ordinary first Postnikov truncation X_i→BΠ_1X_i. Inclusion of the chosen object gives BG_i→BΠ_1X_i and is a level weak equivalence when the levels are connected. Represent maps into fibrant B*G. Ordinary maps from a groupoid nerve to a group nerve and pointed homotopies correspond to homomorphisms; pointing removes conjugation. Use the lim-colim Hom formula and reindexing for the pro statement. The first Postnikov construction is part of the ordinary topology supplier contract.
 
-*Needs:* §1.6; §0.4; AlgebraicTopology Stage 8 and its ordinary simplicial contract; §1.7.
+*Needs:* §§1.6–1.7 and 0.4; AlgebraicTopology Stage 8 (gap:simplicial-postnikov).
 
 ### 1.9 The first classifying morphism
 
 For connected pointed X define c_X:X→Bπ_1(X) in the pointed homotopy category as the unique class corresponding to id under pro-BG representability. Call X a raw K(π,1) when π_n(X)=0 for all n≥2. Then c_X is an isomorphism if and only if X is a raw K(π,1). This is a property of the full pro-homotopy type, distinct from a finite- or p-coefficient convention on schemes. (SS, Definition A.17 and Corollary A.18, p. 866; SS line 1953).
 
-One proof route is the following. Use representability with G=π_1(X) to obtain the actual morphism class. Naturality follows from the uniqueness part of the bijection. Its π_1 map is the identity; the target’s higher groups vanish. Apply connected detection. The comparison with a finite-coefficient scheme predicate uses the geometric hypotheses and effacement criterion of §3.9.
+One proof route is the following. Use representability with G=π_1(X) to obtain the actual morphism class. Naturality follows from the uniqueness part of the bijection. Its π_1 map is the identity; the target’s higher groups vanish. Apply connected detection. The comparison with a finite-coefficient scheme predicate uses the geometric hypotheses and effacement criterion of §3.9b.
 
 - π_1(c_X)=id under the canonical BG identification.
 - For pointed f:X→Y, c_Y∘f=Bπ_1(f)∘c_X.
@@ -299,7 +342,7 @@ For c Sing(S¹), the subgroup 2ℤ produces the degree-two cover with deck group
 
 ### Dependencies
 
-Earlier layers 0; AlgebraicTopology Stage 8 and its ordinary simplicial contract; StableHomotopyKTheory §§1.19–1.23, 1.28–1.34; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; AlgebraicTopology Stage 6 and its local-coefficient contract. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+Layer 0; AdicSpacesPartII §R0.19.9 (gap:pro-cofinal-invariance, gap:pro-cofinite-reindexing, gap:pro-level-representations and gap:pro-monomorphism-presentations); AlgebraicTopology Stages 6 and 8 (direct local coefficients, gap:simplicial-postnikov and gap:simplicial-covering-classification); Completed/UniversalCovers Stages 2–4; StableHomotopyKTheory §§1.19–1.23, 1.28–1.34 (gap:surjective-nerve-fibration). The item-level Needs lines give the direct inputs.
 
 ## Layer 2: Materialization and relative monodromy
 
@@ -320,15 +363,15 @@ One proof route is the following. Constant objects preserve cofibrations and tri
 - For a system of finite sets considered as discrete spaces, Mat is the discrete set of compatible tuples and has no positive homotopy groups.
 - For the discrete diagram *→{0,1} sending * to 0, a degree-zero choice (*,1) in the cosimplicial replacement has no extension to Tot_1. The compatibility equations exclude it; retaining only independent product coordinates would admit it.
 
-*Needs:* §0.2; AlgebraicTopology Stage 8 and its ordinary simplicial contract; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract.
+*Needs:* §0.2; AlgebraicTopology Stage 8 (gap:reedy-homotopy-limits and gap:simplicial-postnikov); AdicSpacesPartII §R0.19.9 (gap:pro-cofinal-invariance).
 
 ### 2.2 Vanishing of profinite derived limits
 
-For an inverse system G of finite groups over a small cofiltered category, the nonabelian derived-limit pointed set lim¹G is trivial. For a system A of finite abelian groups, lim^s A=0 for every s≥1. The headline `finiteAbelianHigherLimits` states this on a native functor A : I ⥤ AddCommGrpCat over any small cofiltered category I, with a chosen native injective-resolution structure on that functor category, finite underlying groups at every object and an explicit positive degree; the conclusion is that the native right-derived limit object is zero. The assertion is invariant under pro-isomorphism, so it applies to profinite pro-groups represented by finite groups, without assuming countable indexing. (SS, Lemma A.7, pp. 856–857; SS line 1573).
+For an inverse system G of finite groups over a small cofiltered category, the nonabelian derived-limit pointed set lim¹G is trivial. For a system A of finite abelian groups, lim^s A=0 for every s≥1. For the abelian statement use a native functor A : I ⥤ AddCommGrpCat, assume injective resolutions exist in that functor category, require every A_i finite and s>0, and conclude that the s-th native right-derived limit is zero. The assertion is invariant under pro-isomorphism, so it applies to profinite pro-groups represented by finite groups, without assuming countable indexing. (SS, Lemma A.7, pp. 856–857; SS line 1573).
 
-One proof route is the following. Pass to a cofinite directed presentation. Embed G_i in G_i*=∏ⱼ≤ᵢG_j through all transition maps. Its matching projections are surjective and the product system is derived-limit acyclic. The finite quotients G_i*/G_i are sets with transitive G_i* action; compactness supplies compatible lifts, giving the nonabelian lim¹ assertion. In the abelian case use 0→A→A*→A*/A→0, acyclicity of A*, and dimension shifting. The higher derived-limit formalism is included in the topology supplier contract. Use the pinned compact compatible-family theorems for the finite fibers.
+One proof route is the following. Pass to a cofinite directed presentation. Embed G_i in G_i*=∏ⱼ≤ᵢG_j through all transition maps. Its matching projections are surjective and the product system is derived-limit acyclic. The finite quotients G_i*/G_i are sets with transitive G_i* action; compactness supplies compatible lifts, giving the nonabelian lim¹ assertion. In the abelian case use 0→A→A*→A*/A→0, acyclicity of A*, and dimension shifting. Use Mathlib’s abelian right-derived functor formalism, assuming injective resolutions exist. Apply `nonempty_sections_of_finite_cofiltered_system` directly to the nonempty finite fibers; compact Hausdorff fibers use `TopCat.nonempty_limitCone_of_compact_t2_cofiltered_system`. Cofinite reindexing here serves the finite predecessor products, not the existence of compatible families.
 
-*Needs:* AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; ProfiniteProPGroups Layer 0; Tau Ceti compact inverse systems; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+*Needs:* AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-cofinal-invariance); Mathlib `CategoryTheory.Functor.rightDerived`, `CategoryTheory.HasInjectiveResolutions`, `CategoryTheory.Limits.lim`, `CategoryTheory.Functor.additive_of_preserves_binary_products` and `nonempty_sections_of_finite_cofiltered_system`; AlgebraicTopology Stage 8 (gap:nonabelian-lim1); ProfiniteProPGroups Layer 0.
 
 ### 2.3 Homotopy groups of profinite pro-spaces
 
@@ -336,7 +379,7 @@ If pointed X has π_0(X)=* and every π_n(X), n≥1, is a profinite pro-group, t
 
 One proof route is the following. Replace the levelwise Kan diagram by a Reedy fibrant cosimplicial replacement and use the actual compatible partial totalizations. Its fringe spectral sequence has E₂ˢ,ᵗ = limˢ πₜ(X), abelian for t≥2 and with the nonabelian group and pointed-set fringe retained. Apply §2.2, then the supplied BK IX 5.1 connectivity and IX 5.4 complete-convergence statements, with XI 5.2 and XI 7.1 identifying the tower and its E₂ page. The comparison is the projection-induced edge map. The BK inputs are cited by locator without text; a collapsed E₂ page is not itself convergence.
 
-*Needs:* §2.1; §2.2; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+*Needs:* §§2.1–2.2; AlgebraicTopology Stage 8 (gap:bk-homotopy-limit-spectral-sequence, gap:bk-tower-convergence and gap:reedy-homotopy-limits).
 
 ### 2.4 Endpoint-preserving pro-cylinders
 
@@ -354,7 +397,7 @@ One proof route is the following. Construct the quotient levelwise and use ordin
 - For X={x_0,x_1,a}, Cyl₂(X) is two isolated vertices together with Δ[1] over a. This projection is not a Kan fibration: a Kan horn witnessing an inverse to the directed edge has no filler.
 - For X=Δ[1] with its endpoints, a homotopy fixes both endpoints at every time, as required for ordinary relative path homotopy. Moving either endpoint is excluded by the two-point undercategory.
 
-*Needs:* §0.2; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+*Needs:* §0.2; GeneralizedCohomology §G2.1 (simplicial tensors and pointed model).
 
 ### 2.5 Monodromy on pointed mapping classes
 
@@ -421,13 +464,15 @@ For the finite cyclic system C_(pʳ), materialization of its classifying pro-spa
 
 ### Dependencies
 
-Earlier layers 0, 1; AlgebraicTopology Stage 8 and its ordinary simplicial contract; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; ProfiniteProPGroups Layer 0; Tau Ceti compact inverse systems. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+Layers 0–1; AdicSpacesPartII §R0.19.9 (gap:pro-cofinite-reindexing and gap:pro-cofinal-invariance); AlgebraicTopology Stage 8 (gap:reedy-homotopy-limits, gap:nonabelian-lim1, gap:bk-homotopy-limit-spectral-sequence, gap:bk-tower-convergence and gap:simplicial-postnikov); GeneralizedCohomology §G2.1; Mathlib abelian derived limits and cofiltered compatible-family theorems; ProfiniteProPGroups Layer 0. The item-level Needs lines give the direct inputs.
 
 ## Layer 3: Rigid étale types and finite-cover comparison
 
 ### 3.0a Profinite completion of a pro-group
 
-For a small pro-group G, define its profinite completion by its finite quotient maps, using a small skeleton of finite groups. The completion is a pro-system of finite groups and hence a compact totally disconnected topological group. Its unit G → Ĝ induces, for every profinite group H, a natural bijection Hom_cont(Ĝ,H) ≃ Hom_Pro(Grp)(G,H), where H on the right is represented by its finite quotients. All transition and comparison maps retain their topology and source and target. This construction does not replace G by the constant discrete group of its inverse limit (SS, discussion before Corollary 2.5, p. 826; SS line 369).
+For a small cofiltered group diagram G:I→Grp, define its profinite completion Ĝ as lim_i (`ProfiniteGrp.profiniteCompletion`(G_i)) in `ProfiniteGrp`. Regard this profinite group as a pro-group through `ProfiniteGrp.toFiniteQuotientFunctor`; the native levelwise completion units and the finite-target limit comparison below define the unit from G to this finite-quotient pro-group. Its unit G → Ĝ induces, for every profinite group H, a natural bijection Hom_cont(Ĝ,H) ≃ Hom_Pro(Grp)(G,H), where H on the right is represented by its finite quotients. All transition and comparison maps retain their topology and source and target. This construction does not replace G by the constant discrete group of its inverse limit (SS, discussion before Corollary 2.5, p. 826; SS line 369).
+
+One proof route is the following. For any small cofiltered diagram P in ProfiniteGrp and finite discrete group F, prove Hom_cont(lim_i P_i,F)≃colim_i Hom_cont(P_i,F). A continuous homomorphism on the limit factors through its image in a finite quotient of a stage; compactness puts the images of sufficiently late stages inside that finite subgroup, giving a stage homomorphism. Equality of stage maps is likewise detected eventually. Apply this with P_i=Ĝ_i. This argument needs neither surjective transitions nor countable indices. Apply the native levelwise completion adjunction and then the target H’s finite-quotient presentation; the resulting limit-colimit expression is precisely the supplied pro-Hom formula. This also proves invariance under cofinal refinement and gives the pro-unit, rather than a unit into the constant abstract limit.
 
 - The unit induces the same finite quotients and is functorial under pro-group homomorphisms.
 - Precomposition by the unit is the stated bijection for every profinite target, with its continuous maps.
@@ -439,27 +484,30 @@ For a small pro-group G, define its profinite completion by its finite quotient 
 - For constant ℤ, completion is ℤ̂, and maps to C₂ are exactly the two choices for the image of 1; the discrete constant ℤ̂ is not the resulting pro-object.
 - For the system C_(pʳ), the finite quotients remain C_(pʳ), including p=2 and p=3; its completion is the same pro-system, rather than a constant group.
 - For constant S₃, completion is S₃ and its three order-two subgroups remain distinct; abelianization C₂ is not a completion.
+- For ℤ ←×2 ℤ ←×2 ⋯, the abstract limit is 0, but the completed limit is ∏_(ℓ≠2) ℤ_ℓ: its 2-adic coordinate is infinitely 2-divisible and therefore zero, and multiplication by 2 is invertible on every odd-adic coordinate. Both its continuous maps to C₃ and the pro-maps from the tower to C₃ number 3. Completing the abstract limit would give only one map.
 
-*Needs:* AdicSpacesPartII §R0.19.9 and its size/reindexing contract; ProfiniteProPGroups Layer 0; ordinary finite-group and profinite-limit constructions.
+*Needs:* AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); Mathlib `ProfiniteGrp.profiniteCompletion`, `ProfiniteGrp.ProfiniteCompletion.homEquiv`, `ProfiniteGrp.ProfiniteCompletion.adjunction`, `ProfiniteGrp.toFiniteQuotientFunctor` and `ProfiniteGrp.continuousMulEquivLimittoFiniteQuotientFunctor`; ProfiniteProPGroups Layer 0; Mathlib compact cofiltered-limit existence.
 
 ### 3.1 Rigid étale covers
 
-For a locally noetherian scheme X in a fixed universe, a rigid cover is a disjoint union U=∐_x U_x indexed by its geometric points in the chosen small presentation, each U_x connected, étale and separated over X, with a specified lift u_x of x. Morphisms preserve these lifts. The geometric-point presentation and its universe enlargement comparisons are retained. A rigid pullback along f:X→Y uses the component of X×_Y U_f(x) containing the specified lifted point, separately for every x; this may repeat a component of the ordinary pullback. (IEt, Definitions 5.1, 5.3 and Proposition 5.5, pp. 13–14; IEt line 572).
+For a locally noetherian scheme X in a fixed universe, a rigid cover is a disjoint union U=∐_x U_x indexed by its geometric points in the chosen small presentation, each U_x connected, étale and separated over X, with a specified lift u_x of x. Morphisms preserve these lifts. The geometric-point presentation and its universe enlargement comparisons are retained. A rigid pullback along f:X→Y uses the component of X×_Y U_f(x) containing the specified lifted point, separately for every x; this may repeat a component of the ordinary pullback. (IEt, Definitions 5.1, 5.3 and Proposition 5.5, pp. 13–14; IEt line 599, IEt line 624 and IEt line 634).
 
-One proof route is the following. Use the small étale site and a size-controlled geometric-point indexing family; existence of connected components as open subschemes follows from local noetherianity. Take connected pointed components of the ordinary fiber products. A point-preserving map between connected étale separated neighborhoods is unique. Prove the rigid pullback universal property. Size and choice compatibility are part of the Pro supplier contract, rather than a claim that a class of all geometric points is a small set.
+One proof route is the following. Use the small étale site and a size-controlled geometric-point indexing family; existence of connected components as open subschemes follows from local noetherianity. Take connected pointed components of the ordinary fiber products. A point-preserving map between connected étale separated neighborhoods is unique. Prove the rigid pullback universal property. Choose a separable closure of each residue field and a bounded small collection of its embeddings in separably closed extensions. Prove that replacing these choices or enlarging the bound gives common cofinal rigid-cover refinements, natural under scheme maps; §3.2 extends them to hypercovers. For a cofiltered system of finite étale neighborhoods with nonempty lift fibers, those fibers are finite and `nonempty_sections_of_finite_cofiltered_system` supplies compatible choices directly. General rigid neighborhoods use the common pointed refinements, without any finite-fiber assumption. These are scheme-specific comparison targets here; no class of all geometric points is asserted small (IEt, §5 and Proposition 5.5, pp. 13–14; IEt line 594 and IEt line 634).
 
 - There is at most one rigid cover map over a fixed base map.
 - Rigid maps V→f*U over Z→X correspond to rigid maps V→U over Z→Y.
 - Iterated rigid pullback agrees, by its canonical isomorphism, with pullback along the composite.
 - Each chosen connected piece is separated étale; the disjoint union is a covering family, with no finite-component requirement.
+- Replacement of the bounded geometric-point choices induces common cofinal rigid-cover refinements; the comparisons respect identity, composition and further enlargement.
 
 **Checks.**
 
 - Over an algebraically closed field, a connected étale neighborhood of the canonical point is Spec of that field and its chosen lift is unique.
 - For A¹_C→Spec C and the canonical point cover of Spec C, ordinary pullback has one connected component A¹_C. Rigid pullback has a separate copy for each geometric point of A¹_C, including distinct copies chosen at 0 and 1. Replacing it by the ordinary pullback loses the rigid data.
 - On A¹_C the indexing includes its infinitely many complex closed points; a definition demanding a finite index family would reject the required rigid covers.
+- For Spec F_q, two separable closures give equivalent finite-Galois neighborhood systems; the induced π₁ identifications differ by inner conjugation, which is trivial on G_Fq=ℤ̂. Duplicating representatives changes no pro-type. Omitting all representatives over a nonempty component would instead produce an empty component diagram.
 
-*Needs:* Mathlib `AlgebraicGeometry.Scheme.smallEtaleTopology`; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; EtaleCohomologyFoundations §F.0.2; §3.0a for completion; SchemeAndStackFoundations §§0.9–0.12, 2.10, 2.15 and its curve-family contract.
+*Needs:* Mathlib `AlgebraicGeometry.Scheme.smallEtaleTopology` and `nonempty_sections_of_finite_cofiltered_system`; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); EtaleCohomologyFoundations §F.0.2; SchemeAndStackFoundations §§0.9–0.12 (gap:connected-etale-components).
 
 ### 3.2 Rigid hypercovers of simplicial schemes
 
@@ -478,7 +526,7 @@ One proof route is the following. Use EnhancedDerivedSheaves’ augmented matchi
 - The empty augmented simplicial object over a nonempty scheme is not a rigid hypercover, even if all its positive-degree conditions are vacuous.
 - HRR(X) and HRR(cX) yield equivalent indexing systems; the diagonal construction on a constant scheme recovers the ordinary étale type.
 
-*Needs:* §3.1; EnhancedDerivedSheaves §E2.6 and its topological descent contract; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract.
+*Needs:* §3.1; EnhancedDerivedSheaves §E2.6 (generic hypercovers); AdicSpacesPartII §R0.19.9 (gap:pro-cofinal-invariance and gap:pro-level-representations).
 
 ### 3.3 Rigid étale topological type
 
@@ -501,15 +549,15 @@ One proof route is the following. Apply π_0 to each scheme in a rigid bisimplic
 
 ### 3.4 Cohomology of the rigid étale type
 
-For locally noetherian X, the rigid type has H^m(Et(X),L)≅H^m_et(X,L) for locally constant abelian étale sheaves L in the ordinary étale local-system range, naturally in X, L and every m≥0. This includes arbitrary constant abelian groups, not only finite groups. For a degreewise locally noetherian simplicial scheme, constant finite coefficients have the corresponding total/diagonal comparison. It uses the same native sheaf cohomology and EnhancedDerivedSheaves’ bounded-below descent comparison. (IEt, §2 after Theorem 2.10, p. 7, citing Friedlander Proposition 5.9; §3, pp. 8–10; IEt line 330; SS, materialization–2.2, pp. 822–824; Proposition 2.3, p. 824; Fr Proposition 5.9, cited by locator without text).
+For locally noetherian X, the rigid type has H^m(Et(X),L)≅H^m_et(X,L) for locally constant abelian étale sheaves L in the ordinary étale local-system range, naturally in X, L and every m≥0. This includes arbitrary constant abelian groups, not only finite groups. For a degreewise locally noetherian simplicial scheme, constant finite coefficients have the corresponding total/diagonal comparison. It uses the same native sheaf cohomology and EnhancedDerivedSheaves’ bounded-below descent comparison. (IEt, §2 proof of Theorem 2.6, p. 6, invoking Friedlander Proposition 5.9 for mod-p coefficients, IEt line 271; the locally constant comparison after Theorem 2.10, p. 7, IEt line 331; §3, pp. 8–10; SS, §§1–2.2, pp. 822–824; Proposition 2.3, p. 824; Fr Proposition 5.9, cited by locator without text).
 
 One proof route is the following. Compare the local system on the simplicial component diagram with its pullback to the hypercover’s étale site. Use EnhancedDerivedSheaves’ bounded-below hypercover descent for the sheaf concentrated in degree zero, and take the filtered colimit over refinements. This requires the local-system acyclicity/refinement theorem, not the false claim that any cover is acyclic. Establish the full coefficient range of Fr Proposition 5.9, cited by locator without text; the finite-coefficient comparison does not supply this local-system theorem. Finite-degree descent then compares total and diagonal constant-coefficient cohomology.
 
-*Needs:* §3.3; EnhancedDerivedSheaves §E2.6 and its topological descent contract; SchemeAndStackFoundations §2.15; Mathlib `CategoryTheory.Sheaf.H`; AlgebraicTopology Stage 6 and its local-coefficient contract.
+*Needs:* §3.3; EnhancedDerivedSheaves §E2.6 (bounded-below cohomological descent); SchemeAndStackFoundations §2.15; Mathlib `CategoryTheory.Sheaf.H`; AlgebraicTopology Stage 6.1 (direct local coefficients).
 
 ### 3.5 Raw and finite étale homotopy groups
 
-For connected locally noetherian X the profinite completion of the raw pro-group π_1(Et(X),x) identifies with the supplied finite-étale fundamental group, compatibly with finite-cover fibers. If X is noetherian and geometrically unibranch, each raw π_n, n≥1, is a profinite pro-group, and π_1 itself identifies with that finite-étale group in Pro(Grp). For a field this identifies Et(Spec k) with BG_k in the raw homotopy category. (SS, Notation before §2, p. 822; Appendix A.3, pp. 862–866; SS line 214; AM Theorem 11.1, cited by locator without text).
+For connected locally noetherian X the profinite completion of the raw pro-group π_1(Et(X),x) identifies with the supplied finite-étale fundamental group, compatibly with finite-cover fibers. If X is noetherian and geometrically unibranch, each raw π_n, n≥1, is a profinite pro-group, and π_1 itself identifies with that finite-étale group in Pro(Grp). For a field this identifies Et(Spec k) with BG_k in the raw homotopy category. (SS, Notation before §2, p. 822, SS line 228, for raw profiniteness; discussion before Corollary 2.5, p. 826, SS line 373, for completion; Appendix A.3, pp. 862–866, for the BG interface; AM Theorem 11.1, cited by locator without text).
 
 One proof route is the following. Use the finite-cover classification of the rigid type and the geometric fiber to identify finite quotients of the raw π_1 with finite étale covers. For geometric-unibranch noetherian schemes invoke the precise Artin–Mazur Theorem 11.1; cited by locator without text. Do not replace it by the abstract compactness of finite groups. For a field use the finite Galois hypercover system to model Et by BG_k, equivalently the field’s higher asphericity. The field comparison here is an equivalence of raw pro-homotopy types.
 
@@ -517,9 +565,9 @@ One proof route is the following. Use the finite-cover classification of the rig
 
 ### 3.6 Finite étale base change
 
-For finite étale W′→W between locally noetherian schemes, Et(W′)→Et(W) is a finite §1.1. For every X→W in this scope the natural map from Et(X×_W W′) to the fiber product of Et(X) and Et(W′) over Et(W) is an isomorphism of pro-simplicial sets. Consequently a relative homotopy isomorphism Et(X)≅Et(Y) over Et(W) lifts along W′, compatibly with projections, with the existence and deck-equivariance qualifications of Layer 1. (SS, Lemmas 2.1–2.2 and proofs, pp. 822–823; SS line 228).
+For finite étale W′→W between locally noetherian schemes, Et(W′)→Et(W) is a finite pro-covering. For every X→W in this scope the natural map from Et(X×_W W′) to the fiber product of Et(X) and Et(W′) over Et(W) is an isomorphism of pro-simplicial sets. Consequently a relative homotopy isomorphism Et(X)≅Et(Y) over Et(W) lifts along W′, compatibly with projections, with the existence and deck-equivariance qualifications of Layer 1. (SS, Lemmas 2.1–2.2 and proofs, pp. 822–823; SS line 237 and SS line 269).
 
-One proof route is the following. For constant degree d, refine rigid covers so W′ splits as d copies on every connected hypercover piece. Treat varying finite degree on its open-and-closed degree loci. On this cofinal system π_0(U×_W W′)→π_0(U) is a simplicial degree-d covering and the base-change square of component simplicial sets is cartesian. Pass to the pro-system. Apply Ethe supplied covering base-change result to homotopy isomorphisms; this final application adds no uniqueness assertion.
+One proof route is the following. For constant degree d, refine rigid covers so W′ splits as d copies on every connected hypercover piece. Treat varying finite degree on its open-and-closed degree loci. On this cofinal system π_0(U×_W W′)→π_0(U) is a simplicial degree-d covering and the base-change square of component simplicial sets is cartesian. Pass to the pro-system. Apply the pro-covering base-change result to homotopy isomorphisms; this final application adds no uniqueness assertion.
 
 *Needs:* §3.3; §1.1; §1.5; EtaleCohomologyFoundations §F.0.2; §3.0a for completion.
 
@@ -527,7 +575,7 @@ One proof route is the following. For constant degree d, refine rigid covers so 
 
 If k-varieties X,Y have Et(X)≅Et(Y) in Ho(Pro(SSet))↓Et(k), then for every abelian group A and every m≥0 there is an isomorphism H^m_et(Y_kbar,A)→H^m_et(X_kbar,A) of G_k-modules, natural in A. Here kbar is a fixed separable closure (or its algebraic closure with the purely inseparable étale comparison). The isomorphism is induced by the lifted finite-cover system; an abstract group isomorphism alone is insufficient. (SS, Proposition 2.3, p. 824; SS line 285).
 
-One proof route is the following. Apply Layer 1 covering base change once to the §1.1 of Et(k) formed by the entire pointed finite Galois extension tower. This supplies an isomorphism of the pulled-back towers compatible with their deck action; unrelated choices of finite-cover lifts would not suffice. Apply cohomology of the rigid type to this tower, keeping homotopy invariance for arbitrary constant abelian A and the deck-equivariant projection maps. Take the filtered colimit of scheme cohomology along the affine field-extension system. SchemeAndStackFoundations §2.15’s limit theorem identifies this with the geometric cohomology, and the deck actions give the actual G_k action.
+One proof route is the following. Apply Layer 1 covering base change once to the pro-covering of Et(k) formed by the entire pointed finite Galois extension tower. This supplies an isomorphism of the pulled-back towers compatible with their deck action; unrelated choices of finite-cover lifts would not suffice. Apply cohomology of the rigid type to this tower, keeping homotopy invariance for arbitrary constant abelian A and the deck-equivariant projection maps. Take the filtered colimit of scheme cohomology along the affine field-extension system. SchemeAndStackFoundations §2.15’s limit theorem identifies this with the geometric cohomology, and the deck actions give the actual G_k action.
 
 *Needs:* §3.6; §3.4; SchemeAndStackFoundations §2.15; §0.5; §1.5.
 
@@ -535,26 +583,51 @@ One proof route is the following. Apply Layer 1 covering base change once to the
 
 Let f:X→Y be an elementary fibration of smooth connected varieties in characteristic zero, with affine curve fibers, and geometric x↦y. Form the cofiltered pointed finite étale Galois cover system 𝒴 of Y and 𝒳=X×_Y𝒴. The geometric fiber, 𝒳 and 𝒴 have the Friedlander homotopy fiber sequence with all primes; finite-cover invariance identifies its higher groups with those of X and Y. This gives …→π_n Et(X_y)→π_n Et(X)→π_n Et(Y)→πₙ₋₁Et(X_y)→… in the appropriate pro-group ranges. In particular, when Y is raw K(π,1), its low-degree part is 1→π_1 Et(X_y)→π_1 Et(X)→π_1 Et(Y)→1. (SS, Notation before §2, p. 822; Proposition 2.8, pp. 827–828, invoking Friedlander Theorem 11.5; SS line 438; Fr Theorem 11.5, cited by locator without text).
 
-One proof route is the following. Import the geometric elementary-fibration input from the curve-family supplier contract: a smooth proper geometrically connected curve family with finite étale boundary and nonempty affine complement fibers. Applications to towers of elementary fibrations use this sequence. Over the pointed finite Galois covers, use Friedlander Theorem 11.5’s all-prime homotopy-fiber comparison (Fr Theorem 11.5, cited by locator without text). Its π_1 trivialization and finite-cover invariance give the claimed higher terms. The low-degree injectivity requires π_2(Y)=0. If the base and fiber have vanishing higher raw homotopy, the exact sequence gives that vanishing for the total space; the fundamental-group exact sequence alone does not give the higher sequence.
+One proof route is the following. Import the geometric elementary-fibration input from SchemeAndStackFoundations’ elementary-fibration carrier (gap:elementary-fibration-carrier): a smooth proper geometrically connected curve family with finite étale boundary and nonempty affine complement fibers. Applications to towers of elementary fibrations use this sequence. Over the pointed finite Galois covers, use Friedlander Theorem 11.5’s all-prime homotopy-fiber comparison (Fr Theorem 11.5, cited by locator without text). Its π_1 trivialization and finite-cover invariance give the claimed higher terms. The low-degree injectivity requires π_2(Y)=0. If the base and fiber have vanishing higher raw homotopy, the exact sequence gives that vanishing for the total space; the fundamental-group exact sequence alone does not give the higher sequence.
 
-*Needs:* §3.6; §3.5; AlgebraicTopology Stage 8 and its ordinary simplicial contract; SchemeAndStackFoundations §§0.9–0.12, 2.10, 2.15 and its curve-family contract.
+*Needs:* §§3.5–3.6; AlgebraicTopology Stage 8 (homotopy-fiber exact sequence); SchemeAndStackFoundations §§0.9–0.12 (gap:elementary-fibration-carrier).
 
-### 3.9 Raw K(π,1), finite effacement and products
+### 3.9a Finite étale product formula
 
-For a characteristic-zero field k and geometrically connected geometrically unibranch finite-type k-varieties Y₁,Y₂, prove the canonical continuous isomorphism π₁^ét(Y₁ ×ₖ Y₂) ≃ π₁^ét(Y₁) ×_(Gₖ) π₁^ét(Y₂), with the two projections and chosen compatible geometric points (SS proof of Lemma 2.9, pp. 828–829; SS line 474; SGA1 XIII Proposition 4.6). Its route first proves the geometric product formula for finite étale covers and then uses the supplied arithmetic exact sequence. This finite-cover theorem uses no vanishing of higher raw homotopy groups. Its SGA1 XIII Proposition 4.6 route requires strong desingularizability of finite-type schemes over the algebraic closure; consume ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2 for this characteristic-zero input, retaining all primes (SGA1 line 12282).
-
-For a connected noetherian geometrically unibranch pointed scheme X, prove that vanishing of every raw πₙ for n≥2 is equivalent to the following: for every finite étale X′ → X, every finite abelian group A, every q≥2 and every class α in Hᑫ_et(X′,A), some further finite étale cover X″ → X′ kills α. The covers in the killing condition are surjective. Prove the profinite local-coefficient detection lemma that justifies testing finite coefficients in this scope: between connected pro-spaces with profinite homotopy pro-groups, an isomorphism on π₁ and on all finite abelian local-coefficient cohomology groups is a weak equivalence. The proof uses finite Postnikov obstructions and the pro-universal cover; it retains profiniteness and does not apply this finite test to arbitrary raw pro-spaces (SS Lemma 2.7(b), proof, p. 827; SS line 417; AM Theorem 4.3, cited by locator without text).
-
-For a characteristic-zero field k and a finite family of geometrically connected geometrically unibranch finite-type k-varieties which are raw K(π,1), prove that their product over k is raw K(π,1). Include the empty product Spec k. The route passes to an algebraic closure using finite-cover invariance of higher groups, applies this subsection’s finite étale product formula and geometric finite-coefficient Künneth, and kills the finitely many classes appearing in each Künneth expression on common finite covers (SS Lemma 2.7(b), pp. 827–828; SS line 414). This proof supplies the raw product input to §4.7 without using a cohomological K(π,1) predicate from its applications.
+For a characteristic-zero field k and geometrically connected geometrically unibranch finite-type k-varieties Y₁,Y₂, prove the canonical continuous isomorphism π₁^ét(Y₁ ×ₖ Y₂) ≃ π₁^ét(Y₁) ×_(Gₖ) π₁^ét(Y₂), with its two projections and chosen compatible geometric points (SS proof of Lemma 2.9, pp. 828–829; SS line 474; SGA1 XIII Proposition 4.6). Its route first proves the geometric product formula for finite étale covers and then uses the supplied arithmetic exact sequence. This finite-cover theorem uses no vanishing of higher raw homotopy groups. Its SGA1 XIII Proposition 4.6 route requires strong desingularizability of finite-type schemes over the algebraic closure; consume ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2 for this characteristic-zero input, retaining all primes (SGA1 line 12282).
 
 **Checks.**
 
-- For Spec of a separably closed field, all q≥1 cohomology groups vanish and the effacement condition is satisfied by the identity; the empty product has the field’s classifying raw type.
-- Over an algebraically closed characteristic-zero field, the nonzero class in H²_et(ℙ¹,C₂)=C₂ survives every connected finite étale cover, since all such covers are trivial. Thus ℙ¹ is excluded. Allowing an empty killing cover would incorrectly kill this class.
-- For Gₘ over ℂ, the degree-d map pulls the degree-one finite coefficient class back by multiplication by d. Taking d equal to the coefficient exponent kills it; products of two copies have finite-coefficient cohomology dimensions 1,2,1 in degrees 0,1,2, and the product covering kills the degree-two exterior class. The product is a raw K(π,1), despite nonzero H² on the original scheme.
+- Over ℂ, two copies of Gₘ have fundamental group ℤ̂², and the projections select its two coordinates. Replacing the product by a single ℤ̂ loses one independent Kummer cover.
+- For Y₂=Spec k, the fiber product π₁^ét(Y₁) ×_(Gₖ) Gₖ is π₁^ét(Y₁), with inverse g ↦ (g,p(g)). This tests the structural map in the formula.
+- For Y₁=Y₂=Spec ℝ over ℝ, both sides are C₂: the fiber product is the diagonal {(1,1),(c,c)}. An ordinary direct product would have four elements and is wrong.
 
-*Needs:* §§1.2, 1.8–1.9 and 3.4–3.6; EtaleCohomologyFoundations §§F.0.2, F.0.A2 and F.2.6; the finite étale product formula in this subsection. ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2 supply the strong desingularizability used by SGA1 XIII Proposition 4.6; this is independent of raw K(π,1).
+*Needs:* EtaleCohomologyFoundations §§F.0.2 and F.0.A2; SGA1 XIII Proposition 4.6; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2.
 
+### 3.9b Finite effacement and profinite detection
+
+For a connected noetherian geometrically unibranch pointed scheme X, prove that vanishing of every raw πₙ for n≥2 is equivalent to the following: for every finite étale X′→X, every finite abelian group A, every q≥2 and every class α in Hᑫ_et(X′,A), some further finite étale surjective cover X″→X′ kills α. Schmidt–Stix gives the connected geometrically unibranch variety case; the extension to the stated noetherian schemes is a target here, using AM Theorem 4.3 and §3.5’s profiniteness (SS, proof of Lemma 2.7(b), p. 827; SS line 418; AM Theorem 4.3, cited by locator without text).
+
+Prove also the detection lemma used in this argument: between connected pro-spaces whose positive homotopy pro-groups are profinite, a map inducing an isomorphism on π₁ and on H^m for every m≥0 and every finite abelian local coefficient system on the target is a weak equivalence (AM Theorem 4.3, cited by locator without text). Finite systems here have continuous finite monodromy. This is a finite-coefficient criterion only in the profinite homotopy range.
+
+One proof route is the following. Apply §1.2 to the zero subgroup and use the cofiltered finite-cover presentation of this pro-universal cover, available by §3.5. Its finite constant-coefficient cohomology is the colimit over finite étale covers by §3.4. The killing condition says this colimit vanishes in degrees at least two; simple connectivity gives degree-one vanishing. Finite local systems become constant after a finite cover. AM’s profinite detection criterion, proved through finite Postnikov obstructions, identifies this cover with a point exactly when its higher homotopy vanishes. Applying the argument on every finite cover gives both directions. None of these steps needs a finite-type structure morphism to a field.
+
+**Checks.**
+
+- For Spec of a separably closed field, positive-degree constant cohomology is zero, all higher raw homotopy groups vanish and the identity cover suffices.
+- Over an algebraically closed characteristic-zero field, the nonzero class in H²_et(ℙ¹,C₂)=C₂ survives every connected finite étale cover, since such covers are trivial. Every surjective disconnected cover has a component with the same nonzero restriction. An empty killing cover would give a false positive.
+- For Spec(k[ε]/ε²) with separably closed k, étale invariance gives the same point type and zero positive cohomology as Spec k. Reducedness is unnecessary. For BC₃→* at coefficient 𝔽₂ the cohomology is 𝔽₂ in degree zero and zero above, but π₁ is C₃→1; a single-prime constant-coefficient test does not supply the π₁ hypothesis.
+
+*Needs:* §§1.2, 1.8–1.9 and 3.4–3.6; AlgebraicTopology Stage 8 (gap:simplicial-postnikov and gap:simplicial-moore-postnikov); AM Theorem 4.3; EtaleCohomologyFoundations §F.0.2.
+
+### 3.9c Products of raw K(π,1) varieties
+
+For a characteristic-zero field k and a finite family of geometrically connected geometrically unibranch finite-type k-varieties which are raw K(π,1), prove that their product over k is raw K(π,1). Include the empty product Spec k (SS Lemma 2.7(b), pp. 827–828; SS line 414).
+
+One proof route is the following. Pass to an algebraic closure using finite-cover invariance of higher groups, apply §3.9a’s finite étale product formula and geometric finite-coefficient Künneth, and kill the finitely many classes in each Künneth expression on common finite covers. Use §3.9b for raw detection and iterate the binary formula. This supplies the raw product input to §4.7.
+
+**Checks.**
+
+- The empty product is Spec k with raw type BGₖ, so every πₙ for n≥2 is zero. Replacing it by the empty scheme would destroy connectedness.
+- For one factor Gₘ over ℂ, π₁=ℤ̂(1) and higher groups vanish; the one-factor product is unchanged.
+- For two copies of Gₘ over ℂ and a prime p, finite-coefficient cohomology has dimensions 1,2,1 in degrees 0,1,2. Pullback along (z,w) ↦ (z^p,w^p) multiplies each degree-one generator by p and their degree-two product by p², both zero in 𝔽ₚ. The product is raw K(π,1) despite nonzero H² before pullback. The same computation uses the exponent for general finite coefficients and includes p=2 and p=3.
+
+*Needs:* §§3.9a–3.9b; §§3.5–3.6; EtaleCohomologyFoundations §§F.0.2, F.0.A2 and F.2.6.
 
 ### Examples
 
@@ -562,7 +635,7 @@ Over a separably closed field the field type is a point; over 𝔽_q it is Bℤ�
 
 ### Dependencies
 
-Earlier layers 0, 1, 2; ProfiniteProPGroups Layer 0; ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2; EtaleCohomologyFoundations §§F.0.2, F.0.A2, F.2.6; Mathlib `AlgebraicGeometry.Scheme.smallEtaleTopology`; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; EtaleCohomologyFoundations §F.0.2; §3.0a for completion; SchemeAndStackFoundations §§0.9–0.12, 2.10, 2.15 and its curve-family contract; EnhancedDerivedSheaves §E2.6 and its topological descent contract; Mathlib `SSet`; SchemeAndStackFoundations §2.15; Mathlib `CategoryTheory.Sheaf.H`; AlgebraicTopology Stage 6 and its local-coefficient contract; AlgebraicTopology Stage 8 and its ordinary simplicial contract. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+Layers 0–2; Mathlib group completion, finite-quotient presentation and compact cofiltered limits; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance and gap:pro-level-representations); ProfiniteProPGroups Layer 0; SchemeAndStackFoundations §§0.9–0.12, 2.10 and 2.15 (gap:connected-etale-components and gap:elementary-fibration-carrier); EtaleCohomologyFoundations §§F.0.2, F.0.A2 and F.2.6; EnhancedDerivedSheaves §E2.6 (generic hypercovers and bounded-below descent); AlgebraicTopology Stages 6 and 8 (direct local coefficients, homotopy-fiber sequences, gap:simplicial-postnikov and gap:simplicial-moore-postnikov); ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2, 6.1–6.2. The item-level Needs lines distinguish the independent finite-cover product formula from raw detection and raw products.
 
 ## Layer 4: Arithmetic relative mapping classes
 
@@ -587,15 +660,15 @@ Call a profinite group strongly center-free if the center of every open subgroup
 
 ### 4.0b Open arithmetic image
 
-For a connected nonempty finite-type k-variety X, prove that the image of π₁^ét(X) → Gₖ is open, without assuming X geometrically connected or geometrically unibranch. Finite-type descent of a chosen connected component over a separable closure makes its stabilizer open; finite-cover classification identifies that stabilizer with the arithmetic image (SS proof of Proposition 2.4(c), p. 825; SS line 361). 
+For a connected nonempty finite-type k-variety X, prove that the image of π₁^ét(X) → Gₖ is open, without assuming X geometrically connected or geometrically unibranch. Finite-type descent of a chosen connected component over a separable closure makes its stabilizer open; finite-cover classification identifies that stabilizer with the arithmetic image (SS proof of Proposition 2.4(c), p. 825; SS line 361).
 
 **Checks.**
 
 - X=Spec k gives the full Gₖ, index 1. For X=Spec k′ with finite separable k′/k, the image is G_(k′) and its index is [k′:k]; requiring surjectivity would be false.
 - For a finite purely inseparable field extension, the map on absolute Galois groups is an isomorphism, index 1. The inseparable degree must not be used as the index.
-- Over ℂ, two copies of Gₘ have fundamental group ℤ̂², and the two projections give the two coordinate maps. For Y₂=Spec k the fiber product reduces to π₁^ét(Y₁), not π₁^ét(Y₁)×Gₖ.
+- For X=Spec ℚ(i) over ℚ, the image is G_ℚ(i)⊂G_ℚ, of index 2. It is open and is not surjective; geometric connectedness over ℚ fails.
 
-*Needs:* EtaleCohomologyFoundations §§F.0.2, F.0.4 and F.0.A2; SchemeAndStackFoundations §§0.9, 2.10 and 2.15; ProfiniteProPGroups Layer 0. The finite-cover product input for raw product mapping is §3.9.
+*Needs:* EtaleCohomologyFoundations §§F.0.2, F.0.4 and F.0.A2; SchemeAndStackFoundations §§0.9, 2.10 and 2.15; ProfiniteProPGroups Layer 0. The independent finite-cover product input for raw product mapping is §3.9a.
 
 ### 4.1 Pointed arithmetic lifting
 
@@ -663,9 +736,9 @@ Let k have characteristic zero and strongly center-free G_k. Let Y_1,Y_2 be geom
 
 The field k has characteristic zero and every open subgroup of G_k has trivial center. Y_1 and Y_2 are geometrically connected and geometrically unibranch, with vanishing raw higher étale homotopy pro-groups. X is any finite-type k-variety; its connected components are treated separately.
 
-One proof route is the following. Treat the finitely many connected components of X separately. Apply §3.9 to show the product target is raw K(π,1). Use §3.9’s characteristic-zero finite étale product formula with its two projections. Classifying-space representability gives the product bijection of pointed relative Hom sets. The geometric target kernel is the product of the two geometric kernels; take its componentwise orbits and apply §4.4.
+One proof route is the following. Treat the finitely many connected components of X separately. Apply §3.9c to show the product target is raw K(π,1). Use §3.9a’s characteristic-zero finite étale product formula with its two projections. Classifying-space representability gives the product bijection of pointed relative Hom sets. The geometric target kernel is the product of the two geometric kernels; take its componentwise orbits and apply §4.4.
 
-*Needs:* §4.4; §1.8; §3.9, raw K(π,1) products; EtaleCohomologyFoundations §F.0.A2; §4.0a–§4.0b for arithmetic adapters.
+*Needs:* §4.4; §1.8; §§3.9a and 3.9c; EtaleCohomologyFoundations §F.0.A2; §4.0a–§4.0b for arithmetic adapters.
 
 ### Examples
 
@@ -673,7 +746,7 @@ For a separably closed base field the geometric action is the whole target actio
 
 ### Dependencies
 
-Earlier layers 0, 1, 2, 3; EtaleCohomologyFoundations §F.0.A2; §4.0a–§4.0b for arithmetic adapters; §3.9, raw K(π,1) products. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+Earlier layers 0, 1, 2, 3; EtaleCohomologyFoundations §F.0.A2; §4.0a–§4.0b for arithmetic adapters; §§3.9a and 3.9c. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
 
 ## Layer 5: Betti realization and analytic descent
 
@@ -694,13 +767,13 @@ One proof route is the following. For affine X the bijection is the ordinary alg
 
 ### 5.2 Betti realization of simplicial varieties
 
-For a simplicial quasi-projective complex scheme X_•, define Sing_an(X_•)=diag([a],[b])↦Sing_b(X_a(C)_an). Equivalently its n-simplices are X_n(C(Δⁿ,C)). Define D(X_•)_n=X_n(C), with discrete complex points in the second direction; constant singular simplices give D(X_•)→Sing_an(X_•). On a constant scheme this is exactly the supplied singular functor on its analytification. (FGV, Definition A.8 and preceding identity, p. 307; properties (i)–(ii), p. 305; cited by locator without text).
+For a simplicial locally finite-type complex scheme X_•, define Sing_an(X_•)=diag([a],[b])↦Sing_b(X_a(C)_an), using §C−1.1’s analytification. On the quasi-projective subcategory its n-simplices are equivalently X_n(C(Δⁿ,C)) by §5.1. For a scheme with several simplicial directions, take the diagonal after applying Sing in one additional direction. Define D(X_•)_n=X_n(C), with discrete complex points in the second direction; constant singular simplices give D(X_•)→Sing_an(X_•). On a constant scheme this is exactly the supplied singular functor on its analytification. (FGV, Definition A.8 and preceding identity, p. 307; properties (i)–(ii), p. 305; cited by locator without text).
 
 One proof route is the following. Compose the given simplicial analytic space with Mathlib’s singular functor and precompose with the simplex diagonal. No new singular-simplex definition is needed. Use algebraic evaluation degreewise to identify the diagonal with X_n(C(Δⁿ,C)); check both faces and degeneracies, since both indices move. Constant simplices define the natural map from the diagonal discrete-point object.
 
 - For cX, the diagonal realization is naturally isomorphic to TopCat.toSSet(X_an).
 - A map of simplicial analytic spaces gives a simplicial map, preserving identity and composition.
-- Its n-simplices identify with X_n(C(Δⁿ,C)) with the diagonal simplicial operators.
+- For degreewise quasi-projective X, its n-simplices identify with X_n(C(Δⁿ,C)) with the diagonal simplicial operators; no such algebraic evaluation formula is needed for general hypercover pieces.
 - The natural point map sends a complex point in degree n to the constant singular n-simplex in X_n.
 
 **Checks.**
@@ -709,15 +782,35 @@ One proof route is the following. Compose the given simplicial analytic space wi
 - For the simplicial finite constant scheme BC_p over C, the diagonal is BC_p, not a point.
 - For a constant quasi-projective scheme X the natural isomorphism agrees degreewise with Mathlib’s native singular simplices; for a finite reduced scheme it agrees with the native constant-set comparison.
 
-*Needs:* §5.1; Mathlib `TopCat.toSSet`; Mathlib `TopCat.toSSetObjEquiv`; Mathlib `TopCat.toSSetIsoConst`; ComplexComparisonPartII §C−1.1; Mathlib `CategoryTheory.Functor.diag`; Mathlib `CategoryTheory.Functor.uncurry`.
+*Needs:* §5.1 for the quasi-projective evaluation identity; Mathlib `TopCat.toSSet`, `TopCat.toSSetObjEquiv`, `TopCat.toSSetIsoConst`, `CategoryTheory.Functor.diag` and `CategoryTheory.Functor.uncurry`; ComplexComparisonPartII §C−1.1.
 
-### 5.3 Betti descent for smooth surjections
+### 5.3a Betti descent for smooth surjections
 
-For a smooth surjection U→V of smooth quasi-projective complex varieties, let U_n=U×_V⋯×_V U with n+1 factors. Then Sing_an(U_•)→Sing_an(V) is a weak equivalence. More generally the comparison zigzag uses analytic descent for étale hypercovers of complex varieties, including singular varieties; this second assertion uses local analytic homeomorphisms and the imported topological hypercover theorem, not a manifold assertion for singular V. (FGV, Example A.10, p. 311; Appendix A.2.3, pp. 309–310; cited by locator without text).
+For a smooth surjection U→V of smooth quasi-projective complex varieties, let U_n=U×_V⋯×_V U with n+1 factors. Prove that Sing_an(U_•)→Sing_an(V) is a weak equivalence (FGV, Example A.10, p. 311; cited by locator without text).
 
-One proof route is the following. For smooth U,V, analytification is a surjective submersion, so the differential-geometric local-section theorem supplies local sections. The Čech nerve of a map with local sections is a topological hypercover. The analytic target is Hausdorff and second countable, hence paracompact; its local-section cover is numerable. Apply Orbifolds O4-N’s Čech realization theorem and the supplied singular/realization comparison. For an étale hypercover, use that analytic étale maps are local homeomorphisms. Apply the same topological theorem degreewise and the bisimplicial diagonal weak-equivalence theorem.
+One proof route is the following. The product charts of ComplexComparisonPartII §C−1.1’s `complexSchemeAnalytification.smooth` make the analytic map a surjective submersion and supply local sections through each chosen point upstairs. The smooth quasi-projective target is Hausdorff and second countable, hence paracompact; the local-section cover is numerable. Apply Orbifolds O4-N’s Čech descent and the singular/realization comparison on this same analytic carrier.
 
-*Needs:* §5.2; Orbifolds O4-N, item 3; EnhancedDerivedSheaves §E2.6 and its topological descent contract; ComplexComparisonPartII §C−1.1; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+**Checks.**
+
+- For {0,1}→*, Čech degree n has 2^(n+1) points and the diagonal realization is contractible, rather than a discrete two-point set.
+- For 𝔸¹_ℂ→Spec ℂ, Čech degree n is ℂ^(n+1), contractible, and the augmentation is an equivalence to a point.
+- The identity of Gₘ gives its constant Čech nerve: the augmentation induces the identity on π₁=ℤ. The map ∅→Spec ℂ is smooth but not surjective and has empty realization, so surjectivity cannot be omitted.
+
+*Needs:* §5.2; Orbifolds O4-N, item 3; ComplexComparisonPartII §C−1.1 (`complexSchemeAnalytification.smooth`); GeneralizedCohomology §G2.1; AlgebraicTopology Stage 8 (gap:multisimplicial-diagonal).
+
+### 5.3b Analytic descent for étale hypercovers
+
+For a quasi-projective complex scheme X and an étale hypercover U_•→X whose pieces are locally of finite type over ℂ, prove that diag Sing(U_•^an)→Sing(X^an) is a weak equivalence. No quasi-compactness, global finite-type or quasi-projectivity assumption is imposed on the U_n; infinite disjoint unions are allowed. Every matching map, including U_0→X, is a surjective étale cover. The analytification is ComplexComparisonPartII §C−1.1’s locally finite-type functor; X and its pieces may be singular or nonreduced (FGV, Appendix A.2.3, pp. 309–310; cited by locator without text).
+
+One proof route is the following. Analytification preserves the finite matching fiber products. `complexSchemeAnalytification.etaleLocalIso` turns the surjective étale matching maps into local analytic isomorphisms covering all complex points. These give local continuous sections, even over singular bases. Apply topological hypercover realization and then the multisimplicial diagonal theorem. Applying this assertion in each scheme-simplicial degree gives the weak equivalence for the rigid bisimplicial hypercovers used in §6.7; all three simplicial directions are retained.
+
+**Checks.**
+
+- For an infinite nonempty set A, the Čech hypercover of ∐_A Spec ℂ→Spec ℂ has A^(n+1) points in degree n and contractible diagonal. In particular A=ℕ is allowed although its degree-zero piece is not quasi-projective.
+- For X the nodal affine curve xy=0, the identity hypercover induces the identity on Sing of the union of two complex lines. Its π₀ is a singleton and every positive homotopy group is zero; the analytic tangent dimension at the node is 2, so a smooth-curve manifold premise is unavailable.
+- For X=Spec(ℂ[ε]/ε²), the identity hypercover has one analytic point in every degree and point diagonal. The empty augmented diagram over Spec ℂ fails U_0→X and has empty diagonal; omitting degree-zero surjectivity would falsely assert an equivalence.
+
+*Needs:* §5.2; EnhancedDerivedSheaves §E2.6 (gap:topological-hypercover-realization); ComplexComparisonPartII §C−1.1 (`complexSchemeAnalytification.fibreProduct` and `complexSchemeAnalytification.etaleLocalIso`); AlgebraicTopology Stage 8 (gap:multisimplicial-diagonal).
 
 ### Examples
 
@@ -725,7 +818,7 @@ For constant 𝔸¹_ℂ the Betti type is contractible, while its discrete point
 
 ### Dependencies
 
-Orbifolds O4-N, item 3; Earlier layers 0, 1, 2, 3, 4; Mathlib `ContinuousMap.evalAlgHom`; Mathlib `ContinuousMap.compRightAlgHom`; Mathlib `TopCat.toSSetObjEquiv`; ComplexComparisonPartII §C−1.1; Mathlib `TopCat.toSSet`; Mathlib `TopCat.toSSetIsoConst`; Mathlib `CategoryTheory.Functor.diag`; Mathlib `CategoryTheory.Functor.uncurry`; EnhancedDerivedSheaves §E2.6 and its topological descent contract; AlgebraicTopology Stage 8 and its ordinary simplicial contract. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+ComplexComparisonPartII §C−1.1; native Mathlib singular sets, diagonal and continuous-function algebra maps; Orbifolds O4-N, item 3; GeneralizedCohomology §G2.1; EnhancedDerivedSheaves §E2.6 (gap:topological-hypercover-realization); AlgebraicTopology Stage 8 (gap:multisimplicial-diagonal). The item-level Needs lines separate smooth Čech descent from étale hypercover descent.
 
 ## Layer 6: p-completion and Betti–étale comparison
 
@@ -746,7 +839,7 @@ One proof route is the following. Use the imported ordinary homotopy groups and 
 - BC_p is p-finite, whereas BC_q is not p-finite for a different prime q.
 - The product of K(F_p,n) over n≥1 has finite homotopy groups in each degree but is not p-finite, because no truncation bound exists.
 
-*Needs:* §0.1; AlgebraicTopology Stage 8 and its ordinary simplicial contract; ProfiniteProPGroups Layer 0; Tau Ceti compact inverse systems; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and its coherent Pro contract; ProfiniteProPGroups Layer 3; Tau Ceti topological generation.
+*Needs:* §0.1; AlgebraicTopology Stage 8 (gap:simplicial-postnikov); ProfiniteProPGroups Layers 0 and 3; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category and gap:coherent-pro-universes).
 
 ### 6.2 p-profinite completion
 
@@ -765,15 +858,15 @@ One proof route is the following. Use the strict model on Pro(SSet) for this loc
 - For q≠p, the p-profinite completion of BC_q is contractible; mod-p acyclicity here is used together with its finite prime-to-p group structure.
 - The p-profinite completion of an infinite discrete set is its pro-finite-set completion, not the constant infinite discrete set and not a single connected point.
 
-*Needs:* §6.1; §0.2; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; AlgebraicTopology Stage 8 and its ordinary simplicial contract; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and its coherent Pro contract.
+*Needs:* §§6.1 and 0.2; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial); EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category and gap:coherent-pro-mapping).
 
 ### 6.3 Model for homotopy-coherent p-profinite types
 
 Prove that the infinity-category presented by the Kₚ-localized strict model on pro-simplicial sets is equivalent to the homotopy-coherent Pro category of p-finite spaces. Identify materialization with the right adjoint to completion of constant spaces: for an ordinary space K, maps from its p-completion into P are equivalent to maps from K into Mat(P). Under the model comparison, Mat(P) is the ordinary homotopy limit of a strict fibrant p-finite representative. The constant-space left adjoint here includes p-completion; an arbitrary constant space is not already p-profinite. (BHH, Theorem 7.1.2, pp. 62–64; Corollary 7.3.8, pp. 70–71; BHH line 2226).
 
-One proof route is the following. Apply the general comparison of a localized strict pro-model with the infinity-pro-category of its finite test closure. Use BHH’s p-finite closure theorem. Compare the constant functors on the common finite types; uniqueness of right adjoints identifies derived limit with materialization. Record the exact native infinity-category and universe interface as supplier contract the coherent Pro supplier contract; the absence of an implementation is not evidence that ordinary Pro(Ho(SSet)) suffices.
+One proof route is the following. Apply the general comparison of a localized strict pro-model with the infinity-pro-category of its finite test closure. Use BHH’s p-finite closure theorem. Compare the constant functors on the common finite types; uniqueness of right adjoints identifies derived limit with materialization. Use the native infinity-category and universe interfaces in EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes); ordinary Pro(Ho(SSet)) does not retain the required mapping spaces.
 
-*Needs:* §6.2; §2.1; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and its coherent Pro contract; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract.
+*Needs:* §6.2; §2.1; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes); AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension, gap:pro-cofinal-invariance, gap:pro-cofinite-reindexing and gap:pro-level-representations).
 
 ### 6.4 Materialized p-completed étale type
 
@@ -800,11 +893,11 @@ For a p-profinite space P, assume H⁰_cont(P,F_p)=F_p via the unit, H¹_cont(P,
 
 One proof route is the following. Use the homotopy-coherent adapter to view the completed rigid object as Lurie’s p-profinite P. Apply Corollary 3.4.10 and Theorem 3.4.12 to obtain simple connectivity and finite type; apply Proposition 3.3.8 to the canonical projection-induced map. For finite components, completion preserves the finite component decomposition and the limit splits accordingly. Apply the connected assertion componentwise.
 
-*Needs:* §6.3; §6.4; AlgebraicTopology Stage 8 and its ordinary simplicial contract; ProfiniteProPGroups Layer 0; Tau Ceti compact inverse systems; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and its coherent Pro contract; ProfiniteProPGroups Layer 3; Tau Ceti topological generation; ProfiniteProPGroups Layer 4; Tau Ceti abelian pro-p structure.
+*Needs:* §§6.3–6.4; AlgebraicTopology Stage 8 (gap:simplicial-postnikov); ProfiniteProPGroups Layers 0, 3 and 4; Tau Ceti compact inverse systems, `TauCeti.IsTopologicallyFinitelyGenerated` and `TauCeti.IsProP.exists_continuousMulEquiv_pi_padicInt_prod_pi_zmod`; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes).
 
 ### 6.6 Componentwise p-completed realization
 
-Given a specified decomposition of X_• into open-and-closed simplicial subschemes X_•,a indexed by a∈A and preserved by every face and degeneracy, define Et_p^gr(X)=∐_a Et_p(X_a). Maps carry each specified summand into a specified target summand, together with the induced map of grading sets. If each summand has H⁰_et=F_p, H¹_et=0 and degreewise finite-dimensional mod-p cohomology, its comparison is an isomorphism, and the graded coproduct computes the full componentwise cohomology, with products over A in cohomology. This is a construction on specified graded objects and does not assert such a decomposition exists functorially for every simplicial scheme. (FGV, Appendix A.2.2–A.2.3, pp. 307–310; graded applications in A.4–A.5, pp. 312–315; cited by locator without text).
+Given a specified decomposition of X_• into open-and-closed simplicial subschemes X_•,a indexed by a∈A and preserved by every face and degeneracy, define Et_p^gr(X)=∐_a Et_p(X_a). Maps carry each specified summand into a specified target summand, together with the induced map of grading sets. If each summand has H⁰_et=F_p, H¹_et=0 and H^m_et(X_a,F_p) is finite-dimensional for every cohomological degree m, its comparison is an isomorphism, and the graded coproduct computes the full componentwise cohomology, with products over A in cohomology. This is a construction on specified graded objects and does not assert such a decomposition exists functorially for every simplicial scheme. (FGV, Appendix A.2.2–A.2.3, pp. 307–310; graded applications in A.4–A.5, pp. 312–315; cited by locator without text).
 
 One proof route is the following. Apply raw completion and materialization separately on each supplied simplicial summand. Form the ordinary coproduct only at the end. Functoriality uses the actual map on grading sets and each component map; it cannot be reconstructed from an arbitrary decomposition of each X_n independently. The cochain complex of a coproduct is the product of the component cochain complexes. Exactness of products of vector spaces gives the cohomology assertion.
 
@@ -819,13 +912,13 @@ One proof route is the following. Apply raw completion and materialization separ
 - For a single specified grade the construction agrees with raw Et_p; for no grades it is empty.
 - A separate partition of each X_n that a face merges or a degeneracy fails to preserve is not an input grading and cannot be used to form this functor.
 
-*Needs:* §6.5; §6.4; §3.3; AlgebraicTopology Stage 6 and its local-coefficient contract.
+*Needs:* §6.5; §6.4; §3.3; AlgebraicTopology Stage 6 (direct local coefficients).
 
 ### 6.7 Betti–étale comparison zigzag
 
 For a simplicial quasi-projective C-scheme X and its rigid hypercovers U, whose pieces are locally of finite type and may form infinite disjoint unions, set Z_X=holim_U Sing_an(U), where the analytic realization of U uses §C−1.1’s locally finite-type analytification followed by the diagonal of all its simplicial directions. A rigid cover need not itself be quasi-projective. There is a natural zigzag Sing_an(X)←Z_X→Et_p(X); the left arrow is a weak equivalence. The right arrow is induced by the component map of every connected singular simplex and the completion unit. For a specified grading use the coproduct of these zigzags on the grades. The resulting homotopy-category map is independent of cofinal refinements. (FGV, Appendix A.2.3, pp. 309–310; cited by locator without text).
 
-One proof route is the following. A singular simplex is connected, so its image lies in one connected component of U_a,b. These assignments commute with all face and degeneracy maps and give maps to diag π_0 U. Analytic étale hypercover descent gives Sing_an(U)→Sing_an(X) as a weak equivalence. The nerve of the nonempty cofiltered rigid index is contractible, so the homotopy limit of this objectwise weak equivalence to the constant diagram still maps by equivalence to Sing_an(X). Compose the compatible component maps with the completion unit and apply derived limit. Use homotopy-coherent functoriality to obtain the zigzag independently of cofinal refinement; §6.9 also constructs the strictly chosen point-set version.
+One proof route is the following. A singular simplex is connected, so its image lies in one connected component of U_a,b. These assignments commute with all face and degeneracy maps and give maps to diag π_0 U. Apply §5.3b in each degree of X and the multisimplicial diagonal theorem: Sing_an(U)→Sing_an(X) is a weak equivalence even for these locally finite-type infinite pieces. The nerve of the nonempty cofiltered rigid index is contractible, so the homotopy limit of this objectwise weak equivalence to the constant diagram still maps by equivalence to Sing_an(X). Compose the compatible component maps with the completion unit and apply derived limit. Use homotopy-coherent functoriality to obtain the zigzag independently of cofinal refinement; §6.9 also constructs the strictly chosen point-set version.
 
 - The left arrow of the zigzag is a weak equivalence.
 - Cofinal rigid refinement gives the same comparison morphism in the homotopy category.
@@ -838,21 +931,21 @@ One proof route is the following. A singular simplex is connected, so its image 
 - For a finite disjoint union of Spec C the zigzag preserves every labeled point and every permutation.
 - For the simplicial scheme BC_p it yields BC_p at both endpoints and the expected identity comparison, rather than the point X_0.
 
-*Needs:* §5.2; §5.3; §3.2; §6.4; §2.1; AlgebraicTopology Stage 8 and its ordinary simplicial contract.
+*Needs:* §§5.2 and 5.3b; §3.2; §6.4; §2.1; AlgebraicTopology Stage 8 (gap:multisimplicial-diagonal).
 
 ### 6.8 Mod-p Betti–étale comparison
 
-For simplicial quasi-projective X over C, assume H⁰_et(X,F_p)=F_p, H¹_et(X,F_p)=0 and degreewise finite-dimensional mod-p étale cohomology. Then the comparison zigzag induces an isomorphism on mod-p cohomology and homology in every degree. The statement also holds for a specified open-and-closed simplicial grading with these hypotheses on each grade, using Et_p^gr. Finite constant-coefficient Artin comparison and the analytic sheaf/singular comparison are the supplied suppliers; no unrestricted infinite-coefficient analytic comparison is used. (FGV, Appendix A.2.3, pp. 309–310; property (iii), p. 305; cited by locator without text).
+For simplicial quasi-projective X over C, assume H⁰_et(X,F_p)=F_p, H¹_et(X,F_p)=0 and H^m_et(X,F_p) is finite-dimensional for every cohomological degree m. Then the comparison zigzag induces an isomorphism on mod-p cohomology and homology in every degree. The statement also holds for a specified open-and-closed simplicial grading with these hypotheses on each grade, using Et_p^gr. Finite constant-coefficient Artin comparison and the analytic sheaf/singular comparison are the supplied inputs; no unrestricted infinite-coefficient analytic comparison is used. (FGV, Appendix A.2.3, pp. 309–310; property (iii), p. 305; cited by locator without text).
 
 One proof route is the following. Apply the supplied finite-coefficient Artin comparison degreewise, then bounded-below descent/first-quadrant totalization to the simplicial scheme. Use the supplier’s paracompact semilocally contractible analytic sheaf/singular comparison; check that the induced cohomology map is precisely that from the hypercover component maps, not merely an abstract group isomorphism. Apply the finite-type materialization theorem to identify the other endpoint. Over the field F_p, natural universal coefficients turn a cohomology isomorphism into a homology isomorphism. For the grading apply this on each grade, using direct sums in homology and products in cohomology.
 
-*Needs:* §6.7; §6.5; §6.6; ComplexComparisonPartII §§C6.1–C6.3; ComplexComparisonPartII §§C5.1, C6.1; EnhancedDerivedSheaves §E2.6 and its topological descent contract.
+*Needs:* §§6.5–6.7; ComplexComparisonPartII §§C5.1, C6.1–C6.3; EnhancedDerivedSheaves §E2.6 (bounded-below cohomological descent).
 
 ### 6.9 Field-automorphism naturality of discrete points
 
 For every field automorphism σ of ℂ and every σ-semilinear morphism f:X → X′ of simplicial quasi-projective complex schemes, the discrete-point map D(X) → Etₚ(X) is natural after twisting by σ, as a map of homotopy types. The same holds for specified gradings respected by f. Analytic comparison maps are used for continuous σ, namely identity and complex conjugation. For a simplicial ℚ-scheme obtain a homotopy-coherent Aut(ℂ)-action on its p-realization and equivariance of its discrete-point map. Construct a strictly functorial simplicial-set representative of the étale p-realization and a strict Aut(ℂ)-diagram weakly equivalent, as a coherent diagram, to this action; specify the equivariant comparison for the discrete-point map. The discrete group of automorphisms and diagram category live in the fixed larger universe. (FGV, Properties (i)–(ii), p. 305; Appendix A.2.2–A.2.3, pp. 308–310; application to (6.2), pp. 259–260; cited by locator without text).
 
-One proof route is the following. Semilinear base change sends rigid covers and their specified geometric lifts to rigid covers, and gives coherent maps of raw étale types. Completion and materialization preserve that coherent functoriality. Define the point-to-étale map directly by the algebraic lifts of complex points to the rigid system; prove its equality with the composite comparison. This avoids needing an analytic map for a discontinuous automorphism. For identity and conjugation, evaluation of continuous functions supplies the analytic semilinear comparison as well. For a Q-model use its descent identifications and their cocycle law to obtain the coherent group action. Rectify the coherent diagram indexed by the discrete group of field automorphisms in a fixed larger universe, retaining the equivariant comparison of derived diagrams and the cocycle law.
+One proof route is the following. Semilinear base change sends rigid covers and their specified geometric lifts to rigid covers, and gives coherent maps of raw étale types. Completion and materialization preserve that coherent functoriality. Define the point-to-étale map directly by the algebraic lifts of complex points to the rigid system; prove its equality with the composite comparison. This avoids needing an analytic map for a discontinuous automorphism. For identity and conjugation, evaluation of continuous functions supplies the analytic semilinear comparison as well. For a Q-model use its descent identifications and their cocycle law to obtain the coherent group action. Apply BordismFormalGroups §F6.5’s general model-diagram rectification to the coherent scheme functor, and to its diagram indexed by the discrete group of field automorphisms in a fixed larger universe, retaining the equivariant comparison of derived diagrams and the cocycle law.
 
 **Checks.**
 
@@ -860,7 +953,7 @@ One proof route is the following. Semilinear base change sends rigid covers and 
 - Conjugation sends the discrete point i of 𝔾ₘ to −i, and sends the positively oriented loop exp(2πit) to its inverse. On geometric π₁ it acts by multiplication by −1; a trivial action fails.
 - For a finite constant scheme with two labeled points, a field automorphism fixes both labels; a permutation of labels acts by that permutation. A rectified model is compared equivariantly with these maps, and arbitrary weakly equivalent spaces without equivariant comparison do not satisfy the target.
 
-*Needs:* §6.7; §5.1; §3.1; §6.3; ComplexComparisonPartII §C−1.1; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and its coherent Pro contract.
+*Needs:* §6.7; §5.1; §3.1; §6.3; ComplexComparisonPartII §C−1.1; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes); BordismFormalGroups §F6.5 (model-diagram rectification).
 
 ### Examples
 
@@ -868,7 +961,7 @@ For B(C_p) the materialized p-type is BC_p and H¹=𝔽ₚ, so the sufficient H�
 
 ### Dependencies
 
-Earlier layers 0, 1, 2, 3, 4, 5; AlgebraicTopology Stage 8 and its ordinary simplicial contract; ProfiniteProPGroups Layer 0; Tau Ceti compact inverse systems; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 and its coherent Pro contract; ProfiniteProPGroups Layer 3; Tau Ceti topological generation; AdicSpacesPartII §R0.19.9 and the Pro reindexing contract; ProfiniteProPGroups Layer 4; Tau Ceti abelian pro-p structure; AlgebraicTopology Stage 6 and its local-coefficient contract; ComplexComparisonPartII §§C6.1–C6.3; ComplexComparisonPartII §§C5.1, C6.1; EnhancedDerivedSheaves §E2.6 and its topological descent contract; ComplexComparisonPartII §C−1.1. The item-level Needs lines specify the direct inputs; proof routes retain their own coefficient, connectivity and size hypotheses.
+Layers 0–5; AdicSpacesPartII §R0.19.9 (gap:pro-universe-extension and gap:pro-cofinal-invariance); GeneralizedCohomology §G2.1 (gap:kan-quillen-properness and gap:kan-quillen-simplicial); AlgebraicTopology Stages 6 and 8 (direct local coefficients, gap:simplicial-postnikov and gap:multisimplicial-diagonal); ProfiniteProPGroups Layers 0, 3 and 4 and the native compactness, generation and abelian pro-p structure interfaces; EnhancedDerivedSheaves §§E0.2–E0.5, E0.8 (gap:coherent-pro-category, gap:coherent-pro-mapping and gap:coherent-pro-universes) and §E2.6 (bounded-below descent); ComplexComparisonPartII §§C−1.1, C5.1 and C6.1–C6.3; BordismFormalGroups §F6.5 (model-diagram rectification). The item-level Needs lines give the direct inputs.
 
 ## Downstream consumers
 
@@ -878,8 +971,8 @@ AnabelianGeometryAndNonabelianChabauty Layer 1 consumes raw K(π,1) recognition,
 
 All statements are expressed here in the roadmap’s notation. Line locators refer to the legally obtained extractions identified by the source keys in `sources.toml`; a source cited by locator without text has status uncertified there.
 
-- **SS:** Alexander Schmidt and Jakob Stix, *Anabelian geometry with étale homotopy types*, Annals of Mathematics 184 (2016), 817–868. [Published open text](https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p05-p.pdf). §materialization–2.3 and Appendix A.1–A.3; SS line 228 and SS line 1410.
-- **I01:** Daniel C. Isaksen, *A model structure on the category of pro-simplicial sets*, arXiv:math/0106152v1 (2001). [Version read](https://arxiv.org/abs/math/0106152v1). §§4–8 and §§12–18; I01 line 398. Page references use the preprint, rather than journal pagination.
+- **SS:** Alexander Schmidt and Jakob Stix, *Anabelian geometry with étale homotopy types*, Annals of Mathematics 184 (2016), 817–868. [Published open text](https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p05-p.pdf). §§1–2.3 and Appendix A.1–A.3; SS line 228 and SS line 1410.
+- **I01:** Daniel C. Isaksen, *A model structure on the category of pro-simplicial sets*, arXiv:math/0106152v1 (2001). [Version read](https://arxiv.org/abs/math/0106152v1). §§4–8 and §§12–18; I01 line 412 and I01 line 423. Page references use the preprint, rather than journal pagination.
 - **IStr:** Daniel C. Isaksen, *Strict model structures for pro-categories*, arXiv:math/0108189v1 (2001; published 2004). [Version read](https://arxiv.org/abs/math/0108189v1). Proof of Theorem 4.15 and Remark 4.16, pp. 11–12; IStr line 507. This is the preprint numbering for the properness repair.
 - **IEt:** Daniel C. Isaksen, *Etale realization on the A¹-homotopy theory of schemes*, arXiv:math/0106158v2 (2003 version). [Version read](https://arxiv.org/abs/math/0106158v2). §§2–3 and §§5–6; IEt line 394 and IEt line 634.
 - **IC:** Daniel C. Isaksen, *Completions of pro-spaces*, arXiv:math/0404303v1 (2004; published 2005). [Version read](https://arxiv.org/abs/math/0404303v1). Theorems 2.2 and 3.3 and Definition 3.1; IC line 185 and IC line 233. The test-object localization is distinct from localization defined only by constant-coefficient homology.
