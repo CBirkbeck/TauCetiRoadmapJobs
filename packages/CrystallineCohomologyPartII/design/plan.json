@@ -12,316 +12,568 @@
   "CrystallineCohomologyPartII:WV.6"
  ],
  "status": "complete",
- "summary": "Target-level plan of Crystalline cohomology, de Rham–Witt and logarithmic foundations, Part II: Witt vector cohomology of singular varieties. WV.0 builds Witt vector sheaves W_nO_X, WO_X and Witt ideal sheaves of schemes in characteristic p, with the tensor and isogeny rationalizations and Frobenius-inverted Witt cohomology, and proves nil-invariance, invariance under finite universal homeomorphisms (with the connected-fibre criterion of Nakamura–Tanaka), Mayer–Vietoris, the higher-direct-image lemmas of Gongyo–Nakamura–Tanaka and finiteness with slopes in [0, 1). WV.1 proves Bhatt–Scholze's h-descent for RΓ(X, WO_X)[1/F] (Proposition 11.41, with the pushout gap E52 of their proof filled) and for RΓ(X, WO_X)[1/p]. WV.2 constructs Berthelot–Bloch–Esnault's Witt vector cohomology with compact supports from the Witt ideal vanishing theorem and proves descent along proper hypercoverings. WV.3 constructs the morphism from rigid cohomology with compact supports and proves the Berthelot–Bloch–Esnault comparison with the slope < 1 part. WV.4 plans the Witt canonical system, pushforwards and Gros cycle classes on Hodge–Witt cohomology with supports and Chatzistamatiou–Rülling's action of proper correspondences. WV.5 plans quasi-resolutions, WO-rational and Witt-rational singularities, their independence of the quasi-resolution and Theorem 4.8.1 for CH_0-trivial fibrations. WV.6 derives the point-count congruences: ζ^{<1} = ζ^W, Ax–Katz modulo q, Serre's theta-divisor congruence, quasi-birational invariance for WO-rational singularities and Esnault's theorem with its singular extension. Imports: CrystallineCohomology CR.0/CR.4, rigid cohomology RD.4–RD.7, ArcTopologyAndDescent AT.1, EnhancedDerivedSheaves E1/E2/E5, SchemeAndStackFoundations SF.0–SF.5, MotivesAndAlgebraicCycles MC.0/MC.2, AbelianSchemesAndArithmeticModuli A2 and AdicCoefficientsAndComparisonsPartII PA.6. The Kisin–Madapusi Pera–Shin and Esnault–Groechenig routes are proposed as separate Part IIs (restructure).",
+ "summary": "Target-level plan of Crystalline cohomology, de Rham–Witt and logarithmic foundations, Part II: Witt vector cohomology of singular varieties. WV.0 builds Witt vector sheaves W_nO_X, WO_X and Witt ideal sheaves of schemes in characteristic p, with the tensor and isogeny rationalizations and Frobenius-inverted Witt cohomology, and proves nil-invariance, invariance under finite universal homeomorphisms (with the connected-fibre criterion of Nakamura–Tanaka), Mayer–Vietoris, the higher-direct-image lemmas of Gongyo–Nakamura–Tanaka and finiteness with slopes in [0, 1). WV.1 proves Bhatt–Scholze's h-descent for RΓ(X, WO_X)[1/F] (Proposition 11.41, with an explicit construction of the finite pushout in the proof) and for RΓ(X, WO_X)[1/p]. WV.2 constructs Berthelot–Bloch–Esnault's Witt vector cohomology with compact supports from the Witt ideal vanishing theorem and proves descent along proper hypercoverings. WV.3 constructs the morphism from rigid cohomology with compact supports and proves the Berthelot–Bloch–Esnault comparison with the slope < 1 part. WV.4 plans the Witt canonical system, pushforwards and Gros cycle classes on Hodge–Witt cohomology with supports and Chatzistamatiou–Rülling's action of proper correspondences. WV.5 plans quasi-resolutions, WO-rational and Witt-rational singularities, their independence of the quasi-resolution and Theorem 4.8.1 for CH_0-trivial fibrations. WV.6 derives the point-count congruences: ζ^{<1} = ζ^W, Ax–Katz modulo q, Serre's theta-divisor congruence, quasi-birational invariance for WO-rational singularities and Esnault's theorem with its singular extension. Imports: CrystallineCohomology CR.4 and CR.3:duality; DerivedDeRhamCohomology PD.6, rigid cohomology RD.4–RD.7, EnhancedDerivedSheaves E1/E2/E5, SchemeAndStackFoundations SF.0–SF.5, MotivesAndAlgebraicCycles MC.0/MC.2, AbelianSchemesAndArithmeticModuli A2.4. The h-site and converse blowup criterion are recorded as gap:h-descent-formalism; qcqs Frobenius factorization as gap:qcqs-frobenius-factorization. The Kisin–Madapusi Pera–Shin and Esnault–Groechenig routes are proposed as separate Part IIs (restructure).",
  "baseline": {
-  "tauceti": "f790474821cf4256814db967cb154e7af3d0c369",
-  "mathlib": "082e2d37e8b0463410cdb532e111cd43d5a66174",
+  "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039",
+  "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
   "declarations": [
    {
     "ref": "mathlib:WittVector",
     "kind": "structure",
     "module": "Mathlib/RingTheory/WittVector/Defs.lean",
     "provides": "p-typical Witt vectors WittVector p R with their ring structure (ring instance in WittVector/Basic.lean)",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:TruncatedWittVector",
     "kind": "def",
     "module": "Mathlib/RingTheory/WittVector/Truncated.lean",
     "provides": "Truncated Witt vectors of length n, with truncation from WittVector",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:WittVector.frobenius",
     "kind": "def",
     "module": "Mathlib/RingTheory/WittVector/Frobenius.lean",
     "provides": "The Witt vector Frobenius as a ring endomorphism of 𝕎 R",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:WittVector.verschiebung",
     "kind": "def",
     "module": "Mathlib/RingTheory/WittVector/Verschiebung.lean",
     "provides": "Verschiebung as an additive endomorphism of 𝕎 R",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:WittVector.teichmuller",
     "kind": "def",
     "module": "Mathlib/RingTheory/WittVector/Teichmuller.lean",
     "provides": "The multiplicative Teichmüller map R →* 𝕎 R",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:WittVector.Isocrystal",
     "kind": "class",
     "module": "Mathlib/RingTheory/WittVector/Isocrystal.lean",
     "provides": "Isocrystals: K(p, k)-vector spaces with a Frobenius-semilinear automorphism",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:AlgebraicGeometry.Scheme",
     "kind": "structure",
     "module": "Mathlib/AlgebraicGeometry/Scheme.lean",
     "provides": "Schemes as locally ringed spaces locally isomorphic to affine schemes",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:AlgebraicGeometry.IsFinite",
     "kind": "class",
     "module": "Mathlib/AlgebraicGeometry/Morphisms/Finite.lean",
     "provides": "Finite morphisms of schemes (affine with finite ring maps)",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:AlgebraicGeometry.IsProper",
     "kind": "class",
     "module": "Mathlib/AlgebraicGeometry/Morphisms/Proper.lean",
     "provides": "Proper morphisms: separated, universally closed, locally of finite type",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:AlgebraicGeometry.IsSeparated",
     "kind": "class",
     "module": "Mathlib/AlgebraicGeometry/Morphisms/Separated.lean",
     "provides": "Separated morphisms of schemes",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:AlgebraicGeometry.Smooth",
     "kind": "class",
     "module": "Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean",
     "provides": "Smooth morphisms of schemes",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:AlgebraicGeometry.Surjective",
     "kind": "class",
     "module": "Mathlib/AlgebraicGeometry/Morphisms/UnderlyingMap.lean",
     "provides": "Morphisms surjective on underlying spaces",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:CategoryTheory.ObjectProperty.IsSerreClass",
     "kind": "class",
     "module": "Mathlib/CategoryTheory/Abelian/SerreClass/Basic.lean",
     "provides": "Serre classes in an abelian category: contain zero, closed under subobjects, quotients and extensions",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:CategoryTheory.ObjectProperty.SerreClassLocalization.abelian",
     "kind": "def",
     "module": "Mathlib/CategoryTheory/Abelian/SerreClass/Localization.lean",
     "provides": "The localization of an abelian category at the morphisms that are isomorphisms modulo a Serre class is abelian",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:CategoryTheory.ObjectProperty.SerreClassLocalization.isZero_obj_iff",
     "kind": "lemma",
     "module": "Mathlib/CategoryTheory/Abelian/SerreClass/Localization.lean",
     "provides": "An object becomes zero in the Serre localization iff it lies in the Serre class",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:DerivedCategory",
     "kind": "def",
     "module": "Mathlib/Algebra/Homology/DerivedCategory/Basic.lean",
     "provides": "The derived category of an abelian category",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:LinearMap.charpoly",
     "kind": "def",
     "module": "Mathlib/LinearAlgebra/Charpoly/Basic.lean",
     "provides": "Characteristic polynomial of an endomorphism of a finite free module",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:PowerSeries.exp",
     "kind": "def",
     "module": "Mathlib/RingTheory/PowerSeries/Exp.lean",
     "provides": "The exponential power series over a ℚ-algebra",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
    },
    {
     "ref": "mathlib:char_dvd_card_solutions_of_sum_lt",
     "kind": "theorem",
     "module": "Mathlib/FieldTheory/ChevalleyWarning.lean",
     "provides": "Chevalley–Warning: if the total degrees of polynomials in more variables sum to less than the number of variables, the characteristic divides the number of common zeros over a finite field",
-    "checked": "statement read in the pinned Mathlib source tree on 2026-10-19"
+    "checked": "Declaration and surrounding hypotheses read at Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a."
+   },
+   {
+    "ref": "mathlib:WittVector.frobenius_verschiebung",
+    "kind": "theorem",
+    "module": "Mathlib/RingTheory/WittVector/Identities.lean",
+    "provides": "F(V(x)) = p·x",
+    "checked": "Statement and hypotheses read at Mathlib 6b7abb3c, line 44."
+   },
+   {
+    "ref": "mathlib:WittVector.verschiebung_mul_frobenius",
+    "kind": "theorem",
+    "module": "Mathlib/RingTheory/WittVector/Identities.lean",
+    "provides": "V(x·F(y)) = V(x)·y",
+    "checked": "Statement and hypotheses read at Mathlib 6b7abb3c, line 99."
+   },
+   {
+    "ref": "mathlib:WittVector.verschiebung_frobenius",
+    "kind": "theorem",
+    "module": "Mathlib/RingTheory/WittVector/Identities.lean",
+    "provides": "V(F(x)) = p·x under CharP R p",
+    "checked": "Statement and hypotheses read at Mathlib 6b7abb3c, line 138."
+   },
+   {
+    "ref": "mathlib:WittVector.map_surjective",
+    "kind": "theorem",
+    "module": "Mathlib/RingTheory/WittVector/Basic.lean",
+    "provides": "The Witt functor preserves a surjective ring map",
+    "checked": "Statement and hypotheses read at Mathlib 6b7abb3c, line 263."
    }
   ]
  },
  "sources": [
   {
-   "id": "BS17",
-   "title": "Projectivity of the Witt vector affine Grassmannian",
-   "authors": "Bhargav Bhatt and Peter Scholze",
-   "edition": "arXiv:1507.06490v3 (21 February 2017), published Invent. Math. 209 (2017), 329–423; page numbers are those of arXiv v3 (printed = PDF page)",
-   "url": "https://arxiv.org/pdf/1507.06490v3",
-   "sha256": "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "§2 (h-sheaves): Definitions 2.1, 2.5, 2.7, Lemma 2.6, Proposition 2.8, Theorem 2.9, Lemma 2.10, Corollary 2.11, pp. 4–8",
-    "§11.5 (descent for Witt vector cohomology): Theorem 11.40, Proposition 11.41, Notation 11.42, Lemma 11.43, Remark 11.44, Lemma 11.45, proof of Proposition 11.41, pp. 51–54"
-   ]
+   "id": "BBE07",
+   "authors": "Pierre Berthelot, Spencer Bloch, Hélène Esnault",
+   "title": "On Witt vector cohomology for singular varieties",
+   "edition": "arXiv v1",
+   "url": "https://arxiv.org/abs/math/0510349v1",
+   "status": "certified",
+   "locator": "Theorem 1.1; Propositions 2.1–2.10, 3.2, 6.2–6.9; §6.5",
+   "sha256": "d7d42a92f5dd7319ea295c0561a9dc654875e9e7e5307b6ca05fd335cfeea0fe"
   },
   {
-   "id": "BBE07",
-   "title": "On Witt vector cohomology for singular varieties",
-   "authors": "Pierre Berthelot, Spencer Bloch and Hélène Esnault",
-   "edition": "arXiv:math/0510349v1 (17 October 2005), published Compositio Math. 143 (2007), 363–392; page numbers are those of arXiv v1 (printed = PDF page); the published version was not obtained",
-   "url": "https://arxiv.org/pdf/math/0510349v1",
-   "sha256": "d7d42a92f5dd7319ea295c0561a9dc654875e9e7e5307b6ca05fd335cfeea0fe",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "All 42 pages: §1 introduction (Theorem 1.1, Corollaries 1.2, 1.3, 1.5, 1.6, Theorem 1.4)",
-    "§2 Witt vector cohomology with compact supports (Propositions 2.1, 2.2, Corollary 2.3, Theorem 2.4, Lemmas 2.5–2.7, 2.8, 2.9, Proposition 2.10), pp. 6–17",
-    "§3 descent (Definition 3.1, Proposition 3.2), pp. 17–21",
-    "§4 rigid comparison morphism (4.1–4.3, Proposition 4.4, Theorem 4.5, Proposition 4.6), pp. 21–28",
-    "§5 proof of Theorem 1.1 (Lemma 5.1, 5.2), pp. 28–33",
-    "§6 applications (6.1, Propositions 6.2–6.4, 6.5, Propositions 6.7–6.9, Lemma 6.10, Corollary 6.12, Remarks 6.13), pp. 33–40"
-   ]
+   "id": "BS17",
+   "authors": "Bhargav Bhatt, Peter Scholze",
+   "title": "Projectivity of the Witt vector affine Grassmannian",
+   "edition": "arXiv v3",
+   "url": "https://arxiv.org/abs/1507.06490v3",
+   "status": "certified",
+   "locator": "Theorem 11.40; Proposition 11.41; Lemmas 11.43, 11.45",
+   "sha256": "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e"
   },
   {
    "id": "CR12",
-   "title": "Hodge–Witt cohomology and Witt-rational singularities",
-   "authors": "Andre Chatzistamatiou and Kay Rülling",
-   "edition": "arXiv:1104.2145v1 (12 April 2011), published Doc. Math. 17 (2012), 663–781; page numbers are those of arXiv v1 (printed = PDF page); the published version could not be retrieved (the publisher page is script-rendered)",
-   "url": "https://arxiv.org/pdf/1104.2145v1",
-   "sha256": "c61a34c8d0e55dcaa1532586634813f5b064124c39e9603b3ef5a7060a6b5ddb",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "Introduction (Theorems 1–5, Corollaries 1–2), pp. 2–6",
-    "§1.1 Witt schemes and the statements of §1.6–1.10 (Witt dualizing systems, Ekedahl's results), pp. 8–33",
-    "§2.3 pushforward (Definition 2.3.1, Propositions 2.3.3, 2.3.4, 2.4.1), pp. 39–40",
-    "§3.2–3.6 (Gros cycle class, Theorem 3.3.10, Proposition 3.4.3, §3.5 correspondences, Propositions 3.5.4, 3.5.6, 3.5.10, Lemmas 3.6.1–3.6.2), pp. 50–68",
-    "§3.7 isogeny categories (Proposition 3.7.7, Notation 3.7.9), pp. 68–72",
-    "§4.1–4.6 and §4.8 (Proposition 4.1.4 through Corollary 4.6.4, Theorem 4.8.1 and its proof), pp. 72–99"
-   ]
+   "authors": "Andre Chatzistamatiou, Kay Rülling",
+   "title": "Hodge-Witt cohomology and Witt-rational singularities",
+   "edition": "arXiv v1",
+   "url": "https://arxiv.org/abs/1104.2145v1",
+   "status": "certified",
+   "locator": "§§1.1, 1.5–1.10, 2.3, 3.2–3.7, 4.1–4.8",
+   "sha256": "c61a34c8d0e55dcaa1532586634813f5b064124c39e9603b3ef5a7060a6b5ddb"
   },
   {
    "id": "CR11",
+   "authors": "Andre Chatzistamatiou, Kay Rülling",
    "title": "Higher direct images of the structure sheaf in positive characteristic",
-   "authors": "Andre Chatzistamatiou and Kay Rülling",
-   "edition": "arXiv:0911.3599v2 (13 April 2011), published Algebra & Number Theory 5 (2011), 693–775 (cited as [CR09] in CR12)",
-   "url": "https://arxiv.org/pdf/0911.3599v2",
-   "sha256": "ff3deed03386c5e5eef25d909a8743187734f28a9e9fb49d38df1ef63ddba933",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "Introduction, pp. 2–5",
-    "§1.1–1.3 (weak cohomology theories with supports, Theorem 1.2.3, correspondences), pp. 5–22"
-   ]
+   "edition": "arXiv v2",
+   "url": "https://arxiv.org/abs/0911.3599v2",
+   "status": "certified",
+   "locator": "Definitions 1.1.1, 1.1.14; Theorem 1.2.3; §1.3",
+   "sha256": "ff3deed03386c5e5eef25d909a8743187734f28a9e9fb49d38df1ef63ddba933"
   },
   {
    "id": "GNT19",
+   "authors": "Yoshinori Gongyo, Yusuke Nakamura, Hiromu Tanaka",
    "title": "Rational points on log Fano threefolds over a finite field",
-   "authors": "Yoshinori Gongyo, Yusuke Nakamura and Hiromu Tanaka",
-   "edition": "arXiv:1512.05003v3, published J. Eur. Math. Soc. 21 (2019), 3759–3795; page numbers are those of arXiv v3 (printed = PDF page)",
-   "url": "https://arxiv.org/pdf/1512.05003v3",
-   "sha256": "472ef5f5ff9b3560a06af836aa787d91d6ba2154419ae675fb3a48050366bd9b",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "§1 (Theorems 1.1–1.3), p. 2",
-    "§2.5–2.6 (Witt vector cohomology, Remark 2.17, Lemmas 2.18–2.22, Proposition 2.23, Lemmas 2.24–2.25), pp. 13–18",
-    "§3 opening (condition (a), Remark 3.1), p. 19",
-    "§4 (Definition 4.5, Remark 4.6), p. 29"
-   ]
+   "edition": "arXiv v3",
+   "url": "https://arxiv.org/abs/1512.05003v3",
+   "status": "certified",
+   "locator": "§2.5; Lemmas 2.18–2.25; Definition 4.5; Remark 4.6",
+   "sha256": "472ef5f5ff9b3560a06af836aa787d91d6ba2154419ae675fb3a48050366bd9b"
   },
   {
    "id": "NT20",
+   "authors": "Yusuke Nakamura, Hiromu Tanaka",
    "title": "A Witt Nadel vanishing theorem for threefolds",
-   "authors": "Yusuke Nakamura and Hiromu Tanaka",
-   "edition": "arXiv:1712.07358v2, published Compositio Math. 156 (2020); page numbers are those of arXiv v2",
-   "url": "https://arxiv.org/pdf/1712.07358v2",
-   "sha256": "62dc8d856f4f39cc8f4c7c79c18e0b2ba8dac43b5412030ad1a008f365ecb26e",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "§2.1 Notation (connected fibres), p. 5",
-    "Remark 2.2, p. 6",
-    "§2.4, Lemmas 2.17–2.21, Proposition 2.22, pp. 13–15"
-   ]
+   "edition": "arXiv v2",
+   "url": "https://arxiv.org/abs/1712.07358v2",
+   "status": "certified",
+   "locator": "§2.1; Remark 2.2; Lemmas 2.17–2.18",
+   "sha256": "62dc8d856f4f39cc8f4c7c79c18e0b2ba8dac43b5412030ad1a008f365ecb26e"
   },
   {
    "id": "ESN03",
-   "title": "Varieties over a finite field with trivial Chow group of 0-cycles have a rational point",
    "authors": "Hélène Esnault",
-   "edition": "arXiv:math/0207022v2 (2 September 2002), published Invent. Math. 151 (2003), 187–191; page numbers are those of arXiv v2",
-   "url": "https://arxiv.org/pdf/math/0207022v2",
-   "sha256": "d0bd531c2c9824437ad69cde2d1393be1aced82d47501f56b897789515ea772e",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "All 6 pages: §1 (decomposition of the diagonal, Theorem 1.1, Corollaries 1.2–1.3), §2 (proof, Lemma 2.1), §3 comments"
-   ]
+   "title": "Varieties over a finite field with trivial Chow group of 0-cycles have a rational point",
+   "edition": "arXiv v2",
+   "url": "https://arxiv.org/abs/math/0207022v2",
+   "status": "certified",
+   "locator": "Theorem 1.1; Corollaries 1.2–1.3; §1 p. 2",
+   "sha256": "d0bd531c2c9824437ad69cde2d1393be1aced82d47501f56b897789515ea772e"
   },
   {
    "id": "HW23",
-   "title": "On the relative minimal model program for fourfolds in positive and mixed characteristic",
-   "authors": "Christopher Hacon and Jakub Witaszek",
-   "edition": "Published version, Forum Math. Pi 11 (2023), e10, 1–35 (Cambridge open access; each download is stamped, so the hash is not reproducible); arXiv:2009.02631v2 compared for the Witt passages (there Corollary 4.6 is published Corollary 4.7 and the point-count Corollary 1.3 is absent)",
-   "url": "https://doi.org/10.1017/fmp.2023.6",
-   "accessDate": "2026-10-19",
-   "readSections": [
-    "Introduction including Corollary 1.3, pp. 1–3",
-    "§2 definition of WO-rational singularities, p. 5",
-    "§4.3 Corollary 4.7 and the proof of Corollary 1.3, pp. 19–20",
-    "References [BBE07], [CR12], [GNH19], [NT20], pp. 31–34"
-   ]
+   "authors": "Christopher Hacon, Jakub Witaszek",
+   "title": "On the relative Minimal Model Program for fourfolds in positive and mixed characteristic",
+   "edition": "Certified text: arXiv v2, Corollary 4.6. Published Corollary 4.7 is the corresponding result. Published Corollary 1.3 and pp. 19–20 are cited by locator only; they are absent from v2 and are not certified by this extraction.",
+   "url": "https://arxiv.org/abs/2009.02631v2",
+   "status": "certified",
+   "locator": "§2; Corollary 4.6 and proof (v2)",
+   "sha256": "161c63089dadc8f9aecd3da1753563fe8f7f9fc2b2722952307cd19bacda7c66"
+  },
+  {
+   "id": "Tan18",
+   "authors": "Hiromu Tanaka",
+   "title": "Behavior of canonical divisors under purely inseparable base changes",
+   "edition": "arXiv:1502.01381v3, Proposition A.4, p. 30; published J. Reine Angew. Math. 744 (2018), 237–264. Locators use arXiv v3.",
+   "url": "https://arxiv.org/abs/1502.01381v3",
+   "status": "certified",
+   "locator": "Proposition A.4, p. 30",
+   "sha256": "4f0f9674b8b91dfb29d7f7535ebcc6bd86dbc9d5492e54a848b7a8d39cca4aaa"
+  },
+  {
+   "id": "dJ97",
+   "authors": "A. J. de Jong",
+   "title": "Families of curves and alterations",
+   "edition": "Theorem 5.9; Corollaries 5.10, 5.15, p. 620",
+   "url": "https://www.numdam.org/item/AIF_1997__47_2_599_0/",
+   "status": "certified",
+   "locator": "Theorem 5.9; Corollaries 5.10, 5.15, p. 620",
+   "sha256": "caf07fbacaea01f0fc9bba14aad435d23f2fe2b847f1607baf6f2a3f874e4854"
+  },
+  {
+   "id": "dJ96",
+   "authors": "A. J. de Jong",
+   "title": "Smoothness, semi-stability and alterations",
+   "edition": "Corollary 7.4, p. 88",
+   "url": "https://www.numdam.org/item/PMIHES_1996__83__51_0/",
+   "status": "certified",
+   "locator": "Corollary 7.4, p. 88",
+   "sha256": "9e4e7dab2525e9a0fb0820752434c5a168914873b6118f5a967fcccae257ffb7"
+  },
+  {
+   "id": "Gro85",
+   "authors": "Michel Gros",
+   "title": "Classes de Chern et classes de cycles en cohomologie de Hodge–Witt logarithmique",
+   "edition": "II, Définition 4.1.7, p. 50",
+   "url": "https://www.numdam.org/item/MSMF_1985_2_21__1_0/",
+   "status": "certified",
+   "locator": "II, Définition 4.1.7, p. 50",
+   "sha256": "fffa536be3bcf10a24f4e8679258dc37bcab13b8ed5f77da15852033e9def27a"
+  },
+  {
+   "id": "Eke84",
+   "authors": "Torsten Ekedahl",
+   "title": "On the multiplicative properties of the de Rham–Witt complex. I",
+   "edition": "paywalled; cited by its locator without the text",
+   "url": "https://doi.org/10.1007/BF02384380",
+   "status": "uncertified",
+   "locator": "Theorem 4.1 and (2.11); CR12 Theorem 1.10.3"
+  },
+  {
+   "id": "Kol96",
+   "authors": "János Kollár",
+   "title": "Rational Curves on Algebraic Varieties",
+   "edition": "paywalled; cited by its locator without the text",
+   "url": "https://doi.org/10.1007/978-3-662-03276-3",
+   "status": "uncertified",
+   "locator": "IV.3.2.5; IV.3.6; IV.3.13.3; V.2.13"
+  },
+  {
+   "id": "EkeII",
+   "authors": "Torsten Ekedahl",
+   "title": "On the multiplicative properties of the de Rham–Witt complex. II",
+   "edition": "paywalled; cited by its locator without the text",
+   "url": "https://doi.org/10.1007/BF02384419",
+   "status": "uncertified",
+   "locator": "CR12 Corollaries 1.10.5–1.10.6"
+  },
+  {
+   "id": "Ser58Top",
+   "authors": "Jean-Pierre Serre",
+   "title": "Sur la topologie des variétés algébriques en caractéristique p",
+   "edition": "§§1, 3, pp. 24–53",
+   "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mexico.pdf",
+   "status": "certified",
+   "locator": "§§1, 3, pp. 24–53",
+   "sha256": "63516b0190e598ed8581503ef1cdf0d905457cf0322db30bf2323d1186094f25"
+  },
+  {
+   "id": "CT03",
+   "authors": "Bruno Chiarellotto; Nobuo Tsuzuki",
+   "title": "Cohomological descent of rigid cohomology for étale coverings",
+   "edition": "Theorem 7.3.1; Proposition 11.2.5; §11",
+   "url": "https://www.numdam.org/item/RSMUP_2003__109__63_0/",
+   "status": "certified",
+   "locator": "Theorem 7.3.1; Proposition 11.2.5; §11",
+   "sha256": "f332fdec43e968bf5501e2442744eac35678c0bf19515724c084580c65aed271"
+  },
+  {
+   "id": "Tsu03",
+   "authors": "Nobuo Tsuzuki",
+   "title": "Cohomological descent of rigid cohomology for proper coverings",
+   "edition": "paywalled; cited by its locator without the text",
+   "url": "https://doi.org/10.1007/s00222-002-0252-9",
+   "status": "uncertified",
+   "locator": "Proper hypercover descent, pp. 101–133"
+  },
+  {
+   "id": "Del74",
+   "authors": "Pierre Deligne",
+   "title": "Théorie de Hodge III",
+   "edition": "(6.2.5), pp. 5–77",
+   "url": "https://www.numdam.org/item/PMIHES_1974__44__5_0/",
+   "status": "certified",
+   "locator": "(6.2.5), pp. 5–77",
+   "sha256": "d78d4f46742916cd669279e7db365e4db6a43f38d2dcdec6862c6d27d07216b3"
+  },
+  {
+   "id": "Ser58",
+   "authors": "Jean-Pierre Serre",
+   "title": "Quelques propriétés des variétés abéliennes en caractéristique p",
+   "edition": "Uncertified publisher text; cited by locator.",
+   "url": "https://doi.org/10.2307/2372780",
+   "status": "uncertified",
+   "locator": "Théorème 2, Amer. J. Math. 80, pp. 715–739"
+  },
+  {
+   "id": "Ax64",
+   "authors": "James Ax",
+   "title": "Zeroes of polynomials over finite fields",
+   "edition": "Uncertified publisher text; cited by locator.",
+   "url": "https://doi.org/10.2307/2373163",
+   "status": "uncertified",
+   "locator": "pp. 255–261; BBE07 Proposition 6.1"
+  },
+  {
+   "id": "BS83",
+   "authors": "Spencer Bloch; V. Srinivas",
+   "title": "Remarks on correspondences and algebraic cycles",
+   "edition": "Uncertified publisher text; cited by locator.",
+   "url": "https://doi.org/10.2307/2374341",
+   "status": "uncertified",
+   "locator": "Proposition 1, pp. 1235–1253"
+  },
+  {
+   "id": "Tsu04",
+   "authors": "Nobuo Tsuzuki",
+   "title": "Cohomological descent in rigid cohomology",
+   "edition": "Uncertified publisher text; cited by locator.",
+   "url": "https://doi.org/10.1515/9783110198133.2.931",
+   "status": "uncertified",
+   "locator": "§7.3.3, pp. 931–981"
+  },
+  {
+   "id": "EGAIII1",
+   "authors": "Alexander Grothendieck; Jean Dieudonné",
+   "title": "Éléments de géométrie algébrique III, première partie",
+   "edition": "Proposition 3.3.1 and Corollary 3.3.2, pp. 117–118",
+   "url": "https://www.numdam.org/item/PMIHES_1961__11__5_0/",
+   "status": "certified",
+   "locator": "Proposition 3.3.1 and Corollary 3.3.2, pp. 117–118",
+   "sha256": "3ed59fe81da07f1ab685ddc54a93128a364419d4ddafbc7affcd8abc8b401605"
   }
  ],
  "sourceVersions": [
   {
-   "kind": "preprint",
-   "url": "https://arxiv.org/pdf/1507.06490v3",
-   "read": "2026-10-19",
-   "sha256": "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e"
-  },
-  {
-   "kind": "preprint",
+   "sourceId": "BBE07",
    "url": "https://arxiv.org/pdf/math/0510349v1",
-   "read": "2026-10-19",
-   "sha256": "d7d42a92f5dd7319ea295c0561a9dc654875e9e7e5307b6ca05fd335cfeea0fe"
+   "status": "certified",
+   "sha256": "d7d42a92f5dd7319ea295c0561a9dc654875e9e7e5307b6ca05fd335cfeea0fe",
+   "versionNote": "arXiv v1"
   },
   {
-   "kind": "preprint",
+   "sourceId": "BS17",
+   "url": "https://arxiv.org/pdf/1507.06490v3",
+   "status": "certified",
+   "sha256": "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e",
+   "versionNote": "arXiv v3"
+  },
+  {
+   "sourceId": "CR12",
    "url": "https://arxiv.org/pdf/1104.2145v1",
-   "read": "2026-10-19",
-   "sha256": "c61a34c8d0e55dcaa1532586634813f5b064124c39e9603b3ef5a7060a6b5ddb"
+   "status": "certified",
+   "sha256": "c61a34c8d0e55dcaa1532586634813f5b064124c39e9603b3ef5a7060a6b5ddb",
+   "versionNote": "arXiv v1"
   },
   {
-   "kind": "preprint",
+   "sourceId": "CR11",
    "url": "https://arxiv.org/pdf/0911.3599v2",
-   "read": "2026-10-19",
-   "sha256": "ff3deed03386c5e5eef25d909a8743187734f28a9e9fb49d38df1ef63ddba933"
+   "status": "certified",
+   "sha256": "ff3deed03386c5e5eef25d909a8743187734f28a9e9fb49d38df1ef63ddba933",
+   "versionNote": "arXiv v2"
   },
   {
-   "kind": "preprint",
+   "sourceId": "GNT19",
    "url": "https://arxiv.org/pdf/1512.05003v3",
-   "read": "2026-10-19",
-   "sha256": "472ef5f5ff9b3560a06af836aa787d91d6ba2154419ae675fb3a48050366bd9b"
+   "status": "certified",
+   "sha256": "472ef5f5ff9b3560a06af836aa787d91d6ba2154419ae675fb3a48050366bd9b",
+   "versionNote": "arXiv v3"
   },
   {
-   "kind": "preprint",
+   "sourceId": "NT20",
    "url": "https://arxiv.org/pdf/1712.07358v2",
-   "read": "2026-10-19",
-   "sha256": "62dc8d856f4f39cc8f4c7c79c18e0b2ba8dac43b5412030ad1a008f365ecb26e"
+   "status": "certified",
+   "sha256": "62dc8d856f4f39cc8f4c7c79c18e0b2ba8dac43b5412030ad1a008f365ecb26e",
+   "versionNote": "arXiv v2"
   },
   {
-   "kind": "preprint",
+   "sourceId": "ESN03",
    "url": "https://arxiv.org/pdf/math/0207022v2",
-   "read": "2026-10-19",
-   "sha256": "d0bd531c2c9824437ad69cde2d1393be1aced82d47501f56b897789515ea772e"
+   "status": "certified",
+   "sha256": "d0bd531c2c9824437ad69cde2d1393be1aced82d47501f56b897789515ea772e",
+   "versionNote": "arXiv v2"
   },
   {
-   "kind": "published",
-   "url": "https://doi.org/10.1017/fmp.2023.6",
-   "read": "2026-10-19"
-  },
-  {
-   "kind": "preprint",
+   "sourceId": "HW23",
    "url": "https://arxiv.org/pdf/2009.02631v2",
-   "read": "2026-10-19",
-   "sha256": "161c63089dadc8f9aecd3da1753563fe8f7f9fc2b2722952307cd19bacda7c66"
+   "status": "certified",
+   "sha256": "161c63089dadc8f9aecd3da1753563fe8f7f9fc2b2722952307cd19bacda7c66",
+   "versionNote": "Certified text: arXiv v2, Corollary 4.6. Published Corollary 4.7 is the corresponding result. Published Corollary 1.3 and pp. 19–20 are cited by locator only; they are absent from v2 and are not certified by this extraction."
+  },
+  {
+   "sourceId": "Tan18",
+   "url": "https://arxiv.org/pdf/1502.01381v3",
+   "status": "certified",
+   "sha256": "4f0f9674b8b91dfb29d7f7535ebcc6bd86dbc9d5492e54a848b7a8d39cca4aaa",
+   "versionNote": "arXiv:1502.01381v3, Proposition A.4, p. 30; published J. Reine Angew. Math. 744 (2018), 237–264. Locators use arXiv v3."
+  },
+  {
+   "sourceId": "dJ97",
+   "url": "https://www.numdam.org/item/AIF_1997__47_2_599_0.pdf",
+   "status": "certified",
+   "sha256": "caf07fbacaea01f0fc9bba14aad435d23f2fe2b847f1607baf6f2a3f874e4854",
+   "versionNote": "Published text at the listed locator."
+  },
+  {
+   "sourceId": "dJ96",
+   "url": "https://www.numdam.org/item/PMIHES_1996__83__51_0.pdf",
+   "status": "certified",
+   "sha256": "9e4e7dab2525e9a0fb0820752434c5a168914873b6118f5a967fcccae257ffb7",
+   "versionNote": "Published text at the listed locator."
+  },
+  {
+   "sourceId": "Gro85",
+   "url": "https://www.numdam.org/item/MSMF_1985_2_21__1_0.pdf",
+   "status": "certified",
+   "sha256": "fffa536be3bcf10a24f4e8679258dc37bcab13b8ed5f77da15852033e9def27a",
+   "versionNote": "Published text at the listed locator."
+  },
+  {
+   "sourceId": "Eke84",
+   "url": "https://doi.org/10.1007/BF02384380",
+   "status": "uncertified",
+   "versionNote": "paywalled; cited by its locator without the text"
+  },
+  {
+   "sourceId": "Kol96",
+   "url": "https://doi.org/10.1007/978-3-662-03276-3",
+   "status": "uncertified",
+   "versionNote": "paywalled; cited by its locator without the text"
+  },
+  {
+   "sourceId": "EkeII",
+   "url": "https://doi.org/10.1007/BF02384419",
+   "status": "uncertified",
+   "versionNote": "paywalled; cited by its locator without the text"
+  },
+  {
+   "sourceId": "Ser58Top",
+   "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mexico.pdf",
+   "status": "certified",
+   "sha256": "63516b0190e598ed8581503ef1cdf0d905457cf0322db30bf2323d1186094f25",
+   "versionNote": "Published text at the listed locator."
+  },
+  {
+   "sourceId": "CT03",
+   "url": "https://www.numdam.org/item/RSMUP_2003__109__63_0.pdf",
+   "status": "certified",
+   "sha256": "f332fdec43e968bf5501e2442744eac35678c0bf19515724c084580c65aed271",
+   "versionNote": "Published text at the listed locator."
+  },
+  {
+   "sourceId": "Tsu03",
+   "url": "https://doi.org/10.1007/s00222-002-0252-9",
+   "status": "uncertified",
+   "versionNote": "paywalled; cited by its locator without the text"
+  },
+  {
+   "sourceId": "Del74",
+   "url": "https://www.numdam.org/item/PMIHES_1974__44__5_0.pdf",
+   "status": "certified",
+   "sha256": "d78d4f46742916cd669279e7db365e4db6a43f38d2dcdec6862c6d27d07216b3",
+   "versionNote": "Published text at the listed locator."
+  },
+  {
+   "sourceId": "Ser58",
+   "url": "https://doi.org/10.2307/2372780",
+   "status": "uncertified",
+   "versionNote": "Uncertified publisher text; cited by locator."
+  },
+  {
+   "sourceId": "Ax64",
+   "url": "https://doi.org/10.2307/2373163",
+   "status": "uncertified",
+   "versionNote": "Uncertified publisher text; cited by locator."
+  },
+  {
+   "sourceId": "BS83",
+   "url": "https://doi.org/10.2307/2374341",
+   "status": "uncertified",
+   "versionNote": "Uncertified publisher text; cited by locator."
+  },
+  {
+   "sourceId": "Tsu04",
+   "url": "https://doi.org/10.1515/9783110198133.2.931",
+   "status": "uncertified",
+   "versionNote": "Uncertified publisher text; cited by locator."
+  },
+  {
+   "sourceId": "EGAIII1",
+   "url": "https://www.numdam.org/item/PMIHES_1961__11__5_0.pdf",
+   "status": "certified",
+   "sha256": "3ed59fe81da07f1ab685ddc54a93128a364419d4ddafbc7affcd8abc8b401605",
+   "versionNote": "Published text at the listed locator."
   }
  ],
  "nodes": [
@@ -331,20 +583,20 @@
    "realises": [
     "CrystallineCohomologyPartII:WV.0"
    ],
-   "title": "Witt vector sheaves of a scheme in characteristic p",
+   "title": "Witt ideal sheaves and cohomology on Witt schemes",
    "kind": "construction",
-   "statement": "Let p be a prime and X a scheme with p·O_X = 0. For n ≥ 1, W_nO_X is the sheaf of rings U ↦ W_n(O_X(U)) (truncated p-typical Witt vectors of length n), and WO_X := lim_n W_nO_X is the sheaf U ↦ W(O_X(U)). For a quasi-coherent ideal I ⊂ O_X, W_nI := ker(W_nO_X → W_n(O_X/I)) is the subsheaf of Witt vectors all of whose components are sections of I, and WI := lim_n W_nI. These carry restriction R: W_{n+1} → W_n and Frobenius F: W_{n+1} → W_n (ring maps), Verschiebung V: W_n → W_{n+1} (additive) and the multiplicative Teichmüller map [−]: O_X → W_nO_X, with FV = p and V(x·F(y)) = V(x)·y, and exact sequences 0 → W_nI →(V) W_{n+1}I →(R^n) I → 0 of sheaves of abelian groups. The ringed space W_nX := (|X|, W_nO_X) is a scheme, with W_n(Spec A) = Spec W_n(A); W_nO_X and W_nI are quasi-coherent on W_nX, and W_n(V(I)) is the closed subscheme of W_nX cut out by W_nI. A morphism f: X → Y induces W_nf: W_nX → W_nY; if X, Y are of finite type over a perfect field k of characteristic p, then W_nX is of finite type over W_n(k), W_nf preserves being separated, of finite type and proper, and R^if_*(W_nI) = R^i(W_nf)_*(W_nI) as sheaves of abelian groups on |Y|. Finally RΓ(X, WI) ≅ Rlim_n RΓ(X, W_nI), and for X proper over k and I coherent, H^i(X, WI) = lim_n H^i(X, W_nI).",
+   "statement": "Let p be a prime and X a scheme with p·O_X = 0. For n ≥ 1, W_nO_X is the sheaf of rings U ↦ W_n(O_X(U)) (truncated p-typical Witt vectors of length n), and WO_X := lim_n W_nO_X is the sheaf U ↦ W(O_X(U)). For a quasi-coherent ideal I ⊂ O_X, W_nI := ker(W_nO_X → W_n(O_X/I)) is the subsheaf of Witt vectors all of whose components are sections of I, and WI := lim_n W_nI. These carry restriction R: W_{n+1} → W_n and Frobenius F: W_{n+1} → W_n (ring maps), Verschiebung V: W_n → W_{n+1} (additive) and the multiplicative Teichmüller map [−]: O_X → W_nO_X, with FV = p and V(x·F(y)) = V(x)·y, and exact sequences 0 → W_nI →(V) W_{n+1}I →(R^n) I → 0 of sheaves of abelian groups. Use the Witt scheme W_nX of CrystallineCohomology §CR.4.6; W_nO_X and W_nI are quasi-coherent on W_nX, and W_n(V(I)) is the closed subscheme of W_nX cut out by W_nI. For the induced morphism W_nf: W_nX → W_nY, if X, Y are of finite type over a perfect field k of characteristic p, then W_nX is of finite type over W_n(k), W_nf preserves being separated, of finite type and proper, and R^if_*(W_nI) = R^i(W_nf)_*(W_nI) as sheaves of abelian groups on |Y|. Finally RΓ(X, WI) ≅ Rlim_n RΓ(X, W_nI), and for X proper over k and I coherent, H^i(X, WI) = lim_n H^i(X, W_nI).",
    "hypotheses": [
     "p is prime and p·O_X = 0; no reducedness or finiteness is assumed for the definitions.",
     "Quasi-coherence of W_nI on W_nX and the Rlim formula need I quasi-coherent; the inverse-limit formula on cohomology needs X proper over a perfect field and I coherent (the groups H^i(X, W_nI) are then of finite length over W_n(k), so the tower is Mittag-Leffler).",
     "W_nO_X is not an O_X-module for n ≥ 2: it is a sheaf of W_n(k)-algebras, and cohomology is sheaf cohomology of abelian groups on |X|."
    ],
    "proofSteps": [
-    "Define W_nO_X on opens by the functor A ↦ W_n(A) = A^n (as sets); it is a sheaf because limits of sheaves of sets are computed objectwise and the ring structure is given by universal integral polynomials, so it is compatible with restriction (Mathlib's TruncatedWittVector and its ring structure).",
-    "The operator identities hold on sections by CrystallineCohomology:CR.4/witt-structural-identities; the exact sequences follow from the coordinate description of V as a shift and of R as truncation.",
-    "For X = Spec A, W_n(A_f) = W_n(A)_{[f]} (localization at the Teichmüller lift), so W_nX is a scheme covered by Spec W_n(A) for affine opens Spec A of X; quasi-coherence is the degree-zero case of CrystallineCohomology:CR.4/witt-localization-descent (4), using W_rΩ⁰ = W_r (CrystallineCohomology:CR.4/classical-de-rham-witt). W_nI is the kernel of a map of quasi-coherent W_nO_X-modules, W_n(O_X) → W_n(O_X/I), the structure sheaf of the closed subscheme W_n(V(I)).",
-    "If X is of finite type over k, W_n(A) is a finite W_n(A)-module extension of a finitely generated W_n(k)-algebra by induction on n (the kernel of R^{n−1} is V^{n−1}A, a finite module through F^{n−1}), giving finite type; properness and separatedness transfer because |W_nX| = |X| and W_nX → W_n(Y) is obtained from X → Y by nilpotent thickenings (CR12 §1.1).",
-    "The Rlim formula, in the enhanced derived category of sheaves of abelian groups (EnhancedDerivedSheaves:E1/enhanced-derived-category): each W_nI has vanishing cohomology on affine opens of a quasi-compact separated X and the transition maps W_{n+1}I → W_nI are surjective on affine opens, so the tower is Rlim-acyclic (WV.0/witt-limit-lemmas). For X proper the H^i(X, W_nI) are W_n(k)-modules of finite length, so the tower is Mittag-Leffler and lim¹ vanishes (ArithmeticGaloisDuality:R02.1/mittag-leffler-lim-one)."
+    "Use the sheaf of rings O_{W_nX} = W_nO_X and the functorial Witt scheme of CrystallineCohomology §CR.4.6. Define W_nI as the sheaf kernel for the closed subscheme V(I); its sections are precisely the vectors with all components in I. The affine Witt ideal itself is imported from that section.",
+    "The section identities are Mathlib WittVector.frobenius_verschiebung and verschiebung_mul_frobenius, and verschiebung_frobenius in characteristic p. WittVector.map_surjective applied to A → A/I gives 0 → W(I) → W(A) → W(A/I) → 0 on affine opens. Shifting and truncating coordinates give the exact V-sequences for the ideal sheaves.",
+    "Apply CrystallineCohomology §CR.4.6, witt-localization-descent, on each Witt affine open. The kernel W_nI of O_{W_nX} → O_{W_n(V(I))} is a quasi-coherent ideal sheaf, whose closed subscheme is W_n(V(I)).",
+    "For a finite-type k-algebra A with k perfect, Frobenius on A is finite. Induction along the truncation sequence, whose kernel V^{n−1}A is finite through F^{n−1}, gives that W_n(A) is finite type over W_n(k). The reduced morphism underlying W_nf is f_red; separatedness and properness then transfer across the nilpotent thickenings, using finite type (GNT19 §2.5; CR12 §1.1).",
+    "The Rlim formula, in the enhanced derived category of sheaves of abelian groups (EnhancedDerivedSheaves:E1/enhanced-derived-category): each W_nI has vanishing cohomology on affine opens of a quasi-compact separated X and the transition maps W_{n+1}I → W_nI are surjective on affine opens, so the tower is Rlim-acyclic (WV.0/witt-limit-lemmas). For X proper the H^i(X, W_nI) are W_n(k)-modules of finite length, so the tower is Mittag-Leffler and lim¹ vanishes (DerivedModuleAlgebra:1.T.1/mittag-leffler-lim-one)."
    ],
    "acceptance": [
     "W_n(Spec F_p) = Spec ℤ/p^n and WO(Spec F_p) has global sections ℤ_p.",
@@ -360,8 +612,13 @@
     "CrystallineCohomology:CR.4/witt-structural-identities",
     "CrystallineCohomology:CR.4/classical-de-rham-witt",
     "CrystallineCohomology:CR.4/witt-localization-descent",
-    "ArithmeticGaloisDuality:R02.1/mittag-leffler-lim-one",
-    "EnhancedDerivedSheaves:E1/enhanced-derived-category"
+    "DerivedModuleAlgebra:1.T.1/mittag-leffler-lim-one",
+    "EnhancedDerivedSheaves:E1/enhanced-derived-category",
+    "CrystallineCohomology:CR.4.6/wittScheme",
+    "mathlib:WittVector.frobenius_verschiebung",
+    "mathlib:WittVector.verschiebung_mul_frobenius",
+    "mathlib:WittVector.verschiebung_frobenius",
+    "mathlib:WittVector.map_surjective"
    ],
    "sources": [
     {
@@ -405,54 +662,14 @@
    ],
    "api": [
     {
-     "name": "TauCeti.WittCohomology.wittSheaf",
-     "role": "data",
-     "statement": "For a scheme X with p = 0 and n ≥ 1, the sheaf of rings W_nO_X; wittSheafInf X := lim_n W_nO_X."
-    },
-    {
      "name": "TauCeti.WittCohomology.wittIdeal",
      "role": "data",
      "statement": "For a quasi-coherent ideal I ⊂ O_X, the ideal sheaf W_nI = ker(W_nO_X → W_n(O_X/I)) and WI = lim W_nI."
     },
     {
-     "name": "TauCeti.WittCohomology.wittSheaf_sections",
-     "role": "characterisation",
-     "statement": "Γ(U, W_nO_X) = TruncatedWittVector p n (Γ(U, O_X)) and Γ(U, WO_X) = WittVector p (Γ(U, O_X)), naturally in U."
-    },
-    {
-     "name": "TauCeti.WittCohomology.wittIdeal",
-     "role": "data",
-     "statement": "Affine form: for an ideal I of a ring A, the ideal W(I) = ker(W(A) → W(A ⧸ I)) of WittVector p A, the sections of WI over Spec A."
-    },
-    {
-     "name": "TauCeti.WittCohomology.mem_wittIdeal_iff",
-     "role": "characterisation",
-     "statement": "x ∈ W(I) iff every Witt component of x lies in I."
-    },
-    {
-     "name": "TauCeti.WittCohomology.verschiebung_mem_wittIdeal",
-     "role": "relation",
-     "statement": "V maps W(I) into W(I)."
-    },
-    {
-     "name": "TauCeti.WittCohomology.wittScheme",
-     "role": "constructor",
-     "statement": "The scheme W_nX = (|X|, W_nO_X), with wittScheme_affine: W_n(Spec A) ≅ Spec W_n(A) and wittScheme_one: W_1X = X."
-    },
-    {
-     "name": "TauCeti.WittCohomology.wittScheme_map",
-     "role": "functoriality",
-     "statement": "f: X → Y induces W_nf: W_nX → W_nY with W_n(id) = id and W_n(g ∘ f) = W_ng ∘ W_nf; it is separated, of finite type, proper when f is (X, Y of finite type over a perfect field)."
-    },
-    {
      "name": "TauCeti.WittCohomology.verschiebung_exact",
      "role": "relation",
      "statement": "0 → W_nI →(V) W_{n+1}I →(R^n) I → 0 is exact."
-    },
-    {
-     "name": "TauCeti.WittCohomology.frobenius_verschiebung",
-     "role": "relation",
-     "statement": "F ∘ V = p on W_nO_X and V(x·F(y)) = V(x)·y."
     },
     {
      "name": "TauCeti.WittCohomology.isQuasicoherent_wittIdeal",
@@ -470,9 +687,9 @@
      "statement": "RΓ(X, WI) ≅ Rlim_n RΓ(X, W_nI) for I quasi-coherent on a quasi-compact separated X; for X proper over k, H^i(X, WI) = lim_n H^i(X, W_nI)."
     },
     {
-     "name": "TauCeti.WittCohomology.wittScheme_perfect",
+     "name": "TauCeti.WittCohomology.wittScheme_morphism_properties",
      "role": "compatibility",
-     "statement": "For X perfect, wittScheme n X agrees with the Witt scheme W_nX of perfect schemes of tauceti:TauCetiRoadmap/SchemeAndStackFoundations §0.26 (same underlying space, same structure sheaf W_n(O_X))."
+     "statement": "For f between finite-type k-schemes with k perfect, W_nf is separated, finite type or proper when f is, and W_nX is finite type over W_n(k)."
     }
    ],
    "tests": [
@@ -500,6 +717,10 @@
      "name": "TauCeti.WittCohomology.wittIdeal_ne_teichmuller_ideal",
      "kind": "non-example",
      "statement": "W_nI is not the ideal generated by Teichmüller lifts of I: for I = (t) ⊂ F_p[t] and n = 2, V(t) = (0, t) lies in W_2(I), but every element of the ideal [t]·W_2(F_p[t]) has second Witt component divisible by t^p."
+    },
+    {
+     "kind": "compatibility",
+     "statement": "For X = Spec F_p[t] and n = 2, the open D(t) on the imported W_2X has sections W_2(F_p[t,t⁻¹]); Witt ideal sheaves restrict on this same open."
     }
    ],
    "planet": {
@@ -518,19 +739,20 @@
    ],
    "title": "Rational Witt sheaves: tensor and isogeny conventions",
    "kind": "definition",
-   "statement": "Let X be a scheme with p·O_X = 0 and Sh(X) its abelian category of sheaves of abelian groups. (a) The tensor convention (Berthelot–Bloch–Esnault): WI_K := WI ⊗_ℤ ℚ (sheafified), with R^if_*(WI_K) = R^if_*(WI) ⊗ ℚ on noetherian spaces. (b) The isogeny convention (Chatzistamatiou–Rülling): let T(X) ⊂ Sh(X) be the full subcategory of sheaves killed by some nonzero integer; it is a Serre class, and Sh(X)_ℚ := Sh(X)/T(X) is the Serre localization, an abelian category with exact localization q: Sh(X) → Sh(X)_ℚ; write F_ℚ := q(F). Every left-exact f_* with enough acyclics induces Rf_*: D⁺(Sh(X)_ℚ) → D⁺(Sh(Y)_ℚ) with Rf_* ∘ q = q ∘ Rf_*. Thus R^if_*(WI_ℚ) = 0 means that some p^N kills R^if_*(WI), and an isomorphism F_ℚ ≅ G_ℚ induced by a map means that its kernel and cokernel are killed by a power of p. The two conventions agree on cohomology of proper schemes over a perfect field: for Z proper over k, H^i(Z, WO_{Z,ℚ}) = 0 if and only if H^i(Z, WO_Z) ⊗ ℚ = 0.",
+   "statement": "Let X be a scheme with p·O_X = 0 and Sh(X) its abelian category of sheaves of abelian groups. (a) The tensor convention (Berthelot–Bloch–Esnault): WI_K := WI ⊗_ℤ ℚ (sheafified), with R^if_*(WI_K) = R^if_*(WI) ⊗ ℚ on noetherian spaces. (b) The isogeny convention (Chatzistamatiou–Rülling): let T(X) ⊂ Sh(X) be the full subcategory of sheaves killed by some nonzero integer; it is a Serre class, and Sh(X)_ℚ := Sh(X)/T(X) is the Serre localization, an abelian category with exact localization q: Sh(X) → Sh(X)_ℚ; write F_ℚ := q(F). Every left-exact f_* with enough acyclics induces Rf_*: D⁺(Sh(X)_ℚ) → D⁺(Sh(Y)_ℚ) with Rf_* ∘ q = q ∘ Rf_*. Thus R^if_*(WI_ℚ) = 0 means that some p^N kills R^if_*(WI), and an isomorphism F_ℚ ≅ G_ℚ induced by a map means that its kernel and cokernel are killed by a nonzero integer. For maps of Witt-module sheaves this is equivalent to killing them by a power of p. The two conventions agree on cohomology of proper schemes over a perfect field: for Z proper over k, H^i(Z, WO_{Z,ℚ}) = 0 if and only if H^i(Z, WO_Z) ⊗ ℚ = 0.",
    "hypotheses": [
     "X is noetherian whenever the tensor convention is used for higher direct images (cohomology commutes with ⊗ℚ on noetherian spaces).",
     "Statements of WO-rationality (WV.5) use the isogeny convention; statements with K = Frac W(k) coefficients (WV.2, WV.3, WV.6) use the tensor convention; the comparison for proper schemes is part of this node."
    ],
    "proofSteps": [
-    "T(X) contains 0 and is closed under subobjects, quotients and extensions (if p^a kills F′ and p^b kills F″ then p^{a+b} kills F), so it is a Serre class (Mathlib's ObjectProperty.IsSerreClass), and the localization at the morphisms that are isomorphisms modulo T(X) is abelian (Mathlib's SerreClassLocalization.abelian), with q exact and q(F) = 0 iff F ∈ T(X) (SerreClassLocalization.isZero_obj_iff).",
+    "T(X) contains 0 and is closed under subobjects, quotients and extensions (if a nonzero integer a kills F′ and a nonzero integer b kills F″ then ab kills the extension F), so it is a Serre class (Mathlib's ObjectProperty.IsSerreClass), and the localization at the morphisms that are isomorphisms modulo T(X) is abelian (Mathlib's SerreClassLocalization.abelian), with q exact and q(F) = 0 iff F ∈ T(X) (SerreClassLocalization.isZero_obj_iff).",
     "Derived functors: CR12 Proposition 3.7.7 shows that a left-exact functor with enough acyclic objects induces a left-exact functor on the quotients whose derived functor commutes with q; apply it to Γ, f_* and lim.",
     "Comparison for proper Z: H^i(Z, WO_Z) is a finitely generated module over the Dieudonné ring W_σ[[V]] (WV.0/witt-finiteness-slopes), so its torsion is killed by a single power of p; hence vanishing after ⊗ℚ is equivalent to being killed by p^N (GNT Remark 2.17 (5))."
    ],
    "acceptance": [
     "For the constant sheaf ⊕_{n≥1} ℤ/p^n on a point, the tensor rationalization is 0 but the isogeny rationalization is not.",
-    "For f proper and I coherent, R^if_*(WI)_ℚ ≅ (R^if_*(WI))_ℚ (GNT Remark 2.17 (2))."
+    "For f proper and I coherent, R^if_*(WI)_ℚ ≅ (R^if_*(WI))_ℚ (GNT Remark 2.17 (2)).",
+    "At p = 2 the constant sheaf ℤ/3 is in T(X), although no power of 2 kills it. Thus the general Serre quotient uses nonzero integers; the power-of-p criterion requires Witt-module coefficients."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
@@ -589,7 +811,7 @@
     },
     {
      "name": "TauCeti.WittCohomology.IsBoundedTorsion",
-     "role": "data",
+     "role": "predicate",
      "statement": "For an abelian group M: ∃ n > 0, n • M = 0 (the objectwise form of T(X))."
     },
     {
@@ -670,7 +892,7 @@
    ],
    "proofSteps": [
     "The colimit is a sequential colimit of sheaves of rings; for qcqs X sheaf cohomology commutes with filtered colimits, giving RΓ(X, W(O_X)[1/F]) = RΓ(X, WO_X)[1/F].",
-    "F∘V = V∘F = p on W(O_X) (CrystallineCohomology:CR.4/witt-structural-identities) shows F is invertible on any object on which p is invertible, so inverting p factors through inverting F."
+    "F∘V = V∘F = p on W(O_X) (Mathlib WittVector.frobenius_verschiebung and verschiebung_frobenius, the latter under CharP) shows F is invertible on any object on which p is invertible, so inverting p factors through inverting F."
    ],
    "acceptance": [
     "For a perfect F_p-algebra A, W(A)[1/F] = W(A).",
@@ -679,7 +901,9 @@
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
     "mathlib:WittVector.frobenius",
-    "CrystallineCohomology:CR.4/witt-structural-identities"
+    "CrystallineCohomology:CR.4/witt-structural-identities",
+    "mathlib:WittVector.frobenius_verschiebung",
+    "mathlib:WittVector.verschiebung_frobenius"
    ],
    "sources": [
     {
@@ -829,21 +1053,23 @@
     "(iii): f finite, so R^if_* = 0 for i > 0 on quasi-coherent W_n-sheaves."
    ],
    "proofSteps": [
-    "(i): By SchemeAndStackFoundations:SF.0/frobenius-factors-through-universal-homeomorphism there are N and g: Y → X with f∘g = F_Y^N and g∘f = F_X^N; since F_X^N, F_Y^N act invertibly on Frobenius-inverted Witt cohomology, f* is an isomorphism with inverse (F^N)^{−1}∘g*.",
-    "(ii) ⇒: Stein factorization (SchemeAndStackFoundations:SF.4/stein-factorization) reduces to f finite with geometrically connected (one-point, purely inseparable residue field) fibres, i.e. a finite universal homeomorphism; by WV.0/witt-nil-invariance reduce to X, Y reduced and affine, X = Spec B, Y = Spec A with A ⊂ B and B^{p^e} ⊂ A (Kollár); then p^e·W(B) ⊂ W(A), so W(A)_ℚ → W(B)_ℚ is an isomorphism.",
+    "(i): By gap:qcqs-frobenius-factorization (the qcqs extension required of SchemeAndStackFoundations §0.26) there are N and g: Y → X with f∘g = F_Y^N and g∘f = F_X^N; since F_X^N, F_Y^N act invertibly on Frobenius-inverted Witt cohomology, f* is an isomorphism with inverse (F^N)^{−1}∘g*.",
+    "(ii) ⇒: Stein factorization (SchemeAndStackFoundations:SF.4/stein-factorization) reduces to f finite with geometrically connected (one-point, purely inseparable residue field) fibres, i.e. a finite universal homeomorphism; by WV.0/witt-nil-invariance reduce to X, Y reduced and affine, X = Spec B, Y = Spec A with A ⊂ B and B^{p^e} ⊂ A (GNT19 Lemma 2.22, proof); then p^e·W(B) ⊂ W(A), so W(A)_ℚ → W(B)_ℚ is an isomorphism.",
     "(ii) ⇐: after Stein factorization f is finite with W(A)_ℚ ≅ W(B)_ℚ; reducing modulo a maximal ideal m of A shows W(A/m)_ℚ → W(B/mB)_ℚ is surjective, and W(A/m)_ℚ is a field, so B/mB has a single point n and the finite extension of complete discrete valuation rings W(A/m) → W(B/n) is bijective, hence A/m = B/n.",
     "(iii) is (ii) for finite f, together with the vanishing of R^if_* for finite morphisms."
    ],
    "acceptance": [
     "Spec F_{q²} → Spec F_q is finite surjective with connected fibre but W(F_q)_ℚ → W(F_{q²})_ℚ is not an isomorphism: its fibre is not geometrically connected.",
-    "The normalization of a cuspidal cubic is a finite universal homeomorphism, so the cusp and P¹ have the same rational Witt cohomology."
+    "The normalization of a cuspidal cubic is a finite universal homeomorphism, so the cusp and P¹ have the same rational Witt cohomology.",
+    "For F_p(t) ⊂ F_p(t^{1/p}), put A = F_p(t), B = F_p(t^{1/p}) and g*: B → A, b ↦ b^p. Both composites with A → B are Frobenius, so N = 1 works, although neither field is finite type over F_p.",
+    "For the identity of the empty scheme and of Spec F_p, take g = id and N = 0; both required composites are id."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
     "CrystallineCohomologyPartII:WV.0/rational-witt-sheaves",
     "CrystallineCohomologyPartII:WV.0/frobenius-inverted-witt",
     "CrystallineCohomologyPartII:WV.0/witt-nil-invariance",
-    "SchemeAndStackFoundations:SF.0/frobenius-factors-through-universal-homeomorphism",
+    "gap:qcqs-frobenius-factorization",
     "SchemeAndStackFoundations:SF.0/universal-homeomorphism-criteria",
     "SchemeAndStackFoundations:SF.4/stein-factorization",
     "mathlib:AlgebraicGeometry.IsFinite",
@@ -927,30 +1153,33 @@
    ],
    "title": "Higher direct images of Witt ideal sheaves",
    "kind": "lemma",
-   "statement": "For k perfect, f: X → Y a morphism between separated k-schemes of finite type, and a coherent ideal I ⊂ O_X: (1) R^i lim_n (f_*W_nI) = 0 for i ≥ 1 and R^i lim_n (R^jf_*W_nI) = 0 for i ≥ 2, j ≥ 0; hence there are short exact sequences 0 → R¹lim_n R^{j−1}f_*(W_nI) → R^jf_*(WI) → lim_n R^jf_*(W_nI) → 0. (2) If R^if_*I = 0 for all i > 0 then R^if_*(WI) = 0 for all i > 0. (3) R^if_*(WI) = 0 for i > m := max_{y∈Y} dim f^{−1}(y). (4) If R^if_*(WI) = 0 then R^if_*(WI_ℚ) = 0.",
+   "statement": "For k perfect, f: X → Y a morphism between separated k-schemes of finite type, and a coherent ideal I ⊂ O_X: (1) R^i lim_n (f_*W_nI) = 0 for i ≥ 1 and R^i lim_n (R^jf_*W_nI) = 0 for i ≥ 2, j ≥ 0; hence there are short exact sequences 0 → R¹lim_n R^{j−1}f_*(W_nI) → R^jf_*(WI) → lim_n R^jf_*(W_nI) → 0. (2) If R^if_*I = 0 for all i > 0 then R^if_*(WI) = 0 for all i > 0. (3) If f is proper, R^if_*(WI) = 0 for i > m := max_{y∈Y} dim f^{−1}(y), with the empty-source case giving zero in every degree. Separately, for every separated finite-type X over k, H^i(X, WI) = 0 for i > dim X, without assuming X proper. (4) If R^if_*(WI) = 0 then R^if_*(WI_ℚ) = 0.",
    "hypotheses": [
-    "Finite type over a perfect field, so W_nI is a quasi-coherent sheaf on the noetherian scheme W_nX and its higher direct images are quasi-coherent on W_nY."
+    "Finite type over a perfect field, so W_nI is a quasi-coherent sheaf on the noetherian scheme W_nX and its higher direct images are quasi-coherent on W_nY.",
+    "The relative fibre-dimension bound (3) assumes f proper; the absolute dimension bound for Y = Spec k does not."
    ],
    "proofSteps": [
-    "(1) A tower of sheaves with vanishing higher cohomology on affine opens and surjective transition maps on affine opens is lim-acyclic (CR12 Lemma 1.5.1; surjective towers are Mittag-Leffler with vanishing lim¹, ArithmeticGaloisDuality:R02.1/mittag-leffler-lim-one); R^jf_*(W_nI) = R^j(W_nf)_*(W_nI) is quasi-coherent on W_nY, and Γ(U, f_*W_{n+1}I) → Γ(U, f_*W_nI) is W_{n+1}(I(f^{−1}U)) → W_n(I(f^{−1}U)), surjective.",
+    "(1) A tower of sheaves with vanishing higher cohomology on affine opens and surjective transition maps on affine opens is lim-acyclic (CR12 Lemma 1.5.1; surjective towers are Mittag-Leffler with vanishing lim¹, DerivedModuleAlgebra:1.T.1/mittag-leffler-lim-one); R^jf_*(W_nI) = R^j(W_nf)_*(W_nI) is quasi-coherent on W_nY, and Γ(U, f_*W_{n+1}I) → Γ(U, f_*W_nI) is W_{n+1}(I(f^{−1}U)) → W_n(I(f^{−1}U)), surjective.",
     "(2) Induction on n with 0 → I →(V^n) W_{n+1}I → W_nI → 0 gives R^if_*(W_nI) = 0 for all n; then Rf_*(WI) = Rlim Rf_*(W_nI) = lim f_*(W_nI) by (1).",
-    "(3) W_nI is quasi-coherent on W_nX, whose fibres over W_nY have dimension ≤ m, so R^if_*(W_nI) = 0 for i > m; the sequences of (1) give vanishing for j ≥ m + 2, and R^{m+1} reduces to surjectivity of R^mf_*(W_{n+1}I) → R^mf_*(W_nI), which follows from 0 → I → W_{n+1}I → W_nI → 0 and R^{m+1}f_*I = 0.",
+    "For proper f, W_nf is proper and its fibres have dimension at most m; apply SchemeAndStackFoundations §2.6 proper_fibreDimension_vanishing to W_nI. In degree m the transition maps are onto by the exact V-sequence and R^{m+1}f_*I = 0, so (1) also kills degree m+1. For Y = Spec k and arbitrary separated finite-type X, Grothendieck vanishing gives H^i(X, W_nI) = 0 above dim X; the same surjectivity argument in top degree gives H^i(X, WI) = 0 there.",
     "(4) is WV.0/rational-witt-sheaves (R^if_*(WI_ℚ) = (R^if_*WI)_ℚ)."
    ],
    "acceptance": [
-    "For a resolution f of a rational singularity, R^if_*O_X = 0 for i > 0 gives R^if_*WO_X = 0 and hence WO-rationality of the target (CrystallineCohomologyPartII:WV.5/rational-implies-witt-rational)."
+    "For a resolution f of a rational singularity, R^if_*O_X = 0 for i > 0 gives R^if_*WO_X = 0 and hence WO-rationality of the target (CrystallineCohomologyPartII:WV.5/rational-implies-witt-rational).",
+    "For j: A² ∖ {0} → A² and I = O, fibres have dimension 0 but the Čech class [x⁻¹y⁻¹] on D(xy) has nonzero first component in H¹(D(x) ∪ D(y), O). Its compatible Teichmüller lifts give R¹j_*WO ≠ 0; properness in (3) cannot be dropped.",
+    "For X = A² ∖ {0}, dim X = 2 and H^i(X, WO) = 0 for i > 2; the nonzero H¹ above is consistent with the absolute dimension bound."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
     "CrystallineCohomologyPartII:WV.0/rational-witt-sheaves",
     "SchemeAndStackFoundations:SF.2/qcoh-higher-direct-images",
-    "ArithmeticGaloisDuality:R02.1/mittag-leffler-lim-one"
+    "DerivedModuleAlgebra:1.T.1/mittag-leffler-lim-one"
    ],
    "sources": [
     {
      "sourceId": "GNT19",
      "locator": "Lemmas 2.18–2.21 with proofs, pp. 15–17",
-     "match": "Rlim-acyclicity of the towers f_*W_nI and R^jf_*W_nI, the transfer of higher-direct-image vanishing from I to WI, vanishing above the maximal fibre dimension, and the passage to the isogeny category."
+     "match": "Inverse-limit lemmas and transfer of vanishing; Lemma 2.20’s relative bound requires properness, as shown by the punctured-plane Check."
     },
     {
      "sourceId": "CR12",
@@ -1023,7 +1252,7 @@
     "qcqs F_p-schemes; values are coconnective (complexes in cohomological degrees ≥ 0)."
    ],
    "proofSteps": [
-    "For W_n: induction on n using 0 → F^{n−1}_*O →(V^{n−1}) W_nO → W_{n−1}O → 0, where the kernel is O_X viewed through the (n−1)-st Frobenius, a quasi-coherent sheaf, so fpqc descent for quasi-coherent cohomology applies (SchemeAndStackFoundations:SF.1/qcoh-fpqc-descent).",
+    "For W_n: induction on n using 0 → F^{n−1}_*O →(V^{n−1}) W_nO → W_{n−1}O → 0, where the kernel is O_X viewed through the (n−1)-st Frobenius, a quasi-coherent sheaf, so fpqc descent for quasi-coherent cohomology applies (EnhancedDerivedSheaves §E2.8, descendableCover_fppf and moduleDescent).",
     "For W = lim W_n, exchange the limit over n with the totalization.",
     "For [1/F]: the values are coconnective, so π_k of a totalization is computed by a finite partial totalization (EnhancedDerivedSheaves:E5:animation/bounded-totalization-colimits); hence totalization commutes with the sequential colimit inverting F, and it suffices to check descent on affines before inverting F."
    ],
@@ -1033,8 +1262,9 @@
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
     "CrystallineCohomologyPartII:WV.0/frobenius-inverted-witt",
-    "SchemeAndStackFoundations:SF.1/qcoh-fpqc-descent",
-    "EnhancedDerivedSheaves:E5:animation/bounded-totalization-colimits"
+    "EnhancedDerivedSheaves:E2.8/moduleDescent",
+    "EnhancedDerivedSheaves:E5:animation/bounded-totalization-colimits",
+    "EnhancedDerivedSheaves:E2.8/descendableCover_fppf"
    ],
    "sources": [
     {
@@ -1120,15 +1350,15 @@
    "prerequisites": [
     "SchemeAndStackFoundations:SF.2/ample-serre-vanishing",
     "SchemeAndStackFoundations:SF.0/universal-homeomorphism-criteria",
-    "SchemeAndStackFoundations:SF.0/ferrand-pushout",
     "SchemeAndStackFoundations:SF.4/modification-domination",
-    "mathlib:AlgebraicGeometry.IsFinite"
+    "mathlib:AlgebraicGeometry.IsFinite",
+    "gap:qcqs-frobenius-factorization"
    ],
    "sources": [
     {
      "sourceId": "BS17",
      "locator": "proof of Proposition 11.41, third paragraph, p. 53",
-     "match": "Arranges X to be the blowup of Y along Z with H^i(X, O_X(−E)) = 0 and replaces Y by a pushout Y′ = X ⊔_E Z, asserted to be a finite universal homeomorphism over Y with a square Cartesian up to universal homeomorphisms; the existence of this pushout is not justified in the source (PAPER-BHATT-SCHOLZE-17/E52), and this node supplies it as B′ = H^0(X, O_X) ×_{H^0(E, O_E)} A/J."
+     "match": "Arranges X to be the blowup of Y along Z with H^i(X, O_X(−E)) = 0 and replaces Y by a pushout Y′ = X ⊔_E Z, asserted to be a finite universal homeomorphism over Y with a square Cartesian up to universal homeomorphisms; the existence of this pushout is not justified in the source (the finite-pushout construction), and this node supplies it as B′ = H^0(X, O_X) ×_{H^0(E, O_E)} A/J."
     },
     {
      "sourceId": "BS17",
@@ -1188,7 +1418,7 @@
     {
      "name": "TauCeti.WittCohomology.blowupPushout_finite_case",
      "kind": "compatibility",
-     "statement": "If π is finite, Y′ agrees with the Ferrand pinching of X along E → Z (SchemeAndStackFoundations:SF.0/ferrand-pushout)."
+     "statement": "If π is finite, Y′ agrees with the Ferrand pinching of X along E → Z (NeronModelsAndSemistableAbelianVarietiesPartII §1.1, ferrand geometric pushouts)."
     },
     {
      "name": "TauCeti.WittCohomology.blowupPushout_plane_point",
@@ -1256,11 +1486,11 @@
    "statement": "Let S be a noetherian F_p-scheme of finite Krull dimension. The functor X ↦ RΓ(X, WO_X)[1/F] on the category Sch^fp_S of finitely presented S-schemes is a sheaf of spectra for the h-topology: for every h-cover X → Y in Sch^fp_S with Čech nerve X^{•/Y}, RΓ(Y, WO)[1/F] ≅ Tot RΓ(X^{•/Y}, WO)[1/F].",
    "hypotheses": [
     "S noetherian of finite Krull dimension; h-topology generated by finitely presented v-covers (ArcTopologyAndDescent:AT.1/h-site).",
-    "Correction carried: the pushout Y′ used in the inductive step is the finite universal homeomorphism of WV.1/witt-pushout (PAPER-BHATT-SCHOLZE-17/E52)."
+    "Correction carried: the pushout Y′ used in the inductive step is the finite universal homeomorphism of WV.1/witt-pushout (the finite-pushout construction)."
    ],
    "proofSteps": [
     "Write F(X) = RΓ(X, WO_X)[1/F]. F inverts finite universal homeomorphisms, in particular nilimmersions (WV.0/witt-universal-homeomorphism-invariance), and is an fppf sheaf (WV.1/witt-fppf-descent).",
-    "The h-descent criterion (ArcTopologyAndDescent:AT.1/h-descent-criterion: fppf descent plus pullback along abstract blowup squares) is not applied as a black box, because excision is needed for every self-product of the blowup; its proof is followed instead. Reduce, by Rydh refinement and the dévissage of Lemma 2.10 of BS17 (ArcTopologyAndDescent:AT.1/universal-descent, EnhancedDerivedSheaves:E2/proper-surjection-inductive-level), to proper surjective X → Y with Y affine, and argue by induction on dim Y; dim Y = 0 is fppf descent.",
+    "The h-descent criterion (gap:h-descent-formalism: fppf descent plus pullback along abstract blowup squares) is not applied as a black box, because excision is needed for every self-product of the blowup; its proof is followed instead. Reduce, by Rydh refinement and the dévissage of Lemma 2.10 of BS17 (gap:h-descent-formalism, EnhancedDerivedSheaves:E2/proper-surjection-inductive-level), to proper surjective X → Y with Y affine, and argue by induction on dim Y; dim Y = 0 is fppf descent.",
     "In the inductive step arrange X → Y to be the blowup of Y along Z with dim Z < dim Y and, after thickening, H^i(X, O_X(−E)) = 0 for i > 0; replace Y by the pushout Y′ of WV.1/witt-pushout (F(Y) = F(Y′) and F(X^{•/Y}) = F(X^{•/Y′}) since Y′ → Y is a finite universal homeomorphism).",
     "By induction F(Z) ≅ Tot F(E^{•/Z}); as in the proof of BS17 Theorem 2.9 it suffices that F(Y′) → F(X^{n/Y′}) ⊕ F(Z) → F(E^{n/Y′}) is a fibre sequence for every n, which is WV.1/witt-blowup-excision applied to the structure-sheaf fibre sequence of WV.1/witt-pushout (iv)."
    ],
@@ -1274,10 +1504,9 @@
     "CrystallineCohomologyPartII:WV.1/witt-fppf-descent",
     "CrystallineCohomologyPartII:WV.1/witt-pushout",
     "CrystallineCohomologyPartII:WV.1/witt-blowup-excision",
-    "ArcTopologyAndDescent:AT.1/h-site",
-    "ArcTopologyAndDescent:AT.1/universal-descent",
-    "ArcTopologyAndDescent:AT.1/h-descent-criterion",
-    "EnhancedDerivedSheaves:E2/proper-surjection-inductive-level"
+    "gap:h-descent-formalism",
+    "EnhancedDerivedSheaves:E2/proper-surjection-inductive-level",
+    "gap:qcqs-frobenius-factorization"
    ],
    "sources": [
     {
@@ -1362,21 +1591,21 @@
    ],
    "proofSteps": [
     "Ideals W_n^{r,s}(I) = {a ∈ W_n : a_0 ∈ I^r, a_i ∈ I^s (i ≥ 1)} for s ≤ pr, with exact sequences 0 → W_{n−1}(I^s) →(V) W_n^{r,s}(I) →(R^{n−1}) I^r → 0 (BBE Lemma 2.5), because the Witt addition polynomials restricted to Teichmüller-type vectors are homogeneous of degree p^i.",
-    "Uniform killing (BBE Lemma 2.7; CR12 Lemma 4.6.3): the R^qf_*(I′^r) are coherent (SchemeAndStackFoundations:SF.2/qcoh-higher-direct-images with properness), and ⊕_r R^qf_*(I′^r) is a finite graded module over ⊕_r I^r (AdicSpacesPartII:F0/graded-cohomology-finiteness), supported on V(I) because R^qf_*O vanishes over U; hence there is a with R^qf_*(I′^{r+a}) → R^qf_*(I′^r) zero, and induction on n with the sequences above and the diagram lemma (if two outer maps vanish the composite vanishes) gives the same for W_n(I′^r), uniformly in n.",
+    "Uniform killing (BBE Lemma 2.7; CR12 Lemma 4.6.3): the R^qf_*(I′^r) are coherent (SchemeAndStackFoundations:SF.2/qcoh-higher-direct-images with properness), and ⊕_r R^qf_*(I′^r) is a finite graded module over ⊕_r I^r (AdicSpacesPartIII:F0.6/graded-cohomology-finiteness), supported on V(I) because R^qf_*O vanishes over U; hence there is a with R^qf_*(I′^{r+a}) → R^qf_*(I′^r) zero, and induction on n with the sequences above and the diagram lemma (if two outer maps vanish the composite vanishes) gives the same for W_n(I′^r), uniformly in n.",
     "Frobenius F maps W_n(I′^r) into W_n(I′^{pr}); choosing p^c > a, F^c acts by zero on R^qf_*(W_n(I′^r)) for all n and r ≥ 1, hence on lim_n and R¹lim_n of these, hence F^{2c} kills R^qf_*(WI′) by the sequences of WV.0/witt-limit-lemmas; since FV = p, p^{2c} kills it.",
     "(ii): the same argument applied to the kernels and cokernels K_n^r, C_n^r of W_n(I^r) → f_*W_n(I′^r), which are supported on V(I) and form lim-acyclic towers; WV.0/witt-nil-invariance identifies W(I^r)_ℚ with WI_ℚ.",
     "(iii) is WV.0/witt-nil-invariance (ii)."
    ],
    "acceptance": [
-    "For the blowup f: X′ = Bl_0 A² → A² and I the ideal of the origin, R¹f_*(WI′)_ℚ = 0 although R¹f_*(I′) need not vanish for a given power.",
-    "For U′ → U finite of degree 2 (a double cover branched along V(I)), R^qf_*(WI′_ℚ) = 0 for q ≥ 1."
+    "For the blowup of the vertex of the affine cone over a canonically embedded non-hyperelliptic smooth projective curve C of genus at least 3, with I the vertex ideal, R¹f_*(WI′)_ℚ = 0 but R¹f_*(I′) contains H¹(C, ω_C) = k. For Bl_0 A² instead, R¹f_*(I′^r) = ⊕_{m≥0} H¹(P¹, O(m+r)) = 0 for every r ≥ 0.",
+    "For a proper non-finite f whose restriction U′ → U is finite of degree 2, R^qf_*(WI′_ℚ) = 0 for q ≥ 1."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
     "CrystallineCohomologyPartII:WV.0/rational-witt-sheaves",
     "CrystallineCohomologyPartII:WV.0/witt-limit-lemmas",
     "CrystallineCohomologyPartII:WV.0/witt-nil-invariance",
-    "AdicSpacesPartII:F0/graded-cohomology-finiteness",
+    "AdicSpacesPartIII:F0.6/graded-cohomology-finiteness",
     "SchemeAndStackFoundations:SF.2/qcoh-higher-direct-images",
     "mathlib:AlgebraicGeometry.IsProper"
    ],
@@ -1395,6 +1624,11 @@
      "sourceId": "GNT19",
      "locator": "Proposition 2.23 and proof, p. 18",
      "match": "The isogeny-convention statement for proper birational morphisms that are isomorphisms outside the zero set of the ideal, deduced from the uniform Frobenius bound in BBE's proof."
+    },
+    {
+     "sourceId": "EGAIII1",
+     "locator": "Proposition 3.3.1; Corollary 3.3.2, pp. 117–118",
+     "match": "Finiteness of the cohomology of powers of the ideal as a graded Rees module."
     }
    ],
    "implementationStatus": "unchecked",
@@ -1473,7 +1707,7 @@
     "Independence: for two compactifications X_1, X_2, the closure X of the diagonal image of U in X_1 × X_2 maps properly to both, isomorphically over U; WV.2/witt-ideal-vanishing (ii) and WV.0/witt-nil-invariance give isomorphisms RΓ(X_i, WI_{i,K}) ≅ RΓ(X, WI_K), and the induced identifications satisfy the cocycle condition for three compactifications.",
     "Functoriality: a proper U′ → U extends, after replacing X′ by the closure of the graph, to g: X′ → X with U′ = g^{−1}(U), and g* : RΓ(X, WI_K) → RΓ(X′, W(IO_{X′})_K) defines f*; an open immersion V ⊂ U gives W(J) ⊂ W(I) for the ideal J of X ∖ V.",
     "The excision triangle is the cohomology of 0 → WJ → WI → W(I/J) → 0, where I/J is the ideal of Z ∖ T in the compactification Z = V(J) of T.",
-    "Existence of compactifications: Nagata (AdicCoefficientsAndComparisons:L2/nagata-factorisation-as-used-in-27-4)."
+    "Existence of compactifications: Nagata (EtaleCohomologyFoundations:G.2/nagataCompactification)."
    ],
    "acceptance": [
     "H^*_c(A¹_k, WO_K) = 0, while H^0(A¹_k, WO_K) = W(k[t])_K is infinite-dimensional.",
@@ -1484,7 +1718,7 @@
     "CrystallineCohomologyPartII:WV.0/rational-witt-sheaves",
     "CrystallineCohomologyPartII:WV.0/witt-nil-invariance",
     "CrystallineCohomologyPartII:WV.2/witt-ideal-vanishing",
-    "AdicCoefficientsAndComparisons:L2/nagata-factorisation-as-used-in-27-4",
+    "EtaleCohomologyFoundations:G.2/nagataCompactification",
     "mathlib:AlgebraicGeometry.IsProper",
     "mathlib:AlgebraicGeometry.IsSeparated"
    ],
@@ -1615,7 +1849,7 @@
    "proofSteps": [
     "For U proper this is WV.0/witt-finiteness-slopes.",
     "In general, induct on dim U with the excision triangle of WV.2/witt-compact-support-cohomology for U ⊂ X and X ∖ U: finite-dimensionality and the slope bound pass to cones of maps between F-isocrystals with slopes in [0, 1).",
-    "Vanishing above dim U: H^i(X, WI_K) for the compactification computes it, and R^i lim and the dimension bound for W_nI on W_nX (WV.0/witt-limit-lemmas (3) with Y = Spec k) give vanishing for i > dim X; replace X by the closure of U."
+    "Vanishing above dim U: H^i(X, WI_K) for the compactification computes it, and R^i lim and the dimension bound for W_nI on W_nX (the separate absolute bound of WV.0/witt-limit-lemmas (3), with Y = Spec k) give vanishing for i > dim X; replace X by the closure of U."
    ],
    "acceptance": [
     "H^1_c(G_m, WO_K) = K has slope 0; H^2_c(A², WO_K) = 0 although H^4_{rig,c}(A²) = K(−2) ≠ 0."
@@ -1634,7 +1868,7 @@
     {
      "sourceId": "GNT19",
      "locator": "Lemma 2.20 and proof, pp. 16–17",
-     "match": "R^if_*(WI) vanishes above the maximal fibre dimension; with Y = Spec k this bounds the cohomological degrees of H^i(X, WI) by dim X."
+     "match": "The absolute case Y = Spec k gives vanishing above dim X by Grothendieck vanishing; the relative fibre bound is used only for proper morphisms."
     }
    ],
    "implementationStatus": "unchecked",
@@ -1674,6 +1908,11 @@
      "sourceId": "BBE07",
      "locator": "Definition 3.1 and the following paragraphs and Remark, pp. 17–18",
      "match": "Defines proper and étale hypercoverings and simplicial resolutions (proper hypercoverings étale over dense opens with smooth quasi-projective terms) and constructs them from de Jong's theorem following Deligne."
+    },
+    {
+     "sourceId": "Del74",
+     "locator": "(6.2.5)",
+     "match": "Inductive simplicial resolution construction."
     }
    ],
    "implementationStatus": "unchecked",
@@ -1758,27 +1997,33 @@
     "U_• → U an N-truncated étale hypercovering; the comparison holds below degree N."
    ],
    "proofSteps": [
-    "For the complexes L_n^{•,r}: 0 → W_n(I^r) → f_{0*}W_n(I_0^r) → ⋯, the direct sum over r of the n = 1 complexes is a complex of finite graded modules over ⊕ I^r (EGA III 3.3.1); over U it is acyclic in degrees < N by étale cohomological descent for quasi-coherent sheaves (bounded-below hypercover descent, EnhancedDerivedSheaves:E2/bounded-below-hypercover-descent, for the étale topology, on which quasi-coherent sheaves satisfy descent, SchemeAndStackFoundations:SF.1/qcoh-fpqc-descent), so a power of I kills the cohomology and the transition maps H^{q,r+b} → H^{q,r} vanish for some b.",
+    "For the complexes L_n^{•,r}: 0 → W_n(I^r) → f_{0*}W_n(I_0^r) → ⋯, the direct sum over r of the n = 1 complexes is a complex of finite graded modules over ⊕ I^r (EGA III 3.3.1); over U it is acyclic in degrees < N by étale cohomological descent for quasi-coherent sheaves (bounded-below hypercover descent, EnhancedDerivedSheaves:E2/bounded-below-hypercover-descent, for the étale topology, on which quasi-coherent sheaves satisfy descent, EnhancedDerivedSheaves:E2.8/moduleDescent), so a power of I kills the cohomology and the transition maps H^{q,r+b} → H^{q,r} vanish for some b.",
     "Induction on n with the ideals W_n^{r,r+b} of BBE Lemma 2.5 and the diagram lemma shows H^{q,r+2b}_n → H^{q,r}_n is zero, so a power of F kills H^q_n for r ≥ 1, hence on Rlim and the limit complex WI_• → in degrees < N; F becomes invertible after ⊗K, giving acyclicity.",
     "Each f_q is proper and its restriction U_q → U is étale and proper, hence finite, so WV.2/witt-ideal-vanishing (i) gives R^if_{q*}(WI_{q,K}) = 0 for i ≥ 1; thus f_{•*}WI_{•,K} computes Rf_{•*}WI_{•,K}, and (i) gives the statement on H^q."
    ],
    "acceptance": [
-    "For the normalization P¹ → X of a nodal cubic (N = 1), H^0(X, WO_K) ≅ H^0 of the descent complex = K and H^1(X, WO_K) = K is read off from the two points over the node."
+    "For the normalization P¹ → X of a nodal cubic (N = 2), H^0(X, WO_K) ≅ H^0 of the descent complex = K and H^1(X, WO_K) = K is read off from the two points over the node.",
+    "For the split node, the 1-truncated unnormalized complex has C⁰ = K and C¹ = K³ with d⁰ = 0, so its H¹ is K³. At truncation N = 2, d¹ imposes a = 0 and b + c = 0, leaving H¹ = K; the comparison range q < N is essential."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.2/simplicial-resolution",
     "CrystallineCohomologyPartII:WV.2/witt-ideal-vanishing",
     "CrystallineCohomologyPartII:WV.2/witt-compact-support-cohomology",
     "CrystallineCohomologyPartII:WV.0/witt-limit-lemmas",
-    "AdicSpacesPartII:F0/graded-cohomology-finiteness",
+    "AdicSpacesPartIII:F0.6/graded-cohomology-finiteness",
     "EnhancedDerivedSheaves:E2/bounded-below-hypercover-descent",
-    "SchemeAndStackFoundations:SF.1/qcoh-fpqc-descent"
+    "EnhancedDerivedSheaves:E2.8/moduleDescent"
    ],
    "sources": [
     {
      "sourceId": "BBE07",
      "locator": "Proposition 3.2 and its proof, pp. 18–21",
      "match": "For an N-truncated proper hypercovering étale over U, the augmented complex of Witt ideal sheaves with K-coefficients is acyclic below N and the Witt cohomology of X agrees with that of the simplicial scheme below degree N; the proof bounds Frobenius on graded cohomology with the ideals of Lemma 2.5."
+    },
+    {
+     "sourceId": "EGAIII1",
+     "locator": "Proposition 3.3.1; Corollary 3.3.2, pp. 117–118",
+     "match": "Finiteness of graded coherent cohomology over a proper morphism."
     }
    ],
    "implementationStatus": "unchecked",
@@ -1921,8 +2166,8 @@
    ],
    "proofSteps": [
     "Since O_P is p-torsion-free, F defines the Cartier–Dieudonné–Dwork section s_F: O_P → W(O_P) of the reduction, characterized by w_i(s_F(x)) = F^i(x) for all ghost components (for reduced targets this is CrystallineCohomology:CR.4/witt-frobenius-lift-universal).",
-    "Composing with W(O_P) → W_n(O_X) gives O_{P_n} → W_nO_X sending J_n into V W_{n−1}O_X, which carries divided powers γ_m(Vx) = (p^{m−1}/m!)V(x^m) compatible with those of p (CrystallineCohomology:CR.4/witt-verschiebung-divided-powers); the universal property of the PD envelope (CrystallineCohomology:CR.0/pd-envelope) gives P(J_n) → W_nO_X, compatible in n.",
-    "P̂(J)/p^n = P(J_n), so the limit gives P̂(J) → WO_X; precompose with Berthelot's A_{X,P} → P̂(J)_K (PadicDifferentialEquationsAndRigidCohomology:RD.7/tube-to-envelope-comparison-map) and invert p."
+    "Composing with W(O_P) → W_n(O_X) gives O_{P_n} → W_nO_X sending J_n into V W_{n−1}O_X, which carries divided powers γ_m(Vx) = (p^{m−1}/m!)V(x^m) compatible with those of p (CrystallineCohomology:CR.4/witt-verschiebung-divided-powers); the universal property of the PD envelope (DerivedDeRhamCohomology:PD.6/universal-base-compatible-divided-power-envelope) gives P(J_n) → W_nO_X, compatible in n.",
+    "P̂(J)/p^n = P(J_n), so the limit gives P̂(J) → WO_X; precompose with Berthelot's A_{X,P} → P̂(J)_K (PadicDifferentialEquationsAndRigidCohomology:RD.4.36/tube-to-envelope-comparison-map) and invert p."
    ],
    "acceptance": [
     "For X = P_0 = Spec k and P = Spf W with F = σ, the map is the identity K → W(k)[1/p].",
@@ -1931,9 +2176,9 @@
    "prerequisites": [
     "CrystallineCohomology:CR.4/witt-frobenius-lift-universal",
     "CrystallineCohomology:CR.4/witt-verschiebung-divided-powers",
-    "CrystallineCohomology:CR.0/pd-envelope",
-    "CrystallineCohomology:CR.0/completed-envelope",
-    "PadicDifferentialEquationsAndRigidCohomology:RD.7/tube-to-envelope-comparison-map",
+    "DerivedDeRhamCohomology:PD.6/universal-base-compatible-divided-power-envelope",
+    "DerivedDeRhamCohomology:PD.6/completed-pd-envelopes-and-derived-completion-comparison",
+    "PadicDifferentialEquationsAndRigidCohomology:RD.4.36/tube-to-envelope-comparison-map",
     "PadicDifferentialEquationsAndRigidCohomology:RD.3/tube",
     "CrystallineCohomologyPartII:WV.0/witt-sheaf"
    ],
@@ -2034,7 +2279,7 @@
     "A_{X,P} ⊗ Ω^•_P = sp_*Ω^•_{]X[_P} computes rigid cohomology of proper X (PadicDifferentialEquationsAndRigidCohomology:RD.4/overconvergent-de-rham-complex). With a Frobenius lift, the ring map of WV.3/frobenius-lift-witt-map composed with the augmentation A_{X,P} ⊗ Ω^•_P → A_{X,P} gives a_{X,P,F}; for two lifted embeddings, the diagonal embedding into P × P′ with F × F′ and functoriality show the induced map in D^b(X, K) is the canonical isomorphism (4.1), so a_{X,P,F} is independent of F.",
     "Without global lifts, cover X by affine opens X_i ⊂ P_i with lifts and use the Čech double complexes (4.10) and (4.11) on both sides.",
     "For U ⊂ X, apply the construction to X and Y = X ∖ U and use that (WO_{X,K} → WO_{Y,K}) resolves WI_K; functoriality reduces, via WV.2/witt-ideal-vanishing (ii), to U′ dense in X′.",
-    "(i): in the smooth lifted case the maps P(J_n) → W_nO_X are those of Illusie's crystalline–de Rham–Witt comparison, so the diagram with Berthelot's comparison (PadicDifferentialEquationsAndRigidCohomology:RD.7/comparison-map-quasi-isomorphism) and CrystallineCohomology:CR.4/crystalline-comparison commutes; (ii), (iii) by construction (BBE leaves them as exercises; the proof is the functoriality of the Čech construction)."
+    "(i): in the smooth lifted case the maps P(J_n) → W_nO_X are those of Illusie's crystalline–de Rham–Witt comparison, so the diagram with Berthelot's comparison (PadicDifferentialEquationsAndRigidCohomology:RD.4.37/comparison-map-quasi-isomorphism) and CrystallineCohomology:CR.4/crystalline-comparison commutes; (ii), (iii) by construction (BBE leaves them as exercises; the proof is the functoriality of the Čech construction)."
    ],
    "acceptance": [
     "For U = Spec k, a_U is the identity of K.",
@@ -2048,8 +2293,8 @@
     "PadicDifferentialEquationsAndRigidCohomology:RD.4/overconvergent-de-rham-complex",
     "PadicDifferentialEquationsAndRigidCohomology:RD.4/excision-sequence",
     "PadicDifferentialEquationsAndRigidCohomology:RD.4/frobenius-on-rigid-cohomology",
-    "PadicDifferentialEquationsAndRigidCohomology:RD.7/comparison-map-quasi-isomorphism",
-    "PadicDifferentialEquationsAndRigidCohomology:RD.7/rigid-crystalline-comparison",
+    "PadicDifferentialEquationsAndRigidCohomology:RD.4.37/comparison-map-quasi-isomorphism",
+    "PadicDifferentialEquationsAndRigidCohomology:RD.4.38/rigid-crystalline-comparison",
     "CrystallineCohomology:CR.4/crystalline-comparison"
    ],
    "sources": [
@@ -2162,7 +2407,7 @@
    "proofSteps": [
     "Take an N-truncated simplicial resolution (WV.2/simplicial-resolution) and its N-coskeleton X_•.",
     "Embed each quasi-projective X_m (m ≤ N) in a smooth formal W_m with Frobenius lift F_m; form Γ_n(W_m) = ∏_{γ: [m] → [n]} W_m with the induced simplicial structure and Frobenius ∏F_m, and P_• = P ×_W ∏_{m≤N} Γ_•(W_m).",
-    "The product of the embeddings indexed by γ gives X_• → P_•, a closed immersion in degrees ≤ N because one factor is the given embedding, and in all degrees by the coskeleton property; smoothness of the comparison maps P_n → (cosk_{n−1} sk_{n−1} P_•)_n is Tsuzuki's computation for such coskeletal products of smooth formal schemes (cited by BBE as [28, 7.3.3] and [10, 11.2.5]; those papers were not read), and the resulting (X_•, X_•, P_•) is a simplicial frame in the sense of PadicDifferentialEquationsAndRigidCohomology:RD.3/frame."
+    "The product of the embeddings indexed by γ gives X_• → P_•, a closed immersion in degrees ≤ N because one factor is the given embedding, and in all degrees by the coskeleton property; smoothness of the comparison maps P_n → (cosk_{n−1} sk_{n−1} P_•)_n is Tsuzuki's computation for such coskeletal products of smooth formal schemes (cited by BBE as [28, 7.3.3] and [10, 11.2.5]), and the resulting (X_•, X_•, P_•) is a simplicial frame in the sense of PadicDifferentialEquationsAndRigidCohomology:RD.3/frame."
    ],
    "acceptance": [
     "For X smooth projective with a lifted embedding, the constant simplicial objects satisfy the lemma."
@@ -2176,6 +2421,16 @@
      "sourceId": "BBE07",
      "locator": "Lemma 5.1 and proof, pp. 28–30",
      "match": "Constructs a proper hypercovering X_• with N-truncated simplicial resolution, a simplicial smooth formal scheme P_• with Frobenius lift and a closed immersion X_• → P_• over X ⊂ P with coskeletal and smoothness properties, following Chiarellotto–Tsuzuki."
+    },
+    {
+     "sourceId": "CT03",
+     "locator": "Proposition 11.2.5",
+     "match": "Simplicial smooth embeddings in formal schemes."
+    },
+    {
+     "sourceId": "Tsu04",
+     "locator": "§7.3.3",
+     "match": "Coskeletal smooth embedding construction, cited by locator."
     }
    ],
    "implementationStatus": "unchecked",
@@ -2197,16 +2452,16 @@
     "X smooth and proper over a perfect field k."
    ],
    "proofSteps": [
-    "By WV.3/rigid-to-witt-morphism (i), a_X is the composite of the rigid–crystalline comparison (PadicDifferentialEquationsAndRigidCohomology:RD.7/rigid-crystalline-comparison), the crystalline–de Rham–Witt comparison (CrystallineCohomology:CR.4/crystalline-comparison) and the augmentation WΩ^•_X → WO_X; all are Frobenius-compatible.",
+    "By WV.3/rigid-to-witt-morphism (i), a_X is the composite of the rigid–crystalline comparison (PadicDifferentialEquationsAndRigidCohomology:RD.4.38/rigid-crystalline-comparison), the crystalline–de Rham–Witt comparison (CrystallineCohomology:CR.4/crystalline-comparison) and the augmentation WΩ^•_X → WO_X; all are Frobenius-compatible.",
     "The slope spectral sequence degenerates after ⊗K and identifies H^q(X, WO_X)_K with the slope-[0, 1) part of H^q_crys(X/W)_K, the augmentation being the projection to the zeroth column (CrystallineCohomology:CR.4/witt-slope-spectral-sequence)."
    ],
    "acceptance": [
-    "For an abelian variety A of dimension g and p-rank f, H¹(A, WO_A)_K has dimension f (the slope-0 part of H¹_crys)."
+    "For an abelian variety A of dimension g and p-rank f, H¹(A, WO_A)_K has dimension 2g − f: the slope-[0,1) part of H¹_crys, obtained by excluding the slope-1 part of dimension f."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.3/rigid-to-witt-morphism",
     "CrystallineCohomologyPartII:WV.3/slope-subspace",
-    "PadicDifferentialEquationsAndRigidCohomology:RD.7/rigid-crystalline-comparison",
+    "PadicDifferentialEquationsAndRigidCohomology:RD.4.38/rigid-crystalline-comparison",
     "CrystallineCohomology:CR.4/crystalline-comparison",
     "CrystallineCohomology:CR.4/witt-slope-spectral-sequence"
    ],
@@ -2244,7 +2499,8 @@
     "H^q_{rig,c}(X/K) is finite-dimensional with bijective Frobenius (PadicDifferentialEquationsAndRigidCohomology:RD.5/finiteness-of-compactly-supported-rigid-cohomology, PadicDifferentialEquationsAndRigidCohomology:RD.5/frobenius-bijective-on-cohomology), so the slope < 1 part is defined and a_X induces b^q_X; the slope < 1 functor is exact.",
     "Induction on d = dim X. By the reduction compatibility assume X reduced; dimension 0 is the smooth proper case (WV.3/smooth-proper-slope-identification). If the theorem holds below dimension d, excision triangles (WV.3/rigid-to-witt-morphism (iii)) and the five lemma show it for open subsets of smooth proper schemes of dimension d, and allow replacing X by any dense open neighbourhood of its generic points, hence by an irreducible affine U, hence by a projective compactification X̄.",
     "For X̄ ⊂ P with Frobenius lift, take N ≥ 2d and the simplicial data of WV.3/simplicial-frobenius-embedding; on a dense open U the restriction U_• is an étale hypercovering. The Frobenius lift gives a morphism of descent spectral sequences E_1^{i,j} = H^j_{rig,c}(U_i/K)^{<1} ⇒ H^{i+j}_{rig,c}(U_•/K)^{<1} and E_1^{i,j} = H^j_c(U_i, WO_K) ⇒ H^{i+j}_c(U_•, WO_K), which is an isomorphism on E_1 for i ≤ N because each U_i is an open of a smooth projective X_i of dimension d.",
-    "The augmentations are isomorphisms in degrees ≤ N: on the rigid side by Tsuzuki's proper descent (PadicDifferentialEquationsAndRigidCohomology:RD.5/proper-hypercover-descent-spectral-sequence, RD.5/cohomological-descent-for-proper-hypercoverings), on the Witt side by WV.2/witt-proper-hypercover-descent; both sides vanish above 2d (PadicDifferentialEquationsAndRigidCohomology:RD.5/compact-support-vanishing-above-twice-dimension, WV.2/compact-support-finiteness)."
+    "The augmentations are isomorphisms in degrees ≤ N: on the rigid side by Tsuzuki's proper descent (PadicDifferentialEquationsAndRigidCohomology §RD.5.74 for the proper compactification X and its proper closed complement Y = X ∖ U, combined by excision §RD.4.19, RD.5/cohomological-descent-for-proper-hypercoverings), on the Witt side by WV.2/witt-proper-hypercover-descent; both sides vanish above 2d (PadicDifferentialEquationsAndRigidCohomology:RD.5/compact-support-vanishing-above-twice-dimension, WV.2/compact-support-finiteness).",
+    "For the compact-support rigid descent step, the chosen X and Y = X ∖ U are proper. Apply ordinary proper-hypercover descent (PadicDifferentialEquationsAndRigidCohomology §RD.5.74) to X and Y separately and take the cone using excision §RD.4.19; no unprovided compact-support descent theorem is assumed."
    ],
    "acceptance": [
     "X = P¹: H⁰_rig = K ↔ H⁰(P¹, WO_K) = K and H²_rig = K(−1) has no slope < 1 part, matching H²(P¹, WO_K) = 0.",
@@ -2262,7 +2518,8 @@
     "PadicDifferentialEquationsAndRigidCohomology:RD.5/frobenius-bijective-on-cohomology",
     "PadicDifferentialEquationsAndRigidCohomology:RD.5/proper-hypercover-descent-spectral-sequence",
     "PadicDifferentialEquationsAndRigidCohomology:RD.5/cohomological-descent-for-proper-hypercoverings",
-    "PadicDifferentialEquationsAndRigidCohomology:RD.5/compact-support-vanishing-above-twice-dimension"
+    "PadicDifferentialEquationsAndRigidCohomology:RD.5/compact-support-vanishing-above-twice-dimension",
+    "PadicDifferentialEquationsAndRigidCohomology:RD.4/excision-sequence"
    ],
    "sources": [
     {
@@ -2338,27 +2595,31 @@
    ],
    "title": "The Witt canonical system and Ekedahl duality",
    "kind": "construction",
-   "statement": "Let k be a perfect field and X a k-scheme of finite type of pure dimension d with structure map π: X → Spec k. For n ≥ 1 let K_{X,n} := W_n(π)^!(W_n(k)) be the dualizing complex of the W_n(k)-scheme W_nX (upper shriek of the finite type morphism W_nX → Spec W_n(k)); the K_{X,n} form a projective system (a Witt dualizing system) with Frobenius, Verschiebung and restriction. The Witt canonical system is W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X. Properties: (1) W_1ω_X is the canonical sheaf ω_X when X is normal; (2) K_{X,n} is concentrated in degrees [−d, 0], and W_nω_X[d] → K_{X,n} is a quasi-isomorphism when X is Cohen–Macaulay; (3) W_nω_X is a coherent S2 sheaf on W_nX; (4) for X smooth, W_•ω_X ≅ W_•Ω^d_X (Ekedahl), and W_•Ω^•_X is self-dual: the product pairing W_nΩ^i ⊗ W_nΩ^{d−i} → W_nΩ^d induces an isomorphism of the Cousin complex of W_•Ω_X with its dual (Ekedahl); (5) for a proper morphism f: X → Y between k-schemes of the same pure dimension there is a trace f_*: f_*W_•ω_X → W_•ω_Y, compatible with composition and localization; (6) 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and right exact if X is CM.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let k be a perfect field and X a k-scheme of finite type of pure dimension d with structure map π: X → Spec k. For n ≥ 1 let K_{X,n} := W_n(π)^!(W_n(k)) be the dualizing complex of the W_n(k)-scheme W_nX (upper shriek of the finite type morphism W_nX → Spec W_n(k)); the K_{X,n} form a projective system (a Witt dualizing system) with Frobenius, Verschiebung and restriction. The Witt canonical system is W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X. Properties: (1) W_1ω_X is the canonical sheaf ω_X when X is normal; (2) K_{X,n} is concentrated in degrees [−d, 0], and W_nω_X[d] → K_{X,n} is a quasi-isomorphism when X is Cohen–Macaulay; (3) W_nω_X is a coherent S2 sheaf on W_nX; (4) for X smooth, use W_•ω_X ≅ W_•Ω^d_X from CrystallineCohomology §CR.3:duality.1 (crysTrace_iso and crysTrace_etale_local), and W_•Ω^•_X is self-dual: the product pairing W_nΩ^i ⊗ W_nΩ^{d−i} → W_nΩ^d induces an isomorphism of the Cousin complex of W_•Ω_X with its dual (Ekedahl); (5) for a proper morphism f: X → Y between k-schemes of the same pure dimension there is a trace f_*: f_*W_•ω_X → W_•ω_Y, compatible with composition and localization; (6) 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and right exact if X is CM.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "k perfect; X of finite type and pure dimension d; duality for the finite type W_n(k)-schemes W_nX.",
-    "Ekedahl's theorems (smooth case) are used through the statements recorded in Chatzistamatiou–Rülling §1.10; Ekedahl's papers themselves were not read for this plan."
+    "The smooth top-form trace identification is imported from CrystallineCohomology §CR.3:duality.1; full product self-duality uses CR12 §1.10."
    ],
    "proofSteps": [
     "W_nX is of finite type over the artinian ring W_n(k) (WV.0/witt-sheaf), so it has the dualizing complex W_n(π)^!W_n(k) of coherent duality (SchemeAndStackFoundations:SF.2/scheme-dualizing, SchemeAndStackFoundations:SF.2/upper-shriek-compactification-independence).",
     "Transition maps and F, V: duality for the finite morphisms i_n: W_{n−1}X → W_nX and the Frobenius-twisted closed immersion X → W_nX, applied to 0 → F^{n−1}_*O_X →(V^{n−1}) W_nO_X → W_{n−1}O_X → 0, gives the triangle i_{n*}K_{X,n−1} → K_{X,n} → (iF^{n−1})_*K_{X,1} → and hence (2) and (6) by induction on n.",
     "The trace f_* is H^{−d} of the Grothendieck trace Rf_*K_{X,n} → K_{Y,n} for proper f (SchemeAndStackFoundations:SF.2/sheafified-grothendieck-duality).",
-    "For X smooth, Ekedahl's computation identifies K_{X,•} with the Cousin complex of W_•Ω^d_X[d], the top degree of the de Rham–Witt complex (CrystallineCohomology:CR.4/classical-de-rham-witt), and the pairing on W_•Ω^•_X with the duality pairing (CR12 Corollaries 1.10.5–1.10.6)."
+    "For smooth X import Crystalline.crysTrace_iso and Crystalline.crysTrace_etale_local from CrystallineCohomology §CR.3:duality.1 to identify the top Witt forms with the shifted dualizing object. The additional product self-duality on the full Cousin complex is CR12 Corollaries 1.10.5–1.10.6."
    ],
    "acceptance": [
     "For X = Spec k, W_nω_X = W_n(k).",
-    "For X smooth of dimension d, W_1ω_X = Ω^d_X."
+    "For X smooth of dimension d, W_1ω_X = Ω^d_X.",
+    "For X = P¹, the point cycle has trace 1 and the product pairs H⁰(WO) = W(k) with H¹(WΩ¹) = W(k); this agrees with the parent’s top-form trace, whose dimension-one sign is (−1)^0 = 1."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.0/witt-sheaf",
     "SchemeAndStackFoundations:SF.2/scheme-dualizing",
     "SchemeAndStackFoundations:SF.2/upper-shriek-compactification-independence",
     "SchemeAndStackFoundations:SF.2/sheafified-grothendieck-duality",
-    "CrystallineCohomology:CR.4/classical-de-rham-witt"
+    "CrystallineCohomology:CR.4/classical-de-rham-witt",
+    "CrystallineCohomology:CR.3:duality.1/crysTrace_iso",
+    "CrystallineCohomology:CR.3:duality.1/crysTrace_etale_local"
    ],
    "sources": [
     {
@@ -2396,42 +2657,37 @@
     {
      "name": "TauCeti.WittCohomology.wittDualizing",
      "role": "data",
-     "statement": "K_{X,n} = W_n(π)^!W_n(k), as a projective system with F, V and restriction."
+     "statement": "For the quasi-projective schemes of this target: K_{X,n} = W_n(π)^!W_n(k), as a projective system with F, V and restriction."
     },
     {
      "name": "TauCeti.WittCohomology.wittCanonical",
      "role": "data",
-     "statement": "W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X for X of pure dimension d."
+     "statement": "For the quasi-projective schemes of this target: W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X for X of pure dimension d."
     },
     {
      "name": "TauCeti.WittCohomology.wittCanonical_one",
      "role": "compatibility",
-     "statement": "For X normal, W_1ω_X ≅ ω_X (the canonical sheaf of SchemeAndStackFoundations:SF.2)."
-    },
-    {
-     "name": "TauCeti.WittCohomology.wittCanonical_smooth",
-     "role": "compatibility",
-     "statement": "For X smooth of pure dimension d, W_•ω_X ≅ W_•Ω^d_X (Ekedahl)."
+     "statement": "For the quasi-projective schemes of this target: For X normal, W_1ω_X ≅ ω_X (the canonical sheaf of SchemeAndStackFoundations:SF.2)."
     },
     {
      "name": "TauCeti.WittCohomology.wittDualizing_cm",
      "role": "characterisation",
-     "statement": "If X is Cohen–Macaulay, W_nω_X[d] ≅ K_{X,n}."
+     "statement": "For the quasi-projective schemes of this target: If X is Cohen–Macaulay, W_nω_X[d] ≅ K_{X,n}."
     },
     {
      "name": "TauCeti.WittCohomology.wittCanonical_trace",
      "role": "functoriality",
-     "statement": "Proper f: X → Y of the same pure dimension gives f_*: f_*W_•ω_X → W_•ω_Y, with (g ∘ f)_* = g_* ∘ g_*(f_*) and compatibility with restriction to opens."
+     "statement": "For the quasi-projective schemes of this target: Proper f: X → Y of the same pure dimension gives f_*: f_*W_•ω_X → W_•ω_Y, with (g ∘ f)_* = g_* ∘ g_*(f_*) and compatibility with restriction to opens."
     },
     {
      "name": "TauCeti.WittCohomology.wittCanonical_exact",
      "role": "relation",
-     "statement": "0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and surjective on the right for X CM."
+     "statement": "For the quasi-projective schemes of this target: 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and surjective on the right for X CM."
     },
     {
      "name": "TauCeti.WittCohomology.ekedahl_selfDual",
      "role": "equivalence",
-     "statement": "For X smooth, the product pairing induces E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−N)[−N]."
+     "statement": "For the quasi-projective schemes of this target: For X smooth, the product pairing induces E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−N)[−N]."
     }
    ],
    "tests": [
@@ -2469,15 +2725,16 @@
    ],
    "title": "Pushforward on Hodge–Witt cohomology with supports",
    "kind": "construction",
-   "statement": "Let S be a k-scheme. Let Sm*/S be the category of pairs (X, Φ) with X an S-scheme smooth over k and Φ a family of supports on X, morphisms f: (X, Φ) → (Y, Ψ) being S-morphisms with f|_Φ proper and f(Φ) ⊂ Ψ. For f between pure-dimensional X, Y of relative dimension r = dim X − dim Y there is a pushforward f_*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r), where Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ W Ω^q_X (a_X: X → S), the twist (−r) shifting the bidegree (q, i) to (q − r, i − r). It is defined from Ekedahl duality and the trace for the compactly supported direct image, makes (X, Φ) ↦ Ĥ((X, Φ)/S) a functor, commutes with F, V and d, is compatible with restriction to opens of S, and for open immersions is the excision isomorphism. For a finite morphism f: X → Y of connected smooth k-schemes, f_* ∘ f^* = deg(f) on W_•Ω_Y.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme. Let Sm*/S be the category of pairs (X, Φ) with X an S-scheme smooth over k and Φ a family of supports on X, morphisms f: (X, Φ) → (Y, Ψ) being S-morphisms with f|_Φ proper and f(Φ) ⊂ Ψ. For f between pure-dimensional X, Y of relative dimension r = dim X − dim Y there is a pushforward f_*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r), where Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ W Ω^q_X (a_X: X → S), the twist (−r) shifting the bidegree (q, i) to (q − r, i − r). It is defined from Ekedahl duality and the trace for the compactly supported direct image, makes (X, Φ) ↦ Ĥ((X, Φ)/S) a functor, commutes with F, V and d, is compatible with restriction to opens of S, and for open immersions is the excision isomorphism. For a finite morphism f: X → Y of connected smooth k-schemes, f_* ∘ f^* = deg(f) on W_•Ω_Y.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "X, Y smooth over k (not necessarily proper); f proper on the supports.",
     "The ˆ indicates the inverse limit over n of the de Rham–Witt systems."
    ],
    "proofSteps": [
     "Write K_X ≅ E(W_•ω_X)(N)[N] (WV.4/witt-canonical-system) and D_X = Hom(−, K_X). For f in Sm*/S, compose µ_X: E(W_•Ω_X) ≅ D_X(W_•Ω_X)(−N)[−N], the transformation θ_f: f_ΦD_X → Γ_ΨD_Y(f_*−) from the trace, D(f^*), and µ_Y^{−1}; this gives Rf_ΦW_•Ω_X → RΓ_ΨW_•Ω_Y(−r)[−r] and, after Ra_* and Rlim, f_*.",
     "Functoriality and the compatibilities follow from those of θ_f and µ_X (CR12 Proposition 2.3.3).",
-    "f_*f^* = deg f for finite f: Gros's computation through the trace of finite flat morphisms (SchemeAndStackFoundations:SF.0/finite-locally-free-trace)."
+    "f_*f^* = deg f for finite f: Gros's computation through the trace of finite flat morphisms (SchemeAndStackFoundations:2.21/trace_finite)."
    ],
    "acceptance": [
     "For π: P¹ → Spec k, π_*: H¹(P¹, WΩ¹) → W(k) is the trace, an isomorphism.",
@@ -2486,7 +2743,7 @@
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.4/witt-canonical-system",
     "SchemeAndStackFoundations:SF.2/sheaf-cohomology-with-supports",
-    "SchemeAndStackFoundations:SF.0/finite-locally-free-trace",
+    "SchemeAndStackFoundations:2.21/trace_finite",
     "CrystallineCohomology:CR.4/classical-de-rham-witt",
     "mathlib:AlgebraicGeometry.Smooth"
    ],
@@ -2521,37 +2778,37 @@
     {
      "name": "TauCeti.WittCohomology.HodgeWittWithSupports",
      "role": "data",
-     "statement": "Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ WΩ^q_X as a de Rham–Witt module over S."
+     "statement": "For the quasi-projective schemes of this target: Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ WΩ^q_X as a de Rham–Witt module over S."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittPushforward",
      "role": "data",
-     "statement": "f_*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r) for f in Sm*/S of relative dimension r."
+     "statement": "For the quasi-projective schemes of this target: f_*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r) for f in Sm*/S of relative dimension r."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittPushforward_comp",
      "role": "functoriality",
-     "statement": "(g ∘ f)_* = g_* ∘ f_* and id_* = id."
+     "statement": "For the quasi-projective schemes of this target: (g ∘ f)_* = g_* ∘ f_* and id_* = id."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittPushforward_frobenius",
      "role": "compatibility",
-     "statement": "f_* commutes with F, V and d."
+     "statement": "For the quasi-projective schemes of this target: f_* commutes with F, V and d."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittPushforward_restrict",
      "role": "compatibility",
-     "statement": "For U ⊂ S open, (f_U)_* = (f_*)|_U."
+     "statement": "For the quasi-projective schemes of this target: For U ⊂ S open, (f_U)_* = (f_*)|_U."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittPushforward_openImmersion",
      "role": "characterisation",
-     "statement": "For an open immersion j: (U, Φ) → (X, Φ), j_* is the excision isomorphism."
+     "statement": "For the quasi-projective schemes of this target: For an open immersion j: (U, Φ) → (X, Φ), j_* is the excision isomorphism."
     },
     {
      "name": "TauCeti.WittCohomology.pushforward_pullback_finite",
      "role": "relation",
-     "statement": "For finite f: X → Y of connected smooth k-schemes, f_* ∘ f^* = deg(f) · id on W_•Ω_Y."
+     "statement": "For the quasi-projective schemes of this target: For finite f: X → Y of connected smooth k-schemes, f_* ∘ f^* = deg(f) · id on W_•Ω_Y."
     }
    ],
    "tests": [
@@ -2589,8 +2846,9 @@
    ],
    "title": "Cycle classes in Hodge–Witt cohomology with supports",
    "kind": "construction",
-   "statement": "For X smooth over k and an integral closed subscheme Z ⊂ X of codimension c, Gros's cycle class ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) is the image of the logarithmic cycle class cl_log(Z) ∈ H^c_Z(X_ét, W_•Ω^c_{X,log}) (the Gysin image of 1 on the smooth locus of Z, extended by purity). Extended linearly, these classes form the unique morphism of weak cohomology theories with supports from Chow groups with supports (CH_*, CH^*, ×, 1) to (PĤ_*, PĤ^*, T, e), where PĤ(X, Φ) = ⊕_p R^pΓ_Φ WΩ^p_X. In particular cycle classes are compatible with proper pushforward, flat and Gysin pullback, exterior products, ĉl(X) = 1, and ĉl of a divisor {0} ⊂ P¹ is c_1(O(1)).",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. For X smooth over k and an integral closed subscheme Z ⊂ X of codimension c, Gros's cycle class ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) is the image of the logarithmic cycle class cl_log(Z) ∈ H^c_Z(X_ét, W_•Ω^c_{X,log}) (the Gysin image of 1 on the smooth locus of Z, extended by purity). Extended linearly, these classes form the unique morphism of weak cohomology theories with supports from Chow groups with supports (CH_*, CH^*, ×, 1) to (PĤ_*, PĤ^*, T, e), where PĤ(X, Φ) = ⊕_p R^pΓ_Φ WΩ^p_X. In particular cycle classes are compatible with proper pushforward, flat and Gysin pullback, exterior products, ĉl(X) = 1, and ĉl of a divisor {0} ⊂ P¹ is c_1(O(1)).",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "X smooth over k; classes live in Hodge–Witt cohomology with supports in Z; uniqueness is among morphisms of weak cohomology theories with supports."
    ],
    "proofSteps": [
@@ -2607,7 +2865,8 @@
     "SchemeAndStackFoundations:SF.5/refined-gysin",
     "SchemeAndStackFoundations:SF.5/chow-proper-push",
     "SchemeAndStackFoundations:SF.5/flat-pullback",
-    "CrystallineCohomology:CR.4/logarithmic-witt-sheaf"
+    "CrystallineCohomology:CR.4/logarithmic-witt-sheaf",
+    "CrystallineCohomologyPartII:WV.4/proper-correspondence-category"
    ],
    "sources": [
     {
@@ -2641,32 +2900,32 @@
     {
      "name": "TauCeti.WittCohomology.hodgeWittCycleClass",
      "role": "data",
-     "statement": "ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) for Z ⊂ X closed integral of codimension c, X smooth."
+     "statement": "For the quasi-projective schemes of this target: ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) for Z ⊂ X closed integral of codimension c, X smooth."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCycleClass_hom",
      "role": "constructor",
-     "statement": "The unique morphism of weak cohomology theories with supports CH → PĤ extending ĉl."
+     "statement": "For the quasi-projective schemes of this target: The unique morphism of weak cohomology theories with supports CH → PĤ extending ĉl."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCycleClass_pushforward",
      "role": "compatibility",
-     "statement": "ĉl(f_*α) = f_*ĉl(α) for f proper on supports."
+     "statement": "For the quasi-projective schemes of this target: ĉl(f_*α) = f_*ĉl(α) for f proper on supports."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCycleClass_pullback",
      "role": "compatibility",
-     "statement": "ĉl(f^!α) = f^*ĉl(α) for refined Gysin pullback along morphisms of smooth schemes."
+     "statement": "For the quasi-projective schemes of this target: ĉl(f^!α) = f^*ĉl(α) for refined Gysin pullback along morphisms of smooth schemes."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCycleClass_product",
      "role": "compatibility",
-     "statement": "ĉl(α × β) = ĉl(α) × ĉl(β)."
+     "statement": "For the quasi-projective schemes of this target: ĉl(α × β) = ĉl(α) × ĉl(β)."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCycleClass_one",
      "role": "simp",
-     "statement": "ĉl([X]) = 1."
+     "statement": "For the quasi-projective schemes of this target: ĉl([X]) = 1."
     }
    ],
    "tests": [
@@ -2704,16 +2963,19 @@
    ],
    "title": "The category of proper correspondences over a base",
    "kind": "definition",
-   "statement": "Let S be a k-scheme. The category C_S has objects k-morphisms f: X → S with X smooth and quasi-projective over k; Hom_{C_S}(X, Y) := CH(X ×_k Y, P(X ×_S Y)), the Chow group with supports in the family P(X ×_S Y) of closed subsets of X ×_S Y that are proper over Y; composition is β ∘ α := p_{13*}(p_{12}^*α · p_{23}^*β) computed with Fulton's refined intersection product inside X × Y × Z with supports proper over Z. The identity of X is the diagonal Δ_X. If X and Y are proper over S, Hom_{C_S}(X, Y) = CH(X ×_S Y).",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme. For a smooth k-scheme T and a family Φ of supports, define CH(T, Φ) as the free abelian group on integral closed subsets in Φ modulo divisors of rational functions on integral closed subsets that also lie in Φ (CR11 Definition 1.1.14, p. 10). The category C_S has objects k-morphisms f: X → S with X smooth and quasi-projective over k; Hom_{C_S}(X, Y) := CH(X ×_k Y, P(X ×_S Y)), the Chow group with supports in the family P(X ×_S Y) of closed subsets of X ×_S Y that are proper over Y; composition is β ∘ α := p_{13*}(p_{12}^*α · p_{23}^*β) computed with Fulton's refined intersection product inside X × Y × Z with supports proper over Z. The identity of X is the diagonal Δ_X. If X and Y are proper over S, Hom_{C_S}(X, Y) = CH(X ×_S Y).",
    "hypotheses": [
-    "X, Y, Z smooth quasi-projective over k; supports proper over the target; Chow groups of SchemeAndStackFoundations:SF.5 with supports."
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
+    "X, Y, Z smooth quasi-projective over k; supports proper over the target; the supported Chow groups defined here from the ordinary cycle and rational-equivalence operations of SchemeAndStackFoundations §§5.1–5.2."
    ],
    "proofSteps": [
     "Composition is well defined because the refined intersection of supports proper over Y and over Z is proper over Z after projection (refined Gysin maps with supports, SchemeAndStackFoundations:SF.5/refined-gysin); associativity and unit follow from the functoriality of refined Gysin maps (SchemeAndStackFoundations:SF.5/gysin-interchange, SF.5/gysin-proper-flat).",
     "For proper X, Y over S every closed subset of X ×_S Y is proper over Y."
    ],
    "acceptance": [
-    "For S = Spec k and X, Y smooth projective, Hom_{C_k}(X, Y) ⊗ ℚ is the space of rational Chow correspondences of MotivesAndAlgebraicCycles:MC.0/correspondence-group (all degrees together), and the compositions agree; C_k refines that category integrally and to quasi-projective schemes with supports proper over the target."
+    "For S = Spec k and X, Y smooth projective, Hom_{C_k}(X, Y) ⊗ ℚ is the space of rational Chow correspondences of MotivesAndAlgebraicCycles:MC.0/correspondence-group (all degrees together), and the compositions agree; C_k refines that category integrally and to quasi-projective schemes with supports proper over the target.",
+    "For Φ = {∅}, CH(T, Φ) = 0, whereas for all closed supports it is CH(T).",
+    "For T = P¹ and support the point ∞, CH_0(T, {∞}) = ℤ; after forgetting supports its generator maps to the degree-one generator of CH_0(P¹)."
    ],
    "prerequisites": [
     "SchemeAndStackFoundations:SF.5/chow-group",
@@ -2734,6 +2996,11 @@
      "sourceId": "CR11",
      "locator": "§1.3 (Correspondences), p. 18",
      "match": "The calculus of correspondences attached to a weak cohomology theory with supports."
+    },
+    {
+     "sourceId": "CR11",
+     "locator": "Definition 1.1.14, p. 10, lines 430–435",
+     "match": "Cycles in a support family modulo rational equivalences within that family."
     }
    ],
    "implementationStatus": "unchecked",
@@ -2753,34 +3020,39 @@
    ],
    "api": [
     {
+     "name": "TauCeti.WittCohomology.chowWithSupports",
+     "role": "definition",
+     "statement": "For T smooth quasi-projective and a family Φ of supports, CH(T, Φ) is the supported Chow group just defined; a map of support families induces the natural map."
+    },
+    {
      "name": "TauCeti.WittCohomology.ProperCorr",
      "role": "data",
-     "statement": "The category C_S of smooth quasi-projective S-schemes and proper correspondences."
+     "statement": "For the quasi-projective schemes of this target: The category C_S of smooth quasi-projective S-schemes and proper correspondences."
     },
     {
      "name": "TauCeti.WittCohomology.ProperCorr.comp",
      "role": "structure",
-     "statement": "Composition via refined intersection products; associative with identity Δ_X."
+     "statement": "For the quasi-projective schemes of this target: Composition via refined intersection products; associative with identity Δ_X."
     },
     {
      "name": "TauCeti.WittCohomology.ProperCorr.graph",
      "role": "constructor",
-     "statement": "An S-morphism h: X → Y gives [Γ_h^t] ∈ Hom(Y, X); a proper h gives [Γ_h] ∈ Hom(X, Y)."
+     "statement": "For the quasi-projective schemes of this target: An S-morphism h: X → Y gives [Γ_h^t] ∈ Hom(Y, X); a proper h gives [Γ_h] ∈ Hom(X, Y)."
     },
     {
      "name": "TauCeti.WittCohomology.ProperCorr.graph_comp",
      "role": "functoriality",
-     "statement": "[Γ_{g∘h}] = [Γ_g] ∘ [Γ_h] for proper h, g."
+     "statement": "For the quasi-projective schemes of this target: [Γ_{g∘h}] = [Γ_g] ∘ [Γ_h] for proper h, g."
     },
     {
      "name": "TauCeti.WittCohomology.ProperCorr.hom_proper",
      "role": "characterisation",
-     "statement": "If X, Y are proper over S then Hom(X, Y) = CH(X ×_S Y)."
+     "statement": "For the quasi-projective schemes of this target: If X, Y are proper over S then Hom(X, Y) = CH(X ×_S Y)."
     },
     {
      "name": "TauCeti.WittCohomology.ProperCorr.restrict",
      "role": "functoriality",
-     "statement": "Restriction to opens U ⊂ S defines a functor C_S → C_U."
+     "statement": "For the quasi-projective schemes of this target: Restriction to opens U ⊂ S defines a functor C_S → C_U."
     }
    ],
    "tests": [
@@ -2818,8 +3090,9 @@
    ],
    "title": "Action of proper correspondences on relative Hodge–Witt cohomology",
    "kind": "construction",
-   "statement": "Let S be a k-scheme. There is a functor Ĥ(?/S): C_S → (de Rham–Witt modules over S), sending f: X → S to ⊕_{p,q} R^qf_*WΩ^p_X and a ∈ Hom_{C_S}(X, Y) of degree i to the sheafification of the maps Cor_ĉl(a_U): Ĥ(f^{−1}U)(−i) → Ĥ(g^{−1}U) on opens U ⊂ S, given by α ↦ pr_{2*}(pr_1^*α ∪ ĉl(a_U)). It is compatible with F, V and d. If Z is the transpose of the graph of an S-morphism h, Ĥ([Z]/S) = h^*; if Z is the graph of a proper h, Ĥ([Z]/S) = h_*. For h: S → T and Z ⊂ X ×_S Y integral, finite and surjective over Y (X, Y integral, f, g affine), Ĥ([Z]/T) = ⊕_i R^ih_* Ĥ([Z]/S).",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme. There is a functor Ĥ(?/S): C_S → (de Rham–Witt modules over S), sending f: X → S to ⊕_{p,q} R^qf_*WΩ^p_X and a ∈ Hom_{C_S}(X, Y) of degree i to the sheafification of the maps Cor_ĉl(a_U): Ĥ(f^{−1}U)(−i) → Ĥ(g^{−1}U) on opens U ⊂ S, given by α ↦ pr_{2*}(pr_1^*α ∪ ĉl(a_U)). It is compatible with F, V and d. If Z is the transpose of the graph of an S-morphism h, Ĥ([Z]/S) = h^*; if Z is the graph of a proper h, Ĥ([Z]/S) = h_*. For h: S → T and Z ⊂ X ×_S Y integral, finite and surjective over Y (X, Y integral, f, g affine), Ĥ([Z]/T) = ⊕_i R^ih_* Ĥ([Z]/S).",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "Objects smooth quasi-projective over k; the twist (−i) shifts bidegree by the degree i of the correspondence."
    ],
    "proofSteps": [
@@ -2867,32 +3140,32 @@
     {
      "name": "TauCeti.WittCohomology.hodgeWittCorr",
      "role": "data",
-     "statement": "Ĥ(a/S): Ĥ(X/S)(−i) → Ĥ(Y/S) for a ∈ Hom_{C_S}(X, Y) of degree i."
+     "statement": "For the quasi-projective schemes of this target: Ĥ(a/S): Ĥ(X/S)(−i) → Ĥ(Y/S) for a ∈ Hom_{C_S}(X, Y) of degree i."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCorr_comp",
      "role": "functoriality",
-     "statement": "Ĥ(b ∘ a/S) = Ĥ(b/S) ∘ Ĥ(a/S) and Ĥ(Δ_X/S) = id."
+     "statement": "For the quasi-projective schemes of this target: Ĥ(b ∘ a/S) = Ĥ(b/S) ∘ Ĥ(a/S) and Ĥ(Δ_X/S) = id."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCorr_frobenius",
      "role": "compatibility",
-     "statement": "Ĥ(a/S) commutes with F, V and d."
+     "statement": "For the quasi-projective schemes of this target: Ĥ(a/S) commutes with F, V and d."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCorr_graph_transpose",
      "role": "compatibility",
-     "statement": "Ĥ([Γ_h^t]/S) = h^*."
+     "statement": "For the quasi-projective schemes of this target: Ĥ([Γ_h^t]/S) = h^*."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCorr_graph",
      "role": "compatibility",
-     "statement": "Ĥ([Γ_h]/S) = h_* for proper h."
+     "statement": "For the quasi-projective schemes of this target: Ĥ([Γ_h]/S) = h_* for proper h."
     },
     {
      "name": "TauCeti.WittCohomology.hodgeWittCorr_baseChange",
      "role": "compatibility",
-     "statement": "For h: S → T and Z finite surjective over Y, Ĥ([Z]/T) = ⊕_i R^ih_*Ĥ([Z]/S)."
+     "statement": "For the quasi-projective schemes of this target: For h: S → T and Z finite surjective over Y, Ĥ([Z]/T) = ⊕_i R^ih_*Ĥ([Z]/S)."
     }
    ],
    "tests": [
@@ -2933,8 +3206,9 @@
    ],
    "title": "Correspondences supported in positive codimension kill WO-cohomology up to bounded torsion",
    "kind": "lemma",
-   "statement": "Let S be a k-scheme, X → S and Y → S in C_S, Z ⊂ X ×_S Y a closed subset proper over Y, and r ≥ 0. (i) If every point of Z maps to a point of codimension ≥ r in Y, there is N ≥ 1 with N · image(Ĥ([Z]/S)) ⊂ ⊕_{p ≥ r, q ≥ r} R^qg_*WΩ^p_Y. (ii) If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ r in X, there is N ≥ 1 with N · ⊕_{p > d−r or q > d−r} R^qf_*WΩ^p_X ⊂ ker Ĥ([Z]/S). In particular, for r ≥ 1, a correspondence supported over a proper closed subset of Y (resp. of X) acts by a bounded-torsion map on ⊕_q R^qf_*WO_X (resp. on ⊕_q R^qf_*Wω_X).",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme, X → S and Y → S in C_S, Z ⊂ X ×_S Y a closed subset proper over Y, and r ≥ 0. (i) If every point of Z maps to a point of codimension ≥ r in Y, there is N ≥ 1 with N · image(Ĥ([Z]/S)) ⊂ ⊕_{p ≥ r, q ≥ r} R^qg_*WΩ^p_Y. (ii) If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ r in X, there is N ≥ 1 with N · ⊕_{p > d−r or q > d−r} R^qf_*WΩ^p_X ⊂ ker Ĥ([Z]/S). In particular, for r ≥ 1, a correspondence supported over a proper closed subset of Y (resp. of X) acts by a bounded-torsion map on ⊕_q R^qf_*WO_X (resp. on ⊕_q R^qf_*Wω_X).",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "Z proper over Y; N is the degree of a field extension coming from an alteration (N = 1 under resolution of singularities)."
    ],
    "proofSteps": [
@@ -2971,12 +3245,13 @@
    ],
    "title": "Finite quotients and topological finite quotients",
    "kind": "definition",
-   "statement": "Let k be a perfect field of characteristic p. A normal equidimensional k-scheme of finite type X is a finite quotient if there is a finite surjective morphism Y → X from a smooth k-scheme Y; a tame finite quotient if Y → X can be chosen of degree prime to p (as a locally constant function on Y); a topological finite quotient if there is a universal homeomorphism u: X → X′ onto a finite quotient X′. Equivalently (for X normal equidimensional) there is a universal homeomorphism X′ → X from a finite quotient X′. A universal homeomorphism u: X → Y of integral schemes with Y normal has degree p^n and factors the n-th relative Frobenius: there is v: Y → X^{(n)} with v ∘ u = F^n_{X/k} and (u × id) ∘ v = F^n_{Y/k}.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let k be a perfect field of characteristic p. A normal equidimensional k-scheme of finite type X is a finite quotient if there is a finite surjective morphism Y → X from a smooth k-scheme Y; a tame finite quotient if Y → X can be chosen of degree prime to p (as a locally constant function on Y); a topological finite quotient if there is a universal homeomorphism u: X → X′ onto a finite quotient X′. Equivalently (for X normal equidimensional) there is a universal homeomorphism X′ → X from a finite quotient X′. A universal homeomorphism u: X → Y of integral schemes with Y normal has degree p^n and factors the n-th relative Frobenius: there is v: Y → X^{(n)} with v ∘ u = F^n_{X/k} and (u × id) ∘ v = F^n_{Y/k}.",
    "hypotheses": [
-    "Universal homeomorphism = finite, surjective, radicial; between integral schemes with normal target this means finite surjective with purely inseparable function field extension."
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
+    "A universal homeomorphism is integral, surjective and radicial. The morphisms here are finite type, hence these universal homeomorphisms are finite; for integral schemes with normal target they are exactly finite surjective maps with purely inseparable function-field extension."
    ],
    "proofSteps": [
-    "A universal homeomorphism is finite, surjective and radicial, and for integral schemes with normal target this means finite surjective with purely inseparable function-field extension (SchemeAndStackFoundations:SF.0/universal-homeomorphism-criteria). Factorization of Frobenius: for X = Spec B, Y = Spec A affine, A ⊂ B with k(B)/k(A) purely inseparable of degree p^n; F^{n*}_{X/k} sends b ⊗ λ to b^{p^n}λ, and b^{p^n} ∈ k(A) ∩ B = A by normality of Y, giving v (CR12 Lemma 4.2.3; SchemeAndStackFoundations:SF.0/relative-frobenius).",
+    "In this finite-type setting a universal homeomorphism is finite, surjective and radicial; for integral schemes with normal target this means finite surjective with purely inseparable function-field extension (SchemeAndStackFoundations:SF.0/universal-homeomorphism-criteria). Factorization of Frobenius: for X = Spec B, Y = Spec A affine, A ⊂ B with k(B)/k(A) purely inseparable of degree p^n; F^{n*}_{X/k} sends b ⊗ λ to b^{p^n}λ, and b^{p^n} ∈ k(A) ∩ B = A by normality of Y, giving v (CR12 Lemma 4.2.3; SchemeAndStackFoundations:SF.0/relative-frobenius).",
     "The equivalence of the two directions: X′^{(n)} is a finite quotient when X′ is, and Frobenius twists are isomorphisms of F_p-schemes since k is perfect (CR12 Remark 4.2.6)."
    ],
    "acceptance": [
@@ -3021,32 +3296,32 @@
     {
      "name": "TauCeti.WittCohomology.IsFiniteQuotient",
      "role": "data",
-     "statement": "X normal equidimensional with a finite surjective Y → X, Y smooth over k."
+     "statement": "For the quasi-projective schemes of this target: X normal equidimensional with a finite surjective Y → X, Y smooth over k."
     },
     {
      "name": "TauCeti.WittCohomology.IsTameFiniteQuotient",
      "role": "data",
-     "statement": "As above with degree prime to p."
+     "statement": "For the quasi-projective schemes of this target: As above with degree prime to p."
     },
     {
      "name": "TauCeti.WittCohomology.IsTopologicalFiniteQuotient",
      "role": "data",
-     "statement": "X admits a universal homeomorphism to a finite quotient."
+     "statement": "For the quasi-projective schemes of this target: X admits a universal homeomorphism to a finite quotient."
     },
     {
      "name": "TauCeti.WittCohomology.IsFiniteQuotient.of_smooth",
      "role": "constructor",
-     "statement": "Smooth integral schemes are finite quotients."
+     "statement": "For the quasi-projective schemes of this target: Smooth integral schemes are finite quotients."
     },
     {
      "name": "TauCeti.WittCohomology.IsTopologicalFiniteQuotient.of_univHomeo",
      "role": "characterisation",
-     "statement": "For X normal equidimensional, X is a topological finite quotient iff some finite quotient admits a universal homeomorphism to X."
+     "statement": "For the quasi-projective schemes of this target: For X normal equidimensional, X is a topological finite quotient iff some finite quotient admits a universal homeomorphism to X."
     },
     {
      "name": "TauCeti.WittCohomology.univHomeo_factor_frobenius",
      "role": "relation",
-     "statement": "A universal homeomorphism u: X → Y of integral schemes with Y normal has deg u = p^n and factors F^n_{X/k} and F^n_{Y/k} as stated."
+     "statement": "For the quasi-projective schemes of this target: A universal homeomorphism u: X → Y of integral schemes with Y normal has deg u = p^n and factors F^n_{X/k} and F^n_{Y/k} as stated."
     }
    ],
    "tests": [
@@ -3084,26 +3359,29 @@
    ],
    "title": "Quasi-resolutions",
    "kind": "definition",
-   "statement": "A morphism f: X → Y between integral k-schemes is a quasi-resolution if its source X is a topological finite quotient, f is projective and surjective and finite over a dense open of Y, and the function-field extension k(Y) ⊂ k(X) is purely inseparable. Every integral k-scheme of finite type Y admits a quasi-resolution of the form X″/G → Y′ → Y, with Y′ → Y finite surjective and purely inseparable from a normal integral Y′, X″ smooth integral quasi-projective with a finite group G acting, and X″/G → Y′ projective birational. Any two quasi-resolutions of Y are dominated by a third. For X, Y integral normal, a projective surjective generically finite f factors as X → Y′ → Y through the normalization Y′ of Y in k(X), with X → Y′ birational and Y′ → Y finite, a universal homeomorphism when k(X)/k(Y) is purely inseparable.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. A morphism f: X → Y between integral k-schemes is a quasi-resolution if its source X is a topological finite quotient, f is projective and surjective and finite over a dense open of Y, and the function-field extension k(Y) ⊂ k(X) is purely inseparable. Every integral k-scheme of finite type Y admits a quasi-resolution of the form X″/G → Y′ → Y, with Y′ → Y finite surjective from a normal integral Y′ with k(Y′)/k(Y) purely inseparable, X″ smooth integral quasi-projective with a finite group G acting, and X″/G → Y′ projective birational. Any two quasi-resolutions of Y are dominated by a third. For X, Y integral normal, a projective surjective generically finite f factors as X → Y′ → Y through the normalization Y′ of Y in k(X), with X → Y′ birational and Y′ → Y finite, a universal homeomorphism when k(X)/k(Y) is purely inseparable.",
    "hypotheses": [
-    "k perfect; de Jong's alteration theorem in its equivariant form (Galois alterations) gives existence."
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
+    "k perfect; de Jong's alteration theorem in its equivariant form (Galois alterations) gives existence.",
+    "In the existence assertion, purely inseparable refers to k(Y′)/k(Y); Y′ → Y is a universal homeomorphism when Y is normal, not for arbitrary nonnormal Y."
    ],
    "proofSteps": [
-    "Existence: by de Jong (1997, Corollary 5.15; 1996, Corollary 7.4), a finite purely inseparable Y′ → Y with Y′ normal and a smooth quasi-projective X″ with G-action such that X″/G → Y′ is projective birational (Galois alterations: AdicCoefficientsAndComparisonsPartII:PA.6/de-jong-galois-alteration over an algebraically closed field, with the perfect-field form requested from PA.6, gap CrystallineCohomologyPartII/G2; SchemeAndStackFoundations:SF.4/de-jong-alteration-theorem); X″/G is a finite quotient, and the composite satisfies the definition (CR12 Remark 4.3.2).",
+    "Existence over every perfect field k is a target here over the excellent base Spec k. The construction extends the algebraically closed-field statement discussed in the separate alteration design; that design is not an input. Apply the plurinodal alteration of ClassicalAdicEtaleCohomology, Layer 2 (PlurinodalAlteration.exists), and the quotient construction in dJ97, proof of Corollary 5.15, p. 620 (cf. dJ96 Corollary 7.4, p. 88), in the form of CR12 Remark 4.3.2, p. 79. Normalize Y in the purely inseparable invariant function field to get finite Y′ → Y; the quotient X″/G → Y′ is projective birational. The finite map Y′ → Y need not be radicial when Y is not normal.",
     "Domination: given two quasi-resolutions, apply existence to the closure of the image of Spec L in X_1 ×_Y X_2, where L is the residue field of the local artinian algebra k(X_1) ⊗_{k(Y)} k(X_2) (purely inseparable over k(Y)).",
     "Factorization through the normalization in k(X) (finiteness of normalization: SchemeAndStackFoundations:SF.0/nagata-normalization-finite)."
    ],
    "acceptance": [
-    "A resolution of singularities X → Y (projective birational with X smooth) is a quasi-resolution."
+    "A resolution of singularities X → Y (projective birational with X smooth) is a quasi-resolution.",
+    "For the affine cusp over F_p, normalization Y′ = A¹ → Y is a finite universal homeomorphism; X″ = A¹ and G = 1 give a quasi-resolution.",
+    "For a split nodal cubic, normalization has purely inseparable function-field extension of degree 1 but two points above the node: the existence assertion must not call its finite factor a universal homeomorphism."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.5/topological-finite-quotient",
     "SchemeAndStackFoundations:SF.4/de-jong-alteration-theorem",
     "SchemeAndStackFoundations:SF.4/alteration",
-    "AdicCoefficientsAndComparisonsPartII:PA.6/de-jong-galois-alteration",
-    "AdicCoefficientsAndComparisonsPartII:PA.6",
     "SchemeAndStackFoundations:SF.0/nagata-normalization-finite",
-    "mathlib:AlgebraicGeometry.IsProper"
+    "mathlib:AlgebraicGeometry.IsProper",
+    "ClassicalAdicEtaleCohomology:2/PlurinodalAlteration.exists"
    ],
    "sources": [
     {
@@ -3120,6 +3398,16 @@
      "sourceId": "GNT19",
      "locator": "Remark 3.1 and the following paragraph, p. 19",
      "match": "Quasi-resolutions exist in every dimension by de Jong 1997, Corollary 5.15, and WO-rationality is defined through them when resolutions are not known."
+    },
+    {
+     "sourceId": "dJ97",
+     "locator": "Corollary 5.15 and proof, p. 620",
+     "match": "Galois alteration over the excellent base Spec k."
+    },
+    {
+     "sourceId": "dJ96",
+     "locator": "Corollary 7.4, pp. 88–89",
+     "match": "Smooth alteration with finite group and quotient birational to the normalized invariant model."
     }
    ],
    "implementationStatus": "unchecked",
@@ -3141,32 +3429,32 @@
     {
      "name": "TauCeti.WittCohomology.IsQuasiResolution",
      "role": "data",
-     "statement": "f: X → Y between integral k-schemes with X a topological finite quotient, f projective surjective generically finite, k(Y) ⊂ k(X) purely inseparable."
+     "statement": "For the quasi-projective schemes of this target: f: X → Y between integral k-schemes with X a topological finite quotient, f projective surjective generically finite, k(Y) ⊂ k(X) purely inseparable."
     },
     {
      "name": "TauCeti.WittCohomology.IsQuasiResolution.exists",
      "role": "constructor",
-     "statement": "Every integral k-scheme of finite type admits a quasi-resolution of the form X″/G → Y′ → Y."
+     "statement": "For the quasi-projective schemes of this target: Every integral k-scheme of finite type admits a quasi-resolution of the form X″/G → Y′ → Y."
     },
     {
      "name": "TauCeti.WittCohomology.IsQuasiResolution.dominate",
      "role": "relation",
-     "statement": "Any two quasi-resolutions of Y are dominated by a third over Y."
+     "statement": "For the quasi-projective schemes of this target: Any two quasi-resolutions of Y are dominated by a third over Y."
     },
     {
      "name": "TauCeti.WittCohomology.IsQuasiResolution.of_resolution",
      "role": "constructor",
-     "statement": "A projective birational morphism from a smooth integral scheme is a quasi-resolution."
+     "statement": "For the quasi-projective schemes of this target: A projective birational morphism from a smooth integral scheme is a quasi-resolution."
     },
     {
      "name": "TauCeti.WittCohomology.IsQuasiResolution.comp_univHomeo",
      "role": "functoriality",
-     "statement": "If f is a quasi-resolution and u: Y → Y′ a universal homeomorphism of integral schemes, u ∘ f is a quasi-resolution."
+     "statement": "For the quasi-projective schemes of this target: If f is a quasi-resolution and u: Y → Y′ a universal homeomorphism of integral schemes, u ∘ f is a quasi-resolution."
     },
     {
      "name": "TauCeti.WittCohomology.IsQuasiResolution.factor",
      "role": "characterisation",
-     "statement": "For X, Y normal, f factors as a birational projective X → Y′ followed by a universal homeomorphism Y′ → Y."
+     "statement": "For the quasi-projective schemes of this target: For X, Y normal, f factors as a birational projective X → Y′ followed by a universal homeomorphism Y′ → Y."
     }
    ],
    "tests": [
@@ -3204,8 +3492,9 @@
    ],
    "title": "Finite covers and universal homeomorphisms realize Witt cohomology as a direct factor",
    "kind": "lemma",
-   "statement": "(i) For a universal homeomorphism u: X → Y between integral normal schemes, u_*u^* = deg(u) on WO_Y ⊕ Wω_Y and u^*u_* = deg(u) on u_*(WO_X ⊕ Wω_X); hence u^* and u_* are isomorphisms after passing to the isogeny category. (ii) Let f: X → Y be finite surjective with X smooth integral, Y, Z normal integral, u: Z → Y a universal homeomorphism and a: Y → S a morphism; put β = pr_{13*}[X ×_Y Z ×_Y X] ∈ Hom_{C_S}(X, X). Then f^* ∘ u_* induces isomorphisms R^i(au)_*(WO_Z ⊕ Wω_Z)_ℚ ≅ Ĥ(β/S)(R^i(af)_*(WO_X ⊕ Wω_X)_ℚ) for all i.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. (i) For a universal homeomorphism u: X → Y between integral normal schemes, u_*u^* = deg(u) on WO_Y ⊕ Wω_Y and u^*u_* = deg(u) on u_*(WO_X ⊕ Wω_X); hence u^* and u_* are isomorphisms after passing to the isogeny category. (ii) Let f: X → Y be finite surjective with X smooth integral, Y, Z normal integral, u: Z → Y a universal homeomorphism and a: Y → S a morphism; put β = pr_{13*}[X ×_Y Z ×_Y X] ∈ Hom_{C_S}(X, X). Then f^* ∘ u_* induces isomorphisms R^i(au)_*(WO_Z ⊕ Wω_Z)_ℚ ≅ Ĥ(β/S)(R^i(af)_*(WO_X ⊕ Wω_X)_ℚ) for all i.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "X smooth integral; Y, Z normal integral; pullback and pushforward on WO ⊕ Wω of normal schemes as in CR12 Definition 4.1.5."
    ],
    "proofSteps": [
@@ -3248,8 +3537,9 @@
    ],
    "title": "Witt cohomology of a quasi-resolution of a topological finite quotient",
    "kind": "theorem",
-   "statement": "For a quasi-resolution f: X → Y of a topological finite quotient Y, pullback and pushforward give isomorphisms in the derived category of de Rham–Witt modules over Y up to isogeny: f^*: WO_{Y,ℚ} ≅ Rf_*WO_{X,ℚ} and Rf_*Wω_{X,ℚ} ≅ f_*Wω_{X,ℚ}[0] ≅ Wω_{Y,ℚ}. In particular R^if_*WO_{X,ℚ} = 0 and R^if_*Wω_{X,ℚ} = 0 for i ≥ 1: there is N with p^N R^if_*WO_X = 0 for all i ≥ 1.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. For a quasi-resolution f: X → Y of a topological finite quotient Y, pullback and pushforward give isomorphisms in the derived category of de Rham–Witt modules over Y up to isogeny: f^*: WO_{Y,ℚ} ≅ Rf_*WO_{X,ℚ} and Rf_*Wω_{X,ℚ} ≅ f_*Wω_{X,ℚ}[0] ≅ Wω_{Y,ℚ}. In particular R^if_*WO_{X,ℚ} = 0 and R^if_*Wω_{X,ℚ} = 0 for i ≥ 1: there is N with p^N R^if_*WO_X = 0 for all i ≥ 1.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "Y a topological finite quotient (not just normal); f a quasi-resolution; isogeny convention."
    ],
    "proofSteps": [
@@ -3300,8 +3590,9 @@
    ],
    "title": "WO-rational and Witt-rational singularities",
    "kind": "definition",
-   "statement": "An integral k-scheme S has Witt-rational singularities if for every quasi-resolution f: X → S: (1) f^*: WO_{S,ℚ} → f_*WO_{X,ℚ} is an isomorphism; (2) R^if_*WO_{X,ℚ} = 0 for all i ≥ 1; (3) R^if_*Wω_{X,ℚ} = 0 for all i ≥ 1. If only (1) and (2) hold, S has WO-rational singularities. Here the subscript ℚ is the isogeny convention: (2) means that a power of p kills R^if_*WO_X. Equivalently, it suffices that one quasi-resolution satisfies the conditions (one quasi-resolution suffices), and for normal S condition (1) is automatic; in particular, if S has a resolution of singularities, S is WO-rational iff R^if_*WO_{X,ℚ} = 0 for i > 0 for that resolution.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. An integral k-scheme S has Witt-rational singularities if for every quasi-resolution f: X → S: (1) f^*: WO_{S,ℚ} → f_*WO_{X,ℚ} is an isomorphism; (2) R^if_*WO_{X,ℚ} = 0 for all i ≥ 1; (3) R^if_*Wω_{X,ℚ} = 0 for all i ≥ 1. If only (1) and (2) hold, S has WO-rational singularities. Here the subscript ℚ is the isogeny convention: (2) means that a power of p kills R^if_*WO_X. Equivalently, it suffices that one quasi-resolution satisfies the conditions (one quasi-resolution suffices), and for normal S condition (1) is automatic; in particular, if S is normal and has a resolution of singularities, S is WO-rational iff R^if_*WO_{X,ℚ} = 0 for i > 0 for that resolution.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "S integral of finite type over a perfect field k; the conditions are local on S.",
     "BE-Witt-rational singularities (Blickle–Esnault: a splitting of WO_S ⊗ ℚ → Rf_*WO_X ⊗ ℚ for a generically étale alteration) are a weaker notion and are not used to define this one."
    ],
@@ -3368,38 +3659,38 @@
    "api": [
     {
      "name": "TauCeti.WittCohomology.HasWORationalSingularities",
-     "role": "data",
-     "statement": "S integral; every quasi-resolution f satisfies (1) and (2)."
+     "role": "predicate",
+     "statement": "For the quasi-projective schemes of this target: S integral; every quasi-resolution f satisfies (1) and (2)."
     },
     {
      "name": "TauCeti.WittCohomology.HasWittRationalSingularities",
-     "role": "data",
-     "statement": "S integral; every quasi-resolution satisfies (1), (2) and (3)."
+     "role": "predicate",
+     "statement": "For the quasi-projective schemes of this target: S integral; every quasi-resolution satisfies (1), (2) and (3)."
     },
     {
      "name": "TauCeti.WittCohomology.hasWORational_iff_exists",
      "role": "characterisation",
-     "statement": "S is WO-rational iff some quasi-resolution satisfies (1) and (2) (one quasi-resolution suffices)."
+     "statement": "For the quasi-projective schemes of this target: S is WO-rational iff some quasi-resolution satisfies (1) and (2) (one quasi-resolution suffices)."
     },
     {
      "name": "TauCeti.WittCohomology.hasWORational_iff_resolution",
      "role": "characterisation",
-     "statement": "If f: X → S is a resolution of singularities of a normal S, S is WO-rational iff R^if_*WO_{X,ℚ} = 0 for i > 0, iff some p^N kills every R^if_*WO_X, i > 0."
+     "statement": "For the quasi-projective schemes of this target: If f: X → S is a resolution of singularities of a normal S, S is WO-rational iff R^if_*WO_{X,ℚ} = 0 for i > 0, iff some p^N kills every R^if_*WO_X, i > 0."
     },
     {
      "name": "TauCeti.WittCohomology.hasWORational_iff_singularityComplex",
      "role": "characterisation",
-     "statement": "S is WO-rational iff WS_{0,S} ≅ WO_{S,ℚ} (WV.5/witt-singularity-complexes)."
+     "statement": "For the quasi-projective schemes of this target: S is WO-rational iff WS_{0,S} ≅ WO_{S,ℚ} (WV.5/witt-singularity-complexes)."
     },
     {
      "name": "TauCeti.WittCohomology.HasWittRationalSingularities.toWO",
      "role": "coercion",
-     "statement": "Witt-rational ⇒ WO-rational."
+     "statement": "For the quasi-projective schemes of this target: Witt-rational ⇒ WO-rational."
     },
     {
      "name": "TauCeti.WittCohomology.hasWORational_normal_cond_one",
      "role": "other",
-     "statement": "For S normal, condition (1) holds for every quasi-resolution."
+     "statement": "For the quasi-projective schemes of this target: For S normal, condition (1) holds for every quasi-resolution."
     }
    ],
    "tests": [
@@ -3445,8 +3736,9 @@
    ],
    "title": "Topological finite quotients are Witt-rational; invariance under universal homeomorphisms",
    "kind": "theorem",
-   "statement": "(i) Every topological finite quotient over k has Witt-rational singularities. (ii) If u: Y → Y′ is a universal homeomorphism between normal schemes, Y has Witt-rational (resp. WO-rational) singularities iff Y′ has.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. (i) Every topological finite quotient over k has Witt-rational singularities. (ii) If u: Y → Y′ is a universal homeomorphism between normal schemes, Y has Witt-rational (resp. WO-rational) singularities iff Y′ has.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "k perfect; Y, Y′ normal integral in (ii)."
    ],
    "proofSteps": [
@@ -3482,8 +3774,9 @@
    ],
    "title": "The Witt singularity complexes of an integral scheme",
    "kind": "construction",
-   "statement": "Let S be an integral k-scheme of dimension d. For quasi-resolutions f: X → S and g: Y → S, X and Y are quasi-birational over S, and every quasi-birational correspondence (Z, π_X, π_Y) induces the same isomorphisms Rf_*WO_{X,ℚ} ≅ Rg_*WO_{Y,ℚ} and Rf_*Wω_{X,ℚ} ≅ Rg_*Wω_{Y,ℚ} in the derived category of de Rham–Witt modules over S up to isogeny, compatibly with composition for three quasi-resolutions. Hence WS_{0,S} := Rf_*WO_{X,ℚ} and WS_{d,S} := Rf_*Wω_{X,ℚ} are well defined up to canonical isomorphism, with F and V, and S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism, Witt-rational iff in addition H^i(WS_{d,S}) = 0 for i ≥ 1.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be an integral k-scheme of dimension d. For quasi-resolutions f: X → S and g: Y → S, X and Y are quasi-birational over S, and every quasi-birational correspondence (Z, π_X, π_Y) induces the same isomorphisms Rf_*WO_{X,ℚ} ≅ Rg_*WO_{Y,ℚ} and Rf_*Wω_{X,ℚ} ≅ Rg_*Wω_{Y,ℚ} in the derived category of de Rham–Witt modules over S up to isogeny, compatibly with composition for three quasi-resolutions. Hence WS_{0,S} := Rf_*WO_{X,ℚ} and WS_{d,S} := Rf_*Wω_{X,ℚ} are well defined up to canonical isomorphism, with F and V, and S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism, Witt-rational iff in addition H^i(WS_{d,S}) = 0 for i ≥ 1.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "S integral of finite type over a perfect field.",
     "Two integral S-schemes are quasi-birational over S if they admit quasi-resolutions from a common Z."
    ],
@@ -3531,32 +3824,32 @@
     {
      "name": "TauCeti.WittCohomology.wittSingularityComplex",
      "role": "data",
-     "statement": "WS_{0,S} ∈ D⁺(de Rham–Witt modules over S up to isogeny), with WS_{0,S} ≅ Rf_*WO_{X,ℚ} for any quasi-resolution f."
+     "statement": "For the quasi-projective schemes of this target: WS_{0,S} ∈ D⁺(de Rham–Witt modules over S up to isogeny), with WS_{0,S} ≅ Rf_*WO_{X,ℚ} for any quasi-resolution f."
     },
     {
      "name": "TauCeti.WittCohomology.wittSingularityComplexTop",
      "role": "data",
-     "statement": "WS_{d,S} ≅ Rf_*Wω_{X,ℚ}."
+     "statement": "For the quasi-projective schemes of this target: WS_{d,S} ≅ Rf_*Wω_{X,ℚ}."
     },
     {
      "name": "TauCeti.WittCohomology.wittSingularityComplex_iso",
      "role": "characterisation",
-     "statement": "For each quasi-resolution f an isomorphism ι_f: WS_{0,S} ≅ Rf_*WO_{X,ℚ}, with ι_g ∘ ι_f^{−1} induced by any quasi-birational correspondence."
+     "statement": "For the quasi-projective schemes of this target: For each quasi-resolution f an isomorphism ι_f: WS_{0,S} ≅ Rf_*WO_{X,ℚ}, with ι_g ∘ ι_f^{−1} induced by any quasi-birational correspondence."
     },
     {
      "name": "TauCeti.WittCohomology.wittSingularityComplex_unit",
      "role": "projection",
-     "statement": "The natural map WO_{S,ℚ} → WS_{0,S}."
+     "statement": "For the quasi-projective schemes of this target: The natural map WO_{S,ℚ} → WS_{0,S}."
     },
     {
      "name": "TauCeti.WittCohomology.hasWORational_iff_unit_iso",
      "role": "characterisation",
-     "statement": "S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism."
+     "statement": "For the quasi-projective schemes of this target: S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism."
     },
     {
      "name": "TauCeti.WittCohomology.wittSingularityComplex_frobenius",
      "role": "structure",
-     "statement": "F and V act on WS_{0,S} and WS_{d,S} compatibly with the isomorphisms ι_f."
+     "statement": "For the quasi-projective schemes of this target: F and V act on WS_{0,S} and WS_{d,S} compatibly with the isomorphisms ι_f."
     }
    ],
    "tests": [
@@ -3594,8 +3887,9 @@
    ],
    "title": "Quasi-birational invariance of Witt cohomology for Witt-rational schemes",
    "kind": "theorem",
-   "statement": "Over a k-scheme S, take integral S-schemes f: X → S and g: Y → S, both with WO-rational singularities and quasi-birational over S. A quasi-birational correspondence induces Rf_*WO_{X,ℚ} ≅ Rg_*WO_{Y,ℚ} (and Rf_*Wω_{X,ℚ} ≅ Rg_*Wω_{Y,ℚ} when X, Y are Witt-rational), compatible with F and V. In particular, for S = Spec k: H^i(X, WO_{X,ℚ}) ≅ H^i(Y, WO_{Y,ℚ}) for all i, and if X, Y are projective, H^i_rig(X/K)^{<1} ≅ H^i_rig(Y/K)^{<1} Frobenius-equivariantly.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Over a k-scheme S, take integral S-schemes f: X → S and g: Y → S, both with WO-rational singularities and quasi-birational over S. A quasi-birational correspondence induces Rf_*WO_{X,ℚ} ≅ Rg_*WO_{Y,ℚ} (and Rf_*Wω_{X,ℚ} ≅ Rg_*Wω_{Y,ℚ} when X, Y are Witt-rational), compatible with F and V. In particular, for S = Spec k: H^i(X, WO_{X,ℚ}) ≅ H^i(Y, WO_{Y,ℚ}) for all i, and if X, Y are projective, H^i_rig(X/K)^{<1} ≅ H^i_rig(Y/K)^{<1} Frobenius-equivariantly.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "X, Y integral with WO-rational singularities, quasi-birational over S."
    ],
    "proofSteps": [
@@ -3632,8 +3926,9 @@
    ],
    "title": "Rational singularities are Witt-rational",
    "kind": "theorem",
-   "statement": "For an integral k-scheme S: rational singularities (a resolution f with R^if_*O_X = 0 = R^if_*ω_X for i > 0) ⇒ Witt-rational ⇒ WO-rational ⇒ BE-Witt-rational (WO_S ⊗ ℚ → Rg_*WO_X ⊗ ℚ splits for every alteration g from a smooth scheme). The first implication is strict.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. For an integral k-scheme S: rational singularities (a resolution f with R^if_*O_X = 0 = R^if_*ω_X for i > 0) ⇒ Witt-rational ⇒ WO-rational ⇒ BE-Witt-rational (WO_S ⊗ ℚ → Rg_*WO_X ⊗ ℚ splits for every alteration g from a smooth scheme). The first implication is strict.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "S integral of finite type over a perfect field; the first implication assumes a resolution exists (as part of the definition of rational singularities)."
    ],
    "proofSteps": [
@@ -3677,29 +3972,38 @@
    ],
    "title": "WO-rationality of isolated singularities through the exceptional fibre",
    "kind": "theorem",
-   "statement": "Let S be an integral normal k-scheme with an isolated singular point s and f: X → S a resolution of singularities that is an isomorphism over S ∖ {s}, with exceptional fibre E = f^{−1}(s). Then S has WO-rational singularities iff H^i(E, WO_{E,ℚ}) = 0 for all i > 0 (equivalently H^i(E, WO_E) ⊗ ℚ = 0, E being proper). In particular the cone over a smooth projective variety Z ⊂ P^N (with a resolution by the blowup of the vertex, E ≅ Z) is WO-rational iff H^i(Z, WO_{Z,ℚ}) = 0 for i > 0.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be an integral normal k-scheme with an isolated singular point s and f: X → S a resolution of singularities that is an isomorphism over S ∖ {s}, with exceptional fibre E = f^{−1}(s). Then S has WO-rational singularities iff H^i(E, WO_{E,ℚ}) = 0 for all i > 0 (equivalently H^i(E, WO_E) ⊗ ℚ = 0, E being proper). In particular the cone over a smooth projective geometrically connected variety Z ⊂ P^N (with a resolution by the blowup of the vertex, E ≅ Z) is WO-rational iff H^i(Z, WO_{Z,ℚ}) = 0 for i > 0.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "S normal with an isolated singularity; a resolution that is an isomorphism away from s exists (an assumption)."
    ],
    "proofSteps": [
     "WV.2/witt-exceptional-reduction gives R^if_*WO_{X,ℚ} = H^i(E, WO_{E,ℚ}) as skyscraper sheaves at s for i > 0; the resolution is a quasi-resolution and one suffices (WV.5/wo-rational-singularities); S is normal so condition (1) holds.",
-    "For E proper, the isogeny and tensor conventions agree on H^i (WV.0/rational-witt-sheaves)."
+    "For E proper, the isogeny and tensor conventions agree on H^i (WV.0/rational-witt-sheaves).",
+    "For the cone corollary, the blowup of the vertex is smooth and has exceptional fibre Z; its other geometric fibres are points. Thus all geometric fibres are connected, even when the cone is not normal, so WV.0/witt-universal-homeomorphism-invariance (ii) proves condition (1). Apply the higher-direct-image criterion to this quasi-resolution. See CR12 Theorem 4.7.4, p. 93."
    ],
    "acceptance": [
     "The cone over a smooth plane conic is WO-rational; the cone over a smooth plane curve of genus g ≥ 1 is not, since H¹(C, WO_C)_K, the slope-[0, 1) part of H¹_crys(C), has dimension ≥ g.",
-    "A normal surface singularity whose minimal resolution has exceptional curves forming a tree of smooth rational curves has H¹(E, WO_{E,ℚ}) = 0, by Mayer–Vietoris (WV.0/witt-closed-mayer-vietoris)."
+    "A normal surface singularity whose minimal resolution has exceptional curves forming a tree of smooth rational curves has H¹(E, WO_{E,ℚ}) = 0, by Mayer–Vietoris (WV.0/witt-closed-mayer-vietoris).",
+    "For q odd and a nonsquare a, Z = V(x² − ay²) ⊂ P¹ is Spec F_{q²}. Its higher Witt cohomology is zero, but the cone is not WO-rational: at the vertex W(F_q)_ℚ → W(F_{q²})_ℚ is not onto (dimensions 1 and 2 over W(F_q)[1/p]). Geometric connectedness fails since Z splits into two geometric points."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.2/witt-exceptional-reduction",
     "CrystallineCohomologyPartII:WV.5/wo-rational-singularities",
     "CrystallineCohomologyPartII:WV.0/rational-witt-sheaves",
-    "CrystallineCohomologyPartII:WV.0/witt-closed-mayer-vietoris"
+    "CrystallineCohomologyPartII:WV.0/witt-closed-mayer-vietoris",
+    "CrystallineCohomologyPartII:WV.0/witt-universal-homeomorphism-invariance"
    ],
    "sources": [
     {
      "sourceId": "CR12",
      "locator": "Corollary 4.6.4, p. 90; introduction, pp. 5–6",
-     "match": "For a projective birational f that is an isomorphism off an isolated singular point, R^if_*WO_{X,ℚ} = H^i(E, WO_{E,ℚ}); hence S is WO-rational iff these vanish; a normal surface is WO-rational iff the exceptional divisor is a tree of smooth rational curves; a cone over a smooth projective X is WO-rational iff H^i(X, WO_{X,ℚ}) = 0 for i > 0."
+     "match": "For a projective birational f that is an isomorphism off an isolated singular point, R^if_*WO_{X,ℚ} = H^i(E, WO_{E,ℚ}); hence S is WO-rational iff these vanish; a normal surface is WO-rational iff the exceptional divisor is a tree of smooth rational curves; a cone over a smooth projective geometrically connected X is WO-rational iff H^i(X, WO_{X,ℚ}) = 0 for i > 0."
+    },
+    {
+     "sourceId": "CR12",
+     "locator": "Theorem 4.7.4, p. 93",
+     "match": "The cone criterion requires geometrically connected smooth projective Z."
     }
    ],
    "implementationStatus": "unchecked",
@@ -3716,14 +4020,14 @@
    ],
    "title": "Decomposition of the diagonal for CH_0-trivial varieties",
    "kind": "theorem",
-   "statement": "Let X be a smooth projective geometrically integral variety of dimension d over a field k, and suppose CH_0(X_Ω) ⊗ ℚ = ℚ via the degree, where Ω is an algebraic closure of k(X). Then there are N ≥ 1, a zero-cycle ξ on X, a divisor D ⊂ X and a d-dimensional cycle Γ supported on X × D such that N·[Δ_X] = [ξ × X] + Γ in CH^d(X × X). More generally, for a smooth projective family X′_η over the generic point of a base, with CH_0 trivial over every field extension, the same holds for the generic fibre with N, D, ξ over η, which spreads out over a dense open of the base up to cycles supported over a divisor of the base.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. This is the rational-coefficient extension of MotivesAndAlgebraicCycles §0.6, whose fixed-support input is integral. Let X be a smooth projective geometrically integral variety of dimension d over a field k, and suppose CH_0(X_Ω) ⊗ ℚ = ℚ via the degree, where Ω is an algebraic closure of k(X). Then there are N ≥ 1, a zero-cycle ξ on X, a divisor D ⊂ X and a d-dimensional cycle Γ supported on X × D such that N·[Δ_X] = [ξ × X] + Γ in CH^d(X × X). More generally, for a smooth projective family X′_η over the generic point of a base, with CH_0 trivial over every field extension, the same holds for the generic fibre with N, D, ξ over η, which spreads out over a dense open of the base up to cycles supported over a divisor of the base.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "X smooth projective geometrically integral; the CH_0 hypothesis over an algebraic closure of k(X) (or over every extension of the base field)."
    ],
    "proofSteps": [
-    "The kernel of CH_0(X_{k(X)}) → CH_0(X_Ω) is torsion: Ω is algebraic over k(X), so a class dying over Ω dies over a finite subextension k′ (MotivesAndAlgebraicCycles:MC.2/chow-groups-under-field-extension), and pushforward along the finite flat X_{k′} → X_{k(X)} after pullback is multiplication by [k′ : k(X)] (SchemeAndStackFoundations:SF.5/finite-flat-degree).",
-    "Hence the generic point η_X ∈ X(k(X)) is, up to torsion, rationally equivalent over k(X) to a zero-cycle ξ_{k(X)} pulled back from X; CH_0(X_{k(X)}) is the colimit of CH^d(X × (X ∖ D)) over divisors D, so N(Δ − ξ × X) restricts to zero on X × (X ∖ D) for some D, and the localization sequence (SchemeAndStackFoundations:SF.5/chow-localization) gives Γ on X × D.",
-    "The relative version: apply the same over the generic point of the base and spread out (CR12 proof of Theorem 4.8.1, (4.8.6)–(4.8.7))."
+    "For the rational CH_0 hypothesis choose a closed point ξ_0 of positive degree e. Over k(X), the class e[η_X] − [ξ_0] becomes zero after tensoring with ℚ over Ω; clear its denominator, then use the torsion-kernel statement of MotivesAndAlgebraicCycles §2.2 to descend after multiplication by a further nonzero integer. The resulting integral equality on the generic fibre is the input for the fixed-support diagonal argument in MotivesAndAlgebraicCycles §0.6, applied after transposing its factors; localization supplies Γ on X × D. Absorb all multipliers into N and ξ.",
+    "For families apply the same argument over the generic point and spread the resulting cycles and rational equivalences over a dense open, as in CR12 (4.8.5)–(4.8.7), pp. 98–99."
    ],
    "acceptance": [
     "For X = P^d: [Δ] = [pt × P^d] + Γ with Γ supported on P^d × H for a hyperplane H (N = 1).",
@@ -3734,8 +4038,9 @@
     "SchemeAndStackFoundations:SF.5/chow-localization",
     "SchemeAndStackFoundations:SF.5/flat-pullback",
     "MotivesAndAlgebraicCycles:MC.2/chow-groups-under-field-extension",
-    "SchemeAndStackFoundations:SF.5/finite-flat-degree",
-    "MotivesAndAlgebraicCycles:MC.0/correspondence-group"
+    "MotivesAndAlgebraicCycles:2.2/chow-groups-under-field-extension",
+    "MotivesAndAlgebraicCycles:MC.0/correspondence-group",
+    "MotivesAndAlgebraicCycles:0.6/diagonal-decomposition"
    ],
    "sources": [
     {
@@ -3763,8 +4068,9 @@
    ],
    "title": "Vanishing of higher direct images of WO for fibrations with CH_0-trivial generic fibre",
    "kind": "theorem",
-   "statement": "Let X be an integral k-scheme with Witt-rational singularities and f: X → Y a projective morphism to an integral normal scheme Y, with generic point η and smooth generic fibre X_η, such that, for each field L containing k(η), degree identifies CH_0(X_η ×_{k(η)} L) with rational coefficients with ℚ. Then ⊕_{i>0} R^if_*WO_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{0,Y}) and ⊕_{i>0} R^if_*Wω_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{dim Y,Y}). When Y is itself Witt-rational, all these positive-degree direct images vanish; for Y = Spec k: H^i(X, WO_{X,ℚ}) = 0 for i > 0.",
+   "statement": "The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let X be an integral k-scheme with Witt-rational singularities and f: X → Y a projective morphism to an integral normal scheme Y, with generic point η and smooth generic fibre X_η, such that, for each field L containing k(η), degree identifies CH_0(X_η ×_{k(η)} L) with rational coefficients with ℚ. Then ⊕_{i>0} R^if_*WO_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{0,Y}) and ⊕_{i>0} R^if_*Wω_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{dim Y,Y}). When Y is itself Witt-rational, all these positive-degree direct images vanish; for Y = Spec k: H^i(X, WO_{X,ℚ}) = 0 for i > 0.",
    "hypotheses": [
+    "The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field.",
     "X Witt-rational (e.g. smooth); f projective; Y normal integral; X_η smooth; universal CH_0-triviality of X_η after ⊗ℚ."
    ],
    "proofSteps": [
@@ -4017,7 +4323,7 @@
     "(iii) For the finite quotient map f: X → Y = X/G, O_Y = (f_*O_X)^G, R^if_*(W_mO_X) = 0 for i ≥ 1, W_mO_Y ≅ (f_*W_mO_X)^G; invariants commute with inverse limits and ⊗ℚ and, in characteristic 0, with cohomology (BBE Lemma 6.10). For |G| prime to p, invariants are exact on k[G]-modules, so H^i(Y, O_Y) = H^i(X, O_X)^G = H^i(X, O_X) and (ii) applies (BBE Corollary 6.12)."
    ],
    "acceptance": [
-    "For the Igusa surface Y = (E_1 × E_2)/(ℤ/2) with p = 2, G acts trivially on H^i(X, O_X) but not on H²(X, WO_K) ≠ 0 = H²(Y, WO_K): the hypothesis of (iii) on Witt cohomology cannot be replaced by one on O_X when p divides |G|.",
+    "For the Igusa surface Y = X/G, X = E_1 × E_2 over F_q with p = 2, E_1 having a rational point t of order 2, and G = ℤ/2 acting by (x, y) ↦ (x + t, −y), G acts trivially on H^i(X, O_X) but not on H²(X, WO_K) ≠ 0 = H²(Y, WO_K): the hypothesis of (iii) on Witt cohomology cannot be replaced by one on O_X when p divides |G|.",
     "The quotient of an abelian variety by a subgroup generated by a rational point of order p satisfies (iii) but not the hypothesis of (ii)."
    ],
    "prerequisites": [
@@ -4057,7 +4363,7 @@
     "For a resolution f: Y → X with X WO-rational, Rf_*WO_{Y,ℚ} ≅ WO_{X,ℚ}, so f^* is an isomorphism on H^i(−, WO_K) and WV.6/witt-isomorphism-point-congruence (i) applies directly."
    ],
    "acceptance": [
-    "The quadric cone X = A²/{±1}, compactified in P³ as a projective quadric cone, and its minimal resolution (a Hirzebruch surface F_2) have point counts congruent mod q: |X(F_q)| = q² + q + 1 and |F_2(F_q)| = (q + 1)², and both are ≡ 1 mod q."
+    "The projective quadric cone X = V(xy − z²) ⊂ P³ over F_q, and its minimal resolution (a Hirzebruch surface F_2) have point counts congruent mod q: |X(F_q)| = q² + q + 1 and |F_2(F_q)| = (q + 1)², and both are ≡ 1 mod q."
    ],
    "prerequisites": [
     "CrystallineCohomologyPartII:WV.5/quasi-birational-witt-invariance",
@@ -4175,6 +4481,52 @@
    }
   },
   {
+   "id": "CrystallineCohomologyPartII:WV.6/serre-bockstein-vanishing",
+   "parentStageId": "CrystallineCohomologyPartII:WV.6",
+   "realises": [
+    "CrystallineCohomologyPartII:WV.6"
+   ],
+   "title": "Serre’s Bockstein vanishing for abelian varieties",
+   "kind": "theorem",
+   "statement": "For an abelian variety A of dimension g over a perfect field k of characteristic p and every i ≥ 1, the map V^i: H^g(A, O_A) → H^g(A, W_{i+1}O_A) is injective. Equivalently, the boundary H^{g−1}(A, W_iO_A) → H^g(A, O_A) of 0 → O_A →(V^i) W_{i+1}O_A → W_iO_A → 0 is zero.",
+   "hypotheses": [
+    "k perfect of characteristic p; A an abelian variety of dimension g; i ≥ 1; the Witt sheaves and V are those of WV.0."
+   ],
+   "proofSteps": [
+    "Use Serre’s Bockstein theorem for abelian varieties, Ser58 Théorème 2, and Ser58Top, sections 1 and 3, in its top-degree Witt form recorded in BBE07 §6.5, p. 36 (BBE07 lines 1543–1546). This target is independent of the theta-divisor criterion; apply it there after establishing the Witt exact sequences."
+   ],
+   "prerequisites": [
+    "CrystallineCohomologyPartII:WV.0/witt-sheaf"
+   ],
+   "sources": [
+    {
+     "sourceId": "BBE07",
+     "locator": "§6.5, p. 36, lines 1543–1546",
+     "match": "The required injections follow from Serre’s Bockstein vanishing."
+    },
+    {
+     "sourceId": "Ser58",
+     "locator": "Théorème 2, pp. 715–739",
+     "match": "Bockstein operations on abelian varieties vanish."
+    },
+    {
+     "sourceId": "Ser58Top",
+     "locator": "§§1, 3, pp. 24–53",
+     "match": "Witt cohomology and Bockstein operations."
+    }
+   ],
+   "acceptance": [
+    "For g = 0, V^i: k → W_{i+1}(k) sends a to the Witt vector with a in coordinate i and zero elsewhere, hence has zero kernel.",
+    "For g = 1 and i = 1, W_2(k) → k is onto, so the boundary H^0(E, O_E) → H^1(E, O_E) is zero and V on H^1 is injective.",
+    "For g = 1 and any i ≥ 1, H^0(E, W_{i+1}O_E) = W_{i+1}(k) → W_i(k) is onto, so the boundary is zero; this includes supersingular E and p = 2, where Frobenius on H^1(E, O_E) can be zero."
+   ],
+   "implementationStatus": "unchecked",
+   "library": {
+    "module": "TauCeti/AlgebraicGeometry/WittCohomology/PointCounts",
+    "namespace": "TauCeti.WittCohomology"
+   }
+  },
+  {
    "id": "CrystallineCohomologyPartII:WV.6/theta-divisor-congruence",
    "parentStageId": "CrystallineCohomologyPartII:WV.6",
    "realises": [
@@ -4188,7 +4540,7 @@
    ],
    "proofSteps": [
     "Check the hypotheses of WV.6/theta-divisor-criterion for (A, Θ): ω_A ≅ O_A and h^0(A, O_A(Θ)) = 1 for a principal polarization (Riemann–Roch on abelian varieties, AbelianSchemesAndArithmeticModuli:A2/ample-cohomology-and-degree), so H^0(A, O_A) → H^0(A, O_A(Θ)) is an isomorphism, giving (a).",
-    "(b) is Serre's vanishing of Bockstein operations on abelian varieties: V^i: H^g(A, O_A) → H^g(A, W_{i+1}O_A) is injective for all i (requested from AbelianSchemesAndArithmeticModuli:A2).",
+    "Condition (b) is WV.6/serre-bockstein-vanishing, applied with g = dim A and every i ≥ 1.",
     "Hence ζ^{<1}(Θ, t) = ζ^{<1}(A, t)·P^{<1}_g(A, t)^{(−1)^g} = ζ^{<1}(Θ′, t), and WV.6/ax-congruence-criterion gives the congruences."
    ],
    "acceptance": [
@@ -4199,7 +4551,7 @@
     "CrystallineCohomologyPartII:WV.6/theta-divisor-criterion",
     "CrystallineCohomologyPartII:WV.6/ax-congruence-criterion",
     "AbelianSchemesAndArithmeticModuli:A2/ample-cohomology-and-degree",
-    "AbelianSchemesAndArithmeticModuli:A2"
+    "CrystallineCohomologyPartII:WV.6/serre-bockstein-vanishing"
    ],
    "sources": [
     {
@@ -4231,7 +4583,7 @@
     "Esnault's hypothesis (CH_0(X_Ω) = ℤ for Ω an algebraic closure of k(X) only) implies universal triviality through the decomposition of the diagonal and the moving lemma for zero-cycles; that implication is not used in this roadmap, whose theorems assume universal triviality."
    ],
    "proofSteps": [
-    "Reduction to algebraically closed L: for any L, let L̄ be an algebraic closure; a class in the kernel of CH_0(X_L) → CH_0(X_{L̄}) dies over a finite subextension L′/L (MotivesAndAlgebraicCycles:MC.2/chow-groups-under-field-extension), and pushforward along the finite flat X_{L′} → X_L after pullback is multiplication by [L′ : L] (SchemeAndStackFoundations:SF.5/finite-flat-degree), so the kernel is torsion; deg is surjective after ⊗ℚ because X_L has a zero-cycle of positive degree.",
+    "Reduction to algebraically closed L: for any L, let L̄ be an algebraic closure; a class in the kernel of CH_0(X_L) → CH_0(X_{L̄}) dies over a finite subextension L′/L (MotivesAndAlgebraicCycles:MC.2/chow-groups-under-field-extension), and pushforward along the finite flat X_{L′} → X_L after pullback is multiplication by [L′ : L] (MotivesAndAlgebraicCycles:2.2/chow-groups-under-field-extension), so the kernel is torsion; deg is surjective after ⊗ℚ because X_L has a zero-cycle of positive degree.",
     "The decomposition of the diagonal is WV.5/bloch-srinivas-decomposition applied with Ω an algebraic closure of k(X), an algebraically closed extension of k."
    ],
    "acceptance": [
@@ -4241,7 +4593,7 @@
     "CrystallineCohomologyPartII:WV.5/bloch-srinivas-decomposition",
     "SchemeAndStackFoundations:SF.5/degree",
     "SchemeAndStackFoundations:SF.5/chow-group",
-    "SchemeAndStackFoundations:SF.5/finite-flat-degree",
+    "MotivesAndAlgebraicCycles:2.2/chow-groups-under-field-extension",
     "MotivesAndAlgebraicCycles:MC.2/chow-groups-under-field-extension"
    ],
    "sources": [
@@ -4253,7 +4605,7 @@
     {
      "sourceId": "ESN03",
      "locator": "§1, p. 1, and Theorem 1.1, p. 2",
-     "match": "The hypothesis CH_0(X ×_k \\overline{k(X)}) = ℤ, the norm argument for the kernel over the algebraic closure, and the decomposition of the diagonal it implies."
+     "match": "The hypothesis CH_0(X ×_k k(X)̄) = ℤ, the norm argument for the kernel over the algebraic closure, and the decomposition of the diagonal it implies."
     }
    ],
    "implementationStatus": "unchecked",
@@ -4274,7 +4626,7 @@
    "api": [
     {
      "name": "TauCeti.WittCohomology.IsUniversallyCH0Trivial",
-     "role": "data",
+     "role": "predicate",
      "statement": "∀ L/k, deg: CH_0(X_L) ⊗ ℚ → ℚ is bijective."
     },
     {
@@ -4333,15 +4685,18 @@
    ],
    "title": "Rationally chain connected varieties",
    "kind": "definition",
-   "statement": "A k-scheme X of finite type is rationally chain connected if there are a k-variety Y, a family g: U → Y of geometrically connected proper algebraic curves whose geometric fibres have only rational components, and a cycle morphism u: U → X such that u^{(2)}: U ×_Y U → X ×_k X is dominant. This property is invariant under field extension: X is rationally chain connected iff X ×_k k′ is, for any extension k′/k. Over an uncountable algebraically closed field, X is rationally chain connected iff a pair of general closed points can be joined by a chain of rational curves.",
+   "statement": "A k-scheme X of finite type is rationally chain connected if there are a k-variety Y, a family g: U → Y of geometrically connected proper algebraic curves whose geometric fibres have only rational components, and a cycle morphism u: U → X such that u^{(2)}: U ×_Y U → X ×_k X is dominant. For X proper, geometrically normal and geometrically connected, this property is invariant under every field extension k′/k: X is rationally chain connected iff X ×_k k′ is (Tan18, Proposition A.4, arXiv v3, p. 30). Over an uncountable algebraically closed field, X is rationally chain connected iff a pair of general closed points can be joined by a chain of rational curves.",
    "hypotheses": [
-    "X of finite type over a field k; the family of curves is a 'cycle-theoretic' family in Kollár's sense."
+    "X of finite type over a field k; the family of curves is a 'cycle-theoretic' family in Kollár's sense.",
+    "The field-extension equivalence assumes X proper, geometrically normal and geometrically connected; it applies to smooth projective geometrically connected consumers."
    ],
    "proofSteps": [
-    "Families of proper curves are parametrized by Hilbert schemes or Chow varieties (SchemeAndStackFoundations:SF.4/hilbert-scheme). Invariance under field extension and the characterization over uncountable algebraically closed fields are Kollár, Rational curves on algebraic varieties, IV.3.2.5 and IV.3.6, recorded in GNT Remark 4.6 (with Tanaka's Proposition A.4 for the field-extension statement); Kollár's book was not read for this plan (CrystallineCohomologyPartII/G1)."
+    "Use the Hilbert-scheme families of SchemeAndStackFoundations §4.14 to express rational chains. For proper geometrically normal geometrically connected X, field-extension invariance is Tan18 Proposition A.4, p. 30; the general-pair chain criterion over uncountable algebraically closed fields is Kol96 IV.3.6. Kol96 IV.3.2.5 supplies the classical base-change formulation (cited by locator)."
    ],
    "acceptance": [
-    "P^n and smooth cubic surfaces are rationally chain connected."
+    "P^n and smooth cubic surfaces are rationally chain connected.",
+    "A smooth cubic surface over F_q is proper, geometrically normal and geometrically connected; it remains RCC after each field extension, and CH_0 over every algebraically closed extension is ℤ.",
+    "An elliptic curve is smooth projective geometrically connected but contains no nonconstant rational curve, so the base-change equivalence does not assert that all such varieties are RCC."
    ],
    "prerequisites": [
     "SchemeAndStackFoundations:SF.4/hilbert-scheme",
@@ -4362,6 +4717,16 @@
      "sourceId": "HW23",
      "locator": "Corollary 1.3, p. 2",
      "match": "The point-count corollary assumes a rationally chain connected log resolution, with the definition of GNT Definition 4.5."
+    },
+    {
+     "sourceId": "Tan18",
+     "locator": "Proposition A.4, arXiv v3, p. 30",
+     "match": "Field-extension invariance for proper geometrically normal geometrically connected varieties."
+    },
+    {
+     "sourceId": "Kol96",
+     "locator": "IV.3.2.5; IV.3.6; V.2.13",
+     "match": "Base change, chains through general points, and the Fano case; cited by locator."
     }
    ],
    "implementationStatus": "unchecked",
@@ -4382,13 +4747,13 @@
    "api": [
     {
      "name": "TauCeti.WittCohomology.IsRationallyChainConnected",
-     "role": "data",
+     "role": "predicate",
      "statement": "Existence of (Y, g: U → Y, u: U → X) as in the definition."
     },
     {
      "name": "TauCeti.WittCohomology.isRationallyChainConnected_baseChange_iff",
      "role": "characterisation",
-     "statement": "X is RCC iff X_{k′} is RCC, for any field extension k′/k."
+     "statement": "For X proper, geometrically normal and geometrically connected and every k′/k, X is RCC iff X_{k′} is RCC (Tan18 Proposition A.4, p. 30)."
     },
     {
      "name": "TauCeti.WittCohomology.isRationallyChainConnected_iff_chains",
@@ -4415,7 +4780,7 @@
     {
      "name": "TauCeti.WittCohomology.isRCC_point",
      "kind": "degenerate",
-     "statement": "Spec k is RCC (the trivial family)."
+     "statement": "Spec k is RCC: take U = P¹_k over Y = Spec k and the constant morphism u."
     },
     {
      "name": "TauCeti.WittCohomology.not_isRCC_ellipticCurve",
@@ -4447,7 +4812,7 @@
    ],
    "proofSteps": [
     "By WV.6/universal-chow-zero-triviality it suffices to treat algebraically closed L ⊃ k; X_L is rationally chain connected by invariance under field extension (WV.6/rationally-chain-connected).",
-    "For a proper rationally chain connected scheme over an algebraically closed field, any two closed points are joined by a chain of rational curves, and two points of a rational curve are rationally equivalent (the normalization is P¹, SchemeAndStackFoundations:SF.5/rational-equivalence), so every closed point is rationally equivalent to a fixed one and deg: CH_0(X_L) → ℤ is an isomorphism (Kollár IV.3.13.3; not read, CrystallineCohomologyPartII/G1)."
+    "For a proper rationally chain connected scheme over an algebraically closed field, any two closed points are joined by a chain of rational curves, and two points of a rational curve are rationally equivalent (the normalization is P¹, SchemeAndStackFoundations:SF.5/rational-equivalence), so every closed point is rationally equivalent to a fixed one and deg: CH_0(X_L) → ℤ is an isomorphism (Kol96 IV.3.13.3, cited by locator; ESN03 §1, p. 2)."
    ],
    "acceptance": [
     "Smooth Fano varieties over algebraically closed fields are rationally chain connected (Kollár V.2.13), hence universally CH_0-trivial."
@@ -4461,12 +4826,17 @@
     {
      "sourceId": "ESN03",
      "locator": "§1, p. 2 (paragraph before Corollary 1.3)",
-     "match": "Chain rational connectedness over the algebraic closure of k(X) implies CH_0(X ×_k \\overline{k(X)}) = ℤ, citing Kollár's book."
+     "match": "Chain rational connectedness over the algebraic closure of k(X) implies CH_0(X ×_k k(X)̄) = ℤ, citing Kollár's book."
     },
     {
      "sourceId": "GNT19",
      "locator": "Remark 4.6, p. 29",
      "match": "Invariance of rational chain connectedness under field extension and the chain characterization over uncountable algebraically closed fields."
+    },
+    {
+     "sourceId": "Kol96",
+     "locator": "IV.3.13.3; V.2.13",
+     "match": "CH_0 = ℤ for proper RCC varieties over algebraically closed fields; Fano varieties are RCC."
     }
    ],
    "implementationStatus": "unchecked",
@@ -4518,7 +4888,7 @@
     {
      "sourceId": "HW23",
      "locator": "proof of Corollary 1.3, p. 20",
-     "match": "Uses Esnault Theorem 1.1 for the rationally chain connected resolution: all slopes of Frobenius in positive degrees are ≥ 1 (PAPER-HACON-WITASZEK-23/E11 restricts the printed assertion to positive degrees)."
+     "match": "Uses Esnault Theorem 1.1 for the rationally chain connected resolution: all slopes of Frobenius in positive degrees are ≥ 1 (the slope assertion concerns positive degrees)."
     }
    ],
    "implementationStatus": "unchecked",
@@ -4584,32 +4954,22 @@
    }
   }
  ],
- "requests": [
-  {
-   "supplier": "AbelianSchemesAndArithmeticModuli:A2",
-   "need": "Serre's vanishing of Bockstein operations for abelian varieties: for an abelian variety A of dimension g over a perfect field k of characteristic p and every i ≥ 1, the map V^i: H^g(A, O_A) → H^g(A, W_{i+1}O_A) is injective (equivalently the boundary H^{g−1}(A, W_iO_A) → H^g(A, O_A) of 0 → O_A →(V^i) W_{i+1}O_A → W_iO_A → 0 vanishes). Source: J.-P. Serre, 'Quelques propriétés des variétés abéliennes en caractéristique p', Amer. J. Math. 80 (1958), Théorème 2, and 'Sur la topologie des variétés algébriques en caractéristique p' (1958), §§1, 3, as cited in Berthelot–Bloch–Esnault §6.5. The Witt sheaves are those of CrystallineCohomologyPartII:WV.0/witt-sheaf.",
-   "neededBy": [
-    "CrystallineCohomologyPartII:WV.6/theta-divisor-congruence"
-   ]
-  },
-  {
-   "supplier": "AdicCoefficientsAndComparisonsPartII:PA.6",
-   "need": "de Jong's Galois alterations over a perfect field (not only an algebraically closed one), in the form used for quasi-resolutions: for an integral separated scheme Y of finite type over a perfect field k there are a finite surjective purely inseparable Y′ → Y with Y′ normal and integral, a smooth integral quasi-projective X″ over k with a finite group G acting on it, and a projective birational morphism X″/G → Y′ (de Jong, 'Families of curves and alterations', Ann. Inst. Fourier 47 (1997), Corollary 5.15; 'Smoothness, semi-stability and alterations' (1996), Corollary 7.4). PA.6/de-jong-galois-alteration states the equivariant theorem over algebraically closed k.",
-   "neededBy": [
-    "CrystallineCohomologyPartII:WV.5/quasi-resolution"
-   ]
-  }
- ],
+ "requests": [],
  "coverage": [
   {
    "stageId": "CrystallineCohomologyPartII:WV.0",
    "status": "planned",
-   "remaining": []
+   "remaining": [
+    "gap:qcqs-frobenius-factorization"
+   ]
   },
   {
    "stageId": "CrystallineCohomologyPartII:WV.1",
    "status": "planned",
-   "remaining": []
+   "remaining": [
+    "gap:qcqs-frobenius-factorization",
+    "gap:h-descent-formalism"
+   ]
   },
   {
    "stageId": "CrystallineCohomologyPartII:WV.2",
@@ -4619,50 +4979,44 @@
   {
    "stageId": "CrystallineCohomologyPartII:WV.3",
    "status": "planned",
-   "remaining": [
-    "BBE leave the compatibilities of a_U with reduction and excision (Proposition 4.6) as exercises; the plan records them as API of WV.3/rigid-to-witt-morphism with the Čech-functoriality argument, to be written out at lemma level."
-   ]
+   "remaining": []
   },
   {
    "stageId": "CrystallineCohomologyPartII:WV.4",
    "status": "planned",
-   "remaining": [
-    "Ekedahl's duality theorems for the de Rham–Witt complex of smooth schemes and Gros's cycle class are used through the statements recorded in Chatzistamatiou–Rülling §§1.10 and 3.2; refine WV.4/witt-canonical-system and WV.4/hodge-witt-cycle-class against Ekedahl (Ark. Mat. 22, 1984; Ann. Fac. Sci. Toulouse 1985) and Gros (Mém. SMF 21, 1985) at lemma level."
-   ]
+   "remaining": []
   },
   {
    "stageId": "CrystallineCohomologyPartII:WV.5",
    "status": "planned",
-   "remaining": [
-    "Gap CrystallineCohomologyPartII/G2 and the request to AdicCoefficientsAndComparisonsPartII:PA.6: de Jong's Galois alterations over a perfect field for the existence of quasi-resolutions."
-   ]
+   "remaining": []
   },
   {
    "stageId": "CrystallineCohomologyPartII:WV.6",
    "status": "planned",
-   "remaining": [
-    "Request to AbelianSchemesAndArithmeticModuli:A2 for Serre's vanishing of Bocksteins on abelian varieties (theta-divisor congruence).",
-    "Gap CrystallineCohomologyPartII/G1: Kollár's results on rational chain connectedness (base change, chains, CH_0) were not read."
-   ]
+   "remaining": []
   }
  ],
  "gaps": [
   {
-   "id": "CrystallineCohomologyPartII/G1",
-   "title": "Rational chain connectedness: base change and CH_0 (Kollár's book not read)",
+   "id": "gap:qcqs-frobenius-factorization",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "0.26",
+   "needs": "For every finite finitely presented universal homeomorphism f: X → Y of qcqs F_p-schemes, provide N ≥ 0 and g: Y → X with f ∘ g = F_Y^N and g ∘ f = F_X^N.",
    "neededBy": [
-    "CrystallineCohomologyPartII:WV.6/rationally-chain-connected",
-    "CrystallineCohomologyPartII:WV.6/rcc-chow-zero-triviality"
-   ],
-   "detail": "The invariance of rational chain connectedness under field extension (Kollár, Rational curves on algebraic varieties, IV.3.2.5; Tanaka, Proposition A.4), the characterization through chains of rational curves joining general points over uncountable algebraically closed fields (Kollár IV.3.6), and the consequence CH_0(X_Ω) = ℤ for proper RCC X over algebraically closed Ω (Kollár IV.3.13.3) are recorded from Gongyo–Nakamura–Tanaka Remark 4.6 and Esnault 2003 §1, which cite them. Kollár's book is neither freely available nor in the cleared library, so the proofs were not read; the statements are planned as targets with these locators."
+    "CrystallineCohomologyPartII:WV.0/witt-universal-homeomorphism-invariance",
+    "CrystallineCohomologyPartII:WV.1/witt-pushout",
+    "CrystallineCohomologyPartII:WV.1/frobenius-inverted-witt-h-descent"
+   ]
   },
   {
-   "id": "CrystallineCohomologyPartII/G2",
-   "title": "Galois alterations over perfect fields for quasi-resolutions",
+   "id": "gap:h-descent-formalism",
+   "supplier": "ArcTopologyAndDescent",
+   "section": "1.1, 1.3–1.4",
+   "needs": "Provide the h-site of finitely presented schemes, its refinement by fppf covers and proper surjections, and universal-descent dévissage with the abstract-blowup h-descent criterion over a noetherian finite-dimensional base.",
    "neededBy": [
-    "CrystallineCohomologyPartII:WV.5/quasi-resolution"
-   ],
-   "detail": "Existence of quasi-resolutions over a perfect field k uses de Jong 1997 Corollary 5.15 (and 1996 Corollary 7.4) as recorded in Chatzistamatiou–Rülling Remark 4.3.2. The atlas supplier AdicCoefficientsAndComparisonsPartII:PA.6/de-jong-galois-alteration states the equivariant alteration theorem over an algebraically closed field; the perfect-field form (with a purely inseparable finite Y′ → Y) is requested from PA.6. de Jong's papers were not read for this plan."
+    "CrystallineCohomologyPartII:WV.1/frobenius-inverted-witt-h-descent"
+   ]
   }
  ],
  "sourceIssues": [
@@ -4670,7 +5024,7 @@
    "id": "CrystallineCohomologyPartII/E1",
    "source": "CR12",
    "kind": "misprint",
-   "locator": "Corollary 4.5.1, p. 86, in arXiv:1104.2145v1 (the published Documenta version could not be retrieved)",
+   "locator": "Corollary 4.5.1, p. 86, in arXiv:1104.2145v1",
    "printed": "The corollary says that two quasi-resolutions f: X → S and g: Y → S are quasi-birational over X.",
    "correction": "They are quasi-birational over S.",
    "reason": "Quasi-birationality is defined over a base over which both schemes live (Definition 4.4.10); Y is not an X-scheme. The proof constructs a quasi-birational correspondence inside X ×_S Y from the residue field of k(X) ⊗_{k(S)} k(Y), i.e. over S, and the rest of the statement and Definition 4.5.2 use S.",
@@ -4679,21 +5033,6 @@
    "searched": [
     "arXiv listing of 1104.2145 (only v1)",
     "Crossref record of doi:10.4171/dm/380 (no update or correction relation)"
-   ]
-  },
-  {
-   "id": "CrystallineCohomologyPartII/E2",
-   "source": "HW23",
-   "kind": "misprint",
-   "locator": "References, entry [GNH19], p. 34 of the published version (Forum Math. Pi 11 (2023), e10)",
-   "printed": "The entry lists the authors of 'Rational points on log Fano threefolds over a finite field' as Y. Gongyo, Y. Nakamura and T. Hiromu, and the citation key is GNH19.",
-   "correction": "The third author is Hiromu Tanaka (H. Tanaka); the paper is usually cited as GNT.",
-   "reason": "The arXiv record 1512.05003 and the JEMS publication list the authors as Yoshinori Gongyo, Yusuke Nakamura and Hiromu Tanaka; the arXiv v2 of Hacon–Witaszek cites it correctly as [GNT16].",
-   "affects": "nothing",
-   "known": "new",
-   "searched": [
-    "arXiv:2009.02631v2 reference list (correct key GNT16)",
-    "Cambridge article page of doi:10.1017/fmp.2023.6 (no correction notice)"
    ]
   },
   {
@@ -4709,6 +5048,16 @@
    "searched": [
     "arXiv listing of 1512.05003 (v1–v3)"
    ]
+  },
+  {
+   "id": "CrystallineCohomologyPartII/E4",
+   "source": "GNT19",
+   "kind": "error",
+   "locator": "Lemma 2.20, p. 16",
+   "printed": "The relative Witt cohomology bound is stated for every morphism.",
+   "correction": "Assume f proper for the relative fibre-dimension bound; the absolute dim X bound holds without properness.",
+   "reason": "For j: A² ∖ {0} → A² the fibres have dimension 0 but [x⁻¹y⁻¹] gives a nonzero R¹j_*WO.",
+   "affects": "WV.0/witt-limit-lemmas (3)"
   }
  ],
  "restructure": [
@@ -4716,11 +5065,10 @@
    "action": "split",
    "roadmaps": [
     "CrystallineCohomologyPartII",
-    "CrystallineCohomologyConvergentPartII",
-    "CrystallineCohomologyPartIICartierFlows"
+    "CrystallineCohomology"
    ],
-   "detail": "The design job for CrystallineCohomologyPartII (issue #3444) received four Part II routes of CrystallineCohomology. Two of them share their object and are planned here as one roadmap: Bhatt–Scholze 2017 §11.5 (h-descent of Frobenius-inverted Witt vector cohomology, route CrystallineCohomologyWittHDescentPartII, 3 items) and Hacon–Witaszek 2023 (rational Witt vector cohomology of singular schemes, route CrystallineCohomologySingularWittRationality, 5 items: witt-uh → WV.0/witt-universal-homeomorphism-invariance, witt-ideal → WV.2/witt-ideal-vanishing and WV.2/witt-exceptional-reduction, witt-low-slopes → WV.3/berthelot-bloch-esnault-comparison, one-quasi-resolution → WV.5/wo-rational-singularities, rcc-witt → WV.6/esnault-witt-vanishing). The other two are independent directions that share only the interfaces CR.1, CR.5 and CR.7: Kisin–Madapusi Pera–Shin 2022 Appendix A (log enlargements, convergent log F-isocrystals and the tensor-section extension over semi-abelian degenerations, 22 items) and Esnault–Groechenig 2020 (p-curvature, the crystalline differential operators and their Azumaya property, Ogus–Vologodsky, Higgs–de Rham flows and rigid connections, 63 items). Combining them would join unrelated carriers in one roadmap.",
-   "proposal": "Keep CrystallineCohomologyPartII as 'Crystalline cohomology, de Rham–Witt and logarithmic foundations, Part II: Witt vector cohomology of singular varieties' (layers WV.0–WV.6, this packet). Create two further Part IIs of CrystallineCohomology, each with its own design job and the brief its route records: (a) CrystallineCohomologyConvergentPartII, 'Crystalline cohomology, de Rham–Witt and logarithmic foundations, Part II: convergent coefficient descent' (area padic; brief of PAPER-KISIN-MADAPUSIPERA-SHIN-22); (b) CrystallineCohomologyPartIICartierFlows, 'Crystalline cohomology, de Rham–Witt and logarithmic foundations, Part II: Cartier transforms and periodic rigid connections' (area padic; brief of PAPER-ESNAULT-GROECHENIG-20). Neither (a) nor (b) depends on this roadmap or it on them."
+   "detail": "The parent assigns convergent coefficient descent and Cartier transforms to its Part II continuation. The Witt cohomology development has distinct carriers from those two directions.",
+   "proposal": "Operator proposal: create separate Part II roadmaps for convergent coefficient descent and for Cartier transforms and periodic Higgs–de Rham flows. These proposed folders are not suppliers or existing roadmaps; assigning that work requires an operator scope decision."
   },
   {
    "action": "rescope",
@@ -4728,16 +5076,29 @@
     "CrystallineCohomologyPartII",
     "SchemeAndStackFoundationsPartII"
    ],
-   "detail": "The Hacon–Witaszek and Bhatt et al. routes send the birational part of the WO-rationality results (Q-factorial klt fourfolds are WO-rational, HW23 Corollary 4.7; the point-count Corollary 1.3; the threefold results of Gongyo–Nakamura–Tanaka) to the mixed-characteristic birational geometry continuation of SchemeAndStackFoundations (route SchemeAndStackFoundationsMixedCharacteristicBirationalGeometry, queued as DESIGN-SchemeAndStackFoundationsPartII).",
+   "detail": "The birational-geometry continuation of SchemeAndStackFoundations owns the minimal model program and its WO-rationality results for klt threefolds and fourfolds. This roadmap supplies only the Witt-cohomological inputs and point-count consequences.",
    "proposal": "That design imports from this roadmap, and does not re-plan: Witt vector sheaves and the isogeny convention (WV.0), invariance under universal homeomorphisms and the connected-fibre criterion (WV.0/witt-universal-homeomorphism-invariance, NT20 Lemma 2.17), Witt ideal vanishing and the exceptional-locus reduction (WV.2), the BBE comparison (WV.3), quasi-resolutions and WO-rational singularities with the one-quasi-resolution criterion (WV.5), and the point-count theorems WV.6/witt-rational-point-congruence, WV.6/esnault-witt-vanishing and WV.6/esnault-point-count (ii). It plans only the minimal model program inputs, the WO-rationality of klt threefolds and fourfolds and the assembly of HW23 Corollary 1.3 from WV.6/esnault-point-count (ii)."
   }
  ],
  "upstreamNotes": [
   {
    "roadmaps": [
-    "tauceti:TauCetiRoadmap/SchemeAndStackFoundations"
+    "CrystallineCohomology",
+    "SchemeAndStackFoundations"
    ],
-   "note": "§0.26 defines the Witt scheme W_nX only for perfect F_p-schemes (wittScheme n X with W_n(Spec A) = Spec W_n(A)). Witt vector cohomology of singular varieties needs W_nX = (|X|, W_nO_X) for arbitrary F_p-schemes of finite type (the quasi-coherent Witt ideal sheaves W_nI live on it); CrystallineCohomologyPartII:WV.0/witt-sheaf plans the general construction and states its agreement with §0.26 for perfect X. §0.26's frobenius_factors_through_universalHomeomorphism is the input used for invariance of Frobenius-inverted Witt cohomology."
+   "note": "CrystallineCohomology §CR.4.6 owns Witt schemes for all schemes on which p is locally nilpotent, their affine and perfect-scheme comparisons, functoriality and affine Witt ideals. WV.0 adds ideal sheaves, morphism properties, higher direct images and derived inverse limits. CrystallineCohomology §CR.3:duality.1 owns the smooth Ekedahl top-form trace. SchemeAndStackFoundations §0.26 states Frobenius factorization for schemes finite type over F_p; gap:qcqs-frobenius-factorization requests its qcqs finitely presented extension."
+  },
+  {
+   "roadmaps": [
+    "ArcTopologyAndDescent"
+   ],
+   "note": "The h-site and converse blowup criterion are in the board design §§1.1, 1.3–1.4, not main or an open roadmap head. gap:h-descent-formalism exposes this unavailable supplier; its placement and availability require an operator decision."
   }
+ ],
+ "conventionChecks": [
+  "p = 2, W_2(F₂) = ℤ/4: F(V(1)) = V(F(1)) = 2, [1] = 1.",
+  "F = (σ, 2σ) over F₄ gives F² = (1, 4), slopes 0 and 1, and E^{<1} the first summand.",
+  "P¹: alternating exponents in degrees 0 and 2 are both −1, giving ζ = 1/((1−t)(1−qt)) and ζ^W = 1/(1−t).",
+  "⊕ ℤ/p^n tensors to 0 but has nonzero isogeny image."
  ]
 }
