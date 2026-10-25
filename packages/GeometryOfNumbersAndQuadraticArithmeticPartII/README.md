@@ -8,7 +8,7 @@ GeometryOfNumbersAndQuadraticArithmetic stops at exact-category hermitian K-theo
 
 The following constructions and theorems are owned elsewhere and are imported with their maps:
 
-- Mathlib owns quadratic maps, their full polar bilinear maps, isometry equivalence, ideal-adic completion, ideal Chinese remainders and additive quotients. Tau Ceti owns the field Witt ring, Scharlau transfer, local classification and the ℚ₂ Hilbert formula. The specific three-generator presentation and its ideal calculation here extend those results by explicit arithmetic coordinates.
+- Mathlib owns quadratic maps, their full polar bilinear maps, isometry equivalence, ideal-adic completion, ideal Chinese remainders and additive quotients. Its cyclotomic arithmetic supplies the Eisenstein ring of integers, PID property, units and the ramification and residue degrees at two; §5.1 uses these to identify the completion. Tau Ceti owns the field Witt ring, Scharlau transfer, local classification and the ℚ₂ Hilbert formula. The specific three-generator presentation and its ideal calculation here extend those results by explicit arithmetic coordinates.
 - GeometryOfNumbersAndQuadraticArithmetic §§6.2–6.5 owns exact symmetric spaces and their metabolic Witt quotient; §§6.8a–6.9 owns derived coefficients, Poincaré structures, L-spectra, residue lines and localization. HermitianKTheoryOfPoincareCategories §§3.4, 4.5–4.6, 6.6 and 7.9 owns the quadratic Witt carrier, surgery comparisons, controlled variants and field L-computations. Its 𝔽₂ Arf isomorphism is imported; §0.4 here adds the absolute-trace coordinate over every finite characteristic-two field and its extension-degree law.
 - ArithmeticKTheory §3.5 owns the characteristic-not-two quadratic-to-symmetric Witt injection, the general Dedekind symmetric and quadratic four-periodic tables, their degree-three exact extension, and the global residue cokernel Pic(R)/2. The Dedekind localization–completion square used there is supplied with its maps. These results are not separate targets here. Their characteristic-two continuation, explicit local maps, concrete two-image quotient and arithmetic examples are developed below.
 - GeometryOfNumbersAndQuadraticArithmetic §6.10a owns both integer L-tables, the signature and signature-divided-by-eight normalizations, and multiplication by eight under symmetrization. The integral Witt groups in §4.2 and the integer tables among the examples are supplied consequences, not new classifications. The new E₈ calculation is its actual quadratic refinement modulo two.
@@ -38,6 +38,8 @@ Use `QuadraticMap`, `QuadraticMap.polarBilin`, `QuadraticMap.proj`, `QuadraticMa
 
 Use `AdicCompletion` and `AdicCompletion.of` in `Mathlib/RingTheory/AdicCompletion/Basic.lean`, and its ring/algebra structure in `Algebra.lean`. Its definition is a compatible inverse-limit subtype; completeness needs the finitely generated ideal hypothesis. Here ideals are finitely generated. Use `Ideal.quotientMulEquivQuotientProd` in `Mathlib/RingTheory/Ideal/Quotient/Operations.lean` for coprime ideals, including their powers. Use `IsDedekindDomain.HeightOneSpectrum` for prime indices and `Padic` for ℚ₂. Use `AddMonoidHom.range`, `QuotientAddGroup.mk'` and the quotient by an `AddSubgroup` for the obstruction's algebraic quotient. These imports supply no arithmetic identification of that quotient. For the characteristic-two divisor argument use ideal factorization and `ClassGroup.mk0_surjective`, `ClassGroup.mk_eq_one_iff` in `Mathlib/RingTheory/ClassGroup/Basic.lean`, with `ClassGroup.equivPic` in `Mathlib/RingTheory/PicardGroup.lean`: invertible fractional ideals modulo principal ideals give the divisor-class quotient in every Dedekind characteristic.
 
+For the Eisenstein arithmetic consume `IsCyclotomicExtension.Rat.isIntegralClosure_adjoin_singleton_of_prime` in `Mathlib/NumberTheory/NumberField/Cyclotomic/Basic.lean:126`, `IsCyclotomicExtension.Rat.three_pid` in `Cyclotomic/PID.lean:34`, and `IsCyclotomicExtension.Rat.Three.Units.mem` in `Cyclotomic/Three.lean:50`. For a prime above two use `IsCyclotomicExtension.Rat.inertiaDeg_eq_of_not_dvd` and `IsCyclotomicExtension.Rat.ramificationIdx_eq_of_not_dvd` in `Cyclotomic/Ideal.lean:291,311`, specialized to conductor three: orderOf(2 mod 3)=2 and the ramification index is one. Together with `ClassGroup.equivPic` these supply Pic(R)=0. The unit list gives μ₆ with square-class representatives ±1.
+
 ### From Tau Ceti
 
 Consume `TauCeti.WittRing`, `TauCeti.wittClass`, `TauCeti.regularFormSetoid`, and `TauCeti.WittRing.dimMod2` from `TauCeti/LinearAlgebra/QuadraticForm/Witt/Ring.lean` and its imports. The carrier requires a field with two invertible. Its unit is ⟨1⟩ and its relations kill hyperbolic planes. It cannot serve as a ring-valued integral Witt group or a characteristic-two quadratic Witt group. Scalar extension is `TauCeti.WittRing.baseChange` in `Witt/BaseChange.lean`. Transfer and Frobenius reciprocity are `TauCeti.WittRing.scharlauTransfer` and `TauCeti.WittRing.scharlauTransfer_baseChange_mul` in `Transfer/Witt.lean`, for a finite field extension and a nonzero linear functional. The functional in §5.5 is specified on a basis.
@@ -50,11 +52,13 @@ Consume `IsDedekindDomain.HeightOneSpectrum.isAdicComplete_adicCompletionInteger
 
 Consume §§6.2–6.5's symmetric spaces and metabolic Witt group; §6.8a's perfect derived enhancement, invertible coefficients with involution, quadratic/symmetric/genuine Poincaré structures, stable GW and L, localizing invariance and filtered-colimit compatibility; §§6.8a–6.9's canonical residue line, shifted torsion duality and symmetric dévissage; and §6.10a's integral invariant maps and L-tables. Section 6.9.2 supplies the valuation-defined overring R_S even when no single element can invert exactly S. Section 6.9.3's GW localization is combined with §6.8a's L-localization and symmetric heart dévissage, preserving the residue shift.
 
-What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:derived-completion-poincare-criterion): the derived localization–completion square of perfect complexes for an associative ring and central positive integer with bounded power torsion, together with the coefficient-compatible Poincaré–Verdier change-of-rings criterion of Paper II Proposition 4.5.5 on the two K₀-image subcategories.
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:derived-localization-completion-square): for an associative unital ring R and a positive integer ℓ with bounded ℓ-power torsion in R, ordinary ℓ-adic completion C represents derived completion and the square R→C over R[1/ℓ]→C[1/ℓ] is a pullback in D(R).
+
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:poincare-change-of-rings-criterion): for a homomorphism f:R→B of discrete rings, invertible coefficient bimodules M,N with involution, an involution-compatible f⊗f-linear map α:M→N, a multiplicative subset S⊂R, and m∈ℤ∪{±∞}, for every involution-stable subgroup c⊂K₀(R) the square with the saturated control c̄ and its image controls from CDHHLMNNS-II-v5 §4.5 is Poincaré–Verdier if B⊗_R M→N is an isomorphism, S is compatible with M, R/s→B/f(s) is an equivalence in D(R) for every s∈S (cofibers of right multiplication), (R,S) and (B,f(S)) satisfy the left Ore condition, and the boundary Ĥ^(−m)(C₂;N[f(S)⁻¹])→Ĥ^(−m+1)(C₂;M) vanishes (vacuous for m=±∞), as in CDHHLMNNS-II-v5 Proposition 4.5.5, pp.108–110, lines 5253–5274.
 
 ### From TauCetiRoadmap.HermitianKTheoryOfPoincareCategories
 
-Consume §3.4's classical Witt quotient on the genuine Poincaré carriers, §§4.5–4.6's quadratic degree-zero and controlled surgery comparisons, §6.6's symmetric Dedekind degree-zero description, and §7.9's field computations. Over every field of characteristic different from two the positive-sign periodic groups are W(K),0,0,0. Over every characteristic-two field the odd symmetric groups vanish and the even ones are Ws(K); perfect fields have Ws(K)=ℤ/2 by rank parity. Section 7.9 supplies the 𝔽₂ Arf isomorphism, with xy representing zero and x²+xy+y² representing one. Consume §1.6's generic coefficient shift and sign comparison. The commutative-ring polarisation map uses the supplied quadratic and symmetric carriers; only the quadratic degree-zero identification is unconditional on the ring. Symmetric periodic L₀ is identified with Ws(R) here under the Dedekind hypotheses.
+Consume §3.4's classical Witt quotient on the genuine Poincaré carriers, §§4.5–4.6's quadratic degree-zero and controlled surgery comparisons, §6.6's symmetric Dedekind degree-zero description, and §7.9's field computations. Over every field of characteristic different from two the positive-sign periodic groups are W(K),0,0,0. Over every characteristic-two field the odd symmetric groups vanish and the even ones are Ws(K). Section 7.9 supplies the 𝔽₂ Arf isomorphism, with xy representing zero and x²+xy+y² representing one. Consume §1.6's `bordism_invariant_periodicity` for the coefficient sign comparison and periodicity. The commutative-ring polarisation map uses the supplied quadratic and symmetric carriers; only the quadratic degree-zero identification is unconditional on the ring. Symmetric periodic L₀ is identified with Ws(R) here under the Dedekind hypotheses.
 
 ### From TauCetiRoadmap.ArithmeticKTheory
 
@@ -68,11 +72,11 @@ What QuadraticFormInvariants must provide (gap:quadratic-extension-witt-exactnes
 
 ### From TauCetiRoadmap.GlobalQuadraticForms
 
-Consume §§8.1–8.3's number-field classification, hyperbolicity criterion and global-to-local Witt injection, together with the local invariant compatibility of §§2–4. Use them only over number fields. The rank-zero form is adjoined separately to the positive-rank classification. The Eisenstein proof has no real places and uses the product of local Hilbert signs; a rank-one unit has Hasse invariant +1.
+Consume §§8.1–8.3's number-field classification, hyperbolicity criterion and global-to-local Witt injection, together with the local invariant compatibility of §§2–4 and the Hilbert product formula of §4.4. Use them only over number fields. The rank-zero form is adjoined separately to the positive-rank classification. The Eisenstein proof has no real places and uses the product of local Hilbert signs; a rank-one unit has Hasse invariant +1.
 
 ### From TauCetiRoadmap.KTheoryFiniteLocalFields
 
-Consume §1.7's symmetric perfect-characteristic-two equivalence and its rank-parity normalization. In particular 𝔽₂→𝔽₄ sends the symmetric unit class to the symmetric unit class. This supplies no quadratic Arf scalar-extension law and no integral dyadic quadratic rigidity theorem.
+Consume §1.7's symmetric perfect-characteristic-two equivalence and its rank-parity normalization: Ws(k)=ℤ/2 for every perfect characteristic-two field k. In particular 𝔽₂→𝔽₄ sends the symmetric unit class to the symmetric unit class. This supplies no quadratic Arf scalar-extension law and no integral dyadic quadratic rigidity theorem.
 
 ### From the lattice, commutative-algebra and stable suppliers
 
@@ -88,7 +92,7 @@ Layer 0 fixes the arithmetic maps on the supplied forms, then Layer 1 treats the
 
 On the supplied classical Witt groups of a commutative ring, construct the comparison induced by the native full polar map, σ:Wq(R)→Ws(R). It carries a finite projective nonsingular quadratic form to its perfect symmetric polar form. Isometries, orthogonal sums and quadratic Lagrangians descend through this map. If two is a unit, prove σ is an additive isomorphism with inverse b↦(x↦b(x,x)/2). Use the supplier's identification Lq₀(R)=Wq(R); identify Ls₀(R)=Ws(R) under the Dedekind hypotheses, using symmetric surgery. This last identification has a separate ring hypothesis from the construction of σ.
 
-(CDHHLMNNS-III-v4, §2.3, pp. 41–48; Proposition 2.3.9, p. 44; Remark 2.3.17, p. 48; CDHHLMNNS-III-v4 line 2031.)
+The comparison σ is the degree-zero map of the symmetrization norm in GeometryOfNumbersAndQuadraticArithmetic §6.8a, read through HermitianKTheoryOfPoincareCategories §§3.4, 4.5 and 6.6. Its inverse when two is a unit follows from b(x+y,x+y)−b(x,x)−b(y,y)=2b(x,y) and b_q(x,x)=2q(x). The L₀ identifications use CDHHLMNNS-III-v4, proof of Proposition 2.3.1, p.41, line 1896, and proof of Proposition 2.3.9, p.44, line 2050, with the separate hypotheses stated above.
 
 The defining map has the following API.
 
@@ -140,11 +144,11 @@ The defining map has the following API.
 
 **Checks.**
 
-- For Z_(2), ∂⟨3⟩=0. This distinguishes the valuation-parity and linking definitions from the naive coefficient-reduction map.
-- For Z_(2), ∂⟨2⟩=⟨1⟩≠0 in Ws(F2). This distinguishes the valuation-parity and linking definitions from the naive coefficient-reduction map.
-- ∂⟨4⟩=0, so merely testing divisibility by 2 gives the wrong map. This distinguishes the valuation-parity and linking definitions from the naive coefficient-reduction map.
-- At 3 with π=3, ∂⟨6⟩=⟨2⟩ in Ws(F3), retaining the unit square class. This distinguishes the valuation-parity and linking definitions from the naive coefficient-reduction map.
-- For Z→Z[i], the residue map Ws(F2)→Ws(F2) at 2 and 1+i is zero, although the residue-field map is the identity: the ramified linking pairing has zero Witt class (Remark 2.2.6). This distinguishes the valuation-parity and linking definitions from the naive coefficient-reduction map.
+- For Z_(2), ∂⟨3⟩=0. This tests the vanishing on unit lines; reducing the coefficient would give ⟨1⟩.
+- For Z_(2), ∂⟨2⟩=⟨1⟩≠0 in Ws(F2). This tests the odd-valuation residue; coefficient reduction would instead give the singular zero form.
+- ∂⟨4⟩=0, so merely testing divisibility by 2 gives the wrong map. This tests valuation parity, since valuation two is even.
+- At 3 with π=3, ∂⟨6⟩=⟨2⟩ in Ws(F3), retaining the unit square class. This tests the nonsquare unit coefficient after removing the uniformizer.
+- For Z→Z[i], the residue map Ws(F2)→Ws(F2) at 2 and 1+i is zero, although the residue-field map is the identity: the ramified linking pairing has zero Witt class (Remark 2.2.6). This tests the ramified linking comparison: an unweighted residue-field extension would incorrectly give the identity.
 - At R=ℤ_(5), for ⟨5⟩ and π=5 the coordinate is ⟨1⟩; for π′=10 it is ⟨3⟩ because 2⁻¹=3 modulo five. The line-valued class is unchanged, whereas an unadjusted coordinate would change the map.
 
 *Needs:* §§0.1–0.2; GeometryOfNumbersAndQuadraticArithmetic §§6.8a–6.9, including L-localization and residue dévissage; HermitianKTheoryOfPoincareCategories §§6.6 and 7.9.
@@ -170,11 +174,11 @@ The defining map has the following API.
 
 **Checks.**
 
-- Over F2, q(x,y)=xy has perfect polar and Arf 0. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
-- Over F2, x²+xy+y² has perfect polar and Arf 1; all three nonzero vectors have value 1. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
+- Over F2, q(x,y)=xy has perfect polar and Arf 0. This fixes the hyperbolic normalization at zero.
+- Over F2, x²+xy+y² has perfect polar and Arf 1; all three nonzero vectors have value 1. This distinguishes the anisotropic plane from the hyperbolic plane despite their equal polars.
 - Over F4, x²+xy+y² has Arf 0 and is hyperbolic: if ζ²+ζ+1=0, (ζ,1) is isotropic. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
-- Over F2, x² has zero polar and is excluded despite being a nonzero quadratic map. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
-- The zero-dimensional nonsingular form has invariant 0. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
+- Over F2, x² has zero polar and is excluded despite being a nonzero quadratic map. This tests nonsingularity of the full polar.
+- The zero-dimensional nonsingular form has invariant 0. This tests the zero-dimensional boundary case.
 - Over 𝔽₄ with ζ²+ζ+1=0, the plane x²+xy+ζy² has trace invariant ζ+ζ²=1, whereas the plane with last coefficient one has trace 1+1=0.
 - For q=xy over 𝔽₄, the standard symplectic basis has raw Arf sum zero. The basis ((1,1),(ζ,ζ²)) has polar pairing ζ+ζ²=1 and raw sum 1·1=1, but both absolute traces are zero. Raw basis independence would be false.
 
@@ -235,9 +239,9 @@ Layer 0, supplied field L-theory and Dedekind localization, and the divisor-clas
 
 ### 2.1 Dyadic completion
 
-For a Dedekind domain R with char K≠2, prove the canonical R-algebra equivalence C=limₘ R/(2^m)≃∏_(p|2)R̂ₚ. Here R̂ₚ may be represented by the native ideal-adic completion and is identified with the valuation-completion integer ring, hence is a complete DVR. The empty product is the zero ring. Preserve the maps R→C and C→C[1/2], as well as every quotient projection. Both the product of ideal-adic completions and the product of valuation-completion integer rings are the R-algebra equivalences asserted by `dyadicCompletionDecomposition`.
+For a Dedekind domain R with char K≠2, prove the canonical R-algebra equivalence C=limₘ R/(2^m)≃∏_(p|2)R̂ₚ. Here R̂ₚ may be represented by the native ideal-adic completion and is identified with the valuation-completion integer ring, hence is a complete DVR. The empty product is the zero ring. Preserve the maps R→C and C→C[1/2], as well as every quotient projection.
 
-(CDHHLMNNS-III-v4, Proof of Proposition 2.3.9, pp. 44–45; CDHHLMNNS-III-v4 line 2086.)
+(CDHHLMNNS-III-v4, proof of Proposition 2.3.9 ii), p.45, line 2068; proof of Corollary 2.3.10, p.45, lines 2087–2091.)
 
 Factor (2)=∏p^eₚ, with every eₚ>0, and apply Chinese remainders to (2)^m=∏p^(eₚm). For each p, the subsequence eₚm is cofinal among all powers, so the limit of R/p^(eₚm) is R̂ₚ. Construct the inverse by compatible quotient projections; equality in every quotient proves equality in the inverse limit. This gives the ring operations and the R-algebra comparison, not merely a set bijection. Since two is nonzero, multiplication by every power of two is injective and ordinary completion represents the required derived completion.
 
@@ -253,9 +257,9 @@ The defining map has the following API.
 
 **Checks.**
 
-- For R=Z there is one factor Z_2 with residue F2. This counts prime factors, not their ramification multiplicities.
-- For Z[1/2] the dyadic set is empty and C=0. This counts prime factors, not their ramification multiplicities.
-- For Z[ζ3] there is one unramified quadratic factor with residue F4, not two factors and not F2. This counts prime factors, not their ramification multiplicities.
+- For R=Z there is one factor Z_2 with residue F2. This tests the single degree-one factor.
+- For Z[1/2] the dyadic set is empty and C=0. This tests the empty product.
+- For Z[ζ3] there is one unramified quadratic factor with residue F4, not two factors and not F2. This tests the residue degree.
 - For Z[i] the single dyadic factor remains one factor although (2) has exponent 2. This counts prime factors, not their ramification multiplicities.
 - For R=ℚ the ideal (2) is the unit ideal, every quotient R/(2^m) is zero, and the limit is zero. For R=ℤ_(3), the same calculation gives zero; it does not give the 3-adic completion.
 - When two splits, the two completed projections are both needed: maps from ℤ[x] sending x to (0,0) and (0,1) agree in the first factor and differ in the second. In the empty product every map is equal, so projection extensionality is vacuous and valid.
@@ -277,7 +281,7 @@ Apply the supplied change-of-rings criterion to the derived ring square and its 
 - For the dense even-Euler subcategory of Dᵇ(k), the K₀ image is 2ℤ and k[0] has class 1 outside it. This excludes deleting a control subgroup merely because its category is dense.
 - For R=ℤ/4 and ℓ=2, power torsion is bounded and the completion is R, while R[1/2]=0. The square is an identity horizontally on top and zero below.
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §6.8a and gap:derived-completion-poincare-criterion; HermitianKTheoryOfPoincareCategories §§4.6 and 1.6; GeneralAlgebraicKTheory §§11.3–11.4 and 11.15; StableHomotopyKTheory §§5.5 and 5.7–5.9.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §6.8a, gap:derived-localization-completion-square and gap:poincare-change-of-rings-criterion; HermitianKTheoryOfPoincareCategories §§4.6 and 1.6; GeneralAlgebraicKTheory §§11.3–11.4 and 11.15; StableHomotopyKTheory §§5.5 and 5.7–5.9.
 
 ### 2.3 Quadratic isometry lifting
 
@@ -313,7 +317,7 @@ Section 2.3 identifies the isometry classes and K₀ controls, hence gives the d
 - For J=0 the map is the identity; for J=R separated completeness forces R=0, so both spectra are zero.
 - Symmetric degree zero does not satisfy the same theorem: Ws(ℤ₂) has order 16 and Ws(𝔽₂) has order 2.
 
-*Needs:* §2.3; GeometryOfNumbersAndQuadraticArithmetic §6.8a fundamental fibre sequence and L-periodicity; HermitianKTheoryOfPoincareCategories §§4.5–4.6; the degree-one relation comparison of Wall-1973.
+*Needs:* §2.3; GeometryOfNumbersAndQuadraticArithmetic §6.8a fundamental fibre sequence; HermitianKTheoryOfPoincareCategories §1.6 `bordism_invariant_periodicity` and §§4.5–4.6; the degree-one relation comparison of Wall-1973.
 
 (Wall-1973, Corollary 1, Lemma 1, Proposition 4 and Lemma 5; cited by locator only. CDHHLMNNS-III-v4 lines 2019–2021 gives the precise use of these inputs.)
 
@@ -365,11 +369,11 @@ The defining map has the following API.
 
 **Checks.**
 
-- If Ws(R)→Ws(C) is onto, then A(R)=0, even if σ_C is not onto. The quotient uses both images and preserves the indicated empty or one-prime boundary case.
-- If σ_C is onto, A(R)=0, even if the global image vanishes. The quotient uses both images and preserves the indicated empty or one-prime boundary case.
-- For D=(Z/2)^d, s the constant diagonal and q zero, the quotient has order 2^(d−1) for d≥1. The quotient uses both images and preserves the indicated empty or one-prime boundary case.
-- The parity quotient is zero at d=1, but it does not force A(R)=0; the Eisenstein computation supplies a nonzero example. The quotient uses both images and preserves the indicated empty or one-prime boundary case.
-- When 2 is a unit, C=0 and A(R)=0. The quotient uses both images and preserves the indicated empty or one-prime boundary case.
+- If Ws(R)→Ws(C) is onto, then A(R)=0, even if σ_C is not onto. This tests that the global image alone can kill the quotient.
+- If σ_C is onto, A(R)=0, even if the global image vanishes. This tests that the completed quadratic image alone can kill the quotient.
+- For D=(Z/2)^d, s the constant diagonal and q zero, the quotient has order 2^(d−1) for d≥1. This tests the diagonal relation between distinct components.
+- The parity quotient is zero at d=1, but it does not force A(R)=0; the Eisenstein computation supplies a nonzero example. This tests that rank parity need not detect the whole obstruction.
+- When 2 is a unit, C=0 and A(R)=0. This tests the zero target of both image maps.
 - In D=ℤ/4 with global image 2D and quadratic image zero, the quotient is ℤ/2. With quadratic image D it becomes zero. Quotienting by the intersection of the images would leave ℤ/4 in the first case.
 
 *Needs:* §0.1 and §2.1; Mathlib additive subgroup ranges and quotient; the completion comparison square of ArithmeticKTheory §3.5.
@@ -392,7 +396,7 @@ Each completed symmetric Witt group injects into the Witt group of a finite exte
 
 ### 3.3 Dyadic parity obstruction
 
-For R as in the preceding theorem and d≥2, rank parity induces a canonical surjection A(R)→(Z/2)^d/Δ(Z/2)≃(Z/2)^(d−1). Hence A(R) is nonzero. For d=1 the same quotient is zero and gives no vanishing conclusion about A.
+For every Dedekind domain R with char K≠2 and its finite set I of dyadic primes, rank parity induces a canonical surjection A(R)→(ℤ/2)^I/Δ(ℤ/2). If d=|I|≥2, its target is isomorphic to (ℤ/2)^(d−1), so A(R) is nonzero. For d=1 the target is zero and gives no vanishing conclusion about A; for d=0, C=0 and A(R)=0. No residue-field finiteness or perfection is assumed.
 
 (CDHHLMNNS-III-v4, Remark 2.3.12, pp. 45–46; CDHHLMNNS-III-v4 line 2099.)
 
@@ -403,8 +407,9 @@ A completed quadratic form reduces to a perfect alternating polar, hence has eve
 - At d=2 the diagonal subgroup of (ℤ/2)² is {(0,0),(1,1)} and its quotient has two elements; the class of (1,0) is nonzero.
 - At d=3 the eight parity vectors have four diagonal cosets, giving (ℤ/2)².
 - At d=1 the quotient has one element although the Eisenstein A has four; at d=0 both the parity quotient and A are zero. The exponent formula 2^(d−1) is used only for d≥1.
+- For the DVR R=ℤ[t]_(2), obtained by localizing ℤ[t] at the prime (2), the residue field is the infinite imperfect field 𝔽₂(t). There is one dyadic prime, so the parity quotient is zero; finiteness and perfection of the residue field are unnecessary.
 
-*Needs:* §3.1 and §3.2; constant rank for finite projectives over a domain; finite-dimensional alternating linear algebra in characteristic two.
+*Needs:* §3.1; constant rank for finite projectives over a domain; finite-dimensional alternating linear algebra in characteristic two.
 
 ### 3.4 Quadratic localization
 
@@ -435,7 +440,7 @@ The supplied Dedekind tables and comparison square, Layer 0's Arf maps and Layer
 
 ### 4.1 Dyadic Witt coordinates
 
-In the native field Witt ring W(ℚ₂), let u=⟨1⟩ be the unit, define `q2V` to be v=⟨1,−2⟩ and `q2C` to be c=⟨1,3⟩. For a∈ℤ/8 and b,e∈ℤ/2 define `q2Coordinates` as au+bv+ec using least nonnegative representatives. Prove this function is the underlying function of an additive equivalence and that multiplication by c sends (a,b,e) to ac+4bu. This joint assertion is `q2WittRingPresentation`. Hence W(ℚ₂)=ℤ/8{u}⊕ℤ/2{v}⊕ℤ/2{c}, (c)=⟨c,4u⟩≃(ℤ/2)² and ann(c)=⟨2u,c⟩≃ℤ/4⊕ℤ/2. Also c=⟨1,−5⟩ and ⟨1,−3⟩=2u+c. Native signatures retain a chosen inverse of two; the arithmetic assertions do not depend on that choice.
+In the native field Witt ring W(ℚ₂), let u=⟨1⟩ be the unit, v=⟨1,−2⟩ and c=⟨1,3⟩. For a∈ℤ/8 and b,e∈ℤ/2 define the coordinate function as au+bv+ec using least nonnegative representatives. Prove this function is the underlying function of an additive equivalence and that multiplication by c sends (a,b,e) to ac+4bu. Hence W(ℚ₂)=ℤ/8{u}⊕ℤ/2{v}⊕ℤ/2{c}, (c)=⟨c,4u⟩≃(ℤ/2)² and ann(c)=⟨2u,c⟩≃ℤ/4⊕ℤ/2. Also c=⟨1,−5⟩ and ⟨1,−3⟩=2u+c.
 
 (CDHHLMNNS-III-v4, Examples 2.3.13–14, pp. 46–47; the ring computations here are derived from the imported local invariant classification; CDHHLMNNS-III-v4 line 2175.)
 
@@ -512,11 +517,11 @@ Layer 0's residue and Arf normalizations, complete quadratic rigidity, supplied 
 
 ### 5.1 Eisenstein dyadic place
 
-Let ζ²+ζ+1=0 and R=Z[ζ] inside K=Q(√−3). R is the full ring of integers, a norm-Euclidean PID, with unit group μ6 and unit square classes represented by ±1. The ideal (2) is prime with residue F4. Its completion O is the unramified quadratic extension of Z_2 with fraction field E=Q2(√−3). Pic(R)=0.
+Let ζ²+ζ+1=0 and R=ℤ[ζ] inside K=ℚ(√−3). Using the supplied cyclotomic arithmetic, identify the completion O at the unique dyadic prime as the unramified quadratic extension of ℤ₂, with fraction field E=ℚ₂(√−3) and residue field 𝔽₄.
 
 (CDHHLMNNS-III-v4, Example 2.3.14, p. 46; CDHHLMNNS-III-v4 line 2150.)
 
-The integral basis and discriminant identify the full ring of integers. For norm-Euclideanity, round both coefficients of an element of K in the basis 1,ζ. The remainder has coefficients in [−1/2,1/2], so norm at most 3/4<1. Thus R is a PID and Pic(R)=0. Solve the positive norm-one equation for the units. Irreducibility and separability modulo two identify the unique dyadic residue field and its unramified quadratic completion.
+The cyclotomic inertia and ramification formulas give residue degree two and ramification index one at two. The completion preserves these invariants. The relation ζ=(−1+√−3)/2 identifies its quadratic fraction field; the irreducible reduction of t²+t+1 selects the dyadic place.
 
 **Checks.**
 
@@ -525,13 +530,13 @@ The integral basis and discriminant identify the full ring of integers. For norm
 - For Q(√−7), the integral polynomial t²+t+2 reduces to t(t+1) modulo two. Two is unramified but split; a discriminant test alone cannot prove inertness.
 - The norm of a+bζ is a²−ab+b². Norm one has the six solutions (1,0),(−1,0),(0,1),(0,−1),(1,1),(−1,−1); their unit squares have index two.
 
-*Needs:* elementary quadratic integer and norm theory; Mathlib fraction fields and completions; §2.1; ArithmeticKTheory §§1.1–1.3 for number-field arithmetic comparisons.
+*Needs:* the Mathlib cyclotomic declarations in the exact supplier contracts, fraction fields and completions; §2.1; ArithmeticKTheory §§1.1–1.3 for number-field arithmetic comparisons.
 
 ### 5.2 Eisenstein symmetric Witt group
 
 For R=Z[ζ3], Ws(R)≃Z/4 generated by u=⟨1⟩. Under generic and completed base change this generator still has order 4.
 
-(CDHHLMNNS-III-v4, Example 2.3.14, p. 46; proof adapted here using GlobalQuadraticForms layer 8 instead of the inaccessible book citation; CDHHLMNNS-III-v4 line 2159.)
+(CDHHLMNNS-III-v4, Example 2.3.14, p.46, line 2159; the proof here uses GlobalQuadraticForms §§8.1–8.3.)
 
 Inject Ws(R) into W(K). A unimodular determinant is a unit; modulo squares the units are ±1. At every odd finite place unit diagonalization gives local Hasse sign +1. There are no real places, and reciprocity forces the remaining dyadic Hasse sign. The Hamilton obstruction of 4u disappears after the quadratic extension at two and at the complex place. Compare forms after hyperbolic stabilization using the supplied number-field classification. This gives four classes and identifies the integral and completed generators.
 
@@ -541,11 +546,11 @@ Inject Ws(R) into W(K). A unimodular determinant is a unit; modulo squares the u
 - The class 4u has square determinant and trivial local Hasse obstruction after the degree-two extension at two, so 4u=0. The generator therefore has order four, not two.
 - The classes 0,u,2u,3u have pairs (rank parity,signed determinant) respectively (0,1),(1,1),(0,−1),(1,−1). Their completed images remain distinct.
 
-*Needs:* §§0.2 and 5.1; GlobalQuadraticForms §§8.1–8.3; QuadraticFormInvariants Layer 6 and Hilbert reciprocity comparison.
+*Needs:* §§0.2 and 5.1; GlobalQuadraticForms §4.4 and §§8.1–8.3; QuadraticFormInvariants Layer 6.
 
 ### 5.3 Unramified restriction
 
-For E=ℚ₂(√−3), let θ′:W(ℚ₂)→W(E) be restriction. Prove ker θ′=(c)=⟨c,4u⟩≃(ℤ/2)² and identify its cokernel with ann(c)=⟨2u,c⟩≃ℤ/4⊕ℤ/2 by Scharlau transfer for λ(1)=0, λ(√−3)=1. The same kernel and cokernel describe θ:Ws(ℤ₂)→Ws(O), because two is a uniformizer in both rings and the symmetric residue map Ws(𝔽₂)→Ws(𝔽₄) preserves rank parity. The field exact sequence with these actual maps is `eisensteinFieldWittExactness`: its extension has the ordered basis (1,s) with s²=−3, restriction kernel (c), transfer kernel equal to the restriction image, and transfer image ann(c).
+For E=ℚ₂(√−3), let θ′:W(ℚ₂)→W(E) be restriction. Prove ker θ′=(c)=⟨c,4u⟩≃(ℤ/2)² and identify its cokernel with ann(c)=⟨2u,c⟩≃ℤ/4⊕ℤ/2 by Scharlau transfer for λ(1)=0, λ(√−3)=1. The same kernel and cokernel describe θ:Ws(ℤ₂)→Ws(O), because two is a uniformizer in both rings and the symmetric residue map Ws(𝔽₂)→Ws(𝔽₄) preserves rank parity. In the field sequence the ordered basis is (1,s) with s²=−3, the transfer kernel is the restriction image, and the transfer image is ann(c).
 
 (CDHHLMNNS-III-v4, Example 2.3.14, p. 47; CDHHLMNNS-III-v4 line 2168.)
 

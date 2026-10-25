@@ -113,4 +113,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v5"
-cited_for = ["2.2; supplier derived-completion criterion"]
+cited_for = ["2.2; supplier Poincaré change-of-rings criterion"]

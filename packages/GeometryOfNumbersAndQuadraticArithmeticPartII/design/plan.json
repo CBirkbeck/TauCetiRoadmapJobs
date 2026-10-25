@@ -1852,10 +1852,16 @@
   ],
   "gaps": [
     {
-      "slug": "derived-completion-poincare-criterion",
+      "slug": "derived-localization-completion-square",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "6.8a",
-      "needs": "the derived localization–completion square of perfect complexes for an associative ring and central positive integer with bounded power torsion, together with the coefficient-compatible Poincaré–Verdier change-of-rings criterion of Paper II Proposition 4.5.5 on the two K₀-image subcategories."
+      "needs": "for an associative unital ring R and a positive integer ℓ with bounded ℓ-power torsion in R, ordinary ℓ-adic completion C represents derived completion and the square R→C over R[1/ℓ]→C[1/ℓ] is a pullback in D(R)."
+    },
+    {
+      "slug": "poincare-change-of-rings-criterion",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "6.8a",
+      "needs": "for a homomorphism f:R→B of discrete rings, invertible coefficient bimodules M,N with involution, an involution-compatible f⊗f-linear map α:M→N, a multiplicative subset S⊂R, and m∈ℤ∪{±∞}, for every involution-stable subgroup c⊂K₀(R) the square with the saturated control c̄ and its image controls from CDHHLMNNS-II-v5 §4.5 is Poincaré–Verdier if B⊗_R M→N is an isomorphism, S is compatible with M, R/s→B/f(s) is an equivalence in D(R) for every s∈S (cofibers of right multiplication), (R,S) and (B,f(S)) satisfy the left Ore condition, and the boundary Ĥ^(−m)(C₂;N[f(S)⁻¹])→Ĥ^(−m+1)(C₂;M) vanishes (vacuous for m=±∞), as in CDHHLMNNS-II-v5 Proposition 4.5.5, pp.108–110, lines 5253–5274."
     },
     {
       "slug": "quadratic-extension-witt-exactness",
