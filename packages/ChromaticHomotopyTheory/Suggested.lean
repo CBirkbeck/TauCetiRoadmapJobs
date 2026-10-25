@@ -19,7 +19,7 @@ The following headline theorems are not statable at the pins:
 - Marked Morava E realization and coherent stabilizer actions at every finite height (§7.1–§7.2): missing E∞ ring spectra, marked spectral realizations and coherent actions.
 - Uniform geometric-height locality for every homotopy-unital action (§8.1), including coherent modules of an E₁ refinement: missing oriented ring spectra, spectral actions and Johnson–Wilson localization.
 - T(n)/K(n) comparison on chromatically local spectra (§8.2): missing spectral chromatic reflectors and their natural transformations.
-- Height-one equality and higher-height telescope separation (§8.3), the latter requiring the purity/trace and BP redshift supplier contracts: missing the two spectral local categories, nonconnective K-theory of spectral rings and cyclotomic TC.
+- Height-one equality and higher-height telescope separation (§8.3), the latter consuming the purity theorem and high-height trace and requiring the fixed-point trace and BP-model supplier contracts: missing the two spectral local categories, nonconnective K-theory of spectral rings and cyclotomic TC.
 - Chromatic support and inversion comparison for BP truncations (§8.4): missing BP-module spectra, their truncations and spectral localization.
 - Localized transfer criterion and telescopic Tate vanishing (§9.1–§9.3): missing coherent finite-group spectra, normalized norms and Tate cofibers.
 - Raw finite-local Tate blueshift (§9.4): missing coherent finite-group spectra, raw Tate cofibers and finite-local reflectors.

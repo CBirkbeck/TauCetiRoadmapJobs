@@ -4548,13 +4548,13 @@
       "slug": "bhls-purity-comparison",
       "supplier": "GeneralAlgebraicKTheoryPartII",
       "section": "KII.5, purity and trace comparison",
-      "needs": "For every prime p, h≥1 and connective T(h+1)-acyclic E₁ ring A with coherent ℤ-action, prove that K(L_T(h)B)←K(B)→TC(B) becomes a pair of equivalences after L_T(h+1) for B=A and B=A^(h pᵏℤ), for every k≥0, naturally in coassembly and including the truncating-invariant comparison for the possibly (−1)-connective fixed-point ring."
+      "needs": "For every prime p, h≥1 and connective E₁ ring A with coherent ℤ-action, prove that the cyclotomic trace K(A^(hℤ))→TC(A^(hℤ)) of the possibly (−1)-connective homotopy fixed-point ring becomes an equivalence after L_T(h+1), naturally in A, using Levy’s theorem that every truncating invariant inverts the map of ℤ-homotopy fixed points induced by a 1-connective ℤ-equivariant map of connective E₁ rings; applied to the restricted actions it covers A^(h pᵏℤ) for every k≥0."
     },
     {
       "slug": "bhls-bp-redshift",
       "supplier": "GeneralAlgebraicKTheoryPartII",
       "section": "KII.6, height bounds and redshift",
-      "needs": "For every prime p and h≥1, provide a p-complete associative BP⟨h⟩ model with the E₁⊗A₂ structure and locally unipotent coherent Adams ℤ-action of bhls Theorem 5.4, its height-h Lichtenbaum–Quillen property (THH is bounded below and V⊗THH is bounded in the cyclotomic t-structure for every finite p-local type-(h+2) spectrum V), and T(h+1)⊗TC(BP⟨h⟩)≠0, with no restriction on p or h."
+      "needs": "For every prime p and h≥1, provide a p-complete associative BP⟨h⟩ model of fp-type h (for every finite p-local type-(h+1) spectrum U, U⊗BP⟨h⟩ has finitely many nonzero homotopy groups, each finite) with the E₁⊗A₂ structure and locally unipotent coherent Adams ℤ-action of bhls Theorem 5.4, its height-h Lichtenbaum–Quillen property (THH is bounded below and V⊗THH is bounded in the cyclotomic t-structure for every finite p-local type-(h+2) spectrum V), and T(h+1)⊗TC(BP⟨h⟩)≠0, with no restriction on p or h."
     }
   ],
   "coverage": [
