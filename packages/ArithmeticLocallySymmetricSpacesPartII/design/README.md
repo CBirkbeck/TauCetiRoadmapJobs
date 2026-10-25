@@ -8,7 +8,7 @@ ArithmeticLocallySymmetricSpaces ends at finite-level quotients, local systems, 
 
 NoncommutativeAndEquivariantIwasawa owns completed group rings, rational Iwasawa homology and the generic ring theory; the missing analytic and rank inputs have individual supplier gaps in the exact contracts. LieHighestWeight Layer 0 owns split characteristic-zero sl₂ highest weights; its Layer 3 records the native ordinary PBW interface. Tau Ceti supplies symmetric powers and their matrix actions. Their compact-open restriction, rational action quotient and the specialized two-generator cusp computation are applications here.
 
-Chebotarev Layer 10 supplies split-completely primes. ModularForms §10C supplies classical section spaces and ordinary dimension infrastructure; ModularSymbolsPadicLFunctions §0.7 supplies Eichler–Shimura. This roadmap owns its finite-quotient equivariant refinement. GL2AutomorphicRepresentationsAndTransfer supplies quadratic transfer and type uniqueness (§§R17.4.2–R17.4.6 and §R16.2.9); the specialized SL₂ restriction count, ramified finite-type character data, FGT summation and positivity are owned here. AutomorphicFormsOnReductiveGroups supplies relative Lie cochains and the archimedean cohomological computations (§1.1, §§5.2–5.3).
+Chebotarev Layer 10 supplies split-completely primes. ModularForms §10C supplies classical section spaces and ordinary dimension infrastructure; ModularSymbolsPadicLFunctions §0.7 supplies Eichler–Shimura for every finite-index Γ, compatible with every normaliser action; at Γ(N) this is the SL₂(ℤ/Nℤ)-action. The fixed-type multiplicity formula is owned here. GL2AutomorphicRepresentationsAndTransfer supplies quadratic transfer and type uniqueness (§§R17.4.2–R17.4.6 and §R16.2.9); the specialized SL₂ restriction count, ramified finite-type character data, FGT summation and positivity are owned here. AutomorphicFormsOnReductiveGroups supplies relative Lie cochains and the archimedean cohomological computations (§1.1, §§5.2–5.3).
 
 The headline theorems are the common local homology bound (§2.6), the sharp global cusp-form bound (§4.2), and the two-sided Bianchi bounds (§5.8). The ordinary degree-one and degree-two Bianchi statements are statable with Mathlib group cohomology and the actual symmetric-power tensor representation. They are the headline signatures for Suggested.lean, with simple definitions only for that representation and its arithmetic hypotheses. Its module docstring must name the nonstatable headlines: the local theorem needs completed rational Iwasawa homology; the cusp-form bound needs the adelic S_κ(K_f) carrier; the cuspidal, interior and compact-support bounds need their arithmetic support carriers. Scalar inequalities and numerical symmetric-power Checks stay in this README.
 
@@ -114,11 +114,11 @@ Consume Layer 10’s identity Frobenius class in a finite normal extension: posi
 
 ### From TauCetiRoadmap.ModularForms
 
-Consume §10C’s classical congruence-level section spaces and ordinary dimension infrastructure. The finite-type equivariant refinement is §5.3 here.
+Consume §10C’s classical congruence-level section spaces, the weight-k automorphy line bundle on X(Γ) and analytic Riemann–Roch. The fixed-type multiplicity formula is §5.3 here.
 
 ### From TauCetiRoadmap.ModularSymbolsPadicLFunctions
 
-Consume §0.7’s Eichler–Shimura period comparison. Its refinement equivariant under SL₂(ℤ/Nℤ) at Γ(N) is a target of §5.3 here.
+Consume §0.7’s Eichler–Shimura isomorphism S_{k+2}(Γ)⊕S̄_{k+2}(Γ)≃H¹_par(Γ,V_k(ℂ)) for finite-index Γ, compatible with every double-coset and normaliser action defined for Γ, with the period identity ψ_{f|δ}(D)=ψ_f(δD)|δ. Every γ∈SL₂(ℤ) normalises Γ(N) and Γ(N) acts trivially, so this is the SL₂(ℤ/Nℤ)-equivariant comparison used in §5.3.
 
 ### From TauCetiRoadmap.GL2AutomorphicRepresentationsAndTransfer
 
@@ -214,7 +214,7 @@ Mathlib `Finset.prod`; Mathlib `Finset.powerset`; Mathlib `MvPolynomial`; Tau Ce
 
 ### 1.1 Multiplicity and degree-zero homology
 
-For a finitely generated left A-module M with its canonical finite-module topology and a finite-dimensional continuous G-representation W admitting a stable lattice, evaluation induces a natural isomorphism Hom_A(M,W)≃Hom_{ℚ_p}(H₀(G,M⊗W*),ℚ_p). Here the tensor has the diagonal action, W* has the contragredient action, and H₀ is rational completed coinvariants, identified with Tor₀^A(ℚ_p,−) by the supplied rationalization contract. For W=W_k, the supplied self-duality replaces W_k* by W_k. All spaces in the dimension identity are finite dimensional and the A-linear maps are continuous. (fu24, §6, p. 21, identities preceding the proof of Theorem 1.4.)
+For a finitely generated left A-module M with its canonical finite-module topology and a finite-dimensional continuous G-representation W admitting a stable lattice, evaluation induces a natural isomorphism Hom_A(M,W)≃Hom_{ℚ_p}(H₀(G,M⊗W*),ℚ_p). Here the tensor has the diagonal action, W* has the contragredient action, and H₀ is rational completed coinvariants, identified with Tor₀^A(ℚ_p,−) by the supplied rationalization contract. For W=W_k, the supplied self-duality replaces W_k* by W_k. All spaces in the dimension identity are finite dimensional and the A-linear maps are continuous. (fu24, §6, p. 22, identities in the proof of Theorem 1.4.)
 
 A proof uses the following route. Send f to the functional m⊗φ↦φ(f(m)); the G-invariance relation is exactly equivariance of f. Use canonical finite-module topology and the supplied finite-dimensional continuous Hom comparison so the functional factors through the completed quotient. Apply the imported lattice/completed-Tor rational comparison and then finite-dimensional duality. No duality between unrelated Banach categories is substituted for this evaluation map.
 
@@ -227,7 +227,7 @@ A proof uses the following route. Send f to the functional m⊗φ↦φ(f(m)); th
 
 ### 1.2 Cyclic Iwasawa multiplicity estimate
 
-For every nonzero δ∈A there are nonnegative proper-face coefficients c(δ) such that dim Hom_A(A/Aδ,W_k)≤B_c(k+1) for every k∈ℕ^m. Aδ is the left ideal generated by δ. The coefficients depend on δ, p and m, and are independent of k. The proof uses the four analytic gaps in the exact supplier contracts: flat microlocalisation, algebraic-quotient comparison, integral central faithfulness and generic cyclic growth. (fu24, §6, pp. 21–22; Theorem 4.3, p. 15; Theorem 3.2, pp. 8–11; aw14, §4.6, p. 11 and §5.4, p. 16 (author PDF).)
+For every nonzero δ∈A there are nonnegative proper-face coefficients c(δ) such that dim Hom_A(A/Aδ,W_k)≤B_c(k+1) for every k∈ℕ^m. Aδ is the left ideal generated by δ. The coefficients depend on δ, p and m, and are independent of k. The proof uses the four analytic gaps in the exact supplier contracts: flat microlocalisation, algebraic-quotient comparison, integral central faithfulness and generic cyclic growth. (fu24, §6, pp. 22–23; Theorem 4.3, p. 15; Theorem 3.2, pp. 8–11; aw14, §4.6, p. 11 and §5.4, p. 16 (author PDF).)
 
 A proof uses the following route. Under the algebraic-quotient comparison, Hom into W_k is unchanged by microlocalization A→Û. The cyclic module becomes Û/Ûδ. Integral central faithfulness makes every nonzero δ generic in the sense required by the generic cyclic growth contract. Use Ardakov–Wadsley’s affinoid Verma route, not the unresolved large-radius central-quotient argument. The generic cyclic growth contract supplies a uniform truncation multi-index α and the large-coordinate PBW estimate. Its all-weight repair is B(x)=2Σᵢαᵢ∏ⱼ≠ᵢxⱼ. For kᵢ<αᵢ, use dim Hom≤dim W_k≤αᵢ∏ⱼ≠ᵢ(kⱼ+1). These are infinite strips and remain in the bound.
 
@@ -240,7 +240,7 @@ A proof uses the following route. Under the algebraic-quotient comparison, Hom i
 
 ### 1.3 Cyclic control of a finite torsion module
 
-Let A be the supplied two-sided noetherian Ore domain and T a finitely generated left A-module of skew rank zero. There is a finite filtration 0=T₀⊂⋯⊂T_r=T with cyclic factors Q_j and nonzero δ_j∈A such that A/Aδ_j surjects onto Q_j. The quotients need not be isomorphic to principal quotients. For every finite-dimensional W, dim Hom_A(T,W)≤Σ_j dim Hom_A(A/Aδ_j,W). (fu24, §6, pp. 21–22, torsion case.)
+Let A be the supplied two-sided noetherian Ore domain and T a finitely generated left A-module of skew rank zero. There is a finite filtration 0=T₀⊂⋯⊂T_r=T with cyclic factors Q_j and nonzero δ_j∈A such that A/Aδ_j surjects onto Q_j. The quotients need not be isomorphic to principal quotients. For every finite-dimensional W, dim Hom_A(T,W)≤Σ_j dim Hom_A(A/Aδ_j,W). (fu24, §6, p. 23, torsion case.)
 
 A proof uses the following route. Choose finitely many generators of T and filter by their successive spans. Rank zero localizes every cyclic factor to zero. Clearing an Ore denominator gives a nonzero annihilator of its chosen cyclic generator, hence the indicated surjection. Apply left exactness of Hom(−,W) to each short exact filtration sequence, and use the injection induced by the principal-quotient surjection.
 
@@ -253,7 +253,7 @@ A proof uses the following route. Choose finitely many generators of T and filte
 
 ### 1.4 The torsion-module weight bound
 
-For every finitely generated rank-zero A-module T, there are nonnegative proper-face coefficients c_T such that dim H₀(G,T⊗W_k)=dim Hom_A(T,W_k)≤B_{c_T}(k+1) for all k. The same conclusion holds for a finite collection of torsion modules with one common coefficient vector. (fu24, §6, pp. 21–22, torsion case of Theorem 1.4.)
+For every finitely generated rank-zero A-module T, there are nonnegative proper-face coefficients c_T such that dim H₀(G,T⊗W_k)=dim Hom_A(T,W_k)≤B_{c_T}(k+1) for all k. The same conclusion holds for a finite collection of torsion modules with one common coefficient vector. (fu24, §6, pp. 22–23, torsion case of Theorem 1.4.)
 
 A proof uses the following route. Use §1.3 to reduce to its principal cyclic upper bounds. Use §1.2 for each δ_j and add the finitely many proper-face coefficient vectors. Use §1.1 and self-duality of W_k.
 
@@ -567,11 +567,11 @@ A proof uses the following route. Import the parent support triangle and take it
 
 ### 5.3 Classical fixed-type dimension estimate
 
-Fix N≥1 and a finite-dimensional complex representation σ of G_N=SL₂(ℤ/Nℤ). For all k≥2 with σ(−I)=(-1)^k on σ, dim Hom_{G_N}(σ,S_k(Γ(N)))=(k−1)dim σ/12+O_{N,σ}(1). The error is uniform in k along the admitted parity classes. Its exact periodic terms are determined by the unipotent-invariant dimension and the traces at the order-three and order-four elliptic elements, plus a weight-two invariant correction. For a fixed finite collection of σ, one error constant works for all of them. Own the SL₂(ℤ/Nℤ)-equivariant refinement of Eichler–Shimura at Γ(N), with the natural slash action on cusp forms and conjugation/pullback action on parabolic cohomology; the dimension assertion is for these actions. (fgt10, §4.3, Proposition 4.18, pp. 25–26 (arXiv:0808.1204v1).)
+Fix N≥1 and a finite-dimensional complex representation σ of G_N=SL₂(ℤ/Nℤ). For all k≥2 with σ(−I)=(-1)^k on σ, dim Hom_{G_N}(σ,S_k(Γ(N)))=(k−1)dim σ/12+O_{N,σ}(1). The error is uniform in k along the admitted parity classes. Its exact periodic terms are determined by the unipotent-invariant dimension and the traces at the order-three and order-four elliptic elements, plus a weight-two invariant correction. For a fixed finite collection of σ, one error constant works for all of them. G_N acts on S_k(Γ(N)) by g·f=f|_kγ⁻¹ for any lift γ∈SL₂(ℤ) of g; the dimension assertion is for this action. (fgt10, §4.3, Proposition 4.18, pp. 25–26 (arXiv:0808.1204v1).)
 
-A proof uses the following route. Use ModularSymbolsPadicLFunctions §0.7 for Eichler–Shimura and the natural period map in group-cohomological parabolic cohomology, and prove its SL₂(ℤ/Nℤ)-equivariance at Γ(N). Apply ArithmeticLocallySymmetricSpaces §ALS.5b.5 only at a neat normal refinement; characteristic-zero invariants give the comparison at N=1,2 as well. ModularForms §10C supplies only the underlying classical spaces and dimension infrastructure. Apply the genus-zero modular-orbifold cohomology calculation: the cusp stabilizer contributes its unipotent-invariant term and the two elliptic stabilizers contribute finite-order character traces. Equivalently compute the parabolic cohomology Euler characteristic from SL₂(ℤ)=C₄*_{C₂}C₆ and the induced coefficient system. This explicit calculation is the fixed-type refinement owned here; ordinary dimension formulas alone do not identify isotypic multiplicities. Separate the linear term (k−1)dim σ/12. The elliptic coefficients range over finitely many residue classes modulo twelve, all fixed-type traces and invariant dimensions are constant, and the k=2 correction is bounded.
+A proof uses the following route. Use ModularSymbolsPadicLFunctions §0.7 at Γ(N): its compatibility with the normaliser action of SL₂(ℤ) makes S_k⊕S̄_k≃H¹_par(Γ(N),V_{k−2}(ℂ)) an isomorphism of G_N-representations for every N≥1. Since f↦f^c(z)=overline(f(−z̄)) is antilinear and intertwines γ with ιγι for ι=diag(−1,1), S̄_k is S_k twisted by conjugation by ι; hence dim Hom_{G_N}(σ,H¹_par)=m(σ)+m(σ^ι), where m(σ)=dim Hom_{G_N}(σ,S_k(Γ(N))) and σ^ι=σ∘Ad ι. ModularForms §10C supplies the classical spaces, the automorphy line bundle and Riemann–Roch. Apply the genus-zero modular-orbifold cohomology calculation: the cusp stabilizer contributes its unipotent-invariant term and the two elliptic stabilizers contribute finite-order character traces. The parabolic cohomology Euler characteristic from SL₂(ℤ)=C₄*_{C₂}C₆ and the induced coefficient system computes m(σ)+m(σ^ι), hence 2m(σ) when σ^ι≃σ, in particular for every restriction of a GL₂(ℤ/Nℤ)-representation, which is the case §5.6 consumes through the types of §5.4. For general σ the cohomology does not separate σ from σ^ι, and the holomorphic Lefschetz (equivariant Riemann–Roch) count for the G_N-action on the weight-k automorphy line bundle of X(Γ(N)) gives m(σ) itself. This explicit calculation is the fixed-type refinement owned here; ordinary dimension formulas alone do not identify isotypic multiplicities. Separate the linear term (k−1)dim σ/12. The elliptic coefficients range over finitely many residue classes modulo twelve, all fixed-type traces and invariant dimensions are constant, and the k=2 correction is bounded.
 
-*Needs:* ModularForms §10C; ArithmeticLocallySymmetricSpaces §ALS.5b.5; ModularSymbolsPadicLFunctions §0.7.
+*Needs:* ModularForms §10C; ModularSymbolsPadicLFunctions §0.7.
 
 **Checks.**
 
@@ -579,6 +579,7 @@ A proof uses the following route. Use ModularSymbolsPadicLFunctions §0.7 for Ei
 - Opposite central parity gives zero multiplicity and is excluded from the linear estimate.
 - Fixing N and σ is necessary for the bounded remainder.
 - For N=1, σ=1 and k=12, the periodic expression is 11/12−1/2+1/4+1/3=1; at k=2 it is 1/12−1/2−1/4−1/3+1=0.
+- At N=3, k=4: X(Γ(3)) has genus 0 and four regular cusps, so dim S₄(Γ(3))=3·(0−1)+(4/2−1)·4=1. Since S₄(SL₂(ℤ))=0, SL₂(𝔽₃) acts on this line by a nontrivial character, one of the two order-three characters ω, ω̄ (trivial on −I∈Q₈, as k is even); so m(ω) and m(ω̄) are 1 and 0 in some order. Conjugation by ι inverts T=(1 1;0 1), so ω^ι=ω̄, and H¹_par(Γ(3),V₂(ℂ))≃ω⊕ω̄ gives 1 for both: a route through the cohomology character alone cannot separate them.
 
 ### 5.4 Ramified finite local types
 
@@ -600,7 +601,7 @@ The API includes the following facts.
 
 - At ℓ=2, ν₂=2, the principal-series type has dimension 6 and traces (S₃,S₄)=(0,0); the supercuspidal type has dimension 2 and traces (2,0), with central parity −1.
 - At ℓ=2, ν₂=3, the corresponding dimensions are 12 and 4, while the supercuspidal traces are (−2,0).
-- At ℓ=3 the principal-series type has dimension 4, two unipotent invariants and traces (1,0); the supercuspidal type has dimension 2, no unipotent invariants and traces (−1,−2).
+- At ℓ=3 the principal-series type has dimension 4, two unipotent invariants and traces (1,0); the supercuspidal type has dimension 2, no unipotent invariants and traces (S₃,S₄)=(−1,2), since the S₄ formula gives 2(−1)^0=2 at ℓ=3, and central parity −ω₃(−1)=+1. Independently, this type factors through GL₂(𝔽₃)/Q₈≅S₃, whose kernel contains S₄, so σ(S₄)=1; a sign slip giving −2 would force σ(S₄)=−1 although S₄ lies in the kernel. At ℓ=7 the same formula gives 2(−1)^1=−2.
 - A twist by a character of conductor beyond ν_ℓ changes the compact type and is excluded by the fixed minimal model; an unramified twist has compact character 1.
 
 ### 5.5 The SL₂ base-change multiplicity count
@@ -664,7 +665,7 @@ For F=ℚ(i), the base-change slopes are 5/24±1/8, hence 1/3 and 1/12; the full
 
 ### Dependencies
 
-ArithmeticLocallySymmetricSpaces §ALS.2.5; ArithmeticLocallySymmetricSpaces §ALS.2.8; ArithmeticLocallySymmetricSpaces §§ALS.4.5–ALS.4.7; LieHighestWeight Layer 0; ArithmeticLocallySymmetricSpaces §ALS.4.1; ArithmeticLocallySymmetricSpaces §ALS.5a.2; ModularForms §10C; ArithmeticLocallySymmetricSpaces §ALS.5b.5; ModularSymbolsPadicLFunctions §0.7; GL2AutomorphicRepresentationsAndTransfer §R16.2.9; GL2AutomorphicRepresentationsAndTransfer §§R17.4.2–R17.4.6; ArithmeticLocallySymmetricSpaces §ALS.1.8; ArithmeticLocallySymmetricSpaces §ALS.3.6.
+ArithmeticLocallySymmetricSpaces §ALS.2.5; ArithmeticLocallySymmetricSpaces §ALS.2.8; ArithmeticLocallySymmetricSpaces §§ALS.4.5–ALS.4.7; LieHighestWeight Layer 0; ArithmeticLocallySymmetricSpaces §ALS.4.1; ArithmeticLocallySymmetricSpaces §ALS.5a.2; ModularForms §10C; ModularSymbolsPadicLFunctions §0.7; GL2AutomorphicRepresentationsAndTransfer §R16.2.9; GL2AutomorphicRepresentationsAndTransfer §§R17.4.2–R17.4.6; ArithmeticLocallySymmetricSpaces §ALS.1.8; ArithmeticLocallySymmetricSpaces §ALS.3.6.
 
 ## Downstream consumers
 
@@ -732,7 +733,7 @@ Fu arXiv:2201.11190v2 (15 February 2024), Theorem 1.2, pp. 2–3; §7, pp. 23–
 
 ### E8
 
-Fu arXiv:2201.11190v2 (15 February 2024), §4, equation (16), p. 14. For the Banach completion require weighted coefficients to tend to zero; do not use the larger bounded-series space. A series in the norm completion of finite sums must have vanishing weighted tails.
+Fu arXiv:2201.11190v2 (15 February 2024), §4, equation (16), p. 13. For the Banach completion require weighted coefficients to tend to zero; do not use the larger bounded-series space. A series in the norm completion of finite sums must have vanishing weighted tails.
 **Checks.**
 
 - For r=1/p, coefficients λ_n=p^{−n} give |λ_n|r^n=1 for every n; successive partial sums have distance 1, and so are not Cauchy.
