@@ -6808,6 +6808,12 @@
     "needs": "On possibly singular complex projective varieties, provide Bedford–Taylor products for locally bounded plurisubharmonic potentials, uniform or monotone continuity, and semipositive ample-metric regularization compatible with Chern currents and cycle integration.",
     "supplier": "ComplexComparisonPartII",
     "section": "C5.4"
+  },
+  {
+    "slug": "curve-moduli-noether-positivity",
+    "needs": "Provide fine smooth-curve level moduli and stable compactifications with boundary thickness, the Hodge determinant and integral and semi-canonical Noether isomorphisms, and maximal-variation Hodge positivity with descent through finite covers, including arbitrary constant fields and finite inseparable covers.",
+    "supplier": "StableReductionPartII",
+    "section": "MC.4–MC.6"
   }
 ],
  "sourceIssues": [

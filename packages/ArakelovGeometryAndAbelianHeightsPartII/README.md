@@ -10,7 +10,7 @@ HeightsRationalPointsAndObstructions §§5.17a–5.17b owns the projective arith
 
 SchemeAndStackFoundations Layer 5 owns ordinary cycles, degree, Cartier intersection and geometric intersection theory. ComplexComparisonPartII §C5.4 owns currents, cycle integration and Poincaré–Lelong on complex manifolds; its singular pluripotential extension is an exact supplier contract below. TropicalAndBerkovichArithmetic §§0.1, 0.12, 0.15, 0.22–0.23, 2.7, 2.13, 3.1, 3.3 and 6.1–6.8 owns Banach spectra and completed residue fields, analytification over complete nonarchimedean fields (trivially valued ones included), hybrid analytic spaces, skeleton retraction and valued extension, metric graphs and their Laplacian, local model metrics, Chambert-Loir measures and their limits, graph Green functions, the admissible graph measure and the metric–Laplacian comparison; the scheme analytification over the archimedean Banach ring ℤ is §2.1 here. GrossZagierAndArithmeticHeights §§2.2–2.4, 2.8, 2.10, 2.12 and 2.13 owns the Arakelov probability form, the arithmetic normalization of the skeleton measure, archimedean admissible metrics, the normalized Arakelov Green function, the Arakelov dualizing metric, the Faltings–Hriljac comparison and descent at real places. This roadmap owns the curve metrics characterized through Jacobians at non-archimedean places, their family extensions, and Zhang's graph invariants; it does not introduce another graph Laplacian or an archimedean Green kernel.
 
-JacobianChallengePartII Layers 1–6 owns relative Jacobians, Abel and difference maps, the algebraic Poincaré and canonical twice-theta bundles, actual Picard pullback comparisons and the curve–Jacobian Hodge-line isomorphism. Layer 9 here adds the relative arbitrary-degree *metrized* theta identities. StableReductionPartII §§MC.4–MC.6 owns curve moduli, stable compactifications, the boundary and its thickness, algebraic Noether isomorphisms and maximal-variation Hodge positivity. NeronModelsAndSemistableAbelianVarieties §§3.3, 3.9–3.12 owns semistable identity-model base change and its differential lattices. MotivesAndAlgebraicCycles §§2.2–2.3 owns the Weil-cohomology and homological-triviality vocabulary. The special Gross–Schoen self-height and its variation belong to §10.10 here.
+JacobianChallengePartII Layers 1–6 owns relative Jacobians, Abel and difference maps, the algebraic Poincaré and canonical twice-theta bundles, actual Picard pullback comparisons and the curve–Jacobian Hodge-line isomorphism. Layer 9 here adds the relative arbitrary-degree *metrized* theta identities. StableReductionPartII §§MC.4–MC.6 is the designated supplier, through gap:curve-moduli-noether-positivity, for curve moduli, stable compactifications, the boundary and its thickness, algebraic Noether isomorphisms and maximal-variation Hodge positivity. NeronModelsAndSemistableAbelianVarieties §§3.3, 3.9–3.12 owns semistable identity-model base change and its differential lattices. MotivesAndAlgebraicCycles §§2.2–2.3 owns the Weil-cohomology and homological-triviality vocabulary. The special Gross–Schoen self-height and its variation belong to §10.10 here.
 
 The ordinary degree of a curve line bundle and the canonical degree 2g−2 are already in the library: Tau Ceti supplies `TauCeti.AlgebraicGeometry.InvertibleSheaf.eulerDegree`, `TauCeti.AlgebraicGeometry.LineBundleClass.eulerDegree` and `TauCeti.AlgebraicGeometry.InvertibleSheaf.eulerDegree_canonicalBundle`. Those are algebraic degrees, rather than the metrized intersections constructed here.
 
@@ -50,7 +50,7 @@ Consume §§1.1–1.3 and 1.7 for hermitian degree and compactified Picard group
 
 ### From TauCetiRoadmap.HeightsRationalPointsAndObstructions
 
-Consume §0.11 for the normalized projective height that §4.6 recovers for O(1) with max metrics, and §§0.16, 0.18–0.20, 0.26–0.29 for Weil heights, the Tate limit, the canonical quadratic height and specialization. Sections 5.17a–5.17b supply symmetric multilinear projective arithmetic intersections on singular models, Cartier recursion, projection and uniform continuity; use the −log‖s‖ recursion and its raw degree before dividing by [K:ℚ]. Sections 5.17d–5.17f supply projective Hilbert–Samuel, Nakai and minima as inputs to the volume results here. For a point of residue field 𝔽_q, the raw degree is log q; Fubini–Study O(1) on ℙ¹_ℤ has square 1/2; a constant metric shift e^(−c) changes an arithmetic d-fold intersection by c times generic-fibre mixed degree. These are supplier normalization checks, not new constructions.
+Consume §0.11 for the relative projective height h_K: for max-metrized O(1) over a number field K, §4.6 gives h_L̄ = h_K/[K:ℚ]; over a one-variable function field it gives h_K with the same fixed constant field. Consume §§0.16, 0.18–0.20, 0.26–0.29 for Weil heights, the Tate limit, the canonical quadratic height and specialization. Sections 5.17a–5.17b supply symmetric multilinear projective arithmetic intersections on singular models, Cartier recursion, projection and uniform continuity; use the −log‖s‖ recursion and its raw degree before dividing by [K:ℚ]. Sections 5.17d–5.17f supply projective Hilbert–Samuel, Nakai and minima as inputs to the volume results here. For a point of residue field 𝔽_q, the raw degree is log q; Fubini–Study O(1) on ℙ¹_ℤ has square 1/2; a constant metric shift e^(−c) changes an arithmetic d-fold intersection by c times generic-fibre mixed degree. These are supplier normalization checks, not new constructions.
 
 The consumed arithmetic pairing has source P̂ic(X)_int^d and target ℝ, is determined by symmetric multilinearity, Cartier recursion and uniform metric continuity, and satisfies the projection formula for proper generically finite maps. Every nef mixed intersection is nonnegative. Vertical d-cycles over p contribute their geometric intersection times log p; a zero-dimensional point of cardinality q contributes log q. On Spec O_K it is the hermitian degree. (yuan-zhang-2025, §2.1.5, pp. 27–28; §4.4.2, pp. 123–124; Theorem A.4.1 and Corollary A.4.3, pp. 233–234.)
 
@@ -66,16 +66,16 @@ The consumed arithmetic pairing has source P̂ic(X)_int^d and target ℝ, is det
 
 Consume §4.1a's local positive top-power measures and their uniform metric continuity, §4.3's arithmetic Siu estimate, §4.3a's global-field quasi-projective adelic Picard group, metric realization, intersection and normalized heights, §4.4's equidistribution theorem, and §4.40's canonical adelic metric of a rational map of ℙ¹, which is the projective-line case of the invariant extensions of §5.1. The hypotheses for equidistribution are a nef bundle, positive geometric top degree, a generic sequence and convergence to the normalized variety height. The limiting probability measure divides curvature by that positive degree. The arithmetic normalization adapter is the degree factor in the conventions. A repeated point of a positive-dimensional variety is not generic; on Spec K the probability has mass 1; on ℙ¹, O(2) has curvature mass 2 and probability mass 1. The power map z ↦ z² has max metric and usual Weil height. Those Checks also retain the design's projective and dynamical equidistribution examples.
 
-The arbitrary-base completion in Layer 1 restricts to this global-field construction; the comparison is the target §4.9, which preserves model representatives, boundary estimates, tensor products, pullbacks, the nef and integrable classes, analytic metrics, local measures, intersection numbers and normalized heights. Agreement only on underlying algebraic bundles would be insufficient. Layer 2's mixed signed measures extend §4.1a by polarization and boundary limits; §4.9 identifies them with the measures of §4.4 in the nef single-bundle case.
+The arbitrary-base completion in Layer 1 restricts to this global-field construction; the comparison is the target §4.9, which preserves model representatives, boundary estimates, tensor products, pullbacks, the nef and integrable classes, analytic metrics by scalar pullback, local measures by scalar pushforward, intersection numbers and normalized heights. Agreement only on underlying algebraic bundles would be insufficient. Layer 2's mixed signed measures extend §4.1a by polarization and boundary limits; §4.9 identifies them with the measures of §4.4 in the nef single-bundle case.
 
-The local measure contract includes signed mixed products on projective varieties, with multilinearity, symmetry, mass equal to geometric mixed degree, positivity for semipositive inputs and weak continuity under uniform semipositive approximation. The smooth case agrees with the wedge of Chern forms, and the integrable case is independent of its decomposition. (yuan-zhang-2025, §2.1.1, p. 25, lines 823–827.)
+The local measure contract from §4.1a is the positive projective top power c₁(L̄)ⁿ for one semipositive continuously metrized L, with mass Lⁿ and weak continuity under uniform semipositive approximation. Section 2.6 here constructs the mixed integrable extension by polarization and proves independence of signed decompositions, using TropicalAndBerkovichArithmetic §§6.2–6.4 at finite places and the ComplexComparisonPartII §C5.4 contract, including gap:singular-pluripotential-products, at infinity. The complex integrable construction is described in yuan-zhang-2025, §2.1.1, p. 25, lines 823–827.
 
 **Checks.**
 
 - Fubini–Study O(1) on ℙⁿ has top-power mass 1, and on ℙ¹ its first Chern measure is normalized area.
 - At dimension zero the empty Chern product is the unit point mass.
 - Rescaling a metric by a positive constant changes curvature by 0.
-- O(−1) on ℙ¹ is integrable and has signed mass −1, so integrability does not imply positivity.
+- The supplied positive construction gives mass 2 for standard O(2) on ℙ¹. O(−1) is outside that construction; §2.6's signed extension gives mass −1, so integrability does not imply positivity.
 - An admissible curve metric has c₁(L̄) = deg(L)μₐ; this imports the normalization from GrossZagierAndArithmeticHeights §2.4 at archimedean places and TropicalAndBerkovichArithmetic §6.6 with GrossZagierAndArithmeticHeights §2.3 at nonarchimedean places.
 
 The general equidistribution contract is the nef quasi-projective theorem at every place: a generic sequence with point heights tending to the normalized variety height converges in Galois-orbit probability to the canonical curvature probability. Its projective model case and the canonical metric of a polarized endomorphism of ℙ¹ are the corresponding imported projective and dynamical cases. (yuan-zhang-2025, Theorem 5.4.3, p. 168, line 6607; demarco-mavraki-ye-2026, proof of Theorem 1.8, §4, p. 21.)
@@ -100,7 +100,7 @@ This is the singular pluripotential input for Layer 0 and the mixed-measure limi
 
 ### From TauCetiRoadmap.TropicalAndBerkovichArithmetic
 
-Consume §0.1 (the Berkovich spectrum of a normed ring, points being dominated multiplicative seminorms), §0.12 (seminormed Banach rings and completion), §0.15 (completed residue fields H(x) of general Banach spectra, archimedean ones included), §0.22 (analytification of finite-type schemes over a complete nonarchimedean field, trivially valued fields included), §0.23 (hybrid analytic spaces of degenerating families), §2.7 (retraction onto the skeleton), §2.13 (refinement and valued extension: lengths are preserved under isometric extension and multiplied by the ramification index when the new uniformizer is renormalized), §3.1 (compact metric graphs with vertex genera), §3.3 (the graph Laplacian Δf = −f″ds − Σ outgoing slopes, of total mass zero, with ddᶜf = −Δf), §6.1 (formal model metrics), §6.2 (Chambert-Loir model measures), §6.3 (semipositive and integrable metrics), §6.4 (weak limits of model measures and local heights), §6.6 (the mean-zero graph Green kernel and the admissible measure μ_a = (1/g)(Σ_v g(v)δ_v + Σ_e ds/(ℓ_e + r_e))) and §§6.7–6.8 (model potentials, the curvature identity c₁(O(f)) = −i_*Δf and the admissible correction of the dualizing metric). The scheme analytification over the archimedean Banach ring (ℤ, |·|∞) is §2.1 here, glued from the §0.1 charts. For a three-unit-edge genus-two banana, resistance after deleting one edge is 1/2 and μₐ has density 1/3 on each edge. A unit loop has τ = 1/12; after ramified quadratic normalization it has τ = 1/6.
+Consume §0.1 (the Berkovich spectrum of a normed ring, points being dominated multiplicative seminorms), §0.12 (seminormed Banach rings and completion), §0.15 (completed residue fields H(x) of general Banach spectra, archimedean ones included), §0.22 (analytification of finite-type schemes over a complete nonarchimedean field, trivially valued fields included), §0.23 (hybrid analytic spaces of degenerating families), §2.7 (retraction onto the skeleton), §2.13 (refinement and valued extension: lengths are preserved under isometric extension and multiplied by the ramification index when the new uniformizer is renormalized), §3.1 (compact metric graphs with vertex genera), §3.3 (the graph Laplacian Δf = −f″ds − Σ outgoing slopes, of total mass zero, with ddᶜf = −Δf), §6.1 (formal model metrics), §6.2 (Chambert-Loir model measures and scalar-extension pushforward without an extension-degree factor), §6.3 (semipositive and integrable metrics), §6.4 (weak limits of model measures and local heights), §6.6 (the mean-zero graph Green kernel and the admissible measure μ_a = (1/g)(Σ_v g(v)δ_v + Σ_e ds/(ℓ_e + r_e))) and §§6.7–6.8 (model potentials, the curvature identity c₁(O(f)) = −i_*Δf and the admissible correction of the dualizing metric). The scheme analytification over the archimedean Banach ring (ℤ, |·|∞) is §2.1 here, glued from the §0.1 charts. For a three-unit-edge genus-two banana, resistance after deleting one edge is 1/2 and μₐ has density 1/3 on each edge. A unit loop has τ = 1/12; after ramified quadratic normalization it has τ = 1/6.
 
 ### From TauCetiRoadmap.GrossZagierAndArithmeticHeights
 
@@ -112,9 +112,9 @@ Use §§1.2–1.4 for the relative Jacobian and principal polarization, §§2.2,
 
 ### From TauCetiRoadmap.StableReductionPartII
 
-Use §MC.4/fine-level-scheme for fine smooth-curve level moduli; §MC.5/boundary-divisor, boundary-thickness, hodge-determinant, integral-noether and semi-canonical-noether for Δ, λ and 12λ = ⟨ω,ω⟩ + Δ; and §MC.6/stable-compactification, stable-compactification-exists, level-stable-compactification, maximal-variation and maximal-variation-hodge for stable models after finite covers and Hodge nefness/bigness. A node xy = t^m contributes m to Δ; an unramified extension leaves m unchanged, while a ramified degree-e extension gives em. Finite level is taken invertible on the base; varying the level covers residue characteristics 2 and 3. The universal family lives on the specified finite cover, rather than on a coarse moduli space without that data.
+What StableReductionPartII must provide (gap:curve-moduli-noether-positivity): Provide fine smooth-curve level moduli and stable compactifications with boundary thickness, the Hodge determinant and integral and semi-canonical Noether isomorphisms, and maximal-variation Hodge positivity with descent through finite covers, including arbitrary constant fields and finite inseparable covers. The required section interfaces are §MC.4/fine-level-scheme; §MC.5/boundary-divisor, boundary-thickness, hodge-determinant, integral-noether and semi-canonical-noether for Δ, λ and 12λ = ⟨ω,ω⟩ + Δ; and §MC.6/stable-compactification, stable-compactification-exists, level-stable-compactification, maximal-variation and maximal-variation-hodge. A node xy = t^m contributes m to Δ; an unramified extension leaves m unchanged, while a ramified degree-e extension gives em. Finite level is taken invertible on the base; varying the level covers residue characteristics 2 and 3. The universal family lives on the specified finite cover, rather than on a coarse moduli space without that data.
 
-Consume also §MC.6/arbitrary-field-hodge-positivity and §MC.6/finite-cover-hodge-descent for the arbitrary-field conclusion and finite inseparable covers. A relative Frobenius map of degree p multiplies curve degree by p; reduction and normalization with generic multiplicities handle nonreduced geometric base change.
+The same gap requires §MC.6/arbitrary-field-hodge-positivity and §MC.6/finite-cover-hodge-descent for the arbitrary-field conclusion and finite inseparable covers. A relative Frobenius map of degree p multiplies curve degree by p; reduction and normalization with generic multiplicities handle nonreduced geometric base change.
 
 ### From TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties
 
@@ -315,7 +315,8 @@ The basic API comprises these facts.
 - Represented by nef model bundles.
 - ∃ strongly nef M̄, ∀ a ≥ 1, aL̄ + M̄ strongly nef.
 - Difference of two strongly nef bundles.
-- Sums and positive rational multiples of nef bundles are nef.
+- In the integral group, nef bundles are closed under addition and multiplication by nonnegative integers.
+- In P̂ic(U/k)_ℚ = P̂ic(U/k) ⊗_ℤ ℚ, define the rationalized nef cone as the classes L̄/m with L̄ integral nef and m a positive integer. This cone is closed under addition and nonnegative rational scaling; rational scaling is an operation in this rationalized carrier.
 - Strongly nef ⇒ nef ⇒ integrable.
 
 **Checks.**
@@ -325,6 +326,7 @@ The basic API comprises these facts.
 - The trivial adelic line bundle is strongly nef.
 - O(−1) on Spec ℤ (c = −1) is integrable but not nef.
 - On Spec ℤ, O(0) and O(1) are nef with degrees 0 and 1; O(−1) is integrable with degree −1 and is not nef.
+- On ℙ¹ over a trivially valued field, O(1) is integral nef of degree 1. The rationalized nef class ½O(1) has degree 1/2 and has no integral preimage, since Pic(ℙ¹) = ℤ has only integer degrees. Its double is O(1); integer scaling of O(1) gives degree 2, not 1/2.
 
 *Needs:* §1.3; §0.1.
 
@@ -504,14 +506,14 @@ An adelic divisor D ∈ D̂iv(X/k) is effective iff its analytification is effec
 
 ### 2.6 Canonical measures of integrable adelic line bundles
 
-Extend the supplied projective positive top-power measure to signed mixed measures and to boundary-controlled quasi-projective metrics. Let K be a number field or a one-variable function field over k, X a quasi-projective K-variety of dimension n, v a place of K and L̄₁, …, L̄ₙ integrable adelic line bundles on X/k. There is a signed Radon measure dμ₍L̄₁,…,L̄ₙ, v₎ = c₁(L̄₁)···c₁(L̄ₙ) on X_v^an, the limit of the Monge–Ampère (archimedean) or Chambert-Loir (non-archimedean) measures of the model metrics, positive for nef bundles. If X is projective, its total mass is the ordinary intersection number L₁···Lₙ; for projective X and nef L̄ of positive degree put dμ₍L̄,v₎ = c₁(L̄)ⁿ/(Lⁿ). On nonproper X, the degree and total-mass identity use geometric adelic intersections, as specified in §5.2, rather than an ordinary degree of the uncompactified algebraic bundle. (yuan-zhang-2025, §3.4 (end) and §3.6, pp. 78–102; Theorem 5.4.3, p. 168, yuan-zhang-2025 line 6607).
+Extend the supplied projective positive top-power measure to signed mixed measures and to boundary-controlled quasi-projective metrics. Let K be a number field or a one-variable function field over k, X a quasi-projective K-variety of dimension n, v a place of K and L̄₁, …, L̄ₙ integrable adelic line bundles on X/k. There is a signed Radon measure dμ₍L̄₁,…,L̄ₙ, v₎ = c₁(L̄₁)···c₁(L̄ₙ) on X_v^an = X_Kv^an (the global analytic fibre over v), the limit of the Monge–Ampère (archimedean) or Chambert-Loir (non-archimedean) measures of the model metrics, positive for nef bundles. If X is projective, its total mass is the ordinary intersection number L₁···Lₙ; for projective X and nef L̄ of positive degree put dμ₍L̄,v₎ = c₁(L̄)ⁿ/(Lⁿ). On nonproper X, the degree and total-mass identity use geometric adelic intersections, as specified in §5.2, rather than an ordinary degree of the uncompactified algebraic bundle. (yuan-zhang-2025, §3.4 (end) and §3.6, pp. 78–102; Theorem 5.4.3, p. 168, yuan-zhang-2025 line 6607).
 
-*Route.* Projective models: ArithmeticDynamics §4.1a and the model measures and weak limits of TropicalAndBerkovichArithmetic §§6.2–6.4. Boundary convergence gives convergence of measures on compact subsets of X_v^an (Yuan–Zhang §3.6 local theory and §5.4).
+*Route.* For semipositive projective inputs, polarize the positive top powers of ArithmeticDynamics §4.1a: n! times the mixed product is the alternating sum, over subsets I of {1,…,n}, of the top powers of Σᵢ∈I L̄ᵢ, with sign (−1)^(n−|I|). At finite places use the mixed model products and semipositive limits of TropicalAndBerkovichArithmetic §§6.2–6.4; at infinity use ComplexComparisonPartII §C5.4 and gap:singular-pluripotential-products for the Bedford–Taylor products on singular projective varieties (yuan-zhang-2025, §2.1.1, p. 25, lines 823–827). Expand each integrable bundle as a difference of strongly nef bundles and prove decomposition independence by the multilinearity of these local products. Boundary estimates give convergence on compact subsets, and the tightness/no-mass-loss argument gives the quasi-projective mass identity (yuan-zhang-2025, §3.6 and §5.4). This constructs the signed extension here; it is not an input from ArithmeticDynamics §4.1a.
 
 The basic API comprises these facts.
 
 - c₁(L̄₁)···c₁(L̄ₙ) on X_v^an.
-- Symmetric and multilinear.
+- Symmetric and multilinear; expressing each integrable input as a difference of strongly nef bundles gives a signed expansion independent of every chosen decomposition.
 - For projective X, total mass equals the ordinary degree L₁···Lₙ. For quasi-projective X, use the geometric adelic intersection of §5.2.
 - Positive for nef bundles.
 - For model bundles it is the Monge–Ampère or Chambert-Loir measure.
@@ -525,8 +527,9 @@ The basic API comprises these facts.
 - For integrable but not nef bundles the measure need not be positive.
 - For the canonical metric of a polarized dynamical system on ℙ¹ the measure is the canonical (equilibrium) measure of ArithmeticDynamics Layer 4.
 - On ℙ¹, standard O(1) has mass 1, O(2) mass 2 and O(−1) mass −1; at good reduction these are δζ, 2δζ and −δζ. On Spec K the empty Chern product has mass 1.
+- On ℙ¹×ℙ¹ with standard product metrics, O(1,0)² and O(0,1)² have mass 0, while O(1,1)² has mass 2. Polarization gives mixed mass (2−0−0)/2 = 1. For O(−1,0) against O(0,1), the decompositions O−O(1,0) and O(1,0)−O(2,0) give 0−1 = 1−2 = −1, testing both the sign and decomposition independence.
 
-*Needs:* ArithmeticDynamics §4.1a; TropicalAndBerkovichArithmetic §§6.2–6.4; §1.6.
+*Needs:* ArithmeticDynamics §4.1a; TropicalAndBerkovichArithmetic §§6.2–6.4; ComplexComparisonPartII §C5.4 and gap:singular-pluripotential-products; §1.5; §1.6.
 
 ### 2.7 Canonical metrics over a trivially valued field
 
@@ -556,7 +559,7 @@ Spec k has one analytic point; the ℤ archimedean ray has |2|=2^t, giving 2 at 
 
 ### Dependencies
 
-TropicalAndBerkovichArithmetic §§0.1, 0.12, 0.15, 0.22, 0.23 and 6.2–6.4; ArithmeticDynamics §4.1a. The internal prerequisites are the individual subsection references above.
+TropicalAndBerkovichArithmetic §§0.1, 0.12, 0.15, 0.22, 0.23 and 6.2–6.4; ArithmeticDynamics §4.1a; ComplexComparisonPartII §C5.4 and gap:singular-pluripotential-products. The internal prerequisites are the individual subsection references above.
 
 ## Layer 3: Intersection numbers and the adelic Deligne pairing
 The global-field absolute intersection is ArithmeticDynamics §4.3a; relative Deligne pairings and the arbitrary-base extension are targets here.
@@ -745,7 +748,7 @@ Let S′ → S be a finite surjective morphism of flat quasi-projective integral
 
 ### 4.6 Heights of algebraic points for adelic line bundles
 
-Give vector-valued heights over finitely generated fields and the following normalization comparison with the supplied global-field point heights. Let k = ℤ and K a number field, or k a field and K a one-variable function field over k, and X a quasi-projective K-variety. For L̄ ∈ P̂ic(X/k) and x ∈ X(K̄) with closure x̃ (Spec of the residue field K(x)) put h_L̄(x) = deĝ(L̄|_x̃)/[K(x) : ℚ] (k = ℤ) or deĝ(L̄|_x̃)/[K(x) : K] (k a field), where deĝ is the adelic intersection number on Spec K(x) over k (residue degrees over the fixed k in the geometric case). This is Yuan's normalization: in the arithmetic case Yuan–Zhang §5.3 divide by the degree over K instead, so h_YZ = [K : ℚ]·h_L̄ (Yuan p. 64 records the difference); in the geometric case the two agree. More generally, for a finitely generated field F over k and X a quasi-projective F-variety, for integrable L̄ the vector-valued height h(x) = π_*⟨L̄|_x̃⟩/deg(x) ∈ P̂ic(F/k)_ℚ, and for H̄ ∈ P̂ic(F/k) satisfying the Moriwaki condition the real height h^H̄_L̄(x) = h(x)·H̄ᵈ⁻¹. h_L̄ is additive in L̄, functorial under pullback, invariant under Galois conjugation and independent of the field used to represent a point with K fixed. Under a finite extension K′/K, absolute arithmetic heights are invariant; geometric heights with degrees over the fixed k scale by [K′ : K], and for a model hermitian line bundle it is the metrized height of ArakelovGeometryAndAbelianHeights Layer 1 §1.12; for a bundle pulled back from P̂ic(K/k), h is constant: deĝ/[K:ℚ] arithmetically and deĝ geometrically. (yuan-2026, §4.1.2, pp. 63–64, yuan-2026 line 2131; yuan-zhang-2025, §5.3.1–5.3.5, pp. 152–157, yuan-zhang-2025 line 5945).
+Give vector-valued heights over finitely generated fields and the following normalization comparison with the supplied global-field point heights. Let k = ℤ and K a number field, or k a field and K a one-variable function field over k, and X a quasi-projective K-variety. For L̄ ∈ P̂ic(X/k) and x ∈ X(K̄) with closure x̃ (Spec of the residue field K(x)) put h_L̄(x) = deĝ(L̄|_x̃)/[K(x) : ℚ] (k = ℤ) or deĝ(L̄|_x̃)/[K(x) : K] (k a field), where deĝ is the adelic intersection number on Spec K(x) over k (residue degrees over the fixed k in the geometric case). This is Yuan's normalization: in the arithmetic case Yuan–Zhang §5.3 divide by the degree over K instead, so h_YZ = [K : ℚ]·h_L̄ (Yuan p. 64 records the difference); in the geometric case the two agree. More generally, for a finitely generated field F over k and X a quasi-projective F-variety, for integrable L̄ the vector-valued height h(x) = π_*⟨L̄|_x̃⟩/deg(x) ∈ P̂ic(F/k)_ℚ, and for H̄ ∈ P̂ic(F/k) satisfying the Moriwaki condition the real height h^H̄_L̄(x) = h(x)·H̄ᵈ⁻¹. h_L̄ is additive in L̄, functorial under pullback, invariant under Galois conjugation and independent of the field used to represent a point with K fixed. Under a finite extension K′/K, absolute arithmetic heights are invariant; geometric heights with degrees over the fixed k scale by [K′ : K], and for a model hermitian line bundle it is the metrized height of ArakelovGeometryAndAbelianHeights Layer 1 §1.12; for a bundle pulled back from P̂ic(K/k), h is constant: deĝ/[K:ℚ] arithmetically and deĝ geometrically. (yuan-2026, §4.1.2, pp. 63–64, yuan-2026 lines 2146–2170; yuan-zhang-2025, §5.3.1–5.3.5, pp. 152–157, yuan-zhang-2025 line 5945).
 
 *Route.* Restriction of adelic line bundles to the closed point x̃ (pullback along Spec K(x) → X) and the degree map on P̂ic(K(x)/k). Independence of the field of definition: projection formula for Spec K′ → Spec K(x). Vector-valued heights and the Moriwaki condition: Yuan–Zhang §5.3.
 
@@ -758,7 +761,7 @@ The basic API comprises these facts.
 - h₍f^*L̄₎ = h_L̄ ∘ f.
 - Galois invariant; independent of the field representing a point with K fixed. Finite base extension preserves absolute arithmetic heights and multiplies geometric heights over fixed k by its degree.
 - Agrees with the metrized height of the parent Layer 1 §1.12 for model bundles.
-- For O(1) on ℙⁿ with max metrics, equals HeightsRationalPointsAndObstructions §0.11 normalized height.
+- For max-metrized O(1) on ℙⁿ over a number field K, h_L̄ = h_K/[K:ℚ], where h_K is HeightsRationalPointsAndObstructions §0.11's relative height. Over a one-variable function field the heights agree with that supplier's fixed constant field.
 - Over a number field K, the height of Yuan–Zhang §5.3 is [K : ℚ]·h_L̄.
 - h(x) ∈ P̂ic(F/k)_ℚ over a finitely generated field, and h^H̄ = h·H̄ᵈ⁻¹.
 
@@ -803,17 +806,19 @@ Let k = ℤ and K a number field, or k a field and K a one-variable function fie
 
 ### 4.9 Comparison with the global-field adelic carrier
 
-Let k = ℤ and K a number field, or k a field and K a one-variable function field over k, and let X be a quasi-projective K-variety of dimension n. Write P̂ic_AD(X) for the quasi-projective adelic Picard group of ArithmeticDynamics §4.3a. The identity on projective model data (a projective model over O_K, or over the regular projective k-curve with function field K, a rational hermitian or model line bundle on it, and the boundary topology of a boundary divisor) induces a group isomorphism ι_X : P̂ic_AD(X) → P̂ic(X/k) onto the group of §1.6, with the following properties. (1) ι_X preserves underlying line bundles, commutes with tensor product and with pullback along morphisms of quasi-projective K-varieties, and maps the nef and the integrable classes of ArithmeticDynamics §4.3a onto those of §§1.5–1.6. (2) At every place v the analytic metric that ArithmeticDynamics §4.3a attaches to L̄ is the metric of ι_X L̄ on the fibre of (X/k)^an over v (§2.3); for integrable bundles the local measures of ArithmeticDynamics §4.1a, and for nef bundles of positive geometric degree the limiting measures of ArithmeticDynamics §4.4, are the measures of §2.6. (3) For integrable L̄₀, …, L̄ₙ, the intersection number of ArithmeticDynamics §4.3a is (ι_X L̄₀ ··· ι_X L̄ₙ)/a_K, the intersection number of §3.1 divided by a_K = [K : ℚ] in the arithmetic case (the normalization of its supplier HeightsRationalPointsAndObstructions §5.17b) and by a_K = 1, with residue degrees over k, in the geometric case. (4) The normalized point heights and subvariety heights of ArithmeticDynamics §4.3a are those of §§4.6 and 4.8 for ι_X L̄. (yuan-zhang-2025, §2.3 and §2.5.3, pp. 32–36 and 43–44, yuan-zhang-2025 line 1533; §5.3.1, p. 152, yuan-zhang-2025 line 5945; yuan-2026, §4.1.2, pp. 63–64, yuan-2026 line 2131.)
+Let k = ℤ and K a number field, or k a field and K a one-variable function field over k, and let X be a quasi-projective K-variety of dimension n. Write P̂ic_AD(X) for the quasi-projective adelic Picard group of ArithmeticDynamics §4.3a. The identity on projective model data (a projective model over O_K, or over the regular projective k-curve with function field K, a rational hermitian or model line bundle on it, and the boundary topology of a boundary divisor) induces a group isomorphism ι_X : P̂ic_AD(X) → P̂ic(X/k) onto the group of §1.6, with the following properties. (1) ι_X preserves underlying line bundles, commutes with tensor product and with pullback along morphisms of quasi-projective K-varieties, and maps the nef and the integrable classes of ArithmeticDynamics §4.3a onto those of §§1.5–1.6. (2) At every place v write K_v for the completion and C_v for its completed algebraic closure, and let p_v : X_Cv^an → X_Kv^an be the scalar-restriction projection. Identify X_Kv^an with the fibre of (X/k)^an → (Spec K/k)^an over the specified normalized place v. At a real place X_Kv^an = X(ℂ)/conjugation and p_v is the quotient map; at a complex place it is the identity. The local metric attached to L̄ by ArithmeticDynamics §4.3a, on X_Cv^an, equals the pullback by p_v of the fibre metric of ι_X L̄. For a projective X and a semipositive local metric, the pushforward by p_v of the positive top power supplied by ArithmeticDynamics §4.1a equals the top power of §2.6. Polarizing and taking signed differences as in §2.6 gives the same pushforward identity for mixed integrable products, independently of the decompositions. These metric and measure comparisons persist through boundary-controlled quasi-projective limits. For a nef bundle with positive geometric top degree, divide both measures by that degree; the pushforward then identifies the probability of ArithmeticDynamics §4.4 with §2.6's probability. (3) For integrable L̄₀, …, L̄ₙ, the intersection number of ArithmeticDynamics §4.3a is (ι_X L̄₀ ··· ι_X L̄ₙ)/a_K, the intersection number of §3.1 divided by a_K = [K : ℚ] in the arithmetic case (the normalization of its supplier HeightsRationalPointsAndObstructions §5.17b) and by a_K = 1, with residue degrees over k, in the geometric case. (4) The normalized point heights and subvariety heights of ArithmeticDynamics §4.3a are those of §§4.6 and 4.8 for ι_X L̄. (yuan-zhang-2025, §2.3 and §2.5.3, pp. 32–36 and 43–44, yuan-zhang-2025 line 1533; §5.3.1, p. 152, yuan-zhang-2025 line 5945; yuan-2026, §4.1.2, pp. 63–64, yuan-2026 lines 2146–2170.)
 
-*Route.* Both groups are colimits over the same projective models of model groups completed in a boundary topology given by −εD ≤ E ≤ εD for a boundary divisor D on a common dominating model, and both topologies are independent of the boundary divisor (ArithmeticDynamics §4.3a; §1.2). The identity on model data is therefore a uniformly continuous isomorphism of model groups in both directions and extends to the completions (§1.2). On model data both analytic metrics are the model metrics and both intersection numbers are the projective intersection of HeightsRationalPointsAndObstructions §§5.17a–5.17b, up to the stated factor a_K; both realizations, both measures and both intersections are continuous in the boundary topology, so uniqueness of continuous extension gives (2)–(4).
+*Route.* Both groups are colimits over the same projective models of model groups completed in a boundary topology given by −εD ≤ E ≤ εD for a boundary divisor D on a common dominating model, and both topologies are independent of the boundary divisor (ArithmeticDynamics §4.3a; §1.2). The identity on model data is therefore a uniformly continuous isomorphism of model groups in both directions and extends to the completions (§1.2). On model data the metric comparison is pullback along p_v; finite-place measures compare by TropicalAndBerkovichArithmetic §6.2's scalar-extension pushforward, with no extension-degree factor. At real places invariant norms descend along the conjugation quotient, as in GrossZagierAndArithmeticHeights §2.13, and the measure downstairs is the pushforward of the complex measure. Uniform semipositive limits preserve the top-power comparison; §2.6's polarization and decomposition independence give the mixed integrable comparison. Boundary approximation, with §2.6's tightness and mass control, gives the quasi-projective comparison. On model data the two intersection numbers are the projective intersection of HeightsRationalPointsAndObstructions §§5.17a–5.17b up to a_K; boundary continuity and the height formulas give (3)–(4).
 
 **Checks.**
 
-- On ℙ¹ over ℚ, standard O(1) with max metrics at every place has the same metric on both sides, self-intersection 0 on both sides and h([1:2]) = log 2 on both sides. Agreement of underlying algebraic bundles alone would not separate it from O(1) with the Fubini–Study metric at infinity, whose self-intersection on ℙ¹_ℤ is 1/2.
+- On ℙ¹ over ℚ, standard O(1) with max metrics at every place has the same metric after pullback along p_v, self-intersection 0 on both sides and h([1:2]) = log 2 on both sides. Agreement of underlying algebraic bundles alone would not separate it from O(1) with the Fubini–Study metric at infinity, whose self-intersection on ℙ¹_ℤ is 1/2.
 - Over a quadratic number field K and X = Spec K, O(1) pulled back from Spec ℤ has §3.1 degree 2 and normalized degree 2/a_K = 1 on the side of ArithmeticDynamics §4.3a; both sides give point height 1. Omitting a_K would make the two variety heights differ by the factor 2.
 - Over k(t), with model O(1) on ℙ¹, the moving point t has height 1 and a constant point has height 0 on both sides.
+- For ℙ¹/ℚ at the real place, i and −i are distinct in ℙ¹(ℂ) but have one image q under p_v. The pushforward of (δ_i + δ_−i)/2 is δ_q, of mass 1; multiplying the upstairs measure by 2 gives mass 2 downstairs, so projection does not supply probability normalization. For the constant metric O(1), the norm of its frame is e⁻¹ upstairs and after pullback from downstairs.
+- Standard O(2) has positive curvature mass 2 on both sides of p_v and probability mass 1 after division by 2. O(−1) has signed mass −1 under the owned §2.6 extension, and has no semipositive input in ArithmeticDynamics §4.1a. On ℙ¹×ℙ¹, polarizing O(1,0) and O(0,1) gives (2−0−0)/2 = 1; replacing the first input by O(−1,0) gives −1, testing the mixed signed comparison.
 
-*Needs:* ArithmeticDynamics §§4.1a, 4.3a and 4.4; HeightsRationalPointsAndObstructions §§5.17a–5.17b; §1.2; §1.5; §1.6; §2.3; §2.6; §3.1; §4.6; §4.8.
+*Needs:* ArithmeticDynamics §§4.1a, 4.3a and 4.4; TropicalAndBerkovichArithmetic §§6.2–6.4; GrossZagierAndArithmeticHeights §2.13; HeightsRationalPointsAndObstructions §§5.17a–5.17b; §1.2; §1.5; §1.6; §2.3; §2.6; §3.1; §4.6; §4.8.
 
 ### Examples
 
@@ -821,7 +826,7 @@ On Spec ℤ, c=0 gives three small sections −1,0,1 and ĥ⁰=log 3; c=1 gives 
 
 ### Dependencies
 
-ArakelovGeometryAndAbelianHeights §§1.1–1.15; HeightsRationalPointsAndObstructions §§0.11 and 5.17a–5.17b; ArithmeticDynamics §§4.1a, 4.3a and 4.4; SchemeAndStackFoundations §§0.20–0.21; Mathlib `NumberField.prod_abs_eq_one`; Mathlib `Projectivization.logHeight`. The internal prerequisites are the individual subsection references above.
+ArakelovGeometryAndAbelianHeights §§1.1–1.15; HeightsRationalPointsAndObstructions §§0.11 and 5.17a–5.17b; ArithmeticDynamics §§4.1a, 4.3a and 4.4; TropicalAndBerkovichArithmetic §§6.2–6.4; GrossZagierAndArithmeticHeights §2.13; SchemeAndStackFoundations §§0.20–0.21; Mathlib `NumberField.prod_abs_eq_one`; Mathlib `Projectivization.logHeight`. The internal prerequisites are the individual subsection references above.
 
 ## Layer 5: Equidistribution, invariant extensions and the adelic Hodge bundle
 Quasi-projective equidistribution is ArithmeticDynamics §4.4; through the comparison of §4.9 it is used for the non-degenerate and invariant-family statements.
@@ -879,7 +884,7 @@ The basic API comprises these facts.
 
 Let S be a quasi-projective variety over a number field K, (X, f, L) a polarized dynamical system over S, Y ⊂ X a non-degenerate closed subvariety and B̄ ∈ P̂ic(S)_ℚ. (1) For every c > 0 there are ε > 0 and a dense open U ⊂ Y with h₍L̄_f₎(y) ≥ ε·h_B̄(π(y)) − c on U(K̄). (2) If {y_m} is a generic sequence in Y(K̄) with h₍L̄_f₎(y_m) → 0, then for every place v the Galois orbits equidistribute for dμ₍L̄_f|_Y, v₎. (yuan-zhang-2025, Theorems 6.2.2 and 6.2.3, pp. 188–189, yuan-zhang-2025 line 7542; demarco-mavraki-ye-2026, Proof of Theorem 1.8 in §4, p. 21 (arXiv v3), demarco-mavraki-ye-2026 line 688).
 
-*Route.* (1) is §4.7(2) for Y → S and L̄_f|_Y (Yuan–Zhang Theorem 6.2.2). (2) The existence of the sequence forces h(Y) = 0 by the fundamental inequality §4.8 (heights of the nef L̄_f|_Y are ≥ 0, so e₁ = 0). Transport L̄_f|_Y to the carrier of ArithmeticDynamics §4.3a by §4.9, apply ArithmeticDynamics §4.4 (Yuan–Zhang Theorem 6.2.3), and identify its limiting measure with the measure of §2.6 by §4.9(2).
+*Route.* (1) is §4.7(2) for Y → S and L̄_f|_Y (Yuan–Zhang Theorem 6.2.2). (2) The existence of the sequence forces h(Y) = 0 by the fundamental inequality §4.8 (heights of the nef L̄_f|_Y are ≥ 0, so e₁ = 0). Transport L̄_f|_Y to the carrier of ArithmeticDynamics §4.3a by §4.9, apply ArithmeticDynamics §4.4 (Yuan–Zhang Theorem 6.2.3), and push the orbit probabilities and their limit forward along p_v of §4.9(2) to obtain the measure of §2.6 on the global analytic fibre.
 
 **Checks.**
 
@@ -931,7 +936,7 @@ Let k₀ be a finitely generated field over ℚ of transcendence degree d. A pol
 The basic API comprises these facts.
 
 - (B; H̄₁, …, H̄_d; τ).
-- All H̄ᵢ nef and big.
+- All H̄ᵢ are nef; the polarization is big precisely when every H̄ᵢ is also big.
 - h^B_L as a class in HeightClass(X(k̄₀)) (HeightsRationalPointsAndObstructions Layer 0).
 - Equals the Yuan–Zhang height h^(H̄)₍L̄₎ for a model L̄.
 - h^(B′)₍k′₀₎ ∘ ι = h^B₍k₀₎ for ι : k₀ ≅ k′₀.
@@ -965,12 +970,21 @@ With k₀, B, X as in §6.1: (1) h^B₍L⊗M₎ = h^B_L + h^B_M; (2) for a quasi
 
 Let A be an abelian variety over k₀ and L a symmetric ample line bundle. The limit ĥ^B_L(P) = lim 4⁻ⁿ h^B_L([2ⁿ]P) exists for P ∈ A(k̄₀), is independent of the representative of h^B_L, is quadratic (ĥ^B_L([N]P) = N²ĥ^B_L(P)), ≥ 0, and vanishes on torsion; if B is big then ĥ^B_L(P) = 0 iff P is torsion. For k₀ a number field it is [k₀ : ℚ] times the usual absolute Néron–Tate height, with the relative Moriwaki normalization of §6.1. It equals the height of the invariant extension L̄₍[2]₎ of §5.1 paired with H̄₁···H̄_d. (moriwaki-2000, Propositions 3.4.1–3.4.2, p. 16, moriwaki-2000 line 708; gao-habegger-2019, (A.2) and Proposition A.2, pp. 55–56, gao-habegger-2019 line 2592).
 
+The basic API comprises these facts.
+
+- The displayed limit defines ĥ^B_L : A(k̄₀) → ℝ; changing the initial height by a bounded function leaves the limit unchanged.
+- For all integers N, ĥ^B_L([N]P) = N²ĥ^B_L(P); the height is nonnegative and vanishes on torsion.
+- If B is big, its zero set is exactly the torsion subgroup.
+- For a number field k₀, ĥ^B_L = [k₀:ℚ] times the absolute canonical height; in general it is the vector-valued invariant height of §5.1 paired with the polarization tuple.
+
 *Route.* Tate's limit for the bounded-error class (HeightsRationalPointsAndObstructions §0.18 Tate limit). Nonnegativity from boundedness below of the ample height; kernel by Northcott (§6.2(4)) applied to the subgroup generated by P (Moriwaki Proposition 3.4.1).
 
 **Checks.**
 
 - For k₀ = ℚ it is the Néron–Tate height of HeightsRationalPointsAndObstructions Layer 0.
-- For a torsion point P of order 2, [2ⁿ]P=0 for n≥1 and the normalized limit is 0; for a point of height a, heights at [0],[1],[2] are 0,a,4a.
+- For a torsion point P of order 2, [2ⁿ]P=0 for n≥1 and the normalized limit is 0; for a point of canonical height a, heights at [0],[1],[2] are 0,a,4a. This distinguishes quadratic from linear scaling.
+- Over a quadratic number field, a point of absolute canonical height a has relative Moriwaki height 2a; dividing by [k₀:ℚ] = 2 recovers a, not 2a.
+- Over ℚ(t), a polarization with one H̄ᵢ = O with trivial metric gives every polarized height and every canonical limit the value 0. A constant nontorsion point of an elliptic curve over ℚ remains nontorsion over ℚ(t) and has height 0 for this polarization; the torsion converse therefore requires bigness.
 
 *Needs:* §6.2; HeightsRationalPointsAndObstructions §§0.18–0.20; §5.1.
 
@@ -1249,20 +1263,27 @@ The basic API comprises these facts.
 
 ### 8.5 Admissible section divisors and evaluation
 
-With π : X → S as above and a section x : S → X, put O(x)_a = (x, id_X)^*D, an admissible adelic extension of O(x(S)). For every admissible adelic line bundle L̄ on X: (1) the evaluation isomorphism π_*⟨O(x), L⟩ → x^*L is an isometry π_*⟨O(x)_a, L̄⟩ ≅ x^*L̄; (2) there is a canonical isometry π_*⟨O(x)_a, O(x)_a⟩ ≅ −π_*⟨O(x)_a, w⟩ = −x^*w. (yuan-2026, §2.3, p. 33; Proposition 2.7, pp. 33–34, yuan-2026 line 1129).
+With π : X → S as above and a section x : S → X, put O(x)_a = (x∘π, id_X)^*D, an admissible adelic extension of O(x(S)). For every admissible adelic line bundle L̄ on X: (1) the evaluation isomorphism π_*⟨O(x), L⟩ → x^*L is an isometry π_*⟨O(x)_a, L̄⟩ ≅ x^*L̄; (2) there is a canonical isometry π_*⟨O(x)_a, O(x)_a⟩ ≅ −π_*⟨O(x)_a, w⟩ = −x^*w. (yuan-2026, §2.3, p. 33; Proposition 2.7, pp. 33–34, yuan-2026 line 1129).
 
-*Route.* (1) The algebraic evaluation isomorphism exists. At v ∈ S^an its log norm is the integral of log ‖1‖₍O(x)_a₎ against c₁(L̄_v) (Yuan Proposition 2.7, pp. 33–34). Admissibility gives c₁(L̄_v) = deg(L_v)μ_a and the canonical Green normalization makes this integral zero. Full faithfulness then gives the isometry; pulling back only the ω pairing does not prove this for arbitrary L̄. (2) Apply (1) to L̄ = O(x)_a: π_*⟨O(x)_a, O(x)_a⟩ ≅ x^*(x, id)^*D = x^*Δ^*D, and Δ^*D ≅ −w by the adjunction isometry (1) of §8.3; while π_*⟨O(x)_a, w⟩ ≅ x^*w by (1).
+*Route.* (1) The algebraic evaluation isomorphism exists. At v ∈ S^an its log norm is the integral of log ‖1‖₍O(x)_a₎ against c₁(L̄_v) (Yuan Proposition 2.7, pp. 33–34). Admissibility gives c₁(L̄_v) = deg(L_v)μ_a and the canonical Green normalization makes this integral zero. Full faithfulness then gives the isometry; pulling back only the ω pairing does not prove this for arbitrary L̄. (2) Apply (1) to L̄ = O(x)_a: π_*⟨O(x)_a, O(x)_a⟩ ≅ x^*(x∘π, id_X)^*D = x^*Δ^*D, and Δ^*D ≅ −w by the adjunction isometry (1) of §8.3; while π_*⟨O(x)_a, w⟩ ≅ x^*w by (1).
+
+The basic API comprises these facts.
+
+- Pullback of the canonical diagonal bundle along (x∘π, id_X) : X → X ×_S X defines O(x)_a with underlying line O(x(S)) and fibre degree 1.
+- For every admissible integrable L̄, the evaluation map from the Deligne pairing π_*⟨O(x)_a,L̄⟩ to x^*L̄ is the canonical algebraic evaluation map and is an isometry.
+- Admissible adjunction identifies π_*⟨O(x)_a,O(x)_a⟩ with −x^*w, and pairing with w gives x^*w.
 
 **Checks.**
 
-- For S = Spec K and x ∈ C(K): ⟨x, x⟩_a = −⟨x, ω⟩_a, Zhang's admissible adjunction formula.
-- If x*w has degree a, admissible adjunction gives ⟨O(x)ₐ,O(x)ₐ⟩=−a and ⟨O(x)ₐ,w⟩=a; at a=1 these are −1 and 1.
+- On a geometric curve fibre O(x)_a has degree 1, whereas the trivial bundle has degree 0; replacing the diagonal pullback by a trivial line fails this test.
+- For L̄ = π^*O(c), evaluation gives O(c) on both sides, since deg O(x) = 1. At c = 1 the metric shift is 1 on both sides, whereas the trivial-line substitute gives shift 0 on the pairing side.
+- If x^*w has degree 1, adjunction gives self-pairing degree −1 and pairing with w degree +1; reversing the dual sign would give +1 in the first equality.
 
 *Needs:* §8.3; §3.3.
 
 ### 8.6 The vertical adelic Picard group
 
-For π : X → S as above, P̂ic(X/k)_vert = ker(P̂ic(X/k)_int → Pic(X)): integrable adelic line bundles with trivial underlying algebraic bundle (equivalently O(E) for adelic divisors E with zero underlying divisor). This is not the group of divisors supported in singular fibres of a compactification. (yuan-2026, Theorem 2.8(1), p. 34, yuan-2026 line 1150; yuan-zhang-2025, Theorem 6.5.1, p. 203, yuan-zhang-2025 line 8160).
+For π : X → S as above, P̂ic(X/k)_vert = ker(P̂ic(X/k)_int → Pic(X)): integrable adelic line bundles with trivial underlying algebraic bundle (equivalently O(E) for integrable adelic divisors E with zero underlying divisor). This is not the group of divisors supported in singular fibres of a compactification. (yuan-2026, Theorem 2.8(1), p. 34, yuan-2026 line 1150; yuan-zhang-2025, Theorem 6.5.1, p. 203, yuan-zhang-2025 line 8160).
 
 *Route.* Definition; it is a group since P̂ic_int is.
 
@@ -1270,8 +1291,8 @@ The basic API comprises these facts.
 
 - ker(P̂ic(X/k)_int → Pic(X)).
 - Contains π^* of the base kernel.
-- Equals {O(E) : E adelic with underlying divisor 0}.
-- An integrable class belongs precisely when its underlying class in Pic(X) is zero; the kernel is closed under tensor, dual and pullback. A choice of algebraic trivialization identifies it with O(E) for E of underlying divisor zero, modulo principal trivializations.
+- Equals {O(E) : E an integrable adelic divisor with underlying divisor 0}.
+- An integrable class belongs precisely when its underlying class in Pic(X) is zero; the kernel is closed under tensor, dual and pullback. A choice of algebraic trivialization identifies it with O(E) for integrable E of underlying divisor zero, modulo principal trivializations.
 
 **Checks.**
 
@@ -1279,7 +1300,8 @@ The basic API comprises these facts.
 - The trivial bundle is vertical.
 - O(x)_a for a section x is not vertical: its underlying bundle O(x(S)) is nontrivial.
 - π^*(ker(P̂ic(S/k)_int → Pic(S))) ⊂ P̂ic(X/k)_vert.
-- O(1) pulled from Spec ℤ has underlying fibre degree 0 and is vertical; O(x)ₐ has underlying curve degree 1 and is not vertical; the identity class has degree and metric shift 0.
+- O(1) pulled from Spec ℤ has underlying fibre degree 0, curvature 0 and is integrable vertical; O(x)ₐ has underlying curve degree 1 and is not vertical; the identity class has degree and metric shift 0.
+- On the square complex torus E(ℂ) = ℂ/(ℤ+iℤ), realized by an elliptic curve over ℚ with j = 1728, write z = x+iy and set f(z) = Σₙ≥₁ 2⁻ⁿ cos(2π4ⁿx). The bound Σ2⁻ⁿ = 1 gives a continuous conjugation-invariant metric ‖1‖ = exp(−f), with trivial model metrics at finite places, hence an ambient adelic divisor (0,f) with zero underlying divisor. For the flat Laplacian ∂²_x+∂²_y its Fourier coefficient at (4ⁿ,0) is −2π²8ⁿ, unbounded. Integrable curvature on a compact curve is a finite signed measure, whose Fourier coefficients are bounded by its total variation. Thus this continuous adelic metric is not integrable and belongs to neither side of the integrable kernel description; continuity alone does not suffice.
 
 *Needs:* §1.5.
 
@@ -1588,17 +1610,17 @@ For C/K smooth projective geometrically connected of genus g > 1 over a number f
 
 ### 10.13 The admissible Noether divisor Ξ_S
 
-Let k be ℤ or ℚ, S flat quasi-projective normal integral over k, π : X → S smooth of genus g > 1. The semi-canonical Noether isomorphism 12λ_S ≅ π_*⟨ω, ω⟩ (on S, where Δ_S is empty; StableReductionPartII MC.5/semi-canonical-noether), unique up to sign, defines Ξ_S ∈ D̂iv(S/k) with zero underlying divisor and O(Ξ_S) = 12λ̄_S − π_*⟨w, w⟩; it is independent of the sign. Its Green function is δ_v + ε_v at a normalized discrete v and δ(X_v) − 4g log(2π) at a normalized archimedean v. If the rational-base family has a stable compactification, the image of Ξ_S in D̂iv(S_ℚ/ℚ) is E₍S_ℚ₎ + Δ₍S_ℚ₎. (yuan-2026, §4.5.2, pp. 90–91, yuan-2026 line 3029).
+Let k be ℤ or ℚ, S flat quasi-projective normal integral over k, π : X → S smooth of genus g > 1. The semi-canonical Noether isomorphism 12λ_S ≅ π_*⟨ω, ω⟩ (on S, where Δ_S is empty; StableReductionPartII MC.5/semi-canonical-noether), unique up to sign, defines Ξ_S ∈ D̂iv(S/ℤ) with zero underlying divisor and O(Ξ_S) = 12λ̄_S − π_*⟨w, w⟩, using the arithmetic λ̄_S and w over ℤ even when S is over ℚ (§1.6); it is independent of the sign. Its Green function is δ_v + ε_v at a normalized discrete v and δ(X_v) − 4g log(2π) at a normalized archimedean v. The forgetful/base-change homomorphism D̂iv(S/ℤ) → D̂iv(S_ℚ/ℚ) restricts projective models to ℚ and forgets their archimedean metrics. If the rational-base family has a stable compactification, it sends Ξ_S to E₍S_ℚ₎ + Δ₍S_ℚ₎. (yuan-2026, §4.5.2, pp. 90–91, yuan-2026 lines 3030–3074; yuan-zhang-2025, §2.5.5.)
 
-*Route.* Define Ξ_S as the divisor of the semi-canonical section of 12λ̄_S − π_*⟨w, w⟩; the sign ambiguity does not change the divisor of a section (|−s| = |s|). Local Green functions: at discrete v, compare with Zhang's ω_a² = ω²_model − ε and the local Noether formula (δ_v nodes); at archimedean v, the arithmetic Noether formula §10.12 fibrewise. Geometric part: compare with §10.4 and the universal Noether formula.
+*Route.* The inverse Noether isomorphism gives a nowhere-vanishing algebraic section of 12λ_S − π_*⟨ω,ω⟩. Give this line the arithmetic metric 12λ̄_S − π_*⟨w,w⟩ and take the section's adelic divisor Ξ_S; the sign ambiguity does not change it (|−s| = |s|). Local Green functions: at discrete v, compare with Zhang's ω_a² = ω²_model − ε and the local Noether formula (δ_v nodes); at archimedean v, the arithmetic Noether formula §10.12 fibrewise. Geometric part: compare with §10.4 and the universal Noether formula.
 
 The basic API comprises these facts.
 
-- Ξ_S ∈ D̂iv(S/k), underlying divisor 0.
+- Ξ_S ∈ D̂iv(S/ℤ), underlying divisor 0, for S over either ℤ or ℚ.
 - O(Ξ_S) = 12λ̄_S − π_*⟨w, w⟩.
 - Green function δ_v + ε_v at discrete v.
 - Green function δ(X_v) − 4g log 2π at archimedean v.
-- Image over S_ℚ/ℚ equals E + Δ.
+- The homomorphism D̂iv(S/ℤ) → D̂iv(S_ℚ/ℚ) sends Ξ_S to E₍S_ℚ₎ + Δ₍S_ℚ₎ when the rational-base family has the stated stable compactification; the arithmetic metrics are forgotten before this geometric equality.
 - Changing the semi-canonical Noether isomorphism by its allowed sign leaves the Green function unchanged; the zero underlying divisor and stated local Green functions determine Ξ_S.
 
 **Checks.**
@@ -1607,8 +1629,9 @@ The basic API comprises these facts.
 - At a discrete v of good reduction the Green function is 0.
 - At an archimedean point v the Green function is δ(X_v) − 4g log 2π, which by Wilms is > −2g log(2π⁴) − 4g log 2π.
 - Changing the Noether section s to −s has |−s|=|s|, hence Green difference 0; at a g=2 unit node, g_Ξ=δ+ε=7/6 and at good reduction 0.
+- For S = Spec ℚ, D̂iv(S/ℚ) = 0 and its analytification over trivially valued ℚ is a single point. The arithmetic Ξ_S can have value 7/6 at a genus-two normalized unit type-zero reduction and an archimedean value δ(X_∞)−8log(2π); its image in D̂iv(S/ℚ) is nevertheless 0. Thus the arithmetic carrier cannot be replaced by the geometric one.
 
-*Needs:* §5.4; §8.3; §10.12; §10.4; StableReductionPartII §MC.5/semi-canonical-noether; StableReductionPartII §MC.5/integral-noether.
+*Needs:* §1.6; §5.4; §8.3; §10.12; §10.4; StableReductionPartII §MC.5/semi-canonical-noether; StableReductionPartII §MC.5/integral-noether.
 
 ### 10.14 What can and cannot be globalized
 
