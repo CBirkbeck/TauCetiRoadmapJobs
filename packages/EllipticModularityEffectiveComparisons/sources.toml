@@ -277,3 +277,35 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "Locators use arXiv 0807.4954v5 (3 March 2009), Appendix Theorem 6.1, pp.8–10; the first posting was in 2008."
 cited_for = ["§5.3b"]
+
+[[source]]
+id = "elkik-1990"
+locator_scheme = "theorem"
+authors = "Renée Elkik"
+title = "Le théorème de Manin–Drinfeld"
+year = 1990
+locator = "Opening theorem, p.59; §I, pp.60–62; §§II–III, pp.62–66"
+url = "https://www.numdam.org/item/AST_1990__183__59_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1990__183__59_0.pdf"
+fetched_at = "2026-10-25T14:31:51Z"
+sha256 = "7618e61b8ec287b9fcce61fb4ac7d89ea98d58ca9274fa899ed52cda670b19b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["§5.10a geometric cuspidal-divisor torsion"]
+
+[[source]]
+id = "mazur-1977"
+locator_scheme = "section"
+authors = "Barry Mazur"
+title = "Modular curves and the Eisenstein ideal"
+year = 1977
+locator = "Introduction, Theorems 4 and 6, pp.34–35; point table p.40; column definitions p.41"
+url = "https://www.numdam.org/item/PMIHES_1977__47__33_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1977__47__33_0.pdf"
+fetched_at = "2026-10-25T14:32:12Z"
+sha256 = "c20c7e73be20d6cc961127504b6be019f7707e0ee6154ba1fac0bbfd5973be8a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["§5.1 exceptional-prime point exhaustions"]

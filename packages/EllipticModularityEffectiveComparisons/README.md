@@ -8,7 +8,7 @@ This Part II continues EllipticCurveModularity: its Layers R29.3–R29.6 end at 
 
 The following objects retain their existing owners. Mathlib supplies prime factorization, Möbius convolution, integer and field norms and the Minkowski ideal-class bound. Tau Ceti supplies the actual newspace, diamond eigenspaces, characteristic-zero Sturm equality, geometric torsion action, isogenies and geometric kernels. ModularForms Layers 4, 8G and 10 supply primitive decomposition, coefficient-field orbit degree and the full Γ₀ dimension formula. The coefficient-degree estimate is consumed as the dimension consequence of the independent conjugate eigenlines in Layer 8G. SerreWeightAndLevelOptimisation §§2.8, 4.8, 6.1–6.3 owns optimized lifts and the deletion level. NeronModelsAndSemistableAbelianVarieties §5.3h owns the full residual conductor formula. ModularCurvesPartII §§16.2–16.6 and AutomorphicGaloisRepresentations §§6.1, 6.4 own rational-newform elliptic quotients, their Tate comparison and exact conductor. EisensteinIdealAndRationalTorsion §§2.3, 6.3–6.4 and 7.9 owns the nonzero finite Eisenstein quotient, its cusp formal immersion and the potential-good-reduction consequence. HeightsRationalPointsAndObstructions §§1.15b–1.18 owns the full torsion specialization under e<q−1. ImaginaryQuadraticClassNumber H1.1–H1.4 and H3.6 owns quadratic integral models and the exhaustive class-number-one classification. These results are imports rather than targets below.
 
-Layers 0–5 supply the effective residual comparisons used by continuations of EllipticCurveModularity. The newspace correction formula, the arithmetic norm comparison, Kraus’s filters and realization arguments, the prime and composite rational cyclic-degree classification, and the five-level Cartan argument belong here. The general ideal-valued Sturm comparison and the quantitative elliptic-isogeny bound required by those arguments are explicit targets, with full coefficient and number-field generality. The winding application retains its specific mixed-level boundary and nonvanishing calculation; general modular curves, integral Hecke pairings and Jacobian quotients are supplied by their named owners. The finite rational-point and residual-image conclusions are mathematical exhaustiveness theorems, with all primes in their quantified ranges.
+Layers 0–5 supply the effective residual comparisons used by continuations of EllipticCurveModularity. The newspace correction formula, the arithmetic norm comparison, Kraus’s filters and realization arguments, the prime and composite rational cyclic-degree classification, and the five-level Cartan argument belong here. The general ideal-valued Sturm comparison and the quantitative elliptic-isogeny bound required by those arguments are explicit targets, with full coefficient and number-field generality. The general geometric cuspidal-divisor torsion theorem and the four exceptional-prime point exhaustions belong here. The winding application retains its specific mixed-level boundary and nonvanishing calculation; general modular curves, integral Hecke pairings and Jacobian quotients are supplied by their named owners. The finite rational-point and residual-image conclusions are mathematical exhaustiveness theorems, with all primes in their quantified ranges.
 
 ## Conventions
 
@@ -75,7 +75,7 @@ Consume §§1.15b–1.18 for the formal identity chart and full torsion speciali
 
 ### From TauCetiRoadmap.ModularCurvesPartII
 
-Consume §§3.8, 5.2 and 9.5–9.7 for finite-level Borel/Cartan curves, their moduli and the split-normalizer identification; §§9.1, 13.1–13.3, 14.15 and 17.3 for Jacobians, Abel–Jacobi maps, Hecke correspondences and differential comparisons, and §§4.1–4.2, 4.8 and 5.5 for cusp charts; §§16.2–16.6 for newform quotients and their dimension. Sections 3.8 and 5.2 supply the mixed curves and their j-maps by the open subgroup with the prescribed coprime level factors. Section 13.1 supplies Jacobian pullback and norm for their finite maps, and §§13.2–13.3 supply the Hecke compatibility. The specific split-to-nonsplit correspondence is the target of §5.10 here. The exact-divisor quotient retains the r-level.
+Consume §§3.8, 5.2 and 9.5–9.7 for finite-level Borel/Cartan curves, their moduli and the split-normalizer identification; §§9.1, 13.1–13.3, 14.15 and 17.3 for Jacobians, Abel–Jacobi maps, Hecke correspondences and differential comparisons, and §§4.1–4.2, 4.8 and 5.5 for cusp charts; §§16.2–16.6 for newform quotients and their dimension. Sections 14.11–14.12 supply the geometric pairing and relative symbol lattice, not a geometric cuspidal-torsion assertion. Sections 3.8 and 5.2 supply the mixed curves and their j-maps by the open subgroup with the prescribed coprime level factors. Section 13.1 supplies Jacobian pullback and norm for their finite maps, and §§13.2–13.3 supply the Hecke compatibility. The specific split-to-nonsplit correspondence is the target of §5.10 here. The exact-divisor quotient retains the r-level.
 
 What ModularCurvesPartII must provide (gap:mixed-cusp-charts): For coprime positive auxiliary and Cartan levels, supply smooth cusp charts on the normalized mixed curves away from 6 times the level, with their actual cusp residue fields and compatibility with the level maps.
 
@@ -103,7 +103,11 @@ Consume ImaginaryQuadraticClassNumber H1.1–H1.4 for the actual quadratic integ
 
 ### From TauCetiRoadmap.ModularSymbolsPadicLFunctions
 
-Consume §§0.6–0.8 and 1.1–1.2 for homological symbol/differential duality, rational Drinfeld–Manin splitting, integral periods and Mellin comparison. With the conventions above, W(f)=iL(f,1)/(2π) and the normalized differential period is −L(f,1). Cuspidal divisor differences have finite order; their individual degree-one representatives need not be rational.
+Consume §§0.6–0.8 and 1.1–1.2 for homological symbol/differential duality, rational Drinfeld–Manin splitting, integral periods and Mellin comparison. With the conventions above, W(f)=iL(f,1)/(2π) and the normalized differential period is −L(f,1). The passage from the rational projector to geometric cuspidal-divisor torsion is the target of §5.10a, using the actual Jacobian period lattice.
+
+### From TauCetiRoadmap.MordellLawrenceVenkatesh
+
+Consume §8.11 for the Abel–Jacobi identification of the complex points of the actual Picard Jacobian with the dual of holomorphic differentials modulo the integral period lattice. It identifies integral first homology and is compatible with finite-map pushforward. The comparison is used on each geometrically connected component after an embedding into ℂ; §5.10a supplies the modular cuspidal-torsion consequence.
 
 ### From TauCetiRoadmap.EulerSystemsAndKolyvaginSystems
 
@@ -183,7 +187,7 @@ martinValue(1)=0. The value at 0 has no modular-level interpretation.
 
 ### 0.3 Prime-power inversion of the divisor multiplicity
 
-For prime p and e≥0, the Dirichlet-convolution square λ₀=μ*μ of the native Möbius arithmetic function has λ₀(p^0)=1, λ₀(p)=−2, λ₀(p²)=1, and λ₀(p^e)=0 for e≥3. Consequently λ₀*τ is the convolution identity, where τ counts positive divisors. (martin-2003, §2, equations (13)–(15), p.9, martin-2003 line 430.)
+For prime p and e≥0, the Dirichlet-convolution square λ₀=μ*μ of the native Möbius arithmetic function has λ₀(p^0)=1, λ₀(p)=−2, λ₀(p²)=1, and λ₀(p^e)=0 for e≥3. Consequently λ₀*τ is the convolution identity, where τ counts positive divisors. (martin-2003, §2, equations (13)–(15), pp.8–9, martin-2003 lines 429–454.)
 
 Work under the following standing conditions for this assertion: p is prime; e is a natural number; λ₀ is the native integer Möbius convolution square and τ=σ₀.
 
@@ -1175,15 +1179,31 @@ The image-containment predicate has the following API.
 
 ### 5.1 The CM prime-isogeny exceptions
 
-If E/ℚ has a rational prime isogeny of degree r∈{19,43,67,163}, then E has geometric complex multiplication. Therefore a non-CM curve with a nontrivial rational cyclic isogeny has a rational prime isogeny with degree r∈{2,3,5,7,11,13,17,37}. (lemos-2017, §2, start of proof of Theorem 1.1, p.5, lemos-2017 line 187.)
+For each r∈{19,43,67,163}, prove that the noncuspidal rational point set Y₀(r)(ℚ) on the smooth projective X₀(r) consists of exactly one point P_r, with the following j-invariant and full geometric endomorphism-order discriminant. These are four point-exhaustion targets, in addition to the degree-membership theorem of §4.7. (mazur-1977, Introduction, table p.40 and its column definitions p.41, mazur-1977 lines 300–574; mazur-1978, Introduction, table and CM explanation, p.129, mazur-1978 lines 14–29.)
 
-Work under the following standing conditions for this assertion: E/ℚ admits a rational prime isogeny of degree r∈{19,43,67,163}; For the second conclusion, E/ℚ is non-CM and admits a rational cyclic isogeny of degree greater than one.
+| r | Y₀(r)(ℚ) | j(P_r) | CM discriminant |
+| --- | --- | --- | --- |
+| 19 | {P₁₉} | −96³ = −884736 | −19 |
+| 43 | {P₄₃} | −960³ = −884736000 | −43 |
+| 67 | {P₆₇} | −5280³ = −147197952000 | −67 |
+| 163 | {P₁₆₃} | −640320³ = −262537412640768000 | −163 |
 
-A proof route is as follows. Choose any prime-order subgroup in the original stable cyclic kernel. Apply §4.7 and the exact rational-point tables at the four exceptional prime levels, whose j-values are −96³,−960³,−5280³,−640320³. Identify their CM orders by class polynomials. The rational-point exhaustion is the Layer 4 classification specialized to these prime levels, with the CM comparison supplied by ComplexMultiplicationAndExplicitReciprocity §3.1.
+A proof route at level 19 proves that the genus-one curve, with a rational cusp as origin, has rank zero and rational group of order three by elliptic descent and torsion specialization; its two rational cusps leave exactly one noncuspidal point. At levels 43,67,163 use the nonconstant map X₀(r)→A_r to the nonzero finite Eisenstein quotient. Use EisensteinIdealAndRationalTorsion §6.4’s exact rational group: its order is the numerator of (r−1)/12, hence 7,11,27 respectively. Prove that all rational fibres over that group together contain exactly the two cusps and one noncuspidal point. These three finite-fibre exhaustions are targets here, using descent and the actual curve, quotient and j-maps. Formal immersion controls cusp residue disks; it does not determine other fibres. The genus and cusp formulas give genera 3,5,13 and two rational cusps in these three cases. (mazur-1977, Introduction, Theorems 4 and 6, pp.34–35, mazur-1977 lines 73–97, and point table p.40.)
+
+Identify each remaining point by proving the four exact class-polynomial evaluations H_(−r)(X)=X−j(P_r). Use the supplied normalized j comparison and integral class polynomials, with exact bounds on their q-expansions to fix the integer values; numerical approximations alone do not identify the full endomorphism order. The general class-polynomial and CM comparison is supplied by ComplexMultiplicationAndExplicitReciprocity §3.1 and §§5.1–5.5, and the class-number-one input by ImaginaryQuadraticClassNumber H3.6.
+
+Deduce that if E/ℚ has a rational prime isogeny of degree r∈{19,43,67,163}, then E has geometric complex multiplication. Therefore a non-CM curve with a nontrivial rational cyclic isogeny has a rational prime isogeny with degree r∈{2,3,5,7,11,13,17,37}. Choose a prime-order subgroup of its stable cyclic kernel, apply §4.7, and use the four point exhaustions above to exclude the four exceptional degrees. (lemos-2017, §2, start of proof of Theorem 1.1, p.5, lemos-2017 line 187.)
 
 Non-CM means End_(Qbar)(E)=ℤ; End_Q(E)=ℤ alone would not exclude CM.
 
-*Needs:* Layer 4.7 Mazur’s rational prime-isogeny theorem; EllipticCurves Layer 1; ComplexMultiplicationAndExplicitReciprocity §3.1 and §5.1.
+**Checks.**
+
+- At r=19 the genus-one rational group has three elements and there are two rational cusps, leaving 3−2=1 noncuspidal point. Its class polynomial is X+884736, which vanishes at −96³; merely knowing that 19 is an allowed degree does not give this count.
+- At r=43 the allowed-degree list contains 43, whereas the point theorem gives the singleton j-image {−884736000}. H_(−43)=X+884736000 vanishes there and takes value 884736000 at j=0, so a different CM j-value is excluded as well.
+- At r=67 and 163 the singleton values are −147197952000 and −262537412640768000; the respective polynomials X+147197952000 and X+262537412640768000 have these roots and not zero. The genera are 5 and 13 and the finite quotient groups have orders 11 and 27; neither group order equals the total rational point count three. A genus-one torsion count cannot replace these finite-fibre exhaustions.
+- The identity isogeny has degree one and no prime-order kernel subgroup. The condition that the cyclic degree exceed one is required before choosing r.
+
+*Needs:* For the point exhaustions, ModularCurvesPartII §§5.2, 13.1–13.3, 16.2–16.6, 17.3 for the curves, Jacobians, quotient and j-maps; EisensteinIdealAndRationalTorsion §§2.3, 6.3–6.4 for the nonzero quotient and finite rational group; HeightsRationalPointsAndObstructions §§1.4–1.7, 1.13–1.14, 1.18 and EllipticCurves Layers 6–7 for descent and torsion; ModularForms Layers 0 and 10 for normalized q-expansions and genus/cusp formulas; ImaginaryQuadraticClassNumber H3.6 and ComplexMultiplicationAndExplicitReciprocity §3.1, §§5.1–5.5 for CM. For the CM corollary, the four point exhaustions in this subsection, Layer 4.7 Mazur’s rational prime-isogeny theorem and EllipticCurves Layer 1.
 
 ### 5.2 Serre’s projective inertia bound
 
@@ -1349,6 +1369,23 @@ Finite-map pullback multiplies divisor degree; degree-zero classes stay degree z
 
 *Needs:* ModularCurvesPartII §§9.1, 13.1–13.3; ModularCurvesPartII §§16.2–16.6; ArithmeticGaloisRepresentations §§4.2–4.5; ModularForms Layer 10.
 
+### 5.10a Geometric cuspidal-divisor torsion
+
+For every number field K and every smooth projective geometrically connected congruence modular curve X/K, prove that every integral degree-zero divisor D on X_K̄ supported on geometric cusps has torsion class in Jac(X)(K̄). This includes nonsquarefree levels and Cartan quotients. Individual cusps need not be K-rational, and no common order independent of X is asserted. (elkik-1990, opening theorem, p.59, elkik-1990 lines 23–30; §I, pp.60–62, elkik-1990 lines 46–71, 119–132; §§II–III, pp.62–66.)
+
+A proof route starts on a fine full-level component at level N≥3. The rational Drinfeld–Manin projector, a polynomial in geometric Hecke correspondences, preserves the Hodge filtration. Transport the splitting through geometric duality to a rational projection H₁(X(ℂ),cusps;ℚ)→H₁(X(ℂ),ℚ), and prove that this projection preserves integration of holomorphic differentials. Thus an integral relative chain with boundary D has integration functional in Λ⊗ℚ, where Λ is the image of H₁(X(ℂ),ℤ) in H⁰(X,Ω¹) dual. This compatibility is a target here, using the relative symbol comparison and the actual Abel–Jacobi period identification; an abstract rational retraction alone is insufficient. Clearing its denominator by an integer n>0 puts that functional in Λ, so n[D]=0 in the actual geometric Jacobian.
+
+For a general congruence curve choose a finite full-level map π:X′→X of positive degree after a finite field extension and work componentwise. Pullback sends D to an integral degree-zero cuspidal divisor. If nπ*[D]=0, the norm identity π_*π*=[deg π] gives n deg(π)[D]=0. An embedding K̄→ℂ detects equality of these geometric divisor classes, so this proves geometric torsion over K̄. The argument retains ramification multiplicities in pullback and norm. (elkik-1990, reduction to full level, p.60, elkik-1990 line 49; Hodge functoriality, §§II–III, elkik-1990 lines 135–173, 225–239.)
+
+**Checks.**
+
+- On X₀(1)=ℙ¹ every degree-zero divisor class is zero of order one; D=0 also has order one on every X. Torsion does not mean nonzero torsion.
+- On X₀(11), [0−∞] has exact order five. In the period model ℂ/(ℤ+iℤ), the class of 1/5 similarly has order five, while √2 has infinite order: rational period coordinates are essential.
+- For a finite map of degree three, if the pulled-back class is killed by five, norm gives 15[D]=0. It does not give exact order 15: D=0 still has order one.
+- In ℝ/ℤ, a=√2 and b=1/11−√2 have a+b=1/11, killed by 11, although neither a nor b is torsion. Torsion of the sum in §5.12 cannot replace torsion of every individual cusp difference.
+
+*Needs:* ModularSymbolsPadicLFunctions §§0.6–0.8 for duality, periods and the rational projector; ModularCurvesPartII §§3.8, 5.2, 13.1–13.3, 14.11–14.12 for full-level maps, Jacobian pullback/norm and geometric relative symbols; MordellLawrenceVenkatesh §8.11 for the actual Abel–Jacobi period lattice.
+
 ### 5.11 The winding class selects exactly nonvanishing central periods
 
 In the full-new quotient B of Jac(X₀(rp²)/w_(p²)), let e_B be the rational winding class and I_e its annihilator in the rational Hecke algebra. Every surviving eigenform in the winding quotient B/I_eB has L(f,1)≠0. The oriented differential period is −L(f,1); the unscaled f(z)dz period is iL(f,1)/(2π). (darmon-merel, Proposition 7.1 proof, author-version pp.20–21, with the orientation convention above, darmon-merel line 614.)
@@ -1417,11 +1454,17 @@ For a rational point P on X0,ns^+(r,p) and a cusp infinity over K=ℚ(ζ_p)^+, i
 
 Work under the following standing conditions for this assertion: r∈{2,3,5,7,13}; p is prime outside that set; A is the specified quotient with A(ℚ) finite; P is a rational point of X0,ns^+(r,p); infinity is a cusp over K=ℚ(ζ_p)^+; φ(P) is the Abel–Jacobi image in A(K).
 
-A proof route is as follows. For σ∈Gal(K/ℚ), (σ−1)[P−∞] is a cuspidal divisor and is torsion by Manin–Drinfeld. A common multiple n kills these finitely many differences, so nφ(P)∈A(ℚ). Finiteness of A(ℚ) makes this rational point torsion, and hence φ(P) is torsion.
+A proof route is as follows. For σ∈Gal(K/ℚ), (σ−1)[P−∞] is a cuspidal divisor and has torsion class by §5.10a, applied to each individual difference [∞−σ∞]. A common positive annihilator n for these finitely many classes makes nφ(P) Galois fixed and hence rational. If m is the exponent of A(ℚ), then mnφ(P)=0.
 
 A(ℚ) finite does not directly imply A(K) finite; the cuspidal Galois argument is required.
 
-*Needs:* Layer 5.13 The nonzero finite winding quotient; ModularCurvesPartII §§9.1, 13.1–13.3; ModularCurvesPartII §§3.8, 5.2, 9.5–9.7; ModularSymbolsPadicLFunctions §§0.6–0.8.
+**Checks.**
+
+- If all individual cusp differences are killed by n=5 and A(ℚ) has exponent m=7, then 5φ(P) is rational and 35φ(P)=0. The bound concerns this image, not every element of A(K).
+- For σ fixing P, σ[P−∞]−[P−∞]=[∞−σ∞]. Reversing this difference negates the class and preserves its annihilator, agreeing with the norm and path conventions of §§5.10a–5.12.
+- If infinity is rational, each difference is zero, so n=1 suffices and mφ(P)=0; if also m=1 then φ(P)=0.
+
+*Needs:* Layer 5.10a Geometric cuspidal-divisor torsion; Layer 5.13 The nonzero finite winding quotient; ModularCurvesPartII §§9.1, 13.1–13.3; ModularCurvesPartII §§3.8, 5.2, 9.5–9.7; ModularSymbolsPadicLFunctions §§0.6–0.8.
 
 ### 5.17 Formal immersion excludes every denominator away from p
 
@@ -1598,11 +1641,11 @@ The identity isogeny does not qualify. No statement about non-CM curves without 
 
 ### Examples
 
-At residual p=11 and local q=3, a quadratic Tate twist has squared diagonal eigenvalues 9 and 1. A nonsplit conjugate pair with one eigenvalue 1 would have both equal to 1, so these are excluded; for q=43≡−1 the squared pair is 1,1 and the obstruction vanishes. At p=41, Serre’s inertia order bound is (41−1)/4=10>5, excluding A₄,S₄,A₅. At p=11 a nonsplit normalizer has order 240, while the full group has order 13200; its involution exchanges the two conjugate eigenvalues, rather than fixing two rational eigenlines. The genus-zero coordinate has t=−16 at r=2 giving j=0, and t=8 or −64 giving j=1728. At r=5, t=−1 gives j=64. At r=13 the four signed divisors give exactly the four displayed integer j-values. The winding differential f=t+2t²+O(t³) has cotangent w dt, not a₀dt=0; reversing the path reverses the period sign but not its nonvanishing. A degree-p degeneracy map sends a degree-one divisor by pullback to degree p, while degree zero remains zero. The rank-zero quotient is essential: finiteness is not inferred for the entire Jacobian of X₀(37).
+At residual p=11 and local q=3, a quadratic Tate twist has squared diagonal eigenvalues 9 and 1. A nonsplit conjugate pair with one eigenvalue 1 would have both equal to 1, so these are excluded; for q=43≡−1 the squared pair is 1,1 and the obstruction vanishes. At p=41, Serre’s inertia order bound is (41−1)/4=10>5, excluding A₄,S₄,A₅. At p=11 a nonsplit normalizer has order 240, while the full group has order 13200; its involution exchanges the two conjugate eigenvalues, rather than fixing two rational eigenlines. The genus-zero coordinate has t=−16 at r=2 giving j=0, and t=8 or −64 giving j=1728. At r=5, t=−1 gives j=64. At r=13 the four signed divisors give exactly the four displayed integer j-values. The winding differential f=t+2t²+O(t³) has cotangent w dt, not a₀dt=0; reversing the path reverses the period sign but not its nonvanishing. A degree-p degeneracy map sends a degree-one divisor by pullback to degree p, while degree zero remains zero. The rank-zero quotient is essential: finiteness is not inferred for the entire Jacobian of X₀(37). At r=43 the point exhaustion gives j=−884736000, beyond the fact that 43 is an allowed degree. For the cusp descent, n=5 and m=7 give 35φ(P)=0; the exact order p of the sum D supplies no annihilator for its individual summands.
 
 ### Dependencies
 
-Layer 4; EllipticCurves Layers 1–5; ArithmeticGaloisRepresentations §§2.3–2.4,4.2–4.5,6.1–6.4; ModularCurvesPartII §§9.5–9.7,13.1–13.3,16.2–16.6; ModularSymbolsPadicLFunctions §§0.6–0.8,1.1–1.2; ComplexMultiplicationAndExplicitReciprocity §§3.1,5.1–5.5; ArakelovGeometryAndAbelianHeights §§4.4,5.9; FaltingsFinitenessAndIsogenyTheorems §§R28.4.5–R28.4.7; EulerSystemsAndKolyvaginSystems §§4.7,5.13; gap:mixed-cusp-charts, gap:chen-winding-comparison, gap:positive-characteristic-support, gap:modular-rank-zero and gap:quantitative-abelian-periods; the owned mixed-boundary and split-height targets; and the full-torsion specialization theorem of HeightsRationalPointsAndObstructions §1.18. Each finite image theorem includes an exhaustive all-primes bound.
+Layer 4; EllipticCurves Layers 1–5; ArithmeticGaloisRepresentations §§2.3–2.4,4.2–4.5,6.1–6.4; ModularCurvesPartII §§9.5–9.7,13.1–13.3,14.11–14.12,16.2–16.6; MordellLawrenceVenkatesh §8.11; ModularSymbolsPadicLFunctions §§0.6–0.8,1.1–1.2; ComplexMultiplicationAndExplicitReciprocity §§3.1,5.1–5.5; ArakelovGeometryAndAbelianHeights §§4.4,5.9; FaltingsFinitenessAndIsogenyTheorems §§R28.4.5–R28.4.7; EulerSystemsAndKolyvaginSystems §§4.7,5.13; gap:mixed-cusp-charts, gap:chen-winding-comparison, gap:positive-characteristic-support, gap:modular-rank-zero and gap:quantitative-abelian-periods; the owned geometric cuspidal-torsion, exceptional-prime point-exhaustion, mixed-boundary and split-height targets; and the full-torsion specialization theorem of HeightsRationalPointsAndObstructions §1.18. Each finite image theorem includes an exhaustive all-primes bound.
 
 ## Downstream consumers
 
@@ -1616,6 +1659,8 @@ Source identifiers below are the lifetime keys in sources.toml. Page and theorem
 - **bennett-siksek-2020.** Michael A. Bennett and Samir Siksek, [A conjecture of Erdős, supersingular primes and short character sums](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf), Annals of Mathematics 191 (2020), 355–392. Equation (3), Theorem 3 and Lemmas 2.1–2.2, pp.358–359; the larger threshold majorants and Theorem 4, p.360; irreducibility applications, pp.361–363.
 - **kraus-1997.** Alain Kraus, [Majorations effectives pour l’équation de Fermat généralisée](https://doi.org/10.4153/CJM-1997-056-2), Canadian Journal of Mathematics 49 (1997), 1139–1161. §3.1–3.3, equations (7)–(9), Theorems 3–4 and Lemma 1, pp.1143–1146; Appendix II, Propositions 1–2 and corollary, pp.1158–1160.
 - **mazur-1978.** Barry Mazur, with an appendix by Dorian Goldfeld, [Rational isogenies of prime degree](https://www.math.columbia.edu/~goldfeld/Mazur-Goldfeld1978.pdf), Inventiones Mathematicae 44 (1978), 129–162. Theorem 1 and table, pp.129–130; §5, character analysis; §7, Theorem 7.1, pp.153–155.
+- **mazur-1977.** Barry Mazur, [Modular curves and the Eisenstein ideal](https://www.numdam.org/item/PMIHES_1977__47__33_0.pdf), Publications Mathématiques IHÉS 47 (1977), 33–186. Introduction, Theorems 4 and 6, pp.34–35; point table p.40, column definitions p.41.
+- **elkik-1990.** Renée Elkik, [Le théorème de Manin–Drinfeld](https://www.numdam.org/item/AST_1990__183__59_0.pdf), Astérisque 183 (1990), 59–67. Opening theorem p.59; §I pp.60–62; §§II–III pp.62–66.
 - **lemos-2017.** Pedro Lemos, [Serre’s uniformity conjecture for elliptic curves with rational cyclic isogenies](https://arxiv.org/pdf/1702.01985v2), arXiv:1702.01985v2 (2017). Theorem 1.1, p.2; Theorem 1.4, p.3; Proposition 2.1, p.4; Proposition 2.2, pp.4–5; Theorem 2.3, p.6; §2 tables, pp.5–7; §3, Lemma 3.2 and Theorems 3.3–3.4, pp.8–10. The journal edition is Trans. AMS 371 (2019), 137–146; no journal-numbering claim is made here.
 - **darmon-merel.** Henri Darmon and Loïc Merel, [Winding quotients and some variants of Fermat’s Last Theorem](https://www.math.mcgill.ca/darmon/pub/Articles/Research/18.Merel/paper.pdf), author version dated 9 September 2007 of J. reine angew. Math. 490 (1997), 81–100. Theorem 6.1, Proposition 6.5, Propositions 7.1–7.2 and Lemmas 8.2–8.3, author-version pp.16–24. Its boundary proof is extended in §5.12 to the five genus-zero auxiliary prime levels.
 - **banwait-najman-padurariu.** Barinder S. Banwait, Filip Najman and Oana Padurariu, [Cyclic isogenies of elliptic curves over fixed quadratic fields](https://arxiv.org/pdf/2206.08891v3), arXiv:2206.08891v3 (2026). §1, Theorem 1.1 and Table 1.1, p.2; §2, Mazur’s strategy, pp.5–6. The rational-curve classification and original Kenku references are the portions used.

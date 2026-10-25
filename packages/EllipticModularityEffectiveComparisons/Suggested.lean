@@ -19,7 +19,11 @@ The removed-prime exponent bound and Kraus's rational and full-two-torsion
 realization theorems are not statable at the pins: the arithmetic elliptic
 conductor, full residual Artin conductor and Serre weight interfaces are missing.
 The split-Cartan rational-point theorem lacks its modular curve and cusp/CM
-loci; the elliptic image exclusion is stated separately on native torsion. The mixed winding quotient, its nonvanishing and cusp formal immersion
+loci; the elliptic image exclusion is stated separately on native torsion.
+The geometric cuspidal-divisor torsion theorem and the four exceptional-prime
+rational-point exhaustions likewise lack the congruence modular curves, geometric
+cusp divisors and their Picard Jacobians at the pins.
+The mixed winding quotient, its nonvanishing and cusp formal immersion
 lack mixed modular Jacobians, integral Hecke quotients and their integral models.
 The general quantitative elliptic-isogeny bound lacks the stable Faltings-height
 interface. These headlines remain README targets without replacement predicates or admitted data.
