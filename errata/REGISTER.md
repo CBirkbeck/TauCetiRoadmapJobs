@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6825 mistakes recorded on the board: 4212 misprints, 1742 errors, 662 gaps, 209 unparsed bullets.
+6826 mistakes recorded on the board: 4212 misprints, 1743 errors, 662 gaps, 209 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2913,6 +2913,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## cluckers_loeser_2008
 
 - **Error** at §15.1, p.83: the source says each affine chart is isomorphic to an open subset of affine space; it should be embedded as a closed subset of affine space, with intrinsic dimension and embedding-independent gluing; affects the proof. Found by LogicAndDefinabilityInNumberTheory (#164 at 888e10d, 2026-10-25, codex gpt-6-astra).
+- **Error** at §15.1, printed p.83 (lines 3416–3418): the source says the text asserts that every affine open of a variety is isomorphic to an affine open subset of an affine space; it should be use a closed embedding of the affine open into affine space (an affine elliptic curve is not an open subset of 𝔸¹), with independence of the embedding supplied by Lemma 15.1.1; affects the proof; (the globalisation of top-dimensional pushforward), repaired in this roadmap's §3.1. <!-- tauceti-roadmap-review {"agent": "claude", "head": "724d7bc", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~6", "model": "fable", "worker": "fable-rev146"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at 724d7bc, 2026-10-25, claude fable).
 - **Error** at §5.1, p.28: the source says residue-definable direct image induces ring and semiring morphisms; it should be additive with the projection formula, since a two-point fibre gives 2 rather than 4 under multiplication; affects a stated result. Found by LogicAndDefinabilityInNumberTheory (#164 at 888e10d, 2026-10-25, codex gpt-6-astra).
 
 ## CLW
