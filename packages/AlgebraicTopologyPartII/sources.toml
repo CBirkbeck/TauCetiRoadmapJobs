@@ -8,7 +8,6 @@ title = "A geometric version of the circle method"
 year = 2020
 locator_scheme = "section"
 locator = "§1 p.894; §2 proof of Lemma 2.8, p.907; §3 Lemma 3.9, p.919; §7 Definition 7.3, Lemmas 7.4–7.6 and Corollary 7.5, pp.941–945"
-cited_for = ["Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5"]
 url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p04-s.pdf"
 fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p04-s.pdf"
 fetched_at = "2026-10-24T03:00:25Z"
@@ -16,6 +15,7 @@ sha256 = "f20c87e337c054e42134bf2daf577203ce4b391e0d22ff59b9425d1249c33c53"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-24"
+cited_for = ["Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5"]
 
 [[source]]
 id = "BW"
@@ -26,7 +26,6 @@ doi = "10.1007/s00222-020-00965-8"
 arxiv = "1801.00872v3"
 locator_scheme = "theorem"
 locator = "Sections 1.1–1.6, internal pp.8–31; Lemma 3.5, pp.41–42; Lemma 3.15, pp.46–47; Lemma 5.9, p.62"
-cited_for = ["Layer 10", "Layer 11", "Layer 12", "Layer 13", "Layer 6", "Layer 7", "Layer 8", "Layer 9"]
 url = "https://arxiv.org/abs/1801.00872v3"
 fetched_from = "https://arxiv.org/pdf/1801.00872v3"
 fetched_at = "2026-10-24T03:01:52Z"
@@ -35,6 +34,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "The text read is arXiv:1801.00872v3 (67 pages). The cited theorem and equation numbers agree with the journal version; every README page locator uses v3 internal pagination, rather than the journal pages in the design. The journal author URLs timed out; the arXiv text was fetched through the sources service."
+cited_for = ["Layer 10", "Layer 11", "Layer 12", "Layer 13", "Layer 6", "Layer 7", "Layer 8", "Layer 9"]
 
 [[source]]
 id = "B19"
@@ -43,7 +43,6 @@ title = "The period-index problem for real surfaces"
 year = 2019
 locator_scheme = "section"
 locator = "§2.1–2.3, pp.71–75; §3.2, pp.77–78; §4.2, diagrams (4.3)–(4.5), pp.82–83; Proposition 6.6 proof, pp.93–95; §7.1–7.4, pp.97–103; §8.1, pp.104–107; loop applications p.91"
-cited_for = ["Layer 12", "Layer 14", "Layer 15", "Layer 16", "Layer 7"]
 url = "https://www.numdam.org/item/10.1007/s10240-019-00108-7.pdf"
 fetched_from = "https://www.numdam.org/item/10.1007/s10240-019-00108-7.pdf"
 fetched_at = "2026-10-24T02:58:45Z"
@@ -51,6 +50,7 @@ sha256 = "8dfc0f221ab510ba1ecfe7c5b5fde12c217019f33d704ea89ce1a0c144398d3b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
+cited_for = ["Layer 12", "Layer 14", "Layer 15", "Layer 16", "Layer 7"]
 
 [[source]]
 id = "CEF"
@@ -59,7 +59,6 @@ title = "Representation stability in cohomology and asymptotics for families of 
 year = 2014
 locator_scheme = "section"
 locator = "Proposition 3.3, pp.19–20; Theorem 3.7, pp.21–22"
-cited_for = ["Layer 2"]
 url = "https://www.math.uchicago.edu/~farb/papers/Pn-FqT.pdf"
 fetched_from = "https://www.math.uchicago.edu/~farb/papers/Pn-FqT.pdf"
 fetched_at = "2026-10-24T02:58:48Z"
@@ -67,6 +66,7 @@ sha256 = "efb6da223a591e8778ab26fac29aae201fdc40c9daf6471763184ef736a17227"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
+cited_for = ["Layer 2"]
 
 [[source]]
 id = "HILTON"
@@ -76,11 +76,11 @@ year = 1955
 doi = "10.1112/jlms/s1-30.2.154"
 locator_scheme = "theorem"
 locator = "Theorem A, pp.154–155; Corollary 4.10, p.162"
-cited_for = ["Layer 4"]
 url = "https://doi.org/10.1112/jlms/s1-30.2.154"
 licence_class = "none"
 status = "uncertified"
 version_note = "Publisher locator only. The sources service reached the DOI landing page, which returned HTTP 403; no legal readable publisher text was obtained. The secondary use in BS Lemma 7.6 was read, but does not certify the Hilton text."
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "SERRE"
@@ -89,7 +89,6 @@ title = "Homologie singulière des espaces fibrés. Applications"
 year = 1951
 locator_scheme = "section"
 locator = "Chapter V §3 Proposition 3, pp.492–494; §6 Lemma 7 and Corollary 2, pp.497–498"
-cited_for = ["Layer 4"]
 url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL7235285843586540944_Serre_The_se.pdf"
 fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL7235285843586540944_Serre_The_se.pdf"
 fetched_at = "2026-10-24T02:59:21Z"
@@ -97,6 +96,7 @@ sha256 = "e12bdd477d3e1ebccced80d18f8ee6d0708f4a1bc2afbeaa065da9e734ce6be8"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "SULLIVAN"
@@ -105,7 +105,6 @@ title = "Infinitesimal computations in topology"
 year = 1977
 locator_scheme = "section"
 locator = "Introduction, pp.269–270; §11 loop models, pp.311–312"
-cited_for = ["Layer 4"]
 url = "https://www.numdam.org/item/10.1007/BF02684341.pdf"
 fetched_from = "https://www.numdam.org/item/10.1007/BF02684341.pdf"
 fetched_at = "2026-10-24T02:59:22Z"
@@ -113,6 +112,7 @@ sha256 = "ba6e3f93cad5e39559642920223b99a5657d3afb3a26a8a9037da30482b13d93"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
+cited_for = []
 
 [[source]]
 id = "PHAM"
@@ -121,7 +121,6 @@ title = "Formules de Picard-Lefschetz généralisées et ramification des intég
 year = 1965
 locator_scheme = "section"
 locator = "Part I §2, Theorem 1 and deformation-retraction lemma, pp.337–338"
-cited_for = ["Layer 5"]
 url = "https://www.numdam.org/item/BSMF_1965__93__333_0.pdf"
 fetched_from = "https://www.numdam.org/item/BSMF_1965__93__333_0.pdf"
 fetched_at = "2026-10-24T02:59:23Z"
@@ -129,6 +128,7 @@ sha256 = "a3b848f1c530ff387adbe47592954b0df09285059cc5f1214294cdf7d79eacda"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
+cited_for = ["Layer 5"]
 
 [[source]]
 id = "BROUGHTON"
@@ -136,8 +136,7 @@ authors = "S. Allen Broughton"
 title = "Milnor numbers and the topology of polynomial hypersurfaces"
 year = 1988
 locator_scheme = "section"
-locator = "Theorem 1.2, p.219; Definition 3.1 and examples, pp.225–226; §4 Proposition 4.1, Corollary 4.2, Lemma 4.3 and Theorem 1.2 proof, pp.228–232; local Milnor/Morse prerequisites remain G1"
-cited_for = ["Layer 4"]
+locator = "Theorem 1.2, p.219; equation (2.1), p.220; Definition 3.1 and examples, pp.225–226; proof of Proposition 3.2(b), p.226; §4 Proposition 4.1, Corollary 4.2, Lemma 4.3 and Theorem 1.2 proof, pp.228–232"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0092/LOG_0016.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0092/LOG_0016.pdf"
 fetched_at = "2026-10-24T03:00:37Z"
@@ -145,7 +144,8 @@ sha256 = "afd5141b22e0b2890aa2daaaabf603aaa66945dc4992d06ff596080b9ae6f968"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
-version_note = "Institutional scan recognised by OCR; Theorem 1.2 is on printed p.219. For a regular fibre its fibre Milnor number is zero, leaving the total Milnor number."
+version_note = "Institutional scan recognised by OCR; Theorem 1.2 is on printed p.219. Theorem 1.2 concerns every fibre, with sphere count equal to total minus fibre Milnor number; the fibre term is zero at regular values."
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "EP"
@@ -155,7 +155,6 @@ year = 2014
 arxiv = "1401.0846v3"
 locator_scheme = "section"
 locator = "§2.3 definable normality, pp.10–12; §4.1 Theorems 4.1,4.7, pp.46–50; §4.2 Theorems 4.8–4.9 and Remark 4.10, pp.50–51"
-cited_for = ["Layer 8"]
 url = "https://arxiv.org/abs/1401.0846v3"
 fetched_from = "https://arxiv.org/pdf/1401.0846v3"
 fetched_at = "2026-10-24T03:00:49Z"
@@ -164,6 +163,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Use v3 internal theorem numbering: Theorems 4.1, 4.7–4.9; no assertion about published numbering."
+cited_for = ["Layer 8"]
 
 [[source]]
 id = "MATHER"
@@ -172,7 +172,6 @@ title = "Notes on Topological Stability"
 year = 1970
 locator_scheme = "section"
 locator = "Section 11 Proposition 11.1, original notes p.62, PDF p.34; control data in Sections 7 and 10"
-cited_for = ["Layer 16"]
 url = "https://web.math.princeton.edu/facultypapers/mather/notes_on_topological_stability.pdf"
 fetched_from = "https://web.math.princeton.edu/facultypapers/mather/notes_on_topological_stability.pdf"
 fetched_at = "2026-10-24T03:01:36Z"
@@ -181,3 +180,75 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "The institutional author scan has two original pages on many PDF pages; the isotopy lemma is on PDF p.34, left original page 62. The cache text is OCR."
+cited_for = ["Layer 16"]
+
+[[source]]
+id = "DIMCA"
+authors = "Alexandru Dimca"
+title = "Monodromy and Betti numbers of weighted complete intersections"
+year = 1985
+venue = "Topology 24"
+doi = "10.1016/0040-9383(85)90009-6"
+locator_scheme = "theorem"
+locator = "Lemma 4"
+url = "https://doi.org/10.1016/0040-9383(85)90009-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["16.1"]
+
+[[source]]
+id = "BRUMFIEL"
+authors = "G. W. Brumfiel"
+title = "A Hopf fixed point theorem for semi-algebraic maps"
+year = 1992
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0084616"
+locator_scheme = "page"
+locator = "pp.163–169, Hopf fixed-point theorem"
+url = "https://doi.org/10.1007/bfb0084616"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.3"]
+
+[[source]]
+id = "SCHEIDERER"
+authors = "Claus Scheiderer"
+title = "Real and Étale Cohomology"
+year = 1994
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0074269"
+locator_scheme = "theorem"
+locator = "Corollary 18.11"
+url = "https://doi.org/10.1007/bfb0074269"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["11.5"]
+
+[[source]]
+id = "MILNOR-STASHEFF"
+authors = "John W. Milnor; James D. Stasheff"
+title = "Characteristic Classes"
+year = 1974
+locator_scheme = "theorem"
+locator = "Theorem 11.14, pp.132–133; Corollary 11.12, p.130"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnstas.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnstas.pdf"
+fetched_at = "2026-10-25T04:15:44Z"
+sha256 = "e5a712237dd7959acfbac914fb51b8395f656a1edee86b77d72b2cc8595b3868"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["12.3"]
+
+[[source]]
+id = "KRASNOV"
+authors = "V. A. Krasnov"
+title = "On equivariant Grothendieck cohomology of a real algebraic variety, and its applications"
+year = 1994
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+cited_for = ["12.3"]
+status = "waived"
