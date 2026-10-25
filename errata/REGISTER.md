@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5308 mistakes recorded on the board: 3439 misprints, 1319 errors, 415 gaps, 135 unparsed bullets.
+5324 mistakes recorded on the board: 3447 misprints, 1321 errors, 420 gaps, 136 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -143,6 +143,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (TwistedAutomorphicDescents, #1535 at 00c9576, 2026-10-25): Gap** in JZ2020 at Theorem 4.8, pp.780–781 (line 1865–1866): the unramified computation in the stated generality is deferred to joint work described as forthcoming. It needs a published proof for all cases. Affects a stated result.
 - **Unparsed** (TwistedAutomorphicDescents, #1535 at 00c9576, 2026-10-25): Gap** in JZ2020 at Appendix B, proof of Theorem B.2, pp.819–820: nonvanishing of the normalized operator is inferred from nonvanishing of each rank-one factor. A composition of nonzero operators can vanish, so a separate argument is needed. Affects the proof.
 - **Unparsed** (TwistedAutomorphicDescents, #1535 at 00c9576, 2026-10-25): Misprint** in JZ2020 at §7.2, p.809: the regular case is treated with no smaller group for every type. For quasi-split U_{2n} the largest Bessel partition [2n−1,1] has stabilizer U₁. Affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "00c9576", "job": "REV-PKG-TwistedAutomorphicDescents", "model": "opus", "worker": "fable-rev106"} -->
+- **Unparsed** (LogicAndDefinabilityInNumberTheory, #164 at d36cfa5, 2026-10-25): Error** in koenigsmann_defining_z at Lemma 13, closing clause, p.82: the source says J_ab is the Jacobson radical of T_ab when ∞∉Δ and the dyadic condition holds; it fails for Δ=∅ (J=ℚ, Jac(ℚ)=0), so it needs Δ≠∅ as in Lemma 14; affects a stated result.
 
 ## A
 
@@ -4592,6 +4593,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Kisin17
 
 - **Misprint** at proof of Lemma 1.2.18, p.16: the source says g₀ in G(O_L) and the comparison g̃ in G(S); it should be G(L) and G(S[1/p]), the output being the coset g₀G(O_L); affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Misprint** at proof of Lemma 1.2.18, p.16, lines 708 and 718: the source says the rational comparison elements belong to G(O_L) and G(S); it should be G(L) and G(S[1/p]), retaining their integral right cosets; affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 
 ## Kisin–Pappas, Integral models of Shimura varieties with parahoric level structure (2018)
 
@@ -4620,6 +4622,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Koenigsmann, Defining ℤ in ℚ, Ann. Math. 183 (2016) (read in arXiv v2)
 
 - **Misprint** at Proposition 6 (with ℤ_(∞)=[−4,4]) and Remark 8(a), dyadic table row (6,15): the source says the row (6,15) is sent to (1,1,0); it should be a triple giving 5 mod 8, since (1,1,0) gives −21≡3 mod 8 (the triple (1,1,1) gives 69≡5); affects the proof. Found by  (#164 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## koenigsmann_defining_z
+
+- **Misprint** at Corollary 22, p.90: the source says the class-one clause uses R[1]_p, which is never defined; it should be S_p of Definition 19, as the proof's appeal to Lemma 20 shows; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
+- **Misprint** at proof of Corollary 22, p.91: the source says the guard is p∈k+ℤ_(2); it should be p∈k+8ℤ_(2); affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
+- **Misprint** at proof of Proposition 10(b), p.81: the source says R[5]_p is T₋₂p,₋p+T₂p,₋p and R[7]_p is T₋p,₋p+T₂p,p; it should be T₋₂,₋p+T₂,₋p and T₋₁,₋p+T₋₂,p as in Definition 7; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
+- **Error** at proof of Proposition 6, table, p.78: the source says row (6,15) uses (x₂,x₃,x₄)=(1,1,0), giving −21≡3 mod 8; it should be a triple such as (1,1,1), giving 69≡5 mod 8 as required; affects the proof. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
 
 ## Kogan–Miller
 
@@ -4721,8 +4730,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## KP18
 
 - **Gap** at proof of Lemma 3.1.17, p.169: the source says the source proves convergence in a topology for which Ŵ(A)[1/p] is not complete; it should be use the p-adic topology and Zink's logarithmic coordinates; affects the proof; corrected in print at KPZ26 §7.3.1(2), p.86. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Gap** at proof of Lemma 3.1.17, p.169: the source says the rationalized Zink construction converges in a topology for which that ring is not complete; it should be justified using the integral lattice's p-adic neighborhoods and logarithmic coordinates; affects the proof; corrected in print at KPZ26 §7.3.1(2), p.86. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 - **Error** at proof of Lemma 3.1.9, p.166: the source says the first-order comparison c to be determined by a Frobenius-compatibility square; it should be construct c by relative-frame factorization, since the square loses information after p-torsion base change; affects the proof; corrected in print at KPZ26 Lemma 5.1.15 and Remark 5.1.17, pp.51–52. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Error** at proof of Lemma 3.1.9, p.166: the source says a Frobenius square determines the first-order comparison, although it loses information after p-torsion base change; it should be constructed through relative-frame factorization; affects the proof; corrected in print at KPZ26 Lemma 5.1.15 and Remark 5.1.17, pp.51–52. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 - **Gap** at §3.2.12, p.173: the source says the source chooses a tensor-preserving Ψ constant modulo a_E without any compatibility of c with the tensors; it should be assume the very-good condition; affects a stated result; corrected in print at KPZ26 Definition 5.2.5 and §7.1.4, and KZ25 §3.2.5 (C). <!-- tauceti-roadmap-review {"agent": "claude", "head": "6280fea", "job": "REV-PKG-FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII", "model": "opus", "worker": "fable-rev71"} -->. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Gap** at §3.2.12, p.173: the source says a tensor-preserving rigid section exists without requiring tensor compatibility of the canonical first-order comparison; it should be conditional on very-goodness before constructing that section; affects a stated result; corrected in print at KPZ26 Definition 5.2.5 and §7.1.4, and KZ25 §3.2.5(C). <!-- tauceti-roadmap-review {"agent": "codex", "head": "e873ba6ace6ebb6e514078125b8138475b57e1c6", "job": "REV-PKG-FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII~2", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 
 ## KPZ
 
@@ -4738,6 +4750,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## KPZ26
 
 - **Gap** at proof of Corollary 6.3.5, p.71: the source says the source chooses each Λ_i⊕Λ̄_i self-dual and calls the result a lattice chain; it should be pair Λ_i with the ψ-dual of Λ_{−i}, since self-dual members of a segment with two or more lattices are incomparable; affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Gap** at proof of Corollary 6.3.5, p.71, lines 3139–3144: the source says each paired lattice is self-dual and the collection is a chain; it should be a chain pairing Λ_i with the dual of Λ_(−i), preserving nesting and indexed duality; affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 6.1.9, p.66, lines 2913–2914: the source says the lattice being dualized after invariants also has the inverse-power/different twist; it should be the original lattice (π^mΛ)^Γ, with dual (π^(−m)δ⁻¹Λ∨)^Γ; affects the proof. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 
 ## KreckStolz
 
@@ -4812,6 +4826,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## KZ25
 
 - **Gap** at Proposition 3.3.4, p.25: the source says the source deduces adaptedness from Proposition 3.3.2, whose stabilizer hypotheses (reductive generic fibre, Bruhat–Tits stabilizer) are not assumed for G′; it should be also assume the étale tensors have the fixed integral type; affects a stated result. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Gap** at Proposition 3.3.4, p.25, lines 1106–1112: the source says integral étale tensors imply adaptedness without checking the preceding comparison's integral fixer hypotheses; it should be conditional on the fixed integral tensor type, including the required stabilizer model; affects a stated result. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 
 ## L08
 
@@ -5404,6 +5419,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## native_multiplicative_heights
 
+- **Misprint** at docstring of `NumberField.absMulHeight₁`: the source says the junk value off algebraic elements is 0; it should be 1, which the definition returns; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d36cfa5", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~3", "model": "opus", "worker": "fable-rev107"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
 - **Misprint** at the docstring of `NumberField.absMulHeight₁`: the source says the junk value off algebraic elements is 0; it should be 1, which the definition returns; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3062436", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~2", "model": "opus", "worker": "fable-rev80"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 
 ## Nekovář, Selmer complexes (Astérisque 310, 2006)
@@ -5483,6 +5499,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## on_the_algebraic_points_of_a_definable_set
 
+- **Misprint** at Definition 5.1, p.7, and Lemma 5.2, p.8: the source says coefficient vectors in ℚ^k with powers α^(j−1), j≤k, which have degree ≤k−1; it should be k+1 coefficients so that degree-k numbers have finite H^poly_k; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
+- **Misprint** at the headings of §§4–5, pp.6–7: the source says "Proof of Theorem 1.3" and "proof of Theorem 1.2"; it should be Theorems 1.7 and 1.6; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
 - **Misprint** at the proof of Proposition 3.4(2), p.6: the source says the preimages P, Q are taken in U; it should be in the basic block V; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 
 ## Orr, arXiv:1609.01315v2
@@ -7894,6 +7912,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Zhu17
 
 - **Gap** at §3.2, p.461: the source says the source fixes any b in the double coset G(W)p^μG(W) and frames D(X₀) with Hodge line equal to the μ-weight-one part; it should be take b in the one-sided coset G(W)·σ(μ)(p) or adjust the frame, as b=diag(1,p) with μ=diag(z,1) shows; affects a stated result. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 6280fea, 2026-10-24, claude opus).
+- **Gap** at §3.2, p.461, lines 2314–2345: the source says any double-coset representative b admits the independently prescribed μ-weight-one Hodge line; it should be a corresponding one-sided representative, or the marked cocharacter must be adjusted; affects a stated result. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at e873ba6, 2026-10-25, codex gpt-6-astra).
 
 ## Zureick-Brown, arXiv:1204.5246v4
 
