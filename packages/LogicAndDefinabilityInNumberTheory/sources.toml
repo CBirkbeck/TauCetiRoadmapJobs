@@ -125,7 +125,7 @@ venue = "Invent. Math. 173 (2008), 23--121"
 doi = "10.1007/s00222-008-0114-1"
 arxiv = "math/0410203v3"
 locator_scheme = "section"
-locator = "Theorem 2.1.1; Corollary 2.1.2; Theorem 3.2.1, p.14; §§4.1–6.2; Theorem 7.2.1; Lemma 7.5.2; Theorem 7.5.3; Corollary 7.5.4; §9.1; Proposition 9.3.2; Theorems 10.1.1, 12.1.1, 14.1.1, 14.4.1; §§11–16; Proposition 16.1.1; Theorem 16.4.1"
+locator = "Theorem 2.1.1; Corollary 2.1.2; Theorem 3.2.1, p.14, proof p.17; §§4.1–6.2; Theorem 7.2.1; Lemma 7.5.2; Theorem 7.5.3; Corollary 7.5.4; §9.1; Proposition 9.3.2; Theorems 10.1.1, 12.1.1, 14.1.1, 14.4.1; §§11–16; Proposition 16.1.1; Theorem 16.4.1"
 url = "https://arxiv.org/abs/math/0410203v3"
 fetched_from = "https://arxiv.org/pdf/math/0410203v3"
 fetched_at = "2026-10-25T00:20:29Z"
@@ -173,7 +173,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; preprint numbering and pagination throughout: §3, pp.11–15, and §4.5."
-cited_for = ["2.2; 2.4"]
+cited_for = ["2.2; 2.4–2.5"]
 
 [[source]]
 id = "pas_1989"
