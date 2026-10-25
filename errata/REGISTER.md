@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4781 mistakes recorded on the board: 3175 misprints, 1193 errors, 330 gaps, 83 unparsed bullets.
+4792 mistakes recorded on the board: 3181 misprints, 1194 errors, 331 gaps, 86 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -91,6 +91,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (CMRankZeroConverse, #993 at be5ed67, 2026-10-25): Misprint** in BT at proof of Theorem 1.1, p. 6: the source says (line 256) the Pontryagin-dual Selmer group tensored with the number field K matches Selmer groups of the untwisted V(f), V(f̄). It should be an identity over the completed coefficients for V(f)(1), V(f̄)(1). Affects the proof.
 - **Unparsed** (CMRankZeroConverse, #993 at be5ed67, 2026-10-25): Gap** in BT at proof of Theorem 3.1, display (3.1), p. 6: the source says (lines 232–234) Selmer vanishing for V(k/2) gives rational H² vanishing directly from Kato (14.9.3), whose relevant term is the dual Selmer group. A Poitou–Tate and Euler-characteristic step proving dual vanishing should come first. Affects the proof.
 - **Unparsed** (CMRankZeroConverse, #993 at be5ed67, 2026-10-25): Gap** in BT at Theorem 3.5, p. 7: the source says (lines 272–275) BKLOS Theorem 2.7 gives 3∞-Selmer corank zero for half the twists, but that theorem states only Mordell–Weil rank zero (BKLOS lines 196–198). It should cite the even three-Selmer argument of BKLOS §9.2 with §11. Affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "be5ed67", "job": "REV-PKG-CMRankZeroConverse~2", "model": "opus", "worker": "fable-rev82"} -->
+- **Unparsed** (EtaleDualityAndPerverseSheavesPartII, #1338 at b61ddc0, 2026-10-25): Gap** in ILO14 at IX Théorème 1.2, printed p. 131: the source assumes only an irreducible generic fibre and invokes only condition (2.1.1) of de Jong; geometric irreducibility, giving de Jong's (2.1.5), is needed for the quotient clause (iii); affects a stated result; corrected in print at ILO-final-IX 1.2, p. 161.
+- **Unparsed** (EtaleDualityAndPerverseSheavesPartII, #1338 at b61ddc0, 2026-10-25): Error** in ILO14 at XII 2.1.1, printed p. 191: the source says finite limits of diagrams of noetherian schemes exist and are computed termwise; termwise fibre products of noetherian schemes need not be noetherian, so the category must be all schemes or finite type over a fixed noetherian base; affects a stated result; corrected in print at ILO-final-XII 2.1.1, p. 241.
+- **Unparsed** (EtaleDualityAndPerverseSheavesPartII, #1338 at b61ddc0, 2026-10-25): Gap** in Epp73 at the equal-characteristic Artin–Schreier step of the proof of Theorem 1.9 (page as located in K10, p. 2): the source assumes the most negative exponent carries a coefficient that is not a p-th power; coincident exponents can cancel, so the argument must recombine terms and iterate; affects the proof; corrected in print at K10, pp. 1–3. <!-- tauceti-roadmap-review {"agent": "claude", "head": "b61ddc0", "job": "REV-PKG-EtaleDualityAndPerverseSheavesPartII", "model": "opus", "worker": "fable-rev83"} -->
 
 ## A
 
@@ -2768,6 +2771,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at equation (2.1), printed p. 9, fyz line 420: the source says global Fourier covariance applies to every adelic Levi matrix; it should be restricted to rational matrices globally, with arbitrary adelic covariance handled by local nonsingular Whittaker factors; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §2.4 after equation (2.5) and Remark 2.5, printed pp. 11–12, fyz line 505: the source says dual and quotient lattices from opposite split components form the displayed inclusions and quotients; it should be each dual and quotient in the same component under the definition at fyz line 462; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
 
+## G04
+
+- **Error** at §8, opening paragraph, p. 10: the source says for ℤ/n coefficients each local exceptional restriction of a dualizing complex is a single shift of the coefficients; for composite n the shifts can differ between prime factors (twist by 𝔽₂ ⊕ 𝔽₃[1] when n = 6); it should be stated for prime powers or factorwise; affects a stated result; (Lemma 8.1 holds factorwise). Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+
 ## Gaboriau
 
 - **Misprint** at IV.37, definition of Tⁿ, p. 75 (Gaboriau line 1531): the source says the displayed membership test labels the newly defined relation Sⁿ; it should be revised to replace Sⁿ by Tⁿ; affects nothing. Found by FactorRigidity (ERRATA-FactorRigidity at 00c5ce8, 2026-10-24, codex gpt-6-astra).
@@ -3574,6 +3581,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## ilo14
 
 - **Gap** at Exposé X, proof of Theorem 3.5, Step 3, p. 163: the source says b⁻¹(Z) ∪ f′⁻¹(W′) is called a subdivisor of Z′, which fails when b⁻¹(Z) has codimension two (A², Z the origin, Z′ = V(xy)); it should be first blow up X along Z; affects the proof. Found by AdicCoefficientsAndComparisonsPartII (#1109 at a485141, 2026-10-24, claude opus).
+
+## ILO14
+
+- **Misprint** at II Théorème 4.2.1, printed p. 32: the source says the source requires the valuation ring to have an algebraically closed residue field; it should be an algebraically closed fraction field, which is what the proof uses; affects nothing; corrected in print at ILO-final-II 4.2.1, p. 33. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+- **Misprint** at III Théorème 5.1, printed p. 41: the source says X is of finite type over S; it should be over the completion Ŝ, since X has a model over S_α0 whose limit is Ŝ; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+- **Misprint** at V 3.2.3(i), printed p. 67: the source says the dimension condition for A′/I + p, without the prime or brackets; it should be dim A′/(I′ + pA′) = d − 1; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+- **Misprint** at V 3.2.4, printed p. 68: the source says the source henselises in the variable t_{d−2}; it should be t_{d−1}, matching 3.2.3; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+- **Gap** at XII Théorème 1.2.2 with 1.3.4, printed pp. 189–190: the source says non-abelian 1-acyclicity as a theorem while flagging that the limit passage it needs is unpublished; it should be a conditional remark; affects a stated result; corrected in print at ILO-final-XII 1.4, p. 241. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+- **Misprint** at XIV Corollaire 2.5.2, printed p. 216: the source says the transcendence degree of κ(f(y)) over κ(y); it should be κ(y) over κ(f(y)), as the affine line over a field shows; affects a stated result; as printed (the same misprint appears in ILO-final-XIV 2.5.2, p. 289). Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
+- **Misprint** at XVII Théorème 0.9, second item, printed p. 257: the source says exceptional pullback for a flat morphism with geometrically regular fibres, which need not be of finite type; it should be ordinary pullback, as in XVII 4.1.1; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
 
 ## Iohara–Lehrer–Zhang
 
