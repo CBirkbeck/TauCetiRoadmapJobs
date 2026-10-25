@@ -1625,7 +1625,74 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+  {
+    "slug": "squarefree-base-change-signs",
+    "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+    "section": "R16.3.2, R16.3.5, R16.3.6 and R16.4.6",
+    "needs": "For every weight-two squarefree trivial-character newform, give the split/inert/ramified base-change sign table (split +1, inert special ± unramified-quadratic twist −1, ramified special −1, ramified nontrivial unramified-quadratic special twist +1, infinity −1), the elliptic multiplicative dictionary and squarefree exclusion of CM."
+  },
+  {
+    "slug": "gl2-rational-kummer",
+    "supplier": "SelmerIwasawaCohomology",
+    "section": "2.12a, 4.9 and 4.26",
+    "needs": "Extend the canonical abelian Kummer and Bloch–Kato comparison to every coefficient component of A_f, identifying the rational Selmer cokernel with the corresponding rational Tate module of Sha, proving rational local vanishing away from p and compatibility at p with point logarithms and finite coefficient extension."
+  },
+  {
+    "slug": "quadratic-abelian-sha",
+    "supplier": "SelmerIwasawaCohomology",
+    "section": "2.12a and 4.28",
+    "needs": "For every abelian variety A over a number field and quadratic extension K, supply the isogeny A × A^D → Res_(K/F) A of degree a power of two, the rational ± point and Selmer decompositions, and invariance of entire Sha finiteness under this isogeny with its finite two-primary restriction/corestriction errors retained."
+  },
+  {
+    "slug": "ordinary-root-number-parity",
+    "supplier": "SelmerIwasawaCohomology",
+    "section": "4.28",
+    "needs": "For weight-two trivial-character newforms at good ordinary odd coefficient primes over ℚ and imaginary quadratic K, prove (−1)^(dim H¹_f(F,V)) = w(f/F) for the geometric Tate realization, including the ramified quadratic twists used here, with the realization and local hypotheses proved from those arithmetic assumptions."
+  },
+  {
+    "slug": "strict-anticyclotomic-control",
+    "supplier": "SelmerIwasawaCohomology",
+    "section": "3.8–3.13 and 3.16",
+    "needs": "For Skinner’s geometric ordinary rank-two representation in both admissible Heegner cases, prove finite generation of its one-inertia-strict otherwise-relaxed dual, exact ψ₀-twisted two-variable specialization after inverting p, injective augmentation control with finite cokernel computed from local inertia invariants, and identification of its rational Tate module with the full one-sided local kernel using vanishing of the unramified local kernel."
+  },
+  {
+    "slug": "good-local-torsion-comparison",
+    "supplier": "SelmerIwasawaCohomology",
+    "section": "2.12 and 4.26",
+    "needs": "For an elliptic curve with good reduction at p ≥ 5 and E(ℚ)[p] = 0, compare finite Sel_p with Sel_(p∞)[p] and prove that a local mod-p Kummer image outside the image of E(ℚ_p)[p], using E(ℚ_p)[p∞] = E(ℚ_p)[p], detects a nonzero rational localization."
+  },
+  {
+    "slug": "unramified-augmentation-divisor",
+    "supplier": "PadicMeasuresIwasawaAlgebras",
+    "section": "4.2, 4.6 and 5.2",
+    "needs": "Extend characteristic divisors and faithful coefficient comparison to the completed maximal-unramified coefficient DVR and prove that, for finitely generated O[[T]]-modules, a torsion characteristic ideal contained in (T) after inverting p or positive Λ-rank forces positive O-rank of X/TX, while finite pseudo-null modules contribute no T-divisor."
+  },
+  {
+    "slug": "ordinary-wan-fitting",
+    "supplier": "AutomorphicCongruences",
+    "section": "Layer 2: ordinary Rankin–Selberg reverse divisibility (required interface)",
+    "needs": "Supply the published ordinary Wan fixed-weight imprimitive two-variable Fitting bound after inverting p with residual irreducibility over G_K, a nonsplit q∥N, the κ ≥ 6 even branch divisible by 2(p−1), the specified Γ_K-factorizing avatar, and all exceptional-prime and normality arguments needed for specialization."
+  },
+  {
+    "slug": "wan-period-dictionary",
+    "supplier": "GrossZagierAndArithmeticHeights",
+    "section": "9.22",
+    "needs": "Compare Wan’s ψ₀-twisted two-variable specialization with Skinner’s imprimitive anticyclotomic function in both Heegner cases over O^ur[[Γ]][1/p], retaining identical removed Euler factors, a period comparison whose augmentation is nonzero and the rational pre-projector point."
+  },
+  {
+    "slug": "gl2-full-forward",
+    "supplier": "HeegnerPointEulerSystems",
+    "section": "7.11–7.12",
+    "needs": "For weight-two trivial-character GL₂-type modular factors and their quadratic twists, prove that analytic order r ∈ {0,1} for a conjugate newform gives Mordell–Weil rank d r and finite entire Sha, and bridge the maximal-endomorphism-order and non-CM realization hypotheses of the RM descent to A_f and its Hodge/quaternionic realization without a squarefree restriction on the twist."
+  },
+  {
+    "slug": "gl2-analytic-products",
+    "supplier": "AutomorphicLFunctionsAndLocalFactors",
+    "section": "AL.3: global L-functions and Rankin–Selberg products",
+    "needs": "Identify the actual finite L-functions of A_f, all conjugate newforms and quadratic base change by their products at every local factor, including ramified conductor primes, and supply nonzero analytic continuation and central-order additivity compatible with the Tate realization and primitive quadratic twisting."
+  }
+],
   "sourceIssues": [
     {
       "id": "RankOneConverse/E1",
