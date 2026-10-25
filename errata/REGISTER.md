@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5539 mistakes recorded on the board: 3572 misprints, 1364 errors, 452 gaps, 151 unparsed bullets.
+5553 mistakes recorded on the board: 3582 misprints, 1366 errors, 454 gaps, 151 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -848,6 +848,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BCS
 
 - **Misprint** at Lemma 5.1.1 proof, printed p. 9 of v2 and p. 10 published (BCS v2 line 457; published line 488): the source says both summands after quadratic Shapiro are cohomology over M; it should be put those two twisted summands over K; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "b047dd3439cef25dcc2fa59f5bc8f6597d8b100d", "job": "REV-PKG-AutomorphicCongruences~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 5.1.1 proof, printed p.10 published (BCS published line 488): the source says both Shapiro summands are cohomology over M; it should be put the two twisted summands over K; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## BdJ2003
 
@@ -2212,6 +2213,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Theorem 3.2, arXiv v1 p.6: the source says CG18 §9.4 and KT17 Lemma 6.25(4) supply its PGLₙ comparison; it should be prove the PGLₙ comparison with the requisite local block input; affects the proof. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at 5a6262c, 2026-10-25, codex gpt-6-astra).
 - **Gap** at proof of Theorem 3.2, arXiv v1 p.6: the source says lowest nonzero cohomology descends from Y₁(Q) by Hochschild–Serre; it should be use the p-primary cover or justify trivial prime-to-p deck action on the localized term; affects the proof. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at 5a6262c, 2026-10-25, codex gpt-6-astra).
 
+## CGS23
+
+- **Misprint** at Proposition 2.2.4 proof, printed p.8 of v2 (CGS23 v2 line 420): the source says the period was defined in Remark 2.3.2; it should be refer to Remark 2.2.3; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "08f531f687445e2831d08a6202621df021607d25", "job": "REV-PKG-AutomorphicCongruences~3", "model": "gpt-6-astra", "worker": "chris-12"} -->. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Remark 1.2.3, printed p.7 of v1 (CGS23 line 364–369): the source says the modular Néron-area identity uses Ω_E/K without an additional discriminant scalar; it should be include √|D_K| with that definition of Ω_E/K; affects a stated result. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
+
 ## ch26
 
 - **Error** at Corollary 6.32(1), p. 25, used in the proof of Theorem 5.4, p. 14: the source says generic unitary L(s_c s_ν) half-integral for the test family has ν = 0; it should be assume s_c central (split G₂, α₁∨(s_c)=−1, ν=½ω₂, q=4 is a counterexample); affects the proof. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
@@ -2320,6 +2326,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CLW
 
 - **Misprint** at Theorem 8.1.1 proof, printed p. 78 (CLW line 6212): the source says the Eisenstein ideal's valuation is at most m after proving containment in P^m; it should be at least m; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Theorem 8.1.1 proof, printed p.78 (CLW line 6212): the source says the congruence ideal's valuation is at most m after proving containment in P^m; it should be at least m; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
+- **Gap** at Theorem 8.2.1(2) proof, printed p.81 (CLW line 6380): the source says the cited CM main-conjecture results give integral congruence comparison for the full stated range; it should be justify p=3 and nonunit tame/exceptional factors not covered by those cited integral results; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Theorem 8.2.1(2) proof, printed p.81 (CLW line 6380): the source says distinguishedness twice in listing its two residual hypotheses; it should be list irreducibility and distinguishedness; affects nothing. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## cmnn
 
@@ -3257,9 +3266,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## FW
 
 - **Gap** at Definition 3.18's following paragraph, printed p. 31 (FW line 1798): the source says Lemma 3.17 gives arbitrary base change of the full Euler-corrected line; it should be justify the Euler-line compatibility or retain the suitability restrictions of Proposition 3.20; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 3.16 proof, printed p.30 (FW line 1730): the source says the nonzero-zeta locus has positive codimension; it should be the zero-zeta locus; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 - **Error** at proof of Lemma 3.13, p.26 (FW lines 1497–1499): the source says lifting a nonidentity residual unipotent gives a rank-one kernel; it should be required to choose genuine characteristic-zero unipotence with primitive image; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 3.13, p.26 (FW lines 1504–1510): the source says a cone on fraction-field representations has the displayed integral torsion cohomology; it should be an integral cone, or its displayed cohomology should be tensored with the fraction field; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 - **Error** at the paragraph after Assumption 2.1, printed p. 17 (FW line 928): the source says local endomorphisms are scalar unless the two semisimple characters coincide; it should be exclude split distinct characters and irreducible representations that are not absolutely irreducible; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Error** at the paragraph after Assumption 2.1, printed p.17 (FW line 928): the source says local endomorphisms are scalar unless the semisimple characters coincide; it should be also exclude split distinct characters and irreducible representations that are not absolutely irreducible; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
+- **Gap** at the paragraph after Definition 3.18, printed p.31 (FW line 1798): the source says the earlier perfect-complex result gives unrestricted base change of the full Euler-corrected line; it should be justify local Euler-line compatibility or retain the suitability restrictions of Proposition 3.20; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## fyz
 
@@ -4153,6 +4165,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 5.10 proof, p.40 (HPT-Unitary line 1947): the source says the trace of the second diagonal block uses P[2k] and k strings; it should be use P[2n] and n strings; affects the proof. Found by CategoricalOperatorAlgebras (ERRATA-CategoricalOperatorAlgebras at c8831bc, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Proposition 5.15 proof, p.42 (HPT-Unitary line 2078): the source says the last sphericality diagram changes n to an undefined k; it should be keep n and P[2n] on both sides; affects the proof. Found by CategoricalOperatorAlgebras (ERRATA-CategoricalOperatorAlgebras at c8831bc, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §5.3, p.44 (HPT-Unitary line 2215; HPT-Unitary line 2254): the source says the reconstructed category is Λ(∆(C)), and the final adjunction norm uses Φ(x^⊗j); it should be use ∆(Λ(C)) and Tr_V(x^⊗j), respectively; affects the proof. Found by CategoricalOperatorAlgebras (ERRATA-CategoricalOperatorAlgebras at c8831bc, 2026-10-24, codex gpt-6-astra).
+
+## Hsieh2012
+
+- **Misprint** at the paragraph after Theorem A, printed p.2 (Hsieh2012 line 90): the source says the positive-root-number assumption is equivalent to condition V; it should be equivalent to failure of V for the self-dual character; affects nothing. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## HT
 
@@ -5615,6 +5631,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## NAK
 
 - **Misprint** at Corollary 5.6 proof, printed p. 77 of v2 (NAK line 3391): the source says the second specialization is reduced modulo ϖ^n while mapping to O/ϖ^m; it should be reduce both specializations modulo ϖ^m; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Corollary 5.6 proof, printed p.77 of v2 (NAK line 3391): the source says the second specialization is reduced modulo ϖ^n while the target is O/ϖ^m; it should be reduce both modulo ϖ^m; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## Nakamura2023
 
@@ -7379,7 +7396,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## SU
 
 - **Misprint** at Proposition 7.2.1 proof, printed p. 101 (SU line 3952): the source says the degree-2n−1 coefficient of the Euler polynomial gives minus trace; it should be the degree-one coefficient, or the reversed monic polynomial; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition 7.2.1 proof, printed p.101 (SU line 3952): the source says the degree-2n−1 coefficient of the reciprocal Euler polynomial gives minus trace; it should be use degree one, or the reversed monic polynomial; affects the proof. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §6.5.3, printed p. 98 (SU line 3820): the source says the Eisenstein ideal is the quotient of the coefficient map; it should be its kernel, as required by the following quotient isomorphism; affects nothing. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §6.5.3, printed p.98 (SU line 3820): the source says the Eisenstein ideal is the quotient of the coefficient map; it should be its kernel, consistent with the following quotient isomorphism; affects nothing. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## Sun, A generalization of Gauss–Kuzmin–Lévy theorem, arXiv:1705.02921v2
 
@@ -7878,6 +7897,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 9.5 proof in the deferred Chapter 3 proof, p. 97 (Wall line 4592): the source says the induction hypothesis covers β⊆α, including the face currently being treated; it should be amended to require β to be a proper subset of α; affects the proof; corrected in print at WallErrata, p. 2, entry for p. 97 line 19 (WallErrata line 56). Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Theorem 9.6 proof in the deferred Chapter 3 proof, p. 98 (Wall line 4617): the source says the vanishing composite uses an undefined boundary symbol ∂*; it should be amended to use d*j*, with d* defined in Theorem 9.6; affects the proof; corrected in print at WallErrata, p. 2, entry for p. 98 line 3 (WallErrata line 61). Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Theorem 9.9 proof of Chapter 3 periodicity, p. 101 (Wall line 4840; Wall line 4841): the source says the odd-dimensional case sets m=1 and uses the homology subscript k1; it should be amended to set m=2k−1 and use Kₖ₋₁(M); affects the proof; corrected in print at WallErrata, p. 2, entry for p. 101 line −2 corrects m (WallErrata line 62). Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
+
+## Wan-2020
+
+- **Error** at §8.4 triple-product formula, printed p.80 (Wan-2020 line 4074–4079): the source says partial global L-functions multiply already normalized local integrals; it should be use full global L-functions, or consistently partial zeta/L-functions with raw local integrals; affects a stated result. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
 
 ## weibel
 
