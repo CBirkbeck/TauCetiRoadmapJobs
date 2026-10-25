@@ -109839,10 +109839,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1535#issuecomment-6401857835"
+  },
+  {
+   "kind": "misprint",
+   "source": "SS",
+   "locator": "the proof of Theorem A.13, printed p. 861 (SS line 1782)",
+   "says": "the loop group of the target at the source basepoint",
+   "should": "at the target basepoint y",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"a03cafe\", \"job\": \"REV-PKG-EtaleHomotopyTypes~4\", \"model\": \"fable\", \"worker\": \"fable-rev126\"} -->",
+   "roadmap": "EtaleHomotopyTypes",
+   "job": "REV-PKG-EtaleHomotopyTypes~4",
+   "board_pr": 1304,
+   "head": "a03cafe",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1304#issuecomment-6402000430"
   }
  ],
- "scanned_to": "2026-10-25T19:03:32Z",
- "updated": "2026-10-25T19:08:12Z",
+ "scanned_to": "2026-10-25T19:15:56Z",
+ "updated": "2026-10-25T19:18:50Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
