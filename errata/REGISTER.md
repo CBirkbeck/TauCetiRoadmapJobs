@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5046 mistakes recorded on the board: 3321 misprints, 1252 errors, 371 gaps, 102 unparsed bullets.
+5048 mistakes recorded on the board: 3323 misprints, 1252 errors, 371 gaps, 102 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2201,6 +2201,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at equations (6)–(8), author manuscript p. 2 (ConstantinETiti1994 line 110): the source says first differences and mollified gradients satisfy the displayed alpha-power bounds throughout the theorem's range alpha greater than one third; it should be restricted to one third less than alpha less than one, reducing higher regularity by Besov embedding; affects the proof. Found by IncompressibleFlows (ERRATA-IncompressibleFlows at 25bd83b, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at the estimate following equation (12), author manuscript p. 3 (ConstantinETiti1994 line 162): the source says the two Hölder products use norm powers (2/3, 1/3) and (2/3, 1/3); it should be (1, 1) for the commutator product and (2, 1) for the velocity-increment product; affects the proof. Found by IncompressibleFlows (ERRATA-IncompressibleFlows at 25bd83b, 2026-10-23, codex gpt-6-astra).
 
+## COU20
+
+- **Misprint** at §3, printed p.493, COU20 line 266: the source says the integral relation lattice is tensored over ℚ with ℝ; it should be tensored over ℤ with ℝ, or rationalized before tensoring over ℚ; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "06884a94331b1a80f42bf83fd1df828e001f63e0", "job": "REV-PKG-EffectiveBoundsPartII", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by EffectiveBoundsPartII (#1411 at 06884a9, 2026-10-25, codex gpt-6-astra).
+
 ## COUVEIGNES20
 
 - **Misprint** at §4, printed p. 496 (line 430): the source says the source cites chapter 13 of Fulton's *Intersection Theory* to bound the isolated points by the intersection number; it should be cite chapter 12 (the refined Bézout theorem, §12.3); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ca7c513", "job": "REV-PKG-EffectiveBoundsCompactModels", "model": "opus", "worker": "fable-rev90"} -->. Found by EffectiveBoundsCompactModels (#1421 at ca7c513, 2026-10-25, claude opus).
@@ -3067,6 +3071,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at footnote 1, p. 2: the source says [HKW21, Example 4.2.7] for f_! as group homology; it should be Example 4.2.4 in the published HKW22; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Gap** at the proof of Proposition 4.4, p. 20: the source says FS21 Remark IV.1.4(ii) applies to any chart; it should be first refine to a clean (separated) chart by Remark 1.2.ii, as Remark IV.1.4 needs a separated map; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "0987ba7", "job": "REV-DESIGN-VStackSheavesAndLisseCategoriesPartII", "model": "opus", "worker": "fable-rev12"} -->. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at the proof of Theorem 3.14, pp. 17–18: the source says “Proposition 3.14” and refers to “the map ??”; it should be Theorem 3.14 and the map (3.1); affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
+
+## GK14
+
+- **Misprint** at Introduction, Theorem B, printed p. 3: the source says Theorem B is proved as Corollary 5.5.4; it should be Corollary 5.5.7, which is labelled Theorem B on p. 35 (5.5.4 is the version for a fixed D); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "58ffa23", "job": "REV-PKG-HilbertModularVarietiesAndShimuraCurvesPartII~2", "model": "opus", "worker": "fable-rev95"} -->. Found by HilbertModularVarietiesAndShimuraCurvesPartII (#1119 at 58ffa23, 2026-10-25, claude opus).
 
 ## Glasscock–Merriman–Robertson–Smyth, Ergodic theory with applications to continued fractions (2020)
 
