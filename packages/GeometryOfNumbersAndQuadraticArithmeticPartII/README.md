@@ -1,6 +1,6 @@
 # Roadmap: quadratic and symmetric arithmetic at dyadic primes
 
-**Summary.** Develop quadratic and symmetric arithmetic at dyadic primes over general Dedekind domains. Starting from the integral form and Poincaré theories of GeometryOfNumbersAndQuadraticArithmetic and HermitianKTheoryOfPoincareCategories, and the Dedekind L-group tables of ArithmeticKTheory, construct explicit residue and Arf coordinates, prove arithmetic fracture and integral quadratic rigidity, and identify the total-cokernel obstruction. The endpoints are its parity quotient, explicit Witt arithmetic over ℚ₂, the integral dyadic comparison, and the symmetric and quadratic L-groups of the Eisenstein integers. The quadratic Eisenstein groups in degrees 0, 1, 2, 3 modulo four are 0, 0, ℤ/2, ℤ/4. Characteristic two, ramified dyadic primes and infinite residue fields enter the general theory with their own hypotheses.
+**Summary.** Develop quadratic and symmetric arithmetic at dyadic primes over general Dedekind domains. Starting from the integral form and Poincaré theories of GeometryOfNumbersAndQuadraticArithmetic and HermitianKTheoryOfPoincareCategories, and the Dedekind L-group tables of ArithmeticKTheory, construct explicit residue and Arf coordinates, prove arithmetic fracture and integral quadratic rigidity, and identify the total-cokernel obstruction. The endpoints are its parity quotient, the integral dyadic comparison, and the symmetric and quadratic L-groups of the Eisenstein integers. Explicit Witt arithmetic over ℚ₂ supplies the input to Layer 5. The quadratic Eisenstein groups in degrees 0, 1, 2, 3 modulo four are 0, 0, ℤ/2, ℤ/4. Characteristic two, ramified dyadic primes and infinite residue fields enter the general theory with their own hypotheses.
 
 ## Scope and ownership
 
@@ -34,7 +34,7 @@ In characteristic two the Arf coordinate over a finite field is the absolute tra
 
 ### From Mathlib
 
-Use `QuadraticMap`, `QuadraticMap.polarBilin`, `QuadraticMap.proj`, `QuadraticMap.weightedSumSquares`, `QuadraticMap.Anisotropic` and `QuadraticMap.Equivalent` from `Mathlib/LinearAlgebra/QuadraticForm/Basic.lean` and `IsometryEquiv.lean`. A quadratic map supplies homogeneity and a bilinear companion; it supplies neither finite projectivity nor a perfect polar map. In characteristic two the polar API is used directly. The general `QuadraticForm.baseChange` in `TensorProduct.lean` requires two invertible, so it is not an integral dyadic scalar-extension construction.
+Use `QuadraticMap`, `QuadraticMap.polarBilin`, `QuadraticMap.proj`, `QuadraticMap.weightedSumSquares`, `QuadraticMap.Anisotropic` and `QuadraticMap.Equivalent` from `Mathlib/LinearAlgebra/QuadraticForm/Basic.lean` and `IsometryEquiv.lean`. A quadratic map supplies homogeneity and a bilinear companion; it supplies neither finite projectivity nor a perfect polar map. In characteristic two the polar API is used directly. The general `QuadraticForm.baseChange` in `TensorProduct.lean` requires two invertible, so it is not an integral dyadic scalar-extension construction. For §0.4 use `QuadraticMap.prod` in `Mathlib/LinearAlgebra/QuadraticForm/Prod.lean` for orthogonal sums and `Algebra.trace` in `Mathlib/RingTheory/Trace/Defs.lean` for absolute trace; `Module.Basis`, `Submodule` and `Module.finrank` express the bases and half dimension.
 
 Use `AdicCompletion` and `AdicCompletion.of` in `Mathlib/RingTheory/AdicCompletion/Basic.lean`, and its ring/algebra structure in `Algebra.lean`. Its definition is a compatible inverse-limit subtype; completeness needs the finitely generated ideal hypothesis. Here ideals are finitely generated. Use `Ideal.quotientMulEquivQuotientProd` in `Mathlib/RingTheory/Ideal/Quotient/Operations.lean` for coprime ideals, including their powers. Use `IsDedekindDomain.HeightOneSpectrum` for prime indices and `Padic` for ℚ₂. Use `AddMonoidHom.range`, `QuotientAddGroup.mk'` and the quotient by an `AddSubgroup` for the obstruction's algebraic quotient. These imports supply no arithmetic identification of that quotient. For the characteristic-two divisor argument use ideal factorization and `ClassGroup.mk0_surjective`, `ClassGroup.mk_eq_one_iff` in `Mathlib/RingTheory/ClassGroup/Basic.lean`, with `ClassGroup.equivPic` in `Mathlib/RingTheory/PicardGroup.lean`: invertible fractional ideals modulo principal ideals give the divisor-class quotient in every Dedekind characteristic.
 
@@ -144,11 +144,11 @@ The defining map has the following API.
 
 **Checks.**
 
-- For Z_(2), ∂⟨3⟩=0. This tests the vanishing on unit lines; reducing the coefficient would give ⟨1⟩.
-- For Z_(2), ∂⟨2⟩=⟨1⟩≠0 in Ws(F2). This tests the odd-valuation residue; coefficient reduction would instead give the singular zero form.
+- For ℤ_(2), ∂⟨3⟩=0. This tests the vanishing on unit lines; reducing the coefficient would give ⟨1⟩.
+- For ℤ_(2), ∂⟨2⟩=⟨1⟩≠0 in Ws(𝔽₂). This tests the odd-valuation residue; coefficient reduction would instead give the singular zero form.
 - ∂⟨4⟩=0, so merely testing divisibility by 2 gives the wrong map. This tests valuation parity, since valuation two is even.
-- At 3 with π=3, ∂⟨6⟩=⟨2⟩ in Ws(F3), retaining the unit square class. This tests the nonsquare unit coefficient after removing the uniformizer.
-- For Z→Z[i], the residue map Ws(F2)→Ws(F2) at 2 and 1+i is zero, although the residue-field map is the identity: the ramified linking pairing has zero Witt class (Remark 2.2.6). This tests the ramified linking comparison: an unweighted residue-field extension would incorrectly give the identity.
+- At 3 with π=3, ∂⟨6⟩=⟨2⟩ in Ws(𝔽₃), retaining the unit square class. This tests the nonsquare unit coefficient after removing the uniformizer.
+- For ℤ→ℤ[i], the residue map Ws(𝔽₂)→Ws(𝔽₂) at 2 and 1+i is zero, although the residue-field map is the identity: the ramified linking pairing has zero Witt class (Remark 2.2.6). This tests the ramified linking comparison: an unweighted residue-field extension would incorrectly give the identity.
 - At R=ℤ_(5), for ⟨5⟩ and π=5 the coordinate is ⟨1⟩; for π′=10 it is ⟨3⟩ because 2⁻¹=3 modulo five. The line-valued class is unchanged, whereas an unadjusted coordinate would change the map.
 
 *Needs:* §§0.1–0.2; GeometryOfNumbersAndQuadraticArithmetic §§6.8a–6.9, including L-localization and residue dévissage; HermitianKTheoryOfPoincareCategories §§6.6 and 7.9.
@@ -156,6 +156,8 @@ The defining map has the following API.
 ### 0.4 Finite Arf coordinate
 
 For k=𝔽_(2^r), r≥1, and a finite-dimensional quadratic map q with perfect full polar, define its finite-field Arf coordinate to be Tr_(k/𝔽₂)(Σᵢ q(eᵢ)q(fᵢ)) in 𝔽₂ for a symplectic basis. Prove basis independence, descent to Wq(k), and an additive isomorphism Wq(k)≃ℤ/2. For every finite extension k′/k of degree m, prove scalar extension acts on these coordinates by multiplication by m modulo two. The construction extends the supplied 𝔽₂ invariant; it does not reconstruct that special-case quotient.
+
+The completeness theorem `arf_trace_classifies` states that for any finite field k of characteristic two with its 𝔽₂-algebra structure, finite-dimensional k-spaces V and W, and forms q and q′ with symplectic bases of n and m pairs respectively, their absolute-trace sums are equal if and only if q⊥q′ vanishes on a subspace L with 2 dim L=dim(V×W). The basis hypotheses require all e–e and f–f polar pairings to be zero and b(eᵢ,fⱼ)=δᵢⱼ for each form; these imply perfect polars. The dimensions n and m may differ or be zero. Such an L is a quadratic Lagrangian, since the sum has perfect polar. Taking q′=q with two choices of basis and the diagonal L proves basis independence.
 
 (CDHHLMNNS-III-v4, Corollary 2.3.10, p. 45; Examples 2.3.13–14, pp. 46–47; CDHHLMNNS-III-v4 line 2095.)
 
@@ -168,17 +170,17 @@ The defining map has the following API.
 - For two nonsingular forms over k, the coordinate of their orthogonal sum is the sum of their coordinates.
 - Every hyperbolic plane over k has coordinate zero.
 - A nonsingular finite-field form has invariant zero exactly when metabolic.
-- The descended map is Wq(k)≃+Z/2.
-- For degree m, the base-change map is multiplication by m on Z/2.
-- Regularity is perfectness of Mathlib QuadraticMap.polarBilin, not Q.associated in characteristic 2.
+- The descended map is an additive isomorphism Wq(k)≃ℤ/2.
+- For degree m, the base-change map is multiplication by m on ℤ/2.
+- Regularity is perfectness of Mathlib `QuadraticMap.polarBilin`, rather than `QuadraticMap.associated` in characteristic two.
 
 **Checks.**
 
-- Over F2, q(x,y)=xy has perfect polar and Arf 0. This fixes the hyperbolic normalization at zero.
-- Over F2, x²+xy+y² has perfect polar and Arf 1; all three nonzero vectors have value 1. This distinguishes the anisotropic plane from the hyperbolic plane despite their equal polars.
-- Over F4, x²+xy+y² has Arf 0 and is hyperbolic: if ζ²+ζ+1=0, (ζ,1) is isotropic. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
-- Over F2, x² has zero polar and is excluded despite being a nonzero quadratic map. This tests nonsingularity of the full polar.
-- The zero-dimensional nonsingular form has invariant 0. This tests the zero-dimensional boundary case.
+- Over 𝔽₂, q(x,y)=xy has perfect polar and Arf 0. This fixes the hyperbolic normalization at zero.
+- Over 𝔽₂, x²+xy+y² has perfect polar and Arf 1; all three nonzero vectors have value 1. Against xy the traces are 1 and 0 and their sum has no two-dimensional quadratic Lagrangian. This distinguishes the anisotropic plane from the hyperbolic plane despite their equal polars.
+- Over 𝔽₄, x²+xy+y² has Arf 0 and is hyperbolic: if ζ²+ζ+1=0, (ζ,1) is isotropic. Against xy both traces are zero and their sum has a two-dimensional quadratic Lagrangian. The value tests the full polar and absolute trace, rather than the untraced symplectic sum.
+- Over 𝔽₂, x² has zero polar and is excluded despite being a nonzero quadratic map. This tests nonsingularity of the full polar.
+- The zero-dimensional nonsingular form has invariant 0. Against xy it has equal trace 0 and a one-dimensional vanishing subspace in dimension two; against the 𝔽₂ Arf-one plane it has unequal traces and no such subspace. This tests both directions with unequal dimensions.
 - Over 𝔽₄ with ζ²+ζ+1=0, the plane x²+xy+ζy² has trace invariant ζ+ζ²=1, whereas the plane with last coefficient one has trace 1+1=0.
 - For q=xy over 𝔽₄, the standard symplectic basis has raw Arf sum zero. The basis ((1,1),(ζ,ζ²)) has polar pairing ζ+ζ²=1 and raw sum 1·1=1, but both absolute traces are zero. Raw basis independence would be false.
 
@@ -257,10 +259,10 @@ The defining map has the following API.
 
 **Checks.**
 
-- For R=Z there is one factor Z_2 with residue F2. This tests the single degree-one factor.
-- For Z[1/2] the dyadic set is empty and C=0. This tests the empty product.
-- For Z[ζ3] there is one unramified quadratic factor with residue F4, not two factors and not F2. This tests the residue degree.
-- For Z[i] the single dyadic factor remains one factor although (2) has exponent 2. This counts prime factors, not their ramification multiplicities.
+- For R=ℤ there is one factor ℤ₂ with residue 𝔽₂. This tests the single degree-one factor.
+- For ℤ[1/2] the dyadic set is empty and C=0. This tests the empty product.
+- For ℤ[ζ₃] there is one unramified quadratic factor with residue 𝔽₄, not two factors and not 𝔽₂. This tests the residue degree.
+- For ℤ[i] the single dyadic factor remains one factor although (2) has exponent 2. This counts prime factors, not their ramification multiplicities.
 - For R=ℚ the ideal (2) is the unit ideal, every quotient R/(2^m) is zero, and the limit is zero. For R=ℤ_(3), the same calculation gives zero; it does not give the 3-adic completion.
 - When two splits, the two completed projections are both needed: maps from ℤ[x] sending x to (0,0) and (0,1) agree in the first factor and differ in the second. In the empty product every map is equal, so projection extensionality is vacuous and valid.
 
@@ -268,7 +270,7 @@ The defining map has the following API.
 
 ### 2.2 Arithmetic fracture
 
-Let R be a ring, M an invertible module with involution over R, in the coefficient-duality sense of the source, and ℓ a positive integer. Assume ordinary ℓ-adic completion R̂_ℓ represents derived completion (bounded ℓ-power torsion suffices). For each m∈Z∪{±∞}, the square Dp(R)→Dp(R̂_ℓ), over Dc(R[1/ℓ])→Dc′(R̂_ℓ[1/ℓ]), with structures Q_M^(≥m), is Poincaré–Verdier. Here c and c′ are precisely the involution-stable images of the respective K0 maps. Applying GW or L gives a homotopy pullback square. The coefficient M is the supplied invertible coefficient bimodule with its action-swapping involution and coherent evaluation duality; a merely self-dual module is insufficient.
+Let R be a ring, M an invertible module with involution over R, in the coefficient-duality sense of the source, and ℓ a positive integer. Assume ordinary ℓ-adic completion R̂_ℓ represents derived completion (bounded ℓ-power torsion suffices). For each m∈ℤ∪{±∞}, the square Dp(R)→Dp(R̂_ℓ), over Dc(R[1/ℓ])→Dc′(R̂_ℓ[1/ℓ]), with structures Q_M^(≥m), is Poincaré–Verdier. Here c and c′ are precisely the involution-stable images of the respective K₀ maps. Applying GW or L gives a homotopy pullback square. The coefficient M is the supplied invertible coefficient bimodule with its action-swapping involution and coherent evaluation duality; a merely self-dual module is insufficient.
 
 (CDHHLMNNS-III-v4, Proposition 2.3.6, p. 43; CDHHLMNNS-III-v4 line 1976.)
 
@@ -351,7 +353,7 @@ The completion decomposition needs ideal factorization, Chinese remainders, inve
 
 ### 3.1 Dyadic correction
 
-For C=R̂_2, define A(R)=Ws(C)/(im(Ws(R)→Ws(C))+im(σ_C:Wq(C)→Ws(C))). Equivalently it is the cokernel of coker(σ_R)→coker(σ_C), since the comparison square commutes. The definition is an additive quotient, without choosing a splitting of any L-group extension.
+For C=R̂₂, define A(R)=Ws(C)/(im(Ws(R)→Ws(C))+im(σ_C:Wq(C)→Ws(C))). Equivalently it is the cokernel of coker(σ_R)→coker(σ_C), since the comparison square commutes. The definition is an additive quotient, without choosing a splitting of any L-group extension.
 
 (CDHHLMNNS-III-v4, Proposition 2.3.9, pp. 44–45; Remark 2.3.12, pp. 45–46; CDHHLMNNS-III-v4 line 2044.)
 
@@ -371,7 +373,7 @@ The defining map has the following API.
 
 - If Ws(R)→Ws(C) is onto, then A(R)=0, even if σ_C is not onto. This tests that the global image alone can kill the quotient.
 - If σ_C is onto, A(R)=0, even if the global image vanishes. This tests that the completed quadratic image alone can kill the quotient.
-- For D=(Z/2)^d, s the constant diagonal and q zero, the quotient has order 2^(d−1) for d≥1. This tests the diagonal relation between distinct components.
+- For D=(ℤ/2)^d, s the constant diagonal and q zero, the quotient has order 2^(d−1) for d≥1. This tests the diagonal relation between distinct components.
 - The parity quotient is zero at d=1, but it does not force A(R)=0; the Eisenstein computation supplies a nonzero example. This tests that rank parity need not detect the whole obstruction.
 - When 2 is a unit, C=0 and A(R)=0. This tests the zero target of both image maps.
 - In D=ℤ/4 with global image 2D and quadratic image zero, the quotient is ℤ/2. With quadratic image D it becomes zero. Quotienting by the intersection of the images would leave ℤ/4 in the first case.
@@ -407,7 +409,7 @@ A completed quadratic form reduces to a perfect alternating polar, hence has eve
 - At d=2 the diagonal subgroup of (ℤ/2)² is {(0,0),(1,1)} and its quotient has two elements; the class of (1,0) is nonzero.
 - At d=3 the eight parity vectors have four diagonal cosets, giving (ℤ/2)².
 - At d=1 the quotient has one element although the Eisenstein A has four; at d=0 both the parity quotient and A are zero. The exponent formula 2^(d−1) is used only for d≥1.
-- For the DVR R=ℤ[t]_(2), obtained by localizing ℤ[t] at the prime (2), the residue field is the infinite imperfect field 𝔽₂(t). There is one dyadic prime, so the parity quotient is zero; finiteness and perfection of the residue field are unnecessary.
+- Let A=ℤ[t]_(2), the DVR obtained by localizing at (2), and R=A[(1+√17)/2]. The polynomial x²−x−4 is irreducible over ℚ(t) and has unit discriminant 17 in A, so R is a finite étale Dedekind domain. Modulo two it is x(x+1), giving exactly two dyadic primes, both with residue field 𝔽₂(t), which is infinite and imperfect since t is not a square. Thus the parity quotient is (ℤ/2)²/Δ≃ℤ/2, with nonzero class (1,0), and A(R)≠0. A restriction to finite or perfect residue fields would miss this nonzero obstruction.
 
 *Needs:* §3.1; constant rank for finite projectives over a domain; finite-dimensional alternating linear algebra in characteristic two.
 
@@ -483,7 +485,7 @@ Use the supplied identifications Ws(ℤ)≃ℤ by signature and Wq(ℤ)≃ℤ by
 
 ### 4.3 Dyadic integral Witt group
 
-Ws(Z_2) is the kernel of the surjective second residue W(Q2)→Z/2, hence has order 16 and is Z/8⊕Z/2. The section of the residue is ⟨−1,2⟩ of order 2. The map Wq(Z_2)=Z/2→Ws(Z_2) is injective and its image together with ⟨1⟩ spans Ws(Z_2); it is represented by the polar matrix [[2,1],[1,2]], whose Q2 Witt class is c+4u.
+Ws(ℤ₂) is the kernel of the surjective second residue W(ℚ₂)→ℤ/2, hence has order 16 and is ℤ/8⊕ℤ/2. The section of the residue is ⟨−1,2⟩ of order 2. The map Wq(ℤ₂)=ℤ/2→Ws(ℤ₂) is injective and its image together with ⟨1⟩ spans Ws(ℤ₂); it is represented by the polar matrix [[2,1],[1,2]], whose ℚ₂ Witt class is c+4u.
 
 (CDHHLMNNS-III-v4, Example 2.3.13, p. 46; CDHHLMNNS-III-v4 line 2110.)
 
@@ -527,14 +529,14 @@ The cyclotomic inertia and ramification formulas give residue degree two and ram
 
 - At 0 and 1, t²+t+1 has values 1 and 1 modulo two, so it has no root. Thus (2) gives 𝔽₄, one prime, and residue degree two.
 - The discriminant is −3, odd, and the derivative 2t+1 reduces to one. The extension at two is unramified, in addition to the separate irreducibility argument for inertness.
-- For Q(√−7), the integral polynomial t²+t+2 reduces to t(t+1) modulo two. Two is unramified but split; a discriminant test alone cannot prove inertness.
+- For ℚ(√−7), the integral polynomial t²+t+2 reduces to t(t+1) modulo two. Two is unramified but split; a discriminant test alone cannot prove inertness.
 - The norm of a+bζ is a²−ab+b². Norm one has the six solutions (1,0),(−1,0),(0,1),(0,−1),(1,1),(−1,−1); their unit squares have index two.
 
-*Needs:* the Mathlib cyclotomic declarations in the exact supplier contracts, fraction fields and completions; §2.1; ArithmeticKTheory §§1.1–1.3 for number-field arithmetic comparisons.
+*Needs:* the Mathlib cyclotomic declarations in the exact supplier contracts, fraction fields and completions; §2.1.
 
 ### 5.2 Eisenstein symmetric Witt group
 
-For R=Z[ζ3], Ws(R)≃Z/4 generated by u=⟨1⟩. Under generic and completed base change this generator still has order 4.
+For R=ℤ[ζ₃], Ws(R)≃ℤ/4 generated by u=⟨1⟩. Under generic and completed base change this generator still has order 4.
 
 (CDHHLMNNS-III-v4, Example 2.3.14, p.46, line 2159; the proof here uses GlobalQuadraticForms §§8.1–8.3.)
 
@@ -546,7 +548,7 @@ Inject Ws(R) into W(K). A unimodular determinant is a unit; modulo squares the u
 - The class 4u has square determinant and trivial local Hasse obstruction after the degree-two extension at two, so 4u=0. The generator therefore has order four, not two.
 - The classes 0,u,2u,3u have pairs (rank parity,signed determinant) respectively (0,1),(1,1),(0,−1),(1,−1). Their completed images remain distinct.
 
-*Needs:* §§0.2 and 5.1; GlobalQuadraticForms §4.4 and §§8.1–8.3; QuadraticFormInvariants Layer 6.
+*Needs:* §§0.2 and 5.1; `IsCyclotomicExtension.Rat.Three.Units.mem`; GlobalQuadraticForms §4.4 and §§8.1–8.3; QuadraticFormInvariants Layer 6.
 
 ### 5.3 Unramified restriction
 
@@ -569,7 +571,7 @@ Apply the supplied quadratic-extension restriction/transfer sequence with a=−3
 
 ### 5.4 Eisenstein Arf base change
 
-The map Wq(Z_2)→Wq(O) is zero, since its residue degree is 2. Let t be the image in Ws(O) of the Arf-one form q=x²+xy+ζy² over O. It has order 2 and signed determinant d=1−4ζ. Norm_(E/Q2)(d)=21 is not a Q2 square. Consequently t∉⟨u⟩⊂Ws(O): the only possible nonzero order-two class there is 2u, whose signed determinant −1 has square norm. Thus ⟨u⟩∩⟨t⟩=0.
+The map Wq(ℤ₂)→Wq(O) is zero, since its residue degree is 2. Let t be the image in Ws(O) of the Arf-one form q=x²+xy+ζy² over O. It has order 2 and signed determinant d=1−4ζ. Norm_(E/ℚ₂)(d)=21 is not a ℚ₂ square. Consequently t∉⟨u⟩⊂Ws(O): the only possible nonzero order-two class there is 2u, whose signed determinant −1 has square norm. Thus ⟨u⟩∩⟨t⟩=0.
 
 (CDHHLMNNS-III-v4, Example 2.3.14, diagram pp. 46–47, corrected by the finite-field Arf scalar-extension calculation; CDHHLMNNS-III-v4 line 2159.)
 
@@ -599,7 +601,7 @@ Use the completion pullback in degree zero: ⟨u⟩∩⟨t⟩=0 makes its kernel
 - The transferred polar matrix has determinant 21 and diagonalization ⟨1,−1,4,−21/4⟩. Removing the hyperbolic pair gives ⟨1,−21⟩=c because −7≡1 modulo eight is a ℚ₂ square.
 - Pic(R)/2=0 and d=1, so the supplied tables give quadratic degree two ℤ/2 and degree three A(R)=ℤ/4. A zero parity quotient at d=1 is compatible with this nonzero obstruction.
 
-*Needs:* §§3.1–3.2 and 5.1–5.4; the supplied Dedekind tables and comparison pullback of ArithmeticKTheory §3.5.
+*Needs:* §§3.1–3.2 and 5.1–5.4; `IsCyclotomicExtension.Rat.three_pid` and `ClassGroup.equivPic`; the supplied Dedekind tables and comparison pullback of ArithmeticKTheory §3.5.
 
 ### Examples
 
