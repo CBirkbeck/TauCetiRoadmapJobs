@@ -1827,7 +1827,7 @@
   "gaps": [
     {
       "slug": "newform-central-analytic-interface",
-      "needs": "for every normalized cuspidal newform of weight k≥2 and every coefficient embedding, export L(f*,h)=conjugate L(f,h) for the coefficient-conjugate cusp form, and L⁽ᵖ⁾(f*,s)=P_p(f*,p⁻ˢ)L(f*,s) on all of ℂ, with the actual bad-prime factor when p divides the level, compatibly with the theta-series L-function of Layer 7.",
+      "needs": "for every normalized cuspidal newform of weight k≥2 and every coefficient embedding, export L(f*,h)=conjugate L(f,h) for the coefficient-conjugate cusp form, and L⁽ᵖ⁾(f*,s)=P_p(f*,p⁻ˢ)L(f*,s) on all of ℂ, with the actual bad-prime factor when p divides the level.",
       "supplier": "ModularForms",
       "section": "Layer 7"
     },
@@ -1845,9 +1845,9 @@
     },
     {
       "slug": "pointed-cubic-model-comparison",
-      "needs": "over a characteristic-zero field, an invertible projective linear map sending a smooth plane cubic with a marked rational point onto a Weierstrass cubic and the marked point to its origin restricts to a pointed isomorphism of smooth projective curves.",
-      "supplier": "EllipticCurves",
-      "section": "Layer 1"
+      "needs": "over a characteristic-zero field k, for a smooth integral projective plane cubic C with marked k-point P and an elliptic Weierstrass cubic W with origin O, an invertible projective linear map M sending C onto W and P to O induces a k-isomorphism k(W)→k(C) identifying the degree-one places at O and P, and hence a pointed elliptic-curve isomorphism through Layer 10’s point–place dictionary.",
+      "supplier": "AlgebraicCurves",
+      "section": "Layer 10"
     },
     {
       "slug": "kato-rational-duality",
@@ -1874,22 +1874,16 @@
       "section": "4.4, 5.1, 5.3 and 7.2"
     },
     {
-      "slug": "cm-rational-kato-equality",
-      "needs": "for every CM newform of weight k≥2 and every λ|p, export the §CZ.6 equality char_A H²_Iw=char_A(H¹_Iw/Z(f)) for the full cyclotomic Kato complex after inverting p, with the §CZ.4 conductor-factor conventions, actual zeta normalization and independent prior §CZ.5 CM module structure, including K⊂ℚ(μ_p∞).",
-      "supplier": "ModularIwasawaMainConjecturesPartII",
-      "section": "CZ.4–CZ.6"
-    },
-    {
       "slug": "theta-induction-arbitrary-cm-curve",
-      "needs": "for every elliptic A/K with all CM endomorphisms defined over its imaginary quadratic field and any CM order, supply weight-two theta newforms f_ψ and f_ψ̄ with L(f_ψ,s)=L(ψ,s) at every Euler factor and the central comparison M_(f_ψ)(1)⊗L=Ind η̄ with its conjugate, without descent to ℚ; §4.2's ellipticCMLFactorization supplies L(A/K,s)=L(ψ,s)L(ψ̄,s).",
+      "needs": "for every elliptic A/K with all CM endomorphisms defined over its imaginary quadratic field and any CM order, realize the automorphic inductions of its two attached Hecke characters as normalized weight-two newforms f_ψ and f_ψ̄ and supply the central Galois comparison M_(f_ψ)(1)⊗L=Ind η̄ with its conjugate, without descent to ℚ.",
       "supplier": "ComplexMultiplicationAndExplicitReciprocity",
       "section": "1.2 and 4.2"
     },
     {
       "slug": "cube-sum-full-cm",
-      "needs": "for every elliptic curve of j=0 over a characteristic-zero field containing a primitive cube root ζ, identify its endomorphism ring over that field with the ring of integers of ℚ(ζ₃), with ζ acting in a short model by (x,y)↦(ζx,y), using the characteristic-zero classification of elliptic endomorphism rings.",
+      "needs": "for every elliptic curve of j=0 over an arbitrary characteristic-zero field k containing a primitive cube root ζ, descend the geometric endomorphism-ring identification of §1.1 to End_k(E)≅ℤ[ζ₃], with ζ₃ acting in a short model by (x,y)↦(ζx,y), so that every geometric endomorphism is defined over k.",
       "supplier": "ComplexMultiplicationAndExplicitReciprocity",
-      "section": "1.2 and 4.2"
+      "section": "1.1"
     },
     {
       "slug": "smith-unconditional-positive-corank",
