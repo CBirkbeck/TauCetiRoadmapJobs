@@ -20,9 +20,10 @@ Not statable at the pins with a few simple definitions:
 * Conditional degeneration lacks the stronger germ-space carrier, the actual
   trace/cup-product pairing and configuration/loop comparison.
 
-The two algebraic headlines use native polynomial coordinate rings. Algebraic
-closedness makes their Jacobian conditions exact smoothness tests and makes
-irreducibility geometric. A prime radical does not assert reducedness.
+The uniform minor-arc polar-count headline uses finite coefficient tuples and
+the actual iterated difference of the residue phase. The irreducibility headline
+uses native polynomial coordinate rings. Algebraic closedness makes its Jacobian
+conditions exact smoothness tests and makes irreducibility geometric. A prime radical does not assert reducedness.
 -/
 
 namespace TauCetiRoadmap.ExponentialSumsAndCircleMethodPartII
@@ -52,6 +53,66 @@ noncomputable def mappingIdeal {K : Type*} [Field K] {n : ℕ}
     Ideal (MvPolynomial (Fin d × Fin n) K) :=
   Ideal.span (Set.range (mappingEquation d f x).coeff)
 
+/-- The coefficient of `T⁻¹` in the product of a truncated Laurent frequency
+and the evaluated hypersurface equation, expressed on its finite coefficient tuple. -/
+noncomputable def residuePhase {K : Type*} [Field K] {n : ℕ}
+    (k d : ℕ) (f : MvPolynomial (Fin n) K) (x : Fin n → K)
+    (b : Fin (k * d) → K) (a : Fin d × Fin n → K) : K :=
+  ∑ r : Fin (k * d), b r * MvPolynomial.eval a ((mappingEquation d f x).coeff r.val)
+
+/-! ## Layer 4: Hankel rank arcs and rational approximation -/
+
+/-- The rectangular Hankel matrix of the finite frequency vector, with zero-based
+entry `b (i+j)`; an empty row type handles stages at or above the frequency length. -/
+def hankelMatrix {K : Type*} (L m : ℕ) (b : Fin L → K) :
+    Matrix (Fin (L - m)) (Fin (m + 1)) K :=
+  fun i j => b ⟨i.val + j.val, by omega⟩
+
+/-! ## Layer 8: geometric Weyl differencing and polynomial polar counts -/
+
+/-- The iterated difference with convention `Δ_y G(a) = G(a) - G(a+y)`,
+written as the alternating sum over subsets of the `r` increment indices. -/
+noncomputable def iteratedPhaseDifference {K : Type*} [Field K] {n d r : ℕ}
+    (G : (Fin d × Fin n → K) → K)
+    (y : Fin r → Fin d × Fin n → K) (a : Fin d × Fin n → K) : K :=
+  ∑ I : Finset (Fin r), (-1 : K) ^ I.card * G (a + ∑ i ∈ I, y i)
+
+/-- The number of `(k-1)`-tuples of coefficient increments for which the iterated
+residue-phase difference is constant in the base coefficient tuple. Over the finite
+field in the headline this is the actual point count of the differencing locus. -/
+noncomputable def polarCount {K : Type*} [Field K] [Fintype K]
+    (n k d : ℕ) (f : MvPolynomial (Fin n) K) (x : Fin n → K)
+    (b : Fin (k * d) → K) : ℕ := by
+  classical
+  exact (Finset.univ.filter (fun y : Fin (k - 1) → Fin d × Fin n → K =>
+    ∀ a : Fin d × Fin n → K,
+      iteratedPhaseDifference (residuePhase k d f x b) y a =
+        iteratedPhaseDifference (residuePhase k d f x b) y 0)).card
+
+/-- Outside the rank-`m` Hankel arc, a smooth leading form gives the uniform
+polar-count bound with constant `(k-1)^n`, over every finite field of characteristic
+above `k`. Smoothness is tested over the algebraic closure. The fixed vector can be
+arbitrary: its contribution to the phase has coefficient degree below `k` and hence
+does not change the differencing locus. This is the arithmetic count underlying
+BS20 Proposition 6.2, with the explicit cumulative-degree constant from Layer 0. -/
+theorem minor_arc_polar_count
+    {K : Type*} [Field K] [Fintype K]
+    (n k d m : ℕ) (f : MvPolynomial (Fin n) K) (x : Fin n → K)
+    (b : Fin (k * d) → K)
+    (hk : 3 ≤ k) (hd : k - 1 ≤ d) (hchar : k < ringChar K)
+    (hdegree : f.totalDegree = k)
+    (hinfty : ∀ a : Fin n → AlgebraicClosure K, a ≠ 0 →
+      MvPolynomial.eval a (MvPolynomial.map (algebraMap K (AlgebraicClosure K))
+        (MvPolynomial.homogeneousComponent k f)) = 0 →
+      ∃ j : Fin n, MvPolynomial.eval a (MvPolynomial.pderiv j
+        (MvPolynomial.map (algebraMap K (AlgebraicClosure K))
+          (MvPolynomial.homogeneousComponent k f))) ≠ 0)
+    (hm : d ≤ m) (hupper : 2 * m ≤ k * d)
+    (hrank : m < (hankelMatrix (k * d) m b).rank) :
+    polarCount n k d f x b ≤ (k - 1) ^ n *
+      Fintype.card K ^ (d * n * (k - 1) - n * (m / (k - 1))) := by
+  sorry
+
 /-! ## Layer 10: comparison, spreading and irreducible mapping schemes -/
 
 /-- A smooth affine hypersurface with smooth leading boundary has geometrically
@@ -79,24 +140,6 @@ theorem mapping_geometrically_irreducible
     (mappingIdeal d f x).radical.IsPrime ∧
       ringKrullDim (MvPolynomial (Fin d × Fin n) K ⧸ mappingIdeal d f x) =
         (d * (n - k) : ℕ) := by
-  sorry
-
-/-- For `Y₁^(k-1)Y₂ + Y₂^k + sum_{j≥3} Y_j^k + 1` and leading vector
-`(1,0,...,0)`, the mapping dimension is at least `d(N-k)-d+k-1` when
-`1 ≤ d < k-1`, where `N=n+3`. Moving `kd` to the dimension side expresses
-this signed bound without truncating a negative expected dimension. -/
-theorem small_degree_excess_dimension
-    {K : Type*} [Field K] [IsAlgClosed K]
-    (n k d : ℕ) (hk : 3 ≤ k) (hd : 1 ≤ d) (hdk : d < k - 1)
-    (hchar : ringChar K = 0 ∨ k < ringChar K) :
-    let f : MvPolynomial (Fin (n + 3)) K :=
-      MvPolynomial.X 0 ^ (k - 1) * MvPolynomial.X 1 +
-      MvPolynomial.X 1 ^ k +
-      (∑ j : Fin (n + 3), if 2 ≤ j.val then MvPolynomial.X j ^ k else 0) + 1
-    let x : Fin (n + 3) → K := fun j => if j = 0 then 1 else 0
-    (d * (n + 2) + k - 1 : ℕ) ≤
-      ringKrullDim (MvPolynomial (Fin d × Fin (n + 3)) K ⧸ mappingIdeal d f x) +
-        (k * d : ℕ) := by
   sorry
 
 end TauCetiRoadmap.ExponentialSumsAndCircleMethodPartII
