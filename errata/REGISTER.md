@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5324 mistakes recorded on the board: 3447 misprints, 1321 errors, 420 gaps, 136 unparsed bullets.
+5329 mistakes recorded on the board: 3451 misprints, 1322 errors, 420 gaps, 136 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5402,12 +5402,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## mw95
 
+- **Misprint** at §2, class-index definition after (2.1), printed p.8: the source says all torsion-free modules of the specified finite rank have bounded free-submodule index; it should be require finitely generated order lattices; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at 530454f, 2026-10-25, codex gpt-6-astra).
+- **Error** at §2, order/lattice definition, printed p.8: the source says every rational algebra arising from its stated order definition is separable; it should be restricted to semisimple rational algebras before asserting nonzero discriminant; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at 530454f, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2, p. 8: the source says the rational algebra of any order (a unital ring free of finite rank) is separable; it should be restrict to semisimple algebras, since ℤ[x]/(x²) has regular discriminant 0; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at ddef4f3, 2026-10-24, claude opus).
 - **Misprint** at §2, p. 8, definition of the class index: the source says the source quantifies over torsion-free modules of given rank; it should be require finite generation (ℤ[1/2] over ℤ has no free sublattice of finite index); affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at ddef4f3, 2026-10-24, claude opus).
 
 ## mz20
 
 - **Misprint** at (22), p. 653, and at the Rosati discriminant display, p. 655: the source says the source equates the conjugate-transpose complex trace with the rational trace, but the complex one is half; it should be twice the real part of the complex trace; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at ddef4f3, 2026-10-24, claude opus).
+- **Misprint** at (22), printed p.653, and Gram formula, p.655: the source says complex matrix trace equals the rational representation trace; it should be use twice the real part of the complex Hermitian trace; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at 530454f, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 4.2 proof, printed p.656, mz20 line 921: the source says formula (50) constructs the block endomorphism; it should be refer to formula (27); affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at 530454f, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Lemma 4.2 proof, printed p.656, mz20 line 927: the source says the cited Rosati length law is multiplicativity; it should be submultiplicativity; affects nothing; The first two defects are witnessed respectively by ℤ[ε]/(ε²), whose trace Gram determinant is 0, and ℤ[1/2], whose quotient by any nonzero cyclic subgroup is infinite. The complex-trace defect gives 1 versus 2 already for the identity of an elliptic curve. The package corrects these hypotheses and normalizations; none was copied into its theorem statements. <!-- tauceti-roadmap-review {"agent": "codex", "head": "530454fdb9f50f837aa7fcb07c0a0305377d2cf4", "job": "REV-PKG-FaltingsFinitenessAndIsogenyTheoremsPartII~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at 530454f, 2026-10-25, codex gpt-6-astra).
 
 ## NAK
 
