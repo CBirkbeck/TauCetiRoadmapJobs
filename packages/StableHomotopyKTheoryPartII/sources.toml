@@ -1,0 +1,184 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StableHomotopyKTheoryPartII"
+
+[[source]]
+id = "cartan55-I"
+authors = "Henri Cartan"
+title = "Opérations cohomologiques, I"
+year = 1955
+locator_scheme = "section"
+locator = "Exposé 14 entire, pp.14-01–14-12; especially §§2–6"
+url = "https://www.numdam.org/item/SHC_1954-1955__7_2_A3_0.pdf"
+fetched_from = "https://www.numdam.org/item/SHC_1954-1955__7_2_A3_0.pdf"
+fetched_at = "2026-10-25T11:06:22Z"
+sha256 = "f877b26795c18aa139bfd8c74a49f0fc33d374418da75e42743f5090f6aa2e42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/steenrod-algebra"]
+
+[[source]]
+id = "cartan55-II"
+authors = "Henri Cartan"
+title = "Opérations cohomologiques, II"
+year = 1955
+locator_scheme = "section"
+locator = "Exposé 15 entire, pp.15-01–15-10; especially §§3–5, Theorems 1–3"
+url = "https://www.numdam.org/item/SHC_1954-1955__7_2_A4_0.pdf"
+fetched_from = "https://www.numdam.org/item/SHC_1954-1955__7_2_A4_0.pdf"
+fetched_at = "2026-10-25T11:06:23Z"
+sha256 = "98769f4ae9ad18d20eac3446286d39a45fd440efc3cd5ca619d26b014d48e450"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/steenrod-algebra"]
+
+[[source]]
+id = "cartan55-III"
+authors = "Henri Cartan"
+title = "Opérations cohomologiques, III"
+year = 1955
+locator_scheme = "section"
+locator = "Exposé 16 entire, pp.16-01–16-14; especially §§2–4, Theorems 1 and 1 bis"
+url = "https://www.numdam.org/item/SHC_1954-1955__7_2_A5_0.pdf"
+fetched_from = "https://www.numdam.org/item/SHC_1954-1955__7_2_A5_0.pdf"
+fetched_at = "2026-10-25T11:06:24Z"
+sha256 = "61b87533b07b20261cb0dbb25260e71aa41192cf58b99442e0deaf8674e2f1e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/steenrod-algebra"]
+
+[[source]]
+id = "kuhn04"
+authors = "Nicholas J. Kuhn"
+title = "The McCord model for the tensor product of a space and a commutative ring spectrum"
+year = 2004
+arxiv = "math/0202042v1"
+locator_scheme = "section"
+locator = "6 Definitions 6.1 and Theorems 6.2, 6.6 with proof, preprint pp.15–16"
+url = "https://arxiv.org/abs/math/0202042v1"
+fetched_from = "https://arxiv.org/pdf/math/0202042v1"
+fetched_at = "2026-10-25T11:06:29Z"
+sha256 = "448a86e091b29fab29e4c20d9a1ba5a85f078018d63e1334a40d334d84d1b290"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv math/0202042v1 (2002), A model for a space tensored with a ring spectrum; published under the McCord-model title in 2004; citations use the preprint numbering and pages."
+cited_for = ["PO.8/free-loop-totalization"]
+
+[[source]]
+id = "malkiewich17"
+authors = "Cary Malkiewich"
+title = "Cyclotomic structure in the topological Hochschild homology of DX"
+year = 2017
+venue = "Algebr. Geom. Topol. 17 (2017) 2307-2356"
+doi = "10.2140/agt.2017.17.2307"
+arxiv = "1505.06778v4"
+locator_scheme = "section"
+locator = "2.5 Proposition 2.22 and full proof, preprint pp.14–15"
+url = "https://arxiv.org/abs/1505.06778v4"
+fetched_from = "https://arxiv.org/pdf/1505.06778v4"
+fetched_at = "2026-10-25T11:06:37Z"
+sha256 = "db2af613698a9311143c7d2edd008bb96c7c60f001175a0fe4818e179c8a70e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv 1505.06778v4 (2017); citations use Proposition 2.22 and preprint pages 14–15, not journal pagination."
+cited_for = ["PO.8/free-loop-totalization"]
+
+[[source]]
+id = "ns18"
+authors = "Thomas Nikolaus and Peter Scholze"
+title = "On topological cyclic homology"
+year = 2018
+locator_scheme = "section"
+locator = "I.2 Examples I.2.3 and Lemmas I.2.6–I.2.9, pp.219–224; II.4 Lemma II.4.1 and Corollary II.4.9, pp.260–265; III.1, pp.285–292; IV.1, pp.324–340; IV.3 Propositions IV.3.1–IV.3.2, Corollary IV.3.3 and Theorem IV.3.7 with proof, pp.347–355"
+url = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/acta/2018/0221/0002/ACTA-2018-0221-0002-a001.pdf"
+fetched_from = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/acta/2018/0221/0002/ACTA-2018-0221-0002-a001.pdf"
+fetched_at = "2026-10-25T11:07:11Z"
+sha256 = "8b1856fa8faefa3efebd64580249aa6fbc0c918f69820bba01410ab0ef1eb8ef"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/cyclic-tate-coefficients; PO.2/finite-type-segal; PO.3/finite-tower-pro-constant; PO.3/truncated-tensor-tate; PO.3/arbitrary-vector-segal; PO.3/bounded-below-segal; PO.4/weyl-refinement; PO.4/space-diagonal-comparison; PO.4/positive-homotopy-splitting; PO.4/degree-zero-power; PO.4/transfer-ideal; PO.4/degree-zero-frobenius; PO.4/ordinary-and-compact-frobenius; PO.4/spherical-witt; PO.5/representation-thom-cohomology; PO.5/parametrised-thom-adjunction; PO.5/rezk-power; PO.5/tate-suspension; PO.5/extended-power-thom-comparison; PO.5/all-degree-frobenius; PO.6/tate-hf-decomposition; PO.6/steenrod-power-coefficients; PO.6/total-steenrod-frobenius; PO.7/atiyah-cyclic-power; PO.7/ku-tate-coefficients; PO.7/ku-adams-frobenius; PO.7/fixed-sphere-counterexample; PO.7/ku-orbit-counterexample; PO.7/unbounded-diagonal-counterexample; PO.8/free-loop-totalization; PO.8/tate-totalization-control; PO.8/free-loop-segal"]
+
+[[source]]
+id = "ns19-correction"
+authors = "Thomas Nikolaus and Peter Scholze"
+title = "Correction to On topological cyclic homology"
+year = 2019
+locator_scheme = "section"
+locator = "Entire four-page correction, pp.215–218"
+url = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/acta/2019/0222/0001/ACTA-2019-0222-0001-a002.pdf"
+fetched_from = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/acta/2019/0222/0001/ACTA-2019-0222-0001-a002.pdf"
+fetched_at = "2026-10-25T11:07:13Z"
+sha256 = "0b98fb63029a31324ad23504f584e3f414b03f4734ba63f49b943b0bd5f27944"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["source corrections"]
+
+[[source]]
+id = "lnr12"
+authors = "Sverre Lunøe-Nielsen and John Rognes"
+title = "The topological Singer construction"
+year = 2012
+locator_scheme = "section"
+locator = "2.1 Proposition 2.2 and proof, pp.864–869; 2.2 Definition 2.3; 3.1 Definition 3.1 and augmentation formulas, Proposition 3.3 and Theorem 3.4, pp.875–877; 4.3 Tate tower, pp.885–888; 5.1 Lemma 5.1 and Theorem 5.2, pp.896–898; 5.2 Proposition 5.7 and Theorem 5.9, pp.902–903; 5.3 Definition 5.10 through Theorem 5.13 and proof, pp.903–906"
+url = "https://ems.press/content/serial-article-files/26162?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/26162?nt=1"
+fetched_at = "2026-10-25T11:07:14Z"
+sha256 = "33a7b543d1dd697c08ed903dae878b4dedd745a00fed43d15447685f7ad25a1a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.2/adams-resolution; PO.2/adams-convergence; PO.2/continuous-cohomology; PO.2/inverse-limit-adams; PO.2/singer-module; PO.2/singer-tor-equivalence; PO.2/singer-tate-tower; PO.2/continuous-singer-comparison; PO.2/finite-type-segal"]
+
+[[source]]
+id = "agm85"
+authors = "J. F. Adams, J. H. Gunawardena and H. Miller"
+title = "The Segal conjecture for elementary abelian p-groups"
+year = 1985
+locator_scheme = "section"
+locator = "1 Proposition 1.2 and Theorem 1.3, p.436; 2 Lemmas 2.1–2.2 and proof of Theorem 1.3, pp.438–441; only cyclic Singer input used"
+url = "https://math.mit.edu/~hrm/papers/adams-gunawardena-miller-segal-conjecture.pdf"
+fetched_from = "https://math.mit.edu/~hrm/papers/adams-gunawardena-miller-segal-conjecture.pdf"
+fetched_at = "2026-10-25T11:07:16Z"
+sha256 = "441f852919661722ba039707007e0869a9bb081cffbd32f119fa876bd05e56dc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/milnor-dual; PO.2/singer-tor-equivalence"]
+
+[[source]]
+id = "bmms86"
+authors = "Robert R. Bruner, J. Peter May, James E. McClure and Mark Steinberger"
+title = "H∞ ring spectra and their applications"
+year = 1986
+locator_scheme = "section"
+locator = "VIII.1 Propositions 1.1–1.4, scan PDF pp.130–132; VIII.2 Propositions 2.1–2.4 and Adem proof, scan PDF pp.133–135; VIII.4 Theorem 4.1, Proposition 4.2 and Lemma 4.3, scan PDF pp.141–142"
+url = "https://www.math.uchicago.edu/~may/BOOKS/h_infty.pdf"
+fetched_from = "https://www.math.uchicago.edu/~may/BOOKS/h_infty.pdf"
+fetched_at = "2026-10-25T11:07:38Z"
+sha256 = "91a6bdea3f047979d5a53af9301411ddc8ae0b40b5da6a2d6b1d8b592bab5d56"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/extended-powers; PO.1/steenrod-operations; PO.1/steenrod-algebra; PO.4/degree-zero-power; PO.4/transfer-ideal; PO.6/steenrod-power-coefficients; PO.7/atiyah-cyclic-power"]
+
+[[source]]
+id = "milnor58"
+authors = "John Milnor"
+title = "The Steenrod algebra and its dual"
+year = 1958
+locator_scheme = "section"
+locator = "2–3, pp.153–156, Theorem 1; 5 Theorems 2–3 and triangular-pairing proof, pp.159–162; 8 Proposition 2, pp.169–170; Appendix 1, p.171"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Milnor-A.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Milnor-A.pdf"
+fetched_at = "2026-10-25T11:07:39Z"
+sha256 = "407cc2db0514af4f63a6be5f1e2adca122054a25dc6ea13ce4f8cd9927d29ff0"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["PO.1/steenrod-algebra; PO.1/milnor-dual"]

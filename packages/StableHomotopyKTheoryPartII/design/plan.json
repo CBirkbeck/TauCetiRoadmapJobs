@@ -2928,7 +2928,14 @@
       "remaining": []
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "finite-field-witt-etale-frobenius",
+      "needs": "For every prime p and finite field k of degree d≥1 over F_p, W(k) is finite étale and free of rank d over W(F_p)=Z_p, and reduction identifies its Z_p-algebra endomorphisms with the F_p-endomorphisms of k, carrying Witt Frobenius to a↦a^p.",
+      "supplier": "RefinedTraceMethods",
+      "section": "6.1 Spherical bases and compatible global lifts"
+    }
+  ],
   "sourceIssues": [
     {
       "id": "StableHomotopyKTheoryPartII/E1",
