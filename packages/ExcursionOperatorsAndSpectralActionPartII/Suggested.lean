@@ -13,7 +13,7 @@ is stated below on the native semisimple Lie and highest-weight carriers.
 
 The following headline theorems are not statable at the pins:
 
-* The geometric spectral centre map and FS parameters (§0.0): lack the lisse sheaf category on Bun_G, its Hecke action, the basic embeddings and their smooth representation categories.
+* The comparisons of the imported Fargues–Scholze centre action with the intrinsic map of a basic inner form and with normalized Levi restriction (§0.0): lack the lisse sheaf category on Bun_G, its spectral centre action, the basic embeddings and the Bernstein-centre restriction maps.
 * Very stability of the Fargues–Scholze image (H26 Theorem 1.1) (§3.3): lacks the geometric spectral centre map, the smooth Bernstein distribution centre and the stable orbital-integral kernel.
 * The local stable-class form of quantitative weight equidistribution (§2.4(b)) and discriminant-weighted Hecke character averaging (§2.5) (H26 Lemma 2.6): lack local stable classes, their groups H_g and invariant fibres, and the actual Euler Hecke operators on Harish-Chandra characters.
 * Stable inner-form Hecke character identities in both directions (H26 Proposition 2.7) (§§1.5–1.6): lacks the basic-stratum shriek Hecke functors and their Harish-Chandra character maps.

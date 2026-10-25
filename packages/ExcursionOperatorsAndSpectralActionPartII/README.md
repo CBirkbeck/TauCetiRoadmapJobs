@@ -1,10 +1,10 @@
 # Roadmap: excursion operators and the spectral action, part II
 
-**Summary.** Starting from the Fargues–Scholze excursion centre map Ψ_G of §0.0, this roadmap proves that its image in the smooth Bernstein centre consists of very stable distributions for every connected reductive group over every p-adic field. Its quantitative Hecke averaging theorem gives constancy of semisimple parameters on atomically stable characters. For each extended pure inner form of a quasi-split group, it constructs a surjection between the two image centres and proves compatibility with normalized Levi restriction, stable tempered character transfer and matching test functions (H26, Theorems 1.1 and 1.4, pp. 2–3; H26 line 70 and line 114).
+**Summary.** Starting from the imported Fargues–Scholze excursion centre map Ψ_G of §0.0, this roadmap proves that its image in the smooth Bernstein centre consists of very stable distributions for every connected reductive group over every p-adic field. Its quantitative Hecke averaging theorem gives constancy of semisimple parameters on atomically stable characters. For each extended pure inner form of a quasi-split group, it constructs a surjection between the two image centres and proves compatibility with normalized Levi restriction, stable tempered character transfer and matching test functions (H26, Theorems 1.1 and 1.4, pp. 2–3; H26 line 70 and line 114).
 
 ## Scope and ownership
 
-The geometric Hecke family comes from HeckeStacksAndLocalShtukas HS1 and HS4; the abstract excursion centre map and semisimple reconstruction come from LanglandsParameterStacks LP2e.15, LP2e.9, LP2c.5 and LP2c.8. Section 0.0 owns their specialization to the lisse category on Bun_G, restriction to smooth basic strata, the FS parameter of an irreducible and normalized spectral Levi compatibility. The remaining targets are the stable and very stable central conditions, their character criteria, decategorified character operators, quantitative averaging, the stability argument and its atomic and inner-form consequences. The universal spectral action of FS24 Chapter X is used by no target here.
+The geometric Hecke family comes from HeckeStacksAndLocalShtukas HS1, HS3.11 and HS4. The finite wild bound of each compact lisse object, the geometric spectral centre action on D_lis(Bun_G), its Hecke commutation and its neutral restriction Ψ_G come from IgusaVarietiesAndTorsionConcentration IG.F.21, and the semisimple parameter of an irreducible from IG.F.22; AutomorphicGaloisRepresentationsPartII Layer AG2.6, “The parameter stack and geometric spectral action”, constructs the same action, and IG.F.21 is cited because HeckeStacksAndLocalShtukas §HS3.11 compares its Hecke functors with the HS family. LanglandsParameterStacks LP1.2, LP2c.5 and LP2c.8 supply the spectral algebra and semisimple reconstruction. Section 0.0 owns only two comparisons for every connected reductive G: restriction to a basic stratum equals the intrinsic map of G_b, and normalized spectral Levi compatibility, which IG.F.22 proves only for GL_n and its inner forms. The remaining targets are the stable and very stable central conditions, their character criteria, decategorified character operators, quantitative averaging, the stability argument and its atomic and inner-form consequences. The universal spectral action of FS24 Chapter X is used by no target here.
 
 SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.1, SR.2.2 and SR.3.1–SR.3.3 own the smooth category, convolution, normalized induction, finite length, Bernstein decomposition and centre. EndoscopicTransferAndUnitaryTraceComparison §§1.3, 1.13–1.16, 2.1, 2.4, 2.11, 2.16 and 4.7 own stable conjugacy, signs, orbital measures, matching, local character theory, Weyl integration and smooth transfer. The remaining general stable harmonic analysis belongs to the continuation of EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.11 and 2.16; the all-weight shriek trace theorem stays in the local-shtuka direction. They enter as the exact supplier contracts below, rather than additional harmonic-analysis or local-shtuka layers here.
 
@@ -74,7 +74,7 @@ Compatibility of these maps with the geometric spectral action is the local targ
 
 Consume §§HS1.1–HS1.3 and HS1.5–HS1.7 for normalized kernels, relative-homology Hecke operators, units, fusion, adjoints, compactness and duality; §§HS3.8 and HS3.10 supply the star finite-length comparison and basic-source enriched left adjoint. A geometric fibre gives the endofunctors used here. Their smooth categories and coefficient dictionary are the ones fixed above.
 
-Consume HS4.1's finite-set Hecke family and HS4.2's dual-leg excursion operations, §§HS1.8–HS1.9 for condensed enrichment and continuous Weil descent, and §HS4.7 for tensor compatibility, wild-inertia closure and continuous export for the geometric specialization in §0.0; §HS4.6 supplies its geometric parabolic and cyclotomic comparison on unstable strata for ℓ-power torsion coefficients. No spectral centre map is assumed from this supplier.
+Consume HS4.1's finite-set Hecke family and HS4.2's dual-leg excursion operations, and §HS3.11 for the equivalence of Hecke functors, Satake kernels and Weil actions with IgusaVarietiesAndTorsionConcentration IG.F.18–IG.F.20, which identifies the imported excursion operators of §0.0 with the HS4.2 composites; §HS4.6 supplies its geometric parabolic and cyclotomic comparison on unstable strata for ℓ-power torsion coefficients. No spectral centre map is assumed from this supplier.
 
 What HeckeStacksAndLocalShtukas must provide (gap:all-weight-shriek-trace): For dominant μ and basic b∈B(G,μ), prove the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190).
 
@@ -122,53 +122,51 @@ Consume GeometricSatakeAndFusion GS4, “Integral identification, normalization 
 
 Consume the main roadmap's Layers 1, 2 and 7 for representations as comodules, their differentials and the derived-group/Cartan/root dictionary, and Layer 10A–10B for the full integral torus-weight character in ℤ[X*(T̂)] and the simple modules L(λ) of a split reductive group with their Weyl characters. In characteristic zero these are the Weyl modules; central weights remain visible. Section 2.2 specializes this supplied group formula.
 
+### From TauCetiRoadmap.IgusaVarietiesAndTorsionConcentration
+
+Consume IG.F.21, “Geometric excursions and the integral spectral centre”, for every connected reductive G/E with coefficients changed to ℚ̄_ℓ: the common open wild subgroup acting trivially on all Hecke transforms of each compact lisse object, the excursion operators and their relations, the central action of Z_spec(G) on D_lis(Bun_G) commuting with Hecke functors and coefficient change, and its restriction to the smooth centre on the neutral stratum. Since ℓ is invertible in ℚ̄_ℓ, its very-good-prime hypothesis does not enter. Consume from IG.F.22, “Parameters, induction, reduction and duality”, only the attachment of a semisimple parameter to each irreducible smooth representation over an algebraically closed coefficient field; its product, parabolic, reduction and duality compatibilities are stated there for GL_n, its inner forms and products and are not used.
+
 ### From TauCetiRoadmap.LanglandsParameterStacks
 
-Consume LP1.2, “Clopen finite-wild pieces”, for the parameter-stack decomposition defining Z_spec(G). Consume LP2e.15, “Abstract excursion centre maps”, LP2e.9 for the rational excursion-to-invariant-functions isomorphism on finite-wild pieces, and LP2c.5, “Continuous semisimple parameter characters”, for the centre-valued excursion algebra and the bijection with continuous semisimple Weil-parameter classes with prescribed projection. LP2c.8, “Parameters of Schur objects”, supplies the invariant-coordinate characterization on Schur objects. The local continuity input for the geometric action is a target in §0.0; LP2c.5 then supplies continuous semisimple classification. Equality of all those scalars implies equality of conjugacy classes; a complex field isomorphism does not supply a new continuity theorem.
+Consume LP1.2, “Clopen finite-wild pieces”, for the parameter-stack decomposition defining Z_spec(G), and LP2c.5, “Continuous semisimple parameter characters”, for the centre-valued excursion algebra and the bijection with continuous semisimple Weil-parameter classes with prescribed projection. LP2c.8, “Parameters of Schur objects”, supplies the invariant-coordinate characterization on Schur objects. The imported action of IgusaVarietiesAndTorsionConcentration IG.F.21 factors through the finite-wild parameter schemes, so LP2c.5 supplies continuous semisimple classification. Equality of all those scalars implies equality of conjugacy classes; a complex field isomorphism does not supply a new continuity theorem.
 
 ## How to read the build
 
-Layer 0 first specializes the excursion centre map to the geometric Hecke action, its basic restrictions and parameters, then fixes the stable central submodule, very stable subalgebra and their character detection. Layer 1 passes the supplied geometric Hecke functors to finite-length Euler characters and compares their two inner-form directions. Layer 2 specializes the dual-root Weyl formula, constructs the stable-class weight kernel and proves quantitative averaging. Layer 3 integrates that estimate against cuspidal functions and proves very stability by rank induction. Layer 4 uses support minimality to obtain parameter constancy. Layers 5 and 6 use the established stability theorem to construct the inner-form image quotient and prove its Levi, character and test-function compatibilities. Each local dependency lists only the statements and route inputs it actually uses; the exact supplier contracts give the common meaning of every gap slug.
+Layer 0 first imports the geometric centre action and its parameters, compares its basic and normalized Levi restrictions, then fixes the stable central submodule, very stable subalgebra and their character detection. Layer 1 passes the supplied geometric Hecke functors to finite-length Euler characters and compares their two inner-form directions. Layer 2 specializes the dual-root Weyl formula, constructs the stable-class weight kernel and proves quantitative averaging. Layer 3 integrates that estimate against cuspidal functions and proves very stability by rank induction. Layer 4 uses support minimality to obtain parameter constancy. Layers 5 and 6 use the established stability theorem to construct the inner-form image quotient and prove its Levi, character and test-function compatibilities. Each local dependency lists only the statements and route inputs it actually uses; the exact supplier contracts give the common meaning of every gap slug.
 
 ## Layer 0: stable central distributions
 
 ### 0.0 The Fargues–Scholze centre map
 
-**(a) Finite ramification.** For every compact A∈D_lis(Bun_G), prove that there is an open subgroup P of wild inertia such that P^I acts trivially on T_V(A) for every finite set I and every finite-leg representation V. Use the tensor generator, the continuous endomorphism algebra and the tensor-compatible closure operations supplied by HeckeStacksAndLocalShtukas §HS4.7 (FS24, Proposition IX.5.1, pp. 327–328; FS24 line 12683).
+Import the geometric spectral centre action from IgusaVarietiesAndTorsionConcentration IG.F.21, “Geometric excursions and the integral spectral centre”, after coefficient change to ℚ̄_ℓ, where ℓ is invertible and no very-good-prime condition enters. It supplies, for every connected reductive G/E: for each compact A∈D_lis(Bun_G) an open subgroup P of wild inertia such that P^I acts trivially on T_V(A) for every finite set I and every finite-leg representation V; excursion operators, defined by creation, the W_E^I-action on T_V and annihilation, that factor through the excursion algebra; and a central action Z_spec(G)→π₀End(id_(D_lis(Bun_G))) commuting with the Hecke functors, whose restriction to the neutral stratum [*/G(E)] lands in the smooth centre. That restriction, transported by ι, is Ψ_G. For basic b let Ψ_G^b:Z_spec(G)→Z(G_b) be the restriction of the same action along the fully faithful basic-stratum embedding D(G_b(E))→D_lis(Bun_G) of HeckeStacksAndLocalShtukas §HS3.10; for b=1 it is Ψ_G (FS24, Proposition IX.5.1 and Theorem IX.5.2, pp. 327–329; FS24 line 12683 and line 12745).
 
-*Needs:* HeckeStacksAndLocalShtukas §§HS1.1–HS1.9, §§HS4.1–HS4.2 and §HS4.7; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”.
+HeckeStacksAndLocalShtukas §HS3.11 identifies the Hecke functors of IG.F.18–IG.F.20 with those of HS1–HS3, together with their Satake kernels and Weil actions. Hence each imported excursion operator is the create–Weil-action–annihilate composite of HS4.2 for the Hecke family of HS4.1, and the imported action commutes with every HS4.1 Hecke functor used in Layer 1. AutomorphicGaloisRepresentationsPartII Layer AG2.6, “The parameter stack and geometric spectral action”, constructs the same action through the universal spectral action; no target here uses a second construction.
 
-**(b) Centre map and Hecke commutation.** Specialize LanglandsParameterStacks LP2e.15 to the continuous finite-set Hecke action on D_lis(Bun_G). Define the geometric spectral centre map Z_spec(G)→π₀End(id_(D_lis(Bun_G))) by its excursion operators: apply LP2e.9 on the finite-wild pieces controlled by (a), and extend their compatible central actions to D_lis(Bun_G). Its image commutes with every Hecke functor, with unit and tensor compatibility. The coefficients have characteristic zero, so the finite order of π₀Z(G) is invertible (FS24, Proposition I.9.3, p. 35, and Theorem IX.5.2, p. 329; FS24 line 1282 and line 12745).
+**(a) Basic restriction.** For every basic b prove Ψ_G^b=Ψ_(G_b) after identifying the spectral centres of G and G_b by the inner twist. This compares the restriction of the imported action of Bun_G with the neutral restriction of the imported action of Bun_(G_b) (FS24, §IX.7.1 and Theorem IX.7.2, pp. 334–335; FS24 line 12950, line 12977 and line 12994).
 
-*Needs:* (a); LanglandsParameterStacks §§LP1.2, LP2e.9 and LP2e.15; HeckeStacksAndLocalShtukas §§HS1.8–HS1.9, §§HS4.1–HS4.2 and §HS4.7.
+*Needs:* IgusaVarietiesAndTorsionConcentration IG.F.21; HeckeStacksAndLocalShtukas §§HS3.10 and HS3.11; BunGAndNewtonStrata §§1.13, 1.18–1.19; SmoothRepresentationsOfLocalGroups §SR.3.2; LanglandsParameterStacks §LP1.2; ReductiveGroupsPartII §RG2.5.
 
-**(c) Basic restriction.** Restrict this natural action along the fully faithful basic-stratum embedding D(G_b(E))→D_lis(Bun_G) to define Ψ_G^b:Z_spec(G)→Z(G_b). For b=1 this is Ψ_G; for every basic b prove Ψ_G^b=Ψ_(G_b) after identifying the spectral centres by the inner twist. This compares the specified geometric actions (FS24, §IX.7.1 and Theorem IX.7.2, pp. 334–335; FS24 line 12950, line 12977 and line 12994).
+**(b) Normalized parabolic compatibility.** For every E-rational parabolic P=MU and a∈Z_spec(G), prove r_M(Ψ_G(a))=Ψ_M(res_M(a)), where res_M:Z_spec(G)→Z_spec(M) is ordinary dual-Levi restriction. Start with the cyclotomic correction in FS24's unnormalized induction, and transport to the normalized convention fixed above. Use the torsion-coefficient comparison of HeckeStacksAndLocalShtukas §HS4.6 for excursion operators, then the ℓ-adic separation argument of FS24 Theorem IX.7.2 and the characteristic-zero excursion/function identification of IG.F.21; this imposes no extra condition on ℓ. IgusaVarietiesAndTorsionConcentration IG.F.22 proves this compatibility only for GL_n, its inner forms and their products; here G is any connected reductive group (FS24, Corollary IX.7.3, pp. 337–338; FS24 line 13097; H26 line 128).
 
-*Needs:* (b); HeckeStacksAndLocalShtukas §HS3.10; BunGAndNewtonStrata §§1.13, 1.18–1.19; SmoothRepresentationsOfLocalGroups §SR.3.2; LanglandsParameterStacks §LP1.2; ReductiveGroupsPartII §RG2.5.
+*Needs:* (a); IgusaVarietiesAndTorsionConcentration IG.F.21; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.1.3 and SR.2.2; ReductiveGroupsPartII §RG2.5; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; HeckeStacksAndLocalShtukas §§HS3.11 and HS4.6 for the Hecke comparison and the geometric parabolic and cyclotomic comparison.
 
-**(d) Normalized parabolic compatibility.** For every E-rational parabolic P=MU and a∈Z_spec(G), prove r_M(Ψ_G(a))=Ψ_M(res_M(a)), where res_M:Z_spec(G)→Z_spec(M) is ordinary dual-Levi restriction. Start with the cyclotomic correction in FS24's unnormalized induction, and transport to the normalized convention fixed above. Use the torsion-coefficient comparison of HeckeStacksAndLocalShtukas §HS4.6 for excursion operators, then the ℓ-adic separation argument of FS24 Theorem IX.7.2 and the characteristic-zero excursion/function identification of (b); this imposes no extra condition on ℓ (FS24, Corollary IX.7.3, pp. 337–338; FS24 line 13097; H26 line 128).
-
-*Needs:* (b)–(c); gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.1.3 and SR.2.2; ReductiveGroupsPartII §RG2.5; GeometricSatakeAndFusion GS4, “Integral identification, normalization and functoriality”; HeckeStacksAndLocalShtukas §HS4.6 for its geometric parabolic and cyclotomic comparison.
-
-The centre-map construction has the following API.
+The imported centre map and the two comparisons have the following API.
 
 - The geometric map and every Ψ_G^b are unital algebra maps; an invariant matrix coefficient acts by the corresponding create–Weil-action–annihilate operator.
-- The geometric action commutes with each finite-leg Hecke functor, hence its two basic restrictions give the common action used in §1.5.
+- The geometric action commutes with each finite-leg Hecke functor of HeckeStacksAndLocalShtukas HS4.1, hence its two basic restrictions give the common action used in §1.5.
 - A basic inner twist identifies the source spectral algebras, and restriction agrees with the intrinsic map for G_b.
-- The restriction r_M of Ψ_G equals Ψ_M after ordinary dual-Levi restriction, in the normalized induction convention of (d).
+- The restriction r_M of Ψ_G equals Ψ_M after ordinary dual-Levi restriction, in the normalized induction convention of (b).
 
 **Checks.**
 
-- For the trivial representation as excursion datum, the action is 1; taking the creation map zero gives 0. A zero centre map fails the first computation. For the zero compact object, any open wild subgroup works in (a), since every Hecke transform is zero.
+- For the trivial representation as excursion datum, the action is 1; taking the creation map zero gives 0. A zero centre map fails the first computation. For the zero compact object, any open wild subgroup bounds the wild action, since every Hecke transform is zero.
 - For G=GL₁ the unramified parameter locus has coordinate ring ℚ̄_ℓ[t,t⁻¹]. For an unramified character of geometric-Frobenius value 2, the evaluation is t↦2 and t⁻¹↦1/2. An arbitrary nonzero rescaling of the coordinate would fail the specified excursion evaluation. Wild inertia acts trivially on this datum, so P can be the full wild inertia group.
 - For b=1 the basic comparison fixes Ψ_G(0)=0 and Ψ_G(1)=1. On GL₁ every basic stratum has the same intrinsic centre map; translating the degree changes neither scalar 2 nor 1/2.
 - For GL₂ and its diagonal Levi, the trace coordinate restricts at torus values 2 and 3 to 2+3=5, agreeing with trace(diag(2,3)). The corresponding normalized spherical Hecke operator has eigenvalue 5√q, hence 5√2 at q=2, as in Conventions. An extra modulus twist changes the spectral restriction and fails the value 5.
 
-**(e) FS parameter.** For every irreducible smooth ℚ̄_ℓ-representation π, admissibility and scalar Schur endomorphisms come from the supplied smooth theory. Define its FS parameter φ_π to be the unique Ĝ-conjugacy class of continuous semisimple Weil parameters with the prescribed Weil projection whose invariant-coordinate evaluations are the scalar actions of Ψ_G on π. For every compact A and fixed excursion datum, prove that its excursion operator depends continuously on (γ_i)∈W_E^I in the relatively discrete condensed endomorphism algebra. Apply LanglandsParameterStacks LP2c.8 and LP2c.5 to the geometric action before transport by ι (FS24, Proposition I.9.1, p. 34, and Definition/Proposition IX.4.1, p. 327; FS24 line 1253 and line 12667).
+**FS parameter.** For every irreducible smooth ℚ̄_ℓ-representation π, admissibility and scalar Schur endomorphisms come from SmoothRepresentationsOfLocalGroups §SR.3a.2. Write φ_π for the semisimple parameter that IgusaVarietiesAndTorsionConcentration IG.F.22 attaches to π from the centre of IG.F.21: by LanglandsParameterStacks LP2c.8 and LP2c.5 it is the unique Ĝ-conjugacy class of continuous semisimple Weil parameters with the prescribed Weil projection whose invariant-coordinate evaluations are the scalar actions of Ψ_G on π. Its GL_n-specific compatibilities in IG.F.22 are not used (FS24, Proposition I.9.1, p. 34, and Definition/Proposition IX.4.1, p. 327; FS24 line 1253 and line 12667).
 
-*Needs:* (a)–(c); HeckeStacksAndLocalShtukas §§HS1.8–HS1.9 and §HS4.7; LanglandsParameterStacks §§LP2c.5 and LP2c.8; SmoothRepresentationsOfLocalGroups §§SR.3.2 and SR.3a.2.
-
-The parameter construction has the following API.
+The parameter is used through the following properties.
 
 - Evaluation of every excursion invariant on φ_π equals its central scalar on π.
 - φ_π is continuous for the supplied coefficient topology and semisimple, with prescribed projection to the Weil quotient.
@@ -267,7 +265,7 @@ The annihilator model on ℂ² is U=span{(1,−1)}. Its dual annihilator is span
 
 ### Dependencies
 
-HeckeStacksAndLocalShtukas §§HS1.1–HS1.9, §HS3.10, §§HS4.1–HS4.2, §HS4.6 and §HS4.7; LanglandsParameterStacks §§LP1.2, LP2e.9, LP2e.15, LP2c.5 and LP2c.8; BunGAndNewtonStrata §§1.13, 1.18–1.19; GeometricSatakeAndFusion GS4; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.1 and SR.3.2; EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4 and 2.11; gap:bernstein-distribution-realization; gap:unstable-tempered-separation; gap:stable-orbital-inversion-duality; Mathlib submodules and subalgebras.
+IgusaVarietiesAndTorsionConcentration IG.F.21 and IG.F.22; HeckeStacksAndLocalShtukas §HS3.10, §HS3.11, §§HS4.1–HS4.2 and §HS4.6; LanglandsParameterStacks §§LP1.2, LP2c.5 and LP2c.8; SmoothRepresentationsOfLocalGroups §SR.3a.2; BunGAndNewtonStrata §§1.13, 1.18–1.19; GeometricSatakeAndFusion GS4; gap:normalized-bernstein-levi; SmoothRepresentationsOfLocalGroups §§SR.0.4, SR.1.1 and SR.3.2; EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4 and 2.11; gap:bernstein-distribution-realization; gap:unstable-tempered-separation; gap:stable-orbital-inversion-duality; Mathlib submodules and subalgebras.
 
 ## Layer 1: Hecke operators on character spaces
 
@@ -577,13 +575,13 @@ If Θ=sum_(i in S) a_i Θ_(π_i) is atomically stable, all π_i have the same Fa
 
 The statement applies to any finite set of irreducibles whose character sum is atomically stable. H26 Corollary 1.3 (p. 2; H26 line 79) is this instance for Kaletha’s regular supercuspidal packets, whose construction and atomic stability are not targets here; the FKS21v2 reference below records the scope of its stability theorem.
 
-Apply FS very stability and atomic scalar rigidity to every spectral central function. The geometric centre construction of §0.0 and LanglandsParameterStacks LP2c.8 identify these scalar evaluations with the invariant coordinates of the semisimple parameter. Apply LanglandsParameterStacks LP2c.5 to conclude equality of the conjugacy classes, with coefficients transported by the fixed ι.
+Apply FS very stability and atomic scalar rigidity to every spectral central function. The imported parameter of §0.0 (IgusaVarietiesAndTorsionConcentration IG.F.22) and LanglandsParameterStacks LP2c.8 identify these scalar evaluations with the invariant coordinates of the semisimple parameter. Apply LanglandsParameterStacks LP2c.5 to conclude equality of the conjugacy classes, with coefficients transported by the fixed ι.
 
 **Checks.**
 
 - For a torus singleton the unique representation has its own FS class. For two semisimple diagonal Weil parameters with Frobenius values diag(2,3) and diag(3,2), all invariant coordinates agree and the classes coincide. diag(2,4) has trace 6 instead of 5 and is separated. Equal trace alone is not asserted to determine arbitrary dual-group parameters.
 
-*Needs:* §3.3; §4.2; §0.0; LanglandsParameterStacks §LP2c.5; LanglandsParameterStacks §LP2c.8.
+*Needs:* §3.3; §4.2; §0.0; IgusaVarietiesAndTorsionConcentration IG.F.22; LanglandsParameterStacks §LP2c.5; LanglandsParameterStacks §LP2c.8.
 
 ### Examples
 
@@ -591,7 +589,7 @@ In the stable line span{(1,2)}, diag(3,3) acts by 3. diag(3,5) would give (3,10)
 
 ### Dependencies
 
-Layer 0 and the stability theorem of Layer 3; §0.0; LanglandsParameterStacks §§LP2c.5 and LP2c.8.
+Layer 0 and the stability theorem of Layer 3; §0.0; IgusaVarietiesAndTorsionConcentration IG.F.22; LanglandsParameterStacks §§LP2c.5 and LP2c.8.
 
 ## Layer 5: centres of extended pure inner forms
 
