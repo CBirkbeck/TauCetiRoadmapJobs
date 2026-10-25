@@ -5367,100 +5367,6 @@
   ],
   "gaps": [
     {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G1",
-      "title": "Finite-field nonabelian H² neutrality",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.1/finite-field-neutrality"
-      ],
-      "detail": "Read S16 Lemma 2.6, p.311, but not Springer 1966 Theorem 3.5 in primary full proof. Prove neutrality for the smooth connected bands arising as units of finite endomorphism algebras. Lang H¹ gives uniqueness only after existence. This is the exact descent-existence obligation."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G2",
-      "title": "Primary nilpotent-matrix enumeration",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.1/nilpotent-matrix-count"
-      ],
-      "detail": "S16 uses Fine–Herstein’s Q^{n(n−1)} count. Close its primary proof through Jordan centralizer enumeration and Heine’s identity, with n=0 included. The baseline GL-cardinality formula alone is insufficient."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G3",
-      "title": "Invariant generic Hall form and pairing",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.4/generic-form"
-      ],
-      "detail": "SV12 §1.11 supplies a torsion-free generic vector-bundle algebra over its representation ring and specialization, but the exact invariant R_g, q^(1/2) normalization, K_g pairing/comultiplication and descent required by S16 Theorem 4.4 have not been derived here. Verify that comparison and all denominator bounds; do not equate the two formulations by name."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G4",
-      "title": "Universal curve monodromy and Weil density",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.4/universal-counts",
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.10/mellit-identification"
-      ],
-      "detail": "The S16 Appendix B argument was read. Weil II §3.5.1–3.5.3, pp.210–211, was also read to verify the equidistribution attribution. Its Katz–Sarnak universal-family monodromy, normalization and equidistribution application still need a supplier continuation; no UniversalHypersurfaceMonodromy stage or DWP.8:equidistribution node exists in the current atlas. Fixed odd q and all finite extensions suffice for uniqueness; char-2 family monodromy is not needed."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G5",
-      "title": "BB–Hesselink primary proof",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.8/bb-deformation",
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.9/higgs-purity"
-      ],
-      "detail": "S16 pp.348–352 gives the application, but the full primary proof of Hesselink 1981 Theorem 5.7 was not read. Supply the smooth quasiprojective filtration under the stated projective-to-affine and limit hypotheses, affine-bundle ranks, opposite-action core decomposition and base-field descent. Contracting orbits alone do not substitute for that theorem."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G6",
-      "title": "Canonical Higgs moduli and tight quiver comparison",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.7/higgs-moduli",
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.8/king-slope"
-      ],
-      "detail": "The complete S16 application was read, but Hitchin properness, nilpotent Lagrangian equidimensionality, connectedness and characteristic-uniform stable moduli, and Álvarez-Cónsul–King Lemma 5.5 under the exact two-line tightness hypotheses need primary-proof closure. The requested GIT extension is also required. ET.2b already supplies the canonical carrier and existential good lines; its positive-twist smoothness and anisotropic properness statements do not give this full canonical stable coarse theorem."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G8",
-      "title": "Generic Macdonald admissibility and integral kernel",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.10/admissible-deformation",
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.10/z-one-regularity"
-      ],
-      "detail": "Mellit 2020 was read in full and the precise required interfaces in Mellit 2018 were read. The generic graph-combinatorial proof of S-admissibility and integral HLV coefficients has not been fully read, and QM.0 has no such nodes. It belongs to a requested formal-series/Macdonald continuation, not an assumed baseline."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G9",
-      "title": "Universal monomial positivity and origin evaluation",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.9/trace-positivity",
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.6/origin-constant"
-      ],
-      "detail": "Verify S16 pp.335–336 and 349–350 as a universal statement on the paired-coordinate cone: denominator clearing, descending weight cancellation, independence of a chosen monomial representative, and compatibility of the origin local ring. Numeric power-sum identities on one curve do not by themselves identify universal coefficients. Keep this proof-closure obligation separate from Mellit’s Laurent integrality."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G10",
-      "title": "Parabolic Hall computation and denominator removal",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.11/quasi-parabolic",
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.11/parabolic-universality"
-      ],
-      "detail": "S16 §7 only sketches a parallel proof. Read and verify the needed parabolic spherical Hall/shuffle results cited to Lin, establish boundedness of absolute indecomposables and marked-curve density, and prove the stated R_g conclusion. The ordinary K_g proof or Mellit’s unmarked theorem does not prove this stronger parabolic claim."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G11",
-      "title": "Constructible Hall Hopf algebra",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.11/euler-hall-lie"
-      ],
-      "detail": "S16 §8.3 cites Lusztig §10.20 and Bridgeland–Toledano Laredo Theorem 4.3. Those primary proofs were not read. Establish constructible Euler pushforward on the stack correspondences, convolution finiteness, direct-sum coproduct and the bialgebra compatibility before taking primitives. Curve independence and root multiplicities remain explicit conjectures."
-    },
-    {
-      "id": "CountingBundlesAndHallAlgebrasOfCurves/G12",
-      "title": "Spread-out and complex Higgs cohomology comparison",
-      "neededBy": [
-        "CountingBundlesAndHallAlgebrasOfCurves:CB.9/complex-poincare"
-      ],
-      "detail": "S16 pp.350–351 uses compact-cohomology constructibility, comparison and genus-wise diffeomorphism of complex coprime Higgs moduli. The generic six-operation results are requested from SF.2; the last geometric local constancy input needs its primary nonabelian-Hodge/topological proof and exact hypotheses. No fixed-fibre trace computation alone supplies it."
-    },
-    {
       "slug": "coherent-ext-serre-duality",
       "supplier": "SchemeAndStackFoundations",
       "section": "§3.3, extending §2.20",
@@ -5476,7 +5382,7 @@
       "slug": "fixed-source-good-lines",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "§3.7",
-      "needs": "Export the good-line theorem with the kernel bound for the fixed source L₁ raised to l₁=χ(L₁,F), and identify the locally free locus of the coherent canonical Higgs carrier of §3.7 with the GL_r bundle stack and its bounded charts in every characteristic."
+      "needs": "Identify the locally free locus of the coherent canonical Higgs carrier of §3.7 with the GL_r Higgs stack of §3.6 and its bounded charts in every characteristic."
     },
     {
       "slug": "reductive-character-git",
@@ -5499,8 +5405,8 @@
     {
       "slug": "universal-curve-weil-density",
       "supplier": "LefschetzPencilsAndVanishingCycles",
-      "section": "§5.11, universal-family monodromy continuation",
-      "needs": "For g≥1, prove full symplectic geometric monodromy for the genus-g hyperelliptic moving-branch family over a suitable fixed odd finite field and, using DeligneWeightsAndPurity §10.5 with half-Tate normalization, deduce Zariski density of genus-g curve Weil tuples in the reciprocal torus quotient."
+      "section": "§5.11, universal-family density continuation",
+      "needs": "For every g≥1, apply DeligneWeightsAndPurity §10.5 to the odd-degree hyperelliptic family with the symplectic monodromy of ArithmeticStatisticsPartVIII §5.17 to prove Zariski density of genus-g curve Weil tuples in T_g/W_g, retaining the varying q coordinate after half-Tate normalization."
     },
     {
       "slug": "affine-bundle-compact-shift",
