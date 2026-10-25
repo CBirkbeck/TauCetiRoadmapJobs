@@ -5911,7 +5911,7 @@
     "slug": "finite-ideal-formal-schemes",
     "supplier": "AdicSpacesPartIII",
     "section": "F0.3 / R2.3",
-    "needs": "Supply formal schemes over ℤ_p locally represented by complete separated I-adic rings A with finitely generated I containing p, without noetherian hypotheses, their reductions locally Spec((A/I)_red), and the fully faithful functor Spf A ↦ Spa(A,A) to pre-adic spaces compatible with open gluing (GLE Convention 1 and Proposition 4.16; SW13 Proposition 2.2.1)."
+    "needs": "Using F0.3's FormalScheme, for formal schemes over ℤ_p locally represented by complete separated I-adic rings A with finitely generated I containing p, without noetherian hypotheses, construct the reduction locally Spec((A/I)_red), independently of I and compatibly with open gluing, and extend R2.3's fully faithful comparison to pre-adic spaces with affine formula Spf A ↦ Spa(A,A), compatibly with open gluing and with R2.3 on locally noetherian objects (GLE Convention 1 and Proposition 4.16; SW13 Proposition 2.2.1)."
   }
 ],
  "sourceIssues": [
