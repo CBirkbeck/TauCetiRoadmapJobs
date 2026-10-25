@@ -3798,7 +3798,7 @@
         "GL2ModularityLiftingPartII:D1.7/scalar-multiplicity-two",
         "GL2ModularityLiftingPartII:D1.7/multiplicity-one-and-quotients"
       ],
-      "detail": "At x≡1 mod p with a ramified nonsplit self-extension of an unramified residual character, the determinant-normalizing ψ^{-1/2} twist can identify two distinct conductor-minimal characteristic-zero automorphic lifts (the ψ and ψ^{-1} choices). Thus the printed fixed-determinant generic-fibre map in Theorem 4.8, p. 363, need not be injective. To obtain the unrestricted multiplicity-two theorem, construct the conductor≤1 local deformation ring with variable p-primary inertial determinant over the local diamond algebra, patch that ring/module with its matching types, and prove its Cohen–Macaulay type is still three after the global parameter quotient. The source proves none of these repairs. D1.7 gives the matched restricted version and the general theorem as an unresolved target. Extraction lead: PAPER-CALEGARI-GERAGHTY-18/E85; this plan does not certify the general statement.",
+      "detail": "The norm-one ramified self-extension requires a conductor-at-most-one local family with variable p-primary inertial determinant and matching types. Its global integral type-three conclusion is a separate deliverable, gap:scalar-variable-global-type at GL2ModularityLifting; no such global result follows from the local ring at p or a generic-fibre identification.",
       "slug": "scalar-variable-determinant",
       "supplier": "LocalGaloisDeformationRings",
       "section": "2.19, 6.18",
@@ -3885,7 +3885,7 @@
       "slug": "scalar-conductor-comparison",
       "supplier": "GL2ModularityLifting",
       "section": "3.7, 4.1–4.2",
-      "needs": "Provide the finite global ordinary eigenvalue-adorned weight-two deformation presentation and generic-fibre Hecke component comparison for each character φ with the unipotent quotient at ramified Steinberg primes x ≡ −1 mod p and the minimal conditions of LocalGaloisDeformationRings §§2.1–2.5, 2.19 at the other primes away from p, retaining variable inertial determinant in the nonharmless self-extension case."
+      "needs": "Provide the conductor-specific global ordinary eigenvalue-adorned weight-two deformation presentation, its numerical relation bound and generic-fibre Hecke component comparison for each character φ, with the unipotent quotient at ramified Steinberg primes x ≡ −1 mod p and the minimal conditions of LocalGaloisDeformationRings §§2.1–2.5, 2.19 at the other primes away from p, including the matching variable-inertial-determinant presentation and component comparison in the nonharmless self-extension case."
     },
     {
       "slug": "jacobian-residual-isotypy",
@@ -3922,6 +3922,18 @@
       "supplier": "ArithmeticLocallySymmetricSpaces",
       "section": "ALS.4",
       "needs": "For p ≥ 3 unramified in imaginary quadratic F, at the non-neat projective levels Y₀(Q), Y_Δ(Q) of ArithmeticLocallySymmetricSpaces ALS.0.10(iv), prove localized boundary homology vanishing in all degrees and the ordinary-to-Borel–Moore homology isomorphism for every p-power quotient Δ and finitely generated O[Δ]-module μ at a non-Eisenstein ideal associated to an absolutely irreducible residual representation, without a Hecke-valued Galois lift or the general hypothesis ♠."
+    },
+    {
+      "slug": "vexing-norm-twist-selector",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "R16.2.11, R16.3.9",
+      "needs": "Provide the norm-twist extension of the conductor-minimal CDT full-compact selector for every vexing character θ=θ₀(λ∘Norm), with a(θ₀/θ₀^σ)=a(θ₀), a stable integral lattice for the inflation of Θ(θ₀) tensored by λ∘det on GL₂(Z/x^n Z) with n=max(a(θ₀),a(λ)), the contragredient section convention, and multiplicity one exactly for the fixed minimal inertia type."
+    },
+    {
+      "slug": "scalar-variable-global-type",
+      "supplier": "GL2ModularityLifting",
+      "section": "3.7, 4.1–4.2",
+      "needs": "For p ≥ 3 and an odd absolutely irreducible modular rational residual representation, unramified at p with scalar Frobenius and twist-minimal away from p, prove that the matching ordinary eigenvalue-adorned global quotient for the conductor-at-most-one variable-inertial-determinant family at every nonharmless norm-one ramified unramified-character self-extension is finite flat Cohen–Macaulay of type three under full support on its specified characteristic-zero automorphic components, including verification of the O-Tor-independent local Cohen–Macaulay factors and the numerical relation bound making the global relations, framing parameters and π a system of parameters."
     }
   ],
   "sourceVersions": [
