@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4733 mistakes recorded on the board: 3142 misprints, 1185 errors, 326 gaps, 80 unparsed bullets.
+4745 mistakes recorded on the board: 3150 misprints, 1187 errors, 328 gaps, 80 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2967,6 +2967,20 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Chapitre I, §5.1, (5.1.11)–(5.1.12): the source says Ru_*O^* is quasi-isomorphic to the envelope's multiplicative de Rham complex; (O, d+dt) on A¹ over F_p, which is not quasi-nilpotent, refutes this at n = 1; it should be as the evidence in the cited report requires; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## GS
+
+- **Misprint** at Proposition 13.7, notes, p. 47: the source says the two factors "of M3"; it should be M₂; affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at Proposition 3.1(i), p. 9: the source says the source lists only s=1/2 for ω_τ=1 in an "if and only if" reducibility statement; it should be s=±1/2, since s=−1/2 follows by contragredience; affects a stated result. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at Proposition 3.1(iii), p. 9: the source says the quotient J_Q(1/2,π(1,χ)) for quadratic χ, writes I_P(1/2,stχ) in the cubic case, and gives J_Q(1/2,π(χ,χ⁻¹)) there; it should be J_Q(1,·) in both cases and I_P(1/2,χ), since the Borel exponent α+β is W-conjugate to 1·(2α+β); affects a stated result. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at Proposition 3.2(iii), p. 11: the source says the quotient J_Q(1/2,π(1,χ)) for quadratic χ; it should be J_Q(1,π(1,χ)), since the exponent α is a short root W-conjugate to 2α+β; affects a stated result. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Gap** at the proof of Proposition 8.4, p. 27: the source says without reference that every generic GL₂ representation is a quotient of τ; it should be cite Prasad's Theorem 3 (GL(n) to GL(n−1) restriction); affects the proof. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at §11.2, p. 34: the source says the oscillator's central character on the centre of U/[U,U]; it should be the centre U_{2α+β} of the Heisenberg quotient U/Z(U), since U/[U,U] is abelian; affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at §15.1, p. 54: the source says σ_ρ as the theta lift of JL(τ); it should be JL(ρ); affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at §2.6, p. 8: the source says the second factor of SO₄ as SL₂,r; it should be the short-root SL₂,s; affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Misprint** at §3.4(4), p. 14: the source says the source calls the centralizer of a long-root SL₂ "a long root SL2"; it should be a short-root SL₂; affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Error** at §8.1, p. 24: the source says the only nongeneric selfdual irreducibles of PGL₃ are the J_B(χ|·|^½⊗1⊗χ|·|^−½); it should be also include the trivial representation (Theorem 8.2(ii) covers it); affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+- **Error** at §9, p. 30: the source says the source's Weyl-invariant form Σsᵢ²−¼(Σsᵢ)², with the root hyperplanes sᵢ±sⱼ only, is not invariant under the third reflection ((1,2,3)↦(6,−3,−2) gives 5 and 48.75); it should be Σsᵢ²+(Σsᵢ)², with the three further hyperplanes sᵢ+Σsⱼ=0; affects nothing. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
+
 ## GSWZ2024
 
 - **Error** at Proposition 3.2, printed p.38 (GSWZ2024 line 1995): the source says the congruence permits any prime and nonidentity root; it should be restricted to tame roots, excluding the undefined dyadic instance ζ=−1 with ζ²=1; affects nothing. Found by PadicHodgeRegulators (#168 at 5eff35d, 2026-10-24, codex gpt-6-astra).
@@ -4407,6 +4421,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## LL
 
 - **Error** at the correction following Theorem I.13, printed pages 31–32 (LL line 1710): the source says the earlier book's trace formula omitted polynomial factors in its lower-rank exponential terms; it should be polynomial-times-exponential terms, cancelled only after comparison with cohomological traces; affects the proof; corrected in print at LL Theorem I.13 and the following correction. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
+- **Gap** at the proof of Lemma 10.1, p. 27: the source says the source excludes only Howe N-rank exactly 2 when no open-orbit coefficient exists; it should be treat ranks 0, 1 and 2, all nontempered; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "618a2fa", "job": "REV-PKG-ExceptionalThetaCorrespondencesForG2", "model": "opus", "worker": "fable-rev79"} -->. Found by ExceptionalThetaCorrespondencesForG2 (#1314 at 618a2fa, 2026-10-25, claude opus).
 
 ## LLZ2011
 
