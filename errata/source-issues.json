@@ -77647,10 +77647,26 @@
    "reported": "2026-10-25",
    "reporter": "claude opus",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1289#issuecomment-6391483940"
+  },
+  {
+   "kind": "misprint",
+   "source": "as-ref-022",
+   "locator": "display (2), §1, manuscript p. 2",
+   "says": "the mean of `2^{rk₄}` over negative discriminants is a ratio whose denominator counts positive discriminants up to X",
+   "should": "the count of negative discriminants `0 < −D ≤ X`, as in the odd-p display above it; the limit 2 is unchanged, both counts being asymptotic to `3X/π²`",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"b571a4c\", \"job\": \"REV-PKG-ArithmeticStatistics~2\", \"model\": \"opus\", \"worker\": \"fable-rev78\"} -->",
+   "roadmap": "ArithmeticStatistics",
+   "job": "REV-PKG-ArithmeticStatistics~2",
+   "board_pr": 128,
+   "head": "b571a4c",
+   "reported": "2026-10-25",
+   "reporter": "claude opus",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/128#issuecomment-6391643764"
   }
  ],
- "scanned_to": "2026-10-25T00:35:41Z",
- "updated": "2026-10-25T00:39:50Z",
+ "scanned_to": "2026-10-25T00:54:04Z",
+ "updated": "2026-10-25T00:57:44Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
