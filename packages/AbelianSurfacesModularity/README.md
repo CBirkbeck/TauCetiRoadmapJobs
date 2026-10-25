@@ -12,7 +12,7 @@ General similitude groups, adequacy, Zariski images, projective lifting, potenti
 
 GSp4NonregularModularityLifting NR2.5–NR2.6 and NR11.2–NR11.6 supply weight-two attachment, pure monodromy comparison and nonregular lifting. This roadmap does not plan higher Coleman theory, regular ordinary R=T or patching. EndoscopicTransferAndUnitaryTraceComparison §11.1 and ModularityAndLanglandsExtensions §3.26 own the classification, packets and spin transfer; AutomorphicLFunctionsAndLocalFactors AL.2–AL.4 owns the analytic continuation, isobaric uniqueness and exterior transfers. The finite-image Artin and functoriality inputs retain ModularityAndLanglandsExtensions §§1.9, 1.11, 1.13 and GL2AutomorphicRepresentationsAndTransfer R17.5 as owners.
 
-Integral curve models and specialization belong to RelativeJacobiansAndIntegralCurveModels §§0.1–0.3 and 2.4; AlgebraicCurves Layer 10 owns the function-field theory. The two-chart smoothness test for the bounded genus-two equations used here is §4.4. The twisted odd-theta space and its dense Torelli locus (§4.8), the explicit local seeds at 3 (§5.3), and the endomorphism-type dictionary (§8.3) are targets here. Their generic moduli, deformation and automorphic inputs have the separate owners just named.
+Integral curve models and pointed specialization belong to RelativeJacobiansAndIntegralCurveModels §§0.1–0.3, 2.2 and 2.4; AlgebraicCurves Layer 10 owns the function-field theory. For unpointed local models use the unramified section-acquiring extension and descent specified below. Polarized algebraization belongs to ShimuraCompactifications C4.4–C4.6. The two-chart smoothness test for the bounded genus-two equations used here is §4.4. The twisted odd-theta space and its marked and unmarked Torelli loci (§4.8), the explicit local seeds at 3 (§§5.3 and 8.7), and the endomorphism-type dictionary (§8.3) are targets here. Their generic moduli, deformation and automorphic inputs have the separate owners just named.
 
 ## Conventions
 
@@ -47,12 +47,10 @@ Use `Representation.exists_ne_zero_apply_eq_self_of_forall_pow_eq_one` in `TauCe
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
-Consume A3.7–A3.8 for perfect alternating Weil pairings and level structures, A3.11 for principal quotients after finite extension, A3.12 for the even-subset realization, A4.9–A4.14 for polarized Serre–Tate and finite-level lifting, A5.7 for realization conventions, and A6.32–A6.34 for Weil restriction and quadratic twists. The odd-prime lifting input is height four, order p⁴, with a compatible polarized level-one truncated Barsotti–Tate structure. The dyadic theorem identifies underlying torsion and does not assert that every chosen self-duality is a polarization. The product principal polarization has a reducible theta divisor.
+Consume A3.7–A3.8 for perfect alternating Weil pairings and level structures, A3.11 for principal quotients after finite extension, A3.12 for the even-subset realization, A4.8 for effectivity of polarized formal lifts, A4.9–A4.14 for polarized Serre–Tate and finite-level lifting, A5.7 for realization conventions, and A6.32–A6.34 for Weil restriction and quadratic twists. The odd-prime lifting input is height four, order p⁴, with a compatible polarized level-one truncated Barsotti–Tate structure. The dyadic theorem identifies underlying torsion and does not assert that every chosen self-duality is a polarization. The product principal polarization has a reducible theta divisor.
 
 
 What AbelianSchemesAndArithmeticModuli must provide (gap:dyadic-selfdual-polarized-lift): Prove that the ordinary finite flat self-dual order-16 model required here admits the skew self-duality and polarized symmetric Serre–Tate extension lift used by A4.13, distinguishing arbitrary Cartier self-duality, skew self-duality and strong alternation.
-
-What AbelianSchemesAndArithmeticModuli must provide (gap:three-two-two-two-seed): Lift and deform Res_(𝔽₉/𝔽₃) of y²=x(x−1)(x−t), t²=−1, to a nearby genus-two Jacobian over ℚ₃ with good ordinary 3-distinguished Jacobian reduction and unramified mod-2 permutation type [2,2,2], using a dense Torelli neighbourhood of the decomposable special fibre.
 
 What AbelianSchemesAndArithmeticModuli must provide (gap:ordinary-polarized-three-model): For an ordinary finite-flat symplectic mod-3 representation over ℚ₃ with multiplier ε̄, construct the compatible polarized height-four level-one truncated Barsotti–Tate model and identify its special fibre with V extended by its multiplicative dual so that A4.12 applies to each seed.
 
@@ -83,11 +81,13 @@ What FaltingsFinitenessAndIsogenyTheorems must provide (gap:surface-open-image):
 
 ### From TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties
 
-Consume §§3.5–3.6, 3.11–3.12, 5.0a–5.6 and 6.10–6.13 for saturated toric filtrations, orthogonality, semistability, good reduction, all finite local Euler factors and purity, compatible systems, ordinary isotropic submodules and the rational 2-torsion consequence. The toric submodule of a purely toric surface has rank two; the entire Tate module has rank four. The local-neighbourhood extension below is required independently of these pointwise statements. Consume §3.14 for the period-lattice torsion cone, evaluation pairing and unramified descent; its converse algebraization in the following contract is required for the coupled-period seed. KIS99 Theorem 5.1 is cited by locator alone as uncertified; its integral strengthening is not attributed to that theorem.
+Consume §§3.5–3.6, 3.11–3.12, 5.0a–5.6 and 6.10–6.13 for saturated toric filtrations, orthogonality, semistability, good reduction, all finite local Euler factors and purity, compatible systems, ordinary isotropic submodules and the rational 2-torsion consequence. The toric submodule of a purely toric surface has rank two; the entire Tate module has rank four. The local-neighbourhood extension below is required independently of these pointwise statements. Consume §3.14 for the period-lattice torsion cone, evaluation pairing and unramified descent, after the algebraization of ShimuraCompactifications C4.5–C4.6. KIS99 Theorem 5.1 is cited by locator alone as uncertified; its integral strengthening is not attributed to that theorem.
 
 What NeronModelsAndSemistableAbelianVarieties must provide (gap:local-neighbourhoods): Prove local persistence in smooth polarized families of prescribed finite-level generic torsion, prime-to-p rational Weil–Deligne data, semistable ordinarity and distinguishedness, and separately openness of the prescribed integral ordinary W/ℤ₂ isomorphism class, without claiming constancy of the full p-adic representation.
 
-What NeronModelsAndSemistableAbelianVarieties must provide (gap:polarized-toric-algebraization): For a rank-g torus over a complete discretely valued field, split by a finite unramified extension, and a Galois-stable rank-g period lattice, algebraize the rigid quotient when an equivariant period-to-character lattice isomorphism makes the period pairing symmetric with positive definite valuation, preserving its principal polarization, unramified descent, torsion cone and evaluation Weil pairing.
+### From TauCetiRoadmap.ShimuraCompactifications
+
+Consume C4.4–C4.6 under (C4-a), over ℤ₂ with radical ideal (2): the base is a complete noetherian normal domain and the tori are isotrivial. In §4.7 the abelian part is zero, the character and period lattices are X≅Y≅ℤ² with Frobenius R, the polarization map Y→X is the identity, and the period matrix is ((q,t²),(t²,q)). Its symmetric bilinear periods give the rigidified cubical datum; the valuation form v₂(q)I₂ is positive definite and admits an R-invariant square decomposition. C4.5–C4.6 algebraize this principally polarized datum and compare it with NeronModelsAndSemistableAbelianVarieties §§3.13–3.14 over the DVR.
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
@@ -175,11 +175,11 @@ Consume §§3.5 and 5.2 for polarized descent and rigid level functors. These ar
 
 ### From TauCetiRoadmap.AlgebraicCurves
 
-Consume Layer 10 for hyperelliptic function fields, ramification and Weierstrass points, including the characteristic-two function-field description. Integral marked models and the good-reduction Jacobian comparison belong to RelativeJacobiansAndIntegralCurveModels §§0.1–0.3 and 2.4; the equation-specific two-chart smoothness criterion is §4.4 here.
+Consume Layer 10 for hyperelliptic function fields, ramification and Weierstrass points, including the characteristic-two function-field description. Use RelativeJacobiansAndIntegralCurveModels §§0.1–0.3, 2.2 and 2.4 with the section and descent hypotheses below for integral models and the good-reduction Jacobian comparison; the equation-specific two-chart smoothness criterion is §4.4 here.
 
 ### From TauCetiRoadmap.RelativeJacobiansAndIntegralCurveModels
 
-Consume §§0.1–0.3 for marked integral models, proper specialization and normalization charts, and §2.3 for specialization in a smooth proper curve family and its relative Jacobian. Smooth curve reduction gives good Jacobian reduction and identifies its special fibre with the Jacobian of the curve fibre; the converse need not hold for a genus-two curve with a product Jacobian special fibre.
+Consume §§0.1–0.3 for marked integral models, proper specialization and normalization charts, and §§2.2 and 2.4 for the relative Jacobian and specialization of a pointed smooth proper geometrically connected curve family. For a smooth proper model over the integers of a finite extension of ℚ_p without a section, pass to a finite unramified extension over whose residue field the smooth special fibre has a point, and lift that point by Hensel's lemma. Apply §§2.2 and 2.4 there. Inertia is unchanged by this extension, so descend good Jacobian reduction by NeronModelsAndSemistableAbelianVarieties §5.1, using any prime ℓ different from the residue characteristic. The section-independent Jacobian comparison of §2.2 respects the canonical descent data and identifies the descended special fibre with the Jacobian of the curve fibre. The converse need not hold for a genus-two curve with a product Jacobian special fibre.
 
 ### From TauCetiRoadmap.PolynomialGaloisGroups
 
@@ -623,7 +623,7 @@ Let X₀/𝔽₂ be an ordinary smooth genus-two curve. (1) The class of Frob₂
 For any field k and h,f ∈ k[x] with deg h ≤ 3 and deg f ≤ 6, let the projective equation be Y²+H(X,Z)Y=F(X,Z) in ℙ(1,3,1), with H and F the degree-three and degree-six homogenizations. Prove its smoothness criterion using the charts x=X/Z, y=Y/Z³ and u=Z/X, v=Y/X³. In characteristic 2 the criterion is gcd(h,h′²f+f′²)=1 and, at infinity, h₃ ≠ 0 or h₂²f₆+f₅² ≠ 0. The gcd condition means the two polynomials generate the unit ideal, so h=0 is included. In characteristic different from 2 put D=h²+4f: its affine roots must be simple and its reversed degree-six polynomial must not have a multiple root at u=0, equivalently deg D is 5 or 6 and gcd(D,D′)=1. In these cases the smooth projective double cover has genus two. The criterion follows from the two chart Jacobians: in characteristic 2 a singular affine point has h=0, y²=f and h′y=f′; at infinity these equations read h₃=0, v²=f₆ and h₂v=f₅. Apply this criterion to the finite equation loci below (BCGP25 proof of Lemma 9.1.6, pp.188–190, line 8715; proof of Lemma 9.3.1, pp.199–200, line 9279).
 
 - The criterion detects geometric smoothness on both charts, including degrees below six and characteristic two.
-- Smooth reductions of an integral equation give smooth proper models and good Jacobian reduction through RelativeJacobiansAndIntegralCurveModels §2.4.
+- Smooth reductions of an integral equation give smooth proper models and good Jacobian reduction. If there is no section, acquire a special-fibre point over a finite unramified extension, lift it by Hensel's lemma, apply RelativeJacobiansAndIntegralCurveModels §§2.2 and 2.4 there, and descend by NeronModelsAndSemistableAbelianVarieties §5.1. The section-independent Jacobian comparison descends with its special fibre.
 - In odd characteristic completing the square sends the equation to (2y+h)²=h²+4f and preserves smoothness; it is not used in characteristic 2.
 
 Establish the cardinalities of the smooth and ordinary equation loci and their Frobenius-class fibres. The 2-torsion point from the ordinary S₅(b) condition forces Q(1) even and excludes 6G and 8A in the marked good-curve case. For each admissible projective class use the displayed seed and its unramified quadratic twist by ℚ₂(√5) to realize both scalar lifts.
@@ -634,11 +634,12 @@ Establish the cardinalities of the smooth and ordinary equation loci and their F
 - For h=x³+1,f=x²+x over 𝔽₂ the gcd of x³+1 and x⁶+x⁵+1 is 1, and h₃=1, so C₁ is smooth; h=f=0 fails the unit-ideal condition and is nonreduced.
 - Over 𝔽₃, h=0,f=x⁵−x has gcd(f,f′)=1 and degree 5, so is smooth; f=x⁴−1 has no repeated affine root but degree 4 gives a double root at infinity and is excluded.
 - The two-chart test gives 768 smooth pairs out of 2¹¹ over 𝔽₂ and 1296 smooth polynomials out of 3⁷ over 𝔽₃; retaining only the affine test would count singular projective models.
+- The smooth curve y²+(x³+x²+1)y=x⁶+x⁵+1 has 0 points over 𝔽₂ and 6 over 𝔽₄. Its smooth ℤ₂-lifts have no section over ℤ₂ but acquire one over the unramified quadratic extension; their Jacobians still have good reduction over ℤ₂. A pointed-only application would miss them.
 - The ordinary fibre counts add to 32+16+48+96+192=384, and the nonordinary counts add to 48+144+48+48+96=384.
 - For the excluded marked-good cases Q mod 2=X²(X²+X+1), evaluation at 1 is 1, contradicting the required nonzero rational 2-torsion.
 - The unramified quadratic twist sends a to −a and keeps b, ordinarity and the marked branch point; both scalar Frobenius lifts have the same projective class.
 
-*Needs:* §1.2; §1.1; §4.3; §2.2; NeronModelsAndSemistableAbelianVarieties §6.13; §0.2; AlgebraicCurves Layer 10; RelativeJacobiansAndIntegralCurveModels §§0.1–0.3 and 2.4.
+*Needs:* §1.2; §1.1; §4.3; §2.2; NeronModelsAndSemistableAbelianVarieties §6.13; §0.2; AlgebraicCurves Layer 10; RelativeJacobiansAndIntegralCurveModels §§0.1–0.3, 2.2 and 2.4; NeronModelsAndSemistableAbelianVarieties §5.1 for unramified descent.
 
 ### 4.5 Exclusions for good ordinary reduction at 2 (Lemmas 9.2.6, 9.2.7, 9.2.11, 9.2.12, 9.2.19)
 
@@ -678,7 +679,7 @@ Y of §9.2.16 (conductor 797) has good reduction at 2, a rational Weierstrass po
 
 Over ℚ₂ choose a Tate curve X=E_q with v₂(q)>0 and q a sixth power, and an elliptic curve Y of good ordinary reduction with polynomial X²+X+2 and trivial mod-2 action; the equation y²+xy+y=x³−x²−6x−4 provides Y. Denote their unramified quadratic twists by X′ and Y′. Construct the principally polarized products A=X×Y, B=Y×Y′ and C=X×X′. They have respectively semistable ordinary, good ordinary and semistable ordinary reduction, unramified 3-torsion and projective Frobenius classes 8A,4D,2D. Their mod-2 images lie in S₅(b), and all three are 2-distinguished. (BCGP25 Lemma 9.2.8 and proof, pp.195–196, line 9001.)
 
-For class 2C use a coupled period lattice. Let L/ℚ₂ be the unramified quadratic extension with involution σ, q ∈ 5(ℚ₂ˣ)² a cube with v₂(q)>0, and t ∈ O_Lˣ a cube with N_(L/ℚ₂)(t)=−1. Let T/ℚ₂ be the unramified torus whose arithmetic Frobenius φ on split coordinates is φ(a,b)=((φb)⁻¹,φa), with lattice action R=((0,−1),(1,0)). Embed the period lattice ℤ² into T by λ₁=(q,t²) and λ₂=((σt)⁻²,q)=(t²,q). The identities φλ₁=λ₂ and φλ₂=λ₁⁻¹ make it Galois-stable. The identity from the period lattice to the character lattice gives the symmetric period matrix ((q,t²),(t²,q)), with positive definite valuation matrix v₂(q)I₂. Apply the polarized toric algebraization contract of NeronModelsAndSemistableAbelianVarieties §3.14 to construct its principally polarized abelian quotient A_(2C)/ℚ₂. Prove it has purely toric semistable ordinary 2-distinguished reduction, unramified 3-torsion of class 2C and mod-2 image in S₅(b) (BCGP25 Lemma 9.2.14, pp.197–198, line 9102, for the intended local target; FC90 Chapter II Theorem 6.2 and Remark 6.3, Chapter III Theorem 7.1 and Corollaries 7.2–7.4, cited by locator alone as uncertified, for the general degeneration framework).
+For class 2C use a coupled period lattice. Let L/ℚ₂ be the unramified quadratic extension with involution σ, q ∈ 5(ℚ₂ˣ)² a cube with v₂(q)>0, and t ∈ O_Lˣ a cube with N_(L/ℚ₂)(t)=−1. Let T/ℚ₂ be the unramified torus whose arithmetic Frobenius φ on split coordinates is φ(a,b)=((φb)⁻¹,φa), with lattice action R=((0,−1),(1,0)). Embed the period lattice ℤ² into T by λ₁=(q,t²) and λ₂=((σt)⁻²,q)=(t²,q). The identities φλ₁=λ₂ and φλ₂=λ₁⁻¹ make it Galois-stable. The identity from the period lattice to the character lattice gives the symmetric period matrix ((q,t²),(t²,q)), with positive definite valuation matrix v₂(q)I₂. Apply ShimuraCompactifications C4.5–C4.6 to the positive datum of C4.4 over ℤ₂ with ideal (2), with zero abelian part, these isotrivial lattices and their R-invariant square decomposition to construct its principally polarized abelian quotient A_(2C)/ℚ₂. Prove it has purely toric semistable ordinary 2-distinguished reduction, unramified 3-torsion of class 2C and mod-2 image in S₅(b) (BCGP25 Lemma 9.2.14, pp.197–198, line 9102, for the intended local target; FC90 Chapter II Theorem 6.2 and Remark 6.3, Chapter III Theorem 7.1 and Corollaries 7.2–7.4, cited by locator alone as uncertified, for the general degeneration framework).
 
 The product-polarized twist of E_q×E_q with diagonal periods instead has mod-2 Frobenius U⊗R̄, U=((1,1),(0,1)), preserving e⊗I₂, where e=((0,1),(1,0)) over 𝔽₂. Its symplectic centralizer has order 48 and it fixes zero odd theta characteristics; it is a triple transposition. Thus BCGP25 Lemma 9.2.14's assertion of centralizer order 16 for those periods does not establish its S₅(b) condition (BCGP25 lines 9152–9172).
 
@@ -703,24 +704,29 @@ The comparison and construction API consists of the following facts.
 - R = [[0, −1], [1, 0]] has order 4, R² = −I, and diag(1, −1) ⊗ R has characteristic polynomial (x² + 1)² over 𝔽₃.
 - The diagonal-period twist has rank(M−I)=2, symplectic centralizer 48 and 0 fixed odd theta characteristics; the coupled-period seed has rank(M−I)=2, centralizer 16 and 2 fixed odd theta characteristics. Rank alone cannot distinguish the two.
 - In the coupled basis the two invariant odd refinements have values (1,1,0,0) and (1,1,1,1) on (e₁,e₂,f₁,f₂); each has 6 zeros on 𝔽₂⁴. Setting ⟨f₁,f₂⟩=0 changes this theta count and loses the marking.
-- Take u²−u−1=0 in L, t=u³ and q=8000=20³=5·40². Then N(u)=−1, N(t)=−1, t²=8u+5, σ(t)=−t⁻¹, and the valuation matrix is diag(6,6). At q=5 its valuation is zero and the positive definite period condition fails.
+- Take u²−u−1=0 in L, t=u³ and q=8000=20³=5·40². Then N(u)=−1, N(t)=−1, t²=8u+5, σ(t)=−t⁻¹, and the valuation matrix is diag(6,6). On mλ₁+nλ₂ its value is 6(m²+n²)>0 for (m,n)≠(0,0). The identity Y→X commutes with R: λ₁↦λ₂↦−λ₁ and χ₁↦χ₂↦−χ₁. At q=5 the valuation form is zero and positivity fails; at q=8000⁻¹ it is −6I₂ and has the wrong sign.
 - B = Y × Y′ with its product polarization is not a Jacobian: a product principal polarization has reducible theta divisor.
 - Modulo 3, (X²−1)(X²+X+2)=X⁴+X³+X²+2X+1, which is the 8A polynomial.
 - Over ℤ, (X²+X+2)(X²−X+2)=X⁴+3X²+4, and R²=−I; replacing diag(1,−1)⊗R by I⊗R would give the wrong multiplier.
 - The ordinary unit-value pairs are {1,α},{α,−α},{1,−1},{i,−i}; Q_Y(1)=4 excludes α=1, and characteristic zero keeps each pair distinct.
 - The common product Tate seed can use q=64=2⁶, which is both a cube and a square and has positive valuation 6. The coupled 2C seed instead uses q=8000 with a norm-minus-one cube t; diagonal periods do not give its odd-theta marking.
 
-*Needs:* ArithmeticGaloisRepresentations §6.3; EllipticCurves Layer 4; AbelianSchemesAndArithmeticModuli A3.11 and A6.34; NeronModelsAndSemistableAbelianVarieties §3.14 (polarized-toric-algebraization contract) and §6.11; §0.2; §2.1; §4.2; §1.2.
+*Needs:* ArithmeticGaloisRepresentations §6.3; EllipticCurves Layer 4; AbelianSchemesAndArithmeticModuli A3.11 and A6.34; ShimuraCompactifications C4.4–C4.6 under (C4-a); NeronModelsAndSemistableAbelianVarieties §§3.14 and 6.11; §0.2; §2.1; §4.2; §1.2.
 
 ### 4.8 Twisted odd-theta moduli and the marked Torelli locus
 
 For a number field or characteristic-zero local field F and continuous ρ̄:G_F→GSp₄(𝔽₃) of multiplier ε̄⁻¹, construct B(ρ̄), the moduli of principally polarized surfaces with symplectic identification A[3]≅ρ̄∨. Let B(2)(ρ̄) be its full-level-two cover, and define P(ρ̄)=B(2)(ρ̄)/S₅(b). It parametrizes that level-three framing together with an odd theta characteristic. Construct M₂ʷ(ρ̄), the moduli of smooth genus-two curves with a marked Weierstrass point and the same Jacobian framing, and its Torelli morphism into P(ρ̄). Prove that P is a smooth rational threefold and this morphism is an open immersion with dense image. Prove geometric connectedness of the full-level-two cover and geometric integrality of each intermediate proper-subgroup cover over P, with degree [S₅(b):G]. This is the marked rationality theorem; it does not claim that every twist B(ρ̄) of the Burkhardt variety is rational (BCGP25 Definition 9.2.1 and following paragraphs, p.192, line 8856; BCGP21 Definition 10.2.2, Proposition 10.2.3 and Lemma 10.2.4, pp.269–271, lines 12966, 12991 and 13038).
+
+Also construct M₂(ρ̄), with the same symplectic level-three framing and no marked Weierstrass point. Prove that its Torelli map to B(ρ̄) identifies it with the dense open complement of the geometric product locus: products of two elliptic curves with their product principal polarization after algebraic closure. This identification descends with the framing and commutes with characteristic-zero field extension. For a characteristic-zero local F, every analytic neighbourhood of an F-point of B(ρ̄) meets this open, since B is smooth of dimension three and the product locus has dimension two (BCGP21 Definition 10.2.2 and the paragraph following it, p.269, line 12976; BCGP25 proof of Corollary 9.3.6, p.202, line 9380, for the local-neighbourhood passage).
+
+For this unmarked comparison, use the genus-two theta divisor of a geometrically indecomposable principally polarized surface and descend the Torelli identification with its framing. The dual Torelli differential is multiplication Sym²H⁰(C,ω_C)→H⁰(C,ω_C²); for a basis s,t of the canonical differentials, s²,st,t² are a basis of the three-dimensional target. This gives the open immersion, and the product locus is its complement. Over a characteristic-zero local field a smooth analytic chart has dimension three, so a closed locus of dimension two cannot contain an analytic neighbourhood.
 
 Use the supplied level moduli, pairings, torsor descent and genus-two Torelli theory to construct these spaces. The odd-theta birational map is equivariant for the descended finite symplectic action. Its twist is a projective three-space form; the symplectic Galois lift splits the associated projective obstruction as in BCGP21 Lemma 10.2.4. Connectedness uses the supplied prime-to-level monodromy theorem for the fine level-three chart at ℓ=2. Its subgroup quotients give the stated integral covers over P, independently of rationality.
 
 - A point of P over F is the principally polarized surface with the framing and odd theta characteristic, up to the corresponding marked isomorphism.
 - The full-level-two cover has group S₆ and degree 720 over B, and P→B has degree 6; over P its group is S₅(b).
 - The marked curve maps to its Jacobian with induced theta marking; base change along every extension F→F′ preserves the framing and the Torelli map.
+- The unmarked Torelli map identifies framed smooth genus-two curves with geometrically indecomposable framed principally polarized surfaces; forgetting the marking agrees with P→B on the marked Torelli open.
 - A principally polarized surface with the given 3-torsion framing has an F-point over it in P exactly when its mod-2 image fixes a letter in the chosen six-point action.
 - For G properly contained in S₅(b), the cover P_G→P is geometrically integral and generically finite of degree greater than one; its rational-point image is thin.
 
@@ -730,6 +736,10 @@ Use the supplied level moduli, pairings, torsor descent and genus-two Torelli th
 - A full S₅(b) image fixes exactly one of six letters, while a transitive S₅(a) image fixes none. An arbitrary unmarked principally polarized surface need not lift to P over F.
 - A product of elliptic curves with product polarization lies outside the smooth Torelli locus because its theta divisor is reducible. An ordinary neighbourhood can still meet that dense open.
 - The trivial proper subgroup gives degree 120 over P; the full subgroup gives degree 1 and is excluded from the thin-cover collection.
+- The smooth curve y²=(x²+1)(x²+2)(x²+3) has 6 distinct branch points and complex conjugation fixes 0 of them. Its framed Jacobian lies in the unmarked Torelli open, but has no rational odd-theta marking. Requiring a point of P would lose this unmarked example.
+- A quadratic Weil restriction with its descended product polarization has 2 geometric theta components even when Galois interchanges them. It is outside M₂; requiring a product decomposition over F alone would misidentify the open.
+- The geometric product locus has dimension 1+1=2 inside the three-dimensional B. A product point is outside M₂, while each of its analytic neighbourhoods over a characteristic-zero local field meets M₂; density does not put the product point itself in the open.
+- For C:y²=x⁵−x in characteristic zero, the products of dx/y and x dx/y are (dx/y)², x(dx/y)² and x²(dx/y)², three independent quadratic differentials. The unmarked Torelli tangent map has rank 3, rather than merely a bijection on geometric points.
 
 *Needs:* §2.1; AbelianSchemesAndArithmeticModuli A3.7–A3.8; ShimuraVarieties §§1.2 and 5.0 and the prime-to-level monodromy contract; AlgebraicModuliForArithmeticGeometry §§3.5 and 5.2; InverseGaloisAndArithmeticFundamentalGroups IG.2.5; ArithmeticGaloisRepresentations §7.6; the genus-two Torelli comparison of AbelianSchemesAndArithmeticModuli A4.14.
 
@@ -801,7 +811,7 @@ Prove the finite isogeny and equation classification, including the full scalar-
 
 The counts of Table 9.3.3 sum to 864; the Weil-polynomial column has 40 rows. (x² + x + 3)(x² − 2x + 3) has its class containing a Weierstrass Jacobian (✓, 24 curves). (BCGP25 Lemma 9.3.1 and proof, §9.3, pp. 199–200, line 9253; BCGP25 Table 9.3.3, p. 201, line 9305; BCGP25 Remark 9.3.2, p. 200, line 9289.)
 
-*Needs:* §4.1; §4.4 (two-chart smoothness); AbelianSchemesAndArithmeticModuliPartII F3.2; §0.2; AlgebraicCurves Layer 10; RelativeJacobiansAndIntegralCurveModels §§0.1–0.3 and 2.4.
+*Needs:* §4.1; §4.4 (two-chart smoothness); AbelianSchemesAndArithmeticModuliPartII F3.2; §0.2; AlgebraicCurves Layer 10; RelativeJacobiansAndIntegralCurveModels §§0.1–0.3, 2.2 and 2.4; NeronModelsAndSemistableAbelianVarieties §5.1 for unramified descent.
 
 ### 5.2 A product special fibre at 3 forces bad reduction of the curve (Remark 9.3.8)
 
@@ -982,7 +992,7 @@ Theorem B is the special case with a rational Weierstrass point. (BCGP25 Theorem
 
 ### 7.5 Theorem B: modularity of quintic genus-two curves
 
-Let X : y² = f(x), deg f = 5, be a smooth genus-two curve over ℚ with (1) ρ̄_(Jac X,3)(G_ℚ) one of the fifteen allowed subgroups and End(Jac(X)_ℚ̄) = ℤ (both hold when ρ̄_(Jac X,3) is surjective, the hypothesis of Theorem B in §1.1); (2) good ordinary reduction at 2; (3) good ordinary reduction at 3. Then X is modular. Here 3-distinguishedness is automatic. (BCGP25 Theorem B, §1.1, pp. 3–4, line 150; BCGP25 Theorem 9.5.4 and proof, §9.5, p. 208, line 9656.)
+Let X : y² = f(x), deg f = 5, be a smooth genus-two curve over ℚ with (1) ρ̄_(Jac X,3)(G_ℚ) one of the fifteen allowed subgroups and End(Jac(X)_ℚ̄) = ℤ (both hold when ρ̄_(Jac X,3) is surjective, the hypothesis of BCGP25 Theorem B (BCGP25 §1.1, p. 3, line 150)); (2) good ordinary reduction at 2; (3) good ordinary reduction at 3. Then X is modular. Here 3-distinguishedness is automatic. (BCGP25 Theorem B, §1.1, pp. 3–4, line 150; BCGP25 Theorem 9.5.4 and proof, §9.5, p. 208, line 9656.)
 
 Retain the classification and lifting premises of the exact supplier contracts in this automorphic conclusion.
 
@@ -1008,13 +1018,13 @@ Unramified residual 3-torsion gives semistability. Rank-one toric reduction woul
 
 - The irreducible quadratics X²±X+2 have roots of order 8 over 𝔽₉; none lies in 𝔽₃, where their values are nonzero.
 - The finite orders in GL₂(ℤ) are 1,2,3,4,6; multiplying their eigenvalues by the order-two cyclotomic value still cannot give order 8 modulo 3.
-- The conductor-1982 curve has positive dyadic conductor, whereas its mod-3 representation is unramified in the cited dataset; unramified residual torsion is weaker than good surface reduction.
+- The conductor-1982 curve has positive dyadic conductor, whereas its mod-3 representation is unramified (BCGP25 §10.1, p. 210, line 9773); unramified residual torsion is weaker than good surface reduction.
 
 *Needs:* §7.2; NeronModelsAndSemistableAbelianVarieties §3.12; NeronModelsAndSemistableAbelianVarieties §6.12; LocalGaloisDeformationRings §2.2; NeronModelsAndSemistableAbelianVarieties §§5.0a–5.6 and 6.10; §1.2.
 
 ### Examples
 
-The quintic specialization supplies a rational ramification point and eliminates the separate 3-distinguished hypothesis in Theorem B. The conductor-1982 curve y²+(x+1)y=−x⁵+x⁴−x³+x² illustrates the bad-at-2 theorem and does not assert good reduction from unramified residual 3-torsion.
+The quintic specialization supplies a rational ramification point and eliminates the separate 3-distinguished hypothesis in Theorem B. The conductor-1982 curve y²+(x+1)y=−x⁵+x⁴−x³+x² illustrates the bad-at-2 theorem and does not assert good reduction from unramified residual 3-torsion (BCGP25 §10.1, p. 210, line 9773).
 
 ### Dependencies
 
@@ -1034,7 +1044,7 @@ Use the equation counts at 2 and 3 and joint equidistribution modulo 6. Generic 
 - The conditional allowed proportion at 2 is 624/768=13/16, not 624/2048; the latter includes nonsmooth equations in its denominator.
 - There are 11 integral coefficients; the thin exceptional bound H^(11−1/2)log H divided by the box count of order H¹¹ tends to 0. Separate local marginals without joint mod-6 equidistribution would not justify multiplication.
 
-*Needs:* §4.4; §5.1; RelativeJacobiansAndIntegralCurveModels §§0.1–0.3 and 2.4; §7.2; InverseGaloisAndArithmeticFundamentalGroups IG.2.5; InverseGaloisAndArithmeticFundamentalGroups IG.2.4–IG.2.6; §7.3; AbelianSchemesAndArithmeticModuli A4.9–A4.14.
+*Needs:* §4.4; §5.1; RelativeJacobiansAndIntegralCurveModels §§0.1–0.3, 2.2 and 2.4; NeronModelsAndSemistableAbelianVarieties §5.1 for unramified descent; §7.2; InverseGaloisAndArithmeticFundamentalGroups IG.2.5; InverseGaloisAndArithmeticFundamentalGroups IG.2.4–IG.2.6; §7.3; AbelianSchemesAndArithmeticModuli A4.9–A4.14.
 
 ### 8.2 Automorphy of odd potentially abelian GSp₄ representations (Lemma 10.2.5)
 
@@ -1142,11 +1152,18 @@ This is why Lemma 10.3.6 and Theorem 10.3.9 assume ρ̄(Frob₃) ≠ 1. (BCGP25 
 
 ### 8.7 Realizing an ordinary mod-2 representation by a good surface
 
-Let ρ̄:G_ℚ→GSp₄(𝔽₂) be continuous, unramified at 3 with nonidentity Frobenius. Prescribe an ordinary finite flat model W over ℤ₂ of order 16, killed by 2, whose generic fibre is the symplectically identified residual module and which admits a Cartier self-duality. Subject to the dyadic self-dual polarized-lift, integral-neighbourhood and local-three seed contracts, prove that there is an abelian surface A/ℚ with good ordinary reduction at both 2 and 3, 3-distinguished reduction at 3, surjective mod-3 representation, residual H¹ modulo 2 isomorphic to ρ̄, and an isomorphism A[2]/ℤ₂≅W of underlying finite flat group schemes. Its polynomial at 2 satisfies Q(X)≢(X²±X+2)² modulo 3. The conclusion preserves the specified W, not every chosen self-duality on W. (BCGP25 Lemma 10.3.6 and proof, §10.3, pp. 219–221, line 10182; BCGP25 Lemma 10.3.1, Remark 10.3.2 and the proofs, pp. 215–218, line 9981; BCGP25 Remark 10.3.10, pp. 221–222, line 10313.)
+Let ρ̄:G_ℚ→GSp₄(𝔽₂) be continuous, unramified at 3 with nonidentity Frobenius. Prescribe an ordinary finite flat model W over ℤ₂ of order 16, killed by 2, whose generic fibre is the symplectically identified residual module and which admits a Cartier self-duality. Subject to the dyadic self-dual polarized-lift and integral-neighbourhood contracts, prove that there is an abelian surface A/ℚ with good ordinary reduction at both 2 and 3, 3-distinguished reduction at 3, surjective mod-3 representation, residual H¹ modulo 2 isomorphic to ρ̄, and an isomorphism A[2]/ℤ₂≅W of underlying finite flat group schemes. Its polynomial at 2 satisfies Q(X)≢(X²±X+2)² modulo 3. The conclusion preserves the specified W, not every chosen self-duality on W. (BCGP25 Lemma 10.3.6 and proof, §10.3, pp. 219–221, line 10182; BCGP25 Lemma 10.3.1, Remark 10.3.2 and the proofs, pp. 215–218, line 9981; BCGP25 Remark 10.3.10, pp. 221–222, line 10313.)
 
-Apply approximation on Z⁺ with the separate integral W-neighbourhood contract, the generic level-three monodromy contract, and the local seeds below. The [2,2,2] curve of BCGP25 p.220 has repeated polynomial (X²+2X+3)² and is not 3-distinguished. For this partition use the Weil restriction with polynomial X⁴−2X²+9; its deformation to a nearby Jacobian is the local-three seed contract. At 2 the three possible rank-two étale Frobenius actions have orders 1,2,3. Lift the matching special fibre with its specified underlying W using the dyadic polarized-lift contract. This argument is conditional on those local statements; Cartier self-duality alone is not substituted for their proofs.
+Apply approximation on Z⁺ with the separate integral W-neighbourhood contract, the generic level-three monodromy contract, and the local seeds below. The [2,2,2] curve of BCGP25 p.220 has repeated polynomial (X²+2X+3)² and is not 3-distinguished. For this partition use the Weil restriction with polynomial X⁴−2X²+9; its deformation to a nearby Jacobian is the Weil-restriction seed target below. At 2 the three possible rank-two étale Frobenius actions have orders 1,2,3. Lift the matching special fibre with its specified underlying W using the dyadic polarized-lift contract. This argument is conditional on those local statements; Cartier self-duality alone is not substituted for their proofs.
 
-At 3 the nine other nonidentity partitions use the following local curve models; their good ordinary and distinguished assertions are the finite local targets of BCGP25 Lemma 10.3.6, p.220, line 10213. For [2,2,2] use the Weil-restriction and Torelli contract instead.
+Prove the Weil-restriction seed at 3. Let E/𝔽₉ be y²=x(x−1)(x−t), t²=−1. The surface A₀=Res_(𝔽₉/𝔽₃)E is ordinary and principally polarized: over 𝔽₉ its polarization is the product of the canonical elliptic polarizations and descends under factor interchange. Its Weil polynomial is X⁴−2X²+9. Lift A₀ with its polarization to ℤ₃ by the ordinary canonical lift of AbelianSchemesAndArithmeticModuli A4.10, with effectivity from A4.8. Choose the corresponding level-three twist B(ρ̄). The polarized Serre–Tate deformation space of A₀ has dimension three; its sufficiently small ℚ₃-valued deformations algebraize and retain the identified special fibre A₀. Apply the unmarked Torelli open of §4.8 in this neighbourhood, and the local-neighbourhood contract for the finite torsion, to obtain a smooth genus-two curve X/ℚ₃ whose principally polarized Jacobian has good ordinary 3-distinguished reduction to A₀ and unramified mod-2 type [2,2,2]. No good curve reduction or rational Weierstrass point is asserted. This supplies the local seed required by BCGP25 Lemma 10.3.6 (pp.219–220, lines 10182–10220), using the Torelli passage of BCGP21 p.269, line 12976.
+
+- The principal polarization on A₀ descends from the product polarization, and the lift and deformation preserve it.
+- The nearby Jacobian retains A₀ as its polarized special fibre, so its quartic remains X⁴−2X²+9, with ordinary middle coefficient −2 and no repeated root.
+- Its finite étale 2-torsion is unramified with the same symplectic Frobenius as A₀[2]; the six odd theta characteristics have three orbits of length two.
+- The seed is unmarked. Its type has no fixed odd theta characteristic, so the construction uses B and its unmarked Torelli open rather than P.
+
+At 3 the nine other nonidentity partitions use the following local curve models; their good ordinary and distinguished assertions are the finite local targets of BCGP25 Lemma 10.3.6, p.220, line 10213. For [2,2,2] use the Weil-restriction seed target instead.
 
 | Partition | f(x) in y²=f(x) |
 | --- | --- |
@@ -1172,17 +1189,20 @@ The middle curve has smooth generalized model y²+(x³+1)y=−3x⁴+4x²+2x and 
 
 **Checks.**
 
-- For E/𝔽₉:y²=x(x−1)(x−t), t²=−1, #E(𝔽₉)=8 and trace 2, so its Weil restriction has Q=X⁴−2X²+9, with b=−2 prime to 3 and four distinct roots.
+- For E/𝔽₉:y²=x(x−1)(x−t), t²=−1, #E(𝔽₉)=8 and trace 2, so its Weil restriction has Q=X⁴−2X²+9 and Q(1)=8=#E(𝔽₉), with b=−2 prime to 3 and four distinct roots.
+- All four points of E[2] are rational over 𝔽₉. On the product after base change Frobenius at 3 interchanges the two symplectic rank-two summands. An odd quadratic refinement has parities (odd,even) or (even,odd), giving 1·3+3·1=6 refinements and 0 fixed ones: partition [2,2,2].
+- For Q=X⁴−2X²+9, Q′=4X(X²−1), and Q(0)=9, Q(1)=Q(−1)=8, so gcd(Q,Q′)=1 in characteristic zero. Reducing modulo 3 gives X²(X²+1), which must not be used as the characteristic-zero repeated-root test.
+- The Serre–Tate parameter equal to 1 gives the decomposable canonical lift, outside the Torelli open; parameters sufficiently close to 1 in that open retain the same decomposable special fibre. Good Jacobian reduction therefore does not imply good curve reduction.
 - The dyadic three étale orders 1,2,3 have reference quartics X⁴−X²+4, X⁴+2X³+3X²+4X+4, X⁴+3X³+5X²+6X+4; none reduces to a forbidden squared quadratic modulo 3.
 - The order-two étale seed has Q(1)=14, so its group of rational points cannot contain (ℤ/2)²; the étale action is the nontrivial Jordan block. Conjugate generic modules can still have distinct integral W.
 
 Remark 10.3.10: for ρ̄|_(G_ℚ₂) unramified of order 5, ρ̄ is ordinary and finite flat, but no finite flat W with this generic fibre is Cartier self-dual, so no abelian surface over ℤ₂ has A[2] ≅ ρ̄. (BCGP25 Lemma 10.3.6 and proof, §10.3, pp. 219–221, line 10182; BCGP25 Lemma 10.3.1, Remark 10.3.2 and the proofs, pp. 215–218, line 9981; BCGP25 Remark 10.3.10, pp. 221–222, line 10313.)
 
-*Needs:* §8.5; InverseGaloisAndArithmeticFundamentalGroups IG.2.5 and IG.2.7; AbelianSchemesAndArithmeticModuli A4.13; AbelianSchemesAndArithmeticModuli A4.14; AbelianSchemesAndArithmeticModuli A6.32–A6.33; §4.2; §4.1; §5.1; NeronModelsAndSemistableAbelianVarieties §§6.11–6.13 and local-neighbourhood contract; InverseGaloisAndArithmeticFundamentalGroups IG.2.5; §8.6; §0.2; AbelianSchemesAndArithmeticModuli A4.9–A4.14.
+*Needs:* §8.5; InverseGaloisAndArithmeticFundamentalGroups IG.2.5 and IG.2.7; AbelianSchemesAndArithmeticModuli A4.8, A4.10, A4.12–A4.13 and A6.32–A6.33; §4.8 (unmarked Torelli open); §4.2; §4.1; §5.1; NeronModelsAndSemistableAbelianVarieties §§6.11–6.13 and local-neighbourhood contract; §8.6; §0.2.
 
 ### 8.8 Ordinary residual modularity modulo 2
 
-Under the hypotheses and three local supplier contracts of §8.7, ρ̄ is ordinarily modular of weight two and level prime to 6: there is a cuspidal GSp₄ representation of weight (1,1;2) and central character |·|², spherical at 2 and 3, ordinarily stabilized at 2, whose residual ordinary attachment at 2 is ρ̄. Retain the nonregular-lifting and classification premises used in Theorem A and the spherical-attachment contract. This includes residual images A₆ and S₆ with these local hypotheses. (BCGP25 Theorem 10.3.9 and proof, §10.3, p. 221, line 10302; BCGP25 §10, introduction, and §1.5, pp. 7 and 209, line 293.)
+Under the hypotheses and the dyadic polarized-lift and integral-neighbourhood supplier contracts of §8.7, ρ̄ is ordinarily modular of weight two and level prime to 6: there is a cuspidal GSp₄ representation of weight (1,1;2) and central character |·|², spherical at 2 and 3, ordinarily stabilized at 2, whose residual ordinary attachment at 2 is ρ̄. Retain the nonregular-lifting and classification premises used in Theorem A and the spherical-attachment contract. This includes residual images A₆ and S₆ with these local hypotheses. (BCGP25 Theorem 10.3.9 and proof, §10.3, p. 221, line 10302; BCGP25 §10, introduction, and §1.5, pp. 7 and 209, line 293.)
 
 Retain the classification and lifting premises of the exact supplier contracts in this automorphic conclusion.
 
@@ -1214,7 +1234,7 @@ The abelian-surface endpoints supply the cuspidal and isobaric modularity inputs
 
 The local examples of Layers 4 and 5 give a complete switch chain. Start with any prime-to-3-polarized surface satisfying §7.2. Its mod-3 representation fixes the twisted marked family P. The dyadic table supplies one of eight ordinary semistable distinguished classes, with class 2C supplied by the coupled-period seed fixing two odd theta characteristics; §5.3 supplies its triadic finite-flat module, including both scalar signs. The real polynomial x(x²+1)(x²+2) fixes the double-transposition open. Approximation away from all proper S₅ subgroup covers produces a Jacobian B with the same mod-3 representation and mod-2 image S₅(b). Modularity at 2 for B followed by the ordinary spherical attachment at 3 and odd-prime transfer proves modularity of the original surface. Every local datum in this example is a hypothesis or a named result above, including the negative controls for the two forbidden classes (BCGP25 proof of Theorem 9.5.2, p.207, line 9609).
 
-For the residual-mod-2 endpoint, the triadic Weil restriction has #E(𝔽₉)=8, so its quartic is X⁴−2X²+9. It is ordinary since 3 does not divide −2. Its four roots are distinct because its quadratic in X² has discriminant −32, neither zero nor a zero-root case. Its mod-2 action swaps the two rank-two summands and has partition [2,2,2]. The integral W lift and Torelli-neighbourhood contracts place this seed into Z⁺, after which approximation outside the mod-3 proper-image locus and Theorem A give §8.8. The repeated polynomial (X²+2X+3)² of the conductor-7165 curve would fail this example's distinguishedness test (BCGP25 pp.219–221, lines 10182 and 10220; Weil-restriction seed of §8.7).
+For the residual-mod-2 endpoint, the triadic Weil restriction has #E(𝔽₉)=8, so its quartic is X⁴−2X²+9. It is ordinary since 3 does not divide −2. Its four roots are distinct because its quadratic in X² has discriminant −32, neither zero nor a zero-root case. Its mod-2 action swaps the two rank-two summands and has partition [2,2,2]. The Weil-restriction seed target of §8.7 gives a Jacobian point of Z⁺ at 3, while the integral W-lift and neighbourhood contracts supply the point at 2, after which approximation outside the mod-3 proper-image locus and Theorem A give §8.8. The repeated polynomial (X²+2X+3)² of the conductor-7165 curve would fail this example's distinguishedness test (BCGP25 pp.219–221, lines 10182 and 10220; Weil-restriction seed of §8.7).
 
 ## References
 
@@ -1229,4 +1249,4 @@ All source statements are paraphrased; line locators refer to the numbered legal
 - **WHITMORE22.** D. Whitmore, [The Taylor–Wiles method for reductive groups](https://arxiv.org/abs/2205.05062v4), arXiv v4 (2026). Definition 3.19, pp.23–24, lines 1011–1017; §4.3, pp.38–39, lines 1648–1688. Reasonableness is a condition on a Galois representation at every sufficiently deep cyclotomic level, rather than only on its full image.
 - **THORNE17.** J. A. Thorne, [A 2-adic automorphy lifting theorem for unitary groups over CM fields](https://doi.org/10.1007/s00209-016-1681-2), Math. Z. 285 (2017), Definition 2.20. Uncertified: cited by its locator alone; the near-adequacy comparison used here is also stated in BCGP25 Remark 8.2.3, p.182, line 8404.
 
-- **FC90.** G. Faltings, C.-L. Chai, [Degeneration of Abelian Varieties](https://doi.org/10.1007/978-3-662-02632-8), Springer (1990), Chapter II Theorem 6.2 and Remark 6.3, pp.51–52; Chapter III Theorem 7.1 and Corollaries 7.2–7.4, pp.76–77. Uncertified: cited by locator alone; the converse toric algebraization is an explicit supplier contract.
+- **FC90.** G. Faltings, C.-L. Chai, [Degeneration of Abelian Varieties](https://doi.org/10.1007/978-3-662-02632-8), Springer (1990), Chapter II Theorem 6.2 and Remark 6.3, pp.51–52; Chapter III Theorem 7.1 and Corollaries 7.2–7.4, pp.76–77. Uncertified: cited by locator alone; polarized toric algebraization is consumed from ShimuraCompactifications C4.4–C4.6, and its torsion and pairing comparison from NeronModelsAndSemistableAbelianVarieties §3.14.

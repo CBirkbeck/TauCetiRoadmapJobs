@@ -46,7 +46,7 @@ venue = "Publications Mathématiques de l'IHÉS 134"
 doi = "10.1007/s10240-021-00128-2"
 arxiv = "1812.09269v3"
 locator_scheme = "theorem"
-locator = "Definition 10.2.2, Proposition 10.2.3 and Lemma 10.2.4; Definitions 7.5.11, 9.1.8; Section 9.2; Remark 9.1.7 (arXiv v3 numbering)"
+locator = "Definition 10.2.2 and the following Torelli paragraph (page 269), Proposition 10.2.3 and Lemma 10.2.4; Definitions 7.5.11, 9.1.8; Section 9.2; Remark 9.1.7 (arXiv v3 numbering)"
 url = "https://arxiv.org/abs/1812.09269v3"
 fetched_from = "https://arxiv.org/pdf/1812.09269v3"
 fetched_at = "2026-10-24T05:49:05Z"
@@ -55,7 +55,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Numbering and page locators use arXiv v3 (2021): Proposition 10.2.3 is equivariant rationality of the untwisted space; Lemma 10.2.4 is rationality of P(rho). The published DOI is recorded for the same work."
-cited_for = ["Conventions and §0.1; §§1.4 and 7.1 (tidiness); §4.8 (odd-theta rationality); §8.3 (Galois types)"]
+cited_for = ["Conventions and §0.1; §§1.4 and 7.1 (tidiness); §4.8 (marked and unmarked Torelli loci and odd-theta rationality); §8.3 (Galois types); §8.7 (unmarked Torelli deformation)"]
 
 [[source]]
 id = "KIS99"

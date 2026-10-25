@@ -3097,12 +3097,6 @@
     "needs": "Prove that the ordinary finite flat self-dual order-16 model required here admits the skew self-duality and polarized symmetric Serre–Tate extension lift used by A4.13, distinguishing arbitrary Cartier self-duality, skew self-duality and strong alternation."
   },
   {
-    "slug": "three-two-two-two-seed",
-    "supplier": "AbelianSchemesAndArithmeticModuli",
-    "section": "A4.14 and A6.32",
-    "needs": "Lift and deform Res_(𝔽₉/𝔽₃) of y²=x(x−1)(x−t), t²=−1, to a nearby genus-two Jacobian over ℚ₃ with good ordinary 3-distinguished Jacobian reduction and unramified mod-2 permutation type [2,2,2], using a dense Torelli neighbourhood of the decomposable special fibre."
-  },
-  {
     "slug": "strong-odd-symplectic-criterion",
     "supplier": "PotentialAutomorphyInfrastructurePartII",
     "section": "PL.4, Strong residual oddness at a real place",
@@ -3125,12 +3119,6 @@
     "supplier": "ShimuraVarieties",
     "section": "1.2 and 5.0",
     "needs": "For each g ≥ 1 and a connected fixed-pairing fine Siegel chart of level N ≥ 3 in characteristic zero, prove that adjoining symplectic level ℓ with prime ℓ not dividing N gives a geometrically connected cover with group Sp_(2g)(𝔽_ℓ), compatibly with the universal family and level change."
-  },
-  {
-    "slug": "polarized-toric-algebraization",
-    "supplier": "NeronModelsAndSemistableAbelianVarieties",
-    "section": "3.14",
-    "needs": "For a rank-g torus over a complete discretely valued field, split by a finite unramified extension, and a Galois-stable rank-g period lattice, algebraize the rigid quotient when an equivariant period-to-character lattice isomorphism makes the period pairing symmetric with positive definite valuation, preserving its principal polarization, unramified descent, torsion cone and evaluation Weil pairing."
   }
 ],
  "sourceIssues": [
