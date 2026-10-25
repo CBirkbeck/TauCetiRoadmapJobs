@@ -8,6 +8,12 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs, using native carriers and small
 definitions of ring predicates and the geometric derived unit.
 
+The stated headlines are characteristic-p absolute integral closure, balanced
+big Cohen–Macaulay existence, the direct summand theorem, flat domination,
+complete-local absolute-integral-closure splitting, monomial noncontainment,
+weak functoriality, pure-subring Cohen–Macaulayness, the characteristic-p splinter
+equivalence and the derived direct summand theorem.
+
 The following headlines are not statable at the pins:
 * Perfectoid covers and their almost faithful flatness: integral perfectoid
   algebras and the almost module category are missing.
@@ -55,13 +61,6 @@ def ParameterSystem (R : Type u) [CommRing R] [IsLocalRing R]
   ringKrullDim R = xs.length ∧ (∀ x ∈ xs, x ∈ maximalIdeal R) ∧
     (Ideal.ofList xs).radical = maximalIdeal R
 
-/-- Big Cohen–Macaulayness for a parameter list, for arbitrary modules. The
-nonzero maximal-ideal quotient is required separately from weak regularity. -/
-def BigCMFor (R : Type u) (M : Type v) [CommRing R] [IsLocalRing R]
-    [IsNoetherianRing R] [AddCommGroup M] [Module R M] (xs : List R) : Prop :=
-  ParameterSystem R xs ∧ RingTheory.Sequence.IsWeaklyRegular M xs ∧
-    maximalIdeal R • (⊤ : Submodule R M) ≠ ⊤
-
 /-- Balanced big Cohen–Macaulayness means weak regularity of every parameter
 system and a nonzero maximal-ideal quotient, with no module finiteness assumed. -/
 def BalancedBigCM (R : Type u) (M : Type v) [CommRing R] [IsLocalRing R]
@@ -76,86 +75,7 @@ def PureAlgebra (R : Type u) (S : Type v) [CommRing R] [CommRing S]
   ∀ (M : Type u) [AddCommGroup M] [Module R M],
     Function.Injective (fun m : M => m ⊗ₜ[R] (1 : S))
 
-/-- Maximal-adic completion of an arbitrary big Cohen–Macaulay module is
-balanced (André, §4.1, p. 85). -/
-theorem completion_balanced (R : Type u) (M : Type v) [CommRing R]
-    [IsLocalRing R] [IsNoetherianRing R] [AddCommGroup M] [Module R M]
-    (xs : List R) (h : BigCMFor R M xs) :
-    BalancedBigCM R (AdicCompletion (maximalIdeal R) M) := by
-  sorry
-
-/-- Balanced big Cohen–Macaulay modules over regular local rings are faithfully
-flat (André, Remarque 4.2.1, with the height and Tor indices distinguished). -/
-theorem balanced_faithfullyFlat (R : Type u) (M : Type v) [CommRing R]
-    [IsRegularLocalRing R] [AddCommGroup M] [Module R M]
-    (h : BalancedBigCM R M) : Module.FaithfullyFlat R M := by
-  sorry
-
-/-! ## Layer 1: Purity and the characteristic-p theorem -/
-
-/-- A pure algebra over a complete Noetherian local ring has a linear retraction;
-no finiteness or integrality of the algebra is required. -/
-theorem complete_pure_split (R : Type u) (S : Type v) [CommRing R] [CommRing S]
-    [Algebra R S] [IsLocalRing R] [IsNoetherianRing R]
-    [IsAdicComplete (maximalIdeal R) R] (h : PureAlgebra R S) :
-    SplitAlgebra R S := by
-  sorry
-
-/-- Hochster's direct summand theorem in positive characteristic, for every
-finite injective algebra over a regular ring (André, Annexe A.3). -/
-theorem directSummand_charP (R : Type u) (S : Type v) [CommRing R]
-    [CommRing S] [Algebra R S] [IsRegularRing R] [Module.Finite R S]
-    (p : ℕ) [Fact p.Prime] [CharP R p]
-    (h : Function.Injective (algebraMap R S)) : SplitAlgebra R S := by
-  sorry
-
-/-! ## Layer 2: André's unramified theorem -/
-
-/-- Finite injective algebras over W(k)[[T_1,...,T_n]] split for every perfect
-field k of characteristic p (André, Théorème 0.2.1). -/
-theorem andre_unramified (p : ℕ) [Fact p.Prime] (k : Type u) [Field k]
-    [CharP k p] [PerfectRing k p] (n : ℕ) (S : Type v) [CommRing S]
-    [Algebra (MvPowerSeries (Fin n) (WittVector p k)) S]
-    [Module.Finite (MvPowerSeries (Fin n) (WittVector p k)) S]
-    (h : Function.Injective (algebraMap (MvPowerSeries (Fin n) (WittVector p k)) S)) :
-    SplitAlgebra (MvPowerSeries (Fin n) (WittVector p k)) S := by
-  sorry
-
-/-! ## Layer 3: Bhatt's mixed-characteristic theorem -/
-
-/-- Every finite injective algebra over a complete mixed-characteristic regular
-local ring splits, including ramified rings (Bhatt, Theorem 5.4). -/
-theorem bhatt_mixed (R : Type u) (S : Type v) [CommRing R] [CommRing S]
-    [Algebra R S] [IsRegularLocalRing R] [CharZero R]
-    [IsAdicComplete (maximalIdeal R) R] [Module.Finite R S]
-    (p : ℕ) [Fact p.Prime] [CharP (ResidueField R) p]
-    (h : Function.Injective (algebraMap R S)) : SplitAlgebra R S := by
-  sorry
-
 /-! ## Layer 4: Almost Cohen–Macaulay algebras and existence -/
-
-/-- Almost Cohen–Macaulayness for specified compatible p-power roots. The zeroth
-root is regular, some root survives the maximal-ideal quotient, and every root
-kills every parameter colon obstruction (André, Définition 4.1.1(3)). -/
-def AlmostCMFor (R : Type u) (D : Type v) [CommRing R] [IsLocalRing R]
-    [IsNoetherianRing R] [CommRing D] [Algebra R D] (xs : List R)
-    (p : ℕ) [Fact p.Prime] [CharP (ResidueField R) p] (roots : ℕ → D) : Prop :=
-  ParameterSystem R xs ∧
-  Function.Injective (fun z : D => roots 0 * z) ∧
-  (∀ n, roots (n + 1) ^ p = roots n) ∧
-  (∃ n, roots n ∉ (maximalIdeal R).map (algebraMap R D)) ∧
-  ∀ (i : ℕ) (hi : i < xs.length) (z : D),
-    algebraMap R D xs[i] * z ∈ (Ideal.ofList (xs.take i)).map (algebraMap R D) →
-    ∀ n, roots n * z ∈ (Ideal.ofList (xs.take i)).map (algebraMap R D)
-
-/-- An almost Cohen–Macaulay algebra with regular root parameter gives a
-balanced big Cohen–Macaulay algebra (André, Proposition 4.1.2). -/
-theorem almostCM_exists_balanced (R : Type u) (D : Type v) [CommRing R]
-    [IsLocalRing R] [IsNoetherianRing R] [CommRing D] [Algebra R D]
-    (xs : List R) (p : ℕ) [Fact p.Prime] [CharP (ResidueField R) p]
-    (roots : ℕ → D) (h : AlmostCMFor R D xs p roots) :
-    ∃ (C : Type u) (_ : CommRing C) (_ : Algebra R C), BalancedBigCM R C := by
-  sorry
 
 /-- The absolute integral closure of a characteristic-p local domain that is a
 quotient of a Gorenstein local ring is balanced big Cohen–Macaulay. Gorensteinness
@@ -168,13 +88,6 @@ theorem absoluteIntegralClosure_charP (R : Type u) (A : Type v) [CommRing R]
     (f : A →+* R) (hf : Function.Surjective f)
     (p : ℕ) [Fact p.Prime] [CharP R p] :
     BalancedBigCM R (integralClosure R (AlgebraicClosure (FractionRing R))) := by
-  sorry
-
-/-- Every Noetherian local ring containing Q has a balanced big Cohen–Macaulay
-algebra (Hochster–Huneke, as recalled in André §0.7 and §4.3). -/
-theorem exists_balanced_charZero (R : Type u) [CommRing R] [IsLocalRing R]
-    [IsNoetherianRing R] [Algebra ℚ R] :
-    ∃ (C : Type u) (_ : CommRing C) (_ : Algebra R C), BalancedBigCM R C := by
   sorry
 
 /-- Every Noetherian local ring has a balanced big Cohen–Macaulay algebra, with
@@ -254,7 +167,6 @@ theorem pureSubring_cohenMacaulay (B : Type u) (B' : Type v) [CommRing B] [CommR
     ∀ xs : List B, ParameterSystem B xs → RingTheory.Sequence.IsRegular B xs := by
   sorry
 
-
 /-! ## Layer 7: The derived direct summand theorem -/
 
 open CategoryTheory AlgebraicGeometry
@@ -301,12 +213,6 @@ noncomputable def DerivedSplinter (R : Type u) [CommRing R] : Prop :=
 theorem splinter_iff_derivedSplinter_charP (R : Type u) [CommRing R]
     [IsNoetherianRing R] (p : ℕ) [Fact p.Prime] [CharP R p] :
     Splinter R ↔ DerivedSplinter R := by
-  sorry
-
-/-- Every Noetherian regular Q-algebra is a derived splinter
-(Bhatt, Derived splinters, Example 1.2; Kovács, Theorems 1–2). -/
-theorem derivedDirectSummand_charZero (R : Type u) [CommRing R]
-    [IsRegularRing R] [Algebra ℚ R] : DerivedSplinter R := by
   sorry
 
 /-- Every Noetherian regular ring is a derived splinter: every proper surjective

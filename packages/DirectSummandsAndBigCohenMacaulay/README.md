@@ -6,11 +6,11 @@
 
 This roadmap owns split algebras and splinters (§§0.1–0.2), arbitrary big and balanced big Cohen–Macaulay modules and algebras (§§0.3–0.6), the algebra-unit and proper-unit applications of the supplied triangle obstruction (§0.7), Hochster’s endomorphism and complete-local purity criteria (Layer 1), the two direct summand arguments (Layers 2–3), pointed partial algebra modifications and their full-algebra finite-witness comparison (Layer 4), the existence theorems, flat domination and monomial theorem (Layers 4–5), the mixed-characteristic weak-functoriality square and pure-subring theorem (Layer 6), and derived splinters and derived direct summands (Layer 7).
 
-The following constructions and theorems are supplied elsewhere and are used by section, rather than reconstructed here. PerfectoidSpaces P0–P3 owns almost algebra, perfectoid rings, rational localization, the sheaf theorem and almost purity. PerfectoidSpacesPartII RA.0–RA.5 owns quantitative Riemann extension, uniform Banach and ramification theory, the perfectoid Abhyankar lemma, tensor purity, almost purity of maps, Krull detection and normalized Kummer towers. Its analytic statements remain supplier contracts here. PerfectoidQuotients §§0.7, 1.3–1.4 owns the fixed-field integral models and saturated root extension. DeformationAndDerivedPatchingAlgebraPartII §§K0.1, K0.3 owns the arbitrary-module Čech comparison, filtered-colimit local cohomology and finite secant parameter lists, their existence, permutations and positive powers. DerivedModuleAlgebra §§0.K.1, 1.T.1, 1.1.1, 1.E.0 and 1.M.2 owns Koszul complexes, ordinary towers, derived Hom, pseudo-coherent/perfect carriers and arbitrary-residue-field Matlis duality. EnhancedDerivedSheaves §§E1.4, E1.6 and E1.8 owns enhanced derived ringed pushforward, regular homological dimension, Kunz’s theorem and transport of triangle obstructions. DeformationAndDerivedPatchingAlgebra §§1.9–1.15, 3.1–3.4 and 7.3 owns Cohen presentations, residue extensions, flat completion, finite algebra decompositions, Artin–Rees Hom pro-comparison, Auslander–Buchsbaum and finite models. SchemeAndStackFoundations §§0.9, 0.15, 0.17, 2.6, 2.18 and 4.12 owns limits, Popescu approximation, depth and finite-module Cohen–Macaulayness, flat cohomology base change, derived quasicoherent sheaves and modification domination. StableReduction Layer 2 owns coherent proper pushforward; ResolutionOfSingularitiesCharacteristicZero §5.5 owns characteristic-zero resolutions.
+The following constructions and theorems are supplied elsewhere and are used by section, rather than reconstructed here. PerfectoidSpaces P0–P3 owns almost algebra, perfectoid rings, rational localization, the sheaf theorem and almost purity. PerfectoidSpacesPartII RA.0–RA.5 owns quantitative Riemann extension, uniform Banach and ramification theory, the perfectoid Abhyankar lemma, tensor purity, almost purity of maps, Krull detection and normalized Kummer towers. Its analytic statements remain supplier contracts here. PerfectoidQuotients §§0.7, 1.3–1.4 owns the fixed-field integral models and saturated root extension. DeformationAndDerivedPatchingAlgebraPartII §§K0.1, K0.3 owns the arbitrary-module Čech comparison, filtered-colimit local cohomology and finite secant parameter lists, their existence, permutations and positive powers. DerivedModuleAlgebra §§0.K.1, 1.T.1, 1.1.1, 1.E.0 and 1.M.2 owns Koszul complexes, ordinary towers, derived Hom, pseudo-coherent/perfect carriers and arbitrary-residue-field Matlis duality. EnhancedDerivedSheaves §§E1.4, E1.6 and E1.8 owns enhanced derived ringed pushforward, regular homological dimension, Kunz’s theorem and transport of triangle obstructions. DeformationAndDerivedPatchingAlgebra §§1.9–1.15, 3.1–3.4, 3.7, 3.9, 4.1 and 7.3 owns Cohen presentations, residue extensions, flat completion, finite algebra decompositions, Artin–Rees Hom pro-comparison, Auslander–Buchsbaum and finite models. SchemeAndStackFoundations §§0.9, 0.11, 0.15, 0.17, 2.6–2.7, 2.18–2.19, 2.21 and 4.12 owns limits, Popescu approximation, depth and finite-module Cohen–Macaulayness, flat cohomology base change, derived quasicoherent sheaves and modification domination. StableReduction Layer 2 owns coherent proper pushforward; ResolutionOfSingularitiesCharacteristicZero §5.5 owns characteristic-zero resolutions.
 
 Mathlib already supplies regular local and regular rings, regular sequences, flatness, faithful flatness, completions, Witt vectors, power series, fraction fields, integral closures, trace, local cohomology and the derived category. Tau Ceti supplies injective-envelope interfaces, regular local domains and finite products of flat modules. Mathlib supplies the ordinary bounded-below derived pushforward of sheaves of modules and the geometric ringed-space unit; Layer 7 uses these native constructions, while its enhancement and affine comparison remain supplied by EnhancedDerivedSheaves and SchemeAndStackFoundations. Section 5.2 differs from the finite-product theorem by allowing an arbitrary index set over a coherent base; §7.2 adds the particular proper-unit cone, its finite affine bound and its regular-local perfectness application. The generic cone-vanishing test, coherent proper pushforward and finite Hom pro-comparison are not independent targets of this roadmap. The predicates in Suggested.lean that express parameter lists and purity are transparent views of their supplier contracts on native carriers, not new competing constructions.
 
-The characteristic-p theorem for the absolute integral closure is owned here; mixed-characteristic Cohen–Macaulayness of its p-adic completion and the birational theories of plus-regularity and test ideals belong to the direction of SchemeAndStackFoundations, Part II. General weak functoriality without the hypotheses of Layer 6, perfectoid characterizations of regularity, improved intersection and syzygy theorems, and Hochster’s reduction to the unramified case are outside this roadmap’s scope.
+The characteristic-p Cohen–Macaulay theorem for the absolute integral closure is owned here. Mixed-characteristic Cohen–Macaulayness of its p-adic completion, plus-regularity and test ideals are outside this roadmap’s scope. General weak functoriality without the hypotheses of Layer 6, perfectoid characterizations of regularity, improved intersection and syzygy theorems, and Hochster’s reduction to the unramified case are outside this roadmap’s scope.
 
 ## Conventions
 
@@ -109,17 +109,15 @@ Sections 0.K.1, 1.T.1 and 1.1.1 supply Koszul complexes, module towers, ordinary
 
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
-Sections 1.9–1.10 supply coefficient-compatible Cohen presentations, strict Cohen rings, residue-field extensions with equality of extended maximal ideals, and the individual perfect-residue completed base change. Sections 1.13–1.15 supply flat completion for an arbitrary flat algebra over a Noetherian base, finite algebra completion factors, and the finite-module Artin–Rees Hom pro-isomorphism and its vanishing lim¹. Sections 3.1–3.2 supply Auslander–Buchsbaum and finite local homological comparisons; §3.4 supplies regular-surjection kernels generated by a prefix of a regular parameter system; §7.3 supplies finite minimal models. The regular-surjection theorem is applied to the specified map and leaves its coefficient restriction fixed; the finite-parameter interface below retains the chosen coefficient map.
+Sections 1.9–1.10 supply coefficient-compatible Cohen presentations, strict Cohen rings, residue-field extensions with equality of extended maximal ideals, and the individual perfect-residue completed base change. Sections 1.13–1.15 supply flat completion for an arbitrary flat algebra over a Noetherian base, finite algebra completion factors, and the finite-module Artin–Rees Hom pro-isomorphism and its vanishing lim¹. Sections 3.1–3.2 supply Auslander–Buchsbaum and finite local homological comparisons; §3.4 supplies regular-surjection kernels generated by a prefix of a regular parameter system; §3.7 supplies dimension, top local cohomology and its arbitrary-module tensor comparison; §3.9 supplies canonical modules and the finite-self-injective-dimension Gorenstein criterion; §4.1 supplies finiteness from a finite-dimensional residual fibre over a complete local source; §7.3 supplies finite minimal models. The regular-surjection theorem is applied to the specified map and leaves its coefficient restriction fixed; the parameter-subring application in §4.8 retains the chosen coefficient map.
 
 What DeformationAndDerivedPatchingAlgebra must provide (gap:common-cohen-extension): For compatible Cohen embeddings lifting a separable residue extension k→k′ in the general field-extension sense, identify completion_p(Λ′⊗_Λ W(kᵖerf)) as a strict Cohen ring with residue k′⊗_k kᵖerf and construct its compatible faithfully flat map to W(k′ᵖerf), so the resulting common completed base change preserves injectivity and purity.
 
-What DeformationAndDerivedPatchingAlgebra must provide (gap:finite-parameter-subring): For a complete p-torsion-free local domain B of perfect residue field, and a system of parameters (p²,x₂,…,x_d), construct a finite injective coefficient-compatible map W(k)[[T₂,…,T_d]]→B sending T_i to x_i.
-
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebraPartII
 
-Section K0.3, “Secant sequences”, supplies finite secant parameter lists, their dimension formula, existence, permutations and invariance under positive powers. Use its maximal lists for the ring viewed as a module; the precise radical and transport comparisons are the contract below.
+Section K0.3, “Secant sequences”, supplies finite secant parameter lists, their dimension formula, existence, permutations and invariance under positive powers. For M=R≠0 its dimension formula identifies maximal secant lists with dimension-length lists generating a maximal-primary ideal. The transports are the contract below.
 
-What DeformationAndDerivedPatchingAlgebraPartII must provide (gap:parameter-systems): Identify maximal secant lists for the module R with dimension-length lists generating a maximal-primary ideal, and transport these parameter systems under completion, maximal-dimensional domain quotients and finite injective local maps.
+What DeformationAndDerivedPatchingAlgebraPartII must provide (gap:parameter-systems): For a Noetherian local ring R, a parameter system maps to a parameter system of its maximal-adic completion. For a prime P of R with dim(R/P)=dim R, a parameter system of R maps to one of R/P. For a finite injective local map R→B of Noetherian local rings, a parameter system of R maps to one of B.
 
 Section K0.1, “Local cohomology inputs”, supplies the Čech computation of Mathlib’s Ext-colimit local cohomology for any module over a Noetherian ring and any finite generating list, and commutation with filtered colimits. Use SchemeAndStackFoundations §2.7 for its derived-torsion comparison and DerivedModuleAlgebra §0.K.1 for Koszul models. The new content in §0.5 is arbitrary-module completion and change of parameters, rather than another Čech comparison.
 
@@ -129,9 +127,9 @@ Sections E1.4 and E1.8 supply enhanced ringed derived pushforward, affine compar
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Sections 0.9 and 0.15 supply finite-presentation limits and Popescu approximation; §0.17 supplies depth, finite-module Cohen–Macaulayness and flat-local descent; §§2.6 and 2.18 supply flat and Tor-independent base change on the same quasicoherent derived categories. Section 4.12 supplies Noetherian modification domination and Chow’s lemma; §4.13 supplies normality of regular schemes and the Serre normality criterion. The perfectoid-base extension specified below is needed in §7.4; the Noetherian statement is not applied to a non-Noetherian ring.
+Sections 0.9 and 0.15 supply finite-presentation limits and Popescu approximation; §0.11 supplies absolute integral closure and its affine comparison with Spec R⁺; §0.17 supplies depth, finite-module Cohen–Macaulayness and flat-local descent; §§2.6–2.7 and 2.18 supply flat and Tor-independent base change and the derived-torsion comparison for local cohomology on the same quasicoherent derived categories; §§2.19 and 2.21 supply the right adjoint of proper pushforward, coherent duality, dualizing complexes and biduality. Section 4.12 supplies Noetherian modification domination and Chow’s lemma; §4.13 supplies normality of regular schemes and the Serre normality criterion. The extension to quasi-compact quasi-separated bases specified below is needed in §7.4; it involves no perfectoid carrier.
 
-What SchemeAndStackFoundations must provide (gap:perfectoid-base-modification-domination): For an arbitrary integral perfectoid p-torsion-free base A and a proper Y→Spec A whose generic fibre is an isomorphism, dominate the p-adic completion of its generic-fibre closure by the completion of a blow-up of a finitely generated ideal containing p^N for some N.
+What SchemeAndStackFoundations must provide (gap:perfectoid-base-modification-domination): For a quasi-compact quasi-separated scheme S, a quasi-compact open U⊆S and a proper morphism X→S that is an isomorphism over U, supply a U-admissible blow-up S′→S, with a finite-type ideal sheaf as centre, and a factorization S′→X→S (STACKS, Lemma 38.31.4, tag 081T; STACKS line 4296 in the flattening text).
 
 ### From TauCetiRoadmap.StableReduction
 
@@ -141,7 +139,7 @@ Layer 2, “coherent curve theory, duality, and positivity”, supplies coherent
 
 Section 5.5 supplies a proper surjective resolution of a reduced finite-type scheme over a characteristic-zero field by a smooth scheme, isomorphic over the regular locus. The characteristic-zero derived argument also consumes the vanishing extension specified below.
 
-What ResolutionOfSingularitiesCharacteristicZero must provide (gap:grauert-riemenschneider): For a proper birational morphism ρ:Y→X of characteristic-zero varieties with Y smooth, supply Grauert–Riemenschneider vanishing Rⁱρ_*ω_Y=0 for i>0, with the field-extension and duality comparisons required for derived splitting.
+What ResolutionOfSingularitiesCharacteristicZero must provide (gap:grauert-riemenschneider): For a proper birational morphism ρ:Y→X of varieties over a characteristic-zero field, with Y smooth, supply Grauert–Riemenschneider vanishing Rⁱρ_*ω_Y=0 for i>0 (KOVACS00, main ingredients, p.188; KOVACS00 line 89). The unit, field-extension, localization and duality applications belong to §7.7.
 
 ## How to read the build
 
@@ -222,21 +220,15 @@ The interface has the following laws.
 - K[x, y]/(xy) is reduced but not a splinter: its normalisation does not split.
 - K[t², t³] is not a splinter: K[t²,t³] → K[t] is finite and injective but the quotient is torsion of generic rank 0 and nonzero, so no splitting exists.
 - A Noetherian domain containing ℚ is a splinter iff it is integrally closed (Mathlib IsIntegrallyClosed).
-- Every field is a splinter.
-- A Noetherian domain containing ℚ is a splinter iff it is normal (Bhatt 2012 Example 1.1; §0.9).
 - For the node, x=(x,0) lies in (x+y)S since (x,0)=(x,y)(1,0), while x∉(x+y)R: its two required constant coefficients would be 1 and 0.
 
 *Needs:* §0.1; PerfectoidSpacesPartII §RA.5 (pure map); Mathlib `IsNoetherianRing`; Mathlib `IsReduced`; Mathlib `Algebra.IsIntegral`.
 
 ### 0.3 Big Cohen–Macaulay modules and algebras
 
-The headline signature is `BigCMFor`.
+The target BigCMFor is specified here in prose.
 
-Use `ParameterSystem` for the dimension-length, maximal-ideal membership and radical condition in the supplier contract. A regular system of parameters is a special case of this definition (ANDRE18B §0.1 footnote 1, p.72; ANDRE18B line 72). The parameter-list interface has the following laws.
-
-- Permuting a parameter list preserves its length and generated radical, so it remains a parameter system.
-- Replacing each parameter by a positive power preserves the generated radical and the parameter-system property.
-- A local ring isomorphism carries a parameter system to one of the target ring, preserving its length and generated radical.
+Use `ParameterSystem` for the dimension-length, maximal-ideal membership and radical condition. For the nonzero finite module M=R, the secant dimension formula of DeformationAndDerivedPatchingAlgebraPartII §K0.3 identifies this predicate with a maximal secant list with zero-dimensional terminal quotient; its permutation, positive-power and isomorphism-transport laws are consumed from that section. The native comparison is the interface here. A regular system of parameters is a special case (ANDRE18B §0.1 footnote 1, p.72; ANDRE18B line 72).
 
 Let (R, m) be a Noetherian local ring of Krull dimension d and x = (x₁, …, x_d) a system of parameters of R (DeformationAndDerivedPatchingAlgebraPartII §K0.3 (gap:parameter-systems), applied to M = R). An R-module M, not necessarily finitely generated, is big Cohen–Macaulay for x if M ≠ mM and x is weakly regular on M: for each 0 ≤ i < d, `x_{i+1}` is a nonzerodivisor on M/(x₁, …, x_i)M. M is big Cohen–Macaulay if it is big Cohen–Macaulay for some system of parameters. An R-algebra C is a big Cohen–Macaulay algebra (for x) if it is so as an R-module.
 
@@ -271,6 +263,7 @@ The interface has the following laws.
 
 - Over a field k the empty list has length 0 and generated radical zero, so it is a parameter system.
 - Over k⟦X⟧, (X²) has length 1 and radical (X), so it is a parameter system; (1) has unit radical and fails.
+- Over k⟦X,Y⟧, (X,X) has the required length 2 but radical (X)≠(X,Y), while (X) has length 1<dim R=2. Both fail, testing the independent radical and length conditions.
 
 *Needs:* DeformationAndDerivedPatchingAlgebraPartII §K0.3 (gap:parameter-systems); Mathlib `RingTheory.Sequence.IsWeaklyRegular`; Mathlib `RingTheory.Sequence.IsRegular`; Mathlib `IsLocalRing`; Mathlib `ringKrullDim`.
 
@@ -306,7 +299,7 @@ The interface has the following laws.
 
 ### 0.5 Completion turns big Cohen–Macaulay modules into balanced ones
 
-The headline signature is `completion_balanced`.
+The target completion_balanced is specified here in prose.
 
 Let (R, m) be a Noetherian local ring and M an R-module with M ≠ mM on which some system of parameters x of R is weakly regular. Then the m-adic completion M̂ = lim_n M/mⁿ M is a balanced big Cohen–Macaulay R-module (§0.4). If M is an R-algebra, M̂ is an R-algebra and M → M̂ is an algebra map.
 
@@ -314,7 +307,7 @@ Let (R, m) be a Noetherian local ring and M an R-module with M ≠ mM on which s
 
 The completion is Mathlib’s maximal-ideal-adic module completion; M need not be finitely generated or separated.
 
-A proof route is the following. A system of parameters weakly regular on M implies Hⁱ_m(M) = 0 for i < d by the direct limit of the Koszul complexes on its powers. Use DeformationAndDerivedPatchingAlgebraPartII §K0.1 for arbitrary-module Čech comparison and filtered colimits, together with DerivedModuleAlgebra §0.K.1 for Koszul complexes. Prove the arbitrary-module completion and change-of-parameters assertion: if M/mM ≠ 0 and Hⁱ_m(M)=0 for i<d, the maximal-adic completion is balanced. Consume the comparison of Ext-colimit local cohomology with Čech cohomology for arbitrary modules from DeformationAndDerivedPatchingAlgebraPartII §K0.1, and use DerivedModuleAlgebra §0.K.1 for its Koszul presentation. The finite-module depth criterion alone does not imply arbitrary-module completion (André §4.1 p.85; BMPSTWW §2.2 p.12). Completion is functorial, and for an algebra the inverse limit of the quotient algebras carries the required algebra structure. No finite-generation or separatedness assumption on M is inserted.
+A proof route is the following. A system of parameters weakly regular on M implies Hⁱ_m(M) = 0 for i < d by the direct limit of the Koszul complexes on its powers. Use DeformationAndDerivedPatchingAlgebraPartII §K0.1 for arbitrary-module Čech comparison and filtered colimits, together with DerivedModuleAlgebra §0.K.1 for Koszul complexes. This section owns the arbitrary-module completion and change-of-parameters assertion: if M/mM ≠ 0 and Hⁱ_m(M)=0 for i<d, the maximal-adic completion is balanced. Consume the comparison of Ext-colimit local cohomology with Čech cohomology for arbitrary modules from DeformationAndDerivedPatchingAlgebraPartII §K0.1, and use DerivedModuleAlgebra §0.K.1 for its Koszul presentation. The finite-module depth criterion alone does not imply arbitrary-module completion (André §4.1 p.85; BMPSTWW §2.2 p.12). Completion is functorial, and for an algebra the inverse limit of the quotient algebras carries the required algebra structure. No finite-generation or separatedness assumption on M is inserted.
 
 **Checks.**
 
@@ -326,15 +319,15 @@ A proof route is the following. A system of parameters weakly regular on M impli
 
 ### 0.6 Balanced big Cohen–Macaulay algebras over regular local rings are faithfully flat
 
-The headline signature is `balanced_faithfullyFlat`.
+The target balanced_faithfullyFlat is specified here in prose.
 
 Let A be a Noetherian regular local ring and C a balanced big Cohen–Macaulay A-module (§0.4). Then C is faithfully flat over A. In particular a balanced big Cohen–Macaulay A-algebra is a faithfully flat A-algebra.
 
-(ANDRE18B, Remarque 4.2.1 and footnote 7, pp. 86–87; ANDRE18B line 741; ANDRE18B, §0.7, sentence before Théorème 0.7.2, p. 75; ANDRE18B line 189.)
+(ANDRE18B, Remarque 4.2.1 and footnote 7, pp. 86–87; ANDRE18B line 741; ANDRE18B, §0.7, sentence before Théorème 0.7.2, p. 75; ANDRE18B line 189; HH95, §1.2(d); uncertified.)
 
 Use the exact Tor segment below and choose the maximal regular sequence by ht P, not by the descending Tor degree i; these are independent indices.
 
-A proof route is the following. Every finitely generated A-module M has projective dimension at most n + 1 = dim A (EnhancedDerivedSheaves §E1.6), so Tor^A_i(M, C) = 0 for i > dim A. For the descending induction on the Tor degree i > 0, reduce by a prime filtration to M = A/P. Choose a maximal A-regular sequence x₁,…,x_h in P, of length h = ht P, independently of i; it extends to a system of parameters. For N = A/(x₁,…,x_h), the prime P is associated to N: N is Cohen–Macaulay and its localisation at P has dimension zero. Thus A/P embeds in N. The Koszul resolution of N and weak regularity on C give Tor_j(N,C)=0 for all j>0. The exact segment `Tor_{i+1}`(N/M, C) → Tor_i(M, C) → Tor_i(N, C) has vanishing outer terms (the first by the induction hypothesis), so Tor_i(M, C) = 0: C is flat. mC ≠ C gives faithful flatness for the local ring A (Mathlib Module.FaithfullyFlat).
+A proof route is the following. Every finitely generated A-module M has projective dimension at most dim A (EnhancedDerivedSheaves §E1.6), so Tor^A_i(M, C) = 0 for i > dim A. For the descending induction on the Tor degree i > 0, reduce by a prime filtration to M = A/P. Choose a maximal A-regular sequence x₁,…,x_h in P, of length h = ht P, independently of i; it extends to a system of parameters. For N = A/(x₁,…,x_h), the prime P is associated to N: N is Cohen–Macaulay and its localisation at P has dimension zero. Thus A/P embeds in N. The Koszul resolution of N and weak regularity on C give Tor_j(N,C)=0 for all j>0. The exact segment `Tor_{i+1}`(N/M, C) → Tor_i(M, C) → Tor_i(N, C) has vanishing outer terms (the first by the induction hypothesis), so Tor_i(M, C) = 0: C is flat. mC ≠ C gives faithful flatness for the local ring A (Mathlib Module.FaithfullyFlat).
 
 **Checks.**
 
@@ -447,7 +440,7 @@ Internal statements and proof routes use Layer 0. External inputs: SchemeAndStac
 
 Let (R, m) be a nonzero local ring, not necessarily Noetherian, and r ∈ m such that `∩_{n≥1}` rⁿ R = 0 and either r = 0 or r is a nonzerodivisor on R. Let σ : R → R be a local ring endomorphism such that R is a free module over σ(R) and `∩_{j≥0}` σʲ(m)R ⊆ rR. Let R ⊆ S be a ring extension and τ : S → S an injective ring endomorphism restricting to σ on R. If Hom_R(S, R) ≠ 0, then R → S splits (§0.1).
 
-(ANDRE18B, Annexe A.3, Proposition A.3.1, implication (c) ⇒ (b) and its proof, pp. 90–91; ANDRE18B line 912; HOCHSTER73, §1, Theorem 2, statement p. 31 and first characteristic-p proof p. 32; HOCHSTER73 line 215.)
+(ANDRE18B, Annexe A.3, Proposition A.3.1, implication (c) ⇒ (b) and its proof, pp. 90–91; ANDRE18B line 912; HOCHSTER73, §1, Theorem 2, statement p. 31 and first characteristic-p proof p. 32; HOCHSTER73 line 235.)
 
 Require r=0 or multiplication by r to be injective, in addition to r-adic separation; dividing a functional by a power of r uses this condition. The free-summand functional is defined on the chosen finite free summand M.
 
@@ -463,14 +456,9 @@ A proof route is the following. Take λ ∈ Hom_R(S, R) nonzero. Since ∩ rⁿR
 
 ### 1.2 Pure maps out of complete local rings split
 
-The headline signature is `complete_pure_split`.
+The target complete_pure_split is specified here in prose.
 
-`PureAlgebra` is the native tensor-purity expression in the conventions. The tensor-purity interface has the following laws (ANDRE18B Lemme A.2.1(1), p.90; ANDRE18B line 868).
-
-- If R→S and S→T are pure algebra maps, the composite R→T is pure.
-- If R→S is pure and R→R′ is any algebra map, the tensor-unit map R′→R′⊗_R S is pure.
-- A filtered colimit of pure R-algebras is pure over R.
-- If the composite R→S→T is pure, its first factor R→S is pure.
+`PureAlgebra` is the native view of the pure ring map of PerfectoidSpacesPartII §RA.5 (pure map); its composition, base-change, filtered-colimit and left-factor laws are consumed from that section. The comparison with the supplier notion identifies its tensor-unit test with tensor purity (ANDRE18B Lemme A.2.1(1), p.90; ANDRE18B line 868).
 
 Let (R, m) be a complete Noetherian local ring and S a commutative R-algebra such that R → S is pure (PerfectoidSpacesPartII §RA.5 (pure map)). Then R → S splits (§0.1). No finiteness, integrality or endomorphism of S is needed.
 
@@ -493,7 +481,7 @@ A proof route is the following. Let E be the injective hull of the residue field
 
 ### 1.3 The direct summand theorem in characteristic p
 
-The headline signature is `directSummand_charP`.
+The target directSummand_charP is specified here in prose.
 
 Every Noetherian regular ring of characteristic p > 0 is a splinter (§0.2).
 
@@ -558,7 +546,7 @@ A proof route is the following. Injectivity: A is integrally closed in A[1/p] an
 
 ### 2.3 André's direct summand theorem for W(k)⟦T₁, …, T_n⟧
 
-The headline signature is `andre_unramified`.
+The target andre_unramified is specified here in prose.
 
 Let k be a perfect field of characteristic p. Then A = W(k)⟦T₁, …, T_n⟧ is a splinter (§0.2): every finite injective A-algebra B splits over A.
 
@@ -627,7 +615,6 @@ The interface has the following laws.
 - In the unramified case A₀ → A is faithfully flat in Mathlib's sense (Module.FaithfullyFlat), by Bhatt's Proposition 5.1.
 - Frobenius A/`p^{1/p}` → A/p is an isomorphism and A is p-adically complete and p-torsion-free (the integral perfectoid conditions).
 - For d ≥ 1, A is not Noetherian (the ideal generated by all `p^{1/pⁿ}` is not finitely generated); the cover cannot be replaced by a Noetherian regular extension of A₀.
-- For A₀ = ℤ_p (d = 1, unramified) A is the p-adic completion of ℤ_p[`p^{1/p^∞}`], the valuation ring of K.
 - For p=2, the valuation of `2^{1/2ⁿ}` is `2^{-n}`; these positive values tend to zero, and their root ideal is not finitely generated.
 
 *Needs:* §0.8; §3.1; PerfectoidSpaces §P1.25; PerfectoidQuotients §0.7; PerfectoidSpaces §P1.1; PerfectoidSpaces §P3 (almost purity theorem); PerfectoidSpaces §P3 (integral closure almost finite etale); PerfectoidSpaces §P0 (almost hom and adjoints); PerfectoidSpaces §P0 (root ideal basic setup).
@@ -706,7 +693,7 @@ A proof route is the following. Represent K by a bounded complex of finite proje
 
 ### 3.7 Bhatt's direct summand theorem for complete regular local rings
 
-The headline signature is `bhatt_mixed`.
+The target bhatt_mixed is specified here in prose.
 
 Every complete Noetherian regular local ring A₀ of mixed characteristic (0, p), ramified or not, is a splinter (§0.2).
 
@@ -736,7 +723,7 @@ Internal statements and proof routes use Layer 0, Layer 3. External inputs: Defo
 
 ### 4.1 Almost Cohen–Macaulay algebras
 
-The headline signature is `AlmostCMFor`.
+The target AlmostCMFor is specified here in prose.
 
 Let (B, m_B) be a Noetherian local ring of residue characteristic p and dimension d, x = (x₁, …, x_d) a system of parameters, and D a B-algebra containing a nonzerodivisor π with a compatible system of p-power roots `π^{1/p^h}` (`π^{1/p⁰}` = π, (`π^{1/p^{h+1}}`)ᵖ = `π^{1/p^h}`). Put J = Σ_h `π^{1/p^h}`D. D is almost Cohen–Macaulay for (B, x, `π^{1/p^∞}`) if J ⊄ m_B D and J annihilates ((x₁, …, x_i)D :_D `x_{i+1}`) / (x₁, …, x_i)D for every 0 ≤ i < d.
 
@@ -755,7 +742,7 @@ The interface has the following laws.
 - For A ⊆ B finite with A Cohen–Macaulay local and x ⊂ A a system of parameters of B, D is almost Cohen–Macaulay for (B, x) iff for (A, x) (§4.6).
 - Every root `π^{1/p^h}` kills each colon module ((x₁, …, x_i)D : `x_{i+1}`) / (x₁, …, x_i)D.
 
-The native predicate explicitly carries the prime condition on p and residue characteristic p of B; values p=0 and p=1 are outside this definition. The roots themselves remain specified data.
+The definition requires p to be prime and B to have residue characteristic p; values p=0 and p=1 are outside it. The roots themselves remain specified data.
 
 **Checks.**
 
@@ -819,13 +806,14 @@ Let (R, m) → (S, n) be a local homomorphism of Noetherian local rings with sys
 
 Use fixed systems of parameters for the two bases, as in Heitmann–Ma Theorem 1.6. Hochster’s formulation also permits varying systems.
 
-Prove the finite-witness comparison for the explicitly pointed module quotient: every full algebra-modification bad witness, including a double sequence, must be realized by a finite pointed partial sequence, and pointed maps to big Cohen–Macaulay algebras extend by evaluation.
+This section owns the finite-witness comparison with the hypotheses R→S, x, y and T above: a bad finite double sequence of full algebra modifications of T yields a bad finite double sequence of the pointed partial modifications of §4.2, for some finite degree bounds, with the same starting algebra, base map and parameter lists. Conversely, pointed maps into a compatible pair of big Cohen–Macaulay algebras extend through every pointed partial step by evaluation, and the surviving unit prevents badness. This is a comparison of finite bad witnesses, not an identification of the fixed-relation colimit (HOCHSTER02, Theorem 4.2 and its preceding argument, p.9; HOCHSTER02 line 245; HEITMANNMA18, Theorem 1.6 and proof, pp.3–4; HEITMANNMA18 line 123).
 
 A proof route is the following. Construct B′ as the direct limit of all finite sequences of algebra modifications of T over R, and C′ as the direct limit of algebra modifications of S ⊗_R B′ over S; x and y are weakly regular on B′ and C′ by construction. Establish this comparison by controlling the finitely many coefficient products in a bad full-algebra witness; it is a theorem about finite sequences and is not inferred from a fixed-relation degree-bound colimit. In the reverse direction evaluate formal variables in the receiving big Cohen–Macaulay algebra. With the finite-witness comparison established, nonbadness gives nonzero maximal-ideal quotients of the two full algebra-modification limits. Apply §0.5 to balance them by completion. Locality of R→S lets the map extend from the m-adic completion to the n-adic completion.
 
 **Checks.**
 
-- If R is Cohen–Macaulay, R itself is a balanced big Cohen–Macaulay algebra and no sequence starting at R is bad.
+- For S=R Cohen–Macaulay and T=R, the identity square receives every pointed step: the image of 1 remains 1 modulo m, so no sequence is bad.
+- For R=S=k⟦x⟧ and T=R[t]/(xt), the full quotient kills t² while the fixed k=0 partial quotient retains t². A second pointed step for x·t²=0 kills the surviving class t². Finite-witness comparison therefore permits further relations and steps; it cannot identify those two fixed targets.
 - For R=k⟦X⟧ and T=R/(X), the relation X·1=0 gives the k=0 partial quotient T/R·1=0, which is bad. No compatible big Cohen–Macaulay algebra can receive T.
 
 *Needs:* §4.2; §0.3; §0.4; §0.5.
@@ -851,7 +839,7 @@ A proof route is the following. Apply α to the defining relation: `x_{k+1}v_{k+
 
 ### 4.5 Almost Cohen–Macaulay algebras give balanced big Cohen–Macaulay algebras
 
-The headline signature is `almostCM_exists_balanced`.
+The target almostCM_exists_balanced is specified here in prose.
 
 Let B be a Noetherian local ring of residue characteristic p. If B has an almost Cohen–Macaulay algebra D for (B, x, `π^{1/p^∞}`) (§4.1) for some system of parameters x and some root system of a nonzerodivisor π of D, then B has a balanced big Cohen–Macaulay algebra.
 
@@ -872,7 +860,7 @@ A proof route is the following. Fix a finite sequence B = M₁ → ⋯ → M_ℓ
 
 ### 4.6 Criteria for almost Cohen–Macaulayness
 
-Let B be a Noetherian local ring of residue characteristic p, A ⊆ B a Cohen–Macaulay local subring with B finite over A, x ⊂ A a system of parameters of B, and D a B-algebra with a nonzerodivisor π and a root system. Then D is almost Cohen–Macaulay for (B, x, `π^{1/p^∞}`) iff it is so for (A, x, `π^{1/p^∞}`). This holds in each of the following cases: (a) (πD) ∩ A ≠ 0 and D is almost isomorphic, in the setup (A[`π^{1/p^∞}`], `π^{1/p^∞}`A[`π^{1/p^∞}`]), to a faithfully flat A-algebra D′ (not necessarily containing B); (b) d≥1, (πD) ∩ A ⊄ x₁A, D has no x₁-torsion, and D/x₁D is almost isomorphic in the same setup to a faithfully flat A/x₁A-algebra.
+Let B be a Noetherian local ring of residue characteristic p, A ⊆ B a Cohen–Macaulay local subring with B finite over A, x ⊂ A a system of parameters of B, and D a B-algebra with a nonzerodivisor π and a root system. Then D is almost Cohen–Macaulay for (B, x, `π^{1/p^∞}`) iff it is so for (A, x, `π^{1/p^∞}`). In each of the following cases D is almost Cohen–Macaulay for (A, x, `π^{1/p^∞}`), hence for (B, x, `π^{1/p^∞}`): (a) (πD) ∩ A ≠ 0 and D is almost isomorphic, in the setup (A[`π^{1/p^∞}`], `π^{1/p^∞}`A[`π^{1/p^∞}`]), to a faithfully flat A-algebra D′ (not necessarily containing B); (b) d≥1, (πD) ∩ A ⊄ x₁A, D has no x₁-torsion, and D/x₁D is almost isomorphic in the same setup to a faithfully flat A/x₁A-algebra.
 
 (ANDRE18B, Lemme 4.1.3 and its proof, pp. 85–86; ANDRE18B line 692.)
 
@@ -912,20 +900,20 @@ Every Noetherian local ring B of mixed characteristic (0, p) (residue characteri
 
 B may have p-torsion. Complete first and choose a minimal prime P with dim(B̂/P)=dim B. If p∈P, use the characteristic-p existence theorem on B̂/P, even when p was not nilpotent in B. Otherwise the quotient is a p-torsion-free mixed-characteristic domain.
 
-A proof route is the following. Complete and take a maximal-dimensional domain quotient as just described. In the mixed-characteristic case pass faithfully flatly to a perfect residue field, then choose a maximal-dimensional minimal-prime quotient again if needed: the extension is still p-torsion-free, so its minimal primes avoid p. Systems of parameters from the original ring remain systems of parameters throughout. The characteristic-p branch is §4.9. Choose a system of parameters x with x₁ = p²; B is finite over A = W(k)⟦T₁, …, T_n⟧, T_i ↦ `x_{i+1}` (DeformationAndDerivedPatchingAlgebra §1.10 (gap:finite-parameter-subring)), injectively for B a domain; choose g ∈ A ∖ pA with B[1/(pg)] étale over A[1/(pg)] (§0.8). Let D = B° be the integral closure of Â°∞∞ in B ⊗_A Â∞∞[1/g] and `π^{1/pᵐ}` = `(ϖg)^{1/pᵐ}`, a nonzerodivisor on D. Then (π) ∩ A = pgA ⊄ p²A, D is p-torsion-free, and D/p²D is almost isomorphic in the setup (`(Â°∞∞)_{!!}`, `(ϖg)^{1/p^∞}`) to `(D/p²D)^a_{!!}`, which is faithfully flat over A/p² by André's flatness theorem and its ramified form (PerfectoidSpacesPartII §RA.5 (kummer almost faithful flatness), PerfectoidSpacesPartII §RA.5 (ramified kummer almost flatness), PerfectoidSpacesPartII §RA.5 (flat integral model)). §4.6 (b) makes D almost Cohen–Macaulay for (B, x, `π^{1/p^∞}`); §4.5 gives a balanced big Cohen–Macaulay B-algebra.
+A proof route is the following. Complete and take a maximal-dimensional domain quotient as just described. In the mixed-characteristic case pass faithfully flatly to a perfect residue field, then choose a maximal-dimensional minimal-prime quotient again if needed: the extension is still p-torsion-free, so its minimal primes avoid p. Systems of parameters from the original ring remain systems of parameters throughout. The characteristic-p branch is §4.9. Choose a system of parameters x with x₁ = p²; put d=dim B and A=W(k)⟦T₂,…,T_d⟧. The chosen Cohen map W(k)→B and native series evaluation give the local map A→B sending T_i↦x_i (DeformationAndDerivedPatchingAlgebra §§1.9–1.10). Its residual fibre B/(p,x₂,…,x_d) has finite length and residue k, so §4.1 of that supplier makes B finite over A. Its kernel P is prime because B is a domain. Since dim B=d=dim A, a nonzero P would give dim B=dim(A/P)<d, a contradiction; thus the map is injective; choose g ∈ A ∖ pA with B[1/(pg)] étale over A[1/(pg)] (§0.8). Let D = B° be the integral closure of Â°∞∞ in B ⊗_A Â∞∞[1/g] and `π^{1/pᵐ}` = `(ϖg)^{1/pᵐ}`, a nonzerodivisor on D. Then (π) ∩ A = pgA ⊄ p²A, D is p-torsion-free, and D/p²D is almost isomorphic in the setup (`(Â°∞∞)_{!!}`, `(ϖg)^{1/p^∞}`) to `(D/p²D)^a_{!!}`, which is faithfully flat over A/p² by André's flatness theorem and its ramified form (PerfectoidSpacesPartII §RA.5 (kummer almost faithful flatness), PerfectoidSpacesPartII §RA.5 (ramified kummer almost flatness), PerfectoidSpacesPartII §RA.5 (flat integral model)). §4.6 (b) makes D almost Cohen–Macaulay for (B, x, `π^{1/p^∞}`); §4.5 gives a balanced big Cohen–Macaulay B-algebra.
 
 **Checks.**
 
 - For B regular unramified, B itself is the answer; the theorem has content for singular B, e.g. B = ℤ_p⟦x, y, z⟧/(xy − pz).
-- The mixed-characteristic ring B=ℤ₂⟦X,Y⟧/(2X) has dimension 2; its maximal-dimensional prime quotient by (2) is 𝔽₂⟦X,Y⟧, so the characteristic-p branch is necessary even though B has characteristic zero.
+- The mixed-characteristic ring B=ℤ₂⟦X,Y⟧/(2X,2Y) has minimal primes (2) and (X,Y), with quotients 𝔽₂⟦X,Y⟧ of dimension 2 and ℤ₂ of dimension 1. Thus dim B=2 and every maximal-dimensional domain quotient has characteristic 2, forcing the characteristic-p branch although B has characteristic zero. In contrast, ℤ₂⟦X,Y⟧/(2X) also has the dimension-two mixed-characteristic quotient ℤ₂⟦Y⟧.
 
-*Needs:* §4.7; §4.6; §4.5; §0.8; DeformationAndDerivedPatchingAlgebra §1.10 (gap:finite-parameter-subring); PerfectoidSpacesPartII §RA.5 (kummer almost faithful flatness); PerfectoidSpacesPartII §RA.5 (ramified kummer almost flatness); PerfectoidSpacesPartII §RA.5 (flat integral model); PerfectoidSpaces §P0 (almost algebra lower shriek shriek); §4.9.
+*Needs:* §4.7; §4.6; §4.5; §0.8; DeformationAndDerivedPatchingAlgebra §§1.9, 1.10, 4.1; PerfectoidSpacesPartII §RA.5 (kummer almost faithful flatness); PerfectoidSpacesPartII §RA.5 (ramified kummer almost flatness); PerfectoidSpacesPartII §RA.5 (flat integral model); PerfectoidSpaces §P0 (almost algebra lower shriek shriek); §4.9.
 
 ### 4.9 Hochster–Huneke: R⁺ is big Cohen–Macaulay in characteristic p
 
-The headline signature is `absoluteIntegralClosure_charP`.
+The headline signature is `absoluteIntegralClosure_charP`, using the equal native expression `integralClosure R (AlgebraicClosure (FractionRing R))` for the supplier’s R⁺.
 
-Let (R, m) be a Noetherian local domain of characteristic p > 0 that is a homomorphic image of a Gorenstein local ring (for example a complete local domain), and R⁺ its absolute integral closure (the integral closure of R in an algebraic closure of Frac R). Then Hⁱ_m(R⁺) = 0 for i < dim R, and every system of parameters of R is a regular sequence on R⁺; R⁺ ≠ mR⁺, so R⁺ is a balanced big Cohen–Macaulay R-algebra.
+Let (R, m) be a Noetherian local domain of characteristic p > 0 that is a homomorphic image of a Gorenstein local ring (for example a complete local domain), and R⁺ its absolute integral closure (SchemeAndStackFoundations §0.11, with affine model the integral closure of R in an algebraic closure of Frac R). Then Hⁱ_m(R⁺) = 0 for i < dim R, and every system of parameters of R is a regular sequence on R⁺; R⁺ ≠ mR⁺, so R⁺ is a balanced big Cohen–Macaulay R-algebra.
 
 (HUNEKELYUBEZNIK, Theorem 2.1, Lemma 2.2 and Corollary 2.3, pp. 2–6; HUNEKELYUBEZNIK line 75; BMPSTWW, Theorem 2.5 and the paragraph after it, p. 13; BMPSTWW line 561.)
 
@@ -941,11 +929,11 @@ In `absoluteIntegralClosure_charP`, a Gorenstein cover is a specified surjective
 - In equal characteristic 0 and dim R ≥ 3 the analogous statement is false: a trace argument shows R⁺ is not big Cohen–Macaulay (BMPSTWW §2.2).
 - For R=𝔽₂ and R⁺ an algebraic closure, the parameter list is empty and R⁺/mR⁺=R⁺≠0; this is the dimension-zero case.
 
-*Needs:* DeformationAndDerivedPatchingAlgebraPartII §K0.1; §0.4; Mathlib `localCohomology`; DeformationAndDerivedPatchingAlgebra §3.7; DerivedModuleAlgebra §0.K.1; DerivedModuleAlgebra §1.M.2; EnhancedDerivedSheaves §E1.6; Mathlib `AlgebraicClosure`; Mathlib `integralClosure`; Mathlib `frobenius`; DeformationAndDerivedPatchingAlgebra §3.9, the Gorenstein criterion.
+*Needs:* SchemeAndStackFoundations §0.11; DeformationAndDerivedPatchingAlgebraPartII §K0.1; §0.4; Mathlib `localCohomology`; DeformationAndDerivedPatchingAlgebra §3.7; DerivedModuleAlgebra §0.K.1; DerivedModuleAlgebra §1.M.2; EnhancedDerivedSheaves §E1.6; Mathlib `AlgebraicClosure`; Mathlib `integralClosure`; Mathlib `frobenius`; DeformationAndDerivedPatchingAlgebra §3.9, the Gorenstein criterion.
 
 ### 4.10 Big Cohen–Macaulay algebras in equal characteristic zero
 
-The headline signature is `exists_balanced_charZero`.
+The target exists_balanced_charZero is specified here in prose.
 
 Every Noetherian local ring containing ℚ has a balanced big Cohen–Macaulay algebra.
 
@@ -953,7 +941,7 @@ Every Noetherian local ring containing ℚ has a balanced big Cohen–Macaulay a
 
 Existence is asserted, with no claim that the absolute integral closure itself is big Cohen–Macaulay in characteristic zero.
 
-Establish the finite-equation specialization theorem used below: descend a finite bad modification witness while preserving the parameter system, the local dimension and a maximal-dimensional domain quotient after a suitable characteristic-p specialization.
+This section owns the finite-equation specialization theorem used in its existence proof: descend a finite bad modification witness while preserving the parameter system, the local dimension and a maximal-dimensional domain quotient after a suitable characteristic-p specialization.
 
 A proof route is the following. Reduce to B a complete local domain (§4.7). By the modification criterion (§4.3) it suffices to show no sequence of partial algebra modifications of B is bad. A bad sequence is witnessed by finitely many elements and equations. Descend the bad sequence to a local ring essentially of finite type over a finitely generated ℤ-algebra, using Néron–Popescu desingularisation (SchemeAndStackFoundations §0.15) and limit arguments (SchemeAndStackFoundations §0.9), keeping the parameters a system of parameters on a dense open set of the base. Reduce modulo a suitable maximal ideal of the base to obtain a bad sequence over a Noetherian local ring of characteristic p whose completion has a domain quotient of maximal dimension, contradicting §4.9.
 
@@ -961,6 +949,7 @@ A proof route is the following. Reduce to B a complete local domain (§4.7). By 
 
 - For B regular containing ℚ, B is its own balanced big Cohen–Macaulay algebra; the theorem is used for singular local rings such as the complete local domains `S_{m,i}` in André's proof of Théorème 0.7.2.
 - For R=ℚ[ε]/ε² the quotient R→ℚ gives a balanced algebra: dim R=0 and m_Rℚ=0. Requiring an injective algebra would wrongly exclude this construction.
+- For the model Spec ℤ[1/6][X] along its zero section, the local fibre at X=0 over any p>3 is 𝔽_p[X]_(X), dimension 1 and parameter X. At p=2 or 3 the base fibre is empty because 6 is invertible; specialization must choose a maximal ideal of the actual coefficient base.
 
 *Needs:* §4.7; §4.3; §4.9; SchemeAndStackFoundations §0.15; SchemeAndStackFoundations §0.9.
 
@@ -1007,7 +996,7 @@ The relation Xt=0 in T=k⟦X⟧[t]/(Xt) has scalar partial quotient T/kt, retain
 
 ### Dependencies
 
-Internal statements and proof routes use Layer 0, Layer 4. External inputs: DeformationAndDerivedPatchingAlgebraPartII §K0.3 (gap:parameter-systems); PerfectoidSpaces §P0 (root ideal basic setup); Mathlib `IsSMulRegular`; Mathlib `IsLocalRing`; Mathlib `LinearMap.lTensor`; PerfectoidSpacesPartII §RA.5 (krull detection lemma); PerfectoidSpaces §P0 (change of basic setup); Mathlib `Module.FaithfullyFlat`; DeformationAndDerivedPatchingAlgebra §1.10; Mathlib `AdicCompletion`; DeformationAndDerivedPatchingAlgebra §1.10 (gap:finite-parameter-subring); PerfectoidSpacesPartII §RA.5 (kummer almost faithful flatness); PerfectoidSpacesPartII §RA.5 (ramified kummer almost flatness); PerfectoidSpacesPartII §RA.5 (flat integral model); PerfectoidSpaces §P0 (almost algebra lower shriek shriek); Mathlib `localCohomology`; DeformationAndDerivedPatchingAlgebra §3.7; DerivedModuleAlgebra §0.K.1; DerivedModuleAlgebra §1.M.2; EnhancedDerivedSheaves §E1.6; Mathlib `AlgebraicClosure`; Mathlib `integralClosure`; Mathlib `frobenius`; SchemeAndStackFoundations §0.15; SchemeAndStackFoundations §0.9.
+Internal statements and proof routes use Layer 0, Layer 4. External inputs: DeformationAndDerivedPatchingAlgebraPartII §K0.3 (gap:parameter-systems); PerfectoidSpaces §P0 (root ideal basic setup); Mathlib `IsSMulRegular`; Mathlib `IsLocalRing`; Mathlib `LinearMap.lTensor`; PerfectoidSpacesPartII §RA.5 (krull detection lemma); PerfectoidSpaces §P0 (change of basic setup); Mathlib `Module.FaithfullyFlat`; DeformationAndDerivedPatchingAlgebra §1.10; Mathlib `AdicCompletion`; DeformationAndDerivedPatchingAlgebra §§1.9, 1.10, 4.1; PerfectoidSpacesPartII §RA.5 (kummer almost faithful flatness); PerfectoidSpacesPartII §RA.5 (ramified kummer almost flatness); PerfectoidSpacesPartII §RA.5 (flat integral model); PerfectoidSpaces §P0 (almost algebra lower shriek shriek); Mathlib `localCohomology`; DeformationAndDerivedPatchingAlgebra §3.7; DerivedModuleAlgebra §0.K.1; DerivedModuleAlgebra §1.M.2; EnhancedDerivedSheaves §E1.6; Mathlib `AlgebraicClosure`; Mathlib `integralClosure`; Mathlib `frobenius`; SchemeAndStackFoundations §0.15; SchemeAndStackFoundations §0.9.
 
 
 ## Layer 5: The direct summand theorem and flat domination
@@ -1079,9 +1068,9 @@ A proof route is the following. For each maximal ideal m of R, R̂_m is a comple
 
 ### 5.4 R → R⁺ splits for complete regular local rings
 
-The headline signature is `absoluteIntegralClosure_split`.
+The headline signature is `absoluteIntegralClosure_split`, using the equal native expression `integralClosure R (AlgebraicClosure (FractionRing R))` for the supplier’s R⁺.
 
-Let R be a complete Noetherian regular local ring and R⁺ the integral closure of R in an algebraic closure of Frac(R). Then R → R⁺ admits an R-linear retraction. In particular W(k)⟦T₁, …, T_n⟧ → W(k)⟦T₁, …, T_n⟧⁺ splits for every perfect field k of characteristic p.
+Let R be a complete Noetherian regular local ring and R⁺ the absolute integral closure of SchemeAndStackFoundations §0.11, whose affine model is the integral closure of R in an algebraic closure of Frac(R). Then R → R⁺ admits an R-linear retraction. In particular W(k)⟦T₁, …, T_n⟧ → W(k)⟦T₁, …, T_n⟧⁺ splits for every perfect field k of characteristic p.
 
 (ANDRE18B, §0.2, last paragraph, p. 73; ANDRE18B line 81; ANDRE18B, Annexe A.3, Applications, p. 91; ANDRE18B line 928; DATTAMURAYAMA, Proposition 5.4.1(iii), p. 28; DATTAMURAYAMA line 1315.)
 
@@ -1095,7 +1084,7 @@ A proof route is the following. R⁺ is the filtered union of its finite R-subal
 - In characteristic p the splitting of R → R⁺ also follows from §0.6 and §4.9, which make R⁺ faithfully flat over R.
 - For a field K, K⁺ is its algebraic closure and projection onto a basis containing 1 sends 1 to 1; the field need not be perfect.
 
-*Needs:* §5.1; §1.2; PerfectoidSpacesPartII §RA.5 (pure map); Mathlib `integralClosure`; Mathlib `AlgebraicClosure`; Mathlib `IsAdicComplete`.
+*Needs:* SchemeAndStackFoundations §0.11; §5.1; §1.2; PerfectoidSpacesPartII §RA.5 (pure map); Mathlib `integralClosure`; Mathlib `AlgebraicClosure`; Mathlib `IsAdicComplete`.
 
 ### 5.5 Contracted ideals and the monomial theorem
 
@@ -1185,7 +1174,7 @@ The predicate `SeparableResidueMap` uses general separability of the induced res
 
 Let β : B → B′ be a pure local homomorphism of Noetherian local rings with B′ regular. Suppose there are a B-algebra C on which some system of parameters x = (x₁, …, x_d) of B is a regular sequence, a balanced big Cohen–Macaulay B′-algebra C′ and a ring map C → C′ compatible with β. Then x is a regular sequence on B; in particular B is Cohen–Macaulay.
 
-(ANDRE18B, §4.4, sentence before Théorème 4.4.2, p. 88; ANDRE18B line 818.)
+(ANDRE18B, §4.4, sentence before Théorème 4.4.2, p. 88; ANDRE18B line 818; HH95, §2.3; uncertified.)
 
 The argument descends every parameter colon through the faithfully flat target algebra and then through the pure base map; it makes no integrality assumption on the pure map.
 
@@ -1291,7 +1280,7 @@ The interface has the following laws.
 
 Let A₀ be a Noetherian ring and f : X → Spec A₀ proper. Then RΓ(X, O_X) is a bounded complex with finitely generated cohomology modules, hence pseudo-coherent (DerivedModuleAlgebra §1.E.0), and so is the cone of A₀ → RΓ(X, O_X). If A₀ is a regular local ring, these complexes are perfect. For flat A₀ → A₀′, RΓ(X, O_X) `⊗^L_{A₀}` A₀′ ≅ RΓ(X `×_{A₀}` A₀′, O).
 
-(BHATT18, Proof of Theorem 6.1, p. 11; BHATT18 line 604; BHATT18, §1.2, last paragraph, p. 3; BHATT18 line 109; STACKS, Lemma 30.4.2, Section 30.4 (tag 01XI for Lemma 30.4.2); Proposition 30.19.1 (tag 02O5) and Lemma 30.19.2 (tag 02O6); STACKS line 2350.)
+(BHATT18, Proof of Theorem 6.1, p. 11; BHATT18 line 604; BHATT18, §1.2, last paragraph, p. 3; BHATT18 line 137; STACKS, Lemma 30.4.2, Section 30.4 (tag 01XI for Lemma 30.4.2); Proposition 30.19.1 (tag 02O5) and Lemma 30.19.2 (tag 02O6); STACKS line 2350.)
 
 Bhatt uses these facts implicitly in the proof of Theorem 6.1; they are stated here because the localisation of the derived obstruction and its flat base change need them.
 
@@ -1331,9 +1320,9 @@ Let K be a perfectoid field of characteristic 0, A an integral perfectoid K°-al
 
 Require the finite étale generic fibre to be surjective. The empty generic fibre of Spec(A/p) gives a counterexample without this condition.
 
-Use the non-Noetherian base and adic modification-domination contract explicitly; the Noetherian scheme theorem of SchemeAndStackFoundations §4.12 alone does not give it. Integrality of H⁰(Y,O_Y) is used without a claim that it is finite over A.
+Use the quasi-compact quasi-separated modification-domination contract of SchemeAndStackFoundations §4.12 explicitly (STACKS, tag 081T; STACKS line 4296 in the flattening text). Its scheme statement has no perfectoid hypothesis; completion and the perfectoid application are owned here. Integrality of H⁰(Y,O_Y) is used without a claim that it is finite over A.
 
-A proof route is the following. B = H⁰(Y, O_Y) is integral over A and finite étale after inverting p; almost purity (PerfectoidSpaces §P3 (almost purity theorem), PerfectoidSpaces §P3 (integral closure almost finite etale)) gives B → C, an isomorphism after inverting p, with A → C almost finite étale, faithful by surjectivity, hence almost split (trace, PerfectoidSpaces §P0 (almost dual and trace)). Pass through the integral closure C of the finite étale generic algebra and base change Y along H⁰(Y,O_Y)→C. The generic fibre becomes an isomorphism; the faithful almost finite étale cover supplies the retraction back to A. Apply the adic modification-domination contract: after restricting to the schematic closure of the generic fibre, the p-adic completion is dominated by the completion of a blow-up of a finitely generated ideal containing a power of p. Write the blow-up ideal (f₀,…,f_r). The rational domains |f_j|≤|f_i|, with some f_i nonzero since p^N lies in the ideal, cover Spa(A[1/p],A). On each, the bounded fractions f_j/f_i give a map to the corresponding scheme blow-up chart; these glue to a morphism of ringed spaces (Spa(A[1/p],A),O⁺) → Y. This is Bhatt’s footnote 8 argument. No locally finite-type formal model or general Raynaud equivalence is used. The composite is an almost isomorphism by Scholze's almost vanishing of Hⁱ(S_η, O⁺) for i > 0 (PerfectoidSpaces §P2 (sheaf theorem and almost acyclicity)), so the first map is almost split.
+A proof route is the following. B = H⁰(Y, O_Y) is integral over A and finite étale after inverting p; almost purity (PerfectoidSpaces §P3 (almost purity theorem), PerfectoidSpaces §P3 (integral closure almost finite etale)) gives B → C, an isomorphism after inverting p, with A → C almost finite étale, faithful by surjectivity, hence almost split (trace, PerfectoidSpaces §P0 (almost dual and trace)). Pass through the integral closure C of the finite étale generic algebra and base change Y along H⁰(Y,O_Y)→C. The generic fibre becomes an isomorphism; the faithful almost finite étale cover supplies the retraction back to A. Apply the scheme contract to S=Spec C, U=Spec C[1/p] and the proper C-scheme Y×_Spec B Spec C, whose restriction to U is the identity. Properness of Y→Spec B follows from properness over A and separatedness of Spec B→Spec A. This gives a U-admissible blow-up dominating that C-scheme, without assuming finite presentation over C. On the affine base its finite-type centre I satisfies V(I)⊆V(p), hence pᴺ∈I for some N. Its p-adic completion gives the required completed domination. Relabel C as A and its base-changed scheme as Y for the following perfectoid step. Write the blow-up ideal (f₀,…,f_r). The rational domains |f_j|≤|f_i|, with some f_i nonzero since p^N lies in the ideal, cover Spa(A[1/p],A). On each, the bounded fractions f_j/f_i give a map to the corresponding scheme blow-up chart; these glue to a morphism of ringed spaces (Spa(A[1/p],A),O⁺) → Y. This is Bhatt’s footnote 8 argument. No locally finite-type formal model or general Raynaud equivalence is used. The composite is an almost isomorphism by Scholze's almost vanishing of Hⁱ(S_η, O⁺) for i > 0 (PerfectoidSpaces §P2 (sheaf theorem and almost acyclicity)), so the first map is almost split.
 
 **Checks.**
 
@@ -1346,11 +1335,11 @@ A proof route is the following. B = H⁰(Y, O_Y) is integral over A and finite �
 
 Let f : X → S be a proper morphism of Noetherian 𝔽_p-schemes. There exist a proper morphism g : Y → S and a finite surjective morphism π : Y → X such that π* : `τ^{≥1}`Rf_*O_X → `τ^{≥1}`Rg_*O_Y is zero.
 
-(BHATT12, Theorem 0.4, p. 1; Lemma 2.2 and Propositions 3.1–3.2 with Corollary 3.5, pp. 5–9; BHATT12 line 42.)
+(BHATT12, Theorem 0.4, p. 1; Lemma 2.2, p.6; Propositions 3.1–3.2 with Corollary 3.5, pp.7–9; BHATT12 line 42.)
 
 The source is Bhatt 2012 Theorem 0.4, whose proof follows the method of Hochster–Huneke and Huneke–Lyubeznik (equational lemma and Frobenius); it is cited here as a key theorem with that outline.
 
-A proof route is the following. Over an affine Noetherian base, each positive coherent cohomology module is finite and Frobenius-stable. For finitely many generators, monic additive Frobenius equations allow finite integral extensions killing the classes (Bhatt 2012 Proposition 3.2 and Corollary 3.5, pp. 7–9). The equational lemma supplies the method; ordinary affine cohomology is not local cohomology. Choose a finite affine cover of X. Its base changes remain affine, giving a fixed finite Čech bound for the higher cohomology at every later finite cover. Killing all cohomology maps is insufficient by itself to kill a derived morphism: iterate the covers through that finite amplitude, using Bhatt Lemma 2.2, pp. 5–6, to make `τ^{≥1}`Rf_* → `τ^{≥1}`Rg_* zero. For a general Noetherian S choose finitely many affine opens; Proposition 3.1, pp. 6–7, extends and dominates the local finite covers to obtain a common finite surjective cover. The same bounded-complex argument yields the global zero morphism. No induction on potentially infinite Krull dimension is used.
+A proof route is the following. Over an affine Noetherian base, each positive coherent cohomology module is finite and Frobenius-stable. For finitely many generators, monic additive Frobenius equations allow finite integral extensions killing the classes (Bhatt 2012 Proposition 3.2 and Corollary 3.5, pp. 7–9). The equational lemma supplies the method; ordinary affine cohomology is not local cohomology. Choose a finite affine cover of X. Its base changes remain affine, giving a fixed finite Čech bound for the higher cohomology at every later finite cover. Killing all cohomology maps is insufficient by itself to kill a derived morphism: iterate the covers through that finite amplitude, using Bhatt Lemma 2.2, p. 6, to make `τ^{≥1}`Rf_* → `τ^{≥1}`Rg_* zero. For a general Noetherian S choose finitely many affine opens; Proposition 3.1, p. 7, extends and dominates the local finite covers to obtain a common finite surjective cover. The same bounded-complex argument yields the global zero morphism. No induction on potentially infinite Krull dimension is used.
 
 **Checks.**
 
@@ -1369,7 +1358,7 @@ A Noetherian 𝔽_p-algebra is a splinter if and only if it is a derived splinte
 
 The 'in particular' combines this with §1.3, as Bhatt cites Bhatt 2012 Theorem 1.4 and Example 2.3 for the characteristic-p case of Theorem 1.2.
 
-A proof route is the following. Derived splinter ⇒ splinter: finite surjective maps are proper surjective (isSplinter of §7.1). Given X → Spec A proper surjective, choose Y → X finite surjective killing the map on `τ^{≥1}`. The composite RΓ(X,O_X) → RΓ(Y,O_Y) → `τ^{≥1}`RΓ(Y,O_Y) is zero. Exactness of Hom applied to the truncation triangle H⁰(Y,O_Y) → RΓ(Y,O_Y) → `τ^{≥1}`RΓ(Y,O_Y) therefore lifts the first map to RΓ(X,O_X) → H⁰(Y,O_Y). The lift preserves the unit: Hom(A,H⁰(Y,O_Y)) → Hom(A,RΓ(Y,O_Y)) is an isomorphism by the standard t-structure. The finite algebra H⁰(Y,O_Y) has surjective spectrum over A by proper surjectivity of Y → Spec A; since a splinter is reduced, its structure map is injective. Its A-linear splitting composed with the lift retracts A → RΓ(X,O_X).
+A proof route is the following. Derived splinter ⇒ splinter: finite surjective maps are proper surjective (the reduced-derived-splinter law of §7.1). Given X → Spec A proper surjective, choose Y → X finite surjective killing the map on `τ^{≥1}`. The composite RΓ(X,O_X) → RΓ(Y,O_Y) → `τ^{≥1}`RΓ(Y,O_Y) is zero. Exactness of Hom applied to the truncation triangle H⁰(Y,O_Y) → RΓ(Y,O_Y) → `τ^{≥1}`RΓ(Y,O_Y) therefore lifts the first map to RΓ(X,O_X) → H⁰(Y,O_Y). The lift preserves the unit: Hom(A,H⁰(Y,O_Y)) → Hom(A,RΓ(Y,O_Y)) is an isomorphism by the standard t-structure. The finite algebra H⁰(Y,O_Y) has surjective spectrum over A by proper surjectivity of Y → Spec A; since a splinter is reduced, its structure map is injective. Its A-linear splitting composed with the lift retracts A → RΓ(X,O_X).
 
 **Checks.**
 
@@ -1380,7 +1369,7 @@ A proof route is the following. Derived splinter ⇒ splinter: finite surjective
 
 ### 7.7 The derived direct summand theorem for regular rings containing ℚ
 
-The headline signature is `derivedDirectSummand_charZero`.
+The target derivedDirectSummand_charZero is specified here in prose.
 
 Every Noetherian regular ring containing ℚ is a derived splinter (§7.1).
 
@@ -1388,17 +1377,23 @@ Every Noetherian regular ring containing ℚ is a derived splinter (§7.1).
 
 Kovács Theorem 1, p. 187, is descent of rational singularities assuming the source already has rational singularities. Theorem 2, p. 188, gives splitting for a surjective morphism of projective complex varieties when both varieties have rational singularities. Neither theorem by itself states the arbitrary proper, arbitrary characteristic-zero-base assertion needed here.
 
-Use ResolutionOfSingularitiesCharacteristicZero §5.5 for the resolution and its Grauert–Riemenschneider extension contract; include the approximation and projective-cover bridges below.
+Use ResolutionOfSingularitiesCharacteristicZero §5.5 for resolution and gap:grauert-riemenschneider for vanishing. SchemeAndStackFoundations §4.12 supplies Chow’s lemma; §§2.19 and 2.21 supply coherent duality. This section owns their derived-splitting application and the approximation comparisons below.
 
-A proof route is the following. Reduce to A₀ a complete regular local ring containing ℚ (§7.3); the obstruction lies in Ext¹ of a bounded coherent complex and commutes with the faithfully flat completion. Prove a finite-presentation approximation statement descending the proper surjective cover to a regular smooth finite-type characteristic-zero stage, with compatible derived units and retractions after base change. Combine SchemeAndStackFoundations §§0.9,0.15 with the properness and surjectivity limit theorems, rather than assuming that the algebra colimit alone preserves these data. For varieties over a characteristic-zero field, dominate a proper cover by a projective cover with smooth source after the supplied resolution. Use Grauert–Riemenschneider vanishing and duality to obtain the derived retraction over a regular target. Establish the field-extension and localization comparisons and then the approximation passage to a general regular ℚ-algebra. Kovács Theorems 1–2 supply the complex projective rational-singularity argument with their stated source hypotheses; Bhatt 2012 Example 1.2 records its derived-splinter interpretation.
+The approximation target is the following. Given a Noetherian regular ℚ-algebra R and a proper surjective f:X→Spec R, descend f to a proper surjective f_i:X_i→Spec A_i at a smooth finite-type ℚ-algebra in a Popescu presentation R=colim A_i. Properness and surjectivity descend together with the scheme and its map (SchemeAndStackFoundations §§0.9, 0.15). This section owns the accompanying limit-passage assertion: if every smooth stage A_i is a derived splinter, the unit R→RΓ(X,O_X) splits. Establish this on the proper-unit obstruction, accounting for possibly nonflat maps A_i→R; an arbitrary classical base change is not identified with a derived fibre. No finite-presentation hypothesis is imposed on R itself.
+
+The comparison target is the following. For f:X→Spec A proper with A smooth of finite type over a characteristic-zero field k, let Q be its perfect unit cone and α:Q→A[1] its obstruction. For A′ a localization of A or A⊗_k K with K/k any field extension, identify Q⊗^L_A A′ with the new unit cone and identify `Hom_D(A)(Q,A[1]) ⊗_A A′` with `Hom_D(A′)(Q⊗^L_A A′,A′[1])`, carrying α⊗1 to the new obstruction. For a resolution ρ:Y→X, flat field base change also identifies (Rⁱρ_*ω_Y)⊗_k K with Rⁱρ_K*ω_(Y_K), using ω_(Y_K)=ω_Y⊗_k K. These are applications of §7.2 and SchemeAndStackFoundations §§2.6, 2.18, rather than additional vanishing hypotheses.
+
+A proof route is the following. After approximation, use Chow’s lemma to dominate a proper cover over the regular finite-type target by a projective cover, and resolve its reduced source with ResolutionOfSingularitiesCharacteristicZero §5.5. Smooth sources have rational singularities. Apply the supplied duality isomorphism `Rρ_* RHom_Y(F,ω_Y^•) ≅ RHom_X(Rρ_*F,ω_X^•)` and its trace for proper ρ and F in the bounded coherent category, with the structural dualizing complexes; on a smooth pure e-dimensional component, ω_Y^•=ω_Y[e] (SchemeAndStackFoundations §§2.19, 2.21). Together with Grauert–Riemenschneider vanishing this gives the rational-target derived splitting argument. Kovács Theorems 1–2 and their proofs, pp.187–191, supply the complex-variety argument with their source rationality hypotheses; BHATT12 Example 1.2, p.2, records its proper-cover interpretation. Descend the finite field of definition to a finitely generated characteristic-zero field, embed it into ℂ, and use the displayed Hom comparison and faithful flatness to descend vanishing of α. Localization uses the same cone comparison. Apply the owned limit-passage assertion to the smooth Popescu stages to obtain the retraction over R.
 
 **Checks.**
 
 - For A₀ = K a field of characteristic 0 the statement is the degenerate case of §7.1.
 - The finite (underived) case is the trace argument §0.9; the elliptic cone shows the derived statement is genuinely stronger.
 - For a smooth projective elliptic curve E/ℂ, H¹(O_E)=ℂ has dimension 1, but ℂ→RΓ(E,O_E) splits in D(ℂ); nonzero higher cohomology alone does not obstruct a derived retraction.
+- For the identity cover, Q=0 and both Hom groups in the base-change comparison are zero. For E/k an elliptic curve, Q=k[−1], so `Hom_D(k)(Q,k[1])=0`; after any field extension it remains zero, while H¹(O_E) changes from k to K.
+- For ρ the identity of a smooth d-dimensional variety, ω_X^•=ω_X[d] and Rⁱρ_*ω_X=0 for i>0. For a finite separable field cover L/k of degree e, the duality trace has Tr(1)=e, and e⁻¹Tr retracts the unit; the zero functional has value 0 on 1 and fails.
 
-*Needs:* §7.1; §7.3; SchemeAndStackFoundations §0.15; SchemeAndStackFoundations §0.9; ResolutionOfSingularitiesCharacteristicZero §5.5 (gap:grauert-riemenschneider).
+*Needs:* §7.1; §7.2; §7.3; SchemeAndStackFoundations §§0.9, 0.15, 2.6, 2.18, 2.19, 2.21, 4.12; ResolutionOfSingularitiesCharacteristicZero §5.5 (gap:grauert-riemenschneider).
 
 ### 7.8 The derived direct summand theorem
 
@@ -1406,7 +1401,7 @@ The headline signature is `derivedDirectSummand`.
 
 Let A₀ be a Noetherian regular ring and f₀ : X₀ → Spec A₀ a proper surjective morphism. Then A₀ → RΓ(X₀, `O_{X₀}`) has a left inverse in D(A₀); that is, every Noetherian regular ring is a derived splinter (§7.1).
 
-(BHATT18, Theorem 1.2 and Theorem 6.1 with proof, pp. 1 and 11; BHATT18 line 27; BHATT18, Remark 1.3(2) and §1.2, pp. 1–3; BHATT18 line 6.)
+(BHATT18, Theorem 1.2 and Theorem 6.1 with proof, pp. 1 and 11; BHATT18 line 27; BHATT18, Remark 1.3(2) and §1.2, pp. 1–3; BHATT18 line 32.)
 
 In mixed characteristic the theorem was new even in dimension 2 when Bhatt proved it; it implies the direct summand theorem for reduced finite covers and is orthogonal to it for birational f₀ (blow-ups).
 
@@ -1426,11 +1421,11 @@ A field-valued proper elliptic curve has one-dimensional cohomology in degrees z
 
 ### Dependencies
 
-Internal statements and proof routes use Layer 0, Layer 1, Layer 3, Layer 4, Layer 7. The headline definitions use Mathlib’s bounded-below sheaf-derived pushforward and geometric unit as specified in the supplier contract. External inputs: EnhancedDerivedSheaves §E1.4; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`; Mathlib `AlgebraicGeometry.IsProper`; Mathlib `AlgebraicGeometry.Surjective`; StableReduction Layer 2; DerivedModuleAlgebra §1.E.0; DerivedModuleAlgebra §1.E.0; DeformationAndDerivedPatchingAlgebra §7.3; EnhancedDerivedSheaves §E1.6; SchemeAndStackFoundations §§2.6, 2.18; DeformationAndDerivedPatchingAlgebra §1.13; Mathlib `AlgebraicGeometry.IsIntegral`; PerfectoidSpaces §P3 (almost purity theorem); PerfectoidSpaces §P3 (integral closure almost finite etale); PerfectoidSpaces §P0 (almost dual and trace); PerfectoidSpaces §P2 (sheaf theorem and almost acyclicity); SchemeAndStackFoundations §4.12 (gap:perfectoid-base-modification-domination); Mathlib `frobenius`; SchemeAndStackFoundations §0.15; SchemeAndStackFoundations §0.9; PerfectoidQuotients §1.3; PerfectoidSpacesPartII §RA.1 (annular tower).
+Internal statements and proof routes use Layer 0, Layer 1, Layer 3, Layer 4, Layer 7. The headline definitions use Mathlib’s bounded-below sheaf-derived pushforward and geometric unit as specified in the supplier contract. External inputs: SchemeAndStackFoundations §§0.11, 2.7, 2.19, 2.21, 4.12; EnhancedDerivedSheaves §E1.4; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`; Mathlib `AlgebraicGeometry.IsProper`; Mathlib `AlgebraicGeometry.Surjective`; StableReduction Layer 2; DerivedModuleAlgebra §1.E.0; DerivedModuleAlgebra §1.E.0; DeformationAndDerivedPatchingAlgebra §7.3; EnhancedDerivedSheaves §E1.6; SchemeAndStackFoundations §§2.6, 2.18; DeformationAndDerivedPatchingAlgebra §1.13; Mathlib `AlgebraicGeometry.IsIntegral`; PerfectoidSpaces §P3 (almost purity theorem); PerfectoidSpaces §P3 (integral closure almost finite etale); PerfectoidSpaces §P0 (almost dual and trace); PerfectoidSpaces §P2 (sheaf theorem and almost acyclicity); SchemeAndStackFoundations §4.12 (gap:perfectoid-base-modification-domination); Mathlib `frobenius`; SchemeAndStackFoundations §0.15; SchemeAndStackFoundations §0.9; PerfectoidQuotients §1.3; PerfectoidSpacesPartII §RA.1 (annular tower).
 
 ## Downstream consumers
 
-The birational-geometry direction of SchemeAndStackFoundations, Part II consumes §§0.2–0.5 and §4.9 for splinters, balanced big Cohen–Macaulay algebras and the characteristic-p absolute integral closure theorem; its mixed-characteristic plus-completion theorem, test ideals and plus-regularity have their own ownership. Local and global commutative-algebra applications consume Layer 5’s splitting, contraction and monomial statements. Derived geometric applications consume Layer 7’s proper-unit retraction. Each consumer uses these interfaces on the same carriers and retains the characteristic, local and residue-separability hypotheses stated here.
+Local and global commutative-algebra applications consume Layer 5’s splitting, contraction and monomial statements. Derived geometric applications consume Layer 7’s proper-unit retraction. Each consumer uses these interfaces on the same carriers and retains the characteristic, local and residue-separability hypotheses stated here.
 
 ## Worked examples
 
