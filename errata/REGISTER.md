@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6924 mistakes recorded on the board: 4256 misprints, 1768 errors, 678 gaps, 222 unparsed bullets.
+6930 mistakes recorded on the board: 4259 misprints, 1769 errors, 680 gaps, 222 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -583,6 +583,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Alper, moduli lecture notes (the report gives no title)
 
 - **Misprint** at the display immediately after the identity h¹ = h⁰ − χ in the H¹-vanishing and regularity argument: the source says the Hilbert-polynomial term enters with a plus sign; it should be a minus sign, consistent with the identity h¹ = h⁰ − χ just before; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## ALRS
+
+- **Misprint** at Remark 2.1.6, printed page 15 (ALRS line 794): the source says the source cites ABLB Lemma 3.6.2 for "strictly totally disconnected with A^{†-red} = A^u is nilperfectoid"; it should be ABLB v2 Lemma 3.1.17 (ABLB line 1428); affects nothing. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
+- **Misprint** at Theorem 5.2.14, printed page 101 (ALRS line 5314): the source says the source cites Lazard "Corollary I.3.9"; it should be Chapitre III, (1.3.9) Corollaire, printed page 77 (Laz65 line 2873); affects nothing. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
+- **Misprint** at Theorem 6.5.4, printed page 161 (ALRS lines 8746–8753): the source says part (1) writes the dualizing complex as O⟨1⟩ with the shift [2] absorbed into O⟨1⟩, part (3) writes O{1}[2] with the shift outside; it should be use one convention (the design's: O⟨1⟩ unshifted, [2] written); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ab278cd", "job": "REV-DESIGN-RationalAnalyticPrismatization", "model": "fable", "worker": "fable-rev164"} -->. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
 
 ## ammn
 
@@ -3817,7 +3823,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## fgt10
 
 - **Misprint** at Lemma 4.19, printed page 26: the source says the supercuspidal representation contains a unique compact-subgroup representation; it should be specify the distinguished minimal-conductor type, rather than uniqueness among all compact constituents; affects a stated result. Found by ArithmeticLocallySymmetricSpacesPartII (#241 at c1b8f80, 2026-10-25, codex gpt-6-astra).
+- **Error** at Proposition 4.18, printed page 25: the source says the isotypic multiplicity of any σ in S_k(Γ(N)) equals a formula with real periodic coefficients in the traces at S₃ and S₄; it should be restrict to σ≃σ∘Ad(diag(−1,1)), since for the order-three character of SL₂(ℤ/3) at weight 4 the formula gives ½; affects a stated result. Found by ArithmeticLocallySymmetricSpacesPartII (#241 at 48a899e, 2026-10-25, claude fable).
 - **Gap** at the end of the proof of Theorem 4.17, printed page 26: the source says the remaining finite summation is omitted; it should be supply the parity-sensitive summation establishing the displayed closed formula; affects the proof; R01 is an error in this design's Check, not an erratum in fgt10's S₄ trace formula. <!-- tauceti-roadmap-review {"agent": "codex", "head": "c1b8f80e7adac8054e693a46363de413810fd8a7", "job": "REV-DESIGN-ArithmeticLocallySymmetricSpacesPartII~2", "model": "gpt-6-astra", "worker": "chris-42"} -->. Found by ArithmeticLocallySymmetricSpacesPartII (#241 at c1b8f80, 2026-10-25, codex gpt-6-astra).
+- **Gap** at the end of the proof of Theorem 4.17, printed page 26: the source says the remaining summation over local types is omitted; it should be supply the parity-sensitive summation giving the displayed coefficients; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "48a899e", "job": "REV-DESIGN-ArithmeticLocallySymmetricSpacesPartII~3", "model": "fable", "worker": "fable-rev163"} -->. Found by ArithmeticLocallySymmetricSpacesPartII (#241 at 48a899e, 2026-10-25, claude fable).
 
 ## FGV
 
@@ -7651,6 +7659,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## RZ96
 
 - **Gap** at Corollary 6.29, printed p. 293: the source says the ℓ-adic K-linear Hom comparison holds for any two polarized K-objects each isoclinic at every place of K above p; it should be require a common Frobenius element, for instance equal slopes at every such place; affects a stated result. Found by PELModuliPartII (#384 at 4592423, 2026-10-25, claude fable).
+- **Gap** at Corollary 6.29, printed p. 293: the source says the K-linear Hom comparisons hold for two polarized K-objects each satisfying Lemma 6.28's isoclinic hypothesis separately; it should be require equal slopes at every place of K above p; affects a stated result. Found by PELModuliPartII (#384 at 25574d3, 2026-10-25, claude fable).
 
 ## s-ber
 
