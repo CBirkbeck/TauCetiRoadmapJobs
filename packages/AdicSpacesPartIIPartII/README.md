@@ -1,6 +1,6 @@
 # Roadmap: rigid-analytic Zariski geometry, classical points and resolution, part II
 
-**Summary.** Extend AdicSpacesPartII from affinoid spaces, analytification and morphisms to the Zariski geometry of rigid spaces over a complete rank-one nonarchimedean field. Construct finite normalization and global irreducible components, compare nowhere density with dimension drop, develop regular and smooth loci and finite smooth stratifications, and characterize weakly Shilov points by their secondary residue fields. The end theorems are functorial rigid resolution in characteristic zero, connectedness of the resolution of an irreducible space, analytic manifolds of rational points, the analytic constant-rank normal form and detection of analytic identities on a complete subfield. These results supply general geometric inputs to bi-analytic Ax–Lindemann arguments (HK2, §§9.2–9.3, pp. 56–60); the Hodge-theoretic theorem is a consumer. [Suggested.lean](Suggested.lean) states the headline theorems expressible on the pinned native carriers; it is not the roadmap.
+**Summary.** Extend AdicSpacesPartII from affinoid spaces, analytification and morphisms to the Zariski geometry of rigid spaces over a complete rank-one nonarchimedean field. Construct finite normalization and global irreducible components, compare nowhere density with dimension drop, develop regular and smooth loci and finite smooth stratifications, and characterize weakly Shilov points by their secondary residue fields. The end theorems are Gauss-point closure of rational polydisc points over infinite residue fields, functorial rigid resolution in characteristic zero, connectedness of the resolution of an irreducible space, analytic manifolds of rational points, the analytic constant-rank normal form and detection of analytic identities on a complete subfield, both in coordinates and on G(C). These results supply general geometric inputs to bi-analytic Ax–Lindemann arguments (HK2, §§9.2–9.3, pp. 56–60); the Hodge-theoretic theorem is a consumer. [Suggested.lean](Suggested.lean) states the headline theorems expressible on the pinned native carriers; it is not the roadmap.
 
 ## Scope and ownership
 
@@ -10,6 +10,7 @@ The following objects retain their existing owners. Their interfaces are consume
 
 - Mathlib owns topological connected components, analytic functions and power series, the strict inverse-function theorem and analytic inversion of open partial homeomorphisms, matrix rank and minors, Baire spaces, algebraic spectra and Krull dimension. Layer 1 proves that native connected components of a rigid space are open and coherently Zariski closed; it does not define another topological connected-component quotient. Layer 6 consumes the inverse theorem and proves the constant-rank normal form.
 - Tau Ceti owns power-bounded and topologically nilpotent elements, restricted series, adic spectra, evaluation points of polydiscs and the one-variable centred Gauss valuation. Layer 3 extends their geometry to rational-point topology and several-variable Gauss closure, and does not reconstruct the supplied one-variable valuation.
+- AdicEtaleGeometry A2.6 owns global adic dimension as topological Krull dimension and its classical-point local-ring criterion for pure dimension. Layer 0 defines local dimension at adic points and compares its supremum with that global dimension on rigid spaces.
 - RigidAnalyticGeometry §§1.1–1.3, 2.1–2.2 and Layers 3–4 own affinoid algebras, maximal residue fields, all-characteristic excellence, canonical reduction (§2.3), affinoid domains and their algebra. Its §§6.2, 8.1–8.3 own the rigid carrier, classical-point construction and density, analytification and component comparisons, and the Tate–Huber equivalence. Classical points and their density, canonical reduction and the component comparison are supplier results, not separate construction targets here. The normalization in Layer 1 is the global finite normalization of a rigid space, beyond algebraic affinoid normalization.
 - The coherent and formal interfaces of AdicSpacesPartIII R3.1–R3.3, R3.6 and R2.2–R2.5 are supplied through the classical coherent and proper-cohomology contracts of RigidAnalyticGeometry §§7.3–7.4 and the formal-model contract below. No second coherent-sheaf, Kiehl-cohomology, formal-scheme or Raynaud library is specified here. Layer 4 adds canonical-reduction point geometry and the generic-specialization criterion.
 - SchemeAndStackFoundations §0.21 owns excellent rings, regular ring maps and their permanence. Its §§0.3, 4.11 own relative Proj and modifications; StableReduction Layer 4 owns scheme blow-ups. ResolutionOfSingularitiesCharacteristicZero §§7.1, 7.5–7.8 owns the scheme-level functorial desingularization inputs. Layer 5 owns global functorial rigid resolution over every characteristic-zero K, including rigid analytification, gluing and marked rigid hypersequences; it does not redevelop the scheme resolution invariant or its algebraization proof.
@@ -25,7 +26,7 @@ K is a field complete for a nontrivial rank-one nonarchimedean absolute value. W
 
 A point's analytic residue field is k(x); its completed valued residue field is H(x). At classical points k(x)/K is finite and complete, so k(x) = H(x). The secondary residue field H(x)̃ is the residue field of the rank-one valuation ring in H(x), not k(x) itself. On a Gauss point it is K̃(T₁,…,Tₙ), whereas H(x) is the completed fraction field of the Tate algebra. Rank one is retained wherever secondary-residue transcendence or Shilov points are used.
 
-Dimensions of nonempty affinoids are finite Krull dimensions; local dimensions at points are natural numbers. Global dimension lies in the ordered set {−∞} ∪ ℕ ∪ {∞}, with dim ∅ = −∞ and unbounded-dimensional disjoint unions of dimension ∞. An irreducible space has a single finite dimension. Connected and irreducible include nonemptiness. A Zariski subset is always given its reduced structure when its dimension is taken; nilpotents remain in the ambient ring and its sheaves. Normality is local integrally closed domain normality; it is not geometric normality.
+Local dimensions at points are natural numbers, with the convention in §0.2. Write dim X = topologicalKrullDim |X|, as in AdicEtaleGeometry A2.6; it lies in the ordered set {−∞} ∪ ℕ ∪ {∞}, with dim ∅ = ⊥ = −∞. Section 0.2 proves that on a nonempty rigid affinoid this equals the finite Krull dimension of its coordinate ring, and that unbounded-dimensional disjoint unions have dimension ∞. An irreducible space has a single finite dimension. Connected and irreducible include nonemptiness. A Zariski subset is always given its reduced structure when its dimension is taken; nilpotents remain in the ambient ring and its sheaves. Normality is local integrally closed domain normality; it is not geometric normality.
 
 Rational domains use |fᵢ| ≤ |g| with |g| ≠ 0. Spectra reverse ring maps. For φ : A → B the specialization square is sp_A ∘ Spa(φ) = Spec(φ̃) ∘ sp_B. At T = a on the disc the reduction is (T − ā); at the Gauss point it is (0). The Gauss normalization is |Σ a_αT^α| = max |a_α|, so |π + T| = 1 at the unit Gauss point and |π + T| = |π| at T = 0 for 0 < |π| < 1. No division by a zero Gauss norm is permitted: the denominator of a rational neighbourhood is nonzero at its point.
 
@@ -79,6 +80,10 @@ Consume [AdicSpacesPartII R0.6–R0.17 and R1.1–R1.9](../AdicSpacesPartII/READ
 
 The coherent-sheaf contract consumed through RigidAnalyticGeometry §§7.3–7.4 is the equivalence between finite modules and coherent sheaves on an affinoid, exact and compatible with restriction, tensor products, ideals and finite algebras, and coherence of f_*F for proper f and coherent F. Its existing owner is AdicSpacesPartIII R3.1–R3.3 and R3.6; the proper theorem has no reducedness or smoothness hypothesis. The sheaf of continuous differentials is the coherent sheaf attached to R0.15's module and is compatible with the rigid–adic comparison. These contracts suffice for supports, radical ideals, finite normalizations and proper-image closedness.
 
+### From TauCetiRoadmap.AdicEtaleGeometry
+
+Consume [AdicEtaleGeometry A2.6, dimension-of-adic-spaces](../AdicEtaleGeometry/README.md#a26-dimension-and-dimension-estimates): dim X is Mathlib's topologicalKrullDim |X|, with dim ∅ = ⊥. For X locally of finite type over Spa(K, K°), X has pure dimension d iff every classical local ring has Krull dimension d; pure dimension means that every nonempty open has dimension d. Use its open-cover formula for topological dimension. Section 0.2 compares this global dimension with local dimension at all adic points; it does not identify coherent irreducible components with topological irreducible components.
+
 ### From TauCetiRoadmap.AdicSpacesPartIII
 
 The formal-model contract uses the admissible formal schemes and generic fibres of AdicSpacesPartIII R2.2–R2.5: complete arbitrary rank-one K°, topologically finite presentation, K°-flatness, the generic-fibre comparison, specialization, admissible blow-ups and Raynaud localization. A prescribed finite affinoid covering has a formal-open realization after admissible blow-up. Quasi-separated quasi-paracompact objects use locally finite formal charts and compatible blow-ups, without assuming a discrete valuation.
@@ -103,9 +108,11 @@ Consume [StableReduction Layer 4](../StableReduction/README.md#layer-4-blowups-a
 
 ### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
-Consume [ResolutionOfSingularitiesCharacteristicZero §§7.1, 7.5–7.8](../ResolutionOfSingularitiesCharacteristicZero/README.md). The field functor is compatible with all regular morphisms, including changes of characteristic-zero field and disjoint unions over different fields, after deleting empty-centre steps. The quasi-excellent functor assigns to every reduced noetherian quasi-excellent ℚ-scheme a finite sequence in regular centres disjoint from the inverse image of its entire regular locus; its final scheme is regular, the composite is projective and birational on every component, and all regular morphisms pull back the marked sequence with identity and composition coherence. The affine specialization applies to Spec A for a characteristic-zero K-affinoid A, which need not be finitely generated as a K-algebra. Countability of the common invariant set, for both the reduced and generically reduced functors used in rigid hypersequences, is requested in gap:generically-reduced-functorial-resolution (TEMKIN12, Theorem 2.3.5 and Remark 2.3.6, pp. 13–14; Theorem 1.2.1, p. 3).
+Consume [ResolutionOfSingularitiesCharacteristicZero §§7.1, 7.5–7.8](../ResolutionOfSingularitiesCharacteristicZero/README.md). The field functor is compatible with all regular morphisms, including changes of characteristic-zero field and disjoint unions over different fields, after deleting empty-centre steps. The quasi-excellent functor assigns to every reduced noetherian quasi-excellent ℚ-scheme a finite sequence in regular centres disjoint from the inverse image of its entire regular locus; its final scheme is regular, the composite is projective and birational on every component, and all regular morphisms pull back the marked sequence with identity and composition coherence. The affine specialization applies to Spec A for a characteristic-zero K-affinoid A, which need not be finitely generated as a K-algebra. Countability for the reduced functor and extension to generically reduced schemes are the separate contracts below (TEMKIN12 line 99, Theorem 1.2.1, p. 3; lines 1570–1574, proof of Theorem 5.3.2, p. 34).
 
-What ResolutionOfSingularitiesCharacteristicZero must provide (gap:generically-reduced-functorial-resolution): Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps; for both the reduced and generically reduced functors, provide a common countable ordered set of invariant values for synchronization.
+What ResolutionOfSingularitiesCharacteristicZero must provide (gap:generically-reduced-functorial-resolution): Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps, with invariant values in a countable ordered set.
+
+What ResolutionOfSingularitiesCharacteristicZero must provide (gap:countable-resolution-invariants): Provide a countable totally ordered set of invariant values labelling the steps of the §§7.5–7.6 reduced resolution functor, compatibly with pullback along regular morphisms after deleting empty steps.
 
 For a general nonreduced scheme, Temkin's reduction-and-blow-up extension is also functorial but can delete generically nonreduced components; it gives no surjective birational resolution of those components. The rigid cover applications therefore resolve the reduction. This records the generality of TEMKIN12, Remark 1.2.2, p. 3 without confusing that extension with a cover.
 
@@ -114,6 +121,8 @@ For a general nonreduced scheme, Temkin's reduction-and-blow-up extension is als
 - The empty sequence resolves a regular scheme, including ∅ and Spec ℚ. An effective Cartier centre gives an isomorphism but remains a nonempty marked step.
 - The cusp y² = x³ is made regular by one blow-up of the origin: in the x-chart y = xu, the strict transform is x = u², y = u³. Complete local cusps and every characteristic-zero ground field are included.
 - Spec K[ε]/(ε²) is generically nonreduced, so a regular scheme cannot be isomorphic over any dense open of it. Applying the reduced theorem to this scheme without reduction would be false.
+- The reduced disjoint union of the curves y² = x^(2n+1), n ≥ 0, needs gap:countable-resolution-invariants to synchronize the local finite towers; no generically reduced extension is needed. In the displayed origin-blow-up towers the exponents decrease by 2, so the n-th curve needs n steps, including 0 steps for n = 0 (§5.2).
+- For characteristic-zero K and A = K⟨x,y⟩/(y², xy), A[1/x] has y = 0, while the origin has dimension 1 and cotangent dimension 2. Thus Spa A has nowhere dense nonreduced locus {0} and needs gap:generically-reduced-functorial-resolution. Its quasi-compact finite tower needs no countable synchronization of separate reduced towers. Blowing up (x,y) gives the x-chart K⟨x⟩ and an empty y-chart, illustrating preservation of the regular complement.
 
 ### From TauCetiRoadmap.ReductiveGroups
 
@@ -159,9 +168,9 @@ One proof route is as follows. The support of the coherent sheaf O_X/𝓘 is clo
 
 ### 0.2 Local dimension of a rigid space at a point
 
-For X a rigid space over K and x ∈ |X|, the local dimension is dim_x X = min{dim O_X(U) : U ∋ x an affinoid open}, where dim O_X(U) is the Krull dimension of the K-affinoid algebra O_X(U) (−∞ for the empty space). The dimension of X is dim X = supₓ dim_x X. For a Zariski closed Z ⊆ X and z ∈ Z, dim_z Z means the local dimension of Z_red at z. (BH22 line 329, Proposition 2.9(2), p. 8; CONRAD99 line 653, §2.2, p. 14.)
+Use the following local-dimension convention: for X a rigid space over K and x ∈ |X|, set dim_x X = min{ringKrullDim O_X(U) : U ∋ x an affinoid open}. For a Zariski closed Z ⊆ X and z ∈ Z, dim_z Z means the local dimension of Z_red at z. This is the local dimension used in the weakly Shilov criterion (BH22 line 332, Proposition 2.9(2), p. 8); that passage uses the notion rather than defining this convention.
 
-The minimum exists because the Krull dimension of a nonzero K-affinoid algebra is a natural number (Noether normalization, RigidAnalyticGeometry §§1.1–1.2). At a classical point, dim_x X equals dim `O_(X,x)`; prove this using the minimal primes of one affinoid ring and the equidimensionality of affinoid domains, without using global irreducible components.
+The minimum exists because the Krull dimension of a nonzero K-affinoid algebra is a natural number (Noether normalization, RigidAnalyticGeometry §§1.1–1.2). Prove the comparisons: at a classical point, dim_x X = ringKrullDim `O_(X,x)`; globally, the supplied dimension satisfies topologicalKrullDim |X| = sup_x dim_x X; and for affinoid X both sides equal ringKrullDim O(X). Suprema are taken in {−∞} ∪ ℕ ∪ {∞}; the empty supremum and the dimension of the zero ring are ⊥ = −∞. These are comparison targets, using affinoid minimal primes, equidimensionality and the pure-dimension criterion of AdicEtaleGeometry A2.6, without global coherent irreducible components.
 
 Its API has the following properties, with the hypotheses of this subsection.
 
@@ -171,20 +180,21 @@ Its API has the following properties, with the hypotheses of this subsection.
 - x ↦ dim_x X is upper semicontinuous on |X|.
 - For a locally closed immersion i : Y ↪ X, dim_y Y ≤ `dim_(i(y))` X; for an open immersion equality holds.
 - dim_x X = dim_x X_red.
-- dim X = sup_x dim_x X; for X affinoid it is the Krull dimension of O(X).
+- The supplied global dimension topologicalKrullDim |X| equals sup_x dim_x X; for X affinoid both equal ringKrullDim O(X).
 - At a point where X → Spa K is smooth, dim_x X is the rank of `Omega_(X/K)` near x (Layer 2).
 
-One proof route is as follows. If U′ ⊆ U are affinoid neighbourhoods of x then dim O(U′) ≤ dim O(U): an affinoid subdomain inclusion is flat with the same completed local rings at classical points (RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.5), and the Krull dimension of an affinoid algebra is the maximum of the dimensions of its local rings at maximal ideals (Jacobson, RigidAnalyticGeometry §§1.1–1.2). Hence dim_x X is computed on arbitrarily small affinoid neighbourhoods, x ↦ dim_x X is upper semicontinuous, and dim_x Y ≤ dim_x X for a locally closed immersion Y ↪ X (a closed subspace of an affinoid has smaller Krull dimension; open immersions do not change local dimension). On U = Spa(A), write its finitely many minimal primes as p_i. Remove the closed union V(p_i) for those not contained in the maximal ideal m_x. Each remaining A/p_i is an affinoid domain, whose maximal localizations have dimension dim(A/p_i). Restrict to a small affinoid neighbourhood inside this complement. The maximum of these dimensions is both dim_x X and dim A_m; completion identifies the latter with dim `O_(X,x)`.
+One proof route is as follows. If U′ ⊆ U are affinoid neighbourhoods of x then dim O(U′) ≤ dim O(U): an affinoid subdomain inclusion is flat with the same completed local rings at classical points (RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.5), and the Krull dimension of an affinoid algebra is the maximum of the dimensions of its local rings at maximal ideals (Jacobson, RigidAnalyticGeometry §§1.1–1.2). Hence dim_x X is computed on arbitrarily small affinoid neighbourhoods, x ↦ dim_x X is upper semicontinuous, and dim_x Y ≤ dim_x X for a locally closed immersion Y ↪ X (a closed subspace of an affinoid has no larger Krull dimension; open immersions do not change local dimension). At a classical x in U = Spa(A), write the finitely many minimal primes as p_i. Remove V(p_i) for those not contained in m_x. Each remaining A/p_i is an affinoid domain, whose maximal localizations have dimension dim(A/p_i). On a sufficiently small affinoid neighbourhood the maximum of these dimensions is both dim_x X and dim A_m; completion identifies the latter with dim `O_(X,x)`. For global dimension, each Spa(A/p_i) has pure dimension dim(A/p_i) by AdicEtaleGeometry A2.6. For this finite closed cover, the largest member of any finite chain of irreducible closed subsets lies in one member of the cover, so the whole chain lies there. Together with dimension monotonicity for subspaces, this gives topologicalKrullDim |U| = max_i dim(A/p_i) = ringKrullDim A, also equal to sup_x dim_x U by the classical comparison. Finally use the open-cover formula on affinoid neighbourhoods attaining each local minimum to obtain topologicalKrullDim |X| = sup_x dim_x X.
 
-*Needs:* RigidAnalyticGeometry §§1.1–1.2; RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.5; `ringKrullDim`; `IsLocalRing`.
+*Needs:* RigidAnalyticGeometry §§1.1–1.2; RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.5; AdicEtaleGeometry A2.6; `topologicalKrullDim`; `ringKrullDim`; `IsLocalRing`.
 
 **Checks.**
 
 - For D^n the closed unit polydisc over K, dim_x D^n = n for every x ∈ |D^n|, including the Gauss point.
-- dim_x Spa(L) = 0 for a finite extension L/K, and the empty space has dimension −∞.
-- For X = Spa(K⟨T⟩ × K), dim_x X = 1 on the disc component and 0 at the isolated point: local dimension is not constant on a non-equidimensional space.
+- dim_x Spa(L) = 0 for a finite extension L/K. For X = ∅, topologicalKrullDim |X| = sup_x dim_x X = ringKrullDim 0 = ⊥ = −∞; there is no local dimension at a point of ∅.
+- For X = Spa(K × K⟨T⟩), dim_x X is 0 at the isolated point and 1 on the disc component, while topologicalKrullDim |X| = sup_x dim_x X = ringKrullDim(K × K⟨T⟩) = 1. Global dimension does not replace local dimension.
 - For X = Spa(A, A°) with A a K-affinoid domain of Krull dimension d, dim_x X = d at every point.
 - At the cusp of Spa(K⟨X,Y⟩/(Y² − X³)) the local dimension is 1 while the Zariski tangent space has dimension 2: a definition through tangent spaces fails.
+- For a complete rank-one field K and a rank-two valuation ring K⁺ ⊊ K°, AdicEtaleGeometry A2.6 gives topologicalKrullDim Spa(K, K⁺) = 1 while ringKrullDim K = 0. This space is outside the comparison's hypothesis of being locally of finite type over Spa(K, K°).
 
 ### 0.3 Criteria for a Zariski closed subset to be nowhere dense
 
@@ -246,7 +256,7 @@ In the disc, V(T) has dimension 0 and contains no Gauss point, while a closed su
 
 ### Dependencies
 
-Native spectra and local algebra; RigidAnalyticGeometry §§1.1–2.2, 3.1–4.2, 7.3–7.4, 8.1; AdicSpacesPartII R0.10–R0.17, R1; SchemeAndStackFoundations §0.21. No component theorem is an input.
+Native spectra and local algebra; RigidAnalyticGeometry §§1.1–2.2, 7.3–7.4, 8.1 and Layers 3–4; AdicSpacesPartII R0.10–R0.17, R1; AdicEtaleGeometry A2.6 for the global-dimension comparison; SchemeAndStackFoundations §0.21. No global coherent component theorem is an input.
 
 ## Layer 1: Normalization, global components and connected complements
 
@@ -340,7 +350,7 @@ Its API has the following properties, with the hypotheses of this subsection.
 - Each reduced component has a nonempty normal Zariski open, disjoint from the other components, that is open in X_red; when X is reduced it is normal as an open of X itself.
 - A locally finite, irredundant cover of X by irreducible Zariski closed subsets is the set of irreducible components (Conrad 2.2.8).
 - For U ⊆ X open, each component of U lies in a unique component of X, and X_i ∩ U is a union of components of U (Conrad 2.2.9).
-- On an irreducible X, dim_x X = dim X = dim X^ν for all x, and dim `O_(X,x)` = dim X at classical points.
+- On an irreducible X, dim_x X = dim X = dim X^ν for all x, and dim `O_(X,x)` = dim X at classical points (CONRAD99 lines 653–655, §2.2, p. 14, together with §0.2).
 - A connected normal (for instance smooth) rigid space is irreducible.
 
 One proof route is as follows. Images: p is finite, so p(X^ν_i) is Zariski closed (§0.4). Use Conrad Lemma 2.2.1 after passage to X_red: different clopens in the normalization have different images, and each component has a nonempty normal open disjoint from the other components. Normality of this open refers to its reduced structure. The restriction of the normalization component to its image is a normalization. Hence components of X correspond bijectively to connected components of X^ν (Conrad Theorem 2.2.4(1)), every irreducible Zariski closed subset lies in a component (2.2.4(2)), and any union of components is the image of the corresponding union of components of X^ν, which is its normalization (2.2.4(3)). Local finiteness: a quasi-compact open of X has quasi-compact preimage in X^ν (p finite), which meets finitely many connected components.
@@ -407,7 +417,7 @@ One proof route is as follows. Prove the bounded extension theorem on normal aff
 
 ### 1.8 Dense Zariski opens of irreducible spaces are connected
 
-Prove: Let X be a rigid space over K and Z ⊆ X a nowhere dense Zariski closed subset. If X is connected and normal, then X − Z is connected. If X is irreducible, then X − Z is irreducible; in particular every nonempty Zariski open subset of an irreducible rigid space is irreducible and connected. (CONRAD10 line 211, proof of Lemma 2.1.3, p. 5; CONRAD99 line 786, proof of Theorem 2.3.1, p. 17.)
+Prove: Let X be a rigid space over K and Z ⊆ X a nowhere dense Zariski closed subset. If X is connected and normal, then X − Z is connected. If X is irreducible, then X − Z is irreducible; in particular every nonempty Zariski open subset of an irreducible rigid space is irreducible and connected. (CONRAD10 line 211, proof of Lemma 2.1.3, p. 5; CONRAD99 lines 801–805, proof of Theorem 2.3.1, p. 17, for the connected-complement argument over an algebraically closed base; §1.7 supplies bounded extension over the original K.)
 
 No geometric connectedness, geometric normality or characteristic-zero hypothesis. Use the original-field Riemann extension theorem.
 
@@ -642,7 +652,7 @@ Its API has the following properties, with the hypotheses of this subsection.
 
 One proof route is as follows. sp(x) is prime: {a ∈ A° : |a(x)| < 1} is the preimage of the maximal ideal of the valuation ring of x, and contains A°° because topologically nilpotent elements have |a(x)| < 1. Continuity: for a ∈ A°, sp⁻¹(D(ā)) = {x : |a(x)| ≥ 1} = {x : |a(x)| = 1}, a rational subset, hence open. For surjectivity choose an open bounded topologically finitely presented K°-algebra A₀ ⊆ A° with Spec Ã → Spec(A₀/t) a universal homeomorphism, as in BH22 line 243. The formal generic fibre is Spa(A,A°), and formal specialization is surjective onto the special fibre by the formal-model contract. Transfer its image through this homeomorphism. This uses a specified model comparison, rather than a bare valuation of the reduction with no lift to A. Functoriality: φ(A°) ⊆ B°, φ(A°°) ⊆ B°° (RigidAnalyticGeometry §§2.1–2.2) and sp_A ∘ Spa(φ) = Spec(φ̃) ∘ sp_B. A classical point maps to a maximal ideal: its residue field is finite over K, so the image is a point whose residue field is finite over K̃.
 
-*Needs:* RigidAnalyticGeometry §§2.1–2.2; RigidAnalyticGeometry §§1.1–1.2; AdicSpacesPartIII R2.4–R2.5 and gap:formal-affinoid-localization; `TauCeti.Huber.powerBoundedSubring`; `TauCeti.Huber.topologicallyNilpotentIdeal`; `PrimeSpectrum`.
+*Needs:* RigidAnalyticGeometry §§2.1–2.2; RigidAnalyticGeometry §§1.1–1.2; AdicSpacesPartIII R2.4–R2.5; `TauCeti.Huber.powerBoundedSubring`; `TauCeti.Huber.topologicallyNilpotentIdeal`; `PrimeSpectrum`.
 
 **Checks.**
 
@@ -668,7 +678,7 @@ Its API has the following properties, with the hypotheses of this subsection.
 
 One proof route is as follows. Finiteness: Spec Ã is noetherian, so it has finitely many irreducible components; by §4.3(2) each generic point has exactly one preimage.
 
-*Needs:* §4.1; `PrimeSpectrum`; `minimalPrimes`.
+*Needs:* §4.1; §4.3; `PrimeSpectrum`; `minimalPrimes`.
 
 **Checks.**
 
@@ -686,7 +696,7 @@ A is K-affinoid; the equivalences fail for general complete Tate rings (Bhatt–
 
 One proof route is as follows. Choose an open bounded topologically finitely presented K°-subalgebra A_0 ⊆ A° with A° integral over A_0 and Spec Ã → Spec(A_0/t) a universal homeomorphism (Noether normalization and the canonical-reduction comparison in BH22 line 243); describe Spa(A, A°) as the limit of the special fibres of proper t-isomorphisms X_i → Spec A_0, with O^+ the t-completed colimit of structure sheaves. At a generic point of the canonical reduction, take the inverse-image prime in A° before localizing, and then take the separated t-adic completion. The generic valuation construction, using finite Noether normalization and valuation extension, gives the rank-one completed valuation ring and the singleton fibre. The reduction ring itself has t = 0 and cannot be the valuation ring. (2) ⇒ (3): the local rings of the X_i at the unique preimages are integral over `A_(0,sp(x))` and isomorphisms after inverting t; the t-completed colimit is integrally closed, hence equals the completed local ring of A°. (3) ⇒ (2): points of Spa are classes of maps A_0 → V to t-complete valuation rings. (2) ⇒ (1): if sp(x) were not generic, a valuation of the function field of a component through it, centred at sp(x), composed with K_y^+ for a lift y of the generic point, gives a rank ≥ 2 point over sp(x) different from x. Compare the rank-one multiplicative seminorms with the Banach spectrum and its minimal norm-attaining boundary, as in Bhatt–Hansen Proposition 2.2(4). This is a target comparison on these carriers, not an identification of all adic points with the Banach spectrum.
 
-*Needs:* §4.1; §4.2; RigidAnalyticGeometry §§1.1–1.2; RigidAnalyticGeometry §§2.1–2.2; AdicSpacesPartIII R2.4–R2.5 and gap:formal-affinoid-localization.
+*Needs:* §4.1; RigidAnalyticGeometry §§1.1–1.2; RigidAnalyticGeometry §§2.1–2.2; AdicSpacesPartIII R2.4–R2.5.
 
 **Checks.**
 
@@ -704,8 +714,6 @@ Its API has the following properties, with the hypotheses of this subsection.
 - x is weakly Shilov iff x is a Shilov point of some affinoid open neighbourhood.
 - A weakly Shilov point has rank one.
 - Weakly Shilov points are dense in |X| (Bhatt–Hansen Lemma 2.8).
-- For U ⊆ X open and x ∈ U, x is weakly Shilov in U iff in X (by the transcendence criterion).
-- x of rank one is weakly Shilov iff `trdeg_(Ktilde)` K̃_x = dim_x X (§4.6).
 - Every Shilov point of an affinoid open is weakly Shilov.
 
 One proof route is as follows. Rank one: Shilov points have rank one by definition. Density: a nonempty open subset contains a nonempty affinoid open W, and Spec W̃ has a generic point; its preimage under the surjective sp is nonempty and consists of a single rank-one point (§4.3), which is Shilov in W.
@@ -739,6 +747,11 @@ One proof route is as follows. Choose an affinoid neighbourhood Spa(A, A°) with
 Prove: Let X be a rigid space over K and x ∈ |X| a rank-one point. The following are equivalent: (1) x is weakly Shilov; (2) `trdeg_(Ktilde)` K̃_x = dim_x X; (3) when X is quasi-separated and quasi-paracompact, there is a formal model 𝔛 of X such that x specialises to the generic point of an irreducible component of the special fibre 𝔛_s. (BH22 line 329, Proposition 2.9, p. 8; POINEAU13 line 705, Lemma 4.4, p. 284, line 857, Corollary 4.15, p. 287, and line 893, Corollary 4.18, p. 288.)
 
 The formal-model condition applies when X is quasi-separated and quasi-paracompact and uses the formal localization contract. Conditions (1) and (2) require neither condition.
+
+The equivalent conditions also give the following consequences.
+
+- For U ⊆ X open and x ∈ U, x is weakly Shilov in U iff in X: the completed residue field and local dimension are unchanged by open restriction.
+- A rank-one x is weakly Shilov iff `trdeg_(Ktilde)` K̃_x = dim_x X.
 
 One proof route is as follows. For a Shilov point of a strict affinoid neighbourhood, Poineau Lemma 4.4 identifies the residue transcendence degree with the local dimension. Dimension is invariant under open restriction. Conversely, choose an affinoid neighbourhood U of x whose dimension is d = dim_x X. If trdeg K̃_x = d, Abhyankar’s inequality excludes every lower-dimensional component and every intersection of distinct d-dimensional components through x. Thus x lies on exactly one component of U, of dimension d. Apply Poineau Corollary 4.18 (and Corollary 4.15 in the irreducible case): there is a strict Laurent domain in U having x as its unique Shilov-boundary point. A strict Laurent domain is a rational affinoid open on the adic side. Proposition 2.2 of Bhatt–Hansen identifies the Berkovich Shilov boundary with the rank-one adic Shilov points. No field extension or descent of a chosen domain is needed. For the formal condition, realize the affinoid Shilov neighbourhood as the generic fibre of a formal affine open after admissible blow-up, and refine its ring of definition so its special-fibre spectrum agrees with canonical reduction. Generic points then agree. Conversely take a formal affine open containing the generic specialization. The exact formal localization input is specified in the supplier contract.
 
@@ -840,7 +853,7 @@ The nonreduced locus is nowhere dense; this includes reduced spaces. A countable
 
 One proof route is as follows. Quasi-compact case (Temkin Theorem 5.2.2): cover X by finitely many affinoids X_i = Spa(A_i) and the pairwise intersections by affinoids X_ijk; A_i, A_ijk are excellent and A_i → A_ijk are regular (§0.5). Apply the supplied functorial scheme resolution, including its generically reduced extension, to Spec A_i. Analytify the centre ideals to obtain rigid blow-up sequences. Regular-morphism functoriality identifies them on affinoid overlaps, and disjoint-union synchronization identifies the ordering and the empty stages. Regularity transfers: X_n is regular at classical points iff the algebraic X_n is regular at closed points (same completions), and regular = smooth in characteristic 0 (§2.2). Non-compact case (Temkin Theorem 5.3.2): saturate with empty blow-ups indexed by the countable set of invariants; the hypersequences of the affinoid charts agree on overlaps and glue to a countable blow-up hypersequence whose limit X_∞ → X is a single proper morphism. Functoriality for smooth X′ → X: affinoid charts of X′ map by smooth, hence regular, ring maps to those of X (§0.5). For a complete isometric extension K′/K in characteristic zero, prove separately that A → A ⊗̂_K K′ is a regular ring map. Use the completed local descriptions and the separability of all field extensions in characteristic zero; geometric regularity must be tested after finite residue-field extensions. Apply regular functoriality to compare the analytified towers. Flatness alone supplies no such conclusion.
 
-*Needs:* §5.1; §0.5; §5.2; §2.1; §2.2; RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.5; RigidAnalyticGeometry §§6.2, 8.3; AdicSpacesPartII R1.1, R1.7; ResolutionOfSingularitiesCharacteristicZero §§7.1, 7.5–7.8 and its generically reduced contract.
+*Needs:* §5.1; §0.5; §5.2; §2.1; §2.2; RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.5; RigidAnalyticGeometry §§6.2, 8.3; AdicSpacesPartII R1.1, R1.7; ResolutionOfSingularitiesCharacteristicZero §§7.1, 7.5–7.8; gap:generically-reduced-functorial-resolution for generically reduced charts; gap:countable-resolution-invariants for synchronization on non-quasi-compact reduced spaces.
 
 **Checks.**
 
@@ -849,7 +862,7 @@ One proof route is as follows. Quasi-compact case (Temkin Theorem 5.2.2): cover 
 
 ### 5.4 Properties of the resolution used by Howe–Klevdal
 
-Prove: For the resolution π : S̃ → S of any reduced rigid space over a characteristic-zero K, π is proper and surjective, S̃ is smooth, and π⁻¹(S^sm) → S^sm is an isomorphism between dense Zariski open subspaces. If S is irreducible, S̃ is connected and hence irreducible. For an arbitrary rigid T, resolving T_red gives a proper surjection onto T with the same underlying points, including when T is a fibre product of resolutions. The diamond and v-cover interpretations of these geometric facts are downstream consequences. (TEMKIN12 line 1563, Theorem 5.3.2, p. 34; HK2 line 1598, §5.3, p. 35, and line 2707, §9.3, p. 60.)
+Prove: For the resolution π : S̃ → S of any reduced rigid space over a characteristic-zero K, π is proper and surjective, S̃ is smooth, and π⁻¹(S^sm) → S^sm is an isomorphism between dense Zariski open subspaces. If S is irreducible, S̃ is connected and hence irreducible. For an arbitrary rigid T, resolving T_red gives a proper surjection onto T with the same underlying points, including when T is a fibre product of resolutions. The diamond and v-cover interpretations of these geometric facts are downstream consequences. (TEMKIN12 line 1563, Theorem 5.3.2, p. 34; HK2 line 1598, §5.3, p. 35, and line 2708, §9.3, p. 60.)
 
 No geometric irreducibility is assumed. Apply the resolution theorem to the reduction when a fibre product has nilpotents.
 
@@ -870,7 +883,7 @@ Blow up the bidisc in (X,Y). In the X-chart write Y = XU; on the exceptional set
 
 ### Dependencies
 
-Layers 0–2; relative analytification and proper analytic projective space; supplied scheme blow-ups and scheme resolution, including the explicit generically reduced gap; regularity of affinoid restrictions and completed scalar extension. Connectedness of a resolution uses §1.8. No diamond comparison is used in constructing it.
+Layers 0–2; relative analytification and proper analytic projective space; supplied scheme blow-ups and scheme resolution, including gap:generically-reduced-functorial-resolution and gap:countable-resolution-invariants; regularity of affinoid restrictions and completed scalar extension. Connectedness of a resolution uses §1.8. No diamond comparison is used in constructing it.
 
 ## Layer 6: Analytic manifolds, constant rank and identities
 
@@ -902,7 +915,7 @@ One proof route is as follows. Near x, V is étale over a polydisc (AdicSpacesPa
 
 **Checks.**
 
-- For V = G_m^an and x = 1, the discs {|T − 1| ≤ |c|} are neighbourhoods isomorphic to closed discs; for the cusp at the origin no neighbourhood is a disc (not smooth there).
+- For V = G_m^an and x = 1, the discs {|T − 1| ≤ |c|}, for 0 < |c| < 1, are neighbourhoods isomorphic to closed discs. Over ℚ_p, taking c = p gives |c| = 1/p and |T| = 1 throughout the disc, so it lies in G_m^an; at radius 1 it contains T = 0 and fails. For the cusp at the origin no neighbourhood is a disc (not smooth there).
 - For dimension zero and a rational point, the neighbourhood is Spa F itself. At a non-rational classical point with residue L ≠ F, a pointed F-polydisc chart would force residue F; base change to L is required.
 
 ### 6.3 The analytic manifold of rational points of a smooth rigid space
@@ -941,7 +954,7 @@ G is a smooth finite-type affine algebraic group over E, H is a closed subgroup,
 
 One proof route is as follows. Smooth f: df_x is surjective at rational x by the differential criterion (AdicSpacesPartII R0.15–R0.17: f^*Ω_W → Ω_V split injective near x), so T_x f_F = df_x is surjective (§6.3). Constant rank n = dim W on V(F), so the constant rank theorem gives a projection in charts (§6.1). For y ∈ (G/H)(F), choose a faithfully flat field extension F′/F over which y lifts to g_0 ∈ G(F′). After this extension the algebraic orbit morphism is the quotient `G_(F')` → `(G/H)_(F')` composed with right translation by g_0. In characteristic zero H is smooth, so this is a smooth H-torsor. Smoothness descends to F; analytify and apply the first part. Surjectivity on F-points of G → G/H is not assumed.
 
-*Needs:* §6.3; §6.1; AdicSpacesPartII R0.15–R0.17; RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.2–R1.6; ReductiveGroups Layer 3 and its smooth-quotient contract; `Manifold.IsSubmersionAt`.
+*Needs:* §6.3; §6.1; AdicSpacesPartII R0.15–R0.17; RigidAnalyticGeometry §8.1; AdicSpacesPartII R1.2–R1.6; ReductiveGroups Layer 3; gap:represented-smooth-homogeneous-quotient; `Manifold.IsSubmersionAt`.
 
 **Checks.**
 
@@ -992,12 +1005,12 @@ For a rank-one point x of the disc, let s(x) = trdeg over K̃ of H(x)̃. At the 
 
 All locators use the versions recorded in sources.toml. Statements above are in the roadmap author's words. The numbered-source line references locate the supporting theorem or proof in the legal extraction; they are not copied passages.
 
-- HK2: Sean Howe and Christian Klevdal, *Admissible pairs and p-adic Hodge structures II: the bi-analytic Ax–Lindemann theorem*, [arXiv:2308.11064v2](https://arxiv.org/abs/2308.11064v2), §§1.1, 2.2, 5.3, 9.2–9.3. All theorem numbers and pp. 5, 15–16, 35, 56–60 refer to v2, rather than the differently numbered published version.
+- HK2: Sean Howe and Christian Klevdal, *Admissible pairs and p-adic Hodge structures II: the bi-analytic Ax–Lindemann theorem*, [arXiv:2308.11064v2](https://arxiv.org/abs/2308.11064v2), §§1.1, 2.2, 5.0, 5.3, 9.2–9.3. All theorem numbers and pp. 5, 15–16, 32, 35, 56–60 refer to v2, rather than the differently numbered published version.
 - CONRAD99: Brian Conrad, *Irreducible components of rigid spaces*, [author copy](https://virtualmath1.stanford.edu/~conrad/papers/irredpaper.pdf), Ann. Inst. Fourier 49 (1999), 473–541, §§1.1–2.3 and 3.3; author-copy pagination.
 - CONRAD06: Brian Conrad, *Relative ampleness in rigid-analytic geometry*, [open published text](https://www.numdam.org/item/AIF_2006__56_4_1049_0.pdf), Ann. Inst. Fourier 56 (2006), 1049–1126, Definition 4.1.1 and following properties, pp. 1096–1097.
 - ANDRE74: Michel André, *Localisation de la lissité formelle*, [publisher locator](https://doi.org/10.1007/BF01168230), Manuscripta Math. 13 (1974), 297–307. This paywalled reference is uncertified; TEMKIN12 lines 734–745 identifies the localization theorem and the local criterion used here.
 - CONRAD10: Brian Conrad, *Moishezon spaces in rigid geometry*, [author version dated 1 August 2010](https://virtualmath1.stanford.edu/~conrad/papers/moish.pdf), §2.1, Theorem 2.1.1 and Lemma 2.1.3, pp. 4–5.
-- BH22: Bhargav Bhatt and David Hansen, *The six functors for Zariski-constructible sheaves in rigid geometry*, [arXiv:2101.09759v2](https://arxiv.org/abs/2101.09759v2), §2.1, pp. 6–8; Compos. Math. 158 (2022), 437–482. All numbering is v2.
+- BH22: Bhargav Bhatt and David Hansen, *The six functors for Zariski-constructible sheaves in rigid geometry*, [arXiv:2101.09759v2](https://arxiv.org/abs/2101.09759v2), §2.1, pp. 6–8, and proof of Theorem 2.29, p. 13; Compos. Math. 158 (2022), 437–482. All numbering is v2.
 - TEMKIN12: Michael Temkin, *Functorial desingularization of quasi-excellent schemes in characteristic zero: the nonembedded case*, [arXiv:0904.1592v2](https://arxiv.org/abs/0904.1592v2), §§1.2, 2.2–2.3, 5.2–5.3, pp. 3, 10–14, 32–34; Duke Math. J. 161 (2012), 2207–2254. All numbering is v2.
-- POINEAU13: Jérôme Poineau, *Les espaces de Berkovich sont angéliques*, [open published text](https://www.numdam.org/article/BSMF_2013__141_2_267_0.pdf), Bull. Soc. Math. France 141 (2013), 267–297, §4, pp. 283–288.
+- POINEAU13: Jérôme Poineau, *Les espaces de Berkovich sont angéliques*, [open published text](https://www.numdam.org/article/BSMF_2013__141_2_267_0.pdf), Bull. Soc. Math. France 141 (2013), 267–297, Notations, p. 271, and §4, pp. 283–288.
 - SCHNEIDER11: Peter Schneider, *p-Adic Lie Groups*, [Springer 2011](https://doi.org/10.1007/978-3-642-21147-8), §§5–9, pp. 33–61. This paywalled reference is uncertified and is cited only by its specified locators; the inverse-function interface itself is pinned Mathlib.

@@ -8,7 +8,7 @@ title = "Admissible pairs and p-adic Hodge structures II: The bi-analytic Ax-Lin
 year = 2023
 arxiv = "2308.11064v2"
 locator_scheme = "section"
-locator = "arXiv v2: §§1.1, 2.2, 5.3, 9.2–9.3"
+locator = "arXiv v2: §§1.1, 2.2, 5.0 (Example 5.0.5, p. 32), 5.3, 9.2–9.3"
 url = "https://arxiv.org/abs/2308.11064v2"
 fetched_from = "https://arxiv.org/pdf/2308.11064v2"
 fetched_at = "2026-10-24T05:12:12Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "All numbering and page locators are those of arXiv v2, not an independently verified published numbering."
-cited_for = ["Layers 0, 3, 5, 6"]
+cited_for = ["Layers 0–6"]
 
 [[source]]
 id = "CONRAD99"
@@ -42,7 +42,7 @@ title = "The six functors for Zariski-constructible sheaves in rigid geometry"
 year = 2021
 arxiv = "2101.09759v2"
 locator_scheme = "theorem"
-locator = "arXiv v2: §2.1, Propositions 2.2, 2.9 and Corollary 2.10; Lemma 2.16"
+locator = "arXiv v2: §2.1, Propositions 2.2, 2.9 and Corollary 2.10; Lemma 2.16; proof of Theorem 2.29, p. 13"
 url = "https://arxiv.org/abs/2101.09759v2"
 fetched_from = "https://arxiv.org/pdf/2101.09759v2"
 fetched_at = "2026-10-24T05:13:01Z"
@@ -51,7 +51,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "All numbering and page locators are those of arXiv v2, not an independently verified published numbering."
-cited_for = ["Layers 0, 2, 4"]
+cited_for = ["Layers 0, 2, 3, 4"]
 
 [[source]]
 id = "TEMKIN12"

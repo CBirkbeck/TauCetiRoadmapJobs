@@ -14,6 +14,10 @@ resolution, polydisc neighbourhoods and rational-point manifolds and submersions
 statable at the pins: the shared rigid-space, affinoid-algebra, coherent-ideal and analytic
 morphism carriers are roadmap targets.
 
+Connectedness of the resolution of an irreducible space and the group form of subfield
+detection on G(C) are not statable: they need the rigid-space and rational-point-manifold
+carriers, respectively.
+
 Gauss-point closure, constant rank on native finite-dimensional analytic manifolds and subfield
 detection of analytic germs use native carriers below. The rigid-space application of constant
 rank needs the missing rational-point atlas.

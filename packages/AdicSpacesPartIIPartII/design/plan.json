@@ -3835,7 +3835,13 @@
   },
   {
     "slug": "generically-reduced-functorial-resolution",
-    "needs": "Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps; for both the reduced and generically reduced functors, provide a common countable ordered set of invariant values for synchronization.",
+    "needs": "Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps, with invariant values in a countable ordered set.",
+    "supplier": "ResolutionOfSingularitiesCharacteristicZero",
+    "section": "7.5–7.6"
+  },
+  {
+    "slug": "countable-resolution-invariants",
+    "needs": "Provide a countable totally ordered set of invariant values labelling the steps of the §§7.5–7.6 reduced resolution functor, compatibly with pullback along regular morphisms after deleting empty steps.",
     "supplier": "ResolutionOfSingularitiesCharacteristicZero",
     "section": "7.5–7.6"
   },
