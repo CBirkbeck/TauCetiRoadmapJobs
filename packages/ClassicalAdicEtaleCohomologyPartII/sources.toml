@@ -51,7 +51,7 @@ sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Layer 6"]
+cited_for = ["Scope and ownership; HodgeTateAndCanonicalSubgroups §7.6 contract"]
 
 [[source]]
 id = "BH"
@@ -101,7 +101,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v2"
-cited_for = ["§4.7; Exact supplier contracts, valuation-models"]
+cited_for = ["§4.7; Exact supplier contracts, polystable-uniformization-zigzag"]
 
 [[source]]
 id = "PS"
@@ -139,3 +139,23 @@ status = "certified"
 accessed = "2026-10-23"
 cited_for = ["§7.2; Exact supplier contracts, finite-branched-covers"]
 version_note = "The cited version is the institutional February 25, 2019 preprint; its Theorems 1.6, 1.8 and 1.10(ii) match the uses in BH Proposition 3.7; arXiv v1 is the earlier Artin vanishing in rigid analytic geometry and has different numbering."
+
+[[source]]
+id = "FQ"
+authors = "Bogdan Zavyalov"
+title = "Quotients Of Admissible Formal Schemes and Adic Spaces by Finite Groups"
+year = 2021
+venue = "Alg. Number Th. 18 (2024) 409-475"
+doi = "10.2140/ant.2024.18.409"
+arxiv = "2102.02762v2"
+locator_scheme = "theorem"
+locator = "Remark 3.3.3; Theorems 3.3.4 and 4.4.1, pp.17–18,29–30"
+url = "https://arxiv.org/abs/2102.02762v2"
+fetched_from = "https://arxiv.org/pdf/2102.02762v2"
+fetched_at = "2026-10-25T01:23:59Z"
+sha256 = "0a92429ff3683ebcc01bc61c307a9f43305519eaf0be85db77d5c18d96ed61ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2, 7 June 2023; theorem and page locators use this version"
+cited_for = ["Exact supplier contracts, finite-formal-quotients"]

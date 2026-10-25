@@ -4322,61 +4322,85 @@
     }
   ],
   "gaps": [
-  {
-    "slug": "valuation-models",
-    "needs": "Supply reduced cofinal admissible models over complete rank-one valuation rings, refined Elkik algebraization, finite formal quotients with quasiprojective residue fibre, the reduced quotient and polystable rig-isomorphism zigzag of Z Theorem 4.4.1 and U Theorem 1.4, and the reduced power-bounded base-change theorem used in SW Lemma 10.5.9.",
-    "supplier": "AdicSpacesPartIII",
-    "section": "R2.2–R2.8"
-  },
-  {
-    "slug": "finite-branched-covers",
-    "needs": "For a normal characteristic-zero rigid space and a nowhere dense Zariski closed subset, restriction identifies finite normal branched covers étale off that subset with finite étale covers of its complement, naturally under restriction.",
-    "supplier": "AdicSpacesPartIIPartII",
-    "section": "RZ.1"
-  },
-  {
-    "slug": "proper-generic-smoothness",
-    "needs": "Supply weakly Shilov generic flatness and smooth-fibre criteria yielding a dense Zariski open U of a reduced target Y over which every proper map X→Y with smooth source in characteristic zero is smooth.",
-    "supplier": "AdicSpacesPartIIPartII",
-    "section": "RZ.2 and RZ.4"
-  },
-  {
-    "slug": "valuation-coherent-duality",
-    "needs": "Extend coherent upper shriek to separated finitely presented schemes over universally coherent valuation quotients O_K/pⁿ, with finite-presentation compactification, proper adjunction, flat base change, amplitude [−d,0] for flat finitely presented maps with fibres of dimension at most d, flat canonical bottom sheaf and canonical-sheaf reflexivity for geometrically reduced residue fibre.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "2.19–2.21"
-  },
-  {
-    "slug": "valuation-properness",
-    "needs": "Supply the valuation-base finite-presentation and valuative properness criterion used to turn the strictly contained chart restriction in SW Lemma 10.5.8 into a factorization through a finitely presented module.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "0.8–0.9"
-  },
-  {
-    "slug": "proper-hyperdescent",
-    "needs": "Supply the enhanced realization and finite-degree truncation of proper cohomological hyperdescent for torsion étale complexes on rigid spaces, sufficient to compare a fixed cohomological degree with finitely many levels of a proper resolution hypercover.",
-    "supplier": "EnhancedDerivedSheaves",
-    "section": "0.3–0.4"
-  },
-  {
-    "slug": "general-nearby-coherence",
-    "needs": "Supply the general admissible-model almost coherent nearby-cycle theorem, its derived p-completeness, reduction, amplitude [0,d] and étale base change for d-dimensional generic fibre, as in AC Theorems 6.13.5–6.13.6.",
-    "supplier": "PadicHodgeTheory",
-    "section": "2.1–2.7"
-  },
-  {
-    "slug": "integral-toric-field-extension",
-    "needs": "For complete algebraically closed C′/C/ℚ_p and an affinoid perfectoid toric cover A_∞, supply the almost isomorphism from A_∞° completed-tensored over O_C with O_C′ to the power-bounded ring of its generic scalar extension, with the finite Koszul cochain comparison for arbitrary affinoid charts.",
-    "supplier": "PadicHodgeTheory",
-    "section": "2.1–2.7"
-  },
-  {
-    "slug": "quasi-excellent-direct-images",
-    "needs": "For a finite-type morphism of quasi-excellent Noetherian schemes and finite coefficients annihilated by an integer invertible on the target, derived direct image carries bounded constructible complexes to bounded constructible complexes, including nonproper morphisms.",
-    "supplier": "EtaleCohomologyFoundations",
-    "section": "F.3"
-  }
-],
+    {
+      "slug": "reduced-model-cofinality",
+      "needs": "For a complete rank-one valuation ring O_K with algebraically closed fraction field K, the generic-fibre functor from qcqs admissible formal O_K-schemes with reduced residue special fibre, localized at rig-isomorphisms, is an equivalence with qcqs reduced rigid K-spaces, so these models are cofinal among admissible models of each qcqs reduced rigid K-space.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "R2.2–R2.8"
+    },
+    {
+      "slug": "refined-formal-algebraization",
+      "needs": "For a complete rank-one valuation ring O_K and an admissible affine formal scheme Spf B with smooth pure-d generic fibre, there is a flat finitely presented O_K-algebra A with completion B, smooth generic fibre and pure relative dimension d.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "F0.8 and R2.8"
+    },
+    {
+      "slug": "finite-formal-quotients",
+      "needs": "For a qcqs admissible formal O_K-scheme with quasiprojective residue special fibre over a complete rank-one valuation ring and an action of a finite group G, the geometric formal quotient exists, is admissible, and its quotient map is finite, with generic fibre the geometric G-quotient.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "R2.2–R2.8"
+    },
+    {
+      "slug": "polystable-uniformization-zigzag",
+      "needs": "For a qcqs admissible formal O_C-scheme with smooth generic fibre over complete algebraically closed C, a finite zigzag of Zariski covers and rig-isomorphisms yields finite formal quotients whose generic maps are G-torsors and whose sources admit polystable rig-isomorphisms, with every model in the zigzag having reduced quasiprojective residue special fibre.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "R2.2–R2.8"
+    },
+    {
+      "slug": "finite-branched-covers",
+      "needs": "For a normal characteristic-zero rigid space and a nowhere dense Zariski closed subset, restriction identifies finite normal branched covers étale off that subset with finite étale covers of its complement, naturally under restriction.",
+      "supplier": "AdicSpacesPartIIPartII",
+      "section": "RZ.1"
+    },
+    {
+      "slug": "proper-generic-smoothness",
+      "needs": "For each proper map f:X→Y of rigid spaces over a characteristic-zero complete nonarchimedean field, with X smooth and Y reduced, the maximal open S_f⊂Y over which f is smooth is dense and Zariski open, using weakly Shilov generic flatness and smooth-fibre criteria.",
+      "supplier": "AdicSpacesPartIIPartII",
+      "section": "RZ.2 and RZ.4"
+    },
+    {
+      "slug": "valuation-upper-shriek",
+      "needs": "For a qcqs universally coherent base S, including Spec(O_K/pⁿ) for a rank-one valuation ring O_K and n≥1, coherent upper shriek on separated finitely presented S-schemes is a pseudofunctor on bounded-below quasi-coherent complexes, right adjoint to proper pushforward and compatible with flat base change and the smooth formula f!B≅f*B⊗Ωᵈ[d] for smooth pure-d f.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.19–2.21"
+    },
+    {
+      "slug": "valuation-duality-amplitude",
+      "needs": "For a flat separated finitely presented map f:X→S with S qcqs universally coherent and fibres of dimension at most d, f!O_S is coherent of cohomological and S-relative Tor amplitude [−d,0].",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.19–2.21"
+    },
+    {
+      "slug": "valuation-canonical-reflexivity",
+      "needs": "For a separated flat finitely presented pure-d scheme X over a rank-one valuation ring O_K, with smooth generic fibre and geometrically reduced residue special fibre, the canonical bottom sheaf H⁻ᵈ(f!O_K) is reflexive.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.6 and 2.19–2.21"
+    },
+    {
+      "slug": "connective-totalization-truncation",
+      "needs": "For every i≥0 and every cosimplicial object K:Δ→D^{≥0} of a module-derived category, restriction to Δ_{≤i+1} induces an isomorphism on Hⁱ of its homotopy totalization, naturally in K.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "0.3–0.4"
+    },
+    {
+      "slug": "general-nearby-coherence",
+      "needs": "Supply the general admissible-model almost coherent nearby-cycle theorem, its derived p-completeness, reduction, amplitude [0,d] and étale base change for d-dimensional generic fibre, as in AC Theorems 6.13.5–6.13.6.",
+      "supplier": "PadicHodgeTheory",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "integral-toric-field-extension",
+      "needs": "For complete algebraically closed C′/C/ℚ_p, a smooth C-affinoid with an étale map to a torus and its pulled-back perfectoid toric tower A_∞, the canonical map A_∞°⊗̂_{O_C}O_C′→(A_∞⊗̂_C C′)° is an almost isomorphism, compatible with the finite Koszul cochains.",
+      "supplier": "PadicHodgeTheory",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "quasi-excellent-direct-images",
+      "needs": "For a finite-type morphism of quasi-excellent Noetherian schemes and finite coefficients annihilated by an integer invertible on the target, derived direct image carries bounded constructible complexes to bounded constructible complexes, including nonproper morphisms.",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.3"
+    }
+  ],
   "sourceIssues": [
     {
       "id": "ClassicalAdicEtaleCohomologyPartII/E1",
