@@ -2361,7 +2361,7 @@
     },
     {
       "slug": "topological-symplectic-hodge",
-      "needs": "Provide the ku/KU realization of the unitary model, tangent-normalized primitive Chern-character pairing, integral lifts for m<p and coefficient-Bockstein compatibility.",
+      "needs": "Provide the ku/KU realization of the unitary model, tangent-normalized primitive Chern-character pairing with bott=−β_Top and bott^m=(−1)^mβ_Top^m, integral lifts for m<p and coefficient-Bockstein compatibility.",
       "supplier": "GeneralizedCohomology",
       "section": "G5.4–G5.6"
     },
@@ -2448,6 +2448,12 @@
       "needs": "Extend §6.11’s top-degree corestriction descent to the full cover K_q/ℚ at every integer twist t, giving H²_et(O′_q,μ_q^(⊗t))_(Gal(K_q/ℚ))≅H²_et(ℤ[1/p],μ_q^(⊗t)) by corestriction.",
       "supplier": "ArithmeticKTheory",
       "section": "§6.11"
+    },
+    {
+      "slug": "classical-symplectic-plus",
+      "needs": "Identify the group completion of finite free unimodular alternating ℤ-forms under orthogonal sum with a space having component group ℤ by half-rank and identity component BSp∞(ℤ)⁺ at the stable perfect commutator, naturally for the forgetful and hyperbolic maps.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "§4.27"
     }
   ],
   "requests": [
