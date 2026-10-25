@@ -139,7 +139,7 @@ Layer 2, “coherent curve theory, duality, and positivity”, supplies coherent
 
 Section 5.5 supplies a proper surjective resolution of a reduced finite-type scheme over a characteristic-zero field by a smooth scheme, isomorphic over the regular locus. The characteristic-zero derived argument also consumes the vanishing extension specified below.
 
-What ResolutionOfSingularitiesCharacteristicZero must provide (gap:grauert-riemenschneider): For a proper birational morphism ρ:Y→X of varieties over a characteristic-zero field, with Y smooth, supply Grauert–Riemenschneider vanishing Rⁱρ_*ω_Y=0 for i>0 (KOVACS00, main ingredients, p.188; KOVACS00 line 89). The unit, field-extension, localization and duality applications belong to §7.7.
+What ResolutionOfSingularitiesCharacteristicZero must provide (gap:grauert-riemenschneider): For a proper birational morphism ρ:Y→X of varieties over a characteristic-zero field, with Y smooth, supply Grauert–Riemenschneider vanishing Rⁱρ_*ω_Y=0 for i>0 (KOVACS00, main ingredients, GR vanishing, p.189; KOVACS00 line 89). The unit, field-extension, localization and duality applications belong to §7.7.
 
 ## How to read the build
 
@@ -178,11 +178,9 @@ The interface has the following laws.
 - R → R[X] is split by evaluation at 0.
 - The identity R → R is split, and so is R → R × R by the first projection.
 - ℤ → ℤ[i] is split: the coefficient of 1 in the basis {1, i} is a ℤ-linear retraction.
-- For a field K, K[x, y]/(xy) → K[x] × K[y] is injective and finite but not split; a definition requiring only injectivity of R → S fails this test.
 - ℤ → ℚ is injective and flat but not split: Hom_ℤ(ℚ, ℤ) = 0.
-- If S is finitely presented as an R-module, S is split over R iff R → S is pure in the sense of PerfectoidSpacesPartII §RA.5 (pure map).
 - For K a field, K → L splits for every nonzero K-algebra L (extend 1 to a basis).
-- For R = K[x, y]/(xy) and its normalisation S = K[x] × K[y], R → S is finite and injective but not split (André B §0.2): its splitting would make R → S pure, but the ideal (x + y) of R is not contracted from S.
+- For R = K[x, y]/(xy) and its normalisation S = K[x] × K[y], R → S is finite and injective but not split (André B §0.2): its splitting would make R → S pure, but the ideal (x + y) of R is not contracted from S, since x = (x + y)(1, 0) in S while x ∉ (x + y)R. A definition requiring only injectivity of R → S fails this test.
 - For R=ℝ, S=ℂ, the real-part retraction has ρ(i²)=−1 while ρ(i)²=0; requiring a ring retraction would reject a valid splitting.
 - For a field K and the zero K-algebra, any linear map sends 1=0 to 0, so the value-one condition fails.
 
@@ -194,7 +192,7 @@ The native predicate for the characteristic-p derived equivalence is `Splinter`.
 
 A commutative ring R is a splinter if it is Noetherian and reduced, and every finite injective ring map R → S (S commutative) is split in the sense of §0.1. Equivalently (R Noetherian and reduced) every integral injective ring map R → S is pure (PerfectoidSpacesPartII §RA.5 (pure map)), since an integral extension is the filtered union of its finite subalgebras.
 
-(BMPSTWW, Definition 2.12 and the following paragraph, p. 15; BMPSTWW line 672; BHATT12, Definition 0.1 and Example 1.1, pp. 1–2; BHATT12 line 91; ANDRE18B, Conjecture 0.1.1 (proved in the paper), p. 71; ANDRE18B line 27.)
+(BMPSTWW, Definition 2.12 and the following paragraph, p. 15; BMPSTWW line 672; BHATT12, Definition 0.1, p. 1; BHATT12 line 20; BHATT12, Example 1.1, pp. 2–3; BHATT12 line 91; ANDRE18B, Conjecture 0.1.1 (proved in the paper), p. 71; ANDRE18B line 27.)
 
 The convention follows Bhatt–Ma–Patakfalvi–Schwede–Tucker–Waldron–Witaszek, Definition 2.12. Bhatt 2012 Definition 0.1 instead asks splitting of O_S → f_*O_X for every finite surjective f : X → Spec S; for Noetherian rings the two agree once R is reduced, and the scheme version forces reducedness (apply it to R_red → R).
 
@@ -217,10 +215,9 @@ The interface has the following laws.
 - A field K is a splinter.
 - ℤ is a splinter: a finite injective ℤ → S splits because the image of 1 in S modulo torsion is primitive (an element s with ns ≡ 1 would make 1/n integral over ℤ).
 - k[ε]/(ε²) is not a splinter because it is not reduced, although every finite injective map out of it splits (it is self-injective); a definition without reducedness fails this test.
-- K[x, y]/(xy) is reduced but not a splinter: its normalisation does not split.
+- K[x, y]/(xy) is reduced but not a splinter: its normalisation S = K[x] × K[y] is finite and injective but does not split, since x = (x, 0) = (x, y)(1, 0) lies in (x + y)S while x ∉ (x + y)R (the constant coefficient of a multiplier would have to be both 1 and 0). A definition requiring only reducedness fails this test.
 - K[t², t³] is not a splinter: K[t²,t³] → K[t] is finite and injective but the quotient is torsion of generic rank 0 and nonzero, so no splitting exists.
 - A Noetherian domain containing ℚ is a splinter iff it is integrally closed (Mathlib IsIntegrallyClosed).
-- For the node, x=(x,0) lies in (x+y)S since (x,0)=(x,y)(1,0), while x∉(x+y)R: its two required constant coefficients would be 1 and 0.
 
 *Needs:* §0.1; PerfectoidSpacesPartII §RA.5 (pure map); Mathlib `IsNoetherianRing`; Mathlib `IsReduced`; Mathlib `Algebra.IsIntegral`.
 
@@ -257,7 +254,6 @@ The interface has the following laws.
 - If dim R = 0 then M is big Cohen–Macaulay iff M ≠ mM; for R a field, iff M ≠ 0.
 - Over R = ℤ_(p) with x = (p), the module ℚ is not big Cohen–Macaulay: p is a nonzerodivisor on ℚ but ℚ = pℚ. A definition requiring only weak regularity fails this test.
 - R = K⟦X, Y⟧/(XY, Y²) has dimension 1 and depth 0 (Y is killed by the maximal ideal), so R is not big Cohen–Macaulay over itself for the system of parameters (X).
-- For a system of parameters x, big Cohen–Macaulayness of M for x ↔ RingTheory.Sequence.IsRegular M x (Mathlib).
 - A regular local ring is big Cohen–Macaulay over itself for a regular system of parameters.
 - For M=0, every scalar action on the zero module is injective, but M/mM=0; the nonzero quotient clause excludes it.
 
@@ -292,7 +288,6 @@ The interface has the following laws.
 - Over a field every nonzero module is balanced big Cohen–Macaulay.
 - A nonzero finitely generated module is balanced big Cohen–Macaulay iff it is big Cohen–Macaulay iff it is maximal Cohen–Macaulay (depth = dim R).
 - Let R be regular local of positive dimension and x₁ the first member of a regular system of parameters. The nonzero finite module R/x₁R has depth dim R − 1, so it is neither big nor balanced big Cohen–Macaulay over R. In particular the system of parameters beginning with x₁ fails weak regularity.
-- Over a regular local ring a balanced big Cohen–Macaulay algebra is faithfully flat (§0.6).
 - For R=k⟦X⟧ and M=R/(X), X kills 1≠0, so the balanced condition fails although M is a nonzero finite module.
 
 *Needs:* §0.3; DeformationAndDerivedPatchingAlgebraPartII §K0.3 (gap:parameter-systems).
@@ -359,11 +354,9 @@ The interface has the following laws.
 
 **Checks.**
 
-- For a finite injective A-algebra B, the unit obstruction vanishes exactly when the algebra splits.
 - For u = id_A the cone is 0 and the obstruction is 0.
 - For A = K[t², t³] and B = K[t], B/A ≅ K (spanned by t) and the obstruction is a nonzero element of Ext¹_A(K, A); a definition through Hom instead of Ext¹ would give 0.
 - For the module map 2 : ℤ → ℤ (not an algebra unit), the class of 0 → ℤ → ℤ → ℤ/2 → 0 is the generator of Ext¹_ℤ(ℤ/2, ℤ) = ℤ/2: injectivity of u does not make α vanish.
-- For flat A → A′ and pseudo-coherent cone, the obstruction of u ⊗ A′ is the image of α_u under `Hom_{D(A)}`(Q, A[1]) ⊗_A A′ ≅ `Hom_{D(A′)}`(Q ⊗ A′, A′[1]).
 - For a finite free A-algebra B of positive rank, 1 is primitive at every maximal ideal by Nakayama; the quotient B/A is finite locally free, hence projective. Thus its Ext¹ obstruction is zero. For ℤ ⊆ ℤ[i], B/A is free on the class of i. The zero A-algebra over nonzero A has rank zero and no such conclusion.
 
 *Needs:* EnhancedDerivedSheaves §E1.8, splitting obstructions; §0.1; Mathlib `DerivedCategory`; Mathlib `CategoryTheory.Abelian.Ext`; DerivedModuleAlgebra §1.E.0; DeformationAndDerivedPatchingAlgebra §1.15.
@@ -391,7 +384,7 @@ A proof route is the following. Localise: splitting of a finite algebra over a N
 
 Let R be a Noetherian integrally closed domain and S a domain containing R and finite over R, with d = [Frac(S) : Frac(R)]. If d is a unit in R, then d⁻¹·`Tr_{Frac(S)/Frac(R)}` restricts to an R-linear splitting S → R. Consequently every Noetherian normal domain containing ℚ is a splinter, and every Noetherian regular ring containing ℚ is a splinter (§0.2).
 
-(ANDRE18B, §0.2, first paragraph, p. 72; ANDRE18B line 54; BHATT12, Example 1.1, pp. 1–2; BHATT12 line 91.)
+(ANDRE18B, §0.2, first paragraph, p. 72; ANDRE18B line 54; BHATT12, Example 1.1, pp. 2–3; BHATT12 line 91.)
 
 The characteristic-zero statement uses the domain reduction of §0.8 (a regular local ring is a normal domain) and the fact that a splitting of A → B/𝔮 splits A → B.
 
@@ -485,7 +478,7 @@ The target directSummand_charP is specified here in prose.
 
 Every Noetherian regular ring of characteristic p > 0 is a splinter (§0.2).
 
-(ANDRE18B, Annexe A.3, Applications, p. 91; ANDRE18B line 928; ANDRE18B, §0.2, second paragraph, p. 72; ANDRE18B line 54; BHATT12, Example 1.3, pp. 2–3; BHATT12 line 114.)
+(ANDRE18B, Annexe A.3, Applications, p. 91; ANDRE18B line 928; ANDRE18B, §0.2, second paragraph, p. 72; ANDRE18B line 54; BHATT12, Example 1.3, p. 3; BHATT12 line 114.)
 
 The proof uses the reductions of §0.8 with a perfect residue field.
 
@@ -667,8 +660,7 @@ A proof route is the following. Since g | pⁿ in A∞⟨pⁿ/g⟩, the algebra 
 
 **Checks.**
 
-- For g = 1 the annular tower is constant and the statement is the almost splitting of Faltings' almost purity case (André B §0.4).
-- For g=1 the annulus has the equation U=pⁿ and its integral model is A∞ itself; the comparison is the identity.
+- For g = 1 the annulus has the equation U = pⁿ, so its integral model is A∞ itself for every n, the annular tower is constant and the comparison is the identity; the statement is then the almost splitting in the case where B₀[1/p] is étale over A₀[1/p], which Faltings' almost purity already gives (André B §0.4, p. 73; ANDRE18B line 113).
 
 - For 𝔽₄=𝔽₂[ω] with ω²+ω+1=0, the field trace has Tr(1)=0 and Tr(ω)=1. The functional z↦Tr(ωz) takes 1 to 1. Thus a faithful finite étale algebra can split even when its degree is not invertible; dividing its trace by the degree is not the argument (PerfectoidSpaces §P0.12, trace pairing).
 
@@ -786,13 +778,11 @@ The interface has the following laws.
 
 - In the pointed quotient M′, the image of `u_{k+1}` equals `Σ_{j≤k}` x_j[eX_j], hence belongs to (x₁,…,x_k)M′.
 - For k=0 the quotient is M/Ru₁, with distinguished element the image of e; no arbitrary-module multiplication is used.
-- For an algebra T with x weakly regular, evaluation as above retracts T → T′. Freeness of the complement fails: for T=R=k⟦x,y⟧, k=1, relation y·0=x·0 and N=1, T′=R ⊕ (R/(x))X.
+- For an R-algebra T on which x is weakly regular, choose v_j with `u_{k+1}`=Σ x_jv_j; polynomial evaluation X_j↦v_j is an R-linear retraction of the partial modification back to T. This assertion is not made for an arbitrary pointed module. The complement need not be free: for T=R=k⟦x,y⟧, k=1, relation y·0=x·0 and N=1, T′=R ⊕ (R/(x))X.
 - For R = K⟦X, Y⟧/(XY, Y²) with system of parameters (X) and the relation X·Y = 0 (k = 0, u₁ = Y), R → R′ = R/RY kills Y ≠ 0: partial modifications need not be injective, so a definition making M′ an extension of M is wrong.
-- Take R=k⟦x⟧, T=R[t]/(xt), e=1, k=0 and u₁=t. Every partial quotient is T/Rt and retains the nonzero class of t², while the full algebra quotient T/Tt kills t². A fixed-relation N-colimit cannot be defined as the full algebra modification.
-- For an R-algebra T on which x is weakly regular, choose v_j with `u_{k+1}`=Σ x_jv_j. Polynomial evaluation X_j↦v_j is an R-linear retraction of the partial modification back to T. Its complement need not be free. This assertion is not made for an arbitrary pointed module.
+- Take R=k⟦x⟧, T=R[t]/(xt), e=1, k=0 and u₁=t. Every partial quotient is T/Rt and retains the nonzero class of t², while the full algebra quotient is T/Tt=R, in which t and t² map to zero and 1 maps to 1. A fixed-relation N-colimit cannot be defined as the full algebra modification.
 
 - For M=0 and e=0, every pointed quotient is zero and its distinguished element belongs to m·0=0, so every terminal object is bad. The no-bad-sequence condition excludes this vacuity.
-- For the full construction with R=k⟦x⟧, T=R[t]/(xt), k=0 and u₁=t, the target is T/(t)=R. Both t and t² map to zero, whereas 1 maps to 1.
 - For R=T=k⟦x,y⟧ and relation y·x=x·y, the full target is R[X]/(x−xX). Evaluation X↦1 kills x−xX and retracts the constant map.
 - For the full construction with R=T=k⟦x,y⟧ and zero relation y·0=x·0, the target is R[X]/(xX). Its class X is nonzero and xX=0; evaluation X↦0 retracts the source, but the complement has x-torsion.
 
@@ -879,7 +869,7 @@ A proof route is the following. m_A B is m_B-primary, so J ⊄ m_B D iff J ⊄ m
 
 Let (B, m_B) be a Noetherian local ring. (1) If P is a minimal prime with dim B/P = dim B, a balanced big Cohen–Macaulay B/P-algebra is a balanced big Cohen–Macaulay B-algebra. (2) A balanced big Cohen–Macaulay B̂-algebra is one for B. (3) If B is complete and p-torsion-free with residue characteristic p, then B_red is p-torsion-free and a balanced big Cohen–Macaulay B_red-algebra is one for B. (4) If B is complete of residue characteristic p with residue field k and coefficient map Λ = C(k) → B, then B′ = (B ⊗_Λ W(`k^{1/p^∞}`))^ is complete Noetherian local, faithfully flat over B with m_B B′ = `m_{B′}`, and a balanced big Cohen–Macaulay B′-algebra is one for B.
 
-(ANDRE18B, §4.2, first paragraph, p. 86; ANDRE18B line 720; ANDRE18B, §0.7, p. 75; ANDRE18B line 172.)
+(ANDRE18B, §4.2, first paragraph, p. 86; ANDRE18B line 720; ANDRE18B, §0.7, paragraph after Théorème 0.7.1, p. 75; ANDRE18B line 184.)
 
 In (1) the dimension condition matters: a system of parameters of B maps to one of B/P only when dim B/P = dim B.
 
@@ -1159,9 +1149,8 @@ The predicate `SeparableResidueMap` uses general separability of the induced res
 
 **Checks.**
 
-- André's example ℤ_p⟦T⟧ → ℤ_p⟦T, U⟧/(T² − TU + p) ≅ ℤ_p⟦T, V⟧/(TV − p) (regular of dimension 2) is covered: the target is regular, so no unramified square is needed.
+- André's example ℤ_p⟦T⟧ → ℤ_p⟦T, U⟧/(T² − TU + p) is covered: with V = U − T the relation T² − TU + p becomes p − TV, so the target is ℤ_p⟦T, V⟧/(TV − p), regular of dimension 2, and no unramified square is needed. At p = 2 the target is regular with 2 = TV ∈ m², so a condition p ∉ m² would exclude the required example.
 - Heitmann–Ma remove the separability hypothesis by a different construction; that generalisation is not a target here.
-- With V=U−T the relation T²−TU+p becomes p−TV. At p=2 the target ℤ₂⟦T,V⟧/(TV−2) is regular with 2∈m², so a condition p∉m² would exclude the required example.
 
 - The residue inclusion 𝔽₂→𝔽₂(t) is separable: t is a separating transcendence basis and the extension over 𝔽₂(t) has degree 1. Its transcendence degree is 1, so a condition requiring an algebraic residue extension would exclude it. This residue map occurs for the faithfully flat local inclusion ℤ₂→completion₂(ℤ₂[t]_(2)), where the target is a complete DVR with maximal ideal (2) and residue field 𝔽₂(t) (STACKS, Definition 10.42.1, tag 030O; STACKS line 4671; DeformationAndDerivedPatchingAlgebra §1.10).
 - The residue identity of 𝔽₂ has separable degree 1.
@@ -1243,7 +1232,7 @@ For a scheme map f:X→Y, `derivedUnit` is the map O_Y[0]→Rf_*O_X in the bound
 - On H⁰ it is the ringed-space map O_Y→f_*O_X induced by f.
 - For the identity map, the native identity comparison identifies the unit with the identity; a retraction means that composing the unit with a map back to its source gives the identity.
 
-For Y=Spec A with A Noetherian and f proper, the affine quasicoherent comparison of SchemeAndStackFoundations §2.18 and EnhancedDerivedSheaves §§E1.4, E1.8 identifies splitting of this sheaf-derived unit with splitting of A→RΓ(X,O_X) in D(A). The bounded-below inclusion is fully faithful, so it does not change the existence of the retraction. This is the formulation used by `DerivedSplinter` and the three derived-splitting headline signatures.
+For Y=Spec A with A Noetherian and f proper, the affine quasicoherent comparison of SchemeAndStackFoundations §2.18 and EnhancedDerivedSheaves §§E1.4, E1.8 identifies splitting of this sheaf-derived unit with splitting of A→RΓ(X,O_X) in D(A). The bounded-below inclusion is fully faithful, so it does not change the existence of the retraction. This is the formulation used by `DerivedSplinter` and the two derived-splitting headline signatures, `splinter_iff_derivedSplinter_charP` and `derivedDirectSummand`.
 
 Bhatt 2012, Definition 0.2, asks splitting of O_S → Rf_*O_X in D(Coh(S)) for schemes S; for affine S = Spec A this is the definition above, RΓ(X, O_X) being computed by the enhanced pushforward (EnhancedDerivedSheaves §E1.4).
 
@@ -1262,11 +1251,9 @@ The interface has the following laws.
 **Checks.**
 
 - A field K is a derived splinter: for X proper over K and nonempty, K → H⁰(X, O_X) splits as K-vector spaces and the higher cohomology is a direct summand of RΓ.
-- A reduced Noetherian derived splinter is a splinter (§0.2): take X = Spec B for B finite and injective over A.
 - The cone C = ℂ[x, y, z]/(x³ + y³ + z³) is a normal domain containing ℚ, hence a splinter, but not a derived splinter: its vertex is not a rational singularity (H¹ of the structure sheaf of the blow-up of the vertex is H¹(E, O_E) ≠ 0 for the elliptic curve E), so by Kovács the unit for a resolution does not split. A definition using only finite maps fails this test.
-- For a Noetherian 𝔽_p-algebra A, the derived-splinter property A ↔ the splinter property A (Bhatt 2012 Theorem 0.3).
 - In characteristic 0 a variety is a derived splinter iff it has rational singularities (Kovács, as recalled in Bhatt 2012 Example 1.2); in characteristic p derived splinters are exactly the splinters (Bhatt 2012 Theorem 0.3).
-- For the identity proper cover, RΓ=A and the cone is zero; allowing only finite covers would fail to distinguish the normal elliptic cone from a derived splinter.
+- For the identity proper cover, RΓ=A and the cone is zero, so the unit is its own retraction.
 - For X=Spec 𝔽₂ the structure complex has term 𝔽₂ in degree zero and zero in degrees −1 and 1; its differential is zero.
 - For X empty the structure sheaf and every term of its complex are zero, so the derived image is zero.
 - For the identity of Spec k[ε]/ε² the degree-zero term retains ε≠0 and ε²=0; replacing the structure sheaf by its reduction would give k and fail this Check.
@@ -1354,7 +1341,7 @@ The headline signature is `splinter_iff_derivedSplinter_charP`.
 
 A Noetherian 𝔽_p-algebra is a splinter if and only if it is a derived splinter (§7.1). In particular every Noetherian regular 𝔽_p-algebra is a derived splinter.
 
-(BHATT12, Theorem 0.3, p. 1, proof p. 9; Example 1.3, pp. 2–3; BHATT12 line 38; BHATT18, §1, paragraph after Theorem 1.2, p. 1; BHATT18 line 27.)
+(BHATT12, Theorem 0.3, p. 1, proof p. 9; BHATT12 line 38; BHATT12, Example 1.3, p. 3; BHATT12 line 114; BHATT18, §1, paragraph after Theorem 1.2, p. 1; BHATT18 line 27.)
 
 The 'in particular' combines this with §1.3, as Bhatt cites Bhatt 2012 Theorem 1.4 and Example 2.3 for the characteristic-p case of Theorem 1.2.
 
@@ -1373,7 +1360,7 @@ The target derivedDirectSummand_charZero is specified here in prose.
 
 Every Noetherian regular ring containing ℚ is a derived splinter (§7.1).
 
-(BHATT18, §1, paragraph after Theorem 1.2, p. 1; BHATT18 line 27; BHATT12, Example 1.2, p. 2; BHATT12 line 105; KOVACS00, Theorem 1, p. 187; Theorem 2 and proof, pp. 188–191; KOVACS00 line 11.)
+(BHATT18, §1, paragraph after Theorem 1.2, p. 1; BHATT18 line 27; BHATT12, Example 1.2, p. 3; BHATT12 line 105; KOVACS00, Theorem 1, p. 187; Theorem 2 and proof, pp. 188–191; KOVACS00 line 11.)
 
 Kovács Theorem 1, p. 187, is descent of rational singularities assuming the source already has rational singularities. Theorem 2, p. 188, gives splitting for a surjective morphism of projective complex varieties when both varieties have rational singularities. Neither theorem by itself states the arbitrary proper, arbitrary characteristic-zero-base assertion needed here.
 
@@ -1383,7 +1370,7 @@ The approximation target is the following. Given a Noetherian regular ℚ-algebr
 
 The comparison target is the following. For f:X→Spec A proper with A smooth of finite type over a characteristic-zero field k, let Q be its perfect unit cone and α:Q→A[1] its obstruction. For A′ a localization of A or A⊗_k K with K/k any field extension, identify Q⊗^L_A A′ with the new unit cone and identify `Hom_D(A)(Q,A[1]) ⊗_A A′` with `Hom_D(A′)(Q⊗^L_A A′,A′[1])`, carrying α⊗1 to the new obstruction. For a resolution ρ:Y→X, flat field base change also identifies (Rⁱρ_*ω_Y)⊗_k K with Rⁱρ_K*ω_(Y_K), using ω_(Y_K)=ω_Y⊗_k K. These are applications of §7.2 and SchemeAndStackFoundations §§2.6, 2.18, rather than additional vanishing hypotheses.
 
-A proof route is the following. After approximation, use Chow’s lemma to dominate a proper cover over the regular finite-type target by a projective cover, and resolve its reduced source with ResolutionOfSingularitiesCharacteristicZero §5.5. Smooth sources have rational singularities. Apply the supplied duality isomorphism `Rρ_* RHom_Y(F,ω_Y^•) ≅ RHom_X(Rρ_*F,ω_X^•)` and its trace for proper ρ and F in the bounded coherent category, with the structural dualizing complexes; on a smooth pure e-dimensional component, ω_Y^•=ω_Y[e] (SchemeAndStackFoundations §§2.19, 2.21). Together with Grauert–Riemenschneider vanishing this gives the rational-target derived splitting argument. Kovács Theorems 1–2 and their proofs, pp.187–191, supply the complex-variety argument with their source rationality hypotheses; BHATT12 Example 1.2, p.2, records its proper-cover interpretation. Descend the finite field of definition to a finitely generated characteristic-zero field, embed it into ℂ, and use the displayed Hom comparison and faithful flatness to descend vanishing of α. Localization uses the same cone comparison. Apply the owned limit-passage assertion to the smooth Popescu stages to obtain the retraction over R.
+A proof route is the following. After approximation, use Chow’s lemma to dominate a proper cover over the regular finite-type target by a projective cover, and resolve its reduced source with ResolutionOfSingularitiesCharacteristicZero §5.5. Smooth sources have rational singularities. Apply the supplied duality isomorphism `Rρ_* RHom_Y(F,ω_Y^•) ≅ RHom_X(Rρ_*F,ω_X^•)` and its trace for proper ρ and F in the bounded coherent category, with the structural dualizing complexes; on a smooth pure e-dimensional component, ω_Y^•=ω_Y[e] (SchemeAndStackFoundations §§2.19, 2.21). Together with Grauert–Riemenschneider vanishing this gives the rational-target derived splitting argument. Kovács Theorems 1–2 and their proofs, pp.187–191, supply the complex-variety argument with their source rationality hypotheses; BHATT12 Example 1.2, p.3, records its proper-cover interpretation. Descend the finite field of definition to a finitely generated characteristic-zero field, embed it into ℂ, and use the displayed Hom comparison and faithful flatness to descend vanishing of α. Localization uses the same cone comparison. Apply the owned limit-passage assertion to the smooth Popescu stages to obtain the retraction over R.
 
 **Checks.**
 
@@ -1410,7 +1397,8 @@ A proof route is the following. Reduce to A₀ complete regular local of one of 
 **Checks.**
 
 - For f₀ finite and A₀ → B₀ injective the theorem is the direct summand theorem §5.1.
-- For f₀ the blow-up of a regular local ring of dimension d at its maximal ideal, RΓ(X₀, O) = A₀ and the splitting is trivial; for alterations of regular schemes it says coherent cohomology loses nothing.
+- For f₀ the blow-up of a regular local ring A₀ of dimension d ≥ 1 at its maximal ideal, f₀ is proper and surjective, RΓ(X₀, O) = A₀ and the splitting is trivial. For d = 1 the maximal ideal is generated by a nonzerodivisor, so the blow-up is the identity and RΓ = A₀; for d = 2 see the next Check. For alterations of regular schemes the theorem says coherent cohomology loses nothing.
+- For d = 0, that is A₀ = k a field, the maximal ideal is zero, the Rees algebra is k in degree zero and 0 in every positive degree, its Proj is empty and RΓ(∅, O) = 0. The map k → 0 has no left inverse; the blow-up is proper but not surjective, so the surjectivity hypothesis excludes it and cannot be dropped.
 - For the blow-up of Spec k⟦X,Y⟧ at (X,Y), H⁰(O)=k⟦X,Y⟧ and all positive Hⁱ(O) vanish; the unit is an isomorphism. The same value occurs for the identity cover.
 
 *Needs:* §7.1; §7.3; §7.7; §7.6; §7.2; §7.4; §3.4; §3.6; §3.2; PerfectoidQuotients §1.3; PerfectoidSpacesPartII §RA.1 (annular tower).
