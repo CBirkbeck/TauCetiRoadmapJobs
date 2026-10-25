@@ -21,6 +21,10 @@ The following headlines are not statable at the pins:
 * geometricity and coefficient transport of local representations, irreducible
   globalization, discrete-series pure completion and embedding independence lack
   reductive local groups with their parameter and temperedness interfaces;
+* the all-prime étale Kloosterman anchor, its Bessel companion construction,
+  adjoint rigidity and local conductor/invariant transfer lack Kloosterman
+  automorphic data, lisse adic sheaves, overconvergent F-isocrystals and their
+  cohomology and local monodromy;
 * Beuzart-Plessis pseudo-globalization lacks automorphic representations and
   discrete-series pseudo-coefficients;
 * the local spherical separator theorem lacks unitary spherical duals of

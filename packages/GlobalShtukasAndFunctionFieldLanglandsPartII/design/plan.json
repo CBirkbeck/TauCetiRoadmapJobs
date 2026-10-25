@@ -3583,6 +3583,24 @@
     "supplier": "NilpotentOrbits",
     "section": "§N2.4",
     "needs": "Orbit-to-triple identifications and adjoint neutral-weight profiles for F4 B3 and A1 plus short A1, E7 D5(a1) plus A1, and E8 D6, A6, A4 plus A2, and A2 plus two A1, in the coordinates of Ciubotaru–Harris §6."
+  },
+  {
+    "slug": "rigid-middle-extension-specialization",
+    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+    "section": "§§RD.4.10–RD.4.12 and RD.6.39",
+    "needs": "Intermediate extensions, relative de Rham–rigid specialization and duality for exponential twists of intersection-cohomology coefficients on bounded Hecke charts, including the middle-image comparison and compatibility with fusion and finite coefficient extension."
+  },
+  {
+    "slug": "pure-isocrystal-geometric-semisimplicity",
+    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+    "section": "§RD.6.77",
+    "needs": "Geometric semisimplicity of pure overconvergent F-isocrystals on smooth finite-field curves after forgetting Frobenius, giving reductive geometric Tannakian monodromy."
+  },
+  {
+    "slug": "formal-to-differential-maximal-slope",
+    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+    "section": "§§RD.1.16 and RD.6.52a",
+    "needs": "The maximal p-adic boundary slope is bounded by the maximal formal slope at infinity for solvable differential modules defined by algebraic-number coefficients converging on the exterior annulus 1<|x|<infinity, with finite coefficient extension and change of boundary coordinate."
   }
 ],
  "sourceIssues": [

@@ -10,7 +10,7 @@ FunctionFieldArithmetic §§6.2–6.6 owns automorphic function modules, constan
 
 LanglandsParameterStacks §§LP0.1–LP0.4, LP1.11–LP1.12 and LP2e.5 owns parameter carriers, the group-valued Weil–Deligne dictionary and semisimplification. NilpotentOrbits §§N0–N2 owns adjoint orbits, Jacobson–Morozov and conjugacy of triples; the highest-weight and character theory comes from RepresentationTheory/LieHighestWeight Layers 0 and 6. MotivesAndAlgebraicCycles §6.3 owns tensor generation and the closed-immersion criterion. The local spherical weight criteria of §5.1, complementary-series interfaces of §8.0, and the named-orbit weight comparisons of §8.5 are the local inputs supplied by this roadmap to SmoothRepresentationsOfLocalGroupsPartII and LieHighestWeightPartII.
 
-Section 4.0 owns the all-prime étale Kloosterman anchor, including its local adjoint-invariant comparison; KloostermanSheavesAndBesselIsocrystals §§KB.1, KB.6, KB.7 and KB.11 consume this anchor for their rigid-cohomological refinements. Counting local systems, crystalline companions, special cycles, Tate cohomology and potential automorphy are outside this roadmap’s scope. The global Arthur decomposition is a conjectural interface in §7.2, not a consequence of equality of weight multiplicities.
+Section 4.0 owns the all-prime étale Kloosterman anchor, the Bessel companion construction and adjoint rigidity needed for it, and the transfer of adjoint conductors and inertia invariants. These specialized inputs lie here before the further monodromy, functoriality and Newton-polygon applications of KloostermanSheavesAndBesselIsocrystals §§KB.6–KB.11. General crystalline-companion existence, counting local systems, special cycles, Tate cohomology and potential automorphy are outside this roadmap’s scope. The global Arthur decomposition is a conjectural interface in §7.2, not a consequence of equality of weight multiplicities.
 
 ## Conventions
 
@@ -66,7 +66,7 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:parameter-square-root-
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
-Consume §2.6 (Jordan strings, the monodromy filtration, its uniqueness and tensor compatibility, and arithmetic Weil–Deligne purity), together with the raw local fields of SmoothRepresentationsOfLocalGroups §SR.5.2. The arithmetic condition quantifies over all complex conjugates; finite-dimensional characteristic-zero spaces are retained.
+Consume §§3.1–3.4 (finite wild image, breaks, Swan and Artin conductors and their functoriality) and §2.6 (Jordan strings, the monodromy filtration, its uniqueness and tensor compatibility, and arithmetic Weil–Deligne purity), together with the raw local fields of SmoothRepresentationsOfLocalGroups §SR.5.2. The arithmetic condition quantifies over all complex conjugates; finite-dimensional characteristic-zero spaces are retained.
 
 ### From TauCetiRoadmap.DeligneWeightsAndPurity
 
@@ -75,6 +75,16 @@ Consume §§0.1–0.19 (scalar weights, eigenvalue arithmetic and the comparison
 What DeligneWeightsAndPurity must provide (gap:stack-integer-weights): For every finite-type morphism from a finite-type algebraic stack to a smooth finite-field curve, integer punctual weights of every lisse irreducible constituent of each constant-coefficient compact direct image, with the smooth-descent and duality hypotheses stated.
 
 What DeligneWeightsAndPurity must provide (gap:satake-constant-realization): A realization theorem expressing the lisse constituents selected from Satake intersection-cohomology coefficients, including frozen-leg factors and finite centralizer invariants, as constituents of constant-coefficient compact direct images of finite-type algebraic stacks.
+
+### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
+
+Consume §§RD.2.49–RD.2.51 (Robba tensor categories, logarithmic fibres and inertia with its nilpotent operator), RD.3.13 and RD.3.25 (overconvergent coefficients), RD.4.10–RD.4.12 and RD.5.46 (rigid cohomology, finiteness and duality), RD.6.23 (trace formula), RD.6.51–RD.6.55 (local conductors, formal slopes and Euler characteristics), RD.6.64–RD.6.65 (Tannakian reconstruction), RD.6.77 and RD.6.84–RD.6.85 (purity and cohomological weights). Section 4.0 constructs the Bessel tensor functor and proves its comparison and rigidity; these do not follow from the coefficient carriers alone.
+
+What PadicDifferentialEquationsAndRigidCohomology must provide (gap:rigid-middle-extension-specialization): Intermediate extensions, relative de Rham–rigid specialization and duality for exponential twists of intersection-cohomology coefficients on bounded Hecke charts, including the middle-image comparison and compatibility with fusion and finite coefficient extension.
+
+What PadicDifferentialEquationsAndRigidCohomology must provide (gap:pure-isocrystal-geometric-semisimplicity): Geometric semisimplicity of pure overconvergent F-isocrystals on smooth finite-field curves after forgetting Frobenius, giving reductive geometric Tannakian monodromy.
+
+What PadicDifferentialEquationsAndRigidCohomology must provide (gap:formal-to-differential-maximal-slope): The maximal p-adic boundary slope is bounded by the maximal formal slope at infinity for solvable differential modules defined by algebraic-number coefficients converging on the exterior annulus 1<|x|<infinity, with finite coefficient extension and change of boundary coordinate.
 
 ### From TauCetiRoadmap.LanglandsParameterStacks
 
@@ -152,10 +162,9 @@ Throughout this statement, F = k((t)) is a local field of characteristic p with 
 
 - For G = SL₂ (Ĝ = PGL₂) and ϕ unramified with ϕ(Frob) = diag(q^(1/2), q^(−1/2)) (the trivial representation), the adjoint representation has eigenvalues q, 1, q^(−1) with weights 2, 0, −2.
 - If the condition held only for a non-faithful τ (say the trivial representation) nothing would follow; faithfulness is needed.
-
 - For the two-dimensional standard representation of S₃, take tame inertia C₃ and Frobenius a transposition, at q=5. The Frobenius eigenvalues are 1,−1 and both weights are 0; multiplying the transposition by a 3-cycle gives another transposition and the same weight multiset. At q=4, cyclic C₃ inertia with trivial Frobenius image also has all weights 0, since 4≡1 modulo 3. At q=5 that trivial Frobenius image would force the inertia image to be trivial, since Frobenius inverts C₃. This tests finite inertia on a nonabelian group as well as a cyclic one.
 
-*Needs:* §0.1; DeligneWeightsAndPurity §0.13; DeligneWeightsAndPurity §0.2; DeligneWeightsAndPurity §0.3; MotivesAndAlgebraicCycles §6.3 (tensor generation); MotivesAndAlgebraicCycles §6.3.
+*Needs:* §0.1; DeligneWeightsAndPurity §0.13; DeligneWeightsAndPurity §0.2; DeligneWeightsAndPurity §0.3; MotivesAndAlgebraicCycles §6.3 (tensor generation).
 
 ### 0.3 Pure Weil–Deligne representations and parameters
 
@@ -180,7 +189,6 @@ The construction has the following API.
 - diag(1, q) with N = 0 is not pure: gr₂ ≠ 0 = N(gr₂).
 - N = 0 and ϕ(Frob) = λ·id with λ a Weil q-number of weight w: pure of weight w.
 - With the printed directions of Ciubotaru–Harris Definition 2.6 (N raising weights in (iii) while (ii) needs N to lower them), Sp(2) would fail (ii) or (iii); the corrected definition accepts it.
-- For a GL_n WD representation and a fixed ι, ι-purity of weight 0 is equivalent to boundedness of the Weil restriction of its associated L-parameter. Arithmetic purity of weight 0 requires algebraicity and this condition at every embedding.
 - For Sp(2), ker N = ⟨e₀⟩ is pure of weight 0 and V/ker N is pure of weight 2; neither is pure of the ambient weight 1.
 - For G_m and ϕ(Frob)=q, the identity representation is pure of weight 2, while the faithful identity ⊕ trivial representation with N=0 has weights 2 and 0 and is not pure of any common weight.
 - For a rank-one WD representation with Frobenius a unit-circle root of x⁴−x³−x²−x+1, the chosen complex realization is bounded and ι-pure of weight 0, but the representation is not arithmetically pure of weight 0: another conjugate has absolute value 1.7221….
@@ -211,6 +219,7 @@ At q=4 the unramified torus value 2 has weight 1, while 3 has weight log₂3 and
 ### Dependencies
 
 DeligneWeightsAndPurity §0.1; DeligneWeightsAndPurity §0.7; LanglandsParameterStacks §§LP0.1–LP0.4; DeligneWeightsAndPurity §0.13; DeligneWeightsAndPurity §0.2; DeligneWeightsAndPurity §0.3; MotivesAndAlgebraicCycles §6.3 (tensor generation); MotivesAndAlgebraicCycles §6.3; LanglandsParameterStacks §§LP1.11–LP1.12; NilpotentOrbits §N2; ArithmeticGaloisRepresentations §2.6; DeligneWeightsAndPurity §0.19; SmoothRepresentationsOfLocalGroups §SR.5.2. Each target states its statement and proof-route inputs separately.
+
 ## Layer 1: Curve weights and boundary propagation
 
 ### 1.1 Constant-field twist decomposition of a lisse sheaf
@@ -299,6 +308,7 @@ A rank-one constant twist by 3 over 𝔽₄ has a nontrivial twist class. The no
 ### Dependencies
 
 DeligneWeightsAndPurity §5.5; GlobalShtukasAndFunctionFieldLanglands §6.2; GlobalShtukasAndFunctionFieldLanglands §6.1; DeligneWeightsAndPurity §8.17; DeligneWeightsAndPurity §0.17; DeligneWeightsAndPurity §0.2; DeligneWeightsAndPurity §5.11; DeligneWeightsAndPurity §0.6; DeligneWeightsAndPurity §0.3; DeligneWeightsAndPurity §8.18; §0.3; §0.1; DeligneWeightsAndPurity §5.3; §0.4. Each target states its statement and proof-route inputs separately.
+
 ## Layer 2: Cuspidal blocks and rational Satake classes
 
 ### 2.1 Cuspidal representations belonging to a parameter
@@ -321,7 +331,6 @@ The construction has the following API.
 
 **Checks.**
 
-- L(σ, 1) is the constant sheaf of rank one.
 - For G = PGL₂ and τ the standard representation of SL₂, L(π, τ) is the rank-two sheaf of Drinfeld's correspondence for π with trivial determinant, and tr(Frob_w) is the Hecke eigenvalue of T_w normalized by q_w^(−1/2).
 - For G = PGL₂ and σ induced from a character of an unramified quadratic extension, L(π, Sym²) contains the quadratic character of that extension, so L(π, τ) need not be irreducible for irreducible τ.
 - For an occurring π with π^U≠0, decompose its multiplicity space under the commuting finite excursion algebra; a nonzero block gives an embedding into that block.
@@ -379,11 +388,12 @@ For PGL₂, dual-standard normalized Frobenius (2,1/2) at q=4 has characteristic
 ### Dependencies
 
 FunctionFieldArithmetic §6.5; GlobalShtukasAndFunctionFieldLanglands §5.9; GlobalShtukasAndFunctionFieldLanglands §5.10; GlobalShtukasAndFunctionFieldLanglands §5.7; FunctionFieldArithmetic §§6.4–6.6; FunctionFieldArithmetic §6.6; FunctionFieldArithmetic §6.4; GlobalShtukasAndFunctionFieldLanglands §3.6; GlobalShtukasAndFunctionFieldLanglands §5.3; SmoothRepresentationsOfLocalGroups §§SR.4.1–SR.4.2; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2 (dual torus, relative Weyl group and pinned outer action). Each target states its statement and proof-route inputs separately.
+
 ## Layer 3: Local-to-global comparison and geometric representations
 
 ### 3.0 Local excursion parameters
 
-For a connected reductive group G over the equal-characteristic local field F, apply the abstract excursion centre map of LanglandsParameterStacks §LP2e.15 and its Schur-object parameter of §LP2c.8 to the coherent continuous Hecke datum on D_lis(Bun_G,L) exported by HeckeStacksAndLocalShtukas §§HS4.1 and HS4.7. Here L is an algebraically closed characteristic-zero coefficient field containing the chosen √q, with the relatively discrete condensed convention. For each compact lisse object, prove that one open wild-inertia subgroup acts trivially on every finite-leg Hecke transform; this supplies the finite-wild-cutoff passage (fs, Proposition IX.5.1, p. 328, fs line 12683). For every Schur-irreducible A with End(A)=L as a condensed L-algebra, prove that the imported parameter φ_A is continuous and is the local Fargues–Scholze parameter. Restrict the resulting geometric centre action along D(G(F),L) → D_lis(Bun_G,L) to the Bernstein centre of smooth representations, and compare its Hecke action with the Satake-coefficient cohomology of the supplied local-shtuka tower. These are the Bun_G and Bernstein-centre applications (fs, Definition/Proposition IX.4.1, p. 327, Theorem IX.5.2, p. 329, and Proposition IX.3.2, pp. 326–327; fs line 12667, fs line 12745, fs line 12651).
+For a connected reductive group G over the equal-characteristic local field F, apply the abstract excursion centre map of LanglandsParameterStacks §LP2e.15 and its Schur-object parameter of §LP2c.8 to the coherent continuous Hecke datum on D_lis(Bun_G,L) exported by HeckeStacksAndLocalShtukas §§HS4.1 and HS4.7. Here L is an algebraically closed characteristic-zero coefficient field containing the chosen √q, with the relatively discrete condensed convention. For each compact lisse object, prove that one open wild-inertia subgroup acts trivially on every finite-leg Hecke transform; this supplies the finite-wild-cutoff passage (fs, Proposition IX.5.1, pp. 327–328, fs line 12683). For every Schur-irreducible A with End(A)=L as a condensed L-algebra, prove that the imported parameter φ_A is continuous and is the local Fargues–Scholze parameter. Restrict the resulting geometric centre action along D(G(F),L) → D_lis(Bun_G,L) to the Bernstein centre of smooth representations, and compare its Hecke action with the Satake-coefficient cohomology of the supplied local-shtuka tower. These are the Bun_G and Bernstein-centre applications (fs, Definition/Proposition IX.4.1, p. 327, Theorem IX.5.2, p. 329, and Proposition IX.3.2, pp. 326–327; fs line 12667, fs line 12745, fs line 12651).
 
 The construction has the following API.
 
@@ -392,7 +402,7 @@ The construction has the following API.
 - On compact lisse objects the finite wild cutoffs are compatible with one another and with smaller coefficient fields carrying the Hecke data.
 - The restricted central action commutes with each Hecke functor and agrees with the excursion action on the corresponding local-shtuka cohomology.
 
- All maps have source the excursion algebra or the indicated lisse category and target its endomorphism algebra or centre. For rational characteristic-zero coefficients the component-group invertibility in Theorem IX.5.2 holds; an integral or mod-ℓ version retains that hypothesis.
+All maps have source the excursion algebra or the indicated lisse category and target its endomorphism algebra or centre. For rational characteristic-zero coefficients the component-group invertibility in Theorem IX.5.2 holds; an integral or mod-ℓ version retains that hypothesis.
 
 **Checks.**
 
@@ -452,9 +462,9 @@ Use the Genestier–Lafforgue semisimple local assignment L_F from GlobalShtukas
 
 Throughout this statement, F = k((t)) is a local field of characteristic p with residue field k of cardinality q, W_F its Weil group and Frob ∈ W_F a geometric Frobenius lift (it acts on k̄ by x ↦ x^(1/q)); C is an algebraically closed field of characteristic 0 (C = ℂ or C = ℚ̄_ℓ). Frobenius conventions are those of the parent roadmap: geometric Frobenius, local reciprocity sending a uniformizer to geometric Frobenius, and one fixed square root of q for normalized induction and half Tate twists. G connected reductive over F.
 
-(ch26, §3.2, Theorem 3.8, p. 10; ghs, §2.1, Theorem 2.1(iii), p. 7; §2.2, Theorem 2.3(iv)–(vi) and Corollary 2.4(ii), pp. 6–7; ghs line 284.)
+(ch26, §3.2, Theorem 3.8, p. 10; ghs, §2.1, Theorem 2.1(iii), p. 7; §2.2, Theorem 2.3(iv)–(vi) and Corollary 2.4(ii), pp. 6–7; fs, Theorem I.9.6(ii), (vi)–(vii), p. 36, fs line 1331, fs line 1337.)
 
-*Proof route:* Use the parent’s normalized-induction identity and §3.2 for the common assignment. Prove the normal-image identity on the dual maps of ReductiveGroupsPartII §RG2.5.2, and evaluate local excursions after pullback. The c-group chart comparison gives the coefficient law; its finite central twist has weight 0. For pro-p Iwahori invariants use a finite torus eigencharacter and principal-series support; in characteristic zero the finite torus action is semisimple. A parameter not contained in any proper Levi cannot arise from induction from a proper Levi.
+*Proof route:* Use the parent’s normalized-induction identity and §3.2 for the common assignment. Transport the product, Weil-restriction and character-twist identities of fs Theorem I.9.6(ii), (vi)–(vii) through §3.2. Prove the normal-image identity on the dual maps of ReductiveGroupsPartII §RG2.5.2, and evaluate local excursions after pullback. The c-group chart comparison gives the coefficient law; its finite central twist has weight 0. For pro-p Iwahori invariants use a finite torus eigencharacter and principal-series support; in characteristic zero the finite torus action is semisimple. A parameter not contained in any proper Levi cannot arise from induction from a proper Levi.
 
 **Checks.**
 
@@ -487,7 +497,7 @@ The construction has the following API.
 - The trivial representation of PGL₂(F) is geometric, with Frobenius eigenvalues q^(±1/2) in the standard representation of SL₂.
 - The unramified character of F^× sending a uniformizer to 3, q = 4, is not geometric.
 - The Steinberg representation of GL₂(F) is geometric: L_F has Frobenius eigenvalues q^(1/2), q^(−1/2), of weights 1 and −1.
-- For GL_n the normalized induction of geometric characters has geometric semisimple parameter by GlobalShtukasAndFunctionFieldLanglands §7.6; for GL₂ the Steinberg constituent has Frobenius eigenvalues q^(1/2),q^(−1/2). The same calculation holds in equal characteristic.
+- For GL_n the normalized induction of geometric characters has geometric semisimple parameter by GlobalShtukasAndFunctionFieldLanglands §7.6. The same calculation holds in equal characteristic.
 - A unitary unramified character of F^× with transcendental value on a uniformizer has no number-field model and is not geometric.
 - The trivial representation of any G is geometric: its parameter has Frobenius q^(ρ̂), with eigenvalues integral powers of q^(1/2).
 
@@ -506,7 +516,6 @@ Throughout this statement, F = k((t)) is a local field of characteristic p with 
 **Checks.**
 
 - For an unramified character of G_m with value (1 + 2i) on a uniformizer and q = 5, the conjugate value (1 − 2i) again has absolute value √5.
-
 - At q=5 the trivial PGL₂ representation has normalized pair (√5,1/√5). A coefficient automorphism sending √5 to −√5 changes the transported pair to (−√5,−1/√5); the central sign −I compares the two normalization charts, and both pairs have weights ±1. At q=4 every coefficient automorphism fixes √q=2, so that particular sign change cannot be induced by a coefficient automorphism.
 
 *Needs:* §3.3; DeligneWeightsAndPurity §0.1; §3.4; SmoothRepresentationsOfLocalGroups §SR.0.2.
@@ -525,7 +534,6 @@ Throughout this statement, F = k((t)) is a local field of characteristic p with 
 
 - For the unramified quadratic torus Res_(E/F) G_m, χ(ϖ_E)=q_F has weight 1 relative to q_E and gives induced Frobenius weights 1; χ(ϖ_E)=q_F^(1/2) fails integrality.
 - For split G_m the values on units have weight 0 and the sole unramified weight is 2 log_(q_F)|χ(ϖ_F)|, independent of the embedding precisely for a Weil number.
-
 - For E=F(t^(1/p)), the extension is purely inseparable: after algebraic closure the restriction-of-scalars multiplicative group has a unipotent part of dimension p−1, so it is not a torus. The separability hypothesis excludes this false application of the residue-degree criterion.
 
 *Needs:* §3.3 (normal-image and coefficient transport); §3.3; §3.4.
@@ -569,29 +577,41 @@ The trivial and Steinberg representations have the same semisimple pair (2,1/2) 
 ### Dependencies
 
 HeckeStacksAndLocalShtukas §§HS3.1–HS3.4, HS4.1 and HS4.7 (local cohomology and exported Hecke datum); LanglandsParameterStacks §§LP2e.15 and LP2c.8 (abstract centre map and Schur-object parameter), §§LP2c.3–LP2c.4 (continuity); SmoothRepresentationsOfLocalGroups §§SR.0.2, SR.1.3, SR.3.2 (smooth category and centre); DiamondEtaleCohomology Layer C0; DiamondSixOperations Layer S2; GlobalShtukasAndFunctionFieldLanglands §2.1; GlobalShtukasAndFunctionFieldLanglands §2.9; GlobalShtukasAndFunctionFieldLanglands §2.2; HeckeStacksAndLocalShtukas §HS2.9; DiamondSixOperations §S1.5; GlobalShtukasAndFunctionFieldLanglands §5.4; GlobalShtukasAndFunctionFieldLanglands §5.10; GlobalShtukasAndFunctionFieldLanglands §7.6; GlobalShtukasAndFunctionFieldLanglands §7.8; HeckeStacksAndLocalShtukas §HS3.1; §0.1; DeligneWeightsAndPurity §0.1; SmoothRepresentationsOfLocalGroups §SR.0.2; SmoothRepresentationsOfLocalGroups §SR.2.2; SmoothRepresentationsOfLocalGroups §SR.3.3; §0.2; SmoothRepresentationsOfLocalGroups §SR.1.3. Each target states its statement and proof-route inputs separately.
+
 ## Layer 4: Discrete-series anchors and embedding independence
 
 ### 4.0 Étale Kloosterman anchors in every characteristic
 
-For a split semisimple dual group and any prime p, construct the étale Kloosterman local system with its automorphic eigenobject, its regular-unipotent inertia at zero and zero adjoint inertia-invariant space at infinity. The local component at infinity is supercuspidal. Identify the algebraic realizations of its parameter with the global excursion parameter using normalized Satake and Chebotarev. The no-invariants conclusion excludes proper Levi images because their centres have positive Lie dimension; it does not say that the adjoint inertia representation is irreducible (hny, Theorems 1–2, Corollary 2.13, pp. 16–18; hny line 950; xz, arXiv v2 Corollaries 4.5.6–4.5.7 and Remark 4.5.8, pp. 53–54, xz line 2469, xz line 2478, xz line 2503; ghs, Proposition 3.9 and Remark 3.10, pp. 10–11, ghs line 450).
+Let k be any finite field of characteristic p and cardinality q, let ℓ≠p, and let H be a split semisimple dual group over characteristic-zero algebraically closed coefficients. Fix a pinning, a nontrivial additive character ψ of 𝔽_p and an affine-generic functional φ on the first positive-depth Iwahori quotient: every affine-simple-root coefficient of φ is nonzero. Construct the étale Kloosterman tensor local system on G_m,k and its automorphic eigenobject with trivial tame character at zero. At zero its inertia is regular unipotent; at infinity its adjoint inertia-invariant space is zero, and the corresponding local automorphic component is supercuspidal. Identify its algebraic realizations with those of the global excursion parameter using normalized Satake and Chebotarev. The no-invariants conclusion excludes proper Levi images, since their centres have positive Lie dimension modulo the centre of H. It does not assert irreducibility of the adjoint inertia representation (hny, Theorem 1, pp. 16–17, hny line 950; Theorem 2, p. 17, hny line 976, with its small-prime restriction lifted by xz, Corollary 4.5.7 and Remark 4.5.8(i), pp. 53–54, xz line 2478, xz line 2503; ghs, Proposition 3.9 and Remark 3.10, pp. 10–11, ghs line 450, ghs line 486).
 
-This construction includes the companion comparison and local conductor/invariant transfer that extend the étale conclusion to p=2 and p=3. A crystalline invariant formula alone is insufficient. The construction has the following API.
+**Bessel companion construction.** Choose algebraic Teichmüller lifts of the nonzero root coordinates of φ and an algebraic Dwork parameter for ψ, so the matched meromorphic connection has algebraic-number coefficients. Construct the tensor functor Be† from Rep(H) to overconvergent F-isocrystals on G_m,k over an algebraic closure of a finite extension of W(k)[1/p], with every object descending to a finite coefficient extension. Its underlying connection is the Bessel connection matched to ψφ by the invariant-parameter identification, and its q-Frobenius is fixed by the same normalized Hecke eigenvalue: for every algebraic H-representation V and every closed point a of G_m,k, its geometric-Frobenius characteristic polynomial equals that of the étale Kloosterman realization V after the chosen algebraic coefficient embeddings. Construct the rigid exponential-cohomology realization and its tensor-compatible comparison with the de Rham eigenvalue, using the rigid-middle-extension-specialization contract for the quasi-minuscule middle-image comparison; transport Frobenius to the matched connection. These comparisons are part of this construction. Prove that its realizations are pure of weight zero and that its restriction at zero has principal nilpotent residue (xz, Theorems 4.2.1, 4.3.3 and 4.4.4, pp. 42–50, xz line 1994, xz line 2201, xz line 2329; §4.4.2, p. 50, xz line 2314).
 
-- Its unramified Frobenius classes agree with the normalized Satake classes of the automorphic eigenobject.
-- The local restriction at zero has the specified regular-unipotent monodromy.
-- The adjoint inertia-invariant space at infinity is zero for every p, with the companion and conductor comparison included.
-- Products and compatible central isogenies transport the local-system and local-invariant assertions with their dual maps.
+**Adjoint rigidity in every characteristic.** For H almost simple of rank r and Coxeter number h, put E=Be†(Lie H) and j:G_m→P¹. Prove the Bessel formal-to-differential maximal-slope bound at infinity, at most 1/h, using the formal-to-differential-maximal-slope contract, and hence Irr_∞(E)≤r from dim Lie H=r(h+1) and integrality. Prove Hⁱ(P¹,j_!+E)=0 for every i, Irr_∞(E)=r, (Lie H)^(I_∞)=0 and N_∞=0 for the local Robba Weil–Deligne datum. Here j_!+ denotes the middle extension whose cohomology is indexed so that its boundary sequence is 0→H⁰(P¹,j_!+E)→H⁰₀(j_+E)⊕H⁰_∞(j_+E)→H¹_c(G_m,E)→H¹(P¹,j_!+E)→0. Each boundary space is ker N on inertia invariants. No good-prime hypothesis is imposed (xz, §4.3.1, p. 47, xz line 2175; Lemma 4.5.5 and (4.5.5.1), pp. 52–53, xz line 2433; andre-bessel, Proposition 3.2, pp. 788–789, andre-bessel line 393; Corollary 4.5.7 and its proof, pp. 53–54, xz line 2478).
 
- The target concerns the actual local system, not an arbitrary parameter with a stipulated zero invariant space.
+**Transfer to the étale adjoint realization.** Prove Swan_∞(Kl_Ad)=r and dim (Kl_Ad)^(I_∞)=0 for the actual companion pair above, including p=2 and p=3 (xz, Remark 4.5.8(i), p. 54, xz line 2503). The comparison concerns local conductors and full inertia invariants; equality of abstract global monodromy groups is not its definition.
+
+*Proof route:* Construct the eigenobject and tensor companions, and prove the maximal-slope bound and principal residue just stated. The pure-isocrystal-geometric-semisimplicity contract and the principal unipotent at zero give a principal SL₂ in the reductive geometric monodromy group; its centralizer in Lie H is zero. Thus E has no global invariant or coinvariant adjoint vector. Duality, the slope bound and the boundary sequence force dim H¹_c(E)=r, the contribution at zero to be r, and the contribution at infinity and all middle-extension cohomology to vanish. Nilpotence gives inertia-invariant space zero from ker N=0 on that space; the group-valued N_∞ is itself an invariant adjoint vector and is zero. To transfer, use the rigid and étale trace formulas and the common closed-point polynomials. For either pure weight-zero coefficient on the affine curve, H⁰_c=0, H¹_c has weights at most 1 and H²_c is pure of weight 2. The disjoint weights prevent numerator/denominator cancellation in its L-function, so the compact-cohomology characteristic polynomials agree degree by degree. Therefore the étale H²_c is zero and dim H¹_c=r. Its boundary exact sequence already has r independent vectors from the principal unipotent at zero, leaving no infinity invariants; étale Grothendieck–Ogg–Shafarevich then gives Swan_∞=r. This proves the required local transfer directly, without identifying two groups over different coefficient fields. Products and central quotients extend the adjoint assertions to semisimple H. Finally compare with excursions at every algebraic realization and use §3.2 and the no-proper-Levi criterion of §3.3 for the local component.
+
+The construction has the following API.
+
+- The étale eigenvalue has normalized Satake Frobenius classes, principal unipotent inertia at zero and a supercuspidal automorphic component at infinity.
+- The Bessel functor preserves the tensor unit, tensor products, duals and intertwiners; its companion characteristic polynomials agree for every V and every closed point, with the chosen coefficient and half-twist conventions.
+- In the almost-simple adjoint realization, the Bessel irregularity and étale Swan conductor at infinity both equal r, and both full inertia-invariant spaces are zero. The Bessel middle-extension cohomology vanishes in every degree.
+- Products and compatible central isogenies transport the adjoint assertions with their specified dual maps; the trivial semisimple group has zero adjoint space.
 
 **Checks.**
 
-- The rank-two Kloosterman system has Swan conductor 1 in its standard realization; a constant rank-two system instead has conductor 0 and two inertia invariants.
-- At zero, the nonzero unipotent 2×2 logarithm has a one-dimensional invariant line, whereas the infinity standard representation is irreducible. The two places cannot be interchanged.
-- For an odd-residue-characteristic rank-two example, adjoint inertia splits into the torus line and the two root lines, with nontrivial action on each invariant candidate; its invariant dimension is 0 while its dimension is 3. Thus vanishing of invariants does not assert adjoint irreducibility.
-- For the trivial semisimple group, the adjoint space has dimension 0 and invariant dimension 0. The zero-dimensional case is consistent; an arbitrary positive-rank constant parameter is not an anchor.
+- The rank-two Kloosterman system has standard Swan conductor 1; a constant rank-two system has Swan 0 and two inertia invariants. Its Bessel companion has the same standard local values.
+- At zero, a nonzero unipotent 2×2 logarithm has kernel dimension 1 and its adjoint logarithm has kernel dimension 1. Replacing it by zero gives kernel dimensions 2 and 3, so the companion's principal-residue condition excludes the constant connection. Killing only the highest-root coefficient while retaining the principal residue gives d+N dx/x, tame at infinity with Swan 0; affine-genericity excludes this further wrong model.
+- For type A₁, r=1, h=2 and dim Lie H=3: the slope bound gives Irr≤3/2, hence Irr≤1. The one-dimensional zero-boundary term forces H¹_c to have dimension 1 and the infinity boundary to have dimension 0.
+- For split G₂ over 𝔽₂(t) and 𝔽₃(t), r=2, h=6 and dim Lie H=14 give Irr≤14/6<3, hence Irr≤2. The zero-boundary dimension 2 forces Irr=Swan=2 and infinity invariant dimension 0 in both characteristics. The hypothesis p>3 in hny Theorem 2 fails in both cases; the Bessel and transfer theorems above supply the conclusion. No assertion that every nonzero break is 1/6 is used.
+- At p=2, the SO₃ local inertia image A₄ has adjoint character values 3 on the identity, −1 on the three involutions and 0 on the eight 3-cycles. Its invariant dimension is (3−3+0)/12=0 (xz, Remark 4.5.8(iv), p. 54, xz line 2512); replacing this image by a torus would leave an invariant line.
+- For an odd-characteristic rank-two example, adjoint inertia preserves a torus line and the two-root-line sum, but neither has invariants. Its invariant dimension is 0 and total dimension 3; vanishing does not imply adjoint irreducibility.
+- For H=A₁×G₂ the adjoint ranks and infinity conductors add to 1+2=3, while invariant dimension stays 0+0=0. Passing from SL₂ to PGL₂ leaves the three-dimensional adjoint realization unchanged.
+- For H=1, Lie H has dimension 0 and its invariant dimension is 0, while Be† sends the tensor unit to the rank-one constant F-isocrystal with Frobenius 1. This separates the adjoint zero object from the tensor unit.
+- In the trace-formula comparison at q=4, a weight-2 H²_c eigenvalue has modulus 4, while every H¹_c eigenvalue has modulus at most 2. Equal numerator and denominator roots cannot cancel. For the type A₁ adjoint coefficient, H²_c has dimension 0 and the sole H¹_c boundary eigenvalue is 1/4 (weight −2), so L(T)=1−T/4 on both sides.
 
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §§5.3, 5.8–5.10; FunctionFieldArithmetic §5.8 (Chebotarev); §3.2; étale curve realization from EtaleCohomologyFoundations §§F.0–F.4; ReductiveGroupsPartII §§RG2.3–RG2.5; DeligneWeightsAndPurity §§5.2–5.11 (realization, conductors and curve weights).
+*Needs:* GlobalShtukasAndFunctionFieldLanglands §1.4 (étale trace formula) and §§1.9–1.14 (Satake), §§5.3, 5.8–5.10 (excursions); FunctionFieldArithmetic §5.8 (Chebotarev); §3.2; §3.3 (no-proper-Levi criterion); EtaleCohomologyFoundations §§F.0–F.4 (étale realization); ReductiveGroupsPartII §§RG2.3–RG2.5 (Iwahori quotients and dual maps); NilpotentOrbits §N2 (triples); RepresentationTheory/LieHighestWeight Layer 0 (principal SL₂ invariants); ArithmeticGaloisRepresentations §§3.1–3.4 (étale conductors); DeligneWeightsAndPurity §§5.2–5.12 and 7.8–7.9 (curve and cohomological weights); PadicDifferentialEquationsAndRigidCohomology §§RD.2.49–RD.2.51, RD.3.13, RD.3.25, RD.4.10–RD.4.12, RD.5.46, RD.6.23, RD.6.51–RD.6.55, RD.6.64–RD.6.65, RD.6.77, RD.6.84–RD.6.85 (coefficient categories, local monodromy, duality, trace formula, Tannaka and weights), RD.6.39 (rigid-middle-extension-specialization contract), RD.6.77 (pure-isocrystal-geometric-semisimplicity contract), RD.1.16 and RD.6.52a (formal-to-differential-maximal-slope contract).
 
 
 ### 4.1 ι-tempered and ι-discrete representations
@@ -618,9 +638,7 @@ The construction has the following API.
 - For G anisotropic (G(F) compact) every irreducible π is ι-discrete series for every ι.
 - For PGL₂ and Satake parameter diag(ζ, ζ^(−1)) with ζ = (3 + 4i)/5, π is tempered for every ι (all conjugates of ζ have absolute value 1).
 - The Steinberg representation of PGL₂(F) is discrete series for every ι, matching the complex Steinberg representation of SmoothRepresentationsOfLocalGroups §SR.3.4.
-- If all central-character values and all normalized Jacquet exponents on split Levi centres are Weil q-numbers of integer weights, ι-temperedness does not depend on ι.
 - The definition requires a ℚ̄-model; a complex representation without such a model has no ι-conjugates.
-
 - On the torus G_m the proper-parabolic exponent list is empty. The unramified character with a Salem unit-circle value is unitary at that embedding and has central modulus 1.722083805739 at its real conjugate; omitting the central-character condition would incorrectly predict embedding independence.
 
 *Needs:* SmoothRepresentationsOfLocalGroups §SR.3.3; SmoothRepresentationsOfLocalGroups §SR.2.2.
@@ -631,7 +649,7 @@ Let G be connected reductive over a global function field K, z a place with K_z 
 
 Throughout this statement, K = k₁(X) is the function field of a smooth projective geometrically connected curve X over a finite field k₁ of characteristic p and cardinality q₁; |X| is its set of closed points (places); q_w = |k(w)| for a place w; ℓ ≠ p is a prime. G connected reductive over K; z a place of K; ξ is globally automorphic and compatible with π at z, with the central-torus convention of §4.3.
 
-(ghs, §3.3, Proposition 3.9 and its proof, Remark 3.10, pp. 10–11; glo, Theorem 1.1, pp. 1–2; hny, Theorem 2, p. 17 (arXiv v1); ghs line 450.)
+(ghs, §3.3, Proposition 3.9 and its proof, Remark 3.10, pp. 10–11; glo, Theorem 1.1, pp. 1–2; hny, Theorem 2, p. 17 (arXiv v1), extended to every p by xz, Remark 4.5.8(i), p. 54, xz line 2503, as proved in §4.0; ghs line 450.)
 
 *Proof route:* If G is a torus, Π=ξ and there is no proper parabolic or nontrivial adjoint parameter. Otherwise choose a split place x≠z outside the ramification of ξ; Chebotarev gives infinitely many choices. Use the semisimple Kloosterman anchor of §4.0 at x through central-isogeny reduction to G, matching the central character to ξ_x by an unramified twist as in the reductive-central-reduction contract. Its adjoint inertia invariants vanish, so its parameter lies in no proper Levi. Gan–Lomelí's prescribed-central-character Poincaré-series globalization gives Π_x equal to this supercuspidal anchor and Π_z≅π (FunctionFieldArithmetic, function-field-globalization contract). For every occurring σ, §3.2 identifies σ|_(W_x)^(ss) with that same local parameter. Complete reducibility then excludes a global proper parabolic: a proper Levi has a positive-dimensional centre modulo the centre of Ĝ, yielding a nonzero invariant vector in Lie(Ĝ)/Lie Z(Ĝ). Apply the adjoint assertion of §1.4 at z, and the reductive-central-reduction contract to retain the central part without claiming its arithmetic purity. Distinct fresh auxiliary places, with nontrivial derived ramification, give infinitely many Π. Vanishing of adjoint inertia invariants is used here; irreducibility of the adjoint representation is unnecessary.
 
@@ -655,7 +673,6 @@ Throughout this statement, K = k₁(X) is the function field of a smooth project
 **Checks.**
 
 - For S = {v₀} (one supercuspidal) the conclusion gives Π_(v₀) ≅ π_(v₀): a matrix coefficient of a supercuspidal detects it.
-
 - For the PGL₂ Steinberg Euler–Poincaré pseudo-coefficient normalized to have trace 1 on Steinberg, the trivial representation has trace −1: the reducible principal series has trace 0 and its two constituents are Steinberg and the trivial representation. Nonzero trace therefore does not isolate the discrete-series constituent (ghs, Appendix A, p. 38; glo, Lemma 8.1 and the remark after Proposition 8.2, pp. 38–40).
 
 *Needs:* FunctionFieldArithmetic §§6.4–6.6; SmoothRepresentationsOfLocalGroups §SR.3.3 (elliptic-pseudo-coefficients contract); SmoothRepresentationsOfLocalGroups §SR.3.3; SmoothRepresentationsOfLocalGroups §§SR.4.1–SR.4.2.
@@ -746,7 +763,8 @@ For PGL₂ Steinberg, the weight-0 pure completion has two Frobenius weights −
 
 ### Dependencies
 
-GlobalShtukasAndFunctionFieldLanglands §§5.3, 5.8–5.10; FunctionFieldArithmetic §5.8 (Chebotarev); §3.2; étale curve realization from EtaleCohomologyFoundations §§F.0–F.4; ReductiveGroupsPartII §§RG2.3–RG2.5; DeligneWeightsAndPurity §§5.2–5.11 (realization, conductors and curve weights); SmoothRepresentationsOfLocalGroups §SR.3.3; SmoothRepresentationsOfLocalGroups §SR.2.2; FunctionFieldArithmetic §§6.4–6.6; §3.3; §1.4; SmoothRepresentationsOfLocalGroups §SR.3.3 (elliptic-pseudo-coefficients contract); SmoothRepresentationsOfLocalGroups §§SR.4.1–SR.4.2; §0.4; §1.3; §0.3; §3.3 (normal-image and coefficient transport); §3.4; §3.8; §3.7; §2.2. Each target states its statement and proof-route inputs separately.
+GlobalShtukasAndFunctionFieldLanglands §1.4; ArithmeticGaloisRepresentations §§3.1–3.4; GlobalShtukasAndFunctionFieldLanglands §§5.3, 5.8–5.10; FunctionFieldArithmetic §5.8 (Chebotarev); §3.2; étale curve realization from EtaleCohomologyFoundations §§F.0–F.4; ReductiveGroupsPartII §§RG2.3–RG2.5; DeligneWeightsAndPurity §§5.2–5.11 (realization, conductors and curve weights); SmoothRepresentationsOfLocalGroups §SR.3.3; SmoothRepresentationsOfLocalGroups §SR.2.2; FunctionFieldArithmetic §§6.4–6.6; §3.3; §1.4; SmoothRepresentationsOfLocalGroups §SR.3.3 (elliptic-pseudo-coefficients contract); SmoothRepresentationsOfLocalGroups §§SR.4.1–SR.4.2; §0.4; §1.3; §0.3; §3.3 (normal-image and coefficient transport); §3.4; §3.8; §3.7; §2.2. PadicDifferentialEquationsAndRigidCohomology §§RD.2.49–RD.2.51, RD.3.13, RD.3.25, RD.4.10–RD.4.12, RD.5.46, RD.6.23, RD.6.51–RD.6.55, RD.6.64–RD.6.65, RD.6.77, RD.6.84–RD.6.85, RD.6.39, RD.1.16 and RD.6.52a with the three p-adic supplier contracts of §4.0; NilpotentOrbits §N2; RepresentationTheory/LieHighestWeight Layer 0; DeligneWeightsAndPurity §§5.12, 7.8–7.9. Each target states its statement and proof-route inputs separately.
+
 ## Layer 5: Generic Ramanujan
 
 ### 5.1 Test representations of the dual group
@@ -790,7 +808,7 @@ The local construction has the following API.
 - The unitary and generic loci are specified for each root datum, including the actual isogeny of every folded companion.
 - On the central-compact locus, half-integrality for the full test family implies zero real part in the stated split and nonsplit types; the odd-unitary residual alternative is retained separately.
 
- The genericity/central-isogeny transfer used for non-adjoint groups is the spherical-adjoint-transfer contract. Positive Hermitian completion, the affine Hecke algebra equivalence, the generic criterion and the root-datum classification are theorem targets of this subsection; the displayed separator implication does not replace them.
+The genericity/central-isogeny transfer used for non-adjoint groups is the spherical-adjoint-transfer contract. Positive Hermitian completion, the affine Hecke algebra equivalence, the generic criterion and the root-datum classification are theorem targets of this subsection; the displayed separator implication does not replace them.
 
 **Checks.**
 
@@ -799,7 +817,7 @@ The local construction has the following API.
 - A compact Satake class has ν=0 and every weight has modulus 1. The trivial PGL₂ representation has ν=(1/2,−1/2) and fails genericity, despite being unitary and geometric.
 - The odd-unitary folded datum retains its half-integral residual point. Replacing its split companion by a different isogeny would discard the test weight that records that point.
 
-*Needs:* the finite test family just defined; SmoothRepresentationsOfLocalGroups §§SR.1.3–SR.1.5, SR.2.2, SR.3.3–SR.3.4, SR.4.1–SR.4.2 (Hecke equivalences, Iwahori theory, normalization and temperedness); ReductiveGroupsPartII §§RG2.3–RG2.5 (root data and folding); RepresentationTheory/LieHighestWeight Layers 0 and 6 (algebraic representations and characters).; §2.3 (polar decomposition before local unitarity)
+*Needs:* the finite test family just defined; SmoothRepresentationsOfLocalGroups §§SR.1.3–SR.1.5, SR.2.2, SR.3.3–SR.3.4, SR.4.1–SR.4.2 (Hecke equivalences, Iwahori theory, normalization and temperedness); ReductiveGroupsPartII §§RG2.3–RG2.5 (root data and folding); RepresentationTheory/LieHighestWeight Layers 0 and 6 (algebraic representations and characters); §2.3 (polar decomposition before local unitarity)
 
 
 
@@ -844,8 +862,7 @@ Throughout this statement, K = k₁(X) is the function field of a smooth project
 **Checks.**
 
 - For PGL₂ a Steinberg anchor has normalized local weights ±1. The integrality conclusion by itself is not the Hasse bound for an elliptic curve; weight-0 automorphic normalization and purity require separate input.
-
-- A hyperspecial anchor can equal the generic place: at q=4 a compact pair has weights 0,0 before and after deleting and restoring that point. With no anchor, the constant-Frobenius-3 line on a complete curve still has weight log₂3∉ℤ, so an empty boundary by itself gives no geometricity assertion.
+- A hyperspecial anchor can equal the place v of §5.4(1): at q=4 a compact pair has weights 0,0 before and after deleting and restoring that point. With no anchor, the constant-Frobenius-3 line on a complete curve still has weight log₂3∉ℤ, so an empty boundary by itself gives no geometricity assertion.
 
 *Needs:* §4.6; §3.3; §1.2; §4.5; DeligneWeightsAndPurity §8.17; DeligneWeightsAndPurity §5.11; §2.3; §5.2; §1.1; SmoothRepresentationsOfLocalGroups §SR.3.3.
 
@@ -889,7 +906,8 @@ For the nonzero half-integral rank-one real point ν=(1/4,−1/4), the adjoint t
 
 ### Dependencies
 
-RepresentationTheory/LieHighestWeight Layers 0 and 6 (highest-weight realizations); §2.3 (polar decomposition before local unitarity); the finite test family just defined; SmoothRepresentationsOfLocalGroups §§SR.1.3–SR.1.5, SR.2.2, SR.3.3–SR.3.4, SR.4.1–SR.4.2 (Hecke equivalences, Iwahori theory, normalization and temperedness); ReductiveGroupsPartII §§RG2.3–RG2.5 (root data and folding); RepresentationTheory/LieHighestWeight Layers 0 and 6 (algebraic representations and characters).; §0.4; §2.1; NilpotentOrbits §N2; §0.1; §4.6; §3.3; §1.2; §4.5; DeligneWeightsAndPurity §8.17; DeligneWeightsAndPurity §5.11; §2.3; §1.1; SmoothRepresentationsOfLocalGroups §SR.3.3; §2.2; DeligneWeightsAndPurity §8.18; SmoothRepresentationsOfLocalGroups §§SR.4.1–SR.4.2. Each target states its statement and proof-route inputs separately.
+RepresentationTheory/LieHighestWeight Layers 0 and 6 (highest-weight realizations); §2.3 (polar decomposition before local unitarity); the finite test family just defined; SmoothRepresentationsOfLocalGroups §§SR.1.3–SR.1.5, SR.2.2, SR.3.3–SR.3.4, SR.4.1–SR.4.2 (Hecke equivalences, Iwahori theory, normalization and temperedness); ReductiveGroupsPartII §§RG2.3–RG2.5 (root data and folding); RepresentationTheory/LieHighestWeight Layers 0 and 6 (algebraic representations and characters); §0.4; §2.1; NilpotentOrbits §N2; §0.1; §4.6; §3.3; §1.2; §4.5; DeligneWeightsAndPurity §8.17; DeligneWeightsAndPurity §5.11; §2.3; §1.1; SmoothRepresentationsOfLocalGroups §SR.3.3; §2.2; DeligneWeightsAndPurity §8.18; SmoothRepresentationsOfLocalGroups §§SR.4.1–SR.4.2. Each target states its statement and proof-route inputs separately.
+
 ## Layer 6: Elliptic parameters and stack realization
 
 ### 6.1 Elliptic global parameters
@@ -916,7 +934,7 @@ The construction has the following API.
 - For a torus, S_σ=(Ĝ)^Γ=(Z(Ĝ))^Γ even when Γ acts nontrivially. The quotient is trivial, so every torus parameter is elliptic; S_σ need not equal all of Ĝ.
 - For G = SL₂ (Ĝ = PGL₂) and σ with image the Klein four-group in PGL₂ (projectively induced from each of three quadratic extensions), S_σ is that Klein four-group: σ is elliptic with 𝒮_σ ≅ (ℤ/2)², not stable (the Labesse–Langlands endoscopic case).
 - For GL_r and irreducible σ, S_σ = G_m = Z(Ĝ), 𝒮_σ = 1.
-- For G = GL_r, σ is elliptic iff it is irreducible (Lafforgue–Zhu §2); for G = PGL₂ (Ĝ = SL₂) every irreducible σ is elliptic and stable, its centralizer being ±1 by Schur's lemma.
+- For G = PGL₂ (Ĝ = SL₂) every irreducible σ is elliptic and stable, its centralizer being ±1 by Schur's lemma.
 
 *Needs:* GlobalShtukasAndFunctionFieldLanglands §5.8; LanglandsParameterStacks §LP2e.5.
 
@@ -977,11 +995,11 @@ The construction has the following API.
 - For a finite-type scheme f:Z→U, semisimple lisse constituents of Rⁱf_!ℚ̄_ℓ satisfy this predicate. This literal constant-coefficient direct-image test does not identify the predicate with every closure operation in the general notion of geometric origin.
 - The zero sheaf has no irreducible constituents and is witnessed by the empty stack, with every direct image equal to zero.
 
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §2.5; DeligneWeightsAndPurity §8.5.; §6.3 for the conditional elliptic realization
+*Needs:* GlobalShtukasAndFunctionFieldLanglands §2.5; DeligneWeightsAndPurity §8.5; §6.3 for the conditional elliptic realization
 
 ### 6.5 Integral weights of realisable sheaves
 
-Assuming the stack integrality contract, every irreducible constituent of a stack-realisable L is punctually ι-pure of integer weight. If this realization and integrality hold for all the adjoint and separator modules actually used in Layer 5 (including their lifts over K′ when G is not adjoint), the proof of §5.4 gives its fixed-ι conclusion without a tempered anchor; the arithmetic conclusion additionally requires embedding-independent arithmetic weights in that realization contract. The central-compact and local transfer hypotheses at the generic place are retained.
+Assuming the stack integrality contract, every irreducible constituent of a stack-realisable L is punctually ι-pure of integer weight. If this realization and integrality hold for all the adjoint and separator modules actually used in Layer 5 (including their lifts over K′ when G is not adjoint), the proof of §5.4 gives its fixed-ι conclusion without a tempered anchor; the arithmetic conclusion additionally requires embedding-independent arithmetic weights in that realization contract. The central-compact and local transfer hypotheses at the place v of §5.4(1) are retained.
 
 Throughout this statement, K = k₁(X) is the function field of a smooth projective geometrically connected curve X over a finite field k₁ of characteristic p and cardinality q₁; |X| is its set of closed points (places); q_w = |k(w)| for a place w; ℓ ≠ p is a prime. Assume the stack integrality theorem specified in the stack integer-weight contract: for finite-type f:Z→U, each lisse constituent of Rⁱf_!ℚ̄_ℓ has integer punctual ι-weights. Sun Theorem 2.11 supplies ι-mixedness and is not silently treated as this additional integer-weight assertion.
 
@@ -993,7 +1011,7 @@ Throughout this statement, K = k₁(X) is the function field of a smooth project
 
 - For Z a scheme the statement is Deligne's integrality of weights of Rf_!.
 
-*Needs:* §6.4; DeligneWeightsAndPurity §8.5; DeligneWeightsAndPurity §7.8.; §5.4 for the Ramanujan consequence
+*Needs:* §6.4; DeligneWeightsAndPurity §8.5; DeligneWeightsAndPurity §7.8; §5.4 for the Ramanujan consequence
 
 ### Examples
 
@@ -1001,7 +1019,8 @@ For GL_r a moving standard representation without a compensating frozen factor h
 
 ### Dependencies
 
-GlobalShtukasAndFunctionFieldLanglands §5.8; LanglandsParameterStacks §LP2e.5; §1.3; §2.3; §5.1 (local spherical weight criteria); SmoothRepresentationsOfLocalGroups §SR.3.3; GlobalShtukasAndFunctionFieldLanglands §4.8; GlobalShtukasAndFunctionFieldLanglands §3.10; GlobalShtukasAndFunctionFieldLanglands §5.9; DeligneWeightsAndPurity §8.5; GlobalShtukasAndFunctionFieldLanglands §2.5; DeligneWeightsAndPurity §8.5.; DeligneWeightsAndPurity §7.8.; §5.4 for the Ramanujan consequence. Each target states its statement and proof-route inputs separately.
+GlobalShtukasAndFunctionFieldLanglands §5.8; LanglandsParameterStacks §LP2e.5; §1.3; §2.3; §5.1 (local spherical weight criteria); SmoothRepresentationsOfLocalGroups §SR.3.3; GlobalShtukasAndFunctionFieldLanglands §4.8; GlobalShtukasAndFunctionFieldLanglands §3.10; GlobalShtukasAndFunctionFieldLanglands §5.9; DeligneWeightsAndPurity §8.5; GlobalShtukasAndFunctionFieldLanglands §2.5; DeligneWeightsAndPurity §8.5; DeligneWeightsAndPurity §7.8; §5.4 for the Ramanujan consequence. Each target states its statement and proof-route inputs separately.
+
 ## Layer 7: Discrete parameters and Arthur interfaces
 
 ### 7.1 Global Arthur homomorphism data
@@ -1079,7 +1098,6 @@ The construction has the following API.
 
 **Checks.**
 
-- For cuspidal π the Lafforgue parameter is compatible.
 - The trivial representation of PGL₂(A_K) has the compatible parameter σ(Frob_w) = diag(q_w^(1/2), q_w^(−1/2)) (σ = |·|^(1/2) ⊕ |·|^(−1/2) composed to SL₂), a Weil-group parameter not attached to a cusp form.
 - Compatibility at w ∉ S determines σ only up to local conjugacy at each Frobenius; two non-conjugate σ may both be compatible for non-GL_n groups.
 - For every compatible σ and τ trivial, L(π, 1) is the constant sheaf of rank one.
@@ -1112,7 +1130,7 @@ The construction has the following API.
 - For G anisotropic, A_disc(G, U, C) = A(G, U, C) is finite-dimensional and (9.1) holds trivially.
 - For PGL₂ the residual characters have the form χ∘det with χ²=1, so that the character descends from GL₂ to PGL₂; their parameters are explicit.
 
-*Needs:* FunctionFieldArithmetic §6.5; GlobalShtukasAndFunctionFieldLanglands §5.9; §7.3.; §7.3 (compatible-parameter interface)
+*Needs:* FunctionFieldArithmetic §6.5; GlobalShtukasAndFunctionFieldLanglands §5.9; §7.3 (compatible-parameter interface)
 
 ### 7.5 Rationality of the discrete spectrum under the finiteness hypothesis
 
@@ -1146,7 +1164,7 @@ Throughout this statement, K = k₁(X) is the function field of a smooth project
 - On the cuspidal part the decomposition is Lafforgue's.
 - For the abstract Hecke algebra ℚ̄_ℓ[T], the codimension-one ideal (T−a) can have a transcendental a over Q. Finite codimension alone is not an algebraicity argument; the positive constituent statement uses the given number-field model.
 
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §3.12; GlobalShtukasAndFunctionFieldLanglands §4.12; GlobalShtukasAndFunctionFieldLanglands §5.4; GlobalShtukasAndFunctionFieldLanglands §5.8; GlobalShtukasAndFunctionFieldLanglands §5.3; §7.3; §3.2; §3.3 (normal-image and coefficient transport).; §3.2 (full compact-support local comparison)
+*Needs:* GlobalShtukasAndFunctionFieldLanglands §3.12; GlobalShtukasAndFunctionFieldLanglands §4.12; GlobalShtukasAndFunctionFieldLanglands §5.4; GlobalShtukasAndFunctionFieldLanglands §5.8; GlobalShtukasAndFunctionFieldLanglands §5.3; §7.3; §3.2 (full compact-support local comparison); §3.3 (normal-image and coefficient transport)
 
 ### Examples
 
@@ -1154,7 +1172,8 @@ For the residual trivial PGL₂ representation, Arthur data with trivial Weil fa
 
 ### Dependencies
 
-LanglandsParameterStacks §§LP0.1–LP0.4; NilpotentOrbits §N2; DeligneWeightsAndPurity §0.1; §2.2; §2.1; DeligneWeightsAndPurity §5.2; DeligneWeightsAndPurity §5.5; FunctionFieldArithmetic §6.5; GlobalShtukasAndFunctionFieldLanglands §5.9; SmoothRepresentationsOfLocalGroups §SR.1.3; GlobalShtukasAndFunctionFieldLanglands §3.12; GlobalShtukasAndFunctionFieldLanglands §4.12; GlobalShtukasAndFunctionFieldLanglands §5.4; GlobalShtukasAndFunctionFieldLanglands §5.8; GlobalShtukasAndFunctionFieldLanglands §5.3; §3.2; §3.3 (normal-image and coefficient transport).; §3.2 (full compact-support local comparison). Each target states its statement and proof-route inputs separately.
+LanglandsParameterStacks §§LP0.1–LP0.4; NilpotentOrbits §N2; DeligneWeightsAndPurity §0.1; §2.2; §2.1; DeligneWeightsAndPurity §5.2; DeligneWeightsAndPurity §5.5; FunctionFieldArithmetic §6.5; GlobalShtukasAndFunctionFieldLanglands §5.9; SmoothRepresentationsOfLocalGroups §SR.1.3; GlobalShtukasAndFunctionFieldLanglands §3.12; GlobalShtukasAndFunctionFieldLanglands §4.12; GlobalShtukasAndFunctionFieldLanglands §5.4; GlobalShtukasAndFunctionFieldLanglands §5.8; GlobalShtukasAndFunctionFieldLanglands §5.3; §3.2 (full compact-support local comparison); §3.3 (normal-image and coefficient transport). Each target states its statement and proof-route inputs separately.
+
 ## Layer 8: Global weight patterns and elimination of extraneous points
 
 ### 8.0 Spherical strata, Aubert duality and weight recognition
@@ -1175,7 +1194,7 @@ The construction has the following API.
 - The classical partition/multiplicity-factor formulas and the seven exceptional alternatives above exhaust the central-compact extraneous list, with the 4A₁ exclusion included.
 - On geometric real classes, equality of all algebraic-representation weight multiplicities is equivalent to equality of their relative Weyl orbits.
 
- For a geometric real torus class, its multiplicity functions on all algebraic representations determine its Weyl orbit: evaluate each character as the finite sum of n_τ(i)q^(i/2), then use character separation. This recognition theorem is also the local input to §8.1 (ch26, Proposition 10.2, p. 32, ch26 line 1554). It compares normalized real exponents when residue cardinalities differ.
+For a geometric real torus class, its multiplicity functions on all algebraic representations determine its Weyl orbit: evaluate each character as the finite sum of n_τ(i)q^(i/2), then use character separation. This recognition theorem is also the local input to §8.1 (ch26, Proposition 10.2, p. 32, ch26 line 1554). It compares normalized real exponents when residue cardinalities differ.
 
 **Checks.**
 
@@ -1256,7 +1275,7 @@ The construction has the following API.
 - For rank two with gr₀ = L and L_u ≅ Sp(2) normalized to common weight 0 (Frobenius weights −1, 1), a(0, 1) = a(0, −1) = 1.
 - For a diagonal singleton a(−2,−2)=3, the two margins both have value 3 at −2 and 0 elsewhere; a positive-index-only definition would lose this piece.
 
-*Needs:* §8.1; §1.2; §3.3.; §8.2 (global and anchor hypotheses)
+*Needs:* §8.1; §1.2; §3.3; §8.2 (global and anchor hypotheses)
 
 ### 8.4 Property A for symmetric weight arrays
 
@@ -1274,7 +1293,6 @@ Throughout this statement, a has finite support; no other hypothesis.
 - A diagonal array has r = c.
 - With a(2,1)=a(2,3)=1, row(2)=2 and col(1)=col(3)=1; the greatest discrepancy is 3 and col(3)=1>row(3)=0.
 - The zero array has both margins 0 at every integer and satisfies the diagonal alternative without a greatest support element.
-
 - Without row symmetry, the single entry a(1,0)=1 has greatest discrepancy 1 with col(1)=0<row(1)=1; symmetry is essential.
 - With signed coefficients, a(0,±1)=−1 would give col(1)=−1<row(1)=0. Natural-number multiplicities are essential.
 
@@ -1302,7 +1320,7 @@ Throughout this statement, K = k₁(X) is the function field of a smooth project
 
 (ch26, §1.2, Theorem (Theorem 10.3), pp. 5–6; §10.2, Theorem 10.3 with its proof and Remark 10.7, pp. 33–35; ch26 line 1592.)
 
-*Proof route:* L_F(π_u) = L_F(σ_u) (§8.0), so n_u is the weight pattern of the Frobenius of the pure parameter of σ_u, whose normalized real exponent is Weyl-conjugate to h/2, with h the neutral element of an sl₂-triple through the monodromy (bounded part ϕ₀, §4.5). By §8.2 (c), ℜ(s_v) is ½h^∨ or extraneous. For nonsplit G over K, make the detecting-representation comparison on a connected finite splitting cover: every Ĝ-representation then defines a local system, and restriction raises Frobenius to a positive power without changing normalized weights or the monodromy orbit. This uses restriction of σ, not automorphic base change. In the extraneous case §8.5 gives a representation violating Property A for the array constructed as in §8.3 on that cover, contradicting §8.4. So n_v = n_u, the pattern of ½h^∨; by §8.1 and §8.1 every split w ∉ S has real part ½h^∨. With n_u = n_v the array is diagonal (Property A, first alternative), which is the vanishing of every N_i (Remark 10.7).
+*Proof route:* L_F(π_u) = L_F(σ_u) (§8.0), so n_u is the weight pattern of the Frobenius of the pure parameter of σ_u, whose normalized real exponent is Weyl-conjugate to h/2, with h the neutral element of an sl₂-triple through the monodromy (bounded part ϕ₀, §4.5). By §8.2 (c), ℜ(s_v) is ½h^∨ or extraneous. For nonsplit G over K, make the detecting-representation comparison on a connected finite splitting cover: every Ĝ-representation then defines a local system, and restriction raises Frobenius to a positive power without changing normalized weights or the monodromy orbit. This uses restriction of σ, not automorphic base change. In the extraneous case §8.5 gives a representation violating Property A for the array constructed as in §8.3 on that cover, contradicting §8.4. So n_v = n_u, the pattern of ½h^∨; by §8.1 and the recognition theorem of §8.0 every split w ∉ S has real part ½h^∨. With n_u = n_v the array is diagonal (Property A, first alternative), which is the vanishing of every N_i (Remark 10.7).
 
 **Checks.**
 
@@ -1316,7 +1334,7 @@ For dual Sp₆ the central and extraneous standard profiles are respectively 3δ
 
 ### Dependencies
 
-§2.3 (normalized real part); §3.3 (local parameter transport); SmoothRepresentationsOfLocalGroups §§SR.2.2, SR.3.1–SR.3.4, SR.4.2 (Jacquet functors, finite length and Iwahori theory); NilpotentOrbits §§N0–N2 (centralizers, triples and orbit classes); RepresentationTheory/LieHighestWeight Layers 0 and 6 (characters); §5.1 (graded-Hecke unitarity); §7.3; §1.2; §3.4; §5.2; §7.6; §3.3.; Mathlib `Finsupp`, `Finsupp.mapDomain`, `Finsupp.sum`, `Finset.sum_comm` and `Finset.sum_eq_single`; nonnegative multiplicities and finite support; NilpotentOrbits §N2.4 (exceptional-named-orbit-profiles contract); §4.5. Each target states its statement and proof-route inputs separately.
+§2.3 (normalized real part); §3.3 (local parameter transport); SmoothRepresentationsOfLocalGroups §§SR.2.2, SR.3.1–SR.3.4, SR.4.2 (Jacquet functors, finite length and Iwahori theory); NilpotentOrbits §§N0–N2 (centralizers, triples and orbit classes); RepresentationTheory/LieHighestWeight Layers 0 and 6 (characters); §5.1 (graded-Hecke unitarity); §7.3; §1.2; §3.4; §5.2; §7.6; §3.3; Mathlib `Finsupp`, `Finsupp.mapDomain`, `Finsupp.sum`, `Finset.sum_comm` and `Finset.sum_eq_single`; nonnegative multiplicities and finite support; NilpotentOrbits §N2.4 (exceptional-named-orbit-profiles contract); §4.5. Each target states its statement and proof-route inputs separately.
 
 ## Downstream consumers
 
@@ -1335,6 +1353,7 @@ For the symmetric array a(0,−1)=a(0,1)=1, global row multiplicities are r(0)=2
 ## References
 
 All statements above use the versions specified here, with their own theorem numbers. Source-line locators refer to the corresponding legally obtained text. The published Ciubotaru–Harris numbering is not used.
+
 
 - **ch26**: Dan Ciubotaru, Michael Harris, *On the generalized Ramanujan and Arthur conjectures over function fields* (2023). [2311.15300v1](https://arxiv.org/abs/2311.15300v1). Locators: §2.3, Definition 2.5, p. 7; §2.3, Definition 2.6, p. 7; §5, proof of Theorem 5.4, equation (5.5), p. 14; §2.4, Proposition 2.7, p. 8; §3.1, decomposition (3.3), Lemma 3.5 and Definition 3.7, pp. 9–10; §5, equation (5.3), p. 13; §3, Proposition 3.1, Lemma 3.2, Lemma 3.5 and Theorem 3.6 with the paragraph after it, pp. 8–10; §5, equation (5.1) and Lemma 5.2, p. 12; §6, (6.2), p. 17; §3.2, Theorem 3.8 and the paragraph after it, p. 10; §3.2, Theorem 3.8, p. 10; §3.2, Definition 3.9, p. 10; §3.2, Proposition 3.10(1) and its proof, pp. 10–11; §3.2, Proposition 3.10(2) and its proof, pp. 10–11; §3.2, Proposition 3.10(3) and its proof, pp. 10–11; §3.2, Proposition 3.10(4) and its proof, pp. 10–11; §4.1, Definition 4.1 and the paragraph after it, p. 11; §4.2, paragraph after Proposition 4.5, p. 12; proof of Theorem 5.4, p. 14; §3.2, Proposition 3.10(5) and the last line of its proof, p. 11; §4.1, Theorem 4.2 and the sketch (1)–(4) after Theorem 4.3, pp. 11–12; §4.1, Theorem 4.3 and step (2) of the sketch, p. 11; §5, the table after Theorem 5.4, p. 13; §6.12, Proposition 6.31, p. 24; §5, proof of Theorem 5.4, p. 14 and footnote 6; §5, proof of Theorem 5.4, pp. 14–15; §1.1, the main theorem and the outline of its proof, pp. 2–3; §5, Theorem 5.4 and its proof, pp. 13–15; §5, Corollary 5.7 and its proof, p. 15; §5, Remark 5.8, p. 16; §5, Remark 5.8 and Expectation 5.9, p. 15; §5, Expectation 5.9 and Sketch 5.10, pp. 15–16; §1.2, (1.1)–(1.7), pp. 3–4; §1.2, Conjecture 1.3, Conjecture 1.8 and Expectation 1.9, p. 4; §9.1, Definition 9.4 and Conjecture 9.5(2), p. 31; §9.2, p. 32; §9.1, Conjecture 9.1, display (9.3), Definition 9.4 and Conjecture 9.5, pp. 30–31; §9.1, Lemma 9.2 and the decomposition after it, p. 31; §9.2, p. 32; §10.1, definition of the weight pattern, p. 32; proof of Theorem 1.11, pp. 32–33; §1.2, Theorem 1.11, p. 5; §10.1, Proposition 10.2 and the proof of Theorem 1.11, pp. 32–33; §10.2, proof of Theorem 10.3, (10.4)–(10.6), pp. 33–34; §10.2, Property A and its proof, pp. 33–34; Remark 10.8, p. 35; §10.2, proof of Theorem 10.3, cases (1)–(5), p. 34; §8.2, Theorem 8.5 and Remark 8.6, pp. 28–29; Appendix Tables 2–3, pp. 36–37; §1.2, Theorem (Theorem 10.3), pp. 5–6; §10.2, Theorem 10.3 with its proof and Remark 10.7, pp. 33–35.
 
@@ -1358,8 +1377,10 @@ All statements above use the versions specified here, with their own theorem num
 
 - **laf02**: Laurent Lafforgue, *Chtoucas de Drinfeld et correspondance de Langlands* (2002). [10.1007/s002220100174](https://www.laurentlafforgue.org/math/fulltext.pdf). Locators: Théorème VII.6, Proposition VII.7, Corollaire VII.8, pp. 198–202.
 
-- **fs**: Laurent Fargues, Peter Scholze, *Geometrization of the local Langlands correspondence* (2021). [2102.13459v4](https://arxiv.org/abs/2102.13459v4). Locators: Theorem VIII.4.1 and Corollary VIII.4.3, pp. 291–293; Proposition IX.3.2, pp. 326–327; Definition/Proposition IX.4.1, p. 327; Proposition IX.5.1, p. 328; Theorem IX.5.2, p. 329.
+- **fs**: Laurent Fargues, Peter Scholze, *Geometrization of the local Langlands correspondence* (2021). [2102.13459v4](https://arxiv.org/abs/2102.13459v4). Locators: Theorem I.9.6(ii), (vi)–(vii), p. 36; Theorem VIII.4.1 and Corollary VIII.4.3, pp. 291–293; Proposition IX.3.2, pp. 326–327; Definition/Proposition IX.4.1, p. 327; Proposition IX.5.1, pp. 327–328; Theorem IX.5.2, p. 329.
 
-- **xz**: Daxin Xu, Xinwen Zhu, *Bessel F-isocrystals for reductive groups* (2019). [1910.13391v2](https://arxiv.org/abs/1910.13391v2). Locators: arXiv v2: Corollaries 4.5.6–4.5.7 and Remark 4.5.8, pp. 53–54.
+- **xz**: Daxin Xu, Xinwen Zhu, *Bessel F-isocrystals for reductive groups* (2019). [1910.13391v2](https://arxiv.org/abs/1910.13391v2). Locators: arXiv v2: Theorems 4.2.1, 4.3.3 and 4.4.4, pp. 42–50; §4.4.2, p. 50; §4.3.1 and Lemma 4.5.5, pp. 47, 52–53; Corollaries 4.5.6–4.5.7 and Remark 4.5.8, pp. 53–54.
 
 - **stacks-as**: The Stacks Project Authors, *The Stacks Project, Étale Cohomology*. [Tags 03PL](https://stacks.math.columbia.edu/tag/03PL), [03R7](https://stacks.math.columbia.edu/tag/03R7) and [0A3K](https://stacks.math.columbia.edu/tag/0A3K), Lemmas 28.1 and 63.1 and Theorem 61.6, pp. 31, 95 and 97; Kummer exactness, the Brauer comparison and characteristic-p Artin–Schreier vanishing.
+
+- **andre-bessel**: Yves André, *Représentations galoisiennes et opérateurs de Bessel p-adiques*, Annales de l’Institut Fourier 52 (2002), 779–808. [Numdam open archive](https://www.numdam.org/item/AIF_2002__52_3_779_0/). Locator: Proposition 3.2 and proof, pp. 788–789, andre-bessel line 393; algebraic coefficients and the exterior-annulus hypothesis are retained.
